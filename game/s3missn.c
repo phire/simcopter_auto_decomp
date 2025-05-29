@@ -24,15 +24,15 @@ void S3MissionReset() {
 );
 // LINE 141:
 	asm( 
-"	      004fa0a3    mov dword ptr [ebp-4],0"
+"	      004fa0a3    mov i,0"
 "	      004fa0aa    jmp near ptr 004FA0B2h"
-"	      004fa0af    inc dword ptr [ebp-4]"
-"	      004fa0b2    cmp dword ptr [ebp-4],1Eh"
+"	      004fa0af    inc i"
+"	      004fa0b2    cmp i,1Eh"
 "	      004fa0b6    jge near ptr 004FA0DAh"
 );
 // LINE 143:
 	asm( 
-"	      004fa0bc    mov eax,[ebp-4]"
+"	      004fa0bc    mov eax,i"
 "	      004fa0bf    mov ecx,eax"
 "	      004fa0c1    lea eax,[eax+eax*2]"
 "	      004fa0c4    lea eax,[ecx+eax*4]"
@@ -129,11 +129,11 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 );
 // LINE 182:
 	asm( 
-"	      004fa17e    mov eax,[ebp+8]"
+"	      004fa17e    mov eax,citySettingsIn"
 "	      004fa181    mov eax,[eax]"
-"	      004fa183    mov ecx,[ebp+0Ch]"
+"	      004fa183    mov ecx,citySettingsOut"
 "	      004fa186    mov [ecx],eax"
-"	      004fa188    mov eax,[ebp+0Ch]"
+"	      004fa188    mov eax,citySettingsOut"
 "	      004fa18b    mov eax,[eax]"
 "	      004fa18d    mov ds:[598EB0h],eax"
 );
@@ -143,19 +143,19 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 );
 // LINE 193:
 	asm( 
-"	      004fa198    mov eax,[ebp+8]"
+"	      004fa198    mov eax,citySettingsIn"
 "	      004fa19b    mov eax,[eax+14h]"
-"	      004fa19e    mov ecx,[ebp+8]"
+"	      004fa19e    mov ecx,citySettingsIn"
 "	      004fa1a1    add eax,[ecx+4]"
-"	      004fa1a4    mov ecx,[ebp+8]"
+"	      004fa1a4    mov ecx,citySettingsIn"
 "	      004fa1a7    add eax,[ecx+18h]"
-"	      004fa1aa    mov ecx,[ebp+8]"
+"	      004fa1aa    mov ecx,citySettingsIn"
 "	      004fa1ad    add eax,[ecx+8]"
-"	      004fa1b0    mov ecx,[ebp+8]"
+"	      004fa1b0    mov ecx,citySettingsIn"
 "	      004fa1b3    add eax,[ecx+1Ch]"
-"	      004fa1b6    mov ecx,[ebp+8]"
+"	      004fa1b6    mov ecx,citySettingsIn"
 "	      004fa1b9    add eax,[ecx+0Ch]"
-"	      004fa1bc    mov ecx,[ebp+8]"
+"	      004fa1bc    mov ecx,citySettingsIn"
 "	      004fa1bf    add eax,[ecx+10h]"
 "	      004fa1c2    mov [ebp-0Ch],eax"
 "	      004fa1c5    fild dword ptr [ebp-0Ch]"
@@ -163,44 +163,44 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 // LINE 194:
 	asm( 
 "	      004fa1c8    fcom dword ptr ds:[592AA8h]"
-"	      004fa1ce    fstp dword ptr [ebp-8]"
+"	      004fa1ce    fstp fSumOfAllValues"
 "	      004fa1d1    fnstsw ax"
 "	      004fa1d3    test ah,1"
 "	      004fa1d6    je near ptr 004FA22Ch"
 );
 // LINE 196:
 	asm( 
-"	      004fa1dc    mov eax,[ebp+0Ch]"
+"	      004fa1dc    mov eax,citySettingsOut"
 "	      004fa1df    mov dword ptr [eax+4],0"
 );
 // LINE 197:
 	asm( 
-"	      004fa1e6    mov eax,[ebp+0Ch]"
+"	      004fa1e6    mov eax,citySettingsOut"
 "	      004fa1e9    mov dword ptr [eax+8],0"
 );
 // LINE 198:
 	asm( 
-"	      004fa1f0    mov eax,[ebp+0Ch]"
+"	      004fa1f0    mov eax,citySettingsOut"
 "	      004fa1f3    mov dword ptr [eax+0Ch],0"
 );
 // LINE 199:
 	asm( 
-"	      004fa1fa    mov eax,[ebp+0Ch]"
+"	      004fa1fa    mov eax,citySettingsOut"
 "	      004fa1fd    mov dword ptr [eax+10h],0"
 );
 // LINE 200:
 	asm( 
-"	      004fa204    mov eax,[ebp+0Ch]"
+"	      004fa204    mov eax,citySettingsOut"
 "	      004fa207    mov dword ptr [eax+14h],0"
 );
 // LINE 201:
 	asm( 
-"	      004fa20e    mov eax,[ebp+0Ch]"
+"	      004fa20e    mov eax,citySettingsOut"
 "	      004fa211    mov dword ptr [eax+18h],0"
 );
 // LINE 202:
 	asm( 
-"	      004fa218    mov eax,[ebp+0Ch]"
+"	      004fa218    mov eax,citySettingsOut"
 "	      004fa21b    mov dword ptr [eax+1Ch],0"
 );
 // LINE 203:
@@ -214,126 +214,126 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 // LINE 206:
 	asm( 
 "	      004fa22c    fld dword ptr ds:[592AACh]"
-"	      004fa232    fdiv dword ptr [ebp-8]"
-"	      004fa235    fstp dword ptr [ebp-4]"
+"	      004fa232    fdiv fSumOfAllValues"
+"	      004fa235    fstp fMultiplier"
 );
 // LINE 208:
 	asm( 
-"	      004fa238    mov eax,[ebp+8]"
+"	      004fa238    mov eax,citySettingsIn"
 "	      004fa23b    mov eax,[eax+4]"
 "	      004fa23e    mov [ebp-10h],eax"
 "	      004fa241    fild dword ptr [ebp-10h]"
-"	      004fa244    fmul dword ptr [ebp-4]"
+"	      004fa244    fmul fMultiplier"
 "	      004fa247    call 0056EBE8h"
-"	      004fa24c    mov ecx,[ebp+0Ch]"
+"	      004fa24c    mov ecx,citySettingsOut"
 "	      004fa24f    mov [ecx+4],eax"
 );
 // LINE 209:
 	asm( 
-"	      004fa252    mov eax,[ebp+8]"
+"	      004fa252    mov eax,citySettingsIn"
 "	      004fa255    mov eax,[eax+8]"
 "	      004fa258    mov [ebp-14h],eax"
 "	      004fa25b    fild dword ptr [ebp-14h]"
-"	      004fa25e    fmul dword ptr [ebp-4]"
+"	      004fa25e    fmul fMultiplier"
 "	      004fa261    call 0056EBE8h"
-"	      004fa266    mov ecx,[ebp+0Ch]"
+"	      004fa266    mov ecx,citySettingsOut"
 "	      004fa269    mov [ecx+8],eax"
 );
 // LINE 210:
 	asm( 
-"	      004fa26c    mov eax,[ebp+8]"
+"	      004fa26c    mov eax,citySettingsIn"
 "	      004fa26f    mov eax,[eax+0Ch]"
 "	      004fa272    mov [ebp-18h],eax"
 "	      004fa275    fild dword ptr [ebp-18h]"
-"	      004fa278    fmul dword ptr [ebp-4]"
+"	      004fa278    fmul fMultiplier"
 "	      004fa27b    call 0056EBE8h"
-"	      004fa280    mov ecx,[ebp+0Ch]"
+"	      004fa280    mov ecx,citySettingsOut"
 "	      004fa283    mov [ecx+0Ch],eax"
 );
 // LINE 211:
 	asm( 
-"	      004fa286    mov eax,[ebp+8]"
+"	      004fa286    mov eax,citySettingsIn"
 "	      004fa289    mov eax,[eax+10h]"
 "	      004fa28c    mov [ebp-1Ch],eax"
 "	      004fa28f    fild dword ptr [ebp-1Ch]"
-"	      004fa292    fmul dword ptr [ebp-4]"
+"	      004fa292    fmul fMultiplier"
 "	      004fa295    call 0056EBE8h"
-"	      004fa29a    mov ecx,[ebp+0Ch]"
+"	      004fa29a    mov ecx,citySettingsOut"
 "	      004fa29d    mov [ecx+10h],eax"
 );
 // LINE 212:
 	asm( 
-"	      004fa2a0    mov eax,[ebp+8]"
+"	      004fa2a0    mov eax,citySettingsIn"
 "	      004fa2a3    mov eax,[eax+14h]"
 "	      004fa2a6    mov [ebp-20h],eax"
 "	      004fa2a9    fild dword ptr [ebp-20h]"
-"	      004fa2ac    fmul dword ptr [ebp-4]"
+"	      004fa2ac    fmul fMultiplier"
 "	      004fa2af    call 0056EBE8h"
-"	      004fa2b4    mov ecx,[ebp+0Ch]"
+"	      004fa2b4    mov ecx,citySettingsOut"
 "	      004fa2b7    mov [ecx+14h],eax"
 );
 // LINE 213:
 	asm( 
-"	      004fa2ba    mov eax,[ebp+8]"
+"	      004fa2ba    mov eax,citySettingsIn"
 "	      004fa2bd    mov eax,[eax+18h]"
 "	      004fa2c0    mov [ebp-24h],eax"
 "	      004fa2c3    fild dword ptr [ebp-24h]"
-"	      004fa2c6    fmul dword ptr [ebp-4]"
+"	      004fa2c6    fmul fMultiplier"
 "	      004fa2c9    call 0056EBE8h"
-"	      004fa2ce    mov ecx,[ebp+0Ch]"
+"	      004fa2ce    mov ecx,citySettingsOut"
 "	      004fa2d1    mov [ecx+18h],eax"
 );
 // LINE 214:
 	asm( 
-"	      004fa2d4    mov eax,[ebp+8]"
+"	      004fa2d4    mov eax,citySettingsIn"
 "	      004fa2d7    mov eax,[eax+1Ch]"
 "	      004fa2da    mov [ebp-28h],eax"
 "	      004fa2dd    fild dword ptr [ebp-28h]"
-"	      004fa2e0    fmul dword ptr [ebp-4]"
+"	      004fa2e0    fmul fMultiplier"
 "	      004fa2e3    call 0056EBE8h"
-"	      004fa2e8    mov ecx,[ebp+0Ch]"
+"	      004fa2e8    mov ecx,citySettingsOut"
 "	      004fa2eb    mov [ecx+1Ch],eax"
 );
 // LINE 218:
 	asm( 
-"	      004fa2ee    mov eax,[ebp+0Ch]"
+"	      004fa2ee    mov eax,citySettingsOut"
 "	      004fa2f1    mov eax,[eax+4]"
-"	      004fa2f4    mov ecx,[ebp+0Ch]"
+"	      004fa2f4    mov ecx,citySettingsOut"
 "	      004fa2f7    add [ecx+8],eax"
 );
 // LINE 219:
 	asm( 
-"	      004fa2fa    mov eax,[ebp+0Ch]"
+"	      004fa2fa    mov eax,citySettingsOut"
 "	      004fa2fd    mov eax,[eax+8]"
-"	      004fa300    mov ecx,[ebp+0Ch]"
+"	      004fa300    mov ecx,citySettingsOut"
 "	      004fa303    add [ecx+0Ch],eax"
 );
 // LINE 220:
 	asm( 
-"	      004fa306    mov eax,[ebp+0Ch]"
+"	      004fa306    mov eax,citySettingsOut"
 "	      004fa309    mov eax,[eax+0Ch]"
-"	      004fa30c    mov ecx,[ebp+0Ch]"
+"	      004fa30c    mov ecx,citySettingsOut"
 "	      004fa30f    add [ecx+10h],eax"
 );
 // LINE 221:
 	asm( 
-"	      004fa312    mov eax,[ebp+0Ch]"
+"	      004fa312    mov eax,citySettingsOut"
 "	      004fa315    mov eax,[eax+10h]"
-"	      004fa318    mov ecx,[ebp+0Ch]"
+"	      004fa318    mov ecx,citySettingsOut"
 "	      004fa31b    add [ecx+14h],eax"
 );
 // LINE 222:
 	asm( 
-"	      004fa31e    mov eax,[ebp+0Ch]"
+"	      004fa31e    mov eax,citySettingsOut"
 "	      004fa321    mov eax,[eax+14h]"
-"	      004fa324    mov ecx,[ebp+0Ch]"
+"	      004fa324    mov ecx,citySettingsOut"
 "	      004fa327    add [ecx+18h],eax"
 );
 // LINE 223:
 	asm( 
-"	      004fa32a    mov eax,[ebp+0Ch]"
+"	      004fa32a    mov eax,citySettingsOut"
 "	      004fa32d    mov eax,[eax+18h]"
-"	      004fa330    mov ecx,[ebp+0Ch]"
+"	      004fa330    mov ecx,citySettingsOut"
 "	      004fa333    add [ecx+1Ch],eax"
 );
 // LINE 224:
@@ -365,13 +365,13 @@ void S3MissionGenerator() {
 // LINE 243:
 	asm( 
 "	      004fa344    call 00429075h"
-"	      004fa349    mov [ebp-2Ch],eax"
+"	      004fa349    mov currentCitySettings,eax"
 );
 // LINE 244:
 	asm( 
-"	      004fa34c    lea eax,[ebp-28h]"
+"	      004fa34c    lea eax,currentCitySettingPercentages.lDifficulty"
 "	      004fa34f    push eax"
-"	      004fa350    mov eax,[ebp-2Ch]"
+"	      004fa350    mov eax,currentCitySettings"
 "	      004fa353    push eax"
 "	      004fa354    call 004FA175h"
 "	      004fa359    add esp,8"
@@ -407,13 +407,13 @@ void S3MissionGenerator() {
 "	      004fa39f    mov eax,ds:[5B4E30h]"
 "	      004fa3a4    sub eax,ds:[6072E0h]"
 "	      004fa3aa    dec eax"
-"	      004fa3ab    mov [ebp-4],eax"
+"	      004fa3ab    mov adjustor,eax"
 );
 // LINE 262:
 	asm( 
 "	      004fa3ae    xor eax,eax"
 "	      004fa3b0    mov ecx,ds:[5B4E28h]"
-"	      004fa3b6    imul ecx,[ebp-4]"
+"	      004fa3b6    imul ecx,adjustor"
 "	      004fa3ba    sub eax,ecx"
 "	      004fa3bc    neg eax"
 "	      004fa3be    sub ds:[5B4E2Ch],eax"
@@ -440,12 +440,12 @@ void S3MissionGenerator() {
 "	      004fa3f2    movsx eax,ax"
 "	      004fa3f5    cdq"
 "	      004fa3f6    idiv ecx"
-"	      004fa3f8    mov [ebp-30h],edx"
+"	      004fa3f8    mov pct,edx"
 );
 // LINE 278:
 	asm( 
-"	      004fa3fb    mov eax,[ebp-30h]"
-"	      004fa3fe    cmp [ebp-24h],eax"
+"	      004fa3fb    mov eax,pct"
+"	      004fa3fe    cmp currentCitySettingPercentages.lMissionFrequencyFire,eax"
 "	      004fa401    jle near ptr 004FA49Bh"
 );
 // LINE 281:
@@ -518,8 +518,8 @@ void S3MissionGenerator() {
 // LINE 302:
 	asm( 
 "	      004fa496    jmp near ptr 004FA713h"
-"	      004fa49b    mov eax,[ebp-30h]"
-"	      004fa49e    cmp [ebp-20h],eax"
+"	      004fa49b    mov eax,pct"
+"	      004fa49e    cmp currentCitySettingPercentages.lMissionFrequencyCrime,eax"
 "	      004fa4a1    jle near ptr 004FA538h"
 );
 // LINE 305:
@@ -589,8 +589,8 @@ void S3MissionGenerator() {
 // LINE 322:
 	asm( 
 "	      004fa533    jmp near ptr 004FA713h"
-"	      004fa538    mov eax,[ebp-30h]"
-"	      004fa53b    cmp [ebp-1Ch],eax"
+"	      004fa538    mov eax,pct"
+"	      004fa53b    cmp currentCitySettingPercentages.lMissionFrequencyRescue,eax"
 "	      004fa53e    jle near ptr 004FA599h"
 );
 // LINE 325:
@@ -633,8 +633,8 @@ void S3MissionGenerator() {
 // LINE 336:
 	asm( 
 "	      004fa594    jmp near ptr 004FA713h"
-"	      004fa599    mov eax,[ebp-30h]"
-"	      004fa59c    cmp [ebp-18h],eax"
+"	      004fa599    mov eax,pct"
+"	      004fa59c    cmp currentCitySettingPercentages.lMissionFrequencyRiot,eax"
 "	      004fa59f    jle near ptr 004FA5FEh"
 );
 // LINE 339:
@@ -680,8 +680,8 @@ void S3MissionGenerator() {
 // LINE 350:
 	asm( 
 "	      004fa5f9    jmp near ptr 004FA713h"
-"	      004fa5fe    mov eax,[ebp-30h]"
-"	      004fa601    cmp [ebp-14h],eax"
+"	      004fa5fe    mov eax,pct"
+"	      004fa601    cmp currentCitySettingPercentages.lMissionFrequencyTraffic,eax"
 "	      004fa604    jle near ptr 004FA66Dh"
 );
 // LINE 353:
@@ -729,8 +729,8 @@ void S3MissionGenerator() {
 // LINE 371:
 	asm( 
 "	      004fa668    jmp near ptr 004FA713h"
-"	      004fa66d    mov eax,[ebp-30h]"
-"	      004fa670    cmp [ebp-10h],eax"
+"	      004fa66d    mov eax,pct"
+"	      004fa670    cmp currentCitySettingPercentages.lMissionFrequencyMedEvac,eax"
 "	      004fa673    jle near ptr 004FA6AFh"
 );
 // LINE 374:
@@ -761,8 +761,8 @@ void S3MissionGenerator() {
 // LINE 388:
 	asm( 
 "	      004fa6aa    jmp near ptr 004FA713h"
-"	      004fa6af    mov eax,[ebp-30h]"
-"	      004fa6b2    cmp [ebp-0Ch],eax"
+"	      004fa6af    mov eax,pct"
+"	      004fa6b2    cmp currentCitySettingPercentages.lMissionFrequencyTransport,eax"
 "	      004fa6b5    jle near ptr 004FA70Eh"
 );
 // LINE 391:
@@ -854,26 +854,26 @@ void S3MissionDriver() {
 );
 // LINE 437:
 	asm( 
-"	      004fa726    mov dword ptr [ebp-18h],0"
+"	      004fa726    mov i,0"
 "	      004fa72d    jmp near ptr 004FA735h"
-"	      004fa732    inc dword ptr [ebp-18h]"
-"	      004fa735    cmp dword ptr [ebp-18h],1Eh"
+"	      004fa732    inc i"
+"	      004fa735    cmp i,1Eh"
 "	      004fa739    jge near ptr 004FAC68h"
 );
 // LINE 440:
 	asm( 
-"	      004fa73f    mov eax,[ebp-18h]"
+"	      004fa73f    mov eax,i"
 "	      004fa742    mov ecx,eax"
 "	      004fa744    lea eax,[eax+eax*2]"
 "	      004fa747    lea eax,[ecx+eax*4]"
 "	      004fa74a    lea eax,[ecx+eax*4]"
 "	      004fa74d    lea eax,[eax*4+6072B8h]"
 "	      004fa754    add eax,38h"
-"	      004fa757    mov [ebp-30h],eax"
+"	      004fa757    mov md,eax"
 );
 // LINE 442:
 	asm( 
-"	      004fa75a    mov eax,[ebp-30h]"
+"	      004fa75a    mov eax,md"
 "	      004fa75d    test byte ptr [eax+4Ch],1"
 "	      004fa761    jne near ptr 004FA76Ch"
 );
@@ -884,27 +884,27 @@ void S3MissionDriver() {
 // LINE 446:
 	asm( 
 "	      004fa76c    mov eax,ds:[5B4768h]"
-"	      004fa771    mov ecx,[ebp-30h]"
+"	      004fa771    mov ecx,md"
 "	      004fa774    add [ecx+40h],eax"
 );
 // LINE 449:
 	asm( 
-"	      004fa777    mov eax,[ebp-30h]"
+"	      004fa777    mov eax,md"
 "	      004fa77a    cmp dword ptr [eax+54h],2"
 "	      004fa77e    jne near ptr 004FA7B2h"
 );
 // LINE 453:
 	asm( 
-"	      004fa784    mov eax,[ebp-30h]"
+"	      004fa784    mov eax,md"
 "	      004fa787    cmp dword ptr [eax+40h],3C0000h"
 "	      004fa78e    jle near ptr 004FA7ADh"
-"	      004fa794    mov eax,[ebp-30h]"
+"	      004fa794    mov eax,md"
 "	      004fa797    test byte ptr [eax+51h],8"
 "	      004fa79b    je near ptr 004FA7ADh"
 );
 // LINE 455:
 	asm( 
-"	      004fa7a1    mov eax,[ebp-18h]"
+"	      004fa7a1    mov eax,i"
 "	      004fa7a4    push eax"
 "	      004fa7a5    call 004FCBEAh"
 "	      004fa7aa    add esp,4"
@@ -915,13 +915,13 @@ void S3MissionDriver() {
 );
 // LINE 461:
 	asm( 
-"	      004fa7b2    mov eax,[ebp-30h]"
+"	      004fa7b2    mov eax,md"
 "	      004fa7b5    cmp dword ptr [eax+54h],4"
 "	      004fa7b9    jne near ptr 004FA7D0h"
 );
 // LINE 463:
 	asm( 
-"	      004fa7bf    mov eax,[ebp-18h]"
+"	      004fa7bf    mov eax,i"
 "	      004fa7c2    push eax"
 "	      004fa7c3    call 004FCBEAh"
 "	      004fa7c8    add esp,4"
@@ -932,13 +932,13 @@ void S3MissionDriver() {
 );
 // LINE 468:
 	asm( 
-"	      004fa7d0    mov eax,[ebp-30h]"
+"	      004fa7d0    mov eax,md"
 "	      004fa7d3    cmp dword ptr [eax+54h],8"
 "	      004fa7d7    jne near ptr 004FA7EEh"
 );
 // LINE 470:
 	asm( 
-"	      004fa7dd    mov eax,[ebp-18h]"
+"	      004fa7dd    mov eax,i"
 "	      004fa7e0    push eax"
 "	      004fa7e1    call 004FC218h"
 "	      004fa7e6    add esp,4"
@@ -954,341 +954,341 @@ void S3MissionDriver() {
 );
 // LINE 481:
 	asm( 
-"	      004fa7fb    mov eax,[ebp-30h]"
+"	      004fa7fb    mov eax,md"
 "	      004fa7fe    mov ds:[6072ECh],eax"
 );
 // LINE 486:
 	asm( 
-"	      004fa803    mov dword ptr [ebp-10h],1"
+"	      004fa803    mov fires_done,1"
 );
 // LINE 487:
 	asm( 
-"	      004fa80a    mov dword ptr [ebp-20h],1"
+"	      004fa80a    mov debris_done,1"
 );
 // LINE 488:
 	asm( 
-"	      004fa811    mov dword ptr [ebp-34h],1"
+"	      004fa811    mov personriot_done,1"
 );
 // LINE 489:
 	asm( 
-"	      004fa818    mov dword ptr [ebp-14h],1"
+"	      004fa818    mov personmed_done,1"
 );
 // LINE 490:
 	asm( 
-"	      004fa81f    mov dword ptr [ebp-2Ch],1"
+"	      004fa81f    mov persontrans_done,1"
 );
 // LINE 491:
 	asm( 
-"	      004fa826    mov dword ptr [ebp-8],1"
+"	      004fa826    mov personresc_done,1"
 );
 // LINE 492:
 	asm( 
-"	      004fa82d    mov dword ptr [ebp-28h],1"
+"	      004fa82d    mov personfire_done,1"
 );
 // LINE 493:
 	asm( 
-"	      004fa834    mov dword ptr [ebp-0Ch],1"
+"	      004fa834    mov vehiclefire_done,1"
 );
 // LINE 494:
 	asm( 
-"	      004fa83b    mov dword ptr [ebp-4],1"
+"	      004fa83b    mov vehiclejam_done,1"
 );
 // LINE 495:
 	asm( 
-"	      004fa842    mov dword ptr [ebp-1Ch],1"
+"	      004fa842    mov criminal_done,1"
 );
 // LINE 496:
 	asm( 
-"	      004fa849    mov dword ptr [ebp-24h],1"
+"	      004fa849    mov speeder_done,1"
 );
 // LINE 498:
 	asm( 
-"	      004fa850    mov eax,[ebp-30h]"
+"	      004fa850    mov eax,md"
 "	      004fa853    test byte ptr [eax+52h],5"
 "	      004fa857    je near ptr 004FA864h"
 );
 // LINE 500:
 	asm( 
-"	      004fa85d    mov dword ptr [ebp-1Ch],0"
+"	      004fa85d    mov criminal_done,0"
 );
 // LINE 503:
 	asm( 
-"	      004fa864    mov eax,[ebp-30h]"
+"	      004fa864    mov eax,md"
 "	      004fa867    test byte ptr [eax+50h],2"
 "	      004fa86b    je near ptr 004FA878h"
 );
 // LINE 505:
 	asm( 
-"	      004fa871    mov dword ptr [ebp-24h],0"
+"	      004fa871    mov speeder_done,0"
 );
 // LINE 508:
 	asm( 
-"	      004fa878    mov eax,[ebp-30h]"
+"	      004fa878    mov eax,md"
 "	      004fa87b    test byte ptr [eax+50h],8"
 "	      004fa87f    je near ptr 004FA8AAh"
 );
 // LINE 511:
 	asm( 
-"	      004fa885    mov eax,[ebp-30h]"
+"	      004fa885    mov eax,md"
 "	      004fa888    mov eax,[eax+7Ch]"
-"	      004fa88b    mov ecx,[ebp-30h]"
+"	      004fa88b    mov ecx,md"
 "	      004fa88e    add eax,[ecx+74h]"
-"	      004fa891    mov ecx,[ebp-30h]"
+"	      004fa891    mov ecx,md"
 "	      004fa894    add eax,[ecx+78h]"
-"	      004fa897    mov ecx,[ebp-30h]"
+"	      004fa897    mov ecx,md"
 "	      004fa89a    cmp eax,[ecx+70h]"
 "	      004fa89d    jge near ptr 004FA8AAh"
 );
 // LINE 512:
 	asm( 
-"	      004fa8a3    mov dword ptr [ebp-20h],0"
+"	      004fa8a3    mov debris_done,0"
 );
 // LINE 515:
 	asm( 
-"	      004fa8aa    mov eax,[ebp-30h]"
+"	      004fa8aa    mov eax,md"
 "	      004fa8ad    test byte ptr [eax+50h],1"
 "	      004fa8b1    je near ptr 004FA8D6h"
 );
 // LINE 517:
 	asm( 
-"	      004fa8b7    mov eax,[ebp-30h]"
+"	      004fa8b7    mov eax,md"
 "	      004fa8ba    mov eax,[eax+60h]"
-"	      004fa8bd    mov ecx,[ebp-30h]"
+"	      004fa8bd    mov ecx,md"
 "	      004fa8c0    add eax,[ecx+64h]"
-"	      004fa8c3    mov ecx,[ebp-30h]"
+"	      004fa8c3    mov ecx,md"
 "	      004fa8c6    cmp eax,[ecx+58h]"
 "	      004fa8c9    jge near ptr 004FA8D6h"
 );
 // LINE 518:
 	asm( 
-"	      004fa8cf    mov dword ptr [ebp-10h],0"
+"	      004fa8cf    mov fires_done,0"
 );
 // LINE 521:
 	asm( 
-"	      004fa8d6    mov eax,[ebp-30h]"
+"	      004fa8d6    mov eax,md"
 "	      004fa8d9    test byte ptr [eax+50h],20h"
 "	      004fa8dd    je near ptr 004FA946h"
 );
 // LINE 523:
 	asm( 
-"	      004fa8e3    mov eax,[ebp-30h]"
-"	      004fa8e6    mov ecx,[ebp-30h]"
+"	      004fa8e3    mov eax,md"
+"	      004fa8e6    mov ecx,md"
 "	      004fa8e9    mov ecx,[ecx+84h]"
 "	      004fa8ef    cmp [eax+0A4h],ecx"
 "	      004fa8f5    jne near ptr 004FA90Fh"
 );
 // LINE 524:
 	asm( 
-"	      004fa8fb    mov eax,[ebp-30h]"
+"	      004fa8fb    mov eax,md"
 "	      004fa8fe    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 525:
 	asm( 
-"	      004fa905    mov eax,[ebp-30h]"
+"	      004fa905    mov eax,md"
 "	      004fa908    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 529:
 	asm( 
-"	      004fa90f    mov eax,[ebp-30h]"
-"	      004fa912    mov ecx,[ebp-30h]"
+"	      004fa90f    mov eax,md"
+"	      004fa912    mov ecx,md"
 "	      004fa915    mov ecx,[ecx+84h]"
 "	      004fa91b    cmp [eax+0A0h],ecx"
 "	      004fa921    jne near ptr 004FA93Fh"
-"	      004fa927    mov eax,[ebp-30h]"
-"	      004fa92a    mov ecx,[ebp-30h]"
+"	      004fa927    mov eax,md"
+"	      004fa92a    mov ecx,md"
 "	      004fa92d    mov ecx,[ecx+84h]"
 "	      004fa933    cmp [eax+0A4h],ecx"
 "	      004fa939    je near ptr 004FA946h"
 );
 // LINE 532:
 	asm( 
-"	      004fa93f    mov dword ptr [ebp-14h],0"
+"	      004fa93f    mov personmed_done,0"
 );
 // LINE 535:
 	asm( 
-"	      004fa946    mov eax,[ebp-30h]"
+"	      004fa946    mov eax,md"
 "	      004fa949    test byte ptr [eax+50h],10h"
 "	      004fa94d    je near ptr 004FA9C8h"
 );
 // LINE 537:
 	asm( 
-"	      004fa953    mov eax,[ebp-30h]"
-"	      004fa956    mov ecx,[ebp-30h]"
+"	      004fa953    mov eax,md"
+"	      004fa956    mov ecx,md"
 "	      004fa959    mov ecx,[ecx+0A4h]"
 "	      004fa95f    cmp [eax+8Ch],ecx"
 "	      004fa965    jne near ptr 004FA97Fh"
 );
 // LINE 538:
 	asm( 
-"	      004fa96b    mov eax,[ebp-30h]"
+"	      004fa96b    mov eax,md"
 "	      004fa96e    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 539:
 	asm( 
-"	      004fa975    mov eax,[ebp-30h]"
+"	      004fa975    mov eax,md"
 "	      004fa978    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 545:
 	asm( 
-"	      004fa97f    mov eax,[ebp-30h]"
+"	      004fa97f    mov eax,md"
 "	      004fa982    mov eax,[eax+0B4h]"
-"	      004fa988    mov ecx,[ebp-30h]"
+"	      004fa988    mov ecx,md"
 "	      004fa98b    add eax,[ecx+98h]"
-"	      004fa991    mov ecx,[ebp-30h]"
+"	      004fa991    mov ecx,md"
 "	      004fa994    cmp eax,[ecx+8Ch]"
 "	      004fa99a    jne near ptr 004FA9C1h"
-"	      004fa9a0    mov eax,[ebp-30h]"
+"	      004fa9a0    mov eax,md"
 "	      004fa9a3    mov eax,[eax+0B4h]"
-"	      004fa9a9    mov ecx,[ebp-30h]"
+"	      004fa9a9    mov ecx,md"
 "	      004fa9ac    add eax,[ecx+0A4h]"
-"	      004fa9b2    mov ecx,[ebp-30h]"
+"	      004fa9b2    mov ecx,md"
 "	      004fa9b5    cmp eax,[ecx+8Ch]"
 "	      004fa9bb    je near ptr 004FA9C8h"
 );
 // LINE 546:
 	asm( 
-"	      004fa9c1    mov dword ptr [ebp-8],0"
+"	      004fa9c1    mov personresc_done,0"
 );
 // LINE 549:
 	asm( 
-"	      004fa9c8    mov eax,[ebp-30h]"
+"	      004fa9c8    mov eax,md"
 "	      004fa9cb    test byte ptr [eax+51h],2"
 "	      004fa9cf    je near ptr 004FA9FDh"
 );
 // LINE 554:
 	asm( 
-"	      004fa9d5    mov eax,[ebp-30h]"
+"	      004fa9d5    mov eax,md"
 "	      004fa9d8    mov eax,[eax+0B4h]"
-"	      004fa9de    mov ecx,[ebp-30h]"
+"	      004fa9de    mov ecx,md"
 "	      004fa9e1    add eax,[ecx+0B8h]"
-"	      004fa9e7    mov ecx,[ebp-30h]"
+"	      004fa9e7    mov ecx,md"
 "	      004fa9ea    cmp eax,[ecx+94h]"
 "	      004fa9f0    jge near ptr 004FA9FDh"
 );
 // LINE 555:
 	asm( 
-"	      004fa9f6    mov dword ptr [ebp-1Ch],0"
+"	      004fa9f6    mov criminal_done,0"
 );
 // LINE 558:
 	asm( 
-"	      004fa9fd    mov eax,[ebp-30h]"
+"	      004fa9fd    mov eax,md"
 "	      004faa00    test byte ptr [eax+51h],20h"
 "	      004faa04    je near ptr 004FAA32h"
 );
 // LINE 563:
 	asm( 
-"	      004faa0a    mov eax,[ebp-30h]"
+"	      004faa0a    mov eax,md"
 "	      004faa0d    mov eax,[eax+0B4h]"
-"	      004faa13    mov ecx,[ebp-30h]"
+"	      004faa13    mov ecx,md"
 "	      004faa16    add eax,[ecx+0B8h]"
-"	      004faa1c    mov ecx,[ebp-30h]"
+"	      004faa1c    mov ecx,md"
 "	      004faa1f    cmp eax,[ecx+94h]"
 "	      004faa25    jge near ptr 004FAA32h"
 );
 // LINE 564:
 	asm( 
-"	      004faa2b    mov dword ptr [ebp-1Ch],0"
+"	      004faa2b    mov criminal_done,0"
 );
 // LINE 567:
 	asm( 
-"	      004faa32    mov eax,[ebp-30h]"
+"	      004faa32    mov eax,md"
 "	      004faa35    test byte ptr [eax+52h],2"
 "	      004faa39    je near ptr 004FAA67h"
 );
 // LINE 572:
 	asm( 
-"	      004faa3f    mov eax,[ebp-30h]"
+"	      004faa3f    mov eax,md"
 "	      004faa42    mov eax,[eax+0B4h]"
-"	      004faa48    mov ecx,[ebp-30h]"
+"	      004faa48    mov ecx,md"
 "	      004faa4b    add eax,[ecx+0B8h]"
-"	      004faa51    mov ecx,[ebp-30h]"
+"	      004faa51    mov ecx,md"
 "	      004faa54    cmp eax,[ecx+94h]"
 "	      004faa5a    jge near ptr 004FAA67h"
 );
 // LINE 573:
 	asm( 
-"	      004faa60    mov dword ptr [ebp-1Ch],0"
+"	      004faa60    mov criminal_done,0"
 );
 // LINE 576:
 	asm( 
-"	      004faa67    mov eax,[ebp-30h]"
+"	      004faa67    mov eax,md"
 "	      004faa6a    test byte ptr [eax+51h],40h"
 "	      004faa6e    je near ptr 004FAA9Ch"
 );
 // LINE 581:
 	asm( 
-"	      004faa74    mov eax,[ebp-30h]"
+"	      004faa74    mov eax,md"
 "	      004faa77    mov eax,[eax+0B4h]"
-"	      004faa7d    mov ecx,[ebp-30h]"
+"	      004faa7d    mov ecx,md"
 "	      004faa80    add eax,[ecx+0B8h]"
-"	      004faa86    mov ecx,[ebp-30h]"
+"	      004faa86    mov ecx,md"
 "	      004faa89    cmp eax,[ecx+94h]"
 "	      004faa8f    jge near ptr 004FAA9Ch"
 );
 // LINE 582:
 	asm( 
-"	      004faa95    mov dword ptr [ebp-1Ch],0"
+"	      004faa95    mov criminal_done,0"
 );
 // LINE 585:
 	asm( 
-"	      004faa9c    mov eax,[ebp-30h]"
+"	      004faa9c    mov eax,md"
 "	      004faa9f    test byte ptr [eax+50h],40h"
 "	      004faaa3    je near ptr 004FAB0Ch"
 );
 // LINE 587:
 	asm( 
-"	      004faaa9    mov eax,[ebp-30h]"
-"	      004faaac    mov ecx,[ebp-30h]"
+"	      004faaa9    mov eax,md"
+"	      004faaac    mov ecx,md"
 "	      004faaaf    mov ecx,[ecx+88h]"
 "	      004faab5    cmp [eax+0A4h],ecx"
 "	      004faabb    jne near ptr 004FAAD5h"
 );
 // LINE 588:
 	asm( 
-"	      004faac1    mov eax,[ebp-30h]"
+"	      004faac1    mov eax,md"
 "	      004faac4    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 589:
 	asm( 
-"	      004faacb    mov eax,[ebp-30h]"
+"	      004faacb    mov eax,md"
 "	      004faace    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 593:
 	asm( 
-"	      004faad5    mov eax,[ebp-30h]"
-"	      004faad8    mov ecx,[ebp-30h]"
+"	      004faad5    mov eax,md"
+"	      004faad8    mov ecx,md"
 "	      004faadb    mov ecx,[ecx+88h]"
 "	      004faae1    cmp [eax+9Ch],ecx"
 "	      004faae7    jne near ptr 004FAB05h"
-"	      004faaed    mov eax,[ebp-30h]"
-"	      004faaf0    mov ecx,[ebp-30h]"
+"	      004faaed    mov eax,md"
+"	      004faaf0    mov ecx,md"
 "	      004faaf3    mov ecx,[ecx+88h]"
 "	      004faaf9    cmp [eax+0A4h],ecx"
 "	      004faaff    je near ptr 004FAB0Ch"
 );
 // LINE 594:
 	asm( 
-"	      004fab05    mov dword ptr [ebp-2Ch],0"
+"	      004fab05    mov persontrans_done,0"
 );
 // LINE 597:
 	asm( 
-"	      004fab0c    mov eax,[ebp-30h]"
+"	      004fab0c    mov eax,md"
 "	      004fab0f    test byte ptr [eax+51h],10h"
 "	      004fab13    je near ptr 004FAB7Fh"
 );
 // LINE 601:
 	asm( 
-"	      004fab19    mov eax,[ebp-30h]"
+"	      004fab19    mov eax,md"
 "	      004fab1c    mov eax,[eax+0ACh]"
-"	      004fab22    mov ecx,[ebp-30h]"
+"	      004fab22    mov ecx,md"
 "	      004fab25    add eax,[ecx+0A8h]"
-"	      004fab2b    mov ecx,[ebp-30h]"
+"	      004fab2b    mov ecx,md"
 "	      004fab2e    cmp eax,[ecx+80h]"
 "	      004fab34    jge near ptr 004FAB41h"
 );
 // LINE 602:
 	asm( 
-"	      004fab3a    mov dword ptr [ebp-34h],0"
+"	      004fab3a    mov personriot_done,0"
 );
 // LINE 604:
 	asm( 
@@ -1301,16 +1301,16 @@ void S3MissionDriver() {
 );
 // LINE 606:
 	asm( 
-"	      004fab58    cmp dword ptr [ebp-34h],0"
+"	      004fab58    cmp personriot_done,0"
 "	      004fab5c    jne near ptr 004FAB79h"
 );
 // LINE 607:
 	asm( 
-"	      004fab62    mov eax,[ebp-18h]"
+"	      004fab62    mov eax,i"
 "	      004fab65    push eax"
 "	      004fab66    call 005566AFh"
 "	      004fab6b    add esp,4"
-"	      004fab6e    mov ecx,[ebp-30h]"
+"	      004fab6e    mov ecx,md"
 "	      004fab71    add ecx,28h"
 "	      004fab74    mov [ecx],eax"
 "	      004fab76    mov [ecx+4],edx"
@@ -1321,72 +1321,72 @@ void S3MissionDriver() {
 );
 // LINE 612:
 	asm( 
-"	      004fab7f    mov eax,[ebp-30h]"
+"	      004fab7f    mov eax,md"
 "	      004fab82    test byte ptr [eax+51h],4"
 "	      004fab86    je near ptr 004FABB4h"
 );
 // LINE 615:
 	asm( 
-"	      004fab8c    mov eax,[ebp-30h]"
+"	      004fab8c    mov eax,md"
 "	      004fab8f    mov eax,[eax+0C8h]"
-"	      004fab95    mov ecx,[ebp-30h]"
+"	      004fab95    mov ecx,md"
 "	      004fab98    add eax,[ecx+0CCh]"
-"	      004fab9e    mov ecx,[ebp-30h]"
+"	      004fab9e    mov ecx,md"
 "	      004faba1    cmp eax,[ecx+0C0h]"
 "	      004faba7    jge near ptr 004FABB4h"
 );
 // LINE 616:
 	asm( 
-"	      004fabad    mov dword ptr [ebp-0Ch],0"
+"	      004fabad    mov vehiclefire_done,0"
 );
 // LINE 619:
 	asm( 
-"	      004fabb4    mov eax,[ebp-30h]"
+"	      004fabb4    mov eax,md"
 "	      004fabb7    test byte ptr [eax+51h],8"
 "	      004fabbb    je near ptr 004FABE9h"
 );
 // LINE 622:
 	asm( 
-"	      004fabc1    mov eax,[ebp-30h]"
+"	      004fabc1    mov eax,md"
 "	      004fabc4    mov eax,[eax+0D0h]"
-"	      004fabca    mov ecx,[ebp-30h]"
+"	      004fabca    mov ecx,md"
 "	      004fabcd    add eax,[ecx+0CCh]"
-"	      004fabd3    mov ecx,[ebp-30h]"
+"	      004fabd3    mov ecx,md"
 "	      004fabd6    cmp eax,[ecx+0C4h]"
 "	      004fabdc    jge near ptr 004FABE9h"
 );
 // LINE 623:
 	asm( 
-"	      004fabe2    mov dword ptr [ebp-4],0"
+"	      004fabe2    mov vehiclejam_done,0"
 );
 // LINE 636:
 	asm( 
-"	      004fabe9    cmp dword ptr [ebp-10h],1"
+"	      004fabe9    cmp fires_done,1"
 "	      004fabed    jne near ptr 004FAC63h"
-"	      004fabf3    cmp dword ptr [ebp-20h],1"
+"	      004fabf3    cmp debris_done,1"
 "	      004fabf7    jne near ptr 004FAC63h"
-"	      004fabfd    cmp dword ptr [ebp-34h],1"
+"	      004fabfd    cmp personriot_done,1"
 "	      004fac01    jne near ptr 004FAC63h"
-"	      004fac07    cmp dword ptr [ebp-14h],1"
+"	      004fac07    cmp personmed_done,1"
 "	      004fac0b    jne near ptr 004FAC63h"
-"	      004fac11    cmp dword ptr [ebp-2Ch],1"
+"	      004fac11    cmp persontrans_done,1"
 "	      004fac15    jne near ptr 004FAC63h"
-"	      004fac1b    cmp dword ptr [ebp-8],1"
+"	      004fac1b    cmp personresc_done,1"
 "	      004fac1f    jne near ptr 004FAC63h"
-"	      004fac25    cmp dword ptr [ebp-28h],1"
+"	      004fac25    cmp personfire_done,1"
 "	      004fac29    jne near ptr 004FAC63h"
-"	      004fac2f    cmp dword ptr [ebp-0Ch],1"
+"	      004fac2f    cmp vehiclefire_done,1"
 "	      004fac33    jne near ptr 004FAC63h"
-"	      004fac39    cmp dword ptr [ebp-4],1"
+"	      004fac39    cmp vehiclejam_done,1"
 "	      004fac3d    jne near ptr 004FAC63h"
-"	      004fac43    cmp dword ptr [ebp-1Ch],1"
+"	      004fac43    cmp criminal_done,1"
 "	      004fac47    jne near ptr 004FAC63h"
-"	      004fac4d    cmp dword ptr [ebp-24h],1"
+"	      004fac4d    cmp speeder_done,1"
 "	      004fac51    jne near ptr 004FAC63h"
 );
 // LINE 638:
 	asm( 
-"	      004fac57    mov eax,[ebp-18h]"
+"	      004fac57    mov eax,i"
 "	      004fac5a    push eax"
 "	      004fac5b    call 004FC218h"
 "	      004fac60    add esp,4"
@@ -1425,19 +1425,19 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 659:
 	asm( 
-"	      004fac76    mov dword ptr [ebp-10h],0"
+"	      004fac76    mov startthismission,0"
 );
 // LINE 663:
 	asm( 
-"	      004fac7d    mov dword ptr [ebp-0Ch],0"
+"	      004fac7d    mov i,0"
 "	      004fac84    jmp near ptr 004FAC8Ch"
-"	      004fac89    inc dword ptr [ebp-0Ch]"
-"	      004fac8c    cmp dword ptr [ebp-0Ch],1Eh"
+"	      004fac89    inc i"
+"	      004fac8c    cmp i,1Eh"
 "	      004fac90    jge near ptr 004FACD7h"
 );
 // LINE 665:
 	asm( 
-"	      004fac96    mov eax,[ebp-0Ch]"
+"	      004fac96    mov eax,i"
 "	      004fac99    mov ecx,eax"
 "	      004fac9b    lea eax,[eax+eax*2]"
 "	      004fac9e    lea eax,[ecx+eax*4]"
@@ -1447,14 +1447,14 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 667:
 	asm( 
-"	      004facb2    mov eax,[ebp-0Ch]"
+"	      004facb2    mov eax,i"
 "	      004facb5    mov ecx,eax"
 "	      004facb7    lea eax,[eax+eax*2]"
 "	      004facba    lea eax,[ecx+eax*4]"
 "	      004facbd    lea eax,[ecx+eax*4]"
 "	      004facc0    lea eax,[eax*4+6072B8h]"
 "	      004facc7    add eax,38h"
-"	      004facca    mov [ebp-18h],eax"
+"	      004facca    mov md,eax"
 );
 // LINE 668:
 	asm( 
@@ -1466,7 +1466,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 673:
 	asm( 
-"	      004facd7    cmp dword ptr [ebp-0Ch],1Eh"
+"	      004facd7    cmp i,1Eh"
 "	      004facdb    jne near ptr 004FACEBh"
 );
 // LINE 674:
@@ -1476,74 +1476,74 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 676:
 	asm( 
-"	      004faceb    mov edi,[ebp-18h]"
+"	      004faceb    mov edi,md"
 "	      004facee    xor eax,eax"
 "	      004facf0    mov ecx,35h"
 "	      004facf5    rep stosd"
 );
 // LINE 677:
 	asm( 
-"	      004facf7    mov eax,[ebp-18h]"
+"	      004facf7    mov eax,md"
 "	      004facfa    mov dword ptr [eax+4Ch],1"
 );
 // LINE 678:
 	asm( 
-"	      004fad01    mov eax,[ebp+8]"
-"	      004fad04    mov ecx,[ebp-18h]"
+"	      004fad01    mov eax,x"
+"	      004fad04    mov ecx,md"
 "	      004fad07    mov [ecx+28h],eax"
 );
 // LINE 679:
 	asm( 
-"	      004fad0a    mov eax,[ebp+0Ch]"
-"	      004fad0d    mov ecx,[ebp-18h]"
+"	      004fad0a    mov eax,y"
+"	      004fad0d    mov ecx,md"
 "	      004fad10    mov [ecx+2Ch],eax"
 );
 // LINE 680:
 	asm( 
-"	      004fad13    mov eax,[ebp-18h]"
+"	      004fad13    mov eax,md"
 "	      004fad16    mov dword ptr [eax+30h],0FFFFFFFFh"
 );
 // LINE 681:
 	asm( 
-"	      004fad1d    mov eax,[ebp-18h]"
+"	      004fad1d    mov eax,md"
 "	      004fad20    mov dword ptr [eax+34h],0FFFFFFFFh"
 );
 // LINE 682:
 	asm( 
-"	      004fad27    mov eax,[ebp-18h]"
+"	      004fad27    mov eax,md"
 "	      004fad2a    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 683:
 	asm( 
-"	      004fad31    mov eax,[ebp-18h]"
+"	      004fad31    mov eax,md"
 "	      004fad34    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 684:
 	asm( 
-"	      004fad3b    mov eax,[ebp+10h]"
-"	      004fad3e    mov ecx,[ebp-18h]"
+"	      004fad3b    mov eax,type"
+"	      004fad3e    mov ecx,md"
 "	      004fad41    mov [ecx+50h],eax"
 );
 // LINE 685:
 	asm( 
-"	      004fad44    mov eax,[ebp-18h]"
+"	      004fad44    mov eax,md"
 "	      004fad47    mov dword ptr [eax+54h],0"
 );
 // LINE 686:
 	asm( 
-"	      004fad4e    mov eax,[ebp-18h]"
+"	      004fad4e    mov eax,md"
 "	      004fad51    mov dword ptr [eax+40h],0"
 );
 // LINE 687:
 	asm( 
 "	      004fad58    mov eax,ds:[6072E8h]"
-"	      004fad5d    mov ecx,[ebp-18h]"
+"	      004fad5d    mov ecx,md"
 "	      004fad60    mov [ecx+24h],eax"
 "	      004fad63    inc dword ptr ds:[6072E8h]"
 );
 // LINE 689:
 	asm( 
-"	      004fad69    mov eax,[ebp+10h]"
+"	      004fad69    mov eax,type"
 "	      004fad6c    mov [ebp-2Ch],eax"
 "	      004fad6f    jmp near ptr 004FB9CFh"
 );
@@ -1556,15 +1556,15 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fad74    push 1000h"
 "	      004fad79    call 004FC323h"
 "	      004fad7e    add esp,4"
-"	      004fad81    cmp eax,[ebp-0Ch]"
+"	      004fad81    cmp eax,i"
 "	      004fad84    je near ptr 004FADA9h"
 );
 // LINE 694:
 	asm( 
-"	      004fad8a    mov eax,[ebp-18h]"
+"	      004fad8a    mov eax,md"
 "	      004fad8d    mov eax,[eax+4Ch]"
 "	      004fad90    and eax,0FFFFFFFEh"
-"	      004fad93    mov ecx,[ebp-18h]"
+"	      004fad93    mov ecx,md"
 "	      004fad96    mov [ecx+4Ch],eax"
 "	      004fad99    dec dword ptr ds:[6072E8h]"
 "	      004fad9f    mov eax,0FFFFFFFFh"
@@ -1572,26 +1572,26 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 695:
 	asm( 
-"	      004fada9    mov dword ptr [ebp-24h],14h"
+"	      004fada9    mov numtostart,14h"
 );
 // LINE 696:
 	asm( 
-"	      004fadb0    mov dword ptr [ebp-1Ch],0"
+"	      004fadb0    mov numstarted,0"
 );
 // LINE 697:
 	asm( 
-"	      004fadb7    mov dword ptr [ebp-20h],0"
+"	      004fadb7    mov count,0"
 "	      004fadbe    jmp near ptr 004FADC6h"
-"	      004fadc3    inc dword ptr [ebp-20h]"
-"	      004fadc6    mov eax,[ebp-24h]"
-"	      004fadc9    cmp [ebp-20h],eax"
+"	      004fadc3    inc count"
+"	      004fadc6    mov eax,numtostart"
+"	      004fadc9    cmp count,eax"
 "	      004fadcc    jge near ptr 004FAE3Ch"
 );
 // LINE 703:
 	asm( 
 "	      004fadd2    push 0"
 "	      004fadd4    push 0"
-"	      004fadd6    mov eax,[ebp-18h]"
+"	      004fadd6    mov eax,md"
 "	      004fadd9    mov eax,[eax+24h]"
 "	      004faddc    push eax"
 "	      004faddd    movzx ax,byte ptr [ebp+0Ch]"
@@ -1608,21 +1608,21 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 704:
 	asm( 
-"	      004fae01    inc dword ptr [ebp-1Ch]"
+"	      004fae01    inc numstarted"
 );
 // LINE 706:
 	asm( 
-"	      004fae04    cmp dword ptr [ebp-20h],4"
+"	      004fae04    cmp count,4"
 "	      004fae08    jle near ptr 004FAE37h"
-"	      004fae0e    cmp dword ptr [ebp-1Ch],0"
+"	      004fae0e    cmp numstarted,0"
 "	      004fae12    jne near ptr 004FAE37h"
 );
 // LINE 707:
 	asm( 
-"	      004fae18    mov eax,[ebp-18h]"
+"	      004fae18    mov eax,md"
 "	      004fae1b    mov eax,[eax+4Ch]"
 "	      004fae1e    and eax,0FFFFFFFEh"
-"	      004fae21    mov ecx,[ebp-18h]"
+"	      004fae21    mov ecx,md"
 "	      004fae24    mov [ecx+4Ch],eax"
 "	      004fae27    dec dword ptr ds:[6072E8h]"
 "	      004fae2d    mov eax,0FFFFFFFFh"
@@ -1634,13 +1634,13 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 710:
 	asm( 
-"	      004fae3c    cmp dword ptr [ebp-1Ch],0Ah"
+"	      004fae3c    cmp numstarted,0Ah"
 "	      004fae40    jle near ptr 004FAE62h"
 );
 // LINE 711:
 	asm( 
-"	      004fae46    mov eax,[ebp-18h]"
-"	      004fae49    mov ecx,[ebp-1Ch]"
+"	      004fae46    mov eax,md"
+"	      004fae49    mov ecx,numstarted"
 "	      004fae4c    cmp [eax+80h],ecx"
 "	      004fae52    jne near ptr 004FAE5Dh"
 "	      004fae58    jmp near ptr 004FAE5Dh"
@@ -1651,10 +1651,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 713:
 	asm( 
-"	      004fae62    mov eax,[ebp-18h]"
+"	      004fae62    mov eax,md"
 "	      004fae65    mov eax,[eax+4Ch]"
 "	      004fae68    and eax,0FFFFFFFEh"
-"	      004fae6b    mov ecx,[ebp-18h]"
+"	      004fae6b    mov ecx,md"
 "	      004fae6e    mov [ecx+4Ch],eax"
 "	      004fae71    dec dword ptr ds:[6072E8h]"
 "	      004fae77    mov eax,0FFFFFFFFh"
@@ -1662,31 +1662,31 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 724:
 	asm( 
-"	      004fae81    mov eax,[ebp-18h]"
+"	      004fae81    mov eax,md"
 "	      004fae84    mov eax,[eax+24h]"
 "	      004fae87    push eax"
 "	      004fae88    call 005566AFh"
 "	      004fae8d    add esp,4"
-"	      004fae90    mov ecx,[ebp-18h]"
+"	      004fae90    mov ecx,md"
 "	      004fae93    add ecx,28h"
 "	      004fae96    mov [ecx],eax"
 "	      004fae98    mov [ecx+4],edx"
 );
 // LINE 727:
 	asm( 
-"	      004fae9b    mov eax,[ebp-18h]"
+"	      004fae9b    mov eax,md"
 "	      004fae9e    mov dword ptr [eax+34h],0FFFFFFFFh"
-"	      004faea5    mov eax,[ebp-18h]"
+"	      004faea5    mov eax,md"
 "	      004faea8    mov eax,[eax+34h]"
-"	      004faeab    mov ecx,[ebp-18h]"
+"	      004faeab    mov ecx,md"
 "	      004faeae    mov [ecx+30h],eax"
-"	      004faeb1    mov eax,[ebp-18h]"
+"	      004faeb1    mov eax,md"
 "	      004faeb4    mov eax,[eax+30h]"
-"	      004faeb7    mov ecx,[ebp-18h]"
+"	      004faeb7    mov ecx,md"
 "	      004faeba    mov [ecx+3Ch],eax"
-"	      004faebd    mov eax,[ebp-18h]"
+"	      004faebd    mov eax,md"
 "	      004faec0    mov eax,[eax+3Ch]"
-"	      004faec3    mov ecx,[ebp-18h]"
+"	      004faec3    mov ecx,md"
 "	      004faec6    mov [ecx+38h],eax"
 );
 // LINE 728:
@@ -1694,7 +1694,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004faec9    mov eax,ds:[6072CCh]"
 "	      004faece    push eax"
 "	      004faecf    push 5B4F20h"
-"	      004faed4    mov eax,[ebp-18h]"
+"	      004faed4    mov eax,md"
 "	      004faed7    push eax"
 "	      004faed8    call 0056CD30h"
 "	      004faedd    add esp,0Ch"
@@ -1702,18 +1702,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 729:
 	asm( 
 "	      004faee0    mov eax,ds:[6072CCh]"
-"	      004faee5    mov ecx,[ebp-18h]"
+"	      004faee5    mov ecx,md"
 "	      004faee8    mov [ecx+20h],eax"
 "	      004faeeb    inc dword ptr ds:[6072CCh]"
 );
 // LINE 731:
 	asm( 
-"	      004faef1    mov eax,[ebp+10h]"
+"	      004faef1    mov eax,type"
 "	      004faef4    push eax"
-"	      004faef5    mov eax,[ebp-18h]"
+"	      004faef5    mov eax,md"
 "	      004faef8    mov eax,[eax+2Ch]"
 "	      004faefb    push eax"
-"	      004faefc    mov eax,[ebp-18h]"
+"	      004faefc    mov eax,md"
 "	      004faeff    mov eax,[eax+28h]"
 "	      004faf02    push eax"
 "	      004faf03    call 004FDDF5h"
@@ -1726,35 +1726,35 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 739:
 // Block end:
 	asm( 
-"	      004faf10    mov dword ptr [ebp-10h],0"
+"	      004faf10    mov startthismission,0"
 );
 // LINE 740:
 	asm( 
-"	      004faf17    mov eax,[ebp+8]"
-"	      004faf1a    mov ecx,[ebp-18h]"
+"	      004faf17    mov eax,x"
+"	      004faf1a    mov ecx,md"
 "	      004faf1d    mov [ecx+28h],eax"
 );
 // LINE 741:
 	asm( 
-"	      004faf20    mov eax,[ebp+0Ch]"
-"	      004faf23    mov ecx,[ebp-18h]"
+"	      004faf20    mov eax,y"
+"	      004faf23    mov ecx,md"
 "	      004faf26    mov [ecx+2Ch],eax"
 );
 // LINE 745:
 	asm( 
-"	      004faf29    mov eax,[ebp-18h]"
+"	      004faf29    mov eax,md"
 "	      004faf2c    mov dword ptr [eax+34h],0FFFFFFFFh"
-"	      004faf33    mov eax,[ebp-18h]"
+"	      004faf33    mov eax,md"
 "	      004faf36    mov eax,[eax+34h]"
-"	      004faf39    mov ecx,[ebp-18h]"
+"	      004faf39    mov ecx,md"
 "	      004faf3c    mov [ecx+30h],eax"
-"	      004faf3f    mov eax,[ebp-18h]"
+"	      004faf3f    mov eax,md"
 "	      004faf42    mov eax,[eax+30h]"
-"	      004faf45    mov ecx,[ebp-18h]"
+"	      004faf45    mov ecx,md"
 "	      004faf48    mov [ecx+3Ch],eax"
-"	      004faf4b    mov eax,[ebp-18h]"
+"	      004faf4b    mov eax,md"
 "	      004faf4e    mov eax,[eax+3Ch]"
-"	      004faf51    mov ecx,[ebp-18h]"
+"	      004faf51    mov ecx,md"
 "	      004faf54    mov [ecx+38h],eax"
 );
 // LINE 747:
@@ -1765,28 +1765,28 @@ long S3MissionStart(long x, long y, long type) {
 "	      004faf64    cdq"
 "	      004faf65    idiv ecx"
 "	      004faf67    lea eax,[edx+3]"
-"	      004faf6a    mov [ebp-14h],eax"
+"	      004faf6a    mov numtostart,eax"
 );
 // LINE 748:
 	asm( 
-"	      004faf6d    mov dword ptr [ebp-8],0"
+"	      004faf6d    mov count,0"
 "	      004faf74    jmp near ptr 004FAF7Ch"
-"	      004faf79    inc dword ptr [ebp-8]"
-"	      004faf7c    mov eax,[ebp-8]"
-"	      004faf7f    cmp [ebp-14h],eax"
+"	      004faf79    inc count"
+"	      004faf7c    mov eax,count"
+"	      004faf7f    cmp numtostart,eax"
 "	      004faf82    jle near ptr 004FAFCEh"
 );
 // LINE 754:
 	asm( 
 "	      004faf88    push 0"
 "	      004faf8a    push 0"
-"	      004faf8c    mov eax,[ebp-18h]"
+"	      004faf8c    mov eax,md"
 "	      004faf8f    mov eax,[eax+24h]"
 "	      004faf92    push eax"
-"	      004faf93    mov eax,[ebp-18h]"
+"	      004faf93    mov eax,md"
 "	      004faf96    mov eax,[eax+2Ch]"
 "	      004faf99    push eax"
-"	      004faf9a    mov eax,[ebp-18h]"
+"	      004faf9a    mov eax,md"
 "	      004faf9d    mov eax,[eax+28h]"
 "	      004fafa0    push eax"
 "	      004fafa1    push 2"
@@ -1799,12 +1799,12 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 756:
 	asm( 
-"	      004fafb9    mov eax,[ebp-18h]"
+"	      004fafb9    mov eax,md"
 "	      004fafbc    inc dword ptr [eax+8Ch]"
 );
 // LINE 757:
 	asm( 
-"	      004fafc2    mov dword ptr [ebp-10h],1"
+"	      004fafc2    mov startthismission,1"
 );
 // LINE 759:
 	asm( 
@@ -1812,7 +1812,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 761:
 	asm( 
-"	      004fafce    cmp dword ptr [ebp-10h],0"
+"	      004fafce    cmp startthismission,0"
 "	      004fafd2    je near ptr 004FB01Fh"
 );
 // LINE 763:
@@ -1820,7 +1820,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fafd8    mov eax,ds:[6072C8h]"
 "	      004fafdd    push eax"
 "	      004fafde    push 5B4F28h"
-"	      004fafe3    mov eax,[ebp-18h]"
+"	      004fafe3    mov eax,md"
 "	      004fafe6    push eax"
 "	      004fafe7    call 0056CD30h"
 "	      004fafec    add esp,0Ch"
@@ -1828,18 +1828,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 764:
 	asm( 
 "	      004fafef    mov eax,ds:[6072C8h]"
-"	      004faff4    mov ecx,[ebp-18h]"
+"	      004faff4    mov ecx,md"
 "	      004faff7    mov [ecx+20h],eax"
 "	      004faffa    inc dword ptr ds:[6072C8h]"
 );
 // LINE 767:
 	asm( 
-"	      004fb000    mov eax,[ebp+10h]"
+"	      004fb000    mov eax,type"
 "	      004fb003    push eax"
-"	      004fb004    mov eax,[ebp-18h]"
+"	      004fb004    mov eax,md"
 "	      004fb007    mov eax,[eax+2Ch]"
 "	      004fb00a    push eax"
-"	      004fb00b    mov eax,[ebp-18h]"
+"	      004fb00b    mov eax,md"
 "	      004fb00e    mov eax,[eax+28h]"
 "	      004fb011    push eax"
 "	      004fb012    call 004FDDF5h"
@@ -1851,10 +1851,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 772:
 	asm( 
-"	      004fb01f    mov eax,[ebp-18h]"
+"	      004fb01f    mov eax,md"
 "	      004fb022    mov eax,[eax+4Ch]"
 "	      004fb025    and eax,0FFFFFFFEh"
-"	      004fb028    mov ecx,[ebp-18h]"
+"	      004fb028    mov ecx,md"
 "	      004fb02b    mov [ecx+4Ch],eax"
 "	      004fb02e    dec dword ptr ds:[6072E8h]"
 "	      004fb034    mov eax,0FFFFFFFFh"
@@ -1869,24 +1869,24 @@ long S3MissionStart(long x, long y, long type) {
 	struct _DYOBJ_INST* boat;
 	asm( 
 "	      004fb043    push 12C0000h"
-"	      004fb048    mov eax,[ebp-18h]"
+"	      004fb048    mov eax,md"
 "	      004fb04b    mov eax,[eax+24h]"
 "	      004fb04e    push eax"
 "	      004fb04f    call 0052AD37h"
 "	      004fb054    add esp,8"
-"	      004fb057    mov [ebp-28h],eax"
+"	      004fb057    mov boat,eax"
 );
 // LINE 780:
 	asm( 
-"	      004fb05a    cmp dword ptr [ebp-28h],0"
+"	      004fb05a    cmp boat,0"
 "	      004fb05e    jne near ptr 004FB083h"
 );
 // LINE 781:
 	asm( 
-"	      004fb064    mov eax,[ebp-18h]"
+"	      004fb064    mov eax,md"
 "	      004fb067    mov eax,[eax+4Ch]"
 "	      004fb06a    and eax,0FFFFFFFEh"
-"	      004fb06d    mov ecx,[ebp-18h]"
+"	      004fb06d    mov ecx,md"
 "	      004fb070    mov [ecx+4Ch],eax"
 "	      004fb073    dec dword ptr ds:[6072E8h]"
 "	      004fb079    mov eax,0FFFFFFFFh"
@@ -1894,11 +1894,11 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 785:
 	asm( 
-"	      004fb083    mov eax,[ebp-18h]"
+"	      004fb083    mov eax,md"
 "	      004fb086    mov dword ptr [eax+30h],0FFFFFFFFh"
-"	      004fb08d    mov eax,[ebp-18h]"
+"	      004fb08d    mov eax,md"
 "	      004fb090    mov eax,[eax+30h]"
-"	      004fb093    mov ecx,[ebp-18h]"
+"	      004fb093    mov ecx,md"
 "	      004fb096    mov [ecx+38h],eax"
 );
 // LINE 786:
@@ -1906,7 +1906,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb099    mov eax,ds:[6072C8h]"
 "	      004fb09e    push eax"
 "	      004fb09f    push 5B4F3Ch"
-"	      004fb0a4    mov eax,[ebp-18h]"
+"	      004fb0a4    mov eax,md"
 "	      004fb0a7    push eax"
 "	      004fb0a8    call 0056CD30h"
 "	      004fb0ad    add esp,0Ch"
@@ -1914,18 +1914,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 787:
 	asm( 
 "	      004fb0b0    mov eax,ds:[6072C8h]"
-"	      004fb0b5    mov ecx,[ebp-18h]"
+"	      004fb0b5    mov ecx,md"
 "	      004fb0b8    mov [ecx+20h],eax"
 "	      004fb0bb    inc dword ptr ds:[6072C8h]"
 );
 // LINE 789:
 	asm( 
-"	      004fb0c1    mov eax,[ebp+10h]"
+"	      004fb0c1    mov eax,type"
 "	      004fb0c4    push eax"
-"	      004fb0c5    mov eax,[ebp-18h]"
+"	      004fb0c5    mov eax,md"
 "	      004fb0c8    mov eax,[eax+2Ch]"
 "	      004fb0cb    push eax"
-"	      004fb0cc    mov eax,[ebp-18h]"
+"	      004fb0cc    mov eax,md"
 "	      004fb0cf    mov eax,[eax+28h]"
 "	      004fb0d2    push eax"
 "	      004fb0d3    call 004FDDF5h"
@@ -1939,7 +1939,7 @@ long S3MissionStart(long x, long y, long type) {
 // Block end:
 	asm( 
 "	      004fb0e0    push 12C0000h"
-"	      004fb0e5    mov eax,[ebp-18h]"
+"	      004fb0e5    mov eax,md"
 "	      004fb0e8    mov eax,[eax+24h]"
 "	      004fb0eb    push eax"
 "	      004fb0ec    call 00534365h"
@@ -1949,10 +1949,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 797:
 	asm( 
-"	      004fb0fc    mov eax,[ebp-18h]"
+"	      004fb0fc    mov eax,md"
 "	      004fb0ff    mov eax,[eax+4Ch]"
 "	      004fb102    and eax,0FFFFFFFEh"
-"	      004fb105    mov ecx,[ebp-18h]"
+"	      004fb105    mov ecx,md"
 "	      004fb108    mov [ecx+4Ch],eax"
 "	      004fb10b    dec dword ptr ds:[6072E8h]"
 "	      004fb111    mov eax,0FFFFFFFFh"
@@ -1960,11 +1960,11 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 802:
 	asm( 
-"	      004fb11b    mov eax,[ebp-18h]"
+"	      004fb11b    mov eax,md"
 "	      004fb11e    mov dword ptr [eax+30h],0FFFFFFFFh"
-"	      004fb125    mov eax,[ebp-18h]"
+"	      004fb125    mov eax,md"
 "	      004fb128    mov eax,[eax+30h]"
-"	      004fb12b    mov ecx,[ebp-18h]"
+"	      004fb12b    mov ecx,md"
 "	      004fb12e    mov [ecx+38h],eax"
 );
 // LINE 803:
@@ -1972,7 +1972,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb131    mov eax,ds:[6072C8h]"
 "	      004fb136    push eax"
 "	      004fb137    push 5B4F4Ch"
-"	      004fb13c    mov eax,[ebp-18h]"
+"	      004fb13c    mov eax,md"
 "	      004fb13f    push eax"
 "	      004fb140    call 0056CD30h"
 "	      004fb145    add esp,0Ch"
@@ -1980,18 +1980,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 804:
 	asm( 
 "	      004fb148    mov eax,ds:[6072C8h]"
-"	      004fb14d    mov ecx,[ebp-18h]"
+"	      004fb14d    mov ecx,md"
 "	      004fb150    mov [ecx+20h],eax"
 "	      004fb153    inc dword ptr ds:[6072C8h]"
 );
 // LINE 806:
 	asm( 
-"	      004fb159    mov eax,[ebp+10h]"
+"	      004fb159    mov eax,type"
 "	      004fb15c    push eax"
-"	      004fb15d    mov eax,[ebp-18h]"
+"	      004fb15d    mov eax,md"
 "	      004fb160    mov eax,[eax+2Ch]"
 "	      004fb163    push eax"
-"	      004fb164    mov eax,[ebp-18h]"
+"	      004fb164    mov eax,md"
 "	      004fb167    mov eax,[eax+28h]"
 "	      004fb16a    push eax"
 "	      004fb16b    call 004FDDF5h"
@@ -2008,10 +2008,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 812:
 	asm( 
-"	      004fb185    mov eax,[ebp-18h]"
+"	      004fb185    mov eax,md"
 "	      004fb188    mov eax,[eax+4Ch]"
 "	      004fb18b    and eax,0FFFFFFFEh"
-"	      004fb18e    mov ecx,[ebp-18h]"
+"	      004fb18e    mov ecx,md"
 "	      004fb191    mov [ecx+4Ch],eax"
 "	      004fb194    dec dword ptr ds:[6072E8h]"
 "	      004fb19a    mov eax,0FFFFFFFFh"
@@ -2019,24 +2019,24 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 813:
 	asm( 
-"	      004fb1a4    mov eax,[ebp-18h]"
+"	      004fb1a4    mov eax,md"
 "	      004fb1a7    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 814:
 	asm( 
-"	      004fb1ae    mov eax,[ebp-18h]"
+"	      004fb1ae    mov eax,md"
 "	      004fb1b1    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 816:
 	asm( 
-"	      004fb1b8    mov eax,[ebp+8]"
-"	      004fb1bb    mov ecx,[ebp-18h]"
+"	      004fb1b8    mov eax,x"
+"	      004fb1bb    mov ecx,md"
 "	      004fb1be    mov [ecx+28h],eax"
 );
 // LINE 817:
 	asm( 
-"	      004fb1c1    mov eax,[ebp+0Ch]"
-"	      004fb1c4    mov ecx,[ebp-18h]"
+"	      004fb1c1    mov eax,y"
+"	      004fb1c4    mov ecx,md"
 "	      004fb1c7    mov [ecx+2Ch],eax"
 );
 // LINE 819:
@@ -2046,10 +2046,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 820:
 	asm( 
-"	      004fb1d7    mov eax,[ebp-18h]"
+"	      004fb1d7    mov eax,md"
 "	      004fb1da    mov eax,[eax+4Ch]"
 "	      004fb1dd    and eax,0FFFFFFFEh"
-"	      004fb1e0    mov ecx,[ebp-18h]"
+"	      004fb1e0    mov ecx,md"
 "	      004fb1e3    mov [ecx+4Ch],eax"
 "	      004fb1e6    dec dword ptr ds:[6072E8h]"
 "	      004fb1ec    mov eax,0FFFFFFFFh"
@@ -2059,13 +2059,13 @@ long S3MissionStart(long x, long y, long type) {
 	asm( 
 "	      004fb1f6    push 0"
 "	      004fb1f8    push 0"
-"	      004fb1fa    mov eax,[ebp-18h]"
+"	      004fb1fa    mov eax,md"
 "	      004fb1fd    mov eax,[eax+24h]"
 "	      004fb200    push eax"
-"	      004fb201    mov eax,[ebp-18h]"
+"	      004fb201    mov eax,md"
 "	      004fb204    mov eax,[eax+2Ch]"
 "	      004fb207    push eax"
-"	      004fb208    mov eax,[ebp-18h]"
+"	      004fb208    mov eax,md"
 "	      004fb20b    mov eax,[eax+28h]"
 "	      004fb20e    push eax"
 "	      004fb20f    push 6"
@@ -2078,10 +2078,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 828:
 	asm( 
-"	      004fb227    mov eax,[ebp-18h]"
+"	      004fb227    mov eax,md"
 "	      004fb22a    mov eax,[eax+4Ch]"
 "	      004fb22d    and eax,0FFFFFFFEh"
-"	      004fb230    mov ecx,[ebp-18h]"
+"	      004fb230    mov ecx,md"
 "	      004fb233    mov [ecx+4Ch],eax"
 "	      004fb236    dec dword ptr ds:[6072E8h]"
 "	      004fb23c    mov eax,0FFFFFFFFh"
@@ -2089,7 +2089,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 840:
 	asm( 
-"	      004fb246    mov eax,[ebp-18h]"
+"	      004fb246    mov eax,md"
 "	      004fb249    mov dword ptr [eax+84h],1"
 );
 // LINE 843:
@@ -2097,7 +2097,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb253    mov eax,ds:[6072C0h]"
 "	      004fb258    push eax"
 "	      004fb259    push 5B4F5Ch"
-"	      004fb25e    mov eax,[ebp-18h]"
+"	      004fb25e    mov eax,md"
 "	      004fb261    push eax"
 "	      004fb262    call 0056CD30h"
 "	      004fb267    add esp,0Ch"
@@ -2105,18 +2105,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 844:
 	asm( 
 "	      004fb26a    mov eax,ds:[6072C0h]"
-"	      004fb26f    mov ecx,[ebp-18h]"
+"	      004fb26f    mov ecx,md"
 "	      004fb272    mov [ecx+20h],eax"
 "	      004fb275    inc dword ptr ds:[6072C0h]"
 );
 // LINE 847:
 	asm( 
-"	      004fb27b    mov eax,[ebp+10h]"
+"	      004fb27b    mov eax,type"
 "	      004fb27e    push eax"
-"	      004fb27f    mov eax,[ebp-18h]"
+"	      004fb27f    mov eax,md"
 "	      004fb282    mov eax,[eax+2Ch]"
 "	      004fb285    push eax"
-"	      004fb286    mov eax,[ebp-18h]"
+"	      004fb286    mov eax,md"
 "	      004fb289    mov eax,[eax+28h]"
 "	      004fb28c    push eax"
 "	      004fb28d    call 004FDDF5h"
@@ -2128,18 +2128,18 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 853:
 	asm( 
-"	      004fb29a    mov dword ptr [ebp-10h],0"
+"	      004fb29a    mov startthismission,0"
 );
 // LINE 855:
 	asm( 
-"	      004fb2a1    mov eax,[ebp+8]"
-"	      004fb2a4    mov ecx,[ebp-18h]"
+"	      004fb2a1    mov eax,x"
+"	      004fb2a4    mov ecx,md"
 "	      004fb2a7    mov [ecx+38h],eax"
 );
 // LINE 856:
 	asm( 
-"	      004fb2aa    mov eax,[ebp+0Ch]"
-"	      004fb2ad    mov ecx,[ebp-18h]"
+"	      004fb2aa    mov eax,y"
+"	      004fb2ad    mov ecx,md"
 "	      004fb2b0    mov [ecx+3Ch],eax"
 );
 // LINE 858:
@@ -2150,28 +2150,28 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb2c0    cdq"
 "	      004fb2c1    idiv ecx"
 "	      004fb2c3    lea eax,[edx+2]"
-"	      004fb2c6    mov [ebp-14h],eax"
+"	      004fb2c6    mov numtostart,eax"
 );
 // LINE 859:
 	asm( 
-"	      004fb2c9    mov dword ptr [ebp-8],0"
+"	      004fb2c9    mov count,0"
 "	      004fb2d0    jmp near ptr 004FB2D8h"
-"	      004fb2d5    inc dword ptr [ebp-8]"
-"	      004fb2d8    mov eax,[ebp-8]"
-"	      004fb2db    cmp [ebp-14h],eax"
+"	      004fb2d5    inc count"
+"	      004fb2d8    mov eax,count"
+"	      004fb2db    cmp numtostart,eax"
 "	      004fb2de    jle near ptr 004FB32Ah"
 );
 // LINE 865:
 	asm( 
 "	      004fb2e4    push 0"
 "	      004fb2e6    push 0"
-"	      004fb2e8    mov eax,[ebp-18h]"
+"	      004fb2e8    mov eax,md"
 "	      004fb2eb    mov eax,[eax+24h]"
 "	      004fb2ee    push eax"
-"	      004fb2ef    mov eax,[ebp-18h]"
+"	      004fb2ef    mov eax,md"
 "	      004fb2f2    mov eax,[eax+3Ch]"
 "	      004fb2f5    push eax"
-"	      004fb2f6    mov eax,[ebp-18h]"
+"	      004fb2f6    mov eax,md"
 "	      004fb2f9    mov eax,[eax+38h]"
 "	      004fb2fc    push eax"
 "	      004fb2fd    push 4"
@@ -2184,12 +2184,12 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 867:
 	asm( 
-"	      004fb315    mov eax,[ebp-18h]"
+"	      004fb315    mov eax,md"
 "	      004fb318    inc dword ptr [eax+88h]"
 );
 // LINE 868:
 	asm( 
-"	      004fb31e    mov dword ptr [ebp-10h],1"
+"	      004fb31e    mov startthismission,1"
 );
 // LINE 870:
 	asm( 
@@ -2197,16 +2197,16 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 872:
 	asm( 
-"	      004fb32a    cmp dword ptr [ebp-10h],0"
+"	      004fb32a    cmp startthismission,0"
 "	      004fb32e    je near ptr 004FB391h"
 );
 // LINE 874:
 	asm( 
-"	      004fb334    mov eax,[ebp-18h]"
+"	      004fb334    mov eax,md"
 "	      004fb337    add eax,28h"
 "	      004fb33a    mov ecx,[eax]"
 "	      004fb33c    mov eax,[eax+4]"
-"	      004fb33f    mov edx,[ebp-18h]"
+"	      004fb33f    mov edx,md"
 "	      004fb342    add edx,30h"
 "	      004fb345    mov [edx],ecx"
 "	      004fb347    mov [edx+4],eax"
@@ -2216,7 +2216,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb34a    mov eax,ds:[6072DCh]"
 "	      004fb34f    push eax"
 "	      004fb350    push 5B4F68h"
-"	      004fb355    mov eax,[ebp-18h]"
+"	      004fb355    mov eax,md"
 "	      004fb358    push eax"
 "	      004fb359    call 0056CD30h"
 "	      004fb35e    add esp,0Ch"
@@ -2224,18 +2224,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 876:
 	asm( 
 "	      004fb361    mov eax,ds:[6072DCh]"
-"	      004fb366    mov ecx,[ebp-18h]"
+"	      004fb366    mov ecx,md"
 "	      004fb369    mov [ecx+20h],eax"
 "	      004fb36c    inc dword ptr ds:[6072DCh]"
 );
 // LINE 879:
 	asm( 
-"	      004fb372    mov eax,[ebp+10h]"
+"	      004fb372    mov eax,type"
 "	      004fb375    push eax"
-"	      004fb376    mov eax,[ebp-18h]"
+"	      004fb376    mov eax,md"
 "	      004fb379    mov eax,[eax+3Ch]"
 "	      004fb37c    push eax"
-"	      004fb37d    mov eax,[ebp-18h]"
+"	      004fb37d    mov eax,md"
 "	      004fb380    mov eax,[eax+38h]"
 "	      004fb383    push eax"
 "	      004fb384    call 004FDDF5h"
@@ -2247,10 +2247,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 884:
 	asm( 
-"	      004fb391    mov eax,[ebp-18h]"
+"	      004fb391    mov eax,md"
 "	      004fb394    mov eax,[eax+4Ch]"
 "	      004fb397    and eax,0FFFFFFFEh"
-"	      004fb39a    mov ecx,[ebp-18h]"
+"	      004fb39a    mov ecx,md"
 "	      004fb39d    mov [ecx+4Ch],eax"
 "	      004fb3a0    dec dword ptr ds:[6072E8h]"
 "	      004fb3a6    mov eax,0FFFFFFFFh"
@@ -2265,7 +2265,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb3b5    mov eax,ds:[6072BCh]"
 "	      004fb3ba    push eax"
 "	      004fb3bb    push 5B4F78h"
-"	      004fb3c0    mov eax,[ebp-18h]"
+"	      004fb3c0    mov eax,md"
 "	      004fb3c3    push eax"
 "	      004fb3c4    call 0056CD30h"
 "	      004fb3c9    add esp,0Ch"
@@ -2273,15 +2273,15 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 889:
 	asm( 
 "	      004fb3cc    mov eax,ds:[6072BCh]"
-"	      004fb3d1    mov ecx,[ebp-18h]"
+"	      004fb3d1    mov ecx,md"
 "	      004fb3d4    mov [ecx+20h],eax"
 "	      004fb3d7    inc dword ptr ds:[6072BCh]"
 );
 // LINE 890:
 	asm( 
 "	      004fb3dd    call 005251D6h"
-"	      004fb3e2    mov [ebp-4],eax"
-"	      004fb3e5    cmp dword ptr [ebp-4],0"
+"	      004fb3e2    mov cfd,eax"
+"	      004fb3e5    cmp cfd,0"
 "	      004fb3e9    jne near ptr 004FB414h"
 );
 // LINE 892:
@@ -2290,10 +2290,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 893:
 	asm( 
-"	      004fb3f5    mov eax,[ebp-18h]"
+"	      004fb3f5    mov eax,md"
 "	      004fb3f8    mov eax,[eax+4Ch]"
 "	      004fb3fb    and eax,0FFFFFFFEh"
-"	      004fb3fe    mov ecx,[ebp-18h]"
+"	      004fb3fe    mov ecx,md"
 "	      004fb401    mov [ecx+4Ch],eax"
 "	      004fb404    dec dword ptr ds:[6072E8h]"
 "	      004fb40a    mov eax,0FFFFFFFFh"
@@ -2301,26 +2301,26 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 895:
 	asm( 
-"	      004fb414    mov eax,[ebp+8]"
+"	      004fb414    mov eax,x"
 "	      004fb417    and eax,0FFh"
 "	      004fb41c    shl eax,0Ah"
-"	      004fb41f    mov ecx,[ebp+0Ch]"
+"	      004fb41f    mov ecx,y"
 "	      004fb422    and ecx,0FFh"
 "	      004fb428    mov eax,[eax+ecx*4+67ED30h]"
-"	      004fb42f    mov ecx,[ebp-4]"
+"	      004fb42f    mov ecx,cfd"
 "	      004fb432    mov [ecx],eax"
 );
 // LINE 896:
 	asm( 
 "	      004fb434    push 1"
-"	      004fb436    mov eax,[ebp-18h]"
+"	      004fb436    mov eax,md"
 "	      004fb439    mov eax,[eax+24h]"
 "	      004fb43c    push eax"
-"	      004fb43d    mov eax,[ebp+0Ch]"
+"	      004fb43d    mov eax,y"
 "	      004fb440    push eax"
-"	      004fb441    mov eax,[ebp+8]"
+"	      004fb441    mov eax,x"
 "	      004fb444    push eax"
-"	      004fb445    mov eax,[ebp-4]"
+"	      004fb445    mov eax,cfd"
 "	      004fb448    push eax"
 "	      004fb449    call 00525624h"
 "	      004fb44e    add esp,14h"
@@ -2333,10 +2333,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 899:
 	asm( 
-"	      004fb45f    mov eax,[ebp-18h]"
+"	      004fb45f    mov eax,md"
 "	      004fb462    mov eax,[eax+4Ch]"
 "	      004fb465    and eax,0FFFFFFFEh"
-"	      004fb468    mov ecx,[ebp-18h]"
+"	      004fb468    mov ecx,md"
 "	      004fb46b    mov [ecx+4Ch],eax"
 "	      004fb46e    dec dword ptr ds:[6072E8h]"
 "	      004fb474    mov eax,0FFFFFFFFh"
@@ -2344,12 +2344,12 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 902:
 	asm( 
-"	      004fb47e    mov eax,[ebp+10h]"
+"	      004fb47e    mov eax,type"
 "	      004fb481    push eax"
-"	      004fb482    mov eax,[ebp-18h]"
+"	      004fb482    mov eax,md"
 "	      004fb485    mov eax,[eax+2Ch]"
 "	      004fb488    push eax"
-"	      004fb489    mov eax,[ebp-18h]"
+"	      004fb489    mov eax,md"
 "	      004fb48c    mov eax,[eax+28h]"
 "	      004fb48f    push eax"
 "	      004fb490    call 004FDDF5h"
@@ -2364,7 +2364,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb49d    mov eax,ds:[6072C4h]"
 "	      004fb4a2    push eax"
 "	      004fb4a3    push 5B4F80h"
-"	      004fb4a8    mov eax,[ebp-18h]"
+"	      004fb4a8    mov eax,md"
 "	      004fb4ab    push eax"
 "	      004fb4ac    call 0056CD30h"
 "	      004fb4b1    add esp,0Ch"
@@ -2372,13 +2372,13 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 907:
 	asm( 
 "	      004fb4b4    mov eax,ds:[6072C4h]"
-"	      004fb4b9    mov ecx,[ebp-18h]"
+"	      004fb4b9    mov ecx,md"
 "	      004fb4bc    mov [ecx+20h],eax"
 "	      004fb4bf    inc dword ptr ds:[6072C4h]"
 );
 // LINE 908:
 	asm( 
-"	      004fb4c5    mov eax,[ebp-18h]"
+"	      004fb4c5    mov eax,md"
 "	      004fb4c8    mov eax,[eax+24h]"
 "	      004fb4cb    push eax"
 "	      004fb4cc    call 0052D6D9h"
@@ -2392,10 +2392,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 911:
 	asm( 
-"	      004fb4e2    mov eax,[ebp-18h]"
+"	      004fb4e2    mov eax,md"
 "	      004fb4e5    mov eax,[eax+4Ch]"
 "	      004fb4e8    and eax,0FFFFFFFEh"
-"	      004fb4eb    mov ecx,[ebp-18h]"
+"	      004fb4eb    mov ecx,md"
 "	      004fb4ee    mov [ecx+4Ch],eax"
 "	      004fb4f1    dec dword ptr ds:[6072E8h]"
 "	      004fb4f7    mov eax,0FFFFFFFFh"
@@ -2403,7 +2403,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 913:
 	asm( 
-"	      004fb501    mov eax,[ebp-18h]"
+"	      004fb501    mov eax,md"
 "	      004fb504    mov dword ptr [eax+54h],2"
 );
 // LINE 914:
@@ -2415,7 +2415,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb510    mov eax,ds:[6072D8h]"
 "	      004fb515    push eax"
 "	      004fb516    push 5B4F90h"
-"	      004fb51b    mov eax,[ebp-18h]"
+"	      004fb51b    mov eax,md"
 "	      004fb51e    push eax"
 "	      004fb51f    call 0056CD30h"
 "	      004fb524    add esp,0Ch"
@@ -2423,13 +2423,13 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 917:
 	asm( 
 "	      004fb527    mov eax,ds:[6072D8h]"
-"	      004fb52c    mov ecx,[ebp-18h]"
+"	      004fb52c    mov ecx,md"
 "	      004fb52f    mov [ecx+20h],eax"
 "	      004fb532    inc dword ptr ds:[6072D8h]"
 );
 // LINE 918:
 	asm( 
-"	      004fb538    mov eax,[ebp-18h]"
+"	      004fb538    mov eax,md"
 "	      004fb53b    mov eax,[eax+24h]"
 "	      004fb53e    push eax"
 "	      004fb53f    call 00534349h"
@@ -2443,10 +2443,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 921:
 	asm( 
-"	      004fb555    mov eax,[ebp-18h]"
+"	      004fb555    mov eax,md"
 "	      004fb558    mov eax,[eax+4Ch]"
 "	      004fb55b    and eax,0FFFFFFFEh"
-"	      004fb55e    mov ecx,[ebp-18h]"
+"	      004fb55e    mov ecx,md"
 "	      004fb561    mov [ecx+4Ch],eax"
 "	      004fb564    dec dword ptr ds:[6072E8h]"
 "	      004fb56a    mov eax,0FFFFFFFFh"
@@ -2454,7 +2454,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 923:
 	asm( 
-"	      004fb574    mov eax,[ebp-18h]"
+"	      004fb574    mov eax,md"
 "	      004fb577    mov dword ptr [eax+54h],2"
 );
 // LINE 924:
@@ -2466,7 +2466,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb583    mov eax,ds:[6072B8h]"
 "	      004fb588    push eax"
 "	      004fb589    push 5B4FA0h"
-"	      004fb58e    mov eax,[ebp-18h]"
+"	      004fb58e    mov eax,md"
 "	      004fb591    push eax"
 "	      004fb592    call 0056CD30h"
 "	      004fb597    add esp,0Ch"
@@ -2474,18 +2474,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 927:
 	asm( 
 "	      004fb59a    mov eax,ds:[6072B8h]"
-"	      004fb59f    mov ecx,[ebp-18h]"
+"	      004fb59f    mov ecx,md"
 "	      004fb5a2    mov [ecx+20h],eax"
 "	      004fb5a5    inc dword ptr ds:[6072B8h]"
 );
 // LINE 928:
 	asm( 
-"	      004fb5ab    mov eax,[ebp+0Ch]"
+"	      004fb5ab    mov eax,y"
 "	      004fb5ae    push eax"
-"	      004fb5af    mov eax,[ebp+8]"
+"	      004fb5af    mov eax,x"
 "	      004fb5b2    push eax"
 "	      004fb5b3    push 0"
-"	      004fb5b5    mov eax,[ebp-18h]"
+"	      004fb5b5    mov eax,md"
 "	      004fb5b8    mov eax,[eax+24h]"
 "	      004fb5bb    push eax"
 "	      004fb5bc    call 005349F0h"
@@ -2495,10 +2495,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 929:
 	asm( 
-"	      004fb5cc    mov eax,[ebp-18h]"
+"	      004fb5cc    mov eax,md"
 "	      004fb5cf    mov eax,[eax+4Ch]"
 "	      004fb5d2    and eax,0FFFFFFFEh"
-"	      004fb5d5    mov ecx,[ebp-18h]"
+"	      004fb5d5    mov ecx,md"
 "	      004fb5d8    mov [ecx+4Ch],eax"
 "	      004fb5db    dec dword ptr ds:[6072E8h]"
 "	      004fb5e1    mov eax,0FFFFFFFFh"
@@ -2506,17 +2506,17 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 930:
 	asm( 
-"	      004fb5eb    mov eax,[ebp-18h]"
+"	      004fb5eb    mov eax,md"
 "	      004fb5ee    mov dword ptr [eax+94h],1"
 );
 // LINE 931:
 	asm( 
-"	      004fb5f8    mov eax,[ebp+10h]"
+"	      004fb5f8    mov eax,type"
 "	      004fb5fb    push eax"
-"	      004fb5fc    mov eax,[ebp-18h]"
+"	      004fb5fc    mov eax,md"
 "	      004fb5ff    mov eax,[eax+2Ch]"
 "	      004fb602    push eax"
-"	      004fb603    mov eax,[ebp-18h]"
+"	      004fb603    mov eax,md"
 "	      004fb606    mov eax,[eax+28h]"
 "	      004fb609    push eax"
 "	      004fb60a    call 004FDDF5h"
@@ -2528,47 +2528,47 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 935:
 	asm( 
-"	      004fb617    mov eax,[ebp-18h]"
+"	      004fb617    mov eax,md"
 "	      004fb61a    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 936:
 	asm( 
-"	      004fb621    mov eax,[ebp-18h]"
+"	      004fb621    mov eax,md"
 "	      004fb624    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 937:
 	asm( 
-"	      004fb62b    mov eax,[ebp-18h]"
+"	      004fb62b    mov eax,md"
 "	      004fb62e    mov dword ptr [eax+30h],0FFFFFFFFh"
 );
 // LINE 938:
 	asm( 
-"	      004fb635    mov eax,[ebp-18h]"
+"	      004fb635    mov eax,md"
 "	      004fb638    mov dword ptr [eax+34h],0FFFFFFFFh"
 );
 // LINE 940:
 	asm( 
-"	      004fb63f    mov eax,[ebp+8]"
-"	      004fb642    mov ecx,[ebp-18h]"
+"	      004fb63f    mov eax,x"
+"	      004fb642    mov ecx,md"
 "	      004fb645    mov [ecx+28h],eax"
 );
 // LINE 941:
 	asm( 
-"	      004fb648    mov eax,[ebp+0Ch]"
-"	      004fb64b    mov ecx,[ebp-18h]"
+"	      004fb648    mov eax,y"
+"	      004fb64b    mov ecx,md"
 "	      004fb64e    mov [ecx+2Ch],eax"
 );
 // LINE 948:
 	asm( 
 "	      004fb651    push 0"
 "	      004fb653    push 0"
-"	      004fb655    mov eax,[ebp-18h]"
+"	      004fb655    mov eax,md"
 "	      004fb658    mov eax,[eax+24h]"
 "	      004fb65b    push eax"
-"	      004fb65c    mov eax,[ebp-18h]"
+"	      004fb65c    mov eax,md"
 "	      004fb65f    mov eax,[eax+2Ch]"
 "	      004fb662    push eax"
-"	      004fb663    mov eax,[ebp-18h]"
+"	      004fb663    mov eax,md"
 "	      004fb666    mov eax,[eax+28h]"
 "	      004fb669    push eax"
 "	      004fb66a    push 0Bh"
@@ -2581,10 +2581,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 950:
 	asm( 
-"	      004fb682    mov eax,[ebp-18h]"
+"	      004fb682    mov eax,md"
 "	      004fb685    mov eax,[eax+4Ch]"
 "	      004fb688    and eax,0FFFFFFFEh"
-"	      004fb68b    mov ecx,[ebp-18h]"
+"	      004fb68b    mov ecx,md"
 "	      004fb68e    mov [ecx+4Ch],eax"
 "	      004fb691    dec dword ptr ds:[6072E8h]"
 "	      004fb697    mov eax,0FFFFFFFFh"
@@ -2592,7 +2592,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 952:
 	asm( 
-"	      004fb6a1    mov eax,[ebp-18h]"
+"	      004fb6a1    mov eax,md"
 "	      004fb6a4    mov dword ptr [eax+94h],1"
 );
 // LINE 953:
@@ -2600,7 +2600,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb6ae    mov eax,ds:[6072B8h]"
 "	      004fb6b3    push eax"
 "	      004fb6b4    push 5B4FACh"
-"	      004fb6b9    mov eax,[ebp-18h]"
+"	      004fb6b9    mov eax,md"
 "	      004fb6bc    push eax"
 "	      004fb6bd    call 0056CD30h"
 "	      004fb6c2    add esp,0Ch"
@@ -2608,18 +2608,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 954:
 	asm( 
 "	      004fb6c5    mov eax,ds:[6072B8h]"
-"	      004fb6ca    mov ecx,[ebp-18h]"
+"	      004fb6ca    mov ecx,md"
 "	      004fb6cd    mov [ecx+20h],eax"
 "	      004fb6d0    inc dword ptr ds:[6072B8h]"
 );
 // LINE 956:
 	asm( 
-"	      004fb6d6    mov eax,[ebp+10h]"
+"	      004fb6d6    mov eax,type"
 "	      004fb6d9    push eax"
-"	      004fb6da    mov eax,[ebp-18h]"
+"	      004fb6da    mov eax,md"
 "	      004fb6dd    mov eax,[eax+2Ch]"
 "	      004fb6e0    push eax"
-"	      004fb6e1    mov eax,[ebp-18h]"
+"	      004fb6e1    mov eax,md"
 "	      004fb6e4    mov eax,[eax+28h]"
 "	      004fb6e7    push eax"
 "	      004fb6e8    call 004FDDF5h"
@@ -2631,47 +2631,47 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 961:
 	asm( 
-"	      004fb6f5    mov eax,[ebp-18h]"
+"	      004fb6f5    mov eax,md"
 "	      004fb6f8    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 962:
 	asm( 
-"	      004fb6ff    mov eax,[ebp-18h]"
+"	      004fb6ff    mov eax,md"
 "	      004fb702    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 963:
 	asm( 
-"	      004fb709    mov eax,[ebp-18h]"
+"	      004fb709    mov eax,md"
 "	      004fb70c    mov dword ptr [eax+30h],0FFFFFFFFh"
 );
 // LINE 964:
 	asm( 
-"	      004fb713    mov eax,[ebp-18h]"
+"	      004fb713    mov eax,md"
 "	      004fb716    mov dword ptr [eax+34h],0FFFFFFFFh"
 );
 // LINE 966:
 	asm( 
-"	      004fb71d    mov eax,[ebp+8]"
-"	      004fb720    mov ecx,[ebp-18h]"
+"	      004fb71d    mov eax,x"
+"	      004fb720    mov ecx,md"
 "	      004fb723    mov [ecx+28h],eax"
 );
 // LINE 967:
 	asm( 
-"	      004fb726    mov eax,[ebp+0Ch]"
-"	      004fb729    mov ecx,[ebp-18h]"
+"	      004fb726    mov eax,y"
+"	      004fb729    mov ecx,md"
 "	      004fb72c    mov [ecx+2Ch],eax"
 );
 // LINE 974:
 	asm( 
 "	      004fb72f    push 0"
 "	      004fb731    push 0"
-"	      004fb733    mov eax,[ebp-18h]"
+"	      004fb733    mov eax,md"
 "	      004fb736    mov eax,[eax+24h]"
 "	      004fb739    push eax"
-"	      004fb73a    mov eax,[ebp-18h]"
+"	      004fb73a    mov eax,md"
 "	      004fb73d    mov eax,[eax+2Ch]"
 "	      004fb740    push eax"
-"	      004fb741    mov eax,[ebp-18h]"
+"	      004fb741    mov eax,md"
 "	      004fb744    mov eax,[eax+28h]"
 "	      004fb747    push eax"
 "	      004fb748    push 0Ch"
@@ -2684,10 +2684,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 976:
 	asm( 
-"	      004fb760    mov eax,[ebp-18h]"
+"	      004fb760    mov eax,md"
 "	      004fb763    mov eax,[eax+4Ch]"
 "	      004fb766    and eax,0FFFFFFFEh"
-"	      004fb769    mov ecx,[ebp-18h]"
+"	      004fb769    mov ecx,md"
 "	      004fb76c    mov [ecx+4Ch],eax"
 "	      004fb76f    dec dword ptr ds:[6072E8h]"
 "	      004fb775    mov eax,0FFFFFFFFh"
@@ -2695,7 +2695,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 978:
 	asm( 
-"	      004fb77f    mov eax,[ebp-18h]"
+"	      004fb77f    mov eax,md"
 "	      004fb782    mov dword ptr [eax+94h],1"
 );
 // LINE 979:
@@ -2703,7 +2703,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb78c    mov eax,ds:[6072B8h]"
 "	      004fb791    push eax"
 "	      004fb792    push 5B4FB8h"
-"	      004fb797    mov eax,[ebp-18h]"
+"	      004fb797    mov eax,md"
 "	      004fb79a    push eax"
 "	      004fb79b    call 0056CD30h"
 "	      004fb7a0    add esp,0Ch"
@@ -2711,18 +2711,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 980:
 	asm( 
 "	      004fb7a3    mov eax,ds:[6072B8h]"
-"	      004fb7a8    mov ecx,[ebp-18h]"
+"	      004fb7a8    mov ecx,md"
 "	      004fb7ab    mov [ecx+20h],eax"
 "	      004fb7ae    inc dword ptr ds:[6072B8h]"
 );
 // LINE 982:
 	asm( 
-"	      004fb7b4    mov eax,[ebp+10h]"
+"	      004fb7b4    mov eax,type"
 "	      004fb7b7    push eax"
-"	      004fb7b8    mov eax,[ebp-18h]"
+"	      004fb7b8    mov eax,md"
 "	      004fb7bb    mov eax,[eax+2Ch]"
 "	      004fb7be    push eax"
-"	      004fb7bf    mov eax,[ebp-18h]"
+"	      004fb7bf    mov eax,md"
 "	      004fb7c2    mov eax,[eax+28h]"
 "	      004fb7c5    push eax"
 "	      004fb7c6    call 004FDDF5h"
@@ -2734,47 +2734,47 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 987:
 	asm( 
-"	      004fb7d3    mov eax,[ebp-18h]"
+"	      004fb7d3    mov eax,md"
 "	      004fb7d6    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 988:
 	asm( 
-"	      004fb7dd    mov eax,[ebp-18h]"
+"	      004fb7dd    mov eax,md"
 "	      004fb7e0    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 989:
 	asm( 
-"	      004fb7e7    mov eax,[ebp-18h]"
+"	      004fb7e7    mov eax,md"
 "	      004fb7ea    mov dword ptr [eax+30h],0FFFFFFFFh"
 );
 // LINE 990:
 	asm( 
-"	      004fb7f1    mov eax,[ebp-18h]"
+"	      004fb7f1    mov eax,md"
 "	      004fb7f4    mov dword ptr [eax+34h],0FFFFFFFFh"
 );
 // LINE 992:
 	asm( 
-"	      004fb7fb    mov eax,[ebp+8]"
-"	      004fb7fe    mov ecx,[ebp-18h]"
+"	      004fb7fb    mov eax,x"
+"	      004fb7fe    mov ecx,md"
 "	      004fb801    mov [ecx+28h],eax"
 );
 // LINE 993:
 	asm( 
-"	      004fb804    mov eax,[ebp+0Ch]"
-"	      004fb807    mov ecx,[ebp-18h]"
+"	      004fb804    mov eax,y"
+"	      004fb807    mov ecx,md"
 "	      004fb80a    mov [ecx+2Ch],eax"
 );
 // LINE 1000:
 	asm( 
 "	      004fb80d    push 0"
 "	      004fb80f    push 0"
-"	      004fb811    mov eax,[ebp-18h]"
+"	      004fb811    mov eax,md"
 "	      004fb814    mov eax,[eax+24h]"
 "	      004fb817    push eax"
-"	      004fb818    mov eax,[ebp-18h]"
+"	      004fb818    mov eax,md"
 "	      004fb81b    mov eax,[eax+2Ch]"
 "	      004fb81e    push eax"
-"	      004fb81f    mov eax,[ebp-18h]"
+"	      004fb81f    mov eax,md"
 "	      004fb822    mov eax,[eax+28h]"
 "	      004fb825    push eax"
 "	      004fb826    push 0Ah"
@@ -2787,10 +2787,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1002:
 	asm( 
-"	      004fb83e    mov eax,[ebp-18h]"
+"	      004fb83e    mov eax,md"
 "	      004fb841    mov eax,[eax+4Ch]"
 "	      004fb844    and eax,0FFFFFFFEh"
-"	      004fb847    mov ecx,[ebp-18h]"
+"	      004fb847    mov ecx,md"
 "	      004fb84a    mov [ecx+4Ch],eax"
 "	      004fb84d    dec dword ptr ds:[6072E8h]"
 "	      004fb853    mov eax,0FFFFFFFFh"
@@ -2798,7 +2798,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1004:
 	asm( 
-"	      004fb85d    mov eax,[ebp-18h]"
+"	      004fb85d    mov eax,md"
 "	      004fb860    mov dword ptr [eax+94h],1"
 );
 // LINE 1005:
@@ -2806,7 +2806,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb86a    mov eax,ds:[6072B8h]"
 "	      004fb86f    push eax"
 "	      004fb870    push 5B4FC4h"
-"	      004fb875    mov eax,[ebp-18h]"
+"	      004fb875    mov eax,md"
 "	      004fb878    push eax"
 "	      004fb879    call 0056CD30h"
 "	      004fb87e    add esp,0Ch"
@@ -2814,18 +2814,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 1006:
 	asm( 
 "	      004fb881    mov eax,ds:[6072B8h]"
-"	      004fb886    mov ecx,[ebp-18h]"
+"	      004fb886    mov ecx,md"
 "	      004fb889    mov [ecx+20h],eax"
 "	      004fb88c    inc dword ptr ds:[6072B8h]"
 );
 // LINE 1008:
 	asm( 
-"	      004fb892    mov eax,[ebp+10h]"
+"	      004fb892    mov eax,type"
 "	      004fb895    push eax"
-"	      004fb896    mov eax,[ebp-18h]"
+"	      004fb896    mov eax,md"
 "	      004fb899    mov eax,[eax+2Ch]"
 "	      004fb89c    push eax"
-"	      004fb89d    mov eax,[ebp-18h]"
+"	      004fb89d    mov eax,md"
 "	      004fb8a0    mov eax,[eax+28h]"
 "	      004fb8a3    push eax"
 "	      004fb8a4    call 004FDDF5h"
@@ -2837,10 +2837,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1012:
 	asm( 
-"	      004fb8b1    mov eax,[ebp-18h]"
+"	      004fb8b1    mov eax,md"
 "	      004fb8b4    add eax,28h"
 "	      004fb8b7    push eax"
-"	      004fb8b8    mov eax,[ebp-18h]"
+"	      004fb8b8    mov eax,md"
 "	      004fb8bb    mov eax,[eax+24h]"
 "	      004fb8be    push eax"
 "	      004fb8bf    call 0050657Fh"
@@ -2850,10 +2850,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1014:
 	asm( 
-"	      004fb8cf    mov eax,[ebp-18h]"
+"	      004fb8cf    mov eax,md"
 "	      004fb8d2    mov eax,[eax+4Ch]"
 "	      004fb8d5    and eax,0FFFFFFFEh"
-"	      004fb8d8    mov ecx,[ebp-18h]"
+"	      004fb8d8    mov ecx,md"
 "	      004fb8db    mov [ecx+4Ch],eax"
 "	      004fb8de    dec dword ptr ds:[6072E8h]"
 "	      004fb8e4    mov eax,0FFFFFFFFh"
@@ -2864,7 +2864,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb8ee    mov eax,ds:[6072D4h]"
 "	      004fb8f3    push eax"
 "	      004fb8f4    push 5B4FD0h"
-"	      004fb8f9    mov eax,[ebp-18h]"
+"	      004fb8f9    mov eax,md"
 "	      004fb8fc    push eax"
 "	      004fb8fd    call 0056CD30h"
 "	      004fb902    add esp,0Ch"
@@ -2872,18 +2872,18 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 1018:
 	asm( 
 "	      004fb905    mov eax,ds:[6072D4h]"
-"	      004fb90a    mov ecx,[ebp-18h]"
+"	      004fb90a    mov ecx,md"
 "	      004fb90d    mov [ecx+20h],eax"
 "	      004fb910    inc dword ptr ds:[6072D4h]"
 );
 // LINE 1021:
 	asm( 
-"	      004fb916    mov eax,[ebp+10h]"
+"	      004fb916    mov eax,type"
 "	      004fb919    push eax"
-"	      004fb91a    mov eax,[ebp-18h]"
+"	      004fb91a    mov eax,md"
 "	      004fb91d    mov eax,[eax+2Ch]"
 "	      004fb920    push eax"
-"	      004fb921    mov eax,[ebp-18h]"
+"	      004fb921    mov eax,md"
 "	      004fb924    mov eax,[eax+28h]"
 "	      004fb927    push eax"
 "	      004fb928    call 004FDDF5h"
@@ -2895,10 +2895,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1026:
 	asm( 
-"	      004fb935    mov eax,[ebp-18h]"
+"	      004fb935    mov eax,md"
 "	      004fb938    add eax,28h"
 "	      004fb93b    push eax"
-"	      004fb93c    mov eax,[ebp-0Ch]"
+"	      004fb93c    mov eax,i"
 "	      004fb93f    push eax"
 "	      004fb940    call 0050659Fh"
 "	      004fb945    add esp,8"
@@ -2907,10 +2907,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1028:
 	asm( 
-"	      004fb950    mov eax,[ebp-18h]"
+"	      004fb950    mov eax,md"
 "	      004fb953    mov eax,[eax+4Ch]"
 "	      004fb956    and eax,0FFFFFFFEh"
-"	      004fb959    mov ecx,[ebp-18h]"
+"	      004fb959    mov ecx,md"
 "	      004fb95c    mov [ecx+4Ch],eax"
 "	      004fb95f    dec dword ptr ds:[6072E8h]"
 "	      004fb965    mov eax,0FFFFFFFFh"
@@ -2921,7 +2921,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb96f    mov eax,ds:[6072D4h]"
 "	      004fb974    push eax"
 "	      004fb975    push 5B4FE0h"
-"	      004fb97a    mov eax,[ebp-18h]"
+"	      004fb97a    mov eax,md"
 "	      004fb97d    push eax"
 "	      004fb97e    call 0056CD30h"
 "	      004fb983    add esp,0Ch"
@@ -2929,13 +2929,13 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 1031:
 	asm( 
 "	      004fb986    mov eax,ds:[6072D4h]"
-"	      004fb98b    mov ecx,[ebp-18h]"
+"	      004fb98b    mov ecx,md"
 "	      004fb98e    mov [ecx+20h],eax"
 "	      004fb991    inc dword ptr ds:[6072D4h]"
 );
 // LINE 1032:
 	asm( 
-"	      004fb997    mov eax,[ebp-18h]"
+"	      004fb997    mov eax,md"
 "	      004fb99a    mov dword ptr [eax+54h],2"
 );
 // LINE 1036:
@@ -2944,10 +2944,10 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1038:
 	asm( 
-"	      004fb9a6    mov eax,[ebp-18h]"
+"	      004fb9a6    mov eax,md"
 "	      004fb9a9    mov eax,[eax+4Ch]"
 "	      004fb9ac    and eax,0FFFFFFFEh"
-"	      004fb9af    mov ecx,[ebp-18h]"
+"	      004fb9af    mov ecx,md"
 "	      004fb9b2    mov [ecx+4Ch],eax"
 "	      004fb9b5    dec dword ptr ds:[6072E8h]"
 "	      004fb9bb    mov eax,0FFFFFFFFh"
@@ -3008,7 +3008,7 @@ long S3MissionStart(long x, long y, long type) {
 	asm( 
 "	      004fbacd    mov eax,5B4FF0h"
 "	      004fbad2    mov ecx,5B4FF8h"
-"	      004fbad7    mov edx,[ebp-18h]"
+"	      004fbad7    mov edx,md"
 "	      004fbada    xor ebx,ebx"
 "	      004fbadc    cmp dword ptr [edx+54h],2"
 "	      004fbae0    sete bl"
@@ -3017,7 +3017,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fbae6    and ebx,ecx"
 "	      004fbae8    add ebx,eax"
 "	      004fbaea    push ebx"
-"	      004fbaeb    mov eax,[ebp-18h]"
+"	      004fbaeb    mov eax,md"
 "	      004fbaee    push eax"
 "	      004fbaef    push 5B4FFCh"
 "	      004fbaf4    mov eax,ds:[5B4EC4h]"
@@ -3027,7 +3027,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1047:
 	asm( 
-"	      004fbb02    mov eax,[ebp-18h]"
+"	      004fbb02    mov eax,md"
 "	      004fbb05    mov eax,[eax+24h]"
 "	      004fbb08    mov ds:[5B4EC0h],eax"
 );
@@ -3042,18 +3042,18 @@ long S3MissionStart(long x, long y, long type) {
 	asm( 
 "	      004fbb1c    cmp dword ptr ds:[6072ECh],0"
 "	      004fbb23    jne near ptr 004FBB3Eh"
-"	      004fbb29    mov eax,[ebp-18h]"
+"	      004fbb29    mov eax,md"
 "	      004fbb2c    cmp dword ptr [eax+54h],2"
 "	      004fbb30    je near ptr 004FBB3Eh"
 );
 // LINE 1051:
 	asm( 
-"	      004fbb36    mov eax,[ebp-18h]"
+"	      004fbb36    mov eax,md"
 "	      004fbb39    mov ds:[6072ECh],eax"
 );
 // LINE 1053:
 	asm( 
-"	      004fbb3e    mov eax,[ebp-18h]"
+"	      004fbb3e    mov eax,md"
 "	      004fbb41    cmp dword ptr [eax+54h],2"
 "	      004fbb45    jne near ptr 004FBB56h"
 );
@@ -3076,7 +3076,7 @@ long S3MissionStart(long x, long y, long type) {
 );
 // LINE 1060:
 	asm( 
-"	      004fbb66    mov eax,[ebp-18h]"
+"	      004fbb66    mov eax,md"
 "	      004fbb69    mov eax,[eax+24h]"
 "	      004fbb6c    jmp near ptr 004FBB71h"
 );
@@ -3106,15 +3106,15 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 );
 // LINE 1075:
 	asm( 
-"	      004fbb7f    mov eax,[ebp+8]"
+"	      004fbb7f    mov eax,key"
 "	      004fbb82    push eax"
 "	      004fbb83    call 004FDC2Dh"
 "	      004fbb88    add esp,4"
-"	      004fbb8b    mov [ebp-4],eax"
+"	      004fbb8b    mov mission_id,eax"
 );
 // LINE 1077:
 	asm( 
-"	      004fbb8e    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fbb8e    cmp mission_id,0FFFFFFFFh"
 "	      004fbb92    jne near ptr 004FBB9Fh"
 );
 // LINE 1078:
@@ -3124,18 +3124,18 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 );
 // LINE 1080:
 	asm( 
-"	      004fbb9f    mov eax,[ebp-4]"
+"	      004fbb9f    mov eax,mission_id"
 "	      004fbba2    mov ecx,eax"
 "	      004fbba4    lea eax,[eax+eax*2]"
 "	      004fbba7    lea eax,[ecx+eax*4]"
 "	      004fbbaa    lea eax,[ecx+eax*4]"
 "	      004fbbad    lea eax,[eax*4+6072B8h]"
 "	      004fbbb4    add eax,38h"
-"	      004fbbb7    mov [ebp-8],eax"
+"	      004fbbb7    mov md,eax"
 );
 // LINE 1088:
 	asm( 
-"	      004fbbba    mov eax,[ebp-8]"
+"	      004fbbba    mov eax,md"
 "	      004fbbbd    add eax,28h"
 "	      004fbbc0    jmp near ptr 004FBBC5h"
 );
@@ -3165,15 +3165,15 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 );
 // LINE 1102:
 	asm( 
-"	      004fbbd3    mov eax,[ebp+8]"
+"	      004fbbd3    mov eax,key"
 "	      004fbbd6    push eax"
 "	      004fbbd7    call 004FDC2Dh"
 "	      004fbbdc    add esp,4"
-"	      004fbbdf    mov [ebp-4],eax"
+"	      004fbbdf    mov mission_id,eax"
 );
 // LINE 1104:
 	asm( 
-"	      004fbbe2    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fbbe2    cmp mission_id,0FFFFFFFFh"
 "	      004fbbe6    jne near ptr 004FBBF3h"
 );
 // LINE 1105:
@@ -3183,18 +3183,18 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 );
 // LINE 1107:
 	asm( 
-"	      004fbbf3    mov eax,[ebp-4]"
+"	      004fbbf3    mov eax,mission_id"
 "	      004fbbf6    mov ecx,eax"
 "	      004fbbf8    lea eax,[eax+eax*2]"
 "	      004fbbfb    lea eax,[ecx+eax*4]"
 "	      004fbbfe    lea eax,[ecx+eax*4]"
 "	      004fbc01    lea eax,[eax*4+6072B8h]"
 "	      004fbc08    add eax,38h"
-"	      004fbc0b    mov [ebp-8],eax"
+"	      004fbc0b    mov md,eax"
 );
 // LINE 1115:
 	asm( 
-"	      004fbc0e    mov eax,[ebp-8]"
+"	      004fbc0e    mov eax,md"
 "	      004fbc11    cmp dword ptr [eax+30h],0FFFFFFFFh"
 "	      004fbc15    jne near ptr 004FBC22h"
 );
@@ -3205,7 +3205,7 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 );
 // LINE 1118:
 	asm( 
-"	      004fbc22    mov eax,[ebp-8]"
+"	      004fbc22    mov eax,md"
 "	      004fbc25    add eax,30h"
 "	      004fbc28    jmp near ptr 004FBC2Dh"
 );
@@ -3235,15 +3235,15 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 );
 // LINE 1133:
 	asm( 
-"	      004fbc3b    mov eax,[ebp+8]"
+"	      004fbc3b    mov eax,key"
 "	      004fbc3e    push eax"
 "	      004fbc3f    call 004FDC2Dh"
 "	      004fbc44    add esp,4"
-"	      004fbc47    mov [ebp-4],eax"
+"	      004fbc47    mov mission_id,eax"
 );
 // LINE 1135:
 	asm( 
-"	      004fbc4a    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fbc4a    cmp mission_id,0FFFFFFFFh"
 "	      004fbc4e    jne near ptr 004FBC5Bh"
 );
 // LINE 1136:
@@ -3253,18 +3253,18 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 );
 // LINE 1138:
 	asm( 
-"	      004fbc5b    mov eax,[ebp-4]"
+"	      004fbc5b    mov eax,mission_id"
 "	      004fbc5e    mov ecx,eax"
 "	      004fbc60    lea eax,[eax+eax*2]"
 "	      004fbc63    lea eax,[ecx+eax*4]"
 "	      004fbc66    lea eax,[ecx+eax*4]"
 "	      004fbc69    lea eax,[eax*4+6072B8h]"
 "	      004fbc70    add eax,38h"
-"	      004fbc73    mov [ebp-8],eax"
+"	      004fbc73    mov md,eax"
 );
 // LINE 1146:
 	asm( 
-"	      004fbc76    mov eax,[ebp-8]"
+"	      004fbc76    mov eax,md"
 "	      004fbc79    cmp dword ptr [eax+38h],0FFFFFFFFh"
 "	      004fbc7d    jne near ptr 004FBC8Ah"
 );
@@ -3275,7 +3275,7 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 );
 // LINE 1149:
 	asm( 
-"	      004fbc8a    mov eax,[ebp-8]"
+"	      004fbc8a    mov eax,md"
 "	      004fbc8d    add eax,38h"
 "	      004fbc90    jmp near ptr 004FBC95h"
 );
@@ -3435,16 +3435,16 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1220:
 	asm( 
-"	      004fbd53    lea eax,[ebp-4]"
+"	      004fbd53    lea eax,mission_id"
 "	      004fbd56    push eax"
-"	      004fbd57    mov eax,[ebp+8]"
+"	      004fbd57    mov eax,mp"
 "	      004fbd5a    push eax"
 "	      004fbd5b    call 004FD0E6h"
 "	      004fbd60    add esp,8"
 );
 // LINE 1223:
 	asm( 
-"	      004fbd63    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fbd63    cmp mission_id,0FFFFFFFFh"
 "	      004fbd67    jne near ptr 004FBD72h"
 );
 // LINE 1224:
@@ -3453,18 +3453,18 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1226:
 	asm( 
-"	      004fbd72    mov eax,[ebp-4]"
+"	      004fbd72    mov eax,mission_id"
 "	      004fbd75    mov ecx,eax"
 "	      004fbd77    lea eax,[eax+eax*2]"
 "	      004fbd7a    lea eax,[ecx+eax*4]"
 "	      004fbd7d    lea eax,[ecx+eax*4]"
 "	      004fbd80    lea eax,[eax*4+6072B8h]"
 "	      004fbd87    add eax,38h"
-"	      004fbd8a    mov [ebp-8],eax"
+"	      004fbd8a    mov md,eax"
 );
 // LINE 1229:
 	asm( 
-"	      004fbd8d    mov eax,[ebp-8]"
+"	      004fbd8d    mov eax,md"
 "	      004fbd90    test byte ptr [eax+4Ch],1"
 "	      004fbd94    jne near ptr 004FBD9Fh"
 );
@@ -3474,18 +3474,18 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1234:
 	asm( 
-"	      004fbd9f    mov eax,[ebp+8]"
+"	      004fbd9f    mov eax,mp"
 "	      004fbda2    mov eax,[eax]"
 "	      004fbda4    mov [ebp-0Ch],eax"
 "	      004fbda7    jmp near ptr 004FC167h"
 );
 // LINE 1237:
 	asm( 
-"	      004fbdac    mov eax,[ebp+8]"
+"	      004fbdac    mov eax,mp"
 "	      004fbdaf    add eax,8"
 "	      004fbdb2    mov ecx,[eax]"
 "	      004fbdb4    mov eax,[eax+4]"
-"	      004fbdb7    mov edx,[ebp-8]"
+"	      004fbdb7    mov edx,md"
 "	      004fbdba    add edx,28h"
 "	      004fbdbd    mov [edx],ecx"
 "	      004fbdbf    mov [edx+4],eax"
@@ -3496,11 +3496,11 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1240:
 	asm( 
-"	      004fbdc7    mov eax,[ebp+8]"
+"	      004fbdc7    mov eax,mp"
 "	      004fbdca    add eax,8"
 "	      004fbdcd    mov ecx,[eax]"
 "	      004fbdcf    mov eax,[eax+4]"
-"	      004fbdd2    mov edx,[ebp-8]"
+"	      004fbdd2    mov edx,md"
 "	      004fbdd5    add edx,38h"
 "	      004fbdd8    mov [edx],ecx"
 "	      004fbdda    mov [edx+4],eax"
@@ -3511,11 +3511,11 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1243:
 	asm( 
-"	      004fbde2    mov eax,[ebp+8]"
+"	      004fbde2    mov eax,mp"
 "	      004fbde5    add eax,8"
 "	      004fbde8    mov ecx,[eax]"
 "	      004fbdea    mov eax,[eax+4]"
-"	      004fbded    mov edx,[ebp-8]"
+"	      004fbded    mov edx,md"
 "	      004fbdf0    add edx,30h"
 "	      004fbdf3    mov [edx],ecx"
 "	      004fbdf5    mov [edx+4],eax"
@@ -3526,9 +3526,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1246:
 	asm( 
-"	      004fbdfd    mov eax,[ebp+8]"
+"	      004fbdfd    mov eax,mp"
 "	      004fbe00    mov eax,[eax+10h]"
-"	      004fbe03    mov ecx,[ebp-8]"
+"	      004fbe03    mov ecx,md"
 "	      004fbe06    add [ecx+58h],eax"
 );
 // LINE 1247:
@@ -3537,9 +3537,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1249:
 	asm( 
-"	      004fbe0e    mov eax,[ebp+8]"
+"	      004fbe0e    mov eax,mp"
 "	      004fbe11    mov eax,[eax+10h]"
-"	      004fbe14    mov ecx,[ebp-8]"
+"	      004fbe14    mov ecx,md"
 "	      004fbe17    add [ecx+48h],eax"
 );
 // LINE 1250:
@@ -3548,9 +3548,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1252:
 	asm( 
-"	      004fbe1f    mov eax,[ebp+8]"
+"	      004fbe1f    mov eax,mp"
 "	      004fbe22    mov eax,[eax+10h]"
-"	      004fbe25    mov ecx,[ebp-8]"
+"	      004fbe25    mov ecx,md"
 "	      004fbe28    add [ecx+44h],eax"
 );
 // LINE 1253:
@@ -3559,9 +3559,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1255:
 	asm( 
-"	      004fbe30    mov eax,[ebp+8]"
+"	      004fbe30    mov eax,mp"
 "	      004fbe33    mov eax,[eax+10h]"
-"	      004fbe36    mov ecx,[ebp-8]"
+"	      004fbe36    mov ecx,md"
 "	      004fbe39    add [ecx+60h],eax"
 );
 // LINE 1256:
@@ -3570,9 +3570,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1258:
 	asm( 
-"	      004fbe41    mov eax,[ebp+8]"
+"	      004fbe41    mov eax,mp"
 "	      004fbe44    mov eax,[eax+10h]"
-"	      004fbe47    mov ecx,[ebp-8]"
+"	      004fbe47    mov ecx,md"
 "	      004fbe4a    add [ecx+64h],eax"
 );
 // LINE 1259:
@@ -3581,9 +3581,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1261:
 	asm( 
-"	      004fbe52    mov eax,[ebp+8]"
+"	      004fbe52    mov eax,mp"
 "	      004fbe55    mov eax,[eax+10h]"
-"	      004fbe58    mov ecx,[ebp-8]"
+"	      004fbe58    mov ecx,md"
 "	      004fbe5b    add [ecx+68h],eax"
 );
 // LINE 1262:
@@ -3592,9 +3592,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1264:
 	asm( 
-"	      004fbe63    mov eax,[ebp+8]"
+"	      004fbe63    mov eax,mp"
 "	      004fbe66    mov eax,[eax+10h]"
-"	      004fbe69    mov ecx,[ebp-8]"
+"	      004fbe69    mov ecx,md"
 "	      004fbe6c    add [ecx+5Ch],eax"
 );
 // LINE 1265:
@@ -3603,9 +3603,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1267:
 	asm( 
-"	      004fbe74    mov eax,[ebp+8]"
+"	      004fbe74    mov eax,mp"
 "	      004fbe77    mov eax,[eax+10h]"
-"	      004fbe7a    mov ecx,[ebp-8]"
+"	      004fbe7a    mov ecx,md"
 "	      004fbe7d    add [ecx+6Ch],eax"
 );
 // LINE 1268:
@@ -3614,20 +3614,20 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1272:
 	asm( 
-"	      004fbe85    mov eax,[ebp-8]"
+"	      004fbe85    mov eax,md"
 "	      004fbe88    test byte ptr [eax+50h],8"
 "	      004fbe8c    jne near ptr 004FBE99h"
 );
 // LINE 1273:
 	asm( 
-"	      004fbe92    mov eax,[ebp-8]"
+"	      004fbe92    mov eax,md"
 "	      004fbe95    or dword ptr [eax+50h],8"
 );
 // LINE 1274:
 	asm( 
-"	      004fbe99    mov eax,[ebp+8]"
+"	      004fbe99    mov eax,mp"
 "	      004fbe9c    mov eax,[eax+10h]"
-"	      004fbe9f    mov ecx,[ebp-8]"
+"	      004fbe9f    mov ecx,md"
 "	      004fbea2    add [ecx+70h],eax"
 );
 // LINE 1275:
@@ -3636,9 +3636,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1277:
 	asm( 
-"	      004fbeaa    mov eax,[ebp+8]"
+"	      004fbeaa    mov eax,mp"
 "	      004fbead    mov eax,[eax+10h]"
-"	      004fbeb0    mov ecx,[ebp-8]"
+"	      004fbeb0    mov ecx,md"
 "	      004fbeb3    add [ecx+74h],eax"
 );
 // LINE 1278:
@@ -3647,9 +3647,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1280:
 	asm( 
-"	      004fbebb    mov eax,[ebp+8]"
+"	      004fbebb    mov eax,mp"
 "	      004fbebe    mov eax,[eax+10h]"
-"	      004fbec1    mov ecx,[ebp-8]"
+"	      004fbec1    mov ecx,md"
 "	      004fbec4    add [ecx+78h],eax"
 );
 // LINE 1281:
@@ -3658,9 +3658,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1283:
 	asm( 
-"	      004fbecc    mov eax,[ebp+8]"
+"	      004fbecc    mov eax,mp"
 "	      004fbecf    mov eax,[eax+10h]"
-"	      004fbed2    mov ecx,[ebp-8]"
+"	      004fbed2    mov ecx,md"
 "	      004fbed5    add [ecx+80h],eax"
 );
 // LINE 1284:
@@ -3669,9 +3669,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1286:
 	asm( 
-"	      004fbee0    mov eax,[ebp+8]"
+"	      004fbee0    mov eax,mp"
 "	      004fbee3    mov eax,[eax+10h]"
-"	      004fbee6    mov ecx,[ebp-8]"
+"	      004fbee6    mov ecx,md"
 "	      004fbee9    add [ecx+94h],eax"
 );
 // LINE 1287:
@@ -3680,20 +3680,20 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1291:
 	asm( 
-"	      004fbef4    mov eax,[ebp-8]"
+"	      004fbef4    mov eax,md"
 "	      004fbef7    test byte ptr [eax+50h],20h"
 "	      004fbefb    jne near ptr 004FBF08h"
 );
 // LINE 1292:
 	asm( 
-"	      004fbf01    mov eax,[ebp-8]"
+"	      004fbf01    mov eax,md"
 "	      004fbf04    or dword ptr [eax+50h],20h"
 );
 // LINE 1293:
 	asm( 
-"	      004fbf08    mov eax,[ebp+8]"
+"	      004fbf08    mov eax,mp"
 "	      004fbf0b    mov eax,[eax+10h]"
-"	      004fbf0e    mov ecx,[ebp-8]"
+"	      004fbf0e    mov ecx,md"
 "	      004fbf11    add [ecx+84h],eax"
 );
 // LINE 1294:
@@ -3702,9 +3702,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1296:
 	asm( 
-"	      004fbf1c    mov eax,[ebp+8]"
+"	      004fbf1c    mov eax,mp"
 "	      004fbf1f    mov eax,[eax+10h]"
-"	      004fbf22    mov ecx,[ebp-8]"
+"	      004fbf22    mov ecx,md"
 "	      004fbf25    add [ecx+8Ch],eax"
 );
 // LINE 1297:
@@ -3713,20 +3713,20 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1299:
 	asm( 
-"	      004fbf30    mov eax,[ebp-8]"
+"	      004fbf30    mov eax,md"
 "	      004fbf33    test byte ptr [eax+50h],40h"
 "	      004fbf37    jne near ptr 004FBF44h"
 );
 // LINE 1300:
 	asm( 
-"	      004fbf3d    mov eax,[ebp-8]"
+"	      004fbf3d    mov eax,md"
 "	      004fbf40    or dword ptr [eax+50h],40h"
 );
 // LINE 1301:
 	asm( 
-"	      004fbf44    mov eax,[ebp+8]"
+"	      004fbf44    mov eax,mp"
 "	      004fbf47    mov eax,[eax+10h]"
-"	      004fbf4a    mov ecx,[ebp-8]"
+"	      004fbf4a    mov ecx,md"
 "	      004fbf4d    add [ecx+88h],eax"
 );
 // LINE 1302:
@@ -3735,9 +3735,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1304:
 	asm( 
-"	      004fbf58    mov eax,[ebp+8]"
+"	      004fbf58    mov eax,mp"
 "	      004fbf5b    mov eax,[eax+10h]"
-"	      004fbf5e    mov ecx,[ebp-8]"
+"	      004fbf5e    mov ecx,md"
 "	      004fbf61    add [ecx+90h],eax"
 );
 // LINE 1305:
@@ -3746,9 +3746,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1307:
 	asm( 
-"	      004fbf6c    mov eax,[ebp+8]"
+"	      004fbf6c    mov eax,mp"
 "	      004fbf6f    mov eax,[eax+10h]"
-"	      004fbf72    mov ecx,[ebp-8]"
+"	      004fbf72    mov ecx,md"
 "	      004fbf75    add [ecx+98h],eax"
 );
 // LINE 1308:
@@ -3757,9 +3757,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1310:
 	asm( 
-"	      004fbf80    mov eax,[ebp+8]"
+"	      004fbf80    mov eax,mp"
 "	      004fbf83    mov eax,[eax+10h]"
-"	      004fbf86    mov ecx,[ebp-8]"
+"	      004fbf86    mov ecx,md"
 "	      004fbf89    add [ecx+0BCh],eax"
 );
 // LINE 1311:
@@ -3768,9 +3768,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1313:
 	asm( 
-"	      004fbf94    mov eax,[ebp+8]"
+"	      004fbf94    mov eax,mp"
 "	      004fbf97    mov eax,[eax+10h]"
-"	      004fbf9a    mov ecx,[ebp-8]"
+"	      004fbf9a    mov ecx,md"
 "	      004fbf9d    add [ecx+9Ch],eax"
 );
 // LINE 1314:
@@ -3779,9 +3779,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1316:
 	asm( 
-"	      004fbfa8    mov eax,[ebp+8]"
+"	      004fbfa8    mov eax,mp"
 "	      004fbfab    mov eax,[eax+10h]"
-"	      004fbfae    mov ecx,[ebp-8]"
+"	      004fbfae    mov ecx,md"
 "	      004fbfb1    add [ecx+0A0h],eax"
 );
 // LINE 1317:
@@ -3790,9 +3790,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1319:
 	asm( 
-"	      004fbfbc    mov eax,[ebp+8]"
+"	      004fbfbc    mov eax,mp"
 "	      004fbfbf    mov eax,[eax+10h]"
-"	      004fbfc2    mov ecx,[ebp-8]"
+"	      004fbfc2    mov ecx,md"
 "	      004fbfc5    add [ecx+0A4h],eax"
 );
 // LINE 1320:
@@ -3801,9 +3801,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1322:
 	asm( 
-"	      004fbfd0    mov eax,[ebp+8]"
+"	      004fbfd0    mov eax,mp"
 "	      004fbfd3    mov eax,[eax+10h]"
-"	      004fbfd6    mov ecx,[ebp-8]"
+"	      004fbfd6    mov ecx,md"
 "	      004fbfd9    add [ecx+0A8h],eax"
 );
 // LINE 1323:
@@ -3812,9 +3812,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1325:
 	asm( 
-"	      004fbfe4    mov eax,[ebp+8]"
+"	      004fbfe4    mov eax,mp"
 "	      004fbfe7    mov eax,[eax+10h]"
-"	      004fbfea    mov ecx,[ebp-8]"
+"	      004fbfea    mov ecx,md"
 "	      004fbfed    add [ecx+0ACh],eax"
 );
 // LINE 1326:
@@ -3823,9 +3823,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1328:
 	asm( 
-"	      004fbff8    mov eax,[ebp+8]"
+"	      004fbff8    mov eax,mp"
 "	      004fbffb    mov eax,[eax+10h]"
-"	      004fbffe    mov ecx,[ebp-8]"
+"	      004fbffe    mov ecx,md"
 "	      004fc001    add [ecx+0B0h],eax"
 );
 // LINE 1329:
@@ -3834,9 +3834,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1331:
 	asm( 
-"	      004fc00c    mov eax,[ebp+8]"
+"	      004fc00c    mov eax,mp"
 "	      004fc00f    mov eax,[eax+10h]"
-"	      004fc012    mov ecx,[ebp-8]"
+"	      004fc012    mov ecx,md"
 "	      004fc015    add [ecx+0B8h],eax"
 );
 // LINE 1332:
@@ -3845,9 +3845,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1334:
 	asm( 
-"	      004fc020    mov eax,[ebp+8]"
+"	      004fc020    mov eax,mp"
 "	      004fc023    mov eax,[eax+10h]"
-"	      004fc026    mov ecx,[ebp-8]"
+"	      004fc026    mov ecx,md"
 "	      004fc029    add [ecx+0B4h],eax"
 );
 // LINE 1335:
@@ -3856,9 +3856,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1337:
 	asm( 
-"	      004fc034    mov eax,[ebp+8]"
+"	      004fc034    mov eax,mp"
 "	      004fc037    mov eax,[eax+10h]"
-"	      004fc03a    mov ecx,[ebp-8]"
+"	      004fc03a    mov ecx,md"
 "	      004fc03d    add [ecx+0C0h],eax"
 );
 // LINE 1338:
@@ -3867,37 +3867,37 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1340:
 	asm( 
-"	      004fc048    mov eax,[ebp+8]"
+"	      004fc048    mov eax,mp"
 "	      004fc04b    mov eax,[eax+10h]"
-"	      004fc04e    mov ecx,[ebp-8]"
+"	      004fc04e    mov ecx,md"
 "	      004fc051    add [ecx+0C4h],eax"
 );
 // LINE 1343:
 	asm( 
-"	      004fc057    mov eax,[ebp-8]"
+"	      004fc057    mov eax,md"
 "	      004fc05a    cmp dword ptr [eax+54h],2"
 "	      004fc05e    jne near ptr 004FC0A7h"
 );
 // LINE 1345:
 	asm( 
-"	      004fc064    mov eax,[ebp-8]"
+"	      004fc064    mov eax,md"
 "	      004fc067    cmp dword ptr [eax+0C4h],2"
 "	      004fc06e    jle near ptr 004FC0A7h"
 );
 // LINE 1347:
 	asm( 
-"	      004fc074    mov eax,[ebp-8]"
+"	      004fc074    mov eax,md"
 "	      004fc077    mov dword ptr [eax+54h],0"
 );
 // LINE 1349:
 	asm( 
-"	      004fc07e    mov eax,[ebp-8]"
+"	      004fc07e    mov eax,md"
 "	      004fc081    mov eax,[eax+50h]"
 "	      004fc084    push eax"
-"	      004fc085    mov eax,[ebp-8]"
+"	      004fc085    mov eax,md"
 "	      004fc088    mov eax,[eax+2Ch]"
 "	      004fc08b    push eax"
-"	      004fc08c    mov eax,[ebp-8]"
+"	      004fc08c    mov eax,md"
 "	      004fc08f    mov eax,[eax+28h]"
 "	      004fc092    push eax"
 "	      004fc093    call 004FDDF5h"
@@ -3917,9 +3917,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1357:
 	asm( 
-"	      004fc0ac    mov eax,[ebp+8]"
+"	      004fc0ac    mov eax,mp"
 "	      004fc0af    mov eax,[eax+10h]"
-"	      004fc0b2    mov ecx,[ebp-8]"
+"	      004fc0b2    mov ecx,md"
 "	      004fc0b5    add [ecx+0C8h],eax"
 );
 // LINE 1358:
@@ -3928,9 +3928,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1360:
 	asm( 
-"	      004fc0c0    mov eax,[ebp+8]"
+"	      004fc0c0    mov eax,mp"
 "	      004fc0c3    mov eax,[eax+10h]"
-"	      004fc0c6    mov ecx,[ebp-8]"
+"	      004fc0c6    mov ecx,md"
 "	      004fc0c9    add [ecx+0D0h],eax"
 );
 // LINE 1361:
@@ -3939,9 +3939,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1363:
 	asm( 
-"	      004fc0d4    mov eax,[ebp+8]"
+"	      004fc0d4    mov eax,mp"
 "	      004fc0d7    mov eax,[eax+10h]"
-"	      004fc0da    mov ecx,[ebp-8]"
+"	      004fc0da    mov ecx,md"
 "	      004fc0dd    add [ecx+0CCh],eax"
 );
 // LINE 1364:
@@ -3950,9 +3950,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1366:
 	asm( 
-"	      004fc0e8    mov eax,[ebp+8]"
+"	      004fc0e8    mov eax,mp"
 "	      004fc0eb    mov eax,[eax+10h]"
-"	      004fc0ee    mov ecx,[ebp-8]"
+"	      004fc0ee    mov ecx,md"
 "	      004fc0f1    add [ecx+7Ch],eax"
 );
 // LINE 1367:
@@ -3961,28 +3961,28 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1369:
 	asm( 
-"	      004fc0f9    mov eax,[ebp-8]"
+"	      004fc0f9    mov eax,md"
 "	      004fc0fc    cmp dword ptr [eax+54h],2"
 "	      004fc100    jne near ptr 004FC14Ch"
-"	      004fc106    mov eax,[ebp+8]"
+"	      004fc106    mov eax,mp"
 "	      004fc109    cmp dword ptr [eax+10h],0"
 "	      004fc10d    jne near ptr 004FC14Ch"
 );
 // LINE 1371:
 	asm( 
-"	      004fc113    mov eax,[ebp-8]"
+"	      004fc113    mov eax,md"
 "	      004fc116    test dword ptr [eax+50h],104h"
 "	      004fc11d    je near ptr 004FC140h"
 );
 // LINE 1374:
 	asm( 
-"	      004fc123    mov eax,[ebp-8]"
+"	      004fc123    mov eax,md"
 "	      004fc126    mov eax,[eax+50h]"
 "	      004fc129    push eax"
-"	      004fc12a    mov eax,[ebp-8]"
+"	      004fc12a    mov eax,md"
 "	      004fc12d    mov eax,[eax+2Ch]"
 "	      004fc130    push eax"
-"	      004fc131    mov eax,[ebp-8]"
+"	      004fc131    mov eax,md"
 "	      004fc134    mov eax,[eax+28h]"
 "	      004fc137    push eax"
 "	      004fc138    call 004FDDF5h"
@@ -3998,9 +3998,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 );
 // LINE 1380:
 	asm( 
-"	      004fc14c    mov eax,[ebp+8]"
+"	      004fc14c    mov eax,mp"
 "	      004fc14f    mov eax,[eax+10h]"
-"	      004fc152    mov ecx,[ebp-8]"
+"	      004fc152    mov ecx,md"
 "	      004fc155    mov [ecx+54h],eax"
 );
 // LINE 1381:
@@ -4096,28 +4096,28 @@ void S3MissionEnd(long mission_id) {
 );
 // LINE 1400:
 	asm( 
-"	      004fc221    mov eax,[ebp+8]"
+"	      004fc221    mov eax,mission_id"
 "	      004fc224    mov ecx,eax"
 "	      004fc226    lea eax,[eax+eax*2]"
 "	      004fc229    lea eax,[ecx+eax*4]"
 "	      004fc22c    lea eax,[ecx+eax*4]"
 "	      004fc22f    lea eax,[eax*4+6072B8h]"
 "	      004fc236    add eax,38h"
-"	      004fc239    mov [ebp-8],eax"
+"	      004fc239    mov md,eax"
 );
 // LINE 1402:
 	asm( 
-"	      004fc23c    mov eax,[ebp-8]"
+"	      004fc23c    mov eax,md"
 "	      004fc23f    push eax"
 "	      004fc240    call 004FD755h"
 "	      004fc245    add esp,4"
 );
 // LINE 1405:
 	asm( 
-"	      004fc248    mov eax,[ebp-8]"
+"	      004fc248    mov eax,md"
 "	      004fc24b    mov eax,[eax+4Ch]"
 "	      004fc24e    and eax,0FFFFFFFEh"
-"	      004fc251    mov ecx,[ebp-8]"
+"	      004fc251    mov ecx,md"
 "	      004fc254    mov [ecx+4Ch],eax"
 );
 // LINE 1407:
@@ -4126,7 +4126,7 @@ void S3MissionEnd(long mission_id) {
 );
 // LINE 1410:
 	asm( 
-"	      004fc25d    mov eax,[ebp-8]"
+"	      004fc25d    mov eax,md"
 "	      004fc260    cmp ds:[6072ECh],eax"
 "	      004fc266    jne near ptr 004FC2D6h"
 );
@@ -4136,35 +4136,35 @@ void S3MissionEnd(long mission_id) {
 );
 // LINE 1413:
 	asm( 
-"	      004fc276    mov dword ptr [ebp-4],0"
+"	      004fc276    mov i,0"
 "	      004fc27d    jmp near ptr 004FC285h"
-"	      004fc282    inc dword ptr [ebp-4]"
-"	      004fc285    cmp dword ptr [ebp-4],1Eh"
+"	      004fc282    inc i"
+"	      004fc285    cmp i,1Eh"
 "	      004fc289    jge near ptr 004FC2D6h"
 );
 // LINE 1415:
 	asm( 
-"	      004fc28f    mov eax,[ebp-4]"
+"	      004fc28f    mov eax,i"
 "	      004fc292    mov ecx,eax"
 "	      004fc294    lea eax,[eax+eax*2]"
 "	      004fc297    lea eax,[ecx+eax*4]"
 "	      004fc29a    lea eax,[ecx+eax*4]"
 "	      004fc29d    lea eax,[eax*4+6072B8h]"
 "	      004fc2a4    add eax,38h"
-"	      004fc2a7    mov [ebp-8],eax"
+"	      004fc2a7    mov md,eax"
 );
 // LINE 1416:
 	asm( 
-"	      004fc2aa    mov eax,[ebp-8]"
+"	      004fc2aa    mov eax,md"
 "	      004fc2ad    test byte ptr [eax+4Ch],1"
 "	      004fc2b1    je near ptr 004FC2D1h"
-"	      004fc2b7    mov eax,[ebp-8]"
+"	      004fc2b7    mov eax,md"
 "	      004fc2ba    cmp dword ptr [eax+54h],2"
 "	      004fc2be    je near ptr 004FC2D1h"
 );
 // LINE 1418:
 	asm( 
-"	      004fc2c4    mov eax,[ebp-8]"
+"	      004fc2c4    mov eax,md"
 "	      004fc2c7    mov ds:[6072ECh],eax"
 );
 // LINE 1419:
@@ -4200,15 +4200,15 @@ struct MISSION_DATA* S3MissionGetByID(long key) {
 );
 // LINE 1436:
 	asm( 
-"	      004fc2e4    mov eax,[ebp+8]"
+"	      004fc2e4    mov eax,key"
 "	      004fc2e7    push eax"
 "	      004fc2e8    call 004FDC2Dh"
 "	      004fc2ed    add esp,4"
-"	      004fc2f0    mov [ebp-4],eax"
+"	      004fc2f0    mov mission_id,eax"
 );
 // LINE 1438:
 	asm( 
-"	      004fc2f3    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fc2f3    cmp mission_id,0FFFFFFFFh"
 "	      004fc2f7    jne near ptr 004FC304h"
 );
 // LINE 1439:
@@ -4218,7 +4218,7 @@ struct MISSION_DATA* S3MissionGetByID(long key) {
 );
 // LINE 1441:
 	asm( 
-"	      004fc304    mov eax,[ebp-4]"
+"	      004fc304    mov eax,mission_id"
 "	      004fc307    mov ecx,eax"
 "	      004fc309    lea eax,[eax+eax*2]"
 "	      004fc30c    lea eax,[ecx+eax*4]"
@@ -4251,17 +4251,17 @@ long S3MissionGetByType(long mission_type) {
 );
 // LINE 1448:
 	asm( 
-"	      004fc32c    mov dword ptr [ebp-4],0"
+"	      004fc32c    mov count,0"
 "	      004fc333    jmp near ptr 004FC33Bh"
-"	      004fc338    inc dword ptr [ebp-4]"
-"	      004fc33b    cmp dword ptr [ebp-4],1Eh"
+"	      004fc338    inc count"
+"	      004fc33b    cmp count,1Eh"
 "	      004fc33f    jge near ptr 004FC38Eh"
 );
 // LINE 1452:
 	asm( 
-"	      004fc345    mov eax,[ebp+8]"
+"	      004fc345    mov eax,mission_type"
 "	      004fc348    push eax"
-"	      004fc349    mov eax,[ebp-4]"
+"	      004fc349    mov eax,count"
 "	      004fc34c    mov ecx,eax"
 "	      004fc34e    lea eax,[eax+eax*2]"
 "	      004fc351    lea eax,[ecx+eax*4]"
@@ -4275,7 +4275,7 @@ long S3MissionGetByType(long mission_type) {
 );
 // LINE 1453:
 	asm( 
-"	      004fc36f    mov eax,[ebp-4]"
+"	      004fc36f    mov eax,count"
 "	      004fc372    mov ecx,eax"
 "	      004fc374    lea eax,[eax+eax*2]"
 "	      004fc377    lea eax,[ecx+eax*4]"
@@ -4346,16 +4346,16 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1484:
 	asm( 
-"	      004fc3bb    mov eax,[ebp+8]"
+"	      004fc3bb    mov eax,type"
 "	      004fc3be    mov [ebp-18h],eax"
 "	      004fc3c1    jmp near ptr 004FC776h"
 );
 // LINE 1487:
 	asm( 
-"	      004fc3c6    mov dword ptr [ebp-8],0"
+"	      004fc3c6    mov i,0"
 "	      004fc3cd    jmp near ptr 004FC3D5h"
-"	      004fc3d2    inc dword ptr [ebp-8]"
-"	      004fc3d5    cmp dword ptr [ebp-8],14h"
+"	      004fc3d2    inc i"
+"	      004fc3d5    cmp i,14h"
 "	      004fc3d9    jge near ptr 004FC442h"
 );
 // LINE 1489:
@@ -4368,7 +4368,7 @@ void S3MissionGenerate(long type) {
 "	      004fc3ec    and eax,7Fh"
 "	      004fc3ef    xor eax,edx"
 "	      004fc3f1    sub eax,edx"
-"	      004fc3f3    mov [ebp-4],eax"
+"	      004fc3f3    mov x,eax"
 );
 // LINE 1490:
 	asm( 
@@ -4380,21 +4380,21 @@ void S3MissionGenerate(long type) {
 "	      004fc403    and eax,7Fh"
 "	      004fc406    xor eax,edx"
 "	      004fc408    sub eax,edx"
-"	      004fc40a    mov [ebp-0Ch],eax"
+"	      004fc40a    mov y,eax"
 );
 // LINE 1491:
 	asm( 
-"	      004fc40d    mov eax,[ebp-0Ch]"
+"	      004fc40d    mov eax,y"
 "	      004fc410    and eax,0FFh"
-"	      004fc415    mov ecx,[ebp-4]"
+"	      004fc415    mov ecx,x"
 "	      004fc418    and ecx,0FFh"
 "	      004fc41e    shl ecx,0Ah"
 "	      004fc421    mov eax,[ecx+eax*4+67ED30h]"
-"	      004fc428    mov [ebp-10h],eax"
+"	      004fc428    mov cptr,eax"
 );
 // LINE 1492:
 	asm( 
-"	      004fc42b    mov eax,[ebp-10h]"
+"	      004fc42b    mov eax,cptr"
 "	      004fc42e    cmp dword ptr [eax+0Ch],0"
 "	      004fc432    je near ptr 004FC43Dh"
 );
@@ -4408,7 +4408,7 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1496:
 	asm( 
-"	      004fc442    cmp dword ptr [ebp-8],14h"
+"	      004fc442    cmp i,14h"
 "	      004fc446    jne near ptr 004FC451h"
 );
 // LINE 1497:
@@ -4417,11 +4417,11 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1499:
 	asm( 
-"	      004fc451    mov eax,[ebp+8]"
+"	      004fc451    mov eax,type"
 "	      004fc454    push eax"
-"	      004fc455    mov eax,[ebp-0Ch]"
+"	      004fc455    mov eax,y"
 "	      004fc458    push eax"
-"	      004fc459    mov eax,[ebp-4]"
+"	      004fc459    mov eax,x"
 "	      004fc45c    push eax"
 "	      004fc45d    call 004FAC6Dh"
 "	      004fc462    add esp,0Ch"
@@ -4432,10 +4432,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1509:
 	asm( 
-"	      004fc46a    mov dword ptr [ebp-8],0"
+"	      004fc46a    mov i,0"
 "	      004fc471    jmp near ptr 004FC479h"
-"	      004fc476    inc dword ptr [ebp-8]"
-"	      004fc479    cmp dword ptr [ebp-8],14h"
+"	      004fc476    inc i"
+"	      004fc479    cmp i,14h"
 "	      004fc47d    jge near ptr 004FC508h"
 );
 // LINE 1511:
@@ -4448,7 +4448,7 @@ void S3MissionGenerate(long type) {
 "	      004fc490    and eax,7Fh"
 "	      004fc493    xor eax,edx"
 "	      004fc495    sub eax,edx"
-"	      004fc497    mov [ebp-4],eax"
+"	      004fc497    mov x,eax"
 );
 // LINE 1512:
 	asm( 
@@ -4460,22 +4460,22 @@ void S3MissionGenerate(long type) {
 "	      004fc4a7    and eax,7Fh"
 "	      004fc4aa    xor eax,edx"
 "	      004fc4ac    sub eax,edx"
-"	      004fc4ae    mov [ebp-0Ch],eax"
+"	      004fc4ae    mov y,eax"
 );
 // LINE 1515:
 	asm( 
-"	      004fc4b1    mov eax,[ebp-4]"
+"	      004fc4b1    mov eax,x"
 "	      004fc4b4    mov eax,[eax*4+639850h]"
-"	      004fc4bb    mov ecx,[ebp-0Ch]"
+"	      004fc4bb    mov ecx,y"
 "	      004fc4be    xor edx,edx"
 "	      004fc4c0    mov dl,[eax+ecx]"
-"	      004fc4c3    mov [ebp-14h],edx"
+"	      004fc4c3    mov tile,edx"
 );
 // LINE 1517:
 	asm( 
-"	      004fc4c6    cmp dword ptr [ebp-14h],70h"
+"	      004fc4c6    cmp tile,70h"
 "	      004fc4ca    jl near ptr 004FC4DDh"
-"	      004fc4d0    cmp dword ptr [ebp-14h],0DBh"
+"	      004fc4d0    cmp tile,0DBh"
 "	      004fc4d7    jle near ptr 004FC4E2h"
 );
 // LINE 1518:
@@ -4484,11 +4484,11 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1520:
 	asm( 
-"	      004fc4e2    mov eax,[ebp+8]"
+"	      004fc4e2    mov eax,type"
 "	      004fc4e5    push eax"
-"	      004fc4e6    mov eax,[ebp-0Ch]"
+"	      004fc4e6    mov eax,y"
 "	      004fc4e9    push eax"
-"	      004fc4ea    mov eax,[ebp-4]"
+"	      004fc4ea    mov eax,x"
 "	      004fc4ed    push eax"
 "	      004fc4ee    call 004FAC6Dh"
 "	      004fc4f3    add esp,0Ch"
@@ -4509,7 +4509,7 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1527:
 	asm( 
-"	      004fc50d    mov eax,[ebp+8]"
+"	      004fc50d    mov eax,type"
 "	      004fc510    push eax"
 "	      004fc511    push 0FFFFFFFFh"
 "	      004fc513    push 0FFFFFFFFh"
@@ -4522,7 +4522,7 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1531:
 	asm( 
-"	      004fc522    mov eax,[ebp+8]"
+"	      004fc522    mov eax,type"
 "	      004fc525    push eax"
 "	      004fc526    push 0FFFFFFFFh"
 "	      004fc528    push 0FFFFFFFFh"
@@ -4535,10 +4535,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1535:
 	asm( 
-"	      004fc537    mov dword ptr [ebp-8],0"
+"	      004fc537    mov i,0"
 "	      004fc53e    jmp near ptr 004FC546h"
-"	      004fc543    inc dword ptr [ebp-8]"
-"	      004fc546    cmp dword ptr [ebp-8],14h"
+"	      004fc543    inc i"
+"	      004fc546    cmp i,14h"
 "	      004fc54a    jge near ptr 004FC5A4h"
 );
 // LINE 1537:
@@ -4551,7 +4551,7 @@ void S3MissionGenerate(long type) {
 "	      004fc55d    and eax,7Fh"
 "	      004fc560    xor eax,edx"
 "	      004fc562    sub eax,edx"
-"	      004fc564    mov [ebp-4],eax"
+"	      004fc564    mov x,eax"
 );
 // LINE 1538:
 	asm( 
@@ -4563,15 +4563,15 @@ void S3MissionGenerate(long type) {
 "	      004fc574    and eax,7Fh"
 "	      004fc577    xor eax,edx"
 "	      004fc579    sub eax,edx"
-"	      004fc57b    mov [ebp-0Ch],eax"
+"	      004fc57b    mov y,eax"
 );
 // LINE 1539:
 	asm( 
-"	      004fc57e    mov eax,[ebp+8]"
+"	      004fc57e    mov eax,type"
 "	      004fc581    push eax"
-"	      004fc582    mov eax,[ebp-0Ch]"
+"	      004fc582    mov eax,y"
 "	      004fc585    push eax"
-"	      004fc586    mov eax,[ebp-4]"
+"	      004fc586    mov eax,x"
 "	      004fc589    push eax"
 "	      004fc58a    call 004FAC6Dh"
 "	      004fc58f    add esp,0Ch"
@@ -4592,10 +4592,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1547:
 	asm( 
-"	      004fc5a9    mov dword ptr [ebp-8],0"
+"	      004fc5a9    mov i,0"
 "	      004fc5b0    jmp near ptr 004FC5B8h"
-"	      004fc5b5    inc dword ptr [ebp-8]"
-"	      004fc5b8    cmp dword ptr [ebp-8],14h"
+"	      004fc5b5    inc i"
+"	      004fc5b8    cmp i,14h"
 "	      004fc5bc    jge near ptr 004FC616h"
 );
 // LINE 1549:
@@ -4608,7 +4608,7 @@ void S3MissionGenerate(long type) {
 "	      004fc5cf    and eax,7Fh"
 "	      004fc5d2    xor eax,edx"
 "	      004fc5d4    sub eax,edx"
-"	      004fc5d6    mov [ebp-4],eax"
+"	      004fc5d6    mov x,eax"
 );
 // LINE 1550:
 	asm( 
@@ -4620,15 +4620,15 @@ void S3MissionGenerate(long type) {
 "	      004fc5e6    and eax,7Fh"
 "	      004fc5e9    xor eax,edx"
 "	      004fc5eb    sub eax,edx"
-"	      004fc5ed    mov [ebp-0Ch],eax"
+"	      004fc5ed    mov y,eax"
 );
 // LINE 1551:
 	asm( 
-"	      004fc5f0    mov eax,[ebp+8]"
+"	      004fc5f0    mov eax,type"
 "	      004fc5f3    push eax"
-"	      004fc5f4    mov eax,[ebp-0Ch]"
+"	      004fc5f4    mov eax,y"
 "	      004fc5f7    push eax"
-"	      004fc5f8    mov eax,[ebp-4]"
+"	      004fc5f8    mov eax,x"
 "	      004fc5fb    push eax"
 "	      004fc5fc    call 004FAC6Dh"
 "	      004fc601    add esp,0Ch"
@@ -4649,10 +4649,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1557:
 	asm( 
-"	      004fc61b    mov dword ptr [ebp-8],0"
+"	      004fc61b    mov i,0"
 "	      004fc622    jmp near ptr 004FC62Ah"
-"	      004fc627    inc dword ptr [ebp-8]"
-"	      004fc62a    cmp dword ptr [ebp-8],14h"
+"	      004fc627    inc i"
+"	      004fc62a    cmp i,14h"
 "	      004fc62e    jge near ptr 004FC688h"
 );
 // LINE 1559:
@@ -4665,7 +4665,7 @@ void S3MissionGenerate(long type) {
 "	      004fc641    and eax,7Fh"
 "	      004fc644    xor eax,edx"
 "	      004fc646    sub eax,edx"
-"	      004fc648    mov [ebp-4],eax"
+"	      004fc648    mov x,eax"
 );
 // LINE 1560:
 	asm( 
@@ -4677,15 +4677,15 @@ void S3MissionGenerate(long type) {
 "	      004fc658    and eax,7Fh"
 "	      004fc65b    xor eax,edx"
 "	      004fc65d    sub eax,edx"
-"	      004fc65f    mov [ebp-0Ch],eax"
+"	      004fc65f    mov y,eax"
 );
 // LINE 1561:
 	asm( 
-"	      004fc662    mov eax,[ebp+8]"
+"	      004fc662    mov eax,type"
 "	      004fc665    push eax"
-"	      004fc666    mov eax,[ebp-0Ch]"
+"	      004fc666    mov eax,y"
 "	      004fc669    push eax"
-"	      004fc66a    mov eax,[ebp-4]"
+"	      004fc66a    mov eax,x"
 "	      004fc66d    push eax"
 "	      004fc66e    call 004FAC6Dh"
 "	      004fc673    add esp,0Ch"
@@ -4706,10 +4706,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1567:
 	asm( 
-"	      004fc68d    mov dword ptr [ebp-8],0"
+"	      004fc68d    mov i,0"
 "	      004fc694    jmp near ptr 004FC69Ch"
-"	      004fc699    inc dword ptr [ebp-8]"
-"	      004fc69c    cmp dword ptr [ebp-8],14h"
+"	      004fc699    inc i"
+"	      004fc69c    cmp i,14h"
 "	      004fc6a0    jge near ptr 004FC6FAh"
 );
 // LINE 1569:
@@ -4722,7 +4722,7 @@ void S3MissionGenerate(long type) {
 "	      004fc6b3    and eax,7Fh"
 "	      004fc6b6    xor eax,edx"
 "	      004fc6b8    sub eax,edx"
-"	      004fc6ba    mov [ebp-4],eax"
+"	      004fc6ba    mov x,eax"
 );
 // LINE 1570:
 	asm( 
@@ -4734,15 +4734,15 @@ void S3MissionGenerate(long type) {
 "	      004fc6ca    and eax,7Fh"
 "	      004fc6cd    xor eax,edx"
 "	      004fc6cf    sub eax,edx"
-"	      004fc6d1    mov [ebp-0Ch],eax"
+"	      004fc6d1    mov y,eax"
 );
 // LINE 1571:
 	asm( 
-"	      004fc6d4    mov eax,[ebp+8]"
+"	      004fc6d4    mov eax,type"
 "	      004fc6d7    push eax"
-"	      004fc6d8    mov eax,[ebp-0Ch]"
+"	      004fc6d8    mov eax,y"
 "	      004fc6db    push eax"
-"	      004fc6dc    mov eax,[ebp-4]"
+"	      004fc6dc    mov eax,x"
 "	      004fc6df    push eax"
 "	      004fc6e0    call 004FAC6Dh"
 "	      004fc6e5    add esp,0Ch"
@@ -4763,10 +4763,10 @@ void S3MissionGenerate(long type) {
 );
 // LINE 1577:
 	asm( 
-"	      004fc6ff    mov dword ptr [ebp-8],0"
+"	      004fc6ff    mov i,0"
 "	      004fc706    jmp near ptr 004FC70Eh"
-"	      004fc70b    inc dword ptr [ebp-8]"
-"	      004fc70e    cmp dword ptr [ebp-8],14h"
+"	      004fc70b    inc i"
+"	      004fc70e    cmp i,14h"
 "	      004fc712    jge near ptr 004FC76Ch"
 );
 // LINE 1579:
@@ -4779,7 +4779,7 @@ void S3MissionGenerate(long type) {
 "	      004fc725    and eax,7Fh"
 "	      004fc728    xor eax,edx"
 "	      004fc72a    sub eax,edx"
-"	      004fc72c    mov [ebp-4],eax"
+"	      004fc72c    mov x,eax"
 );
 // LINE 1580:
 	asm( 
@@ -4791,15 +4791,15 @@ void S3MissionGenerate(long type) {
 "	      004fc73c    and eax,7Fh"
 "	      004fc73f    xor eax,edx"
 "	      004fc741    sub eax,edx"
-"	      004fc743    mov [ebp-0Ch],eax"
+"	      004fc743    mov y,eax"
 );
 // LINE 1581:
 	asm( 
-"	      004fc746    mov eax,[ebp+8]"
+"	      004fc746    mov eax,type"
 "	      004fc749    push eax"
-"	      004fc74a    mov eax,[ebp-0Ch]"
+"	      004fc74a    mov eax,y"
 "	      004fc74d    push eax"
-"	      004fc74e    mov eax,[ebp-4]"
+"	      004fc74e    mov eax,x"
 "	      004fc751    push eax"
 "	      004fc752    call 004FAC6Dh"
 "	      004fc757    add esp,0Ch"
@@ -4897,7 +4897,7 @@ void S3MissionSetCurrNext() {
 );
 // LINE 1601:
 	asm( 
-"	      004fc8a4    mov dword ptr [ebp-8],0"
+"	      004fc8a4    mov md,0"
 );
 // LINE 1603:
 	asm( 
@@ -4918,35 +4918,35 @@ void S3MissionSetCurrNext() {
 "	      004fc8d1    cdq"
 "	      004fc8d2    idiv ecx"
 "	      004fc8d4    inc eax"
-"	      004fc8d5    mov [ebp-4],eax"
+"	      004fc8d5    mov i,eax"
 "	      004fc8d8    jmp near ptr 004FC8E0h"
-"	      004fc8dd    inc dword ptr [ebp-4]"
-"	      004fc8e0    cmp dword ptr [ebp-4],1Eh"
+"	      004fc8dd    inc i"
+"	      004fc8e0    cmp i,1Eh"
 "	      004fc8e4    jge near ptr 004FC931h"
 );
 // LINE 1608:
 	asm( 
-"	      004fc8ea    mov eax,[ebp-4]"
+"	      004fc8ea    mov eax,i"
 "	      004fc8ed    mov ecx,eax"
 "	      004fc8ef    lea eax,[eax+eax*2]"
 "	      004fc8f2    lea eax,[ecx+eax*4]"
 "	      004fc8f5    lea eax,[ecx+eax*4]"
 "	      004fc8f8    lea eax,[eax*4+6072B8h]"
 "	      004fc8ff    add eax,38h"
-"	      004fc902    mov [ebp-8],eax"
+"	      004fc902    mov md,eax"
 );
 // LINE 1609:
 	asm( 
-"	      004fc905    mov eax,[ebp-8]"
+"	      004fc905    mov eax,md"
 "	      004fc908    test byte ptr [eax+4Ch],1"
 "	      004fc90c    je near ptr 004FC92Ch"
-"	      004fc912    mov eax,[ebp-8]"
+"	      004fc912    mov eax,md"
 "	      004fc915    cmp dword ptr [eax+54h],2"
 "	      004fc919    je near ptr 004FC92Ch"
 );
 // LINE 1611:
 	asm( 
-"	      004fc91f    mov eax,[ebp-8]"
+"	      004fc91f    mov eax,md"
 "	      004fc922    mov ds:[6072ECh],eax"
 );
 // LINE 1612:
@@ -4959,9 +4959,9 @@ void S3MissionSetCurrNext() {
 );
 // LINE 1616:
 	asm( 
-"	      004fc931    mov dword ptr [ebp-4],0"
+"	      004fc931    mov i,0"
 "	      004fc938    jmp near ptr 004FC940h"
-"	      004fc93d    inc dword ptr [ebp-4]"
+"	      004fc93d    inc i"
 "	      004fc940    mov eax,ds:[6072ECh]"
 "	      004fc945    mov ecx,6072B8h"
 "	      004fc94a    add ecx,38h"
@@ -4969,32 +4969,32 @@ void S3MissionSetCurrNext() {
 "	      004fc94f    mov ecx,0D4h"
 "	      004fc954    cdq"
 "	      004fc955    idiv ecx"
-"	      004fc957    cmp eax,[ebp-4]"
+"	      004fc957    cmp eax,i"
 "	      004fc95a    jle near ptr 004FC9A7h"
 );
 // LINE 1618:
 	asm( 
-"	      004fc960    mov eax,[ebp-4]"
+"	      004fc960    mov eax,i"
 "	      004fc963    mov ecx,eax"
 "	      004fc965    lea eax,[eax+eax*2]"
 "	      004fc968    lea eax,[ecx+eax*4]"
 "	      004fc96b    lea eax,[ecx+eax*4]"
 "	      004fc96e    lea eax,[eax*4+6072B8h]"
 "	      004fc975    add eax,38h"
-"	      004fc978    mov [ebp-8],eax"
+"	      004fc978    mov md,eax"
 );
 // LINE 1619:
 	asm( 
-"	      004fc97b    mov eax,[ebp-8]"
+"	      004fc97b    mov eax,md"
 "	      004fc97e    test byte ptr [eax+4Ch],1"
 "	      004fc982    je near ptr 004FC9A2h"
-"	      004fc988    mov eax,[ebp-8]"
+"	      004fc988    mov eax,md"
 "	      004fc98b    cmp dword ptr [eax+54h],2"
 "	      004fc98f    je near ptr 004FC9A2h"
 );
 // LINE 1621:
 	asm( 
-"	      004fc995    mov eax,[ebp-8]"
+"	      004fc995    mov eax,md"
 "	      004fc998    mov ds:[6072ECh],eax"
 );
 // LINE 1622:
@@ -5031,7 +5031,7 @@ void S3MissionSetCurrPrev() {
 );
 // LINE 1636:
 	asm( 
-"	      004fc9b5    mov dword ptr [ebp-8],0"
+"	      004fc9b5    mov md,0"
 );
 // LINE 1638:
 	asm( 
@@ -5052,35 +5052,35 @@ void S3MissionSetCurrPrev() {
 "	      004fc9e2    cdq"
 "	      004fc9e3    idiv ecx"
 "	      004fc9e5    dec eax"
-"	      004fc9e6    mov [ebp-4],eax"
+"	      004fc9e6    mov i,eax"
 "	      004fc9e9    jmp near ptr 004FC9F1h"
-"	      004fc9ee    dec dword ptr [ebp-4]"
-"	      004fc9f1    cmp dword ptr [ebp-4],0"
+"	      004fc9ee    dec i"
+"	      004fc9f1    cmp i,0"
 "	      004fc9f5    jl near ptr 004FCA42h"
 );
 // LINE 1643:
 	asm( 
-"	      004fc9fb    mov eax,[ebp-4]"
+"	      004fc9fb    mov eax,i"
 "	      004fc9fe    mov ecx,eax"
 "	      004fca00    lea eax,[eax+eax*2]"
 "	      004fca03    lea eax,[ecx+eax*4]"
 "	      004fca06    lea eax,[ecx+eax*4]"
 "	      004fca09    lea eax,[eax*4+6072B8h]"
 "	      004fca10    add eax,38h"
-"	      004fca13    mov [ebp-8],eax"
+"	      004fca13    mov md,eax"
 );
 // LINE 1644:
 	asm( 
-"	      004fca16    mov eax,[ebp-8]"
+"	      004fca16    mov eax,md"
 "	      004fca19    test byte ptr [eax+4Ch],1"
 "	      004fca1d    je near ptr 004FCA3Dh"
-"	      004fca23    mov eax,[ebp-8]"
+"	      004fca23    mov eax,md"
 "	      004fca26    cmp dword ptr [eax+54h],2"
 "	      004fca2a    je near ptr 004FCA3Dh"
 );
 // LINE 1646:
 	asm( 
-"	      004fca30    mov eax,[ebp-8]"
+"	      004fca30    mov eax,md"
 "	      004fca33    mov ds:[6072ECh],eax"
 );
 // LINE 1647:
@@ -5093,9 +5093,9 @@ void S3MissionSetCurrPrev() {
 );
 // LINE 1651:
 	asm( 
-"	      004fca42    mov dword ptr [ebp-4],1Eh"
+"	      004fca42    mov i,1Eh"
 "	      004fca49    jmp near ptr 004FCA51h"
-"	      004fca4e    dec dword ptr [ebp-4]"
+"	      004fca4e    dec i"
 "	      004fca51    mov eax,ds:[6072ECh]"
 "	      004fca56    mov ecx,6072B8h"
 "	      004fca5b    add ecx,38h"
@@ -5103,32 +5103,32 @@ void S3MissionSetCurrPrev() {
 "	      004fca60    mov ecx,0D4h"
 "	      004fca65    cdq"
 "	      004fca66    idiv ecx"
-"	      004fca68    cmp eax,[ebp-4]"
+"	      004fca68    cmp eax,i"
 "	      004fca6b    jge near ptr 004FCAB8h"
 );
 // LINE 1653:
 	asm( 
-"	      004fca71    mov eax,[ebp-4]"
+"	      004fca71    mov eax,i"
 "	      004fca74    mov ecx,eax"
 "	      004fca76    lea eax,[eax+eax*2]"
 "	      004fca79    lea eax,[ecx+eax*4]"
 "	      004fca7c    lea eax,[ecx+eax*4]"
 "	      004fca7f    lea eax,[eax*4+6072B8h]"
 "	      004fca86    add eax,38h"
-"	      004fca89    mov [ebp-8],eax"
+"	      004fca89    mov md,eax"
 );
 // LINE 1654:
 	asm( 
-"	      004fca8c    mov eax,[ebp-8]"
+"	      004fca8c    mov eax,md"
 "	      004fca8f    test byte ptr [eax+4Ch],1"
 "	      004fca93    je near ptr 004FCAB3h"
-"	      004fca99    mov eax,[ebp-8]"
+"	      004fca99    mov eax,md"
 "	      004fca9c    cmp dword ptr [eax+54h],2"
 "	      004fcaa0    je near ptr 004FCAB3h"
 );
 // LINE 1656:
 	asm( 
-"	      004fcaa6    mov eax,[ebp-8]"
+"	      004fcaa6    mov eax,md"
 "	      004fcaa9    mov ds:[6072ECh],eax"
 );
 // LINE 1657:
@@ -5165,15 +5165,15 @@ int32_t S3MissionIsType(long key, long mission_type) {
 );
 // LINE 1674:
 	asm( 
-"	      004fcac6    mov eax,[ebp+8]"
+"	      004fcac6    mov eax,key"
 "	      004fcac9    push eax"
 "	      004fcaca    call 004FDC2Dh"
 "	      004fcacf    add esp,4"
-"	      004fcad2    mov [ebp-4],eax"
+"	      004fcad2    mov mission_id,eax"
 );
 // LINE 1676:
 	asm( 
-"	      004fcad5    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fcad5    cmp mission_id,0FFFFFFFFh"
 "	      004fcad9    jne near ptr 004FCAE6h"
 );
 // LINE 1677:
@@ -5183,18 +5183,18 @@ int32_t S3MissionIsType(long key, long mission_type) {
 );
 // LINE 1679:
 	asm( 
-"	      004fcae6    mov eax,[ebp-4]"
+"	      004fcae6    mov eax,mission_id"
 "	      004fcae9    mov ecx,eax"
 "	      004fcaeb    lea eax,[eax+eax*2]"
 "	      004fcaee    lea eax,[ecx+eax*4]"
 "	      004fcaf1    lea eax,[ecx+eax*4]"
 "	      004fcaf4    lea eax,[eax*4+6072B8h]"
 "	      004fcafb    add eax,38h"
-"	      004fcafe    mov [ebp-8],eax"
+"	      004fcafe    mov md,eax"
 );
 // LINE 1682:
 	asm( 
-"	      004fcb01    mov eax,[ebp-8]"
+"	      004fcb01    mov eax,md"
 "	      004fcb04    test byte ptr [eax+4Ch],1"
 "	      004fcb08    jne near ptr 004FCB15h"
 );
@@ -5205,9 +5205,9 @@ int32_t S3MissionIsType(long key, long mission_type) {
 );
 // LINE 1685:
 	asm( 
-"	      004fcb15    mov eax,[ebp-8]"
+"	      004fcb15    mov eax,md"
 "	      004fcb18    mov eax,[eax+50h]"
-"	      004fcb1b    test [ebp+0Ch],eax"
+"	      004fcb1b    test mission_type,eax"
 "	      004fcb1e    je near ptr 004FCB2Eh"
 );
 // LINE 1686:
@@ -5243,13 +5243,13 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 );
 // LINE 1803:
 	asm( 
-"	      004fcb43    mov eax,[ebp+8]"
+"	      004fcb43    mov eax,md"
 "	      004fcb46    test byte ptr [eax+4Ch],1"
 "	      004fcb4a    jne near ptr 004FCB5Bh"
 );
 // LINE 1805:
 	asm( 
-"	      004fcb50    mov eax,[ebp+0Ch]"
+"	      004fcb50    mov eax,p"
 "	      004fcb53    mov byte ptr [eax],0"
 );
 // LINE 1806:
@@ -5258,35 +5258,35 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 );
 // LINE 1809:
 	asm( 
-"	      004fcb5b    mov eax,[ebp+8]"
+"	      004fcb5b    mov eax,md"
 "	      004fcb5e    mov eax,[eax+50h]"
 "	      004fcb61    mov [ebp-4],eax"
 "	      004fcb64    jmp near ptr 004FCBCCh"
 );
 // LINE 1822:
 	asm( 
-"	      004fcb69    mov eax,[ebp+8]"
+"	      004fcb69    mov eax,md"
 "	      004fcb6c    mov eax,[eax+78h]"
 "	      004fcb6f    push eax"
-"	      004fcb70    mov eax,[ebp+8]"
+"	      004fcb70    mov eax,md"
 "	      004fcb73    mov eax,[eax+74h]"
 "	      004fcb76    push eax"
-"	      004fcb77    mov eax,[ebp+8]"
+"	      004fcb77    mov eax,md"
 "	      004fcb7a    mov eax,[eax+70h]"
 "	      004fcb7d    push eax"
-"	      004fcb7e    mov eax,[ebp+8]"
+"	      004fcb7e    mov eax,md"
 "	      004fcb81    mov eax,[eax+64h]"
 "	      004fcb84    push eax"
-"	      004fcb85    mov eax,[ebp+8]"
+"	      004fcb85    mov eax,md"
 "	      004fcb88    mov eax,[eax+60h]"
 "	      004fcb8b    push eax"
-"	      004fcb8c    mov eax,[ebp+8]"
+"	      004fcb8c    mov eax,md"
 "	      004fcb8f    mov eax,[eax+58h]"
 "	      004fcb92    push eax"
-"	      004fcb93    mov eax,[ebp+8]"
+"	      004fcb93    mov eax,md"
 "	      004fcb96    push eax"
 "	      004fcb97    push 5B500Ch"
-"	      004fcb9c    mov eax,[ebp+0Ch]"
+"	      004fcb9c    mov eax,p"
 "	      004fcb9f    push eax"
 "	      004fcba0    call 0056CD30h"
 "	      004fcba5    add esp,24h"
@@ -5297,10 +5297,10 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 );
 // LINE 1828:
 	asm( 
-"	      004fcbad    mov eax,[ebp+8]"
+"	      004fcbad    mov eax,md"
 "	      004fcbb0    push eax"
 "	      004fcbb1    push 5B5050h"
-"	      004fcbb6    mov eax,[ebp+0Ch]"
+"	      004fcbb6    mov eax,p"
 "	      004fcbb9    push eax"
 "	      004fcbba    call 0056CD30h"
 "	      004fcbbf    add esp,0Ch"
@@ -5343,18 +5343,18 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1844:
 	asm( 
-"	      004fcbf3    mov eax,[ebp+8]"
+"	      004fcbf3    mov eax,mission_id"
 "	      004fcbf6    mov ecx,eax"
 "	      004fcbf8    lea eax,[eax+eax*2]"
 "	      004fcbfb    lea eax,[ecx+eax*4]"
 "	      004fcbfe    lea eax,[ecx+eax*4]"
 "	      004fcc01    lea eax,[eax*4+6072B8h]"
 "	      004fcc08    add eax,38h"
-"	      004fcc0b    mov [ebp-4],eax"
+"	      004fcc0b    mov md,eax"
 );
 // LINE 1847:
 	asm( 
-"	      004fcc0e    mov eax,[ebp-4]"
+"	      004fcc0e    mov eax,md"
 "	      004fcc11    test byte ptr [eax+4Ch],1"
 "	      004fcc15    jne near ptr 004FCC20h"
 );
@@ -5364,14 +5364,14 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1851:
 	asm( 
-"	      004fcc20    mov eax,[ebp-4]"
+"	      004fcc20    mov eax,md"
 "	      004fcc23    mov eax,[eax+50h]"
 "	      004fcc26    mov [ebp-8],eax"
 "	      004fcc29    jmp near ptr 004FCC6Ah"
 );
 // LINE 1854:
 	asm( 
-"	      004fcc2e    mov eax,[ebp-4]"
+"	      004fcc2e    mov eax,md"
 "	      004fcc31    mov eax,[eax+24h]"
 "	      004fcc34    push eax"
 "	      004fcc35    call 00506C61h"
@@ -5379,10 +5379,10 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1855:
 	asm( 
-"	      004fcc3d    mov eax,[ebp-4]"
+"	      004fcc3d    mov eax,md"
 "	      004fcc40    mov eax,[eax+4Ch]"
 "	      004fcc43    and eax,0FFFFFFFEh"
-"	      004fcc46    mov ecx,[ebp-4]"
+"	      004fcc46    mov ecx,md"
 "	      004fcc49    mov [ecx+4Ch],eax"
 );
 // LINE 1856:
@@ -5391,10 +5391,10 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1858:
 	asm( 
-"	      004fcc51    mov eax,[ebp-4]"
+"	      004fcc51    mov eax,md"
 "	      004fcc54    mov eax,[eax+4Ch]"
 "	      004fcc57    and eax,0FFFFFFFEh"
-"	      004fcc5a    mov ecx,[ebp-4]"
+"	      004fcc5a    mov ecx,md"
 "	      004fcc5d    mov [ecx+4Ch],eax"
 );
 // LINE 1859:
@@ -5410,7 +5410,7 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1863:
 	asm( 
-"	      004fcc7c    mov eax,[ebp-4]"
+"	      004fcc7c    mov eax,md"
 "	      004fcc7f    cmp dword ptr [eax+54h],2"
 "	      004fcc83    jne near ptr 004FCC94h"
 );
@@ -5428,13 +5428,13 @@ void S3MissionCancel(long mission_id) {
 );
 // LINE 1870:
 	asm( 
-"	      004fcc9a    mov eax,[ebp-4]"
+"	      004fcc9a    mov eax,md"
 "	      004fcc9d    mov eax,[eax+24h]"
 "	      004fcca0    mov ds:[5B4EC0h],eax"
 );
 // LINE 1873:
 	asm( 
-"	      004fcca5    mov eax,[ebp-4]"
+"	      004fcca5    mov eax,md"
 "	      004fcca8    push eax"
 "	      004fcca9    push 5B5054h"
 "	      004fccae    mov eax,ds:[5B4EC4h]"
@@ -5475,15 +5475,15 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1898:
 	asm( 
-"	      004fccd9    mov dword ptr [ebp-4],0"
+"	      004fccd9    mov i,0"
 "	      004fcce0    jmp near ptr 004FCCE8h"
-"	      004fcce5    inc dword ptr [ebp-4]"
-"	      004fcce8    cmp dword ptr [ebp-4],1Eh"
+"	      004fcce5    inc i"
+"	      004fcce8    cmp i,1Eh"
 "	      004fccec    jge near ptr 004FCD33h"
 );
 // LINE 1900:
 	asm( 
-"	      004fccf2    mov eax,[ebp-4]"
+"	      004fccf2    mov eax,i"
 "	      004fccf5    mov ecx,eax"
 "	      004fccf7    lea eax,[eax+eax*2]"
 "	      004fccfa    lea eax,[ecx+eax*4]"
@@ -5493,14 +5493,14 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1902:
 	asm( 
-"	      004fcd0e    mov eax,[ebp-4]"
+"	      004fcd0e    mov eax,i"
 "	      004fcd11    mov ecx,eax"
 "	      004fcd13    lea eax,[eax+eax*2]"
 "	      004fcd16    lea eax,[ecx+eax*4]"
 "	      004fcd19    lea eax,[ecx+eax*4]"
 "	      004fcd1c    lea eax,[eax*4+6072B8h]"
 "	      004fcd23    add eax,38h"
-"	      004fcd26    mov [ebp-8],eax"
+"	      004fcd26    mov md,eax"
 );
 // LINE 1903:
 	asm( 
@@ -5512,7 +5512,7 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1908:
 	asm( 
-"	      004fcd33    cmp dword ptr [ebp-4],1Eh"
+"	      004fcd33    cmp i,1Eh"
 "	      004fcd37    jne near ptr 004FCD47h"
 );
 // LINE 1909:
@@ -5522,81 +5522,81 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1911:
 	asm( 
-"	      004fcd47    mov edi,[ebp-8]"
+"	      004fcd47    mov edi,md"
 "	      004fcd4a    xor eax,eax"
 "	      004fcd4c    mov ecx,35h"
 "	      004fcd51    rep stosd"
 );
 // LINE 1912:
 	asm( 
-"	      004fcd53    mov eax,[ebp-8]"
+"	      004fcd53    mov eax,md"
 "	      004fcd56    mov dword ptr [eax+4Ch],1"
 );
 // LINE 1913:
 	asm( 
-"	      004fcd5d    mov eax,[ebp-8]"
+"	      004fcd5d    mov eax,md"
 "	      004fcd60    mov dword ptr [eax+28h],0FFFFFFFFh"
 );
 // LINE 1914:
 	asm( 
-"	      004fcd67    mov eax,[ebp-8]"
+"	      004fcd67    mov eax,md"
 "	      004fcd6a    mov dword ptr [eax+2Ch],0FFFFFFFFh"
 );
 // LINE 1915:
 	asm( 
-"	      004fcd71    mov eax,[ebp-8]"
+"	      004fcd71    mov eax,md"
 "	      004fcd74    mov dword ptr [eax+30h],0FFFFFFFFh"
 );
 // LINE 1916:
 	asm( 
-"	      004fcd7b    mov eax,[ebp-8]"
+"	      004fcd7b    mov eax,md"
 "	      004fcd7e    mov dword ptr [eax+34h],0FFFFFFFFh"
 );
 // LINE 1917:
 	asm( 
-"	      004fcd85    mov eax,[ebp-8]"
+"	      004fcd85    mov eax,md"
 "	      004fcd88    mov dword ptr [eax+38h],0FFFFFFFFh"
 );
 // LINE 1918:
 	asm( 
-"	      004fcd8f    mov eax,[ebp-8]"
+"	      004fcd8f    mov eax,md"
 "	      004fcd92    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 1919:
 	asm( 
-"	      004fcd99    mov eax,[ebp+8]"
-"	      004fcd9c    mov ecx,[ebp-8]"
+"	      004fcd99    mov eax,type"
+"	      004fcd9c    mov ecx,md"
 "	      004fcd9f    mov [ecx+50h],eax"
 );
 // LINE 1920:
 	asm( 
-"	      004fcda2    mov eax,[ebp-8]"
+"	      004fcda2    mov eax,md"
 "	      004fcda5    mov dword ptr [eax+54h],0"
 );
 // LINE 1921:
 	asm( 
-"	      004fcdac    mov eax,[ebp-8]"
+"	      004fcdac    mov eax,md"
 "	      004fcdaf    mov dword ptr [eax+40h],0"
 );
 // LINE 1922:
 	asm( 
 "	      004fcdb6    mov eax,ds:[6072E8h]"
-"	      004fcdbb    mov ecx,[ebp-8]"
+"	      004fcdbb    mov ecx,md"
 "	      004fcdbe    mov [ecx+24h],eax"
 "	      004fcdc1    inc dword ptr ds:[6072E8h]"
 );
 // LINE 1924:
 	asm( 
-"	      004fcdc7    mov eax,[ebp+8]"
+"	      004fcdc7    mov eax,type"
 "	      004fcdca    mov [ebp-0Ch],eax"
 "	      004fcdcd    jmp near ptr 004FCF9Ah"
 );
 // LINE 1927:
 	asm( 
-"	      004fcdd2    mov eax,[ebp-8]"
+"	      004fcdd2    mov eax,md"
 "	      004fcdd5    mov eax,[eax+4Ch]"
 "	      004fcdd8    and eax,0FFFFFFFEh"
-"	      004fcddb    mov ecx,[ebp-8]"
+"	      004fcddb    mov ecx,md"
 "	      004fcdde    mov [ecx+4Ch],eax"
 "	      004fcde1    dec dword ptr ds:[6072E8h]"
 "	      004fcde7    mov eax,0FFFFFFFFh"
@@ -5608,10 +5608,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1930:
 	asm( 
-"	      004fcdf6    mov eax,[ebp-8]"
+"	      004fcdf6    mov eax,md"
 "	      004fcdf9    mov eax,[eax+4Ch]"
 "	      004fcdfc    and eax,0FFFFFFFEh"
-"	      004fcdff    mov ecx,[ebp-8]"
+"	      004fcdff    mov ecx,md"
 "	      004fce02    mov [ecx+4Ch],eax"
 "	      004fce05    dec dword ptr ds:[6072E8h]"
 "	      004fce0b    mov eax,0FFFFFFFFh"
@@ -5623,10 +5623,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1933:
 	asm( 
-"	      004fce1a    mov eax,[ebp-8]"
+"	      004fce1a    mov eax,md"
 "	      004fce1d    mov eax,[eax+4Ch]"
 "	      004fce20    and eax,0FFFFFFFEh"
-"	      004fce23    mov ecx,[ebp-8]"
+"	      004fce23    mov ecx,md"
 "	      004fce26    mov [ecx+4Ch],eax"
 "	      004fce29    dec dword ptr ds:[6072E8h]"
 "	      004fce2f    mov eax,0FFFFFFFFh"
@@ -5638,10 +5638,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1936:
 	asm( 
-"	      004fce3e    mov eax,[ebp-8]"
+"	      004fce3e    mov eax,md"
 "	      004fce41    mov eax,[eax+4Ch]"
 "	      004fce44    and eax,0FFFFFFFEh"
-"	      004fce47    mov ecx,[ebp-8]"
+"	      004fce47    mov ecx,md"
 "	      004fce4a    mov [ecx+4Ch],eax"
 "	      004fce4d    dec dword ptr ds:[6072E8h]"
 "	      004fce53    mov eax,0FFFFFFFFh"
@@ -5653,10 +5653,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1939:
 	asm( 
-"	      004fce62    mov eax,[ebp-8]"
+"	      004fce62    mov eax,md"
 "	      004fce65    mov eax,[eax+4Ch]"
 "	      004fce68    and eax,0FFFFFFFEh"
-"	      004fce6b    mov ecx,[ebp-8]"
+"	      004fce6b    mov ecx,md"
 "	      004fce6e    mov [ecx+4Ch],eax"
 "	      004fce71    dec dword ptr ds:[6072E8h]"
 "	      004fce77    mov eax,0FFFFFFFFh"
@@ -5668,10 +5668,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1942:
 	asm( 
-"	      004fce86    mov eax,[ebp-8]"
+"	      004fce86    mov eax,md"
 "	      004fce89    mov eax,[eax+4Ch]"
 "	      004fce8c    and eax,0FFFFFFFEh"
-"	      004fce8f    mov ecx,[ebp-8]"
+"	      004fce8f    mov ecx,md"
 "	      004fce92    mov [ecx+4Ch],eax"
 "	      004fce95    dec dword ptr ds:[6072E8h]"
 "	      004fce9b    mov eax,0FFFFFFFFh"
@@ -5683,10 +5683,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1945:
 	asm( 
-"	      004fceaa    mov eax,[ebp-8]"
+"	      004fceaa    mov eax,md"
 "	      004fcead    mov eax,[eax+4Ch]"
 "	      004fceb0    and eax,0FFFFFFFEh"
-"	      004fceb3    mov ecx,[ebp-8]"
+"	      004fceb3    mov ecx,md"
 "	      004fceb6    mov [ecx+4Ch],eax"
 "	      004fceb9    dec dword ptr ds:[6072E8h]"
 "	      004fcebf    mov eax,0FFFFFFFFh"
@@ -5698,10 +5698,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1948:
 	asm( 
-"	      004fcece    mov eax,[ebp-8]"
+"	      004fcece    mov eax,md"
 "	      004fced1    mov eax,[eax+4Ch]"
 "	      004fced4    and eax,0FFFFFFFEh"
-"	      004fced7    mov ecx,[ebp-8]"
+"	      004fced7    mov ecx,md"
 "	      004fceda    mov [ecx+4Ch],eax"
 "	      004fcedd    dec dword ptr ds:[6072E8h]"
 "	      004fcee3    mov eax,0FFFFFFFFh"
@@ -5713,10 +5713,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1951:
 	asm( 
-"	      004fcef2    mov eax,[ebp-8]"
+"	      004fcef2    mov eax,md"
 "	      004fcef5    mov eax,[eax+4Ch]"
 "	      004fcef8    and eax,0FFFFFFFEh"
-"	      004fcefb    mov ecx,[ebp-8]"
+"	      004fcefb    mov ecx,md"
 "	      004fcefe    mov [ecx+4Ch],eax"
 "	      004fcf01    dec dword ptr ds:[6072E8h]"
 "	      004fcf07    mov eax,0FFFFFFFFh"
@@ -5728,10 +5728,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1954:
 	asm( 
-"	      004fcf16    mov eax,[ebp-8]"
+"	      004fcf16    mov eax,md"
 "	      004fcf19    mov eax,[eax+4Ch]"
 "	      004fcf1c    and eax,0FFFFFFFEh"
-"	      004fcf1f    mov ecx,[ebp-8]"
+"	      004fcf1f    mov ecx,md"
 "	      004fcf22    mov [ecx+4Ch],eax"
 "	      004fcf25    dec dword ptr ds:[6072E8h]"
 "	      004fcf2b    mov eax,0FFFFFFFFh"
@@ -5746,20 +5746,20 @@ long S3MissionStartDirect(long type) {
 "	      004fcf3a    mov eax,ds:[6072D4h]"
 "	      004fcf3f    push eax"
 "	      004fcf40    push 5B5064h"
-"	      004fcf45    mov eax,[ebp-8]"
+"	      004fcf45    mov eax,md"
 "	      004fcf48    push eax"
 "	      004fcf49    call 0056CD30h"
 "	      004fcf4e    add esp,0Ch"
 );
 // LINE 1958:
 	asm( 
-"	      004fcf51    mov eax,[ebp-8]"
+"	      004fcf51    mov eax,md"
 "	      004fcf54    mov dword ptr [eax+54h],2"
 );
 // LINE 1959:
 	asm( 
 "	      004fcf5b    mov eax,ds:[6072D4h]"
-"	      004fcf60    mov ecx,[ebp-8]"
+"	      004fcf60    mov ecx,md"
 "	      004fcf63    mov [ecx+20h],eax"
 "	      004fcf66    inc dword ptr ds:[6072D4h]"
 );
@@ -5769,10 +5769,10 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1962:
 	asm( 
-"	      004fcf71    mov eax,[ebp-8]"
+"	      004fcf71    mov eax,md"
 "	      004fcf74    mov eax,[eax+4Ch]"
 "	      004fcf77    and eax,0FFFFFFFEh"
-"	      004fcf7a    mov ecx,[ebp-8]"
+"	      004fcf7a    mov ecx,md"
 "	      004fcf7d    mov [ecx+4Ch],eax"
 "	      004fcf80    dec dword ptr ds:[6072E8h]"
 "	      004fcf86    mov eax,0FFFFFFFFh"
@@ -5819,18 +5819,18 @@ long S3MissionStartDirect(long type) {
 	asm( 
 "	      004fd03d    cmp dword ptr ds:[6072ECh],0"
 "	      004fd044    jne near ptr 004FD05Fh"
-"	      004fd04a    mov eax,[ebp-8]"
+"	      004fd04a    mov eax,md"
 "	      004fd04d    cmp dword ptr [eax+54h],2"
 "	      004fd051    je near ptr 004FD05Fh"
 );
 // LINE 1967:
 	asm( 
-"	      004fd057    mov eax,[ebp-8]"
+"	      004fd057    mov eax,md"
 "	      004fd05a    mov ds:[6072ECh],eax"
 );
 // LINE 1969:
 	asm( 
-"	      004fd05f    mov eax,[ebp-8]"
+"	      004fd05f    mov eax,md"
 "	      004fd062    cmp dword ptr [eax+54h],2"
 "	      004fd066    jne near ptr 004FD077h"
 );
@@ -5855,7 +5855,7 @@ long S3MissionStartDirect(long type) {
 	asm( 
 "	      004fd087    mov eax,5B5074h"
 "	      004fd08c    mov ecx,5B507Ch"
-"	      004fd091    mov edx,[ebp-8]"
+"	      004fd091    mov edx,md"
 "	      004fd094    xor ebx,ebx"
 "	      004fd096    cmp dword ptr [edx+54h],2"
 "	      004fd09a    sete bl"
@@ -5864,7 +5864,7 @@ long S3MissionStartDirect(long type) {
 "	      004fd0a0    and ebx,ecx"
 "	      004fd0a2    add ebx,eax"
 "	      004fd0a4    push ebx"
-"	      004fd0a5    mov eax,[ebp-8]"
+"	      004fd0a5    mov eax,md"
 "	      004fd0a8    push eax"
 "	      004fd0a9    push 5B5080h"
 "	      004fd0ae    mov eax,ds:[5B4EC4h]"
@@ -5874,7 +5874,7 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1981:
 	asm( 
-"	      004fd0bc    mov eax,[ebp-8]"
+"	      004fd0bc    mov eax,md"
 "	      004fd0bf    mov eax,[eax+24h]"
 "	      004fd0c2    mov ds:[5B4EC0h],eax"
 );
@@ -5887,7 +5887,7 @@ long S3MissionStartDirect(long type) {
 );
 // LINE 1984:
 	asm( 
-"	      004fd0d6    mov eax,[ebp-8]"
+"	      004fd0d6    mov eax,md"
 "	      004fd0d9    mov eax,[eax+24h]"
 "	      004fd0dc    jmp near ptr 004FD0E1h"
 );
@@ -5921,37 +5921,37 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2014:
 	asm( 
-"	      004fd0ef    mov dword ptr [ebp-10h],5B5098h"
+"	      004fd0ef    mov mname,5B5098h"
 );
 // LINE 2015:
 	asm( 
-"	      004fd0f6    mov dword ptr [ebp-4],5B50A4h"
+"	      004fd0f6    mov reason,5B50A4h"
 );
 // LINE 2016:
 	asm( 
-"	      004fd0fd    mov dword ptr [ebp-8],0"
+"	      004fd0fd    mov money,0"
 );
 // LINE 2017:
 	asm( 
-"	      004fd104    mov dword ptr [ebp-14h],0"
+"	      004fd104    mov points,0"
 );
 // LINE 2018:
 	asm( 
-"	      004fd10b    mov dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      004fd10b    mov key,0FFFFFFFFh"
 );
 // LINE 2020:
 	asm( 
-"	      004fd112    mov eax,[ebp+8]"
+"	      004fd112    mov eax,mp"
 "	      004fd115    mov eax,[eax+4]"
 "	      004fd118    push eax"
 "	      004fd119    call 004FDC2Dh"
 "	      004fd11e    add esp,4"
-"	      004fd121    mov ecx,[ebp+0Ch]"
+"	      004fd121    mov ecx,mission_id"
 "	      004fd124    mov [ecx],eax"
 );
 // LINE 2023:
 	asm( 
-"	      004fd126    mov eax,[ebp+8]"
+"	      004fd126    mov eax,mp"
 "	      004fd129    test byte ptr [eax+14h],1"
 "	      004fd12d    je near ptr 004FD138h"
 );
@@ -5961,13 +5961,13 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2029:
 	asm( 
-"	      004fd138    mov eax,[ebp+0Ch]"
+"	      004fd138    mov eax,mission_id"
 "	      004fd13b    cmp dword ptr [eax],0FFFFFFFFh"
 "	      004fd13e    je near ptr 004FD182h"
 );
 // LINE 2031:
 	asm( 
-"	      004fd144    mov eax,[ebp+0Ch]"
+"	      004fd144    mov eax,mission_id"
 "	      004fd147    mov eax,[eax]"
 "	      004fd149    mov ecx,eax"
 "	      004fd14b    lea eax,[eax+eax*2]"
@@ -5975,11 +5975,11 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 "	      004fd151    lea eax,[ecx+eax*4]"
 "	      004fd154    lea eax,[eax*4+6072B8h]"
 "	      004fd15b    add eax,38h"
-"	      004fd15e    mov [ebp-18h],eax"
+"	      004fd15e    mov md,eax"
 );
 // LINE 2033:
 	asm( 
-"	      004fd161    mov eax,[ebp-18h]"
+"	      004fd161    mov eax,md"
 "	      004fd164    cmp dword ptr [eax+54h],2"
 "	      004fd168    jne near ptr 004FD173h"
 );
@@ -5989,33 +5989,33 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2035:
 	asm( 
-"	      004fd173    mov eax,[ebp-18h]"
-"	      004fd176    mov [ebp-10h],eax"
+"	      004fd173    mov eax,md"
+"	      004fd176    mov mname,eax"
 );
 // LINE 2036:
 	asm( 
-"	      004fd179    mov eax,[ebp-18h]"
+"	      004fd179    mov eax,md"
 "	      004fd17c    mov eax,[eax+24h]"
-"	      004fd17f    mov [ebp-0Ch],eax"
+"	      004fd17f    mov key,eax"
 );
 // LINE 2042:
 	asm( 
-"	      004fd182    mov eax,[ebp+8]"
+"	      004fd182    mov eax,mp"
 "	      004fd185    mov eax,[eax]"
 "	      004fd187    mov [ebp-1Ch],eax"
 "	      004fd18a    jmp near ptr 004FD625h"
 );
 // LINE 2045:
 	asm( 
-"	      004fd18f    mov eax,[ebp+8]"
+"	      004fd18f    mov eax,mp"
 "	      004fd192    mov eax,[eax+10h]"
 "	      004fd195    imul eax,ds:[5B4ECCh]"
 "	      004fd19c    neg eax"
-"	      004fd19e    mov [ebp-14h],eax"
+"	      004fd19e    mov points,eax"
 );
 // LINE 2046:
 	asm( 
-"	      004fd1a1    mov eax,[ebp+8]"
+"	      004fd1a1    mov eax,mp"
 "	      004fd1a4    mov eax,[eax+10h]"
 "	      004fd1a7    imul eax,ds:[5B4ECCh]"
 "	      004fd1ae    neg eax"
@@ -6025,7 +6025,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2047:
 	asm( 
-"	      004fd1b9    mov dword ptr [ebp-4],5B50A8h"
+"	      004fd1b9    mov reason,5B50A8h"
 );
 // LINE 2048:
 	asm( 
@@ -6033,14 +6033,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2050:
 	asm( 
-"	      004fd1c5    mov eax,[ebp+8]"
+"	      004fd1c5    mov eax,mp"
 "	      004fd1c8    mov eax,[eax+10h]"
 "	      004fd1cb    imul eax,ds:[5B4ED0h]"
-"	      004fd1d2    mov [ebp-8],eax"
+"	      004fd1d2    mov money,eax"
 );
 // LINE 2051:
 	asm( 
-"	      004fd1d5    mov eax,[ebp+8]"
+"	      004fd1d5    mov eax,mp"
 "	      004fd1d8    mov eax,[eax+10h]"
 "	      004fd1db    imul eax,ds:[5B4ED0h]"
 "	      004fd1e2    push eax"
@@ -6049,7 +6049,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2052:
 	asm( 
-"	      004fd1eb    mov dword ptr [ebp-4],5B50B4h"
+"	      004fd1eb    mov reason,5B50B4h"
 );
 // LINE 2054:
 	asm( 
@@ -6071,15 +6071,15 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2060:
 	asm( 
-"	      004fd211    mov eax,[ebp+8]"
+"	      004fd211    mov eax,mp"
 "	      004fd214    mov eax,[eax+10h]"
 "	      004fd217    imul eax,ds:[5B4ED4h]"
 "	      004fd21e    neg eax"
-"	      004fd220    mov [ebp-14h],eax"
+"	      004fd220    mov points,eax"
 );
 // LINE 2061:
 	asm( 
-"	      004fd223    mov eax,[ebp+8]"
+"	      004fd223    mov eax,mp"
 "	      004fd226    mov eax,[eax+10h]"
 "	      004fd229    imul eax,ds:[5B4ED4h]"
 "	      004fd230    neg eax"
@@ -6089,7 +6089,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2062:
 	asm( 
-"	      004fd23b    mov dword ptr [ebp-4],5B50C0h"
+"	      004fd23b    mov reason,5B50C0h"
 );
 // LINE 2063:
 	asm( 
@@ -6101,14 +6101,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2067:
 	asm( 
-"	      004fd24c    mov eax,[ebp+8]"
+"	      004fd24c    mov eax,mp"
 "	      004fd24f    mov eax,[eax+10h]"
 "	      004fd252    imul eax,ds:[5B4ED8h]"
-"	      004fd259    mov [ebp-8],eax"
+"	      004fd259    mov money,eax"
 );
 // LINE 2068:
 	asm( 
-"	      004fd25c    mov eax,[ebp+8]"
+"	      004fd25c    mov eax,mp"
 "	      004fd25f    mov eax,[eax+10h]"
 "	      004fd262    imul eax,ds:[5B4ED8h]"
 "	      004fd269    push eax"
@@ -6117,7 +6117,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2069:
 	asm( 
-"	      004fd272    mov dword ptr [ebp-4],5B50D4h"
+"	      004fd272    mov reason,5B50D4h"
 );
 // LINE 2071:
 	asm( 
@@ -6135,15 +6135,15 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2075:
 	asm( 
-"	      004fd293    mov eax,[ebp+8]"
+"	      004fd293    mov eax,mp"
 "	      004fd296    mov eax,[eax+10h]"
 "	      004fd299    imul eax,ds:[5B4EDCh]"
 "	      004fd2a0    neg eax"
-"	      004fd2a2    mov [ebp-14h],eax"
+"	      004fd2a2    mov points,eax"
 );
 // LINE 2076:
 	asm( 
-"	      004fd2a5    mov eax,[ebp+8]"
+"	      004fd2a5    mov eax,mp"
 "	      004fd2a8    mov eax,[eax+10h]"
 "	      004fd2ab    imul eax,ds:[5B4EDCh]"
 "	      004fd2b2    neg eax"
@@ -6153,7 +6153,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2077:
 	asm( 
-"	      004fd2bd    mov dword ptr [ebp-4],5B50E4h"
+"	      004fd2bd    mov reason,5B50E4h"
 );
 // LINE 2078:
 	asm( 
@@ -6161,14 +6161,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2080:
 	asm( 
-"	      004fd2c9    mov eax,[ebp+8]"
+"	      004fd2c9    mov eax,mp"
 "	      004fd2cc    mov eax,[eax+10h]"
 "	      004fd2cf    imul eax,ds:[5B4EE0h]"
-"	      004fd2d6    mov [ebp-8],eax"
+"	      004fd2d6    mov money,eax"
 );
 // LINE 2081:
 	asm( 
-"	      004fd2d9    mov eax,[ebp+8]"
+"	      004fd2d9    mov eax,mp"
 "	      004fd2dc    mov eax,[eax+10h]"
 "	      004fd2df    imul eax,ds:[5B4EE0h]"
 "	      004fd2e6    push eax"
@@ -6177,7 +6177,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2082:
 	asm( 
-"	      004fd2ef    mov dword ptr [ebp-4],5B50F4h"
+"	      004fd2ef    mov reason,5B50F4h"
 );
 // LINE 2084:
 	asm( 
@@ -6219,14 +6219,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2100:
 	asm( 
-"	      004fd32e    mov eax,[ebp+8]"
+"	      004fd32e    mov eax,mp"
 "	      004fd331    mov eax,[eax+10h]"
 "	      004fd334    imul eax,ds:[5B4EE4h]"
-"	      004fd33b    mov [ebp-8],eax"
+"	      004fd33b    mov money,eax"
 );
 // LINE 2101:
 	asm( 
-"	      004fd33e    mov eax,[ebp+8]"
+"	      004fd33e    mov eax,mp"
 "	      004fd341    mov eax,[eax+10h]"
 "	      004fd344    imul eax,ds:[5B4EE4h]"
 "	      004fd34b    push eax"
@@ -6235,7 +6235,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2102:
 	asm( 
-"	      004fd354    mov dword ptr [ebp-4],5B5104h"
+"	      004fd354    mov reason,5B5104h"
 );
 // LINE 2104:
 	asm( 
@@ -6253,14 +6253,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2108:
 	asm( 
-"	      004fd375    mov eax,[ebp+8]"
+"	      004fd375    mov eax,mp"
 "	      004fd378    mov eax,[eax+10h]"
 "	      004fd37b    imul eax,ds:[5B4EE8h]"
-"	      004fd382    mov [ebp-8],eax"
+"	      004fd382    mov money,eax"
 );
 // LINE 2109:
 	asm( 
-"	      004fd385    mov eax,[ebp+8]"
+"	      004fd385    mov eax,mp"
 "	      004fd388    mov eax,[eax+10h]"
 "	      004fd38b    imul eax,ds:[5B4EE8h]"
 "	      004fd392    push eax"
@@ -6269,7 +6269,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2110:
 	asm( 
-"	      004fd39b    mov dword ptr [ebp-4],5B5114h"
+"	      004fd39b    mov reason,5B5114h"
 );
 // LINE 2112:
 	asm( 
@@ -6287,14 +6287,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2116:
 	asm( 
-"	      004fd3bc    mov eax,[ebp+8]"
+"	      004fd3bc    mov eax,mp"
 "	      004fd3bf    mov eax,[eax+10h]"
 "	      004fd3c2    imul eax,ds:[5B4EECh]"
-"	      004fd3c9    mov [ebp-8],eax"
+"	      004fd3c9    mov money,eax"
 );
 // LINE 2117:
 	asm( 
-"	      004fd3cc    mov eax,[ebp+8]"
+"	      004fd3cc    mov eax,mp"
 "	      004fd3cf    mov eax,[eax+10h]"
 "	      004fd3d2    imul eax,ds:[5B4EECh]"
 "	      004fd3d9    push eax"
@@ -6303,7 +6303,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2118:
 	asm( 
-"	      004fd3e2    mov dword ptr [ebp-4],5B5128h"
+"	      004fd3e2    mov reason,5B5128h"
 );
 // LINE 2120:
 	asm( 
@@ -6321,14 +6321,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2124:
 	asm( 
-"	      004fd403    mov eax,[ebp+8]"
+"	      004fd403    mov eax,mp"
 "	      004fd406    mov eax,[eax+10h]"
 "	      004fd409    imul eax,ds:[5B4EF0h]"
-"	      004fd410    mov [ebp-8],eax"
+"	      004fd410    mov money,eax"
 );
 // LINE 2125:
 	asm( 
-"	      004fd413    mov eax,[ebp+8]"
+"	      004fd413    mov eax,mp"
 "	      004fd416    mov eax,[eax+10h]"
 "	      004fd419    imul eax,ds:[5B4EF0h]"
 "	      004fd420    push eax"
@@ -6337,7 +6337,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2126:
 	asm( 
-"	      004fd429    mov dword ptr [ebp-4],5B5138h"
+"	      004fd429    mov reason,5B5138h"
 );
 // LINE 2128:
 	asm( 
@@ -6379,14 +6379,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2144:
 	asm( 
-"	      004fd468    mov eax,[ebp+8]"
+"	      004fd468    mov eax,mp"
 "	      004fd46b    mov eax,[eax+10h]"
 "	      004fd46e    imul eax,ds:[5B4EF4h]"
-"	      004fd475    mov [ebp-8],eax"
+"	      004fd475    mov money,eax"
 );
 // LINE 2145:
 	asm( 
-"	      004fd478    mov eax,[ebp+8]"
+"	      004fd478    mov eax,mp"
 "	      004fd47b    mov eax,[eax+10h]"
 "	      004fd47e    imul eax,ds:[5B4EF4h]"
 "	      004fd485    push eax"
@@ -6395,7 +6395,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2146:
 	asm( 
-"	      004fd48e    mov dword ptr [ebp-4],5B5148h"
+"	      004fd48e    mov reason,5B5148h"
 );
 // LINE 2148:
 	asm( 
@@ -6413,14 +6413,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2152:
 	asm( 
-"	      004fd4af    mov eax,[ebp+8]"
+"	      004fd4af    mov eax,mp"
 "	      004fd4b2    mov eax,[eax+10h]"
 "	      004fd4b5    imul eax,ds:[5B4EF8h]"
-"	      004fd4bc    mov [ebp-8],eax"
+"	      004fd4bc    mov money,eax"
 );
 // LINE 2153:
 	asm( 
-"	      004fd4bf    mov eax,[ebp+8]"
+"	      004fd4bf    mov eax,mp"
 "	      004fd4c2    mov eax,[eax+10h]"
 "	      004fd4c5    imul eax,ds:[5B4EF8h]"
 "	      004fd4cc    push eax"
@@ -6429,7 +6429,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2154:
 	asm( 
-"	      004fd4d5    mov dword ptr [ebp-4],5B5154h"
+"	      004fd4d5    mov reason,5B5154h"
 );
 // LINE 2156:
 	asm( 
@@ -6447,15 +6447,15 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2160:
 	asm( 
-"	      004fd4f6    mov eax,[ebp+8]"
+"	      004fd4f6    mov eax,mp"
 "	      004fd4f9    mov eax,[eax+10h]"
 "	      004fd4fc    imul eax,ds:[5B4EFCh]"
 "	      004fd503    neg eax"
-"	      004fd505    mov [ebp-14h],eax"
+"	      004fd505    mov points,eax"
 );
 // LINE 2161:
 	asm( 
-"	      004fd508    mov eax,[ebp+8]"
+"	      004fd508    mov eax,mp"
 "	      004fd50b    mov eax,[eax+10h]"
 "	      004fd50e    imul eax,ds:[5B4EFCh]"
 "	      004fd515    neg eax"
@@ -6465,7 +6465,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2162:
 	asm( 
-"	      004fd520    mov dword ptr [ebp-4],5B5160h"
+"	      004fd520    mov reason,5B5160h"
 );
 // LINE 2163:
 	asm( 
@@ -6473,14 +6473,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2165:
 	asm( 
-"	      004fd52c    mov eax,[ebp+8]"
+"	      004fd52c    mov eax,mp"
 "	      004fd52f    mov eax,[eax+10h]"
 "	      004fd532    imul eax,ds:[5B4E90h]"
-"	      004fd539    mov [ebp-14h],eax"
+"	      004fd539    mov points,eax"
 );
 // LINE 2166:
 	asm( 
-"	      004fd53c    mov eax,[ebp+8]"
+"	      004fd53c    mov eax,mp"
 "	      004fd53f    mov eax,[eax+10h]"
 "	      004fd542    imul eax,ds:[5B4E90h]"
 "	      004fd549    push eax"
@@ -6489,14 +6489,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2167:
 	asm( 
-"	      004fd552    mov eax,[ebp+8]"
+"	      004fd552    mov eax,mp"
 "	      004fd555    mov eax,[eax+10h]"
 "	      004fd558    imul eax,ds:[5B4E8Ch]"
-"	      004fd55f    mov [ebp-8],eax"
+"	      004fd55f    mov money,eax"
 );
 // LINE 2168:
 	asm( 
-"	      004fd562    mov eax,[ebp+8]"
+"	      004fd562    mov eax,mp"
 "	      004fd565    mov eax,[eax+10h]"
 "	      004fd568    imul eax,ds:[5B4E8Ch]"
 "	      004fd56f    push eax"
@@ -6505,7 +6505,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2169:
 	asm( 
-"	      004fd578    mov dword ptr [ebp-4],5B516Ch"
+"	      004fd578    mov reason,5B516Ch"
 );
 // LINE 2171:
 	asm( 
@@ -6523,14 +6523,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2175:
 	asm( 
-"	      004fd599    mov eax,[ebp+8]"
+"	      004fd599    mov eax,mp"
 "	      004fd59c    mov eax,[eax+10h]"
 "	      004fd59f    imul eax,ds:[5B4EB4h]"
-"	      004fd5a6    mov [ebp-14h],eax"
+"	      004fd5a6    mov points,eax"
 );
 // LINE 2176:
 	asm( 
-"	      004fd5a9    mov eax,[ebp+8]"
+"	      004fd5a9    mov eax,mp"
 "	      004fd5ac    mov eax,[eax+10h]"
 "	      004fd5af    imul eax,ds:[5B4EB4h]"
 "	      004fd5b6    push eax"
@@ -6539,14 +6539,14 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2177:
 	asm( 
-"	      004fd5bf    mov eax,[ebp+8]"
+"	      004fd5bf    mov eax,mp"
 "	      004fd5c2    mov eax,[eax+10h]"
 "	      004fd5c5    imul eax,ds:[5B4EB0h]"
-"	      004fd5cc    mov [ebp-8],eax"
+"	      004fd5cc    mov money,eax"
 );
 // LINE 2178:
 	asm( 
-"	      004fd5cf    mov eax,[ebp+8]"
+"	      004fd5cf    mov eax,mp"
 "	      004fd5d2    mov eax,[eax+10h]"
 "	      004fd5d5    imul eax,ds:[5B4EB0h]"
 "	      004fd5dc    push eax"
@@ -6555,7 +6555,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2179:
 	asm( 
-"	      004fd5e5    mov dword ptr [ebp-4],5B517Ch"
+"	      004fd5e5    mov reason,5B517Ch"
 );
 // LINE 2181:
 	asm( 
@@ -6673,21 +6673,21 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2191:
 	asm( 
-"	      004fd6d8    mov eax,[ebp-0Ch]"
+"	      004fd6d8    mov eax,key"
 "	      004fd6db    mov ds:[5B4EC0h],eax"
 );
 // LINE 2194:
 	asm( 
-"	      004fd6e0    cmp dword ptr [ebp-8],0"
+"	      004fd6e0    cmp money,0"
 "	      004fd6e4    je near ptr 004FD718h"
 );
 // LINE 2200:
 	asm( 
-"	      004fd6ea    mov eax,[ebp-8]"
+"	      004fd6ea    mov eax,money"
 "	      004fd6ed    push eax"
-"	      004fd6ee    mov eax,[ebp-4]"
+"	      004fd6ee    mov eax,reason"
 "	      004fd6f1    push eax"
-"	      004fd6f2    mov eax,[ebp-10h]"
+"	      004fd6f2    mov eax,mname"
 "	      004fd6f5    push eax"
 "	      004fd6f6    push 5B518Ch"
 "	      004fd6fb    mov eax,ds:[5B4EC4h]"
@@ -6704,16 +6704,16 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 );
 // LINE 2204:
 	asm( 
-"	      004fd718    cmp dword ptr [ebp-14h],0"
+"	      004fd718    cmp points,0"
 "	      004fd71c    je near ptr 004FD750h"
 );
 // LINE 2210:
 	asm( 
-"	      004fd722    mov eax,[ebp-14h]"
+"	      004fd722    mov eax,points"
 "	      004fd725    push eax"
-"	      004fd726    mov eax,[ebp-4]"
+"	      004fd726    mov eax,reason"
 "	      004fd729    push eax"
-"	      004fd72a    mov eax,[ebp-10h]"
+"	      004fd72a    mov eax,mname"
 "	      004fd72d    push eax"
 "	      004fd72e    push 5B51ACh"
 "	      004fd733    mov eax,ds:[5B4EC4h]"
@@ -6755,392 +6755,392 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 );
 // LINE 2226:
 	asm( 
-"	      004fd75e    mov dword ptr [ebp-4],0"
+"	      004fd75e    mov total_pts,0"
 );
 // LINE 2227:
 	asm( 
-"	      004fd765    mov dword ptr [ebp-0Ch],0"
+"	      004fd765    mov total_money,0"
 );
 // LINE 2234:
 	asm( 
-"	      004fd76c    mov eax,[ebp+8]"
+"	      004fd76c    mov eax,md"
 "	      004fd76f    test byte ptr [eax+50h],8"
 "	      004fd773    je near ptr 004FD7C5h"
 );
 // LINE 2239:
 	asm( 
 "	      004fd779    xor eax,eax"
-"	      004fd77b    mov ecx,[ebp+8]"
+"	      004fd77b    mov ecx,md"
 "	      004fd77e    mov ecx,[ecx+78h]"
 "	      004fd781    imul ecx,ds:[5B4EACh]"
 "	      004fd788    sub eax,ecx"
 "	      004fd78a    neg eax"
-"	      004fd78c    sub [ebp-4],eax"
+"	      004fd78c    sub total_pts,eax"
 );
 // LINE 2240:
 	asm( 
-"	      004fd78f    mov eax,[ebp+8]"
+"	      004fd78f    mov eax,md"
 "	      004fd792    mov eax,[eax+74h]"
 "	      004fd795    imul eax,ds:[5B4EACh]"
-"	      004fd79c    add [ebp-4],eax"
+"	      004fd79c    add total_pts,eax"
 );
 // LINE 2241:
 	asm( 
 "	      004fd79f    xor eax,eax"
-"	      004fd7a1    mov ecx,[ebp+8]"
+"	      004fd7a1    mov ecx,md"
 "	      004fd7a4    mov ecx,[ecx+78h]"
 "	      004fd7a7    imul ecx,ds:[5B4EA8h]"
 "	      004fd7ae    sub eax,ecx"
 "	      004fd7b0    neg eax"
-"	      004fd7b2    sub [ebp-0Ch],eax"
+"	      004fd7b2    sub total_money,eax"
 );
 // LINE 2242:
 	asm( 
-"	      004fd7b5    mov eax,[ebp+8]"
+"	      004fd7b5    mov eax,md"
 "	      004fd7b8    mov eax,[eax+74h]"
 "	      004fd7bb    imul eax,ds:[5B4EA8h]"
-"	      004fd7c2    add [ebp-0Ch],eax"
+"	      004fd7c2    add total_money,eax"
 );
 // LINE 2245:
 	asm( 
-"	      004fd7c5    mov eax,[ebp+8]"
+"	      004fd7c5    mov eax,md"
 "	      004fd7c8    test byte ptr [eax+50h],1"
 "	      004fd7cc    je near ptr 004FD852h"
 );
 // LINE 2251:
 	asm( 
-"	      004fd7d2    mov eax,[ebp+8]"
+"	      004fd7d2    mov eax,md"
 "	      004fd7d5    mov eax,[eax+6Ch]"
 "	      004fd7d8    and eax,1"
-"	      004fd7db    mov ecx,[ebp+8]"
+"	      004fd7db    mov ecx,md"
 "	      004fd7de    imul eax,[ecx+48h]"
-"	      004fd7e2    add [ebp-4],eax"
+"	      004fd7e2    add total_pts,eax"
 );
 // LINE 2252:
 	asm( 
-"	      004fd7e5    mov eax,[ebp+8]"
+"	      004fd7e5    mov eax,md"
 "	      004fd7e8    mov eax,[eax+6Ch]"
 "	      004fd7eb    and eax,1"
-"	      004fd7ee    mov ecx,[ebp+8]"
+"	      004fd7ee    mov ecx,md"
 "	      004fd7f1    imul eax,[ecx+44h]"
-"	      004fd7f5    add [ebp-0Ch],eax"
+"	      004fd7f5    add total_money,eax"
 );
 // LINE 2253:
 	asm( 
 "	      004fd7f8    xor eax,eax"
-"	      004fd7fa    mov ecx,[ebp+8]"
+"	      004fd7fa    mov ecx,md"
 "	      004fd7fd    mov ecx,[ecx+68h]"
 "	      004fd800    imul ecx,ds:[5B4E70h]"
 "	      004fd807    sub eax,ecx"
 "	      004fd809    neg eax"
-"	      004fd80b    sub [ebp-4],eax"
+"	      004fd80b    sub total_pts,eax"
 );
 // LINE 2254:
 	asm( 
 "	      004fd80e    xor eax,eax"
-"	      004fd810    mov ecx,[ebp+8]"
+"	      004fd810    mov ecx,md"
 "	      004fd813    mov ecx,[ecx+5Ch]"
 "	      004fd816    dec ecx"
 "	      004fd817    imul ecx,ds:[5B4E70h]"
 "	      004fd81e    sub eax,ecx"
 "	      004fd820    neg eax"
-"	      004fd822    sub [ebp-4],eax"
+"	      004fd822    sub total_pts,eax"
 );
 // LINE 2255:
 	asm( 
 "	      004fd825    xor eax,eax"
-"	      004fd827    mov ecx,[ebp+8]"
+"	      004fd827    mov ecx,md"
 "	      004fd82a    mov ecx,[ecx+68h]"
 "	      004fd82d    imul ecx,ds:[5B4E6Ch]"
 "	      004fd834    sub eax,ecx"
 "	      004fd836    neg eax"
-"	      004fd838    sub [ebp-0Ch],eax"
+"	      004fd838    sub total_money,eax"
 );
 // LINE 2256:
 	asm( 
 "	      004fd83b    xor eax,eax"
-"	      004fd83d    mov ecx,[ebp+8]"
+"	      004fd83d    mov ecx,md"
 "	      004fd840    mov ecx,[ecx+5Ch]"
 "	      004fd843    dec ecx"
 "	      004fd844    imul ecx,ds:[5B4E6Ch]"
 "	      004fd84b    sub eax,ecx"
 "	      004fd84d    neg eax"
-"	      004fd84f    sub [ebp-0Ch],eax"
+"	      004fd84f    sub total_money,eax"
 );
 // LINE 2259:
 	asm( 
-"	      004fd852    mov eax,[ebp+8]"
+"	      004fd852    mov eax,md"
 "	      004fd855    test byte ptr [eax+50h],20h"
 "	      004fd859    je near ptr 004FD8E3h"
 );
 // LINE 2263:
 	asm( 
-"	      004fd85f    mov eax,[ebp+8]"
+"	      004fd85f    mov eax,md"
 "	      004fd862    mov eax,[eax+0A0h]"
 "	      004fd868    imul eax,ds:[5B4E58h]"
-"	      004fd86f    add [ebp-4],eax"
+"	      004fd86f    add total_pts,eax"
 );
 // LINE 2264:
 	asm( 
-"	      004fd872    mov eax,[ebp+8]"
+"	      004fd872    mov eax,md"
 "	      004fd875    mov eax,[eax+0A0h]"
 "	      004fd87b    imul eax,ds:[5B4E54h]"
-"	      004fd882    add [ebp-0Ch],eax"
+"	      004fd882    add total_money,eax"
 );
 // LINE 2265:
 	asm( 
 "	      004fd885    xor eax,eax"
-"	      004fd887    mov ecx,[ebp+8]"
+"	      004fd887    mov ecx,md"
 "	      004fd88a    mov ecx,[ecx+0B4h]"
 "	      004fd890    imul ecx,ds:[5B4E58h]"
 "	      004fd897    sub eax,ecx"
 "	      004fd899    neg eax"
-"	      004fd89b    sub [ebp-4],eax"
+"	      004fd89b    sub total_pts,eax"
 );
 // LINE 2266:
 	asm( 
 "	      004fd89e    xor eax,eax"
-"	      004fd8a0    mov ecx,[ebp+8]"
+"	      004fd8a0    mov ecx,md"
 "	      004fd8a3    mov ecx,[ecx+0B4h]"
 "	      004fd8a9    imul ecx,ds:[5B4E54h]"
 "	      004fd8b0    sub eax,ecx"
 "	      004fd8b2    neg eax"
-"	      004fd8b4    sub [ebp-0Ch],eax"
+"	      004fd8b4    sub total_money,eax"
 );
 // LINE 2267:
 	asm( 
-"	      004fd8b7    mov eax,[ebp+8]"
+"	      004fd8b7    mov eax,md"
 "	      004fd8ba    mov eax,[eax+0A4h]"
 "	      004fd8c0    sar eax,2"
 "	      004fd8c3    imul eax,ds:[5B4E58h]"
-"	      004fd8ca    add [ebp-4],eax"
+"	      004fd8ca    add total_pts,eax"
 );
 // LINE 2268:
 	asm( 
-"	      004fd8cd    mov eax,[ebp+8]"
+"	      004fd8cd    mov eax,md"
 "	      004fd8d0    mov eax,[eax+0A4h]"
 "	      004fd8d6    sar eax,2"
 "	      004fd8d9    imul eax,ds:[5B4E54h]"
-"	      004fd8e0    add [ebp-0Ch],eax"
+"	      004fd8e0    add total_money,eax"
 );
 // LINE 2272:
 	asm( 
-"	      004fd8e3    mov eax,[ebp+8]"
+"	      004fd8e3    mov eax,md"
 "	      004fd8e6    test byte ptr [eax+50h],10h"
 "	      004fd8ea    je near ptr 004FD974h"
 );
 // LINE 2275:
 	asm( 
-"	      004fd8f0    mov eax,[ebp+8]"
+"	      004fd8f0    mov eax,md"
 "	      004fd8f3    mov eax,[eax+98h]"
 "	      004fd8f9    imul eax,ds:[5B4E50h]"
-"	      004fd900    add [ebp-4],eax"
+"	      004fd900    add total_pts,eax"
 );
 // LINE 2276:
 	asm( 
-"	      004fd903    mov eax,[ebp+8]"
+"	      004fd903    mov eax,md"
 "	      004fd906    mov eax,[eax+98h]"
 "	      004fd90c    imul eax,ds:[5B4E4Ch]"
-"	      004fd913    add [ebp-0Ch],eax"
+"	      004fd913    add total_money,eax"
 );
 // LINE 2277:
 	asm( 
 "	      004fd916    xor eax,eax"
-"	      004fd918    mov ecx,[ebp+8]"
+"	      004fd918    mov ecx,md"
 "	      004fd91b    mov ecx,[ecx+0B4h]"
 "	      004fd921    imul ecx,ds:[5B4E50h]"
 "	      004fd928    sub eax,ecx"
 "	      004fd92a    neg eax"
-"	      004fd92c    sub [ebp-4],eax"
+"	      004fd92c    sub total_pts,eax"
 );
 // LINE 2278:
 	asm( 
 "	      004fd92f    xor eax,eax"
-"	      004fd931    mov ecx,[ebp+8]"
+"	      004fd931    mov ecx,md"
 "	      004fd934    mov ecx,[ecx+0B4h]"
 "	      004fd93a    imul ecx,ds:[5B4E4Ch]"
 "	      004fd941    sub eax,ecx"
 "	      004fd943    neg eax"
-"	      004fd945    sub [ebp-0Ch],eax"
+"	      004fd945    sub total_money,eax"
 );
 // LINE 2279:
 	asm( 
-"	      004fd948    mov eax,[ebp+8]"
+"	      004fd948    mov eax,md"
 "	      004fd94b    mov eax,[eax+0A4h]"
 "	      004fd951    sar eax,2"
 "	      004fd954    imul eax,ds:[5B4E50h]"
-"	      004fd95b    add [ebp-4],eax"
+"	      004fd95b    add total_pts,eax"
 );
 // LINE 2280:
 	asm( 
-"	      004fd95e    mov eax,[ebp+8]"
+"	      004fd95e    mov eax,md"
 "	      004fd961    mov eax,[eax+0A4h]"
 "	      004fd967    sar eax,2"
 "	      004fd96a    imul eax,ds:[5B4E4Ch]"
-"	      004fd971    add [ebp-0Ch],eax"
+"	      004fd971    add total_money,eax"
 );
 // LINE 2283:
 	asm( 
-"	      004fd974    mov eax,[ebp+8]"
+"	      004fd974    mov eax,md"
 "	      004fd977    test byte ptr [eax+50h],40h"
 "	      004fd97b    je near ptr 004FDA05h"
 );
 // LINE 2287:
 	asm( 
-"	      004fd981    mov eax,[ebp+8]"
+"	      004fd981    mov eax,md"
 "	      004fd984    mov eax,[eax+9Ch]"
 "	      004fd98a    imul eax,ds:[5B4E60h]"
-"	      004fd991    add [ebp-4],eax"
+"	      004fd991    add total_pts,eax"
 );
 // LINE 2288:
 	asm( 
-"	      004fd994    mov eax,[ebp+8]"
+"	      004fd994    mov eax,md"
 "	      004fd997    mov eax,[eax+9Ch]"
 "	      004fd99d    imul eax,ds:[5B4E5Ch]"
-"	      004fd9a4    add [ebp-0Ch],eax"
+"	      004fd9a4    add total_money,eax"
 );
 // LINE 2289:
 	asm( 
 "	      004fd9a7    xor eax,eax"
-"	      004fd9a9    mov ecx,[ebp+8]"
+"	      004fd9a9    mov ecx,md"
 "	      004fd9ac    mov ecx,[ecx+0BCh]"
 "	      004fd9b2    imul ecx,ds:[5B4E60h]"
 "	      004fd9b9    sub eax,ecx"
 "	      004fd9bb    neg eax"
-"	      004fd9bd    sub [ebp-4],eax"
+"	      004fd9bd    sub total_pts,eax"
 );
 // LINE 2290:
 	asm( 
 "	      004fd9c0    xor eax,eax"
-"	      004fd9c2    mov ecx,[ebp+8]"
+"	      004fd9c2    mov ecx,md"
 "	      004fd9c5    mov ecx,[ecx+0BCh]"
 "	      004fd9cb    imul ecx,ds:[5B4E5Ch]"
 "	      004fd9d2    sub eax,ecx"
 "	      004fd9d4    neg eax"
-"	      004fd9d6    sub [ebp-0Ch],eax"
+"	      004fd9d6    sub total_money,eax"
 );
 // LINE 2291:
 	asm( 
-"	      004fd9d9    mov eax,[ebp+8]"
+"	      004fd9d9    mov eax,md"
 "	      004fd9dc    mov eax,[eax+0A4h]"
 "	      004fd9e2    sar eax,2"
 "	      004fd9e5    imul eax,ds:[5B4E60h]"
-"	      004fd9ec    add [ebp-4],eax"
+"	      004fd9ec    add total_pts,eax"
 );
 // LINE 2292:
 	asm( 
-"	      004fd9ef    mov eax,[ebp+8]"
+"	      004fd9ef    mov eax,md"
 "	      004fd9f2    mov eax,[eax+0A4h]"
 "	      004fd9f8    sar eax,2"
 "	      004fd9fb    imul eax,ds:[5B4E5Ch]"
-"	      004fda02    add [ebp-0Ch],eax"
+"	      004fda02    add total_money,eax"
 );
 // LINE 2295:
 	asm( 
-"	      004fda05    mov eax,[ebp+8]"
+"	      004fda05    mov eax,md"
 "	      004fda08    test byte ptr [eax+51h],10h"
 "	      004fda0c    je near ptr 004FDA7Ah"
 );
 // LINE 2299:
 	asm( 
 "	      004fda12    mov eax,ds:[5B4E3Ch]"
-"	      004fda17    add [ebp-4],eax"
+"	      004fda17    add total_pts,eax"
 );
 // LINE 2300:
 	asm( 
 "	      004fda1a    mov eax,ds:[5B4E38h]"
-"	      004fda1f    add [ebp-0Ch],eax"
+"	      004fda1f    add total_money,eax"
 );
 // LINE 2303:
 	asm( 
-"	      004fda22    mov eax,[ebp+8]"
+"	      004fda22    mov eax,md"
 "	      004fda25    mov ecx,ds:[5B4E48h]"
 "	      004fda2b    cmp [eax+40h],ecx"
 "	      004fda2e    jle near ptr 004FDA7Ah"
 );
 // LINE 2306:
 	asm( 
-"	      004fda34    mov eax,[ebp+8]"
+"	      004fda34    mov eax,md"
 "	      004fda37    mov eax,[eax+40h]"
 "	      004fda3a    sub eax,ds:[5B4E48h]"
-"	      004fda40    mov [ebp-8],eax"
+"	      004fda40    mov timetmp,eax"
 );
 // LINE 2309:
 	asm( 
 "	      004fda43    mov ecx,3Ch"
-"	      004fda48    mov eax,[ebp-8]"
+"	      004fda48    mov eax,timetmp"
 "	      004fda4b    cdq"
 "	      004fda4c    idiv ecx"
 "	      004fda4e    sar eax,10h"
-"	      004fda51    mov [ebp-8],eax"
+"	      004fda51    mov timetmp,eax"
 );
 // LINE 2311:
 	asm( 
 "	      004fda54    xor eax,eax"
 "	      004fda56    mov ecx,ds:[5B4E44h]"
-"	      004fda5c    imul ecx,[ebp-8]"
+"	      004fda5c    imul ecx,timetmp"
 "	      004fda60    sub eax,ecx"
 "	      004fda62    neg eax"
-"	      004fda64    sub [ebp-4],eax"
+"	      004fda64    sub total_pts,eax"
 );
 // LINE 2312:
 	asm( 
 "	      004fda67    xor eax,eax"
 "	      004fda69    mov ecx,ds:[5B4E40h]"
-"	      004fda6f    imul ecx,[ebp-8]"
+"	      004fda6f    imul ecx,timetmp"
 "	      004fda73    sub eax,ecx"
 "	      004fda75    neg eax"
-"	      004fda77    sub [ebp-0Ch],eax"
+"	      004fda77    sub total_money,eax"
 );
 // LINE 2319:
 	asm( 
-"	      004fda7a    mov eax,[ebp+8]"
+"	      004fda7a    mov eax,md"
 "	      004fda7d    test byte ptr [eax+51h],4"
 "	      004fda81    je near ptr 004FDADFh"
 );
 // LINE 2322:
 	asm( 
 "	      004fda87    xor eax,eax"
-"	      004fda89    mov ecx,[ebp+8]"
+"	      004fda89    mov ecx,md"
 "	      004fda8c    mov ecx,[ecx+0CCh]"
 "	      004fda92    imul ecx,ds:[5B4EA4h]"
 "	      004fda99    sub eax,ecx"
 "	      004fda9b    neg eax"
-"	      004fda9d    sub [ebp-4],eax"
+"	      004fda9d    sub total_pts,eax"
 );
 // LINE 2323:
 	asm( 
-"	      004fdaa0    mov eax,[ebp+8]"
+"	      004fdaa0    mov eax,md"
 "	      004fdaa3    mov eax,[eax+0C8h]"
 "	      004fdaa9    imul eax,ds:[5B4EA4h]"
-"	      004fdab0    add [ebp-4],eax"
+"	      004fdab0    add total_pts,eax"
 );
 // LINE 2324:
 	asm( 
 "	      004fdab3    xor eax,eax"
-"	      004fdab5    mov ecx,[ebp+8]"
+"	      004fdab5    mov ecx,md"
 "	      004fdab8    mov ecx,[ecx+0CCh]"
 "	      004fdabe    imul ecx,ds:[5B4EA0h]"
 "	      004fdac5    sub eax,ecx"
 "	      004fdac7    neg eax"
-"	      004fdac9    sub [ebp-0Ch],eax"
+"	      004fdac9    sub total_money,eax"
 );
 // LINE 2325:
 	asm( 
-"	      004fdacc    mov eax,[ebp+8]"
+"	      004fdacc    mov eax,md"
 "	      004fdacf    mov eax,[eax+0C8h]"
 "	      004fdad5    imul eax,ds:[5B4EA0h]"
-"	      004fdadc    add [ebp-0Ch],eax"
+"	      004fdadc    add total_money,eax"
 );
 // LINE 2328:
 	asm( 
-"	      004fdadf    mov eax,[ebp+8]"
+"	      004fdadf    mov eax,md"
 "	      004fdae2    test byte ptr [eax+51h],8"
 "	      004fdae6    je near ptr 004FDB0Eh"
 );
 // LINE 2331:
 	asm( 
-"	      004fdaec    mov eax,[ebp+8]"
+"	      004fdaec    mov eax,md"
 "	      004fdaef    mov ecx,ds:[5B4E9Ch]"
 "	      004fdaf5    cmp [eax+40h],ecx"
 "	      004fdaf8    jge near ptr 004FDB0Eh"
@@ -7148,80 +7148,80 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 // LINE 2333:
 	asm( 
 "	      004fdafe    mov eax,ds:[5B4E98h]"
-"	      004fdb03    add [ebp-4],eax"
+"	      004fdb03    add total_pts,eax"
 );
 // LINE 2334:
 	asm( 
 "	      004fdb06    mov eax,ds:[5B4E94h]"
-"	      004fdb0b    add [ebp-0Ch],eax"
+"	      004fdb0b    add total_money,eax"
 );
 // LINE 2338:
 	asm( 
-"	      004fdb0e    mov eax,[ebp+8]"
+"	      004fdb0e    mov eax,md"
 "	      004fdb11    test byte ptr [eax+51h],2"
 "	      004fdb15    je near ptr 004FDB2Bh"
 );
 // LINE 2341:
 	asm( 
 "	      004fdb1b    mov eax,ds:[5B4E88h]"
-"	      004fdb20    add [ebp-4],eax"
+"	      004fdb20    add total_pts,eax"
 );
 // LINE 2342:
 	asm( 
 "	      004fdb23    mov eax,ds:[5B4E84h]"
-"	      004fdb28    add [ebp-0Ch],eax"
+"	      004fdb28    add total_money,eax"
 );
 // LINE 2345:
 	asm( 
-"	      004fdb2b    mov eax,[ebp+8]"
+"	      004fdb2b    mov eax,md"
 "	      004fdb2e    test byte ptr [eax+51h],20h"
 "	      004fdb32    je near ptr 004FDB48h"
 );
 // LINE 2348:
 	asm( 
 "	      004fdb38    mov eax,ds:[5B4E88h]"
-"	      004fdb3d    add [ebp-4],eax"
+"	      004fdb3d    add total_pts,eax"
 );
 // LINE 2349:
 	asm( 
 "	      004fdb40    mov eax,ds:[5B4E84h]"
-"	      004fdb45    add [ebp-0Ch],eax"
+"	      004fdb45    add total_money,eax"
 );
 // LINE 2352:
 	asm( 
-"	      004fdb48    mov eax,[ebp+8]"
+"	      004fdb48    mov eax,md"
 "	      004fdb4b    test byte ptr [eax+52h],2"
 "	      004fdb4f    je near ptr 004FDB65h"
 );
 // LINE 2355:
 	asm( 
 "	      004fdb55    mov eax,ds:[5B4E88h]"
-"	      004fdb5a    add [ebp-4],eax"
+"	      004fdb5a    add total_pts,eax"
 );
 // LINE 2356:
 	asm( 
 "	      004fdb5d    mov eax,ds:[5B4E84h]"
-"	      004fdb62    add [ebp-0Ch],eax"
+"	      004fdb62    add total_money,eax"
 );
 // LINE 2360:
 	asm( 
-"	      004fdb65    mov eax,[ebp+8]"
+"	      004fdb65    mov eax,md"
 "	      004fdb68    test byte ptr [eax+50h],2"
 "	      004fdb6c    je near ptr 004FDB82h"
 );
 // LINE 2363:
 	asm( 
 "	      004fdb72    mov eax,ds:[5B4E90h]"
-"	      004fdb77    add [ebp-4],eax"
+"	      004fdb77    add total_pts,eax"
 );
 // LINE 2364:
 	asm( 
 "	      004fdb7a    mov eax,ds:[5B4E8Ch]"
-"	      004fdb7f    add [ebp-0Ch],eax"
+"	      004fdb7f    add total_money,eax"
 );
 // LINE 2371:
 	asm( 
-"	      004fdb82    cmp dword ptr [ebp-4],0"
+"	      004fdb82    cmp total_pts,0"
 "	      004fdb86    jle near ptr 004FDBA6h"
 );
 // LINE 2374:
@@ -7250,23 +7250,23 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 );
 // LINE 2385:
 	asm( 
-"	      004fdbbb    cmp dword ptr [ebp-0Ch],0"
+"	      004fdbbb    cmp total_money,0"
 "	      004fdbbf    jge near ptr 004FDBCCh"
-"	      004fdbc5    mov dword ptr [ebp-0Ch],0"
+"	      004fdbc5    mov total_money,0"
 );
 // LINE 2389:
 	asm( 
-"	      004fdbcc    mov eax,[ebp+8]"
+"	      004fdbcc    mov eax,md"
 "	      004fdbcf    mov eax,[eax+24h]"
 "	      004fdbd2    mov ds:[5B4EC0h],eax"
 );
 // LINE 2394:
 	asm( 
-"	      004fdbd7    mov eax,[ebp-0Ch]"
+"	      004fdbd7    mov eax,total_money"
 "	      004fdbda    push eax"
-"	      004fdbdb    mov eax,[ebp-4]"
+"	      004fdbdb    mov eax,total_pts"
 "	      004fdbde    push eax"
-"	      004fdbdf    mov eax,[ebp+8]"
+"	      004fdbdf    mov eax,md"
 "	      004fdbe2    push eax"
 "	      004fdbe3    push 5B51CCh"
 "	      004fdbe8    mov eax,ds:[5B4EC4h]"
@@ -7283,14 +7283,14 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 );
 // LINE 2399:
 	asm( 
-"	      004fdc05    mov eax,[ebp-4]"
+"	      004fdc05    mov eax,total_pts"
 "	      004fdc08    push eax"
 "	      004fdc09    call 00429051h"
 "	      004fdc0e    add esp,4"
 );
 // LINE 2400:
 	asm( 
-"	      004fdc11    mov eax,[ebp-0Ch]"
+"	      004fdc11    mov eax,total_money"
 "	      004fdc14    push eax"
 "	      004fdc15    call 00428FF1h"
 "	      004fdc1a    add esp,4"
@@ -7341,7 +7341,7 @@ long S3MissionGetIDByKey(long key) {
 );
 // LINE 2440:
 	asm( 
-"	      004fdc36    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      004fdc36    cmp key,0FFFFFFFFh"
 "	      004fdc3a    jne near ptr 004FDC4Ah"
 );
 // LINE 2441:
@@ -7351,26 +7351,26 @@ long S3MissionGetIDByKey(long key) {
 );
 // LINE 2444:
 	asm( 
-"	      004fdc4a    mov dword ptr [ebp-4],0"
+"	      004fdc4a    mov i,0"
 "	      004fdc51    jmp near ptr 004FDC59h"
-"	      004fdc56    inc dword ptr [ebp-4]"
-"	      004fdc59    cmp dword ptr [ebp-4],1Eh"
+"	      004fdc56    inc i"
+"	      004fdc59    cmp i,1Eh"
 "	      004fdc5d    jge near ptr 004FDCACh"
 );
 // LINE 2446:
 	asm( 
-"	      004fdc63    mov eax,[ebp-4]"
+"	      004fdc63    mov eax,i"
 "	      004fdc66    mov ecx,eax"
 "	      004fdc68    lea eax,[eax+eax*2]"
 "	      004fdc6b    lea eax,[ecx+eax*4]"
 "	      004fdc6e    lea eax,[ecx+eax*4]"
 "	      004fdc71    lea eax,[eax*4+6072B8h]"
 "	      004fdc78    add eax,38h"
-"	      004fdc7b    mov [ebp-8],eax"
+"	      004fdc7b    mov md,eax"
 );
 // LINE 2448:
 	asm( 
-"	      004fdc7e    mov eax,[ebp-8]"
+"	      004fdc7e    mov eax,md"
 "	      004fdc81    test byte ptr [eax+4Ch],1"
 "	      004fdc85    jne near ptr 004FDC90h"
 );
@@ -7380,14 +7380,14 @@ long S3MissionGetIDByKey(long key) {
 );
 // LINE 2451:
 	asm( 
-"	      004fdc90    mov eax,[ebp-8]"
-"	      004fdc93    mov ecx,[ebp+8]"
+"	      004fdc90    mov eax,md"
+"	      004fdc93    mov ecx,key"
 "	      004fdc96    cmp [eax+24h],ecx"
 "	      004fdc99    jne near ptr 004FDCA7h"
 );
 // LINE 2452:
 	asm( 
-"	      004fdc9f    mov eax,[ebp-4]"
+"	      004fdc9f    mov eax,i"
 "	      004fdca2    jmp near ptr 004FDCB6h"
 );
 // LINE 2453:
@@ -7421,9 +7421,9 @@ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 );
 // LINE 2468:
 	asm( 
-"	      004fdcc1    cmp dword ptr [ebp+8],0"
+"	      004fdcc1    cmp index,0"
 "	      004fdcc5    jl near ptr 004FDCD5h"
-"	      004fdccb    cmp dword ptr [ebp+8],1Eh"
+"	      004fdccb    cmp index,1Eh"
 "	      004fdccf    jl near ptr 004FDCDCh"
 );
 // LINE 2469:
@@ -7433,7 +7433,7 @@ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 );
 // LINE 2471:
 	asm( 
-"	      004fdcdc    mov eax,[ebp+8]"
+"	      004fdcdc    mov eax,index"
 "	      004fdcdf    mov ecx,eax"
 "	      004fdce1    lea eax,[eax+eax*2]"
 "	      004fdce4    lea eax,[ecx+eax*4]"
@@ -7472,15 +7472,15 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 "	      004fdd09    push 6072B8h"
 "	      004fdd0e    mov eax,ds:[5B4F00h]"
 "	      004fdd13    push eax"
-"	      004fdd14    mov eax,[ebp+8]"
+"	      004fdd14    mov eax,miffReader"
 "	      004fdd17    push eax"
 "	      004fdd18    call 004AB530h"
 "	      004fdd1d    add esp,10h"
-"	      004fdd20    mov [ebp-4],eax"
+"	      004fdd20    mov ret,eax"
 );
 // LINE 2495:
 	asm( 
-"	      004fdd23    cmp dword ptr [ebp-4],0"
+"	      004fdd23    cmp ret,0"
 "	      004fdd27    jne near ptr 004FDD34h"
 );
 // LINE 2496:
@@ -7494,35 +7494,35 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 2501:
 	asm( 
-"	      004fdd3e    mov dword ptr [ebp-8],0"
+"	      004fdd3e    mov i,0"
 "	      004fdd45    jmp near ptr 004FDD4Dh"
-"	      004fdd4a    inc dword ptr [ebp-8]"
-"	      004fdd4d    cmp dword ptr [ebp-8],1Eh"
+"	      004fdd4a    inc i"
+"	      004fdd4d    cmp i,1Eh"
 "	      004fdd51    jge near ptr 004FDD9Eh"
 );
 // LINE 2503:
 	asm( 
-"	      004fdd57    mov eax,[ebp-8]"
+"	      004fdd57    mov eax,i"
 "	      004fdd5a    mov ecx,eax"
 "	      004fdd5c    lea eax,[eax+eax*2]"
 "	      004fdd5f    lea eax,[ecx+eax*4]"
 "	      004fdd62    lea eax,[ecx+eax*4]"
 "	      004fdd65    lea eax,[eax*4+6072B8h]"
 "	      004fdd6c    add eax,38h"
-"	      004fdd6f    mov [ebp-0Ch],eax"
+"	      004fdd6f    mov md,eax"
 );
 // LINE 2504:
 	asm( 
-"	      004fdd72    mov eax,[ebp-0Ch]"
+"	      004fdd72    mov eax,md"
 "	      004fdd75    test byte ptr [eax+4Ch],1"
 "	      004fdd79    je near ptr 004FDD99h"
-"	      004fdd7f    mov eax,[ebp-0Ch]"
+"	      004fdd7f    mov eax,md"
 "	      004fdd82    cmp dword ptr [eax+54h],2"
 "	      004fdd86    je near ptr 004FDD99h"
 );
 // LINE 2506:
 	asm( 
-"	      004fdd8c    mov eax,[ebp-0Ch]"
+"	      004fdd8c    mov eax,md"
 "	      004fdd8f    mov ds:[6072ECh],eax"
 );
 // LINE 2507:
@@ -7567,15 +7567,15 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 "	      004fddbb    push 6072B8h"
 "	      004fddc0    mov eax,ds:[5B4F00h]"
 "	      004fddc5    push eax"
-"	      004fddc6    mov eax,[ebp+8]"
+"	      004fddc6    mov eax,miffWriter"
 "	      004fddc9    push eax"
 "	      004fddca    call 004AB5BDh"
 "	      004fddcf    add esp,10h"
-"	      004fddd2    mov [ebp-4],eax"
+"	      004fddd2    mov ret,eax"
 );
 // LINE 2524:
 	asm( 
-"	      004fddd5    cmp dword ptr [ebp-4],0"
+"	      004fddd5    cmp ret,0"
 "	      004fddd9    jne near ptr 004FDDE6h"
 );
 // LINE 2525:
@@ -7615,25 +7615,25 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2555:
 	asm( 
-"	      004fddfe    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fddfe    mov sid1,0FFFFFFFFh"
 );
 // LINE 2556:
 	asm( 
-"	      004fde05    mov dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      004fde05    mov sid3,0FFFFFFFFh"
 );
 // LINE 2557:
 	asm( 
-"	      004fde0c    mov eax,[ebp+0Ch]"
+"	      004fde0c    mov eax,y"
 "	      004fde0f    push eax"
-"	      004fde10    mov eax,[ebp+8]"
+"	      004fde10    mov eax,x"
 "	      004fde13    push eax"
 "	      004fde14    call 004FE5FEh"
 "	      004fde19    add esp,8"
-"	      004fde1c    mov [ebp-8],eax"
+"	      004fde1c    mov sid2,eax"
 );
 // LINE 2560:
 	asm( 
-"	      004fde1f    mov eax,[ebp+10h]"
+"	      004fde1f    mov eax,type"
 "	      004fde22    mov [ebp-10h],eax"
 "	      004fde25    jmp near ptr 004FE458h"
 );
@@ -7648,7 +7648,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fde3a    xor eax,edx"
 "	      004fde3c    sub eax,edx"
 "	      004fde3e    add eax,41h"
-"	      004fde41    mov [ebp-4],eax"
+"	      004fde41    mov sid1,eax"
 );
 // LINE 2564:
 	asm( 
@@ -7658,7 +7658,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fde51    cdq"
 "	      004fde52    idiv ecx"
 "	      004fde54    mov eax,[edx*4+5B4F08h]"
-"	      004fde5b    mov [ebp-0Ch],eax"
+"	      004fde5b    mov sid3,eax"
 );
 // LINE 2565:
 	asm( 
@@ -7666,11 +7666,11 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2567:
 	asm( 
-"	      004fde63    mov dword ptr [ebp-4],43h"
+"	      004fde63    mov sid1,43h"
 );
 // LINE 2568:
 	asm( 
-"	      004fde6a    mov dword ptr [ebp-0Ch],56h"
+"	      004fde6a    mov sid3,56h"
 );
 // LINE 2569:
 	asm( 
@@ -7678,7 +7678,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2571:
 	asm( 
-"	      004fde76    mov dword ptr [ebp-4],44h"
+"	      004fde76    mov sid1,44h"
 );
 // LINE 2572:
 	asm( 
@@ -7698,7 +7698,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fdea2    cdq"
 "	      004fdea3    idiv ecx"
 "	      004fdea5    mov eax,[edx*4+5B4F08h]"
-"	      004fdeac    mov [ebp-0Ch],eax"
+"	      004fdeac    mov sid3,eax"
 );
 // LINE 2576:
 	asm( 
@@ -7706,7 +7706,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2578:
 	asm( 
-"	      004fdeb4    mov dword ptr [ebp-0Ch],5Ch"
+"	      004fdeb4    mov sid3,5Ch"
 );
 // LINE 2579:
 	asm( 
@@ -7714,7 +7714,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2581:
 	asm( 
-"	      004fdec0    mov dword ptr [ebp-0Ch],57h"
+"	      004fdec0    mov sid3,57h"
 );
 // LINE 2582:
 	asm( 
@@ -7735,7 +7735,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2586:
 	asm( 
-"	      004fdeef    mov dword ptr [ebp-4],43h"
+"	      004fdeef    mov sid1,43h"
 );
 // LINE 2587:
 	asm( 
@@ -7755,7 +7755,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fdf1b    cdq"
 "	      004fdf1c    idiv ecx"
 "	      004fdf1e    mov eax,[edx*4+5B4F08h]"
-"	      004fdf25    mov [ebp-0Ch],eax"
+"	      004fdf25    mov sid3,eax"
 );
 // LINE 2591:
 	asm( 
@@ -7763,7 +7763,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2593:
 	asm( 
-"	      004fdf2d    mov dword ptr [ebp-0Ch],5Ch"
+"	      004fdf2d    mov sid3,5Ch"
 );
 // LINE 2594:
 	asm( 
@@ -7771,7 +7771,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2596:
 	asm( 
-"	      004fdf39    mov dword ptr [ebp-0Ch],57h"
+"	      004fdf39    mov sid3,57h"
 );
 // LINE 2597:
 	asm( 
@@ -7792,7 +7792,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2606:
 	asm( 
-"	      004fdf68    mov dword ptr [ebp-4],33h"
+"	      004fdf68    mov sid1,33h"
 );
 // LINE 2607:
 	asm( 
@@ -7812,7 +7812,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fdf94    cdq"
 "	      004fdf95    idiv ecx"
 "	      004fdf97    mov eax,[edx*4+5B4F08h]"
-"	      004fdf9e    mov [ebp-0Ch],eax"
+"	      004fdf9e    mov sid3,eax"
 );
 // LINE 2611:
 	asm( 
@@ -7820,7 +7820,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2613:
 	asm( 
-"	      004fdfa6    mov dword ptr [ebp-0Ch],5Ch"
+"	      004fdfa6    mov sid3,5Ch"
 );
 // LINE 2614:
 	asm( 
@@ -7828,7 +7828,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2616:
 	asm( 
-"	      004fdfb2    mov dword ptr [ebp-0Ch],5Ah"
+"	      004fdfb2    mov sid3,5Ah"
 );
 // LINE 2617:
 	asm( 
@@ -7849,7 +7849,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2621:
 	asm( 
-"	      004fdfe1    mov dword ptr [ebp-4],3Fh"
+"	      004fdfe1    mov sid1,3Fh"
 );
 // LINE 2622:
 	asm( 
@@ -7869,7 +7869,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe00d    cdq"
 "	      004fe00e    idiv ecx"
 "	      004fe010    mov eax,[edx*4+5B4F08h]"
-"	      004fe017    mov [ebp-0Ch],eax"
+"	      004fe017    mov sid3,eax"
 );
 // LINE 2626:
 	asm( 
@@ -7877,7 +7877,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2628:
 	asm( 
-"	      004fe01f    mov dword ptr [ebp-0Ch],5Fh"
+"	      004fe01f    mov sid3,5Fh"
 );
 // LINE 2629:
 	asm( 
@@ -7885,7 +7885,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2631:
 	asm( 
-"	      004fe02b    mov dword ptr [ebp-0Ch],61h"
+"	      004fe02b    mov sid3,61h"
 );
 // LINE 2632:
 	asm( 
@@ -7893,7 +7893,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2634:
 	asm( 
-"	      004fe037    mov dword ptr [ebp-0Ch],5Eh"
+"	      004fe037    mov sid3,5Eh"
 );
 // LINE 2635:
 	asm( 
@@ -7916,7 +7916,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2639:
 	asm( 
-"	      004fe070    mov dword ptr [ebp-4],38h"
+"	      004fe070    mov sid1,38h"
 );
 // LINE 2640:
 	asm( 
@@ -7936,7 +7936,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe09c    cdq"
 "	      004fe09d    idiv ecx"
 "	      004fe09f    mov eax,[edx*4+5B4F08h]"
-"	      004fe0a6    mov [ebp-0Ch],eax"
+"	      004fe0a6    mov sid3,eax"
 );
 // LINE 2644:
 	asm( 
@@ -7953,7 +7953,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2648:
 	asm( 
-"	      004fe0bd    mov dword ptr [ebp-4],33h"
+"	      004fe0bd    mov sid1,33h"
 );
 // LINE 2649:
 	asm( 
@@ -7973,7 +7973,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe0e9    cdq"
 "	      004fe0ea    idiv ecx"
 "	      004fe0ec    mov eax,[edx*4+5B4F08h]"
-"	      004fe0f3    mov [ebp-0Ch],eax"
+"	      004fe0f3    mov sid3,eax"
 );
 // LINE 2653:
 	asm( 
@@ -7981,7 +7981,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2655:
 	asm( 
-"	      004fe0fb    mov dword ptr [ebp-0Ch],61h"
+"	      004fe0fb    mov sid3,61h"
 );
 // LINE 2656:
 	asm( 
@@ -7989,7 +7989,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2658:
 	asm( 
-"	      004fe107    mov dword ptr [ebp-0Ch],5Ah"
+"	      004fe107    mov sid3,5Ah"
 );
 // LINE 2659:
 	asm( 
@@ -8010,7 +8010,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2663:
 	asm( 
-"	      004fe136    mov dword ptr [ebp-4],39h"
+"	      004fe136    mov sid1,39h"
 );
 // LINE 2664:
 	asm( 
@@ -8030,7 +8030,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe162    cdq"
 "	      004fe163    idiv ecx"
 "	      004fe165    mov eax,[edx*4+5B4F08h]"
-"	      004fe16c    mov [ebp-0Ch],eax"
+"	      004fe16c    mov sid3,eax"
 );
 // LINE 2668:
 	asm( 
@@ -8038,7 +8038,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2670:
 	asm( 
-"	      004fe174    mov dword ptr [ebp-0Ch],5Bh"
+"	      004fe174    mov sid3,5Bh"
 );
 // LINE 2671:
 	asm( 
@@ -8046,7 +8046,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2673:
 	asm( 
-"	      004fe180    mov dword ptr [ebp-0Ch],53h"
+"	      004fe180    mov sid3,53h"
 );
 // LINE 2674:
 	asm( 
@@ -8067,7 +8067,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2678:
 	asm( 
-"	      004fe1af    mov dword ptr [ebp-4],3Bh"
+"	      004fe1af    mov sid1,3Bh"
 );
 // LINE 2679:
 	asm( 
@@ -8087,7 +8087,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe1db    cdq"
 "	      004fe1dc    idiv ecx"
 "	      004fe1de    mov eax,[edx*4+5B4F08h]"
-"	      004fe1e5    mov [ebp-0Ch],eax"
+"	      004fe1e5    mov sid3,eax"
 );
 // LINE 2683:
 	asm( 
@@ -8095,7 +8095,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2685:
 	asm( 
-"	      004fe1ed    mov dword ptr [ebp-0Ch],5Ah"
+"	      004fe1ed    mov sid3,5Ah"
 );
 // LINE 2686:
 	asm( 
@@ -8103,7 +8103,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2688:
 	asm( 
-"	      004fe1f9    mov dword ptr [ebp-0Ch],52h"
+"	      004fe1f9    mov sid3,52h"
 );
 // LINE 2689:
 	asm( 
@@ -8111,7 +8111,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2691:
 	asm( 
-"	      004fe205    mov dword ptr [ebp-0Ch],55h"
+"	      004fe205    mov sid3,55h"
 );
 // LINE 2692:
 	asm( 
@@ -8134,7 +8134,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2696:
 	asm( 
-"	      004fe23e    mov dword ptr [ebp-4],3Ch"
+"	      004fe23e    mov sid1,3Ch"
 );
 // LINE 2697:
 	asm( 
@@ -8154,7 +8154,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe26a    cdq"
 "	      004fe26b    idiv ecx"
 "	      004fe26d    mov eax,[edx*4+5B4F08h]"
-"	      004fe274    mov [ebp-0Ch],eax"
+"	      004fe274    mov sid3,eax"
 );
 // LINE 2701:
 	asm( 
@@ -8162,7 +8162,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2703:
 	asm( 
-"	      004fe27c    mov dword ptr [ebp-0Ch],5Bh"
+"	      004fe27c    mov sid3,5Bh"
 );
 // LINE 2704:
 	asm( 
@@ -8170,7 +8170,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2706:
 	asm( 
-"	      004fe288    mov dword ptr [ebp-0Ch],5Dh"
+"	      004fe288    mov sid3,5Dh"
 );
 // LINE 2707:
 	asm( 
@@ -8178,7 +8178,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2709:
 	asm( 
-"	      004fe294    mov dword ptr [ebp-0Ch],52h"
+"	      004fe294    mov sid3,52h"
 );
 // LINE 2710:
 	asm( 
@@ -8201,7 +8201,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2714:
 	asm( 
-"	      004fe2cd    mov dword ptr [ebp-4],39h"
+"	      004fe2cd    mov sid1,39h"
 );
 // LINE 2715:
 	asm( 
@@ -8221,7 +8221,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe2f9    cdq"
 "	      004fe2fa    idiv ecx"
 "	      004fe2fc    mov eax,[edx*4+5B4F08h]"
-"	      004fe303    mov [ebp-0Ch],eax"
+"	      004fe303    mov sid3,eax"
 );
 // LINE 2719:
 	asm( 
@@ -8229,7 +8229,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2721:
 	asm( 
-"	      004fe30b    mov dword ptr [ebp-0Ch],5Bh"
+"	      004fe30b    mov sid3,5Bh"
 );
 // LINE 2722:
 	asm( 
@@ -8237,7 +8237,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2724:
 	asm( 
-"	      004fe317    mov dword ptr [ebp-0Ch],5Dh"
+"	      004fe317    mov sid3,5Dh"
 );
 // LINE 2725:
 	asm( 
@@ -8245,7 +8245,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2727:
 	asm( 
-"	      004fe323    mov dword ptr [ebp-0Ch],52h"
+"	      004fe323    mov sid3,52h"
 );
 // LINE 2728:
 	asm( 
@@ -8268,7 +8268,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2732:
 	asm( 
-"	      004fe35c    mov dword ptr [ebp-4],36h"
+"	      004fe35c    mov sid1,36h"
 );
 // LINE 2733:
 	asm( 
@@ -8288,7 +8288,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe388    cdq"
 "	      004fe389    idiv ecx"
 "	      004fe38b    mov eax,[edx*4+5B4F08h]"
-"	      004fe392    mov [ebp-0Ch],eax"
+"	      004fe392    mov sid3,eax"
 );
 // LINE 2737:
 	asm( 
@@ -8296,7 +8296,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2739:
 	asm( 
-"	      004fe39a    mov dword ptr [ebp-0Ch],5Eh"
+"	      004fe39a    mov sid3,5Eh"
 );
 // LINE 2740:
 	asm( 
@@ -8304,7 +8304,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2742:
 	asm( 
-"	      004fe3a6    mov dword ptr [ebp-0Ch],61h"
+"	      004fe3a6    mov sid3,61h"
 );
 // LINE 2743:
 	asm( 
@@ -8312,7 +8312,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2745:
 	asm( 
-"	      004fe3b2    mov dword ptr [ebp-0Ch],5Ah"
+"	      004fe3b2    mov sid3,5Ah"
 );
 // LINE 2746:
 	asm( 
@@ -8335,7 +8335,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2750:
 	asm( 
-"	      004fe3eb    mov dword ptr [ebp-4],40h"
+"	      004fe3eb    mov sid1,40h"
 );
 // LINE 2751:
 	asm( 
@@ -8355,7 +8355,7 @@ void S3MissionDispatch(long x, long y, long type) {
 "	      004fe417    cdq"
 "	      004fe418    idiv ecx"
 "	      004fe41a    mov eax,[edx*4+5B4F08h]"
-"	      004fe421    mov [ebp-0Ch],eax"
+"	      004fe421    mov sid3,eax"
 );
 // LINE 2755:
 	asm( 
@@ -8363,7 +8363,7 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2757:
 	asm( 
-"	      004fe429    mov dword ptr [ebp-0Ch],5Bh"
+"	      004fe429    mov sid3,5Bh"
 );
 // LINE 2758:
 	asm( 
@@ -8453,13 +8453,13 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2767:
 	asm( 
-"	      004fe5ab    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004fe5ab    cmp sid1,0FFFFFFFFh"
 "	      004fe5af    je near ptr 004FE5C5h"
 );
 // LINE 2768:
 	asm( 
 "	      004fe5b5    push 32h"
-"	      004fe5b7    mov eax,[ebp-4]"
+"	      004fe5b7    mov eax,sid1"
 "	      004fe5ba    push eax"
 "	      004fe5bb    push 0"
 "	      004fe5bd    call 004470FAh"
@@ -8467,13 +8467,13 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2769:
 	asm( 
-"	      004fe5c5    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004fe5c5    cmp sid2,0FFFFFFFFh"
 "	      004fe5c9    je near ptr 004FE5DFh"
 );
 // LINE 2770:
 	asm( 
 "	      004fe5cf    push 32h"
-"	      004fe5d1    mov eax,[ebp-8]"
+"	      004fe5d1    mov eax,sid2"
 "	      004fe5d4    push eax"
 "	      004fe5d5    push 0"
 "	      004fe5d7    call 004470FAh"
@@ -8481,13 +8481,13 @@ void S3MissionDispatch(long x, long y, long type) {
 );
 // LINE 2771:
 	asm( 
-"	      004fe5df    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      004fe5df    cmp sid3,0FFFFFFFFh"
 "	      004fe5e3    je near ptr 004FE5F9h"
 );
 // LINE 2772:
 	asm( 
 "	      004fe5e9    push 32h"
-"	      004fe5eb    mov eax,[ebp-0Ch]"
+"	      004fe5eb    mov eax,sid3"
 "	      004fe5ee    push eax"
 "	      004fe5ef    push 0"
 "	      004fe5f1    call 004470FAh"
@@ -8515,16 +8515,16 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 );
 // LINE 2786:
 	asm( 
-"	      004fe604    cmp dword ptr [ebp+8],0"
+"	      004fe604    cmp x,0"
 "	      004fe608    jl near ptr 004FE681h"
-"	      004fe60e    cmp dword ptr [ebp+8],2Ah"
+"	      004fe60e    cmp x,2Ah"
 "	      004fe612    jg near ptr 004FE681h"
 );
 // LINE 2788:
 	asm( 
-"	      004fe618    cmp dword ptr [ebp+0Ch],0"
+"	      004fe618    cmp y,0"
 "	      004fe61c    jl near ptr 004FE63Bh"
-"	      004fe622    cmp dword ptr [ebp+0Ch],2Ah"
+"	      004fe622    cmp y,2Ah"
 "	      004fe626    jg near ptr 004FE63Bh"
 );
 // LINE 2790:
@@ -8535,9 +8535,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2792:
 	asm( 
 "	      004fe636    jmp near ptr 004FE67Ch"
-"	      004fe63b    cmp dword ptr [ebp+0Ch],2Bh"
+"	      004fe63b    cmp y,2Bh"
 "	      004fe63f    jl near ptr 004FE65Eh"
-"	      004fe645    cmp dword ptr [ebp+0Ch],54h"
+"	      004fe645    cmp y,54h"
 "	      004fe649    jg near ptr 004FE65Eh"
 );
 // LINE 2794:
@@ -8548,9 +8548,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2796:
 	asm( 
 "	      004fe659    jmp near ptr 004FE67Ch"
-"	      004fe65e    cmp dword ptr [ebp+0Ch],55h"
+"	      004fe65e    cmp y,55h"
 "	      004fe662    jl near ptr 004FE67Ch"
-"	      004fe668    cmp dword ptr [ebp+0Ch],7Fh"
+"	      004fe668    cmp y,7Fh"
 "	      004fe66c    jg near ptr 004FE67Ch"
 );
 // LINE 2798:
@@ -8561,16 +8561,16 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2801:
 	asm( 
 "	      004fe67c    jmp near ptr 004FE776h"
-"	      004fe681    cmp dword ptr [ebp+8],2Bh"
+"	      004fe681    cmp x,2Bh"
 "	      004fe685    jl near ptr 004FE6FEh"
-"	      004fe68b    cmp dword ptr [ebp+8],54h"
+"	      004fe68b    cmp x,54h"
 "	      004fe68f    jg near ptr 004FE6FEh"
 );
 // LINE 2803:
 	asm( 
-"	      004fe695    cmp dword ptr [ebp+0Ch],0"
+"	      004fe695    cmp y,0"
 "	      004fe699    jl near ptr 004FE6B8h"
-"	      004fe69f    cmp dword ptr [ebp+0Ch],2Ah"
+"	      004fe69f    cmp y,2Ah"
 "	      004fe6a3    jg near ptr 004FE6B8h"
 );
 // LINE 2805:
@@ -8581,9 +8581,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2807:
 	asm( 
 "	      004fe6b3    jmp near ptr 004FE6F9h"
-"	      004fe6b8    cmp dword ptr [ebp+0Ch],2Bh"
+"	      004fe6b8    cmp y,2Bh"
 "	      004fe6bc    jl near ptr 004FE6DBh"
-"	      004fe6c2    cmp dword ptr [ebp+0Ch],54h"
+"	      004fe6c2    cmp y,54h"
 "	      004fe6c6    jg near ptr 004FE6DBh"
 );
 // LINE 2809:
@@ -8594,9 +8594,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2811:
 	asm( 
 "	      004fe6d6    jmp near ptr 004FE6F9h"
-"	      004fe6db    cmp dword ptr [ebp+0Ch],55h"
+"	      004fe6db    cmp y,55h"
 "	      004fe6df    jl near ptr 004FE6F9h"
-"	      004fe6e5    cmp dword ptr [ebp+0Ch],7Fh"
+"	      004fe6e5    cmp y,7Fh"
 "	      004fe6e9    jg near ptr 004FE6F9h"
 );
 // LINE 2813:
@@ -8607,16 +8607,16 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2816:
 	asm( 
 "	      004fe6f9    jmp near ptr 004FE776h"
-"	      004fe6fe    cmp dword ptr [ebp+8],55h"
+"	      004fe6fe    cmp x,55h"
 "	      004fe702    jl near ptr 004FE776h"
-"	      004fe708    cmp dword ptr [ebp+8],7Fh"
+"	      004fe708    cmp x,7Fh"
 "	      004fe70c    jg near ptr 004FE776h"
 );
 // LINE 2818:
 	asm( 
-"	      004fe712    cmp dword ptr [ebp+0Ch],0"
+"	      004fe712    cmp y,0"
 "	      004fe716    jl near ptr 004FE735h"
-"	      004fe71c    cmp dword ptr [ebp+0Ch],2Ah"
+"	      004fe71c    cmp y,2Ah"
 "	      004fe720    jg near ptr 004FE735h"
 );
 // LINE 2820:
@@ -8627,9 +8627,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2822:
 	asm( 
 "	      004fe730    jmp near ptr 004FE776h"
-"	      004fe735    cmp dword ptr [ebp+0Ch],2Bh"
+"	      004fe735    cmp y,2Bh"
 "	      004fe739    jl near ptr 004FE758h"
-"	      004fe73f    cmp dword ptr [ebp+0Ch],54h"
+"	      004fe73f    cmp y,54h"
 "	      004fe743    jg near ptr 004FE758h"
 );
 // LINE 2824:
@@ -8640,9 +8640,9 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2826:
 	asm( 
 "	      004fe753    jmp near ptr 004FE776h"
-"	      004fe758    cmp dword ptr [ebp+0Ch],55h"
+"	      004fe758    cmp y,55h"
 "	      004fe75c    jl near ptr 004FE776h"
-"	      004fe762    cmp dword ptr [ebp+0Ch],7Fh"
+"	      004fe762    cmp y,7Fh"
 "	      004fe766    jg near ptr 004FE776h"
 );
 // LINE 2828:

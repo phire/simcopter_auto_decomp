@@ -17,7 +17,7 @@ unsigned short OpenFile(class ResFile* pFile) {
 );
 // LINE 17:
 	asm( 
-"	      005674e6    mov ecx,[ebp+8]"
+"	      005674e6    mov ecx,pFile"
 "	      005674e9    call 0055C7DDh"
 "	      005674ee    movzx eax,ax"
 "	      005674f1    test eax,eax"
@@ -25,18 +25,18 @@ unsigned short OpenFile(class ResFile* pFile) {
 );
 // LINE 18:
 	asm( 
-"	      005674f9    mov eax,[ebp+8]"
+"	      005674f9    mov eax,pFile"
 "	      005674fc    add eax,8"
 "	      005674ff    push eax"
-"	      00567500    mov eax,[ebp+8]"
+"	      00567500    mov eax,pFile"
 "	      00567503    mov eax,[eax]"
-"	      00567505    mov ecx,[ebp+8]"
+"	      00567505    mov ecx,pFile"
 "	      00567508    call dword ptr [eax+4]"
 "	      0056750b    jmp near ptr 00567510h"
 );
 // LINE 19:
 	asm( 
-"	      00567510    mov ecx,[ebp+8]"
+"	      00567510    mov ecx,pFile"
 "	      00567513    call 0055C7DDh"
 "	      00567518    movzx eax,ax"
 "	      0056751b    test eax,eax"
@@ -86,37 +86,37 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 "	      0056755b    push ebx"
 "	      0056755c    push esi"
 "	      0056755d    push edi"
-"	      0056755e    mov [ebp-118h],ecx"
+"	      0056755e    mov this,ecx"
 );
 // LINE 30:
 	asm( 
-"	      00567564    mov eax,[ebp+0Ch]"
-"	      00567567    mov ecx,[ebp-118h]"
+"	      00567564    mov eax,pFile"
+"	      00567567    mov ecx,this"
 "	      0056756d    mov [ecx+24h],eax"
 );
 // LINE 31:
 	asm( 
-"	      00567570    mov eax,[ebp-118h]"
+"	      00567570    mov eax,this"
 "	      00567576    mov eax,[eax+24h]"
 "	      00567579    push eax"
 "	      0056757a    call 005674E0h"
 "	      0056757f    add esp,4"
-"	      00567582    mov [ebp-10Ch],ax"
+"	      00567582    mov fileOpened,ax"
 );
 // LINE 33:
 	asm( 
-"	      00567589    mov eax,[ebp+8]"
-"	      0056758c    mov ecx,[ebp-118h]"
+"	      00567589    mov eax,hArray"
+"	      0056758c    mov ecx,this"
 "	      00567592    mov [ecx+8],eax"
 );
 // LINE 34:
 	asm( 
-"	      00567595    mov eax,[ebp-118h]"
+"	      00567595    mov eax,this"
 "	      0056759b    mov eax,[eax+8]"
 "	      0056759e    push eax"
 "	      0056759f    call 00554D05h"
 "	      005675a4    add esp,4"
-"	      005675a7    mov ecx,[ebp-118h]"
+"	      005675a7    mov ecx,this"
 "	      005675ad    mov [ecx+1Ch],eax"
 );
 // LINE 37:
@@ -131,42 +131,42 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 38:
 	asm( 
-"	      005675ce    mov eax,[ebp-118h]"
+"	      005675ce    mov eax,this"
 "	      005675d4    mov eax,[eax+8]"
 "	      005675d7    push eax"
-"	      005675d8    mov eax,[ebp-118h]"
+"	      005675d8    mov eax,this"
 "	      005675de    mov ecx,[eax+24h]"
 "	      005675e1    call 005536AEh"
-"	      005675e6    mov ecx,[ebp-118h]"
+"	      005675e6    mov ecx,this"
 "	      005675ec    mov [ecx+28h],eax"
 );
 // LINE 52:
 	asm( 
-"	      005675ef    mov eax,[ebp-118h]"
+"	      005675ef    mov eax,this"
 "	      005675f5    add eax,20h"
 "	      005675f8    push eax"
-"	      005675f9    mov eax,[ebp-118h]"
+"	      005675f9    mov eax,this"
 "	      005675ff    mov eax,[eax+8]"
 "	      00567602    push eax"
-"	      00567603    mov eax,[ebp-118h]"
+"	      00567603    mov eax,this"
 "	      00567609    mov ecx,[eax+24h]"
 "	      0056760c    call 0055360Dh"
 );
 // LINE 55:
 	asm( 
-"	      00567611    lea eax,[ebp-100h]"
+"	      00567611    lea eax,tmpname[0]"
 "	      00567617    push eax"
-"	      00567618    mov eax,[ebp-118h]"
+"	      00567618    mov eax,this"
 "	      0056761e    mov eax,[eax+8]"
 "	      00567621    push eax"
-"	      00567622    mov eax,[ebp-118h]"
+"	      00567622    mov eax,this"
 "	      00567628    mov ecx,[eax+24h]"
 "	      0056762b    call 00553564h"
 );
 // LINE 56:
 	asm( 
 "	      00567630    xor eax,eax"
-"	      00567632    mov al,[ebp-100h]"
+"	      00567632    mov al,tmpname[0]"
 "	      00567638    test eax,eax"
 "	      0056763a    jg near ptr 00567659h"
 "	      00567640    push 8C085h"
@@ -179,62 +179,62 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 // LINE 57:
 	asm( 
 "	      00567659    xor eax,eax"
-"	      0056765b    mov al,[ebp-100h]"
+"	      0056765b    mov al,tmpname[0]"
 "	      00567661    cmp eax,0Fh"
 "	      00567664    jle near ptr 00567671h"
 );
 // LINE 58:
 	asm( 
-"	      0056766a    mov byte ptr [ebp-100h],0Fh"
+"	      0056766a    mov tmpname[0],0Fh"
 );
 // LINE 61:
 	asm( 
 "	      00567671    push 10h"
-"	      00567673    mov eax,[ebp-118h]"
+"	      00567673    mov eax,this"
 "	      00567679    add eax,3Ch"
 "	      0056767c    push eax"
-"	      0056767d    lea eax,[ebp-100h]"
+"	      0056767d    lea eax,tmpname[0]"
 "	      00567683    push eax"
 "	      00567684    call 00554B76h"
 "	      00567689    add esp,0Ch"
 );
 // LINE 62:
 	asm( 
-"	      0056768c    mov eax,[ebp-118h]"
+"	      0056768c    mov eax,this"
 "	      00567692    add eax,3Ch"
 "	      00567695    push eax"
 "	      00567696    call 005661F4h"
 "	      0056769b    add esp,4"
-"	      0056769e    mov ecx,[ebp-118h]"
+"	      0056769e    mov ecx,this"
 "	      005676a4    mov [ecx+4Ch],eax"
 );
 // LINE 63:
 	asm( 
-"	      005676a7    mov ecx,[ebp-118h]"
+"	      005676a7    mov ecx,this"
 "	      005676ad    call 00567BF7h"
 );
 // LINE 67:
 	asm( 
-"	      005676b2    mov eax,[ebp-118h]"
+"	      005676b2    mov eax,this"
 "	      005676b8    mov eax,[eax+8]"
 "	      005676bb    push eax"
 "	      005676bc    call 00554B04h"
 "	      005676c1    add esp,4"
-"	      005676c4    mov ecx,[ebp-118h]"
+"	      005676c4    mov ecx,this"
 "	      005676ca    mov [ecx+0Ch],eax"
 );
 // LINE 68:
 	asm( 
-"	      005676cd    mov eax,[ebp-118h]"
+"	      005676cd    mov eax,this"
 "	      005676d3    mov eax,[eax+0Ch]"
-"	      005676d6    mov [ebp-104h],eax"
+"	      005676d6    mov header,eax"
 );
 // LINE 70:
 	asm( 
-"	      005676dc    mov eax,[ebp-118h]"
+"	      005676dc    mov eax,this"
 "	      005676e2    mov eax,[eax+8]"
 "	      005676e5    push eax"
-"	      005676e6    mov eax,[ebp-118h]"
+"	      005676e6    mov eax,this"
 "	      005676ec    mov ecx,[eax+24h]"
 "	      005676ef    call 0055383Ah"
 );
@@ -245,8 +245,8 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 72:
 	asm( 
-"	      00567704    mov eax,[ebp-118h]"
-"	      0056770a    mov ecx,[ebp-118h]"
+"	      00567704    mov eax,this"
+"	      0056770a    mov ecx,this"
 "	      00567710    mov ecx,[ecx+24h]"
 "	      00567713    mov edx,[ecx]"
 "	      00567715    mov ecx,[eax+24h]"
@@ -254,14 +254,14 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 75:
 	asm( 
-"	      0056771b    mov eax,[ebp-104h]"
+"	      0056771b    mov eax,header"
 "	      00567721    movsx eax,word ptr [eax]"
-"	      00567724    mov ecx,[ebp-118h]"
+"	      00567724    mov ecx,this"
 "	      0056772a    mov [ecx+18h],eax"
 );
 // LINE 76:
 	asm( 
-"	      0056772d    mov eax,[ebp-118h]"
+"	      0056772d    mov eax,this"
 "	      00567733    add eax,18h"
 "	      00567736    push eax"
 "	      00567737    call 0056695Bh"
@@ -269,8 +269,8 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 77:
 	asm( 
-"	      0056773f    mov eax,[ebp-118h]"
-"	      00567745    mov ecx,[ebp+10h]"
+"	      0056773f    mov eax,this"
+"	      00567745    mov ecx,entrySize"
 "	      00567748    cmp [eax+18h],ecx"
 "	      0056774b    je near ptr 0056776Ah"
 "	      00567751    push 8C085h"
@@ -282,14 +282,14 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 79:
 	asm( 
-"	      0056776a    mov eax,[ebp-104h]"
+"	      0056776a    mov eax,header"
 "	      00567770    movsx eax,word ptr [eax+2]"
-"	      00567774    mov ecx,[ebp-118h]"
+"	      00567774    mov ecx,this"
 "	      0056777a    mov [ecx+14h],eax"
 );
 // LINE 80:
 	asm( 
-"	      0056777d    mov eax,[ebp-118h]"
+"	      0056777d    mov eax,this"
 "	      00567783    add eax,14h"
 "	      00567786    push eax"
 "	      00567787    call 0056695Bh"
@@ -297,14 +297,14 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 81:
 	asm( 
-"	      0056778f    mov eax,[ebp-104h]"
+"	      0056778f    mov eax,header"
 "	      00567795    movsx eax,word ptr [eax+4]"
-"	      00567799    mov ecx,[ebp-118h]"
+"	      00567799    mov ecx,this"
 "	      0056779f    mov [ecx+10h],eax"
 );
 // LINE 82:
 	asm( 
-"	      005677a2    mov eax,[ebp-118h]"
+"	      005677a2    mov eax,this"
 "	      005677a8    add eax,10h"
 "	      005677ab    push eax"
 "	      005677ac    call 0056695Bh"
@@ -312,17 +312,17 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 84:
 	asm( 
-"	      005677b4    mov eax,[ebp-118h]"
+"	      005677b4    mov eax,this"
 "	      005677ba    mov eax,[eax+14h]"
-"	      005677bd    mov ecx,[ebp-118h]"
+"	      005677bd    mov ecx,this"
 "	      005677c3    imul eax,[ecx+18h]"
-"	      005677c7    mov ecx,[ebp-118h]"
+"	      005677c7    mov ecx,this"
 "	      005677cd    imul eax,[ecx+10h]"
-"	      005677d1    mov ecx,[ebp-118h]"
+"	      005677d1    mov ecx,this"
 "	      005677d7    mov ecx,[ecx+14h]"
 "	      005677da    lea eax,[eax+ecx*4]"
 "	      005677dd    add eax,8"
-"	      005677e0    mov ecx,[ebp-118h]"
+"	      005677e0    mov ecx,this"
 "	      005677e6    cmp eax,[ecx+1Ch]"
 "	      005677e9    jbe near ptr 00567808h"
 "	      005677ef    push 8C085h"
@@ -334,12 +334,12 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 89:
 	asm( 
-"	      00567808    mov ecx,[ebp-118h]"
+"	      00567808    mov ecx,this"
 "	      0056780e    call 005689CCh"
 );
 // LINE 92:
 	asm( 
-"	      00567813    cmp dword ptr [ebp+14h],0"
+"	      00567813    cmp Swizzler,0"
 "	      00567817    je near ptr 005678F4h"
 );
 // LINE 94:
@@ -347,30 +347,30 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	long xcount;
 	long ycount;
 	asm( 
-"	      0056781d    mov dword ptr [ebp-114h],0"
+"	      0056781d    mov xcount,0"
 "	      00567827    jmp near ptr 00567832h"
-"	      0056782c    inc dword ptr [ebp-114h]"
-"	      00567832    mov eax,[ebp-118h]"
-"	      00567838    mov ecx,[ebp-114h]"
+"	      0056782c    inc xcount"
+"	      00567832    mov eax,this"
+"	      00567838    mov ecx,xcount"
 "	      0056783e    cmp [eax+14h],ecx"
 "	      00567841    jle near ptr 005678F4h"
 );
 // LINE 95:
 	asm( 
-"	      00567847    mov dword ptr [ebp-110h],0"
+"	      00567847    mov ycount,0"
 "	      00567851    jmp near ptr 0056785Ch"
-"	      00567856    inc dword ptr [ebp-110h]"
-"	      0056785c    mov eax,[ebp-118h]"
-"	      00567862    mov ecx,[ebp-110h]"
+"	      00567856    inc ycount"
+"	      0056785c    mov eax,this"
+"	      00567862    mov ecx,ycount"
 "	      00567868    cmp [eax+10h],ecx"
 "	      0056786b    jle near ptr 005678EFh"
 );
 // LINE 96:
 	asm( 
-"	      00567871    mov eax,[ebp-118h]"
+"	      00567871    mov eax,this"
 "	      00567877    mov eax,[eax+0Ch]"
 "	      0056787a    add eax,8"
-"	      0056787d    mov ecx,[ebp-118h]"
+"	      0056787d    mov ecx,this"
 "	      00567883    cmp eax,[ecx+4]"
 "	      00567886    je near ptr 005678A5h"
 "	      0056788c    push 8C085h"
@@ -382,27 +382,27 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 97:
 	asm( 
-"	      005678a5    mov eax,[ebp-118h]"
+"	      005678a5    mov eax,this"
 "	      005678ab    mov eax,[eax+4]"
-"	      005678ae    mov ecx,[ebp-114h]"
+"	      005678ae    mov ecx,xcount"
 "	      005678b4    mov eax,[eax+ecx*4]"
-"	      005678b7    mov [ebp-108h],eax"
+"	      005678b7    mov data,eax"
 );
 // LINE 98:
 	asm( 
-"	      005678bd    mov eax,[ebp-118h]"
+"	      005678bd    mov eax,this"
 "	      005678c3    mov eax,[eax+18h]"
-"	      005678c6    imul eax,[ebp-110h]"
-"	      005678cd    add [ebp-108h],eax"
+"	      005678c6    imul eax,ycount"
+"	      005678cd    add data,eax"
 );
 // LINE 99:
 	asm( 
-"	      005678d3    mov eax,[ebp-118h]"
+"	      005678d3    mov eax,this"
 "	      005678d9    mov eax,[eax+18h]"
 "	      005678dc    push eax"
-"	      005678dd    mov eax,[ebp-108h]"
+"	      005678dd    mov eax,data"
 "	      005678e3    push eax"
-"	      005678e4    call dword ptr [ebp+14h]"
+"	      005678e4    call Swizzler"
 "	      005678e7    add esp,8"
 );
 // LINE 100:
@@ -435,13 +435,13 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 "	      00567906    push ebx"
 "	      00567907    push esi"
 "	      00567908    push edi"
-"	      00567909    mov [ebp-4],ecx"
+"	      00567909    mov this,ecx"
 );
 // LINE 123:
 	asm( 
-"	      0056790c    cmp dword ptr [ebp+18h],0"
+"	      0056790c    cmp pFile,0"
 "	      00567910    jne near ptr 00567920h"
-"	      00567916    cmp dword ptr [ebp+1Ch],0"
+"	      00567916    cmp rType,0"
 "	      0056791a    je near ptr 00567939h"
 "	      00567920    push 8C085h"
 "	      00567925    push 5BF8F4h"
@@ -452,60 +452,60 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 );
 // LINE 127:
 	asm( 
-"	      00567939    mov eax,[ebp+18h]"
-"	      0056793c    mov ecx,[ebp-4]"
+"	      00567939    mov eax,pFile"
+"	      0056793c    mov ecx,this"
 "	      0056793f    mov [ecx+24h],eax"
 );
 // LINE 128:
 	asm( 
-"	      00567942    mov eax,[ebp+1Ch]"
-"	      00567945    mov ecx,[ebp-4]"
+"	      00567942    mov eax,rType"
+"	      00567945    mov ecx,this"
 "	      00567948    mov [ecx+28h],eax"
 );
 // LINE 129:
 	asm( 
-"	      0056794b    mov eax,[ebp+8]"
-"	      0056794e    mov ecx,[ebp-4]"
+"	      0056794b    mov eax,entrySize"
+"	      0056794e    mov ecx,this"
 "	      00567951    mov [ecx+18h],eax"
 );
 // LINE 132:
 	asm( 
-"	      00567954    mov eax,[ebp-4]"
+"	      00567954    mov eax,this"
 "	      00567957    mov dword ptr [eax+10h],0FFFFFFFFh"
-"	      0056795e    mov eax,[ebp-4]"
+"	      0056795e    mov eax,this"
 "	      00567961    mov eax,[eax+10h]"
-"	      00567964    mov ecx,[ebp-4]"
+"	      00567964    mov ecx,this"
 "	      00567967    mov [ecx+14h],eax"
 );
 // LINE 133:
 	asm( 
-"	      0056796a    cmp dword ptr [ebp+14h],0"
+"	      0056796a    cmp name,0"
 "	      0056796e    je near ptr 005679ABh"
 );
 // LINE 135:
 	asm( 
 "	      00567974    push 10h"
-"	      00567976    mov eax,[ebp-4]"
+"	      00567976    mov eax,this"
 "	      00567979    add eax,3Ch"
 "	      0056797c    push eax"
-"	      0056797d    mov eax,[ebp+14h]"
+"	      0056797d    mov eax,name"
 "	      00567980    push eax"
 "	      00567981    call 00554B76h"
 "	      00567986    add esp,0Ch"
 );
 // LINE 136:
 	asm( 
-"	      00567989    mov eax,[ebp-4]"
+"	      00567989    mov eax,this"
 "	      0056798c    add eax,3Ch"
 "	      0056798f    push eax"
 "	      00567990    call 005661F4h"
 "	      00567995    add esp,4"
-"	      00567998    mov ecx,[ebp-4]"
+"	      00567998    mov ecx,this"
 "	      0056799b    mov [ecx+4Ch],eax"
 );
 // LINE 139:
 	asm( 
-"	      0056799e    mov ecx,[ebp-4]"
+"	      0056799e    mov ecx,this"
 "	      005679a1    call 00567BF7h"
 );
 // LINE 141:
@@ -514,32 +514,32 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 );
 // LINE 143:
 	asm( 
-"	      005679ab    mov eax,[ebp-4]"
+"	      005679ab    mov eax,this"
 "	      005679ae    mov dword ptr [eax+4Ch],0"
 );
 // LINE 144:
 	asm( 
-"	      005679b5    mov eax,[ebp-4]"
+"	      005679b5    mov eax,this"
 "	      005679b8    mov byte ptr [eax+3Ch],0"
 );
 // LINE 147:
 	asm( 
-"	      005679bc    mov eax,[ebp-4]"
+"	      005679bc    mov eax,this"
 "	      005679bf    mov word ptr [eax+20h],0FFFFh"
 );
 // LINE 151:
 	asm( 
-"	      005679c5    mov eax,[ebp+10h]"
+"	      005679c5    mov eax,ySize"
 "	      005679c8    push eax"
-"	      005679c9    mov eax,[ebp+0Ch]"
+"	      005679c9    mov eax,xSize"
 "	      005679cc    push eax"
-"	      005679cd    mov ecx,[ebp-4]"
+"	      005679cd    mov ecx,this"
 "	      005679d0    call 00567E33h"
 );
 // LINE 153:
 	asm( 
 "	      005679d5    push 0"
-"	      005679d7    mov ecx,[ebp-4]"
+"	      005679d7    mov ecx,this"
 "	      005679da    call 00567E6Bh"
 );
 // LINE 154:
@@ -563,19 +563,19 @@ void _cArray::~_cArray() {
 "	      005679f1    push ebx"
 "	      005679f2    push esi"
 "	      005679f3    push edi"
-"	      005679f4    mov [ebp-0Ch],ecx"
-"	      005679f7    mov eax,[ebp-0Ch]"
+"	      005679f4    mov this,ecx"
+"	      005679f7    mov eax,this"
 "	      005679fa    mov dword ptr [eax],593738h"
 );
 // LINE 160:
 	asm( 
-"	      00567a00    mov eax,[ebp-0Ch]"
+"	      00567a00    mov eax,this"
 "	      00567a03    cmp dword ptr [eax+8],0"
 "	      00567a07    je near ptr 00567A2Bh"
 );
 // LINE 162:
 	asm( 
-"	      00567a0d    mov eax,[ebp-0Ch]"
+"	      00567a0d    mov eax,this"
 "	      00567a10    mov eax,[eax+8]"
 "	      00567a13    push eax"
 "	      00567a14    call 00554A3Dh"
@@ -583,7 +583,7 @@ void _cArray::~_cArray() {
 );
 // LINE 163:
 	asm( 
-"	      00567a1c    mov eax,[ebp-0Ch]"
+"	      00567a1c    mov eax,this"
 "	      00567a1f    mov eax,[eax+8]"
 "	      00567a22    push eax"
 "	      00567a23    call 005548C3h"
@@ -599,23 +599,23 @@ void _cArray::~_cArray() {
 	long cnt;
 	unsigned short bFound;
 	asm( 
-"	      00567a38    mov word ptr [ebp-4],0"
+"	      00567a38    mov bFound,0"
 );
 // LINE 172:
 	asm( 
-"	      00567a3e    mov dword ptr [ebp-8],0"
+"	      00567a3e    mov cnt,0"
 "	      00567a45    jmp near ptr 00567A4Dh"
-"	      00567a4a    inc dword ptr [ebp-8]"
-"	      00567a4d    cmp dword ptr [ebp-8],400h"
+"	      00567a4a    inc cnt"
+"	      00567a4d    cmp cnt,400h"
 "	      00567a54    jge near ptr 00567B11h"
 );
 // LINE 173:
 	asm( 
-"	      00567a5a    mov eax,[ebp-8]"
+"	      00567a5a    mov eax,cnt"
 "	      00567a5d    mov ecx,ds:[5BF74Ch]"
 "	      00567a63    cmp dword ptr [ecx+eax*4],0"
 "	      00567a67    je near ptr 00567A9Fh"
-"	      00567a6d    mov eax,[ebp-8]"
+"	      00567a6d    mov eax,cnt"
 "	      00567a70    mov ecx,ds:[5BF74Ch]"
 "	      00567a76    mov eax,[ecx+eax*4]"
 "	      00567a79    cmp dword ptr [eax+4Ch],0"
@@ -629,14 +629,14 @@ void _cArray::~_cArray() {
 );
 // LINE 174:
 	asm( 
-"	      00567a9f    mov eax,[ebp-8]"
+"	      00567a9f    mov eax,cnt"
 "	      00567aa2    mov ecx,ds:[5BF74Ch]"
 "	      00567aa8    cmp dword ptr [ecx+eax*4],0"
 "	      00567aac    je near ptr 00567B0Ch"
-"	      00567ab2    mov eax,[ebp-8]"
+"	      00567ab2    mov eax,cnt"
 "	      00567ab5    mov ecx,ds:[5BF74Ch]"
 "	      00567abb    mov eax,[ecx+eax*4]"
-"	      00567abe    mov ecx,[ebp-0Ch]"
+"	      00567abe    mov ecx,this"
 "	      00567ac1    mov ecx,[ecx+4Ch]"
 "	      00567ac4    cmp [eax+4Ch],ecx"
 "	      00567ac7    jne near ptr 00567B0Ch"
@@ -654,13 +654,13 @@ void _cArray::~_cArray() {
 );
 // LINE 179:
 	asm( 
-"	      00567af6    mov eax,[ebp-8]"
+"	      00567af6    mov eax,cnt"
 "	      00567af9    mov ecx,ds:[5BF74Ch]"
 "	      00567aff    mov dword ptr [ecx+eax*4],0"
 );
 // LINE 182:
 	asm( 
-"	      00567b06    mov word ptr [ebp-4],1"
+"	      00567b06    mov bFound,1"
 );
 // LINE 187:
 	asm( 
@@ -716,15 +716,15 @@ void _cArray::MakeTable() {
 );
 // LINE 198:
 	asm( 
-"	      00567b6c    mov dword ptr [ebp-4],0"
+"	      00567b6c    mov count,0"
 "	      00567b73    jmp near ptr 00567B7Bh"
-"	      00567b78    inc dword ptr [ebp-4]"
-"	      00567b7b    cmp dword ptr [ebp-4],400h"
+"	      00567b78    inc count"
+"	      00567b7b    cmp count,400h"
 "	      00567b82    jge near ptr 00567B9Dh"
 );
 // LINE 199:
 	asm( 
-"	      00567b88    mov eax,[ebp-4]"
+"	      00567b88    mov eax,count"
 "	      00567b8b    mov ecx,ds:[5BF74Ch]"
 "	      00567b91    mov dword ptr [ecx+eax*4],0"
 );
@@ -792,7 +792,7 @@ void _cArray::WriteToDisk() {
 "	      00567be7    push ebx"
 "	      00567be8    push esi"
 "	      00567be9    push edi"
-"	      00567bea    mov [ebp-4],ecx"
+"	      00567bea    mov this,ecx"
 );
 // LINE 246:
 	asm( 
@@ -815,11 +815,11 @@ void _cArray::CheckIntoTable() {
 "	      00567bfd    push ebx"
 "	      00567bfe    push esi"
 "	      00567bff    push edi"
-"	      00567c00    mov [ebp-0Ch],ecx"
+"	      00567c00    mov this,ecx"
 );
 // LINE 249:
 	asm( 
-"	      00567c03    mov eax,[ebp-0Ch]"
+"	      00567c03    mov eax,this"
 "	      00567c06    cmp dword ptr [eax+4Ch],0"
 "	      00567c0a    je near ptr 00567D08h"
 );
@@ -828,7 +828,7 @@ void _cArray::CheckIntoTable() {
 	long foundcount;
 	long count;
 	asm( 
-"	      00567c10    mov eax,[ebp-0Ch]"
+"	      00567c10    mov eax,this"
 "	      00567c13    cmp dword ptr [eax+4Ch],0"
 "	      00567c17    jne near ptr 00567C39h"
 "	      00567c1d    push 8C085h"
@@ -844,26 +844,26 @@ void _cArray::CheckIntoTable() {
 );
 // LINE 254:
 	asm( 
-"	      00567c3e    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      00567c3e    mov foundcount,0FFFFFFFFh"
 );
 // LINE 255:
 	asm( 
-"	      00567c45    mov dword ptr [ebp-4],0"
+"	      00567c45    mov count,0"
 "	      00567c4c    jmp near ptr 00567C54h"
-"	      00567c51    inc dword ptr [ebp-4]"
-"	      00567c54    cmp dword ptr [ebp-4],400h"
+"	      00567c51    inc count"
+"	      00567c54    cmp count,400h"
 "	      00567c5b    jge near ptr 00567CD3h"
 );
 // LINE 256:
 	asm( 
-"	      00567c61    mov eax,[ebp-4]"
+"	      00567c61    mov eax,count"
 "	      00567c64    mov ecx,ds:[5BF74Ch]"
 "	      00567c6a    cmp dword ptr [ecx+eax*4],0"
 "	      00567c6e    je near ptr 00567CABh"
-"	      00567c74    mov eax,[ebp-4]"
+"	      00567c74    mov eax,count"
 "	      00567c77    mov ecx,ds:[5BF74Ch]"
 "	      00567c7d    mov eax,[ecx+eax*4]"
-"	      00567c80    mov ecx,[ebp-0Ch]"
+"	      00567c80    mov ecx,this"
 "	      00567c83    mov ecx,[ecx+4Ch]"
 "	      00567c86    cmp [eax+4Ch],ecx"
 "	      00567c89    jne near ptr 00567CABh"
@@ -876,17 +876,17 @@ void _cArray::CheckIntoTable() {
 );
 // LINE 257:
 	asm( 
-"	      00567cab    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      00567cab    cmp foundcount,0FFFFFFFFh"
 "	      00567caf    jne near ptr 00567CCEh"
-"	      00567cb5    mov eax,[ebp-4]"
+"	      00567cb5    mov eax,count"
 "	      00567cb8    mov ecx,ds:[5BF74Ch]"
 "	      00567cbe    cmp dword ptr [ecx+eax*4],0"
 "	      00567cc2    jne near ptr 00567CCEh"
 );
 // LINE 258:
 	asm( 
-"	      00567cc8    mov eax,[ebp-4]"
-"	      00567ccb    mov [ebp-8],eax"
+"	      00567cc8    mov eax,count"
+"	      00567ccb    mov foundcount,eax"
 );
 // LINE 259:
 	asm( 
@@ -894,7 +894,7 @@ void _cArray::CheckIntoTable() {
 );
 // LINE 261:
 	asm( 
-"	      00567cd3    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      00567cd3    cmp foundcount,0FFFFFFFFh"
 "	      00567cd7    jne near ptr 00567CF9h"
 "	      00567cdd    push 8C085h"
 "	      00567ce2    push 5BFAC0h"
@@ -905,8 +905,8 @@ void _cArray::CheckIntoTable() {
 );
 // LINE 262:
 	asm( 
-"	      00567cf9    mov eax,[ebp-0Ch]"
-"	      00567cfc    mov ecx,[ebp-8]"
+"	      00567cf9    mov eax,this"
+"	      00567cfc    mov ecx,foundcount"
 "	      00567cff    mov edx,ds:[5BF74Ch]"
 "	      00567d05    mov [edx+ecx*4],eax"
 );
@@ -935,21 +935,21 @@ void _cArray::FillHeader() {
 "	      00567d18    push ebx"
 "	      00567d19    push esi"
 "	      00567d1a    push edi"
-"	      00567d1b    mov [ebp-0Ch],ecx"
+"	      00567d1b    mov this,ecx"
 );
 // LINE 305:
 	asm( 
-"	      00567d1e    mov eax,[ebp-0Ch]"
+"	      00567d1e    mov eax,this"
 "	      00567d21    mov eax,[eax+8]"
 "	      00567d24    push eax"
 "	      00567d25    call 00554D05h"
 "	      00567d2a    add esp,4"
-"	      00567d2d    mov [ebp-8],eax"
+"	      00567d2d    mov debugsize,eax"
 );
 // LINE 306:
 	asm( 
-"	      00567d30    mov eax,[ebp-0Ch]"
-"	      00567d33    mov ecx,[ebp-8]"
+"	      00567d30    mov eax,this"
+"	      00567d33    mov ecx,debugsize"
 "	      00567d36    cmp [eax+1Ch],ecx"
 "	      00567d39    jbe near ptr 00567D5Bh"
 "	      00567d3f    push 8C085h"
@@ -971,17 +971,17 @@ void _cArray::FillHeader() {
 );
 // LINE 309:
 	asm( 
-"	      00567d7c    mov eax,[ebp-0Ch]"
+"	      00567d7c    mov eax,this"
 "	      00567d7f    mov eax,[eax+14h]"
-"	      00567d82    mov ecx,[ebp-0Ch]"
+"	      00567d82    mov ecx,this"
 "	      00567d85    imul eax,[ecx+18h]"
-"	      00567d89    mov ecx,[ebp-0Ch]"
+"	      00567d89    mov ecx,this"
 "	      00567d8c    imul eax,[ecx+10h]"
-"	      00567d90    mov ecx,[ebp-0Ch]"
+"	      00567d90    mov ecx,this"
 "	      00567d93    mov ecx,[ecx+14h]"
 "	      00567d96    lea eax,[eax+ecx*4]"
 "	      00567d99    add eax,8"
-"	      00567d9c    mov ecx,[ebp-0Ch]"
+"	      00567d9c    mov ecx,this"
 "	      00567d9f    cmp eax,[ecx+1Ch]"
 "	      00567da2    je near ptr 00567DC4h"
 "	      00567da8    push 8C085h"
@@ -993,7 +993,7 @@ void _cArray::FillHeader() {
 );
 // LINE 310:
 	asm( 
-"	      00567dc4    mov eax,[ebp-0Ch]"
+"	      00567dc4    mov eax,this"
 "	      00567dc7    mov eax,[eax+8]"
 "	      00567dca    push eax"
 "	      00567dcb    call 00554DAFh"
@@ -1010,29 +1010,29 @@ void _cArray::FillHeader() {
 );
 // LINE 312:
 	asm( 
-"	      00567dfa    mov eax,[ebp-0Ch]"
+"	      00567dfa    mov eax,this"
 "	      00567dfd    mov eax,[eax+0Ch]"
-"	      00567e00    mov [ebp-4],eax"
+"	      00567e00    mov header,eax"
 );
 // LINE 313:
 	asm( 
-"	      00567e03    mov eax,[ebp-0Ch]"
+"	      00567e03    mov eax,this"
 "	      00567e06    mov eax,[eax+14h]"
-"	      00567e09    mov ecx,[ebp-4]"
+"	      00567e09    mov ecx,header"
 "	      00567e0c    mov [ecx+2],ax"
 );
 // LINE 314:
 	asm( 
-"	      00567e10    mov eax,[ebp-0Ch]"
+"	      00567e10    mov eax,this"
 "	      00567e13    mov eax,[eax+10h]"
-"	      00567e16    mov ecx,[ebp-4]"
+"	      00567e16    mov ecx,header"
 "	      00567e19    mov [ecx+4],ax"
 );
 // LINE 315:
 	asm( 
-"	      00567e1d    mov eax,[ebp-0Ch]"
+"	      00567e1d    mov eax,this"
 "	      00567e20    mov eax,[eax+18h]"
-"	      00567e23    mov ecx,[ebp-4]"
+"	      00567e23    mov ecx,header"
 "	      00567e26    mov [ecx],ax"
 );
 // LINE 316:
@@ -1056,25 +1056,25 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 "	      00567e39    push ebx"
 "	      00567e3a    push esi"
 "	      00567e3b    push edi"
-"	      00567e3c    mov [ebp-4],ecx"
+"	      00567e3c    mov this,ecx"
 );
 // LINE 320:
 	asm( 
-"	      00567e3f    mov eax,[ebp+0Ch]"
+"	      00567e3f    mov eax,newySize"
 "	      00567e42    push eax"
-"	      00567e43    mov eax,[ebp+8]"
+"	      00567e43    mov eax,newxSize"
 "	      00567e46    push eax"
-"	      00567e47    mov ecx,[ebp-4]"
+"	      00567e47    mov ecx,this"
 "	      00567e4a    call 00568879h"
 );
 // LINE 321:
 	asm( 
-"	      00567e4f    mov ecx,[ebp-4]"
+"	      00567e4f    mov ecx,this"
 "	      00567e52    call 00567D12h"
 );
 // LINE 322:
 	asm( 
-"	      00567e57    mov ecx,[ebp-4]"
+"	      00567e57    mov ecx,this"
 "	      00567e5a    call 005689CCh"
 );
 // LINE 323:
@@ -1106,14 +1106,14 @@ void _cArray::ClearBytes(char zeropad) {
 "	      00567e71    push ebx"
 "	      00567e72    push esi"
 "	      00567e73    push edi"
-"	      00567e74    mov [ebp-20h],ecx"
+"	      00567e74    mov this,ecx"
 );
 // LINE 327:
 	asm( 
-"	      00567e77    mov eax,[ebp-20h]"
+"	      00567e77    mov eax,this"
 "	      00567e7a    cmp dword ptr [eax+14h],0"
 "	      00567e7e    je near ptr 00567E91h"
-"	      00567e84    mov eax,[ebp-20h]"
+"	      00567e84    mov eax,this"
 "	      00567e87    cmp dword ptr [eax+10h],0"
 "	      00567e8b    jne near ptr 00567E96h"
 );
@@ -1123,23 +1123,23 @@ void _cArray::ClearBytes(char zeropad) {
 );
 // LINE 334:
 	asm( 
-"	      00567e96    mov eax,[ebp-20h]"
+"	      00567e96    mov eax,this"
 "	      00567e99    mov eax,[eax+0Ch]"
-"	      00567e9c    mov [ebp-14h],eax"
+"	      00567e9c    mov begin,eax"
 );
 // LINE 335:
 	asm( 
-"	      00567e9f    mov eax,[ebp-20h]"
+"	      00567e9f    mov eax,this"
 "	      00567ea2    mov eax,[eax+8]"
 "	      00567ea5    push eax"
 "	      00567ea6    call 00554D05h"
 "	      00567eab    add esp,4"
-"	      00567eae    mov [ebp-18h],eax"
+"	      00567eae    mov debugsize,eax"
 );
 // LINE 336:
 	asm( 
-"	      00567eb1    mov eax,[ebp-20h]"
-"	      00567eb4    mov ecx,[ebp-18h]"
+"	      00567eb1    mov eax,this"
+"	      00567eb4    mov ecx,debugsize"
 "	      00567eb7    cmp [eax+1Ch],ecx"
 "	      00567eba    jbe near ptr 00567EDCh"
 "	      00567ec0    push 8C085h"
@@ -1151,26 +1151,26 @@ void _cArray::ClearBytes(char zeropad) {
 );
 // LINE 337:
 	asm( 
-"	      00567edc    mov eax,[ebp-20h]"
+"	      00567edc    mov eax,this"
 "	      00567edf    mov eax,[eax+1Ch]"
-"	      00567ee2    mov ecx,[ebp-20h]"
+"	      00567ee2    mov ecx,this"
 "	      00567ee5    add eax,[ecx+0Ch]"
-"	      00567ee8    mov [ebp-0Ch],eax"
+"	      00567ee8    mov end,eax"
 );
 // LINE 340:
 	asm( 
-"	      00567eeb    mov eax,[ebp-20h]"
+"	      00567eeb    mov eax,this"
 "	      00567eee    mov eax,[eax+14h]"
 "	      00567ef1    shl eax,2"
-"	      00567ef4    mov ecx,[ebp-20h]"
+"	      00567ef4    mov ecx,this"
 "	      00567ef7    add eax,[ecx+4]"
-"	      00567efa    mov [ebp-4],eax"
+"	      00567efa    mov fillPtr,eax"
 );
 // LINE 341:
 	asm( 
-"	      00567efd    mov eax,[ebp-20h]"
+"	      00567efd    mov eax,this"
 "	      00567f00    mov eax,[eax+4]"
-"	      00567f03    mov ecx,[ebp-4]"
+"	      00567f03    mov ecx,fillPtr"
 "	      00567f06    cmp [eax],ecx"
 "	      00567f08    je near ptr 00567F2Ah"
 "	      00567f0e    push 8C085h"
@@ -1182,19 +1182,19 @@ void _cArray::ClearBytes(char zeropad) {
 );
 // LINE 342:
 	asm( 
-"	      00567f2a    mov eax,[ebp-20h]"
+"	      00567f2a    mov eax,this"
 "	      00567f2d    mov eax,[eax+14h]"
-"	      00567f30    mov ecx,[ebp-20h]"
+"	      00567f30    mov ecx,this"
 "	      00567f33    imul eax,[ecx+18h]"
-"	      00567f37    mov ecx,[ebp-20h]"
+"	      00567f37    mov ecx,this"
 "	      00567f3a    imul eax,[ecx+10h]"
-"	      00567f3e    mov [ebp-10h],eax"
+"	      00567f3e    mov numBytes,eax"
 );
 // LINE 343:
 	asm( 
-"	      00567f41    cmp dword ptr [ebp-10h],0"
+"	      00567f41    cmp numBytes,0"
 "	      00567f45    jle near ptr 00567F58h"
-"	      00567f4b    cmp dword ptr [ebp-10h],7A1200h"
+"	      00567f4b    cmp numBytes,7A1200h"
 "	      00567f52    jl near ptr 00567F74h"
 "	      00567f58    push 8C085h"
 "	      00567f5d    push 5BFC78h"
@@ -1205,26 +1205,26 @@ void _cArray::ClearBytes(char zeropad) {
 );
 // LINE 344:
 	asm( 
-"	      00567f74    mov dword ptr [ebp-8],0"
+"	      00567f74    mov cnt,0"
 "	      00567f7b    jmp near ptr 00567F83h"
-"	      00567f80    inc dword ptr [ebp-8]"
-"	      00567f83    mov eax,[ebp-8]"
-"	      00567f86    cmp [ebp-10h],eax"
+"	      00567f80    inc cnt"
+"	      00567f83    mov eax,cnt"
+"	      00567f86    cmp numBytes,eax"
 "	      00567f89    jle near ptr 00567FDAh"
 );
 // LINE 346:
 	asm( 
-"	      00567f8f    mov eax,[ebp-4]"
-"	      00567f92    mov [ebp-1Ch],eax"
+"	      00567f8f    mov eax,fillPtr"
+"	      00567f92    mov writeplace,eax"
 );
 // LINE 347:
 	asm( 
-"	      00567f95    mov eax,[ebp-14h]"
-"	      00567f98    cmp [ebp-1Ch],eax"
+"	      00567f95    mov eax,begin"
+"	      00567f98    cmp writeplace,eax"
 "	      00567f9b    jb near ptr 00567FAEh"
-"	      00567fa1    mov eax,[ebp-1Ch]"
+"	      00567fa1    mov eax,writeplace"
 "	      00567fa4    inc eax"
-"	      00567fa5    cmp eax,[ebp-0Ch]"
+"	      00567fa5    cmp eax,end"
 "	      00567fa8    jbe near ptr 00567FCAh"
 );
 // LINE 348:
@@ -1238,13 +1238,13 @@ void _cArray::ClearBytes(char zeropad) {
 );
 // LINE 350:
 	asm( 
-"	      00567fca    mov al,[ebp+8]"
-"	      00567fcd    mov ecx,[ebp-4]"
+"	      00567fca    mov al,zeropad"
+"	      00567fcd    mov ecx,fillPtr"
 "	      00567fd0    mov [ecx],al"
 );
 // LINE 351:
 	asm( 
-"	      00567fd2    inc dword ptr [ebp-4]"
+"	      00567fd2    inc fillPtr"
 );
 // LINE 352:
 	asm( 
@@ -1275,42 +1275,42 @@ short _cArray::InsertRow(short afterwhich) {
 "	      00567fec    push ebx"
 "	      00567fed    push esi"
 "	      00567fee    push edi"
-"	      00567fef    mov [ebp-1Ch],ecx"
+"	      00567fef    mov this,ecx"
 );
 // LINE 360:
 	asm( 
-"	      00567ff2    mov eax,[ebp-1Ch]"
+"	      00567ff2    mov eax,this"
 "	      00567ff5    mov eax,[eax+14h]"
-"	      00567ff8    mov [ebp-8],eax"
+"	      00567ff8    mov oldxsize,eax"
 );
 // LINE 361:
 	asm( 
-"	      00567ffb    mov eax,[ebp-1Ch]"
+"	      00567ffb    mov eax,this"
 "	      00567ffe    mov eax,[eax+10h]"
-"	      00568001    mov [ebp-4],eax"
+"	      00568001    mov oldysize,eax"
 );
 // LINE 363:
 	asm( 
 "	      00568004    push 0"
-"	      00568006    mov eax,[ebp-1Ch]"
+"	      00568006    mov eax,this"
 "	      00568009    mov eax,[eax+10h]"
 "	      0056800c    push eax"
-"	      0056800d    mov eax,[ebp-1Ch]"
+"	      0056800d    mov eax,this"
 "	      00568010    mov eax,[eax+14h]"
 "	      00568013    inc eax"
 "	      00568014    push eax"
-"	      00568015    mov ecx,[ebp-1Ch]"
+"	      00568015    mov ecx,this"
 "	      00568018    call 005686AFh"
 );
 // LINE 365:
 	asm( 
-"	      0056801d    mov eax,[ebp-1Ch]"
-"	      00568020    mov ecx,[ebp-8]"
+"	      0056801d    mov eax,this"
+"	      00568020    mov ecx,oldxsize"
 "	      00568023    inc ecx"
 "	      00568024    cmp [eax+14h],ecx"
 "	      00568027    jne near ptr 0056803Ch"
-"	      0056802d    mov eax,[ebp-1Ch]"
-"	      00568030    mov ecx,[ebp-4]"
+"	      0056802d    mov eax,this"
+"	      00568030    mov ecx,oldysize"
 "	      00568033    cmp [eax+10h],ecx"
 "	      00568036    je near ptr 00568058h"
 "	      0056803c    push 8C085h"
@@ -1322,20 +1322,20 @@ short _cArray::InsertRow(short afterwhich) {
 );
 // LINE 367:
 	asm( 
-"	      00568058    movsx eax,word ptr [ebp+8]"
+"	      00568058    movsx eax,afterwhich"
 "	      0056805c    inc eax"
-"	      0056805d    mov [ebp-0Ch],ax"
+"	      0056805d    mov beforewhich,ax"
 );
 // LINE 368:
 	asm( 
-"	      00568061    mov eax,[ebp-1Ch]"
-"	      00568064    movsx ecx,word ptr [ebp-0Ch]"
+"	      00568061    mov eax,this"
+"	      00568064    movsx ecx,beforewhich"
 "	      00568068    cmp [eax+14h],ecx"
 "	      0056806b    jle near ptr 00568118h"
 );
 // LINE 369:
 	asm( 
-"	      00568071    mov eax,[ebp-1Ch]"
+"	      00568071    mov eax,this"
 "	      00568074    cmp dword ptr [eax+10h],0"
 "	      00568078    je near ptr 00568118h"
 );
@@ -1345,52 +1345,52 @@ short _cArray::InsertRow(short afterwhich) {
 	unsigned char * moveto;
 	short count;
 	asm( 
-"	      0056807e    mov eax,[ebp-1Ch]"
+"	      0056807e    mov eax,this"
 "	      00568081    mov eax,[eax+14h]"
 "	      00568084    dec eax"
-"	      00568085    mov [ebp-10h],ax"
+"	      00568085    mov count,ax"
 "	      00568089    jmp near ptr 00568092h"
-"	      0056808e    dec word ptr [ebp-10h]"
-"	      00568092    movsx eax,word ptr [ebp-10h]"
-"	      00568096    movsx ecx,word ptr [ebp-0Ch]"
+"	      0056808e    dec count"
+"	      00568092    movsx eax,count"
+"	      00568096    movsx ecx,beforewhich"
 "	      0056809a    cmp eax,ecx"
 "	      0056809c    jle near ptr 00568118h"
 );
 // LINE 373:
 	asm( 
 "	      005680a2    jmp near ptr 005680A7h"
-"	      005680a7    movsx eax,word ptr [ebp-10h]"
-"	      005680ab    mov ecx,[ebp-1Ch]"
+"	      005680a7    movsx eax,count"
+"	      005680ab    mov ecx,this"
 "	      005680ae    mov ecx,[ecx+4]"
 "	      005680b1    mov eax,[ecx+eax*4-4]"
-"	      005680b5    mov [ebp-18h],eax"
+"	      005680b5    mov movefrom,eax"
 );
 // LINE 374:
 	asm( 
 "	      005680b8    jmp near ptr 005680BDh"
-"	      005680bd    movsx eax,word ptr [ebp-10h]"
-"	      005680c1    mov ecx,[ebp-1Ch]"
+"	      005680bd    movsx eax,count"
+"	      005680c1    mov ecx,this"
 "	      005680c4    mov ecx,[ecx+4]"
 "	      005680c7    mov eax,[ecx+eax*4]"
-"	      005680ca    mov [ebp-14h],eax"
+"	      005680ca    mov moveto,eax"
 );
 // LINE 375:
 	asm( 
-"	      005680cd    mov eax,[ebp-1Ch]"
+"	      005680cd    mov eax,this"
 "	      005680d0    mov eax,[eax+18h]"
-"	      005680d3    mov ecx,[ebp-1Ch]"
+"	      005680d3    mov ecx,this"
 "	      005680d6    imul eax,[ecx+10h]"
 "	      005680da    push eax"
-"	      005680db    mov eax,[ebp-14h]"
+"	      005680db    mov eax,moveto"
 "	      005680de    push eax"
-"	      005680df    mov eax,[ebp-18h]"
+"	      005680df    mov eax,movefrom"
 "	      005680e2    push eax"
 "	      005680e3    call 00554B76h"
 "	      005680e8    add esp,0Ch"
 );
 // LINE 378:
 	asm( 
-"	      005680eb    movsx eax,word ptr [ebp-10h]"
+"	      005680eb    movsx eax,count"
 "	      005680ef    test eax,eax"
 "	      005680f1    jge near ptr 00568113h"
 "	      005680f7    push 8C085h"
@@ -1407,7 +1407,7 @@ short _cArray::InsertRow(short afterwhich) {
 // LINE 382:
 // Block end:
 	asm( 
-"	      00568118    mov ax,[ebp-0Ch]"
+"	      00568118    mov ax,beforewhich"
 "	      0056811c    jmp near ptr 00568121h"
 );
 // LINE 383:
@@ -1434,41 +1434,41 @@ short _cArray::InsertColumn(short afterwhich) {
 "	      0056812e    push ebx"
 "	      0056812f    push esi"
 "	      00568130    push edi"
-"	      00568131    mov [ebp-20h],ecx"
+"	      00568131    mov this,ecx"
 );
 // LINE 388:
 	asm( 
-"	      00568134    mov eax,[ebp-20h]"
+"	      00568134    mov eax,this"
 "	      00568137    mov eax,[eax+14h]"
-"	      0056813a    mov [ebp-8],eax"
+"	      0056813a    mov oldxsize,eax"
 );
 // LINE 389:
 	asm( 
-"	      0056813d    mov eax,[ebp-20h]"
+"	      0056813d    mov eax,this"
 "	      00568140    mov eax,[eax+10h]"
-"	      00568143    mov [ebp-4],eax"
+"	      00568143    mov oldysize,eax"
 );
 // LINE 391:
 	asm( 
 "	      00568146    push 0"
-"	      00568148    mov eax,[ebp-20h]"
+"	      00568148    mov eax,this"
 "	      0056814b    mov eax,[eax+10h]"
 "	      0056814e    inc eax"
 "	      0056814f    push eax"
-"	      00568150    mov eax,[ebp-20h]"
+"	      00568150    mov eax,this"
 "	      00568153    mov eax,[eax+14h]"
 "	      00568156    push eax"
-"	      00568157    mov ecx,[ebp-20h]"
+"	      00568157    mov ecx,this"
 "	      0056815a    call 005686AFh"
 );
 // LINE 392:
 	asm( 
-"	      0056815f    mov eax,[ebp-20h]"
-"	      00568162    mov ecx,[ebp-8]"
+"	      0056815f    mov eax,this"
+"	      00568162    mov ecx,oldxsize"
 "	      00568165    cmp [eax+14h],ecx"
 "	      00568168    jne near ptr 0056817Eh"
-"	      0056816e    mov eax,[ebp-20h]"
-"	      00568171    mov ecx,[ebp-4]"
+"	      0056816e    mov eax,this"
+"	      00568171    mov ecx,oldysize"
 "	      00568174    inc ecx"
 "	      00568175    cmp [eax+10h],ecx"
 "	      00568178    je near ptr 0056819Ah"
@@ -1481,14 +1481,14 @@ short _cArray::InsertColumn(short afterwhich) {
 );
 // LINE 394:
 	asm( 
-"	      0056819a    movsx eax,word ptr [ebp+8]"
+"	      0056819a    movsx eax,afterwhich"
 "	      0056819e    inc eax"
-"	      0056819f    mov [ebp-0Ch],ax"
+"	      0056819f    mov beforewhich,ax"
 );
 // LINE 395:
 	asm( 
-"	      005681a3    mov eax,[ebp-20h]"
-"	      005681a6    movsx ecx,word ptr [ebp-0Ch]"
+"	      005681a3    mov eax,this"
+"	      005681a6    movsx ecx,beforewhich"
 "	      005681aa    cmp [eax+10h],ecx"
 "	      005681ad    jle near ptr 00568284h"
 );
@@ -1498,11 +1498,11 @@ short _cArray::InsertColumn(short afterwhich) {
 	unsigned char * moveto;
 	short xcount;
 	asm( 
-"	      005681b3    mov word ptr [ebp-10h],0"
+"	      005681b3    mov xcount,0"
 "	      005681b9    jmp near ptr 005681C2h"
-"	      005681be    inc word ptr [ebp-10h]"
-"	      005681c2    mov eax,[ebp-20h]"
-"	      005681c5    movsx ecx,word ptr [ebp-10h]"
+"	      005681be    inc xcount"
+"	      005681c2    mov eax,this"
+"	      005681c5    movsx ecx,xcount"
 "	      005681c9    cmp [eax+14h],ecx"
 "	      005681cc    jle near ptr 00568284h"
 );
@@ -1510,20 +1510,20 @@ short _cArray::InsertColumn(short afterwhich) {
 // Block start:
 	short ycount;
 	asm( 
-"	      005681d2    mov eax,[ebp-20h]"
+"	      005681d2    mov eax,this"
 "	      005681d5    mov eax,[eax+10h]"
 "	      005681d8    dec eax"
-"	      005681d9    mov [ebp-1Ch],ax"
+"	      005681d9    mov ycount,ax"
 "	      005681dd    jmp near ptr 005681E6h"
-"	      005681e2    dec word ptr [ebp-1Ch]"
-"	      005681e6    movsx eax,word ptr [ebp-1Ch]"
-"	      005681ea    movsx ecx,word ptr [ebp-0Ch]"
+"	      005681e2    dec ycount"
+"	      005681e6    movsx eax,ycount"
+"	      005681ea    movsx ecx,beforewhich"
 "	      005681ee    cmp eax,ecx"
 "	      005681f0    jle near ptr 0056827Fh"
 );
 // LINE 399:
 	asm( 
-"	      005681f6    movsx eax,word ptr [ebp-1Ch]"
+"	      005681f6    movsx eax,ycount"
 "	      005681fa    test eax,eax"
 "	      005681fc    jge near ptr 0056821Eh"
 "	      00568202    push 8C085h"
@@ -1536,38 +1536,38 @@ short _cArray::InsertColumn(short afterwhich) {
 // LINE 400:
 	asm( 
 "	      0056821e    jmp near ptr 00568223h"
-"	      00568223    movsx eax,word ptr [ebp-1Ch]"
+"	      00568223    movsx eax,ycount"
 "	      00568227    dec eax"
-"	      00568228    mov ecx,[ebp-20h]"
+"	      00568228    mov ecx,this"
 "	      0056822b    imul eax,[ecx+18h]"
-"	      0056822f    movsx ecx,word ptr [ebp-10h]"
-"	      00568233    mov edx,[ebp-20h]"
+"	      0056822f    movsx ecx,xcount"
+"	      00568233    mov edx,this"
 "	      00568236    mov edx,[edx+4]"
 "	      00568239    add eax,[edx+ecx*4]"
-"	      0056823c    mov [ebp-18h],eax"
+"	      0056823c    mov movefrom,eax"
 );
 // LINE 401:
 	asm( 
 "	      0056823f    jmp near ptr 00568244h"
-"	      00568244    movsx eax,word ptr [ebp-10h]"
-"	      00568248    mov ecx,[ebp-20h]"
+"	      00568244    movsx eax,xcount"
+"	      00568248    mov ecx,this"
 "	      0056824b    mov ecx,[ecx+4]"
 "	      0056824e    mov eax,[ecx+eax*4]"
-"	      00568251    mov ecx,[ebp-20h]"
+"	      00568251    mov ecx,this"
 "	      00568254    mov ecx,[ecx+18h]"
-"	      00568257    movsx edx,word ptr [ebp-1Ch]"
+"	      00568257    movsx edx,ycount"
 "	      0056825b    imul ecx,edx"
 "	      0056825e    add eax,ecx"
-"	      00568260    mov [ebp-14h],eax"
+"	      00568260    mov moveto,eax"
 );
 // LINE 402:
 	asm( 
-"	      00568263    mov eax,[ebp-20h]"
+"	      00568263    mov eax,this"
 "	      00568266    mov eax,[eax+18h]"
 "	      00568269    push eax"
-"	      0056826a    mov eax,[ebp-14h]"
+"	      0056826a    mov eax,moveto"
 "	      0056826d    push eax"
-"	      0056826e    mov eax,[ebp-18h]"
+"	      0056826e    mov eax,movefrom"
 "	      00568271    push eax"
 "	      00568272    call 00554B76h"
 "	      00568277    add esp,0Ch"
@@ -1584,7 +1584,7 @@ short _cArray::InsertColumn(short afterwhich) {
 // LINE 406:
 // Block end:
 	asm( 
-"	      00568284    mov ax,[ebp-0Ch]"
+"	      00568284    mov ax,beforewhich"
 "	      00568288    jmp near ptr 0056828Dh"
 );
 // LINE 407:
@@ -1612,23 +1612,23 @@ short _cArray::DeleteRow(short which) {
 "	      0056829a    push ebx"
 "	      0056829b    push esi"
 "	      0056829c    push edi"
-"	      0056829d    mov [ebp-18h],ecx"
+"	      0056829d    mov this,ecx"
 );
 // LINE 413:
 	asm( 
-"	      005682a0    mov eax,[ebp-18h]"
+"	      005682a0    mov eax,this"
 "	      005682a3    mov eax,[eax+14h]"
-"	      005682a6    mov [ebp-8],eax"
+"	      005682a6    mov oldxsize,eax"
 );
 // LINE 414:
 	asm( 
-"	      005682a9    mov eax,[ebp-18h]"
+"	      005682a9    mov eax,this"
 "	      005682ac    mov eax,[eax+10h]"
-"	      005682af    mov [ebp-4],eax"
+"	      005682af    mov oldysize,eax"
 );
 // LINE 415:
 	asm( 
-"	      005682b2    cmp dword ptr [ebp-8],0"
+"	      005682b2    cmp oldxsize,0"
 "	      005682b6    jg near ptr 005682D8h"
 "	      005682bc    push 8C085h"
 "	      005682c1    push 5BFD98h"
@@ -1639,11 +1639,11 @@ short _cArray::DeleteRow(short which) {
 );
 // LINE 417:
 	asm( 
-"	      005682d8    mov eax,[ebp-18h]"
-"	      005682db    movsx ecx,word ptr [ebp+8]"
+"	      005682d8    mov eax,this"
+"	      005682db    movsx ecx,which"
 "	      005682df    cmp [eax+14h],ecx"
 "	      005682e2    jle near ptr 005682F4h"
-"	      005682e8    movsx eax,word ptr [ebp+8]"
+"	      005682e8    movsx eax,which"
 "	      005682ec    test eax,eax"
 "	      005682ee    jge near ptr 00568310h"
 "	      005682f4    push 8C085h"
@@ -1655,7 +1655,7 @@ short _cArray::DeleteRow(short which) {
 );
 // LINE 418:
 	asm( 
-"	      00568310    mov eax,[ebp-18h]"
+"	      00568310    mov eax,this"
 "	      00568313    cmp dword ptr [eax+10h],0"
 "	      00568317    je near ptr 0056838Fh"
 );
@@ -1663,45 +1663,45 @@ short _cArray::DeleteRow(short which) {
 // Block start:
 	short count;
 	asm( 
-"	      0056831d    mov ax,[ebp+8]"
-"	      00568321    mov [ebp-14h],ax"
+"	      0056831d    mov ax,which"
+"	      00568321    mov count,ax"
 "	      00568325    jmp near ptr 0056832Eh"
-"	      0056832a    inc word ptr [ebp-14h]"
-"	      0056832e    mov eax,[ebp-18h]"
+"	      0056832a    inc count"
+"	      0056832e    mov eax,this"
 "	      00568331    mov eax,[eax+14h]"
 "	      00568334    dec eax"
-"	      00568335    movsx ecx,word ptr [ebp-14h]"
+"	      00568335    movsx ecx,count"
 "	      00568339    cmp eax,ecx"
 "	      0056833b    jle near ptr 0056838Fh"
 );
 // LINE 420:
 	asm( 
 "	      00568341    jmp near ptr 00568346h"
-"	      00568346    movsx eax,word ptr [ebp-14h]"
-"	      0056834a    mov ecx,[ebp-18h]"
+"	      00568346    movsx eax,count"
+"	      0056834a    mov ecx,this"
 "	      0056834d    mov ecx,[ecx+4]"
 "	      00568350    mov eax,[ecx+eax*4+4]"
-"	      00568354    mov [ebp-10h],eax"
+"	      00568354    mov movefrom,eax"
 );
 // LINE 421:
 	asm( 
 "	      00568357    jmp near ptr 0056835Ch"
-"	      0056835c    movsx eax,word ptr [ebp-14h]"
-"	      00568360    mov ecx,[ebp-18h]"
+"	      0056835c    movsx eax,count"
+"	      00568360    mov ecx,this"
 "	      00568363    mov ecx,[ecx+4]"
 "	      00568366    mov eax,[ecx+eax*4]"
-"	      00568369    mov [ebp-0Ch],eax"
+"	      00568369    mov moveto,eax"
 );
 // LINE 422:
 	asm( 
-"	      0056836c    mov eax,[ebp-18h]"
+"	      0056836c    mov eax,this"
 "	      0056836f    mov eax,[eax+18h]"
-"	      00568372    mov ecx,[ebp-18h]"
+"	      00568372    mov ecx,this"
 "	      00568375    imul eax,[ecx+10h]"
 "	      00568379    push eax"
-"	      0056837a    mov eax,[ebp-0Ch]"
+"	      0056837a    mov eax,moveto"
 "	      0056837d    push eax"
-"	      0056837e    mov eax,[ebp-10h]"
+"	      0056837e    mov eax,movefrom"
 "	      00568381    push eax"
 "	      00568382    call 00554B76h"
 "	      00568387    add esp,0Ch"
@@ -1714,14 +1714,14 @@ short _cArray::DeleteRow(short which) {
 // Block end:
 	asm( 
 "	      0056838f    push 0"
-"	      00568391    mov eax,[ebp-18h]"
+"	      00568391    mov eax,this"
 "	      00568394    mov eax,[eax+10h]"
 "	      00568397    push eax"
-"	      00568398    mov eax,[ebp-18h]"
+"	      00568398    mov eax,this"
 "	      0056839b    mov eax,[eax+14h]"
 "	      0056839e    dec eax"
 "	      0056839f    push eax"
-"	      005683a0    mov ecx,[ebp-18h]"
+"	      005683a0    mov ecx,this"
 "	      005683a3    call 005686AFh"
 "	      005683a8    movzx eax,ax"
 "	      005683ab    test eax,eax"
@@ -1735,8 +1735,8 @@ short _cArray::DeleteRow(short which) {
 );
 // LINE 427:
 	asm( 
-"	      005683cf    mov eax,[ebp-18h]"
-"	      005683d2    mov ecx,[ebp-4]"
+"	      005683cf    mov eax,this"
+"	      005683d2    mov ecx,oldysize"
 "	      005683d5    cmp [eax+10h],ecx"
 "	      005683d8    je near ptr 005683FAh"
 "	      005683de    push 8C085h"
@@ -1748,8 +1748,8 @@ short _cArray::DeleteRow(short which) {
 );
 // LINE 428:
 	asm( 
-"	      005683fa    mov eax,[ebp-18h]"
-"	      005683fd    mov ecx,[ebp-8]"
+"	      005683fa    mov eax,this"
+"	      005683fd    mov ecx,oldxsize"
 "	      00568400    dec ecx"
 "	      00568401    cmp [eax+14h],ecx"
 "	      00568404    je near ptr 00568426h"
@@ -1762,7 +1762,7 @@ short _cArray::DeleteRow(short which) {
 );
 // LINE 429:
 	asm( 
-"	      00568426    mov eax,[ebp-18h]"
+"	      00568426    mov eax,this"
 "	      00568429    mov ax,[eax+14h]"
 "	      0056842d    jmp near ptr 00568432h"
 );
@@ -1792,23 +1792,23 @@ short _cArray::DeleteColumn(short which) {
 "	      0056843f    push ebx"
 "	      00568440    push esi"
 "	      00568441    push edi"
-"	      00568442    mov [ebp-24h],ecx"
+"	      00568442    mov this,ecx"
 );
 // LINE 436:
 	asm( 
-"	      00568445    mov eax,[ebp-24h]"
+"	      00568445    mov eax,this"
 "	      00568448    mov eax,[eax+10h]"
-"	      0056844b    mov [ebp-4],eax"
+"	      0056844b    mov oldysize,eax"
 );
 // LINE 437:
 	asm( 
-"	      0056844e    mov eax,[ebp-24h]"
+"	      0056844e    mov eax,this"
 "	      00568451    mov eax,[eax+14h]"
-"	      00568454    mov [ebp-10h],eax"
+"	      00568454    mov oldxsize,eax"
 );
 // LINE 438:
 	asm( 
-"	      00568457    cmp dword ptr [ebp-4],0"
+"	      00568457    cmp oldysize,0"
 "	      0056845b    jg near ptr 0056847Dh"
 "	      00568461    push 8C085h"
 "	      00568466    push 5BFE74h"
@@ -1819,11 +1819,11 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 440:
 	asm( 
-"	      0056847d    movsx eax,word ptr [ebp+8]"
+"	      0056847d    movsx eax,which"
 "	      00568481    test eax,eax"
 "	      00568483    jl near ptr 00568499h"
-"	      00568489    mov eax,[ebp-24h]"
-"	      0056848c    movsx ecx,word ptr [ebp+8]"
+"	      00568489    mov eax,this"
+"	      0056848c    movsx ecx,which"
 "	      00568490    cmp [eax+10h],ecx"
 "	      00568493    jg near ptr 005684B5h"
 "	      00568499    push 8C085h"
@@ -1835,11 +1835,11 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 441:
 	asm( 
-"	      005684b5    mov word ptr [ebp-0Ch],0"
+"	      005684b5    mov xcount,0"
 "	      005684bb    jmp near ptr 005684C4h"
-"	      005684c0    inc word ptr [ebp-0Ch]"
-"	      005684c4    mov eax,[ebp-24h]"
-"	      005684c7    movsx ecx,word ptr [ebp-0Ch]"
+"	      005684c0    inc xcount"
+"	      005684c4    mov eax,this"
+"	      005684c7    movsx ecx,xcount"
 "	      005684cb    cmp [eax+14h],ecx"
 "	      005684ce    jle near ptr 00568605h"
 );
@@ -1847,58 +1847,58 @@ short _cArray::DeleteColumn(short which) {
 // Block start:
 	short ycount;
 	asm( 
-"	      005684d4    mov ax,[ebp+8]"
-"	      005684d8    mov [ebp-18h],ax"
+"	      005684d4    mov ax,which"
+"	      005684d8    mov ycount,ax"
 "	      005684dc    jmp near ptr 005684E5h"
-"	      005684e1    inc word ptr [ebp-18h]"
-"	      005684e5    mov eax,[ebp-24h]"
-"	      005684e8    movsx ecx,word ptr [ebp-18h]"
+"	      005684e1    inc ycount"
+"	      005684e5    mov eax,this"
+"	      005684e8    movsx ecx,ycount"
 "	      005684ec    cmp [eax+10h],ecx"
 "	      005684ef    jle near ptr 00568567h"
 );
 // LINE 443:
 	asm( 
-"	      005684f5    movsx eax,word ptr [ebp-18h]"
+"	      005684f5    movsx eax,ycount"
 "	      005684f9    inc eax"
-"	      005684fa    mov ecx,[ebp-24h]"
+"	      005684fa    mov ecx,this"
 "	      005684fd    cmp eax,[ecx+10h]"
 "	      00568500    jge near ptr 00568562h"
 );
 // LINE 444:
 	asm( 
 "	      00568506    jmp near ptr 0056850Bh"
-"	      0056850b    movsx eax,word ptr [ebp-0Ch]"
-"	      0056850f    mov ecx,[ebp-24h]"
+"	      0056850b    movsx eax,xcount"
+"	      0056850f    mov ecx,this"
 "	      00568512    mov ecx,[ecx+4]"
 "	      00568515    mov eax,[ecx+eax*4]"
-"	      00568518    mov ecx,[ebp-24h]"
+"	      00568518    mov ecx,this"
 "	      0056851b    mov ecx,[ecx+18h]"
-"	      0056851e    movsx edx,word ptr [ebp-18h]"
+"	      0056851e    movsx edx,ycount"
 "	      00568522    imul ecx,edx"
 "	      00568525    add eax,ecx"
-"	      00568527    mov [ebp-14h],eax"
+"	      00568527    mov thisone,eax"
 );
 // LINE 445:
 	asm( 
 "	      0056852a    jmp near ptr 0056852Fh"
-"	      0056852f    movsx eax,word ptr [ebp-18h]"
+"	      0056852f    movsx eax,ycount"
 "	      00568533    inc eax"
-"	      00568534    mov ecx,[ebp-24h]"
+"	      00568534    mov ecx,this"
 "	      00568537    imul eax,[ecx+18h]"
-"	      0056853b    movsx ecx,word ptr [ebp-0Ch]"
-"	      0056853f    mov edx,[ebp-24h]"
+"	      0056853b    movsx ecx,xcount"
+"	      0056853f    mov edx,this"
 "	      00568542    mov edx,[edx+4]"
 "	      00568545    add eax,[edx+ecx*4]"
-"	      00568548    mov [ebp-8],eax"
+"	      00568548    mov nextone,eax"
 );
 // LINE 446:
 	asm( 
-"	      0056854b    mov eax,[ebp-24h]"
+"	      0056854b    mov eax,this"
 "	      0056854e    mov eax,[eax+18h]"
 "	      00568551    push eax"
-"	      00568552    mov eax,[ebp-14h]"
+"	      00568552    mov eax,thisone"
 "	      00568555    push eax"
-"	      00568556    mov eax,[ebp-8]"
+"	      00568556    mov eax,nextone"
 "	      00568559    push eax"
 "	      0056855a    call 00554B76h"
 "	      0056855f    add esp,0Ch"
@@ -1909,10 +1909,10 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 450:
 	asm( 
-"	      00568567    mov eax,[ebp-24h]"
+"	      00568567    mov eax,this"
 "	      0056856a    mov eax,[eax+10h]"
 "	      0056856d    dec eax"
-"	      0056856e    movsx ecx,word ptr [ebp+8]"
+"	      0056856e    movsx ecx,which"
 "	      00568572    cmp eax,ecx"
 "	      00568574    jle near ptr 00568600h"
 );
@@ -1922,39 +1922,39 @@ short _cArray::DeleteColumn(short which) {
 	unsigned char * nextToLast;
 	asm( 
 "	      0056857a    jmp near ptr 0056857Fh"
-"	      0056857f    mov eax,[ebp-24h]"
+"	      0056857f    mov eax,this"
 "	      00568582    mov eax,[eax+10h]"
 "	      00568585    dec eax"
-"	      00568586    mov ecx,[ebp-24h]"
+"	      00568586    mov ecx,this"
 "	      00568589    imul eax,[ecx+18h]"
-"	      0056858d    movsx ecx,word ptr [ebp-0Ch]"
-"	      00568591    mov edx,[ebp-24h]"
+"	      0056858d    movsx ecx,xcount"
+"	      00568591    mov edx,this"
 "	      00568594    mov edx,[edx+4]"
 "	      00568597    add eax,[edx+ecx*4]"
-"	      0056859a    mov [ebp-20h],eax"
+"	      0056859a    mov lastPart,eax"
 );
 // LINE 452:
 	asm( 
 "	      0056859d    jmp near ptr 005685A2h"
-"	      005685a2    mov eax,[ebp-24h]"
+"	      005685a2    mov eax,this"
 "	      005685a5    mov eax,[eax+10h]"
 "	      005685a8    sub eax,2"
-"	      005685ab    mov ecx,[ebp-24h]"
+"	      005685ab    mov ecx,this"
 "	      005685ae    imul eax,[ecx+18h]"
-"	      005685b2    movsx ecx,word ptr [ebp-0Ch]"
-"	      005685b6    mov edx,[ebp-24h]"
+"	      005685b2    movsx ecx,xcount"
+"	      005685b6    mov edx,this"
 "	      005685b9    mov edx,[edx+4]"
 "	      005685bc    add eax,[edx+ecx*4]"
-"	      005685bf    mov [ebp-1Ch],eax"
+"	      005685bf    mov nextToLast,eax"
 );
 // LINE 453:
 	asm( 
-"	      005685c2    mov eax,[ebp-24h]"
+"	      005685c2    mov eax,this"
 "	      005685c5    mov eax,[eax+18h]"
 "	      005685c8    push eax"
-"	      005685c9    mov eax,[ebp-20h]"
+"	      005685c9    mov eax,lastPart"
 "	      005685cc    push eax"
-"	      005685cd    mov eax,[ebp-1Ch]"
+"	      005685cd    mov eax,nextToLast"
 "	      005685d0    push eax"
 "	      005685d1    call 00554C73h"
 "	      005685d6    add esp,0Ch"
@@ -1977,14 +1977,14 @@ short _cArray::DeleteColumn(short which) {
 // LINE 457:
 	asm( 
 "	      00568605    push 0"
-"	      00568607    mov eax,[ebp-24h]"
+"	      00568607    mov eax,this"
 "	      0056860a    mov eax,[eax+10h]"
 "	      0056860d    dec eax"
 "	      0056860e    push eax"
-"	      0056860f    mov eax,[ebp-24h]"
+"	      0056860f    mov eax,this"
 "	      00568612    mov eax,[eax+14h]"
 "	      00568615    push eax"
-"	      00568616    mov ecx,[ebp-24h]"
+"	      00568616    mov ecx,this"
 "	      00568619    call 005686AFh"
 "	      0056861e    movzx eax,ax"
 "	      00568621    test eax,eax"
@@ -1998,8 +1998,8 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 458:
 	asm( 
-"	      00568645    mov eax,[ebp-24h]"
-"	      00568648    mov ecx,[ebp-4]"
+"	      00568645    mov eax,this"
+"	      00568648    mov ecx,oldysize"
 "	      0056864b    dec ecx"
 "	      0056864c    cmp [eax+10h],ecx"
 "	      0056864f    je near ptr 00568671h"
@@ -2012,8 +2012,8 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 459:
 	asm( 
-"	      00568671    mov eax,[ebp-24h]"
-"	      00568674    mov ecx,[ebp-10h]"
+"	      00568671    mov eax,this"
+"	      00568674    mov ecx,oldxsize"
 "	      00568677    cmp [eax+14h],ecx"
 "	      0056867a    je near ptr 0056869Ch"
 "	      00568680    push 8C085h"
@@ -2025,7 +2025,7 @@ short _cArray::DeleteColumn(short which) {
 );
 // LINE 460:
 	asm( 
-"	      0056869c    mov eax,[ebp-24h]"
+"	      0056869c    mov eax,this"
 "	      0056869f    mov ax,[eax+10h]"
 "	      005686a3    jmp near ptr 005686A8h"
 );
@@ -2060,20 +2060,20 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 "	      005686ca    push ebx"
 "	      005686cb    push esi"
 "	      005686cc    push edi"
-"	      005686cd    mov [ebp-80h],ecx"
-"	      005686d0    mov eax,[ebp-80h]"
+"	      005686cd    mov this,ecx"
+"	      005686d0    mov eax,this"
 "	      005686d3    mov eax,[eax+10h]"
 "	      005686d6    mov [ebp-74h],eax"
-"	      005686d9    mov eax,[ebp-80h]"
+"	      005686d9    mov eax,this"
 "	      005686dc    mov eax,[eax+14h]"
 "	      005686df    mov [ebp-78h],eax"
-"	      005686e2    mov eax,[ebp-80h]"
+"	      005686e2    mov eax,this"
 "	      005686e5    mov eax,[eax+18h]"
 "	      005686e8    mov [ebp-7Ch],eax"
 );
 // LINE 468:
 	asm( 
-"	      005686eb    mov dword ptr [ebp-64h],593738h"
+"	      005686eb    mov temp.<vftable>,593738h"
 "	      005686f2    jmp near ptr 005686FCh"
 "	      005686f7    call 00567B1Bh"
 "	      005686fc    push 0"
@@ -2085,33 +2085,33 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 "	      00568709    push eax"
 "	      0056870a    mov eax,[ebp-7Ch]"
 "	      0056870d    push eax"
-"	      0056870e    lea ecx,[ebp-64h]"
+"	      0056870e    lea ecx,temp.<vftable>"
 "	      00568711    call 00567900h"
 "	      00568716    jmp near ptr 0056871Bh"
 "	      0056871b    mov dword ptr [ebp-4],0"
 );
 // LINE 469:
 	asm( 
-"	      00568722    lea eax,[ebp-64h]"
+"	      00568722    lea eax,temp.<vftable>"
 "	      00568725    push eax"
-"	      00568726    mov ecx,[ebp-80h]"
+"	      00568726    mov ecx,this"
 "	      00568729    call 00568BE8h"
 );
 // LINE 471:
 	asm( 
-"	      0056872e    mov eax,[ebp+0Ch]"
+"	      0056872e    mov eax,newySize"
 "	      00568731    push eax"
-"	      00568732    mov eax,[ebp+8]"
+"	      00568732    mov eax,newxSize"
 "	      00568735    push eax"
-"	      00568736    mov ecx,[ebp-80h]"
+"	      00568736    mov ecx,this"
 "	      00568739    call 00567E33h"
 );
 // LINE 472:
 	asm( 
-"	      0056873e    mov eax,[ebp-80h]"
+"	      0056873e    mov eax,this"
 "	      00568741    mov eax,[eax+0Ch]"
 "	      00568744    add eax,8"
-"	      00568747    mov ecx,[ebp-80h]"
+"	      00568747    mov ecx,this"
 "	      0056874a    cmp eax,[ecx+4]"
 "	      0056874d    je near ptr 0056876Fh"
 "	      00568753    push 8C085h"
@@ -2125,78 +2125,78 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	asm( 
 "	      0056876f    mov eax,[ebp+10h]"
 "	      00568772    push eax"
-"	      00568773    mov ecx,[ebp-80h]"
+"	      00568773    mov ecx,this"
 "	      00568776    call 00567E6Bh"
 );
 // LINE 477:
 	asm( 
-"	      0056877b    mov dword ptr [ebp-14h],0"
+"	      0056877b    mov xcnt,0"
 "	      00568782    jmp near ptr 0056878Ah"
-"	      00568787    inc dword ptr [ebp-14h]"
-"	      0056878a    mov eax,[ebp-80h]"
-"	      0056878d    mov ecx,[ebp-14h]"
+"	      00568787    inc xcnt"
+"	      0056878a    mov eax,this"
+"	      0056878d    mov ecx,xcnt"
 "	      00568790    cmp [eax+14h],ecx"
 "	      00568793    jle near ptr 0056883Ah"
 );
 // LINE 478:
 	asm( 
-"	      00568799    mov eax,[ebp-14h]"
-"	      0056879c    cmp [ebp-50h],eax"
+"	      00568799    mov eax,xcnt"
+"	      0056879c    cmp temp.fxSize,eax"
 "	      0056879f    jle near ptr 00568835h"
 );
 // LINE 479:
 	asm( 
-"	      005687a5    mov dword ptr [ebp-68h],0"
+"	      005687a5    mov ycnt,0"
 "	      005687ac    jmp near ptr 005687B4h"
-"	      005687b1    inc dword ptr [ebp-68h]"
-"	      005687b4    mov eax,[ebp-80h]"
-"	      005687b7    mov ecx,[ebp-68h]"
+"	      005687b1    inc ycnt"
+"	      005687b4    mov eax,this"
+"	      005687b7    mov ecx,ycnt"
 "	      005687ba    cmp [eax+10h],ecx"
 "	      005687bd    jle near ptr 00568835h"
 );
 // LINE 480:
 	asm( 
-"	      005687c3    mov eax,[ebp-68h]"
-"	      005687c6    cmp [ebp-54h],eax"
+"	      005687c3    mov eax,ycnt"
+"	      005687c6    cmp temp.fySize,eax"
 "	      005687c9    jle near ptr 0056882Bh"
 );
 // LINE 481:
 	asm( 
-"	      005687cf    mov eax,[ebp-80h]"
+"	      005687cf    mov eax,this"
 "	      005687d2    mov eax,[eax+4]"
-"	      005687d5    mov ecx,[ebp-14h]"
+"	      005687d5    mov ecx,xcnt"
 "	      005687d8    mov eax,[eax+ecx*4]"
-"	      005687db    mov ecx,[ebp-80h]"
+"	      005687db    mov ecx,this"
 "	      005687de    mov ecx,[ecx+18h]"
-"	      005687e1    imul ecx,[ebp-68h]"
+"	      005687e1    imul ecx,ycnt"
 "	      005687e5    add eax,ecx"
-"	      005687e7    mov [ebp-10h],eax"
+"	      005687e7    mov dest,eax"
 );
 // LINE 482:
 	asm( 
-"	      005687ea    mov eax,[ebp-60h]"
-"	      005687ed    mov ecx,[ebp-14h]"
+"	      005687ea    mov eax,temp.fData"
+"	      005687ed    mov ecx,xcnt"
 "	      005687f0    mov eax,[eax+ecx*4]"
-"	      005687f3    mov ecx,[ebp-80h]"
+"	      005687f3    mov ecx,this"
 "	      005687f6    mov ecx,[ecx+18h]"
-"	      005687f9    imul ecx,[ebp-68h]"
+"	      005687f9    imul ecx,ycnt"
 "	      005687fd    add eax,ecx"
-"	      005687ff    mov [ebp-6Ch],eax"
+"	      005687ff    mov src,eax"
 );
 // LINE 483:
 	asm( 
-"	      00568802    mov eax,[ebp-80h]"
+"	      00568802    mov eax,this"
 "	      00568805    cmp dword ptr [eax+18h],0"
 "	      00568809    je near ptr 00568826h"
 );
 // LINE 484:
 	asm( 
-"	      0056880f    mov eax,[ebp-80h]"
+"	      0056880f    mov eax,this"
 "	      00568812    mov eax,[eax+18h]"
 "	      00568815    push eax"
-"	      00568816    mov eax,[ebp-10h]"
+"	      00568816    mov eax,dest"
 "	      00568819    push eax"
-"	      0056881a    mov eax,[ebp-6Ch]"
+"	      0056881a    mov eax,src"
 "	      0056881d    push eax"
 "	      0056881e    call 00554B76h"
 "	      00568823    add esp,0Ch"
@@ -2228,7 +2228,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 // LINE 490:
 _L27257:
 	asm( 
-"	      00568855    lea ecx,[ebp-64h]"
+"	      00568855    lea ecx,temp.<vftable>"
 "	      00568858    call 005679EBh"
 "	      0056885d    ret"
 	);
@@ -2256,16 +2256,16 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 "	      0056887f    push ebx"
 "	      00568880    push esi"
 "	      00568881    push edi"
-"	      00568882    mov [ebp-4],ecx"
+"	      00568882    mov this,ecx"
 );
 // LINE 494:
 	asm( 
-"	      00568885    mov eax,[ebp-4]"
-"	      00568888    mov ecx,[ebp+0Ch]"
+"	      00568885    mov eax,this"
+"	      00568888    mov ecx,newySize"
 "	      0056888b    cmp [eax+10h],ecx"
 "	      0056888e    jne near ptr 005688ACh"
-"	      00568894    mov eax,[ebp-4]"
-"	      00568897    mov ecx,[ebp+8]"
+"	      00568894    mov eax,this"
+"	      00568897    mov ecx,newxSize"
 "	      0056889a    cmp [eax+14h],ecx"
 "	      0056889d    jne near ptr 005688ACh"
 "	      005688a3    mov ax,1"
@@ -2273,19 +2273,19 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 );
 // LINE 496:
 	asm( 
-"	      005688ac    mov eax,[ebp-4]"
+"	      005688ac    mov eax,this"
 "	      005688af    cmp dword ptr [eax+10h],0FFFFFFFFh"
 "	      005688b3    je near ptr 005688E2h"
-"	      005688b9    mov eax,[ebp-4]"
+"	      005688b9    mov eax,this"
 "	      005688bc    cmp dword ptr [eax+14h],0FFFFFFFFh"
 "	      005688c0    je near ptr 005688E2h"
-"	      005688c6    mov eax,[ebp-4]"
+"	      005688c6    mov eax,this"
 "	      005688c9    cmp dword ptr [eax+8],0"
 "	      005688cd    je near ptr 005688E2h"
 );
 // LINE 498:
 	asm( 
-"	      005688d3    mov eax,[ebp-4]"
+"	      005688d3    mov eax,this"
 "	      005688d6    mov eax,[eax+8]"
 "	      005688d9    push eax"
 "	      005688da    call 005548C3h"
@@ -2293,11 +2293,11 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 );
 // LINE 501:
 	asm( 
-"	      005688e2    mov eax,[ebp+0Ch]"
-"	      005688e5    mov ecx,[ebp-4]"
+"	      005688e2    mov eax,newySize"
+"	      005688e5    mov ecx,this"
 "	      005688e8    mov [ecx+10h],eax"
-"	      005688eb    mov eax,[ebp+8]"
-"	      005688ee    mov ecx,[ebp-4]"
+"	      005688eb    mov eax,newxSize"
+"	      005688ee    mov ecx,this"
 "	      005688f1    mov [ecx+14h],eax"
 );
 // LINE 503:
@@ -2312,22 +2312,22 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 );
 // LINE 504:
 	asm( 
-"	      00568915    mov eax,[ebp-4]"
+"	      00568915    mov eax,this"
 "	      00568918    mov eax,[eax+18h]"
-"	      0056891b    mov ecx,[ebp-4]"
+"	      0056891b    mov ecx,this"
 "	      0056891e    imul eax,[ecx+10h]"
-"	      00568922    mov ecx,[ebp-4]"
+"	      00568922    mov ecx,this"
 "	      00568925    imul eax,[ecx+14h]"
-"	      00568929    mov ecx,[ebp-4]"
+"	      00568929    mov ecx,this"
 "	      0056892c    mov ecx,[ecx+14h]"
 "	      0056892f    lea eax,[eax+ecx*4]"
 "	      00568932    add eax,8"
-"	      00568935    mov ecx,[ebp-4]"
+"	      00568935    mov ecx,this"
 "	      00568938    mov [ecx+1Ch],eax"
 );
 // LINE 505:
 	asm( 
-"	      0056893b    mov eax,[ebp-4]"
+"	      0056893b    mov eax,this"
 "	      0056893e    cmp dword ptr [eax+1Ch],7A1200h"
 "	      00568945    jb near ptr 00568967h"
 "	      0056894b    push 8C085h"
@@ -2340,17 +2340,17 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 // LINE 506:
 	asm( 
 "	      00568967    push 0"
-"	      00568969    mov eax,[ebp-4]"
+"	      00568969    mov eax,this"
 "	      0056896c    mov eax,[eax+1Ch]"
 "	      0056896f    push eax"
 "	      00568970    call 00554759h"
 "	      00568975    add esp,8"
-"	      00568978    mov ecx,[ebp-4]"
+"	      00568978    mov ecx,this"
 "	      0056897b    mov [ecx+8],eax"
 );
 // LINE 507:
 	asm( 
-"	      0056897e    mov eax,[ebp-4]"
+"	      0056897e    mov eax,this"
 "	      00568981    cmp dword ptr [eax+8],0"
 "	      00568985    jne near ptr 005689A7h"
 "	      0056898b    push 8C085h"
@@ -2362,12 +2362,12 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 );
 // LINE 509:
 	asm( 
-"	      005689a7    mov eax,[ebp-4]"
+"	      005689a7    mov eax,this"
 "	      005689aa    mov eax,[eax+8]"
 "	      005689ad    push eax"
 "	      005689ae    call 00554B04h"
 "	      005689b3    add esp,4"
-"	      005689b6    mov ecx,[ebp-4]"
+"	      005689b6    mov ecx,this"
 "	      005689b9    mov [ecx+0Ch],eax"
 );
 // LINE 511:
@@ -2397,57 +2397,57 @@ void _cArray::SetXPointers() {
 "	      005689d2    push ebx"
 "	      005689d3    push esi"
 "	      005689d4    push edi"
-"	      005689d5    mov [ebp-8],ecx"
+"	      005689d5    mov this,ecx"
 );
 // LINE 517:
 	asm( 
-"	      005689d8    mov eax,[ebp-8]"
+"	      005689d8    mov eax,this"
 "	      005689db    mov eax,[eax+0Ch]"
 "	      005689de    add eax,8"
-"	      005689e1    mov ecx,[ebp-8]"
+"	      005689e1    mov ecx,this"
 "	      005689e4    mov [ecx+4],eax"
 );
 // LINE 519:
 	asm( 
-"	      005689e7    mov eax,[ebp-8]"
+"	      005689e7    mov eax,this"
 "	      005689ea    cmp dword ptr [eax+14h],0"
 "	      005689ee    jne near ptr 005689F9h"
 "	      005689f4    jmp near ptr 00568A63h"
 );
 // LINE 521:
 	asm( 
-"	      005689f9    mov eax,[ebp-8]"
+"	      005689f9    mov eax,this"
 "	      005689fc    mov eax,[eax+14h]"
 "	      005689ff    shl eax,2"
-"	      00568a02    mov ecx,[ebp-8]"
+"	      00568a02    mov ecx,this"
 "	      00568a05    add eax,[ecx+4]"
-"	      00568a08    mov ecx,[ebp-8]"
+"	      00568a08    mov ecx,this"
 "	      00568a0b    mov ecx,[ecx+4]"
 "	      00568a0e    mov [ecx],eax"
 );
 // LINE 523:
 	asm( 
-"	      00568a10    mov word ptr [ebp-4],1"
+"	      00568a10    mov count,1"
 "	      00568a16    jmp near ptr 00568A1Fh"
-"	      00568a1b    inc word ptr [ebp-4]"
-"	      00568a1f    mov eax,[ebp-8]"
-"	      00568a22    movsx ecx,word ptr [ebp-4]"
+"	      00568a1b    inc count"
+"	      00568a1f    mov eax,this"
+"	      00568a22    movsx ecx,count"
 "	      00568a26    cmp [eax+14h],ecx"
 "	      00568a29    jle near ptr 00568A5Eh"
 );
 // LINE 524:
 	asm( 
-"	      00568a2f    movsx eax,word ptr [ebp-4]"
-"	      00568a33    mov ecx,[ebp-8]"
+"	      00568a2f    movsx eax,count"
+"	      00568a33    mov ecx,this"
 "	      00568a36    mov ecx,[ecx+4]"
 "	      00568a39    mov eax,[ecx+eax*4-4]"
-"	      00568a3d    mov ecx,[ebp-8]"
+"	      00568a3d    mov ecx,this"
 "	      00568a40    mov ecx,[ecx+18h]"
-"	      00568a43    mov edx,[ebp-8]"
+"	      00568a43    mov edx,this"
 "	      00568a46    imul ecx,[edx+10h]"
 "	      00568a4a    add eax,ecx"
-"	      00568a4c    movsx ecx,word ptr [ebp-4]"
-"	      00568a50    mov edx,[ebp-8]"
+"	      00568a4c    movsx ecx,count"
+"	      00568a50    mov edx,this"
 "	      00568a53    mov edx,[edx+4]"
 "	      00568a56    mov [edx+ecx*4],eax"
 );
@@ -2476,16 +2476,16 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 "	      00568a6e    push ebx"
 "	      00568a6f    push esi"
 "	      00568a70    push edi"
-"	      00568a71    mov [ebp-4],ecx"
+"	      00568a71    mov this,ecx"
 );
 // LINE 538:
 	asm( 
-"	      00568a74    mov eax,[ebp+8]"
+"	      00568a74    mov eax,fromName"
 "	      00568a77    push eax"
 "	      00568a78    call 005661F4h"
 "	      00568a7d    add esp,4"
 "	      00568a80    push eax"
-"	      00568a81    mov ecx,[ebp-4]"
+"	      00568a81    mov ecx,this"
 "	      00568a84    call 00568A95h"
 );
 // LINE 539:
@@ -2511,22 +2511,22 @@ void _cArray::CopyFrom(unsigned long oldname) {
 "	      00568a9b    push ebx"
 "	      00568a9c    push esi"
 "	      00568a9d    push edi"
-"	      00568a9e    mov [ebp-8],ecx"
+"	      00568a9e    mov this,ecx"
 );
 // LINE 543:
 	asm( 
 "	      00568aa1    push 0FFFFFFFFh"
-"	      00568aa3    mov eax,[ebp+8]"
+"	      00568aa3    mov eax,oldname"
 "	      00568aa6    push eax"
 "	      00568aa7    call 00568DB1h"
 "	      00568aac    add esp,8"
-"	      00568aaf    mov [ebp-4],eax"
+"	      00568aaf    mov src,eax"
 );
 // LINE 544:
 	asm( 
-"	      00568ab2    mov eax,[ebp-4]"
+"	      00568ab2    mov eax,src"
 "	      00568ab5    push eax"
-"	      00568ab6    mov ecx,[ebp-8]"
+"	      00568ab6    mov ecx,this"
 "	      00568ab9    call 00568ACAh"
 );
 // LINE 545:
@@ -2552,11 +2552,11 @@ void _cArray::CopyFrom(class _cArray* src) {
 "	      00568ad0    push ebx"
 "	      00568ad1    push esi"
 "	      00568ad2    push edi"
-"	      00568ad3    mov [ebp-8],ecx"
+"	      00568ad3    mov this,ecx"
 );
 // LINE 549:
 	asm( 
-"	      00568ad6    cmp dword ptr [ebp+8],0"
+"	      00568ad6    cmp src,0"
 "	      00568ada    jne near ptr 00568AFCh"
 "	      00568ae0    push 8C085h"
 "	      00568ae5    push 5C0074h"
@@ -2567,8 +2567,8 @@ void _cArray::CopyFrom(class _cArray* src) {
 );
 // LINE 550:
 	asm( 
-"	      00568afc    mov eax,[ebp-8]"
-"	      00568aff    mov ecx,[ebp+8]"
+"	      00568afc    mov eax,this"
+"	      00568aff    mov ecx,src"
 "	      00568b02    mov ecx,[ecx+18h]"
 "	      00568b05    cmp [eax+18h],ecx"
 "	      00568b08    je near ptr 00568B2Ah"
@@ -2581,13 +2581,13 @@ void _cArray::CopyFrom(class _cArray* src) {
 );
 // LINE 551:
 	asm( 
-"	      00568b2a    mov eax,[ebp-8]"
-"	      00568b2d    mov ecx,[ebp+8]"
+"	      00568b2a    mov eax,this"
+"	      00568b2d    mov ecx,src"
 "	      00568b30    mov ecx,[ecx+14h]"
 "	      00568b33    cmp [eax+14h],ecx"
 "	      00568b36    jne near ptr 00568B4Eh"
-"	      00568b3c    mov eax,[ebp-8]"
-"	      00568b3f    mov ecx,[ebp+8]"
+"	      00568b3c    mov eax,this"
+"	      00568b3f    mov ecx,src"
 "	      00568b42    mov ecx,[ecx+10h]"
 "	      00568b45    cmp [eax+10h],ecx"
 "	      00568b48    je near ptr 00568B6Ah"
@@ -2600,19 +2600,19 @@ void _cArray::CopyFrom(class _cArray* src) {
 );
 // LINE 553:
 	asm( 
-"	      00568b6a    mov eax,[ebp-8]"
+"	      00568b6a    mov eax,this"
 "	      00568b6d    mov eax,[eax+14h]"
-"	      00568b70    mov ecx,[ebp-8]"
+"	      00568b70    mov ecx,this"
 "	      00568b73    imul eax,[ecx+18h]"
-"	      00568b77    mov ecx,[ebp-8]"
+"	      00568b77    mov ecx,this"
 "	      00568b7a    imul eax,[ecx+10h]"
-"	      00568b7e    mov [ebp-4],eax"
+"	      00568b7e    mov howmuch,eax"
 );
 // LINE 554:
 	asm( 
-"	      00568b81    cmp dword ptr [ebp-4],0"
+"	      00568b81    cmp howmuch,0"
 "	      00568b85    jl near ptr 00568B98h"
-"	      00568b8b    cmp dword ptr [ebp-4],7A1200h"
+"	      00568b8b    cmp howmuch,7A1200h"
 "	      00568b92    jl near ptr 00568BB4h"
 "	      00568b98    push 8C085h"
 "	      00568b9d    push 5C0144h"
@@ -2623,18 +2623,18 @@ void _cArray::CopyFrom(class _cArray* src) {
 );
 // LINE 555:
 	asm( 
-"	      00568bb4    cmp dword ptr [ebp-4],0"
+"	      00568bb4    cmp howmuch,0"
 "	      00568bb8    je near ptr 00568BDCh"
 );
 // LINE 556:
 	asm( 
-"	      00568bbe    mov eax,[ebp-4]"
+"	      00568bbe    mov eax,howmuch"
 "	      00568bc1    push eax"
-"	      00568bc2    mov eax,[ebp-8]"
+"	      00568bc2    mov eax,this"
 "	      00568bc5    mov eax,[eax+4]"
 "	      00568bc8    mov eax,[eax]"
 "	      00568bca    push eax"
-"	      00568bcb    mov eax,[ebp+8]"
+"	      00568bcb    mov eax,src"
 "	      00568bce    mov eax,[eax+4]"
 "	      00568bd1    mov eax,[eax]"
 "	      00568bd3    push eax"
@@ -2664,11 +2664,11 @@ void _cArray::CopyTo(class _cArray* dest) {
 "	      00568bee    push ebx"
 "	      00568bef    push esi"
 "	      00568bf0    push edi"
-"	      00568bf1    mov [ebp-8],ecx"
+"	      00568bf1    mov this,ecx"
 );
 // LINE 569:
 	asm( 
-"	      00568bf4    cmp dword ptr [ebp+8],0"
+"	      00568bf4    cmp dest,0"
 "	      00568bf8    jne near ptr 00568C1Ah"
 "	      00568bfe    push 8C085h"
 "	      00568c03    push 5C0180h"
@@ -2679,8 +2679,8 @@ void _cArray::CopyTo(class _cArray* dest) {
 );
 // LINE 570:
 	asm( 
-"	      00568c1a    mov eax,[ebp+8]"
-"	      00568c1d    mov ecx,[ebp-8]"
+"	      00568c1a    mov eax,dest"
+"	      00568c1d    mov ecx,this"
 "	      00568c20    mov ecx,[ecx+18h]"
 "	      00568c23    cmp [eax+18h],ecx"
 "	      00568c26    je near ptr 00568C48h"
@@ -2693,13 +2693,13 @@ void _cArray::CopyTo(class _cArray* dest) {
 );
 // LINE 571:
 	asm( 
-"	      00568c48    mov eax,[ebp-8]"
-"	      00568c4b    mov ecx,[ebp+8]"
+"	      00568c48    mov eax,this"
+"	      00568c4b    mov ecx,dest"
 "	      00568c4e    mov ecx,[ecx+14h]"
 "	      00568c51    cmp [eax+14h],ecx"
 "	      00568c54    jne near ptr 00568C6Ch"
-"	      00568c5a    mov eax,[ebp-8]"
-"	      00568c5d    mov ecx,[ebp+8]"
+"	      00568c5a    mov eax,this"
+"	      00568c5d    mov ecx,dest"
 "	      00568c60    mov ecx,[ecx+10h]"
 "	      00568c63    cmp [eax+10h],ecx"
 "	      00568c66    je near ptr 00568C88h"
@@ -2712,19 +2712,19 @@ void _cArray::CopyTo(class _cArray* dest) {
 );
 // LINE 573:
 	asm( 
-"	      00568c88    mov eax,[ebp-8]"
+"	      00568c88    mov eax,this"
 "	      00568c8b    mov eax,[eax+14h]"
-"	      00568c8e    mov ecx,[ebp-8]"
+"	      00568c8e    mov ecx,this"
 "	      00568c91    imul eax,[ecx+10h]"
-"	      00568c95    mov ecx,[ebp-8]"
+"	      00568c95    mov ecx,this"
 "	      00568c98    imul eax,[ecx+18h]"
-"	      00568c9c    mov [ebp-4],eax"
+"	      00568c9c    mov howmuch,eax"
 );
 // LINE 574:
 	asm( 
-"	      00568c9f    cmp dword ptr [ebp-4],0"
+"	      00568c9f    cmp howmuch,0"
 "	      00568ca3    jl near ptr 00568CB6h"
-"	      00568ca9    cmp dword ptr [ebp-4],7A1200h"
+"	      00568ca9    cmp howmuch,7A1200h"
 "	      00568cb0    jl near ptr 00568CD2h"
 "	      00568cb6    push 8C085h"
 "	      00568cbb    push 5C024Ch"
@@ -2735,18 +2735,18 @@ void _cArray::CopyTo(class _cArray* dest) {
 );
 // LINE 575:
 	asm( 
-"	      00568cd2    cmp dword ptr [ebp-4],0"
+"	      00568cd2    cmp howmuch,0"
 "	      00568cd6    je near ptr 00568CFAh"
 );
 // LINE 576:
 	asm( 
-"	      00568cdc    mov eax,[ebp-4]"
+"	      00568cdc    mov eax,howmuch"
 "	      00568cdf    push eax"
-"	      00568ce0    mov eax,[ebp+8]"
+"	      00568ce0    mov eax,dest"
 "	      00568ce3    mov eax,[eax+4]"
 "	      00568ce6    mov eax,[eax]"
 "	      00568ce8    push eax"
-"	      00568ce9    mov eax,[ebp-8]"
+"	      00568ce9    mov eax,this"
 "	      00568cec    mov eax,[eax+4]"
 "	      00568cef    mov eax,[eax]"
 "	      00568cf1    push eax"
@@ -2776,22 +2776,22 @@ void _cArray::CopyTo(unsigned long oldname) {
 "	      00568d0c    push ebx"
 "	      00568d0d    push esi"
 "	      00568d0e    push edi"
-"	      00568d0f    mov [ebp-8],ecx"
+"	      00568d0f    mov this,ecx"
 );
 // LINE 581:
 	asm( 
 "	      00568d12    push 0FFFFFFFFh"
-"	      00568d14    mov eax,[ebp+8]"
+"	      00568d14    mov eax,oldname"
 "	      00568d17    push eax"
 "	      00568d18    call 00568DB1h"
 "	      00568d1d    add esp,8"
-"	      00568d20    mov [ebp-4],eax"
+"	      00568d20    mov dest,eax"
 );
 // LINE 582:
 	asm( 
-"	      00568d23    mov eax,[ebp-4]"
+"	      00568d23    mov eax,dest"
 "	      00568d26    push eax"
-"	      00568d27    mov ecx,[ebp-8]"
+"	      00568d27    mov ecx,this"
 "	      00568d2a    call 00568BE8h"
 );
 // LINE 583:
@@ -2815,16 +2815,16 @@ void _cArray::CopyTo(unsigned char * toName) {
 "	      00568d41    push ebx"
 "	      00568d42    push esi"
 "	      00568d43    push edi"
-"	      00568d44    mov [ebp-4],ecx"
+"	      00568d44    mov this,ecx"
 );
 // LINE 587:
 	asm( 
-"	      00568d47    mov eax,[ebp+8]"
+"	      00568d47    mov eax,toName"
 "	      00568d4a    push eax"
 "	      00568d4b    call 005661F4h"
 "	      00568d50    add esp,4"
 "	      00568d53    push eax"
-"	      00568d54    mov ecx,[ebp-4]"
+"	      00568d54    mov ecx,this"
 "	      00568d57    call 00568D06h"
 );
 // LINE 588:
@@ -2848,14 +2848,14 @@ void _cArray::GetName(unsigned char * name) {
 "	      00568d6e    push ebx"
 "	      00568d6f    push esi"
 "	      00568d70    push edi"
-"	      00568d71    mov [ebp-4],ecx"
+"	      00568d71    mov this,ecx"
 );
 // LINE 592:
 	asm( 
 "	      00568d74    push 10h"
-"	      00568d76    mov eax,[ebp+8]"
+"	      00568d76    mov eax,name"
 "	      00568d79    push eax"
-"	      00568d7a    mov eax,[ebp-4]"
+"	      00568d7a    mov eax,this"
 "	      00568d7d    add eax,3Ch"
 "	      00568d80    push eax"
 "	      00568d81    call 00554B76h"
@@ -2882,11 +2882,11 @@ unsigned long _cArray::GetName() {
 "	      00568d9b    push ebx"
 "	      00568d9c    push esi"
 "	      00568d9d    push edi"
-"	      00568d9e    mov [ebp-4],ecx"
+"	      00568d9e    mov this,ecx"
 );
 // LINE 597:
 	asm( 
-"	      00568da1    mov eax,[ebp-4]"
+"	      00568da1    mov eax,this"
 "	      00568da4    mov eax,[eax+4Ch]"
 "	      00568da7    jmp near ptr 00568DACh"
 );
@@ -2919,20 +2919,20 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 );
 // LINE 613:
 	asm( 
-"	      00568dbf    mov word ptr [ebp-4],0"
+"	      00568dbf    mov cnt,0"
 "	      00568dc5    jmp near ptr 00568DCEh"
-"	      00568dca    inc word ptr [ebp-4]"
-"	      00568dce    movsx eax,word ptr [ebp-4]"
+"	      00568dca    inc cnt"
+"	      00568dce    movsx eax,cnt"
 "	      00568dd2    cmp eax,400h"
 "	      00568dd7    jge near ptr 00568F19h"
 );
 // LINE 614:
 	asm( 
-"	      00568ddd    movsx eax,word ptr [ebp-4]"
+"	      00568ddd    movsx eax,cnt"
 "	      00568de1    mov ecx,ds:[5BF74Ch]"
 "	      00568de7    cmp dword ptr [ecx+eax*4],0"
 "	      00568deb    je near ptr 00568E24h"
-"	      00568df1    movsx eax,word ptr [ebp-4]"
+"	      00568df1    movsx eax,cnt"
 "	      00568df5    mov ecx,ds:[5BF74Ch]"
 "	      00568dfb    mov eax,[ecx+eax*4]"
 "	      00568dfe    cmp dword ptr [eax+4Ch],0"
@@ -2946,23 +2946,23 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 );
 // LINE 615:
 	asm( 
-"	      00568e24    movsx eax,word ptr [ebp+0Ch]"
+"	      00568e24    movsx eax,numChars"
 "	      00568e28    cmp eax,0FFFFFFFFh"
 "	      00568e2b    jne near ptr 00568E75h"
-"	      00568e31    movsx eax,word ptr [ebp-4]"
+"	      00568e31    movsx eax,cnt"
 "	      00568e35    mov ecx,ds:[5BF74Ch]"
 "	      00568e3b    cmp dword ptr [ecx+eax*4],0"
 "	      00568e3f    je near ptr 00568E75h"
-"	      00568e45    movsx eax,word ptr [ebp-4]"
+"	      00568e45    movsx eax,cnt"
 "	      00568e49    mov ecx,ds:[5BF74Ch]"
 "	      00568e4f    mov eax,[ecx+eax*4]"
-"	      00568e52    mov ecx,[ebp+8]"
+"	      00568e52    mov ecx,tinyname"
 "	      00568e55    cmp [eax+4Ch],ecx"
 "	      00568e58    jne near ptr 00568E75h"
 );
 // LINE 616:
 	asm( 
-"	      00568e5e    movsx eax,word ptr [ebp-4]"
+"	      00568e5e    movsx eax,cnt"
 "	      00568e62    mov ecx,ds:[5BF74Ch]"
 "	      00568e68    mov eax,[ecx+eax*4]"
 "	      00568e6b    jmp near ptr 00568F20h"
@@ -2970,10 +2970,10 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 // LINE 618:
 	asm( 
 "	      00568e70    jmp near ptr 00568F14h"
-"	      00568e75    movsx eax,word ptr [ebp+0Ch]"
+"	      00568e75    movsx eax,numChars"
 "	      00568e79    cmp eax,0FFFFFFFFh"
 "	      00568e7c    je near ptr 00568F14h"
-"	      00568e82    movsx eax,word ptr [ebp-4]"
+"	      00568e82    movsx eax,cnt"
 "	      00568e86    mov ecx,ds:[5BF74Ch]"
 "	      00568e8c    cmp dword ptr [ecx+eax*4],0"
 "	      00568e90    je near ptr 00568F14h"
@@ -2983,17 +2983,17 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	short shiftnum;
 	asm( 
 "	      00568e96    mov eax,4"
-"	      00568e9b    movsx ecx,word ptr [ebp+0Ch]"
+"	      00568e9b    movsx ecx,numChars"
 "	      00568e9f    sub eax,ecx"
 "	      00568ea1    shl eax,3"
-"	      00568ea4    mov [ebp-8],ax"
+"	      00568ea4    mov shiftnum,ax"
 );
 // LINE 620:
 	asm( 
-"	      00568ea8    movsx eax,word ptr [ebp-8]"
+"	      00568ea8    movsx eax,shiftnum"
 "	      00568eac    test eax,eax"
 "	      00568eae    jl near ptr 00568EC1h"
-"	      00568eb4    movsx eax,word ptr [ebp-8]"
+"	      00568eb4    movsx eax,shiftnum"
 "	      00568eb8    cmp eax,20h"
 "	      00568ebb    jb near ptr 00568EDDh"
 "	      00568ec1    push 8C085h"
@@ -3005,13 +3005,13 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 );
 // LINE 621:
 	asm( 
-"	      00568edd    movsx eax,word ptr [ebp-4]"
+"	      00568edd    movsx eax,cnt"
 "	      00568ee1    mov ecx,ds:[5BF74Ch]"
 "	      00568ee7    mov eax,[ecx+eax*4]"
 "	      00568eea    mov eax,[eax+4Ch]"
 "	      00568eed    mov cl,[ebp-8]"
 "	      00568ef0    shr eax,cl"
-"	      00568ef2    mov edx,[ebp+8]"
+"	      00568ef2    mov edx,tinyname"
 "	      00568ef5    mov cl,[ebp-8]"
 "	      00568ef8    shr edx,cl"
 "	      00568efa    cmp eax,edx"
@@ -3019,7 +3019,7 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 );
 // LINE 622:
 	asm( 
-"	      00568f02    movsx eax,word ptr [ebp-4]"
+"	      00568f02    movsx eax,cnt"
 "	      00568f06    mov ecx,ds:[5BF74Ch]"
 "	      00568f0c    mov eax,[ecx+eax*4]"
 "	      00568f0f    jmp near ptr 00568F20h"
@@ -3065,41 +3065,41 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 );
 // LINE 631:
 	asm( 
-"	      00568f33    mov word ptr [ebp-0Ch],0"
+"	      00568f33    mov found,0"
 );
 // LINE 633:
 	asm( 
-"	      00568f39    mov word ptr [ebp-8],0"
+"	      00568f39    mov count,0"
 "	      00568f3f    jmp near ptr 00568F48h"
-"	      00568f44    inc word ptr [ebp-8]"
-"	      00568f48    movsx eax,word ptr [ebp-8]"
+"	      00568f44    inc count"
+"	      00568f48    movsx eax,count"
 "	      00568f4c    cmp eax,400h"
 "	      00568f51    jge near ptr 00568F9Ch"
 );
 // LINE 634:
 	asm( 
-"	      00568f57    movsx eax,word ptr [ebp-8]"
+"	      00568f57    movsx eax,count"
 "	      00568f5b    mov ecx,ds:[5BF74Ch]"
 "	      00568f61    mov eax,[ecx+eax*4]"
-"	      00568f64    mov [ebp-4],eax"
+"	      00568f64    mov arr,eax"
 );
 // LINE 635:
 	asm( 
-"	      00568f67    mov eax,[ebp-4]"
-"	      00568f6a    mov ecx,[ebp+8]"
+"	      00568f67    mov eax,arr"
+"	      00568f6a    mov ecx,rType"
 "	      00568f6d    cmp [eax+28h],ecx"
 "	      00568f70    jne near ptr 00568F97h"
 );
 // LINE 636:
 	asm( 
-"	      00568f76    movsx eax,word ptr [ebp-0Ch]"
-"	      00568f7a    movsx ecx,word ptr [ebp+0Ch]"
+"	      00568f76    movsx eax,found"
+"	      00568f7a    movsx ecx,which"
 "	      00568f7e    cmp eax,ecx"
 "	      00568f80    jne near ptr 00568F93h"
 );
 // LINE 637:
 	asm( 
-"	      00568f86    mov eax,[ebp-4]"
+"	      00568f86    mov eax,arr"
 "	      00568f89    jmp near ptr 00568FA3h"
 );
 // LINE 638:
@@ -3108,7 +3108,7 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 );
 // LINE 639:
 	asm( 
-"	      00568f93    inc word ptr [ebp-0Ch]"
+"	      00568f93    inc found"
 );
 // LINE 641:
 	asm( 
@@ -3149,14 +3149,14 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 );
 // LINE 648:
 	asm( 
-"	      00568fb6    mov word ptr [ebp-4],0"
+"	      00568fb6    mov numByType,0"
 );
 // LINE 649:
 	asm( 
-"	      00568fbc    mov word ptr [ebp-8],0"
+"	      00568fbc    mov cnt,0"
 "	      00568fc2    jmp near ptr 00568FCBh"
-"	      00568fc7    inc word ptr [ebp-8]"
-"	      00568fcb    movsx eax,word ptr [ebp-8]"
+"	      00568fc7    inc cnt"
+"	      00568fcb    movsx eax,cnt"
 "	      00568fcf    cmp eax,400h"
 "	      00568fd4    jge near ptr 00569002h"
 );
@@ -3164,21 +3164,21 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // Block start:
 	class _cArray* tmp;
 	asm( 
-"	      00568fda    movsx eax,word ptr [ebp-8]"
+"	      00568fda    movsx eax,cnt"
 "	      00568fde    mov ecx,ds:[5BF74Ch]"
 "	      00568fe4    mov eax,[ecx+eax*4]"
-"	      00568fe7    mov [ebp-0Ch],eax"
+"	      00568fe7    mov tmp,eax"
 );
 // LINE 651:
 	asm( 
-"	      00568fea    mov eax,[ebp-0Ch]"
-"	      00568fed    mov ecx,[ebp+8]"
+"	      00568fea    mov eax,tmp"
+"	      00568fed    mov ecx,rType"
 "	      00568ff0    cmp [eax+28h],ecx"
 "	      00568ff3    jne near ptr 00568FFDh"
 );
 // LINE 652:
 	asm( 
-"	      00568ff9    inc word ptr [ebp-4]"
+"	      00568ff9    inc numByType"
 );
 // LINE 653:
 // Block end:
@@ -3187,7 +3187,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 );
 // LINE 654:
 	asm( 
-"	      00569002    mov ax,[ebp-4]"
+"	      00569002    mov ax,numByType"
 "	      00569006    jmp near ptr 0056900Bh"
 );
 // LINE 655:
@@ -3221,41 +3221,41 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 );
 // LINE 660:
 	asm( 
-"	      0056901e    mov word ptr [ebp-0Ch],0"
+"	      0056901e    mov found,0"
 );
 // LINE 662:
 	asm( 
-"	      00569024    mov word ptr [ebp-8],0"
+"	      00569024    mov count,0"
 "	      0056902a    jmp near ptr 00569033h"
-"	      0056902f    inc word ptr [ebp-8]"
-"	      00569033    movsx eax,word ptr [ebp-8]"
+"	      0056902f    inc count"
+"	      00569033    movsx eax,count"
 "	      00569037    cmp eax,400h"
 "	      0056903c    jge near ptr 00569087h"
 );
 // LINE 663:
 	asm( 
-"	      00569042    movsx eax,word ptr [ebp-8]"
+"	      00569042    movsx eax,count"
 "	      00569046    mov ecx,ds:[5BF74Ch]"
 "	      0056904c    mov eax,[ecx+eax*4]"
-"	      0056904f    mov [ebp-4],eax"
+"	      0056904f    mov arr,eax"
 );
 // LINE 664:
 	asm( 
-"	      00569052    mov eax,[ebp-4]"
-"	      00569055    mov ecx,[ebp+8]"
+"	      00569052    mov eax,arr"
+"	      00569055    mov ecx,findarr"
 "	      00569058    mov ecx,[ecx+28h]"
 "	      0056905b    cmp [eax+28h],ecx"
 "	      0056905e    jne near ptr 00569082h"
 );
 // LINE 665:
 	asm( 
-"	      00569064    mov eax,[ebp+8]"
-"	      00569067    cmp [ebp-4],eax"
+"	      00569064    mov eax,findarr"
+"	      00569067    cmp arr,eax"
 "	      0056906a    jne near ptr 0056907Eh"
 );
 // LINE 666:
 	asm( 
-"	      00569070    mov ax,[ebp-0Ch]"
+"	      00569070    mov ax,found"
 "	      00569074    jmp near ptr 00569090h"
 );
 // LINE 667:
@@ -3264,7 +3264,7 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 );
 // LINE 668:
 	asm( 
-"	      0056907e    inc word ptr [ebp-0Ch]"
+"	      0056907e    inc found"
 );
 // LINE 670:
 	asm( 
@@ -3311,7 +3311,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 706:
 	asm( 
-"	      005690b3    cmp dword ptr [ebp+8],0"
+"	      005690b3    cmp pFile,0"
 "	      005690b7    jne near ptr 005690D9h"
 "	      005690bd    push 8C085h"
 "	      005690c2    push 5C0318h"
@@ -3326,11 +3326,11 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      005690db    push 0"
 "	      005690dd    call 0056931Dh"
 "	      005690e2    add esp,8"
-"	      005690e5    mov [ebp-24h],ax"
+"	      005690e5    mov foundcount,ax"
 );
 // LINE 713:
 	asm( 
-"	      005690e9    movsx eax,word ptr [ebp-24h]"
+"	      005690e9    movsx eax,foundcount"
 "	      005690ed    cmp eax,0FFFFFFFFh"
 "	      005690f0    jne near ptr 00569112h"
 "	      005690f6    push 8C085h"
@@ -3342,43 +3342,43 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 714:
 	asm( 
-"	      00569112    mov eax,[ebp+8]"
-"	      00569115    mov [ebp-18h],eax"
-"	      00569118    mov eax,[ebp+0Ch]"
-"	      0056911b    mov [ebp-14h],eax"
+"	      00569112    mov eax,pFile"
+"	      00569115    mov ft.file,eax"
+"	      00569118    mov eax,rType"
+"	      0056911b    mov ft.type,eax"
 );
 // LINE 715:
 	asm( 
-"	      0056911e    mov eax,[ebp-18h]"
-"	      00569121    mov ecx,[ebp-14h]"
-"	      00569124    movsx edx,word ptr [ebp-24h]"
+"	      0056911e    mov eax,ft.file"
+"	      00569121    mov ecx,ft.type"
+"	      00569124    movsx edx,foundcount"
 "	      00569128    lea edx,[edx*8+638998h]"
 "	      0056912f    mov [edx],eax"
 "	      00569131    mov [edx+4],ecx"
 );
 // LINE 717:
 	asm( 
-"	      00569134    mov eax,[ebp+8]"
+"	      00569134    mov eax,pFile"
 "	      00569137    push eax"
 "	      00569138    call 005674E0h"
 "	      0056913d    add esp,4"
-"	      00569140    mov [ebp-20h],ax"
+"	      00569140    mov fileOpened,ax"
 );
 // LINE 721:
 	asm( 
-"	      00569144    mov eax,[ebp+0Ch]"
+"	      00569144    mov eax,rType"
 "	      00569147    push eax"
-"	      00569148    mov ecx,[ebp+8]"
+"	      00569148    mov ecx,pFile"
 "	      0056914b    call 0055319Ah"
-"	      00569150    mov [ebp-2Ch],ax"
+"	      00569150    mov numArrays,ax"
 );
 // LINE 722:
 	asm( 
-"	      00569154    mov word ptr [ebp-1Ch],1"
+"	      00569154    mov count,1"
 "	      0056915a    jmp near ptr 00569163h"
-"	      0056915f    inc word ptr [ebp-1Ch]"
-"	      00569163    movsx eax,word ptr [ebp-2Ch]"
-"	      00569167    movsx ecx,word ptr [ebp-1Ch]"
+"	      0056915f    inc count"
+"	      00569163    movsx eax,numArrays"
+"	      00569167    movsx ecx,count"
 "	      0056916b    cmp eax,ecx"
 "	      0056916d    jl near ptr 005692DBh"
 );
@@ -3391,15 +3391,15 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      00569173    push 0"
 "	      00569175    mov eax,[ebp-1Ch]"
 "	      00569178    push eax"
-"	      00569179    mov eax,[ebp+0Ch]"
+"	      00569179    mov eax,rType"
 "	      0056917c    push eax"
-"	      0056917d    mov ecx,[ebp+8]"
+"	      0056917d    mov ecx,pFile"
 "	      00569180    call 00553452h"
-"	      00569185    mov [ebp-34h],eax"
+"	      00569185    mov hArray,eax"
 );
 // LINE 725:
 	asm( 
-"	      00569188    cmp dword ptr [ebp-34h],0"
+"	      00569188    cmp hArray,0"
 "	      0056918c    jne near ptr 005691AEh"
 "	      00569192    push 8C085h"
 "	      00569197    push 5C0398h"
@@ -3410,34 +3410,34 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 727:
 	asm( 
-"	      005691ae    mov eax,[ebp-34h]"
+"	      005691ae    mov eax,hArray"
 "	      005691b1    push eax"
 "	      005691b2    call 005549E0h"
 "	      005691b7    add esp,4"
-"	      005691ba    mov [ebp-38h],eax"
+"	      005691ba    mov dataPtr,eax"
 );
 // LINE 728:
 	asm( 
-"	      005691bd    mov eax,[ebp-38h]"
-"	      005691c0    mov [ebp-10h],eax"
+"	      005691bd    mov eax,dataPtr"
+"	      005691c0    mov header,eax"
 );
 // LINE 729:
 	asm( 
-"	      005691c3    mov eax,[ebp-10h]"
+"	      005691c3    mov eax,header"
 "	      005691c6    mov ax,[eax]"
-"	      005691c9    mov [ebp-28h],ax"
+"	      005691c9    mov diskEntrySize,ax"
 );
 // LINE 730:
 	asm( 
-"	      005691cd    lea eax,[ebp-28h]"
+"	      005691cd    lea eax,diskEntrySize"
 "	      005691d0    push eax"
 "	      005691d1    call 0056695Bh"
 "	      005691d6    add esp,4"
 );
 // LINE 731:
 	asm( 
-"	      005691d9    movsx eax,word ptr [ebp+10h]"
-"	      005691dd    movsx ecx,word ptr [ebp-28h]"
+"	      005691d9    movsx eax,entrySize"
+"	      005691dd    movsx ecx,diskEntrySize"
 "	      005691e1    cmp eax,ecx"
 "	      005691e3    je near ptr 00569205h"
 "	      005691e9    push 8C085h"
@@ -3449,7 +3449,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 733:
 	asm( 
-"	      00569205    mov eax,[ebp-34h]"
+"	      00569205    mov eax,hArray"
 "	      00569208    push eax"
 "	      00569209    call 00554A3Dh"
 "	      0056920e    add esp,4"
@@ -3466,13 +3466,13 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      0056922f    mov eax,[ebp-3Ch]"
 "	      00569232    mov dword ptr [eax],593738h"
 "	      00569238    call 00567B1Bh"
-"	      0056923d    mov eax,[ebp+14h]"
+"	      0056923d    mov eax,Swizzler"
 "	      00569240    push eax"
-"	      00569241    movsx eax,word ptr [ebp+10h]"
+"	      00569241    movsx eax,entrySize"
 "	      00569245    push eax"
-"	      00569246    mov eax,[ebp+8]"
+"	      00569246    mov eax,pFile"
 "	      00569249    push eax"
-"	      0056924a    mov eax,[ebp-34h]"
+"	      0056924a    mov eax,hArray"
 "	      0056924d    push eax"
 "	      0056924e    mov ecx,[ebp-3Ch]"
 "	      00569251    call 00567552h"
@@ -3483,12 +3483,12 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      00569266    mov dword ptr [ebp-40h],0"
 "	      0056926d    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00569274    mov eax,[ebp-40h]"
-"	      00569277    mov [ebp-30h],eax"
+"	      00569277    mov tmp,eax"
 );
 // LINE 737:
 	asm( 
-"	      0056927a    mov eax,[ebp-30h]"
-"	      0056927d    mov ecx,[ebp+0Ch]"
+"	      0056927a    mov eax,tmp"
+"	      0056927d    mov ecx,rType"
 "	      00569280    cmp [eax+28h],ecx"
 "	      00569283    je near ptr 005692A5h"
 "	      00569289    push 8C085h"
@@ -3500,10 +3500,10 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 738:
 	asm( 
-"	      005692a5    mov eax,[ebp-30h]"
+"	      005692a5    mov eax,tmp"
 "	      005692a8    mov eax,[eax+0Ch]"
 "	      005692ab    add eax,8"
-"	      005692ae    mov ecx,[ebp-30h]"
+"	      005692ae    mov ecx,tmp"
 "	      005692b1    cmp eax,[ecx+4]"
 "	      005692b4    je near ptr 005692D6h"
 "	      005692ba    push 8C085h"
@@ -3525,9 +3525,9 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 757:
 	asm( 
-"	      005692e8    mov eax,[ebp+8]"
+"	      005692e8    mov eax,pFile"
 "	      005692eb    mov eax,[eax]"
-"	      005692ed    mov ecx,[ebp+8]"
+"	      005692ed    mov ecx,pFile"
 "	      005692f0    call dword ptr [eax+0Ch]"
 );
 // LINE 760:
@@ -3573,45 +3573,45 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 );
 // LINE 779:
 	asm( 
-"	      00569326    mov word ptr [ebp-10h],0FFFFh"
+"	      00569326    mov foundcount,0FFFFh"
 );
 // LINE 780:
 	asm( 
-"	      0056932c    mov eax,[ebp+8]"
-"	      0056932f    mov [ebp-8],eax"
-"	      00569332    mov eax,[ebp+0Ch]"
-"	      00569335    mov [ebp-4],eax"
+"	      0056932c    mov eax,pFile"
+"	      0056932f    mov ft.file,eax"
+"	      00569332    mov eax,rType"
+"	      00569335    mov ft.type,eax"
 );
 // LINE 781:
 	asm( 
-"	      00569338    mov word ptr [ebp-0Ch],0"
+"	      00569338    mov cnt,0"
 "	      0056933e    jmp near ptr 00569347h"
-"	      00569343    inc word ptr [ebp-0Ch]"
-"	      00569347    movsx eax,word ptr [ebp-0Ch]"
+"	      00569343    inc cnt"
+"	      00569347    movsx eax,cnt"
 "	      0056934b    cmp eax,40h"
 "	      0056934e    jge near ptr 005693C6h"
 );
 // LINE 782:
 	asm( 
-"	      00569354    movsx eax,word ptr [ebp-0Ch]"
-"	      00569358    mov ecx,[ebp-8]"
+"	      00569354    movsx eax,cnt"
+"	      00569358    mov ecx,ft.file"
 "	      0056935b    cmp [eax*8+638998h],ecx"
 "	      00569362    jne near ptr 005693C1h"
-"	      00569368    movsx eax,word ptr [ebp-0Ch]"
-"	      0056936c    mov ecx,[ebp-4]"
+"	      00569368    movsx eax,cnt"
+"	      0056936c    mov ecx,ft.type"
 "	      0056936f    cmp [eax*8+63899Ch],ecx"
 "	      00569376    jne near ptr 005693C1h"
 );
 // LINE 784:
 	asm( 
-"	      0056937c    cmp dword ptr [ebp-8],0"
+"	      0056937c    cmp ft.file,0"
 "	      00569380    je near ptr 005693B9h"
-"	      00569386    cmp dword ptr [ebp-4],0"
+"	      00569386    cmp ft.type,0"
 "	      0056938a    je near ptr 005693B9h"
 );
 // LINE 785:
 	asm( 
-"	      00569390    movsx eax,word ptr [ebp-10h]"
+"	      00569390    movsx eax,foundcount"
 "	      00569394    cmp eax,0FFFFFFFFh"
 "	      00569397    je near ptr 005693B9h"
 "	      0056939d    push 8C085h"
@@ -3623,8 +3623,8 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 );
 // LINE 787:
 	asm( 
-"	      005693b9    mov ax,[ebp-0Ch]"
-"	      005693bd    mov [ebp-10h],ax"
+"	      005693b9    mov ax,cnt"
+"	      005693bd    mov foundcount,ax"
 );
 // LINE 792:
 	asm( 
@@ -3632,7 +3632,7 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 );
 // LINE 793:
 	asm( 
-"	      005693c6    mov ax,[ebp-10h]"
+"	      005693c6    mov ax,foundcount"
 "	      005693ca    jmp near ptr 005693CFh"
 );
 // LINE 794:

@@ -122,13 +122,13 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 // LINE 152:
 	asm( 
 "	      005443e0    movsx eax,word ptr ds:[5B8670h]"
-"	      005443e7    mov ecx,[ebp+8]"
+"	      005443e7    mov ecx,missionawake"
 "	      005443ea    mov [ecx],eax"
 );
 // LINE 153:
 	asm( 
 "	      005443ec    movsx eax,word ptr ds:[5B8674h]"
-"	      005443f3    mov ecx,[ebp+0Ch]"
+"	      005443f3    mov ecx,ambientawake"
 "	      005443f6    mov [ecx],eax"
 );
 // LINE 154:
@@ -136,25 +136,25 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 "	      005443f8    mov eax,0Ch"
 "	      005443fd    movsx ecx,word ptr ds:[5B8688h]"
 "	      00544404    sub eax,ecx"
-"	      00544406    mov ecx,[ebp+10h]"
+"	      00544406    mov ecx,failedtobeam"
 "	      00544409    mov [ecx],eax"
 );
 // LINE 155:
 	asm( 
 "	      0054440b    movsx eax,word ptr ds:[5B868Ch]"
-"	      00544412    mov ecx,[ebp+14h]"
+"	      00544412    mov ecx,numbeamed"
 "	      00544415    mov [ecx],eax"
 );
 // LINE 156:
 	asm( 
 "	      00544417    movsx eax,word ptr ds:[5B8648h]"
-"	      0054441e    mov ecx,[ebp+1Ch]"
+"	      0054441e    mov ecx,forwardweight"
 "	      00544421    mov [ecx],eax"
 );
 // LINE 157:
 	asm( 
 "	      00544423    movsx eax,word ptr ds:[5B8644h]"
-"	      0054442a    mov ecx,[ebp+18h]"
+"	      0054442a    mov ecx,beamslices"
 "	      0054442d    mov [ecx],eax"
 );
 // LINE 158:
@@ -245,7 +245,7 @@ unsigned short GetOutOfHeli(long personID) {
 );
 // LINE 167:
 	asm( 
-"	      00544554    mov eax,[ebp+8]"
+"	      00544554    mov eax,personID"
 "	      00544557    push eax"
 "	      00544558    call 0054456Ah"
 "	      0054455d    add esp,4"
@@ -280,7 +280,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      00544577    cmp eax,7D00h"
 "	      0054457c    jne near ptr 0054458Fh"
 "	      00544582    mov eax,ds:[5B8680h]"
-"	      00544587    mov [ebp-4],eax"
+"	      00544587    mov obj,eax"
 "	      0054458a    jmp near ptr 0054460Bh"
 "	      0054458f    movsx eax,word ptr [ebp+8]"
 "	      00544593    test eax,eax"
@@ -305,14 +305,14 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      005445ef    add esp,10h"
 "	      005445f2    movsx eax,word ptr [ebp+8]"
 "	      005445f6    mov eax,[eax*4+636D40h]"
-"	      005445fd    mov [ebp-4],eax"
+"	      005445fd    mov obj,eax"
 "	      00544600    jmp near ptr 0054460Bh"
 "	      00544605    mov eax,[ebp-8]"
-"	      00544608    mov [ebp-4],eax"
+"	      00544608    mov obj,eax"
 );
 // LINE 173:
 	asm( 
-"	      0054460b    cmp dword ptr [ebp-4],0"
+"	      0054460b    cmp obj,0"
 "	      0054460f    jne near ptr 00544631h"
 "	      00544615    push 8C085h"
 "	      0054461a    push 5B86B8h"
@@ -323,7 +323,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 );
 // LINE 174:
 	asm( 
-"	      00544631    mov eax,[ebp-4]"
+"	      00544631    mov eax,obj"
 "	      00544634    movsx eax,word ptr [eax+0E2h]"
 "	      0054463b    test eax,eax"
 "	      0054463d    je near ptr 0054465Fh"
@@ -336,12 +336,12 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 );
 // LINE 176:
 	asm( 
-"	      0054465f    mov ecx,[ebp-4]"
+"	      0054465f    mov ecx,obj"
 "	      00544662    call 00556470h"
 "	      00544667    movzx eax,ax"
 "	      0054466a    test eax,eax"
 "	      0054466c    je near ptr 0054470Ch"
-"	      00544672    mov eax,[ebp-4]"
+"	      00544672    mov eax,obj"
 "	      00544675    cmp dword ptr [eax+130h],0"
 "	      0054467c    jne near ptr 0054469Eh"
 "	      00544682    push 8C085h"
@@ -351,7 +351,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      00544696    call 00554F30h"
 "	      0054469b    add esp,10h"
 "	      0054469e    push 0"
-"	      005446a0    mov ecx,[ebp-4]"
+"	      005446a0    mov ecx,obj"
 "	      005446a3    call 0054CECAh"
 "	      005446a8    mov [ebp-0Ch],ax"
 "	      005446ac    test dword ptr [ebp-0Ch],0FFFFh"
@@ -362,19 +362,19 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      005446c8    push 5BBA14h"
 "	      005446cd    call 00554F30h"
 "	      005446d2    add esp,10h"
-"	      005446d5    mov eax,[ebp-4]"
+"	      005446d5    mov eax,obj"
 "	      005446d8    mov eax,[eax+44h]"
 "	      005446db    push eax"
-"	      005446dc    mov eax,[ebp-4]"
+"	      005446dc    mov eax,obj"
 "	      005446df    mov eax,[eax+40h]"
 "	      005446e2    push eax"
-"	      005446e3    mov eax,[ebp-4]"
+"	      005446e3    mov eax,obj"
 "	      005446e6    mov eax,[eax+3Ch]"
 "	      005446e9    push eax"
 "	      005446ea    call 00551BF7h"
 "	      005446ef    add esp,0Ch"
 "	      005446f2    add eax,30000h"
-"	      005446f7    mov ecx,[ebp-4]"
+"	      005446f7    mov ecx,obj"
 "	      005446fa    mov [ecx+40h],eax"
 "	      005446fd    jmp near ptr 00544702h"
 "	      00544702    jmp near ptr 00544723h"
@@ -386,13 +386,13 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 );
 // LINE 177:
 	asm( 
-"	      00544723    mov eax,[ebp-4]"
+"	      00544723    mov eax,obj"
 "	      00544726    mov ax,[eax+10Ah]"
 "	      0054472d    push eax"
-"	      0054472e    mov eax,[ebp-4]"
+"	      0054472e    mov eax,obj"
 "	      00544731    mov eax,[eax+0B4h]"
 "	      00544737    push eax"
-"	      00544738    mov ecx,[ebp-4]"
+"	      00544738    mov ecx,obj"
 "	      0054473b    call 0055CC58h"
 "	      00544740    jmp near ptr 00544745h"
 );
@@ -432,7 +432,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 );
 // LINE 192:
 	asm( 
-"	      00544766    cmp dword ptr [ebp+8],0"
+"	      00544766    cmp velocity,0"
 "	      0054476a    jne near ptr 00544775h"
 "	      00544770    jmp near ptr 0054486Fh"
 );
@@ -452,7 +452,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 );
 // LINE 195:
 	asm( 
-"	      005447a4    cmp dword ptr [ebp+8],12C0000h"
+"	      005447a4    cmp velocity,12C0000h"
 "	      005447ab    jle near ptr 005447C8h"
 );
 // LINE 196:
@@ -466,7 +466,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 // LINE 199:
 	asm( 
 "	      005447c3    jmp near ptr 0054486Ah"
-"	      005447c8    cmp dword ptr [ebp+8],960000h"
+"	      005447c8    cmp velocity,960000h"
 "	      005447cf    jle near ptr 005447ECh"
 );
 // LINE 200:
@@ -480,7 +480,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 // LINE 203:
 	asm( 
 "	      005447e7    jmp near ptr 0054486Ah"
-"	      005447ec    cmp dword ptr [ebp+8],640000h"
+"	      005447ec    cmp velocity,640000h"
 "	      005447f3    jle near ptr 00544810h"
 );
 // LINE 204:
@@ -494,7 +494,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 // LINE 207:
 	asm( 
 "	      0054480b    jmp near ptr 0054486Ah"
-"	      00544810    cmp dword ptr [ebp+8],410000h"
+"	      00544810    cmp velocity,410000h"
 "	      00544817    jle near ptr 00544834h"
 );
 // LINE 208:
@@ -508,7 +508,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 // LINE 211:
 	asm( 
 "	      0054482f    jmp near ptr 0054486Ah"
-"	      00544834    cmp dword ptr [ebp+8],1E0000h"
+"	      00544834    cmp velocity,1E0000h"
 "	      0054483b    jle near ptr 00544858h"
 );
 // LINE 212:
@@ -559,29 +559,29 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 );
 // LINE 225:
 	asm( 
-"	      0054487d    mov dword ptr [ebp-4],0"
+"	      0054487d    mov foundobj,0"
 );
 // LINE 226:
 	asm( 
-"	      00544884    mov word ptr [ebp-8],0"
+"	      00544884    mov count,0"
 "	      0054488a    jmp near ptr 00544893h"
-"	      0054488f    inc word ptr [ebp-8]"
-"	      00544893    movsx eax,word ptr [ebp-8]"
+"	      0054488f    inc count"
+"	      00544893    movsx eax,count"
 "	      00544897    cmp eax,64h"
 "	      0054489a    jge near ptr 0054497Dh"
 );
 // LINE 227:
 	asm( 
-"	      005448a0    movsx eax,word ptr [ebp-8]"
+"	      005448a0    movsx eax,count"
 "	      005448a4    cmp eax,7D00h"
 "	      005448a9    jne near ptr 005448BCh"
 "	      005448af    mov eax,ds:[5B8680h]"
-"	      005448b4    mov [ebp-0Ch],eax"
+"	      005448b4    mov obj,eax"
 "	      005448b7    jmp near ptr 00544938h"
-"	      005448bc    movsx eax,word ptr [ebp-8]"
+"	      005448bc    movsx eax,count"
 "	      005448c0    test eax,eax"
 "	      005448c2    jl near ptr 005448D5h"
-"	      005448c8    movsx eax,word ptr [ebp-8]"
+"	      005448c8    movsx eax,count"
 "	      005448cc    cmp eax,64h"
 "	      005448cf    jl near ptr 005448F1h"
 "	      005448d5    push 8C085h"
@@ -590,7 +590,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 "	      005448e4    push 5BBA14h"
 "	      005448e9    call 00554F30h"
 "	      005448ee    add esp,10h"
-"	      005448f1    movsx eax,word ptr [ebp-8]"
+"	      005448f1    movsx eax,count"
 "	      005448f5    cmp dword ptr [eax*4+636D40h],0"
 "	      005448fd    jne near ptr 0054491Fh"
 "	      00544903    push 8C085h"
@@ -599,22 +599,22 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 "	      00544912    push 5BBA14h"
 "	      00544917    call 00554F30h"
 "	      0054491c    add esp,10h"
-"	      0054491f    movsx eax,word ptr [ebp-8]"
+"	      0054491f    movsx eax,count"
 "	      00544923    mov eax,[eax*4+636D40h]"
-"	      0054492a    mov [ebp-0Ch],eax"
+"	      0054492a    mov obj,eax"
 "	      0054492d    jmp near ptr 00544938h"
 "	      00544932    mov eax,[ebp-10h]"
-"	      00544935    mov [ebp-0Ch],eax"
+"	      00544935    mov obj,eax"
 );
 // LINE 228:
 	asm( 
-"	      00544938    cmp dword ptr [ebp-0Ch],0"
+"	      00544938    cmp obj,0"
 "	      0054493c    jne near ptr 00544947h"
 "	      00544942    jmp near ptr 0054488Fh"
 );
 // LINE 229:
 	asm( 
-"	      00544947    mov eax,[ebp-0Ch]"
+"	      00544947    mov eax,obj"
 "	      0054494a    movsx eax,word ptr [eax+0D2h]"
 "	      00544951    test eax,eax"
 "	      00544953    jne near ptr 0054495Eh"
@@ -622,15 +622,15 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 );
 // LINE 230:
 	asm( 
-"	      0054495e    mov eax,[ebp-0Ch]"
+"	      0054495e    mov eax,obj"
 "	      00544961    add eax,24h"
-"	      00544964    cmp eax,[ebp+8]"
+"	      00544964    cmp eax,dyn"
 "	      00544967    jne near ptr 00544978h"
 );
 // LINE 231:
 	asm( 
-"	      0054496d    mov eax,[ebp-0Ch]"
-"	      00544970    mov [ebp-4],eax"
+"	      0054496d    mov eax,obj"
+"	      00544970    mov foundobj,eax"
 );
 // LINE 232:
 	asm( 
@@ -642,24 +642,24 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 );
 // LINE 235:
 	asm( 
-"	      0054497d    cmp dword ptr [ebp-4],0"
+"	      0054497d    cmp foundobj,0"
 "	      00544981    jne near ptr 005449A0h"
 );
 // LINE 236:
 	asm( 
 "	      00544987    mov eax,ds:[5B8680h]"
 "	      0054498c    add eax,24h"
-"	      0054498f    cmp eax,[ebp+8]"
+"	      0054498f    cmp eax,dyn"
 "	      00544992    jne near ptr 005449A0h"
 );
 // LINE 237:
 	asm( 
 "	      00544998    mov eax,ds:[5B8680h]"
-"	      0054499d    mov [ebp-4],eax"
+"	      0054499d    mov foundobj,eax"
 );
 // LINE 239:
 	asm( 
-"	      005449a0    cmp dword ptr [ebp-4],0"
+"	      005449a0    cmp foundobj,0"
 "	      005449a4    jne near ptr 005449C6h"
 );
 // LINE 240:
@@ -673,14 +673,14 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 );
 // LINE 242:
 	asm( 
-"	      005449c6    mov eax,[ebp+8]"
+"	      005449c6    mov eax,dyn"
 "	      005449c9    mov ax,[eax+0Eh]"
 "	      005449cd    mov [ebp-14h],ax"
 "	      005449d1    movsx eax,word ptr [ebp-14h]"
 "	      005449d5    cmp eax,7D00h"
 "	      005449da    jne near ptr 005449F3h"
 "	      005449e0    mov eax,ds:[5B8680h]"
-"	      005449e5    cmp [ebp-4],eax"
+"	      005449e5    cmp foundobj,eax"
 "	      005449e8    je near ptr 00544A97h"
 "	      005449ee    jmp near ptr 00544A7Bh"
 "	      005449f3    movsx eax,word ptr [ebp-14h]"
@@ -705,12 +705,12 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 "	      00544a4e    call 00554F30h"
 "	      00544a53    add esp,10h"
 "	      00544a56    movsx eax,word ptr [ebp-14h]"
-"	      00544a5a    mov ecx,[ebp-4]"
+"	      00544a5a    mov ecx,foundobj"
 "	      00544a5d    cmp [eax*4+636D40h],ecx"
 "	      00544a64    je near ptr 00544A97h"
 "	      00544a6a    jmp near ptr 00544A7Bh"
 "	      00544a6f    mov eax,[ebp-18h]"
-"	      00544a72    cmp [ebp-4],eax"
+"	      00544a72    cmp foundobj,eax"
 "	      00544a75    je near ptr 00544A97h"
 "	      00544a7b    push 8C085h"
 "	      00544a80    push 5B87A0h"
@@ -718,7 +718,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 "	      00544a8a    push 5B87D4h"
 "	      00544a8f    call 00554F30h"
 "	      00544a94    add esp,10h"
-"	      00544a97    mov eax,[ebp+8]"
+"	      00544a97    mov eax,dyn"
 "	      00544a9a    mov ax,[eax+0Eh]"
 "	      00544a9e    mov [ebp-1Ch],ax"
 );
@@ -780,22 +780,22 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 "	      00544b41    push ebx"
 "	      00544b42    push esi"
 "	      00544b43    push edi"
-"	      00544b44    mov [ebp-18h],ecx"
+"	      00544b44    mov this,ecx"
 );
 // LINE 249:
 	asm( 
-"	      00544b47    mov eax,[ebp-18h]"
+"	      00544b47    mov eax,this"
 "	      00544b4a    movzx ax,byte ptr [eax+88h]"
-"	      00544b52    mov [ebp-8],ax"
-"	      00544b56    mov eax,[ebp-18h]"
+"	      00544b52    mov cellx,ax"
+"	      00544b56    mov eax,this"
 "	      00544b59    movzx ax,byte ptr [eax+89h]"
-"	      00544b61    mov [ebp-0Ch],ax"
+"	      00544b61    mov celly,ax"
 );
 // LINE 252:
 	asm( 
-"	      00544b65    movsx eax,word ptr [ebp-0Ch]"
+"	      00544b65    movsx eax,celly"
 "	      00544b69    and eax,0FFh"
-"	      00544b6e    movsx ecx,word ptr [ebp-8]"
+"	      00544b6e    movsx ecx,cellx"
 "	      00544b72    and ecx,0FFh"
 "	      00544b78    shl ecx,0Ah"
 "	      00544b7b    mov eax,[ecx+eax*4+67ED30h]"
@@ -805,24 +805,24 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 "	      00544b8c    je near ptr 00544BBDh"
 "	      00544b92    mov eax,[ebp-10h]"
 "	      00544b95    movsx eax,word ptr [eax+0Ch]"
-"	      00544b99    movsx ecx,word ptr [ebp+8]"
+"	      00544b99    movsx ecx,objtypeflag"
 "	      00544b9d    test ecx,eax"
 "	      00544b9f    je near ptr 00544BB0h"
 "	      00544ba5    mov eax,[ebp-10h]"
-"	      00544ba8    mov [ebp-4],eax"
+"	      00544ba8    mov dyobj,eax"
 "	      00544bab    jmp near ptr 00544BCFh"
 "	      00544bb0    mov eax,[ebp-10h]"
 "	      00544bb3    mov eax,[eax]"
 "	      00544bb5    mov [ebp-10h],eax"
 "	      00544bb8    jmp near ptr 00544B88h"
-"	      00544bbd    mov dword ptr [ebp-4],0"
+"	      00544bbd    mov dyobj,0"
 "	      00544bc4    jmp near ptr 00544BCFh"
 "	      00544bc9    mov eax,[ebp-14h]"
-"	      00544bcc    mov [ebp-4],eax"
+"	      00544bcc    mov dyobj,eax"
 );
 // LINE 254:
 	asm( 
-"	      00544bcf    mov eax,[ebp-4]"
+"	      00544bcf    mov eax,dyobj"
 "	      00544bd2    jmp near ptr 00544BD7h"
 );
 // LINE 255:
@@ -854,51 +854,51 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544be4    push ebx"
 "	      00544be5    push esi"
 "	      00544be6    push edi"
-"	      00544be7    mov [ebp-60h],ecx"
+"	      00544be7    mov this,ecx"
 );
 // LINE 260:
 	asm( 
-"	      00544bea    mov word ptr [ebp-24h],2"
+"	      00544bea    mov maxcount,2"
 );
 // LINE 261:
 	asm( 
-"	      00544bf0    mov eax,[ebp+8]"
+"	      00544bf0    mov eax,master"
 "	      00544bf3    movsx eax,word ptr [eax+0Ch]"
 "	      00544bf7    test al,80h"
 "	      00544bf9    jne near ptr 00544C25h"
 "	      00544bff    mov eax,ds:[5BC634h]"
 "	      00544c04    push eax"
-"	      00544c05    mov eax,[ebp+8]"
+"	      00544c05    mov eax,master"
 "	      00544c08    mov eax,[eax+10h]"
 "	      00544c0b    push eax"
 "	      00544c0c    call 004D19DFh"
 "	      00544c11    add esp,8"
 "	      00544c14    sar eax,10h"
-"	      00544c17    mov [ebp-18h],ax"
+"	      00544c17    mov fullradius,ax"
 "	      00544c1b    jmp near ptr 00544C3Ah"
 "	      00544c20    jmp near ptr 00544C30h"
-"	      00544c25    mov word ptr [ebp-18h],8"
+"	      00544c25    mov fullradius,8"
 "	      00544c2b    jmp near ptr 00544C3Ah"
 "	      00544c30    mov eax,[ebp-54h]"
 "	      00544c33    sar eax,10h"
-"	      00544c36    mov [ebp-18h],ax"
+"	      00544c36    mov fullradius,ax"
 "	      00544c3a    jmp near ptr 00544C3Fh"
 );
 // LINE 262:
 	asm( 
-"	      00544c3f    movsx eax,word ptr [ebp-18h]"
+"	      00544c3f    movsx eax,fullradius"
 "	      00544c43    cdq"
 "	      00544c44    sub eax,edx"
 "	      00544c46    sar eax,1"
-"	      00544c49    mov [ebp-4],ax"
+"	      00544c49    mov smallradius,ax"
 );
 // LINE 265:
 	asm( 
-"	      00544c4d    mov word ptr [ebp-8],0"
+"	      00544c4d    mov count,0"
 "	      00544c53    jmp near ptr 00544C5Ch"
-"	      00544c58    inc word ptr [ebp-8]"
-"	      00544c5c    movsx eax,word ptr [ebp-8]"
-"	      00544c60    movsx ecx,word ptr [ebp-24h]"
+"	      00544c58    inc count"
+"	      00544c5c    movsx eax,count"
+"	      00544c60    movsx ecx,maxcount"
 "	      00544c64    cmp eax,ecx"
 "	      00544c66    jge near ptr 00544F69h"
 );
@@ -911,21 +911,21 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	int32_t objheight;
 	struct Point3d masterloc;
 	asm( 
-"	      00544c6c    movsx eax,word ptr [ebp-8]"
-"	      00544c70    movsx ecx,word ptr [ebp-4]"
+"	      00544c6c    movsx eax,count"
+"	      00544c70    movsx ecx,smallradius"
 "	      00544c74    imul eax,ecx"
-"	      00544c77    movsx ecx,word ptr [ebp-24h]"
+"	      00544c77    movsx ecx,maxcount"
 "	      00544c7b    dec ecx"
 "	      00544c7c    cdq"
 "	      00544c7d    idiv ecx"
-"	      00544c7f    movsx ecx,word ptr [ebp-4]"
+"	      00544c7f    movsx ecx,smallradius"
 "	      00544c83    add eax,ecx"
-"	      00544c85    mov [ebp-28h],ax"
+"	      00544c85    mov radius,ax"
 );
 // LINE 268:
 	asm( 
-"	      00544c89    movsx eax,word ptr [ebp-28h]"
-"	      00544c8d    movsx ecx,word ptr [ebp-18h]"
+"	      00544c89    movsx eax,radius"
+"	      00544c8d    movsx ecx,fullradius"
 "	      00544c91    cmp eax,ecx"
 "	      00544c93    jle near ptr 00544CB5h"
 "	      00544c99    push 8C085h"
@@ -937,16 +937,16 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 );
 // LINE 269:
 	asm( 
-"	      00544cb5    movsx eax,word ptr [ebp-28h]"
+"	      00544cb5    movsx eax,radius"
 "	      00544cb9    test eax,eax"
 "	      00544cbb    jne near ptr 00544CD3h"
-"	      00544cc1    mov dword ptr [ebp-20h],0"
-"	      00544cc8    mov eax,[ebp-20h]"
-"	      00544ccb    mov [ebp-1Ch],eax"
+"	      00544cc1    mov offsetz,0"
+"	      00544cc8    mov eax,offsetz"
+"	      00544ccb    mov offsetx,eax"
 "	      00544cce    jmp near ptr 00544DA7h"
-"	      00544cd3    movsx ebx,word ptr [ebp-28h]"
+"	      00544cd3    movsx ebx,radius"
 "	      00544cd7    dec ebx"
-"	      00544cd8    movsx eax,word ptr [ebp-28h]"
+"	      00544cd8    movsx eax,radius"
 "	      00544cdc    lea eax,[eax*2-2]"
 "	      00544ce3    push eax"
 "	      00544ce4    call 0055D717h"
@@ -954,10 +954,10 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544cec    movzx eax,ax"
 "	      00544cef    sub ebx,eax"
 "	      00544cf1    shl ebx,10h"
-"	      00544cf4    mov [ebp-1Ch],ebx"
-"	      00544cf7    movsx ebx,word ptr [ebp-28h]"
+"	      00544cf4    mov offsetx,ebx"
+"	      00544cf7    movsx ebx,radius"
 "	      00544cfb    dec ebx"
-"	      00544cfc    movsx eax,word ptr [ebp-28h]"
+"	      00544cfc    movsx eax,radius"
 "	      00544d00    lea eax,[eax*2-2]"
 "	      00544d07    push eax"
 "	      00544d08    call 0055D717h"
@@ -965,11 +965,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544d10    movzx eax,ax"
 "	      00544d13    sub ebx,eax"
 "	      00544d15    shl ebx,10h"
-"	      00544d18    mov [ebp-20h],ebx"
-"	      00544d1b    mov eax,[ebp-1Ch]"
+"	      00544d18    mov offsetz,ebx"
+"	      00544d1b    mov eax,offsetx"
 "	      00544d1e    sar eax,10h"
 "	      00544d21    mov [ebp-58h],ax"
-"	      00544d25    mov eax,[ebp-20h]"
+"	      00544d25    mov eax,offsetz"
 "	      00544d28    sar eax,10h"
 "	      00544d2b    mov [ebp-5Ch],ax"
 "	      00544d2f    jmp near ptr 00544D34h"
@@ -978,7 +978,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544d39    xor eax,edx"
 "	      00544d3b    sub eax,edx"
 "	      00544d3d    movsx eax,ax"
-"	      00544d40    movsx ecx,word ptr [ebp-28h]"
+"	      00544d40    movsx ecx,radius"
 "	      00544d44    shl ecx,10h"
 "	      00544d47    cmp eax,ecx"
 "	      00544d49    jl near ptr 00544D6Bh"
@@ -994,7 +994,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544d75    xor eax,edx"
 "	      00544d77    sub eax,edx"
 "	      00544d79    movsx eax,ax"
-"	      00544d7c    movsx ecx,word ptr [ebp-28h]"
+"	      00544d7c    movsx ecx,radius"
 "	      00544d80    shl ecx,10h"
 "	      00544d83    cmp eax,ecx"
 "	      00544d85    jl near ptr 00544DA7h"
@@ -1008,17 +1008,17 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 );
 // LINE 270:
 	asm( 
-"	      00544dac    mov eax,[ebp-1Ch]"
-"	      00544daf    mov [ebp-4Ch],eax"
-"	      00544db2    mov dword ptr [ebp-48h],0"
-"	      00544db9    mov eax,[ebp-20h]"
-"	      00544dbc    mov [ebp-44h],eax"
+"	      00544dac    mov eax,offsetx"
+"	      00544daf    mov offset.x,eax"
+"	      00544db2    mov offset.y,0"
+"	      00544db9    mov eax,offsetz"
+"	      00544dbc    mov offset.z,eax"
 );
 // LINE 271:
 	asm( 
-"	      00544dbf    mov eax,[ebp+8]"
+"	      00544dbf    mov eax,master"
 "	      00544dc2    add eax,18h"
-"	      00544dc5    lea ecx,[ebp-14h]"
+"	      00544dc5    lea ecx,newloc.x"
 "	      00544dc8    mov edx,[eax]"
 "	      00544dca    mov [ecx],edx"
 "	      00544dcc    mov edx,[eax+4]"
@@ -1028,93 +1028,93 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 );
 // LINE 272:
 	asm( 
-"	      00544dd8    mov eax,[ebp-1Ch]"
-"	      00544ddb    add [ebp-14h],eax"
+"	      00544dd8    mov eax,offsetx"
+"	      00544ddb    add newloc.x,eax"
 );
 // LINE 273:
 	asm( 
-"	      00544dde    mov eax,[ebp-20h]"
-"	      00544de1    add [ebp-0Ch],eax"
+"	      00544dde    mov eax,offsetz"
+"	      00544de1    add newloc.z,eax"
 );
 // LINE 278:
 	asm( 
-"	      00544de4    mov eax,[ebp-60h]"
+"	      00544de4    mov eax,this"
 "	      00544de7    mov eax,[eax+34h]"
 "	      00544dea    push eax"
-"	      00544deb    lea eax,[ebp-4Ch]"
+"	      00544deb    lea eax,offset.x"
 "	      00544dee    push eax"
-"	      00544def    mov eax,[ebp+8]"
+"	      00544def    mov eax,master"
 "	      00544df2    add eax,24h"
 "	      00544df5    push eax"
-"	      00544df6    mov eax,[ebp+8]"
+"	      00544df6    mov eax,master"
 "	      00544df9    mov eax,[eax+8]"
 "	      00544dfc    push eax"
 "	      00544dfd    call 004D2AC6h"
 "	      00544e02    add esp,10h"
-"	      00544e05    mov [ebp-38h],eax"
+"	      00544e05    mov objheight,eax"
 );
 // LINE 280:
 	asm( 
-"	      00544e08    mov eax,[ebp-0Ch]"
+"	      00544e08    mov eax,newloc.z"
 "	      00544e0b    push eax"
-"	      00544e0c    mov eax,[ebp-10h]"
+"	      00544e0c    mov eax,newloc.y"
 "	      00544e0f    push eax"
-"	      00544e10    mov eax,[ebp-14h]"
+"	      00544e10    mov eax,newloc.x"
 "	      00544e13    push eax"
 "	      00544e14    call 00551BF7h"
 "	      00544e19    add esp,0Ch"
-"	      00544e1c    mov [ebp-3Ch],eax"
+"	      00544e1c    mov groundheight,eax"
 );
 // LINE 282:
 	asm( 
-"	      00544e1f    mov eax,[ebp-3Ch]"
-"	      00544e22    add eax,[ebp-38h]"
+"	      00544e1f    mov eax,groundheight"
+"	      00544e22    add eax,objheight"
 "	      00544e25    add eax,30000h"
-"	      00544e2a    mov [ebp-10h],eax"
+"	      00544e2a    mov newloc.y,eax"
 );
 // LINE 284:
 	asm( 
-"	      00544e2d    mov eax,[ebp-60h]"
+"	      00544e2d    mov eax,this"
 "	      00544e30    movsx eax,word ptr [eax+30h]"
 "	      00544e34    test al,80h"
 "	      00544e36    jne near ptr 00544E5Eh"
 "	      00544e3c    mov eax,ds:[5BC634h]"
 "	      00544e41    push eax"
-"	      00544e42    mov eax,[ebp-60h]"
+"	      00544e42    mov eax,this"
 "	      00544e45    mov eax,[eax+34h]"
 "	      00544e48    push eax"
 "	      00544e49    call 004D19DFh"
 "	      00544e4e    add esp,8"
-"	      00544e51    mov [ebp-40h],eax"
+"	      00544e51    mov myrad,eax"
 "	      00544e54    jmp near ptr 00544E6Ah"
 "	      00544e59    jmp near ptr 00544E6Ah"
-"	      00544e5e    mov dword ptr [ebp-40h],80000h"
+"	      00544e5e    mov myrad,80000h"
 "	      00544e65    jmp near ptr 00544E6Ah"
 );
 // LINE 285:
 	asm( 
-"	      00544e6a    mov eax,[ebp+8]"
+"	      00544e6a    mov eax,master"
 "	      00544e6d    movsx eax,word ptr [eax+0Ch]"
 "	      00544e71    test al,80h"
 "	      00544e73    jne near ptr 00544E9Bh"
 "	      00544e79    mov eax,ds:[5BC634h]"
 "	      00544e7e    push eax"
-"	      00544e7f    mov eax,[ebp+8]"
+"	      00544e7f    mov eax,master"
 "	      00544e82    mov eax,[eax+10h]"
 "	      00544e85    push eax"
 "	      00544e86    call 004D19DFh"
 "	      00544e8b    add esp,8"
-"	      00544e8e    mov [ebp-50h],eax"
+"	      00544e8e    mov masterrad,eax"
 "	      00544e91    jmp near ptr 00544EA7h"
 "	      00544e96    jmp near ptr 00544EA7h"
-"	      00544e9b    mov dword ptr [ebp-50h],80000h"
+"	      00544e9b    mov masterrad,80000h"
 "	      00544ea2    jmp near ptr 00544EA7h"
 );
 // LINE 286:
 	asm( 
-"	      00544ea7    mov eax,[ebp+8]"
+"	      00544ea7    mov eax,master"
 "	      00544eaa    add eax,18h"
-"	      00544ead    lea ecx,[ebp-34h]"
+"	      00544ead    lea ecx,masterloc.x"
 "	      00544eb0    mov edx,[eax]"
 "	      00544eb2    mov [ecx],edx"
 "	      00544eb4    mov edx,[eax+4]"
@@ -1124,26 +1124,26 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 );
 // LINE 287:
 	asm( 
-"	      00544ec0    mov eax,[ebp-38h]"
-"	      00544ec3    add [ebp-30h],eax"
+"	      00544ec0    mov eax,objheight"
+"	      00544ec3    add masterloc.y,eax"
 );
 // LINE 288:
 	asm( 
-"	      00544ec6    mov eax,[ebp-50h]"
+"	      00544ec6    mov eax,masterrad"
 "	      00544ec9    push eax"
-"	      00544eca    mov eax,[ebp-2Ch]"
+"	      00544eca    mov eax,masterloc.z"
 "	      00544ecd    push eax"
-"	      00544ece    mov eax,[ebp-30h]"
+"	      00544ece    mov eax,masterloc.y"
 "	      00544ed1    push eax"
-"	      00544ed2    mov eax,[ebp-34h]"
+"	      00544ed2    mov eax,masterloc.x"
 "	      00544ed5    push eax"
-"	      00544ed6    mov eax,[ebp-40h]"
+"	      00544ed6    mov eax,myrad"
 "	      00544ed9    push eax"
-"	      00544eda    mov eax,[ebp-0Ch]"
+"	      00544eda    mov eax,newloc.z"
 "	      00544edd    push eax"
-"	      00544ede    mov eax,[ebp-10h]"
+"	      00544ede    mov eax,newloc.y"
 "	      00544ee1    push eax"
-"	      00544ee2    mov eax,[ebp-14h]"
+"	      00544ee2    mov eax,newloc.x"
 "	      00544ee5    push eax"
 "	      00544ee6    call 00554FF0h"
 "	      00544eeb    add esp,20h"
@@ -1163,16 +1163,16 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 // LINE 291:
 	asm( 
 "	      00544f15    push 0"
-"	      00544f17    mov eax,[ebp+8]"
+"	      00544f17    mov eax,master"
 "	      00544f1a    push eax"
-"	      00544f1b    mov eax,[ebp-60h]"
+"	      00544f1b    mov eax,this"
 "	      00544f1e    mov eax,[eax+34h]"
 "	      00544f21    push eax"
-"	      00544f22    mov eax,[ebp-0Ch]"
+"	      00544f22    mov eax,newloc.z"
 "	      00544f25    push eax"
-"	      00544f26    mov eax,[ebp-10h]"
+"	      00544f26    mov eax,newloc.y"
 "	      00544f29    push eax"
-"	      00544f2a    mov eax,[ebp-14h]"
+"	      00544f2a    mov eax,newloc.x"
 "	      00544f2d    push eax"
 "	      00544f2e    push 0"
 "	      00544f30    call 00555369h"
@@ -1186,8 +1186,8 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 );
 // LINE 294:
 	asm( 
-"	      00544f45    lea eax,[ebp-14h]"
-"	      00544f48    mov ecx,[ebp+0Ch]"
+"	      00544f45    lea eax,newloc.x"
+"	      00544f48    mov ecx,loc"
 "	      00544f4b    mov edx,[eax]"
 "	      00544f4d    mov [ecx],edx"
 "	      00544f4f    mov edx,[eax+4]"
@@ -1233,41 +1233,41 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 "	      00544f7e    push ebx"
 "	      00544f7f    push esi"
 "	      00544f80    push edi"
-"	      00544f81    mov [ebp-38h],ecx"
+"	      00544f81    mov this,ecx"
 );
 // LINE 305:
 	asm( 
-"	      00544f84    mov eax,[ebp+10h]"
+"	      00544f84    mov eax,searchType"
 "	      00544f87    push eax"
-"	      00544f88    lea eax,[ebp-8]"
+"	      00544f88    lea eax,offsetz"
 "	      00544f8b    push eax"
-"	      00544f8c    lea eax,[ebp-4]"
+"	      00544f8c    lea eax,offsetx"
 "	      00544f8f    push eax"
-"	      00544f90    mov eax,[ebp+8]"
+"	      00544f90    mov eax,cptr"
 "	      00544f93    push eax"
-"	      00544f94    mov ecx,[ebp-38h]"
+"	      00544f94    mov ecx,this"
 "	      00544f97    call 00545049h"
 "	      00544f9c    movzx eax,ax"
 "	      00544f9f    test eax,eax"
 "	      00544fa1    je near ptr 0054503Ah"
-"	      00544fa7    mov eax,[ebp-8]"
+"	      00544fa7    mov eax,offsetz"
 "	      00544faa    mov [ebp-30h],eax"
-"	      00544fad    mov eax,[ebp-4]"
+"	      00544fad    mov eax,offsetx"
 "	      00544fb0    mov [ebp-34h],eax"
 );
 // LINE 306:
 	asm( 
-"	      00544fb3    mov eax,[ebp+8]"
+"	      00544fb3    mov eax,cptr"
 "	      00544fb6    movsx eax,word ptr [eax+2]"
 "	      00544fba    shl eax,10h"
 "	      00544fbd    add eax,[ebp-34h]"
 "	      00544fc0    mov [ebp-2Ch],eax"
-"	      00544fc3    mov eax,[ebp+8]"
+"	      00544fc3    mov eax,cptr"
 "	      00544fc6    movsx eax,word ptr [eax+4]"
 "	      00544fca    shl eax,10h"
 "	      00544fcd    add eax,30000h"
 "	      00544fd2    mov [ebp-28h],eax"
-"	      00544fd5    mov eax,[ebp+8]"
+"	      00544fd5    mov eax,cptr"
 "	      00544fd8    movsx eax,word ptr [eax+6]"
 "	      00544fdc    shl eax,10h"
 "	      00544fdf    add eax,[ebp-30h]"
@@ -1290,7 +1290,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 "	      00545010    mov eax,[eax+8]"
 "	      00545013    mov [ecx+8],eax"
 "	      00545016    lea eax,[ebp-14h]"
-"	      00545019    mov ecx,[ebp+0Ch]"
+"	      00545019    mov ecx,loc"
 "	      0054501c    mov edx,[eax]"
 "	      0054501e    mov [ecx],edx"
 "	      00545020    mov edx,[eax+4]"
@@ -1337,22 +1337,22 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545052    push ebx"
 "	      00545053    push esi"
 "	      00545054    push edi"
-"	      00545055    mov [ebp-198h],ecx"
+"	      00545055    mov this,ecx"
 );
 // LINE 319:
 	asm( 
-"	      0054505b    mov eax,[ebp+8]"
+"	      0054505b    mov eax,cptr"
 "	      0054505e    movsx eax,word ptr [eax+8]"
 "	      00545062    shl eax,5"
-"	      00545065    mov [ebp-0Ch],ax"
+"	      00545065    mov halfwidth,ax"
 );
 // LINE 320:
 	asm( 
-"	      00545069    mov eax,[ebp+8]"
+"	      00545069    mov eax,cptr"
 "	      0054506c    movsx eax,word ptr [eax+8]"
 "	      00545070    test eax,eax"
 "	      00545072    jle near ptr 00545088h"
-"	      00545078    mov eax,[ebp+8]"
+"	      00545078    mov eax,cptr"
 "	      0054507b    movsx eax,word ptr [eax+8]"
 "	      0054507f    cmp eax,14h"
 "	      00545082    jl near ptr 005450A4h"
@@ -1365,16 +1365,16 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 321:
 	asm( 
-"	      005450a4    movsx eax,word ptr [ebp-0Ch]"
+"	      005450a4    movsx eax,halfwidth"
 "	      005450a8    cmp eax,20h"
 "	      005450ab    je near ptr 005450F6h"
-"	      005450b1    movsx eax,word ptr [ebp-0Ch]"
+"	      005450b1    movsx eax,halfwidth"
 "	      005450b5    cmp eax,40h"
 "	      005450b8    je near ptr 005450F6h"
-"	      005450be    movsx eax,word ptr [ebp-0Ch]"
+"	      005450be    movsx eax,halfwidth"
 "	      005450c2    cmp eax,60h"
 "	      005450c5    je near ptr 005450F6h"
-"	      005450cb    movsx eax,word ptr [ebp-0Ch]"
+"	      005450cb    movsx eax,halfwidth"
 "	      005450cf    cmp eax,80h"
 "	      005450d4    jge near ptr 005450F6h"
 "	      005450da    push 8C085h"
@@ -1386,21 +1386,21 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 323:
 	asm( 
-"	      005450f6    mov word ptr [ebp-8],0"
+"	      005450f6    mov ret,0"
 );
 // LINE 324:
 	asm( 
 "	      005450fc    push 20000h"
-"	      00545101    mov eax,[ebp-198h]"
+"	      00545101    mov eax,this"
 "	      00545107    mov eax,[eax+34h]"
 "	      0054510a    push eax"
 "	      0054510b    call 004D19BDh"
 "	      00545110    add esp,8"
-"	      00545113    mov [ebp-4],eax"
+"	      00545113    mov twiceradius,eax"
 );
 // LINE 325:
 	asm( 
-"	      00545116    mov eax,[ebp+14h]"
+"	      00545116    mov eax,searchType"
 "	      00545119    mov [ebp-19Ch],eax"
 "	      0054511f    jmp near ptr 00545993h"
 );
@@ -1408,33 +1408,33 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // Block start:
 	short count;
 	asm( 
-"	      00545124    mov word ptr [ebp-1Ch],0"
+"	      00545124    mov count,0"
 "	      0054512a    jmp near ptr 00545133h"
-"	      0054512f    inc word ptr [ebp-1Ch]"
-"	      00545133    movsx eax,word ptr [ebp-1Ch]"
+"	      0054512f    inc count"
+"	      00545133    movsx eax,count"
 "	      00545137    cmp eax,2"
 "	      0054513a    jge near ptr 0054549Dh"
 );
 // LINE 329:
 	asm( 
-"	      00545140    cmp dword ptr [ebp+14h],0"
+"	      00545140    cmp searchType,0"
 "	      00545144    jne near ptr 00545226h"
 );
 // LINE 330:
 	asm( 
-"	      0054514a    movsx eax,word ptr [ebp-0Ch]"
+"	      0054514a    movsx eax,halfwidth"
 "	      0054514e    test eax,eax"
 "	      00545150    jne near ptr 0054516Eh"
-"	      00545156    mov eax,[ebp+10h]"
+"	      00545156    mov eax,offsetz"
 "	      00545159    mov dword ptr [eax],0"
-"	      0054515f    mov eax,[ebp+10h]"
+"	      0054515f    mov eax,offsetz"
 "	      00545162    mov eax,[eax]"
-"	      00545164    mov ecx,[ebp+0Ch]"
+"	      00545164    mov ecx,offsetx"
 "	      00545167    mov [ecx],eax"
 "	      00545169    jmp near ptr 00545221h"
-"	      0054516e    movsx ebx,word ptr [ebp-0Ch]"
+"	      0054516e    movsx ebx,halfwidth"
 "	      00545172    dec ebx"
-"	      00545173    movsx eax,word ptr [ebp-0Ch]"
+"	      00545173    movsx eax,halfwidth"
 "	      00545177    lea eax,[eax*2-2]"
 "	      0054517e    push eax"
 "	      0054517f    call 0055D717h"
@@ -1449,11 +1449,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054519f    movzx eax,ax"
 "	      005451a2    test eax,eax"
 "	      005451a4    je near ptr 005451BAh"
-"	      005451aa    movsx eax,word ptr [ebp-0Ch]"
+"	      005451aa    movsx eax,halfwidth"
 "	      005451ae    dec eax"
 "	      005451af    mov [ebp-17Ch],eax"
 "	      005451b5    jmp near ptr 005451C7h"
-"	      005451ba    movsx eax,word ptr [ebp-0Ch]"
+"	      005451ba    movsx eax,halfwidth"
 "	      005451be    neg eax"
 "	      005451c0    inc eax"
 "	      005451c1    mov [ebp-17Ch],eax"
@@ -1467,17 +1467,17 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005451e3    test eax,eax"
 "	      005451e5    je near ptr 00545206h"
 "	      005451eb    mov eax,[ebp-174h]"
-"	      005451f1    mov ecx,[ebp+0Ch]"
+"	      005451f1    mov ecx,offsetx"
 "	      005451f4    mov [ecx],eax"
 "	      005451f6    mov eax,[ebp-178h]"
-"	      005451fc    mov ecx,[ebp+10h]"
+"	      005451fc    mov ecx,offsetz"
 "	      005451ff    mov [ecx],eax"
 "	      00545201    jmp near ptr 0054521Ch"
 "	      00545206    mov eax,[ebp-174h]"
-"	      0054520c    mov ecx,[ebp+10h]"
+"	      0054520c    mov ecx,offsetz"
 "	      0054520f    mov [ecx],eax"
 "	      00545211    mov eax,[ebp-178h]"
-"	      00545217    mov ecx,[ebp+0Ch]"
+"	      00545217    mov ecx,offsetx"
 "	      0054521a    mov [ecx],eax"
 "	      0054521c    jmp near ptr 00545221h"
 );
@@ -1487,19 +1487,19 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 332:
 	asm( 
-"	      00545226    movsx eax,word ptr [ebp-0Ch]"
+"	      00545226    movsx eax,halfwidth"
 "	      0054522a    test eax,eax"
 "	      0054522c    jne near ptr 0054524Ah"
-"	      00545232    mov eax,[ebp+10h]"
+"	      00545232    mov eax,offsetz"
 "	      00545235    mov dword ptr [eax],0"
-"	      0054523b    mov eax,[ebp+10h]"
+"	      0054523b    mov eax,offsetz"
 "	      0054523e    mov eax,[eax]"
-"	      00545240    mov ecx,[ebp+0Ch]"
+"	      00545240    mov ecx,offsetx"
 "	      00545243    mov [ecx],eax"
 "	      00545245    jmp near ptr 00545332h"
-"	      0054524a    movsx ebx,word ptr [ebp-0Ch]"
+"	      0054524a    movsx ebx,halfwidth"
 "	      0054524e    dec ebx"
-"	      0054524f    movsx eax,word ptr [ebp-0Ch]"
+"	      0054524f    movsx eax,halfwidth"
 "	      00545253    lea eax,[eax*2-2]"
 "	      0054525a    push eax"
 "	      0054525b    call 0055D717h"
@@ -1507,11 +1507,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545263    movzx eax,ax"
 "	      00545266    sub ebx,eax"
 "	      00545268    shl ebx,10h"
-"	      0054526b    mov eax,[ebp+0Ch]"
+"	      0054526b    mov eax,offsetx"
 "	      0054526e    mov [eax],ebx"
-"	      00545270    movsx ebx,word ptr [ebp-0Ch]"
+"	      00545270    movsx ebx,halfwidth"
 "	      00545274    dec ebx"
-"	      00545275    movsx eax,word ptr [ebp-0Ch]"
+"	      00545275    movsx eax,halfwidth"
 "	      00545279    lea eax,[eax*2-2]"
 "	      00545280    push eax"
 "	      00545281    call 0055D717h"
@@ -1519,13 +1519,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545289    movzx eax,ax"
 "	      0054528c    sub ebx,eax"
 "	      0054528e    shl ebx,10h"
-"	      00545291    mov eax,[ebp+10h]"
+"	      00545291    mov eax,offsetz"
 "	      00545294    mov [eax],ebx"
-"	      00545296    mov eax,[ebp+0Ch]"
+"	      00545296    mov eax,offsetx"
 "	      00545299    mov eax,[eax]"
 "	      0054529b    sar eax,10h"
 "	      0054529e    mov [ebp-180h],ax"
-"	      005452a5    mov eax,[ebp+10h]"
+"	      005452a5    mov eax,offsetz"
 "	      005452a8    mov eax,[eax]"
 "	      005452aa    sar eax,10h"
 "	      005452ad    mov [ebp-184h],ax"
@@ -1535,7 +1535,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005452c1    xor eax,edx"
 "	      005452c3    sub eax,edx"
 "	      005452c5    movsx eax,ax"
-"	      005452c8    movsx ecx,word ptr [ebp-0Ch]"
+"	      005452c8    movsx ecx,halfwidth"
 "	      005452cc    shl ecx,10h"
 "	      005452cf    cmp eax,ecx"
 "	      005452d1    jl near ptr 005452F3h"
@@ -1551,7 +1551,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545300    xor eax,edx"
 "	      00545302    sub eax,edx"
 "	      00545304    movsx eax,ax"
-"	      00545307    movsx ecx,word ptr [ebp-0Ch]"
+"	      00545307    movsx ecx,halfwidth"
 "	      0054530b    shl ecx,10h"
 "	      0054530e    cmp eax,ecx"
 "	      00545310    jl near ptr 00545332h"
@@ -1562,26 +1562,26 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054532a    call 00554F30h"
 "	      0054532f    add esp,10h"
 "	      00545332    jmp near ptr 00545337h"
-"	      00545337    mov eax,[ebp+10h]"
+"	      00545337    mov eax,offsetz"
 "	      0054533a    mov eax,[eax]"
 "	      0054533c    mov [ebp-128h],eax"
-"	      00545342    mov eax,[ebp+0Ch]"
+"	      00545342    mov eax,offsetx"
 "	      00545345    mov eax,[eax]"
 "	      00545347    mov [ebp-12Ch],eax"
 );
 // LINE 333:
 	asm( 
-"	      0054534d    mov eax,[ebp+8]"
+"	      0054534d    mov eax,cptr"
 "	      00545350    movsx eax,word ptr [eax+2]"
 "	      00545354    shl eax,10h"
 "	      00545357    add eax,[ebp-12Ch]"
 "	      0054535d    mov [ebp-124h],eax"
-"	      00545363    mov eax,[ebp+8]"
+"	      00545363    mov eax,cptr"
 "	      00545366    movsx eax,word ptr [eax+4]"
 "	      0054536a    shl eax,10h"
 "	      0054536d    add eax,30000h"
 "	      00545372    mov [ebp-120h],eax"
-"	      00545378    mov eax,[ebp+8]"
+"	      00545378    mov eax,cptr"
 "	      0054537b    movsx eax,word ptr [eax+6]"
 "	      0054537f    shl eax,10h"
 "	      00545382    add eax,[ebp-128h]"
@@ -1604,7 +1604,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005453c5    mov eax,[eax+8]"
 "	      005453c8    mov [ecx+8],eax"
 "	      005453cb    lea eax,[ebp-0ACh]"
-"	      005453d1    lea ecx,[ebp-18h]"
+"	      005453d1    lea ecx,pos.x"
 "	      005453d4    mov edx,[eax]"
 "	      005453d6    mov [ecx],edx"
 "	      005453d8    mov edx,[eax+4]"
@@ -1616,13 +1616,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	asm( 
 "	      005453e4    push 0"
 "	      005453e6    push 0"
-"	      005453e8    mov eax,[ebp-4]"
+"	      005453e8    mov eax,twiceradius"
 "	      005453eb    push eax"
-"	      005453ec    mov eax,[ebp-10h]"
+"	      005453ec    mov eax,pos.z"
 "	      005453ef    push eax"
-"	      005453f0    mov eax,[ebp-14h]"
+"	      005453f0    mov eax,pos.y"
 "	      005453f3    push eax"
-"	      005453f4    mov eax,[ebp-18h]"
+"	      005453f4    mov eax,pos.x"
 "	      005453f7    push eax"
 "	      005453f8    push 0"
 "	      005453fa    call 00555369h"
@@ -1637,21 +1637,21 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 337:
 	asm( 
 "	      0054540f    jmp near ptr 00545414h"
-"	      00545414    mov eax,[ebp+8]"
+"	      00545414    mov eax,cptr"
 "	      00545417    movsx eax,word ptr [eax]"
 "	      0054541a    and eax,1"
 "	      0054541d    movzx eax,ax"
 "	      00545420    test eax,eax"
 "	      00545422    je near ptr 0054548Dh"
-"	      00545428    mov eax,[ebp+8]"
+"	      00545428    mov eax,cptr"
 "	      0054542b    movsx eax,word ptr [eax+4]"
 "	      0054542f    add eax,0Ah"
 "	      00545432    mov [ebp-108h],ax"
-"	      00545439    mov eax,[ebp-10h]"
+"	      00545439    mov eax,pos.z"
 "	      0054543c    push eax"
-"	      0054543d    mov eax,[ebp-14h]"
+"	      0054543d    mov eax,pos.y"
 "	      00545440    push eax"
-"	      00545441    mov eax,[ebp-18h]"
+"	      00545441    mov eax,pos.x"
 "	      00545444    push eax"
 "	      00545445    call 00551BF7h"
 "	      0054544a    add esp,0Ch"
@@ -1672,7 +1672,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 342:
 	asm( 
-"	      0054548d    mov word ptr [ebp-8],1"
+"	      0054548d    mov ret,1"
 );
 // LINE 343:
 	asm( 
@@ -1700,19 +1700,19 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 349:
 	asm( 
-"	      005454be    movsx eax,word ptr [ebp-0Ch]"
+"	      005454be    movsx eax,halfwidth"
 "	      005454c2    test eax,eax"
 "	      005454c4    jne near ptr 005454E2h"
-"	      005454ca    mov eax,[ebp+10h]"
+"	      005454ca    mov eax,offsetz"
 "	      005454cd    mov dword ptr [eax],0"
-"	      005454d3    mov eax,[ebp+10h]"
+"	      005454d3    mov eax,offsetz"
 "	      005454d6    mov eax,[eax]"
-"	      005454d8    mov ecx,[ebp+0Ch]"
+"	      005454d8    mov ecx,offsetx"
 "	      005454db    mov [ecx],eax"
 "	      005454dd    jmp near ptr 005455CAh"
-"	      005454e2    movsx ebx,word ptr [ebp-0Ch]"
+"	      005454e2    movsx ebx,halfwidth"
 "	      005454e6    dec ebx"
-"	      005454e7    movsx eax,word ptr [ebp-0Ch]"
+"	      005454e7    movsx eax,halfwidth"
 "	      005454eb    lea eax,[eax*2-2]"
 "	      005454f2    push eax"
 "	      005454f3    call 0055D717h"
@@ -1720,11 +1720,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005454fb    movzx eax,ax"
 "	      005454fe    sub ebx,eax"
 "	      00545500    shl ebx,10h"
-"	      00545503    mov eax,[ebp+0Ch]"
+"	      00545503    mov eax,offsetx"
 "	      00545506    mov [eax],ebx"
-"	      00545508    movsx ebx,word ptr [ebp-0Ch]"
+"	      00545508    movsx ebx,halfwidth"
 "	      0054550c    dec ebx"
-"	      0054550d    movsx eax,word ptr [ebp-0Ch]"
+"	      0054550d    movsx eax,halfwidth"
 "	      00545511    lea eax,[eax*2-2]"
 "	      00545518    push eax"
 "	      00545519    call 0055D717h"
@@ -1732,13 +1732,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545521    movzx eax,ax"
 "	      00545524    sub ebx,eax"
 "	      00545526    shl ebx,10h"
-"	      00545529    mov eax,[ebp+10h]"
+"	      00545529    mov eax,offsetz"
 "	      0054552c    mov [eax],ebx"
-"	      0054552e    mov eax,[ebp+0Ch]"
+"	      0054552e    mov eax,offsetx"
 "	      00545531    mov eax,[eax]"
 "	      00545533    sar eax,10h"
 "	      00545536    mov [ebp-188h],ax"
-"	      0054553d    mov eax,[ebp+10h]"
+"	      0054553d    mov eax,offsetz"
 "	      00545540    mov eax,[eax]"
 "	      00545542    sar eax,10h"
 "	      00545545    mov [ebp-18Ch],ax"
@@ -1748,7 +1748,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545559    xor eax,edx"
 "	      0054555b    sub eax,edx"
 "	      0054555d    movsx eax,ax"
-"	      00545560    movsx ecx,word ptr [ebp-0Ch]"
+"	      00545560    movsx ecx,halfwidth"
 "	      00545564    shl ecx,10h"
 "	      00545567    cmp eax,ecx"
 "	      00545569    jl near ptr 0054558Bh"
@@ -1764,7 +1764,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545598    xor eax,edx"
 "	      0054559a    sub eax,edx"
 "	      0054559c    movsx eax,ax"
-"	      0054559f    movsx ecx,word ptr [ebp-0Ch]"
+"	      0054559f    movsx ecx,halfwidth"
 "	      005455a3    shl ecx,10h"
 "	      005455a6    cmp eax,ecx"
 "	      005455a8    jl near ptr 005455CAh"
@@ -1775,26 +1775,26 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005455c2    call 00554F30h"
 "	      005455c7    add esp,10h"
 "	      005455ca    jmp near ptr 005455CFh"
-"	      005455cf    mov eax,[ebp+10h]"
+"	      005455cf    mov eax,offsetz"
 "	      005455d2    mov eax,[eax]"
 "	      005455d4    mov [ebp-13Ch],eax"
-"	      005455da    mov eax,[ebp+0Ch]"
+"	      005455da    mov eax,offsetx"
 "	      005455dd    mov eax,[eax]"
 "	      005455df    mov [ebp-140h],eax"
 );
 // LINE 350:
 	asm( 
-"	      005455e5    mov eax,[ebp+8]"
+"	      005455e5    mov eax,cptr"
 "	      005455e8    movsx eax,word ptr [eax+2]"
 "	      005455ec    shl eax,10h"
 "	      005455ef    add eax,[ebp-140h]"
 "	      005455f5    mov [ebp-138h],eax"
-"	      005455fb    mov eax,[ebp+8]"
+"	      005455fb    mov eax,cptr"
 "	      005455fe    movsx eax,word ptr [eax+4]"
 "	      00545602    shl eax,10h"
 "	      00545605    add eax,30000h"
 "	      0054560a    mov [ebp-134h],eax"
-"	      00545610    mov eax,[ebp+8]"
+"	      00545610    mov eax,cptr"
 "	      00545613    movsx eax,word ptr [eax+6]"
 "	      00545617    shl eax,10h"
 "	      0054561a    add eax,[ebp-13Ch]"
@@ -1817,7 +1817,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054565d    mov eax,[eax+8]"
 "	      00545660    mov [ecx+8],eax"
 "	      00545663    lea eax,[ebp-0B8h]"
-"	      00545669    lea ecx,[ebp-18h]"
+"	      00545669    lea ecx,pos.x"
 "	      0054566c    mov edx,[eax]"
 "	      0054566e    mov [ecx],edx"
 "	      00545670    mov edx,[eax+4]"
@@ -1829,13 +1829,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	asm( 
 "	      0054567c    push 0"
 "	      0054567e    push 0"
-"	      00545680    mov eax,[ebp-4]"
+"	      00545680    mov eax,twiceradius"
 "	      00545683    push eax"
-"	      00545684    mov eax,[ebp-10h]"
+"	      00545684    mov eax,pos.z"
 "	      00545687    push eax"
-"	      00545688    mov eax,[ebp-14h]"
+"	      00545688    mov eax,pos.y"
 "	      0054568b    push eax"
-"	      0054568c    mov eax,[ebp-18h]"
+"	      0054568c    mov eax,pos.x"
 "	      0054568f    push eax"
 "	      00545690    push 0"
 "	      00545692    call 00555369h"
@@ -1850,21 +1850,21 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 354:
 	asm( 
 "	      005456a7    jmp near ptr 005456ACh"
-"	      005456ac    mov eax,[ebp+8]"
+"	      005456ac    mov eax,cptr"
 "	      005456af    movsx eax,word ptr [eax]"
 "	      005456b2    and eax,1"
 "	      005456b5    movzx eax,ax"
 "	      005456b8    test eax,eax"
 "	      005456ba    je near ptr 00545720h"
-"	      005456c0    mov eax,[ebp+8]"
+"	      005456c0    mov eax,cptr"
 "	      005456c3    movsx eax,word ptr [eax+4]"
 "	      005456c7    add eax,0Ah"
 "	      005456ca    mov [ebp-114h],ax"
-"	      005456d1    mov eax,[ebp-10h]"
+"	      005456d1    mov eax,pos.z"
 "	      005456d4    push eax"
-"	      005456d5    mov eax,[ebp-14h]"
+"	      005456d5    mov eax,pos.y"
 "	      005456d8    push eax"
-"	      005456d9    mov eax,[ebp-18h]"
+"	      005456d9    mov eax,pos.x"
 "	      005456dc    push eax"
 "	      005456dd    call 00551BF7h"
 "	      005456e2    add esp,0Ch"
@@ -1885,7 +1885,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 356:
 	asm( 
-"	      00545725    mov word ptr [ebp-8],1"
+"	      00545725    mov ret,1"
 );
 // LINE 357:
 	asm( 
@@ -1913,19 +1913,19 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 363:
 	asm( 
-"	      00545756    movsx eax,word ptr [ebp-0Ch]"
+"	      00545756    movsx eax,halfwidth"
 "	      0054575a    test eax,eax"
 "	      0054575c    jne near ptr 0054577Ah"
-"	      00545762    mov eax,[ebp+10h]"
+"	      00545762    mov eax,offsetz"
 "	      00545765    mov dword ptr [eax],0"
-"	      0054576b    mov eax,[ebp+10h]"
+"	      0054576b    mov eax,offsetz"
 "	      0054576e    mov eax,[eax]"
-"	      00545770    mov ecx,[ebp+0Ch]"
+"	      00545770    mov ecx,offsetx"
 "	      00545773    mov [ecx],eax"
 "	      00545775    jmp near ptr 00545862h"
-"	      0054577a    movsx ebx,word ptr [ebp-0Ch]"
+"	      0054577a    movsx ebx,halfwidth"
 "	      0054577e    dec ebx"
-"	      0054577f    movsx eax,word ptr [ebp-0Ch]"
+"	      0054577f    movsx eax,halfwidth"
 "	      00545783    lea eax,[eax*2-2]"
 "	      0054578a    push eax"
 "	      0054578b    call 0055D717h"
@@ -1933,11 +1933,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545793    movzx eax,ax"
 "	      00545796    sub ebx,eax"
 "	      00545798    shl ebx,10h"
-"	      0054579b    mov eax,[ebp+0Ch]"
+"	      0054579b    mov eax,offsetx"
 "	      0054579e    mov [eax],ebx"
-"	      005457a0    movsx ebx,word ptr [ebp-0Ch]"
+"	      005457a0    movsx ebx,halfwidth"
 "	      005457a4    dec ebx"
-"	      005457a5    movsx eax,word ptr [ebp-0Ch]"
+"	      005457a5    movsx eax,halfwidth"
 "	      005457a9    lea eax,[eax*2-2]"
 "	      005457b0    push eax"
 "	      005457b1    call 0055D717h"
@@ -1945,13 +1945,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005457b9    movzx eax,ax"
 "	      005457bc    sub ebx,eax"
 "	      005457be    shl ebx,10h"
-"	      005457c1    mov eax,[ebp+10h]"
+"	      005457c1    mov eax,offsetz"
 "	      005457c4    mov [eax],ebx"
-"	      005457c6    mov eax,[ebp+0Ch]"
+"	      005457c6    mov eax,offsetx"
 "	      005457c9    mov eax,[eax]"
 "	      005457cb    sar eax,10h"
 "	      005457ce    mov [ebp-190h],ax"
-"	      005457d5    mov eax,[ebp+10h]"
+"	      005457d5    mov eax,offsetz"
 "	      005457d8    mov eax,[eax]"
 "	      005457da    sar eax,10h"
 "	      005457dd    mov [ebp-194h],ax"
@@ -1961,7 +1961,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005457f1    xor eax,edx"
 "	      005457f3    sub eax,edx"
 "	      005457f5    movsx eax,ax"
-"	      005457f8    movsx ecx,word ptr [ebp-0Ch]"
+"	      005457f8    movsx ecx,halfwidth"
 "	      005457fc    shl ecx,10h"
 "	      005457ff    cmp eax,ecx"
 "	      00545801    jl near ptr 00545823h"
@@ -1977,7 +1977,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545830    xor eax,edx"
 "	      00545832    sub eax,edx"
 "	      00545834    movsx eax,ax"
-"	      00545837    movsx ecx,word ptr [ebp-0Ch]"
+"	      00545837    movsx ecx,halfwidth"
 "	      0054583b    shl ecx,10h"
 "	      0054583e    cmp eax,ecx"
 "	      00545840    jl near ptr 00545862h"
@@ -1988,26 +1988,26 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054585a    call 00554F30h"
 "	      0054585f    add esp,10h"
 "	      00545862    jmp near ptr 00545867h"
-"	      00545867    mov eax,[ebp+10h]"
+"	      00545867    mov eax,offsetz"
 "	      0054586a    mov eax,[eax]"
 "	      0054586c    mov [ebp-150h],eax"
-"	      00545872    mov eax,[ebp+0Ch]"
+"	      00545872    mov eax,offsetx"
 "	      00545875    mov eax,[eax]"
 "	      00545877    mov [ebp-154h],eax"
 );
 // LINE 364:
 	asm( 
-"	      0054587d    mov eax,[ebp+8]"
+"	      0054587d    mov eax,cptr"
 "	      00545880    movsx eax,word ptr [eax+2]"
 "	      00545884    shl eax,10h"
 "	      00545887    add eax,[ebp-154h]"
 "	      0054588d    mov [ebp-14Ch],eax"
-"	      00545893    mov eax,[ebp+8]"
+"	      00545893    mov eax,cptr"
 "	      00545896    movsx eax,word ptr [eax+4]"
 "	      0054589a    shl eax,10h"
 "	      0054589d    add eax,30000h"
 "	      005458a2    mov [ebp-148h],eax"
-"	      005458a8    mov eax,[ebp+8]"
+"	      005458a8    mov eax,cptr"
 "	      005458ab    movsx eax,word ptr [eax+6]"
 "	      005458af    shl eax,10h"
 "	      005458b2    add eax,[ebp-150h]"
@@ -2030,7 +2030,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005458f5    mov eax,[eax+8]"
 "	      005458f8    mov [ecx+8],eax"
 "	      005458fb    lea eax,[ebp-0C4h]"
-"	      00545901    lea ecx,[ebp-18h]"
+"	      00545901    lea ecx,pos.x"
 "	      00545904    mov edx,[eax]"
 "	      00545906    mov [ecx],edx"
 "	      00545908    mov edx,[eax+4]"
@@ -2042,13 +2042,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	asm( 
 "	      00545914    push 0"
 "	      00545916    push 0"
-"	      00545918    mov eax,[ebp-4]"
+"	      00545918    mov eax,twiceradius"
 "	      0054591b    push eax"
-"	      0054591c    mov eax,[ebp-10h]"
+"	      0054591c    mov eax,pos.z"
 "	      0054591f    push eax"
-"	      00545920    mov eax,[ebp-14h]"
+"	      00545920    mov eax,pos.y"
 "	      00545923    push eax"
-"	      00545924    mov eax,[ebp-18h]"
+"	      00545924    mov eax,pos.x"
 "	      00545927    push eax"
 "	      00545928    push 0"
 "	      0054592a    call 00555369h"
@@ -2063,7 +2063,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 368:
 	asm( 
 "	      0054593f    jmp near ptr 00545944h"
-"	      00545944    mov eax,[ebp+8]"
+"	      00545944    mov eax,cptr"
 "	      00545947    movsx eax,word ptr [eax]"
 "	      0054594a    and eax,1"
 "	      0054594d    movzx eax,ax"
@@ -2076,7 +2076,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 370:
 	asm( 
-"	      0054595d    mov word ptr [ebp-8],1"
+"	      0054595d    mov ret,1"
 );
 // LINE 371:
 	asm( 
@@ -2133,42 +2133,42 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	int32_t centcelly;
 	short offscurk;
 	asm( 
-"	      005459ca    mov eax,[ebp+8]"
+"	      005459ca    mov eax,cptr"
 "	      005459cd    movsx eax,word ptr [eax+2]"
 "	      005459d1    shl eax,10h"
 "	      005459d4    add eax,20000000h"
 "	      005459d9    sar eax,16h"
-"	      005459dc    mov [ebp-38h],eax"
+"	      005459dc    mov centcellx,eax"
 );
 // LINE 381:
 	asm( 
 "	      005459df    mov eax,20000000h"
-"	      005459e4    mov ecx,[ebp+8]"
+"	      005459e4    mov ecx,cptr"
 "	      005459e7    movsx ecx,word ptr [ecx+6]"
 "	      005459eb    shl ecx,10h"
 "	      005459ee    sub eax,ecx"
 "	      005459f0    sar eax,16h"
-"	      005459f3    mov [ebp-2Ch],eax"
-"	      005459f6    mov eax,[ebp+10h]"
+"	      005459f3    mov centcelly,eax"
+"	      005459f6    mov eax,offsetz"
 "	      005459f9    mov eax,[eax]"
 "	      005459fb    mov [ebp-164h],eax"
-"	      00545a01    mov eax,[ebp+0Ch]"
+"	      00545a01    mov eax,offsetx"
 "	      00545a04    mov eax,[eax]"
 "	      00545a06    mov [ebp-168h],eax"
 );
 // LINE 382:
 	asm( 
-"	      00545a0c    mov eax,[ebp+8]"
+"	      00545a0c    mov eax,cptr"
 "	      00545a0f    movsx eax,word ptr [eax+2]"
 "	      00545a13    shl eax,10h"
 "	      00545a16    add eax,[ebp-168h]"
 "	      00545a1c    mov [ebp-160h],eax"
-"	      00545a22    mov eax,[ebp+8]"
+"	      00545a22    mov eax,cptr"
 "	      00545a25    movsx eax,word ptr [eax+4]"
 "	      00545a29    shl eax,10h"
 "	      00545a2c    add eax,30000h"
 "	      00545a31    mov [ebp-15Ch],eax"
-"	      00545a37    mov eax,[ebp+8]"
+"	      00545a37    mov eax,cptr"
 "	      00545a3a    movsx eax,word ptr [eax+6]"
 "	      00545a3e    shl eax,10h"
 "	      00545a41    add eax,[ebp-164h]"
@@ -2191,7 +2191,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545a84    mov eax,[eax+8]"
 "	      00545a87    mov [ecx+8],eax"
 "	      00545a8a    lea eax,[ebp-0D0h]"
-"	      00545a90    lea ecx,[ebp-50h]"
+"	      00545a90    lea ecx,pos.x"
 "	      00545a93    mov edx,[eax]"
 "	      00545a95    mov [ecx],edx"
 "	      00545a97    mov edx,[eax+4]"
@@ -2201,17 +2201,17 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 383:
 	asm( 
-"	      00545aa3    mov eax,[ebp-50h]"
+"	      00545aa3    mov eax,pos.x"
 "	      00545aa6    add eax,20000000h"
 "	      00545aab    sar eax,16h"
-"	      00545aae    mov [ebp-30h],eax"
+"	      00545aae    mov offcellx,eax"
 );
 // LINE 384:
 	asm( 
 "	      00545ab1    mov eax,20000000h"
-"	      00545ab6    sub eax,[ebp-48h]"
+"	      00545ab6    sub eax,pos.z"
 "	      00545ab9    sar eax,16h"
-"	      00545abc    mov [ebp-34h],eax"
+"	      00545abc    mov offcelly,eax"
 );
 // LINE 386:
 	asm( 
@@ -2227,7 +2227,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545ae5    movsx eax,word ptr [ebp-2Ch]"
 "	      00545ae9    test eax,eax"
 "	      00545aeb    jge near ptr 00545AFCh"
-"	      00545af1    mov word ptr [ebp-44h],0FFFFh"
+"	      00545af1    mov centerscurk,0FFFFh"
 "	      00545af7    jmp near ptr 00545B64h"
 "	      00545afc    movsx eax,word ptr [ebp-38h]"
 "	      00545b00    mov eax,[eax*4+639850h]"
@@ -2247,7 +2247,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545b4c    call 00554F30h"
 "	      00545b51    add esp,10h"
 "	      00545b54    mov ax,[ebp-16Ch]"
-"	      00545b5b    mov [ebp-44h],ax"
+"	      00545b5b    mov centerscurk,ax"
 "	      00545b5f    jmp near ptr 00545B64h"
 );
 // LINE 387:
@@ -2264,7 +2264,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545b8a    movsx eax,word ptr [ebp-34h]"
 "	      00545b8e    test eax,eax"
 "	      00545b90    jge near ptr 00545BA1h"
-"	      00545b96    mov word ptr [ebp-28h],0FFFFh"
+"	      00545b96    mov offscurk,0FFFFh"
 "	      00545b9c    jmp near ptr 00545C09h"
 "	      00545ba1    movsx eax,word ptr [ebp-30h]"
 "	      00545ba5    mov eax,[eax*4+639850h]"
@@ -2284,13 +2284,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545bf1    call 00554F30h"
 "	      00545bf6    add esp,10h"
 "	      00545bf9    mov ax,[ebp-170h]"
-"	      00545c00    mov [ebp-28h],ax"
+"	      00545c00    mov offscurk,ax"
 "	      00545c04    jmp near ptr 00545C09h"
 );
 // LINE 388:
 	asm( 
-"	      00545c09    movsx eax,word ptr [ebp-28h]"
-"	      00545c0d    movsx ecx,word ptr [ebp-44h]"
+"	      00545c09    movsx eax,offscurk"
+"	      00545c0d    movsx ecx,centerscurk"
 "	      00545c11    cmp eax,ecx"
 "	      00545c13    je near ptr 00545C65h"
 );
@@ -2298,20 +2298,20 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // Block start:
 	char[80] str;
 	asm( 
-"	      00545c19    mov eax,[ebp-34h]"
+"	      00545c19    mov eax,offcelly"
 "	      00545c1c    push eax"
-"	      00545c1d    mov eax,[ebp-30h]"
+"	      00545c1d    mov eax,offcellx"
 "	      00545c20    push eax"
-"	      00545c21    movsx eax,word ptr [ebp-28h]"
+"	      00545c21    movsx eax,offscurk"
 "	      00545c25    push eax"
-"	      00545c26    mov eax,[ebp-2Ch]"
+"	      00545c26    mov eax,centcelly"
 "	      00545c29    push eax"
-"	      00545c2a    mov eax,[ebp-38h]"
+"	      00545c2a    mov eax,centcellx"
 "	      00545c2d    push eax"
-"	      00545c2e    movsx eax,word ptr [ebp-44h]"
+"	      00545c2e    movsx eax,centerscurk"
 "	      00545c32    push eax"
 "	      00545c33    push 5B8964h"
-"	      00545c38    lea eax,[ebp-0A0h]"
+"	      00545c38    lea eax,str[0]"
 "	      00545c3e    push eax"
 "	      00545c3f    call 0056CD30h"
 "	      00545c44    add esp,20h"
@@ -2319,7 +2319,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 392:
 	asm( 
 "	      00545c47    push 8C085h"
-"	      00545c4c    lea eax,[ebp-0A0h]"
+"	      00545c4c    lea eax,str[0]"
 "	      00545c52    push eax"
 "	      00545c53    push 188h"
 "	      00545c58    push 5B89A8h"
@@ -2329,28 +2329,28 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 395:
 // Block end:
 	asm( 
-"	      00545c65    mov eax,[ebp-2Ch]"
+"	      00545c65    mov eax,centcelly"
 "	      00545c68    push eax"
-"	      00545c69    mov eax,[ebp-38h]"
+"	      00545c69    mov eax,centcellx"
 "	      00545c6c    push eax"
 "	      00545c6d    call 00555746h"
 "	      00545c72    add esp,8"
-"	      00545c75    mov [ebp-40h],eax"
+"	      00545c75    mov cellcenterloctype,eax"
 );
 // LINE 396:
 	asm( 
-"	      00545c78    mov eax,[ebp-34h]"
+"	      00545c78    mov eax,offcelly"
 "	      00545c7b    push eax"
-"	      00545c7c    mov eax,[ebp-30h]"
+"	      00545c7c    mov eax,offcellx"
 "	      00545c7f    push eax"
 "	      00545c80    call 00555746h"
 "	      00545c85    add esp,8"
-"	      00545c88    mov [ebp-3Ch],eax"
+"	      00545c88    mov celloffsetloctype,eax"
 );
 // LINE 397:
 	asm( 
-"	      00545c8b    mov eax,[ebp-40h]"
-"	      00545c8e    cmp [ebp-3Ch],eax"
+"	      00545c8b    mov eax,cellcenterloctype"
+"	      00545c8e    cmp celloffsetloctype,eax"
 "	      00545c91    je near ptr 00545CB3h"
 "	      00545c97    push 8C085h"
 "	      00545c9c    push 5B89CCh"
@@ -2362,7 +2362,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 400:
 // Block end:
 	asm( 
-"	      00545cb3    mov ax,[ebp-8]"
+"	      00545cb3    mov ax,ret"
 "	      00545cb7    jmp near ptr 00545CBCh"
 );
 // LINE 401:
@@ -2411,19 +2411,19 @@ void S3PersonInit() {
 );
 // LINE 406:
 	asm( 
-"	      00545cdc    mov dword ptr [ebp-18h],0"
+"	      00545cdc    mov success,0"
 );
 // LINE 409:
 	asm( 
-"	      00545ce3    mov dword ptr [ebp-14h],0"
+"	      00545ce3    mov i,0"
 "	      00545cea    jmp near ptr 00545CF2h"
-"	      00545cef    inc dword ptr [ebp-14h]"
-"	      00545cf2    cmp dword ptr [ebp-14h],271h"
+"	      00545cef    inc i"
+"	      00545cf2    cmp i,271h"
 "	      00545cf9    jge near ptr 00545D30h"
 );
 // LINE 410:
 	asm( 
-"	      00545cff    mov eax,[ebp-14h]"
+"	      00545cff    mov eax,i"
 "	      00545d02    mov [ebp-1Ch],eax"
 "	      00545d05    fild dword ptr [ebp-1Ch]"
 "	      00545d08    sub esp,8"
@@ -2432,7 +2432,7 @@ void S3PersonInit() {
 "	      00545d13    add esp,8"
 "	      00545d16    fadd qword ptr ds:[593528h]"
 "	      00545d1c    call 0056EBE8h"
-"	      00545d21    mov ecx,[ebp-14h]"
+"	      00545d21    mov ecx,i"
 "	      00545d24    mov [ecx*4+6361C8h],eax"
 "	      00545d2b    jmp near ptr 00545CEFh"
 );
@@ -2453,8 +2453,8 @@ void S3PersonInit() {
 );
 // LINE 419:
 	asm( 
-"	      00545d56    fld qword ptr [ebp-8]"
-"	      00545d59    fdiv qword ptr [ebp-10h]"
+"	      00545d56    fld x"
+"	      00545d59    fdiv y"
 "	      00545d5c    sub esp,8"
 "	      00545d5f    fstp qword ptr [esp]"
 "	      00545d62    call 00545CC3h"
@@ -2566,10 +2566,10 @@ void S3PersonReset() {
 );
 // LINE 446:
 	asm( 
-"	      00545dc7    mov word ptr [ebp-4],0"
+"	      00545dc7    mov count,0"
 "	      00545dcd    jmp near ptr 00545DD6h"
-"	      00545dd2    inc word ptr [ebp-4]"
-"	      00545dd6    movsx eax,word ptr [ebp-4]"
+"	      00545dd2    inc count"
+"	      00545dd6    movsx eax,count"
 "	      00545dda    cmp eax,64h"
 "	      00545ddd    jge near ptr 00545EB1h"
 );
@@ -2577,16 +2577,16 @@ void S3PersonReset() {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      00545de3    movsx eax,word ptr [ebp-4]"
+"	      00545de3    movsx eax,count"
 "	      00545de7    cmp eax,7D00h"
 "	      00545dec    jne near ptr 00545DFFh"
 "	      00545df2    mov eax,ds:[5B8680h]"
-"	      00545df7    mov [ebp-8],eax"
+"	      00545df7    mov obj,eax"
 "	      00545dfa    jmp near ptr 00545E7Bh"
-"	      00545dff    movsx eax,word ptr [ebp-4]"
+"	      00545dff    movsx eax,count"
 "	      00545e03    test eax,eax"
 "	      00545e05    jl near ptr 00545E18h"
-"	      00545e0b    movsx eax,word ptr [ebp-4]"
+"	      00545e0b    movsx eax,count"
 "	      00545e0f    cmp eax,64h"
 "	      00545e12    jl near ptr 00545E34h"
 "	      00545e18    push 8C085h"
@@ -2595,7 +2595,7 @@ void S3PersonReset() {
 "	      00545e27    push 5BBA14h"
 "	      00545e2c    call 00554F30h"
 "	      00545e31    add esp,10h"
-"	      00545e34    movsx eax,word ptr [ebp-4]"
+"	      00545e34    movsx eax,count"
 "	      00545e38    cmp dword ptr [eax*4+636D40h],0"
 "	      00545e40    jne near ptr 00545E62h"
 "	      00545e46    push 8C085h"
@@ -2604,16 +2604,16 @@ void S3PersonReset() {
 "	      00545e55    push 5BBA14h"
 "	      00545e5a    call 00554F30h"
 "	      00545e5f    add esp,10h"
-"	      00545e62    movsx eax,word ptr [ebp-4]"
+"	      00545e62    movsx eax,count"
 "	      00545e66    mov eax,[eax*4+636D40h]"
-"	      00545e6d    mov [ebp-8],eax"
+"	      00545e6d    mov obj,eax"
 "	      00545e70    jmp near ptr 00545E7Bh"
 "	      00545e75    mov eax,[ebp-0Ch]"
-"	      00545e78    mov [ebp-8],eax"
+"	      00545e78    mov obj,eax"
 );
 // LINE 448:
 	asm( 
-"	      00545e7b    cmp dword ptr [ebp-8],0"
+"	      00545e7b    cmp obj,0"
 "	      00545e7f    jne near ptr 00545EA1h"
 "	      00545e85    push 8C085h"
 "	      00545e8a    push 5B8A2Ch"
@@ -2624,9 +2624,9 @@ void S3PersonReset() {
 );
 // LINE 449:
 	asm( 
-"	      00545ea1    mov eax,[ebp-8]"
+"	      00545ea1    mov eax,obj"
 "	      00545ea4    mov eax,[eax]"
-"	      00545ea6    mov ecx,[ebp-8]"
+"	      00545ea6    mov ecx,obj"
 "	      00545ea9    call dword ptr [eax+18h]"
 );
 // LINE 450:
@@ -2665,13 +2665,13 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 );
 // LINE 456:
 	asm( 
-"	      00545ed4    mov eax,[ebp+14h]"
+"	      00545ed4    mov eax,dz"
 "	      00545ed7    push eax"
-"	      00545ed8    mov eax,[ebp+10h]"
+"	      00545ed8    mov eax,dx"
 "	      00545edb    push eax"
-"	      00545edc    mov eax,[ebp+0Ch]"
+"	      00545edc    mov eax,y"
 "	      00545edf    push eax"
-"	      00545ee0    mov eax,[ebp+8]"
+"	      00545ee0    mov eax,x"
 "	      00545ee3    push eax"
 "	      00545ee4    mov ecx,ds:[5B8680h]"
 "	      00545eea    call 0054FD4Dh"
@@ -2889,7 +2889,7 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 	asm( 
 "	      005461cd    push 0FFh"
 "	      005461d2    push 0FFh"
-"	      005461d7    mov eax,[ebp+8]"
+"	      005461d7    mov eax,loc"
 "	      005461da    mov ecx,[eax+8]"
 "	      005461dd    push ecx"
 "	      005461de    mov ecx,[eax+4]"
@@ -2990,14 +2990,14 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 );
 // LINE 478:
 	asm( 
-"	      0054630a    cmp dword ptr [ebp+0Ch],0"
+"	      0054630a    cmp facingvector,0"
 "	      0054630e    je near ptr 00546342h"
 );
 // LINE 479:
 // Block start:
 	struct cYObject::MoveInfo moveinfo;
 	asm( 
-"	      00546314    mov eax,[ebp+0Ch]"
+"	      00546314    mov eax,facingvector"
 "	      00546317    mov ecx,ds:[5B8680h]"
 "	      0054631d    add ecx,168h"
 "	      00546323    mov edx,[eax]"
@@ -3009,7 +3009,7 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 );
 // LINE 481:
 	asm( 
-"	      00546333    lea eax,[ebp-10h]"
+"	      00546333    lea eax,moveinfo.locType"
 "	      00546336    push eax"
 "	      00546337    mov ecx,ds:[5B8680h]"
 "	      0054633d    call 0054DCDEh"
@@ -3051,7 +3051,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 "	      0054636c    mov eax,[ebp-28h]"
 "	      0054636f    movsx eax,word ptr [eax+2]"
 "	      00546373    shl eax,10h"
-"	      00546376    add eax,[ebp+10h]"
+"	      00546376    add eax,dx"
 "	      00546379    mov [ebp-4Ch],eax"
 "	      0054637c    mov eax,[ebp-28h]"
 "	      0054637f    movsx eax,word ptr [eax+4]"
@@ -3061,7 +3061,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 "	      0054638e    mov eax,[ebp-28h]"
 "	      00546391    movsx eax,word ptr [eax+6]"
 "	      00546395    shl eax,10h"
-"	      00546398    add eax,[ebp+14h]"
+"	      00546398    add eax,dz"
 "	      0054639b    mov [ebp-44h],eax"
 "	      0054639e    lea eax,[ebp-4Ch]"
 "	      005463a1    lea ecx,[ebp-40h]"
@@ -3098,7 +3098,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 "	      005463fa    mov eax,[eax+8]"
 "	      005463fd    mov [ecx+8],eax"
 "	      00546400    lea eax,[ebp-18h]"
-"	      00546403    lea ecx,[ebp-0Ch]"
+"	      00546403    lea ecx,loc.x"
 "	      00546406    mov edx,[eax]"
 "	      00546408    mov [ecx],edx"
 "	      0054640a    mov edx,[eax+4]"
@@ -3109,7 +3109,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 // LINE 492:
 	asm( 
 "	      00546416    push 0"
-"	      00546418    lea eax,[ebp-0Ch]"
+"	      00546418    lea eax,loc.x"
 "	      0054641b    push eax"
 "	      0054641c    call 0054617Ch"
 "	      00546421    add esp,8"
@@ -3141,21 +3141,21 @@ int32_t IsThisABadGuy(struct _DYOBJ_INST* guy) {
 );
 // LINE 497:
 	asm( 
-"	      00546437    mov eax,[ebp+8]"
+"	      00546437    mov eax,guy"
 "	      0054643a    push eax"
 "	      0054643b    call 00544874h"
 "	      00546440    add esp,4"
-"	      00546443    mov [ebp-4],eax"
+"	      00546443    mov obj,eax"
 );
 // LINE 498:
 	asm( 
-"	      00546446    mov eax,[ebp-4]"
+"	      00546446    mov eax,obj"
 "	      00546449    movsx eax,word ptr [eax+0DAh]"
-"	      00546450    mov [ebp-8],eax"
+"	      00546450    mov mt,eax"
 );
 // LINE 499:
 	asm( 
-"	      00546453    cmp dword ptr [ebp-8],0"
+"	      00546453    cmp mt,0"
 "	      00546457    jne near ptr 0054646Ch"
 );
 // LINE 500:
@@ -3349,19 +3349,19 @@ void S3DrawPerson(struct VRBlit* blit) {
 );
 // LINE 532:
 	asm( 
-"	      00546592    mov eax,[ebp+8]"
+"	      00546592    mov eax,blit"
 "	      00546595    mov eax,[eax+0Ch]"
-"	      00546598    mov [ebp-4],ax"
+"	      00546598    mov id,ax"
 );
 // LINE 533:
 	asm( 
-"	      0054659c    movsx eax,word ptr [ebp-4]"
+"	      0054659c    movsx eax,id"
 "	      005465a0    cmp eax,7D00h"
 "	      005465a5    jne near ptr 005465BFh"
 );
 // LINE 534:
 	asm( 
-"	      005465ab    mov eax,[ebp+8]"
+"	      005465ab    mov eax,blit"
 "	      005465ae    push eax"
 "	      005465af    mov ecx,ds:[5B8680h]"
 "	      005465b5    call 00551388h"
@@ -3374,16 +3374,16 @@ void S3DrawPerson(struct VRBlit* blit) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      005465bf    movsx eax,word ptr [ebp-4]"
+"	      005465bf    movsx eax,id"
 "	      005465c3    cmp eax,7D00h"
 "	      005465c8    jne near ptr 005465DBh"
 "	      005465ce    mov eax,ds:[5B8680h]"
-"	      005465d3    mov [ebp-8],eax"
+"	      005465d3    mov obj,eax"
 "	      005465d6    jmp near ptr 00546657h"
-"	      005465db    movsx eax,word ptr [ebp-4]"
+"	      005465db    movsx eax,id"
 "	      005465df    test eax,eax"
 "	      005465e1    jl near ptr 005465F4h"
-"	      005465e7    movsx eax,word ptr [ebp-4]"
+"	      005465e7    movsx eax,id"
 "	      005465eb    cmp eax,64h"
 "	      005465ee    jl near ptr 00546610h"
 "	      005465f4    push 8C085h"
@@ -3392,7 +3392,7 @@ void S3DrawPerson(struct VRBlit* blit) {
 "	      00546603    push 5BBA14h"
 "	      00546608    call 00554F30h"
 "	      0054660d    add esp,10h"
-"	      00546610    movsx eax,word ptr [ebp-4]"
+"	      00546610    movsx eax,id"
 "	      00546614    cmp dword ptr [eax*4+636D40h],0"
 "	      0054661c    jne near ptr 0054663Eh"
 "	      00546622    push 8C085h"
@@ -3401,16 +3401,16 @@ void S3DrawPerson(struct VRBlit* blit) {
 "	      00546631    push 5BBA14h"
 "	      00546636    call 00554F30h"
 "	      0054663b    add esp,10h"
-"	      0054663e    movsx eax,word ptr [ebp-4]"
+"	      0054663e    movsx eax,id"
 "	      00546642    mov eax,[eax*4+636D40h]"
-"	      00546649    mov [ebp-8],eax"
+"	      00546649    mov obj,eax"
 "	      0054664c    jmp near ptr 00546657h"
 "	      00546651    mov eax,[ebp-0Ch]"
-"	      00546654    mov [ebp-8],eax"
+"	      00546654    mov obj,eax"
 );
 // LINE 538:
 	asm( 
-"	      00546657    cmp dword ptr [ebp-8],0"
+"	      00546657    cmp obj,0"
 "	      0054665b    jne near ptr 0054667Dh"
 "	      00546661    push 8C085h"
 "	      00546666    push 5B8C18h"
@@ -3421,9 +3421,9 @@ void S3DrawPerson(struct VRBlit* blit) {
 );
 // LINE 539:
 	asm( 
-"	      0054667d    mov eax,[ebp-8]"
+"	      0054667d    mov eax,obj"
 "	      00546680    movsx eax,word ptr [eax+0BCh]"
-"	      00546687    movsx ecx,word ptr [ebp-4]"
+"	      00546687    movsx ecx,id"
 "	      0054668b    cmp eax,ecx"
 "	      0054668d    je near ptr 005466AFh"
 "	      00546693    push 8C085h"
@@ -3435,9 +3435,9 @@ void S3DrawPerson(struct VRBlit* blit) {
 );
 // LINE 540:
 	asm( 
-"	      005466af    mov eax,[ebp+8]"
+"	      005466af    mov eax,blit"
 "	      005466b2    push eax"
-"	      005466b3    mov ecx,[ebp-8]"
+"	      005466b3    mov ecx,obj"
 "	      005466b6    call 00551388h"
 );
 // LINE 543:
@@ -3469,15 +3469,15 @@ void cAvatar::GetControlInput() {
 "	      005466cb    push ebx"
 "	      005466cc    push esi"
 "	      005466cd    push edi"
-"	      005466ce    mov [ebp-2Ch],ecx"
+"	      005466ce    mov this,ecx"
 );
 // LINE 555:
 	asm( 
-"	      005466d1    mov dword ptr [ebp-8],140000h"
+"	      005466d1    mov fwdrate,140000h"
 );
 // LINE 556:
 	asm( 
-"	      005466d8    mov dword ptr [ebp-18h],0A0000h"
+"	      005466d8    mov fwdmult,0A0000h"
 );
 // LINE 559:
 	asm( 
@@ -3491,7 +3491,7 @@ void cAvatar::GetControlInput() {
 );
 // LINE 560:
 	asm( 
-"	      005466fe    mov eax,[ebp-2Ch]"
+"	      005466fe    mov eax,this"
 "	      00546701    movsx eax,word ptr [eax+0D6h]"
 "	      00546708    cmp eax,0Bh"
 "	      0054670b    je near ptr 00546792h"
@@ -3499,22 +3499,22 @@ void cAvatar::GetControlInput() {
 // LINE 561:
 	asm( 
 "	      00546711    push 0Bh"
-"	      00546713    mov ecx,[ebp-2Ch]"
+"	      00546713    mov ecx,this"
 "	      00546716    call 0054FFB7h"
 );
 // LINE 562:
 	asm( 
-"	      0054671b    mov eax,[ebp-2Ch]"
+"	      0054671b    mov eax,this"
 "	      0054671e    mov word ptr [eax+104h],0FFFFh"
-"	      00546727    mov eax,[ebp-2Ch]"
+"	      00546727    mov eax,this"
 "	      0054672a    movsx eax,word ptr [eax+102h]"
 "	      00546731    cmp eax,0FFFFFFFFh"
 "	      00546734    je near ptr 0054678Dh"
-"	      0054673a    mov eax,[ebp-2Ch]"
+"	      0054673a    mov eax,this"
 "	      0054673d    movsx eax,word ptr [eax+102h]"
 "	      00546744    cmp eax,0FFFFFFFFh"
 "	      00546747    je near ptr 00546768h"
-"	      0054674d    mov eax,[ebp-2Ch]"
+"	      0054674d    mov eax,this"
 "	      00546750    movsx eax,word ptr [eax+102h]"
 "	      00546757    add eax,62h"
 "	      0054675a    mov [ebp-1Ch],ax"
@@ -3534,11 +3534,11 @@ void cAvatar::GetControlInput() {
 // LINE 567:
 	asm( 
 "	      00546792    push 140000h"
-"	      00546797    mov eax,[ebp-8]"
+"	      00546797    mov eax,fwdrate"
 "	      0054679a    push eax"
 "	      0054679b    call 004D19BDh"
 "	      005467a0    add esp,8"
-"	      005467a3    mov [ebp-8],eax"
+"	      005467a3    mov fwdrate,eax"
 );
 // LINE 568:
 	asm( 
@@ -3547,16 +3547,16 @@ void cAvatar::GetControlInput() {
 "	      005467b0    call 004D19DFh"
 "	      005467b5    add esp,8"
 "	      005467b8    push eax"
-"	      005467b9    mov eax,[ebp-18h]"
+"	      005467b9    mov eax,fwdmult"
 "	      005467bc    push eax"
 "	      005467bd    call 004D19BDh"
 "	      005467c2    add esp,8"
-"	      005467c5    mov [ebp-18h],eax"
+"	      005467c5    mov fwdmult,eax"
 );
 // LINE 571:
 	asm( 
 "	      005467c8    jmp near ptr 00546861h"
-"	      005467cd    mov eax,[ebp-2Ch]"
+"	      005467cd    mov eax,this"
 "	      005467d0    movsx eax,word ptr [eax+0D6h]"
 "	      005467d7    cmp eax,1"
 "	      005467da    je near ptr 00546861h"
@@ -3564,22 +3564,22 @@ void cAvatar::GetControlInput() {
 // LINE 572:
 	asm( 
 "	      005467e0    push 1"
-"	      005467e2    mov ecx,[ebp-2Ch]"
+"	      005467e2    mov ecx,this"
 "	      005467e5    call 0054FFB7h"
 );
 // LINE 573:
 	asm( 
-"	      005467ea    mov eax,[ebp-2Ch]"
+"	      005467ea    mov eax,this"
 "	      005467ed    mov word ptr [eax+104h],0FFFFh"
-"	      005467f6    mov eax,[ebp-2Ch]"
+"	      005467f6    mov eax,this"
 "	      005467f9    movsx eax,word ptr [eax+102h]"
 "	      00546800    cmp eax,0FFFFFFFFh"
 "	      00546803    je near ptr 0054685Ch"
-"	      00546809    mov eax,[ebp-2Ch]"
+"	      00546809    mov eax,this"
 "	      0054680c    movsx eax,word ptr [eax+102h]"
 "	      00546813    cmp eax,0FFFFFFFFh"
 "	      00546816    je near ptr 00546837h"
-"	      0054681c    mov eax,[ebp-2Ch]"
+"	      0054681c    mov eax,this"
 "	      0054681f    movsx eax,word ptr [eax+102h]"
 "	      00546826    add eax,62h"
 "	      00546829    mov [ebp-24h],ax"
@@ -3598,11 +3598,11 @@ void cAvatar::GetControlInput() {
 );
 // LINE 575:
 	asm( 
-"	      00546861    mov dword ptr [ebp-10h],640000h"
+"	      00546861    mov rotateRate,640000h"
 );
 // LINE 576:
 	asm( 
-"	      00546868    mov dword ptr [ebp-4],320000h"
+"	      00546868    mov rotateMult,320000h"
 );
 // LINE 580:
 	asm( 
@@ -3614,13 +3614,13 @@ void cAvatar::GetControlInput() {
 );
 // LINE 581:
 	asm( 
-"	      00546881    mov eax,[ebp-18h]"
+"	      00546881    mov eax,fwdmult"
 "	      00546884    push eax"
 "	      00546885    mov eax,ds:[5B4768h]"
 "	      0054688a    push eax"
 "	      0054688b    call 004D19BDh"
 "	      00546890    add esp,8"
-"	      00546893    mov ecx,[ebp-2Ch]"
+"	      00546893    mov ecx,this"
 "	      00546896    add [ecx+174h],eax"
 );
 // LINE 582:
@@ -3635,7 +3635,7 @@ void cAvatar::GetControlInput() {
 // LINE 583:
 	asm( 
 "	      005468b3    xor ebx,ebx"
-"	      005468b5    mov eax,[ebp-18h]"
+"	      005468b5    mov eax,fwdmult"
 "	      005468b8    push eax"
 "	      005468b9    mov eax,ds:[5B4768h]"
 "	      005468be    push eax"
@@ -3643,7 +3643,7 @@ void cAvatar::GetControlInput() {
 "	      005468c4    add esp,8"
 "	      005468c7    sub ebx,eax"
 "	      005468c9    neg ebx"
-"	      005468cb    mov eax,[ebp-2Ch]"
+"	      005468cb    mov eax,this"
 "	      005468ce    sub [eax+174h],ebx"
 );
 // LINE 584:
@@ -3653,44 +3653,44 @@ void cAvatar::GetControlInput() {
 "	      005468db    push 9"
 "	      005468dd    call 00431BFBh"
 "	      005468e2    add esp,8"
-"	      005468e5    mov [ebp-14h],eax"
-"	      005468e8    cmp dword ptr [ebp-14h],0"
+"	      005468e5    mov joystickValue,eax"
+"	      005468e8    cmp joystickValue,0"
 "	      005468ec    je near ptr 00546943h"
 );
 // LINE 586:
 	asm( 
 "	      005468f2    push 30000h"
-"	      005468f7    mov eax,[ebp-14h]"
+"	      005468f7    mov eax,joystickValue"
 "	      005468fa    shl eax,10h"
 "	      005468fd    neg eax"
 "	      005468ff    push eax"
 "	      00546900    call 004D19BDh"
 "	      00546905    add esp,8"
-"	      00546908    mov [ebp-0Ch],eax"
+"	      00546908    mov tempfix,eax"
 );
 // LINE 587:
 	asm( 
 "	      0054690b    xor eax,eax"
-"	      0054690d    mov ecx,[ebp-2Ch]"
+"	      0054690d    mov ecx,this"
 "	      00546910    sub eax,[ecx+174h]"
 "	      00546916    neg eax"
-"	      00546918    sub [ebp-0Ch],eax"
+"	      00546918    sub tempfix,eax"
 );
 // LINE 588:
 	asm( 
 "	      0054691b    mov eax,ds:[5B4768h]"
 "	      00546920    add eax,eax"
 "	      00546922    push eax"
-"	      00546923    mov eax,[ebp-0Ch]"
+"	      00546923    mov eax,tempfix"
 "	      00546926    push eax"
 "	      00546927    call 004D19BDh"
 "	      0054692c    add esp,8"
-"	      0054692f    mov [ebp-0Ch],eax"
+"	      0054692f    mov tempfix,eax"
 );
 // LINE 589:
 	asm( 
-"	      00546932    mov eax,[ebp-0Ch]"
-"	      00546935    mov ecx,[ebp-2Ch]"
+"	      00546932    mov eax,tempfix"
+"	      00546935    mov ecx,this"
 "	      00546938    add [ecx+174h],eax"
 );
 // LINE 591:
@@ -3704,45 +3704,45 @@ void cAvatar::GetControlInput() {
 "	      0054694e    shl ecx,2"
 "	      00546951    sub eax,ecx"
 "	      00546953    push eax"
-"	      00546954    mov eax,[ebp-2Ch]"
+"	      00546954    mov eax,this"
 "	      00546957    mov eax,[eax+174h]"
 "	      0054695d    push eax"
 "	      0054695e    call 004D19BDh"
 "	      00546963    add esp,8"
-"	      00546966    mov ecx,[ebp-2Ch]"
+"	      00546966    mov ecx,this"
 "	      00546969    mov [ecx+174h],eax"
 );
 // LINE 596:
 	asm( 
-"	      0054696f    mov eax,[ebp-2Ch]"
-"	      00546972    mov ecx,[ebp-8]"
+"	      0054696f    mov eax,this"
+"	      00546972    mov ecx,fwdrate"
 "	      00546975    cmp [eax+174h],ecx"
 "	      0054697b    jle near ptr 0054698Dh"
 );
 // LINE 597:
 	asm( 
-"	      00546981    mov eax,[ebp-8]"
-"	      00546984    mov ecx,[ebp-2Ch]"
+"	      00546981    mov eax,fwdrate"
+"	      00546984    mov ecx,this"
 "	      00546987    mov [ecx+174h],eax"
 );
 // LINE 598:
 	asm( 
-"	      0054698d    mov eax,[ebp-2Ch]"
-"	      00546990    mov ecx,[ebp-8]"
+"	      0054698d    mov eax,this"
+"	      00546990    mov ecx,fwdrate"
 "	      00546993    neg ecx"
 "	      00546995    cmp [eax+174h],ecx"
 "	      0054699b    jge near ptr 005469AFh"
 );
 // LINE 599:
 	asm( 
-"	      005469a1    mov eax,[ebp-8]"
+"	      005469a1    mov eax,fwdrate"
 "	      005469a4    neg eax"
-"	      005469a6    mov ecx,[ebp-2Ch]"
+"	      005469a6    mov ecx,this"
 "	      005469a9    mov [ecx+174h],eax"
 );
 // LINE 601:
 	asm( 
-"	      005469af    mov eax,[ebp-2Ch]"
+"	      005469af    mov eax,this"
 "	      005469b2    mov eax,[eax+174h]"
 "	      005469b8    push eax"
 "	      005469b9    call 00544760h"
@@ -3758,13 +3758,13 @@ void cAvatar::GetControlInput() {
 );
 // LINE 605:
 	asm( 
-"	      005469d3    mov eax,[ebp-4]"
+"	      005469d3    mov eax,rotateMult"
 "	      005469d6    push eax"
 "	      005469d7    mov eax,ds:[5B4768h]"
 "	      005469dc    push eax"
 "	      005469dd    call 004D19BDh"
 "	      005469e2    add esp,8"
-"	      005469e5    mov ecx,[ebp-2Ch]"
+"	      005469e5    mov ecx,this"
 "	      005469e8    add [ecx+178h],eax"
 );
 // LINE 606:
@@ -3779,7 +3779,7 @@ void cAvatar::GetControlInput() {
 // LINE 607:
 	asm( 
 "	      00546a05    xor ebx,ebx"
-"	      00546a07    mov eax,[ebp-4]"
+"	      00546a07    mov eax,rotateMult"
 "	      00546a0a    push eax"
 "	      00546a0b    mov eax,ds:[5B4768h]"
 "	      00546a10    push eax"
@@ -3787,7 +3787,7 @@ void cAvatar::GetControlInput() {
 "	      00546a16    add esp,8"
 "	      00546a19    sub ebx,eax"
 "	      00546a1b    neg ebx"
-"	      00546a1d    mov eax,[ebp-2Ch]"
+"	      00546a1d    mov eax,this"
 "	      00546a20    sub [eax+178h],ebx"
 );
 // LINE 608:
@@ -3797,15 +3797,15 @@ void cAvatar::GetControlInput() {
 "	      00546a2d    push 7"
 "	      00546a2f    call 00431BFBh"
 "	      00546a34    add esp,8"
-"	      00546a37    mov [ebp-14h],eax"
-"	      00546a3a    cmp dword ptr [ebp-14h],0"
+"	      00546a37    mov joystickValue,eax"
+"	      00546a3a    cmp joystickValue,0"
 "	      00546a3e    je near ptr 00546A58h"
 );
 // LINE 609:
 	asm( 
-"	      00546a44    mov eax,[ebp-14h]"
+"	      00546a44    mov eax,joystickValue"
 "	      00546a47    shl eax,10h"
-"	      00546a4a    mov ecx,[ebp-2Ch]"
+"	      00546a4a    mov ecx,this"
 "	      00546a4d    mov [ecx+178h],eax"
 );
 // LINE 610:
@@ -3819,40 +3819,40 @@ void cAvatar::GetControlInput() {
 "	      00546a63    shl ecx,2"
 "	      00546a66    sub eax,ecx"
 "	      00546a68    push eax"
-"	      00546a69    mov eax,[ebp-2Ch]"
+"	      00546a69    mov eax,this"
 "	      00546a6c    mov eax,[eax+178h]"
 "	      00546a72    push eax"
 "	      00546a73    call 004D19BDh"
 "	      00546a78    add esp,8"
-"	      00546a7b    mov ecx,[ebp-2Ch]"
+"	      00546a7b    mov ecx,this"
 "	      00546a7e    mov [ecx+178h],eax"
 );
 // LINE 615:
 	asm( 
-"	      00546a84    mov eax,[ebp-2Ch]"
-"	      00546a87    mov ecx,[ebp-10h]"
+"	      00546a84    mov eax,this"
+"	      00546a87    mov ecx,rotateRate"
 "	      00546a8a    cmp [eax+178h],ecx"
 "	      00546a90    jle near ptr 00546AA2h"
 );
 // LINE 616:
 	asm( 
-"	      00546a96    mov eax,[ebp-10h]"
-"	      00546a99    mov ecx,[ebp-2Ch]"
+"	      00546a96    mov eax,rotateRate"
+"	      00546a99    mov ecx,this"
 "	      00546a9c    mov [ecx+178h],eax"
 );
 // LINE 617:
 	asm( 
-"	      00546aa2    mov eax,[ebp-2Ch]"
-"	      00546aa5    mov ecx,[ebp-10h]"
+"	      00546aa2    mov eax,this"
+"	      00546aa5    mov ecx,rotateRate"
 "	      00546aa8    neg ecx"
 "	      00546aaa    cmp [eax+178h],ecx"
 "	      00546ab0    jge near ptr 00546AC4h"
 );
 // LINE 618:
 	asm( 
-"	      00546ab6    mov eax,[ebp-10h]"
+"	      00546ab6    mov eax,rotateRate"
 "	      00546ab9    neg eax"
-"	      00546abb    mov ecx,[ebp-2Ch]"
+"	      00546abb    mov ecx,this"
 "	      00546abe    mov [ecx+178h],eax"
 );
 // LINE 619:
@@ -3941,44 +3941,44 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 654:
 	asm( 
-"	      00546b5f    mov eax,[ebp+8]"
+"	      00546b5f    mov eax,loc"
 "	      00546b62    mov eax,[eax]"
 "	      00546b64    add eax,20000000h"
 "	      00546b69    sar eax,16h"
-"	      00546b6c    mov [ebp-8],eax"
+"	      00546b6c    mov x,eax"
 );
 // LINE 655:
 	asm( 
 "	      00546b6f    mov eax,20000000h"
-"	      00546b74    mov ecx,[ebp+8]"
+"	      00546b74    mov ecx,loc"
 "	      00546b77    sub eax,[ecx+8]"
 "	      00546b7a    sar eax,16h"
-"	      00546b7d    mov [ebp-0Ch],eax"
+"	      00546b7d    mov y,eax"
 );
 // LINE 657:
 	asm( 
-"	      00546b80    mov eax,[ebp-0Ch]"
+"	      00546b80    mov eax,y"
 "	      00546b83    and eax,0FFh"
-"	      00546b88    mov ecx,[ebp-8]"
+"	      00546b88    mov ecx,x"
 "	      00546b8b    and ecx,0FFh"
 "	      00546b91    shl ecx,0Ah"
 "	      00546b94    mov eax,[ecx+eax*4+67ED30h]"
-"	      00546b9b    mov [ebp-14h],eax"
+"	      00546b9b    mov cptr,eax"
 );
 // LINE 659:
 	asm( 
-"	      00546b9e    mov eax,[ebp-14h]"
+"	      00546b9e    mov eax,cptr"
 "	      00546ba1    mov eax,[eax+10h]"
-"	      00546ba4    mov [ebp-4],eax"
+"	      00546ba4    mov dyobj,eax"
 );
 // LINE 660:
 	asm( 
-"	      00546ba7    cmp dword ptr [ebp-4],0"
+"	      00546ba7    cmp dyobj,0"
 "	      00546bab    je near ptr 00546BD2h"
 );
 // LINE 663:
 	asm( 
-"	      00546bb1    mov eax,[ebp-4]"
+"	      00546bb1    mov eax,dyobj"
 "	      00546bb4    movsx eax,word ptr [eax+0Ch]"
 "	      00546bb8    test al,4"
 "	      00546bba    je near ptr 00546BC5h"
@@ -3989,9 +3989,9 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 666:
 	asm( 
-"	      00546bc5    mov eax,[ebp-4]"
+"	      00546bc5    mov eax,dyobj"
 "	      00546bc8    mov eax,[eax]"
-"	      00546bca    mov [ebp-4],eax"
+"	      00546bca    mov dyobj,eax"
 );
 // LINE 667:
 	asm( 
@@ -3999,7 +3999,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 669:
 	asm( 
-"	      00546bd2    cmp dword ptr [ebp-4],0"
+"	      00546bd2    cmp dyobj,0"
 "	      00546bd6    jne near ptr 00546BE3h"
 );
 // LINE 670:
@@ -4009,28 +4009,28 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 676:
 	asm( 
-"	      00546be3    mov eax,[ebp-4]"
+"	      00546be3    mov eax,dyobj"
 "	      00546be6    mov eax,[eax+18h]"
 "	      00546be9    sub eax,40000h"
-"	      00546bee    mov ecx,[ebp+8]"
+"	      00546bee    mov ecx,loc"
 "	      00546bf1    cmp eax,[ecx]"
 "	      00546bf3    jg near ptr 00546C3Dh"
-"	      00546bf9    mov eax,[ebp-4]"
+"	      00546bf9    mov eax,dyobj"
 "	      00546bfc    mov eax,[eax+18h]"
 "	      00546bff    add eax,40000h"
-"	      00546c04    mov ecx,[ebp+8]"
+"	      00546c04    mov ecx,loc"
 "	      00546c07    cmp eax,[ecx]"
 "	      00546c09    jl near ptr 00546C3Dh"
-"	      00546c0f    mov eax,[ebp-4]"
+"	      00546c0f    mov eax,dyobj"
 "	      00546c12    mov eax,[eax+20h]"
 "	      00546c15    add eax,40000h"
-"	      00546c1a    mov ecx,[ebp+8]"
+"	      00546c1a    mov ecx,loc"
 "	      00546c1d    cmp eax,[ecx+8]"
 "	      00546c20    jl near ptr 00546C3Dh"
-"	      00546c26    mov eax,[ebp-4]"
+"	      00546c26    mov eax,dyobj"
 "	      00546c29    mov eax,[eax+20h]"
 "	      00546c2c    sub eax,40000h"
-"	      00546c31    mov ecx,[ebp+8]"
+"	      00546c31    mov ecx,loc"
 "	      00546c34    cmp eax,[ecx+8]"
 "	      00546c37    jle near ptr 00546C44h"
 );
@@ -4041,15 +4041,15 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 683:
 	asm( 
-"	      00546c44    mov eax,[ebp-4]"
+"	      00546c44    mov eax,dyobj"
 "	      00546c47    push eax"
 "	      00546c48    call 004F5A90h"
 "	      00546c4d    add esp,4"
-"	      00546c50    mov [ebp-10h],eax"
+"	      00546c50    mov hd,eax"
 );
 // LINE 684:
 	asm( 
-"	      00546c53    cmp dword ptr [ebp-10h],0"
+"	      00546c53    cmp hd,0"
 "	      00546c57    jne near ptr 00546C64h"
 );
 // LINE 685:
@@ -4059,7 +4059,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 688:
 	asm( 
-"	      00546c64    mov eax,[ebp-10h]"
+"	      00546c64    mov eax,hd"
 "	      00546c67    cmp dword ptr [eax+4],0"
 "	      00546c6b    je near ptr 00546C78h"
 );
@@ -4070,7 +4070,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 );
 // LINE 691:
 	asm( 
-"	      00546c78    mov eax,[ebp-10h]"
+"	      00546c78    mov eax,hd"
 "	      00546c7b    jmp near ptr 00546C80h"
 );
 // LINE 692:
@@ -4099,23 +4099,23 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 );
 // LINE 696:
 	asm( 
-"	      00546c8e    movsx eax,word ptr [ebp+8]"
+"	      00546c8e    movsx eax,cellx"
 "	      00546c92    cmp eax,7Fh"
 "	      00546c95    jg near ptr 00546CC0h"
-"	      00546c9b    movsx eax,word ptr [ebp+0Ch]"
+"	      00546c9b    movsx eax,celly"
 "	      00546c9f    cmp eax,7Fh"
 "	      00546ca2    jg near ptr 00546CC0h"
-"	      00546ca8    movsx eax,word ptr [ebp+8]"
+"	      00546ca8    movsx eax,cellx"
 "	      00546cac    test eax,eax"
 "	      00546cae    jl near ptr 00546CC0h"
-"	      00546cb4    movsx eax,word ptr [ebp+0Ch]"
+"	      00546cb4    movsx eax,celly"
 "	      00546cb8    test eax,eax"
 "	      00546cba    jge near ptr 00546CCBh"
-"	      00546cc0    mov word ptr [ebp-8],0FFFFh"
+"	      00546cc0    mov scurkID,0FFFFh"
 "	      00546cc6    jmp near ptr 00546D27h"
-"	      00546ccb    movsx eax,word ptr [ebp+8]"
+"	      00546ccb    movsx eax,cellx"
 "	      00546ccf    mov eax,[eax*4+639850h]"
-"	      00546cd6    movsx ecx,word ptr [ebp+0Ch]"
+"	      00546cd6    movsx ecx,celly"
 "	      00546cda    movzx ax,byte ptr [eax+ecx]"
 "	      00546cdf    mov [ebp-10h],ax"
 "	      00546ce3    movsx eax,word ptr [ebp-10h]"
@@ -4131,15 +4131,15 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546d12    call 00554F30h"
 "	      00546d17    add esp,10h"
 "	      00546d1a    mov ax,[ebp-10h]"
-"	      00546d1e    mov [ebp-8],ax"
+"	      00546d1e    mov scurkID,ax"
 "	      00546d22    jmp near ptr 00546D27h"
 );
 // LINE 697:
 	asm( 
-"	      00546d27    mov word ptr [ebp-4],0"
+"	      00546d27    mov count,0"
 "	      00546d2d    jmp near ptr 00546D36h"
-"	      00546d32    inc word ptr [ebp-4]"
-"	      00546d36    movsx eax,word ptr [ebp-4]"
+"	      00546d32    inc count"
+"	      00546d36    movsx eax,count"
 "	      00546d3a    cmp eax,64h"
 "	      00546d3d    jge near ptr 00546E64h"
 );
@@ -4147,16 +4147,16 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      00546d43    movsx eax,word ptr [ebp-4]"
+"	      00546d43    movsx eax,count"
 "	      00546d47    cmp eax,7D00h"
 "	      00546d4c    jne near ptr 00546D5Fh"
 "	      00546d52    mov eax,ds:[5B8680h]"
-"	      00546d57    mov [ebp-0Ch],eax"
+"	      00546d57    mov obj,eax"
 "	      00546d5a    jmp near ptr 00546DDBh"
-"	      00546d5f    movsx eax,word ptr [ebp-4]"
+"	      00546d5f    movsx eax,count"
 "	      00546d63    test eax,eax"
 "	      00546d65    jl near ptr 00546D78h"
-"	      00546d6b    movsx eax,word ptr [ebp-4]"
+"	      00546d6b    movsx eax,count"
 "	      00546d6f    cmp eax,64h"
 "	      00546d72    jl near ptr 00546D94h"
 "	      00546d78    push 8C085h"
@@ -4165,7 +4165,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546d87    push 5BBA14h"
 "	      00546d8c    call 00554F30h"
 "	      00546d91    add esp,10h"
-"	      00546d94    movsx eax,word ptr [ebp-4]"
+"	      00546d94    movsx eax,count"
 "	      00546d98    cmp dword ptr [eax*4+636D40h],0"
 "	      00546da0    jne near ptr 00546DC2h"
 "	      00546da6    push 8C085h"
@@ -4174,16 +4174,16 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546db5    push 5BBA14h"
 "	      00546dba    call 00554F30h"
 "	      00546dbf    add esp,10h"
-"	      00546dc2    movsx eax,word ptr [ebp-4]"
+"	      00546dc2    movsx eax,count"
 "	      00546dc6    mov eax,[eax*4+636D40h]"
-"	      00546dcd    mov [ebp-0Ch],eax"
+"	      00546dcd    mov obj,eax"
 "	      00546dd0    jmp near ptr 00546DDBh"
 "	      00546dd5    mov eax,[ebp-14h]"
-"	      00546dd8    mov [ebp-0Ch],eax"
+"	      00546dd8    mov obj,eax"
 );
 // LINE 699:
 	asm( 
-"	      00546ddb    mov eax,[ebp-0Ch]"
+"	      00546ddb    mov eax,obj"
 "	      00546dde    movsx eax,word ptr [eax+0D2h]"
 "	      00546de5    test eax,eax"
 "	      00546de7    je near ptr 00546E5Fh"
@@ -4191,10 +4191,10 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 // LINE 700:
 	asm( 
 "	      00546ded    jmp near ptr 00546DF2h"
-"	      00546df2    mov eax,[ebp-0Ch]"
+"	      00546df2    mov eax,obj"
 "	      00546df5    xor ecx,ecx"
 "	      00546df7    mov cl,[eax+88h]"
-"	      00546dfd    movsx eax,word ptr [ebp+8]"
+"	      00546dfd    movsx eax,cellx"
 "	      00546e01    sub ecx,eax"
 "	      00546e03    movsx eax,cx"
 "	      00546e06    cdq"
@@ -4204,10 +4204,10 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546e0e    cmp eax,4"
 "	      00546e11    jge near ptr 00546E5Fh"
 "	      00546e17    jmp near ptr 00546E1Ch"
-"	      00546e1c    mov eax,[ebp-0Ch]"
+"	      00546e1c    mov eax,obj"
 "	      00546e1f    xor ecx,ecx"
 "	      00546e21    mov cl,[eax+89h]"
-"	      00546e27    movsx eax,word ptr [ebp+0Ch]"
+"	      00546e27    movsx eax,celly"
 "	      00546e2b    sub ecx,eax"
 "	      00546e2d    movsx eax,cx"
 "	      00546e30    cdq"
@@ -4219,15 +4219,15 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 );
 // LINE 701:
 	asm( 
-"	      00546e41    mov eax,[ebp-0Ch]"
+"	      00546e41    mov eax,obj"
 "	      00546e44    movsx eax,word ptr [eax+0FCh]"
-"	      00546e4b    movsx ecx,word ptr [ebp-8]"
+"	      00546e4b    movsx ecx,scurkID"
 "	      00546e4f    cmp eax,ecx"
 "	      00546e51    jne near ptr 00546E5Fh"
 );
 // LINE 702:
 	asm( 
-"	      00546e57    mov eax,[ebp-0Ch]"
+"	      00546e57    mov eax,obj"
 "	      00546e5a    jmp near ptr 00546E6Bh"
 );
 // LINE 704:
@@ -4262,10 +4262,10 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546e76    push ebx"
 "	      00546e77    push esi"
 "	      00546e78    push edi"
-"	      00546e79    mov [ebp-38h],ecx"
-"	      00546e7c    movsx eax,word ptr [ebp+18h]"
+"	      00546e79    mov this,ecx"
+"	      00546e7c    movsx eax,celly"
 "	      00546e80    and eax,0FFh"
-"	      00546e85    movsx ecx,word ptr [ebp+14h]"
+"	      00546e85    movsx ecx,cellx"
 "	      00546e89    and ecx,0FFh"
 "	      00546e8f    shl ecx,0Ah"
 "	      00546e92    mov eax,[ecx+eax*4+67ED30h]"
@@ -4276,7 +4276,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546e9c    mov eax,[ebp-34h]"
 "	      00546e9f    movsx eax,word ptr [eax+2]"
 "	      00546ea3    shl eax,10h"
-"	      00546ea6    add eax,[ebp+20h]"
+"	      00546ea6    add eax,offsetx"
 "	      00546ea9    mov [ebp-30h],eax"
 "	      00546eac    mov eax,[ebp-34h]"
 "	      00546eaf    movsx eax,word ptr [eax+4]"
@@ -4286,7 +4286,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546ebe    mov eax,[ebp-34h]"
 "	      00546ec1    movsx eax,word ptr [eax+6]"
 "	      00546ec5    shl eax,10h"
-"	      00546ec8    add eax,[ebp+24h]"
+"	      00546ec8    add eax,offsetz"
 "	      00546ecb    mov [ebp-28h],eax"
 "	      00546ece    lea eax,[ebp-30h]"
 "	      00546ed1    lea ecx,[ebp-24h]"
@@ -4306,7 +4306,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546ef9    mov eax,[eax+8]"
 "	      00546efc    mov [ecx+8],eax"
 "	      00546eff    lea eax,[ebp-18h]"
-"	      00546f02    lea ecx,[ebp-0Ch]"
+"	      00546f02    lea ecx,loc.x"
 "	      00546f05    mov edx,[eax]"
 "	      00546f07    mov [ecx],edx"
 "	      00546f09    mov edx,[eax+4]"
@@ -4316,21 +4316,21 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 );
 // LINE 712:
 	asm( 
-"	      00546f15    lea eax,[ebp-0Ch]"
+"	      00546f15    lea eax,loc.x"
 "	      00546f18    push eax"
-"	      00546f19    mov eax,[ebp+1Ch]"
+"	      00546f19    mov eax,onTopOf"
 "	      00546f1c    push eax"
 "	      00546f1d    mov eax,[ebp+18h]"
 "	      00546f20    push eax"
 "	      00546f21    mov eax,[ebp+14h]"
 "	      00546f24    push eax"
-"	      00546f25    mov eax,[ebp+10h]"
+"	      00546f25    mov eax,persontype"
 "	      00546f28    push eax"
 "	      00546f29    mov eax,[ebp+0Ch]"
 "	      00546f2c    push eax"
 "	      00546f2d    mov eax,[ebp+8]"
 "	      00546f30    push eax"
-"	      00546f31    mov ecx,[ebp-38h]"
+"	      00546f31    mov ecx,this"
 "	      00546f34    call 00546F45h"
 "	      00546f39    jmp near ptr 00546F3Eh"
 );
@@ -4356,13 +4356,13 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546f4b    push ebx"
 "	      00546f4c    push esi"
 "	      00546f4d    push edi"
-"	      00546f4e    mov [ebp-8],ecx"
+"	      00546f4e    mov this,ecx"
 );
 // LINE 719:
 	asm( 
-"	      00546f51    mov eax,[ebp+20h]"
+"	      00546f51    mov eax,loc"
 "	      00546f54    push eax"
-"	      00546f55    mov eax,[ebp+1Ch]"
+"	      00546f55    mov eax,onTopOf"
 "	      00546f58    push eax"
 "	      00546f59    push 0FFFFFFFFh"
 "	      00546f5b    mov eax,[ebp+18h]"
@@ -4370,11 +4370,11 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546f5f    mov eax,[ebp+14h]"
 "	      00546f62    push eax"
 "	      00546f63    push 0"
-"	      00546f65    mov eax,[ebp+10h]"
+"	      00546f65    mov eax,persontype"
 "	      00546f68    push eax"
-"	      00546f69    mov ecx,[ebp-8]"
+"	      00546f69    mov ecx,this"
 "	      00546f6c    call 0054A7A5h"
-"	      00546f71    mov [ebp-4],ax"
+"	      00546f71    mov ret,ax"
 );
 // LINE 720:
 	asm( 
@@ -4389,15 +4389,15 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 );
 // LINE 721:
 	asm( 
-"	      00546f9e    mov eax,[ebp-8]"
+"	      00546f9e    mov eax,this"
 "	      00546fa1    movsx eax,word ptr [eax+0D2h]"
 "	      00546fa8    test eax,eax"
 "	      00546faa    je near ptr 00546FD5h"
-"	      00546fb0    mov eax,[ebp-8]"
+"	      00546fb0    mov eax,this"
 "	      00546fb3    movsx eax,word ptr [eax+0D6h]"
-"	      00546fba    cmp eax,[ebp+10h]"
+"	      00546fba    cmp eax,persontype"
 "	      00546fbd    jne near ptr 00546FD5h"
-"	      00546fc3    mov eax,[ebp-8]"
+"	      00546fc3    mov eax,this"
 "	      00546fc6    movsx eax,word ptr [eax+0D8h]"
 "	      00546fcd    test eax,eax"
 "	      00546fcf    je near ptr 00546FF1h"
@@ -4410,29 +4410,29 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 );
 // LINE 722:
 	asm( 
-"	      00546ff1    mov ax,[ebp+8]"
-"	      00546ff5    mov ecx,[ebp-8]"
+"	      00546ff1    mov ax,scurkID"
+"	      00546ff5    mov ecx,this"
 "	      00546ff8    mov [ecx+0FCh],ax"
 );
 // LINE 724:
 	asm( 
-"	      00546fff    mov ax,[ebp+0Ch]"
-"	      00547003    mov ecx,[ebp-8]"
+"	      00546fff    mov ax,treeID"
+"	      00547003    mov ecx,this"
 "	      00547006    mov [ecx+10Ah],ax"
-"	      0054700d    mov eax,[ebp-8]"
+"	      0054700d    mov eax,this"
 "	      00547010    mov ax,[eax+10Ah]"
 "	      00547017    push eax"
-"	      00547018    mov eax,[ebp-8]"
+"	      00547018    mov eax,this"
 "	      0054701b    mov eax,[eax+0B4h]"
 "	      00547021    push eax"
-"	      00547022    mov ecx,[ebp-8]"
+"	      00547022    mov ecx,this"
 "	      00547025    call 0055CC58h"
 "	      0054702a    jmp near ptr 0054702Fh"
 "	      0054702f    jmp near ptr 00547034h"
 );
 // LINE 725:
 	asm( 
-"	      00547034    mov ax,[ebp-4]"
+"	      00547034    mov ax,ret"
 "	      00547038    jmp near ptr 0054703Dh"
 );
 // LINE 726:
@@ -4463,7 +4463,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 732:
 	asm( 
-"	      0054704d    cmp dword ptr [ebp+1Ch],0"
+"	      0054704d    cmp onTopOf,0"
 "	      00547051    je near ptr 00547073h"
 "	      00547057    push 8C085h"
 "	      0054705c    push 5B8D60h"
@@ -4474,23 +4474,23 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 733:
 	asm( 
-"	      00547073    movsx eax,word ptr [ebp+10h]"
+"	      00547073    movsx eax,cellx"
 "	      00547077    cmp eax,7Fh"
 "	      0054707a    jg near ptr 005470A5h"
-"	      00547080    movsx eax,word ptr [ebp+14h]"
+"	      00547080    movsx eax,celly"
 "	      00547084    cmp eax,7Fh"
 "	      00547087    jg near ptr 005470A5h"
-"	      0054708d    movsx eax,word ptr [ebp+10h]"
+"	      0054708d    movsx eax,cellx"
 "	      00547091    test eax,eax"
 "	      00547093    jl near ptr 005470A5h"
-"	      00547099    movsx eax,word ptr [ebp+14h]"
+"	      00547099    movsx eax,celly"
 "	      0054709d    test eax,eax"
 "	      0054709f    jge near ptr 005470B0h"
-"	      005470a5    mov word ptr [ebp-0Ch],0FFFFh"
+"	      005470a5    mov id,0FFFFh"
 "	      005470ab    jmp near ptr 0054710Ch"
-"	      005470b0    movsx eax,word ptr [ebp+10h]"
+"	      005470b0    movsx eax,cellx"
 "	      005470b4    mov eax,[eax*4+639850h]"
-"	      005470bb    movsx ecx,word ptr [ebp+14h]"
+"	      005470bb    movsx ecx,celly"
 "	      005470bf    movzx ax,byte ptr [eax+ecx]"
 "	      005470c4    mov [ebp-14h],ax"
 "	      005470c8    movsx eax,word ptr [ebp-14h]"
@@ -4506,20 +4506,20 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      005470f7    call 00554F30h"
 "	      005470fc    add esp,10h"
 "	      005470ff    mov ax,[ebp-14h]"
-"	      00547103    mov [ebp-0Ch],ax"
+"	      00547103    mov id,ax"
 "	      00547107    jmp near ptr 0054710Ch"
 );
 // LINE 734:
 	asm( 
-"	      0054710c    movsx eax,word ptr [ebp-0Ch]"
+"	      0054710c    movsx eax,id"
 "	      00547110    push eax"
 "	      00547111    call 0051DA5Bh"
 "	      00547116    add esp,4"
-"	      00547119    mov [ebp-10h],eax"
+"	      00547119    mov li,eax"
 );
 // LINE 735:
 	asm( 
-"	      0054711c    cmp dword ptr [ebp-10h],0"
+"	      0054711c    cmp li,0"
 "	      00547120    jne near ptr 00547142h"
 "	      00547126    push 8C085h"
 "	      0054712b    push 5B8DB0h"
@@ -4531,36 +4531,36 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 // LINE 736:
 	asm( 
 "	      00547142    push 30000h"
-"	      00547147    mov eax,[ebp-10h]"
+"	      00547147    mov eax,li"
 "	      0054714a    mov eax,[eax+0Ch]"
 "	      0054714d    push eax"
 "	      0054714e    call 004D19DFh"
 "	      00547153    add esp,8"
-"	      00547156    mov ecx,[ebp-10h]"
+"	      00547156    mov ecx,li"
 "	      00547159    mov ecx,[ecx+4]"
 "	      0054715c    add ecx,eax"
-"	      0054715e    mov [ebp-4],ecx"
+"	      0054715e    mov offsetx,ecx"
 );
 // LINE 737:
 	asm( 
 "	      00547161    push 30000h"
-"	      00547166    mov eax,[ebp-10h]"
+"	      00547166    mov eax,li"
 "	      00547169    mov eax,[eax+10h]"
 "	      0054716c    push eax"
 "	      0054716d    call 004D19DFh"
 "	      00547172    add esp,8"
-"	      00547175    mov ecx,[ebp-10h]"
+"	      00547175    mov ecx,li"
 "	      00547178    mov ecx,[ecx+8]"
 "	      0054717b    add ecx,eax"
-"	      0054717d    mov [ebp-8],ecx"
+"	      0054717d    mov offsetz,ecx"
 );
 // LINE 740:
 	asm( 
-"	      00547180    mov eax,[ebp-8]"
+"	      00547180    mov eax,offsetz"
 "	      00547183    push eax"
-"	      00547184    mov eax,[ebp-4]"
+"	      00547184    mov eax,offsetx"
 "	      00547187    push eax"
-"	      00547188    mov eax,[ebp+1Ch]"
+"	      00547188    mov eax,onTopOf"
 "	      0054718b    push eax"
 "	      0054718c    mov eax,[ebp+18h]"
 "	      0054718f    push eax"
@@ -4568,9 +4568,9 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      00547193    push eax"
 "	      00547194    mov eax,[ebp+10h]"
 "	      00547197    push eax"
-"	      00547198    mov eax,[ebp+0Ch]"
+"	      00547198    mov eax,missiontype"
 "	      0054719b    push eax"
-"	      0054719c    mov eax,[ebp+8]"
+"	      0054719c    mov eax,persontype"
 "	      0054719f    push eax"
 "	      005471a0    call 005471B2h"
 "	      005471a5    add esp,20h"
@@ -4604,7 +4604,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 748:
 	asm( 
-"	      005471bb    cmp dword ptr [ebp+1Ch],0"
+"	      005471bb    cmp onTopOf,0"
 "	      005471bf    je near ptr 005471E1h"
 "	      005471c5    push 8C085h"
 "	      005471ca    push 5B8DDCh"
@@ -4615,23 +4615,23 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 750:
 	asm( 
-"	      005471e1    movsx eax,word ptr [ebp+10h]"
+"	      005471e1    movsx eax,cellx"
 "	      005471e5    cmp eax,7Fh"
 "	      005471e8    jg near ptr 00547213h"
-"	      005471ee    movsx eax,word ptr [ebp+14h]"
+"	      005471ee    movsx eax,celly"
 "	      005471f2    cmp eax,7Fh"
 "	      005471f5    jg near ptr 00547213h"
-"	      005471fb    movsx eax,word ptr [ebp+10h]"
+"	      005471fb    movsx eax,cellx"
 "	      005471ff    test eax,eax"
 "	      00547201    jl near ptr 00547213h"
-"	      00547207    movsx eax,word ptr [ebp+14h]"
+"	      00547207    movsx eax,celly"
 "	      0054720b    test eax,eax"
 "	      0054720d    jge near ptr 0054721Eh"
-"	      00547213    mov word ptr [ebp-18h],0FFFFh"
+"	      00547213    mov id,0FFFFh"
 "	      00547219    jmp near ptr 0054727Ah"
-"	      0054721e    movsx eax,word ptr [ebp+10h]"
+"	      0054721e    movsx eax,cellx"
 "	      00547222    mov eax,[eax*4+639850h]"
-"	      00547229    movsx ecx,word ptr [ebp+14h]"
+"	      00547229    movsx ecx,celly"
 "	      0054722d    movzx ax,byte ptr [eax+ecx]"
 "	      00547232    mov [ebp-44h],ax"
 "	      00547236    movsx eax,word ptr [ebp-44h]"
@@ -4647,12 +4647,12 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      00547265    call 00554F30h"
 "	      0054726a    add esp,10h"
 "	      0054726d    mov ax,[ebp-44h]"
-"	      00547271    mov [ebp-18h],ax"
+"	      00547271    mov id,ax"
 "	      00547275    jmp near ptr 0054727Ah"
-"	      0054727a    movsx eax,word ptr [ebp+10h]"
+"	      0054727a    movsx eax,cellx"
 "	      0054727e    and eax,0FFh"
 "	      00547283    shl eax,0Ah"
-"	      00547286    movsx ecx,word ptr [ebp+14h]"
+"	      00547286    movsx ecx,celly"
 "	      0054728a    and ecx,0FFh"
 "	      00547290    mov eax,[eax+ecx*4+67ED30h]"
 "	      00547297    mov [ebp-40h],eax"
@@ -4662,7 +4662,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      0054729a    mov eax,[ebp-40h]"
 "	      0054729d    movsx eax,word ptr [eax+2]"
 "	      005472a1    shl eax,10h"
-"	      005472a4    add eax,[ebp+20h]"
+"	      005472a4    add eax,offsetx"
 "	      005472a7    mov [ebp-3Ch],eax"
 "	      005472aa    mov eax,[ebp-40h]"
 "	      005472ad    movsx eax,word ptr [eax+4]"
@@ -4672,7 +4672,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      005472bc    mov eax,[ebp-40h]"
 "	      005472bf    movsx eax,word ptr [eax+6]"
 "	      005472c3    shl eax,10h"
-"	      005472c6    add eax,[ebp+24h]"
+"	      005472c6    add eax,offsetz"
 "	      005472c9    mov [ebp-34h],eax"
 "	      005472cc    lea eax,[ebp-3Ch]"
 "	      005472cf    lea ecx,[ebp-30h]"
@@ -4692,7 +4692,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      005472f7    mov eax,[eax+8]"
 "	      005472fa    mov [ecx+8],eax"
 "	      005472fd    lea eax,[ebp-24h]"
-"	      00547300    lea ecx,[ebp-10h]"
+"	      00547300    lea ecx,loc.x"
 "	      00547303    mov edx,[eax]"
 "	      00547305    mov [ecx],edx"
 "	      00547307    mov edx,[eax+4]"
@@ -4702,27 +4702,27 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 763:
 	asm( 
-"	      00547313    lea eax,[ebp-10h]"
+"	      00547313    lea eax,loc.x"
 "	      00547316    push eax"
-"	      00547317    mov eax,[ebp+1Ch]"
+"	      00547317    mov eax,onTopOf"
 "	      0054731a    push eax"
-"	      0054731b    movsx eax,word ptr [ebp+18h]"
+"	      0054731b    movsx eax,missionid"
 "	      0054731f    push eax"
 "	      00547320    mov eax,[ebp+14h]"
 "	      00547323    push eax"
 "	      00547324    mov eax,[ebp+10h]"
 "	      00547327    push eax"
-"	      00547328    mov eax,[ebp+0Ch]"
+"	      00547328    mov eax,missiontype"
 "	      0054732b    push eax"
-"	      0054732c    mov eax,[ebp+8]"
+"	      0054732c    mov eax,persontype"
 "	      0054732f    push eax"
 "	      00547330    call 0054A1D3h"
 "	      00547335    add esp,1Ch"
-"	      00547338    mov [ebp-4],ax"
+"	      00547338    mov ret,ax"
 );
 // LINE 764:
 	asm( 
-"	      0054733c    movsx eax,word ptr [ebp-4]"
+"	      0054733c    movsx eax,ret"
 "	      00547340    cmp eax,0FFFFFFFFh"
 "	      00547343    jne near ptr 0054736Ah"
 );
@@ -4741,16 +4741,16 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 769:
 	asm( 
-"	      0054736a    movsx eax,word ptr [ebp-4]"
+"	      0054736a    movsx eax,ret"
 "	      0054736e    cmp eax,7D00h"
 "	      00547373    jne near ptr 00547386h"
 "	      00547379    mov eax,ds:[5B8680h]"
-"	      0054737e    mov [ebp-14h],eax"
+"	      0054737e    mov obj,eax"
 "	      00547381    jmp near ptr 00547402h"
-"	      00547386    movsx eax,word ptr [ebp-4]"
+"	      00547386    movsx eax,ret"
 "	      0054738a    test eax,eax"
 "	      0054738c    jl near ptr 0054739Fh"
-"	      00547392    movsx eax,word ptr [ebp-4]"
+"	      00547392    movsx eax,ret"
 "	      00547396    cmp eax,64h"
 "	      00547399    jl near ptr 005473BBh"
 "	      0054739f    push 8C085h"
@@ -4759,7 +4759,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      005473ae    push 5BBA14h"
 "	      005473b3    call 00554F30h"
 "	      005473b8    add esp,10h"
-"	      005473bb    movsx eax,word ptr [ebp-4]"
+"	      005473bb    movsx eax,ret"
 "	      005473bf    cmp dword ptr [eax*4+636D40h],0"
 "	      005473c7    jne near ptr 005473E9h"
 "	      005473cd    push 8C085h"
@@ -4768,16 +4768,16 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      005473dc    push 5BBA14h"
 "	      005473e1    call 00554F30h"
 "	      005473e6    add esp,10h"
-"	      005473e9    movsx eax,word ptr [ebp-4]"
+"	      005473e9    movsx eax,ret"
 "	      005473ed    mov eax,[eax*4+636D40h]"
-"	      005473f4    mov [ebp-14h],eax"
+"	      005473f4    mov obj,eax"
 "	      005473f7    jmp near ptr 00547402h"
 "	      005473fc    mov eax,[ebp-48h]"
-"	      005473ff    mov [ebp-14h],eax"
+"	      005473ff    mov obj,eax"
 );
 // LINE 770:
 	asm( 
-"	      00547402    cmp dword ptr [ebp-14h],0"
+"	      00547402    cmp obj,0"
 "	      00547406    jne near ptr 00547428h"
 "	      0054740c    push 8C085h"
 "	      00547411    push 5B8E7Ch"
@@ -4788,8 +4788,8 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 );
 // LINE 771:
 	asm( 
-"	      00547428    mov ax,[ebp-18h]"
-"	      0054742c    mov ecx,[ebp-14h]"
+"	      00547428    mov ax,id"
+"	      0054742c    mov ecx,obj"
 "	      0054742f    mov [ecx+0FCh],ax"
 );
 // LINE 774:
@@ -4819,23 +4819,23 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 );
 // LINE 780:
 	asm( 
-"	      00547449    movsx eax,word ptr [ebp+8]"
+"	      00547449    movsx eax,cellx"
 "	      0054744d    cmp eax,7Fh"
 "	      00547450    jg near ptr 0054747Bh"
-"	      00547456    movsx eax,word ptr [ebp+0Ch]"
+"	      00547456    movsx eax,celly"
 "	      0054745a    cmp eax,7Fh"
 "	      0054745d    jg near ptr 0054747Bh"
-"	      00547463    movsx eax,word ptr [ebp+8]"
+"	      00547463    movsx eax,cellx"
 "	      00547467    test eax,eax"
 "	      00547469    jl near ptr 0054747Bh"
-"	      0054746f    movsx eax,word ptr [ebp+0Ch]"
+"	      0054746f    movsx eax,celly"
 "	      00547473    test eax,eax"
 "	      00547475    jge near ptr 00547486h"
-"	      0054747b    mov word ptr [ebp-4],0FFFFh"
+"	      0054747b    mov scurkID,0FFFFh"
 "	      00547481    jmp near ptr 005474E2h"
-"	      00547486    movsx eax,word ptr [ebp+8]"
+"	      00547486    movsx eax,cellx"
 "	      0054748a    mov eax,[eax*4+639850h]"
-"	      00547491    movsx ecx,word ptr [ebp+0Ch]"
+"	      00547491    movsx ecx,celly"
 "	      00547495    movzx ax,byte ptr [eax+ecx]"
 "	      0054749a    mov [ebp-1Ch],ax"
 "	      0054749e    movsx eax,word ptr [ebp-1Ch]"
@@ -4851,12 +4851,12 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005474cd    call 00554F30h"
 "	      005474d2    add esp,10h"
 "	      005474d5    mov ax,[ebp-1Ch]"
-"	      005474d9    mov [ebp-4],ax"
+"	      005474d9    mov scurkID,ax"
 "	      005474dd    jmp near ptr 005474E2h"
 );
 // LINE 781:
 	asm( 
-"	      005474e2    movsx eax,word ptr [ebp-4]"
+"	      005474e2    movsx eax,scurkID"
 "	      005474e6    mov [ebp-20h],eax"
 "	      005474e9    jmp near ptr 005478D0h"
 );
@@ -4880,20 +4880,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 );
 // LINE 786:
 	asm( 
-"	      0054750b    lea eax,[ebp-8]"
+"	      0054750b    lea eax,dist"
 "	      0054750e    push eax"
 "	      0054750f    push 0"
 "	      00547511    push 5"
 "	      00547513    push 0FFFFFFFEh"
 "	      00547515    mov ecx,ds:[5B8680h]"
 "	      0054751b    call 00556EC0h"
-"	      00547520    mov [ebp-0Ch],eax"
+"	      00547520    mov medic,eax"
 );
 // LINE 787:
 	asm( 
-"	      00547523    cmp dword ptr [ebp-0Ch],0"
+"	      00547523    cmp medic,0"
 "	      00547527    je near ptr 0054753Ah"
-"	      0054752d    movsx eax,word ptr [ebp-8]"
+"	      0054752d    movsx eax,dist"
 "	      00547531    cmp eax,64h"
 "	      00547534    jle near ptr 00547552h"
 );
@@ -5009,8 +5009,8 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 // LINE 818:
 	asm( 
 "	      00547622    call 00547CC8h"
-"	      00547627    mov [ebp-10h],eax"
-"	      0054762a    cmp dword ptr [ebp-10h],0"
+"	      00547627    mov newperson,eax"
+"	      0054762a    cmp newperson,0"
 "	      0054762e    je near ptr 0054767Ah"
 "	      00547634    push 0FFBA0000h"
 "	      00547639    push 460000h"
@@ -5023,7 +5023,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054764a    push 4B5h"
 "	      0054764f    mov eax,[ebp-4]"
 "	      00547652    push eax"
-"	      00547653    mov ecx,[ebp-10h]"
+"	      00547653    mov ecx,newperson"
 "	      00547656    call 00546E70h"
 "	      0054765b    movzx eax,ax"
 "	      0054765e    test eax,eax"
@@ -5031,7 +5031,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547666    push 0Ah"
 "	      00547668    call 0055D717h"
 "	      0054766d    add esp,4"
-"	      00547670    mov ecx,[ebp-10h]"
+"	      00547670    mov ecx,newperson"
 "	      00547673    mov [ecx+0F0h],ax"
 );
 // LINE 820:
@@ -5039,13 +5039,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054767a    push 0Ah"
 "	      0054767c    call 0055D717h"
 "	      00547681    add esp,4"
-"	      00547684    mov [ebp-14h],ax"
+"	      00547684    mov fieldershift,ax"
 );
 // LINE 822:
 	asm( 
 "	      00547688    call 00547CC8h"
-"	      0054768d    mov [ebp-10h],eax"
-"	      00547690    cmp dword ptr [ebp-10h],0"
+"	      0054768d    mov newperson,eax"
+"	      00547690    cmp newperson,0"
 "	      00547694    je near ptr 005476DAh"
 "	      0054769a    push 0FFBA0000h"
 "	      0054769f    push 140000h"
@@ -5058,20 +5058,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005476b0    push 4B6h"
 "	      005476b5    mov eax,[ebp-4]"
 "	      005476b8    push eax"
-"	      005476b9    mov ecx,[ebp-10h]"
+"	      005476b9    mov ecx,newperson"
 "	      005476bc    call 00546E70h"
 "	      005476c1    movzx eax,ax"
 "	      005476c4    test eax,eax"
 "	      005476c6    je near ptr 005476DAh"
-"	      005476cc    mov ax,[ebp-14h]"
-"	      005476d0    mov ecx,[ebp-10h]"
+"	      005476cc    mov ax,fieldershift"
+"	      005476d0    mov ecx,newperson"
 "	      005476d3    mov [ecx+0F0h],ax"
 );
 // LINE 823:
 	asm( 
 "	      005476da    call 00547CC8h"
-"	      005476df    mov [ebp-10h],eax"
-"	      005476e2    cmp dword ptr [ebp-10h],0"
+"	      005476df    mov newperson,eax"
+"	      005476e2    cmp newperson,0"
 "	      005476e6    je near ptr 0054772Ch"
 "	      005476ec    push 0FFEC0000h"
 "	      005476f1    push 140000h"
@@ -5084,20 +5084,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547702    push 4B6h"
 "	      00547707    mov eax,[ebp-4]"
 "	      0054770a    push eax"
-"	      0054770b    mov ecx,[ebp-10h]"
+"	      0054770b    mov ecx,newperson"
 "	      0054770e    call 00546E70h"
 "	      00547713    movzx eax,ax"
 "	      00547716    test eax,eax"
 "	      00547718    je near ptr 0054772Ch"
-"	      0054771e    mov ax,[ebp-14h]"
-"	      00547722    mov ecx,[ebp-10h]"
+"	      0054771e    mov ax,fieldershift"
+"	      00547722    mov ecx,newperson"
 "	      00547725    mov [ecx+0F0h],ax"
 );
 // LINE 824:
 	asm( 
 "	      0054772c    call 00547CC8h"
-"	      00547731    mov [ebp-10h],eax"
-"	      00547734    cmp dword ptr [ebp-10h],0"
+"	      00547731    mov newperson,eax"
+"	      00547734    cmp newperson,0"
 "	      00547738    je near ptr 0054777Eh"
 "	      0054773e    push 0FFEC0000h"
 "	      00547743    push 460000h"
@@ -5110,20 +5110,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547754    push 4B6h"
 "	      00547759    mov eax,[ebp-4]"
 "	      0054775c    push eax"
-"	      0054775d    mov ecx,[ebp-10h]"
+"	      0054775d    mov ecx,newperson"
 "	      00547760    call 00546E70h"
 "	      00547765    movzx eax,ax"
 "	      00547768    test eax,eax"
 "	      0054776a    je near ptr 0054777Eh"
-"	      00547770    mov ax,[ebp-14h]"
-"	      00547774    mov ecx,[ebp-10h]"
+"	      00547770    mov ax,fieldershift"
+"	      00547774    mov ecx,newperson"
 "	      00547777    mov [ecx+0F0h],ax"
 );
 // LINE 825:
 	asm( 
 "	      0054777e    call 00547CC8h"
-"	      00547783    mov [ebp-10h],eax"
-"	      00547786    cmp dword ptr [ebp-10h],0"
+"	      00547783    mov newperson,eax"
+"	      00547786    cmp newperson,0"
 "	      0054778a    je near ptr 005477D0h"
 "	      00547790    push 0FFD30000h"
 "	      00547795    push 2D0000h"
@@ -5136,20 +5136,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005477a6    push 4B6h"
 "	      005477ab    mov eax,[ebp-4]"
 "	      005477ae    push eax"
-"	      005477af    mov ecx,[ebp-10h]"
+"	      005477af    mov ecx,newperson"
 "	      005477b2    call 00546E70h"
 "	      005477b7    movzx eax,ax"
 "	      005477ba    test eax,eax"
 "	      005477bc    je near ptr 005477D0h"
-"	      005477c2    mov ax,[ebp-14h]"
-"	      005477c6    mov ecx,[ebp-10h]"
+"	      005477c2    mov ax,fieldershift"
+"	      005477c6    mov ecx,newperson"
 "	      005477c9    mov [ecx+0F0h],ax"
 );
 // LINE 826:
 	asm( 
 "	      005477d0    call 00547CC8h"
-"	      005477d5    mov [ebp-10h],eax"
-"	      005477d8    cmp dword ptr [ebp-10h],0"
+"	      005477d5    mov newperson,eax"
+"	      005477d8    cmp newperson,0"
 "	      005477dc    je near ptr 00547822h"
 "	      005477e2    push 0FFD80000h"
 "	      005477e7    push 0FFD80000h"
@@ -5162,20 +5162,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005477f8    push 4B6h"
 "	      005477fd    mov eax,[ebp-4]"
 "	      00547800    push eax"
-"	      00547801    mov ecx,[ebp-10h]"
+"	      00547801    mov ecx,newperson"
 "	      00547804    call 00546E70h"
 "	      00547809    movzx eax,ax"
 "	      0054780c    test eax,eax"
 "	      0054780e    je near ptr 00547822h"
-"	      00547814    mov ax,[ebp-14h]"
-"	      00547818    mov ecx,[ebp-10h]"
+"	      00547814    mov ax,fieldershift"
+"	      00547818    mov ecx,newperson"
 "	      0054781b    mov [ecx+0F0h],ax"
 );
 // LINE 827:
 	asm( 
 "	      00547822    call 00547CC8h"
-"	      00547827    mov [ebp-10h],eax"
-"	      0054782a    cmp dword ptr [ebp-10h],0"
+"	      00547827    mov newperson,eax"
+"	      0054782a    cmp newperson,0"
 "	      0054782e    je near ptr 00547874h"
 "	      00547834    push 280000h"
 "	      00547839    push 280000h"
@@ -5188,20 +5188,20 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054784a    push 4B6h"
 "	      0054784f    mov eax,[ebp-4]"
 "	      00547852    push eax"
-"	      00547853    mov ecx,[ebp-10h]"
+"	      00547853    mov ecx,newperson"
 "	      00547856    call 00546E70h"
 "	      0054785b    movzx eax,ax"
 "	      0054785e    test eax,eax"
 "	      00547860    je near ptr 00547874h"
-"	      00547866    mov ax,[ebp-14h]"
-"	      0054786a    mov ecx,[ebp-10h]"
+"	      00547866    mov ax,fieldershift"
+"	      0054786a    mov ecx,newperson"
 "	      0054786d    mov [ecx+0F0h],ax"
 );
 // LINE 828:
 	asm( 
 "	      00547874    call 00547CC8h"
-"	      00547879    mov [ebp-10h],eax"
-"	      0054787c    cmp dword ptr [ebp-10h],0"
+"	      00547879    mov newperson,eax"
+"	      0054787c    cmp newperson,0"
 "	      00547880    je near ptr 005478C6h"
 "	      00547886    push 280000h"
 "	      0054788b    push 0FFD80000h"
@@ -5214,13 +5214,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054789c    push 4B6h"
 "	      005478a1    mov eax,[ebp-4]"
 "	      005478a4    push eax"
-"	      005478a5    mov ecx,[ebp-10h]"
+"	      005478a5    mov ecx,newperson"
 "	      005478a8    call 00546E70h"
 "	      005478ad    movzx eax,ax"
 "	      005478b0    test eax,eax"
 "	      005478b2    je near ptr 005478C6h"
-"	      005478b8    mov ax,[ebp-14h]"
-"	      005478bc    mov ecx,[ebp-10h]"
+"	      005478b8    mov ax,fieldershift"
+"	      005478bc    mov ecx,newperson"
 "	      005478bf    mov [ecx+0F0h],ax"
 );
 // LINE 829:
@@ -5307,21 +5307,21 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	asm( 
 "	      0054795b    mov eax,ds:[5B8680h]"
 "	      00547960    movzx ax,byte ptr [eax+88h]"
-"	      00547968    mov [ebp-10h],ax"
+"	      00547968    mov cellx,ax"
 );
 // LINE 842:
 	asm( 
 "	      0054796c    mov eax,ds:[5B8680h]"
 "	      00547971    movzx ax,byte ptr [eax+89h]"
-"	      00547979    mov [ebp-14h],ax"
+"	      00547979    mov celly,ax"
 );
 // LINE 844:
 	asm( 
-"	      0054797d    movsx eax,word ptr [ebp-10h]"
+"	      0054797d    movsx eax,cellx"
 "	      00547981    movsx ecx,word ptr ds:[5B86A8h]"
 "	      00547988    cmp eax,ecx"
 "	      0054798a    jne near ptr 005479A8h"
-"	      00547990    movsx eax,word ptr [ebp-14h]"
+"	      00547990    movsx eax,celly"
 "	      00547994    movsx ecx,word ptr ds:[5B86ACh]"
 "	      0054799b    cmp eax,ecx"
 "	      0054799d    jne near ptr 005479A8h"
@@ -5332,72 +5332,72 @@ void cYObject::StartScurkPeopleNearAvatar() {
 );
 // LINE 847:
 	asm( 
-"	      005479a8    mov ax,[ebp-10h]"
+"	      005479a8    mov ax,cellx"
 "	      005479ac    mov ds:[5B86A8h],ax"
 );
 // LINE 848:
 	asm( 
-"	      005479b2    mov ax,[ebp-14h]"
+"	      005479b2    mov ax,celly"
 "	      005479b6    mov ds:[5B86ACh],ax"
 );
 // LINE 853:
 	asm( 
-"	      005479bc    movsx eax,word ptr [ebp-10h]"
+"	      005479bc    movsx eax,cellx"
 "	      005479c0    movsx ecx,word ptr ds:[5B86A4h]"
 "	      005479c7    sub eax,ecx"
-"	      005479c9    mov [ebp-6],ax"
+"	      005479c9    mov r.left,ax"
 );
 // LINE 854:
 	asm( 
 "	      005479cd    movsx eax,word ptr ds:[5B86A4h]"
-"	      005479d4    movsx ecx,word ptr [ebp-10h]"
+"	      005479d4    movsx ecx,cellx"
 "	      005479d8    add eax,ecx"
-"	      005479da    mov [ebp-2],ax"
+"	      005479da    mov r.right,ax"
 );
 // LINE 855:
 	asm( 
-"	      005479de    movsx eax,word ptr [ebp-14h]"
+"	      005479de    movsx eax,celly"
 "	      005479e2    movsx ecx,word ptr ds:[5B86A4h]"
 "	      005479e9    sub eax,ecx"
-"	      005479eb    mov [ebp-8],ax"
+"	      005479eb    mov r.top,ax"
 );
 // LINE 856:
 	asm( 
 "	      005479ef    movsx eax,word ptr ds:[5B86A4h]"
-"	      005479f6    movsx ecx,word ptr [ebp-14h]"
+"	      005479f6    movsx ecx,celly"
 "	      005479fa    add eax,ecx"
-"	      005479fc    mov [ebp-4],ax"
+"	      005479fc    mov r.bottom,ax"
 );
 // LINE 857:
 	asm( 
-"	      00547a00    mov ax,[ebp-6]"
-"	      00547a04    mov [ebp-10h],ax"
+"	      00547a00    mov ax,r.left"
+"	      00547a04    mov cellx,ax"
 );
 // LINE 858:
 	asm( 
-"	      00547a08    mov ax,[ebp-8]"
-"	      00547a0c    mov [ebp-14h],ax"
+"	      00547a08    mov ax,r.top"
+"	      00547a0c    mov celly,ax"
 );
 // LINE 859:
 	asm( 
 "	      00547a10    movsx eax,word ptr ds:[5B86A4h]"
 "	      00547a17    add eax,eax"
-"	      00547a19    mov [ebp-18h],ax"
+"	      00547a19    mov rectdiam,ax"
 );
 // LINE 860:
 	asm( 
-"	      00547a1d    mov word ptr [ebp-0Ch],0"
+"	      00547a1d    mov count,0"
 "	      00547a23    jmp near ptr 00547A2Ch"
-"	      00547a28    inc word ptr [ebp-0Ch]"
-"	      00547a2c    movsx eax,word ptr [ebp-0Ch]"
-"	      00547a30    movsx ecx,word ptr [ebp-18h]"
+"	      00547a28    inc count"
+"	      00547a2c    movsx eax,count"
+"	      00547a30    movsx ecx,rectdiam"
 "	      00547a34    cmp eax,ecx"
 "	      00547a36    jge near ptr 00547AB8h"
 );
 // LINE 861:
 	asm( 
-"	      00547a3c    movsx eax,word ptr [ebp-8]"
-"	      00547a40    movsx ecx,word ptr [ebp-0Ch]"
+"	      00547a3c    movsx eax,r.top"
+"	      00547a40    movsx ecx,count"
 "	      00547a44    add eax,ecx"
 "	      00547a46    push eax"
 "	      00547a47    mov eax,[ebp-6]"
@@ -5407,8 +5407,8 @@ void cYObject::StartScurkPeopleNearAvatar() {
 );
 // LINE 862:
 	asm( 
-"	      00547a53    movsx eax,word ptr [ebp-4]"
-"	      00547a57    movsx ecx,word ptr [ebp-0Ch]"
+"	      00547a53    movsx eax,r.bottom"
+"	      00547a57    movsx ecx,count"
 "	      00547a5b    sub eax,ecx"
 "	      00547a5d    push eax"
 "	      00547a5e    mov eax,[ebp-2]"
@@ -5420,8 +5420,8 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	asm( 
 "	      00547a6a    mov eax,[ebp-8]"
 "	      00547a6d    push eax"
-"	      00547a6e    movsx eax,word ptr [ebp-2]"
-"	      00547a72    movsx ecx,word ptr [ebp-0Ch]"
+"	      00547a6e    movsx eax,r.right"
+"	      00547a72    movsx ecx,count"
 "	      00547a76    sub eax,ecx"
 "	      00547a78    push eax"
 "	      00547a79    call 00547440h"
@@ -5431,8 +5431,8 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	asm( 
 "	      00547a81    mov eax,[ebp-4]"
 "	      00547a84    push eax"
-"	      00547a85    movsx eax,word ptr [ebp-6]"
-"	      00547a89    movsx ecx,word ptr [ebp-0Ch]"
+"	      00547a85    movsx eax,r.left"
+"	      00547a89    movsx ecx,count"
 "	      00547a8d    add eax,ecx"
 "	      00547a8f    push eax"
 "	      00547a90    call 00547440h"
@@ -5479,7 +5479,7 @@ void cYObject::BeamRemainingAmbients() {
 );
 // LINE 872:
 	asm( 
-"	      00547acb    mov word ptr [ebp-4],0"
+"	      00547acb    mov numtries,0"
 );
 // LINE 873:
 	asm( 
@@ -5487,9 +5487,9 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547ad8    movsx ecx,word ptr ds:[5B8674h]"
 "	      00547adf    cmp eax,ecx"
 "	      00547ae1    jle near ptr 00547C61h"
-"	      00547ae7    mov ax,[ebp-4]"
+"	      00547ae7    mov ax,numtries"
 "	      00547aeb    mov [ebp-10h],ax"
-"	      00547aef    inc word ptr [ebp-4]"
+"	      00547aef    inc numtries"
 "	      00547af3    movsx eax,word ptr [ebp-10h]"
 "	      00547af7    cmp eax,1Eh"
 "	      00547afa    jge near ptr 00547C61h"
@@ -5500,7 +5500,7 @@ void cYObject::BeamRemainingAmbients() {
 	short lastnumawake;
 	asm( 
 "	      00547b00    mov ax,ds:[5B8674h]"
-"	      00547b06    mov [ebp-8],ax"
+"	      00547b06    mov lastnumawake,ax"
 );
 // LINE 875:
 	asm( 
@@ -5513,21 +5513,21 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547b16    push 0FFFFFFFFh"
 "	      00547b18    call 0054A1D3h"
 "	      00547b1d    add esp,1Ch"
-"	      00547b20    mov [ebp-0Ch],ax"
+"	      00547b20    mov id,ax"
 "	      00547b24    jmp near ptr 00547B29h"
 );
 // LINE 876:
 	asm( 
-"	      00547b29    movsx eax,word ptr [ebp-0Ch]"
+"	      00547b29    movsx eax,id"
 "	      00547b2d    cmp eax,0FFFFFFFFh"
 "	      00547b30    je near ptr 00547C5Ch"
 );
 // LINE 877:
 	asm( 
-"	      00547b36    movsx eax,word ptr [ebp-0Ch]"
+"	      00547b36    movsx eax,id"
 "	      00547b3a    test eax,eax"
 "	      00547b3c    jl near ptr 00547B4Fh"
-"	      00547b42    movsx eax,word ptr [ebp-0Ch]"
+"	      00547b42    movsx eax,id"
 "	      00547b46    cmp eax,64h"
 "	      00547b49    jl near ptr 00547B6Bh"
 "	      00547b4f    push 8C085h"
@@ -5539,7 +5539,7 @@ void cYObject::BeamRemainingAmbients() {
 );
 // LINE 878:
 	asm( 
-"	      00547b6b    movsx eax,word ptr [ebp-8]"
+"	      00547b6b    movsx eax,lastnumawake"
 "	      00547b6f    inc eax"
 "	      00547b70    movsx ecx,word ptr ds:[5B8674h]"
 "	      00547b77    cmp eax,ecx"
@@ -5553,16 +5553,16 @@ void cYObject::BeamRemainingAmbients() {
 );
 // LINE 879:
 	asm( 
-"	      00547b9b    movsx eax,word ptr [ebp-0Ch]"
+"	      00547b9b    movsx eax,id"
 "	      00547b9f    cmp eax,7D00h"
 "	      00547ba4    jne near ptr 00547BBCh"
 "	      00547baa    cmp dword ptr ds:[5B8680h],0"
 "	      00547bb1    jne near ptr 00547C5Ch"
 "	      00547bb7    jmp near ptr 00547C40h"
-"	      00547bbc    movsx eax,word ptr [ebp-0Ch]"
+"	      00547bbc    movsx eax,id"
 "	      00547bc0    test eax,eax"
 "	      00547bc2    jl near ptr 00547BD5h"
-"	      00547bc8    movsx eax,word ptr [ebp-0Ch]"
+"	      00547bc8    movsx eax,id"
 "	      00547bcc    cmp eax,64h"
 "	      00547bcf    jl near ptr 00547BF1h"
 "	      00547bd5    push 8C085h"
@@ -5571,7 +5571,7 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547be4    push 5BBA14h"
 "	      00547be9    call 00554F30h"
 "	      00547bee    add esp,10h"
-"	      00547bf1    movsx eax,word ptr [ebp-0Ch]"
+"	      00547bf1    movsx eax,id"
 "	      00547bf5    cmp dword ptr [eax*4+636D40h],0"
 "	      00547bfd    jne near ptr 00547C1Fh"
 "	      00547c03    push 8C085h"
@@ -5580,7 +5580,7 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547c12    push 5BBA14h"
 "	      00547c17    call 00554F30h"
 "	      00547c1c    add esp,10h"
-"	      00547c1f    movsx eax,word ptr [ebp-0Ch]"
+"	      00547c1f    movsx eax,id"
 "	      00547c23    cmp dword ptr [eax*4+636D40h],0"
 "	      00547c2b    jne near ptr 00547C5Ch"
 "	      00547c31    jmp near ptr 00547C40h"
@@ -5671,29 +5671,29 @@ class cYObject* cYObject::GetSleepingPerson() {
 );
 // LINE 899:
 	asm( 
-"	      00547cd1    mov dword ptr [ebp-0Ch],0"
+"	      00547cd1    mov sleeper,0"
 );
 // LINE 900:
 	asm( 
-"	      00547cd8    mov word ptr [ebp-8],0"
+"	      00547cd8    mov count,0"
 "	      00547cde    jmp near ptr 00547CE7h"
-"	      00547ce3    inc word ptr [ebp-8]"
-"	      00547ce7    movsx eax,word ptr [ebp-8]"
+"	      00547ce3    inc count"
+"	      00547ce7    movsx eax,count"
 "	      00547ceb    cmp eax,64h"
 "	      00547cee    jge near ptr 00547DD4h"
 );
 // LINE 901:
 	asm( 
-"	      00547cf4    movsx eax,word ptr [ebp-8]"
+"	      00547cf4    movsx eax,count"
 "	      00547cf8    cmp eax,7D00h"
 "	      00547cfd    jne near ptr 00547D10h"
 "	      00547d03    mov eax,ds:[5B8680h]"
-"	      00547d08    mov [ebp-4],eax"
+"	      00547d08    mov test,eax"
 "	      00547d0b    jmp near ptr 00547D8Ch"
-"	      00547d10    movsx eax,word ptr [ebp-8]"
+"	      00547d10    movsx eax,count"
 "	      00547d14    test eax,eax"
 "	      00547d16    jl near ptr 00547D29h"
-"	      00547d1c    movsx eax,word ptr [ebp-8]"
+"	      00547d1c    movsx eax,count"
 "	      00547d20    cmp eax,64h"
 "	      00547d23    jl near ptr 00547D45h"
 "	      00547d29    push 8C085h"
@@ -5702,7 +5702,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 "	      00547d38    push 5BBA14h"
 "	      00547d3d    call 00554F30h"
 "	      00547d42    add esp,10h"
-"	      00547d45    movsx eax,word ptr [ebp-8]"
+"	      00547d45    movsx eax,count"
 "	      00547d49    cmp dword ptr [eax*4+636D40h],0"
 "	      00547d51    jne near ptr 00547D73h"
 "	      00547d57    push 8C085h"
@@ -5711,16 +5711,16 @@ class cYObject* cYObject::GetSleepingPerson() {
 "	      00547d66    push 5BBA14h"
 "	      00547d6b    call 00554F30h"
 "	      00547d70    add esp,10h"
-"	      00547d73    movsx eax,word ptr [ebp-8]"
+"	      00547d73    movsx eax,count"
 "	      00547d77    mov eax,[eax*4+636D40h]"
-"	      00547d7e    mov [ebp-4],eax"
+"	      00547d7e    mov test,eax"
 "	      00547d81    jmp near ptr 00547D8Ch"
 "	      00547d86    mov eax,[ebp-10h]"
-"	      00547d89    mov [ebp-4],eax"
+"	      00547d89    mov test,eax"
 );
 // LINE 902:
 	asm( 
-"	      00547d8c    cmp dword ptr [ebp-4],0"
+"	      00547d8c    cmp test,0"
 "	      00547d90    jne near ptr 00547DB2h"
 "	      00547d96    push 8C085h"
 "	      00547d9b    push 5B8FCCh"
@@ -5731,15 +5731,15 @@ class cYObject* cYObject::GetSleepingPerson() {
 );
 // LINE 903:
 	asm( 
-"	      00547db2    mov eax,[ebp-4]"
+"	      00547db2    mov eax,test"
 "	      00547db5    movsx eax,word ptr [eax+0D2h]"
 "	      00547dbc    test eax,eax"
 "	      00547dbe    jne near ptr 00547DCFh"
 );
 // LINE 904:
 	asm( 
-"	      00547dc4    mov eax,[ebp-4]"
-"	      00547dc7    mov [ebp-0Ch],eax"
+"	      00547dc4    mov eax,test"
+"	      00547dc7    mov sleeper,eax"
 );
 // LINE 905:
 	asm( 
@@ -5751,7 +5751,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 );
 // LINE 908:
 	asm( 
-"	      00547dd4    mov eax,[ebp-0Ch]"
+"	      00547dd4    mov eax,sleeper"
 "	      00547dd7    jmp near ptr 00547DDCh"
 );
 // LINE 909:
@@ -5780,7 +5780,7 @@ void MakeAllPeople() {
 );
 // LINE 915:
 	asm( 
-"	      00547ded    lea eax,[ebp-114h]"
+"	      00547ded    lea eax,st.wYear"
 "	      00547df3    push eax"
 "	      00547df4    call dword ptr ds:[6C3790h]"
 );
@@ -5789,7 +5789,7 @@ void MakeAllPeople() {
 "	      00547dfa    mov eax,[ebp-108h]"
 "	      00547e00    and eax,0FFFFh"
 "	      00547e05    xor ecx,ecx"
-"	      00547e07    mov cx,[ebp-106h]"
+"	      00547e07    mov cx,st.wMilliseconds"
 "	      00547e0e    add eax,ecx"
 "	      00547e10    push eax"
 "	      00547e11    call 0055D52Dh"
@@ -5797,7 +5797,7 @@ void MakeAllPeople() {
 );
 // LINE 919:
 	asm( 
-"	      00547e19    lea eax,[ebp-104h]"
+"	      00547e19    lea eax,peoplepath[0]"
 "	      00547e1f    push eax"
 "	      00547e20    push 5B8FF8h"
 "	      00547e25    push 0"
@@ -5807,7 +5807,7 @@ void MakeAllPeople() {
 );
 // LINE 920:
 	asm( 
-"	      00547e31    lea eax,[ebp-104h]"
+"	      00547e31    lea eax,peoplepath[0]"
 "	      00547e37    push eax"
 "	      00547e38    call 00548047h"
 "	      00547e3d    add esp,4"
@@ -5890,16 +5890,16 @@ void cYObject::MakePlebes() {
 );
 // LINE 947:
 	asm( 
-"	      00547ea4    mov dword ptr [ebp-0Ch],0"
-"	      00547eab    mov dword ptr [ebp-8],0"
-"	      00547eb2    mov dword ptr [ebp-4],0"
+"	      00547ea4    mov p.x,0"
+"	      00547eab    mov p.y,0"
+"	      00547eb2    mov p.z,0"
 );
 // LINE 950:
 	asm( 
-"	      00547eb9    mov dword ptr [ebp-10h],0"
+"	      00547eb9    mov pindex,0"
 "	      00547ec0    jmp near ptr 00547EC8h"
-"	      00547ec5    inc dword ptr [ebp-10h]"
-"	      00547ec8    cmp dword ptr [ebp-10h],64h"
+"	      00547ec5    inc pindex"
+"	      00547ec8    cmp pindex,64h"
 "	      00547ecc    jge near ptr 0054803Dh"
 );
 // LINE 952:
@@ -5908,17 +5908,17 @@ void cYObject::MakePlebes() {
 	asm( 
 "	      00547ed2    mov eax,ds:[636B8Ch]"
 "	      00547ed7    push eax"
-"	      00547ed8    mov eax,[ebp-4]"
+"	      00547ed8    mov eax,p.z"
 "	      00547edb    push eax"
-"	      00547edc    mov eax,[ebp-8]"
+"	      00547edc    mov eax,p.y"
 "	      00547edf    push eax"
-"	      00547ee0    mov eax,[ebp-0Ch]"
+"	      00547ee0    mov eax,p.x"
 "	      00547ee3    push eax"
 "	      00547ee4    push 0"
 "	      00547ee6    call 005509CBh"
 "	      00547eeb    add esp,14h"
 "	      00547eee    movsx eax,ax"
-"	      00547ef1    mov [ebp-14h],eax"
+"	      00547ef1    mov newnum,eax"
 );
 // LINE 954:
 	asm( 
@@ -5926,7 +5926,7 @@ void cYObject::MakePlebes() {
 "	      00547ef8    cmp eax,7D00h"
 "	      00547efd    jne near ptr 00547F10h"
 "	      00547f03    mov eax,ds:[5B8680h]"
-"	      00547f08    mov [ebp-18h],eax"
+"	      00547f08    mov personobj,eax"
 "	      00547f0b    jmp near ptr 00547F8Ch"
 "	      00547f10    movsx eax,word ptr [ebp-14h]"
 "	      00547f14    test eax,eax"
@@ -5951,14 +5951,14 @@ void cYObject::MakePlebes() {
 "	      00547f70    add esp,10h"
 "	      00547f73    movsx eax,word ptr [ebp-14h]"
 "	      00547f77    mov eax,[eax*4+636D40h]"
-"	      00547f7e    mov [ebp-18h],eax"
+"	      00547f7e    mov personobj,eax"
 "	      00547f81    jmp near ptr 00547F8Ch"
 "	      00547f86    mov eax,[ebp-1Ch]"
-"	      00547f89    mov [ebp-18h],eax"
+"	      00547f89    mov personobj,eax"
 );
 // LINE 955:
 	asm( 
-"	      00547f8c    cmp dword ptr [ebp-18h],0"
+"	      00547f8c    cmp personobj,0"
 "	      00547f90    jne near ptr 00547FB2h"
 "	      00547f96    push 8C085h"
 "	      00547f9b    push 5B9004h"
@@ -5969,9 +5969,9 @@ void cYObject::MakePlebes() {
 );
 // LINE 956:
 	asm( 
-"	      00547fb2    mov eax,[ebp-18h]"
+"	      00547fb2    mov eax,personobj"
 "	      00547fb5    movsx eax,word ptr [eax+0BCh]"
-"	      00547fbc    cmp eax,[ebp-14h]"
+"	      00547fbc    cmp eax,newnum"
 "	      00547fbf    je near ptr 00547FE1h"
 "	      00547fc5    push 8C085h"
 "	      00547fca    push 5B9034h"
@@ -5982,9 +5982,9 @@ void cYObject::MakePlebes() {
 );
 // LINE 957:
 	asm( 
-"	      00547fe1    mov eax,[ebp-18h]"
+"	      00547fe1    mov eax,personobj"
 "	      00547fe4    movsx eax,word ptr [eax+0DEh]"
-"	      00547feb    cmp eax,[ebp-14h]"
+"	      00547feb    cmp eax,newnum"
 "	      00547fee    je near ptr 00548010h"
 "	      00547ff4    push 8C085h"
 "	      00547ff9    push 5B9060h"
@@ -5995,8 +5995,8 @@ void cYObject::MakePlebes() {
 );
 // LINE 959:
 	asm( 
-"	      00548010    mov eax,[ebp-10h]"
-"	      00548013    cmp [ebp-14h],eax"
+"	      00548010    mov eax,pindex"
+"	      00548013    cmp newnum,eax"
 "	      00548016    je near ptr 00548038h"
 "	      0054801c    push 8C085h"
 "	      00548021    push 5B908Ch"
@@ -6113,65 +6113,65 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 992:
 	asm( 
-"	      00548115    mov word ptr [ebp-10h],0"
+"	      00548115    mov count,0"
 "	      0054811b    jmp near ptr 00548124h"
-"	      00548120    inc word ptr [ebp-10h]"
-"	      00548124    movsx eax,word ptr [ebp-10h]"
+"	      00548120    inc count"
+"	      00548124    movsx eax,count"
 "	      00548128    cmp eax,8"
 "	      0054812b    jge near ptr 00548148h"
 );
 // LINE 993:
 	asm( 
-"	      00548131    movsx eax,word ptr [ebp-10h]"
+"	      00548131    movsx eax,count"
 "	      00548135    lea eax,[eax+eax*2]"
 "	      00548138    mov dword ptr [eax*4+636CE4h],0"
 "	      00548143    jmp near ptr 00548120h"
 );
 // LINE 995:
 	asm( 
-"	      00548148    mov word ptr [ebp-10h],0"
+"	      00548148    mov count,0"
 "	      0054814e    jmp near ptr 00548157h"
-"	      00548153    inc word ptr [ebp-10h]"
-"	      00548157    movsx eax,word ptr [ebp-10h]"
+"	      00548153    inc count"
+"	      00548157    movsx eax,count"
 "	      0054815b    cmp eax,8"
 "	      0054815e    jge near ptr 005481E7h"
 );
 // LINE 996:
 	asm( 
 "	      00548164    push 0C0000h"
-"	      00548169    movsx eax,word ptr [ebp-10h]"
+"	      00548169    movsx eax,count"
 "	      0054816d    lea eax,[eax+eax*2]"
 "	      00548170    mov eax,[eax*4+636CE0h]"
 "	      00548177    push eax"
 "	      00548178    call 004D19DFh"
 "	      0054817d    add esp,8"
-"	      00548180    movsx ecx,word ptr [ebp-10h]"
+"	      00548180    movsx ecx,count"
 "	      00548184    lea ecx,[ecx+ecx*2]"
 "	      00548187    mov [ecx*4+635530h],eax"
 );
 // LINE 997:
 	asm( 
 "	      0054818e    push 0C0000h"
-"	      00548193    movsx eax,word ptr [ebp-10h]"
+"	      00548193    movsx eax,count"
 "	      00548197    lea eax,[eax+eax*2]"
 "	      0054819a    mov eax,[eax*4+636CE8h]"
 "	      005481a1    push eax"
 "	      005481a2    call 004D19DFh"
 "	      005481a7    add esp,8"
-"	      005481aa    movsx ecx,word ptr [ebp-10h]"
+"	      005481aa    movsx ecx,count"
 "	      005481ae    lea ecx,[ecx+ecx*2]"
 "	      005481b1    mov [ecx*4+635538h],eax"
 );
 // LINE 998:
 	asm( 
 "	      005481b8    push 0C0000h"
-"	      005481bd    movsx eax,word ptr [ebp-10h]"
+"	      005481bd    movsx eax,count"
 "	      005481c1    lea eax,[eax+eax*2]"
 "	      005481c4    mov eax,[eax*4+636CE4h]"
 "	      005481cb    push eax"
 "	      005481cc    call 004D19DFh"
 "	      005481d1    add esp,8"
-"	      005481d4    movsx ecx,word ptr [ebp-10h]"
+"	      005481d4    movsx ecx,count"
 "	      005481d8    lea ecx,[ecx+ecx*2]"
 "	      005481db    mov [ecx*4+635534h],eax"
 );
@@ -6185,94 +6185,94 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1005:
 	asm( 
-"	      005481f0    mov word ptr [ebp-10h],0"
+"	      005481f0    mov count,0"
 "	      005481f6    jmp near ptr 005481FFh"
-"	      005481fb    inc word ptr [ebp-10h]"
-"	      005481ff    movsx eax,word ptr [ebp-10h]"
+"	      005481fb    inc count"
+"	      005481ff    movsx eax,count"
 "	      00548203    cmp eax,0Eh"
 "	      00548206    jge near ptr 00548360h"
 );
 // LINE 1006:
 	asm( 
-"	      0054820c    movsx eax,word ptr [ebp-10h]"
+"	      0054820c    movsx eax,count"
 "	      00548210    mov [ebp-28h],eax"
 "	      00548213    jmp near ptr 00548314h"
 );
 // LINE 1008:
 	asm( 
-"	      00548218    movsx eax,word ptr [ebp-10h]"
+"	      00548218    movsx eax,count"
 "	      0054821c    mov word ptr [eax*2+636B98h],352h"
 "	      00548226    jmp near ptr 0054835Bh"
 );
 // LINE 1010:
 	asm( 
-"	      0054822b    movsx eax,word ptr [ebp-10h]"
+"	      0054822b    movsx eax,count"
 "	      0054822f    mov word ptr [eax*2+636B98h],2BCh"
 "	      00548239    jmp near ptr 0054835Bh"
 );
 // LINE 1012:
 	asm( 
-"	      0054823e    movsx eax,word ptr [ebp-10h]"
+"	      0054823e    movsx eax,count"
 "	      00548242    mov word ptr [eax*2+636B98h],2BCh"
 "	      0054824c    jmp near ptr 0054835Bh"
 );
 // LINE 1014:
 	asm( 
-"	      00548251    movsx eax,word ptr [ebp-10h]"
+"	      00548251    movsx eax,count"
 "	      00548255    mov word ptr [eax*2+636B98h],2EEh"
 "	      0054825f    jmp near ptr 0054835Bh"
 );
 // LINE 1016:
 	asm( 
-"	      00548264    movsx eax,word ptr [ebp-10h]"
+"	      00548264    movsx eax,count"
 "	      00548268    mov word ptr [eax*2+636B98h],320h"
 "	      00548272    jmp near ptr 0054835Bh"
 );
 // LINE 1018:
 	asm( 
-"	      00548277    movsx eax,word ptr [ebp-10h]"
+"	      00548277    movsx eax,count"
 "	      0054827b    mov word ptr [eax*2+636B98h],321h"
 "	      00548285    jmp near ptr 0054835Bh"
 );
 // LINE 1022:
 	asm( 
-"	      0054828a    movsx eax,word ptr [ebp-10h]"
+"	      0054828a    movsx eax,count"
 "	      0054828e    mov word ptr [eax*2+636B98h],325h"
 "	      00548298    jmp near ptr 0054835Bh"
 );
 // LINE 1024:
 	asm( 
-"	      0054829d    movsx eax,word ptr [ebp-10h]"
+"	      0054829d    movsx eax,count"
 "	      005482a1    mov word ptr [eax*2+636B98h],514h"
 "	      005482ab    jmp near ptr 0054835Bh"
 );
 // LINE 1026:
 	asm( 
-"	      005482b0    movsx eax,word ptr [ebp-10h]"
+"	      005482b0    movsx eax,count"
 "	      005482b4    mov word ptr [eax*2+636B98h],515h"
 "	      005482be    jmp near ptr 0054835Bh"
 );
 // LINE 1028:
 	asm( 
-"	      005482c3    movsx eax,word ptr [ebp-10h]"
+"	      005482c3    movsx eax,count"
 "	      005482c7    mov word ptr [eax*2+636B98h],516h"
 "	      005482d1    jmp near ptr 0054835Bh"
 );
 // LINE 1030:
 	asm( 
-"	      005482d6    movsx eax,word ptr [ebp-10h]"
+"	      005482d6    movsx eax,count"
 "	      005482da    mov word ptr [eax*2+636B98h],578h"
 "	      005482e4    jmp near ptr 0054835Bh"
 );
 // LINE 1032:
 	asm( 
-"	      005482e9    movsx eax,word ptr [ebp-10h]"
+"	      005482e9    movsx eax,count"
 "	      005482ed    mov word ptr [eax*2+636B98h],579h"
 "	      005482f7    jmp near ptr 0054835Bh"
 );
 // LINE 1034:
 	asm( 
-"	      005482fc    movsx eax,word ptr [ebp-10h]"
+"	      005482fc    movsx eax,count"
 "	      00548300    mov word ptr [eax*2+636B98h],258h"
 "	      0054830a    jmp near ptr 0054835Bh"
 );
@@ -6307,19 +6307,19 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1039:
 	asm( 
-"	      00548360    mov word ptr [ebp-10h],0"
+"	      00548360    mov count,0"
 "	      00548366    jmp near ptr 0054836Fh"
-"	      0054836b    inc word ptr [ebp-10h]"
-"	      0054836f    movsx eax,word ptr [ebp-10h]"
+"	      0054836b    inc count"
+"	      0054836f    movsx eax,count"
 "	      00548373    cmp eax,14h"
 "	      00548376    jge near ptr 005483C9h"
 );
 // LINE 1040:
 	asm( 
-"	      0054837c    movsx eax,word ptr [ebp-10h]"
+"	      0054837c    movsx eax,count"
 "	      00548380    test eax,eax"
 "	      00548382    jl near ptr 00548395h"
-"	      00548388    movsx eax,word ptr [ebp-10h]"
+"	      00548388    movsx eax,count"
 "	      0054838c    cmp eax,14h"
 "	      0054838f    jl near ptr 005483B1h"
 "	      00548395    push 8C085h"
@@ -6328,7 +6328,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 "	      005483a4    push 5BBA14h"
 "	      005483a9    call 00554F30h"
 "	      005483ae    add esp,10h"
-"	      005483b1    movsx eax,word ptr [ebp-10h]"
+"	      005483b1    movsx eax,count"
 "	      005483b5    mov word ptr [eax*2+6352D8h],0FFFFh"
 "	      005483bf    jmp near ptr 005483C4h"
 );
@@ -6542,36 +6542,36 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1069:
 	asm( 
-"	      005486e8    mov word ptr [ebp-10h],0"
+"	      005486e8    mov count,0"
 "	      005486ee    jmp near ptr 005486F7h"
-"	      005486f3    inc word ptr [ebp-10h]"
-"	      005486f7    movsx eax,word ptr [ebp-10h]"
+"	      005486f3    inc count"
+"	      005486f7    movsx eax,count"
 "	      005486fb    cmp eax,0Eh"
 "	      005486fe    jge near ptr 00548958h"
 );
 // LINE 1070:
 	asm( 
-"	      00548704    movsx eax,word ptr [ebp-10h]"
+"	      00548704    movsx eax,count"
 "	      00548708    mov [ebp-2Ch],eax"
 "	      0054870b    jmp near ptr 00548928h"
 );
 // LINE 1080:
 	asm( 
-"	      00548710    movsx eax,word ptr [ebp-10h]"
+"	      00548710    movsx eax,count"
 "	      00548714    lea eax,[eax+eax*4]"
 "	      00548717    mov dword ptr [eax*8+635300h],2"
 );
 // LINE 1081:
 	asm( 
-"	      00548722    mov word ptr [ebp-14h],1"
+"	      00548722    mov n,1"
 "	      00548728    jmp near ptr 00548731h"
-"	      0054872d    inc word ptr [ebp-14h]"
-"	      00548731    movsx eax,word ptr [ebp-14h]"
+"	      0054872d    inc n"
+"	      00548731    movsx eax,n"
 "	      00548735    cmp eax,0Ah"
 "	      00548738    jge near ptr 0054875Ch"
-"	      0054873e    movsx eax,word ptr [ebp-10h]"
+"	      0054873e    movsx eax,count"
 "	      00548742    lea eax,[eax+eax*4]"
-"	      00548745    movsx ecx,word ptr [ebp-14h]"
+"	      00548745    movsx ecx,n"
 "	      00548749    shl ecx,2"
 "	      0054874c    mov dword ptr [ecx+eax*8+635300h],0"
 "	      00548757    jmp near ptr 0054872Dh"
@@ -6582,39 +6582,39 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1084:
 	asm( 
-"	      00548761    movsx eax,word ptr [ebp-10h]"
+"	      00548761    movsx eax,count"
 "	      00548765    lea eax,[eax+eax*4]"
 "	      00548768    mov dword ptr [eax*8+635300h],0Dh"
 );
 // LINE 1085:
 	asm( 
-"	      00548773    movsx eax,word ptr [ebp-10h]"
+"	      00548773    movsx eax,count"
 "	      00548777    lea eax,[eax+eax*4]"
 "	      0054877a    mov dword ptr [eax*8+635304h],0Bh"
 );
 // LINE 1086:
 	asm( 
-"	      00548785    movsx eax,word ptr [ebp-10h]"
+"	      00548785    movsx eax,count"
 "	      00548789    lea eax,[eax+eax*4]"
 "	      0054878c    mov dword ptr [eax*8+635308h],0Ah"
 );
 // LINE 1087:
 	asm( 
-"	      00548797    movsx eax,word ptr [ebp-10h]"
+"	      00548797    movsx eax,count"
 "	      0054879b    lea eax,[eax+eax*4]"
 "	      0054879e    mov dword ptr [eax*8+63530Ch],0Ch"
 );
 // LINE 1088:
 	asm( 
-"	      005487a9    mov word ptr [ebp-14h],4"
+"	      005487a9    mov n,4"
 "	      005487af    jmp near ptr 005487B8h"
-"	      005487b4    inc word ptr [ebp-14h]"
-"	      005487b8    movsx eax,word ptr [ebp-14h]"
+"	      005487b4    inc n"
+"	      005487b8    movsx eax,n"
 "	      005487bc    cmp eax,0Ah"
 "	      005487bf    jge near ptr 005487E3h"
-"	      005487c5    movsx eax,word ptr [ebp-10h]"
+"	      005487c5    movsx eax,count"
 "	      005487c9    lea eax,[eax+eax*4]"
-"	      005487cc    movsx ecx,word ptr [ebp-14h]"
+"	      005487cc    movsx ecx,n"
 "	      005487d0    shl ecx,2"
 "	      005487d3    mov dword ptr [ecx+eax*8+635300h],0"
 "	      005487de    jmp near ptr 005487B4h"
@@ -6625,21 +6625,21 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1092:
 	asm( 
-"	      005487e8    movsx eax,word ptr [ebp-10h]"
+"	      005487e8    movsx eax,count"
 "	      005487ec    lea eax,[eax+eax*4]"
 "	      005487ef    mov dword ptr [eax*8+635304h],7"
 );
 // LINE 1094:
 	asm( 
-"	      005487fa    mov word ptr [ebp-14h],3"
+"	      005487fa    mov n,3"
 "	      00548800    jmp near ptr 00548809h"
-"	      00548805    inc word ptr [ebp-14h]"
-"	      00548809    movsx eax,word ptr [ebp-14h]"
+"	      00548805    inc n"
+"	      00548809    movsx eax,n"
 "	      0054880d    cmp eax,0Ah"
 "	      00548810    jge near ptr 00548834h"
-"	      00548816    movsx eax,word ptr [ebp-10h]"
+"	      00548816    movsx eax,count"
 "	      0054881a    lea eax,[eax+eax*4]"
-"	      0054881d    movsx ecx,word ptr [ebp-14h]"
+"	      0054881d    movsx ecx,n"
 "	      00548821    shl ecx,2"
 "	      00548824    mov dword ptr [ecx+eax*8+635300h],0"
 "	      0054882f    jmp near ptr 00548805h"
@@ -6650,21 +6650,21 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1097:
 	asm( 
-"	      00548839    movsx eax,word ptr [ebp-10h]"
+"	      00548839    movsx eax,count"
 "	      0054883d    lea eax,[eax+eax*4]"
 "	      00548840    mov dword ptr [eax*8+635300h],0Ch"
 );
 // LINE 1098:
 	asm( 
-"	      0054884b    mov word ptr [ebp-14h],1"
+"	      0054884b    mov n,1"
 "	      00548851    jmp near ptr 0054885Ah"
-"	      00548856    inc word ptr [ebp-14h]"
-"	      0054885a    movsx eax,word ptr [ebp-14h]"
+"	      00548856    inc n"
+"	      0054885a    movsx eax,n"
 "	      0054885e    cmp eax,0Ah"
 "	      00548861    jge near ptr 00548885h"
-"	      00548867    movsx eax,word ptr [ebp-10h]"
+"	      00548867    movsx eax,count"
 "	      0054886b    lea eax,[eax+eax*4]"
-"	      0054886e    movsx ecx,word ptr [ebp-14h]"
+"	      0054886e    movsx ecx,n"
 "	      00548872    shl ecx,2"
 "	      00548875    mov dword ptr [ecx+eax*8+635300h],0"
 "	      00548880    jmp near ptr 00548856h"
@@ -6675,45 +6675,45 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1108:
 	asm( 
-"	      0054888a    movsx eax,word ptr [ebp-10h]"
+"	      0054888a    movsx eax,count"
 "	      0054888e    lea eax,[eax+eax*4]"
 "	      00548891    mov dword ptr [eax*8+635300h],0Dh"
 );
 // LINE 1109:
 	asm( 
-"	      0054889c    movsx eax,word ptr [ebp-10h]"
+"	      0054889c    movsx eax,count"
 "	      005488a0    lea eax,[eax+eax*4]"
 "	      005488a3    mov dword ptr [eax*8+635304h],0Bh"
 );
 // LINE 1110:
 	asm( 
-"	      005488ae    movsx eax,word ptr [ebp-10h]"
+"	      005488ae    movsx eax,count"
 "	      005488b2    lea eax,[eax+eax*4]"
 "	      005488b5    mov dword ptr [eax*8+635308h],0Ah"
 );
 // LINE 1111:
 	asm( 
-"	      005488c0    movsx eax,word ptr [ebp-10h]"
+"	      005488c0    movsx eax,count"
 "	      005488c4    lea eax,[eax+eax*4]"
 "	      005488c7    mov dword ptr [eax*8+63530Ch],0Ch"
 );
 // LINE 1112:
 	asm( 
-"	      005488d2    movsx eax,word ptr [ebp-10h]"
+"	      005488d2    movsx eax,count"
 "	      005488d6    lea eax,[eax+eax*4]"
 "	      005488d9    mov dword ptr [eax*8+635310h],7"
 );
 // LINE 1113:
 	asm( 
-"	      005488e4    mov word ptr [ebp-14h],5"
+"	      005488e4    mov n,5"
 "	      005488ea    jmp near ptr 005488F3h"
-"	      005488ef    inc word ptr [ebp-14h]"
-"	      005488f3    movsx eax,word ptr [ebp-14h]"
+"	      005488ef    inc n"
+"	      005488f3    movsx eax,n"
 "	      005488f7    cmp eax,0Ah"
 "	      005488fa    jge near ptr 0054891Eh"
-"	      00548900    movsx eax,word ptr [ebp-10h]"
+"	      00548900    movsx eax,count"
 "	      00548904    lea eax,[eax+eax*4]"
-"	      00548907    movsx ecx,word ptr [ebp-14h]"
+"	      00548907    movsx ecx,n"
 "	      0054890b    shl ecx,2"
 "	      0054890e    mov dword ptr [ecx+eax*8+635300h],0"
 "	      00548919    jmp near ptr 005488EFh"
@@ -6743,36 +6743,36 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1119:
 	asm( 
-"	      00548958    mov word ptr [ebp-10h],0"
+"	      00548958    mov count,0"
 "	      0054895e    jmp near ptr 00548967h"
-"	      00548963    inc word ptr [ebp-10h]"
-"	      00548967    movsx eax,word ptr [ebp-10h]"
+"	      00548963    inc count"
+"	      00548967    movsx eax,count"
 "	      0054896b    cmp eax,12h"
 "	      0054896e    jge near ptr 00548AEBh"
 );
 // LINE 1120:
 	asm( 
-"	      00548974    movsx eax,word ptr [ebp-10h]"
+"	      00548974    movsx eax,count"
 "	      00548978    mov [ebp-30h],eax"
 "	      0054897b    jmp near ptr 00548ACDh"
 );
 // LINE 1122:
 	asm( 
-"	      00548980    movsx eax,word ptr [ebp-10h]"
+"	      00548980    movsx eax,count"
 "	      00548984    lea eax,[eax+eax*4]"
 "	      00548987    mov dword ptr [eax*8+6372D0h],0Dh"
 );
 // LINE 1123:
 	asm( 
-"	      00548992    mov word ptr [ebp-14h],1"
+"	      00548992    mov n,1"
 "	      00548998    jmp near ptr 005489A1h"
-"	      0054899d    inc word ptr [ebp-14h]"
-"	      005489a1    movsx eax,word ptr [ebp-14h]"
+"	      0054899d    inc n"
+"	      005489a1    movsx eax,n"
 "	      005489a5    cmp eax,0Ah"
 "	      005489a8    jge near ptr 005489CCh"
-"	      005489ae    movsx eax,word ptr [ebp-10h]"
+"	      005489ae    movsx eax,count"
 "	      005489b2    lea eax,[eax+eax*4]"
-"	      005489b5    movsx ecx,word ptr [ebp-14h]"
+"	      005489b5    movsx ecx,n"
 "	      005489b9    shl ecx,2"
 "	      005489bc    mov dword ptr [ecx+eax*8+6372D0h],0"
 "	      005489c7    jmp near ptr 0054899Dh"
@@ -6783,33 +6783,33 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1126:
 	asm( 
-"	      005489d1    movsx eax,word ptr [ebp-10h]"
+"	      005489d1    movsx eax,count"
 "	      005489d5    lea eax,[eax+eax*4]"
 "	      005489d8    mov dword ptr [eax*8+6372D0h],5"
 );
 // LINE 1127:
 	asm( 
-"	      005489e3    movsx eax,word ptr [ebp-10h]"
+"	      005489e3    movsx eax,count"
 "	      005489e7    lea eax,[eax+eax*4]"
 "	      005489ea    mov dword ptr [eax*8+6372D4h],4"
 );
 // LINE 1128:
 	asm( 
-"	      005489f5    movsx eax,word ptr [ebp-10h]"
+"	      005489f5    movsx eax,count"
 "	      005489f9    lea eax,[eax+eax*4]"
 "	      005489fc    mov dword ptr [eax*8+6372D8h],3"
 );
 // LINE 1129:
 	asm( 
-"	      00548a07    mov word ptr [ebp-14h],3"
+"	      00548a07    mov n,3"
 "	      00548a0d    jmp near ptr 00548A16h"
-"	      00548a12    inc word ptr [ebp-14h]"
-"	      00548a16    movsx eax,word ptr [ebp-14h]"
+"	      00548a12    inc n"
+"	      00548a16    movsx eax,n"
 "	      00548a1a    cmp eax,0Ah"
 "	      00548a1d    jge near ptr 00548A41h"
-"	      00548a23    movsx eax,word ptr [ebp-10h]"
+"	      00548a23    movsx eax,count"
 "	      00548a27    lea eax,[eax+eax*4]"
-"	      00548a2a    movsx ecx,word ptr [ebp-14h]"
+"	      00548a2a    movsx ecx,n"
 "	      00548a2e    shl ecx,2"
 "	      00548a31    mov dword ptr [ecx+eax*8+6372D0h],0"
 "	      00548a3c    jmp near ptr 00548A12h"
@@ -6820,39 +6820,39 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1137:
 	asm( 
-"	      00548a46    movsx eax,word ptr [ebp-10h]"
+"	      00548a46    movsx eax,count"
 "	      00548a4a    lea eax,[eax+eax*4]"
 "	      00548a4d    mov dword ptr [eax*8+6372D0h],0Ch"
 );
 // LINE 1138:
 	asm( 
-"	      00548a58    movsx eax,word ptr [ebp-10h]"
+"	      00548a58    movsx eax,count"
 "	      00548a5c    lea eax,[eax+eax*4]"
 "	      00548a5f    mov dword ptr [eax*8+6372D4h],0Dh"
 );
 // LINE 1139:
 	asm( 
-"	      00548a6a    movsx eax,word ptr [ebp-10h]"
+"	      00548a6a    movsx eax,count"
 "	      00548a6e    lea eax,[eax+eax*4]"
 "	      00548a71    mov dword ptr [eax*8+6372D8h],0Bh"
 );
 // LINE 1140:
 	asm( 
-"	      00548a7c    movsx eax,word ptr [ebp-10h]"
+"	      00548a7c    movsx eax,count"
 "	      00548a80    lea eax,[eax+eax*4]"
 "	      00548a83    mov dword ptr [eax*8+6372DCh],0Ah"
 );
 // LINE 1142:
 	asm( 
-"	      00548a8e    mov word ptr [ebp-14h],4"
+"	      00548a8e    mov n,4"
 "	      00548a94    jmp near ptr 00548A9Dh"
-"	      00548a99    inc word ptr [ebp-14h]"
-"	      00548a9d    movsx eax,word ptr [ebp-14h]"
+"	      00548a99    inc n"
+"	      00548a9d    movsx eax,n"
 "	      00548aa1    cmp eax,0Ah"
 "	      00548aa4    jge near ptr 00548AC8h"
-"	      00548aaa    movsx eax,word ptr [ebp-10h]"
+"	      00548aaa    movsx eax,count"
 "	      00548aae    lea eax,[eax+eax*4]"
-"	      00548ab1    movsx ecx,word ptr [ebp-14h]"
+"	      00548ab1    movsx ecx,n"
 "	      00548ab5    shl ecx,2"
 "	      00548ab8    mov dword ptr [ecx+eax*8+6372D0h],0"
 "	      00548ac3    jmp near ptr 00548A99h"
@@ -6872,45 +6872,45 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1145:
 	asm( 
-"	      00548aeb    mov word ptr [ebp-10h],0"
+"	      00548aeb    mov count,0"
 "	      00548af1    jmp near ptr 00548AFAh"
-"	      00548af6    inc word ptr [ebp-10h]"
-"	      00548afa    movsx eax,word ptr [ebp-10h]"
+"	      00548af6    inc count"
+"	      00548afa    movsx eax,count"
 "	      00548afe    cmp eax,0Eh"
 "	      00548b01    jge near ptr 00548BACh"
 );
 // LINE 1146:
 	asm( 
-"	      00548b07    movsx eax,word ptr [ebp-10h]"
+"	      00548b07    movsx eax,count"
 "	      00548b0b    cmp eax,7"
 "	      00548b0e    je near ptr 00548B48h"
-"	      00548b14    movsx eax,word ptr [ebp-10h]"
+"	      00548b14    movsx eax,count"
 "	      00548b18    cmp eax,3"
 "	      00548b1b    je near ptr 00548B48h"
-"	      00548b21    movsx eax,word ptr [ebp-10h]"
+"	      00548b21    movsx eax,count"
 "	      00548b25    cmp eax,4"
 "	      00548b28    je near ptr 00548B48h"
-"	      00548b2e    movsx eax,word ptr [ebp-10h]"
+"	      00548b2e    movsx eax,count"
 "	      00548b32    cmp eax,5"
 "	      00548b35    je near ptr 00548B48h"
-"	      00548b3b    movsx eax,word ptr [ebp-10h]"
+"	      00548b3b    movsx eax,count"
 "	      00548b3f    cmp eax,2"
 "	      00548b42    jne near ptr 00548B8Ah"
 );
 // LINE 1147:
 	asm( 
-"	      00548b48    movsx eax,word ptr [ebp-10h]"
+"	      00548b48    movsx eax,count"
 "	      00548b4c    mov dword ptr [eax*8+635268h],1"
 );
 // LINE 1148:
 	asm( 
-"	      00548b57    movsx eax,word ptr [ebp-10h]"
+"	      00548b57    movsx eax,count"
 "	      00548b5b    cmp eax,4"
 "	      00548b5e    jne near ptr 00548B77h"
 );
 // LINE 1149:
 	asm( 
-"	      00548b64    movsx eax,word ptr [ebp-10h]"
+"	      00548b64    movsx eax,count"
 "	      00548b68    mov word ptr [eax*8+63526Ch],2"
 );
 // LINE 1150:
@@ -6919,7 +6919,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1151:
 	asm( 
-"	      00548b77    movsx eax,word ptr [ebp-10h]"
+"	      00548b77    movsx eax,count"
 "	      00548b7b    mov word ptr [eax*8+63526Ch],4"
 );
 // LINE 1153:
@@ -6928,12 +6928,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1154:
 	asm( 
-"	      00548b8a    movsx eax,word ptr [ebp-10h]"
+"	      00548b8a    movsx eax,count"
 "	      00548b8e    mov dword ptr [eax*8+635268h],0"
 );
 // LINE 1155:
 	asm( 
-"	      00548b99    movsx eax,word ptr [ebp-10h]"
+"	      00548b99    movsx eax,count"
 "	      00548b9d    mov word ptr [eax*8+63526Ch],4"
 );
 // LINE 1157:
@@ -6942,322 +6942,322 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1162:
 	asm( 
-"	      00548bac    mov word ptr [ebp-10h],0"
+"	      00548bac    mov count,0"
 "	      00548bb2    jmp near ptr 00548BBBh"
-"	      00548bb7    inc word ptr [ebp-10h]"
-"	      00548bbb    movsx eax,word ptr [ebp-10h]"
+"	      00548bb7    inc count"
+"	      00548bbb    movsx eax,count"
 "	      00548bbf    cmp eax,100h"
 "	      00548bc4    jge near ptr 00549089h"
 );
 // LINE 1163:
 	asm( 
-"	      00548bca    movsx eax,word ptr [ebp-10h]"
+"	      00548bca    movsx eax,count"
 "	      00548bce    test eax,eax"
 "	      00548bd0    jne near ptr 00548BEAh"
 );
 // LINE 1164:
 	asm( 
-"	      00548bd6    movsx eax,word ptr [ebp-10h]"
+"	      00548bd6    movsx eax,count"
 "	      00548bda    mov dword ptr [eax*4+636ED0h],2"
 );
 // LINE 1165:
 	asm( 
 "	      00548be5    jmp near ptr 00549084h"
-"	      00548bea    movsx eax,word ptr [ebp-10h]"
+"	      00548bea    movsx eax,count"
 "	      00548bee    cmp eax,1"
 "	      00548bf1    jl near ptr 00548C18h"
-"	      00548bf7    movsx eax,word ptr [ebp-10h]"
+"	      00548bf7    movsx eax,count"
 "	      00548bfb    cmp eax,4"
 "	      00548bfe    jg near ptr 00548C18h"
 );
 // LINE 1166:
 	asm( 
-"	      00548c04    movsx eax,word ptr [ebp-10h]"
+"	      00548c04    movsx eax,count"
 "	      00548c08    mov dword ptr [eax*4+636ED0h],4"
 );
 // LINE 1167:
 	asm( 
 "	      00548c13    jmp near ptr 00549084h"
-"	      00548c18    movsx eax,word ptr [ebp-10h]"
+"	      00548c18    movsx eax,count"
 "	      00548c1c    cmp eax,6"
 "	      00548c1f    jl near ptr 00548C46h"
-"	      00548c25    movsx eax,word ptr [ebp-10h]"
+"	      00548c25    movsx eax,count"
 "	      00548c29    cmp eax,0Ch"
 "	      00548c2c    jg near ptr 00548C46h"
 );
 // LINE 1168:
 	asm( 
-"	      00548c32    movsx eax,word ptr [ebp-10h]"
+"	      00548c32    movsx eax,count"
 "	      00548c36    mov dword ptr [eax*4+636ED0h],3"
 );
 // LINE 1169:
 	asm( 
 "	      00548c41    jmp near ptr 00549084h"
-"	      00548c46    movsx eax,word ptr [ebp-10h]"
+"	      00548c46    movsx eax,count"
 "	      00548c4a    cmp eax,0Dh"
 "	      00548c4d    je near ptr 00548C71h"
-"	      00548c53    movsx eax,word ptr [ebp-10h]"
+"	      00548c53    movsx eax,count"
 "	      00548c57    cmp eax,0D5h"
 "	      00548c5c    je near ptr 00548C71h"
-"	      00548c62    movsx eax,word ptr [ebp-10h]"
+"	      00548c62    movsx eax,count"
 "	      00548c66    cmp eax,0DAh"
 "	      00548c6b    jne near ptr 00548C85h"
 );
 // LINE 1170:
 	asm( 
-"	      00548c71    movsx eax,word ptr [ebp-10h]"
+"	      00548c71    movsx eax,count"
 "	      00548c75    mov dword ptr [eax*4+636ED0h],5"
 );
 // LINE 1171:
 	asm( 
 "	      00548c80    jmp near ptr 00549084h"
-"	      00548c85    movsx eax,word ptr [ebp-10h]"
+"	      00548c85    movsx eax,count"
 "	      00548c89    cmp eax,0Eh"
 "	      00548c8c    jl near ptr 00548CB3h"
-"	      00548c92    movsx eax,word ptr [ebp-10h]"
+"	      00548c92    movsx eax,count"
 "	      00548c96    cmp eax,1Ch"
 "	      00548c99    jg near ptr 00548CB3h"
 );
 // LINE 1172:
 	asm( 
-"	      00548c9f    movsx eax,word ptr [ebp-10h]"
+"	      00548c9f    movsx eax,count"
 "	      00548ca3    mov dword ptr [eax*4+636ED0h],6"
 );
 // LINE 1173:
 	asm( 
 "	      00548cae    jmp near ptr 00549084h"
-"	      00548cb3    movsx eax,word ptr [ebp-10h]"
+"	      00548cb3    movsx eax,count"
 "	      00548cb7    cmp eax,1Dh"
 "	      00548cba    jl near ptr 00548CCDh"
-"	      00548cc0    movsx eax,word ptr [ebp-10h]"
+"	      00548cc0    movsx eax,count"
 "	      00548cc4    cmp eax,2Bh"
 "	      00548cc7    jle near ptr 00548D1Bh"
-"	      00548ccd    movsx eax,word ptr [ebp-10h]"
+"	      00548ccd    movsx eax,count"
 "	      00548cd1    cmp eax,43h"
 "	      00548cd4    jl near ptr 00548CE7h"
-"	      00548cda    movsx eax,word ptr [ebp-10h]"
+"	      00548cda    movsx eax,count"
 "	      00548cde    cmp eax,44h"
 "	      00548ce1    jle near ptr 00548D1Bh"
-"	      00548ce7    movsx eax,word ptr [ebp-10h]"
+"	      00548ce7    movsx eax,count"
 "	      00548ceb    cmp eax,49h"
 "	      00548cee    jl near ptr 00548D01h"
-"	      00548cf4    movsx eax,word ptr [ebp-10h]"
+"	      00548cf4    movsx eax,count"
 "	      00548cf8    cmp eax,50h"
 "	      00548cfb    jle near ptr 00548D1Bh"
-"	      00548d01    movsx eax,word ptr [ebp-10h]"
+"	      00548d01    movsx eax,count"
 "	      00548d05    cmp eax,61h"
 "	      00548d08    jl near ptr 00548D2Fh"
-"	      00548d0e    movsx eax,word ptr [ebp-10h]"
+"	      00548d0e    movsx eax,count"
 "	      00548d12    cmp eax,69h"
 "	      00548d15    jg near ptr 00548D2Fh"
 );
 // LINE 1174:
 	asm( 
-"	      00548d1b    movsx eax,word ptr [ebp-10h]"
+"	      00548d1b    movsx eax,count"
 "	      00548d1f    mov dword ptr [eax*4+636ED0h],7"
 );
 // LINE 1175:
 	asm( 
 "	      00548d2a    jmp near ptr 00549084h"
-"	      00548d2f    movsx eax,word ptr [ebp-10h]"
+"	      00548d2f    movsx eax,count"
 "	      00548d33    cmp eax,51h"
 "	      00548d36    jl near ptr 00548D49h"
-"	      00548d3c    movsx eax,word ptr [ebp-10h]"
+"	      00548d3c    movsx eax,count"
 "	      00548d40    cmp eax,5Ah"
 "	      00548d43    jle near ptr 00548D70h"
-"	      00548d49    movsx eax,word ptr [ebp-10h]"
+"	      00548d49    movsx eax,count"
 "	      00548d4d    cmp eax,49h"
 "	      00548d50    je near ptr 00548D70h"
-"	      00548d56    movsx eax,word ptr [ebp-10h]"
+"	      00548d56    movsx eax,count"
 "	      00548d5a    cmp eax,6Ah"
 "	      00548d5d    jl near ptr 00548D84h"
-"	      00548d63    movsx eax,word ptr [ebp-10h]"
+"	      00548d63    movsx eax,count"
 "	      00548d67    cmp eax,6Bh"
 "	      00548d6a    jg near ptr 00548D84h"
 );
 // LINE 1176:
 	asm( 
-"	      00548d70    movsx eax,word ptr [ebp-10h]"
+"	      00548d70    movsx eax,count"
 "	      00548d74    mov dword ptr [eax*4+636ED0h],8"
 );
 // LINE 1177:
 	asm( 
 "	      00548d7f    jmp near ptr 00549084h"
-"	      00548d84    movsx eax,word ptr [ebp-10h]"
+"	      00548d84    movsx eax,count"
 "	      00548d88    cmp eax,2Ch"
 "	      00548d8b    jl near ptr 00548D9Eh"
-"	      00548d91    movsx eax,word ptr [ebp-10h]"
+"	      00548d91    movsx eax,count"
 "	      00548d95    cmp eax,3Eh"
 "	      00548d98    jle near ptr 00548DECh"
-"	      00548d9e    movsx eax,word ptr [ebp-10h]"
+"	      00548d9e    movsx eax,count"
 "	      00548da2    cmp eax,3Fh"
 "	      00548da5    jl near ptr 00548DB8h"
-"	      00548dab    movsx eax,word ptr [ebp-10h]"
+"	      00548dab    movsx eax,count"
 "	      00548daf    cmp eax,50h"
 "	      00548db2    jle near ptr 00548DECh"
-"	      00548db8    movsx eax,word ptr [ebp-10h]"
+"	      00548db8    movsx eax,count"
 "	      00548dbc    cmp eax,45h"
 "	      00548dbf    jl near ptr 00548DD2h"
-"	      00548dc5    movsx eax,word ptr [ebp-10h]"
+"	      00548dc5    movsx eax,count"
 "	      00548dc9    cmp eax,49h"
 "	      00548dcc    jle near ptr 00548DECh"
-"	      00548dd2    movsx eax,word ptr [ebp-10h]"
+"	      00548dd2    movsx eax,count"
 "	      00548dd6    cmp eax,5Bh"
 "	      00548dd9    jl near ptr 00548E00h"
-"	      00548ddf    movsx eax,word ptr [ebp-10h]"
+"	      00548ddf    movsx eax,count"
 "	      00548de3    cmp eax,60h"
 "	      00548de6    jg near ptr 00548E00h"
 );
 // LINE 1178:
 	asm( 
-"	      00548dec    movsx eax,word ptr [ebp-10h]"
+"	      00548dec    movsx eax,count"
 "	      00548df0    mov dword ptr [eax*4+636ED0h],9"
 );
 // LINE 1179:
 	asm( 
 "	      00548dfb    jmp near ptr 00549084h"
-"	      00548e00    movsx eax,word ptr [ebp-10h]"
+"	      00548e00    movsx eax,count"
 "	      00548e04    cmp eax,70h"
 "	      00548e07    jl near ptr 00548E1Ah"
-"	      00548e0d    movsx eax,word ptr [ebp-10h]"
+"	      00548e0d    movsx eax,count"
 "	      00548e11    cmp eax,7Bh"
 "	      00548e14    jle near ptr 00548E74h"
-"	      00548e1a    movsx eax,word ptr [ebp-10h]"
+"	      00548e1a    movsx eax,count"
 "	      00548e1e    cmp eax,8Ch"
 "	      00548e23    jl near ptr 00548E38h"
-"	      00548e29    movsx eax,word ptr [ebp-10h]"
+"	      00548e29    movsx eax,count"
 "	      00548e2d    cmp eax,93h"
 "	      00548e32    jle near ptr 00548E74h"
-"	      00548e38    movsx eax,word ptr [ebp-10h]"
+"	      00548e38    movsx eax,count"
 "	      00548e3c    cmp eax,0AAh"
 "	      00548e41    jl near ptr 00548E56h"
-"	      00548e47    movsx eax,word ptr [ebp-10h]"
+"	      00548e47    movsx eax,count"
 "	      00548e4b    cmp eax,0B1h"
 "	      00548e50    jle near ptr 00548E74h"
-"	      00548e56    movsx eax,word ptr [ebp-10h]"
+"	      00548e56    movsx eax,count"
 "	      00548e5a    cmp eax,0FBh"
 "	      00548e5f    jl near ptr 00548E88h"
-"	      00548e65    movsx eax,word ptr [ebp-10h]"
+"	      00548e65    movsx eax,count"
 "	      00548e69    cmp eax,0FFh"
 "	      00548e6e    jg near ptr 00548E88h"
 );
 // LINE 1180:
 	asm( 
-"	      00548e74    movsx eax,word ptr [ebp-10h]"
+"	      00548e74    movsx eax,count"
 "	      00548e78    mov dword ptr [eax*4+636ED0h],0Ah"
 );
 // LINE 1181:
 	asm( 
 "	      00548e83    jmp near ptr 00549084h"
-"	      00548e88    movsx eax,word ptr [ebp-10h]"
+"	      00548e88    movsx eax,count"
 "	      00548e8c    cmp eax,0B2h"
 "	      00548e91    jl near ptr 00548EA6h"
-"	      00548e97    movsx eax,word ptr [ebp-10h]"
+"	      00548e97    movsx eax,count"
 "	      00548e9b    cmp eax,0BBh"
 "	      00548ea0    jle near ptr 00548F0Fh"
-"	      00548ea6    movsx eax,word ptr [ebp-10h]"
+"	      00548ea6    movsx eax,count"
 "	      00548eaa    cmp eax,0D0h"
 "	      00548eaf    jl near ptr 00548EC4h"
-"	      00548eb5    movsx eax,word ptr [ebp-10h]"
+"	      00548eb5    movsx eax,count"
 "	      00548eb9    cmp eax,0D1h"
 "	      00548ebe    jle near ptr 00548F0Fh"
-"	      00548ec4    movsx eax,word ptr [ebp-10h]"
+"	      00548ec4    movsx eax,count"
 "	      00548ec8    cmp eax,0D9h"
 "	      00548ecd    je near ptr 00548F0Fh"
-"	      00548ed3    movsx eax,word ptr [ebp-10h]"
+"	      00548ed3    movsx eax,count"
 "	      00548ed7    cmp eax,0E1h"
 "	      00548edc    je near ptr 00548F0Fh"
-"	      00548ee2    movsx eax,word ptr [ebp-10h]"
+"	      00548ee2    movsx eax,count"
 "	      00548ee6    cmp eax,0F1h"
 "	      00548eeb    je near ptr 00548F0Fh"
-"	      00548ef1    movsx eax,word ptr [ebp-10h]"
+"	      00548ef1    movsx eax,count"
 "	      00548ef5    cmp eax,0F3h"
 "	      00548efa    je near ptr 00548F0Fh"
-"	      00548f00    movsx eax,word ptr [ebp-10h]"
+"	      00548f00    movsx eax,count"
 "	      00548f04    cmp eax,0F7h"
 "	      00548f09    jne near ptr 00548F23h"
 );
 // LINE 1182:
 	asm( 
-"	      00548f0f    movsx eax,word ptr [ebp-10h]"
+"	      00548f0f    movsx eax,count"
 "	      00548f13    mov dword ptr [eax*4+636ED0h],0Ch"
 );
 // LINE 1183:
 	asm( 
 "	      00548f1e    jmp near ptr 00549084h"
-"	      00548f23    movsx eax,word ptr [ebp-10h]"
+"	      00548f23    movsx eax,count"
 "	      00548f27    cmp eax,82h"
 "	      00548f2c    je near ptr 00548FF5h"
-"	      00548f32    movsx eax,word ptr [ebp-10h]"
+"	      00548f32    movsx eax,count"
 "	      00548f36    cmp eax,84h"
 "	      00548f3b    jl near ptr 00548F50h"
-"	      00548f41    movsx eax,word ptr [ebp-10h]"
+"	      00548f41    movsx eax,count"
 "	      00548f45    cmp eax,8Bh"
 "	      00548f4a    jle near ptr 00548FF5h"
-"	      00548f50    movsx eax,word ptr [ebp-10h]"
+"	      00548f50    movsx eax,count"
 "	      00548f54    cmp eax,9Eh"
 "	      00548f59    jl near ptr 00548F6Eh"
-"	      00548f5f    movsx eax,word ptr [ebp-10h]"
+"	      00548f5f    movsx eax,count"
 "	      00548f63    cmp eax,0A9h"
 "	      00548f68    jle near ptr 00548FF5h"
-"	      00548f6e    movsx eax,word ptr [ebp-10h]"
+"	      00548f6e    movsx eax,count"
 "	      00548f72    cmp eax,0BCh"
 "	      00548f77    jl near ptr 00548F8Ch"
-"	      00548f7d    movsx eax,word ptr [ebp-10h]"
+"	      00548f7d    movsx eax,count"
 "	      00548f81    cmp eax,0CFh"
 "	      00548f86    jle near ptr 00548FF5h"
-"	      00548f8c    movsx eax,word ptr [ebp-10h]"
+"	      00548f8c    movsx eax,count"
 "	      00548f90    cmp eax,0E2h"
 "	      00548f95    jl near ptr 00548FAAh"
-"	      00548f9b    movsx eax,word ptr [ebp-10h]"
+"	      00548f9b    movsx eax,count"
 "	      00548f9f    cmp eax,0EFh"
 "	      00548fa4    jle near ptr 00548FF5h"
-"	      00548faa    movsx eax,word ptr [ebp-10h]"
+"	      00548faa    movsx eax,count"
 "	      00548fae    cmp eax,0F2h"
 "	      00548fb3    je near ptr 00548FF5h"
-"	      00548fb9    movsx eax,word ptr [ebp-10h]"
+"	      00548fb9    movsx eax,count"
 "	      00548fbd    cmp eax,0F4h"
 "	      00548fc2    je near ptr 00548FF5h"
-"	      00548fc8    movsx eax,word ptr [ebp-10h]"
+"	      00548fc8    movsx eax,count"
 "	      00548fcc    cmp eax,0F6h"
 "	      00548fd1    je near ptr 00548FF5h"
-"	      00548fd7    movsx eax,word ptr [ebp-10h]"
+"	      00548fd7    movsx eax,count"
 "	      00548fdb    cmp eax,0F9h"
 "	      00548fe0    jl near ptr 00549009h"
-"	      00548fe6    movsx eax,word ptr [ebp-10h]"
+"	      00548fe6    movsx eax,count"
 "	      00548fea    cmp eax,0FAh"
 "	      00548fef    jg near ptr 00549009h"
 );
 // LINE 1184:
 	asm( 
-"	      00548ff5    movsx eax,word ptr [ebp-10h]"
+"	      00548ff5    movsx eax,count"
 "	      00548ff9    mov dword ptr [eax*4+636ED0h],0Dh"
 );
 // LINE 1185:
 	asm( 
 "	      00549004    jmp near ptr 00549084h"
-"	      00549009    movsx eax,word ptr [ebp-10h]"
+"	      00549009    movsx eax,count"
 "	      0054900d    cmp eax,7Ch"
 "	      00549010    jl near ptr 00549025h"
-"	      00549016    movsx eax,word ptr [ebp-10h]"
+"	      00549016    movsx eax,count"
 "	      0054901a    cmp eax,83h"
 "	      0054901f    jle near ptr 00549061h"
-"	      00549025    movsx eax,word ptr [ebp-10h]"
+"	      00549025    movsx eax,count"
 "	      00549029    cmp eax,94h"
 "	      0054902e    jl near ptr 00549043h"
-"	      00549034    movsx eax,word ptr [ebp-10h]"
+"	      00549034    movsx eax,count"
 "	      00549038    cmp eax,9Dh"
 "	      0054903d    jle near ptr 00549061h"
-"	      00549043    movsx eax,word ptr [ebp-10h]"
+"	      00549043    movsx eax,count"
 "	      00549047    cmp eax,0D2h"
 "	      0054904c    jl near ptr 00549075h"
-"	      00549052    movsx eax,word ptr [ebp-10h]"
+"	      00549052    movsx eax,count"
 "	      00549056    cmp eax,0FAh"
 "	      0054905b    jg near ptr 00549075h"
 );
 // LINE 1186:
 	asm( 
-"	      00549061    movsx eax,word ptr [ebp-10h]"
+"	      00549061    movsx eax,count"
 "	      00549065    mov dword ptr [eax*4+636ED0h],0Bh"
 );
 // LINE 1187:
@@ -7266,7 +7266,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1188:
 	asm( 
-"	      00549075    movsx eax,word ptr [ebp-10h]"
+"	      00549075    movsx eax,count"
 "	      00549079    mov dword ptr [eax*4+636ED0h],1"
 );
 // LINE 1189:
@@ -7275,16 +7275,16 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1192:
 	asm( 
-"	      00549089    mov word ptr [ebp-10h],0"
+"	      00549089    mov count,0"
 "	      0054908f    jmp near ptr 00549098h"
-"	      00549094    inc word ptr [ebp-10h]"
-"	      00549098    movsx eax,word ptr [ebp-10h]"
+"	      00549094    inc count"
+"	      00549098    movsx eax,count"
 "	      0054909c    cmp eax,64h"
 "	      0054909f    jge near ptr 005490B9h"
 );
 // LINE 1193:
 	asm( 
-"	      005490a5    movsx eax,word ptr [ebp-10h]"
+"	      005490a5    movsx eax,count"
 "	      005490a9    mov dword ptr [eax*4+636D40h],0"
 "	      005490b4    jmp near ptr 00549094h"
 );
@@ -7294,7 +7294,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1197:
 	asm( 
-"	      005490c2    cmp dword ptr [ebp+8],0"
+"	      005490c2    cmp globalBehaviorFileName,0"
 "	      005490c6    jne near ptr 005490E8h"
 "	      005490cc    push 8C085h"
 "	      005490d1    push 5B90B8h"
@@ -7305,7 +7305,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1198:
 	asm( 
-"	      005490e8    mov eax,[ebp+8]"
+"	      005490e8    mov eax,globalBehaviorFileName"
 "	      005490eb    push eax"
 "	      005490ec    mov ecx,636BB8h"
 "	      005490f1    call 00552E51h"
@@ -7381,16 +7381,16 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 );
 // LINE 1208:
 	asm( 
-"	      005491e3    mov word ptr [ebp-10h],0"
+"	      005491e3    mov count,0"
 "	      005491e9    jmp near ptr 005491F2h"
-"	      005491ee    inc word ptr [ebp-10h]"
-"	      005491f2    movsx eax,word ptr [ebp-10h]"
+"	      005491ee    inc count"
+"	      005491f2    movsx eax,count"
 "	      005491f6    cmp eax,40h"
 "	      005491f9    jge near ptr 00549213h"
 );
 // LINE 1209:
 	asm( 
-"	      005491ff    movsx eax,word ptr [ebp-10h]"
+"	      005491ff    movsx eax,count"
 "	      00549203    mov dword ptr [eax*4+6375A8h],0"
 "	      0054920e    jmp near ptr 005491EEh"
 );
@@ -8080,33 +8080,33 @@ unsigned short cYObject::BeamIntoCameraRange() {
 "	      00549be3    push ebx"
 "	      00549be4    push esi"
 "	      00549be5    push edi"
-"	      00549be6    mov [ebp-40h],ecx"
+"	      00549be6    mov this,ecx"
 );
 // LINE 1283:
 	asm( 
-"	      00549be9    mov dword ptr [ebp-0Ch],0"
+"	      00549be9    mov curr_dist,0"
 );
 // LINE 1284:
 	asm( 
-"	      00549bf0    mov dword ptr [ebp-30h],0FFFFFFFFh"
+"	      00549bf0    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 1286:
 	asm( 
-"	      00549bf7    mov word ptr [ebp-38h],0"
+"	      00549bf7    mov stop_now,0"
 );
 // LINE 1287:
 	asm( 
-"	      00549bfd    mov dword ptr [ebp-10h],7"
+"	      00549bfd    mov spiral_dist,7"
 );
 // LINE 1288:
 	asm( 
-"	      00549c04    mov word ptr [ebp-3Ch],0"
+"	      00549c04    mov foundcell,0"
 );
 // LINE 1291:
 	asm( 
 "	      00549c0a    mov eax,6C1210h"
 "	      00549c0f    add eax,14h"
-"	      00549c12    lea ecx,[ebp-1Ch]"
+"	      00549c12    lea ecx,vec.x"
 "	      00549c15    mov edx,[eax]"
 "	      00549c17    mov [ecx],edx"
 "	      00549c19    mov edx,[eax+4]"
@@ -8126,34 +8126,34 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1299:
 	asm( 
-"	      00549c3f    mov eax,[ebp-14h]"
-"	      00549c42    mov [ebp-18h],eax"
+"	      00549c3f    mov eax,vec.z"
+"	      00549c42    mov vec.y,eax"
 );
 // LINE 1300:
 	asm( 
-"	      00549c45    mov eax,[ebp-1Ch]"
+"	      00549c45    mov eax,vec.x"
 "	      00549c48    neg eax"
-"	      00549c4a    mov [ebp-14h],eax"
+"	      00549c4a    mov vec.z,eax"
 );
 // LINE 1301:
 	asm( 
-"	      00549c4d    mov eax,[ebp-18h]"
-"	      00549c50    mov [ebp-1Ch],eax"
+"	      00549c4d    mov eax,vec.y"
+"	      00549c50    mov vec.x,eax"
 );
 // LINE 1303:
 	asm( 
 "	      00549c53    mov eax,ds:[6663A0h]"
 "	      00549c58    sar eax,1"
-"	      00549c5b    imul eax,[ebp-1Ch]"
-"	      00549c5f    mov [ebp-1Ch],eax"
+"	      00549c5b    imul eax,vec.x"
+"	      00549c5f    mov vec.x,eax"
 );
 // LINE 1304:
 	asm( 
-"	      00549c62    mov eax,[ebp-14h]"
+"	      00549c62    mov eax,vec.z"
 "	      00549c65    mov ecx,ds:[6663A0h]"
 "	      00549c6b    sar ecx,1"
 "	      00549c6e    imul eax,ecx"
-"	      00549c71    mov [ebp-14h],eax"
+"	      00549c71    mov vec.z,eax"
 );
 // LINE 1305:
 	asm( 
@@ -8161,34 +8161,34 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1308:
 	asm( 
-"	      00549c79    mov eax,[ebp-14h]"
+"	      00549c79    mov eax,vec.z"
 "	      00549c7c    neg eax"
-"	      00549c7e    mov [ebp-18h],eax"
+"	      00549c7e    mov vec.y,eax"
 );
 // LINE 1309:
 	asm( 
-"	      00549c81    mov eax,[ebp-1Ch]"
-"	      00549c84    mov [ebp-14h],eax"
+"	      00549c81    mov eax,vec.x"
+"	      00549c84    mov vec.z,eax"
 );
 // LINE 1310:
 	asm( 
-"	      00549c87    mov eax,[ebp-18h]"
-"	      00549c8a    mov [ebp-1Ch],eax"
+"	      00549c87    mov eax,vec.y"
+"	      00549c8a    mov vec.x,eax"
 );
 // LINE 1312:
 	asm( 
 "	      00549c8d    mov eax,ds:[6663A0h]"
 "	      00549c92    sar eax,1"
-"	      00549c95    imul eax,[ebp-1Ch]"
-"	      00549c99    mov [ebp-1Ch],eax"
+"	      00549c95    imul eax,vec.x"
+"	      00549c99    mov vec.x,eax"
 );
 // LINE 1313:
 	asm( 
-"	      00549c9c    mov eax,[ebp-14h]"
+"	      00549c9c    mov eax,vec.z"
 "	      00549c9f    mov ecx,ds:[6663A0h]"
 "	      00549ca5    sar ecx,1"
 "	      00549ca8    imul eax,ecx"
-"	      00549cab    mov [ebp-14h],eax"
+"	      00549cab    mov vec.z,eax"
 );
 // LINE 1314:
 	asm( 
@@ -8196,29 +8196,29 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1317:
 	asm( 
-"	      00549cb3    mov eax,[ebp-1Ch]"
+"	      00549cb3    mov eax,vec.x"
 "	      00549cb6    neg eax"
-"	      00549cb8    mov [ebp-1Ch],eax"
+"	      00549cb8    mov vec.x,eax"
 );
 // LINE 1318:
 	asm( 
-"	      00549cbb    mov eax,[ebp-14h]"
+"	      00549cbb    mov eax,vec.z"
 "	      00549cbe    neg eax"
-"	      00549cc0    mov [ebp-14h],eax"
+"	      00549cc0    mov vec.z,eax"
 );
 // LINE 1320:
 	asm( 
 "	      00549cc3    mov eax,ds:[6663A0h]"
 "	      00549cc8    sar eax,2"
-"	      00549ccb    imul eax,[ebp-1Ch]"
-"	      00549ccf    mov [ebp-1Ch],eax"
+"	      00549ccb    imul eax,vec.x"
+"	      00549ccf    mov vec.x,eax"
 );
 // LINE 1321:
 	asm( 
 "	      00549cd2    mov eax,ds:[6663A0h]"
 "	      00549cd7    sar eax,2"
-"	      00549cda    imul eax,[ebp-14h]"
-"	      00549cde    mov [ebp-14h],eax"
+"	      00549cda    imul eax,vec.z"
+"	      00549cde    mov vec.z,eax"
 );
 // LINE 1322:
 	asm( 
@@ -8229,16 +8229,16 @@ unsigned short cYObject::BeamIntoCameraRange() {
 "	      00549ce6    mov eax,ds:[6663A0h]"
 "	      00549ceb    sar eax,1"
 "	      00549cee    inc eax"
-"	      00549cef    imul eax,[ebp-1Ch]"
-"	      00549cf3    mov [ebp-1Ch],eax"
+"	      00549cef    imul eax,vec.x"
+"	      00549cf3    mov vec.x,eax"
 );
 // LINE 1327:
 	asm( 
 "	      00549cf6    mov eax,ds:[6663A0h]"
 "	      00549cfb    sar eax,1"
 "	      00549cfe    inc eax"
-"	      00549cff    imul eax,[ebp-14h]"
-"	      00549d03    mov [ebp-14h],eax"
+"	      00549cff    imul eax,vec.z"
+"	      00549d03    mov vec.z,eax"
 );
 // LINE 1328:
 	asm( 
@@ -8257,54 +8257,54 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1331:
 	asm( 
-"	      00549d33    shl dword ptr [ebp-1Ch],6"
+"	      00549d33    shl vec.x,6"
 );
 // LINE 1332:
 	asm( 
-"	      00549d37    shl dword ptr [ebp-14h],6"
+"	      00549d37    shl vec.z,6"
 );
 // LINE 1334:
 	asm( 
 "	      00549d3b    mov eax,ds:[6C126Ch]"
-"	      00549d40    add eax,[ebp-1Ch]"
+"	      00549d40    add eax,vec.x"
 "	      00549d43    add eax,20000000h"
 "	      00549d48    sar eax,16h"
-"	      00549d4b    mov [ebp-24h],eax"
+"	      00549d4b    mov x,eax"
 );
 // LINE 1335:
 	asm( 
 "	      00549d4e    mov eax,20000000h"
 "	      00549d53    mov ecx,ds:[6C1274h]"
-"	      00549d59    add ecx,[ebp-14h]"
+"	      00549d59    add ecx,vec.z"
 "	      00549d5c    sub eax,ecx"
 "	      00549d5e    sar eax,16h"
-"	      00549d61    mov [ebp-28h],eax"
+"	      00549d61    mov y,eax"
 );
 // LINE 1342:
 	asm( 
-"	      00549d64    inc dword ptr [ebp-30h]"
+"	      00549d64    inc curr_dir"
 );
 // LINE 1343:
 	asm( 
-"	      00549d67    mov eax,[ebp-30h]"
+"	      00549d67    mov eax,curr_dir"
 "	      00549d6a    mov [ebp-48h],eax"
 "	      00549d6d    jmp near ptr 00549DD0h"
 );
 // LINE 1347:
 	asm( 
-"	      00549d72    mov dword ptr [ebp-30h],0"
+"	      00549d72    mov curr_dir,0"
 );
 // LINE 1348:
 	asm( 
-"	      00549d79    inc dword ptr [ebp-0Ch]"
+"	      00549d79    inc curr_dist"
 );
 // LINE 1349:
 	asm( 
-"	      00549d7c    mov dword ptr [ebp-4],0"
+"	      00549d7c    mov xdir,0"
 );
 // LINE 1350:
 	asm( 
-"	      00549d83    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      00549d83    mov ydir,0FFFFFFFFh"
 );
 // LINE 1351:
 	asm( 
@@ -8312,11 +8312,11 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1353:
 	asm( 
-"	      00549d8f    mov dword ptr [ebp-4],1"
+"	      00549d8f    mov xdir,1"
 );
 // LINE 1354:
 	asm( 
-"	      00549d96    mov dword ptr [ebp-8],0"
+"	      00549d96    mov ydir,0"
 );
 // LINE 1355:
 	asm( 
@@ -8324,15 +8324,15 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1357:
 	asm( 
-"	      00549da2    inc dword ptr [ebp-0Ch]"
+"	      00549da2    inc curr_dist"
 );
 // LINE 1358:
 	asm( 
-"	      00549da5    mov dword ptr [ebp-4],0"
+"	      00549da5    mov xdir,0"
 );
 // LINE 1359:
 	asm( 
-"	      00549dac    mov dword ptr [ebp-8],1"
+"	      00549dac    mov ydir,1"
 );
 // LINE 1360:
 	asm( 
@@ -8340,11 +8340,11 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1362:
 	asm( 
-"	      00549db8    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00549db8    mov xdir,0FFFFFFFFh"
 );
 // LINE 1363:
 	asm( 
-"	      00549dbf    mov dword ptr [ebp-8],0"
+"	      00549dbf    mov ydir,0"
 );
 // LINE 1364:
 	asm( 
@@ -8369,38 +8369,38 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1369:
 	asm( 
-"	      00549df8    mov eax,[ebp-10h]"
-"	      00549dfb    cmp [ebp-0Ch],eax"
+"	      00549df8    mov eax,spiral_dist"
+"	      00549dfb    cmp curr_dist,eax"
 "	      00549dfe    jne near ptr 00549E0Dh"
 );
 // LINE 1371:
 	asm( 
-"	      00549e04    dec dword ptr [ebp-0Ch]"
+"	      00549e04    dec curr_dist"
 );
 // LINE 1372:
 	asm( 
-"	      00549e07    mov word ptr [ebp-38h],1"
+"	      00549e07    mov stop_now,1"
 );
 // LINE 1376:
 	asm( 
-"	      00549e0d    mov dword ptr [ebp-2Ch],0"
+"	      00549e0d    mov i,0"
 "	      00549e14    jmp near ptr 00549E1Ch"
-"	      00549e19    inc dword ptr [ebp-2Ch]"
-"	      00549e1c    mov eax,[ebp-2Ch]"
-"	      00549e1f    cmp [ebp-0Ch],eax"
+"	      00549e19    inc i"
+"	      00549e1c    mov eax,i"
+"	      00549e1f    cmp curr_dist,eax"
 "	      00549e22    jle near ptr 00549EA6h"
 );
 // LINE 1378:
 	asm( 
-"	      00549e28    lea eax,[ebp-34h]"
+"	      00549e28    lea eax,offsetz"
 "	      00549e2b    push eax"
-"	      00549e2c    lea eax,[ebp-20h]"
+"	      00549e2c    lea eax,offsetx"
 "	      00549e2f    push eax"
-"	      00549e30    lea eax,[ebp-28h]"
+"	      00549e30    lea eax,y"
 "	      00549e33    push eax"
-"	      00549e34    lea eax,[ebp-24h]"
+"	      00549e34    lea eax,x"
 "	      00549e37    push eax"
-"	      00549e38    mov ecx,[ebp-40h]"
+"	      00549e38    mov ecx,this"
 "	      00549e3b    call 0054D662h"
 "	      00549e40    movzx eax,ax"
 "	      00549e43    test eax,eax"
@@ -8408,15 +8408,15 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1381:
 	asm( 
-"	      00549e4b    mov eax,[ebp-34h]"
+"	      00549e4b    mov eax,offsetz"
 "	      00549e4e    push eax"
-"	      00549e4f    mov eax,[ebp-20h]"
+"	      00549e4f    mov eax,offsetx"
 "	      00549e52    push eax"
-"	      00549e53    mov eax,[ebp-28h]"
+"	      00549e53    mov eax,y"
 "	      00549e56    push eax"
-"	      00549e57    mov eax,[ebp-24h]"
+"	      00549e57    mov eax,x"
 "	      00549e5a    push eax"
-"	      00549e5b    mov ecx,[ebp-40h]"
+"	      00549e5b    mov ecx,this"
 "	      00549e5e    call 0054FD4Dh"
 );
 // LINE 1391:
@@ -8442,13 +8442,13 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1396:
 	asm( 
-"	      00549e95    mov eax,[ebp-4]"
-"	      00549e98    add [ebp-24h],eax"
+"	      00549e95    mov eax,xdir"
+"	      00549e98    add x,eax"
 );
 // LINE 1397:
 	asm( 
-"	      00549e9b    mov eax,[ebp-8]"
-"	      00549e9e    add [ebp-28h],eax"
+"	      00549e9b    mov eax,ydir"
+"	      00549e9e    add y,eax"
 );
 // LINE 1398:
 	asm( 
@@ -8513,11 +8513,11 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      00549f0a    push ebx"
 "	      00549f0b    push esi"
 "	      00549f0c    push edi"
-"	      00549f0d    mov [ebp-40h],ecx"
+"	      00549f0d    mov this,ecx"
 );
 // LINE 1414:
 	asm( 
-"	      00549f10    mov eax,[ebp-40h]"
+"	      00549f10    mov eax,this"
 "	      00549f13    movsx eax,word ptr [eax+0D8h]"
 "	      00549f1a    test eax,eax"
 "	      00549f1c    je near ptr 00549F3Eh"
@@ -8530,7 +8530,7 @@ unsigned short cYObject::OutOfCameraRange() {
 );
 // LINE 1418:
 	asm( 
-"	      00549f3e    mov eax,[ebp-40h]"
+"	      00549f3e    mov eax,this"
 "	      00549f41    movsx eax,word ptr [eax+0FCh]"
 "	      00549f48    cmp eax,0FFFFFFFFh"
 "	      00549f4b    je near ptr 00549FD2h"
@@ -8539,7 +8539,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	asm( 
 "	      00549f51    jmp near ptr 00549F56h"
 "	      00549f56    mov eax,ds:[6BF188h]"
-"	      00549f5b    mov ecx,[ebp-40h]"
+"	      00549f5b    mov ecx,this"
 "	      00549f5e    xor edx,edx"
 "	      00549f60    mov dl,[ecx+88h]"
 "	      00549f66    sub eax,edx"
@@ -8554,7 +8554,7 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      00549f7e    jg near ptr 00549FB7h"
 "	      00549f84    jmp near ptr 00549F89h"
 "	      00549f89    mov eax,ds:[6BF18Ch]"
-"	      00549f8e    mov ecx,[ebp-40h]"
+"	      00549f8e    mov ecx,this"
 "	      00549f91    xor edx,edx"
 "	      00549f93    mov dl,[ecx+89h]"
 "	      00549f99    sub eax,edx"
@@ -8598,76 +8598,76 @@ unsigned short cYObject::OutOfCameraRange() {
 	long debug2;
 	asm( 
 "	      00549fd2    mov eax,ds:[6BF188h]"
-"	      00549fd7    mov ecx,[ebp-40h]"
+"	      00549fd7    mov ecx,this"
 "	      00549fda    xor edx,edx"
 "	      00549fdc    mov dl,[ecx+88h]"
 "	      00549fe2    sub eax,edx"
-"	      00549fe4    mov [ebp-24h],ax"
+"	      00549fe4    mov deltaX,ax"
 );
 // LINE 1427:
 	asm( 
 "	      00549fe8    mov eax,ds:[6BF18Ch]"
-"	      00549fed    mov ecx,[ebp-40h]"
+"	      00549fed    mov ecx,this"
 "	      00549ff0    xor edx,edx"
 "	      00549ff2    mov dl,[ecx+89h]"
 "	      00549ff8    sub eax,edx"
-"	      00549ffa    mov [ebp-28h],ax"
+"	      00549ffa    mov deltaY,ax"
 );
 // LINE 1429:
 	asm( 
-"	      00549ffe    movsx eax,word ptr [ebp-24h]"
+"	      00549ffe    movsx eax,deltaX"
 "	      0054a002    cmp eax,80h"
 "	      0054a007    jle near ptr 0054A01Fh"
 );
 // LINE 1430:
 	asm( 
-"	      0054a00d    movsx eax,word ptr [ebp-24h]"
+"	      0054a00d    movsx eax,deltaX"
 "	      0054a011    sub eax,100h"
-"	      0054a016    mov [ebp-24h],ax"
+"	      0054a016    mov deltaX,ax"
 "	      0054a01a    jmp near ptr 00549FFEh"
 );
 // LINE 1431:
 	asm( 
-"	      0054a01f    movsx eax,word ptr [ebp-24h]"
+"	      0054a01f    movsx eax,deltaX"
 "	      0054a023    cmp eax,0FFFFFF80h"
 "	      0054a026    jge near ptr 0054A03Eh"
 );
 // LINE 1432:
 	asm( 
-"	      0054a02c    movsx eax,word ptr [ebp-24h]"
+"	      0054a02c    movsx eax,deltaX"
 "	      0054a030    add eax,100h"
-"	      0054a035    mov [ebp-24h],ax"
+"	      0054a035    mov deltaX,ax"
 "	      0054a039    jmp near ptr 0054A01Fh"
 );
 // LINE 1434:
 	asm( 
-"	      0054a03e    movsx eax,word ptr [ebp-28h]"
+"	      0054a03e    movsx eax,deltaY"
 "	      0054a042    cmp eax,80h"
 "	      0054a047    jle near ptr 0054A05Fh"
 );
 // LINE 1435:
 	asm( 
-"	      0054a04d    movsx eax,word ptr [ebp-28h]"
+"	      0054a04d    movsx eax,deltaY"
 "	      0054a051    sub eax,100h"
-"	      0054a056    mov [ebp-28h],ax"
+"	      0054a056    mov deltaY,ax"
 "	      0054a05a    jmp near ptr 0054A03Eh"
 );
 // LINE 1436:
 	asm( 
-"	      0054a05f    movsx eax,word ptr [ebp-28h]"
+"	      0054a05f    movsx eax,deltaY"
 "	      0054a063    cmp eax,0FFFFFF80h"
 "	      0054a066    jge near ptr 0054A07Eh"
 );
 // LINE 1437:
 	asm( 
-"	      0054a06c    movsx eax,word ptr [ebp-28h]"
+"	      0054a06c    movsx eax,deltaY"
 "	      0054a070    add eax,100h"
-"	      0054a075    mov [ebp-28h],ax"
+"	      0054a075    mov deltaY,ax"
 "	      0054a079    jmp near ptr 0054A05Fh"
 );
 // LINE 1439:
 	asm( 
-"	      0054a07e    movsx eax,word ptr [ebp-28h]"
+"	      0054a07e    movsx eax,deltaY"
 "	      0054a082    cdq"
 "	      0054a083    xor eax,edx"
 "	      0054a085    sub eax,edx"
@@ -8675,7 +8675,7 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      0054a08b    jmp near ptr 0054A090h"
 "	      0054a090    lea eax,[ebp-2Ch]"
 "	      0054a093    mov [ebp-34h],eax"
-"	      0054a096    movsx eax,word ptr [ebp-24h]"
+"	      0054a096    movsx eax,deltaX"
 "	      0054a09a    cdq"
 "	      0054a09b    xor eax,edx"
 "	      0054a09d    sub eax,edx"
@@ -8697,13 +8697,13 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      0054a0d3    jmp near ptr 0054A0D8h"
 "	      0054a0d8    mov eax,[ebp-3Ch]"
 "	      0054a0db    mov ax,[eax]"
-"	      0054a0de    mov [ebp-24h],ax"
+"	      0054a0de    mov deltaX,ax"
 );
 // LINE 1442:
 	asm( 
 "	      0054a0e2    mov eax,6C1210h"
 "	      0054a0e7    add eax,14h"
-"	      0054a0ea    lea ecx,[ebp-18h]"
+"	      0054a0ea    lea ecx,viewvec.x"
 "	      0054a0ed    mov edx,[eax]"
 "	      0054a0ef    mov [ecx],edx"
 "	      0054a0f1    mov edx,[eax+4]"
@@ -8713,44 +8713,44 @@ unsigned short cYObject::OutOfCameraRange() {
 );
 // LINE 1443:
 	asm( 
-"	      0054a0fd    mov eax,[ebp-40h]"
+"	      0054a0fd    mov eax,this"
 "	      0054a100    mov eax,[eax+3Ch]"
 "	      0054a103    sub eax,ds:[6C126Ch]"
-"	      0054a109    mov [ebp-20h],eax"
+"	      0054a109    mov xtoview,eax"
 );
 // LINE 1444:
 	asm( 
-"	      0054a10c    mov eax,[ebp-40h]"
+"	      0054a10c    mov eax,this"
 "	      0054a10f    mov eax,[eax+44h]"
 "	      0054a112    sub eax,ds:[6C126Ch]"
-"	      0054a118    mov [ebp-0Ch],eax"
+"	      0054a118    mov ztoview,eax"
 );
 // LINE 1445:
 	asm( 
-"	      0054a11b    mov word ptr [ebp-8],0"
+"	      0054a11b    mov behindView,0"
 );
 // LINE 1447:
 	asm( 
-"	      0054a121    cmp dword ptr [ebp-20h],0"
+"	      0054a121    cmp xtoview,0"
 "	      0054a125    jge near ptr 0054A135h"
-"	      0054a12b    cmp dword ptr [ebp-18h],0"
+"	      0054a12b    cmp viewvec.x,0"
 "	      0054a12f    jg near ptr 0054A149h"
-"	      0054a135    cmp dword ptr [ebp-20h],0"
+"	      0054a135    cmp xtoview,0"
 "	      0054a139    jle near ptr 0054A177h"
-"	      0054a13f    cmp dword ptr [ebp-18h],0"
+"	      0054a13f    cmp viewvec.x,0"
 "	      0054a143    jge near ptr 0054A177h"
-"	      0054a149    cmp dword ptr [ebp-0Ch],0"
+"	      0054a149    cmp ztoview,0"
 "	      0054a14d    jge near ptr 0054A15Dh"
-"	      0054a153    cmp dword ptr [ebp-10h],0"
+"	      0054a153    cmp viewvec.z,0"
 "	      0054a157    jg near ptr 0054A171h"
-"	      0054a15d    cmp dword ptr [ebp-0Ch],0"
+"	      0054a15d    cmp ztoview,0"
 "	      0054a161    jle near ptr 0054A177h"
-"	      0054a167    cmp dword ptr [ebp-10h],0"
+"	      0054a167    cmp viewvec.z,0"
 "	      0054a16b    jge near ptr 0054A177h"
 );
 // LINE 1448:
 	asm( 
-"	      0054a171    mov word ptr [ebp-8],1"
+"	      0054a171    mov behindView,1"
 );
 // LINE 1449:
 	asm( 
@@ -8759,24 +8759,24 @@ unsigned short cYObject::OutOfCameraRange() {
 );
 // LINE 1450:
 	asm( 
-"	      0054a184    movsx eax,word ptr [ebp-24h]"
+"	      0054a184    movsx eax,deltaX"
 "	      0054a188    add eax,eax"
-"	      0054a18a    mov [ebp-24h],ax"
+"	      0054a18a    mov deltaX,ax"
 );
 // LINE 1453:
 	asm( 
 "	      0054a18e    mov eax,ds:[6663A0h]"
-"	      0054a193    mov [ebp-1Ch],eax"
+"	      0054a193    mov debug1,eax"
 "	      0054a196    mov eax,ds:[6663A0h]"
 "	      0054a19b    sar eax,2"
-"	      0054a19e    mov [ebp-4],eax"
+"	      0054a19e    mov debug2,eax"
 );
 // LINE 1454:
 	asm( 
 "	      0054a1a1    mov eax,ds:[6663A0h]"
 "	      0054a1a6    sar eax,1"
 "	      0054a1a9    add eax,4"
-"	      0054a1ac    movsx ecx,word ptr [ebp-24h]"
+"	      0054a1ac    movsx ecx,deltaX"
 "	      0054a1b0    cmp eax,ecx"
 "	      0054a1b2    jge near ptr 0054A1C6h"
 );
@@ -8821,32 +8821,32 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 );
 // LINE 1466:
 	asm( 
-"	      0054a1dc    mov word ptr [ebp-8],0FFFFh"
+"	      0054a1dc    mov ret,0FFFFh"
 );
 // LINE 1467:
 	asm( 
 "	      0054a1e2    call 00547CC8h"
-"	      0054a1e7    mov [ebp-4],eax"
+"	      0054a1e7    mov newperson,eax"
 );
 // LINE 1470:
 	asm( 
-"	      0054a1ea    cmp dword ptr [ebp-4],0"
+"	      0054a1ea    cmp newperson,0"
 "	      0054a1ee    je near ptr 0054A231h"
-"	      0054a1f4    mov eax,[ebp+20h]"
+"	      0054a1f4    mov eax,loc"
 "	      0054a1f7    push eax"
-"	      0054a1f8    mov eax,[ebp+1Ch]"
+"	      0054a1f8    mov eax,onTopOf"
 "	      0054a1fb    push eax"
-"	      0054a1fc    mov eax,[ebp+18h]"
+"	      0054a1fc    mov eax,missionid"
 "	      0054a1ff    push eax"
 "	      0054a200    mov eax,[ebp+14h]"
 "	      0054a203    push eax"
 "	      0054a204    mov eax,[ebp+10h]"
 "	      0054a207    push eax"
-"	      0054a208    mov eax,[ebp+0Ch]"
+"	      0054a208    mov eax,mission"
 "	      0054a20b    push eax"
-"	      0054a20c    mov eax,[ebp+8]"
+"	      0054a20c    mov eax,persontype"
 "	      0054a20f    push eax"
-"	      0054a210    mov ecx,[ebp-4]"
+"	      0054a210    mov ecx,newperson"
 "	      0054a213    call 0054A7A5h"
 "	      0054a218    movzx eax,ax"
 "	      0054a21b    test eax,eax"
@@ -8854,13 +8854,13 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 );
 // LINE 1471:
 	asm( 
-"	      0054a223    mov eax,[ebp-4]"
+"	      0054a223    mov eax,newperson"
 "	      0054a226    mov ax,[eax+0BCh]"
-"	      0054a22d    mov [ebp-8],ax"
+"	      0054a22d    mov ret,ax"
 );
 // LINE 1472:
 	asm( 
-"	      0054a231    mov ax,[ebp-8]"
+"	      0054a231    mov ax,ret"
 "	      0054a235    jmp near ptr 0054A23Ah"
 );
 // LINE 1473:
@@ -8888,10 +8888,10 @@ void LiberateMissionPeople(long missionid) {
 );
 // LINE 1477:
 	asm( 
-"	      0054a248    mov word ptr [ebp-4],0"
+"	      0054a248    mov count,0"
 "	      0054a24e    jmp near ptr 0054A257h"
-"	      0054a253    inc word ptr [ebp-4]"
-"	      0054a257    movsx eax,word ptr [ebp-4]"
+"	      0054a253    inc count"
+"	      0054a257    movsx eax,count"
 "	      0054a25b    cmp eax,64h"
 "	      0054a25e    jge near ptr 0054A350h"
 );
@@ -8899,16 +8899,16 @@ void LiberateMissionPeople(long missionid) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054a264    movsx eax,word ptr [ebp-4]"
+"	      0054a264    movsx eax,count"
 "	      0054a268    cmp eax,7D00h"
 "	      0054a26d    jne near ptr 0054A280h"
 "	      0054a273    mov eax,ds:[5B8680h]"
-"	      0054a278    mov [ebp-8],eax"
+"	      0054a278    mov obj,eax"
 "	      0054a27b    jmp near ptr 0054A2FCh"
-"	      0054a280    movsx eax,word ptr [ebp-4]"
+"	      0054a280    movsx eax,count"
 "	      0054a284    test eax,eax"
 "	      0054a286    jl near ptr 0054A299h"
-"	      0054a28c    movsx eax,word ptr [ebp-4]"
+"	      0054a28c    movsx eax,count"
 "	      0054a290    cmp eax,64h"
 "	      0054a293    jl near ptr 0054A2B5h"
 "	      0054a299    push 8C085h"
@@ -8917,7 +8917,7 @@ void LiberateMissionPeople(long missionid) {
 "	      0054a2a8    push 5BBA14h"
 "	      0054a2ad    call 00554F30h"
 "	      0054a2b2    add esp,10h"
-"	      0054a2b5    movsx eax,word ptr [ebp-4]"
+"	      0054a2b5    movsx eax,count"
 "	      0054a2b9    cmp dword ptr [eax*4+636D40h],0"
 "	      0054a2c1    jne near ptr 0054A2E3h"
 "	      0054a2c7    push 8C085h"
@@ -8926,16 +8926,16 @@ void LiberateMissionPeople(long missionid) {
 "	      0054a2d6    push 5BBA14h"
 "	      0054a2db    call 00554F30h"
 "	      0054a2e0    add esp,10h"
-"	      0054a2e3    movsx eax,word ptr [ebp-4]"
+"	      0054a2e3    movsx eax,count"
 "	      0054a2e7    mov eax,[eax*4+636D40h]"
-"	      0054a2ee    mov [ebp-8],eax"
+"	      0054a2ee    mov obj,eax"
 "	      0054a2f1    jmp near ptr 0054A2FCh"
 "	      0054a2f6    mov eax,[ebp-0Ch]"
-"	      0054a2f9    mov [ebp-8],eax"
+"	      0054a2f9    mov obj,eax"
 );
 // LINE 1479:
 	asm( 
-"	      0054a2fc    cmp dword ptr [ebp-8],0"
+"	      0054a2fc    cmp obj,0"
 "	      0054a300    jne near ptr 0054A322h"
 "	      0054a306    push 8C085h"
 "	      0054a30b    push 5BA688h"
@@ -8946,18 +8946,18 @@ void LiberateMissionPeople(long missionid) {
 );
 // LINE 1480:
 	asm( 
-"	      0054a322    mov eax,[ebp-8]"
+"	      0054a322    mov eax,obj"
 "	      0054a325    movsx eax,word ptr [eax+0D2h]"
 "	      0054a32c    test eax,eax"
 "	      0054a32e    je near ptr 0054A34Bh"
-"	      0054a334    mov eax,[ebp-8]"
-"	      0054a337    mov ecx,[ebp+8]"
+"	      0054a334    mov eax,obj"
+"	      0054a337    mov ecx,missionid"
 "	      0054a33a    cmp [eax+1Ch],ecx"
 "	      0054a33d    jne near ptr 0054A34Bh"
 );
 // LINE 1481:
 	asm( 
-"	      0054a343    mov ecx,[ebp-8]"
+"	      0054a343    mov ecx,obj"
 "	      0054a346    call 0054B820h"
 );
 // LINE 1483:
@@ -8992,27 +8992,27 @@ void KillMissionPeople(long missionid) {
 );
 // LINE 1493:
 	asm( 
-"	      0054a363    mov eax,[ebp+8]"
-"	      0054a366    mov [ebp-18h],eax"
+"	      0054a363    mov eax,missionid"
+"	      0054a366    mov mp.id,eax"
 );
 // LINE 1494:
 	asm( 
-"	      0054a369    mov dword ptr [ebp-8],0"
+"	      0054a369    mov mp.flags,0"
 );
 // LINE 1495:
 	asm( 
-"	      0054a370    mov dword ptr [ebp-0Ch],1"
+"	      0054a370    mov mp.i2num,1"
 );
 // LINE 1496:
 	asm( 
-"	      0054a377    mov dword ptr [ebp-1Ch],17h"
+"	      0054a377    mov mp.op,17h"
 );
 // LINE 1499:
 	asm( 
-"	      0054a37e    mov word ptr [ebp-4],0"
+"	      0054a37e    mov count,0"
 "	      0054a384    jmp near ptr 0054A38Dh"
-"	      0054a389    inc word ptr [ebp-4]"
-"	      0054a38d    movsx eax,word ptr [ebp-4]"
+"	      0054a389    inc count"
+"	      0054a38d    movsx eax,count"
 "	      0054a391    cmp eax,64h"
 "	      0054a394    jge near ptr 0054A59Ah"
 );
@@ -9020,16 +9020,16 @@ void KillMissionPeople(long missionid) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054a39a    movsx eax,word ptr [ebp-4]"
+"	      0054a39a    movsx eax,count"
 "	      0054a39e    cmp eax,7D00h"
 "	      0054a3a3    jne near ptr 0054A3B6h"
 "	      0054a3a9    mov eax,ds:[5B8680h]"
-"	      0054a3ae    mov [ebp-20h],eax"
+"	      0054a3ae    mov obj,eax"
 "	      0054a3b1    jmp near ptr 0054A432h"
-"	      0054a3b6    movsx eax,word ptr [ebp-4]"
+"	      0054a3b6    movsx eax,count"
 "	      0054a3ba    test eax,eax"
 "	      0054a3bc    jl near ptr 0054A3CFh"
-"	      0054a3c2    movsx eax,word ptr [ebp-4]"
+"	      0054a3c2    movsx eax,count"
 "	      0054a3c6    cmp eax,64h"
 "	      0054a3c9    jl near ptr 0054A3EBh"
 "	      0054a3cf    push 8C085h"
@@ -9038,7 +9038,7 @@ void KillMissionPeople(long missionid) {
 "	      0054a3de    push 5BBA14h"
 "	      0054a3e3    call 00554F30h"
 "	      0054a3e8    add esp,10h"
-"	      0054a3eb    movsx eax,word ptr [ebp-4]"
+"	      0054a3eb    movsx eax,count"
 "	      0054a3ef    cmp dword ptr [eax*4+636D40h],0"
 "	      0054a3f7    jne near ptr 0054A419h"
 "	      0054a3fd    push 8C085h"
@@ -9047,16 +9047,16 @@ void KillMissionPeople(long missionid) {
 "	      0054a40c    push 5BBA14h"
 "	      0054a411    call 00554F30h"
 "	      0054a416    add esp,10h"
-"	      0054a419    movsx eax,word ptr [ebp-4]"
+"	      0054a419    movsx eax,count"
 "	      0054a41d    mov eax,[eax*4+636D40h]"
-"	      0054a424    mov [ebp-20h],eax"
+"	      0054a424    mov obj,eax"
 "	      0054a427    jmp near ptr 0054A432h"
 "	      0054a42c    mov eax,[ebp-28h]"
-"	      0054a42f    mov [ebp-20h],eax"
+"	      0054a42f    mov obj,eax"
 );
 // LINE 1501:
 	asm( 
-"	      0054a432    cmp dword ptr [ebp-20h],0"
+"	      0054a432    cmp obj,0"
 "	      0054a436    jne near ptr 0054A458h"
 "	      0054a43c    push 8C085h"
 "	      0054a441    push 5BA6B4h"
@@ -9067,12 +9067,12 @@ void KillMissionPeople(long missionid) {
 );
 // LINE 1502:
 	asm( 
-"	      0054a458    mov eax,[ebp-20h]"
+"	      0054a458    mov eax,obj"
 "	      0054a45b    movsx eax,word ptr [eax+0D2h]"
 "	      0054a462    test eax,eax"
 "	      0054a464    je near ptr 0054A595h"
-"	      0054a46a    mov eax,[ebp-20h]"
-"	      0054a46d    mov ecx,[ebp+8]"
+"	      0054a46a    mov eax,obj"
+"	      0054a46d    mov ecx,missionid"
 "	      0054a470    cmp [eax+1Ch],ecx"
 "	      0054a473    jne near ptr 0054A595h"
 );
@@ -9080,11 +9080,11 @@ void KillMissionPeople(long missionid) {
 // Block start:
 	unsigned short die;
 	asm( 
-"	      0054a479    mov word ptr [ebp-24h],0"
+"	      0054a479    mov die,0"
 );
 // LINE 1504:
 	asm( 
-"	      0054a47f    mov eax,[ebp-20h]"
+"	      0054a47f    mov eax,obj"
 "	      0054a482    movsx eax,word ptr [eax+0D8h]"
 "	      0054a489    mov [ebp-2Ch],eax"
 "	      0054a48c    jmp near ptr 0054A524h"
@@ -9104,15 +9104,15 @@ void KillMissionPeople(long missionid) {
 );
 // LINE 1515:
 	asm( 
-"	      0054a4b2    mov eax,[ebp-20h]"
+"	      0054a4b2    mov eax,obj"
 "	      0054a4b5    cmp dword ptr [eax+130h],0"
 "	      0054a4bc    je near ptr 0054A4FEh"
-"	      0054a4c2    mov eax,[ebp-20h]"
+"	      0054a4c2    mov eax,obj"
 "	      0054a4c5    mov ecx,ds:[5B4968h]"
 "	      0054a4cb    mov ecx,[ecx+0A4h]"
 "	      0054a4d1    cmp [eax+130h],ecx"
 "	      0054a4d7    je near ptr 0054A4FEh"
-"	      0054a4dd    mov eax,[ebp-20h]"
+"	      0054a4dd    mov eax,obj"
 "	      0054a4e0    mov ecx,ds:[5B4968h]"
 "	      0054a4e6    mov ecx,[ecx+0BCh]"
 "	      0054a4ec    cmp [eax+130h],ecx"
@@ -9120,7 +9120,7 @@ void KillMissionPeople(long missionid) {
 );
 // LINE 1516:
 	asm( 
-"	      0054a4f8    mov word ptr [ebp-24h],1"
+"	      0054a4f8    mov die,1"
 );
 // LINE 1517:
 	asm( 
@@ -9152,35 +9152,35 @@ void KillMissionPeople(long missionid) {
 // LINE 1523:
 	asm( 
 "	      0054a54a    push 0"
-"	      0054a54c    mov ecx,[ebp-20h]"
+"	      0054a54c    mov ecx,obj"
 "	      0054a54f    call 0054CECAh"
 );
 // LINE 1524:
 	asm( 
-"	      0054a554    mov eax,[ebp-20h]"
+"	      0054a554    mov eax,obj"
 "	      0054a557    mov eax,[eax+44h]"
 "	      0054a55a    push eax"
-"	      0054a55b    mov eax,[ebp-20h]"
+"	      0054a55b    mov eax,obj"
 "	      0054a55e    mov eax,[eax+40h]"
 "	      0054a561    push eax"
-"	      0054a562    mov eax,[ebp-20h]"
+"	      0054a562    mov eax,obj"
 "	      0054a565    mov eax,[eax+3Ch]"
 "	      0054a568    push eax"
 "	      0054a569    call 00551BF7h"
 "	      0054a56e    add esp,0Ch"
 "	      0054a571    add eax,30000h"
-"	      0054a576    mov ecx,[ebp-20h]"
+"	      0054a576    mov ecx,obj"
 "	      0054a579    mov [ecx+40h],eax"
 "	      0054a57c    jmp near ptr 0054A581h"
 );
 // LINE 1525:
 	asm( 
-"	      0054a581    mov ecx,[ebp-20h]"
+"	      0054a581    mov ecx,obj"
 "	      0054a584    call 0055716Eh"
 );
 // LINE 1526:
 	asm( 
-"	      0054a589    lea eax,[ebp-1Ch]"
+"	      0054a589    lea eax,mp.op"
 "	      0054a58c    push eax"
 "	      0054a58d    call 004FBD4Ah"
 "	      0054a592    add esp,4"
@@ -9212,31 +9212,31 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 "	      0054a5aa    push ebx"
 "	      0054a5ab    push esi"
 "	      0054a5ac    push edi"
-"	      0054a5ad    mov [ebp-4],ecx"
+"	      0054a5ad    mov this,ecx"
 );
 // LINE 1534:
 	asm( 
-"	      0054a5b0    mov eax,[ebp+0Ch]"
+"	      0054a5b0    mov eax,mission"
 "	      0054a5b3    push eax"
-"	      0054a5b4    mov ecx,[ebp-4]"
+"	      0054a5b4    mov ecx,this"
 "	      0054a5b7    call 0054FE42h"
 );
 // LINE 1535:
 	asm( 
-"	      0054a5bc    mov eax,[ebp+10h]"
-"	      0054a5bf    mov ecx,[ebp-4]"
+"	      0054a5bc    mov eax,missionid"
+"	      0054a5bf    mov ecx,this"
 "	      0054a5c2    mov [ecx+1Ch],eax"
-"	      0054a5c5    cmp dword ptr [ebp+10h],0FFFFFFFFh"
+"	      0054a5c5    cmp missionid,0FFFFFFFFh"
 "	      0054a5c9    jne near ptr 0054A623h"
-"	      0054a5cf    mov eax,[ebp-4]"
+"	      0054a5cf    mov eax,this"
 "	      0054a5d2    movsx eax,word ptr [eax+0D8h]"
 "	      0054a5d9    test eax,eax"
 "	      0054a5db    je near ptr 0054A623h"
-"	      0054a5e1    mov eax,[ebp-4]"
+"	      0054a5e1    mov eax,this"
 "	      0054a5e4    movsx eax,word ptr [eax+0D8h]"
 "	      0054a5eb    cmp eax,5"
 "	      0054a5ee    je near ptr 0054A623h"
-"	      0054a5f4    mov eax,[ebp-4]"
+"	      0054a5f4    mov eax,this"
 "	      0054a5f7    movsx eax,word ptr [eax+0D8h]"
 "	      0054a5fe    cmp eax,7"
 "	      0054a601    je near ptr 0054A623h"
@@ -9250,9 +9250,9 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 );
 // LINE 1536:
 	asm( 
-"	      0054a628    mov eax,[ebp+8]"
+"	      0054a628    mov eax,persontype"
 "	      0054a62b    push eax"
-"	      0054a62c    mov ecx,[ebp-4]"
+"	      0054a62c    mov ecx,this"
 "	      0054a62f    call 0054FFB7h"
 );
 // LINE 1537:
@@ -9281,13 +9281,13 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 );
 // LINE 1541:
 	asm( 
-"	      0054a649    mov word ptr [ebp-4],0"
+"	      0054a649    mov ret,0"
 );
 // LINE 1542:
 	asm( 
-"	      0054a64f    cmp dword ptr [ebp+8],0"
+"	      0054a64f    cmp mission,0"
 "	      0054a653    jne near ptr 0054A664h"
-"	      0054a659    mov word ptr [ebp-4],1"
+"	      0054a659    mov ret,1"
 );
 // LINE 1543:
 	asm( 
@@ -9297,23 +9297,23 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // Block start:
 	short scurkID;
 	asm( 
-"	      0054a664    movsx eax,word ptr [ebp+0Ch]"
+"	      0054a664    movsx eax,cellx"
 "	      0054a668    cmp eax,7Fh"
 "	      0054a66b    jg near ptr 0054A696h"
-"	      0054a671    movsx eax,word ptr [ebp+10h]"
+"	      0054a671    movsx eax,celly"
 "	      0054a675    cmp eax,7Fh"
 "	      0054a678    jg near ptr 0054A696h"
-"	      0054a67e    movsx eax,word ptr [ebp+0Ch]"
+"	      0054a67e    movsx eax,cellx"
 "	      0054a682    test eax,eax"
 "	      0054a684    jl near ptr 0054A696h"
-"	      0054a68a    movsx eax,word ptr [ebp+10h]"
+"	      0054a68a    movsx eax,celly"
 "	      0054a68e    test eax,eax"
 "	      0054a690    jge near ptr 0054A6A1h"
-"	      0054a696    mov word ptr [ebp-8],0FFFFh"
+"	      0054a696    mov scurkID,0FFFFh"
 "	      0054a69c    jmp near ptr 0054A6FDh"
-"	      0054a6a1    movsx eax,word ptr [ebp+0Ch]"
+"	      0054a6a1    movsx eax,cellx"
 "	      0054a6a5    mov eax,[eax*4+639850h]"
-"	      0054a6ac    movsx ecx,word ptr [ebp+10h]"
+"	      0054a6ac    movsx ecx,celly"
 "	      0054a6b0    movzx ax,byte ptr [eax+ecx]"
 "	      0054a6b5    mov [ebp-18h],ax"
 "	      0054a6b9    movsx eax,word ptr [ebp-18h]"
@@ -9329,12 +9329,12 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a6e8    call 00554F30h"
 "	      0054a6ed    add esp,10h"
 "	      0054a6f0    mov ax,[ebp-18h]"
-"	      0054a6f4    mov [ebp-8],ax"
+"	      0054a6f4    mov scurkID,ax"
 "	      0054a6f8    jmp near ptr 0054A6FDh"
 );
 // LINE 1545:
 	asm( 
-"	      0054a6fd    movsx eax,word ptr [ebp-8]"
+"	      0054a6fd    movsx eax,scurkID"
 "	      0054a701    cmp eax,0FFFFFFFFh"
 "	      0054a704    je near ptr 0054A797h"
 );
@@ -9342,23 +9342,23 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // Block start:
 	struct _LZ_INFO* li;
 	asm( 
-"	      0054a70a    movsx eax,word ptr [ebp-8]"
+"	      0054a70a    movsx eax,scurkID"
 "	      0054a70e    push eax"
 "	      0054a70f    call 0051DA5Bh"
 "	      0054a714    add esp,4"
-"	      0054a717    mov [ebp-0Ch],eax"
+"	      0054a717    mov li,eax"
 );
 // LINE 1547:
 	asm( 
-"	      0054a71a    cmp dword ptr [ebp-0Ch],0"
+"	      0054a71a    cmp li,0"
 "	      0054a71e    je near ptr 0054A730h"
-"	      0054a724    mov eax,[ebp-0Ch]"
+"	      0054a724    mov eax,li"
 "	      0054a727    test byte ptr [eax],1"
 "	      0054a72a    je near ptr 0054A73Bh"
 );
 // LINE 1548:
 	asm( 
-"	      0054a730    mov word ptr [ebp-4],0"
+"	      0054a730    mov ret,0"
 );
 // LINE 1549:
 	asm( 
@@ -9375,30 +9375,30 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a742    push eax"
 "	      0054a743    call 00555746h"
 "	      0054a748    add esp,8"
-"	      0054a74b    mov [ebp-10h],eax"
+"	      0054a74b    mov loctype,eax"
 );
 // LINE 1551:
 	asm( 
-"	      0054a74e    mov word ptr [ebp-14h],0"
+"	      0054a74e    mov count,0"
 "	      0054a754    jmp near ptr 0054A75Dh"
-"	      0054a759    inc word ptr [ebp-14h]"
-"	      0054a75d    movsx eax,word ptr [ebp-14h]"
+"	      0054a759    inc count"
+"	      0054a75d    movsx eax,count"
 "	      0054a761    cmp eax,0Ah"
 "	      0054a764    jge near ptr 0054A797h"
 );
 // LINE 1552:
 	asm( 
-"	      0054a76a    movsx eax,word ptr [ebp-14h]"
-"	      0054a76e    mov ecx,[ebp+8]"
+"	      0054a76a    movsx eax,count"
+"	      0054a76e    mov ecx,mission"
 "	      0054a771    lea ecx,[ecx+ecx*4]"
 "	      0054a774    shl ecx,3"
-"	      0054a777    mov edx,[ebp-10h]"
+"	      0054a777    mov edx,loctype"
 "	      0054a77a    cmp [ecx+eax*4+635300h],edx"
 "	      0054a781    jne near ptr 0054A792h"
 );
 // LINE 1553:
 	asm( 
-"	      0054a787    mov word ptr [ebp-4],1"
+"	      0054a787    mov ret,1"
 );
 // LINE 1554:
 	asm( 
@@ -9413,7 +9413,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // Block end:
 // Block end:
 	asm( 
-"	      0054a797    mov ax,[ebp-4]"
+"	      0054a797    mov ax,ret"
 "	      0054a79b    jmp near ptr 0054A7A0h"
 );
 // LINE 1561:
@@ -9438,19 +9438,19 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054a7ae    push ebx"
 "	      0054a7af    push esi"
 "	      0054a7b0    push edi"
-"	      0054a7b1    mov [ebp-0E8h],ecx"
+"	      0054a7b1    mov this,ecx"
 );
 // LINE 1571:
 	asm( 
-"	      0054a7b7    cmp dword ptr [ebp+0Ch],0"
+"	      0054a7b7    cmp mission,0"
 "	      0054a7bb    je near ptr 0054A7F7h"
 );
 // LINE 1572:
 	asm( 
-"	      0054a7c1    movsx eax,word ptr [ebp+10h]"
+"	      0054a7c1    movsx eax,cellx"
 "	      0054a7c5    cmp eax,0FFFFFFFFh"
 "	      0054a7c8    je near ptr 0054A7DBh"
-"	      0054a7ce    movsx eax,word ptr [ebp+14h]"
+"	      0054a7ce    movsx eax,celly"
 "	      0054a7d2    cmp eax,0FFFFFFFFh"
 "	      0054a7d5    jne near ptr 0054A7F7h"
 "	      0054a7db    push 8C085h"
@@ -9462,7 +9462,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1574:
 	asm( 
-"	      0054a7f7    mov eax,[ebp-0E8h]"
+"	      0054a7f7    mov eax,this"
 "	      0054a7fd    movsx eax,word ptr [eax+0D2h]"
 "	      0054a804    test eax,eax"
 "	      0054a806    je near ptr 0054A828h"
@@ -9476,7 +9476,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1575:
 	asm( 
 "	      0054a828    jmp near ptr 0054A82Dh"
-"	      0054a82d    mov eax,[ebp-0E8h]"
+"	      0054a82d    mov eax,this"
 "	      0054a833    xor ecx,ecx"
 "	      0054a835    mov cx,[eax+20h]"
 "	      0054a839    test ecx,ecx"
@@ -9490,11 +9490,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1576:
 	asm( 
-"	      0054a85d    mov word ptr [ebp-4],0FFFFh"
+"	      0054a85d    mov ret,0FFFFh"
 );
 // LINE 1577:
 	asm( 
-"	      0054a863    mov eax,[ebp-0E8h]"
+"	      0054a863    mov eax,this"
 "	      0054a869    cmp dword ptr [eax+90h],0"
 "	      0054a870    jne near ptr 0054A892h"
 "	      0054a876    push 8C085h"
@@ -9506,13 +9506,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1578:
 	asm( 
-"	      0054a892    mov eax,[ebp-0E8h]"
+"	      0054a892    mov eax,this"
 "	      0054a898    cmp dword ptr [eax+98h],0"
 "	      0054a89f    jne near ptr 0054A956h"
 );
 // LINE 1579:
 	asm( 
-"	      0054a8a5    mov eax,[ebp-0E8h]"
+"	      0054a8a5    mov eax,this"
 "	      0054a8ab    cmp dword ptr [eax+90h],0"
 "	      0054a8b2    jne near ptr 0054A8D4h"
 "	      0054a8b8    push 8C085h"
@@ -9521,20 +9521,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054a8c7    push 5BBA14h"
 "	      0054a8cc    call 00554F30h"
 "	      0054a8d1    add esp,10h"
-"	      0054a8d4    mov eax,[ebp-0E8h]"
+"	      0054a8d4    mov eax,this"
 "	      0054a8da    cmp dword ptr [eax+98h],0"
 "	      0054a8e1    je near ptr 0054A900h"
-"	      0054a8e7    mov eax,[ebp-0E8h]"
+"	      0054a8e7    mov eax,this"
 "	      0054a8ed    mov eax,[eax+98h]"
 "	      0054a8f3    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      0054a8fa    je near ptr 0054A951h"
 "	      0054a900    push 4E6F4D6Fh"
-"	      0054a905    mov eax,[ebp-0E8h]"
+"	      0054a905    mov eax,this"
 "	      0054a90b    mov ecx,[eax+90h]"
 "	      0054a911    call 00560BF0h"
-"	      0054a916    mov ecx,[ebp-0E8h]"
+"	      0054a916    mov ecx,this"
 "	      0054a91c    mov [ecx+98h],eax"
-"	      0054a922    mov eax,[ebp-0E8h]"
+"	      0054a922    mov eax,this"
 "	      0054a928    cmp dword ptr [eax+98h],0"
 "	      0054a92f    jne near ptr 0054A951h"
 "	      0054a935    push 8C085h"
@@ -9547,12 +9547,12 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1580:
 	asm( 
-"	      0054a956    mov eax,[ebp-0E8h]"
+"	      0054a956    mov eax,this"
 "	      0054a95c    mov word ptr [eax+9Ch],0FFFFh"
 );
 // LINE 1581:
 	asm( 
-"	      0054a965    mov eax,[ebp+0Ch]"
+"	      0054a965    mov eax,mission"
 "	      0054a968    mov [ebp-0ECh],eax"
 "	      0054a96e    jmp near ptr 0054B505h"
 );
@@ -9563,9 +9563,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	unsigned short foundplace;
 	short count;
 	asm( 
-"	      0054a973    cmp dword ptr [ebp+20h],0"
+"	      0054a973    cmp loc,0"
 "	      0054a977    jne near ptr 0054A987h"
-"	      0054a97d    cmp dword ptr [ebp+1Ch],0"
+"	      0054a97d    cmp onTopOf,0"
 "	      0054a981    je near ptr 0054A9A3h"
 "	      0054a987    push 8C085h"
 "	      0054a98c    push 5BA8B4h"
@@ -9576,16 +9576,16 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1585:
 	asm( 
-"	      0054a9a3    mov word ptr [ebp-0Ch],0"
+"	      0054a9a3    mov foundplace,0"
 );
 // LINE 1586:
 	asm( 
-"	      0054a9a9    mov eax,[ebp-0E8h]"
+"	      0054a9a9    mov eax,this"
 "	      0054a9af    mov word ptr [eax+0E0h],7"
 );
 // LINE 1587:
 	asm( 
-"	      0054a9b8    mov eax,[ebp-0E8h]"
+"	      0054a9b8    mov eax,this"
 "	      0054a9be    movsx eax,word ptr [eax+0E0h]"
 "	      0054a9c5    cmp eax,5"
 "	      0054a9c8    jle near ptr 0054A9EEh"
@@ -9593,19 +9593,19 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054a9d3    push 50000h"
 "	      0054a9d8    call 004D19DFh"
 "	      0054a9dd    add esp,8"
-"	      0054a9e0    mov ecx,[ebp-0E8h]"
+"	      0054a9e0    mov ecx,this"
 "	      0054a9e6    mov [ecx+34h],eax"
 "	      0054a9e9    jmp near ptr 0054A9FBh"
-"	      0054a9ee    mov eax,[ebp-0E8h]"
+"	      0054a9ee    mov eax,this"
 "	      0054a9f4    mov dword ptr [eax+34h],50000h"
 "	      0054a9fb    jmp near ptr 0054AA00h"
 );
 // LINE 1588:
 	asm( 
-"	      0054aa00    mov word ptr [ebp-8],0"
+"	      0054aa00    mov count,0"
 "	      0054aa06    jmp near ptr 0054AA0Fh"
-"	      0054aa0b    inc word ptr [ebp-8]"
-"	      0054aa0f    movsx eax,word ptr [ebp-8]"
+"	      0054aa0b    inc count"
+"	      0054aa0f    movsx eax,count"
 "	      0054aa13    cmp eax,4"
 "	      0054aa16    jge near ptr 0054AAA5h"
 );
@@ -9619,7 +9619,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aa23    push eax"
 "	      0054aa24    call 00555746h"
 "	      0054aa29    add esp,8"
-"	      0054aa2c    mov [ebp-18h],eax"
+"	      0054aa2c    mov loctype,eax"
 );
 // LINE 1591:
 	asm( 
@@ -9627,28 +9627,28 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aa32    push eax"
 "	      0054aa33    mov eax,[ebp+10h]"
 "	      0054aa36    push eax"
-"	      0054aa37    mov eax,[ebp+0Ch]"
+"	      0054aa37    mov eax,mission"
 "	      0054aa3a    push eax"
 "	      0054aa3b    call 0054A640h"
 "	      0054aa40    add esp,0Ch"
 "	      0054aa43    movzx eax,ax"
 "	      0054aa46    test eax,eax"
 "	      0054aa48    je near ptr 0054AAA0h"
-"	      0054aa4e    mov eax,[ebp-18h]"
+"	      0054aa4e    mov eax,loctype"
 "	      0054aa51    mov eax,[eax*8+635268h]"
 "	      0054aa58    push eax"
-"	      0054aa59    lea eax,[ebp-14h]"
+"	      0054aa59    lea eax,offsetz"
 "	      0054aa5c    push eax"
-"	      0054aa5d    lea eax,[ebp-10h]"
+"	      0054aa5d    lea eax,offsetx"
 "	      0054aa60    push eax"
-"	      0054aa61    movsx eax,word ptr [ebp+10h]"
+"	      0054aa61    movsx eax,cellx"
 "	      0054aa65    and eax,0FFh"
 "	      0054aa6a    shl eax,0Ah"
-"	      0054aa6d    movsx ecx,word ptr [ebp+14h]"
+"	      0054aa6d    movsx ecx,celly"
 "	      0054aa71    and ecx,0FFh"
 "	      0054aa77    mov eax,[eax+ecx*4+67ED30h]"
 "	      0054aa7e    push eax"
-"	      0054aa7f    mov ecx,[ebp-0E8h]"
+"	      0054aa7f    mov ecx,this"
 "	      0054aa85    call 00545049h"
 "	      0054aa8a    movzx eax,ax"
 "	      0054aa8d    test eax,eax"
@@ -9656,7 +9656,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1592:
 	asm( 
-"	      0054aa95    mov word ptr [ebp-0Ch],1"
+"	      0054aa95    mov foundplace,1"
 );
 // LINE 1593:
 	asm( 
@@ -9676,33 +9676,33 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // Block start:
 	long testID;
 	asm( 
-"	      0054aab2    mov eax,[ebp-14h]"
+"	      0054aab2    mov eax,offsetz"
 "	      0054aab5    push eax"
-"	      0054aab6    mov eax,[ebp-10h]"
+"	      0054aab6    mov eax,offsetx"
 "	      0054aab9    push eax"
 "	      0054aaba    mov eax,[ebp+14h]"
 "	      0054aabd    push eax"
 "	      0054aabe    mov eax,[ebp+10h]"
 "	      0054aac1    push eax"
-"	      0054aac2    mov ecx,[ebp-0E8h]"
+"	      0054aac2    mov ecx,this"
 "	      0054aac8    call 0054FD4Dh"
 );
 // LINE 1598:
 	asm( 
-"	      0054aacd    mov eax,[ebp+8]"
+"	      0054aacd    mov eax,persontype"
 "	      0054aad0    push eax"
-"	      0054aad1    mov ecx,[ebp-0E8h]"
+"	      0054aad1    mov ecx,this"
 "	      0054aad7    call 0054FFB7h"
 );
 // LINE 1599:
 	asm( 
-"	      0054aadc    mov ecx,[ebp-0E8h]"
+"	      0054aadc    mov ecx,this"
 "	      0054aae2    call 0054B9E6h"
-"	      0054aae7    mov [ebp-1Ch],eax"
+"	      0054aae7    mov testID,eax"
 );
 // LINE 1600:
 	asm( 
-"	      0054aaea    cmp dword ptr [ebp-1Ch],0FFFFFFFFh"
+"	      0054aaea    cmp testID,0FFFFFFFFh"
 "	      0054aaee    jne near ptr 0054AB10h"
 "	      0054aaf4    push 8C085h"
 "	      0054aaf9    push 5BA8ECh"
@@ -9713,8 +9713,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1601:
 	asm( 
-"	      0054ab10    mov eax,[ebp-1Ch]"
-"	      0054ab13    cmp [ebp+18h],eax"
+"	      0054ab10    mov eax,testID"
+"	      0054ab13    cmp missionid,eax"
 "	      0054ab16    je near ptr 0054AB38h"
 "	      0054ab1c    push 8C085h"
 "	      0054ab21    push 5BA934h"
@@ -9725,7 +9725,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1602:
 	asm( 
-"	      0054ab38    mov word ptr [ebp-4],1"
+"	      0054ab38    mov ret,1"
 );
 // LINE 1604:
 // Block end:
@@ -9734,7 +9734,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1605:
 	asm( 
-"	      0054ab43    mov word ptr [ebp-4],0"
+"	      0054ab43    mov ret,0"
 );
 // LINE 1606:
 	asm( 
@@ -9743,27 +9743,27 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1609:
 // Block end:
 	asm( 
-"	      0054ab4e    mov eax,[ebp+0Ch]"
+"	      0054ab4e    mov eax,mission"
 "	      0054ab51    push eax"
-"	      0054ab52    mov ecx,[ebp-0E8h]"
+"	      0054ab52    mov ecx,this"
 "	      0054ab58    call 0054FE42h"
 );
 // LINE 1610:
 	asm( 
-"	      0054ab5d    mov eax,[ebp+18h]"
-"	      0054ab60    mov ecx,[ebp-0E8h]"
+"	      0054ab5d    mov eax,missionid"
+"	      0054ab60    mov ecx,this"
 "	      0054ab66    mov [ecx+1Ch],eax"
-"	      0054ab69    cmp dword ptr [ebp+18h],0FFFFFFFFh"
+"	      0054ab69    cmp missionid,0FFFFFFFFh"
 "	      0054ab6d    jne near ptr 0054ABD0h"
-"	      0054ab73    mov eax,[ebp-0E8h]"
+"	      0054ab73    mov eax,this"
 "	      0054ab79    movsx eax,word ptr [eax+0D8h]"
 "	      0054ab80    test eax,eax"
 "	      0054ab82    je near ptr 0054ABD0h"
-"	      0054ab88    mov eax,[ebp-0E8h]"
+"	      0054ab88    mov eax,this"
 "	      0054ab8e    movsx eax,word ptr [eax+0D8h]"
 "	      0054ab95    cmp eax,5"
 "	      0054ab98    je near ptr 0054ABD0h"
-"	      0054ab9e    mov eax,[ebp-0E8h]"
+"	      0054ab9e    mov eax,this"
 "	      0054aba4    movsx eax,word ptr [eax+0D8h]"
 "	      0054abab    cmp eax,7"
 "	      0054abae    je near ptr 0054ABD0h"
@@ -9777,40 +9777,40 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1611:
 	asm( 
-"	      0054abd5    mov eax,[ebp+8]"
+"	      0054abd5    mov eax,persontype"
 "	      0054abd8    push eax"
-"	      0054abd9    mov ecx,[ebp-0E8h]"
+"	      0054abd9    mov ecx,this"
 "	      0054abdf    call 0054FFB7h"
 );
 // LINE 1612:
 	asm( 
-"	      0054abe4    cmp dword ptr [ebp+20h],0"
+"	      0054abe4    cmp loc,0"
 "	      0054abe8    je near ptr 0054AC2Bh"
 );
 // LINE 1613:
 	asm( 
-"	      0054abee    mov eax,[ebp+1Ch]"
+"	      0054abee    mov eax,onTopOf"
 "	      0054abf1    push eax"
-"	      0054abf2    mov ecx,[ebp-0E8h]"
+"	      0054abf2    mov ecx,this"
 "	      0054abf8    call 0054CECAh"
 );
 // LINE 1614:
 	asm( 
 "	      0054abfd    push 0FFh"
 "	      0054ac02    push 0FFh"
-"	      0054ac07    mov eax,[ebp+20h]"
+"	      0054ac07    mov eax,loc"
 "	      0054ac0a    mov ecx,[eax+8]"
 "	      0054ac0d    push ecx"
 "	      0054ac0e    mov ecx,[eax+4]"
 "	      0054ac11    push ecx"
 "	      0054ac12    mov eax,[eax]"
 "	      0054ac14    push eax"
-"	      0054ac15    mov ecx,[ebp-0E8h]"
+"	      0054ac15    mov ecx,this"
 "	      0054ac1b    call 0054FC2Eh"
 );
 // LINE 1615:
 	asm( 
-"	      0054ac20    mov word ptr [ebp-4],1"
+"	      0054ac20    mov ret,1"
 );
 // LINE 1617:
 	asm( 
@@ -9838,7 +9838,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ac74    jmp near ptr 0054AC89h"
 "	      0054ac79    test dword ptr [ebp-84h],0FFFFh"
 "	      0054ac83    je near ptr 0054ACAAh"
-"	      0054ac89    mov ecx,[ebp-0E8h]"
+"	      0054ac89    mov ecx,this"
 "	      0054ac8f    call 00549BDDh"
 "	      0054ac94    movzx eax,ax"
 "	      0054ac97    test eax,eax"
@@ -9846,7 +9846,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1623:
 	asm( 
-"	      0054ac9f    mov word ptr [ebp-4],1"
+"	      0054ac9f    mov ret,1"
 );
 // LINE 1624:
 	asm( 
@@ -9854,11 +9854,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1625:
 	asm( 
-"	      0054acaa    mov word ptr [ebp-4],0"
+"	      0054acaa    mov ret,0"
 );
 // LINE 1628:
 	asm( 
-"	      0054acb0    cmp dword ptr [ebp+18h],0FFFFFFFFh"
+"	      0054acb0    cmp missionid,0FFFFFFFFh"
 "	      0054acb4    je near ptr 0054ACD6h"
 "	      0054acba    push 8C085h"
 "	      0054acbf    push 5BA99Ch"
@@ -9873,7 +9873,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1632:
 	asm( 
-"	      0054acdb    cmp dword ptr [ebp+20h],0"
+"	      0054acdb    cmp loc,0"
 "	      0054acdf    jne near ptr 0054AD01h"
 "	      0054ace5    push 8C085h"
 "	      0054acea    push 5BA9F0h"
@@ -9884,20 +9884,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1634:
 	asm( 
-"	      0054ad01    mov word ptr [ebp-4],0"
+"	      0054ad01    mov ret,0"
 );
 // LINE 1635:
 	asm( 
 "	      0054ad07    push 0"
 "	      0054ad09    push 0"
 "	      0054ad0b    push 20000h"
-"	      0054ad10    mov eax,[ebp-0E8h]"
+"	      0054ad10    mov eax,this"
 "	      0054ad16    mov eax,[eax+34h]"
 "	      0054ad19    push eax"
 "	      0054ad1a    call 004D19BDh"
 "	      0054ad1f    add esp,8"
 "	      0054ad22    push eax"
-"	      0054ad23    mov eax,[ebp+20h]"
+"	      0054ad23    mov eax,loc"
 "	      0054ad26    mov ecx,[eax+8]"
 "	      0054ad29    push ecx"
 "	      0054ad2a    mov ecx,[eax+4]"
@@ -9912,19 +9912,19 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1637:
 	asm( 
-"	      0054ad43    cmp dword ptr [ebp+1Ch],0"
+"	      0054ad43    cmp onTopOf,0"
 "	      0054ad47    je near ptr 0054AD7Ah"
-"	      0054ad4d    mov eax,[ebp+1Ch]"
+"	      0054ad4d    mov eax,onTopOf"
 "	      0054ad50    movsx eax,word ptr [eax+0Ch]"
 "	      0054ad54    test al,10h"
 "	      0054ad56    je near ptr 0054AD7Ah"
-"	      0054ad5c    mov eax,[ebp+1Ch]"
+"	      0054ad5c    mov eax,onTopOf"
 "	      0054ad5f    mov ax,[eax+0Eh]"
-"	      0054ad63    mov ecx,[ebp-0E8h]"
+"	      0054ad63    mov ecx,this"
 "	      0054ad69    mov [ecx+100h],ax"
 "	      0054ad70    jmp near ptr 0054AD8Eh"
 "	      0054ad75    jmp near ptr 0054AD8Eh"
-"	      0054ad7a    mov eax,[ebp-0E8h]"
+"	      0054ad7a    mov eax,this"
 "	      0054ad80    mov word ptr [eax+100h],0FFFFh"
 "	      0054ad89    jmp near ptr 0054AD8Eh"
 );
@@ -9932,30 +9932,30 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	asm( 
 "	      0054ad8e    push 0FFh"
 "	      0054ad93    push 0FFh"
-"	      0054ad98    mov eax,[ebp+20h]"
+"	      0054ad98    mov eax,loc"
 "	      0054ad9b    mov ecx,[eax+8]"
 "	      0054ad9e    push ecx"
 "	      0054ad9f    mov ecx,[eax+4]"
 "	      0054ada2    push ecx"
 "	      0054ada3    mov eax,[eax]"
 "	      0054ada5    push eax"
-"	      0054ada6    mov ecx,[ebp-0E8h]"
+"	      0054ada6    mov ecx,this"
 "	      0054adac    call 0054FC2Eh"
 );
 // LINE 1639:
 	asm( 
-"	      0054adb1    mov eax,[ebp+18h]"
+"	      0054adb1    mov eax,missionid"
 "	      0054adb4    push eax"
-"	      0054adb5    mov eax,[ebp+0Ch]"
+"	      0054adb5    mov eax,mission"
 "	      0054adb8    push eax"
-"	      0054adb9    mov eax,[ebp+8]"
+"	      0054adb9    mov eax,persontype"
 "	      0054adbc    push eax"
-"	      0054adbd    mov ecx,[ebp-0E8h]"
+"	      0054adbd    mov ecx,this"
 "	      0054adc3    call 0054A5A4h"
 );
 // LINE 1640:
 	asm( 
-"	      0054adc8    mov word ptr [ebp-4],1"
+"	      0054adc8    mov ret,1"
 );
 // LINE 1642:
 	asm( 
@@ -9967,9 +9967,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	int32_t offsetx;
 	short count;
 	asm( 
-"	      0054add3    cmp dword ptr [ebp+20h],0"
+"	      0054add3    cmp loc,0"
 "	      0054add7    jne near ptr 0054ADE7h"
-"	      0054addd    cmp dword ptr [ebp+1Ch],0"
+"	      0054addd    cmp onTopOf,0"
 "	      0054ade1    je near ptr 0054AE03h"
 "	      0054ade7    push 8C085h"
 "	      0054adec    push 5BAA30h"
@@ -9980,14 +9980,14 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1648:
 	asm( 
-"	      0054ae03    mov word ptr [ebp-4],0"
+"	      0054ae03    mov ret,0"
 );
 // LINE 1649:
 	asm( 
-"	      0054ae09    mov word ptr [ebp-20h],0"
+"	      0054ae09    mov count,0"
 "	      0054ae0f    jmp near ptr 0054AE18h"
-"	      0054ae14    inc word ptr [ebp-20h]"
-"	      0054ae18    movsx eax,word ptr [ebp-20h]"
+"	      0054ae14    inc count"
+"	      0054ae18    movsx eax,count"
 "	      0054ae1c    cmp eax,4"
 "	      0054ae1f    jge near ptr 0054B0CAh"
 );
@@ -10001,7 +10001,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ae2c    push eax"
 "	      0054ae2d    call 00555746h"
 "	      0054ae32    add esp,8"
-"	      0054ae35    mov [ebp-2Ch],eax"
+"	      0054ae35    mov loctype,eax"
 );
 // LINE 1653:
 	asm( 
@@ -10009,28 +10009,28 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ae3b    push eax"
 "	      0054ae3c    mov eax,[ebp+10h]"
 "	      0054ae3f    push eax"
-"	      0054ae40    mov eax,[ebp+0Ch]"
+"	      0054ae40    mov eax,mission"
 "	      0054ae43    push eax"
 "	      0054ae44    call 0054A640h"
 "	      0054ae49    add esp,0Ch"
 "	      0054ae4c    movzx eax,ax"
 "	      0054ae4f    test eax,eax"
 "	      0054ae51    je near ptr 0054B0A2h"
-"	      0054ae57    mov eax,[ebp-2Ch]"
+"	      0054ae57    mov eax,loctype"
 "	      0054ae5a    mov eax,[eax*8+635268h]"
 "	      0054ae61    push eax"
-"	      0054ae62    lea eax,[ebp-28h]"
+"	      0054ae62    lea eax,offsetz"
 "	      0054ae65    push eax"
-"	      0054ae66    lea eax,[ebp-24h]"
+"	      0054ae66    lea eax,offsetx"
 "	      0054ae69    push eax"
-"	      0054ae6a    movsx eax,word ptr [ebp+10h]"
+"	      0054ae6a    movsx eax,cellx"
 "	      0054ae6e    and eax,0FFh"
 "	      0054ae73    shl eax,0Ah"
-"	      0054ae76    movsx ecx,word ptr [ebp+14h]"
+"	      0054ae76    movsx ecx,celly"
 "	      0054ae7a    and ecx,0FFh"
 "	      0054ae80    mov eax,[eax+ecx*4+67ED30h]"
 "	      0054ae87    push eax"
-"	      0054ae88    mov ecx,[ebp-0E8h]"
+"	      0054ae88    mov ecx,this"
 "	      0054ae8e    call 00545049h"
 "	      0054ae93    movzx eax,ax"
 "	      0054ae96    test eax,eax"
@@ -10043,47 +10043,47 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	short destcellx;
 	short destcelly;
 	asm( 
-"	      0054ae9e    mov word ptr [ebp-34h],0FFFFh"
+"	      0054ae9e    mov destcellx,0FFFFh"
 );
 // LINE 1657:
 	asm( 
-"	      0054aea4    mov word ptr [ebp-30h],0FFFFh"
+"	      0054aea4    mov destcelly,0FFFFh"
 );
 // LINE 1658:
 	asm( 
-"	      0054aeaa    mov word ptr [ebp-50h],0"
+"	      0054aeaa    mov founddest,0"
 );
 // LINE 1659:
 	asm( 
-"	      0054aeb0    cmp dword ptr [ebp+0Ch],4"
+"	      0054aeb0    cmp mission,4"
 "	      0054aeb4    jne near ptr 0054AFC6h"
 );
 // LINE 1660:
 // Block start:
 	short cnt;
 	asm( 
-"	      0054aeba    mov eax,[ebp+18h]"
+"	      0054aeba    mov eax,missionid"
 "	      0054aebd    push eax"
 "	      0054aebe    call 004FBB76h"
 "	      0054aec3    add esp,4"
 "	      0054aec6    mov eax,[eax]"
-"	      0054aec8    mov [ebp-34h],ax"
+"	      0054aec8    mov destcellx,ax"
 );
 // LINE 1661:
 	asm( 
-"	      0054aecc    mov eax,[ebp+18h]"
+"	      0054aecc    mov eax,missionid"
 "	      0054aecf    push eax"
 "	      0054aed0    call 004FBB76h"
 "	      0054aed5    add esp,4"
 "	      0054aed8    mov eax,[eax+4]"
-"	      0054aedb    mov [ebp-30h],ax"
+"	      0054aedb    mov destcelly,ax"
 );
 // LINE 1662:
 	asm( 
-"	      0054aedf    mov word ptr [ebp-54h],0"
+"	      0054aedf    mov cnt,0"
 "	      0054aee5    jmp near ptr 0054AEEEh"
-"	      0054aeea    inc word ptr [ebp-54h]"
-"	      0054aeee    movsx eax,word ptr [ebp-54h]"
+"	      0054aeea    inc cnt"
+"	      0054aeee    movsx eax,cnt"
 "	      0054aef2    cmp eax,0Ah"
 "	      0054aef5    jge near ptr 0054AFC1h"
 );
@@ -10097,22 +10097,22 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054af02    push eax"
 "	      0054af03    call 00555746h"
 "	      0054af08    add esp,8"
-"	      0054af0b    mov [ebp-58h],eax"
+"	      0054af0b    mov loctype2,eax"
 );
 // LINE 1665:
 	asm( 
 "	      0054af0e    jmp near ptr 0054AF13h"
 "	      0054af13    jmp near ptr 0054AF18h"
-"	      0054af18    movsx eax,word ptr [ebp-30h]"
-"	      0054af1c    movsx ecx,word ptr [ebp+14h]"
+"	      0054af18    movsx eax,destcelly"
+"	      0054af1c    movsx ecx,celly"
 "	      0054af20    sub eax,ecx"
 "	      0054af22    movsx eax,ax"
 "	      0054af25    cdq"
 "	      0054af26    xor eax,edx"
 "	      0054af28    sub eax,edx"
 "	      0054af2a    movsx ecx,ax"
-"	      0054af2d    movsx eax,word ptr [ebp-34h]"
-"	      0054af31    movsx edx,word ptr [ebp+10h]"
+"	      0054af2d    movsx eax,destcellx"
+"	      0054af31    movsx edx,cellx"
 "	      0054af35    sub eax,edx"
 "	      0054af37    movsx eax,ax"
 "	      0054af3a    cdq"
@@ -10126,7 +10126,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054af50    push eax"
 "	      0054af51    mov eax,[ebp-34h]"
 "	      0054af54    push eax"
-"	      0054af55    mov eax,[ebp+0Ch]"
+"	      0054af55    mov eax,mission"
 "	      0054af58    push eax"
 "	      0054af59    call 0054A640h"
 "	      0054af5e    add esp,0Ch"
@@ -10136,7 +10136,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1666:
 	asm( 
-"	      0054af6c    mov word ptr [ebp-50h],1"
+"	      0054af6c    mov founddest,1"
 );
 // LINE 1667:
 	asm( 
@@ -10148,7 +10148,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1670:
 	asm( 
-"	      0054af7c    movsx eax,word ptr [ebp-20h]"
+"	      0054af7c    movsx eax,count"
 "	      0054af80    cdq"
 "	      0054af81    xor eax,edx"
 "	      0054af83    sub eax,edx"
@@ -10159,7 +10159,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1671:
 	asm( 
-"	      0054af92    dec word ptr [ebp-34h]"
+"	      0054af92    dec destcellx"
 );
 // LINE 1672:
 	asm( 
@@ -10167,14 +10167,14 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1673:
 	asm( 
-"	      0054af9b    dec word ptr [ebp-30h]"
+"	      0054af9b    dec destcelly"
 );
 // LINE 1674:
 	asm( 
-"	      0054af9f    movsx eax,word ptr [ebp-34h]"
+"	      0054af9f    movsx eax,destcellx"
 "	      0054afa3    test eax,eax"
 "	      0054afa5    jl near ptr 0054AFB7h"
-"	      0054afab    movsx eax,word ptr [ebp-30h]"
+"	      0054afab    movsx eax,destcelly"
 "	      0054afaf    test eax,eax"
 "	      0054afb1    jge near ptr 0054AFBCh"
 "	      0054afb7    jmp near ptr 0054AFC1h"
@@ -10191,7 +10191,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1694:
 	asm( 
-"	      0054afc6    mov word ptr [ebp-50h],1"
+"	      0054afc6    mov founddest,1"
 );
 // LINE 1697:
 	asm( 
@@ -10201,41 +10201,41 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1700:
 	asm( 
-"	      0054afde    mov eax,[ebp-28h]"
+"	      0054afde    mov eax,offsetz"
 "	      0054afe1    push eax"
-"	      0054afe2    mov eax,[ebp-24h]"
+"	      0054afe2    mov eax,offsetx"
 "	      0054afe5    push eax"
 "	      0054afe6    mov eax,[ebp+14h]"
 "	      0054afe9    push eax"
 "	      0054afea    mov eax,[ebp+10h]"
 "	      0054afed    push eax"
-"	      0054afee    mov ecx,[ebp-0E8h]"
+"	      0054afee    mov ecx,this"
 "	      0054aff4    call 0054FD4Dh"
 );
 // LINE 1701:
 	asm( 
-"	      0054aff9    mov eax,[ebp+18h]"
+"	      0054aff9    mov eax,missionid"
 "	      0054affc    push eax"
-"	      0054affd    mov eax,[ebp+0Ch]"
+"	      0054affd    mov eax,mission"
 "	      0054b000    push eax"
-"	      0054b001    mov eax,[ebp+8]"
+"	      0054b001    mov eax,persontype"
 "	      0054b004    push eax"
-"	      0054b005    mov ecx,[ebp-0E8h]"
+"	      0054b005    mov ecx,this"
 "	      0054b00b    call 0054A5A4h"
 );
 // LINE 1704:
 	asm( 
-"	      0054b010    mov eax,[ebp+18h]"
-"	      0054b013    mov [ebp-48h],eax"
+"	      0054b010    mov eax,missionid"
+"	      0054b013    mov mp.id,eax"
 );
 // LINE 1705:
 	asm( 
-"	      0054b016    cmp dword ptr [ebp+0Ch],4"
+"	      0054b016    cmp mission,4"
 "	      0054b01a    jne near ptr 0054B02Ch"
 );
 // LINE 1706:
 	asm( 
-"	      0054b020    mov dword ptr [ebp-4Ch],1Eh"
+"	      0054b020    mov mp.op,1Eh"
 );
 // LINE 1707:
 	asm( 
@@ -10243,63 +10243,63 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1708:
 	asm( 
-"	      0054b02c    mov dword ptr [ebp-4Ch],0"
+"	      0054b02c    mov mp.op,0"
 );
 // LINE 1709:
 	asm( 
-"	      0054b033    mov eax,[ebp-0E8h]"
+"	      0054b033    mov eax,this"
 "	      0054b039    xor ecx,ecx"
 "	      0054b03b    mov cl,[eax+88h]"
-"	      0054b041    mov [ebp-44h],ecx"
+"	      0054b041    mov mp.maploc.x,ecx"
 );
 // LINE 1710:
 	asm( 
-"	      0054b044    mov eax,[ebp-0E8h]"
+"	      0054b044    mov eax,this"
 "	      0054b04a    xor ecx,ecx"
 "	      0054b04c    mov cl,[eax+89h]"
-"	      0054b052    mov [ebp-40h],ecx"
+"	      0054b052    mov mp.maploc.y,ecx"
 );
 // LINE 1711:
 	asm( 
-"	      0054b055    lea eax,[ebp-4Ch]"
+"	      0054b055    lea eax,mp.op"
 "	      0054b058    push eax"
 "	      0054b059    call 004FBD4Ah"
 "	      0054b05e    add esp,4"
 );
 // LINE 1714:
 	asm( 
-"	      0054b061    cmp dword ptr [ebp+0Ch],4"
+"	      0054b061    cmp mission,4"
 "	      0054b065    jne near ptr 0054B092h"
 );
 // LINE 1716:
 	asm( 
-"	      0054b06b    mov eax,[ebp+18h]"
-"	      0054b06e    mov [ebp-48h],eax"
+"	      0054b06b    mov eax,missionid"
+"	      0054b06e    mov mp.id,eax"
 );
 // LINE 1717:
 	asm( 
-"	      0054b071    mov dword ptr [ebp-4Ch],0"
+"	      0054b071    mov mp.op,0"
 );
 // LINE 1718:
 	asm( 
-"	      0054b078    movsx eax,word ptr [ebp-34h]"
-"	      0054b07c    mov [ebp-44h],eax"
+"	      0054b078    movsx eax,destcellx"
+"	      0054b07c    mov mp.maploc.x,eax"
 );
 // LINE 1719:
 	asm( 
-"	      0054b07f    movsx eax,word ptr [ebp-30h]"
-"	      0054b083    mov [ebp-40h],eax"
+"	      0054b07f    movsx eax,destcelly"
+"	      0054b083    mov mp.maploc.y,eax"
 );
 // LINE 1720:
 	asm( 
-"	      0054b086    lea eax,[ebp-4Ch]"
+"	      0054b086    lea eax,mp.op"
 "	      0054b089    push eax"
 "	      0054b08a    call 004FBD4Ah"
 "	      0054b08f    add esp,4"
 );
 // LINE 1724:
 	asm( 
-"	      0054b092    mov word ptr [ebp-4],1"
+"	      0054b092    mov ret,1"
 );
 // LINE 1725:
 	asm( 
@@ -10312,7 +10312,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1728:
 	asm( 
-"	      0054b0a2    movsx eax,word ptr [ebp-20h]"
+"	      0054b0a2    movsx eax,count"
 "	      0054b0a6    cdq"
 "	      0054b0a7    xor eax,edx"
 "	      0054b0a9    sub eax,edx"
@@ -10323,7 +10323,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1729:
 	asm( 
-"	      0054b0b8    inc word ptr [ebp+10h]"
+"	      0054b0b8    inc cellx"
 );
 // LINE 1730:
 	asm( 
@@ -10331,7 +10331,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1731:
 	asm( 
-"	      0054b0c1    inc word ptr [ebp+14h]"
+"	      0054b0c1    inc celly"
 );
 // LINE 1733:
 // Block end:
@@ -10348,14 +10348,14 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	int32_t offsetx;
 // Block end:
 	asm( 
-"	      0054b0cf    mov word ptr [ebp-4],0"
+"	      0054b0cf    mov ret,0"
 );
 // LINE 1738:
 	asm( 
-"	      0054b0d5    movsx eax,word ptr [ebp+10h]"
+"	      0054b0d5    movsx eax,cellx"
 "	      0054b0d9    and eax,0FFh"
 "	      0054b0de    shl eax,0Ah"
-"	      0054b0e1    movsx ecx,word ptr [ebp+14h]"
+"	      0054b0e1    movsx ecx,celly"
 "	      0054b0e5    and ecx,0FFh"
 "	      0054b0eb    mov eax,[eax+ecx*4+67ED30h]"
 "	      0054b0f2    movsx eax,word ptr [eax]"
@@ -10370,7 +10370,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1739:
 	asm( 
-"	      0054b119    cmp dword ptr [ebp+20h],0"
+"	      0054b119    cmp loc,0"
 "	      0054b11d    je near ptr 0054B13Fh"
 "	      0054b123    push 8C085h"
 "	      0054b128    push 5BAAE4h"
@@ -10381,7 +10381,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1740:
 	asm( 
-"	      0054b13f    cmp dword ptr [ebp+1Ch],0"
+"	      0054b13f    cmp onTopOf,0"
 "	      0054b143    je near ptr 0054B165h"
 "	      0054b149    push 8C085h"
 "	      0054b14e    push 5BAB50h"
@@ -10397,14 +10397,14 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b16a    push eax"
 "	      0054b16b    lea eax,[ebp-5Ch]"
 "	      0054b16e    push eax"
-"	      0054b16f    movsx eax,word ptr [ebp+10h]"
+"	      0054b16f    movsx eax,cellx"
 "	      0054b173    and eax,0FFh"
 "	      0054b178    shl eax,0Ah"
-"	      0054b17b    movsx ecx,word ptr [ebp+14h]"
+"	      0054b17b    movsx ecx,celly"
 "	      0054b17f    and ecx,0FFh"
 "	      0054b185    mov eax,[eax+ecx*4+67ED30h]"
 "	      0054b18c    push eax"
-"	      0054b18d    mov ecx,[ebp-0E8h]"
+"	      0054b18d    mov ecx,this"
 "	      0054b193    call 00545049h"
 "	      0054b198    movzx eax,ax"
 "	      0054b19b    test eax,eax"
@@ -10420,23 +10420,23 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b1ae    push eax"
 "	      0054b1af    mov eax,[ebp+10h]"
 "	      0054b1b2    push eax"
-"	      0054b1b3    mov ecx,[ebp-0E8h]"
+"	      0054b1b3    mov ecx,this"
 "	      0054b1b9    call 0054FD4Dh"
 );
 // LINE 1744:
 	asm( 
-"	      0054b1be    mov eax,[ebp+18h]"
+"	      0054b1be    mov eax,missionid"
 "	      0054b1c1    push eax"
-"	      0054b1c2    mov eax,[ebp+0Ch]"
+"	      0054b1c2    mov eax,mission"
 "	      0054b1c5    push eax"
-"	      0054b1c6    mov eax,[ebp+8]"
+"	      0054b1c6    mov eax,persontype"
 "	      0054b1c9    push eax"
-"	      0054b1ca    mov ecx,[ebp-0E8h]"
+"	      0054b1ca    mov ecx,this"
 "	      0054b1d0    call 0054A5A4h"
 );
 // LINE 1745:
 	asm( 
-"	      0054b1d5    mov word ptr [ebp-4],1"
+"	      0054b1d5    mov ret,1"
 );
 // LINE 1747:
 	asm( 
@@ -10449,13 +10449,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	struct Point3d pos;
 // Block end:
 	asm( 
-"	      0054b1e0    mov word ptr [ebp-4],0"
+"	      0054b1e0    mov ret,0"
 );
 // LINE 1751:
 	asm( 
-"	      0054b1e6    cmp dword ptr [ebp+20h],0"
+"	      0054b1e6    cmp loc,0"
 "	      0054b1ea    jne near ptr 0054B1FAh"
-"	      0054b1f0    cmp dword ptr [ebp+1Ch],0"
+"	      0054b1f0    cmp onTopOf,0"
 "	      0054b1f4    jne near ptr 0054B216h"
 "	      0054b1fa    push 8C085h"
 "	      0054b1ff    push 5BAB98h"
@@ -10466,7 +10466,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1753:
 	asm( 
-"	      0054b216    mov eax,[ebp+1Ch]"
+"	      0054b216    mov eax,onTopOf"
 "	      0054b219    mov eax,[eax+18h]"
 "	      0054b21c    add eax,20000000h"
 "	      0054b221    sar eax,16h"
@@ -10475,17 +10475,17 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1754:
 	asm( 
 "	      0054b227    mov eax,20000000h"
-"	      0054b22c    mov ecx,[ebp+1Ch]"
+"	      0054b22c    mov ecx,onTopOf"
 "	      0054b22f    sub eax,[ecx+20h]"
 "	      0054b232    sar eax,16h"
 "	      0054b235    mov [ebp-74h],eax"
 );
 // LINE 1755:
 	asm( 
-"	      0054b238    movsx eax,word ptr [ebp+10h]"
+"	      0054b238    movsx eax,cellx"
 "	      0054b23c    cmp eax,[ebp-70h]"
 "	      0054b23f    jne near ptr 0054B252h"
-"	      0054b245    movsx eax,word ptr [ebp+14h]"
+"	      0054b245    movsx eax,celly"
 "	      0054b249    cmp eax,[ebp-74h]"
 "	      0054b24c    je near ptr 0054B26Eh"
 "	      0054b252    push 8C085h"
@@ -10499,9 +10499,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	asm( 
 "	      0054b26e    lea eax,[ebp-6Ch]"
 "	      0054b271    push eax"
-"	      0054b272    mov eax,[ebp+1Ch]"
+"	      0054b272    mov eax,onTopOf"
 "	      0054b275    push eax"
-"	      0054b276    mov ecx,[ebp-0E8h]"
+"	      0054b276    mov ecx,this"
 "	      0054b27c    call 00544BDEh"
 "	      0054b281    movzx eax,ax"
 "	      0054b284    test eax,eax"
@@ -10512,7 +10512,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	unsigned short setmaster;
 	asm( 
 "	      0054b28c    jmp near ptr 0054B291h"
-"	      0054b291    mov eax,[ebp-0E8h]"
+"	      0054b291    mov eax,this"
 "	      0054b297    xor ecx,ecx"
 "	      0054b299    mov cx,[eax+20h]"
 "	      0054b29d    test ecx,ecx"
@@ -10524,17 +10524,17 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b2b9    call 00554F30h"
 "	      0054b2be    add esp,10h"
 "	      0054b2c1    mov al,[ebp+10h]"
-"	      0054b2c4    mov ecx,[ebp-0E8h]"
+"	      0054b2c4    mov ecx,this"
 "	      0054b2ca    mov [ecx+88h],al"
 "	      0054b2d0    mov al,[ebp+14h]"
-"	      0054b2d3    mov ecx,[ebp-0E8h]"
+"	      0054b2d3    mov ecx,this"
 "	      0054b2d9    mov [ecx+89h],al"
 "	      0054b2df    jmp near ptr 0054B2E4h"
 );
 // LINE 1760:
 	asm( 
 "	      0054b2e4    lea eax,[ebp-6Ch]"
-"	      0054b2e7    mov ecx,[ebp-0E8h]"
+"	      0054b2e7    mov ecx,this"
 "	      0054b2ed    add ecx,3Ch"
 "	      0054b2f0    mov edx,[eax]"
 "	      0054b2f2    mov [ecx],edx"
@@ -10545,11 +10545,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1761:
 	asm( 
-"	      0054b300    mov eax,[ebp+1Ch]"
+"	      0054b300    mov eax,onTopOf"
 "	      0054b303    push eax"
-"	      0054b304    mov ecx,[ebp-0E8h]"
+"	      0054b304    mov ecx,this"
 "	      0054b30a    call 0054CECAh"
-"	      0054b30f    mov [ebp-78h],ax"
+"	      0054b30f    mov setmaster,ax"
 );
 // LINE 1762:
 	asm( 
@@ -10564,18 +10564,18 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1763:
 	asm( 
-"	      0054b33c    mov eax,[ebp+18h]"
+"	      0054b33c    mov eax,missionid"
 "	      0054b33f    push eax"
-"	      0054b340    mov eax,[ebp+0Ch]"
+"	      0054b340    mov eax,mission"
 "	      0054b343    push eax"
-"	      0054b344    mov eax,[ebp+8]"
+"	      0054b344    mov eax,persontype"
 "	      0054b347    push eax"
-"	      0054b348    mov ecx,[ebp-0E8h]"
+"	      0054b348    mov ecx,this"
 "	      0054b34e    call 0054A5A4h"
 );
 // LINE 1764:
 	asm( 
-"	      0054b353    mov word ptr [ebp-4],1"
+"	      0054b353    mov ret,1"
 );
 // LINE 1767:
 // Block end:
@@ -10585,11 +10585,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1771:
 // Block end:
 	asm( 
-"	      0054b35e    mov word ptr [ebp-4],0"
+"	      0054b35e    mov ret,0"
 );
 // LINE 1772:
 	asm( 
-"	      0054b364    cmp dword ptr [ebp+20h],0"
+"	      0054b364    cmp loc,0"
 "	      0054b368    je near ptr 0054B43Ah"
 );
 // LINE 1773:
@@ -10597,13 +10597,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b36e    push 0"
 "	      0054b370    push 0"
 "	      0054b372    push 20000h"
-"	      0054b377    mov eax,[ebp-0E8h]"
+"	      0054b377    mov eax,this"
 "	      0054b37d    mov eax,[eax+34h]"
 "	      0054b380    push eax"
 "	      0054b381    call 004D19BDh"
 "	      0054b386    add esp,8"
 "	      0054b389    push eax"
-"	      0054b38a    mov eax,[ebp+20h]"
+"	      0054b38a    mov eax,loc"
 "	      0054b38d    mov ecx,[eax+8]"
 "	      0054b390    push ecx"
 "	      0054b391    mov ecx,[eax+4]"
@@ -10618,19 +10618,19 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1775:
 	asm( 
-"	      0054b3aa    cmp dword ptr [ebp+1Ch],0"
+"	      0054b3aa    cmp onTopOf,0"
 "	      0054b3ae    je near ptr 0054B3E1h"
-"	      0054b3b4    mov eax,[ebp+1Ch]"
+"	      0054b3b4    mov eax,onTopOf"
 "	      0054b3b7    movsx eax,word ptr [eax+0Ch]"
 "	      0054b3bb    test al,10h"
 "	      0054b3bd    je near ptr 0054B3E1h"
-"	      0054b3c3    mov eax,[ebp+1Ch]"
+"	      0054b3c3    mov eax,onTopOf"
 "	      0054b3c6    mov ax,[eax+0Eh]"
-"	      0054b3ca    mov ecx,[ebp-0E8h]"
+"	      0054b3ca    mov ecx,this"
 "	      0054b3d0    mov [ecx+100h],ax"
 "	      0054b3d7    jmp near ptr 0054B3F5h"
 "	      0054b3dc    jmp near ptr 0054B3F5h"
-"	      0054b3e1    mov eax,[ebp-0E8h]"
+"	      0054b3e1    mov eax,this"
 "	      0054b3e7    mov word ptr [eax+100h],0FFFFh"
 "	      0054b3f0    jmp near ptr 0054B3F5h"
 );
@@ -10638,30 +10638,30 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	asm( 
 "	      0054b3f5    push 0FFh"
 "	      0054b3fa    push 0FFh"
-"	      0054b3ff    mov eax,[ebp+20h]"
+"	      0054b3ff    mov eax,loc"
 "	      0054b402    mov ecx,[eax+8]"
 "	      0054b405    push ecx"
 "	      0054b406    mov ecx,[eax+4]"
 "	      0054b409    push ecx"
 "	      0054b40a    mov eax,[eax]"
 "	      0054b40c    push eax"
-"	      0054b40d    mov ecx,[ebp-0E8h]"
+"	      0054b40d    mov ecx,this"
 "	      0054b413    call 0054FC2Eh"
 );
 // LINE 1777:
 	asm( 
-"	      0054b418    mov eax,[ebp+18h]"
+"	      0054b418    mov eax,missionid"
 "	      0054b41b    push eax"
-"	      0054b41c    mov eax,[ebp+0Ch]"
+"	      0054b41c    mov eax,mission"
 "	      0054b41f    push eax"
-"	      0054b420    mov eax,[ebp+8]"
+"	      0054b420    mov eax,persontype"
 "	      0054b423    push eax"
-"	      0054b424    mov ecx,[ebp-0E8h]"
+"	      0054b424    mov ecx,this"
 "	      0054b42a    call 0054A5A4h"
 );
 // LINE 1778:
 	asm( 
-"	      0054b42f    mov word ptr [ebp-4],1"
+"	      0054b42f    mov ret,1"
 );
 // LINE 1781:
 	asm( 
@@ -10673,18 +10673,18 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	int32_t offsetx;
 	asm( 
 "	      0054b43a    push 1"
-"	      0054b43c    lea eax,[ebp-80h]"
+"	      0054b43c    lea eax,offsetz"
 "	      0054b43f    push eax"
-"	      0054b440    lea eax,[ebp-7Ch]"
+"	      0054b440    lea eax,offsetx"
 "	      0054b443    push eax"
-"	      0054b444    movsx eax,word ptr [ebp+10h]"
+"	      0054b444    movsx eax,cellx"
 "	      0054b448    and eax,0FFh"
 "	      0054b44d    shl eax,0Ah"
-"	      0054b450    movsx ecx,word ptr [ebp+14h]"
+"	      0054b450    movsx ecx,celly"
 "	      0054b454    and ecx,0FFh"
 "	      0054b45a    mov eax,[eax+ecx*4+67ED30h]"
 "	      0054b461    push eax"
-"	      0054b462    mov ecx,[ebp-0E8h]"
+"	      0054b462    mov ecx,this"
 "	      0054b468    call 00545049h"
 "	      0054b46d    movzx eax,ax"
 "	      0054b470    test eax,eax"
@@ -10692,49 +10692,49 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1784:
 	asm( 
-"	      0054b478    cmp dword ptr [ebp+1Ch],0"
+"	      0054b478    cmp onTopOf,0"
 "	      0054b47c    je near ptr 0054B4AFh"
-"	      0054b482    mov eax,[ebp+1Ch]"
+"	      0054b482    mov eax,onTopOf"
 "	      0054b485    movsx eax,word ptr [eax+0Ch]"
 "	      0054b489    test al,10h"
 "	      0054b48b    je near ptr 0054B4AFh"
-"	      0054b491    mov eax,[ebp+1Ch]"
+"	      0054b491    mov eax,onTopOf"
 "	      0054b494    mov ax,[eax+0Eh]"
-"	      0054b498    mov ecx,[ebp-0E8h]"
+"	      0054b498    mov ecx,this"
 "	      0054b49e    mov [ecx+100h],ax"
 "	      0054b4a5    jmp near ptr 0054B4C3h"
 "	      0054b4aa    jmp near ptr 0054B4C3h"
-"	      0054b4af    mov eax,[ebp-0E8h]"
+"	      0054b4af    mov eax,this"
 "	      0054b4b5    mov word ptr [eax+100h],0FFFFh"
 "	      0054b4be    jmp near ptr 0054B4C3h"
 );
 // LINE 1785:
 	asm( 
-"	      0054b4c3    mov eax,[ebp-80h]"
+"	      0054b4c3    mov eax,offsetz"
 "	      0054b4c6    push eax"
-"	      0054b4c7    mov eax,[ebp-7Ch]"
+"	      0054b4c7    mov eax,offsetx"
 "	      0054b4ca    push eax"
 "	      0054b4cb    mov eax,[ebp+14h]"
 "	      0054b4ce    push eax"
 "	      0054b4cf    mov eax,[ebp+10h]"
 "	      0054b4d2    push eax"
-"	      0054b4d3    mov ecx,[ebp-0E8h]"
+"	      0054b4d3    mov ecx,this"
 "	      0054b4d9    call 0054FD4Dh"
 );
 // LINE 1786:
 	asm( 
-"	      0054b4de    mov eax,[ebp+18h]"
+"	      0054b4de    mov eax,missionid"
 "	      0054b4e1    push eax"
-"	      0054b4e2    mov eax,[ebp+0Ch]"
+"	      0054b4e2    mov eax,mission"
 "	      0054b4e5    push eax"
-"	      0054b4e6    mov eax,[ebp+8]"
+"	      0054b4e6    mov eax,persontype"
 "	      0054b4e9    push eax"
-"	      0054b4ea    mov ecx,[ebp-0E8h]"
+"	      0054b4ea    mov ecx,this"
 "	      0054b4f0    call 0054A5A4h"
 );
 // LINE 1787:
 	asm( 
-"	      0054b4f5    mov word ptr [ebp-4],1"
+"	      0054b4f5    mov ret,1"
 );
 // LINE 1790:
 // Block end:
@@ -10770,10 +10770,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1793:
 	asm( 
-"	      0054b53b    movsx eax,word ptr [ebp-4]"
+"	      0054b53b    movsx eax,ret"
 "	      0054b53f    test eax,eax"
 "	      0054b541    je near ptr 0054B570h"
-"	      0054b547    movsx eax,word ptr [ebp-4]"
+"	      0054b547    movsx eax,ret"
 "	      0054b54b    cmp eax,1"
 "	      0054b54e    je near ptr 0054B570h"
 "	      0054b554    push 8C085h"
@@ -10785,25 +10785,25 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1794:
 	asm( 
-"	      0054b570    movsx eax,word ptr [ebp-4]"
+"	      0054b570    movsx eax,ret"
 "	      0054b574    cmp eax,1"
 "	      0054b577    jne near ptr 0054B810h"
 );
 // LINE 1797:
 	asm( 
-"	      0054b57d    mov eax,[ebp-0E8h]"
+"	      0054b57d    mov eax,this"
 "	      0054b583    mov ax,[eax+10Ah]"
 "	      0054b58a    push eax"
-"	      0054b58b    mov eax,[ebp-0E8h]"
+"	      0054b58b    mov eax,this"
 "	      0054b591    mov eax,[eax+0B4h]"
 "	      0054b597    push eax"
-"	      0054b598    mov ecx,[ebp-0E8h]"
+"	      0054b598    mov ecx,this"
 "	      0054b59e    call 0055CC58h"
 "	      0054b5a3    jmp near ptr 0054B5A8h"
 );
 // LINE 1798:
 	asm( 
-"	      0054b5a8    mov eax,[ebp-0E8h]"
+"	      0054b5a8    mov eax,this"
 "	      0054b5ae    movsx eax,word ptr [eax+0D2h]"
 "	      0054b5b5    test eax,eax"
 "	      0054b5b7    je near ptr 0054B5D9h"
@@ -10813,20 +10813,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b5cc    push 5BBA14h"
 "	      0054b5d1    call 00554F30h"
 "	      0054b5d6    add esp,10h"
-"	      0054b5d9    mov eax,[ebp-0E8h]"
+"	      0054b5d9    mov eax,this"
 "	      0054b5df    mov ax,[eax+10Ah]"
 "	      0054b5e6    push eax"
-"	      0054b5e7    mov eax,[ebp-0E8h]"
+"	      0054b5e7    mov eax,this"
 "	      0054b5ed    mov eax,[eax+0B4h]"
 "	      0054b5f3    push eax"
-"	      0054b5f4    mov ecx,[ebp-0E8h]"
+"	      0054b5f4    mov ecx,this"
 "	      0054b5fa    call 0055CC58h"
 "	      0054b5ff    jmp near ptr 0054B604h"
-"	      0054b604    mov eax,[ebp-0E8h]"
+"	      0054b604    mov eax,this"
 "	      0054b60a    mov word ptr [eax+0D2h],1"
-"	      0054b613    mov eax,[ebp-0E8h]"
+"	      0054b613    mov eax,this"
 "	      0054b619    mov word ptr [eax+0E2h],1"
-"	      0054b622    mov eax,[ebp-0E8h]"
+"	      0054b622    mov eax,this"
 "	      0054b628    movsx eax,word ptr [eax+0D8h]"
 "	      0054b62f    mov [ebp-88h],eax"
 "	      0054b635    cmp dword ptr [ebp-88h],0"
@@ -10850,12 +10850,12 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b690    push 5BBA14h"
 "	      0054b695    call 00554F30h"
 "	      0054b69a    add esp,10h"
-"	      0054b69d    mov eax,[ebp-0E8h]"
+"	      0054b69d    mov eax,this"
 "	      0054b6a3    xor ecx,ecx"
 "	      0054b6a5    mov cl,[eax+88h]"
 "	      0054b6ab    cmp ecx,0FFFFFFFFh"
 "	      0054b6ae    jne near ptr 0054B6ECh"
-"	      0054b6b4    mov eax,[ebp-0E8h]"
+"	      0054b6b4    mov eax,this"
 "	      0054b6ba    xor ecx,ecx"
 "	      0054b6bc    mov cl,[eax+89h]"
 "	      0054b6c2    cmp ecx,0FFFFFFFFh"
@@ -10867,7 +10867,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b6df    call 00554F30h"
 "	      0054b6e4    add esp,10h"
 "	      0054b6e7    jmp near ptr 0054B71Fh"
-"	      0054b6ec    mov eax,[ebp-0E8h]"
+"	      0054b6ec    mov eax,this"
 "	      0054b6f2    xor ecx,ecx"
 "	      0054b6f4    mov cl,[eax+89h]"
 "	      0054b6fa    cmp ecx,0FFFFFFFFh"
@@ -10878,7 +10878,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b712    push 5BBA14h"
 "	      0054b717    call 00554F30h"
 "	      0054b71c    add esp,10h"
-"	      0054b71f    mov eax,[ebp-0E8h]"
+"	      0054b71f    mov eax,this"
 "	      0054b725    xor ecx,ecx"
 "	      0054b727    mov cl,[eax+88h]"
 "	      0054b72d    cmp ecx,0FFFFFFFFh"
@@ -10894,10 +10894,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b764    push 5BBA14h"
 "	      0054b769    call 00554F30h"
 "	      0054b76e    add esp,10h"
-"	      0054b771    mov ecx,[ebp-0E8h]"
+"	      0054b771    mov ecx,this"
 "	      0054b777    call 0055069Bh"
 "	      0054b77c    jmp near ptr 0054B781h"
-"	      0054b781    mov eax,[ebp-0E8h]"
+"	      0054b781    mov eax,this"
 "	      0054b787    xor ecx,ecx"
 "	      0054b789    mov cx,[eax+20h]"
 "	      0054b78d    test ecx,ecx"
@@ -10908,7 +10908,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b7a4    push 5BBA14h"
 "	      0054b7a9    call 00554F30h"
 "	      0054b7ae    add esp,10h"
-"	      0054b7b1    mov eax,[ebp-0E8h]"
+"	      0054b7b1    mov eax,this"
 "	      0054b7b7    add eax,3Ch"
 "	      0054b7ba    lea ecx,[ebp-0E0h]"
 "	      0054b7c0    mov edx,[eax]"
@@ -10918,7 +10918,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b7ca    mov eax,[eax+8]"
 "	      0054b7cd    mov [ecx+8],eax"
 "	      0054b7d0    push 40h"
-"	      0054b7d2    mov eax,[ebp-0E8h]"
+"	      0054b7d2    mov eax,this"
 "	      0054b7d8    add eax,48h"
 "	      0054b7db    push eax"
 "	      0054b7dc    lea eax,[ebp-0C8h]"
@@ -10928,7 +10928,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b7eb    push 3"
 "	      0054b7ed    lea eax,[ebp-0E0h]"
 "	      0054b7f3    push eax"
-"	      0054b7f4    mov eax,[ebp-0E8h]"
+"	      0054b7f4    mov eax,this"
 "	      0054b7fa    mov eax,[eax+2Ch]"
 "	      0054b7fd    push eax"
 "	      0054b7fe    call 004D8781h"
@@ -10938,7 +10938,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1800:
 	asm( 
-"	      0054b810    mov ax,[ebp-4]"
+"	      0054b810    mov ax,ret"
 "	      0054b814    jmp near ptr 0054B819h"
 );
 // LINE 1801:
@@ -10961,11 +10961,11 @@ void cYObject::ResetToAmbient() {
 "	      0054b826    push ebx"
 "	      0054b827    push esi"
 "	      0054b828    push edi"
-"	      0054b829    mov [ebp-0Ch],ecx"
+"	      0054b829    mov this,ecx"
 );
 // LINE 1806:
 	asm( 
-"	      0054b82c    mov eax,[ebp-0Ch]"
+"	      0054b82c    mov eax,this"
 "	      0054b82f    movsx eax,word ptr [eax+0D8h]"
 "	      0054b836    test eax,eax"
 "	      0054b838    jne near ptr 0054B85Ah"
@@ -10978,7 +10978,7 @@ void cYObject::ResetToAmbient() {
 );
 // LINE 1807:
 	asm( 
-"	      0054b85a    mov eax,[ebp-0Ch]"
+"	      0054b85a    mov eax,this"
 "	      0054b85d    movsx eax,word ptr [eax+0D2h]"
 "	      0054b864    test eax,eax"
 "	      0054b866    jne near ptr 0054B888h"
@@ -10991,7 +10991,7 @@ void cYObject::ResetToAmbient() {
 );
 // LINE 1808:
 	asm( 
-"	      0054b888    mov eax,[ebp-0Ch]"
+"	      0054b888    mov eax,this"
 "	      0054b88b    movsx eax,word ptr [eax+0D2h]"
 "	      0054b892    test eax,eax"
 "	      0054b894    jne near ptr 0054B8B6h"
@@ -11001,7 +11001,7 @@ void cYObject::ResetToAmbient() {
 "	      0054b8a9    push 5BBA14h"
 "	      0054b8ae    call 00554F30h"
 "	      0054b8b3    add esp,10h"
-"	      0054b8b6    mov eax,[ebp-0Ch]"
+"	      0054b8b6    mov eax,this"
 "	      0054b8b9    movsx eax,word ptr [eax+0D8h]"
 "	      0054b8c0    mov [ebp-4],eax"
 "	      0054b8c3    cmp dword ptr [ebp-4],0"
@@ -11014,22 +11014,22 @@ void cYObject::ResetToAmbient() {
 "	      0054b8e7    dec eax"
 "	      0054b8e8    mov ds:[5B8670h],ax"
 "	      0054b8ee    jmp near ptr 0054B8F3h"
-"	      0054b8f3    mov eax,[ebp-0Ch]"
+"	      0054b8f3    mov eax,this"
 "	      0054b8f6    mov word ptr [eax+0D2h],0"
 "	      0054b8ff    push 0"
-"	      0054b901    mov ecx,[ebp-0Ch]"
+"	      0054b901    mov ecx,this"
 "	      0054b904    call 0054FE42h"
-"	      0054b909    mov eax,[ebp-0Ch]"
+"	      0054b909    mov eax,this"
 "	      0054b90c    mov dword ptr [eax+1Ch],0FFFFFFFFh"
-"	      0054b913    mov eax,[ebp-0Ch]"
+"	      0054b913    mov eax,this"
 "	      0054b916    movsx eax,word ptr [eax+0D8h]"
 "	      0054b91d    test eax,eax"
 "	      0054b91f    je near ptr 0054B967h"
-"	      0054b925    mov eax,[ebp-0Ch]"
+"	      0054b925    mov eax,this"
 "	      0054b928    movsx eax,word ptr [eax+0D8h]"
 "	      0054b92f    cmp eax,5"
 "	      0054b932    je near ptr 0054B967h"
-"	      0054b938    mov eax,[ebp-0Ch]"
+"	      0054b938    mov eax,this"
 "	      0054b93b    movsx eax,word ptr [eax+0D8h]"
 "	      0054b942    cmp eax,7"
 "	      0054b945    je near ptr 0054B967h"
@@ -11040,9 +11040,9 @@ void cYObject::ResetToAmbient() {
 "	      0054b95f    call 00554F30h"
 "	      0054b964    add esp,10h"
 "	      0054b967    jmp near ptr 0054B96Ch"
-"	      0054b96c    mov eax,[ebp-0Ch]"
+"	      0054b96c    mov eax,this"
 "	      0054b96f    mov word ptr [eax+0D2h],1"
-"	      0054b978    mov eax,[ebp-0Ch]"
+"	      0054b978    mov eax,this"
 "	      0054b97b    movsx eax,word ptr [eax+0D8h]"
 "	      0054b982    mov [ebp-8],eax"
 "	      0054b985    cmp dword ptr [ebp-8],0"
@@ -11059,13 +11059,13 @@ void cYObject::ResetToAmbient() {
 );
 // LINE 1809:
 	asm( 
-"	      0054b9ba    mov eax,[ebp-0Ch]"
+"	      0054b9ba    mov eax,this"
 "	      0054b9bd    mov ax,[eax+10Ah]"
 "	      0054b9c4    push eax"
-"	      0054b9c5    mov eax,[ebp-0Ch]"
+"	      0054b9c5    mov eax,this"
 "	      0054b9c8    mov eax,[eax+0B4h]"
 "	      0054b9ce    push eax"
-"	      0054b9cf    mov ecx,[ebp-0Ch]"
+"	      0054b9cf    mov ecx,this"
 "	      0054b9d2    call 0055CC58h"
 "	      0054b9d7    jmp near ptr 0054B9DCh"
 );
@@ -11092,11 +11092,11 @@ long cYObject::JoinRiot() {
 "	      0054b9ec    push ebx"
 "	      0054b9ed    push esi"
 "	      0054b9ee    push edi"
-"	      0054b9ef    mov [ebp-2Ch],ecx"
+"	      0054b9ef    mov this,ecx"
 );
 // LINE 1816:
 	asm( 
-"	      0054b9f2    mov eax,[ebp-2Ch]"
+"	      0054b9f2    mov eax,this"
 "	      0054b9f5    movsx eax,word ptr [eax+0E0h]"
 "	      0054b9fc    test eax,eax"
 "	      0054b9fe    jg near ptr 0054BA20h"
@@ -11113,11 +11113,11 @@ long cYObject::JoinRiot() {
 "	      0054ba25    call 004FC323h"
 "	      0054ba2a    add esp,4"
 "	      0054ba2d    movsx eax,ax"
-"	      0054ba30    mov [ebp-4],eax"
+"	      0054ba30    mov riotMissionID,eax"
 );
 // LINE 1819:
 	asm( 
-"	      0054ba33    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0054ba33    cmp riotMissionID,0FFFFFFFFh"
 "	      0054ba37    je near ptr 0054BC2Fh"
 );
 // LINE 1823:
@@ -11125,38 +11125,38 @@ long cYObject::JoinRiot() {
 	unsigned short conked;
 	struct _MISSION_PARMS mp;
 	asm( 
-"	      0054ba3d    mov eax,[ebp-4]"
-"	      0054ba40    mov [ebp-18h],eax"
+"	      0054ba3d    mov eax,riotMissionID"
+"	      0054ba40    mov mp.id,eax"
 );
 // LINE 1824:
 	asm( 
-"	      0054ba43    mov dword ptr [ebp-1Ch],0Bh"
+"	      0054ba43    mov mp.op,0Bh"
 );
 // LINE 1825:
 	asm( 
-"	      0054ba4a    mov dword ptr [ebp-0Ch],1"
+"	      0054ba4a    mov mp.i2num,1"
 );
 // LINE 1826:
 	asm( 
-"	      0054ba51    lea eax,[ebp-1Ch]"
+"	      0054ba51    lea eax,mp.op"
 "	      0054ba54    push eax"
 "	      0054ba55    call 004FBD4Ah"
 "	      0054ba5a    add esp,4"
 );
 // LINE 1827:
 	asm( 
-"	      0054ba5d    mov word ptr [ebp-20h],0"
+"	      0054ba5d    mov conked,0"
 );
 // LINE 1828:
 	asm( 
-"	      0054ba63    mov eax,[ebp-2Ch]"
+"	      0054ba63    mov eax,this"
 "	      0054ba66    movsx eax,word ptr [eax+0D2h]"
 "	      0054ba6d    test eax,eax"
 "	      0054ba6f    je near ptr 0054BBB9h"
 );
 // LINE 1829:
 	asm( 
-"	      0054ba75    mov eax,[ebp-2Ch]"
+"	      0054ba75    mov eax,this"
 "	      0054ba78    movsx eax,word ptr [eax+0D2h]"
 "	      0054ba7f    test eax,eax"
 "	      0054ba81    jne near ptr 0054BAA3h"
@@ -11166,7 +11166,7 @@ long cYObject::JoinRiot() {
 "	      0054ba96    push 5BBA14h"
 "	      0054ba9b    call 00554F30h"
 "	      0054baa0    add esp,10h"
-"	      0054baa3    mov eax,[ebp-2Ch]"
+"	      0054baa3    mov eax,this"
 "	      0054baa6    movsx eax,word ptr [eax+0D8h]"
 "	      0054baad    mov [ebp-24h],eax"
 "	      0054bab0    cmp dword ptr [ebp-24h],0"
@@ -11179,25 +11179,25 @@ long cYObject::JoinRiot() {
 "	      0054bad4    dec eax"
 "	      0054bad5    mov ds:[5B8670h],ax"
 "	      0054badb    jmp near ptr 0054BAE0h"
-"	      0054bae0    mov eax,[ebp-2Ch]"
+"	      0054bae0    mov eax,this"
 "	      0054bae3    mov word ptr [eax+0D2h],0"
 "	      0054baec    push 3"
-"	      0054baee    mov ecx,[ebp-2Ch]"
+"	      0054baee    mov ecx,this"
 "	      0054baf1    call 0054FE42h"
-"	      0054baf6    mov eax,[ebp-4]"
-"	      0054baf9    mov ecx,[ebp-2Ch]"
+"	      0054baf6    mov eax,riotMissionID"
+"	      0054baf9    mov ecx,this"
 "	      0054bafc    mov [ecx+1Ch],eax"
-"	      0054baff    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0054baff    cmp riotMissionID,0FFFFFFFFh"
 "	      0054bb03    jne near ptr 0054BB5Dh"
-"	      0054bb09    mov eax,[ebp-2Ch]"
+"	      0054bb09    mov eax,this"
 "	      0054bb0c    movsx eax,word ptr [eax+0D8h]"
 "	      0054bb13    test eax,eax"
 "	      0054bb15    je near ptr 0054BB5Dh"
-"	      0054bb1b    mov eax,[ebp-2Ch]"
+"	      0054bb1b    mov eax,this"
 "	      0054bb1e    movsx eax,word ptr [eax+0D8h]"
 "	      0054bb25    cmp eax,5"
 "	      0054bb28    je near ptr 0054BB5Dh"
-"	      0054bb2e    mov eax,[ebp-2Ch]"
+"	      0054bb2e    mov eax,this"
 "	      0054bb31    movsx eax,word ptr [eax+0D8h]"
 "	      0054bb38    cmp eax,7"
 "	      0054bb3b    je near ptr 0054BB5Dh"
@@ -11208,9 +11208,9 @@ long cYObject::JoinRiot() {
 "	      0054bb55    call 00554F30h"
 "	      0054bb5a    add esp,10h"
 "	      0054bb5d    jmp near ptr 0054BB62h"
-"	      0054bb62    mov eax,[ebp-2Ch]"
+"	      0054bb62    mov eax,this"
 "	      0054bb65    mov word ptr [eax+0D2h],1"
-"	      0054bb6e    mov eax,[ebp-2Ch]"
+"	      0054bb6e    mov eax,this"
 "	      0054bb71    movsx eax,word ptr [eax+0D8h]"
 "	      0054bb78    mov [ebp-28h],eax"
 "	      0054bb7b    cmp dword ptr [ebp-28h],0"
@@ -11232,25 +11232,25 @@ long cYObject::JoinRiot() {
 // LINE 1831:
 	asm( 
 "	      0054bbb9    push 3"
-"	      0054bbbb    mov ecx,[ebp-2Ch]"
+"	      0054bbbb    mov ecx,this"
 "	      0054bbbe    call 0054FE42h"
 );
 // LINE 1832:
 	asm( 
-"	      0054bbc3    mov eax,[ebp-4]"
-"	      0054bbc6    mov ecx,[ebp-2Ch]"
+"	      0054bbc3    mov eax,riotMissionID"
+"	      0054bbc6    mov ecx,this"
 "	      0054bbc9    mov [ecx+1Ch],eax"
-"	      0054bbcc    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0054bbcc    cmp riotMissionID,0FFFFFFFFh"
 "	      0054bbd0    jne near ptr 0054BC2Ah"
-"	      0054bbd6    mov eax,[ebp-2Ch]"
+"	      0054bbd6    mov eax,this"
 "	      0054bbd9    movsx eax,word ptr [eax+0D8h]"
 "	      0054bbe0    test eax,eax"
 "	      0054bbe2    je near ptr 0054BC2Ah"
-"	      0054bbe8    mov eax,[ebp-2Ch]"
+"	      0054bbe8    mov eax,this"
 "	      0054bbeb    movsx eax,word ptr [eax+0D8h]"
 "	      0054bbf2    cmp eax,5"
 "	      0054bbf5    je near ptr 0054BC2Ah"
-"	      0054bbfb    mov eax,[ebp-2Ch]"
+"	      0054bbfb    mov eax,this"
 "	      0054bbfe    movsx eax,word ptr [eax+0D8h]"
 "	      0054bc05    cmp eax,7"
 "	      0054bc08    je near ptr 0054BC2Ah"
@@ -11265,7 +11265,7 @@ long cYObject::JoinRiot() {
 // LINE 1835:
 // Block end:
 	asm( 
-"	      0054bc2f    mov eax,[ebp-4]"
+"	      0054bc2f    mov eax,riotMissionID"
 "	      0054bc32    jmp near ptr 0054BC37h"
 );
 // LINE 1836:
@@ -11295,24 +11295,24 @@ void cYObject::PhaseAndBeamSoundChannels() {
 );
 // LINE 1842:
 	asm( 
-"	      0054bc45    mov word ptr [ebp-4],0"
+"	      0054bc45    mov count,0"
 );
 // LINE 1843:
 	asm( 
-"	      0054bc4b    movsx eax,word ptr [ebp-4]"
+"	      0054bc4b    movsx eax,count"
 "	      0054bc4f    cmp eax,64h"
 "	      0054bc52    jge near ptr 0054BEA9h"
 );
 // LINE 1844:
 	asm( 
-"	      0054bc58    mov ax,[ebp-4]"
+"	      0054bc58    mov ax,count"
 "	      0054bc5c    mov [ebp-18h],ax"
-"	      0054bc60    inc word ptr [ebp-4]"
+"	      0054bc60    inc count"
 "	      0054bc64    movsx eax,word ptr [ebp-18h]"
 "	      0054bc68    cmp eax,7D00h"
 "	      0054bc6d    jne near ptr 0054BC80h"
 "	      0054bc73    mov eax,ds:[5B8680h]"
-"	      0054bc78    mov [ebp-0Ch],eax"
+"	      0054bc78    mov obj,eax"
 "	      0054bc7b    jmp near ptr 0054BCFCh"
 "	      0054bc80    movsx eax,word ptr [ebp-18h]"
 "	      0054bc84    test eax,eax"
@@ -11337,14 +11337,14 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054bce0    add esp,10h"
 "	      0054bce3    movsx eax,word ptr [ebp-18h]"
 "	      0054bce7    mov eax,[eax*4+636D40h]"
-"	      0054bcee    mov [ebp-0Ch],eax"
+"	      0054bcee    mov obj,eax"
 "	      0054bcf1    jmp near ptr 0054BCFCh"
 "	      0054bcf6    mov eax,[ebp-34h]"
-"	      0054bcf9    mov [ebp-0Ch],eax"
+"	      0054bcf9    mov obj,eax"
 );
 // LINE 1845:
 	asm( 
-"	      0054bcfc    mov eax,[ebp-0Ch]"
+"	      0054bcfc    mov eax,obj"
 "	      0054bcff    movsx eax,word ptr [eax+102h]"
 "	      0054bd06    cmp eax,0FFFFFFFFh"
 "	      0054bd09    je near ptr 0054BEA4h"
@@ -11354,7 +11354,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	short xdiff;
 	short ydiff;
 	asm( 
-"	      0054bd0f    mov eax,[ebp-0Ch]"
+"	      0054bd0f    mov eax,obj"
 "	      0054bd12    movsx eax,word ptr [eax+0D2h]"
 "	      0054bd19    test eax,eax"
 "	      0054bd1b    jne near ptr 0054BD3Dh"
@@ -11368,7 +11368,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 // LINE 1847:
 	asm( 
 "	      0054bd3d    mov eax,ds:[6BF188h]"
-"	      0054bd42    mov ecx,[ebp-0Ch]"
+"	      0054bd42    mov ecx,obj"
 "	      0054bd45    xor edx,edx"
 "	      0054bd47    mov dl,[ecx+88h]"
 "	      0054bd4d    sub eax,edx"
@@ -11376,13 +11376,13 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054bd52    cdq"
 "	      0054bd53    xor eax,edx"
 "	      0054bd55    sub eax,edx"
-"	      0054bd57    mov [ebp-14h],ax"
+"	      0054bd57    mov xdiff,ax"
 "	      0054bd5b    jmp near ptr 0054BD60h"
 );
 // LINE 1848:
 	asm( 
 "	      0054bd60    mov eax,ds:[6BF18Ch]"
-"	      0054bd65    mov ecx,[ebp-0Ch]"
+"	      0054bd65    mov ecx,obj"
 "	      0054bd68    xor edx,edx"
 "	      0054bd6a    mov dl,[ecx+89h]"
 "	      0054bd70    sub eax,edx"
@@ -11390,34 +11390,34 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054bd75    cdq"
 "	      0054bd76    xor eax,edx"
 "	      0054bd78    sub eax,edx"
-"	      0054bd7a    mov [ebp-10h],ax"
+"	      0054bd7a    mov ydiff,ax"
 "	      0054bd7e    jmp near ptr 0054BD83h"
 );
 // LINE 1849:
 	asm( 
-"	      0054bd83    movsx eax,word ptr [ebp-10h]"
-"	      0054bd87    movsx ecx,word ptr [ebp-14h]"
+"	      0054bd83    movsx eax,ydiff"
+"	      0054bd87    movsx ecx,xdiff"
 "	      0054bd8b    add eax,ecx"
 "	      0054bd8d    cmp eax,2"
 "	      0054bd90    jle near ptr 0054BE4Ah"
 );
 // LINE 1852:
 	asm( 
-"	      0054bd96    mov eax,[ebp-0Ch]"
+"	      0054bd96    mov eax,obj"
 "	      0054bd99    movsx eax,word ptr [eax+102h]"
 "	      0054bda0    cmp eax,0FFFFFFFFh"
 "	      0054bda3    je near ptr 0054BE40h"
-"	      0054bda9    mov eax,[ebp-0Ch]"
+"	      0054bda9    mov eax,obj"
 "	      0054bdac    mov word ptr [eax+104h],0FFFFh"
-"	      0054bdb5    mov eax,[ebp-0Ch]"
+"	      0054bdb5    mov eax,obj"
 "	      0054bdb8    movsx eax,word ptr [eax+102h]"
 "	      0054bdbf    cmp eax,0FFFFFFFFh"
 "	      0054bdc2    je near ptr 0054BE1Bh"
-"	      0054bdc8    mov eax,[ebp-0Ch]"
+"	      0054bdc8    mov eax,obj"
 "	      0054bdcb    movsx eax,word ptr [eax+102h]"
 "	      0054bdd2    cmp eax,0FFFFFFFFh"
 "	      0054bdd5    je near ptr 0054BDF6h"
-"	      0054bddb    mov eax,[ebp-0Ch]"
+"	      0054bddb    mov eax,obj"
 "	      0054bdde    movsx eax,word ptr [eax+102h]"
 "	      0054bde5    add eax,62h"
 "	      0054bde8    mov [ebp-2Ch],ax"
@@ -11433,10 +11433,10 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054be13    call 00446E04h"
 "	      0054be18    add esp,4"
 "	      0054be1b    jmp near ptr 0054BE20h"
-"	      0054be20    mov eax,[ebp-0Ch]"
+"	      0054be20    mov eax,obj"
 "	      0054be23    movsx eax,word ptr [eax+102h]"
 "	      0054be2a    mov word ptr [eax*2+6356B0h],0"
-"	      0054be34    mov eax,[ebp-0Ch]"
+"	      0054be34    mov eax,obj"
 "	      0054be37    mov word ptr [eax+102h],0FFFFh"
 "	      0054be40    jmp near ptr 0054BE45h"
 );
@@ -11446,11 +11446,11 @@ void cYObject::PhaseAndBeamSoundChannels() {
 );
 // LINE 1854:
 	asm( 
-"	      0054be4a    mov eax,[ebp-0Ch]"
+"	      0054be4a    mov eax,obj"
 "	      0054be4d    movsx eax,word ptr [eax+102h]"
 "	      0054be54    cmp eax,0FFFFFFFFh"
 "	      0054be57    je near ptr 0054BE78h"
-"	      0054be5d    mov eax,[ebp-0Ch]"
+"	      0054be5d    mov eax,obj"
 "	      0054be60    movsx eax,word ptr [eax+102h]"
 "	      0054be67    add eax,62h"
 "	      0054be6a    mov [ebp-20h],ax"
@@ -11461,7 +11461,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054be83    mov ax,[ebp-1Ch]"
 "	      0054be87    mov [ebp-20h],ax"
 "	      0054be8b    jmp near ptr 0054BE90h"
-"	      0054be90    mov eax,[ebp-0Ch]"
+"	      0054be90    mov eax,obj"
 "	      0054be93    add eax,3Ch"
 "	      0054be96    push eax"
 "	      0054be97    movsx eax,word ptr [ebp-20h]"
@@ -11497,7 +11497,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054befa    push 1"
 "	      0054befc    call 0054BF20h"
 "	      0054bf01    add esp,8"
-"	      0054bf04    mov [ebp-8],ax"
+"	      0054bf04    mov nextsoundchannel,ax"
 );
 // LINE 1860:
 	asm( 
@@ -11535,32 +11535,32 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 );
 // LINE 1865:
 	asm( 
-"	      0054bf29    mov ax,[ebp+0Ch]"
-"	      0054bf2d    mov [ebp-8],ax"
+"	      0054bf29    mov ax,firstsoundchannel"
+"	      0054bf2d    mov soundchannel,ax"
 );
 // LINE 1866:
 	asm( 
-"	      0054bf31    mov word ptr [ebp-4],0"
+"	      0054bf31    mov count,0"
 );
 // LINE 1869:
 	asm( 
-"	      0054bf37    movsx eax,word ptr [ebp-8]"
+"	      0054bf37    movsx eax,soundchannel"
 "	      0054bf3b    cmp eax,0FFFFFFFFh"
 "	      0054bf3e    je near ptr 0054C0D9h"
-"	      0054bf44    movsx eax,word ptr [ebp-4]"
+"	      0054bf44    movsx eax,count"
 "	      0054bf48    cmp eax,64h"
 "	      0054bf4b    jge near ptr 0054C0D9h"
 );
 // LINE 1870:
 	asm( 
-"	      0054bf51    mov ax,[ebp-4]"
+"	      0054bf51    mov ax,count"
 "	      0054bf55    mov [ebp-18h],ax"
-"	      0054bf59    inc word ptr [ebp-4]"
+"	      0054bf59    inc count"
 "	      0054bf5d    movsx eax,word ptr [ebp-18h]"
 "	      0054bf61    cmp eax,7D00h"
 "	      0054bf66    jne near ptr 0054BF79h"
 "	      0054bf6c    mov eax,ds:[5B8680h]"
-"	      0054bf71    mov [ebp-0Ch],eax"
+"	      0054bf71    mov obj,eax"
 "	      0054bf74    jmp near ptr 0054BFF5h"
 "	      0054bf79    movsx eax,word ptr [ebp-18h]"
 "	      0054bf7d    test eax,eax"
@@ -11585,14 +11585,14 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054bfd9    add esp,10h"
 "	      0054bfdc    movsx eax,word ptr [ebp-18h]"
 "	      0054bfe0    mov eax,[eax*4+636D40h]"
-"	      0054bfe7    mov [ebp-0Ch],eax"
+"	      0054bfe7    mov obj,eax"
 "	      0054bfea    jmp near ptr 0054BFF5h"
 "	      0054bfef    mov eax,[ebp-20h]"
-"	      0054bff2    mov [ebp-0Ch],eax"
+"	      0054bff2    mov obj,eax"
 );
 // LINE 1871:
 	asm( 
-"	      0054bff5    mov eax,[ebp-0Ch]"
+"	      0054bff5    mov eax,obj"
 "	      0054bff8    movsx eax,word ptr [eax+0D2h]"
 "	      0054bfff    test eax,eax"
 "	      0054c001    jne near ptr 0054C00Ch"
@@ -11603,7 +11603,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 );
 // LINE 1873:
 	asm( 
-"	      0054c00c    mov eax,[ebp-0Ch]"
+"	      0054c00c    mov eax,obj"
 "	      0054c00f    movsx eax,word ptr [eax+102h]"
 "	      0054c016    cmp eax,0FFFFFFFFh"
 "	      0054c019    jne near ptr 0054C0D4h"
@@ -11614,7 +11614,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	short ydiff;
 	asm( 
 "	      0054c01f    mov eax,ds:[6BF188h]"
-"	      0054c024    mov ecx,[ebp-0Ch]"
+"	      0054c024    mov ecx,obj"
 "	      0054c027    xor edx,edx"
 "	      0054c029    mov dl,[ecx+88h]"
 "	      0054c02f    sub eax,edx"
@@ -11622,13 +11622,13 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054c034    cdq"
 "	      0054c035    xor eax,edx"
 "	      0054c037    sub eax,edx"
-"	      0054c039    mov [ebp-14h],ax"
+"	      0054c039    mov xdiff,ax"
 "	      0054c03d    jmp near ptr 0054C042h"
 );
 // LINE 1875:
 	asm( 
 "	      0054c042    mov eax,ds:[6BF18Ch]"
-"	      0054c047    mov ecx,[ebp-0Ch]"
+"	      0054c047    mov ecx,obj"
 "	      0054c04a    xor edx,edx"
 "	      0054c04c    mov dl,[ecx+89h]"
 "	      0054c052    sub eax,edx"
@@ -11636,15 +11636,15 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054c057    cdq"
 "	      0054c058    xor eax,edx"
 "	      0054c05a    sub eax,edx"
-"	      0054c05c    mov [ebp-10h],ax"
+"	      0054c05c    mov ydiff,ax"
 "	      0054c060    jmp near ptr 0054C065h"
 );
 // LINE 1876:
 	asm( 
-"	      0054c065    movsx eax,word ptr [ebp-10h]"
-"	      0054c069    movsx ecx,word ptr [ebp-14h]"
+"	      0054c065    movsx eax,ydiff"
+"	      0054c069    movsx ecx,xdiff"
 "	      0054c06d    add eax,ecx"
-"	      0054c06f    movsx ecx,word ptr [ebp+8]"
+"	      0054c06f    movsx ecx,rad"
 "	      0054c073    cmp eax,ecx"
 "	      0054c075    jge near ptr 0054C0D4h"
 );
@@ -11652,7 +11652,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	asm( 
 "	      0054c07b    mov eax,[ebp-8]"
 "	      0054c07e    push eax"
-"	      0054c07f    mov ecx,[ebp-0Ch]"
+"	      0054c07f    mov ecx,obj"
 "	      0054c082    call 0054C0E7h"
 );
 // LINE 1878:
@@ -11668,10 +11668,10 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054c0af    test eax,eax"
 "	      0054c0b1    jne near ptr 0054C0C4h"
 "	      0054c0b7    mov ax,[ebp-1Ch]"
-"	      0054c0bb    mov [ebp-8],ax"
+"	      0054c0bb    mov soundchannel,ax"
 "	      0054c0bf    jmp near ptr 0054C0D4h"
 "	      0054c0c4    jmp near ptr 0054C092h"
-"	      0054c0c9    mov word ptr [ebp-8],0FFFFh"
+"	      0054c0c9    mov soundchannel,0FFFFh"
 "	      0054c0cf    jmp near ptr 0054C0D4h"
 );
 // LINE 1881:
@@ -11681,7 +11681,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 );
 // LINE 1882:
 	asm( 
-"	      0054c0d9    mov ax,[ebp-8]"
+"	      0054c0d9    mov ax,soundchannel"
 "	      0054c0dd    jmp near ptr 0054C0E2h"
 );
 // LINE 1883:
@@ -11704,14 +11704,14 @@ void cYObject::SetSoundChannel(short soundchannel) {
 "	      0054c0ed    push ebx"
 "	      0054c0ee    push esi"
 "	      0054c0ef    push edi"
-"	      0054c0f0    mov [ebp-4],ecx"
+"	      0054c0f0    mov this,ecx"
 );
 // LINE 1888:
 	asm( 
-"	      0054c0f3    movsx eax,word ptr [ebp+8]"
+"	      0054c0f3    movsx eax,soundchannel"
 "	      0054c0f7    test eax,eax"
 "	      0054c0f9    jl near ptr 0054C10Ch"
-"	      0054c0ff    movsx eax,word ptr [ebp+8]"
+"	      0054c0ff    movsx eax,soundchannel"
 "	      0054c103    cmp eax,0Fh"
 "	      0054c106    jl near ptr 0054C128h"
 "	      0054c10c    push 8C085h"
@@ -11723,7 +11723,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 );
 // LINE 1889:
 	asm( 
-"	      0054c128    mov eax,[ebp-4]"
+"	      0054c128    mov eax,this"
 "	      0054c12b    movsx eax,word ptr [eax+0D2h]"
 "	      0054c132    test eax,eax"
 "	      0054c134    jne near ptr 0054C156h"
@@ -11736,7 +11736,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 );
 // LINE 1890:
 	asm( 
-"	      0054c156    movsx eax,word ptr [ebp+8]"
+"	      0054c156    movsx eax,soundchannel"
 "	      0054c15a    movsx eax,word ptr [eax*2+6356B0h]"
 "	      0054c162    test eax,eax"
 "	      0054c164    je near ptr 0054C186h"
@@ -11749,7 +11749,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 );
 // LINE 1891:
 	asm( 
-"	      0054c186    mov eax,[ebp-4]"
+"	      0054c186    mov eax,this"
 "	      0054c189    movsx eax,word ptr [eax+102h]"
 "	      0054c190    cmp eax,0FFFFFFFFh"
 "	      0054c193    je near ptr 0054C1B5h"
@@ -11762,13 +11762,13 @@ void cYObject::SetSoundChannel(short soundchannel) {
 );
 // LINE 1892:
 	asm( 
-"	      0054c1b5    movsx eax,word ptr [ebp+8]"
+"	      0054c1b5    movsx eax,soundchannel"
 "	      0054c1b9    mov word ptr [eax*2+6356B0h],1"
 );
 // LINE 1893:
 	asm( 
-"	      0054c1c3    mov ax,[ebp+8]"
-"	      0054c1c7    mov ecx,[ebp-4]"
+"	      0054c1c3    mov ax,soundchannel"
+"	      0054c1c7    mov ecx,this"
 "	      0054c1ca    mov [ecx+102h],ax"
 );
 // LINE 1894:
@@ -11800,13 +11800,13 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 "	      0054c1e3    push ebx"
 "	      0054c1e4    push esi"
 "	      0054c1e5    push edi"
-"	      0054c1e6    mov [ebp-30h],ecx"
+"	      0054c1e6    mov this,ecx"
 );
 // LINE 1899:
 	asm( 
 "	      0054c1e9    cmp dword ptr ds:[5B4DB8h],3"
 "	      0054c1f0    je near ptr 0054C21Ah"
-"	      0054c1f6    mov eax,[ebp-30h]"
+"	      0054c1f6    mov eax,this"
 "	      0054c1f9    mov ecx,ds:[5B4968h]"
 "	      0054c1ff    mov ecx,[ecx+0A4h]"
 "	      0054c205    cmp [eax+130h],ecx"
@@ -11819,18 +11819,18 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1903:
 	asm( 
-"	      0054c21a    mov eax,[ebp-30h]"
+"	      0054c21a    mov eax,this"
 "	      0054c21d    movsx eax,word ptr [eax+104h]"
-"	      0054c224    cmp eax,[ebp+8]"
+"	      0054c224    cmp eax,soundnum"
 "	      0054c227    jne near ptr 0054C30Fh"
 );
 // LINE 1904:
 	asm( 
-"	      0054c22d    mov eax,[ebp-30h]"
+"	      0054c22d    mov eax,this"
 "	      0054c230    movsx eax,word ptr [eax+104h]"
 "	      0054c237    cmp eax,0Eh"
 "	      0054c23a    jne near ptr 0054C306h"
-"	      0054c240    mov eax,[ebp-30h]"
+"	      0054c240    mov eax,this"
 "	      0054c243    movsx eax,word ptr [eax+102h]"
 "	      0054c24a    cmp eax,0FFFFFFFFh"
 "	      0054c24d    je near ptr 0054C306h"
@@ -11840,31 +11840,31 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	short actualchannel;
 	class DigitalSound* theSound;
 	asm( 
-"	      0054c253    mov eax,[ebp-30h]"
+"	      0054c253    mov eax,this"
 "	      0054c256    movsx eax,word ptr [eax+102h]"
 "	      0054c25d    cmp eax,0FFFFFFFFh"
 "	      0054c260    je near ptr 0054C281h"
-"	      0054c266    mov eax,[ebp-30h]"
+"	      0054c266    mov eax,this"
 "	      0054c269    movsx eax,word ptr [eax+102h]"
 "	      0054c270    add eax,62h"
-"	      0054c273    mov [ebp-20h],ax"
+"	      0054c273    mov actualchannel,ax"
 "	      0054c277    jmp near ptr 0054C294h"
 "	      0054c27c    jmp near ptr 0054C28Ch"
-"	      0054c281    mov word ptr [ebp-20h],0FFFFh"
+"	      0054c281    mov actualchannel,0FFFFh"
 "	      0054c287    jmp near ptr 0054C294h"
 "	      0054c28c    mov ax,[ebp-24h]"
-"	      0054c290    mov [ebp-20h],ax"
+"	      0054c290    mov actualchannel,ax"
 "	      0054c294    jmp near ptr 0054C299h"
 );
 // LINE 1907:
 	asm( 
-"	      0054c299    movsx eax,word ptr [ebp-20h]"
+"	      0054c299    movsx eax,actualchannel"
 "	      0054c29d    mov eax,[eax*4+604604h]"
-"	      0054c2a4    mov [ebp-1Ch],eax"
+"	      0054c2a4    mov theSound,eax"
 );
 // LINE 1908:
 	asm( 
-"	      0054c2a7    cmp dword ptr [ebp-1Ch],0"
+"	      0054c2a7    cmp theSound,0"
 "	      0054c2ab    jne near ptr 0054C2CDh"
 "	      0054c2b1    push 8C085h"
 "	      0054c2b6    push 5BAF40h"
@@ -11875,7 +11875,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1909:
 	asm( 
-"	      0054c2cd    mov eax,[ebp-30h]"
+"	      0054c2cd    mov eax,this"
 "	      0054c2d0    movsx eax,word ptr [eax+0F4h]"
 "	      0054c2d7    lea eax,[eax*4-14h]"
 "	      0054c2de    lea eax,[eax+eax*4]"
@@ -11883,9 +11883,9 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 "	      0054c2e4    lea eax,[eax+eax*4]"
 "	      0054c2e7    add eax,2AF8h"
 "	      0054c2ec    push eax"
-"	      0054c2ed    mov eax,[ebp-1Ch]"
+"	      0054c2ed    mov eax,theSound"
 "	      0054c2f0    mov eax,[eax]"
-"	      0054c2f2    mov ecx,[ebp-1Ch]"
+"	      0054c2f2    mov ecx,theSound"
 "	      0054c2f5    call dword ptr [eax+64h]"
 );
 // LINE 1910:
@@ -11905,13 +11905,13 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1915:
 	asm( 
-"	      0054c30f    mov eax,[ebp+8]"
-"	      0054c312    mov ecx,[ebp-30h]"
+"	      0054c30f    mov eax,soundnum"
+"	      0054c312    mov ecx,this"
 "	      0054c315    mov [ecx+104h],ax"
 );
 // LINE 1916:
 	asm( 
-"	      0054c31c    mov eax,[ebp-30h]"
+"	      0054c31c    mov eax,this"
 "	      0054c31f    movsx eax,word ptr [eax+102h]"
 "	      0054c326    cmp eax,0FFFFFFFFh"
 "	      0054c329    jne near ptr 0054C3A1h"
@@ -11940,52 +11940,52 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 "	      0054c36f    jne near ptr 0054C38Bh"
 "	      0054c375    movsx eax,word ptr [ebp-2Ch]"
 "	      0054c379    add eax,0Ch"
-"	      0054c37c    mov ecx,[ebp-30h]"
+"	      0054c37c    mov ecx,this"
 "	      0054c37f    mov [ecx+102h],ax"
 "	      0054c386    jmp near ptr 0054C3A1h"
 "	      0054c38b    jmp near ptr 0054C350h"
-"	      0054c390    mov eax,[ebp-30h]"
+"	      0054c390    mov eax,this"
 "	      0054c393    mov word ptr [eax+102h],0Ch"
 "	      0054c39c    jmp near ptr 0054C3A1h"
 );
 // LINE 1922:
 	asm( 
-"	      0054c3a1    mov eax,[ebp-30h]"
+"	      0054c3a1    mov eax,this"
 "	      0054c3a4    movsx eax,word ptr [eax+102h]"
 "	      0054c3ab    cmp eax,0FFFFFFFFh"
 "	      0054c3ae    je near ptr 0054C3CFh"
-"	      0054c3b4    mov eax,[ebp-30h]"
+"	      0054c3b4    mov eax,this"
 "	      0054c3b7    movsx eax,word ptr [eax+102h]"
 "	      0054c3be    add eax,62h"
-"	      0054c3c1    mov [ebp-14h],ax"
+"	      0054c3c1    mov actualSoundChannel,ax"
 "	      0054c3c5    jmp near ptr 0054C3E2h"
 "	      0054c3ca    jmp near ptr 0054C3DAh"
-"	      0054c3cf    mov word ptr [ebp-14h],0FFFFh"
+"	      0054c3cf    mov actualSoundChannel,0FFFFh"
 "	      0054c3d5    jmp near ptr 0054C3E2h"
 "	      0054c3da    mov ax,[ebp-28h]"
-"	      0054c3de    mov [ebp-14h],ax"
+"	      0054c3de    mov actualSoundChannel,ax"
 "	      0054c3e2    jmp near ptr 0054C3E7h"
 );
 // LINE 1923:
 	asm( 
-"	      0054c3e7    movsx eax,word ptr [ebp-14h]"
+"	      0054c3e7    movsx eax,actualSoundChannel"
 "	      0054c3eb    push eax"
 "	      0054c3ec    call 00446E04h"
 "	      0054c3f1    add esp,4"
 );
 // LINE 1924:
 	asm( 
-"	      0054c3f4    mov word ptr [ebp-0Ch],0"
+"	      0054c3f4    mov loop,0"
 );
 // LINE 1925:
 	asm( 
-"	      0054c3fa    mov eax,[ebp-30h]"
+"	      0054c3fa    mov eax,this"
 "	      0054c3fd    mov ax,[eax+108h]"
-"	      0054c404    mov [ebp-8],ax"
+"	      0054c404    mov freqadj,ax"
 );
 // LINE 1926:
 	asm( 
-"	      0054c408    mov eax,[ebp+8]"
+"	      0054c408    mov eax,soundnum"
 "	      0054c40b    mov [ebp-34h],eax"
 "	      0054c40e    jmp near ptr 0054C5A4h"
 );
@@ -12000,7 +12000,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1937:
 	asm( 
-"	      0054c421    mov dword ptr [ebp-10h],5BAF6Ch"
+"	      0054c421    mov soundfile,5BAF6Ch"
 );
 // LINE 1938:
 	asm( 
@@ -12008,7 +12008,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1940:
 	asm( 
-"	      0054c42d    mov dword ptr [ebp-10h],5BAF78h"
+"	      0054c42d    mov soundfile,5BAF78h"
 );
 // LINE 1941:
 	asm( 
@@ -12016,7 +12016,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1943:
 	asm( 
-"	      0054c439    mov dword ptr [ebp-10h],5BAF84h"
+"	      0054c439    mov soundfile,5BAF84h"
 );
 // LINE 1944:
 	asm( 
@@ -12024,7 +12024,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1946:
 	asm( 
-"	      0054c445    mov dword ptr [ebp-10h],5BAF90h"
+"	      0054c445    mov soundfile,5BAF90h"
 );
 // LINE 1947:
 	asm( 
@@ -12032,7 +12032,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1949:
 	asm( 
-"	      0054c451    mov dword ptr [ebp-10h],5BAF9Ch"
+"	      0054c451    mov soundfile,5BAF9Ch"
 );
 // LINE 1950:
 	asm( 
@@ -12040,7 +12040,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1952:
 	asm( 
-"	      0054c45d    mov dword ptr [ebp-10h],5BAFA8h"
+"	      0054c45d    mov soundfile,5BAFA8h"
 );
 // LINE 1953:
 	asm( 
@@ -12048,7 +12048,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1955:
 	asm( 
-"	      0054c469    mov dword ptr [ebp-10h],5BAFB4h"
+"	      0054c469    mov soundfile,5BAFB4h"
 );
 // LINE 1956:
 	asm( 
@@ -12056,7 +12056,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1958:
 	asm( 
-"	      0054c475    mov dword ptr [ebp-10h],5BAFC4h"
+"	      0054c475    mov soundfile,5BAFC4h"
 );
 // LINE 1959:
 	asm( 
@@ -12064,7 +12064,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1961:
 	asm( 
-"	      0054c481    mov dword ptr [ebp-10h],5BAFD0h"
+"	      0054c481    mov soundfile,5BAFD0h"
 );
 // LINE 1962:
 	asm( 
@@ -12072,7 +12072,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1964:
 	asm( 
-"	      0054c48d    mov dword ptr [ebp-10h],5BAFDCh"
+"	      0054c48d    mov soundfile,5BAFDCh"
 );
 // LINE 1965:
 	asm( 
@@ -12080,7 +12080,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1967:
 	asm( 
-"	      0054c499    mov dword ptr [ebp-10h],5BAFE8h"
+"	      0054c499    mov soundfile,5BAFE8h"
 );
 // LINE 1968:
 	asm( 
@@ -12088,7 +12088,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1970:
 	asm( 
-"	      0054c4a5    mov dword ptr [ebp-10h],5BAFF8h"
+"	      0054c4a5    mov soundfile,5BAFF8h"
 );
 // LINE 1971:
 	asm( 
@@ -12096,7 +12096,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1973:
 	asm( 
-"	      0054c4b1    mov dword ptr [ebp-10h],5BB008h"
+"	      0054c4b1    mov soundfile,5BB008h"
 );
 // LINE 1974:
 	asm( 
@@ -12104,7 +12104,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1976:
 	asm( 
-"	      0054c4bd    mov dword ptr [ebp-10h],5BB014h"
+"	      0054c4bd    mov soundfile,5BB014h"
 );
 // LINE 1977:
 	asm( 
@@ -12112,7 +12112,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1979:
 	asm( 
-"	      0054c4c9    mov dword ptr [ebp-10h],5BB020h"
+"	      0054c4c9    mov soundfile,5BB020h"
 );
 // LINE 1980:
 	asm( 
@@ -12120,7 +12120,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1982:
 	asm( 
-"	      0054c4d5    mov dword ptr [ebp-10h],5BB02Ch"
+"	      0054c4d5    mov soundfile,5BB02Ch"
 );
 // LINE 1983:
 	asm( 
@@ -12128,7 +12128,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1985:
 	asm( 
-"	      0054c4e1    mov dword ptr [ebp-10h],5BB03Ch"
+"	      0054c4e1    mov soundfile,5BB03Ch"
 );
 // LINE 1986:
 	asm( 
@@ -12136,14 +12136,14 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1988:
 	asm( 
-"	      0054c4ed    mov eax,[ebp-30h]"
+"	      0054c4ed    mov eax,this"
 "	      0054c4f0    movsx eax,word ptr [eax+0D6h]"
 "	      0054c4f7    mov [ebp-38h],eax"
 "	      0054c4fa    jmp near ptr 0054C523h"
 );
 // LINE 1992:
 	asm( 
-"	      0054c4ff    mov dword ptr [ebp-10h],5BB04Ch"
+"	      0054c4ff    mov soundfile,5BB04Ch"
 );
 // LINE 1993:
 	asm( 
@@ -12151,7 +12151,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1998:
 	asm( 
-"	      0054c50b    mov dword ptr [ebp-10h],5BB05Ch"
+"	      0054c50b    mov soundfile,5BB05Ch"
 );
 // LINE 1999:
 	asm( 
@@ -12159,7 +12159,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 2001:
 	asm( 
-"	      0054c517    mov dword ptr [ebp-10h],5BB06Ch"
+"	      0054c517    mov soundfile,5BB06Ch"
 );
 // LINE 2002:
 	asm( 
@@ -12185,17 +12185,17 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 2003:
 	asm( 
-"	      0054c55a    mov word ptr [ebp-0Ch],1"
+"	      0054c55a    mov loop,1"
 );
 // LINE 2004:
 	asm( 
-"	      0054c560    mov eax,[ebp-30h]"
+"	      0054c560    mov eax,this"
 "	      0054c563    movsx eax,word ptr [eax+0F4h]"
 "	      0054c56a    lea eax,[eax*4-14h]"
 "	      0054c571    lea eax,[eax+eax*4]"
 "	      0054c574    lea eax,[eax+eax*4]"
 "	      0054c577    lea eax,[eax+eax*4]"
-"	      0054c57a    mov [ebp-8],ax"
+"	      0054c57a    mov freqadj,ax"
 );
 // LINE 2005:
 	asm( 
@@ -12242,7 +12242,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 2009:
 	asm( 
-"	      0054c60b    mov dword ptr [ebp-4],2"
+"	      0054c60b    mov flags,2"
 );
 // LINE 2010:
 	asm( 
@@ -12251,35 +12251,35 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 2011:
 	asm( 
-"	      0054c61f    or dword ptr [ebp-4],1"
+"	      0054c61f    or flags,1"
 );
 // LINE 2012:
 	asm( 
-"	      0054c623    mov eax,[ebp-10h]"
+"	      0054c623    mov eax,soundfile"
 "	      0054c626    push eax"
-"	      0054c627    movsx eax,word ptr [ebp-14h]"
+"	      0054c627    movsx eax,actualSoundChannel"
 "	      0054c62b    push eax"
 "	      0054c62c    call 00446A6Bh"
 "	      0054c631    add esp,8"
 );
 // LINE 2013:
 	asm( 
-"	      0054c634    mov eax,[ebp-4]"
+"	      0054c634    mov eax,flags"
 "	      0054c637    push eax"
-"	      0054c638    mov eax,[ebp-30h]"
+"	      0054c638    mov eax,this"
 "	      0054c63b    add eax,3Ch"
 "	      0054c63e    push eax"
-"	      0054c63f    movsx eax,word ptr [ebp-14h]"
+"	      0054c63f    movsx eax,actualSoundChannel"
 "	      0054c643    push eax"
 "	      0054c644    call 00446CC2h"
 "	      0054c649    add esp,0Ch"
-"	      0054c64c    mov [ebp-18h],eax"
+"	      0054c64c    mov success,eax"
 );
 // LINE 2014:
 	asm( 
-"	      0054c64f    movsx eax,word ptr [ebp-8]"
+"	      0054c64f    movsx eax,freqadj"
 "	      0054c653    push eax"
-"	      0054c654    movsx eax,word ptr [ebp-14h]"
+"	      0054c654    movsx eax,actualSoundChannel"
 "	      0054c658    push eax"
 "	      0054c659    call 00446E3Ch"
 "	      0054c65e    add esp,8"
@@ -12321,11 +12321,11 @@ void cYObject::SimulateAll() {
 // LINE 2086:
 	asm( 
 "	      0054c688    mov eax,ds:[5B4760h]"
-"	      0054c68d    mov [ebp-8],eax"
+"	      0054c68d    mov debuglooptime,eax"
 );
 // LINE 2087:
 	asm( 
-"	      0054c690    mov word ptr [ebp-4],0"
+"	      0054c690    mov simulate,0"
 );
 // LINE 2088:
 	asm( 
@@ -12335,7 +12335,7 @@ void cYObject::SimulateAll() {
 );
 // LINE 2089:
 	asm( 
-"	      0054c6a7    mov word ptr [ebp-4],1"
+"	      0054c6a7    mov simulate,1"
 );
 // LINE 2090:
 	asm( 
@@ -12362,10 +12362,10 @@ void cYObject::SimulateAll() {
 // Block start:
 	short count;
 	asm( 
-"	      0054c6d9    mov word ptr [ebp-0Ch],0"
+"	      0054c6d9    mov count,0"
 "	      0054c6df    jmp near ptr 0054C6E8h"
-"	      0054c6e4    inc word ptr [ebp-0Ch]"
-"	      0054c6e8    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c6e4    inc count"
+"	      0054c6e8    movsx eax,count"
 "	      0054c6ec    cmp eax,64h"
 "	      0054c6ef    jge near ptr 0054C821h"
 );
@@ -12373,16 +12373,16 @@ void cYObject::SimulateAll() {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054c6f5    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c6f5    movsx eax,count"
 "	      0054c6f9    cmp eax,7D00h"
 "	      0054c6fe    jne near ptr 0054C711h"
 "	      0054c704    mov eax,ds:[5B8680h]"
-"	      0054c709    mov [ebp-10h],eax"
+"	      0054c709    mov obj,eax"
 "	      0054c70c    jmp near ptr 0054C790h"
-"	      0054c711    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c711    movsx eax,count"
 "	      0054c715    test eax,eax"
 "	      0054c717    jl near ptr 0054C72Ah"
-"	      0054c71d    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c71d    movsx eax,count"
 "	      0054c721    cmp eax,64h"
 "	      0054c724    jl near ptr 0054C746h"
 "	      0054c72a    push 8C085h"
@@ -12391,7 +12391,7 @@ void cYObject::SimulateAll() {
 "	      0054c739    push 5BBA14h"
 "	      0054c73e    call 00554F30h"
 "	      0054c743    add esp,10h"
-"	      0054c746    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c746    movsx eax,count"
 "	      0054c74a    cmp dword ptr [eax*4+636D40h],0"
 "	      0054c752    jne near ptr 0054C774h"
 "	      0054c758    push 8C085h"
@@ -12400,16 +12400,16 @@ void cYObject::SimulateAll() {
 "	      0054c767    push 5BBA14h"
 "	      0054c76c    call 00554F30h"
 "	      0054c771    add esp,10h"
-"	      0054c774    movsx eax,word ptr [ebp-0Ch]"
+"	      0054c774    movsx eax,count"
 "	      0054c778    mov eax,[eax*4+636D40h]"
-"	      0054c77f    mov [ebp-10h],eax"
+"	      0054c77f    mov obj,eax"
 "	      0054c782    jmp near ptr 0054C790h"
 "	      0054c787    mov eax,[ebp-0CCh]"
-"	      0054c78d    mov [ebp-10h],eax"
+"	      0054c78d    mov obj,eax"
 );
 // LINE 2101:
 	asm( 
-"	      0054c790    mov eax,[ebp-10h]"
+"	      0054c790    mov eax,obj"
 "	      0054c793    movsx eax,word ptr [eax+0D2h]"
 "	      0054c79a    test eax,eax"
 "	      0054c79c    je near ptr 0054C81Ch"
@@ -12417,7 +12417,7 @@ void cYObject::SimulateAll() {
 // LINE 2102:
 	asm( 
 "	      0054c7a2    jmp near ptr 0054C7A7h"
-"	      0054c7a7    mov eax,[ebp-10h]"
+"	      0054c7a7    mov eax,obj"
 "	      0054c7aa    xor ecx,ecx"
 "	      0054c7ac    mov cx,[eax+20h]"
 "	      0054c7b0    test ecx,ecx"
@@ -12428,7 +12428,7 @@ void cYObject::SimulateAll() {
 "	      0054c7c7    push 5BBA14h"
 "	      0054c7cc    call 00554F30h"
 "	      0054c7d1    add esp,10h"
-"	      0054c7d4    mov eax,[ebp-10h]"
+"	      0054c7d4    mov eax,obj"
 "	      0054c7d7    add eax,3Ch"
 "	      0054c7da    lea ecx,[ebp-70h]"
 "	      0054c7dd    mov edx,[eax]"
@@ -12438,7 +12438,7 @@ void cYObject::SimulateAll() {
 "	      0054c7e7    mov eax,[eax+8]"
 "	      0054c7ea    mov [ecx+8],eax"
 "	      0054c7ed    push 40h"
-"	      0054c7ef    mov eax,[ebp-10h]"
+"	      0054c7ef    mov eax,obj"
 "	      0054c7f2    add eax,48h"
 "	      0054c7f5    push eax"
 "	      0054c7f6    lea eax,[ebp-58h]"
@@ -12448,7 +12448,7 @@ void cYObject::SimulateAll() {
 "	      0054c802    push 3"
 "	      0054c804    lea eax,[ebp-70h]"
 "	      0054c807    push eax"
-"	      0054c808    mov eax,[ebp-10h]"
+"	      0054c808    mov eax,obj"
 "	      0054c80b    mov eax,[eax+2Ch]"
 "	      0054c80e    push eax"
 "	      0054c80f    call 004D8781h"
@@ -12485,10 +12485,10 @@ void cYObject::SimulateAll() {
 );
 // LINE 2108:
 	asm( 
-"	      0054c869    mov word ptr [ebp-14h],0"
+"	      0054c869    mov count,0"
 "	      0054c86f    jmp near ptr 0054C878h"
-"	      0054c874    inc word ptr [ebp-14h]"
-"	      0054c878    movsx eax,word ptr [ebp-14h]"
+"	      0054c874    inc count"
+"	      0054c878    movsx eax,count"
 "	      0054c87c    cmp eax,64h"
 "	      0054c87f    jge near ptr 0054CC8Dh"
 );
@@ -12496,16 +12496,16 @@ void cYObject::SimulateAll() {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054c885    movsx eax,word ptr [ebp-14h]"
+"	      0054c885    movsx eax,count"
 "	      0054c889    cmp eax,7D00h"
 "	      0054c88e    jne near ptr 0054C8A1h"
 "	      0054c894    mov eax,ds:[5B8680h]"
-"	      0054c899    mov [ebp-18h],eax"
+"	      0054c899    mov obj,eax"
 "	      0054c89c    jmp near ptr 0054C920h"
-"	      0054c8a1    movsx eax,word ptr [ebp-14h]"
+"	      0054c8a1    movsx eax,count"
 "	      0054c8a5    test eax,eax"
 "	      0054c8a7    jl near ptr 0054C8BAh"
-"	      0054c8ad    movsx eax,word ptr [ebp-14h]"
+"	      0054c8ad    movsx eax,count"
 "	      0054c8b1    cmp eax,64h"
 "	      0054c8b4    jl near ptr 0054C8D6h"
 "	      0054c8ba    push 8C085h"
@@ -12514,7 +12514,7 @@ void cYObject::SimulateAll() {
 "	      0054c8c9    push 5BBA14h"
 "	      0054c8ce    call 00554F30h"
 "	      0054c8d3    add esp,10h"
-"	      0054c8d6    movsx eax,word ptr [ebp-14h]"
+"	      0054c8d6    movsx eax,count"
 "	      0054c8da    cmp dword ptr [eax*4+636D40h],0"
 "	      0054c8e2    jne near ptr 0054C904h"
 "	      0054c8e8    push 8C085h"
@@ -12523,16 +12523,16 @@ void cYObject::SimulateAll() {
 "	      0054c8f7    push 5BBA14h"
 "	      0054c8fc    call 00554F30h"
 "	      0054c901    add esp,10h"
-"	      0054c904    movsx eax,word ptr [ebp-14h]"
+"	      0054c904    movsx eax,count"
 "	      0054c908    mov eax,[eax*4+636D40h]"
-"	      0054c90f    mov [ebp-18h],eax"
+"	      0054c90f    mov obj,eax"
 "	      0054c912    jmp near ptr 0054C920h"
 "	      0054c917    mov eax,[ebp-0D0h]"
-"	      0054c91d    mov [ebp-18h],eax"
+"	      0054c91d    mov obj,eax"
 );
 // LINE 2110:
 	asm( 
-"	      0054c920    mov eax,[ebp-18h]"
+"	      0054c920    mov eax,obj"
 "	      0054c923    movsx eax,word ptr [eax+0D2h]"
 "	      0054c92a    test eax,eax"
 "	      0054c92c    je near ptr 0054CC88h"
@@ -12544,11 +12544,11 @@ void cYObject::SimulateAll() {
 );
 // LINE 2113:
 	asm( 
-"	      0054c93f    mov eax,[ebp-18h]"
+"	      0054c93f    mov eax,obj"
 "	      0054c942    movsx eax,word ptr [eax+0D8h]"
 "	      0054c949    test eax,eax"
 "	      0054c94b    jne near ptr 0054CBFDh"
-"	      0054c951    mov ecx,[ebp-18h]"
+"	      0054c951    mov ecx,obj"
 "	      0054c954    call 00549F04h"
 "	      0054c959    movzx eax,ax"
 "	      0054c95c    test eax,eax"
@@ -12556,7 +12556,7 @@ void cYObject::SimulateAll() {
 );
 // LINE 2114:
 	asm( 
-"	      0054c964    mov eax,[ebp-18h]"
+"	      0054c964    mov eax,obj"
 "	      0054c967    movsx eax,word ptr [eax+0D2h]"
 "	      0054c96e    test eax,eax"
 "	      0054c970    jne near ptr 0054C992h"
@@ -12567,7 +12567,7 @@ void cYObject::SimulateAll() {
 "	      0054c98a    call 00554F30h"
 "	      0054c98f    add esp,10h"
 "	      0054c992    jmp near ptr 0054C997h"
-"	      0054c997    mov eax,[ebp-18h]"
+"	      0054c997    mov eax,obj"
 "	      0054c99a    xor ecx,ecx"
 "	      0054c99c    mov cx,[eax+20h]"
 "	      0054c9a0    test ecx,ecx"
@@ -12578,12 +12578,12 @@ void cYObject::SimulateAll() {
 "	      0054c9b7    push 5BBA14h"
 "	      0054c9bc    call 00554F30h"
 "	      0054c9c1    add esp,10h"
-"	      0054c9c4    mov eax,[ebp-18h]"
+"	      0054c9c4    mov eax,obj"
 "	      0054c9c7    xor ecx,ecx"
 "	      0054c9c9    mov cl,[eax+88h]"
 "	      0054c9cf    cmp ecx,0FFFFFFFFh"
 "	      0054c9d2    jne near ptr 0054CA0Dh"
-"	      0054c9d8    mov eax,[ebp-18h]"
+"	      0054c9d8    mov eax,obj"
 "	      0054c9db    xor ecx,ecx"
 "	      0054c9dd    mov cl,[eax+89h]"
 "	      0054c9e3    cmp ecx,0FFFFFFFFh"
@@ -12595,7 +12595,7 @@ void cYObject::SimulateAll() {
 "	      0054ca00    call 00554F30h"
 "	      0054ca05    add esp,10h"
 "	      0054ca08    jmp near ptr 0054CA3Dh"
-"	      0054ca0d    mov eax,[ebp-18h]"
+"	      0054ca0d    mov eax,obj"
 "	      0054ca10    xor ecx,ecx"
 "	      0054ca12    mov cl,[eax+89h]"
 "	      0054ca18    cmp ecx,0FFFFFFFFh"
@@ -12606,7 +12606,7 @@ void cYObject::SimulateAll() {
 "	      0054ca30    push 5BBA14h"
 "	      0054ca35    call 00554F30h"
 "	      0054ca3a    add esp,10h"
-"	      0054ca3d    mov eax,[ebp-18h]"
+"	      0054ca3d    mov eax,obj"
 "	      0054ca40    xor ecx,ecx"
 "	      0054ca42    mov cl,[eax+88h]"
 "	      0054ca48    cmp ecx,0FFFFFFFFh"
@@ -12622,21 +12622,21 @@ void cYObject::SimulateAll() {
 "	      0054ca7f    push 5BBA14h"
 "	      0054ca84    call 00554F30h"
 "	      0054ca89    add esp,10h"
-"	      0054ca8c    mov eax,[ebp-18h]"
+"	      0054ca8c    mov eax,obj"
 "	      0054ca8f    movsx eax,word ptr [eax+102h]"
 "	      0054ca96    cmp eax,0FFFFFFFFh"
 "	      0054ca99    je near ptr 0054CB45h"
-"	      0054ca9f    mov eax,[ebp-18h]"
+"	      0054ca9f    mov eax,obj"
 "	      0054caa2    mov word ptr [eax+104h],0FFFFh"
-"	      0054caab    mov eax,[ebp-18h]"
+"	      0054caab    mov eax,obj"
 "	      0054caae    movsx eax,word ptr [eax+102h]"
 "	      0054cab5    cmp eax,0FFFFFFFFh"
 "	      0054cab8    je near ptr 0054CB20h"
-"	      0054cabe    mov eax,[ebp-18h]"
+"	      0054cabe    mov eax,obj"
 "	      0054cac1    movsx eax,word ptr [eax+102h]"
 "	      0054cac8    cmp eax,0FFFFFFFFh"
 "	      0054cacb    je near ptr 0054CAEFh"
-"	      0054cad1    mov eax,[ebp-18h]"
+"	      0054cad1    mov eax,obj"
 "	      0054cad4    movsx eax,word ptr [eax+102h]"
 "	      0054cadb    add eax,62h"
 "	      0054cade    mov [ebp-0D8h],ax"
@@ -12652,19 +12652,19 @@ void cYObject::SimulateAll() {
 "	      0054cb18    call 00446E04h"
 "	      0054cb1d    add esp,4"
 "	      0054cb20    jmp near ptr 0054CB25h"
-"	      0054cb25    mov eax,[ebp-18h]"
+"	      0054cb25    mov eax,obj"
 "	      0054cb28    movsx eax,word ptr [eax+102h]"
 "	      0054cb2f    mov word ptr [eax*2+6356B0h],0"
-"	      0054cb39    mov eax,[ebp-18h]"
+"	      0054cb39    mov eax,obj"
 "	      0054cb3c    mov word ptr [eax+102h],0FFFFh"
 "	      0054cb45    jmp near ptr 0054CB4Ah"
-"	      0054cb4a    mov eax,[ebp-18h]"
+"	      0054cb4a    mov eax,obj"
 "	      0054cb4d    mov word ptr [eax+0D2h],0"
-"	      0054cb56    mov eax,[ebp-18h]"
+"	      0054cb56    mov eax,obj"
 "	      0054cb59    mov word ptr [eax+0F0h],0FFFFh"
-"	      0054cb62    mov eax,[ebp-18h]"
+"	      0054cb62    mov eax,obj"
 "	      0054cb65    mov word ptr [eax+9Ch],0FFFFh"
-"	      0054cb6e    mov eax,[ebp-18h]"
+"	      0054cb6e    mov eax,obj"
 "	      0054cb71    movsx eax,word ptr [eax+0D8h]"
 "	      0054cb78    mov [ebp-0D4h],eax"
 "	      0054cb7e    cmp dword ptr [ebp-0D4h],0"
@@ -12689,7 +12689,7 @@ void cYObject::SimulateAll() {
 "	      0054cbde    push 5BBA14h"
 "	      0054cbe3    call 00554F30h"
 "	      0054cbe8    add esp,10h"
-"	      0054cbeb    mov ecx,[ebp-18h]"
+"	      0054cbeb    mov ecx,obj"
 "	      0054cbee    call 005507ECh"
 "	      0054cbf3    jmp near ptr 0054CBF8h"
 );
@@ -12700,7 +12700,7 @@ void cYObject::SimulateAll() {
 // LINE 2123:
 	asm( 
 "	      0054cbfd    jmp near ptr 0054CC02h"
-"	      0054cc02    mov eax,[ebp-18h]"
+"	      0054cc02    mov eax,obj"
 "	      0054cc05    xor ecx,ecx"
 "	      0054cc07    mov cx,[eax+20h]"
 "	      0054cc0b    test ecx,ecx"
@@ -12711,7 +12711,7 @@ void cYObject::SimulateAll() {
 "	      0054cc22    push 5BBA14h"
 "	      0054cc27    call 00554F30h"
 "	      0054cc2c    add esp,10h"
-"	      0054cc2f    mov eax,[ebp-18h]"
+"	      0054cc2f    mov eax,obj"
 "	      0054cc32    add eax,3Ch"
 "	      0054cc35    lea ecx,[ebp-0C8h]"
 "	      0054cc3b    mov edx,[eax]"
@@ -12721,7 +12721,7 @@ void cYObject::SimulateAll() {
 "	      0054cc45    mov eax,[eax+8]"
 "	      0054cc48    mov [ecx+8],eax"
 "	      0054cc4b    push 40h"
-"	      0054cc4d    mov eax,[ebp-18h]"
+"	      0054cc4d    mov eax,obj"
 "	      0054cc50    add eax,48h"
 "	      0054cc53    push eax"
 "	      0054cc54    lea eax,[ebp-0B0h]"
@@ -12731,7 +12731,7 @@ void cYObject::SimulateAll() {
 "	      0054cc63    push 3"
 "	      0054cc65    lea eax,[ebp-0C8h]"
 "	      0054cc6b    push eax"
-"	      0054cc6c    mov eax,[ebp-18h]"
+"	      0054cc6c    mov eax,obj"
 "	      0054cc6f    mov eax,[eax+2Ch]"
 "	      0054cc72    push eax"
 "	      0054cc73    call 004D8781h"
@@ -12740,7 +12740,7 @@ void cYObject::SimulateAll() {
 );
 // LINE 2124:
 	asm( 
-"	      0054cc80    mov ecx,[ebp-18h]"
+"	      0054cc80    mov ecx,obj"
 "	      0054cc83    call 0054DAF3h"
 );
 // LINE 2126:
@@ -12791,31 +12791,31 @@ unsigned short cYObject::AddToHeli() {
 "	      0054ccc3    push ebx"
 "	      0054ccc4    push esi"
 "	      0054ccc5    push edi"
-"	      0054ccc6    mov [ebp-18h],ecx"
+"	      0054ccc6    mov this,ecx"
 );
 // LINE 2143:
 	asm( 
-"	      0054ccc9    mov eax,[ebp-18h]"
+"	      0054ccc9    mov eax,this"
 "	      0054cccc    movsx eax,word ptr [eax+9Ch]"
-"	      0054ccd3    mov [ebp-14h],eax"
+"	      0054ccd3    mov tempPassengerInfo.lPassengerFace,eax"
 );
 // LINE 2145:
 	asm( 
-"	      0054ccd6    mov dword ptr [ebp-10h],1"
+"	      0054ccd6    mov tempPassengerInfo.lPassengerExpression,1"
 );
 // LINE 2146:
 	asm( 
-"	      0054ccdd    mov dword ptr [ebp-0Ch],200h"
+"	      0054ccdd    mov tempPassengerInfo.lPassengerHealth,200h"
 );
 // LINE 2147:
 	asm( 
-"	      0054cce4    mov eax,[ebp-18h]"
+"	      0054cce4    mov eax,this"
 "	      0054cce7    movsx eax,word ptr [eax+0BCh]"
-"	      0054ccee    mov [ebp-8],eax"
+"	      0054ccee    mov tempPassengerInfo.lPassengerID,eax"
 );
 // LINE 2149:
 	asm( 
-"	      0054ccf1    lea eax,[ebp-14h]"
+"	      0054ccf1    lea eax,tempPassengerInfo.lPassengerFace"
 "	      0054ccf4    push eax"
 "	      0054ccf5    mov eax,ds:[5B4968h]"
 "	      0054ccfa    add eax,1C4h"
@@ -12832,7 +12832,7 @@ unsigned short cYObject::AddToHeli() {
 );
 // LINE 2151:
 	asm( 
-"	      0054cd18    lea eax,[ebp-14h]"
+"	      0054cd18    lea eax,tempPassengerInfo.lPassengerFace"
 "	      0054cd1b    push eax"
 "	      0054cd1c    mov eax,ds:[5B4968h]"
 "	      0054cd21    add eax,1C4h"
@@ -12842,7 +12842,7 @@ unsigned short cYObject::AddToHeli() {
 );
 // LINE 2152:
 	asm( 
-"	      0054cd2f    mov ecx,[ebp-18h]"
+"	      0054cd2f    mov ecx,this"
 "	      0054cd32    mov word ptr [ecx+0E2h],0"
 );
 // LINE 2153:
@@ -12872,11 +12872,11 @@ void cYObject::RemoveFromHeli() {
 "	      0054cd4f    push ebx"
 "	      0054cd50    push esi"
 "	      0054cd51    push edi"
-"	      0054cd52    mov [ebp-8],ecx"
+"	      0054cd52    mov this,ecx"
 );
 // LINE 2159:
 	asm( 
-"	      0054cd55    mov eax,[ebp-8]"
+"	      0054cd55    mov eax,this"
 "	      0054cd58    movsx eax,word ptr [eax+0BCh]"
 "	      0054cd5f    push eax"
 "	      0054cd60    mov eax,ds:[5B4968h]"
@@ -12884,11 +12884,11 @@ void cYObject::RemoveFromHeli() {
 "	      0054cd6a    push eax"
 "	      0054cd6b    call 004F9EAAh"
 "	      0054cd70    add esp,8"
-"	      0054cd73    mov [ebp-4],eax"
+"	      0054cd73    mov yes,eax"
 );
 // LINE 2160:
 	asm( 
-"	      0054cd76    cmp dword ptr [ebp-4],0"
+"	      0054cd76    cmp yes,0"
 "	      0054cd7a    jne near ptr 0054CD9Ch"
 "	      0054cd80    push 8C085h"
 "	      0054cd85    push 5BB0BCh"
@@ -12899,7 +12899,7 @@ void cYObject::RemoveFromHeli() {
 );
 // LINE 2161:
 	asm( 
-"	      0054cd9c    mov eax,[ebp-8]"
+"	      0054cd9c    mov eax,this"
 "	      0054cd9f    mov word ptr [eax+0E2h],1"
 );
 // LINE 2162:
@@ -12925,14 +12925,14 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 "	      0054cdb8    push ebx"
 "	      0054cdb9    push esi"
 "	      0054cdba    push edi"
-"	      0054cdbb    mov [ebp-10h],ecx"
+"	      0054cdbb    mov this,ecx"
 );
 // LINE 2166:
 	asm( 
-"	      0054cdbe    mov word ptr [ebp-4],0"
+"	      0054cdbe    mov count,0"
 "	      0054cdc4    jmp near ptr 0054CDCDh"
-"	      0054cdc9    inc word ptr [ebp-4]"
-"	      0054cdcd    movsx eax,word ptr [ebp-4]"
+"	      0054cdc9    inc count"
+"	      0054cdcd    movsx eax,count"
 "	      0054cdd1    cmp eax,64h"
 "	      0054cdd4    jge near ptr 0054CEBCh"
 );
@@ -12940,16 +12940,16 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054cdda    movsx eax,word ptr [ebp-4]"
+"	      0054cdda    movsx eax,count"
 "	      0054cdde    cmp eax,7D00h"
 "	      0054cde3    jne near ptr 0054CDF6h"
 "	      0054cde9    mov eax,ds:[5B8680h]"
-"	      0054cdee    mov [ebp-8],eax"
+"	      0054cdee    mov obj,eax"
 "	      0054cdf1    jmp near ptr 0054CE72h"
-"	      0054cdf6    movsx eax,word ptr [ebp-4]"
+"	      0054cdf6    movsx eax,count"
 "	      0054cdfa    test eax,eax"
 "	      0054cdfc    jl near ptr 0054CE0Fh"
-"	      0054ce02    movsx eax,word ptr [ebp-4]"
+"	      0054ce02    movsx eax,count"
 "	      0054ce06    cmp eax,64h"
 "	      0054ce09    jl near ptr 0054CE2Bh"
 "	      0054ce0f    push 8C085h"
@@ -12958,7 +12958,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 "	      0054ce1e    push 5BBA14h"
 "	      0054ce23    call 00554F30h"
 "	      0054ce28    add esp,10h"
-"	      0054ce2b    movsx eax,word ptr [ebp-4]"
+"	      0054ce2b    movsx eax,count"
 "	      0054ce2f    cmp dword ptr [eax*4+636D40h],0"
 "	      0054ce37    jne near ptr 0054CE59h"
 "	      0054ce3d    push 8C085h"
@@ -12967,16 +12967,16 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 "	      0054ce4c    push 5BBA14h"
 "	      0054ce51    call 00554F30h"
 "	      0054ce56    add esp,10h"
-"	      0054ce59    movsx eax,word ptr [ebp-4]"
+"	      0054ce59    movsx eax,count"
 "	      0054ce5d    mov eax,[eax*4+636D40h]"
-"	      0054ce64    mov [ebp-8],eax"
+"	      0054ce64    mov obj,eax"
 "	      0054ce67    jmp near ptr 0054CE72h"
 "	      0054ce6c    mov eax,[ebp-0Ch]"
-"	      0054ce6f    mov [ebp-8],eax"
+"	      0054ce6f    mov obj,eax"
 );
 // LINE 2168:
 	asm( 
-"	      0054ce72    cmp dword ptr [ebp-8],0"
+"	      0054ce72    cmp obj,0"
 "	      0054ce76    jne near ptr 0054CE98h"
 "	      0054ce7c    push 8C085h"
 "	      0054ce81    push 5BB10Ch"
@@ -12988,14 +12988,14 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 // LINE 2169:
 	asm( 
 "	      0054ce98    jmp near ptr 0054CE9Dh"
-"	      0054ce9d    mov eax,[ebp-8]"
-"	      0054cea0    mov ecx,[ebp+8]"
+"	      0054ce9d    mov eax,obj"
+"	      0054cea0    mov ecx,dyobj"
 "	      0054cea3    cmp [eax+130h],ecx"
 "	      0054cea9    jne near ptr 0054CEB7h"
 );
 // LINE 2170:
 	asm( 
-"	      0054ceaf    mov eax,[ebp-8]"
+"	      0054ceaf    mov eax,obj"
 "	      0054ceb2    jmp near ptr 0054CEC3h"
 );
 // LINE 2171:
@@ -13030,16 +13030,16 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 "	      0054ced0    push ebx"
 "	      0054ced1    push esi"
 "	      0054ced2    push edi"
-"	      0054ced3    mov [ebp-0Ch],ecx"
+"	      0054ced3    mov this,ecx"
 );
 // LINE 2177:
 	asm( 
-"	      0054ced6    mov eax,[ebp-0Ch]"
+"	      0054ced6    mov eax,this"
 "	      0054ced9    xor ecx,ecx"
 "	      0054cedb    mov cl,[eax+88h]"
 "	      0054cee1    cmp ecx,0FFFFFFFFh"
 "	      0054cee4    jne near ptr 0054CF1Fh"
-"	      0054ceea    mov eax,[ebp-0Ch]"
+"	      0054ceea    mov eax,this"
 "	      0054ceed    xor ecx,ecx"
 "	      0054ceef    mov cl,[eax+89h]"
 "	      0054cef5    cmp ecx,0FFFFFFFFh"
@@ -13051,7 +13051,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 "	      0054cf12    call 00554F30h"
 "	      0054cf17    add esp,10h"
 "	      0054cf1a    jmp near ptr 0054CF4Fh"
-"	      0054cf1f    mov eax,[ebp-0Ch]"
+"	      0054cf1f    mov eax,this"
 "	      0054cf22    xor ecx,ecx"
 "	      0054cf24    mov cl,[eax+89h]"
 "	      0054cf2a    cmp ecx,0FFFFFFFFh"
@@ -13062,7 +13062,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 "	      0054cf42    push 5BBA14h"
 "	      0054cf47    call 00554F30h"
 "	      0054cf4c    add esp,10h"
-"	      0054cf4f    mov eax,[ebp-0Ch]"
+"	      0054cf4f    mov eax,this"
 "	      0054cf52    xor ecx,ecx"
 "	      0054cf54    mov cl,[eax+88h]"
 "	      0054cf5a    cmp ecx,0FFFFFFFFh"
@@ -13081,17 +13081,17 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2181:
 	asm( 
-"	      0054cf9b    mov eax,[ebp-0Ch]"
+"	      0054cf9b    mov eax,this"
 "	      0054cf9e    movsx eax,word ptr [eax+0BCh]"
 "	      0054cfa5    cmp eax,7D00h"
 "	      0054cfaa    je near ptr 0054CFDDh"
-"	      0054cfb0    mov eax,[ebp-0Ch]"
+"	      0054cfb0    mov eax,this"
 "	      0054cfb3    cmp dword ptr [eax+130h],0"
 "	      0054cfba    je near ptr 0054CFDDh"
 );
 // LINE 2182:
 	asm( 
-"	      0054cfc0    mov eax,[ebp-0Ch]"
+"	      0054cfc0    mov eax,this"
 "	      0054cfc3    mov eax,[eax+130h]"
 "	      0054cfc9    movsx eax,word ptr [eax+0Ch]"
 "	      0054cfcd    test al,4"
@@ -13099,18 +13099,18 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2183:
 	asm( 
-"	      0054cfd5    mov ecx,[ebp-0Ch]"
+"	      0054cfd5    mov ecx,this"
 "	      0054cfd8    call 0054CD49h"
 );
 // LINE 2188:
 	asm( 
-"	      0054cfdd    mov word ptr [ebp-4],1"
+"	      0054cfdd    mov success,1"
 );
 // LINE 2189:
 	asm( 
-"	      0054cfe3    cmp dword ptr [ebp+8],0"
+"	      0054cfe3    cmp obj,0"
 "	      0054cfe7    je near ptr 0054D091h"
-"	      0054cfed    mov eax,[ebp-0Ch]"
+"	      0054cfed    mov eax,this"
 "	      0054cff0    movsx eax,word ptr [eax+0BCh]"
 "	      0054cff7    cmp eax,7D00h"
 "	      0054cffc    je near ptr 0054D091h"
@@ -13118,13 +13118,13 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 // LINE 2190:
 	asm( 
 "	      0054d002    mov eax,ds:[5B4968h]"
-"	      0054d007    mov ecx,[ebp+8]"
+"	      0054d007    mov ecx,obj"
 "	      0054d00a    cmp [eax+0A4h],ecx"
 "	      0054d010    jne near ptr 0054D034h"
 );
 // LINE 2192:
 	asm( 
-"	      0054d016    mov ecx,[ebp-0Ch]"
+"	      0054d016    mov ecx,this"
 "	      0054d019    call 0054CCBDh"
 "	      0054d01e    movzx eax,ax"
 "	      0054d021    test eax,eax"
@@ -13132,13 +13132,13 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2193:
 	asm( 
-"	      0054d029    mov word ptr [ebp-4],0"
+"	      0054d029    mov success,0"
 );
 // LINE 2196:
 	asm( 
 "	      0054d02f    jmp near ptr 0054D091h"
 "	      0054d034    mov eax,ds:[5B4968h]"
-"	      0054d039    mov ecx,[ebp+8]"
+"	      0054d039    mov ecx,obj"
 "	      0054d03c    cmp [eax+0BCh],ecx"
 "	      0054d042    jne near ptr 0054D091h"
 );
@@ -13153,21 +13153,21 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2200:
 	asm( 
-"	      0054d06c    mov word ptr [ebp-4],0"
+"	      0054d06c    mov success,0"
 );
 // LINE 2202:
 	asm( 
 "	      0054d072    jmp near ptr 0054D091h"
-"	      0054d077    mov eax,[ebp+8]"
+"	      0054d077    mov eax,obj"
 "	      0054d07a    push eax"
-"	      0054d07b    mov ecx,[ebp-0Ch]"
+"	      0054d07b    mov ecx,this"
 "	      0054d07e    call 0054CDB2h"
 "	      0054d083    test eax,eax"
 "	      0054d085    je near ptr 0054D091h"
 );
 // LINE 2203:
 	asm( 
-"	      0054d08b    mov word ptr [ebp-4],0"
+"	      0054d08b    mov success,0"
 );
 // LINE 2206:
 	asm( 
@@ -13176,20 +13176,20 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2207:
 	asm( 
-"	      0054d09e    mov eax,[ebp+8]"
-"	      0054d0a1    mov ecx,[ebp-0Ch]"
+"	      0054d09e    mov eax,obj"
+"	      0054d0a1    mov ecx,this"
 "	      0054d0a4    mov [ecx+130h],eax"
 );
 // LINE 2209:
 	asm( 
-"	      0054d0aa    cmp dword ptr [ebp+8],0"
+"	      0054d0aa    cmp obj,0"
 "	      0054d0ae    je near ptr 0054D0D3h"
 );
 // LINE 2210:
 	asm( 
-"	      0054d0b4    mov eax,[ebp+8]"
+"	      0054d0b4    mov eax,obj"
 "	      0054d0b7    add eax,18h"
-"	      0054d0ba    mov ecx,[ebp-0Ch]"
+"	      0054d0ba    mov ecx,this"
 "	      0054d0bd    add ecx,0A0h"
 "	      0054d0c3    mov edx,[eax]"
 "	      0054d0c5    mov [ecx],edx"
@@ -13200,7 +13200,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2217:
 	asm( 
-"	      0054d0d3    mov ax,[ebp-4]"
+"	      0054d0d3    mov ax,success"
 "	      0054d0d7    jmp near ptr 0054D0DCh"
 );
 // LINE 2218:
@@ -13226,52 +13226,52 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 "	      0054d0e9    push ebx"
 "	      0054d0ea    push esi"
 "	      0054d0eb    push edi"
-"	      0054d0ec    mov [ebp-3Ch],ecx"
+"	      0054d0ec    mov this,ecx"
 );
 // LINE 2222:
 	asm( 
-"	      0054d0ef    mov eax,[ebp+8]"
+"	      0054d0ef    mov eax,pos.x"
 "	      0054d0f2    add eax,20000000h"
 "	      0054d0f7    sar eax,16h"
-"	      0054d0fa    mov [ebp-4],eax"
+"	      0054d0fa    mov cellx,eax"
 );
 // LINE 2223:
 	asm( 
 "	      0054d0fd    mov eax,20000000h"
-"	      0054d102    sub eax,[ebp+10h]"
+"	      0054d102    sub eax,pos.z"
 "	      0054d105    sar eax,16h"
-"	      0054d108    mov [ebp-8],eax"
+"	      0054d108    mov celly,eax"
 );
 // LINE 2230:
 	asm( 
-"	      0054d10b    mov eax,[ebp-4]"
+"	      0054d10b    mov eax,cellx"
 "	      0054d10e    dec eax"
 "	      0054d10f    cmp eax,80h"
 "	      0054d114    jge near ptr 0054D247h"
-"	      0054d11a    mov eax,[ebp-4]"
+"	      0054d11a    mov eax,cellx"
 "	      0054d11d    dec eax"
 "	      0054d11e    cmp eax,0FFFFFFFFh"
 "	      0054d121    jle near ptr 0054D247h"
-"	      0054d127    cmp dword ptr [ebp-8],80h"
+"	      0054d127    cmp celly,80h"
 "	      0054d12e    jge near ptr 0054D247h"
-"	      0054d134    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      0054d134    cmp celly,0FFFFFFFFh"
 "	      0054d138    jle near ptr 0054D247h"
-"	      0054d13e    mov eax,[ebp-4]"
+"	      0054d13e    mov eax,cellx"
 "	      0054d141    dec eax"
 "	      0054d142    js near ptr 0054D169h"
-"	      0054d148    mov eax,[ebp-4]"
+"	      0054d148    mov eax,cellx"
 "	      0054d14b    dec eax"
 "	      0054d14c    cmp eax,7Fh"
 "	      0054d14f    jg near ptr 0054D169h"
-"	      0054d155    cmp dword ptr [ebp-8],0"
+"	      0054d155    cmp celly,0"
 "	      0054d159    jl near ptr 0054D169h"
-"	      0054d15f    cmp dword ptr [ebp-8],7Fh"
+"	      0054d15f    cmp celly,7Fh"
 "	      0054d163    jle near ptr 0054D175h"
 "	      0054d169    mov dword ptr [ebp-10h],0"
 "	      0054d170    jmp near ptr 0054D230h"
-"	      0054d175    mov eax,[ebp-4]"
+"	      0054d175    mov eax,cellx"
 "	      0054d178    mov eax,[eax*4+63984Ch]"
-"	      0054d17f    mov ecx,[ebp-8]"
+"	      0054d17f    mov ecx,celly"
 "	      0054d182    movzx ax,byte ptr [eax+ecx]"
 "	      0054d187    mov [ebp-0Ch],ax"
 "	      0054d18b    mov eax,[ebp-0Ch]"
@@ -13318,34 +13318,34 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 "	      0054d247    jmp near ptr 0054D259h"
 "	      0054d24c    test dword ptr [ebp-14h],0FFFFh"
 "	      0054d253    jne near ptr 0054D64Ah"
-"	      0054d259    mov eax,[ebp-4]"
+"	      0054d259    mov eax,cellx"
 "	      0054d25c    inc eax"
 "	      0054d25d    cmp eax,80h"
 "	      0054d262    jge near ptr 0054D395h"
-"	      0054d268    mov eax,[ebp-4]"
+"	      0054d268    mov eax,cellx"
 "	      0054d26b    inc eax"
 "	      0054d26c    cmp eax,0FFFFFFFFh"
 "	      0054d26f    jle near ptr 0054D395h"
-"	      0054d275    cmp dword ptr [ebp-8],80h"
+"	      0054d275    cmp celly,80h"
 "	      0054d27c    jge near ptr 0054D395h"
-"	      0054d282    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      0054d282    cmp celly,0FFFFFFFFh"
 "	      0054d286    jle near ptr 0054D395h"
-"	      0054d28c    mov eax,[ebp-4]"
+"	      0054d28c    mov eax,cellx"
 "	      0054d28f    inc eax"
 "	      0054d290    js near ptr 0054D2B7h"
-"	      0054d296    mov eax,[ebp-4]"
+"	      0054d296    mov eax,cellx"
 "	      0054d299    inc eax"
 "	      0054d29a    cmp eax,7Fh"
 "	      0054d29d    jg near ptr 0054D2B7h"
-"	      0054d2a3    cmp dword ptr [ebp-8],0"
+"	      0054d2a3    cmp celly,0"
 "	      0054d2a7    jl near ptr 0054D2B7h"
-"	      0054d2ad    cmp dword ptr [ebp-8],7Fh"
+"	      0054d2ad    cmp celly,7Fh"
 "	      0054d2b1    jle near ptr 0054D2C3h"
 "	      0054d2b7    mov dword ptr [ebp-1Ch],0"
 "	      0054d2be    jmp near ptr 0054D37Eh"
-"	      0054d2c3    mov eax,[ebp-4]"
+"	      0054d2c3    mov eax,cellx"
 "	      0054d2c6    mov eax,[eax*4+639854h]"
-"	      0054d2cd    mov ecx,[ebp-8]"
+"	      0054d2cd    mov ecx,celly"
 "	      0054d2d0    movzx ax,byte ptr [eax+ecx]"
 "	      0054d2d5    mov [ebp-18h],ax"
 "	      0054d2d9    mov eax,[ebp-18h]"
@@ -13392,34 +13392,34 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 "	      0054d395    jmp near ptr 0054D3A7h"
 "	      0054d39a    test dword ptr [ebp-20h],0FFFFh"
 "	      0054d3a1    jne near ptr 0054D64Ah"
-"	      0054d3a7    cmp dword ptr [ebp-4],80h"
+"	      0054d3a7    cmp cellx,80h"
 "	      0054d3ae    jge near ptr 0054D4E4h"
-"	      0054d3b4    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0054d3b4    cmp cellx,0FFFFFFFFh"
 "	      0054d3b8    jle near ptr 0054D4E4h"
-"	      0054d3be    mov eax,[ebp-8]"
+"	      0054d3be    mov eax,celly"
 "	      0054d3c1    dec eax"
 "	      0054d3c2    cmp eax,80h"
 "	      0054d3c7    jge near ptr 0054D4E4h"
-"	      0054d3cd    mov eax,[ebp-8]"
+"	      0054d3cd    mov eax,celly"
 "	      0054d3d0    dec eax"
 "	      0054d3d1    cmp eax,0FFFFFFFFh"
 "	      0054d3d4    jle near ptr 0054D4E4h"
-"	      0054d3da    cmp dword ptr [ebp-4],0"
+"	      0054d3da    cmp cellx,0"
 "	      0054d3de    jl near ptr 0054D405h"
-"	      0054d3e4    cmp dword ptr [ebp-4],7Fh"
+"	      0054d3e4    cmp cellx,7Fh"
 "	      0054d3e8    jg near ptr 0054D405h"
-"	      0054d3ee    mov eax,[ebp-8]"
+"	      0054d3ee    mov eax,celly"
 "	      0054d3f1    dec eax"
 "	      0054d3f2    js near ptr 0054D405h"
-"	      0054d3f8    mov eax,[ebp-8]"
+"	      0054d3f8    mov eax,celly"
 "	      0054d3fb    dec eax"
 "	      0054d3fc    cmp eax,7Fh"
 "	      0054d3ff    jle near ptr 0054D411h"
 "	      0054d405    mov dword ptr [ebp-28h],0"
 "	      0054d40c    jmp near ptr 0054D4CDh"
-"	      0054d411    mov eax,[ebp-4]"
+"	      0054d411    mov eax,cellx"
 "	      0054d414    mov eax,[eax*4+639850h]"
-"	      0054d41b    mov ecx,[ebp-8]"
+"	      0054d41b    mov ecx,celly"
 "	      0054d41e    movzx ax,byte ptr [eax+ecx-1]"
 "	      0054d424    mov [ebp-24h],ax"
 "	      0054d428    mov eax,[ebp-24h]"
@@ -13466,34 +13466,34 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 "	      0054d4e4    jmp near ptr 0054D4F6h"
 "	      0054d4e9    test dword ptr [ebp-2Ch],0FFFFh"
 "	      0054d4f0    jne near ptr 0054D64Ah"
-"	      0054d4f6    cmp dword ptr [ebp-4],80h"
+"	      0054d4f6    cmp cellx,80h"
 "	      0054d4fd    jge near ptr 0054D633h"
-"	      0054d503    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0054d503    cmp cellx,0FFFFFFFFh"
 "	      0054d507    jle near ptr 0054D633h"
-"	      0054d50d    mov eax,[ebp-8]"
+"	      0054d50d    mov eax,celly"
 "	      0054d510    inc eax"
 "	      0054d511    cmp eax,80h"
 "	      0054d516    jge near ptr 0054D633h"
-"	      0054d51c    mov eax,[ebp-8]"
+"	      0054d51c    mov eax,celly"
 "	      0054d51f    inc eax"
 "	      0054d520    cmp eax,0FFFFFFFFh"
 "	      0054d523    jle near ptr 0054D633h"
-"	      0054d529    cmp dword ptr [ebp-4],0"
+"	      0054d529    cmp cellx,0"
 "	      0054d52d    jl near ptr 0054D554h"
-"	      0054d533    cmp dword ptr [ebp-4],7Fh"
+"	      0054d533    cmp cellx,7Fh"
 "	      0054d537    jg near ptr 0054D554h"
-"	      0054d53d    mov eax,[ebp-8]"
+"	      0054d53d    mov eax,celly"
 "	      0054d540    inc eax"
 "	      0054d541    js near ptr 0054D554h"
-"	      0054d547    mov eax,[ebp-8]"
+"	      0054d547    mov eax,celly"
 "	      0054d54a    inc eax"
 "	      0054d54b    cmp eax,7Fh"
 "	      0054d54e    jle near ptr 0054D560h"
 "	      0054d554    mov dword ptr [ebp-34h],0"
 "	      0054d55b    jmp near ptr 0054D61Ch"
-"	      0054d560    mov eax,[ebp-4]"
+"	      0054d560    mov eax,cellx"
 "	      0054d563    mov eax,[eax*4+639850h]"
-"	      0054d56a    mov ecx,[ebp-8]"
+"	      0054d56a    mov ecx,celly"
 "	      0054d56d    movzx ax,byte ptr [eax+ecx+1]"
 "	      0054d573    mov [ebp-30h],ax"
 "	      0054d577    mov eax,[ebp-30h]"
@@ -13582,52 +13582,52 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d66b    push ebx"
 "	      0054d66c    push esi"
 "	      0054d66d    push edi"
-"	      0054d66e    mov [ebp-88h],ecx"
+"	      0054d66e    mov this,ecx"
 );
 // LINE 2243:
 	asm( 
-"	      0054d674    mov eax,[ebp+0Ch]"
+"	      0054d674    mov eax,celly"
 "	      0054d677    mov eax,[eax]"
 "	      0054d679    and eax,0FFh"
-"	      0054d67e    mov ecx,[ebp+8]"
+"	      0054d67e    mov ecx,cellx"
 "	      0054d681    mov ecx,[ecx]"
 "	      0054d683    and ecx,0FFh"
 "	      0054d689    shl ecx,0Ah"
 "	      0054d68c    mov eax,[ecx+eax*4+67ED30h]"
-"	      0054d693    mov [ebp-20h],eax"
+"	      0054d693    mov cptr,eax"
 );
 // LINE 2244:
 	asm( 
-"	      0054d696    mov eax,[ebp-20h]"
+"	      0054d696    mov eax,cptr"
 "	      0054d699    movsx eax,word ptr [eax+2]"
 "	      0054d69d    shl eax,10h"
 "	      0054d6a0    add eax,20000000h"
 "	      0054d6a5    sar eax,16h"
-"	      0054d6a8    mov ecx,[ebp+8]"
+"	      0054d6a8    mov ecx,cellx"
 "	      0054d6ab    mov [ecx],eax"
 );
 // LINE 2245:
 	asm( 
 "	      0054d6ad    mov eax,20000000h"
-"	      0054d6b2    mov ecx,[ebp-20h]"
+"	      0054d6b2    mov ecx,cptr"
 "	      0054d6b5    movsx ecx,word ptr [ecx+6]"
 "	      0054d6b9    shl ecx,10h"
 "	      0054d6bc    sub eax,ecx"
 "	      0054d6be    sar eax,16h"
-"	      0054d6c1    mov ecx,[ebp+0Ch]"
+"	      0054d6c1    mov ecx,celly"
 "	      0054d6c4    mov [ecx],eax"
 );
 // LINE 2246:
 	asm( 
-"	      0054d6c6    mov eax,[ebp+0Ch]"
+"	      0054d6c6    mov eax,celly"
 "	      0054d6c9    mov eax,[eax]"
 "	      0054d6cb    push eax"
-"	      0054d6cc    mov eax,[ebp+8]"
+"	      0054d6cc    mov eax,cellx"
 "	      0054d6cf    mov eax,[eax]"
 "	      0054d6d1    push eax"
 "	      0054d6d2    call 00555746h"
 "	      0054d6d7    add esp,8"
-"	      0054d6da    mov [ebp-4],eax"
+"	      0054d6da    mov loctype,eax"
 );
 // LINE 2251:
 	asm( 
@@ -13637,12 +13637,12 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d6ec    movsx eax,word ptr [ebp-68h]"
 "	      0054d6f0    cmp eax,0Ah"
 "	      0054d6f3    jge near ptr 0054D730h"
-"	      0054d6f9    mov eax,[ebp-88h]"
+"	      0054d6f9    mov eax,this"
 "	      0054d6ff    movsx eax,word ptr [eax+0D6h]"
 "	      0054d706    lea eax,[eax+eax*4]"
 "	      0054d709    movsx ecx,word ptr [ebp-68h]"
 "	      0054d70d    shl ecx,2"
-"	      0054d710    mov edx,[ebp-4]"
+"	      0054d710    mov edx,loctype"
 "	      0054d713    cmp [ecx+eax*8+6372D0h],edx"
 "	      0054d71a    jne near ptr 0054D72Bh"
 "	      0054d720    mov word ptr [ebp-64h],1"
@@ -13650,7 +13650,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d72b    jmp near ptr 0054D6E8h"
 "	      0054d730    mov word ptr [ebp-64h],0"
 "	      0054d736    jmp near ptr 0054D73Bh"
-"	      0054d73b    mov eax,[ebp-20h]"
+"	      0054d73b    mov eax,cptr"
 "	      0054d73e    mov eax,[eax+10h]"
 "	      0054d741    mov [ebp-6Ch],eax"
 "	      0054d744    mov word ptr [ebp-70h],0"
@@ -13666,7 +13666,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d76c    mov [ebp-6Ch],eax"
 "	      0054d76f    jmp near ptr 0054D74Ah"
 "	      0054d774    jmp near ptr 0054D779h"
-"	      0054d779    mov eax,[ebp-4]"
+"	      0054d779    mov eax,loctype"
 "	      0054d77c    movsx eax,word ptr [eax*8+63526Ch]"
 "	      0054d784    movsx ecx,word ptr [ebp-70h]"
 "	      0054d788    cmp eax,ecx"
@@ -13692,16 +13692,16 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 );
 // LINE 2254:
 	asm( 
-"	      0054d7e4    mov eax,[ebp-4]"
+"	      0054d7e4    mov eax,loctype"
 "	      0054d7e7    mov eax,[eax*8+635268h]"
 "	      0054d7ee    push eax"
-"	      0054d7ef    mov eax,[ebp+14h]"
+"	      0054d7ef    mov eax,offsetz"
 "	      0054d7f2    push eax"
-"	      0054d7f3    mov eax,[ebp+10h]"
+"	      0054d7f3    mov eax,offsetx"
 "	      0054d7f6    push eax"
-"	      0054d7f7    mov eax,[ebp-20h]"
+"	      0054d7f7    mov eax,cptr"
 "	      0054d7fa    push eax"
-"	      0054d7fb    mov ecx,[ebp-88h]"
+"	      0054d7fb    mov ecx,this"
 "	      0054d801    call 00545049h"
 "	      0054d806    movzx eax,ax"
 "	      0054d809    test eax,eax"
@@ -13714,33 +13714,33 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 );
 // LINE 2256:
 	asm( 
-"	      0054d819    mov eax,[ebp-4]"
+"	      0054d819    mov eax,loctype"
 "	      0054d81c    cmp dword ptr [eax*8+635268h],0"
 "	      0054d824    jne near ptr 0054D8DDh"
 	);
 // Block start:
 	struct Point3d pos;
 	asm( 
-"	      0054d82a    mov eax,[ebp+14h]"
+"	      0054d82a    mov eax,offsetz"
 "	      0054d82d    mov eax,[eax]"
 "	      0054d82f    mov [ebp-58h],eax"
-"	      0054d832    mov eax,[ebp+10h]"
+"	      0054d832    mov eax,offsetx"
 "	      0054d835    mov eax,[eax]"
 "	      0054d837    mov [ebp-5Ch],eax"
 );
 // LINE 2257:
 	asm( 
-"	      0054d83a    mov eax,[ebp-20h]"
+"	      0054d83a    mov eax,cptr"
 "	      0054d83d    movsx eax,word ptr [eax+2]"
 "	      0054d841    shl eax,10h"
 "	      0054d844    add eax,[ebp-5Ch]"
 "	      0054d847    mov [ebp-54h],eax"
-"	      0054d84a    mov eax,[ebp-20h]"
+"	      0054d84a    mov eax,cptr"
 "	      0054d84d    movsx eax,word ptr [eax+4]"
 "	      0054d851    shl eax,10h"
 "	      0054d854    add eax,30000h"
 "	      0054d859    mov [ebp-50h],eax"
-"	      0054d85c    mov eax,[ebp-20h]"
+"	      0054d85c    mov eax,cptr"
 "	      0054d85f    movsx eax,word ptr [eax+6]"
 "	      0054d863    shl eax,10h"
 "	      0054d866    add eax,[ebp-58h]"
@@ -13763,7 +13763,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d897    mov eax,[eax+8]"
 "	      0054d89a    mov [ecx+8],eax"
 "	      0054d89d    lea eax,[ebp-3Ch]"
-"	      0054d8a0    lea ecx,[ebp-30h]"
+"	      0054d8a0    lea ecx,pos.x"
 "	      0054d8a3    mov edx,[eax]"
 "	      0054d8a5    mov [ecx],edx"
 "	      0054d8a7    mov edx,[eax+4]"
@@ -13773,13 +13773,13 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 );
 // LINE 2259:
 	asm( 
-"	      0054d8b3    mov eax,[ebp-28h]"
+"	      0054d8b3    mov eax,pos.z"
 "	      0054d8b6    push eax"
-"	      0054d8b7    mov eax,[ebp-2Ch]"
+"	      0054d8b7    mov eax,pos.y"
 "	      0054d8ba    push eax"
-"	      0054d8bb    mov eax,[ebp-30h]"
+"	      0054d8bb    mov eax,pos.x"
 "	      0054d8be    push eax"
-"	      0054d8bf    mov ecx,[ebp-88h]"
+"	      0054d8bf    mov ecx,this"
 "	      0054d8c5    call 0054D0E3h"
 "	      0054d8ca    movzx eax,ax"
 "	      0054d8cd    test eax,eax"
@@ -13793,50 +13793,50 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 // LINE 2263:
 // Block end:
 	asm( 
-"	      0054d8dd    mov eax,[ebp-20h]"
+"	      0054d8dd    mov eax,cptr"
 "	      0054d8e0    movsx eax,word ptr [eax+2]"
-"	      0054d8e4    mov ecx,[ebp+10h]"
+"	      0054d8e4    mov ecx,offsetx"
 "	      0054d8e7    add eax,[ecx]"
 "	      0054d8e9    shl eax,10h"
-"	      0054d8ec    mov [ebp-0Ch],eax"
+"	      0054d8ec    mov x,eax"
 );
 // LINE 2264:
 	asm( 
-"	      0054d8ef    mov eax,[ebp-20h]"
+"	      0054d8ef    mov eax,cptr"
 "	      0054d8f2    movsx eax,word ptr [eax+6]"
-"	      0054d8f6    mov ecx,[ebp+14h]"
+"	      0054d8f6    mov ecx,offsetz"
 "	      0054d8f9    add eax,[ecx]"
 "	      0054d8fb    shl eax,10h"
-"	      0054d8fe    mov [ebp-18h],eax"
+"	      0054d8fe    mov z,eax"
 );
 // LINE 2265:
 	asm( 
-"	      0054d901    mov eax,[ebp-0Ch]"
+"	      0054d901    mov eax,x"
 "	      0054d904    add eax,20000000h"
 "	      0054d909    sar eax,16h"
-"	      0054d90c    mov [ebp-14h],ax"
+"	      0054d90c    mov cx,ax"
 );
 // LINE 2266:
 	asm( 
 "	      0054d910    mov eax,20000000h"
-"	      0054d915    sub eax,[ebp-18h]"
+"	      0054d915    sub eax,z"
 "	      0054d918    sar eax,16h"
-"	      0054d91b    mov [ebp-1Ch],ax"
+"	      0054d91b    mov cy,ax"
 );
 // LINE 2267:
 	asm( 
-"	      0054d91f    movsx eax,word ptr [ebp-14h]"
+"	      0054d91f    movsx eax,cx"
 "	      0054d923    and eax,0FFh"
 "	      0054d928    shl eax,0Ah"
-"	      0054d92b    movsx ecx,word ptr [ebp-1Ch]"
+"	      0054d92b    movsx ecx,cy"
 "	      0054d92f    and ecx,0FFh"
 "	      0054d935    mov eax,[eax+ecx*4+67ED30h]"
-"	      0054d93c    mov [ebp-24h],eax"
+"	      0054d93c    mov newcptr,eax"
 );
 // LINE 2268:
 	asm( 
-"	      0054d93f    mov eax,[ebp-20h]"
-"	      0054d942    cmp [ebp-24h],eax"
+"	      0054d93f    mov eax,cptr"
+"	      0054d942    cmp newcptr,eax"
 "	      0054d945    je near ptr 0054D967h"
 "	      0054d94b    push 8C085h"
 "	      0054d950    push 5BB1A4h"
@@ -13844,10 +13844,10 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d95a    push 5BB1C8h"
 "	      0054d95f    call 00554F30h"
 "	      0054d964    add esp,10h"
-"	      0054d967    mov eax,[ebp+0Ch]"
+"	      0054d967    mov eax,celly"
 "	      0054d96a    mov eax,[eax]"
 "	      0054d96c    mov [ebp-7Ch],ax"
-"	      0054d970    mov eax,[ebp+8]"
+"	      0054d970    mov eax,cellx"
 "	      0054d973    mov eax,[eax]"
 "	      0054d975    mov [ebp-80h],ax"
 );
@@ -13865,7 +13865,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d99f    movsx eax,word ptr [ebp-7Ch]"
 "	      0054d9a3    test eax,eax"
 "	      0054d9a5    jge near ptr 0054D9B6h"
-"	      0054d9ab    mov word ptr [ebp-10h],0FFFFh"
+"	      0054d9ab    mov scurkID1,0FFFFh"
 "	      0054d9b1    jmp near ptr 0054DA12h"
 "	      0054d9b6    movsx eax,word ptr [ebp-80h]"
 "	      0054d9ba    mov eax,[eax*4+639850h]"
@@ -13885,28 +13885,28 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d9fd    call 00554F30h"
 "	      0054da02    add esp,10h"
 "	      0054da05    mov ax,[ebp-78h]"
-"	      0054da09    mov [ebp-10h],ax"
+"	      0054da09    mov scurkID1,ax"
 "	      0054da0d    jmp near ptr 0054DA12h"
 );
 // LINE 2270:
 	asm( 
-"	      0054da12    movsx eax,word ptr [ebp-14h]"
+"	      0054da12    movsx eax,cx"
 "	      0054da16    cmp eax,7Fh"
 "	      0054da19    jg near ptr 0054DA44h"
-"	      0054da1f    movsx eax,word ptr [ebp-1Ch]"
+"	      0054da1f    movsx eax,cy"
 "	      0054da23    cmp eax,7Fh"
 "	      0054da26    jg near ptr 0054DA44h"
-"	      0054da2c    movsx eax,word ptr [ebp-14h]"
+"	      0054da2c    movsx eax,cx"
 "	      0054da30    test eax,eax"
 "	      0054da32    jl near ptr 0054DA44h"
-"	      0054da38    movsx eax,word ptr [ebp-1Ch]"
+"	      0054da38    movsx eax,cy"
 "	      0054da3c    test eax,eax"
 "	      0054da3e    jge near ptr 0054DA4Fh"
-"	      0054da44    mov word ptr [ebp-8],0FFFFh"
+"	      0054da44    mov scurkID2,0FFFFh"
 "	      0054da4a    jmp near ptr 0054DAB7h"
-"	      0054da4f    movsx eax,word ptr [ebp-14h]"
+"	      0054da4f    movsx eax,cx"
 "	      0054da53    mov eax,[eax*4+639850h]"
-"	      0054da5a    movsx ecx,word ptr [ebp-1Ch]"
+"	      0054da5a    movsx ecx,cy"
 "	      0054da5e    movzx ax,byte ptr [eax+ecx]"
 "	      0054da63    mov [ebp-84h],ax"
 "	      0054da6a    movsx eax,word ptr [ebp-84h]"
@@ -13922,13 +13922,13 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054da9f    call 00554F30h"
 "	      0054daa4    add esp,10h"
 "	      0054daa7    mov ax,[ebp-84h]"
-"	      0054daae    mov [ebp-8],ax"
+"	      0054daae    mov scurkID2,ax"
 "	      0054dab2    jmp near ptr 0054DAB7h"
 );
 // LINE 2271:
 	asm( 
-"	      0054dab7    movsx eax,word ptr [ebp-8]"
-"	      0054dabb    movsx ecx,word ptr [ebp-10h]"
+"	      0054dab7    movsx eax,scurkID2"
+"	      0054dabb    movsx ecx,scurkID1"
 "	      0054dabf    cmp eax,ecx"
 "	      0054dac1    je near ptr 0054DAE3h"
 "	      0054dac7    push 8C085h"
@@ -13963,11 +13963,11 @@ void cYObject::Simulate() {
 "	      0054daf9    push ebx"
 "	      0054dafa    push esi"
 "	      0054dafb    push edi"
-"	      0054dafc    mov [ebp-14h],ecx"
+"	      0054dafc    mov this,ecx"
 );
 // LINE 2278:
 	asm( 
-"	      0054daff    mov eax,[ebp-14h]"
+"	      0054daff    mov eax,this"
 "	      0054db02    movsx eax,word ptr [eax+0D2h]"
 "	      0054db09    test eax,eax"
 "	      0054db0b    jne near ptr 0054DB2Dh"
@@ -13980,14 +13980,14 @@ void cYObject::Simulate() {
 );
 // LINE 2280:
 	asm( 
-"	      0054db2d    mov eax,[ebp-14h]"
+"	      0054db2d    mov eax,this"
 "	      0054db30    cmp dword ptr [eax+130h],0"
 "	      0054db37    je near ptr 0054DC50h"
 );
 // LINE 2281:
 	asm( 
 "	      0054db3d    jmp near ptr 0054DB42h"
-"	      0054db42    mov eax,[ebp-14h]"
+"	      0054db42    mov eax,this"
 "	      0054db45    xor ecx,ecx"
 "	      0054db47    mov cx,[eax+20h]"
 "	      0054db4b    test ecx,ecx"
@@ -13998,7 +13998,7 @@ void cYObject::Simulate() {
 "	      0054db62    push 5BBA14h"
 "	      0054db67    call 00554F30h"
 "	      0054db6c    add esp,10h"
-"	      0054db6f    mov eax,[ebp-14h]"
+"	      0054db6f    mov eax,this"
 "	      0054db72    cmp dword ptr [eax+130h],0"
 "	      0054db79    jne near ptr 0054DB9Bh"
 "	      0054db7f    push 8C085h"
@@ -14007,22 +14007,22 @@ void cYObject::Simulate() {
 "	      0054db8e    push 5BBA14h"
 "	      0054db93    call 00554F30h"
 "	      0054db98    add esp,10h"
-"	      0054db9b    mov eax,[ebp-14h]"
+"	      0054db9b    mov eax,this"
 "	      0054db9e    mov eax,[eax+130h]"
 "	      0054dba4    mov eax,[eax+18h]"
-"	      0054dba7    mov ecx,[ebp-14h]"
+"	      0054dba7    mov ecx,this"
 "	      0054dbaa    sub eax,[ecx+0A0h]"
 "	      0054dbb0    mov [ebp-10h],eax"
-"	      0054dbb3    mov eax,[ebp-14h]"
+"	      0054dbb3    mov eax,this"
 "	      0054dbb6    mov eax,[eax+130h]"
 "	      0054dbbc    mov eax,[eax+20h]"
-"	      0054dbbf    mov ecx,[ebp-14h]"
+"	      0054dbbf    mov ecx,this"
 "	      0054dbc2    sub eax,[ecx+0A8h]"
 "	      0054dbc8    mov [ebp-8],eax"
-"	      0054dbcb    mov eax,[ebp-14h]"
+"	      0054dbcb    mov eax,this"
 "	      0054dbce    mov eax,[eax+130h]"
 "	      0054dbd4    mov eax,[eax+1Ch]"
-"	      0054dbd7    mov ecx,[ebp-14h]"
+"	      0054dbd7    mov ecx,this"
 "	      0054dbda    sub eax,[ecx+0A4h]"
 "	      0054dbe0    mov [ebp-0Ch],eax"
 "	      0054dbe3    push 1"
@@ -14034,7 +14034,7 @@ void cYObject::Simulate() {
 "	      0054dbf0    push eax"
 "	      0054dbf1    push 0"
 "	      0054dbf3    push 0"
-"	      0054dbf5    mov ecx,[ebp-14h]"
+"	      0054dbf5    mov ecx,this"
 "	      0054dbf8    call 00555A60h"
 "	      0054dbfd    mov [ebp-4],eax"
 "	      0054dc00    cmp dword ptr [ebp-4],0"
@@ -14045,10 +14045,10 @@ void cYObject::Simulate() {
 "	      0054dc19    push 5BBA14h"
 "	      0054dc1e    call 00554F30h"
 "	      0054dc23    add esp,10h"
-"	      0054dc26    mov eax,[ebp-14h]"
+"	      0054dc26    mov eax,this"
 "	      0054dc29    mov eax,[eax+130h]"
 "	      0054dc2f    add eax,18h"
-"	      0054dc32    mov ecx,[ebp-14h]"
+"	      0054dc32    mov ecx,this"
 "	      0054dc35    add ecx,0A0h"
 "	      0054dc3b    mov edx,[eax]"
 "	      0054dc3d    mov [ecx],edx"
@@ -14062,12 +14062,12 @@ void cYObject::Simulate() {
 	asm( 
 "	      0054dc50    push 0"
 "	      0054dc52    push 0"
-"	      0054dc54    mov ecx,[ebp-14h]"
+"	      0054dc54    mov ecx,this"
 "	      0054dc57    call 0055CF37h"
 );
 // LINE 2283:
 	asm( 
-"	      0054dc5c    mov eax,[ebp-14h]"
+"	      0054dc5c    mov eax,this"
 "	      0054dc5f    cmp dword ptr [eax+98h],0"
 "	      0054dc66    jne near ptr 0054DC8Dh"
 "	      0054dc6c    push 8C085h"
@@ -14077,18 +14077,18 @@ void cYObject::Simulate() {
 "	      0054dc80    call 00554F30h"
 "	      0054dc85    add esp,10h"
 "	      0054dc88    jmp near ptr 0054DCD4h"
-"	      0054dc8d    mov eax,[ebp-14h]"
+"	      0054dc8d    mov eax,this"
 "	      0054dc90    inc word ptr [eax+0DCh]"
 "	      0054dc97    jmp near ptr 0054DC9Ch"
-"	      0054dc9c    mov eax,[ebp-14h]"
+"	      0054dc9c    mov eax,this"
 "	      0054dc9f    mov eax,[eax+98h]"
 "	      0054dca5    mov eax,[eax+28h]"
 "	      0054dca8    movsx eax,word ptr [eax+14h]"
-"	      0054dcac    mov ecx,[ebp-14h]"
+"	      0054dcac    mov ecx,this"
 "	      0054dcaf    movsx ecx,word ptr [ecx+0DCh]"
 "	      0054dcb6    cmp eax,ecx"
 "	      0054dcb8    jg near ptr 0054DCCAh"
-"	      0054dcbe    mov eax,[ebp-14h]"
+"	      0054dcbe    mov eax,this"
 "	      0054dcc1    mov word ptr [eax+0DCh],0"
 "	      0054dcca    jmp near ptr 0054DCCFh"
 "	      0054dccf    jmp near ptr 0054DCD4h"
@@ -14117,30 +14117,30 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 "	      0054dce4    push ebx"
 "	      0054dce5    push esi"
 "	      0054dce6    push edi"
-"	      0054dce7    mov [ebp-64h],ecx"
+"	      0054dce7    mov this,ecx"
 );
 // LINE 2290:
 	asm( 
-"	      0054dcea    mov word ptr [ebp-8],0"
+"	      0054dcea    mov yaw,0"
 );
 // LINE 2291:
 	asm( 
-"	      0054dcf0    mov eax,[ebp-64h]"
+"	      0054dcf0    mov eax,this"
 "	      0054dcf3    cmp dword ptr [eax+178h],0"
 "	      0054dcfa    je near ptr 0054DD0Eh"
 );
 // LINE 2292:
 	asm( 
-"	      0054dd00    mov ecx,[ebp-64h]"
+"	      0054dd00    mov ecx,this"
 "	      0054dd03    call 00551A3Dh"
 );
 // LINE 2293:
 	asm( 
-"	      0054dd08    mov word ptr [ebp-8],1"
+"	      0054dd08    mov yaw,1"
 );
 // LINE 2295:
 	asm( 
-"	      0054dd0e    cmp dword ptr [ebp+8],0"
+"	      0054dd0e    cmp moveinfo,0"
 "	      0054dd12    jne near ptr 0054DD34h"
 "	      0054dd18    push 8C085h"
 "	      0054dd1d    push 5BB290h"
@@ -14153,19 +14153,19 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 	asm( 
 "	      0054dd34    push 10h"
 "	      0054dd36    push 0"
-"	      0054dd38    mov eax,[ebp+8]"
+"	      0054dd38    mov eax,moveinfo"
 "	      0054dd3b    push eax"
 "	      0054dd3c    call 00554C10h"
 "	      0054dd41    add esp,0Ch"
 );
 // LINE 2297:
 	asm( 
-"	      0054dd44    mov eax,[ebp+8]"
+"	      0054dd44    mov eax,moveinfo"
 "	      0054dd47    push eax"
-"	      0054dd48    mov eax,[ebp-64h]"
+"	      0054dd48    mov eax,this"
 "	      0054dd4b    mov eax,[eax+174h]"
 "	      0054dd51    push eax"
-"	      0054dd52    mov eax,[ebp-64h]"
+"	      0054dd52    mov eax,this"
 "	      0054dd55    add eax,168h"
 "	      0054dd5a    mov ecx,[eax+8]"
 "	      0054dd5d    push ecx"
@@ -14173,26 +14173,26 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 "	      0054dd61    push ecx"
 "	      0054dd62    mov eax,[eax]"
 "	      0054dd64    push eax"
-"	      0054dd65    mov ecx,[ebp-64h]"
+"	      0054dd65    mov ecx,this"
 "	      0054dd68    call 005559B2h"
-"	      0054dd6d    mov [ebp-4],eax"
+"	      0054dd6d    mov movecode,eax"
 );
 // LINE 2298:
 	asm( 
 "	      0054dd70    test dword ptr [ebp-8],0FFFFh"
 "	      0054dd77    jne near ptr 0054DD87h"
-"	      0054dd7d    cmp dword ptr [ebp-4],0"
+"	      0054dd7d    cmp movecode,0"
 "	      0054dd81    jne near ptr 0054DE09h"
 );
 // LINE 2299:
 	asm( 
-"	      0054dd87    mov ecx,[ebp-64h]"
+"	      0054dd87    mov ecx,this"
 "	      0054dd8a    call 0054FAEEh"
 );
 // LINE 2300:
 	asm( 
 "	      0054dd8f    jmp near ptr 0054DD94h"
-"	      0054dd94    mov eax,[ebp-64h]"
+"	      0054dd94    mov eax,this"
 "	      0054dd97    xor ecx,ecx"
 "	      0054dd99    mov cx,[eax+20h]"
 "	      0054dd9d    test ecx,ecx"
@@ -14203,7 +14203,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 "	      0054ddb4    push 5BBA14h"
 "	      0054ddb9    call 00554F30h"
 "	      0054ddbe    add esp,10h"
-"	      0054ddc1    mov eax,[ebp-64h]"
+"	      0054ddc1    mov eax,this"
 "	      0054ddc4    add eax,3Ch"
 "	      0054ddc7    lea ecx,[ebp-60h]"
 "	      0054ddca    mov edx,[eax]"
@@ -14213,7 +14213,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 "	      0054ddd4    mov eax,[eax+8]"
 "	      0054ddd7    mov [ecx+8],eax"
 "	      0054ddda    push 40h"
-"	      0054dddc    mov eax,[ebp-64h]"
+"	      0054dddc    mov eax,this"
 "	      0054dddf    add eax,48h"
 "	      0054dde2    push eax"
 "	      0054dde3    lea eax,[ebp-48h]"
@@ -14223,7 +14223,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 "	      0054ddef    push 3"
 "	      0054ddf1    lea eax,[ebp-60h]"
 "	      0054ddf4    push eax"
-"	      0054ddf5    mov eax,[ebp-64h]"
+"	      0054ddf5    mov eax,this"
 "	      0054ddf8    mov eax,[eax+2Ch]"
 "	      0054ddfb    push eax"
 "	      0054ddfc    call 004D8781h"
@@ -14232,7 +14232,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 );
 // LINE 2304:
 	asm( 
-"	      0054de09    mov eax,[ebp-4]"
+"	      0054de09    mov eax,movecode"
 "	      0054de0c    jmp near ptr 0054DE11h"
 );
 // LINE 2305:
@@ -14259,11 +14259,11 @@ void cAvatar::Simulate() {
 "	      0054de1e    push ebx"
 "	      0054de1f    push esi"
 "	      0054de20    push edi"
-"	      0054de21    mov [ebp-60h],ecx"
+"	      0054de21    mov this,ecx"
 );
 // LINE 2309:
 	asm( 
-"	      0054de24    mov eax,[ebp-60h]"
+"	      0054de24    mov eax,this"
 "	      0054de27    movsx eax,word ptr [eax+0E2h]"
 "	      0054de2e    test eax,eax"
 "	      0054de30    jne near ptr 0054DFC2h"
@@ -14284,16 +14284,16 @@ void cAvatar::Simulate() {
 // LINE 2311:
 	asm( 
 "	      0054de5f    jmp near ptr 0054DE64h"
-"	      0054de64    mov eax,[ebp-60h]"
+"	      0054de64    mov eax,this"
 "	      0054de67    mov eax,[eax+130h]"
-"	      0054de6d    mov [ebp-1Ch],eax"
+"	      0054de6d    mov dy,eax"
 );
 // LINE 2312:
 	asm( 
-"	      0054de70    cmp dword ptr [ebp-1Ch],0"
+"	      0054de70    cmp dy,0"
 "	      0054de74    je near ptr 0054DE8Eh"
 "	      0054de7a    mov eax,ds:[5B4968h]"
-"	      0054de7f    mov ecx,[ebp-1Ch]"
+"	      0054de7f    mov ecx,dy"
 "	      0054de82    cmp [eax+0A4h],ecx"
 "	      0054de88    je near ptr 0054DEAAh"
 "	      0054de8e    push 8C085h"
@@ -14306,7 +14306,7 @@ void cAvatar::Simulate() {
 // LINE 2313:
 	asm( 
 "	      0054deaa    jmp near ptr 0054DEAFh"
-"	      0054deaf    mov eax,[ebp-60h]"
+"	      0054deaf    mov eax,this"
 "	      0054deb2    xor ecx,ecx"
 "	      0054deb4    mov cx,[eax+20h]"
 "	      0054deb8    test ecx,ecx"
@@ -14317,7 +14317,7 @@ void cAvatar::Simulate() {
 "	      0054decf    push 5BBA14h"
 "	      0054ded4    call 00554F30h"
 "	      0054ded9    add esp,10h"
-"	      0054dedc    mov eax,[ebp-60h]"
+"	      0054dedc    mov eax,this"
 "	      0054dedf    cmp dword ptr [eax+130h],0"
 "	      0054dee6    jne near ptr 0054DF08h"
 "	      0054deec    push 8C085h"
@@ -14326,22 +14326,22 @@ void cAvatar::Simulate() {
 "	      0054defb    push 5BBA14h"
 "	      0054df00    call 00554F30h"
 "	      0054df05    add esp,10h"
-"	      0054df08    mov eax,[ebp-60h]"
+"	      0054df08    mov eax,this"
 "	      0054df0b    mov eax,[eax+130h]"
 "	      0054df11    mov eax,[eax+18h]"
-"	      0054df14    mov ecx,[ebp-60h]"
+"	      0054df14    mov ecx,this"
 "	      0054df17    sub eax,[ecx+0A0h]"
 "	      0054df1d    mov [ebp-5Ch],eax"
-"	      0054df20    mov eax,[ebp-60h]"
+"	      0054df20    mov eax,this"
 "	      0054df23    mov eax,[eax+130h]"
 "	      0054df29    mov eax,[eax+20h]"
-"	      0054df2c    mov ecx,[ebp-60h]"
+"	      0054df2c    mov ecx,this"
 "	      0054df2f    sub eax,[ecx+0A8h]"
 "	      0054df35    mov [ebp-54h],eax"
-"	      0054df38    mov eax,[ebp-60h]"
+"	      0054df38    mov eax,this"
 "	      0054df3b    mov eax,[eax+130h]"
 "	      0054df41    mov eax,[eax+1Ch]"
-"	      0054df44    mov ecx,[ebp-60h]"
+"	      0054df44    mov ecx,this"
 "	      0054df47    sub eax,[ecx+0A4h]"
 "	      0054df4d    mov [ebp-58h],eax"
 "	      0054df50    push 1"
@@ -14353,7 +14353,7 @@ void cAvatar::Simulate() {
 "	      0054df5d    push eax"
 "	      0054df5e    push 0"
 "	      0054df60    push 0"
-"	      0054df62    mov ecx,[ebp-60h]"
+"	      0054df62    mov ecx,this"
 "	      0054df65    call 00555A60h"
 "	      0054df6a    mov [ebp-50h],eax"
 "	      0054df6d    cmp dword ptr [ebp-50h],0"
@@ -14364,10 +14364,10 @@ void cAvatar::Simulate() {
 "	      0054df86    push 5BBA14h"
 "	      0054df8b    call 00554F30h"
 "	      0054df90    add esp,10h"
-"	      0054df93    mov eax,[ebp-60h]"
+"	      0054df93    mov eax,this"
 "	      0054df96    mov eax,[eax+130h]"
 "	      0054df9c    add eax,18h"
-"	      0054df9f    mov ecx,[ebp-60h]"
+"	      0054df9f    mov ecx,this"
 "	      0054dfa2    add ecx,0A0h"
 "	      0054dfa8    mov edx,[eax]"
 "	      0054dfaa    mov [ecx],edx"
@@ -14395,16 +14395,16 @@ void cAvatar::Simulate() {
 );
 // LINE 2317:
 	asm( 
-"	      0054dfeb    mov ecx,[ebp-60h]"
+"	      0054dfeb    mov ecx,this"
 "	      0054dfee    call 005466C5h"
 );
 // LINE 2319:
 	asm( 
-"	      0054dff3    lea eax,[ebp-14h]"
+"	      0054dff3    lea eax,moveinfo.locType"
 "	      0054dff6    push eax"
-"	      0054dff7    mov ecx,[ebp-60h]"
+"	      0054dff7    mov ecx,this"
 "	      0054dffa    call 0054DCDEh"
-"	      0054dfff    mov [ebp-4],eax"
+"	      0054dfff    mov movecode,eax"
 );
 // LINE 2321:
 	asm( 
@@ -14419,7 +14419,7 @@ void cAvatar::Simulate() {
 );
 // LINE 2323:
 	asm( 
-"	      0054e022    mov eax,[ebp-60h]"
+"	      0054e022    mov eax,this"
 "	      0054e025    movsx eax,word ptr [eax+0F2h]"
 "	      0054e02c    test eax,eax"
 "	      0054e02e    jne near ptr 0054E055h"
@@ -14428,58 +14428,58 @@ void cAvatar::Simulate() {
 // Block start:
 	class cYObject* person;
 	asm( 
-"	      0054e034    mov ecx,[ebp-60h]"
+"	      0054e034    mov ecx,this"
 "	      0054e037    call 005573F5h"
-"	      0054e03c    mov [ebp-20h],eax"
+"	      0054e03c    mov person,eax"
 );
 // LINE 2325:
 	asm( 
-"	      0054e03f    cmp dword ptr [ebp-20h],0"
+"	      0054e03f    cmp person,0"
 "	      0054e043    jne near ptr 0054E055h"
 );
 // LINE 2326:
 	asm( 
-"	      0054e049    mov eax,[ebp-60h]"
+"	      0054e049    mov eax,this"
 "	      0054e04c    mov word ptr [eax+0F2h],1"
 );
 // LINE 2330:
 // Block end:
 	asm( 
-"	      0054e055    mov eax,[ebp-60h]"
+"	      0054e055    mov eax,this"
 "	      0054e058    add eax,3Ch"
 "	      0054e05b    push eax"
 "	      0054e05c    call 00546B56h"
 "	      0054e061    add esp,4"
-"	      0054e064    mov [ebp-18h],eax"
+"	      0054e064    mov hd,eax"
 );
 // LINE 2332:
 	asm( 
-"	      0054e067    cmp dword ptr [ebp-18h],0"
+"	      0054e067    cmp hd,0"
 "	      0054e06b    je near ptr 0054E237h"
 );
 // LINE 2333:
 // Block start:
 	class cYObject* person;
 	asm( 
-"	      0054e071    mov eax,[ebp-18h]"
+"	      0054e071    mov eax,hd"
 "	      0054e074    mov ds:[5B4968h],eax"
 );
 // LINE 2334:
 	asm( 
-"	      0054e079    mov ecx,[ebp-60h]"
+"	      0054e079    mov ecx,this"
 "	      0054e07c    call 005573F5h"
-"	      0054e081    mov [ebp-24h],eax"
+"	      0054e081    mov person,eax"
 );
 // LINE 2337:
 	asm( 
-"	      0054e084    cmp dword ptr [ebp-24h],0"
+"	      0054e084    cmp person,0"
 "	      0054e088    je near ptr 0054E121h"
 );
 // LINE 2338:
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      0054e08e    mov eax,[ebp-24h]"
+"	      0054e08e    mov eax,person"
 "	      0054e091    movsx eax,word ptr [eax+0D8h]"
 "	      0054e098    cmp eax,6"
 "	      0054e09b    je near ptr 0054E0BDh"
@@ -14496,13 +14496,13 @@ void cAvatar::Simulate() {
 "	      0054e0c2    mov eax,ds:[5B4968h]"
 "	      0054e0c7    mov eax,[eax+0A4h]"
 "	      0054e0cd    push eax"
-"	      0054e0ce    mov ecx,[ebp-60h]"
+"	      0054e0ce    mov ecx,this"
 "	      0054e0d1    call 00552190h"
-"	      0054e0d6    mov [ebp-28h],eax"
+"	      0054e0d6    mov obj,eax"
 );
 // LINE 2341:
 	asm( 
-"	      0054e0d9    cmp dword ptr [ebp-28h],0"
+"	      0054e0d9    cmp obj,0"
 "	      0054e0dd    jne near ptr 0054E0FFh"
 "	      0054e0e3    push 8C085h"
 "	      0054e0e8    push 5BB408h"
@@ -14513,16 +14513,16 @@ void cAvatar::Simulate() {
 );
 // LINE 2342:
 	asm( 
-"	      0054e0ff    mov eax,[ebp-24h]"
+"	      0054e0ff    mov eax,person"
 "	      0054e102    mov eax,[eax+1Ch]"
 "	      0054e105    push eax"
 "	      0054e106    push 8"
-"	      0054e108    mov ecx,[ebp-60h]"
+"	      0054e108    mov ecx,this"
 "	      0054e10b    call 0055B920h"
 );
 // LINE 2345:
 	asm( 
-"	      0054e110    mov eax,[ebp-60h]"
+"	      0054e110    mov eax,this"
 "	      0054e113    mov word ptr [eax+0F2h],1"
 );
 // LINE 2348:
@@ -14580,7 +14580,7 @@ void cAvatar::Simulate() {
 	asm( 
 "	      0054e1df    push 0"
 "	      0054e1e1    push 0Ch"
-"	      0054e1e3    mov ecx,[ebp-60h]"
+"	      0054e1e3    mov ecx,this"
 "	      0054e1e6    call 0054C1DDh"
 );
 // LINE 2351:
@@ -14588,17 +14588,17 @@ void cAvatar::Simulate() {
 "	      0054e1eb    mov eax,ds:[5B4968h]"
 "	      0054e1f0    mov eax,[eax+0A4h]"
 "	      0054e1f6    push eax"
-"	      0054e1f7    mov ecx,[ebp-60h]"
+"	      0054e1f7    mov ecx,this"
 "	      0054e1fa    call 0054CECAh"
 );
 // LINE 2352:
 	asm( 
-"	      0054e1ff    mov eax,[ebp-60h]"
+"	      0054e1ff    mov eax,this"
 "	      0054e202    mov word ptr [eax+0E2h],0"
 );
 // LINE 2356:
 	asm( 
-"	      0054e20b    mov eax,[ebp-18h]"
+"	      0054e20b    mov eax,hd"
 "	      0054e20e    mov dword ptr [eax+8],1"
 );
 // LINE 2357:
@@ -14620,22 +14620,22 @@ void cAvatar::Simulate() {
 // Block end:
 	asm( 
 "	      0054e232    jmp near ptr 0054E482h"
-"	      0054e237    cmp dword ptr [ebp-4],5"
+"	      0054e237    cmp movecode,5"
 "	      0054e23b    jne near ptr 0054E482h"
 );
 // LINE 2363:
 // Block start:
 	class cYObject* person;
 	asm( 
-"	      0054e241    mov eax,[ebp-0Ch]"
+"	      0054e241    mov eax,moveinfo.dyBlock"
 "	      0054e244    push eax"
 "	      0054e245    call 00544874h"
 "	      0054e24a    add esp,4"
-"	      0054e24d    mov [ebp-2Ch],eax"
+"	      0054e24d    mov person,eax"
 );
 // LINE 2364:
 	asm( 
-"	      0054e250    cmp dword ptr [ebp-2Ch],0"
+"	      0054e250    cmp person,0"
 "	      0054e254    jne near ptr 0054E276h"
 "	      0054e25a    push 8C085h"
 "	      0054e25f    push 5BB434h"
@@ -14646,20 +14646,20 @@ void cAvatar::Simulate() {
 );
 // LINE 2365:
 	asm( 
-"	      0054e276    mov eax,[ebp-2Ch]"
+"	      0054e276    mov eax,person"
 "	      0054e279    movsx eax,word ptr [eax+0D8h]"
 "	      0054e280    cmp eax,6"
 "	      0054e283    jne near ptr 0054E482h"
-"	      0054e289    mov ecx,[ebp-60h]"
+"	      0054e289    mov ecx,this"
 "	      0054e28c    call 005573F5h"
 "	      0054e291    test eax,eax"
 "	      0054e293    jne near ptr 0054E482h"
 );
 // LINE 2366:
 	asm( 
-"	      0054e299    mov eax,[ebp-60h]"
+"	      0054e299    mov eax,this"
 "	      0054e29c    add eax,3Ch"
-"	      0054e29f    mov ecx,[ebp-2Ch]"
+"	      0054e29f    mov ecx,person"
 "	      0054e2a2    add ecx,3Ch"
 "	      0054e2a5    mov edx,[eax]"
 "	      0054e2a7    mov [ecx],edx"
@@ -14667,20 +14667,20 @@ void cAvatar::Simulate() {
 "	      0054e2ac    mov [ecx+4],edx"
 "	      0054e2af    mov eax,[eax+8]"
 "	      0054e2b2    mov [ecx+8],eax"
-"	      0054e2b5    mov ecx,[ebp-2Ch]"
+"	      0054e2b5    mov ecx,person"
 "	      0054e2b8    call 005507ECh"
 "	      0054e2bd    mov eax,20000000h"
-"	      0054e2c2    mov ecx,[ebp-2Ch]"
+"	      0054e2c2    mov ecx,person"
 "	      0054e2c5    sub eax,[ecx+44h]"
 "	      0054e2c8    sar eax,16h"
 "	      0054e2cb    mov [ebp-48h],al"
-"	      0054e2ce    mov eax,[ebp-2Ch]"
+"	      0054e2ce    mov eax,person"
 "	      0054e2d1    mov eax,[eax+3Ch]"
 "	      0054e2d4    add eax,20000000h"
 "	      0054e2d9    sar eax,16h"
 "	      0054e2dc    mov [ebp-4Ch],al"
 "	      0054e2df    jmp near ptr 0054E2E4h"
-"	      0054e2e4    mov eax,[ebp-2Ch]"
+"	      0054e2e4    mov eax,person"
 "	      0054e2e7    xor ecx,ecx"
 "	      0054e2e9    mov cx,[eax+20h]"
 "	      0054e2ed    test ecx,ecx"
@@ -14692,43 +14692,43 @@ void cAvatar::Simulate() {
 "	      0054e309    call 00554F30h"
 "	      0054e30e    add esp,10h"
 "	      0054e311    mov al,[ebp-4Ch]"
-"	      0054e314    mov ecx,[ebp-2Ch]"
+"	      0054e314    mov ecx,person"
 "	      0054e317    mov [ecx+88h],al"
 "	      0054e31d    mov al,[ebp-48h]"
-"	      0054e320    mov ecx,[ebp-2Ch]"
+"	      0054e320    mov ecx,person"
 "	      0054e323    mov [ecx+89h],al"
 "	      0054e329    jmp near ptr 0054E32Eh"
-"	      0054e32e    mov ecx,[ebp-2Ch]"
+"	      0054e32e    mov ecx,person"
 "	      0054e331    call 0055069Bh"
 "	      0054e336    jmp near ptr 0054E33Bh"
 );
 // LINE 2367:
 	asm( 
-"	      0054e33b    mov eax,[ebp-60h]"
+"	      0054e33b    mov eax,this"
 "	      0054e33e    add eax,24h"
 "	      0054e341    push eax"
-"	      0054e342    mov ecx,[ebp-2Ch]"
+"	      0054e342    mov ecx,person"
 "	      0054e345    call 0054CECAh"
 );
 // LINE 2368:
 	asm( 
 "	      0054e34a    jmp near ptr 0054E34Fh"
 "	      0054e34f    jmp near ptr 0054E354h"
-"	      0054e354    mov eax,[ebp-2Ch]"
+"	      0054e354    mov eax,person"
 "	      0054e357    movsx eax,word ptr [eax+8]"
 "	      0054e35b    lea eax,[eax*4-4]"
 "	      0054e362    lea eax,[eax+eax*4]"
-"	      0054e365    mov ecx,[ebp-2Ch]"
+"	      0054e365    mov ecx,person"
 "	      0054e368    mov ecx,[ecx+4]"
 "	      0054e36b    movsx eax,word ptr [eax+ecx]"
 "	      0054e36f    cmp eax,322h"
 "	      0054e374    je near ptr 0054E3D2h"
 "	      0054e37a    jmp near ptr 0054E37Fh"
 "	      0054e37f    jmp near ptr 0054E384h"
-"	      0054e384    mov eax,[ebp-2Ch]"
+"	      0054e384    mov eax,person"
 "	      0054e387    movsx eax,word ptr [eax+0Ah]"
 "	      0054e38b    dec eax"
-"	      0054e38c    mov ecx,[ebp-2Ch]"
+"	      0054e38c    mov ecx,person"
 "	      0054e38f    movsx ecx,word ptr [ecx+8]"
 "	      0054e393    cmp eax,ecx"
 "	      0054e395    jg near ptr 0054E3B7h"
@@ -14741,7 +14741,7 @@ void cAvatar::Simulate() {
 "	      0054e3b7    push 322h"
 "	      0054e3bc    push 0"
 "	      0054e3be    push 0"
-"	      0054e3c0    mov ecx,[ebp-2Ch]"
+"	      0054e3c0    mov ecx,person"
 "	      0054e3c3    call 0055CE37h"
 "	      0054e3c8    jmp near ptr 0054E3D7h"
 "	      0054e3cd    jmp near ptr 0054E3D7h"
@@ -14749,7 +14749,7 @@ void cAvatar::Simulate() {
 );
 // LINE 2369:
 	asm( 
-"	      0054e3d7    mov eax,[ebp-60h]"
+"	      0054e3d7    mov eax,this"
 "	      0054e3da    cmp dword ptr [eax+90h],0"
 "	      0054e3e1    jne near ptr 0054E403h"
 "	      0054e3e7    push 8C085h"
@@ -14758,20 +14758,20 @@ void cAvatar::Simulate() {
 "	      0054e3f6    push 5BBA14h"
 "	      0054e3fb    call 00554F30h"
 "	      0054e400    add esp,10h"
-"	      0054e403    mov eax,[ebp-60h]"
+"	      0054e403    mov eax,this"
 "	      0054e406    cmp dword ptr [eax+98h],0"
 "	      0054e40d    je near ptr 0054E429h"
-"	      0054e413    mov eax,[ebp-60h]"
+"	      0054e413    mov eax,this"
 "	      0054e416    mov eax,[eax+98h]"
 "	      0054e41c    cmp dword ptr [eax+1Ch],546F7465h"
 "	      0054e423    je near ptr 0054E471h"
 "	      0054e429    push 546F7465h"
-"	      0054e42e    mov eax,[ebp-60h]"
+"	      0054e42e    mov eax,this"
 "	      0054e431    mov ecx,[eax+90h]"
 "	      0054e437    call 00560BF0h"
-"	      0054e43c    mov ecx,[ebp-60h]"
+"	      0054e43c    mov ecx,this"
 "	      0054e43f    mov [ecx+98h],eax"
-"	      0054e445    mov eax,[ebp-60h]"
+"	      0054e445    mov eax,this"
 "	      0054e448    cmp dword ptr [eax+98h],0"
 "	      0054e44f    jne near ptr 0054E471h"
 "	      0054e455    push 8C085h"
@@ -14784,13 +14784,13 @@ void cAvatar::Simulate() {
 );
 // LINE 2370:
 	asm( 
-"	      0054e476    mov eax,[ebp-60h]"
+"	      0054e476    mov eax,this"
 "	      0054e479    mov word ptr [eax+0F2h],0"
 );
 // LINE 2379:
 // Block end:
 	asm( 
-"	      0054e482    mov eax,[ebp-60h]"
+"	      0054e482    mov eax,this"
 "	      0054e485    mov eax,[eax+174h]"
 "	      0054e48b    mov [ebp-44h],eax"
 "	      0054e48e    cmp dword ptr [ebp-44h],10000h"
@@ -14806,19 +14806,19 @@ void cAvatar::Simulate() {
 "	      0054e4cd    mov word ptr [ebp-40h],4"
 "	      0054e4d3    jmp near ptr 0054E4DEh"
 "	      0054e4d8    mov word ptr [ebp-40h],8"
-"	      0054e4de    lea eax,[ebp-14h]"
+"	      0054e4de    lea eax,moveinfo.locType"
 "	      0054e4e1    push eax"
-"	      0054e4e2    mov eax,[ebp-4]"
+"	      0054e4e2    mov eax,movecode"
 "	      0054e4e5    push eax"
 "	      0054e4e6    mov eax,[ebp-40h]"
 "	      0054e4e9    push eax"
-"	      0054e4ea    mov ecx,[ebp-60h]"
+"	      0054e4ea    mov ecx,this"
 "	      0054e4ed    call 0054E579h"
 "	      0054e4f2    jmp near ptr 0054E4F7h"
 );
 // LINE 2380:
 	asm( 
-"	      0054e4f7    mov eax,[ebp-60h]"
+"	      0054e4f7    mov eax,this"
 "	      0054e4fa    cmp dword ptr [eax+98h],0"
 "	      0054e501    jne near ptr 0054E528h"
 "	      0054e507    push 8C085h"
@@ -14828,18 +14828,18 @@ void cAvatar::Simulate() {
 "	      0054e51b    call 00554F30h"
 "	      0054e520    add esp,10h"
 "	      0054e523    jmp near ptr 0054E56Fh"
-"	      0054e528    mov eax,[ebp-60h]"
+"	      0054e528    mov eax,this"
 "	      0054e52b    inc word ptr [eax+0DCh]"
 "	      0054e532    jmp near ptr 0054E537h"
-"	      0054e537    mov eax,[ebp-60h]"
+"	      0054e537    mov eax,this"
 "	      0054e53a    mov eax,[eax+98h]"
 "	      0054e540    mov eax,[eax+28h]"
 "	      0054e543    movsx eax,word ptr [eax+14h]"
-"	      0054e547    mov ecx,[ebp-60h]"
+"	      0054e547    mov ecx,this"
 "	      0054e54a    movsx ecx,word ptr [ecx+0DCh]"
 "	      0054e551    cmp eax,ecx"
 "	      0054e553    jg near ptr 0054E565h"
-"	      0054e559    mov eax,[ebp-60h]"
+"	      0054e559    mov eax,this"
 "	      0054e55c    mov word ptr [eax+0DCh],0"
 "	      0054e565    jmp near ptr 0054E56Ah"
 "	      0054e56a    jmp near ptr 0054E56Fh"
@@ -14865,17 +14865,17 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e57f    push ebx"
 "	      0054e580    push esi"
 "	      0054e581    push edi"
-"	      0054e582    mov [ebp-8],ecx"
+"	      0054e582    mov this,ecx"
 );
 // LINE 2406:
 	asm( 
-"	      0054e585    mov eax,[ebp+0Ch]"
+"	      0054e585    mov eax,movecode"
 "	      0054e588    mov [ebp-0Ch],eax"
 "	      0054e58b    jmp near ptr 0054FA9Eh"
 );
 // LINE 2408:
 	asm( 
-"	      0054e590    movsx eax,word ptr [ebp+8]"
+"	      0054e590    movsx eax,speed"
 "	      0054e594    test eax,eax"
 "	      0054e596    je near ptr 0054E5B8h"
 "	      0054e59c    push 8C085h"
@@ -14887,15 +14887,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2409:
 	asm( 
-"	      0054e5b8    mov eax,[ebp-8]"
+"	      0054e5b8    mov eax,this"
 "	      0054e5bb    movsx eax,word ptr [eax+0F2h]"
 "	      0054e5c2    test eax,eax"
 "	      0054e5c4    je near ptr 0054E723h"
-"	      0054e5ca    mov eax,[ebp-8]"
+"	      0054e5ca    mov eax,this"
 "	      0054e5cd    mov eax,[eax+90h]"
 "	      0054e5d3    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054e5da    jne near ptr 0054E684h"
-"	      0054e5e0    mov eax,[ebp-8]"
+"	      0054e5e0    mov eax,this"
 "	      0054e5e3    cmp dword ptr [eax+90h],0"
 "	      0054e5ea    jne near ptr 0054E60Ch"
 "	      0054e5f0    push 8C085h"
@@ -14904,20 +14904,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e5ff    push 5BBA14h"
 "	      0054e604    call 00554F30h"
 "	      0054e609    add esp,10h"
-"	      0054e60c    mov eax,[ebp-8]"
+"	      0054e60c    mov eax,this"
 "	      0054e60f    cmp dword ptr [eax+98h],0"
 "	      0054e616    je near ptr 0054E632h"
-"	      0054e61c    mov eax,[ebp-8]"
+"	      0054e61c    mov eax,this"
 "	      0054e61f    mov eax,[eax+98h]"
 "	      0054e625    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054e62c    je near ptr 0054E67Ah"
 "	      0054e632    push 44675374h"
-"	      0054e637    mov eax,[ebp-8]"
+"	      0054e637    mov eax,this"
 "	      0054e63a    mov ecx,[eax+90h]"
 "	      0054e640    call 00560BF0h"
-"	      0054e645    mov ecx,[ebp-8]"
+"	      0054e645    mov ecx,this"
 "	      0054e648    mov [ecx+98h],eax"
-"	      0054e64e    mov eax,[ebp-8]"
+"	      0054e64e    mov eax,this"
 "	      0054e651    cmp dword ptr [eax+98h],0"
 "	      0054e658    jne near ptr 0054E67Ah"
 "	      0054e65e    push 8C085h"
@@ -14928,7 +14928,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e677    add esp,10h"
 "	      0054e67a    jmp near ptr 0054E67Fh"
 "	      0054e67f    jmp near ptr 0054E723h"
-"	      0054e684    mov eax,[ebp-8]"
+"	      0054e684    mov eax,this"
 "	      0054e687    cmp dword ptr [eax+90h],0"
 "	      0054e68e    jne near ptr 0054E6B0h"
 "	      0054e694    push 8C085h"
@@ -14937,20 +14937,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e6a3    push 5BBA14h"
 "	      0054e6a8    call 00554F30h"
 "	      0054e6ad    add esp,10h"
-"	      0054e6b0    mov eax,[ebp-8]"
+"	      0054e6b0    mov eax,this"
 "	      0054e6b3    cmp dword ptr [eax+98h],0"
 "	      0054e6ba    je near ptr 0054E6D6h"
-"	      0054e6c0    mov eax,[ebp-8]"
+"	      0054e6c0    mov eax,this"
 "	      0054e6c3    mov eax,[eax+98h]"
 "	      0054e6c9    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      0054e6d0    je near ptr 0054E71Eh"
 "	      0054e6d6    push 4E6F4D6Fh"
-"	      0054e6db    mov eax,[ebp-8]"
+"	      0054e6db    mov eax,this"
 "	      0054e6de    mov ecx,[eax+90h]"
 "	      0054e6e4    call 00560BF0h"
-"	      0054e6e9    mov ecx,[ebp-8]"
+"	      0054e6e9    mov ecx,this"
 "	      0054e6ec    mov [ecx+98h],eax"
-"	      0054e6f2    mov eax,[ebp-8]"
+"	      0054e6f2    mov eax,this"
 "	      0054e6f5    cmp dword ptr [eax+98h],0"
 "	      0054e6fc    jne near ptr 0054E71Eh"
 "	      0054e702    push 8C085h"
@@ -14967,21 +14967,21 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2413:
 	asm( 
-"	      0054e728    movsx eax,word ptr [ebp+8]"
+"	      0054e728    movsx eax,speed"
 "	      0054e72c    test eax,eax"
 "	      0054e72e    jne near ptr 0054E8D5h"
 );
 // LINE 2414:
 	asm( 
-"	      0054e734    mov eax,[ebp-8]"
+"	      0054e734    mov eax,this"
 "	      0054e737    movsx eax,word ptr [eax+0F2h]"
 "	      0054e73e    test eax,eax"
 "	      0054e740    je near ptr 0054E89Fh"
-"	      0054e746    mov eax,[ebp-8]"
+"	      0054e746    mov eax,this"
 "	      0054e749    mov eax,[eax+90h]"
 "	      0054e74f    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054e756    jne near ptr 0054E800h"
-"	      0054e75c    mov eax,[ebp-8]"
+"	      0054e75c    mov eax,this"
 "	      0054e75f    cmp dword ptr [eax+90h],0"
 "	      0054e766    jne near ptr 0054E788h"
 "	      0054e76c    push 8C085h"
@@ -14990,20 +14990,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e77b    push 5BBA14h"
 "	      0054e780    call 00554F30h"
 "	      0054e785    add esp,10h"
-"	      0054e788    mov eax,[ebp-8]"
+"	      0054e788    mov eax,this"
 "	      0054e78b    cmp dword ptr [eax+98h],0"
 "	      0054e792    je near ptr 0054E7AEh"
-"	      0054e798    mov eax,[ebp-8]"
+"	      0054e798    mov eax,this"
 "	      0054e79b    mov eax,[eax+98h]"
 "	      0054e7a1    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054e7a8    je near ptr 0054E7F6h"
 "	      0054e7ae    push 44675374h"
-"	      0054e7b3    mov eax,[ebp-8]"
+"	      0054e7b3    mov eax,this"
 "	      0054e7b6    mov ecx,[eax+90h]"
 "	      0054e7bc    call 00560BF0h"
-"	      0054e7c1    mov ecx,[ebp-8]"
+"	      0054e7c1    mov ecx,this"
 "	      0054e7c4    mov [ecx+98h],eax"
-"	      0054e7ca    mov eax,[ebp-8]"
+"	      0054e7ca    mov eax,this"
 "	      0054e7cd    cmp dword ptr [eax+98h],0"
 "	      0054e7d4    jne near ptr 0054E7F6h"
 "	      0054e7da    push 8C085h"
@@ -15014,7 +15014,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e7f3    add esp,10h"
 "	      0054e7f6    jmp near ptr 0054E7FBh"
 "	      0054e7fb    jmp near ptr 0054E89Fh"
-"	      0054e800    mov eax,[ebp-8]"
+"	      0054e800    mov eax,this"
 "	      0054e803    cmp dword ptr [eax+90h],0"
 "	      0054e80a    jne near ptr 0054E82Ch"
 "	      0054e810    push 8C085h"
@@ -15023,20 +15023,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e81f    push 5BBA14h"
 "	      0054e824    call 00554F30h"
 "	      0054e829    add esp,10h"
-"	      0054e82c    mov eax,[ebp-8]"
+"	      0054e82c    mov eax,this"
 "	      0054e82f    cmp dword ptr [eax+98h],0"
 "	      0054e836    je near ptr 0054E852h"
-"	      0054e83c    mov eax,[ebp-8]"
+"	      0054e83c    mov eax,this"
 "	      0054e83f    mov eax,[eax+98h]"
 "	      0054e845    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      0054e84c    je near ptr 0054E89Ah"
 "	      0054e852    push 4E6F4D6Fh"
-"	      0054e857    mov eax,[ebp-8]"
+"	      0054e857    mov eax,this"
 "	      0054e85a    mov ecx,[eax+90h]"
 "	      0054e860    call 00560BF0h"
-"	      0054e865    mov ecx,[ebp-8]"
+"	      0054e865    mov ecx,this"
 "	      0054e868    mov [ecx+98h],eax"
-"	      0054e86e    mov eax,[ebp-8]"
+"	      0054e86e    mov eax,this"
 "	      0054e871    cmp dword ptr [eax+98h],0"
 "	      0054e878    jne near ptr 0054E89Ah"
 "	      0054e87e    push 8C085h"
@@ -15049,40 +15049,40 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2415:
 	asm( 
-"	      0054e89f    mov eax,[ebp-8]"
+"	      0054e89f    mov eax,this"
 "	      0054e8a2    movsx eax,word ptr [eax+104h]"
 "	      0054e8a9    cmp eax,0Eh"
 "	      0054e8ac    jne near ptr 0054E8D0h"
 );
 // LINE 2416:
 	asm( 
-"	      0054e8b2    mov eax,[ebp-8]"
+"	      0054e8b2    mov eax,this"
 "	      0054e8b5    movsx eax,word ptr [eax+106h]"
 "	      0054e8bc    test eax,eax"
 "	      0054e8be    je near ptr 0054E8D0h"
 "	      0054e8c4    push 0"
 "	      0054e8c6    push 0FFFFFFFFh"
-"	      0054e8c8    mov ecx,[ebp-8]"
+"	      0054e8c8    mov ecx,this"
 "	      0054e8cb    call 0054C1DDh"
 );
 // LINE 2418:
 	asm( 
 "	      0054e8d0    jmp near ptr 0054EBF9h"
-"	      0054e8d5    movsx eax,word ptr [ebp+8]"
+"	      0054e8d5    movsx eax,speed"
 "	      0054e8d9    cmp eax,7"
 "	      0054e8dc    jge near ptr 0054EA70h"
 );
 // LINE 2419:
 	asm( 
-"	      0054e8e2    mov eax,[ebp-8]"
+"	      0054e8e2    mov eax,this"
 "	      0054e8e5    movsx eax,word ptr [eax+0F2h]"
 "	      0054e8ec    test eax,eax"
 "	      0054e8ee    je near ptr 0054EA4Dh"
-"	      0054e8f4    mov eax,[ebp-8]"
+"	      0054e8f4    mov eax,this"
 "	      0054e8f7    mov eax,[eax+90h]"
 "	      0054e8fd    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054e904    jne near ptr 0054E9AEh"
-"	      0054e90a    mov eax,[ebp-8]"
+"	      0054e90a    mov eax,this"
 "	      0054e90d    cmp dword ptr [eax+90h],0"
 "	      0054e914    jne near ptr 0054E936h"
 "	      0054e91a    push 8C085h"
@@ -15091,20 +15091,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e929    push 5BBA14h"
 "	      0054e92e    call 00554F30h"
 "	      0054e933    add esp,10h"
-"	      0054e936    mov eax,[ebp-8]"
+"	      0054e936    mov eax,this"
 "	      0054e939    cmp dword ptr [eax+98h],0"
 "	      0054e940    je near ptr 0054E95Ch"
-"	      0054e946    mov eax,[ebp-8]"
+"	      0054e946    mov eax,this"
 "	      0054e949    mov eax,[eax+98h]"
 "	      0054e94f    cmp dword ptr [eax+1Ch],4467526Eh"
 "	      0054e956    je near ptr 0054E9A4h"
 "	      0054e95c    push 4467526Eh"
-"	      0054e961    mov eax,[ebp-8]"
+"	      0054e961    mov eax,this"
 "	      0054e964    mov ecx,[eax+90h]"
 "	      0054e96a    call 00560BF0h"
-"	      0054e96f    mov ecx,[ebp-8]"
+"	      0054e96f    mov ecx,this"
 "	      0054e972    mov [ecx+98h],eax"
-"	      0054e978    mov eax,[ebp-8]"
+"	      0054e978    mov eax,this"
 "	      0054e97b    cmp dword ptr [eax+98h],0"
 "	      0054e982    jne near ptr 0054E9A4h"
 "	      0054e988    push 8C085h"
@@ -15115,7 +15115,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e9a1    add esp,10h"
 "	      0054e9a4    jmp near ptr 0054E9A9h"
 "	      0054e9a9    jmp near ptr 0054EA4Dh"
-"	      0054e9ae    mov eax,[ebp-8]"
+"	      0054e9ae    mov eax,this"
 "	      0054e9b1    cmp dword ptr [eax+90h],0"
 "	      0054e9b8    jne near ptr 0054E9DAh"
 "	      0054e9be    push 8C085h"
@@ -15124,20 +15124,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054e9cd    push 5BBA14h"
 "	      0054e9d2    call 00554F30h"
 "	      0054e9d7    add esp,10h"
-"	      0054e9da    mov eax,[ebp-8]"
+"	      0054e9da    mov eax,this"
 "	      0054e9dd    cmp dword ptr [eax+98h],0"
 "	      0054e9e4    je near ptr 0054EA00h"
-"	      0054e9ea    mov eax,[ebp-8]"
+"	      0054e9ea    mov eax,this"
 "	      0054e9ed    mov eax,[eax+98h]"
 "	      0054e9f3    cmp dword ptr [eax+1Ch],3157616Ch"
 "	      0054e9fa    je near ptr 0054EA48h"
 "	      0054ea00    push 3157616Ch"
-"	      0054ea05    mov eax,[ebp-8]"
+"	      0054ea05    mov eax,this"
 "	      0054ea08    mov ecx,[eax+90h]"
 "	      0054ea0e    call 00560BF0h"
-"	      0054ea13    mov ecx,[ebp-8]"
+"	      0054ea13    mov ecx,this"
 "	      0054ea16    mov [ecx+98h],eax"
-"	      0054ea1c    mov eax,[ebp-8]"
+"	      0054ea1c    mov eax,this"
 "	      0054ea1f    cmp dword ptr [eax+98h],0"
 "	      0054ea26    jne near ptr 0054EA48h"
 "	      0054ea2c    push 8C085h"
@@ -15150,13 +15150,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2420:
 	asm( 
-"	      0054ea4d    mov eax,[ebp-8]"
+"	      0054ea4d    mov eax,this"
 "	      0054ea50    movsx eax,word ptr [eax+106h]"
 "	      0054ea57    test eax,eax"
 "	      0054ea59    je near ptr 0054EA6Bh"
 "	      0054ea5f    push 0"
 "	      0054ea61    push 0Eh"
-"	      0054ea63    mov ecx,[ebp-8]"
+"	      0054ea63    mov ecx,this"
 "	      0054ea66    call 0054C1DDh"
 );
 // LINE 2422:
@@ -15165,15 +15165,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2423:
 	asm( 
-"	      0054ea70    mov eax,[ebp-8]"
+"	      0054ea70    mov eax,this"
 "	      0054ea73    movsx eax,word ptr [eax+0F2h]"
 "	      0054ea7a    test eax,eax"
 "	      0054ea7c    je near ptr 0054EBDBh"
-"	      0054ea82    mov eax,[ebp-8]"
+"	      0054ea82    mov eax,this"
 "	      0054ea85    mov eax,[eax+90h]"
 "	      0054ea8b    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054ea92    jne near ptr 0054EB3Ch"
-"	      0054ea98    mov eax,[ebp-8]"
+"	      0054ea98    mov eax,this"
 "	      0054ea9b    cmp dword ptr [eax+90h],0"
 "	      0054eaa2    jne near ptr 0054EAC4h"
 "	      0054eaa8    push 8C085h"
@@ -15182,20 +15182,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054eab7    push 5BBA14h"
 "	      0054eabc    call 00554F30h"
 "	      0054eac1    add esp,10h"
-"	      0054eac4    mov eax,[ebp-8]"
+"	      0054eac4    mov eax,this"
 "	      0054eac7    cmp dword ptr [eax+98h],0"
 "	      0054eace    je near ptr 0054EAEAh"
-"	      0054ead4    mov eax,[ebp-8]"
+"	      0054ead4    mov eax,this"
 "	      0054ead7    mov eax,[eax+98h]"
 "	      0054eadd    cmp dword ptr [eax+1Ch],4467526Eh"
 "	      0054eae4    je near ptr 0054EB32h"
 "	      0054eaea    push 4467526Eh"
-"	      0054eaef    mov eax,[ebp-8]"
+"	      0054eaef    mov eax,this"
 "	      0054eaf2    mov ecx,[eax+90h]"
 "	      0054eaf8    call 00560BF0h"
-"	      0054eafd    mov ecx,[ebp-8]"
+"	      0054eafd    mov ecx,this"
 "	      0054eb00    mov [ecx+98h],eax"
-"	      0054eb06    mov eax,[ebp-8]"
+"	      0054eb06    mov eax,this"
 "	      0054eb09    cmp dword ptr [eax+98h],0"
 "	      0054eb10    jne near ptr 0054EB32h"
 "	      0054eb16    push 8C085h"
@@ -15206,7 +15206,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054eb2f    add esp,10h"
 "	      0054eb32    jmp near ptr 0054EB37h"
 "	      0054eb37    jmp near ptr 0054EBDBh"
-"	      0054eb3c    mov eax,[ebp-8]"
+"	      0054eb3c    mov eax,this"
 "	      0054eb3f    cmp dword ptr [eax+90h],0"
 "	      0054eb46    jne near ptr 0054EB68h"
 "	      0054eb4c    push 8C085h"
@@ -15215,20 +15215,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054eb5b    push 5BBA14h"
 "	      0054eb60    call 00554F30h"
 "	      0054eb65    add esp,10h"
-"	      0054eb68    mov eax,[ebp-8]"
+"	      0054eb68    mov eax,this"
 "	      0054eb6b    cmp dword ptr [eax+98h],0"
 "	      0054eb72    je near ptr 0054EB8Eh"
-"	      0054eb78    mov eax,[ebp-8]"
+"	      0054eb78    mov eax,this"
 "	      0054eb7b    mov eax,[eax+98h]"
 "	      0054eb81    cmp dword ptr [eax+1Ch],3152756Eh"
 "	      0054eb88    je near ptr 0054EBD6h"
 "	      0054eb8e    push 3152756Eh"
-"	      0054eb93    mov eax,[ebp-8]"
+"	      0054eb93    mov eax,this"
 "	      0054eb96    mov ecx,[eax+90h]"
 "	      0054eb9c    call 00560BF0h"
-"	      0054eba1    mov ecx,[ebp-8]"
+"	      0054eba1    mov ecx,this"
 "	      0054eba4    mov [ecx+98h],eax"
-"	      0054ebaa    mov eax,[ebp-8]"
+"	      0054ebaa    mov eax,this"
 "	      0054ebad    cmp dword ptr [eax+98h],0"
 "	      0054ebb4    jne near ptr 0054EBD6h"
 "	      0054ebba    push 8C085h"
@@ -15241,13 +15241,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2424:
 	asm( 
-"	      0054ebdb    mov eax,[ebp-8]"
+"	      0054ebdb    mov eax,this"
 "	      0054ebde    movsx eax,word ptr [eax+106h]"
 "	      0054ebe5    test eax,eax"
 "	      0054ebe7    je near ptr 0054EBF9h"
 "	      0054ebed    push 0"
 "	      0054ebef    push 0Eh"
-"	      0054ebf1    mov ecx,[ebp-8]"
+"	      0054ebf1    mov ecx,this"
 "	      0054ebf4    call 0054C1DDh"
 );
 // LINE 2426:
@@ -15256,15 +15256,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2429:
 	asm( 
-"	      0054ebfe    mov eax,[ebp-8]"
+"	      0054ebfe    mov eax,this"
 "	      0054ec01    movsx eax,word ptr [eax+0F2h]"
 "	      0054ec08    test eax,eax"
 "	      0054ec0a    je near ptr 0054ED69h"
-"	      0054ec10    mov eax,[ebp-8]"
+"	      0054ec10    mov eax,this"
 "	      0054ec13    mov eax,[eax+90h]"
 "	      0054ec19    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054ec20    jne near ptr 0054ECCAh"
-"	      0054ec26    mov eax,[ebp-8]"
+"	      0054ec26    mov eax,this"
 "	      0054ec29    cmp dword ptr [eax+90h],0"
 "	      0054ec30    jne near ptr 0054EC52h"
 "	      0054ec36    push 8C085h"
@@ -15273,20 +15273,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ec45    push 5BBA14h"
 "	      0054ec4a    call 00554F30h"
 "	      0054ec4f    add esp,10h"
-"	      0054ec52    mov eax,[ebp-8]"
+"	      0054ec52    mov eax,this"
 "	      0054ec55    cmp dword ptr [eax+98h],0"
 "	      0054ec5c    je near ptr 0054EC78h"
-"	      0054ec62    mov eax,[ebp-8]"
+"	      0054ec62    mov eax,this"
 "	      0054ec65    mov eax,[eax+98h]"
 "	      0054ec6b    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054ec72    je near ptr 0054ECC0h"
 "	      0054ec78    push 44675374h"
-"	      0054ec7d    mov eax,[ebp-8]"
+"	      0054ec7d    mov eax,this"
 "	      0054ec80    mov ecx,[eax+90h]"
 "	      0054ec86    call 00560BF0h"
-"	      0054ec8b    mov ecx,[ebp-8]"
+"	      0054ec8b    mov ecx,this"
 "	      0054ec8e    mov [ecx+98h],eax"
-"	      0054ec94    mov eax,[ebp-8]"
+"	      0054ec94    mov eax,this"
 "	      0054ec97    cmp dword ptr [eax+98h],0"
 "	      0054ec9e    jne near ptr 0054ECC0h"
 "	      0054eca4    push 8C085h"
@@ -15297,7 +15297,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ecbd    add esp,10h"
 "	      0054ecc0    jmp near ptr 0054ECC5h"
 "	      0054ecc5    jmp near ptr 0054ED69h"
-"	      0054ecca    mov eax,[ebp-8]"
+"	      0054ecca    mov eax,this"
 "	      0054eccd    cmp dword ptr [eax+90h],0"
 "	      0054ecd4    jne near ptr 0054ECF6h"
 "	      0054ecda    push 8C085h"
@@ -15306,20 +15306,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ece9    push 5BBA14h"
 "	      0054ecee    call 00554F30h"
 "	      0054ecf3    add esp,10h"
-"	      0054ecf6    mov eax,[ebp-8]"
+"	      0054ecf6    mov eax,this"
 "	      0054ecf9    cmp dword ptr [eax+98h],0"
 "	      0054ed00    je near ptr 0054ED1Ch"
-"	      0054ed06    mov eax,[ebp-8]"
+"	      0054ed06    mov eax,this"
 "	      0054ed09    mov eax,[eax+98h]"
 "	      0054ed0f    cmp dword ptr [eax+1Ch],4661436Ch"
 "	      0054ed16    je near ptr 0054ED64h"
 "	      0054ed1c    push 4661436Ch"
-"	      0054ed21    mov eax,[ebp-8]"
+"	      0054ed21    mov eax,this"
 "	      0054ed24    mov ecx,[eax+90h]"
 "	      0054ed2a    call 00560BF0h"
-"	      0054ed2f    mov ecx,[ebp-8]"
+"	      0054ed2f    mov ecx,this"
 "	      0054ed32    mov [ecx+98h],eax"
-"	      0054ed38    mov eax,[ebp-8]"
+"	      0054ed38    mov eax,this"
 "	      0054ed3b    cmp dword ptr [eax+98h],0"
 "	      0054ed42    jne near ptr 0054ED64h"
 "	      0054ed48    push 8C085h"
@@ -15332,13 +15332,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2430:
 	asm( 
-"	      0054ed69    mov eax,[ebp-8]"
+"	      0054ed69    mov eax,this"
 "	      0054ed6c    movsx eax,word ptr [eax+106h]"
 "	      0054ed73    test eax,eax"
 "	      0054ed75    je near ptr 0054ED87h"
 "	      0054ed7b    push 0"
 "	      0054ed7d    push 8"
-"	      0054ed7f    mov ecx,[ebp-8]"
+"	      0054ed7f    mov ecx,this"
 "	      0054ed82    call 0054C1DDh"
 );
 // LINE 2431:
@@ -15347,15 +15347,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2434:
 	asm( 
-"	      0054ed8c    mov eax,[ebp-8]"
+"	      0054ed8c    mov eax,this"
 "	      0054ed8f    movsx eax,word ptr [eax+0F2h]"
 "	      0054ed96    test eax,eax"
 "	      0054ed98    je near ptr 0054EEF7h"
-"	      0054ed9e    mov eax,[ebp-8]"
+"	      0054ed9e    mov eax,this"
 "	      0054eda1    mov eax,[eax+90h]"
 "	      0054eda7    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054edae    jne near ptr 0054EE58h"
-"	      0054edb4    mov eax,[ebp-8]"
+"	      0054edb4    mov eax,this"
 "	      0054edb7    cmp dword ptr [eax+90h],0"
 "	      0054edbe    jne near ptr 0054EDE0h"
 "	      0054edc4    push 8C085h"
@@ -15364,20 +15364,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054edd3    push 5BBA14h"
 "	      0054edd8    call 00554F30h"
 "	      0054eddd    add esp,10h"
-"	      0054ede0    mov eax,[ebp-8]"
+"	      0054ede0    mov eax,this"
 "	      0054ede3    cmp dword ptr [eax+98h],0"
 "	      0054edea    je near ptr 0054EE06h"
-"	      0054edf0    mov eax,[ebp-8]"
+"	      0054edf0    mov eax,this"
 "	      0054edf3    mov eax,[eax+98h]"
 "	      0054edf9    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054ee00    je near ptr 0054EE4Eh"
 "	      0054ee06    push 44675374h"
-"	      0054ee0b    mov eax,[ebp-8]"
+"	      0054ee0b    mov eax,this"
 "	      0054ee0e    mov ecx,[eax+90h]"
 "	      0054ee14    call 00560BF0h"
-"	      0054ee19    mov ecx,[ebp-8]"
+"	      0054ee19    mov ecx,this"
 "	      0054ee1c    mov [ecx+98h],eax"
-"	      0054ee22    mov eax,[ebp-8]"
+"	      0054ee22    mov eax,this"
 "	      0054ee25    cmp dword ptr [eax+98h],0"
 "	      0054ee2c    jne near ptr 0054EE4Eh"
 "	      0054ee32    push 8C085h"
@@ -15388,7 +15388,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ee4b    add esp,10h"
 "	      0054ee4e    jmp near ptr 0054EE53h"
 "	      0054ee53    jmp near ptr 0054EEF7h"
-"	      0054ee58    mov eax,[ebp-8]"
+"	      0054ee58    mov eax,this"
 "	      0054ee5b    cmp dword ptr [eax+90h],0"
 "	      0054ee62    jne near ptr 0054EE84h"
 "	      0054ee68    push 8C085h"
@@ -15397,20 +15397,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ee77    push 5BBA14h"
 "	      0054ee7c    call 00554F30h"
 "	      0054ee81    add esp,10h"
-"	      0054ee84    mov eax,[ebp-8]"
+"	      0054ee84    mov eax,this"
 "	      0054ee87    cmp dword ptr [eax+98h],0"
 "	      0054ee8e    je near ptr 0054EEAAh"
-"	      0054ee94    mov eax,[ebp-8]"
+"	      0054ee94    mov eax,this"
 "	      0054ee97    mov eax,[eax+98h]"
 "	      0054ee9d    cmp dword ptr [eax+1Ch],57686F61h"
 "	      0054eea4    je near ptr 0054EEF2h"
 "	      0054eeaa    push 57686F61h"
-"	      0054eeaf    mov eax,[ebp-8]"
+"	      0054eeaf    mov eax,this"
 "	      0054eeb2    mov ecx,[eax+90h]"
 "	      0054eeb8    call 00560BF0h"
-"	      0054eebd    mov ecx,[ebp-8]"
+"	      0054eebd    mov ecx,this"
 "	      0054eec0    mov [ecx+98h],eax"
-"	      0054eec6    mov eax,[ebp-8]"
+"	      0054eec6    mov eax,this"
 "	      0054eec9    cmp dword ptr [eax+98h],0"
 "	      0054eed0    jne near ptr 0054EEF2h"
 "	      0054eed6    push 8C085h"
@@ -15423,13 +15423,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2435:
 	asm( 
-"	      0054eef7    mov eax,[ebp-8]"
+"	      0054eef7    mov eax,this"
 "	      0054eefa    movsx eax,word ptr [eax+106h]"
 "	      0054ef01    test eax,eax"
 "	      0054ef03    je near ptr 0054EF15h"
 "	      0054ef09    push 0"
 "	      0054ef0b    push 9"
-"	      0054ef0d    mov ecx,[ebp-8]"
+"	      0054ef0d    mov ecx,this"
 "	      0054ef10    call 0054C1DDh"
 );
 // LINE 2436:
@@ -15438,9 +15438,9 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2438:
 	asm( 
-"	      0054ef1a    cmp dword ptr [ebp+10h],0"
+"	      0054ef1a    cmp moveinfo,0"
 "	      0054ef1e    je near ptr 0054EF31h"
-"	      0054ef24    mov eax,[ebp+10h]"
+"	      0054ef24    mov eax,moveinfo"
 "	      0054ef27    cmp dword ptr [eax+8],0"
 "	      0054ef2b    jne near ptr 0054EF4Dh"
 "	      0054ef31    push 8C085h"
@@ -15449,7 +15449,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ef40    push 5BB4C4h"
 "	      0054ef45    call 00554F30h"
 "	      0054ef4a    add esp,10h"
-"	      0054ef4d    mov eax,[ebp+10h]"
+"	      0054ef4d    mov eax,moveinfo"
 "	      0054ef50    mov eax,[eax+8]"
 "	      0054ef53    mov [ebp-4],eax"
 );
@@ -15462,25 +15462,25 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054ef62    mov eax,[ebp-4]"
 "	      0054ef65    mov eax,[eax+18h]"
 "	      0054ef68    push eax"
-"	      0054ef69    mov eax,[ebp-8]"
+"	      0054ef69    mov eax,this"
 "	      0054ef6c    mov eax,[eax+44h]"
 "	      0054ef6f    push eax"
-"	      0054ef70    mov eax,[ebp-8]"
+"	      0054ef70    mov eax,this"
 "	      0054ef73    mov eax,[eax+3Ch]"
 "	      0054ef76    push eax"
 "	      0054ef77    call 00551AF1h"
 "	      0054ef7c    add esp,10h"
 "	      0054ef7f    movsx eax,ax"
 "	      0054ef82    sub eax,2"
-"	      0054ef85    mov ecx,[ebp-8]"
+"	      0054ef85    mov ecx,this"
 "	      0054ef88    mov [ecx+0D0h],ax"
 );
 // LINE 2440:
 	asm( 
-"	      0054ef8f    mov eax,[ebp-8]"
+"	      0054ef8f    mov eax,this"
 "	      0054ef92    movsx eax,word ptr [eax+0D0h]"
 "	      0054ef99    and eax,7"
-"	      0054ef9c    mov ecx,[ebp-8]"
+"	      0054ef9c    mov ecx,this"
 "	      0054ef9f    mov [ecx+0D0h],ax"
 );
 // LINE 2441:
@@ -15494,15 +15494,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2443:
 	asm( 
-"	      0054efbb    mov eax,[ebp-8]"
+"	      0054efbb    mov eax,this"
 "	      0054efbe    movsx eax,word ptr [eax+0F2h]"
 "	      0054efc5    test eax,eax"
 "	      0054efc7    je near ptr 0054F126h"
-"	      0054efcd    mov eax,[ebp-8]"
+"	      0054efcd    mov eax,this"
 "	      0054efd0    mov eax,[eax+90h]"
 "	      0054efd6    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054efdd    jne near ptr 0054F087h"
-"	      0054efe3    mov eax,[ebp-8]"
+"	      0054efe3    mov eax,this"
 "	      0054efe6    cmp dword ptr [eax+90h],0"
 "	      0054efed    jne near ptr 0054F00Fh"
 "	      0054eff3    push 8C085h"
@@ -15511,20 +15511,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f002    push 5BBA14h"
 "	      0054f007    call 00554F30h"
 "	      0054f00c    add esp,10h"
-"	      0054f00f    mov eax,[ebp-8]"
+"	      0054f00f    mov eax,this"
 "	      0054f012    cmp dword ptr [eax+98h],0"
 "	      0054f019    je near ptr 0054F035h"
-"	      0054f01f    mov eax,[ebp-8]"
+"	      0054f01f    mov eax,this"
 "	      0054f022    mov eax,[eax+98h]"
 "	      0054f028    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f02f    je near ptr 0054F07Dh"
 "	      0054f035    push 44675374h"
-"	      0054f03a    mov eax,[ebp-8]"
+"	      0054f03a    mov eax,this"
 "	      0054f03d    mov ecx,[eax+90h]"
 "	      0054f043    call 00560BF0h"
-"	      0054f048    mov ecx,[ebp-8]"
+"	      0054f048    mov ecx,this"
 "	      0054f04b    mov [ecx+98h],eax"
-"	      0054f051    mov eax,[ebp-8]"
+"	      0054f051    mov eax,this"
 "	      0054f054    cmp dword ptr [eax+98h],0"
 "	      0054f05b    jne near ptr 0054F07Dh"
 "	      0054f061    push 8C085h"
@@ -15535,7 +15535,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f07a    add esp,10h"
 "	      0054f07d    jmp near ptr 0054F082h"
 "	      0054f082    jmp near ptr 0054F126h"
-"	      0054f087    mov eax,[ebp-8]"
+"	      0054f087    mov eax,this"
 "	      0054f08a    cmp dword ptr [eax+90h],0"
 "	      0054f091    jne near ptr 0054F0B3h"
 "	      0054f097    push 8C085h"
@@ -15544,20 +15544,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f0a6    push 5BBA14h"
 "	      0054f0ab    call 00554F30h"
 "	      0054f0b0    add esp,10h"
-"	      0054f0b3    mov eax,[ebp-8]"
+"	      0054f0b3    mov eax,this"
 "	      0054f0b6    cmp dword ptr [eax+98h],0"
 "	      0054f0bd    je near ptr 0054F0D9h"
-"	      0054f0c3    mov eax,[ebp-8]"
+"	      0054f0c3    mov eax,this"
 "	      0054f0c6    mov eax,[eax+98h]"
 "	      0054f0cc    cmp dword ptr [eax+1Ch],32476162h"
 "	      0054f0d3    je near ptr 0054F121h"
 "	      0054f0d9    push 32476162h"
-"	      0054f0de    mov eax,[ebp-8]"
+"	      0054f0de    mov eax,this"
 "	      0054f0e1    mov ecx,[eax+90h]"
 "	      0054f0e7    call 00560BF0h"
-"	      0054f0ec    mov ecx,[ebp-8]"
+"	      0054f0ec    mov ecx,this"
 "	      0054f0ef    mov [ecx+98h],eax"
-"	      0054f0f5    mov eax,[ebp-8]"
+"	      0054f0f5    mov eax,this"
 "	      0054f0f8    cmp dword ptr [eax+98h],0"
 "	      0054f0ff    jne near ptr 0054F121h"
 "	      0054f105    push 8C085h"
@@ -15574,15 +15574,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2446:
 	asm( 
-"	      0054f12b    mov eax,[ebp-8]"
+"	      0054f12b    mov eax,this"
 "	      0054f12e    movsx eax,word ptr [eax+0F2h]"
 "	      0054f135    test eax,eax"
 "	      0054f137    je near ptr 0054F296h"
-"	      0054f13d    mov eax,[ebp-8]"
+"	      0054f13d    mov eax,this"
 "	      0054f140    mov eax,[eax+90h]"
 "	      0054f146    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054f14d    jne near ptr 0054F1F7h"
-"	      0054f153    mov eax,[ebp-8]"
+"	      0054f153    mov eax,this"
 "	      0054f156    cmp dword ptr [eax+90h],0"
 "	      0054f15d    jne near ptr 0054F17Fh"
 "	      0054f163    push 8C085h"
@@ -15591,20 +15591,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f172    push 5BBA14h"
 "	      0054f177    call 00554F30h"
 "	      0054f17c    add esp,10h"
-"	      0054f17f    mov eax,[ebp-8]"
+"	      0054f17f    mov eax,this"
 "	      0054f182    cmp dword ptr [eax+98h],0"
 "	      0054f189    je near ptr 0054F1A5h"
-"	      0054f18f    mov eax,[ebp-8]"
+"	      0054f18f    mov eax,this"
 "	      0054f192    mov eax,[eax+98h]"
 "	      0054f198    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f19f    je near ptr 0054F1EDh"
 "	      0054f1a5    push 44675374h"
-"	      0054f1aa    mov eax,[ebp-8]"
+"	      0054f1aa    mov eax,this"
 "	      0054f1ad    mov ecx,[eax+90h]"
 "	      0054f1b3    call 00560BF0h"
-"	      0054f1b8    mov ecx,[ebp-8]"
+"	      0054f1b8    mov ecx,this"
 "	      0054f1bb    mov [ecx+98h],eax"
-"	      0054f1c1    mov eax,[ebp-8]"
+"	      0054f1c1    mov eax,this"
 "	      0054f1c4    cmp dword ptr [eax+98h],0"
 "	      0054f1cb    jne near ptr 0054F1EDh"
 "	      0054f1d1    push 8C085h"
@@ -15615,7 +15615,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f1ea    add esp,10h"
 "	      0054f1ed    jmp near ptr 0054F1F2h"
 "	      0054f1f2    jmp near ptr 0054F296h"
-"	      0054f1f7    mov eax,[ebp-8]"
+"	      0054f1f7    mov eax,this"
 "	      0054f1fa    cmp dword ptr [eax+90h],0"
 "	      0054f201    jne near ptr 0054F223h"
 "	      0054f207    push 8C085h"
@@ -15624,20 +15624,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f216    push 5BBA14h"
 "	      0054f21b    call 00554F30h"
 "	      0054f220    add esp,10h"
-"	      0054f223    mov eax,[ebp-8]"
+"	      0054f223    mov eax,this"
 "	      0054f226    cmp dword ptr [eax+98h],0"
 "	      0054f22d    je near ptr 0054F249h"
-"	      0054f233    mov eax,[ebp-8]"
+"	      0054f233    mov eax,this"
 "	      0054f236    mov eax,[eax+98h]"
 "	      0054f23c    cmp dword ptr [eax+1Ch],32476162h"
 "	      0054f243    je near ptr 0054F291h"
 "	      0054f249    push 32476162h"
-"	      0054f24e    mov eax,[ebp-8]"
+"	      0054f24e    mov eax,this"
 "	      0054f251    mov ecx,[eax+90h]"
 "	      0054f257    call 00560BF0h"
-"	      0054f25c    mov ecx,[ebp-8]"
+"	      0054f25c    mov ecx,this"
 "	      0054f25f    mov [ecx+98h],eax"
-"	      0054f265    mov eax,[ebp-8]"
+"	      0054f265    mov eax,this"
 "	      0054f268    cmp dword ptr [eax+98h],0"
 "	      0054f26f    jne near ptr 0054F291h"
 "	      0054f275    push 8C085h"
@@ -15654,15 +15654,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2449:
 	asm( 
-"	      0054f29b    mov eax,[ebp-8]"
+"	      0054f29b    mov eax,this"
 "	      0054f29e    movsx eax,word ptr [eax+0F2h]"
 "	      0054f2a5    test eax,eax"
 "	      0054f2a7    je near ptr 0054F406h"
-"	      0054f2ad    mov eax,[ebp-8]"
+"	      0054f2ad    mov eax,this"
 "	      0054f2b0    mov eax,[eax+90h]"
 "	      0054f2b6    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054f2bd    jne near ptr 0054F367h"
-"	      0054f2c3    mov eax,[ebp-8]"
+"	      0054f2c3    mov eax,this"
 "	      0054f2c6    cmp dword ptr [eax+90h],0"
 "	      0054f2cd    jne near ptr 0054F2EFh"
 "	      0054f2d3    push 8C085h"
@@ -15671,20 +15671,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f2e2    push 5BBA14h"
 "	      0054f2e7    call 00554F30h"
 "	      0054f2ec    add esp,10h"
-"	      0054f2ef    mov eax,[ebp-8]"
+"	      0054f2ef    mov eax,this"
 "	      0054f2f2    cmp dword ptr [eax+98h],0"
 "	      0054f2f9    je near ptr 0054F315h"
-"	      0054f2ff    mov eax,[ebp-8]"
+"	      0054f2ff    mov eax,this"
 "	      0054f302    mov eax,[eax+98h]"
 "	      0054f308    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f30f    je near ptr 0054F35Dh"
 "	      0054f315    push 44675374h"
-"	      0054f31a    mov eax,[ebp-8]"
+"	      0054f31a    mov eax,this"
 "	      0054f31d    mov ecx,[eax+90h]"
 "	      0054f323    call 00560BF0h"
-"	      0054f328    mov ecx,[ebp-8]"
+"	      0054f328    mov ecx,this"
 "	      0054f32b    mov [ecx+98h],eax"
-"	      0054f331    mov eax,[ebp-8]"
+"	      0054f331    mov eax,this"
 "	      0054f334    cmp dword ptr [eax+98h],0"
 "	      0054f33b    jne near ptr 0054F35Dh"
 "	      0054f341    push 8C085h"
@@ -15695,7 +15695,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f35a    add esp,10h"
 "	      0054f35d    jmp near ptr 0054F362h"
 "	      0054f362    jmp near ptr 0054F406h"
-"	      0054f367    mov eax,[ebp-8]"
+"	      0054f367    mov eax,this"
 "	      0054f36a    cmp dword ptr [eax+90h],0"
 "	      0054f371    jne near ptr 0054F393h"
 "	      0054f377    push 8C085h"
@@ -15704,20 +15704,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f386    push 5BBA14h"
 "	      0054f38b    call 00554F30h"
 "	      0054f390    add esp,10h"
-"	      0054f393    mov eax,[ebp-8]"
+"	      0054f393    mov eax,this"
 "	      0054f396    cmp dword ptr [eax+98h],0"
 "	      0054f39d    je near ptr 0054F3B9h"
-"	      0054f3a3    mov eax,[ebp-8]"
+"	      0054f3a3    mov eax,this"
 "	      0054f3a6    mov eax,[eax+98h]"
 "	      0054f3ac    cmp dword ptr [eax+1Ch],426F7750h"
 "	      0054f3b3    je near ptr 0054F401h"
 "	      0054f3b9    push 426F7750h"
-"	      0054f3be    mov eax,[ebp-8]"
+"	      0054f3be    mov eax,this"
 "	      0054f3c1    mov ecx,[eax+90h]"
 "	      0054f3c7    call 00560BF0h"
-"	      0054f3cc    mov ecx,[ebp-8]"
+"	      0054f3cc    mov ecx,this"
 "	      0054f3cf    mov [ecx+98h],eax"
-"	      0054f3d5    mov eax,[ebp-8]"
+"	      0054f3d5    mov eax,this"
 "	      0054f3d8    cmp dword ptr [eax+98h],0"
 "	      0054f3df    jne near ptr 0054F401h"
 "	      0054f3e5    push 8C085h"
@@ -15734,15 +15734,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2452:
 	asm( 
-"	      0054f40b    mov eax,[ebp-8]"
+"	      0054f40b    mov eax,this"
 "	      0054f40e    movsx eax,word ptr [eax+0F2h]"
 "	      0054f415    test eax,eax"
 "	      0054f417    je near ptr 0054F576h"
-"	      0054f41d    mov eax,[ebp-8]"
+"	      0054f41d    mov eax,this"
 "	      0054f420    mov eax,[eax+90h]"
 "	      0054f426    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054f42d    jne near ptr 0054F4D7h"
-"	      0054f433    mov eax,[ebp-8]"
+"	      0054f433    mov eax,this"
 "	      0054f436    cmp dword ptr [eax+90h],0"
 "	      0054f43d    jne near ptr 0054F45Fh"
 "	      0054f443    push 8C085h"
@@ -15751,20 +15751,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f452    push 5BBA14h"
 "	      0054f457    call 00554F30h"
 "	      0054f45c    add esp,10h"
-"	      0054f45f    mov eax,[ebp-8]"
+"	      0054f45f    mov eax,this"
 "	      0054f462    cmp dword ptr [eax+98h],0"
 "	      0054f469    je near ptr 0054F485h"
-"	      0054f46f    mov eax,[ebp-8]"
+"	      0054f46f    mov eax,this"
 "	      0054f472    mov eax,[eax+98h]"
 "	      0054f478    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f47f    je near ptr 0054F4CDh"
 "	      0054f485    push 44675374h"
-"	      0054f48a    mov eax,[ebp-8]"
+"	      0054f48a    mov eax,this"
 "	      0054f48d    mov ecx,[eax+90h]"
 "	      0054f493    call 00560BF0h"
-"	      0054f498    mov ecx,[ebp-8]"
+"	      0054f498    mov ecx,this"
 "	      0054f49b    mov [ecx+98h],eax"
-"	      0054f4a1    mov eax,[ebp-8]"
+"	      0054f4a1    mov eax,this"
 "	      0054f4a4    cmp dword ptr [eax+98h],0"
 "	      0054f4ab    jne near ptr 0054F4CDh"
 "	      0054f4b1    push 8C085h"
@@ -15775,7 +15775,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f4ca    add esp,10h"
 "	      0054f4cd    jmp near ptr 0054F4D2h"
 "	      0054f4d2    jmp near ptr 0054F576h"
-"	      0054f4d7    mov eax,[ebp-8]"
+"	      0054f4d7    mov eax,this"
 "	      0054f4da    cmp dword ptr [eax+90h],0"
 "	      0054f4e1    jne near ptr 0054F503h"
 "	      0054f4e7    push 8C085h"
@@ -15784,20 +15784,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f4f6    push 5BBA14h"
 "	      0054f4fb    call 00554F30h"
 "	      0054f500    add esp,10h"
-"	      0054f503    mov eax,[ebp-8]"
+"	      0054f503    mov eax,this"
 "	      0054f506    cmp dword ptr [eax+98h],0"
 "	      0054f50d    je near ptr 0054F529h"
-"	      0054f513    mov eax,[ebp-8]"
+"	      0054f513    mov eax,this"
 "	      0054f516    mov eax,[eax+98h]"
 "	      0054f51c    cmp dword ptr [eax+1Ch],48697048h"
 "	      0054f523    je near ptr 0054F571h"
 "	      0054f529    push 48697048h"
-"	      0054f52e    mov eax,[ebp-8]"
+"	      0054f52e    mov eax,this"
 "	      0054f531    mov ecx,[eax+90h]"
 "	      0054f537    call 00560BF0h"
-"	      0054f53c    mov ecx,[ebp-8]"
+"	      0054f53c    mov ecx,this"
 "	      0054f53f    mov [ecx+98h],eax"
-"	      0054f545    mov eax,[ebp-8]"
+"	      0054f545    mov eax,this"
 "	      0054f548    cmp dword ptr [eax+98h],0"
 "	      0054f54f    jne near ptr 0054F571h"
 "	      0054f555    push 8C085h"
@@ -15834,13 +15834,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2457:
 	asm( 
-"	      0054f5b8    mov eax,[ebp-8]"
+"	      0054f5b8    mov eax,this"
 "	      0054f5bb    movsx eax,word ptr [eax+106h]"
 "	      0054f5c2    test eax,eax"
 "	      0054f5c4    je near ptr 0054F5D6h"
 "	      0054f5ca    push 0"
 "	      0054f5cc    push 0Ah"
-"	      0054f5ce    mov ecx,[ebp-8]"
+"	      0054f5ce    mov ecx,this"
 "	      0054f5d1    call 0054C1DDh"
 );
 // LINE 2458:
@@ -15849,13 +15849,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2460:
 	asm( 
-"	      0054f5db    mov eax,[ebp-8]"
+"	      0054f5db    mov eax,this"
 "	      0054f5de    movsx eax,word ptr [eax+106h]"
 "	      0054f5e5    test eax,eax"
 "	      0054f5e7    je near ptr 0054F5F9h"
 "	      0054f5ed    push 0"
 "	      0054f5ef    push 1"
-"	      0054f5f1    mov ecx,[ebp-8]"
+"	      0054f5f1    mov ecx,this"
 "	      0054f5f4    call 0054C1DDh"
 );
 // LINE 2461:
@@ -15864,13 +15864,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2463:
 	asm( 
-"	      0054f5fe    mov eax,[ebp-8]"
+"	      0054f5fe    mov eax,this"
 "	      0054f601    movsx eax,word ptr [eax+106h]"
 "	      0054f608    test eax,eax"
 "	      0054f60a    je near ptr 0054F61Ch"
 "	      0054f610    push 0"
 "	      0054f612    push 4"
-"	      0054f614    mov ecx,[ebp-8]"
+"	      0054f614    mov ecx,this"
 "	      0054f617    call 0054C1DDh"
 );
 // LINE 2464:
@@ -15879,13 +15879,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2466:
 	asm( 
-"	      0054f621    mov eax,[ebp-8]"
+"	      0054f621    mov eax,this"
 "	      0054f624    movsx eax,word ptr [eax+106h]"
 "	      0054f62b    test eax,eax"
 "	      0054f62d    je near ptr 0054F63Fh"
 "	      0054f633    push 0"
 "	      0054f635    push 0Bh"
-"	      0054f637    mov ecx,[ebp-8]"
+"	      0054f637    mov ecx,this"
 "	      0054f63a    call 0054C1DDh"
 );
 // LINE 2467:
@@ -15894,13 +15894,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2469:
 	asm( 
-"	      0054f644    mov eax,[ebp-8]"
+"	      0054f644    mov eax,this"
 "	      0054f647    movsx eax,word ptr [eax+106h]"
 "	      0054f64e    test eax,eax"
 "	      0054f650    je near ptr 0054F662h"
 "	      0054f656    push 0"
 "	      0054f658    push 2"
-"	      0054f65a    mov ecx,[ebp-8]"
+"	      0054f65a    mov ecx,this"
 "	      0054f65d    call 0054C1DDh"
 );
 // LINE 2470:
@@ -15909,13 +15909,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2472:
 	asm( 
-"	      0054f667    mov eax,[ebp-8]"
+"	      0054f667    mov eax,this"
 "	      0054f66a    movsx eax,word ptr [eax+106h]"
 "	      0054f671    test eax,eax"
 "	      0054f673    je near ptr 0054F685h"
 "	      0054f679    push 0"
 "	      0054f67b    push 12h"
-"	      0054f67d    mov ecx,[ebp-8]"
+"	      0054f67d    mov ecx,this"
 "	      0054f680    call 0054C1DDh"
 );
 // LINE 2473:
@@ -15924,13 +15924,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2475:
 	asm( 
-"	      0054f68a    mov eax,[ebp-8]"
+"	      0054f68a    mov eax,this"
 "	      0054f68d    movsx eax,word ptr [eax+106h]"
 "	      0054f694    test eax,eax"
 "	      0054f696    je near ptr 0054F6A8h"
 "	      0054f69c    push 0"
 "	      0054f69e    push 6"
-"	      0054f6a0    mov ecx,[ebp-8]"
+"	      0054f6a0    mov ecx,this"
 "	      0054f6a3    call 0054C1DDh"
 );
 // LINE 2476:
@@ -15939,13 +15939,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2478:
 	asm( 
-"	      0054f6ad    mov eax,[ebp-8]"
+"	      0054f6ad    mov eax,this"
 "	      0054f6b0    movsx eax,word ptr [eax+106h]"
 "	      0054f6b7    test eax,eax"
 "	      0054f6b9    je near ptr 0054F6CBh"
 "	      0054f6bf    push 0"
 "	      0054f6c1    push 7"
-"	      0054f6c3    mov ecx,[ebp-8]"
+"	      0054f6c3    mov ecx,this"
 "	      0054f6c6    call 0054C1DDh"
 );
 // LINE 2479:
@@ -15954,13 +15954,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2481:
 	asm( 
-"	      0054f6d0    mov eax,[ebp-8]"
+"	      0054f6d0    mov eax,this"
 "	      0054f6d3    movsx eax,word ptr [eax+106h]"
 "	      0054f6da    test eax,eax"
 "	      0054f6dc    je near ptr 0054F6EEh"
 "	      0054f6e2    push 0"
 "	      0054f6e4    push 3"
-"	      0054f6e6    mov ecx,[ebp-8]"
+"	      0054f6e6    mov ecx,this"
 "	      0054f6e9    call 0054C1DDh"
 );
 // LINE 2482:
@@ -15993,15 +15993,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2486:
 	asm( 
-"	      0054f731    mov eax,[ebp-8]"
+"	      0054f731    mov eax,this"
 "	      0054f734    movsx eax,word ptr [eax+0F2h]"
 "	      0054f73b    test eax,eax"
 "	      0054f73d    je near ptr 0054F89Ch"
-"	      0054f743    mov eax,[ebp-8]"
+"	      0054f743    mov eax,this"
 "	      0054f746    mov eax,[eax+90h]"
 "	      0054f74c    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054f753    jne near ptr 0054F7FDh"
-"	      0054f759    mov eax,[ebp-8]"
+"	      0054f759    mov eax,this"
 "	      0054f75c    cmp dword ptr [eax+90h],0"
 "	      0054f763    jne near ptr 0054F785h"
 "	      0054f769    push 8C085h"
@@ -16010,20 +16010,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f778    push 5BBA14h"
 "	      0054f77d    call 00554F30h"
 "	      0054f782    add esp,10h"
-"	      0054f785    mov eax,[ebp-8]"
+"	      0054f785    mov eax,this"
 "	      0054f788    cmp dword ptr [eax+98h],0"
 "	      0054f78f    je near ptr 0054F7ABh"
-"	      0054f795    mov eax,[ebp-8]"
+"	      0054f795    mov eax,this"
 "	      0054f798    mov eax,[eax+98h]"
 "	      0054f79e    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f7a5    je near ptr 0054F7F3h"
 "	      0054f7ab    push 44675374h"
-"	      0054f7b0    mov eax,[ebp-8]"
+"	      0054f7b0    mov eax,this"
 "	      0054f7b3    mov ecx,[eax+90h]"
 "	      0054f7b9    call 00560BF0h"
-"	      0054f7be    mov ecx,[ebp-8]"
+"	      0054f7be    mov ecx,this"
 "	      0054f7c1    mov [ecx+98h],eax"
-"	      0054f7c7    mov eax,[ebp-8]"
+"	      0054f7c7    mov eax,this"
 "	      0054f7ca    cmp dword ptr [eax+98h],0"
 "	      0054f7d1    jne near ptr 0054F7F3h"
 "	      0054f7d7    push 8C085h"
@@ -16034,7 +16034,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f7f0    add esp,10h"
 "	      0054f7f3    jmp near ptr 0054F7F8h"
 "	      0054f7f8    jmp near ptr 0054F89Ch"
-"	      0054f7fd    mov eax,[ebp-8]"
+"	      0054f7fd    mov eax,this"
 "	      0054f800    cmp dword ptr [eax+90h],0"
 "	      0054f807    jne near ptr 0054F829h"
 "	      0054f80d    push 8C085h"
@@ -16043,20 +16043,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f81c    push 5BBA14h"
 "	      0054f821    call 00554F30h"
 "	      0054f826    add esp,10h"
-"	      0054f829    mov eax,[ebp-8]"
+"	      0054f829    mov eax,this"
 "	      0054f82c    cmp dword ptr [eax+98h],0"
 "	      0054f833    je near ptr 0054F84Fh"
-"	      0054f839    mov eax,[ebp-8]"
+"	      0054f839    mov eax,this"
 "	      0054f83c    mov eax,[eax+98h]"
 "	      0054f842    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      0054f849    je near ptr 0054F897h"
 "	      0054f84f    push 4E6F4D6Fh"
-"	      0054f854    mov eax,[ebp-8]"
+"	      0054f854    mov eax,this"
 "	      0054f857    mov ecx,[eax+90h]"
 "	      0054f85d    call 00560BF0h"
-"	      0054f862    mov ecx,[ebp-8]"
+"	      0054f862    mov ecx,this"
 "	      0054f865    mov [ecx+98h],eax"
-"	      0054f86b    mov eax,[ebp-8]"
+"	      0054f86b    mov eax,this"
 "	      0054f86e    cmp dword ptr [eax+98h],0"
 "	      0054f875    jne near ptr 0054F897h"
 "	      0054f87b    push 8C085h"
@@ -16069,13 +16069,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2487:
 	asm( 
-"	      0054f89c    mov eax,[ebp-8]"
+"	      0054f89c    mov eax,this"
 "	      0054f89f    movsx eax,word ptr [eax+106h]"
 "	      0054f8a6    test eax,eax"
 "	      0054f8a8    je near ptr 0054F8BAh"
 "	      0054f8ae    push 0"
 "	      0054f8b0    push 9"
-"	      0054f8b2    mov ecx,[ebp-8]"
+"	      0054f8b2    mov ecx,this"
 "	      0054f8b5    call 0054C1DDh"
 );
 // LINE 2488:
@@ -16084,15 +16084,15 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2491:
 	asm( 
-"	      0054f8bf    mov eax,[ebp-8]"
+"	      0054f8bf    mov eax,this"
 "	      0054f8c2    movsx eax,word ptr [eax+0F2h]"
 "	      0054f8c9    test eax,eax"
 "	      0054f8cb    je near ptr 0054FA2Ah"
-"	      0054f8d1    mov eax,[ebp-8]"
+"	      0054f8d1    mov eax,this"
 "	      0054f8d4    mov eax,[eax+90h]"
 "	      0054f8da    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054f8e1    jne near ptr 0054F98Bh"
-"	      0054f8e7    mov eax,[ebp-8]"
+"	      0054f8e7    mov eax,this"
 "	      0054f8ea    cmp dword ptr [eax+90h],0"
 "	      0054f8f1    jne near ptr 0054F913h"
 "	      0054f8f7    push 8C085h"
@@ -16101,20 +16101,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f906    push 5BBA14h"
 "	      0054f90b    call 00554F30h"
 "	      0054f910    add esp,10h"
-"	      0054f913    mov eax,[ebp-8]"
+"	      0054f913    mov eax,this"
 "	      0054f916    cmp dword ptr [eax+98h],0"
 "	      0054f91d    je near ptr 0054F939h"
-"	      0054f923    mov eax,[ebp-8]"
+"	      0054f923    mov eax,this"
 "	      0054f926    mov eax,[eax+98h]"
 "	      0054f92c    cmp dword ptr [eax+1Ch],44675374h"
 "	      0054f933    je near ptr 0054F981h"
 "	      0054f939    push 44675374h"
-"	      0054f93e    mov eax,[ebp-8]"
+"	      0054f93e    mov eax,this"
 "	      0054f941    mov ecx,[eax+90h]"
 "	      0054f947    call 00560BF0h"
-"	      0054f94c    mov ecx,[ebp-8]"
+"	      0054f94c    mov ecx,this"
 "	      0054f94f    mov [ecx+98h],eax"
-"	      0054f955    mov eax,[ebp-8]"
+"	      0054f955    mov eax,this"
 "	      0054f958    cmp dword ptr [eax+98h],0"
 "	      0054f95f    jne near ptr 0054F981h"
 "	      0054f965    push 8C085h"
@@ -16125,7 +16125,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f97e    add esp,10h"
 "	      0054f981    jmp near ptr 0054F986h"
 "	      0054f986    jmp near ptr 0054FA2Ah"
-"	      0054f98b    mov eax,[ebp-8]"
+"	      0054f98b    mov eax,this"
 "	      0054f98e    cmp dword ptr [eax+90h],0"
 "	      0054f995    jne near ptr 0054F9B7h"
 "	      0054f99b    push 8C085h"
@@ -16134,20 +16134,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 "	      0054f9aa    push 5BBA14h"
 "	      0054f9af    call 00554F30h"
 "	      0054f9b4    add esp,10h"
-"	      0054f9b7    mov eax,[ebp-8]"
+"	      0054f9b7    mov eax,this"
 "	      0054f9ba    cmp dword ptr [eax+98h],0"
 "	      0054f9c1    je near ptr 0054F9DDh"
-"	      0054f9c7    mov eax,[ebp-8]"
+"	      0054f9c7    mov eax,this"
 "	      0054f9ca    mov eax,[eax+98h]"
 "	      0054f9d0    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      0054f9d7    je near ptr 0054FA25h"
 "	      0054f9dd    push 4E6F4D6Fh"
-"	      0054f9e2    mov eax,[ebp-8]"
+"	      0054f9e2    mov eax,this"
 "	      0054f9e5    mov ecx,[eax+90h]"
 "	      0054f9eb    call 00560BF0h"
-"	      0054f9f0    mov ecx,[ebp-8]"
+"	      0054f9f0    mov ecx,this"
 "	      0054f9f3    mov [ecx+98h],eax"
-"	      0054f9f9    mov eax,[ebp-8]"
+"	      0054f9f9    mov eax,this"
 "	      0054f9fc    cmp dword ptr [eax+98h],0"
 "	      0054fa03    jne near ptr 0054FA25h"
 "	      0054fa09    push 8C085h"
@@ -16160,13 +16160,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2492:
 	asm( 
-"	      0054fa2a    mov eax,[ebp-8]"
+"	      0054fa2a    mov eax,this"
 "	      0054fa2d    movsx eax,word ptr [eax+106h]"
 "	      0054fa34    test eax,eax"
 "	      0054fa36    je near ptr 0054FA48h"
 "	      0054fa3c    push 0"
 "	      0054fa3e    push 0Ch"
-"	      0054fa40    mov ecx,[ebp-8]"
+"	      0054fa40    mov ecx,this"
 "	      0054fa43    call 0054C1DDh"
 );
 // LINE 2493:
@@ -16175,20 +16175,20 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 );
 // LINE 2495:
 	asm( 
-"	      0054fa4d    mov eax,[ebp-8]"
+"	      0054fa4d    mov eax,this"
 "	      0054fa50    movsx eax,word ptr [eax+0F2h]"
 "	      0054fa57    test eax,eax"
 "	      0054fa59    je near ptr 0054FA94h"
-"	      0054fa5f    mov eax,[ebp-8]"
+"	      0054fa5f    mov eax,this"
 "	      0054fa62    mov eax,[eax+90h]"
 "	      0054fa68    cmp dword ptr [eax+1Ch],32444F47h"
 "	      0054fa6f    jne near ptr 0054FA87h"
 "	      0054fa75    push 44675374h"
-"	      0054fa7a    mov ecx,[ebp-8]"
+"	      0054fa7a    mov ecx,this"
 "	      0054fa7d    call 005520E0h"
 "	      0054fa82    jmp near ptr 0054FA94h"
 "	      0054fa87    push 4E6F4D6Fh"
-"	      0054fa8c    mov ecx,[ebp-8]"
+"	      0054fa8c    mov ecx,this"
 "	      0054fa8f    call 005520E0h"
 );
 // LINE 2496:
@@ -16247,7 +16247,7 @@ void cAvatar::ResetView() {
 "	      0054faf4    push ebx"
 "	      0054faf5    push esi"
 "	      0054faf6    push edi"
-"	      0054faf7    mov [ebp-24h],ecx"
+"	      0054faf7    mov this,ecx"
 );
 // LINE 2506:
 	asm( 
@@ -16255,7 +16255,7 @@ void cAvatar::ResetView() {
 );
 // LINE 2508:
 	asm( 
-"	      0054faff    mov eax,[ebp-24h]"
+"	      0054faff    mov eax,this"
 "	      0054fb02    mov eax,[eax+3Ch]"
 "	      0054fb05    mov [ebp-28h],eax"
 "	      0054fb08    fild dword ptr [ebp-28h]"
@@ -16263,23 +16263,23 @@ void cAvatar::ResetView() {
 "	      0054fb10    mov [ebp-2Ch],eax"
 "	      0054fb13    fisub dword ptr [ebp-2Ch]"
 "	      0054fb16    fdiv qword ptr ds:[593540h]"
-"	      0054fb1c    fstp qword ptr [ebp-1Ch]"
+"	      0054fb1c    fstp view.x"
 );
 // LINE 2509:
 	asm( 
 "	      0054fb1f    mov eax,ds:[6C131Ch]"
 "	      0054fb24    mov [ebp-30h],eax"
 "	      0054fb27    fild dword ptr [ebp-30h]"
-"	      0054fb2a    mov eax,[ebp-24h]"
+"	      0054fb2a    mov eax,this"
 "	      0054fb2d    mov eax,[eax+40h]"
 "	      0054fb30    mov [ebp-34h],eax"
 "	      0054fb33    fisub dword ptr [ebp-34h]"
 "	      0054fb36    fdiv qword ptr ds:[593540h]"
-"	      0054fb3c    fstp qword ptr [ebp-14h]"
+"	      0054fb3c    fstp view.y"
 );
 // LINE 2510:
 	asm( 
-"	      0054fb3f    mov eax,[ebp-24h]"
+"	      0054fb3f    mov eax,this"
 "	      0054fb42    mov eax,[eax+44h]"
 "	      0054fb45    mov [ebp-38h],eax"
 "	      0054fb48    fild dword ptr [ebp-38h]"
@@ -16287,14 +16287,14 @@ void cAvatar::ResetView() {
 "	      0054fb50    mov [ebp-3Ch],eax"
 "	      0054fb53    fisub dword ptr [ebp-3Ch]"
 "	      0054fb56    fdiv qword ptr ds:[593540h]"
-"	      0054fb5c    fst qword ptr [ebp-0Ch]"
+"	      0054fb5c    fst view.z"
 );
 // LINE 2511:
 	asm( 
 "	      0054fb5f    fmul qword ptr ds:[593540h]"
 "	      0054fb65    call 0056EBE8h"
 "	      0054fb6a    push eax"
-"	      0054fb6b    fld qword ptr [ebp-1Ch]"
+"	      0054fb6b    fld view.x"
 "	      0054fb6e    fmul qword ptr ds:[593540h]"
 "	      0054fb74    call 0056EBE8h"
 "	      0054fb79    push eax"
@@ -16303,11 +16303,11 @@ void cAvatar::ResetView() {
 "	      0054fb82    push eax"
 "	      0054fb83    call 004CA7B4h"
 "	      0054fb88    add esp,4"
-"	      0054fb8b    mov [ebp-4],eax"
+"	      0054fb8b    mov yRot,eax"
 );
 // LINE 2512:
 	asm( 
-"	      0054fb8e    mov eax,[ebp-4]"
+"	      0054fb8e    mov eax,yRot"
 "	      0054fb91    mov [ebp-40h],eax"
 "	      0054fb94    fild dword ptr [ebp-40h]"
 "	      0054fb97    fdiv qword ptr ds:[593540h]"
@@ -16318,12 +16318,12 @@ void cAvatar::ResetView() {
 );
 // LINE 2513:
 	asm( 
-"	      0054fbae    add dword ptr [ebp-4],0E100000h"
+"	      0054fbae    add yRot,0E100000h"
 );
 // LINE 2517:
 	asm( 
 "	      0054fbb5    mov ebx,2"
-"	      0054fbba    mov eax,[ebp-4]"
+"	      0054fbba    mov eax,yRot"
 "	      0054fbbd    mov [ebp-44h],eax"
 "	      0054fbc0    fild dword ptr [ebp-44h]"
 "	      0054fbc3    fdiv qword ptr ds:[593540h]"
@@ -16333,29 +16333,29 @@ void cAvatar::ResetView() {
 "	      0054fbda    xor ecx,ecx"
 "	      0054fbdc    mov cl,al"
 "	      0054fbde    sub ebx,ecx"
-"	      0054fbe0    mov [ebp-20h],bl"
+"	      0054fbe0    mov figDir,bl"
 );
 // LINE 2521:
 	asm( 
 "	      0054fbe3    xor eax,eax"
-"	      0054fbe5    mov al,[ebp-20h]"
+"	      0054fbe5    mov al,figDir"
 "	      0054fbe8    and eax,7"
-"	      0054fbeb    mov ecx,[ebp-24h]"
+"	      0054fbeb    mov ecx,this"
 "	      0054fbee    mov [ecx+0D0h],ax"
 );
 // LINE 2522:
 	asm( 
-"	      0054fbf5    mov eax,[ebp-24h]"
+"	      0054fbf5    mov eax,this"
 "	      0054fbf8    cmp dword ptr [eax+174h],0"
 "	      0054fbff    jge near ptr 0054FC1Fh"
 );
 // LINE 2523:
 	asm( 
-"	      0054fc05    mov eax,[ebp-24h]"
+"	      0054fc05    mov eax,this"
 "	      0054fc08    movsx eax,word ptr [eax+0D0h]"
 "	      0054fc0f    sub eax,4"
 "	      0054fc12    and eax,7"
-"	      0054fc15    mov ecx,[ebp-24h]"
+"	      0054fc15    mov ecx,this"
 "	      0054fc18    mov [ecx+0D0h],ax"
 );
 // LINE 2525:
@@ -16386,21 +16386,21 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 "	      0054fc34    push ebx"
 "	      0054fc35    push esi"
 "	      0054fc36    push edi"
-"	      0054fc37    mov [ebp-0Ch],ecx"
+"	      0054fc37    mov this,ecx"
 );
 // LINE 2537:
 	asm( 
-"	      0054fc3a    mov eax,[ebp+8]"
+"	      0054fc3a    mov eax,loc.x"
 "	      0054fc3d    add eax,20000000h"
 "	      0054fc42    sar eax,16h"
-"	      0054fc45    mov [ebp-8],ax"
+"	      0054fc45    mov loccellx,ax"
 );
 // LINE 2538:
 	asm( 
 "	      0054fc49    mov eax,20000000h"
-"	      0054fc4e    sub eax,[ebp+10h]"
+"	      0054fc4e    sub eax,loc.z"
 "	      0054fc51    sar eax,16h"
-"	      0054fc54    mov [ebp-4],ax"
+"	      0054fc54    mov loccelly,ax"
 );
 // LINE 2549:
 	asm( 
@@ -16410,12 +16410,12 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 "	      0054fc5f    push eax"
 "	      0054fc60    call 00555746h"
 "	      0054fc65    add esp,8"
-"	      0054fc68    mov ecx,[ebp-0Ch]"
+"	      0054fc68    mov ecx,this"
 "	      0054fc6b    mov [ecx+0ACh],eax"
 );
 // LINE 2551:
 	asm( 
-"	      0054fc71    mov eax,[ebp-0Ch]"
+"	      0054fc71    mov eax,this"
 "	      0054fc74    add eax,48h"
 "	      0054fc77    push eax"
 "	      0054fc78    call 004D1FF1h"
@@ -16423,8 +16423,8 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 );
 // LINE 2552:
 	asm( 
-"	      0054fc80    lea eax,[ebp+8]"
-"	      0054fc83    mov ecx,[ebp-0Ch]"
+"	      0054fc80    lea eax,loc.x"
+"	      0054fc83    mov ecx,this"
 "	      0054fc86    add ecx,3Ch"
 "	      0054fc89    mov edx,[eax]"
 "	      0054fc8b    mov [ecx],edx"
@@ -16435,7 +16435,7 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 );
 // LINE 2553:
 	asm( 
-"	      0054fc99    mov eax,[ebp-0Ch]"
+"	      0054fc99    mov eax,this"
 "	      0054fc9c    cmp dword ptr [eax+130h],0"
 "	      0054fca3    je near ptr 0054FCC5h"
 "	      0054fca9    push 8C085h"
@@ -16447,26 +16447,26 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 );
 // LINE 2554:
 	asm( 
-"	      0054fcc5    mov eax,[ebp-0Ch]"
+"	      0054fcc5    mov eax,this"
 "	      0054fcc8    mov eax,[eax+44h]"
 "	      0054fccb    push eax"
-"	      0054fccc    mov eax,[ebp-0Ch]"
+"	      0054fccc    mov eax,this"
 "	      0054fccf    mov eax,[eax+40h]"
 "	      0054fcd2    push eax"
-"	      0054fcd3    mov eax,[ebp-0Ch]"
+"	      0054fcd3    mov eax,this"
 "	      0054fcd6    mov eax,[eax+3Ch]"
 "	      0054fcd9    push eax"
 "	      0054fcda    call 00551BF7h"
 "	      0054fcdf    add esp,0Ch"
 "	      0054fce2    add eax,30000h"
-"	      0054fce7    mov ecx,[ebp-0Ch]"
+"	      0054fce7    mov ecx,this"
 "	      0054fcea    mov [ecx+40h],eax"
 "	      0054fced    jmp near ptr 0054FCF2h"
 );
 // LINE 2555:
 	asm( 
 "	      0054fcf2    jmp near ptr 0054FCF7h"
-"	      0054fcf7    mov eax,[ebp-0Ch]"
+"	      0054fcf7    mov eax,this"
 "	      0054fcfa    xor ecx,ecx"
 "	      0054fcfc    mov cx,[eax+20h]"
 "	      0054fd00    test ecx,ecx"
@@ -16478,10 +16478,10 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 "	      0054fd1c    call 00554F30h"
 "	      0054fd21    add esp,10h"
 "	      0054fd24    mov al,[ebp-8]"
-"	      0054fd27    mov ecx,[ebp-0Ch]"
+"	      0054fd27    mov ecx,this"
 "	      0054fd2a    mov [ecx+88h],al"
 "	      0054fd30    mov al,[ebp-4]"
-"	      0054fd33    mov ecx,[ebp-0Ch]"
+"	      0054fd33    mov ecx,this"
 "	      0054fd36    mov [ecx+89h],al"
 "	      0054fd3c    jmp near ptr 0054FD41h"
 );
@@ -16508,21 +16508,21 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 "	      0054fd53    push ebx"
 "	      0054fd54    push esi"
 "	      0054fd55    push edi"
-"	      0054fd56    mov [ebp-50h],ecx"
+"	      0054fd56    mov this,ecx"
 );
 // LINE 2561:
 	asm( 
 "	      0054fd59    xor eax,eax"
-"	      0054fd5b    mov al,[ebp+0Ch]"
+"	      0054fd5b    mov al,y"
 "	      0054fd5e    xor ecx,ecx"
-"	      0054fd60    mov cl,[ebp+8]"
+"	      0054fd60    mov cl,x"
 "	      0054fd63    shl ecx,0Ah"
 "	      0054fd66    mov eax,[ecx+eax*4+67ED30h]"
 "	      0054fd6d    mov [ebp-28h],eax"
 "	      0054fd70    mov eax,[ebp-28h]"
 "	      0054fd73    movsx eax,word ptr [eax+2]"
 "	      0054fd77    shl eax,10h"
-"	      0054fd7a    add eax,[ebp+10h]"
+"	      0054fd7a    add eax,dx"
 "	      0054fd7d    mov [ebp-4Ch],eax"
 "	      0054fd80    mov eax,[ebp-28h]"
 "	      0054fd83    movsx eax,word ptr [eax+4]"
@@ -16532,7 +16532,7 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 "	      0054fd92    mov eax,[ebp-28h]"
 "	      0054fd95    movsx eax,word ptr [eax+6]"
 "	      0054fd99    shl eax,10h"
-"	      0054fd9c    add eax,[ebp+14h]"
+"	      0054fd9c    add eax,dz"
 "	      0054fd9f    mov [ebp-44h],eax"
 "	      0054fda2    lea eax,[ebp-4Ch]"
 "	      0054fda5    lea ecx,[ebp-40h]"
@@ -16569,7 +16569,7 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 "	      0054fdfe    mov eax,[eax+8]"
 "	      0054fe01    mov [ecx+8],eax"
 "	      0054fe04    lea eax,[ebp-18h]"
-"	      0054fe07    lea ecx,[ebp-0Ch]"
+"	      0054fe07    lea ecx,loc.x"
 "	      0054fe0a    mov edx,[eax]"
 "	      0054fe0c    mov [ecx],edx"
 "	      0054fe0e    mov edx,[eax+4]"
@@ -16583,13 +16583,13 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 "	      0054fe1d    push eax"
 "	      0054fe1e    mov eax,[ebp+8]"
 "	      0054fe21    push eax"
-"	      0054fe22    mov eax,[ebp-4]"
+"	      0054fe22    mov eax,loc.z"
 "	      0054fe25    push eax"
-"	      0054fe26    mov eax,[ebp-8]"
+"	      0054fe26    mov eax,loc.y"
 "	      0054fe29    push eax"
-"	      0054fe2a    mov eax,[ebp-0Ch]"
+"	      0054fe2a    mov eax,loc.x"
 "	      0054fe2d    push eax"
-"	      0054fe2e    mov ecx,[ebp-50h]"
+"	      0054fe2e    mov ecx,this"
 "	      0054fe31    call 0054FC2Eh"
 );
 // LINE 2567:
@@ -16615,11 +16615,11 @@ void cYObject::SetMissionType(enum MissionType type) {
 "	      0054fe48    push ebx"
 "	      0054fe49    push esi"
 "	      0054fe4a    push edi"
-"	      0054fe4b    mov [ebp-4],ecx"
+"	      0054fe4b    mov this,ecx"
 );
 // LINE 2571:
 	asm( 
-"	      0054fe4e    mov eax,[ebp-4]"
+"	      0054fe4e    mov eax,this"
 "	      0054fe51    movsx eax,word ptr [eax+0D2h]"
 "	      0054fe58    test eax,eax"
 "	      0054fe5a    je near ptr 0054FE7Ch"
@@ -16632,41 +16632,41 @@ void cYObject::SetMissionType(enum MissionType type) {
 );
 // LINE 2572:
 	asm( 
-"	      0054fe7c    mov eax,[ebp-4]"
+"	      0054fe7c    mov eax,this"
 "	      0054fe7f    mov word ptr [eax+0E2h],1"
 );
 // LINE 2573:
 	asm( 
-"	      0054fe88    mov eax,[ebp-4]"
+"	      0054fe88    mov eax,this"
 "	      0054fe8b    mov word ptr [eax+0DAh],0FFFEh"
 );
 // LINE 2574:
 	asm( 
-"	      0054fe94    mov eax,[ebp+8]"
-"	      0054fe97    mov ecx,[ebp-4]"
+"	      0054fe94    mov eax,type"
+"	      0054fe97    mov ecx,this"
 "	      0054fe9a    mov [ecx+0D8h],ax"
 );
 // LINE 2575:
 	asm( 
-"	      0054fea1    mov eax,[ebp+8]"
+"	      0054fea1    mov eax,type"
 "	      0054fea4    mov ax,[eax*2+636B98h]"
-"	      0054feac    mov ecx,[ebp-4]"
+"	      0054feac    mov ecx,this"
 "	      0054feaf    mov [ecx+10Ah],ax"
 );
 // LINE 2577:
 	asm( 
-"	      0054feb6    mov eax,[ebp-4]"
+"	      0054feb6    mov eax,this"
 "	      0054feb9    mov word ptr [eax+0FCh],0FFFFh"
 );
 // LINE 2579:
 	asm( 
-"	      0054fec2    mov eax,[ebp+8]"
+"	      0054fec2    mov eax,type"
 "	      0054fec5    mov [ebp-8],eax"
 "	      0054fec8    jmp near ptr 0054FEF4h"
 );
 // LINE 2585:
 	asm( 
-"	      0054fecd    mov eax,[ebp-4]"
+"	      0054fecd    mov eax,this"
 "	      0054fed0    mov word ptr [eax+0DAh],0"
 );
 // LINE 2586:
@@ -16675,7 +16675,7 @@ void cYObject::SetMissionType(enum MissionType type) {
 );
 // LINE 2589:
 	asm( 
-"	      0054fede    mov eax,[ebp-4]"
+"	      0054fede    mov eax,this"
 "	      0054fee1    mov word ptr [eax+0DAh],1"
 );
 // LINE 2590:
@@ -16708,32 +16708,32 @@ void cYObject::SetMissionType(enum MissionType type) {
 );
 // LINE 2596:
 	asm( 
-"	      0054ff2f    cmp dword ptr [ebp+8],0"
+"	      0054ff2f    cmp type,0"
 "	      0054ff33    jne near ptr 0054FF78h"
 );
 // LINE 2597:
 	asm( 
-"	      0054ff39    mov eax,[ebp-4]"
+"	      0054ff39    mov eax,this"
 "	      0054ff3c    mov dword ptr [eax+1Ch],0FFFFFFFFh"
 );
 // LINE 2598:
 	asm( 
-"	      0054ff43    mov eax,[ebp-4]"
+"	      0054ff43    mov eax,this"
 "	      0054ff46    mov word ptr [eax+0ECh],0"
 );
 // LINE 2599:
 	asm( 
-"	      0054ff4f    mov eax,[ebp-4]"
+"	      0054ff4f    mov eax,this"
 "	      0054ff52    mov word ptr [eax+0F6h],0"
 );
 // LINE 2600:
 	asm( 
-"	      0054ff5b    mov eax,[ebp-4]"
+"	      0054ff5b    mov eax,this"
 "	      0054ff5e    mov word ptr [eax+0F8h],1"
 );
 // LINE 2601:
 	asm( 
-"	      0054ff67    mov eax,[ebp-4]"
+"	      0054ff67    mov eax,this"
 "	      0054ff6a    mov word ptr [eax+0FAh],0"
 );
 // LINE 2603:
@@ -16742,22 +16742,22 @@ void cYObject::SetMissionType(enum MissionType type) {
 );
 // LINE 2604:
 	asm( 
-"	      0054ff78    mov eax,[ebp-4]"
+"	      0054ff78    mov eax,this"
 "	      0054ff7b    mov word ptr [eax+0F8h],0"
 );
 // LINE 2605:
 	asm( 
-"	      0054ff84    mov eax,[ebp-4]"
+"	      0054ff84    mov eax,this"
 "	      0054ff87    mov word ptr [eax+0FAh],1"
 );
 // LINE 2607:
 	asm( 
-"	      0054ff90    cmp dword ptr [ebp+8],6"
+"	      0054ff90    cmp type,6"
 "	      0054ff94    jne near ptr 0054FFABh"
 );
 // LINE 2608:
 	asm( 
-"	      0054ff9a    mov eax,[ebp-4]"
+"	      0054ff9a    mov eax,this"
 "	      0054ff9d    mov word ptr [eax+9Ch],0Ah"
 "	      0054ffa6    jmp near ptr 0054FFABh"
 );
@@ -16788,15 +16788,15 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      0054ffbd    push ebx"
 "	      0054ffbe    push esi"
 "	      0054ffbf    push edi"
-"	      0054ffc0    mov [ebp-40h],ecx"
+"	      0054ffc0    mov this,ecx"
 );
 // LINE 2616:
 	asm( 
-"	      0054ffc3    mov word ptr [ebp-14h],0"
+"	      0054ffc3    mov count,0"
 );
 // LINE 2617:
 	asm( 
-"	      0054ffc9    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      0054ffc9    cmp type,0FFFFFFFFh"
 "	      0054ffcd    jne near ptr 00550052h"
 );
 // LINE 2619:
@@ -16805,19 +16805,19 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      0054ffd5    call 0055D717h"
 "	      0054ffda    add esp,4"
 "	      0054ffdd    movzx eax,ax"
-"	      0054ffe0    mov [ebp+8],eax"
+"	      0054ffe0    mov type,eax"
 );
 // LINE 2621:
 	asm( 
-"	      0054ffe3    cmp dword ptr [ebp+8],11h"
+"	      0054ffe3    cmp type,11h"
 "	      0054ffe7    je near ptr 00550015h"
-"	      0054ffed    cmp dword ptr [ebp+8],10h"
+"	      0054ffed    cmp type,10h"
 "	      0054fff1    je near ptr 00550015h"
-"	      0054fff7    cmp dword ptr [ebp+8],0Eh"
+"	      0054fff7    cmp type,0Eh"
 "	      0054fffb    je near ptr 00550015h"
-"	      00550001    cmp dword ptr [ebp+8],0Dh"
+"	      00550001    cmp type,0Dh"
 "	      00550005    je near ptr 00550015h"
-"	      0055000b    cmp dword ptr [ebp+8],0Ch"
+"	      0055000b    cmp type,0Ch"
 "	      0055000f    jne near ptr 00550048h"
 "	      00550015    push 1Eh"
 "	      00550017    call 0055D717h"
@@ -16825,9 +16825,9 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      0055001f    movzx eax,ax"
 "	      00550022    test eax,eax"
 "	      00550024    je near ptr 00550048h"
-"	      0055002a    mov ax,[ebp-14h]"
+"	      0055002a    mov ax,count"
 "	      0055002e    mov [ebp-18h],ax"
-"	      00550032    inc word ptr [ebp-14h]"
+"	      00550032    inc count"
 "	      00550036    movsx eax,word ptr [ebp-18h]"
 "	      0055003a    cmp eax,5"
 "	      0055003d    jge near ptr 00550048h"
@@ -16846,34 +16846,34 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2626:
 	asm( 
-"	      00550052    mov eax,[ebp+8]"
-"	      00550055    mov ecx,[ebp-40h]"
+"	      00550052    mov eax,type"
+"	      00550055    mov ecx,this"
 "	      00550058    mov [ecx+0D6h],ax"
 );
 // LINE 2627:
 	asm( 
-"	      0055005f    mov word ptr [ebp-10h],0"
-"	      00550065    mov word ptr [ebp-0Ch],1Eh"
+"	      0055005f    mov freqadj,0"
+"	      00550065    mov frequnit,1Eh"
 );
 // LINE 2628:
 	asm( 
-"	      0055006b    mov eax,[ebp+8]"
+"	      0055006b    mov eax,type"
 "	      0055006e    mov [ebp-44h],eax"
 "	      00550071    jmp near ptr 005502C0h"
 );
 // LINE 2630:
 	asm( 
-"	      00550076    mov dword ptr [ebp-8],426C6F6Eh"
+"	      00550076    mov bodyname,426C6F6Eh"
 );
 // LINE 2631:
 	asm( 
-"	      0055007d    mov word ptr [ebp-4],7"
+"	      0055007d    mov faceindex,7"
 );
 // LINE 2632:
 	asm( 
-"	      00550083    movsx eax,word ptr [ebp-0Ch]"
+"	      00550083    movsx eax,frequnit"
 "	      00550087    lea eax,[eax+eax*4]"
-"	      0055008a    mov [ebp-10h],ax"
+"	      0055008a    mov freqadj,ax"
 );
 // LINE 2633:
 	asm( 
@@ -16881,18 +16881,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2635:
 	asm( 
-"	      00550093    mov dword ptr [ebp-8],32626C6Fh"
+"	      00550093    mov bodyname,32626C6Fh"
 );
 // LINE 2636:
 	asm( 
-"	      0055009a    mov word ptr [ebp-4],5"
+"	      0055009a    mov faceindex,5"
 );
 // LINE 2637:
 	asm( 
-"	      005500a0    movsx eax,word ptr [ebp-0Ch]"
+"	      005500a0    movsx eax,frequnit"
 "	      005500a4    lea eax,[eax+eax*4]"
 "	      005500a7    neg eax"
-"	      005500a9    mov [ebp-10h],ax"
+"	      005500a9    mov freqadj,ax"
 );
 // LINE 2638:
 	asm( 
@@ -16900,17 +16900,17 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2640:
 	asm( 
-"	      005500b2    mov dword ptr [ebp-8],576F6D61h"
+"	      005500b2    mov bodyname,576F6D61h"
 );
 // LINE 2641:
 	asm( 
-"	      005500b9    mov word ptr [ebp-4],5"
+"	      005500b9    mov faceindex,5"
 );
 // LINE 2642:
 	asm( 
-"	      005500bf    movsx eax,word ptr [ebp-0Ch]"
+"	      005500bf    movsx eax,frequnit"
 "	      005500c3    shl eax,2"
-"	      005500c6    mov [ebp-10h],ax"
+"	      005500c6    mov freqadj,ax"
 );
 // LINE 2643:
 	asm( 
@@ -16918,17 +16918,17 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2645:
 	asm( 
-"	      005500cf    mov dword ptr [ebp-8],32776F6Dh"
+"	      005500cf    mov bodyname,32776F6Dh"
 );
 // LINE 2646:
 	asm( 
-"	      005500d6    mov word ptr [ebp-4],7"
+"	      005500d6    mov faceindex,7"
 );
 // LINE 2647:
 	asm( 
-"	      005500dc    movsx eax,word ptr [ebp-0Ch]"
+"	      005500dc    movsx eax,frequnit"
 "	      005500e0    shl eax,2"
-"	      005500e3    mov [ebp-10h],ax"
+"	      005500e3    mov freqadj,ax"
 );
 // LINE 2648:
 	asm( 
@@ -16936,19 +16936,19 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2650:
 	asm( 
-"	      005500ec    mov dword ptr [ebp-8],4368696Ch"
+"	      005500ec    mov bodyname,4368696Ch"
 );
 // LINE 2651:
 	asm( 
-"	      005500f3    mov word ptr [ebp-4],4"
+"	      005500f3    mov faceindex,4"
 );
 // LINE 2652:
 	asm( 
-"	      005500f9    movsx eax,word ptr [ebp-0Ch]"
+"	      005500f9    movsx eax,frequnit"
 "	      005500fd    mov ecx,eax"
 "	      005500ff    shl eax,3"
 "	      00550102    sub eax,ecx"
-"	      00550104    mov [ebp-10h],ax"
+"	      00550104    mov freqadj,ax"
 );
 // LINE 2653:
 	asm( 
@@ -16956,15 +16956,15 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2655:
 	asm( 
-"	      0055010d    mov dword ptr [ebp-8],356D616Eh"
+"	      0055010d    mov bodyname,356D616Eh"
 );
 // LINE 2656:
 	asm( 
-"	      00550114    mov word ptr [ebp-4],8"
+"	      00550114    mov faceindex,8"
 );
 // LINE 2657:
 	asm( 
-"	      0055011a    mov word ptr [ebp-10h],0"
+"	      0055011a    mov freqadj,0"
 );
 // LINE 2658:
 	asm( 
@@ -16972,20 +16972,20 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2660:
 	asm( 
-"	      00550125    mov dword ptr [ebp-8],6661746Dh"
+"	      00550125    mov bodyname,6661746Dh"
 );
 // LINE 2661:
 	asm( 
-"	      0055012c    mov word ptr [ebp-4],6"
+"	      0055012c    mov faceindex,6"
 );
 // LINE 2662:
 	asm( 
-"	      00550132    movsx eax,word ptr [ebp-0Ch]"
+"	      00550132    movsx eax,frequnit"
 "	      00550136    mov ecx,eax"
 "	      00550138    shl eax,3"
 "	      0055013b    sub eax,ecx"
 "	      0055013d    neg eax"
-"	      0055013f    mov [ebp-10h],ax"
+"	      0055013f    mov freqadj,ax"
 );
 // LINE 2663:
 	asm( 
@@ -16993,18 +16993,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2665:
 	asm( 
-"	      00550148    mov dword ptr [ebp-8],424C5545h"
+"	      00550148    mov bodyname,424C5545h"
 );
 // LINE 2666:
 	asm( 
-"	      0055014f    mov word ptr [ebp-4],6"
+"	      0055014f    mov faceindex,6"
 );
 // LINE 2667:
 	asm( 
-"	      00550155    movsx eax,word ptr [ebp-0Ch]"
+"	      00550155    movsx eax,frequnit"
 "	      00550159    add eax,eax"
 "	      0055015b    neg eax"
-"	      0055015d    mov [ebp-10h],ax"
+"	      0055015d    mov freqadj,ax"
 );
 // LINE 2668:
 	asm( 
@@ -17012,18 +17012,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2670:
 	asm( 
-"	      00550166    mov dword ptr [ebp-8],53554954h"
+"	      00550166    mov bodyname,53554954h"
 );
 // LINE 2671:
 	asm( 
-"	      0055016d    mov word ptr [ebp-4],9"
+"	      0055016d    mov faceindex,9"
 );
 // LINE 2672:
 	asm( 
-"	      00550173    movsx eax,word ptr [ebp-0Ch]"
+"	      00550173    movsx eax,frequnit"
 "	      00550177    lea eax,[eax+eax*2]"
 "	      0055017a    neg eax"
-"	      0055017c    mov [ebp-10h],ax"
+"	      0055017c    mov freqadj,ax"
 );
 // LINE 2673:
 	asm( 
@@ -17031,17 +17031,17 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2675:
 	asm( 
-"	      00550185    mov dword ptr [ebp-8],53484144h"
+"	      00550185    mov bodyname,53484144h"
 );
 // LINE 2676:
 	asm( 
-"	      0055018c    mov word ptr [ebp-4],6"
+"	      0055018c    mov faceindex,6"
 );
 // LINE 2677:
 	asm( 
-"	      00550192    movsx eax,word ptr [ebp-0Ch]"
+"	      00550192    movsx eax,frequnit"
 "	      00550196    lea eax,[eax+eax*2]"
-"	      00550199    mov [ebp-10h],ax"
+"	      00550199    mov freqadj,ax"
 );
 // LINE 2678:
 	asm( 
@@ -17049,20 +17049,20 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2680:
 	asm( 
-"	      005501a2    mov dword ptr [ebp-8],352E356Dh"
+"	      005501a2    mov bodyname,352E356Dh"
 );
 // LINE 2681:
 	asm( 
-"	      005501a9    mov word ptr [ebp-4],4"
+"	      005501a9    mov faceindex,4"
 );
 // LINE 2682:
 	asm( 
-"	      005501af    movsx eax,word ptr [ebp-0Ch]"
+"	      005501af    movsx eax,frequnit"
 "	      005501b3    mov ecx,eax"
 "	      005501b5    add eax,eax"
 "	      005501b7    sub eax,ecx"
 "	      005501b9    neg eax"
-"	      005501bb    mov [ebp-10h],ax"
+"	      005501bb    mov freqadj,ax"
 );
 // LINE 2683:
 	asm( 
@@ -17070,17 +17070,17 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2685:
 	asm( 
-"	      005501c4    mov dword ptr [ebp-8],32444F47h"
+"	      005501c4    mov bodyname,32444F47h"
 );
 // LINE 2686:
 	asm( 
-"	      005501cb    mov word ptr [ebp-4],6"
+"	      005501cb    mov faceindex,6"
 );
 // LINE 2687:
 	asm( 
-"	      005501d1    movsx eax,word ptr [ebp-0Ch]"
+"	      005501d1    movsx eax,frequnit"
 "	      005501d5    lea eax,[eax+eax*8]"
-"	      005501d8    mov [ebp-10h],ax"
+"	      005501d8    mov freqadj,ax"
 );
 // LINE 2688:
 	asm( 
@@ -17088,18 +17088,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2690:
 	asm( 
-"	      005501e1    mov dword ptr [ebp-8],42616467h"
+"	      005501e1    mov bodyname,42616467h"
 );
 // LINE 2691:
 	asm( 
-"	      005501e8    mov word ptr [ebp-4],4"
+"	      005501e8    mov faceindex,4"
 );
 // LINE 2692:
 	asm( 
-"	      005501ee    movsx eax,word ptr [ebp-0Ch]"
+"	      005501ee    movsx eax,frequnit"
 "	      005501f2    lea eax,[eax+eax*8]"
 "	      005501f5    neg eax"
-"	      005501f7    mov [ebp-10h],ax"
+"	      005501f7    mov freqadj,ax"
 );
 // LINE 2693:
 	asm( 
@@ -17107,18 +17107,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2695:
 	asm( 
-"	      00550200    mov dword ptr [ebp-8],4B6F7070h"
+"	      00550200    mov bodyname,4B6F7070h"
 );
 // LINE 2696:
 	asm( 
-"	      00550207    mov word ptr [ebp-4],1"
+"	      00550207    mov faceindex,1"
 );
 // LINE 2697:
 	asm( 
-"	      0055020d    movsx eax,word ptr [ebp-0Ch]"
+"	      0055020d    movsx eax,frequnit"
 "	      00550211    lea eax,[eax+eax*2]"
 "	      00550214    neg eax"
-"	      00550216    mov [ebp-10h],ax"
+"	      00550216    mov freqadj,ax"
 );
 // LINE 2698:
 	asm( 
@@ -17126,18 +17126,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2700:
 	asm( 
-"	      0055021f    mov dword ptr [ebp-8],46697265h"
+"	      0055021f    mov bodyname,46697265h"
 );
 // LINE 2701:
 	asm( 
-"	      00550226    mov word ptr [ebp-4],2"
+"	      00550226    mov faceindex,2"
 );
 // LINE 2702:
 	asm( 
-"	      0055022c    movsx eax,word ptr [ebp-0Ch]"
+"	      0055022c    movsx eax,frequnit"
 "	      00550230    lea eax,[eax+eax*2]"
 "	      00550233    neg eax"
-"	      00550235    mov [ebp-10h],ax"
+"	      00550235    mov freqadj,ax"
 );
 // LINE 2703:
 	asm( 
@@ -17145,18 +17145,18 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2705:
 	asm( 
-"	      0055023e    mov dword ptr [ebp-8],4D656469h"
+"	      0055023e    mov bodyname,4D656469h"
 );
 // LINE 2706:
 	asm( 
-"	      00550245    mov word ptr [ebp-4],3"
+"	      00550245    mov faceindex,3"
 );
 // LINE 2707:
 	asm( 
-"	      0055024b    movsx eax,word ptr [ebp-0Ch]"
+"	      0055024b    movsx eax,frequnit"
 "	      0055024f    lea eax,[eax+eax*2]"
 "	      00550252    neg eax"
-"	      00550254    mov [ebp-10h],ax"
+"	      00550254    mov freqadj,ax"
 );
 // LINE 2708:
 	asm( 
@@ -17164,19 +17164,19 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2710:
 	asm( 
-"	      0055025d    mov dword ptr [ebp-8],4E657373h"
+"	      0055025d    mov bodyname,4E657373h"
 );
 // LINE 2711:
 	asm( 
-"	      00550264    mov word ptr [ebp-4],4"
+"	      00550264    mov faceindex,4"
 );
 // LINE 2712:
 	asm( 
-"	      0055026a    movsx eax,word ptr [ebp-0Ch]"
+"	      0055026a    movsx eax,frequnit"
 "	      0055026e    lea eax,[eax+eax*4]"
 "	      00550271    add eax,eax"
 "	      00550273    neg eax"
-"	      00550275    mov [ebp-10h],ax"
+"	      00550275    mov freqadj,ax"
 );
 // LINE 2713:
 	asm( 
@@ -17184,19 +17184,19 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2715:
 	asm( 
-"	      0055027e    mov dword ptr [ebp-8],436F7777h"
+"	      0055027e    mov bodyname,436F7777h"
 );
 // LINE 2716:
 	asm( 
-"	      00550285    mov word ptr [ebp-4],4"
+"	      00550285    mov faceindex,4"
 );
 // LINE 2717:
 	asm( 
-"	      0055028b    movsx eax,word ptr [ebp-0Ch]"
+"	      0055028b    movsx eax,frequnit"
 "	      0055028f    lea eax,[eax+eax*4]"
 "	      00550292    add eax,eax"
 "	      00550294    neg eax"
-"	      00550296    mov [ebp-10h],ax"
+"	      00550296    mov freqadj,ax"
 );
 // LINE 2718:
 	asm( 
@@ -17250,8 +17250,8 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2725:
 	asm( 
-"	      0055031c    mov ax,[ebp-10h]"
-"	      00550320    mov ecx,[ebp-40h]"
+"	      0055031c    mov ax,freqadj"
+"	      00550320    mov ecx,this"
 "	      00550323    mov [ecx+108h],ax"
 );
 // LINE 2726:
@@ -17319,7 +17319,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      00550434    mov eax,[eax+1Ch]"
 "	      00550437    mov cl,[ebp-1Ch]"
 "	      0055043a    shr eax,cl"
-"	      0055043c    mov edx,[ebp-8]"
+"	      0055043c    mov edx,bodyname"
 "	      0055043f    mov cl,[ebp-1Ch]"
 "	      00550442    shr edx,cl"
 "	      00550444    cmp eax,edx"
@@ -17340,9 +17340,9 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      00550484    mov dword ptr [ebp-38h],0"
 "	      0055048b    jmp near ptr 00550490h"
 "	      00550490    mov eax,[ebp-38h]"
-"	      00550493    mov ecx,[ebp-40h]"
+"	      00550493    mov ecx,this"
 "	      00550496    mov [ecx+90h],eax"
-"	      0055049c    mov eax,[ebp-40h]"
+"	      0055049c    mov eax,this"
 "	      0055049f    cmp dword ptr [eax+90h],0"
 "	      005504a6    jne near ptr 005504C8h"
 "	      005504ac    push 8C085h"
@@ -17355,7 +17355,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2727:
 	asm( 
-"	      005504cd    mov eax,[ebp-40h]"
+"	      005504cd    mov eax,this"
 "	      005504d0    cmp dword ptr [eax+90h],0"
 "	      005504d7    jne near ptr 005504F9h"
 "	      005504dd    push 8C085h"
@@ -17367,25 +17367,25 @@ void cYObject::SetPersonType(enum PersonType type) {
 );
 // LINE 2729:
 	asm( 
-"	      005504f9    mov eax,[ebp-40h]"
+"	      005504f9    mov eax,this"
 "	      005504fc    movsx eax,word ptr [eax+9Ch]"
 "	      00550503    cmp eax,0FFFFFFFFh"
 "	      00550506    jne near ptr 00550534h"
-"	      0055050c    mov eax,[ebp-40h]"
+"	      0055050c    mov eax,this"
 "	      0055050f    movsx eax,word ptr [eax+0BCh]"
 "	      00550516    cmp eax,7D00h"
 "	      0055051b    je near ptr 00550534h"
 );
 // LINE 2730:
 	asm( 
-"	      00550521    mov ax,[ebp-4]"
-"	      00550525    mov ecx,[ebp-40h]"
+"	      00550521    mov ax,faceindex"
+"	      00550525    mov ecx,this"
 "	      00550528    mov [ecx+9Ch],ax"
 "	      0055052f    jmp near ptr 00550534h"
 );
 // LINE 2731:
 	asm( 
-"	      00550534    mov eax,[ebp-40h]"
+"	      00550534    mov eax,this"
 "	      00550537    movsx eax,word ptr [eax+0F0h]"
 "	      0055053e    cmp eax,0FFFFFFFFh"
 "	      00550541    jne near ptr 0055055Bh"
@@ -17395,7 +17395,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 "	      00550547    push 0Eh"
 "	      00550549    call 0055D717h"
 "	      0055054e    add esp,4"
-"	      00550551    mov ecx,[ebp-40h]"
+"	      00550551    mov ecx,this"
 "	      00550554    mov [ecx+0F0h],ax"
 );
 // LINE 2735:
@@ -17431,19 +17431,19 @@ void cYObject::DestroyObjects() {
 // Block start:
 	short cnt;
 	asm( 
-"	      00550580    mov word ptr [ebp-4],0"
+"	      00550580    mov cnt,0"
 "	      00550586    jmp near ptr 0055058Fh"
-"	      0055058b    inc word ptr [ebp-4]"
-"	      0055058f    movsx eax,word ptr [ebp-4]"
+"	      0055058b    inc cnt"
+"	      0055058f    movsx eax,cnt"
 "	      00550593    cmp eax,64h"
 "	      00550596    jge near ptr 005505E3h"
 );
 // LINE 2764:
 	asm( 
-"	      0055059c    movsx eax,word ptr [ebp-4]"
+"	      0055059c    movsx eax,cnt"
 "	      005505a0    cmp dword ptr [eax*4+636D40h],0"
 "	      005505a8    je near ptr 005505DEh"
-"	      005505ae    movsx eax,word ptr [ebp-4]"
+"	      005505ae    movsx eax,cnt"
 "	      005505b2    mov eax,[eax*4+636D40h]"
 "	      005505b9    mov [ebp-0Ch],eax"
 "	      005505bc    mov eax,[ebp-0Ch]"
@@ -17534,12 +17534,12 @@ void cYObject::Link() {
 "	      005506a1    push ebx"
 "	      005506a2    push esi"
 "	      005506a3    push edi"
-"	      005506a4    mov [ebp-0Ch],ecx"
+"	      005506a4    mov this,ecx"
 );
 // LINE 2780:
 	asm( 
 "	      005506a7    jmp near ptr 005506ACh"
-"	      005506ac    mov eax,[ebp-0Ch]"
+"	      005506ac    mov eax,this"
 "	      005506af    xor ecx,ecx"
 "	      005506b1    mov cx,[eax+20h]"
 "	      005506b5    test ecx,ecx"
@@ -17553,12 +17553,12 @@ void cYObject::Link() {
 );
 // LINE 2782:
 	asm( 
-"	      005506d9    mov eax,[ebp-0Ch]"
+"	      005506d9    mov eax,this"
 "	      005506dc    xor ecx,ecx"
 "	      005506de    mov cl,[eax+88h]"
 "	      005506e4    cmp ecx,0FFFFFFFFh"
 "	      005506e7    jne near ptr 00550722h"
-"	      005506ed    mov eax,[ebp-0Ch]"
+"	      005506ed    mov eax,this"
 "	      005506f0    xor ecx,ecx"
 "	      005506f2    mov cl,[eax+89h]"
 "	      005506f8    cmp ecx,0FFFFFFFFh"
@@ -17570,7 +17570,7 @@ void cYObject::Link() {
 "	      00550715    call 00554F30h"
 "	      0055071a    add esp,10h"
 "	      0055071d    jmp near ptr 00550752h"
-"	      00550722    mov eax,[ebp-0Ch]"
+"	      00550722    mov eax,this"
 "	      00550725    xor ecx,ecx"
 "	      00550727    mov cl,[eax+89h]"
 "	      0055072d    cmp ecx,0FFFFFFFFh"
@@ -17581,7 +17581,7 @@ void cYObject::Link() {
 "	      00550745    push 5BBA14h"
 "	      0055074a    call 00554F30h"
 "	      0055074f    add esp,10h"
-"	      00550752    mov eax,[ebp-0Ch]"
+"	      00550752    mov eax,this"
 "	      00550755    xor ecx,ecx"
 "	      00550757    mov cl,[eax+88h]"
 "	      0055075d    cmp ecx,0FFFFFFFFh"
@@ -17600,33 +17600,33 @@ void cYObject::Link() {
 );
 // LINE 2783:
 	asm( 
-"	      0055079e    mov eax,[ebp-0Ch]"
+"	      0055079e    mov eax,this"
 "	      005507a1    xor ecx,ecx"
 "	      005507a3    mov cl,[eax+88h]"
 "	      005507a9    shl ecx,0Ah"
-"	      005507ac    mov eax,[ebp-0Ch]"
+"	      005507ac    mov eax,this"
 "	      005507af    xor edx,edx"
 "	      005507b1    mov dl,[eax+89h]"
 "	      005507b7    mov eax,[ecx+edx*4+67ED30h]"
-"	      005507be    mov [ebp-4],eax"
+"	      005507be    mov ncptr,eax"
 );
 // LINE 2787:
 	asm( 
-"	      005507c1    mov eax,[ebp-4]"
+"	      005507c1    mov eax,ncptr"
 "	      005507c4    mov eax,[eax+10h]"
-"	      005507c7    mov ecx,[ebp-0Ch]"
+"	      005507c7    mov ecx,this"
 "	      005507ca    mov [ecx+24h],eax"
 );
 // LINE 2788:
 	asm( 
-"	      005507cd    mov eax,[ebp-0Ch]"
+"	      005507cd    mov eax,this"
 "	      005507d0    add eax,24h"
-"	      005507d3    mov ecx,[ebp-4]"
+"	      005507d3    mov ecx,ncptr"
 "	      005507d6    mov [ecx+10h],eax"
 );
 // LINE 2790:
 	asm( 
-"	      005507d9    mov eax,[ebp-0Ch]"
+"	      005507d9    mov eax,this"
 "	      005507dc    mov word ptr [eax+20h],1"
 );
 // LINE 2791:
@@ -17653,12 +17653,12 @@ void cYObject::Unlink() {
 "	      005507f2    push ebx"
 "	      005507f3    push esi"
 "	      005507f4    push edi"
-"	      005507f5    mov [ebp-0Ch],ecx"
+"	      005507f5    mov this,ecx"
 );
 // LINE 2798:
 	asm( 
 "	      005507f8    jmp near ptr 005507FDh"
-"	      005507fd    mov eax,[ebp-0Ch]"
+"	      005507fd    mov eax,this"
 "	      00550800    xor ecx,ecx"
 "	      00550802    mov cx,[eax+20h]"
 "	      00550806    test ecx,ecx"
@@ -17672,41 +17672,41 @@ void cYObject::Unlink() {
 );
 // LINE 2799:
 	asm( 
-"	      0055082a    mov eax,[ebp-0Ch]"
+"	      0055082a    mov eax,this"
 "	      0055082d    xor ecx,ecx"
 "	      0055082f    mov cl,[eax+89h]"
-"	      00550835    mov eax,[ebp-0Ch]"
+"	      00550835    mov eax,this"
 "	      00550838    xor edx,edx"
 "	      0055083a    mov dl,[eax+88h]"
 "	      00550840    shl edx,0Ah"
 "	      00550843    mov eax,[edx+ecx*4+67ED30h]"
-"	      0055084a    mov [ebp-4],eax"
+"	      0055084a    mov cptr,eax"
 );
 // LINE 2800:
 	asm( 
-"	      0055084d    mov eax,[ebp-4]"
+"	      0055084d    mov eax,cptr"
 "	      00550850    add eax,10h"
-"	      00550853    mov [ebp-8],eax"
+"	      00550853    mov dyptrptr,eax"
 );
 // LINE 2801:
 	asm( 
-"	      00550856    mov eax,[ebp-8]"
+"	      00550856    mov eax,dyptrptr"
 "	      00550859    cmp dword ptr [eax],0"
 "	      0055085c    je near ptr 00550890h"
 );
 // LINE 2803:
 	asm( 
-"	      00550862    mov eax,[ebp-0Ch]"
+"	      00550862    mov eax,this"
 "	      00550865    add eax,24h"
-"	      00550868    mov ecx,[ebp-8]"
+"	      00550868    mov ecx,dyptrptr"
 "	      0055086b    cmp eax,[ecx]"
 "	      0055086d    jne near ptr 00550883h"
 );
 // LINE 2805:
 	asm( 
-"	      00550873    mov eax,[ebp-0Ch]"
+"	      00550873    mov eax,this"
 "	      00550876    mov eax,[eax+24h]"
-"	      00550879    mov ecx,[ebp-8]"
+"	      00550879    mov ecx,dyptrptr"
 "	      0055087c    mov [ecx],eax"
 );
 // LINE 2806:
@@ -17715,9 +17715,9 @@ void cYObject::Unlink() {
 );
 // LINE 2808:
 	asm( 
-"	      00550883    mov eax,[ebp-8]"
+"	      00550883    mov eax,dyptrptr"
 "	      00550886    mov eax,[eax]"
-"	      00550888    mov [ebp-8],eax"
+"	      00550888    mov dyptrptr,eax"
 );
 // LINE 2809:
 	asm( 
@@ -17725,7 +17725,7 @@ void cYObject::Unlink() {
 );
 // LINE 2812:
 	asm( 
-"	      00550890    mov eax,[ebp-0Ch]"
+"	      00550890    mov eax,this"
 "	      00550893    mov word ptr [eax+20h],0"
 );
 // LINE 2813:
@@ -17760,9 +17760,9 @@ class cAvatar* cAvatar::MakeAvatar() {
 );
 // LINE 2818:
 	asm( 
-"	      005508c1    mov dword ptr [ebp-18h],0"
-"	      005508c8    mov dword ptr [ebp-14h],0"
-"	      005508cf    mov dword ptr [ebp-10h],0"
+"	      005508c1    mov p.x,0"
+"	      005508c8    mov p.y,0"
+"	      005508cf    mov p.z,0"
 );
 // LINE 2819:
 	asm( 
@@ -17773,7 +17773,7 @@ class cAvatar* cAvatar::MakeAvatar() {
 "	      005508e6    mov dword ptr [ebp-4],0"
 "	      005508ed    cmp dword ptr [ebp-20h],0"
 "	      005508f1    je near ptr 0055097Eh"
-"	      005508f7    lea eax,[ebp-18h]"
+"	      005508f7    lea eax,p.x"
 "	      005508fa    lea ecx,[ebp-30h]"
 "	      005508fd    mov edx,[eax]"
 "	      005508ff    mov [ecx],edx"
@@ -17818,18 +17818,18 @@ _L56436:
 "	      0055097e    mov dword ptr [ebp-24h],0"
 "	      00550985    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0055098c    mov eax,[ebp-24h]"
-"	      0055098f    mov [ebp-1Ch],eax"
+"	      0055098f    mov avatar,eax"
 );
 // LINE 2820:
 	asm( 
-"	      00550992    mov eax,[ebp-1Ch]"
+"	      00550992    mov eax,avatar"
 "	      00550995    mov eax,[eax]"
-"	      00550997    mov ecx,[ebp-1Ch]"
+"	      00550997    mov ecx,avatar"
 "	      0055099a    call dword ptr [eax+18h]"
 );
 // LINE 2821:
 	asm( 
-"	      0055099d    mov eax,[ebp-1Ch]"
+"	      0055099d    mov eax,avatar"
 "	      005509a0    jmp near ptr 005509BCh"
 );
 // LINE 2822:
@@ -17888,16 +17888,16 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 );
 // LINE 2828:
 	asm( 
-"	      00550a15    mov word ptr [ebp-10h],0"
+"	      00550a15    mov id,0"
 "	      00550a1b    jmp near ptr 00550A24h"
-"	      00550a20    inc word ptr [ebp-10h]"
-"	      00550a24    movsx eax,word ptr [ebp-10h]"
+"	      00550a20    inc id"
+"	      00550a24    movsx eax,id"
 "	      00550a28    cmp eax,64h"
 "	      00550a2b    jge near ptr 00550A57h"
 );
 // LINE 2829:
 	asm( 
-"	      00550a31    movsx eax,word ptr [ebp-10h]"
+"	      00550a31    movsx eax,id"
 "	      00550a35    cmp dword ptr [eax*4+636D40h],0"
 "	      00550a3d    je near ptr 00550A4Dh"
 "	      00550a43    jmp near ptr 00550A20h"
@@ -17913,7 +17913,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 );
 // LINE 2833:
 	asm( 
-"	      00550a57    movsx eax,word ptr [ebp-10h]"
+"	      00550a57    movsx eax,id"
 "	      00550a5b    cmp eax,64h"
 "	      00550a5e    je near ptr 00550AE5h"
 );
@@ -17921,9 +17921,9 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 // Block start:
 	class cYObject** newObj;
 	asm( 
-"	      00550a64    movsx eax,word ptr [ebp-10h]"
+"	      00550a64    movsx eax,id"
 "	      00550a68    lea eax,[eax*4+636D40h]"
-"	      00550a6f    mov [ebp-14h],eax"
+"	      00550a6f    mov newObj,eax"
 );
 // LINE 2835:
 	asm( 
@@ -17936,13 +17936,13 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550a8d    je near ptr 00550ABBh"
 "	      00550a93    mov eax,[ebp-10h]"
 "	      00550a96    push eax"
-"	      00550a97    mov eax,[ebp+14h]"
+"	      00550a97    mov eax,loc.z"
 "	      00550a9a    push eax"
-"	      00550a9b    mov eax,[ebp+10h]"
+"	      00550a9b    mov eax,loc.y"
 "	      00550a9e    push eax"
-"	      00550a9f    mov eax,[ebp+0Ch]"
+"	      00550a9f    mov eax,loc.x"
 "	      00550aa2    push eax"
-"	      00550aa3    mov eax,[ebp+18h]"
+"	      00550aa3    mov eax,behavior"
 "	      00550aa6    push eax"
 "	      00550aa7    mov eax,[ebp+8]"
 "	      00550aaa    push eax"
@@ -17953,13 +17953,13 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550abb    mov dword ptr [ebp-1Ch],0"
 "	      00550ac2    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00550ac9    mov eax,[ebp-1Ch]"
-"	      00550acc    mov ecx,[ebp-14h]"
+"	      00550acc    mov ecx,newObj"
 "	      00550acf    mov [ecx],eax"
 );
 // LINE 2836:
 	asm( 
-"	      00550ad1    mov eax,[ebp-14h]"
-"	      00550ad4    mov ecx,[ebp-14h]"
+"	      00550ad1    mov eax,newObj"
+"	      00550ad4    mov ecx,newObj"
 "	      00550ad7    mov ecx,[ecx]"
 "	      00550ad9    mov edx,[ecx]"
 "	      00550adb    mov ecx,[eax]"
@@ -17981,7 +17981,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 );
 // LINE 2840:
 	asm( 
-"	      00550b01    mov ax,[ebp-10h]"
+"	      00550b01    mov ax,id"
 "	      00550b05    jmp near ptr 00550B21h"
 );
 // LINE 2841:
@@ -18020,7 +18020,7 @@ void cYObject::InitForEngine(short id) {
 "	      00550b36    push ebx"
 "	      00550b37    push esi"
 "	      00550b38    push edi"
-"	      00550b39    mov [ebp-28h],ecx"
+"	      00550b39    mov this,ecx"
 );
 // LINE 2845:
 	asm( 
@@ -18028,12 +18028,12 @@ void cYObject::InitForEngine(short id) {
 "	      00550b3e    push 1"
 "	      00550b40    call 004D4B80h"
 "	      00550b45    add esp,8"
-"	      00550b48    mov ecx,[ebp-28h]"
+"	      00550b48    mov ecx,this"
 "	      00550b4b    mov [ecx+2Ch],eax"
 );
 // LINE 2846:
 	asm( 
-"	      00550b4e    mov eax,[ebp-28h]"
+"	      00550b4e    mov eax,this"
 "	      00550b51    cmp dword ptr [eax+2Ch],0"
 "	      00550b55    jne near ptr 00550B77h"
 "	      00550b5b    push 8C085h"
@@ -18046,7 +18046,7 @@ void cYObject::InitForEngine(short id) {
 // LINE 2848:
 	asm( 
 "	      00550b77    push 2"
-"	      00550b79    mov eax,[ebp-28h]"
+"	      00550b79    mov eax,this"
 "	      00550b7c    mov eax,[eax+2Ch]"
 "	      00550b7f    push eax"
 "	      00550b80    call 004D6970h"
@@ -18055,7 +18055,7 @@ void cYObject::InitForEngine(short id) {
 // LINE 2849:
 	asm( 
 "	      00550b88    push 0"
-"	      00550b8a    mov eax,[ebp-28h]"
+"	      00550b8a    mov eax,this"
 "	      00550b8d    mov eax,[eax+2Ch]"
 "	      00550b90    push eax"
 "	      00550b91    call 004D6970h"
@@ -18065,7 +18065,7 @@ void cYObject::InitForEngine(short id) {
 	asm( 
 "	      00550b99    mov eax,ds:[5B4780h]"
 "	      00550b9e    push eax"
-"	      00550b9f    mov eax,[ebp-28h]"
+"	      00550b9f    mov eax,this"
 "	      00550ba2    mov eax,[eax+2Ch]"
 "	      00550ba5    push eax"
 "	      00550ba6    call 004D84DBh"
@@ -18073,63 +18073,63 @@ void cYObject::InitForEngine(short id) {
 );
 // LINE 2853:
 	asm( 
-"	      00550bae    mov eax,[ebp-28h]"
+"	      00550bae    mov eax,this"
 "	      00550bb1    mov eax,[eax+2Ch]"
 "	      00550bb4    push eax"
 "	      00550bb5    call 004D85CDh"
 "	      00550bba    add esp,4"
-"	      00550bbd    mov [ebp-4],eax"
+"	      00550bbd    mov face,eax"
 );
 // LINE 2855:
 	asm( 
-"	      00550bc0    lea eax,[ebp-24h]"
+"	      00550bc0    lea eax,finfo.Face"
 "	      00550bc3    push eax"
-"	      00550bc4    mov eax,[ebp-4]"
+"	      00550bc4    mov eax,face"
 "	      00550bc7    push eax"
 "	      00550bc8    call 004D6905h"
 "	      00550bcd    add esp,8"
 );
 // LINE 2856:
 	asm( 
-"	      00550bd0    cmp dword ptr [ebp-18h],16h"
+"	      00550bd0    cmp finfo.Plotter,16h"
 "	      00550bd4    jne near ptr 00550BF8h"
 );
 // LINE 2857:
 	asm( 
-"	      00550bda    movsx eax,word ptr [ebp+8]"
-"	      00550bde    mov [ebp-14h],eax"
+"	      00550bda    movsx eax,id"
+"	      00550bde    mov finfo.Bitmap,eax"
 );
 // LINE 2858:
 	asm( 
-"	      00550be1    and dword ptr [ebp-1Ch],7FFFFFFFh"
+"	      00550be1    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 2859:
 	asm( 
-"	      00550be8    lea eax,[ebp-24h]"
+"	      00550be8    lea eax,finfo.Face"
 "	      00550beb    push eax"
-"	      00550bec    mov eax,[ebp-4]"
+"	      00550bec    mov eax,face"
 "	      00550bef    push eax"
 "	      00550bf0    call 004D6941h"
 "	      00550bf5    add esp,8"
 );
 // LINE 2862:
 	asm( 
-"	      00550bf8    mov eax,[ebp-28h]"
+"	      00550bf8    mov eax,this"
 "	      00550bfb    mov word ptr [eax+30h],8"
 );
 // LINE 2863:
 	asm( 
-"	      00550c01    mov eax,[ebp-28h]"
+"	      00550c01    mov eax,this"
 "	      00550c04    mov dword ptr [eax+34h],50000h"
 );
 // LINE 2864:
 	asm( 
-"	      00550c0b    mov eax,[ebp-28h]"
+"	      00550c0b    mov eax,this"
 "	      00550c0e    mov dword ptr [eax+38h],6"
 );
 // LINE 2866:
 	asm( 
-"	      00550c15    mov eax,[ebp-28h]"
+"	      00550c15    mov eax,this"
 "	      00550c18    add eax,48h"
 "	      00550c1b    push eax"
 "	      00550c1c    call 004D1FF1h"
@@ -18161,16 +18161,16 @@ void cYObject::KillObject(short id) {
 );
 // LINE 2873:
 	asm( 
-"	      00550c39    movsx eax,word ptr [ebp+8]"
+"	      00550c39    movsx eax,id"
 "	      00550c3d    cmp eax,7D00h"
 "	      00550c42    jne near ptr 00550C55h"
 "	      00550c48    mov eax,ds:[5B8680h]"
-"	      00550c4d    mov [ebp-4],eax"
+"	      00550c4d    mov obj,eax"
 "	      00550c50    jmp near ptr 00550CD1h"
-"	      00550c55    movsx eax,word ptr [ebp+8]"
+"	      00550c55    movsx eax,id"
 "	      00550c59    test eax,eax"
 "	      00550c5b    jl near ptr 00550C6Eh"
-"	      00550c61    movsx eax,word ptr [ebp+8]"
+"	      00550c61    movsx eax,id"
 "	      00550c65    cmp eax,64h"
 "	      00550c68    jl near ptr 00550C8Ah"
 "	      00550c6e    push 8C085h"
@@ -18179,7 +18179,7 @@ void cYObject::KillObject(short id) {
 "	      00550c7d    push 5BBA14h"
 "	      00550c82    call 00554F30h"
 "	      00550c87    add esp,10h"
-"	      00550c8a    movsx eax,word ptr [ebp+8]"
+"	      00550c8a    movsx eax,id"
 "	      00550c8e    cmp dword ptr [eax*4+636D40h],0"
 "	      00550c96    jne near ptr 00550CB8h"
 "	      00550c9c    push 8C085h"
@@ -18188,16 +18188,16 @@ void cYObject::KillObject(short id) {
 "	      00550cab    push 5BBA14h"
 "	      00550cb0    call 00554F30h"
 "	      00550cb5    add esp,10h"
-"	      00550cb8    movsx eax,word ptr [ebp+8]"
+"	      00550cb8    movsx eax,id"
 "	      00550cbc    mov eax,[eax*4+636D40h]"
-"	      00550cc3    mov [ebp-4],eax"
+"	      00550cc3    mov obj,eax"
 "	      00550cc6    jmp near ptr 00550CD1h"
 "	      00550ccb    mov eax,[ebp-10h]"
-"	      00550cce    mov [ebp-4],eax"
+"	      00550cce    mov obj,eax"
 );
 // LINE 2874:
 	asm( 
-"	      00550cd1    cmp dword ptr [ebp-4],0"
+"	      00550cd1    cmp obj,0"
 "	      00550cd5    jne near ptr 00550CF7h"
 "	      00550cdb    push 8C085h"
 "	      00550ce0    push 5BB794h"
@@ -18208,19 +18208,19 @@ void cYObject::KillObject(short id) {
 );
 // LINE 2875:
 	asm( 
-"	      00550cf7    cmp dword ptr [ebp-4],0"
+"	      00550cf7    cmp obj,0"
 "	      00550cfb    jne near ptr 00550D06h"
 "	      00550d01    jmp near ptr 00550D48h"
 );
 // LINE 2877:
 	asm( 
-"	      00550d06    mov eax,[ebp-4]"
+"	      00550d06    mov eax,obj"
 "	      00550d09    movsx eax,word ptr [eax+0BCh]"
 "	      00550d10    mov dword ptr [eax*4+636D40h],0"
 );
 // LINE 2879:
 	asm( 
-"	      00550d1b    mov eax,[ebp-4]"
+"	      00550d1b    mov eax,obj"
 "	      00550d1e    mov [ebp-0Ch],eax"
 "	      00550d21    mov eax,[ebp-0Ch]"
 "	      00550d24    mov [ebp-8],eax"
@@ -18261,41 +18261,41 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 "	      00550d68    push ebx"
 "	      00550d69    push esi"
 "	      00550d6a    push edi"
-"	      00550d6b    mov [ebp-14h],ecx"
-"	      00550d6e    mov eax,[ebp-14h]"
+"	      00550d6b    mov this,ecx"
+"	      00550d6e    mov eax,this"
 "	      00550d71    add eax,0C0h"
 "	      00550d76    push eax"
-"	      00550d77    mov eax,[ebp+0Ch]"
+"	      00550d77    mov eax,pBehavior"
 "	      00550d7a    push eax"
-"	      00550d7b    movsx eax,word ptr [ebp+8]"
+"	      00550d7b    movsx eax,type"
 "	      00550d7f    mov ax,[eax*2+636B98h]"
 "	      00550d87    push eax"
-"	      00550d88    movsx eax,word ptr [ebp+8]"
+"	      00550d88    movsx eax,type"
 "	      00550d8c    mov ax,[eax*2+6361C0h]"
 "	      00550d94    push eax"
-"	      00550d95    mov ecx,[ebp-14h]"
+"	      00550d95    mov ecx,this"
 "	      00550d98    call 0055CB10h"
 "	      00550d9d    mov dword ptr [ebp-4],0"
 "	      00550da4    push 0"
-"	      00550da6    mov ecx,[ebp-14h]"
+"	      00550da6    mov ecx,this"
 "	      00550da9    add ecx,14h"
 "	      00550dac    call 005609D0h"
 "	      00550db1    mov byte ptr [ebp-4],1"
-"	      00550db5    mov eax,[ebp-14h]"
+"	      00550db5    mov eax,this"
 "	      00550db8    mov dword ptr [eax],5935E0h"
-"	      00550dbe    mov eax,[ebp-14h]"
+"	      00550dbe    mov eax,this"
 "	      00550dc1    mov dword ptr [eax+14h],5935C8h"
 );
 // LINE 2886:
 	asm( 
-"	      00550dc8    mov ax,[ebp+8]"
-"	      00550dcc    mov ecx,[ebp-14h]"
+"	      00550dc8    mov ax,type"
+"	      00550dcc    mov ecx,this"
 "	      00550dcf    mov [ecx+15Ah],ax"
 );
 // LINE 2888:
 	asm( 
-"	      00550dd6    lea eax,[ebp+10h]"
-"	      00550dd9    mov ecx,[ebp-14h]"
+"	      00550dd6    lea eax,loc.x"
+"	      00550dd9    mov ecx,this"
 "	      00550ddc    add ecx,3Ch"
 "	      00550ddf    mov edx,[eax]"
 "	      00550de1    mov [ecx],edx"
@@ -18306,106 +18306,106 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 );
 // LINE 2891:
 	asm( 
-"	      00550def    mov eax,[ebp-14h]"
+"	      00550def    mov eax,this"
 "	      00550df2    mov dword ptr [eax+130h],0"
 );
 // LINE 2893:
 	asm( 
-"	      00550dfc    mov word ptr [ebp-10h],0"
+"	      00550dfc    mov cnt,0"
 "	      00550e02    jmp near ptr 00550E0Bh"
-"	      00550e07    inc word ptr [ebp-10h]"
-"	      00550e0b    movsx eax,word ptr [ebp-10h]"
+"	      00550e07    inc cnt"
+"	      00550e0b    movsx eax,cnt"
 "	      00550e0f    cmp eax,30h"
 "	      00550e12    jge near ptr 00550E2Eh"
 );
 // LINE 2894:
 	asm( 
-"	      00550e18    movsx eax,word ptr [ebp-10h]"
-"	      00550e1c    mov ecx,[ebp-14h]"
+"	      00550e18    movsx eax,cnt"
+"	      00550e1c    mov ecx,this"
 "	      00550e1f    mov word ptr [ecx+eax*2+0D0h],0"
 "	      00550e29    jmp near ptr 00550E07h"
 );
 // LINE 2895:
 	asm( 
-"	      00550e2e    mov eax,[ebp-14h]"
+"	      00550e2e    mov eax,this"
 "	      00550e31    mov word ptr [eax+102h],0FFFFh"
 );
 // LINE 2896:
 	asm( 
-"	      00550e3a    mov word ptr [ebp-10h],0"
+"	      00550e3a    mov cnt,0"
 "	      00550e40    jmp near ptr 00550E49h"
-"	      00550e45    inc word ptr [ebp-10h]"
-"	      00550e49    movsx eax,word ptr [ebp-10h]"
+"	      00550e45    inc cnt"
+"	      00550e49    movsx eax,cnt"
 "	      00550e4d    cmp eax,4"
 "	      00550e50    jge near ptr 00550E6Dh"
 );
 // LINE 2897:
 	asm( 
-"	      00550e56    movsx eax,word ptr [ebp-10h]"
-"	      00550e5a    mov ecx,[ebp-14h]"
+"	      00550e56    movsx eax,cnt"
+"	      00550e5a    mov ecx,this"
 "	      00550e5d    mov dword ptr [ecx+eax*4+130h],0"
 "	      00550e68    jmp near ptr 00550E45h"
 );
 // LINE 2899:
 	asm( 
-"	      00550e6d    mov eax,[ebp+0Ch]"
-"	      00550e70    mov ecx,[ebp-14h]"
+"	      00550e6d    mov eax,pBehavior"
+"	      00550e70    mov ecx,this"
 "	      00550e73    mov [ecx+0B4h],eax"
 );
 // LINE 2900:
 	asm( 
 "	      00550e79    mov eax,ds:[5B8684h]"
-"	      00550e7e    mov ecx,[ebp-14h]"
+"	      00550e7e    mov ecx,this"
 "	      00550e81    mov [ecx+0B8h],eax"
 );
 // LINE 2901:
 	asm( 
-"	      00550e87    mov eax,[ebp-14h]"
+"	      00550e87    mov eax,this"
 "	      00550e8a    mov ds:[5B8684h],eax"
 );
 // LINE 2905:
 	asm( 
-"	      00550e8f    mov eax,[ebp-14h]"
+"	      00550e8f    mov eax,this"
 "	      00550e92    mov word ptr [eax+20h],0"
 );
 // LINE 2907:
 	asm( 
-"	      00550e98    mov ax,[ebp+1Ch]"
-"	      00550e9c    mov ecx,[ebp-14h]"
+"	      00550e98    mov ax,id"
+"	      00550e9c    mov ecx,this"
 "	      00550e9f    mov [ecx+32h],ax"
-"	      00550ea3    mov eax,[ebp-14h]"
+"	      00550ea3    mov eax,this"
 "	      00550ea6    mov ax,[eax+32h]"
-"	      00550eaa    mov ecx,[ebp-14h]"
+"	      00550eaa    mov ecx,this"
 "	      00550ead    mov [ecx+0DEh],ax"
-"	      00550eb4    mov eax,[ebp-14h]"
+"	      00550eb4    mov eax,this"
 "	      00550eb7    mov ax,[eax+0DEh]"
-"	      00550ebe    mov ecx,[ebp-14h]"
+"	      00550ebe    mov ecx,this"
 "	      00550ec1    mov [ecx+0BCh],ax"
 );
 // LINE 2911:
 	asm( 
 "	      00550ec8    mov eax,[ebp+1Ch]"
 "	      00550ecb    push eax"
-"	      00550ecc    mov ecx,[ebp-14h]"
+"	      00550ecc    mov ecx,this"
 "	      00550ecf    call 00550B30h"
 );
 // LINE 2912:
 	asm( 
 "	      00550ed4    jmp near ptr 00550ED9h"
 "	      00550ed9    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00550ee0    mov eax,[ebp-14h]"
+"	      00550ee0    mov eax,this"
 "	      00550ee3    jmp near ptr 00550F07h"
 	);
 _L56469:
 	asm( 
-"	      00550ee8    mov ecx,[ebp-14h]"
+"	      00550ee8    mov ecx,this"
 "	      00550eeb    add ecx,14h"
 "	      00550eee    call 00560B1Eh"
 "	      00550ef3    ret"
 	);
 _L56468:
 	asm( 
-"	      00550ef4    mov ecx,[ebp-14h]"
+"	      00550ef4    mov ecx,this"
 "	      00550ef7    call 0055CC2Ah"
 "	      00550efc    ret"
 	);
@@ -18433,53 +18433,53 @@ void cAvatar::Reset() {
 "	      00550f1e    push ebx"
 "	      00550f1f    push esi"
 "	      00550f20    push edi"
-"	      00550f21    mov [ebp-4],ecx"
+"	      00550f21    mov this,ecx"
 );
 // LINE 2916:
 	asm( 
-"	      00550f24    mov ecx,[ebp-4]"
+"	      00550f24    mov ecx,this"
 "	      00550f27    call 00550F9Fh"
 );
 // LINE 2919:
 	asm( 
 "	      00550f2c    push 1"
-"	      00550f2e    mov ecx,[ebp-4]"
+"	      00550f2e    mov ecx,this"
 "	      00550f31    call 0054FFB7h"
 );
 // LINE 2921:
 	asm( 
-"	      00550f36    mov eax,[ebp-4]"
+"	      00550f36    mov eax,this"
 "	      00550f39    mov word ptr [eax+9Ch],0"
 "	      00550f42    jmp near ptr 00550F47h"
 );
 // LINE 2922:
 	asm( 
-"	      00550f47    mov eax,[ebp-4]"
+"	      00550f47    mov eax,this"
 "	      00550f4a    mov dword ptr [eax+168h],0"
 );
 // LINE 2923:
 	asm( 
-"	      00550f54    mov eax,[ebp-4]"
+"	      00550f54    mov eax,this"
 "	      00550f57    mov dword ptr [eax+16Ch],0"
 );
 // LINE 2924:
 	asm( 
-"	      00550f61    mov eax,[ebp-4]"
+"	      00550f61    mov eax,this"
 "	      00550f64    mov dword ptr [eax+170h],10000h"
 );
 // LINE 2925:
 	asm( 
-"	      00550f6e    mov eax,[ebp-4]"
+"	      00550f6e    mov eax,this"
 "	      00550f71    mov dword ptr [eax+174h],0"
 );
 // LINE 2926:
 	asm( 
-"	      00550f7b    mov eax,[ebp-4]"
+"	      00550f7b    mov eax,this"
 "	      00550f7e    mov dword ptr [eax+178h],0"
 );
 // LINE 2927:
 	asm( 
-"	      00550f88    mov eax,[ebp-4]"
+"	      00550f88    mov eax,this"
 "	      00550f8b    mov dword ptr [eax+17Ch],0"
 );
 // LINE 2928:
@@ -18503,61 +18503,61 @@ void cYObject::Reset() {
 "	      00550fa5    push ebx"
 "	      00550fa6    push esi"
 "	      00550fa7    push edi"
-"	      00550fa8    mov [ebp-14h],ecx"
+"	      00550fa8    mov this,ecx"
 );
 // LINE 2932:
 	asm( 
-"	      00550fab    mov eax,[ebp-14h]"
+"	      00550fab    mov eax,this"
 "	      00550fae    mov dword ptr [eax+98h],0"
 );
 // LINE 2933:
 	asm( 
-"	      00550fb8    mov eax,[ebp-14h]"
+"	      00550fb8    mov eax,this"
 "	      00550fbb    mov dword ptr [eax+90h],0"
 );
 // LINE 2934:
 	asm( 
-"	      00550fc5    mov eax,[ebp-14h]"
+"	      00550fc5    mov eax,this"
 "	      00550fc8    mov dword ptr [eax+164h],3F800000h"
 );
 // LINE 2935:
 	asm( 
-"	      00550fd2    mov eax,[ebp-14h]"
+"	      00550fd2    mov eax,this"
 "	      00550fd5    mov word ptr [eax+9Ch],0FFFFh"
 );
 // LINE 2937:
 	asm( 
-"	      00550fde    mov eax,[ebp-14h]"
+"	      00550fde    mov eax,this"
 "	      00550fe1    mov dword ptr [eax+18h],0FFFFFF9Ch"
 );
 // LINE 2939:
 	asm( 
-"	      00550fe8    mov eax,[ebp-14h]"
+"	      00550fe8    mov eax,this"
 "	      00550feb    mov word ptr [eax+0F2h],1"
 );
 // LINE 2940:
 	asm( 
-"	      00550ff4    mov eax,[ebp-14h]"
+"	      00550ff4    mov eax,this"
 "	      00550ff7    mov word ptr [eax+106h],1"
 );
 // LINE 2941:
 	asm( 
-"	      00551000    mov eax,[ebp-14h]"
+"	      00551000    mov eax,this"
 "	      00551003    mov word ptr [eax+0F4h],0"
 );
 // LINE 2942:
 	asm( 
-"	      0055100c    mov eax,[ebp-14h]"
+"	      0055100c    mov eax,this"
 "	      0055100f    mov word ptr [eax+102h],0FFFFh"
 );
 // LINE 2943:
 	asm( 
-"	      00551018    mov eax,[ebp-14h]"
+"	      00551018    mov eax,this"
 "	      0055101b    mov word ptr [eax+0F0h],0FFFFh"
 );
 // LINE 2945:
 	asm( 
-"	      00551024    mov eax,[ebp-14h]"
+"	      00551024    mov eax,this"
 "	      00551027    mov word ptr [eax+0D4h],6"
 );
 // LINE 2946:
@@ -18565,25 +18565,25 @@ void cYObject::Reset() {
 "	      00551030    push 8"
 "	      00551032    call 0055D717h"
 "	      00551037    add esp,4"
-"	      0055103a    mov ecx,[ebp-14h]"
+"	      0055103a    mov ecx,this"
 "	      0055103d    mov [ecx+0D0h],ax"
 );
 // LINE 2947:
 	asm( 
 "	      00551044    push 0FFFFFFFFh"
-"	      00551046    mov ecx,[ebp-14h]"
+"	      00551046    mov ecx,this"
 "	      00551049    call 0054FFB7h"
 );
 // LINE 2949:
 	asm( 
-"	      0055104e    mov eax,[ebp-14h]"
+"	      0055104e    mov eax,this"
 "	      00551051    movsx eax,word ptr [eax+0D2h]"
 "	      00551058    test eax,eax"
 "	      0055105a    je near ptr 005512DCh"
 );
 // LINE 2950:
 	asm( 
-"	      00551060    mov eax,[ebp-14h]"
+"	      00551060    mov eax,this"
 "	      00551063    movsx eax,word ptr [eax+0D2h]"
 "	      0055106a    test eax,eax"
 "	      0055106c    jne near ptr 0055108Eh"
@@ -18594,7 +18594,7 @@ void cYObject::Reset() {
 "	      00551086    call 00554F30h"
 "	      0055108b    add esp,10h"
 "	      0055108e    jmp near ptr 00551093h"
-"	      00551093    mov eax,[ebp-14h]"
+"	      00551093    mov eax,this"
 "	      00551096    xor ecx,ecx"
 "	      00551098    mov cx,[eax+20h]"
 "	      0055109c    test ecx,ecx"
@@ -18605,12 +18605,12 @@ void cYObject::Reset() {
 "	      005510b3    push 5BBA14h"
 "	      005510b8    call 00554F30h"
 "	      005510bd    add esp,10h"
-"	      005510c0    mov eax,[ebp-14h]"
+"	      005510c0    mov eax,this"
 "	      005510c3    xor ecx,ecx"
 "	      005510c5    mov cl,[eax+88h]"
 "	      005510cb    cmp ecx,0FFFFFFFFh"
 "	      005510ce    jne near ptr 00551109h"
-"	      005510d4    mov eax,[ebp-14h]"
+"	      005510d4    mov eax,this"
 "	      005510d7    xor ecx,ecx"
 "	      005510d9    mov cl,[eax+89h]"
 "	      005510df    cmp ecx,0FFFFFFFFh"
@@ -18622,7 +18622,7 @@ void cYObject::Reset() {
 "	      005510fc    call 00554F30h"
 "	      00551101    add esp,10h"
 "	      00551104    jmp near ptr 00551139h"
-"	      00551109    mov eax,[ebp-14h]"
+"	      00551109    mov eax,this"
 "	      0055110c    xor ecx,ecx"
 "	      0055110e    mov cl,[eax+89h]"
 "	      00551114    cmp ecx,0FFFFFFFFh"
@@ -18633,7 +18633,7 @@ void cYObject::Reset() {
 "	      0055112c    push 5BBA14h"
 "	      00551131    call 00554F30h"
 "	      00551136    add esp,10h"
-"	      00551139    mov eax,[ebp-14h]"
+"	      00551139    mov eax,this"
 "	      0055113c    xor ecx,ecx"
 "	      0055113e    mov cl,[eax+88h]"
 "	      00551144    cmp ecx,0FFFFFFFFh"
@@ -18649,21 +18649,21 @@ void cYObject::Reset() {
 "	      00551178    push 5BBA14h"
 "	      0055117d    call 00554F30h"
 "	      00551182    add esp,10h"
-"	      00551185    mov eax,[ebp-14h]"
+"	      00551185    mov eax,this"
 "	      00551188    movsx eax,word ptr [eax+102h]"
 "	      0055118f    cmp eax,0FFFFFFFFh"
 "	      00551192    je near ptr 0055122Fh"
-"	      00551198    mov eax,[ebp-14h]"
+"	      00551198    mov eax,this"
 "	      0055119b    mov word ptr [eax+104h],0FFFFh"
-"	      005511a4    mov eax,[ebp-14h]"
+"	      005511a4    mov eax,this"
 "	      005511a7    movsx eax,word ptr [eax+102h]"
 "	      005511ae    cmp eax,0FFFFFFFFh"
 "	      005511b1    je near ptr 0055120Ah"
-"	      005511b7    mov eax,[ebp-14h]"
+"	      005511b7    mov eax,this"
 "	      005511ba    movsx eax,word ptr [eax+102h]"
 "	      005511c1    cmp eax,0FFFFFFFFh"
 "	      005511c4    je near ptr 005511E5h"
-"	      005511ca    mov eax,[ebp-14h]"
+"	      005511ca    mov eax,this"
 "	      005511cd    movsx eax,word ptr [eax+102h]"
 "	      005511d4    add eax,62h"
 "	      005511d7    mov [ebp-8],ax"
@@ -18679,19 +18679,19 @@ void cYObject::Reset() {
 "	      00551202    call 00446E04h"
 "	      00551207    add esp,4"
 "	      0055120a    jmp near ptr 0055120Fh"
-"	      0055120f    mov eax,[ebp-14h]"
+"	      0055120f    mov eax,this"
 "	      00551212    movsx eax,word ptr [eax+102h]"
 "	      00551219    mov word ptr [eax*2+6356B0h],0"
-"	      00551223    mov eax,[ebp-14h]"
+"	      00551223    mov eax,this"
 "	      00551226    mov word ptr [eax+102h],0FFFFh"
 "	      0055122f    jmp near ptr 00551234h"
-"	      00551234    mov eax,[ebp-14h]"
+"	      00551234    mov eax,this"
 "	      00551237    mov word ptr [eax+0D2h],0"
-"	      00551240    mov eax,[ebp-14h]"
+"	      00551240    mov eax,this"
 "	      00551243    mov word ptr [eax+0F0h],0FFFFh"
-"	      0055124c    mov eax,[ebp-14h]"
+"	      0055124c    mov eax,this"
 "	      0055124f    mov word ptr [eax+9Ch],0FFFFh"
-"	      00551258    mov eax,[ebp-14h]"
+"	      00551258    mov eax,this"
 "	      0055125b    movsx eax,word ptr [eax+0D8h]"
 "	      00551262    mov [ebp-4],eax"
 "	      00551265    cmp dword ptr [ebp-4],0"
@@ -18716,46 +18716,46 @@ void cYObject::Reset() {
 "	      005512c2    push 5BBA14h"
 "	      005512c7    call 00554F30h"
 "	      005512cc    add esp,10h"
-"	      005512cf    mov ecx,[ebp-14h]"
+"	      005512cf    mov ecx,this"
 "	      005512d2    call 005507ECh"
 "	      005512d7    jmp near ptr 005512DCh"
 );
 // LINE 2952:
 	asm( 
-"	      005512dc    mov eax,[ebp-14h]"
+"	      005512dc    mov eax,this"
 "	      005512df    mov ax,[eax+0BCh]"
-"	      005512e6    mov ecx,[ebp-14h]"
+"	      005512e6    mov ecx,this"
 "	      005512e9    mov [ecx+0DEh],ax"
 );
 // LINE 2953:
 	asm( 
-"	      005512f0    mov eax,[ebp-14h]"
+"	      005512f0    mov eax,this"
 "	      005512f3    mov word ptr [eax+0DCh],0"
 );
 // LINE 2954:
 	asm( 
-"	      005512fc    mov eax,[ebp-14h]"
+"	      005512fc    mov eax,this"
 "	      005512ff    mov word ptr [eax+0E0h],0"
 );
 // LINE 2956:
 	asm( 
 "	      00551308    push 0"
-"	      0055130a    mov ecx,[ebp-14h]"
+"	      0055130a    mov ecx,this"
 "	      0055130d    call 0054FE42h"
 );
 // LINE 2957:
 	asm( 
-"	      00551312    mov eax,[ebp-14h]"
+"	      00551312    mov eax,this"
 "	      00551315    mov dword ptr [eax+1Ch],0FFFFFFFFh"
-"	      0055131c    mov eax,[ebp-14h]"
+"	      0055131c    mov eax,this"
 "	      0055131f    movsx eax,word ptr [eax+0D8h]"
 "	      00551326    test eax,eax"
 "	      00551328    je near ptr 00551370h"
-"	      0055132e    mov eax,[ebp-14h]"
+"	      0055132e    mov eax,this"
 "	      00551331    movsx eax,word ptr [eax+0D8h]"
 "	      00551338    cmp eax,5"
 "	      0055133b    je near ptr 00551370h"
-"	      00551341    mov eax,[ebp-14h]"
+"	      00551341    mov eax,this"
 "	      00551344    movsx eax,word ptr [eax+0D8h]"
 "	      0055134b    cmp eax,7"
 "	      0055134e    je near ptr 00551370h"
@@ -18769,7 +18769,7 @@ void cYObject::Reset() {
 );
 // LINE 2958:
 	asm( 
-"	      00551375    mov eax,[ebp-14h]"
+"	      00551375    mov eax,this"
 "	      00551378    mov word ptr [eax+22h],0"
 );
 // LINE 2960:
@@ -18806,11 +18806,11 @@ void cYObject::Draw(struct VRBlit* blit) {
 "	      00551391    push ebx"
 "	      00551392    push esi"
 "	      00551393    push edi"
-"	      00551394    mov [ebp-84h],ecx"
+"	      00551394    mov this,ecx"
 );
 // LINE 2968:
 	asm( 
-"	      0055139a    mov eax,[ebp-84h]"
+"	      0055139a    mov eax,this"
 "	      005513a0    movsx eax,word ptr [eax+0D2h]"
 "	      005513a7    test eax,eax"
 "	      005513a9    jne near ptr 005513CBh"
@@ -18823,7 +18823,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 2969:
 	asm( 
-"	      005513cb    mov eax,[ebp-84h]"
+"	      005513cb    mov eax,this"
 "	      005513d1    movsx eax,word ptr [eax+0E2h]"
 "	      005513d8    test eax,eax"
 "	      005513da    jne near ptr 005513E5h"
@@ -18836,13 +18836,13 @@ void cYObject::Draw(struct VRBlit* blit) {
 	asm( 
 "	      005513e5    cmp dword ptr ds:[598EBCh],10h"
 "	      005513ec    jne near ptr 005513FDh"
-"	      005513f2    mov word ptr [ebp-20h],1"
+"	      005513f2    mov highres,1"
 "	      005513f8    jmp near ptr 00551403h"
-"	      005513fd    mov word ptr [ebp-20h],0"
+"	      005513fd    mov highres,0"
 );
 // LINE 2978:
 	asm( 
-"	      00551403    mov eax,[ebp-84h]"
+"	      00551403    mov eax,this"
 "	      00551409    cmp dword ptr [eax+90h],0"
 "	      00551410    jne near ptr 00551432h"
 "	      00551416    push 8C085h"
@@ -18854,7 +18854,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 2979:
 	asm( 
-"	      00551432    mov eax,[ebp-84h]"
+"	      00551432    mov eax,this"
 "	      00551438    cmp dword ptr [eax+98h],0"
 "	      0055143f    jne near ptr 0055144Ah"
 );
@@ -18864,35 +18864,35 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 2985:
 	asm( 
-"	      0055144a    mov eax,[ebp+8]"
+"	      0055144a    mov eax,blit"
 "	      0055144d    mov eax,[eax+4]"
 "	      00551450    mov eax,[eax]"
 "	      00551452    sar eax,0Ch"
-"	      00551455    mov [ebp-68h],eax"
+"	      00551455    mov screenPt.x,eax"
 );
 // LINE 2986:
 	asm( 
-"	      00551458    mov eax,[ebp+8]"
+"	      00551458    mov eax,blit"
 "	      0055145b    mov eax,[eax+4]"
 "	      0055145e    mov eax,[eax+4]"
 "	      00551461    sar eax,0Ch"
-"	      00551464    mov [ebp-64h],eax"
+"	      00551464    mov screenPt.y,eax"
 );
 // LINE 2987:
 	asm( 
-"	      00551467    mov eax,[ebp+8]"
+"	      00551467    mov eax,blit"
 "	      0055146a    mov eax,[eax+4]"
 "	      0055146d    mov eax,[eax+8]"
 "	      00551470    sar eax,10h"
-"	      00551473    mov [ebp-60h],eax"
+"	      00551473    mov screenPt.z,eax"
 );
 // LINE 2988:
 	asm( 
 "	      00551476    fld qword ptr ds:[593568h]"
-"	      0055147c    mov eax,[ebp-60h]"
+"	      0055147c    mov eax,screenPt.z"
 "	      0055147f    mov [ebp-88h],eax"
 "	      00551485    fidiv dword ptr [ebp-88h]"
-"	      0055148b    mov eax,[ebp-84h]"
+"	      0055148b    mov eax,this"
 "	      00551491    fstp dword ptr [eax+164h]"
 );
 // LINE 2989:
@@ -18902,10 +18902,10 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 2990:
 	asm( 
-"	      005514a4    mov eax,[ebp-84h]"
+"	      005514a4    mov eax,this"
 "	      005514aa    fld dword ptr [eax+164h]"
 "	      005514b0    fmul dword ptr ds:[593570h]"
-"	      005514b6    mov eax,[ebp-84h]"
+"	      005514b6    mov eax,this"
 "	      005514bc    fstp dword ptr [eax+164h]"
 );
 // LINE 2994:
@@ -18914,7 +18914,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 "	      005514c7    mov [ebp-8Ch],eax"
 "	      005514cd    fild dword ptr [ebp-8Ch]"
 "	      005514d3    fdiv qword ptr ds:[593540h]"
-"	      005514d9    fstp qword ptr [ebp-3Ch]"
+"	      005514d9    fstp camPsi"
 );
 // LINE 2995:
 	asm( 
@@ -18922,34 +18922,34 @@ void cYObject::Draw(struct VRBlit* blit) {
 "	      005514e1    mov [ebp-90h],eax"
 "	      005514e7    fild dword ptr [ebp-90h]"
 "	      005514ed    fdiv qword ptr ds:[593540h]"
-"	      005514f3    fstp qword ptr [ebp-70h]"
+"	      005514f3    fstp camPhi"
 );
 // LINE 2996:
 	asm( 
-"	      005514f6    fld qword ptr [ebp-3Ch]"
+"	      005514f6    fld camPsi"
 "	      005514f9    fmul qword ptr ds:[593578h]"
-"	      005514ff    fstp dword ptr [ebp-40h]"
+"	      005514ff    fstp psiOff"
 );
 // LINE 2997:
 	asm( 
-"	      00551502    fld qword ptr [ebp-70h]"
+"	      00551502    fld camPhi"
 "	      00551505    fmul qword ptr ds:[593578h]"
 "	      0055150b    fsubr dword ptr ds:[593580h]"
-"	      00551511    fstp dword ptr [ebp-2Ch]"
+"	      00551511    fstp phiOff"
 );
 // LINE 2999:
 	asm( 
-"	      00551514    mov eax,[ebp-84h]"
+"	      00551514    mov eax,this"
 "	      0055151a    movsx eax,word ptr [eax+0D0h]"
 "	      00551521    mov [ebp-94h],eax"
 "	      00551527    fild dword ptr [ebp-94h]"
 "	      0055152d    fmul qword ptr ds:[593588h]"
-"	      00551533    fadd dword ptr [ebp-40h]"
-"	      00551536    fstp dword ptr [ebp-40h]"
+"	      00551533    fadd psiOff"
+"	      00551536    fstp psiOff"
 );
 // LINE 3004:
 	asm( 
-"	      00551539    mov eax,[ebp-84h]"
+"	      00551539    mov eax,this"
 "	      0055153f    mov word ptr [eax+0E6h],0FFFFh"
 );
 // LINE 3006:
@@ -18957,33 +18957,33 @@ void cYObject::Draw(struct VRBlit* blit) {
 "	      00551548    mov eax,ds:[5B8650h]"
 "	      0055154d    mov [ebp-98h],eax"
 "	      00551553    fild dword ptr [ebp-98h]"
-"	      00551559    fstp qword ptr [ebp-28h]"
+"	      00551559    fstp farlimvar"
 );
 // LINE 3007:
 	asm( 
 "	      0055155c    mov eax,ds:[5B8654h]"
 "	      00551561    mov [ebp-9Ch],eax"
 "	      00551567    fild dword ptr [ebp-9Ch]"
-"	      0055156d    fstp qword ptr [ebp-34h]"
+"	      0055156d    fstp farvar"
 );
 // LINE 3008:
 	asm( 
 "	      00551570    mov eax,ds:[5B8658h]"
 "	      00551575    mov [ebp-0A0h],eax"
 "	      0055157b    fild dword ptr [ebp-0A0h]"
-"	      00551581    fstp qword ptr [ebp-48h]"
+"	      00551581    fstp midvar"
 );
 // LINE 3009:
 	asm( 
 "	      00551584    mov eax,ds:[5B865Ch]"
 "	      00551589    mov [ebp-0A4h],eax"
 "	      0055158f    fild dword ptr [ebp-0A4h]"
-"	      00551595    fstp qword ptr [ebp-78h]"
+"	      00551595    fstp nearvar"
 );
 // LINE 3011:
 	asm( 
 "	      00551598    mov eax,ds:[5B8650h]"
-"	      0055159d    cmp [ebp-60h],eax"
+"	      0055159d    cmp screenPt.z,eax"
 "	      005515a0    jle near ptr 005515B0h"
 );
 // LINE 3012:
@@ -18994,36 +18994,36 @@ void cYObject::Draw(struct VRBlit* blit) {
 	asm( 
 "	      005515ab    jmp near ptr 0055161Bh"
 "	      005515b0    mov eax,ds:[5B8654h]"
-"	      005515b5    cmp [ebp-60h],eax"
+"	      005515b5    cmp screenPt.z,eax"
 "	      005515b8    jle near ptr 005515D2h"
 );
 // LINE 3014:
 	asm( 
-"	      005515be    mov eax,[ebp-84h]"
+"	      005515be    mov eax,this"
 "	      005515c4    mov word ptr [eax+0E6h],4"
 );
 // LINE 3015:
 	asm( 
 "	      005515cd    jmp near ptr 0055161Bh"
 "	      005515d2    mov eax,ds:[5B8658h]"
-"	      005515d7    cmp [ebp-60h],eax"
+"	      005515d7    cmp screenPt.z,eax"
 "	      005515da    jle near ptr 005515F4h"
 );
 // LINE 3016:
 	asm( 
-"	      005515e0    mov eax,[ebp-84h]"
+"	      005515e0    mov eax,this"
 "	      005515e6    mov word ptr [eax+0E6h],2"
 );
 // LINE 3017:
 	asm( 
 "	      005515ef    jmp near ptr 0055161Bh"
 "	      005515f4    mov eax,ds:[5B865Ch]"
-"	      005515f9    cmp [ebp-60h],eax"
+"	      005515f9    cmp screenPt.z,eax"
 "	      005515fc    jle near ptr 00551616h"
 );
 // LINE 3018:
 	asm( 
-"	      00551602    mov eax,[ebp-84h]"
+"	      00551602    mov eax,this"
 "	      00551608    mov word ptr [eax+0E6h],1"
 );
 // LINE 3019:
@@ -19036,21 +19036,21 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 3022:
 	asm( 
-"	      0055161b    lea eax,[ebp-2Ch]"
+"	      0055161b    lea eax,phiOff"
 "	      0055161e    push eax"
 "	      0055161f    call 00562BDBh"
 "	      00551624    add esp,4"
 );
 // LINE 3023:
 	asm( 
-"	      00551627    lea eax,[ebp-40h]"
+"	      00551627    lea eax,psiOff"
 "	      0055162a    push eax"
 "	      0055162b    call 00562BDBh"
 "	      00551630    add esp,4"
 );
 // LINE 3024:
 	asm( 
-"	      00551633    mov eax,[ebp-84h]"
+"	      00551633    mov eax,this"
 "	      00551639    movsx eax,word ptr [eax+9Ch]"
 "	      00551640    cmp eax,0FFFFFFFFh"
 "	      00551643    jne near ptr 00551665h"
@@ -19063,7 +19063,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 3025:
 	asm( 
-"	      00551665    mov eax,[ebp-84h]"
+"	      00551665    mov eax,this"
 "	      0055166b    movsx eax,word ptr [eax+9Ch]"
 "	      00551672    cmp eax,0Bh"
 "	      00551675    jl near ptr 00551697h"
@@ -19073,11 +19073,11 @@ void cYObject::Draw(struct VRBlit* blit) {
 "	      0055168a    push 5BB8B4h"
 "	      0055168f    call 00554F30h"
 "	      00551694    add esp,10h"
-"	      00551697    mov eax,[ebp-84h]"
+"	      00551697    mov eax,this"
 "	      0055169d    movsx eax,word ptr [eax+9Ch]"
 "	      005516a4    mov ax,[eax*2+6376B0h]"
 "	      005516ac    mov [ebp-7Ch],ax"
-"	      005516b0    mov eax,[ebp-84h]"
+"	      005516b0    mov eax,this"
 "	      005516b6    mov eax,[eax+90h]"
 "	      005516bc    mov [ebp-80h],eax"
 );
@@ -19090,73 +19090,73 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 3028:
 	asm( 
-"	      005516cf    mov eax,[ebp-84h]"
+"	      005516cf    mov eax,this"
 "	      005516d5    mov ax,[eax+0F0h]"
 "	      005516dc    push eax"
-"	      005516dd    mov eax,[ebp-84h]"
+"	      005516dd    mov eax,this"
 "	      005516e3    mov ax,[eax+0E6h]"
 "	      005516ea    push eax"
-"	      005516eb    mov eax,[ebp-84h]"
+"	      005516eb    mov eax,this"
 "	      005516f1    mov eax,[eax+164h]"
 "	      005516f7    push eax"
-"	      005516f8    mov eax,[ebp-64h]"
+"	      005516f8    mov eax,screenPt.y"
 "	      005516fb    push eax"
-"	      005516fc    mov eax,[ebp-68h]"
+"	      005516fc    mov eax,screenPt.x"
 "	      005516ff    push eax"
-"	      00551700    mov eax,[ebp-84h]"
+"	      00551700    mov eax,this"
 "	      00551706    mov ax,[eax+0DCh]"
 "	      0055170d    push eax"
-"	      0055170e    mov eax,[ebp-84h]"
+"	      0055170e    mov eax,this"
 "	      00551714    mov eax,[eax+98h]"
 "	      0055171a    push eax"
-"	      0055171b    mov eax,[ebp-40h]"
+"	      0055171b    mov eax,psiOff"
 "	      0055171e    push eax"
-"	      0055171f    mov eax,[ebp-2Ch]"
+"	      0055171f    mov eax,phiOff"
 "	      00551722    push eax"
-"	      00551723    mov eax,[ebp-84h]"
+"	      00551723    mov eax,this"
 "	      00551729    mov ecx,[eax+90h]"
 "	      0055172f    call 00561611h"
 );
 // LINE 3033:
 	asm( 
-"	      00551734    mov eax,[ebp-68h]"
-"	      00551737    mov [ebp-1Ch],eax"
+"	      00551734    mov eax,screenPt.x"
+"	      00551737    mov bdi.screenx,eax"
 );
 // LINE 3034:
 	asm( 
-"	      0055173a    mov eax,[ebp-64h]"
-"	      0055173d    mov [ebp-18h],eax"
+"	      0055173a    mov eax,screenPt.y"
+"	      0055173d    mov bdi.screeny,eax"
 );
 // LINE 3035:
 	asm( 
-"	      00551740    mov eax,[ebp-84h]"
+"	      00551740    mov eax,this"
 "	      00551746    movsx eax,word ptr [eax+0BCh]"
 "	      0055174d    push eax"
 "	      0055174e    push 5BB8D8h"
-"	      00551753    lea eax,[ebp-5Ch]"
+"	      00551753    lea eax,text[0]"
 "	      00551756    push eax"
 "	      00551757    call 0056CD30h"
 "	      0055175c    add esp,0Ch"
 );
 // LINE 3036:
 	asm( 
-"	      0055175f    mov eax,[ebp-84h]"
+"	      0055175f    mov eax,this"
 "	      00551765    movsx eax,word ptr [eax+0D8h]"
 "	      0055176c    test eax,eax"
 "	      0055176e    je near ptr 005517A7h"
 );
 // LINE 3037:
 	asm( 
-"	      00551774    lea eax,[ebp-5Ch]"
+"	      00551774    lea eax,text[0]"
 "	      00551777    push eax"
-"	      00551778    mov eax,[ebp-84h]"
+"	      00551778    mov eax,this"
 "	      0055177e    movsx eax,word ptr [eax+1Ch]"
 "	      00551782    push eax"
-"	      00551783    mov eax,[ebp-84h]"
+"	      00551783    mov eax,this"
 "	      00551789    movsx eax,word ptr [eax+0D8h]"
 "	      00551790    push eax"
 "	      00551791    push 5BB8DCh"
-"	      00551796    lea eax,[ebp-14h]"
+"	      00551796    lea eax,bdi.text[0]"
 "	      00551799    push eax"
 "	      0055179a    call 0056CD30h"
 "	      0055179f    add esp,14h"
@@ -19167,10 +19167,10 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 3039:
 	asm( 
-"	      005517a7    lea eax,[ebp-5Ch]"
+"	      005517a7    lea eax,text[0]"
 "	      005517aa    push eax"
 "	      005517ab    push 5BB8E8h"
-"	      005517b0    lea eax,[ebp-14h]"
+"	      005517b0    lea eax,bdi.text[0]"
 "	      005517b3    push eax"
 "	      005517b4    call 0056CD30h"
 "	      005517b9    add esp,0Ch"
@@ -19189,7 +19189,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 3041:
 	asm( 
-"	      005517e8    lea esi,[ebp-1Ch]"
+"	      005517e8    lea esi,bdi.screenx"
 "	      005517eb    movsx eax,word ptr ds:[5B86A0h]"
 "	      005517f2    mov ecx,eax"
 "	      005517f4    shl eax,3"
@@ -19233,10 +19233,10 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 // Block start:
 	short count;
 	asm( 
-"	      00551838    mov word ptr [ebp-4],0"
+"	      00551838    mov count,0"
 "	      0055183e    jmp near ptr 00551847h"
-"	      00551843    inc word ptr [ebp-4]"
-"	      00551847    movsx eax,word ptr [ebp-4]"
+"	      00551843    inc count"
+"	      00551847    movsx eax,count"
 "	      0055184b    movsx ecx,word ptr ds:[5B86A0h]"
 "	      00551852    cmp eax,ecx"
 "	      00551854    jge near ptr 0055189Ah"
@@ -19245,11 +19245,11 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 // Block start:
 	struct BodyDebugInfo bdi;
 	asm( 
-"	      0055185a    movsx eax,word ptr [ebp-4]"
+"	      0055185a    movsx eax,count"
 "	      0055185e    mov ecx,eax"
 "	      00551860    shl eax,3"
 "	      00551863    sub eax,ecx"
-"	      00551865    lea edi,[ebp-20h]"
+"	      00551865    lea edi,bdi.screenx"
 "	      00551868    lea esi,[eax*4+6356D0h]"
 "	      0055186f    mov ecx,7"
 "	      00551874    rep movsd"
@@ -19259,16 +19259,16 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 "	      00551876    push 0"
 "	      00551878    push 0"
 "	      0055187a    push 0"
-"	      0055187c    lea eax,[ebp-1Ch]"
+"	      0055187c    lea eax,bdi.screeny"
 "	      0055187f    push eax"
-"	      00551880    lea eax,[ebp-20h]"
+"	      00551880    lea eax,bdi.screenx"
 "	      00551883    push eax"
 "	      00551884    push 0"
-"	      00551886    lea eax,[ebp-18h]"
+"	      00551886    lea eax,bdi.text[0]"
 "	      00551889    push eax"
-"	      0055188a    mov eax,[ebp+8]"
+"	      0055188a    mov eax,buf"
 "	      0055188d    mov eax,[eax]"
-"	      0055188f    mov ecx,[ebp+8]"
+"	      0055188f    mov ecx,buf"
 "	      00551892    call dword ptr [eax+4Ch]"
 );
 // LINE 3055:
@@ -19310,48 +19310,48 @@ void cYObject::~cYObject() {
 "	      005518c8    push ebx"
 "	      005518c9    push esi"
 "	      005518ca    push edi"
-"	      005518cb    mov [ebp-1Ch],ecx"
-"	      005518ce    mov eax,[ebp-1Ch]"
+"	      005518cb    mov this,ecx"
+"	      005518ce    mov eax,this"
 "	      005518d1    mov dword ptr [eax],5935E0h"
-"	      005518d7    mov eax,[ebp-1Ch]"
+"	      005518d7    mov eax,this"
 "	      005518da    mov dword ptr [eax+14h],5935C8h"
 "	      005518e1    mov dword ptr [ebp-4],0"
 "	      005518e8    mov byte ptr [ebp-4],1"
 );
 // LINE 3063:
 	asm( 
-"	      005518ec    mov word ptr [ebp-14h],0"
+"	      005518ec    mov found,0"
 );
 // LINE 3064:
 	asm( 
-"	      005518f2    mov dword ptr [ebp-10h],5B8684h"
+"	      005518f2    mov srch,5B8684h"
 "	      005518f9    jmp near ptr 0055190Bh"
-"	      005518fe    mov eax,[ebp-10h]"
+"	      005518fe    mov eax,srch"
 "	      00551901    mov eax,[eax]"
 "	      00551903    add eax,0B8h"
-"	      00551908    mov [ebp-10h],eax"
-"	      0055190b    mov eax,[ebp-10h]"
+"	      00551908    mov srch,eax"
+"	      0055190b    mov eax,srch"
 "	      0055190e    cmp dword ptr [eax],0"
 "	      00551911    je near ptr 00551945h"
 );
 // LINE 3065:
 	asm( 
-"	      00551917    mov eax,[ebp-10h]"
-"	      0055191a    mov ecx,[ebp-1Ch]"
+"	      00551917    mov eax,srch"
+"	      0055191a    mov ecx,this"
 "	      0055191d    cmp [eax],ecx"
 "	      0055191f    jne near ptr 00551940h"
 );
 // LINE 3067:
 	asm( 
-"	      00551925    mov eax,[ebp-10h]"
+"	      00551925    mov eax,srch"
 "	      00551928    mov eax,[eax]"
 "	      0055192a    mov eax,[eax+0B8h]"
-"	      00551930    mov ecx,[ebp-10h]"
+"	      00551930    mov ecx,srch"
 "	      00551933    mov [ecx],eax"
 );
 // LINE 3068:
 	asm( 
-"	      00551935    mov word ptr [ebp-14h],1"
+"	      00551935    mov found,1"
 );
 // LINE 3069:
 	asm( 
@@ -19380,9 +19380,9 @@ void cYObject::~cYObject() {
 	);
 _L56643:
 	asm( 
-"	      0055198d    cmp dword ptr [ebp-1Ch],0"
+"	      0055198d    cmp this,0"
 "	      00551991    je near ptr 005519A5h"
-"	      00551997    mov eax,[ebp-1Ch]"
+"	      00551997    mov eax,this"
 "	      0055199a    add eax,14h"
 "	      0055199d    mov [ebp-18h],eax"
 "	      005519a0    jmp near ptr 005519ACh"
@@ -19393,7 +19393,7 @@ _L56643:
 	);
 _L56642:
 	asm( 
-"	      005519b5    mov ecx,[ebp-1Ch]"
+"	      005519b5    mov ecx,this"
 "	      005519b8    call 0055CC2Ah"
 "	      005519bd    ret"
 	);
@@ -19426,37 +19426,37 @@ void S3PersonTweakInit() {
 );
 // LINE 3083:
 	asm( 
-"	      005519df    mov dword ptr [ebp-28h],5B8678h"
+"	      005519df    mov pvals[0],5B8678h"
 );
 // LINE 3084:
 	asm( 
-"	      005519e6    mov dword ptr [ebp-24h],5B867Ch"
+"	      005519e6    mov pvals[1],5B867Ch"
 );
 // LINE 3085:
 	asm( 
-"	      005519ed    mov dword ptr [ebp-20h],5B8650h"
+"	      005519ed    mov pvals[2],5B8650h"
 );
 // LINE 3086:
 	asm( 
-"	      005519f4    mov dword ptr [ebp-1Ch],5B8654h"
+"	      005519f4    mov pvals[3],5B8654h"
 );
 // LINE 3087:
 	asm( 
-"	      005519fb    mov dword ptr [ebp-18h],5B8658h"
+"	      005519fb    mov pvals[4],5B8658h"
 );
 // LINE 3088:
 	asm( 
-"	      00551a02    mov dword ptr [ebp-14h],5B865Ch"
+"	      00551a02    mov pvals[5],5B865Ch"
 );
 // LINE 3089:
 	asm( 
-"	      00551a09    mov dword ptr [ebp-10h],5B86A4h"
+"	      00551a09    mov pvals[6],5B86A4h"
 );
 // LINE 3091:
 	asm( 
 "	      00551a10    push 5BB968h"
 "	      00551a15    push 7"
-"	      00551a17    lea eax,[ebp-28h]"
+"	      00551a17    lea eax,pvals[0]"
 "	      00551a1a    push eax"
 "	      00551a1b    call 004C9AD0h"
 "	      00551a20    add esp,0Ch"
@@ -19505,7 +19505,7 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 "	      00551a43    push ebx"
 "	      00551a44    push esi"
 "	      00551a45    push edi"
-"	      00551a46    mov [ebp-44h],ecx"
+"	      00551a46    mov this,ecx"
 );
 // LINE 3102:
 	asm( 
@@ -19515,55 +19515,55 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 "	      00551a54    call 004D19BDh"
 "	      00551a59    add esp,8"
 "	      00551a5c    push eax"
-"	      00551a5d    mov eax,[ebp-44h]"
+"	      00551a5d    mov eax,this"
 "	      00551a60    mov eax,[eax+178h]"
 "	      00551a66    push eax"
 "	      00551a67    call 004D19BDh"
 "	      00551a6c    add esp,8"
-"	      00551a6f    mov ecx,[ebp-44h]"
+"	      00551a6f    mov ecx,this"
 "	      00551a72    add [ecx+17Ch],eax"
 );
 // LINE 3104:
 	asm( 
-"	      00551a78    mov eax,[ebp-44h]"
+"	      00551a78    mov eax,this"
 "	      00551a7b    cmp dword ptr [eax+17Ch],0E100000h"
 "	      00551a85    jle near ptr 00551A9Dh"
 );
 // LINE 3105:
 	asm( 
-"	      00551a8b    mov eax,[ebp-44h]"
+"	      00551a8b    mov eax,this"
 "	      00551a8e    sub dword ptr [eax+17Ch],0E100000h"
 );
 // LINE 3106:
 	asm( 
 "	      00551a98    jmp near ptr 00551ABAh"
-"	      00551a9d    mov eax,[ebp-44h]"
+"	      00551a9d    mov eax,this"
 "	      00551aa0    cmp dword ptr [eax+17Ch],0"
 "	      00551aa7    jge near ptr 00551ABAh"
 );
 // LINE 3107:
 	asm( 
-"	      00551aad    mov eax,[ebp-44h]"
+"	      00551aad    mov eax,this"
 "	      00551ab0    add dword ptr [eax+17Ch],0E100000h"
 );
 // LINE 3110:
 	asm( 
 "	      00551aba    push 0"
 "	      00551abc    push 0"
-"	      00551abe    mov eax,[ebp-44h]"
+"	      00551abe    mov eax,this"
 "	      00551ac1    mov eax,[eax+17Ch]"
 "	      00551ac7    push eax"
-"	      00551ac8    lea eax,[ebp-40h]"
+"	      00551ac8    lea eax,matrix[0][0]"
 "	      00551acb    push eax"
 "	      00551acc    call 004F955Fh"
 "	      00551ad1    add esp,10h"
 );
 // LINE 3111:
 	asm( 
-"	      00551ad4    mov eax,[ebp-44h]"
+"	      00551ad4    mov eax,this"
 "	      00551ad7    add eax,48h"
 "	      00551ada    push eax"
-"	      00551adb    lea eax,[ebp-40h]"
+"	      00551adb    lea eax,matrix[0][0]"
 "	      00551ade    push eax"
 "	      00551adf    call 004D8C2Eh"
 "	      00551ae4    add esp,8"
@@ -19598,97 +19598,97 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 );
 // LINE 3119:
 	asm( 
-"	      00551afa    mov eax,[ebp+10h]"
-"	      00551afd    sub eax,[ebp+8]"
-"	      00551b00    mov [ebp-0Ch],eax"
+"	      00551afa    mov eax,destx"
+"	      00551afd    sub eax,orgx"
+"	      00551b00    mov deltax,eax"
 );
 // LINE 3120:
 	asm( 
-"	      00551b03    mov eax,[ebp+14h]"
-"	      00551b06    sub eax,[ebp+0Ch]"
-"	      00551b09    mov [ebp-14h],eax"
+"	      00551b03    mov eax,desty"
+"	      00551b06    sub eax,orgy"
+"	      00551b09    mov deltay,eax"
 );
 // LINE 3122:
 	asm( 
-"	      00551b0c    cmp dword ptr [ebp-0Ch],0"
+"	      00551b0c    cmp deltax,0"
 "	      00551b10    jge near ptr 00551B23h"
-"	      00551b16    mov eax,[ebp-0Ch]"
+"	      00551b16    mov eax,deltax"
 "	      00551b19    neg eax"
-"	      00551b1b    mov [ebp-4],eax"
+"	      00551b1b    mov absx,eax"
 );
 // LINE 3123:
 	asm( 
 "	      00551b1e    jmp near ptr 00551B29h"
-"	      00551b23    mov eax,[ebp-0Ch]"
-"	      00551b26    mov [ebp-4],eax"
+"	      00551b23    mov eax,deltax"
+"	      00551b26    mov absx,eax"
 );
 // LINE 3124:
 	asm( 
-"	      00551b29    cmp dword ptr [ebp-14h],0"
+"	      00551b29    cmp deltay,0"
 "	      00551b2d    jge near ptr 00551B40h"
-"	      00551b33    mov eax,[ebp-14h]"
+"	      00551b33    mov eax,deltay"
 "	      00551b36    neg eax"
-"	      00551b38    mov [ebp-8],eax"
+"	      00551b38    mov absy,eax"
 );
 // LINE 3125:
 	asm( 
 "	      00551b3b    jmp near ptr 00551B46h"
-"	      00551b40    mov eax,[ebp-14h]"
-"	      00551b43    mov [ebp-8],eax"
+"	      00551b40    mov eax,deltay"
+"	      00551b43    mov absy,eax"
 );
 // LINE 3127:
 	asm( 
-"	      00551b46    mov eax,[ebp-4]"
+"	      00551b46    mov eax,absx"
 "	      00551b49    sar eax,1"
-"	      00551b4c    cmp eax,[ebp-8]"
+"	      00551b4c    cmp eax,absy"
 "	      00551b4f    jle near ptr 00551B75h"
 );
 // LINE 3129:
 	asm( 
-"	      00551b55    cmp dword ptr [ebp-0Ch],0"
+"	      00551b55    cmp deltax,0"
 "	      00551b59    jle near ptr 00551B6Ah"
-"	      00551b5f    mov word ptr [ebp-10h],2"
+"	      00551b5f    mov dir,2"
 );
 // LINE 3130:
 	asm( 
 "	      00551b65    jmp near ptr 00551B70h"
-"	      00551b6a    mov word ptr [ebp-10h],6"
+"	      00551b6a    mov dir,6"
 );
 // LINE 3132:
 	asm( 
 "	      00551b70    jmp near ptr 00551BE9h"
-"	      00551b75    mov eax,[ebp-8]"
+"	      00551b75    mov eax,absy"
 "	      00551b78    sar eax,1"
-"	      00551b7b    cmp eax,[ebp-4]"
+"	      00551b7b    cmp eax,absx"
 "	      00551b7e    jle near ptr 00551BA4h"
 );
 // LINE 3134:
 	asm( 
-"	      00551b84    cmp dword ptr [ebp-14h],0"
+"	      00551b84    cmp deltay,0"
 "	      00551b88    jle near ptr 00551B99h"
-"	      00551b8e    mov word ptr [ebp-10h],4"
+"	      00551b8e    mov dir,4"
 );
 // LINE 3135:
 	asm( 
 "	      00551b94    jmp near ptr 00551B9Fh"
-"	      00551b99    mov word ptr [ebp-10h],0"
+"	      00551b99    mov dir,0"
 );
 // LINE 3138:
 	asm( 
 "	      00551b9f    jmp near ptr 00551BE9h"
-"	      00551ba4    cmp dword ptr [ebp-0Ch],0"
+"	      00551ba4    cmp deltax,0"
 "	      00551ba8    jle near ptr 00551BCEh"
 );
 // LINE 3140:
 	asm( 
-"	      00551bae    cmp dword ptr [ebp-14h],0"
+"	      00551bae    cmp deltay,0"
 "	      00551bb2    jge near ptr 00551BC3h"
-"	      00551bb8    mov word ptr [ebp-10h],1"
+"	      00551bb8    mov dir,1"
 );
 // LINE 3141:
 	asm( 
 "	      00551bbe    jmp near ptr 00551BC9h"
-"	      00551bc3    mov word ptr [ebp-10h],3"
+"	      00551bc3    mov dir,3"
 );
 // LINE 3143:
 	asm( 
@@ -19696,18 +19696,18 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 );
 // LINE 3145:
 	asm( 
-"	      00551bce    cmp dword ptr [ebp-14h],0"
+"	      00551bce    cmp deltay,0"
 "	      00551bd2    jge near ptr 00551BE3h"
-"	      00551bd8    mov word ptr [ebp-10h],7"
+"	      00551bd8    mov dir,7"
 );
 // LINE 3146:
 	asm( 
 "	      00551bde    jmp near ptr 00551BE9h"
-"	      00551be3    mov word ptr [ebp-10h],5"
+"	      00551be3    mov dir,5"
 );
 // LINE 3148:
 	asm( 
-"	      00551be9    movsx eax,word ptr [ebp-10h]"
+"	      00551be9    movsx eax,dir"
 "	      00551bed    jmp near ptr 00551BF2h"
 );
 // LINE 3149:
@@ -19744,25 +19744,25 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 // LINE 3159:
 	asm( 
 "	      00551c00    mov eax,20000000h"
-"	      00551c05    sub eax,[ebp+10h]"
+"	      00551c05    sub eax,z"
 "	      00551c08    shr eax,16h"
 "	      00551c0b    and eax,0FFh"
-"	      00551c10    mov ecx,[ebp+8]"
+"	      00551c10    mov ecx,x"
 "	      00551c13    add ecx,20000000h"
 "	      00551c19    shr ecx,16h"
 "	      00551c1c    and ecx,0FFh"
 "	      00551c22    shl ecx,0Ah"
 "	      00551c25    mov eax,[ecx+eax*4+67ED30h]"
-"	      00551c2c    mov [ebp-1Ch],eax"
+"	      00551c2c    mov cptr,eax"
 );
 // LINE 3161:
 	asm( 
-"	      00551c2f    cmp dword ptr [ebp-1Ch],0"
+"	      00551c2f    cmp cptr,0"
 "	      00551c33    jne near ptr 00551C50h"
 "	      00551c39    push 0"
-"	      00551c3b    mov eax,[ebp+10h]"
+"	      00551c3b    mov eax,z"
 "	      00551c3e    push eax"
-"	      00551c3f    mov eax,[ebp+8]"
+"	      00551c3f    mov eax,x"
 "	      00551c42    push eax"
 "	      00551c43    call 00518A8Ch"
 "	      00551c48    add esp,0Ch"
@@ -19770,90 +19770,90 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 );
 // LINE 3163:
 	asm( 
-"	      00551c50    mov eax,[ebp+8]"
-"	      00551c53    mov ecx,[ebp-1Ch]"
+"	      00551c50    mov eax,x"
+"	      00551c53    mov ecx,cptr"
 "	      00551c56    movsx ecx,word ptr [ecx+2]"
 "	      00551c5a    shl ecx,10h"
 "	      00551c5d    sub eax,ecx"
-"	      00551c5f    mov [ebp-20h],eax"
+"	      00551c5f    mov normx,eax"
 );
 // LINE 3164:
 	asm( 
-"	      00551c62    mov eax,[ebp+10h]"
-"	      00551c65    mov ecx,[ebp-1Ch]"
+"	      00551c62    mov eax,z"
+"	      00551c65    mov ecx,cptr"
 "	      00551c68    movsx ecx,word ptr [ecx+6]"
 "	      00551c6c    shl ecx,10h"
 "	      00551c6f    sub eax,ecx"
-"	      00551c71    mov [ebp-4],eax"
+"	      00551c71    mov normz,eax"
 );
 // LINE 3165:
 	asm( 
-"	      00551c74    mov eax,[ebp+0Ch]"
-"	      00551c77    mov ecx,[ebp-1Ch]"
+"	      00551c74    mov eax,y"
+"	      00551c77    mov ecx,cptr"
 "	      00551c7a    movsx ecx,word ptr [ecx+4]"
 "	      00551c7e    shl ecx,10h"
 "	      00551c81    sub eax,ecx"
-"	      00551c83    mov [ebp-24h],eax"
+"	      00551c83    mov normy,eax"
 );
 // LINE 3167:
 	asm( 
-"	      00551c86    mov eax,[ebp-1Ch]"
+"	      00551c86    mov eax,cptr"
 "	      00551c89    mov eax,[eax+0Ch]"
-"	      00551c8c    mov [ebp-10h],eax"
+"	      00551c8c    mov stobj,eax"
 );
 // LINE 3168:
 	asm( 
-"	      00551c8f    mov dword ptr [ebp-14h],0"
+"	      00551c8f    mov objy,0"
 );
 // LINE 3169:
 	asm( 
-"	      00551c96    mov dword ptr [ebp-8],0"
+"	      00551c96    mov maxobjy,0"
 );
 // LINE 3170:
 	asm( 
-"	      00551c9d    cmp dword ptr [ebp-10h],0"
+"	      00551c9d    cmp stobj,0"
 "	      00551ca1    je near ptr 00551CF5h"
 );
 // LINE 3172:
 	asm( 
-"	      00551ca7    mov dword ptr [ebp-0Ch],200h"
+"	      00551ca7    mov color,200h"
 );
 // LINE 3173:
 	asm( 
 "	      00551cae    push 0"
 "	      00551cb0    push 0"
 "	      00551cb2    push 0"
-"	      00551cb4    lea eax,[ebp-0Ch]"
+"	      00551cb4    lea eax,color"
 "	      00551cb7    push eax"
-"	      00551cb8    mov eax,[ebp-4]"
+"	      00551cb8    mov eax,normz"
 "	      00551cbb    push eax"
-"	      00551cbc    mov eax,[ebp-24h]"
+"	      00551cbc    mov eax,normy"
 "	      00551cbf    push eax"
-"	      00551cc0    mov eax,[ebp-20h]"
+"	      00551cc0    mov eax,normx"
 "	      00551cc3    push eax"
-"	      00551cc4    mov eax,[ebp-10h]"
+"	      00551cc4    mov eax,stobj"
 "	      00551cc7    mov eax,[eax+4]"
 "	      00551cca    push eax"
 "	      00551ccb    call 004D2B28h"
 "	      00551cd0    add esp,20h"
-"	      00551cd3    mov [ebp-14h],eax"
+"	      00551cd3    mov objy,eax"
 );
 // LINE 3174:
 	asm( 
-"	      00551cd6    mov eax,[ebp-14h]"
-"	      00551cd9    cmp [ebp-8],eax"
+"	      00551cd6    mov eax,objy"
+"	      00551cd9    cmp maxobjy,eax"
 "	      00551cdc    jge near ptr 00551CE8h"
 );
 // LINE 3175:
 	asm( 
-"	      00551ce2    mov eax,[ebp-14h]"
-"	      00551ce5    mov [ebp-8],eax"
+"	      00551ce2    mov eax,objy"
+"	      00551ce5    mov maxobjy,eax"
 );
 // LINE 3176:
 	asm( 
-"	      00551ce8    mov eax,[ebp-10h]"
+"	      00551ce8    mov eax,stobj"
 "	      00551ceb    mov eax,[eax]"
-"	      00551ced    mov [ebp-10h],eax"
+"	      00551ced    mov stobj,eax"
 );
 // LINE 3177:
 	asm( 
@@ -19861,19 +19861,19 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 );
 // LINE 3182:
 	asm( 
-"	      00551cf5    cmp dword ptr [ebp-8],0"
+"	      00551cf5    cmp maxobjy,0"
 "	      00551cf9    jne near ptr 00551D19h"
 );
 // LINE 3183:
 	asm( 
 "	      00551cff    push 0"
-"	      00551d01    mov eax,[ebp+10h]"
+"	      00551d01    mov eax,z"
 "	      00551d04    push eax"
-"	      00551d05    mov eax,[ebp+8]"
+"	      00551d05    mov eax,x"
 "	      00551d08    push eax"
 "	      00551d09    call 00518A8Ch"
 "	      00551d0e    add esp,0Ch"
-"	      00551d11    mov [ebp-18h],eax"
+"	      00551d11    mov alt,eax"
 );
 // LINE 3184:
 	asm( 
@@ -19881,15 +19881,15 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 );
 // LINE 3185:
 	asm( 
-"	      00551d19    mov eax,[ebp-1Ch]"
+"	      00551d19    mov eax,cptr"
 "	      00551d1c    movsx eax,word ptr [eax+4]"
 "	      00551d20    shl eax,10h"
-"	      00551d23    add eax,[ebp-8]"
-"	      00551d26    mov [ebp-18h],eax"
+"	      00551d23    add eax,maxobjy"
+"	      00551d26    mov alt,eax"
 );
 // LINE 3187:
 	asm( 
-"	      00551d29    mov eax,[ebp-18h]"
+"	      00551d29    mov eax,alt"
 "	      00551d2c    jmp near ptr 00551D31h"
 );
 // LINE 3188:

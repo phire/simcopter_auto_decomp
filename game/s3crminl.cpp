@@ -17,7 +17,7 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 );
 // LINE 82:
 	asm( 
-"	      005349c6    mov eax,[ebp+8]"
+"	      005349c6    mov eax,instanceID"
 "	      005349c9    push eax"
 "	      005349ca    call 00534A73h"
 "	      005349cf    add esp,4"
@@ -50,9 +50,9 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 );
 // LINE 88:
 	asm( 
-"	      005349f6    mov eax,[ebp+14h]"
+"	      005349f6    mov eax,y"
 "	      005349f9    push eax"
-"	      005349fa    mov eax,[ebp+10h]"
+"	      005349fa    mov eax,x"
 "	      005349fd    push eax"
 "	      005349fe    mov eax,[ebp+0Ch]"
 "	      00534a01    push eax"
@@ -82,21 +82,21 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 "	      00534a1e    push ebx"
 "	      00534a1f    push esi"
 "	      00534a20    push edi"
-"	      00534a21    mov [ebp-4],ecx"
-"	      00534a24    mov ecx,[ebp-4]"
+"	      00534a21    mov this,ecx"
+"	      00534a24    mov ecx,this"
 "	      00534a27    call 00501B6Ch"
-"	      00534a2c    mov eax,[ebp-4]"
+"	      00534a2c    mov eax,this"
 "	      00534a2f    mov dword ptr [eax],593258h"
 );
 // LINE 98:
 	asm( 
-"	      00534a35    mov eax,[ebp-4]"
+"	      00534a35    mov eax,this"
 "	      00534a38    mov dword ptr [eax+4],11Eh"
 );
 // LINE 99:
 	asm( 
 "	      00534a3f    jmp near ptr 00534A44h"
-"	      00534a44    mov eax,[ebp-4]"
+"	      00534a44    mov eax,this"
 "	      00534a47    pop edi"
 "	      00534a48    pop esi"
 "	      00534a49    pop ebx"
@@ -115,11 +115,11 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 "	      00534a52    push ebx"
 "	      00534a53    push esi"
 "	      00534a54    push edi"
-"	      00534a55    mov [ebp-4],ecx"
-"	      00534a58    mov eax,[ebp-4]"
+"	      00534a55    mov this,ecx"
+"	      00534a58    mov eax,this"
 "	      00534a5b    mov dword ptr [eax],593258h"
 "	      00534a61    jmp near ptr 00534A66h"
-"	      00534a66    mov ecx,[ebp-4]"
+"	      00534a66    mov ecx,this"
 "	      00534a69    call 00501D09h"
 "	      00534a6e    pop edi"
 "	      00534a6f    pop esi"
@@ -152,34 +152,34 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 "	      00534a90    je near ptr 00534AA6h"
 "	      00534a96    mov ecx,[ebp-8]"
 "	      00534a99    call 00534A18h"
-"	      00534a9e    mov [ebp-4],eax"
+"	      00534a9e    mov youveWonABrandNewCar,eax"
 "	      00534aa1    jmp near ptr 00534AADh"
-"	      00534aa6    mov dword ptr [ebp-4],0"
+"	      00534aa6    mov youveWonABrandNewCar,0"
 );
 // LINE 130:
 	asm( 
-"	      00534aad    cmp dword ptr [ebp-4],0"
+"	      00534aad    cmp youveWonABrandNewCar,0"
 "	      00534ab1    je near ptr 00534B15h"
 );
 // LINE 133:
 	asm( 
-"	      00534ab7    mov eax,[ebp+8]"
+"	      00534ab7    mov eax,instanceID"
 "	      00534aba    push eax"
-"	      00534abb    mov ecx,[ebp-4]"
+"	      00534abb    mov ecx,youveWonABrandNewCar"
 "	      00534abe    call 00504554h"
 "	      00534ac3    test eax,eax"
 "	      00534ac5    je near ptr 00534AEEh"
 );
 // LINE 135:
 	asm( 
-"	      00534acb    mov eax,[ebp-4]"
+"	      00534acb    mov eax,youveWonABrandNewCar"
 "	      00534ace    mov ecx,ds:[5B7CBCh]"
 "	      00534ad4    mov [ecx*4+62B9A0h],eax"
 "	      00534adb    inc dword ptr ds:[5B7CBCh]"
 );
 // LINE 138:
 	asm( 
-"	      00534ae1    mov eax,[ebp-4]"
+"	      00534ae1    mov eax,youveWonABrandNewCar"
 "	      00534ae4    jmp near ptr 00534B1Ch"
 );
 // LINE 140:
@@ -188,7 +188,7 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 );
 // LINE 143:
 	asm( 
-"	      00534aee    mov eax,[ebp-4]"
+"	      00534aee    mov eax,youveWonABrandNewCar"
 "	      00534af1    mov [ebp-10h],eax"
 "	      00534af4    mov eax,[ebp-10h]"
 "	      00534af7    mov [ebp-0Ch],eax"
@@ -234,33 +234,33 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 // LINE 159:
 	asm( 
 "	      00534b2a    mov al,[ebp+10h]"
-"	      00534b2d    mov [ebp-4],al"
+"	      00534b2d    mov startLoc.x,al"
 );
 // LINE 160:
 	asm( 
 "	      00534b30    mov al,[ebp+14h]"
-"	      00534b33    mov [ebp-3],al"
+"	      00534b33    mov startLoc.y,al"
 );
 // LINE 165:
 	asm( 
-"	      00534b36    mov dword ptr [ebp-8],0"
+"	      00534b36    mov i,0"
 "	      00534b3d    jmp near ptr 00534B45h"
-"	      00534b42    inc dword ptr [ebp-8]"
-"	      00534b45    cmp dword ptr [ebp-8],5"
+"	      00534b42    inc i"
+"	      00534b45    cmp i,5"
 "	      00534b49    jge near ptr 00534C39h"
 );
 // LINE 167:
 	asm( 
-"	      00534b4f    mov eax,[ebp-8]"
+"	      00534b4f    mov eax,i"
 "	      00534b52    mov eax,[eax*4+62B9A0h]"
 "	      00534b59    test byte ptr [eax+8],2"
 "	      00534b5d    jne near ptr 00534C34h"
 );
 // LINE 170:
 	asm( 
-"	      00534b63    lea eax,[ebp-4]"
+"	      00534b63    lea eax,startLoc.x"
 "	      00534b66    push eax"
-"	      00534b67    mov eax,[ebp-8]"
+"	      00534b67    mov eax,i"
 "	      00534b6a    mov ecx,[eax*4+62B9A0h]"
 "	      00534b71    call 005030AAh"
 "	      00534b76    test eax,eax"
@@ -268,53 +268,53 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 );
 // LINE 175:
 	asm( 
-"	      00534b7e    mov dword ptr [ebp-20h],0Ah"
+"	      00534b7e    mov mp.op,0Ah"
 );
 // LINE 176:
 	asm( 
-"	      00534b85    movsx eax,word ptr [ebp+8]"
-"	      00534b89    mov [ebp-1Ch],eax"
+"	      00534b85    movsx eax,mID"
+"	      00534b89    mov mp.id,eax"
 );
 // LINE 180:
 	asm( 
-"	      00534b8c    mov eax,[ebp-8]"
+"	      00534b8c    mov eax,i"
 "	      00534b8f    mov eax,[eax*4+62B9A0h]"
 "	      00534b96    xor ecx,ecx"
 "	      00534b98    mov cl,[eax+7Ch]"
-"	      00534b9b    mov [ebp-18h],ecx"
+"	      00534b9b    mov mp.maploc.x,ecx"
 );
 // LINE 181:
 	asm( 
-"	      00534b9e    mov eax,[ebp-8]"
+"	      00534b9e    mov eax,i"
 "	      00534ba1    mov eax,[eax*4+62B9A0h]"
 "	      00534ba8    xor ecx,ecx"
 "	      00534baa    mov cl,[eax+7Dh]"
-"	      00534bad    mov [ebp-14h],ecx"
+"	      00534bad    mov mp.maploc.y,ecx"
 );
 // LINE 182:
 	asm( 
-"	      00534bb0    lea eax,[ebp-20h]"
+"	      00534bb0    lea eax,mp.op"
 "	      00534bb3    push eax"
 "	      00534bb4    call 004FBD4Ah"
 "	      00534bb9    add esp,4"
 );
 // LINE 185:
 	asm( 
-"	      00534bbc    movsx eax,word ptr [ebp+8]"
-"	      00534bc0    mov ecx,[ebp-8]"
+"	      00534bbc    movsx eax,mID"
+"	      00534bc0    mov ecx,i"
 "	      00534bc3    mov ecx,[ecx*4+62B9A0h]"
 "	      00534bca    mov [ecx+10Eh],eax"
 );
 // LINE 186:
 	asm( 
-"	      00534bd0    mov eax,[ebp-8]"
+"	      00534bd0    mov eax,i"
 "	      00534bd3    mov eax,[eax*4+62B9A0h]"
 "	      00534bda    mov dword ptr [eax+11Ah],0"
 );
 // LINE 187:
 	asm( 
-"	      00534be4    movsx eax,word ptr [ebp+0Ch]"
-"	      00534be8    mov ecx,[ebp-8]"
+"	      00534be4    movsx eax,mType"
+"	      00534be8    mov ecx,i"
 "	      00534beb    mov ecx,[ecx*4+62B9A0h]"
 "	      00534bf2    mov [ecx+11Eh],eax"
 );
@@ -326,7 +326,7 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 "	      00534c01    idiv dword ptr ds:[5B7CACh]"
 "	      00534c07    mov eax,ds:[5B7CA8h]"
 "	      00534c0c    add eax,edx"
-"	      00534c0e    mov ecx,[ebp-8]"
+"	      00534c0e    mov ecx,i"
 "	      00534c11    mov ecx,[ecx*4+62B9A0h]"
 "	      00534c18    mov [ecx+122h],eax"
 );
@@ -375,29 +375,29 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534c4b    push ebx"
 "	      00534c4c    push esi"
 "	      00534c4d    push edi"
-"	      00534c4e    mov [ebp-64h],ecx"
+"	      00534c4e    mov this,ecx"
 );
 // LINE 209:
 	asm( 
-"	      00534c51    mov eax,[ebp-64h]"
+"	      00534c51    mov eax,this"
 "	      00534c54    mov eax,[eax+11Ah]"
 "	      00534c5a    mov [ebp-68h],eax"
 "	      00534c5d    jmp near ptr 005350FCh"
 );
 // LINE 212:
 	asm( 
-"	      00534c62    mov ecx,[ebp-64h]"
+"	      00534c62    mov ecx,this"
 "	      00534c65    call 00535709h"
 );
 // LINE 214:
 	asm( 
-"	      00534c6a    mov eax,[ebp-64h]"
+"	      00534c6a    mov eax,this"
 "	      00534c6d    cmp dword ptr [eax+116h],0"
 "	      00534c74    je near ptr 00534D86h"
 );
 // LINE 216:
 	asm( 
-"	      00534c7a    mov eax,[ebp-64h]"
+"	      00534c7a    mov eax,this"
 "	      00534c7d    mov dword ptr [eax+11Ah],2"
 );
 // LINE 218:
@@ -412,51 +412,51 @@ void CriminalEvaderCarClass::ItterateFSM() {
 // Block start:
 	struct Point3d loc;
 	asm( 
-"	      00534c99    mov eax,[ebp-64h]"
+"	      00534c99    mov eax,this"
 "	      00534c9c    mov eax,[eax+24h]"
-"	      00534c9f    mov ecx,[ebp-64h]"
+"	      00534c9f    mov ecx,this"
 "	      00534ca2    mov ecx,[ecx+0F2h]"
 "	      00534ca8    mov ecx,[ecx]"
 "	      00534caa    shl ecx,4"
 "	      00534cad    sub eax,ecx"
-"	      00534caf    mov [ebp-24h],eax"
+"	      00534caf    mov loc.x,eax"
 );
 // LINE 223:
 	asm( 
-"	      00534cb2    mov eax,[ebp-64h]"
+"	      00534cb2    mov eax,this"
 "	      00534cb5    mov eax,[eax+28h]"
-"	      00534cb8    mov ecx,[ebp-64h]"
+"	      00534cb8    mov ecx,this"
 "	      00534cbb    mov ecx,[ecx+0F2h]"
 "	      00534cc1    mov ecx,[ecx+4]"
 "	      00534cc4    shl ecx,4"
 "	      00534cc7    sub eax,ecx"
-"	      00534cc9    mov [ebp-20h],eax"
+"	      00534cc9    mov loc.y,eax"
 );
 // LINE 224:
 	asm( 
-"	      00534ccc    mov eax,[ebp-64h]"
+"	      00534ccc    mov eax,this"
 "	      00534ccf    mov eax,[eax+2Ch]"
-"	      00534cd2    mov ecx,[ebp-64h]"
+"	      00534cd2    mov ecx,this"
 "	      00534cd5    mov ecx,[ecx+0F2h]"
 "	      00534cdb    mov ecx,[ecx+8]"
 "	      00534cde    shl ecx,4"
 "	      00534ce1    sub eax,ecx"
-"	      00534ce3    mov [ebp-1Ch],eax"
+"	      00534ce3    mov loc.z,eax"
 );
 // LINE 226:
 	asm( 
 "	      00534ce6    push 0"
-"	      00534ce8    mov eax,[ebp-64h]"
+"	      00534ce8    mov eax,this"
 "	      00534ceb    add eax,24h"
 "	      00534cee    push eax"
 "	      00534cef    push 30h"
 "	      00534cf1    call 00446CC2h"
 "	      00534cf6    add esp,0Ch"
-"	      00534cf9    mov eax,[ebp-64h]"
+"	      00534cf9    mov eax,this"
 "	      00534cfc    xor ecx,ecx"
 "	      00534cfe    mov cl,[eax+7Dh]"
 "	      00534d01    mov [ebp-5Ch],ecx"
-"	      00534d04    mov eax,[ebp-64h]"
+"	      00534d04    mov eax,this"
 "	      00534d07    xor ecx,ecx"
 "	      00534d09    mov cl,[eax+7Ch]"
 "	      00534d0c    mov [ebp-60h],ecx"
@@ -481,15 +481,15 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534d53    jmp near ptr 00534D58h"
 "	      00534d58    jmp near ptr 00534D5Dh"
 "	      00534d5d    mov eax,[ebp-58h]"
-"	      00534d60    mov ecx,[ebp-64h]"
+"	      00534d60    mov ecx,this"
 "	      00534d63    mov [ecx+112h],eax"
 );
 // LINE 228:
 	asm( 
 "	      00534d69    push 6"
-"	      00534d6b    lea eax,[ebp-24h]"
+"	      00534d6b    lea eax,loc.x"
 "	      00534d6e    push eax"
-"	      00534d6f    mov eax,[ebp-64h]"
+"	      00534d6f    mov eax,this"
 "	      00534d72    mov eax,[eax+112h]"
 "	      00534d78    push eax"
 "	      00534d79    call 005240DCh"
@@ -502,13 +502,13 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 233:
 	asm( 
-"	      00534d86    mov eax,[ebp-64h]"
+"	      00534d86    mov eax,this"
 "	      00534d89    cmp dword ptr [eax+122h],0"
 "	      00534d90    jge near ptr 00534DC7h"
 );
 // LINE 235:
 	asm( 
-"	      00534d96    mov eax,[ebp-64h]"
+"	      00534d96    mov eax,this"
 "	      00534d99    mov dword ptr [eax+11Ah],1"
 );
 // LINE 236:
@@ -519,7 +519,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534dac    idiv dword ptr ds:[5B7CACh]"
 "	      00534db2    mov eax,ds:[5B7CA8h]"
 "	      00534db7    add eax,edx"
-"	      00534db9    mov ecx,[ebp-64h]"
+"	      00534db9    mov ecx,this"
 "	      00534dbc    mov [ecx+122h],eax"
 );
 // LINE 238:
@@ -531,12 +531,12 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534dc7    xor eax,eax"
 "	      00534dc9    sub eax,ds:[5B4760h]"
 "	      00534dcf    neg eax"
-"	      00534dd1    mov ecx,[ebp-64h]"
+"	      00534dd1    mov ecx,this"
 "	      00534dd4    sub [ecx+122h],eax"
 );
 // LINE 243:
 	asm( 
-"	      00534dda    mov ecx,[ebp-64h]"
+"	      00534dda    mov ecx,this"
 "	      00534ddd    call 005022B0h"
 );
 // LINE 244:
@@ -545,31 +545,31 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 247:
 	asm( 
-"	      00534de7    mov ecx,[ebp-64h]"
+"	      00534de7    mov ecx,this"
 "	      00534dea    call 00535709h"
 );
 // LINE 249:
 	asm( 
-"	      00534def    mov eax,[ebp-64h]"
+"	      00534def    mov eax,this"
 "	      00534df2    cmp dword ptr [eax+116h],0"
 "	      00534df9    je near ptr 00534E11h"
 );
 // LINE 251:
 	asm( 
-"	      00534dff    mov eax,[ebp-64h]"
+"	      00534dff    mov eax,this"
 "	      00534e02    mov dword ptr [eax+11Ah],2"
 );
 // LINE 253:
 	asm( 
 "	      00534e0c    jmp near ptr 00534EEAh"
-"	      00534e11    mov eax,[ebp-64h]"
+"	      00534e11    mov eax,this"
 "	      00534e14    test byte ptr [eax+8],30h"
 "	      00534e18    jne near ptr 00534E50h"
-"	      00534e1e    mov ecx,[ebp-64h]"
+"	      00534e1e    mov ecx,this"
 "	      00534e21    call 00535202h"
 "	      00534e26    test eax,eax"
 "	      00534e28    je near ptr 00534E50h"
-"	      00534e2e    mov ecx,[ebp-64h]"
+"	      00534e2e    mov ecx,this"
 "	      00534e31    call 005045B6h"
 "	      00534e36    test eax,eax"
 "	      00534e38    je near ptr 00534E50h"
@@ -577,15 +577,15 @@ void CriminalEvaderCarClass::ItterateFSM() {
 // LINE 255:
 	asm( 
 "	      00534e3e    push 0FFFFFFFFh"
-"	      00534e40    mov eax,[ebp-64h]"
+"	      00534e40    mov eax,this"
 "	      00534e43    mov eax,[eax]"
-"	      00534e45    mov ecx,[ebp-64h]"
+"	      00534e45    mov ecx,this"
 "	      00534e48    call dword ptr [eax+4]"
 );
 // LINE 257:
 	asm( 
 "	      00534e4b    jmp near ptr 00534EEAh"
-"	      00534e50    mov eax,[ebp-64h]"
+"	      00534e50    mov eax,this"
 "	      00534e53    test byte ptr [eax+8],20h"
 "	      00534e57    je near ptr 00534EEAh"
 );
@@ -593,24 +593,24 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	asm( 
 "	      00534e5d    push 0Ah"
 "	      00534e5f    push 0Fh"
-"	      00534e61    mov ecx,[ebp-64h]"
+"	      00534e61    mov ecx,this"
 "	      00534e64    call 0050217Ch"
 "	      00534e69    test eax,eax"
 "	      00534e6b    je near ptr 00534E9Dh"
 );
 // LINE 261:
 	asm( 
-"	      00534e71    mov eax,[ebp-64h]"
+"	      00534e71    mov eax,this"
 "	      00534e74    mov dword ptr [eax+11Ah],3"
 );
 // LINE 262:
 	asm( 
-"	      00534e7e    mov eax,[ebp-64h]"
+"	      00534e7e    mov eax,this"
 "	      00534e81    mov dword ptr [eax+0F6h],0"
 );
 // LINE 263:
 	asm( 
-"	      00534e8b    mov eax,[ebp-64h]"
+"	      00534e8b    mov eax,this"
 "	      00534e8e    mov dword ptr [eax+0FEh],780000h"
 );
 // LINE 265:
@@ -631,21 +631,21 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 270:
 	asm( 
-"	      00534ebe    mov dword ptr [ebp-3Ch],1Dh"
+"	      00534ebe    mov mp.op,1Dh"
 );
 // LINE 271:
 	asm( 
-"	      00534ec5    mov dword ptr [ebp-2Ch],8"
+"	      00534ec5    mov mp.i2num,8"
 );
 // LINE 272:
 	asm( 
-"	      00534ecc    mov eax,[ebp-64h]"
+"	      00534ecc    mov eax,this"
 "	      00534ecf    mov eax,[eax+10Eh]"
-"	      00534ed5    mov [ebp-38h],eax"
+"	      00534ed5    mov mp.id,eax"
 );
 // LINE 274:
 	asm( 
-"	      00534ed8    mov eax,[ebp-64h]"
+"	      00534ed8    mov eax,this"
 "	      00534edb    mov dword ptr [eax+11Ah],4"
 );
 // LINE 277:
@@ -655,7 +655,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 280:
 	asm( 
-"	      00534eea    mov ecx,[ebp-64h]"
+"	      00534eea    mov ecx,this"
 "	      00534eed    call 005022B0h"
 );
 // LINE 281:
@@ -667,41 +667,41 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534ef7    xor eax,eax"
 "	      00534ef9    sub eax,ds:[5B4760h]"
 "	      00534eff    neg eax"
-"	      00534f01    mov ecx,[ebp-64h]"
+"	      00534f01    mov ecx,this"
 "	      00534f04    sub [ecx+0FEh],eax"
 );
 // LINE 291:
 	asm( 
-"	      00534f0a    mov eax,[ebp-64h]"
+"	      00534f0a    mov eax,this"
 "	      00534f0d    cmp dword ptr [eax+0F6h],0"
 "	      00534f14    jne near ptr 00534F2Ah"
-"	      00534f1a    mov eax,[ebp-64h]"
+"	      00534f1a    mov eax,this"
 "	      00534f1d    cmp dword ptr [eax+0FEh],0"
 "	      00534f24    jg near ptr 00534FADh"
 );
 // LINE 293:
 	asm( 
-"	      00534f2a    mov eax,[ebp-64h]"
+"	      00534f2a    mov eax,this"
 "	      00534f2d    cmp dword ptr [eax+0FAh],0"
 "	      00534f34    jne near ptr 00534F66h"
 );
 // LINE 295:
 	asm( 
-"	      00534f3a    mov dword ptr [ebp-18h],1Dh"
+"	      00534f3a    mov mp.op,1Dh"
 );
 // LINE 296:
 	asm( 
-"	      00534f41    mov dword ptr [ebp-8],8"
+"	      00534f41    mov mp.i2num,8"
 );
 // LINE 297:
 	asm( 
-"	      00534f48    mov eax,[ebp-64h]"
+"	      00534f48    mov eax,this"
 "	      00534f4b    mov eax,[eax+10Eh]"
-"	      00534f51    mov [ebp-14h],eax"
+"	      00534f51    mov mp.id,eax"
 );
 // LINE 299:
 	asm( 
-"	      00534f54    mov eax,[ebp-64h]"
+"	      00534f54    mov eax,this"
 "	      00534f57    mov dword ptr [eax+11Ah],4"
 );
 // LINE 300:
@@ -710,33 +710,33 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 304:
 	asm( 
-"	      00534f66    mov eax,[ebp-64h]"
+"	      00534f66    mov eax,this"
 "	      00534f69    test byte ptr [eax+8],20h"
 "	      00534f6d    je near ptr 00534F8Bh"
-"	      00534f73    mov ecx,[ebp-64h]"
+"	      00534f73    mov ecx,this"
 "	      00534f76    call 005049FEh"
 "	      00534f7b    test eax,eax"
 "	      00534f7d    je near ptr 00534F8Bh"
 );
 // LINE 306:
 	asm( 
-"	      00534f83    mov ecx,[ebp-64h]"
+"	      00534f83    mov ecx,this"
 "	      00534f86    call 00504B0Ah"
 );
 // LINE 310:
 	asm( 
-"	      00534f8b    mov eax,[ebp-64h]"
+"	      00534f8b    mov eax,this"
 "	      00534f8e    test byte ptr [eax+8],60h"
 "	      00534f92    jne near ptr 00534FA5h"
 );
 // LINE 313:
 	asm( 
-"	      00534f98    mov eax,[ebp-64h]"
+"	      00534f98    mov eax,this"
 "	      00534f9b    mov dword ptr [eax+11Ah],0"
 );
 // LINE 316:
 	asm( 
-"	      00534fa5    mov ecx,[ebp-64h]"
+"	      00534fa5    mov ecx,this"
 "	      00534fa8    call 005022B0h"
 );
 // LINE 319:
@@ -745,20 +745,20 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 322:
 	asm( 
-"	      00534fb2    mov ecx,[ebp-64h]"
+"	      00534fb2    mov ecx,this"
 "	      00534fb5    call 00535709h"
 );
 // LINE 323:
 	asm( 
-"	      00534fba    mov ecx,[ebp-64h]"
+"	      00534fba    mov ecx,this"
 "	      00534fbd    call 0050417Dh"
 );
 // LINE 326:
 	asm( 
-"	      00534fc2    mov eax,[ebp-64h]"
+"	      00534fc2    mov eax,this"
 "	      00534fc5    test byte ptr [eax+8],20h"
 "	      00534fc9    je near ptr 0053506Ch"
-"	      00534fcf    mov eax,[ebp-64h]"
+"	      00534fcf    mov eax,this"
 "	      00534fd2    cmp dword ptr [eax+116h],0"
 "	      00534fd9    je near ptr 0053506Ch"
 );
@@ -766,24 +766,24 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	asm( 
 "	      00534fdf    push 0Ah"
 "	      00534fe1    push 0Fh"
-"	      00534fe3    mov ecx,[ebp-64h]"
+"	      00534fe3    mov ecx,this"
 "	      00534fe6    call 0050217Ch"
 "	      00534feb    test eax,eax"
 "	      00534fed    je near ptr 0053501Fh"
 );
 // LINE 330:
 	asm( 
-"	      00534ff3    mov eax,[ebp-64h]"
+"	      00534ff3    mov eax,this"
 "	      00534ff6    mov dword ptr [eax+11Ah],3"
 );
 // LINE 331:
 	asm( 
-"	      00535000    mov eax,[ebp-64h]"
+"	      00535000    mov eax,this"
 "	      00535003    mov dword ptr [eax+0F6h],0"
 );
 // LINE 332:
 	asm( 
-"	      0053500d    mov eax,[ebp-64h]"
+"	      0053500d    mov eax,this"
 "	      00535010    mov dword ptr [eax+0FEh],780000h"
 );
 // LINE 334:
@@ -804,21 +804,21 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 339:
 	asm( 
-"	      00535040    mov dword ptr [ebp-54h],1Dh"
+"	      00535040    mov mp.op,1Dh"
 );
 // LINE 340:
 	asm( 
-"	      00535047    mov dword ptr [ebp-44h],8"
+"	      00535047    mov mp.i2num,8"
 );
 // LINE 341:
 	asm( 
-"	      0053504e    mov eax,[ebp-64h]"
+"	      0053504e    mov eax,this"
 "	      00535051    mov eax,[eax+10Eh]"
-"	      00535057    mov [ebp-50h],eax"
+"	      00535057    mov mp.id,eax"
 );
 // LINE 343:
 	asm( 
-"	      0053505a    mov eax,[ebp-64h]"
+"	      0053505a    mov eax,this"
 "	      0053505d    mov dword ptr [eax+11Ah],4"
 );
 // LINE 346:
@@ -828,32 +828,32 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 351:
 	asm( 
-"	      0053506c    mov eax,[ebp-64h]"
+"	      0053506c    mov eax,this"
 "	      0053506f    cmp dword ptr [eax+116h],0"
 "	      00535076    je near ptr 0053508Fh"
 );
 // LINE 352:
 	asm( 
 "	      0053507c    mov eax,ds:[5B7CB0h]"
-"	      00535081    mov ecx,[ebp-64h]"
+"	      00535081    mov ecx,this"
 "	      00535084    mov [ecx+126h],eax"
 );
 // LINE 354:
 	asm( 
 "	      0053508a    jmp near ptr 005350D2h"
-"	      0053508f    mov eax,[ebp-64h]"
+"	      0053508f    mov eax,this"
 "	      00535092    cmp dword ptr [eax+126h],0"
 "	      00535099    jge near ptr 005350BFh"
 );
 // LINE 356:
 	asm( 
 "	      0053509f    mov eax,ds:[5B7CB0h]"
-"	      005350a4    mov ecx,[ebp-64h]"
+"	      005350a4    mov ecx,this"
 "	      005350a7    mov [ecx+126h],eax"
 );
 // LINE 357:
 	asm( 
-"	      005350ad    mov eax,[ebp-64h]"
+"	      005350ad    mov eax,this"
 "	      005350b0    mov dword ptr [eax+11Ah],0"
 );
 // LINE 359:
@@ -865,12 +865,12 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      005350bf    xor eax,eax"
 "	      005350c1    sub eax,ds:[5B4760h]"
 "	      005350c7    neg eax"
-"	      005350c9    mov ecx,[ebp-64h]"
+"	      005350c9    mov ecx,this"
 "	      005350cc    sub [ecx+126h],eax"
 );
 // LINE 362:
 	asm( 
-"	      005350d2    mov ecx,[ebp-64h]"
+"	      005350d2    mov ecx,this"
 "	      005350d5    call 005022B0h"
 );
 // LINE 363:
@@ -879,14 +879,14 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 // LINE 367:
 	asm( 
-"	      005350df    mov ecx,[ebp-64h]"
+"	      005350df    mov ecx,this"
 "	      005350e2    call 00506333h"
 "	      005350e7    test eax,eax"
 "	      005350e9    je near ptr 005350F7h"
 );
 // LINE 369:
 	asm( 
-"	      005350ef    mov ecx,[ebp-64h]"
+"	      005350ef    mov ecx,this"
 "	      005350f2    call 00503E6Eh"
 );
 // LINE 371:
@@ -928,14 +928,14 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 "	      00535134    push ebx"
 "	      00535135    push esi"
 "	      00535136    push edi"
-"	      00535137    mov [ebp-4],ecx"
+"	      00535137    mov this,ecx"
 );
 // LINE 393:
 	asm( 
-"	      0053513a    mov eax,[ebp-4]"
+"	      0053513a    mov eax,this"
 "	      0053513d    cmp dword ptr [eax+11Ah],3"
 "	      00535144    je near ptr 0053515Ah"
-"	      0053514a    mov eax,[ebp-4]"
+"	      0053514a    mov eax,this"
 "	      0053514d    cmp dword ptr [eax+11Ah],4"
 "	      00535154    jne near ptr 0053515Fh"
 );
@@ -945,16 +945,16 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 );
 // LINE 397:
 	asm( 
-"	      0053515f    movsx eax,word ptr [ebp+8]"
+"	      0053515f    movsx eax,carModel"
 "	      00535163    cmp eax,11Dh"
 "	      00535168    jne near ptr 0053517Eh"
-"	      0053516e    mov eax,[ebp-4]"
+"	      0053516e    mov eax,this"
 "	      00535171    cmp dword ptr [eax+116h],0"
 "	      00535178    jne near ptr 0053519Bh"
-"	      0053517e    mov eax,[ebp-4]"
+"	      0053517e    mov eax,this"
 "	      00535181    cmp dword ptr [eax+11Ah],1"
 "	      00535188    jne near ptr 005351A7h"
-"	      0053518e    mov eax,[ebp-4]"
+"	      0053518e    mov eax,this"
 "	      00535191    test byte ptr [eax+8],30h"
 "	      00535195    jne near ptr 005351A7h"
 );
@@ -962,7 +962,7 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 	asm( 
 "	      0053519b    mov eax,[ebp+8]"
 "	      0053519e    push eax"
-"	      0053519f    mov ecx,[ebp-4]"
+"	      0053519f    mov ecx,this"
 "	      005351a2    call 005048CDh"
 );
 // LINE 399:
@@ -986,16 +986,16 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 "	      005351b9    push ebx"
 "	      005351ba    push esi"
 "	      005351bb    push edi"
-"	      005351bc    mov [ebp-4],ecx"
+"	      005351bc    mov this,ecx"
 );
 // LINE 418:
 	asm( 
-"	      005351bf    mov ecx,[ebp-4]"
+"	      005351bf    mov ecx,this"
 "	      005351c2    call 0050409Ah"
 );
 // LINE 420:
 	asm( 
-"	      005351c7    mov eax,[ebp-4]"
+"	      005351c7    mov eax,this"
 "	      005351ca    cmp dword ptr [eax+11Ah],2"
 "	      005351d1    jne near ptr 005351F8h"
 );
@@ -1003,12 +1003,12 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	asm( 
 "	      005351d7    mov eax,ds:[5B7CB4h]"
 "	      005351dc    push eax"
-"	      005351dd    mov eax,[ebp-4]"
+"	      005351dd    mov eax,this"
 "	      005351e0    mov eax,[eax+0DEh]"
 "	      005351e6    push eax"
 "	      005351e7    call 004D19BDh"
 "	      005351ec    add esp,8"
-"	      005351ef    mov ecx,[ebp-4]"
+"	      005351ef    mov ecx,this"
 "	      005351f2    mov [ecx+0DEh],eax"
 );
 // LINE 424:
@@ -1040,18 +1040,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 "	      00535208    push ebx"
 "	      00535209    push esi"
 "	      0053520a    push edi"
-"	      0053520b    mov [ebp-34h],ecx"
+"	      0053520b    mov this,ecx"
 );
 // LINE 442:
 	asm( 
 "	      0053520e    movsx eax,word ptr ds:[5B7CB8h]"
 "	      00535215    push eax"
-"	      00535216    lea ecx,[ebp-10h]"
+"	      00535216    lea ecx,scan.currDist"
 "	      00535219    call 00542DC0h"
 );
 // LINE 443:
 	asm( 
-"	      0053521e    mov eax,[ebp-34h]"
+"	      0053521e    mov eax,this"
 "	      00535221    mov ax,[eax+7Ch]"
 "	      00535225    mov [ebp-14h],ax"
 );
@@ -1060,16 +1060,16 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	unsigned short tt;
 	asm( 
 "	      00535229    xor eax,eax"
-"	      0053522b    mov al,[ebp-14h]"
+"	      0053522b    mov al,scanLoc.x"
 "	      0053522e    mov eax,[eax*4+639850h]"
 "	      00535235    xor ecx,ecx"
-"	      00535237    mov cl,[ebp-13h]"
+"	      00535237    mov cl,scanLoc.y"
 "	      0053523a    movzx ax,byte ptr [eax+ecx]"
-"	      0053523f    mov [ebp-18h],ax"
+"	      0053523f    mov tt,ax"
 );
 // LINE 448:
 	asm( 
-"	      00535243    mov eax,[ebp-34h]"
+"	      00535243    mov eax,this"
 "	      00535246    mov eax,[eax+11Eh]"
 "	      0053524c    mov [ebp-38h],eax"
 "	      0053524f    jmp near ptr 005356B4h"
@@ -1674,9 +1674,9 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 619:
 // Block end:
 	asm( 
-"	      005356dc    lea eax,[ebp-14h]"
+"	      005356dc    lea eax,scanLoc.x"
 "	      005356df    push eax"
-"	      005356e0    lea ecx,[ebp-10h]"
+"	      005356e0    lea ecx,scan.currDist"
 "	      005356e3    call 00542E03h"
 "	      005356e8    test eax,eax"
 "	      005356ea    jne near ptr 00535229h"
@@ -1710,35 +1710,35 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 "	      0053570f    push ebx"
 "	      00535710    push esi"
 "	      00535711    push edi"
-"	      00535712    mov [ebp-1Ch],ecx"
+"	      00535712    mov this,ecx"
 );
 // LINE 649:
 	asm( 
-"	      00535715    mov dword ptr [ebp-18h],0Ah"
+"	      00535715    mov mp.op,0Ah"
 );
 // LINE 650:
 	asm( 
-"	      0053571c    mov eax,[ebp-1Ch]"
+"	      0053571c    mov eax,this"
 "	      0053571f    mov eax,[eax+10Eh]"
-"	      00535725    mov [ebp-14h],eax"
+"	      00535725    mov mp.id,eax"
 );
 // LINE 654:
 	asm( 
-"	      00535728    mov eax,[ebp-1Ch]"
+"	      00535728    mov eax,this"
 "	      0053572b    xor ecx,ecx"
 "	      0053572d    mov cl,[eax+7Ch]"
-"	      00535730    mov [ebp-10h],ecx"
+"	      00535730    mov mp.maploc.x,ecx"
 );
 // LINE 655:
 	asm( 
-"	      00535733    mov eax,[ebp-1Ch]"
+"	      00535733    mov eax,this"
 "	      00535736    xor ecx,ecx"
 "	      00535738    mov cl,[eax+7Dh]"
-"	      0053573b    mov [ebp-0Ch],ecx"
+"	      0053573b    mov mp.maploc.y,ecx"
 );
 // LINE 656:
 	asm( 
-"	      0053573e    lea eax,[ebp-18h]"
+"	      0053573e    lea eax,mp.op"
 "	      00535741    push eax"
 "	      00535742    call 004FBD4Ah"
 "	      00535747    add esp,4"
@@ -1764,41 +1764,41 @@ void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      0053575a    push ebx"
 "	      0053575b    push esi"
 "	      0053575c    push edi"
-"	      0053575d    mov [ebp-4],ecx"
+"	      0053575d    mov this,ecx"
 );
 // LINE 669:
 	asm( 
-"	      00535760    mov eax,[ebp-4]"
+"	      00535760    mov eax,this"
 "	      00535763    mov eax,[eax+11Ah]"
-"	      00535769    mov ecx,[ebp+8]"
+"	      00535769    mov ecx,sd"
 "	      0053576c    mov [ecx+10Eh],eax"
 );
 // LINE 670:
 	asm( 
-"	      00535772    mov eax,[ebp-4]"
+"	      00535772    mov eax,this"
 "	      00535775    mov eax,[eax+11Eh]"
-"	      0053577b    mov ecx,[ebp+8]"
+"	      0053577b    mov ecx,sd"
 "	      0053577e    mov [ecx+112h],eax"
 );
 // LINE 671:
 	asm( 
-"	      00535784    mov eax,[ebp-4]"
+"	      00535784    mov eax,this"
 "	      00535787    mov eax,[eax+122h]"
-"	      0053578d    mov ecx,[ebp+8]"
+"	      0053578d    mov ecx,sd"
 "	      00535790    mov [ecx+116h],eax"
 );
 // LINE 672:
 	asm( 
-"	      00535796    mov eax,[ebp-4]"
+"	      00535796    mov eax,this"
 "	      00535799    mov eax,[eax+126h]"
-"	      0053579f    mov ecx,[ebp+8]"
+"	      0053579f    mov ecx,sd"
 "	      005357a2    mov [ecx+11Ah],eax"
 );
 // LINE 675:
 	asm( 
-"	      005357a8    mov eax,[ebp+8]"
+"	      005357a8    mov eax,sd"
 "	      005357ab    push eax"
-"	      005357ac    mov ecx,[ebp-4]"
+"	      005357ac    mov ecx,this"
 "	      005357af    call 0050917Eh"
 );
 // LINE 676:
@@ -1822,11 +1822,11 @@ void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      005357c6    push ebx"
 "	      005357c7    push esi"
 "	      005357c8    push edi"
-"	      005357c9    mov [ebp-4],ecx"
+"	      005357c9    mov this,ecx"
 );
 // LINE 689:
 	asm( 
-"	      005357cc    mov eax,[ebp+8]"
+"	      005357cc    mov eax,sd"
 "	      005357cf    test byte ptr [eax],2"
 "	      005357d2    jne near ptr 005357DDh"
 );
@@ -1836,37 +1836,37 @@ void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 695:
 	asm( 
-"	      005357dd    mov eax,[ebp+8]"
+"	      005357dd    mov eax,sd"
 "	      005357e0    push eax"
-"	      005357e1    mov ecx,[ebp-4]"
+"	      005357e1    mov ecx,this"
 "	      005357e4    call 00509489h"
 );
 // LINE 698:
 	asm( 
-"	      005357e9    mov eax,[ebp+8]"
+"	      005357e9    mov eax,sd"
 "	      005357ec    mov eax,[eax+10Eh]"
-"	      005357f2    mov ecx,[ebp-4]"
+"	      005357f2    mov ecx,this"
 "	      005357f5    mov [ecx+11Ah],eax"
 );
 // LINE 699:
 	asm( 
-"	      005357fb    mov eax,[ebp+8]"
+"	      005357fb    mov eax,sd"
 "	      005357fe    mov eax,[eax+112h]"
-"	      00535804    mov ecx,[ebp-4]"
+"	      00535804    mov ecx,this"
 "	      00535807    mov [ecx+11Eh],eax"
 );
 // LINE 700:
 	asm( 
-"	      0053580d    mov eax,[ebp+8]"
+"	      0053580d    mov eax,sd"
 "	      00535810    mov eax,[eax+116h]"
-"	      00535816    mov ecx,[ebp-4]"
+"	      00535816    mov ecx,this"
 "	      00535819    mov [ecx+122h],eax"
 );
 // LINE 701:
 	asm( 
-"	      0053581f    mov eax,[ebp+8]"
+"	      0053581f    mov eax,sd"
 "	      00535822    mov eax,[eax+11Ah]"
-"	      00535828    mov ecx,[ebp-4]"
+"	      00535828    mov ecx,this"
 "	      0053582b    mov [ecx+126h],eax"
 );
 // LINE 702:

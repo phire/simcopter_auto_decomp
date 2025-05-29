@@ -20,12 +20,12 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa809    push ebx"
 "	      004aa80a    push esi"
 "	      004aa80b    push edi"
-"	      004aa80c    mov [ebp-10Ch],ecx"
-"	      004aa812    mov eax,[ebp-10Ch]"
+"	      004aa80c    mov this,ecx"
+"	      004aa812    mov eax,this"
 "	      004aa818    mov dword ptr [eax],0"
-"	      004aa81e    mov eax,[ebp-10Ch]"
+"	      004aa81e    mov eax,this"
 "	      004aa824    mov dword ptr [eax+4],0"
-"	      004aa82b    mov eax,[ebp-10Ch]"
+"	      004aa82b    mov eax,this"
 "	      004aa831    mov dword ptr [eax+8],0"
 );
 // LINE 51:
@@ -33,17 +33,17 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa838    push 1"
 "	      004aa83a    push 2"
 "	      004aa83c    push 0Dh"
-"	      004aa83e    lea eax,[ebp-68h]"
+"	      004aa83e    lea eax,FileName[0]"
 "	      004aa841    push eax"
-"	      004aa842    lea ecx,[ebp-58h]"
+"	      004aa842    lea ecx,NameOut.ios"
 "	      004aa845    call 0056C780h"
 );
 // LINE 52:
 	asm( 
 "	      004aa84a    push 59A9D8h"
-"	      004aa84f    lea ecx,[ebp-58h]"
+"	      004aa84f    lea ecx,NameOut.ios"
 "	      004aa852    call 00569960h"
-"	      004aa857    mov eax,[ebp-58h]"
+"	      004aa857    mov eax,NameOut.ios"
 "	      004aa85a    mov eax,[eax+4]"
 "	      004aa85d    lea eax,[ebp+eax-58h]"
 "	      004aa861    mov [ebp-0E0h],eax"
@@ -56,7 +56,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa876    mov eax,[ebp-0E0h]"
 "	      004aa87c    mov dword ptr [eax+30h],5"
 "	      004aa883    jmp near ptr 004AA888h"
-"	      004aa888    mov eax,[ebp-58h]"
+"	      004aa888    mov eax,NameOut.ios"
 "	      004aa88b    mov eax,[eax+4]"
 "	      004aa88e    lea eax,[ebp+eax-58h]"
 "	      004aa892    mov [ebp-0E8h],eax"
@@ -69,7 +69,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa8a7    mov eax,[ebp-0E8h]"
 "	      004aa8ad    mov byte ptr [eax+2Ch],30h"
 "	      004aa8b1    jmp near ptr 004AA8B6h"
-"	      004aa8b6    mov eax,[ebp-58h]"
+"	      004aa8b6    mov eax,NameOut.ios"
 "	      004aa8b9    mov eax,[eax+4]"
 "	      004aa8bc    lea eax,[ebp+eax-58h]"
 "	      004aa8c0    mov [ebp-0F0h],eax"
@@ -83,9 +83,9 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa8db    mov dword ptr [eax+24h],14h"
 "	      004aa8e2    jmp near ptr 004AA8E7h"
 "	      004aa8e7    push 59A9DCh"
-"	      004aa8ec    mov eax,[ebp+8]"
+"	      004aa8ec    mov eax,ResourceID"
 "	      004aa8ef    push eax"
-"	      004aa8f0    lea ecx,[ebp-58h]"
+"	      004aa8f0    lea ecx,NameOut.ios"
 "	      004aa8f3    call 00570E80h"
 "	      004aa8f8    mov ecx,eax"
 "	      004aa8fa    call 00569960h"
@@ -100,29 +100,29 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 );
 // LINE 58:
 	asm( 
-"	      004aa917    mov dword ptr [ebp-0C8h],81h"
+"	      004aa917    mov InputMode,81h"
 );
 // LINE 60:
 	asm( 
-"	      004aa921    or dword ptr [ebp-0C8h],20h"
+"	      004aa921    or InputMode,20h"
 );
 // LINE 65:
 	asm( 
 "	      004aa928    push 1"
 "	      004aa92a    mov eax,ds:[593E30h]"
 "	      004aa92f    push eax"
-"	      004aa930    mov eax,[ebp-0C8h]"
+"	      004aa930    mov eax,InputMode"
 "	      004aa936    push eax"
-"	      004aa937    lea eax,[ebp-68h]"
+"	      004aa937    lea eax,FileName[0]"
 "	      004aa93a    push eax"
-"	      004aa93b    lea ecx,[ebp-0C4h]"
+"	      004aa93b    lea ecx,InputFile.ios"
 "	      004aa941    call 0056FC90h"
 );
 // LINE 66:
 	asm( 
 "	      004aa946    jmp near ptr 004AA94Bh"
 "	      004aa94b    jmp near ptr 004AA950h"
-"	      004aa950    mov eax,[ebp-0C4h]"
+"	      004aa950    mov eax,InputFile.ios"
 "	      004aa956    mov eax,[eax+4]"
 "	      004aa959    mov eax,[ebp+eax-0C0h]"
 "	      004aa960    cmp dword ptr [eax+4Ch],0FFFFFFFFh"
@@ -138,21 +138,21 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	unsigned long ImageByteCount;
 	asm( 
 "	      004aa986    push 4"
-"	      004aa988    lea eax,[ebp-0CCh]"
+"	      004aa988    lea eax,ImageByteCount"
 "	      004aa98e    push eax"
-"	      004aa98f    lea ecx,[ebp-0C4h]"
+"	      004aa98f    lea ecx,InputFile.ios"
 "	      004aa995    call 00570490h"
 );
 // LINE 71:
 	asm( 
 "	      004aa99a    jmp near ptr 004AA99Fh"
-"	      004aa99f    mov eax,[ebp-0CCh]"
+"	      004aa99f    mov eax,ImageByteCount"
 "	      004aa9a5    mov [ebp-108h],eax"
 );
 // LINE 76:
 	asm( 
 "	      004aa9ab    mov word ptr [ebp-104h],0"
-"	      004aa9b4    cmp dword ptr [ebp-10Ch],0"
+"	      004aa9b4    cmp this,0"
 "	      004aa9bb    je near ptr 004AA9CEh"
 "	      004aa9c1    cmp dword ptr [ebp-108h],0"
 "	      004aa9c8    jne near ptr 004AA9EAh"
@@ -167,9 +167,9 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa9f5    push eax"
 "	      004aa9f6    push 42h"
 "	      004aa9f8    call dword ptr ds:[6C3730h]"
-"	      004aa9fe    mov ecx,[ebp-10Ch]"
+"	      004aa9fe    mov ecx,this"
 "	      004aaa04    mov [ecx],eax"
-"	      004aaa06    mov eax,[ebp-10Ch]"
+"	      004aaa06    mov eax,this"
 "	      004aaa0c    cmp dword ptr [eax],0"
 "	      004aaa0f    jne near ptr 004AAA1Eh"
 "	      004aaa15    mov word ptr [ebp-104h],0FFFFh"
@@ -177,7 +177,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 );
 // LINE 77:
 	asm( 
-"	      004aaa23    mov eax,[ebp-10Ch]"
+"	      004aaa23    mov eax,this"
 "	      004aaa29    cmp dword ptr [eax],0"
 "	      004aaa2c    je near ptr 004AAB75h"
 );
@@ -185,8 +185,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 // Block start:
 	struct RLEHeader* pCompressedImage;
 	asm( 
-"	      004aaa32    mov dword ptr [ebp-0D0h],0"
-"	      004aaa3c    mov eax,[ebp-10Ch]"
+"	      004aaa32    mov pCompressedImage,0"
+"	      004aaa3c    mov eax,this"
 "	      004aaa42    mov eax,[eax]"
 "	      004aaa44    mov [ebp-100h],eax"
 );
@@ -206,31 +206,31 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aaa86    mov eax,[ebp-100h]"
 "	      004aaa8c    push eax"
 "	      004aaa8d    call dword ptr ds:[6C35E4h]"
-"	      004aaa93    mov [ebp-0D0h],eax"
-"	      004aaa99    cmp dword ptr [ebp-0D0h],0"
+"	      004aaa93    mov pCompressedImage,eax"
+"	      004aaa99    cmp pCompressedImage,0"
 "	      004aaaa0    jne near ptr 004AAAAFh"
 "	      004aaaa6    mov word ptr [ebp-0FCh],0FFFFh"
 "	      004aaaaf    jmp near ptr 004AAAB4h"
 );
 // LINE 81:
 	asm( 
-"	      004aaab4    cmp dword ptr [ebp-0D0h],0"
+"	      004aaab4    cmp pCompressedImage,0"
 "	      004aaabb    je near ptr 004AAB75h"
 );
 // LINE 83:
 	asm( 
-"	      004aaac1    mov eax,[ebp-0CCh]"
+"	      004aaac1    mov eax,ImageByteCount"
 "	      004aaac7    push eax"
-"	      004aaac8    mov eax,[ebp-0D0h]"
+"	      004aaac8    mov eax,pCompressedImage"
 "	      004aaace    push eax"
-"	      004aaacf    lea ecx,[ebp-0C4h]"
+"	      004aaacf    lea ecx,InputFile.ios"
 "	      004aaad5    call 00570490h"
 );
 // LINE 84:
 	asm( 
 "	      004aaada    jmp near ptr 004AAADFh"
-"	      004aaadf    mov eax,[ebp-0CCh]"
-"	      004aaae5    cmp [ebp-0BCh],eax"
+"	      004aaadf    mov eax,ImageByteCount"
+"	      004aaae5    cmp InputFile.x_gcount,eax"
 "	      004aaaeb    je near ptr 004AAB0Ah"
 "	      004aaaf1    push 54h"
 "	      004aaaf3    push 59A9E4h"
@@ -242,11 +242,11 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 );
 // LINE 86:
 	asm( 
-"	      004aab0f    mov eax,[ebp-0D0h]"
+"	      004aab0f    mov eax,pCompressedImage"
 "	      004aab15    push eax"
 "	      004aab16    call 004AB063h"
 "	      004aab1b    add esp,4"
-"	      004aab1e    mov eax,[ebp-10Ch]"
+"	      004aab1e    mov eax,this"
 "	      004aab24    mov eax,[eax]"
 "	      004aab26    mov [ebp-0F8h],eax"
 );
@@ -272,17 +272,17 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 // Block end:
 	asm( 
 "	      004aab75    jmp near ptr 004AAB7Ah"
-"	      004aab7a    lea ecx,[ebp-0B8h]"
+"	      004aab7a    lea ecx,InputFile.<ifstream+0x0c>"
 "	      004aab80    call 00570050h"
-"	      004aab85    lea ecx,[ebp-0B8h]"
+"	      004aab85    lea ecx,InputFile.<ifstream+0x0c>"
 "	      004aab8b    call 0056B140h"
 "	      004aab90    jmp near ptr 004AAB95h"
-"	      004aab95    lea ecx,[ebp-50h]"
+"	      004aab95    lea ecx,NameOut.<ostrstream+0x08>"
 "	      004aab98    call 0056C8D0h"
-"	      004aab9d    lea ecx,[ebp-50h]"
+"	      004aab9d    lea ecx,NameOut.<ostrstream+0x08>"
 "	      004aaba0    call 0056B140h"
 "	      004aaba5    jmp near ptr 004AABAAh"
-"	      004aabaa    mov eax,[ebp-10Ch]"
+"	      004aabaa    mov eax,this"
 "	      004aabb0    pop edi"
 "	      004aabb1    pop esi"
 "	      004aabb2    pop ebx"
@@ -301,16 +301,16 @@ void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, lo
 "	      004aabbd    push ebx"
 "	      004aabbe    push esi"
 "	      004aabbf    push edi"
-"	      004aabc0    mov [ebp-4],ecx"
-"	      004aabc3    mov eax,[ebp-4]"
+"	      004aabc0    mov this,ecx"
+"	      004aabc3    mov eax,this"
 "	      004aabc6    mov dword ptr [eax],0"
-"	      004aabcc    mov eax,[ebp-4]"
+"	      004aabcc    mov eax,this"
 "	      004aabcf    mov dword ptr [eax+8],0"
 );
 // LINE 104:
 	asm( 
 "	      004aabd6    jmp near ptr 004AABDBh"
-"	      004aabdb    mov eax,[ebp-4]"
+"	      004aabdb    mov eax,this"
 "	      004aabde    pop edi"
 "	      004aabdf    pop esi"
 "	      004aabe0    pop ebx"
@@ -329,11 +329,11 @@ void CRLECompressedImage::~CRLECompressedImage() {
 "	      004aabeb    push ebx"
 "	      004aabec    push esi"
 "	      004aabed    push edi"
-"	      004aabee    mov [ebp-0Ch],ecx"
+"	      004aabee    mov this,ecx"
 );
 // LINE 111:
 	asm( 
-"	      004aabf1    mov eax,[ebp-0Ch]"
+"	      004aabf1    mov eax,this"
 "	      004aabf4    cmp dword ptr [eax+8],0"
 "	      004aabf8    je near ptr 004AAC17h"
 "	      004aabfe    push 6Fh"
@@ -346,13 +346,13 @@ void CRLECompressedImage::~CRLECompressedImage() {
 );
 // LINE 113:
 	asm( 
-"	      004aac1c    mov eax,[ebp-0Ch]"
+"	      004aac1c    mov eax,this"
 "	      004aac1f    cmp dword ptr [eax],0"
 "	      004aac22    je near ptr 004AAC70h"
 );
 // LINE 114:
 	asm( 
-"	      004aac28    mov eax,[ebp-0Ch]"
+"	      004aac28    mov eax,this"
 "	      004aac2b    mov eax,[eax]"
 "	      004aac2d    mov [ebp-8],eax"
 "	      004aac30    mov word ptr [ebp-4],0"
@@ -391,20 +391,20 @@ unsigned long CRLECompressedImage::Lock() {
 "	      004aac80    push ebx"
 "	      004aac81    push esi"
 "	      004aac82    push edi"
-"	      004aac83    mov [ebp-0Ch],ecx"
+"	      004aac83    mov this,ecx"
 );
 // LINE 122:
 	asm( 
-"	      004aac86    mov eax,[ebp-0Ch]"
+"	      004aac86    mov eax,this"
 "	      004aac89    cmp dword ptr [eax+8],0"
 "	      004aac8d    jne near ptr 004AAD24h"
-"	      004aac93    mov eax,[ebp-0Ch]"
+"	      004aac93    mov eax,this"
 "	      004aac96    cmp dword ptr [eax],0"
 "	      004aac99    je near ptr 004AAD24h"
 );
 // LINE 123:
 	asm( 
-"	      004aac9f    mov eax,[ebp-0Ch]"
+"	      004aac9f    mov eax,this"
 "	      004aaca2    mov eax,[eax]"
 "	      004aaca4    mov [ebp-8],eax"
 );
@@ -413,7 +413,7 @@ unsigned long CRLECompressedImage::Lock() {
 "	      004aaca7    mov word ptr [ebp-4],0"
 "	      004aacad    cmp dword ptr [ebp-8],0"
 "	      004aacb1    je near ptr 004AACC3h"
-"	      004aacb7    mov eax,[ebp-0Ch]"
+"	      004aacb7    mov eax,this"
 "	      004aacba    add eax,4"
 "	      004aacbd    jne near ptr 004AACDFh"
 "	      004aacc3    push 147h"
@@ -426,9 +426,9 @@ unsigned long CRLECompressedImage::Lock() {
 "	      004aace4    mov eax,[ebp-8]"
 "	      004aace7    push eax"
 "	      004aace8    call dword ptr ds:[6C35E4h]"
-"	      004aacee    mov ecx,[ebp-0Ch]"
+"	      004aacee    mov ecx,this"
 "	      004aacf1    mov [ecx+4],eax"
-"	      004aacf4    mov eax,[ebp-0Ch]"
+"	      004aacf4    mov eax,this"
 "	      004aacf7    cmp dword ptr [eax+4],0"
 "	      004aacfb    jne near ptr 004AAD07h"
 "	      004aad01    mov word ptr [ebp-4],0FFFFh"
@@ -436,13 +436,13 @@ unsigned long CRLECompressedImage::Lock() {
 );
 // LINE 125:
 	asm( 
-"	      004aad0c    mov eax,[ebp-0Ch]"
+"	      004aad0c    mov eax,this"
 "	      004aad0f    cmp dword ptr [eax+4],0"
 "	      004aad13    je near ptr 004AAD1Fh"
 );
 // LINE 126:
 	asm( 
-"	      004aad19    mov eax,[ebp-0Ch]"
+"	      004aad19    mov eax,this"
 "	      004aad1c    inc dword ptr [eax+8]"
 );
 // LINE 128:
@@ -451,12 +451,12 @@ unsigned long CRLECompressedImage::Lock() {
 );
 // LINE 129:
 	asm( 
-"	      004aad24    mov eax,[ebp-0Ch]"
+"	      004aad24    mov eax,this"
 "	      004aad27    inc dword ptr [eax+8]"
 );
 // LINE 131:
 	asm( 
-"	      004aad2a    mov eax,[ebp-0Ch]"
+"	      004aad2a    mov eax,this"
 "	      004aad2d    mov eax,[eax+8]"
 "	      004aad30    jmp near ptr 004AAD35h"
 );
@@ -480,11 +480,11 @@ unsigned long CRLECompressedImage::Unlock() {
 "	      004aad40    push ebx"
 "	      004aad41    push esi"
 "	      004aad42    push edi"
-"	      004aad43    mov [ebp-0Ch],ecx"
+"	      004aad43    mov this,ecx"
 );
 // LINE 136:
 	asm( 
-"	      004aad46    mov eax,[ebp-0Ch]"
+"	      004aad46    mov eax,this"
 "	      004aad49    cmp dword ptr [eax+8],0"
 "	      004aad4d    ja near ptr 004AAD6Fh"
 "	      004aad53    push 88h"
@@ -497,16 +497,16 @@ unsigned long CRLECompressedImage::Unlock() {
 );
 // LINE 138:
 	asm( 
-"	      004aad74    mov eax,[ebp-0Ch]"
+"	      004aad74    mov eax,this"
 "	      004aad77    cmp dword ptr [eax+8],1"
 "	      004aad7b    jne near ptr 004AADECh"
-"	      004aad81    mov eax,[ebp-0Ch]"
+"	      004aad81    mov eax,this"
 "	      004aad84    cmp dword ptr [eax],0"
 "	      004aad87    je near ptr 004AADECh"
 );
 // LINE 139:
 	asm( 
-"	      004aad8d    mov eax,[ebp-0Ch]"
+"	      004aad8d    mov eax,this"
 "	      004aad90    mov eax,[eax]"
 "	      004aad92    mov [ebp-8],eax"
 );
@@ -532,7 +532,7 @@ unsigned long CRLECompressedImage::Unlock() {
 );
 // LINE 141:
 	asm( 
-"	      004aade1    mov eax,[ebp-0Ch]"
+"	      004aade1    mov eax,this"
 "	      004aade4    dec dword ptr [eax+8]"
 );
 // LINE 143:
@@ -541,12 +541,12 @@ unsigned long CRLECompressedImage::Unlock() {
 );
 // LINE 144:
 	asm( 
-"	      004aadec    mov eax,[ebp-0Ch]"
+"	      004aadec    mov eax,this"
 "	      004aadef    dec dword ptr [eax+8]"
 );
 // LINE 146:
 	asm( 
-"	      004aadf2    mov eax,[ebp-0Ch]"
+"	      004aadf2    mov eax,this"
 "	      004aadf5    mov eax,[eax+8]"
 "	      004aadf8    jmp near ptr 004AADFDh"
 );
@@ -570,11 +570,11 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004aae08    push ebx"
 "	      004aae09    push esi"
 "	      004aae0a    push edi"
-"	      004aae0b    mov [ebp-30h],ecx"
+"	      004aae0b    mov this,ecx"
 );
 // LINE 157:
 	asm( 
-"	      004aae0e    mov eax,[ebp-30h]"
+"	      004aae0e    mov eax,this"
 "	      004aae11    cmp dword ptr [eax+8],0"
 "	      004aae15    ja near ptr 004AAE37h"
 "	      004aae1b    push 9Dh"
@@ -587,7 +587,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 158:
 	asm( 
-"	      004aae3c    cmp dword ptr [ebp+8],0"
+"	      004aae3c    cmp pDest,0"
 "	      004aae40    jne near ptr 004AAE62h"
 "	      004aae46    push 9Eh"
 "	      004aae4b    push 59AAE0h"
@@ -599,7 +599,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 160:
 	asm( 
-"	      004aae67    mov eax,[ebp-30h]"
+"	      004aae67    mov eax,this"
 "	      004aae6a    cmp dword ptr [eax+4],0"
 "	      004aae6e    je near ptr 004AB055h"
 );
@@ -615,66 +615,66 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	short Height;
 	int32_t Bottom;
 	asm( 
-"	      004aae74    mov eax,[ebp-30h]"
+"	      004aae74    mov eax,this"
 "	      004aae77    mov eax,[eax+4]"
 "	      004aae7a    movsx eax,word ptr [eax+4]"
-"	      004aae7e    add eax,[ebp+0Ch]"
-"	      004aae81    mov [ebp-24h],eax"
+"	      004aae7e    add eax,DestLeft"
+"	      004aae81    mov Left,eax"
 );
 // LINE 163:
 	asm( 
-"	      004aae84    mov eax,[ebp-30h]"
+"	      004aae84    mov eax,this"
 "	      004aae87    mov eax,[eax+4]"
 "	      004aae8a    movsx eax,word ptr [eax+6]"
-"	      004aae8e    add eax,[ebp+10h]"
-"	      004aae91    mov [ebp-18h],eax"
+"	      004aae8e    add eax,DestTop"
+"	      004aae91    mov Top,eax"
 );
 // LINE 165:
 	asm( 
-"	      004aae94    mov eax,[ebp-30h]"
+"	      004aae94    mov eax,this"
 "	      004aae97    mov eax,[eax+4]"
 "	      004aae9a    movsx eax,word ptr [eax]"
-"	      004aae9d    add eax,[ebp-24h]"
-"	      004aaea0    mov [ebp-14h],eax"
+"	      004aae9d    add eax,Left"
+"	      004aaea0    mov Right,eax"
 );
 // LINE 166:
 	asm( 
-"	      004aaea3    mov eax,[ebp-30h]"
+"	      004aaea3    mov eax,this"
 "	      004aaea6    mov eax,[eax+4]"
 "	      004aaea9    movsx eax,word ptr [eax+2]"
-"	      004aaead    add eax,[ebp-18h]"
-"	      004aaeb0    mov [ebp-4],eax"
+"	      004aaead    add eax,Top"
+"	      004aaeb0    mov Bottom,eax"
 );
 // LINE 169:
 	asm( 
-"	      004aaeb3    mov eax,[ebp-30h]"
+"	      004aaeb3    mov eax,this"
 "	      004aaeb6    mov eax,[eax+4]"
 "	      004aaeb9    add eax,8"
-"	      004aaebc    mov [ebp-20h],eax"
+"	      004aaebc    mov pCompressedBits,eax"
 );
 // LINE 171:
 	asm( 
-"	      004aaebf    mov eax,[ebp-20h]"
+"	      004aaebf    mov eax,pCompressedBits"
 "	      004aaec2    mov al,[eax]"
-"	      004aaec4    mov [ebp-10h],al"
-"	      004aaec7    inc dword ptr [ebp-20h]"
+"	      004aaec4    mov TransparentColor,al"
+"	      004aaec7    inc pCompressedBits"
 );
 // LINE 173:
 	asm( 
-"	      004aaeca    mov eax,[ebp-18h]"
-"	      004aaecd    cmp [ebp+18h],eax"
+"	      004aaeca    mov eax,Top"
+"	      004aaecd    cmp ClipTop,eax"
 "	      004aaed0    jle near ptr 004AAEE9h"
 );
 // LINE 176:
 	asm( 
-"	      004aaed6    mov eax,[ebp-20h]"
+"	      004aaed6    mov eax,pCompressedBits"
 "	      004aaed9    xor ecx,ecx"
 "	      004aaedb    mov cx,[eax]"
-"	      004aaede    add [ebp-20h],ecx"
+"	      004aaede    add pCompressedBits,ecx"
 );
 // LINE 177:
 	asm( 
-"	      004aaee1    inc dword ptr [ebp-18h]"
+"	      004aaee1    inc Top"
 );
 // LINE 178:
 	asm( 
@@ -682,65 +682,65 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 180:
 	asm( 
-"	      004aaee9    mov eax,[ebp-4]"
-"	      004aaeec    cmp [ebp+20h],eax"
+"	      004aaee9    mov eax,Bottom"
+"	      004aaeec    cmp ClipBottom,eax"
 "	      004aaeef    jge near ptr 004AAEFBh"
 );
 // LINE 181:
 	asm( 
-"	      004aaef5    mov eax,[ebp+20h]"
-"	      004aaef8    mov [ebp-4],eax"
+"	      004aaef5    mov eax,ClipBottom"
+"	      004aaef8    mov Bottom,eax"
 );
 // LINE 184:
 	asm( 
-"	      004aaefb    mov word ptr [ebp-1Ch],0"
+"	      004aaefb    mov LeftClipAmount,0"
 );
 // LINE 185:
 	asm( 
-"	      004aaf01    mov eax,[ebp-24h]"
-"	      004aaf04    cmp [ebp+14h],eax"
+"	      004aaf01    mov eax,Left"
+"	      004aaf04    cmp ClipLeft,eax"
 "	      004aaf07    jle near ptr 004AAF1Dh"
 );
 // LINE 187:
 	asm( 
-"	      004aaf0d    mov eax,[ebp+14h]"
-"	      004aaf10    sub eax,[ebp-24h]"
-"	      004aaf13    mov [ebp-1Ch],ax"
+"	      004aaf0d    mov eax,ClipLeft"
+"	      004aaf10    sub eax,Left"
+"	      004aaf13    mov LeftClipAmount,ax"
 );
 // LINE 188:
 	asm( 
-"	      004aaf17    mov eax,[ebp+14h]"
-"	      004aaf1a    mov [ebp-24h],eax"
+"	      004aaf17    mov eax,ClipLeft"
+"	      004aaf1a    mov Left,eax"
 );
 // LINE 191:
 	asm( 
-"	      004aaf1d    mov eax,[ebp-14h]"
-"	      004aaf20    cmp [ebp+1Ch],eax"
+"	      004aaf1d    mov eax,Right"
+"	      004aaf20    cmp ClipRight,eax"
 "	      004aaf23    jge near ptr 004AAF2Fh"
 );
 // LINE 192:
 	asm( 
-"	      004aaf29    mov eax,[ebp+1Ch]"
-"	      004aaf2c    mov [ebp-14h],eax"
+"	      004aaf29    mov eax,ClipRight"
+"	      004aaf2c    mov Right,eax"
 );
 // LINE 195:
 	asm( 
-"	      004aaf2f    mov eax,[ebp-4]"
-"	      004aaf32    sub eax,[ebp-18h]"
-"	      004aaf35    mov [ebp-8],ax"
+"	      004aaf2f    mov eax,Bottom"
+"	      004aaf32    sub eax,Top"
+"	      004aaf35    mov Height,ax"
 );
 // LINE 196:
 	asm( 
-"	      004aaf39    mov eax,[ebp-14h]"
-"	      004aaf3c    sub eax,[ebp-24h]"
-"	      004aaf3f    mov [ebp-0Ch],ax"
+"	      004aaf39    mov eax,Right"
+"	      004aaf3c    sub eax,Left"
+"	      004aaf3f    mov Width,ax"
 );
 // LINE 199:
 	asm( 
-"	      004aaf43    mov eax,[ebp-30h]"
+"	      004aaf43    mov eax,this"
 "	      004aaf46    mov eax,[eax+4]"
 "	      004aaf49    movsx eax,word ptr [eax+2]"
-"	      004aaf4d    movsx ecx,word ptr [ebp-8]"
+"	      004aaf4d    movsx ecx,Height"
 "	      004aaf51    cmp eax,ecx"
 "	      004aaf53    jge near ptr 004AAF75h"
 "	      004aaf59    push 0C7h"
@@ -753,10 +753,10 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 200:
 	asm( 
-"	      004aaf7a    mov eax,[ebp-30h]"
+"	      004aaf7a    mov eax,this"
 "	      004aaf7d    mov eax,[eax+4]"
 "	      004aaf80    movsx eax,word ptr [eax]"
-"	      004aaf83    movsx ecx,word ptr [ebp-0Ch]"
+"	      004aaf83    movsx ecx,Width"
 "	      004aaf87    cmp eax,ecx"
 "	      004aaf89    jge near ptr 004AAFABh"
 "	      004aaf8f    push 0C8h"
@@ -769,10 +769,10 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 202:
 	asm( 
-"	      004aafb0    movsx eax,word ptr [ebp-8]"
+"	      004aafb0    movsx eax,Height"
 "	      004aafb4    test eax,eax"
 "	      004aafb6    jle near ptr 004AB055h"
-"	      004aafbc    movsx eax,word ptr [ebp-0Ch]"
+"	      004aafbc    movsx eax,Width"
 "	      004aafc0    test eax,eax"
 "	      004aafc2    jle near ptr 004AB055h"
 );
@@ -781,37 +781,37 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	unsigned char * pBits;
 	asm( 
 "	      004aafc8    jmp near ptr 004AAFCDh"
-"	      004aafcd    mov eax,[ebp+8]"
+"	      004aafcd    mov eax,pDest"
 "	      004aafd0    mov eax,[eax+10h]"
-"	      004aafd3    mov [ebp-28h],eax"
+"	      004aafd3    mov pBits,eax"
 );
 // LINE 205:
 	asm( 
-"	      004aafd6    cmp dword ptr [ebp-28h],0"
+"	      004aafd6    cmp pBits,0"
 "	      004aafda    je near ptr 004AB055h"
 );
 // LINE 207:
 // Block start:
 	long DestStride;
 	asm( 
-"	      004aafe0    mov eax,[ebp+8]"
+"	      004aafe0    mov eax,pDest"
 "	      004aafe3    mov eax,[eax+14h]"
-"	      004aafe6    mov [ebp-2Ch],eax"
+"	      004aafe6    mov DestStride,eax"
 "	      004aafe9    jmp near ptr 004AAFEEh"
 );
 // LINE 209:
 	asm( 
-"	      004aafee    mov eax,[ebp-18h]"
-"	      004aaff1    imul eax,[ebp-2Ch]"
-"	      004aaff5    add eax,[ebp-24h]"
-"	      004aaff8    add [ebp-28h],eax"
+"	      004aafee    mov eax,Top"
+"	      004aaff1    imul eax,DestStride"
+"	      004aaff5    add eax,Left"
+"	      004aaff8    add pBits,eax"
 );
 // LINE 211:
 	asm( 
-"	      004aaffb    mov eax,[ebp-30h]"
+"	      004aaffb    mov eax,this"
 "	      004aaffe    mov eax,[eax+4]"
 "	      004ab001    movsx eax,word ptr [eax]"
-"	      004ab004    movsx ecx,word ptr [ebp-0Ch]"
+"	      004ab004    movsx ecx,Width"
 "	      004ab008    cmp eax,ecx"
 "	      004ab00a    jne near ptr 004AB031h"
 );
@@ -821,11 +821,11 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004ab013    push eax"
 "	      004ab014    mov eax,[ebp-8]"
 "	      004ab017    push eax"
-"	      004ab018    mov eax,[ebp-20h]"
+"	      004ab018    mov eax,pCompressedBits"
 "	      004ab01b    push eax"
-"	      004ab01c    mov eax,[ebp-2Ch]"
+"	      004ab01c    mov eax,DestStride"
 "	      004ab01f    push eax"
-"	      004ab020    mov eax,[ebp-28h]"
+"	      004ab020    mov eax,pBits"
 "	      004ab023    push eax"
 "	      004ab024    call 004AB073h"
 "	      004ab029    add esp,14h"
@@ -844,11 +844,11 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004ab03c    push eax"
 "	      004ab03d    mov eax,[ebp-1Ch]"
 "	      004ab040    push eax"
-"	      004ab041    mov eax,[ebp-20h]"
+"	      004ab041    mov eax,pCompressedBits"
 "	      004ab044    push eax"
-"	      004ab045    mov eax,[ebp-2Ch]"
+"	      004ab045    mov eax,DestStride"
 "	      004ab048    push eax"
-"	      004ab049    mov eax,[ebp-28h]"
+"	      004ab049    mov eax,pBits"
 "	      004ab04c    push eax"
 "	      004ab04d    call 004AB1F7h"
 "	      004ab052    add esp,1Ch"
@@ -909,29 +909,29 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 );
 // LINE 323:
 	asm( 
-"	      004ab07c    mov eax,[ebp+8]"
-"	      004ab07f    mov [ebp-0Ch],eax"
+"	      004ab07c    mov eax,pDestBuffer"
+"	      004ab07f    mov pDestinationEdge,eax"
 );
 // LINE 324:
 	asm( 
-"	      004ab082    mov eax,[ebp-0Ch]"
-"	      004ab085    mov [ebp-8],eax"
+"	      004ab082    mov eax,pDestinationEdge"
+"	      004ab085    mov pDest,eax"
 );
 // LINE 327:
 	asm( 
-"	      004ab088    mov eax,[ebp+10h]"
+"	      004ab088    mov eax,pSource"
 "	      004ab08b    xor ecx,ecx"
 "	      004ab08d    mov cx,[eax]"
-"	      004ab090    add ecx,[ebp+10h]"
-"	      004ab093    mov [ebp-4],ecx"
+"	      004ab090    add ecx,pSource"
+"	      004ab093    mov pNextSourceLine,ecx"
 );
 // LINE 328:
 	asm( 
-"	      004ab096    add dword ptr [ebp+10h],2"
+"	      004ab096    add pSource,2"
 );
 // LINE 330:
 	asm( 
-"	      004ab09a    movsx eax,word ptr [ebp+14h]"
+"	      004ab09a    movsx eax,Height"
 "	      004ab09e    test eax,eax"
 "	      004ab0a0    je near ptr 004AB1EDh"
 );
@@ -941,35 +941,35 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	unsigned char token;
 	unsigned char data;
 	asm( 
-"	      004ab0a6    mov eax,[ebp+10h]"
-"	      004ab0a9    cmp [ebp-4],eax"
+"	      004ab0a6    mov eax,pSource"
+"	      004ab0a9    cmp pNextSourceLine,eax"
 "	      004ab0ac    jne near ptr 004AB0D9h"
 );
 // LINE 340:
 	asm( 
-"	      004ab0b2    mov eax,[ebp+10h]"
+"	      004ab0b2    mov eax,pSource"
 "	      004ab0b5    xor ecx,ecx"
 "	      004ab0b7    mov cx,[eax]"
-"	      004ab0ba    add ecx,[ebp+10h]"
-"	      004ab0bd    mov [ebp-4],ecx"
+"	      004ab0ba    add ecx,pSource"
+"	      004ab0bd    mov pNextSourceLine,ecx"
 );
 // LINE 341:
 	asm( 
-"	      004ab0c0    add dword ptr [ebp+10h],2"
+"	      004ab0c0    add pSource,2"
 );
 // LINE 344:
 	asm( 
-"	      004ab0c4    mov eax,[ebp+0Ch]"
-"	      004ab0c7    add [ebp-0Ch],eax"
+"	      004ab0c4    mov eax,DestStride"
+"	      004ab0c7    add pDestinationEdge,eax"
 );
 // LINE 345:
 	asm( 
-"	      004ab0ca    mov eax,[ebp-0Ch]"
-"	      004ab0cd    mov [ebp-8],eax"
+"	      004ab0ca    mov eax,pDestinationEdge"
+"	      004ab0cd    mov pDest,eax"
 );
 // LINE 347:
 	asm( 
-"	      004ab0d0    dec word ptr [ebp+14h]"
+"	      004ab0d0    dec Height"
 );
 // LINE 349:
 	asm( 
@@ -977,52 +977,52 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 );
 // LINE 352:
 	asm( 
-"	      004ab0d9    mov eax,[ebp+10h]"
+"	      004ab0d9    mov eax,pSource"
 "	      004ab0dc    mov al,[eax]"
-"	      004ab0de    mov [ebp-14h],al"
-"	      004ab0e1    inc dword ptr [ebp+10h]"
+"	      004ab0de    mov token,al"
+"	      004ab0e1    inc pSource"
 );
 // LINE 353:
 	asm( 
-"	      004ab0e4    mov eax,[ebp+10h]"
+"	      004ab0e4    mov eax,pSource"
 "	      004ab0e7    mov al,[eax]"
-"	      004ab0e9    mov [ebp-10h],al"
-"	      004ab0ec    inc dword ptr [ebp+10h]"
+"	      004ab0e9    mov data,al"
+"	      004ab0ec    inc pSource"
 );
 // LINE 355:
 	asm( 
 "	      004ab0ef    xor eax,eax"
-"	      004ab0f1    mov al,[ebp-14h]"
+"	      004ab0f1    mov al,token"
 "	      004ab0f4    mov [ebp-20h],eax"
 "	      004ab0f7    jmp near ptr 004AB1C1h"
 );
 // LINE 358:
 	asm( 
 "	      004ab0fc    xor eax,eax"
-"	      004ab0fe    mov al,[ebp-10h]"
+"	      004ab0fe    mov al,data"
 "	      004ab101    inc eax"
-"	      004ab102    mov [ebp-18h],eax"
+"	      004ab102    mov counter,eax"
 );
 // LINE 361:
 	asm( 
-"	      004ab105    mov eax,[ebp-18h]"
+"	      004ab105    mov eax,counter"
 "	      004ab108    push eax"
-"	      004ab109    mov eax,[ebp+10h]"
+"	      004ab109    mov eax,pSource"
 "	      004ab10c    push eax"
-"	      004ab10d    mov eax,[ebp-8]"
+"	      004ab10d    mov eax,pDest"
 "	      004ab110    push eax"
 "	      004ab111    call 0056A800h"
 "	      004ab116    add esp,0Ch"
 );
 // LINE 362:
 	asm( 
-"	      004ab119    mov eax,[ebp-18h]"
-"	      004ab11c    add [ebp+10h],eax"
+"	      004ab119    mov eax,counter"
+"	      004ab11c    add pSource,eax"
 );
 // LINE 363:
 	asm( 
-"	      004ab11f    mov eax,[ebp-18h]"
-"	      004ab122    add [ebp-8],eax"
+"	      004ab11f    mov eax,counter"
+"	      004ab122    add pDest,eax"
 );
 // LINE 364:
 	asm( 
@@ -1031,33 +1031,33 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 // LINE 367:
 	asm( 
 "	      004ab12a    xor eax,eax"
-"	      004ab12c    mov al,[ebp-10h]"
+"	      004ab12c    mov al,data"
 "	      004ab12f    inc eax"
-"	      004ab130    mov [ebp-18h],eax"
+"	      004ab130    mov counter,eax"
 );
 // LINE 368:
 	asm( 
-"	      004ab133    mov eax,[ebp+10h]"
+"	      004ab133    mov eax,pSource"
 "	      004ab136    mov al,[eax]"
-"	      004ab138    mov [ebp-10h],al"
-"	      004ab13b    inc dword ptr [ebp+10h]"
+"	      004ab138    mov data,al"
+"	      004ab13b    inc pSource"
 );
 // LINE 371:
 	asm( 
-"	      004ab13e    mov eax,[ebp-18h]"
+"	      004ab13e    mov eax,counter"
 "	      004ab141    push eax"
 "	      004ab142    xor eax,eax"
-"	      004ab144    mov al,[ebp-10h]"
+"	      004ab144    mov al,data"
 "	      004ab147    push eax"
-"	      004ab148    mov eax,[ebp-8]"
+"	      004ab148    mov eax,pDest"
 "	      004ab14b    push eax"
 "	      004ab14c    call 0056EB90h"
 "	      004ab151    add esp,0Ch"
 );
 // LINE 372:
 	asm( 
-"	      004ab154    mov eax,[ebp-18h]"
-"	      004ab157    add [ebp-8],eax"
+"	      004ab154    mov eax,counter"
+"	      004ab157    add pDest,eax"
 );
 // LINE 373:
 	asm( 
@@ -1066,9 +1066,9 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 // LINE 376:
 	asm( 
 "	      004ab15f    xor eax,eax"
-"	      004ab161    mov al,[ebp-10h]"
+"	      004ab161    mov al,data"
 "	      004ab164    inc eax"
-"	      004ab165    add [ebp-8],eax"
+"	      004ab165    add pDest,eax"
 );
 // LINE 377:
 	asm( 
@@ -1077,42 +1077,42 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 // LINE 380:
 	asm( 
 "	      004ab16d    xor eax,eax"
-"	      004ab16f    mov al,[ebp-10h]"
+"	      004ab16f    mov al,data"
 "	      004ab172    inc eax"
-"	      004ab173    mov [ebp-18h],eax"
+"	      004ab173    mov counter,eax"
 );
 // LINE 383:
 	asm( 
-"	      004ab176    mov eax,[ebp-18h]"
+"	      004ab176    mov eax,counter"
 "	      004ab179    mov [ebp-1Ch],eax"
-"	      004ab17c    dec dword ptr [ebp-18h]"
+"	      004ab17c    dec counter"
 "	      004ab17f    cmp dword ptr [ebp-1Ch],0"
 "	      004ab183    je near ptr 004AB1B2h"
 );
 // LINE 385:
 	asm( 
-"	      004ab189    mov eax,[ebp+10h]"
+"	      004ab189    mov eax,pSource"
 "	      004ab18c    xor ecx,ecx"
 "	      004ab18e    mov cl,[eax]"
 "	      004ab190    xor eax,eax"
-"	      004ab192    mov al,[ebp+18h]"
+"	      004ab192    mov al,TransparentColor"
 "	      004ab195    cmp ecx,eax"
 "	      004ab197    je near ptr 004AB1A7h"
 );
 // LINE 386:
 	asm( 
-"	      004ab19d    mov eax,[ebp+10h]"
+"	      004ab19d    mov eax,pSource"
 "	      004ab1a0    mov al,[eax]"
-"	      004ab1a2    mov ecx,[ebp-8]"
+"	      004ab1a2    mov ecx,pDest"
 "	      004ab1a5    mov [ecx],al"
 );
 // LINE 388:
 	asm( 
-"	      004ab1a7    inc dword ptr [ebp-8]"
+"	      004ab1a7    inc pDest"
 );
 // LINE 389:
 	asm( 
-"	      004ab1aa    inc dword ptr [ebp+10h]"
+"	      004ab1aa    inc pSource"
 );
 // LINE 390:
 	asm( 
@@ -1178,35 +1178,35 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 );
 // LINE 405:
 	asm( 
-"	      004ab200    mov eax,[ebp+8]"
-"	      004ab203    mov [ebp-0Ch],eax"
+"	      004ab200    mov eax,pDestBuffer"
+"	      004ab203    mov pDestinationEdge,eax"
 );
 // LINE 406:
 	asm( 
-"	      004ab206    mov eax,[ebp-0Ch]"
-"	      004ab209    mov [ebp-8],eax"
+"	      004ab206    mov eax,pDestinationEdge"
+"	      004ab209    mov pDest,eax"
 );
 // LINE 409:
 	asm( 
-"	      004ab20c    mov eax,[ebp+10h]"
+"	      004ab20c    mov eax,pSource"
 "	      004ab20f    xor ecx,ecx"
 "	      004ab211    mov cx,[eax]"
-"	      004ab214    add ecx,[ebp+10h]"
-"	      004ab217    mov [ebp-4],ecx"
+"	      004ab214    add ecx,pSource"
+"	      004ab217    mov pNextSourceLine,ecx"
 );
 // LINE 410:
 	asm( 
-"	      004ab21a    add dword ptr [ebp+10h],2"
+"	      004ab21a    add pSource,2"
 );
 // LINE 413:
 	asm( 
-"	      004ab21e    movsx eax,word ptr [ebp+14h]"
+"	      004ab21e    movsx eax,LeftClip"
 "	      004ab222    neg eax"
-"	      004ab224    mov [ebp-10h],ax"
+"	      004ab224    mov PixelCount,ax"
 );
 // LINE 415:
 	asm( 
-"	      004ab228    movsx eax,word ptr [ebp+1Ch]"
+"	      004ab228    movsx eax,Height"
 "	      004ab22c    test eax,eax"
 "	      004ab22e    je near ptr 004AB51Fh"
 );
@@ -1216,41 +1216,41 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 	unsigned char token;
 	unsigned char data;
 	asm( 
-"	      004ab234    mov eax,[ebp+10h]"
-"	      004ab237    cmp [ebp-4],eax"
+"	      004ab234    mov eax,pSource"
+"	      004ab237    cmp pNextSourceLine,eax"
 "	      004ab23a    jne near ptr 004AB271h"
 );
 // LINE 425:
 	asm( 
-"	      004ab240    mov eax,[ebp+10h]"
+"	      004ab240    mov eax,pSource"
 "	      004ab243    xor ecx,ecx"
 "	      004ab245    mov cx,[eax]"
-"	      004ab248    add ecx,[ebp+10h]"
-"	      004ab24b    mov [ebp-4],ecx"
+"	      004ab248    add ecx,pSource"
+"	      004ab24b    mov pNextSourceLine,ecx"
 );
 // LINE 426:
 	asm( 
-"	      004ab24e    add dword ptr [ebp+10h],2"
+"	      004ab24e    add pSource,2"
 );
 // LINE 429:
 	asm( 
-"	      004ab252    mov eax,[ebp+0Ch]"
-"	      004ab255    add [ebp-0Ch],eax"
+"	      004ab252    mov eax,DestStride"
+"	      004ab255    add pDestinationEdge,eax"
 );
 // LINE 430:
 	asm( 
-"	      004ab258    mov eax,[ebp-0Ch]"
-"	      004ab25b    mov [ebp-8],eax"
+"	      004ab258    mov eax,pDestinationEdge"
+"	      004ab25b    mov pDest,eax"
 );
 // LINE 432:
 	asm( 
-"	      004ab25e    dec word ptr [ebp+1Ch]"
+"	      004ab25e    dec Height"
 );
 // LINE 433:
 	asm( 
-"	      004ab262    movsx eax,word ptr [ebp+14h]"
+"	      004ab262    movsx eax,LeftClip"
 "	      004ab266    neg eax"
-"	      004ab268    mov [ebp-10h],ax"
+"	      004ab268    mov PixelCount,ax"
 );
 // LINE 435:
 	asm( 
@@ -1258,59 +1258,59 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 );
 // LINE 439:
 	asm( 
-"	      004ab271    mov eax,[ebp+10h]"
+"	      004ab271    mov eax,pSource"
 "	      004ab274    mov al,[eax]"
-"	      004ab276    mov [ebp-18h],al"
-"	      004ab279    inc dword ptr [ebp+10h]"
+"	      004ab276    mov token,al"
+"	      004ab279    inc pSource"
 );
 // LINE 440:
 	asm( 
-"	      004ab27c    mov eax,[ebp+10h]"
+"	      004ab27c    mov eax,pSource"
 "	      004ab27f    mov al,[eax]"
-"	      004ab281    mov [ebp-14h],al"
-"	      004ab284    inc dword ptr [ebp+10h]"
+"	      004ab281    mov data,al"
+"	      004ab284    inc pSource"
 );
 // LINE 442:
 	asm( 
 "	      004ab287    xor eax,eax"
-"	      004ab289    mov al,[ebp-18h]"
+"	      004ab289    mov al,token"
 "	      004ab28c    mov [ebp-20h],eax"
 "	      004ab28f    jmp near ptr 004AB4DDh"
 );
 // LINE 445:
 	asm( 
 "	      004ab294    xor eax,eax"
-"	      004ab296    mov al,[ebp-14h]"
+"	      004ab296    mov al,data"
 "	      004ab299    inc eax"
-"	      004ab29a    mov [ebp-1Ch],eax"
+"	      004ab29a    mov counter,eax"
 );
 // LINE 448:
 	asm( 
-"	      004ab29d    movsx eax,word ptr [ebp-10h]"
+"	      004ab29d    movsx eax,PixelCount"
 "	      004ab2a1    test eax,eax"
 "	      004ab2a3    jge near ptr 004AB2F3h"
 );
 // LINE 451:
 	asm( 
-"	      004ab2a9    movsx eax,word ptr [ebp-10h]"
+"	      004ab2a9    movsx eax,PixelCount"
 "	      004ab2ad    neg eax"
-"	      004ab2af    cmp eax,[ebp-1Ch]"
+"	      004ab2af    cmp eax,counter"
 "	      004ab2b2    jl near ptr 004AB2D5h"
 );
 // LINE 454:
 	asm( 
-"	      004ab2b8    mov eax,[ebp-1Ch]"
-"	      004ab2bb    add [ebp+10h],eax"
+"	      004ab2b8    mov eax,counter"
+"	      004ab2bb    add pSource,eax"
 );
 // LINE 455:
 	asm( 
-"	      004ab2be    movsx eax,word ptr [ebp-10h]"
-"	      004ab2c2    add eax,[ebp-1Ch]"
-"	      004ab2c5    mov [ebp-10h],ax"
+"	      004ab2be    movsx eax,PixelCount"
+"	      004ab2c2    add eax,counter"
+"	      004ab2c5    mov PixelCount,ax"
 );
 // LINE 456:
 	asm( 
-"	      004ab2c9    mov dword ptr [ebp-1Ch],0"
+"	      004ab2c9    mov counter,0"
 );
 // LINE 458:
 	asm( 
@@ -1318,48 +1318,48 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 );
 // LINE 461:
 	asm( 
-"	      004ab2d5    movsx eax,word ptr [ebp-10h]"
+"	      004ab2d5    movsx eax,PixelCount"
 "	      004ab2d9    neg eax"
-"	      004ab2db    add [ebp+10h],eax"
+"	      004ab2db    add pSource,eax"
 );
 // LINE 462:
 	asm( 
 "	      004ab2de    xor eax,eax"
-"	      004ab2e0    movsx ecx,word ptr [ebp-10h]"
+"	      004ab2e0    movsx ecx,PixelCount"
 "	      004ab2e4    neg ecx"
 "	      004ab2e6    sub eax,ecx"
 "	      004ab2e8    neg eax"
-"	      004ab2ea    sub [ebp-1Ch],eax"
+"	      004ab2ea    sub counter,eax"
 );
 // LINE 463:
 	asm( 
-"	      004ab2ed    mov word ptr [ebp-10h],0"
+"	      004ab2ed    mov PixelCount,0"
 );
 // LINE 470:
 	asm( 
-"	      004ab2f3    cmp dword ptr [ebp-1Ch],0"
+"	      004ab2f3    cmp counter,0"
 "	      004ab2f7    je near ptr 004AB329h"
-"	      004ab2fd    movsx eax,word ptr [ebp+18h]"
-"	      004ab301    movsx ecx,word ptr [ebp-10h]"
+"	      004ab2fd    movsx eax,Width"
+"	      004ab301    movsx ecx,PixelCount"
 "	      004ab305    cmp eax,ecx"
 "	      004ab307    jle near ptr 004AB329h"
 );
 // LINE 472:
 	asm( 
-"	      004ab30d    mov eax,[ebp+10h]"
+"	      004ab30d    mov eax,pSource"
 "	      004ab310    mov al,[eax]"
-"	      004ab312    mov ecx,[ebp-8]"
+"	      004ab312    mov ecx,pDest"
 "	      004ab315    mov [ecx],al"
-"	      004ab317    inc dword ptr [ebp+10h]"
-"	      004ab31a    inc dword ptr [ebp-8]"
+"	      004ab317    inc pSource"
+"	      004ab31a    inc pDest"
 );
 // LINE 473:
 	asm( 
-"	      004ab31d    dec dword ptr [ebp-1Ch]"
+"	      004ab31d    dec counter"
 );
 // LINE 474:
 	asm( 
-"	      004ab320    inc word ptr [ebp-10h]"
+"	      004ab320    inc PixelCount"
 );
 // LINE 475:
 	asm( 
@@ -1372,39 +1372,39 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 479:
 	asm( 
 "	      004ab32e    xor eax,eax"
-"	      004ab330    mov al,[ebp-14h]"
+"	      004ab330    mov al,data"
 "	      004ab333    inc eax"
-"	      004ab334    mov [ebp-1Ch],eax"
+"	      004ab334    mov counter,eax"
 );
 // LINE 480:
 	asm( 
-"	      004ab337    mov eax,[ebp+10h]"
+"	      004ab337    mov eax,pSource"
 "	      004ab33a    mov al,[eax]"
-"	      004ab33c    mov [ebp-14h],al"
-"	      004ab33f    inc dword ptr [ebp+10h]"
+"	      004ab33c    mov data,al"
+"	      004ab33f    inc pSource"
 );
 // LINE 482:
 	asm( 
-"	      004ab342    movsx eax,word ptr [ebp-10h]"
+"	      004ab342    movsx eax,PixelCount"
 "	      004ab346    test eax,eax"
 "	      004ab348    jge near ptr 004AB389h"
 );
 // LINE 485:
 	asm( 
-"	      004ab34e    movsx eax,word ptr [ebp-10h]"
+"	      004ab34e    movsx eax,PixelCount"
 "	      004ab352    neg eax"
-"	      004ab354    cmp eax,[ebp-1Ch]"
+"	      004ab354    cmp eax,counter"
 "	      004ab357    jl near ptr 004AB374h"
 );
 // LINE 488:
 	asm( 
-"	      004ab35d    movsx eax,word ptr [ebp-10h]"
-"	      004ab361    add eax,[ebp-1Ch]"
-"	      004ab364    mov [ebp-10h],ax"
+"	      004ab35d    movsx eax,PixelCount"
+"	      004ab361    add eax,counter"
+"	      004ab364    mov PixelCount,ax"
 );
 // LINE 489:
 	asm( 
-"	      004ab368    mov dword ptr [ebp-1Ch],0"
+"	      004ab368    mov counter,0"
 );
 // LINE 491:
 	asm( 
@@ -1413,39 +1413,39 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 494:
 	asm( 
 "	      004ab374    xor eax,eax"
-"	      004ab376    movsx ecx,word ptr [ebp-10h]"
+"	      004ab376    movsx ecx,PixelCount"
 "	      004ab37a    neg ecx"
 "	      004ab37c    sub eax,ecx"
 "	      004ab37e    neg eax"
-"	      004ab380    sub [ebp-1Ch],eax"
+"	      004ab380    sub counter,eax"
 );
 // LINE 495:
 	asm( 
-"	      004ab383    mov word ptr [ebp-10h],0"
+"	      004ab383    mov PixelCount,0"
 );
 // LINE 501:
 	asm( 
-"	      004ab389    cmp dword ptr [ebp-1Ch],0"
+"	      004ab389    cmp counter,0"
 "	      004ab38d    je near ptr 004AB3BAh"
-"	      004ab393    movsx eax,word ptr [ebp+18h]"
-"	      004ab397    movsx ecx,word ptr [ebp-10h]"
+"	      004ab393    movsx eax,Width"
+"	      004ab397    movsx ecx,PixelCount"
 "	      004ab39b    cmp eax,ecx"
 "	      004ab39d    jle near ptr 004AB3BAh"
 );
 // LINE 503:
 	asm( 
-"	      004ab3a3    mov al,[ebp-14h]"
-"	      004ab3a6    mov ecx,[ebp-8]"
+"	      004ab3a3    mov al,data"
+"	      004ab3a6    mov ecx,pDest"
 "	      004ab3a9    mov [ecx],al"
-"	      004ab3ab    inc dword ptr [ebp-8]"
+"	      004ab3ab    inc pDest"
 );
 // LINE 504:
 	asm( 
-"	      004ab3ae    dec dword ptr [ebp-1Ch]"
+"	      004ab3ae    dec counter"
 );
 // LINE 505:
 	asm( 
-"	      004ab3b1    inc word ptr [ebp-10h]"
+"	      004ab3b1    inc PixelCount"
 );
 // LINE 506:
 	asm( 
@@ -1458,32 +1458,32 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 510:
 	asm( 
 "	      004ab3bf    xor eax,eax"
-"	      004ab3c1    mov al,[ebp-14h]"
+"	      004ab3c1    mov al,data"
 "	      004ab3c4    inc eax"
-"	      004ab3c5    mov [ebp-1Ch],eax"
+"	      004ab3c5    mov counter,eax"
 );
 // LINE 511:
 	asm( 
-"	      004ab3c8    movsx eax,word ptr [ebp-10h]"
+"	      004ab3c8    movsx eax,PixelCount"
 "	      004ab3cc    test eax,eax"
 "	      004ab3ce    jge near ptr 004AB40Fh"
 );
 // LINE 514:
 	asm( 
-"	      004ab3d4    movsx eax,word ptr [ebp-10h]"
+"	      004ab3d4    movsx eax,PixelCount"
 "	      004ab3d8    neg eax"
-"	      004ab3da    cmp eax,[ebp-1Ch]"
+"	      004ab3da    cmp eax,counter"
 "	      004ab3dd    jl near ptr 004AB3FAh"
 );
 // LINE 517:
 	asm( 
-"	      004ab3e3    movsx eax,word ptr [ebp-10h]"
-"	      004ab3e7    add eax,[ebp-1Ch]"
-"	      004ab3ea    mov [ebp-10h],ax"
+"	      004ab3e3    movsx eax,PixelCount"
+"	      004ab3e7    add eax,counter"
+"	      004ab3ea    mov PixelCount,ax"
 );
 // LINE 518:
 	asm( 
-"	      004ab3ee    mov dword ptr [ebp-1Ch],0"
+"	      004ab3ee    mov counter,0"
 );
 // LINE 520:
 	asm( 
@@ -1492,26 +1492,26 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 523:
 	asm( 
 "	      004ab3fa    xor eax,eax"
-"	      004ab3fc    movsx ecx,word ptr [ebp-10h]"
+"	      004ab3fc    movsx ecx,PixelCount"
 "	      004ab400    neg ecx"
 "	      004ab402    sub eax,ecx"
 "	      004ab404    neg eax"
-"	      004ab406    sub [ebp-1Ch],eax"
+"	      004ab406    sub counter,eax"
 );
 // LINE 524:
 	asm( 
-"	      004ab409    mov word ptr [ebp-10h],0"
+"	      004ab409    mov PixelCount,0"
 );
 // LINE 528:
 	asm( 
-"	      004ab40f    mov eax,[ebp-1Ch]"
-"	      004ab412    add [ebp-8],eax"
+"	      004ab40f    mov eax,counter"
+"	      004ab412    add pDest,eax"
 );
 // LINE 529:
 	asm( 
-"	      004ab415    movsx eax,word ptr [ebp-10h]"
-"	      004ab419    add eax,[ebp-1Ch]"
-"	      004ab41c    mov [ebp-10h],ax"
+"	      004ab415    movsx eax,PixelCount"
+"	      004ab419    add eax,counter"
+"	      004ab41c    mov PixelCount,ax"
 );
 // LINE 530:
 	asm( 
@@ -1520,37 +1520,37 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 533:
 	asm( 
 "	      004ab425    xor eax,eax"
-"	      004ab427    mov al,[ebp-14h]"
+"	      004ab427    mov al,data"
 "	      004ab42a    inc eax"
-"	      004ab42b    mov [ebp-1Ch],eax"
+"	      004ab42b    mov counter,eax"
 );
 // LINE 536:
 	asm( 
-"	      004ab42e    movsx eax,word ptr [ebp-10h]"
+"	      004ab42e    movsx eax,PixelCount"
 "	      004ab432    test eax,eax"
 "	      004ab434    jge near ptr 004AB484h"
 );
 // LINE 539:
 	asm( 
-"	      004ab43a    movsx eax,word ptr [ebp-10h]"
+"	      004ab43a    movsx eax,PixelCount"
 "	      004ab43e    neg eax"
-"	      004ab440    cmp eax,[ebp-1Ch]"
+"	      004ab440    cmp eax,counter"
 "	      004ab443    jl near ptr 004AB466h"
 );
 // LINE 542:
 	asm( 
-"	      004ab449    mov eax,[ebp-1Ch]"
-"	      004ab44c    add [ebp+10h],eax"
+"	      004ab449    mov eax,counter"
+"	      004ab44c    add pSource,eax"
 );
 // LINE 543:
 	asm( 
-"	      004ab44f    movsx eax,word ptr [ebp-10h]"
-"	      004ab453    add eax,[ebp-1Ch]"
-"	      004ab456    mov [ebp-10h],ax"
+"	      004ab44f    movsx eax,PixelCount"
+"	      004ab453    add eax,counter"
+"	      004ab456    mov PixelCount,ax"
 );
 // LINE 544:
 	asm( 
-"	      004ab45a    mov dword ptr [ebp-1Ch],0"
+"	      004ab45a    mov counter,0"
 );
 // LINE 546:
 	asm( 
@@ -1558,64 +1558,64 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 );
 // LINE 549:
 	asm( 
-"	      004ab466    movsx eax,word ptr [ebp-10h]"
+"	      004ab466    movsx eax,PixelCount"
 "	      004ab46a    neg eax"
-"	      004ab46c    add [ebp+10h],eax"
+"	      004ab46c    add pSource,eax"
 );
 // LINE 550:
 	asm( 
 "	      004ab46f    xor eax,eax"
-"	      004ab471    movsx ecx,word ptr [ebp-10h]"
+"	      004ab471    movsx ecx,PixelCount"
 "	      004ab475    neg ecx"
 "	      004ab477    sub eax,ecx"
 "	      004ab479    neg eax"
-"	      004ab47b    sub [ebp-1Ch],eax"
+"	      004ab47b    sub counter,eax"
 );
 // LINE 551:
 	asm( 
-"	      004ab47e    mov word ptr [ebp-10h],0"
+"	      004ab47e    mov PixelCount,0"
 );
 // LINE 558:
 	asm( 
-"	      004ab484    cmp dword ptr [ebp-1Ch],0"
+"	      004ab484    cmp counter,0"
 "	      004ab488    je near ptr 004AB4CEh"
-"	      004ab48e    movsx eax,word ptr [ebp+18h]"
-"	      004ab492    movsx ecx,word ptr [ebp-10h]"
+"	      004ab48e    movsx eax,Width"
+"	      004ab492    movsx ecx,PixelCount"
 "	      004ab496    cmp eax,ecx"
 "	      004ab498    jle near ptr 004AB4CEh"
 );
 // LINE 560:
 	asm( 
-"	      004ab49e    mov eax,[ebp+10h]"
+"	      004ab49e    mov eax,pSource"
 "	      004ab4a1    xor ecx,ecx"
 "	      004ab4a3    mov cl,[eax]"
 "	      004ab4a5    xor eax,eax"
-"	      004ab4a7    mov al,[ebp+20h]"
+"	      004ab4a7    mov al,TransparentColor"
 "	      004ab4aa    cmp ecx,eax"
 "	      004ab4ac    je near ptr 004AB4BCh"
 );
 // LINE 561:
 	asm( 
-"	      004ab4b2    mov eax,[ebp+10h]"
+"	      004ab4b2    mov eax,pSource"
 "	      004ab4b5    mov al,[eax]"
-"	      004ab4b7    mov ecx,[ebp-8]"
+"	      004ab4b7    mov ecx,pDest"
 "	      004ab4ba    mov [ecx],al"
 );
 // LINE 563:
 	asm( 
-"	      004ab4bc    inc dword ptr [ebp-8]"
+"	      004ab4bc    inc pDest"
 );
 // LINE 564:
 	asm( 
-"	      004ab4bf    inc dword ptr [ebp+10h]"
+"	      004ab4bf    inc pSource"
 );
 // LINE 565:
 	asm( 
-"	      004ab4c2    dec dword ptr [ebp-1Ch]"
+"	      004ab4c2    dec counter"
 );
 // LINE 566:
 	asm( 
-"	      004ab4c5    inc word ptr [ebp-10h]"
+"	      004ab4c5    inc PixelCount"
 );
 // LINE 567:
 	asm( 
@@ -1647,15 +1647,15 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 );
 // LINE 576:
 	asm( 
-"	      004ab504    movsx eax,word ptr [ebp+18h]"
-"	      004ab508    movsx ecx,word ptr [ebp-10h]"
+"	      004ab504    movsx eax,Width"
+"	      004ab508    movsx ecx,PixelCount"
 "	      004ab50c    cmp eax,ecx"
 "	      004ab50e    jg near ptr 004AB51Ah"
 );
 // LINE 577:
 	asm( 
-"	      004ab514    mov eax,[ebp-4]"
-"	      004ab517    mov [ebp+10h],eax"
+"	      004ab514    mov eax,pNextSourceLine"
+"	      004ab517    mov pSource,eax"
 );
 // LINE 579:
 // Block end:

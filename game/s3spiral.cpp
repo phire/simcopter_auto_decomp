@@ -15,34 +15,34 @@ void SpiralScan::SpiralScan(int32_t radius) {
 "	      00542dc6    push ebx"
 "	      00542dc7    push esi"
 "	      00542dc8    push edi"
-"	      00542dc9    mov [ebp-4],ecx"
+"	      00542dc9    mov this,ecx"
 );
 // LINE 10:
 	asm( 
-"	      00542dcc    mov eax,[ebp-4]"
+"	      00542dcc    mov eax,this"
 "	      00542dcf    mov dword ptr [eax],0"
 );
 // LINE 11:
 	asm( 
-"	      00542dd5    mov eax,[ebp-4]"
+"	      00542dd5    mov eax,this"
 "	      00542dd8    mov dword ptr [eax+4],0"
 );
 // LINE 12:
 	asm( 
-"	      00542ddf    mov eax,[ebp-4]"
+"	      00542ddf    mov eax,this"
 "	      00542de2    mov dword ptr [eax+8],1"
 );
 // LINE 13:
 	asm( 
-"	      00542de9    mov eax,[ebp+8]"
+"	      00542de9    mov eax,radius"
 "	      00542dec    add eax,eax"
-"	      00542dee    mov ecx,[ebp-4]"
+"	      00542dee    mov ecx,this"
 "	      00542df1    mov [ecx+0Ch],eax"
 );
 // LINE 14:
 	asm( 
 "	      00542df4    jmp near ptr 00542DF9h"
-"	      00542df9    mov eax,[ebp-4]"
+"	      00542df9    mov eax,this"
 "	      00542dfc    pop edi"
 "	      00542dfd    pop esi"
 "	      00542dfe    pop ebx"
@@ -61,12 +61,12 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 "	      00542e09    push ebx"
 "	      00542e0a    push esi"
 "	      00542e0b    push edi"
-"	      00542e0c    mov [ebp-8],ecx"
+"	      00542e0c    mov this,ecx"
 );
 // LINE 21:
 	asm( 
-"	      00542e0f    mov eax,[ebp-8]"
-"	      00542e12    mov ecx,[ebp-8]"
+"	      00542e0f    mov eax,this"
+"	      00542e12    mov ecx,this"
 "	      00542e15    mov ecx,[ecx+0Ch]"
 "	      00542e18    cmp [eax+8],ecx"
 "	      00542e1b    jle near ptr 00542E28h"
@@ -78,17 +78,17 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 );
 // LINE 27:
 	asm( 
-"	      00542e28    mov eax,[ebp-8]"
-"	      00542e2b    mov ecx,[ebp-8]"
+"	      00542e28    mov eax,this"
+"	      00542e2b    mov ecx,this"
 "	      00542e2e    mov ecx,[ecx]"
 "	      00542e30    cmp [eax+8],ecx"
 "	      00542e33    jg near ptr 00542E77h"
 );
 // LINE 29:
 	asm( 
-"	      00542e39    mov eax,[ebp-8]"
+"	      00542e39    mov eax,this"
 "	      00542e3c    inc dword ptr [eax+4]"
-"	      00542e3f    mov eax,[ebp-8]"
+"	      00542e3f    mov eax,this"
 "	      00542e42    add eax,4"
 "	      00542e45    mov [ebp-4],eax"
 "	      00542e48    mov eax,[ebp-4]"
@@ -96,51 +96,51 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 );
 // LINE 30:
 	asm( 
-"	      00542e4e    mov eax,[ebp-8]"
+"	      00542e4e    mov eax,this"
 "	      00542e51    mov dword ptr [eax],0"
 );
 // LINE 32:
 	asm( 
-"	      00542e57    mov eax,[ebp-8]"
+"	      00542e57    mov eax,this"
 "	      00542e5a    cmp dword ptr [eax+4],0"
 "	      00542e5e    je near ptr 00542E71h"
-"	      00542e64    mov eax,[ebp-8]"
+"	      00542e64    mov eax,this"
 "	      00542e67    cmp dword ptr [eax+4],2"
 "	      00542e6b    jne near ptr 00542E77h"
 );
 // LINE 33:
 	asm( 
-"	      00542e71    mov eax,[ebp-8]"
+"	      00542e71    mov eax,this"
 "	      00542e74    inc dword ptr [eax+8]"
 );
 // LINE 37:
 	asm( 
-"	      00542e77    mov eax,[ebp-8]"
+"	      00542e77    mov eax,this"
 "	      00542e7a    mov eax,[eax+4]"
 "	      00542e7d    mov [ebp-0Ch],eax"
 "	      00542e80    jmp near ptr 00542EB4h"
 );
 // LINE 39:
 	asm( 
-"	      00542e85    mov eax,[ebp+8]"
+"	      00542e85    mov eax,currLoc"
 "	      00542e88    dec byte ptr [eax+1]"
 "	      00542e8b    jmp near ptr 00542ED8h"
 );
 // LINE 40:
 	asm( 
-"	      00542e90    mov eax,[ebp+8]"
+"	      00542e90    mov eax,currLoc"
 "	      00542e93    inc byte ptr [eax]"
 "	      00542e95    jmp near ptr 00542ED8h"
 );
 // LINE 41:
 	asm( 
-"	      00542e9a    mov eax,[ebp+8]"
+"	      00542e9a    mov eax,currLoc"
 "	      00542e9d    inc byte ptr [eax+1]"
 "	      00542ea0    jmp near ptr 00542ED8h"
 );
 // LINE 42:
 	asm( 
-"	      00542ea5    mov eax,[ebp+8]"
+"	      00542ea5    mov eax,currLoc"
 "	      00542ea8    dec byte ptr [eax]"
 "	      00542eaa    jmp near ptr 00542ED8h"
 );
@@ -159,15 +159,15 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 );
 // LINE 44:
 	asm( 
-"	      00542ed8    mov eax,[ebp-8]"
+"	      00542ed8    mov eax,this"
 "	      00542edb    inc dword ptr [eax]"
 );
 // LINE 46:
 	asm( 
-"	      00542edd    mov eax,[ebp+8]"
+"	      00542edd    mov eax,currLoc"
 "	      00542ee0    mov ax,[eax]"
 "	      00542ee3    push eax"
-"	      00542ee4    mov ecx,[ebp-8]"
+"	      00542ee4    mov ecx,this"
 "	      00542ee7    call 00542F05h"
 "	      00542eec    test eax,eax"
 "	      00542eee    je near ptr 00542E0Fh"
@@ -197,12 +197,12 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 "	      00542f0b    push ebx"
 "	      00542f0c    push esi"
 "	      00542f0d    push edi"
-"	      00542f0e    mov [ebp-4],ecx"
+"	      00542f0e    mov this,ecx"
 );
 // LINE 53:
 	asm( 
 "	      00542f11    xor eax,eax"
-"	      00542f13    mov al,[ebp+8]"
+"	      00542f13    mov al,currLoc.x"
 "	      00542f16    cmp eax,80h"
 "	      00542f1b    jl near ptr 00542F28h"
 "	      00542f21    xor eax,eax"
@@ -211,7 +211,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 // LINE 54:
 	asm( 
 "	      00542f28    xor eax,eax"
-"	      00542f2a    mov al,[ebp+8]"
+"	      00542f2a    mov al,currLoc.x"
 "	      00542f2d    test eax,eax"
 "	      00542f2f    jge near ptr 00542F3Ch"
 "	      00542f35    xor eax,eax"
@@ -220,7 +220,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 // LINE 55:
 	asm( 
 "	      00542f3c    xor eax,eax"
-"	      00542f3e    mov al,[ebp+9]"
+"	      00542f3e    mov al,currLoc.y"
 "	      00542f41    cmp eax,80h"
 "	      00542f46    jl near ptr 00542F53h"
 "	      00542f4c    xor eax,eax"
@@ -229,7 +229,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 // LINE 56:
 	asm( 
 "	      00542f53    xor eax,eax"
-"	      00542f55    mov al,[ebp+9]"
+"	      00542f55    mov al,currLoc.y"
 "	      00542f58    test eax,eax"
 "	      00542f5a    jge near ptr 00542F67h"
 "	      00542f60    xor eax,eax"

@@ -36,7 +36,7 @@ short VRInitGridObj(long ViewSize) {
 );
 // LINE 132:
 	asm( 
-"	      004d6b49    mov dword ptr [ebp-4],0"
+"	      004d6b49    mov plotter,0"
 );
 // LINE 134:
 	asm( 
@@ -63,25 +63,25 @@ short VRInitGridObj(long ViewSize) {
 );
 // LINE 144:
 	asm( 
-"	      004d6b7d    inc dword ptr [ebp+8]"
+"	      004d6b7d    inc ViewSize"
 );
 // LINE 146:
 	asm( 
-"	      004d6b80    cmp dword ptr [ebp+8],0Dh"
+"	      004d6b80    cmp ViewSize,0Dh"
 "	      004d6b84    jge near ptr 004D6B91h"
 );
 // LINE 147:
 	asm( 
-"	      004d6b8a    mov dword ptr [ebp+8],0Dh"
+"	      004d6b8a    mov ViewSize,0Dh"
 );
 // LINE 153:
 	asm( 
-"	      004d6b91    cmp dword ptr [ebp+8],3Dh"
+"	      004d6b91    cmp ViewSize,3Dh"
 "	      004d6b95    jle near ptr 004D6BAAh"
 );
 // LINE 155:
 	asm( 
-"	      004d6b9b    mov dword ptr [ebp+8],3Dh"
+"	      004d6b9b    mov ViewSize,3Dh"
 );
 // LINE 156:
 	asm( 
@@ -90,23 +90,23 @@ short VRInitGridObj(long ViewSize) {
 );
 // LINE 158:
 	asm( 
-"	      004d6baa    mov eax,[ebp+8]"
+"	      004d6baa    mov eax,ViewSize"
 "	      004d6bad    inc eax"
 "	      004d6bae    mov ds:[666358h],eax"
 );
 // LINE 159:
 	asm( 
-"	      004d6bb3    mov eax,[ebp+8]"
+"	      004d6bb3    mov eax,ViewSize"
 "	      004d6bb6    add eax,eax"
 "	      004d6bb8    mov ds:[662830h],eax"
 );
 // LINE 160:
 	asm( 
-"	      004d6bbd    mov dword ptr [ebp-2Ch],400000h"
+"	      004d6bbd    mov vert_inc,400000h"
 );
 // LINE 166:
 	asm( 
-"	      004d6bc4    mov eax,[ebp+8]"
+"	      004d6bc4    mov eax,ViewSize"
 "	      004d6bc7    mov ds:[6663A0h],eax"
 );
 // LINE 171:
@@ -129,20 +129,20 @@ short VRInitGridObj(long ViewSize) {
 // LINE 193:
 	asm( 
 "	      004d6bfa    mov eax,ds:[66637Ch]"
-"	      004d6bff    mov [ebp-3Ch],eax"
+"	      004d6bff    mov goff,eax"
 );
 // LINE 194:
 	asm( 
-"	      004d6c02    mov eax,[ebp-3Ch]"
+"	      004d6c02    mov eax,goff"
 "	      004d6c05    lea eax,[eax+eax*2]"
-"	      004d6c08    mov [ebp-3Ch],eax"
+"	      004d6c08    mov goff,eax"
 );
 // LINE 195:
 	asm( 
-"	      004d6c0b    mov eax,[ebp-3Ch]"
+"	      004d6c0b    mov eax,goff"
 "	      004d6c0e    shl eax,2"
 "	      004d6c11    lea eax,[eax+eax*4]"
-"	      004d6c14    mov [ebp-3Ch],eax"
+"	      004d6c14    mov goff,eax"
 );
 // LINE 200:
 	asm( 
@@ -171,7 +171,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 203:
 	asm( 
 "	      004d6c52    push 0"
-"	      004d6c54    mov eax,[ebp-3Ch]"
+"	      004d6c54    mov eax,goff"
 "	      004d6c57    push eax"
 "	      004d6c58    push 59D2E4h"
 "	      004d6c5d    mov eax,ds:[59D2D4h]"
@@ -182,7 +182,7 @@ short VRInitGridObj(long ViewSize) {
 );
 // LINE 204:
 	asm( 
-"	      004d6c70    mov eax,[ebp-3Ch]"
+"	      004d6c70    mov eax,goff"
 "	      004d6c73    add eax,ds:[6662F0h]"
 "	      004d6c79    mov ds:[662820h],eax"
 );
@@ -337,43 +337,43 @@ short VRInitGridObj(long ViewSize) {
 // LINE 225:
 	asm( 
 "	      004d6e28    mov eax,ds:[662824h]"
-"	      004d6e2d    mov [ebp-3Ch],eax"
+"	      004d6e2d    mov goff,eax"
 );
 // LINE 226:
 	asm( 
-"	      004d6e30    mov dword ptr [ebp-28h],0"
+"	      004d6e30    mov y,0"
 "	      004d6e37    jmp near ptr 004D6E3Fh"
-"	      004d6e3c    inc dword ptr [ebp-28h]"
-"	      004d6e3f    mov eax,[ebp-28h]"
+"	      004d6e3c    inc y"
+"	      004d6e3f    mov eax,y"
 "	      004d6e42    cmp ds:[6663A0h],eax"
 "	      004d6e48    jle near ptr 004D6E9Dh"
 );
 // LINE 228:
 	asm( 
-"	      004d6e4e    mov dword ptr [ebp-18h],0"
+"	      004d6e4e    mov x,0"
 "	      004d6e55    jmp near ptr 004D6E5Dh"
-"	      004d6e5a    inc dword ptr [ebp-18h]"
-"	      004d6e5d    mov eax,[ebp-18h]"
+"	      004d6e5a    inc x"
+"	      004d6e5d    mov eax,x"
 "	      004d6e60    cmp ds:[6663A0h],eax"
 "	      004d6e66    jle near ptr 004D6E98h"
 );
 // LINE 230:
 	asm( 
-"	      004d6e6c    mov eax,[ebp-3Ch]"
-"	      004d6e6f    mov ecx,[ebp-28h]"
+"	      004d6e6c    mov eax,goff"
+"	      004d6e6f    mov ecx,y"
 "	      004d6e72    mov edx,ecx"
 "	      004d6e74    lea ecx,[ecx+ecx*2]"
 "	      004d6e77    lea ecx,[ecx+ecx*8]"
 "	      004d6e7a    lea ecx,[ecx+ecx*8]"
 "	      004d6e7d    add ecx,edx"
-"	      004d6e7f    mov edx,[ebp-18h]"
+"	      004d6e7f    mov edx,x"
 "	      004d6e82    mov [ecx+edx*4+662880h],eax"
 );
 // LINE 231:
 	asm( 
 "	      004d6e89    mov eax,ds:[6662A8h]"
 "	      004d6e8e    add eax,eax"
-"	      004d6e90    add [ebp-3Ch],eax"
+"	      004d6e90    add goff,eax"
 );
 // LINE 232:
 	asm( 
@@ -443,7 +443,7 @@ short VRInitGridObj(long ViewSize) {
 "	      004d6f18    push eax"
 "	      004d6f19    call 004D19BDh"
 "	      004d6f1e    add esp,8"
-"	      004d6f21    mov [ebp-1Ch],eax"
+"	      004d6f21    mov z_val,eax"
 );
 // LINE 256:
 	asm( 
@@ -457,56 +457,56 @@ short VRInitGridObj(long ViewSize) {
 "	      004d6f38    call 004D19BDh"
 "	      004d6f3d    add esp,8"
 "	      004d6f40    neg eax"
-"	      004d6f42    mov [ebp-38h],eax"
+"	      004d6f42    mov x_start,eax"
 );
 // LINE 257:
 	asm( 
 "	      004d6f45    mov eax,ds:[666368h]"
-"	      004d6f4a    mov [ebp-0Ch],eax"
+"	      004d6f4a    mov v,eax"
 );
 // LINE 258:
 	asm( 
-"	      004d6f4d    mov word ptr [ebp-30h],0"
+"	      004d6f4d    mov i,0"
 "	      004d6f53    jmp near ptr 004D6F5Ch"
-"	      004d6f58    inc word ptr [ebp-30h]"
-"	      004d6f5c    movsx eax,word ptr [ebp-30h]"
+"	      004d6f58    inc i"
+"	      004d6f5c    movsx eax,i"
 "	      004d6f60    cmp eax,ds:[666358h]"
 "	      004d6f66    jge near ptr 004D6FC0h"
 );
 // LINE 260:
 	asm( 
-"	      004d6f6c    mov eax,[ebp-38h]"
-"	      004d6f6f    mov [ebp-20h],eax"
+"	      004d6f6c    mov eax,x_start"
+"	      004d6f6f    mov x_val,eax"
 );
 // LINE 261:
 	asm( 
-"	      004d6f72    mov word ptr [ebp-34h],0"
+"	      004d6f72    mov j,0"
 "	      004d6f78    jmp near ptr 004D6F81h"
-"	      004d6f7d    inc word ptr [ebp-34h]"
-"	      004d6f81    movsx eax,word ptr [ebp-34h]"
+"	      004d6f7d    inc j"
+"	      004d6f81    movsx eax,j"
 "	      004d6f85    cmp eax,ds:[666358h]"
 "	      004d6f8b    jge near ptr 004D6FB1h"
 );
 // LINE 263:
 	asm( 
-"	      004d6f91    mov eax,[ebp-20h]"
-"	      004d6f94    mov ecx,[ebp-0Ch]"
+"	      004d6f91    mov eax,x_val"
+"	      004d6f94    mov ecx,v"
 "	      004d6f97    mov [ecx],eax"
 );
 // LINE 264:
 	asm( 
-"	      004d6f99    mov eax,[ebp-1Ch]"
-"	      004d6f9c    mov ecx,[ebp-0Ch]"
+"	      004d6f99    mov eax,z_val"
+"	      004d6f9c    mov ecx,v"
 "	      004d6f9f    mov [ecx+8],eax"
 );
 // LINE 265:
 	asm( 
-"	      004d6fa2    mov eax,[ebp-2Ch]"
-"	      004d6fa5    add [ebp-20h],eax"
+"	      004d6fa2    mov eax,vert_inc"
+"	      004d6fa5    add x_val,eax"
 );
 // LINE 266:
 	asm( 
-"	      004d6fa8    add dword ptr [ebp-0Ch],0Ch"
+"	      004d6fa8    add v,0Ch"
 );
 // LINE 267:
 	asm( 
@@ -515,9 +515,9 @@ short VRInitGridObj(long ViewSize) {
 // LINE 268:
 	asm( 
 "	      004d6fb1    xor eax,eax"
-"	      004d6fb3    sub eax,[ebp-2Ch]"
+"	      004d6fb3    sub eax,vert_inc"
 "	      004d6fb6    neg eax"
-"	      004d6fb8    sub [ebp-1Ch],eax"
+"	      004d6fb8    sub z_val,eax"
 );
 // LINE 269:
 	asm( 
@@ -526,140 +526,140 @@ short VRInitGridObj(long ViewSize) {
 // LINE 275:
 	asm( 
 "	      004d6fc0    mov eax,ds:[662824h]"
-"	      004d6fc5    mov [ebp-40h],eax"
+"	      004d6fc5    mov dataptr,eax"
 );
 // LINE 276:
 	asm( 
-"	      004d6fc8    mov dword ptr [ebp-28h],0"
+"	      004d6fc8    mov y,0"
 "	      004d6fcf    jmp near ptr 004D6FD7h"
-"	      004d6fd4    inc dword ptr [ebp-28h]"
-"	      004d6fd7    mov eax,[ebp-28h]"
+"	      004d6fd4    inc y"
+"	      004d6fd7    mov eax,y"
 "	      004d6fda    cmp ds:[6663A0h],eax"
 "	      004d6fe0    jle near ptr 004D7184h"
 );
 // LINE 278:
 	asm( 
-"	      004d6fe6    mov dword ptr [ebp-18h],0"
+"	      004d6fe6    mov x,0"
 "	      004d6fed    jmp near ptr 004D6FF5h"
-"	      004d6ff2    inc dword ptr [ebp-18h]"
-"	      004d6ff5    mov eax,[ebp-18h]"
+"	      004d6ff2    inc x"
+"	      004d6ff5    mov eax,x"
 "	      004d6ff8    cmp ds:[6663A0h],eax"
 "	      004d6ffe    jle near ptr 004D717Fh"
 );
 // LINE 281:
 	asm( 
 "	      004d7004    mov eax,ds:[666358h]"
-"	      004d7009    imul eax,[ebp-28h]"
-"	      004d700d    add eax,[ebp-18h]"
-"	      004d7010    mov [ebp-10h],eax"
+"	      004d7009    imul eax,y"
+"	      004d700d    add eax,x"
+"	      004d7010    mov ul,eax"
 );
 // LINE 303:
 	asm( 
-"	      004d7013    mov word ptr [ebp-30h],0"
+"	      004d7013    mov i,0"
 "	      004d7019    jmp near ptr 004D7022h"
-"	      004d701e    inc word ptr [ebp-30h]"
-"	      004d7022    movsx eax,word ptr [ebp-30h]"
+"	      004d701e    inc i"
+"	      004d7022    movsx eax,i"
 "	      004d7026    cmp eax,2"
 "	      004d7029    jge near ptr 004D717Ah"
 );
 // LINE 305:
 	asm( 
-"	      004d702f    mov eax,[ebp-40h]"
-"	      004d7032    mov [ebp-14h],eax"
+"	      004d702f    mov eax,dataptr"
+"	      004d7032    mov gf,eax"
 );
 // LINE 306:
 	asm( 
-"	      004d7035    mov eax,[ebp-40h]"
+"	      004d7035    mov eax,dataptr"
 "	      004d7038    add eax,18h"
-"	      004d703b    mov [ebp-8],eax"
+"	      004d703b    mov iptr,eax"
 );
 // LINE 308:
 	asm( 
-"	      004d703e    mov eax,[ebp-40h]"
+"	      004d703e    mov eax,dataptr"
 "	      004d7041    add eax,24h"
-"	      004d7044    mov [ebp-24h],eax"
+"	      004d7044    mov mapv,eax"
 );
 // LINE 309:
 	asm( 
 "	      004d7047    mov eax,ds:[6662A8h]"
-"	      004d704c    add [ebp-40h],eax"
+"	      004d704c    add dataptr,eax"
 );
 // LINE 311:
 	asm( 
-"	      004d704f    mov eax,[ebp-4]"
-"	      004d7052    mov ecx,[ebp-14h]"
+"	      004d704f    mov eax,plotter"
+"	      004d7052    mov ecx,gf"
 "	      004d7055    mov [ecx+4],eax"
 );
 // LINE 312:
 	asm( 
-"	      004d7058    mov eax,[ebp-14h]"
+"	      004d7058    mov eax,gf"
 "	      004d705b    mov dword ptr [eax],0"
 );
 // LINE 314:
 	asm( 
-"	      004d7061    movsx eax,word ptr [ebp-30h]"
+"	      004d7061    movsx eax,i"
 "	      004d7065    mov [ebp-44h],eax"
 "	      004d7068    jmp near ptr 004D715Ch"
 );
 // LINE 317:
 	asm( 
 "	      004d706d    mov eax,ds:[662840h]"
-"	      004d7072    add eax,[ebp-10h]"
-"	      004d7075    mov ecx,[ebp-8]"
+"	      004d7072    add eax,ul"
+"	      004d7075    mov ecx,iptr"
 "	      004d7078    mov [ecx],eax"
-"	      004d707a    add dword ptr [ebp-8],4"
+"	      004d707a    add iptr,4"
 );
 // LINE 318:
 	asm( 
 "	      004d707e    mov eax,ds:[662844h]"
-"	      004d7083    add eax,[ebp-10h]"
-"	      004d7086    mov ecx,[ebp-8]"
+"	      004d7083    add eax,ul"
+"	      004d7086    mov ecx,iptr"
 "	      004d7089    mov [ecx],eax"
-"	      004d708b    add dword ptr [ebp-8],4"
+"	      004d708b    add iptr,4"
 );
 // LINE 319:
 	asm( 
 "	      004d708f    mov eax,ds:[66284Ch]"
-"	      004d7094    add eax,[ebp-10h]"
-"	      004d7097    mov ecx,[ebp-8]"
+"	      004d7094    add eax,ul"
+"	      004d7097    mov ecx,iptr"
 "	      004d709a    mov [ecx],eax"
 );
 // LINE 320:
 	asm( 
-"	      004d709c    mov eax,[ebp-24h]"
+"	      004d709c    mov eax,mapv"
 "	      004d709f    mov dword ptr [eax],8000h"
 );
 // LINE 321:
 	asm( 
-"	      004d70a5    mov eax,[ebp-24h]"
+"	      004d70a5    mov eax,mapv"
 "	      004d70a8    mov dword ptr [eax+4],8000h"
 );
 // LINE 322:
 	asm( 
-"	      004d70af    add dword ptr [ebp-24h],8"
+"	      004d70af    add mapv,8"
 );
 // LINE 323:
 	asm( 
-"	      004d70b3    mov eax,[ebp-24h]"
+"	      004d70b3    mov eax,mapv"
 "	      004d70b6    mov dword ptr [eax],1F8000h"
 );
 // LINE 324:
 	asm( 
-"	      004d70bc    mov eax,[ebp-24h]"
+"	      004d70bc    mov eax,mapv"
 "	      004d70bf    mov dword ptr [eax+4],8000h"
 );
 // LINE 325:
 	asm( 
-"	      004d70c6    add dword ptr [ebp-24h],8"
+"	      004d70c6    add mapv,8"
 );
 // LINE 326:
 	asm( 
-"	      004d70ca    mov eax,[ebp-24h]"
+"	      004d70ca    mov eax,mapv"
 "	      004d70cd    mov dword ptr [eax],8000h"
 );
 // LINE 327:
 	asm( 
-"	      004d70d3    mov eax,[ebp-24h]"
+"	      004d70d3    mov eax,mapv"
 "	      004d70d6    mov dword ptr [eax+4],1F8000h"
 );
 // LINE 328:
@@ -669,62 +669,62 @@ short VRInitGridObj(long ViewSize) {
 // LINE 330:
 	asm( 
 "	      004d70e2    mov eax,ds:[662844h]"
-"	      004d70e7    add eax,[ebp-10h]"
-"	      004d70ea    mov ecx,[ebp-8]"
+"	      004d70e7    add eax,ul"
+"	      004d70ea    mov ecx,iptr"
 "	      004d70ed    mov [ecx],eax"
-"	      004d70ef    add dword ptr [ebp-8],4"
+"	      004d70ef    add iptr,4"
 );
 // LINE 331:
 	asm( 
 "	      004d70f3    mov eax,ds:[662850h]"
-"	      004d70f8    add eax,[ebp-10h]"
-"	      004d70fb    mov ecx,[ebp-8]"
+"	      004d70f8    add eax,ul"
+"	      004d70fb    mov ecx,iptr"
 "	      004d70fe    mov [ecx],eax"
-"	      004d7100    add dword ptr [ebp-8],4"
+"	      004d7100    add iptr,4"
 );
 // LINE 332:
 	asm( 
 "	      004d7104    mov eax,ds:[66284Ch]"
-"	      004d7109    add eax,[ebp-10h]"
-"	      004d710c    mov ecx,[ebp-8]"
+"	      004d7109    add eax,ul"
+"	      004d710c    mov ecx,iptr"
 "	      004d710f    mov [ecx],eax"
 );
 // LINE 333:
 	asm( 
-"	      004d7111    mov eax,[ebp-24h]"
+"	      004d7111    mov eax,mapv"
 "	      004d7114    mov dword ptr [eax],1F8000h"
 );
 // LINE 334:
 	asm( 
-"	      004d711a    mov eax,[ebp-24h]"
+"	      004d711a    mov eax,mapv"
 "	      004d711d    mov dword ptr [eax+4],8000h"
 );
 // LINE 335:
 	asm( 
-"	      004d7124    add dword ptr [ebp-24h],8"
+"	      004d7124    add mapv,8"
 );
 // LINE 336:
 	asm( 
-"	      004d7128    mov eax,[ebp-24h]"
+"	      004d7128    mov eax,mapv"
 "	      004d712b    mov dword ptr [eax],1F8000h"
 );
 // LINE 337:
 	asm( 
-"	      004d7131    mov eax,[ebp-24h]"
+"	      004d7131    mov eax,mapv"
 "	      004d7134    mov dword ptr [eax+4],1F8000h"
 );
 // LINE 338:
 	asm( 
-"	      004d713b    add dword ptr [ebp-24h],8"
+"	      004d713b    add mapv,8"
 );
 // LINE 339:
 	asm( 
-"	      004d713f    mov eax,[ebp-24h]"
+"	      004d713f    mov eax,mapv"
 "	      004d7142    mov dword ptr [eax],8000h"
 );
 // LINE 340:
 	asm( 
-"	      004d7148    mov eax,[ebp-24h]"
+"	      004d7148    mov eax,mapv"
 "	      004d714b    mov dword ptr [eax+4],1F8000h"
 );
 // LINE 341:
@@ -836,12 +836,12 @@ void InitGridPool() {
 );
 // LINE 371:
 	asm( 
-"	      004d71f9    mov dword ptr [ebp-8],0"
+"	      004d71f9    mov GridPoolSize,0"
 );
 // LINE 372:
 	asm( 
 "	      004d7200    mov eax,ds:[6663A0h]"
-"	      004d7205    mov [ebp-4],eax"
+"	      004d7205    mov tempSize,eax"
 );
 // LINE 376:
 	asm( 
@@ -879,76 +879,76 @@ void InitGridPool() {
 // LINE 398:
 	asm( 
 "	      004d7257    mov eax,ds:[66637Ch]"
-"	      004d725c    mov [ebp-0Ch],eax"
+"	      004d725c    mov goff,eax"
 );
 // LINE 399:
 	asm( 
-"	      004d725f    mov eax,[ebp-0Ch]"
+"	      004d725f    mov eax,goff"
 "	      004d7262    lea eax,[eax+eax*2]"
-"	      004d7265    mov [ebp-0Ch],eax"
+"	      004d7265    mov goff,eax"
 );
 // LINE 400:
 	asm( 
-"	      004d7268    mov eax,[ebp-0Ch]"
+"	      004d7268    mov eax,goff"
 "	      004d726b    shl eax,2"
 "	      004d726e    lea eax,[eax+eax*4]"
-"	      004d7271    mov [ebp-0Ch],eax"
+"	      004d7271    mov goff,eax"
 );
 // LINE 403:
 	asm( 
 "	      004d7274    mov eax,ds:[662814h]"
 "	      004d7279    shl eax,4"
-"	      004d727c    mov [ebp-8],eax"
+"	      004d727c    mov GridPoolSize,eax"
 );
 // LINE 404:
 	asm( 
-"	      004d727f    mov eax,[ebp-0Ch]"
-"	      004d7282    add [ebp-8],eax"
+"	      004d727f    mov eax,goff"
+"	      004d7282    add GridPoolSize,eax"
 );
 // LINE 405:
 	asm( 
 "	      004d7285    mov eax,ds:[662814h]"
 "	      004d728a    lea eax,[eax+eax*2]"
 "	      004d728d    shl eax,2"
-"	      004d7290    add eax,[ebp-8]"
-"	      004d7293    mov [ebp-8],eax"
+"	      004d7290    add eax,GridPoolSize"
+"	      004d7293    mov GridPoolSize,eax"
 );
 // LINE 406:
 	asm( 
 "	      004d7296    mov eax,ds:[66637Ch]"
 "	      004d729b    shl eax,2"
-"	      004d729e    add eax,[ebp-8]"
-"	      004d72a1    mov [ebp-8],eax"
+"	      004d729e    add eax,GridPoolSize"
+"	      004d72a1    mov GridPoolSize,eax"
 );
 // LINE 407:
 	asm( 
 "	      004d72a4    mov eax,ds:[6662A8h]"
 "	      004d72a9    imul eax,ds:[66637Ch]"
-"	      004d72b0    add [ebp-8],eax"
+"	      004d72b0    add GridPoolSize,eax"
 );
 // LINE 408:
 	asm( 
 "	      004d72b3    mov eax,ds:[662814h]"
 "	      004d72b8    shl eax,2"
-"	      004d72bb    add eax,[ebp-8]"
-"	      004d72be    mov [ebp-8],eax"
+"	      004d72bb    add eax,GridPoolSize"
+"	      004d72be    mov GridPoolSize,eax"
 );
 // LINE 409:
 	asm( 
 "	      004d72c1    mov eax,ds:[662814h]"
-"	      004d72c6    add [ebp-8],eax"
+"	      004d72c6    add GridPoolSize,eax"
 );
 // LINE 410:
 	asm( 
 "	      004d72c9    mov eax,ds:[6663A0h]"
 "	      004d72ce    imul eax,ds:[6663A0h]"
 "	      004d72d5    shl eax,2"
-"	      004d72d8    add eax,[ebp-8]"
-"	      004d72db    mov [ebp-8],eax"
+"	      004d72d8    add eax,GridPoolSize"
+"	      004d72db    mov GridPoolSize,eax"
 );
 // LINE 412:
 	asm( 
-"	      004d72de    mov eax,[ebp-8]"
+"	      004d72de    mov eax,GridPoolSize"
 "	      004d72e1    push eax"
 "	      004d72e2    call 004CB401h"
 "	      004d72e7    add esp,4"

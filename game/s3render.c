@@ -83,18 +83,18 @@ int32_t VRAppInit() {
 );
 // LINE 195:
 	asm( 
-"	      004eaca4    mov dword ptr [ebp-118h],3A3A3A3Ah"
+"	      004eaca4    mov i,3A3A3A3Ah"
 );
 // LINE 196:
 	asm( 
-"	      004eacae    mov eax,[ebp-118h]"
+"	      004eacae    mov eax,i"
 "	      004eacb4    push eax"
 "	      004eacb5    call 004D682Bh"
 "	      004eacba    add esp,4"
 );
 // LINE 199:
 	asm( 
-"	      004eacbd    mov eax,[ebp-118h]"
+"	      004eacbd    mov eax,i"
 "	      004eacc3    and eax,0FFh"
 "	      004eacc8    mov ds:[598EA0h],eax"
 );
@@ -124,7 +124,7 @@ int32_t VRAppInit() {
 );
 // LINE 276:
 	asm( 
-"	      004eacfd    lea eax,[ebp-104h]"
+"	      004eacfd    lea eax,szFilePath[0]"
 "	      004ead03    push eax"
 "	      004ead04    push 5B47A4h"
 "	      004ead09    push 0"
@@ -136,7 +136,7 @@ int32_t VRAppInit() {
 	asm( 
 "	      004ead15    push 5B47B0h"
 "	      004ead1a    push 3"
-"	      004ead1c    lea eax,[ebp-104h]"
+"	      004ead1c    lea eax,szFilePath[0]"
 "	      004ead22    push eax"
 "	      004ead23    call 004D5356h"
 "	      004ead28    add esp,0Ch"
@@ -144,7 +144,7 @@ int32_t VRAppInit() {
 );
 // LINE 279:
 	asm( 
-"	      004ead30    lea eax,[ebp-104h]"
+"	      004ead30    lea eax,szFilePath[0]"
 "	      004ead36    push eax"
 "	      004ead37    push 5B47B4h"
 "	      004ead3c    push 0"
@@ -156,7 +156,7 @@ int32_t VRAppInit() {
 	asm( 
 "	      004ead48    push 5B47C0h"
 "	      004ead4d    push 1"
-"	      004ead4f    lea eax,[ebp-104h]"
+"	      004ead4f    lea eax,szFilePath[0]"
 "	      004ead55    push eax"
 "	      004ead56    call 004D5356h"
 "	      004ead5b    add esp,0Ch"
@@ -164,7 +164,7 @@ int32_t VRAppInit() {
 );
 // LINE 282:
 	asm( 
-"	      004ead63    lea eax,[ebp-104h]"
+"	      004ead63    lea eax,szFilePath[0]"
 "	      004ead69    push eax"
 "	      004ead6a    push 5B47C8h"
 "	      004ead6f    push 0"
@@ -176,7 +176,7 @@ int32_t VRAppInit() {
 	asm( 
 "	      004ead7b    push 5B47D4h"
 "	      004ead80    push 1"
-"	      004ead82    lea eax,[ebp-104h]"
+"	      004ead82    lea eax,szFilePath[0]"
 "	      004ead88    push eax"
 "	      004ead89    call 004D5356h"
 "	      004ead8e    add esp,0Ch"
@@ -184,7 +184,7 @@ int32_t VRAppInit() {
 );
 // LINE 285:
 	asm( 
-"	      004ead96    lea eax,[ebp-104h]"
+"	      004ead96    lea eax,szFilePath[0]"
 "	      004ead9c    push eax"
 "	      004ead9d    push 5B47DCh"
 "	      004eada2    push 0"
@@ -196,7 +196,7 @@ int32_t VRAppInit() {
 	asm( 
 "	      004eadae    push 5B47E8h"
 "	      004eadb3    push 1"
-"	      004eadb5    lea eax,[ebp-104h]"
+"	      004eadb5    lea eax,szFilePath[0]"
 "	      004eadbb    push eax"
 "	      004eadbc    call 004D5356h"
 "	      004eadc1    add esp,0Ch"
@@ -221,7 +221,7 @@ int32_t VRAppInit() {
 );
 // LINE 311:
 	asm( 
-"	      004eae0a    lea eax,[ebp-104h]"
+"	      004eae0a    lea eax,szFilePath[0]"
 "	      004eae10    push eax"
 "	      004eae11    push 5B480Ch"
 "	      004eae16    push 0"
@@ -235,7 +235,7 @@ int32_t VRAppInit() {
 "	      004eae24    push 1F1Fh"
 "	      004eae29    mov eax,ds:[5B476Ch]"
 "	      004eae2e    push eax"
-"	      004eae2f    lea eax,[ebp-104h]"
+"	      004eae2f    lea eax,szFilePath[0]"
 "	      004eae35    push eax"
 "	      004eae36    call 004D6460h"
 "	      004eae3b    add esp,10h"
@@ -310,9 +310,9 @@ int32_t VRAppInit() {
 );
 // LINE 337:
 	asm( 
-"	      004eaedc    mov dword ptr [ebp-11Ch],0"
-"	      004eaee6    mov eax,[ebp-11Ch]"
-"	      004eaeec    mov [ebp-114h],eax"
+"	      004eaedc    mov mem2d,0"
+"	      004eaee6    mov eax,mem2d"
+"	      004eaeec    mov memxf,eax"
 );
 // LINE 339:
 	asm( 
@@ -320,58 +320,58 @@ int32_t VRAppInit() {
 "	      004eaef7    push eax"
 "	      004eaef8    call 004D23C7h"
 "	      004eaefd    add esp,4"
-"	      004eaf00    mov [ebp-118h],eax"
+"	      004eaf00    mov i,eax"
 );
 // LINE 340:
 	asm( 
-"	      004eaf06    mov dword ptr [ebp-120h],0"
+"	      004eaf06    mov j,0"
 "	      004eaf10    jmp near ptr 004EAF1Bh"
-"	      004eaf15    inc dword ptr [ebp-120h]"
-"	      004eaf1b    mov eax,[ebp-118h]"
-"	      004eaf21    cmp [ebp-120h],eax"
+"	      004eaf15    inc j"
+"	      004eaf1b    mov eax,i"
+"	      004eaf21    cmp j,eax"
 "	      004eaf27    jge near ptr 004EAFB3h"
 );
 // LINE 342:
 	asm( 
-"	      004eaf2d    mov eax,[ebp-120h]"
+"	      004eaf2d    mov eax,j"
 "	      004eaf33    push eax"
 "	      004eaf34    mov eax,ds:[5B4774h]"
 "	      004eaf39    push eax"
 "	      004eaf3a    call 004D23E6h"
 "	      004eaf3f    add esp,8"
-"	      004eaf42    mov [ebp-124h],eax"
+"	      004eaf42    mov obj,eax"
 );
 // LINE 343:
 	asm( 
-"	      004eaf48    mov eax,[ebp-124h]"
+"	      004eaf48    mov eax,obj"
 "	      004eaf4e    push eax"
 "	      004eaf4f    call 004D84F8h"
 "	      004eaf54    add esp,4"
-"	      004eaf57    mov [ebp-110h],eax"
+"	      004eaf57    mov maxval,eax"
 );
 // LINE 344:
 	asm( 
-"	      004eaf5d    mov eax,[ebp-110h]"
-"	      004eaf63    cmp [ebp-114h],eax"
+"	      004eaf5d    mov eax,maxval"
+"	      004eaf63    cmp memxf,eax"
 "	      004eaf69    jge near ptr 004EAF7Bh"
-"	      004eaf6f    mov eax,[ebp-110h]"
-"	      004eaf75    mov [ebp-114h],eax"
+"	      004eaf6f    mov eax,maxval"
+"	      004eaf75    mov memxf,eax"
 );
 // LINE 345:
 	asm( 
-"	      004eaf7b    mov eax,[ebp-124h]"
+"	      004eaf7b    mov eax,obj"
 "	      004eaf81    push eax"
 "	      004eaf82    call 004D8506h"
 "	      004eaf87    add esp,4"
-"	      004eaf8a    mov [ebp-110h],eax"
+"	      004eaf8a    mov maxval,eax"
 );
 // LINE 346:
 	asm( 
-"	      004eaf90    mov eax,[ebp-110h]"
-"	      004eaf96    cmp [ebp-11Ch],eax"
+"	      004eaf90    mov eax,maxval"
+"	      004eaf96    cmp mem2d,eax"
 "	      004eaf9c    jge near ptr 004EAFAEh"
-"	      004eafa2    mov eax,[ebp-110h]"
-"	      004eafa8    mov [ebp-11Ch],eax"
+"	      004eafa2    mov eax,maxval"
+"	      004eafa8    mov mem2d,eax"
 );
 // LINE 347:
 	asm( 
@@ -383,58 +383,58 @@ int32_t VRAppInit() {
 "	      004eafb8    push eax"
 "	      004eafb9    call 004D23C7h"
 "	      004eafbe    add esp,4"
-"	      004eafc1    mov [ebp-118h],eax"
+"	      004eafc1    mov i,eax"
 );
 // LINE 350:
 	asm( 
-"	      004eafc7    mov dword ptr [ebp-120h],0"
+"	      004eafc7    mov j,0"
 "	      004eafd1    jmp near ptr 004EAFDCh"
-"	      004eafd6    inc dword ptr [ebp-120h]"
-"	      004eafdc    mov eax,[ebp-118h]"
-"	      004eafe2    cmp [ebp-120h],eax"
+"	      004eafd6    inc j"
+"	      004eafdc    mov eax,i"
+"	      004eafe2    cmp j,eax"
 "	      004eafe8    jge near ptr 004EB074h"
 );
 // LINE 352:
 	asm( 
-"	      004eafee    mov eax,[ebp-120h]"
+"	      004eafee    mov eax,j"
 "	      004eaff4    push eax"
 "	      004eaff5    mov eax,ds:[5B4778h]"
 "	      004eaffa    push eax"
 "	      004eaffb    call 004D23E6h"
 "	      004eb000    add esp,8"
-"	      004eb003    mov [ebp-124h],eax"
+"	      004eb003    mov obj,eax"
 );
 // LINE 353:
 	asm( 
-"	      004eb009    mov eax,[ebp-124h]"
+"	      004eb009    mov eax,obj"
 "	      004eb00f    push eax"
 "	      004eb010    call 004D84F8h"
 "	      004eb015    add esp,4"
-"	      004eb018    mov [ebp-110h],eax"
+"	      004eb018    mov maxval,eax"
 );
 // LINE 354:
 	asm( 
-"	      004eb01e    mov eax,[ebp-110h]"
-"	      004eb024    cmp [ebp-114h],eax"
+"	      004eb01e    mov eax,maxval"
+"	      004eb024    cmp memxf,eax"
 "	      004eb02a    jge near ptr 004EB03Ch"
-"	      004eb030    mov eax,[ebp-110h]"
-"	      004eb036    mov [ebp-114h],eax"
+"	      004eb030    mov eax,maxval"
+"	      004eb036    mov memxf,eax"
 );
 // LINE 355:
 	asm( 
-"	      004eb03c    mov eax,[ebp-124h]"
+"	      004eb03c    mov eax,obj"
 "	      004eb042    push eax"
 "	      004eb043    call 004D8506h"
 "	      004eb048    add esp,4"
-"	      004eb04b    mov [ebp-110h],eax"
+"	      004eb04b    mov maxval,eax"
 );
 // LINE 356:
 	asm( 
-"	      004eb051    mov eax,[ebp-110h]"
-"	      004eb057    cmp [ebp-11Ch],eax"
+"	      004eb051    mov eax,maxval"
+"	      004eb057    cmp mem2d,eax"
 "	      004eb05d    jge near ptr 004EB06Fh"
-"	      004eb063    mov eax,[ebp-110h]"
-"	      004eb069    mov [ebp-11Ch],eax"
+"	      004eb063    mov eax,maxval"
+"	      004eb069    mov mem2d,eax"
 );
 // LINE 357:
 	asm( 
@@ -446,58 +446,58 @@ int32_t VRAppInit() {
 "	      004eb079    push eax"
 "	      004eb07a    call 004D23C7h"
 "	      004eb07f    add esp,4"
-"	      004eb082    mov [ebp-118h],eax"
+"	      004eb082    mov i,eax"
 );
 // LINE 361:
 	asm( 
-"	      004eb088    mov dword ptr [ebp-120h],0"
+"	      004eb088    mov j,0"
 "	      004eb092    jmp near ptr 004EB09Dh"
-"	      004eb097    inc dword ptr [ebp-120h]"
-"	      004eb09d    mov eax,[ebp-118h]"
-"	      004eb0a3    cmp [ebp-120h],eax"
+"	      004eb097    inc j"
+"	      004eb09d    mov eax,i"
+"	      004eb0a3    cmp j,eax"
 "	      004eb0a9    jge near ptr 004EB135h"
 );
 // LINE 363:
 	asm( 
-"	      004eb0af    mov eax,[ebp-120h]"
+"	      004eb0af    mov eax,j"
 "	      004eb0b5    push eax"
 "	      004eb0b6    mov eax,ds:[5B477Ch]"
 "	      004eb0bb    push eax"
 "	      004eb0bc    call 004D23E6h"
 "	      004eb0c1    add esp,8"
-"	      004eb0c4    mov [ebp-124h],eax"
+"	      004eb0c4    mov obj,eax"
 );
 // LINE 364:
 	asm( 
-"	      004eb0ca    mov eax,[ebp-124h]"
+"	      004eb0ca    mov eax,obj"
 "	      004eb0d0    push eax"
 "	      004eb0d1    call 004D84F8h"
 "	      004eb0d6    add esp,4"
-"	      004eb0d9    mov [ebp-110h],eax"
+"	      004eb0d9    mov maxval,eax"
 );
 // LINE 365:
 	asm( 
-"	      004eb0df    mov eax,[ebp-110h]"
-"	      004eb0e5    cmp [ebp-114h],eax"
+"	      004eb0df    mov eax,maxval"
+"	      004eb0e5    cmp memxf,eax"
 "	      004eb0eb    jge near ptr 004EB0FDh"
-"	      004eb0f1    mov eax,[ebp-110h]"
-"	      004eb0f7    mov [ebp-114h],eax"
+"	      004eb0f1    mov eax,maxval"
+"	      004eb0f7    mov memxf,eax"
 );
 // LINE 366:
 	asm( 
-"	      004eb0fd    mov eax,[ebp-124h]"
+"	      004eb0fd    mov eax,obj"
 "	      004eb103    push eax"
 "	      004eb104    call 004D8506h"
 "	      004eb109    add esp,4"
-"	      004eb10c    mov [ebp-110h],eax"
+"	      004eb10c    mov maxval,eax"
 );
 // LINE 367:
 	asm( 
-"	      004eb112    mov eax,[ebp-110h]"
-"	      004eb118    cmp [ebp-11Ch],eax"
+"	      004eb112    mov eax,maxval"
+"	      004eb118    cmp mem2d,eax"
 "	      004eb11e    jge near ptr 004EB130h"
-"	      004eb124    mov eax,[ebp-110h]"
-"	      004eb12a    mov [ebp-11Ch],eax"
+"	      004eb124    mov eax,maxval"
+"	      004eb12a    mov mem2d,eax"
 );
 // LINE 368:
 	asm( 
@@ -505,13 +505,13 @@ int32_t VRAppInit() {
 );
 // LINE 372:
 	asm( 
-"	      004eb135    shl dword ptr [ebp-11Ch],3"
+"	      004eb135    shl mem2d,3"
 );
 // LINE 374:
 	asm( 
-"	      004eb13c    mov eax,[ebp-11Ch]"
+"	      004eb13c    mov eax,mem2d"
 "	      004eb142    push eax"
-"	      004eb143    mov eax,[ebp-114h]"
+"	      004eb143    mov eax,memxf"
 "	      004eb149    push eax"
 "	      004eb14a    call 004D43C3h"
 "	      004eb14f    add esp,8"
@@ -754,15 +754,15 @@ int32_t VRAppInit() {
 );
 // LINE 439:
 	asm( 
-"	      004eb361    mov dword ptr [ebp-10Ch],0"
+"	      004eb361    mov instanceID,0"
 "	      004eb36b    jmp near ptr 004EB376h"
-"	      004eb370    inc dword ptr [ebp-10Ch]"
-"	      004eb376    cmp dword ptr [ebp-10Ch],32h"
+"	      004eb370    inc instanceID"
+"	      004eb376    cmp instanceID,32h"
 "	      004eb37d    jge near ptr 004EB3A4h"
 );
 // LINE 441:
 	asm( 
-"	      004eb383    mov eax,[ebp-10Ch]"
+"	      004eb383    mov eax,instanceID"
 "	      004eb389    push eax"
 "	      004eb38a    call 00501B3Ch"
 "	      004eb38f    add esp,4"
@@ -779,21 +779,21 @@ int32_t VRAppInit() {
 );
 // LINE 445:
 	asm( 
-"	      004eb3a4    mov eax,[ebp-10Ch]"
+"	      004eb3a4    mov eax,instanceID"
 "	      004eb3aa    add eax,5"
-"	      004eb3ad    mov [ebp-108h],eax"
+"	      004eb3ad    mov totalVehicles,eax"
 );
 // LINE 446:
 	asm( 
 "	      004eb3b3    jmp near ptr 004EB3BEh"
-"	      004eb3b8    inc dword ptr [ebp-10Ch]"
-"	      004eb3be    mov eax,[ebp-10Ch]"
-"	      004eb3c4    cmp [ebp-108h],eax"
+"	      004eb3b8    inc instanceID"
+"	      004eb3be    mov eax,instanceID"
+"	      004eb3c4    cmp totalVehicles,eax"
 "	      004eb3ca    jle near ptr 004EB3F1h"
 );
 // LINE 448:
 	asm( 
-"	      004eb3d0    mov eax,[ebp-10Ch]"
+"	      004eb3d0    mov eax,instanceID"
 "	      004eb3d6    push eax"
 "	      004eb3d7    call 00536E00h"
 "	      004eb3dc    add esp,4"
@@ -810,21 +810,21 @@ int32_t VRAppInit() {
 );
 // LINE 452:
 	asm( 
-"	      004eb3f1    mov eax,[ebp-10Ch]"
+"	      004eb3f1    mov eax,instanceID"
 "	      004eb3f7    add eax,5"
-"	      004eb3fa    mov [ebp-108h],eax"
+"	      004eb3fa    mov totalVehicles,eax"
 );
 // LINE 453:
 	asm( 
 "	      004eb400    jmp near ptr 004EB40Bh"
-"	      004eb405    inc dword ptr [ebp-10Ch]"
-"	      004eb40b    mov eax,[ebp-10Ch]"
-"	      004eb411    cmp [ebp-108h],eax"
+"	      004eb405    inc instanceID"
+"	      004eb40b    mov eax,instanceID"
+"	      004eb411    cmp totalVehicles,eax"
 "	      004eb417    jle near ptr 004EB43Eh"
 );
 // LINE 455:
 	asm( 
-"	      004eb41d    mov eax,[ebp-10Ch]"
+"	      004eb41d    mov eax,instanceID"
 "	      004eb423    push eax"
 "	      004eb424    call 00536100h"
 "	      004eb429    add esp,4"
@@ -841,21 +841,21 @@ int32_t VRAppInit() {
 );
 // LINE 459:
 	asm( 
-"	      004eb43e    mov eax,[ebp-10Ch]"
+"	      004eb43e    mov eax,instanceID"
 "	      004eb444    add eax,5"
-"	      004eb447    mov [ebp-108h],eax"
+"	      004eb447    mov totalVehicles,eax"
 );
 // LINE 460:
 	asm( 
 "	      004eb44d    jmp near ptr 004EB458h"
-"	      004eb452    inc dword ptr [ebp-10Ch]"
-"	      004eb458    mov eax,[ebp-10Ch]"
-"	      004eb45e    cmp [ebp-108h],eax"
+"	      004eb452    inc instanceID"
+"	      004eb458    mov eax,instanceID"
+"	      004eb45e    cmp totalVehicles,eax"
 "	      004eb464    jle near ptr 004EB48Bh"
 );
 // LINE 462:
 	asm( 
-"	      004eb46a    mov eax,[ebp-10Ch]"
+"	      004eb46a    mov eax,instanceID"
 "	      004eb470    push eax"
 "	      004eb471    call 005358A0h"
 "	      004eb476    add esp,4"
@@ -876,21 +876,21 @@ int32_t VRAppInit() {
 );
 // LINE 468:
 	asm( 
-"	      004eb495    mov eax,[ebp-10Ch]"
+"	      004eb495    mov eax,instanceID"
 "	      004eb49b    add eax,5"
-"	      004eb49e    mov [ebp-108h],eax"
+"	      004eb49e    mov totalVehicles,eax"
 );
 // LINE 469:
 	asm( 
 "	      004eb4a4    jmp near ptr 004EB4AFh"
-"	      004eb4a9    inc dword ptr [ebp-10Ch]"
-"	      004eb4af    mov eax,[ebp-10Ch]"
-"	      004eb4b5    cmp [ebp-108h],eax"
+"	      004eb4a9    inc instanceID"
+"	      004eb4af    mov eax,instanceID"
+"	      004eb4b5    cmp totalVehicles,eax"
 "	      004eb4bb    jle near ptr 004EB4E2h"
 );
 // LINE 471:
 	asm( 
-"	      004eb4c1    mov eax,[ebp-10Ch]"
+"	      004eb4c1    mov eax,instanceID"
 "	      004eb4c7    push eax"
 "	      004eb4c8    call 005349C0h"
 "	      004eb4cd    add esp,4"
@@ -907,15 +907,15 @@ int32_t VRAppInit() {
 );
 // LINE 476:
 	asm( 
-"	      004eb4e2    mov dword ptr [ebp-118h],0"
+"	      004eb4e2    mov i,0"
 "	      004eb4ec    jmp near ptr 004EB4F7h"
-"	      004eb4f1    inc dword ptr [ebp-118h]"
-"	      004eb4f7    cmp dword ptr [ebp-118h],1"
+"	      004eb4f1    inc i"
+"	      004eb4f7    cmp i,1"
 "	      004eb4fe    jge near ptr 004EB518h"
 );
 // LINE 483:
 	asm( 
-"	      004eb504    mov eax,[ebp-118h]"
+"	      004eb504    mov eax,i"
 "	      004eb50a    push eax"
 "	      004eb50b    call 005342EFh"
 "	      004eb510    add esp,4"
@@ -926,15 +926,15 @@ int32_t VRAppInit() {
 );
 // LINE 488:
 	asm( 
-"	      004eb518    mov dword ptr [ebp-118h],0"
+"	      004eb518    mov i,0"
 "	      004eb522    jmp near ptr 004EB52Dh"
-"	      004eb527    inc dword ptr [ebp-118h]"
-"	      004eb52d    cmp dword ptr [ebp-118h],2"
+"	      004eb527    inc i"
+"	      004eb52d    cmp i,2"
 "	      004eb534    jge near ptr 004EB54Eh"
 );
 // LINE 495:
 	asm( 
-"	      004eb53a    mov eax,[ebp-118h]"
+"	      004eb53a    mov eax,i"
 "	      004eb540    push eax"
 "	      004eb541    call 0052D6BDh"
 "	      004eb546    add esp,4"
@@ -945,15 +945,15 @@ int32_t VRAppInit() {
 );
 // LINE 499:
 	asm( 
-"	      004eb54e    mov dword ptr [ebp-118h],0"
+"	      004eb54e    mov i,0"
 "	      004eb558    jmp near ptr 004EB563h"
-"	      004eb55d    inc dword ptr [ebp-118h]"
-"	      004eb563    cmp dword ptr [ebp-118h],3"
+"	      004eb55d    inc i"
+"	      004eb563    cmp i,3"
 "	      004eb56a    jge near ptr 004EB584h"
 );
 // LINE 506:
 	asm( 
-"	      004eb570    mov eax,[ebp-118h]"
+"	      004eb570    mov eax,i"
 "	      004eb576    push eax"
 "	      004eb577    call 0052AB24h"
 "	      004eb57c    add esp,4"
@@ -1024,7 +1024,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 553:
 	asm( 
-"	      004eb5d3    cmp dword ptr [ebp+8],1"
+"	      004eb5d3    cmp reload,1"
 "	      004eb5d7    jne near ptr 004EB5E7h"
 );
 // LINE 554:
@@ -1041,7 +1041,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 562:
 	asm( 
-"	      004eb5fb    cmp dword ptr [ebp+8],1"
+"	      004eb5fb    cmp reload,1"
 "	      004eb5ff    jne near ptr 004EB645h"
 );
 // LINE 564:
@@ -1230,19 +1230,19 @@ int32_t VRAppCityInit(int32_t reload) {
 // LINE 647:
 	asm( 
 "	      004eb76a    call 00428F4Ah"
-"	      004eb76f    mov [ebp-0Ch],eax"
+"	      004eb76f    mov up,eax"
 );
 // LINE 648:
 	asm( 
-"	      004eb772    mov dword ptr [ebp-8],0"
+"	      004eb772    mov i,0"
 "	      004eb779    jmp near ptr 004EB781h"
-"	      004eb77e    inc dword ptr [ebp-8]"
-"	      004eb781    cmp dword ptr [ebp-8],9"
+"	      004eb77e    inc i"
+"	      004eb781    cmp i,9"
 "	      004eb785    jge near ptr 004EB868h"
 );
 // LINE 651:
 	asm( 
-"	      004eb78b    mov eax,[ebp-8]"
+"	      004eb78b    mov eax,i"
 "	      004eb78e    mov ecx,eax"
 "	      004eb790    lea eax,[eax+eax*4]"
 "	      004eb793    lea eax,[eax+eax*8]"
@@ -1254,7 +1254,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 653:
 	asm( 
-"	      004eb7ae    mov eax,[ebp-8]"
+"	      004eb7ae    mov eax,i"
 "	      004eb7b1    mov ecx,eax"
 "	      004eb7b3    lea eax,[eax+eax*4]"
 "	      004eb7b6    lea eax,[eax+eax*8]"
@@ -1264,7 +1264,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 658:
 	asm( 
-"	      004eb7c9    cmp dword ptr [ebp-8],2"
+"	      004eb7c9    cmp i,2"
 "	      004eb7cd    jne near ptr 004EB818h"
 );
 // LINE 660:
@@ -1278,7 +1278,7 @@ int32_t VRAppCityInit(int32_t reload) {
 "	      004eb7e5    push eax"
 "	      004eb7e6    mov eax,ds:[6C11F8h]"
 "	      004eb7eb    push eax"
-"	      004eb7ec    mov eax,[ebp-8]"
+"	      004eb7ec    mov eax,i"
 "	      004eb7ef    mov ecx,eax"
 "	      004eb7f1    lea eax,[eax+eax*4]"
 "	      004eb7f4    lea eax,[eax+eax*8]"
@@ -1291,7 +1291,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 665:
 	asm( 
-"	      004eb80c    mov eax,[ebp-0Ch]"
+"	      004eb80c    mov eax,up"
 "	      004eb80f    or dword ptr [eax+44h],4"
 );
 // LINE 666:
@@ -1300,7 +1300,7 @@ int32_t VRAppCityInit(int32_t reload) {
 );
 // LINE 670:
 	asm( 
-"	      004eb818    mov eax,[ebp-0Ch]"
+"	      004eb818    mov eax,up"
 "	      004eb81b    mov edx,1"
 "	      004eb820    mov cl,[ebp-8]"
 "	      004eb823    shl edx,cl"
@@ -1310,17 +1310,17 @@ int32_t VRAppCityInit(int32_t reload) {
 // LINE 672:
 	asm( 
 "	      004eb82e    call 004F81BBh"
-"	      004eb833    mov [ebp-4],eax"
+"	      004eb833    mov pad,eax"
 );
 // LINE 673:
 	asm( 
-"	      004eb836    mov eax,[ebp-4]"
+"	      004eb836    mov eax,pad"
 "	      004eb839    mov eax,[eax+4]"
 "	      004eb83c    push eax"
-"	      004eb83d    mov eax,[ebp-4]"
+"	      004eb83d    mov eax,pad"
 "	      004eb840    mov eax,[eax]"
 "	      004eb842    push eax"
-"	      004eb843    mov eax,[ebp-8]"
+"	      004eb843    mov eax,i"
 "	      004eb846    mov ecx,eax"
 "	      004eb848    lea eax,[eax+eax*4]"
 "	      004eb84b    lea eax,[eax+eax*8]"
@@ -1362,61 +1362,61 @@ int32_t VRAppGameInit(void * __ptr32 miffReader) {
 );
 // LINE 706:
 	asm( 
-"	      004eb87d    cmp dword ptr [ebp+8],0"
+"	      004eb87d    cmp miffReader,0"
 "	      004eb881    je near ptr 004EB8ECh"
 );
 // LINE 711:
 	asm( 
-"	      004eb887    mov eax,[ebp+8]"
+"	      004eb887    mov eax,miffReader"
 "	      004eb88a    push eax"
 "	      004eb88b    call 004F8847h"
 "	      004eb890    add esp,4"
 );
 // LINE 712:
 	asm( 
-"	      004eb893    mov eax,[ebp+8]"
+"	      004eb893    mov eax,miffReader"
 "	      004eb896    push eax"
 "	      004eb897    call 0052345Ah"
 "	      004eb89c    add esp,4"
 );
 // LINE 713:
 	asm( 
-"	      004eb89f    mov eax,[ebp+8]"
+"	      004eb89f    mov eax,miffReader"
 "	      004eb8a2    push eax"
 "	      004eb8a3    call 00526FB5h"
 "	      004eb8a8    add esp,4"
 );
 // LINE 714:
 	asm( 
-"	      004eb8ab    mov eax,[ebp+8]"
+"	      004eb8ab    mov eax,miffReader"
 "	      004eb8ae    push eax"
 "	      004eb8af    call 004FDCFBh"
 "	      004eb8b4    add esp,4"
 );
 // LINE 715:
 	asm( 
-"	      004eb8b7    mov eax,[ebp+8]"
+"	      004eb8b7    mov eax,miffReader"
 "	      004eb8ba    push eax"
 "	      004eb8bb    call 0052AD6Ch"
 "	      004eb8c0    add esp,4"
 );
 // LINE 716:
 	asm( 
-"	      004eb8c3    mov eax,[ebp+8]"
+"	      004eb8c3    mov eax,miffReader"
 "	      004eb8c6    push eax"
 "	      004eb8c7    call 0052DADBh"
 "	      004eb8cc    add esp,4"
 );
 // LINE 717:
 	asm( 
-"	      004eb8cf    mov eax,[ebp+8]"
+"	      004eb8cf    mov eax,miffReader"
 "	      004eb8d2    push eax"
 "	      004eb8d3    call 0053456Ch"
 "	      004eb8d8    add esp,4"
 );
 // LINE 718:
 	asm( 
-"	      004eb8db    mov eax,[ebp+8]"
+"	      004eb8db    mov eax,miffReader"
 "	      004eb8de    push eax"
 "	      004eb8df    call 00509007h"
 "	      004eb8e4    add esp,4"
@@ -1459,56 +1459,56 @@ int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 );
 // LINE 742:
 	asm( 
-"	      004eb90f    mov eax,[ebp+8]"
+"	      004eb90f    mov eax,miffWriter"
 "	      004eb912    push eax"
 "	      004eb913    call 004F894Fh"
 "	      004eb918    add esp,4"
 );
 // LINE 743:
 	asm( 
-"	      004eb91b    mov eax,[ebp+8]"
+"	      004eb91b    mov eax,miffWriter"
 "	      004eb91e    push eax"
 "	      004eb91f    call 005237EEh"
 "	      004eb924    add esp,4"
 );
 // LINE 744:
 	asm( 
-"	      004eb927    mov eax,[ebp+8]"
+"	      004eb927    mov eax,miffWriter"
 "	      004eb92a    push eax"
 "	      004eb92b    call 0052735Ah"
 "	      004eb930    add esp,4"
 );
 // LINE 745:
 	asm( 
-"	      004eb933    mov eax,[ebp+8]"
+"	      004eb933    mov eax,miffWriter"
 "	      004eb936    push eax"
 "	      004eb937    call 004FDDADh"
 "	      004eb93c    add esp,4"
 );
 // LINE 746:
 	asm( 
-"	      004eb93f    mov eax,[ebp+8]"
+"	      004eb93f    mov eax,miffWriter"
 "	      004eb942    push eax"
 "	      004eb943    call 0052AD88h"
 "	      004eb948    add esp,4"
 );
 // LINE 747:
 	asm( 
-"	      004eb94b    mov eax,[ebp+8]"
+"	      004eb94b    mov eax,miffWriter"
 "	      004eb94e    push eax"
 "	      004eb94f    call 0052DAF7h"
 "	      004eb954    add esp,4"
 );
 // LINE 748:
 	asm( 
-"	      004eb957    mov eax,[ebp+8]"
+"	      004eb957    mov eax,miffWriter"
 "	      004eb95a    push eax"
 "	      004eb95b    call 00534588h"
 "	      004eb960    add esp,4"
 );
 // LINE 749:
 	asm( 
-"	      004eb963    mov eax,[ebp+8]"
+"	      004eb963    mov eax,miffWriter"
 "	      004eb966    push eax"
 "	      004eb967    call 00509023h"
 "	      004eb96c    add esp,4"
@@ -1784,101 +1784,101 @@ void SetUserVars(int32_t * user) {
 );
 // LINE 941:
 	asm( 
-"	      004ebaf2    mov eax,[ebp+8]"
+"	      004ebaf2    mov eax,user"
 "	      004ebaf5    mov eax,[eax]"
 "	      004ebaf7    mov ds:[6C1328h],eax"
 );
 // LINE 942:
 	asm( 
-"	      004ebafc    mov eax,[ebp+8]"
+"	      004ebafc    mov eax,user"
 "	      004ebaff    mov eax,[eax+4]"
 "	      004ebb02    mov ds:[6C128Ch],eax"
 );
 // LINE 943:
 	asm( 
-"	      004ebb07    mov eax,[ebp+8]"
+"	      004ebb07    mov eax,user"
 "	      004ebb0a    mov eax,[eax+8]"
 "	      004ebb0d    mov ds:[6C1284h],eax"
 );
 // LINE 945:
 	asm( 
-"	      004ebb12    mov eax,[ebp+8]"
+"	      004ebb12    mov eax,user"
 "	      004ebb15    mov eax,[eax+0Ch]"
 "	      004ebb18    mov ds:[6C1290h],eax"
 );
 // LINE 946:
 	asm( 
-"	      004ebb1d    mov eax,[ebp+8]"
+"	      004ebb1d    mov eax,user"
 "	      004ebb20    mov eax,[eax+10h]"
 "	      004ebb23    mov ds:[6C1298h],eax"
 );
 // LINE 947:
 	asm( 
-"	      004ebb28    mov eax,[ebp+8]"
+"	      004ebb28    mov eax,user"
 "	      004ebb2b    mov eax,[eax+14h]"
 "	      004ebb2e    mov ds:[6C129Ch],eax"
 );
 // LINE 949:
 	asm( 
-"	      004ebb33    mov eax,[ebp+8]"
+"	      004ebb33    mov eax,user"
 "	      004ebb36    mov eax,[eax+38h]"
 "	      004ebb39    sar eax,10h"
 "	      004ebb3c    mov ds:[5B4744h],eax"
 );
 // LINE 950:
 	asm( 
-"	      004ebb41    mov eax,[ebp+8]"
+"	      004ebb41    mov eax,user"
 "	      004ebb44    mov eax,[eax+3Ch]"
 "	      004ebb47    sar eax,10h"
 "	      004ebb4a    mov ds:[5B4748h],eax"
 );
 // LINE 951:
 	asm( 
-"	      004ebb4f    mov eax,[ebp+8]"
+"	      004ebb4f    mov eax,user"
 "	      004ebb52    mov eax,[eax+48h]"
 "	      004ebb55    sar eax,10h"
 "	      004ebb58    mov ds:[5B4754h],eax"
 );
 // LINE 952:
 	asm( 
-"	      004ebb5d    mov eax,[ebp+8]"
+"	      004ebb5d    mov eax,user"
 "	      004ebb60    mov eax,[eax+4Ch]"
 "	      004ebb63    sar eax,10h"
 "	      004ebb66    mov ds:[5B4758h],eax"
 );
 // LINE 954:
 	asm( 
-"	      004ebb6b    mov eax,[ebp+8]"
+"	      004ebb6b    mov eax,user"
 "	      004ebb6e    mov eax,[eax+28h]"
 "	      004ebb71    mov ds:[5B4898h],eax"
 );
 // LINE 955:
 	asm( 
-"	      004ebb76    mov eax,[ebp+8]"
+"	      004ebb76    mov eax,user"
 "	      004ebb79    mov eax,[eax+2Ch]"
 "	      004ebb7c    mov ds:[5B489Ch],eax"
 );
 // LINE 956:
 	asm( 
-"	      004ebb81    mov eax,[ebp+8]"
+"	      004ebb81    mov eax,user"
 "	      004ebb84    mov eax,[eax+30h]"
 "	      004ebb87    mov ds:[5B48A0h],eax"
 );
 // LINE 957:
 	asm( 
-"	      004ebb8c    mov eax,[ebp+8]"
+"	      004ebb8c    mov eax,user"
 "	      004ebb8f    mov eax,[eax+34h]"
 "	      004ebb92    mov ds:[5B48A4h],eax"
 );
 // LINE 958:
 	asm( 
-"	      004ebb97    mov eax,[ebp+8]"
+"	      004ebb97    mov eax,user"
 "	      004ebb9a    mov eax,[eax+38h]"
 "	      004ebb9d    mov ds:[5B48A8h],eax"
 );
 // LINE 959:
 	asm( 
-"	      004ebba2    mov eax,[ebp+8]"
+"	      004ebba2    mov eax,user"
 "	      004ebba5    mov eax,[eax+3Ch]"
 "	      004ebba8    mov ds:[5B48ACh],eax"
 );

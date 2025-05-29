@@ -15,8 +15,8 @@ void SoundSystem::SoundSystem() {
 "	      0042df66    push ebx"
 "	      0042df67    push esi"
 "	      0042df68    push edi"
-"	      0042df69    mov [ebp-4],ecx"
-"	      0042df6c    mov eax,[ebp-4]"
+"	      0042df69    mov this,ecx"
+"	      0042df6c    mov eax,this"
 "	      0042df6f    mov dword ptr [eax],58F440h"
 );
 // LINE 89:
@@ -33,29 +33,29 @@ void SoundSystem::SoundSystem() {
 );
 // LINE 93:
 	asm( 
-"	      0042df90    mov eax,[ebp-4]"
+"	      0042df90    mov eax,this"
 "	      0042df93    mov dword ptr [eax+8],0"
 );
 // LINE 94:
 	asm( 
-"	      0042df9a    mov eax,[ebp-4]"
+"	      0042df9a    mov eax,this"
 "	      0042df9d    mov dword ptr [eax+0Ch],0"
 );
 // LINE 95:
 	asm( 
-"	      0042dfa4    mov eax,[ebp-4]"
+"	      0042dfa4    mov eax,this"
 "	      0042dfa7    mov dword ptr [eax+10h],0"
 );
 // LINE 96:
 	asm( 
-"	      0042dfae    mov eax,[ebp-4]"
+"	      0042dfae    mov eax,this"
 "	      0042dfb1    mov dword ptr [eax+4],0"
 );
 // LINE 99:
 	asm( 
 "	      0042dfb8    push 60h"
 "	      0042dfba    push 0"
-"	      0042dfbc    mov eax,[ebp-4]"
+"	      0042dfbc    mov eax,this"
 "	      0042dfbf    add eax,14h"
 "	      0042dfc2    push eax"
 "	      0042dfc3    call 0056EB90h"
@@ -63,13 +63,13 @@ void SoundSystem::SoundSystem() {
 );
 // LINE 100:
 	asm( 
-"	      0042dfcb    mov eax,[ebp-4]"
+"	      0042dfcb    mov eax,this"
 "	      0042dfce    mov dword ptr [eax+14h],60h"
 );
 // LINE 104:
 	asm( 
 "	      0042dfd5    jmp near ptr 0042DFDAh"
-"	      0042dfda    mov eax,[ebp-4]"
+"	      0042dfda    mov eax,this"
 "	      0042dfdd    pop edi"
 "	      0042dfde    pop esi"
 "	      0042dfdf    pop ebx"
@@ -88,13 +88,13 @@ void SoundSystem::~SoundSystem() {
 "	      0042dfe8    push ebx"
 "	      0042dfe9    push esi"
 "	      0042dfea    push edi"
-"	      0042dfeb    mov [ebp-4],ecx"
-"	      0042dfee    mov eax,[ebp-4]"
+"	      0042dfeb    mov this,ecx"
+"	      0042dfee    mov eax,this"
 "	      0042dff1    mov dword ptr [eax],58F440h"
 );
 // LINE 108:
 	asm( 
-"	      0042dff7    mov ecx,[ebp-4]"
+"	      0042dff7    mov ecx,this"
 "	      0042dffa    call 0042E2CDh"
 );
 // LINE 109:
@@ -121,11 +121,11 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 "	      0042e00f    push ebx"
 "	      0042e010    push esi"
 "	      0042e011    push edi"
-"	      0042e012    mov [ebp-20h],ecx"
+"	      0042e012    mov this,ecx"
 );
 // LINE 122:
 	asm( 
-"	      0042e015    mov dword ptr [ebp-4],1"
+"	      0042e015    mov bReturnValue,1"
 );
 // LINE 126:
 	asm( 
@@ -137,72 +137,72 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 "	      0042e02d    je near ptr 0042E046h"
 "	      0042e033    mov ecx,[ebp-0Ch]"
 "	      0042e036    call 0042EF87h"
-"	      0042e03b    mov ecx,[ebp-20h]"
+"	      0042e03b    mov ecx,this"
 "	      0042e03e    mov [ecx+8],eax"
 "	      0042e041    jmp near ptr 0042E050h"
-"	      0042e046    mov eax,[ebp-20h]"
+"	      0042e046    mov eax,this"
 "	      0042e049    mov dword ptr [eax+8],0"
 );
 // LINE 134:
 	asm( 
-"	      0042e050    mov eax,[ebp-20h]"
+"	      0042e050    mov eax,this"
 "	      0042e053    mov eax,[eax+8]"
 "	      0042e056    mov word ptr [eax+40h],1"
 );
 // LINE 135:
 	asm( 
-"	      0042e05c    mov eax,[ebp-20h]"
+"	      0042e05c    mov eax,this"
 "	      0042e05f    mov eax,[eax+8]"
 "	      0042e062    mov word ptr [eax+42h],2"
 );
 // LINE 136:
 	asm( 
-"	      0042e068    mov eax,[ebp-20h]"
+"	      0042e068    mov eax,this"
 "	      0042e06b    mov eax,[eax+8]"
 "	      0042e06e    mov dword ptr [eax+44h],5622h"
 );
 // LINE 137:
 	asm( 
-"	      0042e075    mov eax,[ebp-20h]"
+"	      0042e075    mov eax,this"
 "	      0042e078    mov eax,[eax+8]"
 "	      0042e07b    mov dword ptr [eax+48h],0AC44h"
 );
 // LINE 138:
 	asm( 
-"	      0042e082    mov eax,[ebp-20h]"
+"	      0042e082    mov eax,this"
 "	      0042e085    mov eax,[eax+8]"
 "	      0042e088    mov word ptr [eax+4Ch],2"
 );
 // LINE 139:
 	asm( 
-"	      0042e08e    mov eax,[ebp-20h]"
+"	      0042e08e    mov eax,this"
 "	      0042e091    mov eax,[eax+8]"
 "	      0042e094    mov word ptr [eax+4Eh],8"
 );
 // LINE 140:
 	asm( 
-"	      0042e09a    mov eax,[ebp-20h]"
+"	      0042e09a    mov eax,this"
 "	      0042e09d    mov eax,[eax+8]"
 "	      0042e0a0    mov word ptr [eax+50h],0"
 );
 // LINE 145:
 	asm( 
 "	      0042e0a6    push 0"
-"	      0042e0a8    mov eax,[ebp-20h]"
+"	      0042e0a8    mov eax,this"
 "	      0042e0ab    add eax,10h"
 "	      0042e0ae    push eax"
 "	      0042e0af    push 0"
 "	      0042e0b1    call 004C4672h"
-"	      0042e0b6    mov [ebp-8],eax"
+"	      0042e0b6    mov hResult,eax"
 );
 // LINE 146:
 	asm( 
-"	      0042e0b9    cmp dword ptr [ebp-8],0"
+"	      0042e0b9    cmp hResult,0"
 "	      0042e0bd    je near ptr 0042E0F6h"
 );
 // LINE 147:
 	asm( 
-"	      0042e0c3    mov eax,[ebp-8]"
+"	      0042e0c3    mov eax,hResult"
 "	      0042e0c6    mov [ebp-10h],eax"
 "	      0042e0c9    jmp near ptr 0042E0CEh"
 "	      0042e0ce    push 597E64h"
@@ -211,12 +211,12 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 148:
 	asm( 
-"	      0042e0db    mov eax,[ebp-20h]"
+"	      0042e0db    mov eax,this"
 "	      0042e0de    mov dword ptr [eax+10h],0"
 );
 // LINE 149:
 	asm( 
-"	      0042e0e5    mov dword ptr [ebp-4],0"
+"	      0042e0e5    mov bReturnValue,0"
 );
 // LINE 150:
 	asm( 
@@ -225,32 +225,32 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 155:
 	asm( 
-"	      0042e0f6    mov eax,[ebp-20h]"
+"	      0042e0f6    mov eax,this"
 "	      0042e0f9    mov eax,[eax+10h]"
 "	      0042e0fc    mov ds:[597E60h],eax"
 );
 // LINE 158:
 	asm( 
-"	      0042e101    mov eax,[ebp-20h]"
+"	      0042e101    mov eax,this"
 "	      0042e104    add eax,14h"
 "	      0042e107    push eax"
-"	      0042e108    mov eax,[ebp-20h]"
+"	      0042e108    mov eax,this"
 "	      0042e10b    mov eax,[eax+10h]"
 "	      0042e10e    push eax"
-"	      0042e10f    mov eax,[ebp-20h]"
+"	      0042e10f    mov eax,this"
 "	      0042e112    mov eax,[eax+10h]"
 "	      0042e115    mov eax,[eax]"
 "	      0042e117    call dword ptr [eax+10h]"
-"	      0042e11a    mov [ebp-8],eax"
+"	      0042e11a    mov hResult,eax"
 );
 // LINE 159:
 	asm( 
-"	      0042e11d    cmp dword ptr [ebp-8],0"
+"	      0042e11d    cmp hResult,0"
 "	      0042e121    je near ptr 0042E150h"
 );
 // LINE 160:
 	asm( 
-"	      0042e127    mov eax,[ebp-8]"
+"	      0042e127    mov eax,hResult"
 "	      0042e12a    mov [ebp-14h],eax"
 "	      0042e12d    jmp near ptr 0042E132h"
 "	      0042e132    push 597EA4h"
@@ -259,7 +259,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 161:
 	asm( 
-"	      0042e13f    mov dword ptr [ebp-4],0"
+"	      0042e13f    mov bReturnValue,0"
 );
 // LINE 162:
 	asm( 
@@ -269,25 +269,25 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 // LINE 168:
 	asm( 
 "	      0042e150    push 1"
-"	      0042e152    mov eax,[ebp+8]"
+"	      0042e152    mov eax,hWindow"
 "	      0042e155    push eax"
-"	      0042e156    mov eax,[ebp-20h]"
+"	      0042e156    mov eax,this"
 "	      0042e159    mov eax,[eax+10h]"
 "	      0042e15c    push eax"
-"	      0042e15d    mov eax,[ebp-20h]"
+"	      0042e15d    mov eax,this"
 "	      0042e160    mov eax,[eax+10h]"
 "	      0042e163    mov eax,[eax]"
 "	      0042e165    call dword ptr [eax+18h]"
-"	      0042e168    mov [ebp-8],eax"
+"	      0042e168    mov hResult,eax"
 );
 // LINE 169:
 	asm( 
-"	      0042e16b    cmp dword ptr [ebp-8],0"
+"	      0042e16b    cmp hResult,0"
 "	      0042e16f    je near ptr 0042E197h"
 );
 // LINE 170:
 	asm( 
-"	      0042e175    mov eax,[ebp-8]"
+"	      0042e175    mov eax,hResult"
 "	      0042e178    mov [ebp-18h],eax"
 "	      0042e17b    jmp near ptr 0042E180h"
 "	      0042e180    push 597EDCh"
@@ -301,8 +301,8 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 175:
 	asm( 
-"	      0042e197    mov eax,[ebp-20h]"
-"	      0042e19a    mov ecx,[ebp-20h]"
+"	      0042e197    mov eax,this"
+"	      0042e19a    mov ecx,this"
 "	      0042e19d    mov ecx,[ecx+8]"
 "	      0042e1a0    mov edx,[ecx]"
 "	      0042e1a2    mov ecx,[eax+8]"
@@ -312,7 +312,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 176:
 	asm( 
-"	      0042e1b0    mov dword ptr [ebp-4],0"
+"	      0042e1b0    mov bReturnValue,0"
 );
 // LINE 177:
 	asm( 
@@ -321,10 +321,10 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 179:
 	asm( 
-"	      0042e1c1    mov eax,[ebp-20h]"
+"	      0042e1c1    mov eax,this"
 "	      0042e1c4    mov eax,[eax+8]"
 "	      0042e1c7    mov eax,[eax+52h]"
-"	      0042e1ca    mov ecx,[ebp-20h]"
+"	      0042e1ca    mov ecx,this"
 "	      0042e1cd    mov [ecx+0Ch],eax"
 );
 // LINE 191:
@@ -332,23 +332,23 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 "	      0042e1d0    push 1"
 "	      0042e1d2    push 0"
 "	      0042e1d4    push 0"
-"	      0042e1d6    mov eax,[ebp-20h]"
+"	      0042e1d6    mov eax,this"
 "	      0042e1d9    mov eax,[eax+0Ch]"
 "	      0042e1dc    push eax"
-"	      0042e1dd    mov eax,[ebp-20h]"
+"	      0042e1dd    mov eax,this"
 "	      0042e1e0    mov eax,[eax+0Ch]"
 "	      0042e1e3    mov eax,[eax]"
 "	      0042e1e5    call dword ptr [eax+30h]"
-"	      0042e1e8    mov [ebp-8],eax"
+"	      0042e1e8    mov hResult,eax"
 );
 // LINE 192:
 	asm( 
-"	      0042e1eb    cmp dword ptr [ebp-8],0"
+"	      0042e1eb    cmp hResult,0"
 "	      0042e1ef    je near ptr 0042E21Eh"
 );
 // LINE 193:
 	asm( 
-"	      0042e1f5    mov eax,[ebp-8]"
+"	      0042e1f5    mov eax,hResult"
 "	      0042e1f8    mov [ebp-1Ch],eax"
 "	      0042e1fb    jmp near ptr 0042E200h"
 "	      0042e200    push 597F20h"
@@ -357,7 +357,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 194:
 	asm( 
-"	      0042e20d    mov dword ptr [ebp-4],0"
+"	      0042e20d    mov bReturnValue,0"
 );
 // LINE 195:
 	asm( 
@@ -366,7 +366,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 );
 // LINE 197:
 	asm( 
-"	      0042e21e    mov eax,[ebp-20h]"
+"	      0042e21e    mov eax,this"
 "	      0042e221    mov dword ptr [eax+4],1"
 );
 // LINE 198:
@@ -377,15 +377,15 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 // LINE 201:
 ERROR_CLEANUP:
 	asm( 
-"	      0042e232    mov eax,[ebp-20h]"
+"	      0042e232    mov eax,this"
 "	      0042e235    mov eax,[eax+8]"
 "	      0042e238    cmp dword ptr [eax+52h],0"
 "	      0042e23c    je near ptr 0042E26Ch"
 );
 // LINE 202:
 	asm( 
-"	      0042e242    mov eax,[ebp-20h]"
-"	      0042e245    mov ecx,[ebp-20h]"
+"	      0042e242    mov eax,this"
+"	      0042e245    mov ecx,this"
 "	      0042e248    mov ecx,[ecx+8]"
 "	      0042e24b    mov edx,[ecx]"
 "	      0042e24d    mov ecx,[eax+8]"
@@ -393,26 +393,26 @@ ERROR_CLEANUP:
 );
 // LINE 203:
 	asm( 
-"	      0042e253    mov eax,[ebp-20h]"
+"	      0042e253    mov eax,this"
 "	      0042e256    mov dword ptr [eax+0Ch],0"
-"	      0042e25d    mov eax,[ebp-20h]"
+"	      0042e25d    mov eax,this"
 "	      0042e260    mov eax,[eax+0Ch]"
-"	      0042e263    mov ecx,[ebp-20h]"
+"	      0042e263    mov ecx,this"
 "	      0042e266    mov ecx,[ecx+8]"
 "	      0042e269    mov [ecx+52h],eax"
 );
 // LINE 205:
 	asm( 
-"	      0042e26c    mov eax,[ebp-20h]"
+"	      0042e26c    mov eax,this"
 "	      0042e26f    cmp dword ptr [eax+10h],0"
 "	      0042e273    je near ptr 0042E2A0h"
 );
 // LINE 206:
 	asm( 
-"	      0042e279    mov eax,[ebp-20h]"
+"	      0042e279    mov eax,this"
 "	      0042e27c    mov eax,[eax+10h]"
 "	      0042e27f    push eax"
-"	      0042e280    mov eax,[ebp-20h]"
+"	      0042e280    mov eax,this"
 "	      0042e283    mov eax,[eax+10h]"
 "	      0042e286    mov eax,[eax]"
 "	      0042e288    call dword ptr [eax+8]"
@@ -421,13 +421,13 @@ ERROR_CLEANUP:
 	asm( 
 "	      0042e28b    mov dword ptr ds:[597E60h],0"
 "	      0042e295    mov eax,ds:[597E60h]"
-"	      0042e29a    mov ecx,[ebp-20h]"
+"	      0042e29a    mov ecx,this"
 "	      0042e29d    mov [ecx+10h],eax"
 );
 // LINE 216:
 END_OF_ROUTINE:
 	asm( 
-"	      0042e2a0    mov eax,[ebp-4]"
+"	      0042e2a0    mov eax,bReturnValue"
 "	      0042e2a3    jmp near ptr 0042E2C6h"
 );
 // LINE 218:
@@ -456,17 +456,17 @@ void SoundSystem::DeInitialize() {
 "	      0042e2d3    push ebx"
 "	      0042e2d4    push esi"
 "	      0042e2d5    push edi"
-"	      0042e2d6    mov [ebp-0Ch],ecx"
+"	      0042e2d6    mov this,ecx"
 );
 // LINE 232:
 	asm( 
-"	      0042e2d9    mov eax,[ebp-0Ch]"
+"	      0042e2d9    mov eax,this"
 "	      0042e2dc    cmp dword ptr [eax+8],0"
 "	      0042e2e0    je near ptr 0042E31Ah"
 );
 // LINE 233:
 	asm( 
-"	      0042e2e6    mov eax,[ebp-0Ch]"
+"	      0042e2e6    mov eax,this"
 "	      0042e2e9    mov eax,[eax+8]"
 "	      0042e2ec    mov [ebp-8],eax"
 "	      0042e2ef    mov eax,[ebp-8]"
@@ -482,12 +482,12 @@ void SoundSystem::DeInitialize() {
 );
 // LINE 234:
 	asm( 
-"	      0042e310    mov eax,[ebp-0Ch]"
+"	      0042e310    mov eax,this"
 "	      0042e313    mov dword ptr [eax+8],0"
 );
 // LINE 237:
 	asm( 
-"	      0042e31a    mov eax,[ebp-0Ch]"
+"	      0042e31a    mov eax,this"
 "	      0042e31d    mov dword ptr [eax+10h],0"
 );
 // LINE 239:
@@ -511,20 +511,20 @@ int32_t SoundSystem::GetVolume(long * lVolume) {
 "	      0042e334    push ebx"
 "	      0042e335    push esi"
 "	      0042e336    push edi"
-"	      0042e337    mov [ebp-4],ecx"
+"	      0042e337    mov this,ecx"
 );
 // LINE 253:
 	asm( 
-"	      0042e33a    mov eax,[ebp-4]"
+"	      0042e33a    mov eax,this"
 "	      0042e33d    cmp dword ptr [eax+8],0"
 "	      0042e341    je near ptr 0042E366h"
 );
 // LINE 254:
 	asm( 
-"	      0042e347    mov eax,[ebp+8]"
+"	      0042e347    mov eax,lVolume"
 "	      0042e34a    push eax"
-"	      0042e34b    mov eax,[ebp-4]"
-"	      0042e34e    mov ecx,[ebp-4]"
+"	      0042e34b    mov eax,this"
+"	      0042e34e    mov ecx,this"
 "	      0042e351    mov ecx,[ecx+8]"
 "	      0042e354    mov edx,[ecx]"
 "	      0042e356    mov ecx,[eax+8]"
@@ -560,14 +560,14 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 "	      0042e37a    push ebx"
 "	      0042e37b    push esi"
 "	      0042e37c    push edi"
-"	      0042e37d    mov [ebp-4],ecx"
+"	      0042e37d    mov this,ecx"
 );
 // LINE 272:
 	asm( 
-"	      0042e380    mov eax,[ebp+8]"
+"	      0042e380    mov eax,lNewVolume"
 "	      0042e383    push eax"
-"	      0042e384    mov eax,[ebp-4]"
-"	      0042e387    mov ecx,[ebp-4]"
+"	      0042e384    mov eax,this"
+"	      0042e387    mov ecx,this"
 "	      0042e38a    mov ecx,[ecx+8]"
 "	      0042e38d    mov edx,[ecx]"
 "	      0042e38f    mov ecx,[eax+8]"
@@ -596,29 +596,29 @@ void SoundManager::SoundManager() {
 "	      0042e3a7    push ebx"
 "	      0042e3a8    push esi"
 "	      0042e3a9    push edi"
-"	      0042e3aa    mov [ebp-8],ecx"
-"	      0042e3ad    mov eax,[ebp-8]"
+"	      0042e3aa    mov this,ecx"
+"	      0042e3ad    mov eax,this"
 "	      0042e3b0    mov dword ptr [eax],58F448h"
 );
 // LINE 285:
 	asm( 
-"	      0042e3b6    mov dword ptr [ebp-4],0"
+"	      0042e3b6    mov i,0"
 "	      0042e3bd    jmp near ptr 0042E3C5h"
-"	      0042e3c2    inc dword ptr [ebp-4]"
-"	      0042e3c5    cmp dword ptr [ebp-4],80h"
+"	      0042e3c2    inc i"
+"	      0042e3c5    cmp i,80h"
 "	      0042e3cc    jge near ptr 0042E3E5h"
 );
 // LINE 286:
 	asm( 
-"	      0042e3d2    mov eax,[ebp-4]"
-"	      0042e3d5    mov ecx,[ebp-8]"
+"	      0042e3d2    mov eax,i"
+"	      0042e3d5    mov ecx,this"
 "	      0042e3d8    mov dword ptr [ecx+eax*4+4],0"
 "	      0042e3e0    jmp near ptr 0042E3C2h"
 );
 // LINE 287:
 	asm( 
 "	      0042e3e5    jmp near ptr 0042E3EAh"
-"	      0042e3ea    mov eax,[ebp-8]"
+"	      0042e3ea    mov eax,this"
 "	      0042e3ed    pop edi"
 "	      0042e3ee    pop esi"
 "	      0042e3ef    pop ebx"
@@ -637,13 +637,13 @@ void SoundManager::~SoundManager() {
 "	      0042e3f8    push ebx"
 "	      0042e3f9    push esi"
 "	      0042e3fa    push edi"
-"	      0042e3fb    mov [ebp-4],ecx"
-"	      0042e3fe    mov eax,[ebp-4]"
+"	      0042e3fb    mov this,ecx"
+"	      0042e3fe    mov eax,this"
 "	      0042e401    mov dword ptr [eax],58F448h"
 );
 // LINE 291:
 	asm( 
-"	      0042e407    mov ecx,[ebp-4]"
+"	      0042e407    mov ecx,this"
 "	      0042e40a    call 0042E419h"
 );
 // LINE 292:
@@ -669,20 +669,20 @@ void SoundManager::DeleteAllSounds() {
 "	      0042e41f    push ebx"
 "	      0042e420    push esi"
 "	      0042e421    push edi"
-"	      0042e422    mov [ebp-10h],ecx"
+"	      0042e422    mov this,ecx"
 );
 // LINE 297:
 	asm( 
-"	      0042e425    mov dword ptr [ebp-4],0"
+"	      0042e425    mov i,0"
 "	      0042e42c    jmp near ptr 0042E434h"
-"	      0042e431    inc dword ptr [ebp-4]"
-"	      0042e434    cmp dword ptr [ebp-4],80h"
+"	      0042e431    inc i"
+"	      0042e434    cmp i,80h"
 "	      0042e43b    jge near ptr 0042E474h"
 );
 // LINE 298:
 	asm( 
-"	      0042e441    mov eax,[ebp-4]"
-"	      0042e444    mov ecx,[ebp-10h]"
+"	      0042e441    mov eax,i"
+"	      0042e444    mov ecx,this"
 "	      0042e447    mov eax,[ecx+eax*4+4]"
 "	      0042e44b    mov [ebp-0Ch],eax"
 "	      0042e44e    mov eax,[ebp-0Ch]"
@@ -718,19 +718,19 @@ void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
 "	      0042e484    push ebx"
 "	      0042e485    push esi"
 "	      0042e486    push edi"
-"	      0042e487    mov [ebp-0Ch],ecx"
+"	      0042e487    mov this,ecx"
 );
 // LINE 316:
 	asm( 
-"	      0042e48a    mov eax,[ebp+0Ch]"
-"	      0042e48d    mov ecx,[ebp-0Ch]"
+"	      0042e48a    mov eax,nIndex"
+"	      0042e48d    mov ecx,this"
 "	      0042e490    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e495    je near ptr 0042E4C9h"
 );
 // LINE 317:
 	asm( 
-"	      0042e49b    mov eax,[ebp+0Ch]"
-"	      0042e49e    mov ecx,[ebp-0Ch]"
+"	      0042e49b    mov eax,nIndex"
+"	      0042e49e    mov ecx,this"
 "	      0042e4a1    mov eax,[ecx+eax*4+4]"
 "	      0042e4a5    mov [ebp-8],eax"
 "	      0042e4a8    mov eax,[ebp-8]"
@@ -746,9 +746,9 @@ void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
 );
 // LINE 318:
 	asm( 
-"	      0042e4c9    mov eax,[ebp+8]"
-"	      0042e4cc    mov ecx,[ebp+0Ch]"
-"	      0042e4cf    mov edx,[ebp-0Ch]"
+"	      0042e4c9    mov eax,soundToAdd"
+"	      0042e4cc    mov ecx,nIndex"
+"	      0042e4cf    mov edx,this"
 "	      0042e4d2    mov [edx+ecx*4+4],eax"
 );
 // LINE 319:
@@ -774,7 +774,7 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 "	      0042e4e8    push ebx"
 "	      0042e4e9    push esi"
 "	      0042e4ea    push edi"
-"	      0042e4eb    mov [ebp-14h],ecx"
+"	      0042e4eb    mov this,ecx"
 );
 // LINE 341:
 	asm( 
@@ -784,25 +784,25 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 "	      0042e4f8    mov [ebp-8],eax"
 "	      0042e4fb    cmp dword ptr [ebp-8],0"
 "	      0042e4ff    je near ptr 0042E519h"
-"	      0042e505    mov eax,[ebp+8]"
+"	      0042e505    mov eax,lResID"
 "	      0042e508    push eax"
 "	      0042e509    mov ecx,[ebp-8]"
 "	      0042e50c    call 0042F296h"
-"	      0042e511    mov [ebp-4],eax"
+"	      0042e511    mov newDigitalSound,eax"
 "	      0042e514    jmp near ptr 0042E520h"
-"	      0042e519    mov dword ptr [ebp-4],0"
+"	      0042e519    mov newDigitalSound,0"
 );
 // LINE 342:
 	asm( 
-"	      0042e520    mov eax,[ebp+0Ch]"
-"	      0042e523    mov ecx,[ebp-14h]"
+"	      0042e520    mov eax,nIndex"
+"	      0042e523    mov ecx,this"
 "	      0042e526    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e52b    je near ptr 0042E55Fh"
 );
 // LINE 343:
 	asm( 
-"	      0042e531    mov eax,[ebp+0Ch]"
-"	      0042e534    mov ecx,[ebp-14h]"
+"	      0042e531    mov eax,nIndex"
+"	      0042e534    mov ecx,this"
 "	      0042e537    mov eax,[ecx+eax*4+4]"
 "	      0042e53b    mov [ebp-10h],eax"
 "	      0042e53e    mov eax,[ebp-10h]"
@@ -818,9 +818,9 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 );
 // LINE 344:
 	asm( 
-"	      0042e55f    mov eax,[ebp-4]"
-"	      0042e562    mov ecx,[ebp+0Ch]"
-"	      0042e565    mov edx,[ebp-14h]"
+"	      0042e55f    mov eax,newDigitalSound"
+"	      0042e562    mov ecx,nIndex"
+"	      0042e565    mov edx,this"
 "	      0042e568    mov [edx+ecx*4+4],eax"
 );
 // LINE 345:
@@ -846,7 +846,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 "	      0042e57e    push ebx"
 "	      0042e57f    push esi"
 "	      0042e580    push edi"
-"	      0042e581    mov [ebp-14h],ecx"
+"	      0042e581    mov this,ecx"
 );
 // LINE 348:
 	asm( 
@@ -856,27 +856,27 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 "	      0042e58e    mov [ebp-8],eax"
 "	      0042e591    cmp dword ptr [ebp-8],0"
 "	      0042e595    je near ptr 0042E5B3h"
-"	      0042e59b    mov eax,[ebp+10h]"
+"	      0042e59b    mov eax,nStreamingType"
 "	      0042e59e    push eax"
-"	      0042e59f    mov eax,[ebp+8]"
+"	      0042e59f    mov eax,sNewSoundFile"
 "	      0042e5a2    push eax"
 "	      0042e5a3    mov ecx,[ebp-8]"
 "	      0042e5a6    call 0042F00Fh"
-"	      0042e5ab    mov [ebp-4],eax"
+"	      0042e5ab    mov newDigitalSound,eax"
 "	      0042e5ae    jmp near ptr 0042E5BAh"
-"	      0042e5b3    mov dword ptr [ebp-4],0"
+"	      0042e5b3    mov newDigitalSound,0"
 );
 // LINE 349:
 	asm( 
-"	      0042e5ba    mov eax,[ebp+0Ch]"
-"	      0042e5bd    mov ecx,[ebp-14h]"
+"	      0042e5ba    mov eax,nIndex"
+"	      0042e5bd    mov ecx,this"
 "	      0042e5c0    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e5c5    je near ptr 0042E5F9h"
 );
 // LINE 350:
 	asm( 
-"	      0042e5cb    mov eax,[ebp+0Ch]"
-"	      0042e5ce    mov ecx,[ebp-14h]"
+"	      0042e5cb    mov eax,nIndex"
+"	      0042e5ce    mov ecx,this"
 "	      0042e5d1    mov eax,[ecx+eax*4+4]"
 "	      0042e5d5    mov [ebp-10h],eax"
 "	      0042e5d8    mov eax,[ebp-10h]"
@@ -892,9 +892,9 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 );
 // LINE 351:
 	asm( 
-"	      0042e5f9    mov eax,[ebp-4]"
-"	      0042e5fc    mov ecx,[ebp+0Ch]"
-"	      0042e5ff    mov edx,[ebp-14h]"
+"	      0042e5f9    mov eax,newDigitalSound"
+"	      0042e5fc    mov ecx,nIndex"
+"	      0042e5ff    mov edx,this"
 "	      0042e602    mov [edx+ecx*4+4],eax"
 );
 // LINE 352:
@@ -918,25 +918,25 @@ long SoundManager::PlaySoundA(int32_t nIndex, long bPlayLooping, int32_t nDuplic
 "	      0042e618    push ebx"
 "	      0042e619    push esi"
 "	      0042e61a    push edi"
-"	      0042e61b    mov [ebp-4],ecx"
+"	      0042e61b    mov this,ecx"
 );
 // LINE 364:
 	asm( 
-"	      0042e61e    mov eax,[ebp+8]"
-"	      0042e621    mov ecx,[ebp-4]"
+"	      0042e61e    mov eax,nIndex"
+"	      0042e621    mov ecx,this"
 "	      0042e624    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e629    je near ptr 0042E655h"
 );
 // LINE 365:
 	asm( 
-"	      0042e62f    mov eax,[ebp+10h]"
+"	      0042e62f    mov eax,nDuplicateType"
 "	      0042e632    push eax"
-"	      0042e633    mov eax,[ebp+0Ch]"
+"	      0042e633    mov eax,bPlayLooping"
 "	      0042e636    push eax"
-"	      0042e637    mov eax,[ebp+8]"
-"	      0042e63a    mov ecx,[ebp-4]"
-"	      0042e63d    mov edx,[ebp+8]"
-"	      0042e640    mov ebx,[ebp-4]"
+"	      0042e637    mov eax,nIndex"
+"	      0042e63a    mov ecx,this"
+"	      0042e63d    mov edx,nIndex"
+"	      0042e640    mov ebx,this"
 "	      0042e643    mov edx,[ebx+edx*4+4]"
 "	      0042e647    mov edx,[edx]"
 "	      0042e649    mov ecx,[ecx+eax*4+4]"
@@ -968,21 +968,21 @@ void SoundManager::StopSound(int32_t nIndex) {
 "	      0042e669    push ebx"
 "	      0042e66a    push esi"
 "	      0042e66b    push edi"
-"	      0042e66c    mov [ebp-4],ecx"
+"	      0042e66c    mov this,ecx"
 );
 // LINE 379:
 	asm( 
-"	      0042e66f    mov eax,[ebp+8]"
-"	      0042e672    mov ecx,[ebp-4]"
+"	      0042e66f    mov eax,nIndex"
+"	      0042e672    mov ecx,this"
 "	      0042e675    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e67a    je near ptr 0042E699h"
 );
 // LINE 380:
 	asm( 
-"	      0042e680    mov eax,[ebp+8]"
-"	      0042e683    mov ecx,[ebp-4]"
-"	      0042e686    mov edx,[ebp+8]"
-"	      0042e689    mov ebx,[ebp-4]"
+"	      0042e680    mov eax,nIndex"
+"	      0042e683    mov ecx,this"
+"	      0042e686    mov edx,nIndex"
+"	      0042e689    mov ebx,this"
 "	      0042e68c    mov edx,[ebx+edx*4+4]"
 "	      0042e690    mov edx,[edx]"
 "	      0042e692    mov ecx,[ecx+eax*4+4]"
@@ -1011,29 +1011,29 @@ void SoundManager::StopAllSounds() {
 "	      0042e6ab    push ebx"
 "	      0042e6ac    push esi"
 "	      0042e6ad    push edi"
-"	      0042e6ae    mov [ebp-8],ecx"
+"	      0042e6ae    mov this,ecx"
 );
 // LINE 394:
 	asm( 
-"	      0042e6b1    mov dword ptr [ebp-4],0"
+"	      0042e6b1    mov i,0"
 "	      0042e6b8    jmp near ptr 0042E6C0h"
-"	      0042e6bd    inc dword ptr [ebp-4]"
-"	      0042e6c0    cmp dword ptr [ebp-4],80h"
+"	      0042e6bd    inc i"
+"	      0042e6c0    cmp i,80h"
 "	      0042e6c7    jge near ptr 0042E6FCh"
 );
 // LINE 395:
 	asm( 
-"	      0042e6cd    mov eax,[ebp-4]"
-"	      0042e6d0    mov ecx,[ebp-8]"
+"	      0042e6cd    mov eax,i"
+"	      0042e6d0    mov ecx,this"
 "	      0042e6d3    cmp dword ptr [ecx+eax*4+4],0"
 "	      0042e6d8    je near ptr 0042E6F7h"
 );
 // LINE 396:
 	asm( 
-"	      0042e6de    mov eax,[ebp-4]"
-"	      0042e6e1    mov ecx,[ebp-8]"
-"	      0042e6e4    mov edx,[ebp-4]"
-"	      0042e6e7    mov ebx,[ebp-8]"
+"	      0042e6de    mov eax,i"
+"	      0042e6e1    mov ecx,this"
+"	      0042e6e4    mov edx,i"
+"	      0042e6e7    mov ebx,this"
 "	      0042e6ea    mov edx,[ebx+edx*4+4]"
 "	      0042e6ee    mov edx,[edx]"
 "	      0042e6f0    mov ecx,[ecx+eax*4+4]"
@@ -1064,7 +1064,7 @@ void Sound::Sound() {
 "	      0042e70c    push ebx"
 "	      0042e70d    push esi"
 "	      0042e70e    push edi"
-"	      0042e70f    mov [ebp-8],ecx"
+"	      0042e70f    mov this,ecx"
 "	      0042e712    push 10h"
 "	      0042e714    call 0056A600h"
 "	      0042e719    add esp,4"
@@ -1083,66 +1083,66 @@ void Sound::Sound() {
 "	      0042e74b    mov dword ptr [eax+0Ch],1"
 "	      0042e752    jmp near ptr 0042E757h"
 "	      0042e757    mov eax,[ebp-4]"
-"	      0042e75a    mov ecx,[ebp-8]"
+"	      0042e75a    mov ecx,this"
 "	      0042e75d    mov [ecx+18h],eax"
 "	      0042e760    jmp near ptr 0042E76Fh"
-"	      0042e765    mov eax,[ebp-8]"
+"	      0042e765    mov eax,this"
 "	      0042e768    mov dword ptr [eax+18h],0"
-"	      0042e76f    mov eax,[ebp-8]"
+"	      0042e76f    mov eax,this"
 "	      0042e772    mov dword ptr [eax+14h],0"
 "	      0042e779    jmp near ptr 0042E77Eh"
-"	      0042e77e    mov eax,[ebp-8]"
+"	      0042e77e    mov eax,this"
 "	      0042e781    mov dword ptr [eax],58F458h"
 );
 // LINE 414:
 	asm( 
-"	      0042e787    mov eax,[ebp-8]"
+"	      0042e787    mov eax,this"
 "	      0042e78a    mov dword ptr [eax+4],1"
 );
 // LINE 415:
 	asm( 
-"	      0042e791    mov eax,[ebp-8]"
+"	      0042e791    mov eax,this"
 "	      0042e794    mov dword ptr [eax+8],3"
 );
 // LINE 416:
 	asm( 
-"	      0042e79b    mov eax,[ebp-8]"
+"	      0042e79b    mov eax,this"
 "	      0042e79e    mov dword ptr [eax+0Ch],0"
 );
 // LINE 417:
 	asm( 
-"	      0042e7a5    mov eax,[ebp-8]"
+"	      0042e7a5    mov eax,this"
 "	      0042e7a8    mov dword ptr [eax+10h],0"
 );
 // LINE 418:
 	asm( 
-"	      0042e7af    mov eax,[ebp-8]"
+"	      0042e7af    mov eax,this"
 "	      0042e7b2    mov dword ptr [eax+1Ch],0"
 );
 // LINE 419:
 	asm( 
-"	      0042e7b9    mov eax,[ebp-8]"
+"	      0042e7b9    mov eax,this"
 "	      0042e7bc    mov dword ptr [eax+20h],0"
 );
 // LINE 420:
 	asm( 
-"	      0042e7c3    mov eax,[ebp-8]"
+"	      0042e7c3    mov eax,this"
 "	      0042e7c6    mov dword ptr [eax+24h],2710h"
 );
 // LINE 421:
 	asm( 
-"	      0042e7cd    mov eax,[ebp-8]"
+"	      0042e7cd    mov eax,this"
 "	      0042e7d0    mov dword ptr [eax+28h],0"
 );
 // LINE 422:
 	asm( 
-"	      0042e7d7    mov eax,[ebp-8]"
+"	      0042e7d7    mov eax,this"
 "	      0042e7da    mov dword ptr [eax+30h],0"
 );
 // LINE 423:
 	asm( 
 "	      0042e7e1    jmp near ptr 0042E7E6h"
-"	      0042e7e6    mov eax,[ebp-8]"
+"	      0042e7e6    mov eax,this"
 "	      0042e7e9    pop edi"
 "	      0042e7ea    pop esi"
 "	      0042e7eb    pop ebx"
@@ -1161,21 +1161,21 @@ void Sound::~Sound() {
 "	      0042e7f4    push ebx"
 "	      0042e7f5    push esi"
 "	      0042e7f6    push edi"
-"	      0042e7f7    mov [ebp-1Ch],ecx"
-"	      0042e7fa    mov eax,[ebp-1Ch]"
+"	      0042e7f7    mov this,ecx"
+"	      0042e7fa    mov eax,this"
 "	      0042e7fd    mov dword ptr [eax],58F458h"
 );
 // LINE 434:
 	asm( 
 "	      0042e803    jmp near ptr 0042E808h"
-"	      0042e808    mov eax,[ebp-1Ch]"
+"	      0042e808    mov eax,this"
 "	      0042e80b    mov eax,[eax+18h]"
 "	      0042e80e    dec dword ptr [eax+0Ch]"
-"	      0042e811    mov eax,[ebp-1Ch]"
+"	      0042e811    mov eax,this"
 "	      0042e814    mov eax,[eax+18h]"
 "	      0042e817    cmp dword ptr [eax+0Ch],0"
 "	      0042e81b    jne near ptr 0042E894h"
-"	      0042e821    mov eax,[ebp-1Ch]"
+"	      0042e821    mov eax,this"
 "	      0042e824    mov eax,[eax+18h]"
 "	      0042e827    mov [ebp-10h],eax"
 "	      0042e82a    mov eax,[ebp-10h]"
@@ -1207,10 +1207,10 @@ void Sound::~Sound() {
 "	      0042e88a    jmp near ptr 0042E88Fh"
 "	      0042e88f    jmp near ptr 0042E894h"
 "	      0042e894    jmp near ptr 0042E899h"
-"	      0042e899    mov eax,[ebp-1Ch]"
+"	      0042e899    mov eax,this"
 "	      0042e89c    cmp dword ptr [eax+14h],0"
 "	      0042e8a0    je near ptr 0042E8C1h"
-"	      0042e8a6    mov eax,[ebp-1Ch]"
+"	      0042e8a6    mov eax,this"
 "	      0042e8a9    mov eax,[eax+14h]"
 "	      0042e8ac    mov [ebp-4],eax"
 "	      0042e8af    mov eax,[ebp-4]"
@@ -1238,59 +1238,59 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 "	      0042e8d1    push ebx"
 "	      0042e8d2    push esi"
 "	      0042e8d3    push edi"
-"	      0042e8d4    mov [ebp-28h],ecx"
+"	      0042e8d4    mov this,ecx"
 );
 // LINE 444:
 	asm( 
-"	      0042e8d7    mov eax,[ebp+8]"
+"	      0042e8d7    mov eax,newSound"
 "	      0042e8da    mov eax,[eax+4]"
-"	      0042e8dd    mov ecx,[ebp-28h]"
+"	      0042e8dd    mov ecx,this"
 "	      0042e8e0    mov [ecx+4],eax"
 );
 // LINE 445:
 	asm( 
-"	      0042e8e3    mov eax,[ebp+8]"
+"	      0042e8e3    mov eax,newSound"
 "	      0042e8e6    mov eax,[eax+8]"
-"	      0042e8e9    mov ecx,[ebp-28h]"
+"	      0042e8e9    mov ecx,this"
 "	      0042e8ec    mov [ecx+8],eax"
 );
 // LINE 446:
 	asm( 
-"	      0042e8ef    mov eax,[ebp+8]"
+"	      0042e8ef    mov eax,newSound"
 "	      0042e8f2    mov eax,[eax+0Ch]"
-"	      0042e8f5    mov ecx,[ebp-28h]"
+"	      0042e8f5    mov ecx,this"
 "	      0042e8f8    mov [ecx+0Ch],eax"
 );
 // LINE 447:
 	asm( 
-"	      0042e8fb    mov eax,[ebp+8]"
+"	      0042e8fb    mov eax,newSound"
 "	      0042e8fe    mov eax,[eax+1Ch]"
-"	      0042e901    mov ecx,[ebp-28h]"
+"	      0042e901    mov ecx,this"
 "	      0042e904    mov [ecx+1Ch],eax"
 );
 // LINE 448:
 	asm( 
-"	      0042e907    mov eax,[ebp+8]"
+"	      0042e907    mov eax,newSound"
 "	      0042e90a    mov eax,[eax+20h]"
-"	      0042e90d    mov ecx,[ebp-28h]"
+"	      0042e90d    mov ecx,this"
 "	      0042e910    mov [ecx+20h],eax"
 );
 // LINE 449:
 	asm( 
-"	      0042e913    mov eax,[ebp-28h]"
+"	      0042e913    mov eax,this"
 "	      0042e916    add eax,14h"
-"	      0042e919    mov ecx,[ebp+8]"
+"	      0042e919    mov ecx,newSound"
 "	      0042e91c    add ecx,14h"
 "	      0042e91f    cmp eax,ecx"
 "	      0042e921    je near ptr 0042EADAh"
-"	      0042e927    mov eax,[ebp-28h]"
+"	      0042e927    mov eax,this"
 "	      0042e92a    mov eax,[eax+18h]"
 "	      0042e92d    dec dword ptr [eax+0Ch]"
-"	      0042e930    mov eax,[ebp-28h]"
+"	      0042e930    mov eax,this"
 "	      0042e933    mov eax,[eax+18h]"
 "	      0042e936    cmp dword ptr [eax+0Ch],0"
 "	      0042e93a    jne near ptr 0042E9B3h"
-"	      0042e940    mov eax,[ebp-28h]"
+"	      0042e940    mov eax,this"
 "	      0042e943    mov eax,[eax+18h]"
 "	      0042e946    mov [ebp-0Ch],eax"
 "	      0042e949    mov eax,[ebp-0Ch]"
@@ -1323,15 +1323,15 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 "	      0042e9ae    jmp near ptr 0042E9B3h"
 "	      0042e9b3    jmp near ptr 0042E9B8h"
 "	      0042e9b8    jmp near ptr 0042E9BDh"
-"	      0042e9bd    mov eax,[ebp+8]"
+"	      0042e9bd    mov eax,newSound"
 "	      0042e9c0    mov eax,[eax+18h]"
 "	      0042e9c3    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0042e9c7    je near ptr 0042E9E7h"
-"	      0042e9cd    mov eax,[ebp+8]"
+"	      0042e9cd    mov eax,newSound"
 "	      0042e9d0    mov eax,[eax+18h]"
-"	      0042e9d3    mov ecx,[ebp-28h]"
+"	      0042e9d3    mov ecx,this"
 "	      0042e9d6    mov [ecx+18h],eax"
-"	      0042e9d9    mov eax,[ebp-28h]"
+"	      0042e9d9    mov eax,this"
 "	      0042e9dc    mov eax,[eax+18h]"
 "	      0042e9df    inc dword ptr [eax+0Ch]"
 "	      0042e9e2    jmp near ptr 0042EADAh"
@@ -1342,7 +1342,7 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 "	      0042e9f4    cmp dword ptr [ebp-4],0"
 "	      0042e9f8    je near ptr 0042EAD0h"
 "	      0042e9fe    jmp near ptr 0042EA03h"
-"	      0042ea03    mov eax,[ebp+8]"
+"	      0042ea03    mov eax,newSound"
 "	      0042ea06    mov eax,[eax+18h]"
 "	      0042ea09    mov eax,[eax+4]"
 "	      0042ea0c    mov [ebp-24h],eax"
@@ -1364,11 +1364,11 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 "	      0042ea40    mov ecx,[ebp-4]"
 "	      0042ea43    mov [ecx],eax"
 "	      0042ea45    jmp near ptr 0042EA4Ah"
-"	      0042ea4a    mov eax,[ebp+8]"
+"	      0042ea4a    mov eax,newSound"
 "	      0042ea4d    mov eax,[eax+18h]"
 "	      0042ea50    cmp dword ptr [eax+4],0"
 "	      0042ea54    je near ptr 0042EA6Fh"
-"	      0042ea5a    mov eax,[ebp+8]"
+"	      0042ea5a    mov eax,newSound"
 "	      0042ea5d    mov eax,[eax+18h]"
 "	      0042ea60    mov eax,[eax]"
 "	      0042ea62    mov [ebp-18h],eax"
@@ -1398,23 +1398,23 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 "	      0042eab6    mov dword ptr [eax+0Ch],1"
 "	      0042eabd    jmp near ptr 0042EAC2h"
 "	      0042eac2    mov eax,[ebp-4]"
-"	      0042eac5    mov ecx,[ebp-28h]"
+"	      0042eac5    mov ecx,this"
 "	      0042eac8    mov [ecx+18h],eax"
 "	      0042eacb    jmp near ptr 0042EADAh"
-"	      0042ead0    mov eax,[ebp-28h]"
+"	      0042ead0    mov eax,this"
 "	      0042ead3    mov dword ptr [eax+18h],0"
 "	      0042eada    jmp near ptr 0042EADFh"
 );
 // LINE 450:
 	asm( 
-"	      0042eadf    mov eax,[ebp+8]"
+"	      0042eadf    mov eax,newSound"
 "	      0042eae2    mov eax,[eax+10h]"
-"	      0042eae5    mov ecx,[ebp-28h]"
+"	      0042eae5    mov ecx,this"
 "	      0042eae8    mov [ecx+10h],eax"
 );
 // LINE 451:
 	asm( 
-"	      0042eaeb    mov eax,[ebp-28h]"
+"	      0042eaeb    mov eax,this"
 "	      0042eaee    jmp near ptr 0042EAF3h"
 );
 // LINE 452:
@@ -1439,8 +1439,8 @@ int32_t operator<(const class Sound& compareSound1, const class Sound& compareSo
 );
 // LINE 468:
 	asm( 
-"	      0042eb00    mov eax,[ebp+0Ch]"
-"	      0042eb03    mov ecx,[ebp+8]"
+"	      0042eb00    mov eax,compareSound2"
+"	      0042eb03    mov ecx,compareSound1"
 "	      0042eb06    mov ecx,[ecx+0Ch]"
 "	      0042eb09    cmp [eax+0Ch],ecx"
 "	      0042eb0c    jle near ptr 0042EB1Ch"
@@ -1472,8 +1472,8 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 );
 // LINE 485:
 	asm( 
-"	      0042eb31    mov eax,[ebp+8]"
-"	      0042eb34    mov ecx,[ebp+0Ch]"
+"	      0042eb31    mov eax,compareSound1"
+"	      0042eb34    mov ecx,compareSound2"
 "	      0042eb37    mov ecx,[ecx+0Ch]"
 "	      0042eb3a    cmp [eax+0Ch],ecx"
 "	      0042eb3d    je near ptr 0042EB4Ah"
@@ -1485,19 +1485,19 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 );
 // LINE 487:
 	asm( 
-"	      0042eb4a    mov eax,[ebp+8]"
+"	      0042eb4a    mov eax,compareSound1"
 "	      0042eb4d    cmp dword ptr [eax+4],1"
 "	      0042eb51    jne near ptr 0042ED28h"
 );
 // LINE 488:
 	asm( 
 "	      0042eb57    jmp near ptr 0042EB5Ch"
-"	      0042eb5c    mov eax,[ebp+8]"
+"	      0042eb5c    mov eax,compareSound1"
 "	      0042eb5f    mov eax,[eax+18h]"
 "	      0042eb62    cmp dword ptr [eax+4],0FFFFFFFFh"
 "	      0042eb66    jae near ptr 0042EB82h"
 "	      0042eb6c    jmp near ptr 0042EB71h"
-"	      0042eb71    mov eax,[ebp+8]"
+"	      0042eb71    mov eax,compareSound1"
 "	      0042eb74    mov eax,[eax+18h]"
 "	      0042eb77    mov eax,[eax+4]"
 "	      0042eb7a    mov [ebp-4],eax"
@@ -1505,11 +1505,11 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 "	      0042eb82    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0042eb89    jmp near ptr 0042EB8Eh"
 "	      0042eb8e    jmp near ptr 0042EB93h"
-"	      0042eb93    mov eax,[ebp+0Ch]"
+"	      0042eb93    mov eax,compareSound2"
 "	      0042eb96    mov eax,[eax+18h]"
 "	      0042eb99    cmp dword ptr [eax+4],0"
 "	      0042eb9d    je near ptr 0042EBB8h"
-"	      0042eba3    mov eax,[ebp+0Ch]"
+"	      0042eba3    mov eax,compareSound2"
 "	      0042eba6    mov eax,[eax+18h]"
 "	      0042eba9    mov eax,[eax]"
 "	      0042ebab    mov [ebp-8],eax"
@@ -1517,12 +1517,12 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 "	      0042ebb3    jmp near ptr 0042EBC4h"
 "	      0042ebb8    mov dword ptr [ebp-8],0"
 "	      0042ebbf    jmp near ptr 0042EBC4h"
-"	      0042ebc4    mov eax,[ebp+0Ch]"
+"	      0042ebc4    mov eax,compareSound2"
 "	      0042ebc7    mov eax,[eax+18h]"
 "	      0042ebca    mov eax,[eax+4]"
 "	      0042ebcd    mov [ebp-20h],eax"
 "	      0042ebd0    jmp near ptr 0042EBD5h"
-"	      0042ebd5    mov eax,[ebp+8]"
+"	      0042ebd5    mov eax,compareSound1"
 "	      0042ebd8    mov eax,[eax+18h]"
 "	      0042ebdb    cmp dword ptr [eax+4],0"
 "	      0042ebdf    jae near ptr 0042EC17h"
@@ -1546,7 +1546,7 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 "	      0042ec25    mov eax,ecx"
 "	      0042ec27    mov [ebp-10h],eax"
 "	      0042ec2a    jmp near ptr 0042EC2Fh"
-"	      0042ec2f    mov eax,[ebp+8]"
+"	      0042ec2f    mov eax,compareSound1"
 "	      0042ec32    mov eax,[eax+18h]"
 "	      0042ec35    cmp dword ptr [eax+4],0"
 "	      0042ec39    jne near ptr 0042EC7Bh"
@@ -1565,11 +1565,11 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 "	      0042ec6f    mov dword ptr [ebp-1Ch],0"
 "	      0042ec76    jmp near ptr 0042ECFBh"
 "	      0042ec7b    jmp near ptr 0042EC80h"
-"	      0042ec80    mov eax,[ebp+8]"
+"	      0042ec80    mov eax,compareSound1"
 "	      0042ec83    mov eax,[eax+18h]"
 "	      0042ec86    cmp dword ptr [eax+4],0"
 "	      0042ec8a    je near ptr 0042ECA5h"
-"	      0042ec90    mov eax,[ebp+8]"
+"	      0042ec90    mov eax,compareSound1"
 "	      0042ec93    mov eax,[eax+18h]"
 "	      0042ec96    mov eax,[eax]"
 "	      0042ec98    mov [ebp-14h],eax"
@@ -1593,7 +1593,7 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 "	      0042ecda    mov [ebp-1Ch],eax"
 "	      0042ecdd    jmp near ptr 0042ECF6h"
 "	      0042ece2    jmp near ptr 0042ECE7h"
-"	      0042ece7    mov eax,[ebp+8]"
+"	      0042ece7    mov eax,compareSound1"
 "	      0042ecea    mov eax,[eax+18h]"
 "	      0042eced    mov eax,[eax+4]"
 "	      0042ecf0    sub eax,[ebp-20h]"
@@ -1612,14 +1612,14 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 // LINE 489:
 	asm( 
 "	      0042ed23    jmp near ptr 0042ED58h"
-"	      0042ed28    mov eax,[ebp+8]"
+"	      0042ed28    mov eax,compareSound1"
 "	      0042ed2b    cmp dword ptr [eax+4],0"
 "	      0042ed2f    jne near ptr 0042ED58h"
 );
 // LINE 490:
 	asm( 
-"	      0042ed35    mov eax,[ebp+8]"
-"	      0042ed38    mov ecx,[ebp+0Ch]"
+"	      0042ed35    mov eax,compareSound1"
+"	      0042ed38    mov ecx,compareSound2"
 "	      0042ed3b    mov ecx,[ecx+10h]"
 "	      0042ed3e    cmp [eax+10h],ecx"
 "	      0042ed41    jne near ptr 0042ED51h"
@@ -1653,22 +1653,22 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 "	      0042ed6d    push ebx"
 "	      0042ed6e    push esi"
 "	      0042ed6f    push edi"
-"	      0042ed70    mov [ebp-28h],ecx"
+"	      0042ed70    mov this,ecx"
 );
 // LINE 502:
 	asm( 
-"	      0042ed73    mov eax,[ebp-28h]"
+"	      0042ed73    mov eax,this"
 "	      0042ed76    add eax,14h"
-"	      0042ed79    cmp eax,[ebp+8]"
+"	      0042ed79    cmp eax,sNewSoundFile"
 "	      0042ed7c    je near ptr 0042EF35h"
-"	      0042ed82    mov eax,[ebp-28h]"
+"	      0042ed82    mov eax,this"
 "	      0042ed85    mov eax,[eax+18h]"
 "	      0042ed88    dec dword ptr [eax+0Ch]"
-"	      0042ed8b    mov eax,[ebp-28h]"
+"	      0042ed8b    mov eax,this"
 "	      0042ed8e    mov eax,[eax+18h]"
 "	      0042ed91    cmp dword ptr [eax+0Ch],0"
 "	      0042ed95    jne near ptr 0042EE0Eh"
-"	      0042ed9b    mov eax,[ebp-28h]"
+"	      0042ed9b    mov eax,this"
 "	      0042ed9e    mov eax,[eax+18h]"
 "	      0042eda1    mov [ebp-0Ch],eax"
 "	      0042eda4    mov eax,[ebp-0Ch]"
@@ -1701,15 +1701,15 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 "	      0042ee09    jmp near ptr 0042EE0Eh"
 "	      0042ee0e    jmp near ptr 0042EE13h"
 "	      0042ee13    jmp near ptr 0042EE18h"
-"	      0042ee18    mov eax,[ebp+8]"
+"	      0042ee18    mov eax,sNewSoundFile"
 "	      0042ee1b    mov eax,[eax+4]"
 "	      0042ee1e    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0042ee22    je near ptr 0042EE42h"
-"	      0042ee28    mov eax,[ebp+8]"
+"	      0042ee28    mov eax,sNewSoundFile"
 "	      0042ee2b    mov eax,[eax+4]"
-"	      0042ee2e    mov ecx,[ebp-28h]"
+"	      0042ee2e    mov ecx,this"
 "	      0042ee31    mov [ecx+18h],eax"
-"	      0042ee34    mov eax,[ebp-28h]"
+"	      0042ee34    mov eax,this"
 "	      0042ee37    mov eax,[eax+18h]"
 "	      0042ee3a    inc dword ptr [eax+0Ch]"
 "	      0042ee3d    jmp near ptr 0042EF35h"
@@ -1720,7 +1720,7 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 "	      0042ee4f    cmp dword ptr [ebp-4],0"
 "	      0042ee53    je near ptr 0042EF2Bh"
 "	      0042ee59    jmp near ptr 0042EE5Eh"
-"	      0042ee5e    mov eax,[ebp+8]"
+"	      0042ee5e    mov eax,sNewSoundFile"
 "	      0042ee61    mov eax,[eax+4]"
 "	      0042ee64    mov eax,[eax+4]"
 "	      0042ee67    mov [ebp-24h],eax"
@@ -1742,11 +1742,11 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 "	      0042ee9b    mov ecx,[ebp-4]"
 "	      0042ee9e    mov [ecx],eax"
 "	      0042eea0    jmp near ptr 0042EEA5h"
-"	      0042eea5    mov eax,[ebp+8]"
+"	      0042eea5    mov eax,sNewSoundFile"
 "	      0042eea8    mov eax,[eax+4]"
 "	      0042eeab    cmp dword ptr [eax+4],0"
 "	      0042eeaf    je near ptr 0042EECAh"
-"	      0042eeb5    mov eax,[ebp+8]"
+"	      0042eeb5    mov eax,sNewSoundFile"
 "	      0042eeb8    mov eax,[eax+4]"
 "	      0042eebb    mov eax,[eax]"
 "	      0042eebd    mov [ebp-18h],eax"
@@ -1776,21 +1776,21 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 "	      0042ef11    mov dword ptr [eax+0Ch],1"
 "	      0042ef18    jmp near ptr 0042EF1Dh"
 "	      0042ef1d    mov eax,[ebp-4]"
-"	      0042ef20    mov ecx,[ebp-28h]"
+"	      0042ef20    mov ecx,this"
 "	      0042ef23    mov [ecx+18h],eax"
 "	      0042ef26    jmp near ptr 0042EF35h"
-"	      0042ef2b    mov eax,[ebp-28h]"
+"	      0042ef2b    mov eax,this"
 "	      0042ef2e    mov dword ptr [eax+18h],0"
 "	      0042ef35    jmp near ptr 0042EF3Ah"
 );
 // LINE 503:
 	asm( 
-"	      0042ef3a    mov eax,[ebp-28h]"
+"	      0042ef3a    mov eax,this"
 "	      0042ef3d    mov dword ptr [eax+1Ch],0"
 );
 // LINE 504:
 	asm( 
-"	      0042ef44    mov eax,[ebp-28h]"
+"	      0042ef44    mov eax,this"
 "	      0042ef47    mov dword ptr [eax+30h],1"
 );
 // LINE 505:
@@ -1814,7 +1814,7 @@ int32_t Sound::GetSoundType() {
 "	      0042ef60    push ebx"
 "	      0042ef61    push esi"
 "	      0042ef62    push edi"
-"	      0042ef63    mov [ebp-4],ecx"
+"	      0042ef63    mov this,ecx"
 );
 // LINE 512:
 	asm( 
@@ -1868,56 +1868,56 @@ void DigitalSound::DigitalSound() {
 "	      0042ef8d    push ebx"
 "	      0042ef8e    push esi"
 "	      0042ef8f    push edi"
-"	      0042ef90    mov [ebp-8],ecx"
-"	      0042ef93    mov ecx,[ebp-8]"
+"	      0042ef90    mov this,ecx"
+"	      0042ef93    mov ecx,this"
 "	      0042ef96    call 0042E706h"
-"	      0042ef9b    mov eax,[ebp-8]"
+"	      0042ef9b    mov eax,this"
 "	      0042ef9e    mov dword ptr [eax],58F488h"
 );
 // LINE 539:
 	asm( 
-"	      0042efa4    mov eax,[ebp-8]"
+"	      0042efa4    mov eax,this"
 "	      0042efa7    mov dword ptr [eax+34h],0"
 );
 // LINE 544:
 	asm( 
-"	      0042efae    mov eax,[ebp-8]"
+"	      0042efae    mov eax,this"
 "	      0042efb1    mov dword ptr [eax+3Ch],0"
 );
 // LINE 546:
 	asm( 
-"	      0042efb8    mov eax,[ebp-8]"
+"	      0042efb8    mov eax,this"
 "	      0042efbb    mov dword ptr [eax+72h],0"
 );
 // LINE 547:
 	asm( 
-"	      0042efc2    mov eax,[ebp-8]"
+"	      0042efc2    mov eax,this"
 "	      0042efc5    mov dword ptr [eax+76h],0E0h"
 );
 // LINE 548:
 	asm( 
-"	      0042efcc    mov eax,[ebp-8]"
+"	      0042efcc    mov eax,this"
 "	      0042efcf    mov dword ptr [eax+38h],0"
 );
 // LINE 549:
 	asm( 
-"	      0042efd6    mov dword ptr [ebp-4],0"
+"	      0042efd6    mov i,0"
 "	      0042efdd    jmp near ptr 0042EFE5h"
-"	      0042efe2    inc dword ptr [ebp-4]"
-"	      0042efe5    cmp dword ptr [ebp-4],8"
+"	      0042efe2    inc i"
+"	      0042efe5    cmp i,8"
 "	      0042efe9    jge near ptr 0042F002h"
 );
 // LINE 550:
 	asm( 
-"	      0042efef    mov eax,[ebp-4]"
-"	      0042eff2    mov ecx,[ebp-8]"
+"	      0042efef    mov eax,i"
+"	      0042eff2    mov ecx,this"
 "	      0042eff5    mov dword ptr [ecx+eax*4+52h],0"
 "	      0042effd    jmp near ptr 0042EFE2h"
 );
 // LINE 556:
 	asm( 
 "	      0042f002    jmp near ptr 0042F007h"
-"	      0042f007    mov eax,[ebp-8]"
+"	      0042f007    mov eax,this"
 "	      0042f00a    pop edi"
 "	      0042f00b    pop esi"
 "	      0042f00c    pop ebx"
@@ -1938,44 +1938,44 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 "	      0042f015    push ebx"
 "	      0042f016    push esi"
 "	      0042f017    push edi"
-"	      0042f018    mov [ebp-2Ch],ecx"
-"	      0042f01b    mov ecx,[ebp-2Ch]"
+"	      0042f018    mov this,ecx"
+"	      0042f01b    mov ecx,this"
 "	      0042f01e    call 0042E706h"
-"	      0042f023    mov eax,[ebp+0Ch]"
-"	      0042f026    mov ecx,[ebp-2Ch]"
+"	      0042f023    mov eax,nNewStreamingType"
+"	      0042f026    mov ecx,this"
 "	      0042f029    mov [ecx+34h],eax"
-"	      0042f02c    mov eax,[ebp-2Ch]"
+"	      0042f02c    mov eax,this"
 "	      0042f02f    mov dword ptr [eax],58F488h"
 );
 // LINE 570:
 	asm( 
-"	      0042f035    mov eax,[ebp-2Ch]"
+"	      0042f035    mov eax,this"
 "	      0042f038    mov dword ptr [eax+3Ch],0"
 );
 // LINE 572:
 	asm( 
-"	      0042f03f    mov eax,[ebp-2Ch]"
+"	      0042f03f    mov eax,this"
 "	      0042f042    mov dword ptr [eax+72h],0"
 );
 // LINE 573:
 	asm( 
-"	      0042f049    mov eax,[ebp-2Ch]"
+"	      0042f049    mov eax,this"
 "	      0042f04c    mov dword ptr [eax+76h],0E0h"
 );
 // LINE 574:
 	asm( 
-"	      0042f053    mov eax,[ebp-2Ch]"
+"	      0042f053    mov eax,this"
 "	      0042f056    add eax,14h"
-"	      0042f059    cmp eax,[ebp+8]"
+"	      0042f059    cmp eax,sNewSoundFile"
 "	      0042f05c    je near ptr 0042F215h"
-"	      0042f062    mov eax,[ebp-2Ch]"
+"	      0042f062    mov eax,this"
 "	      0042f065    mov eax,[eax+18h]"
 "	      0042f068    dec dword ptr [eax+0Ch]"
-"	      0042f06b    mov eax,[ebp-2Ch]"
+"	      0042f06b    mov eax,this"
 "	      0042f06e    mov eax,[eax+18h]"
 "	      0042f071    cmp dword ptr [eax+0Ch],0"
 "	      0042f075    jne near ptr 0042F0EEh"
-"	      0042f07b    mov eax,[ebp-2Ch]"
+"	      0042f07b    mov eax,this"
 "	      0042f07e    mov eax,[eax+18h]"
 "	      0042f081    mov [ebp-10h],eax"
 "	      0042f084    mov eax,[ebp-10h]"
@@ -2008,15 +2008,15 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 "	      0042f0e9    jmp near ptr 0042F0EEh"
 "	      0042f0ee    jmp near ptr 0042F0F3h"
 "	      0042f0f3    jmp near ptr 0042F0F8h"
-"	      0042f0f8    mov eax,[ebp+8]"
+"	      0042f0f8    mov eax,sNewSoundFile"
 "	      0042f0fb    mov eax,[eax+4]"
 "	      0042f0fe    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0042f102    je near ptr 0042F122h"
-"	      0042f108    mov eax,[ebp+8]"
+"	      0042f108    mov eax,sNewSoundFile"
 "	      0042f10b    mov eax,[eax+4]"
-"	      0042f10e    mov ecx,[ebp-2Ch]"
+"	      0042f10e    mov ecx,this"
 "	      0042f111    mov [ecx+18h],eax"
-"	      0042f114    mov eax,[ebp-2Ch]"
+"	      0042f114    mov eax,this"
 "	      0042f117    mov eax,[eax+18h]"
 "	      0042f11a    inc dword ptr [eax+0Ch]"
 "	      0042f11d    jmp near ptr 0042F215h"
@@ -2027,7 +2027,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 "	      0042f12f    cmp dword ptr [ebp-8],0"
 "	      0042f133    je near ptr 0042F20Bh"
 "	      0042f139    jmp near ptr 0042F13Eh"
-"	      0042f13e    mov eax,[ebp+8]"
+"	      0042f13e    mov eax,sNewSoundFile"
 "	      0042f141    mov eax,[eax+4]"
 "	      0042f144    mov eax,[eax+4]"
 "	      0042f147    mov [ebp-28h],eax"
@@ -2049,11 +2049,11 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 "	      0042f17b    mov ecx,[ebp-8]"
 "	      0042f17e    mov [ecx],eax"
 "	      0042f180    jmp near ptr 0042F185h"
-"	      0042f185    mov eax,[ebp+8]"
+"	      0042f185    mov eax,sNewSoundFile"
 "	      0042f188    mov eax,[eax+4]"
 "	      0042f18b    cmp dword ptr [eax+4],0"
 "	      0042f18f    je near ptr 0042F1AAh"
-"	      0042f195    mov eax,[ebp+8]"
+"	      0042f195    mov eax,sNewSoundFile"
 "	      0042f198    mov eax,[eax+4]"
 "	      0042f19b    mov eax,[eax]"
 "	      0042f19d    mov [ebp-1Ch],eax"
@@ -2083,62 +2083,62 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 "	      0042f1f1    mov dword ptr [eax+0Ch],1"
 "	      0042f1f8    jmp near ptr 0042F1FDh"
 "	      0042f1fd    mov eax,[ebp-8]"
-"	      0042f200    mov ecx,[ebp-2Ch]"
+"	      0042f200    mov ecx,this"
 "	      0042f203    mov [ecx+18h],eax"
 "	      0042f206    jmp near ptr 0042F215h"
-"	      0042f20b    mov eax,[ebp-2Ch]"
+"	      0042f20b    mov eax,this"
 "	      0042f20e    mov dword ptr [eax+18h],0"
 "	      0042f215    jmp near ptr 0042F21Ah"
 );
 // LINE 575:
 	asm( 
-"	      0042f21a    mov eax,[ebp-2Ch]"
+"	      0042f21a    mov eax,this"
 "	      0042f21d    mov dword ptr [eax+38h],0"
 );
 // LINE 576:
 	asm( 
-"	      0042f224    mov eax,[ebp-2Ch]"
+"	      0042f224    mov eax,this"
 "	      0042f227    cmp dword ptr [eax+34h],1"
 "	      0042f22b    jne near ptr 0042F240h"
 );
 // LINE 577:
 	asm( 
-"	      0042f231    mov eax,[ebp-2Ch]"
+"	      0042f231    mov eax,this"
 "	      0042f234    mov dword ptr [eax+20h],1"
 );
 // LINE 578:
 	asm( 
 "	      0042f23b    jmp near ptr 0042F25Bh"
-"	      0042f240    mov eax,[ebp-2Ch]"
+"	      0042f240    mov eax,this"
 "	      0042f243    cmp dword ptr [eax+34h],2"
 "	      0042f247    jne near ptr 0042F25Bh"
 );
 // LINE 579:
 	asm( 
-"	      0042f24d    mov ecx,[ebp-2Ch]"
+"	      0042f24d    mov ecx,this"
 "	      0042f250    call 004304ECh"
-"	      0042f255    mov ecx,[ebp-2Ch]"
+"	      0042f255    mov ecx,this"
 "	      0042f258    mov [ecx+20h],eax"
 );
 // LINE 580:
 	asm( 
-"	      0042f25b    mov dword ptr [ebp-4],0"
+"	      0042f25b    mov i,0"
 "	      0042f262    jmp near ptr 0042F26Ah"
-"	      0042f267    inc dword ptr [ebp-4]"
-"	      0042f26a    cmp dword ptr [ebp-4],8"
+"	      0042f267    inc i"
+"	      0042f26a    cmp i,8"
 "	      0042f26e    jge near ptr 0042F287h"
 );
 // LINE 581:
 	asm( 
-"	      0042f274    mov eax,[ebp-4]"
-"	      0042f277    mov ecx,[ebp-2Ch]"
+"	      0042f274    mov eax,i"
+"	      0042f277    mov ecx,this"
 "	      0042f27a    mov dword ptr [ecx+eax*4+52h],0"
 "	      0042f282    jmp near ptr 0042F267h"
 );
 // LINE 587:
 	asm( 
 "	      0042f287    jmp near ptr 0042F28Ch"
-"	      0042f28c    mov eax,[ebp-2Ch]"
+"	      0042f28c    mov eax,this"
 "	      0042f28f    pop edi"
 "	      0042f290    pop esi"
 "	      0042f291    pop ebx"
@@ -2157,37 +2157,37 @@ void DigitalSound::DigitalSound(long lNewResID) {
 "	      0042f29c    push ebx"
 "	      0042f29d    push esi"
 "	      0042f29e    push edi"
-"	      0042f29f    mov [ebp-4],ecx"
-"	      0042f2a2    mov ecx,[ebp-4]"
+"	      0042f29f    mov this,ecx"
+"	      0042f2a2    mov ecx,this"
 "	      0042f2a5    call 0042E706h"
-"	      0042f2aa    mov eax,[ebp-4]"
+"	      0042f2aa    mov eax,this"
 "	      0042f2ad    mov dword ptr [eax],58F488h"
 );
 // LINE 596:
 	asm( 
-"	      0042f2b3    mov eax,[ebp-4]"
+"	      0042f2b3    mov eax,this"
 "	      0042f2b6    mov dword ptr [eax+34h],0"
 );
 // LINE 599:
 	asm( 
-"	      0042f2bd    mov eax,[ebp-4]"
+"	      0042f2bd    mov eax,this"
 "	      0042f2c0    mov dword ptr [eax+72h],0"
 );
 // LINE 601:
 	asm( 
-"	      0042f2c7    mov eax,[ebp+8]"
-"	      0042f2ca    mov ecx,[ebp-4]"
+"	      0042f2c7    mov eax,lNewResID"
+"	      0042f2ca    mov ecx,this"
 "	      0042f2cd    mov [ecx+10h],eax"
 );
 // LINE 602:
 	asm( 
-"	      0042f2d0    mov eax,[ebp-4]"
+"	      0042f2d0    mov eax,this"
 "	      0042f2d3    mov dword ptr [eax+38h],0"
 );
 // LINE 608:
 	asm( 
 "	      0042f2da    jmp near ptr 0042F2DFh"
-"	      0042f2df    mov eax,[ebp-4]"
+"	      0042f2df    mov eax,this"
 "	      0042f2e2    pop edi"
 "	      0042f2e3    pop esi"
 "	      0042f2e4    pop ebx"
@@ -2206,19 +2206,19 @@ void DigitalSound::~DigitalSound() {
 "	      0042f2ef    push ebx"
 "	      0042f2f0    push esi"
 "	      0042f2f1    push edi"
-"	      0042f2f2    mov [ebp-4],ecx"
-"	      0042f2f5    mov eax,[ebp-4]"
+"	      0042f2f2    mov this,ecx"
+"	      0042f2f5    mov eax,this"
 "	      0042f2f8    mov dword ptr [eax],58F488h"
 );
 // LINE 616:
 	asm( 
-"	      0042f2fe    mov ecx,[ebp-4]"
+"	      0042f2fe    mov ecx,this"
 "	      0042f301    call 0042F549h"
 );
 // LINE 624:
 	asm( 
 "	      0042f306    jmp near ptr 0042F30Bh"
-"	      0042f30b    mov ecx,[ebp-4]"
+"	      0042f30b    mov ecx,this"
 "	      0042f30e    call 0042E7EEh"
 "	      0042f313    pop edi"
 "	      0042f314    pop esi"
@@ -2238,22 +2238,22 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 "	      0042f31e    push ebx"
 "	      0042f31f    push esi"
 "	      0042f320    push edi"
-"	      0042f321    mov [ebp-28h],ecx"
+"	      0042f321    mov this,ecx"
 );
 // LINE 639:
 	asm( 
-"	      0042f324    mov eax,[ebp-28h]"
+"	      0042f324    mov eax,this"
 "	      0042f327    add eax,14h"
-"	      0042f32a    cmp eax,[ebp+8]"
+"	      0042f32a    cmp eax,sNewSoundFile"
 "	      0042f32d    je near ptr 0042F4E6h"
-"	      0042f333    mov eax,[ebp-28h]"
+"	      0042f333    mov eax,this"
 "	      0042f336    mov eax,[eax+18h]"
 "	      0042f339    dec dword ptr [eax+0Ch]"
-"	      0042f33c    mov eax,[ebp-28h]"
+"	      0042f33c    mov eax,this"
 "	      0042f33f    mov eax,[eax+18h]"
 "	      0042f342    cmp dword ptr [eax+0Ch],0"
 "	      0042f346    jne near ptr 0042F3BFh"
-"	      0042f34c    mov eax,[ebp-28h]"
+"	      0042f34c    mov eax,this"
 "	      0042f34f    mov eax,[eax+18h]"
 "	      0042f352    mov [ebp-0Ch],eax"
 "	      0042f355    mov eax,[ebp-0Ch]"
@@ -2286,15 +2286,15 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 "	      0042f3ba    jmp near ptr 0042F3BFh"
 "	      0042f3bf    jmp near ptr 0042F3C4h"
 "	      0042f3c4    jmp near ptr 0042F3C9h"
-"	      0042f3c9    mov eax,[ebp+8]"
+"	      0042f3c9    mov eax,sNewSoundFile"
 "	      0042f3cc    mov eax,[eax+4]"
 "	      0042f3cf    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0042f3d3    je near ptr 0042F3F3h"
-"	      0042f3d9    mov eax,[ebp+8]"
+"	      0042f3d9    mov eax,sNewSoundFile"
 "	      0042f3dc    mov eax,[eax+4]"
-"	      0042f3df    mov ecx,[ebp-28h]"
+"	      0042f3df    mov ecx,this"
 "	      0042f3e2    mov [ecx+18h],eax"
-"	      0042f3e5    mov eax,[ebp-28h]"
+"	      0042f3e5    mov eax,this"
 "	      0042f3e8    mov eax,[eax+18h]"
 "	      0042f3eb    inc dword ptr [eax+0Ch]"
 "	      0042f3ee    jmp near ptr 0042F4E6h"
@@ -2305,7 +2305,7 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 "	      0042f400    cmp dword ptr [ebp-4],0"
 "	      0042f404    je near ptr 0042F4DCh"
 "	      0042f40a    jmp near ptr 0042F40Fh"
-"	      0042f40f    mov eax,[ebp+8]"
+"	      0042f40f    mov eax,sNewSoundFile"
 "	      0042f412    mov eax,[eax+4]"
 "	      0042f415    mov eax,[eax+4]"
 "	      0042f418    mov [ebp-24h],eax"
@@ -2327,11 +2327,11 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 "	      0042f44c    mov ecx,[ebp-4]"
 "	      0042f44f    mov [ecx],eax"
 "	      0042f451    jmp near ptr 0042F456h"
-"	      0042f456    mov eax,[ebp+8]"
+"	      0042f456    mov eax,sNewSoundFile"
 "	      0042f459    mov eax,[eax+4]"
 "	      0042f45c    cmp dword ptr [eax+4],0"
 "	      0042f460    je near ptr 0042F47Bh"
-"	      0042f466    mov eax,[ebp+8]"
+"	      0042f466    mov eax,sNewSoundFile"
 "	      0042f469    mov eax,[eax+4]"
 "	      0042f46c    mov eax,[eax]"
 "	      0042f46e    mov [ebp-18h],eax"
@@ -2361,53 +2361,53 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 "	      0042f4c2    mov dword ptr [eax+0Ch],1"
 "	      0042f4c9    jmp near ptr 0042F4CEh"
 "	      0042f4ce    mov eax,[ebp-4]"
-"	      0042f4d1    mov ecx,[ebp-28h]"
+"	      0042f4d1    mov ecx,this"
 "	      0042f4d4    mov [ecx+18h],eax"
 "	      0042f4d7    jmp near ptr 0042F4E6h"
-"	      0042f4dc    mov eax,[ebp-28h]"
+"	      0042f4dc    mov eax,this"
 "	      0042f4df    mov dword ptr [eax+18h],0"
 "	      0042f4e6    jmp near ptr 0042F4EBh"
 );
 // LINE 640:
 	asm( 
-"	      0042f4eb    mov eax,[ebp+0Ch]"
-"	      0042f4ee    mov ecx,[ebp-28h]"
+"	      0042f4eb    mov eax,nNewStreamingType"
+"	      0042f4ee    mov ecx,this"
 "	      0042f4f1    mov [ecx+34h],eax"
 );
 // LINE 641:
 	asm( 
-"	      0042f4f4    mov eax,[ebp-28h]"
+"	      0042f4f4    mov eax,this"
 "	      0042f4f7    mov dword ptr [eax+1Ch],0"
 );
 // LINE 642:
 	asm( 
-"	      0042f4fe    mov eax,[ebp-28h]"
+"	      0042f4fe    mov eax,this"
 "	      0042f501    mov dword ptr [eax+30h],1"
 );
 // LINE 644:
 	asm( 
-"	      0042f508    mov eax,[ebp-28h]"
+"	      0042f508    mov eax,this"
 "	      0042f50b    cmp dword ptr [eax+34h],1"
 "	      0042f50f    jne near ptr 0042F51Fh"
 );
 // LINE 645:
 	asm( 
-"	      0042f515    mov eax,[ebp-28h]"
+"	      0042f515    mov eax,this"
 "	      0042f518    mov dword ptr [eax+20h],1"
 );
 // LINE 646:
 	asm( 
-"	      0042f51f    mov eax,[ebp-28h]"
+"	      0042f51f    mov eax,this"
 "	      0042f522    cmp dword ptr [eax+34h],2"
 "	      0042f526    jne near ptr 0042F53Dh"
 );
 // LINE 647:
 	asm( 
-"	      0042f52c    mov eax,[ebp-28h]"
+"	      0042f52c    mov eax,this"
 "	      0042f52f    mov eax,[eax]"
-"	      0042f531    mov ecx,[ebp-28h]"
+"	      0042f531    mov ecx,this"
 "	      0042f534    call dword ptr [eax+40h]"
-"	      0042f537    mov ecx,[ebp-28h]"
+"	      0042f537    mov ecx,this"
 "	      0042f53a    mov [ecx+20h],eax"
 );
 // LINE 648:
@@ -2431,46 +2431,46 @@ void DigitalSound::Unload() {
 "	      0042f54f    push ebx"
 "	      0042f550    push esi"
 "	      0042f551    push edi"
-"	      0042f552    mov [ebp-0Ch],ecx"
+"	      0042f552    mov this,ecx"
 );
 // LINE 655:
 	asm( 
-"	      0042f555    mov eax,[ebp-0Ch]"
+"	      0042f555    mov eax,this"
 "	      0042f558    cmp dword ptr [eax+38h],0"
 "	      0042f55c    je near ptr 0042F570h"
 );
 // LINE 656:
 	asm( 
-"	      0042f562    mov eax,[ebp-0Ch]"
+"	      0042f562    mov eax,this"
 "	      0042f565    mov eax,[eax]"
-"	      0042f567    mov ecx,[ebp-0Ch]"
+"	      0042f567    mov ecx,this"
 "	      0042f56a    call dword ptr [eax+84h]"
 );
 // LINE 658:
 	asm( 
-"	      0042f570    mov eax,[ebp-0Ch]"
+"	      0042f570    mov eax,this"
 "	      0042f573    mov eax,[eax]"
-"	      0042f575    mov ecx,[ebp-0Ch]"
+"	      0042f575    mov ecx,this"
 "	      0042f578    call dword ptr [eax+10h]"
 "	      0042f57b    test eax,eax"
 "	      0042f57d    je near ptr 0042F58Eh"
 );
 // LINE 659:
 	asm( 
-"	      0042f583    mov eax,[ebp-0Ch]"
+"	      0042f583    mov eax,this"
 "	      0042f586    mov eax,[eax]"
-"	      0042f588    mov ecx,[ebp-0Ch]"
+"	      0042f588    mov ecx,this"
 "	      0042f58b    call dword ptr [eax+0Ch]"
 );
 // LINE 662:
 	asm( 
-"	      0042f58e    mov eax,[ebp-0Ch]"
+"	      0042f58e    mov eax,this"
 "	      0042f591    cmp dword ptr [eax+72h],0"
 "	      0042f595    je near ptr 0042F5C0h"
 );
 // LINE 665:
 	asm( 
-"	      0042f59b    mov eax,[ebp-0Ch]"
+"	      0042f59b    mov eax,this"
 "	      0042f59e    mov eax,[eax+72h]"
 "	      0042f5a1    mov [ebp-4],eax"
 "	      0042f5a4    mov eax,[ebp-4]"
@@ -2482,14 +2482,14 @@ void DigitalSound::Unload() {
 );
 // LINE 666:
 	asm( 
-"	      0042f5b6    mov eax,[ebp-0Ch]"
+"	      0042f5b6    mov eax,this"
 "	      0042f5b9    mov dword ptr [eax+72h],0"
 );
 // LINE 670:
 	asm( 
-"	      0042f5c0    mov eax,[ebp-0Ch]"
+"	      0042f5c0    mov eax,this"
 "	      0042f5c3    mov eax,[eax]"
-"	      0042f5c5    mov ecx,[ebp-0Ch]"
+"	      0042f5c5    mov ecx,this"
 "	      0042f5c8    call dword ptr [eax+74h]"
 );
 // LINE 671:
@@ -2513,18 +2513,18 @@ class DigitalSound& DigitalSound::operator=(class DigitalSound& newSound) {
 "	      0042f5db    push ebx"
 "	      0042f5dc    push esi"
 "	      0042f5dd    push edi"
-"	      0042f5de    mov [ebp-4],ecx"
+"	      0042f5de    mov this,ecx"
 );
 // LINE 683:
 	asm( 
-"	      0042f5e1    mov eax,[ebp+8]"
+"	      0042f5e1    mov eax,newSound"
 "	      0042f5e4    push eax"
-"	      0042f5e5    mov ecx,[ebp-4]"
+"	      0042f5e5    mov ecx,this"
 "	      0042f5e8    call 0042E8CBh"
 );
 // LINE 684:
 	asm( 
-"	      0042f5ed    mov eax,[ebp-4]"
+"	      0042f5ed    mov eax,this"
 "	      0042f5f0    jmp near ptr 0042F5F5h"
 );
 // LINE 685:
@@ -2547,11 +2547,11 @@ int32_t DigitalSound::Load() {
 "	      0042f602    push ebx"
 "	      0042f603    push esi"
 "	      0042f604    push edi"
-"	      0042f605    mov [ebp-4],ecx"
+"	      0042f605    mov this,ecx"
 );
 // LINE 703:
 	asm( 
-"	      0042f608    mov eax,[ebp-4]"
+"	      0042f608    mov eax,this"
 "	      0042f60b    cmp dword ptr [eax+20h],0"
 "	      0042f60f    je near ptr 0042F61Fh"
 );
@@ -2562,30 +2562,30 @@ int32_t DigitalSound::Load() {
 );
 // LINE 705:
 	asm( 
-"	      0042f61f    mov eax,[ebp-4]"
+"	      0042f61f    mov eax,this"
 "	      0042f622    cmp dword ptr [eax+4],1"
 "	      0042f626    jne near ptr 0042F641h"
 );
 // LINE 706:
 	asm( 
-"	      0042f62c    mov eax,[ebp-4]"
+"	      0042f62c    mov eax,this"
 "	      0042f62f    mov eax,[eax]"
-"	      0042f631    mov ecx,[ebp-4]"
+"	      0042f631    mov ecx,this"
 "	      0042f634    call dword ptr [eax+38h]"
 "	      0042f637    jmp near ptr 0042F665h"
 );
 // LINE 707:
 	asm( 
 "	      0042f63c    jmp near ptr 0042F65Eh"
-"	      0042f641    mov eax,[ebp-4]"
+"	      0042f641    mov eax,this"
 "	      0042f644    cmp dword ptr [eax+4],0"
 "	      0042f648    jne near ptr 0042F65Eh"
 );
 // LINE 708:
 	asm( 
-"	      0042f64e    mov eax,[ebp-4]"
+"	      0042f64e    mov eax,this"
 "	      0042f651    mov eax,[eax]"
-"	      0042f653    mov ecx,[ebp-4]"
+"	      0042f653    mov ecx,this"
 "	      0042f656    call dword ptr [eax+34h]"
 "	      0042f659    jmp near ptr 0042F665h"
 );
@@ -2614,7 +2614,7 @@ int32_t DigitalSound::LoadFromResource() {
 "	      0042f670    push ebx"
 "	      0042f671    push esi"
 "	      0042f672    push edi"
-"	      0042f673    mov [ebp-4],ecx"
+"	      0042f673    mov this,ecx"
 );
 // LINE 717:
 	asm( 
@@ -2652,26 +2652,26 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f688    push ebx"
 "	      0042f689    push esi"
 "	      0042f68a    push edi"
-"	      0042f68b    mov [ebp-74h],ecx"
+"	      0042f68b    mov this,ecx"
 );
 // LINE 735:
 	asm( 
-"	      0042f68e    mov dword ptr [ebp-34h],1"
+"	      0042f68e    mov bReturnValue,1"
 );
 // LINE 737:
 	asm( 
-"	      0042f695    mov dword ptr [ebp-40h],0"
+"	      0042f695    mov pbBufferData,0"
 );
 // LINE 738:
 	asm( 
-"	      0042f69c    mov dword ptr [ebp-38h],0"
+"	      0042f69c    mov pbBufferData2,0"
 );
 // LINE 758:
 	asm( 
-"	      0042f6a3    mov eax,[ebp-74h]"
+"	      0042f6a3    mov eax,this"
 "	      0042f6a6    cmp dword ptr [eax+14h],0"
 "	      0042f6aa    je near ptr 0042F6CBh"
-"	      0042f6b0    mov eax,[ebp-74h]"
+"	      0042f6b0    mov eax,this"
 "	      0042f6b3    mov eax,[eax+14h]"
 "	      0042f6b6    mov [ebp-54h],eax"
 "	      0042f6b9    mov eax,[ebp-54h]"
@@ -2681,27 +2681,27 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f6c3    call 0056A740h"
 "	      0042f6c8    add esp,4"
 "	      0042f6cb    jmp near ptr 0042F6D0h"
-"	      0042f6d0    mov eax,[ebp-74h]"
+"	      0042f6d0    mov eax,this"
 "	      0042f6d3    mov eax,[eax+18h]"
 "	      0042f6d6    mov eax,[eax+4]"
 "	      0042f6d9    inc eax"
 "	      0042f6da    push eax"
 "	      0042f6db    call 0056A600h"
 "	      0042f6e0    add esp,4"
-"	      0042f6e3    mov ecx,[ebp-74h]"
+"	      0042f6e3    mov ecx,this"
 "	      0042f6e6    mov [ecx+14h],eax"
 "	      0042f6e9    jmp near ptr 0042F6EEh"
-"	      0042f6ee    mov eax,[ebp-74h]"
+"	      0042f6ee    mov eax,this"
 "	      0042f6f1    mov eax,[eax+18h]"
 "	      0042f6f4    cmp dword ptr [eax+4],0"
 "	      0042f6f8    je near ptr 0042F767h"
 "	      0042f6fe    jmp near ptr 0042F703h"
 "	      0042f703    jmp near ptr 0042F708h"
-"	      0042f708    mov eax,[ebp-74h]"
+"	      0042f708    mov eax,this"
 "	      0042f70b    mov eax,[eax+18h]"
 "	      0042f70e    cmp dword ptr [eax+4],0"
 "	      0042f712    je near ptr 0042F72Dh"
-"	      0042f718    mov eax,[ebp-74h]"
+"	      0042f718    mov eax,this"
 "	      0042f71b    mov eax,[eax+18h]"
 "	      0042f71e    mov eax,[eax]"
 "	      0042f720    mov [ebp-68h],eax"
@@ -2709,11 +2709,11 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f728    jmp near ptr 0042F739h"
 "	      0042f72d    mov dword ptr [ebp-68h],0"
 "	      0042f734    jmp near ptr 0042F739h"
-"	      0042f739    mov eax,[ebp-74h]"
+"	      0042f739    mov eax,this"
 "	      0042f73c    mov eax,[eax+18h]"
 "	      0042f73f    mov eax,[eax+4]"
 "	      0042f742    mov [ebp-6Ch],eax"
-"	      0042f745    mov eax,[ebp-74h]"
+"	      0042f745    mov eax,this"
 "	      0042f748    mov eax,[eax+14h]"
 "	      0042f74b    mov [ebp-70h],eax"
 "	      0042f74e    mov eax,[ebp-6Ch]"
@@ -2731,10 +2731,10 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f775    lea eax,[ebp-58h]"
 "	      0042f778    mov [ebp-60h],eax"
 "	      0042f77b    jmp near ptr 0042F780h"
-"	      0042f780    mov eax,[ebp-74h]"
+"	      0042f780    mov eax,this"
 "	      0042f783    mov eax,[eax+18h]"
 "	      0042f786    mov eax,[eax+4]"
-"	      0042f789    mov ecx,[ebp-74h]"
+"	      0042f789    mov ecx,this"
 "	      0042f78c    add eax,[ecx+14h]"
 "	      0042f78f    mov [ebp-64h],eax"
 "	      0042f792    mov eax,[ebp-60h]"
@@ -2743,14 +2743,14 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f79a    mov [ecx],al"
 "	      0042f79c    jmp near ptr 0042F7A1h"
 "	      0042f7a1    jmp near ptr 0042F7A6h"
-"	      0042f7a6    lea eax,[ebp-2Ch]"
+"	      0042f7a6    lea eax,ckInRiff.ckid"
 "	      0042f7a9    push eax"
-"	      0042f7aa    mov eax,[ebp-74h]"
+"	      0042f7aa    mov eax,this"
 "	      0042f7ad    add eax,40h"
 "	      0042f7b0    push eax"
-"	      0042f7b1    lea eax,[ebp-30h]"
+"	      0042f7b1    lea eax,hmmioIn"
 "	      0042f7b4    push eax"
-"	      0042f7b5    mov eax,[ebp-74h]"
+"	      0042f7b5    mov eax,this"
 "	      0042f7b8    mov eax,[eax+14h]"
 "	      0042f7bb    push eax"
 "	      0042f7bc    call 0048EBB0h"
@@ -2766,10 +2766,10 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 764:
 	asm( 
 "	      0042f7d3    push 0"
-"	      0042f7d5    mov eax,[ebp-20h]"
+"	      0042f7d5    mov eax,ckInRiff.dwDataOffset"
 "	      0042f7d8    add eax,4"
 "	      0042f7db    push eax"
-"	      0042f7dc    mov eax,[ebp-30h]"
+"	      0042f7dc    mov eax,hmmioIn"
 "	      0042f7df    push eax"
 "	      0042f7e0    call dword ptr ds:[6C3900h]"
 "	      0042f7e6    cmp eax,0FFFFFFFFh"
@@ -2778,7 +2778,7 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 765:
 	asm( 
 "	      0042f7ef    push 0"
-"	      0042f7f1    mov eax,[ebp-30h]"
+"	      0042f7f1    mov eax,hmmioIn"
 "	      0042f7f4    push eax"
 "	      0042f7f5    call dword ptr ds:[6C391Ch]"
 );
@@ -2789,16 +2789,16 @@ int32_t DigitalSound::LoadFromFile() {
 );
 // LINE 770:
 	asm( 
-"	      0042f802    mov dword ptr [ebp-18h],61746164h"
+"	      0042f802    mov ckIn.ckid,61746164h"
 );
 // LINE 771:
 	asm( 
 "	      0042f809    push 10h"
-"	      0042f80b    lea eax,[ebp-2Ch]"
+"	      0042f80b    lea eax,ckInRiff.ckid"
 "	      0042f80e    push eax"
-"	      0042f80f    lea eax,[ebp-18h]"
+"	      0042f80f    lea eax,ckIn.ckid"
 "	      0042f812    push eax"
-"	      0042f813    mov eax,[ebp-30h]"
+"	      0042f813    mov eax,hmmioIn"
 "	      0042f816    push eax"
 "	      0042f817    call dword ptr ds:[6C3904h]"
 "	      0042f81d    test eax,eax"
@@ -2807,7 +2807,7 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 772:
 	asm( 
 "	      0042f825    push 0"
-"	      0042f827    mov eax,[ebp-30h]"
+"	      0042f827    mov eax,hmmioIn"
 "	      0042f82a    push eax"
 "	      0042f82b    call dword ptr ds:[6C391Ch]"
 );
@@ -2818,23 +2818,23 @@ int32_t DigitalSound::LoadFromFile() {
 );
 // LINE 775:
 	asm( 
-"	      0042f838    mov eax,[ebp-14h]"
-"	      0042f83b    mov ecx,[ebp-74h]"
+"	      0042f838    mov eax,ckIn.cksize"
+"	      0042f83b    mov ecx,this"
 "	      0042f83e    mov [ecx+3Ch],eax"
 );
 // LINE 778:
 	asm( 
 "	      0042f841    push 0"
-"	      0042f843    mov eax,[ebp-74h]"
+"	      0042f843    mov eax,this"
 "	      0042f846    mov eax,[eax]"
-"	      0042f848    mov ecx,[ebp-74h]"
+"	      0042f848    mov ecx,this"
 "	      0042f84b    call dword ptr [eax+6Ch]"
 "	      0042f84e    test eax,eax"
 "	      0042f850    jne near ptr 0042F867h"
 );
 // LINE 779:
 	asm( 
-"	      0042f856    mov dword ptr [ebp-34h],0"
+"	      0042f856    mov bReturnValue,0"
 );
 // LINE 780:
 	asm( 
@@ -2844,35 +2844,35 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 785:
 	asm( 
 "	      0042f867    push 0"
-"	      0042f869    lea eax,[ebp-3Ch]"
+"	      0042f869    lea eax,dwBufferLength2"
 "	      0042f86c    push eax"
-"	      0042f86d    lea eax,[ebp-38h]"
+"	      0042f86d    lea eax,pbBufferData2"
 "	      0042f870    push eax"
-"	      0042f871    lea eax,[ebp-4]"
+"	      0042f871    lea eax,dwBufferLength"
 "	      0042f874    push eax"
-"	      0042f875    lea eax,[ebp-40h]"
+"	      0042f875    lea eax,pbBufferData"
 "	      0042f878    push eax"
-"	      0042f879    mov eax,[ebp-74h]"
+"	      0042f879    mov eax,this"
 "	      0042f87c    mov eax,[eax+3Ch]"
 "	      0042f87f    push eax"
 "	      0042f880    push 0"
-"	      0042f882    mov eax,[ebp-74h]"
+"	      0042f882    mov eax,this"
 "	      0042f885    mov eax,[eax+52h]"
 "	      0042f888    push eax"
-"	      0042f889    mov eax,[ebp-74h]"
+"	      0042f889    mov eax,this"
 "	      0042f88c    mov eax,[eax+52h]"
 "	      0042f88f    mov eax,[eax]"
 "	      0042f891    call dword ptr [eax+2Ch]"
-"	      0042f894    mov [ebp-48h],eax"
+"	      0042f894    mov hResult,eax"
 );
 // LINE 786:
 	asm( 
-"	      0042f897    cmp dword ptr [ebp-48h],0"
+"	      0042f897    cmp hResult,0"
 "	      0042f89b    je near ptr 0042F8C3h"
 );
 // LINE 787:
 	asm( 
-"	      0042f8a1    mov eax,[ebp-48h]"
+"	      0042f8a1    mov eax,hResult"
 "	      0042f8a4    mov [ebp-4Ch],eax"
 "	      0042f8a7    jmp near ptr 0042F8ACh"
 "	      0042f8ac    push 597F54h"
@@ -2886,16 +2886,16 @@ int32_t DigitalSound::LoadFromFile() {
 );
 // LINE 797:
 	asm( 
-"	      0042f8c3    lea eax,[ebp-44h]"
+"	      0042f8c3    lea eax,cbActualRead"
 "	      0042f8c6    push eax"
-"	      0042f8c7    lea eax,[ebp-18h]"
+"	      0042f8c7    lea eax,ckIn.ckid"
 "	      0042f8ca    push eax"
-"	      0042f8cb    mov eax,[ebp-40h]"
+"	      0042f8cb    mov eax,pbBufferData"
 "	      0042f8ce    push eax"
-"	      0042f8cf    mov eax,[ebp-74h]"
+"	      0042f8cf    mov eax,this"
 "	      0042f8d2    mov eax,[eax+3Ch]"
 "	      0042f8d5    push eax"
-"	      0042f8d6    mov eax,[ebp-30h]"
+"	      0042f8d6    mov eax,hmmioIn"
 "	      0042f8d9    push eax"
 "	      0042f8da    call 0048EE25h"
 "	      0042f8df    add esp,14h"
@@ -2905,7 +2905,7 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 798:
 	asm( 
 "	      0042f8ea    push 0"
-"	      0042f8ec    mov eax,[ebp-30h]"
+"	      0042f8ec    mov eax,hmmioIn"
 "	      0042f8ef    push eax"
 "	      0042f8f0    call dword ptr ds:[6C391Ch]"
 );
@@ -2917,37 +2917,37 @@ int32_t DigitalSound::LoadFromFile() {
 // LINE 802:
 	asm( 
 "	      0042f8fd    push 0"
-"	      0042f8ff    mov eax,[ebp-30h]"
+"	      0042f8ff    mov eax,hmmioIn"
 "	      0042f902    push eax"
 "	      0042f903    call dword ptr ds:[6C391Ch]"
 );
 // LINE 806:
 	asm( 
-"	      0042f909    mov eax,[ebp-3Ch]"
+"	      0042f909    mov eax,dwBufferLength2"
 "	      0042f90c    push eax"
-"	      0042f90d    mov eax,[ebp-38h]"
+"	      0042f90d    mov eax,pbBufferData2"
 "	      0042f910    push eax"
-"	      0042f911    mov eax,[ebp-4]"
+"	      0042f911    mov eax,dwBufferLength"
 "	      0042f914    push eax"
-"	      0042f915    mov eax,[ebp-40h]"
+"	      0042f915    mov eax,pbBufferData"
 "	      0042f918    push eax"
-"	      0042f919    mov eax,[ebp-74h]"
+"	      0042f919    mov eax,this"
 "	      0042f91c    mov eax,[eax+52h]"
 "	      0042f91f    push eax"
-"	      0042f920    mov eax,[ebp-74h]"
+"	      0042f920    mov eax,this"
 "	      0042f923    mov eax,[eax+52h]"
 "	      0042f926    mov eax,[eax]"
 "	      0042f928    call dword ptr [eax+4Ch]"
-"	      0042f92b    mov [ebp-48h],eax"
+"	      0042f92b    mov hResult,eax"
 );
 // LINE 807:
 	asm( 
-"	      0042f92e    cmp dword ptr [ebp-48h],0"
+"	      0042f92e    cmp hResult,0"
 "	      0042f932    je near ptr 0042F95Ah"
 );
 // LINE 808:
 	asm( 
-"	      0042f938    mov eax,[ebp-48h]"
+"	      0042f938    mov eax,hResult"
 "	      0042f93b    mov [ebp-50h],eax"
 "	      0042f93e    jmp near ptr 0042F943h"
 "	      0042f943    push 597F88h"
@@ -2961,20 +2961,20 @@ int32_t DigitalSound::LoadFromFile() {
 );
 // LINE 819:
 	asm( 
-"	      0042f95a    mov eax,[ebp-34h]"
+"	      0042f95a    mov eax,bReturnValue"
 "	      0042f95d    jmp near ptr 0042F984h"
 );
 // LINE 822:
 ERROR_DONE_ROUTINE:
 	asm( 
-"	      0042f962    mov eax,[ebp-74h]"
+"	      0042f962    mov eax,this"
 "	      0042f965    mov eax,[eax]"
-"	      0042f967    mov ecx,[ebp-74h]"
+"	      0042f967    mov ecx,this"
 "	      0042f96a    call dword ptr [eax+74h]"
 );
 // LINE 823:
 	asm( 
-"	      0042f96d    mov eax,[ebp-34h]"
+"	      0042f96d    mov eax,bReturnValue"
 "	      0042f970    jmp near ptr 0042F984h"
 );
 // LINE 825:
@@ -3002,40 +3002,40 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 "	      0042f98f    push ebx"
 "	      0042f990    push esi"
 "	      0042f991    push edi"
-"	      0042f992    mov [ebp-18h],ecx"
+"	      0042f992    mov this,ecx"
 );
 // LINE 843:
 	asm( 
 "	      0042f995    push 14h"
 "	      0042f997    push 0"
-"	      0042f999    lea eax,[ebp-14h]"
+"	      0042f999    lea eax,dsBufferDescription.dwSize"
 "	      0042f99c    push eax"
 "	      0042f99d    call 0056EB90h"
 "	      0042f9a2    add esp,0Ch"
 );
 // LINE 844:
 	asm( 
-"	      0042f9a5    mov dword ptr [ebp-14h],14h"
+"	      0042f9a5    mov dsBufferDescription.dwSize,14h"
 );
 // LINE 845:
 	asm( 
-"	      0042f9ac    mov dword ptr [ebp-0Ch],0"
+"	      0042f9ac    mov dsBufferDescription.dwBufferBytes,0"
 );
 // LINE 846:
 	asm( 
-"	      0042f9b3    mov dword ptr [ebp-4],0"
+"	      0042f9b3    mov dsBufferDescription.lpwfxFormat,0"
 );
 // LINE 847:
 	asm( 
-"	      0042f9ba    mov dword ptr [ebp-10h],1"
+"	      0042f9ba    mov dsBufferDescription.dwFlags,1"
 );
 // LINE 851:
 	asm( 
-"	      0042f9c1    lea eax,[ebp-14h]"
+"	      0042f9c1    lea eax,dsBufferDescription.dwSize"
 "	      0042f9c4    push eax"
-"	      0042f9c5    mov eax,[ebp-18h]"
+"	      0042f9c5    mov eax,this"
 "	      0042f9c8    mov eax,[eax]"
-"	      0042f9ca    mov ecx,[ebp-18h]"
+"	      0042f9ca    mov ecx,this"
 "	      0042f9cd    call dword ptr [eax+6Ch]"
 "	      0042f9d0    jmp near ptr 0042F9D5h"
 );
@@ -3062,7 +3062,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 "	      0042f9e0    push ebx"
 "	      0042f9e1    push esi"
 "	      0042f9e2    push edi"
-"	      0042f9e3    mov [ebp-24h],ecx"
+"	      0042f9e3    mov this,ecx"
 );
 // LINE 881:
 	asm( 
@@ -3076,32 +3076,32 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 );
 // LINE 884:
 	asm( 
-"	      0042f9fa    cmp dword ptr [ebp+8],0"
+"	      0042f9fa    cmp dsNewBufferDescription,0"
 "	      0042f9fe    je near ptr 0042FA61h"
 );
 // LINE 885:
 	asm( 
 "	      0042fa04    push 0"
-"	      0042fa06    mov eax,[ebp-24h]"
+"	      0042fa06    mov eax,this"
 "	      0042fa09    add eax,52h"
 "	      0042fa0c    push eax"
-"	      0042fa0d    mov eax,[ebp+8]"
+"	      0042fa0d    mov eax,dsNewBufferDescription"
 "	      0042fa10    push eax"
 "	      0042fa11    mov eax,ds:[597E60h]"
 "	      0042fa16    push eax"
 "	      0042fa17    mov eax,ds:[597E60h]"
 "	      0042fa1c    mov eax,[eax]"
 "	      0042fa1e    call dword ptr [eax+0Ch]"
-"	      0042fa21    mov [ebp-18h],eax"
+"	      0042fa21    mov hResult,eax"
 );
 // LINE 886:
 	asm( 
-"	      0042fa24    cmp dword ptr [ebp-18h],0"
+"	      0042fa24    cmp hResult,0"
 "	      0042fa28    je near ptr 0042FA50h"
 );
 // LINE 887:
 	asm( 
-"	      0042fa2e    mov eax,[ebp-18h]"
+"	      0042fa2e    mov eax,hResult"
 "	      0042fa31    mov [ebp-1Ch],eax"
 "	      0042fa34    jmp near ptr 0042FA39h"
 "	      0042fa39    push 597FC0h"
@@ -3115,7 +3115,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 );
 // LINE 893:
 	asm( 
-"	      0042fa50    mov eax,[ebp+8]"
+"	      0042fa50    mov eax,dsNewBufferDescription"
 "	      0042fa53    mov eax,[eax+8]"
 "	      0042fa56    add ds:[597E5Ch],eax"
 );
@@ -3125,53 +3125,53 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 );
 // LINE 899:
 	asm( 
-"	      0042fa61    mov dword ptr [ebp-14h],14h"
+"	      0042fa61    mov dsBufferDescription.dwSize,14h"
 );
 // LINE 900:
 	asm( 
-"	      0042fa68    mov eax,[ebp-24h]"
+"	      0042fa68    mov eax,this"
 "	      0042fa6b    mov eax,[eax+76h]"
-"	      0042fa6e    mov [ebp-10h],eax"
+"	      0042fa6e    mov dsBufferDescription.dwFlags,eax"
 );
 // LINE 901:
 	asm( 
-"	      0042fa71    mov eax,[ebp-24h]"
+"	      0042fa71    mov eax,this"
 "	      0042fa74    mov eax,[eax+3Ch]"
-"	      0042fa77    mov [ebp-0Ch],eax"
+"	      0042fa77    mov dsBufferDescription.dwBufferBytes,eax"
 );
 // LINE 902:
 	asm( 
-"	      0042fa7a    mov dword ptr [ebp-8],0"
+"	      0042fa7a    mov dsBufferDescription.dwReserved,0"
 );
 // LINE 903:
 	asm( 
-"	      0042fa81    mov eax,[ebp-24h]"
+"	      0042fa81    mov eax,this"
 "	      0042fa84    add eax,40h"
-"	      0042fa87    mov [ebp-4],eax"
+"	      0042fa87    mov dsBufferDescription.lpwfxFormat,eax"
 );
 // LINE 905:
 	asm( 
 "	      0042fa8a    push 0"
-"	      0042fa8c    mov eax,[ebp-24h]"
+"	      0042fa8c    mov eax,this"
 "	      0042fa8f    add eax,52h"
 "	      0042fa92    push eax"
-"	      0042fa93    lea eax,[ebp-14h]"
+"	      0042fa93    lea eax,dsBufferDescription.dwSize"
 "	      0042fa96    push eax"
 "	      0042fa97    mov eax,ds:[597E60h]"
 "	      0042fa9c    push eax"
 "	      0042fa9d    mov eax,ds:[597E60h]"
 "	      0042faa2    mov eax,[eax]"
 "	      0042faa4    call dword ptr [eax+0Ch]"
-"	      0042faa7    mov [ebp-18h],eax"
+"	      0042faa7    mov hResult,eax"
 );
 // LINE 906:
 	asm( 
-"	      0042faaa    cmp dword ptr [ebp-18h],0"
+"	      0042faaa    cmp hResult,0"
 "	      0042faae    je near ptr 0042FAD6h"
 );
 // LINE 907:
 	asm( 
-"	      0042fab4    mov eax,[ebp-18h]"
+"	      0042fab4    mov eax,hResult"
 "	      0042fab7    mov [ebp-20h],eax"
 "	      0042faba    jmp near ptr 0042FABFh"
 "	      0042fabf    push 598008h"
@@ -3185,7 +3185,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 );
 // LINE 913:
 	asm( 
-"	      0042fad6    mov eax,[ebp-0Ch]"
+"	      0042fad6    mov eax,dsBufferDescription.dwBufferBytes"
 "	      0042fad9    add ds:[597E5Ch],eax"
 );
 // LINE 916:
@@ -3196,23 +3196,23 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 // LINE 919:
 ERROR_IN_ROUTINE:
 	asm( 
-"	      0042fae9    mov eax,[ebp-24h]"
+"	      0042fae9    mov eax,this"
 "	      0042faec    cmp dword ptr [eax+52h],0"
 "	      0042faf0    je near ptr 0042FB12h"
 );
 // LINE 920:
 	asm( 
-"	      0042faf6    mov eax,[ebp-24h]"
+"	      0042faf6    mov eax,this"
 "	      0042faf9    mov eax,[eax+52h]"
 "	      0042fafc    push eax"
-"	      0042fafd    mov eax,[ebp-24h]"
+"	      0042fafd    mov eax,this"
 "	      0042fb00    mov eax,[eax+52h]"
 "	      0042fb03    mov eax,[eax]"
 "	      0042fb05    call dword ptr [eax+8]"
 );
 // LINE 921:
 	asm( 
-"	      0042fb08    mov eax,[ebp-24h]"
+"	      0042fb08    mov eax,this"
 "	      0042fb0b    mov dword ptr [eax+52h],0"
 );
 // LINE 924:
@@ -3244,52 +3244,52 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 "	      0042fb30    push ebx"
 "	      0042fb31    push esi"
 "	      0042fb32    push edi"
-"	      0042fb33    mov [ebp-8],ecx"
+"	      0042fb33    mov this,ecx"
 );
 // LINE 939:
 	asm( 
-"	      0042fb36    mov dword ptr [ebp-4],0"
+"	      0042fb36    mov i,0"
 );
 // LINE 943:
 	asm( 
-"	      0042fb3d    mov eax,[ebp-4]"
-"	      0042fb40    mov ecx,[ebp-8]"
+"	      0042fb3d    mov eax,i"
+"	      0042fb40    mov ecx,this"
 "	      0042fb43    cmp dword ptr [ecx+eax*4+52h],0"
 "	      0042fb48    je near ptr 0042FB5Eh"
 );
 // LINE 948:
 	asm( 
 "	      0042fb4e    xor eax,eax"
-"	      0042fb50    mov ecx,[ebp-8]"
+"	      0042fb50    mov ecx,this"
 "	      0042fb53    sub eax,[ecx+3Ch]"
 "	      0042fb56    neg eax"
 "	      0042fb58    sub ds:[597E5Ch],eax"
 );
 // LINE 953:
 	asm( 
-"	      0042fb5e    mov eax,[ebp-4]"
-"	      0042fb61    mov ecx,[ebp-8]"
+"	      0042fb5e    mov eax,i"
+"	      0042fb61    mov ecx,this"
 "	      0042fb64    cmp dword ptr [ecx+eax*4+52h],0"
 "	      0042fb69    je near ptr 0042FBA6h"
-"	      0042fb6f    cmp dword ptr [ebp-4],8"
+"	      0042fb6f    cmp i,8"
 "	      0042fb73    jge near ptr 0042FBA6h"
 );
 // LINE 954:
 	asm( 
-"	      0042fb79    mov eax,[ebp-4]"
-"	      0042fb7c    mov ecx,[ebp-8]"
+"	      0042fb79    mov eax,i"
+"	      0042fb7c    mov ecx,this"
 "	      0042fb7f    mov eax,[ecx+eax*4+52h]"
 "	      0042fb83    push eax"
-"	      0042fb84    mov eax,[ebp-4]"
-"	      0042fb87    mov ecx,[ebp-8]"
+"	      0042fb84    mov eax,i"
+"	      0042fb87    mov ecx,this"
 "	      0042fb8a    mov eax,[ecx+eax*4+52h]"
 "	      0042fb8e    mov eax,[eax]"
 "	      0042fb90    call dword ptr [eax+8]"
 );
 // LINE 955:
 	asm( 
-"	      0042fb93    mov eax,[ebp-4]"
-"	      0042fb96    mov ecx,[ebp-8]"
+"	      0042fb93    mov eax,i"
+"	      0042fb96    mov ecx,this"
 "	      0042fb99    mov dword ptr [ecx+eax*4+52h],0"
 );
 // LINE 956:
@@ -3323,35 +3323,35 @@ int32_t DigitalSound::GetPan(long * lPan) {
 "	      0042fbbb    push ebx"
 "	      0042fbbc    push esi"
 "	      0042fbbd    push edi"
-"	      0042fbbe    mov [ebp-0Ch],ecx"
+"	      0042fbbe    mov this,ecx"
 );
 // LINE 980:
 	asm( 
-"	      0042fbc1    mov eax,[ebp-0Ch]"
+"	      0042fbc1    mov eax,this"
 "	      0042fbc4    cmp dword ptr [eax+52h],0"
 "	      0042fbc8    je near ptr 0042FC10h"
 );
 // LINE 981:
 	asm( 
-"	      0042fbce    mov eax,[ebp+8]"
+"	      0042fbce    mov eax,lPan"
 "	      0042fbd1    push eax"
-"	      0042fbd2    mov eax,[ebp-0Ch]"
+"	      0042fbd2    mov eax,this"
 "	      0042fbd5    mov eax,[eax+52h]"
 "	      0042fbd8    push eax"
-"	      0042fbd9    mov eax,[ebp-0Ch]"
+"	      0042fbd9    mov eax,this"
 "	      0042fbdc    mov eax,[eax+52h]"
 "	      0042fbdf    mov eax,[eax]"
 "	      0042fbe1    call dword ptr [eax+1Ch]"
-"	      0042fbe4    mov [ebp-4],eax"
+"	      0042fbe4    mov hResult,eax"
 );
 // LINE 982:
 	asm( 
-"	      0042fbe7    cmp dword ptr [ebp-4],0"
+"	      0042fbe7    cmp hResult,0"
 "	      0042fbeb    je near ptr 0042FC10h"
 );
 // LINE 983:
 	asm( 
-"	      0042fbf1    mov eax,[ebp-4]"
+"	      0042fbf1    mov eax,hResult"
 "	      0042fbf4    mov [ebp-8],eax"
 "	      0042fbf7    jmp near ptr 0042FBFCh"
 "	      0042fbfc    push 598050h"
@@ -3390,53 +3390,53 @@ int32_t DigitalSound::SetPan(long lNewPan) {
 "	      0042fc27    push ebx"
 "	      0042fc28    push esi"
 "	      0042fc29    push edi"
-"	      0042fc2a    mov [ebp-0Ch],ecx"
+"	      0042fc2a    mov this,ecx"
 );
 // LINE 1009:
 	asm( 
-"	      0042fc2d    mov eax,[ebp-0Ch]"
+"	      0042fc2d    mov eax,this"
 "	      0042fc30    cmp dword ptr [eax+52h],0"
 "	      0042fc34    je near ptr 0042FCA4h"
 );
 // LINE 1010:
 	asm( 
-"	      0042fc3a    cmp dword ptr [ebp+8],0FFFFD8F0h"
+"	      0042fc3a    cmp lNewPan,0FFFFD8F0h"
 "	      0042fc41    jge near ptr 0042FC4Eh"
 );
 // LINE 1011:
 	asm( 
-"	      0042fc47    mov dword ptr [ebp+8],0FFFFD8F0h"
+"	      0042fc47    mov lNewPan,0FFFFD8F0h"
 );
 // LINE 1012:
 	asm( 
-"	      0042fc4e    cmp dword ptr [ebp+8],2710h"
+"	      0042fc4e    cmp lNewPan,2710h"
 "	      0042fc55    jle near ptr 0042FC62h"
 );
 // LINE 1013:
 	asm( 
-"	      0042fc5b    mov dword ptr [ebp+8],2710h"
+"	      0042fc5b    mov lNewPan,2710h"
 );
 // LINE 1014:
 	asm( 
-"	      0042fc62    mov eax,[ebp+8]"
+"	      0042fc62    mov eax,lNewPan"
 "	      0042fc65    push eax"
-"	      0042fc66    mov eax,[ebp-0Ch]"
+"	      0042fc66    mov eax,this"
 "	      0042fc69    mov eax,[eax+52h]"
 "	      0042fc6c    push eax"
-"	      0042fc6d    mov eax,[ebp-0Ch]"
+"	      0042fc6d    mov eax,this"
 "	      0042fc70    mov eax,[eax+52h]"
 "	      0042fc73    mov eax,[eax]"
 "	      0042fc75    call dword ptr [eax+40h]"
-"	      0042fc78    mov [ebp-4],eax"
+"	      0042fc78    mov hResult,eax"
 );
 // LINE 1015:
 	asm( 
-"	      0042fc7b    cmp dword ptr [ebp-4],0"
+"	      0042fc7b    cmp hResult,0"
 "	      0042fc7f    je near ptr 0042FCA4h"
 );
 // LINE 1016:
 	asm( 
-"	      0042fc85    mov eax,[ebp-4]"
+"	      0042fc85    mov eax,hResult"
 "	      0042fc88    mov [ebp-8],eax"
 "	      0042fc8b    jmp near ptr 0042FC90h"
 "	      0042fc90    push 598084h"
@@ -3475,35 +3475,35 @@ int32_t DigitalSound::GetFrequency(long * lFrequency) {
 "	      0042fcbb    push ebx"
 "	      0042fcbc    push esi"
 "	      0042fcbd    push edi"
-"	      0042fcbe    mov [ebp-0Ch],ecx"
+"	      0042fcbe    mov this,ecx"
 );
 // LINE 1041:
 	asm( 
-"	      0042fcc1    mov eax,[ebp-0Ch]"
+"	      0042fcc1    mov eax,this"
 "	      0042fcc4    cmp dword ptr [eax+52h],0"
 "	      0042fcc8    je near ptr 0042FD10h"
 );
 // LINE 1042:
 	asm( 
-"	      0042fcce    mov eax,[ebp+8]"
+"	      0042fcce    mov eax,lFrequency"
 "	      0042fcd1    push eax"
-"	      0042fcd2    mov eax,[ebp-0Ch]"
+"	      0042fcd2    mov eax,this"
 "	      0042fcd5    mov eax,[eax+52h]"
 "	      0042fcd8    push eax"
-"	      0042fcd9    mov eax,[ebp-0Ch]"
+"	      0042fcd9    mov eax,this"
 "	      0042fcdc    mov eax,[eax+52h]"
 "	      0042fcdf    mov eax,[eax]"
 "	      0042fce1    call dword ptr [eax+20h]"
-"	      0042fce4    mov [ebp-4],eax"
+"	      0042fce4    mov hResult,eax"
 );
 // LINE 1043:
 	asm( 
-"	      0042fce7    cmp dword ptr [ebp-4],0"
+"	      0042fce7    cmp hResult,0"
 "	      0042fceb    je near ptr 0042FD10h"
 );
 // LINE 1044:
 	asm( 
-"	      0042fcf1    mov eax,[ebp-4]"
+"	      0042fcf1    mov eax,hResult"
 "	      0042fcf4    mov [ebp-8],eax"
 "	      0042fcf7    jmp near ptr 0042FCFCh"
 "	      0042fcfc    push 5980B8h"
@@ -3542,53 +3542,53 @@ int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 "	      0042fd27    push ebx"
 "	      0042fd28    push esi"
 "	      0042fd29    push edi"
-"	      0042fd2a    mov [ebp-0Ch],ecx"
+"	      0042fd2a    mov this,ecx"
 );
 // LINE 1067:
 	asm( 
-"	      0042fd2d    mov eax,[ebp-0Ch]"
+"	      0042fd2d    mov eax,this"
 "	      0042fd30    cmp dword ptr [eax+52h],0"
 "	      0042fd34    je near ptr 0042FDA1h"
 );
 // LINE 1068:
 	asm( 
-"	      0042fd3a    cmp dword ptr [ebp+8],64h"
+"	      0042fd3a    cmp lNewFrequency,64h"
 "	      0042fd3e    jge near ptr 0042FD4Bh"
 );
 // LINE 1069:
 	asm( 
-"	      0042fd44    mov dword ptr [ebp+8],64h"
+"	      0042fd44    mov lNewFrequency,64h"
 );
 // LINE 1070:
 	asm( 
-"	      0042fd4b    cmp dword ptr [ebp+8],186A0h"
+"	      0042fd4b    cmp lNewFrequency,186A0h"
 "	      0042fd52    jle near ptr 0042FD5Fh"
 );
 // LINE 1071:
 	asm( 
-"	      0042fd58    mov dword ptr [ebp+8],186A0h"
+"	      0042fd58    mov lNewFrequency,186A0h"
 );
 // LINE 1072:
 	asm( 
-"	      0042fd5f    mov eax,[ebp+8]"
+"	      0042fd5f    mov eax,lNewFrequency"
 "	      0042fd62    push eax"
-"	      0042fd63    mov eax,[ebp-0Ch]"
+"	      0042fd63    mov eax,this"
 "	      0042fd66    mov eax,[eax+52h]"
 "	      0042fd69    push eax"
-"	      0042fd6a    mov eax,[ebp-0Ch]"
+"	      0042fd6a    mov eax,this"
 "	      0042fd6d    mov eax,[eax+52h]"
 "	      0042fd70    mov eax,[eax]"
 "	      0042fd72    call dword ptr [eax+44h]"
-"	      0042fd75    mov [ebp-4],eax"
+"	      0042fd75    mov hResult,eax"
 );
 // LINE 1073:
 	asm( 
-"	      0042fd78    cmp dword ptr [ebp-4],0"
+"	      0042fd78    cmp hResult,0"
 "	      0042fd7c    je near ptr 0042FDA1h"
 );
 // LINE 1074:
 	asm( 
-"	      0042fd82    mov eax,[ebp-4]"
+"	      0042fd82    mov eax,hResult"
 "	      0042fd85    mov [ebp-8],eax"
 "	      0042fd88    jmp near ptr 0042FD8Dh"
 "	      0042fd8d    push 5980F8h"
@@ -3627,35 +3627,35 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 "	      0042fdb8    push ebx"
 "	      0042fdb9    push esi"
 "	      0042fdba    push edi"
-"	      0042fdbb    mov [ebp-0Ch],ecx"
+"	      0042fdbb    mov this,ecx"
 );
 // LINE 1099:
 	asm( 
-"	      0042fdbe    mov eax,[ebp-0Ch]"
+"	      0042fdbe    mov eax,this"
 "	      0042fdc1    cmp dword ptr [eax+52h],0"
 "	      0042fdc5    je near ptr 0042FE20h"
 );
 // LINE 1100:
 	asm( 
-"	      0042fdcb    mov eax,[ebp+8]"
+"	      0042fdcb    mov eax,lVolume"
 "	      0042fdce    push eax"
-"	      0042fdcf    mov eax,[ebp-0Ch]"
+"	      0042fdcf    mov eax,this"
 "	      0042fdd2    mov eax,[eax+52h]"
 "	      0042fdd5    push eax"
-"	      0042fdd6    mov eax,[ebp-0Ch]"
+"	      0042fdd6    mov eax,this"
 "	      0042fdd9    mov eax,[eax+52h]"
 "	      0042fddc    mov eax,[eax]"
 "	      0042fdde    call dword ptr [eax+18h]"
-"	      0042fde1    mov [ebp-4],eax"
+"	      0042fde1    mov hResult,eax"
 );
 // LINE 1101:
 	asm( 
-"	      0042fde4    cmp dword ptr [ebp-4],0"
+"	      0042fde4    cmp hResult,0"
 "	      0042fde8    je near ptr 0042FE0Dh"
 );
 // LINE 1102:
 	asm( 
-"	      0042fdee    mov eax,[ebp-4]"
+"	      0042fdee    mov eax,hResult"
 "	      0042fdf1    mov [ebp-8],eax"
 "	      0042fdf4    jmp near ptr 0042FDF9h"
 "	      0042fdf9    push 598138h"
@@ -3669,7 +3669,7 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 );
 // LINE 1105:
 	asm( 
-"	      0042fe0d    mov eax,[ebp+8]"
+"	      0042fe0d    mov eax,lVolume"
 "	      0042fe10    add dword ptr [eax],2710h"
 );
 // LINE 1106:
@@ -3704,45 +3704,45 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 "	      0042fe34    push ebx"
 "	      0042fe35    push esi"
 "	      0042fe36    push edi"
-"	      0042fe37    mov [ebp-0Ch],ecx"
+"	      0042fe37    mov this,ecx"
 );
 // LINE 1128:
 	asm( 
-"	      0042fe3a    mov eax,[ebp+8]"
-"	      0042fe3d    mov ecx,[ebp-0Ch]"
+"	      0042fe3a    mov eax,lNewVolume"
+"	      0042fe3d    mov ecx,this"
 "	      0042fe40    mov [ecx+24h],eax"
 );
 // LINE 1129:
 	asm( 
-"	      0042fe43    mov eax,[ebp-0Ch]"
+"	      0042fe43    mov eax,this"
 "	      0042fe46    cmp dword ptr [eax+52h],0"
 "	      0042fe4a    je near ptr 0042FEA3h"
 );
 // LINE 1130:
 	asm( 
-"	      0042fe50    sub dword ptr [ebp+8],2710h"
+"	      0042fe50    sub lNewVolume,2710h"
 );
 // LINE 1131:
 	asm( 
-"	      0042fe57    mov eax,[ebp+8]"
+"	      0042fe57    mov eax,lNewVolume"
 "	      0042fe5a    push eax"
-"	      0042fe5b    mov eax,[ebp-0Ch]"
+"	      0042fe5b    mov eax,this"
 "	      0042fe5e    mov eax,[eax+52h]"
 "	      0042fe61    push eax"
-"	      0042fe62    mov eax,[ebp-0Ch]"
+"	      0042fe62    mov eax,this"
 "	      0042fe65    mov eax,[eax+52h]"
 "	      0042fe68    mov eax,[eax]"
 "	      0042fe6a    call dword ptr [eax+3Ch]"
-"	      0042fe6d    mov [ebp-4],eax"
+"	      0042fe6d    mov hResult,eax"
 );
 // LINE 1132:
 	asm( 
-"	      0042fe70    cmp dword ptr [ebp-4],0"
+"	      0042fe70    cmp hResult,0"
 "	      0042fe74    je near ptr 0042FE99h"
 );
 // LINE 1133:
 	asm( 
-"	      0042fe7a    mov eax,[ebp-4]"
+"	      0042fe7a    mov eax,hResult"
 "	      0042fe7d    mov [ebp-8],eax"
 "	      0042fe80    jmp near ptr 0042FE85h"
 "	      0042fe85    push 598174h"
@@ -3787,37 +3787,37 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 "	      0042feb7    push ebx"
 "	      0042feb8    push esi"
 "	      0042feb9    push edi"
-"	      0042feba    mov [ebp-0Ch],ecx"
+"	      0042feba    mov this,ecx"
 );
 // LINE 1171:
 	asm( 
-"	      0042febd    mov eax,[ebp+10h]"
-"	      0042fec0    imul eax,[ebp+10h]"
-"	      0042fec4    mov ecx,[ebp+0Ch]"
-"	      0042fec7    imul ecx,[ebp+0Ch]"
+"	      0042febd    mov eax,lZ"
+"	      0042fec0    imul eax,lZ"
+"	      0042fec4    mov ecx,lY"
+"	      0042fec7    imul ecx,lY"
 "	      0042fecb    add eax,ecx"
-"	      0042fecd    mov ecx,[ebp+8]"
-"	      0042fed0    imul ecx,[ebp+8]"
+"	      0042fecd    mov ecx,lX"
+"	      0042fed0    imul ecx,lX"
 "	      0042fed4    add eax,ecx"
-"	      0042fed6    mov [ebp-4],eax"
+"	      0042fed6    mov lDistance,eax"
 );
 // LINE 1172:
 	asm( 
-"	      0042fed9    cmp dword ptr [ebp-4],2FFFE4h"
+"	      0042fed9    cmp lDistance,2FFFE4h"
 "	      0042fee0    jl near ptr 0042FEF8h"
 );
 // LINE 1173:
 	asm( 
 "	      0042fee6    push 0"
-"	      0042fee8    mov eax,[ebp-0Ch]"
+"	      0042fee8    mov eax,this"
 "	      0042feeb    mov eax,[eax]"
-"	      0042feed    mov ecx,[ebp-0Ch]"
+"	      0042feed    mov ecx,this"
 "	      0042fef0    call dword ptr [eax+24h]"
 "	      0042fef3    jmp near ptr 0042FF4Ah"
 );
 // LINE 1177:
 	asm( 
-"	      0042fef8    mov eax,[ebp-4]"
+"	      0042fef8    mov eax,lDistance"
 "	      0042fefb    mov [ebp-10h],eax"
 "	      0042fefe    fild dword ptr [ebp-10h]"
 "	      0042ff01    sub esp,8"
@@ -3825,11 +3825,11 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 "	      0042ff07    call 0056EC10h"
 "	      0042ff0c    add esp,8"
 "	      0042ff0f    call 0056EBE8h"
-"	      0042ff14    mov [ebp-4],eax"
+"	      0042ff14    mov lDistance,eax"
 );
 // LINE 1182:
 	asm( 
-"	      0042ff17    mov eax,[ebp-4]"
+"	      0042ff17    mov eax,lDistance"
 "	      0042ff1a    lea eax,[eax+eax*4]"
 "	      0042ff1d    lea eax,[eax+eax*4]"
 "	      0042ff20    lea eax,[eax+eax*4]"
@@ -3839,15 +3839,15 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 "	      0042ff2e    cdq"
 "	      0042ff2f    idiv ecx"
 "	      0042ff31    neg eax"
-"	      0042ff33    mov [ebp-8],eax"
+"	      0042ff33    mov lNewVolume,eax"
 );
 // LINE 1184:
 	asm( 
-"	      0042ff36    mov eax,[ebp-8]"
+"	      0042ff36    mov eax,lNewVolume"
 "	      0042ff39    push eax"
-"	      0042ff3a    mov eax,[ebp-0Ch]"
+"	      0042ff3a    mov eax,this"
 "	      0042ff3d    mov eax,[eax]"
-"	      0042ff3f    mov ecx,[ebp-0Ch]"
+"	      0042ff3f    mov ecx,this"
 "	      0042ff42    call dword ptr [eax+24h]"
 "	      0042ff45    jmp near ptr 0042FF4Ah"
 );
@@ -3871,11 +3871,11 @@ long DigitalSound::GetOriginalFrequency() {
 "	      0042ff57    push ebx"
 "	      0042ff58    push esi"
 "	      0042ff59    push edi"
-"	      0042ff5a    mov [ebp-4],ecx"
+"	      0042ff5a    mov this,ecx"
 );
 // LINE 1194:
 	asm( 
-"	      0042ff5d    mov eax,[ebp-4]"
+"	      0042ff5d    mov eax,this"
 "	      0042ff60    mov eax,[eax+44h]"
 "	      0042ff63    jmp near ptr 0042FF68h"
 );
@@ -3899,14 +3899,14 @@ long DigitalSound::IsPlaying() {
 "	      0042ff73    push ebx"
 "	      0042ff74    push esi"
 "	      0042ff75    push edi"
-"	      0042ff76    mov [ebp-4],ecx"
+"	      0042ff76    mov this,ecx"
 );
 // LINE 1221:
 	asm( 
 "	      0042ff79    push 0"
-"	      0042ff7b    mov eax,[ebp-4]"
+"	      0042ff7b    mov eax,this"
 "	      0042ff7e    mov eax,[eax]"
-"	      0042ff80    mov ecx,[ebp-4]"
+"	      0042ff80    mov ecx,this"
 "	      0042ff83    call dword ptr [eax+4Ch]"
 "	      0042ff86    jmp near ptr 0042FF8Bh"
 );
@@ -3934,46 +3934,46 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 "	      0042ff96    push ebx"
 "	      0042ff97    push esi"
 "	      0042ff98    push edi"
-"	      0042ff99    mov [ebp-14h],ecx"
+"	      0042ff99    mov this,ecx"
 );
 // LINE 1230:
 	asm( 
-"	      0042ff9c    mov dword ptr [ebp-8],0"
+"	      0042ff9c    mov i,0"
 "	      0042ffa3    jmp near ptr 0042FFABh"
-"	      0042ffa8    inc dword ptr [ebp-8]"
-"	      0042ffab    cmp dword ptr [ebp-8],8"
+"	      0042ffa8    inc i"
+"	      0042ffab    cmp i,8"
 "	      0042ffaf    jge near ptr 0043004Ch"
 );
 // LINE 1231:
 	asm( 
-"	      0042ffb5    mov eax,[ebp-8]"
-"	      0042ffb8    mov ecx,[ebp-14h]"
+"	      0042ffb5    mov eax,i"
+"	      0042ffb8    mov ecx,this"
 "	      0042ffbb    cmp dword ptr [ecx+eax*4+52h],0"
 "	      0042ffc0    je near ptr 00430040h"
 );
 // LINE 1232:
 	asm( 
-"	      0042ffc6    lea eax,[ebp-4]"
+"	      0042ffc6    lea eax,dwStatus"
 "	      0042ffc9    push eax"
-"	      0042ffca    mov eax,[ebp-8]"
-"	      0042ffcd    mov ecx,[ebp-14h]"
+"	      0042ffca    mov eax,i"
+"	      0042ffcd    mov ecx,this"
 "	      0042ffd0    mov eax,[ecx+eax*4+52h]"
 "	      0042ffd4    push eax"
-"	      0042ffd5    mov eax,[ebp-8]"
-"	      0042ffd8    mov ecx,[ebp-14h]"
+"	      0042ffd5    mov eax,i"
+"	      0042ffd8    mov ecx,this"
 "	      0042ffdb    mov eax,[ecx+eax*4+52h]"
 "	      0042ffdf    mov eax,[eax]"
 "	      0042ffe1    call dword ptr [eax+24h]"
-"	      0042ffe4    mov [ebp-0Ch],eax"
+"	      0042ffe4    mov hResult,eax"
 );
 // LINE 1233:
 	asm( 
-"	      0042ffe7    cmp dword ptr [ebp-0Ch],0"
+"	      0042ffe7    cmp hResult,0"
 "	      0042ffeb    je near ptr 0043000Eh"
 );
 // LINE 1234:
 	asm( 
-"	      0042fff1    mov eax,[ebp-0Ch]"
+"	      0042fff1    mov eax,hResult"
 "	      0042fff4    mov [ebp-10h],eax"
 "	      0042fff7    jmp near ptr 0042FFFCh"
 "	      0042fffc    push 5981B0h"
@@ -3991,15 +3991,15 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 );
 // LINE 1242:
 	asm( 
-"	      00430018    cmp dword ptr [ebp+8],0"
+"	      00430018    cmp lplpSoundPlaying,0"
 "	      0043001c    je near ptr 00430031h"
 );
 // LINE 1243:
 	asm( 
-"	      00430022    mov eax,[ebp-8]"
-"	      00430025    mov ecx,[ebp-14h]"
+"	      00430022    mov eax,i"
+"	      00430025    mov ecx,this"
 "	      00430028    mov eax,[ecx+eax*4+52h]"
-"	      0043002c    mov ecx,[ebp+8]"
+"	      0043002c    mov ecx,lplpSoundPlaying"
 "	      0043002f    mov [ecx],eax"
 );
 // LINE 1244:
@@ -4049,55 +4049,55 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 "	      00430060    push ebx"
 "	      00430061    push esi"
 "	      00430062    push edi"
-"	      00430063    mov [ebp-14h],ecx"
+"	      00430063    mov this,ecx"
 );
 // LINE 1271:
 	asm( 
-"	      00430066    mov dword ptr [ebp-8],0"
+"	      00430066    mov dwLooped,0"
 );
 // LINE 1274:
 	asm( 
-"	      0043006d    mov eax,[ebp-14h]"
+"	      0043006d    mov eax,this"
 "	      00430070    cmp dword ptr [eax+30h],0"
 "	      00430074    je near ptr 0043008Fh"
 );
 // LINE 1275:
 	asm( 
-"	      0043007a    mov eax,[ebp-14h]"
+"	      0043007a    mov eax,this"
 "	      0043007d    mov dword ptr [eax+30h],0"
 );
 // LINE 1276:
 	asm( 
-"	      00430084    mov eax,[ebp-14h]"
+"	      00430084    mov eax,this"
 "	      00430087    mov eax,[eax]"
-"	      00430089    mov ecx,[ebp-14h]"
+"	      00430089    mov ecx,this"
 "	      0043008c    call dword ptr [eax+3Ch]"
 );
 // LINE 1280:
 	asm( 
-"	      0043008f    mov eax,[ebp-14h]"
+"	      0043008f    mov eax,this"
 "	      00430092    cmp dword ptr [eax+20h],0"
 "	      00430096    je near ptr 004300ACh"
 );
 // LINE 1281:
 	asm( 
-"	      0043009c    mov eax,[ebp-14h]"
+"	      0043009c    mov eax,this"
 "	      0043009f    mov eax,[eax]"
-"	      004300a1    mov ecx,[ebp-14h]"
+"	      004300a1    mov ecx,this"
 "	      004300a4    call dword ptr [eax+44h]"
 "	      004300a7    jmp near ptr 004302F2h"
 );
 // LINE 1285:
 	asm( 
-"	      004300ac    mov eax,[ebp-14h]"
+"	      004300ac    mov eax,this"
 "	      004300af    cmp dword ptr [eax+52h],0"
 "	      004300b3    jne near ptr 004300D3h"
 );
 // LINE 1286:
 	asm( 
-"	      004300b9    mov eax,[ebp-14h]"
+"	      004300b9    mov eax,this"
 "	      004300bc    mov eax,[eax]"
-"	      004300be    mov ecx,[ebp-14h]"
+"	      004300be    mov ecx,this"
 "	      004300c1    call dword ptr [eax+30h]"
 "	      004300c4    test eax,eax"
 "	      004300c6    jne near ptr 004300D3h"
@@ -4109,77 +4109,77 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 );
 // LINE 1290:
 	asm( 
-"	      004300d3    cmp dword ptr [ebp+0Ch],0"
+"	      004300d3    cmp nDuplicateType,0"
 "	      004300d7    jne near ptr 004300E6h"
 );
 // LINE 1291:
 	asm( 
-"	      004300dd    mov eax,[ebp-14h]"
+"	      004300dd    mov eax,this"
 "	      004300e0    mov eax,[eax+8]"
-"	      004300e3    mov [ebp+0Ch],eax"
+"	      004300e3    mov nDuplicateType,eax"
 );
 // LINE 1292:
 	asm( 
-"	      004300e6    cmp dword ptr [ebp+8],0"
+"	      004300e6    cmp bPlayLooping,0"
 "	      004300ea    je near ptr 004300FAh"
 );
 // LINE 1293:
 	asm( 
-"	      004300f0    mov eax,[ebp-14h]"
+"	      004300f0    mov eax,this"
 "	      004300f3    mov dword ptr [eax+1Ch],1"
 );
 // LINE 1294:
 	asm( 
-"	      004300fa    mov eax,[ebp-14h]"
+"	      004300fa    mov eax,this"
 "	      004300fd    cmp dword ptr [eax+1Ch],0"
 "	      00430101    je near ptr 0043010Eh"
 );
 // LINE 1295:
 	asm( 
-"	      00430107    mov dword ptr [ebp-8],1"
+"	      00430107    mov dwLooped,1"
 );
 // LINE 1298:
 	asm( 
-"	      0043010e    lea eax,[ebp-4]"
+"	      0043010e    lea eax,lpSoundBufferToPlay"
 "	      00430111    push eax"
-"	      00430112    mov eax,[ebp-14h]"
+"	      00430112    mov eax,this"
 "	      00430115    mov eax,[eax]"
-"	      00430117    mov ecx,[ebp-14h]"
+"	      00430117    mov ecx,this"
 "	      0043011a    call dword ptr [eax+4Ch]"
 "	      0043011d    test eax,eax"
 "	      0043011f    je near ptr 004301C7h"
 );
 // LINE 1299:
 	asm( 
-"	      00430125    cmp dword ptr [ebp+0Ch],1"
+"	      00430125    cmp nDuplicateType,1"
 "	      00430129    jne near ptr 00430181h"
 );
 // LINE 1300:
 	asm( 
 "	      0043012f    push 0"
-"	      00430131    mov eax,[ebp-4]"
+"	      00430131    mov eax,lpSoundBufferToPlay"
 "	      00430134    push eax"
-"	      00430135    mov eax,[ebp-4]"
+"	      00430135    mov eax,lpSoundBufferToPlay"
 "	      00430138    mov eax,[eax]"
 "	      0043013a    call dword ptr [eax+34h]"
 );
 // LINE 1303:
 	asm( 
-"	      0043013d    mov eax,[ebp-14h]"
+"	      0043013d    mov eax,this"
 "	      00430140    cmp dword ptr [eax+38h],0"
 "	      00430144    jne near ptr 00430172h"
-"	      0043014a    mov eax,[ebp-14h]"
+"	      0043014a    mov eax,this"
 "	      0043014d    cmp dword ptr [eax+28h],0"
 "	      00430151    je near ptr 00430172h"
-"	      00430157    mov eax,[ebp-14h]"
+"	      00430157    mov eax,this"
 "	      0043015a    cmp dword ptr [eax+1Ch],0"
 "	      0043015e    jne near ptr 00430172h"
 );
 // LINE 1304:
 	asm( 
-"	      00430164    mov eax,[ebp-14h]"
+"	      00430164    mov eax,this"
 "	      00430167    mov eax,[eax]"
-"	      00430169    mov ecx,[ebp-14h]"
+"	      00430169    mov ecx,this"
 "	      0043016c    call dword ptr [eax+88h]"
 );
 // LINE 1305:
@@ -4190,7 +4190,7 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 // LINE 1307:
 	asm( 
 "	      0043017c    jmp near ptr 004301C2h"
-"	      00430181    cmp dword ptr [ebp+0Ch],2"
+"	      00430181    cmp nDuplicateType,2"
 "	      00430185    jne near ptr 0043019Ah"
 );
 // LINE 1308:
@@ -4201,16 +4201,16 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 // LINE 1310:
 	asm( 
 "	      00430195    jmp near ptr 004301C2h"
-"	      0043019a    cmp dword ptr [ebp+0Ch],3"
+"	      0043019a    cmp nDuplicateType,3"
 "	      0043019e    jne near ptr 004301C2h"
 );
 // LINE 1314:
 	asm( 
-"	      004301a4    lea eax,[ebp-4]"
+"	      004301a4    lea eax,lpSoundBufferToPlay"
 "	      004301a7    push eax"
-"	      004301a8    mov eax,[ebp-14h]"
+"	      004301a8    mov eax,this"
 "	      004301ab    mov eax,[eax]"
-"	      004301ad    mov ecx,[ebp-14h]"
+"	      004301ad    mov ecx,this"
 "	      004301b0    call dword ptr [eax+68h]"
 "	      004301b3    test eax,eax"
 "	      004301b5    jne near ptr 004301C2h"
@@ -4226,60 +4226,60 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 );
 // LINE 1319:
 	asm( 
-"	      004301c7    mov eax,[ebp-14h]"
+"	      004301c7    mov eax,this"
 "	      004301ca    mov eax,[eax+52h]"
-"	      004301cd    mov [ebp-4],eax"
+"	      004301cd    mov lpSoundBufferToPlay,eax"
 );
 // LINE 1321:
 	asm( 
-"	      004301d0    mov eax,[ebp-14h]"
+"	      004301d0    mov eax,this"
 "	      004301d3    cmp dword ptr [eax+24h],2710h"
 "	      004301da    je near ptr 004301F2h"
 );
 // LINE 1322:
 	asm( 
-"	      004301e0    mov eax,[ebp-14h]"
+"	      004301e0    mov eax,this"
 "	      004301e3    mov eax,[eax+24h]"
 "	      004301e6    push eax"
-"	      004301e7    mov eax,[ebp-14h]"
+"	      004301e7    mov eax,this"
 "	      004301ea    mov eax,[eax]"
-"	      004301ec    mov ecx,[ebp-14h]"
+"	      004301ec    mov ecx,this"
 "	      004301ef    call dword ptr [eax+24h]"
 );
 // LINE 1324:
 	asm( 
-"	      004301f2    mov eax,[ebp-8]"
+"	      004301f2    mov eax,dwLooped"
 "	      004301f5    push eax"
 "	      004301f6    push 0"
 "	      004301f8    push 0"
-"	      004301fa    mov eax,[ebp-4]"
+"	      004301fa    mov eax,lpSoundBufferToPlay"
 "	      004301fd    push eax"
-"	      004301fe    mov eax,[ebp-4]"
+"	      004301fe    mov eax,lpSoundBufferToPlay"
 "	      00430201    mov eax,[eax]"
 "	      00430203    call dword ptr [eax+30h]"
-"	      00430206    mov [ebp-0Ch],eax"
-"	      00430209    cmp dword ptr [ebp-0Ch],0"
+"	      00430206    mov hResult,eax"
+"	      00430209    cmp hResult,0"
 "	      0043020d    je near ptr 004302B3h"
 );
 // LINE 1325:
 	asm( 
-"	      00430213    cmp dword ptr [ebp-0Ch],88780096h"
+"	      00430213    cmp hResult,88780096h"
 "	      0043021a    jne near ptr 004302ACh"
 );
 // LINE 1326:
 	asm( 
-"	      00430220    mov eax,[ebp-4]"
+"	      00430220    mov eax,lpSoundBufferToPlay"
 "	      00430223    push eax"
-"	      00430224    mov eax,[ebp-4]"
+"	      00430224    mov eax,lpSoundBufferToPlay"
 "	      00430227    mov eax,[eax]"
 "	      00430229    call dword ptr [eax+50h]"
-"	      0043022c    mov [ebp-0Ch],eax"
-"	      0043022f    cmp dword ptr [ebp-0Ch],0"
+"	      0043022c    mov hResult,eax"
+"	      0043022f    cmp hResult,0"
 "	      00430233    jne near ptr 004302ACh"
 );
 // LINE 1327:
 	asm( 
-"	      00430239    mov eax,[ebp-0Ch]"
+"	      00430239    mov eax,hResult"
 "	      0043023c    mov [ebp-10h],eax"
 "	      0043023f    jmp near ptr 00430244h"
 "	      00430244    push 5981E8h"
@@ -4288,13 +4288,13 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 );
 // LINE 1328:
 	asm( 
-"	      00430251    mov eax,[ebp-8]"
+"	      00430251    mov eax,dwLooped"
 "	      00430254    push eax"
 "	      00430255    push 0"
 "	      00430257    push 0"
-"	      00430259    mov eax,[ebp-4]"
+"	      00430259    mov eax,lpSoundBufferToPlay"
 "	      0043025c    push eax"
-"	      0043025d    mov eax,[ebp-4]"
+"	      0043025d    mov eax,lpSoundBufferToPlay"
 "	      00430260    mov eax,[eax]"
 "	      00430262    call dword ptr [eax+30h]"
 "	      00430265    test eax,eax"
@@ -4302,21 +4302,21 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 );
 // LINE 1331:
 	asm( 
-"	      0043026d    mov eax,[ebp-14h]"
+"	      0043026d    mov eax,this"
 "	      00430270    cmp dword ptr [eax+38h],0"
 "	      00430274    jne near ptr 004302A2h"
-"	      0043027a    mov eax,[ebp-14h]"
+"	      0043027a    mov eax,this"
 "	      0043027d    cmp dword ptr [eax+28h],0"
 "	      00430281    je near ptr 004302A2h"
-"	      00430287    mov eax,[ebp-14h]"
+"	      00430287    mov eax,this"
 "	      0043028a    cmp dword ptr [eax+1Ch],0"
 "	      0043028e    jne near ptr 004302A2h"
 );
 // LINE 1332:
 	asm( 
-"	      00430294    mov eax,[ebp-14h]"
+"	      00430294    mov eax,this"
 "	      00430297    mov eax,[eax]"
-"	      00430299    mov ecx,[ebp-14h]"
+"	      00430299    mov ecx,this"
 "	      0043029c    call dword ptr [eax+88h]"
 );
 // LINE 1333:
@@ -4331,21 +4331,21 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 );
 // LINE 1342:
 	asm( 
-"	      004302b3    mov eax,[ebp-14h]"
+"	      004302b3    mov eax,this"
 "	      004302b6    cmp dword ptr [eax+38h],0"
 "	      004302ba    jne near ptr 004302E8h"
-"	      004302c0    mov eax,[ebp-14h]"
+"	      004302c0    mov eax,this"
 "	      004302c3    cmp dword ptr [eax+28h],0"
 "	      004302c7    je near ptr 004302E8h"
-"	      004302cd    mov eax,[ebp-14h]"
+"	      004302cd    mov eax,this"
 "	      004302d0    cmp dword ptr [eax+1Ch],0"
 "	      004302d4    jne near ptr 004302E8h"
 );
 // LINE 1343:
 	asm( 
-"	      004302da    mov eax,[ebp-14h]"
+"	      004302da    mov eax,this"
 "	      004302dd    mov eax,[eax]"
-"	      004302df    mov ecx,[ebp-14h]"
+"	      004302df    mov ecx,this"
 "	      004302e2    call dword ptr [eax+88h]"
 );
 // LINE 1344:
@@ -4377,43 +4377,43 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 "	      004302ff    push ebx"
 "	      00430300    push esi"
 "	      00430301    push edi"
-"	      00430302    mov [ebp-18h],ecx"
+"	      00430302    mov this,ecx"
 );
 // LINE 1373:
 	asm( 
-"	      00430305    mov dword ptr [ebp-8],0"
+"	      00430305    mov i,0"
 "	      0043030c    jmp near ptr 00430314h"
-"	      00430311    inc dword ptr [ebp-8]"
-"	      00430314    cmp dword ptr [ebp-8],8"
+"	      00430311    inc i"
+"	      00430314    cmp i,8"
 "	      00430318    jge near ptr 0043040Dh"
 );
 // LINE 1374:
 	asm( 
-"	      0043031e    mov eax,[ebp-8]"
-"	      00430321    mov ecx,[ebp-18h]"
+"	      0043031e    mov eax,i"
+"	      00430321    mov ecx,this"
 "	      00430324    cmp dword ptr [ecx+eax*4+52h],0"
 "	      00430329    je near ptr 0043039Fh"
 );
 // LINE 1375:
 	asm( 
-"	      0043032f    lea eax,[ebp-4]"
+"	      0043032f    lea eax,dwStatus"
 "	      00430332    push eax"
-"	      00430333    mov eax,[ebp-8]"
-"	      00430336    mov ecx,[ebp-18h]"
+"	      00430333    mov eax,i"
+"	      00430336    mov ecx,this"
 "	      00430339    mov eax,[ecx+eax*4+52h]"
 "	      0043033d    push eax"
-"	      0043033e    mov eax,[ebp-8]"
-"	      00430341    mov ecx,[ebp-18h]"
+"	      0043033e    mov eax,i"
+"	      00430341    mov ecx,this"
 "	      00430344    mov eax,[ecx+eax*4+52h]"
 "	      00430348    mov eax,[eax]"
 "	      0043034a    call dword ptr [eax+24h]"
-"	      0043034d    mov [ebp-0Ch],eax"
-"	      00430350    cmp dword ptr [ebp-0Ch],0"
+"	      0043034d    mov hResult,eax"
+"	      00430350    cmp hResult,0"
 "	      00430354    je near ptr 00430377h"
 );
 // LINE 1376:
 	asm( 
-"	      0043035a    mov eax,[ebp-0Ch]"
+"	      0043035a    mov eax,hResult"
 "	      0043035d    mov [ebp-10h],eax"
 "	      00430360    jmp near ptr 00430365h"
 "	      00430365    push 598218h"
@@ -4426,15 +4426,15 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 );
 // LINE 1379:
 	asm( 
-"	      00430377    cmp dword ptr [ebp-4],0"
+"	      00430377    cmp dwStatus,0"
 "	      0043037b    jne near ptr 0043039Ah"
 );
 // LINE 1380:
 	asm( 
-"	      00430381    mov eax,[ebp-8]"
-"	      00430384    mov ecx,[ebp-18h]"
+"	      00430381    mov eax,i"
+"	      00430384    mov ecx,this"
 "	      00430387    mov eax,[ecx+eax*4+52h]"
-"	      0043038b    mov ecx,[ebp+8]"
+"	      0043038b    mov ecx,lplpSoundBufferToPlay"
 "	      0043038e    mov [ecx],eax"
 );
 // LINE 1381:
@@ -4458,10 +4458,10 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 );
 // LINE 1387:
 	asm( 
-"	      004303b3    mov eax,[ebp+8]"
+"	      004303b3    mov eax,lplpSoundBufferToPlay"
 "	      004303b6    push eax"
-"	      004303b7    mov eax,[ebp-8]"
-"	      004303ba    mov ecx,[ebp-18h]"
+"	      004303b7    mov eax,i"
+"	      004303ba    mov ecx,this"
 "	      004303bd    mov eax,[ecx+eax*4+52h]"
 "	      004303c1    push eax"
 "	      004303c2    mov eax,ds:[597E60h]"
@@ -4469,13 +4469,13 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 "	      004303c8    mov eax,ds:[597E60h]"
 "	      004303cd    mov eax,[eax]"
 "	      004303cf    call dword ptr [eax+14h]"
-"	      004303d2    mov [ebp-0Ch],eax"
-"	      004303d5    cmp dword ptr [ebp-0Ch],0"
+"	      004303d2    mov hResult,eax"
+"	      004303d5    cmp hResult,0"
 "	      004303d9    je near ptr 004303FEh"
 );
 // LINE 1388:
 	asm( 
-"	      004303df    mov eax,[ebp-0Ch]"
+"	      004303df    mov eax,hResult"
 "	      004303e2    mov [ebp-14h],eax"
 "	      004303e5    jmp near ptr 004303EAh"
 "	      004303ea    push 59824Ch"
@@ -4524,50 +4524,50 @@ long DigitalSound::Stop() {
 "	      00430421    push ebx"
 "	      00430422    push esi"
 "	      00430423    push edi"
-"	      00430424    mov [ebp-0Ch],ecx"
+"	      00430424    mov this,ecx"
 );
 // LINE 1414:
 	asm( 
-"	      00430427    mov eax,[ebp-0Ch]"
+"	      00430427    mov eax,this"
 "	      0043042a    mov eax,[eax]"
-"	      0043042c    mov ecx,[ebp-0Ch]"
+"	      0043042c    mov ecx,this"
 "	      0043042f    call dword ptr [eax+10h]"
-"	      00430432    mov [ebp-4],eax"
+"	      00430432    mov bWasPlaying,eax"
 );
 // LINE 1416:
 	asm( 
-"	      00430435    mov eax,[ebp-0Ch]"
+"	      00430435    mov eax,this"
 "	      00430438    cmp dword ptr [eax+20h],0"
 "	      0043043c    je near ptr 00430452h"
 );
 // LINE 1417:
 	asm( 
-"	      00430442    mov eax,[ebp-0Ch]"
+"	      00430442    mov eax,this"
 "	      00430445    mov eax,[eax]"
-"	      00430447    mov ecx,[ebp-0Ch]"
+"	      00430447    mov ecx,this"
 "	      0043044a    call dword ptr [eax+48h]"
 "	      0043044d    jmp near ptr 004304E7h"
 );
 // LINE 1419:
 	asm( 
-"	      00430452    mov dword ptr [ebp-8],0"
+"	      00430452    mov i,0"
 "	      00430459    jmp near ptr 00430461h"
-"	      0043045e    inc dword ptr [ebp-8]"
-"	      00430461    mov eax,[ebp-8]"
-"	      00430464    mov ecx,[ebp-0Ch]"
+"	      0043045e    inc i"
+"	      00430461    mov eax,i"
+"	      00430464    mov ecx,this"
 "	      00430467    cmp dword ptr [ecx+eax*4+52h],0"
 "	      0043046c    je near ptr 0043049Bh"
-"	      00430472    cmp dword ptr [ebp-8],8"
+"	      00430472    cmp i,8"
 "	      00430476    jge near ptr 0043049Bh"
 );
 // LINE 1424:
 	asm( 
-"	      0043047c    mov eax,[ebp-8]"
-"	      0043047f    mov ecx,[ebp-0Ch]"
+"	      0043047c    mov eax,i"
+"	      0043047f    mov ecx,this"
 "	      00430482    mov eax,[ecx+eax*4+52h]"
 "	      00430486    push eax"
-"	      00430487    mov eax,[ebp-8]"
-"	      0043048a    mov ecx,[ebp-0Ch]"
+"	      00430487    mov eax,i"
+"	      0043048a    mov ecx,this"
 "	      0043048d    mov eax,[ecx+eax*4+52h]"
 "	      00430491    mov eax,[eax]"
 "	      00430493    call dword ptr [eax+48h]"
@@ -4578,31 +4578,31 @@ long DigitalSound::Stop() {
 );
 // LINE 1426:
 	asm( 
-"	      0043049b    mov eax,[ebp-0Ch]"
+"	      0043049b    mov eax,this"
 "	      0043049e    cmp dword ptr [eax+38h],0"
 "	      004304a2    je near ptr 004304B6h"
 );
 // LINE 1427:
 	asm( 
-"	      004304a8    mov eax,[ebp-0Ch]"
+"	      004304a8    mov eax,this"
 "	      004304ab    mov eax,[eax]"
-"	      004304ad    mov ecx,[ebp-0Ch]"
+"	      004304ad    mov ecx,this"
 "	      004304b0    call dword ptr [eax+84h]"
 );
 // LINE 1428:
 	asm( 
-"	      004304b6    cmp dword ptr [ebp-4],0"
+"	      004304b6    cmp bWasPlaying,0"
 "	      004304ba    je near ptr 004304DDh"
-"	      004304c0    mov eax,[ebp-0Ch]"
+"	      004304c0    mov eax,this"
 "	      004304c3    cmp dword ptr [eax+28h],0"
 "	      004304c7    je near ptr 004304DDh"
 );
 // LINE 1429:
 	asm( 
-"	      004304cd    mov eax,[ebp-0Ch]"
+"	      004304cd    mov eax,this"
 "	      004304d0    mov eax,[eax+2Ch]"
 "	      004304d3    push eax"
-"	      004304d4    mov eax,[ebp-0Ch]"
+"	      004304d4    mov eax,this"
 "	      004304d7    call dword ptr [eax+28h]"
 "	      004304da    add esp,4"
 );
@@ -4635,14 +4635,14 @@ long DigitalSound::ShouldWeStream() {
 "	      004304f5    push ebx"
 "	      004304f6    push esi"
 "	      004304f7    push edi"
-"	      004304f8    mov [ebp-0B4h],ecx"
+"	      004304f8    mov this,ecx"
 );
 // LINE 1452:
 	asm( 
-"	      004304fe    mov eax,[ebp-0B4h]"
+"	      004304fe    mov eax,this"
 "	      00430504    cmp dword ptr [eax+14h],0"
 "	      00430508    je near ptr 00430538h"
-"	      0043050e    mov eax,[ebp-0B4h]"
+"	      0043050e    mov eax,this"
 "	      00430514    mov eax,[eax+14h]"
 "	      00430517    mov [ebp-94h],eax"
 "	      0043051d    mov eax,[ebp-94h]"
@@ -4652,27 +4652,27 @@ long DigitalSound::ShouldWeStream() {
 "	      00430530    call 0056A740h"
 "	      00430535    add esp,4"
 "	      00430538    jmp near ptr 0043053Dh"
-"	      0043053d    mov eax,[ebp-0B4h]"
+"	      0043053d    mov eax,this"
 "	      00430543    mov eax,[eax+18h]"
 "	      00430546    mov eax,[eax+4]"
 "	      00430549    inc eax"
 "	      0043054a    push eax"
 "	      0043054b    call 0056A600h"
 "	      00430550    add esp,4"
-"	      00430553    mov ecx,[ebp-0B4h]"
+"	      00430553    mov ecx,this"
 "	      00430559    mov [ecx+14h],eax"
 "	      0043055c    jmp near ptr 00430561h"
-"	      00430561    mov eax,[ebp-0B4h]"
+"	      00430561    mov eax,this"
 "	      00430567    mov eax,[eax+18h]"
 "	      0043056a    cmp dword ptr [eax+4],0"
 "	      0043056e    je near ptr 004305FEh"
 "	      00430574    jmp near ptr 00430579h"
 "	      00430579    jmp near ptr 0043057Eh"
-"	      0043057e    mov eax,[ebp-0B4h]"
+"	      0043057e    mov eax,this"
 "	      00430584    mov eax,[eax+18h]"
 "	      00430587    cmp dword ptr [eax+4],0"
 "	      0043058b    je near ptr 004305ACh"
-"	      00430591    mov eax,[ebp-0B4h]"
+"	      00430591    mov eax,this"
 "	      00430597    mov eax,[eax+18h]"
 "	      0043059a    mov eax,[eax]"
 "	      0043059c    mov [ebp-0A8h],eax"
@@ -4680,11 +4680,11 @@ long DigitalSound::ShouldWeStream() {
 "	      004305a7    jmp near ptr 004305BBh"
 "	      004305ac    mov dword ptr [ebp-0A8h],0"
 "	      004305b6    jmp near ptr 004305BBh"
-"	      004305bb    mov eax,[ebp-0B4h]"
+"	      004305bb    mov eax,this"
 "	      004305c1    mov eax,[eax+18h]"
 "	      004305c4    mov eax,[eax+4]"
 "	      004305c7    mov [ebp-0ACh],eax"
-"	      004305cd    mov eax,[ebp-0B4h]"
+"	      004305cd    mov eax,this"
 "	      004305d3    mov eax,[eax+14h]"
 "	      004305d6    mov [ebp-0B0h],eax"
 "	      004305dc    mov eax,[ebp-0ACh]"
@@ -4702,10 +4702,10 @@ long DigitalSound::ShouldWeStream() {
 "	      0043060f    lea eax,[ebp-98h]"
 "	      00430615    mov [ebp-0A0h],eax"
 "	      0043061b    jmp near ptr 00430620h"
-"	      00430620    mov eax,[ebp-0B4h]"
+"	      00430620    mov eax,this"
 "	      00430626    mov eax,[eax+18h]"
 "	      00430629    mov eax,[eax+4]"
-"	      0043062c    mov ecx,[ebp-0B4h]"
+"	      0043062c    mov ecx,this"
 "	      00430632    add eax,[ecx+14h]"
 "	      00430635    mov [ebp-0A4h],eax"
 "	      0043063b    mov eax,[ebp-0A0h]"
@@ -4715,17 +4715,17 @@ long DigitalSound::ShouldWeStream() {
 "	      0043064b    jmp near ptr 00430650h"
 "	      00430650    jmp near ptr 00430655h"
 "	      00430655    push 0"
-"	      00430657    lea eax,[ebp-8Ch]"
+"	      00430657    lea eax,ofStruct.cBytes"
 "	      0043065d    push eax"
-"	      0043065e    mov eax,[ebp-0B4h]"
+"	      0043065e    mov eax,this"
 "	      00430664    mov eax,[eax+14h]"
 "	      00430667    push eax"
 "	      00430668    call dword ptr ds:[6C3638h]"
-"	      0043066e    mov [ebp-90h],eax"
+"	      0043066e    mov hFile,eax"
 );
 // LINE 1453:
 	asm( 
-"	      00430674    cmp dword ptr [ebp-90h],0FFFFFFFFh"
+"	      00430674    cmp hFile,0FFFFFFFFh"
 "	      0043067b    jne near ptr 00430688h"
 );
 // LINE 1454:
@@ -4736,20 +4736,20 @@ long DigitalSound::ShouldWeStream() {
 // LINE 1455:
 	asm( 
 "	      00430688    push 0"
-"	      0043068a    mov eax,[ebp-90h]"
+"	      0043068a    mov eax,hFile"
 "	      00430690    push eax"
 "	      00430691    call dword ptr ds:[6C3648h]"
-"	      00430697    mov [ebp-4],eax"
+"	      00430697    mov dwFileSize,eax"
 );
 // LINE 1457:
 	asm( 
-"	      0043069a    mov eax,[ebp-90h]"
+"	      0043069a    mov eax,hFile"
 "	      004306a0    push eax"
 "	      004306a1    call dword ptr ds:[6C374Ch]"
 );
 // LINE 1459:
 	asm( 
-"	      004306a7    cmp dword ptr [ebp-4],30D40h"
+"	      004306a7    cmp dwFileSize,30D40h"
 "	      004306ae    jb near ptr 004306BEh"
 );
 // LINE 1460:
@@ -4785,27 +4785,27 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      004306d0    push ebx"
 "	      004306d1    push esi"
 "	      004306d2    push edi"
-"	      004306d3    mov [ebp-40h],ecx"
+"	      004306d3    mov this,ecx"
 );
 // LINE 1491:
 	asm( 
-"	      004306d6    mov eax,[ebp-40h]"
+"	      004306d6    mov eax,this"
 "	      004306d9    mov eax,[eax]"
-"	      004306db    mov ecx,[ebp-40h]"
+"	      004306db    mov ecx,this"
 "	      004306de    call dword ptr [eax+10h]"
 "	      004306e1    test eax,eax"
 "	      004306e3    je near ptr 0043070Ah"
 );
 // LINE 1492:
 	asm( 
-"	      004306e9    cmp dword ptr [ebp+8],0"
+"	      004306e9    cmp bStopIfCurrentlyPlaying,0"
 "	      004306ed    je near ptr 00430703h"
 );
 // LINE 1493:
 	asm( 
-"	      004306f3    mov eax,[ebp-40h]"
+"	      004306f3    mov eax,this"
 "	      004306f6    mov eax,[eax]"
-"	      004306f8    mov ecx,[ebp-40h]"
+"	      004306f8    mov ecx,this"
 "	      004306fb    call dword ptr [eax+0Ch]"
 );
 // LINE 1494:
@@ -4829,7 +4829,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1500:
 	asm( 
-"	      0043071e    mov eax,[ebp-40h]"
+"	      0043071e    mov eax,this"
 "	      00430721    cmp dword ptr [eax+72h],0"
 "	      00430725    jne near ptr 0043073Bh"
 );
@@ -4838,12 +4838,12 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      0043072b    push 5Ch"
 "	      0043072d    call 0056A600h"
 "	      00430732    add esp,4"
-"	      00430735    mov ecx,[ebp-40h]"
+"	      00430735    mov ecx,this"
 "	      00430738    mov [ecx+72h],eax"
 );
 // LINE 1502:
 	asm( 
-"	      0043073b    mov eax,[ebp-40h]"
+"	      0043073b    mov eax,this"
 "	      0043073e    cmp dword ptr [eax+72h],0"
 "	      00430742    jne near ptr 0043074Fh"
 );
@@ -4854,88 +4854,88 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1512:
 	asm( 
-"	      0043074f    mov eax,[ebp-40h]"
+"	      0043074f    mov eax,this"
 "	      00430752    mov eax,[eax+72h]"
 "	      00430755    mov dword ptr [eax],0"
 );
 // LINE 1513:
 	asm( 
-"	      0043075b    mov eax,[ebp-40h]"
+"	      0043075b    mov eax,this"
 "	      0043075e    mov eax,[eax+72h]"
 "	      00430761    mov dword ptr [eax+2Ch],0"
 );
 // LINE 1514:
 	asm( 
-"	      00430768    mov eax,[ebp-40h]"
+"	      00430768    mov eax,this"
 "	      0043076b    mov eax,[eax+72h]"
 "	      0043076e    mov dword ptr [eax+30h],0"
 );
 // LINE 1515:
 	asm( 
-"	      00430775    mov eax,[ebp-40h]"
+"	      00430775    mov eax,this"
 "	      00430778    mov eax,[eax+72h]"
 "	      0043077b    mov dword ptr [eax+34h],0"
 );
 // LINE 1516:
 	asm( 
-"	      00430782    mov eax,[ebp-40h]"
+"	      00430782    mov eax,this"
 "	      00430785    mov eax,[eax+72h]"
 "	      00430788    mov dword ptr [eax+38h],0"
 );
 // LINE 1517:
 	asm( 
-"	      0043078f    mov eax,[ebp-40h]"
+"	      0043078f    mov eax,this"
 "	      00430792    mov eax,[eax+72h]"
 "	      00430795    mov dword ptr [eax+3Ch],0"
 );
 // LINE 1518:
 	asm( 
-"	      0043079c    mov eax,[ebp-40h]"
+"	      0043079c    mov eax,this"
 "	      0043079f    mov eax,[eax+72h]"
 "	      004307a2    mov dword ptr [eax+40h],1"
 );
 // LINE 1519:
 	asm( 
-"	      004307a9    mov eax,[ebp-40h]"
+"	      004307a9    mov eax,this"
 "	      004307ac    mov eax,[eax+72h]"
 "	      004307af    mov dword ptr [eax+44h],0"
 );
 // LINE 1520:
 	asm( 
-"	      004307b6    mov eax,[ebp-40h]"
+"	      004307b6    mov eax,this"
 "	      004307b9    mov eax,[eax+72h]"
 "	      004307bc    mov dword ptr [eax+48h],0"
 );
 // LINE 1521:
 	asm( 
-"	      004307c3    mov eax,[ebp-40h]"
+"	      004307c3    mov eax,this"
 "	      004307c6    mov eax,[eax+72h]"
 "	      004307c9    mov dword ptr [eax+4Ch],0"
 );
 // LINE 1522:
 	asm( 
-"	      004307d0    mov eax,[ebp-40h]"
+"	      004307d0    mov eax,this"
 "	      004307d3    mov eax,[eax+72h]"
 "	      004307d6    mov dword ptr [eax+58h],0"
 );
 // LINE 1523:
 	asm( 
-"	      004307dd    mov eax,[ebp-40h]"
+"	      004307dd    mov eax,this"
 "	      004307e0    mov eax,[eax+72h]"
 "	      004307e3    mov dword ptr [eax+54h],0"
 );
 // LINE 1524:
 	asm( 
-"	      004307ea    mov eax,[ebp-40h]"
+"	      004307ea    mov eax,this"
 "	      004307ed    mov eax,[eax+72h]"
 "	      004307f0    mov dword ptr [eax+50h],0"
 );
 // LINE 1528:
 	asm( 
-"	      004307f7    mov eax,[ebp-40h]"
+"	      004307f7    mov eax,this"
 "	      004307fa    cmp dword ptr [eax+14h],0"
 "	      004307fe    je near ptr 0043081Fh"
-"	      00430804    mov eax,[ebp-40h]"
+"	      00430804    mov eax,this"
 "	      00430807    mov eax,[eax+14h]"
 "	      0043080a    mov [ebp-20h],eax"
 "	      0043080d    mov eax,[ebp-20h]"
@@ -4945,27 +4945,27 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      00430817    call 0056A740h"
 "	      0043081c    add esp,4"
 "	      0043081f    jmp near ptr 00430824h"
-"	      00430824    mov eax,[ebp-40h]"
+"	      00430824    mov eax,this"
 "	      00430827    mov eax,[eax+18h]"
 "	      0043082a    mov eax,[eax+4]"
 "	      0043082d    inc eax"
 "	      0043082e    push eax"
 "	      0043082f    call 0056A600h"
 "	      00430834    add esp,4"
-"	      00430837    mov ecx,[ebp-40h]"
+"	      00430837    mov ecx,this"
 "	      0043083a    mov [ecx+14h],eax"
 "	      0043083d    jmp near ptr 00430842h"
-"	      00430842    mov eax,[ebp-40h]"
+"	      00430842    mov eax,this"
 "	      00430845    mov eax,[eax+18h]"
 "	      00430848    cmp dword ptr [eax+4],0"
 "	      0043084c    je near ptr 004308BBh"
 "	      00430852    jmp near ptr 00430857h"
 "	      00430857    jmp near ptr 0043085Ch"
-"	      0043085c    mov eax,[ebp-40h]"
+"	      0043085c    mov eax,this"
 "	      0043085f    mov eax,[eax+18h]"
 "	      00430862    cmp dword ptr [eax+4],0"
 "	      00430866    je near ptr 00430881h"
-"	      0043086c    mov eax,[ebp-40h]"
+"	      0043086c    mov eax,this"
 "	      0043086f    mov eax,[eax+18h]"
 "	      00430872    mov eax,[eax]"
 "	      00430874    mov [ebp-34h],eax"
@@ -4973,11 +4973,11 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      0043087c    jmp near ptr 0043088Dh"
 "	      00430881    mov dword ptr [ebp-34h],0"
 "	      00430888    jmp near ptr 0043088Dh"
-"	      0043088d    mov eax,[ebp-40h]"
+"	      0043088d    mov eax,this"
 "	      00430890    mov eax,[eax+18h]"
 "	      00430893    mov eax,[eax+4]"
 "	      00430896    mov [ebp-38h],eax"
-"	      00430899    mov eax,[ebp-40h]"
+"	      00430899    mov eax,this"
 "	      0043089c    mov eax,[eax+14h]"
 "	      0043089f    mov [ebp-3Ch],eax"
 "	      004308a2    mov eax,[ebp-38h]"
@@ -4995,10 +4995,10 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      004308c9    lea eax,[ebp-24h]"
 "	      004308cc    mov [ebp-2Ch],eax"
 "	      004308cf    jmp near ptr 004308D4h"
-"	      004308d4    mov eax,[ebp-40h]"
+"	      004308d4    mov eax,this"
 "	      004308d7    mov eax,[eax+18h]"
 "	      004308da    mov eax,[eax+4]"
-"	      004308dd    mov ecx,[ebp-40h]"
+"	      004308dd    mov ecx,this"
 "	      004308e0    add eax,[ecx+14h]"
 "	      004308e3    mov [ebp-30h],eax"
 "	      004308e6    mov eax,[ebp-2Ch]"
@@ -5007,17 +5007,17 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      004308ee    mov [ecx],al"
 "	      004308f0    jmp near ptr 004308F5h"
 "	      004308f5    jmp near ptr 004308FAh"
-"	      004308fa    mov eax,[ebp-40h]"
+"	      004308fa    mov eax,this"
 "	      004308fd    mov eax,[eax+72h]"
 "	      00430900    add eax,18h"
 "	      00430903    push eax"
-"	      00430904    mov eax,[ebp-40h]"
+"	      00430904    mov eax,this"
 "	      00430907    add eax,40h"
 "	      0043090a    push eax"
-"	      0043090b    mov eax,[ebp-40h]"
+"	      0043090b    mov eax,this"
 "	      0043090e    mov eax,[eax+72h]"
 "	      00430911    push eax"
-"	      00430912    mov eax,[ebp-40h]"
+"	      00430912    mov eax,this"
 "	      00430915    mov eax,[eax+14h]"
 "	      00430918    push eax"
 "	      00430919    call 0048EBB0h"
@@ -5032,7 +5032,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1533:
 	asm( 
-"	      00430930    mov eax,[ebp-40h]"
+"	      00430930    mov eax,this"
 "	      00430933    xor ecx,ecx"
 "	      00430935    mov cx,[eax+40h]"
 "	      00430939    cmp ecx,1"
@@ -5040,7 +5040,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1534:
 	asm( 
-"	      00430942    mov eax,[ebp-40h]"
+"	      00430942    mov eax,this"
 "	      00430945    mov eax,[eax+72h]"
 "	      00430948    push eax"
 "	      00430949    call 0048EF6Fh"
@@ -5053,20 +5053,20 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1538:
 	asm( 
-"	      00430958    mov eax,[ebp-40h]"
+"	      00430958    mov eax,this"
 "	      0043095b    cmp dword ptr [eax+52h],0"
 "	      0043095f    je near ptr 00430970h"
 );
 // LINE 1539:
 	asm( 
-"	      00430965    mov eax,[ebp-40h]"
+"	      00430965    mov eax,this"
 "	      00430968    mov eax,[eax]"
-"	      0043096a    mov ecx,[ebp-40h]"
+"	      0043096a    mov ecx,this"
 "	      0043096d    call dword ptr [eax+74h]"
 );
 // LINE 1545:
 	asm( 
-"	      00430970    mov eax,[ebp-40h]"
+"	      00430970    mov eax,this"
 "	      00430973    mov eax,[eax+48h]"
 "	      00430976    shl eax,3"
 "	      00430979    lea eax,[eax+eax*2]"
@@ -5074,30 +5074,30 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 "	      0043097f    mov ecx,64h"
 "	      00430984    sub edx,edx"
 "	      00430986    div ecx"
-"	      00430988    mov ecx,[ebp-40h]"
+"	      00430988    mov ecx,this"
 "	      0043098b    mov ecx,[ecx+72h]"
 "	      0043098e    mov [ecx+2Ch],eax"
 );
 // LINE 1546:
 	asm( 
-"	      00430991    mov eax,[ebp-40h]"
+"	      00430991    mov eax,this"
 "	      00430994    mov eax,[eax+72h]"
 "	      00430997    mov ecx,6"
 "	      0043099c    mov eax,[eax+2Ch]"
 "	      0043099f    sub edx,edx"
 "	      004309a1    div ecx"
-"	      004309a3    mov ecx,[ebp-40h]"
+"	      004309a3    mov ecx,this"
 "	      004309a6    mov ecx,[ecx+72h]"
 "	      004309a9    mov [ecx+30h],eax"
 );
 // LINE 1547:
 	asm( 
-"	      004309ac    mov eax,[ebp-40h]"
+"	      004309ac    mov eax,this"
 "	      004309af    mov eax,[eax+72h]"
 "	      004309b2    mov eax,[eax+30h]"
 "	      004309b5    lea eax,[eax+eax*2]"
 "	      004309b8    add eax,eax"
-"	      004309ba    mov ecx,[ebp-40h]"
+"	      004309ba    mov ecx,this"
 "	      004309bd    mov ecx,[ecx+72h]"
 "	      004309c0    mov [ecx+2Ch],eax"
 );
@@ -5105,50 +5105,50 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	asm( 
 "	      004309c3    push 14h"
 "	      004309c5    push 0"
-"	      004309c7    lea eax,[ebp-14h]"
+"	      004309c7    lea eax,dsBufferDescription.dwSize"
 "	      004309ca    push eax"
 "	      004309cb    call 0056EB90h"
 "	      004309d0    add esp,0Ch"
 );
 // LINE 1551:
 	asm( 
-"	      004309d3    mov dword ptr [ebp-14h],14h"
+"	      004309d3    mov dsBufferDescription.dwSize,14h"
 );
 // LINE 1552:
 	asm( 
-"	      004309da    mov dword ptr [ebp-10h],0E0h"
+"	      004309da    mov dsBufferDescription.dwFlags,0E0h"
 );
 // LINE 1553:
 	asm( 
-"	      004309e1    mov eax,[ebp-40h]"
+"	      004309e1    mov eax,this"
 "	      004309e4    mov eax,[eax+72h]"
 "	      004309e7    mov eax,[eax+2Ch]"
-"	      004309ea    mov [ebp-0Ch],eax"
+"	      004309ea    mov dsBufferDescription.dwBufferBytes,eax"
 );
 // LINE 1556:
 	asm( 
-"	      004309ed    mov eax,[ebp-40h]"
+"	      004309ed    mov eax,this"
 "	      004309f0    add eax,40h"
-"	      004309f3    mov [ebp-4],eax"
+"	      004309f3    mov dsBufferDescription.lpwfxFormat,eax"
 );
 // LINE 1557:
 	asm( 
 "	      004309f6    push 0"
-"	      004309f8    mov eax,[ebp-40h]"
+"	      004309f8    mov eax,this"
 "	      004309fb    add eax,52h"
 "	      004309fe    push eax"
-"	      004309ff    lea eax,[ebp-14h]"
+"	      004309ff    lea eax,dsBufferDescription.dwSize"
 "	      00430a02    push eax"
 "	      00430a03    mov eax,ds:[597E60h]"
 "	      00430a08    push eax"
 "	      00430a09    mov eax,ds:[597E60h]"
 "	      00430a0e    mov eax,[eax]"
 "	      00430a10    call dword ptr [eax+0Ch]"
-"	      00430a13    mov [ebp-18h],eax"
+"	      00430a13    mov hResult,eax"
 );
 // LINE 1558:
 	asm( 
-"	      00430a16    mov eax,[ebp-40h]"
+"	      00430a16    mov eax,this"
 "	      00430a19    mov eax,[eax+72h]"
 "	      00430a1c    push eax"
 "	      00430a1d    call 0048EF6Fh"
@@ -5156,12 +5156,12 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1559:
 	asm( 
-"	      00430a25    cmp dword ptr [ebp-18h],0"
+"	      00430a25    cmp hResult,0"
 "	      00430a29    je near ptr 00430A4Eh"
 );
 // LINE 1560:
 	asm( 
-"	      00430a2f    mov eax,[ebp-18h]"
+"	      00430a2f    mov eax,hResult"
 "	      00430a32    mov [ebp-1Ch],eax"
 "	      00430a35    jmp near ptr 00430A3Ah"
 "	      00430a3a    push 598288h"
@@ -5175,13 +5175,13 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 );
 // LINE 1564:
 	asm( 
-"	      00430a4e    mov eax,[ebp-0Ch]"
-"	      00430a51    mov ecx,[ebp-40h]"
+"	      00430a4e    mov eax,dsBufferDescription.dwBufferBytes"
+"	      00430a51    mov ecx,this"
 "	      00430a54    mov [ecx+3Ch],eax"
 );
 // LINE 1565:
 	asm( 
-"	      00430a57    mov eax,[ebp-40h]"
+"	      00430a57    mov eax,this"
 "	      00430a5a    mov eax,[eax+3Ch]"
 "	      00430a5d    add ds:[597E5Ch],eax"
 );
@@ -5219,29 +5219,29 @@ long DigitalSound::PlayStream() {
 "	      00430a7a    push ebx"
 "	      00430a7b    push esi"
 "	      00430a7c    push edi"
-"	      00430a7d    mov [ebp-4Ch],ecx"
+"	      00430a7d    mov this,ecx"
 );
 // LINE 1589:
 	asm( 
-"	      00430a80    mov dword ptr [ebp-8],0"
+"	      00430a80    mov bStopIfCurrentlyPlaying,0"
 );
 // LINE 1593:
 	asm( 
-"	      00430a87    mov eax,[ebp-4Ch]"
+"	      00430a87    mov eax,this"
 "	      00430a8a    cmp dword ptr [eax+8],1"
 "	      00430a8e    jne near ptr 00430A9Bh"
 );
 // LINE 1594:
 	asm( 
-"	      00430a94    mov dword ptr [ebp-8],1"
+"	      00430a94    mov bStopIfCurrentlyPlaying,1"
 );
 // LINE 1598:
 	asm( 
-"	      00430a9b    mov eax,[ebp-8]"
+"	      00430a9b    mov eax,bStopIfCurrentlyPlaying"
 "	      00430a9e    push eax"
-"	      00430a9f    mov eax,[ebp-4Ch]"
+"	      00430a9f    mov eax,this"
 "	      00430aa2    mov eax,[eax]"
-"	      00430aa4    mov ecx,[ebp-4Ch]"
+"	      00430aa4    mov ecx,this"
 "	      00430aa7    call dword ptr [eax+78h]"
 "	      00430aaa    test eax,eax"
 "	      00430aac    jne near ptr 00430AB9h"
@@ -5253,10 +5253,10 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1606:
 	asm( 
-"	      00430ab9    mov eax,[ebp-4Ch]"
+"	      00430ab9    mov eax,this"
 "	      00430abc    cmp dword ptr [eax+14h],0"
 "	      00430ac0    je near ptr 00430AE1h"
-"	      00430ac6    mov eax,[ebp-4Ch]"
+"	      00430ac6    mov eax,this"
 "	      00430ac9    mov eax,[eax+14h]"
 "	      00430acc    mov [ebp-2Ch],eax"
 "	      00430acf    mov eax,[ebp-2Ch]"
@@ -5266,27 +5266,27 @@ long DigitalSound::PlayStream() {
 "	      00430ad9    call 0056A740h"
 "	      00430ade    add esp,4"
 "	      00430ae1    jmp near ptr 00430AE6h"
-"	      00430ae6    mov eax,[ebp-4Ch]"
+"	      00430ae6    mov eax,this"
 "	      00430ae9    mov eax,[eax+18h]"
 "	      00430aec    mov eax,[eax+4]"
 "	      00430aef    inc eax"
 "	      00430af0    push eax"
 "	      00430af1    call 0056A600h"
 "	      00430af6    add esp,4"
-"	      00430af9    mov ecx,[ebp-4Ch]"
+"	      00430af9    mov ecx,this"
 "	      00430afc    mov [ecx+14h],eax"
 "	      00430aff    jmp near ptr 00430B04h"
-"	      00430b04    mov eax,[ebp-4Ch]"
+"	      00430b04    mov eax,this"
 "	      00430b07    mov eax,[eax+18h]"
 "	      00430b0a    cmp dword ptr [eax+4],0"
 "	      00430b0e    je near ptr 00430B7Dh"
 "	      00430b14    jmp near ptr 00430B19h"
 "	      00430b19    jmp near ptr 00430B1Eh"
-"	      00430b1e    mov eax,[ebp-4Ch]"
+"	      00430b1e    mov eax,this"
 "	      00430b21    mov eax,[eax+18h]"
 "	      00430b24    cmp dword ptr [eax+4],0"
 "	      00430b28    je near ptr 00430B43h"
-"	      00430b2e    mov eax,[ebp-4Ch]"
+"	      00430b2e    mov eax,this"
 "	      00430b31    mov eax,[eax+18h]"
 "	      00430b34    mov eax,[eax]"
 "	      00430b36    mov [ebp-40h],eax"
@@ -5294,11 +5294,11 @@ long DigitalSound::PlayStream() {
 "	      00430b3e    jmp near ptr 00430B4Fh"
 "	      00430b43    mov dword ptr [ebp-40h],0"
 "	      00430b4a    jmp near ptr 00430B4Fh"
-"	      00430b4f    mov eax,[ebp-4Ch]"
+"	      00430b4f    mov eax,this"
 "	      00430b52    mov eax,[eax+18h]"
 "	      00430b55    mov eax,[eax+4]"
 "	      00430b58    mov [ebp-44h],eax"
-"	      00430b5b    mov eax,[ebp-4Ch]"
+"	      00430b5b    mov eax,this"
 "	      00430b5e    mov eax,[eax+14h]"
 "	      00430b61    mov [ebp-48h],eax"
 "	      00430b64    mov eax,[ebp-44h]"
@@ -5316,10 +5316,10 @@ long DigitalSound::PlayStream() {
 "	      00430b8b    lea eax,[ebp-30h]"
 "	      00430b8e    mov [ebp-38h],eax"
 "	      00430b91    jmp near ptr 00430B96h"
-"	      00430b96    mov eax,[ebp-4Ch]"
+"	      00430b96    mov eax,this"
 "	      00430b99    mov eax,[eax+18h]"
 "	      00430b9c    mov eax,[eax+4]"
-"	      00430b9f    mov ecx,[ebp-4Ch]"
+"	      00430b9f    mov ecx,this"
 "	      00430ba2    add eax,[ecx+14h]"
 "	      00430ba5    mov [ebp-3Ch],eax"
 "	      00430ba8    mov eax,[ebp-38h]"
@@ -5328,26 +5328,26 @@ long DigitalSound::PlayStream() {
 "	      00430bb0    mov [ecx],al"
 "	      00430bb2    jmp near ptr 00430BB7h"
 "	      00430bb7    jmp near ptr 00430BBCh"
-"	      00430bbc    mov eax,[ebp-4Ch]"
+"	      00430bbc    mov eax,this"
 "	      00430bbf    mov eax,[eax+72h]"
 "	      00430bc2    add eax,18h"
 "	      00430bc5    push eax"
-"	      00430bc6    mov eax,[ebp-4Ch]"
+"	      00430bc6    mov eax,this"
 "	      00430bc9    add eax,40h"
 "	      00430bcc    push eax"
-"	      00430bcd    mov eax,[ebp-4Ch]"
+"	      00430bcd    mov eax,this"
 "	      00430bd0    mov eax,[eax+72h]"
 "	      00430bd3    push eax"
-"	      00430bd4    mov eax,[ebp-4Ch]"
+"	      00430bd4    mov eax,this"
 "	      00430bd7    mov eax,[eax+14h]"
 "	      00430bda    push eax"
 "	      00430bdb    call 0048EBB0h"
 "	      00430be0    add esp,10h"
-"	      00430be3    mov [ebp-4],eax"
+"	      00430be3    mov nError,eax"
 );
 // LINE 1607:
 	asm( 
-"	      00430be6    cmp dword ptr [ebp-4],0"
+"	      00430be6    cmp nError,0"
 "	      00430bea    je near ptr 00430BF7h"
 );
 // LINE 1608:
@@ -5357,29 +5357,29 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1612:
 	asm( 
-"	      00430bf7    mov eax,[ebp-4Ch]"
+"	      00430bf7    mov eax,this"
 "	      00430bfa    mov eax,[eax+72h]"
 "	      00430bfd    add eax,18h"
 "	      00430c00    push eax"
-"	      00430c01    mov eax,[ebp-4Ch]"
+"	      00430c01    mov eax,this"
 "	      00430c04    mov eax,[eax+72h]"
 "	      00430c07    add eax,4"
 "	      00430c0a    push eax"
-"	      00430c0b    mov eax,[ebp-4Ch]"
+"	      00430c0b    mov eax,this"
 "	      00430c0e    mov eax,[eax+72h]"
 "	      00430c11    push eax"
 "	      00430c12    call 0048EDB9h"
 "	      00430c17    add esp,0Ch"
-"	      00430c1a    mov [ebp-4],eax"
+"	      00430c1a    mov nError,eax"
 );
 // LINE 1613:
 	asm( 
-"	      00430c1d    cmp dword ptr [ebp-4],0"
+"	      00430c1d    cmp nError,0"
 "	      00430c21    je near ptr 00430C3Dh"
 );
 // LINE 1615:
 	asm( 
-"	      00430c27    mov eax,[ebp-4Ch]"
+"	      00430c27    mov eax,this"
 "	      00430c2a    mov eax,[eax+72h]"
 "	      00430c2d    push eax"
 "	      00430c2e    call 0048EF6Fh"
@@ -5392,49 +5392,49 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1621:
 	asm( 
-"	      00430c3d    mov eax,[ebp-4Ch]"
+"	      00430c3d    mov eax,this"
 "	      00430c40    mov eax,[eax+72h]"
 "	      00430c43    mov dword ptr [eax+44h],0"
 );
 // LINE 1622:
 	asm( 
-"	      00430c4a    mov eax,[ebp-4Ch]"
+"	      00430c4a    mov eax,this"
 "	      00430c4d    mov eax,[eax+72h]"
 "	      00430c50    mov dword ptr [eax+48h],0"
 );
 // LINE 1627:
 	asm( 
 "	      00430c57    push 0"
-"	      00430c59    lea eax,[ebp-1Ch]"
+"	      00430c59    lea eax,dwLength2"
 "	      00430c5c    push eax"
-"	      00430c5d    lea eax,[ebp-14h]"
+"	      00430c5d    lea eax,lpWrite2"
 "	      00430c60    push eax"
-"	      00430c61    lea eax,[ebp-10h]"
+"	      00430c61    lea eax,dwLength1"
 "	      00430c64    push eax"
-"	      00430c65    lea eax,[ebp-18h]"
+"	      00430c65    lea eax,lpWrite1"
 "	      00430c68    push eax"
-"	      00430c69    mov eax,[ebp-4Ch]"
+"	      00430c69    mov eax,this"
 "	      00430c6c    mov eax,[eax+72h]"
 "	      00430c6f    mov eax,[eax+2Ch]"
 "	      00430c72    push eax"
 "	      00430c73    push 0"
-"	      00430c75    mov eax,[ebp-4Ch]"
+"	      00430c75    mov eax,this"
 "	      00430c78    mov eax,[eax+52h]"
 "	      00430c7b    push eax"
-"	      00430c7c    mov eax,[ebp-4Ch]"
+"	      00430c7c    mov eax,this"
 "	      00430c7f    mov eax,[eax+52h]"
 "	      00430c82    mov eax,[eax]"
 "	      00430c84    call dword ptr [eax+2Ch]"
-"	      00430c87    mov [ebp-20h],eax"
+"	      00430c87    mov hResult,eax"
 );
 // LINE 1628:
 	asm( 
-"	      00430c8a    cmp dword ptr [ebp-20h],0"
+"	      00430c8a    cmp hResult,0"
 "	      00430c8e    je near ptr 00430CC2h"
 );
 // LINE 1629:
 	asm( 
-"	      00430c94    mov eax,[ebp-20h]"
+"	      00430c94    mov eax,hResult"
 "	      00430c97    mov [ebp-28h],eax"
 "	      00430c9a    jmp near ptr 00430C9Fh"
 "	      00430c9f    push 5982D4h"
@@ -5443,7 +5443,7 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1630:
 	asm( 
-"	      00430cac    mov eax,[ebp-4Ch]"
+"	      00430cac    mov eax,this"
 "	      00430caf    mov eax,[eax+72h]"
 "	      00430cb2    push eax"
 "	      00430cb3    call 0048EF6Fh"
@@ -5456,54 +5456,54 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1634:
 	asm( 
-"	      00430cc2    cmp dword ptr [ebp-10h],0"
+"	      00430cc2    cmp dwLength1,0"
 "	      00430cc6    je near ptr 00430E11h"
 );
 // LINE 1636:
 	asm( 
-"	      00430ccc    lea eax,[ebp-0Ch]"
+"	      00430ccc    lea eax,nActualBytesRead"
 "	      00430ccf    push eax"
-"	      00430cd0    mov eax,[ebp-4Ch]"
+"	      00430cd0    mov eax,this"
 "	      00430cd3    mov eax,[eax+72h]"
 "	      00430cd6    add eax,4"
 "	      00430cd9    push eax"
-"	      00430cda    mov eax,[ebp-18h]"
+"	      00430cda    mov eax,lpWrite1"
 "	      00430cdd    push eax"
-"	      00430cde    mov eax,[ebp-10h]"
+"	      00430cde    mov eax,dwLength1"
 "	      00430ce1    push eax"
-"	      00430ce2    mov eax,[ebp-4Ch]"
+"	      00430ce2    mov eax,this"
 "	      00430ce5    mov eax,[eax+72h]"
 "	      00430ce8    mov eax,[eax]"
 "	      00430cea    push eax"
 "	      00430ceb    call 0048EE25h"
 "	      00430cf0    add esp,14h"
-"	      00430cf3    mov [ebp-4],eax"
+"	      00430cf3    mov nError,eax"
 );
 // LINE 1637:
 	asm( 
-"	      00430cf6    cmp dword ptr [ebp-4],0"
+"	      00430cf6    cmp nError,0"
 "	      00430cfa    je near ptr 00430D36h"
 );
 // LINE 1638:
 	asm( 
 "	      00430d00    push 0"
-"	      00430d02    mov eax,[ebp-14h]"
+"	      00430d02    mov eax,lpWrite2"
 "	      00430d05    push eax"
-"	      00430d06    mov eax,[ebp-10h]"
+"	      00430d06    mov eax,dwLength1"
 "	      00430d09    push eax"
-"	      00430d0a    mov eax,[ebp-18h]"
+"	      00430d0a    mov eax,lpWrite1"
 "	      00430d0d    push eax"
-"	      00430d0e    mov eax,[ebp-4Ch]"
+"	      00430d0e    mov eax,this"
 "	      00430d11    mov eax,[eax+52h]"
 "	      00430d14    push eax"
-"	      00430d15    mov eax,[ebp-4Ch]"
+"	      00430d15    mov eax,this"
 "	      00430d18    mov eax,[eax+52h]"
 "	      00430d1b    mov eax,[eax]"
 "	      00430d1d    call dword ptr [eax+4Ch]"
 );
 // LINE 1639:
 	asm( 
-"	      00430d20    mov eax,[ebp-4Ch]"
+"	      00430d20    mov eax,this"
 "	      00430d23    mov eax,[eax+72h]"
 "	      00430d26    push eax"
 "	      00430d27    call 0048EF6Fh"
@@ -5516,13 +5516,13 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1642:
 	asm( 
-"	      00430d36    mov eax,[ebp-10h]"
-"	      00430d39    cmp [ebp-0Ch],eax"
+"	      00430d36    mov eax,dwLength1"
+"	      00430d39    cmp nActualBytesRead,eax"
 "	      00430d3c    jae near ptr 00430E11h"
 );
 // LINE 1646:
 	asm( 
-"	      00430d42    mov eax,[ebp-4Ch]"
+"	      00430d42    mov eax,this"
 "	      00430d45    cmp dword ptr [eax+1Ch],0"
 "	      00430d49    je near ptr 00430DC0h"
 );
@@ -5530,32 +5530,32 @@ long DigitalSound::PlayStream() {
 // Block start:
 	unsigned char * lpTemp;
 	asm( 
-"	      00430d4f    mov eax,[ebp-18h]"
-"	      00430d52    mov [ebp-24h],eax"
+"	      00430d4f    mov eax,lpWrite1"
+"	      00430d52    mov lpTemp,eax"
 );
 // LINE 1655:
 	asm( 
-"	      00430d55    mov eax,[ebp-0Ch]"
-"	      00430d58    add [ebp-24h],eax"
+"	      00430d55    mov eax,nActualBytesRead"
+"	      00430d58    add lpTemp,eax"
 );
 // LINE 1656:
 	asm( 
 "	      00430d5b    xor eax,eax"
-"	      00430d5d    sub eax,[ebp-0Ch]"
+"	      00430d5d    sub eax,nActualBytesRead"
 "	      00430d60    neg eax"
-"	      00430d62    sub [ebp-10h],eax"
+"	      00430d62    sub dwLength1,eax"
 );
 // LINE 1659:
 	asm( 
-"	      00430d65    mov eax,[ebp-4Ch]"
+"	      00430d65    mov eax,this"
 "	      00430d68    mov eax,[eax+72h]"
 "	      00430d6b    add eax,18h"
 "	      00430d6e    push eax"
-"	      00430d6f    mov eax,[ebp-4Ch]"
+"	      00430d6f    mov eax,this"
 "	      00430d72    mov eax,[eax+72h]"
 "	      00430d75    add eax,4"
 "	      00430d78    push eax"
-"	      00430d79    mov eax,[ebp-4Ch]"
+"	      00430d79    mov eax,this"
 "	      00430d7c    mov eax,[eax+72h]"
 "	      00430d7f    push eax"
 "	      00430d80    call 0048EDB9h"
@@ -5563,17 +5563,17 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1661:
 	asm( 
-"	      00430d88    lea eax,[ebp-0Ch]"
+"	      00430d88    lea eax,nActualBytesRead"
 "	      00430d8b    push eax"
-"	      00430d8c    mov eax,[ebp-4Ch]"
+"	      00430d8c    mov eax,this"
 "	      00430d8f    mov eax,[eax+72h]"
 "	      00430d92    add eax,4"
 "	      00430d95    push eax"
-"	      00430d96    mov eax,[ebp-24h]"
+"	      00430d96    mov eax,lpTemp"
 "	      00430d99    push eax"
-"	      00430d9a    mov eax,[ebp-10h]"
+"	      00430d9a    mov eax,dwLength1"
 "	      00430d9d    push eax"
-"	      00430d9e    mov eax,[ebp-4Ch]"
+"	      00430d9e    mov eax,this"
 "	      00430da1    mov eax,[eax+72h]"
 "	      00430da4    mov eax,[eax]"
 "	      00430da6    push eax"
@@ -5582,8 +5582,8 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1662:
 	asm( 
-"	      00430daf    mov eax,[ebp-10h]"
-"	      00430db2    cmp [ebp-0Ch],eax"
+"	      00430daf    mov eax,dwLength1"
+"	      00430db2    cmp nActualBytesRead,eax"
 "	      00430db5    jb near ptr 00430D55h"
 );
 // LINE 1664:
@@ -5593,27 +5593,27 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1667:
 	asm( 
-"	      00430dc0    mov eax,[ebp-4Ch]"
+"	      00430dc0    mov eax,this"
 "	      00430dc3    mov eax,[eax+72h]"
 "	      00430dc6    mov dword ptr [eax+44h],1"
 );
 // LINE 1669:
 	asm( 
-"	      00430dcd    mov eax,[ebp-4Ch]"
+"	      00430dcd    mov eax,this"
 "	      00430dd0    mov ecx,[eax+72h]"
-"	      00430dd3    mov eax,[ebp-0Ch]"
+"	      00430dd3    mov eax,nActualBytesRead"
 "	      00430dd6    sub edx,edx"
 "	      00430dd8    div dword ptr [ecx+30h]"
-"	      00430ddb    mov ecx,[ebp-4Ch]"
+"	      00430ddb    mov ecx,this"
 "	      00430dde    mov ecx,[ecx+72h]"
 "	      00430de1    mov [ecx+48h],eax"
 );
 // LINE 1672:
 	asm( 
-"	      00430de4    mov eax,[ebp-10h]"
-"	      00430de7    sub eax,[ebp-0Ch]"
+"	      00430de4    mov eax,dwLength1"
+"	      00430de7    sub eax,nActualBytesRead"
 "	      00430dea    push eax"
-"	      00430deb    mov eax,[ebp-4Ch]"
+"	      00430deb    mov eax,this"
 "	      00430dee    xor ecx,ecx"
 "	      00430df0    mov cx,[eax+4Eh]"
 "	      00430df4    sub ecx,8"
@@ -5621,8 +5621,8 @@ long DigitalSound::PlayStream() {
 "	      00430dfa    sbb eax,eax"
 "	      00430dfc    and eax,80h"
 "	      00430e01    push eax"
-"	      00430e02    mov eax,[ebp-0Ch]"
-"	      00430e05    add eax,[ebp-18h]"
+"	      00430e02    mov eax,nActualBytesRead"
+"	      00430e05    add eax,lpWrite1"
 "	      00430e08    push eax"
 "	      00430e09    call 0056EB90h"
 "	      00430e0e    add esp,0Ch"
@@ -5630,29 +5630,29 @@ long DigitalSound::PlayStream() {
 // LINE 1677:
 	asm( 
 "	      00430e11    push 0"
-"	      00430e13    mov eax,[ebp-14h]"
+"	      00430e13    mov eax,lpWrite2"
 "	      00430e16    push eax"
-"	      00430e17    mov eax,[ebp-10h]"
+"	      00430e17    mov eax,dwLength1"
 "	      00430e1a    push eax"
-"	      00430e1b    mov eax,[ebp-18h]"
+"	      00430e1b    mov eax,lpWrite1"
 "	      00430e1e    push eax"
-"	      00430e1f    mov eax,[ebp-4Ch]"
+"	      00430e1f    mov eax,this"
 "	      00430e22    mov eax,[eax+52h]"
 "	      00430e25    push eax"
-"	      00430e26    mov eax,[ebp-4Ch]"
+"	      00430e26    mov eax,this"
 "	      00430e29    mov eax,[eax+52h]"
 "	      00430e2c    mov eax,[eax]"
 "	      00430e2e    call dword ptr [eax+4Ch]"
-"	      00430e31    mov [ebp-20h],eax"
+"	      00430e31    mov hResult,eax"
 );
 // LINE 1678:
 	asm( 
-"	      00430e34    cmp dword ptr [ebp-20h],0"
+"	      00430e34    cmp hResult,0"
 "	      00430e38    je near ptr 00430E54h"
 );
 // LINE 1679:
 	asm( 
-"	      00430e3e    mov eax,[ebp-4Ch]"
+"	      00430e3e    mov eax,this"
 "	      00430e41    mov eax,[eax+72h]"
 "	      00430e44    push eax"
 "	      00430e45    call 0048EF6Fh"
@@ -5665,54 +5665,54 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1685:
 	asm( 
-"	      00430e54    mov eax,[ebp-4Ch]"
+"	      00430e54    mov eax,this"
 "	      00430e57    mov eax,[eax+72h]"
 "	      00430e5a    mov dword ptr [eax+3Ch],0"
-"	      00430e61    mov eax,[ebp-4Ch]"
+"	      00430e61    mov eax,this"
 "	      00430e64    mov eax,[eax+72h]"
 "	      00430e67    mov eax,[eax+3Ch]"
-"	      00430e6a    mov ecx,[ebp-4Ch]"
+"	      00430e6a    mov ecx,this"
 "	      00430e6d    mov ecx,[ecx+72h]"
 "	      00430e70    mov [ecx+38h],eax"
-"	      00430e73    mov eax,[ebp-4Ch]"
+"	      00430e73    mov eax,this"
 "	      00430e76    mov eax,[eax+72h]"
 "	      00430e79    mov eax,[eax+38h]"
-"	      00430e7c    mov ecx,[ebp-4Ch]"
+"	      00430e7c    mov ecx,this"
 "	      00430e7f    mov ecx,[ecx+72h]"
 "	      00430e82    mov [ecx+34h],eax"
 );
 // LINE 1686:
 	asm( 
-"	      00430e85    mov eax,[ebp-4Ch]"
+"	      00430e85    mov eax,this"
 "	      00430e88    mov eax,[eax+72h]"
 "	      00430e8b    mov dword ptr [eax+40h],0"
 );
 // LINE 1690:
 	asm( 
-"	      00430e92    mov eax,[ebp-4Ch]"
+"	      00430e92    mov eax,this"
 "	      00430e95    mov eax,[eax+72h]"
 "	      00430e98    mov dword ptr [eax+54h],1"
 );
 // LINE 1693:
 	asm( 
 "	      00430e9f    push 0"
-"	      00430ea1    mov eax,[ebp-4Ch]"
+"	      00430ea1    mov eax,this"
 "	      00430ea4    mov eax,[eax+52h]"
 "	      00430ea7    push eax"
-"	      00430ea8    mov eax,[ebp-4Ch]"
+"	      00430ea8    mov eax,this"
 "	      00430eab    mov eax,[eax+52h]"
 "	      00430eae    mov eax,[eax]"
 "	      00430eb0    call dword ptr [eax+34h]"
-"	      00430eb3    mov [ebp-20h],eax"
+"	      00430eb3    mov hResult,eax"
 );
 // LINE 1694:
 	asm( 
-"	      00430eb6    cmp dword ptr [ebp-20h],0"
+"	      00430eb6    cmp hResult,0"
 "	      00430eba    je near ptr 00430ED6h"
 );
 // LINE 1695:
 	asm( 
-"	      00430ec0    mov eax,[ebp-4Ch]"
+"	      00430ec0    mov eax,this"
 "	      00430ec3    mov eax,[eax+72h]"
 "	      00430ec6    push eax"
 "	      00430ec7    call 0048EF6Fh"
@@ -5725,18 +5725,18 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1699:
 	asm( 
-"	      00430ed6    mov eax,[ebp-4Ch]"
+"	      00430ed6    mov eax,this"
 "	      00430ed9    cmp dword ptr [eax+24h],2710h"
 "	      00430ee0    je near ptr 00430EF8h"
 );
 // LINE 1700:
 	asm( 
-"	      00430ee6    mov eax,[ebp-4Ch]"
+"	      00430ee6    mov eax,this"
 "	      00430ee9    mov eax,[eax+24h]"
 "	      00430eec    push eax"
-"	      00430eed    mov eax,[ebp-4Ch]"
+"	      00430eed    mov eax,this"
 "	      00430ef0    mov eax,[eax]"
-"	      00430ef2    mov ecx,[ebp-4Ch]"
+"	      00430ef2    mov ecx,this"
 "	      00430ef5    call dword ptr [eax+24h]"
 );
 // LINE 1703:
@@ -5744,10 +5744,10 @@ long DigitalSound::PlayStream() {
 "	      00430ef8    push 1"
 "	      00430efa    push 0"
 "	      00430efc    push 0"
-"	      00430efe    mov eax,[ebp-4Ch]"
+"	      00430efe    mov eax,this"
 "	      00430f01    mov eax,[eax+52h]"
 "	      00430f04    push eax"
-"	      00430f05    mov eax,[ebp-4Ch]"
+"	      00430f05    mov eax,this"
 "	      00430f08    mov eax,[eax+52h]"
 "	      00430f0b    mov eax,[eax]"
 "	      00430f0d    call dword ptr [eax+30h]"
@@ -5761,7 +5761,7 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1708:
 	asm( 
-"	      00430f20    mov eax,[ebp-4Ch]"
+"	      00430f20    mov eax,this"
 "	      00430f23    mov eax,[eax+72h]"
 "	      00430f26    push eax"
 "	      00430f27    call 0048EF6Fh"
@@ -5769,23 +5769,23 @@ long DigitalSound::PlayStream() {
 );
 // LINE 1709:
 	asm( 
-"	      00430f2f    mov eax,[ebp-4Ch]"
+"	      00430f2f    mov eax,this"
 "	      00430f32    mov eax,[eax+52h]"
 "	      00430f35    push eax"
-"	      00430f36    mov eax,[ebp-4Ch]"
+"	      00430f36    mov eax,this"
 "	      00430f39    mov eax,[eax+52h]"
 "	      00430f3c    mov eax,[eax]"
 "	      00430f3e    call dword ptr [eax+48h]"
 );
 // LINE 1711:
 	asm( 
-"	      00430f41    mov eax,[ebp-4Ch]"
+"	      00430f41    mov eax,this"
 "	      00430f44    mov eax,[eax+72h]"
 "	      00430f47    mov dword ptr [eax+50h],0"
-"	      00430f4e    mov eax,[ebp-4Ch]"
+"	      00430f4e    mov eax,this"
 "	      00430f51    mov eax,[eax+72h]"
 "	      00430f54    mov eax,[eax+50h]"
-"	      00430f57    mov ecx,[ebp-4Ch]"
+"	      00430f57    mov ecx,this"
 "	      00430f5a    mov ecx,[ecx+72h]"
 "	      00430f5d    mov [ecx+54h],eax"
 );
@@ -5801,26 +5801,26 @@ long DigitalSound::PlayStream() {
 // LINE 1720:
 	asm( 
 "	      00430f6c    push 1"
-"	      00430f6e    mov eax,[ebp-4Ch]"
+"	      00430f6e    mov eax,this"
 "	      00430f71    push eax"
 "	      00430f72    push 4310A5h"
 "	      00430f77    push 0Ah"
 "	      00430f79    push 32h"
 "	      00430f7b    call dword ptr ds:[6C3910h]"
-"	      00430f81    mov ecx,[ebp-4Ch]"
+"	      00430f81    mov ecx,this"
 "	      00430f84    mov ecx,[ecx+72h]"
 "	      00430f87    mov [ecx+4Ch],eax"
 );
 // LINE 1721:
 	asm( 
-"	      00430f8a    mov eax,[ebp-4Ch]"
+"	      00430f8a    mov eax,this"
 "	      00430f8d    mov eax,[eax+72h]"
 "	      00430f90    cmp dword ptr [eax+4Ch],0"
 "	      00430f94    je near ptr 00430FA7h"
 );
 // LINE 1722:
 	asm( 
-"	      00430f9a    mov eax,[ebp-4Ch]"
+"	      00430f9a    mov eax,this"
 "	      00430f9d    mov eax,[eax+72h]"
 "	      00430fa0    mov dword ptr [eax+50h],1"
 );
@@ -5851,11 +5851,11 @@ long DigitalSound::StopStream() {
 "	      00430fbc    push ebx"
 "	      00430fbd    push esi"
 "	      00430fbe    push edi"
-"	      00430fbf    mov [ebp-8],ecx"
+"	      00430fbf    mov this,ecx"
 );
 // LINE 1750:
 	asm( 
-"	      00430fc2    mov eax,[ebp-8]"
+"	      00430fc2    mov eax,this"
 "	      00430fc5    cmp dword ptr [eax+52h],0"
 "	      00430fc9    jne near ptr 00430FD9h"
 );
@@ -5866,35 +5866,35 @@ long DigitalSound::StopStream() {
 );
 // LINE 1753:
 	asm( 
-"	      00430fd9    mov eax,[ebp-8]"
+"	      00430fd9    mov eax,this"
 "	      00430fdc    cmp dword ptr [eax+72h],0"
 "	      00430fe0    je near ptr 00431096h"
 );
 // LINE 1754:
 	asm( 
-"	      00430fe6    mov eax,[ebp-8]"
+"	      00430fe6    mov eax,this"
 "	      00430fe9    mov eax,[eax+72h]"
 "	      00430fec    cmp dword ptr [eax+50h],0"
 "	      00430ff0    je near ptr 0043104Bh"
 );
 // LINE 1755:
 	asm( 
-"	      00430ff6    mov eax,[ebp-8]"
+"	      00430ff6    mov eax,this"
 "	      00430ff9    mov eax,[eax+72h]"
 "	      00430ffc    mov dword ptr [eax+50h],0"
 );
 // LINE 1757:
 	asm( 
-"	      00431003    mov eax,[ebp-8]"
+"	      00431003    mov eax,this"
 "	      00431006    mov eax,[eax+72h]"
 "	      00431009    mov eax,[eax+4Ch]"
 "	      0043100c    push eax"
 "	      0043100d    call dword ptr ds:[6C390Ch]"
-"	      00431013    mov [ebp-4],eax"
+"	      00431013    mov mmResult,eax"
 );
 // LINE 1758:
 	asm( 
-"	      00431016    cmp dword ptr [ebp-4],0"
+"	      00431016    cmp mmResult,0"
 "	      0043101a    je near ptr 0043102Bh"
 );
 // LINE 1759:
@@ -5906,11 +5906,11 @@ long DigitalSound::StopStream() {
 	asm( 
 "	      0043102b    push 32h"
 "	      0043102d    call dword ptr ds:[6C3914h]"
-"	      00431033    mov [ebp-4],eax"
+"	      00431033    mov mmResult,eax"
 );
 // LINE 1761:
 	asm( 
-"	      00431036    cmp dword ptr [ebp-4],0"
+"	      00431036    cmp mmResult,0"
 "	      0043103a    je near ptr 0043104Bh"
 );
 // LINE 1762:
@@ -5920,36 +5920,36 @@ long DigitalSound::StopStream() {
 );
 // LINE 1770:
 	asm( 
-"	      0043104b    mov eax,[ebp-8]"
+"	      0043104b    mov eax,this"
 "	      0043104e    mov eax,[eax+72h]"
 "	      00431051    mov dword ptr [eax+40h],1"
 );
 // LINE 1772:
 	asm( 
-"	      00431058    mov eax,[ebp-8]"
+"	      00431058    mov eax,this"
 "	      0043105b    mov eax,[eax+72h]"
 "	      0043105e    cmp dword ptr [eax+54h],0"
 "	      00431062    je near ptr 00431087h"
 );
 // LINE 1773:
 	asm( 
-"	      00431068    mov eax,[ebp-8]"
+"	      00431068    mov eax,this"
 "	      0043106b    mov eax,[eax+72h]"
 "	      0043106e    mov dword ptr [eax+54h],0"
 );
 // LINE 1774:
 	asm( 
-"	      00431075    mov eax,[ebp-8]"
+"	      00431075    mov eax,this"
 "	      00431078    mov eax,[eax+52h]"
 "	      0043107b    push eax"
-"	      0043107c    mov eax,[ebp-8]"
+"	      0043107c    mov eax,this"
 "	      0043107f    mov eax,[eax+52h]"
 "	      00431082    mov eax,[eax]"
 "	      00431084    call dword ptr [eax+48h]"
 );
 // LINE 1777:
 	asm( 
-"	      00431087    mov eax,[ebp-8]"
+"	      00431087    mov eax,this"
 "	      0043108a    mov eax,[eax+72h]"
 "	      0043108d    push eax"
 "	      0043108e    call 0048EF6Fh"
@@ -5985,14 +5985,14 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 );
 // LINE 1798:
 	asm( 
-"	      004310ae    mov eax,[ebp+10h]"
-"	      004310b1    mov [ebp-4],eax"
+"	      004310ae    mov eax,dwUser"
+"	      004310b1    mov digitalSoundObject,eax"
 );
 // LINE 1799:
 	asm( 
-"	      004310b4    mov eax,[ebp-4]"
+"	      004310b4    mov eax,digitalSoundObject"
 "	      004310b7    mov eax,[eax]"
-"	      004310b9    mov ecx,[ebp-4]"
+"	      004310b9    mov ecx,digitalSoundObject"
 "	      004310bc    call dword ptr [eax+7Ch]"
 );
 // LINE 1800:
@@ -6026,11 +6026,11 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      004310d1    push ebx"
 "	      004310d2    push esi"
 "	      004310d3    push edi"
-"	      004310d4    mov [ebp-28h],ecx"
+"	      004310d4    mov this,ecx"
 );
 // LINE 1813:
 	asm( 
-"	      004310d7    mov eax,[ebp-28h]"
+"	      004310d7    mov eax,this"
 "	      004310da    mov eax,[eax+72h]"
 "	      004310dd    cmp dword ptr [eax+58h],0"
 "	      004310e1    je near ptr 004310ECh"
@@ -6041,38 +6041,38 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1815:
 	asm( 
-"	      004310ec    mov eax,[ebp-28h]"
+"	      004310ec    mov eax,this"
 "	      004310ef    mov eax,[eax+72h]"
 "	      004310f2    mov dword ptr [eax+58h],1"
 );
 // LINE 1818:
 	asm( 
-"	      004310f9    lea eax,[ebp-0Ch]"
+"	      004310f9    lea eax,dwWrite"
 "	      004310fc    push eax"
-"	      004310fd    lea eax,[ebp-1Ch]"
+"	      004310fd    lea eax,dwPlay"
 "	      00431100    push eax"
-"	      00431101    mov eax,[ebp-28h]"
+"	      00431101    mov eax,this"
 "	      00431104    mov eax,[eax+52h]"
 "	      00431107    push eax"
-"	      00431108    mov eax,[ebp-28h]"
+"	      00431108    mov eax,this"
 "	      0043110b    mov eax,[eax+52h]"
 "	      0043110e    mov eax,[eax]"
 "	      00431110    call dword ptr [eax+10h]"
 );
 // LINE 1824:
 	asm( 
-"	      00431113    mov eax,[ebp-28h]"
+"	      00431113    mov eax,this"
 "	      00431116    mov eax,[eax+72h]"
-"	      00431119    mov ecx,[ebp-1Ch]"
+"	      00431119    mov ecx,dwPlay"
 "	      0043111c    cmp [eax+34h],ecx"
 "	      0043111f    jae near ptr 0043114Ah"
-"	      00431125    mov eax,[ebp-28h]"
+"	      00431125    mov eax,this"
 "	      00431128    mov eax,[eax+72h]"
 "	      0043112b    mov eax,[eax+30h]"
-"	      0043112e    mov ecx,[ebp-28h]"
+"	      0043112e    mov ecx,this"
 "	      00431131    mov ecx,[ecx+72h]"
 "	      00431134    add eax,[ecx+34h]"
-"	      00431137    cmp eax,[ebp-1Ch]"
+"	      00431137    cmp eax,dwPlay"
 "	      0043113a    jbe near ptr 0043114Ah"
 );
 // LINE 1826:
@@ -6082,33 +6082,33 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1830:
 	asm( 
-"	      0043114a    mov eax,[ebp-28h]"
+"	      0043114a    mov eax,this"
 "	      0043114d    mov eax,[eax+72h]"
 "	      00431150    cmp dword ptr [eax+44h],0"
 "	      00431154    je near ptr 0043119Ch"
-"	      0043115a    mov eax,[ebp-28h]"
+"	      0043115a    mov eax,this"
 "	      0043115d    mov eax,[eax+72h]"
 "	      00431160    cmp dword ptr [eax+48h],0"
 "	      00431164    jne near ptr 0043119Ch"
 );
 // LINE 1831:
 	asm( 
-"	      0043116a    mov eax,[ebp-28h]"
+"	      0043116a    mov eax,this"
 "	      0043116d    mov eax,[eax+72h]"
 "	      00431170    cmp dword ptr [eax+40h],0"
 "	      00431174    jne near ptr 00431192h"
 );
 // LINE 1832:
 	asm( 
-"	      0043117a    mov eax,[ebp-28h]"
+"	      0043117a    mov eax,this"
 "	      0043117d    mov eax,[eax+72h]"
 "	      00431180    mov dword ptr [eax+40h],1"
 );
 // LINE 1833:
 	asm( 
-"	      00431187    mov eax,[ebp-28h]"
+"	      00431187    mov eax,this"
 "	      0043118a    mov eax,[eax]"
-"	      0043118c    mov ecx,[ebp-28h]"
+"	      0043118c    mov ecx,this"
 "	      0043118f    call dword ptr [eax+48h]"
 );
 // LINE 1835:
@@ -6118,22 +6118,22 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1841:
 	asm( 
-"	      0043119c    mov eax,[ebp-28h]"
+"	      0043119c    mov eax,this"
 "	      0043119f    mov eax,[eax+72h]"
-"	      004311a2    mov ecx,[ebp-1Ch]"
+"	      004311a2    mov ecx,dwPlay"
 "	      004311a5    cmp [eax+38h],ecx"
 "	      004311a8    jbe near ptr 004311D1h"
 );
 // LINE 1843:
 	asm( 
-"	      004311ae    mov eax,[ebp-28h]"
+"	      004311ae    mov eax,this"
 "	      004311b1    mov eax,[eax+72h]"
 "	      004311b4    mov eax,[eax+2Ch]"
-"	      004311b7    add eax,[ebp-1Ch]"
-"	      004311ba    mov ecx,[ebp-28h]"
+"	      004311b7    add eax,dwPlay"
+"	      004311ba    mov ecx,this"
 "	      004311bd    mov ecx,[ecx+72h]"
 "	      004311c0    sub eax,[ecx+38h]"
-"	      004311c3    mov ecx,[ebp-28h]"
+"	      004311c3    mov ecx,this"
 "	      004311c6    mov ecx,[ecx+72h]"
 "	      004311c9    add [ecx+3Ch],eax"
 );
@@ -6143,41 +6143,41 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1847:
 	asm( 
-"	      004311d1    mov eax,[ebp-1Ch]"
-"	      004311d4    mov ecx,[ebp-28h]"
+"	      004311d1    mov eax,dwPlay"
+"	      004311d4    mov ecx,this"
 "	      004311d7    mov ecx,[ecx+72h]"
 "	      004311da    sub eax,[ecx+38h]"
-"	      004311dd    mov ecx,[ebp-28h]"
+"	      004311dd    mov ecx,this"
 "	      004311e0    mov ecx,[ecx+72h]"
 "	      004311e3    add [ecx+3Ch],eax"
 );
 // LINE 1849:
 	asm( 
-"	      004311e6    mov eax,[ebp-1Ch]"
-"	      004311e9    mov ecx,[ebp-28h]"
+"	      004311e6    mov eax,dwPlay"
+"	      004311e9    mov ecx,this"
 "	      004311ec    mov ecx,[ecx+72h]"
 "	      004311ef    mov [ecx+38h],eax"
 );
 // LINE 1854:
 	asm( 
-"	      004311f2    mov eax,[ebp-28h]"
+"	      004311f2    mov eax,this"
 "	      004311f5    mov eax,[eax+72h]"
 "	      004311f8    cmp dword ptr [eax+44h],0"
 "	      004311fc    je near ptr 00431308h"
-"	      00431202    mov eax,[ebp-28h]"
+"	      00431202    mov eax,this"
 "	      00431205    mov eax,[eax+72h]"
 "	      00431208    cmp dword ptr [eax+48h],0"
 "	      0043120c    je near ptr 00431308h"
 );
 // LINE 1855:
 	asm( 
-"	      00431212    mov eax,[ebp-28h]"
+"	      00431212    mov eax,this"
 "	      00431215    mov eax,[eax+72h]"
 "	      00431218    dec dword ptr [eax+48h]"
 );
 // LINE 1857:
 	asm( 
-"	      0043121b    mov eax,[ebp-28h]"
+"	      0043121b    mov eax,this"
 "	      0043121e    mov eax,[eax+72h]"
 "	      00431221    cmp dword ptr [eax+48h],1"
 "	      00431225    jle near ptr 004312FEh"
@@ -6185,26 +6185,26 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1861:
 	asm( 
 "	      0043122b    push 0"
-"	      0043122d    lea eax,[ebp-24h]"
+"	      0043122d    lea eax,dwLength2"
 "	      00431230    push eax"
-"	      00431231    lea eax,[ebp-18h]"
+"	      00431231    lea eax,lpWrite2"
 "	      00431234    push eax"
-"	      00431235    lea eax,[ebp-14h]"
+"	      00431235    lea eax,dwLength1"
 "	      00431238    push eax"
-"	      00431239    lea eax,[ebp-20h]"
+"	      00431239    lea eax,lpWrite1"
 "	      0043123c    push eax"
-"	      0043123d    mov eax,[ebp-28h]"
+"	      0043123d    mov eax,this"
 "	      00431240    mov eax,[eax+72h]"
 "	      00431243    mov eax,[eax+30h]"
 "	      00431246    push eax"
-"	      00431247    mov eax,[ebp-28h]"
+"	      00431247    mov eax,this"
 "	      0043124a    mov eax,[eax+72h]"
 "	      0043124d    mov eax,[eax+34h]"
 "	      00431250    push eax"
-"	      00431251    mov eax,[ebp-28h]"
+"	      00431251    mov eax,this"
 "	      00431254    mov eax,[eax+52h]"
 "	      00431257    push eax"
-"	      00431258    mov eax,[ebp-28h]"
+"	      00431258    mov eax,this"
 "	      0043125b    mov eax,[eax+52h]"
 "	      0043125e    mov eax,[eax]"
 "	      00431260    call dword ptr [eax+2Ch]"
@@ -6218,9 +6218,9 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1880:
 	asm( 
-"	      00431275    mov eax,[ebp-14h]"
+"	      00431275    mov eax,dwLength1"
 "	      00431278    push eax"
-"	      00431279    mov eax,[ebp-28h]"
+"	      00431279    mov eax,this"
 "	      0043127c    xor ecx,ecx"
 "	      0043127e    mov cx,[eax+4Eh]"
 "	      00431282    sub ecx,8"
@@ -6228,43 +6228,43 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      00431288    sbb eax,eax"
 "	      0043128a    and eax,80h"
 "	      0043128f    push eax"
-"	      00431290    mov eax,[ebp-20h]"
+"	      00431290    mov eax,lpWrite1"
 "	      00431293    push eax"
 "	      00431294    call 0056EB90h"
 "	      00431299    add esp,0Ch"
 );
 // LINE 1883:
 	asm( 
-"	      0043129c    mov eax,[ebp-24h]"
+"	      0043129c    mov eax,dwLength2"
 "	      0043129f    push eax"
-"	      004312a0    mov eax,[ebp-18h]"
+"	      004312a0    mov eax,lpWrite2"
 "	      004312a3    push eax"
-"	      004312a4    mov eax,[ebp-14h]"
+"	      004312a4    mov eax,dwLength1"
 "	      004312a7    push eax"
-"	      004312a8    mov eax,[ebp-20h]"
+"	      004312a8    mov eax,lpWrite1"
 "	      004312ab    push eax"
-"	      004312ac    mov eax,[ebp-28h]"
+"	      004312ac    mov eax,this"
 "	      004312af    mov eax,[eax+52h]"
 "	      004312b2    push eax"
-"	      004312b3    mov eax,[ebp-28h]"
+"	      004312b3    mov eax,this"
 "	      004312b6    mov eax,[eax+52h]"
 "	      004312b9    mov eax,[eax]"
 "	      004312bb    call dword ptr [eax+4Ch]"
 );
 // LINE 1891:
 	asm( 
-"	      004312be    mov eax,[ebp-28h]"
+"	      004312be    mov eax,this"
 "	      004312c1    mov eax,[eax+72h]"
 "	      004312c4    mov eax,[eax+30h]"
-"	      004312c7    mov ecx,[ebp-28h]"
+"	      004312c7    mov ecx,this"
 "	      004312ca    mov ecx,[ecx+72h]"
 "	      004312cd    add [ecx+34h],eax"
 );
 // LINE 1892:
 	asm( 
-"	      004312d0    mov eax,[ebp-28h]"
+"	      004312d0    mov eax,this"
 "	      004312d3    mov eax,[eax+72h]"
-"	      004312d6    mov ecx,[ebp-28h]"
+"	      004312d6    mov ecx,this"
 "	      004312d9    mov ecx,[ecx+72h]"
 "	      004312dc    mov ecx,[ecx+34h]"
 "	      004312df    cmp [eax+2Ch],ecx"
@@ -6273,11 +6273,11 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1893:
 	asm( 
 "	      004312e8    xor eax,eax"
-"	      004312ea    mov ecx,[ebp-28h]"
+"	      004312ea    mov ecx,this"
 "	      004312ed    mov ecx,[ecx+72h]"
 "	      004312f0    sub eax,[ecx+2Ch]"
 "	      004312f3    neg eax"
-"	      004312f5    mov ecx,[ebp-28h]"
+"	      004312f5    mov ecx,this"
 "	      004312f8    mov ecx,[ecx+72h]"
 "	      004312fb    sub [ecx+34h],eax"
 );
@@ -6289,26 +6289,26 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1902:
 	asm( 
 "	      00431308    push 0"
-"	      0043130a    lea eax,[ebp-24h]"
+"	      0043130a    lea eax,dwLength2"
 "	      0043130d    push eax"
-"	      0043130e    lea eax,[ebp-18h]"
+"	      0043130e    lea eax,lpWrite2"
 "	      00431311    push eax"
-"	      00431312    lea eax,[ebp-14h]"
+"	      00431312    lea eax,dwLength1"
 "	      00431315    push eax"
-"	      00431316    lea eax,[ebp-20h]"
+"	      00431316    lea eax,lpWrite1"
 "	      00431319    push eax"
-"	      0043131a    mov eax,[ebp-28h]"
+"	      0043131a    mov eax,this"
 "	      0043131d    mov eax,[eax+72h]"
 "	      00431320    mov eax,[eax+30h]"
 "	      00431323    push eax"
-"	      00431324    mov eax,[ebp-28h]"
+"	      00431324    mov eax,this"
 "	      00431327    mov eax,[eax+72h]"
 "	      0043132a    mov eax,[eax+34h]"
 "	      0043132d    push eax"
-"	      0043132e    mov eax,[ebp-28h]"
+"	      0043132e    mov eax,this"
 "	      00431331    mov eax,[eax+52h]"
 "	      00431334    push eax"
-"	      00431335    mov eax,[ebp-28h]"
+"	      00431335    mov eax,this"
 "	      00431338    mov eax,[eax+52h]"
 "	      0043133b    mov eax,[eax]"
 "	      0043133d    call dword ptr [eax+2Ch]"
@@ -6322,67 +6322,67 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1907:
 	asm( 
-"	      00431352    cmp dword ptr [ebp-14h],0"
+"	      00431352    cmp dwLength1,0"
 "	      00431356    je near ptr 00431513h"
-"	      0043135c    mov eax,[ebp-28h]"
+"	      0043135c    mov eax,this"
 "	      0043135f    mov eax,[eax+72h]"
 "	      00431362    cmp dword ptr [eax+40h],0"
 "	      00431366    jne near ptr 00431513h"
 );
 // LINE 1909:
 	asm( 
-"	      0043136c    lea eax,[ebp-10h]"
+"	      0043136c    lea eax,nActualBytesRead"
 "	      0043136f    push eax"
-"	      00431370    mov eax,[ebp-28h]"
+"	      00431370    mov eax,this"
 "	      00431373    mov eax,[eax+72h]"
 "	      00431376    add eax,4"
 "	      00431379    push eax"
-"	      0043137a    mov eax,[ebp-20h]"
+"	      0043137a    mov eax,lpWrite1"
 "	      0043137d    push eax"
-"	      0043137e    mov eax,[ebp-14h]"
+"	      0043137e    mov eax,dwLength1"
 "	      00431381    push eax"
-"	      00431382    mov eax,[ebp-28h]"
+"	      00431382    mov eax,this"
 "	      00431385    mov eax,[eax+72h]"
 "	      00431388    mov eax,[eax]"
 "	      0043138a    push eax"
 "	      0043138b    call 0048EE25h"
 "	      00431390    add esp,14h"
-"	      00431393    mov [ebp-8],eax"
+"	      00431393    mov nError,eax"
 );
 // LINE 1910:
 	asm( 
-"	      00431396    cmp dword ptr [ebp-8],0"
+"	      00431396    cmp nError,0"
 "	      0043139a    je near ptr 004313E4h"
 );
 // LINE 1911:
 	asm( 
-"	      004313a0    mov eax,[ebp-24h]"
+"	      004313a0    mov eax,dwLength2"
 "	      004313a3    push eax"
-"	      004313a4    mov eax,[ebp-18h]"
+"	      004313a4    mov eax,lpWrite2"
 "	      004313a7    push eax"
-"	      004313a8    mov eax,[ebp-14h]"
+"	      004313a8    mov eax,dwLength1"
 "	      004313ab    push eax"
-"	      004313ac    mov eax,[ebp-20h]"
+"	      004313ac    mov eax,lpWrite1"
 "	      004313af    push eax"
-"	      004313b0    mov eax,[ebp-28h]"
+"	      004313b0    mov eax,this"
 "	      004313b3    mov eax,[eax+52h]"
 "	      004313b6    push eax"
-"	      004313b7    mov eax,[ebp-28h]"
+"	      004313b7    mov eax,this"
 "	      004313ba    mov eax,[eax+52h]"
 "	      004313bd    mov eax,[eax]"
 "	      004313bf    call dword ptr [eax+4Ch]"
 );
 // LINE 1912:
 	asm( 
-"	      004313c2    mov eax,[ebp-28h]"
+"	      004313c2    mov eax,this"
 "	      004313c5    mov eax,[eax+72h]"
 "	      004313c8    mov dword ptr [eax+40h],1"
 );
 // LINE 1913:
 	asm( 
-"	      004313cf    mov eax,[ebp-28h]"
+"	      004313cf    mov eax,this"
 "	      004313d2    mov eax,[eax]"
-"	      004313d4    mov ecx,[ebp-28h]"
+"	      004313d4    mov ecx,this"
 "	      004313d7    call dword ptr [eax+48h]"
 );
 // LINE 1914:
@@ -6392,28 +6392,28 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1916:
 	asm( 
-"	      004313e4    mov eax,[ebp-10h]"
-"	      004313e7    cmp [ebp-14h],eax"
+"	      004313e4    mov eax,nActualBytesRead"
+"	      004313e7    cmp dwLength1,eax"
 "	      004313ea    jbe near ptr 0043150Eh"
 );
 // LINE 1917:
 	asm( 
-"	      004313f0    mov eax,[ebp-28h]"
+"	      004313f0    mov eax,this"
 "	      004313f3    cmp dword ptr [eax+1Ch],0"
 "	      004313f7    jne near ptr 0043149Ch"
 );
 // LINE 1919:
 	asm( 
-"	      004313fd    mov eax,[ebp-28h]"
+"	      004313fd    mov eax,this"
 "	      00431400    mov eax,[eax+72h]"
 "	      00431403    mov dword ptr [eax+44h],1"
 );
 // LINE 1924:
 	asm( 
-"	      0043140a    mov eax,[ebp-14h]"
-"	      0043140d    sub eax,[ebp-10h]"
+"	      0043140a    mov eax,dwLength1"
+"	      0043140d    sub eax,nActualBytesRead"
 "	      00431410    push eax"
-"	      00431411    mov eax,[ebp-28h]"
+"	      00431411    mov eax,this"
 "	      00431414    xor ecx,ecx"
 "	      00431416    mov cx,[eax+4Eh]"
 "	      0043141a    sub ecx,8"
@@ -6421,34 +6421,34 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      00431420    sbb eax,eax"
 "	      00431422    and eax,80h"
 "	      00431427    push eax"
-"	      00431428    mov eax,[ebp-10h]"
-"	      0043142b    add eax,[ebp-20h]"
+"	      00431428    mov eax,nActualBytesRead"
+"	      0043142b    add eax,lpWrite1"
 "	      0043142e    push eax"
 "	      0043142f    call 0056EB90h"
 "	      00431434    add esp,0Ch"
 );
 // LINE 1927:
 	asm( 
-"	      00431437    mov eax,[ebp-28h]"
+"	      00431437    mov eax,this"
 "	      0043143a    mov eax,[eax+72h]"
-"	      0043143d    mov ecx,[ebp-1Ch]"
+"	      0043143d    mov ecx,dwPlay"
 "	      00431440    cmp [eax+34h],ecx"
 "	      00431443    jae near ptr 00431477h"
 );
 // LINE 1931:
 	asm( 
-"	      00431449    mov eax,[ebp-28h]"
+"	      00431449    mov eax,this"
 "	      0043144c    mov eax,[eax+72h]"
 "	      0043144f    mov eax,[eax+2Ch]"
-"	      00431452    mov ecx,[ebp-28h]"
+"	      00431452    mov ecx,this"
 "	      00431455    mov ecx,[ecx+72h]"
 "	      00431458    add eax,[ecx+34h]"
-"	      0043145b    sub eax,[ebp-1Ch]"
-"	      0043145e    mov ecx,[ebp-28h]"
+"	      0043145b    sub eax,dwPlay"
+"	      0043145e    mov ecx,this"
 "	      00431461    mov ecx,[ecx+72h]"
 "	      00431464    sub edx,edx"
 "	      00431466    div dword ptr [ecx+30h]"
-"	      00431469    mov ecx,[ebp-28h]"
+"	      00431469    mov ecx,this"
 "	      0043146c    mov ecx,[ecx+72h]"
 "	      0043146f    mov [ecx+48h],eax"
 );
@@ -6458,15 +6458,15 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1935:
 	asm( 
-"	      00431477    mov eax,[ebp-28h]"
+"	      00431477    mov eax,this"
 "	      0043147a    mov eax,[eax+72h]"
 "	      0043147d    mov eax,[eax+34h]"
-"	      00431480    sub eax,[ebp-1Ch]"
-"	      00431483    mov ecx,[ebp-28h]"
+"	      00431480    sub eax,dwPlay"
+"	      00431483    mov ecx,this"
 "	      00431486    mov ecx,[ecx+72h]"
 "	      00431489    sub edx,edx"
 "	      0043148b    div dword ptr [ecx+30h]"
-"	      0043148e    mov ecx,[ebp-28h]"
+"	      0043148e    mov ecx,this"
 "	      00431491    mov ecx,[ecx+72h]"
 "	      00431494    mov [ecx+48h],eax"
 );
@@ -6476,79 +6476,79 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1938:
 	asm( 
-"	      0043149c    mov eax,[ebp-20h]"
-"	      0043149f    mov [ebp-4],eax"
+"	      0043149c    mov eax,lpWrite1"
+"	      0043149f    mov lpTemp,eax"
 );
 // LINE 1945:
 	asm( 
-"	      004314a2    mov eax,[ebp-10h]"
-"	      004314a5    add [ebp-4],eax"
+"	      004314a2    mov eax,nActualBytesRead"
+"	      004314a5    add lpTemp,eax"
 );
 // LINE 1946:
 	asm( 
 "	      004314a8    xor eax,eax"
-"	      004314aa    sub eax,[ebp-10h]"
+"	      004314aa    sub eax,nActualBytesRead"
 "	      004314ad    neg eax"
-"	      004314af    sub [ebp-14h],eax"
+"	      004314af    sub dwLength1,eax"
 );
 // LINE 1949:
 	asm( 
-"	      004314b2    mov eax,[ebp-28h]"
+"	      004314b2    mov eax,this"
 "	      004314b5    mov eax,[eax+72h]"
 "	      004314b8    add eax,18h"
 "	      004314bb    push eax"
-"	      004314bc    mov eax,[ebp-28h]"
+"	      004314bc    mov eax,this"
 "	      004314bf    mov eax,[eax+72h]"
 "	      004314c2    add eax,4"
 "	      004314c5    push eax"
-"	      004314c6    mov eax,[ebp-28h]"
+"	      004314c6    mov eax,this"
 "	      004314c9    mov eax,[eax+72h]"
 "	      004314cc    push eax"
 "	      004314cd    call 0048EDB9h"
 "	      004314d2    add esp,0Ch"
-"	      004314d5    mov [ebp-8],eax"
+"	      004314d5    mov nError,eax"
 );
 // LINE 1951:
 	asm( 
-"	      004314d8    lea eax,[ebp-10h]"
+"	      004314d8    lea eax,nActualBytesRead"
 "	      004314db    push eax"
-"	      004314dc    mov eax,[ebp-28h]"
+"	      004314dc    mov eax,this"
 "	      004314df    mov eax,[eax+72h]"
 "	      004314e2    add eax,4"
 "	      004314e5    push eax"
-"	      004314e6    mov eax,[ebp-4]"
+"	      004314e6    mov eax,lpTemp"
 "	      004314e9    push eax"
-"	      004314ea    mov eax,[ebp-14h]"
+"	      004314ea    mov eax,dwLength1"
 "	      004314ed    push eax"
-"	      004314ee    mov eax,[ebp-28h]"
+"	      004314ee    mov eax,this"
 "	      004314f1    mov eax,[eax+72h]"
 "	      004314f4    mov eax,[eax]"
 "	      004314f6    push eax"
 "	      004314f7    call 0048EE25h"
 "	      004314fc    add esp,14h"
-"	      004314ff    mov [ebp-8],eax"
+"	      004314ff    mov nError,eax"
 );
 // LINE 1952:
 	asm( 
-"	      00431502    mov eax,[ebp-10h]"
-"	      00431505    cmp [ebp-14h],eax"
+"	      00431502    mov eax,nActualBytesRead"
+"	      00431505    cmp dwLength1,eax"
 "	      00431508    ja near ptr 004314A2h"
 );
 // LINE 1961:
 	asm( 
 "	      0043150e    jmp near ptr 00431554h"
-"	      00431513    cmp dword ptr [ebp-14h],0"
+"	      00431513    cmp dwLength1,0"
 "	      00431517    je near ptr 00431554h"
-"	      0043151d    mov eax,[ebp-28h]"
+"	      0043151d    mov eax,this"
 "	      00431520    mov eax,[eax+72h]"
 "	      00431523    cmp dword ptr [eax+40h],0"
 "	      00431527    je near ptr 00431554h"
 );
 // LINE 1963:
 	asm( 
-"	      0043152d    mov eax,[ebp-14h]"
+"	      0043152d    mov eax,dwLength1"
 "	      00431530    push eax"
-"	      00431531    mov eax,[ebp-28h]"
+"	      00431531    mov eax,this"
 "	      00431534    xor ecx,ecx"
 "	      00431536    mov cx,[eax+4Eh]"
 "	      0043153a    sub ecx,8"
@@ -6556,74 +6556,74 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      00431540    sbb eax,eax"
 "	      00431542    and eax,80h"
 "	      00431547    push eax"
-"	      00431548    mov eax,[ebp-20h]"
+"	      00431548    mov eax,lpWrite1"
 "	      0043154b    push eax"
 "	      0043154c    call 0056EB90h"
 "	      00431551    add esp,0Ch"
 );
 // LINE 1966:
 	asm( 
-"	      00431554    cmp dword ptr [ebp-24h],0"
+"	      00431554    cmp dwLength2,0"
 "	      00431558    je near ptr 00431744h"
-"	      0043155e    mov eax,[ebp-28h]"
+"	      0043155e    mov eax,this"
 "	      00431561    mov eax,[eax+72h]"
 "	      00431564    cmp dword ptr [eax+40h],0"
 "	      00431568    jne near ptr 00431744h"
 );
 // LINE 1968:
 	asm( 
-"	      0043156e    lea eax,[ebp-10h]"
+"	      0043156e    lea eax,nActualBytesRead"
 "	      00431571    push eax"
-"	      00431572    mov eax,[ebp-28h]"
+"	      00431572    mov eax,this"
 "	      00431575    mov eax,[eax+72h]"
 "	      00431578    add eax,4"
 "	      0043157b    push eax"
-"	      0043157c    mov eax,[ebp-18h]"
+"	      0043157c    mov eax,lpWrite2"
 "	      0043157f    push eax"
-"	      00431580    mov eax,[ebp-24h]"
+"	      00431580    mov eax,dwLength2"
 "	      00431583    push eax"
-"	      00431584    mov eax,[ebp-28h]"
+"	      00431584    mov eax,this"
 "	      00431587    mov eax,[eax+72h]"
 "	      0043158a    mov eax,[eax]"
 "	      0043158c    push eax"
 "	      0043158d    call 0048EE25h"
 "	      00431592    add esp,14h"
-"	      00431595    mov [ebp-8],eax"
+"	      00431595    mov nError,eax"
 );
 // LINE 1969:
 	asm( 
-"	      00431598    cmp dword ptr [ebp-8],0"
+"	      00431598    cmp nError,0"
 "	      0043159c    je near ptr 004315E6h"
 );
 // LINE 1970:
 	asm( 
-"	      004315a2    mov eax,[ebp-24h]"
+"	      004315a2    mov eax,dwLength2"
 "	      004315a5    push eax"
-"	      004315a6    mov eax,[ebp-18h]"
+"	      004315a6    mov eax,lpWrite2"
 "	      004315a9    push eax"
-"	      004315aa    mov eax,[ebp-14h]"
+"	      004315aa    mov eax,dwLength1"
 "	      004315ad    push eax"
-"	      004315ae    mov eax,[ebp-20h]"
+"	      004315ae    mov eax,lpWrite1"
 "	      004315b1    push eax"
-"	      004315b2    mov eax,[ebp-28h]"
+"	      004315b2    mov eax,this"
 "	      004315b5    mov eax,[eax+52h]"
 "	      004315b8    push eax"
-"	      004315b9    mov eax,[ebp-28h]"
+"	      004315b9    mov eax,this"
 "	      004315bc    mov eax,[eax+52h]"
 "	      004315bf    mov eax,[eax]"
 "	      004315c1    call dword ptr [eax+4Ch]"
 );
 // LINE 1971:
 	asm( 
-"	      004315c4    mov eax,[ebp-28h]"
+"	      004315c4    mov eax,this"
 "	      004315c7    mov eax,[eax+72h]"
 "	      004315ca    mov dword ptr [eax+40h],1"
 );
 // LINE 1972:
 	asm( 
-"	      004315d1    mov eax,[ebp-28h]"
+"	      004315d1    mov eax,this"
 "	      004315d4    mov eax,[eax]"
-"	      004315d6    mov ecx,[ebp-28h]"
+"	      004315d6    mov ecx,this"
 "	      004315d9    call dword ptr [eax+48h]"
 );
 // LINE 1973:
@@ -6633,19 +6633,19 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1975:
 	asm( 
-"	      004315e6    mov eax,[ebp-10h]"
-"	      004315e9    cmp [ebp-24h],eax"
+"	      004315e6    mov eax,nActualBytesRead"
+"	      004315e9    cmp dwLength2,eax"
 "	      004315ec    jbe near ptr 0043173Fh"
 );
 // LINE 1976:
 	asm( 
-"	      004315f2    mov eax,[ebp-28h]"
+"	      004315f2    mov eax,this"
 "	      004315f5    cmp dword ptr [eax+1Ch],0"
 "	      004315f9    jne near ptr 004316CDh"
 );
 // LINE 1978:
 	asm( 
-"	      004315ff    mov eax,[ebp-28h]"
+"	      004315ff    mov eax,this"
 "	      00431602    xor ecx,ecx"
 "	      00431604    mov cx,[eax+4Eh]"
 "	      00431608    cmp ecx,8"
@@ -6653,12 +6653,12 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1979:
 	asm( 
-"	      00431611    mov eax,[ebp-24h]"
-"	      00431614    sub eax,[ebp-10h]"
+"	      00431611    mov eax,dwLength2"
+"	      00431614    sub eax,nActualBytesRead"
 "	      00431617    push eax"
 "	      00431618    push 80h"
-"	      0043161d    mov eax,[ebp-10h]"
-"	      00431620    add eax,[ebp-18h]"
+"	      0043161d    mov eax,nActualBytesRead"
+"	      00431620    add eax,lpWrite2"
 "	      00431623    push eax"
 "	      00431624    call 0056EB90h"
 "	      00431629    add esp,0Ch"
@@ -6666,7 +6666,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1980:
 	asm( 
 "	      0043162c    jmp near ptr 0043165Bh"
-"	      00431631    mov eax,[ebp-28h]"
+"	      00431631    mov eax,this"
 "	      00431634    xor ecx,ecx"
 "	      00431636    mov cx,[eax+4Eh]"
 "	      0043163a    cmp ecx,10h"
@@ -6674,44 +6674,44 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1981:
 	asm( 
-"	      00431643    mov eax,[ebp-24h]"
-"	      00431646    sub eax,[ebp-10h]"
+"	      00431643    mov eax,dwLength2"
+"	      00431646    sub eax,nActualBytesRead"
 "	      00431649    push eax"
 "	      0043164a    push 0"
-"	      0043164c    mov eax,[ebp-10h]"
-"	      0043164f    add eax,[ebp-18h]"
+"	      0043164c    mov eax,nActualBytesRead"
+"	      0043164f    add eax,lpWrite2"
 "	      00431652    push eax"
 "	      00431653    call 0056EB90h"
 "	      00431658    add esp,0Ch"
 );
 // LINE 1985:
 	asm( 
-"	      0043165b    mov eax,[ebp-28h]"
+"	      0043165b    mov eax,this"
 "	      0043165e    mov eax,[eax+72h]"
 "	      00431661    mov dword ptr [eax+44h],1"
 );
 // LINE 1986:
 	asm( 
-"	      00431668    mov eax,[ebp-28h]"
+"	      00431668    mov eax,this"
 "	      0043166b    mov eax,[eax+72h]"
-"	      0043166e    mov ecx,[ebp-1Ch]"
+"	      0043166e    mov ecx,dwPlay"
 "	      00431671    cmp [eax+34h],ecx"
 "	      00431674    jae near ptr 004316A8h"
 );
 // LINE 1990:
 	asm( 
-"	      0043167a    mov eax,[ebp-28h]"
+"	      0043167a    mov eax,this"
 "	      0043167d    mov eax,[eax+72h]"
 "	      00431680    mov eax,[eax+2Ch]"
-"	      00431683    mov ecx,[ebp-28h]"
+"	      00431683    mov ecx,this"
 "	      00431686    mov ecx,[ecx+72h]"
 "	      00431689    add eax,[ecx+34h]"
-"	      0043168c    sub eax,[ebp-1Ch]"
-"	      0043168f    mov ecx,[ebp-28h]"
+"	      0043168c    sub eax,dwPlay"
+"	      0043168f    mov ecx,this"
 "	      00431692    mov ecx,[ecx+72h]"
 "	      00431695    sub edx,edx"
 "	      00431697    div dword ptr [ecx+30h]"
-"	      0043169a    mov ecx,[ebp-28h]"
+"	      0043169a    mov ecx,this"
 "	      0043169d    mov ecx,[ecx+72h]"
 "	      004316a0    mov [ecx+48h],eax"
 );
@@ -6721,15 +6721,15 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1994:
 	asm( 
-"	      004316a8    mov eax,[ebp-28h]"
+"	      004316a8    mov eax,this"
 "	      004316ab    mov eax,[eax+72h]"
 "	      004316ae    mov eax,[eax+34h]"
-"	      004316b1    sub eax,[ebp-1Ch]"
-"	      004316b4    mov ecx,[ebp-28h]"
+"	      004316b1    sub eax,dwPlay"
+"	      004316b4    mov ecx,this"
 "	      004316b7    mov ecx,[ecx+72h]"
 "	      004316ba    sub edx,edx"
 "	      004316bc    div dword ptr [ecx+30h]"
-"	      004316bf    mov ecx,[ebp-28h]"
+"	      004316bf    mov ecx,this"
 "	      004316c2    mov ecx,[ecx+72h]"
 "	      004316c5    mov [ecx+48h],eax"
 );
@@ -6739,79 +6739,79 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 // LINE 1997:
 	asm( 
-"	      004316cd    mov eax,[ebp-18h]"
-"	      004316d0    mov [ebp-4],eax"
+"	      004316cd    mov eax,lpWrite2"
+"	      004316d0    mov lpTemp,eax"
 );
 // LINE 2004:
 	asm( 
-"	      004316d3    mov eax,[ebp-10h]"
-"	      004316d6    add [ebp-4],eax"
+"	      004316d3    mov eax,nActualBytesRead"
+"	      004316d6    add lpTemp,eax"
 );
 // LINE 2005:
 	asm( 
 "	      004316d9    xor eax,eax"
-"	      004316db    sub eax,[ebp-10h]"
+"	      004316db    sub eax,nActualBytesRead"
 "	      004316de    neg eax"
-"	      004316e0    sub [ebp-24h],eax"
+"	      004316e0    sub dwLength2,eax"
 );
 // LINE 2008:
 	asm( 
-"	      004316e3    mov eax,[ebp-28h]"
+"	      004316e3    mov eax,this"
 "	      004316e6    mov eax,[eax+72h]"
 "	      004316e9    add eax,18h"
 "	      004316ec    push eax"
-"	      004316ed    mov eax,[ebp-28h]"
+"	      004316ed    mov eax,this"
 "	      004316f0    mov eax,[eax+72h]"
 "	      004316f3    add eax,4"
 "	      004316f6    push eax"
-"	      004316f7    mov eax,[ebp-28h]"
+"	      004316f7    mov eax,this"
 "	      004316fa    mov eax,[eax+72h]"
 "	      004316fd    push eax"
 "	      004316fe    call 0048EDB9h"
 "	      00431703    add esp,0Ch"
-"	      00431706    mov [ebp-8],eax"
+"	      00431706    mov nError,eax"
 );
 // LINE 2011:
 	asm( 
-"	      00431709    lea eax,[ebp-10h]"
+"	      00431709    lea eax,nActualBytesRead"
 "	      0043170c    push eax"
-"	      0043170d    mov eax,[ebp-28h]"
+"	      0043170d    mov eax,this"
 "	      00431710    mov eax,[eax+72h]"
 "	      00431713    add eax,4"
 "	      00431716    push eax"
-"	      00431717    mov eax,[ebp-4]"
+"	      00431717    mov eax,lpTemp"
 "	      0043171a    push eax"
-"	      0043171b    mov eax,[ebp-24h]"
+"	      0043171b    mov eax,dwLength2"
 "	      0043171e    push eax"
-"	      0043171f    mov eax,[ebp-28h]"
+"	      0043171f    mov eax,this"
 "	      00431722    mov eax,[eax+72h]"
 "	      00431725    mov eax,[eax]"
 "	      00431727    push eax"
 "	      00431728    call 0048EE25h"
 "	      0043172d    add esp,14h"
-"	      00431730    mov [ebp-8],eax"
+"	      00431730    mov nError,eax"
 );
 // LINE 2012:
 	asm( 
-"	      00431733    mov eax,[ebp-10h]"
-"	      00431736    cmp [ebp-24h],eax"
+"	      00431733    mov eax,nActualBytesRead"
+"	      00431736    cmp dwLength2,eax"
 "	      00431739    ja near ptr 004316D3h"
 );
 // LINE 2016:
 	asm( 
 "	      0043173f    jmp near ptr 00431785h"
-"	      00431744    cmp dword ptr [ebp-24h],0"
+"	      00431744    cmp dwLength2,0"
 "	      00431748    je near ptr 00431785h"
-"	      0043174e    mov eax,[ebp-28h]"
+"	      0043174e    mov eax,this"
 "	      00431751    mov eax,[eax+72h]"
 "	      00431754    cmp dword ptr [eax+40h],0"
 "	      00431758    je near ptr 00431785h"
 );
 // LINE 2018:
 	asm( 
-"	      0043175e    mov eax,[ebp-24h]"
+"	      0043175e    mov eax,dwLength2"
 "	      00431761    push eax"
-"	      00431762    mov eax,[ebp-28h]"
+"	      00431762    mov eax,this"
 "	      00431765    xor ecx,ecx"
 "	      00431767    mov cx,[eax+4Eh]"
 "	      0043176b    sub ecx,8"
@@ -6819,43 +6819,43 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      00431771    sbb eax,eax"
 "	      00431773    and eax,80h"
 "	      00431778    push eax"
-"	      00431779    mov eax,[ebp-18h]"
+"	      00431779    mov eax,lpWrite2"
 "	      0043177c    push eax"
 "	      0043177d    call 0056EB90h"
 "	      00431782    add esp,0Ch"
 );
 // LINE 2021:
 	asm( 
-"	      00431785    mov eax,[ebp-24h]"
+"	      00431785    mov eax,dwLength2"
 "	      00431788    push eax"
-"	      00431789    mov eax,[ebp-18h]"
+"	      00431789    mov eax,lpWrite2"
 "	      0043178c    push eax"
-"	      0043178d    mov eax,[ebp-14h]"
+"	      0043178d    mov eax,dwLength1"
 "	      00431790    push eax"
-"	      00431791    mov eax,[ebp-20h]"
+"	      00431791    mov eax,lpWrite1"
 "	      00431794    push eax"
-"	      00431795    mov eax,[ebp-28h]"
+"	      00431795    mov eax,this"
 "	      00431798    mov eax,[eax+52h]"
 "	      0043179b    push eax"
-"	      0043179c    mov eax,[ebp-28h]"
+"	      0043179c    mov eax,this"
 "	      0043179f    mov eax,[eax+52h]"
 "	      004317a2    mov eax,[eax]"
 "	      004317a4    call dword ptr [eax+4Ch]"
 );
 // LINE 2024:
 	asm( 
-"	      004317a7    mov eax,[ebp-28h]"
+"	      004317a7    mov eax,this"
 "	      004317aa    mov eax,[eax+72h]"
 "	      004317ad    mov eax,[eax+30h]"
-"	      004317b0    mov ecx,[ebp-28h]"
+"	      004317b0    mov ecx,this"
 "	      004317b3    mov ecx,[ecx+72h]"
 "	      004317b6    add [ecx+34h],eax"
 );
 // LINE 2025:
 	asm( 
-"	      004317b9    mov eax,[ebp-28h]"
+"	      004317b9    mov eax,this"
 "	      004317bc    mov eax,[eax+72h]"
-"	      004317bf    mov ecx,[ebp-28h]"
+"	      004317bf    mov ecx,this"
 "	      004317c2    mov ecx,[ecx+72h]"
 "	      004317c5    mov ecx,[ecx+34h]"
 "	      004317c8    cmp [eax+2Ch],ecx"
@@ -6864,18 +6864,18 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 2026:
 	asm( 
 "	      004317d1    xor eax,eax"
-"	      004317d3    mov ecx,[ebp-28h]"
+"	      004317d3    mov ecx,this"
 "	      004317d6    mov ecx,[ecx+72h]"
 "	      004317d9    sub eax,[ecx+2Ch]"
 "	      004317dc    neg eax"
-"	      004317de    mov ecx,[ebp-28h]"
+"	      004317de    mov ecx,this"
 "	      004317e1    mov ecx,[ecx+72h]"
 "	      004317e4    sub [ecx+34h],eax"
 );
 // LINE 2030:
 END_OF_FUNCTION:
 	asm( 
-"	      004317e7    mov eax,[ebp-28h]"
+"	      004317e7    mov eax,this"
 "	      004317ea    mov eax,[eax+72h]"
 "	      004317ed    mov dword ptr [eax+58h],0"
 );
@@ -6907,18 +6907,18 @@ int32_t DigitalSound::SetCompletionNotification(void (*)(long) newSoundCompletio
 "	      00431827    push ebx"
 "	      00431828    push esi"
 "	      00431829    push edi"
-"	      0043182a    mov [ebp-4],ecx"
+"	      0043182a    mov this,ecx"
 );
 // LINE 2044:
 	asm( 
-"	      0043182d    mov eax,[ebp+8]"
-"	      00431830    mov ecx,[ebp-4]"
+"	      0043182d    mov eax,newSoundCompletionFunction"
+"	      00431830    mov ecx,this"
 "	      00431833    mov [ecx+28h],eax"
 );
 // LINE 2045:
 	asm( 
-"	      00431836    mov eax,[ebp+0Ch]"
-"	      00431839    mov ecx,[ebp-4]"
+"	      00431836    mov eax,lNewSoundCompletionData"
+"	      00431839    mov ecx,this"
 "	      0043183c    mov [ecx+2Ch],eax"
 );
 // LINE 2046:
@@ -6946,24 +6946,24 @@ void DigitalSound::StopCompletionNotification() {
 "	      00431856    push ebx"
 "	      00431857    push esi"
 "	      00431858    push edi"
-"	      00431859    mov [ebp-4],ecx"
+"	      00431859    mov this,ecx"
 );
 // LINE 2055:
 	asm( 
-"	      0043185c    mov eax,[ebp-4]"
+"	      0043185c    mov eax,this"
 "	      0043185f    mov dword ptr [eax+28h],0"
 );
 // LINE 2056:
 	asm( 
-"	      00431866    mov eax,[ebp-4]"
+"	      00431866    mov eax,this"
 "	      00431869    cmp dword ptr [eax+38h],0"
 "	      0043186d    je near ptr 00431881h"
 );
 // LINE 2057:
 	asm( 
-"	      00431873    mov eax,[ebp-4]"
+"	      00431873    mov eax,this"
 "	      00431876    mov eax,[eax]"
-"	      00431878    mov ecx,[ebp-4]"
+"	      00431878    mov ecx,this"
 "	      0043187b    call dword ptr [eax+84h]"
 );
 // LINE 2058:
@@ -6990,21 +6990,21 @@ long DigitalSound::EstimateRemainingPlayTime() {
 "	      00431891    push ebx"
 "	      00431892    push esi"
 "	      00431893    push edi"
-"	      00431894    mov [ebp-0Ch],ecx"
+"	      00431894    mov this,ecx"
 );
 // LINE 2075:
 	asm( 
-"	      00431897    mov eax,[ebp-0Ch]"
+"	      00431897    mov eax,this"
 "	      0043189a    mov eax,[eax]"
-"	      0043189c    mov ecx,[ebp-0Ch]"
+"	      0043189c    mov ecx,this"
 "	      0043189f    call dword ptr [eax+10h]"
 "	      004318a2    test eax,eax"
 "	      004318a4    jne near ptr 004318E2h"
 );
 // LINE 2079:
 	asm( 
-"	      004318aa    mov eax,[ebp-0Ch]"
-"	      004318ad    mov ecx,[ebp-0Ch]"
+"	      004318aa    mov eax,this"
+"	      004318ad    mov ecx,this"
 "	      004318b0    xor ebx,ebx"
 "	      004318b2    mov bx,[ecx+4Eh]"
 "	      004318b6    mov eax,[eax+3Ch]"
@@ -7014,7 +7014,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 "	      004318c0    lea eax,[eax+eax*4]"
 "	      004318c3    lea eax,[eax+eax*4]"
 "	      004318c6    shl eax,6"
-"	      004318c9    mov ecx,[ebp-0Ch]"
+"	      004318c9    mov ecx,this"
 "	      004318cc    sub edx,edx"
 "	      004318ce    div dword ptr [ecx+44h]"
 "	      004318d1    lea eax,[eax+eax*4]"
@@ -7025,7 +7025,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 );
 // LINE 2081:
 	asm( 
-"	      004318e2    mov eax,[ebp-0Ch]"
+"	      004318e2    mov eax,this"
 "	      004318e5    cmp dword ptr [eax+1Ch],0"
 "	      004318e9    je near ptr 004318F9h"
 );
@@ -7036,24 +7036,24 @@ long DigitalSound::EstimateRemainingPlayTime() {
 );
 // LINE 2092:
 	asm( 
-"	      004318f9    lea eax,[ebp-4]"
+"	      004318f9    lea eax,dwWrite"
 "	      004318fc    push eax"
-"	      004318fd    lea eax,[ebp-8]"
+"	      004318fd    lea eax,dwPlay"
 "	      00431900    push eax"
-"	      00431901    mov eax,[ebp-0Ch]"
+"	      00431901    mov eax,this"
 "	      00431904    mov eax,[eax+52h]"
 "	      00431907    push eax"
-"	      00431908    mov eax,[ebp-0Ch]"
+"	      00431908    mov eax,this"
 "	      0043190b    mov eax,[eax+52h]"
 "	      0043190e    mov eax,[eax]"
 "	      00431910    call dword ptr [eax+10h]"
 );
 // LINE 2093:
 	asm( 
-"	      00431913    mov eax,[ebp-0Ch]"
+"	      00431913    mov eax,this"
 "	      00431916    mov eax,[eax+3Ch]"
-"	      00431919    sub eax,[ebp-8]"
-"	      0043191c    mov ecx,[ebp-0Ch]"
+"	      00431919    sub eax,dwPlay"
+"	      0043191c    mov ecx,this"
 "	      0043191f    xor ebx,ebx"
 "	      00431921    mov bx,[ecx+4Eh]"
 "	      00431925    sub edx,edx"
@@ -7062,7 +7062,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 "	      0043192c    lea eax,[eax+eax*4]"
 "	      0043192f    lea eax,[eax+eax*4]"
 "	      00431932    shl eax,6"
-"	      00431935    mov ecx,[ebp-0Ch]"
+"	      00431935    mov ecx,this"
 "	      00431938    sub edx,edx"
 "	      0043193a    div dword ptr [ecx+44h]"
 "	      0043193d    jmp near ptr 00431942h"
@@ -7092,14 +7092,14 @@ void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, uns
 );
 // LINE 2107:
 	asm( 
-"	      00431950    mov eax,[ebp+10h]"
-"	      00431953    mov [ebp-4],eax"
+"	      00431950    mov eax,dwUser"
+"	      00431953    mov digitalSoundObject,eax"
 );
 // LINE 2108:
 	asm( 
-"	      00431956    mov eax,[ebp-4]"
+"	      00431956    mov eax,digitalSoundObject"
 "	      00431959    mov eax,[eax]"
-"	      0043195b    mov ecx,[ebp-4]"
+"	      0043195b    mov ecx,digitalSoundObject"
 "	      0043195e    call dword ptr [eax+80h]"
 );
 // LINE 2109:
@@ -7123,34 +7123,34 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 "	      00431976    push ebx"
 "	      00431977    push esi"
 "	      00431978    push edi"
-"	      00431979    mov [ebp-4],ecx"
+"	      00431979    mov this,ecx"
 );
 // LINE 2116:
 	asm( 
-"	      0043197c    mov eax,[ebp-4]"
+"	      0043197c    mov eax,this"
 "	      0043197f    mov eax,[eax]"
-"	      00431981    mov ecx,[ebp-4]"
+"	      00431981    mov ecx,this"
 "	      00431984    call dword ptr [eax+10h]"
 "	      00431987    test eax,eax"
 "	      00431989    jne near ptr 004319BBh"
 );
 // LINE 2117:
 	asm( 
-"	      0043198f    mov eax,[ebp-4]"
+"	      0043198f    mov eax,this"
 "	      00431992    mov dword ptr [eax+38h],0"
 );
 // LINE 2118:
 	asm( 
-"	      00431999    mov eax,[ebp-4]"
+"	      00431999    mov eax,this"
 "	      0043199c    cmp dword ptr [eax+28h],0"
 "	      004319a0    je near ptr 004319B6h"
 );
 // LINE 2119:
 	asm( 
-"	      004319a6    mov eax,[ebp-4]"
+"	      004319a6    mov eax,this"
 "	      004319a9    mov eax,[eax+2Ch]"
 "	      004319ac    push eax"
-"	      004319ad    mov eax,[ebp-4]"
+"	      004319ad    mov eax,this"
 "	      004319b0    call dword ptr [eax+28h]"
 "	      004319b3    add esp,4"
 );
@@ -7165,14 +7165,14 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 );
 // LINE 2127:
 	asm( 
-"	      004319c3    mov eax,[ebp-4]"
+"	      004319c3    mov eax,this"
 "	      004319c6    mov dword ptr [eax+38h],0"
 );
 // LINE 2128:
 	asm( 
-"	      004319cd    mov eax,[ebp-4]"
+"	      004319cd    mov eax,this"
 "	      004319d0    mov eax,[eax]"
-"	      004319d2    mov ecx,[ebp-4]"
+"	      004319d2    mov ecx,this"
 "	      004319d5    call dword ptr [eax+88h]"
 );
 // LINE 2129:
@@ -7198,14 +7198,14 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 "	      004319eb    push ebx"
 "	      004319ec    push esi"
 "	      004319ed    push edi"
-"	      004319ee    mov [ebp-8],ecx"
+"	      004319ee    mov this,ecx"
 );
 // LINE 2138:
 	asm( 
-"	      004319f1    mov eax,[ebp-8]"
+"	      004319f1    mov eax,this"
 "	      004319f4    cmp dword ptr [eax+38h],0"
 "	      004319f8    jne near ptr 00431A0Bh"
-"	      004319fe    mov eax,[ebp-8]"
+"	      004319fe    mov eax,this"
 "	      00431a01    cmp dword ptr [eax+28h],0"
 "	      00431a05    jne near ptr 00431A12h"
 );
@@ -7216,20 +7216,20 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 );
 // LINE 2146:
 	asm( 
-"	      00431a12    mov eax,[ebp-8]"
+"	      00431a12    mov eax,this"
 "	      00431a15    mov eax,[eax]"
-"	      00431a17    mov ecx,[ebp-8]"
+"	      00431a17    mov ecx,this"
 "	      00431a1a    call dword ptr [eax+1Ch]"
-"	      00431a1d    mov [ebp-4],eax"
+"	      00431a1d    mov lRemainingPlayTime,eax"
 );
 // LINE 2147:
 	asm( 
-"	      00431a20    cmp dword ptr [ebp-4],3E8h"
+"	      00431a20    cmp lRemainingPlayTime,3E8h"
 "	      00431a27    jge near ptr 00431A34h"
 );
 // LINE 2154:
 	asm( 
-"	      00431a2d    mov dword ptr [ebp-4],0Ah"
+"	      00431a2d    mov lRemainingPlayTime,0Ah"
 );
 // LINE 2158:
 	asm( 
@@ -7250,19 +7250,19 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 // LINE 2166:
 	asm( 
 "	      00431a50    push 0"
-"	      00431a52    mov eax,[ebp-8]"
+"	      00431a52    mov eax,this"
 "	      00431a55    push eax"
 "	      00431a56    push 431947h"
 "	      00431a5b    push 5"
-"	      00431a5d    mov eax,[ebp-4]"
+"	      00431a5d    mov eax,lRemainingPlayTime"
 "	      00431a60    push eax"
 "	      00431a61    call dword ptr ds:[6C3910h]"
-"	      00431a67    mov ecx,[ebp-8]"
+"	      00431a67    mov ecx,this"
 "	      00431a6a    mov [ecx+38h],eax"
 );
 // LINE 2169:
 	asm( 
-"	      00431a6d    mov eax,[ebp-8]"
+"	      00431a6d    mov eax,this"
 "	      00431a70    mov eax,[eax+38h]"
 "	      00431a73    jmp near ptr 00431A78h"
 );
@@ -7286,17 +7286,17 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 "	      00431a83    push ebx"
 "	      00431a84    push esi"
 "	      00431a85    push edi"
-"	      00431a86    mov [ebp-4],ecx"
+"	      00431a86    mov this,ecx"
 );
 // LINE 2177:
 	asm( 
-"	      00431a89    mov eax,[ebp-4]"
+"	      00431a89    mov eax,this"
 "	      00431a8c    cmp dword ptr [eax+38h],0"
 "	      00431a90    je near ptr 00431AB5h"
 );
 // LINE 2178:
 	asm( 
-"	      00431a96    mov eax,[ebp-4]"
+"	      00431a96    mov eax,this"
 "	      00431a99    mov eax,[eax+38h]"
 "	      00431a9c    push eax"
 "	      00431a9d    call dword ptr ds:[6C390Ch]"
@@ -7308,7 +7308,7 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 );
 // LINE 2180:
 	asm( 
-"	      00431aab    mov eax,[ebp-4]"
+"	      00431aab    mov eax,this"
 "	      00431aae    mov dword ptr [eax+38h],0"
 );
 // LINE 2182:

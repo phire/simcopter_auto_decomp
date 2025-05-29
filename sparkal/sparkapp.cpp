@@ -15,13 +15,13 @@ void CSparkalApp::CSparkalApp() {
 "	      00426fc6    push ebx"
 "	      00426fc7    push esi"
 "	      00426fc8    push edi"
-"	      00426fc9    mov [ebp-10h],ecx"
-"	      00426fcc    mov eax,[ebp-10h]"
+"	      00426fc9    mov this,ecx"
+"	      00426fcc    mov eax,this"
 "	      00426fcf    mov dword ptr [eax],58F428h"
 );
 // LINE 15:
 	asm( 
-"	      00426fd5    mov ecx,[ebp-10h]"
+"	      00426fd5    mov ecx,this"
 "	      00426fd8    call 004271A3h"
 );
 // LINE 19:
@@ -30,7 +30,7 @@ void CSparkalApp::CSparkalApp() {
 );
 // LINE 20:
 	asm( 
-"	      00426fe2    mov eax,[ebp-10h]"
+"	      00426fe2    mov eax,this"
 "	      00426fe5    mov dword ptr [eax+10h],0"
 );
 // LINE 21:
@@ -39,12 +39,12 @@ void CSparkalApp::CSparkalApp() {
 );
 // LINE 22:
 	asm( 
-"	      00426ff1    mov eax,[ebp-10h]"
+"	      00426ff1    mov eax,this"
 "	      00426ff4    mov dword ptr [eax+10h],1"
 );
 // LINE 26:
 	asm( 
-"	      00426ffb    mov eax,[ebp-10h]"
+"	      00426ffb    mov eax,this"
 "	      00426ffe    mov dword ptr [eax+0Ch],1"
 );
 // LINE 34:
@@ -103,7 +103,7 @@ void CSparkalApp::CSparkalApp() {
 // LINE 38:
 	asm( 
 "	      004270d4    jmp near ptr 004270D9h"
-"	      004270d9    mov eax,[ebp-10h]"
+"	      004270d9    mov eax,this"
 "	      004270dc    pop edi"
 "	      004270dd    pop esi"
 "	      004270de    pop ebx"
@@ -122,8 +122,8 @@ void CSparkalApp::~CSparkalApp() {
 "	      004270e7    push ebx"
 "	      004270e8    push esi"
 "	      004270e9    push edi"
-"	      004270ea    mov [ebp-10h],ecx"
-"	      004270ed    mov eax,[ebp-10h]"
+"	      004270ea    mov this,ecx"
+"	      004270ed    mov eax,this"
 "	      004270f0    mov dword ptr [eax],58F428h"
 "	      004270f6    mov eax,ds:[59A9D4h]"
 "	      004270fb    mov [ebp-0Ch],eax"
@@ -191,36 +191,36 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 "	      004271a9    push ebx"
 "	      004271aa    push esi"
 "	      004271ab    push edi"
-"	      004271ac    mov [ebp-10h],ecx"
+"	      004271ac    mov this,ecx"
 );
 // LINE 62:
 	asm( 
-"	      004271af    mov eax,[ebp-10h]"
+"	      004271af    mov eax,this"
 "	      004271b2    mov dword ptr [eax+8],0"
 );
 // LINE 65:
 	asm( 
 "	      004271b9    call dword ptr ds:[6C3644h]"
-"	      004271bf    mov [ebp-8],eax"
+"	      004271bf    mov Version,eax"
 );
 // LINE 66:
 	asm( 
 "	      004271c2    mov al,[ebp-8]"
-"	      004271c5    mov [ebp-4],al"
+"	      004271c5    mov WinMajor,al"
 );
 // LINE 67:
 	asm( 
-"	      004271c8    mov eax,[ebp-8]"
-"	      004271cb    mov [ebp-0Ch],ah"
+"	      004271c8    mov eax,Version"
+"	      004271cb    mov WinMinor,ah"
 );
 // LINE 68:
 	asm( 
 "	      004271ce    xor eax,eax"
-"	      004271d0    mov al,[ebp-4]"
+"	      004271d0    mov al,WinMajor"
 "	      004271d3    cmp eax,3"
 "	      004271d6    jne near ptr 00427212h"
 "	      004271dc    xor eax,eax"
-"	      004271de    mov al,[ebp-0Ch]"
+"	      004271de    mov al,WinMinor"
 "	      004271e1    cmp eax,32h"
 "	      004271e4    jge near ptr 00427212h"
 );
@@ -231,7 +231,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 );
 // LINE 71:
 	asm( 
-"	      004271f4    mov eax,[ebp-10h]"
+"	      004271f4    mov eax,this"
 "	      004271f7    mov dword ptr [eax+8],1"
 );
 // LINE 72:
@@ -240,38 +240,38 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 );
 // LINE 73:
 	asm( 
-"	      00427203    mov eax,[ebp-10h]"
+"	      00427203    mov eax,this"
 "	      00427206    mov dword ptr [eax+8],2"
 );
 // LINE 75:
 	asm( 
 "	      0042720d    jmp near ptr 00427247h"
 "	      00427212    xor eax,eax"
-"	      00427214    mov al,[ebp-4]"
+"	      00427214    mov al,WinMajor"
 "	      00427217    cmp eax,4"
 "	      0042721a    jge near ptr 0042722Fh"
 );
 // LINE 76:
 	asm( 
-"	      00427220    mov eax,[ebp-10h]"
+"	      00427220    mov eax,this"
 "	      00427223    mov dword ptr [eax+8],3"
 );
 // LINE 77:
 	asm( 
 "	      0042722a    jmp near ptr 00427247h"
 "	      0042722f    xor eax,eax"
-"	      00427231    mov al,[ebp-4]"
+"	      00427231    mov al,WinMajor"
 "	      00427234    cmp eax,4"
 "	      00427237    jl near ptr 00427247h"
 );
 // LINE 78:
 	asm( 
-"	      0042723d    mov eax,[ebp-10h]"
+"	      0042723d    mov eax,this"
 "	      00427240    mov dword ptr [eax+8],4"
 );
 // LINE 86:
 	asm( 
-"	      00427247    mov eax,[ebp-10h]"
+"	      00427247    mov eax,this"
 "	      0042724a    mov eax,[eax+8]"
 "	      0042724d    jmp near ptr 00427252h"
 );
@@ -297,11 +297,11 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 "	      0042725d    push ebx"
 "	      0042725e    push esi"
 "	      0042725f    push edi"
-"	      00427260    mov [ebp-0Ch],ecx"
+"	      00427260    mov this,ecx"
 );
 // LINE 97:
 	asm( 
-"	      00427263    mov dword ptr [ebp-4],0"
+"	      00427263    mov Window,0"
 );
 // LINE 101:
 	asm( 
@@ -311,25 +311,25 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 "	      00427277    mov [ebp-8],eax"
 "	      0042727a    cmp dword ptr [ebp-8],0"
 "	      0042727e    je near ptr 004272A8h"
-"	      00427284    mov eax,[ebp+18h]"
+"	      00427284    mov eax,Caption"
 "	      00427287    push eax"
-"	      00427288    mov eax,[ebp+14h]"
+"	      00427288    mov eax,pColors"
 "	      0042728b    push eax"
-"	      0042728c    mov eax,[ebp+10h]"
+"	      0042728c    mov eax,Style"
 "	      0042728f    push eax"
-"	      00427290    mov eax,[ebp+0Ch]"
+"	      00427290    mov eax,Height"
 "	      00427293    push eax"
-"	      00427294    mov eax,[ebp+8]"
+"	      00427294    mov eax,Width"
 "	      00427297    push eax"
 "	      00427298    mov ecx,[ebp-8]"
 "	      0042729b    call 00466F70h"
-"	      004272a0    mov [ebp-4],eax"
+"	      004272a0    mov Window,eax"
 "	      004272a3    jmp near ptr 004272AFh"
-"	      004272a8    mov dword ptr [ebp-4],0"
+"	      004272a8    mov Window,0"
 );
 // LINE 108:
 	asm( 
-"	      004272af    mov eax,[ebp-4]"
+"	      004272af    mov eax,Window"
 "	      004272b2    jmp near ptr 004272B7h"
 );
 // LINE 109:
@@ -354,15 +354,15 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      004272c4    push ebx"
 "	      004272c5    push esi"
 "	      004272c6    push edi"
-"	      004272c7    mov [ebp-18h],ecx"
+"	      004272c7    mov this,ecx"
 );
 // LINE 117:
 	asm( 
-"	      004272ca    mov dword ptr [ebp-4],0"
+"	      004272ca    mov pBitmap,0"
 );
 // LINE 120:
 	asm( 
-"	      004272d1    mov eax,[ebp-18h]"
+"	      004272d1    mov eax,this"
 "	      004272d4    cmp dword ptr [eax+10h],0"
 "	      004272d8    je near ptr 0042731Eh"
 );
@@ -376,18 +376,18 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      004272eb    mov [ebp-10h],eax"
 "	      004272ee    cmp dword ptr [ebp-10h],0"
 "	      004272f2    je near ptr 0042730Ch"
-"	      004272f8    mov eax,[ebp+8]"
+"	      004272f8    mov eax,fileName"
 "	      004272fb    push eax"
 "	      004272fc    mov ecx,[ebp-10h]"
 "	      004272ff    call 0046E6DFh"
-"	      00427304    mov [ebp-8],eax"
+"	      00427304    mov pDDBitmap,eax"
 "	      00427307    jmp near ptr 00427313h"
-"	      0042730c    mov dword ptr [ebp-8],0"
+"	      0042730c    mov pDDBitmap,0"
 );
 // LINE 122:
 	asm( 
-"	      00427313    mov eax,[ebp-8]"
-"	      00427316    mov [ebp-4],eax"
+"	      00427313    mov eax,pDDBitmap"
+"	      00427316    mov pBitmap,eax"
 );
 // LINE 124:
 // Block end:
@@ -404,23 +404,23 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      0042732b    mov [ebp-14h],eax"
 "	      0042732e    cmp dword ptr [ebp-14h],0"
 "	      00427332    je near ptr 0042734Ch"
-"	      00427338    mov eax,[ebp+8]"
+"	      00427338    mov eax,fileName"
 "	      0042733b    push eax"
 "	      0042733c    mov ecx,[ebp-14h]"
 "	      0042733f    call 0046E6DFh"
-"	      00427344    mov [ebp-0Ch],eax"
+"	      00427344    mov pBBitmap,eax"
 "	      00427347    jmp near ptr 00427353h"
-"	      0042734c    mov dword ptr [ebp-0Ch],0"
+"	      0042734c    mov pBBitmap,0"
 );
 // LINE 126:
 	asm( 
-"	      00427353    mov eax,[ebp-0Ch]"
-"	      00427356    mov [ebp-4],eax"
+"	      00427353    mov eax,pBBitmap"
+"	      00427356    mov pBitmap,eax"
 );
 // LINE 132:
 // Block end:
 	asm( 
-"	      00427359    mov eax,[ebp-4]"
+"	      00427359    mov eax,pBitmap"
 "	      0042735c    jmp near ptr 00427361h"
 );
 // LINE 133:
@@ -445,15 +445,15 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      0042736e    push ebx"
 "	      0042736f    push esi"
 "	      00427370    push edi"
-"	      00427371    mov [ebp-20h],ecx"
+"	      00427371    mov this,ecx"
 );
 // LINE 142:
 	asm( 
-"	      00427374    mov dword ptr [ebp-4],0"
+"	      00427374    mov pBitmap,0"
 );
 // LINE 145:
 	asm( 
-"	      0042737b    mov eax,[ebp-20h]"
+"	      0042737b    mov eax,this"
 "	      0042737e    cmp dword ptr [eax+10h],0"
 "	      00427382    je near ptr 0042741Fh"
 );
@@ -461,7 +461,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 // Block start:
 	class CBackBuffer* pDDBitmap;
 	asm( 
-"	      00427388    cmp dword ptr [ebp+10h],0"
+"	      00427388    cmp pColors,0"
 "	      0042738c    je near ptr 004273D4h"
 );
 // LINE 148:
@@ -472,17 +472,17 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      0042739f    mov [ebp-10h],eax"
 "	      004273a2    cmp dword ptr [ebp-10h],0"
 "	      004273a6    je near ptr 004273C8h"
-"	      004273ac    mov eax,[ebp+10h]"
+"	      004273ac    mov eax,pColors"
 "	      004273af    push eax"
-"	      004273b0    mov eax,[ebp+0Ch]"
+"	      004273b0    mov eax,height"
 "	      004273b3    push eax"
-"	      004273b4    mov eax,[ebp+8]"
+"	      004273b4    mov eax,width"
 "	      004273b7    push eax"
 "	      004273b8    mov ecx,[ebp-10h]"
 "	      004273bb    call 0046EA06h"
-"	      004273c0    mov [ebp-8],eax"
+"	      004273c0    mov pDDBitmap,eax"
 "	      004273c3    jmp near ptr 004273CFh"
-"	      004273c8    mov dword ptr [ebp-8],0"
+"	      004273c8    mov pDDBitmap,0"
 );
 // LINE 149:
 	asm( 
@@ -496,23 +496,23 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      004273e1    mov [ebp-14h],eax"
 "	      004273e4    cmp dword ptr [ebp-14h],0"
 "	      004273e8    je near ptr 0042740Dh"
-"	      004273ee    mov eax,[ebp-20h]"
+"	      004273ee    mov eax,this"
 "	      004273f1    mov eax,[eax+4]"
 "	      004273f4    push eax"
-"	      004273f5    mov eax,[ebp+0Ch]"
+"	      004273f5    mov eax,height"
 "	      004273f8    push eax"
-"	      004273f9    mov eax,[ebp+8]"
+"	      004273f9    mov eax,width"
 "	      004273fc    push eax"
 "	      004273fd    mov ecx,[ebp-14h]"
 "	      00427400    call 0046EA06h"
-"	      00427405    mov [ebp-8],eax"
+"	      00427405    mov pDDBitmap,eax"
 "	      00427408    jmp near ptr 00427414h"
-"	      0042740d    mov dword ptr [ebp-8],0"
+"	      0042740d    mov pDDBitmap,0"
 );
 // LINE 151:
 	asm( 
-"	      00427414    mov eax,[ebp-8]"
-"	      00427417    mov [ebp-4],eax"
+"	      00427414    mov eax,pDDBitmap"
+"	      00427417    mov pBitmap,eax"
 );
 // LINE 153:
 // Block end:
@@ -523,7 +523,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 // Block start:
 	class CBackBuffer* pBBitmap;
 	asm( 
-"	      0042741f    cmp dword ptr [ebp+10h],0"
+"	      0042741f    cmp pColors,0"
 "	      00427423    je near ptr 0042746Bh"
 );
 // LINE 156:
@@ -534,17 +534,17 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      00427436    mov [ebp-18h],eax"
 "	      00427439    cmp dword ptr [ebp-18h],0"
 "	      0042743d    je near ptr 0042745Fh"
-"	      00427443    mov eax,[ebp+10h]"
+"	      00427443    mov eax,pColors"
 "	      00427446    push eax"
-"	      00427447    mov eax,[ebp+0Ch]"
+"	      00427447    mov eax,height"
 "	      0042744a    push eax"
-"	      0042744b    mov eax,[ebp+8]"
+"	      0042744b    mov eax,width"
 "	      0042744e    push eax"
 "	      0042744f    mov ecx,[ebp-18h]"
 "	      00427452    call 0046EA06h"
-"	      00427457    mov [ebp-0Ch],eax"
+"	      00427457    mov pBBitmap,eax"
 "	      0042745a    jmp near ptr 00427466h"
-"	      0042745f    mov dword ptr [ebp-0Ch],0"
+"	      0042745f    mov pBBitmap,0"
 );
 // LINE 157:
 	asm( 
@@ -558,28 +558,28 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      00427478    mov [ebp-1Ch],eax"
 "	      0042747b    cmp dword ptr [ebp-1Ch],0"
 "	      0042747f    je near ptr 004274A4h"
-"	      00427485    mov eax,[ebp-20h]"
+"	      00427485    mov eax,this"
 "	      00427488    mov eax,[eax+4]"
 "	      0042748b    push eax"
-"	      0042748c    mov eax,[ebp+0Ch]"
+"	      0042748c    mov eax,height"
 "	      0042748f    push eax"
-"	      00427490    mov eax,[ebp+8]"
+"	      00427490    mov eax,width"
 "	      00427493    push eax"
 "	      00427494    mov ecx,[ebp-1Ch]"
 "	      00427497    call 0046EA06h"
-"	      0042749c    mov [ebp-0Ch],eax"
+"	      0042749c    mov pBBitmap,eax"
 "	      0042749f    jmp near ptr 004274ABh"
-"	      004274a4    mov dword ptr [ebp-0Ch],0"
+"	      004274a4    mov pBBitmap,0"
 );
 // LINE 159:
 	asm( 
-"	      004274ab    mov eax,[ebp-0Ch]"
-"	      004274ae    mov [ebp-4],eax"
+"	      004274ab    mov eax,pBBitmap"
+"	      004274ae    mov pBitmap,eax"
 );
 // LINE 165:
 // Block end:
 	asm( 
-"	      004274b1    mov eax,[ebp-4]"
+"	      004274b1    mov eax,pBitmap"
 "	      004274b4    jmp near ptr 004274B9h"
 );
 // LINE 166:
@@ -602,7 +602,7 @@ unsigned long CSparkalApp::PrepareGame() {
 "	      004274c6    push ebx"
 "	      004274c7    push esi"
 "	      004274c8    push edi"
-"	      004274c9    mov [ebp-4],ecx"
+"	      004274c9    mov this,ecx"
 );
 // LINE 175:
 	asm( 
@@ -629,7 +629,7 @@ unsigned long CSparkalApp::TickGame() {
 "	      004274de    push ebx"
 "	      004274df    push esi"
 "	      004274e0    push edi"
-"	      004274e1    mov [ebp-4],ecx"
+"	      004274e1    mov this,ecx"
 );
 // LINE 180:
 	asm( 
@@ -656,7 +656,7 @@ unsigned long CSparkalApp::FinishGame() {
 "	      004274f6    push ebx"
 "	      004274f7    push esi"
 "	      004274f8    push edi"
-"	      004274f9    mov [ebp-4],ecx"
+"	      004274f9    mov this,ecx"
 );
 // LINE 185:
 	asm( 

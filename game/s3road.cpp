@@ -32,10 +32,10 @@ void S3RoadDataInit() {
 );
 // LINE 54:
 	asm( 
-"	      0053848a    mov dword ptr [ebp-1Ch],0"
+"	      0053848a    mov leg,0"
 "	      00538491    jmp near ptr 00538499h"
-"	      00538496    inc dword ptr [ebp-1Ch]"
-"	      00538499    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538496    inc leg"
+"	      00538499    cmp leg,0Bh"
 "	      0053849d    jge near ptr 005384EAh"
 );
 // LINE 56:
@@ -43,19 +43,19 @@ void S3RoadDataInit() {
 "	      005384a3    fld qword ptr ds:[593338h]"
 "	      005384a9    fmul qword ptr ds:[593400h]"
 "	      005384af    call 0056EBE8h"
-"	      005384b4    mov ecx,[ebp-1Ch]"
+"	      005384b4    mov ecx,leg"
 "	      005384b7    mov [ecx*8+62D390h],eax"
 );
 // LINE 57:
 	asm( 
-"	      005384be    mov eax,[ebp-1Ch]"
+"	      005384be    mov eax,leg"
 "	      005384c1    mov [ebp-3Ch],eax"
 "	      005384c4    fild dword ptr [ebp-3Ch]"
-"	      005384c7    fmul qword ptr [ebp-30h]"
+"	      005384c7    fmul straightLegSize"
 "	      005384ca    fadd qword ptr ds:[593340h]"
 "	      005384d0    fmul qword ptr ds:[593400h]"
 "	      005384d6    call 0056EBE8h"
-"	      005384db    mov ecx,[ebp-1Ch]"
+"	      005384db    mov ecx,leg"
 "	      005384de    mov [ecx*8+62D394h],eax"
 );
 // LINE 58:
@@ -64,22 +64,22 @@ void S3RoadDataInit() {
 );
 // LINE 59:
 	asm( 
-"	      005384ea    mov dword ptr [ebp-1Ch],0"
+"	      005384ea    mov leg,0"
 "	      005384f1    jmp near ptr 005384F9h"
-"	      005384f6    inc dword ptr [ebp-1Ch]"
-"	      005384f9    cmp dword ptr [ebp-1Ch],0Bh"
+"	      005384f6    inc leg"
+"	      005384f9    cmp leg,0Bh"
 "	      005384fd    jge near ptr 0053854Ah"
 );
 // LINE 61:
 	asm( 
-"	      00538503    mov eax,[ebp-1Ch]"
+"	      00538503    mov eax,leg"
 "	      00538506    mov [ebp-40h],eax"
 "	      00538509    fild dword ptr [ebp-40h]"
-"	      0053850c    fmul qword ptr [ebp-30h]"
+"	      0053850c    fmul straightLegSize"
 "	      0053850f    fadd qword ptr ds:[593348h]"
 "	      00538515    fmul qword ptr ds:[593400h]"
 "	      0053851b    call 0056EBE8h"
-"	      00538520    mov ecx,[ebp-1Ch]"
+"	      00538520    mov ecx,leg"
 "	      00538523    mov [ecx*8+62D3E8h],eax"
 );
 // LINE 62:
@@ -87,7 +87,7 @@ void S3RoadDataInit() {
 "	      0053852a    fld qword ptr ds:[593350h]"
 "	      00538530    fmul qword ptr ds:[593400h]"
 "	      00538536    call 0056EBE8h"
-"	      0053853b    mov ecx,[ebp-1Ch]"
+"	      0053853b    mov ecx,leg"
 "	      0053853e    mov [ecx*8+62D3ECh],eax"
 );
 // LINE 63:
@@ -96,10 +96,10 @@ void S3RoadDataInit() {
 );
 // LINE 64:
 	asm( 
-"	      0053854a    mov dword ptr [ebp-1Ch],0"
+"	      0053854a    mov leg,0"
 "	      00538551    jmp near ptr 00538559h"
-"	      00538556    inc dword ptr [ebp-1Ch]"
-"	      00538559    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538556    inc leg"
+"	      00538559    cmp leg,0Bh"
 "	      0053855d    jge near ptr 005385AAh"
 );
 // LINE 66:
@@ -107,19 +107,19 @@ void S3RoadDataInit() {
 "	      00538563    fld qword ptr ds:[593358h]"
 "	      00538569    fmul qword ptr ds:[593400h]"
 "	      0053856f    call 0056EBE8h"
-"	      00538574    mov ecx,[ebp-1Ch]"
+"	      00538574    mov ecx,leg"
 "	      00538577    mov [ecx*8+62D440h],eax"
 );
 // LINE 67:
 	asm( 
-"	      0053857e    mov eax,[ebp-1Ch]"
+"	      0053857e    mov eax,leg"
 "	      00538581    mov [ebp-44h],eax"
 "	      00538584    fild dword ptr [ebp-44h]"
-"	      00538587    fmul qword ptr [ebp-30h]"
+"	      00538587    fmul straightLegSize"
 "	      0053858a    fsubr qword ptr ds:[593360h]"
 "	      00538590    fmul qword ptr ds:[593400h]"
 "	      00538596    call 0056EBE8h"
-"	      0053859b    mov ecx,[ebp-1Ch]"
+"	      0053859b    mov ecx,leg"
 "	      0053859e    mov [ecx*8+62D444h],eax"
 );
 // LINE 68:
@@ -128,22 +128,22 @@ void S3RoadDataInit() {
 );
 // LINE 69:
 	asm( 
-"	      005385aa    mov dword ptr [ebp-1Ch],0"
+"	      005385aa    mov leg,0"
 "	      005385b1    jmp near ptr 005385B9h"
-"	      005385b6    inc dword ptr [ebp-1Ch]"
-"	      005385b9    cmp dword ptr [ebp-1Ch],0Bh"
+"	      005385b6    inc leg"
+"	      005385b9    cmp leg,0Bh"
 "	      005385bd    jge near ptr 0053860Ah"
 );
 // LINE 71:
 	asm( 
-"	      005385c3    mov eax,[ebp-1Ch]"
+"	      005385c3    mov eax,leg"
 "	      005385c6    mov [ebp-48h],eax"
 "	      005385c9    fild dword ptr [ebp-48h]"
-"	      005385cc    fmul qword ptr [ebp-30h]"
+"	      005385cc    fmul straightLegSize"
 "	      005385cf    fsubr qword ptr ds:[593368h]"
 "	      005385d5    fmul qword ptr ds:[593400h]"
 "	      005385db    call 0056EBE8h"
-"	      005385e0    mov ecx,[ebp-1Ch]"
+"	      005385e0    mov ecx,leg"
 "	      005385e3    mov [ecx*8+62D498h],eax"
 );
 // LINE 72:
@@ -151,7 +151,7 @@ void S3RoadDataInit() {
 "	      005385ea    fld qword ptr ds:[593370h]"
 "	      005385f0    fmul qword ptr ds:[593400h]"
 "	      005385f6    call 0056EBE8h"
-"	      005385fb    mov ecx,[ebp-1Ch]"
+"	      005385fb    mov ecx,leg"
 "	      005385fe    mov [ecx*8+62D49Ch],eax"
 );
 // LINE 73:
@@ -280,13 +280,13 @@ void S3RoadDataInit() {
 	asm( 
 "	      00538726    fld qword ptr ds:[593408h]"
 "	      0053872c    call 0056EC1Ah"
-"	      00538731    fstp qword ptr [ebp-10h]"
+"	      00538731    fstp DiagShortDist"
 );
 // LINE 112:
 	asm( 
 "	      00538734    fld qword ptr ds:[593410h]"
 "	      0053873a    call 0056EC1Ah"
-"	      0053873f    fst qword ptr [ebp-8]"
+"	      0053873f    fst DiagLongDist"
 );
 // LINE 117:
 	asm( 
@@ -312,7 +312,7 @@ void S3RoadDataInit() {
 );
 // LINE 123:
 	asm( 
-"	      0053877a    fld qword ptr [ebp-10h]"
+"	      0053877a    fld DiagShortDist"
 "	      0053877d    fmul qword ptr ds:[593400h]"
 "	      00538783    call 0056EBE8h"
 "	      00538788    mov ds:[63512Ch],eax"
@@ -327,7 +327,7 @@ void S3RoadDataInit() {
 );
 // LINE 127:
 	asm( 
-"	      005387a1    fld qword ptr [ebp-8]"
+"	      005387a1    fld DiagLongDist"
 "	      005387a4    fmul qword ptr ds:[593400h]"
 "	      005387aa    call 0056EBE8h"
 "	      005387af    mov ds:[635150h],eax"
@@ -342,7 +342,7 @@ void S3RoadDataInit() {
 );
 // LINE 131:
 	asm( 
-"	      005387c8    fld qword ptr [ebp-10h]"
+"	      005387c8    fld DiagShortDist"
 "	      005387cb    fmul qword ptr ds:[593400h]"
 "	      005387d1    call 0056EBE8h"
 "	      005387d6    mov ds:[635168h],eax"
@@ -357,7 +357,7 @@ void S3RoadDataInit() {
 );
 // LINE 135:
 	asm( 
-"	      005387ef    fld qword ptr [ebp-10h]"
+"	      005387ef    fld DiagShortDist"
 "	      005387f2    fmul qword ptr ds:[593400h]"
 "	      005387f8    call 0056EBE8h"
 "	      005387fd    mov ds:[635174h],eax"
@@ -372,7 +372,7 @@ void S3RoadDataInit() {
 );
 // LINE 139:
 	asm( 
-"	      00538816    fld qword ptr [ebp-8]"
+"	      00538816    fld DiagLongDist"
 "	      00538819    fmul qword ptr ds:[593400h]"
 "	      0053881f    call 0056EBE8h"
 "	      00538824    mov ds:[63518Ch],eax"
@@ -387,7 +387,7 @@ void S3RoadDataInit() {
 );
 // LINE 143:
 	asm( 
-"	      0053883d    fld qword ptr [ebp-10h]"
+"	      0053883d    fld DiagShortDist"
 "	      00538840    fmul qword ptr ds:[593400h]"
 "	      00538846    call 0056EBE8h"
 "	      0053884b    mov ds:[6351B0h],eax"
@@ -402,7 +402,7 @@ void S3RoadDataInit() {
 );
 // LINE 147:
 	asm( 
-"	      00538864    fld qword ptr [ebp-8]"
+"	      00538864    fld DiagLongDist"
 "	      00538867    fmul qword ptr ds:[593400h]"
 "	      0053886d    call 0056EBE8h"
 "	      00538872    mov ds:[6351C8h],eax"
@@ -411,7 +411,7 @@ void S3RoadDataInit() {
 	asm( 
 "	      00538877    fld qword ptr ds:[593378h]"
 "	      0053887d    fsub qword ptr ds:[593338h]"
-"	      00538883    fstp qword ptr [ebp-28h]"
+"	      00538883    fstp turnRadius"
 );
 // LINE 152:
 	asm( 
@@ -420,38 +420,38 @@ void S3RoadDataInit() {
 );
 // LINE 153:
 	asm( 
-"	      00538894    mov dword ptr [ebp-1Ch],0"
+"	      00538894    mov leg,0"
 "	      0053889b    jmp near ptr 005388A3h"
-"	      005388a0    inc dword ptr [ebp-1Ch]"
-"	      005388a3    cmp dword ptr [ebp-1Ch],0Bh"
+"	      005388a0    inc leg"
+"	      005388a3    cmp leg,0Bh"
 "	      005388a7    jge near ptr 00538910h"
 );
 // LINE 155:
 	asm( 
-"	      005388ad    mov eax,[ebp-1Ch]"
+"	      005388ad    mov eax,leg"
 "	      005388b0    mov [ebp-4Ch],eax"
 "	      005388b3    fild dword ptr [ebp-4Ch]"
-"	      005388b6    fmul qword ptr [ebp-18h]"
+"	      005388b6    fmul turnAngle"
 "	      005388b9    call 0056F342h"
-"	      005388be    fmul qword ptr [ebp-28h]"
+"	      005388be    fmul turnRadius"
 "	      005388c1    fsubr qword ptr ds:[593378h]"
 "	      005388c7    fmul qword ptr ds:[593400h]"
 "	      005388cd    call 0056EBE8h"
-"	      005388d2    mov ecx,[ebp-1Ch]"
+"	      005388d2    mov ecx,leg"
 "	      005388d5    mov [ecx*8+62D4F0h],eax"
 );
 // LINE 156:
 	asm( 
-"	      005388dc    mov eax,[ebp-1Ch]"
+"	      005388dc    mov eax,leg"
 "	      005388df    mov [ebp-50h],eax"
 "	      005388e2    fild dword ptr [ebp-50h]"
-"	      005388e5    fmul qword ptr [ebp-18h]"
+"	      005388e5    fmul turnAngle"
 "	      005388e8    call 0056F338h"
-"	      005388ed    fmul qword ptr [ebp-28h]"
+"	      005388ed    fmul turnRadius"
 "	      005388f0    fadd qword ptr ds:[593380h]"
 "	      005388f6    fmul qword ptr ds:[593400h]"
 "	      005388fc    call 0056EBE8h"
-"	      00538901    mov ecx,[ebp-1Ch]"
+"	      00538901    mov ecx,leg"
 "	      00538904    mov [ecx*8+62D4F4h],eax"
 );
 // LINE 157:
@@ -460,38 +460,38 @@ void S3RoadDataInit() {
 );
 // LINE 158:
 	asm( 
-"	      00538910    mov dword ptr [ebp-1Ch],0"
+"	      00538910    mov leg,0"
 "	      00538917    jmp near ptr 0053891Fh"
-"	      0053891c    inc dword ptr [ebp-1Ch]"
-"	      0053891f    cmp dword ptr [ebp-1Ch],0Bh"
+"	      0053891c    inc leg"
+"	      0053891f    cmp leg,0Bh"
 "	      00538923    jge near ptr 0053898Ch"
 );
 // LINE 160:
 	asm( 
-"	      00538929    mov eax,[ebp-1Ch]"
+"	      00538929    mov eax,leg"
 "	      0053892c    mov [ebp-54h],eax"
 "	      0053892f    fild dword ptr [ebp-54h]"
-"	      00538932    fmul qword ptr [ebp-18h]"
+"	      00538932    fmul turnAngle"
 "	      00538935    call 0056F338h"
-"	      0053893a    fmul qword ptr [ebp-28h]"
+"	      0053893a    fmul turnRadius"
 "	      0053893d    fadd qword ptr ds:[593388h]"
 "	      00538943    fmul qword ptr ds:[593400h]"
 "	      00538949    call 0056EBE8h"
-"	      0053894e    mov ecx,[ebp-1Ch]"
+"	      0053894e    mov ecx,leg"
 "	      00538951    mov [ecx*8+62D548h],eax"
 );
 // LINE 161:
 	asm( 
-"	      00538958    mov eax,[ebp-1Ch]"
+"	      00538958    mov eax,leg"
 "	      0053895b    mov [ebp-58h],eax"
 "	      0053895e    fild dword ptr [ebp-58h]"
-"	      00538961    fmul qword ptr [ebp-18h]"
+"	      00538961    fmul turnAngle"
 "	      00538964    call 0056F342h"
-"	      00538969    fmul qword ptr [ebp-28h]"
+"	      00538969    fmul turnRadius"
 "	      0053896c    fadd qword ptr ds:[593390h]"
 "	      00538972    fmul qword ptr ds:[593400h]"
 "	      00538978    call 0056EBE8h"
-"	      0053897d    mov ecx,[ebp-1Ch]"
+"	      0053897d    mov ecx,leg"
 "	      00538980    mov [ecx*8+62D54Ch],eax"
 );
 // LINE 162:
@@ -500,38 +500,38 @@ void S3RoadDataInit() {
 );
 // LINE 163:
 	asm( 
-"	      0053898c    mov dword ptr [ebp-1Ch],0"
+"	      0053898c    mov leg,0"
 "	      00538993    jmp near ptr 0053899Bh"
-"	      00538998    inc dword ptr [ebp-1Ch]"
-"	      0053899b    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538998    inc leg"
+"	      0053899b    cmp leg,0Bh"
 "	      0053899f    jge near ptr 00538A08h"
 );
 // LINE 165:
 	asm( 
-"	      005389a5    mov eax,[ebp-1Ch]"
+"	      005389a5    mov eax,leg"
 "	      005389a8    mov [ebp-5Ch],eax"
 "	      005389ab    fild dword ptr [ebp-5Ch]"
-"	      005389ae    fmul qword ptr [ebp-18h]"
+"	      005389ae    fmul turnAngle"
 "	      005389b1    call 0056F342h"
-"	      005389b6    fmul qword ptr [ebp-28h]"
+"	      005389b6    fmul turnRadius"
 "	      005389b9    fadd qword ptr ds:[593398h]"
 "	      005389bf    fmul qword ptr ds:[593400h]"
 "	      005389c5    call 0056EBE8h"
-"	      005389ca    mov ecx,[ebp-1Ch]"
+"	      005389ca    mov ecx,leg"
 "	      005389cd    mov [ecx*8+62D5A0h],eax"
 );
 // LINE 166:
 	asm( 
-"	      005389d4    mov eax,[ebp-1Ch]"
+"	      005389d4    mov eax,leg"
 "	      005389d7    mov [ebp-60h],eax"
 "	      005389da    fild dword ptr [ebp-60h]"
-"	      005389dd    fmul qword ptr [ebp-18h]"
+"	      005389dd    fmul turnAngle"
 "	      005389e0    call 0056F338h"
-"	      005389e5    fmul qword ptr [ebp-28h]"
+"	      005389e5    fmul turnRadius"
 "	      005389e8    fsubr qword ptr ds:[5933A0h]"
 "	      005389ee    fmul qword ptr ds:[593400h]"
 "	      005389f4    call 0056EBE8h"
-"	      005389f9    mov ecx,[ebp-1Ch]"
+"	      005389f9    mov ecx,leg"
 "	      005389fc    mov [ecx*8+62D5A4h],eax"
 );
 // LINE 167:
@@ -540,38 +540,38 @@ void S3RoadDataInit() {
 );
 // LINE 168:
 	asm( 
-"	      00538a08    mov dword ptr [ebp-1Ch],0"
+"	      00538a08    mov leg,0"
 "	      00538a0f    jmp near ptr 00538A17h"
-"	      00538a14    inc dword ptr [ebp-1Ch]"
-"	      00538a17    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538a14    inc leg"
+"	      00538a17    cmp leg,0Bh"
 "	      00538a1b    jge near ptr 00538A84h"
 );
 // LINE 170:
 	asm( 
-"	      00538a21    mov eax,[ebp-1Ch]"
+"	      00538a21    mov eax,leg"
 "	      00538a24    mov [ebp-64h],eax"
 "	      00538a27    fild dword ptr [ebp-64h]"
-"	      00538a2a    fmul qword ptr [ebp-18h]"
+"	      00538a2a    fmul turnAngle"
 "	      00538a2d    call 0056F338h"
-"	      00538a32    fmul qword ptr [ebp-28h]"
+"	      00538a32    fmul turnRadius"
 "	      00538a35    fsubr qword ptr ds:[5933A8h]"
 "	      00538a3b    fmul qword ptr ds:[593400h]"
 "	      00538a41    call 0056EBE8h"
-"	      00538a46    mov ecx,[ebp-1Ch]"
+"	      00538a46    mov ecx,leg"
 "	      00538a49    mov [ecx*8+62D5F8h],eax"
 );
 // LINE 171:
 	asm( 
-"	      00538a50    mov eax,[ebp-1Ch]"
+"	      00538a50    mov eax,leg"
 "	      00538a53    mov [ebp-68h],eax"
 "	      00538a56    fild dword ptr [ebp-68h]"
-"	      00538a59    fmul qword ptr [ebp-18h]"
+"	      00538a59    fmul turnAngle"
 "	      00538a5c    call 0056F342h"
-"	      00538a61    fmul qword ptr [ebp-28h]"
+"	      00538a61    fmul turnRadius"
 "	      00538a64    fsubr qword ptr ds:[5933B0h]"
 "	      00538a6a    fmul qword ptr ds:[593400h]"
 "	      00538a70    call 0056EBE8h"
-"	      00538a75    mov ecx,[ebp-1Ch]"
+"	      00538a75    mov ecx,leg"
 "	      00538a78    mov [ecx*8+62D5FCh],eax"
 );
 // LINE 172:
@@ -582,7 +582,7 @@ void S3RoadDataInit() {
 	asm( 
 "	      00538a84    fld qword ptr ds:[593338h]"
 "	      00538a8a    fsub qword ptr ds:[5933B8h]"
-"	      00538a90    fstp qword ptr [ebp-28h]"
+"	      00538a90    fstp turnRadius"
 );
 // LINE 177:
 	asm( 
@@ -591,38 +591,38 @@ void S3RoadDataInit() {
 );
 // LINE 178:
 	asm( 
-"	      00538aa1    mov dword ptr [ebp-1Ch],0"
+"	      00538aa1    mov leg,0"
 "	      00538aa8    jmp near ptr 00538AB0h"
-"	      00538aad    inc dword ptr [ebp-1Ch]"
-"	      00538ab0    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538aad    inc leg"
+"	      00538ab0    cmp leg,0Bh"
 "	      00538ab4    jge near ptr 00538B1Dh"
 );
 // LINE 180:
 	asm( 
-"	      00538aba    mov eax,[ebp-1Ch]"
+"	      00538aba    mov eax,leg"
 "	      00538abd    mov [ebp-6Ch],eax"
 "	      00538ac0    fild dword ptr [ebp-6Ch]"
-"	      00538ac3    fmul qword ptr [ebp-18h]"
+"	      00538ac3    fmul turnAngle"
 "	      00538ac6    call 0056F342h"
-"	      00538acb    fmul qword ptr [ebp-28h]"
+"	      00538acb    fmul turnRadius"
 "	      00538ace    fadd qword ptr ds:[5933B8h]"
 "	      00538ad4    fmul qword ptr ds:[593400h]"
 "	      00538ada    call 0056EBE8h"
-"	      00538adf    mov ecx,[ebp-1Ch]"
+"	      00538adf    mov ecx,leg"
 "	      00538ae2    mov [ecx*8+62D650h],eax"
 );
 // LINE 181:
 	asm( 
-"	      00538ae9    mov eax,[ebp-1Ch]"
+"	      00538ae9    mov eax,leg"
 "	      00538aec    mov [ebp-70h],eax"
 "	      00538aef    fild dword ptr [ebp-70h]"
-"	      00538af2    fmul qword ptr [ebp-18h]"
+"	      00538af2    fmul turnAngle"
 "	      00538af5    call 0056F338h"
-"	      00538afa    fmul qword ptr [ebp-28h]"
+"	      00538afa    fmul turnRadius"
 "	      00538afd    fadd qword ptr ds:[5933C0h]"
 "	      00538b03    fmul qword ptr ds:[593400h]"
 "	      00538b09    call 0056EBE8h"
-"	      00538b0e    mov ecx,[ebp-1Ch]"
+"	      00538b0e    mov ecx,leg"
 "	      00538b11    mov [ecx*8+62D654h],eax"
 );
 // LINE 182:
@@ -631,38 +631,38 @@ void S3RoadDataInit() {
 );
 // LINE 183:
 	asm( 
-"	      00538b1d    mov dword ptr [ebp-1Ch],0"
+"	      00538b1d    mov leg,0"
 "	      00538b24    jmp near ptr 00538B2Ch"
-"	      00538b29    inc dword ptr [ebp-1Ch]"
-"	      00538b2c    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538b29    inc leg"
+"	      00538b2c    cmp leg,0Bh"
 "	      00538b30    jge near ptr 00538B99h"
 );
 // LINE 185:
 	asm( 
-"	      00538b36    mov eax,[ebp-1Ch]"
+"	      00538b36    mov eax,leg"
 "	      00538b39    mov [ebp-74h],eax"
 "	      00538b3c    fild dword ptr [ebp-74h]"
-"	      00538b3f    fmul qword ptr [ebp-18h]"
+"	      00538b3f    fmul turnAngle"
 "	      00538b42    call 0056F338h"
-"	      00538b47    fmul qword ptr [ebp-28h]"
+"	      00538b47    fmul turnRadius"
 "	      00538b4a    fadd qword ptr ds:[5933C8h]"
 "	      00538b50    fmul qword ptr ds:[593400h]"
 "	      00538b56    call 0056EBE8h"
-"	      00538b5b    mov ecx,[ebp-1Ch]"
+"	      00538b5b    mov ecx,leg"
 "	      00538b5e    mov [ecx*8+62D6A8h],eax"
 );
 // LINE 186:
 	asm( 
-"	      00538b65    mov eax,[ebp-1Ch]"
+"	      00538b65    mov eax,leg"
 "	      00538b68    mov [ebp-78h],eax"
 "	      00538b6b    fild dword ptr [ebp-78h]"
-"	      00538b6e    fmul qword ptr [ebp-18h]"
+"	      00538b6e    fmul turnAngle"
 "	      00538b71    call 0056F342h"
-"	      00538b76    fmul qword ptr [ebp-28h]"
+"	      00538b76    fmul turnRadius"
 "	      00538b79    fsubr qword ptr ds:[5933D0h]"
 "	      00538b7f    fmul qword ptr ds:[593400h]"
 "	      00538b85    call 0056EBE8h"
-"	      00538b8a    mov ecx,[ebp-1Ch]"
+"	      00538b8a    mov ecx,leg"
 "	      00538b8d    mov [ecx*8+62D6ACh],eax"
 );
 // LINE 187:
@@ -671,38 +671,38 @@ void S3RoadDataInit() {
 );
 // LINE 188:
 	asm( 
-"	      00538b99    mov dword ptr [ebp-1Ch],0"
+"	      00538b99    mov leg,0"
 "	      00538ba0    jmp near ptr 00538BA8h"
-"	      00538ba5    inc dword ptr [ebp-1Ch]"
-"	      00538ba8    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538ba5    inc leg"
+"	      00538ba8    cmp leg,0Bh"
 "	      00538bac    jge near ptr 00538C15h"
 );
 // LINE 190:
 	asm( 
-"	      00538bb2    mov eax,[ebp-1Ch]"
+"	      00538bb2    mov eax,leg"
 "	      00538bb5    mov [ebp-7Ch],eax"
 "	      00538bb8    fild dword ptr [ebp-7Ch]"
-"	      00538bbb    fmul qword ptr [ebp-18h]"
+"	      00538bbb    fmul turnAngle"
 "	      00538bbe    call 0056F342h"
-"	      00538bc3    fmul qword ptr [ebp-28h]"
+"	      00538bc3    fmul turnRadius"
 "	      00538bc6    fsubr qword ptr ds:[5933D8h]"
 "	      00538bcc    fmul qword ptr ds:[593400h]"
 "	      00538bd2    call 0056EBE8h"
-"	      00538bd7    mov ecx,[ebp-1Ch]"
+"	      00538bd7    mov ecx,leg"
 "	      00538bda    mov [ecx*8+62D700h],eax"
 );
 // LINE 191:
 	asm( 
-"	      00538be1    mov eax,[ebp-1Ch]"
+"	      00538be1    mov eax,leg"
 "	      00538be4    mov [ebp-80h],eax"
 "	      00538be7    fild dword ptr [ebp-80h]"
-"	      00538bea    fmul qword ptr [ebp-18h]"
+"	      00538bea    fmul turnAngle"
 "	      00538bed    call 0056F338h"
-"	      00538bf2    fmul qword ptr [ebp-28h]"
+"	      00538bf2    fmul turnRadius"
 "	      00538bf5    fsubr qword ptr ds:[5933E0h]"
 "	      00538bfb    fmul qword ptr ds:[593400h]"
 "	      00538c01    call 0056EBE8h"
-"	      00538c06    mov ecx,[ebp-1Ch]"
+"	      00538c06    mov ecx,leg"
 "	      00538c09    mov [ecx*8+62D704h],eax"
 );
 // LINE 192:
@@ -711,38 +711,38 @@ void S3RoadDataInit() {
 );
 // LINE 193:
 	asm( 
-"	      00538c15    mov dword ptr [ebp-1Ch],0"
+"	      00538c15    mov leg,0"
 "	      00538c1c    jmp near ptr 00538C24h"
-"	      00538c21    inc dword ptr [ebp-1Ch]"
-"	      00538c24    cmp dword ptr [ebp-1Ch],0Bh"
+"	      00538c21    inc leg"
+"	      00538c24    cmp leg,0Bh"
 "	      00538c28    jge near ptr 00538C9Dh"
 );
 // LINE 195:
 	asm( 
-"	      00538c2e    mov eax,[ebp-1Ch]"
+"	      00538c2e    mov eax,leg"
 "	      00538c31    mov [ebp-84h],eax"
 "	      00538c37    fild dword ptr [ebp-84h]"
-"	      00538c3d    fmul qword ptr [ebp-18h]"
+"	      00538c3d    fmul turnAngle"
 "	      00538c40    call 0056F338h"
-"	      00538c45    fmul qword ptr [ebp-28h]"
+"	      00538c45    fmul turnRadius"
 "	      00538c48    fsubr qword ptr ds:[5933E8h]"
 "	      00538c4e    fmul qword ptr ds:[593400h]"
 "	      00538c54    call 0056EBE8h"
-"	      00538c59    mov ecx,[ebp-1Ch]"
+"	      00538c59    mov ecx,leg"
 "	      00538c5c    mov [ecx*8+62D758h],eax"
 );
 // LINE 196:
 	asm( 
-"	      00538c63    mov eax,[ebp-1Ch]"
+"	      00538c63    mov eax,leg"
 "	      00538c66    mov [ebp-88h],eax"
 "	      00538c6c    fild dword ptr [ebp-88h]"
-"	      00538c72    fmul qword ptr [ebp-18h]"
+"	      00538c72    fmul turnAngle"
 "	      00538c75    call 0056F342h"
-"	      00538c7a    fmul qword ptr [ebp-28h]"
+"	      00538c7a    fmul turnRadius"
 "	      00538c7d    fadd qword ptr ds:[5933F0h]"
 "	      00538c83    fmul qword ptr ds:[593400h]"
 "	      00538c89    call 0056EBE8h"
-"	      00538c8e    mov ecx,[ebp-1Ch]"
+"	      00538c8e    mov ecx,leg"
 "	      00538c91    mov [ecx*8+62D75Ch],eax"
 );
 // LINE 197:
@@ -775,38 +775,38 @@ void S3RoadDataInit() {
 );
 // LINE 206:
 	asm( 
-"	      00538ce5    mov dword ptr [ebp-1Ch],1"
+"	      00538ce5    mov leg,1"
 "	      00538cec    jmp near ptr 00538CF4h"
-"	      00538cf1    inc dword ptr [ebp-1Ch]"
-"	      00538cf4    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00538cf1    inc leg"
+"	      00538cf4    cmp leg,0Ah"
 "	      00538cf8    jge near ptr 00538D63h"
 );
 // LINE 208:
 	asm( 
-"	      00538cfe    mov eax,[ebp-1Ch]"
+"	      00538cfe    mov eax,leg"
 "	      00538d01    dec eax"
 "	      00538d02    mov [ebp-8Ch],eax"
 "	      00538d08    fild dword ptr [ebp-8Ch]"
-"	      00538d0e    fmul qword ptr [ebp-18h]"
+"	      00538d0e    fmul turnAngle"
 "	      00538d11    call 0056F342h"
-"	      00538d16    fmul qword ptr [ebp-28h]"
+"	      00538d16    fmul turnRadius"
 "	      00538d19    fmul qword ptr ds:[593400h]"
 "	      00538d1f    call 0056EBE8h"
-"	      00538d24    mov ecx,[ebp-1Ch]"
+"	      00538d24    mov ecx,leg"
 "	      00538d27    mov [ecx*8+62D7B0h],eax"
 );
 // LINE 209:
 	asm( 
-"	      00538d2e    mov eax,[ebp-1Ch]"
+"	      00538d2e    mov eax,leg"
 "	      00538d31    dec eax"
 "	      00538d32    mov [ebp-90h],eax"
 "	      00538d38    fild dword ptr [ebp-90h]"
-"	      00538d3e    fmul qword ptr [ebp-18h]"
+"	      00538d3e    fmul turnAngle"
 "	      00538d41    call 0056F338h"
-"	      00538d46    fmul qword ptr [ebp-28h]"
+"	      00538d46    fmul turnRadius"
 "	      00538d49    fmul qword ptr ds:[593400h]"
 "	      00538d4f    call 0056EBE8h"
-"	      00538d54    mov ecx,[ebp-1Ch]"
+"	      00538d54    mov ecx,leg"
 "	      00538d57    mov [ecx*8+62D7B4h],eax"
 );
 // LINE 210:
@@ -837,39 +837,39 @@ void S3RoadDataInit() {
 );
 // LINE 216:
 	asm( 
-"	      00538da3    mov dword ptr [ebp-1Ch],1"
+"	      00538da3    mov leg,1"
 "	      00538daa    jmp near ptr 00538DB2h"
-"	      00538daf    inc dword ptr [ebp-1Ch]"
-"	      00538db2    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00538daf    inc leg"
+"	      00538db2    cmp leg,0Ah"
 "	      00538db6    jge near ptr 00538E23h"
 );
 // LINE 218:
 	asm( 
-"	      00538dbc    mov eax,[ebp-1Ch]"
+"	      00538dbc    mov eax,leg"
 "	      00538dbf    dec eax"
 "	      00538dc0    mov [ebp-94h],eax"
 "	      00538dc6    fild dword ptr [ebp-94h]"
-"	      00538dcc    fmul qword ptr [ebp-18h]"
+"	      00538dcc    fmul turnAngle"
 "	      00538dcf    call 0056F338h"
-"	      00538dd4    fmul qword ptr [ebp-28h]"
+"	      00538dd4    fmul turnRadius"
 "	      00538dd7    fmul qword ptr ds:[593400h]"
 "	      00538ddd    call 0056EBE8h"
-"	      00538de2    mov ecx,[ebp-1Ch]"
+"	      00538de2    mov ecx,leg"
 "	      00538de5    mov [ecx*8+62D808h],eax"
 );
 // LINE 219:
 	asm( 
-"	      00538dec    mov eax,[ebp-1Ch]"
+"	      00538dec    mov eax,leg"
 "	      00538def    dec eax"
 "	      00538df0    mov [ebp-98h],eax"
 "	      00538df6    fild dword ptr [ebp-98h]"
-"	      00538dfc    fmul qword ptr [ebp-18h]"
+"	      00538dfc    fmul turnAngle"
 "	      00538dff    call 0056F342h"
-"	      00538e04    fmul qword ptr [ebp-28h]"
+"	      00538e04    fmul turnRadius"
 "	      00538e07    fchs"
 "	      00538e09    fmul qword ptr ds:[593400h]"
 "	      00538e0f    call 0056EBE8h"
-"	      00538e14    mov ecx,[ebp-1Ch]"
+"	      00538e14    mov ecx,leg"
 "	      00538e17    mov [ecx*8+62D80Ch],eax"
 );
 // LINE 220:
@@ -900,40 +900,40 @@ void S3RoadDataInit() {
 );
 // LINE 226:
 	asm( 
-"	      00538e63    mov dword ptr [ebp-1Ch],1"
+"	      00538e63    mov leg,1"
 "	      00538e6a    jmp near ptr 00538E72h"
-"	      00538e6f    inc dword ptr [ebp-1Ch]"
-"	      00538e72    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00538e6f    inc leg"
+"	      00538e72    cmp leg,0Ah"
 "	      00538e76    jge near ptr 00538EE5h"
 );
 // LINE 228:
 	asm( 
-"	      00538e7c    mov eax,[ebp-1Ch]"
+"	      00538e7c    mov eax,leg"
 "	      00538e7f    dec eax"
 "	      00538e80    mov [ebp-9Ch],eax"
 "	      00538e86    fild dword ptr [ebp-9Ch]"
-"	      00538e8c    fmul qword ptr [ebp-18h]"
+"	      00538e8c    fmul turnAngle"
 "	      00538e8f    call 0056F342h"
-"	      00538e94    fmul qword ptr [ebp-28h]"
+"	      00538e94    fmul turnRadius"
 "	      00538e97    fchs"
 "	      00538e99    fmul qword ptr ds:[593400h]"
 "	      00538e9f    call 0056EBE8h"
-"	      00538ea4    mov ecx,[ebp-1Ch]"
+"	      00538ea4    mov ecx,leg"
 "	      00538ea7    mov [ecx*8+62D860h],eax"
 );
 // LINE 229:
 	asm( 
-"	      00538eae    mov eax,[ebp-1Ch]"
+"	      00538eae    mov eax,leg"
 "	      00538eb1    dec eax"
 "	      00538eb2    mov [ebp-0A0h],eax"
 "	      00538eb8    fild dword ptr [ebp-0A0h]"
-"	      00538ebe    fmul qword ptr [ebp-18h]"
+"	      00538ebe    fmul turnAngle"
 "	      00538ec1    call 0056F338h"
-"	      00538ec6    fmul qword ptr [ebp-28h]"
+"	      00538ec6    fmul turnRadius"
 "	      00538ec9    fchs"
 "	      00538ecb    fmul qword ptr ds:[593400h]"
 "	      00538ed1    call 0056EBE8h"
-"	      00538ed6    mov ecx,[ebp-1Ch]"
+"	      00538ed6    mov ecx,leg"
 "	      00538ed9    mov [ecx*8+62D864h],eax"
 );
 // LINE 230:
@@ -964,39 +964,39 @@ void S3RoadDataInit() {
 );
 // LINE 236:
 	asm( 
-"	      00538f25    mov dword ptr [ebp-1Ch],1"
+"	      00538f25    mov leg,1"
 "	      00538f2c    jmp near ptr 00538F34h"
-"	      00538f31    inc dword ptr [ebp-1Ch]"
-"	      00538f34    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00538f31    inc leg"
+"	      00538f34    cmp leg,0Ah"
 "	      00538f38    jge near ptr 00538FA5h"
 );
 // LINE 238:
 	asm( 
-"	      00538f3e    mov eax,[ebp-1Ch]"
+"	      00538f3e    mov eax,leg"
 "	      00538f41    dec eax"
 "	      00538f42    mov [ebp-0A4h],eax"
 "	      00538f48    fild dword ptr [ebp-0A4h]"
-"	      00538f4e    fmul qword ptr [ebp-18h]"
+"	      00538f4e    fmul turnAngle"
 "	      00538f51    call 0056F338h"
-"	      00538f56    fmul qword ptr [ebp-28h]"
+"	      00538f56    fmul turnRadius"
 "	      00538f59    fchs"
 "	      00538f5b    fmul qword ptr ds:[593400h]"
 "	      00538f61    call 0056EBE8h"
-"	      00538f66    mov ecx,[ebp-1Ch]"
+"	      00538f66    mov ecx,leg"
 "	      00538f69    mov [ecx*8+62D8B8h],eax"
 );
 // LINE 239:
 	asm( 
-"	      00538f70    mov eax,[ebp-1Ch]"
+"	      00538f70    mov eax,leg"
 "	      00538f73    dec eax"
 "	      00538f74    mov [ebp-0A8h],eax"
 "	      00538f7a    fild dword ptr [ebp-0A8h]"
-"	      00538f80    fmul qword ptr [ebp-18h]"
+"	      00538f80    fmul turnAngle"
 "	      00538f83    call 0056F342h"
-"	      00538f88    fmul qword ptr [ebp-28h]"
+"	      00538f88    fmul turnRadius"
 "	      00538f8b    fmul qword ptr ds:[593400h]"
 "	      00538f91    call 0056EBE8h"
-"	      00538f96    mov ecx,[ebp-1Ch]"
+"	      00538f96    mov ecx,leg"
 "	      00538f99    mov [ecx*8+62D8BCh],eax"
 );
 // LINE 240:
@@ -1013,82 +1013,82 @@ void S3RoadDataInit() {
 );
 // LINE 245:
 	asm( 
-"	      00538fb9    mov dword ptr [ebp-20h],0"
+"	      00538fb9    mov incline,0"
 );
 // LINE 249:
 	asm( 
-"	      00538fc0    mov dword ptr [ebp-20h],0"
+"	      00538fc0    mov incline,0"
 "	      00538fc7    jmp near ptr 00538FCFh"
-"	      00538fcc    inc dword ptr [ebp-20h]"
-"	      00538fcf    cmp dword ptr [ebp-20h],3"
+"	      00538fcc    inc incline"
+"	      00538fcf    cmp incline,3"
 "	      00538fd3    jge near ptr 00539256h"
 );
 // LINE 250:
 // Block start:
 	int32_t tType;
 	asm( 
-"	      00538fd9    mov dword ptr [ebp-38h],0"
+"	      00538fd9    mov tType,0"
 "	      00538fe0    jmp near ptr 00538FE8h"
-"	      00538fe5    inc dword ptr [ebp-38h]"
-"	      00538fe8    cmp dword ptr [ebp-38h],4"
+"	      00538fe5    inc tType"
+"	      00538fe8    cmp tType,4"
 "	      00538fec    jge near ptr 00539251h"
 );
 // LINE 252:
 	asm( 
-"	      00538ff2    mov dword ptr [ebp-34h],0"
+"	      00538ff2    mov dir,0"
 "	      00538ff9    jmp near ptr 00539001h"
-"	      00538ffe    inc dword ptr [ebp-34h]"
-"	      00539001    cmp dword ptr [ebp-34h],4"
+"	      00538ffe    inc dir"
+"	      00539001    cmp dir,4"
 "	      00539005    jge near ptr 0053924Ch"
 );
 // LINE 254:
 	asm( 
-"	      0053900b    mov dword ptr [ebp-1Ch],0"
+"	      0053900b    mov leg,0"
 "	      00539012    jmp near ptr 0053901Ah"
-"	      00539017    inc dword ptr [ebp-1Ch]"
-"	      0053901a    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00539017    inc leg"
+"	      0053901a    cmp leg,0Ah"
 "	      0053901e    jge near ptr 00539247h"
 );
 // LINE 258:
 	asm( 
-"	      00539024    mov eax,[ebp-1Ch]"
-"	      00539027    mov ecx,[ebp-34h]"
+"	      00539024    mov eax,leg"
+"	      00539027    mov ecx,dir"
 "	      0053902a    mov edx,ecx"
 "	      0053902c    lea ecx,[ecx+ecx*4]"
 "	      0053902f    lea ecx,[edx+ecx*2]"
 "	      00539032    shl ecx,3"
 "	      00539035    lea eax,[ecx+eax*8+8]"
-"	      00539039    mov ecx,[ebp-38h]"
+"	      00539039    mov ecx,tType"
 "	      0053903c    mov edx,ecx"
 "	      0053903e    lea ecx,[ecx+ecx*4]"
 "	      00539041    lea ecx,[edx+ecx*2]"
 "	      00539044    shl ecx,5"
 "	      00539047    mov eax,[eax+ecx+62D390h]"
-"	      0053904e    mov ecx,[ebp-34h]"
+"	      0053904e    mov ecx,dir"
 "	      00539051    mov edx,ecx"
 "	      00539053    lea ecx,[ecx+ecx*4]"
 "	      00539056    lea ecx,[edx+ecx*2]"
-"	      00539059    mov edx,[ebp-1Ch]"
+"	      00539059    mov edx,leg"
 "	      0053905c    shl edx,3"
 "	      0053905f    lea ecx,[edx+ecx*8]"
-"	      00539062    mov edx,[ebp-38h]"
+"	      00539062    mov edx,tType"
 "	      00539065    mov ebx,edx"
 "	      00539067    lea edx,[edx+edx*4]"
 "	      0053906a    lea edx,[ebx+edx*2]"
 "	      0053906d    shl edx,5"
 "	      00539070    sub eax,[ecx+edx+62D390h]"
-"	      00539077    mov ecx,[ebp-20h]"
+"	      00539077    mov ecx,incline"
 "	      0053907a    lea ecx,[ecx+ecx*2]"
-"	      0053907d    mov edx,[ebp-1Ch]"
+"	      0053907d    mov edx,leg"
 "	      00539080    shl edx,2"
 "	      00539083    lea edx,[edx+edx*8]"
 "	      00539086    lea ecx,[edx+ecx*4]"
-"	      00539089    mov edx,[ebp-38h]"
+"	      00539089    mov edx,tType"
 "	      0053908c    lea edx,[edx+edx*4]"
 "	      0053908f    lea edx,[edx+edx*8]"
 "	      00539092    shl edx,5"
 "	      00539095    add ecx,edx"
-"	      00539097    mov edx,[ebp-34h]"
+"	      00539097    mov edx,dir"
 "	      0053909a    lea edx,[edx+edx*4]"
 "	      0053909d    shl edx,3"
 "	      005390a0    lea edx,[edx+edx*8]"
@@ -1096,44 +1096,44 @@ void S3RoadDataInit() {
 );
 // LINE 260:
 	asm( 
-"	      005390aa    mov eax,[ebp-1Ch]"
-"	      005390ad    mov ecx,[ebp-34h]"
+"	      005390aa    mov eax,leg"
+"	      005390ad    mov ecx,dir"
 "	      005390b0    mov edx,ecx"
 "	      005390b2    lea ecx,[ecx+ecx*4]"
 "	      005390b5    lea ecx,[edx+ecx*2]"
 "	      005390b8    shl ecx,3"
 "	      005390bb    lea eax,[ecx+eax*8+8]"
-"	      005390bf    mov ecx,[ebp-38h]"
+"	      005390bf    mov ecx,tType"
 "	      005390c2    mov edx,ecx"
 "	      005390c4    lea ecx,[ecx+ecx*4]"
 "	      005390c7    lea ecx,[edx+ecx*2]"
 "	      005390ca    shl ecx,5"
 "	      005390cd    mov eax,[eax+ecx+62D394h]"
-"	      005390d4    mov ecx,[ebp-34h]"
+"	      005390d4    mov ecx,dir"
 "	      005390d7    mov edx,ecx"
 "	      005390d9    lea ecx,[ecx+ecx*4]"
 "	      005390dc    lea ecx,[edx+ecx*2]"
-"	      005390df    mov edx,[ebp-1Ch]"
+"	      005390df    mov edx,leg"
 "	      005390e2    shl edx,3"
 "	      005390e5    lea ecx,[edx+ecx*8]"
-"	      005390e8    mov edx,[ebp-38h]"
+"	      005390e8    mov edx,tType"
 "	      005390eb    mov ebx,edx"
 "	      005390ed    lea edx,[edx+edx*4]"
 "	      005390f0    lea edx,[ebx+edx*2]"
 "	      005390f3    shl edx,5"
 "	      005390f6    sub eax,[ecx+edx+62D394h]"
-"	      005390fd    mov ecx,[ebp-20h]"
+"	      005390fd    mov ecx,incline"
 "	      00539100    lea ecx,[ecx+ecx*2]"
-"	      00539103    mov edx,[ebp-1Ch]"
+"	      00539103    mov edx,leg"
 "	      00539106    shl edx,2"
 "	      00539109    lea edx,[edx+edx*8]"
 "	      0053910c    lea ecx,[edx+ecx*4]"
-"	      0053910f    mov edx,[ebp-38h]"
+"	      0053910f    mov edx,tType"
 "	      00539112    lea edx,[edx+edx*4]"
 "	      00539115    lea edx,[edx+edx*8]"
 "	      00539118    shl edx,5"
 "	      0053911b    add ecx,edx"
-"	      0053911d    mov edx,[ebp-34h]"
+"	      0053911d    mov edx,dir"
 "	      00539120    lea edx,[edx+edx*4]"
 "	      00539123    shl edx,3"
 "	      00539126    lea edx,[edx+edx*8]"
@@ -1141,25 +1141,25 @@ void S3RoadDataInit() {
 );
 // LINE 263:
 	asm( 
-"	      00539130    mov eax,[ebp-20h]"
+"	      00539130    mov eax,incline"
 "	      00539133    dec eax"
 "	      00539134    shl eax,5"
 "	      00539137    mov ecx,0Ah"
 "	      0053913c    cdq"
 "	      0053913d    idiv ecx"
 "	      0053913f    shl eax,10h"
-"	      00539142    mov ecx,[ebp-20h]"
+"	      00539142    mov ecx,incline"
 "	      00539145    lea ecx,[ecx+ecx*2]"
-"	      00539148    mov edx,[ebp-1Ch]"
+"	      00539148    mov edx,leg"
 "	      0053914b    shl edx,2"
 "	      0053914e    lea edx,[edx+edx*8]"
 "	      00539151    lea ecx,[edx+ecx*4]"
-"	      00539154    mov edx,[ebp-38h]"
+"	      00539154    mov edx,tType"
 "	      00539157    lea edx,[edx+edx*4]"
 "	      0053915a    lea edx,[edx+edx*8]"
 "	      0053915d    shl edx,5"
 "	      00539160    add ecx,edx"
-"	      00539162    mov edx,[ebp-34h]"
+"	      00539162    mov edx,dir"
 "	      00539165    lea edx,[edx+edx*4]"
 "	      00539168    shl edx,3"
 "	      0053916b    lea edx,[edx+edx*8]"
@@ -1167,18 +1167,18 @@ void S3RoadDataInit() {
 );
 // LINE 267:
 	asm( 
-"	      00539175    mov eax,[ebp-20h]"
+"	      00539175    mov eax,incline"
 "	      00539178    lea eax,[eax+eax*2]"
-"	      0053917b    mov ecx,[ebp-1Ch]"
+"	      0053917b    mov ecx,leg"
 "	      0053917e    shl ecx,2"
 "	      00539181    lea ecx,[ecx+ecx*8]"
 "	      00539184    lea eax,[ecx+eax*4]"
-"	      00539187    mov ecx,[ebp-38h]"
+"	      00539187    mov ecx,tType"
 "	      0053918a    lea ecx,[ecx+ecx*4]"
 "	      0053918d    lea ecx,[ecx+ecx*8]"
 "	      00539190    shl ecx,5"
 "	      00539193    add eax,ecx"
-"	      00539195    mov ecx,[ebp-34h]"
+"	      00539195    mov ecx,dir"
 "	      00539198    lea ecx,[ecx+ecx*4]"
 "	      0053919b    shl ecx,3"
 "	      0053919e    lea ecx,[ecx+ecx*8]"
@@ -1187,12 +1187,12 @@ void S3RoadDataInit() {
 "	      005391a8    push eax"
 "	      005391a9    call 004CA1E3h"
 "	      005391ae    add esp,4"
-"	      005391b1    mov ecx,[ebp-1Ch]"
+"	      005391b1    mov ecx,leg"
 "	      005391b4    lea ecx,[ecx+ecx*2]"
-"	      005391b7    mov edx,[ebp-20h]"
+"	      005391b7    mov edx,incline"
 "	      005391ba    shl edx,2"
 "	      005391bd    lea ecx,[edx+ecx*4]"
-"	      005391c0    mov edx,[ebp-38h]"
+"	      005391c0    mov edx,tType"
 "	      005391c3    shl edx,3"
 "	      005391c6    lea edx,[edx+edx*2]"
 "	      005391c9    lea edx,[edx+edx*4]"
@@ -1200,37 +1200,37 @@ void S3RoadDataInit() {
 );
 // LINE 270:
 	asm( 
-"	      005391d3    mov eax,[ebp-20h]"
+"	      005391d3    mov eax,incline"
 "	      005391d6    lea eax,[eax+eax*2]"
-"	      005391d9    mov ecx,[ebp-1Ch]"
+"	      005391d9    mov ecx,leg"
 "	      005391dc    shl ecx,2"
 "	      005391df    lea ecx,[ecx+ecx*8]"
 "	      005391e2    lea eax,[ecx+eax*4]"
-"	      005391e5    mov ecx,[ebp-38h]"
+"	      005391e5    mov ecx,tType"
 "	      005391e8    lea ecx,[ecx+ecx*4]"
 "	      005391eb    lea ecx,[ecx+ecx*8]"
 "	      005391ee    shl ecx,5"
 "	      005391f1    add eax,ecx"
-"	      005391f3    mov ecx,[ebp-34h]"
+"	      005391f3    mov ecx,dir"
 "	      005391f6    lea ecx,[ecx+ecx*4]"
 "	      005391f9    shl ecx,3"
 "	      005391fc    lea ecx,[ecx+ecx*8]"
 "	      005391ff    add eax,ecx"
 "	      00539201    add eax,62BD10h"
 "	      00539206    push eax"
-"	      00539207    mov eax,[ebp-38h]"
+"	      00539207    mov eax,tType"
 "	      0053920a    lea eax,[eax+eax*2]"
 "	      0053920d    lea eax,[eax+eax*4]"
 "	      00539210    shl eax,9"
-"	      00539213    mov ecx,[ebp-20h]"
+"	      00539213    mov ecx,incline"
 "	      00539216    shl ecx,6"
 "	      00539219    add eax,ecx"
-"	      0053921b    mov ecx,[ebp-34h]"
+"	      0053921b    mov ecx,dir"
 "	      0053921e    lea ecx,[ecx+ecx*2]"
 "	      00539221    lea ecx,[ecx+ecx*4]"
 "	      00539224    shl ecx,7"
 "	      00539227    add eax,ecx"
-"	      00539229    mov ecx,[ebp-1Ch]"
+"	      00539229    mov ecx,leg"
 "	      0053922c    shl ecx,6"
 "	      0053922f    lea ecx,[ecx+ecx*2]"
 "	      00539232    add eax,ecx"
@@ -1282,31 +1282,31 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 420:
 	asm( 
-"	      00539269    cmp dword ptr [ebp+8],0"
+"	      00539269    cmp x,0"
 "	      0053926d    jl near ptr 00539297h"
-"	      00539273    cmp dword ptr [ebp+0Ch],0"
+"	      00539273    cmp y,0"
 "	      00539277    jl near ptr 00539297h"
-"	      0053927d    cmp dword ptr [ebp+8],80h"
+"	      0053927d    cmp x,80h"
 "	      00539284    jge near ptr 00539297h"
-"	      0053928a    cmp dword ptr [ebp+0Ch],80h"
+"	      0053928a    cmp y,80h"
 "	      00539291    jl near ptr 005392A2h"
-"	      00539297    mov word ptr [ebp-4],0"
+"	      00539297    mov t,0"
 "	      0053929d    jmp near ptr 005392DAh"
-"	      005392a2    mov eax,[ebp+8]"
+"	      005392a2    mov eax,x"
 "	      005392a5    mov eax,[eax*4+638F70h]"
-"	      005392ac    mov ecx,[ebp+0Ch]"
+"	      005392ac    mov ecx,y"
 "	      005392af    xor edx,edx"
 "	      005392b1    mov dl,[eax+ecx]"
 "	      005392b4    and edx,2"
 "	      005392b7    movsx eax,dx"
 "	      005392ba    shl eax,0Eh"
-"	      005392bd    mov ecx,[ebp+8]"
+"	      005392bd    mov ecx,x"
 "	      005392c0    mov ecx,[ecx*4+639850h]"
-"	      005392c7    mov edx,[ebp+0Ch]"
+"	      005392c7    mov edx,y"
 "	      005392ca    xor ebx,ebx"
 "	      005392cc    mov bl,[ecx+edx]"
 "	      005392cf    or eax,ebx"
-"	      005392d1    mov [ebp-4],ax"
+"	      005392d1    mov t,ax"
 "	      005392d5    jmp near ptr 005392DAh"
 );
 // LINE 423:
@@ -1318,7 +1318,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 425:
 	asm( 
-"	      005392eb    mov eax,[ebp+8]"
+"	      005392eb    mov eax,x"
 "	      005392ee    dec eax"
 "	      005392ef    test al,1"
 "	      005392f1    je near ptr 005392FEh"
@@ -1327,7 +1327,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 426:
 	asm( 
-"	      005392fe    mov eax,[ebp+0Ch]"
+"	      005392fe    mov eax,y"
 "	      00539301    dec eax"
 "	      00539302    test al,1"
 "	      00539304    je near ptr 00539311h"
@@ -1358,46 +1358,46 @@ int32_t IsThisAnIntersection(long x, long y) {
 "	      0053934a    and eax,0FFFFh"
 "	      0053934f    cmp eax,49h"
 "	      00539352    jne near ptr 005394C7h"
-"	      00539358    mov eax,[ebp+8]"
+"	      00539358    mov eax,x"
 "	      0053935b    dec eax"
 "	      0053935c    test al,1"
 "	      0053935e    je near ptr 005394C7h"
 );
 // LINE 438:
 	asm( 
-"	      00539364    cmp dword ptr [ebp+8],1"
+"	      00539364    cmp x,1"
 "	      00539368    jle near ptr 00539411h"
 );
 // LINE 440:
 	asm( 
-"	      0053936e    mov eax,[ebp+8]"
+"	      0053936e    mov eax,x"
 "	      00539371    dec eax"
 "	      00539372    js near ptr 0053939Eh"
-"	      00539378    cmp dword ptr [ebp+0Ch],0"
+"	      00539378    cmp y,0"
 "	      0053937c    jl near ptr 0053939Eh"
-"	      00539382    mov eax,[ebp+8]"
+"	      00539382    mov eax,x"
 "	      00539385    dec eax"
 "	      00539386    cmp eax,80h"
 "	      0053938b    jge near ptr 0053939Eh"
-"	      00539391    cmp dword ptr [ebp+0Ch],80h"
+"	      00539391    cmp y,80h"
 "	      00539398    jl near ptr 005393A9h"
-"	      0053939e    mov word ptr [ebp-8],0"
+"	      0053939e    mov t2,0"
 "	      005393a4    jmp near ptr 005393E1h"
-"	      005393a9    mov eax,[ebp+8]"
+"	      005393a9    mov eax,x"
 "	      005393ac    mov eax,[eax*4+638F6Ch]"
-"	      005393b3    mov ecx,[ebp+0Ch]"
+"	      005393b3    mov ecx,y"
 "	      005393b6    xor edx,edx"
 "	      005393b8    mov dl,[eax+ecx]"
 "	      005393bb    and edx,2"
 "	      005393be    movsx eax,dx"
 "	      005393c1    shl eax,0Eh"
-"	      005393c4    mov ecx,[ebp+8]"
+"	      005393c4    mov ecx,x"
 "	      005393c7    mov ecx,[ecx*4+63984Ch]"
-"	      005393ce    mov edx,[ebp+0Ch]"
+"	      005393ce    mov edx,y"
 "	      005393d1    xor ebx,ebx"
 "	      005393d3    mov bl,[ecx+edx]"
 "	      005393d6    or eax,ebx"
-"	      005393d8    mov [ebp-8],ax"
+"	      005393d8    mov t2,ax"
 "	      005393dc    jmp near ptr 005393E1h"
 );
 // LINE 441:
@@ -1418,39 +1418,39 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 445:
 	asm( 
-"	      00539411    cmp dword ptr [ebp+8],7Ch"
+"	      00539411    cmp x,7Ch"
 "	      00539415    jge near ptr 005394C2h"
 );
 // LINE 447:
 	asm( 
-"	      0053941b    mov eax,[ebp+8]"
+"	      0053941b    mov eax,x"
 "	      0053941e    add eax,2"
 "	      00539421    js near ptr 0053944Fh"
-"	      00539427    cmp dword ptr [ebp+0Ch],0"
+"	      00539427    cmp y,0"
 "	      0053942b    jl near ptr 0053944Fh"
-"	      00539431    mov eax,[ebp+8]"
+"	      00539431    mov eax,x"
 "	      00539434    add eax,2"
 "	      00539437    cmp eax,80h"
 "	      0053943c    jge near ptr 0053944Fh"
-"	      00539442    cmp dword ptr [ebp+0Ch],80h"
+"	      00539442    cmp y,80h"
 "	      00539449    jl near ptr 0053945Ah"
-"	      0053944f    mov word ptr [ebp-8],0"
+"	      0053944f    mov t2,0"
 "	      00539455    jmp near ptr 00539492h"
-"	      0053945a    mov eax,[ebp+8]"
+"	      0053945a    mov eax,x"
 "	      0053945d    mov eax,[eax*4+638F78h]"
-"	      00539464    mov ecx,[ebp+0Ch]"
+"	      00539464    mov ecx,y"
 "	      00539467    xor edx,edx"
 "	      00539469    mov dl,[eax+ecx]"
 "	      0053946c    and edx,2"
 "	      0053946f    movsx eax,dx"
 "	      00539472    shl eax,0Eh"
-"	      00539475    mov ecx,[ebp+8]"
+"	      00539475    mov ecx,x"
 "	      00539478    mov ecx,[ecx*4+639858h]"
-"	      0053947f    mov edx,[ebp+0Ch]"
+"	      0053947f    mov edx,y"
 "	      00539482    xor ebx,ebx"
 "	      00539484    mov bl,[ecx+edx]"
 "	      00539487    or eax,ebx"
-"	      00539489    mov [ebp-8],ax"
+"	      00539489    mov t2,ax"
 "	      0053948d    jmp near ptr 00539492h"
 );
 // LINE 448:
@@ -1476,46 +1476,46 @@ int32_t IsThisAnIntersection(long x, long y) {
 "	      005394ca    and eax,0FFFFh"
 "	      005394cf    cmp eax,4Ah"
 "	      005394d2    jne near ptr 0053963Eh"
-"	      005394d8    mov eax,[ebp+0Ch]"
+"	      005394d8    mov eax,y"
 "	      005394db    dec eax"
 "	      005394dc    test al,1"
 "	      005394de    je near ptr 0053963Eh"
 );
 // LINE 454:
 	asm( 
-"	      005394e4    cmp dword ptr [ebp+0Ch],1"
+"	      005394e4    cmp y,1"
 "	      005394e8    jle near ptr 0053958Fh"
 );
 // LINE 456:
 	asm( 
-"	      005394ee    cmp dword ptr [ebp+8],0"
+"	      005394ee    cmp x,0"
 "	      005394f2    jl near ptr 0053951Eh"
-"	      005394f8    mov eax,[ebp+0Ch]"
+"	      005394f8    mov eax,y"
 "	      005394fb    dec eax"
 "	      005394fc    js near ptr 0053951Eh"
-"	      00539502    cmp dword ptr [ebp+8],80h"
+"	      00539502    cmp x,80h"
 "	      00539509    jge near ptr 0053951Eh"
-"	      0053950f    mov eax,[ebp+0Ch]"
+"	      0053950f    mov eax,y"
 "	      00539512    dec eax"
 "	      00539513    cmp eax,80h"
 "	      00539518    jl near ptr 00539529h"
-"	      0053951e    mov word ptr [ebp-8],0"
+"	      0053951e    mov t2,0"
 "	      00539524    jmp near ptr 00539563h"
-"	      00539529    mov eax,[ebp+8]"
+"	      00539529    mov eax,x"
 "	      0053952c    mov eax,[eax*4+638F70h]"
-"	      00539533    mov ecx,[ebp+0Ch]"
+"	      00539533    mov ecx,y"
 "	      00539536    xor edx,edx"
 "	      00539538    mov dl,[eax+ecx-1]"
 "	      0053953c    and edx,2"
 "	      0053953f    movsx eax,dx"
 "	      00539542    shl eax,0Eh"
-"	      00539545    mov ecx,[ebp+8]"
+"	      00539545    mov ecx,x"
 "	      00539548    mov ecx,[ecx*4+639850h]"
-"	      0053954f    mov edx,[ebp+0Ch]"
+"	      0053954f    mov edx,y"
 "	      00539552    xor ebx,ebx"
 "	      00539554    mov bl,[ecx+edx-1]"
 "	      00539558    or eax,ebx"
-"	      0053955a    mov [ebp-8],ax"
+"	      0053955a    mov t2,ax"
 "	      0053955e    jmp near ptr 00539563h"
 );
 // LINE 457:
@@ -1536,39 +1536,39 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 461:
 	asm( 
-"	      0053958f    cmp dword ptr [ebp+0Ch],7Ch"
+"	      0053958f    cmp y,7Ch"
 "	      00539593    jge near ptr 0053963Eh"
 );
 // LINE 463:
 	asm( 
-"	      00539599    cmp dword ptr [ebp+8],0"
+"	      00539599    cmp x,0"
 "	      0053959d    jl near ptr 005395CDh"
-"	      005395a3    mov eax,[ebp+0Ch]"
+"	      005395a3    mov eax,y"
 "	      005395a6    add eax,2"
 "	      005395a9    js near ptr 005395CDh"
-"	      005395af    cmp dword ptr [ebp+8],80h"
+"	      005395af    cmp x,80h"
 "	      005395b6    jge near ptr 005395CDh"
-"	      005395bc    mov eax,[ebp+0Ch]"
+"	      005395bc    mov eax,y"
 "	      005395bf    add eax,2"
 "	      005395c2    cmp eax,80h"
 "	      005395c7    jl near ptr 005395D8h"
-"	      005395cd    mov word ptr [ebp-8],0"
+"	      005395cd    mov t2,0"
 "	      005395d3    jmp near ptr 00539612h"
-"	      005395d8    mov eax,[ebp+8]"
+"	      005395d8    mov eax,x"
 "	      005395db    mov eax,[eax*4+638F70h]"
-"	      005395e2    mov ecx,[ebp+0Ch]"
+"	      005395e2    mov ecx,y"
 "	      005395e5    xor edx,edx"
 "	      005395e7    mov dl,[eax+ecx+2]"
 "	      005395eb    and edx,2"
 "	      005395ee    movsx eax,dx"
 "	      005395f1    shl eax,0Eh"
-"	      005395f4    mov ecx,[ebp+8]"
+"	      005395f4    mov ecx,x"
 "	      005395f7    mov ecx,[ecx*4+639850h]"
-"	      005395fe    mov edx,[ebp+0Ch]"
+"	      005395fe    mov edx,y"
 "	      00539601    xor ebx,ebx"
 "	      00539603    mov bl,[ecx+edx+2]"
 "	      00539607    or eax,ebx"
-"	      00539609    mov [ebp-8],ax"
+"	      00539609    mov t2,ax"
 "	      0053960d    jmp near ptr 00539612h"
 );
 // LINE 464:
@@ -1616,7 +1616,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539650    push ebx"
 "	      00539651    push esi"
 "	      00539652    push edi"
-"	      00539653    mov ax,[ebp+0Ch]"
+"	      00539653    mov ax,toTile"
 "	      00539657    mov [ebp-24h],ax"
 );
 // LINE 498:
@@ -1667,7 +1667,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 501:
 	asm( 
-"	      00539714    mov ax,[ebp+8]"
+"	      00539714    mov ax,fromTile"
 "	      00539718    mov [ebp-0Ch],ax"
 "	      0053971c    mov eax,[ebp-0Ch]"
 "	      0053971f    and eax,7FFFh"
@@ -1686,7 +1686,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539759    jmp near ptr 00539768h"
 "	      0053975e    cmp dword ptr [ebp-10h],0"
 "	      00539762    jne near ptr 005397BCh"
-"	      00539768    mov ax,[ebp+0Ch]"
+"	      00539768    mov ax,toTile"
 "	      0053976c    mov [ebp-14h],ax"
 "	      00539770    mov eax,[ebp-14h]"
 "	      00539773    and eax,7FFFh"
@@ -1715,49 +1715,49 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 505:
 	asm( 
-"	      005397cc    mov eax,[ebp+14h]"
+"	      005397cc    mov eax,TestDir"
 "	      005397cf    and eax,2"
 "	      005397d2    jmp near ptr 00539BEEh"
 );
 // LINE 506:
 	asm( 
-"	      005397d7    mov eax,[ebp+14h]"
+"	      005397d7    mov eax,TestDir"
 "	      005397da    and eax,8"
 "	      005397dd    jmp near ptr 00539BEEh"
 );
 // LINE 507:
 	asm( 
-"	      005397e2    mov eax,[ebp+14h]"
+"	      005397e2    mov eax,TestDir"
 "	      005397e5    and eax,1"
 "	      005397e8    jmp near ptr 00539BEEh"
 );
 // LINE 508:
 	asm( 
-"	      005397ed    mov eax,[ebp+14h]"
+"	      005397ed    mov eax,TestDir"
 "	      005397f0    and eax,1"
 "	      005397f3    jmp near ptr 00539BEEh"
 );
 // LINE 509:
 	asm( 
-"	      005397f8    mov eax,[ebp+14h]"
+"	      005397f8    mov eax,TestDir"
 "	      005397fb    and eax,8"
 "	      005397fe    jmp near ptr 00539BEEh"
 );
 // LINE 510:
 	asm( 
-"	      00539803    mov eax,[ebp+14h]"
+"	      00539803    mov eax,TestDir"
 "	      00539806    and eax,2"
 "	      00539809    jmp near ptr 00539BEEh"
 );
 // LINE 511:
 	asm( 
-"	      0053980e    mov eax,[ebp+14h]"
+"	      0053980e    mov eax,TestDir"
 "	      00539811    and eax,4"
 "	      00539814    jmp near ptr 00539BEEh"
 );
 // LINE 512:
 	asm( 
-"	      00539819    mov eax,[ebp+14h]"
+"	      00539819    mov eax,TestDir"
 "	      0053981c    and eax,4"
 "	      0053981f    jmp near ptr 00539BEEh"
 );
@@ -1772,7 +1772,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539844    ja near ptr 00539890h"
 "	      0053984a    mov eax,[ebp-2Ch]"
 "	      0053984d    jmp dword ptr [eax*4+539854h]"
-"	      00539854    int 3"
+"	      00539854    int"
 "	      00539855    xchg edi,eax"
 "	      00539856    push ebx"
 "	      00539857    add dl,ah"
@@ -1802,49 +1802,49 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 518:
 	asm( 
-"	      005398a0    mov eax,[ebp+14h]"
+"	      005398a0    mov eax,TestDir"
 "	      005398a3    and eax,4"
 "	      005398a6    jmp near ptr 00539BEEh"
 );
 // LINE 519:
 	asm( 
-"	      005398ab    mov eax,[ebp+14h]"
+"	      005398ab    mov eax,TestDir"
 "	      005398ae    and eax,1"
 "	      005398b1    jmp near ptr 00539BEEh"
 );
 // LINE 520:
 	asm( 
-"	      005398b6    mov eax,[ebp+14h]"
+"	      005398b6    mov eax,TestDir"
 "	      005398b9    and eax,2"
 "	      005398bc    jmp near ptr 00539BEEh"
 );
 // LINE 521:
 	asm( 
-"	      005398c1    mov eax,[ebp+14h]"
+"	      005398c1    mov eax,TestDir"
 "	      005398c4    and eax,2"
 "	      005398c7    jmp near ptr 00539BEEh"
 );
 // LINE 522:
 	asm( 
-"	      005398cc    mov eax,[ebp+14h]"
+"	      005398cc    mov eax,TestDir"
 "	      005398cf    and eax,1"
 "	      005398d2    jmp near ptr 00539BEEh"
 );
 // LINE 523:
 	asm( 
-"	      005398d7    mov eax,[ebp+14h]"
+"	      005398d7    mov eax,TestDir"
 "	      005398da    and eax,4"
 "	      005398dd    jmp near ptr 00539BEEh"
 );
 // LINE 524:
 	asm( 
-"	      005398e2    mov eax,[ebp+14h]"
+"	      005398e2    mov eax,TestDir"
 "	      005398e5    and eax,8"
 "	      005398e8    jmp near ptr 00539BEEh"
 );
 // LINE 525:
 	asm( 
-"	      005398ed    mov eax,[ebp+14h]"
+"	      005398ed    mov eax,TestDir"
 "	      005398f0    and eax,8"
 "	      005398f3    jmp near ptr 00539BEEh"
 );
@@ -1913,13 +1913,13 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 538:
 	asm( 
-"	      005399d0    mov eax,[ebp+10h]"
+"	      005399d0    mov eax,CurDir"
 "	      005399d3    mov [ebp-34h],eax"
 "	      005399d6    jmp near ptr 00539A4Bh"
 );
 // LINE 540:
 	asm( 
-"	      005399db    test byte ptr [ebp+14h],1"
+"	      005399db    test reinterpret_cast<unit8_t>(TestDir),1"
 "	      005399df    je near ptr 005399EFh"
 "	      005399e5    mov eax,1"
 "	      005399ea    jmp near ptr 00539BEEh"
@@ -1927,7 +1927,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 541:
 	asm( 
-"	      005399f4    test byte ptr [ebp+14h],2"
+"	      005399f4    test reinterpret_cast<unit8_t>(TestDir),2"
 "	      005399f8    je near ptr 00539A08h"
 "	      005399fe    mov eax,1"
 "	      00539a03    jmp near ptr 00539BEEh"
@@ -1935,7 +1935,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 542:
 	asm( 
-"	      00539a0d    test byte ptr [ebp+14h],4"
+"	      00539a0d    test reinterpret_cast<unit8_t>(TestDir),4"
 "	      00539a11    je near ptr 00539A21h"
 "	      00539a17    mov eax,1"
 "	      00539a1c    jmp near ptr 00539BEEh"
@@ -1943,7 +1943,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 543:
 	asm( 
-"	      00539a26    test byte ptr [ebp+14h],8"
+"	      00539a26    test reinterpret_cast<unit8_t>(TestDir),8"
 "	      00539a2a    je near ptr 00539A3Ah"
 "	      00539a30    mov eax,1"
 "	      00539a35    jmp near ptr 00539BEEh"
@@ -1988,7 +1988,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539aa2    jne near ptr 00539AB6h"
 "	      00539aa8    mov eax,[ebp-1Ch]"
 "	      00539aab    mov eax,[eax+4]"
-"	      00539aae    mov [ebp-8],eax"
+"	      00539aae    mov fromConnections,eax"
 "	      00539ab1    jmp near ptr 00539AEAh"
 "	      00539ab6    mov eax,[ebp-1Ch]"
 "	      00539ab9    cmp dword ptr [eax],0"
@@ -1997,7 +1997,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539ac7    add eax,0F40h"
 "	      00539acc    cmp eax,[ebp-1Ch]"
 "	      00539acf    jae near ptr 00539AE1h"
-"	      00539ad5    mov dword ptr [ebp-8],0"
+"	      00539ad5    mov fromConnections,0"
 "	      00539adc    jmp near ptr 00539AEAh"
 "	      00539ae1    add dword ptr [ebp-1Ch],8"
 "	      00539ae5    jmp near ptr 00539A94h"
@@ -2012,7 +2012,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539aff    jne near ptr 00539B13h"
 "	      00539b05    mov eax,[ebp-20h]"
 "	      00539b08    mov eax,[eax+4]"
-"	      00539b0b    mov [ebp-4],eax"
+"	      00539b0b    mov toConnections,eax"
 "	      00539b0e    jmp near ptr 00539B47h"
 "	      00539b13    mov eax,[ebp-20h]"
 "	      00539b16    cmp dword ptr [eax],0"
@@ -2021,18 +2021,18 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 "	      00539b24    add eax,0F40h"
 "	      00539b29    cmp eax,[ebp-20h]"
 "	      00539b2c    jae near ptr 00539B3Eh"
-"	      00539b32    mov dword ptr [ebp-4],0"
+"	      00539b32    mov toConnections,0"
 "	      00539b39    jmp near ptr 00539B47h"
 "	      00539b3e    add dword ptr [ebp-20h],8"
 "	      00539b42    jmp near ptr 00539AF1h"
 );
 // LINE 556:
 	asm( 
-"	      00539b47    test byte ptr [ebp+14h],1"
+"	      00539b47    test reinterpret_cast<unit8_t>(TestDir),1"
 "	      00539b4b    je near ptr 00539B6Fh"
-"	      00539b51    test byte ptr [ebp-8],1"
+"	      00539b51    test reinterpret_cast<unit8_t>(fromConnections),1"
 "	      00539b55    je near ptr 00539B6Fh"
-"	      00539b5b    test byte ptr [ebp-4],4"
+"	      00539b5b    test reinterpret_cast<unit8_t>(toConnections),4"
 "	      00539b5f    je near ptr 00539B6Fh"
 );
 // LINE 557:
@@ -2042,11 +2042,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 558:
 	asm( 
-"	      00539b6f    test byte ptr [ebp+14h],4"
+"	      00539b6f    test reinterpret_cast<unit8_t>(TestDir),4"
 "	      00539b73    je near ptr 00539B97h"
-"	      00539b79    test byte ptr [ebp-8],4"
+"	      00539b79    test reinterpret_cast<unit8_t>(fromConnections),4"
 "	      00539b7d    je near ptr 00539B97h"
-"	      00539b83    test byte ptr [ebp-4],1"
+"	      00539b83    test reinterpret_cast<unit8_t>(toConnections),1"
 "	      00539b87    je near ptr 00539B97h"
 );
 // LINE 559:
@@ -2056,11 +2056,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 560:
 	asm( 
-"	      00539b97    test byte ptr [ebp+14h],8"
+"	      00539b97    test reinterpret_cast<unit8_t>(TestDir),8"
 "	      00539b9b    je near ptr 00539BBFh"
-"	      00539ba1    test byte ptr [ebp-8],8"
+"	      00539ba1    test reinterpret_cast<unit8_t>(fromConnections),8"
 "	      00539ba5    je near ptr 00539BBFh"
-"	      00539bab    test byte ptr [ebp-4],2"
+"	      00539bab    test reinterpret_cast<unit8_t>(toConnections),2"
 "	      00539baf    je near ptr 00539BBFh"
 );
 // LINE 561:
@@ -2070,11 +2070,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 562:
 	asm( 
-"	      00539bbf    test byte ptr [ebp+14h],2"
+"	      00539bbf    test reinterpret_cast<unit8_t>(TestDir),2"
 "	      00539bc3    je near ptr 00539BE7h"
-"	      00539bc9    test byte ptr [ebp-8],2"
+"	      00539bc9    test reinterpret_cast<unit8_t>(fromConnections),2"
 "	      00539bcd    je near ptr 00539BE7h"
-"	      00539bd3    test byte ptr [ebp-4],8"
+"	      00539bd3    test reinterpret_cast<unit8_t>(toConnections),8"
 "	      00539bd7    je near ptr 00539BE7h"
 );
 // LINE 563:

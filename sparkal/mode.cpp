@@ -57,28 +57,28 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 );
 // LINE 62:
 	asm( 
-"	      0048b149    mov dword ptr [ebp-4],0"
+"	      0048b149    mov i,0"
 "	      0048b150    jmp near ptr 0048B158h"
-"	      0048b155    inc dword ptr [ebp-4]"
-"	      0048b158    mov eax,[ebp-4]"
+"	      0048b155    inc i"
+"	      0048b158    mov eax,i"
 "	      0048b15b    cmp ds:[599D80h],eax"
 "	      0048b161    jle near ptr 0048B1B8h"
 );
 // LINE 65:
 	asm( 
-"	      0048b167    mov eax,[ebp-4]"
+"	      0048b167    mov eax,i"
 "	      0048b16a    lea eax,[eax+eax*2]"
-"	      0048b16d    mov ecx,[ebp+8]"
+"	      0048b16d    mov ecx,lWidth"
 "	      0048b170    cmp [eax*4+604818h],ecx"
 "	      0048b177    jne near ptr 0048B1B3h"
-"	      0048b17d    mov eax,[ebp-4]"
+"	      0048b17d    mov eax,i"
 "	      0048b180    lea eax,[eax+eax*2]"
-"	      0048b183    mov ecx,[ebp+0Ch]"
+"	      0048b183    mov ecx,lHeight"
 "	      0048b186    cmp [eax*4+60481Ch],ecx"
 "	      0048b18d    jne near ptr 0048B1B3h"
-"	      0048b193    mov eax,[ebp-4]"
+"	      0048b193    mov eax,i"
 "	      0048b196    lea eax,[eax+eax*2]"
-"	      0048b199    mov ecx,[ebp+10h]"
+"	      0048b199    mov ecx,lBPP"
 "	      0048b19c    cmp [eax*4+604820h],ecx"
 "	      0048b1a3    jne near ptr 0048B1B3h"
 );
@@ -125,27 +125,27 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 	asm( 
 "	      0048b1cd    push 0"
 "	      0048b1cf    call dword ptr ds:[6C3850h]"
-"	      0048b1d5    mov [ebp-0Ch],eax"
+"	      0048b1d5    mov hdcScreen,eax"
 );
 // LINE 85:
 	asm( 
 "	      0048b1d8    push 0Eh"
-"	      0048b1da    mov eax,[ebp-0Ch]"
+"	      0048b1da    mov eax,hdcScreen"
 "	      0048b1dd    push eax"
 "	      0048b1de    call dword ptr ds:[6C3590h]"
-"	      0048b1e4    mov [ebp-8],eax"
+"	      0048b1e4    mov nPlanes,eax"
 );
 // LINE 86:
 	asm( 
 "	      0048b1e7    push 0Ch"
-"	      0048b1e9    mov eax,[ebp-0Ch]"
+"	      0048b1e9    mov eax,hdcScreen"
 "	      0048b1ec    push eax"
 "	      0048b1ed    call dword ptr ds:[6C3590h]"
-"	      0048b1f3    mov [ebp-4],eax"
+"	      0048b1f3    mov nBitsPerPixel,eax"
 );
 // LINE 87:
 	asm( 
-"	      0048b1f6    mov eax,[ebp-0Ch]"
+"	      0048b1f6    mov eax,hdcScreen"
 "	      0048b1f9    push eax"
 "	      0048b1fa    push 0"
 "	      0048b1fc    call dword ptr ds:[6C384Ch]"
@@ -154,21 +154,21 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 	asm( 
 "	      0048b202    push 0"
 "	      0048b204    call dword ptr ds:[6C3810h]"
-"	      0048b20a    mov ecx,[ebp+8]"
+"	      0048b20a    mov ecx,modeCurrent"
 "	      0048b20d    mov [ecx],eax"
 );
 // LINE 90:
 	asm( 
 "	      0048b20f    push 1"
 "	      0048b211    call dword ptr ds:[6C3810h]"
-"	      0048b217    mov ecx,[ebp+8]"
+"	      0048b217    mov ecx,modeCurrent"
 "	      0048b21a    mov [ecx+4],eax"
 );
 // LINE 91:
 	asm( 
-"	      0048b21d    mov eax,[ebp-8]"
-"	      0048b220    imul eax,[ebp-4]"
-"	      0048b224    mov ecx,[ebp+8]"
+"	      0048b21d    mov eax,nPlanes"
+"	      0048b220    imul eax,nBitsPerPixel"
+"	      0048b224    mov ecx,modeCurrent"
 "	      0048b227    mov [ecx+8],eax"
 );
 // LINE 93:
@@ -204,7 +204,7 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 );
 // LINE 106:
 	asm( 
-"	      0048b24e    mov eax,[ebp+8]"
+"	      0048b24e    mov eax,pddsd"
 "	      0048b251    mov eax,[eax+0Ch]"
 "	      0048b254    mov ecx,ds:[599D80h]"
 "	      0048b25a    lea ecx,[ecx+ecx*2]"
@@ -212,7 +212,7 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 );
 // LINE 107:
 	asm( 
-"	      0048b264    mov eax,[ebp+8]"
+"	      0048b264    mov eax,pddsd"
 "	      0048b267    mov eax,[eax+8]"
 "	      0048b26a    mov ecx,ds:[599D80h]"
 "	      0048b270    lea ecx,[ecx+ecx*2]"
@@ -220,7 +220,7 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 );
 // LINE 108:
 	asm( 
-"	      0048b27a    mov eax,[ebp+8]"
+"	      0048b27a    mov eax,pddsd"
 "	      0048b27d    mov eax,[eax+54h]"
 "	      0048b280    mov ecx,ds:[599D80h]"
 "	      0048b286    lea ecx,[ecx+ecx*2]"

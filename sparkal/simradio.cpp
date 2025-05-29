@@ -15,24 +15,24 @@ void RadioStation::RadioStation() {
 "	      00433126    push ebx"
 "	      00433127    push esi"
 "	      00433128    push edi"
-"	      00433129    mov [ebp-44h],ecx"
-"	      0043312c    mov eax,[ebp-44h]"
+"	      00433129    mov this,ecx"
+"	      0043312c    mov eax,this"
 "	      0043312f    mov dword ptr [eax+4],1"
-"	      00433136    mov eax,[ebp-44h]"
+"	      00433136    mov eax,this"
 "	      00433139    mov dword ptr [eax+8],0"
-"	      00433140    mov eax,[ebp-44h]"
+"	      00433140    mov eax,this"
 "	      00433143    mov dword ptr [eax+0Ch],0"
-"	      0043314a    mov eax,[ebp-44h]"
+"	      0043314a    mov eax,this"
 "	      0043314d    mov dword ptr [eax+10h],0"
 "	      00433154    jmp near ptr 00433159h"
 "	      00433159    push 1"
-"	      0043315b    mov ecx,[ebp-44h]"
+"	      0043315b    mov ecx,this"
 "	      0043315e    add ecx,20h"
 "	      00433161    call 00439BD0h"
 "	      00433166    jmp near ptr 0043316Bh"
-"	      0043316b    mov eax,[ebp-44h]"
+"	      0043316b    mov eax,this"
 "	      0043316e    mov dword ptr [eax+30h],0FFFFFFFFh"
-"	      00433175    mov eax,[ebp-44h]"
+"	      00433175    mov eax,this"
 "	      00433178    mov dword ptr [eax+34h],0"
 "	      0043317f    push 10h"
 "	      00433181    call 0056A600h"
@@ -52,12 +52,12 @@ void RadioStation::RadioStation() {
 "	      004331b8    mov dword ptr [eax+0Ch],1"
 "	      004331bf    jmp near ptr 004331C4h"
 "	      004331c4    mov eax,[ebp-2Ch]"
-"	      004331c7    mov ecx,[ebp-44h]"
+"	      004331c7    mov ecx,this"
 "	      004331ca    mov [ecx+3Ch],eax"
 "	      004331cd    jmp near ptr 004331DCh"
-"	      004331d2    mov eax,[ebp-44h]"
+"	      004331d2    mov eax,this"
 "	      004331d5    mov dword ptr [eax+3Ch],0"
-"	      004331dc    mov eax,[ebp-44h]"
+"	      004331dc    mov eax,this"
 "	      004331df    mov dword ptr [eax+38h],0"
 "	      004331e6    jmp near ptr 004331EBh"
 "	      004331eb    push 10h"
@@ -78,12 +78,12 @@ void RadioStation::RadioStation() {
 "	      00433224    mov dword ptr [eax+0Ch],1"
 "	      0043322b    jmp near ptr 00433230h"
 "	      00433230    mov eax,[ebp-30h]"
-"	      00433233    mov ecx,[ebp-44h]"
+"	      00433233    mov ecx,this"
 "	      00433236    mov [ecx+44h],eax"
 "	      00433239    jmp near ptr 00433248h"
-"	      0043323e    mov eax,[ebp-44h]"
+"	      0043323e    mov eax,this"
 "	      00433241    mov dword ptr [eax+44h],0"
-"	      00433248    mov eax,[ebp-44h]"
+"	      00433248    mov eax,this"
 "	      0043324b    mov dword ptr [eax+40h],0"
 "	      00433252    jmp near ptr 00433257h"
 "	      00433257    push 10h"
@@ -104,30 +104,30 @@ void RadioStation::RadioStation() {
 "	      00433290    mov dword ptr [eax+0Ch],1"
 "	      00433297    jmp near ptr 0043329Ch"
 "	      0043329c    mov eax,[ebp-34h]"
-"	      0043329f    mov ecx,[ebp-44h]"
+"	      0043329f    mov ecx,this"
 "	      004332a2    mov [ecx+4Ch],eax"
 "	      004332a5    jmp near ptr 004332B4h"
-"	      004332aa    mov eax,[ebp-44h]"
+"	      004332aa    mov eax,this"
 "	      004332ad    mov dword ptr [eax+4Ch],0"
-"	      004332b4    mov eax,[ebp-44h]"
+"	      004332b4    mov eax,this"
 "	      004332b7    mov dword ptr [eax+48h],0"
 "	      004332be    jmp near ptr 004332C3h"
-"	      004332c3    mov eax,[ebp-44h]"
+"	      004332c3    mov eax,this"
 "	      004332c6    mov dword ptr [eax+54h],0"
 "	      004332cd    inc dword ptr ds:[598560h]"
-"	      004332d3    mov ecx,[ebp-44h]"
+"	      004332d3    mov ecx,this"
 "	      004332d6    add ecx,50h"
 "	      004332d9    call 004399C0h"
-"	      004332de    mov ecx,[ebp-44h]"
+"	      004332de    mov ecx,this"
 "	      004332e1    mov [ecx+50h],eax"
-"	      004332e4    mov eax,[ebp-44h]"
+"	      004332e4    mov eax,this"
 "	      004332e7    mov eax,[eax+50h]"
-"	      004332ea    mov ecx,[ebp-44h]"
+"	      004332ea    mov ecx,this"
 "	      004332ed    mov ecx,[ecx+50h]"
 "	      004332f0    mov [ecx],eax"
-"	      004332f2    mov eax,[ebp-44h]"
+"	      004332f2    mov eax,this"
 "	      004332f5    mov eax,[eax+50h]"
-"	      004332f8    mov ecx,[ebp-44h]"
+"	      004332f8    mov ecx,this"
 "	      004332fb    mov ecx,[ecx+50h]"
 "	      004332fe    mov [ecx+4],eax"
 "	      00433301    jmp near ptr 00433306h"
@@ -150,30 +150,30 @@ void RadioStation::RadioStation() {
 "	      00433344    mov dword ptr [eax+0Ch],1"
 "	      0043334b    jmp near ptr 00433350h"
 "	      00433350    mov eax,[ebp-38h]"
-"	      00433353    mov ecx,[ebp-44h]"
+"	      00433353    mov ecx,this"
 "	      00433356    mov [ecx+60h],eax"
 "	      00433359    jmp near ptr 00433368h"
-"	      0043335e    mov eax,[ebp-44h]"
+"	      0043335e    mov eax,this"
 "	      00433361    mov dword ptr [eax+60h],0"
-"	      00433368    mov eax,[ebp-44h]"
+"	      00433368    mov eax,this"
 "	      0043336b    mov dword ptr [eax+5Ch],0"
 "	      00433372    jmp near ptr 00433377h"
-"	      00433377    mov eax,[ebp-44h]"
+"	      00433377    mov eax,this"
 "	      0043337a    mov dword ptr [eax+68h],0"
 "	      00433381    inc dword ptr ds:[598560h]"
-"	      00433387    mov ecx,[ebp-44h]"
+"	      00433387    mov ecx,this"
 "	      0043338a    add ecx,64h"
 "	      0043338d    call 004399C0h"
-"	      00433392    mov ecx,[ebp-44h]"
+"	      00433392    mov ecx,this"
 "	      00433395    mov [ecx+64h],eax"
-"	      00433398    mov eax,[ebp-44h]"
+"	      00433398    mov eax,this"
 "	      0043339b    mov eax,[eax+64h]"
-"	      0043339e    mov ecx,[ebp-44h]"
+"	      0043339e    mov ecx,this"
 "	      004333a1    mov ecx,[ecx+64h]"
 "	      004333a4    mov [ecx],eax"
-"	      004333a6    mov eax,[ebp-44h]"
+"	      004333a6    mov eax,this"
 "	      004333a9    mov eax,[eax+64h]"
-"	      004333ac    mov ecx,[ebp-44h]"
+"	      004333ac    mov ecx,this"
 "	      004333af    mov ecx,[ecx+64h]"
 "	      004333b2    mov [ecx+4],eax"
 "	      004333b5    jmp near ptr 004333BAh"
@@ -196,30 +196,30 @@ void RadioStation::RadioStation() {
 "	      004333f8    mov dword ptr [eax+0Ch],1"
 "	      004333ff    jmp near ptr 00433404h"
 "	      00433404    mov eax,[ebp-3Ch]"
-"	      00433407    mov ecx,[ebp-44h]"
+"	      00433407    mov ecx,this"
 "	      0043340a    mov [ecx+74h],eax"
 "	      0043340d    jmp near ptr 0043341Ch"
-"	      00433412    mov eax,[ebp-44h]"
+"	      00433412    mov eax,this"
 "	      00433415    mov dword ptr [eax+74h],0"
-"	      0043341c    mov eax,[ebp-44h]"
+"	      0043341c    mov eax,this"
 "	      0043341f    mov dword ptr [eax+70h],0"
 "	      00433426    jmp near ptr 0043342Bh"
-"	      0043342b    mov eax,[ebp-44h]"
+"	      0043342b    mov eax,this"
 "	      0043342e    mov dword ptr [eax+7Ch],0"
 "	      00433435    inc dword ptr ds:[598560h]"
-"	      0043343b    mov ecx,[ebp-44h]"
+"	      0043343b    mov ecx,this"
 "	      0043343e    add ecx,78h"
 "	      00433441    call 004399C0h"
-"	      00433446    mov ecx,[ebp-44h]"
+"	      00433446    mov ecx,this"
 "	      00433449    mov [ecx+78h],eax"
-"	      0043344c    mov eax,[ebp-44h]"
+"	      0043344c    mov eax,this"
 "	      0043344f    mov eax,[eax+78h]"
-"	      00433452    mov ecx,[ebp-44h]"
+"	      00433452    mov ecx,this"
 "	      00433455    mov ecx,[ecx+78h]"
 "	      00433458    mov [ecx],eax"
-"	      0043345a    mov eax,[ebp-44h]"
+"	      0043345a    mov eax,this"
 "	      0043345d    mov eax,[eax+78h]"
-"	      00433460    mov ecx,[ebp-44h]"
+"	      00433460    mov ecx,this"
 "	      00433463    mov ecx,[ecx+78h]"
 "	      00433466    mov [ecx+4],eax"
 "	      00433469    jmp near ptr 0043346Eh"
@@ -232,35 +232,35 @@ void RadioStation::RadioStation() {
 "	      00433484    je near ptr 004334A0h"
 "	      0043348a    mov ecx,[ebp-40h]"
 "	      0043348d    call 0041E2D0h"
-"	      00433492    mov ecx,[ebp-44h]"
+"	      00433492    mov ecx,this"
 "	      00433495    mov [ecx+88h],eax"
 "	      0043349b    jmp near ptr 004334ADh"
-"	      004334a0    mov eax,[ebp-44h]"
+"	      004334a0    mov eax,this"
 "	      004334a3    mov dword ptr [eax+88h],0"
-"	      004334ad    mov eax,[ebp-44h]"
+"	      004334ad    mov eax,this"
 "	      004334b0    mov dword ptr [eax+84h],0"
 "	      004334ba    jmp near ptr 004334BFh"
-"	      004334bf    mov eax,[ebp-44h]"
+"	      004334bf    mov eax,this"
 "	      004334c2    mov dword ptr [eax+90h],0"
 "	      004334cc    inc dword ptr ds:[598560h]"
-"	      004334d2    mov ecx,[ebp-44h]"
+"	      004334d2    mov ecx,this"
 "	      004334d5    add ecx,8Ch"
 "	      004334db    call 004399C0h"
-"	      004334e0    mov ecx,[ebp-44h]"
+"	      004334e0    mov ecx,this"
 "	      004334e3    mov [ecx+8Ch],eax"
-"	      004334e9    mov eax,[ebp-44h]"
+"	      004334e9    mov eax,this"
 "	      004334ec    mov eax,[eax+8Ch]"
-"	      004334f2    mov ecx,[ebp-44h]"
+"	      004334f2    mov ecx,this"
 "	      004334f5    mov ecx,[ecx+8Ch]"
 "	      004334fb    mov [ecx],eax"
-"	      004334fd    mov eax,[ebp-44h]"
+"	      004334fd    mov eax,this"
 "	      00433500    mov eax,[eax+8Ch]"
-"	      00433506    mov ecx,[ebp-44h]"
+"	      00433506    mov ecx,this"
 "	      00433509    mov ecx,[ecx+8Ch]"
 "	      0043350f    mov [ecx+4],eax"
 "	      00433512    jmp near ptr 00433517h"
 "	      00433517    jmp near ptr 0043351Ch"
-"	      0043351c    mov eax,[ebp-44h]"
+"	      0043351c    mov eax,this"
 "	      0043351f    mov dword ptr [eax],58F518h"
 );
 // LINE 64:
@@ -270,7 +270,7 @@ void RadioStation::RadioStation() {
 "	      0043352f    mov [ebp-14h],eax"
 "	      00433532    mov eax,[ebp-14h]"
 "	      00433535    push eax"
-"	      00433536    mov ecx,[ebp-44h]"
+"	      00433536    mov ecx,this"
 "	      00433539    add ecx,8"
 "	      0043353c    call 00439CC0h"
 );
@@ -281,7 +281,7 @@ void RadioStation::RadioStation() {
 "	      0043354b    mov [ebp-18h],eax"
 "	      0043354e    mov eax,[ebp-18h]"
 "	      00433551    push eax"
-"	      00433552    mov ecx,[ebp-44h]"
+"	      00433552    mov ecx,this"
 "	      00433555    add ecx,8"
 "	      00433558    call 00439CC0h"
 );
@@ -292,7 +292,7 @@ void RadioStation::RadioStation() {
 "	      00433567    mov [ebp-1Ch],eax"
 "	      0043356a    mov eax,[ebp-1Ch]"
 "	      0043356d    push eax"
-"	      0043356e    mov ecx,[ebp-44h]"
+"	      0043356e    mov ecx,this"
 "	      00433571    add ecx,8"
 "	      00433574    call 00439CC0h"
 );
@@ -303,7 +303,7 @@ void RadioStation::RadioStation() {
 "	      00433583    mov [ebp-20h],eax"
 "	      00433586    mov eax,[ebp-20h]"
 "	      00433589    push eax"
-"	      0043358a    mov ecx,[ebp-44h]"
+"	      0043358a    mov ecx,this"
 "	      0043358d    add ecx,8"
 "	      00433590    call 00439CC0h"
 );
@@ -311,10 +311,10 @@ void RadioStation::RadioStation() {
 	asm( 
 "	      00433595    jmp near ptr 0043359Ah"
 "	      0043359a    jmp near ptr 0043359Fh"
-"	      0043359f    mov eax,[ebp-44h]"
+"	      0043359f    mov eax,this"
 "	      004335a2    mov eax,[eax+0Ch]"
 "	      004335a5    mov [ebp-24h],eax"
-"	      004335a8    mov eax,[ebp-44h]"
+"	      004335a8    mov eax,this"
 "	      004335ab    mov eax,[eax+8]"
 "	      004335ae    mov [ebp-28h],eax"
 "	      004335b1    jmp near ptr 004335B6h"
@@ -329,30 +329,30 @@ void RadioStation::RadioStation() {
 );
 // LINE 69:
 	asm( 
-"	      004335cd    mov eax,[ebp-44h]"
+"	      004335cd    mov eax,this"
 "	      004335d0    mov dword ptr [eax+14h],0"
 );
 // LINE 70:
 	asm( 
-"	      004335d7    mov eax,[ebp-44h]"
+"	      004335d7    mov eax,this"
 "	      004335da    mov dword ptr [eax+18h],0"
 );
 // LINE 71:
 	asm( 
-"	      004335e1    mov eax,[ebp-44h]"
+"	      004335e1    mov eax,this"
 "	      004335e4    mov dword ptr [eax+1Ch],0"
 );
 // LINE 72:
 	asm( 
 "	      004335eb    push 1"
-"	      004335ed    mov ecx,[ebp-44h]"
+"	      004335ed    mov ecx,this"
 "	      004335f0    add ecx,20h"
 "	      004335f3    call 00439C40h"
 );
 // LINE 73:
 	asm( 
 "	      004335f8    jmp near ptr 004335FDh"
-"	      004335fd    mov eax,[ebp-44h]"
+"	      004335fd    mov eax,this"
 "	      00433600    pop edi"
 "	      00433601    pop esi"
 "	      00433602    pop ebx"
@@ -371,16 +371,16 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      0043360b    push ebx"
 "	      0043360c    push esi"
 "	      0043360d    push edi"
-"	      0043360e    mov [ebp-24h],ecx"
-"	      00433611    mov eax,[ebp-24h]"
+"	      0043360e    mov this,ecx"
+"	      00433611    mov eax,this"
 "	      00433614    mov dword ptr [eax+8],0"
-"	      0043361b    mov eax,[ebp-24h]"
+"	      0043361b    mov eax,this"
 "	      0043361e    mov dword ptr [eax+0Ch],0"
-"	      00433625    mov eax,[ebp-24h]"
+"	      00433625    mov eax,this"
 "	      00433628    mov dword ptr [eax+10h],0"
 "	      0043362f    jmp near ptr 00433634h"
 "	      00433634    push 1"
-"	      00433636    mov ecx,[ebp-24h]"
+"	      00433636    mov ecx,this"
 "	      00433639    add ecx,20h"
 "	      0043363c    call 00439BD0h"
 "	      00433641    jmp near ptr 00433646h"
@@ -402,12 +402,12 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      0043367f    mov dword ptr [eax+0Ch],1"
 "	      00433686    jmp near ptr 0043368Bh"
 "	      0043368b    mov eax,[ebp-4]"
-"	      0043368e    mov ecx,[ebp-24h]"
+"	      0043368e    mov ecx,this"
 "	      00433691    mov [ecx+3Ch],eax"
 "	      00433694    jmp near ptr 004336A3h"
-"	      00433699    mov eax,[ebp-24h]"
+"	      00433699    mov eax,this"
 "	      0043369c    mov dword ptr [eax+3Ch],0"
-"	      004336a3    mov eax,[ebp-24h]"
+"	      004336a3    mov eax,this"
 "	      004336a6    mov dword ptr [eax+38h],0"
 "	      004336ad    jmp near ptr 004336B2h"
 "	      004336b2    push 10h"
@@ -428,12 +428,12 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      004336eb    mov dword ptr [eax+0Ch],1"
 "	      004336f2    jmp near ptr 004336F7h"
 "	      004336f7    mov eax,[ebp-8]"
-"	      004336fa    mov ecx,[ebp-24h]"
+"	      004336fa    mov ecx,this"
 "	      004336fd    mov [ecx+44h],eax"
 "	      00433700    jmp near ptr 0043370Fh"
-"	      00433705    mov eax,[ebp-24h]"
+"	      00433705    mov eax,this"
 "	      00433708    mov dword ptr [eax+44h],0"
-"	      0043370f    mov eax,[ebp-24h]"
+"	      0043370f    mov eax,this"
 "	      00433712    mov dword ptr [eax+40h],0"
 "	      00433719    jmp near ptr 0043371Eh"
 "	      0043371e    push 10h"
@@ -454,30 +454,30 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      00433757    mov dword ptr [eax+0Ch],1"
 "	      0043375e    jmp near ptr 00433763h"
 "	      00433763    mov eax,[ebp-0Ch]"
-"	      00433766    mov ecx,[ebp-24h]"
+"	      00433766    mov ecx,this"
 "	      00433769    mov [ecx+4Ch],eax"
 "	      0043376c    jmp near ptr 0043377Bh"
-"	      00433771    mov eax,[ebp-24h]"
+"	      00433771    mov eax,this"
 "	      00433774    mov dword ptr [eax+4Ch],0"
-"	      0043377b    mov eax,[ebp-24h]"
+"	      0043377b    mov eax,this"
 "	      0043377e    mov dword ptr [eax+48h],0"
 "	      00433785    jmp near ptr 0043378Ah"
-"	      0043378a    mov eax,[ebp-24h]"
+"	      0043378a    mov eax,this"
 "	      0043378d    mov dword ptr [eax+54h],0"
 "	      00433794    inc dword ptr ds:[598560h]"
-"	      0043379a    mov ecx,[ebp-24h]"
+"	      0043379a    mov ecx,this"
 "	      0043379d    add ecx,50h"
 "	      004337a0    call 004399C0h"
-"	      004337a5    mov ecx,[ebp-24h]"
+"	      004337a5    mov ecx,this"
 "	      004337a8    mov [ecx+50h],eax"
-"	      004337ab    mov eax,[ebp-24h]"
+"	      004337ab    mov eax,this"
 "	      004337ae    mov eax,[eax+50h]"
-"	      004337b1    mov ecx,[ebp-24h]"
+"	      004337b1    mov ecx,this"
 "	      004337b4    mov ecx,[ecx+50h]"
 "	      004337b7    mov [ecx],eax"
-"	      004337b9    mov eax,[ebp-24h]"
+"	      004337b9    mov eax,this"
 "	      004337bc    mov eax,[eax+50h]"
-"	      004337bf    mov ecx,[ebp-24h]"
+"	      004337bf    mov ecx,this"
 "	      004337c2    mov ecx,[ecx+50h]"
 "	      004337c5    mov [ecx+4],eax"
 "	      004337c8    jmp near ptr 004337CDh"
@@ -490,30 +490,30 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      004337e3    je near ptr 004337FCh"
 "	      004337e9    mov ecx,[ebp-10h]"
 "	      004337ec    call 0041E2D0h"
-"	      004337f1    mov ecx,[ebp-24h]"
+"	      004337f1    mov ecx,this"
 "	      004337f4    mov [ecx+60h],eax"
 "	      004337f7    jmp near ptr 00433806h"
-"	      004337fc    mov eax,[ebp-24h]"
+"	      004337fc    mov eax,this"
 "	      004337ff    mov dword ptr [eax+60h],0"
-"	      00433806    mov eax,[ebp-24h]"
+"	      00433806    mov eax,this"
 "	      00433809    mov dword ptr [eax+5Ch],0"
 "	      00433810    jmp near ptr 00433815h"
-"	      00433815    mov eax,[ebp-24h]"
+"	      00433815    mov eax,this"
 "	      00433818    mov dword ptr [eax+68h],0"
 "	      0043381f    inc dword ptr ds:[598560h]"
-"	      00433825    mov ecx,[ebp-24h]"
+"	      00433825    mov ecx,this"
 "	      00433828    add ecx,64h"
 "	      0043382b    call 004399C0h"
-"	      00433830    mov ecx,[ebp-24h]"
+"	      00433830    mov ecx,this"
 "	      00433833    mov [ecx+64h],eax"
-"	      00433836    mov eax,[ebp-24h]"
+"	      00433836    mov eax,this"
 "	      00433839    mov eax,[eax+64h]"
-"	      0043383c    mov ecx,[ebp-24h]"
+"	      0043383c    mov ecx,this"
 "	      0043383f    mov ecx,[ecx+64h]"
 "	      00433842    mov [ecx],eax"
-"	      00433844    mov eax,[ebp-24h]"
+"	      00433844    mov eax,this"
 "	      00433847    mov eax,[eax+64h]"
-"	      0043384a    mov ecx,[ebp-24h]"
+"	      0043384a    mov ecx,this"
 "	      0043384d    mov ecx,[ecx+64h]"
 "	      00433850    mov [ecx+4],eax"
 "	      00433853    jmp near ptr 00433858h"
@@ -526,30 +526,30 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      0043386e    je near ptr 00433887h"
 "	      00433874    mov ecx,[ebp-14h]"
 "	      00433877    call 0041E2D0h"
-"	      0043387c    mov ecx,[ebp-24h]"
+"	      0043387c    mov ecx,this"
 "	      0043387f    mov [ecx+74h],eax"
 "	      00433882    jmp near ptr 00433891h"
-"	      00433887    mov eax,[ebp-24h]"
+"	      00433887    mov eax,this"
 "	      0043388a    mov dword ptr [eax+74h],0"
-"	      00433891    mov eax,[ebp-24h]"
+"	      00433891    mov eax,this"
 "	      00433894    mov dword ptr [eax+70h],0"
 "	      0043389b    jmp near ptr 004338A0h"
-"	      004338a0    mov eax,[ebp-24h]"
+"	      004338a0    mov eax,this"
 "	      004338a3    mov dword ptr [eax+7Ch],0"
 "	      004338aa    inc dword ptr ds:[598560h]"
-"	      004338b0    mov ecx,[ebp-24h]"
+"	      004338b0    mov ecx,this"
 "	      004338b3    add ecx,78h"
 "	      004338b6    call 004399C0h"
-"	      004338bb    mov ecx,[ebp-24h]"
+"	      004338bb    mov ecx,this"
 "	      004338be    mov [ecx+78h],eax"
-"	      004338c1    mov eax,[ebp-24h]"
+"	      004338c1    mov eax,this"
 "	      004338c4    mov eax,[eax+78h]"
-"	      004338c7    mov ecx,[ebp-24h]"
+"	      004338c7    mov ecx,this"
 "	      004338ca    mov ecx,[ecx+78h]"
 "	      004338cd    mov [ecx],eax"
-"	      004338cf    mov eax,[ebp-24h]"
+"	      004338cf    mov eax,this"
 "	      004338d2    mov eax,[eax+78h]"
-"	      004338d5    mov ecx,[ebp-24h]"
+"	      004338d5    mov ecx,this"
 "	      004338d8    mov ecx,[ecx+78h]"
 "	      004338db    mov [ecx+4],eax"
 "	      004338de    jmp near ptr 004338E3h"
@@ -562,67 +562,67 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      004338f9    je near ptr 00433915h"
 "	      004338ff    mov ecx,[ebp-18h]"
 "	      00433902    call 0041E2D0h"
-"	      00433907    mov ecx,[ebp-24h]"
+"	      00433907    mov ecx,this"
 "	      0043390a    mov [ecx+88h],eax"
 "	      00433910    jmp near ptr 00433922h"
-"	      00433915    mov eax,[ebp-24h]"
+"	      00433915    mov eax,this"
 "	      00433918    mov dword ptr [eax+88h],0"
-"	      00433922    mov eax,[ebp-24h]"
+"	      00433922    mov eax,this"
 "	      00433925    mov dword ptr [eax+84h],0"
 "	      0043392f    jmp near ptr 00433934h"
-"	      00433934    mov eax,[ebp-24h]"
+"	      00433934    mov eax,this"
 "	      00433937    mov dword ptr [eax+90h],0"
 "	      00433941    inc dword ptr ds:[598560h]"
-"	      00433947    mov ecx,[ebp-24h]"
+"	      00433947    mov ecx,this"
 "	      0043394a    add ecx,8Ch"
 "	      00433950    call 004399C0h"
-"	      00433955    mov ecx,[ebp-24h]"
+"	      00433955    mov ecx,this"
 "	      00433958    mov [ecx+8Ch],eax"
-"	      0043395e    mov eax,[ebp-24h]"
+"	      0043395e    mov eax,this"
 "	      00433961    mov eax,[eax+8Ch]"
-"	      00433967    mov ecx,[ebp-24h]"
+"	      00433967    mov ecx,this"
 "	      0043396a    mov ecx,[ecx+8Ch]"
 "	      00433970    mov [ecx],eax"
-"	      00433972    mov eax,[ebp-24h]"
+"	      00433972    mov eax,this"
 "	      00433975    mov eax,[eax+8Ch]"
-"	      0043397b    mov ecx,[ebp-24h]"
+"	      0043397b    mov ecx,this"
 "	      0043397e    mov ecx,[ecx+8Ch]"
 "	      00433984    mov [ecx+4],eax"
 "	      00433987    jmp near ptr 0043398Ch"
 "	      0043398c    jmp near ptr 00433991h"
-"	      00433991    mov eax,[ebp-24h]"
+"	      00433991    mov eax,this"
 "	      00433994    mov dword ptr [eax],58F518h"
 );
 // LINE 81:
 	asm( 
-"	      0043399a    mov eax,[ebp+8]"
+"	      0043399a    mov eax,copyRadioStation"
 "	      0043399d    mov eax,[eax+4]"
-"	      004339a0    mov ecx,[ebp-24h]"
+"	      004339a0    mov ecx,this"
 "	      004339a3    mov [ecx+4],eax"
 );
 // LINE 82:
 	asm( 
-"	      004339a6    mov eax,[ebp+8]"
+"	      004339a6    mov eax,copyRadioStation"
 "	      004339a9    add eax,8"
 "	      004339ac    push eax"
-"	      004339ad    mov ecx,[ebp-24h]"
+"	      004339ad    mov ecx,this"
 "	      004339b0    add ecx,8"
 "	      004339b3    call 0043B250h"
-"	      004339b8    mov eax,[ebp+8]"
+"	      004339b8    mov eax,copyRadioStation"
 "	      004339bb    mov eax,[eax+14h]"
-"	      004339be    mov ecx,[ebp-24h]"
+"	      004339be    mov ecx,this"
 "	      004339c1    mov [ecx+14h],eax"
-"	      004339c4    mov eax,[ebp+8]"
+"	      004339c4    mov eax,copyRadioStation"
 "	      004339c7    mov eax,[eax+18h]"
-"	      004339ca    mov ecx,[ebp-24h]"
+"	      004339ca    mov ecx,this"
 "	      004339cd    mov [ecx+18h],eax"
-"	      004339d0    mov eax,[ebp+8]"
+"	      004339d0    mov eax,copyRadioStation"
 "	      004339d3    mov eax,[eax+1Ch]"
-"	      004339d6    mov ecx,[ebp-24h]"
+"	      004339d6    mov ecx,this"
 "	      004339d9    mov [ecx+1Ch],eax"
-"	      004339dc    mov eax,[ebp+8]"
+"	      004339dc    mov eax,copyRadioStation"
 "	      004339df    add eax,20h"
-"	      004339e2    mov ecx,[ebp-24h]"
+"	      004339e2    mov ecx,this"
 "	      004339e5    add ecx,20h"
 "	      004339e8    mov edx,[eax]"
 "	      004339ea    mov [ecx],edx"
@@ -636,39 +636,39 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 );
 // LINE 83:
 	asm( 
-"	      00433a03    mov eax,[ebp+8]"
+"	      00433a03    mov eax,copyRadioStation"
 "	      00433a06    mov eax,[eax+30h]"
-"	      00433a09    mov ecx,[ebp-24h]"
+"	      00433a09    mov ecx,this"
 "	      00433a0c    mov [ecx+30h],eax"
 );
 // LINE 84:
 	asm( 
-"	      00433a0f    mov eax,[ebp+8]"
+"	      00433a0f    mov eax,copyRadioStation"
 "	      00433a12    mov eax,[eax+34h]"
-"	      00433a15    mov ecx,[ebp-24h]"
+"	      00433a15    mov ecx,this"
 "	      00433a18    mov [ecx+34h],eax"
 );
 // LINE 85:
 	asm( 
-"	      00433a1b    mov eax,[ebp-24h]"
+"	      00433a1b    mov eax,this"
 "	      00433a1e    add eax,38h"
-"	      00433a21    mov ecx,[ebp+8]"
+"	      00433a21    mov ecx,copyRadioStation"
 "	      00433a24    add ecx,38h"
 "	      00433a27    cmp eax,ecx"
 "	      00433a29    je near ptr 00433AB5h"
-"	      00433a2f    mov ecx,[ebp-24h]"
+"	      00433a2f    mov ecx,this"
 "	      00433a32    add ecx,38h"
 "	      00433a35    call 00412080h"
 "	      00433a3a    jmp near ptr 00433A3Fh"
-"	      00433a3f    mov eax,[ebp+8]"
+"	      00433a3f    mov eax,copyRadioStation"
 "	      00433a42    mov eax,[eax+3Ch]"
 "	      00433a45    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433a49    je near ptr 00433A69h"
-"	      00433a4f    mov eax,[ebp+8]"
+"	      00433a4f    mov eax,copyRadioStation"
 "	      00433a52    mov eax,[eax+3Ch]"
-"	      00433a55    mov ecx,[ebp-24h]"
+"	      00433a55    mov ecx,this"
 "	      00433a58    mov [ecx+3Ch],eax"
-"	      00433a5b    mov eax,[ebp-24h]"
+"	      00433a5b    mov eax,this"
 "	      00433a5e    mov eax,[eax+3Ch]"
 "	      00433a61    inc dword ptr [eax+0Ch]"
 "	      00433a64    jmp near ptr 00433AB5h"
@@ -679,44 +679,44 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      00433a76    cmp dword ptr [ebp-1Ch],0"
 "	      00433a7a    je near ptr 00433AABh"
 "	      00433a80    jmp near ptr 00433A85h"
-"	      00433a85    mov eax,[ebp+8]"
+"	      00433a85    mov eax,copyRadioStation"
 "	      00433a88    mov eax,[eax+3Ch]"
 "	      00433a8b    mov eax,[eax+4]"
 "	      00433a8e    push eax"
 "	      00433a8f    push 0"
-"	      00433a91    mov eax,[ebp+8]"
+"	      00433a91    mov eax,copyRadioStation"
 "	      00433a94    add eax,38h"
 "	      00433a97    push eax"
 "	      00433a98    mov ecx,[ebp-1Ch]"
 "	      00433a9b    call 0041E200h"
-"	      00433aa0    mov ecx,[ebp-24h]"
+"	      00433aa0    mov ecx,this"
 "	      00433aa3    mov [ecx+3Ch],eax"
 "	      00433aa6    jmp near ptr 00433AB5h"
-"	      00433aab    mov eax,[ebp-24h]"
+"	      00433aab    mov eax,this"
 "	      00433aae    mov dword ptr [eax+3Ch],0"
 "	      00433ab5    jmp near ptr 00433ABAh"
 );
 // LINE 86:
 	asm( 
-"	      00433aba    mov eax,[ebp-24h]"
+"	      00433aba    mov eax,this"
 "	      00433abd    add eax,40h"
-"	      00433ac0    mov ecx,[ebp+8]"
+"	      00433ac0    mov ecx,copyRadioStation"
 "	      00433ac3    add ecx,40h"
 "	      00433ac6    cmp eax,ecx"
 "	      00433ac8    je near ptr 00433B54h"
-"	      00433ace    mov ecx,[ebp-24h]"
+"	      00433ace    mov ecx,this"
 "	      00433ad1    add ecx,40h"
 "	      00433ad4    call 00412080h"
 "	      00433ad9    jmp near ptr 00433ADEh"
-"	      00433ade    mov eax,[ebp+8]"
+"	      00433ade    mov eax,copyRadioStation"
 "	      00433ae1    mov eax,[eax+44h]"
 "	      00433ae4    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433ae8    je near ptr 00433B08h"
-"	      00433aee    mov eax,[ebp+8]"
+"	      00433aee    mov eax,copyRadioStation"
 "	      00433af1    mov eax,[eax+44h]"
-"	      00433af4    mov ecx,[ebp-24h]"
+"	      00433af4    mov ecx,this"
 "	      00433af7    mov [ecx+44h],eax"
-"	      00433afa    mov eax,[ebp-24h]"
+"	      00433afa    mov eax,this"
 "	      00433afd    mov eax,[eax+44h]"
 "	      00433b00    inc dword ptr [eax+0Ch]"
 "	      00433b03    jmp near ptr 00433B54h"
@@ -727,127 +727,127 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 "	      00433b15    cmp dword ptr [ebp-20h],0"
 "	      00433b19    je near ptr 00433B4Ah"
 "	      00433b1f    jmp near ptr 00433B24h"
-"	      00433b24    mov eax,[ebp+8]"
+"	      00433b24    mov eax,copyRadioStation"
 "	      00433b27    mov eax,[eax+44h]"
 "	      00433b2a    mov eax,[eax+4]"
 "	      00433b2d    push eax"
 "	      00433b2e    push 0"
-"	      00433b30    mov eax,[ebp+8]"
+"	      00433b30    mov eax,copyRadioStation"
 "	      00433b33    add eax,40h"
 "	      00433b36    push eax"
 "	      00433b37    mov ecx,[ebp-20h]"
 "	      00433b3a    call 0041E200h"
-"	      00433b3f    mov ecx,[ebp-24h]"
+"	      00433b3f    mov ecx,this"
 "	      00433b42    mov [ecx+44h],eax"
 "	      00433b45    jmp near ptr 00433B54h"
-"	      00433b4a    mov eax,[ebp-24h]"
+"	      00433b4a    mov eax,this"
 "	      00433b4d    mov dword ptr [eax+44h],0"
 "	      00433b54    jmp near ptr 00433B59h"
 );
 // LINE 87:
 	asm( 
-"	      00433b59    mov eax,[ebp+8]"
+"	      00433b59    mov eax,copyRadioStation"
 "	      00433b5c    add eax,48h"
 "	      00433b5f    push eax"
-"	      00433b60    mov ecx,[ebp-24h]"
+"	      00433b60    mov ecx,this"
 "	      00433b63    add ecx,48h"
 "	      00433b66    call 00412670h"
 );
 // LINE 88:
 	asm( 
-"	      00433b6b    mov eax,[ebp+8]"
+"	      00433b6b    mov eax,copyRadioStation"
 "	      00433b6e    add eax,50h"
 "	      00433b71    push eax"
-"	      00433b72    mov ecx,[ebp-24h]"
+"	      00433b72    mov ecx,this"
 "	      00433b75    add ecx,50h"
 "	      00433b78    call 0043AAE0h"
 );
 // LINE 89:
 	asm( 
-"	      00433b7d    mov eax,[ebp+8]"
+"	      00433b7d    mov eax,copyRadioStation"
 "	      00433b80    mov eax,[eax+58h]"
-"	      00433b83    mov ecx,[ebp-24h]"
+"	      00433b83    mov ecx,this"
 "	      00433b86    mov [ecx+58h],eax"
 );
 // LINE 90:
 	asm( 
-"	      00433b89    mov eax,[ebp+8]"
+"	      00433b89    mov eax,copyRadioStation"
 "	      00433b8c    add eax,5Ch"
 "	      00433b8f    push eax"
-"	      00433b90    mov ecx,[ebp-24h]"
+"	      00433b90    mov ecx,this"
 "	      00433b93    add ecx,5Ch"
 "	      00433b96    call 00412670h"
 );
 // LINE 91:
 	asm( 
-"	      00433b9b    mov eax,[ebp+8]"
+"	      00433b9b    mov eax,copyRadioStation"
 "	      00433b9e    add eax,64h"
 "	      00433ba1    push eax"
-"	      00433ba2    mov ecx,[ebp-24h]"
+"	      00433ba2    mov ecx,this"
 "	      00433ba5    add ecx,64h"
 "	      00433ba8    call 0043AAE0h"
 );
 // LINE 92:
 	asm( 
-"	      00433bad    mov eax,[ebp+8]"
+"	      00433bad    mov eax,copyRadioStation"
 "	      00433bb0    mov eax,[eax+6Ch]"
-"	      00433bb3    mov ecx,[ebp-24h]"
+"	      00433bb3    mov ecx,this"
 "	      00433bb6    mov [ecx+6Ch],eax"
 );
 // LINE 93:
 	asm( 
-"	      00433bb9    mov eax,[ebp+8]"
+"	      00433bb9    mov eax,copyRadioStation"
 "	      00433bbc    add eax,70h"
 "	      00433bbf    push eax"
-"	      00433bc0    mov ecx,[ebp-24h]"
+"	      00433bc0    mov ecx,this"
 "	      00433bc3    add ecx,70h"
 "	      00433bc6    call 00412670h"
 );
 // LINE 94:
 	asm( 
-"	      00433bcb    mov eax,[ebp+8]"
+"	      00433bcb    mov eax,copyRadioStation"
 "	      00433bce    add eax,78h"
 "	      00433bd1    push eax"
-"	      00433bd2    mov ecx,[ebp-24h]"
+"	      00433bd2    mov ecx,this"
 "	      00433bd5    add ecx,78h"
 "	      00433bd8    call 0043AAE0h"
 );
 // LINE 95:
 	asm( 
-"	      00433bdd    mov eax,[ebp+8]"
+"	      00433bdd    mov eax,copyRadioStation"
 "	      00433be0    mov eax,[eax+80h]"
-"	      00433be6    mov ecx,[ebp-24h]"
+"	      00433be6    mov ecx,this"
 "	      00433be9    mov [ecx+80h],eax"
 );
 // LINE 96:
 	asm( 
-"	      00433bef    mov eax,[ebp+8]"
+"	      00433bef    mov eax,copyRadioStation"
 "	      00433bf2    add eax,84h"
 "	      00433bf7    push eax"
-"	      00433bf8    mov ecx,[ebp-24h]"
+"	      00433bf8    mov ecx,this"
 "	      00433bfb    add ecx,84h"
 "	      00433c01    call 00412670h"
 );
 // LINE 97:
 	asm( 
-"	      00433c06    mov eax,[ebp+8]"
+"	      00433c06    mov eax,copyRadioStation"
 "	      00433c09    add eax,8Ch"
 "	      00433c0e    push eax"
-"	      00433c0f    mov ecx,[ebp-24h]"
+"	      00433c0f    mov ecx,this"
 "	      00433c12    add ecx,8Ch"
 "	      00433c18    call 0043AAE0h"
 );
 // LINE 98:
 	asm( 
-"	      00433c1d    mov eax,[ebp+8]"
+"	      00433c1d    mov eax,copyRadioStation"
 "	      00433c20    mov eax,[eax+94h]"
-"	      00433c26    mov ecx,[ebp-24h]"
+"	      00433c26    mov ecx,this"
 "	      00433c29    mov [ecx+94h],eax"
 );
 // LINE 99:
 	asm( 
 "	      00433c2f    jmp near ptr 00433C34h"
-"	      00433c34    mov eax,[ebp-24h]"
+"	      00433c34    mov eax,this"
 "	      00433c37    pop edi"
 "	      00433c38    pop esi"
 "	      00433c39    pop ebx"
@@ -866,49 +866,49 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433c44    push ebx"
 "	      00433c45    push esi"
 "	      00433c46    push edi"
-"	      00433c47    mov [ebp-2Ch],ecx"
+"	      00433c47    mov this,ecx"
 );
 // LINE 107:
 	asm( 
-"	      00433c4a    mov eax,[ebp-2Ch]"
-"	      00433c4d    cmp [ebp+8],eax"
+"	      00433c4a    mov eax,this"
+"	      00433c4d    cmp copyRadioStation,eax"
 "	      00433c50    jne near ptr 00433C5Eh"
 );
 // LINE 108:
 	asm( 
-"	      00433c56    mov eax,[ebp-2Ch]"
+"	      00433c56    mov eax,this"
 "	      00433c59    jmp near ptr 004341BFh"
 );
 // LINE 110:
 	asm( 
-"	      00433c5e    mov eax,[ebp+8]"
+"	      00433c5e    mov eax,copyRadioStation"
 "	      00433c61    mov eax,[eax+4]"
-"	      00433c64    mov ecx,[ebp-2Ch]"
+"	      00433c64    mov ecx,this"
 "	      00433c67    mov [ecx+4],eax"
 );
 // LINE 111:
 	asm( 
-"	      00433c6a    mov eax,[ebp+8]"
+"	      00433c6a    mov eax,copyRadioStation"
 "	      00433c6d    add eax,8"
 "	      00433c70    push eax"
-"	      00433c71    mov ecx,[ebp-2Ch]"
+"	      00433c71    mov ecx,this"
 "	      00433c74    add ecx,8"
 "	      00433c77    call 0043B250h"
-"	      00433c7c    mov eax,[ebp+8]"
+"	      00433c7c    mov eax,copyRadioStation"
 "	      00433c7f    mov eax,[eax+14h]"
-"	      00433c82    mov ecx,[ebp-2Ch]"
+"	      00433c82    mov ecx,this"
 "	      00433c85    mov [ecx+14h],eax"
-"	      00433c88    mov eax,[ebp+8]"
+"	      00433c88    mov eax,copyRadioStation"
 "	      00433c8b    mov eax,[eax+18h]"
-"	      00433c8e    mov ecx,[ebp-2Ch]"
+"	      00433c8e    mov ecx,this"
 "	      00433c91    mov [ecx+18h],eax"
-"	      00433c94    mov eax,[ebp+8]"
+"	      00433c94    mov eax,copyRadioStation"
 "	      00433c97    mov eax,[eax+1Ch]"
-"	      00433c9a    mov ecx,[ebp-2Ch]"
+"	      00433c9a    mov ecx,this"
 "	      00433c9d    mov [ecx+1Ch],eax"
-"	      00433ca0    mov eax,[ebp+8]"
+"	      00433ca0    mov eax,copyRadioStation"
 "	      00433ca3    add eax,20h"
-"	      00433ca6    mov ecx,[ebp-2Ch]"
+"	      00433ca6    mov ecx,this"
 "	      00433ca9    add ecx,20h"
 "	      00433cac    mov edx,[eax]"
 "	      00433cae    mov [ecx],edx"
@@ -922,34 +922,34 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 );
 // LINE 112:
 	asm( 
-"	      00433cc7    mov eax,[ebp+8]"
+"	      00433cc7    mov eax,copyRadioStation"
 "	      00433cca    mov eax,[eax+30h]"
-"	      00433ccd    mov ecx,[ebp-2Ch]"
+"	      00433ccd    mov ecx,this"
 "	      00433cd0    mov [ecx+30h],eax"
 );
 // LINE 113:
 	asm( 
-"	      00433cd3    mov eax,[ebp+8]"
+"	      00433cd3    mov eax,copyRadioStation"
 "	      00433cd6    mov eax,[eax+34h]"
-"	      00433cd9    mov ecx,[ebp-2Ch]"
+"	      00433cd9    mov ecx,this"
 "	      00433cdc    mov [ecx+34h],eax"
 );
 // LINE 114:
 	asm( 
-"	      00433cdf    mov eax,[ebp+8]"
+"	      00433cdf    mov eax,copyRadioStation"
 "	      00433ce2    add eax,38h"
-"	      00433ce5    mov ecx,[ebp-2Ch]"
+"	      00433ce5    mov ecx,this"
 "	      00433ce8    add ecx,38h"
 "	      00433ceb    cmp eax,ecx"
 "	      00433ced    je near ptr 00433DB4h"
-"	      00433cf3    mov eax,[ebp-2Ch]"
+"	      00433cf3    mov eax,this"
 "	      00433cf6    mov eax,[eax+3Ch]"
 "	      00433cf9    dec dword ptr [eax+0Ch]"
-"	      00433cfc    mov eax,[ebp-2Ch]"
+"	      00433cfc    mov eax,this"
 "	      00433cff    mov eax,[eax+3Ch]"
 "	      00433d02    cmp dword ptr [eax+0Ch],0"
 "	      00433d06    jne near ptr 00433D34h"
-"	      00433d0c    mov eax,[ebp-2Ch]"
+"	      00433d0c    mov eax,this"
 "	      00433d0f    mov eax,[eax+3Ch]"
 "	      00433d12    mov [ebp-0Ch],eax"
 "	      00433d15    mov eax,[ebp-0Ch]"
@@ -962,15 +962,15 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433d2f    jmp near ptr 00433D34h"
 "	      00433d34    jmp near ptr 00433D39h"
 "	      00433d39    jmp near ptr 00433D3Eh"
-"	      00433d3e    mov eax,[ebp+8]"
+"	      00433d3e    mov eax,copyRadioStation"
 "	      00433d41    mov eax,[eax+3Ch]"
 "	      00433d44    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433d48    je near ptr 00433D68h"
-"	      00433d4e    mov eax,[ebp+8]"
+"	      00433d4e    mov eax,copyRadioStation"
 "	      00433d51    mov eax,[eax+3Ch]"
-"	      00433d54    mov ecx,[ebp-2Ch]"
+"	      00433d54    mov ecx,this"
 "	      00433d57    mov [ecx+3Ch],eax"
-"	      00433d5a    mov eax,[ebp-2Ch]"
+"	      00433d5a    mov eax,this"
 "	      00433d5d    mov eax,[eax+3Ch]"
 "	      00433d60    inc dword ptr [eax+0Ch]"
 "	      00433d63    jmp near ptr 00433DB4h"
@@ -981,39 +981,39 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433d75    cmp dword ptr [ebp-4],0"
 "	      00433d79    je near ptr 00433DAAh"
 "	      00433d7f    jmp near ptr 00433D84h"
-"	      00433d84    mov eax,[ebp+8]"
+"	      00433d84    mov eax,copyRadioStation"
 "	      00433d87    mov eax,[eax+3Ch]"
 "	      00433d8a    mov eax,[eax+4]"
 "	      00433d8d    push eax"
 "	      00433d8e    push 0"
-"	      00433d90    mov eax,[ebp+8]"
+"	      00433d90    mov eax,copyRadioStation"
 "	      00433d93    add eax,38h"
 "	      00433d96    push eax"
 "	      00433d97    mov ecx,[ebp-4]"
 "	      00433d9a    call 0041E200h"
-"	      00433d9f    mov ecx,[ebp-2Ch]"
+"	      00433d9f    mov ecx,this"
 "	      00433da2    mov [ecx+3Ch],eax"
 "	      00433da5    jmp near ptr 00433DB4h"
-"	      00433daa    mov eax,[ebp-2Ch]"
+"	      00433daa    mov eax,this"
 "	      00433dad    mov dword ptr [eax+3Ch],0"
 "	      00433db4    jmp near ptr 00433DB9h"
 );
 // LINE 115:
 	asm( 
-"	      00433db9    mov eax,[ebp+8]"
+"	      00433db9    mov eax,copyRadioStation"
 "	      00433dbc    add eax,40h"
-"	      00433dbf    mov ecx,[ebp-2Ch]"
+"	      00433dbf    mov ecx,this"
 "	      00433dc2    add ecx,40h"
 "	      00433dc5    cmp eax,ecx"
 "	      00433dc7    je near ptr 00433E8Eh"
-"	      00433dcd    mov eax,[ebp-2Ch]"
+"	      00433dcd    mov eax,this"
 "	      00433dd0    mov eax,[eax+44h]"
 "	      00433dd3    dec dword ptr [eax+0Ch]"
-"	      00433dd6    mov eax,[ebp-2Ch]"
+"	      00433dd6    mov eax,this"
 "	      00433dd9    mov eax,[eax+44h]"
 "	      00433ddc    cmp dword ptr [eax+0Ch],0"
 "	      00433de0    jne near ptr 00433E0Eh"
-"	      00433de6    mov eax,[ebp-2Ch]"
+"	      00433de6    mov eax,this"
 "	      00433de9    mov eax,[eax+44h]"
 "	      00433dec    mov [ebp-18h],eax"
 "	      00433def    mov eax,[ebp-18h]"
@@ -1026,15 +1026,15 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433e09    jmp near ptr 00433E0Eh"
 "	      00433e0e    jmp near ptr 00433E13h"
 "	      00433e13    jmp near ptr 00433E18h"
-"	      00433e18    mov eax,[ebp+8]"
+"	      00433e18    mov eax,copyRadioStation"
 "	      00433e1b    mov eax,[eax+44h]"
 "	      00433e1e    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433e22    je near ptr 00433E42h"
-"	      00433e28    mov eax,[ebp+8]"
+"	      00433e28    mov eax,copyRadioStation"
 "	      00433e2b    mov eax,[eax+44h]"
-"	      00433e2e    mov ecx,[ebp-2Ch]"
+"	      00433e2e    mov ecx,this"
 "	      00433e31    mov [ecx+44h],eax"
-"	      00433e34    mov eax,[ebp-2Ch]"
+"	      00433e34    mov eax,this"
 "	      00433e37    mov eax,[eax+44h]"
 "	      00433e3a    inc dword ptr [eax+0Ch]"
 "	      00433e3d    jmp near ptr 00433E8Eh"
@@ -1045,44 +1045,44 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433e4f    cmp dword ptr [ebp-10h],0"
 "	      00433e53    je near ptr 00433E84h"
 "	      00433e59    jmp near ptr 00433E5Eh"
-"	      00433e5e    mov eax,[ebp+8]"
+"	      00433e5e    mov eax,copyRadioStation"
 "	      00433e61    mov eax,[eax+44h]"
 "	      00433e64    mov eax,[eax+4]"
 "	      00433e67    push eax"
 "	      00433e68    push 0"
-"	      00433e6a    mov eax,[ebp+8]"
+"	      00433e6a    mov eax,copyRadioStation"
 "	      00433e6d    add eax,40h"
 "	      00433e70    push eax"
 "	      00433e71    mov ecx,[ebp-10h]"
 "	      00433e74    call 0041E200h"
-"	      00433e79    mov ecx,[ebp-2Ch]"
+"	      00433e79    mov ecx,this"
 "	      00433e7c    mov [ecx+44h],eax"
 "	      00433e7f    jmp near ptr 00433E8Eh"
-"	      00433e84    mov eax,[ebp-2Ch]"
+"	      00433e84    mov eax,this"
 "	      00433e87    mov dword ptr [eax+44h],0"
 "	      00433e8e    jmp near ptr 00433E93h"
 );
 // LINE 116:
 	asm( 
-"	      00433e93    mov eax,[ebp+8]"
+"	      00433e93    mov eax,copyRadioStation"
 "	      00433e96    add eax,48h"
-"	      00433e99    mov ecx,[ebp-2Ch]"
+"	      00433e99    mov ecx,this"
 "	      00433e9c    add ecx,48h"
 "	      00433e9f    cmp eax,ecx"
 "	      00433ea1    je near ptr 00433F2Dh"
-"	      00433ea7    mov ecx,[ebp-2Ch]"
+"	      00433ea7    mov ecx,this"
 "	      00433eaa    add ecx,48h"
 "	      00433ead    call 00412080h"
 "	      00433eb2    jmp near ptr 00433EB7h"
-"	      00433eb7    mov eax,[ebp+8]"
+"	      00433eb7    mov eax,copyRadioStation"
 "	      00433eba    mov eax,[eax+4Ch]"
 "	      00433ebd    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433ec1    je near ptr 00433EE1h"
-"	      00433ec7    mov eax,[ebp+8]"
+"	      00433ec7    mov eax,copyRadioStation"
 "	      00433eca    mov eax,[eax+4Ch]"
-"	      00433ecd    mov ecx,[ebp-2Ch]"
+"	      00433ecd    mov ecx,this"
 "	      00433ed0    mov [ecx+4Ch],eax"
-"	      00433ed3    mov eax,[ebp-2Ch]"
+"	      00433ed3    mov eax,this"
 "	      00433ed6    mov eax,[eax+4Ch]"
 "	      00433ed9    inc dword ptr [eax+0Ch]"
 "	      00433edc    jmp near ptr 00433F2Dh"
@@ -1093,60 +1093,60 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433eee    cmp dword ptr [ebp-1Ch],0"
 "	      00433ef2    je near ptr 00433F23h"
 "	      00433ef8    jmp near ptr 00433EFDh"
-"	      00433efd    mov eax,[ebp+8]"
+"	      00433efd    mov eax,copyRadioStation"
 "	      00433f00    mov eax,[eax+4Ch]"
 "	      00433f03    mov eax,[eax+4]"
 "	      00433f06    push eax"
 "	      00433f07    push 0"
-"	      00433f09    mov eax,[ebp+8]"
+"	      00433f09    mov eax,copyRadioStation"
 "	      00433f0c    add eax,48h"
 "	      00433f0f    push eax"
 "	      00433f10    mov ecx,[ebp-1Ch]"
 "	      00433f13    call 0041E200h"
-"	      00433f18    mov ecx,[ebp-2Ch]"
+"	      00433f18    mov ecx,this"
 "	      00433f1b    mov [ecx+4Ch],eax"
 "	      00433f1e    jmp near ptr 00433F2Dh"
-"	      00433f23    mov eax,[ebp-2Ch]"
+"	      00433f23    mov eax,this"
 "	      00433f26    mov dword ptr [eax+4Ch],0"
 "	      00433f2d    jmp near ptr 00433F32h"
 );
 // LINE 117:
 	asm( 
-"	      00433f32    mov eax,[ebp+8]"
+"	      00433f32    mov eax,copyRadioStation"
 "	      00433f35    add eax,50h"
 "	      00433f38    push eax"
-"	      00433f39    mov ecx,[ebp-2Ch]"
+"	      00433f39    mov ecx,this"
 "	      00433f3c    add ecx,50h"
 "	      00433f3f    call 0043AAE0h"
 );
 // LINE 118:
 	asm( 
-"	      00433f44    mov eax,[ebp+8]"
+"	      00433f44    mov eax,copyRadioStation"
 "	      00433f47    mov eax,[eax+58h]"
-"	      00433f4a    mov ecx,[ebp-2Ch]"
+"	      00433f4a    mov ecx,this"
 "	      00433f4d    mov [ecx+58h],eax"
 );
 // LINE 119:
 	asm( 
-"	      00433f50    mov eax,[ebp+8]"
+"	      00433f50    mov eax,copyRadioStation"
 "	      00433f53    add eax,5Ch"
-"	      00433f56    mov ecx,[ebp-2Ch]"
+"	      00433f56    mov ecx,this"
 "	      00433f59    add ecx,5Ch"
 "	      00433f5c    cmp eax,ecx"
 "	      00433f5e    je near ptr 00433FEAh"
-"	      00433f64    mov ecx,[ebp-2Ch]"
+"	      00433f64    mov ecx,this"
 "	      00433f67    add ecx,5Ch"
 "	      00433f6a    call 00412080h"
 "	      00433f6f    jmp near ptr 00433F74h"
-"	      00433f74    mov eax,[ebp+8]"
+"	      00433f74    mov eax,copyRadioStation"
 "	      00433f77    mov eax,[eax+60h]"
 "	      00433f7a    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00433f7e    je near ptr 00433F9Eh"
-"	      00433f84    mov eax,[ebp+8]"
+"	      00433f84    mov eax,copyRadioStation"
 "	      00433f87    mov eax,[eax+60h]"
-"	      00433f8a    mov ecx,[ebp-2Ch]"
+"	      00433f8a    mov ecx,this"
 "	      00433f8d    mov [ecx+60h],eax"
-"	      00433f90    mov eax,[ebp-2Ch]"
+"	      00433f90    mov eax,this"
 "	      00433f93    mov eax,[eax+60h]"
 "	      00433f96    inc dword ptr [eax+0Ch]"
 "	      00433f99    jmp near ptr 00433FEAh"
@@ -1157,60 +1157,60 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00433fab    cmp dword ptr [ebp-20h],0"
 "	      00433faf    je near ptr 00433FE0h"
 "	      00433fb5    jmp near ptr 00433FBAh"
-"	      00433fba    mov eax,[ebp+8]"
+"	      00433fba    mov eax,copyRadioStation"
 "	      00433fbd    mov eax,[eax+60h]"
 "	      00433fc0    mov eax,[eax+4]"
 "	      00433fc3    push eax"
 "	      00433fc4    push 0"
-"	      00433fc6    mov eax,[ebp+8]"
+"	      00433fc6    mov eax,copyRadioStation"
 "	      00433fc9    add eax,5Ch"
 "	      00433fcc    push eax"
 "	      00433fcd    mov ecx,[ebp-20h]"
 "	      00433fd0    call 0041E200h"
-"	      00433fd5    mov ecx,[ebp-2Ch]"
+"	      00433fd5    mov ecx,this"
 "	      00433fd8    mov [ecx+60h],eax"
 "	      00433fdb    jmp near ptr 00433FEAh"
-"	      00433fe0    mov eax,[ebp-2Ch]"
+"	      00433fe0    mov eax,this"
 "	      00433fe3    mov dword ptr [eax+60h],0"
 "	      00433fea    jmp near ptr 00433FEFh"
 );
 // LINE 120:
 	asm( 
-"	      00433fef    mov eax,[ebp+8]"
+"	      00433fef    mov eax,copyRadioStation"
 "	      00433ff2    add eax,64h"
 "	      00433ff5    push eax"
-"	      00433ff6    mov ecx,[ebp-2Ch]"
+"	      00433ff6    mov ecx,this"
 "	      00433ff9    add ecx,64h"
 "	      00433ffc    call 0043AAE0h"
 );
 // LINE 121:
 	asm( 
-"	      00434001    mov eax,[ebp+8]"
+"	      00434001    mov eax,copyRadioStation"
 "	      00434004    mov eax,[eax+6Ch]"
-"	      00434007    mov ecx,[ebp-2Ch]"
+"	      00434007    mov ecx,this"
 "	      0043400a    mov [ecx+6Ch],eax"
 );
 // LINE 122:
 	asm( 
-"	      0043400d    mov eax,[ebp+8]"
+"	      0043400d    mov eax,copyRadioStation"
 "	      00434010    add eax,70h"
-"	      00434013    mov ecx,[ebp-2Ch]"
+"	      00434013    mov ecx,this"
 "	      00434016    add ecx,70h"
 "	      00434019    cmp eax,ecx"
 "	      0043401b    je near ptr 004340A7h"
-"	      00434021    mov ecx,[ebp-2Ch]"
+"	      00434021    mov ecx,this"
 "	      00434024    add ecx,70h"
 "	      00434027    call 00412080h"
 "	      0043402c    jmp near ptr 00434031h"
-"	      00434031    mov eax,[ebp+8]"
+"	      00434031    mov eax,copyRadioStation"
 "	      00434034    mov eax,[eax+74h]"
 "	      00434037    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0043403b    je near ptr 0043405Bh"
-"	      00434041    mov eax,[ebp+8]"
+"	      00434041    mov eax,copyRadioStation"
 "	      00434044    mov eax,[eax+74h]"
-"	      00434047    mov ecx,[ebp-2Ch]"
+"	      00434047    mov ecx,this"
 "	      0043404a    mov [ecx+74h],eax"
-"	      0043404d    mov eax,[ebp-2Ch]"
+"	      0043404d    mov eax,this"
 "	      00434050    mov eax,[eax+74h]"
 "	      00434053    inc dword ptr [eax+0Ch]"
 "	      00434056    jmp near ptr 004340A7h"
@@ -1221,60 +1221,60 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      00434068    cmp dword ptr [ebp-24h],0"
 "	      0043406c    je near ptr 0043409Dh"
 "	      00434072    jmp near ptr 00434077h"
-"	      00434077    mov eax,[ebp+8]"
+"	      00434077    mov eax,copyRadioStation"
 "	      0043407a    mov eax,[eax+74h]"
 "	      0043407d    mov eax,[eax+4]"
 "	      00434080    push eax"
 "	      00434081    push 0"
-"	      00434083    mov eax,[ebp+8]"
+"	      00434083    mov eax,copyRadioStation"
 "	      00434086    add eax,70h"
 "	      00434089    push eax"
 "	      0043408a    mov ecx,[ebp-24h]"
 "	      0043408d    call 0041E200h"
-"	      00434092    mov ecx,[ebp-2Ch]"
+"	      00434092    mov ecx,this"
 "	      00434095    mov [ecx+74h],eax"
 "	      00434098    jmp near ptr 004340A7h"
-"	      0043409d    mov eax,[ebp-2Ch]"
+"	      0043409d    mov eax,this"
 "	      004340a0    mov dword ptr [eax+74h],0"
 "	      004340a7    jmp near ptr 004340ACh"
 );
 // LINE 123:
 	asm( 
-"	      004340ac    mov eax,[ebp+8]"
+"	      004340ac    mov eax,copyRadioStation"
 "	      004340af    add eax,78h"
 "	      004340b2    push eax"
-"	      004340b3    mov ecx,[ebp-2Ch]"
+"	      004340b3    mov ecx,this"
 "	      004340b6    add ecx,78h"
 "	      004340b9    call 0043AAE0h"
 );
 // LINE 124:
 	asm( 
-"	      004340be    mov eax,[ebp+8]"
+"	      004340be    mov eax,copyRadioStation"
 "	      004340c1    mov eax,[eax+80h]"
-"	      004340c7    mov ecx,[ebp-2Ch]"
+"	      004340c7    mov ecx,this"
 "	      004340ca    mov [ecx+80h],eax"
 );
 // LINE 125:
 	asm( 
-"	      004340d0    mov eax,[ebp+8]"
+"	      004340d0    mov eax,copyRadioStation"
 "	      004340d3    add eax,84h"
-"	      004340d8    mov ecx,[ebp-2Ch]"
+"	      004340d8    mov ecx,this"
 "	      004340db    add ecx,84h"
 "	      004340e1    cmp eax,ecx"
 "	      004340e3    je near ptr 00434189h"
-"	      004340e9    mov ecx,[ebp-2Ch]"
+"	      004340e9    mov ecx,this"
 "	      004340ec    add ecx,84h"
 "	      004340f2    call 00412080h"
 "	      004340f7    jmp near ptr 004340FCh"
-"	      004340fc    mov eax,[ebp+8]"
+"	      004340fc    mov eax,copyRadioStation"
 "	      004340ff    mov eax,[eax+88h]"
 "	      00434105    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00434109    je near ptr 00434132h"
-"	      0043410f    mov eax,[ebp+8]"
+"	      0043410f    mov eax,copyRadioStation"
 "	      00434112    mov eax,[eax+88h]"
-"	      00434118    mov ecx,[ebp-2Ch]"
+"	      00434118    mov ecx,this"
 "	      0043411b    mov [ecx+88h],eax"
-"	      00434121    mov eax,[ebp-2Ch]"
+"	      00434121    mov eax,this"
 "	      00434124    mov eax,[eax+88h]"
 "	      0043412a    inc dword ptr [eax+0Ch]"
 "	      0043412d    jmp near ptr 00434189h"
@@ -1285,42 +1285,42 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 "	      0043413f    cmp dword ptr [ebp-28h],0"
 "	      00434143    je near ptr 0043417Ch"
 "	      00434149    jmp near ptr 0043414Eh"
-"	      0043414e    mov eax,[ebp+8]"
+"	      0043414e    mov eax,copyRadioStation"
 "	      00434151    mov eax,[eax+88h]"
 "	      00434157    mov eax,[eax+4]"
 "	      0043415a    push eax"
 "	      0043415b    push 0"
-"	      0043415d    mov eax,[ebp+8]"
+"	      0043415d    mov eax,copyRadioStation"
 "	      00434160    add eax,84h"
 "	      00434165    push eax"
 "	      00434166    mov ecx,[ebp-28h]"
 "	      00434169    call 0041E200h"
-"	      0043416e    mov ecx,[ebp-2Ch]"
+"	      0043416e    mov ecx,this"
 "	      00434171    mov [ecx+88h],eax"
 "	      00434177    jmp near ptr 00434189h"
-"	      0043417c    mov eax,[ebp-2Ch]"
+"	      0043417c    mov eax,this"
 "	      0043417f    mov dword ptr [eax+88h],0"
 "	      00434189    jmp near ptr 0043418Eh"
 );
 // LINE 126:
 	asm( 
-"	      0043418e    mov eax,[ebp+8]"
+"	      0043418e    mov eax,copyRadioStation"
 "	      00434191    add eax,8Ch"
 "	      00434196    push eax"
-"	      00434197    mov ecx,[ebp-2Ch]"
+"	      00434197    mov ecx,this"
 "	      0043419a    add ecx,8Ch"
 "	      004341a0    call 0043AAE0h"
 );
 // LINE 127:
 	asm( 
-"	      004341a5    mov eax,[ebp+8]"
+"	      004341a5    mov eax,copyRadioStation"
 "	      004341a8    mov eax,[eax+94h]"
-"	      004341ae    mov ecx,[ebp-2Ch]"
+"	      004341ae    mov ecx,this"
 "	      004341b1    mov [ecx+94h],eax"
 );
 // LINE 128:
 	asm( 
-"	      004341b7    mov eax,[ebp-2Ch]"
+"	      004341b7    mov eax,this"
 "	      004341ba    jmp near ptr 004341BFh"
 );
 // LINE 129:
@@ -1343,21 +1343,21 @@ void RadioStation::~RadioStation() {
 "	      004341cc    push ebx"
 "	      004341cd    push esi"
 "	      004341ce    push edi"
-"	      004341cf    mov [ebp-7Ch],ecx"
-"	      004341d2    mov eax,[ebp-7Ch]"
+"	      004341cf    mov this,ecx"
+"	      004341d2    mov eax,this"
 "	      004341d5    mov dword ptr [eax],58F518h"
 );
 // LINE 140:
 	asm( 
 "	      004341db    jmp near ptr 004341E0h"
-"	      004341e0    mov eax,[ebp-7Ch]"
+"	      004341e0    mov eax,this"
 "	      004341e3    mov eax,[eax+8Ch]"
 "	      004341e9    mov [ebp-64h],eax"
 "	      004341ec    mov eax,[ebp-64h]"
 "	      004341ef    mov [ebp-58h],eax"
 "	      004341f2    jmp near ptr 004341F7h"
 "	      004341f7    jmp near ptr 004341FCh"
-"	      004341fc    mov eax,[ebp-7Ch]"
+"	      004341fc    mov eax,this"
 "	      004341ff    mov eax,[eax+8Ch]"
 "	      00434205    mov eax,[eax]"
 "	      00434207    mov [ebp-68h],eax"
@@ -1369,10 +1369,10 @@ void RadioStation::~RadioStation() {
 "	      0043421d    push eax"
 "	      0043421e    mov eax,[ebp-5Ch]"
 "	      00434221    push eax"
-"	      00434222    mov ecx,[ebp-7Ch]"
+"	      00434222    mov ecx,this"
 "	      00434225    add ecx,8Ch"
 "	      0043422b    call 0043A940h"
-"	      00434230    mov eax,[ebp-7Ch]"
+"	      00434230    mov eax,this"
 "	      00434233    mov eax,[eax+8Ch]"
 "	      00434239    mov [ebp-60h],eax"
 "	      0043423c    mov eax,ds:[59856Ch]"
@@ -1383,18 +1383,18 @@ void RadioStation::~RadioStation() {
 "	      0043424e    jmp near ptr 00434253h"
 "	      00434253    dec dword ptr ds:[598560h]"
 "	      00434259    jne near ptr 0043426Dh"
-"	      0043425f    mov ecx,[ebp-7Ch]"
+"	      0043425f    mov ecx,this"
 "	      00434262    add ecx,8Ch"
 "	      00434268    call 0043A8B0h"
 "	      0043426d    jmp near ptr 00434272h"
-"	      00434272    mov eax,[ebp-7Ch]"
+"	      00434272    mov eax,this"
 "	      00434275    mov eax,[eax+88h]"
 "	      0043427b    dec dword ptr [eax+0Ch]"
-"	      0043427e    mov eax,[ebp-7Ch]"
+"	      0043427e    mov eax,this"
 "	      00434281    mov eax,[eax+88h]"
 "	      00434287    cmp dword ptr [eax+0Ch],0"
 "	      0043428b    jne near ptr 004342BCh"
-"	      00434291    mov eax,[ebp-7Ch]"
+"	      00434291    mov eax,this"
 "	      00434294    mov eax,[eax+88h]"
 "	      0043429a    mov [ebp-14h],eax"
 "	      0043429d    mov eax,[ebp-14h]"
@@ -1406,10 +1406,10 @@ void RadioStation::~RadioStation() {
 "	      004342b2    call 0041DD70h"
 "	      004342b7    jmp near ptr 004342BCh"
 "	      004342bc    jmp near ptr 004342C1h"
-"	      004342c1    mov eax,[ebp-7Ch]"
+"	      004342c1    mov eax,this"
 "	      004342c4    cmp dword ptr [eax+84h],0"
 "	      004342cb    je near ptr 004342EFh"
-"	      004342d1    mov eax,[ebp-7Ch]"
+"	      004342d1    mov eax,this"
 "	      004342d4    mov eax,[eax+84h]"
 "	      004342da    mov [ebp-8],eax"
 "	      004342dd    mov eax,[ebp-8]"
@@ -1419,7 +1419,7 @@ void RadioStation::~RadioStation() {
 "	      004342e7    call 0056A740h"
 "	      004342ec    add esp,4"
 "	      004342ef    jmp near ptr 004342F4h"
-"	      004342f4    mov eax,[ebp-7Ch]"
+"	      004342f4    mov eax,this"
 "	      004342f7    mov eax,[eax+78h]"
 "	      004342fa    mov [ebp-78h],eax"
 "	      004342fd    mov eax,[ebp-78h]"
@@ -1430,15 +1430,15 @@ void RadioStation::~RadioStation() {
 "	      00434310    push eax"
 "	      00434311    lea eax,[ebp-70h]"
 "	      00434314    push eax"
-"	      00434315    mov ecx,[ebp-7Ch]"
+"	      00434315    mov ecx,this"
 "	      00434318    add ecx,78h"
 "	      0043431b    call 0043A080h"
 "	      00434320    mov eax,[eax]"
 "	      00434322    push eax"
-"	      00434323    mov ecx,[ebp-7Ch]"
+"	      00434323    mov ecx,this"
 "	      00434326    add ecx,78h"
 "	      00434329    call 0043A940h"
-"	      0043432e    mov eax,[ebp-7Ch]"
+"	      0043432e    mov eax,this"
 "	      00434331    mov eax,[eax+78h]"
 "	      00434334    mov [ebp-74h],eax"
 "	      00434337    mov eax,ds:[59856Ch]"
@@ -1449,18 +1449,18 @@ void RadioStation::~RadioStation() {
 "	      00434349    jmp near ptr 0043434Eh"
 "	      0043434e    dec dword ptr ds:[598560h]"
 "	      00434354    jne near ptr 00434365h"
-"	      0043435a    mov ecx,[ebp-7Ch]"
+"	      0043435a    mov ecx,this"
 "	      0043435d    add ecx,78h"
 "	      00434360    call 0043A8B0h"
 "	      00434365    jmp near ptr 0043436Ah"
-"	      0043436a    mov eax,[ebp-7Ch]"
+"	      0043436a    mov eax,this"
 "	      0043436d    mov eax,[eax+74h]"
 "	      00434370    dec dword ptr [eax+0Ch]"
-"	      00434373    mov eax,[ebp-7Ch]"
+"	      00434373    mov eax,this"
 "	      00434376    mov eax,[eax+74h]"
 "	      00434379    cmp dword ptr [eax+0Ch],0"
 "	      0043437d    jne near ptr 004343ABh"
-"	      00434383    mov eax,[ebp-7Ch]"
+"	      00434383    mov eax,this"
 "	      00434386    mov eax,[eax+74h]"
 "	      00434389    mov [ebp-24h],eax"
 "	      0043438c    mov eax,[ebp-24h]"
@@ -1472,10 +1472,10 @@ void RadioStation::~RadioStation() {
 "	      004343a1    call 0041DD70h"
 "	      004343a6    jmp near ptr 004343ABh"
 "	      004343ab    jmp near ptr 004343B0h"
-"	      004343b0    mov eax,[ebp-7Ch]"
+"	      004343b0    mov eax,this"
 "	      004343b3    cmp dword ptr [eax+70h],0"
 "	      004343b7    je near ptr 004343D8h"
-"	      004343bd    mov eax,[ebp-7Ch]"
+"	      004343bd    mov eax,this"
 "	      004343c0    mov eax,[eax+70h]"
 "	      004343c3    mov [ebp-18h],eax"
 "	      004343c6    mov eax,[ebp-18h]"
@@ -1485,17 +1485,17 @@ void RadioStation::~RadioStation() {
 "	      004343d0    call 0056A740h"
 "	      004343d5    add esp,4"
 "	      004343d8    jmp near ptr 004343DDh"
-"	      004343dd    mov ecx,[ebp-7Ch]"
+"	      004343dd    mov ecx,this"
 "	      004343e0    add ecx,64h"
 "	      004343e3    call 0043A0C0h"
-"	      004343e8    mov eax,[ebp-7Ch]"
+"	      004343e8    mov eax,this"
 "	      004343eb    mov eax,[eax+60h]"
 "	      004343ee    dec dword ptr [eax+0Ch]"
-"	      004343f1    mov eax,[ebp-7Ch]"
+"	      004343f1    mov eax,this"
 "	      004343f4    mov eax,[eax+60h]"
 "	      004343f7    cmp dword ptr [eax+0Ch],0"
 "	      004343fb    jne near ptr 00434429h"
-"	      00434401    mov eax,[ebp-7Ch]"
+"	      00434401    mov eax,this"
 "	      00434404    mov eax,[eax+60h]"
 "	      00434407    mov [ebp-34h],eax"
 "	      0043440a    mov eax,[ebp-34h]"
@@ -1507,10 +1507,10 @@ void RadioStation::~RadioStation() {
 "	      0043441f    call 0041DD70h"
 "	      00434424    jmp near ptr 00434429h"
 "	      00434429    jmp near ptr 0043442Eh"
-"	      0043442e    mov eax,[ebp-7Ch]"
+"	      0043442e    mov eax,this"
 "	      00434431    cmp dword ptr [eax+5Ch],0"
 "	      00434435    je near ptr 00434456h"
-"	      0043443b    mov eax,[ebp-7Ch]"
+"	      0043443b    mov eax,this"
 "	      0043443e    mov eax,[eax+5Ch]"
 "	      00434441    mov [ebp-28h],eax"
 "	      00434444    mov eax,[ebp-28h]"
@@ -1520,17 +1520,17 @@ void RadioStation::~RadioStation() {
 "	      0043444e    call 0056A740h"
 "	      00434453    add esp,4"
 "	      00434456    jmp near ptr 0043445Bh"
-"	      0043445b    mov ecx,[ebp-7Ch]"
+"	      0043445b    mov ecx,this"
 "	      0043445e    add ecx,50h"
 "	      00434461    call 0043A0C0h"
-"	      00434466    mov eax,[ebp-7Ch]"
+"	      00434466    mov eax,this"
 "	      00434469    mov eax,[eax+4Ch]"
 "	      0043446c    dec dword ptr [eax+0Ch]"
-"	      0043446f    mov eax,[ebp-7Ch]"
+"	      0043446f    mov eax,this"
 "	      00434472    mov eax,[eax+4Ch]"
 "	      00434475    cmp dword ptr [eax+0Ch],0"
 "	      00434479    jne near ptr 004344A7h"
-"	      0043447f    mov eax,[ebp-7Ch]"
+"	      0043447f    mov eax,this"
 "	      00434482    mov eax,[eax+4Ch]"
 "	      00434485    mov [ebp-44h],eax"
 "	      00434488    mov eax,[ebp-44h]"
@@ -1542,10 +1542,10 @@ void RadioStation::~RadioStation() {
 "	      0043449d    call 0041DD70h"
 "	      004344a2    jmp near ptr 004344A7h"
 "	      004344a7    jmp near ptr 004344ACh"
-"	      004344ac    mov eax,[ebp-7Ch]"
+"	      004344ac    mov eax,this"
 "	      004344af    cmp dword ptr [eax+48h],0"
 "	      004344b3    je near ptr 004344D4h"
-"	      004344b9    mov eax,[ebp-7Ch]"
+"	      004344b9    mov eax,this"
 "	      004344bc    mov eax,[eax+48h]"
 "	      004344bf    mov [ebp-38h],eax"
 "	      004344c2    mov eax,[ebp-38h]"
@@ -1555,13 +1555,13 @@ void RadioStation::~RadioStation() {
 "	      004344cc    call 0056A740h"
 "	      004344d1    add esp,4"
 "	      004344d4    jmp near ptr 004344D9h"
-"	      004344d9    mov ecx,[ebp-7Ch]"
+"	      004344d9    mov ecx,this"
 "	      004344dc    add ecx,40h"
 "	      004344df    call 00412080h"
-"	      004344e4    mov eax,[ebp-7Ch]"
+"	      004344e4    mov eax,this"
 "	      004344e7    cmp dword ptr [eax+40h],0"
 "	      004344eb    je near ptr 0043450Ch"
-"	      004344f1    mov eax,[ebp-7Ch]"
+"	      004344f1    mov eax,this"
 "	      004344f4    mov eax,[eax+40h]"
 "	      004344f7    mov [ebp-48h],eax"
 "	      004344fa    mov eax,[ebp-48h]"
@@ -1571,13 +1571,13 @@ void RadioStation::~RadioStation() {
 "	      00434504    call 0056A740h"
 "	      00434509    add esp,4"
 "	      0043450c    jmp near ptr 00434511h"
-"	      00434511    mov ecx,[ebp-7Ch]"
+"	      00434511    mov ecx,this"
 "	      00434514    add ecx,38h"
 "	      00434517    call 00412080h"
-"	      0043451c    mov eax,[ebp-7Ch]"
+"	      0043451c    mov eax,this"
 "	      0043451f    cmp dword ptr [eax+38h],0"
 "	      00434523    je near ptr 00434544h"
-"	      00434529    mov eax,[ebp-7Ch]"
+"	      00434529    mov eax,this"
 "	      0043452c    mov eax,[eax+38h]"
 "	      0043452f    mov [ebp-50h],eax"
 "	      00434532    mov eax,[ebp-50h]"
@@ -1590,7 +1590,7 @@ void RadioStation::~RadioStation() {
 "	      00434549    jmp near ptr 0043454Eh"
 "	      0043454e    jmp near ptr 00434553h"
 "	      00434553    jmp near ptr 00434558h"
-"	      00434558    mov eax,[ebp-7Ch]"
+"	      00434558    mov eax,this"
 "	      0043455b    mov eax,[eax+8]"
 "	      0043455e    mov [ebp-4],eax"
 "	      00434561    mov eax,[ebp-4]"
@@ -1618,7 +1618,7 @@ int32_t RadioStation::Initialize() {
 "	      00434587    push ebx"
 "	      00434588    push esi"
 "	      00434589    push edi"
-"	      0043458a    mov [ebp-4],ecx"
+"	      0043458a    mov this,ecx"
 );
 // LINE 147:
 	asm( 
@@ -1645,12 +1645,12 @@ void RadioStation::SetPlayStatus(int32_t bNewPlaying) {
 "	      004345a2    push ebx"
 "	      004345a3    push esi"
 "	      004345a4    push edi"
-"	      004345a5    mov [ebp-4],ecx"
+"	      004345a5    mov this,ecx"
 );
 // LINE 156:
 	asm( 
-"	      004345a8    mov eax,[ebp+8]"
-"	      004345ab    mov ecx,[ebp-4]"
+"	      004345a8    mov eax,bNewPlaying"
+"	      004345ab    mov ecx,this"
 "	      004345ae    mov [ecx+4],eax"
 );
 // LINE 159:
@@ -1674,20 +1674,20 @@ void RadioStation::StationSet() {
 "	      004345c3    push ebx"
 "	      004345c4    push esi"
 "	      004345c5    push edi"
-"	      004345c6    mov [ebp-4],ecx"
+"	      004345c6    mov this,ecx"
 );
 // LINE 166:
 	asm( 
-"	      004345c9    mov eax,[ebp-4]"
+"	      004345c9    mov eax,this"
 "	      004345cc    mov eax,[eax]"
-"	      004345ce    mov ecx,[ebp-4]"
+"	      004345ce    mov ecx,this"
 "	      004345d1    call dword ptr [eax+10h]"
 );
 // LINE 167:
 	asm( 
-"	      004345d4    mov eax,[ebp-4]"
+"	      004345d4    mov eax,this"
 "	      004345d7    mov eax,[eax]"
-"	      004345d9    mov ecx,[ebp-4]"
+"	      004345d9    mov ecx,this"
 "	      004345dc    call dword ptr [eax+14h]"
 );
 // LINE 168:
@@ -1711,11 +1711,11 @@ int32_t RadioStation::IsPlaying() {
 "	      004345ef    push ebx"
 "	      004345f0    push esi"
 "	      004345f1    push edi"
-"	      004345f2    mov [ebp-4],ecx"
+"	      004345f2    mov this,ecx"
 );
 // LINE 176:
 	asm( 
-"	      004345f5    mov eax,[ebp-4]"
+"	      004345f5    mov eax,this"
 "	      004345f8    mov eax,[eax+4]"
 "	      004345fb    jmp near ptr 00434600h"
 );
@@ -1741,13 +1741,13 @@ int32_t RadioStation::DoState() {
 "	      0043460b    push ebx"
 "	      0043460c    push esi"
 "	      0043460d    push edi"
-"	      0043460e    mov [ebp-2Ch],ecx"
+"	      0043460e    mov this,ecx"
 );
 // LINE 187:
 	asm( 
-"	      00434611    mov eax,[ebp-2Ch]"
+"	      00434611    mov eax,this"
 "	      00434614    mov eax,[eax]"
-"	      00434616    mov ecx,[ebp-2Ch]"
+"	      00434616    mov ecx,this"
 "	      00434619    call dword ptr [eax+24h]"
 "	      0043461c    test eax,eax"
 "	      0043461e    jne near ptr 0043462Eh"
@@ -1759,27 +1759,27 @@ int32_t RadioStation::DoState() {
 );
 // LINE 190:
 	asm( 
-"	      0043462e    mov eax,[ebp-2Ch]"
+"	      0043462e    mov eax,this"
 "	      00434631    cmp dword ptr [eax+1Ch],0"
 "	      00434635    je near ptr 0043496Eh"
 );
 // LINE 191:
 	asm( 
-"	      0043463b    mov eax,[ebp-2Ch]"
+"	      0043463b    mov eax,this"
 "	      0043463e    mov eax,[eax+28h]"
 "	      00434641    mov [ebp-18h],eax"
 "	      00434644    jmp near ptr 00434649h"
-"	      00434649    mov eax,[ebp-2Ch]"
+"	      00434649    mov eax,this"
 "	      0043464c    cmp dword ptr [eax+24h],0"
 "	      00434650    je near ptr 004346CCh"
-"	      00434656    mov eax,[ebp-2Ch]"
+"	      00434656    mov eax,this"
 "	      00434659    cmp dword ptr [eax+20h],1"
 "	      0043465d    jne near ptr 00434676h"
 "	      00434663    call dword ptr ds:[6C3908h]"
 "	      00434669    mov [ebp-28h],eax"
 "	      0043466c    jmp near ptr 004346BAh"
 "	      00434671    jmp near ptr 004346BAh"
-"	      00434676    mov eax,[ebp-2Ch]"
+"	      00434676    mov eax,this"
 "	      00434679    cmp dword ptr [eax+20h],0"
 "	      0043467d    jne near ptr 004346A3h"
 "	      00434683    lea eax,[ebp-24h]"
@@ -1798,18 +1798,18 @@ int32_t RadioStation::DoState() {
 "	      004346b2    mov [ebp-28h],eax"
 "	      004346b5    jmp near ptr 004346BAh"
 "	      004346ba    mov eax,[ebp-28h]"
-"	      004346bd    mov ecx,[ebp-2Ch]"
+"	      004346bd    mov ecx,this"
 "	      004346c0    sub eax,[ecx+24h]"
 "	      004346c3    mov [ebp-14h],eax"
 "	      004346c6    mov eax,[ebp-14h]"
 "	      004346c9    add [ebp-18h],eax"
-"	      004346cc    mov eax,[ebp-2Ch]"
+"	      004346cc    mov eax,this"
 "	      004346cf    cmp dword ptr [eax+20h],0"
 "	      004346d3    jne near ptr 0043470Ah"
-"	      004346d9    mov eax,[ebp-2Ch]"
+"	      004346d9    mov eax,this"
 "	      004346dc    cmp dword ptr [eax+2Ch],0"
 "	      004346e0    je near ptr 0043470Ah"
-"	      004346e6    mov eax,[ebp-2Ch]"
+"	      004346e6    mov eax,this"
 "	      004346e9    mov eax,[eax+2Ch]"
 "	      004346ec    push eax"
 "	      004346ed    push 0F4240h"
@@ -1818,24 +1818,24 @@ int32_t RadioStation::DoState() {
 "	      004346f6    call dword ptr ds:[6C372Ch]"
 "	      004346fc    mov [ebp-18h],eax"
 "	      004346ff    mov eax,[ebp-18h]"
-"	      00434702    mov [ebp-4],eax"
+"	      00434702    mov lElapsedTime,eax"
 "	      00434705    jmp near ptr 00434715h"
 "	      0043470a    mov eax,[ebp-18h]"
-"	      0043470d    mov [ebp-4],eax"
+"	      0043470d    mov lElapsedTime,eax"
 "	      00434710    jmp near ptr 00434715h"
 );
 // LINE 192:
 	asm( 
-"	      00434715    cmp dword ptr [ebp-4],0FA0h"
+"	      00434715    cmp lElapsedTime,0FA0h"
 "	      0043471c    jb near ptr 00434964h"
 );
 // LINE 194:
 	asm( 
 "	      00434722    jmp near ptr 00434727h"
 "	      00434727    jmp near ptr 0043472Ch"
-"	      0043472c    mov eax,[ebp-2Ch]"
+"	      0043472c    mov eax,this"
 "	      0043472f    mov eax,[eax+14h]"
-"	      00434732    mov ecx,[ebp-2Ch]"
+"	      00434732    mov ecx,this"
 "	      00434735    mov ecx,[ecx+8]"
 "	      00434738    cmp dword ptr [ecx+eax*4],0"
 "	      0043473c    jne near ptr 00434794h"
@@ -1843,9 +1843,9 @@ int32_t RadioStation::DoState() {
 // LINE 195:
 	asm( 
 "	      00434742    push 0"
-"	      00434744    mov eax,[ebp-2Ch]"
+"	      00434744    mov eax,this"
 "	      00434747    mov eax,[eax]"
-"	      00434749    mov ecx,[ebp-2Ch]"
+"	      00434749    mov ecx,this"
 "	      0043474c    call dword ptr [eax+30h]"
 "	      0043474f    test eax,eax"
 "	      00434751    je near ptr 00434794h"
@@ -1861,20 +1861,20 @@ int32_t RadioStation::DoState() {
 );
 // LINE 200:
 	asm( 
-"	      0043476d    mov eax,[ebp-2Ch]"
+"	      0043476d    mov eax,this"
 "	      00434770    inc dword ptr [eax+18h]"
 );
 // LINE 201:
 	asm( 
-"	      00434773    mov eax,[ebp-2Ch]"
+"	      00434773    mov eax,this"
 "	      00434776    mov dword ptr [eax+1Ch],0"
 );
 // LINE 202:
 	asm( 
 "	      0043477d    push 0"
-"	      0043477f    mov eax,[ebp-2Ch]"
+"	      0043477f    mov eax,this"
 "	      00434782    mov eax,[eax]"
-"	      00434784    mov ecx,[ebp-2Ch]"
+"	      00434784    mov ecx,this"
 "	      00434787    call dword ptr [eax+40h]"
 );
 // LINE 203:
@@ -1884,7 +1884,7 @@ int32_t RadioStation::DoState() {
 );
 // LINE 208:
 	asm( 
-"	      00434794    mov eax,[ebp-2Ch]"
+"	      00434794    mov eax,this"
 "	      00434797    inc dword ptr [eax+14h]"
 );
 // LINE 209:
@@ -1892,34 +1892,34 @@ int32_t RadioStation::DoState() {
 "	      0043479a    jmp near ptr 0043479Fh"
 "	      0043479f    jmp near ptr 004347A4h"
 "	      004347a4    jmp near ptr 004347A9h"
-"	      004347a9    mov eax,[ebp-2Ch]"
+"	      004347a9    mov eax,this"
 "	      004347ac    mov eax,[eax+0Ch]"
-"	      004347af    mov ecx,[ebp-2Ch]"
+"	      004347af    mov ecx,this"
 "	      004347b2    sub eax,[ecx+8]"
 "	      004347b5    sar eax,2"
-"	      004347b8    mov ecx,[ebp-2Ch]"
+"	      004347b8    mov ecx,this"
 "	      004347bb    cmp eax,[ecx+14h]"
 "	      004347be    jne near ptr 004347D9h"
 );
 // LINE 210:
 	asm( 
-"	      004347c4    mov eax,[ebp-2Ch]"
+"	      004347c4    mov eax,this"
 "	      004347c7    mov eax,[eax]"
-"	      004347c9    mov ecx,[ebp-2Ch]"
+"	      004347c9    mov ecx,this"
 "	      004347cc    call dword ptr [eax+1Ch]"
 );
 // LINE 211:
 	asm( 
-"	      004347cf    mov eax,[ebp-2Ch]"
+"	      004347cf    mov eax,this"
 "	      004347d2    mov dword ptr [eax+14h],0"
 );
 // LINE 213:
 	asm( 
 "	      004347d9    jmp near ptr 004347DEh"
 "	      004347de    jmp near ptr 004347E3h"
-"	      004347e3    mov eax,[ebp-2Ch]"
+"	      004347e3    mov eax,this"
 "	      004347e6    mov eax,[eax+14h]"
-"	      004347e9    mov ecx,[ebp-2Ch]"
+"	      004347e9    mov ecx,this"
 "	      004347ec    mov ecx,[ecx+8]"
 "	      004347ef    cmp dword ptr [ecx+eax*4],0"
 "	      004347f3    jne near ptr 0043482Ah"
@@ -1927,24 +1927,24 @@ int32_t RadioStation::DoState() {
 // LINE 216:
 	asm( 
 "	      004347f9    push 0"
-"	      004347fb    mov eax,[ebp-2Ch]"
+"	      004347fb    mov eax,this"
 "	      004347fe    mov eax,[eax]"
-"	      00434800    mov ecx,[ebp-2Ch]"
+"	      00434800    mov ecx,this"
 "	      00434803    call dword ptr [eax+30h]"
 "	      00434806    test eax,eax"
 "	      00434808    je near ptr 00434825h"
 );
 // LINE 217:
 	asm( 
-"	      0043480e    mov eax,[ebp-2Ch]"
+"	      0043480e    mov eax,this"
 "	      00434811    mov dword ptr [eax+1Ch],0"
 );
 // LINE 218:
 	asm( 
 "	      00434818    push 0"
-"	      0043481a    mov eax,[ebp-2Ch]"
+"	      0043481a    mov eax,this"
 "	      0043481d    mov eax,[eax]"
-"	      0043481f    mov ecx,[ebp-2Ch]"
+"	      0043481f    mov ecx,this"
 "	      00434822    call dword ptr [eax+40h]"
 );
 // LINE 221:
@@ -1952,9 +1952,9 @@ int32_t RadioStation::DoState() {
 "	      00434825    jmp near ptr 0043495Ah"
 "	      0043482a    jmp near ptr 0043482Fh"
 "	      0043482f    jmp near ptr 00434834h"
-"	      00434834    mov eax,[ebp-2Ch]"
+"	      00434834    mov eax,this"
 "	      00434837    mov eax,[eax+14h]"
-"	      0043483a    mov ecx,[ebp-2Ch]"
+"	      0043483a    mov ecx,this"
 "	      0043483d    mov ecx,[ecx+8]"
 "	      00434840    cmp dword ptr [ecx+eax*4],1"
 "	      00434844    jne near ptr 00434891h"
@@ -1968,24 +1968,24 @@ int32_t RadioStation::DoState() {
 "	      00434857    cmp edx,32h"
 "	      0043485a    jge near ptr 0043488Ch"
 "	      00434860    push 1"
-"	      00434862    mov eax,[ebp-2Ch]"
+"	      00434862    mov eax,this"
 "	      00434865    mov eax,[eax]"
-"	      00434867    mov ecx,[ebp-2Ch]"
+"	      00434867    mov ecx,this"
 "	      0043486a    call dword ptr [eax+30h]"
 "	      0043486d    test eax,eax"
 "	      0043486f    je near ptr 0043488Ch"
 );
 // LINE 225:
 	asm( 
-"	      00434875    mov eax,[ebp-2Ch]"
+"	      00434875    mov eax,this"
 "	      00434878    mov dword ptr [eax+1Ch],0"
 );
 // LINE 226:
 	asm( 
 "	      0043487f    push 1"
-"	      00434881    mov eax,[ebp-2Ch]"
+"	      00434881    mov eax,this"
 "	      00434884    mov eax,[eax]"
-"	      00434886    mov ecx,[ebp-2Ch]"
+"	      00434886    mov ecx,this"
 "	      00434889    call dword ptr [eax+40h]"
 );
 // LINE 234:
@@ -1993,9 +1993,9 @@ int32_t RadioStation::DoState() {
 "	      0043488c    jmp near ptr 0043495Ah"
 "	      00434891    jmp near ptr 00434896h"
 "	      00434896    jmp near ptr 0043489Bh"
-"	      0043489b    mov eax,[ebp-2Ch]"
+"	      0043489b    mov eax,this"
 "	      0043489e    mov eax,[eax+14h]"
-"	      004348a1    mov ecx,[ebp-2Ch]"
+"	      004348a1    mov ecx,this"
 "	      004348a4    mov ecx,[ecx+8]"
 "	      004348a7    cmp dword ptr [ecx+eax*4],2"
 "	      004348ab    jne near ptr 004348F8h"
@@ -2009,24 +2009,24 @@ int32_t RadioStation::DoState() {
 "	      004348be    cmp edx,0Ah"
 "	      004348c1    jge near ptr 004348F3h"
 "	      004348c7    push 2"
-"	      004348c9    mov eax,[ebp-2Ch]"
+"	      004348c9    mov eax,this"
 "	      004348cc    mov eax,[eax]"
-"	      004348ce    mov ecx,[ebp-2Ch]"
+"	      004348ce    mov ecx,this"
 "	      004348d1    call dword ptr [eax+30h]"
 "	      004348d4    test eax,eax"
 "	      004348d6    je near ptr 004348F3h"
 );
 // LINE 238:
 	asm( 
-"	      004348dc    mov eax,[ebp-2Ch]"
+"	      004348dc    mov eax,this"
 "	      004348df    mov dword ptr [eax+1Ch],0"
 );
 // LINE 239:
 	asm( 
 "	      004348e6    push 2"
-"	      004348e8    mov eax,[ebp-2Ch]"
+"	      004348e8    mov eax,this"
 "	      004348eb    mov eax,[eax]"
-"	      004348ed    mov ecx,[ebp-2Ch]"
+"	      004348ed    mov ecx,this"
 "	      004348f0    call dword ptr [eax+40h]"
 );
 // LINE 243:
@@ -2034,9 +2034,9 @@ int32_t RadioStation::DoState() {
 "	      004348f3    jmp near ptr 0043495Ah"
 "	      004348f8    jmp near ptr 004348FDh"
 "	      004348fd    jmp near ptr 00434902h"
-"	      00434902    mov eax,[ebp-2Ch]"
+"	      00434902    mov eax,this"
 "	      00434905    mov eax,[eax+14h]"
-"	      00434908    mov ecx,[ebp-2Ch]"
+"	      00434908    mov ecx,this"
 "	      0043490b    mov ecx,[ecx+8]"
 "	      0043490e    cmp dword ptr [ecx+eax*4],3"
 "	      00434912    jne near ptr 0043495Ah"
@@ -2050,24 +2050,24 @@ int32_t RadioStation::DoState() {
 "	      00434925    cmp edx,0Ah"
 "	      00434928    jge near ptr 0043495Ah"
 "	      0043492e    push 3"
-"	      00434930    mov eax,[ebp-2Ch]"
+"	      00434930    mov eax,this"
 "	      00434933    mov eax,[eax]"
-"	      00434935    mov ecx,[ebp-2Ch]"
+"	      00434935    mov ecx,this"
 "	      00434938    call dword ptr [eax+30h]"
 "	      0043493b    test eax,eax"
 "	      0043493d    je near ptr 0043495Ah"
 );
 // LINE 247:
 	asm( 
-"	      00434943    mov eax,[ebp-2Ch]"
+"	      00434943    mov eax,this"
 "	      00434946    mov dword ptr [eax+1Ch],0"
 );
 // LINE 248:
 	asm( 
 "	      0043494d    push 3"
-"	      0043494f    mov eax,[ebp-2Ch]"
+"	      0043494f    mov eax,this"
 "	      00434952    mov eax,[eax]"
-"	      00434954    mov ecx,[ebp-2Ch]"
+"	      00434954    mov ecx,this"
 "	      00434957    call dword ptr [eax+40h]"
 );
 // LINE 252:
@@ -2082,9 +2082,9 @@ int32_t RadioStation::DoState() {
 );
 // LINE 258:
 	asm( 
-"	      0043496e    mov eax,[ebp-2Ch]"
+"	      0043496e    mov eax,this"
 "	      00434971    mov ecx,[eax+34h]"
-"	      00434974    mov eax,[ebp-2Ch]"
+"	      00434974    mov eax,this"
 "	      00434977    mov eax,[eax+34h]"
 "	      0043497a    mov eax,[eax+34h]"
 "	      0043497d    add ecx,34h"
@@ -2094,33 +2094,33 @@ int32_t RadioStation::DoState() {
 );
 // LINE 259:
 	asm( 
-"	      0043498b    mov eax,[ebp-2Ch]"
+"	      0043498b    mov eax,this"
 "	      0043498e    mov dword ptr [eax+1Ch],1"
 );
 // LINE 260:
 	asm( 
-"	      00434995    mov eax,[ebp-2Ch]"
+"	      00434995    mov eax,this"
 "	      00434998    mov dword ptr [eax+28h],0"
-"	      0043499f    mov eax,[ebp-2Ch]"
+"	      0043499f    mov eax,this"
 "	      004349a2    mov dword ptr [eax+24h],0"
 "	      004349a9    jmp near ptr 004349AEh"
 );
 // LINE 261:
 	asm( 
 "	      004349ae    jmp near ptr 004349B3h"
-"	      004349b3    mov eax,[ebp-2Ch]"
+"	      004349b3    mov eax,this"
 "	      004349b6    cmp dword ptr [eax+24h],0"
 "	      004349ba    je near ptr 004349C5h"
 "	      004349c0    jmp near ptr 00434A37h"
-"	      004349c5    mov eax,[ebp-2Ch]"
+"	      004349c5    mov eax,this"
 "	      004349c8    cmp dword ptr [eax+20h],1"
 "	      004349cc    jne near ptr 004349E8h"
 "	      004349d2    call dword ptr ds:[6C3908h]"
-"	      004349d8    mov ecx,[ebp-2Ch]"
+"	      004349d8    mov ecx,this"
 "	      004349db    mov [ecx+24h],eax"
 "	      004349de    jmp near ptr 00434A32h"
 "	      004349e3    jmp near ptr 00434A32h"
-"	      004349e8    mov eax,[ebp-2Ch]"
+"	      004349e8    mov eax,this"
 "	      004349eb    cmp dword ptr [eax+20h],0"
 "	      004349ef    jne near ptr 00434A18h"
 "	      004349f5    lea eax,[ebp-10h]"
@@ -2129,7 +2129,7 @@ int32_t RadioStation::DoState() {
 "	      004349ff    mov eax,[ebp-10h]"
 "	      00434a02    mov [ebp-8],eax"
 "	      00434a05    mov eax,[ebp-8]"
-"	      00434a08    mov ecx,[ebp-2Ch]"
+"	      00434a08    mov ecx,this"
 "	      00434a0b    mov [ecx+24h],eax"
 "	      00434a0e    jmp near ptr 00434A32h"
 "	      00434a13    jmp near ptr 00434A32h"
@@ -2137,7 +2137,7 @@ int32_t RadioStation::DoState() {
 "	      00434a1e    mov ecx,3E8h"
 "	      00434a23    sub edx,edx"
 "	      00434a25    div ecx"
-"	      00434a27    mov ecx,[ebp-2Ch]"
+"	      00434a27    mov ecx,this"
 "	      00434a2a    mov [ecx+24h],eax"
 "	      00434a2d    jmp near ptr 00434A32h"
 "	      00434a32    jmp near ptr 00434A37h"
@@ -2169,16 +2169,16 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434a4f    push ebx"
 "	      00434a50    push esi"
 "	      00434a51    push edi"
-"	      00434a52    mov [ebp-11Ch],ecx"
+"	      00434a52    mov this,ecx"
 );
 // LINE 272:
 	asm( 
-"	      00434a58    lea ecx,[ebp-8]"
+"	      00434a58    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00434a5b    call 00411EE0h"
 );
 // LINE 274:
 	asm( 
-"	      00434a60    cmp dword ptr [ebp+8],0"
+"	      00434a60    cmp radioStationCycleType,0"
 "	      00434a64    jne near ptr 00434B29h"
 );
 // LINE 275:
@@ -2186,20 +2186,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434a6a    push 0"
 "	      00434a6c    lea eax,[ebp-0Ch]"
 "	      00434a6f    push eax"
-"	      00434a70    mov ecx,[ebp-11Ch]"
+"	      00434a70    mov ecx,this"
 "	      00434a76    add ecx,58h"
 "	      00434a79    call 0043A2D0h"
 );
 // LINE 276:
 	asm( 
-"	      00434a7e    mov eax,[ebp-11Ch]"
+"	      00434a7e    mov eax,this"
 "	      00434a84    mov eax,[eax+50h]"
 "	      00434a87    mov [ebp-110h],eax"
 "	      00434a8d    mov eax,[ebp-110h]"
 "	      00434a93    mov [ebp-10h],eax"
 "	      00434a96    jmp near ptr 00434A9Bh"
 "	      00434a9b    jmp near ptr 00434AA0h"
-"	      00434aa0    mov eax,[ebp-11Ch]"
+"	      00434aa0    mov eax,this"
 "	      00434aa6    mov ecx,[ebp-10h]"
 "	      00434aa9    cmp [eax+58h],ecx"
 "	      00434aac    jne near ptr 00434AB7h"
@@ -2213,21 +2213,21 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	asm( 
 "	      00434ace    lea eax,[ebp-14h]"
 "	      00434ad1    push eax"
-"	      00434ad2    mov ecx,[ebp-11Ch]"
+"	      00434ad2    mov ecx,this"
 "	      00434ad8    add ecx,50h"
 "	      00434adb    call 0043A080h"
 "	      00434ae0    mov eax,[eax]"
-"	      00434ae2    mov ecx,[ebp-11Ch]"
+"	      00434ae2    mov ecx,this"
 "	      00434ae8    mov [ecx+58h],eax"
 );
 // LINE 278:
 	asm( 
 "	      00434aeb    jmp near ptr 00434AF0h"
-"	      00434af0    mov eax,[ebp-11Ch]"
+"	      00434af0    mov eax,this"
 "	      00434af6    mov eax,[eax+58h]"
 "	      00434af9    add eax,8"
 "	      00434afc    push eax"
-"	      00434afd    mov eax,[ebp-11Ch]"
+"	      00434afd    mov eax,this"
 "	      00434b03    add eax,48h"
 "	      00434b06    push eax"
 "	      00434b07    lea eax,[ebp-1Ch]"
@@ -2235,7 +2235,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434b0b    call 0043BDF0h"
 "	      00434b10    add esp,0Ch"
 "	      00434b13    push eax"
-"	      00434b14    lea ecx,[ebp-8]"
+"	      00434b14    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00434b17    call 00412670h"
 "	      00434b1c    lea ecx,[ebp-1Ch]"
 "	      00434b1f    call 00412130h"
@@ -2243,7 +2243,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 281:
 	asm( 
 "	      00434b24    jmp near ptr 004352FBh"
-"	      00434b29    cmp dword ptr [ebp+8],1"
+"	      00434b29    cmp radioStationCycleType,1"
 "	      00434b2d    jne near ptr 00434D3Eh"
 );
 // LINE 282:
@@ -2251,20 +2251,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434b33    push 0"
 "	      00434b35    lea eax,[ebp-20h]"
 "	      00434b38    push eax"
-"	      00434b39    mov ecx,[ebp-11Ch]"
+"	      00434b39    mov ecx,this"
 "	      00434b3f    add ecx,6Ch"
 "	      00434b42    call 0043A2D0h"
 );
 // LINE 283:
 	asm( 
-"	      00434b47    mov eax,[ebp-11Ch]"
+"	      00434b47    mov eax,this"
 "	      00434b4d    mov eax,[eax+64h]"
 "	      00434b50    mov [ebp-0D8h],eax"
 "	      00434b56    mov eax,[ebp-0D8h]"
 "	      00434b5c    mov [ebp-24h],eax"
 "	      00434b5f    jmp near ptr 00434B64h"
 "	      00434b64    jmp near ptr 00434B69h"
-"	      00434b69    mov eax,[ebp-11Ch]"
+"	      00434b69    mov eax,this"
 "	      00434b6f    mov ecx,[ebp-24h]"
 "	      00434b72    cmp [eax+6Ch],ecx"
 "	      00434b75    jne near ptr 00434B80h"
@@ -2276,7 +2276,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 284:
 	asm( 
-"	      00434b97    mov eax,[ebp-11Ch]"
+"	      00434b97    mov eax,this"
 "	      00434b9d    mov eax,[eax+64h]"
 "	      00434ba0    mov eax,[eax]"
 "	      00434ba2    mov [ebp-114h],eax"
@@ -2285,13 +2285,13 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434bb1    jmp near ptr 00434BB6h"
 "	      00434bb6    jmp near ptr 00434BBBh"
 "	      00434bbb    mov eax,[ebp-28h]"
-"	      00434bbe    mov ecx,[ebp-11Ch]"
+"	      00434bbe    mov ecx,this"
 "	      00434bc4    mov [ecx+6Ch],eax"
 );
 // LINE 285:
 	asm( 
 "	      00434bc7    jmp near ptr 00434BCCh"
-"	      00434bcc    mov eax,[ebp-11Ch]"
+"	      00434bcc    mov eax,this"
 "	      00434bd2    mov eax,[eax+6Ch]"
 "	      00434bd5    add eax,8"
 "	      00434bd8    mov [ebp-108h],eax"
@@ -2301,11 +2301,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434bee    mov eax,[eax+4]"
 "	      00434bf1    mov eax,[eax+4]"
 "	      00434bf4    push eax"
-"	      00434bf5    mov eax,[ebp-11Ch]"
+"	      00434bf5    mov eax,this"
 "	      00434bfb    mov eax,[eax+60h]"
 "	      00434bfe    mov eax,[eax+4]"
 "	      00434c01    push eax"
-"	      00434c02    mov ecx,[ebp-11Ch]"
+"	      00434c02    mov ecx,this"
 "	      00434c08    add ecx,5Ch"
 "	      00434c0b    call 00417C00h"
 "	      00434c10    push eax"
@@ -2326,7 +2326,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434c55    mov ecx,[ebp-108h]"
 "	      00434c5b    call 00417C00h"
 "	      00434c60    mov [ebp-100h],eax"
-"	      00434c66    mov eax,[ebp-11Ch]"
+"	      00434c66    mov eax,this"
 "	      00434c6c    mov eax,[eax+60h]"
 "	      00434c6f    mov eax,[eax+4]"
 "	      00434c72    mov ecx,[ebp-0F0h]"
@@ -2362,7 +2362,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434ced    jmp near ptr 00434CF2h"
 "	      00434cf2    lea eax,[ebp-30h]"
 "	      00434cf5    push eax"
-"	      00434cf6    lea ecx,[ebp-8]"
+"	      00434cf6    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00434cf9    call 00412670h"
 "	      00434cfe    lea ecx,[ebp-30h]"
 "	      00434d01    call 00412080h"
@@ -2381,18 +2381,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 288:
 	asm( 
 "	      00434d39    jmp near ptr 004352FBh"
-"	      00434d3e    cmp dword ptr [ebp+8],2"
+"	      00434d3e    cmp radioStationCycleType,2"
 "	      00434d42    jne near ptr 00435002h"
 );
 // LINE 289:
 	asm( 
-"	      00434d48    mov eax,[ebp-11Ch]"
+"	      00434d48    mov eax,this"
 "	      00434d4e    mov eax,[eax+80h]"
 "	      00434d54    mov [ebp-0E8h],eax"
-"	      00434d5a    mov eax,[ebp-11Ch]"
+"	      00434d5a    mov eax,this"
 "	      00434d60    mov eax,[eax+80h]"
 "	      00434d66    mov eax,[eax]"
-"	      00434d68    mov ecx,[ebp-11Ch]"
+"	      00434d68    mov ecx,this"
 "	      00434d6e    mov [ecx+80h],eax"
 "	      00434d74    jmp near ptr 00434D79h"
 "	      00434d79    mov eax,[ebp-0E8h]"
@@ -2401,14 +2401,14 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 290:
 	asm( 
-"	      00434d87    mov eax,[ebp-11Ch]"
+"	      00434d87    mov eax,this"
 "	      00434d8d    mov eax,[eax+78h]"
 "	      00434d90    mov [ebp-0A0h],eax"
 "	      00434d96    mov eax,[ebp-0A0h]"
 "	      00434d9c    mov [ebp-38h],eax"
 "	      00434d9f    jmp near ptr 00434DA4h"
 "	      00434da4    jmp near ptr 00434DA9h"
-"	      00434da9    mov eax,[ebp-11Ch]"
+"	      00434da9    mov eax,this"
 "	      00434daf    mov ecx,[ebp-38h]"
 "	      00434db2    cmp [eax+80h],ecx"
 "	      00434db8    jne near ptr 00434DC3h"
@@ -2420,7 +2420,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 291:
 	asm( 
-"	      00434dda    mov eax,[ebp-11Ch]"
+"	      00434dda    mov eax,this"
 "	      00434de0    mov eax,[eax+78h]"
 "	      00434de3    mov eax,[eax]"
 "	      00434de5    mov [ebp-0DCh],eax"
@@ -2429,13 +2429,13 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434df4    jmp near ptr 00434DF9h"
 "	      00434df9    jmp near ptr 00434DFEh"
 "	      00434dfe    mov eax,[ebp-3Ch]"
-"	      00434e01    mov ecx,[ebp-11Ch]"
+"	      00434e01    mov ecx,this"
 "	      00434e07    mov [ecx+80h],eax"
 );
 // LINE 292:
 	asm( 
 "	      00434e0d    jmp near ptr 00434E12h"
-"	      00434e12    mov eax,[ebp-11Ch]"
+"	      00434e12    mov eax,this"
 "	      00434e18    mov eax,[eax+80h]"
 "	      00434e1e    add eax,8"
 "	      00434e21    mov [ebp-0D0h],eax"
@@ -2445,11 +2445,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434e37    mov eax,[eax+4]"
 "	      00434e3a    mov eax,[eax+4]"
 "	      00434e3d    push eax"
-"	      00434e3e    mov eax,[ebp-11Ch]"
+"	      00434e3e    mov eax,this"
 "	      00434e44    mov eax,[eax+74h]"
 "	      00434e47    mov eax,[eax+4]"
 "	      00434e4a    push eax"
-"	      00434e4b    mov ecx,[ebp-11Ch]"
+"	      00434e4b    mov ecx,this"
 "	      00434e51    add ecx,70h"
 "	      00434e54    call 00417C00h"
 "	      00434e59    push eax"
@@ -2470,7 +2470,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434e9e    mov ecx,[ebp-0D0h]"
 "	      00434ea4    call 00417C00h"
 "	      00434ea9    mov [ebp-0C8h],eax"
-"	      00434eaf    mov eax,[ebp-11Ch]"
+"	      00434eaf    mov eax,this"
 "	      00434eb5    mov eax,[eax+74h]"
 "	      00434eb8    mov eax,[eax+4]"
 "	      00434ebb    mov ecx,[ebp-0B8h]"
@@ -2505,18 +2505,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434f31    call 00412130h"
 "	      00434f36    jmp near ptr 00434F3Bh"
 "	      00434f3b    lea eax,[ebp-44h]"
-"	      00434f3e    lea ecx,[ebp-8]"
+"	      00434f3e    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00434f41    cmp eax,ecx"
 "	      00434f43    je near ptr 00434FBDh"
-"	      00434f49    lea ecx,[ebp-8]"
+"	      00434f49    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00434f4c    call 00412080h"
 "	      00434f51    jmp near ptr 00434F56h"
 "	      00434f56    mov eax,[ebp-40h]"
 "	      00434f59    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00434f5d    je near ptr 00434F74h"
 "	      00434f63    mov eax,[ebp-40h]"
-"	      00434f66    mov [ebp-4],eax"
-"	      00434f69    mov eax,[ebp-4]"
+"	      00434f66    mov sFullSelectionPath.reference,eax"
+"	      00434f69    mov eax,sFullSelectionPath.reference"
 "	      00434f6c    inc dword ptr [eax+0Ch]"
 "	      00434f6f    jmp near ptr 00434FBDh"
 "	      00434f74    push 10h"
@@ -2534,9 +2534,9 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00434fa2    push eax"
 "	      00434fa3    mov ecx,[ebp-0ECh]"
 "	      00434fa9    call 0041E200h"
-"	      00434fae    mov [ebp-4],eax"
+"	      00434fae    mov sFullSelectionPath.reference,eax"
 "	      00434fb1    jmp near ptr 00434FBDh"
-"	      00434fb6    mov dword ptr [ebp-4],0"
+"	      00434fb6    mov sFullSelectionPath.reference,0"
 "	      00434fbd    jmp near ptr 00434FC2h"
 "	      00434fc2    lea ecx,[ebp-44h]"
 "	      00434fc5    call 00412080h"
@@ -2555,18 +2555,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 295:
 	asm( 
 "	      00434ffd    jmp near ptr 004352FBh"
-"	      00435002    cmp dword ptr [ebp+8],3"
+"	      00435002    cmp radioStationCycleType,3"
 "	      00435006    jne near ptr 004352BDh"
 );
 // LINE 296:
 	asm( 
-"	      0043500c    mov eax,[ebp-11Ch]"
+"	      0043500c    mov eax,this"
 "	      00435012    mov eax,[eax+94h]"
 "	      00435018    mov [ebp-0B0h],eax"
-"	      0043501e    mov eax,[ebp-11Ch]"
+"	      0043501e    mov eax,this"
 "	      00435024    mov eax,[eax+94h]"
 "	      0043502a    mov eax,[eax]"
-"	      0043502c    mov ecx,[ebp-11Ch]"
+"	      0043502c    mov ecx,this"
 "	      00435032    mov [ecx+94h],eax"
 "	      00435038    jmp near ptr 0043503Dh"
 "	      0043503d    mov eax,[ebp-0B0h]"
@@ -2575,14 +2575,14 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 297:
 	asm( 
-"	      0043504b    mov eax,[ebp-11Ch]"
+"	      0043504b    mov eax,this"
 "	      00435051    mov eax,[eax+8Ch]"
 "	      00435057    mov [ebp-64h],eax"
 "	      0043505a    mov eax,[ebp-64h]"
 "	      0043505d    mov [ebp-4Ch],eax"
 "	      00435060    jmp near ptr 00435065h"
 "	      00435065    jmp near ptr 0043506Ah"
-"	      0043506a    mov eax,[ebp-11Ch]"
+"	      0043506a    mov eax,this"
 "	      00435070    mov ecx,[ebp-4Ch]"
 "	      00435073    cmp [eax+94h],ecx"
 "	      00435079    jne near ptr 00435084h"
@@ -2594,7 +2594,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 298:
 	asm( 
-"	      0043509b    mov eax,[ebp-11Ch]"
+"	      0043509b    mov eax,this"
 "	      004350a1    mov eax,[eax+8Ch]"
 "	      004350a7    mov eax,[eax]"
 "	      004350a9    mov [ebp-0A4h],eax"
@@ -2603,13 +2603,13 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      004350b8    jmp near ptr 004350BDh"
 "	      004350bd    jmp near ptr 004350C2h"
 "	      004350c2    mov eax,[ebp-50h]"
-"	      004350c5    mov ecx,[ebp-11Ch]"
+"	      004350c5    mov ecx,this"
 "	      004350cb    mov [ecx+94h],eax"
 );
 // LINE 299:
 	asm( 
 "	      004350d1    jmp near ptr 004350D6h"
-"	      004350d6    mov eax,[ebp-11Ch]"
+"	      004350d6    mov eax,this"
 "	      004350dc    mov eax,[eax+94h]"
 "	      004350e2    add eax,8"
 "	      004350e5    mov [ebp-98h],eax"
@@ -2619,11 +2619,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      004350fb    mov eax,[eax+4]"
 "	      004350fe    mov eax,[eax+4]"
 "	      00435101    push eax"
-"	      00435102    mov eax,[ebp-11Ch]"
+"	      00435102    mov eax,this"
 "	      00435108    mov eax,[eax+88h]"
 "	      0043510e    mov eax,[eax+4]"
 "	      00435111    push eax"
-"	      00435112    mov ecx,[ebp-11Ch]"
+"	      00435112    mov ecx,this"
 "	      00435118    add ecx,84h"
 "	      0043511e    call 00417C00h"
 "	      00435123    push eax"
@@ -2644,7 +2644,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00435168    mov ecx,[ebp-98h]"
 "	      0043516e    call 00417C00h"
 "	      00435173    mov [ebp-90h],eax"
-"	      00435179    mov eax,[ebp-11Ch]"
+"	      00435179    mov eax,this"
 "	      0043517f    mov eax,[eax+88h]"
 "	      00435185    mov eax,[eax+4]"
 "	      00435188    mov ecx,[ebp-80h]"
@@ -2679,18 +2679,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      004351f8    call 00412130h"
 "	      004351fd    jmp near ptr 00435202h"
 "	      00435202    lea eax,[ebp-58h]"
-"	      00435205    lea ecx,[ebp-8]"
+"	      00435205    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00435208    cmp eax,ecx"
 "	      0043520a    je near ptr 00435284h"
-"	      00435210    lea ecx,[ebp-8]"
+"	      00435210    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      00435213    call 00412080h"
 "	      00435218    jmp near ptr 0043521Dh"
 "	      0043521d    mov eax,[ebp-54h]"
 "	      00435220    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00435224    je near ptr 0043523Bh"
 "	      0043522a    mov eax,[ebp-54h]"
-"	      0043522d    mov [ebp-4],eax"
-"	      00435230    mov eax,[ebp-4]"
+"	      0043522d    mov sFullSelectionPath.reference,eax"
+"	      00435230    mov eax,sFullSelectionPath.reference"
 "	      00435233    inc dword ptr [eax+0Ch]"
 "	      00435236    jmp near ptr 00435284h"
 "	      0043523b    push 10h"
@@ -2708,9 +2708,9 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 "	      00435269    push eax"
 "	      0043526a    mov ecx,[ebp-0B4h]"
 "	      00435270    call 0041E200h"
-"	      00435275    mov [ebp-4],eax"
+"	      00435275    mov sFullSelectionPath.reference,eax"
 "	      00435278    jmp near ptr 00435284h"
-"	      0043527d    mov dword ptr [ebp-4],0"
+"	      0043527d    mov sFullSelectionPath.reference,0"
 "	      00435284    jmp near ptr 00435289h"
 "	      00435289    lea ecx,[ebp-58h]"
 "	      0043528c    call 00412080h"
@@ -2733,11 +2733,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 302:
 	asm( 
 "	      004352bd    mov dword ptr [ebp-5Ch],0"
-"	      004352c4    lea ecx,[ebp-8]"
+"	      004352c4    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      004352c7    call 00412080h"
-"	      004352cc    cmp dword ptr [ebp-8],0"
+"	      004352cc    cmp sFullSelectionPath.c_str_ptr,0"
 "	      004352d0    je near ptr 004352EEh"
-"	      004352d6    mov eax,[ebp-8]"
+"	      004352d6    mov eax,sFullSelectionPath.c_str_ptr"
 "	      004352d9    mov [ebp-70h],eax"
 "	      004352dc    mov eax,[ebp-70h]"
 "	      004352df    mov [ebp-74h],eax"
@@ -2751,9 +2751,9 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 304:
 	asm( 
-"	      004352fb    mov eax,[ebp-11Ch]"
+"	      004352fb    mov eax,this"
 "	      00435301    mov ecx,[eax+34h]"
-"	      00435304    mov eax,[ebp-11Ch]"
+"	      00435304    mov eax,this"
 "	      0043530a    mov eax,[eax+34h]"
 "	      0043530d    mov eax,[eax+34h]"
 "	      00435310    add ecx,34h"
@@ -2763,9 +2763,9 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 305:
 	asm( 
-"	      0043531e    mov eax,[ebp-11Ch]"
+"	      0043531e    mov eax,this"
 "	      00435324    mov ecx,[eax+34h]"
-"	      00435327    mov eax,[ebp-11Ch]"
+"	      00435327    mov eax,this"
 "	      0043532d    mov eax,[eax+34h]"
 "	      00435330    mov eax,[eax+34h]"
 "	      00435333    add ecx,34h"
@@ -2774,11 +2774,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 306:
 	asm( 
 "	      00435339    push 1"
-"	      0043533b    lea eax,[ebp-8]"
+"	      0043533b    lea eax,sFullSelectionPath.c_str_ptr"
 "	      0043533e    push eax"
-"	      0043533f    mov eax,[ebp-11Ch]"
+"	      0043533f    mov eax,this"
 "	      00435345    mov ecx,[eax+34h]"
-"	      00435348    mov eax,[ebp-11Ch]"
+"	      00435348    mov eax,this"
 "	      0043534e    mov eax,[eax+34h]"
 "	      00435351    mov eax,[eax+34h]"
 "	      00435354    add ecx,34h"
@@ -2788,9 +2788,9 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	asm( 
 "	      0043535a    push 1"
 "	      0043535c    push 0"
-"	      0043535e    mov eax,[ebp-11Ch]"
+"	      0043535e    mov eax,this"
 "	      00435364    mov ecx,[eax+34h]"
-"	      00435367    mov eax,[ebp-11Ch]"
+"	      00435367    mov eax,this"
 "	      0043536d    mov eax,[eax+34h]"
 "	      00435370    mov eax,[eax+34h]"
 "	      00435373    add ecx,34h"
@@ -2798,12 +2798,12 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 // LINE 308:
 	asm( 
-"	      00435379    mov eax,[ebp-11Ch]"
+"	      00435379    mov eax,this"
 "	      0043537f    mov eax,[eax+34h]"
 "	      00435382    mov eax,[eax+10h]"
 "	      00435385    push eax"
-"	      00435386    mov eax,[ebp-11Ch]"
-"	      0043538c    mov ecx,[ebp-11Ch]"
+"	      00435386    mov eax,this"
+"	      0043538c    mov ecx,this"
 "	      00435392    mov ecx,[ecx+34h]"
 "	      00435395    mov edx,[ecx]"
 "	      00435397    mov ecx,[eax+34h]"
@@ -2812,11 +2812,11 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 // LINE 309:
 	asm( 
 "	      0043539d    mov dword ptr [ebp-60h],1"
-"	      004353a4    lea ecx,[ebp-8]"
+"	      004353a4    lea ecx,sFullSelectionPath.c_str_ptr"
 "	      004353a7    call 00412080h"
-"	      004353ac    cmp dword ptr [ebp-8],0"
+"	      004353ac    cmp sFullSelectionPath.c_str_ptr,0"
 "	      004353b0    je near ptr 004353CEh"
-"	      004353b6    mov eax,[ebp-8]"
+"	      004353b6    mov eax,sFullSelectionPath.c_str_ptr"
 "	      004353b9    mov [ebp-78h],eax"
 "	      004353bc    mov eax,[ebp-78h]"
 "	      004353bf    mov [ebp-7Ch],eax"
@@ -2850,7 +2850,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      004353eb    push ebx"
 "	      004353ec    push esi"
 "	      004353ed    push edi"
-"	      004353ee    mov [ebp-0F8h],ecx"
+"	      004353ee    mov this,ecx"
 );
 // LINE 318:
 	asm( 
@@ -2882,7 +2882,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      0043545b    push 0"
 "	      0043545d    lea eax,[ebp-28h]"
 "	      00435460    push eax"
-"	      00435461    lea ecx,[ebp-20h]"
+"	      00435461    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00435464    call 004832A3h"
 "	      00435469    lea ecx,[ebp-28h]"
 "	      0043546c    call 00412080h"
@@ -2920,7 +2920,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      004354f9    push 0"
 "	      004354fb    lea eax,[ebp-30h]"
 "	      004354fe    push eax"
-"	      004354ff    lea ecx,[ebp-20h]"
+"	      004354ff    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00435502    call 00485EBEh"
 "	      00435507    lea ecx,[ebp-30h]"
 "	      0043550a    call 00412080h"
@@ -2938,14 +2938,14 @@ void RadioStation::LoadAllPlaylists() {
 );
 // LINE 322:
 	asm( 
-"	      00435542    mov eax,[ebp-0F8h]"
+"	      00435542    mov eax,this"
 "	      00435548    mov eax,[eax+50h]"
 "	      0043554b    mov [ebp-6Ch],eax"
 "	      0043554e    mov eax,[ebp-6Ch]"
 "	      00435551    mov [ebp-34h],eax"
 "	      00435554    jmp near ptr 00435559h"
 "	      00435559    jmp near ptr 0043555Eh"
-"	      0043555e    mov eax,[ebp-0F8h]"
+"	      0043555e    mov eax,this"
 "	      00435564    mov eax,[eax+50h]"
 "	      00435567    mov eax,[eax]"
 "	      00435569    mov [ebp-70h],eax"
@@ -2981,7 +2981,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      004355f7    jmp near ptr 004355FCh"
 "	      004355fc    mov eax,[ebp-78h]"
 "	      004355ff    push eax"
-"	      00435600    mov ecx,[ebp-0F8h]"
+"	      00435600    mov ecx,this"
 "	      00435606    add ecx,50h"
 "	      00435609    call 0043A310h"
 "	      0043560e    jmp near ptr 0043558Eh"
@@ -2990,32 +2990,32 @@ void RadioStation::LoadAllPlaylists() {
 // LINE 323:
 	asm( 
 "	      00435618    push 0"
-"	      0043561a    mov eax,[ebp-0F8h]"
+"	      0043561a    mov eax,this"
 "	      00435620    add eax,48h"
 "	      00435623    push eax"
-"	      00435624    lea ecx,[ebp-20h]"
+"	      00435624    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00435627    call 00485B36h"
 );
 // LINE 324:
 	asm( 
 "	      0043562c    push 8"
-"	      0043562e    mov eax,[ebp-0F8h]"
+"	      0043562e    mov eax,this"
 "	      00435634    add eax,50h"
 "	      00435637    push eax"
-"	      00435638    lea ecx,[ebp-20h]"
+"	      00435638    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043563b    call 0048494Dh"
 "	      00435640    jmp near ptr 00435645h"
 );
 // LINE 326:
 	asm( 
-"	      00435645    mov eax,[ebp-0F8h]"
+"	      00435645    mov eax,this"
 "	      0043564b    mov eax,[eax+64h]"
 "	      0043564e    mov [ebp-64h],eax"
 "	      00435651    mov eax,[ebp-64h]"
 "	      00435654    mov [ebp-3Ch],eax"
 "	      00435657    jmp near ptr 0043565Ch"
 "	      0043565c    jmp near ptr 00435661h"
-"	      00435661    mov eax,[ebp-0F8h]"
+"	      00435661    mov eax,this"
 "	      00435667    mov eax,[eax+64h]"
 "	      0043566a    mov eax,[eax]"
 "	      0043566c    mov [ebp-68h],eax"
@@ -3051,7 +3051,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      00435706    jmp near ptr 0043570Bh"
 "	      0043570b    mov eax,[ebp-90h]"
 "	      00435711    push eax"
-"	      00435712    mov ecx,[ebp-0F8h]"
+"	      00435712    mov ecx,this"
 "	      00435718    add ecx,64h"
 "	      0043571b    call 0043A310h"
 "	      00435720    jmp near ptr 00435691h"
@@ -3060,32 +3060,32 @@ void RadioStation::LoadAllPlaylists() {
 // LINE 327:
 	asm( 
 "	      0043572a    push 0"
-"	      0043572c    mov eax,[ebp-0F8h]"
+"	      0043572c    mov eax,this"
 "	      00435732    add eax,5Ch"
 "	      00435735    push eax"
-"	      00435736    lea ecx,[ebp-20h]"
+"	      00435736    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00435739    call 00485B36h"
 );
 // LINE 328:
 	asm( 
 "	      0043573e    push 8"
-"	      00435740    mov eax,[ebp-0F8h]"
+"	      00435740    mov eax,this"
 "	      00435746    add eax,64h"
 "	      00435749    push eax"
-"	      0043574a    lea ecx,[ebp-20h]"
+"	      0043574a    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043574d    call 0048494Dh"
 "	      00435752    jmp near ptr 00435757h"
 );
 // LINE 330:
 	asm( 
-"	      00435757    mov eax,[ebp-0F8h]"
+"	      00435757    mov eax,this"
 "	      0043575d    mov eax,[eax+78h]"
 "	      00435760    mov [ebp-5Ch],eax"
 "	      00435763    mov eax,[ebp-5Ch]"
 "	      00435766    mov [ebp-44h],eax"
 "	      00435769    jmp near ptr 0043576Eh"
 "	      0043576e    jmp near ptr 00435773h"
-"	      00435773    mov eax,[ebp-0F8h]"
+"	      00435773    mov eax,this"
 "	      00435779    mov eax,[eax+78h]"
 "	      0043577c    mov eax,[eax]"
 "	      0043577e    mov [ebp-60h],eax"
@@ -3121,7 +3121,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      00435818    jmp near ptr 0043581Dh"
 "	      0043581d    mov eax,[ebp-0A8h]"
 "	      00435823    push eax"
-"	      00435824    mov ecx,[ebp-0F8h]"
+"	      00435824    mov ecx,this"
 "	      0043582a    add ecx,78h"
 "	      0043582d    call 0043A310h"
 "	      00435832    jmp near ptr 004357A3h"
@@ -3130,32 +3130,32 @@ void RadioStation::LoadAllPlaylists() {
 // LINE 331:
 	asm( 
 "	      0043583c    push 0"
-"	      0043583e    mov eax,[ebp-0F8h]"
+"	      0043583e    mov eax,this"
 "	      00435844    add eax,70h"
 "	      00435847    push eax"
-"	      00435848    lea ecx,[ebp-20h]"
+"	      00435848    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043584b    call 00485B36h"
 );
 // LINE 332:
 	asm( 
 "	      00435850    push 8"
-"	      00435852    mov eax,[ebp-0F8h]"
+"	      00435852    mov eax,this"
 "	      00435858    add eax,78h"
 "	      0043585b    push eax"
-"	      0043585c    lea ecx,[ebp-20h]"
+"	      0043585c    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043585f    call 0048494Dh"
 "	      00435864    jmp near ptr 00435869h"
 );
 // LINE 334:
 	asm( 
-"	      00435869    mov eax,[ebp-0F8h]"
+"	      00435869    mov eax,this"
 "	      0043586f    mov eax,[eax+8Ch]"
 "	      00435875    mov [ebp-54h],eax"
 "	      00435878    mov eax,[ebp-54h]"
 "	      0043587b    mov [ebp-4Ch],eax"
 "	      0043587e    jmp near ptr 00435883h"
 "	      00435883    jmp near ptr 00435888h"
-"	      00435888    mov eax,[ebp-0F8h]"
+"	      00435888    mov eax,this"
 "	      0043588e    mov eax,[eax+8Ch]"
 "	      00435894    mov eax,[eax]"
 "	      00435896    mov [ebp-58h],eax"
@@ -3191,7 +3191,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      00435930    jmp near ptr 00435935h"
 "	      00435935    mov eax,[ebp-0C0h]"
 "	      0043593b    push eax"
-"	      0043593c    mov ecx,[ebp-0F8h]"
+"	      0043593c    mov ecx,this"
 "	      00435942    add ecx,8Ch"
 "	      00435948    call 0043A310h"
 "	      0043594d    jmp near ptr 004358BBh"
@@ -3200,19 +3200,19 @@ void RadioStation::LoadAllPlaylists() {
 // LINE 335:
 	asm( 
 "	      00435957    push 0"
-"	      00435959    mov eax,[ebp-0F8h]"
+"	      00435959    mov eax,this"
 "	      0043595f    add eax,84h"
 "	      00435964    push eax"
-"	      00435965    lea ecx,[ebp-20h]"
+"	      00435965    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00435968    call 00485B36h"
 );
 // LINE 336:
 	asm( 
 "	      0043596d    push 8"
-"	      0043596f    mov eax,[ebp-0F8h]"
+"	      0043596f    mov eax,this"
 "	      00435975    add eax,8Ch"
 "	      0043597a    push eax"
-"	      0043597b    lea ecx,[ebp-20h]"
+"	      0043597b    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043597e    call 0048494Dh"
 "	      00435983    jmp near ptr 00435988h"
 );
@@ -3234,7 +3234,7 @@ void RadioStation::LoadAllPlaylists() {
 "	      004359c3    jmp near ptr 004359C8h"
 "	      004359c8    lea ecx,[ebp-18h]"
 "	      004359cb    call 00412130h"
-"	      004359d0    lea ecx,[ebp-20h]"
+"	      004359d0    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004359d3    call 00428C70h"
 "	      004359d8    jmp near ptr 004359DDh"
 "	      004359dd    pop edi"
@@ -3258,7 +3258,7 @@ void RadioStation::ShufflePlaylist() {
 "	      004359eb    push ebx"
 "	      004359ec    push esi"
 "	      004359ed    push edi"
-"	      004359ee    mov [ebp-160h],ecx"
+"	      004359ee    mov this,ecx"
 );
 // LINE 350:
 	asm( 
@@ -3280,10 +3280,10 @@ void RadioStation::ShufflePlaylist() {
 "	      00435a42    mov dword ptr [eax+0Ch],1"
 "	      00435a49    jmp near ptr 00435A4Eh"
 "	      00435a4e    mov eax,[ebp-114h]"
-"	      00435a54    mov [ebp-4],eax"
+"	      00435a54    mov sCurrentLastItem.reference,eax"
 "	      00435a57    jmp near ptr 00435A63h"
-"	      00435a5c    mov dword ptr [ebp-4],0"
-"	      00435a63    mov dword ptr [ebp-8],0"
+"	      00435a5c    mov sCurrentLastItem.reference,0"
+"	      00435a63    mov sCurrentLastItem.c_str_ptr,0"
 "	      00435a6a    jmp near ptr 00435A6Fh"
 );
 // LINE 351:
@@ -3306,22 +3306,22 @@ void RadioStation::ShufflePlaylist() {
 "	      00435abd    mov dword ptr [eax+0Ch],1"
 "	      00435ac4    jmp near ptr 00435AC9h"
 "	      00435ac9    mov eax,[ebp-118h]"
-"	      00435acf    mov [ebp-0Ch],eax"
+"	      00435acf    mov sTempItem.reference,eax"
 "	      00435ad2    jmp near ptr 00435ADEh"
-"	      00435ad7    mov dword ptr [ebp-0Ch],0"
-"	      00435ade    mov dword ptr [ebp-10h],0"
+"	      00435ad7    mov sTempItem.reference,0"
+"	      00435ade    mov sTempItem.c_str_ptr,0"
 "	      00435ae5    jmp near ptr 00435AEAh"
 );
 // LINE 357:
 	asm( 
 "	      00435aea    jmp near ptr 00435AEFh"
-"	      00435aef    mov eax,[ebp-160h]"
+"	      00435aef    mov eax,this"
 "	      00435af5    cmp dword ptr [eax+54h],0"
 "	      00435af9    je near ptr 00435FBDh"
 );
 // LINE 358:
 	asm( 
-"	      00435aff    mov eax,[ebp-160h]"
+"	      00435aff    mov eax,this"
 "	      00435b05    mov eax,[eax+50h]"
 "	      00435b08    mov [ebp-100h],eax"
 "	      00435b0e    mov eax,[ebp-100h]"
@@ -3337,10 +3337,10 @@ void RadioStation::ShufflePlaylist() {
 "	      00435b42    mov eax,[ebp-0FCh]"
 "	      00435b48    add eax,8"
 "	      00435b4b    mov [ebp-130h],eax"
-"	      00435b51    lea eax,[ebp-8]"
+"	      00435b51    lea eax,sCurrentLastItem.c_str_ptr"
 "	      00435b54    cmp [ebp-130h],eax"
 "	      00435b5a    je near ptr 00435BE9h"
-"	      00435b60    lea ecx,[ebp-8]"
+"	      00435b60    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00435b63    call 00412080h"
 "	      00435b68    jmp near ptr 00435B6Dh"
 "	      00435b6d    mov eax,[ebp-130h]"
@@ -3349,8 +3349,8 @@ void RadioStation::ShufflePlaylist() {
 "	      00435b7a    je near ptr 00435B97h"
 "	      00435b80    mov eax,[ebp-130h]"
 "	      00435b86    mov eax,[eax+4]"
-"	      00435b89    mov [ebp-4],eax"
-"	      00435b8c    mov eax,[ebp-4]"
+"	      00435b89    mov sCurrentLastItem.reference,eax"
+"	      00435b8c    mov eax,sCurrentLastItem.reference"
 "	      00435b8f    inc dword ptr [eax+0Ch]"
 "	      00435b92    jmp near ptr 00435BE9h"
 "	      00435b97    push 10h"
@@ -3369,26 +3369,26 @@ void RadioStation::ShufflePlaylist() {
 "	      00435bce    push eax"
 "	      00435bcf    mov ecx,[ebp-12Ch]"
 "	      00435bd5    call 0041E200h"
-"	      00435bda    mov [ebp-4],eax"
+"	      00435bda    mov sCurrentLastItem.reference,eax"
 "	      00435bdd    jmp near ptr 00435BE9h"
-"	      00435be2    mov dword ptr [ebp-4],0"
+"	      00435be2    mov sCurrentLastItem.reference,0"
 "	      00435be9    jmp near ptr 00435BEEh"
 );
 // LINE 359:
 	asm( 
-"	      00435bee    mov eax,[ebp-160h]"
+"	      00435bee    mov eax,this"
 "	      00435bf4    add eax,50h"
 "	      00435bf7    push eax"
-"	      00435bf8    mov eax,[ebp-160h]"
+"	      00435bf8    mov eax,this"
 "	      00435bfe    mov eax,[eax]"
-"	      00435c00    mov ecx,[ebp-160h]"
+"	      00435c00    mov ecx,this"
 "	      00435c06    call dword ptr [eax+18h]"
 );
 // LINE 360:
 	asm( 
 "	      00435c09    lea eax,[ebp-0CCh]"
 "	      00435c0f    push eax"
-"	      00435c10    mov ecx,[ebp-160h]"
+"	      00435c10    mov ecx,this"
 "	      00435c16    add ecx,50h"
 "	      00435c19    call 0043A080h"
 "	      00435c1e    mov [ebp-0D0h],eax"
@@ -3402,7 +3402,7 @@ void RadioStation::ShufflePlaylist() {
 "	      00435c41    push 0"
 "	      00435c43    mov eax,[ebp-0F4h]"
 "	      00435c49    push eax"
-"	      00435c4a    lea ecx,[ebp-8]"
+"	      00435c4a    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00435c4d    call 0041B570h"
 "	      00435c52    test eax,eax"
 "	      00435c54    jne near ptr 00435C5Fh"
@@ -3414,7 +3414,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 361:
 	asm( 
-"	      00435c76    mov eax,[ebp-160h]"
+"	      00435c76    mov eax,this"
 "	      00435c7c    mov eax,[eax+50h]"
 "	      00435c7f    mov [ebp-0E8h],eax"
 "	      00435c85    mov eax,[ebp-0E8h]"
@@ -3430,10 +3430,10 @@ void RadioStation::ShufflePlaylist() {
 "	      00435cb9    mov eax,[ebp-0E4h]"
 "	      00435cbf    add eax,8"
 "	      00435cc2    mov [ebp-138h],eax"
-"	      00435cc8    lea eax,[ebp-10h]"
+"	      00435cc8    lea eax,sTempItem.c_str_ptr"
 "	      00435ccb    cmp [ebp-138h],eax"
 "	      00435cd1    je near ptr 00435D60h"
-"	      00435cd7    lea ecx,[ebp-10h]"
+"	      00435cd7    lea ecx,sTempItem.c_str_ptr"
 "	      00435cda    call 00412080h"
 "	      00435cdf    jmp near ptr 00435CE4h"
 "	      00435ce4    mov eax,[ebp-138h]"
@@ -3442,8 +3442,8 @@ void RadioStation::ShufflePlaylist() {
 "	      00435cf1    je near ptr 00435D0Eh"
 "	      00435cf7    mov eax,[ebp-138h]"
 "	      00435cfd    mov eax,[eax+4]"
-"	      00435d00    mov [ebp-0Ch],eax"
-"	      00435d03    mov eax,[ebp-0Ch]"
+"	      00435d00    mov sTempItem.reference,eax"
+"	      00435d03    mov eax,sTempItem.reference"
 "	      00435d06    inc dword ptr [eax+0Ch]"
 "	      00435d09    jmp near ptr 00435D60h"
 "	      00435d0e    push 10h"
@@ -3462,22 +3462,22 @@ void RadioStation::ShufflePlaylist() {
 "	      00435d45    push eax"
 "	      00435d46    mov ecx,[ebp-134h]"
 "	      00435d4c    call 0041E200h"
-"	      00435d51    mov [ebp-0Ch],eax"
+"	      00435d51    mov sTempItem.reference,eax"
 "	      00435d54    jmp near ptr 00435D60h"
-"	      00435d59    mov dword ptr [ebp-0Ch],0"
+"	      00435d59    mov sTempItem.reference,0"
 "	      00435d60    jmp near ptr 00435D65h"
 );
 // LINE 362:
 	asm( 
 "	      00435d65    lea eax,[ebp-0D4h]"
 "	      00435d6b    push eax"
-"	      00435d6c    mov ecx,[ebp-160h]"
+"	      00435d6c    mov ecx,this"
 "	      00435d72    add ecx,50h"
 "	      00435d75    call 0043A080h"
 "	      00435d7a    mov [ebp-0D8h],eax"
 "	      00435d80    jmp near ptr 00435D85h"
 "	      00435d85    jmp near ptr 00435D8Ah"
-"	      00435d8a    mov eax,[ebp-160h]"
+"	      00435d8a    mov eax,this"
 "	      00435d90    mov eax,[eax+50h]"
 "	      00435d93    mov [ebp-0F0h],eax"
 "	      00435d99    mov eax,[ebp-0F0h]"
@@ -3540,7 +3540,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 363:
 	asm( 
-"	      00435ea9    mov eax,[ebp-160h]"
+"	      00435ea9    mov eax,this"
 "	      00435eaf    mov eax,[eax+50h]"
 "	      00435eb2    mov eax,[eax]"
 "	      00435eb4    mov [ebp-0E0h],eax"
@@ -3553,16 +3553,16 @@ void RadioStation::ShufflePlaylist() {
 "	      00435eda    mov eax,[ebp-0DCh]"
 "	      00435ee0    add eax,8"
 "	      00435ee3    mov [ebp-14Ch],eax"
-"	      00435ee9    lea eax,[ebp-10h]"
+"	      00435ee9    lea eax,sTempItem.c_str_ptr"
 "	      00435eec    cmp [ebp-14Ch],eax"
 "	      00435ef2    je near ptr 00435F88h"
 "	      00435ef8    mov ecx,[ebp-14Ch]"
 "	      00435efe    call 00412080h"
 "	      00435f03    jmp near ptr 00435F08h"
-"	      00435f08    mov eax,[ebp-0Ch]"
+"	      00435f08    mov eax,sTempItem.reference"
 "	      00435f0b    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00435f0f    je near ptr 00435F33h"
-"	      00435f15    mov eax,[ebp-0Ch]"
+"	      00435f15    mov eax,sTempItem.reference"
 "	      00435f18    mov ecx,[ebp-14Ch]"
 "	      00435f1e    mov [ecx+4],eax"
 "	      00435f21    mov eax,[ebp-14Ch]"
@@ -3576,11 +3576,11 @@ void RadioStation::ShufflePlaylist() {
 "	      00435f43    cmp dword ptr [ebp-148h],0"
 "	      00435f4a    je near ptr 00435F7Bh"
 "	      00435f50    jmp near ptr 00435F55h"
-"	      00435f55    mov eax,[ebp-0Ch]"
+"	      00435f55    mov eax,sTempItem.reference"
 "	      00435f58    mov eax,[eax+4]"
 "	      00435f5b    push eax"
 "	      00435f5c    push 0"
-"	      00435f5e    lea eax,[ebp-10h]"
+"	      00435f5e    lea eax,sTempItem.c_str_ptr"
 "	      00435f61    push eax"
 "	      00435f62    mov ecx,[ebp-148h]"
 "	      00435f68    call 0041E200h"
@@ -3593,7 +3593,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 365:
 	asm( 
-"	      00435f8d    mov eax,[ebp-160h]"
+"	      00435f8d    mov eax,this"
 "	      00435f93    mov eax,[eax+50h]"
 "	      00435f96    mov eax,[eax]"
 "	      00435f98    mov [ebp-104h],eax"
@@ -3602,19 +3602,19 @@ void RadioStation::ShufflePlaylist() {
 "	      00435fa7    jmp near ptr 00435FACh"
 "	      00435fac    jmp near ptr 00435FB1h"
 "	      00435fb1    mov eax,[ebp-14h]"
-"	      00435fb4    mov ecx,[ebp-160h]"
+"	      00435fb4    mov ecx,this"
 "	      00435fba    mov [ecx+58h],eax"
 );
 // LINE 369:
 	asm( 
 "	      00435fbd    jmp near ptr 00435FC2h"
-"	      00435fc2    mov eax,[ebp-160h]"
+"	      00435fc2    mov eax,this"
 "	      00435fc8    cmp dword ptr [eax+68h],0"
 "	      00435fcc    je near ptr 00436323h"
 );
 // LINE 370:
 	asm( 
-"	      00435fd2    mov eax,[ebp-160h]"
+"	      00435fd2    mov eax,this"
 "	      00435fd8    mov eax,[eax+64h]"
 "	      00435fdb    mov [ebp-0C8h],eax"
 "	      00435fe1    mov eax,[ebp-0C8h]"
@@ -3630,10 +3630,10 @@ void RadioStation::ShufflePlaylist() {
 "	      00436015    mov eax,[ebp-0C4h]"
 "	      0043601b    add eax,8"
 "	      0043601e    mov [ebp-154h],eax"
-"	      00436024    lea eax,[ebp-8]"
+"	      00436024    lea eax,sCurrentLastItem.c_str_ptr"
 "	      00436027    cmp [ebp-154h],eax"
 "	      0043602d    je near ptr 004360BCh"
-"	      00436033    lea ecx,[ebp-8]"
+"	      00436033    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00436036    call 00412080h"
 "	      0043603b    jmp near ptr 00436040h"
 "	      00436040    mov eax,[ebp-154h]"
@@ -3642,8 +3642,8 @@ void RadioStation::ShufflePlaylist() {
 "	      0043604d    je near ptr 0043606Ah"
 "	      00436053    mov eax,[ebp-154h]"
 "	      00436059    mov eax,[eax+4]"
-"	      0043605c    mov [ebp-4],eax"
-"	      0043605f    mov eax,[ebp-4]"
+"	      0043605c    mov sCurrentLastItem.reference,eax"
+"	      0043605f    mov eax,sCurrentLastItem.reference"
 "	      00436062    inc dword ptr [eax+0Ch]"
 "	      00436065    jmp near ptr 004360BCh"
 "	      0043606a    push 10h"
@@ -3662,26 +3662,26 @@ void RadioStation::ShufflePlaylist() {
 "	      004360a1    push eax"
 "	      004360a2    mov ecx,[ebp-150h]"
 "	      004360a8    call 0041E200h"
-"	      004360ad    mov [ebp-4],eax"
+"	      004360ad    mov sCurrentLastItem.reference,eax"
 "	      004360b0    jmp near ptr 004360BCh"
-"	      004360b5    mov dword ptr [ebp-4],0"
+"	      004360b5    mov sCurrentLastItem.reference,0"
 "	      004360bc    jmp near ptr 004360C1h"
 );
 // LINE 371:
 	asm( 
-"	      004360c1    mov eax,[ebp-160h]"
+"	      004360c1    mov eax,this"
 "	      004360c7    add eax,64h"
 "	      004360ca    push eax"
-"	      004360cb    mov eax,[ebp-160h]"
+"	      004360cb    mov eax,this"
 "	      004360d1    mov eax,[eax]"
-"	      004360d3    mov ecx,[ebp-160h]"
+"	      004360d3    mov ecx,this"
 "	      004360d9    call dword ptr [eax+18h]"
 );
 // LINE 372:
 	asm( 
 "	      004360dc    lea eax,[ebp-94h]"
 "	      004360e2    push eax"
-"	      004360e3    mov ecx,[ebp-160h]"
+"	      004360e3    mov ecx,this"
 "	      004360e9    add ecx,64h"
 "	      004360ec    call 0043A080h"
 "	      004360f1    mov [ebp-98h],eax"
@@ -3695,7 +3695,7 @@ void RadioStation::ShufflePlaylist() {
 "	      00436114    push 0"
 "	      00436116    mov eax,[ebp-0BCh]"
 "	      0043611c    push eax"
-"	      0043611d    lea ecx,[ebp-8]"
+"	      0043611d    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00436120    call 0041B570h"
 "	      00436125    test eax,eax"
 "	      00436127    jne near ptr 00436132h"
@@ -3707,7 +3707,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 373:
 	asm( 
-"	      00436149    mov eax,[ebp-160h]"
+"	      00436149    mov eax,this"
 "	      0043614f    mov eax,[eax+64h]"
 "	      00436152    mov [ebp-0B0h],eax"
 "	      00436158    mov eax,[ebp-0B0h]"
@@ -3723,10 +3723,10 @@ void RadioStation::ShufflePlaylist() {
 "	      0043618c    mov eax,[ebp-0ACh]"
 "	      00436192    add eax,8"
 "	      00436195    mov [ebp-15Ch],eax"
-"	      0043619b    lea eax,[ebp-10h]"
+"	      0043619b    lea eax,sTempItem.c_str_ptr"
 "	      0043619e    cmp [ebp-15Ch],eax"
 "	      004361a4    je near ptr 00436233h"
-"	      004361aa    lea ecx,[ebp-10h]"
+"	      004361aa    lea ecx,sTempItem.c_str_ptr"
 "	      004361ad    call 00412080h"
 "	      004361b2    jmp near ptr 004361B7h"
 "	      004361b7    mov eax,[ebp-15Ch]"
@@ -3735,8 +3735,8 @@ void RadioStation::ShufflePlaylist() {
 "	      004361c4    je near ptr 004361E1h"
 "	      004361ca    mov eax,[ebp-15Ch]"
 "	      004361d0    mov eax,[eax+4]"
-"	      004361d3    mov [ebp-0Ch],eax"
-"	      004361d6    mov eax,[ebp-0Ch]"
+"	      004361d3    mov sTempItem.reference,eax"
+"	      004361d6    mov eax,sTempItem.reference"
 "	      004361d9    inc dword ptr [eax+0Ch]"
 "	      004361dc    jmp near ptr 00436233h"
 "	      004361e1    push 10h"
@@ -3755,22 +3755,22 @@ void RadioStation::ShufflePlaylist() {
 "	      00436218    push eax"
 "	      00436219    mov ecx,[ebp-158h]"
 "	      0043621f    call 0041E200h"
-"	      00436224    mov [ebp-0Ch],eax"
+"	      00436224    mov sTempItem.reference,eax"
 "	      00436227    jmp near ptr 00436233h"
-"	      0043622c    mov dword ptr [ebp-0Ch],0"
+"	      0043622c    mov sTempItem.reference,0"
 "	      00436233    jmp near ptr 00436238h"
 );
 // LINE 374:
 	asm( 
 "	      00436238    lea eax,[ebp-9Ch]"
 "	      0043623e    push eax"
-"	      0043623f    mov ecx,[ebp-160h]"
+"	      0043623f    mov ecx,this"
 "	      00436245    add ecx,64h"
 "	      00436248    call 0043A080h"
 "	      0043624d    mov [ebp-0A0h],eax"
 "	      00436253    jmp near ptr 00436258h"
 "	      00436258    jmp near ptr 0043625Dh"
-"	      0043625d    mov eax,[ebp-160h]"
+"	      0043625d    mov eax,this"
 "	      00436263    mov eax,[eax+64h]"
 "	      00436266    mov [ebp-0B8h],eax"
 "	      0043626c    mov eax,[ebp-0B8h]"
@@ -3795,13 +3795,13 @@ void RadioStation::ShufflePlaylist() {
 	asm( 
 "	      004362ba    lea eax,[ebp-0A4h]"
 "	      004362c0    push eax"
-"	      004362c1    mov ecx,[ebp-160h]"
+"	      004362c1    mov ecx,this"
 "	      004362c7    add ecx,64h"
 "	      004362ca    call 0043A080h"
 "	      004362cf    mov [ebp-0A8h],eax"
 "	      004362d5    jmp near ptr 004362DAh"
 "	      004362da    jmp near ptr 004362DFh"
-"	      004362df    lea eax,[ebp-10h]"
+"	      004362df    lea eax,sTempItem.c_str_ptr"
 "	      004362e2    push eax"
 "	      004362e3    mov eax,[ebp-0A8h]"
 "	      004362e9    mov ecx,[eax]"
@@ -3810,7 +3810,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 377:
 	asm( 
-"	      004362f3    mov eax,[ebp-160h]"
+"	      004362f3    mov eax,this"
 "	      004362f9    mov eax,[eax+64h]"
 "	      004362fc    mov eax,[eax]"
 "	      004362fe    mov [ebp-108h],eax"
@@ -3819,19 +3819,19 @@ void RadioStation::ShufflePlaylist() {
 "	      0043630d    jmp near ptr 00436312h"
 "	      00436312    jmp near ptr 00436317h"
 "	      00436317    mov eax,[ebp-18h]"
-"	      0043631a    mov ecx,[ebp-160h]"
+"	      0043631a    mov ecx,this"
 "	      00436320    mov [ecx+6Ch],eax"
 );
 // LINE 381:
 	asm( 
 "	      00436323    jmp near ptr 00436328h"
-"	      00436328    mov eax,[ebp-160h]"
+"	      00436328    mov eax,this"
 "	      0043632e    cmp dword ptr [eax+7Ch],0"
 "	      00436332    je near ptr 00436519h"
 );
 // LINE 382:
 	asm( 
-"	      00436338    mov eax,[ebp-160h]"
+"	      00436338    mov eax,this"
 "	      0043633e    mov eax,[eax+78h]"
 "	      00436341    mov [ebp-90h],eax"
 "	      00436347    mov eax,[ebp-90h]"
@@ -3847,24 +3847,24 @@ void RadioStation::ShufflePlaylist() {
 "	      0043637b    mov eax,[ebp-8Ch]"
 "	      00436381    add eax,8"
 "	      00436384    push eax"
-"	      00436385    lea ecx,[ebp-8]"
+"	      00436385    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00436388    call 00412670h"
 );
 // LINE 383:
 	asm( 
-"	      0043638d    mov eax,[ebp-160h]"
+"	      0043638d    mov eax,this"
 "	      00436393    add eax,78h"
 "	      00436396    push eax"
-"	      00436397    mov eax,[ebp-160h]"
+"	      00436397    mov eax,this"
 "	      0043639d    mov eax,[eax]"
-"	      0043639f    mov ecx,[ebp-160h]"
+"	      0043639f    mov ecx,this"
 "	      004363a5    call dword ptr [eax+18h]"
 );
 // LINE 384:
 	asm( 
 "	      004363a8    lea eax,[ebp-5Ch]"
 "	      004363ab    push eax"
-"	      004363ac    mov ecx,[ebp-160h]"
+"	      004363ac    mov ecx,this"
 "	      004363b2    add ecx,78h"
 "	      004363b5    call 0043A080h"
 "	      004363ba    mov [ebp-60h],eax"
@@ -3878,7 +3878,7 @@ void RadioStation::ShufflePlaylist() {
 "	      004363d7    push 0"
 "	      004363d9    mov eax,[ebp-84h]"
 "	      004363df    push eax"
-"	      004363e0    lea ecx,[ebp-8]"
+"	      004363e0    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      004363e3    call 0041B570h"
 "	      004363e8    test eax,eax"
 "	      004363ea    jne near ptr 004363F5h"
@@ -3890,7 +3890,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 385:
 	asm( 
-"	      0043640c    mov eax,[ebp-160h]"
+"	      0043640c    mov eax,this"
 "	      00436412    mov eax,[eax+78h]"
 "	      00436415    mov [ebp-78h],eax"
 "	      00436418    mov eax,[ebp-78h]"
@@ -3906,20 +3906,20 @@ void RadioStation::ShufflePlaylist() {
 "	      00436440    mov eax,[ebp-74h]"
 "	      00436443    add eax,8"
 "	      00436446    push eax"
-"	      00436447    lea ecx,[ebp-10h]"
+"	      00436447    lea ecx,sTempItem.c_str_ptr"
 "	      0043644a    call 00412670h"
 );
 // LINE 386:
 	asm( 
 "	      0043644f    lea eax,[ebp-64h]"
 "	      00436452    push eax"
-"	      00436453    mov ecx,[ebp-160h]"
+"	      00436453    mov ecx,this"
 "	      00436459    add ecx,78h"
 "	      0043645c    call 0043A080h"
 "	      00436461    mov [ebp-68h],eax"
 "	      00436464    jmp near ptr 00436469h"
 "	      00436469    jmp near ptr 0043646Eh"
-"	      0043646e    mov eax,[ebp-160h]"
+"	      0043646e    mov eax,this"
 "	      00436474    mov eax,[eax+78h]"
 "	      00436477    mov [ebp-80h],eax"
 "	      0043647a    mov eax,[ebp-80h]"
@@ -3944,13 +3944,13 @@ void RadioStation::ShufflePlaylist() {
 	asm( 
 "	      004364b6    lea eax,[ebp-6Ch]"
 "	      004364b9    push eax"
-"	      004364ba    mov ecx,[ebp-160h]"
+"	      004364ba    mov ecx,this"
 "	      004364c0    add ecx,78h"
 "	      004364c3    call 0043A080h"
 "	      004364c8    mov [ebp-70h],eax"
 "	      004364cb    jmp near ptr 004364D0h"
 "	      004364d0    jmp near ptr 004364D5h"
-"	      004364d5    lea eax,[ebp-10h]"
+"	      004364d5    lea eax,sTempItem.c_str_ptr"
 "	      004364d8    push eax"
 "	      004364d9    mov eax,[ebp-70h]"
 "	      004364dc    mov ecx,[eax]"
@@ -3959,7 +3959,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 389:
 	asm( 
-"	      004364e6    mov eax,[ebp-160h]"
+"	      004364e6    mov eax,this"
 "	      004364ec    mov eax,[eax+78h]"
 "	      004364ef    mov eax,[eax]"
 "	      004364f1    mov [ebp-10Ch],eax"
@@ -3968,19 +3968,19 @@ void RadioStation::ShufflePlaylist() {
 "	      00436500    jmp near ptr 00436505h"
 "	      00436505    jmp near ptr 0043650Ah"
 "	      0043650a    mov eax,[ebp-1Ch]"
-"	      0043650d    mov ecx,[ebp-160h]"
+"	      0043650d    mov ecx,this"
 "	      00436513    mov [ecx+80h],eax"
 );
 // LINE 393:
 	asm( 
 "	      00436519    jmp near ptr 0043651Eh"
-"	      0043651e    mov eax,[ebp-160h]"
+"	      0043651e    mov eax,this"
 "	      00436524    cmp dword ptr [eax+90h],0"
 "	      0043652b    je near ptr 0043670Eh"
 );
 // LINE 394:
 	asm( 
-"	      00436531    mov eax,[ebp-160h]"
+"	      00436531    mov eax,this"
 "	      00436537    mov eax,[eax+8Ch]"
 "	      0043653d    mov [ebp-58h],eax"
 "	      00436540    mov eax,[ebp-58h]"
@@ -3996,24 +3996,24 @@ void RadioStation::ShufflePlaylist() {
 "	      00436568    mov eax,[ebp-54h]"
 "	      0043656b    add eax,8"
 "	      0043656e    push eax"
-"	      0043656f    lea ecx,[ebp-8]"
+"	      0043656f    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      00436572    call 00412670h"
 );
 // LINE 395:
 	asm( 
-"	      00436577    mov eax,[ebp-160h]"
+"	      00436577    mov eax,this"
 "	      0043657d    add eax,8Ch"
 "	      00436582    push eax"
-"	      00436583    mov eax,[ebp-160h]"
+"	      00436583    mov eax,this"
 "	      00436589    mov eax,[eax]"
-"	      0043658b    mov ecx,[ebp-160h]"
+"	      0043658b    mov ecx,this"
 "	      00436591    call dword ptr [eax+18h]"
 );
 // LINE 396:
 	asm( 
 "	      00436594    lea eax,[ebp-24h]"
 "	      00436597    push eax"
-"	      00436598    mov ecx,[ebp-160h]"
+"	      00436598    mov ecx,this"
 "	      0043659e    add ecx,8Ch"
 "	      004365a4    call 0043A080h"
 "	      004365a9    mov [ebp-28h],eax"
@@ -4027,7 +4027,7 @@ void RadioStation::ShufflePlaylist() {
 "	      004365c3    push 0"
 "	      004365c5    mov eax,[ebp-4Ch]"
 "	      004365c8    push eax"
-"	      004365c9    lea ecx,[ebp-8]"
+"	      004365c9    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      004365cc    call 0041B570h"
 "	      004365d1    test eax,eax"
 "	      004365d3    jne near ptr 004365DEh"
@@ -4039,7 +4039,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 397:
 	asm( 
-"	      004365f2    mov eax,[ebp-160h]"
+"	      004365f2    mov eax,this"
 "	      004365f8    mov eax,[eax+8Ch]"
 "	      004365fe    mov [ebp-40h],eax"
 "	      00436601    mov eax,[ebp-40h]"
@@ -4055,20 +4055,20 @@ void RadioStation::ShufflePlaylist() {
 "	      00436629    mov eax,[ebp-3Ch]"
 "	      0043662c    add eax,8"
 "	      0043662f    push eax"
-"	      00436630    lea ecx,[ebp-10h]"
+"	      00436630    lea ecx,sTempItem.c_str_ptr"
 "	      00436633    call 00412670h"
 );
 // LINE 398:
 	asm( 
 "	      00436638    lea eax,[ebp-2Ch]"
 "	      0043663b    push eax"
-"	      0043663c    mov ecx,[ebp-160h]"
+"	      0043663c    mov ecx,this"
 "	      00436642    add ecx,8Ch"
 "	      00436648    call 0043A080h"
 "	      0043664d    mov [ebp-30h],eax"
 "	      00436650    jmp near ptr 00436655h"
 "	      00436655    jmp near ptr 0043665Ah"
-"	      0043665a    mov eax,[ebp-160h]"
+"	      0043665a    mov eax,this"
 "	      00436660    mov eax,[eax+8Ch]"
 "	      00436666    mov [ebp-48h],eax"
 "	      00436669    mov eax,[ebp-48h]"
@@ -4093,13 +4093,13 @@ void RadioStation::ShufflePlaylist() {
 	asm( 
 "	      004366a5    lea eax,[ebp-34h]"
 "	      004366a8    push eax"
-"	      004366a9    mov ecx,[ebp-160h]"
+"	      004366a9    mov ecx,this"
 "	      004366af    add ecx,8Ch"
 "	      004366b5    call 0043A080h"
 "	      004366ba    mov [ebp-38h],eax"
 "	      004366bd    jmp near ptr 004366C2h"
 "	      004366c2    jmp near ptr 004366C7h"
-"	      004366c7    lea eax,[ebp-10h]"
+"	      004366c7    lea eax,sTempItem.c_str_ptr"
 "	      004366ca    push eax"
 "	      004366cb    mov eax,[ebp-38h]"
 "	      004366ce    mov ecx,[eax]"
@@ -4108,7 +4108,7 @@ void RadioStation::ShufflePlaylist() {
 );
 // LINE 401:
 	asm( 
-"	      004366d8    mov eax,[ebp-160h]"
+"	      004366d8    mov eax,this"
 "	      004366de    mov eax,[eax+8Ch]"
 "	      004366e4    mov eax,[eax]"
 "	      004366e6    mov [ebp-110h],eax"
@@ -4117,16 +4117,16 @@ void RadioStation::ShufflePlaylist() {
 "	      004366f5    jmp near ptr 004366FAh"
 "	      004366fa    jmp near ptr 004366FFh"
 "	      004366ff    mov eax,[ebp-20h]"
-"	      00436702    mov ecx,[ebp-160h]"
+"	      00436702    mov ecx,this"
 "	      00436708    mov [ecx+94h],eax"
 );
 // LINE 403:
 	asm( 
-"	      0043670e    lea ecx,[ebp-10h]"
+"	      0043670e    lea ecx,sTempItem.c_str_ptr"
 "	      00436711    call 00412080h"
-"	      00436716    cmp dword ptr [ebp-10h],0"
+"	      00436716    cmp sTempItem.c_str_ptr,0"
 "	      0043671a    je near ptr 00436744h"
-"	      00436720    mov eax,[ebp-10h]"
+"	      00436720    mov eax,sTempItem.c_str_ptr"
 "	      00436723    mov [ebp-11Ch],eax"
 "	      00436729    mov eax,[ebp-11Ch]"
 "	      0043672f    mov [ebp-120h],eax"
@@ -4135,11 +4135,11 @@ void RadioStation::ShufflePlaylist() {
 "	      0043673c    call 0056A740h"
 "	      00436741    add esp,4"
 "	      00436744    jmp near ptr 00436749h"
-"	      00436749    lea ecx,[ebp-8]"
+"	      00436749    lea ecx,sCurrentLastItem.c_str_ptr"
 "	      0043674c    call 00412080h"
-"	      00436751    cmp dword ptr [ebp-8],0"
+"	      00436751    cmp sCurrentLastItem.c_str_ptr,0"
 "	      00436755    je near ptr 0043677Fh"
-"	      0043675b    mov eax,[ebp-8]"
+"	      0043675b    mov eax,sCurrentLastItem.c_str_ptr"
 "	      0043675e    mov [ebp-124h],eax"
 "	      00436764    mov eax,[ebp-124h]"
 "	      0043676a    mov [ebp-128h],eax"
@@ -4172,12 +4172,12 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436797    push ebx"
 "	      00436798    push esi"
 "	      00436799    push edi"
-"	      0043679a    mov [ebp-0A8h],ecx"
+"	      0043679a    mov this,ecx"
 );
 // LINE 412:
 	asm( 
 "	      004367a0    jmp near ptr 004367A5h"
-"	      004367a5    mov eax,[ebp+8]"
+"	      004367a5    mov eax,stringList"
 "	      004367a8    cmp dword ptr [eax+4],0"
 "	      004367ac    jne near ptr 004367B7h"
 );
@@ -4187,32 +4187,32 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 );
 // LINE 415:
 	asm( 
-"	      004367b7    mov eax,[ebp+8]"
+"	      004367b7    mov eax,stringList"
 "	      004367ba    mov eax,[eax]"
 "	      004367bc    mov eax,[eax]"
 "	      004367be    mov [ebp-50h],eax"
 "	      004367c1    mov eax,[ebp-50h]"
-"	      004367c4    mov [ebp-18h],eax"
+"	      004367c4    mov stringListIterator.node,eax"
 "	      004367c7    jmp near ptr 004367CCh"
 "	      004367cc    jmp near ptr 004367D1h"
 );
 // LINE 416:
 	asm( 
-"	      004367d1    mov dword ptr [ebp-0Ch],0"
-"	      004367d8    mov dword ptr [ebp-8],0"
-"	      004367df    mov dword ptr [ebp-4],0"
+"	      004367d1    mov stringArray.start,0"
+"	      004367d8    mov stringArray.finish,0"
+"	      004367df    mov stringArray.end_of_storage,0"
 "	      004367e6    jmp near ptr 004367EBh"
 );
 // LINE 419:
 	asm( 
-"	      004367eb    mov eax,[ebp+8]"
+"	      004367eb    mov eax,stringList"
 "	      004367ee    mov eax,[eax]"
 "	      004367f0    mov [ebp-44h],eax"
 "	      004367f3    mov eax,[ebp-44h]"
 "	      004367f6    mov [ebp-1Ch],eax"
 "	      004367f9    jmp near ptr 004367FEh"
 "	      004367fe    jmp near ptr 00436803h"
-"	      00436803    mov eax,[ebp-18h]"
+"	      00436803    mov eax,stringListIterator.node"
 "	      00436806    cmp [ebp-1Ch],eax"
 "	      00436809    jne near ptr 00436819h"
 "	      0043680f    jmp near ptr 0043682Dh"
@@ -4229,13 +4229,13 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 // LINE 420:
 	asm( 
 "	      00436841    jmp near ptr 00436846h"
-"	      00436846    mov eax,[ebp-18h]"
+"	      00436846    mov eax,stringListIterator.node"
 "	      00436849    add eax,8"
 "	      0043684c    mov [ebp-0A4h],eax"
-"	      00436852    mov eax,[ebp-4]"
-"	      00436855    cmp [ebp-8],eax"
+"	      00436852    mov eax,stringArray.end_of_storage"
+"	      00436855    cmp stringArray.finish,eax"
 "	      00436858    je near ptr 004368AEh"
-"	      0043685e    mov eax,[ebp-8]"
+"	      0043685e    mov eax,stringArray.finish"
 "	      00436861    mov [ebp-0A0h],eax"
 "	      00436867    mov eax,[ebp-0A0h]"
 "	      0043686d    mov [ebp-9Ch],eax"
@@ -4250,24 +4250,24 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436896    call 00411B80h"
 "	      0043689b    jmp near ptr 004368A0h"
 "	      004368a0    jmp near ptr 004368A5h"
-"	      004368a5    add dword ptr [ebp-8],8"
+"	      004368a5    add stringArray.finish,8"
 "	      004368a9    jmp near ptr 004368C6h"
 "	      004368ae    jmp near ptr 004368B3h"
 "	      004368b3    mov eax,[ebp-0A4h]"
 "	      004368b9    push eax"
-"	      004368ba    mov eax,[ebp-8]"
+"	      004368ba    mov eax,stringArray.finish"
 "	      004368bd    push eax"
-"	      004368be    lea ecx,[ebp-0Ch]"
+"	      004368be    lea ecx,stringArray.start"
 "	      004368c1    call 00426900h"
 "	      004368c6    jmp near ptr 004368CBh"
 );
 // LINE 421:
 	asm( 
-"	      004368cb    mov eax,[ebp-18h]"
+"	      004368cb    mov eax,stringListIterator.node"
 "	      004368ce    mov [ebp-98h],eax"
-"	      004368d4    mov eax,[ebp-18h]"
+"	      004368d4    mov eax,stringListIterator.node"
 "	      004368d7    mov eax,[eax]"
-"	      004368d9    mov [ebp-18h],eax"
+"	      004368d9    mov stringListIterator.node,eax"
 "	      004368dc    jmp near ptr 004368E1h"
 "	      004368e1    mov eax,[ebp-98h]"
 "	      004368e7    mov [ebp-20h],eax"
@@ -4281,9 +4281,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	asm( 
 "	      004368f4    jmp near ptr 004368F9h"
 "	      004368f9    jmp near ptr 004368FEh"
-"	      004368fe    mov eax,[ebp-8]"
+"	      004368fe    mov eax,stringArray.finish"
 "	      00436901    mov [ebp-3Ch],eax"
-"	      00436904    mov eax,[ebp-0Ch]"
+"	      00436904    mov eax,stringArray.start"
 "	      00436907    mov [ebp-40h],eax"
 "	      0043690a    jmp near ptr 0043690Fh"
 "	      0043690f    mov eax,[ebp-3Ch]"
@@ -4323,14 +4323,14 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 );
 // LINE 428:
 	asm( 
-"	      00436985    mov eax,[ebp+8]"
+"	      00436985    mov eax,stringList"
 "	      00436988    mov eax,[eax]"
 "	      0043698a    mov [ebp-2Ch],eax"
 "	      0043698d    mov eax,[ebp-2Ch]"
 "	      00436990    mov [ebp-24h],eax"
 "	      00436993    jmp near ptr 00436998h"
 "	      00436998    jmp near ptr 0043699Dh"
-"	      0043699d    mov eax,[ebp+8]"
+"	      0043699d    mov eax,stringList"
 "	      004369a0    mov eax,[eax]"
 "	      004369a2    mov eax,[eax]"
 "	      004369a4    mov [ebp-30h],eax"
@@ -4366,36 +4366,36 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436a3b    jmp near ptr 00436A40h"
 "	      00436a40    mov eax,[ebp-80h]"
 "	      00436a43    push eax"
-"	      00436a44    mov ecx,[ebp+8]"
+"	      00436a44    mov ecx,stringList"
 "	      00436a47    call 0043A310h"
 "	      00436a4c    jmp near ptr 004369C9h"
 "	      00436a51    jmp near ptr 00436A56h"
 );
 // LINE 431:
 	asm( 
-"	      00436a56    mov dword ptr [ebp-14h],0"
+"	      00436a56    mov i,0"
 "	      00436a5d    jmp near ptr 00436A62h"
 "	      00436a62    jmp near ptr 00436A67h"
 "	      00436a67    jmp near ptr 00436A6Ch"
-"	      00436a6c    mov eax,[ebp-8]"
-"	      00436a6f    sub eax,[ebp-0Ch]"
+"	      00436a6c    mov eax,stringArray.finish"
+"	      00436a6f    sub eax,stringArray.start"
 "	      00436a72    sar eax,3"
-"	      00436a75    mov [ebp-10h],eax"
+"	      00436a75    mov iEnd,eax"
 "	      00436a78    jmp near ptr 00436A80h"
-"	      00436a7d    inc dword ptr [ebp-14h]"
-"	      00436a80    mov eax,[ebp-10h]"
-"	      00436a83    cmp [ebp-14h],eax"
+"	      00436a7d    inc i"
+"	      00436a80    mov eax,iEnd"
+"	      00436a83    cmp i,eax"
 "	      00436a86    jge near ptr 00436B2Ch"
 );
 // LINE 432:
 	asm( 
 "	      00436a8c    jmp near ptr 00436A91h"
 "	      00436a91    jmp near ptr 00436A96h"
-"	      00436a96    mov eax,[ebp-14h]"
+"	      00436a96    mov eax,i"
 "	      00436a99    shl eax,3"
-"	      00436a9c    add eax,[ebp-0Ch]"
+"	      00436a9c    add eax,stringArray.start"
 "	      00436a9f    mov [ebp-68h],eax"
-"	      00436aa2    mov eax,[ebp+8]"
+"	      00436aa2    mov eax,stringList"
 "	      00436aa5    mov eax,[eax]"
 "	      00436aa7    mov [ebp-5Ch],eax"
 "	      00436aaa    mov eax,[ebp-5Ch]"
@@ -4404,7 +4404,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436ab5    jmp near ptr 00436ABAh"
 "	      00436aba    mov eax,[ebp-54h]"
 "	      00436abd    mov [ebp-64h],eax"
-"	      00436ac0    mov ecx,[ebp+8]"
+"	      00436ac0    mov ecx,stringList"
 "	      00436ac3    call 004399C0h"
 "	      00436ac8    mov [ebp-60h],eax"
 "	      00436acb    jmp near ptr 00436AD0h"
@@ -4429,7 +4429,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436b02    mov eax,[ebp-60h]"
 "	      00436b05    mov ecx,[ebp-64h]"
 "	      00436b08    mov [ecx+4],eax"
-"	      00436b0b    mov eax,[ebp+8]"
+"	      00436b0b    mov eax,stringList"
 "	      00436b0e    add dword ptr [eax+4],1"
 "	      00436b12    mov eax,[ebp-60h]"
 "	      00436b15    mov [ebp-58h],eax"
@@ -4443,9 +4443,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 );
 // LINE 434:
 	asm( 
-"	      00436b2c    mov eax,[ebp-8]"
+"	      00436b2c    mov eax,stringArray.finish"
 "	      00436b2f    mov [ebp-78h],eax"
-"	      00436b32    mov eax,[ebp-0Ch]"
+"	      00436b32    mov eax,stringArray.start"
 "	      00436b35    mov [ebp-7Ch],eax"
 "	      00436b38    mov eax,[ebp-78h]"
 "	      00436b3b    cmp [ebp-7Ch],eax"
@@ -4475,7 +4475,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 "	      00436b92    add dword ptr [ebp-7Ch],8"
 "	      00436b96    jmp near ptr 00436B38h"
 "	      00436b9b    jmp near ptr 00436BA0h"
-"	      00436ba0    mov eax,[ebp-0Ch]"
+"	      00436ba0    mov eax,stringArray.start"
 "	      00436ba3    mov [ebp-6Ch],eax"
 "	      00436ba6    mov eax,[ebp-6Ch]"
 "	      00436ba9    push eax"
@@ -4506,7 +4506,7 @@ void RadioStation::ShuffleCycle() {
 "	      00436bd3    push ebx"
 "	      00436bd4    push esi"
 "	      00436bd5    push edi"
-"	      00436bd6    mov [ebp-28h],ecx"
+"	      00436bd6    mov this,ecx"
 );
 // LINE 450:
 	asm( 
@@ -4515,24 +4515,24 @@ void RadioStation::ShuffleCycle() {
 "	      00436be3    jmp near ptr 00436BE8h"
 "	      00436be8    jmp near ptr 00436BEDh"
 "	      00436bed    jmp near ptr 00436BF2h"
-"	      00436bf2    mov eax,[ebp-28h]"
+"	      00436bf2    mov eax,this"
 "	      00436bf5    mov eax,[eax+0Ch]"
-"	      00436bf8    mov ecx,[ebp-28h]"
+"	      00436bf8    mov ecx,this"
 "	      00436bfb    sub eax,[ecx+8]"
 "	      00436bfe    sar eax,2"
-"	      00436c01    mov ecx,[ebp-28h]"
+"	      00436c01    mov ecx,this"
 "	      00436c04    mov ecx,[ecx+8]"
 "	      00436c07    mov eax,[ecx+eax*4-4]"
-"	      00436c0b    mov [ebp-4],eax"
+"	      00436c0b    mov nCurrentCycleLastItem,eax"
 );
 // LINE 451:
 	asm( 
 "	      00436c0e    jmp near ptr 00436C13h"
 "	      00436c13    jmp near ptr 00436C18h"
-"	      00436c18    mov eax,[ebp-28h]"
+"	      00436c18    mov eax,this"
 "	      00436c1b    mov eax,[eax+0Ch]"
 "	      00436c1e    mov [ebp-20h],eax"
-"	      00436c21    mov eax,[ebp-28h]"
+"	      00436c21    mov eax,this"
 "	      00436c24    mov eax,[eax+8]"
 "	      00436c27    mov [ebp-24h],eax"
 "	      00436c2a    jmp near ptr 00436C2Fh"
@@ -4577,13 +4577,13 @@ void RadioStation::ShuffleCycle() {
 );
 // LINE 456:
 	asm( 
-"	      00436cb2    cmp dword ptr [ebp-4],0"
+"	      00436cb2    cmp nCurrentCycleLastItem,0"
 "	      00436cb6    je near ptr 00436D76h"
 "	      00436cbc    jmp near ptr 00436CC1h"
 "	      00436cc1    jmp near ptr 00436CC6h"
-"	      00436cc6    mov eax,[ebp-28h]"
+"	      00436cc6    mov eax,this"
 "	      00436cc9    mov eax,[eax+8]"
-"	      00436ccc    mov ecx,[ebp-4]"
+"	      00436ccc    mov ecx,nCurrentCycleLastItem"
 "	      00436ccf    cmp [eax],ecx"
 "	      00436cd1    jne near ptr 00436D76h"
 );
@@ -4591,15 +4591,15 @@ void RadioStation::ShuffleCycle() {
 	asm( 
 "	      00436cd7    jmp near ptr 00436CDCh"
 "	      00436cdc    jmp near ptr 00436CE1h"
-"	      00436ce1    mov eax,[ebp-28h]"
+"	      00436ce1    mov eax,this"
 "	      00436ce4    mov eax,[eax+8]"
 "	      00436ce7    mov eax,[eax]"
-"	      00436ce9    mov [ebp-8],eax"
+"	      00436ce9    mov nTempCycleItem,eax"
 );
 // LINE 459:
 	asm( 
 "	      00436cec    jmp near ptr 00436CF1h"
-"	      00436cf1    mov eax,[ebp-28h]"
+"	      00436cf1    mov eax,this"
 "	      00436cf4    mov eax,[eax+8]"
 "	      00436cf7    mov [ebp-0Ch],eax"
 "	      00436cfa    jmp near ptr 00436CFFh"
@@ -4608,12 +4608,12 @@ void RadioStation::ShuffleCycle() {
 "	      00436d09    jmp near ptr 00436D0Eh"
 "	      00436d0e    jmp near ptr 00436D13h"
 "	      00436d13    jmp near ptr 00436D18h"
-"	      00436d18    mov eax,[ebp-28h]"
+"	      00436d18    mov eax,this"
 "	      00436d1b    mov eax,[eax+0Ch]"
-"	      00436d1e    mov ecx,[ebp-28h]"
+"	      00436d1e    mov ecx,this"
 "	      00436d21    sub eax,[ecx+8]"
 "	      00436d24    sar eax,2"
-"	      00436d27    mov ecx,[ebp-28h]"
+"	      00436d27    mov ecx,this"
 "	      00436d2a    mov ecx,[ecx+8]"
 "	      00436d2d    mov eax,[ecx+eax*4-4]"
 "	      00436d31    mov ecx,[ebp-0Ch]"
@@ -4625,17 +4625,17 @@ void RadioStation::ShuffleCycle() {
 "	      00436d3b    jmp near ptr 00436D40h"
 "	      00436d40    jmp near ptr 00436D45h"
 "	      00436d45    jmp near ptr 00436D4Ah"
-"	      00436d4a    mov eax,[ebp-28h]"
+"	      00436d4a    mov eax,this"
 "	      00436d4d    mov eax,[eax+0Ch]"
-"	      00436d50    mov ecx,[ebp-28h]"
+"	      00436d50    mov ecx,this"
 "	      00436d53    sub eax,[ecx+8]"
 "	      00436d56    sar eax,2"
 "	      00436d59    lea eax,[eax*4-4]"
-"	      00436d60    mov ecx,[ebp-28h]"
+"	      00436d60    mov ecx,this"
 "	      00436d63    add eax,[ecx+8]"
 "	      00436d66    mov [ebp-10h],eax"
 "	      00436d69    jmp near ptr 00436D6Eh"
-"	      00436d6e    mov eax,[ebp-8]"
+"	      00436d6e    mov eax,nTempCycleItem"
 "	      00436d71    mov ecx,[ebp-10h]"
 "	      00436d74    mov [ecx],eax"
 );
@@ -4660,22 +4660,22 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 "	      00436d86    push ebx"
 "	      00436d87    push esi"
 "	      00436d88    push edi"
-"	      00436d89    mov [ebp-28h],ecx"
+"	      00436d89    mov this,ecx"
 );
 // LINE 470:
 	asm( 
-"	      00436d8c    mov eax,[ebp-28h]"
+"	      00436d8c    mov eax,this"
 "	      00436d8f    add eax,38h"
-"	      00436d92    cmp eax,[ebp+8]"
+"	      00436d92    cmp eax,sStationCallSign"
 "	      00436d95    je near ptr 00436F4Eh"
-"	      00436d9b    mov eax,[ebp+8]"
+"	      00436d9b    mov eax,sStationCallSign"
 "	      00436d9e    mov eax,[eax+4]"
 "	      00436da1    dec dword ptr [eax+0Ch]"
-"	      00436da4    mov eax,[ebp+8]"
+"	      00436da4    mov eax,sStationCallSign"
 "	      00436da7    mov eax,[eax+4]"
 "	      00436daa    cmp dword ptr [eax+0Ch],0"
 "	      00436dae    jne near ptr 00436E27h"
-"	      00436db4    mov eax,[ebp+8]"
+"	      00436db4    mov eax,sStationCallSign"
 "	      00436db7    mov eax,[eax+4]"
 "	      00436dba    mov [ebp-0Ch],eax"
 "	      00436dbd    mov eax,[ebp-0Ch]"
@@ -4708,15 +4708,15 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 "	      00436e22    jmp near ptr 00436E27h"
 "	      00436e27    jmp near ptr 00436E2Ch"
 "	      00436e2c    jmp near ptr 00436E31h"
-"	      00436e31    mov eax,[ebp-28h]"
+"	      00436e31    mov eax,this"
 "	      00436e34    mov eax,[eax+3Ch]"
 "	      00436e37    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00436e3b    je near ptr 00436E5Bh"
-"	      00436e41    mov eax,[ebp-28h]"
+"	      00436e41    mov eax,this"
 "	      00436e44    mov eax,[eax+3Ch]"
-"	      00436e47    mov ecx,[ebp+8]"
+"	      00436e47    mov ecx,sStationCallSign"
 "	      00436e4a    mov [ecx+4],eax"
-"	      00436e4d    mov eax,[ebp+8]"
+"	      00436e4d    mov eax,sStationCallSign"
 "	      00436e50    mov eax,[eax+4]"
 "	      00436e53    inc dword ptr [eax+0Ch]"
 "	      00436e56    jmp near ptr 00436F4Eh"
@@ -4727,7 +4727,7 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 "	      00436e68    cmp dword ptr [ebp-4],0"
 "	      00436e6c    je near ptr 00436F44h"
 "	      00436e72    jmp near ptr 00436E77h"
-"	      00436e77    mov eax,[ebp-28h]"
+"	      00436e77    mov eax,this"
 "	      00436e7a    mov eax,[eax+3Ch]"
 "	      00436e7d    mov eax,[eax+4]"
 "	      00436e80    mov [ebp-24h],eax"
@@ -4749,11 +4749,11 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 "	      00436eb4    mov ecx,[ebp-4]"
 "	      00436eb7    mov [ecx],eax"
 "	      00436eb9    jmp near ptr 00436EBEh"
-"	      00436ebe    mov eax,[ebp-28h]"
+"	      00436ebe    mov eax,this"
 "	      00436ec1    mov eax,[eax+3Ch]"
 "	      00436ec4    cmp dword ptr [eax+4],0"
 "	      00436ec8    je near ptr 00436EE3h"
-"	      00436ece    mov eax,[ebp-28h]"
+"	      00436ece    mov eax,this"
 "	      00436ed1    mov eax,[eax+3Ch]"
 "	      00436ed4    mov eax,[eax]"
 "	      00436ed6    mov [ebp-18h],eax"
@@ -4783,10 +4783,10 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 "	      00436f2a    mov dword ptr [eax+0Ch],1"
 "	      00436f31    jmp near ptr 00436F36h"
 "	      00436f36    mov eax,[ebp-4]"
-"	      00436f39    mov ecx,[ebp+8]"
+"	      00436f39    mov ecx,sStationCallSign"
 "	      00436f3c    mov [ecx+4],eax"
 "	      00436f3f    jmp near ptr 00436F4Eh"
-"	      00436f44    mov eax,[ebp+8]"
+"	      00436f44    mov eax,sStationCallSign"
 "	      00436f47    mov dword ptr [eax+4],0"
 "	      00436f4e    jmp near ptr 00436F53h"
 );
@@ -4811,11 +4811,11 @@ enum RadioStationType RadioStation::GetRadioStationType() {
 "	      00436f65    push ebx"
 "	      00436f66    push esi"
 "	      00436f67    push edi"
-"	      00436f68    mov [ebp-4],ecx"
+"	      00436f68    mov this,ecx"
 );
 // LINE 479:
 	asm( 
-"	      00436f6b    mov eax,[ebp-4]"
+"	      00436f6b    mov eax,this"
 "	      00436f6e    mov eax,[eax+30h]"
 "	      00436f71    jmp near ptr 00436F76h"
 );
@@ -4839,29 +4839,29 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 "	      00436f81    push ebx"
 "	      00436f82    push esi"
 "	      00436f83    push edi"
-"	      00436f84    mov [ebp-4],ecx"
+"	      00436f84    mov this,ecx"
 );
 // LINE 488:
 	asm( 
-"	      00436f87    cmp dword ptr [ebp+8],0"
+"	      00436f87    cmp radioStationCycleType,0"
 "	      00436f8b    jne near ptr 00436FA6h"
 );
 // LINE 489:
 	asm( 
 "	      00436f91    jmp near ptr 00436F96h"
-"	      00436f96    mov eax,[ebp-4]"
+"	      00436f96    mov eax,this"
 "	      00436f99    mov eax,[eax+54h]"
 "	      00436f9c    jmp near ptr 0043704Dh"
 );
 // LINE 491:
 	asm( 
 "	      00436fa1    jmp near ptr 00437046h"
-"	      00436fa6    cmp dword ptr [ebp+8],1"
+"	      00436fa6    cmp radioStationCycleType,1"
 "	      00436faa    jne near ptr 00436FDCh"
 );
 // LINE 492:
 	asm( 
-"	      00436fb0    mov eax,[ebp-4]"
+"	      00436fb0    mov eax,this"
 "	      00436fb3    mov eax,[eax+34h]"
 "	      00436fb6    cmp dword ptr [eax+24h],0"
 "	      00436fba    jne near ptr 00436FC7h"
@@ -4874,19 +4874,19 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 // LINE 494:
 	asm( 
 "	      00436fc7    jmp near ptr 00436FCCh"
-"	      00436fcc    mov eax,[ebp-4]"
+"	      00436fcc    mov eax,this"
 "	      00436fcf    mov eax,[eax+68h]"
 "	      00436fd2    jmp near ptr 0043704Dh"
 );
 // LINE 496:
 	asm( 
 "	      00436fd7    jmp near ptr 00437046h"
-"	      00436fdc    cmp dword ptr [ebp+8],2"
+"	      00436fdc    cmp radioStationCycleType,2"
 "	      00436fe0    jne near ptr 00437012h"
 );
 // LINE 497:
 	asm( 
-"	      00436fe6    mov eax,[ebp-4]"
+"	      00436fe6    mov eax,this"
 "	      00436fe9    mov eax,[eax+34h]"
 "	      00436fec    cmp dword ptr [eax+28h],0"
 "	      00436ff0    jne near ptr 00436FFDh"
@@ -4899,19 +4899,19 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 // LINE 499:
 	asm( 
 "	      00436ffd    jmp near ptr 00437002h"
-"	      00437002    mov eax,[ebp-4]"
+"	      00437002    mov eax,this"
 "	      00437005    mov eax,[eax+7Ch]"
 "	      00437008    jmp near ptr 0043704Dh"
 );
 // LINE 501:
 	asm( 
 "	      0043700d    jmp near ptr 00437046h"
-"	      00437012    cmp dword ptr [ebp+8],3"
+"	      00437012    cmp radioStationCycleType,3"
 "	      00437016    jne near ptr 00437046h"
 );
 // LINE 502:
 	asm( 
-"	      0043701c    mov eax,[ebp-4]"
+"	      0043701c    mov eax,this"
 "	      0043701f    mov eax,[eax+34h]"
 "	      00437022    cmp dword ptr [eax+28h],0"
 "	      00437026    jne near ptr 00437033h"
@@ -4924,7 +4924,7 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 // LINE 504:
 	asm( 
 "	      00437033    jmp near ptr 00437038h"
-"	      00437038    mov eax,[ebp-4]"
+"	      00437038    mov eax,this"
 "	      0043703b    mov eax,[eax+90h]"
 "	      00437041    jmp near ptr 0043704Dh"
 );
@@ -4953,22 +4953,22 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 "	      0043705a    push ebx"
 "	      0043705b    push esi"
 "	      0043705c    push edi"
-"	      0043705d    mov [ebp-74h],ecx"
+"	      0043705d    mov this,ecx"
 );
 // LINE 515:
 	asm( 
-"	      00437060    cmp dword ptr [ebp+8],0"
+"	      00437060    cmp radioStationCycleType,0"
 "	      00437064    jne near ptr 0043710Bh"
 );
 // LINE 516:
 	asm( 
-"	      0043706a    mov eax,[ebp-74h]"
+"	      0043706a    mov eax,this"
 "	      0043706d    mov eax,[eax+58h]"
 "	      00437070    mov [ebp-64h],eax"
-"	      00437073    mov eax,[ebp-74h]"
+"	      00437073    mov eax,this"
 "	      00437076    mov eax,[eax+58h]"
 "	      00437079    mov eax,[eax]"
-"	      0043707b    mov ecx,[ebp-74h]"
+"	      0043707b    mov ecx,this"
 "	      0043707e    mov [ecx+58h],eax"
 "	      00437081    jmp near ptr 00437086h"
 "	      00437086    mov eax,[ebp-64h]"
@@ -4977,14 +4977,14 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 517:
 	asm( 
-"	      00437091    mov eax,[ebp-74h]"
+"	      00437091    mov eax,this"
 "	      00437094    mov eax,[eax+50h]"
 "	      00437097    mov [ebp-5Ch],eax"
 "	      0043709a    mov eax,[ebp-5Ch]"
 "	      0043709d    mov [ebp-8],eax"
 "	      004370a0    jmp near ptr 004370A5h"
 "	      004370a5    jmp near ptr 004370AAh"
-"	      004370aa    mov eax,[ebp-74h]"
+"	      004370aa    mov eax,this"
 "	      004370ad    mov ecx,[ebp-8]"
 "	      004370b0    cmp [eax+58h],ecx"
 "	      004370b3    jne near ptr 004370BEh"
@@ -4996,7 +4996,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 518:
 	asm( 
-"	      004370d2    mov eax,[ebp-74h]"
+"	      004370d2    mov eax,this"
 "	      004370d5    mov eax,[eax+50h]"
 "	      004370d8    mov eax,[eax]"
 "	      004370da    mov [ebp-58h],eax"
@@ -5004,7 +5004,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 "	      004370e0    mov [ebp-0Ch],eax"
 "	      004370e3    jmp near ptr 004370E8h"
 "	      004370e8    jmp near ptr 004370EDh"
-"	      004370ed    mov eax,[ebp-74h]"
+"	      004370ed    mov eax,this"
 "	      004370f0    mov ecx,[ebp-0Ch]"
 "	      004370f3    cmp [eax+58h],ecx"
 "	      004370f6    jne near ptr 00437101h"
@@ -5014,18 +5014,18 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 // LINE 520:
 	asm( 
 "	      00437106    jmp near ptr 0043732Bh"
-"	      0043710b    cmp dword ptr [ebp+8],1"
+"	      0043710b    cmp radioStationCycleType,1"
 "	      0043710f    jne near ptr 004371B6h"
 );
 // LINE 521:
 	asm( 
-"	      00437115    mov eax,[ebp-74h]"
+"	      00437115    mov eax,this"
 "	      00437118    mov eax,[eax+6Ch]"
 "	      0043711b    mov [ebp-68h],eax"
-"	      0043711e    mov eax,[ebp-74h]"
+"	      0043711e    mov eax,this"
 "	      00437121    mov eax,[eax+6Ch]"
 "	      00437124    mov eax,[eax]"
-"	      00437126    mov ecx,[ebp-74h]"
+"	      00437126    mov ecx,this"
 "	      00437129    mov [ecx+6Ch],eax"
 "	      0043712c    jmp near ptr 00437131h"
 "	      00437131    mov eax,[ebp-68h]"
@@ -5034,14 +5034,14 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 522:
 	asm( 
-"	      0043713c    mov eax,[ebp-74h]"
+"	      0043713c    mov eax,this"
 "	      0043713f    mov eax,[eax+64h]"
 "	      00437142    mov [ebp-50h],eax"
 "	      00437145    mov eax,[ebp-50h]"
 "	      00437148    mov [ebp-14h],eax"
 "	      0043714b    jmp near ptr 00437150h"
 "	      00437150    jmp near ptr 00437155h"
-"	      00437155    mov eax,[ebp-74h]"
+"	      00437155    mov eax,this"
 "	      00437158    mov ecx,[ebp-14h]"
 "	      0043715b    cmp [eax+6Ch],ecx"
 "	      0043715e    jne near ptr 00437169h"
@@ -5053,7 +5053,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 523:
 	asm( 
-"	      0043717d    mov eax,[ebp-74h]"
+"	      0043717d    mov eax,this"
 "	      00437180    mov eax,[eax+64h]"
 "	      00437183    mov eax,[eax]"
 "	      00437185    mov [ebp-4Ch],eax"
@@ -5061,7 +5061,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 "	      0043718b    mov [ebp-18h],eax"
 "	      0043718e    jmp near ptr 00437193h"
 "	      00437193    jmp near ptr 00437198h"
-"	      00437198    mov eax,[ebp-74h]"
+"	      00437198    mov eax,this"
 "	      0043719b    mov ecx,[ebp-18h]"
 "	      0043719e    cmp [eax+6Ch],ecx"
 "	      004371a1    jne near ptr 004371ACh"
@@ -5071,18 +5071,18 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 // LINE 525:
 	asm( 
 "	      004371b1    jmp near ptr 0043732Bh"
-"	      004371b6    cmp dword ptr [ebp+8],2"
+"	      004371b6    cmp radioStationCycleType,2"
 "	      004371ba    jne near ptr 00437270h"
 );
 // LINE 526:
 	asm( 
-"	      004371c0    mov eax,[ebp-74h]"
+"	      004371c0    mov eax,this"
 "	      004371c3    mov eax,[eax+80h]"
 "	      004371c9    mov [ebp-6Ch],eax"
-"	      004371cc    mov eax,[ebp-74h]"
+"	      004371cc    mov eax,this"
 "	      004371cf    mov eax,[eax+80h]"
 "	      004371d5    mov eax,[eax]"
-"	      004371d7    mov ecx,[ebp-74h]"
+"	      004371d7    mov ecx,this"
 "	      004371da    mov [ecx+80h],eax"
 "	      004371e0    jmp near ptr 004371E5h"
 "	      004371e5    mov eax,[ebp-6Ch]"
@@ -5091,14 +5091,14 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 527:
 	asm( 
-"	      004371f0    mov eax,[ebp-74h]"
+"	      004371f0    mov eax,this"
 "	      004371f3    mov eax,[eax+78h]"
 "	      004371f6    mov [ebp-44h],eax"
 "	      004371f9    mov eax,[ebp-44h]"
 "	      004371fc    mov [ebp-20h],eax"
 "	      004371ff    jmp near ptr 00437204h"
 "	      00437204    jmp near ptr 00437209h"
-"	      00437209    mov eax,[ebp-74h]"
+"	      00437209    mov eax,this"
 "	      0043720c    mov ecx,[ebp-20h]"
 "	      0043720f    cmp [eax+80h],ecx"
 "	      00437215    jne near ptr 00437220h"
@@ -5110,7 +5110,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 528:
 	asm( 
-"	      00437234    mov eax,[ebp-74h]"
+"	      00437234    mov eax,this"
 "	      00437237    mov eax,[eax+78h]"
 "	      0043723a    mov eax,[eax]"
 "	      0043723c    mov [ebp-40h],eax"
@@ -5118,7 +5118,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 "	      00437242    mov [ebp-24h],eax"
 "	      00437245    jmp near ptr 0043724Ah"
 "	      0043724a    jmp near ptr 0043724Fh"
-"	      0043724f    mov eax,[ebp-74h]"
+"	      0043724f    mov eax,this"
 "	      00437252    mov ecx,[ebp-24h]"
 "	      00437255    cmp [eax+80h],ecx"
 "	      0043725b    jne near ptr 00437266h"
@@ -5128,18 +5128,18 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 // LINE 530:
 	asm( 
 "	      0043726b    jmp near ptr 0043732Bh"
-"	      00437270    cmp dword ptr [ebp+8],3"
+"	      00437270    cmp radioStationCycleType,3"
 "	      00437274    jne near ptr 0043732Bh"
 );
 // LINE 531:
 	asm( 
-"	      0043727a    mov eax,[ebp-74h]"
+"	      0043727a    mov eax,this"
 "	      0043727d    mov eax,[eax+94h]"
 "	      00437283    mov [ebp-70h],eax"
-"	      00437286    mov eax,[ebp-74h]"
+"	      00437286    mov eax,this"
 "	      00437289    mov eax,[eax+94h]"
 "	      0043728f    mov eax,[eax]"
-"	      00437291    mov ecx,[ebp-74h]"
+"	      00437291    mov ecx,this"
 "	      00437294    mov [ecx+94h],eax"
 "	      0043729a    jmp near ptr 0043729Fh"
 "	      0043729f    mov eax,[ebp-70h]"
@@ -5148,14 +5148,14 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 532:
 	asm( 
-"	      004372aa    mov eax,[ebp-74h]"
+"	      004372aa    mov eax,this"
 "	      004372ad    mov eax,[eax+8Ch]"
 "	      004372b3    mov [ebp-38h],eax"
 "	      004372b6    mov eax,[ebp-38h]"
 "	      004372b9    mov [ebp-2Ch],eax"
 "	      004372bc    jmp near ptr 004372C1h"
 "	      004372c1    jmp near ptr 004372C6h"
-"	      004372c6    mov eax,[ebp-74h]"
+"	      004372c6    mov eax,this"
 "	      004372c9    mov ecx,[ebp-2Ch]"
 "	      004372cc    cmp [eax+94h],ecx"
 "	      004372d2    jne near ptr 004372DDh"
@@ -5167,7 +5167,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 );
 // LINE 533:
 	asm( 
-"	      004372f1    mov eax,[ebp-74h]"
+"	      004372f1    mov eax,this"
 "	      004372f4    mov eax,[eax+8Ch]"
 "	      004372fa    mov eax,[eax]"
 "	      004372fc    mov [ebp-34h],eax"
@@ -5175,7 +5175,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 "	      00437302    mov [ebp-30h],eax"
 "	      00437305    jmp near ptr 0043730Ah"
 "	      0043730a    jmp near ptr 0043730Fh"
-"	      0043730f    mov eax,[ebp-74h]"
+"	      0043730f    mov eax,this"
 "	      00437312    mov ecx,[ebp-30h]"
 "	      00437315    cmp [eax+94h],ecx"
 "	      0043731b    jne near ptr 00437326h"
@@ -5206,7 +5206,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 "	      00437340    push ebx"
 "	      00437341    push esi"
 "	      00437342    push edi"
-"	      00437343    mov [ebp-94h],ecx"
+"	      00437343    mov this,ecx"
 );
 // LINE 543:
 	asm( 
@@ -5238,7 +5238,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 "	      004373b0    push 0"
 "	      004373b2    lea eax,[ebp-2Ch]"
 "	      004373b5    push eax"
-"	      004373b6    lea ecx,[ebp-24h]"
+"	      004373b6    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004373b9    call 004832A3h"
 "	      004373be    mov eax,[ebp-28h]"
 "	      004373c1    dec dword ptr [eax+0Ch]"
@@ -5334,7 +5334,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 "	      004374fe    push 0"
 "	      00437500    lea eax,[ebp-34h]"
 "	      00437503    push eax"
-"	      00437504    lea ecx,[ebp-24h]"
+"	      00437504    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00437507    call 00485EBEh"
 "	      0043750c    mov eax,[ebp-30h]"
 "	      0043750f    dec dword ptr [eax+0Ch]"
@@ -5372,10 +5372,10 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 547:
 	asm( 
 "	      00437584    push 1"
-"	      00437586    mov eax,[ebp-94h]"
+"	      00437586    mov eax,this"
 "	      0043758c    add eax,40h"
 "	      0043758f    push eax"
-"	      00437590    lea ecx,[ebp-24h]"
+"	      00437590    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00437593    call 00485B36h"
 );
 // LINE 549:
@@ -5388,16 +5388,16 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 550:
 	asm( 
 "	      004375ac    push 0"
-"	      004375ae    lea ecx,[ebp-24h]"
+"	      004375ae    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004375b1    call 00485E22h"
-"	      004375b6    mov [ebp-4],eax"
+"	      004375b6    mov tempDirectoryEntry,eax"
 );
 // LINE 551:
 	asm( 
-"	      004375b9    mov eax,[ebp-94h]"
+"	      004375b9    mov eax,this"
 "	      004375bf    add eax,38h"
 "	      004375c2    push eax"
-"	      004375c3    mov ecx,[ebp-4]"
+"	      004375c3    mov ecx,tempDirectoryEntry"
 "	      004375c6    call 0048237Ch"
 );
 // LINE 552:
@@ -5430,7 +5430,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 "	      00437628    call 0056A740h"
 "	      0043762d    add esp,4"
 "	      00437630    jmp near ptr 00437635h"
-"	      00437635    lea ecx,[ebp-24h]"
+"	      00437635    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      00437638    call 00428C70h"
 "	      0043763d    mov eax,[ebp-38h]"
 "	      00437640    jmp near ptr 004376D7h"
@@ -5465,7 +5465,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 "	      004376ba    call 0056A740h"
 "	      004376bf    add esp,4"
 "	      004376c2    jmp near ptr 004376C7h"
-"	      004376c7    lea ecx,[ebp-24h]"
+"	      004376c7    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004376ca    call 00428C70h"
 "	      004376cf    mov eax,[ebp-3Ch]"
 "	      004376d2    jmp near ptr 004376D7h"
@@ -5494,7 +5494,7 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      004376e5    push ebx"
 "	      004376e6    push esi"
 "	      004376e7    push edi"
-"	      004376e8    mov [ebp-94h],ecx"
+"	      004376e8    mov this,ecx"
 );
 // LINE 563:
 	asm( 
@@ -5516,10 +5516,10 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      0043773c    mov dword ptr [eax+0Ch],1"
 "	      00437743    jmp near ptr 00437748h"
 "	      00437748    mov eax,[ebp-8Ch]"
-"	      0043774e    mov [ebp-10h],eax"
+"	      0043774e    mov sStationDirectoryParent.reference,eax"
 "	      00437751    jmp near ptr 0043775Dh"
-"	      00437756    mov dword ptr [ebp-10h],0"
-"	      0043775d    mov dword ptr [ebp-14h],0"
+"	      00437756    mov sStationDirectoryParent.reference,0"
+"	      0043775d    mov sStationDirectoryParent.c_str_ptr,0"
 "	      00437764    jmp near ptr 00437769h"
 );
 // LINE 564:
@@ -5542,19 +5542,19 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      004377b7    mov dword ptr [eax+0Ch],1"
 "	      004377be    jmp near ptr 004377C3h"
 "	      004377c3    mov eax,[ebp-90h]"
-"	      004377c9    mov [ebp-4],eax"
+"	      004377c9    mov sStationDirectoryName.reference,eax"
 "	      004377cc    jmp near ptr 004377D8h"
-"	      004377d1    mov dword ptr [ebp-4],0"
-"	      004377d8    mov dword ptr [ebp-8],0"
+"	      004377d1    mov sStationDirectoryName.reference,0"
+"	      004377d8    mov sStationDirectoryName.c_str_ptr,0"
 "	      004377df    jmp near ptr 004377E4h"
 );
 // LINE 569:
 	asm( 
-"	      004377e4    lea eax,[ebp-8]"
+"	      004377e4    lea eax,sStationDirectoryName.c_str_ptr"
 "	      004377e7    push eax"
-"	      004377e8    lea eax,[ebp-14h]"
+"	      004377e8    lea eax,sStationDirectoryParent.c_str_ptr"
 "	      004377eb    push eax"
-"	      004377ec    mov eax,[ebp-94h]"
+"	      004377ec    mov eax,this"
 "	      004377f2    add eax,40h"
 "	      004377f5    push eax"
 "	      004377f6    call 004867D2h"
@@ -5562,12 +5562,12 @@ int32_t RadioStation::DetectRadioStationType() {
 );
 // LINE 570:
 	asm( 
-"	      004377fe    mov dword ptr [ebp-0Ch],0"
+"	      004377fe    mov i,0"
 "	      00437805    jmp near ptr 0043780Dh"
-"	      0043780a    inc dword ptr [ebp-0Ch]"
-"	      0043780d    cmp dword ptr [ebp-0Ch],9"
+"	      0043780a    inc i"
+"	      0043780d    cmp i,9"
 "	      00437811    jge near ptr 00437A34h"
-"	      00437817    mov eax,[ebp-0Ch]"
+"	      00437817    mov eax,i"
 "	      0043781a    mov eax,[eax*4+598488h]"
 "	      00437821    mov [ebp-84h],eax"
 );
@@ -5589,11 +5589,11 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      0043785c    mov dword ptr [ebp-20h],0"
 "	      00437863    jmp near ptr 00437868h"
 "	      00437868    jmp near ptr 0043786Dh"
-"	      0043786d    mov eax,[ebp-4]"
+"	      0043786d    mov eax,sStationDirectoryName.reference"
 "	      00437870    cmp dword ptr [eax+4],0FFFFFFFFh"
 "	      00437874    jae near ptr 00437890h"
 "	      0043787a    jmp near ptr 0043787Fh"
-"	      0043787f    mov eax,[ebp-4]"
+"	      0043787f    mov eax,sStationDirectoryName.reference"
 "	      00437882    mov eax,[eax+4]"
 "	      00437885    mov [ebp-88h],eax"
 "	      0043788b    jmp near ptr 0043789Ah"
@@ -5609,7 +5609,7 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      004378b5    call 00417C00h"
 "	      004378ba    push eax"
 "	      004378bb    push 0"
-"	      004378bd    lea ecx,[ebp-8]"
+"	      004378bd    lea ecx,sStationDirectoryName.c_str_ptr"
 "	      004378c0    call 00410C40h"
 "	      004378c5    test eax,eax"
 "	      004378c7    jne near ptr 004378D9h"
@@ -5651,14 +5651,14 @@ int32_t RadioStation::DetectRadioStationType() {
 );
 // LINE 575:
 	asm( 
-"	      00437959    mov eax,[ebp-0Ch]"
+"	      00437959    mov eax,i"
 "	      0043795c    mov [ebp-24h],eax"
-"	      0043795f    mov eax,[ebp-4]"
+"	      0043795f    mov eax,sStationDirectoryName.reference"
 "	      00437962    dec dword ptr [eax+0Ch]"
-"	      00437965    mov eax,[ebp-4]"
+"	      00437965    mov eax,sStationDirectoryName.reference"
 "	      00437968    cmp dword ptr [eax+0Ch],0"
 "	      0043796c    jne near ptr 00437997h"
-"	      00437972    mov eax,[ebp-4]"
+"	      00437972    mov eax,sStationDirectoryName.reference"
 "	      00437975    mov [ebp-4Ch],eax"
 "	      00437978    mov eax,[ebp-4Ch]"
 "	      0043797b    mov [ebp-48h],eax"
@@ -5669,9 +5669,9 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      0043798d    call 0041DD70h"
 "	      00437992    jmp near ptr 00437997h"
 "	      00437997    jmp near ptr 0043799Ch"
-"	      0043799c    cmp dword ptr [ebp-8],0"
+"	      0043799c    cmp sStationDirectoryName.c_str_ptr,0"
 "	      004379a0    je near ptr 004379BEh"
-"	      004379a6    mov eax,[ebp-8]"
+"	      004379a6    mov eax,sStationDirectoryName.c_str_ptr"
 "	      004379a9    mov [ebp-40h],eax"
 "	      004379ac    mov eax,[ebp-40h]"
 "	      004379af    mov [ebp-44h],eax"
@@ -5680,12 +5680,12 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      004379b6    call 0056A740h"
 "	      004379bb    add esp,4"
 "	      004379be    jmp near ptr 004379C3h"
-"	      004379c3    mov eax,[ebp-10h]"
+"	      004379c3    mov eax,sStationDirectoryParent.reference"
 "	      004379c6    dec dword ptr [eax+0Ch]"
-"	      004379c9    mov eax,[ebp-10h]"
+"	      004379c9    mov eax,sStationDirectoryParent.reference"
 "	      004379cc    cmp dword ptr [eax+0Ch],0"
 "	      004379d0    jne near ptr 004379FBh"
-"	      004379d6    mov eax,[ebp-10h]"
+"	      004379d6    mov eax,sStationDirectoryParent.reference"
 "	      004379d9    mov [ebp-5Ch],eax"
 "	      004379dc    mov eax,[ebp-5Ch]"
 "	      004379df    mov [ebp-58h],eax"
@@ -5696,9 +5696,9 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      004379f1    call 0041DD70h"
 "	      004379f6    jmp near ptr 004379FBh"
 "	      004379fb    jmp near ptr 00437A00h"
-"	      00437a00    cmp dword ptr [ebp-14h],0"
+"	      00437a00    cmp sStationDirectoryParent.c_str_ptr,0"
 "	      00437a04    je near ptr 00437A22h"
-"	      00437a0a    mov eax,[ebp-14h]"
+"	      00437a0a    mov eax,sStationDirectoryParent.c_str_ptr"
 "	      00437a0d    mov [ebp-50h],eax"
 "	      00437a10    mov eax,[ebp-50h]"
 "	      00437a13    mov [ebp-54h],eax"
@@ -5717,12 +5717,12 @@ int32_t RadioStation::DetectRadioStationType() {
 // LINE 578:
 	asm( 
 "	      00437a34    mov dword ptr [ebp-28h],0FFFFFFFFh"
-"	      00437a3b    mov eax,[ebp-4]"
+"	      00437a3b    mov eax,sStationDirectoryName.reference"
 "	      00437a3e    dec dword ptr [eax+0Ch]"
-"	      00437a41    mov eax,[ebp-4]"
+"	      00437a41    mov eax,sStationDirectoryName.reference"
 "	      00437a44    cmp dword ptr [eax+0Ch],0"
 "	      00437a48    jne near ptr 00437A73h"
-"	      00437a4e    mov eax,[ebp-4]"
+"	      00437a4e    mov eax,sStationDirectoryName.reference"
 "	      00437a51    mov [ebp-6Ch],eax"
 "	      00437a54    mov eax,[ebp-6Ch]"
 "	      00437a57    mov [ebp-68h],eax"
@@ -5733,9 +5733,9 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437a69    call 0041DD70h"
 "	      00437a6e    jmp near ptr 00437A73h"
 "	      00437a73    jmp near ptr 00437A78h"
-"	      00437a78    cmp dword ptr [ebp-8],0"
+"	      00437a78    cmp sStationDirectoryName.c_str_ptr,0"
 "	      00437a7c    je near ptr 00437A9Ah"
-"	      00437a82    mov eax,[ebp-8]"
+"	      00437a82    mov eax,sStationDirectoryName.c_str_ptr"
 "	      00437a85    mov [ebp-60h],eax"
 "	      00437a88    mov eax,[ebp-60h]"
 "	      00437a8b    mov [ebp-64h],eax"
@@ -5744,12 +5744,12 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437a92    call 0056A740h"
 "	      00437a97    add esp,4"
 "	      00437a9a    jmp near ptr 00437A9Fh"
-"	      00437a9f    mov eax,[ebp-10h]"
+"	      00437a9f    mov eax,sStationDirectoryParent.reference"
 "	      00437aa2    dec dword ptr [eax+0Ch]"
-"	      00437aa5    mov eax,[ebp-10h]"
+"	      00437aa5    mov eax,sStationDirectoryParent.reference"
 "	      00437aa8    cmp dword ptr [eax+0Ch],0"
 "	      00437aac    jne near ptr 00437AD7h"
-"	      00437ab2    mov eax,[ebp-10h]"
+"	      00437ab2    mov eax,sStationDirectoryParent.reference"
 "	      00437ab5    mov [ebp-7Ch],eax"
 "	      00437ab8    mov eax,[ebp-7Ch]"
 "	      00437abb    mov [ebp-78h],eax"
@@ -5760,9 +5760,9 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437acd    call 0041DD70h"
 "	      00437ad2    jmp near ptr 00437AD7h"
 "	      00437ad7    jmp near ptr 00437ADCh"
-"	      00437adc    cmp dword ptr [ebp-14h],0"
+"	      00437adc    cmp sStationDirectoryParent.c_str_ptr,0"
 "	      00437ae0    je near ptr 00437AFEh"
-"	      00437ae6    mov eax,[ebp-14h]"
+"	      00437ae6    mov eax,sStationDirectoryParent.c_str_ptr"
 "	      00437ae9    mov [ebp-70h],eax"
 "	      00437aec    mov eax,[ebp-70h]"
 "	      00437aef    mov [ebp-74h],eax"
@@ -5794,42 +5794,42 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437b16    push ebx"
 "	      00437b17    push esi"
 "	      00437b18    push edi"
-"	      00437b19    mov [ebp-4],ecx"
-"	      00437b1c    mov eax,[ebp-4]"
+"	      00437b19    mov this,ecx"
+"	      00437b1c    mov eax,this"
 "	      00437b1f    mov dword ptr [eax+4],0"
-"	      00437b26    mov eax,[ebp-4]"
+"	      00437b26    mov eax,this"
 "	      00437b29    mov dword ptr [eax+8],0"
-"	      00437b30    mov eax,[ebp-4]"
+"	      00437b30    mov eax,this"
 "	      00437b33    mov dword ptr [eax+0Ch],0"
 "	      00437b3a    jmp near ptr 00437B3Fh"
-"	      00437b3f    mov eax,[ebp-4]"
+"	      00437b3f    mov eax,this"
 "	      00437b42    mov dword ptr [eax+10h],2710h"
-"	      00437b49    mov eax,[ebp-4]"
+"	      00437b49    mov eax,this"
 "	      00437b4c    mov dword ptr [eax+14h],0"
-"	      00437b53    mov eax,[ebp-4]"
+"	      00437b53    mov eax,this"
 "	      00437b56    mov dword ptr [eax+18h],1"
-"	      00437b5d    mov eax,[ebp-4]"
+"	      00437b5d    mov eax,this"
 "	      00437b60    mov dword ptr [eax+1Ch],0"
-"	      00437b67    mov eax,[ebp-4]"
+"	      00437b67    mov eax,this"
 "	      00437b6a    mov dword ptr [eax+20h],0"
-"	      00437b71    mov eax,[ebp-4]"
+"	      00437b71    mov eax,this"
 "	      00437b74    mov dword ptr [eax+24h],1"
-"	      00437b7b    mov eax,[ebp-4]"
+"	      00437b7b    mov eax,this"
 "	      00437b7e    mov dword ptr [eax+28h],1"
-"	      00437b85    mov eax,[ebp-4]"
+"	      00437b85    mov eax,this"
 "	      00437b88    mov dword ptr [eax+2Ch],1"
-"	      00437b8f    mov eax,[ebp-4]"
+"	      00437b8f    mov eax,this"
 "	      00437b92    mov dword ptr [eax+30h],1"
-"	      00437b99    mov ecx,[ebp-4]"
+"	      00437b99    mov ecx,this"
 "	      00437b9c    add ecx,34h"
 "	      00437b9f    call 0042EF87h"
-"	      00437ba4    mov eax,[ebp-4]"
+"	      00437ba4    mov eax,this"
 "	      00437ba7    mov dword ptr [eax],58F560h"
 );
 // LINE 604:
 	asm( 
 "	      00437bad    jmp near ptr 00437BB2h"
-"	      00437bb2    mov eax,[ebp-4]"
+"	      00437bb2    mov eax,this"
 "	      00437bb5    pop edi"
 "	      00437bb6    pop esi"
 "	      00437bb7    pop ebx"
@@ -5848,14 +5848,14 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437bc0    push ebx"
 "	      00437bc1    push esi"
 "	      00437bc2    push edi"
-"	      00437bc3    mov [ebp-10h],ecx"
-"	      00437bc6    mov eax,[ebp-10h]"
+"	      00437bc3    mov this,ecx"
+"	      00437bc6    mov eax,this"
 "	      00437bc9    mov dword ptr [eax],58F560h"
 );
 // LINE 611:
 	asm( 
-"	      00437bcf    mov ecx,[ebp-10h]"
-"	      00437bd2    mov eax,[ebp-10h]"
+"	      00437bcf    mov ecx,this"
+"	      00437bd2    mov eax,this"
 "	      00437bd5    mov eax,[eax+34h]"
 "	      00437bd8    add ecx,34h"
 "	      00437bdb    call dword ptr [eax+3Ch]"
@@ -5863,13 +5863,13 @@ int32_t RadioStation::DetectRadioStationType() {
 // LINE 612:
 	asm( 
 "	      00437bde    jmp near ptr 00437BE3h"
-"	      00437be3    mov ecx,[ebp-10h]"
+"	      00437be3    mov ecx,this"
 "	      00437be6    add ecx,34h"
 "	      00437be9    call 0042F2E9h"
-"	      00437bee    mov eax,[ebp-10h]"
+"	      00437bee    mov eax,this"
 "	      00437bf1    mov eax,[eax+8]"
 "	      00437bf4    mov [ebp-8],eax"
-"	      00437bf7    mov eax,[ebp-10h]"
+"	      00437bf7    mov eax,this"
 "	      00437bfa    mov eax,[eax+4]"
 "	      00437bfd    mov [ebp-0Ch],eax"
 "	      00437c00    mov eax,[ebp-8]"
@@ -5884,7 +5884,7 @@ int32_t RadioStation::DetectRadioStationType() {
 "	      00437c1d    add dword ptr [ebp-0Ch],98h"
 "	      00437c24    jmp near ptr 00437C00h"
 "	      00437c29    jmp near ptr 00437C2Eh"
-"	      00437c2e    mov eax,[ebp-10h]"
+"	      00437c2e    mov eax,this"
 "	      00437c31    mov eax,[eax+4]"
 "	      00437c34    mov [ebp-4],eax"
 "	      00437c37    mov eax,[ebp-4]"
@@ -5912,20 +5912,20 @@ int  Radio::Initialize() {
 "	      00437c5d    push ebx"
 "	      00437c5e    push esi"
 "	      00437c5f    push edi"
-"	      00437c60    mov [ebp-4],ecx"
+"	      00437c60    mov this,ecx"
 );
 // LINE 620:
 	asm( 
-"	      00437c63    mov eax,[ebp-4]"
+"	      00437c63    mov eax,this"
 "	      00437c66    mov eax,[eax]"
-"	      00437c68    mov ecx,[ebp-4]"
+"	      00437c68    mov ecx,this"
 "	      00437c6b    call dword ptr [eax+44h]"
 );
 // LINE 621:
 	asm( 
-"	      00437c6e    mov eax,[ebp-4]"
+"	      00437c6e    mov eax,this"
 "	      00437c71    mov eax,[eax]"
-"	      00437c73    mov ecx,[ebp-4]"
+"	      00437c73    mov ecx,this"
 "	      00437c76    call dword ptr [eax+14h]"
 );
 // LINE 622:
@@ -5953,19 +5953,19 @@ int  Radio::DeInitialize() {
 "	      00437c8e    push ebx"
 "	      00437c8f    push esi"
 "	      00437c90    push edi"
-"	      00437c91    mov [ebp-4],ecx"
+"	      00437c91    mov this,ecx"
 );
 // LINE 631:
 	asm( 
-"	      00437c94    mov eax,[ebp-4]"
+"	      00437c94    mov eax,this"
 "	      00437c97    mov eax,[eax]"
-"	      00437c99    mov ecx,[ebp-4]"
+"	      00437c99    mov ecx,this"
 "	      00437c9c    call dword ptr [eax+18h]"
 );
 // LINE 632:
 	asm( 
-"	      00437c9f    mov ecx,[ebp-4]"
-"	      00437ca2    mov eax,[ebp-4]"
+"	      00437c9f    mov ecx,this"
+"	      00437ca2    mov eax,this"
 "	      00437ca5    mov eax,[eax+34h]"
 "	      00437ca8    add ecx,34h"
 "	      00437cab    call dword ptr [eax+3Ch]"
@@ -5995,75 +5995,75 @@ void  Radio::SetPreferences(struct RadioPreferences& newRadioPreferences) {
 "	      00437cc3    push ebx"
 "	      00437cc4    push esi"
 "	      00437cc5    push edi"
-"	      00437cc6    mov [ebp-4],ecx"
+"	      00437cc6    mov this,ecx"
 );
 // LINE 642:
 	asm( 
-"	      00437cc9    mov eax,[ebp+8]"
+"	      00437cc9    mov eax,newRadioPreferences"
 "	      00437ccc    mov eax,[eax+4]"
-"	      00437ccf    mov ecx,[ebp-4]"
+"	      00437ccf    mov ecx,this"
 "	      00437cd2    mov [ecx+18h],eax"
 );
 // LINE 643:
 	asm( 
-"	      00437cd5    mov eax,[ebp+8]"
+"	      00437cd5    mov eax,newRadioPreferences"
 "	      00437cd8    mov eax,[eax]"
-"	      00437cda    mov ecx,[ebp-4]"
+"	      00437cda    mov ecx,this"
 "	      00437cdd    mov [ecx+10h],eax"
 );
 // LINE 644:
 	asm( 
-"	      00437ce0    mov eax,[ebp+8]"
+"	      00437ce0    mov eax,newRadioPreferences"
 "	      00437ce3    mov eax,[eax+8]"
-"	      00437ce6    mov ecx,[ebp-4]"
+"	      00437ce6    mov ecx,this"
 "	      00437ce9    mov [ecx+20h],eax"
 );
 // LINE 645:
 	asm( 
-"	      00437cec    mov eax,[ebp+8]"
+"	      00437cec    mov eax,newRadioPreferences"
 "	      00437cef    mov eax,[eax+0Ch]"
-"	      00437cf2    mov ecx,[ebp-4]"
+"	      00437cf2    mov ecx,this"
 "	      00437cf5    mov [ecx+24h],eax"
 );
 // LINE 646:
 	asm( 
-"	      00437cf8    mov eax,[ebp+8]"
+"	      00437cf8    mov eax,newRadioPreferences"
 "	      00437cfb    mov eax,[eax+10h]"
-"	      00437cfe    mov ecx,[ebp-4]"
+"	      00437cfe    mov ecx,this"
 "	      00437d01    mov [ecx+28h],eax"
 );
 // LINE 647:
 	asm( 
-"	      00437d04    mov eax,[ebp+8]"
+"	      00437d04    mov eax,newRadioPreferences"
 "	      00437d07    mov eax,[eax+14h]"
-"	      00437d0a    mov ecx,[ebp-4]"
+"	      00437d0a    mov ecx,this"
 "	      00437d0d    mov [ecx+2Ch],eax"
 );
 // LINE 648:
 	asm( 
-"	      00437d10    mov eax,[ebp+8]"
+"	      00437d10    mov eax,newRadioPreferences"
 "	      00437d13    mov eax,[eax+18h]"
-"	      00437d16    mov ecx,[ebp-4]"
+"	      00437d16    mov ecx,this"
 "	      00437d19    mov [ecx+30h],eax"
 );
 // LINE 651:
 	asm( 
-"	      00437d1c    mov eax,[ebp-4]"
+"	      00437d1c    mov eax,this"
 "	      00437d1f    mov eax,[eax+10h]"
 "	      00437d22    push eax"
-"	      00437d23    mov eax,[ebp-4]"
+"	      00437d23    mov eax,this"
 "	      00437d26    mov eax,[eax]"
-"	      00437d28    mov ecx,[ebp-4]"
+"	      00437d28    mov ecx,this"
 "	      00437d2b    call dword ptr [eax+2Ch]"
 );
 // LINE 652:
 	asm( 
-"	      00437d2e    mov eax,[ebp-4]"
+"	      00437d2e    mov eax,this"
 "	      00437d31    mov eax,[eax+20h]"
 "	      00437d34    push eax"
-"	      00437d35    mov eax,[ebp-4]"
+"	      00437d35    mov eax,this"
 "	      00437d38    mov eax,[eax]"
-"	      00437d3a    mov ecx,[ebp-4]"
+"	      00437d3a    mov ecx,this"
 "	      00437d3d    call dword ptr [eax+34h]"
 );
 // LINE 653:
@@ -6087,55 +6087,55 @@ void  Radio::GetPreferences(struct RadioPreferences& currentRadioPreferences) {
 "	      00437d52    push ebx"
 "	      00437d53    push esi"
 "	      00437d54    push edi"
-"	      00437d55    mov [ebp-4],ecx"
+"	      00437d55    mov this,ecx"
 );
 // LINE 661:
 	asm( 
-"	      00437d58    mov eax,[ebp-4]"
+"	      00437d58    mov eax,this"
 "	      00437d5b    mov eax,[eax+18h]"
-"	      00437d5e    mov ecx,[ebp+8]"
+"	      00437d5e    mov ecx,currentRadioPreferences"
 "	      00437d61    mov [ecx+4],eax"
 );
 // LINE 662:
 	asm( 
-"	      00437d64    mov eax,[ebp-4]"
+"	      00437d64    mov eax,this"
 "	      00437d67    mov eax,[eax+10h]"
-"	      00437d6a    mov ecx,[ebp+8]"
+"	      00437d6a    mov ecx,currentRadioPreferences"
 "	      00437d6d    mov [ecx],eax"
 );
 // LINE 663:
 	asm( 
-"	      00437d6f    mov eax,[ebp-4]"
+"	      00437d6f    mov eax,this"
 "	      00437d72    mov eax,[eax+20h]"
-"	      00437d75    mov ecx,[ebp+8]"
+"	      00437d75    mov ecx,currentRadioPreferences"
 "	      00437d78    mov [ecx+8],eax"
 );
 // LINE 664:
 	asm( 
-"	      00437d7b    mov eax,[ebp-4]"
+"	      00437d7b    mov eax,this"
 "	      00437d7e    mov eax,[eax+24h]"
-"	      00437d81    mov ecx,[ebp+8]"
+"	      00437d81    mov ecx,currentRadioPreferences"
 "	      00437d84    mov [ecx+0Ch],eax"
 );
 // LINE 665:
 	asm( 
-"	      00437d87    mov eax,[ebp-4]"
+"	      00437d87    mov eax,this"
 "	      00437d8a    mov eax,[eax+28h]"
-"	      00437d8d    mov ecx,[ebp+8]"
+"	      00437d8d    mov ecx,currentRadioPreferences"
 "	      00437d90    mov [ecx+10h],eax"
 );
 // LINE 666:
 	asm( 
-"	      00437d93    mov eax,[ebp-4]"
+"	      00437d93    mov eax,this"
 "	      00437d96    mov eax,[eax+2Ch]"
-"	      00437d99    mov ecx,[ebp+8]"
+"	      00437d99    mov ecx,currentRadioPreferences"
 "	      00437d9c    mov [ecx+14h],eax"
 );
 // LINE 667:
 	asm( 
-"	      00437d9f    mov eax,[ebp-4]"
+"	      00437d9f    mov eax,this"
 "	      00437da2    mov eax,[eax+30h]"
-"	      00437da5    mov ecx,[ebp+8]"
+"	      00437da5    mov ecx,currentRadioPreferences"
 "	      00437da8    mov [ecx+18h],eax"
 );
 // LINE 668:
@@ -6162,7 +6162,7 @@ int  Radio::GetPreferences() {
 "	      00437dbd    push ebx"
 "	      00437dbe    push esi"
 "	      00437dbf    push edi"
-"	      00437dc0    mov [ebp-24h],ecx"
+"	      00437dc0    mov this,ecx"
 );
 // LINE 679:
 	asm( 
@@ -6176,11 +6176,11 @@ int  Radio::GetPreferences() {
 "	      00437dda    mov eax,[eax]"
 "	      00437ddc    mov ecx,ds:[599BC4h]"
 "	      00437de2    call dword ptr [eax+1Ch]"
-"	      00437de5    mov [ebp-4],eax"
+"	      00437de5    mov chPrefData,eax"
 );
 // LINE 681:
 	asm( 
-"	      00437de8    cmp dword ptr [ebp-4],0"
+"	      00437de8    cmp chPrefData,0"
 "	      00437dec    je near ptr 00437E58h"
 );
 // LINE 683:
@@ -6195,38 +6195,38 @@ int  Radio::GetPreferences() {
 );
 // LINE 684:
 	asm( 
-"	      00437e10    lea edi,[ebp-20h]"
-"	      00437e13    mov esi,[ebp-4]"
+"	      00437e10    lea edi,tempRadioPreferences.lVolume"
+"	      00437e13    mov esi,chPrefData"
 "	      00437e16    mov ecx,7"
 "	      00437e1b    rep movsd"
 );
 // LINE 686:
 	asm( 
-"	      00437e1d    cmp dword ptr [ebp-1Ch],0"
+"	      00437e1d    cmp tempRadioPreferences.bPreferToBeOn,0"
 "	      00437e21    je near ptr 00437E38h"
-"	      00437e27    cmp dword ptr [ebp-1Ch],1"
+"	      00437e27    cmp tempRadioPreferences.bPreferToBeOn,1"
 "	      00437e2b    je near ptr 00437E38h"
 );
 // LINE 687:
 	asm( 
-"	      00437e31    mov dword ptr [ebp-1Ch],0"
+"	      00437e31    mov tempRadioPreferences.bPreferToBeOn,0"
 );
 // LINE 688:
 	asm( 
-"	      00437e38    cmp dword ptr [ebp-20h],64h"
+"	      00437e38    cmp tempRadioPreferences.lVolume,64h"
 "	      00437e3c    jge near ptr 00437E49h"
 );
 // LINE 689:
 	asm( 
-"	      00437e42    mov dword ptr [ebp-1Ch],0"
+"	      00437e42    mov tempRadioPreferences.bPreferToBeOn,0"
 );
 // LINE 690:
 	asm( 
-"	      00437e49    lea eax,[ebp-20h]"
+"	      00437e49    lea eax,tempRadioPreferences.lVolume"
 "	      00437e4c    push eax"
-"	      00437e4d    mov eax,[ebp-24h]"
+"	      00437e4d    mov eax,this"
 "	      00437e50    mov eax,[eax]"
-"	      00437e52    mov ecx,[ebp-24h]"
+"	      00437e52    mov ecx,this"
 "	      00437e55    call dword ptr [eax+0Ch]"
 );
 // LINE 695:
@@ -6256,7 +6256,7 @@ int  Radio::SavePreferences() {
 "	      00437e6d    push ebx"
 "	      00437e6e    push esi"
 "	      00437e6f    push edi"
-"	      00437e70    mov [ebp-20h],ecx"
+"	      00437e70    mov this,ecx"
 );
 // LINE 706:
 	asm( 
@@ -6265,44 +6265,44 @@ int  Radio::SavePreferences() {
 );
 // LINE 707:
 	asm( 
-"	      00437e80    mov eax,[ebp-20h]"
+"	      00437e80    mov eax,this"
 "	      00437e83    mov eax,[eax+10h]"
-"	      00437e86    mov [ebp-1Ch],eax"
+"	      00437e86    mov tempRadioPreferences.lVolume,eax"
 );
 // LINE 708:
 	asm( 
-"	      00437e89    mov eax,[ebp-20h]"
+"	      00437e89    mov eax,this"
 "	      00437e8c    mov eax,[eax+18h]"
-"	      00437e8f    mov [ebp-18h],eax"
+"	      00437e8f    mov tempRadioPreferences.bPreferToBeOn,eax"
 );
 // LINE 709:
 	asm( 
-"	      00437e92    mov eax,[ebp-20h]"
+"	      00437e92    mov eax,this"
 "	      00437e95    mov eax,[eax+20h]"
-"	      00437e98    mov [ebp-14h],eax"
+"	      00437e98    mov tempRadioPreferences.lCurrentStation,eax"
 );
 // LINE 710:
 	asm( 
-"	      00437e9b    mov eax,[ebp-20h]"
+"	      00437e9b    mov eax,this"
 "	      00437e9e    mov eax,[eax+24h]"
-"	      00437ea1    mov [ebp-10h],eax"
+"	      00437ea1    mov tempRadioPreferences.bOptionDJ,eax"
 );
 // LINE 711:
 	asm( 
-"	      00437ea4    mov eax,[ebp-20h]"
+"	      00437ea4    mov eax,this"
 "	      00437ea7    mov eax,[eax+28h]"
-"	      00437eaa    mov [ebp-0Ch],eax"
+"	      00437eaa    mov tempRadioPreferences.bOptionCommercials,eax"
 );
 // LINE 713:
 	asm( 
-"	      00437ead    mov eax,[ebp-20h]"
+"	      00437ead    mov eax,this"
 "	      00437eb0    mov eax,[eax+30h]"
-"	      00437eb3    mov [ebp-4],eax"
+"	      00437eb3    mov tempRadioPreferences.bOptionPlayEnglishIfDefaultLanguageNotFound,eax"
 );
 // LINE 716:
 	asm( 
 "	      00437eb6    push 1Ch"
-"	      00437eb8    lea eax,[ebp-1Ch]"
+"	      00437eb8    lea eax,tempRadioPreferences.lVolume"
 "	      00437ebb    push eax"
 "	      00437ebc    push 5245494Fh"
 "	      00437ec1    mov eax,ds:[599BC4h]"
@@ -6340,24 +6340,24 @@ int  Radio::SetOn(int32_t bNewOn) {
 "	      00437eed    push ebx"
 "	      00437eee    push esi"
 "	      00437eef    push edi"
-"	      00437ef0    mov [ebp-14h],ecx"
+"	      00437ef0    mov this,ecx"
 );
 // LINE 732:
 	asm( 
-"	      00437ef3    cmp dword ptr [ebp+8],0"
+"	      00437ef3    cmp bNewOn,0"
 "	      00437ef7    je near ptr 00437FCEh"
 );
 // LINE 733:
 	asm( 
-"	      00437efd    mov eax,[ebp-14h]"
+"	      00437efd    mov eax,this"
 "	      00437f00    cmp dword ptr [eax+1Ch],0"
 "	      00437f04    jne near ptr 00437FC9h"
 "	      00437f0a    jmp near ptr 00437F0Fh"
 "	      00437f0f    jmp near ptr 00437F14h"
 "	      00437f14    jmp near ptr 00437F19h"
-"	      00437f19    mov eax,[ebp-14h]"
+"	      00437f19    mov eax,this"
 "	      00437f1c    mov eax,[eax+8]"
-"	      00437f1f    mov ecx,[ebp-14h]"
+"	      00437f1f    mov ecx,this"
 "	      00437f22    sub eax,[ecx+4]"
 "	      00437f25    mov ecx,98h"
 "	      00437f2a    cdq"
@@ -6367,15 +6367,15 @@ int  Radio::SetOn(int32_t bNewOn) {
 );
 // LINE 734:
 	asm( 
-"	      00437f35    mov eax,[ebp-14h]"
+"	      00437f35    mov eax,this"
 "	      00437f38    mov dword ptr [eax+1Ch],1"
 );
 // LINE 735:
 	asm( 
 "	      00437f3f    jmp near ptr 00437F44h"
-"	      00437f44    mov eax,[ebp-14h]"
+"	      00437f44    mov eax,this"
 "	      00437f47    mov eax,[eax+4]"
-"	      00437f4a    mov ecx,[ebp-14h]"
+"	      00437f4a    mov ecx,this"
 "	      00437f4d    mov ecx,[ecx+20h]"
 "	      00437f50    mov edx,ecx"
 "	      00437f52    lea ecx,[ecx+ecx*8]"
@@ -6393,9 +6393,9 @@ int  Radio::SetOn(int32_t bNewOn) {
 // LINE 736:
 	asm( 
 "	      00437f74    jmp near ptr 00437F79h"
-"	      00437f79    mov eax,[ebp-14h]"
+"	      00437f79    mov eax,this"
 "	      00437f7c    mov eax,[eax+4]"
-"	      00437f7f    mov ecx,[ebp-14h]"
+"	      00437f7f    mov ecx,this"
 "	      00437f82    mov ecx,[ecx+20h]"
 "	      00437f85    mov edx,ecx"
 "	      00437f87    lea ecx,[ecx+ecx*8]"
@@ -6412,11 +6412,11 @@ int  Radio::SetOn(int32_t bNewOn) {
 );
 // LINE 739:
 	asm( 
-"	      00437fa9    mov eax,[ebp-14h]"
+"	      00437fa9    mov eax,this"
 "	      00437fac    mov eax,[eax+10h]"
 "	      00437faf    push eax"
-"	      00437fb0    mov ecx,[ebp-14h]"
-"	      00437fb3    mov eax,[ebp-14h]"
+"	      00437fb0    mov ecx,this"
+"	      00437fb3    mov eax,this"
 "	      00437fb6    mov eax,[eax+34h]"
 "	      00437fb9    add ecx,34h"
 "	      00437fbc    call dword ptr [eax+24h]"
@@ -6432,19 +6432,19 @@ int  Radio::SetOn(int32_t bNewOn) {
 );
 // LINE 744:
 	asm( 
-"	      00437fce    mov eax,[ebp-14h]"
+"	      00437fce    mov eax,this"
 "	      00437fd1    cmp dword ptr [eax+1Ch],0"
 "	      00437fd5    je near ptr 00437FF4h"
 );
 // LINE 745:
 	asm( 
-"	      00437fdb    mov eax,[ebp-14h]"
+"	      00437fdb    mov eax,this"
 "	      00437fde    mov dword ptr [eax+1Ch],0"
 );
 // LINE 746:
 	asm( 
-"	      00437fe5    mov ecx,[ebp-14h]"
-"	      00437fe8    mov eax,[ebp-14h]"
+"	      00437fe5    mov ecx,this"
+"	      00437fe8    mov eax,this"
 "	      00437feb    mov eax,[eax+34h]"
 "	      00437fee    add ecx,34h"
 "	      00437ff1    call dword ptr [eax+0Ch]"
@@ -6474,32 +6474,32 @@ void  Radio::SetMute(int32_t bNewMute) {
 "	      0043800b    push ebx"
 "	      0043800c    push esi"
 "	      0043800d    push edi"
-"	      0043800e    mov [ebp-4],ecx"
+"	      0043800e    mov this,ecx"
 );
 // LINE 759:
 	asm( 
-"	      00438011    cmp dword ptr [ebp+8],0"
+"	      00438011    cmp bNewMute,0"
 "	      00438015    je near ptr 00438051h"
 );
 // LINE 760:
 	asm( 
-"	      0043801b    mov eax,[ebp-4]"
+"	      0043801b    mov eax,this"
 "	      0043801e    inc dword ptr [eax+14h]"
 );
 // LINE 763:
 	asm( 
-"	      00438021    mov eax,[ebp-4]"
+"	      00438021    mov eax,this"
 "	      00438024    cmp dword ptr [eax+14h],1"
 "	      00438028    jne near ptr 0043804Ch"
-"	      0043802e    mov eax,[ebp-4]"
+"	      0043802e    mov eax,this"
 "	      00438031    cmp dword ptr [eax+10h],64h"
 "	      00438035    jle near ptr 0043804Ch"
 );
 // LINE 764:
 	asm( 
 "	      0043803b    push 64h"
-"	      0043803d    mov ecx,[ebp-4]"
-"	      00438040    mov eax,[ebp-4]"
+"	      0043803d    mov ecx,this"
+"	      00438040    mov eax,this"
 "	      00438043    mov eax,[eax+34h]"
 "	      00438046    add ecx,34h"
 "	      00438049    call dword ptr [eax+24h]"
@@ -6507,31 +6507,31 @@ void  Radio::SetMute(int32_t bNewMute) {
 // LINE 767:
 	asm( 
 "	      0043804c    jmp near ptr 00438094h"
-"	      00438051    mov eax,[ebp-4]"
+"	      00438051    mov eax,this"
 "	      00438054    cmp dword ptr [eax+14h],0"
 "	      00438058    jle near ptr 00438094h"
 );
 // LINE 768:
 	asm( 
-"	      0043805e    mov eax,[ebp-4]"
+"	      0043805e    mov eax,this"
 "	      00438061    dec dword ptr [eax+14h]"
 );
 // LINE 769:
 	asm( 
-"	      00438064    mov eax,[ebp-4]"
+"	      00438064    mov eax,this"
 "	      00438067    cmp dword ptr [eax+14h],0"
 "	      0043806b    jne near ptr 00438094h"
-"	      00438071    mov eax,[ebp-4]"
+"	      00438071    mov eax,this"
 "	      00438074    cmp dword ptr [eax+10h],64h"
 "	      00438078    jle near ptr 00438094h"
 );
 // LINE 771:
 	asm( 
-"	      0043807e    mov eax,[ebp-4]"
+"	      0043807e    mov eax,this"
 "	      00438081    mov eax,[eax+10h]"
 "	      00438084    push eax"
-"	      00438085    mov ecx,[ebp-4]"
-"	      00438088    mov eax,[ebp-4]"
+"	      00438085    mov ecx,this"
+"	      00438088    mov eax,this"
 "	      0043808b    mov eax,[eax+34h]"
 "	      0043808e    add ecx,34h"
 "	      00438091    call dword ptr [eax+24h]"
@@ -6557,41 +6557,41 @@ void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
 "	      004380a6    push ebx"
 "	      004380a7    push esi"
 "	      004380a8    push edi"
-"	      004380a9    mov [ebp-4],ecx"
+"	      004380a9    mov this,ecx"
 );
 // LINE 781:
 	asm( 
-"	      004380ac    cmp dword ptr [ebp+0Ch],0"
+"	      004380ac    cmp nRadioOption,0"
 "	      004380b0    jne near ptr 004380C4h"
 );
 // LINE 782:
 	asm( 
-"	      004380b6    mov eax,[ebp+8]"
-"	      004380b9    mov ecx,[ebp-4]"
+"	      004380b6    mov eax,bNewOption"
+"	      004380b9    mov ecx,this"
 "	      004380bc    mov [ecx+24h],eax"
 );
 // LINE 783:
 	asm( 
 "	      004380bf    jmp near ptr 004380EFh"
-"	      004380c4    cmp dword ptr [ebp+0Ch],1"
+"	      004380c4    cmp nRadioOption,1"
 "	      004380c8    jne near ptr 004380DCh"
 );
 // LINE 784:
 	asm( 
-"	      004380ce    mov eax,[ebp+8]"
-"	      004380d1    mov ecx,[ebp-4]"
+"	      004380ce    mov eax,bNewOption"
+"	      004380d1    mov ecx,this"
 "	      004380d4    mov [ecx+28h],eax"
 );
 // LINE 785:
 	asm( 
 "	      004380d7    jmp near ptr 004380EFh"
-"	      004380dc    cmp dword ptr [ebp+0Ch],2"
+"	      004380dc    cmp nRadioOption,2"
 "	      004380e0    jne near ptr 004380EFh"
 );
 // LINE 786:
 	asm( 
-"	      004380e6    mov eax,[ebp+8]"
-"	      004380e9    mov ecx,[ebp-4]"
+"	      004380e6    mov eax,bNewOption"
+"	      004380e9    mov ecx,this"
 "	      004380ec    mov [ecx+30h],eax"
 );
 // LINE 787:
@@ -6615,40 +6615,40 @@ int  Radio::GetOption(enum RadioOption nRadioOption) {
 "	      00438101    push ebx"
 "	      00438102    push esi"
 "	      00438103    push edi"
-"	      00438104    mov [ebp-4],ecx"
+"	      00438104    mov this,ecx"
 );
 // LINE 794:
 	asm( 
-"	      00438107    cmp dword ptr [ebp+8],0"
+"	      00438107    cmp nRadioOption,0"
 "	      0043810b    jne near ptr 00438121h"
 );
 // LINE 795:
 	asm( 
-"	      00438111    mov eax,[ebp-4]"
+"	      00438111    mov eax,this"
 "	      00438114    mov eax,[eax+24h]"
 "	      00438117    jmp near ptr 00438157h"
 );
 // LINE 796:
 	asm( 
 "	      0043811c    jmp near ptr 00438150h"
-"	      00438121    cmp dword ptr [ebp+8],1"
+"	      00438121    cmp nRadioOption,1"
 "	      00438125    jne near ptr 0043813Bh"
 );
 // LINE 797:
 	asm( 
-"	      0043812b    mov eax,[ebp-4]"
+"	      0043812b    mov eax,this"
 "	      0043812e    mov eax,[eax+28h]"
 "	      00438131    jmp near ptr 00438157h"
 );
 // LINE 798:
 	asm( 
 "	      00438136    jmp near ptr 00438150h"
-"	      0043813b    cmp dword ptr [ebp+8],2"
+"	      0043813b    cmp nRadioOption,2"
 "	      0043813f    jne near ptr 00438150h"
 );
 // LINE 799:
 	asm( 
-"	      00438145    mov eax,[ebp-4]"
+"	      00438145    mov eax,this"
 "	      00438148    mov eax,[eax+30h]"
 "	      0043814b    jmp near ptr 00438157h"
 );
@@ -6677,45 +6677,45 @@ int  Radio::SetVolume(long lNewVolume) {
 "	      00438164    push ebx"
 "	      00438165    push esi"
 "	      00438166    push edi"
-"	      00438167    mov [ebp-4],ecx"
+"	      00438167    mov this,ecx"
 );
 // LINE 812:
 	asm( 
-"	      0043816a    cmp dword ptr [ebp+8],0"
+"	      0043816a    cmp lNewVolume,0"
 "	      0043816e    jge near ptr 0043817Bh"
 );
 // LINE 813:
 	asm( 
-"	      00438174    mov dword ptr [ebp+8],0"
+"	      00438174    mov lNewVolume,0"
 );
 // LINE 814:
 	asm( 
-"	      0043817b    cmp dword ptr [ebp+8],2710h"
+"	      0043817b    cmp lNewVolume,2710h"
 "	      00438182    jle near ptr 0043818Fh"
 );
 // LINE 815:
 	asm( 
-"	      00438188    mov dword ptr [ebp+8],2710h"
+"	      00438188    mov lNewVolume,2710h"
 );
 // LINE 816:
 	asm( 
-"	      0043818f    mov eax,[ebp+8]"
-"	      00438192    mov ecx,[ebp-4]"
+"	      0043818f    mov eax,lNewVolume"
+"	      00438192    mov ecx,this"
 "	      00438195    mov [ecx+10h],eax"
 );
 // LINE 817:
 	asm( 
-"	      00438198    mov eax,[ebp-4]"
+"	      00438198    mov eax,this"
 "	      0043819b    cmp dword ptr [eax+14h],0"
 "	      0043819f    jg near ptr 004381BBh"
 );
 // LINE 818:
 	asm( 
-"	      004381a5    mov eax,[ebp-4]"
+"	      004381a5    mov eax,this"
 "	      004381a8    mov eax,[eax+10h]"
 "	      004381ab    push eax"
-"	      004381ac    mov ecx,[ebp-4]"
-"	      004381af    mov eax,[ebp-4]"
+"	      004381ac    mov ecx,this"
+"	      004381af    mov eax,this"
 "	      004381b2    mov eax,[eax+34h]"
 "	      004381b5    add ecx,34h"
 "	      004381b8    call dword ptr [eax+24h]"
@@ -6745,12 +6745,12 @@ int  Radio::SetStation(int32_t nStationIndex) {
 "	      004381d2    push ebx"
 "	      004381d3    push esi"
 "	      004381d4    push edi"
-"	      004381d5    mov [ebp-0Ch],ecx"
+"	      004381d5    mov this,ecx"
 );
 // LINE 827:
 	asm( 
-"	      004381d8    mov eax,[ebp-0Ch]"
-"	      004381db    mov ecx,[ebp+8]"
+"	      004381d8    mov eax,this"
+"	      004381db    mov ecx,nStationIndex"
 "	      004381de    cmp [eax+20h],ecx"
 "	      004381e1    jne near ptr 004381F1h"
 );
@@ -6761,8 +6761,8 @@ int  Radio::SetStation(int32_t nStationIndex) {
 );
 // LINE 830:
 	asm( 
-"	      004381f1    mov ecx,[ebp-0Ch]"
-"	      004381f4    mov eax,[ebp-0Ch]"
+"	      004381f1    mov ecx,this"
+"	      004381f4    mov eax,this"
 "	      004381f7    mov eax,[eax+34h]"
 "	      004381fa    add ecx,34h"
 "	      004381fd    call dword ptr [eax+10h]"
@@ -6771,8 +6771,8 @@ int  Radio::SetStation(int32_t nStationIndex) {
 );
 // LINE 831:
 	asm( 
-"	      00438208    mov ecx,[ebp-0Ch]"
-"	      0043820b    mov eax,[ebp-0Ch]"
+"	      00438208    mov ecx,this"
+"	      0043820b    mov eax,this"
 "	      0043820e    mov eax,[eax+34h]"
 "	      00438211    add ecx,34h"
 "	      00438214    call dword ptr [eax+0Ch]"
@@ -6782,14 +6782,14 @@ int  Radio::SetStation(int32_t nStationIndex) {
 "	      00438217    jmp near ptr 0043821Ch"
 "	      0043821c    jmp near ptr 00438221h"
 "	      00438221    jmp near ptr 00438226h"
-"	      00438226    mov eax,[ebp-0Ch]"
+"	      00438226    mov eax,this"
 "	      00438229    mov eax,[eax+8]"
-"	      0043822c    mov ecx,[ebp-0Ch]"
+"	      0043822c    mov ecx,this"
 "	      0043822f    sub eax,[ecx+4]"
 "	      00438232    mov ecx,98h"
 "	      00438237    cdq"
 "	      00438238    idiv ecx"
-"	      0043823a    cmp eax,[ebp+8]"
+"	      0043823a    cmp eax,nStationIndex"
 "	      0043823d    jg near ptr 0043826Ah"
 );
 // LINE 833:
@@ -6797,19 +6797,19 @@ int  Radio::SetStation(int32_t nStationIndex) {
 "	      00438243    jmp near ptr 00438248h"
 "	      00438248    jmp near ptr 0043824Dh"
 "	      0043824d    jmp near ptr 00438252h"
-"	      00438252    mov eax,[ebp-0Ch]"
+"	      00438252    mov eax,this"
 "	      00438255    mov eax,[eax+8]"
-"	      00438258    mov ecx,[ebp-0Ch]"
+"	      00438258    mov ecx,this"
 "	      0043825b    sub eax,[ecx+4]"
 "	      0043825e    mov ecx,98h"
 "	      00438263    cdq"
 "	      00438264    idiv ecx"
 "	      00438266    dec eax"
-"	      00438267    mov [ebp+8],eax"
+"	      00438267    mov nStationIndex,eax"
 );
 // LINE 834:
 	asm( 
-"	      0043826a    cmp dword ptr [ebp+8],0"
+"	      0043826a    cmp nStationIndex,0"
 "	      0043826e    jge near ptr 0043827Bh"
 );
 // LINE 835:
@@ -6819,16 +6819,16 @@ int  Radio::SetStation(int32_t nStationIndex) {
 );
 // LINE 836:
 	asm( 
-"	      0043827b    mov eax,[ebp+8]"
-"	      0043827e    mov ecx,[ebp-0Ch]"
+"	      0043827b    mov eax,nStationIndex"
+"	      0043827e    mov ecx,this"
 "	      00438281    mov [ecx+20h],eax"
 );
 // LINE 837:
 	asm( 
 "	      00438284    jmp near ptr 00438289h"
-"	      00438289    mov eax,[ebp-0Ch]"
+"	      00438289    mov eax,this"
 "	      0043828c    mov eax,[eax+4]"
-"	      0043828f    mov ecx,[ebp-0Ch]"
+"	      0043828f    mov ecx,this"
 "	      00438292    mov ecx,[ecx+20h]"
 "	      00438295    mov edx,ecx"
 "	      00438297    lea ecx,[ecx+ecx*8]"
@@ -6871,34 +6871,34 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 "	      004382d0    push ebx"
 "	      004382d1    push esi"
 "	      004382d2    push edi"
-"	      004382d3    mov [ebp-14h],ecx"
+"	      004382d3    mov this,ecx"
 );
 // LINE 849:
 	asm( 
-"	      004382d6    mov dword ptr [ebp-8],0"
+"	      004382d6    mov i,0"
 "	      004382dd    jmp near ptr 004382E2h"
 "	      004382e2    jmp near ptr 004382E7h"
 "	      004382e7    jmp near ptr 004382ECh"
-"	      004382ec    mov eax,[ebp-14h]"
+"	      004382ec    mov eax,this"
 "	      004382ef    mov eax,[eax+8]"
-"	      004382f2    mov ecx,[ebp-14h]"
+"	      004382f2    mov ecx,this"
 "	      004382f5    sub eax,[ecx+4]"
 "	      004382f8    mov ecx,98h"
 "	      004382fd    cdq"
 "	      004382fe    idiv ecx"
-"	      00438300    mov [ebp-4],eax"
+"	      00438300    mov iEnd,eax"
 "	      00438303    jmp near ptr 0043830Bh"
-"	      00438308    inc dword ptr [ebp-8]"
-"	      0043830b    mov eax,[ebp-8]"
-"	      0043830e    cmp [ebp-4],eax"
+"	      00438308    inc i"
+"	      0043830b    mov eax,i"
+"	      0043830e    cmp iEnd,eax"
 "	      00438311    jle near ptr 0043836Bh"
 );
 // LINE 850:
 	asm( 
 "	      00438317    jmp near ptr 0043831Ch"
-"	      0043831c    mov eax,[ebp-14h]"
+"	      0043831c    mov eax,this"
 "	      0043831f    mov eax,[eax+4]"
-"	      00438322    mov ecx,[ebp-8]"
+"	      00438322    mov ecx,i"
 "	      00438325    mov edx,ecx"
 "	      00438327    lea ecx,[ecx+ecx*8]"
 "	      0043832a    lea ecx,[edx+ecx*2]"
@@ -6911,16 +6911,16 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 "	      00438340    mov eax,[ebp-10h]"
 "	      00438343    mov ecx,[ebp-0Ch]"
 "	      00438346    call dword ptr [eax+2Ch]"
-"	      00438349    cmp eax,[ebp+8]"
+"	      00438349    cmp eax,radioStationType"
 "	      0043834c    jne near ptr 00438366h"
 );
 // LINE 851:
 	asm( 
-"	      00438352    mov eax,[ebp-8]"
+"	      00438352    mov eax,i"
 "	      00438355    push eax"
-"	      00438356    mov eax,[ebp-14h]"
+"	      00438356    mov eax,this"
 "	      00438359    mov eax,[eax]"
-"	      0043835b    mov ecx,[ebp-14h]"
+"	      0043835b    mov ecx,this"
 "	      0043835e    call dword ptr [eax+34h]"
 "	      00438361    jmp near ptr 00438372h"
 );
@@ -6956,34 +6956,34 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 "	      0043837f    push ebx"
 "	      00438380    push esi"
 "	      00438381    push edi"
-"	      00438382    mov [ebp-14h],ecx"
+"	      00438382    mov this,ecx"
 );
 // LINE 863:
 	asm( 
-"	      00438385    mov dword ptr [ebp-8],0"
+"	      00438385    mov i,0"
 "	      0043838c    jmp near ptr 00438391h"
 "	      00438391    jmp near ptr 00438396h"
 "	      00438396    jmp near ptr 0043839Bh"
-"	      0043839b    mov eax,[ebp-14h]"
+"	      0043839b    mov eax,this"
 "	      0043839e    mov eax,[eax+8]"
-"	      004383a1    mov ecx,[ebp-14h]"
+"	      004383a1    mov ecx,this"
 "	      004383a4    sub eax,[ecx+4]"
 "	      004383a7    mov ecx,98h"
 "	      004383ac    cdq"
 "	      004383ad    idiv ecx"
-"	      004383af    mov [ebp-4],eax"
+"	      004383af    mov iEnd,eax"
 "	      004383b2    jmp near ptr 004383BAh"
-"	      004383b7    inc dword ptr [ebp-8]"
-"	      004383ba    mov eax,[ebp-8]"
-"	      004383bd    cmp [ebp-4],eax"
+"	      004383b7    inc i"
+"	      004383ba    mov eax,i"
+"	      004383bd    cmp iEnd,eax"
 "	      004383c0    jle near ptr 00438410h"
 );
 // LINE 864:
 	asm( 
 "	      004383c6    jmp near ptr 004383CBh"
-"	      004383cb    mov eax,[ebp-14h]"
+"	      004383cb    mov eax,this"
 "	      004383ce    mov eax,[eax+4]"
-"	      004383d1    mov ecx,[ebp-8]"
+"	      004383d1    mov ecx,i"
 "	      004383d4    mov edx,ecx"
 "	      004383d6    lea ecx,[ecx+ecx*8]"
 "	      004383d9    lea ecx,[edx+ecx*2]"
@@ -6996,7 +6996,7 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 "	      004383ef    mov eax,[ebp-10h]"
 "	      004383f2    mov ecx,[ebp-0Ch]"
 "	      004383f5    call dword ptr [eax+2Ch]"
-"	      004383f8    cmp eax,[ebp+8]"
+"	      004383f8    cmp eax,radioStationType"
 "	      004383fb    jne near ptr 0043840Bh"
 );
 // LINE 865:
@@ -7033,16 +7033,16 @@ int  Radio::GetStationCount() {
 "	      00438424    push ebx"
 "	      00438425    push esi"
 "	      00438426    push edi"
-"	      00438427    mov [ebp-4],ecx"
+"	      00438427    mov this,ecx"
 );
 // LINE 876:
 	asm( 
 "	      0043842a    jmp near ptr 0043842Fh"
 "	      0043842f    jmp near ptr 00438434h"
 "	      00438434    jmp near ptr 00438439h"
-"	      00438439    mov eax,[ebp-4]"
+"	      00438439    mov eax,this"
 "	      0043843c    mov eax,[eax+8]"
-"	      0043843f    mov ecx,[ebp-4]"
+"	      0043843f    mov ecx,this"
 "	      00438442    sub eax,[ecx+4]"
 "	      00438445    mov ecx,98h"
 "	      0043844a    cdq"
@@ -7069,11 +7069,11 @@ int  Radio::DoState() {
 "	      0043845d    push ebx"
 "	      0043845e    push esi"
 "	      0043845f    push edi"
-"	      00438460    mov [ebp-0Ch],ecx"
+"	      00438460    mov this,ecx"
 );
 // LINE 885:
 	asm( 
-"	      00438463    mov eax,[ebp-0Ch]"
+"	      00438463    mov eax,this"
 "	      00438466    cmp dword ptr [eax+1Ch],0"
 "	      0043846a    jne near ptr 00438477h"
 );
@@ -7085,9 +7085,9 @@ int  Radio::DoState() {
 // LINE 887:
 	asm( 
 "	      00438477    jmp near ptr 0043847Ch"
-"	      0043847c    mov eax,[ebp-0Ch]"
+"	      0043847c    mov eax,this"
 "	      0043847f    mov eax,[eax+4]"
-"	      00438482    mov ecx,[ebp-0Ch]"
+"	      00438482    mov ecx,this"
 "	      00438485    mov ecx,[ecx+20h]"
 "	      00438488    mov edx,ecx"
 "	      0043848a    lea ecx,[ecx+ecx*8]"
@@ -7125,16 +7125,16 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 "	      004384bc    push ebx"
 "	      004384bd    push esi"
 "	      004384be    push edi"
-"	      004384bf    mov [ebp-2Ch],ecx"
+"	      004384bf    mov this,ecx"
 );
 // LINE 898:
 	asm( 
-"	      004384c2    mov dword ptr [ebp-4],0"
+"	      004384c2    mov i,0"
 "	      004384c9    jmp near ptr 004384D1h"
-"	      004384ce    inc dword ptr [ebp-4]"
-"	      004384d1    cmp dword ptr [ebp-4],9"
+"	      004384ce    inc i"
+"	      004384d1    cmp i,9"
 "	      004384d5    jge near ptr 0043866Fh"
-"	      004384db    mov eax,[ebp-4]"
+"	      004384db    mov eax,i"
 "	      004384de    mov eax,[eax*4+598488h]"
 "	      004384e5    mov [ebp-24h],eax"
 );
@@ -7147,12 +7147,12 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 "	      004384f6    call 0056ABE0h"
 "	      004384fb    add esp,4"
 "	      004384fe    mov [ebp-1Ch],eax"
-"	      00438501    mov eax,[ebp+8]"
+"	      00438501    mov eax,sStationDirectory"
 "	      00438504    mov eax,[eax+4]"
 "	      00438507    mov eax,[eax+4]"
 "	      0043850a    mov [ebp-20h],eax"
 "	      0043850d    jmp near ptr 00438512h"
-"	      00438512    mov eax,[ebp+8]"
+"	      00438512    mov eax,sStationDirectory"
 "	      00438515    mov eax,[eax+4]"
 "	      00438518    cmp dword ptr [eax+4],0"
 "	      0043851c    jae near ptr 00438554h"
@@ -7176,7 +7176,7 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 "	      00438562    mov eax,ecx"
 "	      00438564    mov [ebp-0Ch],eax"
 "	      00438567    jmp near ptr 0043856Ch"
-"	      0043856c    mov eax,[ebp+8]"
+"	      0043856c    mov eax,sStationDirectory"
 "	      0043856f    mov eax,[eax+4]"
 "	      00438572    cmp dword ptr [eax+4],0"
 "	      00438576    jne near ptr 004385B8h"
@@ -7195,11 +7195,11 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 "	      004385ac    mov dword ptr [ebp-18h],0"
 "	      004385b3    jmp near ptr 00438638h"
 "	      004385b8    jmp near ptr 004385BDh"
-"	      004385bd    mov eax,[ebp+8]"
+"	      004385bd    mov eax,sStationDirectory"
 "	      004385c0    mov eax,[eax+4]"
 "	      004385c3    cmp dword ptr [eax+4],0"
 "	      004385c7    je near ptr 004385E2h"
-"	      004385cd    mov eax,[ebp+8]"
+"	      004385cd    mov eax,sStationDirectory"
 "	      004385d0    mov eax,[eax+4]"
 "	      004385d3    mov eax,[eax]"
 "	      004385d5    mov [ebp-10h],eax"
@@ -7223,7 +7223,7 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 "	      00438617    mov [ebp-18h],eax"
 "	      0043861a    jmp near ptr 00438633h"
 "	      0043861f    jmp near ptr 00438624h"
-"	      00438624    mov eax,[ebp+8]"
+"	      00438624    mov eax,sStationDirectory"
 "	      00438627    mov eax,[eax+4]"
 "	      0043862a    mov eax,[eax+4]"
 "	      0043862d    sub eax,[ebp-1Ch]"
@@ -7283,36 +7283,36 @@ int  Radio::SetupStations() {
 "	      00438686    push ebx"
 "	      00438687    push esi"
 "	      00438688    push edi"
-"	      00438689    mov [ebp-258h],ecx"
+"	      00438689    mov this,ecx"
 );
 // LINE 915:
 	asm( 
-"	      0043868f    lea ecx,[ebp-0Ch]"
+"	      0043868f    lea ecx,sRadioDirectory.c_str_ptr"
 "	      00438692    call 00411EE0h"
 );
 // LINE 916:
 	asm( 
-"	      00438697    lea ecx,[ebp-0F0h]"
+"	      00438697    lea ecx,sStationDirectory.c_str_ptr"
 "	      0043869d    call 00411EE0h"
 );
 // LINE 917:
 	asm( 
-"	      004386a2    lea ecx,[ebp-0ACh]"
+"	      004386a2    lea ecx,sCommercialDirectory.c_str_ptr"
 "	      004386a8    call 00411EE0h"
 );
 // LINE 918:
 	asm( 
-"	      004386ad    lea ecx,[ebp-0E8h]"
+"	      004386ad    lea ecx,sScratch.c_str_ptr"
 "	      004386b3    call 00411EE0h"
 );
 // LINE 919:
 	asm( 
-"	      004386b8    lea ecx,[ebp-0B8h]"
+"	      004386b8    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      004386be    call 00411EE0h"
 );
 // LINE 920:
 	asm( 
-"	      004386c3    lea ecx,[ebp-0E0h]"
+"	      004386c3    lea ecx,radioStationStringList.node"
 "	      004386c9    call 0043A490h"
 );
 // LINE 921:
@@ -7321,7 +7321,7 @@ int  Radio::SetupStations() {
 );
 // LINE 922:
 	asm( 
-"	      004386d3    lea ecx,[ebp-0A4h]"
+"	      004386d3    lea ecx,tempRadioStation.<vftable>"
 "	      004386d9    call 00433120h"
 );
 // LINE 923:
@@ -7332,7 +7332,7 @@ int  Radio::SetupStations() {
 "	      004386e4    lea ecx,[ebp-0F8h]"
 "	      004386ea    call 00411EE0h"
 "	      004386ef    push eax"
-"	      004386f0    lea ecx,[ebp-0D8h]"
+"	      004386f0    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004386f6    call 004832A3h"
 "	      004386fb    lea ecx,[ebp-0F8h]"
 "	      00438701    call 00412130h"
@@ -7343,7 +7343,7 @@ int  Radio::SetupStations() {
 );
 // LINE 927:
 	asm( 
-"	      0043871c    lea eax,[ebp-0Ch]"
+"	      0043871c    lea eax,sRadioDirectory.c_str_ptr"
 "	      0043871f    push eax"
 "	      00438720    mov eax,[ebp-254h]"
 "	      00438726    push eax"
@@ -7359,14 +7359,14 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438745    mov eax,ds:[5984B4h]"
 "	      0043874a    push eax"
-"	      0043874b    lea eax,[ebp-0Ch]"
+"	      0043874b    lea eax,sRadioDirectory.c_str_ptr"
 "	      0043874e    push eax"
 "	      0043874f    lea eax,[ebp-108h]"
 "	      00438755    push eax"
 "	      00438756    call 0043B9E0h"
 "	      0043875b    add esp,0Ch"
 "	      0043875e    push eax"
-"	      0043875f    lea ecx,[ebp-0F0h]"
+"	      0043875f    lea ecx,sStationDirectory.c_str_ptr"
 "	      00438765    call 00412670h"
 "	      0043876a    lea ecx,[ebp-108h]"
 "	      00438770    call 00412130h"
@@ -7375,14 +7375,14 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438775    mov eax,ds:[5984B0h]"
 "	      0043877a    push eax"
-"	      0043877b    lea eax,[ebp-0Ch]"
+"	      0043877b    lea eax,sRadioDirectory.c_str_ptr"
 "	      0043877e    push eax"
 "	      0043877f    lea eax,[ebp-110h]"
 "	      00438785    push eax"
 "	      00438786    call 0043B9E0h"
 "	      0043878b    add esp,0Ch"
 "	      0043878e    push eax"
-"	      0043878f    lea ecx,[ebp-0ACh]"
+"	      0043878f    lea ecx,sCommercialDirectory.c_str_ptr"
 "	      00438795    call 00412670h"
 "	      0043879a    lea ecx,[ebp-110h]"
 "	      004387a0    call 00412130h"
@@ -7390,30 +7390,30 @@ int  Radio::SetupStations() {
 // LINE 932:
 	asm( 
 "	      004387a5    push 0"
-"	      004387a7    lea eax,[ebp-0F0h]"
+"	      004387a7    lea eax,sStationDirectory.c_str_ptr"
 "	      004387ad    push eax"
-"	      004387ae    lea ecx,[ebp-0D8h]"
+"	      004387ae    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004387b4    call 00485B36h"
 );
 // LINE 933:
 	asm( 
 "	      004387b9    push 0"
-"	      004387bb    lea eax,[ebp-0E0h]"
+"	      004387bb    lea eax,radioStationStringList.node"
 "	      004387c1    push eax"
-"	      004387c2    lea ecx,[ebp-0D8h]"
+"	      004387c2    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      004387c8    call 0043A7D0h"
 );
 // LINE 936:
 	asm( 
 "	      004387cd    jmp near ptr 004387D2h"
 "	      004387d2    jmp near ptr 004387D7h"
-"	      004387d7    mov eax,[ebp-258h]"
+"	      004387d7    mov eax,this"
 "	      004387dd    mov eax,[eax+8]"
 "	      004387e0    push eax"
-"	      004387e1    mov eax,[ebp-258h]"
+"	      004387e1    mov eax,this"
 "	      004387e7    mov eax,[eax+4]"
 "	      004387ea    push eax"
-"	      004387eb    mov ecx,[ebp-258h]"
+"	      004387eb    mov ecx,this"
 "	      004387f1    add ecx,4"
 "	      004387f4    call 0043A6F0h"
 );
@@ -7421,30 +7421,30 @@ int  Radio::SetupStations() {
 	asm( 
 "	      004387f9    lea eax,[ebp-114h]"
 "	      004387ff    push eax"
-"	      00438800    lea ecx,[ebp-0E0h]"
+"	      00438800    lea ecx,radioStationStringList.node"
 "	      00438806    call 0043A080h"
 "	      0043880b    mov eax,[eax]"
-"	      0043880d    mov [ebp-4],eax"
+"	      0043880d    mov radioStationStringListIterator.node,eax"
 );
 // LINE 938:
 	asm( 
-"	      00438810    mov eax,[ebp-258h]"
-"	      00438816    mov [ebp-70h],eax"
+"	      00438810    mov eax,this"
+"	      00438816    mov tempRadioStation.myRadio,eax"
 );
 // LINE 939:
 	asm( 
-"	      00438819    mov dword ptr [ebp-0B0h],0"
+"	      00438819    mov nStationCount,0"
 );
 // LINE 940:
 	asm( 
-"	      00438823    mov eax,[ebp-0E0h]"
+"	      00438823    mov eax,radioStationStringList.node"
 "	      00438829    mov [ebp-164h],eax"
 "	      0043882f    mov eax,[ebp-164h]"
 "	      00438835    mov [ebp-118h],eax"
 "	      0043883b    jmp near ptr 00438840h"
 "	      00438840    jmp near ptr 00438845h"
 "	      00438845    mov eax,[ebp-118h]"
-"	      0043884b    cmp [ebp-4],eax"
+"	      0043884b    cmp radioStationStringListIterator.node,eax"
 "	      0043884e    jne near ptr 0043885Eh"
 "	      00438854    jmp near ptr 00438875h"
 "	      00438859    jmp near ptr 0043885Eh"
@@ -7461,52 +7461,52 @@ int  Radio::SetupStations() {
 	asm( 
 "	      0043888c    jmp near ptr 00438891h"
 "	      00438891    push 5Ch"
-"	      00438893    mov ecx,[ebp-4]"
+"	      00438893    mov ecx,radioStationStringListIterator.node"
 "	      00438896    add ecx,8"
 "	      00438899    call 00412850h"
 );
 // LINE 946:
 	asm( 
 "	      0043889e    jmp near ptr 004388A3h"
-"	      004388a3    mov eax,[ebp-4]"
+"	      004388a3    mov eax,radioStationStringListIterator.node"
 "	      004388a6    add eax,8"
 "	      004388a9    push eax"
-"	      004388aa    lea eax,[ebp-0F0h]"
+"	      004388aa    lea eax,sStationDirectory.c_str_ptr"
 "	      004388b0    push eax"
 "	      004388b1    lea eax,[ebp-120h]"
 "	      004388b7    push eax"
 "	      004388b8    call 0043BDF0h"
 "	      004388bd    add esp,0Ch"
 "	      004388c0    push eax"
-"	      004388c1    lea ecx,[ebp-64h]"
+"	      004388c1    lea ecx,tempRadioStation.sStationBaseDirectory.c_str_ptr"
 "	      004388c4    call 00412670h"
 "	      004388c9    lea ecx,[ebp-120h]"
 "	      004388cf    call 00412130h"
 );
 // LINE 947:
 	asm( 
-"	      004388d4    lea ecx,[ebp-0A4h]"
+"	      004388d4    lea ecx,tempRadioStation.<vftable>"
 "	      004388da    call 00437337h"
 "	      004388df    test eax,eax"
 "	      004388e1    je near ptr 004393CCh"
 );
 // LINE 948:
 	asm( 
-"	      004388e7    lea ecx,[ebp-0A4h]"
+"	      004388e7    lea ecx,tempRadioStation.<vftable>"
 "	      004388ed    call 004376DCh"
 );
 // LINE 952:
 	asm( 
 "	      004388f2    mov eax,ds:[5984B8h]"
 "	      004388f7    push eax"
-"	      004388f8    lea eax,[ebp-64h]"
+"	      004388f8    lea eax,tempRadioStation.sStationBaseDirectory.c_str_ptr"
 "	      004388fb    push eax"
 "	      004388fc    lea eax,[ebp-128h]"
 "	      00438902    push eax"
 "	      00438903    call 0043B9E0h"
 "	      00438908    add esp,0Ch"
 "	      0043890b    push eax"
-"	      0043890c    lea ecx,[ebp-5Ch]"
+"	      0043890c    lea ecx,tempRadioStation.sMusicDirectory.c_str_ptr"
 "	      0043890f    call 00412670h"
 "	      00438914    lea ecx,[ebp-128h]"
 "	      0043891a    call 00412080h"
@@ -7526,14 +7526,14 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438958    mov eax,ds:[5984BCh]"
 "	      0043895d    push eax"
-"	      0043895e    lea eax,[ebp-64h]"
+"	      0043895e    lea eax,tempRadioStation.sStationBaseDirectory.c_str_ptr"
 "	      00438961    push eax"
 "	      00438962    lea eax,[ebp-130h]"
 "	      00438968    push eax"
 "	      00438969    call 0043B9E0h"
 "	      0043896e    add esp,0Ch"
 "	      00438971    push eax"
-"	      00438972    lea ecx,[ebp-48h]"
+"	      00438972    lea ecx,tempRadioStation.sDJDirectory.c_str_ptr"
 "	      00438975    call 00412670h"
 "	      0043897a    lea ecx,[ebp-130h]"
 "	      00438980    call 00412080h"
@@ -7552,23 +7552,23 @@ int  Radio::SetupStations() {
 // LINE 957:
 	asm( 
 "	      004389be    push 0"
-"	      004389c0    lea eax,[ebp-0B8h]"
+"	      004389c0    lea eax,sCurrentLanguage.c_str_ptr"
 "	      004389c6    push eax"
 "	      004389c7    call 0042BA26h"
 "	      004389cc    add esp,8"
 );
 // LINE 958:
 	asm( 
-"	      004389cf    lea eax,[ebp-0B8h]"
+"	      004389cf    lea eax,sCurrentLanguage.c_str_ptr"
 "	      004389d5    push eax"
-"	      004389d6    lea eax,[ebp-48h]"
+"	      004389d6    lea eax,tempRadioStation.sDJDirectory.c_str_ptr"
 "	      004389d9    push eax"
 "	      004389da    lea eax,[ebp-138h]"
 "	      004389e0    push eax"
 "	      004389e1    call 0043BDF0h"
 "	      004389e6    add esp,0Ch"
 "	      004389e9    push eax"
-"	      004389ea    lea ecx,[ebp-0E8h]"
+"	      004389ea    lea ecx,sScratch.c_str_ptr"
 "	      004389f0    call 00412670h"
 "	      004389f5    lea ecx,[ebp-138h]"
 "	      004389fb    call 00412080h"
@@ -7588,11 +7588,11 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438a39    cmp dword ptr ds:[597664h],1"
 "	      00438a40    je near ptr 00438AA6h"
-"	      00438a46    lea eax,[ebp-0E8h]"
+"	      00438a46    lea eax,sScratch.c_str_ptr"
 "	      00438a4c    push eax"
-"	      00438a4d    mov eax,[ebp-258h]"
+"	      00438a4d    mov eax,this"
 "	      00438a53    mov eax,[eax]"
-"	      00438a55    mov ecx,[ebp-258h]"
+"	      00438a55    mov ecx,this"
 "	      00438a5b    call dword ptr [eax+4Ch]"
 "	      00438a5e    test eax,eax"
 "	      00438a60    jne near ptr 00438AA6h"
@@ -7600,9 +7600,9 @@ int  Radio::SetupStations() {
 // LINE 960:
 	asm( 
 "	      00438a66    push 2"
-"	      00438a68    mov eax,[ebp-258h]"
+"	      00438a68    mov eax,this"
 "	      00438a6e    mov eax,[eax]"
-"	      00438a70    mov ecx,[ebp-258h]"
+"	      00438a70    mov ecx,this"
 "	      00438a76    call dword ptr [eax+28h]"
 "	      00438a79    test eax,eax"
 "	      00438a7b    je near ptr 00438A97h"
@@ -7610,7 +7610,7 @@ int  Radio::SetupStations() {
 // LINE 961:
 	asm( 
 "	      00438a81    push 1"
-"	      00438a83    lea eax,[ebp-0B8h]"
+"	      00438a83    lea eax,sCurrentLanguage.c_str_ptr"
 "	      00438a89    push eax"
 "	      00438a8a    call 0042BA26h"
 "	      00438a8f    add esp,8"
@@ -7623,19 +7623,19 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438a97    push 0FFFFFFFFh"
 "	      00438a99    push 0"
-"	      00438a9b    lea ecx,[ebp-0B8h]"
+"	      00438a9b    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00438aa1    call 004157D0h"
 );
 // LINE 965:
 	asm( 
 "	      00438aa6    jmp near ptr 00438AABh"
-"	      00438aab    mov eax,[ebp-0B4h]"
+"	      00438aab    mov eax,sCurrentLanguage.reference"
 "	      00438ab1    mov eax,[eax+4]"
 "	      00438ab4    push eax"
-"	      00438ab5    lea ecx,[ebp-0B8h]"
+"	      00438ab5    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00438abb    call 00417C00h"
 "	      00438ac0    push eax"
-"	      00438ac1    lea ecx,[ebp-48h]"
+"	      00438ac1    lea ecx,tempRadioStation.sDJDirectory.c_str_ptr"
 "	      00438ac4    call 00410130h"
 "	      00438ac9    jmp near ptr 00438ACEh"
 "	      00438ace    mov eax,ds:[5984B0h]"
@@ -7652,10 +7652,10 @@ int  Radio::SetupStations() {
 "	      00438af3    jmp near ptr 00438AF8h"
 "	      00438af8    mov eax,[ebp-220h]"
 "	      00438afe    push eax"
-"	      00438aff    mov eax,[ebp-8]"
+"	      00438aff    mov eax,sRadioDirectory.reference"
 "	      00438b02    mov eax,[eax+4]"
 "	      00438b05    push eax"
-"	      00438b06    lea ecx,[ebp-0Ch]"
+"	      00438b06    lea ecx,sRadioDirectory.c_str_ptr"
 "	      00438b09    call 00417C00h"
 "	      00438b0e    push eax"
 "	      00438b0f    lea ecx,[ebp-21Ch]"
@@ -7666,7 +7666,7 @@ int  Radio::SetupStations() {
 "	      00438b2c    jmp near ptr 00438B31h"
 "	      00438b31    mov eax,[ebp-218h]"
 "	      00438b37    mov eax,[eax]"
-"	      00438b39    mov ecx,[ebp-8]"
+"	      00438b39    mov ecx,sRadioDirectory.reference"
 "	      00438b3c    add eax,[ecx+4]"
 "	      00438b3f    mov [ebp-228h],eax"
 "	      00438b45    mov eax,[ebp-220h]"
@@ -7694,19 +7694,19 @@ int  Radio::SetupStations() {
 "	      00438b9f    lea ecx,[ebp-21Ch]"
 "	      00438ba5    call 00412130h"
 "	      00438baa    jmp near ptr 00438BAFh"
-"	      00438baf    lea eax,[ebp-34h]"
+"	      00438baf    lea eax,tempRadioStation.sCommercialDirectory.c_str_ptr"
 "	      00438bb2    lea ecx,[ebp-140h]"
 "	      00438bb8    cmp eax,ecx"
 "	      00438bba    je near ptr 00438C40h"
-"	      00438bc0    lea ecx,[ebp-34h]"
+"	      00438bc0    lea ecx,tempRadioStation.sCommercialDirectory.c_str_ptr"
 "	      00438bc3    call 00412080h"
 "	      00438bc8    jmp near ptr 00438BCDh"
 "	      00438bcd    mov eax,[ebp-13Ch]"
 "	      00438bd3    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00438bd7    je near ptr 00438BF1h"
 "	      00438bdd    mov eax,[ebp-13Ch]"
-"	      00438be3    mov [ebp-30h],eax"
-"	      00438be6    mov eax,[ebp-30h]"
+"	      00438be3    mov tempRadioStation.sCommercialDirectory.reference,eax"
+"	      00438be6    mov eax,tempRadioStation.sCommercialDirectory.reference"
 "	      00438be9    inc dword ptr [eax+0Ch]"
 "	      00438bec    jmp near ptr 00438C40h"
 "	      00438bf1    push 10h"
@@ -7724,9 +7724,9 @@ int  Radio::SetupStations() {
 "	      00438c25    push eax"
 "	      00438c26    mov ecx,[ebp-238h]"
 "	      00438c2c    call 0041E200h"
-"	      00438c31    mov [ebp-30h],eax"
+"	      00438c31    mov tempRadioStation.sCommercialDirectory.reference,eax"
 "	      00438c34    jmp near ptr 00438C40h"
-"	      00438c39    mov dword ptr [ebp-30h],0"
+"	      00438c39    mov tempRadioStation.sCommercialDirectory.reference,0"
 "	      00438c40    jmp near ptr 00438C45h"
 "	      00438c45    lea ecx,[ebp-140h]"
 "	      00438c4b    call 00412080h"
@@ -7745,7 +7745,7 @@ int  Radio::SetupStations() {
 // LINE 970:
 	asm( 
 "	      00438c89    push 0"
-"	      00438c8b    lea eax,[ebp-0B8h]"
+"	      00438c8b    lea eax,sCurrentLanguage.c_str_ptr"
 "	      00438c91    push eax"
 "	      00438c92    call 0042BA26h"
 "	      00438c97    add esp,8"
@@ -7754,31 +7754,31 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438c9a    jmp near ptr 00438C9Fh"
 "	      00438c9f    jmp near ptr 00438CA4h"
-"	      00438ca4    mov eax,[ebp-0B4h]"
+"	      00438ca4    mov eax,sCurrentLanguage.reference"
 "	      00438caa    mov eax,[eax+4]"
 "	      00438cad    push eax"
-"	      00438cae    mov eax,[ebp-30h]"
+"	      00438cae    mov eax,tempRadioStation.sCommercialDirectory.reference"
 "	      00438cb1    mov eax,[eax+4]"
 "	      00438cb4    push eax"
-"	      00438cb5    lea ecx,[ebp-34h]"
+"	      00438cb5    lea ecx,tempRadioStation.sCommercialDirectory.c_str_ptr"
 "	      00438cb8    call 00417C00h"
 "	      00438cbd    push eax"
 "	      00438cbe    lea ecx,[ebp-1F8h]"
 "	      00438cc4    call 00411F60h"
 "	      00438cc9    jmp near ptr 00438CCEh"
-"	      00438cce    mov eax,[ebp-0B4h]"
+"	      00438cce    mov eax,sCurrentLanguage.reference"
 "	      00438cd4    cmp dword ptr [eax+4],0"
 "	      00438cd8    je near ptr 00438D43h"
 "	      00438cde    jmp near ptr 00438CE3h"
 "	      00438ce3    jmp near ptr 00438CE8h"
 "	      00438ce8    jmp near ptr 00438CEDh"
-"	      00438ced    mov eax,[ebp-0B4h]"
+"	      00438ced    mov eax,sCurrentLanguage.reference"
 "	      00438cf3    mov eax,[eax+4]"
 "	      00438cf6    mov [ebp-200h],eax"
-"	      00438cfc    lea ecx,[ebp-0B8h]"
+"	      00438cfc    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00438d02    call 00417C00h"
 "	      00438d07    mov [ebp-204h],eax"
-"	      00438d0d    mov eax,[ebp-30h]"
+"	      00438d0d    mov eax,tempRadioStation.sCommercialDirectory.reference"
 "	      00438d10    mov eax,[eax+4]"
 "	      00438d13    mov ecx,[ebp-1F4h]"
 "	      00438d19    add eax,[ecx]"
@@ -7797,7 +7797,7 @@ int  Radio::SetupStations() {
 "	      00438d4c    mov [ebp-1FCh],eax"
 "	      00438d52    jmp near ptr 00438D57h"
 "	      00438d57    jmp near ptr 00438D5Ch"
-"	      00438d5c    mov eax,[ebp-0B4h]"
+"	      00438d5c    mov eax,sCurrentLanguage.reference"
 "	      00438d62    mov eax,[eax+4]"
 "	      00438d65    mov ecx,[ebp-1FCh]"
 "	      00438d6b    add [ecx],eax"
@@ -7810,19 +7810,19 @@ int  Radio::SetupStations() {
 "	      00438d83    lea ecx,[ebp-1F8h]"
 "	      00438d89    call 00412130h"
 "	      00438d8e    jmp near ptr 00438D93h"
-"	      00438d93    lea eax,[ebp-0E8h]"
+"	      00438d93    lea eax,sScratch.c_str_ptr"
 "	      00438d99    lea ecx,[ebp-148h]"
 "	      00438d9f    cmp eax,ecx"
 "	      00438da1    je near ptr 00438E36h"
-"	      00438da7    lea ecx,[ebp-0E8h]"
+"	      00438da7    lea ecx,sScratch.c_str_ptr"
 "	      00438dad    call 00412080h"
 "	      00438db2    jmp near ptr 00438DB7h"
 "	      00438db7    mov eax,[ebp-144h]"
 "	      00438dbd    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00438dc1    je near ptr 00438DE1h"
 "	      00438dc7    mov eax,[ebp-144h]"
-"	      00438dcd    mov [ebp-0E4h],eax"
-"	      00438dd3    mov eax,[ebp-0E4h]"
+"	      00438dcd    mov sScratch.reference,eax"
+"	      00438dd3    mov eax,sScratch.reference"
 "	      00438dd9    inc dword ptr [eax+0Ch]"
 "	      00438ddc    jmp near ptr 00438E36h"
 "	      00438de1    push 10h"
@@ -7840,9 +7840,9 @@ int  Radio::SetupStations() {
 "	      00438e15    push eax"
 "	      00438e16    mov ecx,[ebp-214h]"
 "	      00438e1c    call 0041E200h"
-"	      00438e21    mov [ebp-0E4h],eax"
+"	      00438e21    mov sScratch.reference,eax"
 "	      00438e27    jmp near ptr 00438E36h"
-"	      00438e2c    mov dword ptr [ebp-0E4h],0"
+"	      00438e2c    mov sScratch.reference,0"
 "	      00438e36    jmp near ptr 00438E3Bh"
 "	      00438e3b    lea ecx,[ebp-148h]"
 "	      00438e41    call 00412080h"
@@ -7862,11 +7862,11 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438e7f    cmp dword ptr ds:[597664h],1"
 "	      00438e86    je near ptr 00438EECh"
-"	      00438e8c    lea eax,[ebp-0E8h]"
+"	      00438e8c    lea eax,sScratch.c_str_ptr"
 "	      00438e92    push eax"
-"	      00438e93    mov eax,[ebp-258h]"
+"	      00438e93    mov eax,this"
 "	      00438e99    mov eax,[eax]"
-"	      00438e9b    mov ecx,[ebp-258h]"
+"	      00438e9b    mov ecx,this"
 "	      00438ea1    call dword ptr [eax+4Ch]"
 "	      00438ea4    test eax,eax"
 "	      00438ea6    jne near ptr 00438EECh"
@@ -7874,9 +7874,9 @@ int  Radio::SetupStations() {
 // LINE 973:
 	asm( 
 "	      00438eac    push 2"
-"	      00438eae    mov eax,[ebp-258h]"
+"	      00438eae    mov eax,this"
 "	      00438eb4    mov eax,[eax]"
-"	      00438eb6    mov ecx,[ebp-258h]"
+"	      00438eb6    mov ecx,this"
 "	      00438ebc    call dword ptr [eax+28h]"
 "	      00438ebf    test eax,eax"
 "	      00438ec1    je near ptr 00438EDDh"
@@ -7884,7 +7884,7 @@ int  Radio::SetupStations() {
 // LINE 974:
 	asm( 
 "	      00438ec7    push 1"
-"	      00438ec9    lea eax,[ebp-0B8h]"
+"	      00438ec9    lea eax,sCurrentLanguage.c_str_ptr"
 "	      00438ecf    push eax"
 "	      00438ed0    call 0042BA26h"
 "	      00438ed5    add esp,8"
@@ -7897,19 +7897,19 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00438edd    push 0FFFFFFFFh"
 "	      00438edf    push 0"
-"	      00438ee1    lea ecx,[ebp-0B8h]"
+"	      00438ee1    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00438ee7    call 004157D0h"
 );
 // LINE 978:
 	asm( 
 "	      00438eec    jmp near ptr 00438EF1h"
-"	      00438ef1    mov eax,[ebp-0B4h]"
+"	      00438ef1    mov eax,sCurrentLanguage.reference"
 "	      00438ef7    mov eax,[eax+4]"
 "	      00438efa    push eax"
-"	      00438efb    lea ecx,[ebp-0B8h]"
+"	      00438efb    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00438f01    call 00417C00h"
 "	      00438f06    push eax"
-"	      00438f07    lea ecx,[ebp-34h]"
+"	      00438f07    lea ecx,tempRadioStation.sCommercialDirectory.c_str_ptr"
 "	      00438f0a    call 00410130h"
 "	      00438f0f    jmp near ptr 00438F14h"
 "	      00438f14    mov eax,ds:[5984C0h]"
@@ -7926,10 +7926,10 @@ int  Radio::SetupStations() {
 "	      00438f39    jmp near ptr 00438F3Eh"
 "	      00438f3e    mov eax,[ebp-1D8h]"
 "	      00438f44    push eax"
-"	      00438f45    mov eax,[ebp-60h]"
+"	      00438f45    mov eax,tempRadioStation.sStationBaseDirectory.reference"
 "	      00438f48    mov eax,[eax+4]"
 "	      00438f4b    push eax"
-"	      00438f4c    lea ecx,[ebp-64h]"
+"	      00438f4c    lea ecx,tempRadioStation.sStationBaseDirectory.c_str_ptr"
 "	      00438f4f    call 00417C00h"
 "	      00438f54    push eax"
 "	      00438f55    lea ecx,[ebp-1D4h]"
@@ -7938,7 +7938,7 @@ int  Radio::SetupStations() {
 "	      00438f67    je near ptr 00438FADh"
 "	      00438f6d    jmp near ptr 00438F72h"
 "	      00438f72    jmp near ptr 00438F77h"
-"	      00438f77    mov eax,[ebp-60h]"
+"	      00438f77    mov eax,tempRadioStation.sStationBaseDirectory.reference"
 "	      00438f7a    mov eax,[eax+4]"
 "	      00438f7d    mov ecx,[ebp-1D0h]"
 "	      00438f83    add eax,[ecx]"
@@ -7968,19 +7968,19 @@ int  Radio::SetupStations() {
 "	      00438fe5    lea ecx,[ebp-1D4h]"
 "	      00438feb    call 00412130h"
 "	      00438ff0    jmp near ptr 00438FF5h"
-"	      00438ff5    lea eax,[ebp-20h]"
+"	      00438ff5    lea eax,tempRadioStation.sJingleDirectory.c_str_ptr"
 "	      00438ff8    lea ecx,[ebp-150h]"
 "	      00438ffe    cmp eax,ecx"
 "	      00439000    je near ptr 00439086h"
-"	      00439006    lea ecx,[ebp-20h]"
+"	      00439006    lea ecx,tempRadioStation.sJingleDirectory.c_str_ptr"
 "	      00439009    call 00412080h"
 "	      0043900e    jmp near ptr 00439013h"
 "	      00439013    mov eax,[ebp-14Ch]"
 "	      00439019    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0043901d    je near ptr 00439037h"
 "	      00439023    mov eax,[ebp-14Ch]"
-"	      00439029    mov [ebp-1Ch],eax"
-"	      0043902c    mov eax,[ebp-1Ch]"
+"	      00439029    mov tempRadioStation.sJingleDirectory.reference,eax"
+"	      0043902c    mov eax,tempRadioStation.sJingleDirectory.reference"
 "	      0043902f    inc dword ptr [eax+0Ch]"
 "	      00439032    jmp near ptr 00439086h"
 "	      00439037    push 10h"
@@ -7998,9 +7998,9 @@ int  Radio::SetupStations() {
 "	      0043906b    push eax"
 "	      0043906c    mov ecx,[ebp-1F0h]"
 "	      00439072    call 0041E200h"
-"	      00439077    mov [ebp-1Ch],eax"
+"	      00439077    mov tempRadioStation.sJingleDirectory.reference,eax"
 "	      0043907a    jmp near ptr 00439086h"
-"	      0043907f    mov dword ptr [ebp-1Ch],0"
+"	      0043907f    mov tempRadioStation.sJingleDirectory.reference,0"
 "	      00439086    jmp near ptr 0043908Bh"
 "	      0043908b    lea ecx,[ebp-150h]"
 "	      00439091    call 00412080h"
@@ -8019,7 +8019,7 @@ int  Radio::SetupStations() {
 // LINE 983:
 	asm( 
 "	      004390cf    push 0"
-"	      004390d1    lea eax,[ebp-0B8h]"
+"	      004390d1    lea eax,sCurrentLanguage.c_str_ptr"
 "	      004390d7    push eax"
 "	      004390d8    call 0042BA26h"
 "	      004390dd    add esp,8"
@@ -8028,31 +8028,31 @@ int  Radio::SetupStations() {
 	asm( 
 "	      004390e0    jmp near ptr 004390E5h"
 "	      004390e5    jmp near ptr 004390EAh"
-"	      004390ea    mov eax,[ebp-0B4h]"
+"	      004390ea    mov eax,sCurrentLanguage.reference"
 "	      004390f0    mov eax,[eax+4]"
 "	      004390f3    push eax"
-"	      004390f4    mov eax,[ebp-1Ch]"
+"	      004390f4    mov eax,tempRadioStation.sJingleDirectory.reference"
 "	      004390f7    mov eax,[eax+4]"
 "	      004390fa    push eax"
-"	      004390fb    lea ecx,[ebp-20h]"
+"	      004390fb    lea ecx,tempRadioStation.sJingleDirectory.c_str_ptr"
 "	      004390fe    call 00417C00h"
 "	      00439103    push eax"
 "	      00439104    lea ecx,[ebp-1B0h]"
 "	      0043910a    call 00411F60h"
 "	      0043910f    jmp near ptr 00439114h"
-"	      00439114    mov eax,[ebp-0B4h]"
+"	      00439114    mov eax,sCurrentLanguage.reference"
 "	      0043911a    cmp dword ptr [eax+4],0"
 "	      0043911e    je near ptr 00439189h"
 "	      00439124    jmp near ptr 00439129h"
 "	      00439129    jmp near ptr 0043912Eh"
 "	      0043912e    jmp near ptr 00439133h"
-"	      00439133    mov eax,[ebp-0B4h]"
+"	      00439133    mov eax,sCurrentLanguage.reference"
 "	      00439139    mov eax,[eax+4]"
 "	      0043913c    mov [ebp-1B8h],eax"
-"	      00439142    lea ecx,[ebp-0B8h]"
+"	      00439142    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00439148    call 00417C00h"
 "	      0043914d    mov [ebp-1BCh],eax"
-"	      00439153    mov eax,[ebp-1Ch]"
+"	      00439153    mov eax,tempRadioStation.sJingleDirectory.reference"
 "	      00439156    mov eax,[eax+4]"
 "	      00439159    mov ecx,[ebp-1ACh]"
 "	      0043915f    add eax,[ecx]"
@@ -8071,7 +8071,7 @@ int  Radio::SetupStations() {
 "	      00439192    mov [ebp-1B4h],eax"
 "	      00439198    jmp near ptr 0043919Dh"
 "	      0043919d    jmp near ptr 004391A2h"
-"	      004391a2    mov eax,[ebp-0B4h]"
+"	      004391a2    mov eax,sCurrentLanguage.reference"
 "	      004391a8    mov eax,[eax+4]"
 "	      004391ab    mov ecx,[ebp-1B4h]"
 "	      004391b1    add [ecx],eax"
@@ -8084,19 +8084,19 @@ int  Radio::SetupStations() {
 "	      004391c9    lea ecx,[ebp-1B0h]"
 "	      004391cf    call 00412130h"
 "	      004391d4    jmp near ptr 004391D9h"
-"	      004391d9    lea eax,[ebp-0E8h]"
+"	      004391d9    lea eax,sScratch.c_str_ptr"
 "	      004391df    lea ecx,[ebp-158h]"
 "	      004391e5    cmp eax,ecx"
 "	      004391e7    je near ptr 0043927Ch"
-"	      004391ed    lea ecx,[ebp-0E8h]"
+"	      004391ed    lea ecx,sScratch.c_str_ptr"
 "	      004391f3    call 00412080h"
 "	      004391f8    jmp near ptr 004391FDh"
 "	      004391fd    mov eax,[ebp-154h]"
 "	      00439203    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      00439207    je near ptr 00439227h"
 "	      0043920d    mov eax,[ebp-154h]"
-"	      00439213    mov [ebp-0E4h],eax"
-"	      00439219    mov eax,[ebp-0E4h]"
+"	      00439213    mov sScratch.reference,eax"
+"	      00439219    mov eax,sScratch.reference"
 "	      0043921f    inc dword ptr [eax+0Ch]"
 "	      00439222    jmp near ptr 0043927Ch"
 "	      00439227    push 10h"
@@ -8114,9 +8114,9 @@ int  Radio::SetupStations() {
 "	      0043925b    push eax"
 "	      0043925c    mov ecx,[ebp-1CCh]"
 "	      00439262    call 0041E200h"
-"	      00439267    mov [ebp-0E4h],eax"
+"	      00439267    mov sScratch.reference,eax"
 "	      0043926d    jmp near ptr 0043927Ch"
-"	      00439272    mov dword ptr [ebp-0E4h],0"
+"	      00439272    mov sScratch.reference,0"
 "	      0043927c    jmp near ptr 00439281h"
 "	      00439281    lea ecx,[ebp-158h]"
 "	      00439287    call 00412080h"
@@ -8136,11 +8136,11 @@ int  Radio::SetupStations() {
 	asm( 
 "	      004392c5    cmp dword ptr ds:[597664h],1"
 "	      004392cc    je near ptr 00439332h"
-"	      004392d2    lea eax,[ebp-0E8h]"
+"	      004392d2    lea eax,sScratch.c_str_ptr"
 "	      004392d8    push eax"
-"	      004392d9    mov eax,[ebp-258h]"
+"	      004392d9    mov eax,this"
 "	      004392df    mov eax,[eax]"
-"	      004392e1    mov ecx,[ebp-258h]"
+"	      004392e1    mov ecx,this"
 "	      004392e7    call dword ptr [eax+4Ch]"
 "	      004392ea    test eax,eax"
 "	      004392ec    jne near ptr 00439332h"
@@ -8148,9 +8148,9 @@ int  Radio::SetupStations() {
 // LINE 986:
 	asm( 
 "	      004392f2    push 2"
-"	      004392f4    mov eax,[ebp-258h]"
+"	      004392f4    mov eax,this"
 "	      004392fa    mov eax,[eax]"
-"	      004392fc    mov ecx,[ebp-258h]"
+"	      004392fc    mov ecx,this"
 "	      00439302    call dword ptr [eax+28h]"
 "	      00439305    test eax,eax"
 "	      00439307    je near ptr 00439323h"
@@ -8158,7 +8158,7 @@ int  Radio::SetupStations() {
 // LINE 987:
 	asm( 
 "	      0043930d    push 1"
-"	      0043930f    lea eax,[ebp-0B8h]"
+"	      0043930f    lea eax,sCurrentLanguage.c_str_ptr"
 "	      00439315    push eax"
 "	      00439316    call 0042BA26h"
 "	      0043931b    add esp,8"
@@ -8171,61 +8171,61 @@ int  Radio::SetupStations() {
 	asm( 
 "	      00439323    push 0FFFFFFFFh"
 "	      00439325    push 0"
-"	      00439327    lea ecx,[ebp-0B8h]"
+"	      00439327    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      0043932d    call 004157D0h"
 );
 // LINE 991:
 	asm( 
 "	      00439332    jmp near ptr 00439337h"
-"	      00439337    mov eax,[ebp-0B4h]"
+"	      00439337    mov eax,sCurrentLanguage.reference"
 "	      0043933d    mov eax,[eax+4]"
 "	      00439340    push eax"
-"	      00439341    lea ecx,[ebp-0B8h]"
+"	      00439341    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      00439347    call 00417C00h"
 "	      0043934c    push eax"
-"	      0043934d    lea ecx,[ebp-20h]"
+"	      0043934d    lea ecx,tempRadioStation.sJingleDirectory.c_str_ptr"
 "	      00439350    call 00410130h"
 "	      00439355    jmp near ptr 0043935Ah"
 );
 // LINE 994:
 	asm( 
-"	      0043935a    inc dword ptr [ebp-0B0h]"
+"	      0043935a    inc nStationCount"
 );
 // LINE 995:
 	asm( 
-"	      00439360    mov eax,[ebp-258h]"
-"	      00439366    mov ecx,[ebp-258h]"
+"	      00439360    mov eax,this"
+"	      00439366    mov ecx,this"
 "	      0043936c    mov ecx,[ecx+8]"
 "	      0043936f    cmp [eax+0Ch],ecx"
 "	      00439372    je near ptr 004393A3h"
-"	      00439378    lea eax,[ebp-0A4h]"
+"	      00439378    lea eax,tempRadioStation.<vftable>"
 "	      0043937e    push eax"
-"	      0043937f    mov eax,[ebp-258h]"
+"	      0043937f    mov eax,this"
 "	      00439385    mov eax,[eax+8]"
 "	      00439388    push eax"
 "	      00439389    call 0043A870h"
 "	      0043938e    add esp,8"
-"	      00439391    mov eax,[ebp-258h]"
+"	      00439391    mov eax,this"
 "	      00439397    add dword ptr [eax+8],98h"
 "	      0043939e    jmp near ptr 004393C7h"
 "	      004393a3    jmp near ptr 004393A8h"
-"	      004393a8    lea eax,[ebp-0A4h]"
+"	      004393a8    lea eax,tempRadioStation.<vftable>"
 "	      004393ae    push eax"
-"	      004393af    mov eax,[ebp-258h]"
+"	      004393af    mov eax,this"
 "	      004393b5    mov eax,[eax+8]"
 "	      004393b8    push eax"
-"	      004393b9    mov ecx,[ebp-258h]"
+"	      004393b9    mov ecx,this"
 "	      004393bf    add ecx,4"
 "	      004393c2    call 0043B5E0h"
 "	      004393c7    jmp near ptr 004393CCh"
 );
 // LINE 998:
 	asm( 
-"	      004393cc    mov eax,[ebp-4]"
+"	      004393cc    mov eax,radioStationStringListIterator.node"
 "	      004393cf    mov [ebp-198h],eax"
-"	      004393d5    mov eax,[ebp-4]"
+"	      004393d5    mov eax,radioStationStringListIterator.node"
 "	      004393d8    mov eax,[eax]"
-"	      004393da    mov [ebp-4],eax"
+"	      004393da    mov radioStationStringListIterator.node,eax"
 "	      004393dd    jmp near ptr 004393E2h"
 "	      004393e2    mov eax,[ebp-198h]"
 "	      004393e8    mov [ebp-15Ch],eax"
@@ -8240,36 +8240,36 @@ int  Radio::SetupStations() {
 "	      004393f8    jmp near ptr 004393FDh"
 "	      004393fd    jmp near ptr 00439402h"
 "	      00439402    jmp near ptr 00439407h"
-"	      00439407    mov eax,[ebp-258h]"
+"	      00439407    mov eax,this"
 "	      0043940d    mov eax,[eax+8]"
-"	      00439410    mov ecx,[ebp-258h]"
+"	      00439410    mov ecx,this"
 "	      00439416    sub eax,[ecx+4]"
 "	      00439419    mov ecx,98h"
 "	      0043941e    cdq"
 "	      0043941f    idiv ecx"
-"	      00439421    mov ecx,[ebp-258h]"
+"	      00439421    mov ecx,this"
 "	      00439427    cmp eax,[ecx+20h]"
 "	      0043942a    jg near ptr 0043943Dh"
 );
 // LINE 1003:
 	asm( 
-"	      00439430    mov eax,[ebp-258h]"
+"	      00439430    mov eax,this"
 "	      00439436    mov dword ptr [eax+20h],0"
 );
 // LINE 1005:
 	asm( 
-"	      0043943d    mov eax,[ebp-0B0h]"
+"	      0043943d    mov eax,nStationCount"
 "	      00439443    mov [ebp-160h],eax"
 "	      00439449    jmp near ptr 0043944Eh"
 "	      0043944e    lea ecx,[ebp-0C8h]"
 "	      00439454    call 00412130h"
 "	      00439459    lea ecx,[ebp-0D0h]"
 "	      0043945f    call 00412130h"
-"	      00439464    lea ecx,[ebp-0D8h]"
+"	      00439464    lea ecx,tempDirectory.<Directory+0x00:None>"
 "	      0043946a    call 00428C70h"
-"	      0043946f    lea ecx,[ebp-0A4h]"
+"	      0043946f    lea ecx,tempRadioStation.<vftable>"
 "	      00439475    call 004341C6h"
-"	      0043947a    mov eax,[ebp-0E0h]"
+"	      0043947a    mov eax,radioStationStringList.node"
 "	      00439480    mov [ebp-1A8h],eax"
 "	      00439486    mov eax,[ebp-1A8h]"
 "	      0043948c    mov [ebp-19Ch],eax"
@@ -8279,13 +8279,13 @@ int  Radio::SetupStations() {
 "	      004394a2    push eax"
 "	      004394a3    lea eax,[ebp-1A0h]"
 "	      004394a9    push eax"
-"	      004394aa    lea ecx,[ebp-0E0h]"
+"	      004394aa    lea ecx,radioStationStringList.node"
 "	      004394b0    call 0043A080h"
 "	      004394b5    mov eax,[eax]"
 "	      004394b7    push eax"
-"	      004394b8    lea ecx,[ebp-0E0h]"
+"	      004394b8    lea ecx,radioStationStringList.node"
 "	      004394be    call 0043A940h"
-"	      004394c3    mov eax,[ebp-0E0h]"
+"	      004394c3    mov eax,radioStationStringList.node"
 "	      004394c9    mov [ebp-1A4h],eax"
 "	      004394cf    mov eax,ds:[59856Ch]"
 "	      004394d4    mov ecx,[ebp-1A4h]"
@@ -8295,14 +8295,14 @@ int  Radio::SetupStations() {
 "	      004394e7    jmp near ptr 004394ECh"
 "	      004394ec    dec dword ptr ds:[598560h]"
 "	      004394f2    jne near ptr 00439503h"
-"	      004394f8    lea ecx,[ebp-0E0h]"
+"	      004394f8    lea ecx,radioStationStringList.node"
 "	      004394fe    call 0043A8B0h"
 "	      00439503    jmp near ptr 00439508h"
-"	      00439508    lea ecx,[ebp-0B8h]"
+"	      00439508    lea ecx,sCurrentLanguage.c_str_ptr"
 "	      0043950e    call 00412080h"
-"	      00439513    cmp dword ptr [ebp-0B8h],0"
+"	      00439513    cmp sCurrentLanguage.c_str_ptr,0"
 "	      0043951a    je near ptr 00439547h"
-"	      00439520    mov eax,[ebp-0B8h]"
+"	      00439520    mov eax,sCurrentLanguage.c_str_ptr"
 "	      00439526    mov [ebp-170h],eax"
 "	      0043952c    mov eax,[ebp-170h]"
 "	      00439532    mov [ebp-174h],eax"
@@ -8311,11 +8311,11 @@ int  Radio::SetupStations() {
 "	      0043953f    call 0056A740h"
 "	      00439544    add esp,4"
 "	      00439547    jmp near ptr 0043954Ch"
-"	      0043954c    lea ecx,[ebp-0E8h]"
+"	      0043954c    lea ecx,sScratch.c_str_ptr"
 "	      00439552    call 00412080h"
-"	      00439557    cmp dword ptr [ebp-0E8h],0"
+"	      00439557    cmp sScratch.c_str_ptr,0"
 "	      0043955e    je near ptr 0043958Bh"
-"	      00439564    mov eax,[ebp-0E8h]"
+"	      00439564    mov eax,sScratch.c_str_ptr"
 "	      0043956a    mov [ebp-178h],eax"
 "	      00439570    mov eax,[ebp-178h]"
 "	      00439576    mov [ebp-17Ch],eax"
@@ -8324,11 +8324,11 @@ int  Radio::SetupStations() {
 "	      00439583    call 0056A740h"
 "	      00439588    add esp,4"
 "	      0043958b    jmp near ptr 00439590h"
-"	      00439590    lea ecx,[ebp-0ACh]"
+"	      00439590    lea ecx,sCommercialDirectory.c_str_ptr"
 "	      00439596    call 00412080h"
-"	      0043959b    cmp dword ptr [ebp-0ACh],0"
+"	      0043959b    cmp sCommercialDirectory.c_str_ptr,0"
 "	      004395a2    je near ptr 004395CFh"
-"	      004395a8    mov eax,[ebp-0ACh]"
+"	      004395a8    mov eax,sCommercialDirectory.c_str_ptr"
 "	      004395ae    mov [ebp-180h],eax"
 "	      004395b4    mov eax,[ebp-180h]"
 "	      004395ba    mov [ebp-184h],eax"
@@ -8337,11 +8337,11 @@ int  Radio::SetupStations() {
 "	      004395c7    call 0056A740h"
 "	      004395cc    add esp,4"
 "	      004395cf    jmp near ptr 004395D4h"
-"	      004395d4    lea ecx,[ebp-0F0h]"
+"	      004395d4    lea ecx,sStationDirectory.c_str_ptr"
 "	      004395da    call 00412080h"
-"	      004395df    cmp dword ptr [ebp-0F0h],0"
+"	      004395df    cmp sStationDirectory.c_str_ptr,0"
 "	      004395e6    je near ptr 00439613h"
-"	      004395ec    mov eax,[ebp-0F0h]"
+"	      004395ec    mov eax,sStationDirectory.c_str_ptr"
 "	      004395f2    mov [ebp-188h],eax"
 "	      004395f8    mov eax,[ebp-188h]"
 "	      004395fe    mov [ebp-18Ch],eax"
@@ -8350,11 +8350,11 @@ int  Radio::SetupStations() {
 "	      0043960b    call 0056A740h"
 "	      00439610    add esp,4"
 "	      00439613    jmp near ptr 00439618h"
-"	      00439618    lea ecx,[ebp-0Ch]"
+"	      00439618    lea ecx,sRadioDirectory.c_str_ptr"
 "	      0043961b    call 00412080h"
-"	      00439620    cmp dword ptr [ebp-0Ch],0"
+"	      00439620    cmp sRadioDirectory.c_str_ptr,0"
 "	      00439624    je near ptr 0043964Eh"
-"	      0043962a    mov eax,[ebp-0Ch]"
+"	      0043962a    mov eax,sRadioDirectory.c_str_ptr"
 "	      0043962d    mov [ebp-190h],eax"
 "	      00439633    mov eax,[ebp-190h]"
 "	      00439639    mov [ebp-194h],eax"
@@ -8386,7 +8386,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 "	      00439669    push ebx"
 "	      0043966a    push esi"
 "	      0043966b    push edi"
-"	      0043966c    mov [ebp-70h],ecx"
+"	      0043966c    mov this,ecx"
 "	      0043966f    mov eax,ds:[5984C4h]"
 "	      00439674    mov [ebp-6Ch],eax"
 );
@@ -8400,11 +8400,11 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 "	      00439686    jmp near ptr 0043968Bh"
 "	      0043968b    jmp near ptr 00439690h"
 "	      00439690    jmp near ptr 00439695h"
-"	      00439695    mov eax,[ebp+8]"
+"	      00439695    mov eax,sDirectory"
 "	      00439698    mov eax,[eax+4]"
 "	      0043969b    cmp dword ptr [eax+4],0"
 "	      0043969f    je near ptr 004396BAh"
-"	      004396a5    mov eax,[ebp+8]"
+"	      004396a5    mov eax,sDirectory"
 "	      004396a8    mov eax,[eax+4]"
 "	      004396ab    mov eax,[eax]"
 "	      004396ad    mov [ebp-3Ch],eax"
@@ -8412,7 +8412,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 "	      004396b5    jmp near ptr 004396C6h"
 "	      004396ba    mov dword ptr [ebp-3Ch],0"
 "	      004396c1    jmp near ptr 004396C6h"
-"	      004396c6    mov eax,[ebp+8]"
+"	      004396c6    mov eax,sDirectory"
 "	      004396c9    mov eax,[eax+4]"
 "	      004396cc    mov eax,[eax+4]"
 "	      004396cf    mov [ebp-68h],eax"
@@ -8490,7 +8490,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 "	      004397d8    je near ptr 00439812h"
 "	      004397de    jmp near ptr 004397E3h"
 "	      004397e3    jmp near ptr 004397E8h"
-"	      004397e8    mov eax,[ebp+8]"
+"	      004397e8    mov eax,sDirectory"
 "	      004397eb    mov eax,[eax+4]"
 "	      004397ee    mov eax,[eax+4]"
 "	      004397f1    mov ecx,[ebp-28h]"

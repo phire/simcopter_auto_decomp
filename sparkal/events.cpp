@@ -18,7 +18,7 @@ int32_t IsEventSet(int32_t nEvent) {
 // LINE 23:
 	asm( 
 "	      00431b66    jmp near ptr 00431B6Bh"
-"	      00431b6b    mov eax,[ebp+8]"
+"	      00431b6b    mov eax,nEvent"
 "	      00431b6e    mov ecx,ds:[599BBCh]"
 "	      00431b74    xor edx,edx"
 "	      00431b76    mov dl,[ecx+eax*2+110h]"
@@ -47,14 +47,14 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 );
 // LINE 33:
 	asm( 
-"	      00431b8f    mov eax,[ebp+8]"
-"	      00431b92    cmp [ebp+0Ch],eax"
+"	      00431b8f    mov eax,nEventStart"
+"	      00431b92    cmp nEventEnd,eax"
 "	      00431b95    jl near ptr 00431BCAh"
 );
 // LINE 34:
 	asm( 
 "	      00431b9b    jmp near ptr 00431BA0h"
-"	      00431ba0    mov eax,[ebp+8]"
+"	      00431ba0    mov eax,nEventStart"
 "	      00431ba3    mov ecx,ds:[599BBCh]"
 "	      00431ba9    xor edx,edx"
 "	      00431bab    mov dl,[ecx+eax*2+110h]"
@@ -63,12 +63,12 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 );
 // LINE 35:
 	asm( 
-"	      00431bba    mov eax,[ebp+8]"
+"	      00431bba    mov eax,nEventStart"
 "	      00431bbd    jmp near ptr 00431BD1h"
 );
 // LINE 36:
 	asm( 
-"	      00431bc2    inc dword ptr [ebp+8]"
+"	      00431bc2    inc nEventStart"
 );
 // LINE 37:
 	asm( 
@@ -102,7 +102,7 @@ long GetJoystickValue(int32_t nCommand) {
 // LINE 47:
 	asm( 
 "	      00431bdc    jmp near ptr 00431BE1h"
-"	      00431be1    mov eax,[ebp+8]"
+"	      00431be1    mov eax,nCommand"
 "	      00431be4    mov ecx,ds:[599BBCh]"
 "	      00431bea    mov eax,[ecx+eax*4+0A28h]"
 "	      00431bf1    jmp near ptr 00431BF6h"
@@ -132,23 +132,23 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 );
 // LINE 58:
 	asm( 
-"	      00431c04    mov eax,[ebp+8]"
+"	      00431c04    mov eax,nCommand1"
 "	      00431c07    mov ecx,ds:[599BBCh]"
 "	      00431c0d    mov eax,[ecx+eax*4+0A28h]"
-"	      00431c14    mov [ebp-4],eax"
+"	      00431c14    mov lReturnValue,eax"
 "	      00431c17    jmp near ptr 00431C1Ch"
-"	      00431c1c    cmp dword ptr [ebp-4],0"
+"	      00431c1c    cmp lReturnValue,0"
 "	      00431c20    je near ptr 00431C2Eh"
 );
 // LINE 59:
 	asm( 
-"	      00431c26    mov eax,[ebp-4]"
+"	      00431c26    mov eax,lReturnValue"
 "	      00431c29    jmp near ptr 00431C48h"
 );
 // LINE 60:
 	asm( 
 "	      00431c2e    jmp near ptr 00431C33h"
-"	      00431c33    mov eax,[ebp+0Ch]"
+"	      00431c33    mov eax,nCommand2"
 "	      00431c36    mov ecx,ds:[599BBCh]"
 "	      00431c3c    mov eax,[ecx+eax*4+0A28h]"
 "	      00431c43    jmp near ptr 00431C48h"

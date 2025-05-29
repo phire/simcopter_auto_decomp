@@ -15,12 +15,12 @@ void Cursor::Cursor() {
 "	      004747f6    push ebx"
 "	      004747f7    push esi"
 "	      004747f8    push edi"
-"	      004747f9    mov [ebp-4],ecx"
+"	      004747f9    mov this,ecx"
 );
 // LINE 20:
 	asm( 
 "	      004747fc    jmp near ptr 00474801h"
-"	      00474801    mov eax,[ebp-4]"
+"	      00474801    mov eax,this"
 "	      00474804    pop edi"
 "	      00474805    pop esi"
 "	      00474806    pop ebx"
@@ -39,7 +39,7 @@ void Cursor::~Cursor() {
 "	      0047480f    push ebx"
 "	      00474810    push esi"
 "	      00474811    push edi"
-"	      00474812    mov [ebp-4],ecx"
+"	      00474812    mov this,ecx"
 );
 // LINE 23:
 	asm( 
@@ -68,44 +68,44 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 );
 // LINE 40:
 	asm( 
-"	      00474828    mov dword ptr [ebp-8],80000000h"
+"	      00474828    mov nAndValue,80000000h"
 );
 // LINE 47:
 	asm( 
-"	      0047482f    cmp dword ptr [ebp+8],1"
+"	      0047482f    cmp nCursor,1"
 "	      00474833    jne near ptr 00474845h"
 );
 // LINE 48:
 	asm( 
-"	      00474839    mov dword ptr [ebp+8],1"
+"	      00474839    mov nCursor,1"
 );
 // LINE 49:
 	asm( 
 "	      00474840    jmp near ptr 0047486Ch"
-"	      00474845    cmp dword ptr [ebp+8],2"
+"	      00474845    cmp nCursor,2"
 "	      00474849    jne near ptr 0047485Bh"
 );
 // LINE 50:
 	asm( 
-"	      0047484f    mov dword ptr [ebp+8],2"
+"	      0047484f    mov nCursor,2"
 );
 // LINE 51:
 	asm( 
 "	      00474856    jmp near ptr 0047486Ch"
-"	      0047485b    cmp dword ptr [ebp+8],4"
+"	      0047485b    cmp nCursor,4"
 "	      0047485f    jne near ptr 0047486Ch"
 );
 // LINE 52:
 	asm( 
-"	      00474865    mov dword ptr [ebp+8],4"
+"	      00474865    mov nCursor,4"
 );
 // LINE 54:
 	asm( 
-"	      0047486c    mov eax,[ebp+8]"
+"	      0047486c    mov eax,nCursor"
 "	      0047486f    push eax"
 "	      00474870    call dword ptr ds:[6C3898h]"
 "	      00474876    movsx eax,ax"
-"	      00474879    mov [ebp-4],eax"
+"	      00474879    mov nKeyState,eax"
 "	      0047487c    test byte ptr [ebp-1],80h"
 "	      00474880    jne near ptr 0047488Dh"
 );
@@ -116,7 +116,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 );
 // LINE 59:
 	asm( 
-"	      0047488d    cmp dword ptr [ebp+0Ch],0"
+"	      0047488d    cmp nModifiers,0"
 "	      00474891    je near ptr 00474912h"
 );
 // LINE 60:
@@ -129,7 +129,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748a1    push 10h"
 "	      004748a3    call dword ptr ds:[6C3898h]"
 "	      004748a9    movsx eax,ax"
-"	      004748ac    mov [ebp-4],eax"
+"	      004748ac    mov nKeyState,eax"
 "	      004748af    test byte ptr [ebp-1],80h"
 "	      004748b3    jne near ptr 004748C0h"
 );
@@ -148,7 +148,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748ca    push 11h"
 "	      004748cc    call dword ptr ds:[6C3898h]"
 "	      004748d2    movsx eax,ax"
-"	      004748d5    mov [ebp-4],eax"
+"	      004748d5    mov nKeyState,eax"
 "	      004748d8    test byte ptr [ebp-1],80h"
 "	      004748dc    jne near ptr 004748E9h"
 );
@@ -167,7 +167,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748f3    push 12h"
 "	      004748f5    call dword ptr ds:[6C3898h]"
 "	      004748fb    movsx eax,ax"
-"	      004748fe    mov [ebp-4],eax"
+"	      004748fe    mov nKeyState,eax"
 "	      00474901    test byte ptr [ebp-1],80h"
 "	      00474905    jne near ptr 00474912h"
 );
@@ -207,26 +207,26 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 );
 // LINE 95:
 	asm( 
-"	      0047492a    lea eax,[ebp-0Ch]"
+"	      0047492a    lea eax,ptCursor.x"
 "	      0047492d    push eax"
 "	      0047492e    call dword ptr ds:[6C3894h]"
-"	      00474934    mov [ebp-4],eax"
+"	      00474934    mov nReturnValue,eax"
 );
 // LINE 100:
 	asm( 
-"	      00474937    mov eax,[ebp-0Ch]"
-"	      0047493a    mov ecx,[ebp+8]"
+"	      00474937    mov eax,ptCursor.x"
+"	      0047493a    mov ecx,nXPosition"
 "	      0047493d    mov [ecx],eax"
 );
 // LINE 101:
 	asm( 
-"	      0047493f    mov eax,[ebp-8]"
-"	      00474942    mov ecx,[ebp+0Ch]"
+"	      0047493f    mov eax,ptCursor.y"
+"	      00474942    mov ecx,nYPosition"
 "	      00474945    mov [ecx],eax"
 );
 // LINE 102:
 	asm( 
-"	      00474947    mov eax,[ebp-4]"
+"	      00474947    mov eax,nReturnValue"
 "	      0047494a    jmp near ptr 0047494Fh"
 );
 // LINE 104:

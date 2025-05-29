@@ -17,24 +17,24 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 "	      00432266    push ebx"
 "	      00432267    push esi"
 "	      00432268    push edi"
-"	      00432269    mov [ebp-8],ecx"
+"	      00432269    mov this,ecx"
 );
 // LINE 19:
 	asm( 
-"	      0043226c    mov eax,[ebp-8]"
+"	      0043226c    mov eax,this"
 "	      0043226f    mov eax,[eax+10h]"
-"	      00432272    mov [ebp-4],eax"
+"	      00432272    mov ReturnCommander,eax"
 );
 // LINE 21:
 	asm( 
-"	      00432275    mov eax,[ebp-8]"
-"	      00432278    mov ecx,[ebp+8]"
+"	      00432275    mov eax,this"
+"	      00432278    mov ecx,pCommander"
 "	      0043227b    cmp [eax+10h],ecx"
 "	      0043227e    jne near ptr 00432290h"
 );
 // LINE 22:
 	asm( 
-"	      00432284    mov dword ptr [ebp-4],0"
+"	      00432284    mov ReturnCommander,0"
 );
 // LINE 23:
 	asm( 
@@ -42,15 +42,15 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 );
 // LINE 25:
 	asm( 
-"	      00432290    mov eax,[ebp-8]"
+"	      00432290    mov eax,this"
 "	      00432293    cmp dword ptr [eax+10h],0"
 "	      00432297    je near ptr 004322B0h"
 );
 // LINE 26:
 	asm( 
 "	      0043229d    push 0"
-"	      0043229f    mov eax,[ebp-8]"
-"	      004322a2    mov ecx,[ebp-8]"
+"	      0043229f    mov eax,this"
+"	      004322a2    mov ecx,this"
 "	      004322a5    mov ecx,[ecx+10h]"
 "	      004322a8    mov edx,[ecx]"
 "	      004322aa    mov ecx,[eax+10h]"
@@ -58,22 +58,22 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 );
 // LINE 28:
 	asm( 
-"	      004322b0    mov eax,[ebp+8]"
-"	      004322b3    mov ecx,[ebp-8]"
+"	      004322b0    mov eax,pCommander"
+"	      004322b3    mov ecx,this"
 "	      004322b6    mov [ecx+10h],eax"
 );
 // LINE 29:
 	asm( 
-"	      004322b9    mov eax,[ebp-8]"
+"	      004322b9    mov eax,this"
 "	      004322bc    push eax"
-"	      004322bd    mov eax,[ebp+8]"
+"	      004322bd    mov eax,pCommander"
 "	      004322c0    mov eax,[eax]"
-"	      004322c2    mov ecx,[ebp+8]"
+"	      004322c2    mov ecx,pCommander"
 "	      004322c5    call dword ptr [eax+20h]"
 );
 // LINE 32:
 	asm( 
-"	      004322c8    mov eax,[ebp-4]"
+"	      004322c8    mov eax,ReturnCommander"
 "	      004322cb    jmp near ptr 004322D0h"
 );
 // LINE 33:
@@ -98,23 +98,23 @@ class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer* pBuffer) {
 "	      004322dd    push ebx"
 "	      004322de    push esi"
 "	      004322df    push edi"
-"	      004322e0    mov [ebp-8],ecx"
+"	      004322e0    mov this,ecx"
 );
 // LINE 42:
 	asm( 
-"	      004322e3    mov eax,[ebp-8]"
+"	      004322e3    mov eax,this"
 "	      004322e6    mov eax,[eax+14h]"
-"	      004322e9    mov [ebp-4],eax"
+"	      004322e9    mov ReturnBuffer,eax"
 );
 // LINE 43:
 	asm( 
-"	      004322ec    mov eax,[ebp+8]"
-"	      004322ef    mov ecx,[ebp-8]"
+"	      004322ec    mov eax,pBuffer"
+"	      004322ef    mov ecx,this"
 "	      004322f2    mov [ecx+14h],eax"
 );
 // LINE 44:
 	asm( 
-"	      004322f5    mov eax,[ebp-4]"
+"	      004322f5    mov eax,ReturnBuffer"
 "	      004322f8    jmp near ptr 004322FDh"
 );
 // LINE 45:
@@ -137,13 +137,13 @@ unsigned long CSparkalWindow::Draw() {
 "	      0043230a    push ebx"
 "	      0043230b    push esi"
 "	      0043230c    push edi"
-"	      0043230d    mov [ebp-4],ecx"
+"	      0043230d    mov this,ecx"
 );
 // LINE 55:
 	asm( 
-"	      00432310    mov eax,[ebp-4]"
+"	      00432310    mov eax,this"
 "	      00432313    mov eax,[eax]"
-"	      00432315    mov ecx,[ebp-4]"
+"	      00432315    mov ecx,this"
 "	      00432318    call dword ptr [eax+28h]"
 "	      0043231b    jmp near ptr 00432320h"
 );
@@ -167,18 +167,18 @@ unsigned long CSparkalWindow::SwapBuffer() {
 "	      0043232b    push ebx"
 "	      0043232c    push esi"
 "	      0043232d    push edi"
-"	      0043232e    mov [ebp-4],ecx"
+"	      0043232e    mov this,ecx"
 );
 // LINE 64:
 	asm( 
-"	      00432331    mov eax,[ebp-4]"
+"	      00432331    mov eax,this"
 "	      00432334    cmp dword ptr [eax+14h],0"
 "	      00432338    je near ptr 00432380h"
 );
 // LINE 65:
 	asm( 
-"	      0043233e    mov eax,[ebp-4]"
-"	      00432341    mov ecx,[ebp-4]"
+"	      0043233e    mov eax,this"
+"	      00432341    mov ecx,this"
 "	      00432344    mov ecx,[ecx+14h]"
 "	      00432347    mov edx,[ecx]"
 "	      00432349    mov ecx,[eax+14h]"
@@ -190,10 +190,10 @@ unsigned long CSparkalWindow::SwapBuffer() {
 	asm( 
 "	      00432356    push 0"
 "	      00432358    push 0"
-"	      0043235a    mov eax,[ebp-4]"
+"	      0043235a    mov eax,this"
 "	      0043235d    push eax"
-"	      0043235e    mov eax,[ebp-4]"
-"	      00432361    mov ecx,[ebp-4]"
+"	      0043235e    mov eax,this"
+"	      00432361    mov ecx,this"
 "	      00432364    mov ecx,[ecx+14h]"
 "	      00432367    mov edx,[ecx]"
 "	      00432369    mov ecx,[eax+14h]"
@@ -201,8 +201,8 @@ unsigned long CSparkalWindow::SwapBuffer() {
 );
 // LINE 67:
 	asm( 
-"	      0043236f    mov eax,[ebp-4]"
-"	      00432372    mov ecx,[ebp-4]"
+"	      0043236f    mov eax,this"
+"	      00432372    mov ecx,this"
 "	      00432375    mov ecx,[ecx+14h]"
 "	      00432378    mov edx,[ecx]"
 "	      0043237a    mov ecx,[eax+14h]"
@@ -235,19 +235,19 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 "	      00432392    push ebx"
 "	      00432393    push esi"
 "	      00432394    push edi"
-"	      00432395    mov [ebp-14h],ecx"
+"	      00432395    mov this,ecx"
 );
 // LINE 81:
 	asm( 
-"	      00432398    mov dword ptr [ebp-4],0"
+"	      00432398    mov Error,0"
 );
 // LINE 86:
 	asm( 
-"	      0043239f    mov eax,[ebp-14h]"
+"	      0043239f    mov eax,this"
 "	      004323a2    cmp dword ptr [eax+14h],0"
 "	      004323a6    je near ptr 004324C6h"
-"	      004323ac    mov eax,[ebp-14h]"
-"	      004323af    mov ecx,[ebp-14h]"
+"	      004323ac    mov eax,this"
+"	      004323af    mov ecx,this"
 "	      004323b2    mov ecx,[ecx+14h]"
 "	      004323b5    mov edx,[ecx]"
 "	      004323b7    mov ecx,[eax+14h]"
@@ -261,43 +261,43 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	long ChunkHeight;
 	long DestTop;
 	asm( 
-"	      004323c4    mov eax,[ebp+14h]"
-"	      004323c7    sub eax,[ebp+0Ch]"
+"	      004323c4    mov eax,Bottom"
+"	      004323c7    sub eax,Top"
 "	      004323ca    mov ecx,0Ah"
 "	      004323cf    cdq"
 "	      004323d0    idiv ecx"
-"	      004323d2    mov [ebp-10h],eax"
+"	      004323d2    mov Step,eax"
 );
 // LINE 93:
 	asm( 
-"	      004323d5    mov eax,[ebp-10h]"
-"	      004323d8    mov [ebp-0Ch],eax"
+"	      004323d5    mov eax,Step"
+"	      004323d8    mov ChunkHeight,eax"
 );
 // LINE 94:
 	asm( 
-"	      004323db    mov eax,[ebp+14h]"
-"	      004323de    sub eax,[ebp-0Ch]"
-"	      004323e1    mov [ebp-8],eax"
+"	      004323db    mov eax,Bottom"
+"	      004323de    sub eax,ChunkHeight"
+"	      004323e1    mov DestTop,eax"
 );
 // LINE 97:
 	asm( 
-"	      004323e4    mov eax,[ebp-8]"
+"	      004323e4    mov eax,DestTop"
 "	      004323e7    push eax"
-"	      004323e8    mov eax,[ebp+8]"
+"	      004323e8    mov eax,Left"
 "	      004323eb    push eax"
-"	      004323ec    mov eax,[ebp-0Ch]"
-"	      004323ef    add eax,[ebp+0Ch]"
+"	      004323ec    mov eax,ChunkHeight"
+"	      004323ef    add eax,Top"
 "	      004323f2    push eax"
-"	      004323f3    mov eax,[ebp+10h]"
+"	      004323f3    mov eax,Right"
 "	      004323f6    push eax"
-"	      004323f7    mov eax,[ebp+0Ch]"
+"	      004323f7    mov eax,Top"
 "	      004323fa    push eax"
-"	      004323fb    mov eax,[ebp+8]"
+"	      004323fb    mov eax,Left"
 "	      004323fe    push eax"
-"	      004323ff    mov eax,[ebp-14h]"
+"	      004323ff    mov eax,this"
 "	      00432402    push eax"
-"	      00432403    mov eax,[ebp-14h]"
-"	      00432406    mov ecx,[ebp-14h]"
+"	      00432403    mov eax,this"
+"	      00432406    mov ecx,this"
 "	      00432409    mov ecx,[ecx+14h]"
 "	      0043240c    mov edx,[ecx]"
 "	      0043240e    mov ecx,[eax+14h]"
@@ -305,7 +305,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 );
 // LINE 99:
 	asm( 
-"	      00432414    cmp dword ptr [ebp-10h],0"
+"	      00432414    cmp Step,0"
 "	      00432418    jne near ptr 00432437h"
 "	      0043241e    push 63h"
 "	      00432420    push 59836Ch"
@@ -317,23 +317,23 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 );
 // LINE 102:
 	asm( 
-"	      0043243c    mov eax,[ebp-8]"
+"	      0043243c    mov eax,DestTop"
 "	      0043243f    push eax"
-"	      00432440    mov eax,[ebp+8]"
+"	      00432440    mov eax,Left"
 "	      00432443    push eax"
-"	      00432444    mov eax,[ebp-0Ch]"
-"	      00432447    add eax,[ebp+0Ch]"
+"	      00432444    mov eax,ChunkHeight"
+"	      00432447    add eax,Top"
 "	      0043244a    push eax"
-"	      0043244b    mov eax,[ebp+10h]"
+"	      0043244b    mov eax,Right"
 "	      0043244e    push eax"
-"	      0043244f    mov eax,[ebp+0Ch]"
+"	      0043244f    mov eax,Top"
 "	      00432452    push eax"
-"	      00432453    mov eax,[ebp+8]"
+"	      00432453    mov eax,Left"
 "	      00432456    push eax"
-"	      00432457    mov eax,[ebp-14h]"
+"	      00432457    mov eax,this"
 "	      0043245a    push eax"
-"	      0043245b    mov eax,[ebp-14h]"
-"	      0043245e    mov ecx,[ebp-14h]"
+"	      0043245b    mov eax,this"
+"	      0043245e    mov ecx,this"
 "	      00432461    mov ecx,[ecx+14h]"
 "	      00432464    mov edx,[ecx]"
 "	      00432466    mov ecx,[eax+14h]"
@@ -341,40 +341,40 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 );
 // LINE 103:
 	asm( 
-"	      0043246c    mov eax,[ebp-10h]"
-"	      0043246f    add [ebp-0Ch],eax"
+"	      0043246c    mov eax,Step"
+"	      0043246f    add ChunkHeight,eax"
 );
 // LINE 104:
 	asm( 
 "	      00432472    xor eax,eax"
-"	      00432474    sub eax,[ebp-10h]"
+"	      00432474    sub eax,Step"
 "	      00432477    neg eax"
-"	      00432479    sub [ebp-8],eax"
+"	      00432479    sub DestTop,eax"
 );
 // LINE 105:
 	asm( 
-"	      0043247c    mov eax,[ebp+0Ch]"
-"	      0043247f    cmp [ebp-8],eax"
+"	      0043247c    mov eax,Top"
+"	      0043247f    cmp DestTop,eax"
 "	      00432482    jg near ptr 0043243Ch"
 );
 // LINE 106:
 	asm( 
-"	      00432488    mov eax,[ebp+0Ch]"
+"	      00432488    mov eax,Top"
 "	      0043248b    push eax"
-"	      0043248c    mov eax,[ebp+8]"
+"	      0043248c    mov eax,Left"
 "	      0043248f    push eax"
-"	      00432490    mov eax,[ebp+14h]"
+"	      00432490    mov eax,Bottom"
 "	      00432493    push eax"
-"	      00432494    mov eax,[ebp+10h]"
+"	      00432494    mov eax,Right"
 "	      00432497    push eax"
-"	      00432498    mov eax,[ebp+0Ch]"
+"	      00432498    mov eax,Top"
 "	      0043249b    push eax"
-"	      0043249c    mov eax,[ebp+8]"
+"	      0043249c    mov eax,Left"
 "	      0043249f    push eax"
-"	      004324a0    mov eax,[ebp-14h]"
+"	      004324a0    mov eax,this"
 "	      004324a3    push eax"
-"	      004324a4    mov eax,[ebp-14h]"
-"	      004324a7    mov ecx,[ebp-14h]"
+"	      004324a4    mov eax,this"
+"	      004324a7    mov ecx,this"
 "	      004324aa    mov ecx,[ecx+14h]"
 "	      004324ad    mov edx,[ecx]"
 "	      004324af    mov ecx,[eax+14h]"
@@ -382,8 +382,8 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 );
 // LINE 107:
 	asm( 
-"	      004324b5    mov eax,[ebp-14h]"
-"	      004324b8    mov ecx,[ebp-14h]"
+"	      004324b5    mov eax,this"
+"	      004324b8    mov ecx,this"
 "	      004324bb    mov ecx,[ecx+14h]"
 "	      004324be    mov edx,[ecx]"
 "	      004324c0    mov ecx,[eax+14h]"
@@ -392,7 +392,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 // LINE 110:
 // Block end:
 	asm( 
-"	      004324c6    mov eax,[ebp-4]"
+"	      004324c6    mov eax,Error"
 "	      004324c9    jmp near ptr 004324CEh"
 );
 // LINE 111:

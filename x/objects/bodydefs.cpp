@@ -20,7 +20,7 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 );
 // LINE 111:
 	asm( 
-"	      0055d959    cmp dword ptr [ebp+0Ch],8"
+"	      0055d959    cmp size,8"
 "	      0055d95d    je near ptr 0055D97Ch"
 "	      0055d963    push 8C085h"
 "	      0055d968    push 5BE00Ch"
@@ -31,8 +31,8 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 );
 // LINE 112:
 	asm( 
-"	      0055d97c    mov eax,[ebp+8]"
-"	      0055d97f    mov [ebp-4],eax"
+"	      0055d97c    mov eax,val"
+"	      0055d97f    mov pinfo,eax"
 );
 // LINE 125:
 	asm( 
@@ -60,27 +60,27 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 );
 // LINE 130:
 	asm( 
-"	      0055d995    mov eax,[ebp+8]"
+"	      0055d995    mov eax,dxzy.x"
 "	      0055d998    push eax"
 "	      0055d999    call 0055DA4Bh"
 "	      0055d99e    add esp,4"
-"	      0055d9a1    mov [ebp-4],al"
+"	      0055d9a1    mov txzy.x,al"
 );
 // LINE 131:
 	asm( 
-"	      0055d9a4    mov eax,[ebp+0Ch]"
+"	      0055d9a4    mov eax,dxzy.z"
 "	      0055d9a7    push eax"
 "	      0055d9a8    call 0055DA4Bh"
 "	      0055d9ad    add esp,4"
-"	      0055d9b0    mov [ebp-2],al"
+"	      0055d9b0    mov txzy.z,al"
 );
 // LINE 132:
 	asm( 
-"	      0055d9b3    mov eax,[ebp+10h]"
+"	      0055d9b3    mov eax,dxzy.y"
 "	      0055d9b6    push eax"
 "	      0055d9b7    call 0055DA4Bh"
 "	      0055d9bc    add esp,4"
-"	      0055d9bf    mov [ebp-3],al"
+"	      0055d9bf    mov txzy.y,al"
 );
 // LINE 133:
 	asm( 
@@ -116,7 +116,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 "	      0055d9db    push eax"
 "	      0055d9dc    call 0055DA2Eh"
 "	      0055d9e1    add esp,4"
-"	      0055d9e4    fstp dword ptr [ebp-10h]"
+"	      0055d9e4    fstp dxzy.x"
 );
 // LINE 140:
 	asm( 
@@ -124,7 +124,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 "	      0055d9ea    push eax"
 "	      0055d9eb    call 0055DA2Eh"
 "	      0055d9f0    add esp,4"
-"	      0055d9f3    fstp dword ptr [ebp-0Ch]"
+"	      0055d9f3    fstp dxzy.z"
 );
 // LINE 141:
 	asm( 
@@ -132,11 +132,11 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 "	      0055d9f9    push eax"
 "	      0055d9fa    call 0055DA2Eh"
 "	      0055d9ff    add esp,4"
-"	      0055da02    fstp dword ptr [ebp-8]"
+"	      0055da02    fstp dxzy.y"
 );
 // LINE 142:
 	asm( 
-"	      0055da05    lea eax,[ebp-10h]"
+"	      0055da05    lea eax,dxzy.x"
 "	      0055da08    mov ecx,[ebp+8]"
 "	      0055da0b    mov edx,[eax]"
 "	      0055da0d    mov [ecx],edx"
@@ -172,7 +172,7 @@ float Byte_2_Float(char byte) {
 );
 // LINE 152:
 	asm( 
-"	      0055da37    movsx eax,byte ptr [ebp+8]"
+"	      0055da37    movsx eax,byte"
 "	      0055da3b    mov [ebp-4],eax"
 "	      0055da3e    fild dword ptr [ebp-4]"
 "	      0055da41    jmp near ptr 0055DA46h"
@@ -199,12 +199,12 @@ char Float_2_Byte(float flt) {
 );
 // LINE 157:
 	asm( 
-"	      0055da51    fld dword ptr [ebp+8]"
+"	      0055da51    fld flt"
 "	      0055da54    fcomp qword ptr ds:[593640h]"
 "	      0055da5a    fnstsw ax"
 "	      0055da5c    test ah,1"
 "	      0055da5f    je near ptr 0055DA79h"
-"	      0055da65    fld dword ptr [ebp+8]"
+"	      0055da65    fld flt"
 "	      0055da68    fcomp qword ptr ds:[593648h]"
 "	      0055da6e    fnstsw ax"
 "	      0055da70    test ah,41h"
@@ -218,7 +218,7 @@ char Float_2_Byte(float flt) {
 );
 // LINE 160:
 	asm( 
-"	      0055da95    fld dword ptr [ebp+8]"
+"	      0055da95    fld flt"
 "	      0055da98    call 0056EBE8h"
 "	      0055da9d    jmp near ptr 0055DAA2h"
 );
@@ -247,7 +247,7 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 );
 // LINE 167:
 	asm( 
-"	      0055dab0    cmp dword ptr [ebp+0Ch],4"
+"	      0055dab0    cmp size,4"
 "	      0055dab4    je near ptr 0055DAD6h"
 "	      0055daba    push 8C085h"
 "	      0055dabf    push 5BE0ACh"
@@ -258,12 +258,12 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 );
 // LINE 168:
 	asm( 
-"	      0055dad6    mov eax,[ebp+8]"
-"	      0055dad9    mov [ebp-4],eax"
+"	      0055dad6    mov eax,val"
+"	      0055dad9    mov pt,eax"
 );
 // LINE 169:
 	asm( 
-"	      0055dadc    mov eax,[ebp-4]"
+"	      0055dadc    mov eax,pt"
 "	      0055dadf    add eax,2"
 "	      0055dae2    push eax"
 "	      0055dae3    call 0056695Bh"
@@ -271,7 +271,7 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 );
 // LINE 170:
 	asm( 
-"	      0055daeb    mov eax,[ebp-4]"
+"	      0055daeb    mov eax,pt"
 "	      0055daee    push eax"
 "	      0055daef    call 0056695Bh"
 "	      0055daf4    add esp,4"
@@ -308,7 +308,7 @@ void InitBodiesAndAnimations() {
 );
 // LINE 199:
 	asm( 
-"	      0055db22    lea eax,[ebp-210h]"
+"	      0055db22    lea eax,animpath[0]"
 "	      0055db28    push eax"
 "	      0055db29    push 5BE0FCh"
 "	      0055db2e    push 0"
@@ -318,9 +318,9 @@ void InitBodiesAndAnimations() {
 );
 // LINE 200:
 	asm( 
-"	      0055db3a    lea eax,[ebp-10Ch]"
+"	      0055db3a    lea eax,privname[0]"
 "	      0055db40    push eax"
-"	      0055db41    lea eax,[ebp-210h]"
+"	      0055db41    lea eax,animpath[0]"
 "	      0055db47    push eax"
 "	      0055db48    call 00566266h"
 "	      0055db4d    add esp,8"
@@ -426,7 +426,7 @@ _L39421:
 "	      0055dd2a    push 5BE1ECh"
 "	      0055dd2f    call 00554F30h"
 "	      0055dd34    add esp,10h"
-"	      0055dd37    lea eax,[ebp-10Ch]"
+"	      0055dd37    lea eax,privname[0]"
 "	      0055dd3d    push eax"
 "	      0055dd3e    mov eax,[ebp-214h]"
 "	      0055dd44    mov ecx,[ebp-214h]"
@@ -452,7 +452,7 @@ _L39421:
 "	      0055dd98    movzx eax,ax"
 "	      0055dd9b    test eax,eax"
 "	      0055dd9d    jne near ptr 0055DDB2h"
-"	      0055dda3    lea eax,[ebp-10Ch]"
+"	      0055dda3    lea eax,privname[0]"
 "	      0055dda9    push eax"
 "	      0055ddaa    call 0058E320h"
 "	      0055ddaf    add esp,4"
@@ -653,7 +653,7 @@ _L39460:
 "	      0055e10b    push 5BE1ECh"
 "	      0055e110    call 00554F30h"
 "	      0055e115    add esp,10h"
-"	      0055e118    lea eax,[ebp-10Ch]"
+"	      0055e118    lea eax,privname[0]"
 "	      0055e11e    push eax"
 "	      0055e11f    mov eax,[ebp-238h]"
 "	      0055e125    mov ecx,[ebp-238h]"
@@ -679,7 +679,7 @@ _L39460:
 "	      0055e179    movzx eax,ax"
 "	      0055e17c    test eax,eax"
 "	      0055e17e    jne near ptr 0055E193h"
-"	      0055e184    lea eax,[ebp-10Ch]"
+"	      0055e184    lea eax,privname[0]"
 "	      0055e18a    push eax"
 "	      0055e18b    call 0058E320h"
 "	      0055e190    add esp,4"

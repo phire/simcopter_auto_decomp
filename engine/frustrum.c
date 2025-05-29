@@ -26,61 +26,61 @@ void VRFrustSetNormals() {
 	asm( 
 "	      004d66c9    mov eax,ds:[59C248h]"
 "	      004d66ce    shl eax,4"
-"	      004d66d1    mov [ebp-10h],eax"
+"	      004d66d1    mov distx,eax"
 );
 // LINE 75:
 	asm( 
 "	      004d66d4    mov eax,ds:[59C24Ch]"
 "	      004d66d9    shl eax,4"
-"	      004d66dc    mov [ebp-14h],eax"
+"	      004d66dc    mov disty,eax"
 );
 // LINE 76:
 	asm( 
 "	      004d66df    mov eax,ds:[59C254h]"
 "	      004d66e4    shl eax,4"
-"	      004d66e7    mov [ebp-1Ch],eax"
+"	      004d66e7    mov swide,eax"
 );
 // LINE 77:
 	asm( 
 "	      004d66ea    mov eax,ds:[59C258h]"
 "	      004d66ef    shl eax,4"
-"	      004d66f2    mov [ebp-18h],eax"
+"	      004d66f2    mov shigh,eax"
 );
 // LINE 81:
 	asm( 
-"	      004d66f5    mov eax,[ebp-10h]"
+"	      004d66f5    mov eax,distx"
 "	      004d66f8    add eax,eax"
 "	      004d66fa    push eax"
-"	      004d66fb    mov eax,[ebp-1Ch]"
+"	      004d66fb    mov eax,swide"
 "	      004d66fe    push eax"
 "	      004d66ff    call 004D19DFh"
 "	      004d6704    add esp,8"
-"	      004d6707    mov [ebp-0Ch],eax"
+"	      004d6707    mov vect.x,eax"
 );
 // LINE 82:
 	asm( 
-"	      004d670a    mov dword ptr [ebp-8],0"
+"	      004d670a    mov vect.y,0"
 );
 // LINE 83:
 	asm( 
-"	      004d6711    mov dword ptr [ebp-4],10000h"
+"	      004d6711    mov vect.z,10000h"
 );
 // LINE 86:
 	asm( 
-"	      004d6718    lea eax,[ebp-0Ch]"
+"	      004d6718    lea eax,vect.x"
 "	      004d671b    push eax"
 "	      004d671c    call 004CA1E3h"
 "	      004d6721    add esp,4"
 );
 // LINE 89:
 	asm( 
-"	      004d6724    mov eax,[ebp-4]"
+"	      004d6724    mov eax,vect.z"
 "	      004d6727    neg eax"
 "	      004d6729    mov ds:[6663D0h],eax"
 );
 // LINE 90:
 	asm( 
-"	      004d672e    mov eax,[ebp-0Ch]"
+"	      004d672e    mov eax,vect.x"
 "	      004d6731    mov ds:[6663D8h],eax"
 );
 // LINE 91:
@@ -106,39 +106,39 @@ void VRFrustSetNormals() {
 );
 // LINE 99:
 	asm( 
-"	      004d6766    mov eax,[ebp-14h]"
+"	      004d6766    mov eax,disty"
 "	      004d6769    add eax,eax"
 "	      004d676b    push eax"
-"	      004d676c    mov eax,[ebp-18h]"
+"	      004d676c    mov eax,shigh"
 "	      004d676f    push eax"
 "	      004d6770    call 004D19DFh"
 "	      004d6775    add esp,8"
-"	      004d6778    mov [ebp-8],eax"
+"	      004d6778    mov vect.y,eax"
 );
 // LINE 100:
 	asm( 
-"	      004d677b    mov dword ptr [ebp-0Ch],0"
+"	      004d677b    mov vect.x,0"
 );
 // LINE 101:
 	asm( 
-"	      004d6782    mov dword ptr [ebp-4],10000h"
+"	      004d6782    mov vect.z,10000h"
 );
 // LINE 104:
 	asm( 
-"	      004d6789    lea eax,[ebp-0Ch]"
+"	      004d6789    lea eax,vect.x"
 "	      004d678c    push eax"
 "	      004d678d    call 004CA1E3h"
 "	      004d6792    add esp,4"
 );
 // LINE 107:
 	asm( 
-"	      004d6795    mov eax,[ebp-4]"
+"	      004d6795    mov eax,vect.z"
 "	      004d6798    neg eax"
 "	      004d679a    mov ds:[6663B4h],eax"
 );
 // LINE 108:
 	asm( 
-"	      004d679f    mov eax,[ebp-8]"
+"	      004d679f    mov eax,vect.y"
 "	      004d67a2    mov ds:[6663B8h],eax"
 );
 // LINE 109:

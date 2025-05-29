@@ -29,16 +29,16 @@ long DDEnable() {
 "	      0041f518    push 597264h"
 "	      0041f51d    push 0"
 "	      0041f51f    call 004C4612h"
-"	      0041f524    mov [ebp-4],eax"
+"	      0041f524    mov hResult,eax"
 );
 // LINE 35:
 	asm( 
-"	      0041f527    cmp dword ptr [ebp-4],0"
+"	      0041f527    cmp hResult,0"
 "	      0041f52b    je near ptr 0041F539h"
 );
 // LINE 36:
 	asm( 
-"	      0041f531    mov eax,[ebp-4]"
+"	      0041f531    mov eax,hResult"
 "	      0041f534    jmp near ptr 0041F5A0h"
 );
 // LINE 38:
@@ -54,11 +54,11 @@ long DDEnable() {
 "	      0041f550    mov eax,ds:[597264h]"
 "	      0041f555    mov eax,[eax]"
 "	      0041f557    call dword ptr [eax+2Ch]"
-"	      0041f55a    mov [ebp-4],eax"
+"	      0041f55a    mov hResult,eax"
 );
 // LINE 40:
 	asm( 
-"	      0041f55d    cmp dword ptr [ebp-4],0"
+"	      0041f55d    cmp hResult,0"
 "	      0041f561    je near ptr 0041F599h"
 );
 // LINE 41:
@@ -78,7 +78,7 @@ long DDEnable() {
 );
 // LINE 43:
 	asm( 
-"	      0041f591    mov eax,[ebp-4]"
+"	      0041f591    mov eax,hResult"
 "	      0041f594    jmp near ptr 0041F5A0h"
 );
 // LINE 47:
@@ -160,15 +160,15 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 );
 // LINE 87:
 	asm( 
-"	      0041f5fa    mov dword ptr [ebp-78h],0FFFFFFFFh"
+"	      0041f5fa    mov dw,0FFFFFFFFh"
 );
 // LINE 91:
 	asm( 
-"	      0041f601    lea eax,[ebp-74h]"
+"	      0041f601    lea eax,hdc"
 "	      0041f604    push eax"
-"	      0041f605    mov eax,[ebp+8]"
+"	      0041f605    mov eax,pdds"
 "	      0041f608    push eax"
-"	      0041f609    mov eax,[ebp+8]"
+"	      0041f609    mov eax,pdds"
 "	      0041f60c    mov eax,[eax]"
 "	      0041f60e    call dword ptr [eax+44h]"
 "	      0041f611    test eax,eax"
@@ -178,59 +178,59 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	asm( 
 "	      0041f619    push 0"
 "	      0041f61b    push 0"
-"	      0041f61d    mov eax,[ebp-74h]"
+"	      0041f61d    mov eax,hdc"
 "	      0041f620    push eax"
 "	      0041f621    call dword ptr ds:[6C3550h]"
-"	      0041f627    mov [ebp-7Ch],eax"
+"	      0041f627    mov rgbT,eax"
 );
 // LINE 94:
 	asm( 
-"	      0041f62a    mov eax,[ebp+0Ch]"
+"	      0041f62a    mov eax,rgb"
 "	      0041f62d    push eax"
 "	      0041f62e    push 0"
 "	      0041f630    push 0"
-"	      0041f632    mov eax,[ebp-74h]"
+"	      0041f632    mov eax,hdc"
 "	      0041f635    push eax"
 "	      0041f636    call dword ptr ds:[6C354Ch]"
 );
 // LINE 95:
 	asm( 
-"	      0041f63c    mov eax,[ebp-74h]"
+"	      0041f63c    mov eax,hdc"
 "	      0041f63f    push eax"
-"	      0041f640    mov eax,[ebp+8]"
+"	      0041f640    mov eax,pdds"
 "	      0041f643    push eax"
-"	      0041f644    mov eax,[ebp+8]"
+"	      0041f644    mov eax,pdds"
 "	      0041f647    mov eax,[eax]"
 "	      0041f649    call dword ptr [eax+68h]"
 );
 // LINE 98:
 	asm( 
-"	      0041f64c    mov dword ptr [ebp-6Ch],6Ch"
+"	      0041f64c    mov ddsd.dwSize,6Ch"
 );
 // LINE 99:
 	asm( 
 "	      0041f653    push 0"
 "	      0041f655    push 1"
-"	      0041f657    lea eax,[ebp-6Ch]"
+"	      0041f657    lea eax,ddsd.dwSize"
 "	      0041f65a    push eax"
 "	      0041f65b    push 0"
-"	      0041f65d    mov eax,[ebp+8]"
+"	      0041f65d    mov eax,pdds"
 "	      0041f660    push eax"
-"	      0041f661    mov eax,[ebp+8]"
+"	      0041f661    mov eax,pdds"
 "	      0041f664    mov eax,[eax]"
 "	      0041f666    call dword ptr [eax+64h]"
-"	      0041f669    mov [ebp-70h],eax"
+"	      0041f669    mov hres,eax"
 );
 // LINE 101:
 	asm( 
-"	      0041f66c    cmp dword ptr [ebp-70h],0"
+"	      0041f66c    cmp hres,0"
 "	      0041f670    jne near ptr 0041F69Dh"
 );
 // LINE 103:
 	asm( 
-"	      0041f676    mov eax,[ebp-48h]"
+"	      0041f676    mov eax,ddsd.lpSurface"
 "	      0041f679    mov eax,[eax]"
-"	      0041f67b    mov [ebp-78h],eax"
+"	      0041f67b    mov dw,eax"
 );
 // LINE 104:
 	asm( 
@@ -238,24 +238,24 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 "	      0041f683    mov cl,[ebp-18h]"
 "	      0041f686    shl eax,cl"
 "	      0041f688    dec eax"
-"	      0041f689    and [ebp-78h],eax"
+"	      0041f689    and dw,eax"
 );
 // LINE 105:
 	asm( 
 "	      0041f68c    push 0"
-"	      0041f68e    mov eax,[ebp+8]"
+"	      0041f68e    mov eax,pdds"
 "	      0041f691    push eax"
-"	      0041f692    mov eax,[ebp+8]"
+"	      0041f692    mov eax,pdds"
 "	      0041f695    mov eax,[eax]"
 "	      0041f697    call dword ptr [eax+80h]"
 );
 // LINE 108:
 	asm( 
-"	      0041f69d    lea eax,[ebp-74h]"
+"	      0041f69d    lea eax,hdc"
 "	      0041f6a0    push eax"
-"	      0041f6a1    mov eax,[ebp+8]"
+"	      0041f6a1    mov eax,pdds"
 "	      0041f6a4    push eax"
-"	      0041f6a5    mov eax,[ebp+8]"
+"	      0041f6a5    mov eax,pdds"
 "	      0041f6a8    mov eax,[eax]"
 "	      0041f6aa    call dword ptr [eax+44h]"
 "	      0041f6ad    test eax,eax"
@@ -263,27 +263,27 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 );
 // LINE 110:
 	asm( 
-"	      0041f6b5    mov eax,[ebp-7Ch]"
+"	      0041f6b5    mov eax,rgbT"
 "	      0041f6b8    push eax"
 "	      0041f6b9    push 0"
 "	      0041f6bb    push 0"
-"	      0041f6bd    mov eax,[ebp-74h]"
+"	      0041f6bd    mov eax,hdc"
 "	      0041f6c0    push eax"
 "	      0041f6c1    call dword ptr ds:[6C354Ch]"
 );
 // LINE 111:
 	asm( 
-"	      0041f6c7    mov eax,[ebp-74h]"
+"	      0041f6c7    mov eax,hdc"
 "	      0041f6ca    push eax"
-"	      0041f6cb    mov eax,[ebp+8]"
+"	      0041f6cb    mov eax,pdds"
 "	      0041f6ce    push eax"
-"	      0041f6cf    mov eax,[ebp+8]"
+"	      0041f6cf    mov eax,pdds"
 "	      0041f6d2    mov eax,[eax]"
 "	      0041f6d4    call dword ptr [eax+68h]"
 );
 // LINE 114:
 	asm( 
-"	      0041f6d7    mov eax,[ebp-78h]"
+"	      0041f6d7    mov eax,dw"
 "	      0041f6da    jmp near ptr 0041F6DFh"
 );
 // LINE 115:
@@ -315,54 +315,54 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 );
 // LINE 143:
 	asm( 
-"	      0041f6f0    mov dword ptr [ebp-428h],0"
+"	      0041f6f0    mov pal.dwRiff,0"
 );
 // LINE 145:
 	asm( 
 "	      0041f6fa    push 0"
-"	      0041f6fc    mov eax,[ebp+8]"
+"	      0041f6fc    mov eax,fname"
 "	      0041f6ff    push eax"
 "	      0041f700    call dword ptr ds:[6C37C0h]"
-"	      0041f706    mov [ebp-8],eax"
+"	      0041f706    mov fh,eax"
 );
 // LINE 147:
 	asm( 
-"	      0041f709    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      0041f709    cmp fh,0FFFFFFFFh"
 "	      0041f70d    je near ptr 0041F733h"
 );
 // LINE 149:
 	asm( 
 "	      0041f713    push 418h"
-"	      0041f718    lea eax,[ebp-428h]"
+"	      0041f718    lea eax,pal.dwRiff"
 "	      0041f71e    push eax"
-"	      0041f71f    mov eax,[ebp-8]"
+"	      0041f71f    mov eax,fh"
 "	      0041f722    push eax"
 "	      0041f723    call dword ptr ds:[6C37C4h]"
 );
 // LINE 150:
 	asm( 
-"	      0041f729    mov eax,[ebp-8]"
+"	      0041f729    mov eax,fh"
 "	      0041f72c    push eax"
 "	      0041f72d    call dword ptr ds:[6C374Ch]"
 );
 // LINE 162:
 	asm( 
-"	      0041f733    cmp dword ptr [ebp-428h],46464952h"
+"	      0041f733    cmp pal.dwRiff,46464952h"
 "	      0041f73d    jne near ptr 0041F79Fh"
-"	      0041f743    cmp dword ptr [ebp-420h],204C4150h"
+"	      0041f743    cmp pal.dwPal,204C4150h"
 "	      0041f74d    jne near ptr 0041F79Fh"
-"	      0041f753    cmp dword ptr [ebp-41Ch],61746164h"
+"	      0041f753    cmp pal.dwData,61746164h"
 "	      0041f75d    jne near ptr 0041F79Fh"
 "	      0041f763    mov eax,[ebp-414h]"
 "	      0041f769    and eax,0FFFFh"
 "	      0041f76e    cmp eax,300h"
 "	      0041f773    jne near ptr 0041F79Fh"
 "	      0041f779    xor eax,eax"
-"	      0041f77b    mov ax,[ebp-412h]"
+"	      0041f77b    mov ax,pal.palNumEntries"
 "	      0041f782    cmp eax,100h"
 "	      0041f787    jg near ptr 0041F79Fh"
 "	      0041f78d    xor eax,eax"
-"	      0041f78f    mov ax,[ebp-412h]"
+"	      0041f78f    mov ax,pal.palNumEntries"
 "	      0041f796    cmp eax,1"
 "	      0041f799    jge near ptr 0041F83Bh"
 );
@@ -374,15 +374,15 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 );
 // LINE 166:
 	asm( 
-"	      0041f7ac    mov dword ptr [ebp-0Ch],0"
+"	      0041f7ac    mov i,0"
 "	      0041f7b3    jmp near ptr 0041F7BBh"
-"	      0041f7b8    inc dword ptr [ebp-0Ch]"
-"	      0041f7bb    cmp dword ptr [ebp-0Ch],100h"
+"	      0041f7b8    inc i"
+"	      0041f7bb    cmp i,100h"
 "	      0041f7c2    jge near ptr 0041F83Bh"
 );
 // LINE 168:
 	asm( 
-"	      0041f7c8    mov eax,[ebp-0Ch]"
+"	      0041f7c8    mov eax,i"
 "	      0041f7cb    shr eax,5"
 "	      0041f7ce    and eax,7"
 "	      0041f7d1    mov ecx,eax"
@@ -391,12 +391,12 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 "	      0041f7d8    mov ecx,7"
 "	      0041f7dd    cdq"
 "	      0041f7de    idiv ecx"
-"	      0041f7e0    mov ecx,[ebp-0Ch]"
+"	      0041f7e0    mov ecx,i"
 "	      0041f7e3    mov [ebp+ecx*4-410h],al"
 );
 // LINE 169:
 	asm( 
-"	      0041f7ea    mov eax,[ebp-0Ch]"
+"	      0041f7ea    mov eax,i"
 "	      0041f7ed    shr eax,2"
 "	      0041f7f0    and eax,7"
 "	      0041f7f3    mov ecx,eax"
@@ -405,12 +405,12 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 "	      0041f7fa    mov ecx,7"
 "	      0041f7ff    cdq"
 "	      0041f800    idiv ecx"
-"	      0041f802    mov ecx,[ebp-0Ch]"
+"	      0041f802    mov ecx,i"
 "	      0041f805    mov [ebp+ecx*4-40Fh],al"
 );
 // LINE 170:
 	asm( 
-"	      0041f80c    mov eax,[ebp-0Ch]"
+"	      0041f80c    mov eax,i"
 "	      0041f80f    and eax,3"
 "	      0041f812    mov ecx,eax"
 "	      0041f814    shl eax,8"
@@ -418,12 +418,12 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 "	      0041f819    mov ecx,3"
 "	      0041f81e    cdq"
 "	      0041f81f    idiv ecx"
-"	      0041f821    mov ecx,[ebp-0Ch]"
+"	      0041f821    mov ecx,i"
 "	      0041f824    mov [ebp+ecx*4-40Eh],al"
 );
 // LINE 171:
 	asm( 
-"	      0041f82b    mov eax,[ebp-0Ch]"
+"	      0041f82b    mov eax,i"
 "	      0041f82e    mov byte ptr [ebp+eax*4-40Dh],0"
 );
 // LINE 172:
@@ -433,9 +433,9 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 // LINE 179:
 	asm( 
 "	      0041f83b    push 0"
-"	      0041f83d    lea eax,[ebp-4]"
+"	      0041f83d    lea eax,ppal"
 "	      0041f840    push eax"
-"	      0041f841    lea eax,[ebp-410h]"
+"	      0041f841    lea eax,pal.ape[0].peRed"
 "	      0041f847    push eax"
 "	      0041f848    push 4"
 "	      0041f84a    mov eax,ds:[597264h]"
@@ -443,11 +443,11 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 "	      0041f850    mov eax,ds:[597264h]"
 "	      0041f855    mov eax,[eax]"
 "	      0041f857    call dword ptr [eax+14h]"
-"	      0041f85a    mov [ebp-10h],eax"
+"	      0041f85a    mov ddrval,eax"
 );
 // LINE 180:
 	asm( 
-"	      0041f85d    mov eax,[ebp-4]"
+"	      0041f85d    mov eax,ppal"
 "	      0041f860    jmp near ptr 0041F865h"
 );
 // LINE 182:

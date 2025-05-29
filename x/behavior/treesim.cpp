@@ -15,19 +15,19 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 "	      0055cb16    push ebx"
 "	      0055cb17    push esi"
 "	      0055cb18    push edi"
-"	      0055cb19    mov [ebp-4],ecx"
-"	      0055cb1c    mov ax,[ebp+8]"
-"	      0055cb20    mov ecx,[ebp-4]"
+"	      0055cb19    mov this,ecx"
+"	      0055cb1c    mov ax,maxStackSize"
+"	      0055cb20    mov ecx,this"
 "	      0055cb23    mov [ecx+0Ah],ax"
-"	      0055cb27    mov eax,[ebp+14h]"
-"	      0055cb2a    mov ecx,[ebp-4]"
+"	      0055cb27    mov eax,autoStackArea"
+"	      0055cb2a    mov ecx,this"
 "	      0055cb2d    mov [ecx+10h],eax"
-"	      0055cb30    mov eax,[ebp-4]"
+"	      0055cb30    mov eax,this"
 "	      0055cb33    mov dword ptr [eax],593630h"
 );
 // LINE 13:
 	asm( 
-"	      0055cb39    mov eax,[ebp-4]"
+"	      0055cb39    mov eax,this"
 "	      0055cb3c    movsx eax,word ptr [eax+0Ah]"
 "	      0055cb40    test eax,eax"
 "	      0055cb42    jg near ptr 0055CB61h"
@@ -40,34 +40,34 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 );
 // LINE 14:
 	asm( 
-"	      0055cb61    mov eax,[ebp-4]"
+"	      0055cb61    mov eax,this"
 "	      0055cb64    movsx eax,word ptr [eax+0Ah]"
 "	      0055cb68    shl eax,2"
 "	      0055cb6b    lea eax,[eax+eax*4]"
 "	      0055cb6e    push eax"
 "	      0055cb6f    call 0056A600h"
 "	      0055cb74    add esp,4"
-"	      0055cb77    mov ecx,[ebp-4]"
+"	      0055cb77    mov ecx,this"
 "	      0055cb7a    mov [ecx+4],eax"
 );
 // LINE 15:
 	asm( 
-"	      0055cb7d    mov eax,[ebp-4]"
+"	      0055cb7d    mov eax,this"
 "	      0055cb80    mov word ptr [eax+8],0"
 );
 // LINE 16:
 	asm( 
 "	      0055cb86    mov eax,[ebp+0Ch]"
 "	      0055cb89    push eax"
-"	      0055cb8a    mov eax,[ebp+10h]"
+"	      0055cb8a    mov eax,startBehavior"
 "	      0055cb8d    push eax"
-"	      0055cb8e    mov ecx,[ebp-4]"
+"	      0055cb8e    mov ecx,this"
 "	      0055cb91    call 0055CC58h"
 );
 // LINE 17:
 	asm( 
 "	      0055cb96    jmp near ptr 0055CB9Bh"
-"	      0055cb9b    mov eax,[ebp-4]"
+"	      0055cb9b    mov eax,this"
 "	      0055cb9e    pop edi"
 "	      0055cb9f    pop esi"
 "	      0055cba0    pop ebx"
@@ -86,19 +86,19 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 "	      0055cbab    push ebx"
 "	      0055cbac    push esi"
 "	      0055cbad    push edi"
-"	      0055cbae    mov [ebp-4],ecx"
-"	      0055cbb1    mov ax,[ebp+8]"
-"	      0055cbb5    mov ecx,[ebp-4]"
+"	      0055cbae    mov this,ecx"
+"	      0055cbb1    mov ax,maxStackSize"
+"	      0055cbb5    mov ecx,this"
 "	      0055cbb8    mov [ecx+0Ah],ax"
-"	      0055cbbc    mov eax,[ebp+0Ch]"
-"	      0055cbbf    mov ecx,[ebp-4]"
+"	      0055cbbc    mov eax,autoStackArea"
+"	      0055cbbf    mov ecx,this"
 "	      0055cbc2    mov [ecx+10h],eax"
-"	      0055cbc5    mov eax,[ebp-4]"
+"	      0055cbc5    mov eax,this"
 "	      0055cbc8    mov dword ptr [eax],593630h"
 );
 // LINE 26:
 	asm( 
-"	      0055cbce    mov eax,[ebp-4]"
+"	      0055cbce    mov eax,this"
 "	      0055cbd1    movsx eax,word ptr [eax+0Ah]"
 "	      0055cbd5    test eax,eax"
 "	      0055cbd7    jg near ptr 0055CBF6h"
@@ -111,25 +111,25 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 );
 // LINE 27:
 	asm( 
-"	      0055cbf6    mov eax,[ebp-4]"
+"	      0055cbf6    mov eax,this"
 "	      0055cbf9    movsx eax,word ptr [eax+0Ah]"
 "	      0055cbfd    shl eax,2"
 "	      0055cc00    lea eax,[eax+eax*4]"
 "	      0055cc03    push eax"
 "	      0055cc04    call 0056A600h"
 "	      0055cc09    add esp,4"
-"	      0055cc0c    mov ecx,[ebp-4]"
+"	      0055cc0c    mov ecx,this"
 "	      0055cc0f    mov [ecx+4],eax"
 );
 // LINE 28:
 	asm( 
-"	      0055cc12    mov eax,[ebp-4]"
+"	      0055cc12    mov eax,this"
 "	      0055cc15    mov word ptr [eax+8],0"
 );
 // LINE 29:
 	asm( 
 "	      0055cc1b    jmp near ptr 0055CC20h"
-"	      0055cc20    mov eax,[ebp-4]"
+"	      0055cc20    mov eax,this"
 "	      0055cc23    pop edi"
 "	      0055cc24    pop esi"
 "	      0055cc25    pop ebx"
@@ -148,13 +148,13 @@ void TreeSim::~TreeSim() {
 "	      0055cc30    push ebx"
 "	      0055cc31    push esi"
 "	      0055cc32    push edi"
-"	      0055cc33    mov [ebp-4],ecx"
-"	      0055cc36    mov eax,[ebp-4]"
+"	      0055cc33    mov this,ecx"
+"	      0055cc36    mov eax,this"
 "	      0055cc39    mov dword ptr [eax],593630h"
 );
 // LINE 36:
 	asm( 
-"	      0055cc3f    mov eax,[ebp-4]"
+"	      0055cc3f    mov eax,this"
 "	      0055cc42    mov eax,[eax+4]"
 "	      0055cc45    push eax"
 "	      0055cc46    call 0056A740h"
@@ -183,14 +183,14 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 "	      0055cc5e    push ebx"
 "	      0055cc5f    push esi"
 "	      0055cc60    push edi"
-"	      0055cc61    mov [ebp-8],ecx"
+"	      0055cc61    mov this,ecx"
 );
 // LINE 44:
 	asm( 
-"	      0055cc64    mov eax,[ebp-8]"
+"	      0055cc64    mov eax,this"
 "	      0055cc67    cmp dword ptr [eax+4],0"
 "	      0055cc6b    je near ptr 0055CC80h"
-"	      0055cc71    mov eax,[ebp-8]"
+"	      0055cc71    mov eax,this"
 "	      0055cc74    movsx eax,word ptr [eax+0Ah]"
 "	      0055cc78    test eax,eax"
 "	      0055cc7a    jg near ptr 0055CC99h"
@@ -203,45 +203,45 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 );
 // LINE 45:
 	asm( 
-"	      0055cc99    mov eax,[ebp-8]"
+"	      0055cc99    mov eax,this"
 "	      0055cc9c    mov word ptr [eax+8],1"
 );
 // LINE 47:
 	asm( 
-"	      0055cca2    mov eax,[ebp-8]"
+"	      0055cca2    mov eax,this"
 "	      0055cca5    mov eax,[eax+4]"
-"	      0055cca8    mov [ebp-4],eax"
+"	      0055cca8    mov bottom,eax"
 );
 // LINE 48:
 	asm( 
-"	      0055ccab    mov ax,[ebp+0Ch]"
-"	      0055ccaf    mov ecx,[ebp-4]"
+"	      0055ccab    mov ax,startTreeID"
+"	      0055ccaf    mov ecx,bottom"
 "	      0055ccb2    mov [ecx],ax"
 );
 // LINE 49:
 	asm( 
-"	      0055ccb5    mov eax,[ebp-4]"
+"	      0055ccb5    mov eax,bottom"
 "	      0055ccb8    mov word ptr [eax+2],0"
 );
 // LINE 50:
 	asm( 
-"	      0055ccbe    mov eax,[ebp-4]"
+"	      0055ccbe    mov eax,bottom"
 "	      0055ccc1    mov word ptr [eax+4],0"
 );
 // LINE 51:
 	asm( 
-"	      0055ccc7    mov eax,[ebp-4]"
+"	      0055ccc7    mov eax,bottom"
 "	      0055ccca    mov dword ptr [eax+4],0"
 );
 // LINE 52:
 	asm( 
-"	      0055ccd1    mov eax,[ebp+8]"
-"	      0055ccd4    mov ecx,[ebp-4]"
+"	      0055ccd1    mov eax,startBehavior"
+"	      0055ccd4    mov ecx,bottom"
 "	      0055ccd7    mov [ecx+10h],eax"
 );
 // LINE 53:
 	asm( 
-"	      0055ccda    mov eax,[ebp-4]"
+"	      0055ccda    mov eax,bottom"
 "	      0055ccdd    mov word ptr [eax+4],0"
 );
 // LINE 54:
@@ -268,87 +268,87 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 "	      0055ccf5    push ebx"
 "	      0055ccf6    push esi"
 "	      0055ccf7    push edi"
-"	      0055ccf8    mov [ebp-18h],ecx"
+"	      0055ccf8    mov this,ecx"
 );
 // LINE 63:
 	asm( 
 "	      0055ccfb    jmp near ptr 0055CD00h"
-"	      0055cd00    mov eax,[ebp-18h]"
+"	      0055cd00    mov eax,this"
 "	      0055cd03    movsx eax,word ptr [eax+8]"
 "	      0055cd07    sub eax,2"
-"	      0055cd0a    mov [ebp-8],ax"
+"	      0055cd0a    mov stackSize,ax"
 );
 // LINE 64:
 	asm( 
 "	      0055cd0e    jmp near ptr 0055CD13h"
-"	      0055cd13    mov eax,[ebp-18h]"
+"	      0055cd13    mov eax,this"
 "	      0055cd16    movsx eax,word ptr [eax+8]"
 "	      0055cd1a    lea eax,[eax*4-4]"
 "	      0055cd21    lea eax,[eax+eax*4]"
-"	      0055cd24    mov ecx,[ebp-18h]"
+"	      0055cd24    mov ecx,this"
 "	      0055cd27    mov ecx,[ecx+4]"
 "	      0055cd2a    mov eax,[eax+ecx+10h]"
-"	      0055cd2e    mov [ebp-4],eax"
+"	      0055cd2e    mov curBeh,eax"
 );
 // LINE 65:
 	asm( 
-"	      0055cd31    movsx eax,word ptr [ebp-8]"
+"	      0055cd31    movsx eax,stackSize"
 "	      0055cd35    test eax,eax"
 "	      0055cd37    jl near ptr 0055CE04h"
 );
 // LINE 66:
 	asm( 
-"	      0055cd3d    movsx eax,word ptr [ebp-8]"
+"	      0055cd3d    movsx eax,stackSize"
 "	      0055cd41    test eax,eax"
 "	      0055cd43    jl near ptr 0055CD5Ch"
-"	      0055cd49    mov eax,[ebp-18h]"
+"	      0055cd49    mov eax,this"
 "	      0055cd4c    movsx eax,word ptr [eax+8]"
-"	      0055cd50    movsx ecx,word ptr [ebp-8]"
+"	      0055cd50    movsx ecx,stackSize"
 "	      0055cd54    cmp eax,ecx"
 "	      0055cd56    jg near ptr 0055CD76h"
 "	      0055cd5c    mov eax,10h"
-"	      0055cd61    mov ecx,[ebp-4]"
+"	      0055cd61    mov ecx,curBeh"
 "	      0055cd64    cmp [eax],ecx"
 "	      0055cd66    je near ptr 0055CDFBh"
 "	      0055cd6c    jmp near ptr 0055CDA7h"
 "	      0055cd71    jmp near ptr 0055CD98h"
-"	      0055cd76    movsx eax,word ptr [ebp-8]"
+"	      0055cd76    movsx eax,stackSize"
 "	      0055cd7a    shl eax,2"
 "	      0055cd7d    lea eax,[eax+eax*4]"
-"	      0055cd80    mov ecx,[ebp-18h]"
+"	      0055cd80    mov ecx,this"
 "	      0055cd83    mov ecx,[ecx+4]"
-"	      0055cd86    mov edx,[ebp-4]"
+"	      0055cd86    mov edx,curBeh"
 "	      0055cd89    cmp [eax+ecx+10h],edx"
 "	      0055cd8d    je near ptr 0055CDFBh"
 "	      0055cd93    jmp near ptr 0055CDA7h"
 "	      0055cd98    mov eax,[ebp-0Ch]"
-"	      0055cd9b    mov ecx,[ebp-4]"
+"	      0055cd9b    mov ecx,curBeh"
 "	      0055cd9e    cmp [eax+10h],ecx"
 "	      0055cda1    je near ptr 0055CDFBh"
 );
 // LINE 67:
 	asm( 
-"	      0055cda7    movsx eax,word ptr [ebp-8]"
+"	      0055cda7    movsx eax,stackSize"
 "	      0055cdab    inc eax"
 "	      0055cdac    movsx eax,ax"
 "	      0055cdaf    test eax,eax"
 "	      0055cdb1    jl near ptr 0055CDCEh"
-"	      0055cdb7    movsx eax,word ptr [ebp-8]"
+"	      0055cdb7    movsx eax,stackSize"
 "	      0055cdbb    inc eax"
 "	      0055cdbc    movsx eax,ax"
-"	      0055cdbf    mov ecx,[ebp-18h]"
+"	      0055cdbf    mov ecx,this"
 "	      0055cdc2    movsx ecx,word ptr [ecx+8]"
 "	      0055cdc6    cmp eax,ecx"
 "	      0055cdc8    jl near ptr 0055CDDAh"
 "	      0055cdce    xor eax,eax"
 "	      0055cdd0    jmp near ptr 0055CDF6h"
 "	      0055cdd5    jmp near ptr 0055CDF3h"
-"	      0055cdda    movsx eax,word ptr [ebp-8]"
+"	      0055cdda    movsx eax,stackSize"
 "	      0055cdde    inc eax"
 "	      0055cddf    movsx eax,ax"
 "	      0055cde2    shl eax,2"
 "	      0055cde5    lea eax,[eax+eax*4]"
-"	      0055cde8    mov ecx,[ebp-18h]"
+"	      0055cde8    mov ecx,this"
 "	      0055cdeb    add eax,[ecx+4]"
 "	      0055cdee    jmp near ptr 0055CDF6h"
 "	      0055cdf3    mov eax,[ebp-10h]"
@@ -356,7 +356,7 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 );
 // LINE 68:
 	asm( 
-"	      0055cdfb    dec word ptr [ebp-8]"
+"	      0055cdfb    dec stackSize"
 );
 // LINE 69:
 	asm( 
@@ -364,14 +364,14 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 );
 // LINE 70:
 	asm( 
-"	      0055ce04    mov eax,[ebp-18h]"
+"	      0055ce04    mov eax,this"
 "	      0055ce07    movsx eax,word ptr [eax+8]"
 "	      0055ce0b    test eax,eax"
 "	      0055ce0d    jg near ptr 0055CE1Fh"
 "	      0055ce13    xor eax,eax"
 "	      0055ce15    jmp near ptr 0055CE2Dh"
 "	      0055ce1a    jmp near ptr 0055CE2Ah"
-"	      0055ce1f    mov eax,[ebp-18h]"
+"	      0055ce1f    mov eax,this"
 "	      0055ce22    mov eax,[eax+4]"
 "	      0055ce25    jmp near ptr 0055CE2Dh"
 "	      0055ce2a    mov eax,[ebp-14h]"
@@ -397,13 +397,13 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 "	      0055ce3d    push ebx"
 "	      0055ce3e    push esi"
 "	      0055ce3f    push edi"
-"	      0055ce40    mov [ebp-8],ecx"
+"	      0055ce40    mov this,ecx"
 );
 // LINE 84:
 	asm( 
-"	      0055ce43    mov eax,[ebp-8]"
+"	      0055ce43    mov eax,this"
 "	      0055ce46    movsx eax,word ptr [eax+8]"
-"	      0055ce4a    mov ecx,[ebp-8]"
+"	      0055ce4a    mov ecx,this"
 "	      0055ce4d    movsx ecx,word ptr [ecx+0Ah]"
 "	      0055ce51    cmp eax,ecx"
 "	      0055ce53    jge near ptr 0055CF18h"
@@ -412,46 +412,46 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 // Block start:
 	struct TreeSim::StackElem* fill;
 	asm( 
-"	      0055ce59    mov eax,[ebp-8]"
+"	      0055ce59    mov eax,this"
 "	      0055ce5c    movsx eax,word ptr [eax+8]"
 "	      0055ce60    shl eax,2"
 "	      0055ce63    lea eax,[eax+eax*4]"
-"	      0055ce66    mov ecx,[ebp-8]"
+"	      0055ce66    mov ecx,this"
 "	      0055ce69    add eax,[ecx+4]"
-"	      0055ce6c    mov [ebp-4],eax"
+"	      0055ce6c    mov fill,eax"
 );
 // LINE 87:
 	asm( 
-"	      0055ce6f    mov ax,[ebp+10h]"
-"	      0055ce73    mov ecx,[ebp-4]"
+"	      0055ce6f    mov ax,treeID"
+"	      0055ce73    mov ecx,fill"
 "	      0055ce76    mov [ecx],ax"
 );
 // LINE 88:
 	asm( 
-"	      0055ce79    mov eax,[ebp-4]"
+"	      0055ce79    mov eax,fill"
 "	      0055ce7c    mov word ptr [eax+2],0"
 );
 // LINE 89:
 	asm( 
-"	      0055ce82    mov eax,[ebp-8]"
+"	      0055ce82    mov eax,this"
 "	      0055ce85    movsx eax,word ptr [eax+8]"
 "	      0055ce89    lea eax,[eax*4-4]"
 "	      0055ce90    lea eax,[eax+eax*4]"
-"	      0055ce93    mov ecx,[ebp-8]"
+"	      0055ce93    mov ecx,this"
 "	      0055ce96    mov ecx,[ecx+4]"
 "	      0055ce99    mov ax,[eax+ecx+4]"
-"	      0055ce9e    mov ecx,[ebp-4]"
+"	      0055ce9e    mov ecx,fill"
 "	      0055cea1    mov [ecx+4],ax"
 );
 // LINE 90:
 	asm( 
-"	      0055cea5    cmp dword ptr [ebp+8],0"
+"	      0055cea5    cmp pTransfer,0"
 "	      0055cea9    je near ptr 0055CEBDh"
 );
 // LINE 91:
 	asm( 
-"	      0055ceaf    mov eax,[ebp+8]"
-"	      0055ceb2    mov ecx,[ebp-4]"
+"	      0055ceaf    mov eax,pTransfer"
+"	      0055ceb2    mov ecx,fill"
 "	      0055ceb5    mov [ecx+10h],eax"
 );
 // LINE 92:
@@ -460,41 +460,41 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 );
 // LINE 93:
 	asm( 
-"	      0055cebd    mov eax,[ebp-8]"
+"	      0055cebd    mov eax,this"
 "	      0055cec0    movsx eax,word ptr [eax+8]"
 "	      0055cec4    lea eax,[eax*4-4]"
 "	      0055cecb    lea eax,[eax+eax*4]"
-"	      0055cece    mov ecx,[ebp-8]"
+"	      0055cece    mov ecx,this"
 "	      0055ced1    mov ecx,[ecx+4]"
 "	      0055ced4    mov eax,[eax+ecx+10h]"
-"	      0055ced8    mov ecx,[ebp-4]"
+"	      0055ced8    mov ecx,fill"
 "	      0055cedb    mov [ecx+10h],eax"
 );
 // LINE 95:
 	asm( 
-"	      0055cede    cmp dword ptr [ebp+0Ch],0"
+"	      0055cede    cmp stack,0"
 "	      0055cee2    jne near ptr 0055CEF1h"
-"	      0055cee8    mov eax,[ebp-8]"
+"	      0055cee8    mov eax,this"
 "	      0055ceeb    mov eax,[eax+10h]"
-"	      0055ceee    mov [ebp+0Ch],eax"
+"	      0055ceee    mov stack,eax"
 );
 // LINE 97:
 	asm( 
-"	      0055cef1    mov eax,[ebp+0Ch]"
+"	      0055cef1    mov eax,stack"
 "	      0055cef4    mov eax,[eax]"
-"	      0055cef6    mov ecx,[ebp-4]"
+"	      0055cef6    mov ecx,fill"
 "	      0055cef9    mov [ecx+8],eax"
 );
 // LINE 98:
 	asm( 
-"	      0055cefc    mov eax,[ebp+0Ch]"
+"	      0055cefc    mov eax,stack"
 "	      0055ceff    mov eax,[eax+4]"
-"	      0055cf02    mov ecx,[ebp-4]"
+"	      0055cf02    mov ecx,fill"
 "	      0055cf05    mov [ecx+0Ch],eax"
 );
 // LINE 100:
 	asm( 
-"	      0055cf08    mov eax,[ebp-8]"
+"	      0055cf08    mov eax,this"
 "	      0055cf0b    inc word ptr [eax+8]"
 );
 // LINE 101:
@@ -506,9 +506,9 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 // Block end:
 	asm( 
 "	      0055cf18    push 3E8h"
-"	      0055cf1d    mov eax,[ebp-8]"
+"	      0055cf1d    mov eax,this"
 "	      0055cf20    mov eax,[eax]"
-"	      0055cf22    mov ecx,[ebp-8]"
+"	      0055cf22    mov ecx,this"
 "	      0055cf25    call dword ptr [eax+4]"
 );
 // LINE 105:
@@ -541,51 +541,51 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 "	      0055cf3d    push ebx"
 "	      0055cf3e    push esi"
 "	      0055cf3f    push edi"
-"	      0055cf40    mov [ebp-20h],ecx"
+"	      0055cf40    mov this,ecx"
 );
 // LINE 120:
 	asm( 
-"	      0055cf43    mov word ptr [ebp-0Ch],0"
+"	      0055cf43    mov done,0"
 );
 // LINE 123:
 	asm( 
-"	      0055cf49    mov eax,[ebp-20h]"
+"	      0055cf49    mov eax,this"
 "	      0055cf4c    mov word ptr [eax+0Ch],0"
 );
 // LINE 124:
 	asm( 
-"	      0055cf52    mov ax,[ebp+0Ch]"
-"	      0055cf56    mov [ebp-0Ch],ax"
+"	      0055cf52    mov ax,bOnceOnly"
+"	      0055cf56    mov done,ax"
 );
 // LINE 127:
 	asm( 
-"	      0055cf5a    mov eax,[ebp-20h]"
+"	      0055cf5a    mov eax,this"
 "	      0055cf5d    movsx eax,word ptr [eax+8]"
 "	      0055cf61    lea eax,[eax*4-4]"
 "	      0055cf68    lea eax,[eax+eax*4]"
-"	      0055cf6b    mov ecx,[ebp-20h]"
+"	      0055cf6b    mov ecx,this"
 "	      0055cf6e    add eax,[ecx+4]"
-"	      0055cf71    mov [ebp-10h],eax"
+"	      0055cf71    mov elem,eax"
 );
 // LINE 128:
 	asm( 
-"	      0055cf74    mov eax,[ebp-10h]"
+"	      0055cf74    mov eax,elem"
 "	      0055cf77    mov ax,[eax+2]"
 "	      0055cf7b    push eax"
-"	      0055cf7c    mov eax,[ebp-10h]"
+"	      0055cf7c    mov eax,elem"
 "	      0055cf7f    mov ax,[eax]"
 "	      0055cf82    push eax"
-"	      0055cf83    mov eax,[ebp-10h]"
-"	      0055cf86    mov ecx,[ebp-10h]"
+"	      0055cf83    mov eax,elem"
+"	      0055cf86    mov ecx,elem"
 "	      0055cf89    mov ecx,[ecx+10h]"
 "	      0055cf8c    mov edx,[ecx]"
 "	      0055cf8e    mov ecx,[eax+10h]"
 "	      0055cf91    call dword ptr [edx]"
-"	      0055cf93    mov [ebp-8],eax"
+"	      0055cf93    mov node,eax"
 );
 // LINE 129:
 	asm( 
-"	      0055cf96    mov eax,[ebp-8]"
+"	      0055cf96    mov eax,node"
 "	      0055cf99    movsx eax,word ptr [eax]"
 "	      0055cf9c    cmp eax,100h"
 "	      0055cfa1    jl near ptr 0055D04Fh"
@@ -595,36 +595,36 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	short treeID;
 	short * stackPass;
 	asm( 
-"	      0055cfa7    mov eax,[ebp-20h]"
+"	      0055cfa7    mov eax,this"
 "	      0055cfaa    movsx eax,word ptr [eax+8]"
-"	      0055cfae    mov ecx,[ebp-20h]"
+"	      0055cfae    mov ecx,this"
 "	      0055cfb1    movsx ecx,word ptr [ecx+0Ah]"
 "	      0055cfb5    cmp eax,ecx"
 "	      0055cfb7    jl near ptr 0055CFD7h"
 "	      0055cfbd    push 3E8h"
-"	      0055cfc2    mov eax,[ebp-20h]"
+"	      0055cfc2    mov eax,this"
 "	      0055cfc5    mov eax,[eax]"
-"	      0055cfc7    mov ecx,[ebp-20h]"
+"	      0055cfc7    mov ecx,this"
 "	      0055cfca    call dword ptr [eax+4]"
 "	      0055cfcd    jmp near ptr 0055D1B7h"
 "	      0055cfd2    jmp near ptr 0055D19Fh"
 );
 // LINE 133:
 	asm( 
-"	      0055cfd7    mov dword ptr [ebp-14h],0"
+"	      0055cfd7    mov stackPass,0"
 );
 // LINE 134:
 	asm( 
-"	      0055cfde    mov eax,[ebp-8]"
+"	      0055cfde    mov eax,node"
 "	      0055cfe1    mov ax,[eax]"
-"	      0055cfe4    mov [ebp-18h],ax"
+"	      0055cfe4    mov treeID,ax"
 );
 // LINE 135:
 	asm( 
-"	      0055cfe8    mov eax,[ebp-8]"
+"	      0055cfe8    mov eax,node"
 "	      0055cfeb    cmp dword ptr [eax+4],0FFFFFFFFh"
 "	      0055cfef    jne near ptr 0055D00Ch"
-"	      0055cff5    mov eax,[ebp-8]"
+"	      0055cff5    mov eax,node"
 "	      0055cff8    cmp dword ptr [eax+8],0FFFFFFFFh"
 "	      0055cffc    jne near ptr 0055D00Ch"
 "	      0055d002    jmp near ptr 0055D027h"
@@ -635,18 +635,18 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 136:
 	asm( 
-"	      0055d01e    mov eax,[ebp-8]"
+"	      0055d01e    mov eax,node"
 "	      0055d021    add eax,4"
-"	      0055d024    mov [ebp-14h],eax"
+"	      0055d024    mov stackPass,eax"
 );
 // LINE 138:
 	asm( 
 "	      0055d027    mov eax,[ebp-18h]"
 "	      0055d02a    push eax"
-"	      0055d02b    mov eax,[ebp-14h]"
+"	      0055d02b    mov eax,stackPass"
 "	      0055d02e    push eax"
 "	      0055d02f    push 0"
-"	      0055d031    mov ecx,[ebp-20h]"
+"	      0055d031    mov ecx,this"
 "	      0055d034    call 0055CE37h"
 "	      0055d039    movzx eax,ax"
 "	      0055d03c    test eax,eax"
@@ -654,7 +654,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 140:
 	asm( 
-"	      0055d044    mov word ptr [ebp-0Ch],1"
+"	      0055d044    mov done,1"
 );
 // LINE 142:
 // Block end:
@@ -663,23 +663,23 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 144:
 	asm( 
-"	      0055d04f    mov eax,[ebp-8]"
+"	      0055d04f    mov eax,node"
 "	      0055d052    push eax"
-"	      0055d053    mov eax,[ebp-10h]"
+"	      0055d053    mov eax,elem"
 "	      0055d056    push eax"
-"	      0055d057    mov eax,[ebp-20h]"
+"	      0055d057    mov eax,this"
 "	      0055d05a    mov eax,[eax]"
-"	      0055d05c    mov ecx,[ebp-20h]"
+"	      0055d05c    mov ecx,this"
 "	      0055d05f    call dword ptr [eax]"
-"	      0055d061    mov [ebp-4],eax"
-"	      0055d064    mov eax,[ebp-4]"
+"	      0055d061    mov result,eax"
+"	      0055d064    mov eax,result"
 "	      0055d067    mov [ebp-24h],eax"
 "	      0055d06a    jmp near ptr 0055D120h"
 );
 // LINE 146:
 	asm( 
 "	      0055d06f    push 1"
-"	      0055d071    mov ecx,[ebp-20h]"
+"	      0055d071    mov ecx,this"
 "	      0055d074    call 0055D1C3h"
 "	      0055d079    movsx eax,al"
 "	      0055d07c    cmp eax,0FFFFFFFDh"
@@ -688,9 +688,9 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 148:
 	asm( 
 "	      0055d085    push 3E9h"
-"	      0055d08a    mov eax,[ebp-20h]"
+"	      0055d08a    mov eax,this"
 "	      0055d08d    mov eax,[eax]"
-"	      0055d08f    mov ecx,[ebp-20h]"
+"	      0055d08f    mov ecx,this"
 "	      0055d092    call dword ptr [eax+4]"
 "	      0055d095    jmp near ptr 0055D1B2h"
 "	      0055d09a    jmp near ptr 0055D19Fh"
@@ -702,7 +702,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 152:
 	asm( 
 "	      0055d0a4    push 0"
-"	      0055d0a6    mov ecx,[ebp-20h]"
+"	      0055d0a6    mov ecx,this"
 "	      0055d0a9    call 0055D1C3h"
 "	      0055d0ae    movsx eax,al"
 "	      0055d0b1    cmp eax,0FFFFFFFDh"
@@ -711,9 +711,9 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 154:
 	asm( 
 "	      0055d0ba    push 3E9h"
-"	      0055d0bf    mov eax,[ebp-20h]"
+"	      0055d0bf    mov eax,this"
 "	      0055d0c2    mov eax,[eax]"
-"	      0055d0c4    mov ecx,[ebp-20h]"
+"	      0055d0c4    mov ecx,this"
 "	      0055d0c7    call dword ptr [eax+4]"
 "	      0055d0ca    jmp near ptr 0055D1ADh"
 "	      0055d0cf    jmp near ptr 0055D19Fh"
@@ -728,7 +728,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 161:
 	asm( 
-"	      0055d0de    mov word ptr [ebp-0Ch],1"
+"	      0055d0de    mov done,1"
 );
 // LINE 162:
 	asm( 
@@ -736,7 +736,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 164:
 	asm( 
-"	      0055d0e9    mov word ptr [ebp-0Ch],1"
+"	      0055d0e9    mov done,1"
 );
 // LINE 165:
 	asm( 
@@ -744,7 +744,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 167:
 	asm( 
-"	      0055d0f4    mov word ptr [ebp-0Ch],1"
+"	      0055d0f4    mov done,1"
 );
 // LINE 168:
 	asm( 
@@ -778,7 +778,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 173:
 	asm( 
-"	      0055d14b    mov eax,[ebp-20h]"
+"	      0055d14b    mov eax,this"
 "	      0055d14e    movsx eax,word ptr [eax+0Ch]"
 "	      0055d152    cmp eax,80h"
 "	      0055d157    jle near ptr 0055D177h"
@@ -786,9 +786,9 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 175:
 	asm( 
 "	      0055d15d    push 3EAh"
-"	      0055d162    mov eax,[ebp-20h]"
+"	      0055d162    mov eax,this"
 "	      0055d165    mov eax,[eax]"
-"	      0055d167    mov ecx,[ebp-20h]"
+"	      0055d167    mov ecx,this"
 "	      0055d16a    call dword ptr [eax+4]"
 "	      0055d16d    jmp near ptr 0055D1A8h"
 "	      0055d172    jmp near ptr 0055D19Fh"
@@ -800,7 +800,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 179:
 	asm( 
-"	      0055d184    cmp dword ptr [ebp-4],2"
+"	      0055d184    cmp result,2"
 "	      0055d188    jne near ptr 0055D197h"
 "	      0055d18e    mov ax,1"
 "	      0055d192    jmp near ptr 0055D19Ah"
@@ -842,11 +842,11 @@ char TreeSim::NodeComplete(unsigned short success) {
 "	      0055d1c9    push ebx"
 "	      0055d1ca    push esi"
 "	      0055d1cb    push edi"
-"	      0055d1cc    mov [ebp-14h],ecx"
+"	      0055d1cc    mov this,ecx"
 );
 // LINE 202:
 	asm( 
-"	      0055d1cf    mov word ptr [ebp-8],0"
+"	      0055d1cf    mov done,0"
 );
 // LINE 204:
 	asm( 
@@ -855,7 +855,7 @@ char TreeSim::NodeComplete(unsigned short success) {
 );
 // LINE 205:
 	asm( 
-"	      0055d1e2    mov eax,[ebp-14h]"
+"	      0055d1e2    mov eax,this"
 "	      0055d1e5    movsx eax,word ptr [eax+8]"
 "	      0055d1e9    cmp eax,1"
 "	      0055d1ec    jge near ptr 0055D20Ch"
@@ -863,92 +863,92 @@ char TreeSim::NodeComplete(unsigned short success) {
 // LINE 207:
 	asm( 
 "	      0055d1f2    push 3EBh"
-"	      0055d1f7    mov eax,[ebp-14h]"
+"	      0055d1f7    mov eax,this"
 "	      0055d1fa    mov eax,[eax]"
-"	      0055d1fc    mov ecx,[ebp-14h]"
+"	      0055d1fc    mov ecx,this"
 "	      0055d1ff    call dword ptr [eax+4]"
 "	      0055d202    jmp near ptr 0055D2F1h"
 "	      0055d207    jmp near ptr 0055D2EAh"
 );
 // LINE 209:
 	asm( 
-"	      0055d20c    mov eax,[ebp-14h]"
+"	      0055d20c    mov eax,this"
 "	      0055d20f    movsx eax,word ptr [eax+8]"
 "	      0055d213    lea eax,[eax*4-4]"
 "	      0055d21a    lea eax,[eax+eax*4]"
-"	      0055d21d    mov ecx,[ebp-14h]"
+"	      0055d21d    mov ecx,this"
 "	      0055d220    add eax,[ecx+4]"
-"	      0055d223    mov [ebp-0Ch],eax"
+"	      0055d223    mov elem,eax"
 );
 // LINE 210:
 	asm( 
-"	      0055d226    mov eax,[ebp-0Ch]"
+"	      0055d226    mov eax,elem"
 "	      0055d229    mov ax,[eax+2]"
 "	      0055d22d    push eax"
-"	      0055d22e    mov eax,[ebp-0Ch]"
+"	      0055d22e    mov eax,elem"
 "	      0055d231    mov ax,[eax]"
 "	      0055d234    push eax"
-"	      0055d235    mov eax,[ebp-0Ch]"
-"	      0055d238    mov ecx,[ebp-0Ch]"
+"	      0055d235    mov eax,elem"
+"	      0055d238    mov ecx,elem"
 "	      0055d23b    mov ecx,[ecx+10h]"
 "	      0055d23e    mov edx,[ecx]"
 "	      0055d240    mov ecx,[eax+10h]"
 "	      0055d243    call dword ptr [edx]"
-"	      0055d245    mov [ebp-4],eax"
+"	      0055d245    mov node,eax"
 );
 // LINE 211:
 	asm( 
 "	      0055d248    test dword ptr [ebp+8],0FFFFh"
 "	      0055d24f    je near ptr 0055D263h"
-"	      0055d255    mov eax,[ebp-4]"
+"	      0055d255    mov eax,node"
 "	      0055d258    mov al,[eax+2]"
-"	      0055d25b    mov [ebp-10h],al"
+"	      0055d25b    mov trans,al"
 );
 // LINE 212:
 	asm( 
 "	      0055d25e    jmp near ptr 0055D26Ch"
-"	      0055d263    mov eax,[ebp-4]"
+"	      0055d263    mov eax,node"
 "	      0055d266    mov al,[eax+3]"
-"	      0055d269    mov [ebp-10h],al"
+"	      0055d269    mov trans,al"
 );
 // LINE 214:
 	asm( 
-"	      0055d26c    movsx eax,byte ptr [ebp-10h]"
+"	      0055d26c    movsx eax,trans"
 "	      0055d270    cmp eax,0FFFFFFFEh"
 "	      0055d273    jne near ptr 0055D291h"
 );
 // LINE 215:
 	asm( 
-"	      0055d279    mov word ptr [ebp-8],0"
+"	      0055d279    mov done,0"
 );
 // LINE 216:
 	asm( 
-"	      0055d27f    mov eax,[ebp-14h]"
+"	      0055d27f    mov eax,this"
 "	      0055d282    dec word ptr [eax+8]"
 );
 // LINE 217:
 	asm( 
-"	      0055d286    mov word ptr [ebp+8],1"
+"	      0055d286    mov success,1"
 );
 // LINE 218:
 	asm( 
 "	      0055d28c    jmp near ptr 0055D2DDh"
-"	      0055d291    movsx eax,byte ptr [ebp-10h]"
+"	      0055d291    movsx eax,trans"
 "	      0055d295    cmp eax,0FFFFFFFFh"
 "	      0055d298    jne near ptr 0055D2B6h"
 );
 // LINE 219:
 	asm( 
-"	      0055d29e    mov word ptr [ebp-8],0"
+"	      0055d29e    mov done,0"
 );
 // LINE 220:
 	asm( 
-"	      0055d2a4    mov eax,[ebp-14h]"
+"	      0055d2a4    mov eax,this"
 "	      0055d2a7    dec word ptr [eax+8]"
 );
 // LINE 221:
 	asm( 
-"	      0055d2ab    mov word ptr [ebp+8],0"
+"	      0055d2ab    mov success,0"
 );
 // LINE 222:
 	asm( 
@@ -956,16 +956,16 @@ char TreeSim::NodeComplete(unsigned short success) {
 );
 // LINE 223:
 	asm( 
-"	      0055d2b6    mov word ptr [ebp-8],1"
+"	      0055d2b6    mov done,1"
 );
 // LINE 224:
 	asm( 
-"	      0055d2bc    movsx ax,byte ptr [ebp-10h]"
-"	      0055d2c1    mov ecx,[ebp-14h]"
+"	      0055d2bc    movsx ax,trans"
+"	      0055d2c1    mov ecx,this"
 "	      0055d2c4    movsx ecx,word ptr [ecx+8]"
 "	      0055d2c8    lea ecx,[ecx*4-4]"
 "	      0055d2cf    lea ecx,[ecx+ecx*4]"
-"	      0055d2d2    mov edx,[ebp-14h]"
+"	      0055d2d2    mov edx,this"
 "	      0055d2d5    mov edx,[edx+4]"
 "	      0055d2d8    mov [ecx+edx+2],ax"
 );
@@ -975,7 +975,7 @@ char TreeSim::NodeComplete(unsigned short success) {
 );
 // LINE 227:
 	asm( 
-"	      0055d2e2    mov al,[ebp-10h]"
+"	      0055d2e2    mov al,trans"
 "	      0055d2e5    jmp near ptr 0055D2F6h"
 );
 // LINE 231:
@@ -1007,11 +1007,11 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 "	      0055d303    push ebx"
 "	      0055d304    push esi"
 "	      0055d305    push edi"
-"	      0055d306    mov [ebp-8],ecx"
+"	      0055d306    mov this,ecx"
 );
 // LINE 240:
 	asm( 
-"	      0055d309    mov eax,[ebp-8]"
+"	      0055d309    mov eax,this"
 "	      0055d30c    movsx eax,word ptr [eax+8]"
 "	      0055d310    test eax,eax"
 "	      0055d312    jg near ptr 0055D334h"
@@ -1024,9 +1024,9 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 );
 // LINE 241:
 	asm( 
-"	      0055d334    mov eax,[ebp-8]"
+"	      0055d334    mov eax,this"
 "	      0055d337    movsx eax,word ptr [eax+8]"
-"	      0055d33b    mov ecx,[ebp-8]"
+"	      0055d33b    mov ecx,this"
 "	      0055d33e    movsx ecx,word ptr [ecx+0Ah]"
 "	      0055d342    cmp eax,ecx"
 "	      0055d344    jle near ptr 0055D366h"
@@ -1039,26 +1039,26 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 );
 // LINE 243:
 	asm( 
-"	      0055d366    mov eax,[ebp-8]"
+"	      0055d366    mov eax,this"
 "	      0055d369    movsx eax,word ptr [eax+8]"
 "	      0055d36d    lea eax,[eax*4-4]"
 "	      0055d374    lea eax,[eax+eax*4]"
-"	      0055d377    mov ecx,[ebp-8]"
+"	      0055d377    mov ecx,this"
 "	      0055d37a    add eax,[ecx+4]"
-"	      0055d37d    mov [ebp-4],eax"
+"	      0055d37d    mov elem,eax"
 );
 // LINE 245:
 	asm( 
-"	      0055d380    mov eax,[ebp-4]"
+"	      0055d380    mov eax,elem"
 "	      0055d383    mov ax,[eax]"
-"	      0055d386    mov ecx,[ebp+8]"
+"	      0055d386    mov ecx,treeID"
 "	      0055d389    mov [ecx],ax"
 );
 // LINE 246:
 	asm( 
-"	      0055d38c    mov eax,[ebp-4]"
+"	      0055d38c    mov eax,elem"
 "	      0055d38f    mov ax,[eax+2]"
-"	      0055d393    mov ecx,[ebp+0Ch]"
+"	      0055d393    mov ecx,nodeNum"
 "	      0055d396    mov [ecx],ax"
 );
 // LINE 247:
@@ -1082,16 +1082,16 @@ enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem* elem, str
 "	      0055d3ab    push ebx"
 "	      0055d3ac    push esi"
 "	      0055d3ad    push edi"
-"	      0055d3ae    mov [ebp-4],ecx"
+"	      0055d3ae    mov this,ecx"
 );
 // LINE 256:
 	asm( 
-"	      0055d3b1    mov eax,[ebp+0Ch]"
+"	      0055d3b1    mov eax,node"
 "	      0055d3b4    push eax"
-"	      0055d3b5    mov eax,[ebp+8]"
+"	      0055d3b5    mov eax,elem"
 "	      0055d3b8    push eax"
-"	      0055d3b9    mov eax,[ebp-4]"
-"	      0055d3bc    mov ecx,[ebp-4]"
+"	      0055d3b9    mov eax,this"
+"	      0055d3bc    mov ecx,this"
 "	      0055d3bf    mov ecx,[ecx+14h]"
 "	      0055d3c2    mov edx,[ecx]"
 "	      0055d3c4    mov ecx,[eax+14h]"
@@ -1118,14 +1118,14 @@ void ExtSim::Error(short errNum) {
 "	      0055d3db    push ebx"
 "	      0055d3dc    push esi"
 "	      0055d3dd    push edi"
-"	      0055d3de    mov [ebp-4],ecx"
+"	      0055d3de    mov this,ecx"
 );
 // LINE 263:
 	asm( 
 "	      0055d3e1    mov eax,[ebp+8]"
 "	      0055d3e4    push eax"
-"	      0055d3e5    mov eax,[ebp-4]"
-"	      0055d3e8    mov ecx,[ebp-4]"
+"	      0055d3e5    mov eax,this"
+"	      0055d3e8    mov ecx,this"
 "	      0055d3eb    mov ecx,[ecx+14h]"
 "	      0055d3ee    mov edx,[ecx]"
 "	      0055d3f0    mov ecx,[eax+14h]"
@@ -1157,50 +1157,50 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 "	      0055d408    push ebx"
 "	      0055d409    push esi"
 "	      0055d40a    push edi"
-"	      0055d40b    mov [ebp-14h],ecx"
+"	      0055d40b    mov this,ecx"
 );
 // LINE 272:
 	asm( 
-"	      0055d40e    mov eax,[ebp-14h]"
+"	      0055d40e    mov eax,this"
 "	      0055d411    mov eax,[eax+14h]"
 "	      0055d414    mov eax,[eax+4]"
-"	      0055d417    mov [ebp-10h],eax"
+"	      0055d417    mov savestack,eax"
 );
 // LINE 273:
 	asm( 
-"	      0055d41a    mov eax,[ebp-14h]"
+"	      0055d41a    mov eax,this"
 "	      0055d41d    mov eax,[eax+14h]"
 "	      0055d420    mov ax,[eax+8]"
-"	      0055d424    mov [ebp-4],ax"
+"	      0055d424    mov savestacksize,ax"
 );
 // LINE 274:
 	asm( 
-"	      0055d428    mov eax,[ebp-14h]"
+"	      0055d428    mov eax,this"
 "	      0055d42b    mov eax,[eax+14h]"
 "	      0055d42e    mov ax,[eax+0Ah]"
-"	      0055d432    mov [ebp-8],ax"
+"	      0055d432    mov savemaxstacksize,ax"
 );
 // LINE 276:
 	asm( 
-"	      0055d436    mov eax,[ebp-14h]"
+"	      0055d436    mov eax,this"
 "	      0055d439    mov eax,[eax+4]"
-"	      0055d43c    mov ecx,[ebp-14h]"
+"	      0055d43c    mov ecx,this"
 "	      0055d43f    mov ecx,[ecx+14h]"
 "	      0055d442    mov [ecx+4],eax"
 );
 // LINE 277:
 	asm( 
-"	      0055d445    mov eax,[ebp-14h]"
+"	      0055d445    mov eax,this"
 "	      0055d448    mov ax,[eax+8]"
-"	      0055d44c    mov ecx,[ebp-14h]"
+"	      0055d44c    mov ecx,this"
 "	      0055d44f    mov ecx,[ecx+14h]"
 "	      0055d452    mov [ecx+8],ax"
 );
 // LINE 278:
 	asm( 
-"	      0055d456    mov eax,[ebp-14h]"
+"	      0055d456    mov eax,this"
 "	      0055d459    mov ax,[eax+0Ah]"
-"	      0055d45d    mov ecx,[ebp-14h]"
+"	      0055d45d    mov ecx,this"
 "	      0055d460    mov ecx,[ecx+14h]"
 "	      0055d463    mov [ecx+0Ah],ax"
 );
@@ -1208,36 +1208,36 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	asm( 
 "	      0055d467    mov eax,[ebp+0Ch]"
 "	      0055d46a    push eax"
-"	      0055d46b    mov eax,[ebp+8]"
+"	      0055d46b    mov eax,ticks"
 "	      0055d46e    push eax"
-"	      0055d46f    mov ecx,[ebp-14h]"
+"	      0055d46f    mov ecx,this"
 "	      0055d472    call 0055CF37h"
-"	      0055d477    mov [ebp-0Ch],ax"
+"	      0055d477    mov ret,ax"
 );
 // LINE 282:
 	asm( 
-"	      0055d47b    mov eax,[ebp-10h]"
-"	      0055d47e    mov ecx,[ebp-14h]"
+"	      0055d47b    mov eax,savestack"
+"	      0055d47e    mov ecx,this"
 "	      0055d481    mov ecx,[ecx+14h]"
 "	      0055d484    mov [ecx+4],eax"
 );
 // LINE 283:
 	asm( 
-"	      0055d487    mov ax,[ebp-4]"
-"	      0055d48b    mov ecx,[ebp-14h]"
+"	      0055d487    mov ax,savestacksize"
+"	      0055d48b    mov ecx,this"
 "	      0055d48e    mov ecx,[ecx+14h]"
 "	      0055d491    mov [ecx+8],ax"
 );
 // LINE 284:
 	asm( 
-"	      0055d495    mov ax,[ebp-8]"
-"	      0055d499    mov ecx,[ebp-14h]"
+"	      0055d495    mov ax,savemaxstacksize"
+"	      0055d499    mov ecx,this"
 "	      0055d49c    mov ecx,[ecx+14h]"
 "	      0055d49f    mov [ecx+0Ah],ax"
 );
 // LINE 286:
 	asm( 
-"	      0055d4a3    mov ax,[ebp-0Ch]"
+"	      0055d4a3    mov ax,ret"
 "	      0055d4a7    jmp near ptr 0055D4ACh"
 );
 // LINE 287:

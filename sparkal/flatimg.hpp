@@ -9,7 +9,7 @@ void IFlatImage::SetTransparentColor(int32_t enable, long paletteIndex) {
 "	      00471576    push ebx"
 "	      00471577    push esi"
 "	      00471578    push edi"
-"	      00471579    mov [ebp-4],ecx"
+"	      00471579    mov this,ecx"
 "	      0047157c    jmp near ptr 00471581h"
 "	      00471581    pop edi"
 "	      00471582    pop esi"

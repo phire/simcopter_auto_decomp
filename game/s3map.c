@@ -161,51 +161,51 @@ void S3MapInit() {
 "	      004fe8fb    push eax"
 "	      004fe8fc    call 004D6246h"
 "	      004fe901    add esp,8"
-"	      004fe904    mov [ebp-8],eax"
+"	      004fe904    mov bhdr,eax"
 );
 // LINE 229:
 	asm( 
-"	      004fe907    mov eax,[ebp-8]"
-"	      004fe90a    mov [ebp-4],eax"
+"	      004fe907    mov eax,bhdr"
+"	      004fe90a    mov ptr,eax"
 );
 // LINE 230:
 	asm( 
-"	      004fe90d    mov eax,[ebp-8]"
+"	      004fe90d    mov eax,bhdr"
 "	      004fe910    mov eax,[eax+4]"
 "	      004fe913    shl eax,2"
 "	      004fe916    add eax,0Ch"
-"	      004fe919    add [ebp-4],eax"
+"	      004fe919    add ptr,eax"
 );
 // LINE 234:
 	asm( 
-"	      004fe91c    mov eax,[ebp-8]"
+"	      004fe91c    mov eax,bhdr"
 "	      004fe91f    mov eax,[eax+4]"
 "	      004fe922    mov ds:[608BF0h],eax"
 );
 // LINE 235:
 	asm( 
-"	      004fe927    mov eax,[ebp-8]"
+"	      004fe927    mov eax,bhdr"
 "	      004fe92a    mov eax,[eax]"
 "	      004fe92c    mov ds:[608C10h],eax"
 );
 // LINE 238:
 	asm( 
-"	      004fe931    mov dword ptr [ebp-0Ch],0"
+"	      004fe931    mov i,0"
 "	      004fe938    jmp near ptr 004FE940h"
-"	      004fe93d    inc dword ptr [ebp-0Ch]"
-"	      004fe940    cmp dword ptr [ebp-0Ch],8"
+"	      004fe93d    inc i"
+"	      004fe940    cmp i,8"
 "	      004fe944    jge near ptr 004FE964h"
 );
 // LINE 240:
 	asm( 
-"	      004fe94a    mov eax,[ebp-4]"
-"	      004fe94d    mov ecx,[ebp-0Ch]"
+"	      004fe94a    mov eax,ptr"
+"	      004fe94d    mov ecx,i"
 "	      004fe950    mov [ecx*4+608BD0h],eax"
 );
 // LINE 241:
 	asm( 
 "	      004fe957    mov eax,ds:[608BF0h]"
-"	      004fe95c    add [ebp-4],eax"
+"	      004fe95c    add ptr,eax"
 );
 // LINE 242:
 	asm( 
@@ -218,51 +218,51 @@ void S3MapInit() {
 "	      004fe96b    push eax"
 "	      004fe96c    call 004D6246h"
 "	      004fe971    add esp,8"
-"	      004fe974    mov [ebp-8],eax"
+"	      004fe974    mov bhdr,eax"
 );
 // LINE 246:
 	asm( 
-"	      004fe977    mov eax,[ebp-8]"
-"	      004fe97a    mov [ebp-4],eax"
+"	      004fe977    mov eax,bhdr"
+"	      004fe97a    mov ptr,eax"
 );
 // LINE 247:
 	asm( 
-"	      004fe97d    mov eax,[ebp-8]"
+"	      004fe97d    mov eax,bhdr"
 "	      004fe980    mov eax,[eax+4]"
 "	      004fe983    shl eax,2"
 "	      004fe986    add eax,0Ch"
-"	      004fe989    add [ebp-4],eax"
+"	      004fe989    add ptr,eax"
 );
 // LINE 251:
 	asm( 
-"	      004fe98c    mov eax,[ebp-8]"
+"	      004fe98c    mov eax,bhdr"
 "	      004fe98f    mov eax,[eax+4]"
 "	      004fe992    mov ds:[608BC8h],eax"
 );
 // LINE 252:
 	asm( 
-"	      004fe997    mov eax,[ebp-8]"
+"	      004fe997    mov eax,bhdr"
 "	      004fe99a    mov eax,[eax]"
 "	      004fe99c    mov ds:[608C00h],eax"
 );
 // LINE 255:
 	asm( 
-"	      004fe9a1    mov dword ptr [ebp-0Ch],0"
+"	      004fe9a1    mov i,0"
 "	      004fe9a8    jmp near ptr 004FE9B0h"
-"	      004fe9ad    inc dword ptr [ebp-0Ch]"
-"	      004fe9b0    cmp dword ptr [ebp-0Ch],3"
+"	      004fe9ad    inc i"
+"	      004fe9b0    cmp i,3"
 "	      004fe9b4    jge near ptr 004FE9D4h"
 );
 // LINE 257:
 	asm( 
-"	      004fe9ba    mov eax,[ebp-4]"
-"	      004fe9bd    mov ecx,[ebp-0Ch]"
+"	      004fe9ba    mov eax,ptr"
+"	      004fe9bd    mov ecx,i"
 "	      004fe9c0    mov [ecx*4+608C18h],eax"
 );
 // LINE 258:
 	asm( 
 "	      004fe9c7    mov eax,ds:[608BC8h]"
-"	      004fe9cc    add [ebp-4],eax"
+"	      004fe9cc    add ptr,eax"
 );
 // LINE 259:
 	asm( 
@@ -270,15 +270,15 @@ void S3MapInit() {
 );
 // LINE 262:
 	asm( 
-"	      004fe9d4    mov dword ptr [ebp-0Ch],0"
+"	      004fe9d4    mov i,0"
 "	      004fe9db    jmp near ptr 004FE9E3h"
-"	      004fe9e0    inc dword ptr [ebp-0Ch]"
-"	      004fe9e3    cmp dword ptr [ebp-0Ch],14h"
+"	      004fe9e0    inc i"
+"	      004fe9e3    cmp i,14h"
 "	      004fe9e7    jge near ptr 004FEA03h"
 );
 // LINE 264:
 	asm( 
-"	      004fe9ed    mov eax,[ebp-0Ch]"
+"	      004fe9ed    mov eax,i"
 "	      004fe9f0    lea eax,[eax+eax*4]"
 "	      004fe9f3    mov dword ptr [eax*8+6BED40h],0"
 );
@@ -341,7 +341,7 @@ void S3MapRender(long posx, long posy) {
 // LINE 298:
 	asm( 
 "	      004fea1c    mov eax,ds:[5B5270h]"
-"	      004fea21    mov [ebp-4],eax"
+"	      004fea21    mov ptr,eax"
 );
 // LINE 305:
 	asm( 
@@ -356,11 +356,11 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 308:
 	asm( 
-"	      004fea43    and dword ptr [ebp+0Ch],0FFh"
+"	      004fea43    and posy,0FFh"
 );
 // LINE 309:
 	asm( 
-"	      004fea4a    and dword ptr [ebp+8],0FFh"
+"	      004fea4a    and posx,0FFh"
 );
 // LINE 312:
 	asm( 
@@ -393,7 +393,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 322:
 	asm( 
-"	      004fea95    mov eax,[ebp+8]"
+"	      004fea95    mov eax,posx"
 "	      004fea98    mov ecx,ds:[5B527Ch]"
 "	      004fea9e    sar ecx,1"
 "	      004feaa1    sub eax,ecx"
@@ -401,7 +401,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 323:
 	asm( 
-"	      004feaa8    mov eax,[ebp+0Ch]"
+"	      004feaa8    mov eax,posy"
 "	      004feaab    mov ecx,ds:[5B5280h]"
 "	      004feab1    sar ecx,1"
 "	      004feab4    sub eax,ecx"
@@ -424,45 +424,45 @@ void S3MapRender(long posx, long posy) {
 // LINE 327:
 	asm( 
 "	      004feadd    mov eax,ds:[608C0Ch]"
-"	      004feae2    mov [ebp-0Ch],eax"
-"	      004feae5    mov dword ptr [ebp-20h],0"
+"	      004feae2    mov y,eax"
+"	      004feae5    mov county,0"
 "	      004feaec    jmp near ptr 004FEAF7h"
-"	      004feaf1    inc dword ptr [ebp-20h]"
-"	      004feaf4    inc dword ptr [ebp-0Ch]"
-"	      004feaf7    mov eax,[ebp-20h]"
+"	      004feaf1    inc county"
+"	      004feaf4    inc y"
+"	      004feaf7    mov eax,county"
 "	      004feafa    cmp ds:[5B5280h],eax"
 "	      004feb00    jle near ptr 004FEE2Ah"
 );
 // LINE 330:
 	asm( 
-"	      004feb06    and dword ptr [ebp-0Ch],0FFh"
+"	      004feb06    and y,0FFh"
 );
 // LINE 332:
 	asm( 
 "	      004feb0d    mov eax,ds:[608C08h]"
-"	      004feb12    mov [ebp-8],eax"
-"	      004feb15    mov dword ptr [ebp-28h],0"
+"	      004feb12    mov x,eax"
+"	      004feb15    mov countx,0"
 "	      004feb1c    jmp near ptr 004FEB27h"
-"	      004feb21    inc dword ptr [ebp-28h]"
-"	      004feb24    inc dword ptr [ebp-8]"
-"	      004feb27    mov eax,[ebp-28h]"
+"	      004feb21    inc countx"
+"	      004feb24    inc x"
+"	      004feb27    mov eax,countx"
 "	      004feb2a    cmp ds:[5B527Ch],eax"
 "	      004feb30    jle near ptr 004FEE21h"
 );
 // LINE 335:
 	asm( 
-"	      004feb36    and dword ptr [ebp-8],0FFh"
+"	      004feb36    and x,0FFh"
 );
 // LINE 338:
 	asm( 
-"	      004feb3d    cmp dword ptr [ebp-8],7Fh"
+"	      004feb3d    cmp x,7Fh"
 "	      004feb41    jg near ptr 004FEB51h"
-"	      004feb47    cmp dword ptr [ebp-0Ch],7Fh"
+"	      004feb47    cmp y,7Fh"
 "	      004feb4b    jle near ptr 004FEB5Dh"
 );
 // LINE 340:
 	asm( 
-"	      004feb51    mov dword ptr [ebp-24h],0"
+"	      004feb51    mov tile,0"
 );
 // LINE 342:
 	asm( 
@@ -470,26 +470,26 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 345:
 	asm( 
-"	      004feb5d    mov eax,[ebp-8]"
+"	      004feb5d    mov eax,x"
 "	      004feb60    mov eax,[eax*4+639850h]"
-"	      004feb67    mov ecx,[ebp-0Ch]"
+"	      004feb67    mov ecx,y"
 "	      004feb6a    xor edx,edx"
 "	      004feb6c    mov dl,[eax+ecx]"
-"	      004feb6f    mov [ebp-24h],edx"
+"	      004feb6f    mov tile,edx"
 );
 // LINE 351:
 	asm( 
-"	      004feb72    mov eax,[ebp-8]"
+"	      004feb72    mov eax,x"
 "	      004feb75    and eax,0FFh"
 "	      004feb7a    shl eax,0Ah"
-"	      004feb7d    mov ecx,[ebp-0Ch]"
+"	      004feb7d    mov ecx,y"
 "	      004feb80    and ecx,0FFh"
 "	      004feb86    mov eax,[eax+ecx*4+67ED30h]"
-"	      004feb8d    mov [ebp-14h],eax"
+"	      004feb8d    mov cptr,eax"
 );
 // LINE 352:
 	asm( 
-"	      004feb90    mov eax,[ebp-14h]"
+"	      004feb90    mov eax,cptr"
 "	      004feb93    movsx eax,word ptr [eax]"
 "	      004feb96    test al,20h"
 "	      004feb98    je near ptr 004FEBB5h"
@@ -498,9 +498,9 @@ void S3MapRender(long posx, long posy) {
 	asm( 
 "	      004feb9e    movsx eax,byte ptr ds:[5B5284h]"
 "	      004feba5    add eax,10h"
-"	      004feba8    mov ecx,[ebp-4]"
+"	      004feba8    mov ecx,ptr"
 "	      004febab    mov [ecx],al"
-"	      004febad    inc dword ptr [ebp-4]"
+"	      004febad    inc ptr"
 );
 // LINE 355:
 	asm( 
@@ -508,14 +508,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 358:
 	asm( 
-"	      004febb5    cmp dword ptr [ebp-24h],0D1h"
+"	      004febb5    cmp tile,0D1h"
 "	      004febbc    jne near ptr 004FEBD0h"
 );
 // LINE 360:
 	asm( 
-"	      004febc2    mov eax,[ebp-4]"
+"	      004febc2    mov eax,ptr"
 "	      004febc5    mov byte ptr [eax],0EAh"
-"	      004febc8    inc dword ptr [ebp-4]"
+"	      004febc8    inc ptr"
 );
 // LINE 361:
 	asm( 
@@ -523,14 +523,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 363:
 	asm( 
-"	      004febd0    cmp dword ptr [ebp-24h],0D2h"
+"	      004febd0    cmp tile,0D2h"
 "	      004febd7    jne near ptr 004FEBEBh"
 );
 // LINE 365:
 	asm( 
-"	      004febdd    mov eax,[ebp-4]"
+"	      004febdd    mov eax,ptr"
 "	      004febe0    mov byte ptr [eax],9Ah"
-"	      004febe3    inc dword ptr [ebp-4]"
+"	      004febe3    inc ptr"
 );
 // LINE 366:
 	asm( 
@@ -538,14 +538,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 368:
 	asm( 
-"	      004febeb    cmp dword ptr [ebp-24h],0D3h"
+"	      004febeb    cmp tile,0D3h"
 "	      004febf2    jne near ptr 004FEC06h"
 );
 // LINE 370:
 	asm( 
-"	      004febf8    mov eax,[ebp-4]"
+"	      004febf8    mov eax,ptr"
 "	      004febfb    mov byte ptr [eax],1Ah"
-"	      004febfe    inc dword ptr [ebp-4]"
+"	      004febfe    inc ptr"
 );
 // LINE 371:
 	asm( 
@@ -553,26 +553,26 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 374:
 	asm( 
-"	      004fec06    mov eax,[ebp-8]"
+"	      004fec06    mov eax,x"
 "	      004fec09    cmp ds:[6C1190h],eax"
 "	      004fec0f    jg near ptr 004FEC54h"
 "	      004fec15    mov eax,ds:[6C1190h]"
 "	      004fec1a    add eax,4"
-"	      004fec1d    cmp eax,[ebp-8]"
+"	      004fec1d    cmp eax,x"
 "	      004fec20    jle near ptr 004FEC54h"
-"	      004fec26    mov eax,[ebp-0Ch]"
+"	      004fec26    mov eax,y"
 "	      004fec29    cmp ds:[6C1194h],eax"
 "	      004fec2f    jg near ptr 004FEC54h"
 "	      004fec35    mov eax,ds:[6C1194h]"
 "	      004fec3a    add eax,4"
-"	      004fec3d    cmp eax,[ebp-0Ch]"
+"	      004fec3d    cmp eax,y"
 "	      004fec40    jle near ptr 004FEC54h"
 );
 // LINE 376:
 	asm( 
-"	      004fec46    mov eax,[ebp-4]"
+"	      004fec46    mov eax,ptr"
 "	      004fec49    mov byte ptr [eax],0CAh"
-"	      004fec4c    inc dword ptr [ebp-4]"
+"	      004fec4c    inc ptr"
 );
 // LINE 377:
 	asm( 
@@ -580,16 +580,16 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 381:
 	asm( 
-"	      004fec54    cmp dword ptr [ebp-24h],0Dh"
+"	      004fec54    cmp tile,0Dh"
 "	      004fec58    je near ptr 004FEC6Bh"
-"	      004fec5e    cmp dword ptr [ebp-24h],0D5h"
+"	      004fec5e    cmp tile,0D5h"
 "	      004fec65    jne near ptr 004FEC79h"
 );
 // LINE 383:
 	asm( 
-"	      004fec6b    mov eax,[ebp-4]"
+"	      004fec6b    mov eax,ptr"
 "	      004fec6e    mov byte ptr [eax],5Ah"
-"	      004fec71    inc dword ptr [ebp-4]"
+"	      004fec71    inc ptr"
 );
 // LINE 384:
 	asm( 
@@ -597,16 +597,16 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 388:
 	asm( 
-"	      004fec79    cmp dword ptr [ebp-24h],1Dh"
+"	      004fec79    cmp tile,1Dh"
 "	      004fec7d    jl near ptr 004FEC9Bh"
-"	      004fec83    cmp dword ptr [ebp-24h],70h"
+"	      004fec83    cmp tile,70h"
 "	      004fec87    jge near ptr 004FEC9Bh"
 );
 // LINE 390:
 	asm( 
-"	      004fec8d    mov eax,[ebp-4]"
+"	      004fec8d    mov eax,ptr"
 "	      004fec90    mov byte ptr [eax],33h"
-"	      004fec93    inc dword ptr [ebp-4]"
+"	      004fec93    inc ptr"
 );
 // LINE 391:
 	asm( 
@@ -614,14 +614,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 395:
 	asm( 
-"	      004fec9b    cmp dword ptr [ebp-24h],70h"
+"	      004fec9b    cmp tile,70h"
 "	      004fec9f    jl near ptr 004FECB3h"
 );
 // LINE 397:
 	asm( 
-"	      004feca5    mov eax,[ebp-4]"
+"	      004feca5    mov eax,ptr"
 "	      004feca8    mov byte ptr [eax],3Ah"
-"	      004fecab    inc dword ptr [ebp-4]"
+"	      004fecab    inc ptr"
 );
 // LINE 398:
 	asm( 
@@ -629,106 +629,106 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 402:
 	asm( 
-"	      004fecb3    mov eax,[ebp-0Ch]"
-"	      004fecb6    mov ecx,[ebp-8]"
+"	      004fecb3    mov eax,y"
+"	      004fecb6    mov ecx,x"
 "	      004fecb9    shl ecx,8"
 "	      004fecbc    mov al,[eax+ecx+66EB10h]"
-"	      004fecc3    mov [ebp-10h],al"
+"	      004fecc3    mov texid,al"
 );
 // LINE 403:
 	asm( 
-"	      004fecc6    movsx eax,byte ptr [ebp-10h]"
+"	      004fecc6    movsx eax,texid"
 "	      004fecca    cmp eax,30h"
 "	      004feccd    jl near ptr 004FED36h"
-"	      004fecd3    movsx eax,byte ptr [ebp-10h]"
+"	      004fecd3    movsx eax,texid"
 "	      004fecd7    cmp eax,40h"
 "	      004fecda    jge near ptr 004FED36h"
 );
 // LINE 405:
 	asm( 
-"	      004fece0    mov eax,[ebp-0Ch]"
+"	      004fece0    mov eax,y"
 "	      004fece3    and eax,ds:[5B5CBCh]"
 "	      004fece9    mov cl,ds:[5B5CC0h]"
 "	      004fecef    shl eax,cl"
-"	      004fecf1    mov ecx,[ebp-8]"
+"	      004fecf1    mov ecx,x"
 "	      004fecf4    and ecx,ds:[5B5CBCh]"
 "	      004fecfa    add ecx,ecx"
 "	      004fecfc    lea eax,[ecx+eax*2]"
 "	      004fecff    mov ecx,ds:[67EB10h]"
 "	      004fed05    mov ax,[eax+ecx]"
-"	      004fed09    mov [ebp-18h],ax"
+"	      004fed09    mov alt,ax"
 );
 // LINE 406:
 	asm( 
 "	      004fed0d    mov eax,[ebp-18h]"
 "	      004fed10    and eax,0FFFFh"
 "	      004fed15    shr eax,6"
-"	      004fed18    mov [ebp-18h],ax"
+"	      004fed18    mov alt,ax"
 );
 // LINE 407:
 	asm( 
 "	      004fed1c    mov eax,[ebp-18h]"
 "	      004fed1f    and eax,0FFFFh"
 "	      004fed24    sub eax,80h"
-"	      004fed29    mov ecx,[ebp-4]"
+"	      004fed29    mov ecx,ptr"
 "	      004fed2c    mov [ecx],al"
-"	      004fed2e    inc dword ptr [ebp-4]"
+"	      004fed2e    inc ptr"
 );
 // LINE 409:
 	asm( 
 "	      004fed31    jmp near ptr 004FEE1Ch"
-"	      004fed36    movsx eax,byte ptr [ebp-10h]"
+"	      004fed36    movsx eax,texid"
 "	      004fed3a    test eax,eax"
 "	      004fed3c    jl near ptr 004FED5Dh"
-"	      004fed42    movsx eax,byte ptr [ebp-10h]"
+"	      004fed42    movsx eax,texid"
 "	      004fed46    cmp eax,0Ah"
 "	      004fed49    jge near ptr 004FED5Dh"
 );
 // LINE 411:
 	asm( 
-"	      004fed4f    mov eax,[ebp-4]"
+"	      004fed4f    mov eax,ptr"
 "	      004fed52    mov byte ptr [eax],90h"
-"	      004fed55    inc dword ptr [ebp-4]"
+"	      004fed55    inc ptr"
 );
 // LINE 413:
 	asm( 
 "	      004fed58    jmp near ptr 004FEE1Ch"
-"	      004fed5d    movsx eax,byte ptr [ebp-10h]"
+"	      004fed5d    movsx eax,texid"
 "	      004fed61    cmp eax,20h"
 "	      004fed64    jl near ptr 004FEDCBh"
-"	      004fed6a    movsx eax,byte ptr [ebp-10h]"
+"	      004fed6a    movsx eax,texid"
 "	      004fed6e    cmp eax,30h"
 "	      004fed71    jge near ptr 004FEDCBh"
 );
 // LINE 415:
 	asm( 
-"	      004fed77    mov eax,[ebp-0Ch]"
+"	      004fed77    mov eax,y"
 "	      004fed7a    and eax,ds:[5B5CBCh]"
 "	      004fed80    mov cl,ds:[5B5CC0h]"
 "	      004fed86    shl eax,cl"
-"	      004fed88    mov ecx,[ebp-8]"
+"	      004fed88    mov ecx,x"
 "	      004fed8b    and ecx,ds:[5B5CBCh]"
 "	      004fed91    add ecx,ecx"
 "	      004fed93    lea eax,[ecx+eax*2]"
 "	      004fed96    mov ecx,ds:[67EB10h]"
 "	      004fed9c    mov ax,[eax+ecx]"
-"	      004feda0    mov [ebp-18h],ax"
+"	      004feda0    mov alt,ax"
 );
 // LINE 416:
 	asm( 
 "	      004feda4    mov eax,[ebp-18h]"
 "	      004feda7    and eax,0FFFFh"
 "	      004fedac    shr eax,6"
-"	      004fedaf    mov [ebp-18h],ax"
+"	      004fedaf    mov alt,ax"
 );
 // LINE 417:
 	asm( 
 "	      004fedb3    mov eax,[ebp-18h]"
 "	      004fedb6    and eax,0FFFFh"
 "	      004fedbb    add eax,50h"
-"	      004fedbe    mov ecx,[ebp-4]"
+"	      004fedbe    mov ecx,ptr"
 "	      004fedc1    mov [ecx],al"
-"	      004fedc3    inc dword ptr [ebp-4]"
+"	      004fedc3    inc ptr"
 );
 // LINE 419:
 	asm( 
@@ -736,33 +736,33 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 421:
 	asm( 
-"	      004fedcb    mov eax,[ebp-0Ch]"
+"	      004fedcb    mov eax,y"
 "	      004fedce    and eax,ds:[5B5CBCh]"
 "	      004fedd4    mov cl,ds:[5B5CC0h]"
 "	      004fedda    shl eax,cl"
-"	      004feddc    mov ecx,[ebp-8]"
+"	      004feddc    mov ecx,x"
 "	      004feddf    and ecx,ds:[5B5CBCh]"
 "	      004fede5    add ecx,ecx"
 "	      004fede7    lea eax,[ecx+eax*2]"
 "	      004fedea    mov ecx,ds:[67EB10h]"
 "	      004fedf0    mov ax,[eax+ecx]"
-"	      004fedf4    mov [ebp-18h],ax"
+"	      004fedf4    mov alt,ax"
 );
 // LINE 422:
 	asm( 
 "	      004fedf8    mov eax,[ebp-18h]"
 "	      004fedfb    and eax,0FFFFh"
 "	      004fee00    shr eax,6"
-"	      004fee03    mov [ebp-18h],ax"
+"	      004fee03    mov alt,ax"
 );
 // LINE 423:
 	asm( 
 "	      004fee07    mov eax,[ebp-18h]"
 "	      004fee0a    and eax,0FFFFh"
 "	      004fee0f    sub eax,80h"
-"	      004fee14    mov ecx,[ebp-4]"
+"	      004fee14    mov ecx,ptr"
 "	      004fee17    mov [ecx],al"
-"	      004fee19    inc dword ptr [ebp-4]"
+"	      004fee19    inc ptr"
 );
 // LINE 425:
 	asm( 
@@ -770,7 +770,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 426:
 	asm( 
-"	      004fee21    add dword ptr [ebp-4],14h"
+"	      004fee21    add ptr,14h"
 );
 // LINE 427:
 	asm( 
@@ -782,7 +782,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 432:
 	asm( 
-"	      004fee2f    mov eax,[ebp+8]"
+"	      004fee2f    mov eax,posx"
 "	      004fee32    mov ecx,ds:[5B527Ch]"
 "	      004fee38    sar ecx,2"
 "	      004fee3b    sub eax,ecx"
@@ -790,7 +790,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 433:
 	asm( 
-"	      004fee42    mov eax,[ebp+0Ch]"
+"	      004fee42    mov eax,posy"
 "	      004fee45    mov ecx,ds:[5B5280h]"
 "	      004fee4b    sar ecx,2"
 "	      004fee4e    sub eax,ecx"
@@ -817,52 +817,52 @@ void S3MapRender(long posx, long posy) {
 // LINE 437:
 	asm( 
 "	      004fee81    mov eax,ds:[608C0Ch]"
-"	      004fee86    mov [ebp-0Ch],eax"
-"	      004fee89    mov dword ptr [ebp-20h],0"
+"	      004fee86    mov y,eax"
+"	      004fee89    mov county,0"
 "	      004fee90    jmp near ptr 004FEE9Bh"
-"	      004fee95    inc dword ptr [ebp-20h]"
-"	      004fee98    inc dword ptr [ebp-0Ch]"
+"	      004fee95    inc county"
+"	      004fee98    inc y"
 "	      004fee9b    mov eax,ds:[5B5280h]"
 "	      004feea0    sar eax,1"
-"	      004feea3    cmp eax,[ebp-20h]"
+"	      004feea3    cmp eax,county"
 "	      004feea6    jle near ptr 004FF290h"
 );
 // LINE 439:
 	asm( 
-"	      004feeac    and dword ptr [ebp-0Ch],0FFh"
+"	      004feeac    and y,0FFh"
 );
 // LINE 441:
 	asm( 
-"	      004feeb3    mov eax,[ebp-4]"
-"	      004feeb6    mov [ebp-1Ch],eax"
+"	      004feeb3    mov eax,ptr"
+"	      004feeb6    mov lineptr,eax"
 );
 // LINE 443:
 	asm( 
 "	      004feeb9    mov eax,ds:[608C08h]"
-"	      004feebe    mov [ebp-8],eax"
-"	      004feec1    mov dword ptr [ebp-28h],0"
+"	      004feebe    mov x,eax"
+"	      004feec1    mov countx,0"
 "	      004feec8    jmp near ptr 004FEED3h"
-"	      004feecd    inc dword ptr [ebp-28h]"
-"	      004feed0    inc dword ptr [ebp-8]"
+"	      004feecd    inc countx"
+"	      004feed0    inc x"
 "	      004feed3    mov eax,ds:[5B527Ch]"
 "	      004feed8    sar eax,1"
-"	      004feedb    cmp eax,[ebp-28h]"
+"	      004feedb    cmp eax,countx"
 "	      004feede    jle near ptr 004FF266h"
 );
 // LINE 445:
 	asm( 
-"	      004feee4    and dword ptr [ebp-8],0FFh"
+"	      004feee4    and x,0FFh"
 );
 // LINE 448:
 	asm( 
-"	      004feeeb    cmp dword ptr [ebp-8],7Fh"
+"	      004feeeb    cmp x,7Fh"
 "	      004feeef    jg near ptr 004FEEFFh"
-"	      004feef5    cmp dword ptr [ebp-0Ch],7Fh"
+"	      004feef5    cmp y,7Fh"
 "	      004feef9    jle near ptr 004FEF0Bh"
 );
 // LINE 450:
 	asm( 
-"	      004feeff    mov dword ptr [ebp-24h],0"
+"	      004feeff    mov tile,0"
 );
 // LINE 452:
 	asm( 
@@ -870,26 +870,26 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 455:
 	asm( 
-"	      004fef0b    mov eax,[ebp-8]"
+"	      004fef0b    mov eax,x"
 "	      004fef0e    mov eax,[eax*4+639850h]"
-"	      004fef15    mov ecx,[ebp-0Ch]"
+"	      004fef15    mov ecx,y"
 "	      004fef18    xor edx,edx"
 "	      004fef1a    mov dl,[eax+ecx]"
-"	      004fef1d    mov [ebp-24h],edx"
+"	      004fef1d    mov tile,edx"
 );
 // LINE 461:
 	asm( 
-"	      004fef20    mov eax,[ebp-8]"
+"	      004fef20    mov eax,x"
 "	      004fef23    and eax,0FFh"
 "	      004fef28    shl eax,0Ah"
-"	      004fef2b    mov ecx,[ebp-0Ch]"
+"	      004fef2b    mov ecx,y"
 "	      004fef2e    and ecx,0FFh"
 "	      004fef34    mov eax,[eax+ecx*4+67ED30h]"
-"	      004fef3b    mov [ebp-14h],eax"
+"	      004fef3b    mov cptr,eax"
 );
 // LINE 462:
 	asm( 
-"	      004fef3e    mov eax,[ebp-14h]"
+"	      004fef3e    mov eax,cptr"
 "	      004fef41    movsx eax,word ptr [eax]"
 "	      004fef44    test al,20h"
 "	      004fef46    je near ptr 004FEF75h"
@@ -898,17 +898,17 @@ void S3MapRender(long posx, long posy) {
 	asm( 
 "	      004fef4c    movsx eax,byte ptr ds:[5B5284h]"
 "	      004fef53    add eax,10h"
-"	      004fef56    mov ecx,[ebp-4]"
+"	      004fef56    mov ecx,ptr"
 "	      004fef59    mov [ecx],al"
-"	      004fef5b    inc dword ptr [ebp-4]"
+"	      004fef5b    inc ptr"
 );
 // LINE 465:
 	asm( 
 "	      004fef5e    movsx eax,byte ptr ds:[5B5284h]"
 "	      004fef65    add eax,10h"
-"	      004fef68    mov ecx,[ebp-4]"
+"	      004fef68    mov ecx,ptr"
 "	      004fef6b    mov [ecx],al"
-"	      004fef6d    inc dword ptr [ebp-4]"
+"	      004fef6d    inc ptr"
 );
 // LINE 466:
 	asm( 
@@ -916,20 +916,20 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 469:
 	asm( 
-"	      004fef75    cmp dword ptr [ebp-24h],0D1h"
+"	      004fef75    cmp tile,0D1h"
 "	      004fef7c    jne near ptr 004FEF99h"
 );
 // LINE 471:
 	asm( 
-"	      004fef82    mov eax,[ebp-4]"
+"	      004fef82    mov eax,ptr"
 "	      004fef85    mov byte ptr [eax],0EAh"
-"	      004fef88    inc dword ptr [ebp-4]"
+"	      004fef88    inc ptr"
 );
 // LINE 472:
 	asm( 
-"	      004fef8b    mov eax,[ebp-4]"
+"	      004fef8b    mov eax,ptr"
 "	      004fef8e    mov byte ptr [eax],0EAh"
-"	      004fef91    inc dword ptr [ebp-4]"
+"	      004fef91    inc ptr"
 );
 // LINE 473:
 	asm( 
@@ -937,20 +937,20 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 475:
 	asm( 
-"	      004fef99    cmp dword ptr [ebp-24h],0D2h"
+"	      004fef99    cmp tile,0D2h"
 "	      004fefa0    jne near ptr 004FEFBDh"
 );
 // LINE 477:
 	asm( 
-"	      004fefa6    mov eax,[ebp-4]"
+"	      004fefa6    mov eax,ptr"
 "	      004fefa9    mov byte ptr [eax],9Ah"
-"	      004fefac    inc dword ptr [ebp-4]"
+"	      004fefac    inc ptr"
 );
 // LINE 478:
 	asm( 
-"	      004fefaf    mov eax,[ebp-4]"
+"	      004fefaf    mov eax,ptr"
 "	      004fefb2    mov byte ptr [eax],9Ah"
-"	      004fefb5    inc dword ptr [ebp-4]"
+"	      004fefb5    inc ptr"
 );
 // LINE 479:
 	asm( 
@@ -958,20 +958,20 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 481:
 	asm( 
-"	      004fefbd    cmp dword ptr [ebp-24h],0D3h"
+"	      004fefbd    cmp tile,0D3h"
 "	      004fefc4    jne near ptr 004FEFE1h"
 );
 // LINE 483:
 	asm( 
-"	      004fefca    mov eax,[ebp-4]"
+"	      004fefca    mov eax,ptr"
 "	      004fefcd    mov byte ptr [eax],1Ah"
-"	      004fefd0    inc dword ptr [ebp-4]"
+"	      004fefd0    inc ptr"
 );
 // LINE 484:
 	asm( 
-"	      004fefd3    mov eax,[ebp-4]"
+"	      004fefd3    mov eax,ptr"
 "	      004fefd6    mov byte ptr [eax],1Ah"
-"	      004fefd9    inc dword ptr [ebp-4]"
+"	      004fefd9    inc ptr"
 );
 // LINE 485:
 	asm( 
@@ -979,32 +979,32 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 488:
 	asm( 
-"	      004fefe1    mov eax,[ebp-8]"
+"	      004fefe1    mov eax,x"
 "	      004fefe4    cmp ds:[6C1190h],eax"
 "	      004fefea    jg near ptr 004FF038h"
 "	      004feff0    mov eax,ds:[6C1190h]"
 "	      004feff5    add eax,4"
-"	      004feff8    cmp eax,[ebp-8]"
+"	      004feff8    cmp eax,x"
 "	      004feffb    jle near ptr 004FF038h"
-"	      004ff001    mov eax,[ebp-0Ch]"
+"	      004ff001    mov eax,y"
 "	      004ff004    cmp ds:[6C1194h],eax"
 "	      004ff00a    jg near ptr 004FF038h"
 "	      004ff010    mov eax,ds:[6C1194h]"
 "	      004ff015    add eax,4"
-"	      004ff018    cmp eax,[ebp-0Ch]"
+"	      004ff018    cmp eax,y"
 "	      004ff01b    jle near ptr 004FF038h"
 );
 // LINE 490:
 	asm( 
-"	      004ff021    mov eax,[ebp-4]"
+"	      004ff021    mov eax,ptr"
 "	      004ff024    mov byte ptr [eax],0CAh"
-"	      004ff027    inc dword ptr [ebp-4]"
+"	      004ff027    inc ptr"
 );
 // LINE 491:
 	asm( 
-"	      004ff02a    mov eax,[ebp-4]"
+"	      004ff02a    mov eax,ptr"
 "	      004ff02d    mov byte ptr [eax],0CAh"
-"	      004ff030    inc dword ptr [ebp-4]"
+"	      004ff030    inc ptr"
 );
 // LINE 492:
 	asm( 
@@ -1012,22 +1012,22 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 495:
 	asm( 
-"	      004ff038    cmp dword ptr [ebp-24h],0Dh"
+"	      004ff038    cmp tile,0Dh"
 "	      004ff03c    je near ptr 004FF04Fh"
-"	      004ff042    cmp dword ptr [ebp-24h],0D5h"
+"	      004ff042    cmp tile,0D5h"
 "	      004ff049    jne near ptr 004FF066h"
 );
 // LINE 497:
 	asm( 
-"	      004ff04f    mov eax,[ebp-4]"
+"	      004ff04f    mov eax,ptr"
 "	      004ff052    mov byte ptr [eax],5Ah"
-"	      004ff055    inc dword ptr [ebp-4]"
+"	      004ff055    inc ptr"
 );
 // LINE 498:
 	asm( 
-"	      004ff058    mov eax,[ebp-4]"
+"	      004ff058    mov eax,ptr"
 "	      004ff05b    mov byte ptr [eax],5Ah"
-"	      004ff05e    inc dword ptr [ebp-4]"
+"	      004ff05e    inc ptr"
 );
 // LINE 499:
 	asm( 
@@ -1035,22 +1035,22 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 503:
 	asm( 
-"	      004ff066    cmp dword ptr [ebp-24h],1Dh"
+"	      004ff066    cmp tile,1Dh"
 "	      004ff06a    jl near ptr 004FF091h"
-"	      004ff070    cmp dword ptr [ebp-24h],70h"
+"	      004ff070    cmp tile,70h"
 "	      004ff074    jge near ptr 004FF091h"
 );
 // LINE 505:
 	asm( 
-"	      004ff07a    mov eax,[ebp-4]"
+"	      004ff07a    mov eax,ptr"
 "	      004ff07d    mov byte ptr [eax],33h"
-"	      004ff080    inc dword ptr [ebp-4]"
+"	      004ff080    inc ptr"
 );
 // LINE 506:
 	asm( 
-"	      004ff083    mov eax,[ebp-4]"
+"	      004ff083    mov eax,ptr"
 "	      004ff086    mov byte ptr [eax],33h"
-"	      004ff089    inc dword ptr [ebp-4]"
+"	      004ff089    inc ptr"
 );
 // LINE 507:
 	asm( 
@@ -1058,20 +1058,20 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 511:
 	asm( 
-"	      004ff091    cmp dword ptr [ebp-24h],70h"
+"	      004ff091    cmp tile,70h"
 "	      004ff095    jl near ptr 004FF0B2h"
 );
 // LINE 513:
 	asm( 
-"	      004ff09b    mov eax,[ebp-4]"
+"	      004ff09b    mov eax,ptr"
 "	      004ff09e    mov byte ptr [eax],3Ah"
-"	      004ff0a1    inc dword ptr [ebp-4]"
+"	      004ff0a1    inc ptr"
 );
 // LINE 514:
 	asm( 
-"	      004ff0a4    mov eax,[ebp-4]"
+"	      004ff0a4    mov eax,ptr"
 "	      004ff0a7    mov byte ptr [eax],3Ah"
-"	      004ff0aa    inc dword ptr [ebp-4]"
+"	      004ff0aa    inc ptr"
 );
 // LINE 515:
 	asm( 
@@ -1079,130 +1079,130 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 519:
 	asm( 
-"	      004ff0b2    mov eax,[ebp-0Ch]"
-"	      004ff0b5    mov ecx,[ebp-8]"
+"	      004ff0b2    mov eax,y"
+"	      004ff0b5    mov ecx,x"
 "	      004ff0b8    shl ecx,8"
 "	      004ff0bb    mov al,[eax+ecx+66EB10h]"
-"	      004ff0c2    mov [ebp-10h],al"
+"	      004ff0c2    mov texid,al"
 );
 // LINE 520:
 	asm( 
-"	      004ff0c5    movsx eax,byte ptr [ebp-10h]"
+"	      004ff0c5    movsx eax,texid"
 "	      004ff0c9    cmp eax,30h"
 "	      004ff0cc    jl near ptr 004FF14Ah"
-"	      004ff0d2    movsx eax,byte ptr [ebp-10h]"
+"	      004ff0d2    movsx eax,texid"
 "	      004ff0d6    cmp eax,40h"
 "	      004ff0d9    jge near ptr 004FF14Ah"
 );
 // LINE 522:
 	asm( 
-"	      004ff0df    mov eax,[ebp-0Ch]"
+"	      004ff0df    mov eax,y"
 "	      004ff0e2    and eax,ds:[5B5CBCh]"
 "	      004ff0e8    mov cl,ds:[5B5CC0h]"
 "	      004ff0ee    shl eax,cl"
-"	      004ff0f0    mov ecx,[ebp-8]"
+"	      004ff0f0    mov ecx,x"
 "	      004ff0f3    and ecx,ds:[5B5CBCh]"
 "	      004ff0f9    add ecx,ecx"
 "	      004ff0fb    lea eax,[ecx+eax*2]"
 "	      004ff0fe    mov ecx,ds:[67EB10h]"
 "	      004ff104    mov ax,[eax+ecx]"
-"	      004ff108    mov [ebp-18h],ax"
+"	      004ff108    mov alt,ax"
 );
 // LINE 523:
 	asm( 
 "	      004ff10c    mov eax,[ebp-18h]"
 "	      004ff10f    and eax,0FFFFh"
 "	      004ff114    shr eax,6"
-"	      004ff117    mov [ebp-18h],ax"
+"	      004ff117    mov alt,ax"
 );
 // LINE 524:
 	asm( 
 "	      004ff11b    mov eax,[ebp-18h]"
 "	      004ff11e    and eax,0FFFFh"
 "	      004ff123    sub eax,80h"
-"	      004ff128    mov ecx,[ebp-4]"
+"	      004ff128    mov ecx,ptr"
 "	      004ff12b    mov [ecx],al"
-"	      004ff12d    inc dword ptr [ebp-4]"
+"	      004ff12d    inc ptr"
 );
 // LINE 525:
 	asm( 
 "	      004ff130    mov eax,[ebp-18h]"
 "	      004ff133    and eax,0FFFFh"
 "	      004ff138    sub eax,80h"
-"	      004ff13d    mov ecx,[ebp-4]"
+"	      004ff13d    mov ecx,ptr"
 "	      004ff140    mov [ecx],al"
-"	      004ff142    inc dword ptr [ebp-4]"
+"	      004ff142    inc ptr"
 );
 // LINE 527:
 	asm( 
 "	      004ff145    jmp near ptr 004FF261h"
-"	      004ff14a    movsx eax,byte ptr [ebp-10h]"
+"	      004ff14a    movsx eax,texid"
 "	      004ff14e    test eax,eax"
 "	      004ff150    jl near ptr 004FF17Ah"
-"	      004ff156    movsx eax,byte ptr [ebp-10h]"
+"	      004ff156    movsx eax,texid"
 "	      004ff15a    cmp eax,0Ah"
 "	      004ff15d    jge near ptr 004FF17Ah"
 );
 // LINE 529:
 	asm( 
-"	      004ff163    mov eax,[ebp-4]"
+"	      004ff163    mov eax,ptr"
 "	      004ff166    mov byte ptr [eax],90h"
-"	      004ff169    inc dword ptr [ebp-4]"
+"	      004ff169    inc ptr"
 );
 // LINE 530:
 	asm( 
-"	      004ff16c    mov eax,[ebp-4]"
+"	      004ff16c    mov eax,ptr"
 "	      004ff16f    mov byte ptr [eax],90h"
-"	      004ff172    inc dword ptr [ebp-4]"
+"	      004ff172    inc ptr"
 );
 // LINE 532:
 	asm( 
 "	      004ff175    jmp near ptr 004FF261h"
-"	      004ff17a    movsx eax,byte ptr [ebp-10h]"
+"	      004ff17a    movsx eax,texid"
 "	      004ff17e    cmp eax,20h"
 "	      004ff181    jl near ptr 004FF1FBh"
-"	      004ff187    movsx eax,byte ptr [ebp-10h]"
+"	      004ff187    movsx eax,texid"
 "	      004ff18b    cmp eax,30h"
 "	      004ff18e    jge near ptr 004FF1FBh"
 );
 // LINE 534:
 	asm( 
-"	      004ff194    mov eax,[ebp-0Ch]"
+"	      004ff194    mov eax,y"
 "	      004ff197    and eax,ds:[5B5CBCh]"
 "	      004ff19d    mov cl,ds:[5B5CC0h]"
 "	      004ff1a3    shl eax,cl"
-"	      004ff1a5    mov ecx,[ebp-8]"
+"	      004ff1a5    mov ecx,x"
 "	      004ff1a8    and ecx,ds:[5B5CBCh]"
 "	      004ff1ae    add ecx,ecx"
 "	      004ff1b0    lea eax,[ecx+eax*2]"
 "	      004ff1b3    mov ecx,ds:[67EB10h]"
 "	      004ff1b9    mov ax,[eax+ecx]"
-"	      004ff1bd    mov [ebp-18h],ax"
+"	      004ff1bd    mov alt,ax"
 );
 // LINE 535:
 	asm( 
 "	      004ff1c1    mov eax,[ebp-18h]"
 "	      004ff1c4    and eax,0FFFFh"
 "	      004ff1c9    shr eax,6"
-"	      004ff1cc    mov [ebp-18h],ax"
+"	      004ff1cc    mov alt,ax"
 );
 // LINE 536:
 	asm( 
 "	      004ff1d0    mov eax,[ebp-18h]"
 "	      004ff1d3    and eax,0FFFFh"
 "	      004ff1d8    add eax,50h"
-"	      004ff1db    mov ecx,[ebp-4]"
+"	      004ff1db    mov ecx,ptr"
 "	      004ff1de    mov [ecx],al"
-"	      004ff1e0    inc dword ptr [ebp-4]"
+"	      004ff1e0    inc ptr"
 );
 // LINE 537:
 	asm( 
 "	      004ff1e3    mov eax,[ebp-18h]"
 "	      004ff1e6    and eax,0FFFFh"
 "	      004ff1eb    add eax,50h"
-"	      004ff1ee    mov ecx,[ebp-4]"
+"	      004ff1ee    mov ecx,ptr"
 "	      004ff1f1    mov [ecx],al"
-"	      004ff1f3    inc dword ptr [ebp-4]"
+"	      004ff1f3    inc ptr"
 );
 // LINE 539:
 	asm( 
@@ -1210,42 +1210,42 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 541:
 	asm( 
-"	      004ff1fb    mov eax,[ebp-0Ch]"
+"	      004ff1fb    mov eax,y"
 "	      004ff1fe    and eax,ds:[5B5CBCh]"
 "	      004ff204    mov cl,ds:[5B5CC0h]"
 "	      004ff20a    shl eax,cl"
-"	      004ff20c    mov ecx,[ebp-8]"
+"	      004ff20c    mov ecx,x"
 "	      004ff20f    and ecx,ds:[5B5CBCh]"
 "	      004ff215    add ecx,ecx"
 "	      004ff217    lea eax,[ecx+eax*2]"
 "	      004ff21a    mov ecx,ds:[67EB10h]"
 "	      004ff220    mov ax,[eax+ecx]"
-"	      004ff224    mov [ebp-18h],ax"
+"	      004ff224    mov alt,ax"
 );
 // LINE 542:
 	asm( 
 "	      004ff228    mov eax,[ebp-18h]"
 "	      004ff22b    and eax,0FFFFh"
 "	      004ff230    shr eax,6"
-"	      004ff233    mov [ebp-18h],ax"
+"	      004ff233    mov alt,ax"
 );
 // LINE 543:
 	asm( 
 "	      004ff237    mov eax,[ebp-18h]"
 "	      004ff23a    and eax,0FFFFh"
 "	      004ff23f    sub eax,80h"
-"	      004ff244    mov ecx,[ebp-4]"
+"	      004ff244    mov ecx,ptr"
 "	      004ff247    mov [ecx],al"
-"	      004ff249    inc dword ptr [ebp-4]"
+"	      004ff249    inc ptr"
 );
 // LINE 544:
 	asm( 
 "	      004ff24c    mov eax,[ebp-18h]"
 "	      004ff24f    and eax,0FFFFh"
 "	      004ff254    sub eax,80h"
-"	      004ff259    mov ecx,[ebp-4]"
+"	      004ff259    mov ecx,ptr"
 "	      004ff25c    mov [ecx],al"
-"	      004ff25e    inc dword ptr [ebp-4]"
+"	      004ff25e    inc ptr"
 );
 // LINE 546:
 	asm( 
@@ -1253,13 +1253,13 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 547:
 	asm( 
-"	      004ff266    add dword ptr [ebp-4],14h"
+"	      004ff266    add ptr,14h"
 );
 // LINE 548:
 	asm( 
 "	      004ff26a    mov eax,ds:[5B527Ch]"
-"	      004ff26f    mov edi,[ebp-4]"
-"	      004ff272    mov esi,[ebp-1Ch]"
+"	      004ff26f    mov edi,ptr"
+"	      004ff272    mov esi,lineptr"
 "	      004ff275    mov ecx,eax"
 "	      004ff277    shr ecx,2"
 "	      004ff27a    rep movsd"
@@ -1270,7 +1270,7 @@ void S3MapRender(long posx, long posy) {
 // LINE 549:
 	asm( 
 "	      004ff283    mov eax,ds:[5B5268h]"
-"	      004ff288    add [ebp-4],eax"
+"	      004ff288    add ptr,eax"
 );
 // LINE 550:
 	asm( 
@@ -1282,7 +1282,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 555:
 	asm( 
-"	      004ff295    mov eax,[ebp+8]"
+"	      004ff295    mov eax,posx"
 "	      004ff298    mov ecx,ds:[5B527Ch]"
 "	      004ff29e    sar ecx,3"
 "	      004ff2a1    sub eax,ecx"
@@ -1290,7 +1290,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 556:
 	asm( 
-"	      004ff2a8    mov eax,[ebp+0Ch]"
+"	      004ff2a8    mov eax,posy"
 "	      004ff2ab    mov ecx,ds:[5B5280h]"
 "	      004ff2b1    sar ecx,3"
 "	      004ff2b4    sub eax,ecx"
@@ -1316,74 +1316,74 @@ void S3MapRender(long posx, long posy) {
 // LINE 560:
 	asm( 
 "	      004ff2e5    mov eax,ds:[608C0Ch]"
-"	      004ff2ea    mov [ebp-0Ch],eax"
-"	      004ff2ed    mov dword ptr [ebp-20h],0"
+"	      004ff2ea    mov y,eax"
+"	      004ff2ed    mov county,0"
 "	      004ff2f4    jmp near ptr 004FF2FFh"
-"	      004ff2f9    inc dword ptr [ebp-20h]"
-"	      004ff2fc    inc dword ptr [ebp-0Ch]"
+"	      004ff2f9    inc county"
+"	      004ff2fc    inc y"
 "	      004ff2ff    mov eax,ds:[5B5280h]"
 "	      004ff304    sar eax,2"
-"	      004ff307    cmp eax,[ebp-20h]"
+"	      004ff307    cmp eax,county"
 "	      004ff30a    jle near ptr 004FF87Dh"
 );
 // LINE 562:
 	asm( 
-"	      004ff310    and dword ptr [ebp-0Ch],0FFh"
+"	      004ff310    and y,0FFh"
 );
 // LINE 564:
 	asm( 
-"	      004ff317    mov eax,[ebp-4]"
-"	      004ff31a    mov [ebp-1Ch],eax"
+"	      004ff317    mov eax,ptr"
+"	      004ff31a    mov lineptr,eax"
 );
 // LINE 566:
 	asm( 
 "	      004ff31d    mov eax,ds:[608C08h]"
-"	      004ff322    mov [ebp-8],eax"
-"	      004ff325    mov dword ptr [ebp-28h],0"
+"	      004ff322    mov x,eax"
+"	      004ff325    mov countx,0"
 "	      004ff32c    jmp near ptr 004FF337h"
-"	      004ff331    inc dword ptr [ebp-28h]"
-"	      004ff334    inc dword ptr [ebp-8]"
+"	      004ff331    inc countx"
+"	      004ff334    inc x"
 "	      004ff337    mov eax,ds:[5B527Ch]"
 "	      004ff33c    sar eax,2"
-"	      004ff33f    cmp eax,[ebp-28h]"
+"	      004ff33f    cmp eax,countx"
 "	      004ff342    jle near ptr 004FF80Eh"
 );
 // LINE 568:
 	asm( 
-"	      004ff348    and dword ptr [ebp-8],0FFh"
+"	      004ff348    and x,0FFh"
 );
 // LINE 570:
 	asm( 
-"	      004ff34f    mov eax,[ebp+8]"
-"	      004ff352    cmp [ebp-8],eax"
+"	      004ff34f    mov eax,posx"
+"	      004ff352    cmp x,eax"
 "	      004ff355    jne near ptr 004FF390h"
-"	      004ff35b    mov eax,[ebp+0Ch]"
-"	      004ff35e    cmp [ebp-0Ch],eax"
+"	      004ff35b    mov eax,posy"
+"	      004ff35e    cmp y,eax"
 "	      004ff361    jne near ptr 004FF390h"
 );
 // LINE 572:
 	asm( 
-"	      004ff367    mov eax,[ebp-4]"
+"	      004ff367    mov eax,ptr"
 "	      004ff36a    mov byte ptr [eax],0E8h"
-"	      004ff36d    inc dword ptr [ebp-4]"
+"	      004ff36d    inc ptr"
 );
 // LINE 573:
 	asm( 
-"	      004ff370    mov eax,[ebp-4]"
+"	      004ff370    mov eax,ptr"
 "	      004ff373    mov byte ptr [eax],70h"
-"	      004ff376    inc dword ptr [ebp-4]"
+"	      004ff376    inc ptr"
 );
 // LINE 574:
 	asm( 
-"	      004ff379    mov eax,[ebp-4]"
+"	      004ff379    mov eax,ptr"
 "	      004ff37c    mov byte ptr [eax],70h"
-"	      004ff37f    inc dword ptr [ebp-4]"
+"	      004ff37f    inc ptr"
 );
 // LINE 575:
 	asm( 
-"	      004ff382    mov eax,[ebp-4]"
+"	      004ff382    mov eax,ptr"
 "	      004ff385    mov byte ptr [eax],70h"
-"	      004ff388    inc dword ptr [ebp-4]"
+"	      004ff388    inc ptr"
 );
 // LINE 576:
 	asm( 
@@ -1391,14 +1391,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 580:
 	asm( 
-"	      004ff390    cmp dword ptr [ebp-8],7Fh"
+"	      004ff390    cmp x,7Fh"
 "	      004ff394    jg near ptr 004FF3A4h"
-"	      004ff39a    cmp dword ptr [ebp-0Ch],7Fh"
+"	      004ff39a    cmp y,7Fh"
 "	      004ff39e    jle near ptr 004FF3B0h"
 );
 // LINE 582:
 	asm( 
-"	      004ff3a4    mov dword ptr [ebp-24h],0"
+"	      004ff3a4    mov tile,0"
 );
 // LINE 584:
 	asm( 
@@ -1406,59 +1406,59 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 587:
 	asm( 
-"	      004ff3b0    mov eax,[ebp-8]"
+"	      004ff3b0    mov eax,x"
 "	      004ff3b3    mov eax,[eax*4+639850h]"
-"	      004ff3ba    mov ecx,[ebp-0Ch]"
+"	      004ff3ba    mov ecx,y"
 "	      004ff3bd    xor edx,edx"
 "	      004ff3bf    mov dl,[eax+ecx]"
-"	      004ff3c2    mov [ebp-24h],edx"
+"	      004ff3c2    mov tile,edx"
 );
 // LINE 593:
 	asm( 
-"	      004ff3c5    mov eax,[ebp-8]"
+"	      004ff3c5    mov eax,x"
 "	      004ff3c8    and eax,0FFh"
 "	      004ff3cd    shl eax,0Ah"
-"	      004ff3d0    mov ecx,[ebp-0Ch]"
+"	      004ff3d0    mov ecx,y"
 "	      004ff3d3    and ecx,0FFh"
 "	      004ff3d9    mov eax,[eax+ecx*4+67ED30h]"
-"	      004ff3e0    mov [ebp-14h],eax"
+"	      004ff3e0    mov cptr,eax"
 );
 // LINE 594:
 	asm( 
-"	      004ff3e3    mov eax,[ebp-14h]"
+"	      004ff3e3    mov eax,cptr"
 "	      004ff3e6    movsx eax,word ptr [eax]"
 "	      004ff3e9    test al,20h"
 "	      004ff3eb    je near ptr 004FF435h"
 );
 // LINE 596:
 	asm( 
-"	      004ff3f1    mov eax,[ebp-4]"
+"	      004ff3f1    mov eax,ptr"
 "	      004ff3f4    mov byte ptr [eax],0E8h"
-"	      004ff3f7    inc dword ptr [ebp-4]"
+"	      004ff3f7    inc ptr"
 );
 // LINE 597:
 	asm( 
 "	      004ff3fa    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ff401    add eax,10h"
-"	      004ff404    mov ecx,[ebp-4]"
+"	      004ff404    mov ecx,ptr"
 "	      004ff407    mov [ecx],al"
-"	      004ff409    inc dword ptr [ebp-4]"
+"	      004ff409    inc ptr"
 );
 // LINE 598:
 	asm( 
 "	      004ff40c    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ff413    add eax,10h"
-"	      004ff416    mov ecx,[ebp-4]"
+"	      004ff416    mov ecx,ptr"
 "	      004ff419    mov [ecx],al"
-"	      004ff41b    inc dword ptr [ebp-4]"
+"	      004ff41b    inc ptr"
 );
 // LINE 599:
 	asm( 
 "	      004ff41e    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ff425    add eax,10h"
-"	      004ff428    mov ecx,[ebp-4]"
+"	      004ff428    mov ecx,ptr"
 "	      004ff42b    mov [ecx],al"
-"	      004ff42d    inc dword ptr [ebp-4]"
+"	      004ff42d    inc ptr"
 );
 // LINE 600:
 	asm( 
@@ -1466,32 +1466,32 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 603:
 	asm( 
-"	      004ff435    cmp dword ptr [ebp-24h],0D1h"
+"	      004ff435    cmp tile,0D1h"
 "	      004ff43c    jne near ptr 004FF46Bh"
 );
 // LINE 605:
 	asm( 
-"	      004ff442    mov eax,[ebp-4]"
+"	      004ff442    mov eax,ptr"
 "	      004ff445    mov byte ptr [eax],0E8h"
-"	      004ff448    inc dword ptr [ebp-4]"
+"	      004ff448    inc ptr"
 );
 // LINE 606:
 	asm( 
-"	      004ff44b    mov eax,[ebp-4]"
+"	      004ff44b    mov eax,ptr"
 "	      004ff44e    mov byte ptr [eax],0EAh"
-"	      004ff451    inc dword ptr [ebp-4]"
+"	      004ff451    inc ptr"
 );
 // LINE 607:
 	asm( 
-"	      004ff454    mov eax,[ebp-4]"
+"	      004ff454    mov eax,ptr"
 "	      004ff457    mov byte ptr [eax],0EAh"
-"	      004ff45a    inc dword ptr [ebp-4]"
+"	      004ff45a    inc ptr"
 );
 // LINE 608:
 	asm( 
-"	      004ff45d    mov eax,[ebp-4]"
+"	      004ff45d    mov eax,ptr"
 "	      004ff460    mov byte ptr [eax],0EAh"
-"	      004ff463    inc dword ptr [ebp-4]"
+"	      004ff463    inc ptr"
 );
 // LINE 609:
 	asm( 
@@ -1499,32 +1499,32 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 611:
 	asm( 
-"	      004ff46b    cmp dword ptr [ebp-24h],0D2h"
+"	      004ff46b    cmp tile,0D2h"
 "	      004ff472    jne near ptr 004FF4A1h"
 );
 // LINE 613:
 	asm( 
-"	      004ff478    mov eax,[ebp-4]"
+"	      004ff478    mov eax,ptr"
 "	      004ff47b    mov byte ptr [eax],0E8h"
-"	      004ff47e    inc dword ptr [ebp-4]"
+"	      004ff47e    inc ptr"
 );
 // LINE 614:
 	asm( 
-"	      004ff481    mov eax,[ebp-4]"
+"	      004ff481    mov eax,ptr"
 "	      004ff484    mov byte ptr [eax],9Ah"
-"	      004ff487    inc dword ptr [ebp-4]"
+"	      004ff487    inc ptr"
 );
 // LINE 615:
 	asm( 
-"	      004ff48a    mov eax,[ebp-4]"
+"	      004ff48a    mov eax,ptr"
 "	      004ff48d    mov byte ptr [eax],9Ah"
-"	      004ff490    inc dword ptr [ebp-4]"
+"	      004ff490    inc ptr"
 );
 // LINE 616:
 	asm( 
-"	      004ff493    mov eax,[ebp-4]"
+"	      004ff493    mov eax,ptr"
 "	      004ff496    mov byte ptr [eax],9Ah"
-"	      004ff499    inc dword ptr [ebp-4]"
+"	      004ff499    inc ptr"
 );
 // LINE 617:
 	asm( 
@@ -1532,32 +1532,32 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 619:
 	asm( 
-"	      004ff4a1    cmp dword ptr [ebp-24h],0D3h"
+"	      004ff4a1    cmp tile,0D3h"
 "	      004ff4a8    jne near ptr 004FF4D7h"
 );
 // LINE 621:
 	asm( 
-"	      004ff4ae    mov eax,[ebp-4]"
+"	      004ff4ae    mov eax,ptr"
 "	      004ff4b1    mov byte ptr [eax],0E8h"
-"	      004ff4b4    inc dword ptr [ebp-4]"
+"	      004ff4b4    inc ptr"
 );
 // LINE 622:
 	asm( 
-"	      004ff4b7    mov eax,[ebp-4]"
+"	      004ff4b7    mov eax,ptr"
 "	      004ff4ba    mov byte ptr [eax],1Ah"
-"	      004ff4bd    inc dword ptr [ebp-4]"
+"	      004ff4bd    inc ptr"
 );
 // LINE 623:
 	asm( 
-"	      004ff4c0    mov eax,[ebp-4]"
+"	      004ff4c0    mov eax,ptr"
 "	      004ff4c3    mov byte ptr [eax],1Ah"
-"	      004ff4c6    inc dword ptr [ebp-4]"
+"	      004ff4c6    inc ptr"
 );
 // LINE 624:
 	asm( 
-"	      004ff4c9    mov eax,[ebp-4]"
+"	      004ff4c9    mov eax,ptr"
 "	      004ff4cc    mov byte ptr [eax],1Ah"
-"	      004ff4cf    inc dword ptr [ebp-4]"
+"	      004ff4cf    inc ptr"
 );
 // LINE 625:
 	asm( 
@@ -1565,44 +1565,44 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 628:
 	asm( 
-"	      004ff4d7    mov eax,[ebp-8]"
+"	      004ff4d7    mov eax,x"
 "	      004ff4da    cmp ds:[6C1190h],eax"
 "	      004ff4e0    jg near ptr 004FF540h"
 "	      004ff4e6    mov eax,ds:[6C1190h]"
 "	      004ff4eb    add eax,4"
-"	      004ff4ee    cmp eax,[ebp-8]"
+"	      004ff4ee    cmp eax,x"
 "	      004ff4f1    jle near ptr 004FF540h"
-"	      004ff4f7    mov eax,[ebp-0Ch]"
+"	      004ff4f7    mov eax,y"
 "	      004ff4fa    cmp ds:[6C1194h],eax"
 "	      004ff500    jg near ptr 004FF540h"
 "	      004ff506    mov eax,ds:[6C1194h]"
 "	      004ff50b    add eax,4"
-"	      004ff50e    cmp eax,[ebp-0Ch]"
+"	      004ff50e    cmp eax,y"
 "	      004ff511    jle near ptr 004FF540h"
 );
 // LINE 630:
 	asm( 
-"	      004ff517    mov eax,[ebp-4]"
+"	      004ff517    mov eax,ptr"
 "	      004ff51a    mov byte ptr [eax],0E8h"
-"	      004ff51d    inc dword ptr [ebp-4]"
+"	      004ff51d    inc ptr"
 );
 // LINE 631:
 	asm( 
-"	      004ff520    mov eax,[ebp-4]"
+"	      004ff520    mov eax,ptr"
 "	      004ff523    mov byte ptr [eax],0CAh"
-"	      004ff526    inc dword ptr [ebp-4]"
+"	      004ff526    inc ptr"
 );
 // LINE 632:
 	asm( 
-"	      004ff529    mov eax,[ebp-4]"
+"	      004ff529    mov eax,ptr"
 "	      004ff52c    mov byte ptr [eax],0CAh"
-"	      004ff52f    inc dword ptr [ebp-4]"
+"	      004ff52f    inc ptr"
 );
 // LINE 633:
 	asm( 
-"	      004ff532    mov eax,[ebp-4]"
+"	      004ff532    mov eax,ptr"
 "	      004ff535    mov byte ptr [eax],0CAh"
-"	      004ff538    inc dword ptr [ebp-4]"
+"	      004ff538    inc ptr"
 );
 // LINE 634:
 	asm( 
@@ -1610,34 +1610,34 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 637:
 	asm( 
-"	      004ff540    cmp dword ptr [ebp-24h],0Dh"
+"	      004ff540    cmp tile,0Dh"
 "	      004ff544    je near ptr 004FF557h"
-"	      004ff54a    cmp dword ptr [ebp-24h],0D5h"
+"	      004ff54a    cmp tile,0D5h"
 "	      004ff551    jne near ptr 004FF580h"
 );
 // LINE 639:
 	asm( 
-"	      004ff557    mov eax,[ebp-4]"
+"	      004ff557    mov eax,ptr"
 "	      004ff55a    mov byte ptr [eax],0E8h"
-"	      004ff55d    inc dword ptr [ebp-4]"
+"	      004ff55d    inc ptr"
 );
 // LINE 640:
 	asm( 
-"	      004ff560    mov eax,[ebp-4]"
+"	      004ff560    mov eax,ptr"
 "	      004ff563    mov byte ptr [eax],5Ah"
-"	      004ff566    inc dword ptr [ebp-4]"
+"	      004ff566    inc ptr"
 );
 // LINE 641:
 	asm( 
-"	      004ff569    mov eax,[ebp-4]"
+"	      004ff569    mov eax,ptr"
 "	      004ff56c    mov byte ptr [eax],5Ah"
-"	      004ff56f    inc dword ptr [ebp-4]"
+"	      004ff56f    inc ptr"
 );
 // LINE 642:
 	asm( 
-"	      004ff572    mov eax,[ebp-4]"
+"	      004ff572    mov eax,ptr"
 "	      004ff575    mov byte ptr [eax],5Ah"
-"	      004ff578    inc dword ptr [ebp-4]"
+"	      004ff578    inc ptr"
 );
 // LINE 643:
 	asm( 
@@ -1645,34 +1645,34 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 647:
 	asm( 
-"	      004ff580    cmp dword ptr [ebp-24h],1Dh"
+"	      004ff580    cmp tile,1Dh"
 "	      004ff584    jl near ptr 004FF5BDh"
-"	      004ff58a    cmp dword ptr [ebp-24h],70h"
+"	      004ff58a    cmp tile,70h"
 "	      004ff58e    jge near ptr 004FF5BDh"
 );
 // LINE 649:
 	asm( 
-"	      004ff594    mov eax,[ebp-4]"
+"	      004ff594    mov eax,ptr"
 "	      004ff597    mov byte ptr [eax],0E8h"
-"	      004ff59a    inc dword ptr [ebp-4]"
+"	      004ff59a    inc ptr"
 );
 // LINE 650:
 	asm( 
-"	      004ff59d    mov eax,[ebp-4]"
+"	      004ff59d    mov eax,ptr"
 "	      004ff5a0    mov byte ptr [eax],33h"
-"	      004ff5a3    inc dword ptr [ebp-4]"
+"	      004ff5a3    inc ptr"
 );
 // LINE 651:
 	asm( 
-"	      004ff5a6    mov eax,[ebp-4]"
+"	      004ff5a6    mov eax,ptr"
 "	      004ff5a9    mov byte ptr [eax],33h"
-"	      004ff5ac    inc dword ptr [ebp-4]"
+"	      004ff5ac    inc ptr"
 );
 // LINE 652:
 	asm( 
-"	      004ff5af    mov eax,[ebp-4]"
+"	      004ff5af    mov eax,ptr"
 "	      004ff5b2    mov byte ptr [eax],33h"
-"	      004ff5b5    inc dword ptr [ebp-4]"
+"	      004ff5b5    inc ptr"
 );
 // LINE 653:
 	asm( 
@@ -1680,32 +1680,32 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 657:
 	asm( 
-"	      004ff5bd    cmp dword ptr [ebp-24h],70h"
+"	      004ff5bd    cmp tile,70h"
 "	      004ff5c1    jl near ptr 004FF5F0h"
 );
 // LINE 659:
 	asm( 
-"	      004ff5c7    mov eax,[ebp-4]"
+"	      004ff5c7    mov eax,ptr"
 "	      004ff5ca    mov byte ptr [eax],0E8h"
-"	      004ff5cd    inc dword ptr [ebp-4]"
+"	      004ff5cd    inc ptr"
 );
 // LINE 660:
 	asm( 
-"	      004ff5d0    mov eax,[ebp-4]"
+"	      004ff5d0    mov eax,ptr"
 "	      004ff5d3    mov byte ptr [eax],3Ah"
-"	      004ff5d6    inc dword ptr [ebp-4]"
+"	      004ff5d6    inc ptr"
 );
 // LINE 661:
 	asm( 
-"	      004ff5d9    mov eax,[ebp-4]"
+"	      004ff5d9    mov eax,ptr"
 "	      004ff5dc    mov byte ptr [eax],3Ah"
-"	      004ff5df    inc dword ptr [ebp-4]"
+"	      004ff5df    inc ptr"
 );
 // LINE 662:
 	asm( 
-"	      004ff5e2    mov eax,[ebp-4]"
+"	      004ff5e2    mov eax,ptr"
 "	      004ff5e5    mov byte ptr [eax],3Ah"
-"	      004ff5e8    inc dword ptr [ebp-4]"
+"	      004ff5e8    inc ptr"
 );
 // LINE 663:
 	asm( 
@@ -1713,172 +1713,172 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 667:
 	asm( 
-"	      004ff5f0    mov eax,[ebp-0Ch]"
-"	      004ff5f3    mov ecx,[ebp-8]"
+"	      004ff5f0    mov eax,y"
+"	      004ff5f3    mov ecx,x"
 "	      004ff5f6    shl ecx,8"
 "	      004ff5f9    mov al,[eax+ecx+66EB10h]"
-"	      004ff600    mov [ebp-10h],al"
+"	      004ff600    mov texid,al"
 );
 // LINE 668:
 	asm( 
-"	      004ff603    movsx eax,byte ptr [ebp-10h]"
+"	      004ff603    movsx eax,texid"
 "	      004ff607    cmp eax,30h"
 "	      004ff60a    jl near ptr 004FF6A6h"
-"	      004ff610    movsx eax,byte ptr [ebp-10h]"
+"	      004ff610    movsx eax,texid"
 "	      004ff614    cmp eax,40h"
 "	      004ff617    jge near ptr 004FF6A6h"
 );
 // LINE 670:
 	asm( 
-"	      004ff61d    mov eax,[ebp-0Ch]"
+"	      004ff61d    mov eax,y"
 "	      004ff620    and eax,ds:[5B5CBCh]"
 "	      004ff626    mov cl,ds:[5B5CC0h]"
 "	      004ff62c    shl eax,cl"
-"	      004ff62e    mov ecx,[ebp-8]"
+"	      004ff62e    mov ecx,x"
 "	      004ff631    and ecx,ds:[5B5CBCh]"
 "	      004ff637    add ecx,ecx"
 "	      004ff639    lea eax,[ecx+eax*2]"
 "	      004ff63c    mov ecx,ds:[67EB10h]"
 "	      004ff642    mov ax,[eax+ecx]"
-"	      004ff646    mov [ebp-18h],ax"
+"	      004ff646    mov alt,ax"
 );
 // LINE 671:
 	asm( 
 "	      004ff64a    mov eax,[ebp-18h]"
 "	      004ff64d    and eax,0FFFFh"
 "	      004ff652    shr eax,6"
-"	      004ff655    mov [ebp-18h],ax"
+"	      004ff655    mov alt,ax"
 );
 // LINE 672:
 	asm( 
-"	      004ff659    mov eax,[ebp-4]"
+"	      004ff659    mov eax,ptr"
 "	      004ff65c    mov byte ptr [eax],0E8h"
-"	      004ff65f    inc dword ptr [ebp-4]"
+"	      004ff65f    inc ptr"
 );
 // LINE 673:
 	asm( 
 "	      004ff662    mov eax,[ebp-18h]"
 "	      004ff665    and eax,0FFFFh"
 "	      004ff66a    sub eax,80h"
-"	      004ff66f    mov ecx,[ebp-4]"
+"	      004ff66f    mov ecx,ptr"
 "	      004ff672    mov [ecx],al"
-"	      004ff674    inc dword ptr [ebp-4]"
+"	      004ff674    inc ptr"
 );
 // LINE 674:
 	asm( 
 "	      004ff677    mov eax,[ebp-18h]"
 "	      004ff67a    and eax,0FFFFh"
 "	      004ff67f    sub eax,80h"
-"	      004ff684    mov ecx,[ebp-4]"
+"	      004ff684    mov ecx,ptr"
 "	      004ff687    mov [ecx],al"
-"	      004ff689    inc dword ptr [ebp-4]"
+"	      004ff689    inc ptr"
 );
 // LINE 675:
 	asm( 
 "	      004ff68c    mov eax,[ebp-18h]"
 "	      004ff68f    and eax,0FFFFh"
 "	      004ff694    sub eax,80h"
-"	      004ff699    mov ecx,[ebp-4]"
+"	      004ff699    mov ecx,ptr"
 "	      004ff69c    mov [ecx],al"
-"	      004ff69e    inc dword ptr [ebp-4]"
+"	      004ff69e    inc ptr"
 );
 // LINE 677:
 	asm( 
 "	      004ff6a1    jmp near ptr 004FF809h"
-"	      004ff6a6    movsx eax,byte ptr [ebp-10h]"
+"	      004ff6a6    movsx eax,texid"
 "	      004ff6aa    test eax,eax"
 "	      004ff6ac    jl near ptr 004FF6E8h"
-"	      004ff6b2    movsx eax,byte ptr [ebp-10h]"
+"	      004ff6b2    movsx eax,texid"
 "	      004ff6b6    cmp eax,0Ah"
 "	      004ff6b9    jge near ptr 004FF6E8h"
 );
 // LINE 679:
 	asm( 
-"	      004ff6bf    mov eax,[ebp-4]"
+"	      004ff6bf    mov eax,ptr"
 "	      004ff6c2    mov byte ptr [eax],0E8h"
-"	      004ff6c5    inc dword ptr [ebp-4]"
+"	      004ff6c5    inc ptr"
 );
 // LINE 680:
 	asm( 
-"	      004ff6c8    mov eax,[ebp-4]"
+"	      004ff6c8    mov eax,ptr"
 "	      004ff6cb    mov byte ptr [eax],90h"
-"	      004ff6ce    inc dword ptr [ebp-4]"
+"	      004ff6ce    inc ptr"
 );
 // LINE 681:
 	asm( 
-"	      004ff6d1    mov eax,[ebp-4]"
+"	      004ff6d1    mov eax,ptr"
 "	      004ff6d4    mov byte ptr [eax],90h"
-"	      004ff6d7    inc dword ptr [ebp-4]"
+"	      004ff6d7    inc ptr"
 );
 // LINE 682:
 	asm( 
-"	      004ff6da    mov eax,[ebp-4]"
+"	      004ff6da    mov eax,ptr"
 "	      004ff6dd    mov byte ptr [eax],90h"
-"	      004ff6e0    inc dword ptr [ebp-4]"
+"	      004ff6e0    inc ptr"
 );
 // LINE 684:
 	asm( 
 "	      004ff6e3    jmp near ptr 004FF809h"
-"	      004ff6e8    movsx eax,byte ptr [ebp-10h]"
+"	      004ff6e8    movsx eax,texid"
 "	      004ff6ec    cmp eax,20h"
 "	      004ff6ef    jl near ptr 004FF785h"
-"	      004ff6f5    movsx eax,byte ptr [ebp-10h]"
+"	      004ff6f5    movsx eax,texid"
 "	      004ff6f9    cmp eax,30h"
 "	      004ff6fc    jge near ptr 004FF785h"
 );
 // LINE 686:
 	asm( 
-"	      004ff702    mov eax,[ebp-0Ch]"
+"	      004ff702    mov eax,y"
 "	      004ff705    and eax,ds:[5B5CBCh]"
 "	      004ff70b    mov cl,ds:[5B5CC0h]"
 "	      004ff711    shl eax,cl"
-"	      004ff713    mov ecx,[ebp-8]"
+"	      004ff713    mov ecx,x"
 "	      004ff716    and ecx,ds:[5B5CBCh]"
 "	      004ff71c    add ecx,ecx"
 "	      004ff71e    lea eax,[ecx+eax*2]"
 "	      004ff721    mov ecx,ds:[67EB10h]"
 "	      004ff727    mov ax,[eax+ecx]"
-"	      004ff72b    mov [ebp-18h],ax"
+"	      004ff72b    mov alt,ax"
 );
 // LINE 687:
 	asm( 
 "	      004ff72f    mov eax,[ebp-18h]"
 "	      004ff732    and eax,0FFFFh"
 "	      004ff737    shr eax,6"
-"	      004ff73a    mov [ebp-18h],ax"
+"	      004ff73a    mov alt,ax"
 );
 // LINE 688:
 	asm( 
-"	      004ff73e    mov eax,[ebp-4]"
+"	      004ff73e    mov eax,ptr"
 "	      004ff741    mov byte ptr [eax],0E8h"
-"	      004ff744    inc dword ptr [ebp-4]"
+"	      004ff744    inc ptr"
 );
 // LINE 689:
 	asm( 
 "	      004ff747    mov eax,[ebp-18h]"
 "	      004ff74a    and eax,0FFFFh"
 "	      004ff74f    add eax,50h"
-"	      004ff752    mov ecx,[ebp-4]"
+"	      004ff752    mov ecx,ptr"
 "	      004ff755    mov [ecx],al"
-"	      004ff757    inc dword ptr [ebp-4]"
+"	      004ff757    inc ptr"
 );
 // LINE 690:
 	asm( 
 "	      004ff75a    mov eax,[ebp-18h]"
 "	      004ff75d    and eax,0FFFFh"
 "	      004ff762    add eax,50h"
-"	      004ff765    mov ecx,[ebp-4]"
+"	      004ff765    mov ecx,ptr"
 "	      004ff768    mov [ecx],al"
-"	      004ff76a    inc dword ptr [ebp-4]"
+"	      004ff76a    inc ptr"
 );
 // LINE 691:
 	asm( 
 "	      004ff76d    mov eax,[ebp-18h]"
 "	      004ff770    and eax,0FFFFh"
 "	      004ff775    add eax,50h"
-"	      004ff778    mov ecx,[ebp-4]"
+"	      004ff778    mov ecx,ptr"
 "	      004ff77b    mov [ecx],al"
-"	      004ff77d    inc dword ptr [ebp-4]"
+"	      004ff77d    inc ptr"
 );
 // LINE 693:
 	asm( 
@@ -1886,57 +1886,57 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 695:
 	asm( 
-"	      004ff785    mov eax,[ebp-0Ch]"
+"	      004ff785    mov eax,y"
 "	      004ff788    and eax,ds:[5B5CBCh]"
 "	      004ff78e    mov cl,ds:[5B5CC0h]"
 "	      004ff794    shl eax,cl"
-"	      004ff796    mov ecx,[ebp-8]"
+"	      004ff796    mov ecx,x"
 "	      004ff799    and ecx,ds:[5B5CBCh]"
 "	      004ff79f    add ecx,ecx"
 "	      004ff7a1    lea eax,[ecx+eax*2]"
 "	      004ff7a4    mov ecx,ds:[67EB10h]"
 "	      004ff7aa    mov ax,[eax+ecx]"
-"	      004ff7ae    mov [ebp-18h],ax"
+"	      004ff7ae    mov alt,ax"
 );
 // LINE 696:
 	asm( 
 "	      004ff7b2    mov eax,[ebp-18h]"
 "	      004ff7b5    and eax,0FFFFh"
 "	      004ff7ba    shr eax,6"
-"	      004ff7bd    mov [ebp-18h],ax"
+"	      004ff7bd    mov alt,ax"
 );
 // LINE 697:
 	asm( 
-"	      004ff7c1    mov eax,[ebp-4]"
+"	      004ff7c1    mov eax,ptr"
 "	      004ff7c4    mov byte ptr [eax],0E8h"
-"	      004ff7c7    inc dword ptr [ebp-4]"
+"	      004ff7c7    inc ptr"
 );
 // LINE 698:
 	asm( 
 "	      004ff7ca    mov eax,[ebp-18h]"
 "	      004ff7cd    and eax,0FFFFh"
 "	      004ff7d2    sub eax,80h"
-"	      004ff7d7    mov ecx,[ebp-4]"
+"	      004ff7d7    mov ecx,ptr"
 "	      004ff7da    mov [ecx],al"
-"	      004ff7dc    inc dword ptr [ebp-4]"
+"	      004ff7dc    inc ptr"
 );
 // LINE 699:
 	asm( 
 "	      004ff7df    mov eax,[ebp-18h]"
 "	      004ff7e2    and eax,0FFFFh"
 "	      004ff7e7    sub eax,80h"
-"	      004ff7ec    mov ecx,[ebp-4]"
+"	      004ff7ec    mov ecx,ptr"
 "	      004ff7ef    mov [ecx],al"
-"	      004ff7f1    inc dword ptr [ebp-4]"
+"	      004ff7f1    inc ptr"
 );
 // LINE 700:
 	asm( 
 "	      004ff7f4    mov eax,[ebp-18h]"
 "	      004ff7f7    and eax,0FFFFh"
 "	      004ff7fc    sub eax,80h"
-"	      004ff801    mov ecx,[ebp-4]"
+"	      004ff801    mov ecx,ptr"
 "	      004ff804    mov [ecx],al"
-"	      004ff806    inc dword ptr [ebp-4]"
+"	      004ff806    inc ptr"
 );
 // LINE 702:
 	asm( 
@@ -1944,12 +1944,12 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 703:
 	asm( 
-"	      004ff80e    add dword ptr [ebp-4],14h"
+"	      004ff80e    add ptr,14h"
 );
 // LINE 704:
 	asm( 
 "	      004ff812    mov edx,ds:[5B527Ch]"
-"	      004ff818    mov edi,[ebp-4]"
+"	      004ff818    mov edi,ptr"
 "	      004ff81b    mov eax,0E8E8E8E8h"
 "	      004ff820    mov ecx,edx"
 "	      004ff822    shr ecx,2"
@@ -1961,13 +1961,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 705:
 	asm( 
 "	      004ff82e    mov eax,ds:[5B5268h]"
-"	      004ff833    add [ebp-4],eax"
+"	      004ff833    add ptr,eax"
 );
 // LINE 706:
 	asm( 
 "	      004ff836    mov eax,ds:[5B527Ch]"
-"	      004ff83b    mov edi,[ebp-4]"
-"	      004ff83e    mov esi,[ebp-1Ch]"
+"	      004ff83b    mov edi,ptr"
+"	      004ff83e    mov esi,lineptr"
 "	      004ff841    mov ecx,eax"
 "	      004ff843    shr ecx,2"
 "	      004ff846    rep movsd"
@@ -1978,13 +1978,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 707:
 	asm( 
 "	      004ff84f    mov eax,ds:[5B5268h]"
-"	      004ff854    add [ebp-4],eax"
+"	      004ff854    add ptr,eax"
 );
 // LINE 708:
 	asm( 
 "	      004ff857    mov eax,ds:[5B527Ch]"
-"	      004ff85c    mov edi,[ebp-4]"
-"	      004ff85f    mov esi,[ebp-1Ch]"
+"	      004ff85c    mov edi,ptr"
+"	      004ff85f    mov esi,lineptr"
 "	      004ff862    mov ecx,eax"
 "	      004ff864    shr ecx,2"
 "	      004ff867    rep movsd"
@@ -1995,7 +1995,7 @@ void S3MapRender(long posx, long posy) {
 // LINE 709:
 	asm( 
 "	      004ff870    mov eax,ds:[5B5268h]"
-"	      004ff875    add [ebp-4],eax"
+"	      004ff875    add ptr,eax"
 );
 // LINE 710:
 	asm( 
@@ -2007,7 +2007,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 715:
 	asm( 
-"	      004ff882    mov eax,[ebp+8]"
+"	      004ff882    mov eax,posx"
 "	      004ff885    mov ecx,ds:[5B527Ch]"
 "	      004ff88b    sar ecx,4"
 "	      004ff88e    sub eax,ecx"
@@ -2015,7 +2015,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 716:
 	asm( 
-"	      004ff895    mov eax,[ebp+0Ch]"
+"	      004ff895    mov eax,posy"
 "	      004ff898    mov ecx,ds:[5B5280h]"
 "	      004ff89e    sar ecx,4"
 "	      004ff8a1    sub eax,ecx"
@@ -2041,98 +2041,98 @@ void S3MapRender(long posx, long posy) {
 // LINE 720:
 	asm( 
 "	      004ff8d2    mov eax,ds:[608C0Ch]"
-"	      004ff8d7    mov [ebp-0Ch],eax"
-"	      004ff8da    mov dword ptr [ebp-20h],0"
+"	      004ff8d7    mov y,eax"
+"	      004ff8da    mov county,0"
 "	      004ff8e1    jmp near ptr 004FF8ECh"
-"	      004ff8e6    inc dword ptr [ebp-20h]"
-"	      004ff8e9    inc dword ptr [ebp-0Ch]"
+"	      004ff8e6    inc county"
+"	      004ff8e9    inc y"
 "	      004ff8ec    mov eax,ds:[5B5280h]"
 "	      004ff8f1    sar eax,3"
-"	      004ff8f4    cmp eax,[ebp-20h]"
+"	      004ff8f4    cmp eax,county"
 "	      004ff8f7    jle near ptr 0050016Eh"
 );
 // LINE 722:
 	asm( 
-"	      004ff8fd    and dword ptr [ebp-0Ch],0FFh"
+"	      004ff8fd    and y,0FFh"
 );
 // LINE 724:
 	asm( 
-"	      004ff904    mov eax,[ebp-4]"
-"	      004ff907    mov [ebp-1Ch],eax"
+"	      004ff904    mov eax,ptr"
+"	      004ff907    mov lineptr,eax"
 );
 // LINE 726:
 	asm( 
 "	      004ff90a    mov eax,ds:[608C08h]"
-"	      004ff90f    mov [ebp-8],eax"
-"	      004ff912    mov dword ptr [ebp-28h],0"
+"	      004ff90f    mov x,eax"
+"	      004ff912    mov countx,0"
 "	      004ff919    jmp near ptr 004FF924h"
-"	      004ff91e    inc dword ptr [ebp-28h]"
-"	      004ff921    inc dword ptr [ebp-8]"
+"	      004ff91e    inc countx"
+"	      004ff921    inc x"
 "	      004ff924    mov eax,ds:[5B527Ch]"
 "	      004ff929    sar eax,3"
-"	      004ff92c    cmp eax,[ebp-28h]"
+"	      004ff92c    cmp eax,countx"
 "	      004ff92f    jle near ptr 0050007Bh"
 );
 // LINE 728:
 	asm( 
-"	      004ff935    and dword ptr [ebp-8],0FFh"
+"	      004ff935    and x,0FFh"
 );
 // LINE 730:
 	asm( 
-"	      004ff93c    mov eax,[ebp+8]"
-"	      004ff93f    cmp [ebp-8],eax"
+"	      004ff93c    mov eax,posx"
+"	      004ff93f    cmp x,eax"
 "	      004ff942    jne near ptr 004FF9A1h"
-"	      004ff948    mov eax,[ebp+0Ch]"
-"	      004ff94b    cmp [ebp-0Ch],eax"
+"	      004ff948    mov eax,posy"
+"	      004ff94b    cmp y,eax"
 "	      004ff94e    jne near ptr 004FF9A1h"
 );
 // LINE 732:
 	asm( 
-"	      004ff954    mov eax,[ebp-4]"
+"	      004ff954    mov eax,ptr"
 "	      004ff957    mov byte ptr [eax],0E8h"
-"	      004ff95a    inc dword ptr [ebp-4]"
+"	      004ff95a    inc ptr"
 );
 // LINE 733:
 	asm( 
-"	      004ff95d    mov eax,[ebp-4]"
+"	      004ff95d    mov eax,ptr"
 "	      004ff960    mov byte ptr [eax],70h"
-"	      004ff963    inc dword ptr [ebp-4]"
+"	      004ff963    inc ptr"
 );
 // LINE 734:
 	asm( 
-"	      004ff966    mov eax,[ebp-4]"
+"	      004ff966    mov eax,ptr"
 "	      004ff969    mov byte ptr [eax],70h"
-"	      004ff96c    inc dword ptr [ebp-4]"
+"	      004ff96c    inc ptr"
 );
 // LINE 735:
 	asm( 
-"	      004ff96f    mov eax,[ebp-4]"
+"	      004ff96f    mov eax,ptr"
 "	      004ff972    mov byte ptr [eax],70h"
-"	      004ff975    inc dword ptr [ebp-4]"
+"	      004ff975    inc ptr"
 );
 // LINE 736:
 	asm( 
-"	      004ff978    mov eax,[ebp-4]"
+"	      004ff978    mov eax,ptr"
 "	      004ff97b    mov byte ptr [eax],70h"
-"	      004ff97e    inc dword ptr [ebp-4]"
+"	      004ff97e    inc ptr"
 );
 // LINE 737:
 	asm( 
-"	      004ff981    mov eax,[ebp-4]"
+"	      004ff981    mov eax,ptr"
 "	      004ff984    mov byte ptr [eax],70h"
-"	      004ff987    inc dword ptr [ebp-4]"
+"	      004ff987    inc ptr"
 );
 // LINE 738:
 	asm( 
-"	      004ff98a    mov eax,[ebp-4]"
+"	      004ff98a    mov eax,ptr"
 "	      004ff98d    mov byte ptr [eax],70h"
-"	      004ff990    inc dword ptr [ebp-4]"
+"	      004ff990    inc ptr"
 );
 // LINE 739:
 	asm( 
-"	      004ff993    mov eax,[ebp-4]"
+"	      004ff993    mov eax,ptr"
 "	      004ff996    mov byte ptr [eax],70h"
-"	      004ff999    inc dword ptr [ebp-4]"
+"	      004ff999    inc ptr"
 );
 // LINE 740:
 	asm( 
@@ -2140,14 +2140,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 745:
 	asm( 
-"	      004ff9a1    cmp dword ptr [ebp-8],7Fh"
+"	      004ff9a1    cmp x,7Fh"
 "	      004ff9a5    jg near ptr 004FF9B5h"
-"	      004ff9ab    cmp dword ptr [ebp-0Ch],7Fh"
+"	      004ff9ab    cmp y,7Fh"
 "	      004ff9af    jle near ptr 004FF9C1h"
 );
 // LINE 747:
 	asm( 
-"	      004ff9b5    mov dword ptr [ebp-24h],0"
+"	      004ff9b5    mov tile,0"
 );
 // LINE 749:
 	asm( 
@@ -2155,91 +2155,91 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 752:
 	asm( 
-"	      004ff9c1    mov eax,[ebp-8]"
+"	      004ff9c1    mov eax,x"
 "	      004ff9c4    mov eax,[eax*4+639850h]"
-"	      004ff9cb    mov ecx,[ebp-0Ch]"
+"	      004ff9cb    mov ecx,y"
 "	      004ff9ce    xor edx,edx"
 "	      004ff9d0    mov dl,[eax+ecx]"
-"	      004ff9d3    mov [ebp-24h],edx"
+"	      004ff9d3    mov tile,edx"
 );
 // LINE 758:
 	asm( 
-"	      004ff9d6    mov eax,[ebp-8]"
+"	      004ff9d6    mov eax,x"
 "	      004ff9d9    and eax,0FFh"
 "	      004ff9de    shl eax,0Ah"
-"	      004ff9e1    mov ecx,[ebp-0Ch]"
+"	      004ff9e1    mov ecx,y"
 "	      004ff9e4    and ecx,0FFh"
 "	      004ff9ea    mov eax,[eax+ecx*4+67ED30h]"
-"	      004ff9f1    mov [ebp-14h],eax"
+"	      004ff9f1    mov cptr,eax"
 );
 // LINE 759:
 	asm( 
-"	      004ff9f4    mov eax,[ebp-14h]"
+"	      004ff9f4    mov eax,cptr"
 "	      004ff9f7    movsx eax,word ptr [eax]"
 "	      004ff9fa    test al,20h"
 "	      004ff9fc    je near ptr 004FFA8Eh"
 );
 // LINE 761:
 	asm( 
-"	      004ffa02    mov eax,[ebp-4]"
+"	      004ffa02    mov eax,ptr"
 "	      004ffa05    mov byte ptr [eax],0E8h"
-"	      004ffa08    inc dword ptr [ebp-4]"
+"	      004ffa08    inc ptr"
 );
 // LINE 762:
 	asm( 
 "	      004ffa0b    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa12    add eax,10h"
-"	      004ffa15    mov ecx,[ebp-4]"
+"	      004ffa15    mov ecx,ptr"
 "	      004ffa18    mov [ecx],al"
-"	      004ffa1a    inc dword ptr [ebp-4]"
+"	      004ffa1a    inc ptr"
 );
 // LINE 763:
 	asm( 
 "	      004ffa1d    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa24    add eax,10h"
-"	      004ffa27    mov ecx,[ebp-4]"
+"	      004ffa27    mov ecx,ptr"
 "	      004ffa2a    mov [ecx],al"
-"	      004ffa2c    inc dword ptr [ebp-4]"
+"	      004ffa2c    inc ptr"
 );
 // LINE 764:
 	asm( 
 "	      004ffa2f    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa36    add eax,10h"
-"	      004ffa39    mov ecx,[ebp-4]"
+"	      004ffa39    mov ecx,ptr"
 "	      004ffa3c    mov [ecx],al"
-"	      004ffa3e    inc dword ptr [ebp-4]"
+"	      004ffa3e    inc ptr"
 );
 // LINE 765:
 	asm( 
 "	      004ffa41    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa48    add eax,10h"
-"	      004ffa4b    mov ecx,[ebp-4]"
+"	      004ffa4b    mov ecx,ptr"
 "	      004ffa4e    mov [ecx],al"
-"	      004ffa50    inc dword ptr [ebp-4]"
+"	      004ffa50    inc ptr"
 );
 // LINE 766:
 	asm( 
 "	      004ffa53    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa5a    add eax,10h"
-"	      004ffa5d    mov ecx,[ebp-4]"
+"	      004ffa5d    mov ecx,ptr"
 "	      004ffa60    mov [ecx],al"
-"	      004ffa62    inc dword ptr [ebp-4]"
+"	      004ffa62    inc ptr"
 );
 // LINE 767:
 	asm( 
 "	      004ffa65    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa6c    add eax,10h"
-"	      004ffa6f    mov ecx,[ebp-4]"
+"	      004ffa6f    mov ecx,ptr"
 "	      004ffa72    mov [ecx],al"
-"	      004ffa74    inc dword ptr [ebp-4]"
+"	      004ffa74    inc ptr"
 );
 // LINE 768:
 	asm( 
 "	      004ffa77    movsx eax,byte ptr ds:[5B5284h]"
 "	      004ffa7e    add eax,10h"
-"	      004ffa81    mov ecx,[ebp-4]"
+"	      004ffa81    mov ecx,ptr"
 "	      004ffa84    mov [ecx],al"
-"	      004ffa86    inc dword ptr [ebp-4]"
+"	      004ffa86    inc ptr"
 );
 // LINE 769:
 	asm( 
@@ -2247,56 +2247,56 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 772:
 	asm( 
-"	      004ffa8e    cmp dword ptr [ebp-24h],0D1h"
+"	      004ffa8e    cmp tile,0D1h"
 "	      004ffa95    jne near ptr 004FFAE8h"
 );
 // LINE 774:
 	asm( 
-"	      004ffa9b    mov eax,[ebp-4]"
+"	      004ffa9b    mov eax,ptr"
 "	      004ffa9e    mov byte ptr [eax],0E8h"
-"	      004ffaa1    inc dword ptr [ebp-4]"
+"	      004ffaa1    inc ptr"
 );
 // LINE 775:
 	asm( 
-"	      004ffaa4    mov eax,[ebp-4]"
+"	      004ffaa4    mov eax,ptr"
 "	      004ffaa7    mov byte ptr [eax],0EAh"
-"	      004ffaaa    inc dword ptr [ebp-4]"
+"	      004ffaaa    inc ptr"
 );
 // LINE 776:
 	asm( 
-"	      004ffaad    mov eax,[ebp-4]"
+"	      004ffaad    mov eax,ptr"
 "	      004ffab0    mov byte ptr [eax],0EAh"
-"	      004ffab3    inc dword ptr [ebp-4]"
+"	      004ffab3    inc ptr"
 );
 // LINE 777:
 	asm( 
-"	      004ffab6    mov eax,[ebp-4]"
+"	      004ffab6    mov eax,ptr"
 "	      004ffab9    mov byte ptr [eax],0EAh"
-"	      004ffabc    inc dword ptr [ebp-4]"
+"	      004ffabc    inc ptr"
 );
 // LINE 778:
 	asm( 
-"	      004ffabf    mov eax,[ebp-4]"
+"	      004ffabf    mov eax,ptr"
 "	      004ffac2    mov byte ptr [eax],0EAh"
-"	      004ffac5    inc dword ptr [ebp-4]"
+"	      004ffac5    inc ptr"
 );
 // LINE 779:
 	asm( 
-"	      004ffac8    mov eax,[ebp-4]"
+"	      004ffac8    mov eax,ptr"
 "	      004ffacb    mov byte ptr [eax],0EAh"
-"	      004fface    inc dword ptr [ebp-4]"
+"	      004fface    inc ptr"
 );
 // LINE 780:
 	asm( 
-"	      004ffad1    mov eax,[ebp-4]"
+"	      004ffad1    mov eax,ptr"
 "	      004ffad4    mov byte ptr [eax],0EAh"
-"	      004ffad7    inc dword ptr [ebp-4]"
+"	      004ffad7    inc ptr"
 );
 // LINE 781:
 	asm( 
-"	      004ffada    mov eax,[ebp-4]"
+"	      004ffada    mov eax,ptr"
 "	      004ffadd    mov byte ptr [eax],0EAh"
-"	      004ffae0    inc dword ptr [ebp-4]"
+"	      004ffae0    inc ptr"
 );
 // LINE 782:
 	asm( 
@@ -2304,56 +2304,56 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 784:
 	asm( 
-"	      004ffae8    cmp dword ptr [ebp-24h],0D2h"
+"	      004ffae8    cmp tile,0D2h"
 "	      004ffaef    jne near ptr 004FFB42h"
 );
 // LINE 786:
 	asm( 
-"	      004ffaf5    mov eax,[ebp-4]"
+"	      004ffaf5    mov eax,ptr"
 "	      004ffaf8    mov byte ptr [eax],0E8h"
-"	      004ffafb    inc dword ptr [ebp-4]"
+"	      004ffafb    inc ptr"
 );
 // LINE 787:
 	asm( 
-"	      004ffafe    mov eax,[ebp-4]"
+"	      004ffafe    mov eax,ptr"
 "	      004ffb01    mov byte ptr [eax],9Ah"
-"	      004ffb04    inc dword ptr [ebp-4]"
+"	      004ffb04    inc ptr"
 );
 // LINE 788:
 	asm( 
-"	      004ffb07    mov eax,[ebp-4]"
+"	      004ffb07    mov eax,ptr"
 "	      004ffb0a    mov byte ptr [eax],9Ah"
-"	      004ffb0d    inc dword ptr [ebp-4]"
+"	      004ffb0d    inc ptr"
 );
 // LINE 789:
 	asm( 
-"	      004ffb10    mov eax,[ebp-4]"
+"	      004ffb10    mov eax,ptr"
 "	      004ffb13    mov byte ptr [eax],9Ah"
-"	      004ffb16    inc dword ptr [ebp-4]"
+"	      004ffb16    inc ptr"
 );
 // LINE 790:
 	asm( 
-"	      004ffb19    mov eax,[ebp-4]"
+"	      004ffb19    mov eax,ptr"
 "	      004ffb1c    mov byte ptr [eax],9Ah"
-"	      004ffb1f    inc dword ptr [ebp-4]"
+"	      004ffb1f    inc ptr"
 );
 // LINE 791:
 	asm( 
-"	      004ffb22    mov eax,[ebp-4]"
+"	      004ffb22    mov eax,ptr"
 "	      004ffb25    mov byte ptr [eax],9Ah"
-"	      004ffb28    inc dword ptr [ebp-4]"
+"	      004ffb28    inc ptr"
 );
 // LINE 792:
 	asm( 
-"	      004ffb2b    mov eax,[ebp-4]"
+"	      004ffb2b    mov eax,ptr"
 "	      004ffb2e    mov byte ptr [eax],9Ah"
-"	      004ffb31    inc dword ptr [ebp-4]"
+"	      004ffb31    inc ptr"
 );
 // LINE 793:
 	asm( 
-"	      004ffb34    mov eax,[ebp-4]"
+"	      004ffb34    mov eax,ptr"
 "	      004ffb37    mov byte ptr [eax],9Ah"
-"	      004ffb3a    inc dword ptr [ebp-4]"
+"	      004ffb3a    inc ptr"
 );
 // LINE 794:
 	asm( 
@@ -2361,56 +2361,56 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 796:
 	asm( 
-"	      004ffb42    cmp dword ptr [ebp-24h],0D3h"
+"	      004ffb42    cmp tile,0D3h"
 "	      004ffb49    jne near ptr 004FFB9Ch"
 );
 // LINE 798:
 	asm( 
-"	      004ffb4f    mov eax,[ebp-4]"
+"	      004ffb4f    mov eax,ptr"
 "	      004ffb52    mov byte ptr [eax],0E8h"
-"	      004ffb55    inc dword ptr [ebp-4]"
+"	      004ffb55    inc ptr"
 );
 // LINE 799:
 	asm( 
-"	      004ffb58    mov eax,[ebp-4]"
+"	      004ffb58    mov eax,ptr"
 "	      004ffb5b    mov byte ptr [eax],1Ah"
-"	      004ffb5e    inc dword ptr [ebp-4]"
+"	      004ffb5e    inc ptr"
 );
 // LINE 800:
 	asm( 
-"	      004ffb61    mov eax,[ebp-4]"
+"	      004ffb61    mov eax,ptr"
 "	      004ffb64    mov byte ptr [eax],1Ah"
-"	      004ffb67    inc dword ptr [ebp-4]"
+"	      004ffb67    inc ptr"
 );
 // LINE 801:
 	asm( 
-"	      004ffb6a    mov eax,[ebp-4]"
+"	      004ffb6a    mov eax,ptr"
 "	      004ffb6d    mov byte ptr [eax],1Ah"
-"	      004ffb70    inc dword ptr [ebp-4]"
+"	      004ffb70    inc ptr"
 );
 // LINE 802:
 	asm( 
-"	      004ffb73    mov eax,[ebp-4]"
+"	      004ffb73    mov eax,ptr"
 "	      004ffb76    mov byte ptr [eax],1Ah"
-"	      004ffb79    inc dword ptr [ebp-4]"
+"	      004ffb79    inc ptr"
 );
 // LINE 803:
 	asm( 
-"	      004ffb7c    mov eax,[ebp-4]"
+"	      004ffb7c    mov eax,ptr"
 "	      004ffb7f    mov byte ptr [eax],1Ah"
-"	      004ffb82    inc dword ptr [ebp-4]"
+"	      004ffb82    inc ptr"
 );
 // LINE 804:
 	asm( 
-"	      004ffb85    mov eax,[ebp-4]"
+"	      004ffb85    mov eax,ptr"
 "	      004ffb88    mov byte ptr [eax],1Ah"
-"	      004ffb8b    inc dword ptr [ebp-4]"
+"	      004ffb8b    inc ptr"
 );
 // LINE 805:
 	asm( 
-"	      004ffb8e    mov eax,[ebp-4]"
+"	      004ffb8e    mov eax,ptr"
 "	      004ffb91    mov byte ptr [eax],1Ah"
-"	      004ffb94    inc dword ptr [ebp-4]"
+"	      004ffb94    inc ptr"
 );
 // LINE 806:
 	asm( 
@@ -2418,68 +2418,68 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 809:
 	asm( 
-"	      004ffb9c    mov eax,[ebp-8]"
+"	      004ffb9c    mov eax,x"
 "	      004ffb9f    cmp ds:[6C1190h],eax"
 "	      004ffba5    jg near ptr 004FFC29h"
 "	      004ffbab    mov eax,ds:[6C1190h]"
 "	      004ffbb0    add eax,4"
-"	      004ffbb3    cmp eax,[ebp-8]"
+"	      004ffbb3    cmp eax,x"
 "	      004ffbb6    jle near ptr 004FFC29h"
-"	      004ffbbc    mov eax,[ebp-0Ch]"
+"	      004ffbbc    mov eax,y"
 "	      004ffbbf    cmp ds:[6C1194h],eax"
 "	      004ffbc5    jg near ptr 004FFC29h"
 "	      004ffbcb    mov eax,ds:[6C1194h]"
 "	      004ffbd0    add eax,4"
-"	      004ffbd3    cmp eax,[ebp-0Ch]"
+"	      004ffbd3    cmp eax,y"
 "	      004ffbd6    jle near ptr 004FFC29h"
 );
 // LINE 811:
 	asm( 
-"	      004ffbdc    mov eax,[ebp-4]"
+"	      004ffbdc    mov eax,ptr"
 "	      004ffbdf    mov byte ptr [eax],0E8h"
-"	      004ffbe2    inc dword ptr [ebp-4]"
+"	      004ffbe2    inc ptr"
 );
 // LINE 812:
 	asm( 
-"	      004ffbe5    mov eax,[ebp-4]"
+"	      004ffbe5    mov eax,ptr"
 "	      004ffbe8    mov byte ptr [eax],0CAh"
-"	      004ffbeb    inc dword ptr [ebp-4]"
+"	      004ffbeb    inc ptr"
 );
 // LINE 813:
 	asm( 
-"	      004ffbee    mov eax,[ebp-4]"
+"	      004ffbee    mov eax,ptr"
 "	      004ffbf1    mov byte ptr [eax],0CAh"
-"	      004ffbf4    inc dword ptr [ebp-4]"
+"	      004ffbf4    inc ptr"
 );
 // LINE 814:
 	asm( 
-"	      004ffbf7    mov eax,[ebp-4]"
+"	      004ffbf7    mov eax,ptr"
 "	      004ffbfa    mov byte ptr [eax],0CAh"
-"	      004ffbfd    inc dword ptr [ebp-4]"
+"	      004ffbfd    inc ptr"
 );
 // LINE 815:
 	asm( 
-"	      004ffc00    mov eax,[ebp-4]"
+"	      004ffc00    mov eax,ptr"
 "	      004ffc03    mov byte ptr [eax],0CAh"
-"	      004ffc06    inc dword ptr [ebp-4]"
+"	      004ffc06    inc ptr"
 );
 // LINE 816:
 	asm( 
-"	      004ffc09    mov eax,[ebp-4]"
+"	      004ffc09    mov eax,ptr"
 "	      004ffc0c    mov byte ptr [eax],0CAh"
-"	      004ffc0f    inc dword ptr [ebp-4]"
+"	      004ffc0f    inc ptr"
 );
 // LINE 817:
 	asm( 
-"	      004ffc12    mov eax,[ebp-4]"
+"	      004ffc12    mov eax,ptr"
 "	      004ffc15    mov byte ptr [eax],0CAh"
-"	      004ffc18    inc dword ptr [ebp-4]"
+"	      004ffc18    inc ptr"
 );
 // LINE 818:
 	asm( 
-"	      004ffc1b    mov eax,[ebp-4]"
+"	      004ffc1b    mov eax,ptr"
 "	      004ffc1e    mov byte ptr [eax],0CAh"
-"	      004ffc21    inc dword ptr [ebp-4]"
+"	      004ffc21    inc ptr"
 );
 // LINE 819:
 	asm( 
@@ -2487,58 +2487,58 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 823:
 	asm( 
-"	      004ffc29    cmp dword ptr [ebp-24h],0Dh"
+"	      004ffc29    cmp tile,0Dh"
 "	      004ffc2d    je near ptr 004FFC40h"
-"	      004ffc33    cmp dword ptr [ebp-24h],0D5h"
+"	      004ffc33    cmp tile,0D5h"
 "	      004ffc3a    jne near ptr 004FFC8Dh"
 );
 // LINE 825:
 	asm( 
-"	      004ffc40    mov eax,[ebp-4]"
+"	      004ffc40    mov eax,ptr"
 "	      004ffc43    mov byte ptr [eax],0E8h"
-"	      004ffc46    inc dword ptr [ebp-4]"
+"	      004ffc46    inc ptr"
 );
 // LINE 826:
 	asm( 
-"	      004ffc49    mov eax,[ebp-4]"
+"	      004ffc49    mov eax,ptr"
 "	      004ffc4c    mov byte ptr [eax],5Ah"
-"	      004ffc4f    inc dword ptr [ebp-4]"
+"	      004ffc4f    inc ptr"
 );
 // LINE 827:
 	asm( 
-"	      004ffc52    mov eax,[ebp-4]"
+"	      004ffc52    mov eax,ptr"
 "	      004ffc55    mov byte ptr [eax],5Ah"
-"	      004ffc58    inc dword ptr [ebp-4]"
+"	      004ffc58    inc ptr"
 );
 // LINE 828:
 	asm( 
-"	      004ffc5b    mov eax,[ebp-4]"
+"	      004ffc5b    mov eax,ptr"
 "	      004ffc5e    mov byte ptr [eax],5Ah"
-"	      004ffc61    inc dword ptr [ebp-4]"
+"	      004ffc61    inc ptr"
 );
 // LINE 829:
 	asm( 
-"	      004ffc64    mov eax,[ebp-4]"
+"	      004ffc64    mov eax,ptr"
 "	      004ffc67    mov byte ptr [eax],5Ah"
-"	      004ffc6a    inc dword ptr [ebp-4]"
+"	      004ffc6a    inc ptr"
 );
 // LINE 830:
 	asm( 
-"	      004ffc6d    mov eax,[ebp-4]"
+"	      004ffc6d    mov eax,ptr"
 "	      004ffc70    mov byte ptr [eax],5Ah"
-"	      004ffc73    inc dword ptr [ebp-4]"
+"	      004ffc73    inc ptr"
 );
 // LINE 831:
 	asm( 
-"	      004ffc76    mov eax,[ebp-4]"
+"	      004ffc76    mov eax,ptr"
 "	      004ffc79    mov byte ptr [eax],5Ah"
-"	      004ffc7c    inc dword ptr [ebp-4]"
+"	      004ffc7c    inc ptr"
 );
 // LINE 832:
 	asm( 
-"	      004ffc7f    mov eax,[ebp-4]"
+"	      004ffc7f    mov eax,ptr"
 "	      004ffc82    mov byte ptr [eax],5Ah"
-"	      004ffc85    inc dword ptr [ebp-4]"
+"	      004ffc85    inc ptr"
 );
 // LINE 833:
 	asm( 
@@ -2546,58 +2546,58 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 837:
 	asm( 
-"	      004ffc8d    cmp dword ptr [ebp-24h],1Dh"
+"	      004ffc8d    cmp tile,1Dh"
 "	      004ffc91    jl near ptr 004FFCEEh"
-"	      004ffc97    cmp dword ptr [ebp-24h],70h"
+"	      004ffc97    cmp tile,70h"
 "	      004ffc9b    jge near ptr 004FFCEEh"
 );
 // LINE 839:
 	asm( 
-"	      004ffca1    mov eax,[ebp-4]"
+"	      004ffca1    mov eax,ptr"
 "	      004ffca4    mov byte ptr [eax],0E8h"
-"	      004ffca7    inc dword ptr [ebp-4]"
+"	      004ffca7    inc ptr"
 );
 // LINE 840:
 	asm( 
-"	      004ffcaa    mov eax,[ebp-4]"
+"	      004ffcaa    mov eax,ptr"
 "	      004ffcad    mov byte ptr [eax],33h"
-"	      004ffcb0    inc dword ptr [ebp-4]"
+"	      004ffcb0    inc ptr"
 );
 // LINE 841:
 	asm( 
-"	      004ffcb3    mov eax,[ebp-4]"
+"	      004ffcb3    mov eax,ptr"
 "	      004ffcb6    mov byte ptr [eax],33h"
-"	      004ffcb9    inc dword ptr [ebp-4]"
+"	      004ffcb9    inc ptr"
 );
 // LINE 842:
 	asm( 
-"	      004ffcbc    mov eax,[ebp-4]"
+"	      004ffcbc    mov eax,ptr"
 "	      004ffcbf    mov byte ptr [eax],33h"
-"	      004ffcc2    inc dword ptr [ebp-4]"
+"	      004ffcc2    inc ptr"
 );
 // LINE 843:
 	asm( 
-"	      004ffcc5    mov eax,[ebp-4]"
+"	      004ffcc5    mov eax,ptr"
 "	      004ffcc8    mov byte ptr [eax],33h"
-"	      004ffccb    inc dword ptr [ebp-4]"
+"	      004ffccb    inc ptr"
 );
 // LINE 844:
 	asm( 
-"	      004ffcce    mov eax,[ebp-4]"
+"	      004ffcce    mov eax,ptr"
 "	      004ffcd1    mov byte ptr [eax],33h"
-"	      004ffcd4    inc dword ptr [ebp-4]"
+"	      004ffcd4    inc ptr"
 );
 // LINE 845:
 	asm( 
-"	      004ffcd7    mov eax,[ebp-4]"
+"	      004ffcd7    mov eax,ptr"
 "	      004ffcda    mov byte ptr [eax],33h"
-"	      004ffcdd    inc dword ptr [ebp-4]"
+"	      004ffcdd    inc ptr"
 );
 // LINE 846:
 	asm( 
-"	      004ffce0    mov eax,[ebp-4]"
+"	      004ffce0    mov eax,ptr"
 "	      004ffce3    mov byte ptr [eax],33h"
-"	      004ffce6    inc dword ptr [ebp-4]"
+"	      004ffce6    inc ptr"
 );
 // LINE 847:
 	asm( 
@@ -2605,56 +2605,56 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 851:
 	asm( 
-"	      004ffcee    cmp dword ptr [ebp-24h],70h"
+"	      004ffcee    cmp tile,70h"
 "	      004ffcf2    jl near ptr 004FFD45h"
 );
 // LINE 853:
 	asm( 
-"	      004ffcf8    mov eax,[ebp-4]"
+"	      004ffcf8    mov eax,ptr"
 "	      004ffcfb    mov byte ptr [eax],0E8h"
-"	      004ffcfe    inc dword ptr [ebp-4]"
+"	      004ffcfe    inc ptr"
 );
 // LINE 854:
 	asm( 
-"	      004ffd01    mov eax,[ebp-4]"
+"	      004ffd01    mov eax,ptr"
 "	      004ffd04    mov byte ptr [eax],3Ah"
-"	      004ffd07    inc dword ptr [ebp-4]"
+"	      004ffd07    inc ptr"
 );
 // LINE 855:
 	asm( 
-"	      004ffd0a    mov eax,[ebp-4]"
+"	      004ffd0a    mov eax,ptr"
 "	      004ffd0d    mov byte ptr [eax],3Ah"
-"	      004ffd10    inc dword ptr [ebp-4]"
+"	      004ffd10    inc ptr"
 );
 // LINE 856:
 	asm( 
-"	      004ffd13    mov eax,[ebp-4]"
+"	      004ffd13    mov eax,ptr"
 "	      004ffd16    mov byte ptr [eax],3Ah"
-"	      004ffd19    inc dword ptr [ebp-4]"
+"	      004ffd19    inc ptr"
 );
 // LINE 857:
 	asm( 
-"	      004ffd1c    mov eax,[ebp-4]"
+"	      004ffd1c    mov eax,ptr"
 "	      004ffd1f    mov byte ptr [eax],3Ah"
-"	      004ffd22    inc dword ptr [ebp-4]"
+"	      004ffd22    inc ptr"
 );
 // LINE 858:
 	asm( 
-"	      004ffd25    mov eax,[ebp-4]"
+"	      004ffd25    mov eax,ptr"
 "	      004ffd28    mov byte ptr [eax],3Ah"
-"	      004ffd2b    inc dword ptr [ebp-4]"
+"	      004ffd2b    inc ptr"
 );
 // LINE 859:
 	asm( 
-"	      004ffd2e    mov eax,[ebp-4]"
+"	      004ffd2e    mov eax,ptr"
 "	      004ffd31    mov byte ptr [eax],3Ah"
-"	      004ffd34    inc dword ptr [ebp-4]"
+"	      004ffd34    inc ptr"
 );
 // LINE 860:
 	asm( 
-"	      004ffd37    mov eax,[ebp-4]"
+"	      004ffd37    mov eax,ptr"
 "	      004ffd3a    mov byte ptr [eax],3Ah"
-"	      004ffd3d    inc dword ptr [ebp-4]"
+"	      004ffd3d    inc ptr"
 );
 // LINE 861:
 	asm( 
@@ -2662,268 +2662,268 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 865:
 	asm( 
-"	      004ffd45    mov eax,[ebp-0Ch]"
-"	      004ffd48    mov ecx,[ebp-8]"
+"	      004ffd45    mov eax,y"
+"	      004ffd48    mov ecx,x"
 "	      004ffd4b    shl ecx,8"
 "	      004ffd4e    mov al,[eax+ecx+66EB10h]"
-"	      004ffd55    mov [ebp-10h],al"
+"	      004ffd55    mov texid,al"
 );
 // LINE 866:
 	asm( 
-"	      004ffd58    movsx eax,byte ptr [ebp-10h]"
+"	      004ffd58    movsx eax,texid"
 "	      004ffd5c    cmp eax,30h"
 "	      004ffd5f    jl near ptr 004FFE4Fh"
-"	      004ffd65    movsx eax,byte ptr [ebp-10h]"
+"	      004ffd65    movsx eax,texid"
 "	      004ffd69    cmp eax,40h"
 "	      004ffd6c    jge near ptr 004FFE4Fh"
 );
 // LINE 868:
 	asm( 
-"	      004ffd72    mov eax,[ebp-0Ch]"
+"	      004ffd72    mov eax,y"
 "	      004ffd75    and eax,ds:[5B5CBCh]"
 "	      004ffd7b    mov cl,ds:[5B5CC0h]"
 "	      004ffd81    shl eax,cl"
-"	      004ffd83    mov ecx,[ebp-8]"
+"	      004ffd83    mov ecx,x"
 "	      004ffd86    and ecx,ds:[5B5CBCh]"
 "	      004ffd8c    add ecx,ecx"
 "	      004ffd8e    lea eax,[ecx+eax*2]"
 "	      004ffd91    mov ecx,ds:[67EB10h]"
 "	      004ffd97    mov ax,[eax+ecx]"
-"	      004ffd9b    mov [ebp-18h],ax"
+"	      004ffd9b    mov alt,ax"
 );
 // LINE 869:
 	asm( 
 "	      004ffd9f    mov eax,[ebp-18h]"
 "	      004ffda2    and eax,0FFFFh"
 "	      004ffda7    shr eax,6"
-"	      004ffdaa    mov [ebp-18h],ax"
+"	      004ffdaa    mov alt,ax"
 );
 // LINE 870:
 	asm( 
-"	      004ffdae    mov eax,[ebp-4]"
+"	      004ffdae    mov eax,ptr"
 "	      004ffdb1    mov byte ptr [eax],0E8h"
-"	      004ffdb4    inc dword ptr [ebp-4]"
+"	      004ffdb4    inc ptr"
 );
 // LINE 871:
 	asm( 
 "	      004ffdb7    mov eax,[ebp-18h]"
 "	      004ffdba    and eax,0FFFFh"
 "	      004ffdbf    sub eax,80h"
-"	      004ffdc4    mov ecx,[ebp-4]"
+"	      004ffdc4    mov ecx,ptr"
 "	      004ffdc7    mov [ecx],al"
-"	      004ffdc9    inc dword ptr [ebp-4]"
+"	      004ffdc9    inc ptr"
 );
 // LINE 872:
 	asm( 
 "	      004ffdcc    mov eax,[ebp-18h]"
 "	      004ffdcf    and eax,0FFFFh"
 "	      004ffdd4    sub eax,80h"
-"	      004ffdd9    mov ecx,[ebp-4]"
+"	      004ffdd9    mov ecx,ptr"
 "	      004ffddc    mov [ecx],al"
-"	      004ffdde    inc dword ptr [ebp-4]"
+"	      004ffdde    inc ptr"
 );
 // LINE 873:
 	asm( 
 "	      004ffde1    mov eax,[ebp-18h]"
 "	      004ffde4    and eax,0FFFFh"
 "	      004ffde9    sub eax,80h"
-"	      004ffdee    mov ecx,[ebp-4]"
+"	      004ffdee    mov ecx,ptr"
 "	      004ffdf1    mov [ecx],al"
-"	      004ffdf3    inc dword ptr [ebp-4]"
+"	      004ffdf3    inc ptr"
 );
 // LINE 874:
 	asm( 
 "	      004ffdf6    mov eax,[ebp-18h]"
 "	      004ffdf9    and eax,0FFFFh"
 "	      004ffdfe    sub eax,80h"
-"	      004ffe03    mov ecx,[ebp-4]"
+"	      004ffe03    mov ecx,ptr"
 "	      004ffe06    mov [ecx],al"
-"	      004ffe08    inc dword ptr [ebp-4]"
+"	      004ffe08    inc ptr"
 );
 // LINE 875:
 	asm( 
 "	      004ffe0b    mov eax,[ebp-18h]"
 "	      004ffe0e    and eax,0FFFFh"
 "	      004ffe13    sub eax,80h"
-"	      004ffe18    mov ecx,[ebp-4]"
+"	      004ffe18    mov ecx,ptr"
 "	      004ffe1b    mov [ecx],al"
-"	      004ffe1d    inc dword ptr [ebp-4]"
+"	      004ffe1d    inc ptr"
 );
 // LINE 876:
 	asm( 
 "	      004ffe20    mov eax,[ebp-18h]"
 "	      004ffe23    and eax,0FFFFh"
 "	      004ffe28    sub eax,80h"
-"	      004ffe2d    mov ecx,[ebp-4]"
+"	      004ffe2d    mov ecx,ptr"
 "	      004ffe30    mov [ecx],al"
-"	      004ffe32    inc dword ptr [ebp-4]"
+"	      004ffe32    inc ptr"
 );
 // LINE 877:
 	asm( 
 "	      004ffe35    mov eax,[ebp-18h]"
 "	      004ffe38    and eax,0FFFFh"
 "	      004ffe3d    sub eax,80h"
-"	      004ffe42    mov ecx,[ebp-4]"
+"	      004ffe42    mov ecx,ptr"
 "	      004ffe45    mov [ecx],al"
-"	      004ffe47    inc dword ptr [ebp-4]"
+"	      004ffe47    inc ptr"
 );
 // LINE 879:
 	asm( 
 "	      004ffe4a    jmp near ptr 00500076h"
-"	      004ffe4f    movsx eax,byte ptr [ebp-10h]"
+"	      004ffe4f    movsx eax,texid"
 "	      004ffe53    test eax,eax"
 "	      004ffe55    jl near ptr 004FFEB5h"
-"	      004ffe5b    movsx eax,byte ptr [ebp-10h]"
+"	      004ffe5b    movsx eax,texid"
 "	      004ffe5f    cmp eax,0Ah"
 "	      004ffe62    jge near ptr 004FFEB5h"
 );
 // LINE 881:
 	asm( 
-"	      004ffe68    mov eax,[ebp-4]"
+"	      004ffe68    mov eax,ptr"
 "	      004ffe6b    mov byte ptr [eax],0E8h"
-"	      004ffe6e    inc dword ptr [ebp-4]"
+"	      004ffe6e    inc ptr"
 );
 // LINE 882:
 	asm( 
-"	      004ffe71    mov eax,[ebp-4]"
+"	      004ffe71    mov eax,ptr"
 "	      004ffe74    mov byte ptr [eax],90h"
-"	      004ffe77    inc dword ptr [ebp-4]"
+"	      004ffe77    inc ptr"
 );
 // LINE 883:
 	asm( 
-"	      004ffe7a    mov eax,[ebp-4]"
+"	      004ffe7a    mov eax,ptr"
 "	      004ffe7d    mov byte ptr [eax],90h"
-"	      004ffe80    inc dword ptr [ebp-4]"
+"	      004ffe80    inc ptr"
 );
 // LINE 884:
 	asm( 
-"	      004ffe83    mov eax,[ebp-4]"
+"	      004ffe83    mov eax,ptr"
 "	      004ffe86    mov byte ptr [eax],90h"
-"	      004ffe89    inc dword ptr [ebp-4]"
+"	      004ffe89    inc ptr"
 );
 // LINE 885:
 	asm( 
-"	      004ffe8c    mov eax,[ebp-4]"
+"	      004ffe8c    mov eax,ptr"
 "	      004ffe8f    mov byte ptr [eax],90h"
-"	      004ffe92    inc dword ptr [ebp-4]"
+"	      004ffe92    inc ptr"
 );
 // LINE 886:
 	asm( 
-"	      004ffe95    mov eax,[ebp-4]"
+"	      004ffe95    mov eax,ptr"
 "	      004ffe98    mov byte ptr [eax],90h"
-"	      004ffe9b    inc dword ptr [ebp-4]"
+"	      004ffe9b    inc ptr"
 );
 // LINE 887:
 	asm( 
-"	      004ffe9e    mov eax,[ebp-4]"
+"	      004ffe9e    mov eax,ptr"
 "	      004ffea1    mov byte ptr [eax],90h"
-"	      004ffea4    inc dword ptr [ebp-4]"
+"	      004ffea4    inc ptr"
 );
 // LINE 888:
 	asm( 
-"	      004ffea7    mov eax,[ebp-4]"
+"	      004ffea7    mov eax,ptr"
 "	      004ffeaa    mov byte ptr [eax],90h"
-"	      004ffead    inc dword ptr [ebp-4]"
+"	      004ffead    inc ptr"
 );
 // LINE 890:
 	asm( 
 "	      004ffeb0    jmp near ptr 00500076h"
-"	      004ffeb5    movsx eax,byte ptr [ebp-10h]"
+"	      004ffeb5    movsx eax,texid"
 "	      004ffeb9    cmp eax,20h"
 "	      004ffebc    jl near ptr 004FFF9Eh"
-"	      004ffec2    movsx eax,byte ptr [ebp-10h]"
+"	      004ffec2    movsx eax,texid"
 "	      004ffec6    cmp eax,30h"
 "	      004ffec9    jge near ptr 004FFF9Eh"
 );
 // LINE 892:
 	asm( 
-"	      004ffecf    mov eax,[ebp-0Ch]"
+"	      004ffecf    mov eax,y"
 "	      004ffed2    and eax,ds:[5B5CBCh]"
 "	      004ffed8    mov cl,ds:[5B5CC0h]"
 "	      004ffede    shl eax,cl"
-"	      004ffee0    mov ecx,[ebp-8]"
+"	      004ffee0    mov ecx,x"
 "	      004ffee3    and ecx,ds:[5B5CBCh]"
 "	      004ffee9    add ecx,ecx"
 "	      004ffeeb    lea eax,[ecx+eax*2]"
 "	      004ffeee    mov ecx,ds:[67EB10h]"
 "	      004ffef4    mov ax,[eax+ecx]"
-"	      004ffef8    mov [ebp-18h],ax"
+"	      004ffef8    mov alt,ax"
 );
 // LINE 893:
 	asm( 
 "	      004ffefc    mov eax,[ebp-18h]"
 "	      004ffeff    and eax,0FFFFh"
 "	      004fff04    shr eax,6"
-"	      004fff07    mov [ebp-18h],ax"
+"	      004fff07    mov alt,ax"
 );
 // LINE 894:
 	asm( 
-"	      004fff0b    mov eax,[ebp-4]"
+"	      004fff0b    mov eax,ptr"
 "	      004fff0e    mov byte ptr [eax],0E8h"
-"	      004fff11    inc dword ptr [ebp-4]"
+"	      004fff11    inc ptr"
 );
 // LINE 895:
 	asm( 
 "	      004fff14    mov eax,[ebp-18h]"
 "	      004fff17    and eax,0FFFFh"
 "	      004fff1c    add eax,50h"
-"	      004fff1f    mov ecx,[ebp-4]"
+"	      004fff1f    mov ecx,ptr"
 "	      004fff22    mov [ecx],al"
-"	      004fff24    inc dword ptr [ebp-4]"
+"	      004fff24    inc ptr"
 );
 // LINE 896:
 	asm( 
 "	      004fff27    mov eax,[ebp-18h]"
 "	      004fff2a    and eax,0FFFFh"
 "	      004fff2f    add eax,50h"
-"	      004fff32    mov ecx,[ebp-4]"
+"	      004fff32    mov ecx,ptr"
 "	      004fff35    mov [ecx],al"
-"	      004fff37    inc dword ptr [ebp-4]"
+"	      004fff37    inc ptr"
 );
 // LINE 897:
 	asm( 
 "	      004fff3a    mov eax,[ebp-18h]"
 "	      004fff3d    and eax,0FFFFh"
 "	      004fff42    add eax,50h"
-"	      004fff45    mov ecx,[ebp-4]"
+"	      004fff45    mov ecx,ptr"
 "	      004fff48    mov [ecx],al"
-"	      004fff4a    inc dword ptr [ebp-4]"
+"	      004fff4a    inc ptr"
 );
 // LINE 898:
 	asm( 
 "	      004fff4d    mov eax,[ebp-18h]"
 "	      004fff50    and eax,0FFFFh"
 "	      004fff55    add eax,50h"
-"	      004fff58    mov ecx,[ebp-4]"
+"	      004fff58    mov ecx,ptr"
 "	      004fff5b    mov [ecx],al"
-"	      004fff5d    inc dword ptr [ebp-4]"
+"	      004fff5d    inc ptr"
 );
 // LINE 899:
 	asm( 
 "	      004fff60    mov eax,[ebp-18h]"
 "	      004fff63    and eax,0FFFFh"
 "	      004fff68    add eax,50h"
-"	      004fff6b    mov ecx,[ebp-4]"
+"	      004fff6b    mov ecx,ptr"
 "	      004fff6e    mov [ecx],al"
-"	      004fff70    inc dword ptr [ebp-4]"
+"	      004fff70    inc ptr"
 );
 // LINE 900:
 	asm( 
 "	      004fff73    mov eax,[ebp-18h]"
 "	      004fff76    and eax,0FFFFh"
 "	      004fff7b    add eax,50h"
-"	      004fff7e    mov ecx,[ebp-4]"
+"	      004fff7e    mov ecx,ptr"
 "	      004fff81    mov [ecx],al"
-"	      004fff83    inc dword ptr [ebp-4]"
+"	      004fff83    inc ptr"
 );
 // LINE 901:
 	asm( 
 "	      004fff86    mov eax,[ebp-18h]"
 "	      004fff89    and eax,0FFFFh"
 "	      004fff8e    add eax,50h"
-"	      004fff91    mov ecx,[ebp-4]"
+"	      004fff91    mov ecx,ptr"
 "	      004fff94    mov [ecx],al"
-"	      004fff96    inc dword ptr [ebp-4]"
+"	      004fff96    inc ptr"
 );
 // LINE 903:
 	asm( 
@@ -2931,93 +2931,93 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 905:
 	asm( 
-"	      004fff9e    mov eax,[ebp-0Ch]"
+"	      004fff9e    mov eax,y"
 "	      004fffa1    and eax,ds:[5B5CBCh]"
 "	      004fffa7    mov cl,ds:[5B5CC0h]"
 "	      004fffad    shl eax,cl"
-"	      004fffaf    mov ecx,[ebp-8]"
+"	      004fffaf    mov ecx,x"
 "	      004fffb2    and ecx,ds:[5B5CBCh]"
 "	      004fffb8    add ecx,ecx"
 "	      004fffba    lea eax,[ecx+eax*2]"
 "	      004fffbd    mov ecx,ds:[67EB10h]"
 "	      004fffc3    mov ax,[eax+ecx]"
-"	      004fffc7    mov [ebp-18h],ax"
+"	      004fffc7    mov alt,ax"
 );
 // LINE 906:
 	asm( 
 "	      004fffcb    mov eax,[ebp-18h]"
 "	      004fffce    and eax,0FFFFh"
 "	      004fffd3    shr eax,6"
-"	      004fffd6    mov [ebp-18h],ax"
+"	      004fffd6    mov alt,ax"
 );
 // LINE 907:
 	asm( 
-"	      004fffda    mov eax,[ebp-4]"
+"	      004fffda    mov eax,ptr"
 "	      004fffdd    mov byte ptr [eax],0E8h"
-"	      004fffe0    inc dword ptr [ebp-4]"
+"	      004fffe0    inc ptr"
 );
 // LINE 908:
 	asm( 
 "	      004fffe3    mov eax,[ebp-18h]"
 "	      004fffe6    and eax,0FFFFh"
 "	      004fffeb    sub eax,80h"
-"	      004ffff0    mov ecx,[ebp-4]"
+"	      004ffff0    mov ecx,ptr"
 "	      004ffff3    mov [ecx],al"
-"	      004ffff5    inc dword ptr [ebp-4]"
+"	      004ffff5    inc ptr"
 );
 // LINE 909:
 	asm( 
 "	      004ffff8    mov eax,[ebp-18h]"
 "	      004ffffb    and eax,0FFFFh"
 "	      00500000    sub eax,80h"
-"	      00500005    mov ecx,[ebp-4]"
+"	      00500005    mov ecx,ptr"
 "	      00500008    mov [ecx],al"
-"	      0050000a    inc dword ptr [ebp-4]"
+"	      0050000a    inc ptr"
 );
 // LINE 910:
 	asm( 
 "	      0050000d    mov eax,[ebp-18h]"
 "	      00500010    and eax,0FFFFh"
 "	      00500015    sub eax,80h"
-"	      0050001a    mov ecx,[ebp-4]"
+"	      0050001a    mov ecx,ptr"
 "	      0050001d    mov [ecx],al"
-"	      0050001f    inc dword ptr [ebp-4]"
+"	      0050001f    inc ptr"
 );
 // LINE 911:
 	asm( 
 "	      00500022    mov eax,[ebp-18h]"
 "	      00500025    and eax,0FFFFh"
 "	      0050002a    sub eax,80h"
-"	      0050002f    mov ecx,[ebp-4]"
+"	      0050002f    mov ecx,ptr"
 "	      00500032    mov [ecx],al"
-"	      00500034    inc dword ptr [ebp-4]"
+"	      00500034    inc ptr"
 );
 // LINE 912:
 	asm( 
 "	      00500037    mov eax,[ebp-18h]"
 "	      0050003a    and eax,0FFFFh"
 "	      0050003f    sub eax,80h"
-"	      00500044    mov ecx,[ebp-4]"
+"	      00500044    mov ecx,ptr"
 "	      00500047    mov [ecx],al"
-"	      00500049    inc dword ptr [ebp-4]"
+"	      00500049    inc ptr"
 );
 // LINE 913:
 	asm( 
 "	      0050004c    mov eax,[ebp-18h]"
 "	      0050004f    and eax,0FFFFh"
 "	      00500054    sub eax,80h"
-"	      00500059    mov ecx,[ebp-4]"
+"	      00500059    mov ecx,ptr"
 "	      0050005c    mov [ecx],al"
-"	      0050005e    inc dword ptr [ebp-4]"
+"	      0050005e    inc ptr"
 );
 // LINE 914:
 	asm( 
 "	      00500061    mov eax,[ebp-18h]"
 "	      00500064    and eax,0FFFFh"
 "	      00500069    sub eax,80h"
-"	      0050006e    mov ecx,[ebp-4]"
+"	      0050006e    mov ecx,ptr"
 "	      00500071    mov [ecx],al"
-"	      00500073    inc dword ptr [ebp-4]"
+"	      00500073    inc ptr"
 );
 // LINE 916:
 	asm( 
@@ -3025,13 +3025,13 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 924:
 	asm( 
-"	      0050007b    add dword ptr [ebp-4],14h"
+"	      0050007b    add ptr,14h"
 );
 // LINE 926:
 	asm( 
 "	      0050007f    mov eax,ds:[5B527Ch]"
-"	      00500084    mov edi,[ebp-4]"
-"	      00500087    mov esi,[ebp-1Ch]"
+"	      00500084    mov edi,ptr"
+"	      00500087    mov esi,lineptr"
 "	      0050008a    mov ecx,eax"
 "	      0050008c    shr ecx,2"
 "	      0050008f    rep movsd"
@@ -3042,13 +3042,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 927:
 	asm( 
 "	      00500098    mov eax,ds:[5B5268h]"
-"	      0050009d    add [ebp-4],eax"
+"	      0050009d    add ptr,eax"
 );
 // LINE 928:
 	asm( 
 "	      005000a0    mov eax,ds:[5B527Ch]"
-"	      005000a5    mov edi,[ebp-4]"
-"	      005000a8    mov esi,[ebp-1Ch]"
+"	      005000a5    mov edi,ptr"
+"	      005000a8    mov esi,lineptr"
 "	      005000ab    mov ecx,eax"
 "	      005000ad    shr ecx,2"
 "	      005000b0    rep movsd"
@@ -3059,13 +3059,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 929:
 	asm( 
 "	      005000b9    mov eax,ds:[5B5268h]"
-"	      005000be    add [ebp-4],eax"
+"	      005000be    add ptr,eax"
 );
 // LINE 930:
 	asm( 
 "	      005000c1    mov eax,ds:[5B527Ch]"
-"	      005000c6    mov edi,[ebp-4]"
-"	      005000c9    mov esi,[ebp-1Ch]"
+"	      005000c6    mov edi,ptr"
+"	      005000c9    mov esi,lineptr"
 "	      005000cc    mov ecx,eax"
 "	      005000ce    shr ecx,2"
 "	      005000d1    rep movsd"
@@ -3076,13 +3076,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 931:
 	asm( 
 "	      005000da    mov eax,ds:[5B5268h]"
-"	      005000df    add [ebp-4],eax"
+"	      005000df    add ptr,eax"
 );
 // LINE 932:
 	asm( 
 "	      005000e2    mov eax,ds:[5B527Ch]"
-"	      005000e7    mov edi,[ebp-4]"
-"	      005000ea    mov esi,[ebp-1Ch]"
+"	      005000e7    mov edi,ptr"
+"	      005000ea    mov esi,lineptr"
 "	      005000ed    mov ecx,eax"
 "	      005000ef    shr ecx,2"
 "	      005000f2    rep movsd"
@@ -3093,13 +3093,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 933:
 	asm( 
 "	      005000fb    mov eax,ds:[5B5268h]"
-"	      00500100    add [ebp-4],eax"
+"	      00500100    add ptr,eax"
 );
 // LINE 934:
 	asm( 
 "	      00500103    mov eax,ds:[5B527Ch]"
-"	      00500108    mov edi,[ebp-4]"
-"	      0050010b    mov esi,[ebp-1Ch]"
+"	      00500108    mov edi,ptr"
+"	      0050010b    mov esi,lineptr"
 "	      0050010e    mov ecx,eax"
 "	      00500110    shr ecx,2"
 "	      00500113    rep movsd"
@@ -3110,13 +3110,13 @@ void S3MapRender(long posx, long posy) {
 // LINE 935:
 	asm( 
 "	      0050011c    mov eax,ds:[5B5268h]"
-"	      00500121    add [ebp-4],eax"
+"	      00500121    add ptr,eax"
 );
 // LINE 936:
 	asm( 
 "	      00500124    mov eax,ds:[5B527Ch]"
-"	      00500129    mov edi,[ebp-4]"
-"	      0050012c    mov esi,[ebp-1Ch]"
+"	      00500129    mov edi,ptr"
+"	      0050012c    mov esi,lineptr"
 "	      0050012f    mov ecx,eax"
 "	      00500131    shr ecx,2"
 "	      00500134    rep movsd"
@@ -3127,12 +3127,12 @@ void S3MapRender(long posx, long posy) {
 // LINE 937:
 	asm( 
 "	      0050013d    mov eax,ds:[5B5268h]"
-"	      00500142    add [ebp-4],eax"
+"	      00500142    add ptr,eax"
 );
 // LINE 938:
 	asm( 
 "	      00500145    mov edx,ds:[5B527Ch]"
-"	      0050014b    mov edi,[ebp-4]"
+"	      0050014b    mov edi,ptr"
 "	      0050014e    mov eax,0E8E8E8E8h"
 "	      00500153    mov ecx,edx"
 "	      00500155    shr ecx,2"
@@ -3144,7 +3144,7 @@ void S3MapRender(long posx, long posy) {
 // LINE 939:
 	asm( 
 "	      00500161    mov eax,ds:[5B5268h]"
-"	      00500166    add [ebp-4],eax"
+"	      00500166    add ptr,eax"
 );
 // LINE 940:
 	asm( 
@@ -3173,18 +3173,18 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 949:
 	asm( 
-"	      005001a1    mov eax,[ebp+0Ch]"
+"	      005001a1    mov eax,posy"
 "	      005001a4    push eax"
-"	      005001a5    mov eax,[ebp+8]"
+"	      005001a5    mov eax,posx"
 "	      005001a8    push eax"
 "	      005001a9    call 005001CBh"
 "	      005001ae    add esp,8"
 );
 // LINE 950:
 	asm( 
-"	      005001b1    mov eax,[ebp+0Ch]"
+"	      005001b1    mov eax,posy"
 "	      005001b4    push eax"
-"	      005001b5    mov eax,[ebp+8]"
+"	      005001b5    mov eax,posx"
 "	      005001b8    push eax"
 "	      005001b9    call 00500DE3h"
 "	      005001be    add esp,8"
@@ -3230,111 +3230,111 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 967:
 	asm( 
 "	      005001d4    mov eax,ds:[5B5270h]"
-"	      005001d9    mov [ebp-4],eax"
+"	      005001d9    mov ptr,eax"
 );
 // LINE 971:
 	asm( 
-"	      005001dc    mov dword ptr [ebp-2Ch],0FFFFFFFFh"
+"	      005001dc    mov desticon,0FFFFFFFFh"
 );
 // LINE 972:
 	asm( 
-"	      005001e3    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      005001e3    mov pickicon,0FFFFFFFFh"
 );
 // LINE 974:
 	asm( 
-"	      005001ea    and dword ptr [ebp+0Ch],0FFh"
+"	      005001ea    and posy,0FFh"
 );
 // LINE 975:
 	asm( 
-"	      005001f1    and dword ptr [ebp+8],0FFh"
+"	      005001f1    and posx,0FFh"
 );
 // LINE 987:
 	asm( 
 "	      005001f8    call 004FBCC6h"
-"	      005001fd    mov [ebp-30h],eax"
+"	      005001fd    mov maploc,eax"
 );
 // LINE 988:
 	asm( 
-"	      00500200    cmp dword ptr [ebp-30h],0"
+"	      00500200    cmp maploc,0"
 "	      00500204    je near ptr 005002B1h"
 );
 // LINE 990:
 	asm( 
-"	      0050020a    lea eax,[ebp-1Ch]"
+"	      0050020a    lea eax,dfy"
 "	      0050020d    push eax"
-"	      0050020e    lea eax,[ebp-14h]"
+"	      0050020e    lea eax,dfx"
 "	      00500211    push eax"
-"	      00500212    mov eax,[ebp-30h]"
+"	      00500212    mov eax,maploc"
 "	      00500215    mov eax,[eax+4]"
 "	      00500218    push eax"
-"	      00500219    mov eax,[ebp-30h]"
+"	      00500219    mov eax,maploc"
 "	      0050021c    mov eax,[eax]"
 "	      0050021e    push eax"
-"	      0050021f    mov eax,[ebp+0Ch]"
+"	      0050021f    mov eax,posy"
 "	      00500222    push eax"
-"	      00500223    mov eax,[ebp+8]"
+"	      00500223    mov eax,posx"
 "	      00500226    push eax"
 "	      00500227    call 005014C6h"
 "	      0050022c    add esp,18h"
 );
 // LINE 993:
 	asm( 
-"	      0050022f    mov eax,[ebp-14h]"
+"	      0050022f    mov eax,dfx"
 "	      00500232    mov cl,ds:[5B5298h]"
 "	      00500238    sar eax,cl"
 "	      0050023a    cdq"
 "	      0050023b    xor eax,edx"
 "	      0050023d    sub eax,edx"
-"	      0050023f    mov [ebp-10h],eax"
+"	      0050023f    mov fx,eax"
 );
 // LINE 994:
 	asm( 
-"	      00500242    mov eax,[ebp-1Ch]"
+"	      00500242    mov eax,dfy"
 "	      00500245    mov cl,ds:[5B5298h]"
 "	      0050024b    sar eax,cl"
 "	      0050024d    cdq"
 "	      0050024e    xor eax,edx"
 "	      00500250    sub eax,edx"
-"	      00500252    mov [ebp-18h],eax"
+"	      00500252    mov fy,eax"
 );
 // LINE 995:
 	asm( 
-"	      00500255    mov eax,[ebp-10h]"
-"	      00500258    cmp [ebp-18h],eax"
+"	      00500255    mov eax,fx"
+"	      00500258    cmp fy,eax"
 "	      0050025b    jge near ptr 00500271h"
-"	      00500261    mov eax,[ebp-10h]"
+"	      00500261    mov eax,fx"
 "	      00500264    add eax,eax"
-"	      00500266    add eax,[ebp-18h]"
-"	      00500269    mov [ebp-0Ch],eax"
+"	      00500266    add eax,fy"
+"	      00500269    mov dist,eax"
 );
 // LINE 996:
 	asm( 
 "	      0050026c    jmp near ptr 0050027Ch"
-"	      00500271    mov eax,[ebp-18h]"
+"	      00500271    mov eax,fy"
 "	      00500274    add eax,eax"
-"	      00500276    add eax,[ebp-10h]"
-"	      00500279    mov [ebp-0Ch],eax"
+"	      00500276    add eax,fx"
+"	      00500279    mov dist,eax"
 );
 // LINE 997:
 	asm( 
 "	      0050027c    mov ecx,3Fh"
-"	      00500281    mov eax,[ebp-0Ch]"
+"	      00500281    mov eax,dist"
 "	      00500284    shl eax,4"
 "	      00500287    mov ebx,184h"
 "	      0050028c    cdq"
 "	      0050028d    idiv ebx"
 "	      0050028f    sub ecx,eax"
-"	      00500291    mov [ebp-24h],ecx"
+"	      00500291    mov i,ecx"
 );
 // LINE 999:
 	asm( 
-"	      00500294    mov eax,[ebp-2Ch]"
+"	      00500294    mov eax,desticon"
 "	      00500297    push eax"
-"	      00500298    mov eax,[ebp-24h]"
+"	      00500298    mov eax,i"
 "	      0050029b    push eax"
-"	      0050029c    mov eax,[ebp-1Ch]"
+"	      0050029c    mov eax,dfy"
 "	      0050029f    push eax"
-"	      005002a0    mov eax,[ebp-14h]"
+"	      005002a0    mov eax,dfx"
 "	      005002a3    push eax"
 "	      005002a4    call 005004CFh"
 "	      005002a9    add esp,10h"
@@ -3346,90 +3346,90 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1003:
 	asm( 
 "	      005002b1    call 004FBC9Ah"
-"	      005002b6    mov [ebp-30h],eax"
+"	      005002b6    mov maploc,eax"
 );
 // LINE 1004:
 	asm( 
-"	      005002b9    cmp dword ptr [ebp-30h],0"
+"	      005002b9    cmp maploc,0"
 "	      005002bd    je near ptr 00500365h"
 );
 // LINE 1006:
 	asm( 
-"	      005002c3    lea eax,[ebp-1Ch]"
+"	      005002c3    lea eax,dfy"
 "	      005002c6    push eax"
-"	      005002c7    lea eax,[ebp-14h]"
+"	      005002c7    lea eax,dfx"
 "	      005002ca    push eax"
-"	      005002cb    mov eax,[ebp-30h]"
+"	      005002cb    mov eax,maploc"
 "	      005002ce    mov eax,[eax+4]"
 "	      005002d1    push eax"
-"	      005002d2    mov eax,[ebp-30h]"
+"	      005002d2    mov eax,maploc"
 "	      005002d5    mov eax,[eax]"
 "	      005002d7    push eax"
-"	      005002d8    mov eax,[ebp+0Ch]"
+"	      005002d8    mov eax,posy"
 "	      005002db    push eax"
-"	      005002dc    mov eax,[ebp+8]"
+"	      005002dc    mov eax,posx"
 "	      005002df    push eax"
 "	      005002e0    call 005014C6h"
 "	      005002e5    add esp,18h"
 );
 // LINE 1009:
 	asm( 
-"	      005002e8    mov eax,[ebp-14h]"
+"	      005002e8    mov eax,dfx"
 "	      005002eb    mov cl,ds:[5B5298h]"
 "	      005002f1    sar eax,cl"
 "	      005002f3    cdq"
 "	      005002f4    xor eax,edx"
 "	      005002f6    sub eax,edx"
-"	      005002f8    mov [ebp-10h],eax"
+"	      005002f8    mov fx,eax"
 );
 // LINE 1010:
 	asm( 
-"	      005002fb    mov eax,[ebp-1Ch]"
+"	      005002fb    mov eax,dfy"
 "	      005002fe    mov cl,ds:[5B5298h]"
 "	      00500304    sar eax,cl"
 "	      00500306    cdq"
 "	      00500307    xor eax,edx"
 "	      00500309    sub eax,edx"
-"	      0050030b    mov [ebp-18h],eax"
+"	      0050030b    mov fy,eax"
 );
 // LINE 1011:
 	asm( 
-"	      0050030e    mov eax,[ebp-10h]"
-"	      00500311    cmp [ebp-18h],eax"
+"	      0050030e    mov eax,fx"
+"	      00500311    cmp fy,eax"
 "	      00500314    jge near ptr 0050032Ah"
-"	      0050031a    mov eax,[ebp-10h]"
+"	      0050031a    mov eax,fx"
 "	      0050031d    add eax,eax"
-"	      0050031f    add eax,[ebp-18h]"
-"	      00500322    mov [ebp-0Ch],eax"
+"	      0050031f    add eax,fy"
+"	      00500322    mov dist,eax"
 );
 // LINE 1012:
 	asm( 
 "	      00500325    jmp near ptr 00500335h"
-"	      0050032a    mov eax,[ebp-18h]"
+"	      0050032a    mov eax,fy"
 "	      0050032d    add eax,eax"
-"	      0050032f    add eax,[ebp-10h]"
-"	      00500332    mov [ebp-0Ch],eax"
+"	      0050032f    add eax,fx"
+"	      00500332    mov dist,eax"
 );
 // LINE 1013:
 	asm( 
 "	      00500335    mov ecx,3Fh"
-"	      0050033a    mov eax,[ebp-0Ch]"
+"	      0050033a    mov eax,dist"
 "	      0050033d    shl eax,4"
 "	      00500340    mov ebx,184h"
 "	      00500345    cdq"
 "	      00500346    idiv ebx"
 "	      00500348    sub ecx,eax"
-"	      0050034a    mov [ebp-24h],ecx"
+"	      0050034a    mov i,ecx"
 );
 // LINE 1015:
 	asm( 
-"	      0050034d    mov eax,[ebp-2Ch]"
+"	      0050034d    mov eax,desticon"
 "	      00500350    push eax"
-"	      00500351    mov eax,[ebp-24h]"
+"	      00500351    mov eax,i"
 "	      00500354    push eax"
-"	      00500355    mov eax,[ebp-1Ch]"
+"	      00500355    mov eax,dfy"
 "	      00500358    push eax"
-"	      00500359    mov eax,[ebp-14h]"
+"	      00500359    mov eax,dfx"
 "	      0050035c    push eax"
 "	      0050035d    call 005004CFh"
 "	      00500362    add esp,10h"
@@ -3437,90 +3437,90 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1019:
 	asm( 
 "	      00500365    call 004FBD08h"
-"	      0050036a    mov [ebp-30h],eax"
+"	      0050036a    mov maploc,eax"
 );
 // LINE 1020:
 	asm( 
-"	      0050036d    cmp dword ptr [ebp-30h],0"
+"	      0050036d    cmp maploc,0"
 "	      00500371    je near ptr 00500419h"
 );
 // LINE 1022:
 	asm( 
-"	      00500377    lea eax,[ebp-1Ch]"
+"	      00500377    lea eax,dfy"
 "	      0050037a    push eax"
-"	      0050037b    lea eax,[ebp-14h]"
+"	      0050037b    lea eax,dfx"
 "	      0050037e    push eax"
-"	      0050037f    mov eax,[ebp-30h]"
+"	      0050037f    mov eax,maploc"
 "	      00500382    mov eax,[eax+4]"
 "	      00500385    push eax"
-"	      00500386    mov eax,[ebp-30h]"
+"	      00500386    mov eax,maploc"
 "	      00500389    mov eax,[eax]"
 "	      0050038b    push eax"
-"	      0050038c    mov eax,[ebp+0Ch]"
+"	      0050038c    mov eax,posy"
 "	      0050038f    push eax"
-"	      00500390    mov eax,[ebp+8]"
+"	      00500390    mov eax,posx"
 "	      00500393    push eax"
 "	      00500394    call 005014C6h"
 "	      00500399    add esp,18h"
 );
 // LINE 1025:
 	asm( 
-"	      0050039c    mov eax,[ebp-14h]"
+"	      0050039c    mov eax,dfx"
 "	      0050039f    mov cl,ds:[5B5298h]"
 "	      005003a5    sar eax,cl"
 "	      005003a7    cdq"
 "	      005003a8    xor eax,edx"
 "	      005003aa    sub eax,edx"
-"	      005003ac    mov [ebp-10h],eax"
+"	      005003ac    mov fx,eax"
 );
 // LINE 1026:
 	asm( 
-"	      005003af    mov eax,[ebp-1Ch]"
+"	      005003af    mov eax,dfy"
 "	      005003b2    mov cl,ds:[5B5298h]"
 "	      005003b8    sar eax,cl"
 "	      005003ba    cdq"
 "	      005003bb    xor eax,edx"
 "	      005003bd    sub eax,edx"
-"	      005003bf    mov [ebp-18h],eax"
+"	      005003bf    mov fy,eax"
 );
 // LINE 1027:
 	asm( 
-"	      005003c2    mov eax,[ebp-10h]"
-"	      005003c5    cmp [ebp-18h],eax"
+"	      005003c2    mov eax,fx"
+"	      005003c5    cmp fy,eax"
 "	      005003c8    jge near ptr 005003DEh"
-"	      005003ce    mov eax,[ebp-10h]"
+"	      005003ce    mov eax,fx"
 "	      005003d1    add eax,eax"
-"	      005003d3    add eax,[ebp-18h]"
-"	      005003d6    mov [ebp-0Ch],eax"
+"	      005003d3    add eax,fy"
+"	      005003d6    mov dist,eax"
 );
 // LINE 1028:
 	asm( 
 "	      005003d9    jmp near ptr 005003E9h"
-"	      005003de    mov eax,[ebp-18h]"
+"	      005003de    mov eax,fy"
 "	      005003e1    add eax,eax"
-"	      005003e3    add eax,[ebp-10h]"
-"	      005003e6    mov [ebp-0Ch],eax"
+"	      005003e3    add eax,fx"
+"	      005003e6    mov dist,eax"
 );
 // LINE 1029:
 	asm( 
 "	      005003e9    mov ecx,6Fh"
-"	      005003ee    mov eax,[ebp-0Ch]"
+"	      005003ee    mov eax,dist"
 "	      005003f1    shl eax,4"
 "	      005003f4    mov ebx,184h"
 "	      005003f9    cdq"
 "	      005003fa    idiv ebx"
 "	      005003fc    sub ecx,eax"
-"	      005003fe    mov [ebp-24h],ecx"
+"	      005003fe    mov i,ecx"
 );
 // LINE 1031:
 	asm( 
-"	      00500401    mov eax,[ebp-2Ch]"
+"	      00500401    mov eax,desticon"
 "	      00500404    push eax"
-"	      00500405    mov eax,[ebp-24h]"
+"	      00500405    mov eax,i"
 "	      00500408    push eax"
-"	      00500409    mov eax,[ebp-1Ch]"
+"	      00500409    mov eax,dfy"
 "	      0050040c    push eax"
-"	      0050040d    mov eax,[ebp-14h]"
+"	      0050040d    mov eax,dfx"
 "	      00500410    push eax"
 "	      00500411    call 005004CFh"
 "	      00500416    add esp,10h"
@@ -3534,14 +3534,14 @@ void S3MapDrawPosLines(long posx, long posy) {
 	asm( 
 "	      00500426    mov eax,ds:[5B4968h]"
 "	      0050042b    mov eax,[eax+100h]"
-"	      00500431    mov [ebp-10h],eax"
+"	      00500431    mov fx,eax"
 );
 // LINE 1040:
 	asm( 
 "	      00500434    mov eax,ds:[5B4968h]"
 "	      00500439    mov eax,[eax+108h]"
 "	      0050043f    neg eax"
-"	      00500441    mov [ebp-18h],eax"
+"	      00500441    mov fy,eax"
 );
 // LINE 1042:
 	asm( 
@@ -3551,63 +3551,63 @@ void S3MapDrawPosLines(long posx, long posy) {
 	asm( 
 "	      00500449    call 00546541h"
 "	      0050044e    mov eax,[eax]"
-"	      00500450    mov [ebp-10h],eax"
+"	      00500450    mov fx,eax"
 );
 // LINE 1045:
 	asm( 
 "	      00500453    call 00546541h"
 "	      00500458    mov eax,[eax+8]"
 "	      0050045b    neg eax"
-"	      0050045d    mov [ebp-18h],eax"
+"	      0050045d    mov fy,eax"
 );
 // LINE 1048:
 	asm( 
-"	      00500460    mov dword ptr [ebp-1Ch],0"
-"	      00500467    mov eax,[ebp-1Ch]"
-"	      0050046a    mov [ebp-14h],eax"
+"	      00500460    mov dfy,0"
+"	      00500467    mov eax,dfy"
+"	      0050046a    mov dfx,eax"
 );
 // LINE 1049:
 	asm( 
-"	      0050046d    mov dword ptr [ebp-24h],0"
+"	      0050046d    mov i,0"
 "	      00500474    jmp near ptr 0050047Ch"
-"	      00500479    inc dword ptr [ebp-24h]"
-"	      0050047c    mov eax,[ebp-24h]"
+"	      00500479    inc i"
+"	      0050047c    mov eax,i"
 "	      0050047f    cmp ds:[5B5288h],eax"
 "	      00500485    jle near ptr 005004CAh"
 );
 // LINE 1052:
 	asm( 
-"	      0050048b    mov eax,[ebp-14h]"
+"	      0050048b    mov eax,dfx"
 "	      0050048e    sar eax,10h"
-"	      00500491    mov [ebp-20h],eax"
+"	      00500491    mov x,eax"
 );
 // LINE 1053:
 	asm( 
-"	      00500494    mov eax,[ebp-1Ch]"
+"	      00500494    mov eax,dfy"
 "	      00500497    sar eax,10h"
-"	      0050049a    mov [ebp-28h],eax"
+"	      0050049a    mov y,eax"
 );
 // LINE 1054:
 	asm( 
-"	      0050049d    mov eax,[ebp-10h]"
-"	      005004a0    add [ebp-14h],eax"
+"	      0050049d    mov eax,fx"
+"	      005004a0    add dfx,eax"
 );
 // LINE 1055:
 	asm( 
-"	      005004a3    mov eax,[ebp-18h]"
-"	      005004a6    add [ebp-1Ch],eax"
+"	      005004a3    mov eax,fy"
+"	      005004a6    add dfy,eax"
 );
 // LINE 1056:
 	asm( 
-"	      005004a9    mov eax,[ebp-28h]"
+"	      005004a9    mov eax,y"
 "	      005004ac    imul eax,ds:[5B5268h]"
-"	      005004b3    add eax,[ebp-20h]"
+"	      005004b3    add eax,x"
 "	      005004b6    add eax,ds:[5B5278h]"
-"	      005004bc    mov [ebp-4],eax"
+"	      005004bc    mov ptr,eax"
 );
 // LINE 1057:
 	asm( 
-"	      005004bf    mov eax,[ebp-4]"
+"	      005004bf    mov eax,ptr"
 "	      005004c2    mov byte ptr [eax],70h"
 );
 // LINE 1058:
@@ -3646,33 +3646,33 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 );
 // LINE 1076:
 	asm( 
-"	      005004d8    mov dword ptr [ebp-20h],0"
+"	      005004d8    mov error,0"
 );
 // LINE 1080:
 	asm( 
 "	      005004df    mov eax,ds:[5B5268h]"
 "	      005004e4    sar eax,1"
-"	      005004e7    mov [ebp-8],eax"
+"	      005004e7    mov xpos,eax"
 );
 // LINE 1081:
 	asm( 
 "	      005004ea    mov eax,ds:[5B526Ch]"
 "	      005004ef    sar eax,1"
-"	      005004f2    mov [ebp-0Ch],eax"
+"	      005004f2    mov ypos,eax"
 );
 // LINE 1084:
 	asm( 
 "	      005004f5    mov eax,ds:[5B5278h]"
-"	      005004fa    mov [ebp-4],eax"
+"	      005004fa    mov writeBuffer,eax"
 );
 // LINE 1086:
 	asm( 
-"	      005004fd    cmp dword ptr [ebp+8],0"
+"	      005004fd    cmp dx,0"
 "	      00500501    jl near ptr 00500513h"
 );
 // LINE 1088:
 	asm( 
-"	      00500507    mov dword ptr [ebp-14h],1"
+"	      00500507    mov Xinc,1"
 );
 // LINE 1090:
 	asm( 
@@ -3680,27 +3680,27 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 );
 // LINE 1092:
 	asm( 
-"	      00500513    mov dword ptr [ebp-14h],0FFFFFFFFh"
+"	      00500513    mov Xinc,0FFFFFFFFh"
 );
 // LINE 1093:
 	asm( 
-"	      0050051a    mov eax,[ebp+8]"
+"	      0050051a    mov eax,dx"
 "	      0050051d    neg eax"
-"	      0050051f    mov [ebp+8],eax"
+"	      0050051f    mov dx,eax"
 );
 // LINE 1096:
 	asm( 
-"	      00500522    cmp dword ptr [ebp+0Ch],0"
+"	      00500522    cmp dy,0"
 "	      00500526    jl near ptr 00500540h"
 );
 // LINE 1098:
 	asm( 
 "	      0050052c    mov eax,ds:[5B5268h]"
-"	      00500531    mov [ebp-1Ch],eax"
+"	      00500531    mov Yinc,eax"
 );
 // LINE 1099:
 	asm( 
-"	      00500534    mov dword ptr [ebp-10h],1"
+"	      00500534    mov Yunit,1"
 );
 // LINE 1101:
 	asm( 
@@ -3710,91 +3710,91 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	asm( 
 "	      00500540    mov eax,ds:[5B5268h]"
 "	      00500545    neg eax"
-"	      00500547    mov [ebp-1Ch],eax"
+"	      00500547    mov Yinc,eax"
 );
 // LINE 1104:
 	asm( 
-"	      0050054a    mov eax,[ebp+0Ch]"
+"	      0050054a    mov eax,dy"
 "	      0050054d    neg eax"
-"	      0050054f    mov [ebp+0Ch],eax"
+"	      0050054f    mov dy,eax"
 );
 // LINE 1105:
 	asm( 
-"	      00500552    mov dword ptr [ebp-10h],0FFFFFFFFh"
+"	      00500552    mov Yunit,0FFFFFFFFh"
 );
 // LINE 1108:
 	asm( 
-"	      00500559    mov eax,[ebp+8]"
-"	      0050055c    cmp [ebp+0Ch],eax"
+"	      00500559    mov eax,dx"
+"	      0050055c    cmp dy,eax"
 "	      0050055f    jge near ptr 00500607h"
 );
 // LINE 1110:
 	asm( 
-"	      00500565    mov dword ptr [ebp-18h],0"
+"	      00500565    mov index,0"
 "	      0050056c    jmp near ptr 00500574h"
-"	      00500571    inc dword ptr [ebp-18h]"
-"	      00500574    mov eax,[ebp+8]"
-"	      00500577    cmp [ebp-18h],eax"
+"	      00500571    inc index"
+"	      00500574    mov eax,dx"
+"	      00500577    cmp index,eax"
 "	      0050057a    jg near ptr 00500602h"
 );
 // LINE 1112:
 	asm( 
-"	      00500580    movsx eax,byte ptr [ebp+10h]"
+"	      00500580    movsx eax,col"
 "	      00500584    test eax,eax"
 "	      00500586    je near ptr 00500594h"
-"	      0050058c    mov al,[ebp+10h]"
-"	      0050058f    mov ecx,[ebp-4]"
+"	      0050058c    mov al,col"
+"	      0050058f    mov ecx,writeBuffer"
 "	      00500592    mov [ecx],al"
 );
 // LINE 1113:
 	asm( 
-"	      00500594    mov eax,[ebp+0Ch]"
-"	      00500597    add [ebp-20h],eax"
+"	      00500594    mov eax,dy"
+"	      00500597    add error,eax"
 );
 // LINE 1114:
 	asm( 
-"	      0050059a    mov eax,[ebp+8]"
-"	      0050059d    cmp [ebp-20h],eax"
+"	      0050059a    mov eax,dx"
+"	      0050059d    cmp error,eax"
 "	      005005a0    jle near ptr 005005BCh"
 );
 // LINE 1116:
 	asm( 
 "	      005005a6    xor eax,eax"
-"	      005005a8    sub eax,[ebp+8]"
+"	      005005a8    sub eax,dx"
 "	      005005ab    neg eax"
-"	      005005ad    sub [ebp-20h],eax"
+"	      005005ad    sub error,eax"
 );
 // LINE 1117:
 	asm( 
-"	      005005b0    mov eax,[ebp-1Ch]"
-"	      005005b3    add [ebp-4],eax"
+"	      005005b0    mov eax,Yinc"
+"	      005005b3    add writeBuffer,eax"
 );
 // LINE 1118:
 	asm( 
-"	      005005b6    mov eax,[ebp-10h]"
-"	      005005b9    add [ebp-0Ch],eax"
+"	      005005b6    mov eax,Yunit"
+"	      005005b9    add ypos,eax"
 );
 // LINE 1120:
 	asm( 
-"	      005005bc    mov eax,[ebp-14h]"
-"	      005005bf    add [ebp-4],eax"
+"	      005005bc    mov eax,Xinc"
+"	      005005bf    add writeBuffer,eax"
 );
 // LINE 1121:
 	asm( 
-"	      005005c2    mov eax,[ebp-14h]"
-"	      005005c5    add [ebp-8],eax"
+"	      005005c2    mov eax,Xinc"
+"	      005005c5    add xpos,eax"
 );
 // LINE 1123:
 	asm( 
-"	      005005c8    cmp dword ptr [ebp-0Ch],0"
+"	      005005c8    cmp ypos,0"
 "	      005005cc    jl near ptr 005005F8h"
-"	      005005d2    cmp dword ptr [ebp-8],0"
+"	      005005d2    cmp xpos,0"
 "	      005005d6    jl near ptr 005005F8h"
 "	      005005dc    mov eax,ds:[5B526Ch]"
-"	      005005e1    cmp [ebp-0Ch],eax"
+"	      005005e1    cmp ypos,eax"
 "	      005005e4    jge near ptr 005005F8h"
 "	      005005ea    mov eax,ds:[5B5268h]"
-"	      005005ef    cmp [ebp-8],eax"
+"	      005005ef    cmp xpos,eax"
 "	      005005f2    jl near ptr 005005FDh"
 );
 // LINE 1124:
@@ -3811,70 +3811,70 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 );
 // LINE 1129:
 	asm( 
-"	      00500607    mov dword ptr [ebp-18h],0"
+"	      00500607    mov index,0"
 "	      0050060e    jmp near ptr 00500616h"
-"	      00500613    inc dword ptr [ebp-18h]"
-"	      00500616    mov eax,[ebp+0Ch]"
-"	      00500619    cmp [ebp-18h],eax"
+"	      00500613    inc index"
+"	      00500616    mov eax,dy"
+"	      00500619    cmp index,eax"
 "	      0050061c    jg near ptr 005006A0h"
 );
 // LINE 1131:
 	asm( 
-"	      00500622    movsx eax,byte ptr [ebp+10h]"
+"	      00500622    movsx eax,col"
 "	      00500626    test eax,eax"
 "	      00500628    je near ptr 00500636h"
-"	      0050062e    mov al,[ebp+10h]"
-"	      00500631    mov ecx,[ebp-4]"
+"	      0050062e    mov al,col"
+"	      00500631    mov ecx,writeBuffer"
 "	      00500634    mov [ecx],al"
 );
 // LINE 1132:
 	asm( 
-"	      00500636    mov eax,[ebp+8]"
-"	      00500639    add [ebp-20h],eax"
+"	      00500636    mov eax,dx"
+"	      00500639    add error,eax"
 );
 // LINE 1133:
 	asm( 
-"	      0050063c    mov eax,[ebp+0Ch]"
-"	      0050063f    cmp [ebp-20h],eax"
+"	      0050063c    mov eax,dy"
+"	      0050063f    cmp error,eax"
 "	      00500642    jle near ptr 0050065Eh"
 );
 // LINE 1135:
 	asm( 
 "	      00500648    xor eax,eax"
-"	      0050064a    sub eax,[ebp+0Ch]"
+"	      0050064a    sub eax,dy"
 "	      0050064d    neg eax"
-"	      0050064f    sub [ebp-20h],eax"
+"	      0050064f    sub error,eax"
 );
 // LINE 1136:
 	asm( 
-"	      00500652    mov eax,[ebp-14h]"
-"	      00500655    add [ebp-4],eax"
+"	      00500652    mov eax,Xinc"
+"	      00500655    add writeBuffer,eax"
 );
 // LINE 1137:
 	asm( 
-"	      00500658    mov eax,[ebp-14h]"
-"	      0050065b    add [ebp-8],eax"
+"	      00500658    mov eax,Xinc"
+"	      0050065b    add xpos,eax"
 );
 // LINE 1139:
 	asm( 
-"	      0050065e    mov eax,[ebp-1Ch]"
-"	      00500661    add [ebp-4],eax"
+"	      0050065e    mov eax,Yinc"
+"	      00500661    add writeBuffer,eax"
 );
 // LINE 1140:
 	asm( 
-"	      00500664    mov eax,[ebp-10h]"
-"	      00500667    add [ebp-0Ch],eax"
+"	      00500664    mov eax,Yunit"
+"	      00500667    add ypos,eax"
 );
 // LINE 1141:
 	asm( 
 "	      0050066a    js near ptr 00500696h"
-"	      00500670    cmp dword ptr [ebp-8],0"
+"	      00500670    cmp xpos,0"
 "	      00500674    jl near ptr 00500696h"
 "	      0050067a    mov eax,ds:[5B526Ch]"
-"	      0050067f    cmp [ebp-0Ch],eax"
+"	      0050067f    cmp ypos,eax"
 "	      00500682    jge near ptr 00500696h"
 "	      00500688    mov eax,ds:[5B5268h]"
-"	      0050068d    cmp [ebp-8],eax"
+"	      0050068d    cmp xpos,eax"
 "	      00500690    jl near ptr 0050069Bh"
 );
 // LINE 1142:
@@ -3887,11 +3887,11 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 );
 // LINE 1146:
 	asm( 
-"	      005006a0    mov eax,[ebp-0Ch]"
+"	      005006a0    mov eax,ypos"
 "	      005006a3    push eax"
-"	      005006a4    mov eax,[ebp-8]"
+"	      005006a4    mov eax,xpos"
 "	      005006a7    push eax"
-"	      005006a8    mov eax,[ebp+14h]"
+"	      005006a8    mov eax,icon_id"
 "	      005006ab    push eax"
 "	      005006ac    call 00500A12h"
 "	      005006b1    add esp,0Ch"
@@ -3925,53 +3925,53 @@ void S3MapBlit(char * destbuf, long destpitch) {
 );
 // LINE 1163:
 	asm( 
-"	      005006c2    mov eax,[ebp+8]"
-"	      005006c5    mov [ebp-10h],eax"
+"	      005006c2    mov eax,destbuf"
+"	      005006c5    mov cptr,eax"
 );
 // LINE 1169:
 	asm( 
 "	      005006c8    mov eax,ds:[5B525Ch]"
-"	      005006cd    imul eax,[ebp+0Ch]"
+"	      005006cd    imul eax,destpitch"
 "	      005006d1    add eax,ds:[5B5258h]"
-"	      005006d7    add [ebp-10h],eax"
+"	      005006d7    add cptr,eax"
 );
 // LINE 1170:
 	asm( 
 "	      005006da    mov eax,ds:[5B5274h]"
-"	      005006df    mov [ebp-14h],eax"
+"	      005006df    mov mptr,eax"
 );
 // LINE 1172:
 	asm( 
-"	      005006e2    mov dword ptr [ebp-0Ch],0"
+"	      005006e2    mov y,0"
 "	      005006e9    jmp near ptr 005006F1h"
-"	      005006ee    inc dword ptr [ebp-0Ch]"
-"	      005006f1    mov eax,[ebp-0Ch]"
+"	      005006ee    inc y"
+"	      005006f1    mov eax,y"
 "	      005006f4    cmp ds:[5B526Ch],eax"
 "	      005006fa    jle near ptr 00500748h"
 );
 // LINE 1173:
 	asm( 
-"	      00500700    mov eax,[ebp-10h]"
-"	      00500703    mov [ebp-4],eax"
+"	      00500700    mov eax,cptr"
+"	      00500703    mov ptr,eax"
 );
 // LINE 1174:
 	asm( 
-"	      00500706    mov dword ptr [ebp-8],0"
+"	      00500706    mov x,0"
 "	      0050070d    jmp near ptr 00500715h"
-"	      00500712    inc dword ptr [ebp-8]"
+"	      00500712    inc x"
 "	      00500715    mov eax,ds:[5B5268h]"
 "	      0050071a    sar eax,2"
-"	      0050071d    cmp eax,[ebp-8]"
+"	      0050071d    cmp eax,x"
 "	      00500720    jle near ptr 0050073Dh"
 );
 // LINE 1175:
 	asm( 
-"	      00500726    mov eax,[ebp-14h]"
+"	      00500726    mov eax,mptr"
 "	      00500729    mov eax,[eax]"
-"	      0050072b    mov ecx,[ebp-4]"
+"	      0050072b    mov ecx,ptr"
 "	      0050072e    mov [ecx],eax"
-"	      00500730    add dword ptr [ebp-14h],4"
-"	      00500734    add dword ptr [ebp-4],4"
+"	      00500730    add mptr,4"
+"	      00500734    add ptr,4"
 );
 // LINE 1176:
 	asm( 
@@ -3979,8 +3979,8 @@ void S3MapBlit(char * destbuf, long destpitch) {
 );
 // LINE 1177:
 	asm( 
-"	      0050073d    mov eax,[ebp+0Ch]"
-"	      00500740    add [ebp-10h],eax"
+"	      0050073d    mov eax,destpitch"
+"	      00500740    add cptr,eax"
 );
 // LINE 1178:
 	asm( 
@@ -4015,59 +4015,59 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 );
 // LINE 1191:
 	asm( 
-"	      00500756    mov eax,[ebp+8]"
-"	      00500759    mov [ebp-10h],eax"
+"	      00500756    mov eax,destbuf"
+"	      00500759    mov cptr,eax"
 );
 // LINE 1193:
 	asm( 
-"	      0050075c    mov eax,[ebp+0Ch]"
-"	      0050075f    imul eax,[ebp+14h]"
-"	      00500763    add eax,[ebp+10h]"
-"	      00500766    add [ebp-10h],eax"
+"	      0050075c    mov eax,destpitch"
+"	      0050075f    imul eax,yDestination"
+"	      00500763    add eax,xDestination"
+"	      00500766    add cptr,eax"
 );
 // LINE 1194:
 	asm( 
 "	      00500769    mov eax,ds:[5B5274h]"
-"	      0050076e    mov [ebp-14h],eax"
+"	      0050076e    mov mptr,eax"
 );
 // LINE 1196:
 	asm( 
-"	      00500771    mov dword ptr [ebp-0Ch],0"
+"	      00500771    mov y,0"
 "	      00500778    jmp near ptr 00500780h"
-"	      0050077d    inc dword ptr [ebp-0Ch]"
-"	      00500780    mov eax,[ebp-0Ch]"
+"	      0050077d    inc y"
+"	      00500780    mov eax,y"
 "	      00500783    cmp ds:[5B526Ch],eax"
 "	      00500789    jle near ptr 005007D7h"
 );
 // LINE 1197:
 	asm( 
-"	      0050078f    mov eax,[ebp-10h]"
-"	      00500792    mov [ebp-4],eax"
+"	      0050078f    mov eax,cptr"
+"	      00500792    mov ptr,eax"
 );
 // LINE 1198:
 	asm( 
-"	      00500795    mov dword ptr [ebp-8],0"
+"	      00500795    mov x,0"
 "	      0050079c    jmp near ptr 005007A4h"
-"	      005007a1    inc dword ptr [ebp-8]"
+"	      005007a1    inc x"
 "	      005007a4    mov eax,ds:[5B5268h]"
 "	      005007a9    sar eax,2"
-"	      005007ac    cmp eax,[ebp-8]"
+"	      005007ac    cmp eax,x"
 "	      005007af    jle near ptr 005007CCh"
 );
 // LINE 1199:
 	asm( 
-"	      005007b5    mov eax,[ebp-14h]"
+"	      005007b5    mov eax,mptr"
 "	      005007b8    mov eax,[eax]"
-"	      005007ba    mov ecx,[ebp-4]"
+"	      005007ba    mov ecx,ptr"
 "	      005007bd    mov [ecx],eax"
-"	      005007bf    add dword ptr [ebp-14h],4"
-"	      005007c3    add dword ptr [ebp-4],4"
+"	      005007bf    add mptr,4"
+"	      005007c3    add ptr,4"
 "	      005007c7    jmp near ptr 005007A1h"
 );
 // LINE 1200:
 	asm( 
-"	      005007cc    mov eax,[ebp+0Ch]"
-"	      005007cf    add [ebp-10h],eax"
+"	      005007cc    mov eax,destpitch"
+"	      005007cf    add cptr,eax"
 );
 // LINE 1201:
 	asm( 
@@ -4255,26 +4255,26 @@ int32_t S3MapCursorDown(long posx, long posy) {
 );
 // LINE 1286:
 	asm( 
-"	      005008f3    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005008f3    mov car_id,0FFFFFFFFh"
 );
 // LINE 1290:
 	asm( 
-"	      005008fa    mov dword ptr [ebp-8],0"
+"	      005008fa    mov i,0"
 "	      00500901    jmp near ptr 00500909h"
-"	      00500906    inc dword ptr [ebp-8]"
-"	      00500909    cmp dword ptr [ebp-8],14h"
+"	      00500906    inc i"
+"	      00500909    cmp i,14h"
 "	      0050090d    jge near ptr 0050097Eh"
 );
 // LINE 1292:
 	asm( 
-"	      00500913    mov eax,[ebp-8]"
+"	      00500913    mov eax,i"
 "	      00500916    lea eax,[eax+eax*4]"
 "	      00500919    lea eax,[eax*8+6BED40h]"
-"	      00500920    mov [ebp-0Ch],eax"
+"	      00500920    mov ci,eax"
 );
 // LINE 1293:
 	asm( 
-"	      00500923    mov eax,[ebp-0Ch]"
+"	      00500923    mov eax,ci"
 "	      00500926    test byte ptr [eax],3"
 "	      00500929    jne near ptr 00500934h"
 );
@@ -4284,28 +4284,28 @@ int32_t S3MapCursorDown(long posx, long posy) {
 );
 // LINE 1297:
 	asm( 
-"	      00500934    mov eax,[ebp-0Ch]"
-"	      00500937    mov ecx,[ebp+8]"
+"	      00500934    mov eax,ci"
+"	      00500937    mov ecx,posx"
 "	      0050093a    cmp [eax+20h],ecx"
 "	      0050093d    jg near ptr 00500979h"
-"	      00500943    mov eax,[ebp-0Ch]"
-"	      00500946    mov ecx,[ebp+8]"
+"	      00500943    mov eax,ci"
+"	      00500946    mov ecx,posx"
 "	      00500949    cmp [eax+24h],ecx"
 "	      0050094c    jl near ptr 00500979h"
-"	      00500952    mov eax,[ebp-0Ch]"
-"	      00500955    mov ecx,[ebp+0Ch]"
+"	      00500952    mov eax,ci"
+"	      00500955    mov ecx,posy"
 "	      00500958    cmp [eax+18h],ecx"
 "	      0050095b    jg near ptr 00500979h"
-"	      00500961    mov eax,[ebp-0Ch]"
-"	      00500964    mov ecx,[ebp+0Ch]"
+"	      00500961    mov eax,ci"
+"	      00500964    mov ecx,posy"
 "	      00500967    cmp [eax+1Ch],ecx"
 "	      0050096a    jl near ptr 00500979h"
 );
 // LINE 1299:
 	asm( 
-"	      00500970    mov eax,[ebp-0Ch]"
+"	      00500970    mov eax,ci"
 "	      00500973    mov eax,[eax+4]"
-"	      00500976    mov [ebp-4],eax"
+"	      00500976    mov car_id,eax"
 );
 // LINE 1303:
 	asm( 
@@ -4313,7 +4313,7 @@ int32_t S3MapCursorDown(long posx, long posy) {
 );
 // LINE 1305:
 	asm( 
-"	      0050097e    mov eax,[ebp-4]"
+"	      0050097e    mov eax,car_id"
 "	      00500981    jmp near ptr 00500986h"
 );
 // LINE 1306:
@@ -4515,7 +4515,7 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 );
 // LINE 1389:
 	asm( 
-"	      00500a1b    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      00500a1b    cmp icon_id,0FFFFFFFFh"
 "	      00500a1f    jne near ptr 00500A2Ah"
 );
 // LINE 1390:
@@ -4524,99 +4524,99 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 );
 // LINE 1393:
 	asm( 
-"	      00500a2a    mov eax,[ebp+0Ch]"
+"	      00500a2a    mov eax,x"
 "	      00500a2d    mov ecx,ds:[608BF0h]"
 "	      00500a33    sar ecx,1"
 "	      00500a36    sub eax,ecx"
-"	      00500a38    mov [ebp-8],eax"
+"	      00500a38    mov mapx,eax"
 );
 // LINE 1394:
 	asm( 
-"	      00500a3b    mov eax,[ebp+10h]"
+"	      00500a3b    mov eax,y"
 "	      00500a3e    mov ecx,ds:[608BF0h]"
 "	      00500a44    sar ecx,1"
 "	      00500a47    sub eax,ecx"
-"	      00500a49    mov [ebp-0Ch],eax"
+"	      00500a49    mov mapy,eax"
 );
 // LINE 1395:
 	asm( 
-"	      00500a4c    cmp dword ptr [ebp-8],0"
+"	      00500a4c    cmp mapx,0"
 "	      00500a50    jge near ptr 00500A5Dh"
-"	      00500a56    mov dword ptr [ebp-8],0"
+"	      00500a56    mov mapx,0"
 );
 // LINE 1396:
 	asm( 
-"	      00500a5d    cmp dword ptr [ebp-0Ch],0"
+"	      00500a5d    cmp mapy,0"
 "	      00500a61    jge near ptr 00500A6Eh"
-"	      00500a67    mov dword ptr [ebp-0Ch],0"
+"	      00500a67    mov mapy,0"
 );
 // LINE 1397:
 	asm( 
-"	      00500a6e    mov eax,[ebp-8]"
+"	      00500a6e    mov eax,mapx"
 "	      00500a71    add eax,ds:[608BF0h]"
 "	      00500a77    cmp eax,ds:[5B5268h]"
 "	      00500a7d    jle near ptr 00500A91h"
 "	      00500a83    mov eax,ds:[5B5268h]"
 "	      00500a88    sub eax,ds:[608BF0h]"
-"	      00500a8e    mov [ebp-8],eax"
+"	      00500a8e    mov mapx,eax"
 );
 // LINE 1398:
 	asm( 
-"	      00500a91    mov eax,[ebp-0Ch]"
+"	      00500a91    mov eax,mapy"
 "	      00500a94    add eax,ds:[608BF0h]"
 "	      00500a9a    cmp eax,ds:[5B526Ch]"
 "	      00500aa0    jle near ptr 00500AB4h"
 "	      00500aa6    mov eax,ds:[5B526Ch]"
 "	      00500aab    sub eax,ds:[608BF0h]"
-"	      00500ab1    mov [ebp-0Ch],eax"
+"	      00500ab1    mov mapy,eax"
 );
 // LINE 1400:
 	asm( 
-"	      00500ab4    mov eax,[ebp-0Ch]"
+"	      00500ab4    mov eax,mapy"
 "	      00500ab7    imul eax,ds:[5B5268h]"
-"	      00500abe    add eax,[ebp-8]"
+"	      00500abe    add eax,mapx"
 "	      00500ac1    add eax,ds:[5B5274h]"
-"	      00500ac7    mov [ebp-10h],eax"
+"	      00500ac7    mov bufptr,eax"
 );
 // LINE 1401:
 	asm( 
-"	      00500aca    mov eax,[ebp+8]"
+"	      00500aca    mov eax,icon_id"
 "	      00500acd    mov eax,[eax*4+608BD0h]"
-"	      00500ad4    mov [ebp-4],eax"
+"	      00500ad4    mov iptr,eax"
 );
 // LINE 1403:
 	asm( 
-"	      00500ad7    mov dword ptr [ebp-0Ch],0"
+"	      00500ad7    mov mapy,0"
 "	      00500ade    jmp near ptr 00500AE6h"
-"	      00500ae3    inc dword ptr [ebp-0Ch]"
+"	      00500ae3    inc mapy"
 "	      00500ae6    mov eax,ds:[608BF0h]"
-"	      00500aeb    cmp [ebp-0Ch],eax"
+"	      00500aeb    cmp mapy,eax"
 "	      00500aee    jge near ptr 00500B60h"
 );
 // LINE 1405:
 	asm( 
-"	      00500af4    mov dword ptr [ebp-8],0"
+"	      00500af4    mov mapx,0"
 "	      00500afb    jmp near ptr 00500B03h"
-"	      00500b00    inc dword ptr [ebp-8]"
+"	      00500b00    inc mapx"
 "	      00500b03    mov eax,ds:[608BF0h]"
-"	      00500b08    cmp [ebp-8],eax"
+"	      00500b08    cmp mapx,eax"
 "	      00500b0b    jge near ptr 00500B3Fh"
 );
 // LINE 1407:
 	asm( 
-"	      00500b11    mov eax,[ebp-4]"
+"	      00500b11    mov eax,iptr"
 "	      00500b14    movsx eax,byte ptr [eax]"
 "	      00500b17    test eax,eax"
 "	      00500b19    je near ptr 00500B34h"
 );
 // LINE 1409:
 	asm( 
-"	      00500b1f    mov eax,[ebp-4]"
+"	      00500b1f    mov eax,iptr"
 "	      00500b22    mov al,[eax]"
-"	      00500b24    mov ecx,[ebp-10h]"
+"	      00500b24    mov ecx,bufptr"
 "	      00500b27    mov [ecx],al"
-"	      00500b29    inc dword ptr [ebp-4]"
-"	      00500b2c    inc dword ptr [ebp-10h]"
+"	      00500b29    inc iptr"
+"	      00500b2c    inc bufptr"
 );
 // LINE 1411:
 	asm( 
@@ -4624,11 +4624,11 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 );
 // LINE 1413:
 	asm( 
-"	      00500b34    inc dword ptr [ebp-10h]"
+"	      00500b34    inc bufptr"
 );
 // LINE 1414:
 	asm( 
-"	      00500b37    inc dword ptr [ebp-4]"
+"	      00500b37    inc iptr"
 );
 // LINE 1416:
 	asm( 
@@ -4638,13 +4638,13 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	asm( 
 "	      00500b3f    mov eax,ds:[5B5268h]"
 "	      00500b44    sub eax,ds:[608BF0h]"
-"	      00500b4a    add [ebp-10h],eax"
+"	      00500b4a    add bufptr,eax"
 );
 // LINE 1418:
 	asm( 
 "	      00500b4d    mov eax,ds:[608C10h]"
 "	      00500b52    sub eax,ds:[608BF0h]"
-"	      00500b58    add [ebp-4],eax"
+"	      00500b58    add iptr,eax"
 );
 // LINE 1419:
 	asm( 
@@ -4673,18 +4673,18 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1432:
 	asm( 
-"	      00500b6e    mov eax,[ebp+8]"
+"	      00500b6e    mov eax,mission_type"
 "	      00500b71    mov [ebp-4],eax"
 "	      00500b74    jmp near ptr 00500C92h"
 );
 // LINE 1435:
 	asm( 
-"	      00500b79    mov eax,[ebp+0Ch]"
+"	      00500b79    mov eax,desticon"
 "	      00500b7c    mov dword ptr [eax],6"
 );
 // LINE 1436:
 	asm( 
-"	      00500b82    mov eax,[ebp+10h]"
+"	      00500b82    mov eax,pickicon"
 "	      00500b85    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1437:
@@ -4693,12 +4693,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1442:
 	asm( 
-"	      00500b90    mov eax,[ebp+0Ch]"
+"	      00500b90    mov eax,desticon"
 "	      00500b93    mov dword ptr [eax],4"
 );
 // LINE 1443:
 	asm( 
-"	      00500b99    mov eax,[ebp+10h]"
+"	      00500b99    mov eax,pickicon"
 "	      00500b9c    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1444:
@@ -4707,12 +4707,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1446:
 	asm( 
-"	      00500ba7    mov eax,[ebp+0Ch]"
+"	      00500ba7    mov eax,desticon"
 "	      00500baa    mov dword ptr [eax],1"
 );
 // LINE 1447:
 	asm( 
-"	      00500bb0    mov eax,[ebp+10h]"
+"	      00500bb0    mov eax,pickicon"
 "	      00500bb3    mov dword ptr [eax],4"
 );
 // LINE 1448:
@@ -4721,12 +4721,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1450:
 	asm( 
-"	      00500bbe    mov eax,[ebp+0Ch]"
+"	      00500bbe    mov eax,desticon"
 "	      00500bc1    mov dword ptr [eax],3"
 );
 // LINE 1451:
 	asm( 
-"	      00500bc7    mov eax,[ebp+10h]"
+"	      00500bc7    mov eax,pickicon"
 "	      00500bca    mov dword ptr [eax],5"
 );
 // LINE 1452:
@@ -4735,12 +4735,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1455:
 	asm( 
-"	      00500bd5    mov eax,[ebp+0Ch]"
+"	      00500bd5    mov eax,desticon"
 "	      00500bd8    mov dword ptr [eax],7"
 );
 // LINE 1456:
 	asm( 
-"	      00500bde    mov eax,[ebp+10h]"
+"	      00500bde    mov eax,pickicon"
 "	      00500be1    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1457:
@@ -4749,12 +4749,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1459:
 	asm( 
-"	      00500bec    mov eax,[ebp+0Ch]"
+"	      00500bec    mov eax,desticon"
 "	      00500bef    mov dword ptr [eax],3"
 );
 // LINE 1460:
 	asm( 
-"	      00500bf5    mov eax,[ebp+10h]"
+"	      00500bf5    mov eax,pickicon"
 "	      00500bf8    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1461:
@@ -4763,12 +4763,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1463:
 	asm( 
-"	      00500c03    mov eax,[ebp+0Ch]"
+"	      00500c03    mov eax,desticon"
 "	      00500c06    mov dword ptr [eax],7"
 );
 // LINE 1464:
 	asm( 
-"	      00500c0c    mov eax,[ebp+10h]"
+"	      00500c0c    mov eax,pickicon"
 "	      00500c0f    mov dword ptr [eax],1"
 );
 // LINE 1465:
@@ -4777,12 +4777,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1467:
 	asm( 
-"	      00500c1a    mov eax,[ebp+0Ch]"
+"	      00500c1a    mov eax,desticon"
 "	      00500c1d    mov dword ptr [eax],7"
 );
 // LINE 1468:
 	asm( 
-"	      00500c23    mov eax,[ebp+10h]"
+"	      00500c23    mov eax,pickicon"
 "	      00500c26    mov dword ptr [eax],1"
 );
 // LINE 1469:
@@ -4791,12 +4791,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1476:
 	asm( 
-"	      00500c31    mov eax,[ebp+0Ch]"
+"	      00500c31    mov eax,desticon"
 "	      00500c34    mov dword ptr [eax],2"
 );
 // LINE 1477:
 	asm( 
-"	      00500c3a    mov eax,[ebp+10h]"
+"	      00500c3a    mov eax,pickicon"
 "	      00500c3d    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1478:
@@ -4805,12 +4805,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1480:
 	asm( 
-"	      00500c48    mov eax,[ebp+0Ch]"
+"	      00500c48    mov eax,desticon"
 "	      00500c4b    mov dword ptr [eax],7"
 );
 // LINE 1481:
 	asm( 
-"	      00500c51    mov eax,[ebp+10h]"
+"	      00500c51    mov eax,pickicon"
 "	      00500c54    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1482:
@@ -4819,12 +4819,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1484:
 	asm( 
-"	      00500c5f    mov eax,[ebp+0Ch]"
+"	      00500c5f    mov eax,desticon"
 "	      00500c62    mov dword ptr [eax],5"
 );
 // LINE 1485:
 	asm( 
-"	      00500c68    mov eax,[ebp+10h]"
+"	      00500c68    mov eax,pickicon"
 "	      00500c6b    mov dword ptr [eax],5"
 );
 // LINE 1486:
@@ -4833,12 +4833,12 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 );
 // LINE 1488:
 	asm( 
-"	      00500c76    mov eax,[ebp+0Ch]"
+"	      00500c76    mov eax,desticon"
 "	      00500c79    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1489:
 	asm( 
-"	      00500c7f    mov eax,[ebp+10h]"
+"	      00500c7f    mov eax,pickicon"
 "	      00500c82    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 1490:
@@ -4936,36 +4936,36 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 // LINE 1508:
 	asm( 
 "	      00500dec    call 004FC39Dh"
-"	      00500df1    mov [ebp-8],eax"
+"	      00500df1    mov currmd,eax"
 );
 // LINE 1510:
 	asm( 
-"	      00500df4    mov dword ptr [ebp-0Ch],0"
+"	      00500df4    mov i,0"
 "	      00500dfb    jmp near ptr 00500E03h"
-"	      00500e00    inc dword ptr [ebp-0Ch]"
-"	      00500e03    cmp dword ptr [ebp-0Ch],1Eh"
+"	      00500e00    inc i"
+"	      00500e03    cmp i,1Eh"
 "	      00500e07    jge near ptr 00500F2Fh"
 );
 // LINE 1512:
 	asm( 
-"	      00500e0d    mov eax,[ebp-0Ch]"
+"	      00500e0d    mov eax,i"
 "	      00500e10    push eax"
 "	      00500e11    call 004FDCBBh"
 "	      00500e16    add esp,4"
-"	      00500e19    mov [ebp-14h],eax"
+"	      00500e19    mov md,eax"
 );
 // LINE 1516:
 	asm( 
-"	      00500e1c    cmp dword ptr [ebp-14h],0"
+"	      00500e1c    cmp md,0"
 "	      00500e20    je near ptr 00500E4Ch"
-"	      00500e26    mov eax,[ebp-14h]"
+"	      00500e26    mov eax,md"
 "	      00500e29    test byte ptr [eax+4Ch],1"
 "	      00500e2d    je near ptr 00500E4Ch"
-"	      00500e33    mov eax,[ebp-14h]"
+"	      00500e33    mov eax,md"
 "	      00500e36    cmp dword ptr [eax+54h],2"
 "	      00500e3a    je near ptr 00500E4Ch"
-"	      00500e40    mov eax,[ebp-14h]"
-"	      00500e43    cmp [ebp-8],eax"
+"	      00500e40    mov eax,md"
+"	      00500e43    cmp currmd,eax"
 "	      00500e46    jne near ptr 00500E51h"
 );
 // LINE 1518:
@@ -4974,11 +4974,11 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 );
 // LINE 1521:
 	asm( 
-"	      00500e51    lea eax,[ebp-4]"
+"	      00500e51    lea eax,pickicon"
 "	      00500e54    push eax"
-"	      00500e55    lea eax,[ebp-10h]"
+"	      00500e55    lea eax,desticon"
 "	      00500e58    push eax"
-"	      00500e59    mov eax,[ebp-14h]"
+"	      00500e59    mov eax,md"
 "	      00500e5c    mov eax,[eax+50h]"
 "	      00500e5f    push eax"
 "	      00500e60    call 00500B65h"
@@ -4986,24 +4986,24 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 );
 // LINE 1523:
 	asm( 
-"	      00500e68    mov eax,[ebp-14h]"
+"	      00500e68    mov eax,md"
 "	      00500e6b    cmp dword ptr [eax+30h],0FFFFFFFFh"
 "	      00500e6f    je near ptr 00500EACh"
 );
 // LINE 1528:
 	asm( 
-"	      00500e75    mov eax,[ebp-10h]"
+"	      00500e75    mov eax,desticon"
 "	      00500e78    push eax"
 "	      00500e79    push 0"
-"	      00500e7b    mov eax,[ebp-14h]"
+"	      00500e7b    mov eax,md"
 "	      00500e7e    mov eax,[eax+34h]"
-"	      00500e81    sub eax,[ebp+0Ch]"
+"	      00500e81    sub eax,posy"
 "	      00500e84    mov cl,ds:[5B5298h]"
 "	      00500e8a    shl eax,cl"
 "	      00500e8c    push eax"
-"	      00500e8d    mov eax,[ebp-14h]"
+"	      00500e8d    mov eax,md"
 "	      00500e90    mov eax,[eax+30h]"
-"	      00500e93    sub eax,[ebp+8]"
+"	      00500e93    sub eax,posx"
 "	      00500e96    mov cl,ds:[5B5298h]"
 "	      00500e9c    shl eax,cl"
 "	      00500e9e    push eax"
@@ -5016,24 +5016,24 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 );
 // LINE 1532:
 	asm( 
-"	      00500eac    mov eax,[ebp-14h]"
+"	      00500eac    mov eax,md"
 "	      00500eaf    cmp dword ptr [eax+28h],0FFFFFFFFh"
 "	      00500eb3    je near ptr 00500EEBh"
 );
 // LINE 1537:
 	asm( 
-"	      00500eb9    mov eax,[ebp-10h]"
+"	      00500eb9    mov eax,desticon"
 "	      00500ebc    push eax"
 "	      00500ebd    push 0"
-"	      00500ebf    mov eax,[ebp-14h]"
+"	      00500ebf    mov eax,md"
 "	      00500ec2    mov eax,[eax+2Ch]"
-"	      00500ec5    sub eax,[ebp+0Ch]"
+"	      00500ec5    sub eax,posy"
 "	      00500ec8    mov cl,ds:[5B5298h]"
 "	      00500ece    shl eax,cl"
 "	      00500ed0    push eax"
-"	      00500ed1    mov eax,[ebp-14h]"
+"	      00500ed1    mov eax,md"
 "	      00500ed4    mov eax,[eax+28h]"
-"	      00500ed7    sub eax,[ebp+8]"
+"	      00500ed7    sub eax,posx"
 "	      00500eda    mov cl,ds:[5B5298h]"
 "	      00500ee0    shl eax,cl"
 "	      00500ee2    push eax"
@@ -5042,24 +5042,24 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 );
 // LINE 1541:
 	asm( 
-"	      00500eeb    mov eax,[ebp-14h]"
+"	      00500eeb    mov eax,md"
 "	      00500eee    cmp dword ptr [eax+38h],0FFFFFFFFh"
 "	      00500ef2    je near ptr 00500F2Ah"
 );
 // LINE 1546:
 	asm( 
-"	      00500ef8    mov eax,[ebp-4]"
+"	      00500ef8    mov eax,pickicon"
 "	      00500efb    push eax"
 "	      00500efc    push 0"
-"	      00500efe    mov eax,[ebp-14h]"
+"	      00500efe    mov eax,md"
 "	      00500f01    mov eax,[eax+3Ch]"
-"	      00500f04    sub eax,[ebp+0Ch]"
+"	      00500f04    sub eax,posy"
 "	      00500f07    mov cl,ds:[5B5298h]"
 "	      00500f0d    shl eax,cl"
 "	      00500f0f    push eax"
-"	      00500f10    mov eax,[ebp-14h]"
+"	      00500f10    mov eax,md"
 "	      00500f13    mov eax,[eax+38h]"
-"	      00500f16    sub eax,[ebp+8]"
+"	      00500f16    sub eax,posx"
 "	      00500f19    mov cl,ds:[5B5298h]"
 "	      00500f1f    shl eax,cl"
 "	      00500f21    push eax"
@@ -5096,22 +5096,22 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 );
 // LINE 1567:
 	asm( 
-"	      00500f3d    mov dword ptr [ebp-4],0"
+"	      00500f3d    mov i,0"
 "	      00500f44    jmp near ptr 00500F4Ch"
-"	      00500f49    inc dword ptr [ebp-4]"
-"	      00500f4c    cmp dword ptr [ebp-4],14h"
+"	      00500f49    inc i"
+"	      00500f4c    cmp i,14h"
 "	      00500f50    jge near ptr 00500F7Ch"
 );
 // LINE 1569:
 	asm( 
-"	      00500f56    mov eax,[ebp-4]"
+"	      00500f56    mov eax,i"
 "	      00500f59    lea eax,[eax+eax*4]"
 "	      00500f5c    lea eax,[eax*8+6BED40h]"
-"	      00500f63    mov [ebp-8],eax"
+"	      00500f63    mov ci,eax"
 );
 // LINE 1570:
 	asm( 
-"	      00500f66    mov eax,[ebp-8]"
+"	      00500f66    mov eax,ci"
 "	      00500f69    test byte ptr [eax],1"
 "	      00500f6c    jne near ptr 00500F77h"
 );
@@ -5125,7 +5125,7 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 );
 // LINE 1575:
 	asm( 
-"	      00500f7c    cmp dword ptr [ebp-4],14h"
+"	      00500f7c    cmp i,14h"
 "	      00500f80    jne near ptr 00500F8Bh"
 );
 // LINE 1576:
@@ -5134,37 +5134,37 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 );
 // LINE 1579:
 	asm( 
-"	      00500f8b    mov eax,[ebp+8]"
-"	      00500f8e    mov ecx,[ebp-8]"
+"	      00500f8b    mov eax,car_id"
+"	      00500f8e    mov ecx,ci"
 "	      00500f91    mov [ecx+4],eax"
 );
 // LINE 1580:
 	asm( 
-"	      00500f94    mov eax,[ebp+0Ch]"
-"	      00500f97    mov ecx,[ebp-8]"
+"	      00500f94    mov eax,car_type"
+"	      00500f97    mov ecx,ci"
 "	      00500f9a    mov [ecx+8],eax"
 );
 // LINE 1581:
 	asm( 
-"	      00500f9d    mov eax,[ebp+10h]"
-"	      00500fa0    mov ecx,[ebp-8]"
+"	      00500f9d    mov eax,mission_id"
+"	      00500fa0    mov ecx,ci"
 "	      00500fa3    mov [ecx+0Ch],eax"
 );
 // LINE 1582:
 	asm( 
-"	      00500fa6    mov eax,[ebp+14h]"
-"	      00500fa9    mov ecx,[ebp-8]"
+"	      00500fa6    mov eax,currpos"
+"	      00500fa9    mov ecx,ci"
 "	      00500fac    mov [ecx+10h],eax"
 );
 // LINE 1583:
 	asm( 
-"	      00500faf    mov eax,[ebp+18h]"
-"	      00500fb2    mov ecx,[ebp-8]"
+"	      00500faf    mov eax,disppos"
+"	      00500fb2    mov ecx,ci"
 "	      00500fb5    mov [ecx+14h],eax"
 );
 // LINE 1584:
 	asm( 
-"	      00500fb8    mov eax,[ebp-8]"
+"	      00500fb8    mov eax,ci"
 "	      00500fbb    or dword ptr [eax],1"
 );
 // LINE 1585:
@@ -5192,23 +5192,23 @@ void S3MapRemoveCarInfo(long car_id) {
 );
 // LINE 1601:
 	asm( 
-"	      00500fcc    mov dword ptr [ebp-4],0"
+"	      00500fcc    mov i,0"
 "	      00500fd3    jmp near ptr 00500FDBh"
-"	      00500fd8    inc dword ptr [ebp-4]"
-"	      00500fdb    cmp dword ptr [ebp-4],14h"
+"	      00500fd8    inc i"
+"	      00500fdb    cmp i,14h"
 "	      00500fdf    jge near ptr 00501013h"
 );
 // LINE 1603:
 	asm( 
-"	      00500fe5    mov eax,[ebp-4]"
+"	      00500fe5    mov eax,i"
 "	      00500fe8    lea eax,[eax+eax*4]"
-"	      00500feb    mov ecx,[ebp+8]"
+"	      00500feb    mov ecx,car_id"
 "	      00500fee    cmp [eax*8+6BED44h],ecx"
 "	      00500ff5    jne near ptr 0050100Eh"
 );
 // LINE 1605:
 	asm( 
-"	      00500ffb    mov eax,[ebp-4]"
+"	      00500ffb    mov eax,i"
 "	      00500ffe    lea eax,[eax+eax*4]"
 "	      00501001    and dword ptr [eax*8+6BED40h],0FFFFFFFEh"
 );
@@ -5249,22 +5249,22 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1631:
 	asm( 
-"	      00501021    mov dword ptr [ebp-8],0"
+"	      00501021    mov i,0"
 "	      00501028    jmp near ptr 00501030h"
-"	      0050102d    inc dword ptr [ebp-8]"
-"	      00501030    cmp dword ptr [ebp-8],14h"
+"	      0050102d    inc i"
+"	      00501030    cmp i,14h"
 "	      00501034    jge near ptr 0050121Bh"
 );
 // LINE 1633:
 	asm( 
-"	      0050103a    mov eax,[ebp-8]"
+"	      0050103a    mov eax,i"
 "	      0050103d    lea eax,[eax+eax*4]"
 "	      00501040    lea eax,[eax*8+6BED40h]"
-"	      00501047    mov [ebp-0Ch],eax"
+"	      00501047    mov ci,eax"
 );
 // LINE 1634:
 	asm( 
-"	      0050104a    mov eax,[ebp-0Ch]"
+"	      0050104a    mov eax,ci"
 "	      0050104d    test byte ptr [eax],1"
 "	      00501050    jne near ptr 0050105Bh"
 );
@@ -5274,25 +5274,25 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1641:
 	asm( 
-"	      0050105b    mov eax,[ebp-0Ch]"
+"	      0050105b    mov eax,ci"
 "	      0050105e    mov eax,[eax+10h]"
 "	      00501061    xor ecx,ecx"
 "	      00501063    mov cl,[eax]"
 "	      00501065    cmp ecx,ds:[608C08h]"
 "	      0050106b    jl near ptr 005010B5h"
-"	      00501071    mov eax,[ebp-0Ch]"
+"	      00501071    mov eax,ci"
 "	      00501074    mov eax,[eax+10h]"
 "	      00501077    xor ecx,ecx"
 "	      00501079    mov cl,[eax+1]"
 "	      0050107c    cmp ecx,ds:[608C0Ch]"
 "	      00501082    jl near ptr 005010B5h"
-"	      00501088    mov eax,[ebp-0Ch]"
+"	      00501088    mov eax,ci"
 "	      0050108b    mov eax,[eax+10h]"
 "	      0050108e    xor ecx,ecx"
 "	      00501090    mov cl,[eax]"
 "	      00501092    cmp ecx,ds:[608BF8h]"
 "	      00501098    jg near ptr 005010B5h"
-"	      0050109e    mov eax,[ebp-0Ch]"
+"	      0050109e    mov eax,ci"
 "	      005010a1    mov eax,[eax+10h]"
 "	      005010a4    xor ecx,ecx"
 "	      005010a6    mov cl,[eax+1]"
@@ -5301,7 +5301,7 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1643:
 	asm( 
-"	      005010b5    mov eax,[ebp-0Ch]"
+"	      005010b5    mov eax,ci"
 "	      005010b8    and dword ptr [eax],0FFFFFFFDh"
 );
 // LINE 1644:
@@ -5310,12 +5310,12 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1648:
 	asm( 
-"	      005010c0    mov eax,[ebp-0Ch]"
+"	      005010c0    mov eax,ci"
 "	      005010c3    or dword ptr [eax],2"
 );
 // LINE 1651:
 	asm( 
-"	      005010c6    mov eax,[ebp-0Ch]"
+"	      005010c6    mov eax,ci"
 "	      005010c9    mov eax,[eax+10h]"
 "	      005010cc    xor edx,edx"
 "	      005010ce    mov dl,[eax+1]"
@@ -5323,12 +5323,12 @@ void S3MapDrawCarIcons() {
 "	      005010d7    mov cl,ds:[5B5298h]"
 "	      005010dd    shl edx,cl"
 "	      005010df    add edx,8"
-"	      005010e2    mov eax,[ebp-0Ch]"
+"	      005010e2    mov eax,ci"
 "	      005010e5    mov [eax+18h],edx"
 );
 // LINE 1652:
 	asm( 
-"	      005010e8    mov eax,[ebp-0Ch]"
+"	      005010e8    mov eax,ci"
 "	      005010eb    mov eax,[eax+10h]"
 "	      005010ee    xor edx,edx"
 "	      005010f0    mov dl,[eax]"
@@ -5336,65 +5336,65 @@ void S3MapDrawCarIcons() {
 "	      005010f8    mov cl,ds:[5B5298h]"
 "	      005010fe    shl edx,cl"
 "	      00501100    add edx,9"
-"	      00501103    mov eax,[ebp-0Ch]"
+"	      00501103    mov eax,ci"
 "	      00501106    mov [eax+20h],edx"
 );
 // LINE 1653:
 	asm( 
-"	      00501109    mov eax,[ebp-0Ch]"
+"	      00501109    mov eax,ci"
 "	      0050110c    mov eax,[eax+18h]"
 "	      0050110f    add eax,ds:[608BC8h]"
-"	      00501115    mov ecx,[ebp-0Ch]"
+"	      00501115    mov ecx,ci"
 "	      00501118    mov [ecx+1Ch],eax"
 );
 // LINE 1654:
 	asm( 
-"	      0050111b    mov eax,[ebp-0Ch]"
+"	      0050111b    mov eax,ci"
 "	      0050111e    mov eax,[eax+20h]"
 "	      00501121    add eax,ds:[608BC8h]"
-"	      00501127    mov ecx,[ebp-0Ch]"
+"	      00501127    mov ecx,ci"
 "	      0050112a    mov [ecx+24h],eax"
 );
 // LINE 1658:
 	asm( 
-"	      0050112d    mov eax,[ebp-0Ch]"
+"	      0050112d    mov eax,ci"
 "	      00501130    mov eax,[eax+14h]"
 "	      00501133    xor edx,edx"
 "	      00501135    mov dl,[eax]"
-"	      00501137    mov eax,[ebp-0Ch]"
+"	      00501137    mov eax,ci"
 "	      0050113a    mov eax,[eax+10h]"
 "	      0050113d    xor ecx,ecx"
 "	      0050113f    mov cl,[eax]"
 "	      00501141    sub edx,ecx"
 "	      00501143    mov cl,ds:[5B5298h]"
 "	      00501149    shl edx,cl"
-"	      0050114b    mov [ebp-10h],edx"
+"	      0050114b    mov dx,edx"
 );
 // LINE 1659:
 	asm( 
-"	      0050114e    mov eax,[ebp-0Ch]"
+"	      0050114e    mov eax,ci"
 "	      00501151    mov eax,[eax+14h]"
 "	      00501154    xor edx,edx"
 "	      00501156    mov dl,[eax+1]"
-"	      00501159    mov eax,[ebp-0Ch]"
+"	      00501159    mov eax,ci"
 "	      0050115c    mov eax,[eax+10h]"
 "	      0050115f    xor ecx,ecx"
 "	      00501161    mov cl,[eax+1]"
 "	      00501164    sub edx,ecx"
 "	      00501166    mov cl,ds:[5B5298h]"
 "	      0050116c    shl edx,cl"
-"	      0050116e    mov [ebp-14h],edx"
+"	      0050116e    mov dy,edx"
 );
 // LINE 1660:
 	asm( 
-"	      00501171    mov eax,[ebp-0Ch]"
+"	      00501171    mov eax,ci"
 "	      00501174    mov eax,[eax+8]"
 "	      00501177    mov [ebp-18h],eax"
 "	      0050117a    jmp near ptr 005011B4h"
 );
 // LINE 1663:
 	asm( 
-"	      0050117f    mov dword ptr [ebp-4],1Ah"
+"	      0050117f    mov color,1Ah"
 );
 // LINE 1664:
 	asm( 
@@ -5402,7 +5402,7 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1666:
 	asm( 
-"	      0050118b    mov dword ptr [ebp-4],0FFFFFF9Ah"
+"	      0050118b    mov color,0FFFFFF9Ah"
 );
 // LINE 1667:
 	asm( 
@@ -5410,7 +5410,7 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1669:
 	asm( 
-"	      00501197    mov dword ptr [ebp-4],0FFFFFFEAh"
+"	      00501197    mov color,0FFFFFFEAh"
 );
 // LINE 1670:
 	asm( 
@@ -5418,7 +5418,7 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1672:
 	asm( 
-"	      005011a3    mov dword ptr [ebp-4],70h"
+"	      005011a3    mov color,70h"
 );
 // LINE 1673:
 	asm( 
@@ -5437,16 +5437,16 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1680:
 	asm( 
-"	      005011d7    mov eax,[ebp-4]"
+"	      005011d7    mov eax,color"
 "	      005011da    push eax"
-"	      005011db    mov eax,[ebp-14h]"
+"	      005011db    mov eax,dy"
 "	      005011de    push eax"
-"	      005011df    mov eax,[ebp-10h]"
+"	      005011df    mov eax,dx"
 "	      005011e2    push eax"
-"	      005011e3    mov eax,[ebp-0Ch]"
+"	      005011e3    mov eax,ci"
 "	      005011e6    mov eax,[eax+18h]"
 "	      005011e9    push eax"
-"	      005011ea    mov eax,[ebp-0Ch]"
+"	      005011ea    mov eax,ci"
 "	      005011ed    mov eax,[eax+20h]"
 "	      005011f0    push eax"
 "	      005011f1    call 005012F5h"
@@ -5454,13 +5454,13 @@ void S3MapDrawCarIcons() {
 );
 // LINE 1682:
 	asm( 
-"	      005011f9    mov eax,[ebp-0Ch]"
+"	      005011f9    mov eax,ci"
 "	      005011fc    mov eax,[eax+18h]"
 "	      005011ff    push eax"
-"	      00501200    mov eax,[ebp-0Ch]"
+"	      00501200    mov eax,ci"
 "	      00501203    mov eax,[eax+20h]"
 "	      00501206    push eax"
-"	      00501207    mov eax,[ebp-0Ch]"
+"	      00501207    mov eax,ci"
 "	      0050120a    mov eax,[eax+8]"
 "	      0050120d    push eax"
 "	      0050120e    call 00501220h"
@@ -5498,7 +5498,7 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 );
 // LINE 1701:
 	asm( 
-"	      00501229    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      00501229    cmp icon_id,0FFFFFFFFh"
 "	      0050122d    jne near ptr 00501238h"
 );
 // LINE 1702:
@@ -5507,61 +5507,61 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 );
 // LINE 1707:
 	asm( 
-"	      00501238    mov eax,[ebp+0Ch]"
-"	      0050123b    mov [ebp-8],eax"
+"	      00501238    mov eax,x"
+"	      0050123b    mov mapx,eax"
 );
 // LINE 1708:
 	asm( 
-"	      0050123e    mov eax,[ebp+10h]"
-"	      00501241    mov [ebp-0Ch],eax"
+"	      0050123e    mov eax,y"
+"	      00501241    mov mapy,eax"
 );
 // LINE 1710:
 	asm( 
-"	      00501244    mov eax,[ebp-0Ch]"
+"	      00501244    mov eax,mapy"
 "	      00501247    imul eax,ds:[5B5268h]"
-"	      0050124e    add eax,[ebp-8]"
+"	      0050124e    add eax,mapx"
 "	      00501251    add eax,ds:[5B5274h]"
-"	      00501257    mov [ebp-10h],eax"
+"	      00501257    mov bufptr,eax"
 );
 // LINE 1711:
 	asm( 
-"	      0050125a    mov eax,[ebp+8]"
+"	      0050125a    mov eax,icon_id"
 "	      0050125d    mov eax,[eax*4+608C18h]"
-"	      00501264    mov [ebp-4],eax"
+"	      00501264    mov iptr,eax"
 );
 // LINE 1713:
 	asm( 
-"	      00501267    mov dword ptr [ebp-0Ch],0"
+"	      00501267    mov mapy,0"
 "	      0050126e    jmp near ptr 00501276h"
-"	      00501273    inc dword ptr [ebp-0Ch]"
+"	      00501273    inc mapy"
 "	      00501276    mov eax,ds:[608BC8h]"
-"	      0050127b    cmp [ebp-0Ch],eax"
+"	      0050127b    cmp mapy,eax"
 "	      0050127e    jge near ptr 005012F0h"
 );
 // LINE 1715:
 	asm( 
-"	      00501284    mov dword ptr [ebp-8],0"
+"	      00501284    mov mapx,0"
 "	      0050128b    jmp near ptr 00501293h"
-"	      00501290    inc dword ptr [ebp-8]"
+"	      00501290    inc mapx"
 "	      00501293    mov eax,ds:[608BC8h]"
-"	      00501298    cmp [ebp-8],eax"
+"	      00501298    cmp mapx,eax"
 "	      0050129b    jge near ptr 005012CFh"
 );
 // LINE 1717:
 	asm( 
-"	      005012a1    mov eax,[ebp-4]"
+"	      005012a1    mov eax,iptr"
 "	      005012a4    movsx eax,byte ptr [eax]"
 "	      005012a7    test eax,eax"
 "	      005012a9    je near ptr 005012C4h"
 );
 // LINE 1719:
 	asm( 
-"	      005012af    mov eax,[ebp-4]"
+"	      005012af    mov eax,iptr"
 "	      005012b2    mov al,[eax]"
-"	      005012b4    mov ecx,[ebp-10h]"
+"	      005012b4    mov ecx,bufptr"
 "	      005012b7    mov [ecx],al"
-"	      005012b9    inc dword ptr [ebp-4]"
-"	      005012bc    inc dword ptr [ebp-10h]"
+"	      005012b9    inc iptr"
+"	      005012bc    inc bufptr"
 );
 // LINE 1721:
 	asm( 
@@ -5569,11 +5569,11 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 );
 // LINE 1723:
 	asm( 
-"	      005012c4    inc dword ptr [ebp-10h]"
+"	      005012c4    inc bufptr"
 );
 // LINE 1724:
 	asm( 
-"	      005012c7    inc dword ptr [ebp-4]"
+"	      005012c7    inc iptr"
 );
 // LINE 1726:
 	asm( 
@@ -5583,13 +5583,13 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	asm( 
 "	      005012cf    mov eax,ds:[5B5268h]"
 "	      005012d4    sub eax,ds:[608BC8h]"
-"	      005012da    add [ebp-10h],eax"
+"	      005012da    add bufptr,eax"
 );
 // LINE 1728:
 	asm( 
 "	      005012dd    mov eax,ds:[608C00h]"
 "	      005012e2    sub eax,ds:[608BC8h]"
-"	      005012e8    add [ebp-4],eax"
+"	      005012e8    add iptr,eax"
 );
 // LINE 1729:
 	asm( 
@@ -5625,24 +5625,24 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 );
 // LINE 1746:
 	asm( 
-"	      005012fe    mov dword ptr [ebp-18h],0"
+"	      005012fe    mov error,0"
 );
 // LINE 1749:
 	asm( 
 "	      00501305    mov eax,ds:[5B5268h]"
-"	      0050130a    imul eax,[ebp+0Ch]"
-"	      0050130e    add eax,[ebp+8]"
+"	      0050130a    imul eax,ypos"
+"	      0050130e    add eax,xpos"
 "	      00501311    add eax,ds:[5B5274h]"
-"	      00501317    mov [ebp-4],eax"
+"	      00501317    mov writeBuffer,eax"
 );
 // LINE 1751:
 	asm( 
-"	      0050131a    cmp dword ptr [ebp+10h],0"
+"	      0050131a    cmp dx,0"
 "	      0050131e    jl near ptr 00501330h"
 );
 // LINE 1753:
 	asm( 
-"	      00501324    mov dword ptr [ebp-0Ch],1"
+"	      00501324    mov Xinc,1"
 );
 // LINE 1755:
 	asm( 
@@ -5650,27 +5650,27 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 );
 // LINE 1757:
 	asm( 
-"	      00501330    mov dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      00501330    mov Xinc,0FFFFFFFFh"
 );
 // LINE 1758:
 	asm( 
-"	      00501337    mov eax,[ebp+10h]"
+"	      00501337    mov eax,dx"
 "	      0050133a    neg eax"
-"	      0050133c    mov [ebp+10h],eax"
+"	      0050133c    mov dx,eax"
 );
 // LINE 1761:
 	asm( 
-"	      0050133f    cmp dword ptr [ebp+14h],0"
+"	      0050133f    cmp dy,0"
 "	      00501343    jl near ptr 0050135Dh"
 );
 // LINE 1763:
 	asm( 
 "	      00501349    mov eax,ds:[5B5268h]"
-"	      0050134e    mov [ebp-14h],eax"
+"	      0050134e    mov Yinc,eax"
 );
 // LINE 1764:
 	asm( 
-"	      00501351    mov dword ptr [ebp-8],1"
+"	      00501351    mov Yunit,1"
 );
 // LINE 1766:
 	asm( 
@@ -5680,90 +5680,90 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	asm( 
 "	      0050135d    mov eax,ds:[5B5268h]"
 "	      00501362    neg eax"
-"	      00501364    mov [ebp-14h],eax"
+"	      00501364    mov Yinc,eax"
 );
 // LINE 1769:
 	asm( 
-"	      00501367    mov eax,[ebp+14h]"
+"	      00501367    mov eax,dy"
 "	      0050136a    neg eax"
-"	      0050136c    mov [ebp+14h],eax"
+"	      0050136c    mov dy,eax"
 );
 // LINE 1770:
 	asm( 
-"	      0050136f    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      0050136f    mov Yunit,0FFFFFFFFh"
 );
 // LINE 1773:
 	asm( 
-"	      00501376    mov eax,[ebp+10h]"
-"	      00501379    cmp [ebp+14h],eax"
+"	      00501376    mov eax,dx"
+"	      00501379    cmp dy,eax"
 "	      0050137c    jge near ptr 00501426h"
 );
 // LINE 1775:
 	asm( 
-"	      00501382    mov dword ptr [ebp-10h],0"
+"	      00501382    mov index,0"
 "	      00501389    jmp near ptr 00501391h"
-"	      0050138e    inc dword ptr [ebp-10h]"
-"	      00501391    mov eax,[ebp+10h]"
-"	      00501394    cmp [ebp-10h],eax"
+"	      0050138e    inc index"
+"	      00501391    mov eax,dx"
+"	      00501394    cmp index,eax"
 "	      00501397    jg near ptr 00501421h"
 );
 // LINE 1777:
 	asm( 
-"	      0050139d    movsx eax,byte ptr [ebp+18h]"
+"	      0050139d    movsx eax,col"
 "	      005013a1    test eax,eax"
 "	      005013a3    je near ptr 005013B1h"
-"	      005013a9    mov al,[ebp+18h]"
-"	      005013ac    mov ecx,[ebp-4]"
+"	      005013a9    mov al,col"
+"	      005013ac    mov ecx,writeBuffer"
 "	      005013af    mov [ecx],al"
 );
 // LINE 1778:
 	asm( 
-"	      005013b1    mov eax,[ebp+14h]"
-"	      005013b4    add [ebp-18h],eax"
+"	      005013b1    mov eax,dy"
+"	      005013b4    add error,eax"
 );
 // LINE 1779:
 	asm( 
-"	      005013b7    mov eax,[ebp+10h]"
-"	      005013ba    cmp [ebp-18h],eax"
+"	      005013b7    mov eax,dx"
+"	      005013ba    cmp error,eax"
 "	      005013bd    jle near ptr 005013D9h"
 );
 // LINE 1781:
 	asm( 
 "	      005013c3    xor eax,eax"
-"	      005013c5    sub eax,[ebp+10h]"
+"	      005013c5    sub eax,dx"
 "	      005013c8    neg eax"
-"	      005013ca    sub [ebp-18h],eax"
+"	      005013ca    sub error,eax"
 );
 // LINE 1782:
 	asm( 
-"	      005013cd    mov eax,[ebp-14h]"
-"	      005013d0    add [ebp-4],eax"
+"	      005013cd    mov eax,Yinc"
+"	      005013d0    add writeBuffer,eax"
 );
 // LINE 1783:
 	asm( 
-"	      005013d3    mov eax,[ebp-8]"
-"	      005013d6    add [ebp+0Ch],eax"
+"	      005013d3    mov eax,Yunit"
+"	      005013d6    add ypos,eax"
 );
 // LINE 1785:
 	asm( 
-"	      005013d9    mov eax,[ebp-0Ch]"
-"	      005013dc    add [ebp-4],eax"
+"	      005013d9    mov eax,Xinc"
+"	      005013dc    add writeBuffer,eax"
 );
 // LINE 1786:
 	asm( 
-"	      005013df    mov eax,[ebp-0Ch]"
-"	      005013e2    add [ebp+8],eax"
+"	      005013df    mov eax,Xinc"
+"	      005013e2    add xpos,eax"
 );
 // LINE 1788:
 	asm( 
-"	      005013e5    cmp dword ptr [ebp+0Ch],0"
+"	      005013e5    cmp ypos,0"
 "	      005013e9    jl near ptr 00501417h"
-"	      005013ef    cmp dword ptr [ebp+8],0"
+"	      005013ef    cmp xpos,0"
 "	      005013f3    jl near ptr 00501417h"
-"	      005013f9    mov eax,[ebp+0Ch]"
+"	      005013f9    mov eax,ypos"
 "	      005013fc    cmp ds:[5B526Ch],eax"
 "	      00501402    jle near ptr 00501417h"
-"	      00501408    mov eax,[ebp+8]"
+"	      00501408    mov eax,xpos"
 "	      0050140b    cmp ds:[5B5268h],eax"
 "	      00501411    jg near ptr 0050141Ch"
 );
@@ -5781,69 +5781,69 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 );
 // LINE 1794:
 	asm( 
-"	      00501426    mov dword ptr [ebp-10h],0"
+"	      00501426    mov index,0"
 "	      0050142d    jmp near ptr 00501435h"
-"	      00501432    inc dword ptr [ebp-10h]"
-"	      00501435    mov eax,[ebp+14h]"
-"	      00501438    cmp [ebp-10h],eax"
+"	      00501432    inc index"
+"	      00501435    mov eax,dy"
+"	      00501438    cmp index,eax"
 "	      0050143b    jg near ptr 005014C1h"
 );
 // LINE 1796:
 	asm( 
-"	      00501441    movsx eax,byte ptr [ebp+18h]"
+"	      00501441    movsx eax,col"
 "	      00501445    test eax,eax"
 "	      00501447    je near ptr 00501455h"
-"	      0050144d    mov al,[ebp+18h]"
-"	      00501450    mov ecx,[ebp-4]"
+"	      0050144d    mov al,col"
+"	      00501450    mov ecx,writeBuffer"
 "	      00501453    mov [ecx],al"
 );
 // LINE 1797:
 	asm( 
-"	      00501455    mov eax,[ebp+10h]"
-"	      00501458    add [ebp-18h],eax"
+"	      00501455    mov eax,dx"
+"	      00501458    add error,eax"
 );
 // LINE 1798:
 	asm( 
-"	      0050145b    mov eax,[ebp+14h]"
-"	      0050145e    cmp [ebp-18h],eax"
+"	      0050145b    mov eax,dy"
+"	      0050145e    cmp error,eax"
 "	      00501461    jle near ptr 0050147Dh"
 );
 // LINE 1800:
 	asm( 
 "	      00501467    xor eax,eax"
-"	      00501469    sub eax,[ebp+14h]"
+"	      00501469    sub eax,dy"
 "	      0050146c    neg eax"
-"	      0050146e    sub [ebp-18h],eax"
+"	      0050146e    sub error,eax"
 );
 // LINE 1801:
 	asm( 
-"	      00501471    mov eax,[ebp-0Ch]"
-"	      00501474    add [ebp-4],eax"
+"	      00501471    mov eax,Xinc"
+"	      00501474    add writeBuffer,eax"
 );
 // LINE 1802:
 	asm( 
-"	      00501477    mov eax,[ebp-0Ch]"
-"	      0050147a    add [ebp+8],eax"
+"	      00501477    mov eax,Xinc"
+"	      0050147a    add xpos,eax"
 );
 // LINE 1804:
 	asm( 
-"	      0050147d    mov eax,[ebp-14h]"
-"	      00501480    add [ebp-4],eax"
+"	      0050147d    mov eax,Yinc"
+"	      00501480    add writeBuffer,eax"
 );
 // LINE 1805:
 	asm( 
-"	      00501483    mov eax,[ebp-8]"
-"	      00501486    add [ebp+0Ch],eax"
+"	      00501483    mov eax,Yunit"
+"	      00501486    add ypos,eax"
 );
 // LINE 1806:
 	asm( 
 "	      00501489    js near ptr 005014B7h"
-"	      0050148f    cmp dword ptr [ebp+8],0"
+"	      0050148f    cmp xpos,0"
 "	      00501493    jl near ptr 005014B7h"
-"	      00501499    mov eax,[ebp+0Ch]"
+"	      00501499    mov eax,ypos"
 "	      0050149c    cmp ds:[5B526Ch],eax"
 "	      005014a2    jle near ptr 005014B7h"
-"	      005014a8    mov eax,[ebp+8]"
+"	      005014a8    mov eax,xpos"
 "	      005014ab    cmp ds:[5B5268h],eax"
 "	      005014b1    jg near ptr 005014BCh"
 );
@@ -5883,27 +5883,27 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 );
 // LINE 1832:
 	asm( 
-"	      005014cf    cmp dword ptr [ebp+8],80h"
+"	      005014cf    cmp x1,80h"
 "	      005014d6    jge near ptr 00501514h"
-"	      005014dc    cmp dword ptr [ebp+0Ch],80h"
+"	      005014dc    cmp y1,80h"
 "	      005014e3    jge near ptr 00501514h"
 );
 // LINE 1834:
 	asm( 
-"	      005014e9    mov eax,[ebp+10h]"
-"	      005014ec    sub eax,[ebp+8]"
+"	      005014e9    mov eax,x2"
+"	      005014ec    sub eax,x1"
 "	      005014ef    mov cl,ds:[5B5298h]"
 "	      005014f5    shl eax,cl"
-"	      005014f7    mov ecx,[ebp+18h]"
+"	      005014f7    mov ecx,dx"
 "	      005014fa    mov [ecx],eax"
 );
 // LINE 1835:
 	asm( 
-"	      005014fc    mov eax,[ebp+14h]"
-"	      005014ff    sub eax,[ebp+0Ch]"
+"	      005014fc    mov eax,y2"
+"	      005014ff    sub eax,y1"
 "	      00501502    mov cl,ds:[5B5298h]"
 "	      00501508    shl eax,cl"
-"	      0050150a    mov ecx,[ebp+1Ch]"
+"	      0050150a    mov ecx,dy"
 "	      0050150d    mov [ecx],eax"
 );
 // LINE 1836:
@@ -5912,78 +5912,78 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 );
 // LINE 1840:
 	asm( 
-"	      00501514    mov eax,[ebp+8]"
-"	      00501517    mov [ebp-18h],eax"
+"	      00501514    mov eax,x1"
+"	      00501517    mov from.x,eax"
 );
 // LINE 1841:
 	asm( 
-"	      0050151a    mov eax,[ebp+0Ch]"
-"	      0050151d    mov [ebp-14h],eax"
+"	      0050151a    mov eax,y1"
+"	      0050151d    mov from.y,eax"
 );
 // LINE 1842:
 	asm( 
-"	      00501520    mov eax,[ebp+10h]"
-"	      00501523    mov [ebp-10h],eax"
+"	      00501520    mov eax,x2"
+"	      00501523    mov to.x,eax"
 );
 // LINE 1843:
 	asm( 
-"	      00501526    mov eax,[ebp+14h]"
-"	      00501529    mov [ebp-0Ch],eax"
+"	      00501526    mov eax,y2"
+"	      00501529    mov to.y,eax"
 );
 // LINE 1846:
 	asm( 
-"	      0050152c    lea eax,[ebp-10h]"
+"	      0050152c    lea eax,to.x"
 "	      0050152f    push eax"
-"	      00501530    lea eax,[ebp-18h]"
+"	      00501530    lea eax,from.x"
 "	      00501533    push eax"
 "	      00501534    call 004CB23Ch"
 "	      00501539    add esp,8"
-"	      0050153c    mov [ebp-4],eax"
+"	      0050153c    mov dist1,eax"
 );
 // LINE 1850:
 	asm( 
-"	      0050153f    cmp dword ptr [ebp+8],7Fh"
+"	      0050153f    cmp x1,7Fh"
 "	      00501543    jle near ptr 00501550h"
-"	      00501549    sub dword ptr [ebp-18h],100h"
+"	      00501549    sub from.x,100h"
 );
 // LINE 1851:
 	asm( 
-"	      00501550    cmp dword ptr [ebp+0Ch],7Fh"
+"	      00501550    cmp y1,7Fh"
 "	      00501554    jle near ptr 00501561h"
-"	      0050155a    sub dword ptr [ebp-14h],100h"
+"	      0050155a    sub from.y,100h"
 );
 // LINE 1854:
 	asm( 
-"	      00501561    lea eax,[ebp-10h]"
+"	      00501561    lea eax,to.x"
 "	      00501564    push eax"
-"	      00501565    lea eax,[ebp-18h]"
+"	      00501565    lea eax,from.x"
 "	      00501568    push eax"
 "	      00501569    call 004CB23Ch"
 "	      0050156e    add esp,8"
-"	      00501571    mov [ebp-8],eax"
+"	      00501571    mov dist2,eax"
 );
 // LINE 1857:
 	asm( 
-"	      00501574    mov eax,[ebp-4]"
-"	      00501577    cmp [ebp-8],eax"
+"	      00501574    mov eax,dist1"
+"	      00501577    cmp dist2,eax"
 "	      0050157a    jge near ptr 005015ABh"
 );
 // LINE 1859:
 	asm( 
-"	      00501580    mov eax,[ebp+10h]"
-"	      00501583    sub eax,[ebp-18h]"
+"	      00501580    mov eax,x2"
+"	      00501583    sub eax,from.x"
 "	      00501586    mov cl,ds:[5B5298h]"
 "	      0050158c    shl eax,cl"
-"	      0050158e    mov ecx,[ebp+18h]"
+"	      0050158e    mov ecx,dx"
 "	      00501591    mov [ecx],eax"
 );
 // LINE 1860:
 	asm( 
-"	      00501593    mov eax,[ebp+14h]"
-"	      00501596    sub eax,[ebp-14h]"
+"	      00501593    mov eax,y2"
+"	      00501596    sub eax,from.y"
 "	      00501599    mov cl,ds:[5B5298h]"
 "	      0050159f    shl eax,cl"
-"	      005015a1    mov ecx,[ebp+1Ch]"
+"	      005015a1    mov ecx,dy"
 "	      005015a4    mov [ecx],eax"
 );
 // LINE 1862:
@@ -5992,20 +5992,20 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 );
 // LINE 1864:
 	asm( 
-"	      005015ab    mov eax,[ebp+10h]"
-"	      005015ae    sub eax,[ebp+8]"
+"	      005015ab    mov eax,x2"
+"	      005015ae    sub eax,x1"
 "	      005015b1    mov cl,ds:[5B5298h]"
 "	      005015b7    shl eax,cl"
-"	      005015b9    mov ecx,[ebp+18h]"
+"	      005015b9    mov ecx,dx"
 "	      005015bc    mov [ecx],eax"
 );
 // LINE 1865:
 	asm( 
-"	      005015be    mov eax,[ebp+14h]"
-"	      005015c1    sub eax,[ebp+0Ch]"
+"	      005015be    mov eax,y2"
+"	      005015c1    sub eax,y1"
 "	      005015c4    mov cl,ds:[5B5298h]"
 "	      005015ca    shl eax,cl"
-"	      005015cc    mov ecx,[ebp+1Ch]"
+"	      005015cc    mov ecx,dy"
 "	      005015cf    mov [ecx],eax"
 );
 // LINE 1867:

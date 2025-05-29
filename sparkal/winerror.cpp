@@ -18,7 +18,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 );
 // LINE 22:
 	asm( 
-"	      0044ff4c    cmp dword ptr [ebp+8],0"
+"	      0044ff4c    cmp Error,0"
 "	      0044ff50    jne near ptr 0044FF6Fh"
 "	      0044ff56    push 16h"
 "	      0044ff58    push 5990E4h"
@@ -38,14 +38,14 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	char[255] ErrorTitle;
 	char[255] ErrorText;
 	asm( 
-"	      0044ff7e    and dword ptr [ebp+8],7FFFFFFFh"
+"	      0044ff7e    and Error,7FFFFFFFh"
 );
 // LINE 32:
 	asm( 
 "	      0044ff85    push 0FFh"
-"	      0044ff8a    lea eax,[ebp-100h]"
+"	      0044ff8a    lea eax,ErrorText[0]"
 "	      0044ff90    push eax"
-"	      0044ff91    mov eax,[ebp+8]"
+"	      0044ff91    mov eax,Error"
 "	      0044ff94    push eax"
 "	      0044ff95    mov eax,ds:[5C28C8h]"
 "	      0044ff9a    push eax"
@@ -55,10 +55,10 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 );
 // LINE 33:
 	asm( 
-"	      0044ffa9    mov eax,[ebp+8]"
+"	      0044ffa9    mov eax,Error"
 "	      0044ffac    push eax"
 "	      0044ffad    push 599120h"
-"	      0044ffb2    lea eax,[ebp-100h]"
+"	      0044ffb2    lea eax,ErrorText[0]"
 "	      0044ffb8    push eax"
 "	      0044ffb9    call dword ptr ds:[6C3858h]"
 "	      0044ffbf    add esp,0Ch"
@@ -66,7 +66,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 35:
 	asm( 
 "	      0044ffc2    push 0FFh"
-"	      0044ffc7    lea eax,[ebp-200h]"
+"	      0044ffc7    lea eax,ErrorTitle[0]"
 "	      0044ffcd    push eax"
 "	      0044ffce    push 29Ah"
 "	      0044ffd3    mov eax,ds:[5C28C8h]"
@@ -79,7 +79,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	asm( 
 "	      0044ffe7    push 2030h"
 "	      0044ffec    push 599130h"
-"	      0044fff1    lea eax,[ebp-100h]"
+"	      0044fff1    lea eax,ErrorText[0]"
 "	      0044fff7    push eax"
 "	      0044fff8    push 0"
 "	      0044fffa    call dword ptr ds:[6C3870h]"
@@ -91,16 +91,16 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 38:
 	asm( 
 "	      00450005    push 2030h"
-"	      0045000a    lea eax,[ebp-200h]"
+"	      0045000a    lea eax,ErrorTitle[0]"
 "	      00450010    push eax"
-"	      00450011    lea eax,[ebp-100h]"
+"	      00450011    lea eax,ErrorText[0]"
 "	      00450017    push eax"
 "	      00450018    push 0"
 "	      0045001a    call dword ptr ds:[6C3870h]"
 );
 // LINE 40:
 	asm( 
-"	      00450020    lea eax,[ebp-100h]"
+"	      00450020    lea eax,ErrorText[0]"
 "	      00450026    push eax"
 "	      00450027    push 599138h"
 "	      0045002c    call 00424B14h"
@@ -109,7 +109,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 42:
 	asm( 
 "	      00450034    xor eax,eax"
-"	      00450036    mov al,[ebp+0Ch]"
+"	      00450036    mov al,Terminate"
 "	      00450039    test eax,eax"
 "	      0045003b    je near ptr 00450046h"
 );

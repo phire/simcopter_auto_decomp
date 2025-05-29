@@ -17,10 +17,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 60:
 	asm( 
-"	      00554ff6    mov eax,[ebp+18h]"
-"	      00554ff9    sub eax,[ebp+24h]"
-"	      00554ffc    mov ecx,[ebp+8]"
-"	      00554fff    add ecx,[ebp+14h]"
+"	      00554ff6    mov eax,objLoc.x"
+"	      00554ff9    sub eax,objRad"
+"	      00554ffc    mov ecx,queryloc.x"
+"	      00554fff    add ecx,queryRad"
 "	      00555002    cmp eax,ecx"
 "	      00555004    jle near ptr 00555012h"
 );
@@ -31,10 +31,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 62:
 	asm( 
-"	      00555012    mov eax,[ebp+18h]"
-"	      00555015    add eax,[ebp+24h]"
-"	      00555018    mov ecx,[ebp+8]"
-"	      0055501b    sub ecx,[ebp+14h]"
+"	      00555012    mov eax,objLoc.x"
+"	      00555015    add eax,objRad"
+"	      00555018    mov ecx,queryloc.x"
+"	      0055501b    sub ecx,queryRad"
 "	      0055501e    cmp eax,ecx"
 "	      00555020    jge near ptr 0055502Eh"
 );
@@ -45,10 +45,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 64:
 	asm( 
-"	      0055502e    mov eax,[ebp+1Ch]"
-"	      00555031    sub eax,[ebp+24h]"
-"	      00555034    mov ecx,[ebp+0Ch]"
-"	      00555037    add ecx,[ebp+14h]"
+"	      0055502e    mov eax,objLoc.y"
+"	      00555031    sub eax,objRad"
+"	      00555034    mov ecx,queryloc.y"
+"	      00555037    add ecx,queryRad"
 "	      0055503a    cmp eax,ecx"
 "	      0055503c    jle near ptr 0055504Ah"
 );
@@ -59,10 +59,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 66:
 	asm( 
-"	      0055504a    mov eax,[ebp+0Ch]"
-"	      0055504d    sub eax,[ebp+14h]"
-"	      00555050    mov ecx,[ebp+1Ch]"
-"	      00555053    add ecx,[ebp+24h]"
+"	      0055504a    mov eax,queryloc.y"
+"	      0055504d    sub eax,queryRad"
+"	      00555050    mov ecx,objLoc.y"
+"	      00555053    add ecx,objRad"
 "	      00555056    cmp eax,ecx"
 "	      00555058    jle near ptr 00555066h"
 );
@@ -73,10 +73,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 68:
 	asm( 
-"	      00555066    mov eax,[ebp+20h]"
-"	      00555069    sub eax,[ebp+24h]"
-"	      0055506c    mov ecx,[ebp+10h]"
-"	      0055506f    add ecx,[ebp+14h]"
+"	      00555066    mov eax,objLoc.z"
+"	      00555069    sub eax,objRad"
+"	      0055506c    mov ecx,queryloc.z"
+"	      0055506f    add ecx,queryRad"
 "	      00555072    cmp eax,ecx"
 "	      00555074    jle near ptr 00555082h"
 );
@@ -87,10 +87,10 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 );
 // LINE 70:
 	asm( 
-"	      00555082    mov eax,[ebp+20h]"
-"	      00555085    add eax,[ebp+24h]"
-"	      00555088    mov ecx,[ebp+10h]"
-"	      0055508b    sub ecx,[ebp+14h]"
+"	      00555082    mov eax,objLoc.z"
+"	      00555085    add eax,objRad"
+"	      00555088    mov ecx,queryloc.z"
+"	      0055508b    sub ecx,queryRad"
 "	      0055508e    cmp eax,ecx"
 "	      00555090    jge near ptr 0055509Eh"
 );
@@ -132,9 +132,9 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 78:
 	asm( 
-"	      005550b5    cmp dword ptr [ebp+8],0"
+"	      005550b5    cmp hitter_type,0"
 "	      005550b9    jl near ptr 005550C9h"
-"	      005550bf    cmp dword ptr [ebp+8],14h"
+"	      005550bf    cmp hitter_type,14h"
 "	      005550c3    jl near ptr 005550E2h"
 "	      005550c9    push 8C085h"
 "	      005550ce    push 5BC638h"
@@ -145,13 +145,13 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 79:
 	asm( 
-"	      005550e2    mov eax,[ebp+8]"
+"	      005550e2    mov eax,hitter_type"
 "	      005550e5    mov ax,[eax*2+6352D8h]"
-"	      005550ed    mov [ebp-8],ax"
+"	      005550ed    mov tree,ax"
 );
 // LINE 81:
 	asm( 
-"	      005550f1    movsx eax,word ptr [ebp-8]"
+"	      005550f1    movsx eax,tree"
 "	      005550f5    cmp eax,0FFFFFFFFh"
 "	      005550f8    jne near ptr 00555103h"
 );
@@ -161,14 +161,14 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 84:
 	asm( 
-"	      00555103    mov eax,[ebp+10h]"
+"	      00555103    mov eax,dyhittee"
 "	      00555106    mov ax,[eax+0Eh]"
 "	      0055510a    mov [ebp-78h],ax"
 "	      0055510e    movsx eax,word ptr [ebp-78h]"
 "	      00555112    cmp eax,7D00h"
 "	      00555117    jne near ptr 0055512Ah"
 "	      0055511d    mov eax,ds:[5B8680h]"
-"	      00555122    mov [ebp-4],eax"
+"	      00555122    mov person,eax"
 "	      00555125    jmp near ptr 005551A6h"
 "	      0055512a    movsx eax,word ptr [ebp-78h]"
 "	      0055512e    test eax,eax"
@@ -193,14 +193,14 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      0055518a    add esp,10h"
 "	      0055518d    movsx eax,word ptr [ebp-78h]"
 "	      00555191    mov eax,[eax*4+636D40h]"
-"	      00555198    mov [ebp-4],eax"
+"	      00555198    mov person,eax"
 "	      0055519b    jmp near ptr 005551A6h"
 "	      005551a0    mov eax,[ebp-7Ch]"
-"	      005551a3    mov [ebp-4],eax"
+"	      005551a3    mov person,eax"
 );
 // LINE 85:
 	asm( 
-"	      005551a6    cmp dword ptr [ebp-4],0"
+"	      005551a6    cmp person,0"
 "	      005551aa    jne near ptr 005551C9h"
 "	      005551b0    push 8C085h"
 "	      005551b5    push 5BC68Ch"
@@ -211,7 +211,7 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 88:
 	asm( 
-"	      005551c9    mov eax,[ebp-4]"
+"	      005551c9    mov eax,person"
 "	      005551cc    movsx eax,word ptr [eax+0ECh]"
 "	      005551d3    test eax,eax"
 "	      005551d5    jle near ptr 00555218h"
@@ -220,19 +220,19 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 // Block start:
 	short currxn;
 	asm( 
-"	      005551db    mov eax,[ebp-4]"
+"	      005551db    mov eax,person"
 "	      005551de    mov ax,[eax+10Ch]"
-"	      005551e5    mov [ebp-74h],ax"
+"	      005551e5    mov currxn,ax"
 );
 // LINE 90:
 	asm( 
-"	      005551e9    movsx eax,word ptr [ebp-74h]"
+"	      005551e9    movsx eax,currxn"
 "	      005551ed    test eax,eax"
 "	      005551ef    je near ptr 00555204h"
-"	      005551f5    movsx eax,word ptr [ebp-74h]"
+"	      005551f5    movsx eax,currxn"
 "	      005551f9    cmp eax,384h"
 "	      005551fe    jne near ptr 00555213h"
-"	      00555204    movsx eax,word ptr [ebp-8]"
+"	      00555204    movsx eax,tree"
 "	      00555208    cmp eax,384h"
 "	      0055520d    jne near ptr 00555218h"
 );
@@ -243,11 +243,11 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 // LINE 94:
 // Block end:
 	asm( 
-"	      00555218    movsx eax,word ptr [ebp-8]"
+"	      00555218    movsx eax,tree"
 "	      0055521c    cmp eax,384h"
 "	      00555221    jne near ptr 00555240h"
 "	      00555227    mov eax,ds:[5B8690h]"
-"	      0055522c    mov ecx,[ebp-4]"
+"	      0055522c    mov ecx,person"
 "	      0055522f    sub eax,[ecx+18h]"
 "	      00555232    cmp eax,4"
 "	      00555235    jge near ptr 00555240h"
@@ -258,7 +258,7 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 101:
 	asm( 
-"	      00555240    mov eax,[ebp-4]"
+"	      00555240    mov eax,person"
 "	      00555243    movsx eax,word ptr [eax+0BCh]"
 "	      0055524a    cmp eax,7D00h"
 "	      0055524f    jne near ptr 0055525Ah"
@@ -270,31 +270,31 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 // LINE 107:
 	asm( 
 "	      0055525a    mov eax,ds:[5B8690h]"
-"	      0055525f    mov ecx,[ebp-4]"
+"	      0055525f    mov ecx,person"
 "	      00555262    mov [ecx+18h],eax"
 );
 // LINE 108:
 	asm( 
-"	      00555265    mov eax,[ebp+0Ch]"
-"	      00555268    mov ecx,[ebp-4]"
+"	      00555265    mov eax,dyhitter"
+"	      00555268    mov ecx,person"
 "	      0055526b    mov [ecx+134h],eax"
 );
 // LINE 109:
 	asm( 
-"	      00555271    mov eax,[ebp+18h]"
-"	      00555274    mov ecx,[ebp-4]"
+"	      00555271    mov eax,xtra_msg"
+"	      00555274    mov ecx,person"
 "	      00555277    mov [ecx+0E8h],ax"
 );
 // LINE 112:
 	asm( 
 "	      0055527e    mov eax,ds:[599BBCh]"
 "	      00555283    mov eax,[eax+4344h]"
-"	      00555289    mov [ebp-70h],eax"
+"	      00555289    mov fps,eax"
 "	      0055528c    jmp near ptr 00555291h"
 );
 // LINE 113:
 	asm( 
-"	      00555291    fld dword ptr [ebp-70h]"
+"	      00555291    fld fps"
 "	      00555294    fcomp qword ptr ds:[593600h]"
 "	      0055529a    fnstsw ax"
 "	      0055529c    test ah,1"
@@ -302,43 +302,43 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 114:
 	asm( 
-"	      005552a5    fld dword ptr [ebp-70h]"
+"	      005552a5    fld fps"
 "	      005552a8    sub esp,8"
 "	      005552ab    fstp qword ptr [esp]"
-"	      005552ae    movsx eax,word ptr [ebp-8]"
+"	      005552ae    movsx eax,tree"
 "	      005552b2    push eax"
 "	      005552b3    push 5BC6D4h"
-"	      005552b8    lea eax,[ebp-6Ch]"
+"	      005552b8    lea eax,text[0]"
 "	      005552bb    push eax"
 "	      005552bc    call 0056CD30h"
 "	      005552c1    add esp,14h"
 );
 // LINE 119:
 	asm( 
-"	      005552c4    mov ax,[ebp-8]"
-"	      005552c8    mov ecx,[ebp-4]"
+"	      005552c4    mov ax,tree"
+"	      005552c8    mov ecx,person"
 "	      005552cb    mov [ecx+10Ch],ax"
 );
 // LINE 120:
 	asm( 
 "	      005552d2    jmp near ptr 005552D7h"
 "	      005552d7    jmp near ptr 005552DCh"
-"	      005552dc    mov eax,[ebp-4]"
+"	      005552dc    mov eax,person"
 "	      005552df    movsx eax,word ptr [eax+8]"
 "	      005552e3    lea eax,[eax*4-4]"
 "	      005552ea    lea eax,[eax+eax*4]"
-"	      005552ed    mov ecx,[ebp-4]"
+"	      005552ed    mov ecx,person"
 "	      005552f0    mov ecx,[ecx+4]"
 "	      005552f3    movsx eax,word ptr [eax+ecx]"
-"	      005552f7    movsx ecx,word ptr [ebp-8]"
+"	      005552f7    movsx ecx,tree"
 "	      005552fb    cmp eax,ecx"
 "	      005552fd    je near ptr 0055535Ah"
 "	      00555303    jmp near ptr 00555308h"
 "	      00555308    jmp near ptr 0055530Dh"
-"	      0055530d    mov eax,[ebp-4]"
+"	      0055530d    mov eax,person"
 "	      00555310    movsx eax,word ptr [eax+0Ah]"
 "	      00555314    dec eax"
-"	      00555315    mov ecx,[ebp-4]"
+"	      00555315    mov ecx,person"
 "	      00555318    movsx ecx,word ptr [ecx+8]"
 "	      0055531c    cmp eax,ecx"
 "	      0055531e    jg near ptr 00555340h"
@@ -352,7 +352,7 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      00555343    push eax"
 "	      00555344    push 0"
 "	      00555346    push 0"
-"	      00555348    mov ecx,[ebp-4]"
+"	      00555348    mov ecx,person"
 "	      0055534b    call 0055CE37h"
 "	      00555350    jmp near ptr 0055535Fh"
 "	      00555355    jmp near ptr 0055535Fh"
@@ -389,87 +389,87 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 174:
 	asm( 
-"	      00555372    mov dword ptr [ebp-8],0"
+"	      00555372    mov founddyobj,0"
 );
 // LINE 181:
 	asm( 
-"	      00555379    mov eax,[ebp+0Ch]"
+"	      00555379    mov eax,location.x"
 "	      0055537c    add eax,20000000h"
 "	      00555381    sar eax,16h"
-"	      00555384    mov [ebp-14h],eax"
+"	      00555384    mov celloc.x,eax"
 );
 // LINE 182:
 	asm( 
 "	      00555387    mov eax,20000000h"
-"	      0055538c    sub eax,[ebp+14h]"
+"	      0055538c    sub eax,location.z"
 "	      0055538f    sar eax,16h"
-"	      00555392    mov [ebp-10h],eax"
+"	      00555392    mov celloc.y,eax"
 );
 // LINE 185:
 	asm( 
-"	      00555395    mov eax,[ebp-10h]"
+"	      00555395    mov eax,celloc.y"
 "	      00555398    and eax,0FFh"
-"	      0055539d    mov ecx,[ebp-14h]"
+"	      0055539d    mov ecx,celloc.x"
 "	      005553a0    and ecx,0FFh"
 "	      005553a6    shl ecx,0Ah"
 "	      005553a9    mov eax,[ecx+eax*4+67ED30h]"
-"	      005553b0    mov [ebp-18h],eax"
+"	      005553b0    mov cptr,eax"
 );
 // LINE 189:
 	asm( 
-"	      005553b3    mov eax,[ebp-18h]"
+"	      005553b3    mov eax,cptr"
 "	      005553b6    mov eax,[eax+10h]"
-"	      005553b9    mov [ebp-4],eax"
+"	      005553b9    mov dyobj,eax"
 );
 // LINE 190:
 	asm( 
-"	      005553bc    mov word ptr [ebp-0Ch],0FFFFh"
+"	      005553bc    mov helipartcount,0FFFFh"
 );
 // LINE 191:
 	asm( 
 "	      005553c2    mov eax,ds:[5BC634h]"
 "	      005553c7    push eax"
-"	      005553c8    mov eax,[ebp+18h]"
+"	      005553c8    mov eax,radius"
 "	      005553cb    push eax"
 "	      005553cc    call 004D19DFh"
 "	      005553d1    add esp,8"
-"	      005553d4    mov [ebp-1Ch],eax"
+"	      005553d4    mov halfradius,eax"
 );
 // LINE 193:
 	asm( 
-"	      005553d7    cmp dword ptr [ebp-4],0"
+"	      005553d7    cmp dyobj,0"
 "	      005553db    je near ptr 00555651h"
 );
 // LINE 196:
 	asm( 
-"	      005553e1    mov eax,[ebp-4]"
+"	      005553e1    mov eax,dyobj"
 "	      005553e4    movsx eax,word ptr [eax+0Ch]"
 "	      005553e8    test al,4"
 "	      005553ea    jne near ptr 00555409h"
-"	      005553f0    movsx eax,word ptr [ebp-0Ch]"
+"	      005553f0    movsx eax,helipartcount"
 "	      005553f4    test eax,eax"
 "	      005553f6    jl near ptr 00555458h"
-"	      005553fc    movsx eax,word ptr [ebp-0Ch]"
+"	      005553fc    movsx eax,helipartcount"
 "	      00555400    cmp eax,9"
 "	      00555403    jge near ptr 00555458h"
 );
 // LINE 198:
 	asm( 
-"	      00555409    inc word ptr [ebp-0Ch]"
-"	      0055540d    movsx eax,word ptr [ebp-0Ch]"
+"	      00555409    inc helipartcount"
+"	      0055540d    movsx eax,helipartcount"
 "	      00555411    cmp eax,0Ah"
 "	      00555414    jge near ptr 0055543Dh"
-"	      0055541a    cmp dword ptr [ebp-4],0"
+"	      0055541a    cmp dyobj,0"
 "	      0055541e    je near ptr 0055543Dh"
-"	      00555424    mov eax,[ebp+8]"
-"	      00555427    cmp [ebp-4],eax"
+"	      00555424    mov eax,donotignore"
+"	      00555427    cmp dyobj,eax"
 "	      0055542a    je near ptr 0055543Dh"
 );
 // LINE 200:
 	asm( 
-"	      00555430    mov eax,[ebp-4]"
+"	      00555430    mov eax,dyobj"
 "	      00555433    mov eax,[eax]"
-"	      00555435    mov [ebp-4],eax"
+"	      00555435    mov dyobj,eax"
 );
 // LINE 202:
 	asm( 
@@ -477,10 +477,10 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 203:
 	asm( 
-"	      0055543d    cmp dword ptr [ebp-4],0"
+"	      0055543d    cmp dyobj,0"
 "	      00555441    je near ptr 00555453h"
-"	      00555447    mov eax,[ebp+8]"
-"	      0055544a    cmp [ebp-4],eax"
+"	      00555447    mov eax,donotignore"
+"	      0055544a    cmp dyobj,eax"
 "	      0055544d    je near ptr 00555458h"
 );
 // LINE 204:
@@ -489,19 +489,19 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 209:
 	asm( 
-"	      00555458    mov eax,[ebp+8]"
-"	      0055545b    cmp [ebp-4],eax"
+"	      00555458    mov eax,donotignore"
+"	      0055545b    cmp dyobj,eax"
 "	      0055545e    je near ptr 00555480h"
-"	      00555464    mov eax,[ebp-4]"
+"	      00555464    mov eax,dyobj"
 "	      00555467    movsx eax,word ptr [eax+0Ch]"
 "	      0055546b    test al,20h"
 "	      0055546d    je near ptr 00555480h"
 );
 // LINE 211:
 	asm( 
-"	      00555473    mov eax,[ebp-4]"
+"	      00555473    mov eax,dyobj"
 "	      00555476    mov eax,[eax]"
-"	      00555478    mov [ebp-4],eax"
+"	      00555478    mov dyobj,eax"
 );
 // LINE 212:
 	asm( 
@@ -509,17 +509,17 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 216:
 	asm( 
-"	      00555480    mov eax,[ebp+1Ch]"
-"	      00555483    cmp [ebp-4],eax"
+"	      00555480    mov eax,ignore1"
+"	      00555483    cmp dyobj,eax"
 "	      00555486    je near ptr 00555498h"
-"	      0055548c    mov eax,[ebp+20h]"
-"	      0055548f    cmp [ebp-4],eax"
+"	      0055548c    mov eax,ignore2"
+"	      0055548f    cmp dyobj,eax"
 "	      00555492    jne near ptr 005554CDh"
 );
 // LINE 218:
 	asm( 
-"	      00555498    mov eax,[ebp+8]"
-"	      0055549b    cmp [ebp-4],eax"
+"	      00555498    mov eax,donotignore"
+"	      0055549b    cmp dyobj,eax"
 "	      0055549e    jne near ptr 005554C0h"
 "	      005554a4    push 8C085h"
 "	      005554a9    push 5BC6ECh"
@@ -530,9 +530,9 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 219:
 	asm( 
-"	      005554c0    mov eax,[ebp-4]"
+"	      005554c0    mov eax,dyobj"
 "	      005554c3    mov eax,[eax]"
-"	      005554c5    mov [ebp-4],eax"
+"	      005554c5    mov dyobj,eax"
 );
 // LINE 220:
 	asm( 
@@ -542,13 +542,13 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 	asm( 
 "	      005554cd    mov eax,ds:[5BC634h]"
 "	      005554d2    push eax"
-"	      005554d3    mov eax,[ebp-4]"
+"	      005554d3    mov eax,dyobj"
 "	      005554d6    mov eax,[eax+10h]"
 "	      005554d9    push eax"
 "	      005554da    call 004D19DFh"
 "	      005554df    add esp,8"
 "	      005554e2    push eax"
-"	      005554e3    mov eax,[ebp-4]"
+"	      005554e3    mov eax,dyobj"
 "	      005554e6    add eax,18h"
 "	      005554e9    mov ecx,[eax+8]"
 "	      005554ec    push ecx"
@@ -556,13 +556,13 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 "	      005554f0    push ecx"
 "	      005554f1    mov eax,[eax]"
 "	      005554f3    push eax"
-"	      005554f4    mov eax,[ebp-1Ch]"
+"	      005554f4    mov eax,halfradius"
 "	      005554f7    push eax"
-"	      005554f8    mov eax,[ebp+14h]"
+"	      005554f8    mov eax,location.z"
 "	      005554fb    push eax"
-"	      005554fc    mov eax,[ebp+10h]"
+"	      005554fc    mov eax,location.y"
 "	      005554ff    push eax"
-"	      00555500    mov eax,[ebp+0Ch]"
+"	      00555500    mov eax,location.x"
 "	      00555503    push eax"
 "	      00555504    call 00554FF0h"
 "	      00555509    add esp,20h"
@@ -572,14 +572,14 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 226:
 	asm( 
-"	      00555517    mov eax,[ebp+8]"
-"	      0055551a    cmp [ebp-4],eax"
+"	      00555517    mov eax,donotignore"
+"	      0055551a    cmp dyobj,eax"
 "	      0055551d    jne near ptr 0055552Eh"
 );
 // LINE 227:
 	asm( 
-"	      00555523    mov eax,[ebp-4]"
-"	      00555526    mov [ebp-8],eax"
+"	      00555523    mov eax,dyobj"
+"	      00555526    mov founddyobj,eax"
 );
 // LINE 228:
 	asm( 
@@ -587,12 +587,12 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 230:
 	asm( 
-"	      0055552e    cmp dword ptr [ebp-8],0"
+"	      0055552e    cmp founddyobj,0"
 "	      00555532    jne near ptr 00555644h"
 );
 // LINE 231:
 	asm( 
-"	      00555538    mov eax,[ebp-4]"
+"	      00555538    mov eax,dyobj"
 "	      0055553b    movsx eax,word ptr [eax+0Ch]"
 "	      0055553f    test al,8"
 "	      00555541    je near ptr 0055562Fh"
@@ -600,7 +600,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      00555547    mov eax,[ebp-4]"
+"	      00555547    mov eax,dyobj"
 "	      0055554a    mov ax,[eax+0Eh]"
 "	      0055554e    mov [ebp-24h],ax"
 );
@@ -610,7 +610,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 "	      00555556    cmp eax,7D00h"
 "	      0055555b    jne near ptr 0055556Eh"
 "	      00555561    mov eax,ds:[5B8680h]"
-"	      00555566    mov [ebp-20h],eax"
+"	      00555566    mov obj,eax"
 "	      00555569    jmp near ptr 005555EAh"
 "	      0055556e    movsx eax,word ptr [ebp-24h]"
 "	      00555572    test eax,eax"
@@ -635,14 +635,14 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 "	      005555ce    add esp,10h"
 "	      005555d1    movsx eax,word ptr [ebp-24h]"
 "	      005555d5    mov eax,[eax*4+636D40h]"
-"	      005555dc    mov [ebp-20h],eax"
+"	      005555dc    mov obj,eax"
 "	      005555df    jmp near ptr 005555EAh"
 "	      005555e4    mov eax,[ebp-28h]"
-"	      005555e7    mov [ebp-20h],eax"
+"	      005555e7    mov obj,eax"
 );
 // LINE 233:
 	asm( 
-"	      005555ea    cmp dword ptr [ebp-20h],0"
+"	      005555ea    cmp obj,0"
 "	      005555ee    jne near ptr 00555610h"
 "	      005555f4    push 8C085h"
 "	      005555f9    push 5BC738h"
@@ -653,16 +653,16 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 234:
 	asm( 
-"	      00555610    mov eax,[ebp-20h]"
+"	      00555610    mov eax,obj"
 "	      00555613    movsx eax,word ptr [eax+0E2h]"
 "	      0055561a    test eax,eax"
 "	      0055561c    jne near ptr 0055562Fh"
 );
 // LINE 235:
 	asm( 
-"	      00555622    mov eax,[ebp-4]"
+"	      00555622    mov eax,dyobj"
 "	      00555625    mov eax,[eax]"
-"	      00555627    mov [ebp-4],eax"
+"	      00555627    mov dyobj,eax"
 );
 // LINE 236:
 	asm( 
@@ -671,12 +671,12 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 // LINE 239:
 // Block end:
 	asm( 
-"	      0055562f    mov eax,[ebp-4]"
-"	      00555632    mov [ebp-8],eax"
+"	      0055562f    mov eax,dyobj"
+"	      00555632    mov founddyobj,eax"
 );
 // LINE 240:
 	asm( 
-"	      00555635    cmp dword ptr [ebp+8],0"
+"	      00555635    cmp donotignore,0"
 "	      00555639    jne near ptr 00555644h"
 );
 // LINE 241:
@@ -685,9 +685,9 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 245:
 	asm( 
-"	      00555644    mov eax,[ebp-4]"
+"	      00555644    mov eax,dyobj"
 "	      00555647    mov eax,[eax]"
-"	      00555649    mov [ebp-4],eax"
+"	      00555649    mov dyobj,eax"
 );
 // LINE 247:
 	asm( 
@@ -695,7 +695,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 );
 // LINE 249:
 	asm( 
-"	      00555651    mov eax,[ebp-8]"
+"	      00555651    mov eax,founddyobj"
 "	      00555654    jmp near ptr 00555659h"
 );
 // LINE 250:
@@ -730,106 +730,106 @@ struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d location, int32_t radi
 );
 // LINE 276:
 	asm( 
-"	      00555667    mov eax,[ebp+8]"
+"	      00555667    mov eax,location.x"
 "	      0055566a    add eax,20000000h"
 "	      0055566f    sar eax,16h"
-"	      00555672    mov [ebp-14h],eax"
+"	      00555672    mov celloc.x,eax"
 );
 // LINE 277:
 	asm( 
 "	      00555675    mov eax,20000000h"
-"	      0055567a    sub eax,[ebp+10h]"
+"	      0055567a    sub eax,location.z"
 "	      0055567d    sar eax,16h"
-"	      00555680    mov [ebp-10h],eax"
+"	      00555680    mov celloc.y,eax"
 );
 // LINE 280:
 	asm( 
-"	      00555683    mov eax,[ebp-10h]"
+"	      00555683    mov eax,celloc.y"
 "	      00555686    and eax,0FFh"
-"	      0055568b    mov ecx,[ebp-14h]"
+"	      0055568b    mov ecx,celloc.x"
 "	      0055568e    and ecx,0FFh"
 "	      00555694    shl ecx,0Ah"
 "	      00555697    mov eax,[ecx+eax*4+67ED30h]"
-"	      0055569e    mov [ebp-1Ch],eax"
+"	      0055569e    mov cptr,eax"
 );
 // LINE 283:
 	asm( 
-"	      005556a1    mov eax,[ebp+8]"
-"	      005556a4    mov ecx,[ebp-1Ch]"
+"	      005556a1    mov eax,location.x"
+"	      005556a4    mov ecx,cptr"
 "	      005556a7    movsx ecx,word ptr [ecx+2]"
 "	      005556ab    shl ecx,10h"
 "	      005556ae    sub eax,ecx"
-"	      005556b0    mov [ebp-20h],eax"
+"	      005556b0    mov normx,eax"
 );
 // LINE 284:
 	asm( 
-"	      005556b3    mov eax,[ebp+10h]"
-"	      005556b6    mov ecx,[ebp-1Ch]"
+"	      005556b3    mov eax,location.z"
+"	      005556b6    mov ecx,cptr"
 "	      005556b9    movsx ecx,word ptr [ecx+6]"
 "	      005556bd    shl ecx,10h"
 "	      005556c0    sub eax,ecx"
-"	      005556c2    mov [ebp-4],eax"
+"	      005556c2    mov normz,eax"
 );
 // LINE 285:
 	asm( 
-"	      005556c5    mov eax,[ebp+0Ch]"
-"	      005556c8    mov ecx,[ebp-1Ch]"
+"	      005556c5    mov eax,location.y"
+"	      005556c8    mov ecx,cptr"
 "	      005556cb    movsx ecx,word ptr [ecx+4]"
 "	      005556cf    shl ecx,10h"
 "	      005556d2    sub eax,ecx"
-"	      005556d4    mov [ebp-24h],eax"
+"	      005556d4    mov normy,eax"
 );
 // LINE 288:
 	asm( 
-"	      005556d7    mov eax,[ebp-1Ch]"
+"	      005556d7    mov eax,cptr"
 "	      005556da    mov eax,[eax+0Ch]"
-"	      005556dd    mov [ebp-0Ch],eax"
+"	      005556dd    mov stobj,eax"
 );
 // LINE 289:
 	asm( 
-"	      005556e0    cmp dword ptr [ebp-0Ch],0"
+"	      005556e0    cmp stobj,0"
 "	      005556e4    je near ptr 0055573Ah"
 );
 // LINE 292:
 	asm( 
-"	      005556ea    mov dword ptr [ebp-8],200h"
+"	      005556ea    mov flags,200h"
 );
 // LINE 301:
 	asm( 
 "	      005556f1    push 0"
 "	      005556f3    push 0"
-"	      005556f5    mov eax,[ebp+14h]"
+"	      005556f5    mov eax,radius"
 "	      005556f8    push eax"
-"	      005556f9    lea eax,[ebp-8]"
+"	      005556f9    lea eax,flags"
 "	      005556fc    push eax"
-"	      005556fd    mov eax,[ebp-4]"
+"	      005556fd    mov eax,normz"
 "	      00555700    push eax"
-"	      00555701    mov eax,[ebp-24h]"
+"	      00555701    mov eax,normy"
 "	      00555704    push eax"
-"	      00555705    mov eax,[ebp-20h]"
+"	      00555705    mov eax,normx"
 "	      00555708    push eax"
-"	      00555709    mov eax,[ebp-0Ch]"
+"	      00555709    mov eax,stobj"
 "	      0055570c    mov eax,[eax+4]"
 "	      0055570f    push eax"
 "	      00555710    call 004D2B28h"
 "	      00555715    add esp,20h"
-"	      00555718    mov [ebp-18h],eax"
+"	      00555718    mov objy,eax"
 );
 // LINE 304:
 	asm( 
-"	      0055571b    cmp dword ptr [ebp-18h],0"
+"	      0055571b    cmp objy,0"
 "	      0055571f    jle near ptr 0055572Dh"
 );
 // LINE 306:
 	asm( 
-"	      00555725    mov eax,[ebp-0Ch]"
+"	      00555725    mov eax,stobj"
 "	      00555728    jmp near ptr 00555741h"
 );
 // LINE 310:
 	asm( 
-"	      0055572d    mov eax,[ebp-0Ch]"
+"	      0055572d    mov eax,stobj"
 "	      00555730    mov eax,[eax]"
-"	      00555732    mov [ebp-0Ch],eax"
+"	      00555732    mov stobj,eax"
 );
 // LINE 311:
 	asm( 
@@ -865,23 +865,23 @@ enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 );
 // LINE 321:
 	asm( 
-"	      0055574f    movsx eax,word ptr [ebp+8]"
+"	      0055574f    movsx eax,cellx"
 "	      00555753    cmp eax,7Fh"
 "	      00555756    jg near ptr 00555781h"
-"	      0055575c    movsx eax,word ptr [ebp+0Ch]"
+"	      0055575c    movsx eax,celly"
 "	      00555760    cmp eax,7Fh"
 "	      00555763    jg near ptr 00555781h"
-"	      00555769    movsx eax,word ptr [ebp+8]"
+"	      00555769    movsx eax,cellx"
 "	      0055576d    test eax,eax"
 "	      0055576f    jl near ptr 00555781h"
-"	      00555775    movsx eax,word ptr [ebp+0Ch]"
+"	      00555775    movsx eax,celly"
 "	      00555779    test eax,eax"
 "	      0055577b    jge near ptr 0055578Ch"
-"	      00555781    mov word ptr [ebp-4],0FFFFh"
+"	      00555781    mov scurkID,0FFFFh"
 "	      00555787    jmp near ptr 005557E8h"
-"	      0055578c    movsx eax,word ptr [ebp+8]"
+"	      0055578c    movsx eax,cellx"
 "	      00555790    mov eax,[eax*4+639850h]"
-"	      00555797    movsx ecx,word ptr [ebp+0Ch]"
+"	      00555797    movsx ecx,celly"
 "	      0055579b    movzx ax,byte ptr [eax+ecx]"
 "	      005557a0    mov [ebp-8],ax"
 "	      005557a4    movsx eax,word ptr [ebp-8]"
@@ -897,12 +897,12 @@ enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 "	      005557d3    call 00554F30h"
 "	      005557d8    add esp,10h"
 "	      005557db    mov ax,[ebp-8]"
-"	      005557df    mov [ebp-4],ax"
+"	      005557df    mov scurkID,ax"
 "	      005557e3    jmp near ptr 005557E8h"
 );
 // LINE 322:
 	asm( 
-"	      005557e8    movsx eax,word ptr [ebp-4]"
+"	      005557e8    movsx eax,scurkID"
 "	      005557ec    cmp eax,0FFFFFFFFh"
 "	      005557ef    jne near ptr 00555804h"
 );
@@ -917,7 +917,7 @@ enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 );
 // LINE 325:
 	asm( 
-"	      00555804    movsx eax,word ptr [ebp-4]"
+"	      00555804    movsx eax,scurkID"
 "	      00555808    mov eax,[eax*4+636ED0h]"
 "	      0055580f    jmp near ptr 00555814h"
 );
@@ -946,20 +946,20 @@ unsigned short cYObject::IsWater(short cellx, short celly) {
 );
 // LINE 330:
 	asm( 
-"	      00555822    movsx eax,word ptr [ebp+0Ch]"
+"	      00555822    movsx eax,celly"
 "	      00555826    and eax,0FFh"
-"	      0055582b    movsx ecx,word ptr [ebp+8]"
+"	      0055582b    movsx ecx,cellx"
 "	      0055582f    and ecx,0FFh"
 "	      00555835    shl ecx,8"
 "	      00555838    xor edx,edx"
 "	      0055583a    mov dl,[eax+ecx+66EB10h]"
-"	      00555841    mov [ebp-4],edx"
+"	      00555841    mov j,edx"
 );
 // LINE 331:
 	asm( 
-"	      00555844    cmp dword ptr [ebp-4],0"
+"	      00555844    cmp j,0"
 "	      00555848    jl near ptr 00555866h"
-"	      0055584e    cmp dword ptr [ebp-4],0Fh"
+"	      0055584e    cmp j,0Fh"
 "	      00555852    jge near ptr 00555866h"
 );
 // LINE 332:
@@ -1027,131 +1027,131 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 "	      0055588b    push ebx"
 "	      0055588c    push esi"
 "	      0055588d    push edi"
-"	      0055588e    mov [ebp-18h],ecx"
+"	      0055588e    mov this,ecx"
 );
 // LINE 350:
 	asm( 
-"	      00555891    mov word ptr [ebp-0Ch],0"
+"	      00555891    mov attempts,0"
 );
 // LINE 354:
 	asm( 
-"	      00555897    mov eax,[ebp-18h]"
+"	      00555897    mov eax,this"
 "	      0055589a    movsx eax,word ptr [eax+0D0h]"
 "	      005558a1    add eax,2"
-"	      005558a4    mov [ebp-10h],ax"
+"	      005558a4    mov dir,ax"
 );
 // LINE 355:
 	asm( 
-"	      005558a8    movsx eax,word ptr [ebp-10h]"
+"	      005558a8    movsx eax,dir"
 "	      005558ac    and eax,7"
-"	      005558af    mov [ebp-10h],ax"
+"	      005558af    mov dir,ax"
 );
 // LINE 356:
 	asm( 
-"	      005558b3    movsx eax,word ptr [ebp-10h]"
+"	      005558b3    movsx eax,dir"
 "	      005558b7    lea eax,[eax+eax*2]"
 "	      005558ba    mov eax,[eax*4+635530h]"
-"	      005558c1    mov [ebp-14h],eax"
+"	      005558c1    mov dx,eax"
 );
 // LINE 357:
 	asm( 
-"	      005558c4    movsx eax,word ptr [ebp-10h]"
+"	      005558c4    movsx eax,dir"
 "	      005558c8    lea eax,[eax+eax*2]"
 "	      005558cb    mov eax,[eax*4+635538h]"
-"	      005558d2    mov [ebp-4],eax"
+"	      005558d2    mov dz,eax"
 );
 // LINE 358:
 	asm( 
-"	      005558d5    movsx eax,word ptr [ebp+8]"
+"	      005558d5    movsx eax,speed"
 "	      005558d9    shl eax,10h"
 "	      005558dc    push eax"
-"	      005558dd    mov eax,[ebp-14h]"
+"	      005558dd    mov eax,dx"
 "	      005558e0    push eax"
 "	      005558e1    call 004D19BDh"
 "	      005558e6    add esp,8"
-"	      005558e9    mov [ebp-14h],eax"
+"	      005558e9    mov dx,eax"
 );
 // LINE 359:
 	asm( 
-"	      005558ec    movsx eax,word ptr [ebp+8]"
+"	      005558ec    movsx eax,speed"
 "	      005558f0    shl eax,10h"
 "	      005558f3    push eax"
-"	      005558f4    mov eax,[ebp-4]"
+"	      005558f4    mov eax,dz"
 "	      005558f7    push eax"
 "	      005558f8    call 004D19BDh"
 "	      005558fd    add esp,8"
-"	      00555900    mov [ebp-4],eax"
+"	      00555900    mov dz,eax"
 );
 // LINE 360:
 	asm( 
 "	      00555903    push 0"
 "	      00555905    push 0"
-"	      00555907    mov eax,[ebp-4]"
+"	      00555907    mov eax,dz"
 "	      0055590a    push eax"
-"	      0055590b    mov eax,[ebp-14h]"
+"	      0055590b    mov eax,dx"
 "	      0055590e    push eax"
-"	      0055590f    mov eax,[ebp+10h]"
+"	      0055590f    mov eax,moveinfo"
 "	      00555912    push eax"
 "	      00555913    mov eax,[ebp+0Ch]"
 "	      00555916    push eax"
-"	      00555917    mov ecx,[ebp-18h]"
+"	      00555917    mov ecx,this"
 "	      0055591a    call 00555A60h"
-"	      0055591f    mov [ebp-8],eax"
+"	      0055591f    mov movecode,eax"
 );
 // LINE 362:
 	asm( 
-"	      00555922    mov eax,[ebp-18h]"
+"	      00555922    mov eax,this"
 "	      00555925    movsx eax,word ptr [eax+0FAh]"
 "	      0055592c    test eax,eax"
 "	      0055592e    jne near ptr 0055593Ch"
 );
 // LINE 363:
 	asm( 
-"	      00555934    mov eax,[ebp-8]"
+"	      00555934    mov eax,movecode"
 "	      00555937    jmp near ptr 005559ABh"
 );
 // LINE 368:
 	asm( 
-"	      0055593c    cmp dword ptr [ebp-8],0"
+"	      0055593c    cmp movecode,0"
 "	      00555940    je near ptr 00555964h"
-"	      00555946    cmp dword ptr [ebp-8],0Ah"
+"	      00555946    cmp movecode,0Ah"
 "	      0055594a    je near ptr 00555964h"
-"	      00555950    cmp dword ptr [ebp-8],8"
+"	      00555950    cmp movecode,8"
 "	      00555954    je near ptr 00555964h"
-"	      0055595a    cmp dword ptr [ebp-8],7"
+"	      0055595a    cmp movecode,7"
 "	      0055595e    jne near ptr 0055596Ch"
 );
 // LINE 369:
 	asm( 
-"	      00555964    mov eax,[ebp-8]"
+"	      00555964    mov eax,movecode"
 "	      00555967    jmp near ptr 005559ABh"
 );
 // LINE 371:
 	asm( 
-"	      0055596c    inc word ptr [ebp-0Ch]"
+"	      0055596c    inc attempts"
 );
 // LINE 372:
 	asm( 
-"	      00555970    movsx eax,word ptr [ebp-0Ch]"
+"	      00555970    movsx eax,attempts"
 "	      00555974    cmp eax,8"
 "	      00555977    jle near ptr 00555985h"
 );
 // LINE 373:
 	asm( 
-"	      0055597d    mov eax,[ebp-8]"
+"	      0055597d    mov eax,movecode"
 "	      00555980    jmp near ptr 005559ABh"
 );
 // LINE 374:
 	asm( 
-"	      00555985    mov eax,[ebp-18h]"
+"	      00555985    mov eax,this"
 "	      00555988    inc word ptr [eax+0D0h]"
 );
 // LINE 375:
 	asm( 
-"	      0055598f    mov eax,[ebp-18h]"
+"	      0055598f    mov eax,this"
 "	      00555992    movsx eax,word ptr [eax+0D0h]"
 "	      00555999    and eax,7"
-"	      0055599c    mov ecx,[ebp-18h]"
+"	      0055599c    mov ecx,this"
 "	      0055599f    mov [ecx+0D0h],ax"
 );
 // LINE 376:
@@ -1183,21 +1183,21 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d vector, int3
 "	      005559b8    push ebx"
 "	      005559b9    push esi"
 "	      005559ba    push edi"
-"	      005559bb    mov [ebp-14h],ecx"
+"	      005559bb    mov this,ecx"
 );
 // LINE 382:
 	asm( 
-"	      005559be    cmp dword ptr [ebp+14h],0"
+"	      005559be    cmp fwdspeed,0"
 "	      005559c2    jne near ptr 005559D2h"
 "	      005559c8    mov eax,7"
 "	      005559cd    jmp near ptr 00555A59h"
 );
 // LINE 384:
 	asm( 
-"	      005559d2    mov eax,[ebp-14h]"
+"	      005559d2    mov eax,this"
 "	      005559d5    add eax,48h"
 "	      005559d8    push eax"
-"	      005559d9    lea eax,[ebp+8]"
+"	      005559d9    lea eax,vector.x"
 "	      005559dc    push eax"
 "	      005559dd    push 59B518h"
 "	      005559e2    call 004D2094h"
@@ -1205,56 +1205,56 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d vector, int3
 );
 // LINE 385:
 	asm( 
-"	      005559ea    mov eax,[ebp+14h]"
+"	      005559ea    mov eax,fwdspeed"
 "	      005559ed    push eax"
-"	      005559ee    mov eax,[ebp+8]"
+"	      005559ee    mov eax,vector.x"
 "	      005559f1    push eax"
 "	      005559f2    call 004D19BDh"
 "	      005559f7    add esp,8"
-"	      005559fa    mov [ebp-8],eax"
+"	      005559fa    mov Vx,eax"
 );
 // LINE 386:
 	asm( 
-"	      005559fd    mov eax,[ebp+14h]"
+"	      005559fd    mov eax,fwdspeed"
 "	      00555a00    push eax"
-"	      00555a01    mov eax,[ebp+10h]"
+"	      00555a01    mov eax,vector.z"
 "	      00555a04    push eax"
 "	      00555a05    call 004D19BDh"
 "	      00555a0a    add esp,8"
-"	      00555a0d    mov [ebp-0Ch],eax"
+"	      00555a0d    mov Vz,eax"
 );
 // LINE 388:
 	asm( 
 "	      00555a10    mov eax,ds:[5B4768h]"
 "	      00555a15    push eax"
-"	      00555a16    mov eax,[ebp-8]"
+"	      00555a16    mov eax,Vx"
 "	      00555a19    push eax"
 "	      00555a1a    call 004D19BDh"
 "	      00555a1f    add esp,8"
-"	      00555a22    mov [ebp-10h],eax"
+"	      00555a22    mov dx,eax"
 );
 // LINE 389:
 	asm( 
 "	      00555a25    mov eax,ds:[5B4768h]"
 "	      00555a2a    push eax"
-"	      00555a2b    mov eax,[ebp-0Ch]"
+"	      00555a2b    mov eax,Vz"
 "	      00555a2e    push eax"
 "	      00555a2f    call 004D19BDh"
 "	      00555a34    add esp,8"
-"	      00555a37    mov [ebp-4],eax"
+"	      00555a37    mov dz,eax"
 );
 // LINE 392:
 	asm( 
 "	      00555a3a    push 0"
 "	      00555a3c    push 0"
-"	      00555a3e    mov eax,[ebp-4]"
+"	      00555a3e    mov eax,dz"
 "	      00555a41    push eax"
-"	      00555a42    mov eax,[ebp-10h]"
+"	      00555a42    mov eax,dx"
 "	      00555a45    push eax"
-"	      00555a46    mov eax,[ebp+18h]"
+"	      00555a46    mov eax,moveinfo"
 "	      00555a49    push eax"
 "	      00555a4a    push 0"
-"	      00555a4c    mov ecx,[ebp-14h]"
+"	      00555a4c    mov ecx,this"
 "	      00555a4f    call 00555A60h"
 "	      00555a54    jmp near ptr 00555A59h"
 );
@@ -1285,13 +1285,13 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555a69    push ebx"
 "	      00555a6a    push esi"
 "	      00555a6b    push edi"
-"	      00555a6c    mov [ebp-0A0h],ecx"
+"	      00555a6c    mov this,ecx"
 );
 // LINE 402:
 	asm( 
-"	      00555a72    mov eax,[ebp-0A0h]"
+"	      00555a72    mov eax,this"
 "	      00555a78    add eax,3Ch"
-"	      00555a7b    lea ecx,[ebp-14h]"
+"	      00555a7b    lea ecx,newloc.x"
 "	      00555a7e    mov edx,[eax]"
 "	      00555a80    mov [ecx],edx"
 "	      00555a82    mov edx,[eax+4]"
@@ -1301,10 +1301,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 403:
 	asm( 
-"	      00555a8e    mov eax,[ebp+10h]"
-"	      00555a91    add [ebp-14h],eax"
-"	      00555a94    mov eax,[ebp+14h]"
-"	      00555a97    add [ebp-0Ch],eax"
+"	      00555a8e    mov eax,dx"
+"	      00555a91    add newloc.x,eax"
+"	      00555a94    mov eax,dz"
+"	      00555a97    add newloc.z,eax"
 );
 // LINE 404:
 	asm( 
@@ -1313,16 +1313,16 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 405:
 	asm( 
-"	      00555aa7    mov eax,[ebp+18h]"
-"	      00555aaa    add [ebp-10h],eax"
+"	      00555aa7    mov eax,masterdy"
+"	      00555aaa    add newloc.y,eax"
 );
 // LINE 406:
 	asm( 
-"	      00555aad    mov dword ptr [ebp-4],0"
+"	      00555aad    mov retcode,0"
 );
 // LINE 407:
 	asm( 
-"	      00555ab4    mov dword ptr [ebp-1Ch],0"
+"	      00555ab4    mov dyn,0"
 );
 // LINE 409:
 	asm( 
@@ -1335,7 +1335,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	int32_t ht;
 	struct TreeSim::StackElem* elem;
 	asm( 
-"	      00555ac8    mov eax,[ebp-0A0h]"
+"	      00555ac8    mov eax,this"
 "	      00555ace    cmp dword ptr [eax+130h],0"
 "	      00555ad5    je near ptr 00555B5Ah"
 );
@@ -1345,57 +1345,57 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	int32_t groundheight;
 	struct _DYOBJ_INST* master;
 	asm( 
-"	      00555adb    mov eax,[ebp-0A0h]"
+"	      00555adb    mov eax,this"
 "	      00555ae1    mov eax,[eax+130h]"
-"	      00555ae7    mov [ebp-30h],eax"
+"	      00555ae7    mov master,eax"
 );
 // LINE 414:
 	asm( 
-"	      00555aea    mov eax,[ebp-14h]"
-"	      00555aed    mov ecx,[ebp-30h]"
+"	      00555aea    mov eax,newloc.x"
+"	      00555aed    mov ecx,master"
 "	      00555af0    sub eax,[ecx+18h]"
-"	      00555af3    mov [ebp-40h],eax"
-"	      00555af6    mov dword ptr [ebp-3Ch],0"
-"	      00555afd    mov eax,[ebp-0Ch]"
-"	      00555b00    mov ecx,[ebp-30h]"
+"	      00555af3    mov offset.x,eax"
+"	      00555af6    mov offset.y,0"
+"	      00555afd    mov eax,newloc.z"
+"	      00555b00    mov ecx,master"
 "	      00555b03    sub eax,[ecx+20h]"
-"	      00555b06    mov [ebp-38h],eax"
+"	      00555b06    mov offset.z,eax"
 );
 // LINE 419:
 	asm( 
-"	      00555b09    mov eax,[ebp-0A0h]"
+"	      00555b09    mov eax,this"
 "	      00555b0f    mov eax,[eax+34h]"
 "	      00555b12    push eax"
-"	      00555b13    lea eax,[ebp-40h]"
+"	      00555b13    lea eax,offset.x"
 "	      00555b16    push eax"
-"	      00555b17    mov eax,[ebp-30h]"
+"	      00555b17    mov eax,master"
 "	      00555b1a    add eax,24h"
 "	      00555b1d    push eax"
-"	      00555b1e    mov eax,[ebp-30h]"
+"	      00555b1e    mov eax,master"
 "	      00555b21    mov eax,[eax+8]"
 "	      00555b24    push eax"
 "	      00555b25    call 004D2AC6h"
 "	      00555b2a    add esp,10h"
-"	      00555b2d    mov [ebp-20h],eax"
+"	      00555b2d    mov masterheight,eax"
 );
 // LINE 420:
 	asm( 
-"	      00555b30    mov eax,[ebp-0Ch]"
+"	      00555b30    mov eax,newloc.z"
 "	      00555b33    push eax"
-"	      00555b34    mov eax,[ebp-10h]"
+"	      00555b34    mov eax,newloc.y"
 "	      00555b37    push eax"
-"	      00555b38    mov eax,[ebp-14h]"
+"	      00555b38    mov eax,newloc.x"
 "	      00555b3b    push eax"
 "	      00555b3c    call 00551BF7h"
 "	      00555b41    add esp,0Ch"
-"	      00555b44    mov [ebp-34h],eax"
+"	      00555b44    mov groundheight,eax"
 );
 // LINE 421:
 	asm( 
-"	      00555b47    mov eax,[ebp-34h]"
-"	      00555b4a    add eax,[ebp-20h]"
+"	      00555b47    mov eax,groundheight"
+"	      00555b4a    add eax,masterheight"
 "	      00555b4d    add eax,30000h"
-"	      00555b52    mov [ebp-10h],eax"
+"	      00555b52    mov newloc.y,eax"
 );
 // LINE 423:
 // Block end:
@@ -1404,30 +1404,30 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 424:
 	asm( 
-"	      00555b5a    mov eax,[ebp-0Ch]"
+"	      00555b5a    mov eax,newloc.z"
 "	      00555b5d    push eax"
-"	      00555b5e    mov eax,[ebp-10h]"
+"	      00555b5e    mov eax,newloc.y"
 "	      00555b61    push eax"
-"	      00555b62    mov eax,[ebp-14h]"
+"	      00555b62    mov eax,newloc.x"
 "	      00555b65    push eax"
 "	      00555b66    call 00551BF7h"
 "	      00555b6b    add esp,0Ch"
 "	      00555b6e    add eax,30000h"
-"	      00555b73    mov [ebp-10h],eax"
+"	      00555b73    mov newloc.y,eax"
 );
 // LINE 426:
 	asm( 
-"	      00555b76    mov eax,[ebp-10h]"
-"	      00555b79    mov ecx,[ebp-0A0h]"
+"	      00555b76    mov eax,newloc.y"
+"	      00555b79    mov ecx,this"
 "	      00555b7f    sub eax,[ecx+40h]"
-"	      00555b82    mov [ebp-2Ch],eax"
+"	      00555b82    mov dy,eax"
 );
 // LINE 427:
 	asm( 
-"	      00555b85    mov eax,[ebp-0A0h]"
+"	      00555b85    mov eax,this"
 "	      00555b8b    movsx eax,word ptr [eax+0D4h]"
 "	      00555b92    shl eax,10h"
-"	      00555b95    mov [ebp-28h],eax"
+"	      00555b95    mov ht,eax"
 );
 // LINE 428:
 	asm( 
@@ -1438,7 +1438,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555bac    add esp,4"
 "	      00555baf    test eax,eax"
 "	      00555bb1    je near ptr 00555BE3h"
-"	      00555bb7    mov eax,[ebp-0A0h]"
+"	      00555bb7    mov eax,this"
 "	      00555bbd    movsx eax,word ptr [eax+0BCh]"
 "	      00555bc4    cmp eax,7D00h"
 "	      00555bc9    jne near ptr 00555BE3h"
@@ -1446,125 +1446,125 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // LINE 429:
 	asm( 
 "	      00555bcf    push 140000h"
-"	      00555bd4    mov eax,[ebp-28h]"
+"	      00555bd4    mov eax,ht"
 "	      00555bd7    push eax"
 "	      00555bd8    call 004D19BDh"
 "	      00555bdd    add esp,8"
-"	      00555be0    mov [ebp-28h],eax"
+"	      00555be0    mov ht,eax"
 );
 // LINE 430:
 	asm( 
-"	      00555be3    mov eax,[ebp-2Ch]"
-"	      00555be6    cmp [ebp-28h],eax"
+"	      00555be3    mov eax,dy"
+"	      00555be6    cmp ht,eax"
 "	      00555be9    jge near ptr 00555BF6h"
 );
 // LINE 431:
 	asm( 
-"	      00555bef    mov dword ptr [ebp-4],1"
+"	      00555bef    mov retcode,1"
 );
 // LINE 432:
 	asm( 
-"	      00555bf6    mov eax,[ebp-28h]"
+"	      00555bf6    mov eax,ht"
 "	      00555bf9    neg eax"
-"	      00555bfb    cmp eax,[ebp-2Ch]"
+"	      00555bfb    cmp eax,dy"
 "	      00555bfe    jle near ptr 00555C0Bh"
 );
 // LINE 433:
 	asm( 
-"	      00555c04    mov dword ptr [ebp-4],2"
+"	      00555c04    mov retcode,2"
 );
 // LINE 434:
 	asm( 
-"	      00555c0b    cmp dword ptr [ebp-4],0"
+"	      00555c0b    cmp retcode,0"
 "	      00555c0f    je near ptr 00555C54h"
 );
 // LINE 435:
 	asm( 
-"	      00555c15    cmp dword ptr [ebp+0Ch],0"
+"	      00555c15    cmp moveinfo,0"
 "	      00555c19    je near ptr 00555C4Ch"
 );
 // LINE 436:
 // Block start:
 	struct _STOBJ_INST* st;
 	asm( 
-"	      00555c1f    mov eax,[ebp-0A0h]"
+"	      00555c1f    mov eax,this"
 "	      00555c25    mov eax,[eax+34h]"
 "	      00555c28    sar eax,1"
 "	      00555c2b    push eax"
-"	      00555c2c    mov eax,[ebp-0Ch]"
+"	      00555c2c    mov eax,newloc.z"
 "	      00555c2f    push eax"
-"	      00555c30    mov eax,[ebp-10h]"
+"	      00555c30    mov eax,newloc.y"
 "	      00555c33    push eax"
-"	      00555c34    mov eax,[ebp-14h]"
+"	      00555c34    mov eax,newloc.x"
 "	      00555c37    push eax"
 "	      00555c38    call 0055565Eh"
 "	      00555c3d    add esp,10h"
-"	      00555c40    mov [ebp-44h],eax"
+"	      00555c40    mov st,eax"
 );
 // LINE 437:
 	asm( 
-"	      00555c43    mov eax,[ebp-44h]"
-"	      00555c46    mov ecx,[ebp+0Ch]"
+"	      00555c43    mov eax,st"
+"	      00555c46    mov ecx,moveinfo"
 "	      00555c49    mov [ecx+0Ch],eax"
 );
 // LINE 439:
 // Block end:
 	asm( 
-"	      00555c4c    mov eax,[ebp-4]"
+"	      00555c4c    mov eax,retcode"
 "	      00555c4f    jmp near ptr 00556469h"
 );
 // LINE 442:
 	asm( 
 "	      00555c54    jmp near ptr 00555C59h"
-"	      00555c59    mov eax,[ebp-0A0h]"
+"	      00555c59    mov eax,this"
 "	      00555c5f    movsx eax,word ptr [eax+8]"
 "	      00555c63    lea eax,[eax*4-4]"
 "	      00555c6a    lea eax,[eax+eax*4]"
-"	      00555c6d    mov ecx,[ebp-0A0h]"
+"	      00555c6d    mov ecx,this"
 "	      00555c73    add eax,[ecx+4]"
-"	      00555c76    mov [ebp-24h],eax"
+"	      00555c76    mov elem,eax"
 );
 // LINE 444:
 	asm( 
-"	      00555c79    mov eax,[ebp-0A0h]"
+"	      00555c79    mov eax,this"
 "	      00555c7f    mov eax,[eax+130h]"
 "	      00555c85    push eax"
-"	      00555c86    mov eax,[ebp-0A0h]"
+"	      00555c86    mov eax,this"
 "	      00555c8c    add eax,24h"
 "	      00555c8f    push eax"
-"	      00555c90    mov eax,[ebp-0A0h]"
+"	      00555c90    mov eax,this"
 "	      00555c96    mov eax,[eax+34h]"
 "	      00555c99    push eax"
-"	      00555c9a    mov eax,[ebp-0Ch]"
+"	      00555c9a    mov eax,newloc.z"
 "	      00555c9d    push eax"
-"	      00555c9e    mov eax,[ebp-10h]"
+"	      00555c9e    mov eax,newloc.y"
 "	      00555ca1    push eax"
-"	      00555ca2    mov eax,[ebp-14h]"
+"	      00555ca2    mov eax,newloc.x"
 "	      00555ca5    push eax"
-"	      00555ca6    mov eax,[ebp-24h]"
+"	      00555ca6    mov eax,elem"
 "	      00555ca9    mov eax,[eax+4]"
 "	      00555cac    push eax"
 "	      00555cad    call 00555369h"
 "	      00555cb2    add esp,1Ch"
-"	      00555cb5    mov [ebp-1Ch],eax"
+"	      00555cb5    mov dyn,eax"
 );
 // LINE 446:
 	asm( 
-"	      00555cb8    cmp dword ptr [ebp+0Ch],0"
+"	      00555cb8    cmp moveinfo,0"
 "	      00555cbc    je near ptr 00555CCBh"
 );
 // LINE 447:
 	asm( 
-"	      00555cc2    mov eax,[ebp-1Ch]"
-"	      00555cc5    mov ecx,[ebp+0Ch]"
+"	      00555cc2    mov eax,dyn"
+"	      00555cc5    mov ecx,moveinfo"
 "	      00555cc8    mov [ecx+8],eax"
 );
 // LINE 449:
 	asm( 
-"	      00555ccb    cmp dword ptr [ebp-1Ch],0"
+"	      00555ccb    cmp dyn,0"
 "	      00555ccf    je near ptr 00555CEEh"
-"	      00555cd5    mov eax,[ebp-24h]"
-"	      00555cd8    mov ecx,[ebp-1Ch]"
+"	      00555cd5    mov eax,elem"
+"	      00555cd8    mov ecx,dyn"
 "	      00555cdb    cmp [eax+4],ecx"
 "	      00555cde    jne near ptr 00555CEEh"
 );
@@ -1575,7 +1575,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 451:
 	asm( 
-"	      00555cee    mov eax,[ebp-0A0h]"
+"	      00555cee    mov eax,this"
 "	      00555cf4    cmp dword ptr [eax+130h],0"
 "	      00555cfb    je near ptr 00555E3Ch"
 );
@@ -1587,13 +1587,13 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	asm( 
 "	      00555d01    mov eax,ds:[5BC634h]"
 "	      00555d06    push eax"
-"	      00555d07    mov eax,[ebp-0A0h]"
+"	      00555d07    mov eax,this"
 "	      00555d0d    mov eax,[eax+34h]"
 "	      00555d10    push eax"
 "	      00555d11    call 004D19DFh"
 "	      00555d16    add esp,8"
-"	      00555d19    mov [ebp-54h],eax"
-"	      00555d1c    mov eax,[ebp-0A0h]"
+"	      00555d19    mov myrad,eax"
+"	      00555d1c    mov eax,this"
 "	      00555d22    mov eax,[eax+130h]"
 "	      00555d28    mov [ebp-84h],eax"
 );
@@ -1610,18 +1610,18 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555d4f    push eax"
 "	      00555d50    call 004D19DFh"
 "	      00555d55    add esp,8"
-"	      00555d58    mov [ebp-58h],eax"
+"	      00555d58    mov masterrad,eax"
 "	      00555d5b    jmp near ptr 00555D71h"
 "	      00555d60    jmp near ptr 00555D71h"
-"	      00555d65    mov dword ptr [ebp-58h],80000h"
+"	      00555d65    mov masterrad,80000h"
 "	      00555d6c    jmp near ptr 00555D71h"
 );
 // LINE 454:
 	asm( 
-"	      00555d71    mov eax,[ebp-0A0h]"
+"	      00555d71    mov eax,this"
 "	      00555d77    mov eax,[eax+130h]"
 "	      00555d7d    add eax,18h"
-"	      00555d80    lea ecx,[ebp-50h]"
+"	      00555d80    lea ecx,masterloc.x"
 "	      00555d83    mov edx,[eax]"
 "	      00555d85    mov [ecx],edx"
 "	      00555d87    mov edx,[eax+4]"
@@ -1631,22 +1631,22 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 455:
 	asm( 
-"	      00555d93    mov eax,[ebp-20h]"
-"	      00555d96    add [ebp-4Ch],eax"
+"	      00555d93    mov eax,masterheight"
+"	      00555d96    add masterloc.y,eax"
 );
 // LINE 457:
 	asm( 
-"	      00555d99    mov eax,[ebp-58h]"
+"	      00555d99    mov eax,masterrad"
 "	      00555d9c    push eax"
-"	      00555d9d    mov eax,[ebp-48h]"
+"	      00555d9d    mov eax,masterloc.z"
 "	      00555da0    push eax"
-"	      00555da1    mov eax,[ebp-4Ch]"
+"	      00555da1    mov eax,masterloc.y"
 "	      00555da4    push eax"
-"	      00555da5    mov eax,[ebp-50h]"
+"	      00555da5    mov eax,masterloc.x"
 "	      00555da8    push eax"
-"	      00555da9    mov eax,[ebp-54h]"
+"	      00555da9    mov eax,myrad"
 "	      00555dac    push eax"
-"	      00555dad    mov eax,[ebp-0A0h]"
+"	      00555dad    mov eax,this"
 "	      00555db3    add eax,3Ch"
 "	      00555db6    mov ecx,[eax+8]"
 "	      00555db9    push ecx"
@@ -1664,9 +1664,9 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // Block start:
 	struct _DYOBJ_INST* master;
 	asm( 
-"	      00555dd4    mov eax,[ebp-0A0h]"
+"	      00555dd4    mov eax,this"
 "	      00555dda    mov eax,[eax+130h]"
-"	      00555de0    mov [ebp-5Ch],eax"
+"	      00555de0    mov master,eax"
 );
 // LINE 459:
 	asm( 
@@ -1680,21 +1680,21 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // LINE 463:
 // Block end:
 	asm( 
-"	      00555dff    mov eax,[ebp-58h]"
+"	      00555dff    mov eax,masterrad"
 "	      00555e02    push eax"
-"	      00555e03    mov eax,[ebp-48h]"
+"	      00555e03    mov eax,masterloc.z"
 "	      00555e06    push eax"
-"	      00555e07    mov eax,[ebp-4Ch]"
+"	      00555e07    mov eax,masterloc.y"
 "	      00555e0a    push eax"
-"	      00555e0b    mov eax,[ebp-50h]"
+"	      00555e0b    mov eax,masterloc.x"
 "	      00555e0e    push eax"
-"	      00555e0f    mov eax,[ebp-54h]"
+"	      00555e0f    mov eax,myrad"
 "	      00555e12    push eax"
-"	      00555e13    mov eax,[ebp-0Ch]"
+"	      00555e13    mov eax,newloc.z"
 "	      00555e16    push eax"
-"	      00555e17    mov eax,[ebp-10h]"
+"	      00555e17    mov eax,newloc.y"
 "	      00555e1a    push eax"
-"	      00555e1b    mov eax,[ebp-14h]"
+"	      00555e1b    mov eax,newloc.x"
 "	      00555e1e    push eax"
 "	      00555e1f    call 00554FF0h"
 "	      00555e24    add esp,20h"
@@ -1710,7 +1710,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // LINE 466:
 // Block end:
 	asm( 
-"	      00555e3c    cmp dword ptr [ebp-1Ch],0"
+"	      00555e3c    cmp dyn,0"
 "	      00555e40    je near ptr 00555EC5h"
 );
 // LINE 467:
@@ -1718,20 +1718,20 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	struct _DYOBJ_INST* dontignore;
 	struct _DYOBJ_INST* myspacedyn;
 	asm( 
-"	      00555e46    mov dword ptr [ebp-64h],0"
+"	      00555e46    mov dontignore,0"
 );
 // LINE 468:
 	asm( 
-"	      00555e4d    mov eax,[ebp-0A0h]"
+"	      00555e4d    mov eax,this"
 "	      00555e53    mov eax,[eax+130h]"
 "	      00555e59    push eax"
-"	      00555e5a    mov eax,[ebp-0A0h]"
+"	      00555e5a    mov eax,this"
 "	      00555e60    add eax,24h"
 "	      00555e63    push eax"
-"	      00555e64    mov eax,[ebp-0A0h]"
+"	      00555e64    mov eax,this"
 "	      00555e6a    mov eax,[eax+34h]"
 "	      00555e6d    push eax"
-"	      00555e6e    mov eax,[ebp-0A0h]"
+"	      00555e6e    mov eax,this"
 "	      00555e74    add eax,3Ch"
 "	      00555e77    mov ecx,[eax+8]"
 "	      00555e7a    push ecx"
@@ -1739,21 +1739,21 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555e7e    push ecx"
 "	      00555e7f    mov eax,[eax]"
 "	      00555e81    push eax"
-"	      00555e82    mov eax,[ebp-64h]"
+"	      00555e82    mov eax,dontignore"
 "	      00555e85    push eax"
 "	      00555e86    call 00555369h"
 "	      00555e8b    add esp,1Ch"
-"	      00555e8e    mov [ebp-60h],eax"
+"	      00555e8e    mov myspacedyn,eax"
 );
 // LINE 469:
 	asm( 
-"	      00555e91    mov eax,[ebp-60h]"
-"	      00555e94    cmp [ebp-1Ch],eax"
+"	      00555e91    mov eax,myspacedyn"
+"	      00555e94    cmp dyn,eax"
 "	      00555e97    je near ptr 00555EC5h"
 );
 // LINE 470:
 	asm( 
-"	      00555e9d    mov eax,[ebp-1Ch]"
+"	      00555e9d    mov eax,dyn"
 "	      00555ea0    movsx eax,word ptr [eax+0Ch]"
 "	      00555ea4    test al,8"
 "	      00555ea6    je near ptr 00555EBBh"
@@ -1776,32 +1776,32 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // Block end:
 // Block end:
 	asm( 
-"	      00555ec5    mov eax,[ebp-14h]"
+"	      00555ec5    mov eax,newloc.x"
 "	      00555ec8    add eax,20000000h"
 "	      00555ecd    sar eax,16h"
-"	      00555ed0    mov [ebp-18h],al"
+"	      00555ed0    mov ncellx,al"
 );
 // LINE 503:
 	asm( 
 "	      00555ed3    mov eax,20000000h"
-"	      00555ed8    sub eax,[ebp-0Ch]"
+"	      00555ed8    sub eax,newloc.z"
 "	      00555edb    sar eax,16h"
-"	      00555ede    mov [ebp-8],al"
+"	      00555ede    mov ncelly,al"
 );
 // LINE 509:
 	asm( 
-"	      00555ee1    mov eax,[ebp-0A0h]"
+"	      00555ee1    mov eax,this"
 "	      00555ee7    xor ecx,ecx"
 "	      00555ee9    mov cl,[eax+88h]"
 "	      00555eef    xor eax,eax"
-"	      00555ef1    mov al,[ebp-18h]"
+"	      00555ef1    mov al,ncellx"
 "	      00555ef4    cmp ecx,eax"
 "	      00555ef6    jne near ptr 00555F17h"
-"	      00555efc    mov eax,[ebp-0A0h]"
+"	      00555efc    mov eax,this"
 "	      00555f02    xor ecx,ecx"
 "	      00555f04    mov cl,[eax+89h]"
 "	      00555f0a    xor eax,eax"
-"	      00555f0c    mov al,[ebp-8]"
+"	      00555f0c    mov al,ncelly"
 "	      00555f0f    cmp ecx,eax"
 "	      00555f11    je near ptr 00556446h"
 );
@@ -1809,19 +1809,19 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // Block start:
 	enum cYObject::LocationType newloctype;
 	asm( 
-"	      00555f17    movzx ax,byte ptr [ebp-8]"
+"	      00555f17    movzx ax,ncelly"
 "	      00555f1c    push eax"
-"	      00555f1d    movzx ax,byte ptr [ebp-18h]"
+"	      00555f1d    movzx ax,ncellx"
 "	      00555f22    push eax"
 "	      00555f23    call 00555746h"
 "	      00555f28    add esp,8"
-"	      00555f2b    mov [ebp-68h],eax"
+"	      00555f2b    mov newloctype,eax"
 );
 // LINE 512:
 	asm( 
 "	      00555f2e    test dword ptr [ebp+1Ch],0FFFFh"
 "	      00555f35    jne near ptr 005563C4h"
-"	      00555f3b    mov eax,[ebp-0A0h]"
+"	      00555f3b    mov eax,this"
 "	      00555f41    cmp dword ptr [eax+130h],0"
 "	      00555f48    jne near ptr 005563C4h"
 );
@@ -1831,30 +1831,30 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	short thiscelly;
 	enum cYObject::LocationType thisloctype;
 	asm( 
-"	      00555f4e    mov eax,[ebp-0A0h]"
+"	      00555f4e    mov eax,this"
 "	      00555f54    mov eax,[eax+3Ch]"
 "	      00555f57    add eax,20000000h"
 "	      00555f5c    sar eax,16h"
-"	      00555f5f    mov [ebp-74h],ax"
+"	      00555f5f    mov thiscellx,ax"
 );
 // LINE 517:
 	asm( 
 "	      00555f63    mov eax,20000000h"
-"	      00555f68    mov ecx,[ebp-0A0h]"
+"	      00555f68    mov ecx,this"
 "	      00555f6e    sub eax,[ecx+44h]"
 "	      00555f71    sar eax,16h"
-"	      00555f74    mov [ebp-70h],ax"
+"	      00555f74    mov thiscelly,ax"
 );
 // LINE 518:
 	asm( 
-"	      00555f78    mov eax,[ebp-0A0h]"
+"	      00555f78    mov eax,this"
 "	      00555f7e    xor ecx,ecx"
 "	      00555f80    mov cl,[eax+88h]"
 "	      00555f86    xor eax,eax"
 "	      00555f88    mov al,[ebp-74h]"
 "	      00555f8b    cmp ecx,eax"
 "	      00555f8d    jne near ptr 00555FAEh"
-"	      00555f93    mov eax,[ebp-0A0h]"
+"	      00555f93    mov eax,this"
 "	      00555f99    xor ecx,ecx"
 "	      00555f9b    mov cl,[eax+89h]"
 "	      00555fa1    xor eax,eax"
@@ -1870,26 +1870,26 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 519:
 	asm( 
-"	      00555fca    mov eax,[ebp-0A0h]"
+"	      00555fca    mov eax,this"
 "	      00555fd0    movzx ax,byte ptr [eax+89h]"
 "	      00555fd8    push eax"
-"	      00555fd9    mov eax,[ebp-0A0h]"
+"	      00555fd9    mov eax,this"
 "	      00555fdf    movzx ax,byte ptr [eax+88h]"
 "	      00555fe7    push eax"
 "	      00555fe8    call 00555746h"
 "	      00555fed    add esp,8"
-"	      00555ff0    mov [ebp-6Ch],eax"
+"	      00555ff0    mov thisloctype,eax"
 );
 // LINE 520:
 	asm( 
-"	      00555ff3    mov eax,[ebp-0A0h]"
-"	      00555ff9    mov ecx,[ebp-6Ch]"
+"	      00555ff3    mov eax,this"
+"	      00555ff9    mov ecx,thisloctype"
 "	      00555ffc    cmp [eax+0ACh],ecx"
 "	      00556002    je near ptr 0055605Ah"
 );
 // LINE 521:
 	asm( 
-"	      00556008    mov eax,[ebp-0A0h]"
+"	      00556008    mov eax,this"
 "	      0055600e    movsx eax,word ptr [eax+0D8h]"
 "	      00556015    test eax,eax"
 "	      00556017    jne near ptr 0055603Eh"
@@ -1918,8 +1918,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 529:
 	asm( 
-"	      0055605a    mov eax,[ebp-0A0h]"
-"	      00556060    mov ecx,[ebp-68h]"
+"	      0055605a    mov eax,this"
+"	      00556060    mov ecx,newloctype"
 "	      00556063    cmp [eax+0ACh],ecx"
 "	      00556069    je near ptr 0055638Dh"
 );
@@ -1929,54 +1929,54 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	unsigned short failnonneutral;
 	unsigned short thisneutralforme;
 	asm( 
-"	      0055606f    cmp dword ptr [ebp+0Ch],0"
+"	      0055606f    cmp moveinfo,0"
 "	      00556073    je near ptr 005560C2h"
-"	      00556079    mov eax,[ebp+0Ch]"
+"	      00556079    mov eax,moveinfo"
 "	      0055607c    cmp dword ptr [eax],0"
 "	      0055607f    je near ptr 005560C2h"
 );
 // LINE 532:
 	asm( 
-"	      00556085    mov eax,[ebp-68h]"
-"	      00556088    mov ecx,[ebp+0Ch]"
+"	      00556085    mov eax,newloctype"
+"	      00556088    mov ecx,moveinfo"
 "	      0055608b    mov ecx,[ecx]"
 "	      0055608d    mov [ecx],eax"
 );
 // LINE 533:
 	asm( 
-"	      0055608f    cmp dword ptr [ebp-68h],7"
+"	      0055608f    cmp newloctype,7"
 "	      00556093    jne near ptr 005560C2h"
-"	      00556099    mov eax,[ebp+0Ch]"
+"	      00556099    mov eax,moveinfo"
 "	      0055609c    cmp dword ptr [eax+4],0"
 "	      005560a0    je near ptr 005560C2h"
 );
 // LINE 534:
 	asm( 
-"	      005560a6    mov eax,[ebp-0Ch]"
+"	      005560a6    mov eax,newloc.z"
 "	      005560a9    push eax"
-"	      005560aa    mov eax,[ebp-10h]"
+"	      005560aa    mov eax,newloc.y"
 "	      005560ad    push eax"
-"	      005560ae    mov eax,[ebp-14h]"
+"	      005560ae    mov eax,newloc.x"
 "	      005560b1    push eax"
 "	      005560b2    call 00555873h"
 "	      005560b7    add esp,0Ch"
-"	      005560ba    mov ecx,[ebp+0Ch]"
+"	      005560ba    mov ecx,moveinfo"
 "	      005560bd    mov ecx,[ecx+4]"
 "	      005560c0    mov [ecx],al"
 );
 // LINE 547:
 	asm( 
-"	      005560c2    mov word ptr [ebp-7Ch],0"
+"	      005560c2    mov failnonneutral,0"
 );
 // LINE 548:
 	asm( 
-"	      005560c8    mov eax,[ebp-68h]"
+"	      005560c8    mov eax,newloctype"
 "	      005560cb    push eax"
-"	      005560cc    movzx ax,byte ptr [ebp-8]"
+"	      005560cc    movzx ax,ncelly"
 "	      005560d1    push eax"
-"	      005560d2    movzx ax,byte ptr [ebp-18h]"
+"	      005560d2    movzx ax,ncellx"
 "	      005560d7    push eax"
-"	      005560d8    mov ecx,[ebp-0A0h]"
+"	      005560d8    mov ecx,this"
 "	      005560de    call 005565B8h"
 "	      005560e3    movzx eax,ax"
 "	      005560e6    test eax,eax"
@@ -1995,7 +1995,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 551:
 	asm( 
-"	      0055610a    mov eax,[ebp-0A0h]"
+"	      0055610a    mov eax,this"
 "	      00556110    movsx eax,word ptr [eax+0F6h]"
 "	      00556117    test eax,eax"
 "	      00556119    je near ptr 0055613Bh"
@@ -2014,12 +2014,12 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00556150    movsx eax,word ptr [ebp-94h]"
 "	      00556157    cmp eax,0Ah"
 "	      0055615a    jge near ptr 0055619Dh"
-"	      00556160    mov eax,[ebp-0A0h]"
+"	      00556160    mov eax,this"
 "	      00556166    movsx eax,word ptr [eax+0D6h]"
 "	      0055616d    lea eax,[eax+eax*4]"
 "	      00556170    movsx ecx,word ptr [ebp-94h]"
 "	      00556177    shl ecx,2"
-"	      0055617a    mov edx,[ebp-68h]"
+"	      0055617a    mov edx,newloctype"
 "	      0055617d    cmp [ecx+eax*8+6372D0h],edx"
 "	      00556184    jne near ptr 00556198h"
 "	      0055618a    mov word ptr [ebp-90h],1"
@@ -2028,9 +2028,9 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      0055619d    mov word ptr [ebp-90h],0"
 "	      005561a6    jmp near ptr 005561ABh"
 "	      005561ab    xor eax,eax"
-"	      005561ad    mov al,[ebp-8]"
+"	      005561ad    mov al,ncelly"
 "	      005561b0    xor ecx,ecx"
-"	      005561b2    mov cl,[ebp-18h]"
+"	      005561b2    mov cl,ncellx"
 "	      005561b5    shl ecx,0Ah"
 "	      005561b8    mov eax,[ecx+eax*4+67ED30h]"
 "	      005561bf    mov eax,[eax+10h]"
@@ -2048,7 +2048,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      005561ff    mov [ebp-98h],eax"
 "	      00556205    jmp near ptr 005561D1h"
 "	      0055620a    jmp near ptr 0055620Fh"
-"	      0055620f    mov eax,[ebp-68h]"
+"	      0055620f    mov eax,newloctype"
 "	      00556212    movsx eax,word ptr [eax*8+63526Ch]"
 "	      0055621a    movsx ecx,word ptr [ebp-9Ch]"
 "	      00556221    cmp eax,ecx"
@@ -2060,10 +2060,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      0055624a    je near ptr 00556270h"
 "	      00556250    test dword ptr [ebp-8Ch],0FFFFh"
 "	      0055625a    je near ptr 00556270h"
-"	      00556260    mov word ptr [ebp-80h],1"
+"	      00556260    mov newneutralandsparse,1"
 "	      00556266    jmp near ptr 0055627Bh"
 "	      0055626b    jmp near ptr 0055627Bh"
-"	      00556270    mov word ptr [ebp-80h],0"
+"	      00556270    mov newneutralandsparse,0"
 "	      00556276    jmp near ptr 0055627Bh"
 );
 // LINE 553:
@@ -2073,7 +2073,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 554:
 	asm( 
-"	      00556288    mov word ptr [ebp-7Ch],1"
+"	      00556288    mov failnonneutral,1"
 );
 // LINE 555:
 	asm( 
@@ -2083,19 +2083,19 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      005562a3    movsx eax,word ptr [ebp-88h]"
 "	      005562aa    cmp eax,0Ah"
 "	      005562ad    jge near ptr 005562F6h"
-"	      005562b3    mov eax,[ebp-0A0h]"
+"	      005562b3    mov eax,this"
 "	      005562b9    movsx eax,word ptr [eax+0D6h]"
 "	      005562c0    lea eax,[eax+eax*4]"
 "	      005562c3    movsx ecx,word ptr [ebp-88h]"
 "	      005562ca    shl ecx,2"
-"	      005562cd    mov edx,[ebp-0A0h]"
+"	      005562cd    mov edx,this"
 "	      005562d3    mov edx,[edx+0ACh]"
 "	      005562d9    cmp [ecx+eax*8+6372D0h],edx"
 "	      005562e0    jne near ptr 005562F1h"
-"	      005562e6    mov word ptr [ebp-78h],1"
+"	      005562e6    mov thisneutralforme,1"
 "	      005562ec    jmp near ptr 00556301h"
 "	      005562f1    jmp near ptr 0055629Ch"
-"	      005562f6    mov word ptr [ebp-78h],0"
+"	      005562f6    mov thisneutralforme,0"
 "	      005562fc    jmp near ptr 00556301h"
 );
 // LINE 556:
@@ -2105,19 +2105,19 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 557:
 	asm( 
-"	      0055630e    mov word ptr [ebp-7Ch],0"
+"	      0055630e    mov failnonneutral,0"
 );
 // LINE 563:
 	asm( 
 "	      00556314    jmp near ptr 00556371h"
-"	      00556319    mov eax,[ebp-0A0h]"
+"	      00556319    mov eax,this"
 "	      0055631f    movsx eax,word ptr [eax+0F6h]"
 "	      00556326    test eax,eax"
 "	      00556328    je near ptr 00556371h"
 );
 // LINE 564:
 	asm( 
-"	      0055632e    mov eax,[ebp-0A0h]"
+"	      0055632e    mov eax,this"
 "	      00556334    cmp dword ptr [eax+0ACh],7"
 "	      0055633b    je near ptr 0055635Dh"
 "	      00556341    push 8C085h"
@@ -2129,7 +2129,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 565:
 	asm( 
-"	      0055635d    cmp dword ptr [ebp-68h],7"
+"	      0055635d    cmp newloctype,7"
 "	      00556361    je near ptr 00556371h"
 );
 // LINE 566:
@@ -2151,43 +2151,43 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // Block end:
 	asm( 
 "	      00556388    jmp near ptr 005563C4h"
-"	      0055638d    cmp dword ptr [ebp+0Ch],0"
+"	      0055638d    cmp moveinfo,0"
 "	      00556391    je near ptr 005563C4h"
-"	      00556397    mov eax,[ebp+0Ch]"
+"	      00556397    mov eax,moveinfo"
 "	      0055639a    cmp dword ptr [eax],0"
 "	      0055639d    je near ptr 005563C4h"
-"	      005563a3    mov eax,[ebp+0Ch]"
+"	      005563a3    mov eax,moveinfo"
 "	      005563a6    cmp dword ptr [eax+4],0"
 "	      005563aa    je near ptr 005563C4h"
 );
 // LINE 583:
 	asm( 
-"	      005563b0    mov eax,[ebp+0Ch]"
+"	      005563b0    mov eax,moveinfo"
 "	      005563b3    mov eax,[eax]"
 "	      005563b5    mov dword ptr [eax],0"
 );
 // LINE 584:
 	asm( 
-"	      005563bb    mov eax,[ebp+0Ch]"
+"	      005563bb    mov eax,moveinfo"
 "	      005563be    mov eax,[eax+4]"
 "	      005563c1    mov byte ptr [eax],0FFh"
 );
 // LINE 587:
 // Block end:
 	asm( 
-"	      005563c4    mov eax,[ebp-68h]"
-"	      005563c7    mov ecx,[ebp-0A0h]"
+"	      005563c4    mov eax,newloctype"
+"	      005563c7    mov ecx,this"
 "	      005563cd    mov [ecx+0ACh],eax"
 );
 // LINE 588:
 	asm( 
-"	      005563d3    mov ecx,[ebp-0A0h]"
+"	      005563d3    mov ecx,this"
 "	      005563d9    call 005507ECh"
 );
 // LINE 589:
 	asm( 
 "	      005563de    jmp near ptr 005563E3h"
-"	      005563e3    mov eax,[ebp-0A0h]"
+"	      005563e3    mov eax,this"
 "	      005563e9    xor ecx,ecx"
 "	      005563eb    mov cx,[eax+20h]"
 "	      005563ef    test ecx,ecx"
@@ -2198,22 +2198,22 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00556406    push 5BBA14h"
 "	      0055640b    call 00554F30h"
 "	      00556410    add esp,10h"
-"	      00556413    mov al,[ebp-18h]"
-"	      00556416    mov ecx,[ebp-0A0h]"
+"	      00556413    mov al,ncellx"
+"	      00556416    mov ecx,this"
 "	      0055641c    mov [ecx+88h],al"
-"	      00556422    mov al,[ebp-8]"
-"	      00556425    mov ecx,[ebp-0A0h]"
+"	      00556422    mov al,ncelly"
+"	      00556425    mov ecx,this"
 "	      0055642b    mov [ecx+89h],al"
 "	      00556431    jmp near ptr 00556436h"
-"	      00556436    mov ecx,[ebp-0A0h]"
+"	      00556436    mov ecx,this"
 "	      0055643c    call 0055069Bh"
 "	      00556441    jmp near ptr 00556446h"
 );
 // LINE 591:
 // Block end:
 	asm( 
-"	      00556446    lea eax,[ebp-14h]"
-"	      00556449    mov ecx,[ebp-0A0h]"
+"	      00556446    lea eax,newloc.x"
+"	      00556449    mov ecx,this"
 "	      0055644f    add ecx,3Ch"
 "	      00556452    mov edx,[eax]"
 "	      00556454    mov [ecx],edx"
@@ -2247,26 +2247,26 @@ unsigned short cYObject::CanJumpOffHere() {
 "	      00556476    push ebx"
 "	      00556477    push esi"
 "	      00556478    push edi"
-"	      00556479    mov [ebp-10h],ecx"
+"	      00556479    mov this,ecx"
 );
 // LINE 606:
 	asm( 
-"	      0055647c    mov eax,[ebp-10h]"
+"	      0055647c    mov eax,this"
 "	      0055647f    movzx ax,byte ptr [eax+89h]"
 "	      00556487    push eax"
-"	      00556488    mov eax,[ebp-10h]"
+"	      00556488    mov eax,this"
 "	      0055648b    movzx ax,byte ptr [eax+88h]"
 "	      00556493    push eax"
 "	      00556494    call 00555746h"
 "	      00556499    add esp,8"
 "	      0055649c    push eax"
-"	      0055649d    mov eax,[ebp-10h]"
+"	      0055649d    mov eax,this"
 "	      005564a0    movzx ax,byte ptr [eax+89h]"
 "	      005564a8    push eax"
-"	      005564a9    mov eax,[ebp-10h]"
+"	      005564a9    mov eax,this"
 "	      005564ac    movzx ax,byte ptr [eax+88h]"
 "	      005564b4    push eax"
-"	      005564b5    mov ecx,[ebp-10h]"
+"	      005564b5    mov ecx,this"
 "	      005564b8    call 005565B8h"
 "	      005564bd    movzx eax,ax"
 "	      005564c0    test eax,eax"
@@ -2279,7 +2279,7 @@ unsigned short cYObject::CanJumpOffHere() {
 );
 // LINE 608:
 	asm( 
-"	      005564d0    mov eax,[ebp-10h]"
+"	      005564d0    mov eax,this"
 "	      005564d3    mov eax,[eax+130h]"
 "	      005564d9    mov [ebp-8],eax"
 "	      005564dc    cmp dword ptr [ebp-8],0"
@@ -2291,11 +2291,11 @@ unsigned short cYObject::CanJumpOffHere() {
 "	      005564fa    call 00554F30h"
 "	      005564ff    add esp,10h"
 "	      00556502    jmp near ptr 00556507h"
-"	      00556507    mov eax,[ebp-10h]"
+"	      00556507    mov eax,this"
 "	      0055650a    mov eax,[eax+0A0h]"
 "	      00556510    mov ecx,[ebp-8]"
 "	      00556513    sub eax,[ecx+18h]"
-"	      00556516    mov ecx,[ebp-10h]"
+"	      00556516    mov ecx,this"
 "	      00556519    add eax,[ecx+0A8h]"
 "	      0055651f    mov ecx,[ebp-8]"
 "	      00556522    sub eax,[ecx+20h]"
@@ -2321,20 +2321,20 @@ unsigned short cYObject::CanJumpOffHere() {
 );
 // LINE 610:
 	asm( 
-"	      00556565    mov eax,[ebp-10h]"
+"	      00556565    mov eax,this"
 "	      00556568    mov eax,[eax+44h]"
 "	      0055656b    push eax"
-"	      0055656c    mov eax,[ebp-10h]"
+"	      0055656c    mov eax,this"
 "	      0055656f    mov eax,[eax+40h]"
 "	      00556572    push eax"
-"	      00556573    mov eax,[ebp-10h]"
+"	      00556573    mov eax,this"
 "	      00556576    mov eax,[eax+3Ch]"
 "	      00556579    push eax"
 "	      0055657a    call 00551BF7h"
 "	      0055657f    add esp,0Ch"
 "	      00556582    mov [ebp-4],eax"
 "	      00556585    jmp near ptr 0055658Ah"
-"	      0055658a    mov eax,[ebp-10h]"
+"	      0055658a    mov eax,this"
 "	      0055658d    mov eax,[eax+40h]"
 "	      00556590    sub eax,[ebp-4]"
 "	      00556593    sar eax,10h"
@@ -2372,11 +2372,11 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 "	      005565be    push ebx"
 "	      005565bf    push esi"
 "	      005565c0    push edi"
-"	      005565c1    mov [ebp-4],ecx"
+"	      005565c1    mov this,ecx"
 );
 // LINE 634:
 	asm( 
-"	      005565c4    mov eax,[ebp-4]"
+"	      005565c4    mov eax,this"
 "	      005565c7    movsx eax,word ptr [eax+0BCh]"
 "	      005565ce    cmp eax,7D00h"
 "	      005565d3    jne near ptr 00556601h"
@@ -2412,14 +2412,14 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 );
 // LINE 638:
 	asm( 
-"	      00556624    mov eax,[ebp-4]"
+"	      00556624    mov eax,this"
 "	      00556627    movsx eax,word ptr [eax+0BCh]"
 "	      0055662e    cmp eax,7D00h"
 "	      00556633    je near ptr 0055669Fh"
 );
 // LINE 639:
 	asm( 
-"	      00556639    cmp dword ptr [ebp+10h],0FFFFFFFFh"
+"	      00556639    cmp loctype,0FFFFFFFFh"
 "	      0055663d    jne near ptr 0055664Bh"
 );
 // LINE 640:
@@ -2429,7 +2429,7 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 );
 // LINE 641:
 	asm( 
-"	      0055664b    cmp dword ptr [ebp+10h],0"
+"	      0055664b    cmp loctype,0"
 "	      0055664f    jne near ptr 0055665Dh"
 );
 // LINE 642:
@@ -2439,7 +2439,7 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 );
 // LINE 643:
 	asm( 
-"	      0055665d    cmp dword ptr [ebp+10h],1"
+"	      0055665d    cmp loctype,1"
 "	      00556661    jne near ptr 0055666Fh"
 );
 // LINE 644:
@@ -2449,9 +2449,9 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 );
 // LINE 647:
 	asm( 
-"	      0055666f    movsx eax,word ptr [ebp+0Ch]"
+"	      0055666f    movsx eax,celly"
 "	      00556673    and eax,0FFh"
-"	      00556678    movsx ecx,word ptr [ebp+8]"
+"	      00556678    movsx ecx,cellx"
 "	      0055667c    and ecx,0FFh"
 "	      00556682    shl ecx,0Ah"
 "	      00556685    mov eax,[ecx+eax*4+67ED30h]"
@@ -2492,7 +2492,7 @@ struct Point2d GetRiotCenter(long riotid) {
 );
 // LINE 657:
 	asm( 
-"	      005566b8    mov eax,[ebp+8]"
+"	      005566b8    mov eax,riotid"
 "	      005566bb    push eax"
 "	      005566bc    call 005566DAh"
 "	      005566c1    add esp,4"
@@ -2532,34 +2532,34 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 );
 // LINE 662:
 	asm( 
-"	      005566e3    mov word ptr [ebp-1Ch],0"
+"	      005566e3    mov numcounted,0"
 );
 // LINE 663:
 	asm( 
-"	      005566e9    mov dword ptr [ebp-8],0"
-"	      005566f0    mov dword ptr [ebp-4],0"
+"	      005566e9    mov overallcellx,0"
+"	      005566f0    mov overallcelly,0"
 );
 // LINE 666:
 	asm( 
-"	      005566f7    mov word ptr [ebp-0Ch],0"
+"	      005566f7    mov count,0"
 "	      005566fd    jmp near ptr 00556706h"
-"	      00556702    inc word ptr [ebp-0Ch]"
-"	      00556706    movsx eax,word ptr [ebp-0Ch]"
+"	      00556702    inc count"
+"	      00556706    movsx eax,count"
 "	      0055670a    cmp eax,64h"
 "	      0055670d    jge near ptr 005567F6h"
 );
 // LINE 667:
 	asm( 
-"	      00556713    movsx eax,word ptr [ebp-0Ch]"
+"	      00556713    movsx eax,count"
 "	      00556717    cmp eax,7D00h"
 "	      0055671c    jne near ptr 0055672Fh"
 "	      00556722    mov eax,ds:[5B8680h]"
-"	      00556727    mov [ebp-10h],eax"
+"	      00556727    mov obj,eax"
 "	      0055672a    jmp near ptr 005567ABh"
-"	      0055672f    movsx eax,word ptr [ebp-0Ch]"
+"	      0055672f    movsx eax,count"
 "	      00556733    test eax,eax"
 "	      00556735    jl near ptr 00556748h"
-"	      0055673b    movsx eax,word ptr [ebp-0Ch]"
+"	      0055673b    movsx eax,count"
 "	      0055673f    cmp eax,64h"
 "	      00556742    jl near ptr 00556764h"
 "	      00556748    push 8C085h"
@@ -2568,7 +2568,7 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 "	      00556757    push 5BBA14h"
 "	      0055675c    call 00554F30h"
 "	      00556761    add esp,10h"
-"	      00556764    movsx eax,word ptr [ebp-0Ch]"
+"	      00556764    movsx eax,count"
 "	      00556768    cmp dword ptr [eax*4+636D40h],0"
 "	      00556770    jne near ptr 00556792h"
 "	      00556776    push 8C085h"
@@ -2577,16 +2577,16 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 "	      00556785    push 5BBA14h"
 "	      0055678a    call 00554F30h"
 "	      0055678f    add esp,10h"
-"	      00556792    movsx eax,word ptr [ebp-0Ch]"
+"	      00556792    movsx eax,count"
 "	      00556796    mov eax,[eax*4+636D40h]"
-"	      0055679d    mov [ebp-10h],eax"
+"	      0055679d    mov obj,eax"
 "	      005567a0    jmp near ptr 005567ABh"
 "	      005567a5    mov eax,[ebp-20h]"
-"	      005567a8    mov [ebp-10h],eax"
+"	      005567a8    mov obj,eax"
 );
 // LINE 668:
 	asm( 
-"	      005567ab    mov eax,[ebp-10h]"
+"	      005567ab    mov eax,obj"
 "	      005567ae    movsx eax,word ptr [eax+0D2h]"
 "	      005567b5    test eax,eax"
 "	      005567b7    jne near ptr 005567C2h"
@@ -2594,28 +2594,28 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 );
 // LINE 669:
 	asm( 
-"	      005567c2    mov eax,[ebp-10h]"
-"	      005567c5    mov ecx,[ebp+8]"
+"	      005567c2    mov eax,obj"
+"	      005567c5    mov ecx,riotid"
 "	      005567c8    cmp [eax+1Ch],ecx"
 "	      005567cb    jne near ptr 005567F1h"
 );
 // LINE 670:
 	asm( 
-"	      005567d1    mov eax,[ebp-10h]"
+"	      005567d1    mov eax,obj"
 "	      005567d4    xor ecx,ecx"
 "	      005567d6    mov cl,[eax+88h]"
-"	      005567dc    add [ebp-8],ecx"
+"	      005567dc    add overallcellx,ecx"
 );
 // LINE 671:
 	asm( 
-"	      005567df    mov eax,[ebp-10h]"
+"	      005567df    mov eax,obj"
 "	      005567e2    xor ecx,ecx"
 "	      005567e4    mov cl,[eax+89h]"
-"	      005567ea    add [ebp-4],ecx"
+"	      005567ea    add overallcelly,ecx"
 );
 // LINE 672:
 	asm( 
-"	      005567ed    inc word ptr [ebp-1Ch]"
+"	      005567ed    inc numcounted"
 );
 // LINE 674:
 	asm( 
@@ -2623,7 +2623,7 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 );
 // LINE 675:
 	asm( 
-"	      005567f6    movsx eax,word ptr [ebp-1Ch]"
+"	      005567f6    movsx eax,numcounted"
 "	      005567fa    test eax,eax"
 "	      005567fc    jne near ptr 0055681Eh"
 "	      00556802    push 8C085h"
@@ -2635,24 +2635,24 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 );
 // LINE 676:
 	asm( 
-"	      0055681e    movsx ecx,word ptr [ebp-1Ch]"
-"	      00556822    mov eax,[ebp-8]"
+"	      0055681e    movsx ecx,numcounted"
+"	      00556822    mov eax,overallcellx"
 "	      00556825    cdq"
 "	      00556826    idiv ecx"
-"	      00556828    mov [ebp-18h],eax"
+"	      00556828    mov cent.x,eax"
 );
 // LINE 677:
 	asm( 
-"	      0055682b    movsx ecx,word ptr [ebp-1Ch]"
-"	      0055682f    mov eax,[ebp-4]"
+"	      0055682b    movsx ecx,numcounted"
+"	      0055682f    mov eax,overallcelly"
 "	      00556832    cdq"
 "	      00556833    idiv ecx"
-"	      00556835    mov [ebp-14h],eax"
+"	      00556835    mov cent.y,eax"
 );
 // LINE 678:
 	asm( 
-"	      00556838    mov eax,[ebp-18h]"
-"	      0055683b    mov edx,[ebp-14h]"
+"	      00556838    mov eax,cent.x"
+"	      0055683b    mov edx,cent.y"
 "	      0055683e    jmp near ptr 00556843h"
 );
 // LINE 679:
@@ -2685,33 +2685,33 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      0055684e    push ebx"
 "	      0055684f    push esi"
 "	      00556850    push edi"
-"	      00556851    mov [ebp-54h],ecx"
+"	      00556851    mov this,ecx"
 );
 // LINE 683:
 	asm( 
-"	      00556854    mov eax,[ebp-54h]"
+"	      00556854    mov eax,this"
 "	      00556857    xor ecx,ecx"
 "	      00556859    mov cl,[eax+88h]"
-"	      0055685f    movsx eax,word ptr [ebp+8]"
+"	      0055685f    movsx eax,todist"
 "	      00556863    sub ecx,eax"
-"	      00556865    mov [ebp-20h],cx"
+"	      00556865    mov startcellx,cx"
 );
 // LINE 684:
 	asm( 
-"	      00556869    mov eax,[ebp-54h]"
+"	      00556869    mov eax,this"
 "	      0055686c    xor ecx,ecx"
 "	      0055686e    mov cl,[eax+89h]"
-"	      00556874    movsx eax,word ptr [ebp+8]"
+"	      00556874    movsx eax,todist"
 "	      00556878    sub ecx,eax"
-"	      0055687a    mov [ebp-4],cx"
+"	      0055687a    mov startcelly,cx"
 );
 // LINE 687:
 	asm( 
-"	      0055687e    mov dword ptr [ebp-1Ch],0"
+"	      0055687e    mov riotval,0"
 );
 // LINE 688:
 	asm( 
-"	      00556885    mov word ptr [ebp-2Ch],0"
+"	      00556885    mov numcounted,0"
 );
 // LINE 689:
 	asm( 
@@ -2725,63 +2725,63 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 692:
 	asm( 
-"	      005568a7    mov eax,[ebp-54h]"
+"	      005568a7    mov eax,this"
 "	      005568aa    xor ecx,ecx"
 "	      005568ac    mov cl,[eax+88h]"
-"	      005568b2    movsx eax,word ptr [ebp+8]"
+"	      005568b2    movsx eax,todist"
 "	      005568b6    sub ecx,eax"
-"	      005568b8    mov [ebp-10h],cx"
+"	      005568b8    mov cellx,cx"
 "	      005568bc    jmp near ptr 005568C5h"
-"	      005568c1    inc word ptr [ebp-10h]"
-"	      005568c5    mov eax,[ebp-54h]"
+"	      005568c1    inc cellx"
+"	      005568c5    mov eax,this"
 "	      005568c8    xor ecx,ecx"
 "	      005568ca    mov cl,[eax+88h]"
-"	      005568d0    movsx eax,word ptr [ebp+8]"
+"	      005568d0    movsx eax,todist"
 "	      005568d4    add ecx,eax"
-"	      005568d6    movsx eax,word ptr [ebp-10h]"
+"	      005568d6    movsx eax,cellx"
 "	      005568da    cmp ecx,eax"
 "	      005568dc    jl near ptr 00556980h"
 );
 // LINE 693:
 	asm( 
-"	      005568e2    mov eax,[ebp-54h]"
+"	      005568e2    mov eax,this"
 "	      005568e5    xor ecx,ecx"
 "	      005568e7    mov cl,[eax+89h]"
-"	      005568ed    movsx eax,word ptr [ebp+8]"
+"	      005568ed    movsx eax,todist"
 "	      005568f1    sub ecx,eax"
-"	      005568f3    mov [ebp-14h],cx"
+"	      005568f3    mov celly,cx"
 "	      005568f7    jmp near ptr 00556900h"
-"	      005568fc    inc word ptr [ebp-14h]"
-"	      00556900    mov eax,[ebp-54h]"
+"	      005568fc    inc celly"
+"	      00556900    mov eax,this"
 "	      00556903    xor ecx,ecx"
 "	      00556905    mov cl,[eax+89h]"
-"	      0055690b    movsx eax,word ptr [ebp+8]"
+"	      0055690b    movsx eax,todist"
 "	      0055690f    add ecx,eax"
-"	      00556911    movsx eax,word ptr [ebp-14h]"
+"	      00556911    movsx eax,celly"
 "	      00556915    cmp ecx,eax"
 "	      00556917    jl near ptr 0055697Bh"
 );
 // LINE 694:
 	asm( 
-"	      0055691d    movsx eax,word ptr [ebp-10h]"
+"	      0055691d    movsx eax,cellx"
 "	      00556921    and eax,0FFh"
 "	      00556926    shl eax,0Ah"
-"	      00556929    movsx ecx,word ptr [ebp-14h]"
+"	      00556929    movsx ecx,celly"
 "	      0055692d    and ecx,0FFh"
 "	      00556933    mov eax,[eax+ecx*4+67ED30h]"
-"	      0055693a    mov [ebp-18h],eax"
+"	      0055693a    mov cptr,eax"
 );
 // LINE 695:
 	asm( 
-"	      0055693d    mov eax,[ebp-18h]"
+"	      0055693d    mov eax,cptr"
 "	      00556940    movsx eax,word ptr [eax]"
 "	      00556943    and eax,0FFFFFFFBh"
-"	      00556946    mov ecx,[ebp-18h]"
+"	      00556946    mov ecx,cptr"
 "	      00556949    mov [ecx],ax"
 );
 // LINE 696:
 	asm( 
-"	      0055694c    mov eax,[ebp-18h]"
+"	      0055694c    mov eax,cptr"
 "	      0055694f    movsx eax,word ptr [eax]"
 "	      00556952    test al,4"
 "	      00556954    je near ptr 00556976h"
@@ -2802,39 +2802,39 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 700:
 	asm( 
-"	      00556980    mov eax,[ebp-54h]"
+"	      00556980    mov eax,this"
 "	      00556983    xor ecx,ecx"
 "	      00556985    mov cl,[eax+88h]"
-"	      0055698b    movsx eax,word ptr [ebp+8]"
+"	      0055698b    movsx eax,todist"
 "	      0055698f    sub ecx,eax"
-"	      00556991    mov [ebp-10h],cx"
+"	      00556991    mov cellx,cx"
 "	      00556995    jmp near ptr 0055699Eh"
-"	      0055699a    inc word ptr [ebp-10h]"
-"	      0055699e    mov eax,[ebp-54h]"
+"	      0055699a    inc cellx"
+"	      0055699e    mov eax,this"
 "	      005569a1    xor ecx,ecx"
 "	      005569a3    mov cl,[eax+88h]"
-"	      005569a9    movsx eax,word ptr [ebp+8]"
+"	      005569a9    movsx eax,todist"
 "	      005569ad    add ecx,eax"
-"	      005569af    movsx eax,word ptr [ebp-10h]"
+"	      005569af    movsx eax,cellx"
 "	      005569b3    cmp ecx,eax"
 "	      005569b5    jl near ptr 00556C04h"
 );
 // LINE 701:
 	asm( 
-"	      005569bb    mov eax,[ebp-54h]"
+"	      005569bb    mov eax,this"
 "	      005569be    xor ecx,ecx"
 "	      005569c0    mov cl,[eax+89h]"
-"	      005569c6    movsx eax,word ptr [ebp+8]"
+"	      005569c6    movsx eax,todist"
 "	      005569ca    sub ecx,eax"
-"	      005569cc    mov [ebp-14h],cx"
+"	      005569cc    mov celly,cx"
 "	      005569d0    jmp near ptr 005569D9h"
-"	      005569d5    inc word ptr [ebp-14h]"
-"	      005569d9    mov eax,[ebp-54h]"
+"	      005569d5    inc celly"
+"	      005569d9    mov eax,this"
 "	      005569dc    xor ecx,ecx"
 "	      005569de    mov cl,[eax+89h]"
-"	      005569e4    movsx eax,word ptr [ebp+8]"
+"	      005569e4    movsx eax,todist"
 "	      005569e8    add ecx,eax"
-"	      005569ea    movsx eax,word ptr [ebp-14h]"
+"	      005569ea    movsx eax,celly"
 "	      005569ee    cmp ecx,eax"
 "	      005569f0    jl near ptr 00556BFFh"
 );
@@ -2842,17 +2842,17 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 // Block start:
 	struct _DYOBJ_INST* dyobj;
 	asm( 
-"	      005569f6    movsx eax,word ptr [ebp-10h]"
+"	      005569f6    movsx eax,cellx"
 "	      005569fa    and eax,0FFh"
 "	      005569ff    shl eax,0Ah"
-"	      00556a02    movsx ecx,word ptr [ebp-14h]"
+"	      00556a02    movsx ecx,celly"
 "	      00556a06    and ecx,0FFh"
 "	      00556a0c    mov eax,[eax+ecx*4+67ED30h]"
-"	      00556a13    mov [ebp-18h],eax"
+"	      00556a13    mov cptr,eax"
 );
 // LINE 703:
 	asm( 
-"	      00556a16    cmp dword ptr [ebp-18h],0"
+"	      00556a16    cmp cptr,0"
 "	      00556a1a    jne near ptr 00556A3Ch"
 "	      00556a20    push 8C085h"
 "	      00556a25    push 5BC9F0h"
@@ -2863,7 +2863,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 704:
 	asm( 
-"	      00556a3c    mov eax,[ebp-18h]"
+"	      00556a3c    mov eax,cptr"
 "	      00556a3f    movsx eax,word ptr [eax]"
 "	      00556a42    test al,4"
 "	      00556a44    je near ptr 00556A4Fh"
@@ -2874,24 +2874,24 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 706:
 	asm( 
-"	      00556a4f    mov eax,[ebp-18h]"
+"	      00556a4f    mov eax,cptr"
 "	      00556a52    mov eax,[eax+10h]"
-"	      00556a55    mov [ebp-30h],eax"
+"	      00556a55    mov dyobj,eax"
 );
 // LINE 707:
 	asm( 
-"	      00556a58    cmp dword ptr [ebp-30h],0"
+"	      00556a58    cmp dyobj,0"
 "	      00556a5c    je near ptr 00556BEBh"
 );
 // LINE 708:
 	asm( 
-"	      00556a62    mov eax,[ebp-30h]"
+"	      00556a62    mov eax,dyobj"
 "	      00556a65    movsx eax,word ptr [eax+0Ch]"
 "	      00556a69    test al,8"
 "	      00556a6b    je near ptr 00556BDEh"
-"	      00556a71    mov eax,[ebp-54h]"
+"	      00556a71    mov eax,this"
 "	      00556a74    add eax,24h"
-"	      00556a77    cmp eax,[ebp-30h]"
+"	      00556a77    cmp eax,dyobj"
 "	      00556a7a    je near ptr 00556BDEh"
 	);
 // Block start:
@@ -2900,7 +2900,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	short zloc;
 	short xloc;
 	asm( 
-"	      00556a80    mov eax,[ebp-30h]"
+"	      00556a80    mov eax,dyobj"
 "	      00556a83    mov ax,[eax+0Eh]"
 "	      00556a87    mov [ebp-4Ch],ax"
 );
@@ -2910,7 +2910,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556a8f    cmp eax,7D00h"
 "	      00556a94    jne near ptr 00556AA7h"
 "	      00556a9a    mov eax,ds:[5B8680h]"
-"	      00556a9f    mov [ebp-40h],eax"
+"	      00556a9f    mov obj,eax"
 "	      00556aa2    jmp near ptr 00556B23h"
 "	      00556aa7    movsx eax,word ptr [ebp-4Ch]"
 "	      00556aab    test eax,eax"
@@ -2935,14 +2935,14 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556b07    add esp,10h"
 "	      00556b0a    movsx eax,word ptr [ebp-4Ch]"
 "	      00556b0e    mov eax,[eax*4+636D40h]"
-"	      00556b15    mov [ebp-40h],eax"
+"	      00556b15    mov obj,eax"
 "	      00556b18    jmp near ptr 00556B23h"
 "	      00556b1d    mov eax,[ebp-50h]"
-"	      00556b20    mov [ebp-40h],eax"
+"	      00556b20    mov obj,eax"
 );
 // LINE 710:
 	asm( 
-"	      00556b23    cmp dword ptr [ebp-40h],0"
+"	      00556b23    cmp obj,0"
 "	      00556b27    jne near ptr 00556B49h"
 "	      00556b2d    push 8C085h"
 "	      00556b32    push 5BCA1Ch"
@@ -2953,7 +2953,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 711:
 	asm( 
-"	      00556b49    mov eax,[ebp-40h]"
+"	      00556b49    mov eax,obj"
 "	      00556b4c    movsx eax,word ptr [eax+0D2h]"
 "	      00556b53    test eax,eax"
 "	      00556b55    jne near ptr 00556B77h"
@@ -2966,61 +2966,61 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 712:
 	asm( 
-"	      00556b77    mov eax,[ebp-40h]"
+"	      00556b77    mov eax,obj"
 "	      00556b7a    mov ax,[eax+0E0h]"
-"	      00556b81    mov [ebp-3Ch],ax"
+"	      00556b81    mov thisriotval,ax"
 );
 // LINE 713:
 	asm( 
-"	      00556b85    mov eax,[ebp-40h]"
+"	      00556b85    mov eax,obj"
 "	      00556b88    mov eax,[eax+3Ch]"
 "	      00556b8b    sar eax,10h"
-"	      00556b8e    mov [ebp-34h],ax"
+"	      00556b8e    mov xloc,ax"
 );
 // LINE 714:
 	asm( 
-"	      00556b92    mov eax,[ebp-40h]"
+"	      00556b92    mov eax,obj"
 "	      00556b95    mov eax,[eax+44h]"
 "	      00556b98    sar eax,10h"
-"	      00556b9b    mov [ebp-38h],ax"
+"	      00556b9b    mov zloc,ax"
 );
 // LINE 715:
 	asm( 
-"	      00556b9f    movsx eax,word ptr [ebp-34h]"
+"	      00556b9f    movsx eax,xloc"
 "	      00556ba3    mov [ebp-58h],eax"
 "	      00556ba6    fild dword ptr [ebp-58h]"
-"	      00556ba9    movsx eax,word ptr [ebp-3Ch]"
+"	      00556ba9    movsx eax,thisriotval"
 "	      00556bad    mov [ebp-5Ch],eax"
 "	      00556bb0    fimul dword ptr [ebp-5Ch]"
-"	      00556bb3    fadd qword ptr [ebp-0Ch]"
-"	      00556bb6    fstp qword ptr [ebp-0Ch]"
+"	      00556bb3    fadd overallxloc"
+"	      00556bb6    fstp overallxloc"
 );
 // LINE 716:
 	asm( 
-"	      00556bb9    movsx eax,word ptr [ebp-38h]"
+"	      00556bb9    movsx eax,zloc"
 "	      00556bbd    mov [ebp-60h],eax"
 "	      00556bc0    fild dword ptr [ebp-60h]"
-"	      00556bc3    movsx eax,word ptr [ebp-3Ch]"
+"	      00556bc3    movsx eax,thisriotval"
 "	      00556bc7    mov [ebp-64h],eax"
 "	      00556bca    fimul dword ptr [ebp-64h]"
-"	      00556bcd    fadd qword ptr [ebp-28h]"
-"	      00556bd0    fstp qword ptr [ebp-28h]"
+"	      00556bcd    fadd overallzloc"
+"	      00556bd0    fstp overallzloc"
 );
 // LINE 717:
 	asm( 
-"	      00556bd3    movsx eax,word ptr [ebp-3Ch]"
-"	      00556bd7    add [ebp-1Ch],eax"
+"	      00556bd3    movsx eax,thisriotval"
+"	      00556bd7    add riotval,eax"
 );
 // LINE 718:
 	asm( 
-"	      00556bda    inc word ptr [ebp-2Ch]"
+"	      00556bda    inc numcounted"
 );
 // LINE 720:
 // Block end:
 	asm( 
-"	      00556bde    mov eax,[ebp-30h]"
+"	      00556bde    mov eax,dyobj"
 "	      00556be1    mov eax,[eax]"
-"	      00556be3    mov [ebp-30h],eax"
+"	      00556be3    mov dyobj,eax"
 );
 // LINE 721:
 	asm( 
@@ -3028,10 +3028,10 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 722:
 	asm( 
-"	      00556beb    mov eax,[ebp-18h]"
+"	      00556beb    mov eax,cptr"
 "	      00556bee    movsx eax,word ptr [eax]"
 "	      00556bf1    or eax,4"
-"	      00556bf4    mov ecx,[ebp-18h]"
+"	      00556bf4    mov ecx,cptr"
 "	      00556bf7    mov [ecx],ax"
 );
 // LINE 723:
@@ -3045,10 +3045,10 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 725:
 	asm( 
-"	      00556c04    movsx eax,word ptr [ebp-2Ch]"
+"	      00556c04    movsx eax,numcounted"
 "	      00556c08    test eax,eax"
 "	      00556c0a    je near ptr 00556C93h"
-"	      00556c10    cmp dword ptr [ebp-1Ch],0"
+"	      00556c10    cmp riotval,0"
 "	      00556c14    je near ptr 00556C93h"
 );
 // LINE 726:
@@ -3056,60 +3056,60 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	int32_t overz;
 	int32_t overx;
 	asm( 
-"	      00556c1a    fld qword ptr [ebp-0Ch]"
-"	      00556c1d    mov eax,[ebp-1Ch]"
+"	      00556c1a    fld overallxloc"
+"	      00556c1d    mov eax,riotval"
 "	      00556c20    mov [ebp-68h],eax"
 "	      00556c23    fidiv dword ptr [ebp-68h]"
-"	      00556c26    fstp qword ptr [ebp-0Ch]"
+"	      00556c26    fstp overallxloc"
 );
 // LINE 727:
 	asm( 
-"	      00556c29    fld qword ptr [ebp-28h]"
-"	      00556c2c    mov eax,[ebp-1Ch]"
+"	      00556c29    fld overallzloc"
+"	      00556c2c    mov eax,riotval"
 "	      00556c2f    mov [ebp-6Ch],eax"
 "	      00556c32    fidiv dword ptr [ebp-6Ch]"
-"	      00556c35    fstp qword ptr [ebp-28h]"
+"	      00556c35    fstp overallzloc"
 );
 // LINE 728:
 	asm( 
-"	      00556c38    fld qword ptr [ebp-0Ch]"
+"	      00556c38    fld overallxloc"
 "	      00556c3b    call 0056EBE8h"
 "	      00556c40    shl eax,10h"
-"	      00556c43    mov [ebp-44h],eax"
+"	      00556c43    mov overx,eax"
 );
 // LINE 729:
 	asm( 
-"	      00556c46    fld qword ptr [ebp-28h]"
+"	      00556c46    fld overallzloc"
 "	      00556c49    call 0056EBE8h"
 "	      00556c4e    shl eax,10h"
-"	      00556c51    mov [ebp-48h],eax"
+"	      00556c51    mov overz,eax"
 );
 // LINE 731:
 	asm( 
-"	      00556c54    mov eax,[ebp-48h]"
+"	      00556c54    mov eax,overz"
 "	      00556c57    push eax"
-"	      00556c58    mov eax,[ebp-44h]"
+"	      00556c58    mov eax,overx"
 "	      00556c5b    push eax"
-"	      00556c5c    mov eax,[ebp-54h]"
+"	      00556c5c    mov eax,this"
 "	      00556c5f    mov eax,[eax+44h]"
 "	      00556c62    push eax"
-"	      00556c63    mov eax,[ebp-54h]"
+"	      00556c63    mov eax,this"
 "	      00556c66    mov eax,[eax+3Ch]"
 "	      00556c69    push eax"
 "	      00556c6a    call 00551AF1h"
 "	      00556c6f    add esp,10h"
 "	      00556c72    sub eax,2"
 "	      00556c75    and eax,7"
-"	      00556c78    mov ecx,[ebp+14h]"
+"	      00556c78    mov ecx,dirtogreatestconcentration"
 "	      00556c7b    mov [ecx],ax"
 );
 // LINE 732:
 	asm( 
-"	      00556c7e    movsx ecx,word ptr [ebp-2Ch]"
-"	      00556c82    mov eax,[ebp-1Ch]"
+"	      00556c7e    movsx ecx,numcounted"
+"	      00556c82    mov eax,riotval"
 "	      00556c85    cdq"
 "	      00556c86    idiv ecx"
-"	      00556c88    mov ecx,[ebp+0Ch]"
+"	      00556c88    mov ecx,avgriotval"
 "	      00556c8b    mov [ecx],ax"
 );
 // LINE 734:
@@ -3119,18 +3119,18 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 735:
 	asm( 
-"	      00556c93    mov eax,[ebp+14h]"
+"	      00556c93    mov eax,dirtogreatestconcentration"
 "	      00556c96    mov word ptr [eax],0FFFFh"
 );
 // LINE 736:
 	asm( 
-"	      00556c9b    mov eax,[ebp+0Ch]"
+"	      00556c9b    mov eax,avgriotval"
 "	      00556c9e    mov word ptr [eax],0"
 );
 // LINE 738:
 	asm( 
-"	      00556ca3    mov ax,[ebp-2Ch]"
-"	      00556ca7    mov ecx,[ebp+10h]"
+"	      00556ca3    mov ax,numcounted"
+"	      00556ca7    mov ecx,counted"
 "	      00556caa    mov [ecx],ax"
 );
 // LINE 739:
@@ -3158,67 +3158,67 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 "	      00556cbf    push ebx"
 "	      00556cc0    push esi"
 "	      00556cc1    push edi"
-"	      00556cc2    mov [ebp-10h],ecx"
+"	      00556cc2    mov this,ecx"
 );
 // LINE 748:
 	asm( 
-"	      00556cc5    mov eax,[ebp-10h]"
+"	      00556cc5    mov eax,this"
 "	      00556cc8    xor ecx,ecx"
 "	      00556cca    mov cl,[eax+88h]"
-"	      00556cd0    movsx eax,word ptr [ebp+8]"
+"	      00556cd0    movsx eax,todist"
 "	      00556cd4    sub ecx,eax"
-"	      00556cd6    mov [ebp-4],cx"
+"	      00556cd6    mov cellx,cx"
 "	      00556cda    jmp near ptr 00556CE3h"
-"	      00556cdf    inc word ptr [ebp-4]"
-"	      00556ce3    mov eax,[ebp-10h]"
+"	      00556cdf    inc cellx"
+"	      00556ce3    mov eax,this"
 "	      00556ce6    xor ecx,ecx"
 "	      00556ce8    mov cl,[eax+88h]"
-"	      00556cee    movsx eax,word ptr [ebp+8]"
+"	      00556cee    movsx eax,todist"
 "	      00556cf2    add ecx,eax"
-"	      00556cf4    movsx eax,word ptr [ebp-4]"
+"	      00556cf4    movsx eax,cellx"
 "	      00556cf8    cmp ecx,eax"
 "	      00556cfa    jl near ptr 00556D9Eh"
 );
 // LINE 749:
 	asm( 
-"	      00556d00    mov eax,[ebp-10h]"
+"	      00556d00    mov eax,this"
 "	      00556d03    xor ecx,ecx"
 "	      00556d05    mov cl,[eax+89h]"
-"	      00556d0b    movsx eax,word ptr [ebp+8]"
+"	      00556d0b    movsx eax,todist"
 "	      00556d0f    sub ecx,eax"
-"	      00556d11    mov [ebp-8],cx"
+"	      00556d11    mov celly,cx"
 "	      00556d15    jmp near ptr 00556D1Eh"
-"	      00556d1a    inc word ptr [ebp-8]"
-"	      00556d1e    mov eax,[ebp-10h]"
+"	      00556d1a    inc celly"
+"	      00556d1e    mov eax,this"
 "	      00556d21    xor ecx,ecx"
 "	      00556d23    mov cl,[eax+89h]"
-"	      00556d29    movsx eax,word ptr [ebp+8]"
+"	      00556d29    movsx eax,todist"
 "	      00556d2d    add ecx,eax"
-"	      00556d2f    movsx eax,word ptr [ebp-8]"
+"	      00556d2f    movsx eax,celly"
 "	      00556d33    cmp ecx,eax"
 "	      00556d35    jl near ptr 00556D99h"
 );
 // LINE 750:
 	asm( 
-"	      00556d3b    movsx eax,word ptr [ebp-8]"
+"	      00556d3b    movsx eax,celly"
 "	      00556d3f    and eax,0FFh"
-"	      00556d44    movsx ecx,word ptr [ebp-4]"
+"	      00556d44    movsx ecx,cellx"
 "	      00556d48    and ecx,0FFh"
 "	      00556d4e    shl ecx,0Ah"
 "	      00556d51    mov eax,[ecx+eax*4+67ED30h]"
-"	      00556d58    mov [ebp-0Ch],eax"
+"	      00556d58    mov cptr,eax"
 );
 // LINE 751:
 	asm( 
-"	      00556d5b    mov eax,[ebp-0Ch]"
+"	      00556d5b    mov eax,cptr"
 "	      00556d5e    movsx eax,word ptr [eax]"
 "	      00556d61    and eax,0FFFFFFFBh"
-"	      00556d64    mov ecx,[ebp-0Ch]"
+"	      00556d64    mov ecx,cptr"
 "	      00556d67    mov [ecx],ax"
 );
 // LINE 752:
 	asm( 
-"	      00556d6a    mov eax,[ebp-0Ch]"
+"	      00556d6a    mov eax,cptr"
 "	      00556d6d    movsx eax,word ptr [eax]"
 "	      00556d70    test al,4"
 "	      00556d72    je near ptr 00556D94h"
@@ -3239,55 +3239,55 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 );
 // LINE 756:
 	asm( 
-"	      00556d9e    mov eax,[ebp-10h]"
+"	      00556d9e    mov eax,this"
 "	      00556da1    xor ecx,ecx"
 "	      00556da3    mov cl,[eax+88h]"
-"	      00556da9    movsx eax,word ptr [ebp+8]"
+"	      00556da9    movsx eax,todist"
 "	      00556dad    sub ecx,eax"
-"	      00556daf    mov [ebp-4],cx"
+"	      00556daf    mov cellx,cx"
 "	      00556db3    jmp near ptr 00556DBCh"
-"	      00556db8    inc word ptr [ebp-4]"
-"	      00556dbc    mov eax,[ebp-10h]"
+"	      00556db8    inc cellx"
+"	      00556dbc    mov eax,this"
 "	      00556dbf    xor ecx,ecx"
 "	      00556dc1    mov cl,[eax+88h]"
-"	      00556dc7    movsx eax,word ptr [ebp+8]"
+"	      00556dc7    movsx eax,todist"
 "	      00556dcb    add ecx,eax"
-"	      00556dcd    movsx eax,word ptr [ebp-4]"
+"	      00556dcd    movsx eax,cellx"
 "	      00556dd1    cmp ecx,eax"
 "	      00556dd3    jl near ptr 00556EB1h"
 );
 // LINE 757:
 	asm( 
-"	      00556dd9    mov eax,[ebp-10h]"
+"	      00556dd9    mov eax,this"
 "	      00556ddc    xor ecx,ecx"
 "	      00556dde    mov cl,[eax+89h]"
-"	      00556de4    movsx eax,word ptr [ebp+8]"
+"	      00556de4    movsx eax,todist"
 "	      00556de8    sub ecx,eax"
-"	      00556dea    mov [ebp-8],cx"
+"	      00556dea    mov celly,cx"
 "	      00556dee    jmp near ptr 00556DF7h"
-"	      00556df3    inc word ptr [ebp-8]"
-"	      00556df7    mov eax,[ebp-10h]"
+"	      00556df3    inc celly"
+"	      00556df7    mov eax,this"
 "	      00556dfa    xor ecx,ecx"
 "	      00556dfc    mov cl,[eax+89h]"
-"	      00556e02    movsx eax,word ptr [ebp+8]"
+"	      00556e02    movsx eax,todist"
 "	      00556e06    add ecx,eax"
-"	      00556e08    movsx eax,word ptr [ebp-8]"
+"	      00556e08    movsx eax,celly"
 "	      00556e0c    cmp ecx,eax"
 "	      00556e0e    jl near ptr 00556EACh"
 );
 // LINE 758:
 	asm( 
-"	      00556e14    movsx eax,word ptr [ebp-8]"
+"	      00556e14    movsx eax,celly"
 "	      00556e18    and eax,0FFh"
-"	      00556e1d    movsx ecx,word ptr [ebp-4]"
+"	      00556e1d    movsx ecx,cellx"
 "	      00556e21    and ecx,0FFh"
 "	      00556e27    shl ecx,0Ah"
 "	      00556e2a    mov eax,[ecx+eax*4+67ED30h]"
-"	      00556e31    mov [ebp-0Ch],eax"
+"	      00556e31    mov cptr,eax"
 );
 // LINE 759:
 	asm( 
-"	      00556e34    cmp dword ptr [ebp-0Ch],0"
+"	      00556e34    cmp cptr,0"
 "	      00556e38    jne near ptr 00556E5Ah"
 "	      00556e3e    push 8C085h"
 "	      00556e43    push 5BCAE4h"
@@ -3298,7 +3298,7 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 );
 // LINE 760:
 	asm( 
-"	      00556e5a    mov eax,[ebp-0Ch]"
+"	      00556e5a    mov eax,cptr"
 "	      00556e5d    movsx eax,word ptr [eax]"
 "	      00556e60    test al,4"
 "	      00556e62    je near ptr 00556E6Dh"
@@ -3309,21 +3309,21 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 );
 // LINE 762:
 	asm( 
-"	      00556e6d    mov eax,[ebp-0Ch]"
+"	      00556e6d    mov eax,cptr"
 "	      00556e70    movsx eax,word ptr [eax]"
 "	      00556e73    test al,20h"
 "	      00556e75    je near ptr 00556E98h"
 );
 // LINE 763:
 	asm( 
-"	      00556e7b    mov ax,[ebp-4]"
-"	      00556e7f    mov ecx,[ebp+0Ch]"
+"	      00556e7b    mov ax,cellx"
+"	      00556e7f    mov ecx,firecellx"
 "	      00556e82    mov [ecx],ax"
 );
 // LINE 764:
 	asm( 
-"	      00556e85    mov ax,[ebp-8]"
-"	      00556e89    mov ecx,[ebp+10h]"
+"	      00556e85    mov ax,celly"
+"	      00556e89    mov ecx,firecelly"
 "	      00556e8c    mov [ecx],ax"
 );
 // LINE 765:
@@ -3333,10 +3333,10 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 );
 // LINE 767:
 	asm( 
-"	      00556e98    mov eax,[ebp-0Ch]"
+"	      00556e98    mov eax,cptr"
 "	      00556e9b    movsx eax,word ptr [eax]"
 "	      00556e9e    or eax,4"
-"	      00556ea1    mov ecx,[ebp-0Ch]"
+"	      00556ea1    mov ecx,cptr"
 "	      00556ea4    mov [ecx],ax"
 );
 // LINE 768:
@@ -3377,26 +3377,26 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      00556ec6    push ebx"
 "	      00556ec7    push esi"
 "	      00556ec8    push edi"
-"	      00556ec9    mov [ebp-28h],ecx"
+"	      00556ec9    mov this,ecx"
 );
 // LINE 775:
 	asm( 
-"	      00556ecc    mov dword ptr [ebp-8],0"
+"	      00556ecc    mov closestdyn,0"
 );
 // LINE 776:
 	asm( 
-"	      00556ed3    mov dword ptr [ebp-10h],0"
+"	      00556ed3    mov closestobj,0"
 );
 // LINE 777:
 	asm( 
-"	      00556eda    mov word ptr [ebp-0Ch],0FFFFh"
+"	      00556eda    mov closestdist,0FFFFh"
 );
 // LINE 778:
 	asm( 
-"	      00556ee0    mov word ptr [ebp-4],0"
+"	      00556ee0    mov count,0"
 "	      00556ee6    jmp near ptr 00556EEFh"
-"	      00556eeb    inc word ptr [ebp-4]"
-"	      00556eef    movsx eax,word ptr [ebp-4]"
+"	      00556eeb    inc count"
+"	      00556eef    movsx eax,count"
 "	      00556ef3    cmp eax,64h"
 "	      00556ef6    jge near ptr 00557141h"
 );
@@ -3406,16 +3406,16 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 	struct _DYOBJ_INST* dyn;
 	unsigned short dist;
 	asm( 
-"	      00556efc    movsx eax,word ptr [ebp-4]"
+"	      00556efc    movsx eax,count"
 "	      00556f00    cmp eax,7D00h"
 "	      00556f05    jne near ptr 00556F18h"
 "	      00556f0b    mov eax,ds:[5B8680h]"
-"	      00556f10    mov [ebp-1Ch],eax"
+"	      00556f10    mov obj,eax"
 "	      00556f13    jmp near ptr 00556F94h"
-"	      00556f18    movsx eax,word ptr [ebp-4]"
+"	      00556f18    movsx eax,count"
 "	      00556f1c    test eax,eax"
 "	      00556f1e    jl near ptr 00556F31h"
-"	      00556f24    movsx eax,word ptr [ebp-4]"
+"	      00556f24    movsx eax,count"
 "	      00556f28    cmp eax,64h"
 "	      00556f2b    jl near ptr 00556F4Dh"
 "	      00556f31    push 8C085h"
@@ -3424,7 +3424,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      00556f40    push 5BBA14h"
 "	      00556f45    call 00554F30h"
 "	      00556f4a    add esp,10h"
-"	      00556f4d    movsx eax,word ptr [ebp-4]"
+"	      00556f4d    movsx eax,count"
 "	      00556f51    cmp dword ptr [eax*4+636D40h],0"
 "	      00556f59    jne near ptr 00556F7Bh"
 "	      00556f5f    push 8C085h"
@@ -3433,16 +3433,16 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      00556f6e    push 5BBA14h"
 "	      00556f73    call 00554F30h"
 "	      00556f78    add esp,10h"
-"	      00556f7b    movsx eax,word ptr [ebp-4]"
+"	      00556f7b    movsx eax,count"
 "	      00556f7f    mov eax,[eax*4+636D40h]"
-"	      00556f86    mov [ebp-1Ch],eax"
+"	      00556f86    mov obj,eax"
 "	      00556f89    jmp near ptr 00556F94h"
 "	      00556f8e    mov eax,[ebp-20h]"
-"	      00556f91    mov [ebp-1Ch],eax"
+"	      00556f91    mov obj,eax"
 );
 // LINE 780:
 	asm( 
-"	      00556f94    cmp dword ptr [ebp-1Ch],0"
+"	      00556f94    cmp obj,0"
 "	      00556f98    jne near ptr 00556FBAh"
 "	      00556f9e    push 8C085h"
 "	      00556fa3    push 5BCB10h"
@@ -3453,7 +3453,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 781:
 	asm( 
-"	      00556fba    mov eax,[ebp-1Ch]"
+"	      00556fba    mov eax,obj"
 "	      00556fbd    movsx eax,word ptr [eax+0D2h]"
 "	      00556fc4    test eax,eax"
 "	      00556fc6    jne near ptr 00556FD1h"
@@ -3461,36 +3461,36 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 782:
 	asm( 
-"	      00556fd1    mov eax,[ebp-1Ch]"
-"	      00556fd4    cmp [ebp-28h],eax"
+"	      00556fd1    mov eax,obj"
+"	      00556fd4    cmp this,eax"
 "	      00556fd7    jne near ptr 00556FE2h"
 "	      00556fdd    jmp near ptr 00556EEBh"
 );
 // LINE 783:
 	asm( 
-"	      00556fe2    cmp dword ptr [ebp+8],0FFFFFFFEh"
+"	      00556fe2    cmp missionsupertype,0FFFFFFFEh"
 "	      00556fe6    je near ptr 00557004h"
-"	      00556fec    mov eax,[ebp-1Ch]"
+"	      00556fec    mov eax,obj"
 "	      00556fef    movsx eax,word ptr [eax+0DAh]"
-"	      00556ff6    cmp eax,[ebp+8]"
+"	      00556ff6    cmp eax,missionsupertype"
 "	      00556ff9    je near ptr 00557004h"
 "	      00556fff    jmp near ptr 00556EEBh"
 );
 // LINE 784:
 	asm( 
-"	      00557004    cmp dword ptr [ebp+0Ch],0FFFFFFFEh"
+"	      00557004    cmp missiontype,0FFFFFFFEh"
 "	      00557008    je near ptr 00557026h"
-"	      0055700e    mov eax,[ebp-1Ch]"
+"	      0055700e    mov eax,obj"
 "	      00557011    movsx eax,word ptr [eax+0D8h]"
-"	      00557018    cmp eax,[ebp+0Ch]"
+"	      00557018    cmp eax,missiontype"
 "	      0055701b    je near ptr 00557026h"
 "	      00557021    jmp near ptr 00556EEBh"
 );
 // LINE 786:
 	asm( 
-"	      00557026    cmp dword ptr [ebp+8],0FFFFFFFEh"
+"	      00557026    cmp missionsupertype,0FFFFFFFEh"
 "	      0055702a    jne near ptr 00557056h"
-"	      00557030    cmp dword ptr [ebp+0Ch],0FFFFFFFEh"
+"	      00557030    cmp missiontype,0FFFFFFFEh"
 "	      00557034    jne near ptr 00557056h"
 "	      0055703a    push 8C085h"
 "	      0055703f    push 5BCB3Ch"
@@ -3501,9 +3501,9 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 787:
 	asm( 
-"	      00557056    cmp dword ptr [ebp+8],0"
+"	      00557056    cmp missionsupertype,0"
 "	      0055705a    jne near ptr 00557077h"
-"	      00557060    mov eax,[ebp-1Ch]"
+"	      00557060    mov eax,obj"
 "	      00557063    movsx eax,word ptr [eax+0FEh]"
 "	      0055706a    test eax,eax"
 "	      0055706c    je near ptr 00557077h"
@@ -3513,7 +3513,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 	asm( 
 "	      00557077    test dword ptr [ebp+10h],0FFFFh"
 "	      0055707e    je near ptr 0055709Bh"
-"	      00557084    mov eax,[ebp-1Ch]"
+"	      00557084    mov eax,obj"
 "	      00557087    movsx eax,word ptr [eax+0E2h]"
 "	      0055708e    test eax,eax"
 "	      00557090    jne near ptr 0055709Bh"
@@ -3521,13 +3521,13 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 789:
 	asm( 
-"	      0055709b    mov eax,[ebp-1Ch]"
+"	      0055709b    mov eax,obj"
 "	      0055709e    add eax,24h"
-"	      005570a1    mov [ebp-18h],eax"
+"	      005570a1    mov dyn,eax"
 );
 // LINE 790:
 	asm( 
-"	      005570a4    cmp dword ptr [ebp-18h],0"
+"	      005570a4    cmp dyn,0"
 "	      005570a8    jne near ptr 005570CAh"
 "	      005570ae    push 8C085h"
 "	      005570b3    push 5BBEBCh"
@@ -3536,17 +3536,17 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      005570c2    call 00554F30h"
 "	      005570c7    add esp,10h"
 "	      005570ca    jmp near ptr 005570CFh"
-"	      005570cf    mov eax,[ebp-28h]"
+"	      005570cf    mov eax,this"
 "	      005570d2    mov eax,[eax+3Ch]"
-"	      005570d5    mov ecx,[ebp-18h]"
+"	      005570d5    mov ecx,dyn"
 "	      005570d8    sub eax,[ecx+18h]"
-"	      005570db    mov ecx,[ebp-28h]"
+"	      005570db    mov ecx,this"
 "	      005570de    add eax,[ecx+44h]"
-"	      005570e1    mov ecx,[ebp-18h]"
+"	      005570e1    mov ecx,dyn"
 "	      005570e4    sub eax,[ecx+20h]"
-"	      005570e7    mov ecx,[ebp-28h]"
+"	      005570e7    mov ecx,this"
 "	      005570ea    add eax,[ecx+40h]"
-"	      005570ed    mov ecx,[ebp-18h]"
+"	      005570ed    mov ecx,dyn"
 "	      005570f0    sub eax,[ecx+1Ch]"
 "	      005570f3    sar eax,10h"
 "	      005570f6    movsx eax,ax"
@@ -3555,7 +3555,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      005570fc    sub eax,edx"
 "	      005570fe    mov [ebp-24h],ax"
 "	      00557102    mov ax,[ebp-24h]"
-"	      00557106    mov [ebp-14h],ax"
+"	      00557106    mov dist,ax"
 "	      0055710a    jmp near ptr 0055710Fh"
 );
 // LINE 791:
@@ -3569,18 +3569,18 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 792:
 	asm( 
-"	      00557128    mov ax,[ebp-14h]"
-"	      0055712c    mov [ebp-0Ch],ax"
+"	      00557128    mov ax,dist"
+"	      0055712c    mov closestdist,ax"
 );
 // LINE 793:
 	asm( 
-"	      00557130    mov eax,[ebp-18h]"
-"	      00557133    mov [ebp-8],eax"
+"	      00557130    mov eax,dyn"
+"	      00557133    mov closestdyn,eax"
 );
 // LINE 794:
 	asm( 
-"	      00557136    mov eax,[ebp-1Ch]"
-"	      00557139    mov [ebp-10h],eax"
+"	      00557136    mov eax,obj"
+"	      00557139    mov closestobj,eax"
 );
 // LINE 796:
 // Block end:
@@ -3589,20 +3589,20 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 797:
 	asm( 
-"	      00557141    cmp dword ptr [ebp+14h],0"
+"	      00557141    cmp dist,0"
 "	      00557145    je near ptr 0055715Fh"
-"	      0055714b    cmp dword ptr [ebp-10h],0"
+"	      0055714b    cmp closestobj,0"
 "	      0055714f    je near ptr 0055715Fh"
 );
 // LINE 798:
 	asm( 
-"	      00557155    mov ax,[ebp-0Ch]"
-"	      00557159    mov ecx,[ebp+14h]"
+"	      00557155    mov ax,closestdist"
+"	      00557159    mov ecx,dist"
 "	      0055715c    mov [ecx],ax"
 );
 // LINE 799:
 	asm( 
-"	      0055715f    mov eax,[ebp-10h]"
+"	      0055715f    mov eax,closestobj"
 "	      00557162    jmp near ptr 00557167h"
 );
 // LINE 800:
@@ -3627,43 +3627,43 @@ void cYObject::Die() {
 "	      00557174    push ebx"
 "	      00557175    push esi"
 "	      00557176    push edi"
-"	      00557177    mov [ebp-1Ch],ecx"
+"	      00557177    mov this,ecx"
 );
 // LINE 805:
 	asm( 
-"	      0055717a    mov dword ptr [ebp-18h],17h"
+"	      0055717a    mov mp.op,17h"
 );
 // LINE 806:
 	asm( 
-"	      00557181    mov dword ptr [ebp-8],1"
+"	      00557181    mov mp.i2num,1"
 );
 // LINE 807:
 	asm( 
-"	      00557188    mov eax,[ebp-1Ch]"
+"	      00557188    mov eax,this"
 "	      0055718b    mov eax,[eax+1Ch]"
-"	      0055718e    mov [ebp-14h],eax"
+"	      0055718e    mov mp.id,eax"
 );
 // LINE 808:
 	asm( 
-"	      00557191    mov dword ptr [ebp-4],0"
+"	      00557191    mov mp.flags,0"
 );
 // LINE 809:
 	asm( 
-"	      00557198    lea eax,[ebp-18h]"
+"	      00557198    lea eax,mp.op"
 "	      0055719b    push eax"
 "	      0055719c    call 004FBD4Ah"
 "	      005571a1    add esp,4"
 );
 // LINE 810:
 	asm( 
-"	      005571a4    mov eax,[ebp-1Ch]"
+"	      005571a4    mov eax,this"
 "	      005571a7    movsx eax,word ptr [eax+0D8h]"
 "	      005571ae    test eax,eax"
 "	      005571b0    je near ptr 005571C3h"
 );
 // LINE 811:
 	asm( 
-"	      005571b6    mov ecx,[ebp-1Ch]"
+"	      005571b6    mov ecx,this"
 "	      005571b9    call 0054B820h"
 );
 // LINE 813:
@@ -3672,19 +3672,19 @@ void cYObject::Die() {
 );
 // LINE 814:
 	asm( 
-"	      005571c3    mov eax,[ebp-1Ch]"
+"	      005571c3    mov eax,this"
 "	      005571c6    mov ax,[eax+10Ah]"
 "	      005571cd    push eax"
-"	      005571ce    mov eax,[ebp-1Ch]"
+"	      005571ce    mov eax,this"
 "	      005571d1    mov eax,[eax+0B4h]"
 "	      005571d7    push eax"
-"	      005571d8    mov ecx,[ebp-1Ch]"
+"	      005571d8    mov ecx,this"
 "	      005571db    call 0055CC58h"
 "	      005571e0    jmp near ptr 005571E5h"
 );
 // LINE 816:
 	asm( 
-"	      005571e5    mov eax,[ebp-1Ch]"
+"	      005571e5    mov eax,this"
 "	      005571e8    mov word ptr [eax+0EEh],1"
 );
 // LINE 817:
@@ -3714,14 +3714,14 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 );
 // LINE 822:
 	asm( 
-"	      00557204    mov dword ptr [ebp-8],0"
+"	      00557204    mov found,0"
 );
 // LINE 823:
 	asm( 
-"	      0055720b    mov word ptr [ebp-4],0"
+"	      0055720b    mov count,0"
 "	      00557211    jmp near ptr 0055721Ah"
-"	      00557216    inc word ptr [ebp-4]"
-"	      0055721a    movsx eax,word ptr [ebp-4]"
+"	      00557216    inc count"
+"	      0055721a    movsx eax,count"
 "	      0055721e    cmp eax,64h"
 "	      00557221    jge near ptr 00557340h"
 );
@@ -3729,16 +3729,16 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      00557227    movsx eax,word ptr [ebp-4]"
+"	      00557227    movsx eax,count"
 "	      0055722b    cmp eax,7D00h"
 "	      00557230    jne near ptr 00557243h"
 "	      00557236    mov eax,ds:[5B8680h]"
-"	      0055723b    mov [ebp-0Ch],eax"
+"	      0055723b    mov obj,eax"
 "	      0055723e    jmp near ptr 005572BFh"
-"	      00557243    movsx eax,word ptr [ebp-4]"
+"	      00557243    movsx eax,count"
 "	      00557247    test eax,eax"
 "	      00557249    jl near ptr 0055725Ch"
-"	      0055724f    movsx eax,word ptr [ebp-4]"
+"	      0055724f    movsx eax,count"
 "	      00557253    cmp eax,64h"
 "	      00557256    jl near ptr 00557278h"
 "	      0055725c    push 8C085h"
@@ -3747,7 +3747,7 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 "	      0055726b    push 5BBA14h"
 "	      00557270    call 00554F30h"
 "	      00557275    add esp,10h"
-"	      00557278    movsx eax,word ptr [ebp-4]"
+"	      00557278    movsx eax,count"
 "	      0055727c    cmp dword ptr [eax*4+636D40h],0"
 "	      00557284    jne near ptr 005572A6h"
 "	      0055728a    push 8C085h"
@@ -3756,16 +3756,16 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 "	      00557299    push 5BBA14h"
 "	      0055729e    call 00554F30h"
 "	      005572a3    add esp,10h"
-"	      005572a6    movsx eax,word ptr [ebp-4]"
+"	      005572a6    movsx eax,count"
 "	      005572aa    mov eax,[eax*4+636D40h]"
-"	      005572b1    mov [ebp-0Ch],eax"
+"	      005572b1    mov obj,eax"
 "	      005572b4    jmp near ptr 005572BFh"
 "	      005572b9    mov eax,[ebp-10h]"
-"	      005572bc    mov [ebp-0Ch],eax"
+"	      005572bc    mov obj,eax"
 );
 // LINE 825:
 	asm( 
-"	      005572bf    mov eax,[ebp-0Ch]"
+"	      005572bf    mov eax,obj"
 "	      005572c2    movsx eax,word ptr [eax+0D2h]"
 "	      005572c9    test eax,eax"
 "	      005572cb    jne near ptr 005572D6h"
@@ -3773,10 +3773,10 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 );
 // LINE 826:
 	asm( 
-"	      005572d6    movsx eax,word ptr [ebp+0Ch]"
+"	      005572d6    movsx eax,visible"
 "	      005572da    cmp eax,1"
 "	      005572dd    jne near ptr 005572FAh"
-"	      005572e3    mov eax,[ebp-0Ch]"
+"	      005572e3    mov eax,obj"
 "	      005572e6    movsx eax,word ptr [eax+0E2h]"
 "	      005572ed    test eax,eax"
 "	      005572ef    jne near ptr 005572FAh"
@@ -3784,10 +3784,10 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 );
 // LINE 827:
 	asm( 
-"	      005572fa    movsx eax,word ptr [ebp+0Ch]"
+"	      005572fa    movsx eax,visible"
 "	      005572fe    test eax,eax"
 "	      00557300    jne near ptr 0055731Dh"
-"	      00557306    mov eax,[ebp-0Ch]"
+"	      00557306    mov eax,obj"
 "	      00557309    movsx eax,word ptr [eax+0E2h]"
 "	      00557310    test eax,eax"
 "	      00557312    je near ptr 0055731Dh"
@@ -3795,15 +3795,15 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 );
 // LINE 829:
 	asm( 
-"	      0055731d    mov eax,[ebp-0Ch]"
+"	      0055731d    mov eax,obj"
 "	      00557320    movsx eax,word ptr [eax+0D8h]"
-"	      00557327    movsx ecx,word ptr [ebp+8]"
+"	      00557327    movsx ecx,whichtype"
 "	      0055732b    cmp eax,ecx"
 "	      0055732d    jne near ptr 0055733Bh"
 );
 // LINE 830:
 	asm( 
-"	      00557333    mov eax,[ebp-0Ch]"
+"	      00557333    mov eax,obj"
 "	      00557336    jmp near ptr 00557347h"
 );
 // LINE 831:
@@ -3838,22 +3838,22 @@ class cYObject* cYObject::DropToted() {
 "	      00557352    push ebx"
 "	      00557353    push esi"
 "	      00557354    push edi"
-"	      00557355    mov [ebp-8],ecx"
+"	      00557355    mov this,ecx"
 );
 // LINE 837:
 	asm( 
-"	      00557358    mov ecx,[ebp-8]"
+"	      00557358    mov ecx,this"
 "	      0055735b    call 005573F5h"
-"	      00557360    mov [ebp-4],eax"
+"	      00557360    mov obj,eax"
 );
 // LINE 838:
 	asm( 
-"	      00557363    cmp dword ptr [ebp-4],0"
+"	      00557363    cmp obj,0"
 "	      00557367    je near ptr 005573E9h"
 );
 // LINE 839:
 	asm( 
-"	      0055736d    mov eax,[ebp-4]"
+"	      0055736d    mov eax,obj"
 "	      00557370    movsx eax,word ptr [eax+0D8h]"
 "	      00557377    cmp eax,6"
 "	      0055737a    je near ptr 0055739Ch"
@@ -3867,8 +3867,8 @@ class cYObject* cYObject::DropToted() {
 // LINE 840:
 	asm( 
 "	      0055739c    jmp near ptr 005573A1h"
-"	      005573a1    mov eax,[ebp-4]"
-"	      005573a4    mov ecx,[ebp-8]"
+"	      005573a1    mov eax,obj"
+"	      005573a4    mov ecx,this"
 "	      005573a7    add ecx,24h"
 "	      005573aa    cmp [eax+130h],ecx"
 "	      005573b0    je near ptr 005573D2h"
@@ -3882,12 +3882,12 @@ class cYObject* cYObject::DropToted() {
 // LINE 841:
 	asm( 
 "	      005573d2    push 0"
-"	      005573d4    mov ecx,[ebp-4]"
+"	      005573d4    mov ecx,obj"
 "	      005573d7    call 0054CECAh"
 );
 // LINE 842:
 	asm( 
-"	      005573dc    mov eax,[ebp-4]"
+"	      005573dc    mov eax,obj"
 "	      005573df    jmp near ptr 005573F0h"
 );
 // LINE 844:
@@ -3922,18 +3922,18 @@ class cYObject* cYObject::GetToted() {
 "	      005573fb    push ebx"
 "	      005573fc    push esi"
 "	      005573fd    push edi"
-"	      005573fe    mov [ebp-14h],ecx"
+"	      005573fe    mov this,ecx"
 );
 // LINE 850:
 	asm( 
-"	      00557401    mov dword ptr [ebp-8],0"
+"	      00557401    mov found,0"
 );
 // LINE 851:
 	asm( 
-"	      00557408    mov word ptr [ebp-4],0"
+"	      00557408    mov count,0"
 "	      0055740e    jmp near ptr 00557417h"
-"	      00557413    inc word ptr [ebp-4]"
-"	      00557417    movsx eax,word ptr [ebp-4]"
+"	      00557413    inc count"
+"	      00557417    movsx eax,count"
 "	      0055741b    cmp eax,64h"
 "	      0055741e    jge near ptr 0055751Eh"
 );
@@ -3941,16 +3941,16 @@ class cYObject* cYObject::GetToted() {
 // Block start:
 	class cYObject* obj;
 	asm( 
-"	      00557424    movsx eax,word ptr [ebp-4]"
+"	      00557424    movsx eax,count"
 "	      00557428    cmp eax,7D00h"
 "	      0055742d    jne near ptr 00557440h"
 "	      00557433    mov eax,ds:[5B8680h]"
-"	      00557438    mov [ebp-0Ch],eax"
+"	      00557438    mov obj,eax"
 "	      0055743b    jmp near ptr 005574BCh"
-"	      00557440    movsx eax,word ptr [ebp-4]"
+"	      00557440    movsx eax,count"
 "	      00557444    test eax,eax"
 "	      00557446    jl near ptr 00557459h"
-"	      0055744c    movsx eax,word ptr [ebp-4]"
+"	      0055744c    movsx eax,count"
 "	      00557450    cmp eax,64h"
 "	      00557453    jl near ptr 00557475h"
 "	      00557459    push 8C085h"
@@ -3959,7 +3959,7 @@ class cYObject* cYObject::GetToted() {
 "	      00557468    push 5BBA14h"
 "	      0055746d    call 00554F30h"
 "	      00557472    add esp,10h"
-"	      00557475    movsx eax,word ptr [ebp-4]"
+"	      00557475    movsx eax,count"
 "	      00557479    cmp dword ptr [eax*4+636D40h],0"
 "	      00557481    jne near ptr 005574A3h"
 "	      00557487    push 8C085h"
@@ -3968,16 +3968,16 @@ class cYObject* cYObject::GetToted() {
 "	      00557496    push 5BBA14h"
 "	      0055749b    call 00554F30h"
 "	      005574a0    add esp,10h"
-"	      005574a3    movsx eax,word ptr [ebp-4]"
+"	      005574a3    movsx eax,count"
 "	      005574a7    mov eax,[eax*4+636D40h]"
-"	      005574ae    mov [ebp-0Ch],eax"
+"	      005574ae    mov obj,eax"
 "	      005574b1    jmp near ptr 005574BCh"
 "	      005574b6    mov eax,[ebp-10h]"
-"	      005574b9    mov [ebp-0Ch],eax"
+"	      005574b9    mov obj,eax"
 );
 // LINE 853:
 	asm( 
-"	      005574bc    mov eax,[ebp-0Ch]"
+"	      005574bc    mov eax,obj"
 "	      005574bf    movsx eax,word ptr [eax+0D2h]"
 "	      005574c6    test eax,eax"
 "	      005574c8    jne near ptr 005574D3h"
@@ -3986,15 +3986,15 @@ class cYObject* cYObject::GetToted() {
 // LINE 854:
 	asm( 
 "	      005574d3    jmp near ptr 005574D8h"
-"	      005574d8    mov eax,[ebp-0Ch]"
-"	      005574db    mov ecx,[ebp-14h]"
+"	      005574d8    mov eax,obj"
+"	      005574db    mov ecx,this"
 "	      005574de    add ecx,24h"
 "	      005574e1    cmp [eax+130h],ecx"
 "	      005574e7    jne near ptr 00557519h"
 );
 // LINE 855:
 	asm( 
-"	      005574ed    cmp dword ptr [ebp-8],0"
+"	      005574ed    cmp found,0"
 "	      005574f1    je near ptr 00557513h"
 "	      005574f7    push 8C085h"
 "	      005574fc    push 5BCC1Ch"
@@ -4005,8 +4005,8 @@ class cYObject* cYObject::GetToted() {
 );
 // LINE 856:
 	asm( 
-"	      00557513    mov eax,[ebp-0Ch]"
-"	      00557516    mov [ebp-8],eax"
+"	      00557513    mov eax,obj"
+"	      00557516    mov found,eax"
 );
 // LINE 858:
 // Block end:
@@ -4015,7 +4015,7 @@ class cYObject* cYObject::GetToted() {
 );
 // LINE 860:
 	asm( 
-"	      0055751e    mov eax,[ebp-8]"
+"	      0055751e    mov eax,found"
 "	      00557521    jmp near ptr 00557526h"
 );
 // LINE 861:
@@ -4040,21 +4040,21 @@ enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem* el
 "	      00557531    push ebx"
 "	      00557532    push esi"
 "	      00557533    push edi"
-"	      00557534    mov [ebp-8],ecx"
+"	      00557534    mov this,ecx"
 );
 // LINE 876:
 	asm( 
-"	      00557537    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00557537    mov result,0FFFFFFFFh"
 );
 // LINE 877:
 	asm( 
-"	      0055753e    mov eax,[ebp-8]"
+"	      0055753e    mov eax,this"
 "	      00557541    cmp dword ptr [eax+130h],0"
 "	      00557548    je near ptr 0055755Ah"
 );
 // LINE 878:
 	asm( 
-"	      0055754e    mov dword ptr [ebp-4],1"
+"	      0055754e    mov result,1"
 );
 // LINE 879:
 	asm( 
@@ -4062,11 +4062,11 @@ enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem* el
 );
 // LINE 880:
 	asm( 
-"	      0055755a    mov dword ptr [ebp-4],0"
+"	      0055755a    mov result,0"
 );
 // LINE 881:
 	asm( 
-"	      00557561    mov eax,[ebp-4]"
+"	      00557561    mov eax,result"
 "	      00557564    jmp near ptr 00557569h"
 );
 // LINE 882:
@@ -4091,19 +4091,19 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* e
 "	      00557576    push ebx"
 "	      00557577    push esi"
 "	      00557578    push edi"
-"	      00557579    mov [ebp-0Ch],ecx"
+"	      00557579    mov this,ecx"
 );
 // LINE 886:
 	asm( 
-"	      0055757c    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055757c    mov result,0FFFFFFFFh"
 );
 // LINE 887:
 	asm( 
-"	      00557583    mov dword ptr [ebp-4],0"
+"	      00557583    mov result,0"
 );
 // LINE 888:
 	asm( 
-"	      0055758a    mov eax,[ebp-0Ch]"
+"	      0055758a    mov eax,this"
 "	      0055758d    movsx eax,word ptr [eax+100h]"
 "	      00557594    cmp eax,0FFFFFFFFh"
 "	      00557597    je near ptr 005575CDh"
@@ -4112,32 +4112,32 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* e
 // Block start:
 	struct _DYOBJ_INST* car;
 	asm( 
-"	      0055759d    mov eax,[ebp-0Ch]"
+"	      0055759d    mov eax,this"
 "	      005575a0    movsx eax,word ptr [eax+100h]"
 "	      005575a7    push eax"
 "	      005575a8    call 0054159Dh"
 "	      005575ad    add esp,4"
-"	      005575b0    mov [ebp-8],eax"
+"	      005575b0    mov car,eax"
 );
 // LINE 890:
 	asm( 
-"	      005575b3    cmp dword ptr [ebp-8],0"
+"	      005575b3    cmp car,0"
 "	      005575b7    je near ptr 005575CDh"
 );
 // LINE 891:
 	asm( 
-"	      005575bd    mov eax,[ebp-8]"
-"	      005575c0    mov ecx,[ebp+8]"
+"	      005575bd    mov eax,car"
+"	      005575c0    mov ecx,elem"
 "	      005575c3    mov [ecx+4],eax"
 );
 // LINE 892:
 	asm( 
-"	      005575c6    mov dword ptr [ebp-4],1"
+"	      005575c6    mov result,1"
 );
 // LINE 895:
 // Block end:
 	asm( 
-"	      005575cd    mov eax,[ebp-4]"
+"	      005575cd    mov eax,result"
 "	      005575d0    jmp near ptr 005575D5h"
 );
 // LINE 896:
@@ -4164,27 +4164,27 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 "	      005575e2    push ebx"
 "	      005575e3    push esi"
 "	      005575e4    push edi"
-"	      005575e5    mov [ebp-14h],ecx"
+"	      005575e5    mov this,ecx"
 );
 // LINE 900:
 	asm( 
-"	      005575e8    mov eax,[ebp+0Ch]"
+"	      005575e8    mov eax,node"
 "	      005575eb    add eax,4"
-"	      005575ee    mov [ebp-8],eax"
-"	      005575f1    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005575ee    mov nparam,eax"
+"	      005575f1    mov result,0FFFFFFFFh"
 );
 // LINE 901:
 	asm( 
-"	      005575f8    mov eax,[ebp-8]"
+"	      005575f8    mov eax,nparam"
 "	      005575fb    mov ax,[eax]"
-"	      005575fe    mov [ebp-0Ch],ax"
+"	      005575fe    mov param.decTemp,ax"
 );
 // LINE 902:
 	asm( 
-"	      00557602    movsx eax,word ptr [ebp-0Ch]"
+"	      00557602    movsx eax,param.decTemp"
 "	      00557606    cmp eax,0FFFFFFFFh"
 "	      00557609    jle near ptr 0055761Ch"
-"	      0055760f    movsx eax,word ptr [ebp-0Ch]"
+"	      0055760f    movsx eax,param.decTemp"
 "	      00557613    cmp eax,4"
 "	      00557616    jl near ptr 00557638h"
 "	      0055761c    push 8C085h"
@@ -4195,17 +4195,17 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 "	      00557635    add esp,10h"
 "	      00557638    jmp near ptr 0055763Dh"
 "	      0055763d    jmp near ptr 00557642h"
-"	      00557642    mov eax,[ebp-14h]"
+"	      00557642    mov eax,this"
 "	      00557645    movsx eax,word ptr [eax+8]"
 "	      00557649    lea eax,[eax*4-4]"
 "	      00557650    lea eax,[eax+eax*4]"
-"	      00557653    mov ecx,[ebp-14h]"
+"	      00557653    mov ecx,this"
 "	      00557656    add eax,[ecx+4]"
-"	      00557659    movsx ecx,word ptr [ebp-0Ch]"
+"	      00557659    movsx ecx,param.decTemp"
 "	      0055765d    movsx eax,word ptr [eax+ecx*2+8]"
 "	      00557662    test eax,eax"
 "	      00557664    jne near ptr 00557676h"
-"	      0055766a    mov dword ptr [ebp-4],1"
+"	      0055766a    mov result,1"
 );
 // LINE 903:
 	asm( 
@@ -4213,10 +4213,10 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 );
 // LINE 904:
 	asm( 
-"	      00557676    movsx eax,word ptr [ebp-0Ch]"
+"	      00557676    movsx eax,param.decTemp"
 "	      0055767a    cmp eax,0FFFFFFFFh"
 "	      0055767d    jle near ptr 00557690h"
-"	      00557683    movsx eax,word ptr [ebp-0Ch]"
+"	      00557683    movsx eax,param.decTemp"
 "	      00557687    cmp eax,4"
 "	      0055768a    jl near ptr 005576ACh"
 "	      00557690    push 8C085h"
@@ -4226,13 +4226,13 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 "	      005576a4    call 00554F30h"
 "	      005576a9    add esp,10h"
 "	      005576ac    jmp near ptr 005576B1h"
-"	      005576b1    mov eax,[ebp-14h]"
+"	      005576b1    mov eax,this"
 "	      005576b4    movsx eax,word ptr [eax+8]"
 "	      005576b8    lea eax,[eax*4-4]"
 "	      005576bf    lea eax,[eax+eax*4]"
-"	      005576c2    mov ecx,[ebp-14h]"
+"	      005576c2    mov ecx,this"
 "	      005576c5    add eax,[ecx+4]"
-"	      005576c8    movsx ecx,word ptr [ebp-0Ch]"
+"	      005576c8    movsx ecx,param.decTemp"
 "	      005576cc    lea eax,[eax+ecx*2]"
 "	      005576cf    add eax,8"
 "	      005576d2    mov [ebp-10h],eax"
@@ -4242,11 +4242,11 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 );
 // LINE 905:
 	asm( 
-"	      005576e0    mov dword ptr [ebp-4],2"
+"	      005576e0    mov result,2"
 );
 // LINE 907:
 	asm( 
-"	      005576e7    mov eax,[ebp-4]"
+"	      005576e7    mov eax,result"
 "	      005576ea    jmp near ptr 005576EFh"
 );
 // LINE 908:
@@ -4273,24 +4273,24 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem* elem, str
 "	      005576fc    push ebx"
 "	      005576fd    push esi"
 "	      005576fe    push edi"
-"	      005576ff    mov [ebp-10h],ecx"
+"	      005576ff    mov this,ecx"
 );
 // LINE 912:
 	asm( 
-"	      00557702    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00557709    mov eax,[ebp+0Ch]"
+"	      00557702    mov result,0FFFFFFFFh"
+"	      00557709    mov eax,node"
 "	      0055770c    add eax,4"
-"	      0055770f    mov [ebp-8],eax"
+"	      0055770f    mov nparam,eax"
 );
 // LINE 913:
 	asm( 
-"	      00557712    mov eax,[ebp-8]"
+"	      00557712    mov eax,nparam"
 "	      00557715    mov eax,[eax]"
-"	      00557717    mov [ebp-0Ch],eax"
+"	      00557717    mov param.animname,eax"
 );
 // LINE 914:
 	asm( 
-"	      0055771a    mov eax,[ebp-10h]"
+"	      0055771a    mov eax,this"
 "	      0055771d    cmp dword ptr [eax+90h],0"
 "	      00557724    jne near ptr 00557746h"
 "	      0055772a    push 8C085h"
@@ -4299,22 +4299,22 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem* elem, str
 "	      00557739    push 5BBA14h"
 "	      0055773e    call 00554F30h"
 "	      00557743    add esp,10h"
-"	      00557746    mov eax,[ebp-10h]"
+"	      00557746    mov eax,this"
 "	      00557749    cmp dword ptr [eax+98h],0"
 "	      00557750    je near ptr 0055776Bh"
-"	      00557756    mov eax,[ebp-10h]"
+"	      00557756    mov eax,this"
 "	      00557759    mov eax,[eax+98h]"
-"	      0055775f    mov ecx,[ebp-0Ch]"
+"	      0055775f    mov ecx,param.animname"
 "	      00557762    cmp [eax+1Ch],ecx"
 "	      00557765    je near ptr 005577B2h"
-"	      0055776b    mov eax,[ebp-0Ch]"
+"	      0055776b    mov eax,param.animname"
 "	      0055776e    push eax"
-"	      0055776f    mov eax,[ebp-10h]"
+"	      0055776f    mov eax,this"
 "	      00557772    mov ecx,[eax+90h]"
 "	      00557778    call 00560BF0h"
-"	      0055777d    mov ecx,[ebp-10h]"
+"	      0055777d    mov ecx,this"
 "	      00557780    mov [ecx+98h],eax"
-"	      00557786    mov eax,[ebp-10h]"
+"	      00557786    mov eax,this"
 "	      00557789    cmp dword ptr [eax+98h],0"
 "	      00557790    jne near ptr 005577B2h"
 "	      00557796    push 8C085h"
@@ -4327,11 +4327,11 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem* elem, str
 );
 // LINE 915:
 	asm( 
-"	      005577b7    mov dword ptr [ebp-4],1"
+"	      005577b7    mov result,1"
 );
 // LINE 916:
 	asm( 
-"	      005577be    mov eax,[ebp-4]"
+"	      005577be    mov eax,result"
 "	      005577c1    jmp near ptr 005577C6h"
 );
 // LINE 917:
@@ -4357,26 +4357,26 @@ enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem* elem, struct
 "	      005577d3    push ebx"
 "	      005577d4    push esi"
 "	      005577d5    push edi"
-"	      005577d6    mov [ebp-0Ch],ecx"
+"	      005577d6    mov this,ecx"
 );
 // LINE 921:
 	asm( 
-"	      005577d9    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      005577e0    mov eax,[ebp+0Ch]"
+"	      005577d9    mov result,0FFFFFFFFh"
+"	      005577e0    mov eax,node"
 "	      005577e3    add eax,4"
-"	      005577e6    mov [ebp-8],eax"
+"	      005577e6    mov nparam,eax"
 );
 // LINE 922:
 	asm( 
-"	      005577e9    mov eax,[ebp-8]"
+"	      005577e9    mov eax,nparam"
 "	      005577ec    push eax"
-"	      005577ed    mov ecx,[ebp-0Ch]"
+"	      005577ed    mov ecx,this"
 "	      005577f0    call 0055BB60h"
-"	      005577f5    mov [ebp-4],eax"
+"	      005577f5    mov result,eax"
 );
 // LINE 923:
 	asm( 
-"	      005577f8    mov eax,[ebp-4]"
+"	      005577f8    mov eax,result"
 "	      005577fb    jmp near ptr 00557800h"
 );
 // LINE 924:
@@ -4408,50 +4408,50 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 "	      0055780d    push ebx"
 "	      0055780e    push esi"
 "	      0055780f    push edi"
-"	      00557810    mov [ebp-30h],ecx"
+"	      00557810    mov this,ecx"
 );
 // LINE 928:
 	asm( 
-"	      00557813    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055781a    mov eax,[ebp+0Ch]"
+"	      00557813    mov result,0FFFFFFFFh"
+"	      0055781a    mov eax,node"
 "	      0055781d    add eax,4"
-"	      00557820    mov [ebp-20h],eax"
+"	      00557820    mov nparam,eax"
 );
 // LINE 929:
 	asm( 
-"	      00557823    mov dword ptr [ebp-18h],0FFFFFFFFh"
+"	      00557823    mov movecode,0FFFFFFFFh"
 );
 // LINE 930:
 	asm( 
-"	      0055782a    mov word ptr [ebp-2Ch],0"
+"	      0055782a    mov movespeed,0"
 );
 // LINE 932:
 	asm( 
-"	      00557830    mov eax,[ebp-20h]"
+"	      00557830    mov eax,nparam"
 "	      00557833    mov ax,[eax]"
-"	      00557836    mov [ebp-28h],ax"
+"	      00557836    mov dectemp,ax"
 );
 // LINE 933:
 	asm( 
-"	      0055783a    mov eax,[ebp-30h]"
+"	      0055783a    mov eax,this"
 "	      0055783d    mov ax,[eax+0F8h]"
-"	      00557844    mov [ebp-1Ch],ax"
+"	      00557844    mov onlyNeutral,ax"
 );
 // LINE 934:
 	asm( 
 "	      00557848    push 10h"
 "	      0055784a    push 0"
-"	      0055784c    lea eax,[ebp-14h]"
+"	      0055784c    lea eax,moveinfo.locType"
 "	      0055784f    push eax"
 "	      00557850    call 00554C10h"
 "	      00557855    add esp,0Ch"
 );
 // LINE 935:
 	asm( 
-"	      00557858    movsx eax,word ptr [ebp-28h]"
+"	      00557858    movsx eax,dectemp"
 "	      0055785c    cmp eax,0FFFFFFFFh"
 "	      0055785f    jle near ptr 00557872h"
-"	      00557865    movsx eax,word ptr [ebp-28h]"
+"	      00557865    movsx eax,dectemp"
 "	      00557869    cmp eax,4"
 "	      0055786c    jl near ptr 0055788Eh"
 "	      00557872    push 8C085h"
@@ -4462,31 +4462,31 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 "	      0055788b    add esp,10h"
 "	      0055788e    jmp near ptr 00557893h"
 "	      00557893    jmp near ptr 00557898h"
-"	      00557898    mov eax,[ebp-30h]"
+"	      00557898    mov eax,this"
 "	      0055789b    movsx eax,word ptr [eax+8]"
 "	      0055789f    lea eax,[eax*4-4]"
 "	      005578a6    lea eax,[eax+eax*4]"
-"	      005578a9    mov ecx,[ebp-30h]"
+"	      005578a9    mov ecx,this"
 "	      005578ac    add eax,[ecx+4]"
-"	      005578af    movsx ecx,word ptr [ebp-28h]"
+"	      005578af    movsx ecx,dectemp"
 "	      005578b3    lea eax,[eax+ecx*2]"
 "	      005578b6    add eax,8"
-"	      005578b9    mov [ebp-24h],eax"
+"	      005578b9    mov walkloc,eax"
 );
 // LINE 937:
 	asm( 
-"	      005578bc    mov eax,[ebp-24h]"
+"	      005578bc    mov eax,walkloc"
 "	      005578bf    movsx eax,word ptr [eax]"
 "	      005578c2    test eax,eax"
 "	      005578c4    jne near ptr 005578DDh"
 );
 // LINE 938:
 	asm( 
-"	      005578ca    mov dword ptr [ebp-18h],8"
+"	      005578ca    mov movecode,8"
 );
 // LINE 939:
 	asm( 
-"	      005578d1    mov dword ptr [ebp-4],1"
+"	      005578d1    mov result,1"
 );
 // LINE 941:
 	asm( 
@@ -4494,32 +4494,32 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 );
 // LINE 942:
 	asm( 
-"	      005578dd    mov eax,[ebp-24h]"
+"	      005578dd    mov eax,walkloc"
 "	      005578e0    dec word ptr [eax]"
 );
 // LINE 944:
 	asm( 
-"	      005578e3    mov eax,[ebp-30h]"
+"	      005578e3    mov eax,this"
 "	      005578e6    mov ax,[eax+0F4h]"
-"	      005578ed    mov [ebp-2Ch],ax"
+"	      005578ed    mov movespeed,ax"
 );
 // LINE 956:
 	asm( 
-"	      005578f1    lea eax,[ebp-14h]"
+"	      005578f1    lea eax,moveinfo.locType"
 "	      005578f4    push eax"
 "	      005578f5    mov eax,[ebp-1Ch]"
 "	      005578f8    push eax"
 "	      005578f9    mov eax,[ebp-2Ch]"
 "	      005578fc    push eax"
-"	      005578fd    mov ecx,[ebp-30h]"
+"	      005578fd    mov ecx,this"
 "	      00557900    call 00555885h"
-"	      00557905    mov [ebp-18h],eax"
-"	      00557908    cmp dword ptr [ebp-18h],0"
+"	      00557905    mov movecode,eax"
+"	      00557908    cmp movecode,0"
 "	      0055790c    jne near ptr 0055791Eh"
 );
 // LINE 957:
 	asm( 
-"	      00557912    mov dword ptr [ebp-4],2"
+"	      00557912    mov result,2"
 );
 // LINE 958:
 	asm( 
@@ -4527,22 +4527,22 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 );
 // LINE 959:
 	asm( 
-"	      0055791e    mov dword ptr [ebp-4],0"
+"	      0055791e    mov result,0"
 );
 // LINE 961:
 	asm( 
-"	      00557925    lea eax,[ebp-14h]"
+"	      00557925    lea eax,moveinfo.locType"
 "	      00557928    push eax"
-"	      00557929    mov eax,[ebp-18h]"
+"	      00557929    mov eax,movecode"
 "	      0055792c    push eax"
 "	      0055792d    mov eax,[ebp-2Ch]"
 "	      00557930    push eax"
-"	      00557931    mov ecx,[ebp-30h]"
+"	      00557931    mov ecx,this"
 "	      00557934    call 0054E579h"
 );
 // LINE 962:
 	asm( 
-"	      00557939    mov eax,[ebp-4]"
+"	      00557939    mov eax,result"
 "	      0055793c    jmp near ptr 00557941h"
 );
 // LINE 963:
@@ -4569,20 +4569,20 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 "	      0055794e    push ebx"
 "	      0055794f    push esi"
 "	      00557950    push edi"
-"	      00557951    mov [ebp-34h],ecx"
+"	      00557951    mov this,ecx"
 );
 // LINE 967:
 	asm( 
-"	      00557954    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055795b    mov eax,[ebp+0Ch]"
+"	      00557954    mov result,0FFFFFFFFh"
+"	      0055795b    mov eax,node"
 "	      0055795e    add eax,4"
-"	      00557961    mov [ebp-8],eax"
+"	      00557961    mov nparam,eax"
 );
 // LINE 968:
 	asm( 
-"	      00557964    mov eax,[ebp-8]"
+"	      00557964    mov eax,nparam"
 "	      00557967    mov eax,[eax]"
-"	      00557969    mov [ebp-0Ch],eax"
+"	      00557969    mov param.bodyname,eax"
 );
 // LINE 969:
 	asm( 
@@ -4649,7 +4649,7 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 "	      00557a76    mov eax,[eax+1Ch]"
 "	      00557a79    mov cl,[ebp-10h]"
 "	      00557a7c    shr eax,cl"
-"	      00557a7e    mov edx,[ebp-0Ch]"
+"	      00557a7e    mov edx,param.bodyname"
 "	      00557a81    mov cl,[ebp-10h]"
 "	      00557a84    shr edx,cl"
 "	      00557a86    cmp eax,edx"
@@ -4670,9 +4670,9 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 "	      00557ac6    mov dword ptr [ebp-2Ch],0"
 "	      00557acd    jmp near ptr 00557AD2h"
 "	      00557ad2    mov eax,[ebp-2Ch]"
-"	      00557ad5    mov ecx,[ebp-34h]"
+"	      00557ad5    mov ecx,this"
 "	      00557ad8    mov [ecx+90h],eax"
-"	      00557ade    mov eax,[ebp-34h]"
+"	      00557ade    mov eax,this"
 "	      00557ae1    cmp dword ptr [eax+90h],0"
 "	      00557ae8    jne near ptr 00557B0Ah"
 "	      00557aee    push 8C085h"
@@ -4685,11 +4685,11 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 );
 // LINE 970:
 	asm( 
-"	      00557b0f    mov dword ptr [ebp-4],1"
+"	      00557b0f    mov result,1"
 );
 // LINE 972:
 	asm( 
-"	      00557b16    mov eax,[ebp-4]"
+"	      00557b16    mov eax,result"
 "	      00557b19    jmp near ptr 00557B1Eh"
 );
 // LINE 973:
@@ -4717,19 +4717,19 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 "	      00557b2b    push ebx"
 "	      00557b2c    push esi"
 "	      00557b2d    push edi"
-"	      00557b2e    mov [ebp-1Ch],ecx"
+"	      00557b2e    mov this,ecx"
 );
 // LINE 977:
 	asm( 
-"	      00557b31    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00557b38    mov eax,[ebp+0Ch]"
+"	      00557b31    mov result,0FFFFFFFFh"
+"	      00557b38    mov eax,node"
 "	      00557b3b    add eax,4"
-"	      00557b3e    mov [ebp-8],eax"
+"	      00557b3e    mov nparam,eax"
 );
 // LINE 978:
 	asm( 
-"	      00557b41    mov eax,[ebp-8]"
-"	      00557b44    lea ecx,[ebp-14h]"
+"	      00557b41    mov eax,nparam"
+"	      00557b44    lea ecx,rand.destTemp"
 "	      00557b47    mov edx,[eax]"
 "	      00557b49    mov [ecx],edx"
 "	      00557b4b    mov ax,[eax+4]"
@@ -4742,15 +4742,15 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 "	      00557b58    push eax"
 "	      00557b59    mov eax,[ebp-10h]"
 "	      00557b5c    push eax"
-"	      00557b5d    mov eax,[ebp-1Ch]"
+"	      00557b5d    mov eax,this"
 "	      00557b60    mov eax,[eax]"
-"	      00557b62    mov ecx,[ebp-1Ch]"
+"	      00557b62    mov ecx,this"
 "	      00557b65    call dword ptr [eax+14h]"
-"	      00557b68    mov [ebp-0Ch],ax"
+"	      00557b68    mov range,ax"
 );
 // LINE 981:
 	asm( 
-"	      00557b6c    movsx eax,word ptr [ebp-0Ch]"
+"	      00557b6c    movsx eax,range"
 "	      00557b70    test eax,eax"
 "	      00557b72    jg near ptr 00557B94h"
 "	      00557b78    push 8C085h"
@@ -4762,10 +4762,10 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 );
 // LINE 982:
 	asm( 
-"	      00557b94    movsx eax,word ptr [ebp-14h]"
+"	      00557b94    movsx eax,rand.destTemp"
 "	      00557b98    cmp eax,0FFFFFFFFh"
 "	      00557b9b    jle near ptr 00557BAEh"
-"	      00557ba1    movsx eax,word ptr [ebp-14h]"
+"	      00557ba1    movsx eax,rand.destTemp"
 "	      00557ba5    cmp eax,4"
 "	      00557ba8    jl near ptr 00557BCAh"
 "	      00557bae    push 8C085h"
@@ -4775,13 +4775,13 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 "	      00557bc2    call 00554F30h"
 "	      00557bc7    add esp,10h"
 "	      00557bca    jmp near ptr 00557BCFh"
-"	      00557bcf    mov eax,[ebp-1Ch]"
+"	      00557bcf    mov eax,this"
 "	      00557bd2    movsx eax,word ptr [eax+8]"
 "	      00557bd6    lea eax,[eax*4-4]"
 "	      00557bdd    lea eax,[eax+eax*4]"
-"	      00557be0    mov ecx,[ebp-1Ch]"
+"	      00557be0    mov ecx,this"
 "	      00557be3    add eax,[ecx+4]"
-"	      00557be6    movsx ecx,word ptr [ebp-14h]"
+"	      00557be6    movsx ecx,rand.destTemp"
 "	      00557bea    lea eax,[eax+ecx*2]"
 "	      00557bed    add eax,8"
 "	      00557bf0    mov [ebp-18h],eax"
@@ -4795,11 +4795,11 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 );
 // LINE 983:
 	asm( 
-"	      00557c0a    mov dword ptr [ebp-4],1"
+"	      00557c0a    mov result,1"
 );
 // LINE 985:
 	asm( 
-"	      00557c11    mov eax,[ebp-4]"
+"	      00557c11    mov eax,result"
 "	      00557c14    jmp near ptr 00557C19h"
 );
 // LINE 986:
@@ -4829,18 +4829,18 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557c26    push ebx"
 "	      00557c27    push esi"
 "	      00557c28    push edi"
-"	      00557c29    mov [ebp-3Ch],ecx"
+"	      00557c29    mov this,ecx"
 );
 // LINE 990:
 	asm( 
-"	      00557c2c    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00557c33    mov eax,[ebp+0Ch]"
+"	      00557c2c    mov result,0FFFFFFFFh"
+"	      00557c33    mov eax,node"
 "	      00557c36    add eax,4"
-"	      00557c39    mov [ebp-24h],eax"
+"	      00557c39    mov nparam,eax"
 );
 // LINE 991:
 	asm( 
-"	      00557c3c    mov eax,[ebp+8]"
+"	      00557c3c    mov eax,elem"
 "	      00557c3f    cmp dword ptr [eax+4],0"
 "	      00557c43    jne near ptr 00557C65h"
 "	      00557c49    push 8C085h"
@@ -4852,20 +4852,20 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 992:
 	asm( 
-"	      00557c65    mov eax,[ebp-24h]"
+"	      00557c65    mov eax,nparam"
 "	      00557c68    mov eax,[eax]"
 "	      00557c6a    mov [ebp-20h],eax"
 );
 // LINE 995:
 	asm( 
-"	      00557c6d    mov word ptr [ebp-8],0"
+"	      00557c6d    mov speed,0"
 );
 // LINE 996:
 	asm( 
-"	      00557c73    movsx eax,word ptr [ebp-20h]"
+"	      00557c73    movsx eax,walkgrab.decTemp"
 "	      00557c77    cmp eax,0FFFFFFFFh"
 "	      00557c7a    jle near ptr 00557C8Dh"
-"	      00557c80    movsx eax,word ptr [ebp-20h]"
+"	      00557c80    movsx eax,walkgrab.decTemp"
 "	      00557c84    cmp eax,4"
 "	      00557c87    jl near ptr 00557CA9h"
 "	      00557c8d    push 8C085h"
@@ -4876,24 +4876,24 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557ca6    add esp,10h"
 "	      00557ca9    jmp near ptr 00557CAEh"
 "	      00557cae    jmp near ptr 00557CB3h"
-"	      00557cb3    mov eax,[ebp-3Ch]"
+"	      00557cb3    mov eax,this"
 "	      00557cb6    movsx eax,word ptr [eax+8]"
 "	      00557cba    lea eax,[eax*4-4]"
 "	      00557cc1    lea eax,[eax+eax*4]"
-"	      00557cc4    mov ecx,[ebp-3Ch]"
+"	      00557cc4    mov ecx,this"
 "	      00557cc7    add eax,[ecx+4]"
-"	      00557cca    movsx ecx,word ptr [ebp-20h]"
+"	      00557cca    movsx ecx,walkgrab.decTemp"
 "	      00557cce    movsx eax,word ptr [eax+ecx*2+8]"
 "	      00557cd3    test eax,eax"
 "	      00557cd5    jne near ptr 00557CEEh"
 );
 // LINE 997:
 	asm( 
-"	      00557cdb    mov dword ptr [ebp-1Ch],8"
+"	      00557cdb    mov movecode,8"
 );
 // LINE 998:
 	asm( 
-"	      00557ce2    mov dword ptr [ebp-4],0"
+"	      00557ce2    mov result,0"
 );
 // LINE 1000:
 	asm( 
@@ -4903,10 +4903,10 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 // Block start:
 	struct _DYOBJ_INST* goal;
 	asm( 
-"	      00557cee    movsx eax,word ptr [ebp-20h]"
+"	      00557cee    movsx eax,walkgrab.decTemp"
 "	      00557cf2    cmp eax,0FFFFFFFFh"
 "	      00557cf5    jle near ptr 00557D08h"
-"	      00557cfb    movsx eax,word ptr [ebp-20h]"
+"	      00557cfb    movsx eax,walkgrab.decTemp"
 "	      00557cff    cmp eax,4"
 "	      00557d02    jl near ptr 00557D24h"
 "	      00557d08    push 8C085h"
@@ -4916,13 +4916,13 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557d1c    call 00554F30h"
 "	      00557d21    add esp,10h"
 "	      00557d24    jmp near ptr 00557D29h"
-"	      00557d29    mov eax,[ebp-3Ch]"
+"	      00557d29    mov eax,this"
 "	      00557d2c    movsx eax,word ptr [eax+8]"
 "	      00557d30    lea eax,[eax*4-4]"
 "	      00557d37    lea eax,[eax+eax*4]"
-"	      00557d3a    mov ecx,[ebp-3Ch]"
+"	      00557d3a    mov ecx,this"
 "	      00557d3d    add eax,[ecx+4]"
-"	      00557d40    movsx ecx,word ptr [ebp-20h]"
+"	      00557d40    movsx ecx,walkgrab.decTemp"
 "	      00557d44    lea eax,[eax+ecx*2]"
 "	      00557d47    add eax,8"
 "	      00557d4a    mov [ebp-2Ch],eax"
@@ -4932,23 +4932,23 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 1002:
 	asm( 
-"	      00557d58    mov eax,[ebp+8]"
+"	      00557d58    mov eax,elem"
 "	      00557d5b    mov eax,[eax+4]"
-"	      00557d5e    mov [ebp-28h],eax"
+"	      00557d5e    mov goal,eax"
 );
 // LINE 1003:
 	asm( 
 "	      00557d61    jmp near ptr 00557D66h"
-"	      00557d66    mov eax,[ebp-28h]"
+"	      00557d66    mov eax,goal"
 "	      00557d69    mov eax,[eax+20h]"
 "	      00557d6c    push eax"
-"	      00557d6d    mov eax,[ebp-28h]"
+"	      00557d6d    mov eax,goal"
 "	      00557d70    mov eax,[eax+18h]"
 "	      00557d73    push eax"
-"	      00557d74    mov eax,[ebp-3Ch]"
+"	      00557d74    mov eax,this"
 "	      00557d77    mov eax,[eax+44h]"
 "	      00557d7a    push eax"
-"	      00557d7b    mov eax,[ebp-3Ch]"
+"	      00557d7b    mov eax,this"
 "	      00557d7e    mov eax,[eax+3Ch]"
 "	      00557d81    push eax"
 "	      00557d82    call 00551AF1h"
@@ -4956,42 +4956,42 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557d8a    movsx eax,ax"
 "	      00557d8d    sub eax,2"
 "	      00557d90    and eax,7"
-"	      00557d93    mov ecx,[ebp-3Ch]"
+"	      00557d93    mov ecx,this"
 "	      00557d96    mov [ecx+0D0h],ax"
 );
 // LINE 1004:
 	asm( 
 "	      00557d9d    push 10h"
 "	      00557d9f    push 0"
-"	      00557da1    lea eax,[ebp-18h]"
+"	      00557da1    lea eax,moveinfo.locType"
 "	      00557da4    push eax"
 "	      00557da5    call 00554C10h"
 "	      00557daa    add esp,0Ch"
 );
 // LINE 1005:
 	asm( 
-"	      00557dad    mov eax,[ebp-3Ch]"
+"	      00557dad    mov eax,this"
 "	      00557db0    mov ax,[eax+0F4h]"
-"	      00557db7    mov [ebp-8],ax"
+"	      00557db7    mov speed,ax"
 );
 // LINE 1006:
 	asm( 
-"	      00557dbb    lea eax,[ebp-18h]"
+"	      00557dbb    lea eax,moveinfo.locType"
 "	      00557dbe    push eax"
 "	      00557dbf    push 0"
 "	      00557dc1    mov eax,[ebp-8]"
 "	      00557dc4    push eax"
-"	      00557dc5    mov ecx,[ebp-3Ch]"
+"	      00557dc5    mov ecx,this"
 "	      00557dc8    call 00555885h"
-"	      00557dcd    mov [ebp-1Ch],eax"
+"	      00557dcd    mov movecode,eax"
 );
 // LINE 1007:
 	asm( 
-"	      00557dd0    cmp dword ptr [ebp-1Ch],0Ah"
+"	      00557dd0    cmp movecode,0Ah"
 "	      00557dd4    jne near ptr 00557F00h"
-"	      00557dda    mov eax,[ebp-28h]"
+"	      00557dda    mov eax,goal"
 "	      00557ddd    mov eax,[eax+1Ch]"
-"	      00557de0    mov ecx,[ebp-3Ch]"
+"	      00557de0    mov ecx,this"
 "	      00557de3    sub eax,[ecx+40h]"
 "	      00557de6    and eax,0FFFF0000h"
 "	      00557deb    mov ecx,50000h"
@@ -5001,22 +5001,22 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 1008:
 	asm( 
-"	      00557dfe    mov eax,[ebp+0Ch]"
+"	      00557dfe    mov eax,node"
 "	      00557e01    movsx eax,word ptr [eax]"
 "	      00557e04    cmp eax,0Ch"
 "	      00557e07    jne near ptr 00557EF4h"
 );
 // LINE 1009:
 	asm( 
-"	      00557e0d    mov eax,[ebp+8]"
+"	      00557e0d    mov eax,elem"
 "	      00557e10    mov eax,[eax+4]"
 "	      00557e13    push eax"
-"	      00557e14    mov ecx,[ebp-3Ch]"
+"	      00557e14    mov ecx,this"
 "	      00557e17    call 0054CECAh"
 "	      00557e1c    movzx eax,ax"
 "	      00557e1f    test eax,eax"
 "	      00557e21    je near ptr 00557EE8h"
-"	      00557e27    mov eax,[ebp+8]"
+"	      00557e27    mov eax,elem"
 "	      00557e2a    mov eax,[eax+4]"
 "	      00557e2d    mov [ebp-38h],eax"
 );
@@ -5024,7 +5024,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 	asm( 
 "	      00557e30    mov eax,[ebp-38h]"
 "	      00557e33    add eax,18h"
-"	      00557e36    mov ecx,[ebp-3Ch]"
+"	      00557e36    mov ecx,this"
 "	      00557e39    add ecx,3Ch"
 "	      00557e3c    mov edx,[eax]"
 "	      00557e3e    mov [ecx],edx"
@@ -5032,20 +5032,20 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557e43    mov [ecx+4],edx"
 "	      00557e46    mov eax,[eax+8]"
 "	      00557e49    mov [ecx+8],eax"
-"	      00557e4c    mov ecx,[ebp-3Ch]"
+"	      00557e4c    mov ecx,this"
 "	      00557e4f    call 005507ECh"
 "	      00557e54    mov eax,20000000h"
-"	      00557e59    mov ecx,[ebp-3Ch]"
+"	      00557e59    mov ecx,this"
 "	      00557e5c    sub eax,[ecx+44h]"
 "	      00557e5f    sar eax,16h"
 "	      00557e62    mov [ebp-30h],al"
-"	      00557e65    mov eax,[ebp-3Ch]"
+"	      00557e65    mov eax,this"
 "	      00557e68    mov eax,[eax+3Ch]"
 "	      00557e6b    add eax,20000000h"
 "	      00557e70    sar eax,16h"
 "	      00557e73    mov [ebp-34h],al"
 "	      00557e76    jmp near ptr 00557E7Bh"
-"	      00557e7b    mov eax,[ebp-3Ch]"
+"	      00557e7b    mov eax,this"
 "	      00557e7e    xor ecx,ecx"
 "	      00557e80    mov cx,[eax+20h]"
 "	      00557e84    test ecx,ecx"
@@ -5057,24 +5057,24 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557ea0    call 00554F30h"
 "	      00557ea5    add esp,10h"
 "	      00557ea8    mov al,[ebp-34h]"
-"	      00557eab    mov ecx,[ebp-3Ch]"
+"	      00557eab    mov ecx,this"
 "	      00557eae    mov [ecx+88h],al"
 "	      00557eb4    mov al,[ebp-30h]"
-"	      00557eb7    mov ecx,[ebp-3Ch]"
+"	      00557eb7    mov ecx,this"
 "	      00557eba    mov [ecx+89h],al"
 "	      00557ec0    jmp near ptr 00557EC5h"
-"	      00557ec5    mov ecx,[ebp-3Ch]"
+"	      00557ec5    mov ecx,this"
 "	      00557ec8    call 0055069Bh"
 "	      00557ecd    jmp near ptr 00557ED2h"
 );
 // LINE 1013:
 	asm( 
-"	      00557ed2    mov eax,[ebp+8]"
+"	      00557ed2    mov eax,elem"
 "	      00557ed5    mov dword ptr [eax+4],0"
 );
 // LINE 1014:
 	asm( 
-"	      00557edc    mov dword ptr [ebp-4],1"
+"	      00557edc    mov result,1"
 );
 // LINE 1016:
 	asm( 
@@ -5082,7 +5082,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 1017:
 	asm( 
-"	      00557ee8    mov dword ptr [ebp-4],0"
+"	      00557ee8    mov result,0"
 );
 // LINE 1019:
 	asm( 
@@ -5090,17 +5090,17 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 1020:
 	asm( 
-"	      00557ef4    mov dword ptr [ebp-4],1"
+"	      00557ef4    mov result,1"
 );
 // LINE 1022:
 	asm( 
 "	      00557efb    jmp near ptr 00557F1Dh"
-"	      00557f00    cmp dword ptr [ebp-1Ch],0"
+"	      00557f00    cmp movecode,0"
 "	      00557f04    jne near ptr 00557F16h"
 );
 // LINE 1023:
 	asm( 
-"	      00557f0a    mov dword ptr [ebp-4],2"
+"	      00557f0a    mov result,2"
 );
 // LINE 1024:
 	asm( 
@@ -5108,23 +5108,23 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 // LINE 1025:
 	asm( 
-"	      00557f16    mov dword ptr [ebp-4],0"
+"	      00557f16    mov result,0"
 );
 // LINE 1027:
 // Block end:
 	asm( 
-"	      00557f1d    lea eax,[ebp-18h]"
+"	      00557f1d    lea eax,moveinfo.locType"
 "	      00557f20    push eax"
-"	      00557f21    mov eax,[ebp-1Ch]"
+"	      00557f21    mov eax,movecode"
 "	      00557f24    push eax"
 "	      00557f25    mov eax,[ebp-8]"
 "	      00557f28    push eax"
-"	      00557f29    mov ecx,[ebp-3Ch]"
+"	      00557f29    mov ecx,this"
 "	      00557f2c    call 0054E579h"
 );
 // LINE 1029:
 	asm( 
-"	      00557f31    mov eax,[ebp-4]"
+"	      00557f31    mov eax,result"
 "	      00557f34    jmp near ptr 00557F39h"
 );
 // LINE 1030:
@@ -5151,38 +5151,38 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem* e
 "	      00557f46    push ebx"
 "	      00557f47    push esi"
 "	      00557f48    push edi"
-"	      00557f49    mov [ebp-10h],ecx"
+"	      00557f49    mov this,ecx"
 );
 // LINE 1034:
 	asm( 
-"	      00557f4c    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00557f53    mov eax,[ebp+0Ch]"
+"	      00557f4c    mov result,0FFFFFFFFh"
+"	      00557f53    mov eax,node"
 "	      00557f56    add eax,4"
-"	      00557f59    mov [ebp-8],eax"
+"	      00557f59    mov nparam,eax"
 );
 // LINE 1035:
 	asm( 
-"	      00557f5c    mov eax,[ebp-8]"
+"	      00557f5c    mov eax,nparam"
 "	      00557f5f    mov ax,[eax]"
-"	      00557f62    mov [ebp-0Ch],ax"
+"	      00557f62    mov param.updateLiteral,ax"
 );
 // LINE 1036:
 	asm( 
-"	      00557f66    mov eax,[ebp-10h]"
+"	      00557f66    mov eax,this"
 "	      00557f69    mov eax,[eax+1Ch]"
 "	      00557f6c    push eax"
-"	      00557f6d    movsx eax,word ptr [ebp-0Ch]"
+"	      00557f6d    movsx eax,param.updateLiteral"
 "	      00557f71    push eax"
-"	      00557f72    mov ecx,[ebp-10h]"
+"	      00557f72    mov ecx,this"
 "	      00557f75    call 0055B920h"
 );
 // LINE 1037:
 	asm( 
-"	      00557f7a    mov dword ptr [ebp-4],1"
+"	      00557f7a    mov result,1"
 );
 // LINE 1039:
 	asm( 
-"	      00557f81    mov eax,[ebp-4]"
+"	      00557f81    mov eax,result"
 "	      00557f84    jmp near ptr 00557F89h"
 );
 // LINE 1040:
@@ -5209,24 +5209,24 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      00557f96    push ebx"
 "	      00557f97    push esi"
 "	      00557f98    push edi"
-"	      00557f99    mov [ebp-30h],ecx"
+"	      00557f99    mov this,ecx"
 );
 // LINE 1044:
 	asm( 
-"	      00557f9c    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00557fa3    mov eax,[ebp+0Ch]"
+"	      00557f9c    mov result,0FFFFFFFFh"
+"	      00557fa3    mov eax,node"
 "	      00557fa6    add eax,4"
-"	      00557fa9    mov [ebp-8],eax"
+"	      00557fa9    mov nparam,eax"
 );
 // LINE 1045:
 	asm( 
-"	      00557fac    mov eax,[ebp-8]"
+"	      00557fac    mov eax,nparam"
 "	      00557faf    mov ax,[eax]"
-"	      00557fb2    mov [ebp-0Ch],ax"
+"	      00557fb2    mov param.whatLiteral,ax"
 );
 // LINE 1046:
 	asm( 
-"	      00557fb6    movsx eax,word ptr [ebp-0Ch]"
+"	      00557fb6    movsx eax,param.whatLiteral"
 "	      00557fba    mov [ebp-34h],eax"
 "	      00557fbd    jmp near ptr 00558238h"
 );
@@ -5238,7 +5238,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1051:
 	asm( 
-"	      00557fd1    mov dword ptr [ebp-4],1"
+"	      00557fd1    mov result,1"
 );
 // LINE 1052:
 	asm( 
@@ -5246,7 +5246,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1053:
 	asm( 
-"	      00557fdd    mov dword ptr [ebp-4],0"
+"	      00557fdd    mov result,0"
 );
 // LINE 1054:
 	asm( 
@@ -5262,22 +5262,22 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      00557ff4    push eax"
 "	      00557ff5    call 004F5A90h"
 "	      00557ffa    add esp,4"
-"	      00557ffd    mov [ebp-14h],eax"
+"	      00557ffd    mov hd,eax"
 );
 // LINE 1058:
 	asm( 
 "	      00558000    mov eax,ds:[5B4968h]"
 "	      00558005    mov eax,[eax+0A4h]"
 "	      0055800b    mov eax,[eax+1Ch]"
-"	      0055800e    mov ecx,[ebp-14h]"
+"	      0055800e    mov ecx,hd"
 "	      00558011    sub eax,[ecx+154h]"
 "	      00558017    sar eax,10h"
-"	      0055801a    mov [ebp-10h],ax"
+"	      0055801a    mov copterheight,ax"
 );
 // LINE 1060:
 	asm( 
 "	      0055801e    jmp near ptr 00558023h"
-"	      00558023    movsx eax,word ptr [ebp-10h]"
+"	      00558023    movsx eax,copterheight"
 "	      00558027    cdq"
 "	      00558028    xor eax,edx"
 "	      0055802a    sub eax,edx"
@@ -5287,7 +5287,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1061:
 	asm( 
-"	      00558038    mov dword ptr [ebp-4],1"
+"	      00558038    mov result,1"
 );
 // LINE 1062:
 	asm( 
@@ -5295,7 +5295,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1063:
 	asm( 
-"	      00558044    mov dword ptr [ebp-4],0"
+"	      00558044    mov result,0"
 );
 // LINE 1064:
 	asm( 
@@ -5308,7 +5308,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 	short delta_y;
 // Block end:
 	asm( 
-"	      00558050    mov eax,[ebp-30h]"
+"	      00558050    mov eax,this"
 "	      00558053    mov eax,[eax+130h]"
 "	      00558059    mov [ebp-20h],eax"
 );
@@ -5354,7 +5354,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1072:
 	asm( 
-"	      005580bf    mov dword ptr [ebp-4],1"
+"	      005580bf    mov result,1"
 );
 // LINE 1073:
 	asm( 
@@ -5362,7 +5362,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1074:
 	asm( 
-"	      005580cb    mov dword ptr [ebp-4],0"
+"	      005580cb    mov result,0"
 );
 // LINE 1075:
 	asm( 
@@ -5371,7 +5371,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 // LINE 1078:
 // Block end:
 	asm( 
-"	      005580d7    mov eax,[ebp-30h]"
+"	      005580d7    mov eax,this"
 "	      005580da    mov eax,[eax+130h]"
 "	      005580e0    mov [ebp-28h],eax"
 "	      005580e3    cmp dword ptr [ebp-28h],0"
@@ -5383,11 +5383,11 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      00558101    call 00554F30h"
 "	      00558106    add esp,10h"
 "	      00558109    jmp near ptr 0055810Eh"
-"	      0055810e    mov eax,[ebp-30h]"
+"	      0055810e    mov eax,this"
 "	      00558111    mov eax,[eax+0A0h]"
 "	      00558117    mov ecx,[ebp-28h]"
 "	      0055811a    sub eax,[ecx+18h]"
-"	      0055811d    mov ecx,[ebp-30h]"
+"	      0055811d    mov ecx,this"
 "	      00558120    add eax,[ecx+0A8h]"
 "	      00558126    mov ecx,[ebp-28h]"
 "	      00558129    sub eax,[ecx+20h]"
@@ -5408,7 +5408,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1079:
 	asm( 
-"	      00558164    mov dword ptr [ebp-4],1"
+"	      00558164    mov result,1"
 );
 // LINE 1080:
 	asm( 
@@ -5416,7 +5416,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1081:
 	asm( 
-"	      00558170    mov dword ptr [ebp-4],0"
+"	      00558170    mov result,0"
 );
 // LINE 1082:
 	asm( 
@@ -5424,7 +5424,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1085:
 	asm( 
-"	      0055817c    mov eax,[ebp+8]"
+"	      0055817c    mov eax,elem"
 "	      0055817f    cmp dword ptr [eax+4],0"
 "	      00558183    jne near ptr 005581A5h"
 "	      00558189    push 8C085h"
@@ -5436,7 +5436,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1087:
 	asm( 
-"	      005581a5    mov eax,[ebp+8]"
+"	      005581a5    mov eax,elem"
 "	      005581a8    mov ecx,ds:[5B4968h]"
 "	      005581ae    mov ecx,[ecx+0A4h]"
 "	      005581b4    cmp [eax+4],ecx"
@@ -5446,18 +5446,18 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 // Block start:
 	short copterheight;
 	asm( 
-"	      005581bd    mov eax,[ebp+8]"
+"	      005581bd    mov eax,elem"
 "	      005581c0    mov eax,[eax+4]"
 "	      005581c3    mov eax,[eax+1Ch]"
 "	      005581c6    mov ecx,ds:[5B4968h]"
 "	      005581cc    sub eax,[ecx+154h]"
 "	      005581d2    sar eax,10h"
-"	      005581d5    mov [ebp-24h],ax"
+"	      005581d5    mov copterheight,ax"
 );
 // LINE 1092:
 	asm( 
 "	      005581d9    jmp near ptr 005581DEh"
-"	      005581de    movsx eax,word ptr [ebp-24h]"
+"	      005581de    movsx eax,copterheight"
 "	      005581e2    cdq"
 "	      005581e3    xor eax,edx"
 "	      005581e5    sub eax,edx"
@@ -5467,7 +5467,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1093:
 	asm( 
-"	      005581f3    mov dword ptr [ebp-4],1"
+"	      005581f3    mov result,1"
 );
 // LINE 1094:
 	asm( 
@@ -5475,7 +5475,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1095:
 	asm( 
-"	      005581ff    mov dword ptr [ebp-4],0"
+"	      005581ff    mov result,0"
 );
 // LINE 1097:
 // Block end:
@@ -5484,7 +5484,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1098:
 	asm( 
-"	      0055820b    mov dword ptr [ebp-4],1"
+"	      0055820b    mov result,1"
 );
 // LINE 1100:
 	asm( 
@@ -5517,7 +5517,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 );
 // LINE 1105:
 	asm( 
-"	      00558260    mov eax,[ebp-4]"
+"	      00558260    mov eax,result"
 "	      00558263    jmp near ptr 00558268h"
 );
 // LINE 1106:
@@ -5547,19 +5547,19 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      00558275    push ebx"
 "	      00558276    push esi"
 "	      00558277    push edi"
-"	      00558278    mov [ebp-38h],ecx"
+"	      00558278    mov this,ecx"
 );
 // LINE 1110:
 	asm( 
-"	      0055827b    mov dword ptr [ebp-8],0FFFFFFFFh"
-"	      00558282    mov eax,[ebp+0Ch]"
+"	      0055827b    mov result,0FFFFFFFFh"
+"	      00558282    mov eax,node"
 "	      00558285    add eax,4"
-"	      00558288    mov [ebp-10h],eax"
+"	      00558288    mov nparam,eax"
 );
 // LINE 1111:
 	asm( 
-"	      0055828b    mov eax,[ebp-10h]"
-"	      0055828e    lea ecx,[ebp-18h]"
+"	      0055828b    mov eax,nparam"
+"	      0055828e    lea ecx,param.withWhatLiteral"
 "	      00558291    mov edx,[eax]"
 "	      00558293    mov [ecx],edx"
 "	      00558295    mov ax,[eax+4]"
@@ -5572,25 +5572,25 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005582a2    push eax"
 "	      005582a3    mov eax,[ebp-14h]"
 "	      005582a6    push eax"
-"	      005582a7    mov eax,[ebp-38h]"
+"	      005582a7    mov eax,this"
 "	      005582aa    mov eax,[eax]"
-"	      005582ac    mov ecx,[ebp-38h]"
+"	      005582ac    mov ecx,this"
 "	      005582af    call dword ptr [eax+14h]"
-"	      005582b2    mov [ebp-0Ch],ax"
+"	      005582b2    mov distance,ax"
 );
 // LINE 1115:
 	asm( 
-"	      005582b6    mov dword ptr [ebp-4],0"
+"	      005582b6    mov destobj,0"
 );
 // LINE 1116:
 	asm( 
-"	      005582bd    movsx eax,word ptr [ebp-18h]"
+"	      005582bd    movsx eax,param.withWhatLiteral"
 "	      005582c1    mov [ebp-3Ch],eax"
 "	      005582c4    jmp near ptr 005586A2h"
 );
 // LINE 1118:
 	asm( 
-"	      005582c9    mov eax,[ebp-38h]"
+"	      005582c9    mov eax,this"
 "	      005582cc    movsx eax,word ptr [eax+0D8h]"
 "	      005582d3    test eax,eax"
 "	      005582d5    jne near ptr 005582F7h"
@@ -5603,7 +5603,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1119:
 	asm( 
-"	      005582f7    mov eax,[ebp-38h]"
+"	      005582f7    mov eax,this"
 "	      005582fa    cmp dword ptr [eax+1Ch],0FFFFFFFFh"
 "	      005582fe    jne near ptr 00558320h"
 "	      00558304    push 8C085h"
@@ -5615,15 +5615,15 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1120:
 	asm( 
-"	      00558320    mov eax,[ebp-38h]"
+"	      00558320    mov eax,this"
 "	      00558323    mov eax,[eax+1Ch]"
 "	      00558326    push eax"
 "	      00558327    call 004FBBCAh"
 "	      0055832c    add esp,4"
 "	      0055832f    mov ecx,[eax]"
 "	      00558331    mov eax,[eax+4]"
-"	      00558334    mov [ebp-20h],ecx"
-"	      00558337    mov [ebp-1Ch],eax"
+"	      00558334    mov destloc.x,ecx"
+"	      00558337    mov destloc.y,eax"
 );
 // LINE 1121:
 	asm( 
@@ -5631,13 +5631,13 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1123:
 	asm( 
-"	      0055833f    mov eax,[ebp-38h]"
+"	      0055833f    mov eax,this"
 "	      00558342    mov eax,[eax+140h]"
-"	      00558348    mov [ebp-4],eax"
+"	      00558348    mov destobj,eax"
 );
 // LINE 1124:
 	asm( 
-"	      0055834b    cmp dword ptr [ebp-4],0"
+"	      0055834b    cmp destobj,0"
 "	      0055834f    jne near ptr 00558371h"
 "	      00558355    push 8C085h"
 "	      0055835a    push 5BCE88h"
@@ -5652,13 +5652,13 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1127:
 	asm( 
-"	      00558376    mov eax,[ebp+8]"
+"	      00558376    mov eax,elem"
 "	      00558379    mov eax,[eax+4]"
-"	      0055837c    mov [ebp-4],eax"
+"	      0055837c    mov destobj,eax"
 );
 // LINE 1128:
 	asm( 
-"	      0055837f    cmp dword ptr [ebp-4],0"
+"	      0055837f    cmp destobj,0"
 "	      00558383    jne near ptr 005583A5h"
 "	      00558389    push 8C085h"
 "	      0055838e    push 5BCEE4h"
@@ -5675,7 +5675,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	asm( 
 "	      005583aa    mov eax,ds:[5B4968h]"
 "	      005583af    mov eax,[eax+0BCh]"
-"	      005583b5    mov [ebp-4],eax"
+"	      005583b5    mov destobj,eax"
 );
 // LINE 1133:
 	asm( 
@@ -5685,7 +5685,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	asm( 
 "	      005583bd    mov eax,ds:[5B4968h]"
 "	      005583c2    mov eax,[eax+0A4h]"
-"	      005583c8    mov [ebp-4],eax"
+"	      005583c8    mov destobj,eax"
 );
 // LINE 1138:
 	asm( 
@@ -5712,20 +5712,20 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005583f3    push 1"
 "	      005583f5    push 0FFFFFFFEh"
 "	      005583f7    push 1"
-"	      005583f9    mov ecx,[ebp-38h]"
+"	      005583f9    mov ecx,this"
 "	      005583fc    call 00556EC0h"
-"	      00558401    mov [ebp-24h],eax"
+"	      00558401    mov obj,eax"
 );
 // LINE 1148:
 	asm( 
-"	      00558404    cmp dword ptr [ebp-24h],0"
+"	      00558404    cmp obj,0"
 "	      00558408    je near ptr 0055841Ch"
 );
 // LINE 1149:
 	asm( 
-"	      0055840e    mov eax,[ebp-24h]"
+"	      0055840e    mov eax,obj"
 "	      00558411    add eax,24h"
-"	      00558414    mov [ebp-4],eax"
+"	      00558414    mov destobj,eax"
 );
 // LINE 1150:
 	asm( 
@@ -5733,13 +5733,13 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1151:
 	asm( 
-"	      0055841c    mov dword ptr [ebp-8],0"
+"	      0055841c    mov result,0"
 );
 // LINE 1153:
 	asm( 
-"	      00558423    mov eax,[ebp-38h]"
+"	      00558423    mov eax,this"
 "	      00558426    add eax,24h"
-"	      00558429    cmp eax,[ebp-4]"
+"	      00558429    cmp eax,destobj"
 "	      0055842c    jne near ptr 0055844Eh"
 "	      00558432    push 8C085h"
 "	      00558437    push 5BCF84h"
@@ -5757,11 +5757,11 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	asm( 
 "	      00558453    mov eax,ds:[5B8680h]"
 "	      00558458    add eax,24h"
-"	      0055845b    mov [ebp-4],eax"
+"	      0055845b    mov destobj,eax"
 );
 // LINE 1158:
 	asm( 
-"	      0055845e    mov dword ptr [ebp-8],1"
+"	      0055845e    mov result,1"
 );
 // LINE 1159:
 	asm( 
@@ -5775,20 +5775,20 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      0055846c    push 1"
 "	      0055846e    push 0FFFFFFFEh"
 "	      00558470    push 0"
-"	      00558472    mov ecx,[ebp-38h]"
+"	      00558472    mov ecx,this"
 "	      00558475    call 00556EC0h"
-"	      0055847a    mov [ebp-28h],eax"
+"	      0055847a    mov obj,eax"
 );
 // LINE 1163:
 	asm( 
-"	      0055847d    cmp dword ptr [ebp-28h],0"
+"	      0055847d    cmp obj,0"
 "	      00558481    je near ptr 00558495h"
 );
 // LINE 1164:
 	asm( 
-"	      00558487    mov eax,[ebp-28h]"
+"	      00558487    mov eax,obj"
 "	      0055848a    add eax,24h"
-"	      0055848d    mov [ebp-4],eax"
+"	      0055848d    mov destobj,eax"
 );
 // LINE 1165:
 	asm( 
@@ -5796,13 +5796,13 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1166:
 	asm( 
-"	      00558495    mov dword ptr [ebp-8],0"
+"	      00558495    mov result,0"
 );
 // LINE 1168:
 	asm( 
-"	      0055849c    mov eax,[ebp-38h]"
+"	      0055849c    mov eax,this"
 "	      0055849f    add eax,24h"
-"	      005584a2    cmp eax,[ebp-4]"
+"	      005584a2    cmp eax,destobj"
 "	      005584a5    jne near ptr 005584C7h"
 "	      005584ab    push 8C085h"
 "	      005584b0    push 5BCFB0h"
@@ -5824,7 +5824,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005584ce    push 1"
 "	      005584d0    push 6"
 "	      005584d2    push 0FFFFFFFEh"
-"	      005584d4    mov ecx,[ebp-38h]"
+"	      005584d4    mov ecx,this"
 "	      005584d7    call 00556EC0h"
 "	      005584dc    mov [ebp-2Ch],eax"
 );
@@ -5837,7 +5837,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	asm( 
 "	      005584e9    mov eax,[ebp-2Ch]"
 "	      005584ec    add eax,24h"
-"	      005584ef    mov [ebp-4],eax"
+"	      005584ef    mov destobj,eax"
 );
 // LINE 1175:
 	asm( 
@@ -5845,13 +5845,13 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1176:
 	asm( 
-"	      005584f7    mov dword ptr [ebp-8],0"
+"	      005584f7    mov result,0"
 );
 // LINE 1178:
 	asm( 
-"	      005584fe    mov eax,[ebp-38h]"
+"	      005584fe    mov eax,this"
 "	      00558501    add eax,24h"
-"	      00558504    cmp eax,[ebp-4]"
+"	      00558504    cmp eax,destobj"
 "	      00558507    jne near ptr 00558529h"
 "	      0055850d    push 8C085h"
 "	      00558512    push 5BCFDCh"
@@ -5867,27 +5867,27 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 // LINE 1182:
 // Block end:
 	asm( 
-"	      0055852e    mov eax,[ebp-38h]"
+"	      0055852e    mov eax,this"
 "	      00558531    xor ecx,ecx"
 "	      00558533    mov cl,[eax+89h]"
 "	      00558539    push ecx"
-"	      0055853a    mov eax,[ebp-38h]"
+"	      0055853a    mov eax,this"
 "	      0055853d    xor ecx,ecx"
 "	      0055853f    mov cl,[eax+88h]"
 "	      00558545    push ecx"
 "	      00558546    push 0"
 "	      00558548    call 0050176Eh"
 "	      0055854d    add esp,0Ch"
-"	      00558550    mov [ebp-4],eax"
+"	      00558550    mov destobj,eax"
 );
 // LINE 1183:
 	asm( 
-"	      00558553    cmp dword ptr [ebp-4],0"
+"	      00558553    cmp destobj,0"
 "	      00558557    je near ptr 00558569h"
 );
 // LINE 1184:
 	asm( 
-"	      0055855d    mov dword ptr [ebp-8],1"
+"	      0055855d    mov result,1"
 );
 // LINE 1185:
 	asm( 
@@ -5895,7 +5895,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1186:
 	asm( 
-"	      00558569    mov dword ptr [ebp-8],0"
+"	      00558569    mov result,0"
 );
 // LINE 1187:
 	asm( 
@@ -5903,27 +5903,27 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1190:
 	asm( 
-"	      00558575    mov eax,[ebp-38h]"
+"	      00558575    mov eax,this"
 "	      00558578    xor ecx,ecx"
 "	      0055857a    mov cl,[eax+89h]"
 "	      00558580    push ecx"
-"	      00558581    mov eax,[ebp-38h]"
+"	      00558581    mov eax,this"
 "	      00558584    xor ecx,ecx"
 "	      00558586    mov cl,[eax+88h]"
 "	      0055858c    push ecx"
 "	      0055858d    push 3"
 "	      0055858f    call 0050176Eh"
 "	      00558594    add esp,0Ch"
-"	      00558597    mov [ebp-4],eax"
+"	      00558597    mov destobj,eax"
 );
 // LINE 1191:
 	asm( 
-"	      0055859a    cmp dword ptr [ebp-4],0"
+"	      0055859a    cmp destobj,0"
 "	      0055859e    je near ptr 005585B0h"
 );
 // LINE 1192:
 	asm( 
-"	      005585a4    mov dword ptr [ebp-8],1"
+"	      005585a4    mov result,1"
 );
 // LINE 1193:
 	asm( 
@@ -5931,7 +5931,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1194:
 	asm( 
-"	      005585b0    mov dword ptr [ebp-8],0"
+"	      005585b0    mov result,0"
 );
 // LINE 1195:
 	asm( 
@@ -5939,27 +5939,27 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1199:
 	asm( 
-"	      005585bc    mov eax,[ebp-38h]"
+"	      005585bc    mov eax,this"
 "	      005585bf    xor ecx,ecx"
 "	      005585c1    mov cl,[eax+89h]"
 "	      005585c7    push ecx"
-"	      005585c8    mov eax,[ebp-38h]"
+"	      005585c8    mov eax,this"
 "	      005585cb    xor ecx,ecx"
 "	      005585cd    mov cl,[eax+88h]"
 "	      005585d3    push ecx"
 "	      005585d4    push 1"
 "	      005585d6    call 0050176Eh"
 "	      005585db    add esp,0Ch"
-"	      005585de    mov [ebp-4],eax"
+"	      005585de    mov destobj,eax"
 );
 // LINE 1200:
 	asm( 
-"	      005585e1    cmp dword ptr [ebp-4],0"
+"	      005585e1    cmp destobj,0"
 "	      005585e5    je near ptr 005585F7h"
 );
 // LINE 1201:
 	asm( 
-"	      005585eb    mov dword ptr [ebp-8],1"
+"	      005585eb    mov result,1"
 );
 // LINE 1202:
 	asm( 
@@ -5967,7 +5967,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1203:
 	asm( 
-"	      005585f7    mov dword ptr [ebp-8],0"
+"	      005585f7    mov result,0"
 );
 // LINE 1204:
 	asm( 
@@ -5975,27 +5975,27 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1207:
 	asm( 
-"	      00558603    mov eax,[ebp-38h]"
+"	      00558603    mov eax,this"
 "	      00558606    xor ecx,ecx"
 "	      00558608    mov cl,[eax+89h]"
 "	      0055860e    push ecx"
-"	      0055860f    mov eax,[ebp-38h]"
+"	      0055860f    mov eax,this"
 "	      00558612    xor ecx,ecx"
 "	      00558614    mov cl,[eax+88h]"
 "	      0055861a    push ecx"
 "	      0055861b    push 2"
 "	      0055861d    call 0050176Eh"
 "	      00558622    add esp,0Ch"
-"	      00558625    mov [ebp-4],eax"
+"	      00558625    mov destobj,eax"
 );
 // LINE 1208:
 	asm( 
-"	      00558628    cmp dword ptr [ebp-4],0"
+"	      00558628    cmp destobj,0"
 "	      0055862c    je near ptr 0055863Eh"
 );
 // LINE 1209:
 	asm( 
-"	      00558632    mov dword ptr [ebp-8],1"
+"	      00558632    mov result,1"
 );
 // LINE 1210:
 	asm( 
@@ -6003,7 +6003,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1211:
 	asm( 
-"	      0055863e    mov dword ptr [ebp-8],0"
+"	      0055863e    mov result,0"
 );
 // LINE 1212:
 	asm( 
@@ -6017,20 +6017,20 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      0055864c    push 1"
 "	      0055864e    push 0"
 "	      00558650    push 0FFFFFFFEh"
-"	      00558652    mov ecx,[ebp-38h]"
+"	      00558652    mov ecx,this"
 "	      00558655    call 00556EC0h"
-"	      0055865a    mov [ebp-30h],eax"
+"	      0055865a    mov obj,eax"
 );
 // LINE 1216:
 	asm( 
-"	      0055865d    cmp dword ptr [ebp-30h],0"
+"	      0055865d    cmp obj,0"
 "	      00558661    je near ptr 00558675h"
 );
 // LINE 1217:
 	asm( 
-"	      00558667    mov eax,[ebp-30h]"
+"	      00558667    mov eax,obj"
 "	      0055866a    add eax,24h"
-"	      0055866d    mov [ebp-4],eax"
+"	      0055866d    mov destobj,eax"
 );
 // LINE 1218:
 	asm( 
@@ -6038,7 +6038,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1219:
 	asm( 
-"	      00558675    mov dword ptr [ebp-8],0"
+"	      00558675    mov result,0"
 );
 // LINE 1221:
 	asm( 
@@ -6085,39 +6085,39 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1226:
 	asm( 
-"	      005586f2    cmp dword ptr [ebp-8],0"
+"	      005586f2    cmp result,0"
 "	      005586f6    je near ptr 005587B9h"
 );
 // LINE 1227:
 // Block start:
 	short dist;
 	asm( 
-"	      005586fc    cmp dword ptr [ebp-4],0"
+"	      005586fc    cmp destobj,0"
 "	      00558700    je near ptr 00558728h"
 );
 // LINE 1228:
 	asm( 
-"	      00558706    mov eax,[ebp-4]"
+"	      00558706    mov eax,destobj"
 "	      00558709    mov eax,[eax+18h]"
 "	      0055870c    add eax,20000000h"
 "	      00558711    sar eax,16h"
-"	      00558714    mov [ebp-20h],eax"
+"	      00558714    mov destloc.x,eax"
 );
 // LINE 1229:
 	asm( 
 "	      00558717    mov eax,20000000h"
-"	      0055871c    mov ecx,[ebp-4]"
+"	      0055871c    mov ecx,destobj"
 "	      0055871f    sub eax,[ecx+20h]"
 "	      00558722    sar eax,16h"
-"	      00558725    mov [ebp-1Ch],eax"
+"	      00558725    mov destloc.y,eax"
 );
 // LINE 1232:
 	asm( 
 "	      00558728    jmp near ptr 0055872Dh"
 "	      0055872d    jmp near ptr 00558732h"
 "	      00558732    jmp near ptr 00558737h"
-"	      00558737    mov eax,[ebp-1Ch]"
-"	      0055873a    mov ecx,[ebp-38h]"
+"	      00558737    mov eax,destloc.y"
+"	      0055873a    mov ecx,this"
 "	      0055873d    xor edx,edx"
 "	      0055873f    mov dl,[ecx+89h]"
 "	      00558745    sub eax,edx"
@@ -6126,8 +6126,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      0055874b    xor eax,edx"
 "	      0055874d    sub eax,edx"
 "	      0055874f    movsx ecx,ax"
-"	      00558752    mov eax,[ebp-20h]"
-"	      00558755    mov edx,[ebp-38h]"
+"	      00558752    mov eax,destloc.x"
+"	      00558755    mov edx,this"
 "	      00558758    xor ebx,ebx"
 "	      0055875a    mov bl,[edx+88h]"
 "	      00558760    sub eax,ebx"
@@ -6141,18 +6141,18 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      00558775    mov ecx,eax"
 "	      00558777    movsx eax,cx"
 "	      0055877a    and eax,0FFh"
-"	      0055877f    mov [ebp-34h],ax"
+"	      0055877f    mov dist,ax"
 );
 // LINE 1233:
 	asm( 
-"	      00558783    movsx eax,word ptr [ebp-34h]"
-"	      00558787    movsx ecx,word ptr [ebp-0Ch]"
+"	      00558783    movsx eax,dist"
+"	      00558787    movsx ecx,distance"
 "	      0055878b    cmp eax,ecx"
 "	      0055878d    jl near ptr 0055879Fh"
 );
 // LINE 1234:
 	asm( 
-"	      00558793    mov dword ptr [ebp-8],0"
+"	      00558793    mov result,0"
 );
 // LINE 1235:
 	asm( 
@@ -6160,23 +6160,23 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 );
 // LINE 1236:
 	asm( 
-"	      0055879f    cmp dword ptr [ebp-4],0"
+"	      0055879f    cmp destobj,0"
 "	      005587a3    je near ptr 005587B2h"
 );
 // LINE 1237:
 	asm( 
-"	      005587a9    mov eax,[ebp-4]"
-"	      005587ac    mov ecx,[ebp+8]"
+"	      005587a9    mov eax,destobj"
+"	      005587ac    mov ecx,elem"
 "	      005587af    mov [ecx+4],eax"
 );
 // LINE 1238:
 	asm( 
-"	      005587b2    mov dword ptr [ebp-8],1"
+"	      005587b2    mov result,1"
 );
 // LINE 1241:
 // Block end:
 	asm( 
-"	      005587b9    mov eax,[ebp-8]"
+"	      005587b9    mov eax,result"
 "	      005587bc    jmp near ptr 005587C1h"
 );
 // LINE 1242:
@@ -6201,24 +6201,24 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem* 
 "	      005587ce    push ebx"
 "	      005587cf    push esi"
 "	      005587d0    push edi"
-"	      005587d1    mov [ebp-8],ecx"
+"	      005587d1    mov this,ecx"
 );
 // LINE 1246:
 	asm( 
-"	      005587d4    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005587d4    mov result,0FFFFFFFFh"
 );
 // LINE 1247:
 	asm( 
-"	      005587db    mov ecx,[ebp-8]"
+"	      005587db    mov ecx,this"
 "	      005587de    call 0054B820h"
 );
 // LINE 1248:
 	asm( 
-"	      005587e3    mov dword ptr [ebp-4],3"
+"	      005587e3    mov result,3"
 );
 // LINE 1250:
 	asm( 
-"	      005587ea    mov eax,[ebp-4]"
+"	      005587ea    mov eax,result"
 "	      005587ed    jmp near ptr 005587F2h"
 );
 // LINE 1251:
@@ -6243,20 +6243,20 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 "	      005587ff    push ebx"
 "	      00558800    push esi"
 "	      00558801    push edi"
-"	      00558802    mov [ebp-10h],ecx"
+"	      00558802    mov this,ecx"
 );
 // LINE 1255:
 	asm( 
-"	      00558805    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00558805    mov result,0FFFFFFFFh"
 );
 // LINE 1256:
 	asm( 
-"	      0055880c    mov ecx,[ebp-10h]"
+"	      0055880c    mov ecx,this"
 "	      0055880f    call 00556470h"
 "	      00558814    movzx eax,ax"
 "	      00558817    test eax,eax"
 "	      00558819    je near ptr 005588BAh"
-"	      0055881f    mov eax,[ebp-10h]"
+"	      0055881f    mov eax,this"
 "	      00558822    cmp dword ptr [eax+130h],0"
 "	      00558829    jne near ptr 0055884Bh"
 "	      0055882f    push 8C085h"
@@ -6266,7 +6266,7 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 "	      00558843    call 00554F30h"
 "	      00558848    add esp,10h"
 "	      0055884b    push 0"
-"	      0055884d    mov ecx,[ebp-10h]"
+"	      0055884d    mov ecx,this"
 "	      00558850    call 0054CECAh"
 "	      00558855    mov [ebp-8],ax"
 "	      00558859    test dword ptr [ebp-8],0FFFFh"
@@ -6277,19 +6277,19 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 "	      00558875    push 5BBA14h"
 "	      0055887a    call 00554F30h"
 "	      0055887f    add esp,10h"
-"	      00558882    mov eax,[ebp-10h]"
+"	      00558882    mov eax,this"
 "	      00558885    mov eax,[eax+44h]"
 "	      00558888    push eax"
-"	      00558889    mov eax,[ebp-10h]"
+"	      00558889    mov eax,this"
 "	      0055888c    mov eax,[eax+40h]"
 "	      0055888f    push eax"
-"	      00558890    mov eax,[ebp-10h]"
+"	      00558890    mov eax,this"
 "	      00558893    mov eax,[eax+3Ch]"
 "	      00558896    push eax"
 "	      00558897    call 00551BF7h"
 "	      0055889c    add esp,0Ch"
 "	      0055889f    lea eax,[eax+30000h]"
-"	      005588a5    mov ecx,[ebp-10h]"
+"	      005588a5    mov ecx,this"
 "	      005588a8    mov [ecx+40h],eax"
 "	      005588ab    jmp near ptr 005588B0h"
 "	      005588b0    jmp near ptr 005588D1h"
@@ -6301,7 +6301,7 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 );
 // LINE 1257:
 	asm( 
-"	      005588d1    mov dword ptr [ebp-4],1"
+"	      005588d1    mov result,1"
 );
 // LINE 1258:
 	asm( 
@@ -6309,11 +6309,11 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 );
 // LINE 1259:
 	asm( 
-"	      005588dd    mov dword ptr [ebp-4],0"
+"	      005588dd    mov result,0"
 );
 // LINE 1261:
 	asm( 
-"	      005588e4    mov eax,[ebp-4]"
+"	      005588e4    mov eax,result"
 "	      005588e7    jmp near ptr 005588ECh"
 );
 // LINE 1262:
@@ -6338,15 +6338,15 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 "	      005588f9    push ebx"
 "	      005588fa    push esi"
 "	      005588fb    push edi"
-"	      005588fc    mov [ebp-0Ch],ecx"
+"	      005588fc    mov this,ecx"
 );
 // LINE 1266:
 	asm( 
-"	      005588ff    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005588ff    mov result,0FFFFFFFFh"
 );
 // LINE 1267:
 	asm( 
-"	      00558906    mov eax,[ebp+8]"
+"	      00558906    mov eax,elem"
 "	      00558909    cmp dword ptr [eax+4],0"
 "	      0055890d    jne near ptr 0055892Fh"
 "	      00558913    push 8C085h"
@@ -6355,7 +6355,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 "	      00558922    push 5BD064h"
 "	      00558927    call 00554F30h"
 "	      0055892c    add esp,10h"
-"	      0055892f    mov eax,[ebp+8]"
+"	      0055892f    mov eax,elem"
 "	      00558932    mov eax,[eax+4]"
 "	      00558935    mov [ebp-8],eax"
 );
@@ -6368,10 +6368,10 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 "	      00558944    mov eax,[ebp-8]"
 "	      00558947    mov eax,[eax+18h]"
 "	      0055894a    push eax"
-"	      0055894b    mov eax,[ebp-0Ch]"
+"	      0055894b    mov eax,this"
 "	      0055894e    mov eax,[eax+44h]"
 "	      00558951    push eax"
-"	      00558952    mov eax,[ebp-0Ch]"
+"	      00558952    mov eax,this"
 "	      00558955    mov eax,[eax+3Ch]"
 "	      00558958    push eax"
 "	      00558959    call 00551AF1h"
@@ -6379,16 +6379,16 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 "	      00558961    movsx eax,ax"
 "	      00558964    sub eax,2"
 "	      00558967    and eax,7"
-"	      0055896a    mov ecx,[ebp-0Ch]"
+"	      0055896a    mov ecx,this"
 "	      0055896d    mov [ecx+0D0h],ax"
 );
 // LINE 1269:
 	asm( 
-"	      00558974    mov dword ptr [ebp-4],1"
+"	      00558974    mov result,1"
 );
 // LINE 1271:
 	asm( 
-"	      0055897b    mov eax,[ebp-4]"
+"	      0055897b    mov eax,result"
 "	      0055897e    jmp near ptr 00558983h"
 );
 // LINE 1272:
@@ -6416,42 +6416,42 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem* ele
 "	      00558990    push ebx"
 "	      00558991    push esi"
 "	      00558992    push edi"
-"	      00558993    mov [ebp-14h],ecx"
+"	      00558993    mov this,ecx"
 );
 // LINE 1276:
 	asm( 
-"	      00558996    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055899d    mov eax,[ebp+0Ch]"
+"	      00558996    mov result,0FFFFFFFFh"
+"	      0055899d    mov eax,node"
 "	      005589a0    add eax,4"
-"	      005589a3    mov [ebp-0Ch],eax"
+"	      005589a3    mov nparam,eax"
 );
 // LINE 1277:
 	asm( 
-"	      005589a6    mov eax,[ebp-0Ch]"
+"	      005589a6    mov eax,nparam"
 "	      005589a9    mov ax,[eax]"
-"	      005589ac    mov [ebp-10h],ax"
+"	      005589ac    mov param.locTypeLiteral,ax"
 );
 // LINE 1278:
 	asm( 
-"	      005589b0    movsx eax,word ptr [ebp-10h]"
-"	      005589b4    mov [ebp-8],eax"
+"	      005589b0    movsx eax,param.locTypeLiteral"
+"	      005589b4    mov loctype,eax"
 );
 // LINE 1279:
 	asm( 
-"	      005589b7    mov eax,[ebp-14h]"
+"	      005589b7    mov eax,this"
 "	      005589ba    movzx ax,byte ptr [eax+89h]"
 "	      005589c2    push eax"
-"	      005589c3    mov eax,[ebp-14h]"
+"	      005589c3    mov eax,this"
 "	      005589c6    movzx ax,byte ptr [eax+88h]"
 "	      005589ce    push eax"
 "	      005589cf    call 00555746h"
 "	      005589d4    add esp,8"
-"	      005589d7    cmp eax,[ebp-8]"
+"	      005589d7    cmp eax,loctype"
 "	      005589da    jne near ptr 005589ECh"
 );
 // LINE 1280:
 	asm( 
-"	      005589e0    mov dword ptr [ebp-4],1"
+"	      005589e0    mov result,1"
 );
 // LINE 1281:
 	asm( 
@@ -6459,11 +6459,11 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem* ele
 );
 // LINE 1282:
 	asm( 
-"	      005589ec    mov dword ptr [ebp-4],0"
+"	      005589ec    mov result,0"
 );
 // LINE 1284:
 	asm( 
-"	      005589f3    mov eax,[ebp-4]"
+"	      005589f3    mov eax,result"
 "	      005589f6    jmp near ptr 005589FBh"
 );
 // LINE 1285:
@@ -6489,23 +6489,23 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 "	      00558a08    push ebx"
 "	      00558a09    push esi"
 "	      00558a0a    push edi"
-"	      00558a0b    mov [ebp-14h],ecx"
+"	      00558a0b    mov this,ecx"
 );
 // LINE 1289:
 	asm( 
-"	      00558a0e    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00558a0e    mov result,0FFFFFFFFh"
 );
 // LINE 1290:
 	asm( 
-"	      00558a15    mov eax,[ebp-14h]"
+"	      00558a15    mov eax,this"
 "	      00558a18    movzx ax,byte ptr [eax+89h]"
 "	      00558a20    push eax"
-"	      00558a21    mov eax,[ebp-14h]"
+"	      00558a21    mov eax,this"
 "	      00558a24    movzx ax,byte ptr [eax+88h]"
 "	      00558a2c    push eax"
 "	      00558a2d    call 00555746h"
 "	      00558a32    add esp,8"
-"	      00558a35    mov [ebp-8],eax"
+"	      00558a35    mov loctype,eax"
 );
 // LINE 1291:
 	asm( 
@@ -6515,12 +6515,12 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 "	      00558a47    movsx eax,word ptr [ebp-0Ch]"
 "	      00558a4b    cmp eax,0Ah"
 "	      00558a4e    jge near ptr 00558A82h"
-"	      00558a54    mov eax,[ebp-14h]"
+"	      00558a54    mov eax,this"
 "	      00558a57    movsx eax,word ptr [eax+0D6h]"
 "	      00558a5e    lea eax,[eax+eax*4]"
 "	      00558a61    movsx ecx,word ptr [ebp-0Ch]"
 "	      00558a65    shl ecx,2"
-"	      00558a68    mov edx,[ebp-8]"
+"	      00558a68    mov edx,loctype"
 "	      00558a6b    cmp [ecx+eax*8+6372D0h],edx"
 "	      00558a72    jne near ptr 00558A7Dh"
 "	      00558a78    jmp near ptr 00558A99h"
@@ -6532,7 +6532,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 );
 // LINE 1292:
 	asm( 
-"	      00558a99    mov dword ptr [ebp-4],1"
+"	      00558a99    mov result,1"
 );
 // LINE 1293:
 	asm( 
@@ -6540,11 +6540,11 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 );
 // LINE 1294:
 	asm( 
-"	      00558aa5    mov dword ptr [ebp-4],0"
+"	      00558aa5    mov result,0"
 );
 // LINE 1296:
 	asm( 
-"	      00558aac    mov eax,[ebp-4]"
+"	      00558aac    mov eax,result"
 "	      00558aaf    jmp near ptr 00558AB4h"
 );
 // LINE 1297:
@@ -6569,15 +6569,15 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem* el
 "	      00558ac1    push ebx"
 "	      00558ac2    push esi"
 "	      00558ac3    push edi"
-"	      00558ac4    mov [ebp-8],ecx"
+"	      00558ac4    mov this,ecx"
 );
 // LINE 1301:
 	asm( 
-"	      00558ac7    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00558ac7    mov result,0FFFFFFFFh"
 );
 // LINE 1302:
 	asm( 
-"	      00558ace    mov ecx,[ebp-8]"
+"	      00558ace    mov ecx,this"
 "	      00558ad1    call 00556470h"
 "	      00558ad6    movzx eax,ax"
 "	      00558ad9    test eax,eax"
@@ -6585,7 +6585,7 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem* el
 );
 // LINE 1303:
 	asm( 
-"	      00558ae1    mov dword ptr [ebp-4],1"
+"	      00558ae1    mov result,1"
 );
 // LINE 1304:
 	asm( 
@@ -6593,11 +6593,11 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem* el
 );
 // LINE 1305:
 	asm( 
-"	      00558aed    mov dword ptr [ebp-4],0"
+"	      00558aed    mov result,0"
 );
 // LINE 1307:
 	asm( 
-"	      00558af4    mov eax,[ebp-4]"
+"	      00558af4    mov eax,result"
 "	      00558af7    jmp near ptr 00558AFCh"
 );
 // LINE 1308:
@@ -6625,47 +6625,47 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 "	      00558b09    push ebx"
 "	      00558b0a    push esi"
 "	      00558b0b    push edi"
-"	      00558b0c    mov [ebp-24h],ecx"
+"	      00558b0c    mov this,ecx"
 );
 // LINE 1312:
 	asm( 
-"	      00558b0f    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00558b16    mov eax,[ebp+0Ch]"
+"	      00558b0f    mov result,0FFFFFFFFh"
+"	      00558b16    mov eax,node"
 "	      00558b19    add eax,4"
-"	      00558b1c    mov [ebp-8],eax"
+"	      00558b1c    mov nparam,eax"
 );
 // LINE 1313:
 	asm( 
-"	      00558b1f    mov eax,[ebp-8]"
+"	      00558b1f    mov eax,nparam"
 "	      00558b22    mov eax,[eax]"
 "	      00558b24    mov [ebp-14h],eax"
 );
 // LINE 1315:
 	asm( 
-"	      00558b27    lea eax,[ebp-10h]"
+"	      00558b27    lea eax,loc.x"
 "	      00558b2a    push eax"
 "	      00558b2b    call 004F6321h"
 "	      00558b30    add esp,4"
 );
 // LINE 1316:
 	asm( 
-"	      00558b33    mov eax,[ebp-24h]"
+"	      00558b33    mov eax,this"
 "	      00558b36    xor ecx,ecx"
 "	      00558b38    mov cl,[eax+88h]"
-"	      00558b3e    cmp ecx,[ebp-10h]"
+"	      00558b3e    cmp ecx,loc.x"
 "	      00558b41    jne near ptr 00558C86h"
-"	      00558b47    mov eax,[ebp-24h]"
+"	      00558b47    mov eax,this"
 "	      00558b4a    xor ecx,ecx"
 "	      00558b4c    mov cl,[eax+89h]"
-"	      00558b52    cmp ecx,[ebp-0Ch]"
+"	      00558b52    cmp ecx,loc.y"
 "	      00558b55    jne near ptr 00558C86h"
 );
 // LINE 1317:
 	asm( 
-"	      00558b5b    movsx eax,word ptr [ebp-14h]"
+"	      00558b5b    movsx eax,param.brightnessTemp"
 "	      00558b5f    cmp eax,0FFFFFFFFh"
 "	      00558b62    jle near ptr 00558B75h"
-"	      00558b68    movsx eax,word ptr [ebp-14h]"
+"	      00558b68    movsx eax,param.brightnessTemp"
 "	      00558b6c    cmp eax,4"
 "	      00558b6f    jl near ptr 00558B91h"
 "	      00558b75    push 8C085h"
@@ -6675,13 +6675,13 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 "	      00558b89    call 00554F30h"
 "	      00558b8e    add esp,10h"
 "	      00558b91    jmp near ptr 00558B96h"
-"	      00558b96    mov eax,[ebp-24h]"
+"	      00558b96    mov eax,this"
 "	      00558b99    movsx eax,word ptr [eax+8]"
 "	      00558b9d    lea eax,[eax*4-4]"
 "	      00558ba4    lea eax,[eax+eax*4]"
-"	      00558ba7    mov ecx,[ebp-24h]"
+"	      00558ba7    mov ecx,this"
 "	      00558baa    add eax,[ecx+4]"
-"	      00558bad    movsx ecx,word ptr [ebp-14h]"
+"	      00558bad    movsx ecx,param.brightnessTemp"
 "	      00558bb1    lea eax,[eax+ecx*2]"
 "	      00558bb4    add eax,8"
 "	      00558bb7    mov [ebp-18h],eax"
@@ -6693,10 +6693,10 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 );
 // LINE 1318:
 	asm( 
-"	      00558bd0    movsx eax,word ptr [ebp-12h]"
+"	      00558bd0    movsx eax,param.dirToHeliTemp"
 "	      00558bd4    cmp eax,0FFFFFFFFh"
 "	      00558bd7    jle near ptr 00558BEAh"
-"	      00558bdd    movsx eax,word ptr [ebp-12h]"
+"	      00558bdd    movsx eax,param.dirToHeliTemp"
 "	      00558be1    cmp eax,4"
 "	      00558be4    jl near ptr 00558C06h"
 "	      00558bea    push 8C085h"
@@ -6706,13 +6706,13 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 "	      00558bfe    call 00554F30h"
 "	      00558c03    add esp,10h"
 "	      00558c06    jmp near ptr 00558C0Bh"
-"	      00558c0b    mov eax,[ebp-24h]"
+"	      00558c0b    mov eax,this"
 "	      00558c0e    movsx eax,word ptr [eax+8]"
 "	      00558c12    lea eax,[eax*4-4]"
 "	      00558c19    lea eax,[eax+eax*4]"
-"	      00558c1c    mov ecx,[ebp-24h]"
+"	      00558c1c    mov ecx,this"
 "	      00558c1f    add eax,[ecx+4]"
-"	      00558c22    movsx ecx,word ptr [ebp-12h]"
+"	      00558c22    movsx ecx,param.dirToHeliTemp"
 "	      00558c26    lea eax,[eax+ecx*2]"
 "	      00558c29    add eax,8"
 "	      00558c2c    mov [ebp-1Ch],eax"
@@ -6727,10 +6727,10 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 "	      00558c4e    mov eax,[ebp-20h]"
 "	      00558c51    mov eax,[eax+18h]"
 "	      00558c54    push eax"
-"	      00558c55    mov eax,[ebp-24h]"
+"	      00558c55    mov eax,this"
 "	      00558c58    mov eax,[eax+44h]"
 "	      00558c5b    push eax"
-"	      00558c5c    mov eax,[ebp-24h]"
+"	      00558c5c    mov eax,this"
 "	      00558c5f    mov eax,[eax+3Ch]"
 "	      00558c62    push eax"
 "	      00558c63    call 00551AF1h"
@@ -6743,7 +6743,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 );
 // LINE 1319:
 	asm( 
-"	      00558c7a    mov dword ptr [ebp-4],1"
+"	      00558c7a    mov result,1"
 );
 // LINE 1321:
 	asm( 
@@ -6751,11 +6751,11 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 );
 // LINE 1322:
 	asm( 
-"	      00558c86    mov dword ptr [ebp-4],0"
+"	      00558c86    mov result,0"
 );
 // LINE 1324:
 	asm( 
-"	      00558c8d    mov eax,[ebp-4]"
+"	      00558c8d    mov eax,result"
 "	      00558c90    jmp near ptr 00558C95h"
 );
 // LINE 1325:
@@ -6782,55 +6782,55 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem* 
 "	      00558ca2    push ebx"
 "	      00558ca3    push esi"
 "	      00558ca4    push edi"
-"	      00558ca5    mov [ebp-10h],ecx"
+"	      00558ca5    mov this,ecx"
 );
 // LINE 1329:
 	asm( 
-"	      00558ca8    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00558caf    mov eax,[ebp+0Ch]"
+"	      00558ca8    mov result,0FFFFFFFFh"
+"	      00558caf    mov eax,node"
 "	      00558cb2    add eax,4"
-"	      00558cb5    mov [ebp-8],eax"
+"	      00558cb5    mov nparam,eax"
 );
 // LINE 1330:
 	asm( 
-"	      00558cb8    mov eax,[ebp-8]"
+"	      00558cb8    mov eax,nparam"
 "	      00558cbb    mov ax,[eax]"
-"	      00558cbe    mov [ebp-0Ch],ax"
+"	      00558cbe    mov param.riotValLiteral,ax"
 );
 // LINE 1331:
 	asm( 
-"	      00558cc2    mov eax,[ebp-10h]"
+"	      00558cc2    mov eax,this"
 "	      00558cc5    mov ax,[eax+0E0h]"
-"	      00558ccc    mov ecx,[ebp-10h]"
+"	      00558ccc    mov ecx,this"
 "	      00558ccf    mov [ecx+0E4h],ax"
-"	      00558cd6    mov eax,[ebp-10h]"
+"	      00558cd6    mov eax,this"
 "	      00558cd9    movsx eax,word ptr [eax+0E0h]"
-"	      00558ce0    movsx ecx,word ptr [ebp-0Ch]"
+"	      00558ce0    movsx ecx,param.riotValLiteral"
 "	      00558ce4    add eax,ecx"
-"	      00558ce6    mov ecx,[ebp-10h]"
+"	      00558ce6    mov ecx,this"
 "	      00558ce9    mov [ecx+0E0h],ax"
-"	      00558cf0    mov eax,[ebp-10h]"
+"	      00558cf0    mov eax,this"
 "	      00558cf3    movsx eax,word ptr [eax+0E0h]"
 "	      00558cfa    cmp eax,0Ah"
 "	      00558cfd    jle near ptr 00558D14h"
-"	      00558d03    mov eax,[ebp-10h]"
+"	      00558d03    mov eax,this"
 "	      00558d06    mov word ptr [eax+0E0h],0Ah"
 "	      00558d0f    jmp near ptr 00558D32h"
-"	      00558d14    mov eax,[ebp-10h]"
+"	      00558d14    mov eax,this"
 "	      00558d17    movsx eax,word ptr [eax+0E0h]"
 "	      00558d1e    test eax,eax"
 "	      00558d20    jge near ptr 00558D32h"
-"	      00558d26    mov eax,[ebp-10h]"
+"	      00558d26    mov eax,this"
 "	      00558d29    mov word ptr [eax+0E0h],0"
 "	      00558d32    jmp near ptr 00558D37h"
 );
 // LINE 1332:
 	asm( 
-"	      00558d37    mov dword ptr [ebp-4],1"
+"	      00558d37    mov result,1"
 );
 // LINE 1334:
 	asm( 
-"	      00558d3e    mov eax,[ebp-4]"
+"	      00558d3e    mov eax,result"
 "	      00558d41    jmp near ptr 00558D46h"
 );
 // LINE 1335:
@@ -6861,18 +6861,18 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558d53    push ebx"
 "	      00558d54    push esi"
 "	      00558d55    push edi"
-"	      00558d56    mov [ebp-30h],ecx"
+"	      00558d56    mov this,ecx"
 );
 // LINE 1339:
 	asm( 
-"	      00558d59    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00558d60    mov eax,[ebp+0Ch]"
+"	      00558d59    mov result,0FFFFFFFFh"
+"	      00558d60    mov eax,node"
 "	      00558d63    add eax,4"
-"	      00558d66    mov [ebp-0Ch],eax"
+"	      00558d66    mov nparam,eax"
 );
 // LINE 1340:
 	asm( 
-"	      00558d69    mov eax,[ebp-0Ch]"
+"	      00558d69    mov eax,nparam"
 "	      00558d6c    mov ecx,[eax]"
 "	      00558d6e    mov eax,[eax+4]"
 "	      00558d71    mov [ebp-14h],ecx"
@@ -6880,7 +6880,7 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 );
 // LINE 1341:
 	asm( 
-"	      00558d77    movsx eax,word ptr [ebp-14h]"
+"	      00558d77    movsx eax,param.distTemp"
 "	      00558d7b    cmp eax,4"
 "	      00558d7e    jl near ptr 00558DA0h"
 "	      00558d84    push 8C085h"
@@ -6892,10 +6892,10 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 );
 // LINE 1342:
 	asm( 
-"	      00558da0    movsx eax,word ptr [ebp-14h]"
+"	      00558da0    movsx eax,param.distTemp"
 "	      00558da4    cmp eax,0FFFFFFFFh"
 "	      00558da7    jle near ptr 00558DBAh"
-"	      00558dad    movsx eax,word ptr [ebp-14h]"
+"	      00558dad    movsx eax,param.distTemp"
 "	      00558db1    cmp eax,4"
 "	      00558db4    jl near ptr 00558DD6h"
 "	      00558dba    push 8C085h"
@@ -6906,35 +6906,35 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558dd3    add esp,10h"
 "	      00558dd6    jmp near ptr 00558DDBh"
 "	      00558ddb    jmp near ptr 00558DE0h"
-"	      00558de0    mov eax,[ebp-30h]"
+"	      00558de0    mov eax,this"
 "	      00558de3    movsx eax,word ptr [eax+8]"
 "	      00558de7    lea eax,[eax*4-4]"
 "	      00558dee    lea eax,[eax+eax*4]"
-"	      00558df1    mov ecx,[ebp-30h]"
+"	      00558df1    mov ecx,this"
 "	      00558df4    add eax,[ecx+4]"
-"	      00558df7    movsx ecx,word ptr [ebp-14h]"
+"	      00558df7    movsx ecx,param.distTemp"
 "	      00558dfb    mov ax,[eax+ecx*2+8]"
-"	      00558e00    mov [ebp-1Ch],ax"
+"	      00558e00    mov todist,ax"
 );
 // LINE 1344:
 	asm( 
-"	      00558e04    lea eax,[ebp-18h]"
+"	      00558e04    lea eax,dirtoconc"
 "	      00558e07    push eax"
-"	      00558e08    lea eax,[ebp-20h]"
+"	      00558e08    lea eax,numcounted"
 "	      00558e0b    push eax"
-"	      00558e0c    lea eax,[ebp-8]"
+"	      00558e0c    lea eax,actualriotval"
 "	      00558e0f    push eax"
 "	      00558e10    mov eax,[ebp-1Ch]"
 "	      00558e13    push eax"
-"	      00558e14    mov ecx,[ebp-30h]"
+"	      00558e14    mov ecx,this"
 "	      00558e17    call 00556848h"
 );
 // LINE 1345:
 	asm( 
-"	      00558e1c    movsx eax,word ptr [ebp-12h]"
+"	      00558e1c    movsx eax,param.dirToConcTemp"
 "	      00558e20    cmp eax,0FFFFFFFFh"
 "	      00558e23    jle near ptr 00558E36h"
-"	      00558e29    movsx eax,word ptr [ebp-12h]"
+"	      00558e29    movsx eax,param.dirToConcTemp"
 "	      00558e2d    cmp eax,4"
 "	      00558e30    jl near ptr 00558E52h"
 "	      00558e36    push 8C085h"
@@ -6944,27 +6944,27 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558e4a    call 00554F30h"
 "	      00558e4f    add esp,10h"
 "	      00558e52    jmp near ptr 00558E57h"
-"	      00558e57    mov eax,[ebp-30h]"
+"	      00558e57    mov eax,this"
 "	      00558e5a    movsx eax,word ptr [eax+8]"
 "	      00558e5e    lea eax,[eax*4-4]"
 "	      00558e65    lea eax,[eax+eax*4]"
-"	      00558e68    mov ecx,[ebp-30h]"
+"	      00558e68    mov ecx,this"
 "	      00558e6b    add eax,[ecx+4]"
-"	      00558e6e    movsx ecx,word ptr [ebp-12h]"
+"	      00558e6e    movsx ecx,param.dirToConcTemp"
 "	      00558e72    lea eax,[eax+ecx*2]"
 "	      00558e75    add eax,8"
 "	      00558e78    mov [ebp-24h],eax"
 "	      00558e7b    jmp near ptr 00558E80h"
-"	      00558e80    mov ax,[ebp-18h]"
+"	      00558e80    mov ax,dirtoconc"
 "	      00558e84    mov ecx,[ebp-24h]"
 "	      00558e87    mov [ecx],ax"
 );
 // LINE 1346:
 	asm( 
-"	      00558e8a    movsx eax,word ptr [ebp-10h]"
+"	      00558e8a    movsx eax,param.riotValTemp"
 "	      00558e8e    cmp eax,0FFFFFFFFh"
 "	      00558e91    jle near ptr 00558EA4h"
-"	      00558e97    movsx eax,word ptr [ebp-10h]"
+"	      00558e97    movsx eax,param.riotValTemp"
 "	      00558e9b    cmp eax,4"
 "	      00558e9e    jl near ptr 00558EC0h"
 "	      00558ea4    push 8C085h"
@@ -6974,27 +6974,27 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558eb8    call 00554F30h"
 "	      00558ebd    add esp,10h"
 "	      00558ec0    jmp near ptr 00558EC5h"
-"	      00558ec5    mov eax,[ebp-30h]"
+"	      00558ec5    mov eax,this"
 "	      00558ec8    movsx eax,word ptr [eax+8]"
 "	      00558ecc    lea eax,[eax*4-4]"
 "	      00558ed3    lea eax,[eax+eax*4]"
-"	      00558ed6    mov ecx,[ebp-30h]"
+"	      00558ed6    mov ecx,this"
 "	      00558ed9    add eax,[ecx+4]"
-"	      00558edc    movsx ecx,word ptr [ebp-10h]"
+"	      00558edc    movsx ecx,param.riotValTemp"
 "	      00558ee0    lea eax,[eax+ecx*2]"
 "	      00558ee3    add eax,8"
 "	      00558ee6    mov [ebp-28h],eax"
 "	      00558ee9    jmp near ptr 00558EEEh"
-"	      00558eee    mov ax,[ebp-8]"
+"	      00558eee    mov ax,actualriotval"
 "	      00558ef2    mov ecx,[ebp-28h]"
 "	      00558ef5    mov [ecx],ax"
 );
 // LINE 1347:
 	asm( 
-"	      00558ef8    movsx eax,word ptr [ebp-0Eh]"
+"	      00558ef8    movsx eax,param.numPeopleCountedTemp"
 "	      00558efc    cmp eax,0FFFFFFFFh"
 "	      00558eff    jle near ptr 00558F12h"
-"	      00558f05    movsx eax,word ptr [ebp-0Eh]"
+"	      00558f05    movsx eax,param.numPeopleCountedTemp"
 "	      00558f09    cmp eax,4"
 "	      00558f0c    jl near ptr 00558F2Eh"
 "	      00558f12    push 8C085h"
@@ -7004,28 +7004,28 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558f26    call 00554F30h"
 "	      00558f2b    add esp,10h"
 "	      00558f2e    jmp near ptr 00558F33h"
-"	      00558f33    mov eax,[ebp-30h]"
+"	      00558f33    mov eax,this"
 "	      00558f36    movsx eax,word ptr [eax+8]"
 "	      00558f3a    lea eax,[eax*4-4]"
 "	      00558f41    lea eax,[eax+eax*4]"
-"	      00558f44    mov ecx,[ebp-30h]"
+"	      00558f44    mov ecx,this"
 "	      00558f47    add eax,[ecx+4]"
-"	      00558f4a    movsx ecx,word ptr [ebp-0Eh]"
+"	      00558f4a    movsx ecx,param.numPeopleCountedTemp"
 "	      00558f4e    lea eax,[eax+ecx*2]"
 "	      00558f51    add eax,8"
 "	      00558f54    mov [ebp-2Ch],eax"
 "	      00558f57    jmp near ptr 00558F5Ch"
-"	      00558f5c    mov ax,[ebp-20h]"
+"	      00558f5c    mov ax,numcounted"
 "	      00558f60    mov ecx,[ebp-2Ch]"
 "	      00558f63    mov [ecx],ax"
 );
 // LINE 1348:
 	asm( 
-"	      00558f66    mov dword ptr [ebp-4],1"
+"	      00558f66    mov result,1"
 );
 // LINE 1350:
 	asm( 
-"	      00558f6d    mov eax,[ebp-4]"
+"	      00558f6d    mov eax,result"
 "	      00558f70    jmp near ptr 00558F75h"
 );
 // LINE 1351:
@@ -7053,29 +7053,29 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 "	      00558f82    push ebx"
 "	      00558f83    push esi"
 "	      00558f84    push edi"
-"	      00558f85    mov [ebp-24h],ecx"
+"	      00558f85    mov this,ecx"
 );
 // LINE 1355:
 	asm( 
-"	      00558f88    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00558f8f    mov eax,[ebp+0Ch]"
+"	      00558f88    mov result,0FFFFFFFFh"
+"	      00558f8f    mov eax,node"
 "	      00558f92    add eax,4"
-"	      00558f95    mov [ebp-8],eax"
+"	      00558f95    mov nparam,eax"
 );
 // LINE 1356:
 	asm( 
-"	      00558f98    mov eax,[ebp-8]"
+"	      00558f98    mov eax,nparam"
 "	      00558f9b    mov ax,[eax]"
-"	      00558f9e    mov [ebp-0Ch],ax"
+"	      00558f9e    mov param.scurkIDLiteral,ax"
 );
 // LINE 1357:
 	asm( 
-"	      00558fa2    mov ax,[ebp-0Ch]"
-"	      00558fa6    mov [ebp-10h],ax"
-"	      00558faa    mov eax,[ebp-24h]"
+"	      00558fa2    mov ax,param.scurkIDLiteral"
+"	      00558fa6    mov scurkID,ax"
+"	      00558faa    mov eax,this"
 "	      00558fad    movzx ax,byte ptr [eax+89h]"
 "	      00558fb5    mov [ebp-18h],ax"
-"	      00558fb9    mov eax,[ebp-24h]"
+"	      00558fb9    mov eax,this"
 "	      00558fbc    movzx ax,byte ptr [eax+88h]"
 "	      00558fc4    mov [ebp-1Ch],ax"
 );
@@ -7093,7 +7093,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 "	      00558fee    movsx eax,word ptr [ebp-18h]"
 "	      00558ff2    test eax,eax"
 "	      00558ff4    jge near ptr 0055900Ch"
-"	      00558ffa    movsx eax,word ptr [ebp-10h]"
+"	      00558ffa    movsx eax,scurkID"
 "	      00558ffe    cmp eax,0FFFFFFFFh"
 "	      00559001    jne near ptr 0055908Ch"
 "	      00559007    jmp near ptr 00559080h"
@@ -7115,18 +7115,18 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 "	      00559053    call 00554F30h"
 "	      00559058    add esp,10h"
 "	      0055905b    movsx eax,word ptr [ebp-14h]"
-"	      0055905f    movsx ecx,word ptr [ebp-10h]"
+"	      0055905f    movsx ecx,scurkID"
 "	      00559063    cmp eax,ecx"
 "	      00559065    jne near ptr 0055908Ch"
 "	      0055906b    jmp near ptr 00559080h"
 "	      00559070    movsx eax,word ptr [ebp-20h]"
-"	      00559074    movsx ecx,word ptr [ebp-10h]"
+"	      00559074    movsx ecx,scurkID"
 "	      00559078    cmp eax,ecx"
 "	      0055907a    jne near ptr 0055908Ch"
 );
 // LINE 1359:
 	asm( 
-"	      00559080    mov dword ptr [ebp-4],1"
+"	      00559080    mov result,1"
 );
 // LINE 1360:
 	asm( 
@@ -7134,11 +7134,11 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 );
 // LINE 1361:
 	asm( 
-"	      0055908c    mov dword ptr [ebp-4],0"
+"	      0055908c    mov result,0"
 );
 // LINE 1363:
 	asm( 
-"	      00559093    mov eax,[ebp-4]"
+"	      00559093    mov eax,result"
 "	      00559096    jmp near ptr 0055909Bh"
 );
 // LINE 1364:
@@ -7164,38 +7164,38 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 "	      005590a8    push ebx"
 "	      005590a9    push esi"
 "	      005590aa    push edi"
-"	      005590ab    mov [ebp-10h],ecx"
+"	      005590ab    mov this,ecx"
 );
 // LINE 1368:
 	asm( 
-"	      005590ae    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005590ae    mov result,0FFFFFFFFh"
 );
 // LINE 1370:
 	asm( 
-"	      005590b5    mov eax,[ebp-10h]"
+"	      005590b5    mov eax,this"
 "	      005590b8    mov ax,[eax+10Ah]"
-"	      005590bf    mov [ebp-8],ax"
+"	      005590bf    mov id,ax"
 );
 // LINE 1371:
 	asm( 
 "	      005590c3    jmp near ptr 005590C8h"
 "	      005590c8    jmp near ptr 005590CDh"
-"	      005590cd    mov eax,[ebp-10h]"
+"	      005590cd    mov eax,this"
 "	      005590d0    movsx eax,word ptr [eax+8]"
 "	      005590d4    lea eax,[eax*4-4]"
 "	      005590db    lea eax,[eax+eax*4]"
-"	      005590de    mov ecx,[ebp-10h]"
+"	      005590de    mov ecx,this"
 "	      005590e1    mov ecx,[ecx+4]"
 "	      005590e4    movsx eax,word ptr [eax+ecx]"
-"	      005590e8    movsx ecx,word ptr [ebp-8]"
+"	      005590e8    movsx ecx,id"
 "	      005590ec    cmp eax,ecx"
 "	      005590ee    je near ptr 00559156h"
 "	      005590f4    jmp near ptr 005590F9h"
 "	      005590f9    jmp near ptr 005590FEh"
-"	      005590fe    mov eax,[ebp-10h]"
+"	      005590fe    mov eax,this"
 "	      00559101    movsx eax,word ptr [eax+0Ah]"
 "	      00559105    dec eax"
-"	      00559106    mov ecx,[ebp-10h]"
+"	      00559106    mov ecx,this"
 "	      00559109    movsx ecx,word ptr [ecx+8]"
 "	      0055910d    cmp eax,ecx"
 "	      0055910f    jg near ptr 00559131h"
@@ -7209,7 +7209,7 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 "	      00559134    push eax"
 "	      00559135    push 0"
 "	      00559137    push 0"
-"	      00559139    mov ecx,[ebp-10h]"
+"	      00559139    mov ecx,this"
 "	      0055913c    call 0055CE37h"
 "	      00559141    movzx eax,ax"
 "	      00559144    test eax,eax"
@@ -7231,11 +7231,11 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 );
 // LINE 1374:
 	asm( 
-"	      00559184    mov dword ptr [ebp-4],1"
+"	      00559184    mov result,1"
 );
 // LINE 1376:
 	asm( 
-"	      0055918b    mov eax,[ebp-4]"
+"	      0055918b    mov eax,result"
 "	      0055918e    jmp near ptr 00559193h"
 );
 // LINE 1377:
@@ -7260,15 +7260,15 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 "	      005591a0    push ebx"
 "	      005591a1    push esi"
 "	      005591a2    push edi"
-"	      005591a3    mov [ebp-8],ecx"
+"	      005591a3    mov this,ecx"
 );
 // LINE 1381:
 	asm( 
-"	      005591a6    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      005591a6    mov result,0FFFFFFFFh"
 );
 // LINE 1382:
 	asm( 
-"	      005591ad    mov eax,[ebp-8]"
+"	      005591ad    mov eax,this"
 "	      005591b0    movsx eax,word ptr [eax+0E0h]"
 "	      005591b7    cmp eax,5"
 "	      005591ba    jle near ptr 005591DDh"
@@ -7276,20 +7276,20 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 "	      005591c5    push 50000h"
 "	      005591ca    call 004D19DFh"
 "	      005591cf    add esp,8"
-"	      005591d2    mov ecx,[ebp-8]"
+"	      005591d2    mov ecx,this"
 "	      005591d5    mov [ecx+34h],eax"
 "	      005591d8    jmp near ptr 005591E7h"
-"	      005591dd    mov eax,[ebp-8]"
+"	      005591dd    mov eax,this"
 "	      005591e0    mov dword ptr [eax+34h],50000h"
 "	      005591e7    jmp near ptr 005591ECh"
 );
 // LINE 1383:
 	asm( 
-"	      005591ec    mov dword ptr [ebp-4],1"
+"	      005591ec    mov result,1"
 );
 // LINE 1385:
 	asm( 
-"	      005591f3    mov eax,[ebp-4]"
+"	      005591f3    mov eax,result"
 "	      005591f6    jmp near ptr 005591FBh"
 );
 // LINE 1386:
@@ -7315,19 +7315,19 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      0055920b    push ebx"
 "	      0055920c    push esi"
 "	      0055920d    push edi"
-"	      0055920e    mov [ebp-8Ch],ecx"
+"	      0055920e    mov this,ecx"
 );
 // LINE 1390:
 	asm( 
-"	      00559214    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055921b    mov dword ptr [ebp-18h],1"
-"	      00559222    mov eax,[ebp-8Ch]"
+"	      00559214    mov result,0FFFFFFFFh"
+"	      0055921b    mov lstr.nType,1"
+"	      00559222    mov eax,this"
 "	      00559228    mov eax,[eax+1Ch]"
-"	      0055922b    mov [ebp-10h],eax"
+"	      0055922b    mov lstr.nMissionID,eax"
 );
 // LINE 1391:
 	asm( 
-"	      0055922e    mov eax,[ebp-8Ch]"
+"	      0055922e    mov eax,this"
 "	      00559234    movsx eax,word ptr [eax+0D2h]"
 "	      0055923b    test eax,eax"
 "	      0055923d    jne near ptr 0055925Fh"
@@ -7338,7 +7338,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559257    call 00554F30h"
 "	      0055925c    add esp,10h"
 "	      0055925f    jmp near ptr 00559264h"
-"	      00559264    mov eax,[ebp-8Ch]"
+"	      00559264    mov eax,this"
 "	      0055926a    xor ecx,ecx"
 "	      0055926c    mov cx,[eax+20h]"
 "	      00559270    test ecx,ecx"
@@ -7349,12 +7349,12 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559287    push 5BBA14h"
 "	      0055928c    call 00554F30h"
 "	      00559291    add esp,10h"
-"	      00559294    mov eax,[ebp-8Ch]"
+"	      00559294    mov eax,this"
 "	      0055929a    xor ecx,ecx"
 "	      0055929c    mov cl,[eax+88h]"
 "	      005592a2    cmp ecx,0FFFFFFFFh"
 "	      005592a5    jne near ptr 005592E3h"
-"	      005592ab    mov eax,[ebp-8Ch]"
+"	      005592ab    mov eax,this"
 "	      005592b1    xor ecx,ecx"
 "	      005592b3    mov cl,[eax+89h]"
 "	      005592b9    cmp ecx,0FFFFFFFFh"
@@ -7366,7 +7366,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      005592d6    call 00554F30h"
 "	      005592db    add esp,10h"
 "	      005592de    jmp near ptr 00559316h"
-"	      005592e3    mov eax,[ebp-8Ch]"
+"	      005592e3    mov eax,this"
 "	      005592e9    xor ecx,ecx"
 "	      005592eb    mov cl,[eax+89h]"
 "	      005592f1    cmp ecx,0FFFFFFFFh"
@@ -7377,7 +7377,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559309    push 5BBA14h"
 "	      0055930e    call 00554F30h"
 "	      00559313    add esp,10h"
-"	      00559316    mov eax,[ebp-8Ch]"
+"	      00559316    mov eax,this"
 "	      0055931c    xor ecx,ecx"
 "	      0055931e    mov cl,[eax+88h]"
 "	      00559324    cmp ecx,0FFFFFFFFh"
@@ -7393,21 +7393,21 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      0055935b    push 5BBA14h"
 "	      00559360    call 00554F30h"
 "	      00559365    add esp,10h"
-"	      00559368    mov eax,[ebp-8Ch]"
+"	      00559368    mov eax,this"
 "	      0055936e    movsx eax,word ptr [eax+102h]"
 "	      00559375    cmp eax,0FFFFFFFFh"
 "	      00559378    je near ptr 0055942Ah"
-"	      0055937e    mov eax,[ebp-8Ch]"
+"	      0055937e    mov eax,this"
 "	      00559384    mov word ptr [eax+104h],0FFFFh"
-"	      0055938d    mov eax,[ebp-8Ch]"
+"	      0055938d    mov eax,this"
 "	      00559393    movsx eax,word ptr [eax+102h]"
 "	      0055939a    cmp eax,0FFFFFFFFh"
 "	      0055939d    je near ptr 005593FFh"
-"	      005593a3    mov eax,[ebp-8Ch]"
+"	      005593a3    mov eax,this"
 "	      005593a9    movsx eax,word ptr [eax+102h]"
 "	      005593b0    cmp eax,0FFFFFFFFh"
 "	      005593b3    je near ptr 005593D7h"
-"	      005593b9    mov eax,[ebp-8Ch]"
+"	      005593b9    mov eax,this"
 "	      005593bf    movsx eax,word ptr [eax+102h]"
 "	      005593c6    add eax,62h"
 "	      005593c9    mov [ebp-80h],ax"
@@ -7423,19 +7423,19 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      005593f7    call 00446E04h"
 "	      005593fc    add esp,4"
 "	      005593ff    jmp near ptr 00559404h"
-"	      00559404    mov eax,[ebp-8Ch]"
+"	      00559404    mov eax,this"
 "	      0055940a    movsx eax,word ptr [eax+102h]"
 "	      00559411    mov word ptr [eax*2+6356B0h],0"
-"	      0055941b    mov eax,[ebp-8Ch]"
+"	      0055941b    mov eax,this"
 "	      00559421    mov word ptr [eax+102h],0FFFFh"
 "	      0055942a    jmp near ptr 0055942Fh"
-"	      0055942f    mov eax,[ebp-8Ch]"
+"	      0055942f    mov eax,this"
 "	      00559435    mov word ptr [eax+0D2h],0"
-"	      0055943e    mov eax,[ebp-8Ch]"
+"	      0055943e    mov eax,this"
 "	      00559444    mov word ptr [eax+0F0h],0FFFFh"
-"	      0055944d    mov eax,[ebp-8Ch]"
+"	      0055944d    mov eax,this"
 "	      00559453    mov word ptr [eax+9Ch],0FFFFh"
-"	      0055945c    mov eax,[ebp-8Ch]"
+"	      0055945c    mov eax,this"
 "	      00559462    movsx eax,word ptr [eax+0D8h]"
 "	      00559469    mov [ebp-7Ch],eax"
 "	      0055946c    cmp dword ptr [ebp-7Ch],0"
@@ -7460,29 +7460,29 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      005594c9    push 5BBA14h"
 "	      005594ce    call 00554F30h"
 "	      005594d3    add esp,10h"
-"	      005594d6    mov ecx,[ebp-8Ch]"
+"	      005594d6    mov ecx,this"
 "	      005594dc    call 005507ECh"
 "	      005594e1    jmp near ptr 005594E6h"
 );
 // LINE 1392:
 	asm( 
-"	      005594e6    mov ecx,[ebp-8Ch]"
+"	      005594e6    mov ecx,this"
 "	      005594ec    call 0054B9E6h"
 "	      005594f1    cmp eax,0FFFFFFFFh"
 "	      005594f4    je near ptr 0055951Bh"
 );
 // LINE 1393:
 	asm( 
-"	      005594fa    mov dword ptr [ebp-0Ch],5BD0F4h"
+"	      005594fa    mov lstr.szLogString,5BD0F4h"
 "	      00559501    push 1"
-"	      00559503    lea eax,[ebp-18h]"
+"	      00559503    lea eax,lstr.nType"
 "	      00559506    push eax"
 "	      00559507    call 004EBC2Bh"
 "	      0055950c    add esp,8"
 );
 // LINE 1395:
 	asm( 
-"	      0055950f    mov dword ptr [ebp-4],3"
+"	      0055950f    mov result,3"
 );
 // LINE 1397:
 	asm( 
@@ -7490,11 +7490,11 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 );
 // LINE 1398:
 	asm( 
-"	      0055951b    mov dword ptr [ebp-4],0"
+"	      0055951b    mov result,0"
 );
 // LINE 1399:
 	asm( 
-"	      00559522    mov eax,[ebp-8Ch]"
+"	      00559522    mov eax,this"
 "	      00559528    movsx eax,word ptr [eax+0D2h]"
 "	      0055952f    test eax,eax"
 "	      00559531    je near ptr 00559553h"
@@ -7504,20 +7504,20 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559546    push 5BBA14h"
 "	      0055954b    call 00554F30h"
 "	      00559550    add esp,10h"
-"	      00559553    mov eax,[ebp-8Ch]"
+"	      00559553    mov eax,this"
 "	      00559559    mov ax,[eax+10Ah]"
 "	      00559560    push eax"
-"	      00559561    mov eax,[ebp-8Ch]"
+"	      00559561    mov eax,this"
 "	      00559567    mov eax,[eax+0B4h]"
 "	      0055956d    push eax"
-"	      0055956e    mov ecx,[ebp-8Ch]"
+"	      0055956e    mov ecx,this"
 "	      00559574    call 0055CC58h"
 "	      00559579    jmp near ptr 0055957Eh"
-"	      0055957e    mov eax,[ebp-8Ch]"
+"	      0055957e    mov eax,this"
 "	      00559584    mov word ptr [eax+0D2h],1"
-"	      0055958d    mov eax,[ebp-8Ch]"
+"	      0055958d    mov eax,this"
 "	      00559593    mov word ptr [eax+0E2h],1"
-"	      0055959c    mov eax,[ebp-8Ch]"
+"	      0055959c    mov eax,this"
 "	      005595a2    movsx eax,word ptr [eax+0D8h]"
 "	      005595a9    mov [ebp-1Ch],eax"
 "	      005595ac    cmp dword ptr [ebp-1Ch],0"
@@ -7541,12 +7541,12 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559604    push 5BBA14h"
 "	      00559609    call 00554F30h"
 "	      0055960e    add esp,10h"
-"	      00559611    mov eax,[ebp-8Ch]"
+"	      00559611    mov eax,this"
 "	      00559617    xor ecx,ecx"
 "	      00559619    mov cl,[eax+88h]"
 "	      0055961f    cmp ecx,0FFFFFFFFh"
 "	      00559622    jne near ptr 00559660h"
-"	      00559628    mov eax,[ebp-8Ch]"
+"	      00559628    mov eax,this"
 "	      0055962e    xor ecx,ecx"
 "	      00559630    mov cl,[eax+89h]"
 "	      00559636    cmp ecx,0FFFFFFFFh"
@@ -7558,7 +7558,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559653    call 00554F30h"
 "	      00559658    add esp,10h"
 "	      0055965b    jmp near ptr 00559693h"
-"	      00559660    mov eax,[ebp-8Ch]"
+"	      00559660    mov eax,this"
 "	      00559666    xor ecx,ecx"
 "	      00559668    mov cl,[eax+89h]"
 "	      0055966e    cmp ecx,0FFFFFFFFh"
@@ -7569,7 +7569,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559686    push 5BBA14h"
 "	      0055968b    call 00554F30h"
 "	      00559690    add esp,10h"
-"	      00559693    mov eax,[ebp-8Ch]"
+"	      00559693    mov eax,this"
 "	      00559699    xor ecx,ecx"
 "	      0055969b    mov cl,[eax+88h]"
 "	      005596a1    cmp ecx,0FFFFFFFFh"
@@ -7585,10 +7585,10 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      005596d5    push 5BBA14h"
 "	      005596da    call 00554F30h"
 "	      005596df    add esp,10h"
-"	      005596e2    mov ecx,[ebp-8Ch]"
+"	      005596e2    mov ecx,this"
 "	      005596e8    call 0055069Bh"
 "	      005596ed    jmp near ptr 005596F2h"
-"	      005596f2    mov eax,[ebp-8Ch]"
+"	      005596f2    mov eax,this"
 "	      005596f8    xor ecx,ecx"
 "	      005596fa    mov cx,[eax+20h]"
 "	      005596fe    test ecx,ecx"
@@ -7599,7 +7599,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559715    push 5BBA14h"
 "	      0055971a    call 00554F30h"
 "	      0055971f    add esp,10h"
-"	      00559722    mov eax,[ebp-8Ch]"
+"	      00559722    mov eax,this"
 "	      00559728    add eax,3Ch"
 "	      0055972b    lea ecx,[ebp-74h]"
 "	      0055972e    mov edx,[eax]"
@@ -7609,7 +7609,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559738    mov eax,[eax+8]"
 "	      0055973b    mov [ecx+8],eax"
 "	      0055973e    push 40h"
-"	      00559740    mov eax,[ebp-8Ch]"
+"	      00559740    mov eax,this"
 "	      00559746    add eax,48h"
 "	      00559749    push eax"
 "	      0055974a    lea eax,[ebp-5Ch]"
@@ -7619,7 +7619,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 "	      00559756    push 3"
 "	      00559758    lea eax,[ebp-74h]"
 "	      0055975b    push eax"
-"	      0055975c    mov eax,[ebp-8Ch]"
+"	      0055975c    mov eax,this"
 "	      00559762    mov eax,[eax+2Ch]"
 "	      00559765    push eax"
 "	      00559766    call 004D8781h"
@@ -7629,7 +7629,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 );
 // LINE 1401:
 	asm( 
-"	      00559778    mov eax,[ebp-4]"
+"	      00559778    mov eax,result"
 "	      0055977b    jmp near ptr 00559780h"
 );
 // LINE 1402:
@@ -7657,27 +7657,27 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem* elem
 "	      0055978d    push ebx"
 "	      0055978e    push esi"
 "	      0055978f    push edi"
-"	      00559790    mov [ebp-14h],ecx"
+"	      00559790    mov this,ecx"
 );
 // LINE 1406:
 	asm( 
-"	      00559793    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055979a    mov eax,[ebp+0Ch]"
+"	      00559793    mov result,0FFFFFFFFh"
+"	      0055979a    mov eax,node"
 "	      0055979d    add eax,4"
-"	      005597a0    mov [ebp-0Ch],eax"
+"	      005597a0    mov nparam,eax"
 );
 // LINE 1407:
 	asm( 
-"	      005597a3    mov eax,[ebp-0Ch]"
+"	      005597a3    mov eax,nparam"
 "	      005597a6    mov ax,[eax]"
-"	      005597a9    mov [ebp-10h],ax"
+"	      005597a9    mov param.dirTemp,ax"
 );
 // LINE 1408:
 	asm( 
-"	      005597ad    movsx eax,word ptr [ebp-10h]"
+"	      005597ad    movsx eax,param.dirTemp"
 "	      005597b1    cmp eax,0FFFFFFFFh"
 "	      005597b4    jle near ptr 005597C7h"
-"	      005597ba    movsx eax,word ptr [ebp-10h]"
+"	      005597ba    movsx eax,param.dirTemp"
 "	      005597be    cmp eax,4"
 "	      005597c1    jl near ptr 005597E3h"
 "	      005597c7    push 8C085h"
@@ -7688,28 +7688,28 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem* elem
 "	      005597e0    add esp,10h"
 "	      005597e3    jmp near ptr 005597E8h"
 "	      005597e8    jmp near ptr 005597EDh"
-"	      005597ed    mov eax,[ebp-14h]"
+"	      005597ed    mov eax,this"
 "	      005597f0    movsx eax,word ptr [eax+8]"
 "	      005597f4    lea eax,[eax*4-4]"
 "	      005597fb    lea eax,[eax+eax*4]"
-"	      005597fe    mov ecx,[ebp-14h]"
+"	      005597fe    mov ecx,this"
 "	      00559801    add eax,[ecx+4]"
-"	      00559804    movsx ecx,word ptr [ebp-10h]"
+"	      00559804    movsx ecx,param.dirTemp"
 "	      00559808    mov ax,[eax+ecx*2+8]"
-"	      0055980d    mov ecx,[ebp-14h]"
+"	      0055980d    mov ecx,this"
 "	      00559810    mov [ecx+0D0h],ax"
 );
 // LINE 1409:
 	asm( 
-"	      00559817    mov word ptr [ebp-8],0"
+"	      00559817    mov count,0"
 );
 // LINE 1410:
 	asm( 
-"	      0055981d    mov eax,[ebp-14h]"
+"	      0055981d    mov eax,this"
 "	      00559820    movsx eax,word ptr [eax+0D0h]"
 "	      00559827    cmp eax,0FFFFFFE2h"
 "	      0055982a    jle near ptr 00559843h"
-"	      00559830    mov eax,[ebp-14h]"
+"	      00559830    mov eax,this"
 "	      00559833    movsx eax,word ptr [eax+0D0h]"
 "	      0055983a    cmp eax,1Eh"
 "	      0055983d    jl near ptr 0055985Fh"
@@ -7722,35 +7722,35 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem* elem
 );
 // LINE 1411:
 	asm( 
-"	      0055985f    mov eax,[ebp-14h]"
+"	      0055985f    mov eax,this"
 "	      00559862    movsx eax,word ptr [eax+0D0h]"
 "	      00559869    test eax,eax"
 "	      0055986b    jge near ptr 0055988Dh"
 );
 // LINE 1412:
 	asm( 
-"	      00559871    mov eax,[ebp-14h]"
+"	      00559871    mov eax,this"
 "	      00559874    movsx eax,word ptr [eax+0D0h]"
 "	      0055987b    add eax,8"
-"	      0055987e    mov ecx,[ebp-14h]"
+"	      0055987e    mov ecx,this"
 "	      00559881    mov [ecx+0D0h],ax"
 "	      00559888    jmp near ptr 0055985Fh"
 );
 // LINE 1413:
 	asm( 
-"	      0055988d    mov eax,[ebp-14h]"
+"	      0055988d    mov eax,this"
 "	      00559890    movsx eax,word ptr [eax+0D0h]"
 "	      00559897    and eax,7"
-"	      0055989a    mov ecx,[ebp-14h]"
+"	      0055989a    mov ecx,this"
 "	      0055989d    mov [ecx+0D0h],ax"
 );
 // LINE 1414:
 	asm( 
-"	      005598a4    mov dword ptr [ebp-4],1"
+"	      005598a4    mov result,1"
 );
 // LINE 1416:
 	asm( 
-"	      005598ab    mov eax,[ebp-4]"
+"	      005598ab    mov eax,result"
 "	      005598ae    jmp near ptr 005598B3h"
 );
 // LINE 1417:
@@ -7783,15 +7783,15 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 "	      005598c3    push ebx"
 "	      005598c4    push esi"
 "	      005598c5    push edi"
-"	      005598c6    mov [ebp-80h],ecx"
+"	      005598c6    mov this,ecx"
 );
 // LINE 1421:
 	asm( 
-"	      005598c9    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      005598c9    mov result,0FFFFFFFFh"
 );
 // LINE 1422:
 	asm( 
-"	      005598d0    mov eax,[ebp-80h]"
+"	      005598d0    mov eax,this"
 "	      005598d3    cmp dword ptr [eax+90h],0"
 "	      005598da    jne near ptr 005598FCh"
 "	      005598e0    push 8C085h"
@@ -7800,20 +7800,20 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 "	      005598ef    push 5BBA14h"
 "	      005598f4    call 00554F30h"
 "	      005598f9    add esp,10h"
-"	      005598fc    mov eax,[ebp-80h]"
+"	      005598fc    mov eax,this"
 "	      005598ff    cmp dword ptr [eax+98h],0"
 "	      00559906    je near ptr 00559922h"
-"	      0055990c    mov eax,[ebp-80h]"
+"	      0055990c    mov eax,this"
 "	      0055990f    mov eax,[eax+98h]"
 "	      00559915    cmp dword ptr [eax+1Ch],5468726Fh"
 "	      0055991c    je near ptr 0055996Ah"
 "	      00559922    push 5468726Fh"
-"	      00559927    mov eax,[ebp-80h]"
+"	      00559927    mov eax,this"
 "	      0055992a    mov ecx,[eax+90h]"
 "	      00559930    call 00560BF0h"
-"	      00559935    mov ecx,[ebp-80h]"
+"	      00559935    mov ecx,this"
 "	      00559938    mov [ecx+98h],eax"
-"	      0055993e    mov eax,[ebp-80h]"
+"	      0055993e    mov eax,this"
 "	      00559941    cmp dword ptr [eax+98h],0"
 "	      00559948    jne near ptr 0055996Ah"
 "	      0055994e    push 8C085h"
@@ -7826,20 +7826,20 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 );
 // LINE 1423:
 	asm( 
-"	      0055996f    mov eax,[ebp-80h]"
+"	      0055996f    mov eax,this"
 "	      00559972    xor ecx,ecx"
 "	      00559974    mov cl,[eax+88h]"
-"	      0055997a    mov [ebp-64h],ecx"
-"	      0055997d    mov eax,[ebp-80h]"
+"	      0055997a    mov celloc.x,ecx"
+"	      0055997d    mov eax,this"
 "	      00559980    xor ecx,ecx"
 "	      00559982    mov cl,[eax+89h]"
-"	      00559988    mov [ebp-60h],ecx"
+"	      00559988    mov celloc.y,ecx"
 );
 // LINE 1424:
 	asm( 
-"	      0055998b    mov eax,[ebp-80h]"
+"	      0055998b    mov eax,this"
 "	      0055998e    add eax,3Ch"
-"	      00559991    lea ecx,[ebp-5Ch]"
+"	      00559991    lea ecx,loc.x"
 "	      00559994    mov edx,[eax]"
 "	      00559996    mov [ecx],edx"
 "	      00559998    mov edx,[eax+4]"
@@ -7849,15 +7849,15 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 );
 // LINE 1425:
 	asm( 
-"	      005599a4    mov dword ptr [ebp-4],1"
+"	      005599a4    mov scale,1"
 );
 // LINE 1427:
 	asm( 
-"	      005599ab    mov eax,[ebp-80h]"
+"	      005599ab    mov eax,this"
 "	      005599ae    movsx eax,word ptr [eax+0D0h]"
 "	      005599b5    lea eax,[eax+eax*2]"
 "	      005599b8    lea eax,[eax*4+635530h]"
-"	      005599bf    lea ecx,[ebp-7Ch]"
+"	      005599bf    lea ecx,personunitvect.x"
 "	      005599c2    mov edx,[eax]"
 "	      005599c4    mov [ecx],edx"
 "	      005599c6    mov edx,[eax+4]"
@@ -7867,14 +7867,14 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 );
 // LINE 1429:
 	asm( 
-"	      005599d2    lea eax,[ebp-4Ch]"
+"	      005599d2    lea eax,mat[0][0]"
 "	      005599d5    push eax"
 "	      005599d6    call 004D1FF1h"
 "	      005599db    add esp,4"
 );
 // LINE 1431:
 	asm( 
-"	      005599de    lea eax,[ebp-4Ch]"
+"	      005599de    lea eax,mat[0][0]"
 "	      005599e1    push eax"
 "	      005599e2    call 0056EC50h"
 "	      005599e7    mov ecx,0C8h"
@@ -7889,11 +7889,11 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 );
 // LINE 1432:
 	asm( 
-"	      00559a04    lea eax,[ebp-4Ch]"
+"	      00559a04    lea eax,mat[0][0]"
 "	      00559a07    push eax"
-"	      00559a08    lea eax,[ebp-70h]"
+"	      00559a08    lea eax,debrisunitvect.x"
 "	      00559a0b    push eax"
-"	      00559a0c    lea eax,[ebp-7Ch]"
+"	      00559a0c    lea eax,personunitvect.x"
 "	      00559a0f    push eax"
 "	      00559a10    call 004D2094h"
 "	      00559a15    add esp,0Ch"
@@ -7907,49 +7907,49 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 "	      00559a26    idiv ecx"
 "	      00559a28    lea eax,[edx+32h]"
 "	      00559a2b    shl eax,10h"
-"	      00559a2e    mov [ebp-0Ch],eax"
+"	      00559a2e    mov speed,eax"
 );
 // LINE 1434:
 	asm( 
-"	      00559a31    mov dword ptr [ebp-50h],0Ah"
+"	      00559a31    mov what,0Ah"
 );
 // LINE 1435:
 	asm( 
-"	      00559a38    mov eax,[ebp+0Ch]"
+"	      00559a38    mov eax,node"
 "	      00559a3b    movsx eax,word ptr [eax]"
 "	      00559a3e    cmp eax,3Ch"
 "	      00559a41    jne near ptr 00559A4Eh"
 );
 // LINE 1436:
 	asm( 
-"	      00559a47    mov dword ptr [ebp-50h],4"
+"	      00559a47    mov what,4"
 );
 // LINE 1437:
 	asm( 
-"	      00559a4e    mov eax,[ebp-80h]"
+"	      00559a4e    mov eax,this"
 "	      00559a51    mov eax,[eax+1Ch]"
 "	      00559a54    push eax"
-"	      00559a55    mov eax,[ebp-0Ch]"
+"	      00559a55    mov eax,speed"
 "	      00559a58    push eax"
-"	      00559a59    mov eax,[ebp-80h]"
+"	      00559a59    mov eax,this"
 "	      00559a5c    add eax,24h"
 "	      00559a5f    push eax"
-"	      00559a60    mov eax,[ebp-4]"
+"	      00559a60    mov eax,scale"
 "	      00559a63    push eax"
-"	      00559a64    lea eax,[ebp-70h]"
+"	      00559a64    lea eax,debrisunitvect.x"
 "	      00559a67    push eax"
-"	      00559a68    lea eax,[ebp-5Ch]"
+"	      00559a68    lea eax,loc.x"
 "	      00559a6b    push eax"
-"	      00559a6c    lea eax,[ebp-64h]"
+"	      00559a6c    lea eax,celloc.x"
 "	      00559a6f    push eax"
-"	      00559a70    mov eax,[ebp-50h]"
+"	      00559a70    mov eax,what"
 "	      00559a73    push eax"
 "	      00559a74    call 0051EEE5h"
 "	      00559a79    add esp,20h"
 );
 // LINE 1438:
 	asm( 
-"	      00559a7c    mov eax,[ebp-80h]"
+"	      00559a7c    mov eax,this"
 "	      00559a7f    cmp dword ptr [eax+90h],0"
 "	      00559a86    jne near ptr 00559AA8h"
 "	      00559a8c    push 8C085h"
@@ -7958,20 +7958,20 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 "	      00559a9b    push 5BBA14h"
 "	      00559aa0    call 00554F30h"
 "	      00559aa5    add esp,10h"
-"	      00559aa8    mov eax,[ebp-80h]"
+"	      00559aa8    mov eax,this"
 "	      00559aab    cmp dword ptr [eax+98h],0"
 "	      00559ab2    je near ptr 00559ACEh"
-"	      00559ab8    mov eax,[ebp-80h]"
+"	      00559ab8    mov eax,this"
 "	      00559abb    mov eax,[eax+98h]"
 "	      00559ac1    cmp dword ptr [eax+1Ch],4E6F4D6Fh"
 "	      00559ac8    je near ptr 00559B16h"
 "	      00559ace    push 4E6F4D6Fh"
-"	      00559ad3    mov eax,[ebp-80h]"
+"	      00559ad3    mov eax,this"
 "	      00559ad6    mov ecx,[eax+90h]"
 "	      00559adc    call 00560BF0h"
-"	      00559ae1    mov ecx,[ebp-80h]"
+"	      00559ae1    mov ecx,this"
 "	      00559ae4    mov [ecx+98h],eax"
-"	      00559aea    mov eax,[ebp-80h]"
+"	      00559aea    mov eax,this"
 "	      00559aed    cmp dword ptr [eax+98h],0"
 "	      00559af4    jne near ptr 00559B16h"
 "	      00559afa    push 8C085h"
@@ -7984,11 +7984,11 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 );
 // LINE 1439:
 	asm( 
-"	      00559b1b    mov dword ptr [ebp-8],1"
+"	      00559b1b    mov result,1"
 );
 // LINE 1441:
 	asm( 
-"	      00559b22    mov eax,[ebp-8]"
+"	      00559b22    mov eax,result"
 "	      00559b25    jmp near ptr 00559B2Ah"
 );
 // LINE 1442:
@@ -8013,15 +8013,15 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 "	      00559b37    push ebx"
 "	      00559b38    push esi"
 "	      00559b39    push edi"
-"	      00559b3a    mov [ebp-0Ch],ecx"
+"	      00559b3a    mov this,ecx"
 );
 // LINE 1446:
 	asm( 
-"	      00559b3d    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00559b3d    mov result,0FFFFFFFFh"
 );
 // LINE 1447:
 	asm( 
-"	      00559b44    mov eax,[ebp+8]"
+"	      00559b44    mov eax,elem"
 "	      00559b47    cmp dword ptr [eax+4],0"
 "	      00559b4b    jne near ptr 00559B6Dh"
 "	      00559b51    push 8C085h"
@@ -8030,7 +8030,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 "	      00559b60    push 5BD15Ch"
 "	      00559b65    call 00554F30h"
 "	      00559b6a    add esp,10h"
-"	      00559b6d    mov eax,[ebp+8]"
+"	      00559b6d    mov eax,elem"
 "	      00559b70    mov eax,[eax+4]"
 "	      00559b73    mov [ebp-8],eax"
 );
@@ -8043,10 +8043,10 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 "	      00559b82    mov eax,[ebp-8]"
 "	      00559b85    mov eax,[eax+18h]"
 "	      00559b88    push eax"
-"	      00559b89    mov eax,[ebp-0Ch]"
+"	      00559b89    mov eax,this"
 "	      00559b8c    mov eax,[eax+44h]"
 "	      00559b8f    push eax"
-"	      00559b90    mov eax,[ebp-0Ch]"
+"	      00559b90    mov eax,this"
 "	      00559b93    mov eax,[eax+3Ch]"
 "	      00559b96    push eax"
 "	      00559b97    call 00551AF1h"
@@ -8054,16 +8054,16 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 "	      00559b9f    movsx eax,ax"
 "	      00559ba2    add eax,2"
 "	      00559ba5    and eax,7"
-"	      00559ba8    mov ecx,[ebp-0Ch]"
+"	      00559ba8    mov ecx,this"
 "	      00559bab    mov [ecx+0D0h],ax"
 );
 // LINE 1449:
 	asm( 
-"	      00559bb2    mov dword ptr [ebp-4],1"
+"	      00559bb2    mov result,1"
 );
 // LINE 1451:
 	asm( 
-"	      00559bb9    mov eax,[ebp-4]"
+"	      00559bb9    mov eax,result"
 "	      00559bbc    jmp near ptr 00559BC1h"
 );
 // LINE 1452:
@@ -8088,15 +8088,15 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 "	      00559bce    push ebx"
 "	      00559bcf    push esi"
 "	      00559bd0    push edi"
-"	      00559bd1    mov [ebp-0Ch],ecx"
+"	      00559bd1    mov this,ecx"
 );
 // LINE 1456:
 	asm( 
-"	      00559bd4    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00559bd4    mov result,0FFFFFFFFh"
 );
 // LINE 1457:
 	asm( 
-"	      00559bdb    mov eax,[ebp-0Ch]"
+"	      00559bdb    mov eax,this"
 "	      00559bde    cmp dword ptr [eax+140h],0"
 "	      00559be5    jne near ptr 00559C07h"
 "	      00559beb    push 8C085h"
@@ -8105,7 +8105,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 "	      00559bfa    push 5BD190h"
 "	      00559bff    call 00554F30h"
 "	      00559c04    add esp,10h"
-"	      00559c07    mov eax,[ebp-0Ch]"
+"	      00559c07    mov eax,this"
 "	      00559c0a    mov eax,[eax+140h]"
 "	      00559c10    mov [ebp-8],eax"
 );
@@ -8118,10 +8118,10 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 "	      00559c1f    mov eax,[ebp-8]"
 "	      00559c22    mov eax,[eax+18h]"
 "	      00559c25    push eax"
-"	      00559c26    mov eax,[ebp-0Ch]"
+"	      00559c26    mov eax,this"
 "	      00559c29    mov eax,[eax+44h]"
 "	      00559c2c    push eax"
-"	      00559c2d    mov eax,[ebp-0Ch]"
+"	      00559c2d    mov eax,this"
 "	      00559c30    mov eax,[eax+3Ch]"
 "	      00559c33    push eax"
 "	      00559c34    call 00551AF1h"
@@ -8129,16 +8129,16 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 "	      00559c3c    movsx eax,ax"
 "	      00559c3f    add eax,2"
 "	      00559c42    and eax,7"
-"	      00559c45    mov ecx,[ebp-0Ch]"
+"	      00559c45    mov ecx,this"
 "	      00559c48    mov [ecx+0D0h],ax"
 );
 // LINE 1459:
 	asm( 
-"	      00559c4f    mov dword ptr [ebp-4],1"
+"	      00559c4f    mov result,1"
 );
 // LINE 1461:
 	asm( 
-"	      00559c56    mov eax,[ebp-4]"
+"	      00559c56    mov eax,result"
 "	      00559c59    jmp near ptr 00559C5Eh"
 );
 // LINE 1462:
@@ -8163,15 +8163,15 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 "	      00559c6b    push ebx"
 "	      00559c6c    push esi"
 "	      00559c6d    push edi"
-"	      00559c6e    mov [ebp-0Ch],ecx"
+"	      00559c6e    mov this,ecx"
 );
 // LINE 1466:
 	asm( 
-"	      00559c71    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00559c71    mov result,0FFFFFFFFh"
 );
 // LINE 1467:
 	asm( 
-"	      00559c78    mov eax,[ebp-0Ch]"
+"	      00559c78    mov eax,this"
 "	      00559c7b    cmp dword ptr [eax+140h],0"
 "	      00559c82    jne near ptr 00559CA4h"
 "	      00559c88    push 8C085h"
@@ -8180,7 +8180,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 "	      00559c97    push 5BD1C4h"
 "	      00559c9c    call 00554F30h"
 "	      00559ca1    add esp,10h"
-"	      00559ca4    mov eax,[ebp-0Ch]"
+"	      00559ca4    mov eax,this"
 "	      00559ca7    mov eax,[eax+140h]"
 "	      00559cad    mov [ebp-8],eax"
 );
@@ -8193,10 +8193,10 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 "	      00559cbc    mov eax,[ebp-8]"
 "	      00559cbf    mov eax,[eax+18h]"
 "	      00559cc2    push eax"
-"	      00559cc3    mov eax,[ebp-0Ch]"
+"	      00559cc3    mov eax,this"
 "	      00559cc6    mov eax,[eax+44h]"
 "	      00559cc9    push eax"
-"	      00559cca    mov eax,[ebp-0Ch]"
+"	      00559cca    mov eax,this"
 "	      00559ccd    mov eax,[eax+3Ch]"
 "	      00559cd0    push eax"
 "	      00559cd1    call 00551AF1h"
@@ -8204,16 +8204,16 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 "	      00559cd9    movsx eax,ax"
 "	      00559cdc    sub eax,2"
 "	      00559cdf    and eax,7"
-"	      00559ce2    mov ecx,[ebp-0Ch]"
+"	      00559ce2    mov ecx,this"
 "	      00559ce5    mov [ecx+0D0h],ax"
 );
 // LINE 1469:
 	asm( 
-"	      00559cec    mov dword ptr [ebp-4],1"
+"	      00559cec    mov result,1"
 );
 // LINE 1471:
 	asm( 
-"	      00559cf3    mov eax,[ebp-4]"
+"	      00559cf3    mov eax,result"
 "	      00559cf6    jmp near ptr 00559CFBh"
 );
 // LINE 1472:
@@ -8242,24 +8242,24 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559d08    push ebx"
 "	      00559d09    push esi"
 "	      00559d0a    push edi"
-"	      00559d0b    mov [ebp-30h],ecx"
+"	      00559d0b    mov this,ecx"
 );
 // LINE 1476:
 	asm( 
-"	      00559d0e    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00559d15    mov eax,[ebp+0Ch]"
+"	      00559d0e    mov result,0FFFFFFFFh"
+"	      00559d15    mov eax,node"
 "	      00559d18    add eax,4"
-"	      00559d1b    mov [ebp-10h],eax"
+"	      00559d1b    mov nparam,eax"
 );
 // LINE 1477:
 	asm( 
-"	      00559d1e    mov eax,[ebp-10h]"
+"	      00559d1e    mov eax,nparam"
 "	      00559d21    mov ax,[eax]"
-"	      00559d24    mov [ebp-14h],ax"
+"	      00559d24    mov getoutofroad.decTemp,ax"
 );
 // LINE 1479:
 	asm( 
-"	      00559d28    mov eax,[ebp-30h]"
+"	      00559d28    mov eax,this"
 "	      00559d2b    movsx eax,word ptr [eax+0F6h]"
 "	      00559d32    test eax,eax"
 "	      00559d34    je near ptr 00559D56h"
@@ -8272,43 +8272,43 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 );
 // LINE 1480:
 	asm( 
-"	      00559d56    mov eax,[ebp-30h]"
+"	      00559d56    mov eax,this"
 "	      00559d59    movzx ax,byte ptr [eax+89h]"
 "	      00559d61    push eax"
-"	      00559d62    mov eax,[ebp-30h]"
+"	      00559d62    mov eax,this"
 "	      00559d65    movzx ax,byte ptr [eax+88h]"
 "	      00559d6d    push eax"
 "	      00559d6e    call 00555746h"
 "	      00559d73    add esp,8"
-"	      00559d76    mov [ebp-0Ch],eax"
+"	      00559d76    mov loctype,eax"
 "	      00559d79    jmp near ptr 00559D7Eh"
 );
 // LINE 1486:
 	asm( 
-"	      00559d7e    cmp dword ptr [ebp-0Ch],7"
+"	      00559d7e    cmp loctype,7"
 "	      00559d82    je near ptr 00559DC6h"
-"	      00559d88    cmp dword ptr [ebp-0Ch],8"
+"	      00559d88    cmp loctype,8"
 "	      00559d8c    je near ptr 00559DC6h"
-"	      00559d92    cmp dword ptr [ebp-0Ch],6"
+"	      00559d92    cmp loctype,6"
 "	      00559d96    je near ptr 00559DC6h"
-"	      00559d9c    cmp dword ptr [ebp-0Ch],9"
+"	      00559d9c    cmp loctype,9"
 "	      00559da0    je near ptr 00559DC6h"
-"	      00559da6    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      00559da6    cmp loctype,0FFFFFFFFh"
 "	      00559daa    je near ptr 00559DC6h"
-"	      00559db0    cmp dword ptr [ebp-0Ch],1"
+"	      00559db0    cmp loctype,1"
 "	      00559db4    je near ptr 00559DC6h"
 );
 // LINE 1487:
 	asm( 
-"	      00559dba    mov dword ptr [ebp-4],1"
+"	      00559dba    mov result,1"
 );
 // LINE 1489:
 	asm( 
 "	      00559dc1    jmp near ptr 00559F0Fh"
-"	      00559dc6    movsx eax,word ptr [ebp-14h]"
+"	      00559dc6    movsx eax,getoutofroad.decTemp"
 "	      00559dca    cmp eax,0FFFFFFFFh"
 "	      00559dcd    jle near ptr 00559DE0h"
-"	      00559dd3    movsx eax,word ptr [ebp-14h]"
+"	      00559dd3    movsx eax,getoutofroad.decTemp"
 "	      00559dd7    cmp eax,4"
 "	      00559dda    jl near ptr 00559DFCh"
 "	      00559de0    push 8C085h"
@@ -8319,24 +8319,24 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559df9    add esp,10h"
 "	      00559dfc    jmp near ptr 00559E01h"
 "	      00559e01    jmp near ptr 00559E06h"
-"	      00559e06    mov eax,[ebp-30h]"
+"	      00559e06    mov eax,this"
 "	      00559e09    movsx eax,word ptr [eax+8]"
 "	      00559e0d    lea eax,[eax*4-4]"
 "	      00559e14    lea eax,[eax+eax*4]"
-"	      00559e17    mov ecx,[ebp-30h]"
+"	      00559e17    mov ecx,this"
 "	      00559e1a    add eax,[ecx+4]"
-"	      00559e1d    movsx ecx,word ptr [ebp-14h]"
+"	      00559e1d    movsx ecx,getoutofroad.decTemp"
 "	      00559e21    movsx eax,word ptr [eax+ecx*2+8]"
 "	      00559e26    test eax,eax"
 "	      00559e28    jne near ptr 00559E41h"
 );
 // LINE 1490:
 	asm( 
-"	      00559e2e    mov dword ptr [ebp-8],8"
+"	      00559e2e    mov movecode,8"
 );
 // LINE 1491:
 	asm( 
-"	      00559e35    mov dword ptr [ebp-4],0"
+"	      00559e35    mov result,0"
 );
 // LINE 1493:
 	asm( 
@@ -8347,10 +8347,10 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 	struct cYObject::MoveInfo moveinfo;
 	short speed;
 	asm( 
-"	      00559e41    movsx eax,word ptr [ebp-14h]"
+"	      00559e41    movsx eax,getoutofroad.decTemp"
 "	      00559e45    cmp eax,0FFFFFFFFh"
 "	      00559e48    jle near ptr 00559E5Bh"
-"	      00559e4e    movsx eax,word ptr [ebp-14h]"
+"	      00559e4e    movsx eax,getoutofroad.decTemp"
 "	      00559e52    cmp eax,4"
 "	      00559e55    jl near ptr 00559E77h"
 "	      00559e5b    push 8C085h"
@@ -8360,13 +8360,13 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559e6f    call 00554F30h"
 "	      00559e74    add esp,10h"
 "	      00559e77    jmp near ptr 00559E7Ch"
-"	      00559e7c    mov eax,[ebp-30h]"
+"	      00559e7c    mov eax,this"
 "	      00559e7f    movsx eax,word ptr [eax+8]"
 "	      00559e83    lea eax,[eax*4-4]"
 "	      00559e8a    lea eax,[eax+eax*4]"
-"	      00559e8d    mov ecx,[ebp-30h]"
+"	      00559e8d    mov ecx,this"
 "	      00559e90    add eax,[ecx+4]"
-"	      00559e93    movsx ecx,word ptr [ebp-14h]"
+"	      00559e93    movsx ecx,getoutofroad.decTemp"
 "	      00559e97    lea eax,[eax+ecx*2]"
 "	      00559e9a    add eax,8"
 "	      00559e9d    mov [ebp-2Ch],eax"
@@ -8378,36 +8378,36 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 	asm( 
 "	      00559eab    push 10h"
 "	      00559ead    push 0"
-"	      00559eaf    lea eax,[ebp-28h]"
+"	      00559eaf    lea eax,moveinfo.locType"
 "	      00559eb2    push eax"
 "	      00559eb3    call 00554C10h"
 "	      00559eb8    add esp,0Ch"
 );
 // LINE 1500:
 	asm( 
-"	      00559ebb    mov eax,[ebp-30h]"
+"	      00559ebb    mov eax,this"
 "	      00559ebe    mov ax,[eax+0F4h]"
-"	      00559ec5    mov [ebp-18h],ax"
+"	      00559ec5    mov speed,ax"
 );
 // LINE 1501:
 	asm( 
-"	      00559ec9    lea eax,[ebp-28h]"
+"	      00559ec9    lea eax,moveinfo.locType"
 "	      00559ecc    push eax"
 "	      00559ecd    push 0"
 "	      00559ecf    mov eax,[ebp-18h]"
 "	      00559ed2    push eax"
-"	      00559ed3    mov ecx,[ebp-30h]"
+"	      00559ed3    mov ecx,this"
 "	      00559ed6    call 00555885h"
-"	      00559edb    mov [ebp-8],eax"
+"	      00559edb    mov movecode,eax"
 );
 // LINE 1518:
 	asm( 
-"	      00559ede    cmp dword ptr [ebp-8],0"
+"	      00559ede    cmp movecode,0"
 "	      00559ee2    jne near ptr 00559EF4h"
 );
 // LINE 1519:
 	asm( 
-"	      00559ee8    mov dword ptr [ebp-4],2"
+"	      00559ee8    mov result,2"
 );
 // LINE 1520:
 	asm( 
@@ -8415,23 +8415,23 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 );
 // LINE 1521:
 	asm( 
-"	      00559ef4    mov dword ptr [ebp-4],0"
+"	      00559ef4    mov result,0"
 );
 // LINE 1522:
 	asm( 
-"	      00559efb    lea eax,[ebp-28h]"
+"	      00559efb    lea eax,moveinfo.locType"
 "	      00559efe    push eax"
-"	      00559eff    mov eax,[ebp-8]"
+"	      00559eff    mov eax,movecode"
 "	      00559f02    push eax"
 "	      00559f03    mov eax,[ebp-18h]"
 "	      00559f06    push eax"
-"	      00559f07    mov ecx,[ebp-30h]"
+"	      00559f07    mov ecx,this"
 "	      00559f0a    call 0054E579h"
 );
 // LINE 1526:
 // Block end:
 	asm( 
-"	      00559f0f    mov eax,[ebp-4]"
+"	      00559f0f    mov eax,result"
 "	      00559f12    jmp near ptr 00559F17h"
 );
 // LINE 1527:
@@ -8457,37 +8457,37 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct Tre
 "	      00559f24    push ebx"
 "	      00559f25    push esi"
 "	      00559f26    push edi"
-"	      00559f27    mov [ebp-1Ch],ecx"
+"	      00559f27    mov this,ecx"
 );
 // LINE 1531:
 	asm( 
-"	      00559f2a    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00559f31    mov dword ptr [ebp-18h],1"
-"	      00559f38    mov eax,[ebp-1Ch]"
+"	      00559f2a    mov result,0FFFFFFFFh"
+"	      00559f31    mov lstr.nType,1"
+"	      00559f38    mov eax,this"
 "	      00559f3b    mov eax,[eax+1Ch]"
-"	      00559f3e    mov [ebp-10h],eax"
+"	      00559f3e    mov lstr.nMissionID,eax"
 );
 // LINE 1533:
 	asm( 
-"	      00559f41    mov dword ptr [ebp-0Ch],5BD244h"
+"	      00559f41    mov lstr.szLogString,5BD244h"
 "	      00559f48    push 1"
-"	      00559f4a    lea eax,[ebp-18h]"
+"	      00559f4a    lea eax,lstr.nType"
 "	      00559f4d    push eax"
 "	      00559f4e    call 004EBC2Bh"
 "	      00559f53    add esp,8"
 );
 // LINE 1536:
 	asm( 
-"	      00559f56    mov ecx,[ebp-1Ch]"
+"	      00559f56    mov ecx,this"
 "	      00559f59    call 0055716Eh"
 );
 // LINE 1537:
 	asm( 
-"	      00559f5e    mov dword ptr [ebp-4],3"
+"	      00559f5e    mov result,3"
 );
 // LINE 1539:
 	asm( 
-"	      00559f65    mov eax,[ebp-4]"
+"	      00559f65    mov eax,result"
 "	      00559f68    jmp near ptr 00559F6Dh"
 );
 // LINE 1540:
@@ -8516,36 +8516,36 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 "	      00559f7a    push ebx"
 "	      00559f7b    push esi"
 "	      00559f7c    push edi"
-"	      00559f7d    mov [ebp-2Ch],ecx"
+"	      00559f7d    mov this,ecx"
 );
 // LINE 1544:
 	asm( 
-"	      00559f80    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      00559f87    mov eax,[ebp+0Ch]"
+"	      00559f80    mov result,0FFFFFFFFh"
+"	      00559f87    mov eax,node"
 "	      00559f8a    add eax,4"
-"	      00559f8d    mov [ebp-10h],eax"
+"	      00559f8d    mov nparam,eax"
 );
 // LINE 1545:
 	asm( 
-"	      00559f90    mov eax,[ebp-10h]"
+"	      00559f90    mov eax,nparam"
 "	      00559f93    mov eax,[eax]"
 "	      00559f95    mov [ebp-14h],eax"
 );
 // LINE 1547:
 	asm( 
-"	      00559f98    lea eax,[ebp-8]"
+"	      00559f98    lea eax,firecelly"
 "	      00559f9b    push eax"
-"	      00559f9c    lea eax,[ebp-0Ch]"
+"	      00559f9c    lea eax,firecellx"
 "	      00559f9f    push eax"
 "	      00559fa0    push 3"
-"	      00559fa2    mov ecx,[ebp-2Ch]"
+"	      00559fa2    mov ecx,this"
 "	      00559fa5    call 00556CB9h"
 "	      00559faa    movzx eax,ax"
 "	      00559fad    test eax,eax"
 "	      00559faf    je near ptr 0055A145h"
-"	      00559fb5    mov ax,[ebp-8]"
+"	      00559fb5    mov ax,firecelly"
 "	      00559fb9    mov [ebp-24h],ax"
-"	      00559fbd    mov ax,[ebp-0Ch]"
+"	      00559fbd    mov ax,firecellx"
 "	      00559fc1    mov [ebp-28h],ax"
 );
 // LINE 1548:
@@ -8566,10 +8566,10 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 "	      00559ff8    movsx eax,word ptr [eax+2]"
 "	      00559ffc    shl eax,10h"
 "	      00559fff    push eax"
-"	      0055a000    mov eax,[ebp-2Ch]"
+"	      0055a000    mov eax,this"
 "	      0055a003    mov eax,[eax+44h]"
 "	      0055a006    push eax"
-"	      0055a007    mov eax,[ebp-2Ch]"
+"	      0055a007    mov eax,this"
 "	      0055a00a    mov eax,[eax+3Ch]"
 "	      0055a00d    push eax"
 "	      0055a00e    call 00551AF1h"
@@ -8577,15 +8577,15 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 "	      0055a016    movsx eax,ax"
 "	      0055a019    sub eax,2"
 "	      0055a01c    and eax,7"
-"	      0055a01f    mov ecx,[ebp-2Ch]"
+"	      0055a01f    mov ecx,this"
 "	      0055a022    mov [ecx+0D0h],ax"
 );
 // LINE 1549:
 	asm( 
-"	      0055a029    movsx eax,word ptr [ebp-14h]"
+"	      0055a029    movsx eax,param.xdistloc"
 "	      0055a02d    cmp eax,0FFFFFFFFh"
 "	      0055a030    jle near ptr 0055A043h"
-"	      0055a036    movsx eax,word ptr [ebp-14h]"
+"	      0055a036    movsx eax,param.xdistloc"
 "	      0055a03a    cmp eax,4"
 "	      0055a03d    jl near ptr 0055A05Fh"
 "	      0055a043    push 8C085h"
@@ -8595,19 +8595,19 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 "	      0055a057    call 00554F30h"
 "	      0055a05c    add esp,10h"
 "	      0055a05f    jmp near ptr 0055A064h"
-"	      0055a064    mov eax,[ebp-2Ch]"
+"	      0055a064    mov eax,this"
 "	      0055a067    movsx eax,word ptr [eax+8]"
 "	      0055a06b    lea eax,[eax*4-4]"
 "	      0055a072    lea eax,[eax+eax*4]"
-"	      0055a075    mov ecx,[ebp-2Ch]"
+"	      0055a075    mov ecx,this"
 "	      0055a078    add eax,[ecx+4]"
-"	      0055a07b    movsx ecx,word ptr [ebp-14h]"
+"	      0055a07b    movsx ecx,param.xdistloc"
 "	      0055a07f    lea eax,[eax+ecx*2]"
 "	      0055a082    add eax,8"
 "	      0055a085    mov [ebp-18h],eax"
 "	      0055a088    jmp near ptr 0055A08Dh"
-"	      0055a08d    movsx eax,word ptr [ebp-0Ch]"
-"	      0055a091    mov ecx,[ebp-2Ch]"
+"	      0055a08d    movsx eax,firecellx"
+"	      0055a091    mov ecx,this"
 "	      0055a094    xor edx,edx"
 "	      0055a096    mov dl,[ecx+88h]"
 "	      0055a09c    sub eax,edx"
@@ -8621,10 +8621,10 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 );
 // LINE 1550:
 	asm( 
-"	      0055a0b1    movsx eax,word ptr [ebp-12h]"
+"	      0055a0b1    movsx eax,param.ydistloc"
 "	      0055a0b5    cmp eax,0FFFFFFFFh"
 "	      0055a0b8    jle near ptr 0055A0CBh"
-"	      0055a0be    movsx eax,word ptr [ebp-12h]"
+"	      0055a0be    movsx eax,param.ydistloc"
 "	      0055a0c2    cmp eax,4"
 "	      0055a0c5    jl near ptr 0055A0E7h"
 "	      0055a0cb    push 8C085h"
@@ -8634,19 +8634,19 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 "	      0055a0df    call 00554F30h"
 "	      0055a0e4    add esp,10h"
 "	      0055a0e7    jmp near ptr 0055A0ECh"
-"	      0055a0ec    mov eax,[ebp-2Ch]"
+"	      0055a0ec    mov eax,this"
 "	      0055a0ef    movsx eax,word ptr [eax+8]"
 "	      0055a0f3    lea eax,[eax*4-4]"
 "	      0055a0fa    lea eax,[eax+eax*4]"
-"	      0055a0fd    mov ecx,[ebp-2Ch]"
+"	      0055a0fd    mov ecx,this"
 "	      0055a100    add eax,[ecx+4]"
-"	      0055a103    movsx ecx,word ptr [ebp-12h]"
+"	      0055a103    movsx ecx,param.ydistloc"
 "	      0055a107    lea eax,[eax+ecx*2]"
 "	      0055a10a    add eax,8"
 "	      0055a10d    mov [ebp-1Ch],eax"
 "	      0055a110    jmp near ptr 0055A115h"
-"	      0055a115    movsx eax,word ptr [ebp-8]"
-"	      0055a119    mov ecx,[ebp-2Ch]"
+"	      0055a115    movsx eax,firecelly"
+"	      0055a119    mov ecx,this"
 "	      0055a11c    xor edx,edx"
 "	      0055a11e    mov dl,[ecx+89h]"
 "	      0055a124    sub eax,edx"
@@ -8660,7 +8660,7 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 );
 // LINE 1551:
 	asm( 
-"	      0055a139    mov dword ptr [ebp-4],1"
+"	      0055a139    mov result,1"
 );
 // LINE 1553:
 	asm( 
@@ -8668,11 +8668,11 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 );
 // LINE 1554:
 	asm( 
-"	      0055a145    mov dword ptr [ebp-4],0"
+"	      0055a145    mov result,0"
 );
 // LINE 1556:
 	asm( 
-"	      0055a14c    mov eax,[ebp-4]"
+"	      0055a14c    mov eax,result"
 "	      0055a14f    jmp near ptr 0055A154h"
 );
 // LINE 1557:
@@ -8698,37 +8698,37 @@ enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem* elem, struct 
 "	      0055a161    push ebx"
 "	      0055a162    push esi"
 "	      0055a163    push edi"
-"	      0055a164    mov [ebp-1Ch],ecx"
+"	      0055a164    mov this,ecx"
 );
 // LINE 1561:
 	asm( 
-"	      0055a167    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055a16e    mov dword ptr [ebp-18h],1"
-"	      0055a175    mov eax,[ebp-1Ch]"
+"	      0055a167    mov result,0FFFFFFFFh"
+"	      0055a16e    mov lstr.nType,1"
+"	      0055a175    mov eax,this"
 "	      0055a178    mov eax,[eax+1Ch]"
-"	      0055a17b    mov [ebp-10h],eax"
+"	      0055a17b    mov lstr.nMissionID,eax"
 );
 // LINE 1562:
 	asm( 
-"	      0055a17e    mov dword ptr [ebp-0Ch],5BD250h"
+"	      0055a17e    mov lstr.szLogString,5BD250h"
 "	      0055a185    push 1"
-"	      0055a187    lea eax,[ebp-18h]"
+"	      0055a187    lea eax,lstr.nType"
 "	      0055a18a    push eax"
 "	      0055a18b    call 004EBC2Bh"
 "	      0055a190    add esp,8"
 );
 // LINE 1564:
 	asm( 
-"	      0055a193    mov ecx,[ebp-1Ch]"
+"	      0055a193    mov ecx,this"
 "	      0055a196    call 0055716Eh"
 );
 // LINE 1565:
 	asm( 
-"	      0055a19b    mov dword ptr [ebp-4],3"
+"	      0055a19b    mov result,3"
 );
 // LINE 1567:
 	asm( 
-"	      0055a1a2    mov eax,[ebp-4]"
+"	      0055a1a2    mov eax,result"
 "	      0055a1a5    jmp near ptr 0055A1AAh"
 );
 // LINE 1568:
@@ -8751,15 +8751,15 @@ enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem*
 "	      0055a1b7    push ebx"
 "	      0055a1b8    push esi"
 "	      0055a1b9    push edi"
-"	      0055a1ba    mov [ebp-4],ecx"
+"	      0055a1ba    mov this,ecx"
 );
 // LINE 1572:
 	asm( 
-"	      0055a1bd    mov eax,[ebp+0Ch]"
+"	      0055a1bd    mov eax,node"
 "	      0055a1c0    push eax"
-"	      0055a1c1    mov eax,[ebp+8]"
+"	      0055a1c1    mov eax,elem"
 "	      0055a1c4    push eax"
-"	      0055a1c5    mov ecx,[ebp-4]"
+"	      0055a1c5    mov ecx,this"
 "	      0055a1c8    call 00557C20h"
 "	      0055a1cd    jmp near ptr 0055A1D2h"
 );
@@ -8788,27 +8788,27 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 "	      0055a1df    push ebx"
 "	      0055a1e0    push esi"
 "	      0055a1e1    push edi"
-"	      0055a1e2    mov [ebp-14h],ecx"
+"	      0055a1e2    mov this,ecx"
 );
 // LINE 1577:
 	asm( 
-"	      0055a1e5    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055a1ec    mov eax,[ebp+0Ch]"
+"	      0055a1e5    mov result,0FFFFFFFFh"
+"	      0055a1ec    mov eax,node"
 "	      0055a1ef    add eax,4"
-"	      0055a1f2    mov [ebp-8],eax"
+"	      0055a1f2    mov nparam,eax"
 );
 // LINE 1578:
 	asm( 
-"	      0055a1f5    mov eax,[ebp+8]"
+"	      0055a1f5    mov eax,elem"
 "	      0055a1f8    mov eax,[eax+4]"
 "	      0055a1fb    push eax"
 "	      0055a1fc    call 00544874h"
 "	      0055a201    add esp,4"
-"	      0055a204    mov [ebp-10h],eax"
+"	      0055a204    mov obj,eax"
 );
 // LINE 1579:
 	asm( 
-"	      0055a207    cmp dword ptr [ebp-10h],0"
+"	      0055a207    cmp obj,0"
 "	      0055a20b    jne near ptr 0055A22Dh"
 "	      0055a211    push 8C085h"
 "	      0055a216    push 5BD264h"
@@ -8819,30 +8819,30 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 );
 // LINE 1580:
 	asm( 
-"	      0055a22d    mov eax,[ebp-8]"
+"	      0055a22d    mov eax,nparam"
 "	      0055a230    mov ax,[eax]"
-"	      0055a233    mov [ebp-0Ch],ax"
+"	      0055a233    mov treenum,ax"
 );
 // LINE 1582:
 	asm( 
 "	      0055a237    jmp near ptr 0055A23Ch"
 "	      0055a23c    jmp near ptr 0055A241h"
-"	      0055a241    mov eax,[ebp-10h]"
+"	      0055a241    mov eax,obj"
 "	      0055a244    movsx eax,word ptr [eax+8]"
 "	      0055a248    lea eax,[eax*4-4]"
 "	      0055a24f    lea eax,[eax+eax*4]"
-"	      0055a252    mov ecx,[ebp-10h]"
+"	      0055a252    mov ecx,obj"
 "	      0055a255    mov ecx,[ecx+4]"
 "	      0055a258    movsx eax,word ptr [eax+ecx]"
-"	      0055a25c    movsx ecx,word ptr [ebp-0Ch]"
+"	      0055a25c    movsx ecx,treenum"
 "	      0055a260    cmp eax,ecx"
 "	      0055a262    je near ptr 0055A2BFh"
 "	      0055a268    jmp near ptr 0055A26Dh"
 "	      0055a26d    jmp near ptr 0055A272h"
-"	      0055a272    mov eax,[ebp-10h]"
+"	      0055a272    mov eax,obj"
 "	      0055a275    movsx eax,word ptr [eax+0Ah]"
 "	      0055a279    dec eax"
-"	      0055a27a    mov ecx,[ebp-10h]"
+"	      0055a27a    mov ecx,obj"
 "	      0055a27d    movsx ecx,word ptr [ecx+8]"
 "	      0055a281    cmp eax,ecx"
 "	      0055a283    jg near ptr 0055A2A5h"
@@ -8856,7 +8856,7 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 "	      0055a2a8    push eax"
 "	      0055a2a9    push 0"
 "	      0055a2ab    push 0"
-"	      0055a2ad    mov ecx,[ebp-10h]"
+"	      0055a2ad    mov ecx,obj"
 "	      0055a2b0    call 0055CE37h"
 "	      0055a2b5    jmp near ptr 0055A2C4h"
 "	      0055a2ba    jmp near ptr 0055A2C4h"
@@ -8864,11 +8864,11 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 );
 // LINE 1583:
 	asm( 
-"	      0055a2c4    mov dword ptr [ebp-4],1"
+"	      0055a2c4    mov result,1"
 );
 // LINE 1585:
 	asm( 
-"	      0055a2cb    mov eax,[ebp-4]"
+"	      0055a2cb    mov eax,result"
 "	      0055a2ce    jmp near ptr 0055A2D3h"
 );
 // LINE 1586:
@@ -8893,15 +8893,15 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a2e0    push ebx"
 "	      0055a2e1    push esi"
 "	      0055a2e2    push edi"
-"	      0055a2e3    mov [ebp-18h],ecx"
+"	      0055a2e3    mov this,ecx"
 );
 // LINE 1590:
 	asm( 
-"	      0055a2e6    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055a2e6    mov result,0FFFFFFFFh"
 );
 // LINE 1591:
 	asm( 
-"	      0055a2ed    mov eax,[ebp-18h]"
+"	      0055a2ed    mov eax,this"
 "	      0055a2f0    movsx eax,word ptr [eax+0D2h]"
 "	      0055a2f7    test eax,eax"
 "	      0055a2f9    jne near ptr 0055A31Bh"
@@ -8912,7 +8912,7 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a313    call 00554F30h"
 "	      0055a318    add esp,10h"
 "	      0055a31b    jmp near ptr 0055A320h"
-"	      0055a320    mov eax,[ebp-18h]"
+"	      0055a320    mov eax,this"
 "	      0055a323    xor ecx,ecx"
 "	      0055a325    mov cx,[eax+20h]"
 "	      0055a329    test ecx,ecx"
@@ -8923,12 +8923,12 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a340    push 5BBA14h"
 "	      0055a345    call 00554F30h"
 "	      0055a34a    add esp,10h"
-"	      0055a34d    mov eax,[ebp-18h]"
+"	      0055a34d    mov eax,this"
 "	      0055a350    xor ecx,ecx"
 "	      0055a352    mov cl,[eax+88h]"
 "	      0055a358    cmp ecx,0FFFFFFFFh"
 "	      0055a35b    jne near ptr 0055A396h"
-"	      0055a361    mov eax,[ebp-18h]"
+"	      0055a361    mov eax,this"
 "	      0055a364    xor ecx,ecx"
 "	      0055a366    mov cl,[eax+89h]"
 "	      0055a36c    cmp ecx,0FFFFFFFFh"
@@ -8940,7 +8940,7 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a389    call 00554F30h"
 "	      0055a38e    add esp,10h"
 "	      0055a391    jmp near ptr 0055A3C6h"
-"	      0055a396    mov eax,[ebp-18h]"
+"	      0055a396    mov eax,this"
 "	      0055a399    xor ecx,ecx"
 "	      0055a39b    mov cl,[eax+89h]"
 "	      0055a3a1    cmp ecx,0FFFFFFFFh"
@@ -8951,7 +8951,7 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a3b9    push 5BBA14h"
 "	      0055a3be    call 00554F30h"
 "	      0055a3c3    add esp,10h"
-"	      0055a3c6    mov eax,[ebp-18h]"
+"	      0055a3c6    mov eax,this"
 "	      0055a3c9    xor ecx,ecx"
 "	      0055a3cb    mov cl,[eax+88h]"
 "	      0055a3d1    cmp ecx,0FFFFFFFFh"
@@ -8967,21 +8967,21 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a405    push 5BBA14h"
 "	      0055a40a    call 00554F30h"
 "	      0055a40f    add esp,10h"
-"	      0055a412    mov eax,[ebp-18h]"
+"	      0055a412    mov eax,this"
 "	      0055a415    movsx eax,word ptr [eax+102h]"
 "	      0055a41c    cmp eax,0FFFFFFFFh"
 "	      0055a41f    je near ptr 0055A4BCh"
-"	      0055a425    mov eax,[ebp-18h]"
+"	      0055a425    mov eax,this"
 "	      0055a428    mov word ptr [eax+104h],0FFFFh"
-"	      0055a431    mov eax,[ebp-18h]"
+"	      0055a431    mov eax,this"
 "	      0055a434    movsx eax,word ptr [eax+102h]"
 "	      0055a43b    cmp eax,0FFFFFFFFh"
 "	      0055a43e    je near ptr 0055A497h"
-"	      0055a444    mov eax,[ebp-18h]"
+"	      0055a444    mov eax,this"
 "	      0055a447    movsx eax,word ptr [eax+102h]"
 "	      0055a44e    cmp eax,0FFFFFFFFh"
 "	      0055a451    je near ptr 0055A472h"
-"	      0055a457    mov eax,[ebp-18h]"
+"	      0055a457    mov eax,this"
 "	      0055a45a    movsx eax,word ptr [eax+102h]"
 "	      0055a461    add eax,62h"
 "	      0055a464    mov [ebp-0Ch],ax"
@@ -8997,19 +8997,19 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a48f    call 00446E04h"
 "	      0055a494    add esp,4"
 "	      0055a497    jmp near ptr 0055A49Ch"
-"	      0055a49c    mov eax,[ebp-18h]"
+"	      0055a49c    mov eax,this"
 "	      0055a49f    movsx eax,word ptr [eax+102h]"
 "	      0055a4a6    mov word ptr [eax*2+6356B0h],0"
-"	      0055a4b0    mov eax,[ebp-18h]"
+"	      0055a4b0    mov eax,this"
 "	      0055a4b3    mov word ptr [eax+102h],0FFFFh"
 "	      0055a4bc    jmp near ptr 0055A4C1h"
-"	      0055a4c1    mov eax,[ebp-18h]"
+"	      0055a4c1    mov eax,this"
 "	      0055a4c4    mov word ptr [eax+0D2h],0"
-"	      0055a4cd    mov eax,[ebp-18h]"
+"	      0055a4cd    mov eax,this"
 "	      0055a4d0    mov word ptr [eax+0F0h],0FFFFh"
-"	      0055a4d9    mov eax,[ebp-18h]"
+"	      0055a4d9    mov eax,this"
 "	      0055a4dc    mov word ptr [eax+9Ch],0FFFFh"
-"	      0055a4e5    mov eax,[ebp-18h]"
+"	      0055a4e5    mov eax,this"
 "	      0055a4e8    movsx eax,word ptr [eax+0D8h]"
 "	      0055a4ef    mov [ebp-8],eax"
 "	      0055a4f2    cmp dword ptr [ebp-8],0"
@@ -9034,17 +9034,17 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 "	      0055a54f    push 5BBA14h"
 "	      0055a554    call 00554F30h"
 "	      0055a559    add esp,10h"
-"	      0055a55c    mov ecx,[ebp-18h]"
+"	      0055a55c    mov ecx,this"
 "	      0055a55f    call 005507ECh"
 "	      0055a564    jmp near ptr 0055A569h"
 );
 // LINE 1592:
 	asm( 
-"	      0055a569    mov dword ptr [ebp-4],2"
+"	      0055a569    mov result,2"
 );
 // LINE 1594:
 	asm( 
-"	      0055a570    mov eax,[ebp-4]"
+"	      0055a570    mov eax,result"
 "	      0055a573    jmp near ptr 0055A578h"
 );
 // LINE 1595:
@@ -9070,21 +9070,21 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 "	      0055a585    push ebx"
 "	      0055a586    push esi"
 "	      0055a587    push edi"
-"	      0055a588    mov [ebp-0Ch],ecx"
+"	      0055a588    mov this,ecx"
 );
 // LINE 1599:
 	asm( 
-"	      0055a58b    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055a58b    mov result,0FFFFFFFFh"
 );
 // LINE 1600:
 	asm( 
-"	      0055a592    mov ecx,[ebp-0Ch]"
+"	      0055a592    mov ecx,this"
 "	      0055a595    call 005573F5h"
-"	      0055a59a    mov [ebp-8],eax"
+"	      0055a59a    mov obj,eax"
 );
 // LINE 1601:
 	asm( 
-"	      0055a59d    cmp dword ptr [ebp-8],0"
+"	      0055a59d    cmp obj,0"
 "	      0055a5a1    jne near ptr 0055A5C3h"
 "	      0055a5a7    push 8C085h"
 "	      0055a5ac    push 5BD290h"
@@ -9095,7 +9095,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 );
 // LINE 1602:
 	asm( 
-"	      0055a5c3    mov eax,[ebp-8]"
+"	      0055a5c3    mov eax,obj"
 "	      0055a5c6    movsx eax,word ptr [eax+0D8h]"
 "	      0055a5cd    cmp eax,6"
 "	      0055a5d0    je near ptr 0055A5F2h"
@@ -9109,8 +9109,8 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 // LINE 1603:
 	asm( 
 "	      0055a5f2    jmp near ptr 0055A5F7h"
-"	      0055a5f7    mov eax,[ebp-8]"
-"	      0055a5fa    mov ecx,[ebp-0Ch]"
+"	      0055a5f7    mov eax,obj"
+"	      0055a5fa    mov ecx,this"
 "	      0055a5fd    add ecx,24h"
 "	      0055a600    cmp [eax+130h],ecx"
 "	      0055a606    je near ptr 0055A628h"
@@ -9123,16 +9123,16 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 );
 // LINE 1604:
 	asm( 
-"	      0055a628    mov eax,[ebp-8]"
+"	      0055a628    mov eax,obj"
 "	      0055a62b    mov word ptr [eax+0E2h],1"
 );
 // LINE 1605:
 	asm( 
-"	      0055a634    mov dword ptr [ebp-4],1"
+"	      0055a634    mov result,1"
 );
 // LINE 1607:
 	asm( 
-"	      0055a63b    mov eax,[ebp-4]"
+"	      0055a63b    mov eax,result"
 "	      0055a63e    jmp near ptr 0055A643h"
 );
 // LINE 1608:
@@ -9157,11 +9157,11 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 "	      0055a650    push ebx"
 "	      0055a651    push esi"
 "	      0055a652    push edi"
-"	      0055a653    mov [ebp-8],ecx"
+"	      0055a653    mov this,ecx"
 );
 // LINE 1612:
 	asm( 
-"	      0055a656    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055a656    mov result,0FFFFFFFFh"
 );
 // LINE 1613:
 	asm( 
@@ -9174,11 +9174,11 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 );
 // LINE 1615:
 	asm( 
-"	      0055a679    mov dword ptr [ebp-4],1"
+"	      0055a679    mov result,1"
 );
 // LINE 1617:
 	asm( 
-"	      0055a680    mov eax,[ebp-4]"
+"	      0055a680    mov eax,result"
 "	      0055a683    jmp near ptr 0055A688h"
 );
 // LINE 1618:
@@ -9204,15 +9204,15 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 "	      0055a695    push ebx"
 "	      0055a696    push esi"
 "	      0055a697    push edi"
-"	      0055a698    mov [ebp-14h],ecx"
+"	      0055a698    mov this,ecx"
 );
 // LINE 1622:
 	asm( 
-"	      0055a69b    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055a69b    mov result,0FFFFFFFFh"
 );
 // LINE 1623:
 	asm( 
-"	      0055a6a2    mov eax,[ebp+8]"
+"	      0055a6a2    mov eax,elem"
 "	      0055a6a5    cmp dword ptr [eax+4],0"
 "	      0055a6a9    jne near ptr 0055A6CBh"
 "	      0055a6af    push 8C085h"
@@ -9224,16 +9224,16 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 );
 // LINE 1624:
 	asm( 
-"	      0055a6cb    mov eax,[ebp+8]"
+"	      0055a6cb    mov eax,elem"
 "	      0055a6ce    mov eax,[eax+4]"
 "	      0055a6d1    push eax"
 "	      0055a6d2    call 00544874h"
 "	      0055a6d7    add esp,4"
-"	      0055a6da    mov [ebp-8],eax"
+"	      0055a6da    mov obj,eax"
 );
 // LINE 1625:
 	asm( 
-"	      0055a6dd    cmp dword ptr [ebp-8],0"
+"	      0055a6dd    cmp obj,0"
 "	      0055a6e1    jne near ptr 0055A703h"
 "	      0055a6e7    push 8C085h"
 "	      0055a6ec    push 5BD3F4h"
@@ -9244,9 +9244,9 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 );
 // LINE 1626:
 	asm( 
-"	      0055a703    mov eax,[ebp-14h]"
+"	      0055a703    mov eax,this"
 "	      0055a706    add eax,3Ch"
-"	      0055a709    mov ecx,[ebp-8]"
+"	      0055a709    mov ecx,obj"
 "	      0055a70c    add ecx,3Ch"
 "	      0055a70f    mov edx,[eax]"
 "	      0055a711    mov [ecx],edx"
@@ -9254,20 +9254,20 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 "	      0055a716    mov [ecx+4],edx"
 "	      0055a719    mov eax,[eax+8]"
 "	      0055a71c    mov [ecx+8],eax"
-"	      0055a71f    mov ecx,[ebp-8]"
+"	      0055a71f    mov ecx,obj"
 "	      0055a722    call 005507ECh"
 "	      0055a727    mov eax,20000000h"
-"	      0055a72c    mov ecx,[ebp-8]"
+"	      0055a72c    mov ecx,obj"
 "	      0055a72f    sub eax,[ecx+44h]"
 "	      0055a732    sar eax,16h"
 "	      0055a735    mov [ebp-0Ch],al"
-"	      0055a738    mov eax,[ebp-8]"
+"	      0055a738    mov eax,obj"
 "	      0055a73b    mov eax,[eax+3Ch]"
 "	      0055a73e    add eax,20000000h"
 "	      0055a743    sar eax,16h"
 "	      0055a746    mov [ebp-10h],al"
 "	      0055a749    jmp near ptr 0055A74Eh"
-"	      0055a74e    mov eax,[ebp-8]"
+"	      0055a74e    mov eax,obj"
 "	      0055a751    xor ecx,ecx"
 "	      0055a753    mov cx,[eax+20h]"
 "	      0055a757    test ecx,ecx"
@@ -9279,31 +9279,31 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 "	      0055a773    call 00554F30h"
 "	      0055a778    add esp,10h"
 "	      0055a77b    mov al,[ebp-10h]"
-"	      0055a77e    mov ecx,[ebp-8]"
+"	      0055a77e    mov ecx,obj"
 "	      0055a781    mov [ecx+88h],al"
 "	      0055a787    mov al,[ebp-0Ch]"
-"	      0055a78a    mov ecx,[ebp-8]"
+"	      0055a78a    mov ecx,obj"
 "	      0055a78d    mov [ecx+89h],al"
 "	      0055a793    jmp near ptr 0055A798h"
-"	      0055a798    mov ecx,[ebp-8]"
+"	      0055a798    mov ecx,obj"
 "	      0055a79b    call 0055069Bh"
 "	      0055a7a0    jmp near ptr 0055A7A5h"
 );
 // LINE 1627:
 	asm( 
-"	      0055a7a5    mov eax,[ebp-14h]"
+"	      0055a7a5    mov eax,this"
 "	      0055a7a8    add eax,24h"
 "	      0055a7ab    push eax"
-"	      0055a7ac    mov ecx,[ebp-8]"
+"	      0055a7ac    mov ecx,obj"
 "	      0055a7af    call 0054CECAh"
 );
 // LINE 1628:
 	asm( 
-"	      0055a7b4    mov dword ptr [ebp-4],1"
+"	      0055a7b4    mov result,1"
 );
 // LINE 1630:
 	asm( 
-"	      0055a7bb    mov eax,[ebp-4]"
+"	      0055a7bb    mov eax,result"
 "	      0055a7be    jmp near ptr 0055A7C3h"
 );
 // LINE 1631:
@@ -9329,15 +9329,15 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a7d0    push ebx"
 "	      0055a7d1    push esi"
 "	      0055a7d2    push edi"
-"	      0055a7d3    mov [ebp-1Ch],ecx"
+"	      0055a7d3    mov this,ecx"
 );
 // LINE 1635:
 	asm( 
-"	      0055a7d6    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055a7d6    mov result,0FFFFFFFFh"
 );
 // LINE 1636:
 	asm( 
-"	      0055a7dd    mov eax,[ebp+8]"
+"	      0055a7dd    mov eax,elem"
 "	      0055a7e0    cmp dword ptr [eax+4],0"
 "	      0055a7e4    jne near ptr 0055A806h"
 "	      0055a7ea    push 8C085h"
@@ -9349,16 +9349,16 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 );
 // LINE 1637:
 	asm( 
-"	      0055a806    mov eax,[ebp+8]"
+"	      0055a806    mov eax,elem"
 "	      0055a809    mov eax,[eax+4]"
 "	      0055a80c    push eax"
 "	      0055a80d    call 00544874h"
 "	      0055a812    add esp,4"
-"	      0055a815    mov [ebp-8],eax"
+"	      0055a815    mov obj,eax"
 );
 // LINE 1638:
 	asm( 
-"	      0055a818    cmp dword ptr [ebp-8],0"
+"	      0055a818    cmp obj,0"
 "	      0055a81c    jne near ptr 0055A83Eh"
 "	      0055a822    push 8C085h"
 "	      0055a827    push 5BD460h"
@@ -9369,7 +9369,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 );
 // LINE 1639:
 	asm( 
-"	      0055a83e    mov eax,[ebp-8]"
+"	      0055a83e    mov eax,obj"
 "	      0055a841    movsx eax,word ptr [eax+0D2h]"
 "	      0055a848    test eax,eax"
 "	      0055a84a    jne near ptr 0055A86Ch"
@@ -9380,7 +9380,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a864    call 00554F30h"
 "	      0055a869    add esp,10h"
 "	      0055a86c    jmp near ptr 0055A871h"
-"	      0055a871    mov eax,[ebp-8]"
+"	      0055a871    mov eax,obj"
 "	      0055a874    xor ecx,ecx"
 "	      0055a876    mov cx,[eax+20h]"
 "	      0055a87a    test ecx,ecx"
@@ -9391,12 +9391,12 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a891    push 5BBA14h"
 "	      0055a896    call 00554F30h"
 "	      0055a89b    add esp,10h"
-"	      0055a89e    mov eax,[ebp-8]"
+"	      0055a89e    mov eax,obj"
 "	      0055a8a1    xor ecx,ecx"
 "	      0055a8a3    mov cl,[eax+88h]"
 "	      0055a8a9    cmp ecx,0FFFFFFFFh"
 "	      0055a8ac    jne near ptr 0055A8E7h"
-"	      0055a8b2    mov eax,[ebp-8]"
+"	      0055a8b2    mov eax,obj"
 "	      0055a8b5    xor ecx,ecx"
 "	      0055a8b7    mov cl,[eax+89h]"
 "	      0055a8bd    cmp ecx,0FFFFFFFFh"
@@ -9408,7 +9408,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a8da    call 00554F30h"
 "	      0055a8df    add esp,10h"
 "	      0055a8e2    jmp near ptr 0055A917h"
-"	      0055a8e7    mov eax,[ebp-8]"
+"	      0055a8e7    mov eax,obj"
 "	      0055a8ea    xor ecx,ecx"
 "	      0055a8ec    mov cl,[eax+89h]"
 "	      0055a8f2    cmp ecx,0FFFFFFFFh"
@@ -9419,7 +9419,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a90a    push 5BBA14h"
 "	      0055a90f    call 00554F30h"
 "	      0055a914    add esp,10h"
-"	      0055a917    mov eax,[ebp-8]"
+"	      0055a917    mov eax,obj"
 "	      0055a91a    xor ecx,ecx"
 "	      0055a91c    mov cl,[eax+88h]"
 "	      0055a922    cmp ecx,0FFFFFFFFh"
@@ -9435,21 +9435,21 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a956    push 5BBA14h"
 "	      0055a95b    call 00554F30h"
 "	      0055a960    add esp,10h"
-"	      0055a963    mov eax,[ebp-8]"
+"	      0055a963    mov eax,obj"
 "	      0055a966    movsx eax,word ptr [eax+102h]"
 "	      0055a96d    cmp eax,0FFFFFFFFh"
 "	      0055a970    je near ptr 0055AA0Dh"
-"	      0055a976    mov eax,[ebp-8]"
+"	      0055a976    mov eax,obj"
 "	      0055a979    mov word ptr [eax+104h],0FFFFh"
-"	      0055a982    mov eax,[ebp-8]"
+"	      0055a982    mov eax,obj"
 "	      0055a985    movsx eax,word ptr [eax+102h]"
 "	      0055a98c    cmp eax,0FFFFFFFFh"
 "	      0055a98f    je near ptr 0055A9E8h"
-"	      0055a995    mov eax,[ebp-8]"
+"	      0055a995    mov eax,obj"
 "	      0055a998    movsx eax,word ptr [eax+102h]"
 "	      0055a99f    cmp eax,0FFFFFFFFh"
 "	      0055a9a2    je near ptr 0055A9C3h"
-"	      0055a9a8    mov eax,[ebp-8]"
+"	      0055a9a8    mov eax,obj"
 "	      0055a9ab    movsx eax,word ptr [eax+102h]"
 "	      0055a9b2    add eax,62h"
 "	      0055a9b5    mov [ebp-10h],ax"
@@ -9465,19 +9465,19 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055a9e0    call 00446E04h"
 "	      0055a9e5    add esp,4"
 "	      0055a9e8    jmp near ptr 0055A9EDh"
-"	      0055a9ed    mov eax,[ebp-8]"
+"	      0055a9ed    mov eax,obj"
 "	      0055a9f0    movsx eax,word ptr [eax+102h]"
 "	      0055a9f7    mov word ptr [eax*2+6356B0h],0"
-"	      0055aa01    mov eax,[ebp-8]"
+"	      0055aa01    mov eax,obj"
 "	      0055aa04    mov word ptr [eax+102h],0FFFFh"
 "	      0055aa0d    jmp near ptr 0055AA12h"
-"	      0055aa12    mov eax,[ebp-8]"
+"	      0055aa12    mov eax,obj"
 "	      0055aa15    mov word ptr [eax+0D2h],0"
-"	      0055aa1e    mov eax,[ebp-8]"
+"	      0055aa1e    mov eax,obj"
 "	      0055aa21    mov word ptr [eax+0F0h],0FFFFh"
-"	      0055aa2a    mov eax,[ebp-8]"
+"	      0055aa2a    mov eax,obj"
 "	      0055aa2d    mov word ptr [eax+9Ch],0FFFFh"
-"	      0055aa36    mov eax,[ebp-8]"
+"	      0055aa36    mov eax,obj"
 "	      0055aa39    movsx eax,word ptr [eax+0D8h]"
 "	      0055aa40    mov [ebp-0Ch],eax"
 "	      0055aa43    cmp dword ptr [ebp-0Ch],0"
@@ -9502,17 +9502,17 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 "	      0055aaa0    push 5BBA14h"
 "	      0055aaa5    call 00554F30h"
 "	      0055aaaa    add esp,10h"
-"	      0055aaad    mov ecx,[ebp-8]"
+"	      0055aaad    mov ecx,obj"
 "	      0055aab0    call 005507ECh"
 "	      0055aab5    jmp near ptr 0055AABAh"
 );
 // LINE 1640:
 	asm( 
-"	      0055aaba    mov dword ptr [ebp-4],1"
+"	      0055aaba    mov result,1"
 );
 // LINE 1642:
 	asm( 
-"	      0055aac1    mov eax,[ebp-4]"
+"	      0055aac1    mov eax,result"
 "	      0055aac4    jmp near ptr 0055AAC9h"
 );
 // LINE 1643:
@@ -9538,12 +9538,12 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 "	      0055aad6    push ebx"
 "	      0055aad7    push esi"
 "	      0055aad8    push edi"
-"	      0055aad9    mov [ebp-24h],ecx"
+"	      0055aad9    mov this,ecx"
 );
 // LINE 1647:
 	asm( 
-"	      0055aadc    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055aae3    mov eax,[ebp+8]"
+"	      0055aadc    mov result,0FFFFFFFFh"
+"	      0055aae3    mov eax,elem"
 "	      0055aae6    mov eax,[eax+4]"
 "	      0055aae9    mov [ebp-1Ch],eax"
 );
@@ -9557,7 +9557,7 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 "	      0055ab05    push 5BBA14h"
 "	      0055ab0a    call 00554F30h"
 "	      0055ab0f    add esp,10h"
-"	      0055ab12    mov ecx,[ebp-24h]"
+"	      0055ab12    mov ecx,this"
 "	      0055ab15    call 005573F5h"
 "	      0055ab1a    mov [ebp-0Ch],eax"
 "	      0055ab1d    cmp dword ptr [ebp-0Ch],0"
@@ -9574,7 +9574,7 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 "	      0055ab53    add esp,10h"
 "	      0055ab56    jmp near ptr 0055AB5Bh"
 "	      0055ab5b    mov eax,[ebp-0Ch]"
-"	      0055ab5e    mov ecx,[ebp-24h]"
+"	      0055ab5e    mov ecx,this"
 "	      0055ab61    add ecx,24h"
 "	      0055ab64    cmp [eax+130h],ecx"
 "	      0055ab6a    je near ptr 0055AB8Ch"
@@ -9651,29 +9651,29 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 "	      0055ac97    call 00554F30h"
 "	      0055ac9c    add esp,10h"
 "	      0055ac9f    mov eax,[ebp-0Ch]"
-"	      0055aca2    mov [ebp-8],eax"
+"	      0055aca2    mov obj,eax"
 "	      0055aca5    jmp near ptr 0055ACC1h"
 "	      0055acaa    jmp near ptr 0055ACBBh"
-"	      0055acaf    mov dword ptr [ebp-8],0"
+"	      0055acaf    mov obj,0"
 "	      0055acb6    jmp near ptr 0055ACC1h"
 "	      0055acbb    mov eax,[ebp-20h]"
-"	      0055acbe    mov [ebp-8],eax"
+"	      0055acbe    mov obj,eax"
 );
 // LINE 1649:
 	asm( 
-"	      0055acc1    cmp dword ptr [ebp-8],0"
+"	      0055acc1    cmp obj,0"
 "	      0055acc5    je near ptr 0055ACE3h"
 );
 // LINE 1650:
 	asm( 
-"	      0055accb    mov eax,[ebp-8]"
+"	      0055accb    mov eax,obj"
 "	      0055acce    add eax,24h"
-"	      0055acd1    mov ecx,[ebp+8]"
+"	      0055acd1    mov ecx,elem"
 "	      0055acd4    mov [ecx+4],eax"
 );
 // LINE 1651:
 	asm( 
-"	      0055acd7    mov dword ptr [ebp-4],1"
+"	      0055acd7    mov result,1"
 );
 // LINE 1653:
 	asm( 
@@ -9681,11 +9681,11 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 );
 // LINE 1654:
 	asm( 
-"	      0055ace3    mov dword ptr [ebp-4],0"
+"	      0055ace3    mov result,0"
 );
 // LINE 1656:
 	asm( 
-"	      0055acea    mov eax,[ebp-4]"
+"	      0055acea    mov eax,result"
 "	      0055aced    jmp near ptr 0055ACF2h"
 );
 // LINE 1657:
@@ -9711,11 +9711,11 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 "	      0055acff    push ebx"
 "	      0055ad00    push esi"
 "	      0055ad01    push edi"
-"	      0055ad02    mov [ebp-0Ch],ecx"
+"	      0055ad02    mov this,ecx"
 );
 // LINE 1661:
 	asm( 
-"	      0055ad05    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055ad05    mov result,0FFFFFFFFh"
 );
 // LINE 1662:
 	asm( 
@@ -9724,16 +9724,16 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 "	      0055ad13    push 6"
 "	      0055ad15    call 005571FBh"
 "	      0055ad1a    add esp,8"
-"	      0055ad1d    mov [ebp-8],eax"
+"	      0055ad1d    mov obj,eax"
 );
 // LINE 1663:
 	asm( 
-"	      0055ad20    cmp dword ptr [ebp-8],0"
+"	      0055ad20    cmp obj,0"
 "	      0055ad24    je near ptr 0055ADDAh"
 );
 // LINE 1664:
 	asm( 
-"	      0055ad2a    mov eax,[ebp-8]"
+"	      0055ad2a    mov eax,obj"
 "	      0055ad2d    movsx eax,word ptr [eax+0E2h]"
 "	      0055ad34    test eax,eax"
 "	      0055ad36    je near ptr 0055AD58h"
@@ -9747,7 +9747,7 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 // LINE 1665:
 	asm( 
 "	      0055ad58    jmp near ptr 0055AD5Dh"
-"	      0055ad5d    mov eax,[ebp-8]"
+"	      0055ad5d    mov eax,obj"
 "	      0055ad60    cmp dword ptr [eax+130h],0"
 "	      0055ad67    jne near ptr 0055AD89h"
 "	      0055ad6d    push 8C085h"
@@ -9760,12 +9760,12 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 // LINE 1666:
 	asm( 
 "	      0055ad89    push 0"
-"	      0055ad8b    mov ecx,[ebp-8]"
+"	      0055ad8b    mov ecx,obj"
 "	      0055ad8e    call 0054CECAh"
 );
 // LINE 1667:
 	asm( 
-"	      0055ad93    mov eax,[ebp-8]"
+"	      0055ad93    mov eax,obj"
 "	      0055ad96    movsx eax,word ptr [eax+0E2h]"
 "	      0055ad9d    cmp eax,1"
 "	      0055ada0    je near ptr 0055ADC2h"
@@ -9778,14 +9778,14 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 );
 // LINE 1668:
 	asm( 
-"	      0055adc2    mov eax,[ebp-8]"
+"	      0055adc2    mov eax,obj"
 "	      0055adc5    add eax,24h"
-"	      0055adc8    mov ecx,[ebp+8]"
+"	      0055adc8    mov ecx,elem"
 "	      0055adcb    mov [ecx+4],eax"
 );
 // LINE 1669:
 	asm( 
-"	      0055adce    mov dword ptr [ebp-4],1"
+"	      0055adce    mov result,1"
 );
 // LINE 1671:
 	asm( 
@@ -9793,11 +9793,11 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 );
 // LINE 1672:
 	asm( 
-"	      0055adda    mov dword ptr [ebp-4],0"
+"	      0055adda    mov result,0"
 );
 // LINE 1674:
 	asm( 
-"	      0055ade1    mov eax,[ebp-4]"
+"	      0055ade1    mov eax,result"
 "	      0055ade4    jmp near ptr 0055ADE9h"
 );
 // LINE 1675:
@@ -9822,11 +9822,11 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 "	      0055adf6    push ebx"
 "	      0055adf7    push esi"
 "	      0055adf8    push edi"
-"	      0055adf9    mov [ebp-14h],ecx"
+"	      0055adf9    mov this,ecx"
 );
 // LINE 1679:
 	asm( 
-"	      0055adfc    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055adfc    mov result,0FFFFFFFFh"
 );
 // LINE 1680:
 	asm( 
@@ -9839,7 +9839,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 );
 // LINE 1681:
 	asm( 
-"	      0055ae1f    mov eax,[ebp+8]"
+"	      0055ae1f    mov eax,elem"
 "	      0055ae22    cmp dword ptr [eax+4],0"
 "	      0055ae26    jne near ptr 0055AE48h"
 "	      0055ae2c    push 8C085h"
@@ -9848,7 +9848,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 "	      0055ae3b    push 5BD578h"
 "	      0055ae40    call 00554F30h"
 "	      0055ae45    add esp,10h"
-"	      0055ae48    mov eax,[ebp+8]"
+"	      0055ae48    mov eax,elem"
 "	      0055ae4b    mov eax,[eax+4]"
 "	      0055ae4e    mov [ebp-0Ch],eax"
 );
@@ -9863,15 +9863,15 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 "	      0055ae6f    call 00554F30h"
 "	      0055ae74    add esp,10h"
 "	      0055ae77    jmp near ptr 0055AE7Ch"
-"	      0055ae7c    mov eax,[ebp-14h]"
+"	      0055ae7c    mov eax,this"
 "	      0055ae7f    mov eax,[eax+3Ch]"
 "	      0055ae82    mov ecx,[ebp-0Ch]"
 "	      0055ae85    sub eax,[ecx+18h]"
-"	      0055ae88    mov ecx,[ebp-14h]"
+"	      0055ae88    mov ecx,this"
 "	      0055ae8b    add eax,[ecx+44h]"
 "	      0055ae8e    mov ecx,[ebp-0Ch]"
 "	      0055ae91    sub eax,[ecx+20h]"
-"	      0055ae94    mov ecx,[ebp-14h]"
+"	      0055ae94    mov ecx,this"
 "	      0055ae97    add eax,[ecx+40h]"
 "	      0055ae9a    mov ecx,[ebp-0Ch]"
 "	      0055ae9d    sub eax,[ecx+1Ch]"
@@ -9900,10 +9900,10 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 );
 // LINE 1683:
 	asm( 
-"	      0055aefd    mov eax,[ebp+8]"
+"	      0055aefd    mov eax,elem"
 "	      0055af00    mov eax,[eax+4]"
 "	      0055af03    push eax"
-"	      0055af04    mov ecx,[ebp-14h]"
+"	      0055af04    mov ecx,this"
 "	      0055af07    call 0054CECAh"
 "	      0055af0c    movzx eax,ax"
 "	      0055af0f    test eax,eax"
@@ -9911,7 +9911,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 );
 // LINE 1684:
 	asm( 
-"	      0055af17    mov dword ptr [ebp-4],1"
+"	      0055af17    mov result,1"
 );
 // LINE 1685:
 	asm( 
@@ -9919,11 +9919,11 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 );
 // LINE 1686:
 	asm( 
-"	      0055af23    mov dword ptr [ebp-4],0"
+"	      0055af23    mov result,0"
 );
 // LINE 1688:
 	asm( 
-"	      0055af2a    mov eax,[ebp-4]"
+"	      0055af2a    mov eax,result"
 "	      0055af2d    jmp near ptr 0055AF32h"
 );
 // LINE 1689:
@@ -9949,15 +9949,15 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 "	      0055af3f    push ebx"
 "	      0055af40    push esi"
 "	      0055af41    push edi"
-"	      0055af42    mov [ebp-0Ch],ecx"
+"	      0055af42    mov this,ecx"
 );
 // LINE 1693:
 	asm( 
-"	      0055af45    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055af45    mov result,0FFFFFFFFh"
 );
 // LINE 1694:
 	asm( 
-"	      0055af4c    mov eax,[ebp+8]"
+"	      0055af4c    mov eax,elem"
 "	      0055af4f    cmp dword ptr [eax+4],0"
 "	      0055af53    jne near ptr 0055AF75h"
 "	      0055af59    push 8C085h"
@@ -9969,16 +9969,16 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 );
 // LINE 1695:
 	asm( 
-"	      0055af75    mov eax,[ebp+8]"
+"	      0055af75    mov eax,elem"
 "	      0055af78    mov eax,[eax+4]"
 "	      0055af7b    push eax"
 "	      0055af7c    call 00544874h"
 "	      0055af81    add esp,4"
-"	      0055af84    mov [ebp-8],eax"
+"	      0055af84    mov obj,eax"
 );
 // LINE 1696:
 	asm( 
-"	      0055af87    cmp dword ptr [ebp-8],0"
+"	      0055af87    cmp obj,0"
 "	      0055af8b    jne near ptr 0055AFADh"
 "	      0055af91    push 8C085h"
 "	      0055af96    push 5BD618h"
@@ -9989,7 +9989,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 );
 // LINE 1697:
 	asm( 
-"	      0055afad    mov eax,[ebp-8]"
+"	      0055afad    mov eax,obj"
 "	      0055afb0    movsx eax,word ptr [eax+0D8h]"
 "	      0055afb7    cmp eax,6"
 "	      0055afba    je near ptr 0055AFDCh"
@@ -10002,20 +10002,20 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 );
 // LINE 1698:
 	asm( 
-"	      0055afdc    mov eax,[ebp-8]"
+"	      0055afdc    mov eax,obj"
 "	      0055afdf    mov eax,[eax+1Ch]"
 "	      0055afe2    push eax"
 "	      0055afe3    push 7"
-"	      0055afe5    mov ecx,[ebp-0Ch]"
+"	      0055afe5    mov ecx,this"
 "	      0055afe8    call 0055B920h"
 );
 // LINE 1699:
 	asm( 
-"	      0055afed    mov dword ptr [ebp-4],1"
+"	      0055afed    mov result,1"
 );
 // LINE 1701:
 	asm( 
-"	      0055aff4    mov eax,[ebp-4]"
+"	      0055aff4    mov eax,result"
 "	      0055aff7    jmp near ptr 0055AFFCh"
 );
 // LINE 1702:
@@ -10042,18 +10042,18 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 "	      0055b009    push ebx"
 "	      0055b00a    push esi"
 "	      0055b00b    push edi"
-"	      0055b00c    mov [ebp-18h],ecx"
+"	      0055b00c    mov this,ecx"
 );
 // LINE 1706:
 	asm( 
-"	      0055b00f    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055b016    mov eax,[ebp+0Ch]"
+"	      0055b00f    mov result,0FFFFFFFFh"
+"	      0055b016    mov eax,node"
 "	      0055b019    add eax,4"
-"	      0055b01c    mov [ebp-8],eax"
+"	      0055b01c    mov nparam,eax"
 );
 // LINE 1707:
 	asm( 
-"	      0055b01f    mov eax,[ebp+8]"
+"	      0055b01f    mov eax,elem"
 "	      0055b022    cmp dword ptr [eax+4],0"
 "	      0055b026    jne near ptr 0055B048h"
 "	      0055b02c    push 8C085h"
@@ -10065,13 +10065,13 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 );
 // LINE 1709:
 	asm( 
-"	      0055b048    mov eax,[ebp-8]"
+"	      0055b048    mov eax,nparam"
 "	      0055b04b    mov ax,[eax]"
-"	      0055b04e    mov [ebp-0Ch],ax"
+"	      0055b04e    mov localnum,ax"
 );
 // LINE 1710:
 	asm( 
-"	      0055b052    mov eax,[ebp+8]"
+"	      0055b052    mov eax,elem"
 "	      0055b055    mov ecx,ds:[5B4968h]"
 "	      0055b05b    mov ecx,[ecx+0A4h]"
 "	      0055b061    cmp [eax+4],ecx"
@@ -10079,10 +10079,10 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 );
 // LINE 1711:
 	asm( 
-"	      0055b06a    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b06a    movsx eax,localnum"
 "	      0055b06e    cmp eax,0FFFFFFFFh"
 "	      0055b071    jle near ptr 0055B084h"
-"	      0055b077    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b077    movsx eax,localnum"
 "	      0055b07b    cmp eax,4"
 "	      0055b07e    jl near ptr 0055B0A0h"
 "	      0055b084    push 8C085h"
@@ -10092,13 +10092,13 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 "	      0055b098    call 00554F30h"
 "	      0055b09d    add esp,10h"
 "	      0055b0a0    jmp near ptr 0055B0A5h"
-"	      0055b0a5    mov eax,[ebp-18h]"
+"	      0055b0a5    mov eax,this"
 "	      0055b0a8    movsx eax,word ptr [eax+8]"
 "	      0055b0ac    lea eax,[eax*4-4]"
 "	      0055b0b3    lea eax,[eax+eax*4]"
-"	      0055b0b6    mov ecx,[ebp-18h]"
+"	      0055b0b6    mov ecx,this"
 "	      0055b0b9    add eax,[ecx+4]"
-"	      0055b0bc    movsx ecx,word ptr [ebp-0Ch]"
+"	      0055b0bc    movsx ecx,localnum"
 "	      0055b0c0    lea eax,[eax+ecx*2]"
 "	      0055b0c3    add eax,8"
 "	      0055b0c6    mov [ebp-10h],eax"
@@ -10114,7 +10114,7 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 // LINE 1712:
 	asm( 
 "	      0055b0e7    jmp near ptr 0055B18Bh"
-"	      0055b0ec    mov eax,[ebp+8]"
+"	      0055b0ec    mov eax,elem"
 "	      0055b0ef    mov eax,[eax+4]"
 "	      0055b0f2    movsx eax,word ptr [eax+0Ch]"
 "	      0055b0f6    test al,10h"
@@ -10122,10 +10122,10 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 );
 // LINE 1713:
 	asm( 
-"	      0055b0fe    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b0fe    movsx eax,localnum"
 "	      0055b102    cmp eax,0FFFFFFFFh"
 "	      0055b105    jle near ptr 0055B118h"
-"	      0055b10b    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b10b    movsx eax,localnum"
 "	      0055b10f    cmp eax,4"
 "	      0055b112    jl near ptr 0055B134h"
 "	      0055b118    push 8C085h"
@@ -10135,13 +10135,13 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 "	      0055b12c    call 00554F30h"
 "	      0055b131    add esp,10h"
 "	      0055b134    jmp near ptr 0055B139h"
-"	      0055b139    mov eax,[ebp-18h]"
+"	      0055b139    mov eax,this"
 "	      0055b13c    movsx eax,word ptr [eax+8]"
 "	      0055b140    lea eax,[eax*4-4]"
 "	      0055b147    lea eax,[eax+eax*4]"
-"	      0055b14a    mov ecx,[ebp-18h]"
+"	      0055b14a    mov ecx,this"
 "	      0055b14d    add eax,[ecx+4]"
-"	      0055b150    movsx ecx,word ptr [ebp-0Ch]"
+"	      0055b150    movsx ecx,localnum"
 "	      0055b154    lea eax,[eax+ecx*2]"
 "	      0055b157    add eax,8"
 "	      0055b15a    mov [ebp-14h],eax"
@@ -10164,11 +10164,11 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 );
 // LINE 1716:
 	asm( 
-"	      0055b18b    mov dword ptr [ebp-4],1"
+"	      0055b18b    mov result,1"
 );
 // LINE 1718:
 	asm( 
-"	      0055b192    mov eax,[ebp-4]"
+"	      0055b192    mov eax,result"
 "	      0055b195    jmp near ptr 0055B19Ah"
 );
 // LINE 1719:
@@ -10194,33 +10194,33 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem* elem, s
 "	      0055b1a7    push ebx"
 "	      0055b1a8    push esi"
 "	      0055b1a9    push edi"
-"	      0055b1aa    mov [ebp-0Ch],ecx"
+"	      0055b1aa    mov this,ecx"
 );
 // LINE 1723:
 	asm( 
-"	      0055b1ad    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b1ad    mov result,0FFFFFFFFh"
 );
 // LINE 1724:
 	asm( 
-"	      0055b1b4    mov ecx,[ebp-0Ch]"
+"	      0055b1b4    mov ecx,this"
 "	      0055b1b7    call 0055734Ch"
-"	      0055b1bc    mov [ebp-8],eax"
+"	      0055b1bc    mov obj,eax"
 );
 // LINE 1725:
 	asm( 
-"	      0055b1bf    cmp dword ptr [ebp-8],0"
+"	      0055b1bf    cmp obj,0"
 "	      0055b1c3    je near ptr 0055B1E1h"
 );
 // LINE 1726:
 	asm( 
-"	      0055b1c9    mov eax,[ebp-8]"
+"	      0055b1c9    mov eax,obj"
 "	      0055b1cc    add eax,24h"
-"	      0055b1cf    mov ecx,[ebp+8]"
+"	      0055b1cf    mov ecx,elem"
 "	      0055b1d2    mov [ecx+4],eax"
 );
 // LINE 1727:
 	asm( 
-"	      0055b1d5    mov dword ptr [ebp-4],1"
+"	      0055b1d5    mov result,1"
 );
 // LINE 1729:
 	asm( 
@@ -10228,11 +10228,11 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem* elem, s
 );
 // LINE 1730:
 	asm( 
-"	      0055b1e1    mov dword ptr [ebp-4],0"
+"	      0055b1e1    mov result,0"
 );
 // LINE 1732:
 	asm( 
-"	      0055b1e8    mov eax,[ebp-4]"
+"	      0055b1e8    mov eax,result"
 "	      0055b1eb    jmp near ptr 0055B1F0h"
 );
 // LINE 1733:
@@ -10258,15 +10258,15 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 "	      0055b1fd    push ebx"
 "	      0055b1fe    push esi"
 "	      0055b1ff    push edi"
-"	      0055b200    mov [ebp-0Ch],ecx"
+"	      0055b200    mov this,ecx"
 );
 // LINE 1737:
 	asm( 
-"	      0055b203    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b203    mov result,0FFFFFFFFh"
 );
 // LINE 1738:
 	asm( 
-"	      0055b20a    mov eax,[ebp+8]"
+"	      0055b20a    mov eax,elem"
 "	      0055b20d    cmp dword ptr [eax+4],0"
 "	      0055b211    jne near ptr 0055B233h"
 "	      0055b217    push 8C085h"
@@ -10278,16 +10278,16 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 );
 // LINE 1739:
 	asm( 
-"	      0055b233    mov eax,[ebp+8]"
+"	      0055b233    mov eax,elem"
 "	      0055b236    mov eax,[eax+4]"
 "	      0055b239    push eax"
 "	      0055b23a    call 00544874h"
 "	      0055b23f    add esp,4"
-"	      0055b242    mov [ebp-8],eax"
+"	      0055b242    mov obj,eax"
 );
 // LINE 1740:
 	asm( 
-"	      0055b245    cmp dword ptr [ebp-8],0"
+"	      0055b245    cmp obj,0"
 "	      0055b249    jne near ptr 0055B26Bh"
 "	      0055b24f    push 8C085h"
 "	      0055b254    push 5BD798h"
@@ -10298,7 +10298,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 );
 // LINE 1741:
 	asm( 
-"	      0055b26b    mov eax,[ebp-8]"
+"	      0055b26b    mov eax,obj"
 "	      0055b26e    movsx eax,word ptr [eax+0D8h]"
 "	      0055b275    cmp eax,6"
 "	      0055b278    je near ptr 0055B29Ah"
@@ -10311,20 +10311,20 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 );
 // LINE 1742:
 	asm( 
-"	      0055b29a    mov eax,[ebp-8]"
+"	      0055b29a    mov eax,obj"
 "	      0055b29d    mov eax,[eax+1Ch]"
 "	      0055b2a0    push eax"
 "	      0055b2a1    push 8"
-"	      0055b2a3    mov ecx,[ebp-0Ch]"
+"	      0055b2a3    mov ecx,this"
 "	      0055b2a6    call 0055B920h"
 );
 // LINE 1743:
 	asm( 
-"	      0055b2ab    mov dword ptr [ebp-4],1"
+"	      0055b2ab    mov result,1"
 );
 // LINE 1745:
 	asm( 
-"	      0055b2b2    mov eax,[ebp-4]"
+"	      0055b2b2    mov eax,result"
 "	      0055b2b5    jmp near ptr 0055B2BAh"
 );
 // LINE 1746:
@@ -10349,11 +10349,11 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem,
 "	      0055b2c7    push ebx"
 "	      0055b2c8    push esi"
 "	      0055b2c9    push edi"
-"	      0055b2ca    mov [ebp-14h],ecx"
+"	      0055b2ca    mov this,ecx"
 );
 // LINE 1750:
 	asm( 
-"	      0055b2cd    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b2cd    mov result,0FFFFFFFFh"
 "	      0055b2d4    mov eax,ds:[5B4968h]"
 "	      0055b2d9    mov eax,[eax+0A4h]"
 "	      0055b2df    mov [ebp-0Ch],eax"
@@ -10369,15 +10369,15 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem,
 "	      0055b300    call 00554F30h"
 "	      0055b305    add esp,10h"
 "	      0055b308    jmp near ptr 0055B30Dh"
-"	      0055b30d    mov eax,[ebp-14h]"
+"	      0055b30d    mov eax,this"
 "	      0055b310    mov eax,[eax+3Ch]"
 "	      0055b313    mov ecx,[ebp-0Ch]"
 "	      0055b316    sub eax,[ecx+18h]"
-"	      0055b319    mov ecx,[ebp-14h]"
+"	      0055b319    mov ecx,this"
 "	      0055b31c    add eax,[ecx+44h]"
 "	      0055b31f    mov ecx,[ebp-0Ch]"
 "	      0055b322    sub eax,[ecx+20h]"
-"	      0055b325    mov ecx,[ebp-14h]"
+"	      0055b325    mov ecx,this"
 "	      0055b328    add eax,[ecx+40h]"
 "	      0055b32b    mov ecx,[ebp-0Ch]"
 "	      0055b32e    sub eax,[ecx+1Ch]"
@@ -10400,7 +10400,7 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem,
 );
 // LINE 1752:
 	asm( 
-"	      0055b372    mov dword ptr [ebp-4],0"
+"	      0055b372    mov result,0"
 );
 // LINE 1753:
 	asm( 
@@ -10410,16 +10410,16 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem,
 	asm( 
 "	      0055b37e    mov eax,ds:[5B4968h]"
 "	      0055b383    mov eax,[eax+0A4h]"
-"	      0055b389    mov ecx,[ebp+8]"
+"	      0055b389    mov ecx,elem"
 "	      0055b38c    mov [ecx+4],eax"
 );
 // LINE 1755:
 	asm( 
-"	      0055b38f    mov dword ptr [ebp-4],1"
+"	      0055b38f    mov result,1"
 );
 // LINE 1758:
 	asm( 
-"	      0055b396    mov eax,[ebp-4]"
+"	      0055b396    mov eax,result"
 "	      0055b399    jmp near ptr 0055B39Eh"
 );
 // LINE 1759:
@@ -10446,26 +10446,26 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem* e
 "	      0055b3ab    push ebx"
 "	      0055b3ac    push esi"
 "	      0055b3ad    push edi"
-"	      0055b3ae    mov [ebp-10h],ecx"
+"	      0055b3ae    mov this,ecx"
 );
 // LINE 1763:
 	asm( 
-"	      0055b3b1    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055b3b8    mov eax,[ebp+0Ch]"
+"	      0055b3b1    mov result,0FFFFFFFFh"
+"	      0055b3b8    mov eax,node"
 "	      0055b3bb    add eax,4"
-"	      0055b3be    mov [ebp-8],eax"
+"	      0055b3be    mov nparam,eax"
 );
 // LINE 1765:
 	asm( 
-"	      0055b3c1    mov eax,[ebp-8]"
+"	      0055b3c1    mov eax,nparam"
 "	      0055b3c4    mov ax,[eax]"
-"	      0055b3c7    mov [ebp-0Ch],ax"
+"	      0055b3c7    mov expressionnum,ax"
 );
 // LINE 1767:
 	asm( 
-"	      0055b3cb    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b3cb    movsx eax,expressionnum"
 "	      0055b3cf    push eax"
-"	      0055b3d0    mov eax,[ebp-10h]"
+"	      0055b3d0    mov eax,this"
 "	      0055b3d3    movsx eax,word ptr [eax+0BCh]"
 "	      0055b3da    push eax"
 "	      0055b3db    mov eax,ds:[5B4968h]"
@@ -10484,11 +10484,11 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem* e
 );
 // LINE 1769:
 	asm( 
-"	      0055b401    mov dword ptr [ebp-4],1"
+"	      0055b401    mov result,1"
 );
 // LINE 1771:
 	asm( 
-"	      0055b408    mov eax,[ebp-4]"
+"	      0055b408    mov eax,result"
 "	      0055b40b    jmp near ptr 0055B410h"
 );
 // LINE 1772:
@@ -10518,14 +10518,14 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 "	      0055b41d    push ebx"
 "	      0055b41e    push esi"
 "	      0055b41f    push edi"
-"	      0055b420    mov [ebp-24h],ecx"
+"	      0055b420    mov this,ecx"
 );
 // LINE 1776:
 	asm( 
-"	      0055b423    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055b42a    mov eax,[ebp+0Ch]"
+"	      0055b423    mov result,0FFFFFFFFh"
+"	      0055b42a    mov eax,node"
 "	      0055b42d    add eax,4"
-"	      0055b430    mov [ebp-14h],eax"
+"	      0055b430    mov nparam,eax"
 );
 // LINE 1778:
 	asm( 
@@ -10534,7 +10534,7 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 "	      0055b43e    sar eax,10h"
 "	      0055b441    mov [ebp-28h],eax"
 "	      0055b444    fild dword ptr [ebp-28h]"
-"	      0055b447    fstp dword ptr [ebp-8]"
+"	      0055b447    fstp speed"
 );
 // LINE 1779:
 	asm( 
@@ -10544,7 +10544,7 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 "	      0055b455    add esp,4"
 "	      0055b458    mov [ebp-2Ch],eax"
 "	      0055b45b    fild dword ptr [ebp-2Ch]"
-"	      0055b45e    fstp dword ptr [ebp-18h]"
+"	      0055b45e    fstp damage"
 );
 // LINE 1780:
 	asm( 
@@ -10554,38 +10554,38 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 "	      0055b46c    add esp,4"
 "	      0055b46f    mov [ebp-30h],eax"
 "	      0055b472    fild dword ptr [ebp-30h]"
-"	      0055b475    fstp dword ptr [ebp-0Ch]"
+"	      0055b475    fstp maxdamage"
 );
 // LINE 1781:
 	asm( 
-"	      0055b478    fld dword ptr [ebp-18h]"
+"	      0055b478    fld damage"
 "	      0055b47b    fcomp dword ptr ds:[593610h]"
 "	      0055b481    fnstsw ax"
 "	      0055b483    test ah,1"
 "	      0055b486    je near ptr 0055B493h"
-"	      0055b48c    mov dword ptr [ebp-18h],3F800000h"
+"	      0055b48c    mov damage,3F800000h"
 );
 // LINE 1782:
 	asm( 
-"	      0055b493    fld dword ptr [ebp-0Ch]"
-"	      0055b496    fmul dword ptr [ebp-8]"
-"	      0055b499    fdiv dword ptr [ebp-18h]"
+"	      0055b493    fld maxdamage"
+"	      0055b496    fmul speed"
+"	      0055b499    fdiv damage"
 );
 // LINE 1783:
 	asm( 
 "	      0055b49c    fcom dword ptr ds:[593618h]"
-"	      0055b4a2    fstp dword ptr [ebp-10h]"
+"	      0055b4a2    fstp res"
 "	      0055b4a5    fnstsw ax"
 "	      0055b4a7    test ah,41h"
 "	      0055b4aa    jne near ptr 0055B4B7h"
 );
 // LINE 1784:
 	asm( 
-"	      0055b4b0    mov dword ptr [ebp-10h],477FFF00h"
+"	      0055b4b0    mov res,477FFF00h"
 );
 // LINE 1785:
 	asm( 
-"	      0055b4b7    mov eax,[ebp-14h]"
+"	      0055b4b7    mov eax,nparam"
 "	      0055b4ba    mov ax,[eax]"
 "	      0055b4bd    mov [ebp-20h],ax"
 "	      0055b4c1    movsx eax,word ptr [ebp-20h]"
@@ -10601,29 +10601,29 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 "	      0055b4ef    call 00554F30h"
 "	      0055b4f4    add esp,10h"
 "	      0055b4f7    jmp near ptr 0055B4FCh"
-"	      0055b4fc    mov eax,[ebp-24h]"
+"	      0055b4fc    mov eax,this"
 "	      0055b4ff    movsx eax,word ptr [eax+8]"
 "	      0055b503    lea eax,[eax*4-4]"
 "	      0055b50a    lea eax,[eax+eax*4]"
-"	      0055b50d    mov ecx,[ebp-24h]"
+"	      0055b50d    mov ecx,this"
 "	      0055b510    add eax,[ecx+4]"
 "	      0055b513    movsx ecx,word ptr [ebp-20h]"
 "	      0055b517    lea eax,[eax+ecx*2]"
 "	      0055b51a    add eax,8"
 "	      0055b51d    mov [ebp-1Ch],eax"
 "	      0055b520    jmp near ptr 0055B525h"
-"	      0055b525    fld dword ptr [ebp-10h]"
+"	      0055b525    fld res"
 "	      0055b528    call 0056EBE8h"
 "	      0055b52d    mov ecx,[ebp-1Ch]"
 "	      0055b530    mov [ecx],ax"
 );
 // LINE 1786:
 	asm( 
-"	      0055b533    mov dword ptr [ebp-4],1"
+"	      0055b533    mov result,1"
 );
 // LINE 1788:
 	asm( 
-"	      0055b53a    mov eax,[ebp-4]"
+"	      0055b53a    mov eax,result"
 "	      0055b53d    jmp near ptr 0055B542h"
 );
 // LINE 1789:
@@ -10648,30 +10648,30 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem* el
 "	      0055b54f    push ebx"
 "	      0055b550    push esi"
 "	      0055b551    push edi"
-"	      0055b552    mov [ebp-8],ecx"
+"	      0055b552    mov this,ecx"
 );
 // LINE 1793:
 	asm( 
-"	      0055b555    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b555    mov result,0FFFFFFFFh"
 );
 // LINE 1794:
 	asm( 
-"	      0055b55c    mov eax,[ebp-8]"
+"	      0055b55c    mov eax,this"
 "	      0055b55f    movzx ax,byte ptr [eax+89h]"
 "	      0055b567    push eax"
-"	      0055b568    mov eax,[ebp-8]"
+"	      0055b568    mov eax,this"
 "	      0055b56b    movzx ax,byte ptr [eax+88h]"
 "	      0055b573    push eax"
 "	      0055b574    call 00555746h"
 "	      0055b579    add esp,8"
 "	      0055b57c    push eax"
-"	      0055b57d    mov eax,[ebp-8]"
+"	      0055b57d    mov eax,this"
 "	      0055b580    movzx ax,byte ptr [eax+89h]"
 "	      0055b588    push eax"
-"	      0055b589    mov eax,[ebp-8]"
+"	      0055b589    mov eax,this"
 "	      0055b58c    movzx ax,byte ptr [eax+88h]"
 "	      0055b594    push eax"
-"	      0055b595    mov ecx,[ebp-8]"
+"	      0055b595    mov ecx,this"
 "	      0055b598    call 005565B8h"
 "	      0055b59d    movzx eax,ax"
 "	      0055b5a0    test eax,eax"
@@ -10679,7 +10679,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem* el
 );
 // LINE 1797:
 	asm( 
-"	      0055b5a8    mov dword ptr [ebp-4],1"
+"	      0055b5a8    mov result,1"
 );
 // LINE 1798:
 	asm( 
@@ -10687,11 +10687,11 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem* el
 );
 // LINE 1799:
 	asm( 
-"	      0055b5b4    mov dword ptr [ebp-4],0"
+"	      0055b5b4    mov result,0"
 );
 // LINE 1801:
 	asm( 
-"	      0055b5bb    mov eax,[ebp-4]"
+"	      0055b5bb    mov eax,result"
 "	      0055b5be    jmp near ptr 0055B5C3h"
 );
 // LINE 1802:
@@ -10718,29 +10718,29 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 "	      0055b5d0    push ebx"
 "	      0055b5d1    push esi"
 "	      0055b5d2    push edi"
-"	      0055b5d3    mov [ebp-10h],ecx"
+"	      0055b5d3    mov this,ecx"
 );
 // LINE 1806:
 	asm( 
-"	      0055b5d6    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055b5dd    mov eax,[ebp+0Ch]"
+"	      0055b5d6    mov result,0FFFFFFFFh"
+"	      0055b5dd    mov eax,node"
 "	      0055b5e0    add eax,4"
-"	      0055b5e3    mov [ebp-8],eax"
+"	      0055b5e3    mov nparam,eax"
 );
 // LINE 1807:
 	asm( 
-"	      0055b5e6    mov eax,[ebp-8]"
+"	      0055b5e6    mov eax,nparam"
 "	      0055b5e9    mov ax,[eax+2]"
-"	      0055b5ed    mov [ebp-0Ch],ax"
+"	      0055b5ed    mov playforsure,ax"
 );
 // LINE 1808:
 	asm( 
 "	      0055b5f1    mov eax,[ebp-0Ch]"
 "	      0055b5f4    push eax"
-"	      0055b5f5    mov eax,[ebp-8]"
+"	      0055b5f5    mov eax,nparam"
 "	      0055b5f8    movsx eax,word ptr [eax]"
 "	      0055b5fb    push eax"
-"	      0055b5fc    mov ecx,[ebp-10h]"
+"	      0055b5fc    mov ecx,this"
 "	      0055b5ff    call 0054C1DDh"
 "	      0055b604    movzx eax,ax"
 "	      0055b607    test eax,eax"
@@ -10748,7 +10748,7 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 );
 // LINE 1809:
 	asm( 
-"	      0055b60f    mov dword ptr [ebp-4],1"
+"	      0055b60f    mov result,1"
 );
 // LINE 1810:
 	asm( 
@@ -10756,11 +10756,11 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 );
 // LINE 1811:
 	asm( 
-"	      0055b61b    mov dword ptr [ebp-4],0"
+"	      0055b61b    mov result,0"
 );
 // LINE 1826:
 	asm( 
-"	      0055b622    mov eax,[ebp-4]"
+"	      0055b622    mov eax,result"
 "	      0055b625    jmp near ptr 0055B62Ah"
 );
 // LINE 1827:
@@ -10785,16 +10785,16 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 "	      0055b637    push ebx"
 "	      0055b638    push esi"
 "	      0055b639    push edi"
-"	      0055b63a    mov [ebp-8],ecx"
+"	      0055b63a    mov this,ecx"
 );
 // LINE 1831:
 	asm( 
-"	      0055b63d    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b63d    mov result,0FFFFFFFFh"
 );
 // LINE 1832:
 	asm( 
 "	      0055b644    jmp near ptr 0055B649h"
-"	      0055b649    mov eax,[ebp-8]"
+"	      0055b649    mov eax,this"
 "	      0055b64c    mov ecx,ds:[5B4968h]"
 "	      0055b652    mov ecx,[ecx+0BCh]"
 "	      0055b658    cmp [eax+130h],ecx"
@@ -10803,7 +10803,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 // LINE 1833:
 	asm( 
 "	      0055b664    jmp near ptr 0055B669h"
-"	      0055b669    mov eax,[ebp-8]"
+"	      0055b669    mov eax,this"
 "	      0055b66c    mov ecx,ds:[5B4968h]"
 "	      0055b672    mov ecx,[ecx+0A4h]"
 "	      0055b678    cmp [eax+130h],ecx"
@@ -10817,7 +10817,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 );
 // LINE 1834:
 	asm( 
-"	      0055b6a0    mov dword ptr [ebp-4],1"
+"	      0055b6a0    mov result,1"
 );
 // LINE 1836:
 	asm( 
@@ -10831,7 +10831,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 "	      0055b6be    mov eax,ds:[5B4968h]"
 "	      0055b6c3    mov eax,[eax+0A4h]"
 "	      0055b6c9    push eax"
-"	      0055b6ca    mov ecx,[ebp-8]"
+"	      0055b6ca    mov ecx,this"
 "	      0055b6cd    call 0054CECAh"
 "	      0055b6d2    movzx eax,ax"
 "	      0055b6d5    test eax,eax"
@@ -10839,7 +10839,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 );
 // LINE 1838:
 	asm( 
-"	      0055b6dd    mov dword ptr [ebp-4],0"
+"	      0055b6dd    mov result,0"
 );
 // LINE 1839:
 	asm( 
@@ -10847,7 +10847,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 );
 // LINE 1840:
 	asm( 
-"	      0055b6e9    mov dword ptr [ebp-4],1"
+"	      0055b6e9    mov result,1"
 );
 // LINE 1842:
 	asm( 
@@ -10867,11 +10867,11 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 );
 // LINE 1844:
 	asm( 
-"	      0055b723    mov dword ptr [ebp-4],0"
+"	      0055b723    mov result,0"
 );
 // LINE 1847:
 	asm( 
-"	      0055b72a    mov eax,[ebp-4]"
+"	      0055b72a    mov eax,result"
 "	      0055b72d    jmp near ptr 0055B732h"
 );
 // LINE 1848:
@@ -10896,15 +10896,15 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem* elem, s
 "	      0055b73f    push ebx"
 "	      0055b740    push esi"
 "	      0055b741    push edi"
-"	      0055b742    mov [ebp-8],ecx"
+"	      0055b742    mov this,ecx"
 );
 // LINE 1852:
 	asm( 
-"	      0055b745    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b745    mov result,0FFFFFFFFh"
 );
 // LINE 1853:
 	asm( 
-"	      0055b74c    mov eax,[ebp-8]"
+"	      0055b74c    mov eax,this"
 "	      0055b74f    mov ecx,ds:[5B4968h]"
 "	      0055b755    mov ecx,[ecx+0A4h]"
 "	      0055b75b    cmp [eax+130h],ecx"
@@ -10912,7 +10912,7 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem* elem, s
 );
 // LINE 1854:
 	asm( 
-"	      0055b767    mov dword ptr [ebp-4],1"
+"	      0055b767    mov result,1"
 );
 // LINE 1855:
 	asm( 
@@ -10920,11 +10920,11 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem* elem, s
 );
 // LINE 1856:
 	asm( 
-"	      0055b773    mov dword ptr [ebp-4],0"
+"	      0055b773    mov result,0"
 );
 // LINE 1858:
 	asm( 
-"	      0055b77a    mov eax,[ebp-4]"
+"	      0055b77a    mov eax,result"
 "	      0055b77d    jmp near ptr 0055B782h"
 );
 // LINE 1859:
@@ -10947,15 +10947,15 @@ enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackEl
 "	      0055b78f    push ebx"
 "	      0055b790    push esi"
 "	      0055b791    push edi"
-"	      0055b792    mov [ebp-4],ecx"
+"	      0055b792    mov this,ecx"
 );
 // LINE 1863:
 	asm( 
-"	      0055b795    mov eax,[ebp+0Ch]"
+"	      0055b795    mov eax,node"
 "	      0055b798    push eax"
-"	      0055b799    mov eax,[ebp+8]"
+"	      0055b799    mov eax,elem"
 "	      0055b79c    push eax"
-"	      0055b79d    mov ecx,[ebp-4]"
+"	      0055b79d    mov ecx,this"
 "	      0055b7a0    call 005598BAh"
 "	      0055b7a5    jmp near ptr 0055B7AAh"
 );
@@ -10983,27 +10983,27 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 "	      0055b7b7    push ebx"
 "	      0055b7b8    push esi"
 "	      0055b7b9    push edi"
-"	      0055b7ba    mov [ebp-10h],ecx"
+"	      0055b7ba    mov this,ecx"
 );
 // LINE 1868:
 	asm( 
-"	      0055b7bd    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055b7c4    mov eax,[ebp+0Ch]"
+"	      0055b7bd    mov result,0FFFFFFFFh"
+"	      0055b7c4    mov eax,node"
 "	      0055b7c7    add eax,4"
-"	      0055b7ca    mov [ebp-8],eax"
+"	      0055b7ca    mov nparam,eax"
 );
 // LINE 1869:
 	asm( 
-"	      0055b7cd    mov eax,[ebp-8]"
+"	      0055b7cd    mov eax,nparam"
 "	      0055b7d0    mov ax,[eax]"
-"	      0055b7d3    mov [ebp-0Ch],ax"
+"	      0055b7d3    mov truefalse,ax"
 );
 // LINE 1870:
 	asm( 
-"	      0055b7d7    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b7d7    movsx eax,truefalse"
 "	      0055b7db    test eax,eax"
 "	      0055b7dd    je near ptr 0055B80Ch"
-"	      0055b7e3    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b7e3    movsx eax,truefalse"
 "	      0055b7e7    cmp eax,1"
 "	      0055b7ea    je near ptr 0055B80Ch"
 "	      0055b7f0    push 8C085h"
@@ -11015,16 +11015,16 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 );
 // LINE 1871:
 	asm( 
-"	      0055b80c    mov eax,[ebp-10h]"
+"	      0055b80c    mov eax,this"
 "	      0055b80f    movsx eax,word ptr [eax+100h]"
 "	      0055b816    cmp eax,0FFFFFFFFh"
 "	      0055b819    je near ptr 0055B837h"
 );
 // LINE 1872:
 	asm( 
-"	      0055b81f    movsx eax,word ptr [ebp-0Ch]"
+"	      0055b81f    movsx eax,truefalse"
 "	      0055b823    push eax"
-"	      0055b824    mov eax,[ebp-10h]"
+"	      0055b824    mov eax,this"
 "	      0055b827    movsx eax,word ptr [eax+100h]"
 "	      0055b82e    push eax"
 "	      0055b82f    call 00541530h"
@@ -11032,11 +11032,11 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 );
 // LINE 1873:
 	asm( 
-"	      0055b837    mov dword ptr [ebp-4],1"
+"	      0055b837    mov result,1"
 );
 // LINE 1875:
 	asm( 
-"	      0055b83e    mov eax,[ebp-4]"
+"	      0055b83e    mov eax,result"
 "	      0055b841    jmp near ptr 0055B846h"
 );
 // LINE 1876:
@@ -11061,15 +11061,15 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, s
 "	      0055b853    push ebx"
 "	      0055b854    push esi"
 "	      0055b855    push edi"
-"	      0055b856    mov [ebp-8],ecx"
+"	      0055b856    mov this,ecx"
 );
 // LINE 1881:
 	asm( 
-"	      0055b859    mov eax,[ebp+0Ch]"
+"	      0055b859    mov eax,node"
 "	      0055b85c    movsx eax,word ptr [eax]"
 "	      0055b85f    test eax,eax"
 "	      0055b861    jl near ptr 0055B876h"
-"	      0055b867    mov eax,[ebp+0Ch]"
+"	      0055b867    mov eax,node"
 "	      0055b86a    movsx eax,word ptr [eax]"
 "	      0055b86d    cmp eax,40h"
 "	      0055b870    jl near ptr 0055B892h"
@@ -11082,7 +11082,7 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, s
 );
 // LINE 1882:
 	asm( 
-"	      0055b892    mov eax,[ebp+0Ch]"
+"	      0055b892    mov eax,node"
 "	      0055b895    movsx eax,word ptr [eax]"
 "	      0055b898    cmp dword ptr [eax*4+6375A8h],0"
 "	      0055b8a0    jne near ptr 0055B8C2h"
@@ -11095,26 +11095,26 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, s
 );
 // LINE 1884:
 	asm( 
-"	      0055b8c2    mov eax,[ebp-8]"
+"	      0055b8c2    mov eax,this"
 "	      0055b8c5    inc word ptr [eax+140h]"
 );
 // LINE 1885:
 	asm( 
-"	      0055b8cc    mov eax,[ebp+0Ch]"
+"	      0055b8cc    mov eax,node"
 "	      0055b8cf    push eax"
-"	      0055b8d0    mov eax,[ebp+8]"
+"	      0055b8d0    mov eax,elem"
 "	      0055b8d3    push eax"
-"	      0055b8d4    mov eax,[ebp-8]"
+"	      0055b8d4    mov eax,this"
 "	      0055b8d7    push eax"
-"	      0055b8d8    mov eax,[ebp+0Ch]"
+"	      0055b8d8    mov eax,node"
 "	      0055b8db    movsx eax,word ptr [eax]"
 "	      0055b8de    call dword ptr [eax*4+6375A8h]"
 "	      0055b8e5    add esp,0Ch"
-"	      0055b8e8    mov [ebp-4],eax"
+"	      0055b8e8    mov res,eax"
 );
 // LINE 1887:
 	asm( 
-"	      0055b8eb    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055b8eb    cmp res,0FFFFFFFFh"
 "	      0055b8ef    jne near ptr 0055B911h"
 "	      0055b8f5    push 8C085h"
 "	      0055b8fa    push 5BD9C0h"
@@ -11125,7 +11125,7 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, s
 );
 // LINE 1888:
 	asm( 
-"	      0055b911    mov eax,[ebp-4]"
+"	      0055b911    mov eax,res"
 "	      0055b914    jmp near ptr 0055B919h"
 );
 // LINE 1889:
@@ -11150,11 +11150,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 "	      0055b926    push ebx"
 "	      0055b927    push esi"
 "	      0055b928    push edi"
-"	      0055b929    mov [ebp-1Ch],ecx"
+"	      0055b929    mov this,ecx"
 );
 // LINE 1901:
 	asm( 
-"	      0055b92c    mov eax,[ebp-1Ch]"
+"	      0055b92c    mov eax,this"
 "	      0055b92f    movsx eax,word ptr [eax+0D2h]"
 "	      0055b936    test eax,eax"
 "	      0055b938    jne near ptr 0055B95Ah"
@@ -11167,7 +11167,7 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1902:
 	asm( 
-"	      0055b95a    cmp dword ptr [ebp+0Ch],0FFFFFFFFh"
+"	      0055b95a    cmp missionid,0FFFFFFFFh"
 "	      0055b95e    jne near ptr 0055B980h"
 "	      0055b964    push 8C085h"
 "	      0055b969    push 5BDA58h"
@@ -11178,22 +11178,22 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1903:
 	asm( 
-"	      0055b980    mov eax,[ebp+0Ch]"
-"	      0055b983    mov [ebp-14h],eax"
+"	      0055b980    mov eax,missionid"
+"	      0055b983    mov mp.id,eax"
 );
 // LINE 1904:
 	asm( 
-"	      0055b986    mov eax,[ebp+8]"
+"	      0055b986    mov eax,missup"
 "	      0055b989    mov [ebp-20h],eax"
 "	      0055b98c    jmp near ptr 0055BB0Ch"
 );
 // LINE 1906:
 	asm( 
-"	      0055b991    mov dword ptr [ebp-18h],14h"
+"	      0055b991    mov mp.op,14h"
 );
 // LINE 1907:
 	asm( 
-"	      0055b998    mov dword ptr [ebp-8],1"
+"	      0055b998    mov mp.i2num,1"
 );
 // LINE 1908:
 	asm( 
@@ -11201,11 +11201,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1911:
 	asm( 
-"	      0055b9a4    mov dword ptr [ebp-18h],15h"
+"	      0055b9a4    mov mp.op,15h"
 );
 // LINE 1912:
 	asm( 
-"	      0055b9ab    mov dword ptr [ebp-8],1"
+"	      0055b9ab    mov mp.i2num,1"
 );
 // LINE 1913:
 	asm( 
@@ -11213,11 +11213,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1916:
 	asm( 
-"	      0055b9b7    mov dword ptr [ebp-18h],12h"
+"	      0055b9b7    mov mp.op,12h"
 );
 // LINE 1917:
 	asm( 
-"	      0055b9be    mov dword ptr [ebp-8],1"
+"	      0055b9be    mov mp.i2num,1"
 );
 // LINE 1918:
 	asm( 
@@ -11225,11 +11225,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1920:
 	asm( 
-"	      0055b9ca    mov dword ptr [ebp-18h],13h"
+"	      0055b9ca    mov mp.op,13h"
 );
 // LINE 1921:
 	asm( 
-"	      0055b9d1    mov dword ptr [ebp-8],1"
+"	      0055b9d1    mov mp.i2num,1"
 );
 // LINE 1922:
 	asm( 
@@ -11237,11 +11237,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1924:
 	asm( 
-"	      0055b9dd    mov dword ptr [ebp-18h],13h"
+"	      0055b9dd    mov mp.op,13h"
 );
 // LINE 1925:
 	asm( 
-"	      0055b9e4    mov dword ptr [ebp-8],1"
+"	      0055b9e4    mov mp.i2num,1"
 );
 // LINE 1926:
 	asm( 
@@ -11249,18 +11249,18 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1928:
 	asm( 
-"	      0055b9f0    mov eax,[ebp-1Ch]"
+"	      0055b9f0    mov eax,this"
 "	      0055b9f3    movsx eax,word ptr [eax+0D8h]"
 "	      0055b9fa    mov [ebp-24h],eax"
 "	      0055b9fd    jmp near ptr 0055BA5Ch"
 );
 // LINE 1930:
 	asm( 
-"	      0055ba02    mov dword ptr [ebp-18h],15h"
+"	      0055ba02    mov mp.op,15h"
 );
 // LINE 1931:
 	asm( 
-"	      0055ba09    mov dword ptr [ebp-8],1"
+"	      0055ba09    mov mp.i2num,1"
 );
 // LINE 1932:
 	asm( 
@@ -11268,11 +11268,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1934:
 	asm( 
-"	      0055ba15    mov dword ptr [ebp-18h],11h"
+"	      0055ba15    mov mp.op,11h"
 );
 // LINE 1935:
 	asm( 
-"	      0055ba1c    mov dword ptr [ebp-8],1"
+"	      0055ba1c    mov mp.i2num,1"
 );
 // LINE 1936:
 	asm( 
@@ -11280,11 +11280,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1939:
 	asm( 
-"	      0055ba28    mov dword ptr [ebp-18h],10h"
+"	      0055ba28    mov mp.op,10h"
 );
 // LINE 1940:
 	asm( 
-"	      0055ba2f    mov dword ptr [ebp-8],1"
+"	      0055ba2f    mov mp.i2num,1"
 );
 // LINE 1941:
 	asm( 
@@ -11320,21 +11320,21 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1947:
 	asm( 
-"	      0055ba88    mov dword ptr [ebp-18h],1Eh"
+"	      0055ba88    mov mp.op,1Eh"
 );
 // LINE 1948:
 	asm( 
-"	      0055ba8f    mov eax,[ebp-1Ch]"
+"	      0055ba8f    mov eax,this"
 "	      0055ba92    xor ecx,ecx"
 "	      0055ba94    mov cl,[eax+88h]"
-"	      0055ba9a    mov [ebp-10h],ecx"
+"	      0055ba9a    mov mp.maploc.x,ecx"
 );
 // LINE 1949:
 	asm( 
-"	      0055ba9d    mov eax,[ebp-1Ch]"
+"	      0055ba9d    mov eax,this"
 "	      0055baa0    xor ecx,ecx"
 "	      0055baa2    mov cl,[eax+89h]"
-"	      0055baa8    mov [ebp-0Ch],ecx"
+"	      0055baa8    mov mp.maploc.y,ecx"
 );
 // LINE 1950:
 	asm( 
@@ -11342,21 +11342,21 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1952:
 	asm( 
-"	      0055bab0    mov dword ptr [ebp-18h],0"
+"	      0055bab0    mov mp.op,0"
 );
 // LINE 1953:
 	asm( 
-"	      0055bab7    mov eax,[ebp-1Ch]"
+"	      0055bab7    mov eax,this"
 "	      0055baba    xor ecx,ecx"
 "	      0055babc    mov cl,[eax+88h]"
-"	      0055bac2    mov [ebp-10h],ecx"
+"	      0055bac2    mov mp.maploc.x,ecx"
 );
 // LINE 1954:
 	asm( 
-"	      0055bac5    mov eax,[ebp-1Ch]"
+"	      0055bac5    mov eax,this"
 "	      0055bac8    xor ecx,ecx"
 "	      0055baca    mov cl,[eax+89h]"
-"	      0055bad0    mov [ebp-0Ch],ecx"
+"	      0055bad0    mov mp.maploc.y,ecx"
 );
 // LINE 1955:
 	asm( 
@@ -11364,11 +11364,11 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1957:
 	asm( 
-"	      0055bad8    mov dword ptr [ebp-18h],25h"
+"	      0055bad8    mov mp.op,25h"
 );
 // LINE 1958:
 	asm( 
-"	      0055badf    mov dword ptr [ebp-8],1"
+"	      0055badf    mov mp.i2num,1"
 );
 // LINE 1959:
 	asm( 
@@ -11404,7 +11404,7 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 );
 // LINE 1963:
 	asm( 
-"	      0055bb48    lea eax,[ebp-18h]"
+"	      0055bb48    lea eax,mp.op"
 "	      0055bb4b    push eax"
 "	      0055bb4c    call 004FBD4Ah"
 "	      0055bb51    add esp,4"
@@ -11435,49 +11435,49 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 "	      0055bb66    push ebx"
 "	      0055bb67    push esi"
 "	      0055bb68    push edi"
-"	      0055bb69    mov [ebp-14h],ecx"
+"	      0055bb69    mov this,ecx"
 );
 // LINE 1992:
 	asm( 
-"	      0055bb6c    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0055bb6c    mov result,0FFFFFFFFh"
 );
 // LINE 1996:
 	asm( 
 "	      0055bb73    push 0"
-"	      0055bb75    mov eax,[ebp+8]"
+"	      0055bb75    mov eax,attr"
 "	      0055bb78    mov ax,[eax+2]"
 "	      0055bb7c    push eax"
-"	      0055bb7d    mov eax,[ebp+8]"
+"	      0055bb7d    mov eax,attr"
 "	      0055bb80    mov ax,[eax+6]"
 "	      0055bb84    sar ax,8"
 "	      0055bb88    push eax"
-"	      0055bb89    mov eax,[ebp-14h]"
+"	      0055bb89    mov eax,this"
 "	      0055bb8c    mov eax,[eax]"
-"	      0055bb8e    mov ecx,[ebp-14h]"
+"	      0055bb8e    mov ecx,this"
 "	      0055bb91    call dword ptr [eax+14h]"
-"	      0055bb94    mov [ebp-8],ax"
+"	      0055bb94    mov rhs,ax"
 );
 // LINE 1997:
 	asm( 
-"	      0055bb98    lea eax,[ebp-0Ch]"
+"	      0055bb98    lea eax,plhs"
 "	      0055bb9b    push eax"
-"	      0055bb9c    mov eax,[ebp+8]"
+"	      0055bb9c    mov eax,attr"
 "	      0055bb9f    mov ax,[eax]"
 "	      0055bba2    push eax"
-"	      0055bba3    mov eax,[ebp+8]"
+"	      0055bba3    mov eax,attr"
 "	      0055bba6    mov ax,[eax+6]"
 "	      0055bbaa    shl ax,8"
 "	      0055bbae    sar ax,8"
 "	      0055bbb2    push eax"
-"	      0055bbb3    mov eax,[ebp-14h]"
+"	      0055bbb3    mov eax,this"
 "	      0055bbb6    mov eax,[eax]"
-"	      0055bbb8    mov ecx,[ebp-14h]"
+"	      0055bbb8    mov ecx,this"
 "	      0055bbbb    call dword ptr [eax+14h]"
-"	      0055bbbe    mov [ebp-10h],ax"
+"	      0055bbbe    mov lhs,ax"
 );
 // LINE 1999:
 	asm( 
-"	      0055bbc2    mov eax,[ebp+8]"
+"	      0055bbc2    mov eax,attr"
 "	      0055bbc5    mov ax,[eax+4]"
 "	      0055bbc9    sar ax,8"
 "	      0055bbcd    movsx eax,ax"
@@ -11486,16 +11486,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2001:
 	asm( 
-"	      0055bbd8    movsx eax,word ptr [ebp-8]"
-"	      0055bbdc    movsx ecx,word ptr [ebp-10h]"
+"	      0055bbd8    movsx eax,rhs"
+"	      0055bbdc    movsx ecx,lhs"
 "	      0055bbe0    cmp eax,ecx"
 "	      0055bbe2    jle near ptr 0055BBF4h"
-"	      0055bbe8    mov dword ptr [ebp-4],1"
+"	      0055bbe8    mov result,1"
 );
 // LINE 2002:
 	asm( 
 "	      0055bbef    jmp near ptr 0055BBFBh"
-"	      0055bbf4    mov dword ptr [ebp-4],0"
+"	      0055bbf4    mov result,0"
 );
 // LINE 2003:
 	asm( 
@@ -11503,16 +11503,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2005:
 	asm( 
-"	      0055bc00    movsx eax,word ptr [ebp-8]"
-"	      0055bc04    movsx ecx,word ptr [ebp-10h]"
+"	      0055bc00    movsx eax,rhs"
+"	      0055bc04    movsx ecx,lhs"
 "	      0055bc08    cmp eax,ecx"
 "	      0055bc0a    jge near ptr 0055BC1Ch"
-"	      0055bc10    mov dword ptr [ebp-4],1"
+"	      0055bc10    mov result,1"
 );
 // LINE 2006:
 	asm( 
 "	      0055bc17    jmp near ptr 0055BC23h"
-"	      0055bc1c    mov dword ptr [ebp-4],0"
+"	      0055bc1c    mov result,0"
 );
 // LINE 2007:
 	asm( 
@@ -11520,16 +11520,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2009:
 	asm( 
-"	      0055bc28    movsx eax,word ptr [ebp-8]"
-"	      0055bc2c    movsx ecx,word ptr [ebp-10h]"
+"	      0055bc28    movsx eax,rhs"
+"	      0055bc2c    movsx ecx,lhs"
 "	      0055bc30    cmp eax,ecx"
 "	      0055bc32    jne near ptr 0055BC44h"
-"	      0055bc38    mov dword ptr [ebp-4],1"
+"	      0055bc38    mov result,1"
 );
 // LINE 2010:
 	asm( 
 "	      0055bc3f    jmp near ptr 0055BC4Bh"
-"	      0055bc44    mov dword ptr [ebp-4],0"
+"	      0055bc44    mov result,0"
 );
 // LINE 2011:
 	asm( 
@@ -11537,13 +11537,13 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2013:
 	asm( 
-"	      0055bc50    cmp dword ptr [ebp-0Ch],0"
+"	      0055bc50    cmp plhs,0"
 "	      0055bc54    je near ptr 0055BC69h"
 );
 // LINE 2014:
 	asm( 
-"	      0055bc5a    mov ax,[ebp-8]"
-"	      0055bc5e    mov ecx,[ebp-0Ch]"
+"	      0055bc5a    mov ax,rhs"
+"	      0055bc5e    mov ecx,plhs"
 "	      0055bc61    mov [ecx],ax"
 );
 // LINE 2015:
@@ -11553,16 +11553,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2016:
 	asm( 
 "	      0055bc69    push 12h"
-"	      0055bc6b    mov eax,[ebp-14h]"
+"	      0055bc6b    mov eax,this"
 "	      0055bc6e    mov eax,[eax]"
-"	      0055bc70    mov ecx,[ebp-14h]"
+"	      0055bc70    mov ecx,this"
 "	      0055bc73    call dword ptr [eax+4]"
 "	      0055bc76    jmp near ptr 0055BFE3h"
 "	      0055bc7b    jmp near ptr 0055BFA9h"
 );
 // LINE 2018:
 	asm( 
-"	      0055bc80    mov dword ptr [ebp-4],1"
+"	      0055bc80    mov result,1"
 );
 // LINE 2019:
 	asm( 
@@ -11570,16 +11570,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2021:
 	asm( 
-"	      0055bc8c    cmp dword ptr [ebp-0Ch],0"
+"	      0055bc8c    cmp plhs,0"
 "	      0055bc90    je near ptr 0055BCADh"
 );
 // LINE 2022:
 	asm( 
-"	      0055bc96    mov eax,[ebp-0Ch]"
+"	      0055bc96    mov eax,plhs"
 "	      0055bc99    movsx eax,word ptr [eax]"
-"	      0055bc9c    movsx ecx,word ptr [ebp-8]"
+"	      0055bc9c    movsx ecx,rhs"
 "	      0055bca0    add eax,ecx"
-"	      0055bca2    mov ecx,[ebp-0Ch]"
+"	      0055bca2    mov ecx,plhs"
 "	      0055bca5    mov [ecx],ax"
 );
 // LINE 2023:
@@ -11589,16 +11589,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2024:
 	asm( 
 "	      0055bcad    push 12h"
-"	      0055bcaf    mov eax,[ebp-14h]"
+"	      0055bcaf    mov eax,this"
 "	      0055bcb2    mov eax,[eax]"
-"	      0055bcb4    mov ecx,[ebp-14h]"
+"	      0055bcb4    mov ecx,this"
 "	      0055bcb7    call dword ptr [eax+4]"
 "	      0055bcba    jmp near ptr 0055BFDEh"
 "	      0055bcbf    jmp near ptr 0055BFA9h"
 );
 // LINE 2026:
 	asm( 
-"	      0055bcc4    mov dword ptr [ebp-4],1"
+"	      0055bcc4    mov result,1"
 );
 // LINE 2027:
 	asm( 
@@ -11606,16 +11606,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2029:
 	asm( 
-"	      0055bcd0    cmp dword ptr [ebp-0Ch],0"
+"	      0055bcd0    cmp plhs,0"
 "	      0055bcd4    je near ptr 0055BCF1h"
 );
 // LINE 2030:
 	asm( 
-"	      0055bcda    mov eax,[ebp-0Ch]"
+"	      0055bcda    mov eax,plhs"
 "	      0055bcdd    movsx eax,word ptr [eax]"
-"	      0055bce0    movsx ecx,word ptr [ebp-8]"
+"	      0055bce0    movsx ecx,rhs"
 "	      0055bce4    sub eax,ecx"
-"	      0055bce6    mov ecx,[ebp-0Ch]"
+"	      0055bce6    mov ecx,plhs"
 "	      0055bce9    mov [ecx],ax"
 );
 // LINE 2031:
@@ -11625,16 +11625,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2032:
 	asm( 
 "	      0055bcf1    push 12h"
-"	      0055bcf3    mov eax,[ebp-14h]"
+"	      0055bcf3    mov eax,this"
 "	      0055bcf6    mov eax,[eax]"
-"	      0055bcf8    mov ecx,[ebp-14h]"
+"	      0055bcf8    mov ecx,this"
 "	      0055bcfb    call dword ptr [eax+4]"
 "	      0055bcfe    jmp near ptr 0055BFD9h"
 "	      0055bd03    jmp near ptr 0055BFA9h"
 );
 // LINE 2034:
 	asm( 
-"	      0055bd08    mov dword ptr [ebp-4],1"
+"	      0055bd08    mov result,1"
 );
 // LINE 2035:
 	asm( 
@@ -11642,16 +11642,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2037:
 	asm( 
-"	      0055bd14    cmp dword ptr [ebp-0Ch],0"
+"	      0055bd14    cmp plhs,0"
 "	      0055bd18    je near ptr 0055BD36h"
 );
 // LINE 2038:
 	asm( 
-"	      0055bd1e    mov eax,[ebp-0Ch]"
+"	      0055bd1e    mov eax,plhs"
 "	      0055bd21    movsx eax,word ptr [eax]"
-"	      0055bd24    movsx ecx,word ptr [ebp-8]"
+"	      0055bd24    movsx ecx,rhs"
 "	      0055bd28    imul eax,ecx"
-"	      0055bd2b    mov ecx,[ebp-0Ch]"
+"	      0055bd2b    mov ecx,plhs"
 "	      0055bd2e    mov [ecx],ax"
 );
 // LINE 2039:
@@ -11661,16 +11661,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2040:
 	asm( 
 "	      0055bd36    push 12h"
-"	      0055bd38    mov eax,[ebp-14h]"
+"	      0055bd38    mov eax,this"
 "	      0055bd3b    mov eax,[eax]"
-"	      0055bd3d    mov ecx,[ebp-14h]"
+"	      0055bd3d    mov ecx,this"
 "	      0055bd40    call dword ptr [eax+4]"
 "	      0055bd43    jmp near ptr 0055BFD4h"
 "	      0055bd48    jmp near ptr 0055BFA9h"
 );
 // LINE 2042:
 	asm( 
-"	      0055bd4d    mov dword ptr [ebp-4],1"
+"	      0055bd4d    mov result,1"
 );
 // LINE 2043:
 	asm( 
@@ -11678,17 +11678,17 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2045:
 	asm( 
-"	      0055bd59    cmp dword ptr [ebp-0Ch],0"
+"	      0055bd59    cmp plhs,0"
 "	      0055bd5d    je near ptr 0055BD7Bh"
 );
 // LINE 2046:
 	asm( 
-"	      0055bd63    mov eax,[ebp-0Ch]"
-"	      0055bd66    movsx ecx,word ptr [ebp-8]"
+"	      0055bd63    mov eax,plhs"
+"	      0055bd66    movsx ecx,rhs"
 "	      0055bd6a    movsx eax,word ptr [eax]"
 "	      0055bd6d    cdq"
 "	      0055bd6e    idiv ecx"
-"	      0055bd70    mov ecx,[ebp-0Ch]"
+"	      0055bd70    mov ecx,plhs"
 "	      0055bd73    mov [ecx],ax"
 );
 // LINE 2047:
@@ -11698,16 +11698,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2048:
 	asm( 
 "	      0055bd7b    push 12h"
-"	      0055bd7d    mov eax,[ebp-14h]"
+"	      0055bd7d    mov eax,this"
 "	      0055bd80    mov eax,[eax]"
-"	      0055bd82    mov ecx,[ebp-14h]"
+"	      0055bd82    mov ecx,this"
 "	      0055bd85    call dword ptr [eax+4]"
 "	      0055bd88    jmp near ptr 0055BFCFh"
 "	      0055bd8d    jmp near ptr 0055BFA9h"
 );
 // LINE 2050:
 	asm( 
-"	      0055bd92    mov dword ptr [ebp-4],1"
+"	      0055bd92    mov result,1"
 );
 // LINE 2051:
 	asm( 
@@ -11715,29 +11715,29 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2053:
 	asm( 
-"	      0055bd9e    movsx eax,word ptr [ebp-8]"
+"	      0055bd9e    movsx eax,rhs"
 "	      0055bda2    cmp eax,0Eh"
 "	      0055bda5    jle near ptr 0055BDC2h"
 "	      0055bdab    push 0Ch"
-"	      0055bdad    mov eax,[ebp-14h]"
+"	      0055bdad    mov eax,this"
 "	      0055bdb0    mov eax,[eax]"
-"	      0055bdb2    mov ecx,[ebp-14h]"
+"	      0055bdb2    mov ecx,this"
 "	      0055bdb5    call dword ptr [eax+4]"
 "	      0055bdb8    jmp near ptr 0055BFCAh"
 "	      0055bdbd    jmp near ptr 0055BFA9h"
 );
 // LINE 2054:
 	asm( 
-"	      0055bdc2    cmp dword ptr [ebp-0Ch],0"
+"	      0055bdc2    cmp plhs,0"
 "	      0055bdc6    je near ptr 0055BDEBh"
 "	      0055bdcc    mov eax,1"
-"	      0055bdd1    movsx ecx,word ptr [ebp-8]"
+"	      0055bdd1    movsx ecx,rhs"
 "	      0055bdd5    dec ecx"
 "	      0055bdd6    shl eax,cl"
-"	      0055bdd8    mov ecx,[ebp-0Ch]"
+"	      0055bdd8    mov ecx,plhs"
 "	      0055bddb    movsx ecx,word ptr [ecx]"
 "	      0055bdde    or eax,ecx"
-"	      0055bde0    mov ecx,[ebp-0Ch]"
+"	      0055bde0    mov ecx,plhs"
 "	      0055bde3    mov [ecx],ax"
 );
 // LINE 2055:
@@ -11747,16 +11747,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2056:
 	asm( 
 "	      0055bdeb    push 12h"
-"	      0055bded    mov eax,[ebp-14h]"
+"	      0055bded    mov eax,this"
 "	      0055bdf0    mov eax,[eax]"
-"	      0055bdf2    mov ecx,[ebp-14h]"
+"	      0055bdf2    mov ecx,this"
 "	      0055bdf5    call dword ptr [eax+4]"
 "	      0055bdf8    jmp near ptr 0055BFC5h"
 "	      0055bdfd    jmp near ptr 0055BFA9h"
 );
 // LINE 2058:
 	asm( 
-"	      0055be02    mov dword ptr [ebp-4],1"
+"	      0055be02    mov result,1"
 );
 // LINE 2059:
 	asm( 
@@ -11764,30 +11764,30 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2061:
 	asm( 
-"	      0055be0e    movsx eax,word ptr [ebp-8]"
+"	      0055be0e    movsx eax,rhs"
 "	      0055be12    cmp eax,0Eh"
 "	      0055be15    jle near ptr 0055BE32h"
 "	      0055be1b    push 0Ch"
-"	      0055be1d    mov eax,[ebp-14h]"
+"	      0055be1d    mov eax,this"
 "	      0055be20    mov eax,[eax]"
-"	      0055be22    mov ecx,[ebp-14h]"
+"	      0055be22    mov ecx,this"
 "	      0055be25    call dword ptr [eax+4]"
 "	      0055be28    jmp near ptr 0055BFC0h"
 "	      0055be2d    jmp near ptr 0055BFA9h"
 );
 // LINE 2062:
 	asm( 
-"	      0055be32    cmp dword ptr [ebp-0Ch],0"
+"	      0055be32    cmp plhs,0"
 "	      0055be36    je near ptr 0055BE5Dh"
 "	      0055be3c    mov eax,1"
-"	      0055be41    movsx ecx,word ptr [ebp-8]"
+"	      0055be41    movsx ecx,rhs"
 "	      0055be45    dec ecx"
 "	      0055be46    shl eax,cl"
 "	      0055be48    not eax"
-"	      0055be4a    mov ecx,[ebp-0Ch]"
+"	      0055be4a    mov ecx,plhs"
 "	      0055be4d    movsx ecx,word ptr [ecx]"
 "	      0055be50    and eax,ecx"
-"	      0055be52    mov ecx,[ebp-0Ch]"
+"	      0055be52    mov ecx,plhs"
 "	      0055be55    mov [ecx],ax"
 );
 // LINE 2063:
@@ -11797,16 +11797,16 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2064:
 	asm( 
 "	      0055be5d    push 12h"
-"	      0055be5f    mov eax,[ebp-14h]"
+"	      0055be5f    mov eax,this"
 "	      0055be62    mov eax,[eax]"
-"	      0055be64    mov ecx,[ebp-14h]"
+"	      0055be64    mov ecx,this"
 "	      0055be67    call dword ptr [eax+4]"
 "	      0055be6a    jmp near ptr 0055BFBBh"
 "	      0055be6f    jmp near ptr 0055BFA9h"
 );
 // LINE 2066:
 	asm( 
-"	      0055be74    mov dword ptr [ebp-4],1"
+"	      0055be74    mov result,1"
 );
 // LINE 2067:
 	asm( 
@@ -11814,13 +11814,13 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2069:
 	asm( 
-"	      0055be80    movsx eax,word ptr [ebp-8]"
+"	      0055be80    movsx eax,rhs"
 "	      0055be84    cmp eax,0Eh"
 "	      0055be87    jle near ptr 0055BEA4h"
 "	      0055be8d    push 0Ch"
-"	      0055be8f    mov eax,[ebp-14h]"
+"	      0055be8f    mov eax,this"
 "	      0055be92    mov eax,[eax]"
-"	      0055be94    mov ecx,[ebp-14h]"
+"	      0055be94    mov ecx,this"
 "	      0055be97    call dword ptr [eax+4]"
 "	      0055be9a    jmp near ptr 0055BFB6h"
 "	      0055be9f    jmp near ptr 0055BFA9h"
@@ -11828,18 +11828,18 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2070:
 	asm( 
 "	      0055bea4    mov eax,1"
-"	      0055bea9    movsx ecx,word ptr [ebp-8]"
+"	      0055bea9    movsx ecx,rhs"
 "	      0055bead    dec ecx"
 "	      0055beae    shl eax,cl"
-"	      0055beb0    movsx ecx,word ptr [ebp-10h]"
+"	      0055beb0    movsx ecx,lhs"
 "	      0055beb4    test ecx,eax"
 "	      0055beb6    je near ptr 0055BEC8h"
-"	      0055bebc    mov dword ptr [ebp-4],1"
+"	      0055bebc    mov result,1"
 );
 // LINE 2071:
 	asm( 
 "	      0055bec3    jmp near ptr 0055BECFh"
-"	      0055bec8    mov dword ptr [ebp-4],0"
+"	      0055bec8    mov result,0"
 );
 // LINE 2072:
 	asm( 
@@ -11848,9 +11848,9 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 // LINE 2075:
 	asm( 
 "	      0055bed4    push 0"
-"	      0055bed6    mov eax,[ebp-14h]"
+"	      0055bed6    mov eax,this"
 "	      0055bed9    mov eax,[eax]"
-"	      0055bedb    mov ecx,[ebp-14h]"
+"	      0055bedb    mov ecx,this"
 "	      0055bede    call dword ptr [eax+4]"
 "	      0055bee1    jmp near ptr 0055BFB1h"
 "	      0055bee6    jmp near ptr 0055BFA9h"
@@ -11882,12 +11882,12 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2080:
 	asm( 
-"	      0055bf35    cmp dword ptr [ebp-0Ch],0"
+"	      0055bf35    cmp plhs,0"
 "	      0055bf39    je near ptr 0055BFA9h"
 );
 // LINE 2081:
 	asm( 
-"	      0055bf3f    mov eax,[ebp-0Ch]"
+"	      0055bf3f    mov eax,plhs"
 "	      0055bf42    movsx eax,word ptr [eax]"
 "	      0055bf45    cmp eax,61A8h"
 "	      0055bf4a    jle near ptr 0055BF74h"
@@ -11903,12 +11903,12 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2083:
 	asm( 
-"	      0055bf6c    mov eax,[ebp-0Ch]"
+"	      0055bf6c    mov eax,plhs"
 "	      0055bf6f    mov word ptr [eax],61A8h"
 );
 // LINE 2086:
 	asm( 
-"	      0055bf74    mov eax,[ebp-0Ch]"
+"	      0055bf74    mov eax,plhs"
 "	      0055bf77    movsx eax,word ptr [eax]"
 "	      0055bf7a    cmp eax,0FFFF9E58h"
 "	      0055bf7f    jge near ptr 0055BFA9h"
@@ -11924,13 +11924,13 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 );
 // LINE 2088:
 	asm( 
-"	      0055bfa1    mov eax,[ebp-0Ch]"
+"	      0055bfa1    mov eax,plhs"
 "	      0055bfa4    mov word ptr [eax],9E58h"
 );
 // LINE 2098:
 tree_error:
 	asm( 
-"	      0055bfa9    mov eax,[ebp-4]"
+"	      0055bfa9    mov eax,result"
 "	      0055bfac    jmp near ptr 0055BFE8h"
 );
 // LINE 2099:
@@ -11964,7 +11964,7 @@ void cYObject::HandleOverflow() {
 "	      0055bff5    push ebx"
 "	      0055bff6    push esi"
 "	      0055bff7    push edi"
-"	      0055bff8    mov [ebp-4],ecx"
+"	      0055bff8    mov this,ecx"
 );
 // LINE 2104:
 	asm( 
@@ -12000,35 +12000,35 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 "	      0055c027    push ebx"
 "	      0055c028    push esi"
 "	      0055c029    push edi"
-"	      0055c02a    mov [ebp-10h],ecx"
+"	      0055c02a    mov this,ecx"
 );
 // LINE 2113:
 	asm( 
-"	      0055c02d    cmp dword ptr [ebp+10h],0"
+"	      0055c02d    cmp dataRef,0"
 "	      0055c031    jne near ptr 0055C043h"
 );
 // LINE 2114:
 	asm( 
-"	      0055c037    lea eax,[ebp-0Ch]"
-"	      0055c03a    mov [ebp+10h],eax"
+"	      0055c037    lea eax,ptemp"
+"	      0055c03a    mov dataRef,eax"
 );
 // LINE 2115:
 	asm( 
-"	      0055c03d    lea eax,[ebp-8]"
-"	      0055c040    mov [ebp-0Ch],eax"
+"	      0055c03d    lea eax,temp"
+"	      0055c040    mov ptemp,eax"
 );
 // LINE 2117:
 	asm( 
-"	      0055c043    mov eax,[ebp+10h]"
+"	      0055c043    mov eax,dataRef"
 "	      0055c046    mov dword ptr [eax],0"
 );
 // LINE 2118:
 	asm( 
-"	      0055c04c    mov word ptr [ebp-4],0"
+"	      0055c04c    mov data,0"
 );
 // LINE 2119:
 	asm( 
-"	      0055c052    movsx eax,word ptr [ebp+8]"
+"	      0055c052    movsx eax,ownerField"
 "	      0055c056    mov [ebp-14h],eax"
 "	      0055c059    jmp near ptr 0055C1FAh"
 );
@@ -12073,29 +12073,29 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 );
 // LINE 2135:
 	asm( 
-"	      0055c0c1    movsx eax,word ptr [ebp+0Ch]"
+"	      0055c0c1    movsx eax,dataField"
 "	      0055c0c5    cmp eax,30h"
 "	      0055c0c8    jl near ptr 0055C0E5h"
 "	      0055c0ce    push 6"
-"	      0055c0d0    mov eax,[ebp-10h]"
+"	      0055c0d0    mov eax,this"
 "	      0055c0d3    mov eax,[eax]"
-"	      0055c0d5    mov ecx,[ebp-10h]"
+"	      0055c0d5    mov ecx,this"
 "	      0055c0d8    call dword ptr [eax+4]"
 "	      0055c0db    jmp near ptr 0055C259h"
 "	      0055c0e0    jmp near ptr 0055C247h"
 );
 // LINE 2136:
 	asm( 
-"	      0055c0e5    movsx eax,word ptr [ebp+0Ch]"
+"	      0055c0e5    movsx eax,dataField"
 "	      0055c0e9    add eax,eax"
-"	      0055c0eb    add eax,[ebp-10h]"
+"	      0055c0eb    add eax,this"
 "	      0055c0ee    add eax,0D0h"
-"	      0055c0f3    mov ecx,[ebp+10h]"
+"	      0055c0f3    mov ecx,dataRef"
 "	      0055c0f6    mov [ecx],eax"
-"	      0055c0f8    mov eax,[ebp+10h]"
+"	      0055c0f8    mov eax,dataRef"
 "	      0055c0fb    mov eax,[eax]"
 "	      0055c0fd    mov ax,[eax]"
-"	      0055c100    mov [ebp-4],ax"
+"	      0055c100    mov data,ax"
 );
 // LINE 2137:
 	asm( 
@@ -12116,8 +12116,8 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 );
 // LINE 2142:
 	asm( 
-"	      0055c12a    mov ax,[ebp+0Ch]"
-"	      0055c12e    mov [ebp-4],ax"
+"	      0055c12a    mov ax,dataField"
+"	      0055c12e    mov data,ax"
 );
 // LINE 2143:
 	asm( 
@@ -12151,13 +12151,13 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 );
 // LINE 2151:
 	asm( 
-"	      0055c179    movsx eax,word ptr [ebp+0Ch]"
+"	      0055c179    movsx eax,dataField"
 "	      0055c17d    cmp eax,4"
 "	      0055c180    jl near ptr 0055C19Dh"
 "	      0055c186    push 7"
-"	      0055c188    mov eax,[ebp-10h]"
+"	      0055c188    mov eax,this"
 "	      0055c18b    mov eax,[eax]"
-"	      0055c18d    mov ecx,[ebp-10h]"
+"	      0055c18d    mov ecx,this"
 "	      0055c190    call dword ptr [eax+4]"
 "	      0055c193    jmp near ptr 0055C254h"
 "	      0055c198    jmp near ptr 0055C247h"
@@ -12165,21 +12165,21 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 // LINE 2152:
 	asm( 
 "	      0055c19d    jmp near ptr 0055C1A2h"
-"	      0055c1a2    mov eax,[ebp-10h]"
+"	      0055c1a2    mov eax,this"
 "	      0055c1a5    movsx eax,word ptr [eax+8]"
 "	      0055c1a9    lea eax,[eax*4-4]"
 "	      0055c1b0    lea eax,[eax+eax*4]"
-"	      0055c1b3    mov ecx,[ebp-10h]"
+"	      0055c1b3    mov ecx,this"
 "	      0055c1b6    add eax,[ecx+4]"
-"	      0055c1b9    movsx ecx,word ptr [ebp+0Ch]"
+"	      0055c1b9    movsx ecx,dataField"
 "	      0055c1bd    lea eax,[eax+ecx*2]"
 "	      0055c1c0    add eax,8"
-"	      0055c1c3    mov ecx,[ebp+10h]"
+"	      0055c1c3    mov ecx,dataRef"
 "	      0055c1c6    mov [ecx],eax"
-"	      0055c1c8    mov eax,[ebp+10h]"
+"	      0055c1c8    mov eax,dataRef"
 "	      0055c1cb    mov eax,[eax]"
 "	      0055c1cd    mov ax,[eax]"
-"	      0055c1d0    mov [ebp-4],ax"
+"	      0055c1d0    mov data,ax"
 );
 // LINE 2153:
 	asm( 
@@ -12188,9 +12188,9 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 // LINE 2155:
 	asm( 
 "	      0055c1d9    push 8"
-"	      0055c1db    mov eax,[ebp-10h]"
+"	      0055c1db    mov eax,this"
 "	      0055c1de    mov eax,[eax]"
-"	      0055c1e0    mov ecx,[ebp-10h]"
+"	      0055c1e0    mov ecx,this"
 "	      0055c1e3    call dword ptr [eax+4]"
 "	      0055c1e6    jmp near ptr 0055C24Fh"
 "	      0055c1eb    jmp near ptr 0055C247h"
@@ -12222,7 +12222,7 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 );
 // LINE 2158:
 	asm( 
-"	      0055c23e    mov ax,[ebp-4]"
+"	      0055c23e    mov ax,data"
 "	      0055c242    jmp near ptr 0055C25Eh"
 );
 // LINE 2161:

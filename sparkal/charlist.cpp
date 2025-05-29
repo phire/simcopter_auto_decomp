@@ -15,17 +15,17 @@ void CharData::CharData() {
 "	      0043d3f6    push ebx"
 "	      0043d3f7    push esi"
 "	      0043d3f8    push edi"
-"	      0043d3f9    mov [ebp-4],ecx"
+"	      0043d3f9    mov this,ecx"
 );
 // LINE 10:
 	asm( 
-"	      0043d3fc    mov eax,[ebp-4]"
+"	      0043d3fc    mov eax,this"
 "	      0043d3ff    mov byte ptr [eax],0"
 );
 // LINE 11:
 	asm( 
 "	      0043d402    jmp near ptr 0043D407h"
-"	      0043d407    mov eax,[ebp-4]"
+"	      0043d407    mov eax,this"
 "	      0043d40a    pop edi"
 "	      0043d40b    pop esi"
 "	      0043d40c    pop ebx"
@@ -44,18 +44,18 @@ void CharData::CharData(unsigned char chNewValue) {
 "	      0043d415    push ebx"
 "	      0043d416    push esi"
 "	      0043d417    push edi"
-"	      0043d418    mov [ebp-4],ecx"
+"	      0043d418    mov this,ecx"
 );
 // LINE 15:
 	asm( 
-"	      0043d41b    mov al,[ebp+8]"
-"	      0043d41e    mov ecx,[ebp-4]"
+"	      0043d41b    mov al,chNewValue"
+"	      0043d41e    mov ecx,this"
 "	      0043d421    mov [ecx],al"
 );
 // LINE 16:
 	asm( 
 "	      0043d423    jmp near ptr 0043D428h"
-"	      0043d428    mov eax,[ebp-4]"
+"	      0043d428    mov eax,this"
 "	      0043d42b    pop edi"
 "	      0043d42c    pop esi"
 "	      0043d42d    pop ebx"
@@ -74,30 +74,30 @@ void CharList::CharList() {
 "	      0043d438    push ebx"
 "	      0043d439    push esi"
 "	      0043d43a    push edi"
-"	      0043d43b    mov [ebp-4],ecx"
+"	      0043d43b    mov this,ecx"
 );
 // LINE 25:
 	asm( 
-"	      0043d43e    mov eax,[ebp-4]"
+"	      0043d43e    mov eax,this"
 "	      0043d441    mov dword ptr [eax],0"
 );
 // LINE 28:
 	asm( 
-"	      0043d447    mov eax,[ebp-4]"
+"	      0043d447    mov eax,this"
 "	      0043d44a    mov dword ptr [eax+0Ch],0"
-"	      0043d451    mov eax,[ebp-4]"
+"	      0043d451    mov eax,this"
 "	      0043d454    mov eax,[eax+0Ch]"
-"	      0043d457    mov ecx,[ebp-4]"
+"	      0043d457    mov ecx,this"
 "	      0043d45a    mov [ecx+8],eax"
-"	      0043d45d    mov eax,[ebp-4]"
+"	      0043d45d    mov eax,this"
 "	      0043d460    mov eax,[eax+8]"
-"	      0043d463    mov ecx,[ebp-4]"
+"	      0043d463    mov ecx,this"
 "	      0043d466    mov [ecx+4],eax"
 );
 // LINE 29:
 	asm( 
 "	      0043d469    jmp near ptr 0043D46Eh"
-"	      0043d46e    mov eax,[ebp-4]"
+"	      0043d46e    mov eax,this"
 "	      0043d471    pop edi"
 "	      0043d472    pop esi"
 "	      0043d473    pop ebx"
@@ -118,41 +118,41 @@ void CharList::~CharList() {
 "	      0043d47c    push ebx"
 "	      0043d47d    push esi"
 "	      0043d47e    push edi"
-"	      0043d47f    mov [ebp-10h],ecx"
+"	      0043d47f    mov this,ecx"
 );
 // LINE 35:
 	asm( 
-"	      0043d482    mov eax,[ebp-10h]"
+"	      0043d482    mov eax,this"
 "	      0043d485    cmp dword ptr [eax],0"
 "	      0043d488    je near ptr 0043D4E1h"
 );
 // LINE 36:
 	asm( 
-"	      0043d48e    mov eax,[ebp-10h]"
+"	      0043d48e    mov eax,this"
 "	      0043d491    mov eax,[eax+4]"
-"	      0043d494    mov ecx,[ebp-10h]"
+"	      0043d494    mov ecx,this"
 "	      0043d497    mov [ecx+0Ch],eax"
 );
 // LINE 38:
 	asm( 
 "	      0043d49a    jmp near ptr 0043D4A8h"
-"	      0043d49f    mov eax,[ebp-4]"
-"	      0043d4a2    mov ecx,[ebp-10h]"
+"	      0043d49f    mov eax,nextCharData"
+"	      0043d4a2    mov ecx,this"
 "	      0043d4a5    mov [ecx+0Ch],eax"
-"	      0043d4a8    mov eax,[ebp-10h]"
+"	      0043d4a8    mov eax,this"
 "	      0043d4ab    cmp dword ptr [eax+0Ch],0"
 "	      0043d4af    je near ptr 0043D4E1h"
 );
 // LINE 40:
 	asm( 
-"	      0043d4b5    mov eax,[ebp-10h]"
+"	      0043d4b5    mov eax,this"
 "	      0043d4b8    mov eax,[eax+0Ch]"
 "	      0043d4bb    mov eax,[eax+5]"
-"	      0043d4be    mov [ebp-4],eax"
+"	      0043d4be    mov nextCharData,eax"
 );
 // LINE 41:
 	asm( 
-"	      0043d4c1    mov eax,[ebp-10h]"
+"	      0043d4c1    mov eax,this"
 "	      0043d4c4    mov eax,[eax+0Ch]"
 "	      0043d4c7    mov [ebp-8],eax"
 "	      0043d4ca    mov eax,[ebp-8]"
@@ -189,7 +189,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 "	      0043d4f1    push ebx"
 "	      0043d4f2    push esi"
 "	      0043d4f3    push edi"
-"	      0043d4f4    mov [ebp-0Ch],ecx"
+"	      0043d4f4    mov this,ecx"
 );
 // LINE 52:
 	asm( 
@@ -203,15 +203,15 @@ void CharList::AddItem(unsigned char chNewValue) {
 "	      0043d511    push eax"
 "	      0043d512    mov ecx,[ebp-8]"
 "	      0043d515    call 0043D40Fh"
-"	      0043d51a    mov [ebp-4],eax"
+"	      0043d51a    mov tempCharData,eax"
 "	      0043d51d    jmp near ptr 0043D529h"
-"	      0043d522    mov dword ptr [ebp-4],0"
+"	      0043d522    mov tempCharData,0"
 );
 // LINE 53:
 	asm( 
-"	      0043d529    mov eax,[ebp-4]"
+"	      0043d529    mov eax,tempCharData"
 "	      0043d52c    push eax"
-"	      0043d52d    mov ecx,[ebp-0Ch]"
+"	      0043d52d    mov ecx,this"
 "	      0043d530    call 0043D541h"
 );
 // LINE 54:
@@ -235,45 +235,45 @@ void CharList::AddItem(class CharData* charDataToAdd) {
 "	      0043d547    push ebx"
 "	      0043d548    push esi"
 "	      0043d549    push edi"
-"	      0043d54a    mov [ebp-4],ecx"
+"	      0043d54a    mov this,ecx"
 );
 // LINE 60:
 	asm( 
-"	      0043d54d    mov eax,[ebp-4]"
+"	      0043d54d    mov eax,this"
 "	      0043d550    inc dword ptr [eax]"
 );
 // LINE 61:
 	asm( 
-"	      0043d552    mov eax,[ebp-4]"
+"	      0043d552    mov eax,this"
 "	      0043d555    cmp dword ptr [eax],1"
 "	      0043d558    jne near ptr 0043D592h"
 );
 // LINE 62:
 	asm( 
-"	      0043d55e    mov eax,[ebp+8]"
-"	      0043d561    mov ecx,[ebp-4]"
+"	      0043d55e    mov eax,charDataToAdd"
+"	      0043d561    mov ecx,this"
 "	      0043d564    mov [ecx+4],eax"
 );
 // LINE 63:
 	asm( 
-"	      0043d567    mov eax,[ebp+8]"
-"	      0043d56a    mov ecx,[ebp-4]"
+"	      0043d567    mov eax,charDataToAdd"
+"	      0043d56a    mov ecx,this"
 "	      0043d56d    mov [ecx+8],eax"
 );
 // LINE 64:
 	asm( 
-"	      0043d570    mov eax,[ebp+8]"
-"	      0043d573    mov ecx,[ebp-4]"
+"	      0043d570    mov eax,charDataToAdd"
+"	      0043d573    mov ecx,this"
 "	      0043d576    mov [ecx+0Ch],eax"
 );
 // LINE 65:
 	asm( 
-"	      0043d579    mov eax,[ebp+8]"
+"	      0043d579    mov eax,charDataToAdd"
 "	      0043d57c    mov dword ptr [eax+5],0"
 );
 // LINE 66:
 	asm( 
-"	      0043d583    mov eax,[ebp+8]"
+"	      0043d583    mov eax,charDataToAdd"
 "	      0043d586    mov dword ptr [eax+1],0"
 );
 // LINE 68:
@@ -282,27 +282,27 @@ void CharList::AddItem(class CharData* charDataToAdd) {
 );
 // LINE 69:
 	asm( 
-"	      0043d592    mov eax,[ebp+8]"
-"	      0043d595    mov ecx,[ebp-4]"
+"	      0043d592    mov eax,charDataToAdd"
+"	      0043d595    mov ecx,this"
 "	      0043d598    mov ecx,[ecx+8]"
 "	      0043d59b    mov [ecx+5],eax"
 );
 // LINE 70:
 	asm( 
-"	      0043d59e    mov eax,[ebp+8]"
+"	      0043d59e    mov eax,charDataToAdd"
 "	      0043d5a1    mov dword ptr [eax+5],0"
 );
 // LINE 71:
 	asm( 
-"	      0043d5a8    mov eax,[ebp-4]"
+"	      0043d5a8    mov eax,this"
 "	      0043d5ab    mov eax,[eax+8]"
-"	      0043d5ae    mov ecx,[ebp+8]"
+"	      0043d5ae    mov ecx,charDataToAdd"
 "	      0043d5b1    mov [ecx+1],eax"
 );
 // LINE 72:
 	asm( 
-"	      0043d5b4    mov eax,[ebp+8]"
-"	      0043d5b7    mov ecx,[ebp-4]"
+"	      0043d5b4    mov eax,charDataToAdd"
+"	      0043d5b7    mov ecx,this"
 "	      0043d5ba    mov [ecx+8],eax"
 );
 // LINE 74:
@@ -326,21 +326,21 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 "	      0043d5cf    push ebx"
 "	      0043d5d0    push esi"
 "	      0043d5d1    push edi"
-"	      0043d5d2    mov [ebp-0Ch],ecx"
+"	      0043d5d2    mov this,ecx"
 );
 // LINE 80:
 	asm( 
-"	      0043d5d5    mov eax,[ebp-0Ch]"
+"	      0043d5d5    mov eax,this"
 "	      0043d5d8    cmp dword ptr [eax],1"
 "	      0043d5db    jne near ptr 0043D5FCh"
 );
 // LINE 81:
 	asm( 
-"	      0043d5e1    mov eax,[ebp-0Ch]"
+"	      0043d5e1    mov eax,this"
 "	      0043d5e4    mov dword ptr [eax+8],0"
-"	      0043d5eb    mov eax,[ebp-0Ch]"
+"	      0043d5eb    mov eax,this"
 "	      0043d5ee    mov eax,[eax+8]"
-"	      0043d5f1    mov ecx,[ebp-0Ch]"
+"	      0043d5f1    mov ecx,this"
 "	      0043d5f4    mov [ecx+4],eax"
 );
 // LINE 82:
@@ -349,15 +349,15 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 );
 // LINE 83:
 	asm( 
-"	      0043d5fc    mov eax,[ebp+8]"
+"	      0043d5fc    mov eax,charDataToDelete"
 "	      0043d5ff    cmp dword ptr [eax+1],0"
 "	      0043d603    je near ptr 0043D61Dh"
 );
 // LINE 85:
 	asm( 
-"	      0043d609    mov eax,[ebp+8]"
+"	      0043d609    mov eax,charDataToDelete"
 "	      0043d60c    mov eax,[eax+5]"
-"	      0043d60f    mov ecx,[ebp+8]"
+"	      0043d60f    mov ecx,charDataToDelete"
 "	      0043d612    mov ecx,[ecx+1]"
 "	      0043d615    mov [ecx+5],eax"
 );
@@ -367,22 +367,22 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 );
 // LINE 87:
 	asm( 
-"	      0043d61d    mov eax,[ebp+8]"
+"	      0043d61d    mov eax,charDataToDelete"
 "	      0043d620    mov eax,[eax+5]"
-"	      0043d623    mov ecx,[ebp-0Ch]"
+"	      0043d623    mov ecx,this"
 "	      0043d626    mov [ecx+4],eax"
 );
 // LINE 88:
 	asm( 
-"	      0043d629    mov eax,[ebp+8]"
+"	      0043d629    mov eax,charDataToDelete"
 "	      0043d62c    cmp dword ptr [eax+5],0"
 "	      0043d630    je near ptr 0043D64Ah"
 );
 // LINE 90:
 	asm( 
-"	      0043d636    mov eax,[ebp+8]"
+"	      0043d636    mov eax,charDataToDelete"
 "	      0043d639    mov eax,[eax+1]"
-"	      0043d63c    mov ecx,[ebp+8]"
+"	      0043d63c    mov ecx,charDataToDelete"
 "	      0043d63f    mov ecx,[ecx+5]"
 "	      0043d642    mov [ecx+1],eax"
 );
@@ -392,19 +392,19 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 );
 // LINE 92:
 	asm( 
-"	      0043d64a    mov eax,[ebp+8]"
+"	      0043d64a    mov eax,charDataToDelete"
 "	      0043d64d    mov eax,[eax+1]"
-"	      0043d650    mov ecx,[ebp-0Ch]"
+"	      0043d650    mov ecx,this"
 "	      0043d653    mov [ecx+8],eax"
 );
 // LINE 94:
 	asm( 
-"	      0043d656    mov eax,[ebp-0Ch]"
+"	      0043d656    mov eax,this"
 "	      0043d659    dec dword ptr [eax]"
 );
 // LINE 95:
 	asm( 
-"	      0043d65b    mov eax,[ebp+8]"
+"	      0043d65b    mov eax,charDataToDelete"
 "	      0043d65e    mov [ebp-4],eax"
 "	      0043d661    mov eax,[ebp-4]"
 "	      0043d664    mov [ebp-8],eax"
@@ -436,19 +436,19 @@ void CharList::DeleteItem(unsigned char chValue) {
 "	      0043d685    push ebx"
 "	      0043d686    push esi"
 "	      0043d687    push edi"
-"	      0043d688    mov [ebp-8],ecx"
+"	      0043d688    mov this,ecx"
 );
 // LINE 103:
 	asm( 
 "	      0043d68b    mov eax,[ebp+8]"
 "	      0043d68e    push eax"
-"	      0043d68f    mov ecx,[ebp-8]"
+"	      0043d68f    mov ecx,this"
 "	      0043d692    call 0043D7CEh"
-"	      0043d697    mov [ebp-4],eax"
+"	      0043d697    mov charDataToDelete,eax"
 );
 // LINE 104:
 	asm( 
-"	      0043d69a    cmp dword ptr [ebp-4],0"
+"	      0043d69a    cmp charDataToDelete,0"
 "	      0043d69e    jne near ptr 0043D6A9h"
 );
 // LINE 105:
@@ -457,9 +457,9 @@ void CharList::DeleteItem(unsigned char chValue) {
 );
 // LINE 106:
 	asm( 
-"	      0043d6a9    mov eax,[ebp-4]"
+"	      0043d6a9    mov eax,charDataToDelete"
 "	      0043d6ac    push eax"
-"	      0043d6ad    mov ecx,[ebp-8]"
+"	      0043d6ad    mov ecx,this"
 "	      0043d6b0    call 0043D5C9h"
 );
 // LINE 107:
@@ -485,19 +485,19 @@ void CharList::DeleteItem(int32_t nIndex) {
 "	      0043d6c7    push ebx"
 "	      0043d6c8    push esi"
 "	      0043d6c9    push edi"
-"	      0043d6ca    mov [ebp-8],ecx"
+"	      0043d6ca    mov this,ecx"
 );
 // LINE 113:
 	asm( 
-"	      0043d6cd    mov eax,[ebp+8]"
+"	      0043d6cd    mov eax,nIndex"
 "	      0043d6d0    push eax"
-"	      0043d6d1    mov ecx,[ebp-8]"
+"	      0043d6d1    mov ecx,this"
 "	      0043d6d4    call 0043D74Dh"
-"	      0043d6d9    mov [ebp-4],eax"
+"	      0043d6d9    mov charDataToDelete,eax"
 );
 // LINE 114:
 	asm( 
-"	      0043d6dc    cmp dword ptr [ebp-4],0"
+"	      0043d6dc    cmp charDataToDelete,0"
 "	      0043d6e0    jne near ptr 0043D6EBh"
 );
 // LINE 115:
@@ -506,9 +506,9 @@ void CharList::DeleteItem(int32_t nIndex) {
 );
 // LINE 116:
 	asm( 
-"	      0043d6eb    mov eax,[ebp-4]"
+"	      0043d6eb    mov eax,charDataToDelete"
 "	      0043d6ee    push eax"
-"	      0043d6ef    mov ecx,[ebp-8]"
+"	      0043d6ef    mov ecx,this"
 "	      0043d6f2    call 0043D5C9h"
 );
 // LINE 117:
@@ -535,28 +535,28 @@ void CharList::DeleteAllItems() {
 "	      0043d709    push ebx"
 "	      0043d70a    push esi"
 "	      0043d70b    push edi"
-"	      0043d70c    mov [ebp-0Ch],ecx"
+"	      0043d70c    mov this,ecx"
 );
 // LINE 121:
 	asm( 
-"	      0043d70f    mov eax,[ebp-0Ch]"
+"	      0043d70f    mov eax,this"
 "	      0043d712    mov eax,[eax]"
-"	      0043d714    mov [ebp-4],eax"
+"	      0043d714    mov iEnd,eax"
 );
 // LINE 123:
 	asm( 
-"	      0043d717    mov dword ptr [ebp-8],0"
+"	      0043d717    mov i,0"
 "	      0043d71e    jmp near ptr 0043D726h"
-"	      0043d723    inc dword ptr [ebp-8]"
-"	      0043d726    mov eax,[ebp-8]"
-"	      0043d729    cmp [ebp-4],eax"
+"	      0043d723    inc i"
+"	      0043d726    mov eax,i"
+"	      0043d729    cmp iEnd,eax"
 "	      0043d72c    jle near ptr 0043D743h"
 );
 // LINE 124:
 	asm( 
-"	      0043d732    mov eax,[ebp-8]"
+"	      0043d732    mov eax,i"
 "	      0043d735    push eax"
-"	      0043d736    mov ecx,[ebp-0Ch]"
+"	      0043d736    mov ecx,this"
 "	      0043d739    call 0043D6C1h"
 "	      0043d73e    jmp near ptr 0043D723h"
 );
@@ -584,12 +584,12 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 "	      0043d753    push ebx"
 "	      0043d754    push esi"
 "	      0043d755    push edi"
-"	      0043d756    mov [ebp-0Ch],ecx"
+"	      0043d756    mov this,ecx"
 );
 // LINE 133:
 	asm( 
-"	      0043d759    mov eax,[ebp-0Ch]"
-"	      0043d75c    mov ecx,[ebp+8]"
+"	      0043d759    mov eax,this"
+"	      0043d75c    mov ecx,nIndex"
 "	      0043d75f    cmp [eax],ecx"
 "	      0043d761    jg near ptr 0043D76Eh"
 );
@@ -600,32 +600,32 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 );
 // LINE 136:
 	asm( 
-"	      0043d76e    mov dword ptr [ebp-8],0"
-"	      0043d775    mov eax,[ebp-0Ch]"
+"	      0043d76e    mov nPresentIndex,0"
+"	      0043d775    mov eax,this"
 "	      0043d778    mov eax,[eax+4]"
-"	      0043d77b    mov ecx,[ebp-0Ch]"
+"	      0043d77b    mov ecx,this"
 "	      0043d77e    mov [ecx+0Ch],eax"
 );
 // LINE 138:
 	asm( 
 "	      0043d781    jmp near ptr 0043D792h"
-"	      0043d786    inc dword ptr [ebp-8]"
-"	      0043d789    mov eax,[ebp-4]"
-"	      0043d78c    mov ecx,[ebp-0Ch]"
+"	      0043d786    inc nPresentIndex"
+"	      0043d789    mov eax,nextCharData"
+"	      0043d78c    mov ecx,this"
 "	      0043d78f    mov [ecx+0Ch],eax"
-"	      0043d792    mov eax,[ebp+8]"
-"	      0043d795    cmp [ebp-8],eax"
+"	      0043d792    mov eax,nIndex"
+"	      0043d795    cmp nPresentIndex,eax"
 "	      0043d798    jge near ptr 0043D7BCh"
-"	      0043d79e    mov eax,[ebp-0Ch]"
+"	      0043d79e    mov eax,this"
 "	      0043d7a1    cmp dword ptr [eax+0Ch],0"
 "	      0043d7a5    je near ptr 0043D7BCh"
 );
 // LINE 141:
 	asm( 
-"	      0043d7ab    mov eax,[ebp-0Ch]"
+"	      0043d7ab    mov eax,this"
 "	      0043d7ae    mov eax,[eax+0Ch]"
 "	      0043d7b1    mov eax,[eax+5]"
-"	      0043d7b4    mov [ebp-4],eax"
+"	      0043d7b4    mov nextCharData,eax"
 );
 // LINE 142:
 	asm( 
@@ -633,7 +633,7 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 );
 // LINE 144:
 	asm( 
-"	      0043d7bc    mov eax,[ebp-0Ch]"
+"	      0043d7bc    mov eax,this"
 "	      0043d7bf    mov eax,[eax+0Ch]"
 "	      0043d7c2    jmp near ptr 0043D7C7h"
 );
@@ -659,46 +659,46 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 "	      0043d7d4    push ebx"
 "	      0043d7d5    push esi"
 "	      0043d7d6    push edi"
-"	      0043d7d7    mov [ebp-8],ecx"
+"	      0043d7d7    mov this,ecx"
 );
 // LINE 152:
 	asm( 
-"	      0043d7da    mov eax,[ebp-8]"
+"	      0043d7da    mov eax,this"
 "	      0043d7dd    mov eax,[eax+4]"
-"	      0043d7e0    mov ecx,[ebp-8]"
+"	      0043d7e0    mov ecx,this"
 "	      0043d7e3    mov [ecx+0Ch],eax"
 );
 // LINE 154:
 	asm( 
 "	      0043d7e6    jmp near ptr 0043D7F4h"
-"	      0043d7eb    mov eax,[ebp-4]"
-"	      0043d7ee    mov ecx,[ebp-8]"
+"	      0043d7eb    mov eax,nextCharData"
+"	      0043d7ee    mov ecx,this"
 "	      0043d7f1    mov [ecx+0Ch],eax"
-"	      0043d7f4    mov eax,[ebp-8]"
+"	      0043d7f4    mov eax,this"
 "	      0043d7f7    cmp dword ptr [eax+0Ch],0"
 "	      0043d7fb    je near ptr 0043D834h"
 );
 // LINE 156:
 	asm( 
-"	      0043d801    mov eax,[ebp-8]"
+"	      0043d801    mov eax,this"
 "	      0043d804    mov eax,[eax+0Ch]"
 "	      0043d807    mov eax,[eax+5]"
-"	      0043d80a    mov [ebp-4],eax"
+"	      0043d80a    mov nextCharData,eax"
 );
 // LINE 157:
 	asm( 
-"	      0043d80d    mov eax,[ebp-8]"
+"	      0043d80d    mov eax,this"
 "	      0043d810    mov eax,[eax+0Ch]"
 "	      0043d813    xor ecx,ecx"
 "	      0043d815    mov cl,[eax]"
 "	      0043d817    xor eax,eax"
-"	      0043d819    mov al,[ebp+8]"
+"	      0043d819    mov al,chValue"
 "	      0043d81c    cmp ecx,eax"
 "	      0043d81e    jne near ptr 0043D82Fh"
 );
 // LINE 158:
 	asm( 
-"	      0043d824    mov eax,[ebp-8]"
+"	      0043d824    mov eax,this"
 "	      0043d827    mov eax,[eax+0Ch]"
 "	      0043d82a    jmp near ptr 0043D83Bh"
 );

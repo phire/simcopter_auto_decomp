@@ -21,63 +21,63 @@ void Version::Version() {
 "	      0043dae9    push ebx"
 "	      0043daea    push esi"
 "	      0043daeb    push edi"
-"	      0043daec    mov [ebp-120h],ecx"
-"	      0043daf2    mov eax,[ebp-120h]"
+"	      0043daec    mov this,ecx"
+"	      0043daf2    mov eax,this"
 "	      0043daf8    mov dword ptr [eax],58F5B8h"
 );
 // LINE 31:
 	asm( 
-"	      0043dafe    mov eax,[ebp-120h]"
+"	      0043dafe    mov eax,this"
 "	      0043db04    mov dword ptr [eax+8],0"
 );
 // LINE 35:
 	asm( 
 "	      0043db0b    push 0"
 "	      0043db0d    call dword ptr ds:[6C363Ch]"
-"	      0043db13    mov [ebp-110h],eax"
+"	      0043db13    mov hModule,eax"
 );
 // LINE 36:
 	asm( 
 "	      0043db19    push 103h"
-"	      0043db1e    lea eax,[ebp-104h]"
+"	      0043db1e    lea eax,szFileName[0]"
 "	      0043db24    push eax"
-"	      0043db25    mov eax,[ebp-110h]"
+"	      0043db25    mov eax,hModule"
 "	      0043db2b    push eax"
 "	      0043db2c    call dword ptr ds:[6C3640h]"
 );
 // LINE 37:
 	asm( 
-"	      0043db32    lea eax,[ebp-114h]"
+"	      0043db32    lea eax,dwVersionInfoHandle"
 "	      0043db38    push eax"
-"	      0043db39    lea eax,[ebp-104h]"
+"	      0043db39    lea eax,szFileName[0]"
 "	      0043db3f    push eax"
 "	      0043db40    call 004C468Ah"
-"	      0043db45    mov [ebp-10Ch],eax"
+"	      0043db45    mov dwVersionInfoSize,eax"
 );
 // LINE 38:
 	asm( 
-"	      0043db4b    cmp dword ptr [ebp-10Ch],0"
+"	      0043db4b    cmp dwVersionInfoSize,0"
 "	      0043db52    je near ptr 0043DC00h"
 );
 // LINE 39:
 	asm( 
-"	      0043db58    mov eax,[ebp-10Ch]"
+"	      0043db58    mov eax,dwVersionInfoSize"
 "	      0043db5e    push eax"
 "	      0043db5f    call 0056A600h"
 "	      0043db64    add esp,4"
-"	      0043db67    mov ecx,[ebp-120h]"
+"	      0043db67    mov ecx,this"
 "	      0043db6d    mov [ecx+8],eax"
 );
 // LINE 40:
 	asm( 
-"	      0043db70    mov eax,[ebp-120h]"
+"	      0043db70    mov eax,this"
 "	      0043db76    mov eax,[eax+8]"
 "	      0043db79    push eax"
-"	      0043db7a    mov eax,[ebp-10Ch]"
+"	      0043db7a    mov eax,dwVersionInfoSize"
 "	      0043db80    push eax"
-"	      0043db81    mov eax,[ebp-114h]"
+"	      0043db81    mov eax,dwVersionInfoHandle"
 "	      0043db87    push eax"
-"	      0043db88    lea eax,[ebp-104h]"
+"	      0043db88    lea eax,szFileName[0]"
 "	      0043db8e    push eax"
 "	      0043db8f    call 004C4684h"
 "	      0043db94    test eax,eax"
@@ -85,13 +85,13 @@ void Version::Version() {
 );
 // LINE 42:
 	asm( 
-"	      0043db9c    lea eax,[ebp-108h]"
+"	      0043db9c    lea eax,nValueSize"
 "	      0043dba2    push eax"
-"	      0043dba3    mov eax,[ebp-120h]"
+"	      0043dba3    mov eax,this"
 "	      0043dba9    add eax,4"
 "	      0043dbac    push eax"
 "	      0043dbad    push 598584h"
-"	      0043dbb2    mov eax,[ebp-120h]"
+"	      0043dbb2    mov eax,this"
 "	      0043dbb8    mov eax,[eax+8]"
 "	      0043dbbb    push eax"
 "	      0043dbbc    call 004C467Eh"
@@ -100,7 +100,7 @@ void Version::Version() {
 );
 // LINE 44:
 	asm( 
-"	      0043dbc9    mov eax,[ebp-120h]"
+"	      0043dbc9    mov eax,this"
 "	      0043dbcf    mov eax,[eax+8]"
 "	      0043dbd2    mov [ebp-118h],eax"
 "	      0043dbd8    mov eax,[ebp-118h]"
@@ -112,13 +112,13 @@ void Version::Version() {
 );
 // LINE 45:
 	asm( 
-"	      0043dbf3    mov eax,[ebp-120h]"
+"	      0043dbf3    mov eax,this"
 "	      0043dbf9    mov dword ptr [eax+8],0"
 );
 // LINE 50:
 	asm( 
 "	      0043dc00    jmp near ptr 0043DC05h"
-"	      0043dc05    mov eax,[ebp-120h]"
+"	      0043dc05    mov eax,this"
 "	      0043dc0b    pop edi"
 "	      0043dc0c    pop esi"
 "	      0043dc0d    pop ebx"
@@ -137,19 +137,19 @@ void Version::~Version() {
 "	      0043dc16    push ebx"
 "	      0043dc17    push esi"
 "	      0043dc18    push edi"
-"	      0043dc19    mov [ebp-0Ch],ecx"
-"	      0043dc1c    mov eax,[ebp-0Ch]"
+"	      0043dc19    mov this,ecx"
+"	      0043dc1c    mov eax,this"
 "	      0043dc1f    mov dword ptr [eax],58F5B8h"
 );
 // LINE 59:
 	asm( 
-"	      0043dc25    mov eax,[ebp-0Ch]"
+"	      0043dc25    mov eax,this"
 "	      0043dc28    cmp dword ptr [eax+8],0"
 "	      0043dc2c    je near ptr 0043DC4Dh"
 );
 // LINE 60:
 	asm( 
-"	      0043dc32    mov eax,[ebp-0Ch]"
+"	      0043dc32    mov eax,this"
 "	      0043dc35    mov eax,[eax+8]"
 "	      0043dc38    mov [ebp-4],eax"
 "	      0043dc3b    mov eax,[ebp-4]"
@@ -184,11 +184,11 @@ int32_t Version::GetApplicationName(char *& szName) {
 "	      0043dc60    push ebx"
 "	      0043dc61    push esi"
 "	      0043dc62    push edi"
-"	      0043dc63    mov [ebp-10Ch],ecx"
+"	      0043dc63    mov this,ecx"
 );
 // LINE 80:
 	asm( 
-"	      0043dc69    mov eax,[ebp-10Ch]"
+"	      0043dc69    mov eax,this"
 "	      0043dc6f    cmp dword ptr [eax+8],0"
 "	      0043dc73    jne near ptr 0043DC80h"
 );
@@ -200,39 +200,39 @@ int32_t Version::GetApplicationName(char *& szName) {
 // LINE 94:
 	asm( 
 "	      0043dc80    push 5985A0h"
-"	      0043dc85    mov eax,[ebp-10Ch]"
+"	      0043dc85    mov eax,this"
 "	      0043dc8b    mov eax,[eax+4]"
 "	      0043dc8e    xor ecx,ecx"
 "	      0043dc90    mov cx,[eax+2]"
 "	      0043dc94    push ecx"
-"	      0043dc95    mov eax,[ebp-10Ch]"
+"	      0043dc95    mov eax,this"
 "	      0043dc9b    mov eax,[eax+4]"
 "	      0043dc9e    xor ecx,ecx"
 "	      0043dca0    mov cx,[eax]"
 "	      0043dca3    push ecx"
 "	      0043dca4    push 5985ACh"
-"	      0043dca9    lea eax,[ebp-108h]"
+"	      0043dca9    lea eax,subBlockName[0]"
 "	      0043dcaf    push eax"
 "	      0043dcb0    call dword ptr ds:[6C3858h]"
 "	      0043dcb6    add esp,14h"
 );
 // LINE 95:
 	asm( 
-"	      0043dcb9    lea eax,[ebp-4]"
+"	      0043dcb9    lea eax,vSize"
 "	      0043dcbc    push eax"
-"	      0043dcbd    mov eax,[ebp+8]"
+"	      0043dcbd    mov eax,szName"
 "	      0043dcc0    push eax"
-"	      0043dcc1    lea eax,[ebp-108h]"
+"	      0043dcc1    lea eax,subBlockName[0]"
 "	      0043dcc7    push eax"
-"	      0043dcc8    mov eax,[ebp-10Ch]"
+"	      0043dcc8    mov eax,this"
 "	      0043dcce    mov eax,[eax+8]"
 "	      0043dcd1    push eax"
 "	      0043dcd2    call 004C467Eh"
-"	      0043dcd7    mov [ebp-8],eax"
+"	      0043dcd7    mov nReturnValue,eax"
 );
 // LINE 96:
 	asm( 
-"	      0043dcda    mov eax,[ebp-8]"
+"	      0043dcda    mov eax,nReturnValue"
 "	      0043dcdd    jmp near ptr 0043DCE2h"
 );
 // LINE 98:
@@ -259,11 +259,11 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 "	      0043dcf2    push ebx"
 "	      0043dcf3    push esi"
 "	      0043dcf4    push edi"
-"	      0043dcf5    mov [ebp-10Ch],ecx"
+"	      0043dcf5    mov this,ecx"
 );
 // LINE 115:
 	asm( 
-"	      0043dcfb    mov eax,[ebp-10Ch]"
+"	      0043dcfb    mov eax,this"
 "	      0043dd01    cmp dword ptr [eax+8],0"
 "	      0043dd05    jne near ptr 0043DD12h"
 );
@@ -275,39 +275,39 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 // LINE 117:
 	asm( 
 "	      0043dd12    push 5985CCh"
-"	      0043dd17    mov eax,[ebp-10Ch]"
+"	      0043dd17    mov eax,this"
 "	      0043dd1d    mov eax,[eax+4]"
 "	      0043dd20    xor ecx,ecx"
 "	      0043dd22    mov cx,[eax+2]"
 "	      0043dd26    push ecx"
-"	      0043dd27    mov eax,[ebp-10Ch]"
+"	      0043dd27    mov eax,this"
 "	      0043dd2d    mov eax,[eax+4]"
 "	      0043dd30    xor ecx,ecx"
 "	      0043dd32    mov cx,[eax]"
 "	      0043dd35    push ecx"
 "	      0043dd36    push 5985D8h"
-"	      0043dd3b    lea eax,[ebp-108h]"
+"	      0043dd3b    lea eax,subBlockName[0]"
 "	      0043dd41    push eax"
 "	      0043dd42    call dword ptr ds:[6C3858h]"
 "	      0043dd48    add esp,14h"
 );
 // LINE 118:
 	asm( 
-"	      0043dd4b    lea eax,[ebp-4]"
+"	      0043dd4b    lea eax,vSize"
 "	      0043dd4e    push eax"
-"	      0043dd4f    mov eax,[ebp+8]"
+"	      0043dd4f    mov eax,szVersion"
 "	      0043dd52    push eax"
-"	      0043dd53    lea eax,[ebp-108h]"
+"	      0043dd53    lea eax,subBlockName[0]"
 "	      0043dd59    push eax"
-"	      0043dd5a    mov eax,[ebp-10Ch]"
+"	      0043dd5a    mov eax,this"
 "	      0043dd60    mov eax,[eax+8]"
 "	      0043dd63    push eax"
 "	      0043dd64    call 004C467Eh"
-"	      0043dd69    mov [ebp-8],eax"
+"	      0043dd69    mov nReturnValue,eax"
 );
 // LINE 119:
 	asm( 
-"	      0043dd6c    mov eax,[ebp-8]"
+"	      0043dd6c    mov eax,nReturnValue"
 "	      0043dd6f    jmp near ptr 0043DD74h"
 );
 // LINE 121:
@@ -334,11 +334,11 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 "	      0043dd84    push ebx"
 "	      0043dd85    push esi"
 "	      0043dd86    push edi"
-"	      0043dd87    mov [ebp-10Ch],ecx"
+"	      0043dd87    mov this,ecx"
 );
 // LINE 139:
 	asm( 
-"	      0043dd8d    mov eax,[ebp-10Ch]"
+"	      0043dd8d    mov eax,this"
 "	      0043dd93    cmp dword ptr [eax+8],0"
 "	      0043dd97    jne near ptr 0043DDA4h"
 );
@@ -350,39 +350,39 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 // LINE 141:
 	asm( 
 "	      0043dda4    push 5985F8h"
-"	      0043dda9    mov eax,[ebp-10Ch]"
+"	      0043dda9    mov eax,this"
 "	      0043ddaf    mov eax,[eax+4]"
 "	      0043ddb2    xor ecx,ecx"
 "	      0043ddb4    mov cx,[eax+2]"
 "	      0043ddb8    push ecx"
-"	      0043ddb9    mov eax,[ebp-10Ch]"
+"	      0043ddb9    mov eax,this"
 "	      0043ddbf    mov eax,[eax+4]"
 "	      0043ddc2    xor ecx,ecx"
 "	      0043ddc4    mov cx,[eax]"
 "	      0043ddc7    push ecx"
 "	      0043ddc8    push 598608h"
-"	      0043ddcd    lea eax,[ebp-108h]"
+"	      0043ddcd    lea eax,subBlockName[0]"
 "	      0043ddd3    push eax"
 "	      0043ddd4    call dword ptr ds:[6C3858h]"
 "	      0043ddda    add esp,14h"
 );
 // LINE 142:
 	asm( 
-"	      0043dddd    lea eax,[ebp-4]"
+"	      0043dddd    lea eax,vSize"
 "	      0043dde0    push eax"
-"	      0043dde1    mov eax,[ebp+8]"
+"	      0043dde1    mov eax,szCopyright"
 "	      0043dde4    push eax"
-"	      0043dde5    lea eax,[ebp-108h]"
+"	      0043dde5    lea eax,subBlockName[0]"
 "	      0043ddeb    push eax"
-"	      0043ddec    mov eax,[ebp-10Ch]"
+"	      0043ddec    mov eax,this"
 "	      0043ddf2    mov eax,[eax+8]"
 "	      0043ddf5    push eax"
 "	      0043ddf6    call 004C467Eh"
-"	      0043ddfb    mov [ebp-8],eax"
+"	      0043ddfb    mov nReturnValue,eax"
 );
 // LINE 143:
 	asm( 
-"	      0043ddfe    mov eax,[ebp-8]"
+"	      0043ddfe    mov eax,nReturnValue"
 "	      0043de01    jmp near ptr 0043DE06h"
 );
 // LINE 145:
@@ -409,11 +409,11 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 "	      0043de16    push ebx"
 "	      0043de17    push esi"
 "	      0043de18    push edi"
-"	      0043de19    mov [ebp-10Ch],ecx"
+"	      0043de19    mov this,ecx"
 );
 // LINE 162:
 	asm( 
-"	      0043de1f    mov eax,[ebp-10Ch]"
+"	      0043de1f    mov eax,this"
 "	      0043de25    cmp dword ptr [eax+8],0"
 "	      0043de29    jne near ptr 0043DE36h"
 );
@@ -425,39 +425,39 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 // LINE 164:
 	asm( 
 "	      0043de36    push 598628h"
-"	      0043de3b    mov eax,[ebp-10Ch]"
+"	      0043de3b    mov eax,this"
 "	      0043de41    mov eax,[eax+4]"
 "	      0043de44    xor ecx,ecx"
 "	      0043de46    mov cx,[eax+2]"
 "	      0043de4a    push ecx"
-"	      0043de4b    mov eax,[ebp-10Ch]"
+"	      0043de4b    mov eax,this"
 "	      0043de51    mov eax,[eax+4]"
 "	      0043de54    xor ecx,ecx"
 "	      0043de56    mov cx,[eax]"
 "	      0043de59    push ecx"
 "	      0043de5a    push 598638h"
-"	      0043de5f    lea eax,[ebp-108h]"
+"	      0043de5f    lea eax,subBlockName[0]"
 "	      0043de65    push eax"
 "	      0043de66    call dword ptr ds:[6C3858h]"
 "	      0043de6c    add esp,14h"
 );
 // LINE 165:
 	asm( 
-"	      0043de6f    lea eax,[ebp-4]"
+"	      0043de6f    lea eax,vSize"
 "	      0043de72    push eax"
-"	      0043de73    mov eax,[ebp+8]"
+"	      0043de73    mov eax,szVersion"
 "	      0043de76    push eax"
-"	      0043de77    lea eax,[ebp-108h]"
+"	      0043de77    lea eax,subBlockName[0]"
 "	      0043de7d    push eax"
-"	      0043de7e    mov eax,[ebp-10Ch]"
+"	      0043de7e    mov eax,this"
 "	      0043de84    mov eax,[eax+8]"
 "	      0043de87    push eax"
 "	      0043de88    call 004C467Eh"
-"	      0043de8d    mov [ebp-8],eax"
+"	      0043de8d    mov nReturnValue,eax"
 );
 // LINE 166:
 	asm( 
-"	      0043de90    mov eax,[ebp-8]"
+"	      0043de90    mov eax,nReturnValue"
 "	      0043de93    jmp near ptr 0043DE98h"
 );
 // LINE 168:
@@ -484,11 +484,11 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 "	      0043dea5    push ebx"
 "	      0043dea6    push esi"
 "	      0043dea7    push edi"
-"	      0043dea8    mov [ebp-10h],ecx"
+"	      0043dea8    mov this,ecx"
 );
 // LINE 193:
 	asm( 
-"	      0043deab    mov eax,[ebp-10h]"
+"	      0043deab    mov eax,this"
 "	      0043deae    cmp dword ptr [eax+8],0"
 "	      0043deb2    jne near ptr 0043DEBFh"
 );
@@ -499,20 +499,20 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 );
 // LINE 195:
 	asm( 
-"	      0043debf    lea eax,[ebp-4]"
+"	      0043debf    lea eax,vSize"
 "	      0043dec2    push eax"
-"	      0043dec3    lea eax,[ebp-8]"
+"	      0043dec3    lea eax,vsFixedFileInfo"
 "	      0043dec6    push eax"
 "	      0043dec7    push 598658h"
-"	      0043decc    mov eax,[ebp-10h]"
+"	      0043decc    mov eax,this"
 "	      0043decf    mov eax,[eax+8]"
 "	      0043ded2    push eax"
 "	      0043ded3    call 004C467Eh"
-"	      0043ded8    mov [ebp-0Ch],eax"
+"	      0043ded8    mov nReturnValue,eax"
 );
 // LINE 196:
 	asm( 
-"	      0043dedb    cmp dword ptr [ebp-0Ch],0"
+"	      0043dedb    cmp nReturnValue,0"
 "	      0043dedf    jne near ptr 0043DEEFh"
 );
 // LINE 197:
@@ -522,12 +522,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 );
 // LINE 198:
 	asm( 
-"	      0043deef    cmp dword ptr [ebp+8],0"
+"	      0043deef    cmp nVersionComponent,0"
 "	      0043def3    jne near ptr 0043DF14h"
 );
 // LINE 199:
 	asm( 
-"	      0043def9    mov eax,[ebp-8]"
+"	      0043def9    mov eax,vsFixedFileInfo"
 "	      0043defc    mov eax,[eax+8]"
 "	      0043deff    shr eax,10h"
 "	      0043df02    and eax,0FFFFh"
@@ -537,12 +537,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 // LINE 200:
 	asm( 
 "	      0043df0f    jmp near ptr 0043DF72h"
-"	      0043df14    cmp dword ptr [ebp+8],1"
+"	      0043df14    cmp nVersionComponent,1"
 "	      0043df18    jne near ptr 0043DF33h"
 );
 // LINE 201:
 	asm( 
-"	      0043df1e    mov eax,[ebp-8]"
+"	      0043df1e    mov eax,vsFixedFileInfo"
 "	      0043df21    xor ecx,ecx"
 "	      0043df23    mov cx,[eax+8]"
 "	      0043df27    mov eax,ecx"
@@ -551,12 +551,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 // LINE 202:
 	asm( 
 "	      0043df2e    jmp near ptr 0043DF72h"
-"	      0043df33    cmp dword ptr [ebp+8],2"
+"	      0043df33    cmp nVersionComponent,2"
 "	      0043df37    jne near ptr 0043DF58h"
 );
 // LINE 203:
 	asm( 
-"	      0043df3d    mov eax,[ebp-8]"
+"	      0043df3d    mov eax,vsFixedFileInfo"
 "	      0043df40    mov eax,[eax+0Ch]"
 "	      0043df43    shr eax,10h"
 "	      0043df46    and eax,0FFFFh"
@@ -566,12 +566,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 // LINE 204:
 	asm( 
 "	      0043df53    jmp near ptr 0043DF72h"
-"	      0043df58    cmp dword ptr [ebp+8],3"
+"	      0043df58    cmp nVersionComponent,3"
 "	      0043df5c    jne near ptr 0043DF72h"
 );
 // LINE 205:
 	asm( 
-"	      0043df62    mov eax,[ebp-8]"
+"	      0043df62    mov eax,vsFixedFileInfo"
 "	      0043df65    xor ecx,ecx"
 "	      0043df67    mov cx,[eax+0Ch]"
 "	      0043df6b    mov eax,ecx"
@@ -608,11 +608,11 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 // LINE 232:
 	asm( 
 "	      0043df8c    call dword ptr ds:[6C3644h]"
-"	      0043df92    mov [ebp-4],eax"
+"	      0043df92    mov dwVersion,eax"
 );
 // LINE 234:
 	asm( 
-"	      0043df95    cmp dword ptr [ebp-4],80000000h"
+"	      0043df95    cmp dwVersion,80000000h"
 "	      0043df9c    jae near ptr 0043DFC5h"
 );
 // LINE 238:
@@ -624,7 +624,7 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 "	      0043dfaa    mov al,[ebp-4]"
 "	      0043dfad    push eax"
 "	      0043dfae    push 59865Ch"
-"	      0043dfb3    mov eax,[ebp+8]"
+"	      0043dfb3    mov eax,szSystemVersion"
 "	      0043dfb6    push eax"
 "	      0043dfb7    call dword ptr ds:[6C3858h]"
 "	      0043dfbd    add esp,10h"
@@ -642,7 +642,7 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 "	      0043dfcd    mov al,[ebp-4]"
 "	      0043dfd0    push eax"
 "	      0043dfd1    push 598670h"
-"	      0043dfd6    mov eax,[ebp+8]"
+"	      0043dfd6    mov eax,szSystemVersion"
 "	      0043dfd9    push eax"
 "	      0043dfda    call dword ptr ds:[6C3858h]"
 "	      0043dfe0    add esp,10h"
@@ -678,21 +678,21 @@ int32_t Version::GetSystemType() {
 );
 // LINE 268:
 	asm( 
-"	      0043dffb    mov dword ptr [ebp-8],0"
+"	      0043dffb    mov nSystemType,0"
 );
 // LINE 271:
 	asm( 
 "	      0043e002    call dword ptr ds:[6C3644h]"
-"	      0043e008    mov [ebp-4],eax"
+"	      0043e008    mov dwVersion,eax"
 );
 // LINE 273:
 	asm( 
-"	      0043e00b    cmp dword ptr [ebp-4],80000000h"
+"	      0043e00b    cmp dwVersion,80000000h"
 "	      0043e012    jae near ptr 0043E024h"
 );
 // LINE 274:
 	asm( 
-"	      0043e018    mov dword ptr [ebp-8],4"
+"	      0043e018    mov nSystemType,4"
 );
 // LINE 275:
 	asm( 
@@ -700,11 +700,11 @@ int32_t Version::GetSystemType() {
 );
 // LINE 276:
 	asm( 
-"	      0043e024    mov dword ptr [ebp-8],3"
+"	      0043e024    mov nSystemType,3"
 );
 // LINE 285:
 	asm( 
-"	      0043e02b    mov eax,[ebp-8]"
+"	      0043e02b    mov eax,nSystemType"
 "	      0043e02e    jmp near ptr 0043E033h"
 );
 // LINE 286:
@@ -733,11 +733,11 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 307:
 	asm( 
 "	      0043e041    call dword ptr ds:[6C3644h]"
-"	      0043e047    mov [ebp-4],eax"
+"	      0043e047    mov dwVersion,eax"
 );
 // LINE 309:
 	asm( 
-"	      0043e04a    cmp dword ptr [ebp+8],0"
+"	      0043e04a    cmp nVersionComponent,0"
 "	      0043e04e    jne near ptr 0043E063h"
 );
 // LINE 310:
@@ -749,7 +749,7 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 311:
 	asm( 
 "	      0043e05e    jmp near ptr 0043E077h"
-"	      0043e063    cmp dword ptr [ebp+8],1"
+"	      0043e063    cmp nVersionComponent,1"
 "	      0043e067    jne near ptr 0043E077h"
 );
 // LINE 312:
@@ -790,20 +790,20 @@ long Version::GetCPUVersion() {
 	asm( 
 "	      0043e08f    call 0047B67Ah"
 "	      0043e094    movzx eax,ax"
-"	      0043e097    mov [ebp-4],eax"
+"	      0043e097    mov lReturnValue,eax"
 );
 // LINE 340:
 	asm( 
-"	      0043e09a    cmp dword ptr [ebp-4],0Ah"
+"	      0043e09a    cmp lReturnValue,0Ah"
 "	      0043e09e    jle near ptr 0043E0ABh"
 );
 // LINE 341:
 	asm( 
-"	      0043e0a4    mov dword ptr [ebp-4],0Ah"
+"	      0043e0a4    mov lReturnValue,0Ah"
 );
 // LINE 342:
 	asm( 
-"	      0043e0ab    mov eax,[ebp-4]"
+"	      0043e0ab    mov eax,lReturnValue"
 "	      0043e0ae    jmp near ptr 0043E0B3h"
 );
 // LINE 344:
@@ -846,7 +846,7 @@ long Version::GetCPUSpeed() {
 "	      0043e0e2    mov eax,[eax+0Ch]"
 "	      0043e0e5    mov [ecx+0Ch],eax"
 "	      0043e0e8    lea eax,[ebp-20h]"
-"	      0043e0eb    lea ecx,[ebp-10h]"
+"	      0043e0eb    lea ecx,tempFREQ_INFO.in_cycles"
 "	      0043e0ee    mov edx,[eax]"
 "	      0043e0f0    mov [ecx],edx"
 "	      0043e0f2    mov edx,[eax+4]"
@@ -858,7 +858,7 @@ long Version::GetCPUSpeed() {
 );
 // LINE 361:
 	asm( 
-"	      0043e104    mov eax,[ebp-4]"
+"	      0043e104    mov eax,tempFREQ_INFO.norm_freq"
 "	      0043e107    jmp near ptr 0043E10Ch"
 );
 // LINE 363:

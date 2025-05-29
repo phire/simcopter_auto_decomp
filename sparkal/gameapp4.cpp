@@ -15,23 +15,23 @@ unsigned long  CGameApp::FinishGame() {
 "	      004bba36    push ebx"
 "	      004bba37    push esi"
 "	      004bba38    push edi"
-"	      004bba39    mov [ebp-1Ch],ecx"
+"	      004bba39    mov this,ecx"
 );
 // LINE 50:
 	asm( 
-"	      004bba3c    mov ecx,[ebp-1Ch]"
+"	      004bba3c    mov ecx,this"
 "	      004bba3f    call 004330EAh"
 );
 // LINE 51:
 	asm( 
-"	      004bba44    mov eax,[ebp-1Ch]"
+"	      004bba44    mov eax,this"
 "	      004bba47    mov eax,[eax]"
-"	      004bba49    mov ecx,[ebp-1Ch]"
+"	      004bba49    mov ecx,this"
 "	      004bba4c    call dword ptr [eax+38h]"
 );
 // LINE 53:
 	asm( 
-"	      004bba4f    mov eax,[ebp-1Ch]"
+"	      004bba4f    mov eax,this"
 "	      004bba52    cmp dword ptr [eax+30h],0"
 "	      004bba56    jne near ptr 004BBAADh"
 );
@@ -39,16 +39,16 @@ unsigned long  CGameApp::FinishGame() {
 // Block start:
 	long hResult;
 	asm( 
-"	      004bba5c    mov eax,[ebp-1Ch]"
+"	      004bba5c    mov eax,this"
 "	      004bba5f    mov eax,[eax]"
-"	      004bba61    mov ecx,[ebp-1Ch]"
+"	      004bba61    mov ecx,this"
 "	      004bba64    call dword ptr [eax+54h]"
 );
 // LINE 57:
 	asm( 
 "	      004bba67    jmp near ptr 004BBA6Ch"
 "	      004bba6c    push 8"
-"	      004bba6e    mov eax,[ebp-1Ch]"
+"	      004bba6e    mov eax,this"
 "	      004bba71    mov eax,[eax+50h]"
 "	      004bba74    mov eax,[eax+18h]"
 "	      004bba77    push eax"
@@ -57,16 +57,16 @@ unsigned long  CGameApp::FinishGame() {
 "	      004bba7e    mov eax,ds:[597264h]"
 "	      004bba83    mov eax,[eax]"
 "	      004bba85    call dword ptr [eax+50h]"
-"	      004bba88    mov [ebp-4],eax"
+"	      004bba88    mov hResult,eax"
 );
 // LINE 58:
 	asm( 
-"	      004bba8b    cmp dword ptr [ebp-4],0"
+"	      004bba8b    cmp hResult,0"
 "	      004bba8f    je near ptr 004BBAADh"
 );
 // LINE 59:
 	asm( 
-"	      004bba95    mov eax,[ebp-4]"
+"	      004bba95    mov eax,hResult"
 "	      004bba98    mov [ebp-8],eax"
 "	      004bba9b    jmp near ptr 004BBAA0h"
 "	      004bbaa0    push 59AC54h"
@@ -76,7 +76,7 @@ unsigned long  CGameApp::FinishGame() {
 // LINE 63:
 // Block end:
 	asm( 
-"	      004bbaad    mov eax,[ebp-1Ch]"
+"	      004bbaad    mov eax,this"
 "	      004bbab0    mov eax,[eax+50h]"
 "	      004bbab3    mov [ebp-10h],eax"
 "	      004bbab6    mov eax,[ebp-10h]"
@@ -92,12 +92,12 @@ unsigned long  CGameApp::FinishGame() {
 );
 // LINE 64:
 	asm( 
-"	      004bbad7    mov eax,[ebp-1Ch]"
+"	      004bbad7    mov eax,this"
 "	      004bbada    mov dword ptr [eax+50h],0"
 );
 // LINE 66:
 	asm( 
-"	      004bbae1    mov eax,[ebp-1Ch]"
+"	      004bbae1    mov eax,this"
 "	      004bbae4    mov eax,[eax+4]"
 "	      004bbae7    mov [ebp-14h],eax"
 "	      004bbaea    mov eax,[ebp-14h]"
@@ -109,7 +109,7 @@ unsigned long  CGameApp::FinishGame() {
 );
 // LINE 67:
 	asm( 
-"	      004bbafc    mov eax,[ebp-1Ch]"
+"	      004bbafc    mov eax,this"
 "	      004bbaff    mov dword ptr [eax+4],0"
 );
 // LINE 70:
@@ -158,7 +158,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbb24    push ebx"
 "	      004bbb25    push esi"
 "	      004bbb26    push edi"
-"	      004bbb27    mov [ebp-1534h],ecx"
+"	      004bbb27    mov this,ecx"
 "	      004bbb2d    call 0056F980h"
 "	      004bbb32    mov [ebp-4CCh],eax"
 );
@@ -166,7 +166,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	asm( 
 "	      004bbb38    mov eax,[ebp-4CCh]"
 "	      004bbb3e    push eax"
-"	      004bbb3f    lea ecx,[ebp-398h]"
+"	      004bbb3f    lea ecx,tempRandom.table[0]"
 "	      004bbb45    call 00490FF1h"
 "	      004bbb4a    jmp near ptr 004BBB4Fh"
 );
@@ -177,16 +177,16 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 99:
 	asm( 
-"	      004bbb59    lea ecx,[ebp-27Ch]"
+"	      004bbb59    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bbb5f    call 00498EE8h"
 );
 // LINE 102:
 	asm( 
-"	      004bbb64    mov dword ptr [ebp-2ACh],1"
+"	      004bbb64    mov lCurrentInitializationFlag,1"
 );
 // LINE 103:
 	asm( 
-"	      004bbb6e    mov dword ptr [ebp-2A8h],1"
+"	      004bbb6e    mov lCurrentInitializationIndex,1"
 );
 // LINE 105:
 	asm( 
@@ -208,10 +208,10 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbbc6    mov dword ptr [eax+0Ch],1"
 "	      004bbbcd    jmp near ptr 004BBBD2h"
 "	      004bbbd2    mov eax,[ebp-4D0h]"
-"	      004bbbd8    mov [ebp-284h],eax"
+"	      004bbbd8    mov sCurrentInitializer.reference,eax"
 "	      004bbbde    jmp near ptr 004BBBEDh"
-"	      004bbbe3    mov dword ptr [ebp-284h],0"
-"	      004bbbed    mov dword ptr [ebp-288h],0"
+"	      004bbbe3    mov sCurrentInitializer.reference,0"
+"	      004bbbed    mov sCurrentInitializer.c_str_ptr,0"
 "	      004bbbf7    jmp near ptr 004BBBFCh"
 );
 // LINE 107:
@@ -220,12 +220,12 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbc01    jmp near ptr 004BBC06h"
 "	      004bbc06    jmp near ptr 004BBC0Bh"
 "	      004bbc0b    jmp near ptr 004BBC10h"
-"	      004bbc10    mov eax,[ebp-1534h]"
+"	      004bbc10    mov eax,this"
 "	      004bbc16    mov eax,[eax+34h]"
 "	      004bbc19    mov eax,[eax+0Ch]"
 "	      004bbc1c    sub eax,14h"
 "	      004bbc1f    mov [ebp-504h],eax"
-"	      004bbc25    mov eax,[ebp-1534h]"
+"	      004bbc25    mov eax,this"
 "	      004bbc2b    mov eax,[eax+34h]"
 "	      004bbc2e    mov eax,[eax+8]"
 "	      004bbc31    cdq"
@@ -233,12 +233,12 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbc34    sar eax,1"
 "	      004bbc37    add eax,64h"
 "	      004bbc3a    mov [ebp-508h],eax"
-"	      004bbc40    mov eax,[ebp-1534h]"
+"	      004bbc40    mov eax,this"
 "	      004bbc46    mov eax,[eax+34h]"
 "	      004bbc49    mov eax,[eax+0Ch]"
 "	      004bbc4c    sub eax,28h"
 "	      004bbc4f    mov [ebp-50Ch],eax"
-"	      004bbc55    mov eax,[ebp-1534h]"
+"	      004bbc55    mov eax,this"
 "	      004bbc5b    mov eax,[eax+34h]"
 "	      004bbc5e    mov eax,[eax+8]"
 "	      004bbc61    cdq"
@@ -248,18 +248,18 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbc6a    mov [ebp-510h],eax"
 "	      004bbc70    jmp near ptr 004BBC75h"
 "	      004bbc75    mov eax,[ebp-510h]"
-"	      004bbc7b    mov [ebp-4B4h],eax"
+"	      004bbc7b    mov rectText.left,eax"
 "	      004bbc81    mov eax,[ebp-50Ch]"
-"	      004bbc87    mov [ebp-4B0h],eax"
+"	      004bbc87    mov rectText.top,eax"
 "	      004bbc8d    mov eax,[ebp-508h]"
-"	      004bbc93    mov [ebp-4ACh],eax"
+"	      004bbc93    mov rectText.right,eax"
 "	      004bbc99    mov eax,[ebp-504h]"
-"	      004bbc9f    mov [ebp-4A8h],eax"
+"	      004bbc9f    mov rectText.bottom,eax"
 "	      004bbca5    jmp near ptr 004BBCAAh"
 );
 // LINE 110:
 	asm( 
-"	      004bbcaa    lea eax,[ebp-4A4h]"
+"	      004bbcaa    lea eax,szVideoPath[0]"
 "	      004bbcb0    push eax"
 "	      004bbcb1    mov eax,ds:[59AC44h]"
 "	      004bbcb6    push eax"
@@ -270,85 +270,85 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 111:
 	asm( 
-"	      004bbcc5    lea ecx,[ebp-27Ch]"
+"	      004bbcc5    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bbccb    call 00499074h"
 );
 // LINE 112:
 	asm( 
-"	      004bbcd0    mov dword ptr [ebp-274h],1"
+"	      004bbcd0    mov tempHourglassVideoBuffer.bLoopVideo,1"
 );
 // LINE 113:
 	asm( 
 "	      004bbcda    push 0FFFFFFFFh"
 "	      004bbcdc    push 0FE000h"
-"	      004bbce1    lea eax,[ebp-4A4h]"
+"	      004bbce1    lea eax,szVideoPath[0]"
 "	      004bbce7    push eax"
-"	      004bbce8    lea ecx,[ebp-27Ch]"
+"	      004bbce8    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bbcee    call 00499149h"
 );
 // LINE 114:
 	asm( 
 "	      004bbcf3    jmp near ptr 004BBCF8h"
-"	      004bbcf8    mov eax,[ebp-134h]"
-"	      004bbcfe    mov [ebp-290h],eax"
+"	      004bbcf8    mov eax,tempHourglassVideoBuffer.mWidth"
+"	      004bbcfe    mov nWidth,eax"
 );
 // LINE 115:
 	asm( 
 "	      004bbd04    jmp near ptr 004BBD09h"
-"	      004bbd09    mov eax,[ebp-130h]"
-"	      004bbd0f    mov [ebp-2B0h],eax"
+"	      004bbd09    mov eax,tempHourglassVideoBuffer.mHeight"
+"	      004bbd0f    mov nHeight,eax"
 );
 // LINE 116:
 	asm( 
 "	      004bbd15    jmp near ptr 004BBD1Ah"
-"	      004bbd1a    mov eax,[ebp-1534h]"
+"	      004bbd1a    mov eax,this"
 "	      004bbd20    mov eax,[eax+34h]"
 "	      004bbd23    mov eax,[eax+8]"
 "	      004bbd26    cdq"
 "	      004bbd27    sub eax,edx"
 "	      004bbd29    sar eax,1"
 "	      004bbd2c    mov ecx,eax"
-"	      004bbd2e    mov eax,[ebp-290h]"
+"	      004bbd2e    mov eax,nWidth"
 "	      004bbd34    cdq"
 "	      004bbd35    sub eax,edx"
 "	      004bbd37    sar eax,1"
 "	      004bbd3a    sub ecx,eax"
-"	      004bbd3c    mov [ebp-2B4h],ecx"
+"	      004bbd3c    mov nXPosition,ecx"
 );
 // LINE 117:
 	asm( 
 "	      004bbd42    jmp near ptr 004BBD47h"
-"	      004bbd47    mov eax,[ebp-1534h]"
+"	      004bbd47    mov eax,this"
 "	      004bbd4d    mov eax,[eax+34h]"
 "	      004bbd50    mov eax,[eax+0Ch]"
 "	      004bbd53    cdq"
 "	      004bbd54    sub eax,edx"
 "	      004bbd56    sar eax,1"
 "	      004bbd59    mov ecx,eax"
-"	      004bbd5b    mov eax,[ebp-2B0h]"
+"	      004bbd5b    mov eax,nHeight"
 "	      004bbd61    cdq"
 "	      004bbd62    sub eax,edx"
 "	      004bbd64    sar eax,1"
 "	      004bbd67    sub ecx,eax"
-"	      004bbd69    mov [ebp-28Ch],ecx"
+"	      004bbd69    mov nYPosition,ecx"
 );
 // LINE 119:
 	asm( 
-"	      004bbd6f    mov dword ptr [ebp-3A0h],0"
+"	      004bbd6f    mov tempVRAppInitThreadStruct.nReturnValue,0"
 );
 // LINE 120:
 	asm( 
-"	      004bbd79    mov dword ptr [ebp-39Ch],0"
+"	      004bbd79    mov tempVRAppInitThreadStruct.nCurrentPercentageComplete,0"
 );
 // LINE 122:
 	asm( 
-"	      004bbd83    lea eax,[ebp-3A0h]"
+"	      004bbd83    lea eax,tempVRAppInitThreadStruct.nReturnValue"
 "	      004bbd89    push eax"
 "	      004bbd8a    push 0"
 "	      004bbd8c    push 4BC3DBh"
 "	      004bbd91    call 00570FB0h"
 "	      004bbd96    add esp,0Ch"
-"	      004bbd99    mov [ebp-2A4h],eax"
+"	      004bbd99    mov hAppInitThread,eax"
 );
 // LINE 127:
 	asm( 
@@ -356,7 +356,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbda6    mov byte ptr [ebp-4B7h],0"
 "	      004bbdad    mov byte ptr [ebp-4B6h],0"
 "	      004bbdb4    jmp near ptr 004BBDB9h"
-"	      004bbdb9    mov eax,[ebp-1534h]"
+"	      004bbdb9    mov eax,this"
 "	      004bbdbf    mov eax,[eax+34h]"
 "	      004bbdc2    mov [ebp-4C8h],eax"
 "	      004bbdc8    mov eax,[ebp-4B8h]"
@@ -366,59 +366,59 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 128:
 	asm( 
-"	      004bbddc    cmp dword ptr [ebp-3A0h],0"
+"	      004bbddc    cmp tempVRAppInitThreadStruct.nReturnValue,0"
 "	      004bbde3    jne near ptr 004BC19Ch"
 );
 // LINE 129:
 	asm( 
-"	      004bbde9    mov eax,[ebp-2B0h]"
+"	      004bbde9    mov eax,nHeight"
 "	      004bbdef    push eax"
-"	      004bbdf0    mov eax,[ebp-290h]"
+"	      004bbdf0    mov eax,nWidth"
 "	      004bbdf6    push eax"
 "	      004bbdf7    push 0"
 "	      004bbdf9    push 0"
-"	      004bbdfb    mov eax,[ebp-28Ch]"
+"	      004bbdfb    mov eax,nYPosition"
 "	      004bbe01    push eax"
-"	      004bbe02    mov eax,[ebp-2B4h]"
+"	      004bbe02    mov eax,nXPosition"
 "	      004bbe08    push eax"
-"	      004bbe09    mov eax,[ebp-1534h]"
+"	      004bbe09    mov eax,this"
 "	      004bbe0f    mov eax,[eax+34h]"
 "	      004bbe12    push eax"
-"	      004bbe13    lea ecx,[ebp-13Ch]"
+"	      004bbe13    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bbe19    call 00499396h"
 );
 // LINE 130:
 	asm( 
 "	      004bbe1e    mov eax,ds:[5B4790h]"
-"	      004bbe23    test [ebp-2ACh],eax"
+"	      004bbe23    test lCurrentInitializationFlag,eax"
 "	      004bbe29    je near ptr 004BC178h"
-"	      004bbe2f    cmp dword ptr [ebp-2ACh],8000h"
+"	      004bbe2f    cmp lCurrentInitializationFlag,8000h"
 "	      004bbe39    jae near ptr 004BC178h"
 );
 // LINE 131:
 	asm( 
-"	      004bbe3f    inc dword ptr [ebp-2A8h]"
+"	      004bbe3f    inc lCurrentInitializationIndex"
 );
 // LINE 132:
 	asm( 
-"	      004bbe45    shl dword ptr [ebp-2ACh],1"
+"	      004bbe45    shl lCurrentInitializationFlag,1"
 );
 // LINE 133:
 	asm( 
 "	      004bbe4c    push 0"
-"	      004bbe4e    mov eax,[ebp-2A8h]"
+"	      004bbe4e    mov eax,lCurrentInitializationIndex"
 "	      004bbe54    add eax,289h"
 "	      004bbe59    push eax"
 "	      004bbe5a    call 0042B15Fh"
 "	      004bbe5f    add esp,8"
-"	      004bbe62    mov [ebp-280h],eax"
+"	      004bbe62    mov lFullStringIndex,eax"
 );
 // LINE 134:
 	asm( 
 "	      004bbe68    push 0FFFh"
 "	      004bbe6d    lea eax,[ebp-1510h]"
 "	      004bbe73    push eax"
-"	      004bbe74    mov eax,[ebp-280h]"
+"	      004bbe74    mov eax,lFullStringIndex"
 "	      004bbe7a    push eax"
 "	      004bbe7b    mov eax,ds:[5C28C8h]"
 "	      004bbe80    push eax"
@@ -430,7 +430,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbe9f    lea eax,[ebp-1510h]"
 "	      004bbea5    push eax"
 "	      004bbea6    mov ecx,3E8h"
-"	      004bbeab    mov eax,[ebp-280h]"
+"	      004bbeab    mov eax,lFullStringIndex"
 "	      004bbeb1    sub edx,edx"
 "	      004bbeb3    div ecx"
 "	      004bbeb5    push edx"
@@ -446,7 +446,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbedc    push eax"
 "	      004bbedd    lea eax,[ebp-1510h]"
 "	      004bbee3    push eax"
-"	      004bbee4    lea ecx,[ebp-288h]"
+"	      004bbee4    lea ecx,sCurrentInitializer.c_str_ptr"
 "	      004bbeea    call 0040FEE0h"
 "	      004bbeef    jmp near ptr 004BBEF4h"
 "	      004bbef4    jmp near ptr 004BBEF9h"
@@ -455,7 +455,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbf03    add esp,4"
 "	      004bbf06    push eax"
 "	      004bbf07    push 597200h"
-"	      004bbf0c    lea ecx,[ebp-288h]"
+"	      004bbf0c    lea ecx,sCurrentInitializer.c_str_ptr"
 "	      004bbf12    call 00410130h"
 "	      004bbf17    jmp near ptr 004BBF1Ch"
 "	      004bbf1c    jmp near ptr 004BC0E4h"
@@ -481,13 +481,13 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbf78    add esp,4"
 "	      004bbf7b    jmp near ptr 004BBF80h"
 "	      004bbf80    jmp near ptr 004BBF85h"
-"	      004bbf85    mov eax,[ebp-284h]"
+"	      004bbf85    mov eax,sCurrentInitializer.reference"
 "	      004bbf8b    cmp dword ptr [eax+0Ch],1"
 "	      004bbf8f    ja near ptr 004BBFBCh"
 "	      004bbf95    cmp dword ptr [ebp-1530h],0"
 "	      004bbf9c    je near ptr 004BC084h"
 "	      004bbfa2    jmp near ptr 004BBFA7h"
-"	      004bbfa7    mov eax,[ebp-284h]"
+"	      004bbfa7    mov eax,sCurrentInitializer.reference"
 "	      004bbfad    mov ecx,[ebp-1530h]"
 "	      004bbfb3    cmp [eax+8],ecx"
 "	      004bbfb6    jae near ptr 004BC084h"
@@ -506,12 +506,12 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bbff2    mov [ebp-1518h],eax"
 "	      004bbff8    jmp near ptr 004BC007h"
 "	      004bbffd    mov dword ptr [ebp-1518h],0"
-"	      004bc007    mov eax,[ebp-284h]"
+"	      004bc007    mov eax,sCurrentInitializer.reference"
 "	      004bc00d    dec dword ptr [eax+0Ch]"
-"	      004bc010    mov eax,[ebp-284h]"
+"	      004bc010    mov eax,sCurrentInitializer.reference"
 "	      004bc016    cmp dword ptr [eax+0Ch],0"
 "	      004bc01a    jne near ptr 004BC06Eh"
-"	      004bc020    mov eax,[ebp-284h]"
+"	      004bc020    mov eax,sCurrentInitializer.reference"
 "	      004bc026    mov [ebp-152Ch],eax"
 "	      004bc02c    mov eax,[ebp-152Ch]"
 "	      004bc032    mov [ebp-1528h],eax"
@@ -528,12 +528,12 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc069    jmp near ptr 004BC06Eh"
 "	      004bc06e    jmp near ptr 004BC073h"
 "	      004bc073    mov eax,[ebp-1518h]"
-"	      004bc079    mov [ebp-284h],eax"
+"	      004bc079    mov sCurrentInitializer.reference,eax"
 "	      004bc07f    jmp near ptr 004BC0C6h"
 "	      004bc084    cmp dword ptr [ebp-1530h],0"
 "	      004bc08b    je near ptr 004BC0C6h"
 "	      004bc091    jmp near ptr 004BC096h"
-"	      004bc096    mov eax,[ebp-284h]"
+"	      004bc096    mov eax,sCurrentInitializer.reference"
 "	      004bc09c    mov eax,[eax]"
 "	      004bc09e    mov [ebp-1520h],eax"
 "	      004bc0a4    mov eax,[ebp-1530h]"
@@ -546,7 +546,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc0be    add esp,0Ch"
 "	      004bc0c1    jmp near ptr 004BC0C6h"
 "	      004bc0c6    mov eax,[ebp-1530h]"
-"	      004bc0cc    mov ecx,[ebp-284h]"
+"	      004bc0cc    mov ecx,sCurrentInitializer.reference"
 "	      004bc0d2    mov [ecx+4],eax"
 "	      004bc0d5    jmp near ptr 004BC0DAh"
 "	      004bc0da    jmp near ptr 004BC0DFh"
@@ -554,11 +554,11 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 135:
 	asm( 
-"	      004bc0e4    lea eax,[ebp-4B4h]"
+"	      004bc0e4    lea eax,rectText.left"
 "	      004bc0ea    push eax"
 "	      004bc0eb    push 2Eh"
-"	      004bc0ed    mov eax,[ebp-1534h]"
-"	      004bc0f3    mov ecx,[ebp-1534h]"
+"	      004bc0ed    mov eax,this"
+"	      004bc0f3    mov ecx,this"
 "	      004bc0f9    mov ecx,[ecx+34h]"
 "	      004bc0fc    mov edx,[ecx]"
 "	      004bc0fe    mov ecx,[eax+34h]"
@@ -568,10 +568,10 @@ int  CGameApp::BackgroundVRAppInit() {
 	asm( 
 "	      004bc104    jmp near ptr 004BC109h"
 "	      004bc109    jmp near ptr 004BC10Eh"
-"	      004bc10e    mov eax,[ebp-284h]"
+"	      004bc10e    mov eax,sCurrentInitializer.reference"
 "	      004bc114    cmp dword ptr [eax+4],0"
 "	      004bc118    je near ptr 004BC136h"
-"	      004bc11e    mov eax,[ebp-284h]"
+"	      004bc11e    mov eax,sCurrentInitializer.reference"
 "	      004bc124    mov eax,[eax]"
 "	      004bc126    mov [ebp-4C4h],eax"
 "	      004bc12c    jmp near ptr 004BC145h"
@@ -579,16 +579,16 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc136    mov dword ptr [ebp-4C4h],0"
 "	      004bc140    jmp near ptr 004BC145h"
 "	      004bc145    push 0"
-"	      004bc147    lea eax,[ebp-4B4h]"
+"	      004bc147    lea eax,rectText.left"
 "	      004bc14d    push eax"
 "	      004bc14e    push 1"
-"	      004bc150    mov eax,[ebp-284h]"
+"	      004bc150    mov eax,sCurrentInitializer.reference"
 "	      004bc156    mov eax,[eax+4]"
 "	      004bc159    push eax"
 "	      004bc15a    mov eax,[ebp-4C4h]"
 "	      004bc160    push eax"
-"	      004bc161    mov eax,[ebp-1534h]"
-"	      004bc167    mov ecx,[ebp-1534h]"
+"	      004bc161    mov eax,this"
+"	      004bc167    mov ecx,this"
 "	      004bc16d    mov ecx,[ecx+34h]"
 "	      004bc170    mov edx,[ecx]"
 "	      004bc172    mov ecx,[eax+34h]"
@@ -596,8 +596,8 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 139:
 	asm( 
-"	      004bc178    mov eax,[ebp-1534h]"
-"	      004bc17e    mov ecx,[ebp-1534h]"
+"	      004bc178    mov eax,this"
+"	      004bc17e    mov ecx,this"
 "	      004bc184    mov ecx,[ecx+50h]"
 "	      004bc187    mov edx,[ecx]"
 "	      004bc189    mov ecx,[eax+50h]"
@@ -614,23 +614,23 @@ int  CGameApp::BackgroundVRAppInit() {
 );
 // LINE 142:
 	asm( 
-"	      004bc19c    lea ecx,[ebp-27Ch]"
+"	      004bc19c    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bc1a2    call 00497F91h"
 );
 // LINE 144:
 	asm( 
-"	      004bc1a7    cmp dword ptr [ebp-3A0h],0"
+"	      004bc1a7    cmp tempVRAppInitThreadStruct.nReturnValue,0"
 "	      004bc1ae    jge near ptr 004BC2C5h"
 );
 // LINE 145:
 	asm( 
 "	      004bc1b4    mov dword ptr [ebp-4BCh],0"
-"	      004bc1be    mov eax,[ebp-284h]"
+"	      004bc1be    mov eax,sCurrentInitializer.reference"
 "	      004bc1c4    dec dword ptr [eax+0Ch]"
-"	      004bc1c7    mov eax,[ebp-284h]"
+"	      004bc1c7    mov eax,sCurrentInitializer.reference"
 "	      004bc1cd    cmp dword ptr [eax+0Ch],0"
 "	      004bc1d1    jne near ptr 004BC271h"
-"	      004bc1d7    mov eax,[ebp-284h]"
+"	      004bc1d7    mov eax,sCurrentInitializer.reference"
 "	      004bc1dd    mov [ebp-4E0h],eax"
 "	      004bc1e3    mov eax,[ebp-4E0h]"
 "	      004bc1e9    mov [ebp-4DCh],eax"
@@ -661,9 +661,9 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc267    jmp near ptr 004BC26Ch"
 "	      004bc26c    jmp near ptr 004BC271h"
 "	      004bc271    jmp near ptr 004BC276h"
-"	      004bc276    cmp dword ptr [ebp-288h],0"
+"	      004bc276    cmp sCurrentInitializer.c_str_ptr,0"
 "	      004bc27d    je near ptr 004BC2AAh"
-"	      004bc283    mov eax,[ebp-288h]"
+"	      004bc283    mov eax,sCurrentInitializer.c_str_ptr"
 "	      004bc289    mov [ebp-4D4h],eax"
 "	      004bc28f    mov eax,[ebp-4D4h]"
 "	      004bc295    mov [ebp-4D8h],eax"
@@ -672,7 +672,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc2a2    call 0056A740h"
 "	      004bc2a7    add esp,4"
 "	      004bc2aa    jmp near ptr 004BC2AFh"
-"	      004bc2af    lea ecx,[ebp-27Ch]"
+"	      004bc2af    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bc2b5    call 00498FE5h"
 "	      004bc2ba    mov eax,[ebp-4BCh]"
 "	      004bc2c0    jmp near ptr 004BC3D6h"
@@ -680,12 +680,12 @@ int  CGameApp::BackgroundVRAppInit() {
 // LINE 146:
 	asm( 
 "	      004bc2c5    mov dword ptr [ebp-4C0h],1"
-"	      004bc2cf    mov eax,[ebp-284h]"
+"	      004bc2cf    mov eax,sCurrentInitializer.reference"
 "	      004bc2d5    dec dword ptr [eax+0Ch]"
-"	      004bc2d8    mov eax,[ebp-284h]"
+"	      004bc2d8    mov eax,sCurrentInitializer.reference"
 "	      004bc2de    cmp dword ptr [eax+0Ch],0"
 "	      004bc2e2    jne near ptr 004BC382h"
-"	      004bc2e8    mov eax,[ebp-284h]"
+"	      004bc2e8    mov eax,sCurrentInitializer.reference"
 "	      004bc2ee    mov [ebp-4F8h],eax"
 "	      004bc2f4    mov eax,[ebp-4F8h]"
 "	      004bc2fa    mov [ebp-4F4h],eax"
@@ -716,9 +716,9 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc378    jmp near ptr 004BC37Dh"
 "	      004bc37d    jmp near ptr 004BC382h"
 "	      004bc382    jmp near ptr 004BC387h"
-"	      004bc387    cmp dword ptr [ebp-288h],0"
+"	      004bc387    cmp sCurrentInitializer.c_str_ptr,0"
 "	      004bc38e    je near ptr 004BC3BBh"
-"	      004bc394    mov eax,[ebp-288h]"
+"	      004bc394    mov eax,sCurrentInitializer.c_str_ptr"
 "	      004bc39a    mov [ebp-4ECh],eax"
 "	      004bc3a0    mov eax,[ebp-4ECh]"
 "	      004bc3a6    mov [ebp-4F0h],eax"
@@ -727,7 +727,7 @@ int  CGameApp::BackgroundVRAppInit() {
 "	      004bc3b3    call 0056A740h"
 "	      004bc3b8    add esp,4"
 "	      004bc3bb    jmp near ptr 004BC3C0h"
-"	      004bc3c0    lea ecx,[ebp-27Ch]"
+"	      004bc3c0    lea ecx,tempHourglassVideoBuffer.<vftable>"
 "	      004bc3c6    call 00498FE5h"
 "	      004bc3cb    mov eax,[ebp-4C0h]"
 "	      004bc3d1    jmp near ptr 004BC3D6h"
@@ -764,8 +764,8 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 );
 // LINE 160:
 	asm( 
-"	      004bc3ff    mov eax,[ebp+8]"
-"	      004bc402    mov [ebp-14h],eax"
+"	      004bc3ff    mov eax,pVRAppInitThreadStruct"
+"	      004bc402    mov tempVRAppInitThreadStruct,eax"
 );
 // LINE 165:
 	asm( 
@@ -774,14 +774,14 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 // LINE 167:
 	asm( 
 "	      004bc40c    call 004EAC40h"
-"	      004bc411    mov ecx,[ebp-14h]"
+"	      004bc411    mov ecx,tempVRAppInitThreadStruct"
 "	      004bc414    mov [ecx],eax"
 "	      004bc416    jmp near ptr 004BC42Ah"
 );
 // LINE 171:
 _L48858:
 	asm( 
-"	      004bc41b    mov eax,[ebp-14h]"
+"	      004bc41b    mov eax,tempVRAppInitThreadStruct"
 "	      004bc41e    mov dword ptr [eax],0FFFFFFFFh"
 );
 // LINE 172:
@@ -794,7 +794,7 @@ _L44245:
 _L44245:
 	asm( 
 "	      004bc42a    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      004bc431    mov eax,[ebp-14h]"
+"	      004bc431    mov eax,tempVRAppInitThreadStruct"
 "	      004bc434    mov dword ptr [eax+4],64h"
 );
 // LINE 178:

@@ -15,16 +15,16 @@ void NotificationItem::NotificationItem() {
 "	      0043e166    push ebx"
 "	      0043e167    push esi"
 "	      0043e168    push edi"
-"	      0043e169    mov [ebp-4],ecx"
-"	      0043e16c    mov eax,[ebp-4]"
+"	      0043e169    mov this,ecx"
+"	      0043e16c    mov eax,this"
 "	      0043e16f    mov dword ptr [eax],0"
-"	      0043e175    mov eax,[ebp-4]"
+"	      0043e175    mov eax,this"
 "	      0043e178    mov dword ptr [eax+4],0"
 );
 // LINE 10:
 	asm( 
 "	      0043e17f    jmp near ptr 0043E184h"
-"	      0043e184    mov eax,[ebp-4]"
+"	      0043e184    mov eax,this"
 "	      0043e187    pop edi"
 "	      0043e188    pop esi"
 "	      0043e189    pop ebx"
@@ -43,19 +43,19 @@ void NotificationItem::NotificationItem(const class NotificationItem& newNotific
 "	      0043e192    push ebx"
 "	      0043e193    push esi"
 "	      0043e194    push edi"
-"	      0043e195    mov [ebp-4],ecx"
+"	      0043e195    mov this,ecx"
 );
 // LINE 13:
 	asm( 
-"	      0043e198    mov eax,[ebp+8]"
+"	      0043e198    mov eax,newNotificationSink"
 "	      0043e19b    push eax"
-"	      0043e19c    mov ecx,[ebp-4]"
+"	      0043e19c    mov ecx,this"
 "	      0043e19f    call 0043E1DFh"
 );
 // LINE 14:
 	asm( 
 "	      0043e1a4    jmp near ptr 0043E1A9h"
-"	      0043e1a9    mov eax,[ebp-4]"
+"	      0043e1a9    mov eax,this"
 "	      0043e1ac    pop edi"
 "	      0043e1ad    pop esi"
 "	      0043e1ae    pop ebx"
@@ -74,18 +74,18 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, class Notificat
 "	      0043e1b9    push ebx"
 "	      0043e1ba    push esi"
 "	      0043e1bb    push edi"
-"	      0043e1bc    mov [ebp-4],ecx"
-"	      0043e1bf    mov eax,[ebp+8]"
-"	      0043e1c2    mov ecx,[ebp-4]"
+"	      0043e1bc    mov this,ecx"
+"	      0043e1bf    mov eax,lNewPreferenceType"
+"	      0043e1c2    mov ecx,this"
 "	      0043e1c5    mov [ecx],eax"
-"	      0043e1c7    mov eax,[ebp+0Ch]"
-"	      0043e1ca    mov ecx,[ebp-4]"
+"	      0043e1c7    mov eax,newNotificationSink"
+"	      0043e1ca    mov ecx,this"
 "	      0043e1cd    mov [ecx+4],eax"
 );
 // LINE 20:
 	asm( 
 "	      0043e1d0    jmp near ptr 0043E1D5h"
-"	      0043e1d5    mov eax,[ebp-4]"
+"	      0043e1d5    mov eax,this"
 "	      0043e1d8    pop edi"
 "	      0043e1d9    pop esi"
 "	      0043e1da    pop ebx"
@@ -104,25 +104,25 @@ class NotificationItem& NotificationItem::operator=(const class NotificationItem
 "	      0043e1e5    push ebx"
 "	      0043e1e6    push esi"
 "	      0043e1e7    push edi"
-"	      0043e1e8    mov [ebp-4],ecx"
+"	      0043e1e8    mov this,ecx"
 );
 // LINE 23:
 	asm( 
-"	      0043e1eb    mov eax,[ebp+8]"
+"	      0043e1eb    mov eax,P2"
 "	      0043e1ee    mov eax,[eax]"
-"	      0043e1f0    mov ecx,[ebp-4]"
+"	      0043e1f0    mov ecx,this"
 "	      0043e1f3    mov [ecx],eax"
 );
 // LINE 24:
 	asm( 
-"	      0043e1f5    mov eax,[ebp+8]"
+"	      0043e1f5    mov eax,P2"
 "	      0043e1f8    mov eax,[eax+4]"
-"	      0043e1fb    mov ecx,[ebp-4]"
+"	      0043e1fb    mov ecx,this"
 "	      0043e1fe    mov [ecx+4],eax"
 );
 // LINE 25:
 	asm( 
-"	      0043e201    mov eax,[ebp-4]"
+"	      0043e201    mov eax,this"
 "	      0043e204    jmp near ptr 0043E209h"
 );
 // LINE 26:
@@ -147,13 +147,13 @@ int32_t operator==(const class NotificationItem& P1, const class NotificationIte
 );
 // LINE 31:
 	asm( 
-"	      0043e216    mov eax,[ebp+8]"
-"	      0043e219    mov ecx,[ebp+0Ch]"
+"	      0043e216    mov eax,P1"
+"	      0043e219    mov ecx,P2"
 "	      0043e21c    mov ecx,[ecx]"
 "	      0043e21e    cmp [eax],ecx"
 "	      0043e220    jne near ptr 0043E242h"
-"	      0043e226    mov eax,[ebp+8]"
-"	      0043e229    mov ecx,[ebp+0Ch]"
+"	      0043e226    mov eax,P1"
+"	      0043e229    mov ecx,P2"
 "	      0043e22c    mov ecx,[ecx+4]"
 "	      0043e22f    cmp [eax+4],ecx"
 "	      0043e232    jne near ptr 0043E242h"

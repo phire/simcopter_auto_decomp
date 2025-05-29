@@ -17,8 +17,8 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 "	      00466f76    push ebx"
 "	      00466f77    push esi"
 "	      00466f78    push edi"
-"	      00466f79    mov [ebp-2Ch],ecx"
-"	      00466f7c    mov ecx,[ebp-2Ch]"
+"	      00466f79    mov this,ecx"
+"	      00466f7c    mov ecx,this"
 "	      00466f7f    call 00480690h"
 "	      00466f84    jmp near ptr 00466F89h"
 "	      00466f89    jmp near ptr 00466F8Eh"
@@ -26,37 +26,37 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 "	      00466f93    jmp near ptr 00466F98h"
 "	      00466f98    jmp near ptr 00466F9Dh"
 "	      00466f9d    jmp near ptr 00466FA2h"
-"	      00466fa2    mov eax,[ebp-2Ch]"
+"	      00466fa2    mov eax,this"
 "	      00466fa5    mov dword ptr [eax+98h],0"
-"	      00466faf    mov eax,[ebp-2Ch]"
+"	      00466faf    mov eax,this"
 "	      00466fb2    mov dword ptr [eax],590470h"
 );
 // LINE 40:
 	asm( 
-"	      00466fb8    mov eax,[ebp+8]"
-"	      00466fbb    mov ecx,[ebp-2Ch]"
+"	      00466fb8    mov eax,Width"
+"	      00466fbb    mov ecx,this"
 "	      00466fbe    mov [ecx+8],eax"
 );
 // LINE 41:
 	asm( 
-"	      00466fc1    mov eax,[ebp+0Ch]"
-"	      00466fc4    mov ecx,[ebp-2Ch]"
+"	      00466fc1    mov eax,Height"
+"	      00466fc4    mov ecx,this"
 "	      00466fc7    mov [ecx+4],eax"
 );
 // LINE 42:
 	asm( 
-"	      00466fca    mov eax,[ebp+10h]"
-"	      00466fcd    mov ecx,[ebp-2Ch]"
+"	      00466fca    mov eax,Style"
+"	      00466fcd    mov ecx,this"
 "	      00466fd0    mov [ecx+0Ch],eax"
 );
 // LINE 44:
 	asm( 
-"	      00466fd3    cmp dword ptr [ebp+18h],0"
+"	      00466fd3    cmp Caption,0"
 "	      00466fd7    je near ptr 00467017h"
 );
 // LINE 45:
 	asm( 
-"	      00466fdd    mov eax,[ebp+18h]"
+"	      00466fdd    mov eax,Caption"
 "	      00466fe0    push eax"
 "	      00466fe1    call 0056ABE0h"
 "	      00466fe6    add esp,4"
@@ -64,14 +64,14 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 "	      00466fea    push eax"
 "	      00466feb    call 0056A600h"
 "	      00466ff0    add esp,4"
-"	      00466ff3    mov ecx,[ebp-2Ch]"
+"	      00466ff3    mov ecx,this"
 "	      00466ff6    mov [ecx+98h],eax"
 );
 // LINE 46:
 	asm( 
-"	      00466ffc    mov eax,[ebp+18h]"
+"	      00466ffc    mov eax,Caption"
 "	      00466fff    push eax"
-"	      00467000    mov eax,[ebp-2Ch]"
+"	      00467000    mov eax,this"
 "	      00467003    mov eax,[eax+98h]"
 "	      00467009    push eax"
 "	      0046700a    call 0056CEB0h"
@@ -86,13 +86,13 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 "	      00467017    push 4"
 "	      00467019    call 0056A600h"
 "	      0046701e    add esp,4"
-"	      00467021    mov ecx,[ebp-2Ch]"
+"	      00467021    mov ecx,this"
 "	      00467024    mov [ecx+98h],eax"
 );
 // LINE 50:
 	asm( 
 "	      0046702a    push 599314h"
-"	      0046702f    mov eax,[ebp-2Ch]"
+"	      0046702f    mov eax,this"
 "	      00467032    mov eax,[eax+98h]"
 "	      00467038    push eax"
 "	      00467039    call 0056CEB0h"
@@ -100,7 +100,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 );
 // LINE 53:
 	asm( 
-"	      00467041    lea eax,[ebp-28h]"
+"	      00467041    lea eax,ClassInfo.style"
 "	      00467044    push eax"
 "	      00467045    push 599AB8h"
 "	      0046704a    mov eax,ds:[5C28C8h]"
@@ -111,72 +111,72 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 );
 // LINE 54:
 	asm( 
-"	      0046705e    mov dword ptr [ebp-10h],0"
+"	      0046705e    mov ClassInfo.hCursor,0"
 );
 // LINE 55:
 	asm( 
-"	      00467065    mov dword ptr [ebp-8],599318h"
+"	      00467065    mov ClassInfo.lpszMenuName,599318h"
 );
 // LINE 56:
 	asm( 
-"	      0046706c    mov dword ptr [ebp-4],599AB8h"
+"	      0046706c    mov ClassInfo.lpszClassName,599AB8h"
 );
 // LINE 57:
 	asm( 
 "	      00467073    push 4"
 "	      00467075    call dword ptr ds:[6C3560h]"
-"	      0046707b    mov [ebp-0Ch],eax"
+"	      0046707b    mov ClassInfo.hbrBackground,eax"
 );
 // LINE 58:
 	asm( 
 "	      0046707e    mov eax,ds:[5C28C8h]"
-"	      00467083    mov [ebp-18h],eax"
+"	      00467083    mov ClassInfo.hInstance,eax"
 );
 // LINE 59:
 	asm( 
-"	      00467086    mov dword ptr [ebp-28h],20h"
+"	      00467086    mov ClassInfo.style,20h"
 );
 // LINE 60:
 	asm( 
-"	      0046708d    mov dword ptr [ebp-24h],4815DDh"
+"	      0046708d    mov ClassInfo.lpfnWndProc,4815DDh"
 );
 // LINE 61:
 	asm( 
-"	      00467094    mov dword ptr [ebp-1Ch],4"
+"	      00467094    mov ClassInfo.cbWndExtra,4"
 );
 // LINE 62:
 	asm( 
-"	      0046709b    mov dword ptr [ebp-20h],0"
+"	      0046709b    mov ClassInfo.cbClsExtra,0"
 );
 // LINE 63:
 	asm( 
 "	      004670a2    push 7F00h"
 "	      004670a7    push 0"
 "	      004670a9    call dword ptr ds:[6C381Ch]"
-"	      004670af    mov [ebp-14h],eax"
+"	      004670af    mov ClassInfo.hIcon,eax"
 );
 // LINE 64:
 	asm( 
-"	      004670b2    lea eax,[ebp-28h]"
+"	      004670b2    lea eax,ClassInfo.style"
 "	      004670b5    push eax"
 "	      004670b6    call dword ptr ds:[6C3814h]"
 );
 // LINE 67:
 	asm( 
-"	      004670bc    mov ecx,[ebp-2Ch]"
+"	      004670bc    mov ecx,this"
 "	      004670bf    call 004670DFh"
 );
 // LINE 68:
 	asm( 
-"	      004670c4    mov eax,[ebp+14h]"
+"	      004670c4    mov eax,pColors"
 "	      004670c7    push eax"
-"	      004670c8    mov ecx,[ebp-2Ch]"
+"	      004670c8    mov ecx,this"
 "	      004670cb    call 004673EAh"
 );
 // LINE 70:
 	asm( 
 "	      004670d0    jmp near ptr 004670D5h"
-"	      004670d5    mov eax,[ebp-2Ch]"
+"	      004670d5    mov eax,this"
 "	      004670d8    pop edi"
 "	      004670d9    pop esi"
 "	      004670da    pop ebx"
@@ -198,11 +198,11 @@ unsigned long GameWindow::CreateSparkalWindow() {
 "	      004670e5    push ebx"
 "	      004670e6    push esi"
 "	      004670e7    push edi"
-"	      004670e8    mov [ebp-18h],ecx"
+"	      004670e8    mov this,ecx"
 );
 // LINE 83:
 	asm( 
-"	      004670eb    mov eax,[ebp-18h]"
+"	      004670eb    mov eax,this"
 "	      004670ee    cmp dword ptr [eax+18h],0"
 "	      004670f2    je near ptr 00467102h"
 );
@@ -213,48 +213,48 @@ unsigned long GameWindow::CreateSparkalWindow() {
 );
 // LINE 86:
 	asm( 
-"	      00467102    mov dword ptr [ebp-0Ch],0"
+"	      00467102    mov rectWindowForAdjust.top,0"
 );
 // LINE 87:
 	asm( 
-"	      00467109    mov dword ptr [ebp-10h],0"
+"	      00467109    mov rectWindowForAdjust.left,0"
 );
 // LINE 88:
 	asm( 
-"	      00467110    mov eax,[ebp-18h]"
+"	      00467110    mov eax,this"
 "	      00467113    mov eax,[eax+8]"
-"	      00467116    mov [ebp-8],eax"
+"	      00467116    mov rectWindowForAdjust.right,eax"
 );
 // LINE 89:
 	asm( 
-"	      00467119    mov eax,[ebp-18h]"
+"	      00467119    mov eax,this"
 "	      0046711c    mov eax,[eax+4]"
-"	      0046711f    mov [ebp-4],eax"
+"	      0046711f    mov rectWindowForAdjust.bottom,eax"
 );
 // LINE 91:
 	asm( 
-"	      00467122    mov dword ptr [ebp-14h],0"
+"	      00467122    mov dwWindowStyle,0"
 );
 // LINE 92:
 	asm( 
-"	      00467129    mov eax,[ebp-18h]"
+"	      00467129    mov eax,this"
 "	      0046712c    test byte ptr [eax+0Ch],1"
 "	      00467130    je near ptr 00467142h"
 );
 // LINE 93:
 	asm( 
-"	      00467136    or dword ptr [ebp-14h],40000h"
+"	      00467136    or dwWindowStyle,40000h"
 );
 // LINE 94:
 	asm( 
 "	      0046713d    jmp near ptr 00467162h"
-"	      00467142    mov eax,[ebp-18h]"
+"	      00467142    mov eax,this"
 "	      00467145    test byte ptr [eax+0Ch],4"
 "	      00467149    je near ptr 0046715Bh"
 );
 // LINE 95:
 	asm( 
-"	      0046714f    or dword ptr [ebp-14h],800000h"
+"	      0046714f    or dwWindowStyle,800000h"
 );
 // LINE 96:
 	asm( 
@@ -262,87 +262,87 @@ unsigned long GameWindow::CreateSparkalWindow() {
 );
 // LINE 97:
 	asm( 
-"	      0046715b    or dword ptr [ebp-14h],80000000h"
+"	      0046715b    or dwWindowStyle,80000000h"
 );
 // LINE 98:
 	asm( 
-"	      00467162    mov eax,[ebp-18h]"
+"	      00467162    mov eax,this"
 "	      00467165    test byte ptr [eax+0Ch],2"
 "	      00467169    je near ptr 00467176h"
 );
 // LINE 99:
 	asm( 
-"	      0046716f    or dword ptr [ebp-14h],0C00000h"
+"	      0046716f    or dwWindowStyle,0C00000h"
 );
 // LINE 100:
 	asm( 
-"	      00467176    mov eax,[ebp-18h]"
+"	      00467176    mov eax,this"
 "	      00467179    test byte ptr [eax+0Ch],8"
 "	      0046717d    je near ptr 0046718Ah"
 );
 // LINE 101:
 	asm( 
-"	      00467183    or dword ptr [ebp-14h],0C80000h"
+"	      00467183    or dwWindowStyle,0C80000h"
 );
 // LINE 102:
 	asm( 
-"	      0046718a    mov eax,[ebp-18h]"
+"	      0046718a    mov eax,this"
 "	      0046718d    test byte ptr [eax+0Ch],10h"
 "	      00467191    je near ptr 0046719Eh"
 );
 // LINE 103:
 	asm( 
-"	      00467197    or dword ptr [ebp-14h],0B0000h"
+"	      00467197    or dwWindowStyle,0B0000h"
 );
 // LINE 107:
 	asm( 
 "	      0046719e    push 40000h"
 "	      004671a3    push 0"
-"	      004671a5    mov eax,[ebp-14h]"
+"	      004671a5    mov eax,dwWindowStyle"
 "	      004671a8    push eax"
-"	      004671a9    lea eax,[ebp-10h]"
+"	      004671a9    lea eax,rectWindowForAdjust.left"
 "	      004671ac    push eax"
 "	      004671ad    call dword ptr ds:[6C387Ch]"
 );
 // LINE 111:
 	asm( 
-"	      004671b3    mov eax,[ebp-10h]"
-"	      004671b6    mov ecx,[ebp-18h]"
+"	      004671b3    mov eax,rectWindowForAdjust.left"
+"	      004671b6    mov ecx,this"
 "	      004671b9    mov [ecx+78h],eax"
 );
 // LINE 112:
 	asm( 
-"	      004671bc    mov eax,[ebp-0Ch]"
-"	      004671bf    mov ecx,[ebp-18h]"
+"	      004671bc    mov eax,rectWindowForAdjust.top"
+"	      004671bf    mov ecx,this"
 "	      004671c2    mov [ecx+7Ch],eax"
 );
 // LINE 113:
 	asm( 
-"	      004671c5    mov eax,[ebp-8]"
-"	      004671c8    mov ecx,[ebp-18h]"
+"	      004671c5    mov eax,rectWindowForAdjust.right"
+"	      004671c8    mov ecx,this"
 "	      004671cb    mov [ecx+80h],eax"
 );
 // LINE 114:
 	asm( 
-"	      004671d1    mov eax,[ebp-4]"
-"	      004671d4    mov ecx,[ebp-18h]"
+"	      004671d1    mov eax,rectWindowForAdjust.bottom"
+"	      004671d4    mov ecx,this"
 "	      004671d7    mov [ecx+84h],eax"
 );
 // LINE 115:
 	asm( 
-"	      004671dd    mov eax,[ebp-18h]"
+"	      004671dd    mov eax,this"
 "	      004671e0    add eax,78h"
 "	      004671e3    push eax"
-"	      004671e4    mov eax,[ebp-18h]"
+"	      004671e4    mov eax,this"
 "	      004671e7    mov eax,[eax]"
-"	      004671e9    mov ecx,[ebp-18h]"
+"	      004671e9    mov ecx,this"
 "	      004671ec    call dword ptr [eax+48h]"
 );
 // LINE 116:
 	asm( 
-"	      004671ef    mov eax,[ebp-18h]"
+"	      004671ef    mov eax,this"
 "	      004671f2    add eax,78h"
-"	      004671f5    mov ecx,[ebp-18h]"
+"	      004671f5    mov ecx,this"
 "	      004671f8    add ecx,68h"
 "	      004671fb    mov edx,[eax]"
 "	      004671fd    mov [ecx],edx"
@@ -362,45 +362,45 @@ unsigned long GameWindow::CreateSparkalWindow() {
 "	      00467222    push eax"
 "	      00467223    push 0"
 "	      00467225    push 0"
-"	      00467227    mov eax,[ebp-18h]"
+"	      00467227    mov eax,this"
 "	      0046722a    mov eax,[eax+84h]"
-"	      00467230    mov ecx,[ebp-18h]"
+"	      00467230    mov ecx,this"
 "	      00467233    sub eax,[ecx+7Ch]"
 "	      00467236    push eax"
-"	      00467237    mov eax,[ebp-18h]"
+"	      00467237    mov eax,this"
 "	      0046723a    mov eax,[eax+80h]"
-"	      00467240    mov ecx,[ebp-18h]"
+"	      00467240    mov ecx,this"
 "	      00467243    sub eax,[ecx+78h]"
 "	      00467246    push eax"
-"	      00467247    mov eax,[ebp-18h]"
+"	      00467247    mov eax,this"
 "	      0046724a    mov eax,[eax+7Ch]"
 "	      0046724d    push eax"
-"	      0046724e    mov eax,[ebp-18h]"
+"	      0046724e    mov eax,this"
 "	      00467251    mov eax,[eax+78h]"
 "	      00467254    push eax"
-"	      00467255    mov eax,[ebp-14h]"
+"	      00467255    mov eax,dwWindowStyle"
 "	      00467258    push eax"
-"	      00467259    mov eax,[ebp-18h]"
+"	      00467259    mov eax,this"
 "	      0046725c    mov eax,[eax+98h]"
 "	      00467262    push eax"
 "	      00467263    push 599AB8h"
 "	      00467268    push 40000h"
 "	      0046726d    call dword ptr ds:[6C3808h]"
-"	      00467273    mov ecx,[ebp-18h]"
+"	      00467273    mov ecx,this"
 "	      00467276    mov [ecx+18h],eax"
 );
 // LINE 132:
 	asm( 
-"	      00467279    mov eax,[ebp-18h]"
+"	      00467279    mov eax,this"
 "	      0046727c    cmp dword ptr [eax+18h],0"
 "	      00467280    je near ptr 004672BCh"
 );
 // LINE 134:
 	asm( 
-"	      00467286    mov eax,[ebp-18h]"
+"	      00467286    mov eax,this"
 "	      00467289    push eax"
 "	      0046728a    push 0"
-"	      0046728c    mov eax,[ebp-18h]"
+"	      0046728c    mov eax,this"
 "	      0046728f    mov eax,[eax+18h]"
 "	      00467292    push eax"
 "	      00467293    call dword ptr ds:[6C380Ch]"
@@ -408,14 +408,14 @@ unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 135:
 	asm( 
 "	      00467299    push 1"
-"	      0046729b    mov eax,[ebp-18h]"
+"	      0046729b    mov eax,this"
 "	      0046729e    mov eax,[eax+18h]"
 "	      004672a1    push eax"
 "	      004672a2    call dword ptr ds:[6C3820h]"
 );
 // LINE 136:
 	asm( 
-"	      004672a8    mov eax,[ebp-18h]"
+"	      004672a8    mov eax,this"
 "	      004672ab    mov eax,[eax+18h]"
 "	      004672ae    push eax"
 "	      004672af    call dword ptr ds:[6C3864h]"
@@ -450,13 +450,13 @@ void GameWindow::~GameWindow() {
 "	      004672d1    push ebx"
 "	      004672d2    push esi"
 "	      004672d3    push edi"
-"	      004672d4    mov [ebp-0Ch],ecx"
-"	      004672d7    mov eax,[ebp-0Ch]"
+"	      004672d4    mov this,ecx"
+"	      004672d7    mov eax,this"
 "	      004672da    mov dword ptr [eax],590470h"
 );
 // LINE 150:
 	asm( 
-"	      004672e0    mov eax,[ebp-0Ch]"
+"	      004672e0    mov eax,this"
 "	      004672e3    mov eax,[eax+98h]"
 "	      004672e9    mov [ebp-4],eax"
 "	      004672ec    mov eax,[ebp-4]"
@@ -469,7 +469,7 @@ void GameWindow::~GameWindow() {
 // LINE 151:
 	asm( 
 "	      004672fe    jmp near ptr 00467303h"
-"	      00467303    mov ecx,[ebp-0Ch]"
+"	      00467303    mov ecx,this"
 "	      00467306    call 00480D01h"
 "	      0046730b    pop edi"
 "	      0046730c    pop esi"
@@ -489,13 +489,13 @@ int32_t GameWindow::Initialize() {
 "	      00467316    push ebx"
 "	      00467317    push esi"
 "	      00467318    push edi"
-"	      00467319    mov [ebp-4],ecx"
+"	      00467319    mov this,ecx"
 );
 // LINE 159:
 	asm( 
-"	      0046731c    mov eax,[ebp-4]"
+"	      0046731c    mov eax,this"
 "	      0046731f    mov eax,[eax]"
-"	      00467321    mov ecx,[ebp-4]"
+"	      00467321    mov ecx,this"
 "	      00467324    call dword ptr [eax+14h]"
 );
 // LINE 160:
@@ -523,18 +523,18 @@ unsigned long GameWindow::Draw() {
 "	      0046733c    push ebx"
 "	      0046733d    push esi"
 "	      0046733e    push edi"
-"	      0046733f    mov [ebp-4],ecx"
+"	      0046733f    mov this,ecx"
 );
 // LINE 172:
 	asm( 
-"	      00467342    mov eax,[ebp-4]"
+"	      00467342    mov eax,this"
 "	      00467345    cmp dword ptr [eax+14h],0"
 "	      00467349    je near ptr 00467384h"
 );
 // LINE 173:
 	asm( 
-"	      0046734f    mov eax,[ebp-4]"
-"	      00467352    mov ecx,[ebp-4]"
+"	      0046734f    mov eax,this"
+"	      00467352    mov ecx,this"
 "	      00467355    mov ecx,[ecx+14h]"
 "	      00467358    mov edx,[ecx]"
 "	      0046735a    mov ecx,[eax+14h]"
@@ -548,8 +548,8 @@ unsigned long GameWindow::Draw() {
 "	      0046736d    push 0"
 "	      0046736f    push 0"
 "	      00467371    push 0"
-"	      00467373    mov eax,[ebp-4]"
-"	      00467376    mov ecx,[ebp-4]"
+"	      00467373    mov eax,this"
+"	      00467376    mov ecx,this"
 "	      00467379    mov ecx,[ecx+14h]"
 "	      0046737c    mov edx,[ecx]"
 "	      0046737e    mov ecx,[eax+14h]"
@@ -580,18 +580,18 @@ unsigned long GameWindow::SwapBuffer() {
 "	      00467396    push ebx"
 "	      00467397    push esi"
 "	      00467398    push edi"
-"	      00467399    mov [ebp-4],ecx"
+"	      00467399    mov this,ecx"
 );
 // LINE 185:
 	asm( 
-"	      0046739c    mov eax,[ebp-4]"
+"	      0046739c    mov eax,this"
 "	      0046739f    cmp dword ptr [eax+14h],0"
 "	      004673a3    je near ptr 004673DEh"
 );
 // LINE 186:
 	asm( 
-"	      004673a9    mov eax,[ebp-4]"
-"	      004673ac    mov ecx,[ebp-4]"
+"	      004673a9    mov eax,this"
+"	      004673ac    mov ecx,this"
 "	      004673af    mov ecx,[ecx+14h]"
 "	      004673b2    mov edx,[ecx]"
 "	      004673b4    mov ecx,[eax+14h]"
@@ -605,8 +605,8 @@ unsigned long GameWindow::SwapBuffer() {
 "	      004673c7    push 0"
 "	      004673c9    push 0"
 "	      004673cb    push 0"
-"	      004673cd    mov eax,[ebp-4]"
-"	      004673d0    mov ecx,[ebp-4]"
+"	      004673cd    mov eax,this"
+"	      004673d0    mov ecx,this"
 "	      004673d3    mov ecx,[ecx+14h]"
 "	      004673d6    mov edx,[ecx]"
 "	      004673d8    mov ecx,[eax+14h]"
@@ -645,11 +645,11 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 "	      004673f3    push ebx"
 "	      004673f4    push esi"
 "	      004673f5    push edi"
-"	      004673f6    mov [ebp-420h],ecx"
+"	      004673f6    mov this,ecx"
 );
 // LINE 199:
 	asm( 
-"	      004673fc    cmp dword ptr [ebp+8],0"
+"	      004673fc    cmp pColors,0"
 "	      00467400    jne near ptr 00467410h"
 );
 // LINE 200:
@@ -664,150 +664,150 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 );
 // LINE 208:
 	asm( 
-"	      00467417    mov word ptr [ebp-41Ch],300h"
-"	      00467420    mov word ptr [ebp-41Ah],100h"
-"	      00467429    lea edi,[ebp-418h]"
+"	      00467417    mov LogPalette.Version,300h"
+"	      00467420    mov LogPalette.NumberOfEntries,100h"
+"	      00467429    lea edi,LogPalette.aEntries[0].peRed"
 "	      0046742f    xor eax,eax"
 "	      00467431    mov ecx,100h"
 "	      00467436    rep stosd"
 );
 // LINE 212:
 	asm( 
-"	      00467438    mov dword ptr [ebp-14h],14h"
+"	      00467438    mov StaticCount,14h"
 );
 // LINE 213:
 	asm( 
-"	      0046743f    mov dword ptr [ebp-10h],1"
+"	      0046743f    mov PaletteUse,1"
 );
 // LINE 215:
 	asm( 
 "	      00467446    push 0"
 "	      00467448    call dword ptr ds:[6C3850h]"
-"	      0046744e    mov [ebp-18h],eax"
+"	      0046744e    mov hdc,eax"
 );
 // LINE 216:
 	asm( 
-"	      00467451    cmp dword ptr [ebp-18h],0"
+"	      00467451    cmp hdc,0"
 "	      00467455    je near ptr 0046749Bh"
 );
 // LINE 217:
 	asm( 
-"	      0046745b    mov eax,[ebp-18h]"
+"	      0046745b    mov eax,hdc"
 "	      0046745e    push eax"
 "	      0046745f    call dword ptr ds:[6C3588h]"
-"	      00467465    mov [ebp-10h],eax"
+"	      00467465    mov PaletteUse,eax"
 );
 // LINE 218:
 	asm( 
 "	      00467468    push 18h"
-"	      0046746a    mov eax,[ebp-18h]"
+"	      0046746a    mov eax,hdc"
 "	      0046746d    push eax"
 "	      0046746e    call dword ptr ds:[6C3590h]"
-"	      00467474    mov [ebp-14h],eax"
+"	      00467474    mov StaticCount,eax"
 );
 // LINE 219:
 	asm( 
-"	      00467477    lea eax,[ebp-418h]"
+"	      00467477    lea eax,LogPalette.aEntries[0].peRed"
 "	      0046747d    push eax"
 "	      0046747e    push 100h"
 "	      00467483    push 0"
-"	      00467485    mov eax,[ebp-18h]"
+"	      00467485    mov eax,hdc"
 "	      00467488    push eax"
 "	      00467489    call dword ptr ds:[6C3580h]"
 );
 // LINE 220:
 	asm( 
-"	      0046748f    mov eax,[ebp-18h]"
+"	      0046748f    mov eax,hdc"
 "	      00467492    push eax"
 "	      00467493    push 0"
 "	      00467495    call dword ptr ds:[6C384Ch]"
 );
 // LINE 224:
 	asm( 
-"	      0046749b    mov eax,[ebp-14h]"
+"	      0046749b    mov eax,StaticCount"
 "	      0046749e    cdq"
 "	      0046749f    sub eax,edx"
 "	      004674a1    sar eax,1"
-"	      004674a4    mov [ebp-8],eax"
+"	      004674a4    mov Start,eax"
 );
 // LINE 225:
 	asm( 
 "	      004674a7    mov ecx,100h"
-"	      004674ac    mov eax,[ebp-14h]"
+"	      004674ac    mov eax,StaticCount"
 "	      004674af    cdq"
 "	      004674b0    sub eax,edx"
 "	      004674b2    sar eax,1"
 "	      004674b5    sub ecx,eax"
-"	      004674b7    mov [ebp-0Ch],ecx"
+"	      004674b7    mov End,ecx"
 );
 // LINE 228:
 	asm( 
-"	      004674ba    cmp dword ptr [ebp-10h],2"
+"	      004674ba    cmp PaletteUse,2"
 "	      004674be    jne near ptr 004674D2h"
 );
 // LINE 229:
 	asm( 
-"	      004674c4    mov dword ptr [ebp-8],1"
+"	      004674c4    mov Start,1"
 );
 // LINE 230:
 	asm( 
-"	      004674cb    mov dword ptr [ebp-0Ch],0FFh"
+"	      004674cb    mov End,0FFh"
 );
 // LINE 234:
 	asm( 
-"	      004674d2    mov dword ptr [ebp-4],0"
+"	      004674d2    mov Counter,0"
 "	      004674d9    jmp near ptr 004674E1h"
-"	      004674de    inc dword ptr [ebp-4]"
-"	      004674e1    mov eax,[ebp-4]"
-"	      004674e4    cmp [ebp-8],eax"
+"	      004674de    inc Counter"
+"	      004674e1    mov eax,Counter"
+"	      004674e4    cmp Start,eax"
 "	      004674e7    jle near ptr 004674FDh"
 );
 // LINE 235:
 	asm( 
-"	      004674ed    mov eax,[ebp-4]"
+"	      004674ed    mov eax,Counter"
 "	      004674f0    mov byte ptr [ebp+eax*4-415h],0"
 "	      004674f8    jmp near ptr 004674DEh"
 );
 // LINE 238:
 	asm( 
-"	      004674fd    cmp dword ptr [ebp+8],0"
+"	      004674fd    cmp pColors,0"
 "	      00467501    je near ptr 0046756Bh"
 );
 // LINE 239:
 	asm( 
 "	      00467507    jmp near ptr 0046750Fh"
-"	      0046750c    inc dword ptr [ebp-4]"
-"	      0046750f    mov eax,[ebp-0Ch]"
-"	      00467512    cmp [ebp-4],eax"
+"	      0046750c    inc Counter"
+"	      0046750f    mov eax,End"
+"	      00467512    cmp Counter,eax"
 "	      00467515    jge near ptr 00467566h"
 );
 // LINE 240:
 	asm( 
-"	      0046751b    mov eax,[ebp-4]"
-"	      0046751e    mov ecx,[ebp+8]"
+"	      0046751b    mov eax,Counter"
+"	      0046751e    mov ecx,pColors"
 "	      00467521    mov al,[ecx+eax*4]"
-"	      00467524    mov ecx,[ebp-4]"
+"	      00467524    mov ecx,Counter"
 "	      00467527    mov [ebp+ecx*4-416h],al"
 );
 // LINE 241:
 	asm( 
-"	      0046752e    mov eax,[ebp-4]"
-"	      00467531    mov ecx,[ebp+8]"
+"	      0046752e    mov eax,Counter"
+"	      00467531    mov ecx,pColors"
 "	      00467534    mov al,[ecx+eax*4+1]"
-"	      00467538    mov ecx,[ebp-4]"
+"	      00467538    mov ecx,Counter"
 "	      0046753b    mov [ebp+ecx*4-417h],al"
 );
 // LINE 242:
 	asm( 
-"	      00467542    mov eax,[ebp-4]"
-"	      00467545    mov ecx,[ebp+8]"
+"	      00467542    mov eax,Counter"
+"	      00467545    mov ecx,pColors"
 "	      00467548    mov al,[ecx+eax*4+2]"
-"	      0046754c    mov ecx,[ebp-4]"
+"	      0046754c    mov ecx,Counter"
 "	      0046754f    mov [ebp+ecx*4-418h],al"
 );
 // LINE 243:
 	asm( 
-"	      00467556    mov eax,[ebp-4]"
+"	      00467556    mov eax,Counter"
 "	      00467559    mov byte ptr [ebp+eax*4-415h],5"
 );
 // LINE 244:
@@ -821,32 +821,32 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 // LINE 247:
 	asm( 
 "	      0046756b    jmp near ptr 00467573h"
-"	      00467570    inc dword ptr [ebp-4]"
-"	      00467573    mov eax,[ebp-0Ch]"
-"	      00467576    cmp [ebp-4],eax"
+"	      00467570    inc Counter"
+"	      00467573    mov eax,End"
+"	      00467576    cmp Counter,eax"
 "	      00467579    jge near ptr 004675B6h"
 );
 // LINE 248:
 	asm( 
 "	      0046757f    mov al,[ebp-4]"
-"	      00467582    mov ecx,[ebp-4]"
+"	      00467582    mov ecx,Counter"
 "	      00467585    mov [ebp+ecx*4-416h],al"
 );
 // LINE 249:
 	asm( 
 "	      0046758c    mov al,[ebp-4]"
-"	      0046758f    mov ecx,[ebp-4]"
+"	      0046758f    mov ecx,Counter"
 "	      00467592    mov [ebp+ecx*4-417h],al"
 );
 // LINE 250:
 	asm( 
 "	      00467599    mov al,[ebp-4]"
-"	      0046759c    mov ecx,[ebp-4]"
+"	      0046759c    mov ecx,Counter"
 "	      0046759f    mov [ebp+ecx*4-418h],al"
 );
 // LINE 251:
 	asm( 
-"	      004675a6    mov eax,[ebp-4]"
+"	      004675a6    mov eax,Counter"
 "	      004675a9    mov byte ptr [ebp+eax*4-415h],5"
 );
 // LINE 252:
@@ -856,75 +856,75 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 // LINE 256:
 	asm( 
 "	      004675b6    jmp near ptr 004675BEh"
-"	      004675bb    inc dword ptr [ebp-4]"
-"	      004675be    cmp dword ptr [ebp-4],100h"
+"	      004675bb    inc Counter"
+"	      004675be    cmp Counter,100h"
 "	      004675c5    jge near ptr 004675DBh"
 );
 // LINE 257:
 	asm( 
-"	      004675cb    mov eax,[ebp-4]"
+"	      004675cb    mov eax,Counter"
 "	      004675ce    mov byte ptr [ebp+eax*4-415h],0"
 "	      004675d6    jmp near ptr 004675BBh"
 );
 // LINE 260:
 	asm( 
-"	      004675db    lea eax,[ebp-41Ch]"
+"	      004675db    lea eax,LogPalette.Version"
 "	      004675e1    push eax"
 "	      004675e2    call dword ptr ds:[6C357Ch]"
-"	      004675e8    mov ecx,[ebp-420h]"
+"	      004675e8    mov ecx,this"
 "	      004675ee    mov [ecx+1Ch],eax"
 );
 // LINE 263:
 	asm( 
-"	      004675f1    mov eax,[ebp-420h]"
+"	      004675f1    mov eax,this"
 "	      004675f7    mov eax,[eax+18h]"
 "	      004675fa    push eax"
 "	      004675fb    call dword ptr ds:[6C3850h]"
-"	      00467601    mov [ebp-18h],eax"
+"	      00467601    mov hdc,eax"
 );
 // LINE 264:
 	asm( 
-"	      00467604    cmp dword ptr [ebp-18h],0"
+"	      00467604    cmp hdc,0"
 "	      00467608    je near ptr 00467693h"
 );
 // LINE 265:
 	asm( 
 "	      0046760e    push 1"
-"	      00467610    mov eax,[ebp-18h]"
+"	      00467610    mov eax,hdc"
 "	      00467613    push eax"
 "	      00467614    call dword ptr ds:[6C3584h]"
 );
 // LINE 266:
 	asm( 
 "	      0046761a    push 1"
-"	      0046761c    mov eax,[ebp-18h]"
+"	      0046761c    mov eax,hdc"
 "	      0046761f    push eax"
 "	      00467620    call dword ptr ds:[6C3574h]"
 );
 // LINE 267:
 	asm( 
 "	      00467626    push 0"
-"	      00467628    mov eax,[ebp-420h]"
+"	      00467628    mov eax,this"
 "	      0046762e    mov eax,[eax+1Ch]"
 "	      00467631    push eax"
-"	      00467632    mov eax,[ebp-18h]"
+"	      00467632    mov eax,hdc"
 "	      00467635    push eax"
 "	      00467636    call dword ptr ds:[6C3570h]"
 );
 // LINE 268:
 	asm( 
-"	      0046763c    mov eax,[ebp-18h]"
+"	      0046763c    mov eax,hdc"
 "	      0046763f    push eax"
 "	      00467640    call dword ptr ds:[6C3578h]"
 );
 // LINE 270:
 	asm( 
-"	      00467646    lea eax,[ebp-418h]"
+"	      00467646    lea eax,LogPalette.aEntries[0].peRed"
 "	      0046764c    push eax"
-"	      0046764d    mov eax,[ebp-420h]"
+"	      0046764d    mov eax,this"
 "	      00467653    mov eax,[eax+1Ch]"
 "	      00467656    push eax"
-"	      00467657    mov eax,[ebp-18h]"
+"	      00467657    mov eax,hdc"
 "	      0046765a    push eax"
 "	      0046765b    call 0048132Bh"
 "	      00467660    add esp,0Ch"
@@ -941,9 +941,9 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 );
 // LINE 273:
 	asm( 
-"	      0046767f    mov eax,[ebp-18h]"
+"	      0046767f    mov eax,hdc"
 "	      00467682    push eax"
-"	      00467683    mov eax,[ebp-420h]"
+"	      00467683    mov eax,this"
 "	      00467689    mov eax,[eax+18h]"
 "	      0046768c    push eax"
 "	      0046768d    call dword ptr ds:[6C384Ch]"
@@ -973,17 +973,17 @@ void GameWindow::UpdatePalette(long start, long count, struct SparkalColor* pCol
 "	      004676a7    push ebx"
 "	      004676a8    push esi"
 "	      004676a9    push edi"
-"	      004676aa    mov [ebp-4],ecx"
+"	      004676aa    mov this,ecx"
 );
 // LINE 287:
 	asm( 
-"	      004676ad    mov eax,[ebp+10h]"
+"	      004676ad    mov eax,pColor"
 "	      004676b0    push eax"
-"	      004676b1    mov eax,[ebp+0Ch]"
+"	      004676b1    mov eax,count"
 "	      004676b4    push eax"
-"	      004676b5    mov eax,[ebp+8]"
+"	      004676b5    mov eax,start"
 "	      004676b8    push eax"
-"	      004676b9    mov eax,[ebp-4]"
+"	      004676b9    mov eax,this"
 "	      004676bc    mov ecx,[eax+14h]"
 "	      004676bf    call 00470221h"
 );
@@ -1010,105 +1010,105 @@ void GameWindow::ProcessWindowMove() {
 "	      004676d6    push ebx"
 "	      004676d7    push esi"
 "	      004676d8    push edi"
-"	      004676d9    mov [ebp-14h],ecx"
+"	      004676d9    mov this,ecx"
 );
 // LINE 305:
 	asm( 
-"	      004676dc    lea eax,[ebp-10h]"
+"	      004676dc    lea eax,rectWindowTemp.left"
 "	      004676df    push eax"
-"	      004676e0    mov eax,[ebp-14h]"
+"	      004676e0    mov eax,this"
 "	      004676e3    mov eax,[eax+18h]"
 "	      004676e6    push eax"
 "	      004676e7    call dword ptr ds:[6C38B8h]"
 );
 // LINE 306:
 	asm( 
-"	      004676ed    mov eax,[ebp-10h]"
-"	      004676f0    mov ecx,[ebp-14h]"
+"	      004676ed    mov eax,rectWindowTemp.left"
+"	      004676f0    mov ecx,this"
 "	      004676f3    mov [ecx+78h],eax"
 );
 // LINE 307:
 	asm( 
-"	      004676f6    mov eax,[ebp-0Ch]"
-"	      004676f9    mov ecx,[ebp-14h]"
+"	      004676f6    mov eax,rectWindowTemp.top"
+"	      004676f9    mov ecx,this"
 "	      004676fc    mov [ecx+7Ch],eax"
 );
 // LINE 308:
 	asm( 
-"	      004676ff    mov eax,[ebp-8]"
-"	      00467702    mov ecx,[ebp-14h]"
+"	      004676ff    mov eax,rectWindowTemp.right"
+"	      00467702    mov ecx,this"
 "	      00467705    mov [ecx+80h],eax"
 );
 // LINE 309:
 	asm( 
-"	      0046770b    mov eax,[ebp-4]"
-"	      0046770e    mov ecx,[ebp-14h]"
+"	      0046770b    mov eax,rectWindowTemp.bottom"
+"	      0046770e    mov ecx,this"
 "	      00467711    mov [ecx+84h],eax"
 );
 // LINE 312:
 	asm( 
-"	      00467717    lea eax,[ebp-10h]"
+"	      00467717    lea eax,rectWindowTemp.left"
 "	      0046771a    push eax"
-"	      0046771b    mov eax,[ebp-14h]"
+"	      0046771b    mov eax,this"
 "	      0046771e    mov eax,[eax+18h]"
 "	      00467721    push eax"
 "	      00467722    call dword ptr ds:[6C382Ch]"
 );
 // LINE 313:
 	asm( 
-"	      00467728    lea eax,[ebp-10h]"
+"	      00467728    lea eax,rectWindowTemp.left"
 "	      0046772b    push eax"
-"	      0046772c    mov eax,[ebp-14h]"
+"	      0046772c    mov eax,this"
 "	      0046772f    mov eax,[eax+18h]"
 "	      00467732    push eax"
 "	      00467733    call dword ptr ds:[6C37E0h]"
 );
 // LINE 314:
 	asm( 
-"	      00467739    lea eax,[ebp-8]"
+"	      00467739    lea eax,rectWindowTemp.right"
 "	      0046773c    push eax"
-"	      0046773d    mov eax,[ebp-14h]"
+"	      0046773d    mov eax,this"
 "	      00467740    mov eax,[eax+18h]"
 "	      00467743    push eax"
 "	      00467744    call dword ptr ds:[6C37E0h]"
 );
 // LINE 315:
 	asm( 
-"	      0046774a    mov eax,[ebp-10h]"
-"	      0046774d    mov ecx,[ebp-14h]"
+"	      0046774a    mov eax,rectWindowTemp.left"
+"	      0046774d    mov ecx,this"
 "	      00467750    mov [ecx+88h],eax"
 );
 // LINE 316:
 	asm( 
-"	      00467756    mov eax,[ebp-0Ch]"
-"	      00467759    mov ecx,[ebp-14h]"
+"	      00467756    mov eax,rectWindowTemp.top"
+"	      00467759    mov ecx,this"
 "	      0046775c    mov [ecx+8Ch],eax"
 );
 // LINE 317:
 	asm( 
-"	      00467762    mov eax,[ebp-8]"
-"	      00467765    mov ecx,[ebp-14h]"
+"	      00467762    mov eax,rectWindowTemp.right"
+"	      00467765    mov ecx,this"
 "	      00467768    mov [ecx+90h],eax"
 );
 // LINE 318:
 	asm( 
-"	      0046776e    mov eax,[ebp-4]"
-"	      00467771    mov ecx,[ebp-14h]"
+"	      0046776e    mov eax,rectWindowTemp.bottom"
+"	      00467771    mov ecx,this"
 "	      00467774    mov [ecx+94h],eax"
 );
 // LINE 323:
 	asm( 
-"	      0046777a    mov eax,[ebp-14h]"
+"	      0046777a    mov eax,this"
 "	      0046777d    cmp dword ptr [eax+14h],0"
 "	      00467781    je near ptr 004677A4h"
 );
 // LINE 324:
 	asm( 
-"	      00467787    mov eax,[ebp-14h]"
+"	      00467787    mov eax,this"
 "	      0046778a    add eax,88h"
 "	      0046778f    push eax"
-"	      00467790    mov eax,[ebp-14h]"
-"	      00467793    mov ecx,[ebp-14h]"
+"	      00467790    mov eax,this"
+"	      00467793    mov ecx,this"
 "	      00467796    mov ecx,[ecx+14h]"
 "	      00467799    mov edx,[ecx]"
 "	      0046779b    mov ecx,[eax+14h]"
@@ -1135,7 +1135,7 @@ int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 "	      004677b4    push ebx"
 "	      004677b5    push esi"
 "	      004677b6    push edi"
-"	      004677b7    mov [ebp-4],ecx"
+"	      004677b7    mov this,ecx"
 );
 // LINE 335:
 	asm( 
@@ -1165,58 +1165,58 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 "	      004677cf    push ebx"
 "	      004677d0    push esi"
 "	      004677d1    push edi"
-"	      004677d2    mov [ebp-18h],ecx"
+"	      004677d2    mov this,ecx"
 );
 // LINE 353:
 	asm( 
 "	      004677d5    push 0FFFFFFF0h"
-"	      004677d7    mov eax,[ebp-18h]"
+"	      004677d7    mov eax,this"
 "	      004677da    mov eax,[eax+18h]"
 "	      004677dd    push eax"
 "	      004677de    call dword ptr ds:[6C3868h]"
-"	      004677e4    mov [ebp-4],eax"
+"	      004677e4    mov dwStyle,eax"
 );
 // LINE 354:
 	asm( 
-"	      004677e7    and dword ptr [ebp-4],7FFFFFFFh"
+"	      004677e7    and dwStyle,7FFFFFFFh"
 );
 // LINE 355:
 	asm( 
-"	      004677ee    or dword ptr [ebp-4],10C60000h"
+"	      004677ee    or dwStyle,10C60000h"
 );
 // LINE 356:
 	asm( 
-"	      004677f5    mov eax,[ebp-4]"
+"	      004677f5    mov eax,dwStyle"
 "	      004677f8    push eax"
 "	      004677f9    push 0FFFFFFF0h"
-"	      004677fb    mov eax,[ebp-18h]"
+"	      004677fb    mov eax,this"
 "	      004677fe    mov eax,[eax+18h]"
 "	      00467801    push eax"
 "	      00467802    call dword ptr ds:[6C380Ch]"
 );
 // LINE 358:
 	asm( 
-"	      00467808    mov eax,[ebp-18h]"
+"	      00467808    mov eax,this"
 "	      0046780b    mov eax,[eax+4]"
 "	      0046780e    push eax"
-"	      0046780f    mov eax,[ebp-18h]"
+"	      0046780f    mov eax,this"
 "	      00467812    mov eax,[eax+8]"
 "	      00467815    push eax"
 "	      00467816    push 0"
 "	      00467818    push 0"
-"	      0046781a    lea eax,[ebp-14h]"
+"	      0046781a    lea eax,rectWindowTempWindows.left"
 "	      0046781d    push eax"
 "	      0046781e    call dword ptr ds:[6C38ACh]"
 );
 // LINE 360:
 	asm( 
 "	      00467824    push 0FFFFFFECh"
-"	      00467826    mov eax,[ebp-18h]"
+"	      00467826    mov eax,this"
 "	      00467829    mov eax,[eax+18h]"
 "	      0046782c    push eax"
 "	      0046782d    call dword ptr ds:[6C3868h]"
 "	      00467833    push eax"
-"	      00467834    mov eax,[ebp-18h]"
+"	      00467834    mov eax,this"
 "	      00467837    mov eax,[eax+18h]"
 "	      0046783a    push eax"
 "	      0046783b    call dword ptr ds:[6C38B0h]"
@@ -1225,54 +1225,54 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 "	      00467846    inc eax"
 "	      00467847    push eax"
 "	      00467848    push 0FFFFFFF0h"
-"	      0046784a    mov eax,[ebp-18h]"
+"	      0046784a    mov eax,this"
 "	      0046784d    mov eax,[eax+18h]"
 "	      00467850    push eax"
 "	      00467851    call dword ptr ds:[6C3868h]"
 "	      00467857    push eax"
-"	      00467858    lea eax,[ebp-14h]"
+"	      00467858    lea eax,rectWindowTempWindows.left"
 "	      0046785b    push eax"
 "	      0046785c    call dword ptr ds:[6C387Ch]"
 );
 // LINE 363:
 	asm( 
-"	      00467862    mov eax,[ebp-14h]"
-"	      00467865    mov ecx,[ebp-18h]"
+"	      00467862    mov eax,rectWindowTempWindows.left"
+"	      00467865    mov ecx,this"
 "	      00467868    mov [ecx+78h],eax"
 );
 // LINE 364:
 	asm( 
-"	      0046786b    mov eax,[ebp-10h]"
-"	      0046786e    mov ecx,[ebp-18h]"
+"	      0046786b    mov eax,rectWindowTempWindows.top"
+"	      0046786e    mov ecx,this"
 "	      00467871    mov [ecx+7Ch],eax"
 );
 // LINE 365:
 	asm( 
-"	      00467874    mov eax,[ebp-0Ch]"
-"	      00467877    mov ecx,[ebp-18h]"
+"	      00467874    mov eax,rectWindowTempWindows.right"
+"	      00467877    mov ecx,this"
 "	      0046787a    mov [ecx+80h],eax"
 );
 // LINE 366:
 	asm( 
-"	      00467880    mov eax,[ebp-8]"
-"	      00467883    mov ecx,[ebp-18h]"
+"	      00467880    mov eax,rectWindowTempWindows.bottom"
+"	      00467883    mov ecx,this"
 "	      00467886    mov [ecx+84h],eax"
 );
 // LINE 367:
 	asm( 
-"	      0046788c    mov eax,[ebp-18h]"
+"	      0046788c    mov eax,this"
 "	      0046788f    add eax,78h"
 "	      00467892    push eax"
-"	      00467893    mov eax,[ebp-18h]"
+"	      00467893    mov eax,this"
 "	      00467896    mov eax,[eax]"
-"	      00467898    mov ecx,[ebp-18h]"
+"	      00467898    mov ecx,this"
 "	      0046789b    call dword ptr [eax+48h]"
 );
 // LINE 368:
 	asm( 
-"	      0046789e    mov eax,[ebp-18h]"
+"	      0046789e    mov eax,this"
 "	      004678a1    add eax,78h"
-"	      004678a4    mov ecx,[ebp-18h]"
+"	      004678a4    mov ecx,this"
 "	      004678a7    add ecx,68h"
 "	      004678aa    mov edx,[eax]"
 "	      004678ac    mov [ecx],edx"
@@ -1288,24 +1288,24 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 "	      004678c0    jmp near ptr 004678C5h"
 "	      004678c5    jmp near ptr 004678CAh"
 "	      004678ca    push 14h"
-"	      004678cc    mov eax,[ebp-18h]"
+"	      004678cc    mov eax,this"
 "	      004678cf    mov eax,[eax+84h]"
-"	      004678d5    mov ecx,[ebp-18h]"
+"	      004678d5    mov ecx,this"
 "	      004678d8    sub eax,[ecx+7Ch]"
 "	      004678db    push eax"
-"	      004678dc    mov eax,[ebp-18h]"
+"	      004678dc    mov eax,this"
 "	      004678df    mov eax,[eax+80h]"
-"	      004678e5    mov ecx,[ebp-18h]"
+"	      004678e5    mov ecx,this"
 "	      004678e8    sub eax,[ecx+78h]"
 "	      004678eb    push eax"
-"	      004678ec    mov eax,[ebp-18h]"
+"	      004678ec    mov eax,this"
 "	      004678ef    mov eax,[eax+7Ch]"
 "	      004678f2    push eax"
-"	      004678f3    mov eax,[ebp-18h]"
+"	      004678f3    mov eax,this"
 "	      004678f6    mov eax,[eax+78h]"
 "	      004678f9    push eax"
 "	      004678fa    push 0"
-"	      004678fc    mov eax,[ebp-18h]"
+"	      004678fc    mov eax,this"
 "	      004678ff    mov eax,[eax+18h]"
 "	      00467902    push eax"
 "	      00467903    call dword ptr ds:[6C37E8h]"
@@ -1335,7 +1335,7 @@ int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 "	      0046791e    push ebx"
 "	      0046791f    push esi"
 "	      00467920    push edi"
-"	      00467921    mov [ebp-4],ecx"
+"	      00467921    mov this,ecx"
 );
 // LINE 392:
 	asm( 
@@ -1365,52 +1365,52 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 "	      00467939    push ebx"
 "	      0046793a    push esi"
 "	      0046793b    push edi"
-"	      0046793c    mov [ebp-20h],ecx"
+"	      0046793c    mov this,ecx"
 );
 // LINE 409:
 	asm( 
-"	      0046793f    mov eax,[ebp-20h]"
+"	      0046793f    mov eax,this"
 "	      00467942    mov dword ptr [eax+0Ch],0"
 );
 // LINE 410:
 	asm( 
-"	      00467949    mov dword ptr [ebp-14h],90000000h"
+"	      00467949    mov dwStyle,90000000h"
 );
 // LINE 411:
 	asm( 
-"	      00467950    mov eax,[ebp-14h]"
+"	      00467950    mov eax,dwStyle"
 "	      00467953    push eax"
 "	      00467954    push 0FFFFFFF0h"
-"	      00467956    mov eax,[ebp-20h]"
+"	      00467956    mov eax,this"
 "	      00467959    mov eax,[eax+18h]"
 "	      0046795c    push eax"
 "	      0046795d    call dword ptr ds:[6C380Ch]"
-"	      00467963    mov eax,[ebp-20h]"
+"	      00467963    mov eax,this"
 "	      00467966    mov eax,[eax+4]"
 "	      00467969    mov [ebp-18h],eax"
-"	      0046796c    mov eax,[ebp-20h]"
+"	      0046796c    mov eax,this"
 "	      0046796f    mov eax,[eax+8]"
 "	      00467972    mov [ebp-1Ch],eax"
 );
 // LINE 414:
 	asm( 
-"	      00467975    mov eax,[ebp-20h]"
+"	      00467975    mov eax,this"
 "	      00467978    mov dword ptr [eax+78h],0"
-"	      0046797f    mov eax,[ebp-20h]"
+"	      0046797f    mov eax,this"
 "	      00467982    mov dword ptr [eax+7Ch],0"
 "	      00467989    mov eax,[ebp-1Ch]"
-"	      0046798c    mov ecx,[ebp-20h]"
+"	      0046798c    mov ecx,this"
 "	      0046798f    mov [ecx+80h],eax"
 "	      00467995    mov eax,[ebp-18h]"
-"	      00467998    mov ecx,[ebp-20h]"
+"	      00467998    mov ecx,this"
 "	      0046799b    mov [ecx+84h],eax"
 "	      004679a1    jmp near ptr 004679A6h"
 );
 // LINE 415:
 	asm( 
-"	      004679a6    mov eax,[ebp-20h]"
+"	      004679a6    mov eax,this"
 "	      004679a9    add eax,78h"
-"	      004679ac    mov ecx,[ebp-20h]"
+"	      004679ac    mov ecx,this"
 "	      004679af    add ecx,68h"
 "	      004679b2    mov edx,[eax]"
 "	      004679b4    mov [ecx],edx"
@@ -1423,27 +1423,27 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 );
 // LINE 416:
 	asm( 
-"	      004679c8    mov eax,[ebp-20h]"
+"	      004679c8    mov eax,this"
 "	      004679cb    mov eax,[eax+4]"
 "	      004679ce    push eax"
-"	      004679cf    mov eax,[ebp-20h]"
+"	      004679cf    mov eax,this"
 "	      004679d2    mov eax,[eax+8]"
 "	      004679d5    push eax"
 "	      004679d6    push 0"
 "	      004679d8    push 0"
-"	      004679da    lea eax,[ebp-10h]"
+"	      004679da    lea eax,rectWindowTemp.left"
 "	      004679dd    push eax"
 "	      004679de    call dword ptr ds:[6C38ACh]"
 );
 // LINE 418:
 	asm( 
 "	      004679e4    push 0FFFFFFECh"
-"	      004679e6    mov eax,[ebp-20h]"
+"	      004679e6    mov eax,this"
 "	      004679e9    mov eax,[eax+18h]"
 "	      004679ec    push eax"
 "	      004679ed    call dword ptr ds:[6C3868h]"
 "	      004679f3    push eax"
-"	      004679f4    mov eax,[ebp-20h]"
+"	      004679f4    mov eax,this"
 "	      004679f7    mov eax,[eax+18h]"
 "	      004679fa    push eax"
 "	      004679fb    call dword ptr ds:[6C38B0h]"
@@ -1451,25 +1451,25 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 "	      00467a04    sbb eax,eax"
 "	      00467a06    inc eax"
 "	      00467a07    push eax"
-"	      00467a08    mov eax,[ebp-14h]"
+"	      00467a08    mov eax,dwStyle"
 "	      00467a0b    push eax"
-"	      00467a0c    lea eax,[ebp-10h]"
+"	      00467a0c    lea eax,rectWindowTemp.left"
 "	      00467a0f    push eax"
 "	      00467a10    call dword ptr ds:[6C387Ch]"
 );
 // LINE 424:
 	asm( 
 "	      00467a16    push 14h"
-"	      00467a18    mov eax,[ebp-4]"
-"	      00467a1b    sub eax,[ebp-0Ch]"
+"	      00467a18    mov eax,rectWindowTemp.bottom"
+"	      00467a1b    sub eax,rectWindowTemp.top"
 "	      00467a1e    push eax"
-"	      00467a1f    mov eax,[ebp-8]"
-"	      00467a22    sub eax,[ebp-10h]"
+"	      00467a1f    mov eax,rectWindowTemp.right"
+"	      00467a22    sub eax,rectWindowTemp.left"
 "	      00467a25    push eax"
 "	      00467a26    push 0"
 "	      00467a28    push 0"
 "	      00467a2a    push 0"
-"	      00467a2c    mov eax,[ebp-20h]"
+"	      00467a2c    mov eax,this"
 "	      00467a2f    mov eax,[eax+18h]"
 "	      00467a32    push eax"
 "	      00467a33    call dword ptr ds:[6C37E8h]"
@@ -1504,74 +1504,74 @@ void GameWindow::CenterWindow() {
 "	      00467a4e    push ebx"
 "	      00467a4f    push esi"
 "	      00467a50    push edi"
-"	      00467a51    mov [ebp-14h],ecx"
+"	      00467a51    mov this,ecx"
 );
 // LINE 443:
 	asm( 
 "	      00467a54    push 0"
 "	      00467a56    call dword ptr ds:[6C3810h]"
-"	      00467a5c    mov [ebp-0Ch],eax"
+"	      00467a5c    mov nScreenWidth,eax"
 "	      00467a5f    jmp near ptr 00467A64h"
 );
 // LINE 444:
 	asm( 
 "	      00467a64    push 1"
 "	      00467a66    call dword ptr ds:[6C3810h]"
-"	      00467a6c    mov [ebp-4],eax"
+"	      00467a6c    mov nScreenHeight,eax"
 "	      00467a6f    jmp near ptr 00467A74h"
 );
 // LINE 445:
 	asm( 
 "	      00467a74    jmp near ptr 00467A79h"
-"	      00467a79    mov eax,[ebp-14h]"
+"	      00467a79    mov eax,this"
 "	      00467a7c    mov eax,[eax+80h]"
-"	      00467a82    mov ecx,[ebp-14h]"
+"	      00467a82    mov ecx,this"
 "	      00467a85    sub eax,[ecx+78h]"
-"	      00467a88    mov [ebp-10h],eax"
+"	      00467a88    mov nWindowWidth,eax"
 );
 // LINE 446:
 	asm( 
 "	      00467a8b    jmp near ptr 00467A90h"
-"	      00467a90    mov eax,[ebp-14h]"
+"	      00467a90    mov eax,this"
 "	      00467a93    mov eax,[eax+84h]"
-"	      00467a99    mov ecx,[ebp-14h]"
+"	      00467a99    mov ecx,this"
 "	      00467a9c    sub eax,[ecx+7Ch]"
-"	      00467a9f    mov [ebp-8],eax"
+"	      00467a9f    mov nWindowHeight,eax"
 );
 // LINE 449:
 	asm( 
-"	      00467aa2    mov eax,[ebp-0Ch]"
+"	      00467aa2    mov eax,nScreenWidth"
 "	      00467aa5    shr eax,1"
-"	      00467aa8    mov ecx,[ebp-10h]"
+"	      00467aa8    mov ecx,nWindowWidth"
 "	      00467aab    shr ecx,1"
 "	      00467aae    sub eax,ecx"
-"	      00467ab0    mov ecx,[ebp-14h]"
+"	      00467ab0    mov ecx,this"
 "	      00467ab3    mov [ecx+78h],eax"
 );
 // LINE 450:
 	asm( 
-"	      00467ab6    mov eax,[ebp-4]"
+"	      00467ab6    mov eax,nScreenHeight"
 "	      00467ab9    shr eax,1"
-"	      00467abc    mov ecx,[ebp-8]"
+"	      00467abc    mov ecx,nWindowHeight"
 "	      00467abf    shr ecx,1"
 "	      00467ac2    sub eax,ecx"
-"	      00467ac4    mov ecx,[ebp-14h]"
+"	      00467ac4    mov ecx,this"
 "	      00467ac7    mov [ecx+7Ch],eax"
 );
 // LINE 453:
 	asm( 
 "	      00467aca    push 0"
-"	      00467acc    mov eax,[ebp-8]"
+"	      00467acc    mov eax,nWindowHeight"
 "	      00467acf    push eax"
-"	      00467ad0    mov eax,[ebp-10h]"
+"	      00467ad0    mov eax,nWindowWidth"
 "	      00467ad3    push eax"
-"	      00467ad4    mov eax,[ebp-14h]"
+"	      00467ad4    mov eax,this"
 "	      00467ad7    mov eax,[eax+7Ch]"
 "	      00467ada    push eax"
-"	      00467adb    mov eax,[ebp-14h]"
+"	      00467adb    mov eax,this"
 "	      00467ade    mov eax,[eax+78h]"
 "	      00467ae1    push eax"
-"	      00467ae2    mov eax,[ebp-14h]"
+"	      00467ae2    mov eax,this"
 "	      00467ae5    mov eax,[eax+18h]"
 "	      00467ae8    push eax"
 "	      00467ae9    call dword ptr ds:[6C3828h]"
@@ -1602,74 +1602,74 @@ void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
 "	      00467aff    push ebx"
 "	      00467b00    push esi"
 "	      00467b01    push edi"
-"	      00467b02    mov [ebp-14h],ecx"
+"	      00467b02    mov this,ecx"
 );
 // LINE 471:
 	asm( 
 "	      00467b05    push 0"
 "	      00467b07    call dword ptr ds:[6C3810h]"
-"	      00467b0d    mov [ebp-0Ch],eax"
+"	      00467b0d    mov nScreenWidth,eax"
 "	      00467b10    jmp near ptr 00467B15h"
 );
 // LINE 472:
 	asm( 
 "	      00467b15    push 1"
 "	      00467b17    call dword ptr ds:[6C3810h]"
-"	      00467b1d    mov [ebp-4],eax"
+"	      00467b1d    mov nScreenHeight,eax"
 "	      00467b20    jmp near ptr 00467B25h"
 );
 // LINE 473:
 	asm( 
 "	      00467b25    jmp near ptr 00467B2Ah"
-"	      00467b2a    mov eax,[ebp+8]"
+"	      00467b2a    mov eax,rectWindowToPlace"
 "	      00467b2d    mov eax,[eax+8]"
-"	      00467b30    mov ecx,[ebp+8]"
+"	      00467b30    mov ecx,rectWindowToPlace"
 "	      00467b33    sub eax,[ecx]"
-"	      00467b35    mov [ebp-10h],eax"
+"	      00467b35    mov nWindowWidth,eax"
 );
 // LINE 474:
 	asm( 
 "	      00467b38    jmp near ptr 00467B3Dh"
-"	      00467b3d    mov eax,[ebp+8]"
+"	      00467b3d    mov eax,rectWindowToPlace"
 "	      00467b40    mov eax,[eax+0Ch]"
-"	      00467b43    mov ecx,[ebp+8]"
+"	      00467b43    mov ecx,rectWindowToPlace"
 "	      00467b46    sub eax,[ecx+4]"
-"	      00467b49    mov [ebp-8],eax"
+"	      00467b49    mov nWindowHeight,eax"
 );
 // LINE 477:
 	asm( 
-"	      00467b4c    mov eax,[ebp-0Ch]"
+"	      00467b4c    mov eax,nScreenWidth"
 "	      00467b4f    shr eax,1"
-"	      00467b52    mov ecx,[ebp-10h]"
+"	      00467b52    mov ecx,nWindowWidth"
 "	      00467b55    shr ecx,1"
 "	      00467b58    sub eax,ecx"
-"	      00467b5a    mov ecx,[ebp+8]"
+"	      00467b5a    mov ecx,rectWindowToPlace"
 "	      00467b5d    mov [ecx],eax"
 );
 // LINE 478:
 	asm( 
-"	      00467b5f    mov eax,[ebp-4]"
+"	      00467b5f    mov eax,nScreenHeight"
 "	      00467b62    shr eax,1"
-"	      00467b65    mov ecx,[ebp-8]"
+"	      00467b65    mov ecx,nWindowHeight"
 "	      00467b68    shr ecx,1"
 "	      00467b6b    sub eax,ecx"
-"	      00467b6d    mov ecx,[ebp+8]"
+"	      00467b6d    mov ecx,rectWindowToPlace"
 "	      00467b70    mov [ecx+4],eax"
 );
 // LINE 479:
 	asm( 
-"	      00467b73    mov eax,[ebp+8]"
+"	      00467b73    mov eax,rectWindowToPlace"
 "	      00467b76    mov eax,[eax]"
-"	      00467b78    add eax,[ebp-10h]"
-"	      00467b7b    mov ecx,[ebp+8]"
+"	      00467b78    add eax,nWindowWidth"
+"	      00467b7b    mov ecx,rectWindowToPlace"
 "	      00467b7e    mov [ecx+8],eax"
 );
 // LINE 480:
 	asm( 
-"	      00467b81    mov eax,[ebp+8]"
+"	      00467b81    mov eax,rectWindowToPlace"
 "	      00467b84    mov eax,[eax+4]"
-"	      00467b87    add eax,[ebp-8]"
-"	      00467b8a    mov ecx,[ebp+8]"
+"	      00467b87    add eax,nWindowHeight"
+"	      00467b8a    mov ecx,rectWindowToPlace"
 "	      00467b8d    mov [ecx+0Ch],eax"
 );
 // LINE 482:
@@ -1698,7 +1698,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 496:
 	asm( 
-"	      00467ba5    mov eax,[ebp+10h]"
+"	      00467ba5    mov eax,Message"
 "	      00467ba8    cmp ds:[646ED0h],eax"
 "	      00467bae    jne near ptr 00467BCDh"
 );
@@ -1719,14 +1719,14 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 502:
 	asm( 
-"	      00467bcd    mov eax,[ebp+10h]"
+"	      00467bcd    mov eax,Message"
 "	      00467bd0    mov [ebp-8],eax"
 "	      00467bd3    jmp near ptr 00467EE1h"
 );
 // LINE 504:
 	asm( 
-"	      00467bd8    mov eax,[ebp+8]"
-"	      00467bdb    mov ecx,[ebp+8]"
+"	      00467bd8    mov eax,this"
+"	      00467bdb    mov ecx,this"
 "	      00467bde    mov ecx,[ecx+10h]"
 "	      00467be1    mov edx,[ecx]"
 "	      00467be3    mov ecx,[eax+10h]"
@@ -1739,7 +1739,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 508:
 	asm( 
-"	      00467bf0    mov eax,[ebp+8]"
+"	      00467bf0    mov eax,this"
 "	      00467bf3    mov dword ptr [eax+18h],0"
 );
 // LINE 509:
@@ -1748,9 +1748,9 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 513:
 	asm( 
-"	      00467bff    mov eax,[ebp+8]"
+"	      00467bff    mov eax,this"
 "	      00467c02    mov eax,[eax]"
-"	      00467c04    mov ecx,[ebp+8]"
+"	      00467c04    mov ecx,this"
 "	      00467c07    call dword ptr [eax+40h]"
 );
 // LINE 514:
@@ -1760,57 +1760,57 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 517:
 	asm( 
-"	      00467c11    mov eax,[ebp+18h]"
-"	      00467c14    mov [ebp-4],eax"
+"	      00467c11    mov eax,lParam"
+"	      00467c14    mov lpMinMaxInfo,eax"
 );
 // LINE 520:
 	asm( 
-"	      00467c17    mov eax,[ebp+8]"
+"	      00467c17    mov eax,this"
 "	      00467c1a    mov eax,[eax+70h]"
-"	      00467c1d    mov ecx,[ebp+8]"
+"	      00467c1d    mov ecx,this"
 "	      00467c20    sub eax,[ecx+68h]"
-"	      00467c23    mov ecx,[ebp-4]"
+"	      00467c23    mov ecx,lpMinMaxInfo"
 "	      00467c26    mov [ecx+20h],eax"
 "	      00467c29    jmp near ptr 00467C2Eh"
-"	      00467c2e    mov eax,[ebp-4]"
+"	      00467c2e    mov eax,lpMinMaxInfo"
 "	      00467c31    mov eax,[eax+20h]"
-"	      00467c34    mov ecx,[ebp-4]"
+"	      00467c34    mov ecx,lpMinMaxInfo"
 "	      00467c37    mov [ecx+18h],eax"
-"	      00467c3a    mov eax,[ebp-4]"
+"	      00467c3a    mov eax,lpMinMaxInfo"
 "	      00467c3d    mov eax,[eax+18h]"
-"	      00467c40    mov ecx,[ebp-4]"
+"	      00467c40    mov ecx,lpMinMaxInfo"
 "	      00467c43    mov [ecx+8],eax"
 );
 // LINE 523:
 	asm( 
-"	      00467c46    mov eax,[ebp+8]"
+"	      00467c46    mov eax,this"
 "	      00467c49    mov eax,[eax+74h]"
-"	      00467c4c    mov ecx,[ebp+8]"
+"	      00467c4c    mov ecx,this"
 "	      00467c4f    sub eax,[ecx+6Ch]"
-"	      00467c52    mov ecx,[ebp-4]"
+"	      00467c52    mov ecx,lpMinMaxInfo"
 "	      00467c55    mov [ecx+24h],eax"
 "	      00467c58    jmp near ptr 00467C5Dh"
-"	      00467c5d    mov eax,[ebp-4]"
+"	      00467c5d    mov eax,lpMinMaxInfo"
 "	      00467c60    mov eax,[eax+24h]"
-"	      00467c63    mov ecx,[ebp-4]"
+"	      00467c63    mov ecx,lpMinMaxInfo"
 "	      00467c66    mov [ecx+1Ch],eax"
-"	      00467c69    mov eax,[ebp-4]"
+"	      00467c69    mov eax,lpMinMaxInfo"
 "	      00467c6c    mov eax,[eax+1Ch]"
-"	      00467c6f    mov ecx,[ebp-4]"
+"	      00467c6f    mov ecx,lpMinMaxInfo"
 "	      00467c72    mov [ecx+0Ch],eax"
 );
 // LINE 527:
 	asm( 
-"	      00467c75    mov eax,[ebp+8]"
+"	      00467c75    mov eax,this"
 "	      00467c78    mov eax,[eax+68h]"
-"	      00467c7b    mov ecx,[ebp-4]"
+"	      00467c7b    mov ecx,lpMinMaxInfo"
 "	      00467c7e    mov [ecx+10h],eax"
 );
 // LINE 528:
 	asm( 
-"	      00467c81    mov eax,[ebp+8]"
+"	      00467c81    mov eax,this"
 "	      00467c84    mov eax,[eax+6Ch]"
-"	      00467c87    mov ecx,[ebp-4]"
+"	      00467c87    mov ecx,lpMinMaxInfo"
 "	      00467c8a    mov [ecx+14h],eax"
 );
 // LINE 529:
@@ -1824,14 +1824,14 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 533:
 	asm( 
-"	      00467c99    mov eax,[ebp+8]"
+"	      00467c99    mov eax,this"
 "	      00467c9c    cmp dword ptr [eax+10h],0"
 "	      00467ca0    je near ptr 00467CB7h"
 );
 // LINE 534:
 	asm( 
-"	      00467ca6    mov eax,[ebp+8]"
-"	      00467ca9    mov ecx,[ebp+8]"
+"	      00467ca6    mov eax,this"
+"	      00467ca9    mov ecx,this"
 "	      00467cac    mov ecx,[ecx+10h]"
 "	      00467caf    mov edx,[ecx]"
 "	      00467cb1    mov ecx,[eax+10h]"
@@ -1848,10 +1848,10 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 539:
 	asm( 
-"	      00467cc3    mov eax,[ebp+14h]"
+"	      00467cc3    mov eax,wParam"
 "	      00467cc6    push eax"
-"	      00467cc7    mov eax,[ebp+8]"
-"	      00467cca    mov ecx,[ebp+8]"
+"	      00467cc7    mov eax,this"
+"	      00467cca    mov ecx,this"
 "	      00467ccd    mov ecx,[ecx+10h]"
 "	      00467cd0    mov edx,[ecx]"
 "	      00467cd2    mov ecx,[eax+10h]"
@@ -1864,10 +1864,10 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 543:
 	asm( 
-"	      00467cdf    mov eax,[ebp+14h]"
+"	      00467cdf    mov eax,wParam"
 "	      00467ce2    push eax"
-"	      00467ce3    mov eax,[ebp+8]"
-"	      00467ce6    mov ecx,[ebp+8]"
+"	      00467ce3    mov eax,this"
+"	      00467ce6    mov ecx,this"
 "	      00467ce9    mov ecx,[ecx+10h]"
 "	      00467cec    mov edx,[ecx]"
 "	      00467cee    mov ecx,[eax+10h]"
@@ -1880,10 +1880,10 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 547:
 	asm( 
-"	      00467cfb    mov eax,[ebp+14h]"
+"	      00467cfb    mov eax,wParam"
 "	      00467cfe    push eax"
-"	      00467cff    mov eax,[ebp+8]"
-"	      00467d02    mov ecx,[ebp+8]"
+"	      00467cff    mov eax,this"
+"	      00467d02    mov ecx,this"
 "	      00467d05    mov ecx,[ecx+10h]"
 "	      00467d08    mov edx,[ecx]"
 "	      00467d0a    mov ecx,[eax+10h]"
@@ -1896,13 +1896,13 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 559:
 	asm( 
-"	      00467d17    cmp dword ptr [ebp+14h],73h"
+"	      00467d17    cmp wParam,73h"
 "	      00467d1b    jne near ptr 00467D37h"
 );
 // LINE 560:
 	asm( 
-"	      00467d21    mov eax,[ebp+8]"
-"	      00467d24    mov ecx,[ebp+8]"
+"	      00467d21    mov eax,this"
+"	      00467d24    mov ecx,this"
 "	      00467d27    mov ecx,[ecx+10h]"
 "	      00467d2a    mov edx,[ecx]"
 "	      00467d2c    mov ecx,[eax+10h]"
@@ -1914,10 +1914,10 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 562:
 	asm( 
-"	      00467d37    mov eax,[ebp+14h]"
+"	      00467d37    mov eax,wParam"
 "	      00467d3a    push eax"
-"	      00467d3b    mov eax,[ebp+8]"
-"	      00467d3e    mov ecx,[ebp+8]"
+"	      00467d3b    mov eax,this"
+"	      00467d3e    mov ecx,this"
 "	      00467d41    mov ecx,[ecx+10h]"
 "	      00467d44    mov edx,[ecx]"
 "	      00467d46    mov ecx,[eax+10h]"
@@ -1930,15 +1930,15 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 566:
 	asm( 
-"	      00467d53    cmp dword ptr [ebp+14h],73h"
+"	      00467d53    cmp wParam,73h"
 "	      00467d57    je near ptr 00467D72h"
 );
 // LINE 567:
 	asm( 
-"	      00467d5d    mov eax,[ebp+14h]"
+"	      00467d5d    mov eax,wParam"
 "	      00467d60    push eax"
-"	      00467d61    mov eax,[ebp+8]"
-"	      00467d64    mov ecx,[ebp+8]"
+"	      00467d61    mov eax,this"
+"	      00467d64    mov ecx,this"
 "	      00467d67    mov ecx,[ecx+10h]"
 "	      00467d6a    mov edx,[ecx]"
 "	      00467d6c    mov ecx,[eax+10h]"
@@ -1951,22 +1951,22 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 571:
 	asm( 
-"	      00467d79    mov eax,[ebp+0Ch]"
+"	      00467d79    mov eax,Window"
 "	      00467d7c    push eax"
 "	      00467d7d    call dword ptr ds:[6C38A0h]"
 );
 // LINE 572:
 	asm( 
-"	      00467d83    mov eax,[ebp+18h]"
+"	      00467d83    mov eax,lParam"
 "	      00467d86    shr eax,10h"
 "	      00467d89    and eax,0FFFFh"
 "	      00467d8e    movzx eax,ax"
 "	      00467d91    push eax"
-"	      00467d92    mov eax,[ebp+18h]"
+"	      00467d92    mov eax,lParam"
 "	      00467d95    and eax,0FFFFh"
 "	      00467d9a    push eax"
-"	      00467d9b    mov eax,[ebp+8]"
-"	      00467d9e    mov ecx,[ebp+8]"
+"	      00467d9b    mov eax,this"
+"	      00467d9e    mov ecx,this"
 "	      00467da1    mov ecx,[ecx+10h]"
 "	      00467da4    mov edx,[ecx]"
 "	      00467da6    mov ecx,[eax+10h]"
@@ -1979,22 +1979,22 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 576:
 	asm( 
-"	      00467db3    mov eax,[ebp+0Ch]"
+"	      00467db3    mov eax,Window"
 "	      00467db6    push eax"
 "	      00467db7    call dword ptr ds:[6C38A0h]"
 );
 // LINE 577:
 	asm( 
-"	      00467dbd    mov eax,[ebp+18h]"
+"	      00467dbd    mov eax,lParam"
 "	      00467dc0    shr eax,10h"
 "	      00467dc3    and eax,0FFFFh"
 "	      00467dc8    movzx eax,ax"
 "	      00467dcb    push eax"
-"	      00467dcc    mov eax,[ebp+18h]"
+"	      00467dcc    mov eax,lParam"
 "	      00467dcf    and eax,0FFFFh"
 "	      00467dd4    push eax"
-"	      00467dd5    mov eax,[ebp+8]"
-"	      00467dd8    mov ecx,[ebp+8]"
+"	      00467dd5    mov eax,this"
+"	      00467dd8    mov ecx,this"
 "	      00467ddb    mov ecx,[ecx+10h]"
 "	      00467dde    mov edx,[ecx]"
 "	      00467de0    mov ecx,[eax+10h]"
@@ -2008,7 +2008,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 // LINE 581:
 	asm( 
 "	      00467ded    call dword ptr ds:[6C38A4h]"
-"	      00467df3    cmp eax,[ebp+0Ch]"
+"	      00467df3    cmp eax,Window"
 "	      00467df6    jne near ptr 00467E02h"
 );
 // LINE 582:
@@ -2017,16 +2017,16 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 583:
 	asm( 
-"	      00467e02    mov eax,[ebp+18h]"
+"	      00467e02    mov eax,lParam"
 "	      00467e05    shr eax,10h"
 "	      00467e08    and eax,0FFFFh"
 "	      00467e0d    movzx eax,ax"
 "	      00467e10    push eax"
-"	      00467e11    mov eax,[ebp+18h]"
+"	      00467e11    mov eax,lParam"
 "	      00467e14    and eax,0FFFFh"
 "	      00467e19    push eax"
-"	      00467e1a    mov eax,[ebp+8]"
-"	      00467e1d    mov ecx,[ebp+8]"
+"	      00467e1a    mov eax,this"
+"	      00467e1d    mov ecx,this"
 "	      00467e20    mov ecx,[ecx+10h]"
 "	      00467e23    mov edx,[ecx]"
 "	      00467e25    mov ecx,[eax+10h]"
@@ -2040,7 +2040,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 // LINE 587:
 	asm( 
 "	      00467e32    call dword ptr ds:[6C38A4h]"
-"	      00467e38    cmp eax,[ebp+0Ch]"
+"	      00467e38    cmp eax,Window"
 "	      00467e3b    jne near ptr 00467E47h"
 );
 // LINE 588:
@@ -2049,16 +2049,16 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 589:
 	asm( 
-"	      00467e47    mov eax,[ebp+18h]"
+"	      00467e47    mov eax,lParam"
 "	      00467e4a    shr eax,10h"
 "	      00467e4d    and eax,0FFFFh"
 "	      00467e52    movzx eax,ax"
 "	      00467e55    push eax"
-"	      00467e56    mov eax,[ebp+18h]"
+"	      00467e56    mov eax,lParam"
 "	      00467e59    and eax,0FFFFh"
 "	      00467e5e    push eax"
-"	      00467e5f    mov eax,[ebp+8]"
-"	      00467e62    mov ecx,[ebp+8]"
+"	      00467e5f    mov eax,this"
+"	      00467e62    mov ecx,this"
 "	      00467e65    mov ecx,[ecx+10h]"
 "	      00467e68    mov edx,[ecx]"
 "	      00467e6a    mov ecx,[eax+10h]"
@@ -2071,7 +2071,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 593:
 	asm( 
-"	      00467e77    mov eax,[ebp+18h]"
+"	      00467e77    mov eax,lParam"
 "	      00467e7a    and eax,0FFFFh"
 "	      00467e7f    cmp eax,1"
 "	      00467e82    jne near ptr 00467E9Fh"
@@ -2079,9 +2079,9 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 // LINE 594:
 	asm( 
 "	      00467e88    push 0"
-"	      00467e8a    mov eax,[ebp+8]"
+"	      00467e8a    mov eax,this"
 "	      00467e8d    mov eax,[eax]"
-"	      00467e8f    mov ecx,[ebp+8]"
+"	      00467e8f    mov ecx,this"
 "	      00467e92    call dword ptr [eax+0Ch]"
 );
 // LINE 595:
@@ -2095,8 +2095,8 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 601:
 	asm( 
-"	      00467ea4    mov eax,[ebp+0Ch]"
-"	      00467ea7    cmp [ebp+14h],eax"
+"	      00467ea4    mov eax,Window"
+"	      00467ea7    cmp wParam,eax"
 "	      00467eaa    jne near ptr 00467EB7h"
 );
 // LINE 602:
@@ -2106,14 +2106,14 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 606:
 	asm( 
-"	      00467eb7    mov eax,[ebp+8]"
+"	      00467eb7    mov eax,this"
 "	      00467eba    cmp dword ptr [eax+14h],0"
 "	      00467ebe    je near ptr 00467ED5h"
 );
 // LINE 607:
 	asm( 
-"	      00467ec4    mov eax,[ebp+8]"
-"	      00467ec7    mov ecx,[ebp+8]"
+"	      00467ec4    mov eax,this"
+"	      00467ec7    mov ecx,this"
 "	      00467eca    mov ecx,[ecx+14h]"
 "	      00467ecd    mov edx,[ecx]"
 "	      00467ecf    mov ecx,[eax+14h]"
@@ -2194,15 +2194,15 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 );
 // LINE 610:
 	asm( 
-"	      00467ff5    mov eax,[ebp+18h]"
+"	      00467ff5    mov eax,lParam"
 "	      00467ff8    push eax"
-"	      00467ff9    mov eax,[ebp+14h]"
+"	      00467ff9    mov eax,wParam"
 "	      00467ffc    push eax"
-"	      00467ffd    mov eax,[ebp+10h]"
+"	      00467ffd    mov eax,Message"
 "	      00468000    push eax"
-"	      00468001    mov eax,[ebp+0Ch]"
+"	      00468001    mov eax,Window"
 "	      00468004    push eax"
-"	      00468005    mov eax,[ebp+8]"
+"	      00468005    mov eax,this"
 "	      00468008    push eax"
 "	      00468009    call 00481647h"
 "	      0046800e    jmp near ptr 00468013h"

@@ -23,44 +23,44 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 // LINE 46:
 	asm( 
 "	      00554f3c    push 0AFh"
-"	      00554f41    mov eax,[ebp+10h]"
+"	      00554f41    mov eax,failureDescription"
 "	      00554f44    push eax"
-"	      00554f45    lea eax,[ebp-204h]"
+"	      00554f45    lea eax,descBuff[0]"
 "	      00554f4b    push eax"
 "	      00554f4c    call 0056AD40h"
 "	      00554f51    add esp,0Ch"
 );
 // LINE 47:
 	asm( 
-"	      00554f54    mov byte ptr [ebp-155h],0"
+"	      00554f54    mov descBuff[175],0"
 );
 // LINE 50:
 	asm( 
-"	      00554f5b    lea eax,[ebp-204h]"
+"	      00554f5b    lea eax,descBuff[0]"
 "	      00554f61    push eax"
-"	      00554f62    mov eax,[ebp+0Ch]"
+"	      00554f62    mov eax,lineNum"
 "	      00554f65    push eax"
-"	      00554f66    mov eax,[ebp+8]"
+"	      00554f66    mov eax,fileName"
 "	      00554f69    push eax"
 "	      00554f6a    push 5BC5FCh"
-"	      00554f6f    lea eax,[ebp-104h]"
+"	      00554f6f    lea eax,message[0]"
 "	      00554f75    push eax"
 "	      00554f76    call 0056CD30h"
 "	      00554f7b    add esp,14h"
 );
 // LINE 51:
 	asm( 
-"	      00554f7e    cmp dword ptr [ebp+14h],8C085h"
+"	      00554f7e    cmp tackonNumber,8C085h"
 "	      00554f85    je near ptr 00554FAAh"
 );
 // LINE 52:
 	asm( 
-"	      00554f8b    mov eax,[ebp+14h]"
+"	      00554f8b    mov eax,tackonNumber"
 "	      00554f8e    push eax"
-"	      00554f8f    lea eax,[ebp-104h]"
+"	      00554f8f    lea eax,message[0]"
 "	      00554f95    push eax"
 "	      00554f96    push 5BC620h"
-"	      00554f9b    lea eax,[ebp-104h]"
+"	      00554f9b    lea eax,message[0]"
 "	      00554fa1    push eax"
 "	      00554fa2    call 0056CD30h"
 "	      00554fa7    add esp,10h"
@@ -69,18 +69,18 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	asm( 
 "	      00554faa    push 2"
 "	      00554fac    push 5BC62Ch"
-"	      00554fb1    lea eax,[ebp-104h]"
+"	      00554fb1    lea eax,message[0]"
 "	      00554fb7    push eax"
 "	      00554fb8    call dword ptr ds:[6C37DCh]"
 "	      00554fbe    push eax"
 "	      00554fbf    call dword ptr ds:[6C3870h]"
-"	      00554fc5    mov [ebp-4],eax"
+"	      00554fc5    mov answer,eax"
 );
 // LINE 68:
 	asm( 
-"	      00554fc8    cmp dword ptr [ebp-4],0"
+"	      00554fc8    cmp answer,0"
 "	      00554fcc    je near ptr 00554FDCh"
-"	      00554fd2    cmp dword ptr [ebp-4],3"
+"	      00554fd2    cmp answer,3"
 "	      00554fd6    jne near ptr 00554FE1h"
 "	      00554fdc    call 0056F350h"
 );

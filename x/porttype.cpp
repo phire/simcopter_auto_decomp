@@ -20,19 +20,19 @@ void GlobalToLocal(struct Point* pt) {
 );
 // LINE 10:
 	asm( 
-"	      00566a19    mov eax,[ebp+8]"
+"	      00566a19    mov eax,pt"
 "	      00566a1c    movsx eax,word ptr [eax+2]"
-"	      00566a20    mov [ebp-8],eax"
+"	      00566a20    mov wpt.x,eax"
 );
 // LINE 11:
 	asm( 
-"	      00566a23    mov eax,[ebp+8]"
+"	      00566a23    mov eax,pt"
 "	      00566a26    movsx eax,word ptr [eax]"
-"	      00566a29    mov [ebp-4],eax"
+"	      00566a29    mov wpt.y,eax"
 );
 // LINE 12:
 	asm( 
-"	      00566a2c    lea eax,[ebp-8]"
+"	      00566a2c    lea eax,wpt.x"
 "	      00566a2f    push eax"
 "	      00566a30    mov eax,ds:[5BF638h]"
 "	      00566a35    push eax"
@@ -40,14 +40,14 @@ void GlobalToLocal(struct Point* pt) {
 );
 // LINE 13:
 	asm( 
-"	      00566a3c    mov eax,[ebp-8]"
-"	      00566a3f    mov ecx,[ebp+8]"
+"	      00566a3c    mov eax,wpt.x"
+"	      00566a3f    mov ecx,pt"
 "	      00566a42    mov [ecx+2],ax"
 );
 // LINE 14:
 	asm( 
-"	      00566a46    mov eax,[ebp-4]"
-"	      00566a49    mov ecx,[ebp+8]"
+"	      00566a46    mov eax,wpt.y"
+"	      00566a49    mov ecx,pt"
 "	      00566a4c    mov [ecx],ax"
 );
 // LINE 15:
@@ -76,19 +76,19 @@ void LocalToGlobal(struct Point* pt) {
 );
 // LINE 19:
 	asm( 
-"	      00566a62    mov eax,[ebp+8]"
+"	      00566a62    mov eax,pt"
 "	      00566a65    movsx eax,word ptr [eax+2]"
-"	      00566a69    mov [ebp-8],eax"
+"	      00566a69    mov wpt.x,eax"
 );
 // LINE 20:
 	asm( 
-"	      00566a6c    mov eax,[ebp+8]"
+"	      00566a6c    mov eax,pt"
 "	      00566a6f    movsx eax,word ptr [eax]"
-"	      00566a72    mov [ebp-4],eax"
+"	      00566a72    mov wpt.y,eax"
 );
 // LINE 21:
 	asm( 
-"	      00566a75    lea eax,[ebp-8]"
+"	      00566a75    lea eax,wpt.x"
 "	      00566a78    push eax"
 "	      00566a79    mov eax,ds:[5BF638h]"
 "	      00566a7e    push eax"
@@ -96,14 +96,14 @@ void LocalToGlobal(struct Point* pt) {
 );
 // LINE 22:
 	asm( 
-"	      00566a85    mov eax,[ebp-8]"
-"	      00566a88    mov ecx,[ebp+8]"
+"	      00566a85    mov eax,wpt.x"
+"	      00566a88    mov ecx,pt"
 "	      00566a8b    mov [ecx+2],ax"
 );
 // LINE 23:
 	asm( 
-"	      00566a8f    mov eax,[ebp-4]"
-"	      00566a92    mov ecx,[ebp+8]"
+"	      00566a8f    mov eax,wpt.y"
+"	      00566a92    mov ecx,pt"
 "	      00566a95    mov [ecx],ax"
 );
 // LINE 24:
@@ -163,13 +163,13 @@ short StringWidth(unsigned char * str) {
 );
 // LINE 37:
 	asm( 
-"	      00566ad3    lea eax,[ebp-8]"
+"	      00566ad3    lea eax,textSize.cx"
 "	      00566ad6    push eax"
-"	      00566ad7    mov eax,[ebp+8]"
+"	      00566ad7    mov eax,str"
 "	      00566ada    xor ecx,ecx"
 "	      00566adc    mov cl,[eax]"
 "	      00566ade    push ecx"
-"	      00566adf    mov eax,[ebp+8]"
+"	      00566adf    mov eax,str"
 "	      00566ae2    inc eax"
 "	      00566ae3    push eax"
 "	      00566ae4    mov eax,ds:[5BF63Ch]"
@@ -217,17 +217,17 @@ void PtoCstr(unsigned char * pstr) {
 );
 // LINE 45:
 	asm( 
-"	      00566b1c    mov eax,[ebp+8]"
+"	      00566b1c    mov eax,pstr"
 "	      00566b1f    movzx ax,byte ptr [eax]"
-"	      00566b23    mov [ebp-4],ax"
+"	      00566b23    mov len,ax"
 );
 // LINE 46:
 	asm( 
-"	      00566b27    movsx eax,word ptr [ebp-4]"
+"	      00566b27    movsx eax,len"
 "	      00566b2b    push eax"
-"	      00566b2c    mov eax,[ebp+8]"
+"	      00566b2c    mov eax,pstr"
 "	      00566b2f    push eax"
-"	      00566b30    mov eax,[ebp+8]"
+"	      00566b30    mov eax,pstr"
 "	      00566b33    inc eax"
 "	      00566b34    push eax"
 "	      00566b35    call 00554B76h"
@@ -235,8 +235,8 @@ void PtoCstr(unsigned char * pstr) {
 );
 // LINE 47:
 	asm( 
-"	      00566b3d    movsx eax,word ptr [ebp-4]"
-"	      00566b41    mov ecx,[ebp+8]"
+"	      00566b3d    movsx eax,len"
+"	      00566b41    mov ecx,pstr"
 "	      00566b44    mov byte ptr [eax+ecx],0"
 );
 // LINE 48:
@@ -265,27 +265,27 @@ void CtoPstr(char * cstr) {
 );
 // LINE 53:
 	asm( 
-"	      00566b5b    mov eax,[ebp+8]"
+"	      00566b5b    mov eax,cstr"
 "	      00566b5e    push eax"
 "	      00566b5f    call 0056ABE0h"
 "	      00566b64    add esp,4"
-"	      00566b67    mov [ebp-4],ax"
+"	      00566b67    mov len,ax"
 );
 // LINE 54:
 	asm( 
-"	      00566b6b    movsx eax,word ptr [ebp-4]"
+"	      00566b6b    movsx eax,len"
 "	      00566b6f    cmp eax,0FFh"
 "	      00566b74    jle near ptr 00566B80h"
-"	      00566b7a    mov word ptr [ebp-4],0FFh"
+"	      00566b7a    mov len,0FFh"
 );
 // LINE 55:
 	asm( 
-"	      00566b80    movsx eax,word ptr [ebp-4]"
+"	      00566b80    movsx eax,len"
 "	      00566b84    push eax"
-"	      00566b85    mov eax,[ebp+8]"
+"	      00566b85    mov eax,cstr"
 "	      00566b88    inc eax"
 "	      00566b89    push eax"
-"	      00566b8a    mov eax,[ebp+8]"
+"	      00566b8a    mov eax,cstr"
 "	      00566b8d    push eax"
 "	      00566b8e    call 00554B76h"
 "	      00566b93    add esp,0Ch"
@@ -293,7 +293,7 @@ void CtoPstr(char * cstr) {
 // LINE 56:
 	asm( 
 "	      00566b96    mov al,[ebp-4]"
-"	      00566b99    mov ecx,[ebp+8]"
+"	      00566b99    mov ecx,cstr"
 "	      00566b9c    mov [ecx],al"
 );
 // LINE 57:
@@ -319,38 +319,38 @@ void OffsetRect(struct Rect* rect, short hoff, short voff) {
 );
 // LINE 61:
 	asm( 
-"	      00566bae    mov eax,[ebp+8]"
+"	      00566bae    mov eax,rect"
 "	      00566bb1    movsx eax,word ptr [eax]"
-"	      00566bb4    movsx ecx,word ptr [ebp+10h]"
+"	      00566bb4    movsx ecx,voff"
 "	      00566bb8    add eax,ecx"
-"	      00566bba    mov ecx,[ebp+8]"
+"	      00566bba    mov ecx,rect"
 "	      00566bbd    mov [ecx],ax"
 );
 // LINE 62:
 	asm( 
-"	      00566bc0    mov eax,[ebp+8]"
+"	      00566bc0    mov eax,rect"
 "	      00566bc3    movsx eax,word ptr [eax+4]"
-"	      00566bc7    movsx ecx,word ptr [ebp+10h]"
+"	      00566bc7    movsx ecx,voff"
 "	      00566bcb    add eax,ecx"
-"	      00566bcd    mov ecx,[ebp+8]"
+"	      00566bcd    mov ecx,rect"
 "	      00566bd0    mov [ecx+4],ax"
 );
 // LINE 63:
 	asm( 
-"	      00566bd4    mov eax,[ebp+8]"
+"	      00566bd4    mov eax,rect"
 "	      00566bd7    movsx eax,word ptr [eax+2]"
-"	      00566bdb    movsx ecx,word ptr [ebp+0Ch]"
+"	      00566bdb    movsx ecx,hoff"
 "	      00566bdf    add eax,ecx"
-"	      00566be1    mov ecx,[ebp+8]"
+"	      00566be1    mov ecx,rect"
 "	      00566be4    mov [ecx+2],ax"
 );
 // LINE 64:
 	asm( 
-"	      00566be8    mov eax,[ebp+8]"
+"	      00566be8    mov eax,rect"
 "	      00566beb    movsx eax,word ptr [eax+6]"
-"	      00566bef    movsx ecx,word ptr [ebp+0Ch]"
+"	      00566bef    movsx ecx,hoff"
 "	      00566bf3    add eax,ecx"
-"	      00566bf5    mov ecx,[ebp+8]"
+"	      00566bf5    mov ecx,rect"
 "	      00566bf8    mov [ecx+6],ax"
 );
 // LINE 65:
@@ -382,63 +382,63 @@ unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* res
 );
 // LINE 76:
 	asm( 
-"	      00566c0f    mov eax,[ebp+8]"
+"	      00566c0f    mov eax,rect1"
 "	      00566c12    movsx eax,word ptr [eax]"
-"	      00566c15    mov [ebp-10h],eax"
-"	      00566c18    mov eax,[ebp+8]"
+"	      00566c15    mov lrect1.top,eax"
+"	      00566c18    mov eax,rect1"
 "	      00566c1b    movsx eax,word ptr [eax+4]"
-"	      00566c1f    mov [ebp-8],eax"
-"	      00566c22    mov eax,[ebp+8]"
+"	      00566c1f    mov lrect1.bottom,eax"
+"	      00566c22    mov eax,rect1"
 "	      00566c25    movsx eax,word ptr [eax+2]"
-"	      00566c29    mov [ebp-14h],eax"
-"	      00566c2c    mov eax,[ebp+8]"
+"	      00566c29    mov lrect1.left,eax"
+"	      00566c2c    mov eax,rect1"
 "	      00566c2f    movsx eax,word ptr [eax+6]"
-"	      00566c33    mov [ebp-0Ch],eax"
+"	      00566c33    mov lrect1.right,eax"
 );
 // LINE 77:
 	asm( 
-"	      00566c36    mov eax,[ebp+0Ch]"
+"	      00566c36    mov eax,rect2"
 "	      00566c39    movsx eax,word ptr [eax]"
-"	      00566c3c    mov [ebp-30h],eax"
-"	      00566c3f    mov eax,[ebp+0Ch]"
+"	      00566c3c    mov lrect2.top,eax"
+"	      00566c3f    mov eax,rect2"
 "	      00566c42    movsx eax,word ptr [eax+4]"
-"	      00566c46    mov [ebp-28h],eax"
-"	      00566c49    mov eax,[ebp+0Ch]"
+"	      00566c46    mov lrect2.bottom,eax"
+"	      00566c49    mov eax,rect2"
 "	      00566c4c    movsx eax,word ptr [eax+2]"
-"	      00566c50    mov [ebp-34h],eax"
-"	      00566c53    mov eax,[ebp+0Ch]"
+"	      00566c50    mov lrect2.left,eax"
+"	      00566c53    mov eax,rect2"
 "	      00566c56    movsx eax,word ptr [eax+6]"
-"	      00566c5a    mov [ebp-2Ch],eax"
+"	      00566c5a    mov lrect2.right,eax"
 );
 // LINE 78:
 	asm( 
-"	      00566c5d    lea eax,[ebp-34h]"
+"	      00566c5d    lea eax,lrect2.left"
 "	      00566c60    push eax"
-"	      00566c61    lea eax,[ebp-14h]"
+"	      00566c61    lea eax,lrect1.left"
 "	      00566c64    push eax"
-"	      00566c65    lea eax,[ebp-24h]"
+"	      00566c65    lea eax,lresult.left"
 "	      00566c68    push eax"
 "	      00566c69    call dword ptr ds:[6C37F4h]"
-"	      00566c6f    mov [ebp-4],ax"
+"	      00566c6f    mov sect,ax"
 );
 // LINE 79:
 	asm( 
-"	      00566c73    mov ecx,[ebp-20h]"
-"	      00566c76    mov edx,[ebp+10h]"
+"	      00566c73    mov ecx,lresult.top"
+"	      00566c76    mov edx,result"
 "	      00566c79    mov [edx],cx"
-"	      00566c7c    mov ecx,[ebp-18h]"
-"	      00566c7f    mov edx,[ebp+10h]"
+"	      00566c7c    mov ecx,lresult.bottom"
+"	      00566c7f    mov edx,result"
 "	      00566c82    mov [edx+4],cx"
-"	      00566c86    mov ecx,[ebp-24h]"
-"	      00566c89    mov edx,[ebp+10h]"
+"	      00566c86    mov ecx,lresult.left"
+"	      00566c89    mov edx,result"
 "	      00566c8c    mov [edx+2],cx"
-"	      00566c90    mov ecx,[ebp-1Ch]"
-"	      00566c93    mov edx,[ebp+10h]"
+"	      00566c90    mov ecx,lresult.right"
+"	      00566c93    mov edx,result"
 "	      00566c96    mov [edx+6],cx"
 );
 // LINE 80:
 	asm( 
-"	      00566c9a    mov ax,[ebp-4]"
+"	      00566c9a    mov ax,sect"
 "	      00566c9e    jmp near ptr 00566CA3h"
 );
 // LINE 81:
@@ -467,7 +467,7 @@ void SetPortDC(void * __ptr32 dc) {
 );
 // LINE 105:
 	asm( 
-"	      00566cb3    mov eax,[ebp+8]"
+"	      00566cb3    mov eax,dc"
 "	      00566cb6    mov ds:[5BF63Ch],eax"
 );
 // LINE 106:
@@ -554,7 +554,7 @@ void SetPort(void * __ptr32 newHWND) {
 );
 // LINE 113:
 	asm( 
-"	      00566d43    mov eax,[ebp+8]"
+"	      00566d43    mov eax,newHWND"
 "	      00566d46    mov ds:[5BF638h],eax"
 );
 // LINE 114:
@@ -591,9 +591,9 @@ void SetPort(struct GrafPtr newPort) {
 );
 // LINE 121:
 	asm( 
-"	      00566d71    cmp dword ptr [ebp+8],0"
+"	      00566d71    cmp newPort.window,0"
 "	      00566d75    je near ptr 00566D8Ch"
-"	      00566d7b    mov eax,[ebp+8]"
+"	      00566d7b    mov eax,newPort.window"
 "	      00566d7e    push eax"
 "	      00566d7f    call 00566D38h"
 "	      00566d84    add esp,4"
@@ -604,8 +604,8 @@ void SetPort(struct GrafPtr newPort) {
 );
 // LINE 123:
 	asm( 
-"	      00566d8c    mov eax,[ebp+8]"
-"	      00566d8f    mov ecx,[ebp+0Ch]"
+"	      00566d8c    mov eax,newPort.window"
+"	      00566d8f    mov ecx,newPort.dc"
 "	      00566d92    mov ds:[5BF638h],eax"
 "	      00566d97    mov ds:[5BF63Ch],ecx"
 );
@@ -634,7 +634,7 @@ void GetPort(struct GrafPtr* pPort) {
 	asm( 
 "	      00566dad    mov eax,ds:[5BF638h]"
 "	      00566db2    mov ecx,ds:[5BF63Ch]"
-"	      00566db8    mov edx,[ebp+8]"
+"	      00566db8    mov edx,pPort"
 "	      00566dbb    mov [edx],eax"
 "	      00566dbd    mov [edx+4],ecx"
 );
@@ -677,38 +677,38 @@ void EraseRect(struct tagRECT* rect) {
 );
 // LINE 138:
 	asm( 
-"	      00566dfc    mov eax,[ebp+8]"
+"	      00566dfc    mov eax,rect"
 "	      00566dff    movsx eax,word ptr [eax+4]"
-"	      00566e03    mov [ebp-0Ch],eax"
-"	      00566e06    mov eax,[ebp+8]"
+"	      00566e03    mov lRect.top,eax"
+"	      00566e06    mov eax,rect"
 "	      00566e09    movsx eax,word ptr [eax+0Ch]"
-"	      00566e0d    mov [ebp-4],eax"
-"	      00566e10    mov eax,[ebp+8]"
+"	      00566e0d    mov lRect.bottom,eax"
+"	      00566e10    mov eax,rect"
 "	      00566e13    movsx eax,word ptr [eax]"
-"	      00566e16    mov [ebp-10h],eax"
-"	      00566e19    mov eax,[ebp+8]"
+"	      00566e16    mov lRect.left,eax"
+"	      00566e19    mov eax,rect"
 "	      00566e1c    movsx eax,word ptr [eax+8]"
-"	      00566e20    mov [ebp-8],eax"
+"	      00566e20    mov lRect.right,eax"
 );
 // LINE 139:
 	asm( 
 "	      00566e23    mov eax,ds:[5BF63Ch]"
 "	      00566e28    push eax"
 "	      00566e29    call dword ptr ds:[6C3548h]"
-"	      00566e2f    mov [ebp-18h],eax"
+"	      00566e2f    mov bk,eax"
 );
 // LINE 140:
 	asm( 
-"	      00566e32    mov eax,[ebp-18h]"
+"	      00566e32    mov eax,bk"
 "	      00566e35    push eax"
 "	      00566e36    call dword ptr ds:[6C35D0h]"
-"	      00566e3c    mov [ebp-14h],eax"
+"	      00566e3c    mov tempBrush,eax"
 );
 // LINE 141:
 	asm( 
-"	      00566e3f    mov eax,[ebp-14h]"
+"	      00566e3f    mov eax,tempBrush"
 "	      00566e42    push eax"
-"	      00566e43    lea eax,[ebp-10h]"
+"	      00566e43    lea eax,lRect.left"
 "	      00566e46    push eax"
 "	      00566e47    mov eax,ds:[5BF63Ch]"
 "	      00566e4c    push eax"
@@ -716,7 +716,7 @@ void EraseRect(struct tagRECT* rect) {
 );
 // LINE 142:
 	asm( 
-"	      00566e53    mov eax,[ebp-14h]"
+"	      00566e53    mov eax,tempBrush"
 "	      00566e56    push eax"
 "	      00566e57    call dword ptr ds:[6C358Ch]"
 );
@@ -746,22 +746,22 @@ void EraseRect(struct Rect* r) {
 );
 // LINE 148:
 	asm( 
-"	      00566e70    mov eax,[ebp+8]"
+"	      00566e70    mov eax,r"
 "	      00566e73    movsx eax,word ptr [eax]"
-"	      00566e76    mov [ebp-0Ch],eax"
-"	      00566e79    mov eax,[ebp+8]"
+"	      00566e76    mov lRect.top,eax"
+"	      00566e79    mov eax,r"
 "	      00566e7c    movsx eax,word ptr [eax+4]"
-"	      00566e80    mov [ebp-4],eax"
-"	      00566e83    mov eax,[ebp+8]"
+"	      00566e80    mov lRect.bottom,eax"
+"	      00566e83    mov eax,r"
 "	      00566e86    movsx eax,word ptr [eax+2]"
-"	      00566e8a    mov [ebp-10h],eax"
-"	      00566e8d    mov eax,[ebp+8]"
+"	      00566e8a    mov lRect.left,eax"
+"	      00566e8d    mov eax,r"
 "	      00566e90    movsx eax,word ptr [eax+6]"
-"	      00566e94    mov [ebp-8],eax"
+"	      00566e94    mov lRect.right,eax"
 );
 // LINE 149:
 	asm( 
-"	      00566e97    lea eax,[ebp-10h]"
+"	      00566e97    lea eax,lRect.left"
 "	      00566e9a    push eax"
 "	      00566e9b    call 00566DCAh"
 "	      00566ea0    add esp,4"
@@ -805,35 +805,35 @@ void FrameRect(struct Rect* rect) {
 );
 // LINE 156:
 	asm( 
-"	      00566edf    mov eax,[ebp+8]"
+"	      00566edf    mov eax,rect"
 "	      00566ee2    movsx eax,word ptr [eax]"
-"	      00566ee5    mov [ebp-0Ch],eax"
-"	      00566ee8    mov eax,[ebp+8]"
+"	      00566ee5    mov lRect.top,eax"
+"	      00566ee8    mov eax,rect"
 "	      00566eeb    movsx eax,word ptr [eax+4]"
-"	      00566eef    mov [ebp-4],eax"
-"	      00566ef2    mov eax,[ebp+8]"
+"	      00566eef    mov lRect.bottom,eax"
+"	      00566ef2    mov eax,rect"
 "	      00566ef5    movsx eax,word ptr [eax+2]"
-"	      00566ef9    mov [ebp-10h],eax"
-"	      00566efc    mov eax,[ebp+8]"
+"	      00566ef9    mov lRect.left,eax"
+"	      00566efc    mov eax,rect"
 "	      00566eff    movsx eax,word ptr [eax+6]"
-"	      00566f03    mov [ebp-8],eax"
+"	      00566f03    mov lRect.right,eax"
 );
 // LINE 157:
 	asm( 
-"	      00566f06    mov dword ptr [ebp-18h],0"
+"	      00566f06    mov bk,0"
 );
 // LINE 158:
 	asm( 
-"	      00566f0d    mov eax,[ebp-18h]"
+"	      00566f0d    mov eax,bk"
 "	      00566f10    push eax"
 "	      00566f11    call dword ptr ds:[6C35D0h]"
-"	      00566f17    mov [ebp-14h],eax"
+"	      00566f17    mov tempBrush,eax"
 );
 // LINE 159:
 	asm( 
-"	      00566f1a    mov eax,[ebp-14h]"
+"	      00566f1a    mov eax,tempBrush"
 "	      00566f1d    push eax"
-"	      00566f1e    lea eax,[ebp-10h]"
+"	      00566f1e    lea eax,lRect.left"
 "	      00566f21    push eax"
 "	      00566f22    mov eax,ds:[5BF63Ch]"
 "	      00566f27    push eax"
@@ -841,7 +841,7 @@ void FrameRect(struct Rect* rect) {
 );
 // LINE 160:
 	asm( 
-"	      00566f2e    mov eax,[ebp-14h]"
+"	      00566f2e    mov eax,tempBrush"
 "	      00566f31    push eax"
 "	      00566f32    call dword ptr ds:[6C358Ch]"
 );
@@ -868,26 +868,26 @@ void SetRect(struct Rect* rect, short left, short top, short right, short bottom
 );
 // LINE 165:
 	asm( 
-"	      00566f48    mov ax,[ebp+0Ch]"
-"	      00566f4c    mov ecx,[ebp+8]"
+"	      00566f48    mov ax,left"
+"	      00566f4c    mov ecx,rect"
 "	      00566f4f    mov [ecx+2],ax"
 );
 // LINE 166:
 	asm( 
-"	      00566f53    mov ax,[ebp+10h]"
-"	      00566f57    mov ecx,[ebp+8]"
+"	      00566f53    mov ax,top"
+"	      00566f57    mov ecx,rect"
 "	      00566f5a    mov [ecx],ax"
 );
 // LINE 167:
 	asm( 
-"	      00566f5d    mov ax,[ebp+14h]"
-"	      00566f61    mov ecx,[ebp+8]"
+"	      00566f5d    mov ax,right"
+"	      00566f61    mov ecx,rect"
 "	      00566f64    mov [ecx+6],ax"
 );
 // LINE 168:
 	asm( 
-"	      00566f68    mov ax,[ebp+18h]"
-"	      00566f6c    mov ecx,[ebp+8]"
+"	      00566f68    mov ax,bottom"
+"	      00566f6c    mov ecx,rect"
 "	      00566f6f    mov [ecx+4],ax"
 );
 // LINE 169:
@@ -913,18 +913,18 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 );
 // LINE 173:
 	asm( 
-"	      00566f83    mov eax,[ebp+0Ch]"
+"	      00566f83    mov eax,rect2"
 "	      00566f86    movsx eax,word ptr [eax]"
-"	      00566f89    mov ecx,[ebp+8]"
+"	      00566f89    mov ecx,rect1"
 "	      00566f8c    movsx ecx,word ptr [ecx]"
 "	      00566f8f    cmp eax,ecx"
 "	      00566f91    jle near ptr 00566FA8h"
 );
 // LINE 174:
 	asm( 
-"	      00566f97    mov eax,[ebp+8]"
+"	      00566f97    mov eax,rect1"
 "	      00566f9a    mov ax,[eax]"
-"	      00566f9d    mov ecx,[ebp+10h]"
+"	      00566f9d    mov ecx,result"
 "	      00566fa0    mov [ecx],ax"
 );
 // LINE 175:
@@ -933,25 +933,25 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 );
 // LINE 176:
 	asm( 
-"	      00566fa8    mov eax,[ebp+0Ch]"
+"	      00566fa8    mov eax,rect2"
 "	      00566fab    mov ax,[eax]"
-"	      00566fae    mov ecx,[ebp+10h]"
+"	      00566fae    mov ecx,result"
 "	      00566fb1    mov [ecx],ax"
 );
 // LINE 178:
 	asm( 
-"	      00566fb4    mov eax,[ebp+0Ch]"
+"	      00566fb4    mov eax,rect2"
 "	      00566fb7    movsx eax,word ptr [eax+2]"
-"	      00566fbb    mov ecx,[ebp+8]"
+"	      00566fbb    mov ecx,rect1"
 "	      00566fbe    movsx ecx,word ptr [ecx+2]"
 "	      00566fc2    cmp eax,ecx"
 "	      00566fc4    jle near ptr 00566FDDh"
 );
 // LINE 179:
 	asm( 
-"	      00566fca    mov eax,[ebp+8]"
+"	      00566fca    mov eax,rect1"
 "	      00566fcd    mov ax,[eax+2]"
-"	      00566fd1    mov ecx,[ebp+10h]"
+"	      00566fd1    mov ecx,result"
 "	      00566fd4    mov [ecx+2],ax"
 );
 // LINE 180:
@@ -960,25 +960,25 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 );
 // LINE 181:
 	asm( 
-"	      00566fdd    mov eax,[ebp+0Ch]"
+"	      00566fdd    mov eax,rect2"
 "	      00566fe0    mov ax,[eax+2]"
-"	      00566fe4    mov ecx,[ebp+10h]"
+"	      00566fe4    mov ecx,result"
 "	      00566fe7    mov [ecx+2],ax"
 );
 // LINE 183:
 	asm( 
-"	      00566feb    mov eax,[ebp+0Ch]"
+"	      00566feb    mov eax,rect2"
 "	      00566fee    movsx eax,word ptr [eax+6]"
-"	      00566ff2    mov ecx,[ebp+8]"
+"	      00566ff2    mov ecx,rect1"
 "	      00566ff5    movsx ecx,word ptr [ecx+6]"
 "	      00566ff9    cmp eax,ecx"
 "	      00566ffb    jge near ptr 00567014h"
 );
 // LINE 184:
 	asm( 
-"	      00567001    mov eax,[ebp+8]"
+"	      00567001    mov eax,rect1"
 "	      00567004    mov ax,[eax+6]"
-"	      00567008    mov ecx,[ebp+10h]"
+"	      00567008    mov ecx,result"
 "	      0056700b    mov [ecx+6],ax"
 );
 // LINE 185:
@@ -987,25 +987,25 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 );
 // LINE 186:
 	asm( 
-"	      00567014    mov eax,[ebp+0Ch]"
+"	      00567014    mov eax,rect2"
 "	      00567017    mov ax,[eax+6]"
-"	      0056701b    mov ecx,[ebp+10h]"
+"	      0056701b    mov ecx,result"
 "	      0056701e    mov [ecx+6],ax"
 );
 // LINE 188:
 	asm( 
-"	      00567022    mov eax,[ebp+0Ch]"
+"	      00567022    mov eax,rect2"
 "	      00567025    movsx eax,word ptr [eax+4]"
-"	      00567029    mov ecx,[ebp+8]"
+"	      00567029    mov ecx,rect1"
 "	      0056702c    movsx ecx,word ptr [ecx+4]"
 "	      00567030    cmp eax,ecx"
 "	      00567032    jge near ptr 0056704Bh"
 );
 // LINE 189:
 	asm( 
-"	      00567038    mov eax,[ebp+8]"
+"	      00567038    mov eax,rect1"
 "	      0056703b    mov ax,[eax+4]"
-"	      0056703f    mov ecx,[ebp+10h]"
+"	      0056703f    mov ecx,result"
 "	      00567042    mov [ecx+4],ax"
 );
 // LINE 190:
@@ -1014,9 +1014,9 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 );
 // LINE 191:
 	asm( 
-"	      0056704b    mov eax,[ebp+0Ch]"
+"	      0056704b    mov eax,rect2"
 "	      0056704e    mov ax,[eax+4]"
-"	      00567052    mov ecx,[ebp+10h]"
+"	      00567052    mov ecx,result"
 "	      00567055    mov [ecx+4],ax"
 );
 // LINE 192:
@@ -1042,8 +1042,8 @@ unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 );
 // LINE 196:
 	asm( 
-"	      00567069    mov eax,[ebp+0Ch]"
-"	      0056706c    mov ecx,[ebp+8]"
+"	      00567069    mov eax,rect2"
+"	      0056706c    mov ecx,rect1"
 "	      0056706f    mov ecx,[ecx]"
 "	      00567071    cmp [eax],ecx"
 "	      00567073    je near ptr 00567081h"
@@ -1052,8 +1052,8 @@ unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 );
 // LINE 197:
 	asm( 
-"	      00567081    mov eax,[ebp+0Ch]"
-"	      00567084    mov ecx,[ebp+8]"
+"	      00567081    mov eax,rect2"
+"	      00567084    mov ecx,rect1"
 "	      00567087    mov ecx,[ecx+4]"
 "	      0056708a    cmp [eax+4],ecx"
 "	      0056708d    je near ptr 0056709Bh"
@@ -1087,38 +1087,38 @@ void InsetRect(struct Rect* r, short hdelta, short vdelta) {
 );
 // LINE 203:
 	asm( 
-"	      005670af    mov eax,[ebp+8]"
+"	      005670af    mov eax,r"
 "	      005670b2    movsx eax,word ptr [eax]"
-"	      005670b5    movsx ecx,word ptr [ebp+10h]"
+"	      005670b5    movsx ecx,vdelta"
 "	      005670b9    add eax,ecx"
-"	      005670bb    mov ecx,[ebp+8]"
+"	      005670bb    mov ecx,r"
 "	      005670be    mov [ecx],ax"
 );
 // LINE 204:
 	asm( 
-"	      005670c1    mov eax,[ebp+8]"
+"	      005670c1    mov eax,r"
 "	      005670c4    movsx eax,word ptr [eax+4]"
-"	      005670c8    movsx ecx,word ptr [ebp+10h]"
+"	      005670c8    movsx ecx,vdelta"
 "	      005670cc    sub eax,ecx"
-"	      005670ce    mov ecx,[ebp+8]"
+"	      005670ce    mov ecx,r"
 "	      005670d1    mov [ecx+4],ax"
 );
 // LINE 205:
 	asm( 
-"	      005670d5    mov eax,[ebp+8]"
+"	      005670d5    mov eax,r"
 "	      005670d8    movsx eax,word ptr [eax+2]"
-"	      005670dc    movsx ecx,word ptr [ebp+0Ch]"
+"	      005670dc    movsx ecx,hdelta"
 "	      005670e0    add eax,ecx"
-"	      005670e2    mov ecx,[ebp+8]"
+"	      005670e2    mov ecx,r"
 "	      005670e5    mov [ecx+2],ax"
 );
 // LINE 206:
 	asm( 
-"	      005670e9    mov eax,[ebp+8]"
+"	      005670e9    mov eax,r"
 "	      005670ec    movsx eax,word ptr [eax+6]"
-"	      005670f0    movsx ecx,word ptr [ebp+0Ch]"
+"	      005670f0    movsx ecx,hdelta"
 "	      005670f4    sub eax,ecx"
-"	      005670f6    mov ecx,[ebp+8]"
+"	      005670f6    mov ecx,r"
 "	      005670f9    mov [ecx+6],ax"
 );
 // LINE 207:
@@ -1144,24 +1144,24 @@ unsigned short PtInRect(struct Point p, struct Rect* r) {
 );
 // LINE 211:
 	asm( 
-"	      0056710d    mov eax,[ebp+0Ch]"
+"	      0056710d    mov eax,r"
 "	      00567110    movsx eax,word ptr [eax+2]"
-"	      00567114    movsx ecx,word ptr [ebp+0Ah]"
+"	      00567114    movsx ecx,p.h"
 "	      00567118    cmp eax,ecx"
 "	      0056711a    jg near ptr 00567158h"
-"	      00567120    mov eax,[ebp+0Ch]"
+"	      00567120    mov eax,r"
 "	      00567123    movsx eax,word ptr [eax+6]"
-"	      00567127    movsx ecx,word ptr [ebp+0Ah]"
+"	      00567127    movsx ecx,p.h"
 "	      0056712b    cmp eax,ecx"
 "	      0056712d    jle near ptr 00567158h"
-"	      00567133    mov eax,[ebp+0Ch]"
+"	      00567133    mov eax,r"
 "	      00567136    movsx eax,word ptr [eax]"
-"	      00567139    movsx ecx,word ptr [ebp+8]"
+"	      00567139    movsx ecx,p.v"
 "	      0056713d    cmp eax,ecx"
 "	      0056713f    jg near ptr 00567158h"
-"	      00567145    mov eax,[ebp+0Ch]"
+"	      00567145    mov eax,r"
 "	      00567148    movsx eax,word ptr [eax+4]"
-"	      0056714c    movsx ecx,word ptr [ebp+8]"
+"	      0056714c    movsx ecx,p.v"
 "	      00567150    cmp eax,ecx"
 "	      00567152    jg near ptr 00567165h"
 "	      00567158    xor ax,ax"
@@ -1195,15 +1195,15 @@ unsigned short EmptyRect(struct Rect* r) {
 );
 // LINE 217:
 	asm( 
-"	      00567179    mov eax,[ebp+8]"
+"	      00567179    mov eax,r"
 "	      0056717c    movsx eax,word ptr [eax+4]"
-"	      00567180    mov ecx,[ebp+8]"
+"	      00567180    mov ecx,r"
 "	      00567183    movsx ecx,word ptr [ecx]"
 "	      00567186    cmp eax,ecx"
 "	      00567188    jle near ptr 005671A4h"
-"	      0056718e    mov eax,[ebp+8]"
+"	      0056718e    mov eax,r"
 "	      00567191    movsx eax,word ptr [eax+2]"
-"	      00567195    mov ecx,[ebp+8]"
+"	      00567195    mov ecx,r"
 "	      00567198    movsx ecx,word ptr [ecx+6]"
 "	      0056719c    cmp eax,ecx"
 "	      0056719e    jl near ptr 005671ADh"
@@ -1240,7 +1240,7 @@ void GetBackColor(unsigned long * color) {
 "	      005671c0    mov eax,ds:[5BF63Ch]"
 "	      005671c5    push eax"
 "	      005671c6    call dword ptr ds:[6C3548h]"
-"	      005671cc    mov ecx,[ebp+8]"
+"	      005671cc    mov ecx,color"
 "	      005671cf    mov [ecx],eax"
 );
 // LINE 224:
@@ -1266,7 +1266,7 @@ void RGBBackColor(unsigned long * color) {
 );
 // LINE 228:
 	asm( 
-"	      005671e1    mov eax,[ebp+8]"
+"	      005671e1    mov eax,color"
 "	      005671e4    mov eax,[eax]"
 "	      005671e6    push eax"
 "	      005671e7    mov eax,ds:[5BF63Ch]"

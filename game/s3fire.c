@@ -25,17 +25,17 @@ void S3FireReset() {
 );
 // LINE 111:
 	asm( 
-"	      00524603    mov dword ptr [ebp-8],0"
-"	      0052460a    mov dword ptr [ebp-4],6666F0h"
+"	      00524603    mov i,0"
+"	      0052460a    mov fd,6666F0h"
 "	      00524611    jmp near ptr 00524620h"
-"	      00524616    inc dword ptr [ebp-8]"
-"	      00524619    add dword ptr [ebp-4],0A0h"
-"	      00524620    cmp dword ptr [ebp-8],8Ch"
+"	      00524616    inc i"
+"	      00524619    add fd,0A0h"
+"	      00524620    cmp i,8Ch"
 "	      00524627    jge near ptr 0052463Bh"
 );
 // LINE 114:
 	asm( 
-"	      0052462d    mov eax,[ebp-4]"
+"	      0052462d    mov eax,fd"
 "	      00524630    mov dword ptr [eax],0"
 );
 // LINE 115:
@@ -44,20 +44,20 @@ void S3FireReset() {
 );
 // LINE 119:
 	asm( 
-"	      0052463b    mov dword ptr [ebp-8],0"
+"	      0052463b    mov i,0"
 "	      00524642    jmp near ptr 0052464Ah"
-"	      00524647    inc dword ptr [ebp-8]"
-"	      0052464a    cmp dword ptr [ebp-8],8Ch"
+"	      00524647    inc i"
+"	      0052464a    cmp i,8Ch"
 "	      00524651    jge near ptr 00524678h"
 );
 // LINE 121:
 	asm( 
-"	      00524657    mov eax,[ebp-8]"
+"	      00524657    mov eax,i"
 "	      0052465a    mov dword ptr [eax*8+66BE90h],0"
 );
 // LINE 122:
 	asm( 
-"	      00524665    mov eax,[ebp-8]"
+"	      00524665    mov eax,i"
 "	      00524668    mov dword ptr [eax*8+66BE94h],0"
 );
 // LINE 123:
@@ -94,7 +94,7 @@ void S3FireInit() {
 );
 // LINE 143:
 	asm( 
-"	      00524686    lea eax,[ebp-24h]"
+"	      00524686    lea eax,oinfo.Faces"
 "	      00524689    push eax"
 "	      0052468a    push 120h"
 "	      0052468f    call 004D8821h"
@@ -111,7 +111,7 @@ void S3FireInit() {
 "	      005246ad    push eax"
 "	      005246ae    call 004D3E9Dh"
 "	      005246b3    add esp,4"
-"	      005246b6    mov [ebp-38h],eax"
+"	      005246b6    mov height,eax"
 );
 // LINE 147:
 	asm( 
@@ -121,51 +121,51 @@ void S3FireInit() {
 "	      005246c6    push eax"
 "	      005246c7    call 004D4D73h"
 "	      005246cc    add esp,4"
-"	      005246cf    mov [ebp-28h],eax"
+"	      005246cf    mov size,eax"
 );
 // LINE 154:
 	asm( 
-"	      005246d2    mov dword ptr [ebp-30h],0"
-"	      005246d9    mov dword ptr [ebp-2Ch],6666F0h"
+"	      005246d2    mov i,0"
+"	      005246d9    mov fd,6666F0h"
 "	      005246e0    jmp near ptr 005246EFh"
-"	      005246e5    inc dword ptr [ebp-30h]"
-"	      005246e8    add dword ptr [ebp-2Ch],0A0h"
-"	      005246ef    cmp dword ptr [ebp-30h],8Ch"
+"	      005246e5    inc i"
+"	      005246e8    add fd,0A0h"
+"	      005246ef    cmp i,8Ch"
 "	      005246f6    jge near ptr 005247E7h"
 );
 // LINE 157:
 	asm( 
-"	      005246fc    mov eax,[ebp-2Ch]"
+"	      005246fc    mov eax,fd"
 "	      005246ff    mov dword ptr [eax],0"
 );
 // LINE 158:
 	asm( 
-"	      00524705    mov eax,[ebp-2Ch]"
+"	      00524705    mov eax,fd"
 "	      00524708    mov dword ptr [eax+4],0"
 );
 // LINE 159:
 	asm( 
-"	      0052470f    mov eax,[ebp-2Ch]"
+"	      0052470f    mov eax,fd"
 "	      00524712    mov dword ptr [eax+8],0"
 );
 // LINE 160:
 	asm( 
-"	      00524719    mov eax,[ebp-2Ch]"
+"	      00524719    mov eax,fd"
 "	      0052471c    mov dword ptr [eax+10h],0"
 );
 // LINE 161:
 	asm( 
-"	      00524723    mov eax,[ebp-2Ch]"
+"	      00524723    mov eax,fd"
 "	      00524726    mov dword ptr [eax+14h],0"
 );
 // LINE 162:
 	asm( 
-"	      0052472d    mov eax,[ebp-2Ch]"
+"	      0052472d    mov eax,fd"
 "	      00524730    mov dword ptr [eax+18h],0"
 );
 // LINE 163:
 	asm( 
-"	      00524737    mov eax,[ebp-2Ch]"
+"	      00524737    mov eax,fd"
 "	      0052473a    mov dword ptr [eax+1Ch],0"
 );
 // LINE 165:
@@ -175,35 +175,35 @@ void S3FireInit() {
 "	      00524748    push eax"
 "	      00524749    call 004CB4ACh"
 "	      0052474e    add esp,8"
-"	      00524751    mov ecx,[ebp-2Ch]"
+"	      00524751    mov ecx,fd"
 "	      00524754    mov [ecx+20h],eax"
 );
 // LINE 166:
 	asm( 
-"	      00524757    mov eax,[ebp-2Ch]"
+"	      00524757    mov eax,fd"
 "	      0052475a    mov eax,[eax+20h]"
 "	      0052475d    mov dword ptr [eax+8],1"
 );
 // LINE 167:
 	asm( 
-"	      00524764    mov eax,[ebp-2Ch]"
-"	      00524767    mov ecx,[ebp-2Ch]"
+"	      00524764    mov eax,fd"
+"	      00524767    mov ecx,fd"
 "	      0052476a    mov ecx,[ecx+20h]"
 "	      0052476d    mov [ecx+0Ch],eax"
 );
 // LINE 169:
 	asm( 
-"	      00524770    mov eax,[ebp-28h]"
+"	      00524770    mov eax,size"
 "	      00524773    push eax"
 "	      00524774    mov eax,ds:[5B5E78h]"
 "	      00524779    push eax"
 "	      0052477a    call 004CB4ACh"
 "	      0052477f    add esp,8"
-"	      00524782    mov [ebp-34h],eax"
+"	      00524782    mov mem,eax"
 );
 // LINE 170:
 	asm( 
-"	      00524785    mov eax,[ebp-34h]"
+"	      00524785    mov eax,mem"
 "	      00524788    push eax"
 "	      00524789    push 120h"
 "	      0052478e    call 004D8821h"
@@ -211,7 +211,7 @@ void S3FireInit() {
 "	      00524796    push eax"
 "	      00524797    call 004D4DBFh"
 "	      0052479c    add esp,8"
-"	      0052479f    mov ecx,[ebp-2Ch]"
+"	      0052479f    mov ecx,fd"
 "	      005247a2    mov ecx,[ecx+20h]"
 "	      005247a5    mov [ecx+4],eax"
 );
@@ -219,7 +219,7 @@ void S3FireInit() {
 	asm( 
 "	      005247a8    mov eax,ds:[5B4780h]"
 "	      005247ad    push eax"
-"	      005247ae    mov eax,[ebp-2Ch]"
+"	      005247ae    mov eax,fd"
 "	      005247b1    mov eax,[eax+20h]"
 "	      005247b4    mov eax,[eax+4]"
 "	      005247b7    push eax"
@@ -228,21 +228,21 @@ void S3FireInit() {
 );
 // LINE 174:
 	asm( 
-"	      005247c0    mov eax,[ebp-2Ch]"
+"	      005247c0    mov eax,fd"
 "	      005247c3    mov dword ptr [eax+34h],100000h"
 );
 // LINE 175:
 	asm( 
-"	      005247ca    mov eax,[ebp-38h]"
-"	      005247cd    mov ecx,[ebp-2Ch]"
+"	      005247ca    mov eax,height"
+"	      005247cd    mov ecx,fd"
 "	      005247d0    mov [ecx+38h],eax"
 );
 // LINE 176:
 	asm( 
-"	      005247d3    mov eax,[ebp-2Ch]"
+"	      005247d3    mov eax,fd"
 "	      005247d6    mov eax,[eax+20h]"
 "	      005247d9    mov eax,[eax+4]"
-"	      005247dc    mov ecx,[ebp-2Ch]"
+"	      005247dc    mov ecx,fd"
 "	      005247df    mov [ecx+2Ch],eax"
 );
 // LINE 177:
@@ -251,20 +251,20 @@ void S3FireInit() {
 );
 // LINE 181:
 	asm( 
-"	      005247e7    mov dword ptr [ebp-30h],0"
+"	      005247e7    mov i,0"
 "	      005247ee    jmp near ptr 005247F6h"
-"	      005247f3    inc dword ptr [ebp-30h]"
-"	      005247f6    cmp dword ptr [ebp-30h],8Ch"
+"	      005247f3    inc i"
+"	      005247f6    cmp i,8Ch"
 "	      005247fd    jge near ptr 00524824h"
 );
 // LINE 183:
 	asm( 
-"	      00524803    mov eax,[ebp-30h]"
+"	      00524803    mov eax,i"
 "	      00524806    mov dword ptr [eax*8+66BE90h],0"
 );
 // LINE 184:
 	asm( 
-"	      00524811    mov eax,[ebp-30h]"
+"	      00524811    mov eax,i"
 "	      00524814    mov dword ptr [eax*8+66BE94h],0"
 );
 // LINE 185:
@@ -302,17 +302,17 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 213:
 	asm( 
-"	      00524832    mov dword ptr [ebp-34h],0"
-"	      00524839    mov dword ptr [ebp-28h],6666F0h"
+"	      00524832    mov i,0"
+"	      00524839    mov fd,6666F0h"
 "	      00524840    jmp near ptr 0052484Fh"
-"	      00524845    inc dword ptr [ebp-34h]"
-"	      00524848    add dword ptr [ebp-28h],0A0h"
-"	      0052484f    cmp dword ptr [ebp-34h],8Ch"
+"	      00524845    inc i"
+"	      00524848    add fd,0A0h"
+"	      0052484f    cmp i,8Ch"
 "	      00524856    jge near ptr 00524872h"
 );
 // LINE 215:
 	asm( 
-"	      0052485c    mov eax,[ebp-28h]"
+"	      0052485c    mov eax,fd"
 "	      0052485f    test byte ptr [eax],1"
 "	      00524862    jne near ptr 0052486Dh"
 );
@@ -326,7 +326,7 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 220:
 	asm( 
-"	      00524872    cmp dword ptr [ebp-34h],8Ch"
+"	      00524872    cmp i,8Ch"
 "	      00524879    jne near ptr 00524886h"
 );
 // LINE 221:
@@ -336,17 +336,17 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 223:
 	asm( 
-"	      00524886    mov eax,[ebp+10h]"
+"	      00524886    mov eax,celly"
 "	      00524889    and eax,0FFh"
-"	      0052488e    mov ecx,[ebp+0Ch]"
+"	      0052488e    mov ecx,cellx"
 "	      00524891    and ecx,0FFh"
 "	      00524897    shl ecx,0Ah"
 "	      0052489a    mov eax,[ecx+eax*4+67ED30h]"
-"	      005248a1    mov [ebp-50h],eax"
+"	      005248a1    mov cptr,eax"
 );
 // LINE 225:
 	asm( 
-"	      005248a4    mov eax,[ebp-50h]"
+"	      005248a4    mov eax,cptr"
 "	      005248a7    cmp dword ptr [eax+0Ch],0"
 "	      005248ab    jne near ptr 005248B8h"
 );
@@ -357,54 +357,54 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 228:
 	asm( 
-"	      005248b8    mov eax,[ebp+0Ch]"
-"	      005248bb    mov ecx,[ebp-28h]"
+"	      005248b8    mov eax,cellx"
+"	      005248bb    mov ecx,fd"
 "	      005248be    mov [ecx+8Ch],eax"
 );
 // LINE 229:
 	asm( 
-"	      005248c4    mov eax,[ebp+10h]"
-"	      005248c7    mov ecx,[ebp-28h]"
+"	      005248c4    mov eax,celly"
+"	      005248c7    mov ecx,fd"
 "	      005248ca    mov [ecx+90h],eax"
 );
 // LINE 231:
 	asm( 
-"	      005248d0    mov eax,[ebp+24h]"
-"	      005248d3    mov ecx,[ebp-28h]"
+"	      005248d0    mov eax,mission_id"
+"	      005248d3    mov ecx,fd"
 "	      005248d6    mov [ecx+9Ch],eax"
 );
 // LINE 234:
 	asm( 
-"	      005248dc    mov eax,[ebp+20h]"
+"	      005248dc    mov eax,side_flag"
 "	      005248df    or eax,1"
-"	      005248e2    mov ecx,[ebp-28h]"
+"	      005248e2    mov ecx,fd"
 "	      005248e5    mov [ecx],eax"
 );
 // LINE 238:
 	asm( 
-"	      005248e7    mov dword ptr [ebp-30h],0"
+"	      005248e7    mov maxradius,0"
 );
 // LINE 239:
 	asm( 
-"	      005248ee    mov eax,[ebp-50h]"
+"	      005248ee    mov eax,cptr"
 "	      005248f1    mov eax,[eax+0Ch]"
-"	      005248f4    mov [ebp-2Ch],eax"
+"	      005248f4    mov stobj,eax"
 );
 // LINE 240:
 	asm( 
-"	      005248f7    mov eax,[ebp-28h]"
+"	      005248f7    mov eax,fd"
 "	      005248fa    mov dword ptr [eax+94h],0"
 );
 // LINE 241:
 	asm( 
-"	      00524904    cmp dword ptr [ebp-2Ch],0"
+"	      00524904    cmp stobj,0"
 "	      00524908    je near ptr 00524967h"
 );
 // LINE 243:
 	asm( 
-"	      0052490e    lea eax,[ebp-24h]"
+"	      0052490e    lea eax,oinfo.Faces"
 "	      00524911    push eax"
-"	      00524912    mov eax,[ebp-2Ch]"
+"	      00524912    mov eax,stobj"
 "	      00524915    mov eax,[eax+4]"
 "	      00524918    push eax"
 "	      00524919    call 004D8859h"
@@ -412,21 +412,21 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 244:
 	asm( 
-"	      00524921    mov eax,[ebp-2Ch]"
+"	      00524921    mov eax,stobj"
 "	      00524924    test byte ptr [eax+8],4"
 "	      00524928    je near ptr 00524948h"
 );
 // LINE 246:
 	asm( 
-"	      0052492e    mov eax,[ebp-2Ch]"
+"	      0052492e    mov eax,stobj"
 "	      00524931    mov eax,[eax+4]"
-"	      00524934    mov ecx,[ebp-28h]"
+"	      00524934    mov ecx,fd"
 "	      00524937    mov [ecx+94h],eax"
 );
 // LINE 247:
 	asm( 
-"	      0052493d    mov eax,[ebp-18h]"
-"	      00524940    mov [ebp-30h],eax"
+"	      0052493d    mov eax,oinfo.Radius"
+"	      00524940    mov maxradius,eax"
 );
 // LINE 248:
 	asm( 
@@ -434,17 +434,17 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 250:
 	asm( 
-"	      00524948    mov eax,[ebp-30h]"
-"	      0052494b    cmp [ebp-18h],eax"
+"	      00524948    mov eax,maxradius"
+"	      0052494b    cmp oinfo.Radius,eax"
 "	      0052494e    jle near ptr 0052495Ah"
-"	      00524954    mov eax,[ebp-18h]"
-"	      00524957    mov [ebp-30h],eax"
+"	      00524954    mov eax,oinfo.Radius"
+"	      00524957    mov maxradius,eax"
 );
 // LINE 251:
 	asm( 
-"	      0052495a    mov eax,[ebp-2Ch]"
+"	      0052495a    mov eax,stobj"
 "	      0052495d    mov eax,[eax]"
-"	      0052495f    mov [ebp-2Ch],eax"
+"	      0052495f    mov stobj,eax"
 );
 // LINE 252:
 	asm( 
@@ -452,19 +452,19 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 254:
 	asm( 
-"	      00524967    mov eax,[ebp-50h]"
+"	      00524967    mov eax,cptr"
 "	      0052496a    movsx eax,word ptr [eax+8]"
 "	      0052496e    cmp eax,1"
 "	      00524971    jle near ptr 0052498Fh"
 );
 // LINE 255:
 	asm( 
-"	      00524977    mov eax,[ebp-50h]"
+"	      00524977    mov eax,cptr"
 "	      0052497a    movsx ecx,word ptr [eax+8]"
-"	      0052497e    mov eax,[ebp-30h]"
+"	      0052497e    mov eax,maxradius"
 "	      00524981    cdq"
 "	      00524982    idiv ecx"
-"	      00524984    mov ecx,[ebp-28h]"
+"	      00524984    mov ecx,fd"
 "	      00524987    mov [ecx+0Ch],eax"
 );
 // LINE 256:
@@ -473,15 +473,15 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 257:
 	asm( 
-"	      0052498f    mov eax,[ebp-28h]"
+"	      0052498f    mov eax,fd"
 "	      00524992    mov dword ptr [eax+0Ch],200000h"
 );
 // LINE 259:
 	asm( 
-"	      00524999    mov eax,[ebp-50h]"
+"	      00524999    mov eax,cptr"
 "	      0052499c    movsx eax,word ptr [eax+8]"
 "	      005249a0    dec eax"
-"	      005249a1    mov ecx,[ebp-28h]"
+"	      005249a1    mov ecx,fd"
 "	      005249a4    mov [ecx+1Ch],eax"
 );
 // LINE 260:
@@ -490,7 +490,7 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 "	      005249ac    shl eax,2"
 "	      005249af    lea eax,[eax+eax*4]"
 "	      005249b2    add eax,ds:[5B7388h]"
-"	      005249b8    mov ecx,[ebp-28h]"
+"	      005249b8    mov ecx,fd"
 "	      005249bb    mov [ecx+8],eax"
 );
 // LINE 261:
@@ -500,35 +500,35 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 "	      005249c9    lea ecx,[ecx+ecx*4-5]"
 "	      005249cd    shl ecx,12h"
 "	      005249d0    sub eax,ecx"
-"	      005249d2    mov ecx,[ebp-28h]"
+"	      005249d2    mov ecx,fd"
 "	      005249d5    mov [ecx+4],eax"
 );
 // LINE 262:
 	asm( 
-"	      005249d8    mov eax,[ebp+8]"
-"	      005249db    mov ecx,[ebp-28h]"
+"	      005249d8    mov eax,cfd"
+"	      005249db    mov ecx,fd"
 "	      005249de    mov [ecx+98h],eax"
 );
 // LINE 263:
 	asm( 
-"	      005249e4    mov eax,[ebp+8]"
+"	      005249e4    mov eax,cfd"
 "	      005249e7    inc dword ptr [eax+4]"
 );
 // LINE 270:
 	asm( 
-"	      005249ea    mov eax,[ebp+1Ch]"
-"	      005249ed    mov ecx,[ebp-28h]"
+"	      005249ea    mov eax,z"
+"	      005249ed    mov ecx,fd"
 "	      005249f0    sub eax,[ecx+18h]"
 "	      005249f3    push eax"
-"	      005249f4    mov eax,[ebp+18h]"
-"	      005249f7    mov ecx,[ebp-28h]"
+"	      005249f4    mov eax,y"
+"	      005249f7    mov ecx,fd"
 "	      005249fa    sub eax,[ecx+14h]"
 "	      005249fd    push eax"
-"	      005249fe    mov eax,[ebp+14h]"
-"	      00524a01    mov ecx,[ebp-28h]"
+"	      005249fe    mov eax,x"
+"	      00524a01    mov ecx,fd"
 "	      00524a04    sub eax,[ecx+10h]"
 "	      00524a07    push eax"
-"	      00524a08    mov eax,[ebp-28h]"
+"	      00524a08    mov eax,fd"
 "	      00524a0b    mov eax,[eax+20h]"
 "	      00524a0e    mov eax,[eax+4]"
 "	      00524a11    push eax"
@@ -537,90 +537,90 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 272:
 	asm( 
-"	      00524a1a    mov eax,[ebp+14h]"
-"	      00524a1d    mov ecx,[ebp-28h]"
+"	      00524a1a    mov eax,x"
+"	      00524a1d    mov ecx,fd"
 "	      00524a20    mov [ecx+10h],eax"
 );
 // LINE 273:
 	asm( 
-"	      00524a23    mov eax,[ebp+18h]"
-"	      00524a26    mov ecx,[ebp-28h]"
+"	      00524a23    mov eax,y"
+"	      00524a26    mov ecx,fd"
 "	      00524a29    mov [ecx+14h],eax"
 );
 // LINE 274:
 	asm( 
-"	      00524a2c    mov eax,[ebp+1Ch]"
-"	      00524a2f    mov ecx,[ebp-28h]"
+"	      00524a2c    mov eax,z"
+"	      00524a2f    mov ecx,fd"
 "	      00524a32    mov [ecx+18h],eax"
 );
 // LINE 277:
 	asm( 
-"	      00524a35    mov eax,[ebp-50h]"
+"	      00524a35    mov eax,cptr"
 "	      00524a38    movsx eax,word ptr [eax+2]"
 "	      00524a3c    shl eax,10h"
-"	      00524a3f    add eax,[ebp+14h]"
-"	      00524a42    mov ecx,[ebp-28h]"
+"	      00524a3f    add eax,x"
+"	      00524a42    mov ecx,fd"
 "	      00524a45    mov [ecx+3Ch],eax"
 );
 // LINE 278:
 	asm( 
-"	      00524a48    mov eax,[ebp-50h]"
+"	      00524a48    mov eax,cptr"
 "	      00524a4b    movsx eax,word ptr [eax+4]"
 "	      00524a4f    shl eax,10h"
-"	      00524a52    add eax,[ebp+18h]"
-"	      00524a55    mov ecx,[ebp-28h]"
+"	      00524a52    add eax,y"
+"	      00524a55    mov ecx,fd"
 "	      00524a58    mov [ecx+40h],eax"
 );
 // LINE 279:
 	asm( 
-"	      00524a5b    mov eax,[ebp-50h]"
+"	      00524a5b    mov eax,cptr"
 "	      00524a5e    movsx eax,word ptr [eax+6]"
 "	      00524a62    shl eax,10h"
-"	      00524a65    add eax,[ebp+1Ch]"
-"	      00524a68    mov ecx,[ebp-28h]"
+"	      00524a65    add eax,z"
+"	      00524a68    mov ecx,fd"
 "	      00524a6b    mov [ecx+44h],eax"
 );
 // LINE 282:
 	asm( 
-"	      00524a6e    mov eax,[ebp-28h]"
+"	      00524a6e    mov eax,fd"
 "	      00524a71    mov dword ptr [eax+88h],8000h"
 );
 // LINE 285:
 	asm( 
-"	      00524a7b    mov eax,[ebp-50h]"
+"	      00524a7b    mov eax,cptr"
 "	      00524a7e    mov eax,[eax+0Ch]"
-"	      00524a81    mov ecx,[ebp-28h]"
+"	      00524a81    mov ecx,fd"
 "	      00524a84    mov ecx,[ecx+20h]"
 "	      00524a87    mov [ecx],eax"
 );
 // LINE 286:
 	asm( 
-"	      00524a89    mov eax,[ebp-28h]"
+"	      00524a89    mov eax,fd"
 "	      00524a8c    mov eax,[eax+20h]"
-"	      00524a8f    mov ecx,[ebp-50h]"
+"	      00524a8f    mov ecx,cptr"
 "	      00524a92    mov [ecx+0Ch],eax"
 );
 // LINE 288:
 	asm( 
-"	      00524a95    mov dword ptr [ebp-4Ch],1"
+"	      00524a95    mov mp.op,1"
 );
 // LINE 289:
 	asm( 
-"	      00524a9c    mov eax,[ebp+24h]"
-"	      00524a9f    mov [ebp-48h],eax"
+"	      00524a9c    mov eax,mission_id"
+"	      00524a9f    mov mp.id,eax"
 );
 // LINE 290:
 	asm( 
-"	      00524aa2    mov dword ptr [ebp-3Ch],1"
+"	      00524aa2    mov mp.i2num,1"
 );
 // LINE 291:
 	asm( 
-"	      00524aa9    mov eax,[ebp+28h]"
-"	      00524aac    mov [ebp-38h],eax"
+"	      00524aa9    mov eax,flags"
+"	      00524aac    mov mp.flags,eax"
 );
 // LINE 292:
 	asm( 
-"	      00524aaf    lea eax,[ebp-4Ch]"
+"	      00524aaf    lea eax,mp.op"
 "	      00524ab2    push eax"
 "	      00524ab3    call 004FBD4Ah"
 "	      00524ab8    add esp,4"
@@ -631,10 +631,10 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 );
 // LINE 295:
 	asm( 
-"	      00524ac1    mov eax,[ebp-50h]"
+"	      00524ac1    mov eax,cptr"
 "	      00524ac4    movsx eax,word ptr [eax]"
 "	      00524ac7    or eax,20h"
-"	      00524aca    mov ecx,[ebp-50h]"
+"	      00524aca    mov ecx,cptr"
 "	      00524acd    mov [ecx],ax"
 );
 // LINE 297:
@@ -680,14 +680,14 @@ void S3FireDriver() {
 );
 // LINE 322:
 	asm( 
-"	      00524ae8    mov dword ptr [ebp-54h],0"
+"	      00524ae8    mov fireloopsound,0"
 );
 // LINE 325:
 	asm( 
 "	      00524aef    push 0Dh"
 "	      00524af1    call 00446F02h"
 "	      00524af6    add esp,4"
-"	      00524af9    mov [ebp-54h],eax"
+"	      00524af9    mov fireloopsound,eax"
 );
 // LINE 328:
 	asm( 
@@ -696,7 +696,7 @@ void S3FireDriver() {
 );
 // LINE 330:
 	asm( 
-"	      00524b09    cmp dword ptr [ebp-54h],1"
+"	      00524b09    cmp fireloopsound,1"
 "	      00524b0d    jne near ptr 00524B1Dh"
 );
 // LINE 332:
@@ -711,21 +711,21 @@ void S3FireDriver() {
 );
 // LINE 338:
 	asm( 
-"	      00524b22    mov dword ptr [ebp-4],7D00h"
+"	      00524b22    mov mindist,7D00h"
 );
 // LINE 341:
 	asm( 
-"	      00524b29    mov dword ptr [ebp-24h],0"
-"	      00524b30    mov dword ptr [ebp-8],6666F0h"
+"	      00524b29    mov i,0"
+"	      00524b30    mov fd,6666F0h"
 "	      00524b37    jmp near ptr 00524B46h"
-"	      00524b3c    inc dword ptr [ebp-24h]"
-"	      00524b3f    add dword ptr [ebp-8],0A0h"
-"	      00524b46    cmp dword ptr [ebp-24h],8Ch"
+"	      00524b3c    inc i"
+"	      00524b3f    add fd,0A0h"
+"	      00524b46    cmp i,8Ch"
 "	      00524b4d    jge near ptr 00525064h"
 );
 // LINE 343:
 	asm( 
-"	      00524b53    mov eax,[ebp-8]"
+"	      00524b53    mov eax,fd"
 "	      00524b56    test byte ptr [eax],1"
 "	      00524b59    jne near ptr 00524B64h"
 );
@@ -735,7 +735,7 @@ void S3FireDriver() {
 );
 // LINE 346:
 	asm( 
-"	      00524b64    mov eax,[ebp-8]"
+"	      00524b64    mov eax,fd"
 "	      00524b67    mov eax,[eax+98h]"
 "	      00524b6d    mov eax,[eax]"
 "	      00524b6f    movsx eax,word ptr [eax]"
@@ -744,74 +744,74 @@ void S3FireDriver() {
 );
 // LINE 355:
 	asm( 
-"	      00524b7a    mov eax,[ebp-8]"
+"	      00524b7a    mov eax,fd"
 "	      00524b7d    mov eax,[eax+98h]"
 "	      00524b83    mov eax,[eax]"
 "	      00524b85    movsx eax,word ptr [eax+2]"
 "	      00524b89    shl eax,10h"
-"	      00524b8c    mov [ebp-30h],eax"
+"	      00524b8c    mov floc.x,eax"
 );
 // LINE 356:
 	asm( 
-"	      00524b8f    mov eax,[ebp-8]"
+"	      00524b8f    mov eax,fd"
 "	      00524b92    mov eax,[eax+98h]"
 "	      00524b98    mov eax,[eax]"
 "	      00524b9a    movsx eax,word ptr [eax+4]"
 "	      00524b9e    shl eax,10h"
-"	      00524ba1    mov [ebp-2Ch],eax"
+"	      00524ba1    mov floc.y,eax"
 );
 // LINE 357:
 	asm( 
-"	      00524ba4    mov eax,[ebp-8]"
+"	      00524ba4    mov eax,fd"
 "	      00524ba7    mov eax,[eax+98h]"
 "	      00524bad    mov eax,[eax]"
 "	      00524baf    movsx eax,word ptr [eax+6]"
 "	      00524bb3    shl eax,10h"
-"	      00524bb6    mov [ebp-28h],eax"
+"	      00524bb6    mov floc.z,eax"
 );
 // LINE 358:
 	asm( 
 "	      00524bb9    mov eax,ds:[6C126Ch]"
-"	      00524bbe    sub eax,[ebp-30h]"
-"	      00524bc1    mov [ebp-1Ch],eax"
+"	      00524bbe    sub eax,floc.x"
+"	      00524bc1    mov loc.x,eax"
 );
 // LINE 359:
 	asm( 
 "	      00524bc4    mov eax,ds:[6C1270h]"
-"	      00524bc9    sub eax,[ebp-2Ch]"
-"	      00524bcc    mov [ebp-18h],eax"
+"	      00524bc9    sub eax,floc.y"
+"	      00524bcc    mov loc.y,eax"
 );
 // LINE 360:
 	asm( 
 "	      00524bcf    mov eax,ds:[6C1274h]"
-"	      00524bd4    sub eax,[ebp-28h]"
-"	      00524bd7    mov [ebp-14h],eax"
+"	      00524bd4    sub eax,floc.z"
+"	      00524bd7    mov loc.z,eax"
 );
 // LINE 361:
 	asm( 
-"	      00524bda    mov eax,[ebp-8]"
+"	      00524bda    mov eax,fd"
 "	      00524bdd    add eax,8Ch"
 "	      00524be2    push eax"
 "	      00524be3    push 6BF188h"
 "	      00524be8    call 004CB23Ch"
 "	      00524bed    add esp,8"
-"	      00524bf0    mov [ebp-0Ch],eax"
+"	      00524bf0    mov dist,eax"
 );
 // LINE 362:
 	asm( 
-"	      00524bf3    mov eax,[ebp-0Ch]"
-"	      00524bf6    cmp [ebp-4],eax"
+"	      00524bf3    mov eax,dist"
+"	      00524bf6    cmp mindist,eax"
 "	      00524bf9    jle near ptr 00524C1Bh"
 );
 // LINE 364:
 	asm( 
-"	      00524bff    mov eax,[ebp-0Ch]"
-"	      00524c02    mov [ebp-4],eax"
+"	      00524bff    mov eax,dist"
+"	      00524c02    mov mindist,eax"
 );
 // LINE 365:
 	asm( 
-"	      00524c05    lea eax,[ebp-30h]"
-"	      00524c08    lea ecx,[ebp-60h]"
+"	      00524c05    lea eax,floc.x"
+"	      00524c08    lea ecx,minloc.x"
 "	      00524c0b    mov edx,[eax]"
 "	      00524c0d    mov [ecx],edx"
 "	      00524c0f    mov edx,[eax+4]"
@@ -824,30 +824,30 @@ void S3FireDriver() {
 "	      00524c1b    xor eax,eax"
 "	      00524c1d    sub eax,ds:[5B4768h]"
 "	      00524c23    neg eax"
-"	      00524c25    mov ecx,[ebp-8]"
+"	      00524c25    mov ecx,fd"
 "	      00524c28    sub [ecx+4],eax"
 );
 // LINE 370:
 	asm( 
-"	      00524c2b    mov eax,[ebp-8]"
+"	      00524c2b    mov eax,fd"
 "	      00524c2e    cmp dword ptr [eax+4],0"
 "	      00524c32    jg near ptr 00524FECh"
 );
 // LINE 375:
 	asm( 
-"	      00524c38    mov eax,[ebp-8]"
+"	      00524c38    mov eax,fd"
 "	      00524c3b    cmp dword ptr [eax+1Ch],0"
 "	      00524c3f    jle near ptr 00524E2Fh"
 );
 // LINE 378:
 	asm( 
-"	      00524c45    mov eax,[ebp-8]"
+"	      00524c45    mov eax,fd"
 "	      00524c48    cmp dword ptr [eax+94h],0"
 "	      00524c4f    jne near ptr 00524C64h"
 );
 // LINE 380:
 	asm( 
-"	      00524c55    mov eax,[ebp-8]"
+"	      00524c55    mov eax,fd"
 "	      00524c58    mov dword ptr [eax+1Ch],0"
 );
 // LINE 381:
@@ -856,9 +856,9 @@ void S3FireDriver() {
 );
 // LINE 385:
 	asm( 
-"	      00524c64    mov eax,[ebp-8]"
+"	      00524c64    mov eax,fd"
 "	      00524c67    add eax,10h"
-"	      00524c6a    lea ecx,[ebp-1Ch]"
+"	      00524c6a    lea ecx,loc.x"
 "	      00524c6d    mov edx,[eax]"
 "	      00524c6f    mov [ecx],edx"
 "	      00524c71    mov edx,[eax+4]"
@@ -868,13 +868,13 @@ void S3FireDriver() {
 );
 // LINE 388:
 	asm( 
-"	      00524c7d    mov eax,[ebp-8]"
+"	      00524c7d    mov eax,fd"
 "	      00524c80    mov eax,[eax+0Ch]"
-"	      00524c83    add [ebp-18h],eax"
+"	      00524c83    add loc.y,eax"
 );
 // LINE 390:
 	asm( 
-"	      00524c86    mov eax,[ebp-8]"
+"	      00524c86    mov eax,fd"
 "	      00524c89    test byte ptr [eax],2"
 "	      00524c8c    je near ptr 00524CC1h"
 );
@@ -882,26 +882,26 @@ void S3FireDriver() {
 	asm( 
 "	      00524c92    push 20000h"
 "	      00524c97    push 0FFFFFFFFh"
-"	      00524c99    mov eax,[ebp-18h]"
+"	      00524c99    mov eax,loc.y"
 "	      00524c9c    push eax"
-"	      00524c9d    mov eax,[ebp-1Ch]"
+"	      00524c9d    mov eax,loc.x"
 "	      00524ca0    push eax"
-"	      00524ca1    mov eax,[ebp-8]"
+"	      00524ca1    mov eax,fd"
 "	      00524ca4    mov eax,[eax+94h]"
 "	      00524caa    push eax"
 "	      00524cab    call 004D392Fh"
 "	      00524cb0    add esp,14h"
-"	      00524cb3    mov [ebp-4Ch],eax"
+"	      00524cb3    mov newcoord,eax"
 );
 // LINE 398:
 	asm( 
-"	      00524cb6    mov eax,[ebp-4Ch]"
-"	      00524cb9    mov [ebp-14h],eax"
+"	      00524cb6    mov eax,newcoord"
+"	      00524cb9    mov loc.z,eax"
 );
 // LINE 400:
 	asm( 
 "	      00524cbc    jmp near ptr 00524D6Dh"
-"	      00524cc1    mov eax,[ebp-8]"
+"	      00524cc1    mov eax,fd"
 "	      00524cc4    test byte ptr [eax],4"
 "	      00524cc7    je near ptr 00524CFCh"
 );
@@ -909,26 +909,26 @@ void S3FireDriver() {
 	asm( 
 "	      00524ccd    push 20000h"
 "	      00524cd2    push 1"
-"	      00524cd4    mov eax,[ebp-18h]"
+"	      00524cd4    mov eax,loc.y"
 "	      00524cd7    push eax"
-"	      00524cd8    mov eax,[ebp-1Ch]"
+"	      00524cd8    mov eax,loc.x"
 "	      00524cdb    push eax"
-"	      00524cdc    mov eax,[ebp-8]"
+"	      00524cdc    mov eax,fd"
 "	      00524cdf    mov eax,[eax+94h]"
 "	      00524ce5    push eax"
 "	      00524ce6    call 004D392Fh"
 "	      00524ceb    add esp,14h"
-"	      00524cee    mov [ebp-4Ch],eax"
+"	      00524cee    mov newcoord,eax"
 );
 // LINE 408:
 	asm( 
-"	      00524cf1    mov eax,[ebp-4Ch]"
-"	      00524cf4    mov [ebp-14h],eax"
+"	      00524cf1    mov eax,newcoord"
+"	      00524cf4    mov loc.z,eax"
 );
 // LINE 410:
 	asm( 
 "	      00524cf7    jmp near ptr 00524D6Dh"
-"	      00524cfc    mov eax,[ebp-8]"
+"	      00524cfc    mov eax,fd"
 "	      00524cff    test byte ptr [eax],8"
 "	      00524d02    je near ptr 00524D37h"
 );
@@ -936,26 +936,26 @@ void S3FireDriver() {
 	asm( 
 "	      00524d08    push 20000h"
 "	      00524d0d    push 0FFFFFFFFh"
-"	      00524d0f    mov eax,[ebp-14h]"
+"	      00524d0f    mov eax,loc.z"
 "	      00524d12    push eax"
-"	      00524d13    mov eax,[ebp-18h]"
+"	      00524d13    mov eax,loc.y"
 "	      00524d16    push eax"
-"	      00524d17    mov eax,[ebp-8]"
+"	      00524d17    mov eax,fd"
 "	      00524d1a    mov eax,[eax+94h]"
 "	      00524d20    push eax"
 "	      00524d21    call 004D3B43h"
 "	      00524d26    add esp,14h"
-"	      00524d29    mov [ebp-4Ch],eax"
+"	      00524d29    mov newcoord,eax"
 );
 // LINE 418:
 	asm( 
-"	      00524d2c    mov eax,[ebp-4Ch]"
-"	      00524d2f    mov [ebp-1Ch],eax"
+"	      00524d2c    mov eax,newcoord"
+"	      00524d2f    mov loc.x,eax"
 );
 // LINE 420:
 	asm( 
 "	      00524d32    jmp near ptr 00524D6Dh"
-"	      00524d37    mov eax,[ebp-8]"
+"	      00524d37    mov eax,fd"
 "	      00524d3a    test byte ptr [eax],10h"
 "	      00524d3d    je near ptr 00524D6Dh"
 );
@@ -963,30 +963,30 @@ void S3FireDriver() {
 	asm( 
 "	      00524d43    push 20000h"
 "	      00524d48    push 1"
-"	      00524d4a    mov eax,[ebp-14h]"
+"	      00524d4a    mov eax,loc.z"
 "	      00524d4d    push eax"
-"	      00524d4e    mov eax,[ebp-18h]"
+"	      00524d4e    mov eax,loc.y"
 "	      00524d51    push eax"
-"	      00524d52    mov eax,[ebp-8]"
+"	      00524d52    mov eax,fd"
 "	      00524d55    mov eax,[eax+94h]"
 "	      00524d5b    push eax"
 "	      00524d5c    call 004D3B43h"
 "	      00524d61    add esp,14h"
-"	      00524d64    mov [ebp-4Ch],eax"
+"	      00524d64    mov newcoord,eax"
 );
 // LINE 428:
 	asm( 
-"	      00524d67    mov eax,[ebp-4Ch]"
-"	      00524d6a    mov [ebp-1Ch],eax"
+"	      00524d67    mov eax,newcoord"
+"	      00524d6a    mov loc.x,eax"
 );
 // LINE 431:
 	asm( 
-"	      00524d6d    cmp dword ptr [ebp-4Ch],0"
+"	      00524d6d    cmp newcoord,0"
 "	      00524d71    jne near ptr 00524D86h"
 );
 // LINE 433:
 	asm( 
-"	      00524d77    mov eax,[ebp-8]"
+"	      00524d77    mov eax,fd"
 "	      00524d7a    mov dword ptr [eax+1Ch],0"
 );
 // LINE 434:
@@ -995,7 +995,7 @@ void S3FireDriver() {
 );
 // LINE 437:
 	asm( 
-"	      00524d86    mov eax,[ebp-8]"
+"	      00524d86    mov eax,fd"
 "	      00524d89    dec dword ptr [eax+1Ch]"
 );
 // LINE 438:
@@ -1004,7 +1004,7 @@ void S3FireDriver() {
 "	      00524d91    shl eax,2"
 "	      00524d94    lea eax,[eax+eax*4]"
 "	      00524d97    add eax,ds:[5B7388h]"
-"	      00524d9d    mov ecx,[ebp-8]"
+"	      00524d9d    mov ecx,fd"
 "	      00524da0    mov [ecx+8],eax"
 );
 // LINE 439:
@@ -1014,24 +1014,24 @@ void S3FireDriver() {
 "	      00524dae    lea ecx,[ecx+ecx*4-5]"
 "	      00524db2    shl ecx,12h"
 "	      00524db5    sub eax,ecx"
-"	      00524db7    mov ecx,[ebp-8]"
+"	      00524db7    mov ecx,fd"
 "	      00524dba    mov [ecx+4],eax"
 );
 // LINE 443:
 	asm( 
-"	      00524dbd    mov eax,[ebp-14h]"
-"	      00524dc0    mov ecx,[ebp-8]"
+"	      00524dbd    mov eax,loc.z"
+"	      00524dc0    mov ecx,fd"
 "	      00524dc3    sub eax,[ecx+18h]"
 "	      00524dc6    push eax"
-"	      00524dc7    mov eax,[ebp-18h]"
-"	      00524dca    mov ecx,[ebp-8]"
+"	      00524dc7    mov eax,loc.y"
+"	      00524dca    mov ecx,fd"
 "	      00524dcd    sub eax,[ecx+14h]"
 "	      00524dd0    push eax"
-"	      00524dd1    mov eax,[ebp-1Ch]"
-"	      00524dd4    mov ecx,[ebp-8]"
+"	      00524dd1    mov eax,loc.x"
+"	      00524dd4    mov ecx,fd"
 "	      00524dd7    sub eax,[ecx+10h]"
 "	      00524dda    push eax"
-"	      00524ddb    mov eax,[ebp-8]"
+"	      00524ddb    mov eax,fd"
 "	      00524dde    mov eax,[eax+20h]"
 "	      00524de1    mov eax,[eax+4]"
 "	      00524de4    push eax"
@@ -1040,8 +1040,8 @@ void S3FireDriver() {
 );
 // LINE 445:
 	asm( 
-"	      00524ded    lea eax,[ebp-1Ch]"
-"	      00524df0    mov ecx,[ebp-8]"
+"	      00524ded    lea eax,loc.x"
+"	      00524df0    mov ecx,fd"
 "	      00524df3    add ecx,10h"
 "	      00524df6    mov edx,[eax]"
 "	      00524df8    mov [ecx],edx"
@@ -1052,23 +1052,23 @@ void S3FireDriver() {
 );
 // LINE 447:
 	asm( 
-"	      00524e06    mov eax,[ebp-30h]"
-"	      00524e09    add eax,[ebp-1Ch]"
-"	      00524e0c    mov ecx,[ebp-8]"
+"	      00524e06    mov eax,floc.x"
+"	      00524e09    add eax,loc.x"
+"	      00524e0c    mov ecx,fd"
 "	      00524e0f    mov [ecx+3Ch],eax"
 );
 // LINE 448:
 	asm( 
-"	      00524e12    mov eax,[ebp-2Ch]"
-"	      00524e15    add eax,[ebp-18h]"
-"	      00524e18    mov ecx,[ebp-8]"
+"	      00524e12    mov eax,floc.y"
+"	      00524e15    add eax,loc.y"
+"	      00524e18    mov ecx,fd"
 "	      00524e1b    mov [ecx+40h],eax"
 );
 // LINE 449:
 	asm( 
-"	      00524e1e    mov eax,[ebp-28h]"
-"	      00524e21    add eax,[ebp-14h]"
-"	      00524e24    mov ecx,[ebp-8]"
+"	      00524e1e    mov eax,floc.z"
+"	      00524e21    add eax,loc.z"
+"	      00524e24    mov ecx,fd"
 "	      00524e27    mov [ecx+44h],eax"
 );
 // LINE 451:
@@ -1077,42 +1077,42 @@ void S3FireDriver() {
 );
 // LINE 453:
 	asm( 
-"	      00524e2f    mov eax,[ebp-8]"
+"	      00524e2f    mov eax,fd"
 "	      00524e32    mov eax,[eax+90h]"
 "	      00524e38    and eax,0FFh"
-"	      00524e3d    mov ecx,[ebp-8]"
+"	      00524e3d    mov ecx,fd"
 "	      00524e40    mov ecx,[ecx+8Ch]"
 "	      00524e46    and ecx,0FFh"
 "	      00524e4c    shl ecx,0Ah"
 "	      00524e4f    mov eax,[ecx+eax*4+67ED30h]"
-"	      00524e56    mov [ebp-50h],eax"
+"	      00524e56    mov cptr,eax"
 );
 // LINE 455:
 	asm( 
-"	      00524e59    mov eax,[ebp-50h]"
+"	      00524e59    mov eax,cptr"
 "	      00524e5c    add eax,0Ch"
-"	      00524e5f    mov [ebp-64h],eax"
+"	      00524e5f    mov stptrptr,eax"
 );
 // LINE 456:
 	asm( 
-"	      00524e62    mov eax,[ebp-64h]"
+"	      00524e62    mov eax,stptrptr"
 "	      00524e65    cmp dword ptr [eax],0"
 "	      00524e68    je near ptr 00524E9Eh"
 );
 // LINE 458:
 	asm( 
-"	      00524e6e    mov eax,[ebp-8]"
-"	      00524e71    mov ecx,[ebp-64h]"
+"	      00524e6e    mov eax,fd"
+"	      00524e71    mov ecx,stptrptr"
 "	      00524e74    mov ecx,[ecx]"
 "	      00524e76    cmp [eax+20h],ecx"
 "	      00524e79    jne near ptr 00524E91h"
 );
 // LINE 460:
 	asm( 
-"	      00524e7f    mov eax,[ebp-8]"
+"	      00524e7f    mov eax,fd"
 "	      00524e82    mov eax,[eax+20h]"
 "	      00524e85    mov eax,[eax]"
-"	      00524e87    mov ecx,[ebp-64h]"
+"	      00524e87    mov ecx,stptrptr"
 "	      00524e8a    mov [ecx],eax"
 );
 // LINE 461:
@@ -1121,9 +1121,9 @@ void S3FireDriver() {
 );
 // LINE 463:
 	asm( 
-"	      00524e91    mov eax,[ebp-64h]"
+"	      00524e91    mov eax,stptrptr"
 "	      00524e94    mov eax,[eax]"
-"	      00524e96    mov [ebp-64h],eax"
+"	      00524e96    mov stptrptr,eax"
 );
 // LINE 464:
 	asm( 
@@ -1131,15 +1131,15 @@ void S3FireDriver() {
 );
 // LINE 466:
 	asm( 
-"	      00524e9e    mov eax,[ebp-8]"
+"	      00524e9e    mov eax,fd"
 "	      00524ea1    mov eax,[eax]"
 "	      00524ea3    and eax,0FFFFFFFEh"
-"	      00524ea6    mov ecx,[ebp-8]"
+"	      00524ea6    mov ecx,fd"
 "	      00524ea9    mov [ecx],eax"
 );
 // LINE 469:
 	asm( 
-"	      00524eab    mov eax,[ebp-8]"
+"	      00524eab    mov eax,fd"
 "	      00524eae    mov eax,[eax+98h]"
 "	      00524eb4    dec dword ptr [eax+4]"
 );
@@ -1149,105 +1149,105 @@ void S3FireDriver() {
 );
 // LINE 472:
 	asm( 
-"	      00524ebd    mov dword ptr [ebp-48h],3"
+"	      00524ebd    mov mp.op,3"
 );
 // LINE 473:
 	asm( 
-"	      00524ec4    mov eax,[ebp-8]"
+"	      00524ec4    mov eax,fd"
 "	      00524ec7    mov eax,[eax+9Ch]"
-"	      00524ecd    mov [ebp-44h],eax"
+"	      00524ecd    mov mp.id,eax"
 );
 // LINE 474:
 	asm( 
-"	      00524ed0    mov dword ptr [ebp-38h],1"
+"	      00524ed0    mov mp.i2num,1"
 );
 // LINE 475:
 	asm( 
-"	      00524ed7    mov dword ptr [ebp-34h],0"
+"	      00524ed7    mov mp.flags,0"
 );
 // LINE 476:
 	asm( 
-"	      00524ede    lea eax,[ebp-48h]"
+"	      00524ede    lea eax,mp.op"
 "	      00524ee1    push eax"
 "	      00524ee2    call 004FBD4Ah"
 "	      00524ee7    add esp,4"
 );
 // LINE 480:
 	asm( 
-"	      00524eea    mov eax,[ebp-8]"
+"	      00524eea    mov eax,fd"
 "	      00524eed    mov eax,[eax+98h]"
 "	      00524ef3    cmp dword ptr [eax+4],0"
 "	      00524ef7    jne near ptr 00524FE7h"
 );
 // LINE 483:
 	asm( 
-"	      00524efd    mov eax,[ebp-50h]"
+"	      00524efd    mov eax,cptr"
 "	      00524f00    movsx eax,word ptr [eax]"
 "	      00524f03    and eax,0FFDFh"
-"	      00524f08    mov ecx,[ebp-50h]"
+"	      00524f08    mov ecx,cptr"
 "	      00524f0b    mov [ecx],ax"
 );
 // LINE 485:
 	asm( 
-"	      00524f0e    mov dword ptr [ebp-48h],4"
+"	      00524f0e    mov mp.op,4"
 );
 // LINE 486:
 	asm( 
-"	      00524f15    mov eax,[ebp-8]"
+"	      00524f15    mov eax,fd"
 "	      00524f18    mov eax,[eax+9Ch]"
-"	      00524f1e    mov [ebp-44h],eax"
+"	      00524f1e    mov mp.id,eax"
 );
 // LINE 487:
 	asm( 
-"	      00524f21    mov dword ptr [ebp-38h],1"
+"	      00524f21    mov mp.i2num,1"
 );
 // LINE 488:
 	asm( 
-"	      00524f28    mov dword ptr [ebp-34h],0"
+"	      00524f28    mov mp.flags,0"
 );
 // LINE 489:
 	asm( 
-"	      00524f2f    lea eax,[ebp-48h]"
+"	      00524f2f    lea eax,mp.op"
 "	      00524f32    push eax"
 "	      00524f33    call 004FBD4Ah"
 "	      00524f38    add esp,4"
 );
 // LINE 491:
 	asm( 
-"	      00524f3b    mov eax,[ebp-8]"
+"	      00524f3b    mov eax,fd"
 "	      00524f3e    mov eax,[eax+9Ch]"
 "	      00524f44    push eax"
 "	      00524f45    call 004FBB76h"
 "	      00524f4a    add esp,4"
-"	      00524f4d    mov [ebp-20h],eax"
+"	      00524f4d    mov missloc,eax"
 );
 // LINE 492:
 	asm( 
-"	      00524f50    cmp dword ptr [ebp-20h],0"
+"	      00524f50    cmp missloc,0"
 "	      00524f54    je near ptr 00524FDBh"
-"	      00524f5a    mov eax,[ebp-8]"
-"	      00524f5d    mov ecx,[ebp-20h]"
+"	      00524f5a    mov eax,fd"
+"	      00524f5d    mov ecx,missloc"
 "	      00524f60    mov ecx,[ecx]"
 "	      00524f62    cmp [eax+8Ch],ecx"
 "	      00524f68    jne near ptr 00524FDBh"
-"	      00524f6e    mov eax,[ebp-20h]"
-"	      00524f71    mov ecx,[ebp-8]"
+"	      00524f6e    mov eax,missloc"
+"	      00524f71    mov ecx,fd"
 "	      00524f74    mov ecx,[ecx+90h]"
 "	      00524f7a    cmp [eax+4],ecx"
 "	      00524f7d    jne near ptr 00524FDBh"
 );
 // LINE 494:
 	asm( 
-"	      00524f83    mov eax,[ebp-8]"
+"	      00524f83    mov eax,fd"
 "	      00524f86    mov eax,[eax+9Ch]"
 "	      00524f8c    push eax"
 "	      00524f8d    call 00526128h"
 "	      00524f92    add esp,4"
-"	      00524f95    mov [ebp-10h],eax"
+"	      00524f95    mov nfd,eax"
 );
 // LINE 495:
 	asm( 
-"	      00524f98    cmp dword ptr [ebp-10h],0"
+"	      00524f98    cmp nfd,0"
 "	      00524f9c    jne near ptr 00524FA7h"
 );
 // LINE 500:
@@ -1256,34 +1256,34 @@ void S3FireDriver() {
 );
 // LINE 502:
 	asm( 
-"	      00524fa7    mov dword ptr [ebp-48h],0"
+"	      00524fa7    mov mp.op,0"
 );
 // LINE 503:
 	asm( 
-"	      00524fae    mov eax,[ebp-10h]"
+"	      00524fae    mov eax,nfd"
 "	      00524fb1    mov eax,[eax+9Ch]"
-"	      00524fb7    mov [ebp-44h],eax"
+"	      00524fb7    mov mp.id,eax"
 );
 // LINE 504:
 	asm( 
-"	      00524fba    mov eax,[ebp-10h]"
+"	      00524fba    mov eax,nfd"
 "	      00524fbd    add eax,8Ch"
 "	      00524fc2    mov ecx,[eax]"
 "	      00524fc4    mov eax,[eax+4]"
-"	      00524fc7    lea edx,[ebp-40h]"
+"	      00524fc7    lea edx,mp.maploc.x"
 "	      00524fca    mov [edx],ecx"
 "	      00524fcc    mov [edx+4],eax"
 );
 // LINE 505:
 	asm( 
-"	      00524fcf    lea eax,[ebp-48h]"
+"	      00524fcf    lea eax,mp.op"
 "	      00524fd2    push eax"
 "	      00524fd3    call 004FBD4Ah"
 "	      00524fd8    add esp,4"
 );
 // LINE 509:
 	asm( 
-"	      00524fdb    mov eax,[ebp-8]"
+"	      00524fdb    mov eax,fd"
 "	      00524fde    push eax"
 "	      00524fdf    call 00526661h"
 "	      00524fe4    add esp,4"
@@ -1295,7 +1295,7 @@ void S3FireDriver() {
 // LINE 517:
 	asm( 
 "	      00524fec    push 6"
-"	      00524fee    mov eax,[ebp-8]"
+"	      00524fee    mov eax,fd"
 "	      00524ff1    push eax"
 "	      00524ff2    call 00526D7Eh"
 "	      00524ff7    add esp,8"
@@ -1335,7 +1335,7 @@ void S3FireDriver() {
 );
 // LINE 525:
 	asm( 
-"	      00525053    mov eax,[ebp-8]"
+"	      00525053    mov eax,fd"
 "	      00525056    push eax"
 "	      00525057    call 005250BEh"
 "	      0052505c    add esp,4"
@@ -1346,12 +1346,12 @@ void S3FireDriver() {
 );
 // LINE 535:
 	asm( 
-"	      00525064    cmp dword ptr [ebp-54h],1"
+"	      00525064    cmp fireloopsound,1"
 "	      00525068    jne near ptr 0052509Ah"
 );
 // LINE 539:
 	asm( 
-"	      0052506e    cmp dword ptr [ebp-4],32h"
+"	      0052506e    cmp mindist,32h"
 "	      00525072    jl near ptr 00525087h"
 );
 // LINE 541:
@@ -1366,7 +1366,7 @@ void S3FireDriver() {
 );
 // LINE 547:
 	asm( 
-"	      00525087    lea eax,[ebp-60h]"
+"	      00525087    lea eax,minloc.x"
 "	      0052508a    push eax"
 "	      0052508b    push 0Dh"
 "	      0052508d    call 00446F43h"
@@ -1378,13 +1378,13 @@ void S3FireDriver() {
 );
 // LINE 554:
 	asm( 
-"	      0052509a    cmp dword ptr [ebp-4],32h"
+"	      0052509a    cmp mindist,32h"
 "	      0052509e    jge near ptr 005250B4h"
 );
 // LINE 556:
 	asm( 
 "	      005250a4    push 1"
-"	      005250a6    lea eax,[ebp-60h]"
+"	      005250a6    lea eax,minloc.x"
 "	      005250a9    push eax"
 "	      005250aa    push 0Dh"
 "	      005250ac    call 00446CC2h"
@@ -1432,37 +1432,37 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 "	      005250d4    and eax,3"
 "	      005250d7    xor eax,edx"
 "	      005250d9    sub eax,edx"
-"	      005250db    mov [ebp-10h],eax"
+"	      005250db    mov i,eax"
 );
 // LINE 584:
 	asm( 
-"	      005250de    mov eax,[ebp-10h]"
+"	      005250de    mov eax,i"
 "	      005250e1    mov eax,[eax*8+5B73A8h]"
-"	      005250e8    mov ecx,[ebp+8]"
+"	      005250e8    mov ecx,fd"
 "	      005250eb    add eax,[ecx+8Ch]"
-"	      005250f1    mov [ebp-8],eax"
+"	      005250f1    mov cellx,eax"
 );
 // LINE 585:
 	asm( 
-"	      005250f4    mov eax,[ebp-10h]"
+"	      005250f4    mov eax,i"
 "	      005250f7    mov eax,[eax*8+5B73ACh]"
-"	      005250fe    mov ecx,[ebp+8]"
+"	      005250fe    mov ecx,fd"
 "	      00525101    add eax,[ecx+90h]"
-"	      00525107    mov [ebp-0Ch],eax"
+"	      00525107    mov celly,eax"
 );
 // LINE 586:
 	asm( 
-"	      0052510a    mov eax,[ebp-0Ch]"
+"	      0052510a    mov eax,celly"
 "	      0052510d    and eax,0FFh"
-"	      00525112    mov ecx,[ebp-8]"
+"	      00525112    mov ecx,cellx"
 "	      00525115    and ecx,0FFh"
 "	      0052511b    shl ecx,0Ah"
 "	      0052511e    mov eax,[ecx+eax*4+67ED30h]"
-"	      00525125    mov [ebp-14h],eax"
+"	      00525125    mov cptr,eax"
 );
 // LINE 589:
 	asm( 
-"	      00525128    mov eax,[ebp-14h]"
+"	      00525128    mov eax,cptr"
 "	      0052512b    movsx eax,word ptr [eax]"
 "	      0052512e    test al,20h"
 "	      00525130    je near ptr 0052513Bh"
@@ -1473,7 +1473,7 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 );
 // LINE 593:
 	asm( 
-"	      0052513b    mov eax,[ebp-14h]"
+"	      0052513b    mov eax,cptr"
 "	      0052513e    cmp dword ptr [eax+0Ch],0"
 "	      00525142    jne near ptr 0052514Dh"
 );
@@ -1483,22 +1483,22 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 );
 // LINE 599:
 	asm( 
-"	      0052514d    mov dword ptr [ebp-10h],0"
-"	      00525154    mov dword ptr [ebp-18h],6666F0h"
+"	      0052514d    mov i,0"
+"	      00525154    mov tfd,6666F0h"
 "	      0052515b    jmp near ptr 0052516Ah"
-"	      00525160    inc dword ptr [ebp-10h]"
-"	      00525163    add dword ptr [ebp-18h],0A0h"
-"	      0052516a    cmp dword ptr [ebp-10h],8Ch"
+"	      00525160    inc i"
+"	      00525163    add tfd,0A0h"
+"	      0052516a    cmp i,8Ch"
 "	      00525171    jge near ptr 005251A1h"
 );
 // LINE 601:
 	asm( 
-"	      00525177    mov eax,[ebp-18h]"
+"	      00525177    mov eax,tfd"
 "	      0052517a    test byte ptr [eax],1"
 "	      0052517d    je near ptr 0052519Ch"
-"	      00525183    mov eax,[ebp-18h]"
+"	      00525183    mov eax,tfd"
 "	      00525186    mov eax,[eax+98h]"
-"	      0052518c    mov ecx,[ebp-14h]"
+"	      0052518c    mov ecx,cptr"
 "	      0052518f    cmp [eax],ecx"
 "	      00525191    jne near ptr 0052519Ch"
 );
@@ -1513,25 +1513,25 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 // LINE 605:
 	asm( 
 "	      005251a1    call 005251D6h"
-"	      005251a6    mov [ebp-4],eax"
+"	      005251a6    mov cfd,eax"
 );
 // LINE 606:
 	asm( 
-"	      005251a9    mov eax,[ebp-14h]"
-"	      005251ac    mov ecx,[ebp-4]"
+"	      005251a9    mov eax,cptr"
+"	      005251ac    mov ecx,cfd"
 "	      005251af    mov [ecx],eax"
 );
 // LINE 607:
 	asm( 
 "	      005251b1    push 0"
-"	      005251b3    mov eax,[ebp+8]"
+"	      005251b3    mov eax,fd"
 "	      005251b6    mov eax,[eax+9Ch]"
 "	      005251bc    push eax"
-"	      005251bd    mov eax,[ebp-0Ch]"
+"	      005251bd    mov eax,celly"
 "	      005251c0    push eax"
-"	      005251c1    mov eax,[ebp-8]"
+"	      005251c1    mov eax,cellx"
 "	      005251c4    push eax"
-"	      005251c5    mov eax,[ebp-4]"
+"	      005251c5    mov eax,cfd"
 "	      005251c8    push eax"
 "	      005251c9    call 00525624h"
 "	      005251ce    add esp,14h"
@@ -1561,21 +1561,21 @@ struct _CELL_FIRE_DATA* S3FireGetCellData() {
 );
 // LINE 621:
 	asm( 
-"	      005251df    mov dword ptr [ebp-4],0"
+"	      005251df    mov i,0"
 "	      005251e6    jmp near ptr 005251EEh"
-"	      005251eb    inc dword ptr [ebp-4]"
-"	      005251ee    cmp dword ptr [ebp-4],8Ch"
+"	      005251eb    inc i"
+"	      005251ee    cmp i,8Ch"
 "	      005251f5    jge near ptr 00525220h"
 );
 // LINE 623:
 	asm( 
-"	      005251fb    mov eax,[ebp-4]"
+"	      005251fb    mov eax,i"
 "	      005251fe    cmp dword ptr [eax*8+66BE94h],0"
 "	      00525206    jne near ptr 0052521Bh"
 );
 // LINE 624:
 	asm( 
-"	      0052520c    mov eax,[ebp-4]"
+"	      0052520c    mov eax,i"
 "	      0052520f    lea eax,[eax*8+66BE90h]"
 "	      00525216    jmp near ptr 00525227h"
 );
@@ -1629,11 +1629,11 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 "	      00525240    dec ecx"
 "	      00525241    shl ecx,13h"
 "	      00525244    sub eax,ecx"
-"	      00525246    mov [ebp-58h],eax"
+"	      00525246    mov radius,eax"
 );
 // LINE 654:
 	asm( 
-"	      00525249    mov eax,[ebp+8]"
+"	      00525249    mov eax,cptr"
 "	      0052524c    movsx eax,word ptr [eax]"
 "	      0052524f    test al,20h"
 "	      00525251    jne near ptr 0052525Ch"
@@ -1644,48 +1644,48 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 658:
 	asm( 
-"	      0052525c    mov eax,[ebp+0Ch]"
+"	      0052525c    mov eax,wloc"
 "	      0052525f    mov eax,[eax]"
-"	      00525261    mov ecx,[ebp+8]"
+"	      00525261    mov ecx,cptr"
 "	      00525264    movsx ecx,word ptr [ecx+2]"
 "	      00525268    shl ecx,10h"
 "	      0052526b    sub eax,ecx"
-"	      0052526d    mov [ebp-38h],eax"
+"	      0052526d    mov loc.x,eax"
 );
 // LINE 659:
 	asm( 
-"	      00525270    mov eax,[ebp+0Ch]"
+"	      00525270    mov eax,wloc"
 "	      00525273    mov eax,[eax+4]"
-"	      00525276    mov ecx,[ebp+8]"
+"	      00525276    mov ecx,cptr"
 "	      00525279    movsx ecx,word ptr [ecx+4]"
 "	      0052527d    shl ecx,10h"
 "	      00525280    sub eax,ecx"
-"	      00525282    mov [ebp-34h],eax"
+"	      00525282    mov loc.y,eax"
 );
 // LINE 660:
 	asm( 
-"	      00525285    mov eax,[ebp+0Ch]"
+"	      00525285    mov eax,wloc"
 "	      00525288    mov eax,[eax+8]"
-"	      0052528b    mov ecx,[ebp+8]"
+"	      0052528b    mov ecx,cptr"
 "	      0052528e    movsx ecx,word ptr [ecx+6]"
 "	      00525292    shl ecx,10h"
 "	      00525295    sub eax,ecx"
-"	      00525297    mov [ebp-30h],eax"
+"	      00525297    mov loc.z,eax"
 );
 // LINE 664:
 	asm( 
-"	      0052529a    mov eax,[ebp+8]"
+"	      0052529a    mov eax,cptr"
 "	      0052529d    mov eax,[eax+0Ch]"
-"	      005252a0    mov [ebp-0Ch],eax"
+"	      005252a0    mov stobj,eax"
 );
 // LINE 665:
 	asm( 
-"	      005252a3    cmp dword ptr [ebp-0Ch],0"
+"	      005252a3    cmp stobj,0"
 "	      005252a7    je near ptr 00525572h"
 );
 // LINE 667:
 	asm( 
-"	      005252ad    mov eax,[ebp-0Ch]"
+"	      005252ad    mov eax,stobj"
 "	      005252b0    test byte ptr [eax+8],1"
 "	      005252b4    jne near ptr 005252BFh"
 );
@@ -1695,20 +1695,20 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 671:
 	asm( 
-"	      005252bf    mov eax,[ebp-0Ch]"
+"	      005252bf    mov eax,stobj"
 "	      005252c2    mov eax,[eax+0Ch]"
-"	      005252c5    mov [ebp-4],eax"
+"	      005252c5    mov fd,eax"
 );
 // LINE 675:
 	asm( 
-"	      005252c8    mov eax,[ebp-4]"
+"	      005252c8    mov eax,fd"
 "	      005252cb    add dword ptr [eax+4],30000h"
 );
 // LINE 678:
 	asm( 
-"	      005252d2    lea eax,[ebp-28h]"
+"	      005252d2    lea eax,center.x"
 "	      005252d5    push eax"
-"	      005252d6    mov eax,[ebp-0Ch]"
+"	      005252d6    mov eax,stobj"
 "	      005252d9    mov eax,[eax+4]"
 "	      005252dc    push eax"
 "	      005252dd    call 004D88C3h"
@@ -1716,21 +1716,21 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 684:
 	asm( 
-"	      005252e5    mov eax,[ebp-28h]"
-"	      005252e8    add eax,[ebp-58h]"
-"	      005252eb    cmp eax,[ebp-38h]"
+"	      005252e5    mov eax,center.x"
+"	      005252e8    add eax,radius"
+"	      005252eb    cmp eax,loc.x"
 "	      005252ee    jle near ptr 00525321h"
-"	      005252f4    mov eax,[ebp-28h]"
-"	      005252f7    sub eax,[ebp-58h]"
-"	      005252fa    cmp eax,[ebp-38h]"
+"	      005252f4    mov eax,center.x"
+"	      005252f7    sub eax,radius"
+"	      005252fa    cmp eax,loc.x"
 "	      005252fd    jge near ptr 00525321h"
-"	      00525303    mov eax,[ebp-20h]"
-"	      00525306    add eax,[ebp-58h]"
-"	      00525309    cmp eax,[ebp-30h]"
+"	      00525303    mov eax,center.z"
+"	      00525306    add eax,radius"
+"	      00525309    cmp eax,loc.z"
 "	      0052530c    jle near ptr 00525321h"
-"	      00525312    mov eax,[ebp-20h]"
-"	      00525315    sub eax,[ebp-58h]"
-"	      00525318    cmp eax,[ebp-30h]"
+"	      00525312    mov eax,center.z"
+"	      00525315    sub eax,radius"
+"	      00525318    cmp eax,loc.z"
 "	      0052531b    jl near ptr 00525326h"
 );
 // LINE 686:
@@ -1739,7 +1739,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 692:
 	asm( 
-"	      00525326    cmp dword ptr [ebp+10h],0"
+"	      00525326    cmp water_timetolive,0"
 "	      0052532a    jg near ptr 00525335h"
 );
 // LINE 693:
@@ -1750,11 +1750,11 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	asm( 
 "	      00525335    push 50000h"
 "	      0052533a    mov eax,50000h"
-"	      0052533f    sub eax,[ebp+10h]"
+"	      0052533f    sub eax,water_timetolive"
 "	      00525342    push eax"
 "	      00525343    call 004D19DFh"
 "	      00525348    add esp,8"
-"	      0052534b    mov [ebp-3Ch],eax"
+"	      0052534b    mov dfactor,eax"
 );
 // LINE 697:
 	asm( 
@@ -1762,45 +1762,45 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 "	      00525353    mov ecx,ds:[598EB0h]"
 "	      00525359    lea ecx,[ecx+ecx*4-5]"
 "	      0052535d    sub eax,ecx"
-"	      0052535f    imul eax,[ebp-3Ch]"
-"	      00525363    mov [ebp-3Ch],eax"
+"	      0052535f    imul eax,dfactor"
+"	      00525363    mov dfactor,eax"
 );
 // LINE 700:
 	asm( 
-"	      00525366    cmp dword ptr [ebp-3Ch],0"
+"	      00525366    cmp dfactor,0"
 "	      0052536a    je near ptr 005253BFh"
 );
 // LINE 702:
 	asm( 
-"	      00525370    mov eax,[ebp-4]"
+"	      00525370    mov eax,fd"
 "	      00525373    mov eax,[eax+98h]"
 "	      00525379    mov eax,[eax]"
 "	      0052537b    movsx eax,word ptr [eax+2]"
 "	      0052537f    shl eax,10h"
-"	      00525382    mov [ebp-1Ch],eax"
+"	      00525382    mov dloc.x,eax"
 );
 // LINE 703:
 	asm( 
-"	      00525385    mov eax,[ebp-4]"
+"	      00525385    mov eax,fd"
 "	      00525388    mov eax,[eax+98h]"
 "	      0052538e    mov eax,[eax]"
 "	      00525390    movsx eax,word ptr [eax+4]"
 "	      00525394    shl eax,10h"
-"	      00525397    mov [ebp-18h],eax"
+"	      00525397    mov dloc.y,eax"
 );
 // LINE 704:
 	asm( 
-"	      0052539a    mov eax,[ebp-4]"
+"	      0052539a    mov eax,fd"
 "	      0052539d    mov eax,[eax+98h]"
 "	      005253a3    mov eax,[eax]"
 "	      005253a5    movsx eax,word ptr [eax+6]"
 "	      005253a9    shl eax,10h"
-"	      005253ac    mov [ebp-14h],eax"
+"	      005253ac    mov dloc.z,eax"
 );
 // LINE 706:
 	asm( 
 "	      005253af    push 0"
-"	      005253b1    lea eax,[ebp-1Ch]"
+"	      005253b1    lea eax,dloc.x"
 "	      005253b4    push eax"
 "	      005253b5    push 0Fh"
 "	      005253b7    call 00446CC2h"
@@ -1809,43 +1809,43 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 // LINE 710:
 	asm( 
 "	      005253bf    xor eax,eax"
-"	      005253c1    sub eax,[ebp-3Ch]"
+"	      005253c1    sub eax,dfactor"
 "	      005253c4    neg eax"
-"	      005253c6    mov ecx,[ebp-4]"
+"	      005253c6    mov ecx,fd"
 "	      005253c9    sub [ecx+8],eax"
 );
 // LINE 711:
 	asm( 
-"	      005253cc    mov eax,[ebp-4]"
+"	      005253cc    mov eax,fd"
 "	      005253cf    cmp dword ptr [eax+8],0"
 "	      005253d3    jge near ptr 00525560h"
 );
 // LINE 715:
 	asm( 
-"	      005253d9    mov eax,[ebp+8]"
+"	      005253d9    mov eax,cptr"
 "	      005253dc    add eax,0Ch"
-"	      005253df    mov [ebp-5Ch],eax"
+"	      005253df    mov stptrptr,eax"
 );
 // LINE 716:
 	asm( 
-"	      005253e2    mov eax,[ebp-5Ch]"
+"	      005253e2    mov eax,stptrptr"
 "	      005253e5    cmp dword ptr [eax],0"
 "	      005253e8    je near ptr 0052541Eh"
 );
 // LINE 718:
 	asm( 
-"	      005253ee    mov eax,[ebp-4]"
-"	      005253f1    mov ecx,[ebp-5Ch]"
+"	      005253ee    mov eax,fd"
+"	      005253f1    mov ecx,stptrptr"
 "	      005253f4    mov ecx,[ecx]"
 "	      005253f6    cmp [eax+20h],ecx"
 "	      005253f9    jne near ptr 00525411h"
 );
 // LINE 720:
 	asm( 
-"	      005253ff    mov eax,[ebp-4]"
+"	      005253ff    mov eax,fd"
 "	      00525402    mov eax,[eax+20h]"
 "	      00525405    mov eax,[eax]"
-"	      00525407    mov ecx,[ebp-5Ch]"
+"	      00525407    mov ecx,stptrptr"
 "	      0052540a    mov [ecx],eax"
 );
 // LINE 721:
@@ -1854,9 +1854,9 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 723:
 	asm( 
-"	      00525411    mov eax,[ebp-5Ch]"
+"	      00525411    mov eax,stptrptr"
 "	      00525414    mov eax,[eax]"
-"	      00525416    mov [ebp-5Ch],eax"
+"	      00525416    mov stptrptr,eax"
 );
 // LINE 724:
 	asm( 
@@ -1864,119 +1864,119 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 726:
 	asm( 
-"	      0052541e    mov eax,[ebp-4]"
+"	      0052541e    mov eax,fd"
 "	      00525421    mov eax,[eax]"
 "	      00525423    and eax,0FFFFFFFEh"
-"	      00525426    mov ecx,[ebp-4]"
+"	      00525426    mov ecx,fd"
 "	      00525429    mov [ecx],eax"
 );
 // LINE 729:
 	asm( 
-"	      0052542b    mov eax,[ebp-4]"
+"	      0052542b    mov eax,fd"
 "	      0052542e    mov eax,[eax+98h]"
 "	      00525434    dec dword ptr [eax+4]"
 );
 // LINE 731:
 	asm( 
-"	      00525437    mov dword ptr [ebp-54h],2"
+"	      00525437    mov mp.op,2"
 );
 // LINE 732:
 	asm( 
-"	      0052543e    mov eax,[ebp-4]"
+"	      0052543e    mov eax,fd"
 "	      00525441    mov eax,[eax+9Ch]"
-"	      00525447    mov [ebp-50h],eax"
+"	      00525447    mov mp.id,eax"
 );
 // LINE 733:
 	asm( 
-"	      0052544a    mov dword ptr [ebp-44h],1"
+"	      0052544a    mov mp.i2num,1"
 );
 // LINE 734:
 	asm( 
-"	      00525451    mov dword ptr [ebp-40h],0"
+"	      00525451    mov mp.flags,0"
 );
 // LINE 735:
 	asm( 
-"	      00525458    lea eax,[ebp-54h]"
+"	      00525458    lea eax,mp.op"
 "	      0052545b    push eax"
 "	      0052545c    call 004FBD4Ah"
 "	      00525461    add esp,4"
 );
 // LINE 739:
 	asm( 
-"	      00525464    mov eax,[ebp-4]"
+"	      00525464    mov eax,fd"
 "	      00525467    mov eax,[eax+98h]"
 "	      0052546d    cmp dword ptr [eax+4],0"
 "	      00525471    jne near ptr 00525555h"
 );
 // LINE 742:
 	asm( 
-"	      00525477    mov eax,[ebp+8]"
+"	      00525477    mov eax,cptr"
 "	      0052547a    movsx eax,word ptr [eax]"
 "	      0052547d    and eax,0FFDFh"
-"	      00525482    mov ecx,[ebp+8]"
+"	      00525482    mov ecx,cptr"
 "	      00525485    mov [ecx],ax"
 );
 // LINE 744:
 	asm( 
-"	      00525488    mov dword ptr [ebp-54h],6"
+"	      00525488    mov mp.op,6"
 );
 // LINE 745:
 	asm( 
-"	      0052548f    mov eax,[ebp-4]"
+"	      0052548f    mov eax,fd"
 "	      00525492    mov eax,[eax+9Ch]"
-"	      00525498    mov [ebp-50h],eax"
+"	      00525498    mov mp.id,eax"
 );
 // LINE 746:
 	asm( 
-"	      0052549b    mov dword ptr [ebp-44h],1"
+"	      0052549b    mov mp.i2num,1"
 );
 // LINE 747:
 	asm( 
-"	      005254a2    mov dword ptr [ebp-40h],0"
+"	      005254a2    mov mp.flags,0"
 );
 // LINE 748:
 	asm( 
-"	      005254a9    lea eax,[ebp-54h]"
+"	      005254a9    lea eax,mp.op"
 "	      005254ac    push eax"
 "	      005254ad    call 004FBD4Ah"
 "	      005254b2    add esp,4"
 );
 // LINE 750:
 	asm( 
-"	      005254b5    mov eax,[ebp-4]"
+"	      005254b5    mov eax,fd"
 "	      005254b8    mov eax,[eax+9Ch]"
 "	      005254be    push eax"
 "	      005254bf    call 004FBB76h"
 "	      005254c4    add esp,4"
-"	      005254c7    mov [ebp-2Ch],eax"
+"	      005254c7    mov missloc,eax"
 );
 // LINE 751:
 	asm( 
-"	      005254ca    cmp dword ptr [ebp-2Ch],0"
+"	      005254ca    cmp missloc,0"
 "	      005254ce    je near ptr 00525555h"
-"	      005254d4    mov eax,[ebp-2Ch]"
-"	      005254d7    mov ecx,[ebp-4]"
+"	      005254d4    mov eax,missloc"
+"	      005254d7    mov ecx,fd"
 "	      005254da    mov ecx,[ecx+8Ch]"
 "	      005254e0    cmp [eax],ecx"
 "	      005254e2    jne near ptr 00525555h"
-"	      005254e8    mov eax,[ebp-2Ch]"
-"	      005254eb    mov ecx,[ebp-4]"
+"	      005254e8    mov eax,missloc"
+"	      005254eb    mov ecx,fd"
 "	      005254ee    mov ecx,[ecx+90h]"
 "	      005254f4    cmp [eax+4],ecx"
 "	      005254f7    jne near ptr 00525555h"
 );
 // LINE 753:
 	asm( 
-"	      005254fd    mov eax,[ebp-4]"
+"	      005254fd    mov eax,fd"
 "	      00525500    mov eax,[eax+9Ch]"
 "	      00525506    push eax"
 "	      00525507    call 00526128h"
 "	      0052550c    add esp,4"
-"	      0052550f    mov [ebp-10h],eax"
+"	      0052550f    mov nfd,eax"
 );
 // LINE 754:
 	asm( 
-"	      00525512    cmp dword ptr [ebp-10h],0"
+"	      00525512    cmp nfd,0"
 "	      00525516    jne near ptr 00525521h"
 );
 // LINE 758:
@@ -1985,27 +1985,27 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 );
 // LINE 760:
 	asm( 
-"	      00525521    mov dword ptr [ebp-54h],0"
+"	      00525521    mov mp.op,0"
 );
 // LINE 761:
 	asm( 
-"	      00525528    mov eax,[ebp-10h]"
+"	      00525528    mov eax,nfd"
 "	      0052552b    mov eax,[eax+9Ch]"
-"	      00525531    mov [ebp-50h],eax"
+"	      00525531    mov mp.id,eax"
 );
 // LINE 762:
 	asm( 
-"	      00525534    mov eax,[ebp-10h]"
+"	      00525534    mov eax,nfd"
 "	      00525537    add eax,8Ch"
 "	      0052553c    mov ecx,[eax]"
 "	      0052553e    mov eax,[eax+4]"
-"	      00525541    lea edx,[ebp-4Ch]"
+"	      00525541    lea edx,mp.maploc.x"
 "	      00525544    mov [edx],ecx"
 "	      00525546    mov [edx+4],eax"
 );
 // LINE 763:
 	asm( 
-"	      00525549    lea eax,[ebp-54h]"
+"	      00525549    lea eax,mp.op"
 "	      0052554c    push eax"
 "	      0052554d    call 004FBD4Ah"
 "	      00525552    add esp,4"
@@ -2025,9 +2025,9 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 // LINE 777:
 next_obj:
 	asm( 
-"	      00525565    mov eax,[ebp-0Ch]"
+"	      00525565    mov eax,stobj"
 "	      00525568    mov eax,[eax]"
-"	      0052556a    mov [ebp-0Ch],eax"
+"	      0052556a    mov stobj,eax"
 );
 // LINE 778:
 	asm( 
@@ -2040,59 +2040,59 @@ check_dyobjs:
 );
 // LINE 788:
 	asm( 
-"	      00525577    mov eax,[ebp+8]"
+"	      00525577    mov eax,cptr"
 "	      0052557a    mov eax,[eax+10h]"
-"	      0052557d    mov [ebp-8],eax"
+"	      0052557d    mov dyobj,eax"
 );
 // LINE 789:
 	asm( 
-"	      00525580    cmp dword ptr [ebp-8],0"
+"	      00525580    cmp dyobj,0"
 "	      00525584    je near ptr 0052561Fh"
 );
 // LINE 792:
 	asm( 
-"	      0052558a    mov eax,[ebp-8]"
+"	      0052558a    mov eax,dyobj"
 "	      0052558d    movsx eax,word ptr [eax+0Ch]"
 "	      00525591    test ah,10h"
 "	      00525594    je near ptr 00525612h"
 );
 // LINE 798:
 	asm( 
-"	      0052559a    mov eax,[ebp-8]"
+"	      0052559a    mov eax,dyobj"
 "	      0052559d    mov eax,[eax+18h]"
-"	      005255a0    add eax,[ebp-58h]"
-"	      005255a3    mov ecx,[ebp+0Ch]"
+"	      005255a0    add eax,radius"
+"	      005255a3    mov ecx,wloc"
 "	      005255a6    cmp eax,[ecx]"
 "	      005255a8    jle near ptr 00525612h"
-"	      005255ae    mov eax,[ebp-8]"
+"	      005255ae    mov eax,dyobj"
 "	      005255b1    mov eax,[eax+18h]"
-"	      005255b4    sub eax,[ebp-58h]"
-"	      005255b7    mov ecx,[ebp+0Ch]"
+"	      005255b4    sub eax,radius"
+"	      005255b7    mov ecx,wloc"
 "	      005255ba    cmp eax,[ecx]"
 "	      005255bc    jge near ptr 00525612h"
-"	      005255c2    mov eax,[ebp-8]"
+"	      005255c2    mov eax,dyobj"
 "	      005255c5    mov eax,[eax+20h]"
-"	      005255c8    add eax,[ebp-58h]"
-"	      005255cb    mov ecx,[ebp+0Ch]"
+"	      005255c8    add eax,radius"
+"	      005255cb    mov ecx,wloc"
 "	      005255ce    cmp eax,[ecx+8]"
 "	      005255d1    jle near ptr 00525612h"
-"	      005255d7    mov eax,[ebp-8]"
+"	      005255d7    mov eax,dyobj"
 "	      005255da    mov eax,[eax+20h]"
-"	      005255dd    sub eax,[ebp-58h]"
-"	      005255e0    mov ecx,[ebp+0Ch]"
+"	      005255dd    sub eax,radius"
+"	      005255e0    mov ecx,wloc"
 "	      005255e3    cmp eax,[ecx+8]"
 "	      005255e6    jge near ptr 00525612h"
 );
 // LINE 804:
 	asm( 
-"	      005255ec    mov eax,[ebp-8]"
+"	      005255ec    mov eax,dyobj"
 "	      005255ef    movsx eax,word ptr [eax+0Ch]"
 "	      005255f3    test ah,4"
 "	      005255f6    je near ptr 0052560Dh"
 );
 // LINE 806:
 	asm( 
-"	      005255fc    mov eax,[ebp-8]"
+"	      005255fc    mov eax,dyobj"
 "	      005255ff    push eax"
 "	      00525600    call 005232D1h"
 "	      00525605    add esp,4"
@@ -2107,9 +2107,9 @@ check_dyobjs:
 );
 // LINE 817:
 	asm( 
-"	      00525612    mov eax,[ebp-8]"
+"	      00525612    mov eax,dyobj"
 "	      00525615    mov eax,[eax]"
-"	      00525617    mov [ebp-8],eax"
+"	      00525617    mov dyobj,eax"
 );
 // LINE 818:
 	asm( 
@@ -2142,11 +2142,11 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 833:
 	asm( 
-"	      0052562d    mov dword ptr [ebp-20h],0"
+"	      0052562d    mov retval,0"
 );
 // LINE 837:
 	asm( 
-"	      00525634    mov eax,[ebp+8]"
+"	      00525634    mov eax,cfd"
 "	      00525637    mov eax,[eax]"
 "	      00525639    movsx eax,word ptr [eax]"
 "	      0052563c    test al,20h"
@@ -2159,9 +2159,9 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 841:
 	asm( 
-"	      0052564b    mov eax,[ebp+10h]"
+"	      0052564b    mov eax,celly"
 "	      0052564e    push eax"
-"	      0052564f    mov eax,[ebp+0Ch]"
+"	      0052564f    mov eax,cellx"
 "	      00525652    push eax"
 "	      00525653    call 00526595h"
 "	      00525658    add esp,8"
@@ -2175,7 +2175,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 846:
 	asm( 
-"	      0052566a    mov eax,[ebp+8]"
+"	      0052566a    mov eax,cfd"
 "	      0052566d    mov eax,[eax]"
 "	      0052566f    movsx eax,word ptr [eax+8]"
 "	      00525673    mov [ebp-24h],eax"
@@ -2183,23 +2183,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 849:
 	asm( 
-"	      0052567b    mov eax,[ebp+18h]"
+"	      0052567b    mov eax,flags"
 "	      0052567e    push eax"
-"	      0052567f    mov eax,[ebp+14h]"
+"	      0052567f    mov eax,mission_id"
 "	      00525682    push eax"
 "	      00525683    push 2"
 "	      00525685    push 300000h"
 "	      0052568a    push 0"
 "	      0052568c    push 0FFE00000h"
-"	      00525691    mov eax,[ebp+10h]"
+"	      00525691    mov eax,celly"
 "	      00525694    push eax"
-"	      00525695    mov eax,[ebp+0Ch]"
+"	      00525695    mov eax,cellx"
 "	      00525698    push eax"
-"	      00525699    mov eax,[ebp+8]"
+"	      00525699    mov eax,cfd"
 "	      0052569c    push eax"
 "	      0052569d    call 00524829h"
 "	      005256a2    add esp,24h"
-"	      005256a5    or [ebp-20h],eax"
+"	      005256a5    or retval,eax"
 );
 // LINE 850:
 	asm( 
@@ -2210,23 +2210,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      005256b6    idiv ecx"
 "	      005256b8    test edx,edx"
 "	      005256ba    jne near ptr 005256EDh"
-"	      005256c0    mov eax,[ebp+18h]"
+"	      005256c0    mov eax,flags"
 "	      005256c3    push eax"
-"	      005256c4    mov eax,[ebp+14h]"
+"	      005256c4    mov eax,mission_id"
 "	      005256c7    push eax"
 "	      005256c8    push 2"
 "	      005256ca    push 300000h"
 "	      005256cf    push 0"
 "	      005256d1    push 200000h"
-"	      005256d6    mov eax,[ebp+10h]"
+"	      005256d6    mov eax,celly"
 "	      005256d9    push eax"
-"	      005256da    mov eax,[ebp+0Ch]"
+"	      005256da    mov eax,cellx"
 "	      005256dd    push eax"
-"	      005256de    mov eax,[ebp+8]"
+"	      005256de    mov eax,cfd"
 "	      005256e1    push eax"
 "	      005256e2    call 00524829h"
 "	      005256e7    add esp,24h"
-"	      005256ea    or [ebp-20h],eax"
+"	      005256ea    or retval,eax"
 );
 // LINE 851:
 	asm( 
@@ -2237,23 +2237,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      005256fb    idiv ecx"
 "	      005256fd    test edx,edx"
 "	      005256ff    jne near ptr 00525732h"
-"	      00525705    mov eax,[ebp+18h]"
+"	      00525705    mov eax,flags"
 "	      00525708    push eax"
-"	      00525709    mov eax,[ebp+14h]"
+"	      00525709    mov eax,mission_id"
 "	      0052570c    push eax"
 "	      0052570d    push 4"
 "	      0052570f    push 0FFD00000h"
 "	      00525714    push 0"
 "	      00525716    push 0FFE00000h"
-"	      0052571b    mov eax,[ebp+10h]"
+"	      0052571b    mov eax,celly"
 "	      0052571e    push eax"
-"	      0052571f    mov eax,[ebp+0Ch]"
+"	      0052571f    mov eax,cellx"
 "	      00525722    push eax"
-"	      00525723    mov eax,[ebp+8]"
+"	      00525723    mov eax,cfd"
 "	      00525726    push eax"
 "	      00525727    call 00524829h"
 "	      0052572c    add esp,24h"
-"	      0052572f    or [ebp-20h],eax"
+"	      0052572f    or retval,eax"
 );
 // LINE 852:
 	asm( 
@@ -2264,23 +2264,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525740    idiv ecx"
 "	      00525742    test edx,edx"
 "	      00525744    jne near ptr 00525777h"
-"	      0052574a    mov eax,[ebp+18h]"
+"	      0052574a    mov eax,flags"
 "	      0052574d    push eax"
-"	      0052574e    mov eax,[ebp+14h]"
+"	      0052574e    mov eax,mission_id"
 "	      00525751    push eax"
 "	      00525752    push 4"
 "	      00525754    push 0FFD00000h"
 "	      00525759    push 0"
 "	      0052575b    push 200000h"
-"	      00525760    mov eax,[ebp+10h]"
+"	      00525760    mov eax,celly"
 "	      00525763    push eax"
-"	      00525764    mov eax,[ebp+0Ch]"
+"	      00525764    mov eax,cellx"
 "	      00525767    push eax"
-"	      00525768    mov eax,[ebp+8]"
+"	      00525768    mov eax,cfd"
 "	      0052576b    push eax"
 "	      0052576c    call 00524829h"
 "	      00525771    add esp,24h"
-"	      00525774    or [ebp-20h],eax"
+"	      00525774    or retval,eax"
 );
 // LINE 853:
 	asm( 
@@ -2291,23 +2291,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525785    idiv ecx"
 "	      00525787    test edx,edx"
 "	      00525789    jne near ptr 005257BCh"
-"	      0052578f    mov eax,[ebp+18h]"
+"	      0052578f    mov eax,flags"
 "	      00525792    push eax"
-"	      00525793    mov eax,[ebp+14h]"
+"	      00525793    mov eax,mission_id"
 "	      00525796    push eax"
 "	      00525797    push 10h"
 "	      00525799    push 200000h"
 "	      0052579e    push 0"
 "	      005257a0    push 0FFD00000h"
-"	      005257a5    mov eax,[ebp+10h]"
+"	      005257a5    mov eax,celly"
 "	      005257a8    push eax"
-"	      005257a9    mov eax,[ebp+0Ch]"
+"	      005257a9    mov eax,cellx"
 "	      005257ac    push eax"
-"	      005257ad    mov eax,[ebp+8]"
+"	      005257ad    mov eax,cfd"
 "	      005257b0    push eax"
 "	      005257b1    call 00524829h"
 "	      005257b6    add esp,24h"
-"	      005257b9    or [ebp-20h],eax"
+"	      005257b9    or retval,eax"
 );
 // LINE 854:
 	asm( 
@@ -2318,23 +2318,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      005257ca    idiv ecx"
 "	      005257cc    test edx,edx"
 "	      005257ce    jne near ptr 00525801h"
-"	      005257d4    mov eax,[ebp+18h]"
+"	      005257d4    mov eax,flags"
 "	      005257d7    push eax"
-"	      005257d8    mov eax,[ebp+14h]"
+"	      005257d8    mov eax,mission_id"
 "	      005257db    push eax"
 "	      005257dc    push 8"
 "	      005257de    push 200000h"
 "	      005257e3    push 0"
 "	      005257e5    push 300000h"
-"	      005257ea    mov eax,[ebp+10h]"
+"	      005257ea    mov eax,celly"
 "	      005257ed    push eax"
-"	      005257ee    mov eax,[ebp+0Ch]"
+"	      005257ee    mov eax,cellx"
 "	      005257f1    push eax"
-"	      005257f2    mov eax,[ebp+8]"
+"	      005257f2    mov eax,cfd"
 "	      005257f5    push eax"
 "	      005257f6    call 00524829h"
 "	      005257fb    add esp,24h"
-"	      005257fe    or [ebp-20h],eax"
+"	      005257fe    or retval,eax"
 );
 // LINE 855:
 	asm( 
@@ -2345,23 +2345,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      0052580f    idiv ecx"
 "	      00525811    test edx,edx"
 "	      00525813    jne near ptr 00525846h"
-"	      00525819    mov eax,[ebp+18h]"
+"	      00525819    mov eax,flags"
 "	      0052581c    push eax"
-"	      0052581d    mov eax,[ebp+14h]"
+"	      0052581d    mov eax,mission_id"
 "	      00525820    push eax"
 "	      00525821    push 10h"
 "	      00525823    push 0FFE00000h"
 "	      00525828    push 0"
 "	      0052582a    push 0FFD00000h"
-"	      0052582f    mov eax,[ebp+10h]"
+"	      0052582f    mov eax,celly"
 "	      00525832    push eax"
-"	      00525833    mov eax,[ebp+0Ch]"
+"	      00525833    mov eax,cellx"
 "	      00525836    push eax"
-"	      00525837    mov eax,[ebp+8]"
+"	      00525837    mov eax,cfd"
 "	      0052583a    push eax"
 "	      0052583b    call 00524829h"
 "	      00525840    add esp,24h"
-"	      00525843    or [ebp-20h],eax"
+"	      00525843    or retval,eax"
 );
 // LINE 856:
 	asm( 
@@ -2372,23 +2372,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525854    idiv ecx"
 "	      00525856    test edx,edx"
 "	      00525858    jne near ptr 0052588Bh"
-"	      0052585e    mov eax,[ebp+18h]"
+"	      0052585e    mov eax,flags"
 "	      00525861    push eax"
-"	      00525862    mov eax,[ebp+14h]"
+"	      00525862    mov eax,mission_id"
 "	      00525865    push eax"
 "	      00525866    push 8"
 "	      00525868    push 0FFE00000h"
 "	      0052586d    push 0"
 "	      0052586f    push 300000h"
-"	      00525874    mov eax,[ebp+10h]"
+"	      00525874    mov eax,celly"
 "	      00525877    push eax"
-"	      00525878    mov eax,[ebp+0Ch]"
+"	      00525878    mov eax,cellx"
 "	      0052587b    push eax"
-"	      0052587c    mov eax,[ebp+8]"
+"	      0052587c    mov eax,cfd"
 "	      0052587f    push eax"
 "	      00525880    call 00524829h"
 "	      00525885    add esp,24h"
-"	      00525888    or [ebp-20h],eax"
+"	      00525888    or retval,eax"
 );
 // LINE 857:
 	asm( 
@@ -2396,23 +2396,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 859:
 	asm( 
-"	      00525890    mov eax,[ebp+18h]"
+"	      00525890    mov eax,flags"
 "	      00525893    push eax"
-"	      00525894    mov eax,[ebp+14h]"
+"	      00525894    mov eax,mission_id"
 "	      00525897    push eax"
 "	      00525898    push 8"
 "	      0052589a    push 400000h"
 "	      0052589f    push 0"
 "	      005258a1    push 500000h"
-"	      005258a6    mov eax,[ebp+10h]"
+"	      005258a6    mov eax,celly"
 "	      005258a9    push eax"
-"	      005258aa    mov eax,[ebp+0Ch]"
+"	      005258aa    mov eax,cellx"
 "	      005258ad    push eax"
-"	      005258ae    mov eax,[ebp+8]"
+"	      005258ae    mov eax,cfd"
 "	      005258b1    push eax"
 "	      005258b2    call 00524829h"
 "	      005258b7    add esp,24h"
-"	      005258ba    or [ebp-20h],eax"
+"	      005258ba    or retval,eax"
 );
 // LINE 860:
 	asm( 
@@ -2423,23 +2423,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      005258cb    idiv ecx"
 "	      005258cd    test edx,edx"
 "	      005258cf    jne near ptr 005258FFh"
-"	      005258d5    mov eax,[ebp+18h]"
+"	      005258d5    mov eax,flags"
 "	      005258d8    push eax"
-"	      005258d9    mov eax,[ebp+14h]"
+"	      005258d9    mov eax,mission_id"
 "	      005258dc    push eax"
 "	      005258dd    push 8"
 "	      005258df    push 0"
 "	      005258e1    push 0"
 "	      005258e3    push 500000h"
-"	      005258e8    mov eax,[ebp+10h]"
+"	      005258e8    mov eax,celly"
 "	      005258eb    push eax"
-"	      005258ec    mov eax,[ebp+0Ch]"
+"	      005258ec    mov eax,cellx"
 "	      005258ef    push eax"
-"	      005258f0    mov eax,[ebp+8]"
+"	      005258f0    mov eax,cfd"
 "	      005258f3    push eax"
 "	      005258f4    call 00524829h"
 "	      005258f9    add esp,24h"
-"	      005258fc    or [ebp-20h],eax"
+"	      005258fc    or retval,eax"
 );
 // LINE 861:
 	asm( 
@@ -2450,23 +2450,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      0052590d    idiv ecx"
 "	      0052590f    test edx,edx"
 "	      00525911    jne near ptr 00525944h"
-"	      00525917    mov eax,[ebp+18h]"
+"	      00525917    mov eax,flags"
 "	      0052591a    push eax"
-"	      0052591b    mov eax,[ebp+14h]"
+"	      0052591b    mov eax,mission_id"
 "	      0052591e    push eax"
 "	      0052591f    push 8"
 "	      00525921    push 0FFC00000h"
 "	      00525926    push 0"
 "	      00525928    push 500000h"
-"	      0052592d    mov eax,[ebp+10h]"
+"	      0052592d    mov eax,celly"
 "	      00525930    push eax"
-"	      00525931    mov eax,[ebp+0Ch]"
+"	      00525931    mov eax,cellx"
 "	      00525934    push eax"
-"	      00525935    mov eax,[ebp+8]"
+"	      00525935    mov eax,cfd"
 "	      00525938    push eax"
 "	      00525939    call 00524829h"
 "	      0052593e    add esp,24h"
-"	      00525941    or [ebp-20h],eax"
+"	      00525941    or retval,eax"
 );
 // LINE 862:
 	asm( 
@@ -2477,23 +2477,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525952    idiv ecx"
 "	      00525954    test edx,edx"
 "	      00525956    jne near ptr 00525989h"
-"	      0052595c    mov eax,[ebp+18h]"
+"	      0052595c    mov eax,flags"
 "	      0052595f    push eax"
-"	      00525960    mov eax,[ebp+14h]"
+"	      00525960    mov eax,mission_id"
 "	      00525963    push eax"
 "	      00525964    push 10h"
 "	      00525966    push 400000h"
 "	      0052596b    push 0"
 "	      0052596d    push 0FFB00000h"
-"	      00525972    mov eax,[ebp+10h]"
+"	      00525972    mov eax,celly"
 "	      00525975    push eax"
-"	      00525976    mov eax,[ebp+0Ch]"
+"	      00525976    mov eax,cellx"
 "	      00525979    push eax"
-"	      0052597a    mov eax,[ebp+8]"
+"	      0052597a    mov eax,cfd"
 "	      0052597d    push eax"
 "	      0052597e    call 00524829h"
 "	      00525983    add esp,24h"
-"	      00525986    or [ebp-20h],eax"
+"	      00525986    or retval,eax"
 );
 // LINE 863:
 	asm( 
@@ -2506,23 +2506,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525999    xor eax,edx"
 "	      0052599b    sub eax,edx"
 "	      0052599d    jne near ptr 005259CDh"
-"	      005259a3    mov eax,[ebp+18h]"
+"	      005259a3    mov eax,flags"
 "	      005259a6    push eax"
-"	      005259a7    mov eax,[ebp+14h]"
+"	      005259a7    mov eax,mission_id"
 "	      005259aa    push eax"
 "	      005259ab    push 10h"
 "	      005259ad    push 0"
 "	      005259af    push 0"
 "	      005259b1    push 0FFB00000h"
-"	      005259b6    mov eax,[ebp+10h]"
+"	      005259b6    mov eax,celly"
 "	      005259b9    push eax"
-"	      005259ba    mov eax,[ebp+0Ch]"
+"	      005259ba    mov eax,cellx"
 "	      005259bd    push eax"
-"	      005259be    mov eax,[ebp+8]"
+"	      005259be    mov eax,cfd"
 "	      005259c1    push eax"
 "	      005259c2    call 00524829h"
 "	      005259c7    add esp,24h"
-"	      005259ca    or [ebp-20h],eax"
+"	      005259ca    or retval,eax"
 );
 // LINE 864:
 	asm( 
@@ -2533,23 +2533,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      005259db    idiv ecx"
 "	      005259dd    test edx,edx"
 "	      005259df    jne near ptr 00525A12h"
-"	      005259e5    mov eax,[ebp+18h]"
+"	      005259e5    mov eax,flags"
 "	      005259e8    push eax"
-"	      005259e9    mov eax,[ebp+14h]"
+"	      005259e9    mov eax,mission_id"
 "	      005259ec    push eax"
 "	      005259ed    push 10h"
 "	      005259ef    push 0FFC00000h"
 "	      005259f4    push 0"
 "	      005259f6    push 0FFB00000h"
-"	      005259fb    mov eax,[ebp+10h]"
+"	      005259fb    mov eax,celly"
 "	      005259fe    push eax"
-"	      005259ff    mov eax,[ebp+0Ch]"
+"	      005259ff    mov eax,cellx"
 "	      00525a02    push eax"
-"	      00525a03    mov eax,[ebp+8]"
+"	      00525a03    mov eax,cfd"
 "	      00525a06    push eax"
 "	      00525a07    call 00524829h"
 "	      00525a0c    add esp,24h"
-"	      00525a0f    or [ebp-20h],eax"
+"	      00525a0f    or retval,eax"
 );
 // LINE 865:
 	asm( 
@@ -2560,23 +2560,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525a20    idiv ecx"
 "	      00525a22    test edx,edx"
 "	      00525a24    jne near ptr 00525A57h"
-"	      00525a2a    mov eax,[ebp+18h]"
+"	      00525a2a    mov eax,flags"
 "	      00525a2d    push eax"
-"	      00525a2e    mov eax,[ebp+14h]"
+"	      00525a2e    mov eax,mission_id"
 "	      00525a31    push eax"
 "	      00525a32    push 2"
 "	      00525a34    push 500000h"
 "	      00525a39    push 0"
 "	      00525a3b    push 400000h"
-"	      00525a40    mov eax,[ebp+10h]"
+"	      00525a40    mov eax,celly"
 "	      00525a43    push eax"
-"	      00525a44    mov eax,[ebp+0Ch]"
+"	      00525a44    mov eax,cellx"
 "	      00525a47    push eax"
-"	      00525a48    mov eax,[ebp+8]"
+"	      00525a48    mov eax,cfd"
 "	      00525a4b    push eax"
 "	      00525a4c    call 00524829h"
 "	      00525a51    add esp,24h"
-"	      00525a54    or [ebp-20h],eax"
+"	      00525a54    or retval,eax"
 );
 // LINE 866:
 	asm( 
@@ -2589,23 +2589,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525a67    xor eax,edx"
 "	      00525a69    sub eax,edx"
 "	      00525a6b    jne near ptr 00525A9Bh"
-"	      00525a71    mov eax,[ebp+18h]"
+"	      00525a71    mov eax,flags"
 "	      00525a74    push eax"
-"	      00525a75    mov eax,[ebp+14h]"
+"	      00525a75    mov eax,mission_id"
 "	      00525a78    push eax"
 "	      00525a79    push 2"
 "	      00525a7b    push 500000h"
 "	      00525a80    push 0"
 "	      00525a82    push 0"
-"	      00525a84    mov eax,[ebp+10h]"
+"	      00525a84    mov eax,celly"
 "	      00525a87    push eax"
-"	      00525a88    mov eax,[ebp+0Ch]"
+"	      00525a88    mov eax,cellx"
 "	      00525a8b    push eax"
-"	      00525a8c    mov eax,[ebp+8]"
+"	      00525a8c    mov eax,cfd"
 "	      00525a8f    push eax"
 "	      00525a90    call 00524829h"
 "	      00525a95    add esp,24h"
-"	      00525a98    or [ebp-20h],eax"
+"	      00525a98    or retval,eax"
 );
 // LINE 867:
 	asm( 
@@ -2616,23 +2616,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525aa9    idiv ecx"
 "	      00525aab    test edx,edx"
 "	      00525aad    jne near ptr 00525AE0h"
-"	      00525ab3    mov eax,[ebp+18h]"
+"	      00525ab3    mov eax,flags"
 "	      00525ab6    push eax"
-"	      00525ab7    mov eax,[ebp+14h]"
+"	      00525ab7    mov eax,mission_id"
 "	      00525aba    push eax"
 "	      00525abb    push 2"
 "	      00525abd    push 500000h"
 "	      00525ac2    push 0"
 "	      00525ac4    push 0FFC00000h"
-"	      00525ac9    mov eax,[ebp+10h]"
+"	      00525ac9    mov eax,celly"
 "	      00525acc    push eax"
-"	      00525acd    mov eax,[ebp+0Ch]"
+"	      00525acd    mov eax,cellx"
 "	      00525ad0    push eax"
-"	      00525ad1    mov eax,[ebp+8]"
+"	      00525ad1    mov eax,cfd"
 "	      00525ad4    push eax"
 "	      00525ad5    call 00524829h"
 "	      00525ada    add esp,24h"
-"	      00525add    or [ebp-20h],eax"
+"	      00525add    or retval,eax"
 );
 // LINE 868:
 	asm( 
@@ -2643,23 +2643,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525aee    idiv ecx"
 "	      00525af0    test edx,edx"
 "	      00525af2    jne near ptr 00525B25h"
-"	      00525af8    mov eax,[ebp+18h]"
+"	      00525af8    mov eax,flags"
 "	      00525afb    push eax"
-"	      00525afc    mov eax,[ebp+14h]"
+"	      00525afc    mov eax,mission_id"
 "	      00525aff    push eax"
 "	      00525b00    push 4"
 "	      00525b02    push 0FFB00000h"
 "	      00525b07    push 0"
 "	      00525b09    push 400000h"
-"	      00525b0e    mov eax,[ebp+10h]"
+"	      00525b0e    mov eax,celly"
 "	      00525b11    push eax"
-"	      00525b12    mov eax,[ebp+0Ch]"
+"	      00525b12    mov eax,cellx"
 "	      00525b15    push eax"
-"	      00525b16    mov eax,[ebp+8]"
+"	      00525b16    mov eax,cfd"
 "	      00525b19    push eax"
 "	      00525b1a    call 00524829h"
 "	      00525b1f    add esp,24h"
-"	      00525b22    or [ebp-20h],eax"
+"	      00525b22    or retval,eax"
 );
 // LINE 869:
 	asm( 
@@ -2670,43 +2670,43 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525b33    idiv ecx"
 "	      00525b35    test edx,edx"
 "	      00525b37    jne near ptr 00525B67h"
-"	      00525b3d    mov eax,[ebp+18h]"
+"	      00525b3d    mov eax,flags"
 "	      00525b40    push eax"
-"	      00525b41    mov eax,[ebp+14h]"
+"	      00525b41    mov eax,mission_id"
 "	      00525b44    push eax"
 "	      00525b45    push 4"
 "	      00525b47    push 0FFB00000h"
 "	      00525b4c    push 0"
 "	      00525b4e    push 0"
-"	      00525b50    mov eax,[ebp+10h]"
+"	      00525b50    mov eax,celly"
 "	      00525b53    push eax"
-"	      00525b54    mov eax,[ebp+0Ch]"
+"	      00525b54    mov eax,cellx"
 "	      00525b57    push eax"
-"	      00525b58    mov eax,[ebp+8]"
+"	      00525b58    mov eax,cfd"
 "	      00525b5b    push eax"
 "	      00525b5c    call 00524829h"
 "	      00525b61    add esp,24h"
-"	      00525b64    or [ebp-20h],eax"
+"	      00525b64    or retval,eax"
 );
 // LINE 870:
 	asm( 
-"	      00525b67    mov eax,[ebp+18h]"
+"	      00525b67    mov eax,flags"
 "	      00525b6a    push eax"
-"	      00525b6b    mov eax,[ebp+14h]"
+"	      00525b6b    mov eax,mission_id"
 "	      00525b6e    push eax"
 "	      00525b6f    push 4"
 "	      00525b71    push 0FFB00000h"
 "	      00525b76    push 0"
 "	      00525b78    push 0FFC00000h"
-"	      00525b7d    mov eax,[ebp+10h]"
+"	      00525b7d    mov eax,celly"
 "	      00525b80    push eax"
-"	      00525b81    mov eax,[ebp+0Ch]"
+"	      00525b81    mov eax,cellx"
 "	      00525b84    push eax"
-"	      00525b85    mov eax,[ebp+8]"
+"	      00525b85    mov eax,cfd"
 "	      00525b88    push eax"
 "	      00525b89    call 00524829h"
 "	      00525b8e    add esp,24h"
-"	      00525b91    or [ebp-20h],eax"
+"	      00525b91    or retval,eax"
 );
 // LINE 871:
 	asm( 
@@ -2714,23 +2714,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 873:
 	asm( 
-"	      00525b99    mov eax,[ebp+18h]"
+"	      00525b99    mov eax,flags"
 "	      00525b9c    push eax"
-"	      00525b9d    mov eax,[ebp+14h]"
+"	      00525b9d    mov eax,mission_id"
 "	      00525ba0    push eax"
 "	      00525ba1    push 8"
 "	      00525ba3    push 600000h"
 "	      00525ba8    push 0"
 "	      00525baa    push 700000h"
-"	      00525baf    mov eax,[ebp+10h]"
+"	      00525baf    mov eax,celly"
 "	      00525bb2    push eax"
-"	      00525bb3    mov eax,[ebp+0Ch]"
+"	      00525bb3    mov eax,cellx"
 "	      00525bb6    push eax"
-"	      00525bb7    mov eax,[ebp+8]"
+"	      00525bb7    mov eax,cfd"
 "	      00525bba    push eax"
 "	      00525bbb    call 00524829h"
 "	      00525bc0    add esp,24h"
-"	      00525bc3    or [ebp-20h],eax"
+"	      00525bc3    or retval,eax"
 );
 // LINE 874:
 	asm( 
@@ -2741,43 +2741,43 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525bd4    idiv ecx"
 "	      00525bd6    test edx,edx"
 "	      00525bd8    jne near ptr 00525C0Bh"
-"	      00525bde    mov eax,[ebp+18h]"
+"	      00525bde    mov eax,flags"
 "	      00525be1    push eax"
-"	      00525be2    mov eax,[ebp+14h]"
+"	      00525be2    mov eax,mission_id"
 "	      00525be5    push eax"
 "	      00525be6    push 8"
 "	      00525be8    push 200000h"
 "	      00525bed    push 0"
 "	      00525bef    push 700000h"
-"	      00525bf4    mov eax,[ebp+10h]"
+"	      00525bf4    mov eax,celly"
 "	      00525bf7    push eax"
-"	      00525bf8    mov eax,[ebp+0Ch]"
+"	      00525bf8    mov eax,cellx"
 "	      00525bfb    push eax"
-"	      00525bfc    mov eax,[ebp+8]"
+"	      00525bfc    mov eax,cfd"
 "	      00525bff    push eax"
 "	      00525c00    call 00524829h"
 "	      00525c05    add esp,24h"
-"	      00525c08    or [ebp-20h],eax"
+"	      00525c08    or retval,eax"
 );
 // LINE 875:
 	asm( 
-"	      00525c0b    mov eax,[ebp+18h]"
+"	      00525c0b    mov eax,flags"
 "	      00525c0e    push eax"
-"	      00525c0f    mov eax,[ebp+14h]"
+"	      00525c0f    mov eax,mission_id"
 "	      00525c12    push eax"
 "	      00525c13    push 8"
 "	      00525c15    push 0FFE00000h"
 "	      00525c1a    push 0"
 "	      00525c1c    push 700000h"
-"	      00525c21    mov eax,[ebp+10h]"
+"	      00525c21    mov eax,celly"
 "	      00525c24    push eax"
-"	      00525c25    mov eax,[ebp+0Ch]"
+"	      00525c25    mov eax,cellx"
 "	      00525c28    push eax"
-"	      00525c29    mov eax,[ebp+8]"
+"	      00525c29    mov eax,cfd"
 "	      00525c2c    push eax"
 "	      00525c2d    call 00524829h"
 "	      00525c32    add esp,24h"
-"	      00525c35    or [ebp-20h],eax"
+"	      00525c35    or retval,eax"
 );
 // LINE 876:
 	asm( 
@@ -2788,23 +2788,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525c46    idiv ecx"
 "	      00525c48    test edx,edx"
 "	      00525c4a    jne near ptr 00525C7Dh"
-"	      00525c50    mov eax,[ebp+18h]"
+"	      00525c50    mov eax,flags"
 "	      00525c53    push eax"
-"	      00525c54    mov eax,[ebp+14h]"
+"	      00525c54    mov eax,mission_id"
 "	      00525c57    push eax"
 "	      00525c58    push 8"
 "	      00525c5a    push 0FFA00000h"
 "	      00525c5f    push 0"
 "	      00525c61    push 700000h"
-"	      00525c66    mov eax,[ebp+10h]"
+"	      00525c66    mov eax,celly"
 "	      00525c69    push eax"
-"	      00525c6a    mov eax,[ebp+0Ch]"
+"	      00525c6a    mov eax,cellx"
 "	      00525c6d    push eax"
-"	      00525c6e    mov eax,[ebp+8]"
+"	      00525c6e    mov eax,cfd"
 "	      00525c71    push eax"
 "	      00525c72    call 00524829h"
 "	      00525c77    add esp,24h"
-"	      00525c7a    or [ebp-20h],eax"
+"	      00525c7a    or retval,eax"
 );
 // LINE 877:
 	asm( 
@@ -2815,23 +2815,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525c8b    idiv ecx"
 "	      00525c8d    test edx,edx"
 "	      00525c8f    jne near ptr 00525CC2h"
-"	      00525c95    mov eax,[ebp+18h]"
+"	      00525c95    mov eax,flags"
 "	      00525c98    push eax"
-"	      00525c99    mov eax,[ebp+14h]"
+"	      00525c99    mov eax,mission_id"
 "	      00525c9c    push eax"
 "	      00525c9d    push 10h"
 "	      00525c9f    push 600000h"
 "	      00525ca4    push 0"
 "	      00525ca6    push 0FF900000h"
-"	      00525cab    mov eax,[ebp+10h]"
+"	      00525cab    mov eax,celly"
 "	      00525cae    push eax"
-"	      00525caf    mov eax,[ebp+0Ch]"
+"	      00525caf    mov eax,cellx"
 "	      00525cb2    push eax"
-"	      00525cb3    mov eax,[ebp+8]"
+"	      00525cb3    mov eax,cfd"
 "	      00525cb6    push eax"
 "	      00525cb7    call 00524829h"
 "	      00525cbc    add esp,24h"
-"	      00525cbf    or [ebp-20h],eax"
+"	      00525cbf    or retval,eax"
 );
 // LINE 878:
 	asm( 
@@ -2842,43 +2842,43 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525cd0    idiv ecx"
 "	      00525cd2    test edx,edx"
 "	      00525cd4    jne near ptr 00525D07h"
-"	      00525cda    mov eax,[ebp+18h]"
+"	      00525cda    mov eax,flags"
 "	      00525cdd    push eax"
-"	      00525cde    mov eax,[ebp+14h]"
+"	      00525cde    mov eax,mission_id"
 "	      00525ce1    push eax"
 "	      00525ce2    push 10h"
 "	      00525ce4    push 200000h"
 "	      00525ce9    push 0"
 "	      00525ceb    push 0FF900000h"
-"	      00525cf0    mov eax,[ebp+10h]"
+"	      00525cf0    mov eax,celly"
 "	      00525cf3    push eax"
-"	      00525cf4    mov eax,[ebp+0Ch]"
+"	      00525cf4    mov eax,cellx"
 "	      00525cf7    push eax"
-"	      00525cf8    mov eax,[ebp+8]"
+"	      00525cf8    mov eax,cfd"
 "	      00525cfb    push eax"
 "	      00525cfc    call 00524829h"
 "	      00525d01    add esp,24h"
-"	      00525d04    or [ebp-20h],eax"
+"	      00525d04    or retval,eax"
 );
 // LINE 879:
 	asm( 
-"	      00525d07    mov eax,[ebp+18h]"
+"	      00525d07    mov eax,flags"
 "	      00525d0a    push eax"
-"	      00525d0b    mov eax,[ebp+14h]"
+"	      00525d0b    mov eax,mission_id"
 "	      00525d0e    push eax"
 "	      00525d0f    push 10h"
 "	      00525d11    push 0FFE00000h"
 "	      00525d16    push 0"
 "	      00525d18    push 0FF900000h"
-"	      00525d1d    mov eax,[ebp+10h]"
+"	      00525d1d    mov eax,celly"
 "	      00525d20    push eax"
-"	      00525d21    mov eax,[ebp+0Ch]"
+"	      00525d21    mov eax,cellx"
 "	      00525d24    push eax"
-"	      00525d25    mov eax,[ebp+8]"
+"	      00525d25    mov eax,cfd"
 "	      00525d28    push eax"
 "	      00525d29    call 00524829h"
 "	      00525d2e    add esp,24h"
-"	      00525d31    or [ebp-20h],eax"
+"	      00525d31    or retval,eax"
 );
 // LINE 880:
 	asm( 
@@ -2889,23 +2889,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525d42    idiv ecx"
 "	      00525d44    test edx,edx"
 "	      00525d46    jne near ptr 00525D79h"
-"	      00525d4c    mov eax,[ebp+18h]"
+"	      00525d4c    mov eax,flags"
 "	      00525d4f    push eax"
-"	      00525d50    mov eax,[ebp+14h]"
+"	      00525d50    mov eax,mission_id"
 "	      00525d53    push eax"
 "	      00525d54    push 10h"
 "	      00525d56    push 0FFA00000h"
 "	      00525d5b    push 0"
 "	      00525d5d    push 0FF900000h"
-"	      00525d62    mov eax,[ebp+10h]"
+"	      00525d62    mov eax,celly"
 "	      00525d65    push eax"
-"	      00525d66    mov eax,[ebp+0Ch]"
+"	      00525d66    mov eax,cellx"
 "	      00525d69    push eax"
-"	      00525d6a    mov eax,[ebp+8]"
+"	      00525d6a    mov eax,cfd"
 "	      00525d6d    push eax"
 "	      00525d6e    call 00524829h"
 "	      00525d73    add esp,24h"
-"	      00525d76    or [ebp-20h],eax"
+"	      00525d76    or retval,eax"
 );
 // LINE 881:
 	asm( 
@@ -2918,23 +2918,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525d89    xor eax,edx"
 "	      00525d8b    sub eax,edx"
 "	      00525d8d    jne near ptr 00525DC0h"
-"	      00525d93    mov eax,[ebp+18h]"
+"	      00525d93    mov eax,flags"
 "	      00525d96    push eax"
-"	      00525d97    mov eax,[ebp+14h]"
+"	      00525d97    mov eax,mission_id"
 "	      00525d9a    push eax"
 "	      00525d9b    push 2"
 "	      00525d9d    push 700000h"
 "	      00525da2    push 0"
 "	      00525da4    push 600000h"
-"	      00525da9    mov eax,[ebp+10h]"
+"	      00525da9    mov eax,celly"
 "	      00525dac    push eax"
-"	      00525dad    mov eax,[ebp+0Ch]"
+"	      00525dad    mov eax,cellx"
 "	      00525db0    push eax"
-"	      00525db1    mov eax,[ebp+8]"
+"	      00525db1    mov eax,cfd"
 "	      00525db4    push eax"
 "	      00525db5    call 00524829h"
 "	      00525dba    add esp,24h"
-"	      00525dbd    or [ebp-20h],eax"
+"	      00525dbd    or retval,eax"
 );
 // LINE 882:
 	asm( 
@@ -2945,23 +2945,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525dce    idiv ecx"
 "	      00525dd0    test edx,edx"
 "	      00525dd2    jne near ptr 00525E05h"
-"	      00525dd8    mov eax,[ebp+18h]"
+"	      00525dd8    mov eax,flags"
 "	      00525ddb    push eax"
-"	      00525ddc    mov eax,[ebp+14h]"
+"	      00525ddc    mov eax,mission_id"
 "	      00525ddf    push eax"
 "	      00525de0    push 2"
 "	      00525de2    push 700000h"
 "	      00525de7    push 0"
 "	      00525de9    push 200000h"
-"	      00525dee    mov eax,[ebp+10h]"
+"	      00525dee    mov eax,celly"
 "	      00525df1    push eax"
-"	      00525df2    mov eax,[ebp+0Ch]"
+"	      00525df2    mov eax,cellx"
 "	      00525df5    push eax"
-"	      00525df6    mov eax,[ebp+8]"
+"	      00525df6    mov eax,cfd"
 "	      00525df9    push eax"
 "	      00525dfa    call 00524829h"
 "	      00525dff    add esp,24h"
-"	      00525e02    or [ebp-20h],eax"
+"	      00525e02    or retval,eax"
 );
 // LINE 883:
 	asm( 
@@ -2972,23 +2972,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525e13    idiv ecx"
 "	      00525e15    test edx,edx"
 "	      00525e17    jne near ptr 00525E4Ah"
-"	      00525e1d    mov eax,[ebp+18h]"
+"	      00525e1d    mov eax,flags"
 "	      00525e20    push eax"
-"	      00525e21    mov eax,[ebp+14h]"
+"	      00525e21    mov eax,mission_id"
 "	      00525e24    push eax"
 "	      00525e25    push 2"
 "	      00525e27    push 700000h"
 "	      00525e2c    push 0"
 "	      00525e2e    push 0FFE00000h"
-"	      00525e33    mov eax,[ebp+10h]"
+"	      00525e33    mov eax,celly"
 "	      00525e36    push eax"
-"	      00525e37    mov eax,[ebp+0Ch]"
+"	      00525e37    mov eax,cellx"
 "	      00525e3a    push eax"
-"	      00525e3b    mov eax,[ebp+8]"
+"	      00525e3b    mov eax,cfd"
 "	      00525e3e    push eax"
 "	      00525e3f    call 00524829h"
 "	      00525e44    add esp,24h"
-"	      00525e47    or [ebp-20h],eax"
+"	      00525e47    or retval,eax"
 );
 // LINE 884:
 	asm( 
@@ -3001,23 +3001,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525e5a    xor eax,edx"
 "	      00525e5c    sub eax,edx"
 "	      00525e5e    jne near ptr 00525E91h"
-"	      00525e64    mov eax,[ebp+18h]"
+"	      00525e64    mov eax,flags"
 "	      00525e67    push eax"
-"	      00525e68    mov eax,[ebp+14h]"
+"	      00525e68    mov eax,mission_id"
 "	      00525e6b    push eax"
 "	      00525e6c    push 2"
 "	      00525e6e    push 700000h"
 "	      00525e73    push 0"
 "	      00525e75    push 0FFA00000h"
-"	      00525e7a    mov eax,[ebp+10h]"
+"	      00525e7a    mov eax,celly"
 "	      00525e7d    push eax"
-"	      00525e7e    mov eax,[ebp+0Ch]"
+"	      00525e7e    mov eax,cellx"
 "	      00525e81    push eax"
-"	      00525e82    mov eax,[ebp+8]"
+"	      00525e82    mov eax,cfd"
 "	      00525e85    push eax"
 "	      00525e86    call 00524829h"
 "	      00525e8b    add esp,24h"
-"	      00525e8e    or [ebp-20h],eax"
+"	      00525e8e    or retval,eax"
 );
 // LINE 885:
 	asm( 
@@ -3028,23 +3028,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525e9f    idiv ecx"
 "	      00525ea1    test edx,edx"
 "	      00525ea3    jne near ptr 00525ED6h"
-"	      00525ea9    mov eax,[ebp+18h]"
+"	      00525ea9    mov eax,flags"
 "	      00525eac    push eax"
-"	      00525ead    mov eax,[ebp+14h]"
+"	      00525ead    mov eax,mission_id"
 "	      00525eb0    push eax"
 "	      00525eb1    push 4"
 "	      00525eb3    push 0FF900000h"
 "	      00525eb8    push 0"
 "	      00525eba    push 600000h"
-"	      00525ebf    mov eax,[ebp+10h]"
+"	      00525ebf    mov eax,celly"
 "	      00525ec2    push eax"
-"	      00525ec3    mov eax,[ebp+0Ch]"
+"	      00525ec3    mov eax,cellx"
 "	      00525ec6    push eax"
-"	      00525ec7    mov eax,[ebp+8]"
+"	      00525ec7    mov eax,cfd"
 "	      00525eca    push eax"
 "	      00525ecb    call 00524829h"
 "	      00525ed0    add esp,24h"
-"	      00525ed3    or [ebp-20h],eax"
+"	      00525ed3    or retval,eax"
 );
 // LINE 886:
 	asm( 
@@ -3055,23 +3055,23 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525ee4    idiv ecx"
 "	      00525ee6    test edx,edx"
 "	      00525ee8    jne near ptr 00525F1Bh"
-"	      00525eee    mov eax,[ebp+18h]"
+"	      00525eee    mov eax,flags"
 "	      00525ef1    push eax"
-"	      00525ef2    mov eax,[ebp+14h]"
+"	      00525ef2    mov eax,mission_id"
 "	      00525ef5    push eax"
 "	      00525ef6    push 4"
 "	      00525ef8    push 0FF900000h"
 "	      00525efd    push 0"
 "	      00525eff    push 200000h"
-"	      00525f04    mov eax,[ebp+10h]"
+"	      00525f04    mov eax,celly"
 "	      00525f07    push eax"
-"	      00525f08    mov eax,[ebp+0Ch]"
+"	      00525f08    mov eax,cellx"
 "	      00525f0b    push eax"
-"	      00525f0c    mov eax,[ebp+8]"
+"	      00525f0c    mov eax,cfd"
 "	      00525f0f    push eax"
 "	      00525f10    call 00524829h"
 "	      00525f15    add esp,24h"
-"	      00525f18    or [ebp-20h],eax"
+"	      00525f18    or retval,eax"
 );
 // LINE 887:
 	asm( 
@@ -3082,43 +3082,43 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525f29    idiv ecx"
 "	      00525f2b    test edx,edx"
 "	      00525f2d    jne near ptr 00525F60h"
-"	      00525f33    mov eax,[ebp+18h]"
+"	      00525f33    mov eax,flags"
 "	      00525f36    push eax"
-"	      00525f37    mov eax,[ebp+14h]"
+"	      00525f37    mov eax,mission_id"
 "	      00525f3a    push eax"
 "	      00525f3b    push 4"
 "	      00525f3d    push 0FF900000h"
 "	      00525f42    push 0"
 "	      00525f44    push 0FFE00000h"
-"	      00525f49    mov eax,[ebp+10h]"
+"	      00525f49    mov eax,celly"
 "	      00525f4c    push eax"
-"	      00525f4d    mov eax,[ebp+0Ch]"
+"	      00525f4d    mov eax,cellx"
 "	      00525f50    push eax"
-"	      00525f51    mov eax,[ebp+8]"
+"	      00525f51    mov eax,cfd"
 "	      00525f54    push eax"
 "	      00525f55    call 00524829h"
 "	      00525f5a    add esp,24h"
-"	      00525f5d    or [ebp-20h],eax"
+"	      00525f5d    or retval,eax"
 );
 // LINE 888:
 	asm( 
-"	      00525f60    mov eax,[ebp+18h]"
+"	      00525f60    mov eax,flags"
 "	      00525f63    push eax"
-"	      00525f64    mov eax,[ebp+14h]"
+"	      00525f64    mov eax,mission_id"
 "	      00525f67    push eax"
 "	      00525f68    push 4"
 "	      00525f6a    push 0FF900000h"
 "	      00525f6f    push 0"
 "	      00525f71    push 0FFA00000h"
-"	      00525f76    mov eax,[ebp+10h]"
+"	      00525f76    mov eax,celly"
 "	      00525f79    push eax"
-"	      00525f7a    mov eax,[ebp+0Ch]"
+"	      00525f7a    mov eax,cellx"
 "	      00525f7d    push eax"
-"	      00525f7e    mov eax,[ebp+8]"
+"	      00525f7e    mov eax,cfd"
 "	      00525f81    push eax"
 "	      00525f82    call 00524829h"
 "	      00525f87    add esp,24h"
-"	      00525f8a    or [ebp-20h],eax"
+"	      00525f8a    or retval,eax"
 );
 // LINE 889:
 	asm( 
@@ -3133,43 +3133,43 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 "	      00525fa0    idiv ecx"
 "	      00525fa2    test edx,edx"
 "	      00525fa4    jne near ptr 00525FD4h"
-"	      00525faa    mov eax,[ebp+18h]"
+"	      00525faa    mov eax,flags"
 "	      00525fad    push eax"
-"	      00525fae    mov eax,[ebp+14h]"
+"	      00525fae    mov eax,mission_id"
 "	      00525fb1    push eax"
 "	      00525fb2    push 0"
 "	      00525fb4    push 0FFF00000h"
 "	      00525fb9    push 0"
 "	      00525fbb    push 0"
-"	      00525fbd    mov eax,[ebp+10h]"
+"	      00525fbd    mov eax,celly"
 "	      00525fc0    push eax"
-"	      00525fc1    mov eax,[ebp+0Ch]"
+"	      00525fc1    mov eax,cellx"
 "	      00525fc4    push eax"
-"	      00525fc5    mov eax,[ebp+8]"
+"	      00525fc5    mov eax,cfd"
 "	      00525fc8    push eax"
 "	      00525fc9    call 00524829h"
 "	      00525fce    add esp,24h"
-"	      00525fd1    or [ebp-20h],eax"
+"	      00525fd1    or retval,eax"
 );
 // LINE 892:
 	asm( 
-"	      00525fd4    mov eax,[ebp+18h]"
+"	      00525fd4    mov eax,flags"
 "	      00525fd7    push eax"
-"	      00525fd8    mov eax,[ebp+14h]"
+"	      00525fd8    mov eax,mission_id"
 "	      00525fdb    push eax"
 "	      00525fdc    push 0"
 "	      00525fde    push 100000h"
 "	      00525fe3    push 0"
 "	      00525fe5    push 0"
-"	      00525fe7    mov eax,[ebp+10h]"
+"	      00525fe7    mov eax,celly"
 "	      00525fea    push eax"
-"	      00525feb    mov eax,[ebp+0Ch]"
+"	      00525feb    mov eax,cellx"
 "	      00525fee    push eax"
-"	      00525fef    mov eax,[ebp+8]"
+"	      00525fef    mov eax,cfd"
 "	      00525ff2    push eax"
 "	      00525ff3    call 00524829h"
 "	      00525ff8    add esp,24h"
-"	      00525ffb    or [ebp-20h],eax"
+"	      00525ffb    or retval,eax"
 );
 // LINE 893:
 	asm( 
@@ -3188,7 +3188,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 896:
 	asm( 
-"	      0052602b    cmp dword ptr [ebp-20h],0"
+"	      0052602b    cmp retval,0"
 "	      0052602f    jne near ptr 0052603Ch"
 );
 // LINE 897:
@@ -3198,25 +3198,25 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 899:
 	asm( 
-"	      0052603c    mov dword ptr [ebp-1Ch],5"
+"	      0052603c    mov mp.op,5"
 );
 // LINE 900:
 	asm( 
-"	      00526043    mov eax,[ebp+14h]"
-"	      00526046    mov [ebp-18h],eax"
+"	      00526043    mov eax,mission_id"
+"	      00526046    mov mp.id,eax"
 );
 // LINE 901:
 	asm( 
-"	      00526049    mov dword ptr [ebp-0Ch],1"
+"	      00526049    mov mp.i2num,1"
 );
 // LINE 902:
 	asm( 
-"	      00526050    mov eax,[ebp+18h]"
-"	      00526053    mov [ebp-8],eax"
+"	      00526050    mov eax,flags"
+"	      00526053    mov mp.flags,eax"
 );
 // LINE 903:
 	asm( 
-"	      00526056    lea eax,[ebp-1Ch]"
+"	      00526056    lea eax,mp.op"
 "	      00526059    push eax"
 "	      0052605a    call 004FBD4Ah"
 "	      0052605f    add esp,4"
@@ -3228,88 +3228,88 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 909:
 	asm( 
-"	      0052606c    mov dword ptr [ebp-1Ch],23h"
+"	      0052606c    mov mp.op,23h"
 );
 // LINE 910:
 	asm( 
-"	      00526073    mov eax,[ebp+14h]"
-"	      00526076    mov [ebp-18h],eax"
+"	      00526073    mov eax,mission_id"
+"	      00526076    mov mp.id,eax"
 );
 // LINE 911:
 	asm( 
-"	      00526079    mov eax,[ebp+8]"
+"	      00526079    mov eax,cfd"
 "	      0052607c    mov eax,[eax]"
 "	      0052607e    movsx eax,word ptr [eax+8]"
 "	      00526082    imul eax,ds:[5B4E64h]"
-"	      00526089    mov [ebp-0Ch],eax"
+"	      00526089    mov mp.i2num,eax"
 );
 // LINE 912:
 	asm( 
-"	      0052608c    mov eax,[ebp+18h]"
-"	      0052608f    mov [ebp-8],eax"
+"	      0052608c    mov eax,flags"
+"	      0052608f    mov mp.flags,eax"
 );
 // LINE 913:
 	asm( 
-"	      00526092    lea eax,[ebp-1Ch]"
+"	      00526092    lea eax,mp.op"
 "	      00526095    push eax"
 "	      00526096    call 004FBD4Ah"
 "	      0052609b    add esp,4"
 );
 // LINE 915:
 	asm( 
-"	      0052609e    mov dword ptr [ebp-1Ch],22h"
+"	      0052609e    mov mp.op,22h"
 );
 // LINE 916:
 	asm( 
-"	      005260a5    mov eax,[ebp+14h]"
-"	      005260a8    mov [ebp-18h],eax"
+"	      005260a5    mov eax,mission_id"
+"	      005260a8    mov mp.id,eax"
 );
 // LINE 917:
 	asm( 
-"	      005260ab    mov eax,[ebp+8]"
+"	      005260ab    mov eax,cfd"
 "	      005260ae    mov eax,[eax]"
 "	      005260b0    movsx eax,word ptr [eax+8]"
 "	      005260b4    imul eax,ds:[5B4E68h]"
-"	      005260bb    mov [ebp-0Ch],eax"
+"	      005260bb    mov mp.i2num,eax"
 );
 // LINE 918:
 	asm( 
-"	      005260be    mov eax,[ebp+18h]"
-"	      005260c1    mov [ebp-8],eax"
+"	      005260be    mov eax,flags"
+"	      005260c1    mov mp.flags,eax"
 );
 // LINE 919:
 	asm( 
-"	      005260c4    lea eax,[ebp-1Ch]"
+"	      005260c4    lea eax,mp.op"
 "	      005260c7    push eax"
 "	      005260c8    call 004FBD4Ah"
 "	      005260cd    add esp,4"
 );
 // LINE 926:
 	asm( 
-"	      005260d0    mov eax,[ebp+0Ch]"
+"	      005260d0    mov eax,cellx"
 "	      005260d3    mov eax,[eax*4+639850h]"
-"	      005260da    mov ecx,[ebp+10h]"
+"	      005260da    mov ecx,celly"
 "	      005260dd    xor edx,edx"
 "	      005260df    mov dl,[eax+ecx]"
 "	      005260e2    push edx"
 "	      005260e3    call 0051DA5Bh"
 "	      005260e8    add esp,4"
-"	      005260eb    mov [ebp-4],eax"
+"	      005260eb    mov lz,eax"
 );
 // LINE 927:
 	asm( 
-"	      005260ee    cmp dword ptr [ebp-4],0"
+"	      005260ee    cmp lz,0"
 "	      005260f2    je near ptr 00526119h"
-"	      005260f8    mov eax,[ebp-4]"
+"	      005260f8    mov eax,lz"
 "	      005260fb    test byte ptr [eax],4"
 "	      005260fe    je near ptr 00526119h"
 );
 // LINE 929:
 	asm( 
 "	      00526104    push 80010h"
-"	      00526109    mov eax,[ebp+10h]"
+"	      00526109    mov eax,celly"
 "	      0052610c    push eax"
-"	      0052610d    mov eax,[ebp+0Ch]"
+"	      0052610d    mov eax,cellx"
 "	      00526110    push eax"
 "	      00526111    call 004FAC6Dh"
 "	      00526116    add esp,0Ch"
@@ -3345,27 +3345,27 @@ struct _FIRE_DATA* S3FireGetByMission(long mission_id) {
 );
 // LINE 947:
 	asm( 
-"	      00526131    mov dword ptr [ebp-8],0"
-"	      00526138    mov dword ptr [ebp-4],6666F0h"
+"	      00526131    mov i,0"
+"	      00526138    mov fd,6666F0h"
 "	      0052613f    jmp near ptr 0052614Eh"
-"	      00526144    inc dword ptr [ebp-8]"
-"	      00526147    add dword ptr [ebp-4],0A0h"
-"	      0052614e    cmp dword ptr [ebp-8],8Ch"
+"	      00526144    inc i"
+"	      00526147    add fd,0A0h"
+"	      0052614e    cmp i,8Ch"
 "	      00526155    jge near ptr 00526186h"
 );
 // LINE 949:
 	asm( 
-"	      0052615b    mov eax,[ebp-4]"
+"	      0052615b    mov eax,fd"
 "	      0052615e    test byte ptr [eax],1"
 "	      00526161    je near ptr 00526181h"
-"	      00526167    mov eax,[ebp-4]"
-"	      0052616a    mov ecx,[ebp+8]"
+"	      00526167    mov eax,fd"
+"	      0052616a    mov ecx,mission_id"
 "	      0052616d    cmp [eax+9Ch],ecx"
 "	      00526173    jne near ptr 00526181h"
 );
 // LINE 950:
 	asm( 
-"	      00526179    mov eax,[ebp-4]"
+"	      00526179    mov eax,fd"
 "	      0052617c    jmp near ptr 0052618Dh"
 );
 // LINE 951:
@@ -3405,7 +3405,7 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 );
 // LINE 972:
 	asm( 
-"	      0052619b    mov eax,[ebp+8]"
+"	      0052619b    mov eax,cptr"
 "	      0052619e    movsx eax,word ptr [eax]"
 "	      005261a1    test al,20h"
 "	      005261a3    jne near ptr 005261B0h"
@@ -3422,22 +3422,22 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 "	      005261bb    dec ecx"
 "	      005261bc    shl ecx,13h"
 "	      005261bf    sub eax,ecx"
-"	      005261c1    mov [ebp-0Ch],eax"
+"	      005261c1    mov radius,eax"
 );
 // LINE 980:
 	asm( 
-"	      005261c4    mov eax,[ebp+8]"
+"	      005261c4    mov eax,cptr"
 "	      005261c7    mov eax,[eax+0Ch]"
-"	      005261ca    mov [ebp-8],eax"
+"	      005261ca    mov stobj,eax"
 );
 // LINE 981:
 	asm( 
-"	      005261cd    cmp dword ptr [ebp-8],0"
+"	      005261cd    cmp stobj,0"
 "	      005261d1    je near ptr 00526286h"
 );
 // LINE 983:
 	asm( 
-"	      005261d7    mov eax,[ebp-8]"
+"	      005261d7    mov eax,stobj"
 "	      005261da    test byte ptr [eax+8],1"
 "	      005261de    jne near ptr 005261E9h"
 );
@@ -3447,34 +3447,34 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 );
 // LINE 987:
 	asm( 
-"	      005261e9    mov eax,[ebp-8]"
+"	      005261e9    mov eax,stobj"
 "	      005261ec    mov eax,[eax+0Ch]"
-"	      005261ef    mov [ebp-4],eax"
+"	      005261ef    mov fd,eax"
 );
 // LINE 992:
 	asm( 
-"	      005261f2    mov eax,[ebp-4]"
+"	      005261f2    mov eax,fd"
 "	      005261f5    mov eax,[eax+10h]"
-"	      005261f8    add eax,[ebp-0Ch]"
-"	      005261fb    mov ecx,[ebp+0Ch]"
+"	      005261f8    add eax,radius"
+"	      005261fb    mov ecx,loc"
 "	      005261fe    cmp eax,[ecx]"
 "	      00526200    jle near ptr 00526244h"
-"	      00526206    mov eax,[ebp-4]"
+"	      00526206    mov eax,fd"
 "	      00526209    mov eax,[eax+10h]"
-"	      0052620c    sub eax,[ebp-0Ch]"
-"	      0052620f    mov ecx,[ebp+0Ch]"
+"	      0052620c    sub eax,radius"
+"	      0052620f    mov ecx,loc"
 "	      00526212    cmp eax,[ecx]"
 "	      00526214    jge near ptr 00526244h"
-"	      0052621a    mov eax,[ebp-4]"
+"	      0052621a    mov eax,fd"
 "	      0052621d    mov eax,[eax+18h]"
-"	      00526220    add eax,[ebp-0Ch]"
-"	      00526223    mov ecx,[ebp+0Ch]"
+"	      00526220    add eax,radius"
+"	      00526223    mov ecx,loc"
 "	      00526226    cmp eax,[ecx+8]"
 "	      00526229    jle near ptr 00526244h"
-"	      0052622f    mov eax,[ebp-4]"
+"	      0052622f    mov eax,fd"
 "	      00526232    mov eax,[eax+18h]"
-"	      00526235    sub eax,[ebp-0Ch]"
-"	      00526238    mov ecx,[ebp+0Ch]"
+"	      00526235    sub eax,radius"
+"	      00526238    mov ecx,loc"
 "	      0052623b    cmp eax,[ecx+8]"
 "	      0052623e    jl near ptr 00526249h"
 );
@@ -3484,32 +3484,32 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 );
 // LINE 999:
 	asm( 
-"	      00526249    mov eax,[ebp+0Ch]"
+"	      00526249    mov eax,loc"
 "	      0052624c    mov eax,[eax+4]"
-"	      0052624f    mov ecx,[ebp-4]"
+"	      0052624f    mov ecx,fd"
 "	      00526252    mov ecx,[ecx+14h]"
-"	      00526255    mov edx,[ebp-4]"
+"	      00526255    mov edx,fd"
 "	      00526258    add ecx,[edx+8]"
 "	      0052625b    sub eax,ecx"
-"	      0052625d    mov [ebp-10h],eax"
+"	      0052625d    mov height,eax"
 );
 // LINE 1001:
 	asm( 
-"	      00526260    cmp dword ptr [ebp-10h],0"
+"	      00526260    cmp height,0"
 "	      00526264    jne near ptr 00526271h"
-"	      0052626a    mov dword ptr [ebp-10h],1"
+"	      0052626a    mov height,1"
 );
 // LINE 1004:
 	asm( 
-"	      00526271    mov eax,[ebp-10h]"
+"	      00526271    mov eax,height"
 "	      00526274    jmp near ptr 0052628Dh"
 );
 // LINE 1008:
 next_obj:
 	asm( 
-"	      00526279    mov eax,[ebp-8]"
+"	      00526279    mov eax,stobj"
 "	      0052627c    mov eax,[eax]"
-"	      0052627e    mov [ebp-8],eax"
+"	      0052627e    mov stobj,eax"
 );
 // LINE 1009:
 	asm( 
@@ -3548,9 +3548,9 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 );
 // LINE 1036:
 	asm( 
-"	      0052629b    mov eax,[ebp+10h]"
+"	      0052629b    mov eax,dytruck"
 "	      0052629e    add eax,18h"
-"	      005262a1    lea ecx,[ebp-1Ch]"
+"	      005262a1    lea ecx,loc.x"
 "	      005262a4    mov edx,[eax]"
 "	      005262a6    mov [ecx],edx"
 "	      005262a8    mov edx,[eax+4]"
@@ -3560,27 +3560,27 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 );
 // LINE 1037:
 	asm( 
-"	      005262b4    add dword ptr [ebp-18h],1E0000h"
+"	      005262b4    add loc.y,1E0000h"
 );
 // LINE 1039:
 	asm( 
-"	      005262bb    mov eax,[ebp+10h]"
+"	      005262bb    mov eax,dytruck"
 "	      005262be    mov eax,[eax+18h]"
 "	      005262c1    add eax,20000000h"
 "	      005262c6    sar eax,16h"
-"	      005262c9    mov [ebp-24h],eax"
+"	      005262c9    mov currpos.x,eax"
 );
 // LINE 1040:
 	asm( 
 "	      005262cc    mov eax,20000000h"
-"	      005262d1    mov ecx,[ebp+10h]"
+"	      005262d1    mov ecx,dytruck"
 "	      005262d4    sub eax,[ecx+20h]"
 "	      005262d7    sar eax,16h"
-"	      005262da    mov [ebp-20h],eax"
+"	      005262da    mov currpos.y,eax"
 );
 // LINE 1044:
 	asm( 
-"	      005262dd    mov eax,[ebp+8]"
+"	      005262dd    mov eax,fd"
 "	      005262e0    test byte ptr [eax],1"
 "	      005262e3    jne near ptr 005262F3h"
 );
@@ -3598,17 +3598,17 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 "	      00526301    idiv ecx"
 "	      00526303    mov ecx,edx"
 "	      00526305    shl ecx,10h"
-"	      00526308    mov eax,[ebp+0Ch]"
+"	      00526308    mov eax,dist"
 "	      0052630b    cdq"
 "	      0052630c    sub eax,edx"
 "	      0052630e    sar eax,1"
 "	      00526311    add ecx,eax"
-"	      00526313    mov [ebp-4],ecx"
+"	      00526313    mov speed,ecx"
 );
 // LINE 1064:
 	asm( 
-"	      00526316    mov eax,[ebp+14h]"
-"	      00526319    lea ecx,[ebp-10h]"
+"	      00526316    mov eax,firevec"
+"	      00526319    lea ecx,vec.x"
 "	      0052631c    mov edx,[eax]"
 "	      0052631e    mov [ecx],edx"
 "	      00526320    mov edx,[eax+4]"
@@ -3651,11 +3651,11 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 // LINE 1076:
 	asm( 
 "	      00526381    mov eax,ds:[5B73CCh]"
-"	      00526386    mov [ebp-0Ch],eax"
+"	      00526386    mov vec.y,eax"
 );
 // LINE 1077:
 	asm( 
-"	      00526389    lea eax,[ebp-10h]"
+"	      00526389    lea eax,vec.x"
 "	      0052638c    push eax"
 "	      0052638d    call 004CA1E3h"
 "	      00526392    add esp,4"
@@ -3663,16 +3663,16 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 // LINE 1089:
 	asm( 
 "	      00526395    push 0FFFFFFFFh"
-"	      00526397    mov eax,[ebp-4]"
+"	      00526397    mov eax,speed"
 "	      0052639a    push eax"
-"	      0052639b    mov eax,[ebp+10h]"
+"	      0052639b    mov eax,dytruck"
 "	      0052639e    push eax"
 "	      0052639f    push 1"
-"	      005263a1    lea eax,[ebp-10h]"
+"	      005263a1    lea eax,vec.x"
 "	      005263a4    push eax"
-"	      005263a5    lea eax,[ebp-1Ch]"
+"	      005263a5    lea eax,loc.x"
 "	      005263a8    push eax"
-"	      005263a9    lea eax,[ebp-24h]"
+"	      005263a9    lea eax,currpos.x"
 "	      005263ac    push eax"
 "	      005263ad    push 6"
 "	      005263af    call 0051EEE5h"
@@ -3732,9 +3732,9 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 );
 // LINE 1117:
 	asm( 
-"	      005263f5    mov eax,[ebp+10h]"
+"	      005263f5    mov eax,dytruck"
 "	      005263f8    add eax,18h"
-"	      005263fb    lea ecx,[ebp-1Ch]"
+"	      005263fb    lea ecx,loc.x"
 "	      005263fe    mov edx,[eax]"
 "	      00526400    mov [ecx],edx"
 "	      00526402    mov edx,[eax+4]"
@@ -3744,27 +3744,27 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 );
 // LINE 1118:
 	asm( 
-"	      0052640e    add dword ptr [ebp-18h],1E0000h"
+"	      0052640e    add loc.y,1E0000h"
 );
 // LINE 1120:
 	asm( 
-"	      00526415    mov eax,[ebp+10h]"
+"	      00526415    mov eax,dytruck"
 "	      00526418    mov eax,[eax+18h]"
 "	      0052641b    add eax,20000000h"
 "	      00526420    sar eax,16h"
-"	      00526423    mov [ebp-24h],eax"
+"	      00526423    mov currpos.x,eax"
 );
 // LINE 1121:
 	asm( 
 "	      00526426    mov eax,20000000h"
-"	      0052642b    mov ecx,[ebp+10h]"
+"	      0052642b    mov ecx,dytruck"
 "	      0052642e    sub eax,[ecx+20h]"
 "	      00526431    sar eax,16h"
-"	      00526434    mov [ebp-20h],eax"
+"	      00526434    mov currpos.y,eax"
 );
 // LINE 1125:
 	asm( 
-"	      00526437    mov eax,[ebp+8]"
+"	      00526437    mov eax,dyobj"
 "	      0052643a    movsx eax,word ptr [eax+0Ch]"
 "	      0052643e    test ah,10h"
 "	      00526441    jne near ptr 00526451h"
@@ -3783,17 +3783,17 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 "	      0052645f    idiv ecx"
 "	      00526461    mov ecx,edx"
 "	      00526463    shl ecx,10h"
-"	      00526466    mov eax,[ebp+0Ch]"
+"	      00526466    mov eax,dist"
 "	      00526469    cdq"
 "	      0052646a    sub eax,edx"
 "	      0052646c    sar eax,1"
 "	      0052646f    add ecx,eax"
-"	      00526471    mov [ebp-4],ecx"
+"	      00526471    mov speed,ecx"
 );
 // LINE 1130:
 	asm( 
-"	      00526474    mov eax,[ebp+14h]"
-"	      00526477    lea ecx,[ebp-10h]"
+"	      00526474    mov eax,firevec"
+"	      00526477    lea ecx,vec.x"
 "	      0052647a    mov edx,[eax]"
 "	      0052647c    mov [ecx],edx"
 "	      0052647e    mov edx,[eax+4]"
@@ -3836,11 +3836,11 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 // LINE 1142:
 	asm( 
 "	      005264df    mov eax,ds:[5B73CCh]"
-"	      005264e4    mov [ebp-0Ch],eax"
+"	      005264e4    mov vec.y,eax"
 );
 // LINE 1143:
 	asm( 
-"	      005264e7    lea eax,[ebp-10h]"
+"	      005264e7    lea eax,vec.x"
 "	      005264ea    push eax"
 "	      005264eb    call 004CA1E3h"
 "	      005264f0    add esp,4"
@@ -3848,16 +3848,16 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 // LINE 1155:
 	asm( 
 "	      005264f3    push 0FFFFFFFFh"
-"	      005264f5    mov eax,[ebp-4]"
+"	      005264f5    mov eax,speed"
 "	      005264f8    push eax"
-"	      005264f9    mov eax,[ebp+10h]"
+"	      005264f9    mov eax,dytruck"
 "	      005264fc    push eax"
 "	      005264fd    push 1"
-"	      005264ff    lea eax,[ebp-10h]"
+"	      005264ff    lea eax,vec.x"
 "	      00526502    push eax"
-"	      00526503    lea eax,[ebp-1Ch]"
+"	      00526503    lea eax,loc.x"
 "	      00526506    push eax"
-"	      00526507    lea eax,[ebp-24h]"
+"	      00526507    lea eax,currpos.x"
 "	      0052650a    push eax"
 "	      0052650b    push 6"
 "	      0052650d    call 0051EEE5h"
@@ -3914,33 +3914,33 @@ void S3FireTweakInit() {
 );
 // LINE 1178:
 	asm( 
-"	      00526553    mov dword ptr [ebp-28h],5B7388h"
+"	      00526553    mov pvals[0],5B7388h"
 );
 // LINE 1179:
 	asm( 
-"	      0052655a    mov dword ptr [ebp-24h],5B738Ch"
+"	      0052655a    mov pvals[1],5B738Ch"
 );
 // LINE 1180:
 	asm( 
-"	      00526561    mov dword ptr [ebp-20h],5B7390h"
+"	      00526561    mov pvals[2],5B7390h"
 );
 // LINE 1181:
 	asm( 
-"	      00526568    mov dword ptr [ebp-1Ch],5B7394h"
+"	      00526568    mov pvals[3],5B7394h"
 );
 // LINE 1182:
 	asm( 
-"	      0052656f    mov dword ptr [ebp-18h],5B7398h"
+"	      0052656f    mov pvals[4],5B7398h"
 );
 // LINE 1183:
 	asm( 
-"	      00526576    mov dword ptr [ebp-14h],5B739Ch"
+"	      00526576    mov pvals[5],5B739Ch"
 );
 // LINE 1185:
 	asm( 
 "	      0052657d    push 5B73DCh"
 "	      00526582    push 6"
-"	      00526584    lea eax,[ebp-28h]"
+"	      00526584    lea eax,pvals[0]"
 "	      00526587    push eax"
 "	      00526588    call 004C9AD0h"
 "	      0052658d    add esp,0Ch"
@@ -3970,13 +3970,13 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 );
 // LINE 1200:
 	asm( 
-"	      0052659e    cmp dword ptr [ebp+8],0"
+"	      0052659e    cmp cellx,0"
 "	      005265a2    jl near ptr 005265C6h"
-"	      005265a8    cmp dword ptr [ebp+0Ch],0"
+"	      005265a8    cmp celly,0"
 "	      005265ac    jl near ptr 005265C6h"
-"	      005265b2    cmp dword ptr [ebp+8],7Fh"
+"	      005265b2    cmp cellx,7Fh"
 "	      005265b6    jg near ptr 005265C6h"
-"	      005265bc    cmp dword ptr [ebp+0Ch],7Fh"
+"	      005265bc    cmp celly,7Fh"
 "	      005265c0    jle near ptr 005265CDh"
 );
 // LINE 1201:
@@ -3986,32 +3986,32 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 );
 // LINE 1203:
 	asm( 
-"	      005265cd    mov eax,[ebp+8]"
+"	      005265cd    mov eax,cellx"
 "	      005265d0    mov eax,[eax*4+639850h]"
-"	      005265d7    mov ecx,[ebp+0Ch]"
+"	      005265d7    mov ecx,celly"
 "	      005265da    xor edx,edx"
 "	      005265dc    mov dl,[eax+ecx]"
-"	      005265df    mov [ebp-4],edx"
+"	      005265df    mov tile,edx"
 );
 // LINE 1214:
 	asm( 
-"	      005265e2    cmp dword ptr [ebp-4],1Dh"
+"	      005265e2    cmp tile,1Dh"
 "	      005265e6    jl near ptr 005265F6h"
-"	      005265ec    cmp dword ptr [ebp-4],6Bh"
+"	      005265ec    cmp tile,6Bh"
 "	      005265f0    jle near ptr 0052664Bh"
-"	      005265f6    cmp dword ptr [ebp-4],0"
+"	      005265f6    cmp tile,0"
 "	      005265fa    jl near ptr 0052660Ah"
-"	      00526600    cmp dword ptr [ebp-4],4"
+"	      00526600    cmp tile,4"
 "	      00526604    jle near ptr 0052664Bh"
-"	      0052660a    cmp dword ptr [ebp-4],0DEh"
+"	      0052660a    cmp tile,0DEh"
 "	      00526611    je near ptr 0052664Bh"
-"	      00526617    cmp dword ptr [ebp-4],0F6h"
+"	      00526617    cmp tile,0F6h"
 "	      0052661e    je near ptr 0052664Bh"
-"	      00526624    cmp dword ptr [ebp-4],0D2h"
+"	      00526624    cmp tile,0D2h"
 "	      0052662b    je near ptr 0052664Bh"
-"	      00526631    cmp dword ptr [ebp-4],0D3h"
+"	      00526631    cmp tile,0D3h"
 "	      00526638    je near ptr 0052664Bh"
-"	      0052663e    cmp dword ptr [ebp-4],0D1h"
+"	      0052663e    cmp tile,0D1h"
 "	      00526645    jne near ptr 00526652h"
 );
 // LINE 1215:
@@ -4059,44 +4059,44 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1241:
 	asm( 
-"	      0052666a    mov eax,[ebp+8]"
+"	      0052666a    mov eax,fd"
 "	      0052666d    mov eax,[eax+98h]"
 "	      00526673    mov eax,[eax]"
 "	      00526675    movsx eax,word ptr [eax+2]"
 "	      00526679    shl eax,10h"
-"	      0052667c    mov [ebp-6Ch],eax"
+"	      0052667c    mov loc.x,eax"
 );
 // LINE 1242:
 	asm( 
-"	      0052667f    mov eax,[ebp+8]"
+"	      0052667f    mov eax,fd"
 "	      00526682    mov eax,[eax+98h]"
 "	      00526688    mov eax,[eax]"
 "	      0052668a    movsx eax,word ptr [eax+4]"
 "	      0052668e    shl eax,10h"
-"	      00526691    mov [ebp-68h],eax"
+"	      00526691    mov loc.y,eax"
 );
 // LINE 1243:
 	asm( 
-"	      00526694    mov eax,[ebp+8]"
+"	      00526694    mov eax,fd"
 "	      00526697    mov eax,[eax+98h]"
 "	      0052669d    mov eax,[eax]"
 "	      0052669f    movsx eax,word ptr [eax+6]"
 "	      005266a3    shl eax,10h"
-"	      005266a6    mov [ebp-64h],eax"
+"	      005266a6    mov loc.z,eax"
 );
 // LINE 1246:
 	asm( 
-"	      005266a9    mov eax,[ebp+8]"
+"	      005266a9    mov eax,fd"
 "	      005266ac    mov eax,[eax+8Ch]"
 "	      005266b2    mov eax,[eax*4+639850h]"
-"	      005266b9    mov ecx,[ebp+8]"
+"	      005266b9    mov ecx,fd"
 "	      005266bc    mov ecx,[ecx+90h]"
 "	      005266c2    movzx ax,byte ptr [eax+ecx]"
-"	      005266c7    mov [ebp-78h],ax"
+"	      005266c7    mov tile,ax"
 );
 // LINE 1250:
 	asm( 
-"	      005266cb    mov eax,[ebp+8]"
+"	      005266cb    mov eax,fd"
 "	      005266ce    mov eax,[eax+98h]"
 "	      005266d4    mov eax,[eax]"
 "	      005266d6    movsx eax,word ptr [eax+8]"
@@ -4105,25 +4105,25 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1253:
 	asm( 
-"	      005266e3    mov eax,[ebp+8]"
+"	      005266e3    mov eax,fd"
 "	      005266e6    mov eax,[eax+8Ch]"
-"	      005266ec    mov [ebp-58h],eax"
+"	      005266ec    mov x,eax"
 );
 // LINE 1254:
 	asm( 
-"	      005266ef    mov eax,[ebp+8]"
+"	      005266ef    mov eax,fd"
 "	      005266f2    mov eax,[eax+90h]"
-"	      005266f8    mov [ebp-5Ch],eax"
+"	      005266f8    mov y,eax"
 );
 // LINE 1255:
 	asm( 
-"	      005266fb    dec dword ptr [ebp-58h]"
-"	      005266fe    mov eax,[ebp-5Ch]"
+"	      005266fb    dec x"
+"	      005266fe    mov eax,y"
 "	      00526701    and eax,0FFh"
-"	      00526706    mov ecx,[ebp-58h]"
+"	      00526706    mov ecx,x"
 "	      00526709    and ecx,0FFh"
 "	      0052670f    shl ecx,0Ah"
-"	      00526712    mov edx,[ebp+8]"
+"	      00526712    mov edx,fd"
 "	      00526715    mov edx,[edx+98h]"
 "	      0052671b    mov edx,[edx]"
 "	      0052671d    cmp [ecx+eax*4+67ED30h],edx"
@@ -4132,17 +4132,17 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1256:
 	asm( 
-"	      0052672f    inc dword ptr [ebp-58h]"
+"	      0052672f    inc x"
 );
 // LINE 1257:
 	asm( 
-"	      00526732    dec dword ptr [ebp-5Ch]"
-"	      00526735    mov eax,[ebp-5Ch]"
+"	      00526732    dec y"
+"	      00526735    mov eax,y"
 "	      00526738    and eax,0FFh"
-"	      0052673d    mov ecx,[ebp-58h]"
+"	      0052673d    mov ecx,x"
 "	      00526740    and ecx,0FFh"
 "	      00526746    shl ecx,0Ah"
-"	      00526749    mov edx,[ebp+8]"
+"	      00526749    mov edx,fd"
 "	      0052674c    mov edx,[edx+98h]"
 "	      00526752    mov edx,[edx]"
 "	      00526754    cmp [ecx+eax*4+67ED30h],edx"
@@ -4151,47 +4151,47 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1258:
 	asm( 
-"	      00526766    inc dword ptr [ebp-5Ch]"
+"	      00526766    inc y"
 );
 // LINE 1261:
 	asm( 
-"	      00526769    mov eax,[ebp-58h]"
-"	      0052676c    mov [ebp-60h],eax"
+"	      00526769    mov eax,x"
+"	      0052676c    mov i,eax"
 "	      0052676f    jmp near ptr 00526777h"
-"	      00526774    inc dword ptr [ebp-60h]"
-"	      00526777    mov eax,[ebp+8]"
+"	      00526774    inc i"
+"	      00526777    mov eax,fd"
 "	      0052677a    mov eax,[eax+98h]"
 "	      00526780    mov eax,[eax]"
 "	      00526782    movsx eax,word ptr [eax+8]"
-"	      00526786    add eax,[ebp-58h]"
-"	      00526789    cmp eax,[ebp-60h]"
+"	      00526786    add eax,x"
+"	      00526789    cmp eax,i"
 "	      0052678c    jle near ptr 005267E7h"
 );
 // LINE 1262:
 	asm( 
-"	      00526792    mov eax,[ebp-5Ch]"
-"	      00526795    mov [ebp-70h],eax"
+"	      00526792    mov eax,y"
+"	      00526795    mov j,eax"
 "	      00526798    jmp near ptr 005267A0h"
-"	      0052679d    inc dword ptr [ebp-70h]"
-"	      005267a0    mov eax,[ebp+8]"
+"	      0052679d    inc j"
+"	      005267a0    mov eax,fd"
 "	      005267a3    mov eax,[eax+98h]"
 "	      005267a9    mov eax,[eax]"
 "	      005267ab    movsx eax,word ptr [eax+8]"
-"	      005267af    add eax,[ebp-5Ch]"
-"	      005267b2    cmp eax,[ebp-70h]"
+"	      005267af    add eax,y"
+"	      005267b2    cmp eax,j"
 "	      005267b5    jle near ptr 005267E2h"
 );
 // LINE 1264:
 	asm( 
-"	      005267bb    mov eax,[ebp-60h]"
+"	      005267bb    mov eax,i"
 "	      005267be    mov eax,[eax*4+639850h]"
-"	      005267c5    mov ecx,[ebp-70h]"
+"	      005267c5    mov ecx,j"
 "	      005267c8    mov byte ptr [eax+ecx],0"
 );
 // LINE 1265:
 	asm( 
-"	      005267cc    mov eax,[ebp-70h]"
-"	      005267cf    mov ecx,[ebp-60h]"
+"	      005267cc    mov eax,j"
+"	      005267cf    mov ecx,i"
 "	      005267d2    shl ecx,8"
 "	      005267d5    mov byte ptr [eax+ecx+66EB10h],0Ah"
 );
@@ -4206,47 +4206,47 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1270:
 	asm( 
-"	      005267ec    mov eax,[ebp+8]"
+"	      005267ec    mov eax,fd"
 "	      005267ef    mov eax,[eax+8Ch]"
 "	      005267f5    mov eax,[eax*4+639850h]"
-"	      005267fc    mov ecx,[ebp+8]"
+"	      005267fc    mov ecx,fd"
 "	      005267ff    mov ecx,[ecx+90h]"
 "	      00526805    mov byte ptr [eax+ecx],0"
 );
 // LINE 1271:
 	asm( 
-"	      00526809    mov eax,[ebp+8]"
+"	      00526809    mov eax,fd"
 "	      0052680c    mov eax,[eax+90h]"
-"	      00526812    mov ecx,[ebp+8]"
+"	      00526812    mov ecx,fd"
 "	      00526815    mov ecx,[ecx+8Ch]"
 "	      0052681b    shl ecx,8"
 "	      0052681e    mov byte ptr [eax+ecx+66EB10h],0Ah"
 );
 // LINE 1275:
 	asm( 
-"	      00526826    movsx eax,word ptr [ebp-78h]"
+"	      00526826    movsx eax,tile"
 "	      0052682a    cmp eax,6"
 "	      0052682d    jl near ptr 005268A7h"
-"	      00526833    movsx eax,word ptr [ebp-78h]"
+"	      00526833    movsx eax,tile"
 "	      00526837    cmp eax,0Ch"
 "	      0052683a    jg near ptr 005268A7h"
 );
 // LINE 1277:
 	asm( 
-"	      00526840    mov eax,[ebp+8]"
+"	      00526840    mov eax,fd"
 "	      00526843    mov eax,[eax+98h]"
 "	      00526849    mov eax,[eax]"
 "	      0052684b    mov eax,[eax+0Ch]"
-"	      0052684e    mov [ebp-48h],eax"
+"	      0052684e    mov stobj,eax"
 );
 // LINE 1278:
 	asm( 
-"	      00526851    cmp dword ptr [ebp-48h],0"
+"	      00526851    cmp stobj,0"
 "	      00526855    je near ptr 00526888h"
 );
 // LINE 1280:
 	asm( 
-"	      0052685b    mov eax,[ebp-48h]"
+"	      0052685b    mov eax,stobj"
 "	      0052685e    test byte ptr [eax+8],8"
 "	      00526862    je near ptr 0052687Bh"
 );
@@ -4255,14 +4255,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      00526868    push 14Eh"
 "	      0052686d    call 004D8821h"
 "	      00526872    add esp,4"
-"	      00526875    mov ecx,[ebp-48h]"
+"	      00526875    mov ecx,stobj"
 "	      00526878    mov [ecx+4],eax"
 );
 // LINE 1285:
 	asm( 
-"	      0052687b    mov eax,[ebp-48h]"
+"	      0052687b    mov eax,stobj"
 "	      0052687e    mov eax,[eax]"
-"	      00526880    mov [ebp-48h],eax"
+"	      00526880    mov stobj,eax"
 );
 // LINE 1286:
 	asm( 
@@ -4271,9 +4271,9 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 // LINE 1288:
 	asm( 
 "	      00526888    push 1"
-"	      0052688a    lea eax,[ebp-6Ch]"
+"	      0052688a    lea eax,loc.x"
 "	      0052688d    push eax"
-"	      0052688e    mov eax,[ebp+8]"
+"	      0052688e    mov eax,fd"
 "	      00526891    mov eax,[eax+98h]"
 "	      00526897    mov eax,[eax]"
 "	      00526899    push eax"
@@ -4287,7 +4287,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 // LINE 1297:
 	asm( 
 "	      005268a7    push 0"
-"	      005268a9    lea eax,[ebp-6Ch]"
+"	      005268a9    lea eax,loc.x"
 "	      005268ac    push eax"
 "	      005268ad    push 4"
 "	      005268af    call 00446CC2h"
@@ -4295,26 +4295,26 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1301:
 	asm( 
-"	      005268b7    mov eax,[ebp+8]"
+"	      005268b7    mov eax,fd"
 "	      005268ba    mov eax,[eax+98h]"
 "	      005268c0    mov eax,[eax]"
 "	      005268c2    mov eax,[eax+0Ch]"
-"	      005268c5    mov [ebp-48h],eax"
+"	      005268c5    mov stobj,eax"
 );
 // LINE 1302:
 	asm( 
-"	      005268c8    cmp dword ptr [ebp-48h],0"
+"	      005268c8    cmp stobj,0"
 "	      005268cc    je near ptr 005269ECh"
 );
 // LINE 1304:
 	asm( 
-"	      005268d2    mov eax,[ebp-48h]"
+"	      005268d2    mov eax,stobj"
 "	      005268d5    test byte ptr [eax+8],4"
 "	      005268d9    je near ptr 005269DFh"
 );
 // LINE 1306:
 	asm( 
-"	      005268df    mov eax,[ebp+8]"
+"	      005268df    mov eax,fd"
 "	      005268e2    mov eax,[eax+98h]"
 "	      005268e8    mov eax,[eax]"
 "	      005268ea    movsx eax,word ptr [eax+8]"
@@ -4326,17 +4326,17 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      005268f6    push 14Fh"
 "	      005268fb    call 004D8821h"
 "	      00526900    add esp,4"
-"	      00526903    mov ecx,[ebp-48h]"
+"	      00526903    mov ecx,stobj"
 "	      00526906    mov [ecx+4],eax"
 );
 // LINE 1310:
 	asm( 
-"	      00526909    mov eax,[ebp-48h]"
+"	      00526909    mov eax,stobj"
 "	      0052690c    mov dword ptr [eax+8],400h"
 );
 // LINE 1311:
 	asm( 
-"	      00526913    mov eax,[ebp-48h]"
+"	      00526913    mov eax,stobj"
 "	      00526916    mov dword ptr [eax],0"
 );
 // LINE 1312:
@@ -4348,17 +4348,17 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      00526921    push 150h"
 "	      00526926    call 004D8821h"
 "	      0052692b    add esp,4"
-"	      0052692e    mov ecx,[ebp-48h]"
+"	      0052692e    mov ecx,stobj"
 "	      00526931    mov [ecx+4],eax"
 );
 // LINE 1315:
 	asm( 
-"	      00526934    mov eax,[ebp-48h]"
+"	      00526934    mov eax,stobj"
 "	      00526937    mov dword ptr [eax+8],400h"
 );
 // LINE 1316:
 	asm( 
-"	      0052693e    mov eax,[ebp-48h]"
+"	      0052693e    mov eax,stobj"
 "	      00526941    mov dword ptr [eax],0"
 );
 // LINE 1317:
@@ -4370,17 +4370,17 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      0052694c    push 151h"
 "	      00526951    call 004D8821h"
 "	      00526956    add esp,4"
-"	      00526959    mov ecx,[ebp-48h]"
+"	      00526959    mov ecx,stobj"
 "	      0052695c    mov [ecx+4],eax"
 );
 // LINE 1320:
 	asm( 
-"	      0052695f    mov eax,[ebp-48h]"
+"	      0052695f    mov eax,stobj"
 "	      00526962    mov dword ptr [eax+8],400h"
 );
 // LINE 1321:
 	asm( 
-"	      00526969    mov eax,[ebp-48h]"
+"	      00526969    mov eax,stobj"
 "	      0052696c    mov dword ptr [eax],0"
 );
 // LINE 1322:
@@ -4392,17 +4392,17 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      00526977    push 152h"
 "	      0052697c    call 004D8821h"
 "	      00526981    add esp,4"
-"	      00526984    mov ecx,[ebp-48h]"
+"	      00526984    mov ecx,stobj"
 "	      00526987    mov [ecx+4],eax"
 );
 // LINE 1325:
 	asm( 
-"	      0052698a    mov eax,[ebp-48h]"
+"	      0052698a    mov eax,stobj"
 "	      0052698d    mov dword ptr [eax+8],400h"
 );
 // LINE 1326:
 	asm( 
-"	      00526994    mov eax,[ebp-48h]"
+"	      00526994    mov eax,stobj"
 "	      00526997    mov dword ptr [eax],0"
 );
 // LINE 1327:
@@ -4411,7 +4411,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1329:
 	asm( 
-"	      005269a2    mov dword ptr [ebp-48h],0"
+"	      005269a2    mov stobj,0"
 );
 // LINE 1330:
 	asm( 
@@ -4438,9 +4438,9 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1336:
 	asm( 
-"	      005269df    mov eax,[ebp-48h]"
+"	      005269df    mov eax,stobj"
 "	      005269e2    mov eax,[eax]"
-"	      005269e4    mov [ebp-48h],eax"
+"	      005269e4    mov stobj,eax"
 );
 // LINE 1337:
 	asm( 
@@ -4449,50 +4449,50 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 // LINE 1340:
 	asm( 
 "	      005269ec    push 10h"
-"	      005269ee    mov eax,[ebp+8]"
+"	      005269ee    mov eax,fd"
 "	      005269f1    push eax"
 "	      005269f2    call 00526D7Eh"
 "	      005269f7    add esp,8"
 );
 // LINE 1342:
 	asm( 
-"	      005269fa    mov eax,[ebp-48h]"
-"	      005269fd    mov ecx,[ebp+8]"
+"	      005269fa    mov eax,stobj"
+"	      005269fd    mov ecx,fd"
 "	      00526a00    mov ecx,[ecx+98h]"
 "	      00526a06    mov ecx,[ecx]"
 "	      00526a08    mov [ecx+0Ch],eax"
 );
 // LINE 1344:
 	asm( 
-"	      00526a0b    mov eax,[ebp+8]"
+"	      00526a0b    mov eax,fd"
 "	      00526a0e    mov eax,[eax+98h]"
 "	      00526a14    mov eax,[eax]"
 "	      00526a16    movsx eax,word ptr [eax]"
 "	      00526a19    and eax,0FFFEh"
-"	      00526a1e    mov ecx,[ebp+8]"
+"	      00526a1e    mov ecx,fd"
 "	      00526a21    mov ecx,[ecx+98h]"
 "	      00526a27    mov ecx,[ecx]"
 "	      00526a29    mov [ecx],ax"
 );
 // LINE 1345:
 	asm( 
-"	      00526a2c    mov eax,[ebp+8]"
+"	      00526a2c    mov eax,fd"
 "	      00526a2f    mov eax,[eax+90h]"
-"	      00526a35    mov ecx,[ebp+8]"
+"	      00526a35    mov ecx,fd"
 "	      00526a38    mov ecx,[ecx+8Ch]"
 "	      00526a3e    shl ecx,8"
 "	      00526a41    mov byte ptr [eax+ecx+66EB10h],0Ah"
 );
 // LINE 1346:
 	asm( 
-"	      00526a49    mov eax,[ebp+8]"
+"	      00526a49    mov eax,fd"
 "	      00526a4c    mov eax,[eax+9Ch]"
 "	      00526a52    push eax"
 "	      00526a53    push 4"
 "	      00526a55    push 0"
 "	      00526a57    push 200000h"
 "	      00526a5c    push 0"
-"	      00526a5e    mov eax,[ebp+8]"
+"	      00526a5e    mov eax,fd"
 "	      00526a61    mov eax,[eax+98h]"
 "	      00526a67    mov eax,[eax]"
 "	      00526a69    push eax"
@@ -4501,12 +4501,12 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1348:
 	asm( 
-"	      00526a72    add dword ptr [ebp-68h],300000h"
+"	      00526a72    add loc.y,300000h"
 );
 // LINE 1351:
 	asm( 
 "	      00526a79    call 0056EC50h"
-"	      00526a7e    mov ecx,[ebp+8]"
+"	      00526a7e    mov ecx,fd"
 "	      00526a81    mov ecx,[ecx+98h]"
 "	      00526a87    mov ecx,[ecx]"
 "	      00526a89    movsx ecx,word ptr [ecx+8]"
@@ -4514,15 +4514,15 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      00526a90    cdq"
 "	      00526a91    idiv ecx"
 "	      00526a93    lea eax,[edx+3]"
-"	      00526a96    mov [ebp-74h],eax"
+"	      00526a96    mov num_debris,eax"
 );
 // LINE 1352:
 	asm( 
-"	      00526a99    mov dword ptr [ebp-70h],0"
+"	      00526a99    mov j,0"
 "	      00526aa0    jmp near ptr 00526AA8h"
-"	      00526aa5    inc dword ptr [ebp-70h]"
-"	      00526aa8    mov eax,[ebp-70h]"
-"	      00526aab    cmp [ebp-74h],eax"
+"	      00526aa5    inc j"
+"	      00526aa8    mov eax,j"
+"	      00526aab    cmp num_debris,eax"
 "	      00526aae    jle near ptr 00526B7Ch"
 );
 // LINE 1354:
@@ -4535,18 +4535,18 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 "	      00526ac4    mov eax,edx"
 "	      00526ac6    shl eax,10h"
 "	      00526ac9    add eax,320000h"
-"	      00526ace    mov [ebp-4],eax"
+"	      00526ace    mov speed,eax"
 );
 // LINE 1355:
 	asm( 
-"	      00526ad1    lea eax,[ebp-44h]"
+"	      00526ad1    lea eax,mat[0][0]"
 "	      00526ad4    push eax"
 "	      00526ad5    call 004D1FF1h"
 "	      00526ada    add esp,4"
 );
 // LINE 1356:
 	asm( 
-"	      00526add    lea eax,[ebp-44h]"
+"	      00526add    lea eax,mat[0][0]"
 "	      00526ae0    push eax"
 "	      00526ae1    call 0056EC50h"
 "	      00526ae6    mov ecx,0E10h"
@@ -4561,7 +4561,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1357:
 	asm( 
-"	      00526aff    lea eax,[ebp-44h]"
+"	      00526aff    lea eax,mat[0][0]"
 "	      00526b02    push eax"
 "	      00526b03    call 0056EC50h"
 "	      00526b08    mov ecx,0C8h"
@@ -4576,9 +4576,9 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1358:
 	asm( 
-"	      00526b25    lea eax,[ebp-44h]"
+"	      00526b25    lea eax,mat[0][0]"
 "	      00526b28    push eax"
-"	      00526b29    lea eax,[ebp-54h]"
+"	      00526b29    lea eax,vec.x"
 "	      00526b2c    push eax"
 "	      00526b2d    push 59B518h"
 "	      00526b32    call 004D2094h"
@@ -4586,23 +4586,23 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 );
 // LINE 1369:
 	asm( 
-"	      00526b3a    mov eax,[ebp+8]"
+"	      00526b3a    mov eax,fd"
 "	      00526b3d    mov eax,[eax+9Ch]"
 "	      00526b43    push eax"
-"	      00526b44    mov eax,[ebp-4]"
+"	      00526b44    mov eax,speed"
 "	      00526b47    push eax"
 "	      00526b48    push 0"
-"	      00526b4a    mov eax,[ebp+8]"
+"	      00526b4a    mov eax,fd"
 "	      00526b4d    mov eax,[eax+98h]"
 "	      00526b53    mov eax,[eax]"
 "	      00526b55    movsx eax,word ptr [eax+8]"
 "	      00526b59    add eax,eax"
 "	      00526b5b    push eax"
-"	      00526b5c    lea eax,[ebp-54h]"
+"	      00526b5c    lea eax,vec.x"
 "	      00526b5f    push eax"
-"	      00526b60    lea eax,[ebp-6Ch]"
+"	      00526b60    lea eax,loc.x"
 "	      00526b63    push eax"
-"	      00526b64    mov eax,[ebp+8]"
+"	      00526b64    mov eax,fd"
 "	      00526b67    add eax,8Ch"
 "	      00526b6c    push eax"
 "	      00526b6d    push 4"
@@ -4675,57 +4675,57 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1397:
 	asm( 
-"	      00526b9f    mov dword ptr [ebp-1Ch],5"
+"	      00526b9f    mov spiral_dist,5"
 );
 // LINE 1400:
 	asm( 
-"	      00526ba6    mov dword ptr [ebp-14h],0"
+"	      00526ba6    mov curr_dist,0"
 );
 // LINE 1401:
 	asm( 
-"	      00526bad    mov dword ptr [ebp-2Ch],0FFFFFFFFh"
+"	      00526bad    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 1404:
 	asm( 
-"	      00526bb4    mov dword ptr [ebp-34h],0"
+"	      00526bb4    mov stop_now,0"
 );
 // LINE 1410:
 	asm( 
-"	      00526bbb    mov eax,[ebp+0Ch]"
+"	      00526bbb    mov eax,loc"
 "	      00526bbe    mov eax,[eax]"
-"	      00526bc0    mov [ebp-20h],eax"
+"	      00526bc0    mov x,eax"
 );
 // LINE 1411:
 	asm( 
-"	      00526bc3    mov eax,[ebp+0Ch]"
+"	      00526bc3    mov eax,loc"
 "	      00526bc6    mov eax,[eax+4]"
-"	      00526bc9    mov [ebp-28h],eax"
+"	      00526bc9    mov y,eax"
 );
 // LINE 1418:
 	asm( 
-"	      00526bcc    inc dword ptr [ebp-2Ch]"
+"	      00526bcc    inc curr_dir"
 );
 // LINE 1419:
 	asm( 
-"	      00526bcf    mov eax,[ebp-2Ch]"
+"	      00526bcf    mov eax,curr_dir"
 "	      00526bd2    mov [ebp-38h],eax"
 "	      00526bd5    jmp near ptr 00526C38h"
 );
 // LINE 1423:
 	asm( 
-"	      00526bda    mov dword ptr [ebp-2Ch],0"
+"	      00526bda    mov curr_dir,0"
 );
 // LINE 1424:
 	asm( 
-"	      00526be1    inc dword ptr [ebp-14h]"
+"	      00526be1    inc curr_dist"
 );
 // LINE 1425:
 	asm( 
-"	      00526be4    mov dword ptr [ebp-4],0"
+"	      00526be4    mov xdir,0"
 );
 // LINE 1426:
 	asm( 
-"	      00526beb    mov dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      00526beb    mov ydir,0FFFFFFFFh"
 );
 // LINE 1427:
 	asm( 
@@ -4733,11 +4733,11 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1429:
 	asm( 
-"	      00526bf7    mov dword ptr [ebp-4],1"
+"	      00526bf7    mov xdir,1"
 );
 // LINE 1430:
 	asm( 
-"	      00526bfe    mov dword ptr [ebp-0Ch],0"
+"	      00526bfe    mov ydir,0"
 );
 // LINE 1431:
 	asm( 
@@ -4745,15 +4745,15 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1433:
 	asm( 
-"	      00526c0a    inc dword ptr [ebp-14h]"
+"	      00526c0a    inc curr_dist"
 );
 // LINE 1434:
 	asm( 
-"	      00526c0d    mov dword ptr [ebp-4],0"
+"	      00526c0d    mov xdir,0"
 );
 // LINE 1435:
 	asm( 
-"	      00526c14    mov dword ptr [ebp-0Ch],1"
+"	      00526c14    mov ydir,1"
 );
 // LINE 1436:
 	asm( 
@@ -4761,11 +4761,11 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1438:
 	asm( 
-"	      00526c20    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00526c20    mov xdir,0FFFFFFFFh"
 );
 // LINE 1439:
 	asm( 
-"	      00526c27    mov dword ptr [ebp-0Ch],0"
+"	      00526c27    mov ydir,0"
 );
 // LINE 1440:
 	asm( 
@@ -4791,50 +4791,50 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1445:
 	asm( 
-"	      00526c60    mov eax,[ebp-1Ch]"
-"	      00526c63    cmp [ebp-14h],eax"
+"	      00526c60    mov eax,spiral_dist"
+"	      00526c63    cmp curr_dist,eax"
 "	      00526c66    jne near ptr 00526C76h"
 );
 // LINE 1447:
 	asm( 
-"	      00526c6c    dec dword ptr [ebp-14h]"
+"	      00526c6c    dec curr_dist"
 );
 // LINE 1448:
 	asm( 
-"	      00526c6f    mov dword ptr [ebp-34h],1"
+"	      00526c6f    mov stop_now,1"
 );
 // LINE 1452:
 	asm( 
-"	      00526c76    mov dword ptr [ebp-24h],0"
+"	      00526c76    mov i,0"
 "	      00526c7d    jmp near ptr 00526C85h"
-"	      00526c82    inc dword ptr [ebp-24h]"
-"	      00526c85    mov eax,[ebp-24h]"
-"	      00526c88    cmp [ebp-14h],eax"
+"	      00526c82    inc i"
+"	      00526c85    mov eax,i"
+"	      00526c88    cmp curr_dist,eax"
 "	      00526c8b    jle near ptr 00526CD3h"
 );
 // LINE 1454:
 	asm( 
-"	      00526c91    mov eax,[ebp-4]"
-"	      00526c94    add [ebp-20h],eax"
+"	      00526c91    mov eax,xdir"
+"	      00526c94    add x,eax"
 );
 // LINE 1455:
 	asm( 
-"	      00526c97    mov eax,[ebp-0Ch]"
-"	      00526c9a    add [ebp-28h],eax"
+"	      00526c97    mov eax,ydir"
+"	      00526c9a    add y,eax"
 );
 // LINE 1456:
 	asm( 
-"	      00526c9d    mov eax,[ebp-20h]"
+"	      00526c9d    mov eax,x"
 "	      00526ca0    and eax,0FFh"
 "	      00526ca5    shl eax,0Ah"
-"	      00526ca8    mov ecx,[ebp-28h]"
+"	      00526ca8    mov ecx,y"
 "	      00526cab    and ecx,0FFh"
 "	      00526cb1    mov eax,[eax+ecx*4+67ED30h]"
-"	      00526cb8    mov [ebp-30h],eax"
+"	      00526cb8    mov cptr,eax"
 );
 // LINE 1457:
 	asm( 
-"	      00526cbb    mov eax,[ebp-30h]"
+"	      00526cbb    mov eax,cptr"
 "	      00526cbe    movsx eax,word ptr [eax]"
 "	      00526cc1    test al,20h"
 "	      00526cc3    je near ptr 00526CCEh"
@@ -4849,7 +4849,7 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 );
 // LINE 1461:
 	asm( 
-"	      00526cd3    cmp dword ptr [ebp-34h],1"
+"	      00526cd3    cmp stop_now,1"
 "	      00526cd7    jne near ptr 00526CE2h"
 );
 // LINE 1463:
@@ -4868,66 +4868,66 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 // LINE 1474:
 FoundFire:
 	asm( 
-"	      00526cf1    mov eax,[ebp-30h]"
+"	      00526cf1    mov eax,cptr"
 "	      00526cf4    mov eax,[eax+0Ch]"
-"	      00526cf7    mov [ebp-18h],eax"
+"	      00526cf7    mov stobj,eax"
 );
 // LINE 1475:
 	asm( 
-"	      00526cfa    cmp dword ptr [ebp-18h],0"
+"	      00526cfa    cmp stobj,0"
 "	      00526cfe    je near ptr 00526D6Fh"
 );
 // LINE 1477:
 	asm( 
-"	      00526d04    mov eax,[ebp-18h]"
+"	      00526d04    mov eax,stobj"
 "	      00526d07    test byte ptr [eax+8],1"
 "	      00526d0b    je near ptr 00526D62h"
 );
 // LINE 1480:
 	asm( 
-"	      00526d11    mov eax,[ebp-18h]"
+"	      00526d11    mov eax,stobj"
 "	      00526d14    mov eax,[eax+0Ch]"
-"	      00526d17    mov [ebp-8],eax"
+"	      00526d17    mov fd,eax"
 );
 // LINE 1481:
 	asm( 
 "	      00526d1a    call 005251D6h"
-"	      00526d1f    mov [ebp-10h],eax"
-"	      00526d22    cmp dword ptr [ebp-10h],0"
+"	      00526d1f    mov cfd,eax"
+"	      00526d22    cmp cfd,0"
 "	      00526d26    je near ptr 00526D54h"
 );
 // LINE 1483:
 	asm( 
-"	      00526d2c    mov eax,[ebp+8]"
-"	      00526d2f    mov ecx,[ebp-10h]"
+"	      00526d2c    mov eax,fcptr"
+"	      00526d2f    mov ecx,cfd"
 "	      00526d32    mov [ecx],eax"
 );
 // LINE 1484:
 	asm( 
 "	      00526d34    push 0"
-"	      00526d36    mov eax,[ebp-8]"
+"	      00526d36    mov eax,fd"
 "	      00526d39    mov eax,[eax+9Ch]"
 "	      00526d3f    push eax"
-"	      00526d40    mov eax,[ebp-28h]"
+"	      00526d40    mov eax,y"
 "	      00526d43    push eax"
-"	      00526d44    mov eax,[ebp-20h]"
+"	      00526d44    mov eax,x"
 "	      00526d47    push eax"
-"	      00526d48    mov eax,[ebp-10h]"
+"	      00526d48    mov eax,cfd"
 "	      00526d4b    push eax"
 "	      00526d4c    call 00525624h"
 "	      00526d51    add esp,14h"
 );
 // LINE 1486:
 	asm( 
-"	      00526d54    mov eax,[ebp-8]"
+"	      00526d54    mov eax,fd"
 "	      00526d57    mov eax,[eax+9Ch]"
 "	      00526d5d    jmp near ptr 00526D79h"
 );
 // LINE 1490:
 	asm( 
-"	      00526d62    mov eax,[ebp-18h]"
+"	      00526d62    mov eax,stobj"
 "	      00526d65    mov eax,[eax]"
-"	      00526d67    mov [ebp-18h],eax"
+"	      00526d67    mov stobj,eax"
 );
 // LINE 1491:
 	asm( 
@@ -4965,11 +4965,11 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1506:
 	asm( 
-"	      00526d87    mov dword ptr [ebp-4],0"
+"	      00526d87    mov ret_code,0"
 );
 // LINE 1510:
 	asm( 
-"	      00526d8e    cmp dword ptr [ebp+0Ch],6"
+"	      00526d8e    cmp hit_type,6"
 "	      00526d92    jne near ptr 00526DC0h"
 );
 // LINE 1512:
@@ -4977,12 +4977,12 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 "	      00526d98    xor eax,eax"
 "	      00526d9a    sub eax,ds:[5B4768h]"
 "	      00526da0    neg eax"
-"	      00526da2    mov ecx,[ebp+8]"
+"	      00526da2    mov ecx,fd"
 "	      00526da5    sub [ecx+88h],eax"
 );
 // LINE 1513:
 	asm( 
-"	      00526dab    mov eax,[ebp+8]"
+"	      00526dab    mov eax,fd"
 "	      00526dae    cmp dword ptr [eax+88h],0"
 "	      00526db5    jle near ptr 00526DC0h"
 );
@@ -4992,32 +4992,32 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1517:
 	asm( 
-"	      00526dc0    mov eax,[ebp+8]"
+"	      00526dc0    mov eax,fd"
 "	      00526dc3    mov dword ptr [eax+88h],8000h"
 );
 // LINE 1521:
 	asm( 
-"	      00526dcd    mov eax,[ebp+8]"
+"	      00526dcd    mov eax,fd"
 "	      00526dd0    mov eax,[eax+98h]"
 "	      00526dd6    mov eax,[eax]"
 "	      00526dd8    mov eax,[eax+10h]"
-"	      00526ddb    mov [ebp-8],eax"
+"	      00526ddb    mov dyobj,eax"
 );
 // LINE 1522:
 	asm( 
-"	      00526dde    cmp dword ptr [ebp-8],0"
+"	      00526dde    cmp dyobj,0"
 "	      00526de2    je near ptr 00526FABh"
 );
 // LINE 1525:
 	asm( 
-"	      00526de8    cmp dword ptr [ebp+0Ch],10h"
+"	      00526de8    cmp hit_type,10h"
 "	      00526dec    jne near ptr 00526E48h"
 );
 // LINE 1527:
 	asm( 
-"	      00526df2    mov eax,[ebp+8]"
+"	      00526df2    mov eax,fd"
 "	      00526df5    add eax,3Ch"
-"	      00526df8    lea ecx,[ebp-14h]"
+"	      00526df8    lea ecx,loc.x"
 "	      00526dfb    mov edx,[eax]"
 "	      00526dfd    mov [ecx],edx"
 "	      00526dff    mov edx,[eax+4]"
@@ -5027,25 +5027,25 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1531:
 	asm( 
-"	      00526e0b    mov eax,[ebp+8]"
+"	      00526e0b    mov eax,fd"
 "	      00526e0e    mov eax,[eax+38h]"
-"	      00526e11    add eax,[ebp-10h]"
-"	      00526e14    mov ecx,[ebp-8]"
+"	      00526e11    add eax,loc.y"
+"	      00526e14    mov ecx,dyobj"
 "	      00526e17    cmp eax,[ecx+1Ch]"
 "	      00526e1a    jle near ptr 00526E43h"
 );
 // LINE 1534:
 	asm( 
 "	      00526e20    push 0"
-"	      00526e22    mov eax,[ebp+8]"
+"	      00526e22    mov eax,fd"
 "	      00526e25    mov eax,[eax+9Ch]"
 "	      00526e2b    push eax"
-"	      00526e2c    mov eax,[ebp-8]"
+"	      00526e2c    mov eax,dyobj"
 "	      00526e2f    push eax"
-"	      00526e30    mov eax,[ebp+8]"
+"	      00526e30    mov eax,fd"
 "	      00526e33    add eax,24h"
 "	      00526e36    push eax"
-"	      00526e37    mov eax,[ebp+0Ch]"
+"	      00526e37    mov eax,hit_type"
 "	      00526e3a    push eax"
 "	      00526e3b    call 0051DA96h"
 "	      00526e40    add esp,14h"
@@ -5056,12 +5056,12 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1545:
 	asm( 
-"	      00526e48    mov eax,[ebp-8]"
+"	      00526e48    mov eax,dyobj"
 "	      00526e4b    movsx eax,word ptr [eax+0Ch]"
 "	      00526e4f    test al,4"
 "	      00526e51    je near ptr 00526E70h"
 "	      00526e57    mov eax,ds:[5B4968h]"
-"	      00526e5c    mov ecx,[ebp-8]"
+"	      00526e5c    mov ecx,dyobj"
 "	      00526e5f    cmp [eax+0A4h],ecx"
 "	      00526e65    jne near ptr 00526E70h"
 );
@@ -5071,7 +5071,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1552:
 	asm( 
-"	      00526e70    mov eax,[ebp-8]"
+"	      00526e70    mov eax,dyobj"
 "	      00526e73    movsx eax,word ptr [eax+0Ch]"
 "	      00526e77    test al,20h"
 "	      00526e79    je near ptr 00526E84h"
@@ -5082,7 +5082,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1558:
 	asm( 
-"	      00526e84    mov eax,[ebp-8]"
+"	      00526e84    mov eax,dyobj"
 "	      00526e87    movsx eax,word ptr [eax+0Ch]"
 "	      00526e8b    test al,40h"
 "	      00526e8d    je near ptr 00526E98h"
@@ -5093,9 +5093,9 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1563:
 	asm( 
-"	      00526e98    mov eax,[ebp+8]"
+"	      00526e98    mov eax,fd"
 "	      00526e9b    add eax,3Ch"
-"	      00526e9e    lea ecx,[ebp-14h]"
+"	      00526e9e    lea ecx,loc.x"
 "	      00526ea1    mov edx,[eax]"
 "	      00526ea3    mov [ecx],edx"
 "	      00526ea5    mov edx,[eax+4]"
@@ -5105,45 +5105,45 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 );
 // LINE 1571:
 	asm( 
-"	      00526eb1    mov eax,[ebp-8]"
+"	      00526eb1    mov eax,dyobj"
 "	      00526eb4    mov eax,[eax+18h]"
-"	      00526eb7    mov ecx,[ebp-8]"
+"	      00526eb7    mov ecx,dyobj"
 "	      00526eba    add eax,[ecx+10h]"
-"	      00526ebd    mov ecx,[ebp-14h]"
+"	      00526ebd    mov ecx,loc.x"
 "	      00526ec0    sub ecx,0A0000h"
 "	      00526ec6    cmp eax,ecx"
 "	      00526ec8    jle near ptr 00526F70h"
-"	      00526ece    mov eax,[ebp-8]"
+"	      00526ece    mov eax,dyobj"
 "	      00526ed1    mov eax,[eax+18h]"
-"	      00526ed4    mov ecx,[ebp-8]"
+"	      00526ed4    mov ecx,dyobj"
 "	      00526ed7    sub eax,[ecx+10h]"
-"	      00526eda    mov ecx,[ebp-14h]"
+"	      00526eda    mov ecx,loc.x"
 "	      00526edd    add ecx,0A0000h"
 "	      00526ee3    cmp eax,ecx"
 "	      00526ee5    jge near ptr 00526F70h"
-"	      00526eeb    mov eax,[ebp-10h]"
+"	      00526eeb    mov eax,loc.y"
 "	      00526eee    sub eax,0F0000h"
-"	      00526ef3    mov ecx,[ebp-8]"
+"	      00526ef3    mov ecx,dyobj"
 "	      00526ef6    cmp eax,[ecx+1Ch]"
 "	      00526ef9    jge near ptr 00526F70h"
-"	      00526eff    mov eax,[ebp-10h]"
+"	      00526eff    mov eax,loc.y"
 "	      00526f02    add eax,320000h"
-"	      00526f07    mov ecx,[ebp-8]"
+"	      00526f07    mov ecx,dyobj"
 "	      00526f0a    cmp eax,[ecx+1Ch]"
 "	      00526f0d    jle near ptr 00526F70h"
-"	      00526f13    mov eax,[ebp-8]"
+"	      00526f13    mov eax,dyobj"
 "	      00526f16    mov eax,[eax+10h]"
-"	      00526f19    mov ecx,[ebp-8]"
+"	      00526f19    mov ecx,dyobj"
 "	      00526f1c    add eax,[ecx+20h]"
-"	      00526f1f    mov ecx,[ebp-0Ch]"
+"	      00526f1f    mov ecx,loc.z"
 "	      00526f22    sub ecx,0A0000h"
 "	      00526f28    cmp eax,ecx"
 "	      00526f2a    jle near ptr 00526F70h"
-"	      00526f30    mov eax,[ebp-8]"
+"	      00526f30    mov eax,dyobj"
 "	      00526f33    mov eax,[eax+20h]"
-"	      00526f36    mov ecx,[ebp-8]"
+"	      00526f36    mov ecx,dyobj"
 "	      00526f39    sub eax,[ecx+10h]"
-"	      00526f3c    mov ecx,[ebp-0Ch]"
+"	      00526f3c    mov ecx,loc.z"
 "	      00526f3f    add ecx,0A0000h"
 "	      00526f45    cmp eax,ecx"
 "	      00526f47    jge near ptr 00526F70h"
@@ -5151,15 +5151,15 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 // LINE 1574:
 	asm( 
 "	      00526f4d    push 0"
-"	      00526f4f    mov eax,[ebp+8]"
+"	      00526f4f    mov eax,fd"
 "	      00526f52    mov eax,[eax+9Ch]"
 "	      00526f58    push eax"
-"	      00526f59    mov eax,[ebp-8]"
+"	      00526f59    mov eax,dyobj"
 "	      00526f5c    push eax"
-"	      00526f5d    mov eax,[ebp+8]"
+"	      00526f5d    mov eax,fd"
 "	      00526f60    add eax,24h"
 "	      00526f63    push eax"
-"	      00526f64    mov eax,[ebp+0Ch]"
+"	      00526f64    mov eax,hit_type"
 "	      00526f67    push eax"
 "	      00526f68    call 0051DA96h"
 "	      00526f6d    add esp,14h"
@@ -5167,14 +5167,14 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 // LINE 1590:
 next_dyobj:
 	asm( 
-"	      00526f70    mov eax,[ebp-8]"
+"	      00526f70    mov eax,dyobj"
 "	      00526f73    movsx eax,word ptr [eax+0Ch]"
 "	      00526f77    test al,4"
 "	      00526f79    je near ptr 00526F9Eh"
 );
 // LINE 1592:
 	asm( 
-"	      00526f7f    mov eax,[ebp-8]"
+"	      00526f7f    mov eax,dyobj"
 "	      00526f82    mov eax,[eax]"
 "	      00526f84    mov eax,[eax]"
 "	      00526f86    mov eax,[eax]"
@@ -5185,7 +5185,7 @@ next_dyobj:
 "	      00526f90    mov eax,[eax]"
 "	      00526f92    mov eax,[eax]"
 "	      00526f94    mov eax,[eax]"
-"	      00526f96    mov [ebp-8],eax"
+"	      00526f96    mov dyobj,eax"
 );
 // LINE 1594:
 	asm( 
@@ -5193,9 +5193,9 @@ next_dyobj:
 );
 // LINE 1595:
 	asm( 
-"	      00526f9e    mov eax,[ebp-8]"
+"	      00526f9e    mov eax,dyobj"
 "	      00526fa1    mov eax,[eax]"
-"	      00526fa3    mov [ebp-8],eax"
+"	      00526fa3    mov dyobj,eax"
 );
 // LINE 1596:
 	asm( 
@@ -5236,15 +5236,15 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 "	      00526fc3    push 62B550h"
 "	      00526fc8    mov eax,ds:[5B73D4h]"
 "	      00526fcd    push eax"
-"	      00526fce    mov eax,[ebp+8]"
+"	      00526fce    mov eax,miffReader"
 "	      00526fd1    push eax"
 "	      00526fd2    call 004AB530h"
 "	      00526fd7    add esp,10h"
-"	      00526fda    mov [ebp-8],eax"
+"	      00526fda    mov ret,eax"
 );
 // LINE 1627:
 	asm( 
-"	      00526fdd    cmp dword ptr [ebp-8],0"
+"	      00526fdd    cmp ret,0"
 "	      00526fe1    jne near ptr 00526FEEh"
 );
 // LINE 1628:
@@ -5254,55 +5254,55 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1631:
 	asm( 
-"	      00526fee    mov dword ptr [ebp-0Ch],0"
+"	      00526fee    mov i,0"
 "	      00526ff5    jmp near ptr 00526FFDh"
-"	      00526ffa    inc dword ptr [ebp-0Ch]"
-"	      00526ffd    cmp dword ptr [ebp-0Ch],8Ch"
+"	      00526ffa    inc i"
+"	      00526ffd    cmp i,8Ch"
 "	      00527004    jge near ptr 00527106h"
 );
 // LINE 1633:
 	asm( 
-"	      0052700a    mov eax,[ebp-0Ch]"
+"	      0052700a    mov eax,i"
 "	      0052700d    lea eax,[eax+eax*4]"
 "	      00527010    shl eax,5"
 "	      00527013    add eax,6666F0h"
-"	      00527018    mov [ebp-4],eax"
+"	      00527018    mov fd,eax"
 );
 // LINE 1636:
 	asm( 
 "	      0052701b    mov eax,ds:[62B550h]"
-"	      00527020    mov ecx,[ebp-4]"
+"	      00527020    mov ecx,fd"
 "	      00527023    mov [ecx],eax"
 );
 // LINE 1637:
 	asm( 
 "	      00527025    mov eax,ds:[62B554h]"
-"	      0052702a    mov ecx,[ebp-4]"
+"	      0052702a    mov ecx,fd"
 "	      0052702d    mov [ecx+4],eax"
 );
 // LINE 1638:
 	asm( 
 "	      00527030    mov eax,ds:[62B558h]"
-"	      00527035    mov ecx,[ebp-4]"
+"	      00527035    mov ecx,fd"
 "	      00527038    mov [ecx+8],eax"
 );
 // LINE 1639:
 	asm( 
 "	      0052703b    mov eax,ds:[62B55Ch]"
-"	      00527040    mov ecx,[ebp-4]"
+"	      00527040    mov ecx,fd"
 "	      00527043    mov [ecx+0Ch],eax"
 );
 // LINE 1640:
 	asm( 
 "	      00527046    mov eax,ds:[62B56Ch]"
-"	      0052704b    mov ecx,[ebp-4]"
+"	      0052704b    mov ecx,fd"
 "	      0052704e    mov [ecx+1Ch],eax"
 );
 // LINE 1641:
 	asm( 
 "	      00527051    mov eax,62B550h"
 "	      00527056    add eax,3Ch"
-"	      00527059    mov ecx,[ebp-4]"
+"	      00527059    mov ecx,fd"
 "	      0052705c    add ecx,3Ch"
 "	      0052705f    mov edx,[eax]"
 "	      00527061    mov [ecx],edx"
@@ -5314,25 +5314,25 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 // LINE 1642:
 	asm( 
 "	      0052706f    mov eax,ds:[62B5D8h]"
-"	      00527074    mov ecx,[ebp-4]"
+"	      00527074    mov ecx,fd"
 "	      00527077    mov [ecx+88h],eax"
 );
 // LINE 1643:
 	asm( 
 "	      0052707d    mov eax,ds:[62B5E4h]"
-"	      00527082    mov ecx,[ebp-4]"
+"	      00527082    mov ecx,fd"
 "	      00527085    mov [ecx+94h],eax"
 );
 // LINE 1644:
 	asm( 
 "	      0052708b    mov eax,ds:[62B5E8h]"
-"	      00527090    mov ecx,[ebp-4]"
+"	      00527090    mov ecx,fd"
 "	      00527093    mov [ecx+98h],eax"
 );
 // LINE 1645:
 	asm( 
 "	      00527099    mov eax,ds:[62B5ECh]"
-"	      0052709e    mov ecx,[ebp-4]"
+"	      0052709e    mov ecx,fd"
 "	      005270a1    mov [ecx+9Ch],eax"
 );
 // LINE 1646:
@@ -5341,7 +5341,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 "	      005270ac    add eax,8Ch"
 "	      005270b1    mov ecx,[eax]"
 "	      005270b3    mov eax,[eax+4]"
-"	      005270b6    mov edx,[ebp-4]"
+"	      005270b6    mov edx,fd"
 "	      005270b9    add edx,8Ch"
 "	      005270bf    mov [edx],ecx"
 "	      005270c1    mov [edx+4],eax"
@@ -5352,17 +5352,17 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 "	      005270c9    push 62B550h"
 "	      005270ce    mov eax,ds:[5B73D4h]"
 "	      005270d3    push eax"
-"	      005270d4    mov eax,[ebp+8]"
+"	      005270d4    mov eax,miffReader"
 "	      005270d7    push eax"
 "	      005270d8    call 004AB57Ch"
 "	      005270dd    add esp,10h"
-"	      005270e0    mov [ebp-8],eax"
+"	      005270e0    mov ret,eax"
 );
 // LINE 1654:
 	asm( 
-"	      005270e3    cmp dword ptr [ebp-8],0"
+"	      005270e3    cmp ret,0"
 "	      005270e7    jne near ptr 00527101h"
-"	      005270ed    cmp dword ptr [ebp-0Ch],8Bh"
+"	      005270ed    cmp i,8Bh"
 "	      005270f4    je near ptr 00527101h"
 );
 // LINE 1655:
@@ -5380,15 +5380,15 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 "	      00527108    push 62B548h"
 "	      0052710d    mov eax,ds:[5B73D8h]"
 "	      00527112    push eax"
-"	      00527113    mov eax,[ebp+8]"
+"	      00527113    mov eax,miffReader"
 "	      00527116    push eax"
 "	      00527117    call 004AB530h"
 "	      0052711c    add esp,10h"
-"	      0052711f    mov [ebp-8],eax"
+"	      0052711f    mov ret,eax"
 );
 // LINE 1663:
 	asm( 
-"	      00527122    cmp dword ptr [ebp-8],0"
+"	      00527122    cmp ret,0"
 "	      00527126    jne near ptr 00527133h"
 );
 // LINE 1664:
@@ -5398,16 +5398,16 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1667:
 	asm( 
-"	      00527133    mov dword ptr [ebp-0Ch],0"
+"	      00527133    mov i,0"
 "	      0052713a    jmp near ptr 00527142h"
-"	      0052713f    inc dword ptr [ebp-0Ch]"
-"	      00527142    cmp dword ptr [ebp-0Ch],8Ch"
+"	      0052713f    inc i"
+"	      00527142    cmp i,8Ch"
 "	      00527149    jge near ptr 0052719Dh"
 );
 // LINE 1671:
 	asm( 
 "	      0052714f    mov eax,ds:[62B54Ch]"
-"	      00527154    mov ecx,[ebp-0Ch]"
+"	      00527154    mov ecx,i"
 "	      00527157    mov [ecx*8+66BE94h],eax"
 );
 // LINE 1678:
@@ -5416,17 +5416,17 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 "	      00527160    push 62B548h"
 "	      00527165    mov eax,ds:[5B73D8h]"
 "	      0052716a    push eax"
-"	      0052716b    mov eax,[ebp+8]"
+"	      0052716b    mov eax,miffReader"
 "	      0052716e    push eax"
 "	      0052716f    call 004AB57Ch"
 "	      00527174    add esp,10h"
-"	      00527177    mov [ebp-8],eax"
+"	      00527177    mov ret,eax"
 );
 // LINE 1679:
 	asm( 
-"	      0052717a    cmp dword ptr [ebp-8],0"
+"	      0052717a    cmp ret,0"
 "	      0052717e    jne near ptr 00527198h"
-"	      00527184    cmp dword ptr [ebp-0Ch],8Bh"
+"	      00527184    cmp i,8Bh"
 "	      0052718b    je near ptr 00527198h"
 );
 // LINE 1680:
@@ -5444,17 +5444,17 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1686:
 	asm( 
-"	      005271a7    mov dword ptr [ebp-0Ch],0"
-"	      005271ae    mov dword ptr [ebp-4],6666F0h"
+"	      005271a7    mov i,0"
+"	      005271ae    mov fd,6666F0h"
 "	      005271b5    jmp near ptr 005271C4h"
-"	      005271ba    inc dword ptr [ebp-0Ch]"
-"	      005271bd    add dword ptr [ebp-4],0A0h"
-"	      005271c4    cmp dword ptr [ebp-0Ch],8Ch"
+"	      005271ba    inc i"
+"	      005271bd    add fd,0A0h"
+"	      005271c4    cmp i,8Ch"
 "	      005271cb    jge near ptr 0052734Bh"
 );
 // LINE 1688:
 	asm( 
-"	      005271d1    mov eax,[ebp-4]"
+"	      005271d1    mov eax,fd"
 "	      005271d4    test byte ptr [eax],1"
 "	      005271d7    jne near ptr 005271E2h"
 );
@@ -5468,66 +5468,66 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1695:
 	asm( 
-"	      005271e8    mov eax,[ebp-4]"
+"	      005271e8    mov eax,fd"
 "	      005271eb    mov eax,[eax+98h]"
 "	      005271f1    lea eax,[eax*8+66BE90h]"
-"	      005271f8    mov ecx,[ebp-4]"
+"	      005271f8    mov ecx,fd"
 "	      005271fb    mov [ecx+98h],eax"
 );
 // LINE 1697:
 	asm( 
-"	      00527201    mov eax,[ebp-4]"
+"	      00527201    mov eax,fd"
 "	      00527204    mov eax,[eax+94h]"
 "	      0052720a    push eax"
 "	      0052720b    call 004D8821h"
 "	      00527210    add esp,4"
-"	      00527213    mov ecx,[ebp-4]"
+"	      00527213    mov ecx,fd"
 "	      00527216    mov [ecx+94h],eax"
 );
 // LINE 1699:
 	asm( 
-"	      0052721c    mov eax,[ebp-4]"
+"	      0052721c    mov eax,fd"
 "	      0052721f    mov eax,[eax+90h]"
 "	      00527225    and eax,0FFh"
-"	      0052722a    mov ecx,[ebp-4]"
+"	      0052722a    mov ecx,fd"
 "	      0052722d    mov ecx,[ecx+8Ch]"
 "	      00527233    and ecx,0FFh"
 "	      00527239    shl ecx,0Ah"
 "	      0052723c    mov eax,[ecx+eax*4+67ED30h]"
-"	      00527243    mov ecx,[ebp-4]"
+"	      00527243    mov ecx,fd"
 "	      00527246    mov ecx,[ecx+98h]"
 "	      0052724c    mov [ecx],eax"
 );
 // LINE 1700:
 	asm( 
-"	      0052724e    mov eax,[ebp-4]"
+"	      0052724e    mov eax,fd"
 "	      00527251    mov eax,[eax+98h]"
 "	      00527257    mov eax,[eax]"
 "	      00527259    movsx eax,word ptr [eax]"
 "	      0052725c    or eax,20h"
-"	      0052725f    mov ecx,[ebp-4]"
+"	      0052725f    mov ecx,fd"
 "	      00527262    mov ecx,[ecx+98h]"
 "	      00527268    mov ecx,[ecx]"
 "	      0052726a    mov [ecx],ax"
 );
 // LINE 1707:
 	asm( 
-"	      0052726d    mov eax,[ebp-4]"
+"	      0052726d    mov eax,fd"
 "	      00527270    mov eax,[eax+44h]"
-"	      00527273    mov ecx,[ebp-4]"
+"	      00527273    mov ecx,fd"
 "	      00527276    sub eax,[ecx+18h]"
 "	      00527279    push eax"
-"	      0052727a    mov eax,[ebp-4]"
+"	      0052727a    mov eax,fd"
 "	      0052727d    mov eax,[eax+40h]"
-"	      00527280    mov ecx,[ebp-4]"
+"	      00527280    mov ecx,fd"
 "	      00527283    sub eax,[ecx+14h]"
 "	      00527286    push eax"
-"	      00527287    mov eax,[ebp-4]"
+"	      00527287    mov eax,fd"
 "	      0052728a    mov eax,[eax+3Ch]"
-"	      0052728d    mov ecx,[ebp-4]"
+"	      0052728d    mov ecx,fd"
 "	      00527290    sub eax,[ecx+10h]"
 "	      00527293    push eax"
-"	      00527294    mov eax,[ebp-4]"
+"	      00527294    mov eax,fd"
 "	      00527297    mov eax,[eax+20h]"
 "	      0052729a    mov eax,[eax+4]"
 "	      0052729d    push eax"
@@ -5536,9 +5536,9 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1709:
 	asm( 
-"	      005272a6    mov eax,[ebp-4]"
+"	      005272a6    mov eax,fd"
 "	      005272a9    add eax,3Ch"
-"	      005272ac    mov ecx,[ebp-4]"
+"	      005272ac    mov ecx,fd"
 "	      005272af    add ecx,10h"
 "	      005272b2    mov edx,[eax]"
 "	      005272b4    mov [ecx],edx"
@@ -5549,55 +5549,55 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 1712:
 	asm( 
-"	      005272c2    mov eax,[ebp-4]"
+"	      005272c2    mov eax,fd"
 "	      005272c5    mov eax,[eax+98h]"
 "	      005272cb    mov eax,[eax]"
 "	      005272cd    movsx eax,word ptr [eax+2]"
 "	      005272d1    shl eax,10h"
-"	      005272d4    mov ecx,[ebp-4]"
+"	      005272d4    mov ecx,fd"
 "	      005272d7    add eax,[ecx+10h]"
-"	      005272da    mov ecx,[ebp-4]"
+"	      005272da    mov ecx,fd"
 "	      005272dd    mov [ecx+3Ch],eax"
 );
 // LINE 1713:
 	asm( 
-"	      005272e0    mov eax,[ebp-4]"
+"	      005272e0    mov eax,fd"
 "	      005272e3    mov eax,[eax+98h]"
 "	      005272e9    mov eax,[eax]"
 "	      005272eb    movsx eax,word ptr [eax+4]"
 "	      005272ef    shl eax,10h"
-"	      005272f2    mov ecx,[ebp-4]"
+"	      005272f2    mov ecx,fd"
 "	      005272f5    add eax,[ecx+14h]"
-"	      005272f8    mov ecx,[ebp-4]"
+"	      005272f8    mov ecx,fd"
 "	      005272fb    mov [ecx+40h],eax"
 );
 // LINE 1714:
 	asm( 
-"	      005272fe    mov eax,[ebp-4]"
+"	      005272fe    mov eax,fd"
 "	      00527301    mov eax,[eax+98h]"
 "	      00527307    mov eax,[eax]"
 "	      00527309    movsx eax,word ptr [eax+6]"
 "	      0052730d    shl eax,10h"
-"	      00527310    mov ecx,[ebp-4]"
+"	      00527310    mov ecx,fd"
 "	      00527313    add eax,[ecx+18h]"
-"	      00527316    mov ecx,[ebp-4]"
+"	      00527316    mov ecx,fd"
 "	      00527319    mov [ecx+44h],eax"
 );
 // LINE 1717:
 	asm( 
-"	      0052731c    mov eax,[ebp-4]"
+"	      0052731c    mov eax,fd"
 "	      0052731f    mov eax,[eax+98h]"
 "	      00527325    mov eax,[eax]"
 "	      00527327    mov eax,[eax+0Ch]"
-"	      0052732a    mov ecx,[ebp-4]"
+"	      0052732a    mov ecx,fd"
 "	      0052732d    mov ecx,[ecx+20h]"
 "	      00527330    mov [ecx],eax"
 );
 // LINE 1718:
 	asm( 
-"	      00527332    mov eax,[ebp-4]"
+"	      00527332    mov eax,fd"
 "	      00527335    mov eax,[eax+20h]"
-"	      00527338    mov ecx,[ebp-4]"
+"	      00527338    mov ecx,fd"
 "	      0052733b    mov ecx,[ecx+98h]"
 "	      00527341    mov ecx,[ecx]"
 "	      00527343    mov [ecx+0Ch],eax"
@@ -5637,15 +5637,15 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 1731:
 	asm( 
-"	      00527363    mov dword ptr [ebp-8],0"
+"	      00527363    mov i,0"
 "	      0052736a    jmp near ptr 00527372h"
-"	      0052736f    inc dword ptr [ebp-8]"
-"	      00527372    cmp dword ptr [ebp-8],8Ch"
+"	      0052736f    inc i"
+"	      00527372    cmp i,8Ch"
 "	      00527379    jge near ptr 00527454h"
 );
 // LINE 1734:
 	asm( 
-"	      0052737f    mov eax,[ebp-8]"
+"	      0052737f    mov eax,i"
 "	      00527382    lea eax,[eax+eax*4]"
 "	      00527385    shl eax,5"
 "	      00527388    mov edi,62B550h"
@@ -5692,15 +5692,15 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 "	      005273f1    push 62B550h"
 "	      005273f6    mov eax,ds:[5B73D4h]"
 "	      005273fb    push eax"
-"	      005273fc    mov eax,[ebp+8]"
+"	      005273fc    mov eax,miffWriter"
 "	      005273ff    push eax"
 "	      00527400    call 004AB5BDh"
 "	      00527405    add esp,10h"
-"	      00527408    mov [ebp-4],eax"
+"	      00527408    mov ret,eax"
 );
 // LINE 1750:
 	asm( 
-"	      0052740b    cmp dword ptr [ebp-4],0"
+"	      0052740b    cmp ret,0"
 "	      0052740f    jne near ptr 0052741Ch"
 );
 // LINE 1751:
@@ -5711,20 +5711,20 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 // LINE 1757:
 	asm( 
 "	      0052741c    push 8"
-"	      0052741e    mov eax,[ebp-8]"
+"	      0052741e    mov eax,i"
 "	      00527421    lea eax,[eax*8+66BE90h]"
 "	      00527428    push eax"
 "	      00527429    mov eax,ds:[5B73D8h]"
 "	      0052742e    push eax"
-"	      0052742f    mov eax,[ebp+8]"
+"	      0052742f    mov eax,miffWriter"
 "	      00527432    push eax"
 "	      00527433    call 004AB5BDh"
 "	      00527438    add esp,10h"
-"	      0052743b    mov [ebp-4],eax"
+"	      0052743b    mov ret,eax"
 );
 // LINE 1758:
 	asm( 
-"	      0052743e    cmp dword ptr [ebp-4],0"
+"	      0052743e    cmp ret,0"
 "	      00527442    jne near ptr 0052744Fh"
 );
 // LINE 1759:

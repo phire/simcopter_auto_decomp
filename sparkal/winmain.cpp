@@ -21,7 +21,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 );
 // LINE 33:
 	asm( 
-"	      0041f879    mov eax,[ebp+8]"
+"	      0041f879    mov eax,hInstance"
 "	      0041f87c    mov ds:[5C28C8h],eax"
 );
 // LINE 40:
@@ -31,7 +31,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 // LINE 41:
 	asm( 
 "	      0041f888    push 80h"
-"	      0041f88d    mov eax,[ebp+10h]"
+"	      0041f88d    mov eax,CommandLine"
 "	      0041f890    push eax"
 "	      0041f891    push 5C2848h"
 "	      0041f896    call 0056AD40h"
@@ -39,17 +39,17 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 );
 // LINE 43:
 	asm( 
-"	      0041f89e    lea eax,[ebp-8]"
+"	      0041f89e    lea eax,TimerFrequency<_LARGE_INTEGER+0x00:None>"
 "	      0041f8a1    push eax"
 "	      0041f8a2    call dword ptr ds:[6C3668h]"
 );
 // LINE 45:
 	asm( 
-"	      0041f8a8    mov eax,[ebp-4]"
+"	      0041f8a8    mov eax,TimerFrequency<_LARGE_INTEGER+0x04:4>"
 "	      0041f8ab    mov [ebp-4Ch],eax"
 "	      0041f8ae    fild dword ptr [ebp-4Ch]"
 "	      0041f8b1    fmul dword ptr ds:[58F3C8h]"
-"	      0041f8b7    mov eax,[ebp-8]"
+"	      0041f8b7    mov eax,TimerFrequency<_LARGE_INTEGER+0x00:4>"
 "	      0041f8ba    mov [ebp-54h],eax"
 "	      0041f8bd    mov dword ptr [ebp-50h],0"
 "	      0041f8c4    fild qword ptr [ebp-54h]"
@@ -179,7 +179,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 "	      0041f9ec    push 0"
 "	      0041f9ee    push 0"
 "	      0041f9f0    push 0"
-"	      0041f9f2    lea eax,[ebp-24h]"
+"	      0041f9f2    lea eax,Message.hwnd"
 "	      0041f9f5    push eax"
 "	      0041f9f6    call dword ptr ds:[6C3800h]"
 "	      0041f9fc    test eax,eax"
@@ -187,7 +187,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 );
 // LINE 72:
 	asm( 
-"	      0041fa04    cmp dword ptr [ebp-20h],12h"
+"	      0041fa04    cmp Message.message,12h"
 "	      0041fa08    jne near ptr 0041FA2Ch"
 "	      0041fa0e    mov eax,ds:[598580h]"
 "	      0041fa13    mov [ebp-48h],eax"
@@ -205,13 +205,13 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 );
 // LINE 76:
 	asm( 
-"	      0041fa2c    lea eax,[ebp-24h]"
+"	      0041fa2c    lea eax,Message.hwnd"
 "	      0041fa2f    push eax"
 "	      0041fa30    call dword ptr ds:[6C37F8h]"
 );
 // LINE 77:
 	asm( 
-"	      0041fa36    lea eax,[ebp-24h]"
+"	      0041fa36    lea eax,Message.hwnd"
 "	      0041fa39    push eax"
 "	      0041fa3a    call dword ptr ds:[6C37ECh]"
 );

@@ -19,32 +19,32 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 "	      00422289    push ebx"
 "	      0042228a    push esi"
 "	      0042228b    push edi"
-"	      0042228c    mov [ebp-0B8h],ecx"
+"	      0042228c    mov this,ecx"
 );
 // LINE 26:
 	asm( 
-"	      00422292    mov dword ptr [ebp-10h],0"
-"	      00422299    mov dword ptr [ebp-0Ch],0"
-"	      004222a0    mov dword ptr [ebp-8],0"
+"	      00422292    mov commands.start,0"
+"	      00422299    mov commands.finish,0"
+"	      004222a0    mov commands.end_of_storage,0"
 "	      004222a7    jmp near ptr 004222ACh"
 );
 // LINE 27:
 	asm( 
-"	      004222ac    lea eax,[ebp-10h]"
+"	      004222ac    lea eax,commands.start"
 "	      004222af    push eax"
 "	      004222b0    sub esp,8"
 "	      004222b3    mov [ebp-18h],esp"
-"	      004222b6    mov eax,[ebp+8]"
+"	      004222b6    mov eax,data"
 "	      004222b9    push eax"
 "	      004222ba    mov ecx,[ebp-18h]"
 "	      004222bd    call 00411990h"
 "	      004222c2    call 00425041h"
 "	      004222c7    add esp,0Ch"
-"	      004222ca    mov [ebp-4],eax"
+"	      004222ca    mov num,eax"
 );
 // LINE 30:
 	asm( 
-"	      004222cd    cmp dword ptr [ebp-4],1"
+"	      004222cd    cmp num,1"
 "	      004222d1    jne near ptr 00422443h"
 );
 // LINE 32:
@@ -56,23 +56,23 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 // LINE 33:
 	asm( 
 "	      004222e4    jmp near ptr 004222E9h"
-"	      004222e9    mov eax,[ebp-0B8h]"
+"	      004222e9    mov eax,this"
 "	      004222ef    mov eax,[eax+2Ch]"
-"	      004222f2    mov [ebp-14h],eax"
+"	      004222f2    mov it,eax"
 );
 // LINE 35:
 	asm( 
 "	      004222f5    jmp near ptr 004222FEh"
-"	      004222fa    add dword ptr [ebp-14h],4"
+"	      004222fa    add it,4"
 "	      004222fe    jmp near ptr 00422303h"
-"	      00422303    mov eax,[ebp-0B8h]"
-"	      00422309    mov ecx,[ebp-14h]"
+"	      00422303    mov eax,this"
+"	      00422309    mov ecx,it"
 "	      0042230c    cmp [eax+30h],ecx"
 "	      0042230f    je near ptr 00422431h"
 );
 // LINE 36:
 	asm( 
-"	      00422315    mov eax,[ebp-14h]"
+"	      00422315    mov eax,it"
 "	      00422318    mov eax,[eax]"
 "	      0042231a    add eax,4"
 "	      0042231d    mov [ebp-6Ch],eax"
@@ -171,17 +171,17 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 // LINE 41:
 	asm( 
 "	      00422443    jmp near ptr 00422448h"
-"	      00422448    mov eax,[ebp-0B8h]"
+"	      00422448    mov eax,this"
 "	      0042244e    mov eax,[eax+2Ch]"
-"	      00422451    mov [ebp-14h],eax"
+"	      00422451    mov it,eax"
 );
 // LINE 43:
 	asm( 
 "	      00422454    jmp near ptr 0042245Dh"
-"	      00422459    add dword ptr [ebp-14h],4"
+"	      00422459    add it,4"
 "	      0042245d    jmp near ptr 00422462h"
-"	      00422462    mov eax,[ebp-0B8h]"
-"	      00422468    mov ecx,[ebp-14h]"
+"	      00422462    mov eax,this"
+"	      00422468    mov ecx,it"
 "	      0042246b    cmp [eax+30h],ecx"
 "	      0042246e    je near ptr 0042280Fh"
 );
@@ -189,10 +189,10 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	asm( 
 "	      00422474    jmp near ptr 00422479h"
 "	      00422479    jmp near ptr 0042247Eh"
-"	      0042247e    mov eax,[ebp-10h]"
+"	      0042247e    mov eax,commands.start"
 "	      00422481    add eax,8"
 "	      00422484    mov [ebp-24h],eax"
-"	      00422487    mov eax,[ebp-14h]"
+"	      00422487    mov eax,it"
 "	      0042248a    mov eax,[eax]"
 "	      0042248c    add eax,4"
 "	      0042248f    mov [ebp-28h],eax"
@@ -246,7 +246,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	asm( 
 "	      00422541    jmp near ptr 00422546h"
 "	      00422546    jmp near ptr 0042254Bh"
-"	      0042254b    mov eax,[ebp-14h]"
+"	      0042254b    mov eax,it"
 "	      0042254e    mov eax,[eax]"
 "	      00422550    add eax,0Ch"
 "	      00422553    mov [ebp-90h],eax"
@@ -325,7 +325,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 "	      00422681    mov [ecx],al"
 "	      00422683    jmp near ptr 00422688h"
 "	      00422688    jmp near ptr 0042268Dh"
-"	      0042268d    mov eax,[ebp-10h]"
+"	      0042268d    mov eax,commands.start"
 "	      00422690    add eax,8"
 "	      00422693    mov [ebp-0B4h],eax"
 "	      00422699    mov eax,[ebp-0B4h]"
@@ -419,9 +419,9 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 );
 // LINE 50:
 	asm( 
-"	      0042280f    mov eax,[ebp-0Ch]"
+"	      0042280f    mov eax,commands.finish"
 "	      00422812    mov [ebp-44h],eax"
-"	      00422815    mov eax,[ebp-10h]"
+"	      00422815    mov eax,commands.start"
 "	      00422818    mov [ebp-48h],eax"
 "	      0042281b    mov eax,[ebp-44h]"
 "	      0042281e    cmp [ebp-48h],eax"
@@ -468,7 +468,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 "	      004228b3    add dword ptr [ebp-48h],8"
 "	      004228b7    jmp near ptr 0042281Bh"
 "	      004228bc    jmp near ptr 004228C1h"
-"	      004228c1    mov eax,[ebp-10h]"
+"	      004228c1    mov eax,commands.start"
 "	      004228c4    mov [ebp-30h],eax"
 "	      004228c7    mov eax,[ebp-30h]"
 "	      004228ca    push eax"
@@ -498,30 +498,30 @@ void CDebugWindow::CDebugWindow() {
 "	      004228f4    push ebx"
 "	      004228f5    push esi"
 "	      004228f6    push edi"
-"	      004228f7    mov [ebp-5Ch],ecx"
-"	      004228fa    mov eax,[ebp-5Ch]"
+"	      004228f7    mov this,ecx"
+"	      004228fa    mov eax,this"
 "	      004228fd    mov dword ptr [eax],0"
-"	      00422903    mov eax,[ebp-5Ch]"
+"	      00422903    mov eax,this"
 "	      00422906    mov dword ptr [eax+4],0"
-"	      0042290d    mov eax,[ebp-5Ch]"
+"	      0042290d    mov eax,this"
 "	      00422910    mov dword ptr [eax+8],0"
-"	      00422917    mov eax,[ebp-5Ch]"
+"	      00422917    mov eax,this"
 "	      0042291a    mov dword ptr [eax+0Ch],0"
 "	      00422921    jmp near ptr 00422926h"
-"	      00422926    mov eax,[ebp-5Ch]"
+"	      00422926    mov eax,this"
 "	      00422929    mov dword ptr [eax+10h],0"
-"	      00422930    mov eax,[ebp-5Ch]"
+"	      00422930    mov eax,this"
 "	      00422933    mov dword ptr [eax+14h],0"
-"	      0042293a    mov eax,[ebp-5Ch]"
+"	      0042293a    mov eax,this"
 "	      0042293d    mov dword ptr [eax+18h],0"
-"	      00422944    mov eax,[ebp-5Ch]"
+"	      00422944    mov eax,this"
 "	      00422947    mov dword ptr [eax+1Ch],0"
 "	      0042294e    jmp near ptr 00422953h"
-"	      00422953    mov eax,[ebp-5Ch]"
+"	      00422953    mov eax,this"
 "	      00422956    mov dword ptr [eax+20h],0"
-"	      0042295d    mov eax,[ebp-5Ch]"
+"	      0042295d    mov eax,this"
 "	      00422960    mov dword ptr [eax+24h],0"
-"	      00422967    mov eax,[ebp-5Ch]"
+"	      00422967    mov eax,this"
 "	      0042296a    mov dword ptr [eax+28h],0"
 "	      00422971    mov dword ptr [ebp-10h],200h"
 "	      00422978    lea eax,[ebp-10h]"
@@ -545,11 +545,11 @@ void CDebugWindow::CDebugWindow() {
 "	      004229b6    mov ds:[597420h],eax"
 "	      004229bb    jmp near ptr 004229C0h"
 "	      004229c0    jmp near ptr 004229C5h"
-"	      004229c5    mov eax,[ebp-5Ch]"
+"	      004229c5    mov eax,this"
 "	      004229c8    mov dword ptr [eax+2Ch],0"
-"	      004229cf    mov eax,[ebp-5Ch]"
+"	      004229cf    mov eax,this"
 "	      004229d2    mov dword ptr [eax+30h],0"
-"	      004229d9    mov eax,[ebp-5Ch]"
+"	      004229d9    mov eax,this"
 "	      004229dc    mov dword ptr [eax+34h],0"
 "	      004229e3    jmp near ptr 004229E8h"
 );
@@ -602,7 +602,7 @@ void CDebugWindow::CDebugWindow() {
 "	      00422ab2    mov dword ptr ds:[5C2900h],58F420h"
 "	      00422abc    jmp near ptr 00422AC1h"
 "	      00422ac1    mov dword ptr ds:[5C2900h],58F41Ch"
-"	      00422acb    mov eax,[ebp-5Ch]"
+"	      00422acb    mov eax,this"
 "	      00422ace    mov ds:[5C2914h],eax"
 "	      00422ad3    mov eax,ds:[597370h]"
 "	      00422ad8    mov [ebp-38h],eax"
@@ -760,12 +760,12 @@ void CDebugWindow::CDebugWindow() {
 );
 // LINE 60:
 	asm( 
-"	      00422d30    mov eax,[ebp-5Ch]"
-"	      00422d33    mov ecx,[ebp-5Ch]"
+"	      00422d30    mov eax,this"
+"	      00422d33    mov ecx,this"
 "	      00422d36    mov ecx,[ecx+34h]"
 "	      00422d39    cmp [eax+30h],ecx"
 "	      00422d3c    je near ptr 00422D7Eh"
-"	      00422d42    mov eax,[ebp-5Ch]"
+"	      00422d42    mov eax,this"
 "	      00422d45    mov eax,[eax+30h]"
 "	      00422d48    mov [ebp-8],eax"
 "	      00422d4b    mov eax,[ebp-8]"
@@ -778,16 +778,16 @@ void CDebugWindow::CDebugWindow() {
 "	      00422d66    mov [ecx],eax"
 "	      00422d68    jmp near ptr 00422D6Dh"
 "	      00422d6d    jmp near ptr 00422D72h"
-"	      00422d72    mov eax,[ebp-5Ch]"
+"	      00422d72    mov eax,this"
 "	      00422d75    add dword ptr [eax+30h],4"
 "	      00422d79    jmp near ptr 00422D99h"
 "	      00422d7e    jmp near ptr 00422D83h"
 "	      00422d83    lea eax,[ebp-0Ch]"
 "	      00422d86    push eax"
-"	      00422d87    mov eax,[ebp-5Ch]"
+"	      00422d87    mov eax,this"
 "	      00422d8a    mov eax,[eax+30h]"
 "	      00422d8d    push eax"
-"	      00422d8e    mov ecx,[ebp-5Ch]"
+"	      00422d8e    mov ecx,this"
 "	      00422d91    add ecx,2Ch"
 "	      00422d94    call 00426570h"
 "	      00422d99    jmp near ptr 00422D9Eh"
@@ -795,13 +795,13 @@ void CDebugWindow::CDebugWindow() {
 );
 // LINE 62:
 	asm( 
-"	      00422da3    mov eax,[ebp-5Ch]"
+"	      00422da3    mov eax,this"
 "	      00422da6    mov dword ptr [eax+38h],0"
 );
 // LINE 64:
 	asm( 
 "	      00422dad    jmp near ptr 00422DB2h"
-"	      00422db2    mov eax,[ebp-5Ch]"
+"	      00422db2    mov eax,this"
 "	      00422db5    pop edi"
 "	      00422db6    pop esi"
 "	      00422db7    pop ebx"
@@ -823,30 +823,30 @@ void CDebugWindow::~CDebugWindow() {
 "	      00422f51    push ebx"
 "	      00422f52    push esi"
 "	      00422f53    push edi"
-"	      00422f54    mov [ebp-70h],ecx"
+"	      00422f54    mov this,ecx"
 );
 // LINE 69:
 	asm( 
-"	      00422f57    mov eax,[ebp-70h]"
+"	      00422f57    mov eax,this"
 "	      00422f5a    cmp dword ptr [eax+38h],0"
 "	      00422f5e    je near ptr 00422F71h"
-"	      00422f64    mov eax,[ebp-70h]"
+"	      00422f64    mov eax,this"
 "	      00422f67    mov eax,[eax+38h]"
 "	      00422f6a    push eax"
 "	      00422f6b    call dword ptr ds:[6C3804h]"
 );
 // LINE 70:
 	asm( 
-"	      00422f71    mov eax,[ebp-70h]"
+"	      00422f71    mov eax,this"
 "	      00422f74    mov dword ptr [eax+38h],0"
 );
 // LINE 72:
 	asm( 
 "	      00422f7b    jmp near ptr 00422F80h"
-"	      00422f80    mov eax,[ebp-70h]"
+"	      00422f80    mov eax,this"
 "	      00422f83    mov eax,[eax+2Ch]"
 "	      00422f86    mov [ebp-6Ch],eax"
-"	      00422f89    mov eax,[ebp-70h]"
+"	      00422f89    mov eax,this"
 "	      00422f8c    mov ecx,[ebp-6Ch]"
 "	      00422f8f    cmp [eax+30h],ecx"
 "	      00422f92    je near ptr 00422FA6h"
@@ -854,7 +854,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00422f9d    add dword ptr [ebp-6Ch],4"
 "	      00422fa1    jmp near ptr 00422F89h"
 "	      00422fa6    jmp near ptr 00422FABh"
-"	      00422fab    mov eax,[ebp-70h]"
+"	      00422fab    mov eax,this"
 "	      00422fae    mov eax,[eax+2Ch]"
 "	      00422fb1    mov [ebp-68h],eax"
 "	      00422fb4    mov eax,[ebp-68h]"
@@ -864,7 +864,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00422fc0    jmp near ptr 00422FC5h"
 "	      00422fc5    jmp near ptr 00422FCAh"
 "	      00422fca    jmp near ptr 00422FCFh"
-"	      00422fcf    mov eax,[ebp-70h]"
+"	      00422fcf    mov eax,this"
 "	      00422fd2    cmp dword ptr [eax+20h],0"
 "	      00422fd6    jne near ptr 00422FE6h"
 "	      00422fdc    jmp near ptr 004231DCh"
@@ -872,7 +872,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00422fe6    jmp near ptr 00422FF5h"
 "	      00422feb    cmp dword ptr [ebp-4],0"
 "	      00422fef    jne near ptr 004231DCh"
-"	      00422ff5    mov eax,[ebp-70h]"
+"	      00422ff5    mov eax,this"
 "	      00422ff8    mov eax,[eax]"
 "	      00422ffa    mov [ebp-28h],eax"
 "	      00422ffd    mov ecx,[ebp-28h]"
@@ -884,11 +884,11 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423013    add esp,4"
 "	      00423016    jmp near ptr 0042301Bh"
 "	      0042301b    jmp near ptr 00423020h"
-"	      00423020    mov eax,[ebp-70h]"
+"	      00423020    mov eax,this"
 "	      00423023    add dword ptr [eax],8"
-"	      00423026    mov eax,[ebp-70h]"
+"	      00423026    mov eax,this"
 "	      00423029    dec dword ptr [eax+20h]"
-"	      0042302c    mov eax,[ebp-70h]"
+"	      0042302c    mov eax,this"
 "	      0042302f    cmp dword ptr [eax+20h],0"
 "	      00423033    jne near ptr 00423043h"
 "	      00423039    jmp near ptr 004230A0h"
@@ -896,7 +896,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423043    jmp near ptr 00423052h"
 "	      00423048    cmp dword ptr [ebp-2Ch],0"
 "	      0042304c    jne near ptr 004230A0h"
-"	      00423052    mov eax,[ebp-70h]"
+"	      00423052    mov eax,this"
 "	      00423055    lea ecx,[ebp-14h]"
 "	      00423058    mov edx,[eax]"
 "	      0042305a    mov [ecx],edx"
@@ -907,7 +907,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423068    mov eax,[eax+0Ch]"
 "	      0042306b    mov [ecx+0Ch],eax"
 "	      0042306e    jmp near ptr 00423073h"
-"	      00423073    mov eax,[ebp-70h]"
+"	      00423073    mov eax,this"
 "	      00423076    lea ecx,[ebp-24h]"
 "	      00423079    mov edx,[eax]"
 "	      0042307b    mov [ecx],edx"
@@ -921,10 +921,10 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423094    mov eax,[ebp-14h]"
 "	      00423097    cmp [ebp-1Ch],eax"
 "	      0042309a    jne near ptr 004231D2h"
-"	      004230a0    mov eax,[ebp-70h]"
+"	      004230a0    mov eax,this"
 "	      004230a3    mov eax,[eax+0Ch]"
 "	      004230a6    mov [ebp-50h],eax"
-"	      004230a9    mov eax,[ebp-70h]"
+"	      004230a9    mov eax,this"
 "	      004230ac    add dword ptr [eax+0Ch],4"
 "	      004230b0    mov eax,[ebp-50h]"
 "	      004230b3    mov eax,[eax]"
@@ -935,7 +935,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      004230c1    add esp,4"
 "	      004230c4    jmp near ptr 004230C9h"
 "	      004230c9    jmp near ptr 004230CEh"
-"	      004230ce    mov eax,[ebp-70h]"
+"	      004230ce    mov eax,this"
 "	      004230d1    cmp dword ptr [eax+20h],0"
 "	      004230d5    jne near ptr 004230E0h"
 "	      004230db    jmp near ptr 004230E5h"
@@ -949,7 +949,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423109    mov dword ptr [ebp-30h],0"
 "	      00423110    jmp near ptr 00423115h"
 "	      00423115    lea eax,[ebp-3Ch]"
-"	      00423118    mov ecx,[ebp-70h]"
+"	      00423118    mov ecx,this"
 "	      0042311b    mov edx,[eax]"
 "	      0042311d    mov [ecx],edx"
 "	      0042311f    mov edx,[eax+4]"
@@ -958,8 +958,8 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423128    mov [ecx+8],edx"
 "	      0042312b    mov eax,[eax+0Ch]"
 "	      0042312e    mov [ecx+0Ch],eax"
-"	      00423131    mov eax,[ebp-70h]"
-"	      00423134    mov ecx,[ebp-70h]"
+"	      00423131    mov eax,this"
+"	      00423134    mov ecx,this"
 "	      00423137    add ecx,10h"
 "	      0042313a    mov edx,[eax]"
 "	      0042313c    mov [ecx],edx"
@@ -969,7 +969,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423147    mov [ecx+8],edx"
 "	      0042314a    mov eax,[eax+0Ch]"
 "	      0042314d    mov [ecx+0Ch],eax"
-"	      00423150    mov eax,[ebp-70h]"
+"	      00423150    mov eax,this"
 "	      00423153    mov eax,[eax+24h]"
 "	      00423156    mov [ebp-5Ch],eax"
 "	      00423159    mov eax,[ebp-5Ch]"
@@ -979,10 +979,10 @@ void CDebugWindow::~CDebugWindow() {
 "	      00423165    jmp near ptr 0042316Ah"
 "	      0042316a    jmp near ptr 0042316Fh"
 "	      0042316f    jmp near ptr 004231CDh"
-"	      00423174    mov eax,[ebp-70h]"
+"	      00423174    mov eax,this"
 "	      00423177    mov eax,[eax+0Ch]"
 "	      0042317a    mov [ebp-60h],eax"
-"	      0042317d    mov eax,[ebp-70h]"
+"	      0042317d    mov eax,this"
 "	      00423180    mov eax,[eax+0Ch]"
 "	      00423183    mov eax,[eax]"
 "	      00423185    mov [ebp-64h],eax"
@@ -1000,7 +1000,7 @@ void CDebugWindow::~CDebugWindow() {
 "	      004231a9    mov [ebp-40h],eax"
 "	      004231ac    jmp near ptr 004231B1h"
 "	      004231b1    lea eax,[ebp-4Ch]"
-"	      004231b4    mov ecx,[ebp-70h]"
+"	      004231b4    mov ecx,this"
 "	      004231b7    mov edx,[eax]"
 "	      004231b9    mov [ecx],edx"
 "	      004231bb    mov edx,[eax+4]"
@@ -1031,11 +1031,11 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      004231ec    push ebx"
 "	      004231ed    push esi"
 "	      004231ee    push edi"
-"	      004231ef    mov [ebp-10h],ecx"
+"	      004231ef    mov this,ecx"
 );
 // LINE 77:
 	asm( 
-"	      004231f2    mov eax,[ebp-10h]"
+"	      004231f2    mov eax,this"
 "	      004231f5    cmp dword ptr [eax+38h],0"
 "	      004231f9    jne near ptr 00423359h"
 );
@@ -1103,30 +1103,30 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      00423281    push 0"
 "	      00423283    call dword ptr ds:[6C3810h]"
 "	      00423289    sub eax,280h"
-"	      0042328e    mov [ebp-0Ch],eax"
+"	      0042328e    mov Width,eax"
 );
 // LINE 92:
 	asm( 
 "	      00423291    push 1"
 "	      00423293    call dword ptr ds:[6C3810h]"
-"	      00423299    mov [ebp-8],eax"
+"	      00423299    mov Height,eax"
 );
 // LINE 93:
 	asm( 
-"	      0042329c    mov dword ptr [ebp-4],280h"
+"	      0042329c    mov xPos,280h"
 );
 // LINE 94:
 	asm( 
-"	      004232a3    cmp dword ptr [ebp-0Ch],0"
+"	      004232a3    cmp Width,0"
 "	      004232a7    jg near ptr 004232BBh"
 );
 // LINE 96:
 	asm( 
-"	      004232ad    mov dword ptr [ebp-0Ch],64h"
+"	      004232ad    mov Width,64h"
 );
 // LINE 97:
 	asm( 
-"	      004232b4    mov dword ptr [ebp-4],21Ch"
+"	      004232b4    mov xPos,21Ch"
 );
 // LINE 110:
 	asm( 
@@ -1135,29 +1135,29 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      004232c2    push eax"
 "	      004232c3    push 0"
 "	      004232c5    push 0"
-"	      004232c7    mov eax,[ebp-8]"
+"	      004232c7    mov eax,Height"
 "	      004232ca    push eax"
-"	      004232cb    mov eax,[ebp-0Ch]"
+"	      004232cb    mov eax,Width"
 "	      004232ce    push eax"
 "	      004232cf    push 0"
-"	      004232d1    mov eax,[ebp-4]"
+"	      004232d1    mov eax,xPos"
 "	      004232d4    push eax"
 "	      004232d5    push 90E40000h"
-"	      004232da    mov eax,[ebp+8]"
+"	      004232da    mov eax,windowName"
 "	      004232dd    push eax"
 "	      004232de    mov eax,ds:[597368h]"
 "	      004232e3    push eax"
 "	      004232e4    push 0"
 "	      004232e6    call dword ptr ds:[6C3808h]"
-"	      004232ec    mov ecx,[ebp-10h]"
+"	      004232ec    mov ecx,this"
 "	      004232ef    mov [ecx+38h],eax"
 );
 // LINE 111:
 	asm( 
-"	      004232f2    mov eax,[ebp-10h]"
+"	      004232f2    mov eax,this"
 "	      004232f5    push eax"
 "	      004232f6    push 0FFFFFFEBh"
-"	      004232f8    mov eax,[ebp-10h]"
+"	      004232f8    mov eax,this"
 "	      004232fb    mov eax,[eax+38h]"
 "	      004232fe    push eax"
 "	      004232ff    call dword ptr ds:[6C380Ch]"
@@ -1168,11 +1168,11 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      00423307    mov eax,ds:[5C28C8h]"
 "	      0042330c    push eax"
 "	      0042330d    push 0"
-"	      0042330f    mov eax,[ebp-10h]"
+"	      0042330f    mov eax,this"
 "	      00423312    mov eax,[eax+38h]"
 "	      00423315    push eax"
 "	      00423316    push 19h"
-"	      00423318    mov eax,[ebp-0Ch]"
+"	      00423318    mov eax,Width"
 "	      0042331b    push eax"
 "	      0042331c    push 0"
 "	      0042331e    push 0"
@@ -1181,17 +1181,17 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      0042332a    push 5973E0h"
 "	      0042332f    push 0"
 "	      00423331    call dword ptr ds:[6C3808h]"
-"	      00423337    mov ecx,[ebp-10h]"
+"	      00423337    mov ecx,this"
 "	      0042333a    mov [ecx+3Ch],eax"
 );
 // LINE 125:
 	asm( 
-"	      0042333d    mov eax,[ebp-8]"
+"	      0042333d    mov eax,Height"
 "	      00423340    push eax"
-"	      00423341    mov eax,[ebp-0Ch]"
+"	      00423341    mov eax,Width"
 "	      00423344    push eax"
 "	      00423345    push 0"
-"	      00423347    mov ecx,[ebp-10h]"
+"	      00423347    mov ecx,this"
 "	      0042334a    call 004236C6h"
 );
 // LINE 126:
@@ -1225,12 +1225,12 @@ void CDebugWindow::ShowWindow() {
 "	      0042336d    push ebx"
 "	      0042336e    push esi"
 "	      0042336f    push edi"
-"	      00423370    mov [ebp-4],ecx"
+"	      00423370    mov this,ecx"
 );
 // LINE 136:
 	asm( 
 "	      00423373    push 5"
-"	      00423375    mov eax,[ebp-4]"
+"	      00423375    mov eax,this"
 "	      00423378    mov eax,[eax+38h]"
 "	      0042337b    push eax"
 "	      0042337c    call dword ptr ds:[6C3820h]"
@@ -1256,12 +1256,12 @@ void CDebugWindow::HideWindow() {
 "	      00423392    push ebx"
 "	      00423393    push esi"
 "	      00423394    push edi"
-"	      00423395    mov [ebp-4],ecx"
+"	      00423395    mov this,ecx"
 );
 // LINE 142:
 	asm( 
 "	      00423398    push 0"
-"	      0042339a    mov eax,[ebp-4]"
+"	      0042339a    mov eax,this"
 "	      0042339d    mov eax,[eax+38h]"
 "	      004233a0    push eax"
 "	      004233a1    call dword ptr ds:[6C3820h]"
@@ -1290,20 +1290,20 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      004233b7    push ebx"
 "	      004233b8    push esi"
 "	      004233b9    push edi"
-"	      004233ba    mov [ebp-78h],ecx"
+"	      004233ba    mov this,ecx"
 );
 // LINE 153:
 	asm( 
 "	      004233bd    push 5973E8h"
-"	      004233c2    mov eax,[ebp+8]"
+"	      004233c2    mov eax,filePath"
 "	      004233c5    push eax"
 "	      004233c6    call 0056D910h"
 "	      004233cb    add esp,8"
-"	      004233ce    mov [ebp-14h],eax"
+"	      004233ce    mov file,eax"
 );
 // LINE 154:
 	asm( 
-"	      004233d1    cmp dword ptr [ebp-14h],0"
+"	      004233d1    cmp file,0"
 "	      004233d5    jne near ptr 004233E2h"
 );
 // LINE 155:
@@ -1313,8 +1313,8 @@ int32_t CDebugWindow::Save(char * filePath) {
 );
 // LINE 157:
 	asm( 
-"	      004233e2    mov eax,[ebp-78h]"
-"	      004233e5    lea ecx,[ebp-10h]"
+"	      004233e2    mov eax,this"
+"	      004233e5    lea ecx,it.current"
 "	      004233e8    mov edx,[eax]"
 "	      004233ea    mov [ecx],edx"
 "	      004233ec    mov edx,[eax+4]"
@@ -1327,7 +1327,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 );
 // LINE 158:
 	asm( 
-"	      00423403    mov eax,[ebp-78h]"
+"	      00423403    mov eax,this"
 "	      00423406    add eax,10h"
 "	      00423409    lea ecx,[ebp-24h]"
 "	      0042340c    mov edx,[eax]"
@@ -1340,18 +1340,18 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      0042341f    mov [ecx+0Ch],eax"
 "	      00423422    jmp near ptr 00423427h"
 "	      00423427    mov eax,[ebp-24h]"
-"	      0042342a    cmp [ebp-10h],eax"
+"	      0042342a    cmp it.current,eax"
 "	      0042342d    je near ptr 004234AEh"
-"	      00423433    mov eax,[ebp-10h]"
-"	      00423436    cmp [ebp-0Ch],eax"
+"	      00423433    mov eax,it.current"
+"	      00423436    cmp it.first,eax"
 "	      00423439    je near ptr 0042344Bh"
 "	      0042343f    mov eax,[ebp-24h]"
 "	      00423442    cmp [ebp-20h],eax"
 "	      00423445    jne near ptr 004234B8h"
 "	      0042344b    mov eax,[ebp-18h]"
-"	      0042344e    cmp [ebp-4],eax"
+"	      0042344e    cmp it.node,eax"
 "	      00423451    jne near ptr 00423472h"
-"	      00423457    mov eax,[ebp-10h]"
+"	      00423457    mov eax,it.current"
 "	      0042345a    sub eax,[ebp-24h]"
 "	      0042345d    and eax,0FFFFFFF8h"
 "	      00423460    xor ecx,ecx"
@@ -1359,13 +1359,13 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      00423465    cmp eax,ecx"
 "	      00423467    jne near ptr 004234B8h"
 "	      0042346d    jmp near ptr 0042349Fh"
-"	      00423472    mov eax,[ebp-4]"
+"	      00423472    mov eax,it.node"
 "	      00423475    sub eax,[ebp-18h]"
 "	      00423478    sar eax,2"
 "	      0042347b    dec eax"
 "	      0042347c    imul eax,ds:[597420h]"
-"	      00423483    mov ecx,[ebp-10h]"
-"	      00423486    sub ecx,[ebp-0Ch]"
+"	      00423483    mov ecx,it.current"
+"	      00423486    sub ecx,it.first"
 "	      00423489    sar ecx,3"
 "	      0042348c    add eax,ecx"
 "	      0042348e    mov ecx,[ebp-1Ch]"
@@ -1392,7 +1392,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      004234e0    jmp near ptr 004234E5h"
 "	      004234e5    jmp near ptr 004234EAh"
 "	      004234ea    jmp near ptr 004234EFh"
-"	      004234ef    mov eax,[ebp-10h]"
+"	      004234ef    mov eax,it.current"
 "	      004234f2    mov [ebp-74h],eax"
 "	      004234f5    mov eax,[ebp-74h]"
 "	      004234f8    cmp dword ptr [eax],0"
@@ -1469,10 +1469,10 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      004235e7    mov [ecx],al"
 "	      004235e9    jmp near ptr 004235EEh"
 "	      004235ee    jmp near ptr 004235F3h"
-"	      004235f3    mov eax,[ebp-14h]"
+"	      004235f3    mov eax,file"
 "	      004235f6    push eax"
 "	      004235f7    push 1"
-"	      004235f9    mov eax,[ebp-10h]"
+"	      004235f9    mov eax,it.current"
 "	      004235fc    mov eax,[eax+4]"
 "	      004235ff    mov eax,[eax+4]"
 "	      00423602    push eax"
@@ -1484,7 +1484,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 );
 // LINE 161:
 	asm( 
-"	      00423611    mov eax,[ebp-14h]"
+"	      00423611    mov eax,file"
 "	      00423614    push eax"
 "	      00423615    push 1"
 "	      00423617    push 2"
@@ -1494,7 +1494,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 );
 // LINE 162:
 	asm( 
-"	      00423626    lea eax,[ebp-10h]"
+"	      00423626    lea eax,it.current"
 "	      00423629    lea ecx,[ebp-50h]"
 "	      0042362c    mov edx,[eax]"
 "	      0042362e    mov [ecx],edx"
@@ -1504,20 +1504,20 @@ int32_t CDebugWindow::Save(char * filePath) {
 "	      00423639    mov [ecx+8],edx"
 "	      0042363c    mov eax,[eax+0Ch]"
 "	      0042363f    mov [ecx+0Ch],eax"
-"	      00423642    add dword ptr [ebp-10h],8"
-"	      00423646    mov eax,[ebp-8]"
-"	      00423649    cmp [ebp-10h],eax"
+"	      00423642    add it.current,8"
+"	      00423646    mov eax,it.last"
+"	      00423649    cmp it.current,eax"
 "	      0042364c    jne near ptr 00423672h"
-"	      00423652    add dword ptr [ebp-4],4"
-"	      00423656    mov eax,[ebp-4]"
+"	      00423652    add it.node,4"
+"	      00423656    mov eax,it.node"
 "	      00423659    mov eax,[eax]"
-"	      0042365b    mov [ebp-0Ch],eax"
-"	      0042365e    mov eax,[ebp-0Ch]"
-"	      00423661    mov [ebp-10h],eax"
+"	      0042365b    mov it.first,eax"
+"	      0042365e    mov eax,it.first"
+"	      00423661    mov it.current,eax"
 "	      00423664    mov eax,ds:[597420h]"
 "	      00423669    shl eax,3"
-"	      0042366c    add eax,[ebp-0Ch]"
-"	      0042366f    mov [ebp-8],eax"
+"	      0042366c    add eax,it.first"
+"	      0042366f    mov it.last,eax"
 "	      00423672    jmp near ptr 00423677h"
 "	      00423677    lea eax,[ebp-50h]"
 "	      0042367a    lea ecx,[ebp-34h]"
@@ -1537,14 +1537,14 @@ int32_t CDebugWindow::Save(char * filePath) {
 );
 // LINE 165:
 	asm( 
-"	      0042369d    mov eax,[ebp-14h]"
+"	      0042369d    mov eax,file"
 "	      004236a0    push eax"
 "	      004236a1    call 0056D280h"
 "	      004236a6    add esp,4"
 );
 // LINE 166:
 	asm( 
-"	      004236a9    mov eax,[ebp-14h]"
+"	      004236a9    mov eax,file"
 "	      004236ac    push eax"
 "	      004236ad    call 0056D120h"
 "	      004236b2    add esp,4"
@@ -1577,22 +1577,22 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 "	      004236cc    push ebx"
 "	      004236cd    push esi"
 "	      004236ce    push edi"
-"	      004236cf    mov [ebp-24h],ecx"
+"	      004236cf    mov this,ecx"
 );
 // LINE 180:
 	asm( 
-"	      004236d2    lea eax,[ebp-20h]"
+"	      004236d2    lea eax,winRect.left"
 "	      004236d5    push eax"
-"	      004236d6    mov eax,[ebp-24h]"
+"	      004236d6    mov eax,this"
 "	      004236d9    mov eax,[eax+38h]"
 "	      004236dc    push eax"
 "	      004236dd    call dword ptr ds:[6C382Ch]"
 );
 // LINE 181:
 	asm( 
-"	      004236e3    lea eax,[ebp-10h]"
+"	      004236e3    lea eax,editRect.left"
 "	      004236e6    push eax"
-"	      004236e7    mov eax,[ebp-24h]"
+"	      004236e7    mov eax,this"
 "	      004236ea    mov eax,[eax+3Ch]"
 "	      004236ed    push eax"
 "	      004236ee    call dword ptr ds:[6C382Ch]"
@@ -1600,29 +1600,29 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 // LINE 182:
 	asm( 
 "	      004236f4    push 1"
-"	      004236f6    mov eax,[ebp-4]"
+"	      004236f6    mov eax,editRect.bottom"
 "	      004236f9    push eax"
-"	      004236fa    mov eax,[ebp-18h]"
+"	      004236fa    mov eax,winRect.right"
 "	      004236fd    push eax"
-"	      004236fe    mov eax,[ebp-14h]"
-"	      00423701    sub eax,[ebp-4]"
+"	      004236fe    mov eax,winRect.bottom"
+"	      00423701    sub eax,editRect.bottom"
 "	      00423704    push eax"
 "	      00423705    push 0"
-"	      00423707    mov eax,[ebp-24h]"
+"	      00423707    mov eax,this"
 "	      0042370a    mov eax,[eax+3Ch]"
 "	      0042370d    push eax"
 "	      0042370e    call dword ptr ds:[6C3828h]"
 );
 // LINE 183:
 	asm( 
-"	      00423714    mov ecx,[ebp-24h]"
+"	      00423714    mov ecx,this"
 "	      00423717    call 004241FFh"
 );
 // LINE 184:
 	asm( 
 "	      0042371c    push 1"
 "	      0042371e    push 0"
-"	      00423720    mov eax,[ebp-24h]"
+"	      00423720    mov eax,this"
 "	      00423723    mov eax,[eax+38h]"
 "	      00423726    push eax"
 "	      00423727    call dword ptr ds:[6C3824h]"
@@ -1656,50 +1656,50 @@ void CDebugWindow::OnPaint() {
 "	      00423742    push ebx"
 "	      00423743    push esi"
 "	      00423744    push edi"
-"	      00423745    mov [ebp-110h],ecx"
+"	      00423745    mov this,ecx"
 );
 // LINE 194:
 	asm( 
-"	      0042374b    lea eax,[ebp-84h]"
+"	      0042374b    lea eax,ps.hdc"
 "	      00423751    push eax"
-"	      00423752    mov eax,[ebp-110h]"
+"	      00423752    mov eax,this"
 "	      00423758    mov eax,[eax+38h]"
 "	      0042375b    push eax"
 "	      0042375c    call dword ptr ds:[6C3838h]"
-"	      00423762    mov [ebp-44h],eax"
+"	      00423762    mov hDC,eax"
 );
 // LINE 198:
 	asm( 
-"	      00423765    lea eax,[ebp-40h]"
+"	      00423765    lea eax,tm.tmHeight"
 "	      00423768    push eax"
-"	      00423769    mov eax,[ebp-44h]"
+"	      00423769    mov eax,hDC"
 "	      0042376c    push eax"
 "	      0042376d    call dword ptr ds:[6C355Ch]"
 );
 // LINE 199:
 	asm( 
-"	      00423773    mov dword ptr [ebp-88h],0"
+"	      00423773    mov index,0"
 );
 // LINE 201:
 	asm( 
 "	      0042377d    push 1"
-"	      0042377f    mov eax,[ebp-110h]"
+"	      0042377f    mov eax,this"
 "	      00423785    mov eax,[eax+38h]"
 "	      00423788    push eax"
 "	      00423789    call dword ptr ds:[6C3834h]"
-"	      0042378f    mov [ebp-4],eax"
+"	      0042378f    mov scrollStart,eax"
 );
 // LINE 203:
 	asm( 
-"	      00423792    mov dword ptr [ebp-98h],0"
-"	      0042379c    mov dword ptr [ebp-94h],0"
-"	      004237a6    mov dword ptr [ebp-90h],0"
-"	      004237b0    mov dword ptr [ebp-8Ch],0"
+"	      00423792    mov it.current,0"
+"	      0042379c    mov it.first,0"
+"	      004237a6    mov it.last,0"
+"	      004237b0    mov it.node,0"
 "	      004237ba    jmp near ptr 004237BFh"
 );
 // LINE 204:
 	asm( 
-"	      004237bf    mov eax,[ebp-110h]"
+"	      004237bf    mov eax,this"
 "	      004237c5    lea ecx,[ebp-0A8h]"
 "	      004237cb    mov edx,[eax]"
 "	      004237cd    mov [ecx],edx"
@@ -1711,7 +1711,7 @@ void CDebugWindow::OnPaint() {
 "	      004237de    mov [ecx+0Ch],eax"
 "	      004237e1    jmp near ptr 004237E6h"
 "	      004237e6    lea eax,[ebp-0A8h]"
-"	      004237ec    lea ecx,[ebp-98h]"
+"	      004237ec    lea ecx,it.current"
 "	      004237f2    mov edx,[eax]"
 "	      004237f4    mov [ecx],edx"
 "	      004237f6    mov edx,[eax+4]"
@@ -1727,7 +1727,7 @@ void CDebugWindow::OnPaint() {
 );
 // LINE 204:
 	asm( 
-"	      0042380d    lea eax,[ebp-98h]"
+"	      0042380d    lea eax,it.current"
 "	      00423813    lea ecx,[ebp-0E8h]"
 "	      00423819    mov edx,[eax]"
 "	      0042381b    mov [ecx],edx"
@@ -1737,20 +1737,20 @@ void CDebugWindow::OnPaint() {
 "	      00423826    mov [ecx+8],edx"
 "	      00423829    mov eax,[eax+0Ch]"
 "	      0042382c    mov [ecx+0Ch],eax"
-"	      0042382f    add dword ptr [ebp-98h],8"
-"	      00423836    mov eax,[ebp-98h]"
-"	      0042383c    cmp [ebp-90h],eax"
+"	      0042382f    add it.current,8"
+"	      00423836    mov eax,it.current"
+"	      0042383c    cmp it.last,eax"
 "	      00423842    jne near ptr 0042387Dh"
-"	      00423848    add dword ptr [ebp-8Ch],4"
-"	      0042384f    mov eax,[ebp-8Ch]"
+"	      00423848    add it.node,4"
+"	      0042384f    mov eax,it.node"
 "	      00423855    mov eax,[eax]"
-"	      00423857    mov [ebp-94h],eax"
-"	      0042385d    mov eax,[ebp-94h]"
-"	      00423863    mov [ebp-98h],eax"
+"	      00423857    mov it.first,eax"
+"	      0042385d    mov eax,it.first"
+"	      00423863    mov it.current,eax"
 "	      00423869    mov eax,ds:[597420h]"
 "	      0042386e    shl eax,3"
-"	      00423871    add eax,[ebp-94h]"
-"	      00423877    mov [ebp-90h],eax"
+"	      00423871    add eax,it.first"
+"	      00423877    mov it.last,eax"
 "	      0042387d    jmp near ptr 00423882h"
 "	      00423882    lea eax,[ebp-0E8h]"
 "	      00423888    lea ecx,[ebp-0B8h]"
@@ -1763,7 +1763,7 @@ void CDebugWindow::OnPaint() {
 "	      0042389e    mov eax,[eax+0Ch]"
 "	      004238a1    mov [ecx+0Ch],eax"
 "	      004238a4    jmp near ptr 004238A9h"
-"	      004238a9    mov eax,[ebp-110h]"
+"	      004238a9    mov eax,this"
 "	      004238af    add eax,10h"
 "	      004238b2    lea ecx,[ebp-0C8h]"
 "	      004238b8    mov edx,[eax]"
@@ -1776,18 +1776,18 @@ void CDebugWindow::OnPaint() {
 "	      004238cb    mov [ecx+0Ch],eax"
 "	      004238ce    jmp near ptr 004238D3h"
 "	      004238d3    mov eax,[ebp-0C8h]"
-"	      004238d9    cmp [ebp-98h],eax"
+"	      004238d9    cmp it.current,eax"
 "	      004238df    je near ptr 0042398Dh"
-"	      004238e5    mov eax,[ebp-98h]"
-"	      004238eb    cmp [ebp-94h],eax"
+"	      004238e5    mov eax,it.current"
+"	      004238eb    cmp it.first,eax"
 "	      004238f1    je near ptr 00423909h"
 "	      004238f7    mov eax,[ebp-0C8h]"
 "	      004238fd    cmp [ebp-0C4h],eax"
 "	      00423903    jne near ptr 00423997h"
 "	      00423909    mov eax,[ebp-0BCh]"
-"	      0042390f    cmp [ebp-8Ch],eax"
+"	      0042390f    cmp it.node,eax"
 "	      00423915    jne near ptr 0042393Ch"
-"	      0042391b    mov eax,[ebp-98h]"
+"	      0042391b    mov eax,it.current"
 "	      00423921    sub eax,[ebp-0C8h]"
 "	      00423927    and eax,0FFFFFFF8h"
 "	      0042392a    xor ecx,ecx"
@@ -1795,13 +1795,13 @@ void CDebugWindow::OnPaint() {
 "	      0042392f    cmp eax,ecx"
 "	      00423931    jne near ptr 00423997h"
 "	      00423937    jmp near ptr 0042397Bh"
-"	      0042393c    mov eax,[ebp-8Ch]"
+"	      0042393c    mov eax,it.node"
 "	      00423942    sub eax,[ebp-0BCh]"
 "	      00423948    sar eax,2"
 "	      0042394b    dec eax"
 "	      0042394c    imul eax,ds:[597420h]"
-"	      00423953    mov ecx,[ebp-98h]"
-"	      00423959    sub ecx,[ebp-94h]"
+"	      00423953    mov ecx,it.current"
+"	      00423959    sub ecx,it.first"
 "	      0042395f    sar ecx,3"
 "	      00423962    add eax,ecx"
 "	      00423964    mov ecx,[ebp-0C0h]"
@@ -1826,7 +1826,7 @@ void CDebugWindow::OnPaint() {
 // LINE 206:
 	asm( 
 "	      004239c5    jmp near ptr 004239CAh"
-"	      004239ca    mov eax,[ebp-98h]"
+"	      004239ca    mov eax,it.current"
 "	      004239d0    mov [ebp-10Ch],eax"
 "	      004239d6    mov eax,[ebp-10Ch]"
 "	      004239dc    cmp dword ptr [eax],0"
@@ -1905,30 +1905,30 @@ void CDebugWindow::OnPaint() {
 "	      00423b23    jmp near ptr 00423B28h"
 "	      00423b28    mov eax,[ebp-10Ch]"
 "	      00423b2e    mov eax,[eax]"
-"	      00423b30    mov [ebp-8],eax"
+"	      00423b30    mov str,eax"
 );
 // LINE 207:
 	asm( 
-"	      00423b33    cmp dword ptr [ebp-4],0"
+"	      00423b33    cmp scrollStart,0"
 "	      00423b37    jne near ptr 00423B7Ch"
 );
 // LINE 208:
 	asm( 
-"	      00423b3d    mov eax,[ebp-88h]"
+"	      00423b3d    mov eax,index"
 "	      00423b43    mov [ebp-0CCh],eax"
-"	      00423b49    inc dword ptr [ebp-88h]"
-"	      00423b4f    mov eax,[ebp-8]"
+"	      00423b49    inc index"
+"	      00423b4f    mov eax,str"
 "	      00423b52    push eax"
 "	      00423b53    call 0056ABE0h"
 "	      00423b58    add esp,4"
 "	      00423b5b    push eax"
-"	      00423b5c    mov eax,[ebp-8]"
+"	      00423b5c    mov eax,str"
 "	      00423b5f    push eax"
-"	      00423b60    mov eax,[ebp-40h]"
+"	      00423b60    mov eax,tm.tmHeight"
 "	      00423b63    imul eax,[ebp-0CCh]"
 "	      00423b6a    push eax"
 "	      00423b6b    push 0"
-"	      00423b6d    mov eax,[ebp-44h]"
+"	      00423b6d    mov eax,hDC"
 "	      00423b70    push eax"
 "	      00423b71    call dword ptr ds:[6C3558h]"
 );
@@ -1938,7 +1938,7 @@ void CDebugWindow::OnPaint() {
 );
 // LINE 210:
 	asm( 
-"	      00423b7c    dec dword ptr [ebp-4]"
+"	      00423b7c    dec scrollStart"
 );
 // LINE 211:
 	asm( 
@@ -1946,9 +1946,9 @@ void CDebugWindow::OnPaint() {
 );
 // LINE 214:
 	asm( 
-"	      00423b84    lea eax,[ebp-84h]"
+"	      00423b84    lea eax,ps.hdc"
 "	      00423b8a    push eax"
-"	      00423b8b    mov eax,[ebp-110h]"
+"	      00423b8b    mov eax,this"
 "	      00423b91    mov eax,[eax+38h]"
 "	      00423b94    push eax"
 "	      00423b95    call dword ptr ds:[6C3830h]"
@@ -1978,47 +1978,47 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 "	      00423bab    push ebx"
 "	      00423bac    push esi"
 "	      00423bad    push edi"
-"	      00423bae    mov [ebp-10h],ecx"
+"	      00423bae    mov this,ecx"
 );
 // LINE 222:
 	asm( 
 "	      00423bb1    push 1"
-"	      00423bb3    mov eax,[ebp-10h]"
+"	      00423bb3    mov eax,this"
 "	      00423bb6    mov eax,[eax+38h]"
 "	      00423bb9    push eax"
 "	      00423bba    call dword ptr ds:[6C3834h]"
-"	      00423bc0    mov [ebp-4],eax"
+"	      00423bc0    mov curPos,eax"
 );
 // LINE 223:
 	asm( 
-"	      00423bc3    mov eax,[ebp+8]"
+"	      00423bc3    mov eax,scrollCode"
 "	      00423bc6    mov [ebp-14h],eax"
 "	      00423bc9    jmp near ptr 00423C05h"
 );
 // LINE 225:
 	asm( 
-"	      00423bce    dec dword ptr [ebp-4]"
+"	      00423bce    dec curPos"
 "	      00423bd1    jmp near ptr 00423C31h"
 );
 // LINE 226:
 	asm( 
-"	      00423bd6    inc dword ptr [ebp-4]"
+"	      00423bd6    inc curPos"
 "	      00423bd9    jmp near ptr 00423C31h"
 );
 // LINE 227:
 	asm( 
-"	      00423bde    sub dword ptr [ebp-4],0Ah"
+"	      00423bde    sub curPos,0Ah"
 "	      00423be2    jmp near ptr 00423C31h"
 );
 // LINE 228:
 	asm( 
-"	      00423be7    add dword ptr [ebp-4],0Ah"
+"	      00423be7    add curPos,0Ah"
 "	      00423beb    jmp near ptr 00423C31h"
 );
 // LINE 230:
 	asm( 
-"	      00423bf0    mov eax,[ebp+0Ch]"
-"	      00423bf3    mov [ebp-4],eax"
+"	      00423bf0    mov eax,pos"
+"	      00423bf3    mov curPos,eax"
 "	      00423bf6    jmp near ptr 00423C31h"
 );
 // LINE 231:
@@ -2045,40 +2045,40 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 );
 // LINE 233:
 	asm( 
-"	      00423c31    cmp dword ptr [ebp-4],0"
+"	      00423c31    cmp curPos,0"
 "	      00423c35    jge near ptr 00423C42h"
-"	      00423c3b    mov dword ptr [ebp-4],0"
+"	      00423c3b    mov curPos,0"
 );
 // LINE 235:
 	asm( 
-"	      00423c42    lea eax,[ebp-8]"
+"	      00423c42    lea eax,maxPos"
 "	      00423c45    push eax"
-"	      00423c46    lea eax,[ebp-0Ch]"
+"	      00423c46    lea eax,minPos"
 "	      00423c49    push eax"
 "	      00423c4a    push 1"
-"	      00423c4c    mov eax,[ebp-10h]"
+"	      00423c4c    mov eax,this"
 "	      00423c4f    mov eax,[eax+38h]"
 "	      00423c52    push eax"
 "	      00423c53    call dword ptr ds:[6C3840h]"
 );
 // LINE 236:
 	asm( 
-"	      00423c59    mov eax,[ebp-4]"
-"	      00423c5c    cmp [ebp-8],eax"
+"	      00423c59    mov eax,curPos"
+"	      00423c5c    cmp maxPos,eax"
 "	      00423c5f    jge near ptr 00423C6Bh"
 );
 // LINE 237:
 	asm( 
-"	      00423c65    mov eax,[ebp-8]"
-"	      00423c68    mov [ebp-4],eax"
+"	      00423c65    mov eax,maxPos"
+"	      00423c68    mov curPos,eax"
 );
 // LINE 238:
 	asm( 
 "	      00423c6b    push 1"
-"	      00423c6d    mov eax,[ebp-4]"
+"	      00423c6d    mov eax,curPos"
 "	      00423c70    push eax"
 "	      00423c71    push 1"
-"	      00423c73    mov eax,[ebp-10h]"
+"	      00423c73    mov eax,this"
 "	      00423c76    mov eax,[eax+38h]"
 "	      00423c79    push eax"
 "	      00423c7a    call dword ptr ds:[6C383Ch]"
@@ -2087,7 +2087,7 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	asm( 
 "	      00423c80    push 1"
 "	      00423c82    push 0"
-"	      00423c84    mov eax,[ebp-10h]"
+"	      00423c84    mov eax,this"
 "	      00423c87    mov eax,[eax+38h]"
 "	      00423c8a    push eax"
 "	      00423c8b    call dword ptr ds:[6C3824h]"
@@ -2115,7 +2115,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423ca6    push ebx"
 "	      00423ca7    push esi"
 "	      00423ca8    push edi"
-"	      00423ca9    mov [ebp-0C0h],ecx"
+"	      00423ca9    mov this,ecx"
 );
 // LINE 250:
 	asm( 
@@ -2137,16 +2137,16 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423ce8    mov dword ptr [eax+0Ch],1"
 "	      00423cef    jmp near ptr 00423CF4h"
 "	      00423cf4    mov eax,[ebp-20h]"
-"	      00423cf7    mov [ebp-4],eax"
+"	      00423cf7    mov str.reference,eax"
 "	      00423cfa    jmp near ptr 00423D06h"
-"	      00423cff    mov dword ptr [ebp-4],0"
-"	      00423d06    mov dword ptr [ebp-8],0"
+"	      00423cff    mov str.reference,0"
+"	      00423d06    mov str.c_str_ptr,0"
 "	      00423d0d    jmp near ptr 00423D12h"
 );
 // LINE 251:
 	asm( 
 "	      00423d12    jmp near ptr 00423D17h"
-"	      00423d17    mov eax,[ebp+8]"
+"	      00423d17    mov eax,buf"
 "	      00423d1a    push eax"
 "	      00423d1b    call 0056ABE0h"
 "	      00423d20    add esp,4"
@@ -2167,13 +2167,13 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423d5a    add esp,4"
 "	      00423d5d    jmp near ptr 00423D62h"
 "	      00423d62    jmp near ptr 00423D67h"
-"	      00423d67    mov eax,[ebp-4]"
+"	      00423d67    mov eax,str.reference"
 "	      00423d6a    cmp dword ptr [eax+0Ch],1"
 "	      00423d6e    ja near ptr 00423D92h"
 "	      00423d74    cmp dword ptr [ebp-1Ch],0"
 "	      00423d78    je near ptr 00423DDBh"
 "	      00423d7e    jmp near ptr 00423D83h"
-"	      00423d83    mov eax,[ebp-4]"
+"	      00423d83    mov eax,str.reference"
 "	      00423d86    mov ecx,[ebp-1Ch]"
 "	      00423d89    cmp [eax+8],ecx"
 "	      00423d8c    jae near ptr 00423DDBh"
@@ -2185,27 +2185,27 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423da3    je near ptr 00423DC1h"
 "	      00423da9    mov eax,[ebp-1Ch]"
 "	      00423dac    push eax"
-"	      00423dad    mov eax,[ebp+8]"
+"	      00423dad    mov eax,buf"
 "	      00423db0    push eax"
 "	      00423db1    mov ecx,[ebp-10h]"
 "	      00423db4    call 0041E090h"
 "	      00423db9    mov [ebp-0Ch],eax"
 "	      00423dbc    jmp near ptr 00423DC8h"
 "	      00423dc1    mov dword ptr [ebp-0Ch],0"
-"	      00423dc8    lea ecx,[ebp-8]"
+"	      00423dc8    lea ecx,str.c_str_ptr"
 "	      00423dcb    call 00412080h"
 "	      00423dd0    mov eax,[ebp-0Ch]"
-"	      00423dd3    mov [ebp-4],eax"
+"	      00423dd3    mov str.reference,eax"
 "	      00423dd6    jmp near ptr 00423E0Bh"
 "	      00423ddb    cmp dword ptr [ebp-1Ch],0"
 "	      00423ddf    je near ptr 00423E0Bh"
 "	      00423de5    jmp near ptr 00423DEAh"
-"	      00423dea    mov eax,[ebp-4]"
+"	      00423dea    mov eax,str.reference"
 "	      00423ded    mov eax,[eax]"
 "	      00423def    mov [ebp-14h],eax"
 "	      00423df2    mov eax,[ebp-1Ch]"
 "	      00423df5    push eax"
-"	      00423df6    mov eax,[ebp+8]"
+"	      00423df6    mov eax,buf"
 "	      00423df9    push eax"
 "	      00423dfa    mov eax,[ebp-14h]"
 "	      00423dfd    push eax"
@@ -2213,14 +2213,14 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423e03    add esp,0Ch"
 "	      00423e06    jmp near ptr 00423E0Bh"
 "	      00423e0b    mov eax,[ebp-1Ch]"
-"	      00423e0e    mov ecx,[ebp-4]"
+"	      00423e0e    mov ecx,str.reference"
 "	      00423e11    mov [ecx+4],eax"
 "	      00423e14    jmp near ptr 00423E19h"
 "	      00423e19    jmp near ptr 00423E1Eh"
 );
 // LINE 252:
 	asm( 
-"	      00423e1e    mov eax,[ebp-0C0h]"
+"	      00423e1e    mov eax,this"
 "	      00423e24    cmp dword ptr [eax+20h],0"
 "	      00423e28    jne near ptr 00423E38h"
 "	      00423e2e    jmp near ptr 00423EB0h"
@@ -2228,7 +2228,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423e38    jmp near ptr 00423E4Ah"
 "	      00423e3d    cmp dword ptr [ebp-0B4h],0"
 "	      00423e44    jne near ptr 00423EB0h"
-"	      00423e4a    mov eax,[ebp-0C0h]"
+"	      00423e4a    mov eax,this"
 "	      00423e50    add eax,10h"
 "	      00423e53    lea ecx,[ebp-0A0h]"
 "	      00423e59    mov edx,[eax]"
@@ -2240,7 +2240,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423e69    mov eax,[eax+0Ch]"
 "	      00423e6c    mov [ecx+0Ch],eax"
 "	      00423e6f    jmp near ptr 00423E74h"
-"	      00423e74    mov eax,[ebp-0C0h]"
+"	      00423e74    mov eax,this"
 "	      00423e7a    add eax,10h"
 "	      00423e7d    lea ecx,[ebp-0B0h]"
 "	      00423e83    mov edx,[eax]"
@@ -2255,9 +2255,9 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423e9e    mov eax,[ebp-0A0h]"
 "	      00423ea4    cmp [ebp-0A8h],eax"
 "	      00423eaa    jne near ptr 00423EBBh"
-"	      00423eb0    mov ecx,[ebp-0C0h]"
+"	      00423eb0    mov ecx,this"
 "	      00423eb6    call 00426000h"
-"	      00423ebb    mov eax,[ebp-0C0h]"
+"	      00423ebb    mov eax,this"
 "	      00423ec1    mov eax,[eax+10h]"
 "	      00423ec4    mov [ebp-0BCh],eax"
 "	      00423eca    mov eax,[ebp-0BCh]"
@@ -2267,39 +2267,39 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423ee2    je near ptr 00423F00h"
 "	      00423ee8    push 0FFFFFFFFh"
 "	      00423eea    push 0"
-"	      00423eec    lea eax,[ebp-8]"
+"	      00423eec    lea eax,str.c_str_ptr"
 "	      00423eef    push eax"
 "	      00423ef0    mov ecx,[ebp-0B8h]"
 "	      00423ef6    call 00411B80h"
 "	      00423efb    jmp near ptr 00423F00h"
 "	      00423f00    jmp near ptr 00423F05h"
-"	      00423f05    mov eax,[ebp-0C0h]"
+"	      00423f05    mov eax,this"
 "	      00423f0b    add dword ptr [eax+10h],8"
-"	      00423f0f    mov eax,[ebp-0C0h]"
+"	      00423f0f    mov eax,this"
 "	      00423f15    inc dword ptr [eax+20h]"
 "	      00423f18    jmp near ptr 00423F1Dh"
 );
 // LINE 253:
 	asm( 
 "	      00423f1d    jmp near ptr 00423F22h"
-"	      00423f22    mov eax,[ebp-0C0h]"
+"	      00423f22    mov eax,this"
 "	      00423f28    cmp dword ptr [eax+20h],1F4h"
 "	      00423f2f    jbe near ptr 00424125h"
 );
 // LINE 254:
 	asm( 
-"	      00423f35    mov eax,[ebp-0C0h]"
+"	      00423f35    mov eax,this"
 "	      00423f3b    mov eax,[eax]"
 "	      00423f3d    mov [ebp-5Ch],eax"
 "	      00423f40    push 0"
 "	      00423f42    mov ecx,[ebp-5Ch]"
 "	      00423f45    call 0041DEF0h"
 "	      00423f4a    jmp near ptr 00423F4Fh"
-"	      00423f4f    mov eax,[ebp-0C0h]"
+"	      00423f4f    mov eax,this"
 "	      00423f55    add dword ptr [eax],8"
-"	      00423f58    mov eax,[ebp-0C0h]"
+"	      00423f58    mov eax,this"
 "	      00423f5e    dec dword ptr [eax+20h]"
-"	      00423f61    mov eax,[ebp-0C0h]"
+"	      00423f61    mov eax,this"
 "	      00423f67    cmp dword ptr [eax+20h],0"
 "	      00423f6b    jne near ptr 00423F7Bh"
 "	      00423f71    jmp near ptr 00423FDEh"
@@ -2307,7 +2307,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423f7b    jmp near ptr 00423F8Ah"
 "	      00423f80    cmp dword ptr [ebp-60h],0"
 "	      00423f84    jne near ptr 00423FDEh"
-"	      00423f8a    mov eax,[ebp-0C0h]"
+"	      00423f8a    mov eax,this"
 "	      00423f90    lea ecx,[ebp-48h]"
 "	      00423f93    mov edx,[eax]"
 "	      00423f95    mov [ecx],edx"
@@ -2318,7 +2318,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423fa3    mov eax,[eax+0Ch]"
 "	      00423fa6    mov [ecx+0Ch],eax"
 "	      00423fa9    jmp near ptr 00423FAEh"
-"	      00423fae    mov eax,[ebp-0C0h]"
+"	      00423fae    mov eax,this"
 "	      00423fb4    lea ecx,[ebp-58h]"
 "	      00423fb7    mov edx,[eax]"
 "	      00423fb9    mov [ecx],edx"
@@ -2332,10 +2332,10 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00423fd2    mov eax,[ebp-48h]"
 "	      00423fd5    cmp [ebp-50h],eax"
 "	      00423fd8    jne near ptr 0042411Bh"
-"	      00423fde    mov eax,[ebp-0C0h]"
+"	      00423fde    mov eax,this"
 "	      00423fe4    mov eax,[eax+0Ch]"
 "	      00423fe7    mov [ebp-84h],eax"
-"	      00423fed    mov eax,[ebp-0C0h]"
+"	      00423fed    mov eax,this"
 "	      00423ff3    add dword ptr [eax+0Ch],4"
 "	      00423ff7    mov eax,[ebp-84h]"
 "	      00423ffd    mov eax,[eax]"
@@ -2346,7 +2346,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00424011    add esp,4"
 "	      00424014    jmp near ptr 00424019h"
 "	      00424019    jmp near ptr 0042401Eh"
-"	      0042401e    mov eax,[ebp-0C0h]"
+"	      0042401e    mov eax,this"
 "	      00424024    cmp dword ptr [eax+20h],0"
 "	      00424028    jne near ptr 00424033h"
 "	      0042402e    jmp near ptr 00424038h"
@@ -2360,7 +2360,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      0042405f    mov dword ptr [ebp-64h],0"
 "	      00424066    jmp near ptr 0042406Bh"
 "	      0042406b    lea eax,[ebp-70h]"
-"	      0042406e    mov ecx,[ebp-0C0h]"
+"	      0042406e    mov ecx,this"
 "	      00424074    mov edx,[eax]"
 "	      00424076    mov [ecx],edx"
 "	      00424078    mov edx,[eax+4]"
@@ -2369,8 +2369,8 @@ void CDebugWindow::OutputString(char * buf) {
 "	      00424081    mov [ecx+8],edx"
 "	      00424084    mov eax,[eax+0Ch]"
 "	      00424087    mov [ecx+0Ch],eax"
-"	      0042408a    mov eax,[ebp-0C0h]"
-"	      00424090    mov ecx,[ebp-0C0h]"
+"	      0042408a    mov eax,this"
+"	      00424090    mov ecx,this"
 "	      00424096    add ecx,10h"
 "	      00424099    mov edx,[eax]"
 "	      0042409b    mov [ecx],edx"
@@ -2380,7 +2380,7 @@ void CDebugWindow::OutputString(char * buf) {
 "	      004240a6    mov [ecx+8],edx"
 "	      004240a9    mov eax,[eax+0Ch]"
 "	      004240ac    mov [ecx+0Ch],eax"
-"	      004240af    mov eax,[ebp-0C0h]"
+"	      004240af    mov eax,this"
 "	      004240b5    mov eax,[eax+24h]"
 "	      004240b8    mov [ebp-90h],eax"
 "	      004240be    mov eax,[ebp-90h]"
@@ -2390,16 +2390,16 @@ void CDebugWindow::OutputString(char * buf) {
 "	      004240cd    jmp near ptr 004240D2h"
 "	      004240d2    jmp near ptr 004240D7h"
 "	      004240d7    jmp near ptr 00424116h"
-"	      004240dc    mov eax,[ebp-0C0h]"
+"	      004240dc    mov eax,this"
 "	      004240e2    mov eax,[eax+0Ch]"
 "	      004240e5    push eax"
-"	      004240e6    mov eax,[ebp-0C0h]"
+"	      004240e6    mov eax,this"
 "	      004240ec    mov eax,[eax+0Ch]"
 "	      004240ef    mov eax,[eax]"
 "	      004240f1    push eax"
 "	      004240f2    lea ecx,[ebp-80h]"
 "	      004240f5    call 00425710h"
-"	      004240fa    mov ecx,[ebp-0C0h]"
+"	      004240fa    mov ecx,this"
 "	      00424100    mov edx,[eax]"
 "	      00424102    mov [ecx],edx"
 "	      00424104    mov edx,[eax+4]"
@@ -2414,26 +2414,26 @@ void CDebugWindow::OutputString(char * buf) {
 );
 // LINE 255:
 	asm( 
-"	      00424125    mov ecx,[ebp-0C0h]"
+"	      00424125    mov ecx,this"
 "	      0042412b    call 004241FFh"
 );
 // LINE 256:
 	asm( 
 "	      00424130    push 1"
 "	      00424132    push 0"
-"	      00424134    mov eax,[ebp-0C0h]"
+"	      00424134    mov eax,this"
 "	      0042413a    mov eax,[eax+38h]"
 "	      0042413d    push eax"
 "	      0042413e    call dword ptr ds:[6C3824h]"
 );
 // LINE 257:
 	asm( 
-"	      00424144    mov eax,[ebp-4]"
+"	      00424144    mov eax,str.reference"
 "	      00424147    dec dword ptr [eax+0Ch]"
-"	      0042414a    mov eax,[ebp-4]"
+"	      0042414a    mov eax,str.reference"
 "	      0042414d    cmp dword ptr [eax+0Ch],0"
 "	      00424151    jne near ptr 004241C7h"
-"	      00424157    mov eax,[ebp-4]"
+"	      00424157    mov eax,str.reference"
 "	      0042415a    mov [ebp-30h],eax"
 "	      0042415d    mov eax,[ebp-30h]"
 "	      00424160    mov [ebp-2Ch],eax"
@@ -2464,9 +2464,9 @@ void CDebugWindow::OutputString(char * buf) {
 "	      004241bd    jmp near ptr 004241C2h"
 "	      004241c2    jmp near ptr 004241C7h"
 "	      004241c7    jmp near ptr 004241CCh"
-"	      004241cc    cmp dword ptr [ebp-8],0"
+"	      004241cc    cmp str.c_str_ptr,0"
 "	      004241d0    je near ptr 004241EEh"
-"	      004241d6    mov eax,[ebp-8]"
+"	      004241d6    mov eax,str.c_str_ptr"
 "	      004241d9    mov [ebp-24h],eax"
 "	      004241dc    mov eax,[ebp-24h]"
 "	      004241df    mov [ebp-28h],eax"
@@ -2505,86 +2505,86 @@ void CDebugWindow::RecalcScrollRange() {
 "	      00424205    push ebx"
 "	      00424206    push esi"
 "	      00424207    push edi"
-"	      00424208    mov [ebp-78h],ecx"
+"	      00424208    mov this,ecx"
 );
 // LINE 262:
 	asm( 
-"	      0042420b    mov eax,[ebp-78h]"
+"	      0042420b    mov eax,this"
 "	      0042420e    mov eax,[eax+38h]"
 "	      00424211    push eax"
 "	      00424212    call dword ptr ds:[6C3850h]"
-"	      00424218    mov [ebp-70h],eax"
+"	      00424218    mov hDC,eax"
 );
 // LINE 264:
 	asm( 
-"	      0042421b    lea eax,[ebp-58h]"
+"	      0042421b    lea eax,tm.tmHeight"
 "	      0042421e    push eax"
-"	      0042421f    mov eax,[ebp-70h]"
+"	      0042421f    mov eax,hDC"
 "	      00424222    push eax"
 "	      00424223    call dword ptr ds:[6C355Ch]"
 );
 // LINE 265:
 	asm( 
-"	      00424229    mov eax,[ebp-70h]"
+"	      00424229    mov eax,hDC"
 "	      0042422c    push eax"
-"	      0042422d    mov eax,[ebp-78h]"
+"	      0042422d    mov eax,this"
 "	      00424230    mov eax,[eax+38h]"
 "	      00424233    push eax"
 "	      00424234    call dword ptr ds:[6C384Ch]"
 );
 // LINE 268:
 	asm( 
-"	      0042423a    lea eax,[ebp-6Ch]"
+"	      0042423a    lea eax,winRect.left"
 "	      0042423d    push eax"
-"	      0042423e    mov eax,[ebp-78h]"
+"	      0042423e    mov eax,this"
 "	      00424241    mov eax,[eax+38h]"
 "	      00424244    push eax"
 "	      00424245    call dword ptr ds:[6C382Ch]"
 );
 // LINE 269:
 	asm( 
-"	      0042424b    lea eax,[ebp-20h]"
+"	      0042424b    lea eax,editRect.left"
 "	      0042424e    push eax"
-"	      0042424f    mov eax,[ebp-78h]"
+"	      0042424f    mov eax,this"
 "	      00424252    mov eax,[eax+3Ch]"
 "	      00424255    push eax"
 "	      00424256    call dword ptr ds:[6C382Ch]"
 );
 // LINE 271:
 	asm( 
-"	      0042425c    mov eax,[ebp-60h]"
-"	      0042425f    sub eax,[ebp-14h]"
-"	      00424262    mov [ebp-10h],eax"
+"	      0042425c    mov eax,winRect.bottom"
+"	      0042425f    sub eax,editRect.bottom"
+"	      00424262    mov pane_height,eax"
 );
 // LINE 273:
 	asm( 
-"	      00424265    mov eax,[ebp-10h]"
+"	      00424265    mov eax,pane_height"
 "	      00424268    cdq"
-"	      00424269    idiv dword ptr [ebp-58h]"
-"	      0042426c    mov [ebp-74h],eax"
+"	      00424269    idiv tm.tmHeight"
+"	      0042426c    mov pane_lines,eax"
 );
 // LINE 275:
 	asm( 
 "	      0042426f    jmp near ptr 00424274h"
-"	      00424274    mov eax,[ebp-78h]"
+"	      00424274    mov eax,this"
 "	      00424277    mov eax,[eax+20h]"
-"	      0042427a    sub eax,[ebp-74h]"
-"	      0042427d    mov [ebp-5Ch],eax"
+"	      0042427a    sub eax,pane_lines"
+"	      0042427d    mov range,eax"
 );
 // LINE 276:
 	asm( 
-"	      00424280    cmp dword ptr [ebp-5Ch],0"
+"	      00424280    cmp range,0"
 "	      00424284    jge near ptr 00424291h"
-"	      0042428a    mov dword ptr [ebp-5Ch],0"
+"	      0042428a    mov range,0"
 );
 // LINE 279:
 	asm( 
-"	      00424291    lea eax,[ebp-8]"
+"	      00424291    lea eax,maxPos"
 "	      00424294    push eax"
-"	      00424295    lea eax,[ebp-0Ch]"
+"	      00424295    lea eax,minPos"
 "	      00424298    push eax"
 "	      00424299    push 1"
-"	      0042429b    mov eax,[ebp-78h]"
+"	      0042429b    mov eax,this"
 "	      0042429e    mov eax,[eax+38h]"
 "	      004242a1    push eax"
 "	      004242a2    call dword ptr ds:[6C3840h]"
@@ -2592,37 +2592,37 @@ void CDebugWindow::RecalcScrollRange() {
 // LINE 280:
 	asm( 
 "	      004242a8    push 1"
-"	      004242aa    mov eax,[ebp-78h]"
+"	      004242aa    mov eax,this"
 "	      004242ad    mov eax,[eax+38h]"
 "	      004242b0    push eax"
 "	      004242b1    call dword ptr ds:[6C3834h]"
-"	      004242b7    mov [ebp-4],eax"
+"	      004242b7    mov curPos,eax"
 );
 // LINE 282:
 	asm( 
 "	      004242ba    push 1"
-"	      004242bc    mov eax,[ebp-5Ch]"
+"	      004242bc    mov eax,range"
 "	      004242bf    push eax"
 "	      004242c0    push 0"
 "	      004242c2    push 1"
-"	      004242c4    mov eax,[ebp-78h]"
+"	      004242c4    mov eax,this"
 "	      004242c7    mov eax,[eax+38h]"
 "	      004242ca    push eax"
 "	      004242cb    call dword ptr ds:[6C3848h]"
 );
 // LINE 284:
 	asm( 
-"	      004242d1    mov eax,[ebp-8]"
-"	      004242d4    cmp [ebp-4],eax"
+"	      004242d1    mov eax,maxPos"
+"	      004242d4    cmp curPos,eax"
 "	      004242d7    jl near ptr 004242F2h"
 );
 // LINE 285:
 	asm( 
 "	      004242dd    push 1"
-"	      004242df    mov eax,[ebp-5Ch]"
+"	      004242df    mov eax,range"
 "	      004242e2    push eax"
 "	      004242e3    push 1"
-"	      004242e5    mov eax,[ebp-78h]"
+"	      004242e5    mov eax,this"
 "	      004242e8    mov eax,[eax+38h]"
 "	      004242eb    push eax"
 "	      004242ec    call dword ptr ds:[6C383Ch]"
@@ -2631,7 +2631,7 @@ void CDebugWindow::RecalcScrollRange() {
 	asm( 
 "	      004242f2    push 1"
 "	      004242f4    push 1"
-"	      004242f6    mov eax,[ebp-78h]"
+"	      004242f6    mov eax,this"
 "	      004242f9    mov eax,[eax+38h]"
 "	      004242fc    push eax"
 "	      004242fd    call dword ptr ds:[6C3844h]"
@@ -2661,39 +2661,39 @@ void CDebugWindow::OnEditChange() {
 "	      00424316    push ebx"
 "	      00424317    push esi"
 "	      00424318    push edi"
-"	      00424319    mov [ebp-280h],ecx"
+"	      00424319    mov this,ecx"
 );
 // LINE 297:
 	asm( 
-"	      0042431f    mov byte ptr [ebp-100h],0FFh"
+"	      0042431f    mov buf[0],0FFh"
 );
 // LINE 298:
 	asm( 
-"	      00424326    mov byte ptr [ebp-0FFh],0FFh"
+"	      00424326    mov buf[1],0FFh"
 );
 // LINE 299:
 	asm( 
-"	      0042432d    mov byte ptr [ebp-0FEh],0FFh"
+"	      0042432d    mov buf[2],0FFh"
 );
 // LINE 300:
 	asm( 
-"	      00424334    mov byte ptr [ebp-0FDh],0FFh"
+"	      00424334    mov buf[3],0FFh"
 );
 // LINE 302:
 	asm( 
-"	      0042433b    lea eax,[ebp-100h]"
+"	      0042433b    lea eax,buf[0]"
 "	      00424341    push eax"
 "	      00424342    push 0"
 "	      00424344    push 0C4h"
-"	      00424349    mov eax,[ebp-280h]"
+"	      00424349    mov eax,this"
 "	      0042434f    mov eax,[eax+3Ch]"
 "	      00424352    push eax"
 "	      00424353    call dword ptr ds:[6C385Ch]"
-"	      00424359    mov [ebp-108h],eax"
+"	      00424359    mov len,eax"
 );
 // LINE 303:
 	asm( 
-"	      0042435f    mov eax,[ebp-108h]"
+"	      0042435f    mov eax,len"
 "	      00424365    mov byte ptr [ebp+eax-100h],0"
 );
 // LINE 304:
@@ -2701,15 +2701,15 @@ void CDebugWindow::OnEditChange() {
 "	      0042436d    push 0"
 "	      0042436f    push 0"
 "	      00424371    push 0BAh"
-"	      00424376    mov eax,[ebp-280h]"
+"	      00424376    mov eax,this"
 "	      0042437c    mov eax,[eax+3Ch]"
 "	      0042437f    push eax"
 "	      00424380    call dword ptr ds:[6C385Ch]"
-"	      00424386    mov [ebp-104h],eax"
+"	      00424386    mov count,eax"
 );
 // LINE 305:
 	asm( 
-"	      0042438c    cmp dword ptr [ebp-104h],1"
+"	      0042438c    cmp count,1"
 "	      00424393    jle near ptr 004248CAh"
 );
 // LINE 308:
@@ -2720,25 +2720,25 @@ void CDebugWindow::OnEditChange() {
 	char[256] comBuf;
 	class basic_string<char> str;
 	asm( 
-"	      00424399    lea eax,[ebp-100h]"
+"	      00424399    lea eax,buf[0]"
 "	      0042439f    push eax"
 "	      004243a0    push 5973F0h"
-"	      004243a5    lea eax,[ebp-210h]"
+"	      004243a5    lea eax,comBuf[0]"
 "	      004243ab    push eax"
 "	      004243ac    call dword ptr ds:[6C3858h]"
 "	      004243b2    add esp,0Ch"
 );
 // LINE 309:
 	asm( 
-"	      004243b5    lea eax,[ebp-210h]"
+"	      004243b5    lea eax,comBuf[0]"
 "	      004243bb    push eax"
-"	      004243bc    mov ecx,[ebp-280h]"
+"	      004243bc    mov ecx,this"
 "	      004243c2    call 00423C9Dh"
 );
 // LINE 310:
 	asm( 
 "	      004243c7    push 5973F4h"
-"	      004243cc    mov eax,[ebp-280h]"
+"	      004243cc    mov eax,this"
 "	      004243d2    mov eax,[eax+3Ch]"
 "	      004243d5    push eax"
 "	      004243d6    call dword ptr ds:[6C3854h]"
@@ -2751,7 +2751,7 @@ void CDebugWindow::OnEditChange() {
 "	      004243e6    mov [ebp-274h],eax"
 "	      004243ec    cmp dword ptr [ebp-274h],0"
 "	      004243f3    je near ptr 004244C5h"
-"	      004243f9    lea eax,[ebp-100h]"
+"	      004243f9    lea eax,buf[0]"
 "	      004243ff    push eax"
 "	      00424400    call 0056ABE0h"
 "	      00424405    add esp,4"
@@ -2780,7 +2780,7 @@ void CDebugWindow::OnEditChange() {
 "	      00424469    mov [ebp-27Ch],eax"
 "	      0042446f    mov eax,[ebp-278h]"
 "	      00424475    push eax"
-"	      00424476    lea eax,[ebp-100h]"
+"	      00424476    lea eax,buf[0]"
 "	      0042447c    push eax"
 "	      0042447d    mov eax,[ebp-27Ch]"
 "	      00424483    push eax"
@@ -2794,51 +2794,51 @@ void CDebugWindow::OnEditChange() {
 "	      004244a8    mov dword ptr [eax+0Ch],1"
 "	      004244af    jmp near ptr 004244B4h"
 "	      004244b4    mov eax,[ebp-274h]"
-"	      004244ba    mov [ebp-10Ch],eax"
+"	      004244ba    mov str.reference,eax"
 "	      004244c0    jmp near ptr 004244CFh"
-"	      004244c5    mov dword ptr [ebp-10Ch],0"
-"	      004244cf    mov dword ptr [ebp-110h],0"
+"	      004244c5    mov str.reference,0"
+"	      004244cf    mov str.c_str_ptr,0"
 "	      004244d9    jmp near ptr 004244DEh"
 );
 // LINE 314:
 	asm( 
-"	      004244de    mov dword ptr [ebp-220h],0"
-"	      004244e8    mov dword ptr [ebp-21Ch],0"
-"	      004244f2    mov dword ptr [ebp-218h],0"
+"	      004244de    mov command_vector.start,0"
+"	      004244e8    mov command_vector.finish,0"
+"	      004244f2    mov command_vector.end_of_storage,0"
 "	      004244fc    jmp near ptr 00424501h"
 );
 // LINE 315:
 	asm( 
-"	      00424501    lea eax,[ebp-220h]"
+"	      00424501    lea eax,command_vector.start"
 "	      00424507    push eax"
 "	      00424508    sub esp,8"
 "	      0042450b    mov [ebp-228h],esp"
 "	      00424511    push 0FFFFFFFFh"
 "	      00424513    push 0"
-"	      00424515    lea eax,[ebp-110h]"
+"	      00424515    lea eax,str.c_str_ptr"
 "	      0042451b    push eax"
 "	      0042451c    mov ecx,[ebp-228h]"
 "	      00424522    call 00411B80h"
 "	      00424527    call 00425041h"
 "	      0042452c    add esp,0Ch"
-"	      0042452f    mov [ebp-214h],eax"
+"	      0042452f    mov num,eax"
 );
 // LINE 319:
 	asm( 
-"	      00424535    cmp dword ptr [ebp-214h],0"
+"	      00424535    cmp num,0"
 "	      0042453c    je near ptr 00424699h"
 );
 // LINE 320:
 	asm( 
 "	      00424542    jmp near ptr 00424547h"
-"	      00424547    mov eax,[ebp-280h]"
+"	      00424547    mov eax,this"
 "	      0042454d    mov eax,[eax+2Ch]"
-"	      00424550    mov [ebp-224h],eax"
+"	      00424550    mov it,eax"
 "	      00424556    jmp near ptr 00424562h"
-"	      0042455b    add dword ptr [ebp-224h],4"
+"	      0042455b    add it,4"
 "	      00424562    jmp near ptr 00424567h"
-"	      00424567    mov eax,[ebp-280h]"
-"	      0042456d    mov ecx,[ebp-224h]"
+"	      00424567    mov eax,this"
+"	      0042456d    mov ecx,it"
 "	      00424573    cmp [eax+30h],ecx"
 "	      00424576    je near ptr 00424699h"
 );
@@ -2846,9 +2846,9 @@ void CDebugWindow::OnEditChange() {
 	asm( 
 "	      0042457c    jmp near ptr 00424581h"
 "	      00424581    jmp near ptr 00424586h"
-"	      00424586    mov eax,[ebp-220h]"
+"	      00424586    mov eax,command_vector.start"
 "	      0042458c    mov [ebp-234h],eax"
-"	      00424592    mov eax,[ebp-224h]"
+"	      00424592    mov eax,it"
 "	      00424598    mov eax,[eax]"
 "	      0042459a    add eax,4"
 "	      0042459d    mov [ebp-238h],eax"
@@ -2900,10 +2900,10 @@ void CDebugWindow::OnEditChange() {
 );
 // LINE 322:
 	asm( 
-"	      00424679    lea eax,[ebp-100h]"
+"	      00424679    lea eax,buf[0]"
 "	      0042467f    push eax"
-"	      00424680    mov eax,[ebp-224h]"
-"	      00424686    mov ecx,[ebp-224h]"
+"	      00424680    mov eax,it"
+"	      00424686    mov ecx,it"
 "	      0042468c    mov ecx,[ecx]"
 "	      0042468e    mov edx,[ecx]"
 "	      00424690    mov ecx,[eax]"
@@ -2912,14 +2912,14 @@ void CDebugWindow::OnEditChange() {
 // LINE 323:
 	asm( 
 "	      00424694    jmp near ptr 0042455Bh"
-"	      00424699    mov ecx,[ebp-280h]"
+"	      00424699    mov ecx,this"
 "	      0042469f    call 004241FFh"
 );
 // LINE 324:
 	asm( 
-"	      004246a4    mov eax,[ebp-21Ch]"
+"	      004246a4    mov eax,command_vector.finish"
 "	      004246aa    mov [ebp-254h],eax"
-"	      004246b0    mov eax,[ebp-220h]"
+"	      004246b0    mov eax,command_vector.start"
 "	      004246b6    mov [ebp-258h],eax"
 "	      004246bc    mov eax,[ebp-254h]"
 "	      004246c2    cmp [ebp-258h],eax"
@@ -2971,7 +2971,7 @@ void CDebugWindow::OnEditChange() {
 "	      0042479e    add dword ptr [ebp-258h],8"
 "	      004247a5    jmp near ptr 004246BCh"
 "	      004247aa    jmp near ptr 004247AFh"
-"	      004247af    mov eax,[ebp-220h]"
+"	      004247af    mov eax,command_vector.start"
 "	      004247b5    mov [ebp-240h],eax"
 "	      004247bb    mov eax,[ebp-240h]"
 "	      004247c1    push eax"
@@ -2980,12 +2980,12 @@ void CDebugWindow::OnEditChange() {
 "	      004247ca    jmp near ptr 004247CFh"
 "	      004247cf    jmp near ptr 004247D4h"
 "	      004247d4    jmp near ptr 004247D9h"
-"	      004247d9    mov eax,[ebp-10Ch]"
+"	      004247d9    mov eax,str.reference"
 "	      004247df    dec dword ptr [eax+0Ch]"
-"	      004247e2    mov eax,[ebp-10Ch]"
+"	      004247e2    mov eax,str.reference"
 "	      004247e8    cmp dword ptr [eax+0Ch],0"
 "	      004247ec    jne near ptr 0042488Ch"
-"	      004247f2    mov eax,[ebp-10Ch]"
+"	      004247f2    mov eax,str.reference"
 "	      004247f8    mov [ebp-268h],eax"
 "	      004247fe    mov eax,[ebp-268h]"
 "	      00424804    mov [ebp-264h],eax"
@@ -3016,9 +3016,9 @@ void CDebugWindow::OnEditChange() {
 "	      00424882    jmp near ptr 00424887h"
 "	      00424887    jmp near ptr 0042488Ch"
 "	      0042488c    jmp near ptr 00424891h"
-"	      00424891    cmp dword ptr [ebp-110h],0"
+"	      00424891    cmp str.c_str_ptr,0"
 "	      00424898    je near ptr 004248C5h"
-"	      0042489e    mov eax,[ebp-110h]"
+"	      0042489e    mov eax,str.c_str_ptr"
 "	      004248a4    mov [ebp-25Ch],eax"
 "	      004248aa    mov eax,[ebp-25Ch]"
 "	      004248b0    mov [ebp-260h],eax"
@@ -3050,25 +3050,25 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 "	      004248da    push ebx"
 "	      004248db    push esi"
 "	      004248dc    push edi"
-"	      004248dd    mov [ebp-4],ecx"
+"	      004248dd    mov this,ecx"
 );
 // LINE 338:
 	asm( 
-"	      004248e0    mov eax,[ebp+8]"
+"	      004248e0    mov eax,Message"
 "	      004248e3    mov [ebp-8],eax"
 "	      004248e6    jmp near ptr 00424999h"
 );
 // LINE 341:
 	asm( 
-"	      004248eb    mov eax,[ebp+10h]"
+"	      004248eb    mov eax,LParam"
 "	      004248ee    shr eax,10h"
 "	      004248f1    and eax,0FFFFh"
 "	      004248f6    push eax"
-"	      004248f7    mov eax,[ebp+10h]"
+"	      004248f7    mov eax,LParam"
 "	      004248fa    push eax"
-"	      004248fb    mov eax,[ebp+0Ch]"
+"	      004248fb    mov eax,WParam"
 "	      004248fe    push eax"
-"	      004248ff    mov ecx,[ebp-4]"
+"	      004248ff    mov ecx,this"
 "	      00424902    call 004236C6h"
 );
 // LINE 342:
@@ -3077,7 +3077,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 344:
 	asm( 
-"	      0042490c    mov eax,[ebp+0Ch]"
+"	      0042490c    mov eax,WParam"
 "	      0042490f    shr eax,10h"
 "	      00424912    and eax,0FFFFh"
 "	      00424917    movzx eax,ax"
@@ -3086,7 +3086,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 345:
 	asm( 
-"	      00424925    mov ecx,[ebp-4]"
+"	      00424925    mov ecx,this"
 "	      00424928    call 0042430Dh"
 );
 // LINE 346:
@@ -3095,15 +3095,15 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 348:
 	asm( 
-"	      00424932    mov eax,[ebp+0Ch]"
+"	      00424932    mov eax,WParam"
 "	      00424935    shr eax,10h"
 "	      00424938    and eax,0FFFFh"
 "	      0042493d    movzx eax,ax"
 "	      00424940    push eax"
-"	      00424941    mov eax,[ebp+0Ch]"
+"	      00424941    mov eax,WParam"
 "	      00424944    and eax,0FFFFh"
 "	      00424949    push eax"
-"	      0042494a    mov ecx,[ebp-4]"
+"	      0042494a    mov ecx,this"
 "	      0042494d    call 00423BA5h"
 );
 // LINE 349:
@@ -3112,7 +3112,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 351:
 	asm( 
-"	      00424957    mov ecx,[ebp-4]"
+"	      00424957    mov ecx,this"
 "	      0042495a    call 00423739h"
 );
 // LINE 352:
@@ -3121,7 +3121,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 354:
 	asm( 
-"	      00424964    mov eax,[ebp-4]"
+"	      00424964    mov eax,this"
 "	      00424967    mov eax,[eax+3Ch]"
 "	      0042496a    push eax"
 "	      0042496b    call dword ptr ds:[6C3864h]"
@@ -3132,13 +3132,13 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 );
 // LINE 357:
 	asm( 
-"	      00424976    mov eax,[ebp+10h]"
+"	      00424976    mov eax,LParam"
 "	      00424979    push eax"
-"	      0042497a    mov eax,[ebp+0Ch]"
+"	      0042497a    mov eax,WParam"
 "	      0042497d    push eax"
-"	      0042497e    mov eax,[ebp+8]"
+"	      0042497e    mov eax,Message"
 "	      00424981    push eax"
-"	      00424982    mov eax,[ebp-4]"
+"	      00424982    mov eax,this"
 "	      00424985    mov eax,[eax+38h]"
 "	      00424988    push eax"
 "	      00424989    call dword ptr ds:[6C3860h]"
@@ -3192,25 +3192,25 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 // LINE 363:
 	asm( 
 "	      004249f8    push 0FFFFFFEBh"
-"	      004249fa    mov eax,[ebp+8]"
+"	      004249fa    mov eax,hWindow"
 "	      004249fd    push eax"
 "	      004249fe    call dword ptr ds:[6C3868h]"
-"	      00424a04    mov [ebp-4],eax"
+"	      00424a04    mov debugWin,eax"
 );
 // LINE 364:
 	asm( 
-"	      00424a07    cmp dword ptr [ebp-4],0"
+"	      00424a07    cmp debugWin,0"
 "	      00424a0b    je near ptr 00424A2Fh"
 );
 // LINE 365:
 	asm( 
-"	      00424a11    mov eax,[ebp+14h]"
+"	      00424a11    mov eax,LParam"
 "	      00424a14    push eax"
-"	      00424a15    mov eax,[ebp+10h]"
+"	      00424a15    mov eax,WParam"
 "	      00424a18    push eax"
-"	      00424a19    mov eax,[ebp+0Ch]"
+"	      00424a19    mov eax,Message"
 "	      00424a1c    push eax"
-"	      00424a1d    mov ecx,[ebp-4]"
+"	      00424a1d    mov ecx,debugWin"
 "	      00424a20    call 004248D4h"
 "	      00424a25    jmp near ptr 00424A4Ah"
 );
@@ -3220,13 +3220,13 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 );
 // LINE 367:
 	asm( 
-"	      00424a2f    mov eax,[ebp+14h]"
+"	      00424a2f    mov eax,LParam"
 "	      00424a32    push eax"
-"	      00424a33    mov eax,[ebp+10h]"
+"	      00424a33    mov eax,WParam"
 "	      00424a36    push eax"
-"	      00424a37    mov eax,[ebp+0Ch]"
+"	      00424a37    mov eax,Message"
 "	      00424a3a    push eax"
-"	      00424a3b    mov eax,[ebp+8]"
+"	      00424a3b    mov eax,hWindow"
 "	      00424a3e    push eax"
 "	      00424a3f    call dword ptr ds:[6C3860h]"
 "	      00424a45    jmp near ptr 00424A4Ah"
@@ -3353,15 +3353,15 @@ void DebugOutput(char * text, ...) {
 // LINE 404:
 	asm( 
 "	      00424b20    lea eax,[ebp+0Ch]"
-"	      00424b23    mov [ebp-104h],eax"
+"	      00424b23    mov Marker,eax"
 );
 // LINE 405:
 	asm( 
-"	      00424b29    mov eax,[ebp-104h]"
+"	      00424b29    mov eax,Marker"
 "	      00424b2f    push eax"
-"	      00424b30    mov eax,[ebp+8]"
+"	      00424b30    mov eax,text"
 "	      00424b33    push eax"
-"	      00424b34    lea eax,[ebp-100h]"
+"	      00424b34    lea eax,buf[0]"
 "	      00424b3a    push eax"
 "	      00424b3b    call 0056D940h"
 "	      00424b40    add esp,0Ch"
@@ -3373,7 +3373,7 @@ void DebugOutput(char * text, ...) {
 );
 // LINE 407:
 	asm( 
-"	      00424b50    lea eax,[ebp-100h]"
+"	      00424b50    lea eax,buf[0]"
 "	      00424b56    push eax"
 "	      00424b57    mov ecx,ds:[597374h]"
 "	      00424b5d    call 00423C9Dh"
@@ -3407,7 +3407,7 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 );
 // LINE 413:
 	asm( 
-"	      00424b85    mov eax,[ebp+8]"
+"	      00424b85    mov eax,aCommand"
 "	      00424b88    mov [ebp-7Ch],eax"
 "	      00424b8b    mov eax,ds:[597374h]"
 "	      00424b90    mov [ebp-80h],eax"
@@ -3698,7 +3698,7 @@ void UnregisterDebugCommand(struct debug_command* aCommand) {
 );
 // LINE 419:
 	asm( 
-"	      00424f46    mov eax,[ebp+8]"
+"	      00424f46    mov eax,aCommand"
 "	      00424f49    mov [ebp-1Ch],eax"
 "	      00424f4c    mov eax,ds:[597374h]"
 "	      00424f51    mov [ebp-20h],eax"
@@ -3781,7 +3781,7 @@ void SaveDebugWindow(char * fileName) {
 );
 // LINE 425:
 	asm( 
-"	      00425028    mov eax,[ebp+8]"
+"	      00425028    mov eax,fileName"
 "	      0042502b    push eax"
 "	      0042502c    mov ecx,ds:[597374h]"
 "	      00425032    call 004233B1h"
@@ -3816,20 +3816,20 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 // LINE 432:
 	asm( 
 "	      0042504d    jmp near ptr 00425052h"
-"	      00425052    mov eax,[ebp+0Ch]"
+"	      00425052    mov eax,str.reference"
 "	      00425055    cmp dword ptr [eax+4],0"
 "	      00425059    jne near ptr 00425076h"
 "	      0042505f    mov dword ptr [ebp-1Ch],0"
-"	      00425066    lea ecx,[ebp+8]"
+"	      00425066    lea ecx,str.c_str_ptr"
 "	      00425069    call 00412130h"
 "	      0042506e    mov eax,[ebp-1Ch]"
 "	      00425071    jmp near ptr 004256C4h"
 );
 // LINE 434:
 	asm( 
-"	      00425076    lea ecx,[ebp-8]"
+"	      00425076    lea ecx,subString.c_str_ptr"
 "	      00425079    call 00411EE0h"
-"	      0042507e    lea ecx,[ebp-18h]"
+"	      0042507e    lea ecx,parseStr.c_str_ptr"
 "	      00425081    call 00411EE0h"
 );
 // LINE 437:
@@ -3842,20 +3842,20 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      0042509d    push eax"
 "	      0042509e    push 0"
 "	      004250a0    push 597408h"
-"	      004250a5    lea ecx,[ebp+8]"
+"	      004250a5    lea ecx,str.c_str_ptr"
 "	      004250a8    call 004114D0h"
-"	      004250ad    mov [ebp-10h],eax"
+"	      004250ad    mov pos,eax"
 );
 // LINE 438:
 	asm( 
-"	      004250b0    cmp dword ptr [ebp-10h],0FFFFFFFFh"
+"	      004250b0    cmp pos,0FFFFFFFFh"
 "	      004250b4    jne near ptr 004250E1h"
 "	      004250ba    mov dword ptr [ebp-20h],0"
-"	      004250c1    lea ecx,[ebp-18h]"
+"	      004250c1    lea ecx,parseStr.c_str_ptr"
 "	      004250c4    call 00412130h"
-"	      004250c9    lea ecx,[ebp-8]"
+"	      004250c9    lea ecx,subString.c_str_ptr"
 "	      004250cc    call 00412130h"
-"	      004250d1    lea ecx,[ebp+8]"
+"	      004250d1    lea ecx,str.c_str_ptr"
 "	      004250d4    call 00412130h"
 "	      004250d9    mov eax,[ebp-20h]"
 "	      004250dc    jmp near ptr 004256C4h"
@@ -3863,14 +3863,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 // LINE 441:
 	asm( 
 "	      004250e1    push 0FFFFFFFFh"
-"	      004250e3    mov eax,[ebp-10h]"
+"	      004250e3    mov eax,pos"
 "	      004250e6    push eax"
 "	      004250e7    lea eax,[ebp-28h]"
 "	      004250ea    push eax"
-"	      004250eb    lea ecx,[ebp+8]"
+"	      004250eb    lea ecx,str.c_str_ptr"
 "	      004250ee    call 0041AB40h"
 "	      004250f3    push eax"
-"	      004250f4    lea ecx,[ebp-18h]"
+"	      004250f4    lea ecx,parseStr.c_str_ptr"
 "	      004250f7    call 00412670h"
 "	      004250fc    lea ecx,[ebp-28h]"
 "	      004250ff    call 00412130h"
@@ -3885,34 +3885,34 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      0042511b    push eax"
 "	      0042511c    push 0"
 "	      0042511e    push 59740Ch"
-"	      00425123    lea ecx,[ebp-18h]"
+"	      00425123    lea ecx,parseStr.c_str_ptr"
 "	      00425126    call 00411270h"
-"	      0042512b    mov [ebp-10h],eax"
+"	      0042512b    mov pos,eax"
 );
 // LINE 444:
 	asm( 
-"	      0042512e    mov dword ptr [ebp-0Ch],0"
+"	      0042512e    mov index,0"
 );
 // LINE 446:
 	asm( 
-"	      00425135    cmp dword ptr [ebp-10h],0FFFFFFFFh"
+"	      00425135    cmp pos,0FFFFFFFFh"
 "	      00425139    je near ptr 0042543Dh"
 );
 // LINE 449:
 	asm( 
-"	      0042513f    inc dword ptr [ebp-0Ch]"
+"	      0042513f    inc index"
 );
 // LINE 452:
 	asm( 
-"	      00425142    mov eax,[ebp-10h]"
+"	      00425142    mov eax,pos"
 "	      00425145    push eax"
 "	      00425146    push 0"
 "	      00425148    lea eax,[ebp-30h]"
 "	      0042514b    push eax"
-"	      0042514c    lea ecx,[ebp-18h]"
+"	      0042514c    lea ecx,parseStr.c_str_ptr"
 "	      0042514f    call 0041AB40h"
 "	      00425154    push eax"
-"	      00425155    mov ecx,[ebp+10h]"
+"	      00425155    mov ecx,commands"
 "	      00425158    call 00425760h"
 "	      0042515d    lea ecx,[ebp-30h]"
 "	      00425160    call 00412080h"
@@ -3931,14 +3931,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 // LINE 455:
 	asm( 
 "	      00425198    push 0FFFFFFFFh"
-"	      0042519a    mov eax,[ebp-10h]"
+"	      0042519a    mov eax,pos"
 "	      0042519d    push eax"
 "	      0042519e    lea eax,[ebp-38h]"
 "	      004251a1    push eax"
-"	      004251a2    lea ecx,[ebp-18h]"
+"	      004251a2    lea ecx,parseStr.c_str_ptr"
 "	      004251a5    call 0041AB40h"
 "	      004251aa    push eax"
-"	      004251ab    lea ecx,[ebp-18h]"
+"	      004251ab    lea ecx,parseStr.c_str_ptr"
 "	      004251ae    call 00412670h"
 "	      004251b3    lea ecx,[ebp-38h]"
 "	      004251b6    call 00412080h"
@@ -3964,20 +3964,20 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425205    push eax"
 "	      00425206    push 0"
 "	      00425208    push 597410h"
-"	      0042520d    lea ecx,[ebp-18h]"
+"	      0042520d    lea ecx,parseStr.c_str_ptr"
 "	      00425210    call 004114D0h"
-"	      00425215    mov [ebp-10h],eax"
+"	      00425215    mov pos,eax"
 );
 // LINE 459:
 	asm( 
-"	      00425218    cmp dword ptr [ebp-10h],0FFFFFFFFh"
+"	      00425218    cmp pos,0FFFFFFFFh"
 "	      0042521c    je near ptr 00425438h"
 );
 // LINE 461:
 	asm( 
 "	      00425222    jmp near ptr 00425227h"
-"	      00425227    mov eax,[ebp-14h]"
-"	      0042522a    mov ecx,[ebp-10h]"
+"	      00425227    mov eax,parseStr.reference"
+"	      0042522a    mov ecx,pos"
 "	      0042522d    cmp [eax+4],ecx"
 "	      00425230    jae near ptr 0042526Eh"
 "	      00425236    push 59722Ch"
@@ -3994,19 +3994,19 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425266    add esp,4"
 "	      00425269    jmp near ptr 0042526Eh"
 "	      0042526e    jmp near ptr 00425273h"
-"	      00425273    mov eax,[ebp-14h]"
+"	      00425273    mov eax,parseStr.reference"
 "	      00425276    cmp dword ptr [eax+4],0"
 "	      0042527a    je near ptr 00425305h"
 "	      00425280    jmp near ptr 00425285h"
-"	      00425285    mov eax,[ebp-14h]"
+"	      00425285    mov eax,parseStr.reference"
 "	      00425288    mov eax,[eax+4]"
-"	      0042528b    sub eax,[ebp-10h]"
+"	      0042528b    sub eax,pos"
 "	      0042528e    cmp eax,0FFFFFFFFh"
 "	      00425291    jae near ptr 004252B0h"
 "	      00425297    jmp near ptr 0042529Ch"
-"	      0042529c    mov eax,[ebp-14h]"
+"	      0042529c    mov eax,parseStr.reference"
 "	      0042529f    mov eax,[eax+4]"
-"	      004252a2    sub eax,[ebp-10h]"
+"	      004252a2    sub eax,pos"
 "	      004252a5    mov [ebp-0A8h],eax"
 "	      004252ab    jmp near ptr 004252BAh"
 "	      004252b0    mov dword ptr [ebp-0A8h],0FFFFFFFFh"
@@ -4014,9 +4014,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      004252bc    push 0"
 "	      004252be    mov eax,[ebp-0A8h]"
 "	      004252c4    push eax"
-"	      004252c5    lea ecx,[ebp-18h]"
+"	      004252c5    lea ecx,parseStr.c_str_ptr"
 "	      004252c8    call 00417C00h"
-"	      004252cd    mov ecx,[ebp-10h]"
+"	      004252cd    mov ecx,pos"
 "	      004252d0    add ecx,eax"
 "	      004252d2    push ecx"
 "	      004252d3    lea ecx,[ebp-9Ch]"
@@ -4042,10 +4042,10 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425328    lea eax,[ebp-40h]"
 "	      0042532b    mov [ebp-0B0h],eax"
 "	      00425331    jmp near ptr 00425336h"
-"	      00425336    lea eax,[ebp-18h]"
+"	      00425336    lea eax,parseStr.c_str_ptr"
 "	      00425339    cmp [ebp-0B0h],eax"
 "	      0042533f    je near ptr 004253CEh"
-"	      00425345    lea ecx,[ebp-18h]"
+"	      00425345    lea ecx,parseStr.c_str_ptr"
 "	      00425348    call 00412080h"
 "	      0042534d    jmp near ptr 00425352h"
 "	      00425352    mov eax,[ebp-0B0h]"
@@ -4054,8 +4054,8 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      0042535f    je near ptr 0042537Ch"
 "	      00425365    mov eax,[ebp-0B0h]"
 "	      0042536b    mov eax,[eax+4]"
-"	      0042536e    mov [ebp-14h],eax"
-"	      00425371    mov eax,[ebp-14h]"
+"	      0042536e    mov parseStr.reference,eax"
+"	      00425371    mov eax,parseStr.reference"
 "	      00425374    inc dword ptr [eax+0Ch]"
 "	      00425377    jmp near ptr 004253CEh"
 "	      0042537c    push 10h"
@@ -4074,9 +4074,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      004253b3    push eax"
 "	      004253b4    mov ecx,[ebp-0BCh]"
 "	      004253ba    call 0041E200h"
-"	      004253bf    mov [ebp-14h],eax"
+"	      004253bf    mov parseStr.reference,eax"
 "	      004253c2    jmp near ptr 004253CEh"
-"	      004253c7    mov dword ptr [ebp-14h],0"
+"	      004253c7    mov parseStr.reference,0"
 "	      004253ce    jmp near ptr 004253D3h"
 "	      004253d3    lea ecx,[ebp-40h]"
 "	      004253d6    call 00412080h"
@@ -4102,9 +4102,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425425    push eax"
 "	      00425426    push 0"
 "	      00425428    push 597414h"
-"	      0042542d    lea ecx,[ebp-18h]"
+"	      0042542d    lea ecx,parseStr.c_str_ptr"
 "	      00425430    call 00411270h"
-"	      00425435    mov [ebp-10h],eax"
+"	      00425435    mov pos,eax"
 );
 // LINE 464:
 	asm( 
@@ -4113,7 +4113,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 // LINE 467:
 	asm( 
 "	      0042543d    jmp near ptr 00425442h"
-"	      00425442    mov eax,[ebp-14h]"
+"	      00425442    mov eax,parseStr.reference"
 "	      00425445    cmp dword ptr [eax+4],0"
 "	      00425449    je near ptr 00425629h"
 "	      0042544f    jmp near ptr 00425454h"
@@ -4124,14 +4124,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425466    push eax"
 "	      00425467    push 0"
 "	      00425469    push 597418h"
-"	      0042546e    lea ecx,[ebp-18h]"
+"	      0042546e    lea ecx,parseStr.c_str_ptr"
 "	      00425471    call 004114D0h"
 "	      00425476    cmp eax,0FFFFFFFFh"
 "	      00425479    je near ptr 00425629h"
 );
 // LINE 469:
 	asm( 
-"	      0042547f    inc dword ptr [ebp-0Ch]"
+"	      0042547f    inc index"
 );
 // LINE 470:
 	asm( 
@@ -4143,11 +4143,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425499    push eax"
 "	      0042549a    push 0"
 "	      0042549c    push 59741Ch"
-"	      004254a1    lea ecx,[ebp-18h]"
+"	      004254a1    lea ecx,parseStr.c_str_ptr"
 "	      004254a4    call 00411270h"
 "	      004254a9    mov [ebp-8Ch],eax"
 "	      004254af    jmp near ptr 004254B4h"
-"	      004254b4    mov eax,[ebp-14h]"
+"	      004254b4    mov eax,parseStr.reference"
 "	      004254b7    cmp dword ptr [eax+4],0"
 "	      004254bb    jae near ptr 004254F9h"
 "	      004254c1    push 59722Ch"
@@ -4164,16 +4164,16 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      004254f1    add esp,4"
 "	      004254f4    jmp near ptr 004254F9h"
 "	      004254f9    jmp near ptr 004254FEh"
-"	      004254fe    mov eax,[ebp-14h]"
+"	      004254fe    mov eax,parseStr.reference"
 "	      00425501    cmp dword ptr [eax+4],0"
 "	      00425505    je near ptr 0042557Bh"
 "	      0042550b    jmp near ptr 00425510h"
-"	      00425510    mov eax,[ebp-14h]"
+"	      00425510    mov eax,parseStr.reference"
 "	      00425513    mov ecx,[ebp-8Ch]"
 "	      00425519    cmp [eax+4],ecx"
 "	      0042551c    jae near ptr 00425535h"
 "	      00425522    jmp near ptr 00425527h"
-"	      00425527    mov eax,[ebp-14h]"
+"	      00425527    mov eax,parseStr.reference"
 "	      0042552a    mov eax,[eax+4]"
 "	      0042552d    mov [ebp-80h],eax"
 "	      00425530    jmp near ptr 0042553Eh"
@@ -4183,7 +4183,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425540    push 0"
 "	      00425542    mov eax,[ebp-80h]"
 "	      00425545    push eax"
-"	      00425546    lea ecx,[ebp-18h]"
+"	      00425546    lea ecx,parseStr.c_str_ptr"
 "	      00425549    call 00417C00h"
 "	      0042554e    push eax"
 "	      0042554f    lea ecx,[ebp-74h]"
@@ -4209,28 +4209,28 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425598    lea eax,[ebp-48h]"
 "	      0042559b    mov [ebp-88h],eax"
 "	      004255a1    jmp near ptr 004255A6h"
-"	      004255a6    mov eax,[ebp+10h]"
-"	      004255a9    mov ecx,[ebp+10h]"
+"	      004255a6    mov eax,commands"
+"	      004255a9    mov ecx,commands"
 "	      004255ac    mov ecx,[ecx+8]"
 "	      004255af    cmp [eax+4],ecx"
 "	      004255b2    je near ptr 004255DAh"
 "	      004255b8    mov eax,[ebp-88h]"
 "	      004255be    push eax"
-"	      004255bf    mov eax,[ebp+10h]"
+"	      004255bf    mov eax,commands"
 "	      004255c2    mov eax,[eax+4]"
 "	      004255c5    push eax"
 "	      004255c6    call 00425E20h"
 "	      004255cb    add esp,8"
-"	      004255ce    mov eax,[ebp+10h]"
+"	      004255ce    mov eax,commands"
 "	      004255d1    add dword ptr [eax+4],8"
 "	      004255d5    jmp near ptr 004255F5h"
 "	      004255da    jmp near ptr 004255DFh"
 "	      004255df    mov eax,[ebp-88h]"
 "	      004255e5    push eax"
-"	      004255e6    mov eax,[ebp+10h]"
+"	      004255e6    mov eax,commands"
 "	      004255e9    mov eax,[eax+4]"
 "	      004255ec    push eax"
-"	      004255ed    mov ecx,[ebp+10h]"
+"	      004255ed    mov ecx,commands"
 "	      004255f0    call 00426900h"
 "	      004255f5    jmp near ptr 004255FAh"
 "	      004255fa    lea ecx,[ebp-48h]"
@@ -4249,13 +4249,13 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 );
 // LINE 472:
 	asm( 
-"	      00425629    mov eax,[ebp-0Ch]"
+"	      00425629    mov eax,index"
 "	      0042562c    mov [ebp-4Ch],eax"
-"	      0042562f    lea ecx,[ebp-18h]"
+"	      0042562f    lea ecx,parseStr.c_str_ptr"
 "	      00425632    call 00412080h"
-"	      00425637    cmp dword ptr [ebp-18h],0"
+"	      00425637    cmp parseStr.c_str_ptr,0"
 "	      0042563b    je near ptr 00425659h"
-"	      00425641    mov eax,[ebp-18h]"
+"	      00425641    mov eax,parseStr.c_str_ptr"
 "	      00425644    mov [ebp-58h],eax"
 "	      00425647    mov eax,[ebp-58h]"
 "	      0042564a    mov [ebp-5Ch],eax"
@@ -4264,11 +4264,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425651    call 0056A740h"
 "	      00425656    add esp,4"
 "	      00425659    jmp near ptr 0042565Eh"
-"	      0042565e    lea ecx,[ebp-8]"
+"	      0042565e    lea ecx,subString.c_str_ptr"
 "	      00425661    call 00412080h"
-"	      00425666    cmp dword ptr [ebp-8],0"
+"	      00425666    cmp subString.c_str_ptr,0"
 "	      0042566a    je near ptr 00425688h"
-"	      00425670    mov eax,[ebp-8]"
+"	      00425670    mov eax,subString.c_str_ptr"
 "	      00425673    mov [ebp-60h],eax"
 "	      00425676    mov eax,[ebp-60h]"
 "	      00425679    mov [ebp-64h],eax"
@@ -4277,11 +4277,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 "	      00425680    call 0056A740h"
 "	      00425685    add esp,4"
 "	      00425688    jmp near ptr 0042568Dh"
-"	      0042568d    lea ecx,[ebp+8]"
+"	      0042568d    lea ecx,str.c_str_ptr"
 "	      00425690    call 00412080h"
-"	      00425695    cmp dword ptr [ebp+8],0"
+"	      00425695    cmp str.c_str_ptr,0"
 "	      00425699    je near ptr 004256B7h"
-"	      0042569f    mov eax,[ebp+8]"
+"	      0042569f    mov eax,str.c_str_ptr"
 "	      004256a2    mov [ebp-68h],eax"
 "	      004256a5    mov eax,[ebp-68h]"
 "	      004256a8    mov [ebp-6Ch],eax"

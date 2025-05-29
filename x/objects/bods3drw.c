@@ -45,9 +45,9 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 148:
 	asm( 
-"	      00563ebe    cmp dword ptr [ebp+8],0"
+"	      00563ebe    cmp x,0"
 "	      00563ec2    jl near ptr 00563ED2h"
-"	      00563ec8    cmp dword ptr [ebp+0Ch],0"
+"	      00563ec8    cmp y,0"
 "	      00563ecc    jge near ptr 00563ED7h"
 "	      00563ed2    jmp near ptr 00563FCCh"
 );
@@ -55,27 +55,27 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	asm( 
 "	      00563ed7    mov eax,ds:[5BEF2Ch]"
 "	      00563edc    dec eax"
-"	      00563edd    cmp eax,[ebp+8]"
+"	      00563edd    cmp eax,x"
 "	      00563ee0    jl near ptr 00563EF5h"
 "	      00563ee6    mov eax,ds:[5BEF30h]"
 "	      00563eeb    dec eax"
-"	      00563eec    cmp eax,[ebp+0Ch]"
+"	      00563eec    cmp eax,y"
 "	      00563eef    jge near ptr 00563EFAh"
 "	      00563ef5    jmp near ptr 00563FCCh"
 );
 // LINE 151:
 	asm( 
-"	      00563efa    mov eax,[ebp+0Ch]"
+"	      00563efa    mov eax,y"
 "	      00563efd    imul eax,ds:[5BEF28h]"
-"	      00563f04    add eax,[ebp+8]"
+"	      00563f04    add eax,x"
 "	      00563f07    add eax,ds:[598EACh]"
-"	      00563f0d    mov [ebp-4],eax"
+"	      00563f0d    mov ptr,eax"
 );
 // LINE 152:
 	asm( 
 "	      00563f10    push 5BEF48h"
 "	      00563f15    push 1"
-"	      00563f17    mov eax,[ebp-4]"
+"	      00563f17    mov eax,ptr"
 "	      00563f1a    push eax"
 "	      00563f1b    call 00563EA0h"
 "	      00563f20    add esp,0Ch"
@@ -85,8 +85,8 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 153:
 	asm( 
-"	      00563f30    mov al,[ebp+10h]"
-"	      00563f33    mov ecx,[ebp-4]"
+"	      00563f30    mov al,color"
+"	      00563f33    mov ecx,ptr"
 "	      00563f36    mov [ecx],al"
 );
 // LINE 155:
@@ -96,13 +96,13 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 157:
 	asm( 
-"	      00563f45    inc dword ptr [ebp-4]"
+"	      00563f45    inc ptr"
 );
 // LINE 158:
 	asm( 
 "	      00563f48    push 5BEF50h"
 "	      00563f4d    push 1"
-"	      00563f4f    mov eax,[ebp-4]"
+"	      00563f4f    mov eax,ptr"
 "	      00563f52    push eax"
 "	      00563f53    call 00563EA0h"
 "	      00563f58    add esp,0Ch"
@@ -112,21 +112,21 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 159:
 	asm( 
-"	      00563f68    mov al,[ebp+10h]"
-"	      00563f6b    mov ecx,[ebp-4]"
+"	      00563f68    mov al,color"
+"	      00563f6b    mov ecx,ptr"
 "	      00563f6e    mov [ecx],al"
 );
 // LINE 160:
 	asm( 
 "	      00563f70    mov eax,ds:[5BEF28h]"
 "	      00563f75    dec eax"
-"	      00563f76    add [ebp-4],eax"
+"	      00563f76    add ptr,eax"
 );
 // LINE 161:
 	asm( 
 "	      00563f79    push 5BEF58h"
 "	      00563f7e    push 1"
-"	      00563f80    mov eax,[ebp-4]"
+"	      00563f80    mov eax,ptr"
 "	      00563f83    push eax"
 "	      00563f84    call 00563EA0h"
 "	      00563f89    add esp,0Ch"
@@ -136,19 +136,19 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 162:
 	asm( 
-"	      00563f99    mov al,[ebp+10h]"
-"	      00563f9c    mov ecx,[ebp-4]"
+"	      00563f99    mov al,color"
+"	      00563f9c    mov ecx,ptr"
 "	      00563f9f    mov [ecx],al"
 );
 // LINE 163:
 	asm( 
-"	      00563fa1    inc dword ptr [ebp-4]"
+"	      00563fa1    inc ptr"
 );
 // LINE 164:
 	asm( 
 "	      00563fa4    push 5BEF60h"
 "	      00563fa9    push 1"
-"	      00563fab    mov eax,[ebp-4]"
+"	      00563fab    mov eax,ptr"
 "	      00563fae    push eax"
 "	      00563faf    call 00563EA0h"
 "	      00563fb4    add esp,0Ch"
@@ -158,8 +158,8 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 );
 // LINE 165:
 	asm( 
-"	      00563fc4    mov al,[ebp+10h]"
-"	      00563fc7    mov ecx,[ebp-4]"
+"	      00563fc4    mov al,color"
+"	      00563fc7    mov ecx,ptr"
 "	      00563fca    mov [ecx],al"
 );
 // LINE 169:
@@ -200,11 +200,11 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 189:
 	asm( 
-"	      00563fdd    mov byte ptr [ebp-8],0"
+"	      00563fdd    mov shftCt,0"
 );
 // LINE 191:
 	asm( 
-"	      00563fe1    cmp dword ptr [ebp+14h],0"
+"	      00563fe1    cmp diameter,0"
 "	      00563fe5    jne near ptr 00563FF0h"
 );
 // LINE 192:
@@ -213,7 +213,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 194:
 	asm( 
-"	      00563ff0    cmp dword ptr [ebp+14h],33h"
+"	      00563ff0    cmp diameter,33h"
 "	      00563ff4    jle near ptr 00563FFFh"
 );
 // LINE 195:
@@ -222,20 +222,20 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 198:
 	asm( 
-"	      00563fff    cmp dword ptr [ebp+14h],3"
+"	      00563fff    cmp diameter,3"
 "	      00564003    jge near ptr 00564010h"
 );
 // LINE 199:
 	asm( 
-"	      00564009    mov dword ptr [ebp+1Ch],0"
+"	      00564009    mov shadeFlag,0"
 );
 // LINE 201:
 	asm( 
-"	      00564010    cmp dword ptr [ebp+1Ch],2"
+"	      00564010    cmp shadeFlag,2"
 "	      00564014    jne near ptr 0056404Dh"
 "	      0056401a    fld qword ptr ds:[5939B0h]"
 "	      00564020    fdiv qword ptr ds:[5BEF40h]"
-"	      00564026    mov eax,[ebp+14h]"
+"	      00564026    mov eax,diameter"
 "	      00564029    mov [ebp-108h],eax"
 "	      0056402f    fimul dword ptr [ebp-108h]"
 "	      00564035    call 0056EBE8h"
@@ -245,187 +245,187 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 202:
 	asm( 
-"	      00564046    mov dword ptr [ebp+1Ch],1"
+"	      00564046    mov shadeFlag,1"
 );
 // LINE 204:
 	asm( 
-"	      0056404d    mov eax,[ebp+14h]"
+"	      0056404d    mov eax,diameter"
 "	      00564050    cdq"
 "	      00564051    sub eax,edx"
 "	      00564053    sar eax,1"
-"	      00564056    mov [ebp-0C4h],eax"
+"	      00564056    mov radius,eax"
 );
 // LINE 205:
 	asm( 
-"	      0056405c    mov eax,[ebp-0C4h]"
-"	      00564062    imul eax,[ebp-0C4h]"
-"	      00564069    mov [ebp-0B4h],eax"
+"	      0056405c    mov eax,radius"
+"	      00564062    imul eax,radius"
+"	      00564069    mov radiusSquared,eax"
 );
 // LINE 207:
 	asm( 
-"	      0056406f    cmp dword ptr [ebp+1Ch],1"
+"	      0056406f    cmp shadeFlag,1"
 "	      00564073    jne near ptr 005640FBh"
 );
 // LINE 209:
 	asm( 
-"	      00564079    mov dword ptr [ebp-0B8h],0"
+"	      00564079    mov i,0"
 "	      00564083    jmp near ptr 0056408Eh"
-"	      00564088    inc dword ptr [ebp-0B8h]"
-"	      0056408e    mov eax,[ebp+14h]"
-"	      00564091    cmp [ebp-0B8h],eax"
+"	      00564088    inc i"
+"	      0056408e    mov eax,diameter"
+"	      00564091    cmp i,eax"
 "	      00564097    jge near ptr 005640E3h"
 );
 // LINE 210:
 	asm( 
-"	      0056409d    mov eax,[ebp-0B8h]"
+"	      0056409d    mov eax,i"
 "	      005640a3    mov [ebp-10Ch],eax"
 "	      005640a9    fild dword ptr [ebp-10Ch]"
-"	      005640af    mov eax,[ebp+14h]"
+"	      005640af    mov eax,diameter"
 "	      005640b2    dec eax"
 "	      005640b3    mov [ebp-110h],eax"
 "	      005640b9    fidiv dword ptr [ebp-110h]"
 "	      005640bf    fmul qword ptr ds:[5BEF40h]"
 "	      005640c5    call 0056EBE8h"
 "	      005640ca    xor ecx,ecx"
-"	      005640cc    mov cl,[ebp+18h]"
+"	      005640cc    mov cl,color"
 "	      005640cf    add eax,ecx"
-"	      005640d1    mov ecx,[ebp-0B8h]"
+"	      005640d1    mov ecx,i"
 "	      005640d7    mov [ebp+ecx-0F8h],al"
 "	      005640de    jmp near ptr 00564088h"
 );
 // LINE 212:
 	asm( 
-"	      005640e3    mov eax,[ebp-0C4h]"
+"	      005640e3    mov eax,radius"
 "	      005640e9    mov al,[ebp+eax-0F8h]"
-"	      005640f0    mov [ebp-0B0h],al"
+"	      005640f0    mov hiColor,al"
 );
 // LINE 214:
 	asm( 
 "	      005640f6    jmp near ptr 005642C3h"
-"	      005640fb    cmp dword ptr [ebp+1Ch],2"
+"	      005640fb    cmp shadeFlag,2"
 "	      005640ff    jne near ptr 005642C3h"
 );
 // LINE 216:
 	asm( 
-"	      00564105    mov dword ptr [ebp-0B8h],0"
+"	      00564105    mov i,0"
 "	      0056410f    jmp near ptr 0056411Ah"
-"	      00564114    inc dword ptr [ebp-0B8h]"
-"	      0056411a    mov eax,[ebp+14h]"
-"	      0056411d    cmp [ebp-0B8h],eax"
+"	      00564114    inc i"
+"	      0056411a    mov eax,diameter"
+"	      0056411d    cmp i,eax"
 "	      00564123    jge near ptr 0056416Fh"
 );
 // LINE 217:
 	asm( 
-"	      00564129    mov eax,[ebp-0B8h]"
+"	      00564129    mov eax,i"
 "	      0056412f    mov [ebp-114h],eax"
 "	      00564135    fild dword ptr [ebp-114h]"
-"	      0056413b    mov eax,[ebp+14h]"
+"	      0056413b    mov eax,diameter"
 "	      0056413e    dec eax"
 "	      0056413f    mov [ebp-118h],eax"
 "	      00564145    fidiv dword ptr [ebp-118h]"
 "	      0056414b    fmul qword ptr ds:[5BEF40h]"
 "	      00564151    call 0056EBE8h"
 "	      00564156    xor ecx,ecx"
-"	      00564158    mov cl,[ebp+18h]"
+"	      00564158    mov cl,color"
 "	      0056415b    add eax,ecx"
-"	      0056415d    mov ecx,[ebp-0B8h]"
+"	      0056415d    mov ecx,i"
 "	      00564163    mov [ebp+ecx-0F8h],al"
 "	      0056416a    jmp near ptr 00564114h"
 );
 // LINE 219:
 	asm( 
-"	      0056416f    mov eax,[ebp-0C4h]"
+"	      0056416f    mov eax,radius"
 "	      00564175    mov al,[ebp+eax-0F8h]"
-"	      0056417c    mov [ebp-0B0h],al"
+"	      0056417c    mov hiColor,al"
 );
 // LINE 223:
 	asm( 
-"	      00564182    mov dword ptr [ebp-0BCh],0"
+"	      00564182    mov j,0"
 "	      0056418c    jmp near ptr 00564198h"
-"	      00564191    add dword ptr [ebp-0BCh],6"
-"	      00564198    mov eax,[ebp+14h]"
-"	      0056419b    cmp [ebp-0BCh],eax"
+"	      00564191    add j,6"
+"	      00564198    mov eax,diameter"
+"	      0056419b    cmp j,eax"
 "	      005641a1    jge near ptr 005642C3h"
 );
 // LINE 225:
 	asm( 
-"	      005641a7    mov al,[ebp+18h]"
-"	      005641aa    mov ecx,[ebp-0BCh]"
+"	      005641a7    mov al,color"
+"	      005641aa    mov ecx,j"
 "	      005641b0    mov [ebp+ecx-0A4h],al"
-"	      005641b7    mov al,[ebp+18h]"
-"	      005641ba    mov ecx,[ebp-0BCh]"
+"	      005641b7    mov al,color"
+"	      005641ba    mov ecx,j"
 "	      005641c0    mov [ebp+ecx-0A3h],al"
 "	      005641c7    xor eax,eax"
-"	      005641c9    mov al,[ebp+18h]"
+"	      005641c9    mov al,color"
 "	      005641cc    inc eax"
-"	      005641cd    mov ecx,[ebp-0BCh]"
+"	      005641cd    mov ecx,j"
 "	      005641d3    mov [ebp+ecx-0A2h],al"
-"	      005641da    mov al,[ebp+18h]"
-"	      005641dd    mov ecx,[ebp-0BCh]"
+"	      005641da    mov al,color"
+"	      005641dd    mov ecx,j"
 "	      005641e3    mov [ebp+ecx-0A1h],al"
-"	      005641ea    mov al,[ebp+18h]"
-"	      005641ed    mov ecx,[ebp-0BCh]"
+"	      005641ea    mov al,color"
+"	      005641ed    mov ecx,j"
 "	      005641f3    mov [ebp+ecx-0A0h],al"
 "	      005641fa    xor eax,eax"
-"	      005641fc    mov al,[ebp+18h]"
+"	      005641fc    mov al,color"
 "	      005641ff    inc eax"
-"	      00564200    mov ecx,[ebp-0BCh]"
+"	      00564200    mov ecx,j"
 "	      00564206    mov [ebp+ecx-9Fh],al"
 );
 // LINE 226:
 	asm( 
-"	      0056420d    mov al,[ebp+18h]"
-"	      00564210    mov ecx,[ebp-0BCh]"
+"	      0056420d    mov al,color"
+"	      00564210    mov ecx,j"
 "	      00564216    mov [ebp+ecx-71h],al"
 "	      0056421a    xor eax,eax"
-"	      0056421c    mov al,[ebp+18h]"
+"	      0056421c    mov al,color"
 "	      0056421f    inc eax"
-"	      00564220    mov ecx,[ebp-0BCh]"
+"	      00564220    mov ecx,j"
 "	      00564226    mov [ebp+ecx-70h],al"
-"	      0056422a    mov al,[ebp+18h]"
-"	      0056422d    mov ecx,[ebp-0BCh]"
+"	      0056422a    mov al,color"
+"	      0056422d    mov ecx,j"
 "	      00564233    mov [ebp+ecx-6Fh],al"
 "	      00564237    xor eax,eax"
-"	      00564239    mov al,[ebp+18h]"
+"	      00564239    mov al,color"
 "	      0056423c    inc eax"
-"	      0056423d    mov ecx,[ebp-0BCh]"
+"	      0056423d    mov ecx,j"
 "	      00564243    mov [ebp+ecx-6Eh],al"
-"	      00564247    mov al,[ebp+18h]"
-"	      0056424a    mov ecx,[ebp-0BCh]"
+"	      00564247    mov al,color"
+"	      0056424a    mov ecx,j"
 "	      00564250    mov [ebp+ecx-6Dh],al"
 "	      00564254    xor eax,eax"
-"	      00564256    mov al,[ebp+18h]"
+"	      00564256    mov al,color"
 "	      00564259    inc eax"
-"	      0056425a    mov ecx,[ebp-0BCh]"
+"	      0056425a    mov ecx,j"
 "	      00564260    mov [ebp+ecx-6Ch],al"
 );
 // LINE 227:
 	asm( 
 "	      00564264    xor eax,eax"
-"	      00564266    mov al,[ebp+18h]"
+"	      00564266    mov al,color"
 "	      00564269    inc eax"
-"	      0056426a    mov ecx,[ebp-0BCh]"
+"	      0056426a    mov ecx,j"
 "	      00564270    mov [ebp+ecx-3Eh],al"
 "	      00564274    xor eax,eax"
-"	      00564276    mov al,[ebp+18h]"
+"	      00564276    mov al,color"
 "	      00564279    inc eax"
-"	      0056427a    mov ecx,[ebp-0BCh]"
+"	      0056427a    mov ecx,j"
 "	      00564280    mov [ebp+ecx-3Dh],al"
-"	      00564284    mov al,[ebp+18h]"
-"	      00564287    mov ecx,[ebp-0BCh]"
+"	      00564284    mov al,color"
+"	      00564287    mov ecx,j"
 "	      0056428d    mov [ebp+ecx-3Ch],al"
 "	      00564291    xor eax,eax"
-"	      00564293    mov al,[ebp+18h]"
+"	      00564293    mov al,color"
 "	      00564296    inc eax"
-"	      00564297    mov ecx,[ebp-0BCh]"
+"	      00564297    mov ecx,j"
 "	      0056429d    mov [ebp+ecx-3Bh],al"
 "	      005642a1    xor eax,eax"
-"	      005642a3    mov al,[ebp+18h]"
+"	      005642a3    mov al,color"
 "	      005642a6    inc eax"
-"	      005642a7    mov ecx,[ebp-0BCh]"
+"	      005642a7    mov ecx,j"
 "	      005642ad    mov [ebp+ecx-3Ah],al"
-"	      005642b1    mov al,[ebp+18h]"
-"	      005642b4    mov ecx,[ebp-0BCh]"
+"	      005642b1    mov al,color"
+"	      005642b4    mov ecx,j"
 "	      005642ba    mov [ebp+ecx-39h],al"
 );
 // LINE 228:
@@ -434,83 +434,83 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 231:
 	asm( 
-"	      005642c3    cmp dword ptr [ebp+1Ch],1"
+"	      005642c3    cmp shadeFlag,1"
 "	      005642c7    jne near ptr 00564401h"
 );
 // LINE 233:
 	asm( 
-"	      005642cd    mov dword ptr [ebp-0B8h],0"
+"	      005642cd    mov i,0"
 "	      005642d7    jmp near ptr 005642E2h"
-"	      005642dc    inc dword ptr [ebp-0B8h]"
-"	      005642e2    mov eax,[ebp-0C4h]"
-"	      005642e8    cmp [ebp-0B8h],eax"
+"	      005642dc    inc i"
+"	      005642e2    mov eax,radius"
+"	      005642e8    cmp i,eax"
 "	      005642ee    jge near ptr 005643C4h"
 );
 // LINE 236:
 	asm( 
-"	      005642f4    mov eax,[ebp-0B4h]"
-"	      005642fa    mov ecx,[ebp-0C4h]"
-"	      00564300    sub ecx,[ebp-0B8h]"
-"	      00564306    mov edx,[ebp-0C4h]"
-"	      0056430c    sub edx,[ebp-0B8h]"
+"	      005642f4    mov eax,radiusSquared"
+"	      005642fa    mov ecx,radius"
+"	      00564300    sub ecx,i"
+"	      00564306    mov edx,radius"
+"	      0056430c    sub edx,i"
 "	      00564312    imul ecx,edx"
 "	      00564315    sub eax,ecx"
 "	      00564317    mov eax,[eax*4+6361C8h]"
-"	      0056431e    mov [ebp-100h],eax"
+"	      0056431e    mov xOffset,eax"
 );
 // LINE 240:
 	asm( 
-"	      00564324    mov eax,[ebp+8]"
-"	      00564327    sub eax,[ebp-100h]"
-"	      0056432d    mov [ebp-0FCh],eax"
+"	      00564324    mov eax,centerPt.x"
+"	      00564327    sub eax,xOffset"
+"	      0056432d    mov startX,eax"
 );
 // LINE 241:
 	asm( 
-"	      00564333    mov eax,[ebp+8]"
-"	      00564336    add eax,[ebp-100h]"
-"	      0056433c    mov [ebp-4],eax"
+"	      00564333    mov eax,centerPt.x"
+"	      00564336    add eax,xOffset"
+"	      0056433c    mov endX,eax"
 );
 // LINE 242:
 	asm( 
-"	      0056433f    mov eax,[ebp-0C4h]"
-"	      00564345    sub eax,[ebp-0B8h]"
-"	      0056434b    add eax,[ebp+0Ch]"
+"	      0056433f    mov eax,radius"
+"	      00564345    sub eax,i"
+"	      0056434b    add eax,centerPt.y"
 "	      0056434e    dec eax"
-"	      0056434f    mov [ebp-104h],eax"
+"	      0056434f    mov lineY,eax"
 );
 // LINE 243:
 	asm( 
-"	      00564355    mov eax,[ebp-0B8h]"
+"	      00564355    mov eax,i"
 "	      0056435b    mov eax,[ebp+eax-0F8h]"
 "	      00564362    push eax"
-"	      00564363    mov eax,[ebp-104h]"
+"	      00564363    mov eax,lineY"
 "	      00564369    push eax"
-"	      0056436a    mov eax,[ebp-4]"
+"	      0056436a    mov eax,endX"
 "	      0056436d    push eax"
-"	      0056436e    mov eax,[ebp-0FCh]"
+"	      0056436e    mov eax,startX"
 "	      00564374    push eax"
 "	      00564375    call 00565898h"
 "	      0056437a    add esp,10h"
 );
 // LINE 245:
 	asm( 
-"	      0056437d    mov eax,[ebp+0Ch]"
-"	      00564380    mov ecx,[ebp-0C4h]"
-"	      00564386    sub ecx,[ebp-0B8h]"
+"	      0056437d    mov eax,centerPt.y"
+"	      00564380    mov ecx,radius"
+"	      00564386    sub ecx,i"
 "	      0056438c    sub eax,ecx"
-"	      0056438e    mov [ebp-104h],eax"
+"	      0056438e    mov lineY,eax"
 );
 // LINE 246:
 	asm( 
-"	      00564394    mov eax,[ebp+14h]"
-"	      00564397    sub eax,[ebp-0B8h]"
+"	      00564394    mov eax,diameter"
+"	      00564397    sub eax,i"
 "	      0056439d    mov eax,[ebp+eax-0F8h]"
 "	      005643a4    push eax"
-"	      005643a5    mov eax,[ebp-104h]"
+"	      005643a5    mov eax,lineY"
 "	      005643ab    push eax"
-"	      005643ac    mov eax,[ebp-4]"
+"	      005643ac    mov eax,endX"
 "	      005643af    push eax"
-"	      005643b0    mov eax,[ebp-0FCh]"
+"	      005643b0    mov eax,startX"
 "	      005643b6    push eax"
 "	      005643b7    call 00565898h"
 "	      005643bc    add esp,10h"
@@ -526,16 +526,16 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 250:
 	asm( 
-"	      005643ce    mov eax,[ebp-0C4h]"
+"	      005643ce    mov eax,radius"
 "	      005643d4    mov eax,[ebp+eax-0F8h]"
 "	      005643db    push eax"
-"	      005643dc    mov eax,[ebp+0Ch]"
+"	      005643dc    mov eax,centerPt.y"
 "	      005643df    push eax"
-"	      005643e0    mov eax,[ebp+8]"
-"	      005643e3    add eax,[ebp-0C4h]"
+"	      005643e0    mov eax,centerPt.x"
+"	      005643e3    add eax,radius"
 "	      005643e9    push eax"
-"	      005643ea    mov eax,[ebp+8]"
-"	      005643ed    sub eax,[ebp-0C4h]"
+"	      005643ea    mov eax,centerPt.x"
+"	      005643ed    sub eax,radius"
 "	      005643f3    push eax"
 "	      005643f4    call 00565898h"
 "	      005643f9    add esp,10h"
@@ -543,21 +543,21 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 // LINE 252:
 	asm( 
 "	      005643fc    jmp near ptr 0056476Bh"
-"	      00564401    cmp dword ptr [ebp+1Ch],2"
+"	      00564401    cmp shadeFlag,2"
 "	      00564405    jne near ptr 0056465Dh"
 );
 // LINE 254:
 	asm( 
 "	      0056440b    fld qword ptr ds:[5939B0h]"
 "	      00564411    fdiv qword ptr ds:[5BEF40h]"
-"	      00564417    mov eax,[ebp+14h]"
+"	      00564417    mov eax,diameter"
 "	      0056441a    mov [ebp-11Ch],eax"
 "	      00564420    fimul dword ptr [ebp-11Ch]"
 );
 // LINE 255:
 	asm( 
 "	      00564426    fcom qword ptr ds:[5939B0h]"
-"	      0056442c    fstp qword ptr [ebp-0ACh]"
+"	      0056442c    fstp bandSize"
 "	      00564432    fnstsw ax"
 "	      00564434    test ah,1"
 "	      00564437    je near ptr 00564451h"
@@ -569,7 +569,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 258:
 	asm( 
-"	      00564451    fld qword ptr [ebp-0ACh]"
+"	      00564451    fld bandSize"
 "	      00564457    fcomp qword ptr ds:[5939B8h]"
 "	      0056445d    fnstsw ax"
 "	      0056445f    test ah,1"
@@ -577,10 +577,10 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 259:
 	asm( 
-"	      00564468    fld qword ptr [ebp-0ACh]"
+"	      00564468    fld bandSize"
 "	      0056446e    call 0056EBE8h"
 "	      00564473    sub eax,2"
-"	      00564476    mov [ebp-0C0h],eax"
+"	      00564476    mov ditherLimit,eax"
 );
 // LINE 260:
 	asm( 
@@ -588,74 +588,74 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 261:
 	asm( 
-"	      00564481    mov dword ptr [ebp-0C0h],2"
+"	      00564481    mov ditherLimit,2"
 );
 // LINE 263:
 	asm( 
-"	      0056448b    mov dword ptr [ebp-0B8h],0"
-"	      00564495    mov eax,[ebp+14h]"
-"	      00564498    cmp [ebp-0B8h],eax"
+"	      0056448b    mov i,0"
+"	      00564495    mov eax,diameter"
+"	      00564498    cmp i,eax"
 "	      0056449e    jge near ptr 00564658h"
 );
 // LINE 265:
 	asm( 
-"	      005644a4    fld qword ptr [ebp-0ACh]"
+"	      005644a4    fld bandSize"
 "	      005644aa    call 0056EBE8h"
 "	      005644af    mov ebx,eax"
-"	      005644b1    fld qword ptr [ebp-0ACh]"
+"	      005644b1    fld bandSize"
 "	      005644b7    call 0056EBE8h"
 "	      005644bc    mov ecx,eax"
-"	      005644be    mov eax,[ebp-0B8h]"
+"	      005644be    mov eax,i"
 "	      005644c4    cdq"
 "	      005644c5    idiv ecx"
 "	      005644c7    sub ebx,edx"
-"	      005644c9    cmp ebx,[ebp-0C0h]"
+"	      005644c9    cmp ebx,ditherLimit"
 "	      005644cf    jne near ptr 005645C6h"
 );
 // LINE 267:
 	asm( 
-"	      005644d5    mov dword ptr [ebp-0BCh],0"
+"	      005644d5    mov j,0"
 "	      005644df    jmp near ptr 005644EAh"
-"	      005644e4    inc dword ptr [ebp-0BCh]"
-"	      005644ea    mov eax,[ebp-0BCh]"
-"	      005644f0    cmp [ebp-0C0h],eax"
+"	      005644e4    inc j"
+"	      005644ea    mov eax,j"
+"	      005644f0    cmp ditherLimit,eax"
 "	      005644f6    jl near ptr 005645BEh"
 );
 // LINE 270:
 	asm( 
-"	      005644fc    mov eax,[ebp-0B4h]"
-"	      00564502    mov ecx,[ebp-0C4h]"
-"	      00564508    sub ecx,[ebp-0B8h]"
-"	      0056450e    mov edx,[ebp-0C4h]"
-"	      00564514    sub edx,[ebp-0B8h]"
+"	      005644fc    mov eax,radiusSquared"
+"	      00564502    mov ecx,radius"
+"	      00564508    sub ecx,i"
+"	      0056450e    mov edx,radius"
+"	      00564514    sub edx,i"
 "	      0056451a    imul ecx,edx"
 "	      0056451d    sub eax,ecx"
 "	      0056451f    mov eax,[eax*4+6361C8h]"
-"	      00564526    mov [ebp-100h],eax"
+"	      00564526    mov xOffset,eax"
 );
 // LINE 274:
 	asm( 
-"	      0056452c    mov eax,[ebp+8]"
-"	      0056452f    sub eax,[ebp-100h]"
-"	      00564535    mov [ebp-0FCh],eax"
+"	      0056452c    mov eax,centerPt.x"
+"	      0056452f    sub eax,xOffset"
+"	      00564535    mov startX,eax"
 );
 // LINE 275:
 	asm( 
-"	      0056453b    mov eax,[ebp+8]"
-"	      0056453e    add eax,[ebp-100h]"
-"	      00564544    mov [ebp-4],eax"
+"	      0056453b    mov eax,centerPt.x"
+"	      0056453e    add eax,xOffset"
+"	      00564544    mov endX,eax"
 );
 // LINE 276:
 	asm( 
-"	      00564547    mov eax,[ebp-0C4h]"
-"	      0056454d    sub eax,[ebp-0B8h]"
-"	      00564553    add eax,[ebp+0Ch]"
-"	      00564556    mov [ebp-104h],eax"
+"	      00564547    mov eax,radius"
+"	      0056454d    sub eax,i"
+"	      00564553    add eax,centerPt.y"
+"	      00564556    mov lineY,eax"
 );
 // LINE 278:
 	asm( 
-"	      0056455c    mov eax,[ebp+14h]"
-"	      0056455f    cmp [ebp-0B8h],eax"
+"	      0056455c    mov eax,diameter"
+"	      0056455f    cmp i,eax"
 "	      00564565    jge near ptr 005645B4h"
 );
 // LINE 280:
@@ -664,25 +664,25 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 "	      00564570    push 0"
 "	      00564572    mov eax,[ebp-8]"
 "	      00564575    push eax"
-"	      00564576    mov eax,[ebp-0BCh]"
+"	      00564576    mov eax,j"
 "	      0056457c    mov ecx,eax"
 "	      0056457e    lea eax,[eax+eax*4]"
 "	      00564581    lea eax,[eax+eax*4]"
 "	      00564584    lea eax,[ecx+eax*2]"
 "	      00564587    lea eax,[ebp+eax-0A4h]"
 "	      0056458e    push eax"
-"	      0056458f    mov eax,[ebp-104h]"
+"	      0056458f    mov eax,lineY"
 "	      00564595    push eax"
-"	      00564596    mov eax,[ebp-4]"
+"	      00564596    mov eax,endX"
 "	      00564599    push eax"
-"	      0056459a    mov eax,[ebp-0FCh]"
+"	      0056459a    mov eax,startX"
 "	      005645a0    push eax"
 "	      005645a1    call 00565641h"
 "	      005645a6    add esp,1Ch"
 );
 // LINE 281:
 	asm( 
-"	      005645a9    inc dword ptr [ebp-0B8h]"
+"	      005645a9    inc i"
 );
 // LINE 283:
 	asm( 
@@ -698,7 +698,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 288:
 	asm( 
-"	      005645be    inc byte ptr [ebp-8]"
+"	      005645be    inc shftCt"
 );
 // LINE 290:
 	asm( 
@@ -706,55 +706,55 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 293:
 	asm( 
-"	      005645c6    mov eax,[ebp-0B4h]"
-"	      005645cc    mov ecx,[ebp-0C4h]"
-"	      005645d2    sub ecx,[ebp-0B8h]"
-"	      005645d8    mov edx,[ebp-0C4h]"
-"	      005645de    sub edx,[ebp-0B8h]"
+"	      005645c6    mov eax,radiusSquared"
+"	      005645cc    mov ecx,radius"
+"	      005645d2    sub ecx,i"
+"	      005645d8    mov edx,radius"
+"	      005645de    sub edx,i"
 "	      005645e4    imul ecx,edx"
 "	      005645e7    sub eax,ecx"
 "	      005645e9    mov eax,[eax*4+6361C8h]"
-"	      005645f0    mov [ebp-100h],eax"
+"	      005645f0    mov xOffset,eax"
 );
 // LINE 297:
 	asm( 
-"	      005645f6    mov eax,[ebp+8]"
-"	      005645f9    sub eax,[ebp-100h]"
-"	      005645ff    mov [ebp-0FCh],eax"
+"	      005645f6    mov eax,centerPt.x"
+"	      005645f9    sub eax,xOffset"
+"	      005645ff    mov startX,eax"
 );
 // LINE 298:
 	asm( 
-"	      00564605    mov eax,[ebp+8]"
-"	      00564608    add eax,[ebp-100h]"
-"	      0056460e    mov [ebp-4],eax"
+"	      00564605    mov eax,centerPt.x"
+"	      00564608    add eax,xOffset"
+"	      0056460e    mov endX,eax"
 );
 // LINE 299:
 	asm( 
-"	      00564611    mov eax,[ebp-0C4h]"
-"	      00564617    sub eax,[ebp-0B8h]"
-"	      0056461d    add eax,[ebp+0Ch]"
-"	      00564620    mov [ebp-104h],eax"
+"	      00564611    mov eax,radius"
+"	      00564617    sub eax,i"
+"	      0056461d    add eax,centerPt.y"
+"	      00564620    mov lineY,eax"
 );
 // LINE 301:
 	asm( 
 "	      00564626    xor eax,eax"
-"	      00564628    mov al,[ebp+18h]"
+"	      00564628    mov al,color"
 "	      0056462b    xor ecx,ecx"
-"	      0056462d    mov cl,[ebp-8]"
+"	      0056462d    mov cl,shftCt"
 "	      00564630    add eax,ecx"
 "	      00564632    push eax"
-"	      00564633    mov eax,[ebp-104h]"
+"	      00564633    mov eax,lineY"
 "	      00564639    push eax"
-"	      0056463a    mov eax,[ebp-4]"
+"	      0056463a    mov eax,endX"
 "	      0056463d    push eax"
-"	      0056463e    mov eax,[ebp-0FCh]"
+"	      0056463e    mov eax,startX"
 "	      00564644    push eax"
 "	      00564645    call 00565898h"
 "	      0056464a    add esp,10h"
 );
 // LINE 302:
 	asm( 
-"	      0056464d    inc dword ptr [ebp-0B8h]"
+"	      0056464d    inc i"
 );
 // LINE 304:
 	asm( 
@@ -766,75 +766,75 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 308:
 	asm( 
-"	      0056465d    mov dword ptr [ebp-0B8h],0"
+"	      0056465d    mov i,0"
 "	      00564667    jmp near ptr 00564672h"
-"	      0056466c    inc dword ptr [ebp-0B8h]"
-"	      00564672    mov eax,[ebp-0C4h]"
-"	      00564678    cmp [ebp-0B8h],eax"
+"	      0056466c    inc i"
+"	      00564672    mov eax,radius"
+"	      00564678    cmp i,eax"
 "	      0056467e    jge near ptr 0056473Dh"
 );
 // LINE 311:
 	asm( 
-"	      00564684    mov eax,[ebp-0B4h]"
-"	      0056468a    mov ecx,[ebp-0C4h]"
-"	      00564690    sub ecx,[ebp-0B8h]"
-"	      00564696    mov edx,[ebp-0C4h]"
-"	      0056469c    sub edx,[ebp-0B8h]"
+"	      00564684    mov eax,radiusSquared"
+"	      0056468a    mov ecx,radius"
+"	      00564690    sub ecx,i"
+"	      00564696    mov edx,radius"
+"	      0056469c    sub edx,i"
 "	      005646a2    imul ecx,edx"
 "	      005646a5    sub eax,ecx"
 "	      005646a7    mov eax,[eax*4+6361C8h]"
-"	      005646ae    mov [ebp-100h],eax"
+"	      005646ae    mov xOffset,eax"
 );
 // LINE 315:
 	asm( 
-"	      005646b4    mov eax,[ebp+8]"
-"	      005646b7    sub eax,[ebp-100h]"
-"	      005646bd    mov [ebp-0FCh],eax"
+"	      005646b4    mov eax,centerPt.x"
+"	      005646b7    sub eax,xOffset"
+"	      005646bd    mov startX,eax"
 );
 // LINE 316:
 	asm( 
-"	      005646c3    mov eax,[ebp+8]"
-"	      005646c6    add eax,[ebp-100h]"
-"	      005646cc    mov [ebp-4],eax"
+"	      005646c3    mov eax,centerPt.x"
+"	      005646c6    add eax,xOffset"
+"	      005646cc    mov endX,eax"
 );
 // LINE 317:
 	asm( 
-"	      005646cf    mov eax,[ebp-0C4h]"
-"	      005646d5    sub eax,[ebp-0B8h]"
-"	      005646db    add eax,[ebp+0Ch]"
+"	      005646cf    mov eax,radius"
+"	      005646d5    sub eax,i"
+"	      005646db    add eax,centerPt.y"
 "	      005646de    dec eax"
-"	      005646df    mov [ebp-104h],eax"
+"	      005646df    mov lineY,eax"
 );
 // LINE 318:
 	asm( 
 "	      005646e5    mov eax,[ebp+18h]"
 "	      005646e8    push eax"
-"	      005646e9    mov eax,[ebp-104h]"
+"	      005646e9    mov eax,lineY"
 "	      005646ef    push eax"
-"	      005646f0    mov eax,[ebp-4]"
+"	      005646f0    mov eax,endX"
 "	      005646f3    push eax"
-"	      005646f4    mov eax,[ebp-0FCh]"
+"	      005646f4    mov eax,startX"
 "	      005646fa    push eax"
 "	      005646fb    call 00565898h"
 "	      00564700    add esp,10h"
 );
 // LINE 320:
 	asm( 
-"	      00564703    mov eax,[ebp+0Ch]"
-"	      00564706    mov ecx,[ebp-0C4h]"
-"	      0056470c    sub ecx,[ebp-0B8h]"
+"	      00564703    mov eax,centerPt.y"
+"	      00564706    mov ecx,radius"
+"	      0056470c    sub ecx,i"
 "	      00564712    sub eax,ecx"
-"	      00564714    mov [ebp-104h],eax"
+"	      00564714    mov lineY,eax"
 );
 // LINE 321:
 	asm( 
 "	      0056471a    mov eax,[ebp+18h]"
 "	      0056471d    push eax"
-"	      0056471e    mov eax,[ebp-104h]"
+"	      0056471e    mov eax,lineY"
 "	      00564724    push eax"
-"	      00564725    mov eax,[ebp-4]"
+"	      00564725    mov eax,endX"
 "	      00564728    push eax"
-"	      00564729    mov eax,[ebp-0FCh]"
+"	      00564729    mov eax,startX"
 "	      0056472f    push eax"
 "	      00564730    call 00565898h"
 "	      00564735    add esp,10h"
@@ -852,13 +852,13 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	asm( 
 "	      00564747    mov eax,[ebp+18h]"
 "	      0056474a    push eax"
-"	      0056474b    mov eax,[ebp+0Ch]"
+"	      0056474b    mov eax,centerPt.y"
 "	      0056474e    push eax"
-"	      0056474f    mov eax,[ebp+8]"
-"	      00564752    add eax,[ebp-0C4h]"
+"	      0056474f    mov eax,centerPt.x"
+"	      00564752    add eax,radius"
 "	      00564758    push eax"
-"	      00564759    mov eax,[ebp+8]"
-"	      0056475c    sub eax,[ebp-0C4h]"
+"	      00564759    mov eax,centerPt.x"
+"	      0056475c    sub eax,radius"
 "	      00564762    push eax"
 "	      00564763    call 00565898h"
 "	      00564768    add esp,10h"
@@ -900,11 +900,11 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 );
 // LINE 416:
 	asm( 
-"	      00564779    mov dword ptr [ebp-20h],0"
+"	      00564779    mov bhdr,0"
 );
 // LINE 422:
 	asm( 
-"	      00564780    cmp dword ptr [ebp+14h],0"
+"	      00564780    cmp vertRad,0"
 "	      00564784    jne near ptr 0056478Fh"
 );
 // LINE 423:
@@ -913,7 +913,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 );
 // LINE 425:
 	asm( 
-"	      0056478f    movsx eax,word ptr [ebp+24h]"
+"	      0056478f    movsx eax,facenum"
 "	      00564793    cmp eax,0FFFFFFFFh"
 "	      00564796    jne near ptr 005647B8h"
 "	      0056479c    push 8C085h"
@@ -925,17 +925,17 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 );
 // LINE 431:
 	asm( 
-"	      005647b8    movsx eax,word ptr [ebp+24h]"
+"	      005647b8    movsx eax,facenum"
 "	      005647bc    push eax"
 "	      005647bd    mov eax,ds:[5B476Ch]"
 "	      005647c2    push eax"
 "	      005647c3    call 004D6246h"
 "	      005647c8    add esp,8"
-"	      005647cb    mov [ebp-20h],eax"
+"	      005647cb    mov bhdr,eax"
 );
 // LINE 432:
 	asm( 
-"	      005647ce    cmp dword ptr [ebp-20h],0"
+"	      005647ce    cmp bhdr,0"
 "	      005647d2    jne near ptr 005647F4h"
 "	      005647d8    push 8C085h"
 "	      005647dd    push 5BEFB8h"
@@ -946,191 +946,191 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 );
 // LINE 434:
 	asm( 
-"	      005647f4    mov eax,[ebp-20h]"
-"	      005647f7    mov [ebp-2Ch],eax"
+"	      005647f4    mov eax,bhdr"
+"	      005647f7    mov pixPtr,eax"
 );
 // LINE 435:
 	asm( 
-"	      005647fa    mov eax,[ebp-20h]"
+"	      005647fa    mov eax,bhdr"
 "	      005647fd    mov eax,[eax+4]"
 "	      00564800    shl eax,2"
 "	      00564803    add eax,0Ch"
-"	      00564806    add [ebp-2Ch],eax"
+"	      00564806    add pixPtr,eax"
 );
 // LINE 440:
 	asm( 
-"	      00564809    lea eax,[ebp-10h]"
+"	      00564809    lea eax,faceCenter.x"
 "	      0056480c    push eax"
-"	      0056480d    mov eax,[ebp+18h]"
+"	      0056480d    mov eax,psi"
 "	      00564810    push eax"
-"	      00564811    mov eax,[ebp-20h]"
+"	      00564811    mov eax,bhdr"
 "	      00564814    push eax"
 "	      00564815    call 00564C10h"
 "	      0056481a    add esp,0Ch"
 );
 // LINE 444:
 	asm( 
-"	      0056481d    mov dword ptr [ebp-0Ch],0Ch"
+"	      0056481d    mov faceCenter.y,0Ch"
 );
 // LINE 447:
 	asm( 
-"	      00564824    mov eax,[ebp+14h]"
-"	      00564827    imul eax,[ebp+14h]"
+"	      00564824    mov eax,vertRad"
+"	      00564827    imul eax,vertRad"
 "	      0056482b    mov [ebp-68h],eax"
 "	      0056482e    fild dword ptr [ebp-68h]"
-"	      00564831    fst qword ptr [ebp-28h]"
+"	      00564831    fst bSquared"
 );
 // LINE 448:
 	asm( 
 "	      00564834    fmul qword ptr ds:[5BEF38h]"
 "	      0056483a    fmul qword ptr ds:[5BEF38h]"
-"	      00564840    fstp qword ptr [ebp-18h]"
+"	      00564840    fstp aSquared"
 );
 // LINE 450:
 	asm( 
-"	      00564843    mov dword ptr [ebp-54h],34h"
+"	      00564843    mov pixLine.width,34h"
 );
 // LINE 451:
 	asm( 
 "	      0056484a    fld qword ptr ds:[5939B0h]"
-"	      00564850    fdiv qword ptr [ebp+1Ch]"
-"	      00564853    fstp qword ptr [ebp-4Ch]"
+"	      00564850    fdiv scaleFactor"
+"	      00564853    fstp pixLine.xStride"
 );
 // LINE 453:
 	asm( 
-"	      00564856    mov eax,[ebp+14h]"
+"	      00564856    mov eax,vertRad"
 "	      00564859    mov [ebp-6Ch],eax"
 "	      0056485c    fild dword ptr [ebp-6Ch]"
 "	      0056485f    fmul qword ptr ds:[5939C0h]"
 "	      00564865    fdivr qword ptr ds:[5939C8h]"
-"	      0056486b    fstp qword ptr [ebp-60h]"
+"	      0056486b    fstp yStride"
 );
 // LINE 455:
 	asm( 
-"	      0056486e    mov dword ptr [ebp-3Ch],0"
+"	      0056486e    mov i,0"
 "	      00564875    jmp near ptr 0056487Dh"
-"	      0056487a    inc dword ptr [ebp-3Ch]"
-"	      0056487d    mov eax,[ebp-3Ch]"
-"	      00564880    cmp [ebp+14h],eax"
+"	      0056487a    inc i"
+"	      0056487d    mov eax,i"
+"	      00564880    cmp vertRad,eax"
 "	      00564883    jle near ptr 0056497Fh"
 );
 // LINE 459:
 	asm( 
-"	      00564889    mov eax,[ebp+14h]"
-"	      0056488c    sub eax,[ebp-3Ch]"
-"	      0056488f    mov ecx,[ebp+14h]"
-"	      00564892    sub ecx,[ebp-3Ch]"
+"	      00564889    mov eax,vertRad"
+"	      0056488c    sub eax,i"
+"	      0056488f    mov ecx,vertRad"
+"	      00564892    sub ecx,i"
 "	      00564895    imul eax,ecx"
 "	      00564898    mov [ebp-70h],eax"
 "	      0056489b    fild dword ptr [ebp-70h]"
-"	      0056489e    fdiv qword ptr [ebp-28h]"
+"	      0056489e    fdiv bSquared"
 "	      005648a1    fsubr qword ptr ds:[5939B0h]"
-"	      005648a7    fmul qword ptr [ebp-18h]"
+"	      005648a7    fmul aSquared"
 "	      005648aa    call 0056EBE8h"
 "	      005648af    mov eax,[eax*4+6361C8h]"
-"	      005648b6    mov [ebp-38h],eax"
+"	      005648b6    mov offset.x,eax"
 );
 // LINE 463:
 	asm( 
-"	      005648b9    mov eax,[ebp+8]"
-"	      005648bc    sub eax,[ebp-38h]"
-"	      005648bf    mov [ebp-58h],eax"
+"	      005648b9    mov eax,centerPt.x"
+"	      005648bc    sub eax,offset.x"
+"	      005648bf    mov startX,eax"
 );
 // LINE 464:
 	asm( 
-"	      005648c2    mov eax,[ebp+8]"
-"	      005648c5    add eax,[ebp-38h]"
-"	      005648c8    mov [ebp-1Ch],eax"
+"	      005648c2    mov eax,centerPt.x"
+"	      005648c5    add eax,offset.x"
+"	      005648c8    mov endX,eax"
 );
 // LINE 465:
 	asm( 
-"	      005648cb    mov eax,[ebp+14h]"
-"	      005648ce    sub eax,[ebp-3Ch]"
-"	      005648d1    mov [ebp-34h],eax"
+"	      005648cb    mov eax,vertRad"
+"	      005648ce    sub eax,i"
+"	      005648d1    mov offset.y,eax"
 );
 // LINE 466:
 	asm( 
-"	      005648d4    mov eax,[ebp-34h]"
+"	      005648d4    mov eax,offset.y"
 "	      005648d7    mov [ebp-74h],eax"
 "	      005648da    fild dword ptr [ebp-74h]"
-"	      005648dd    fmul qword ptr [ebp-60h]"
+"	      005648dd    fmul yStride"
 "	      005648e0    call 0056EBE8h"
-"	      005648e5    mov [ebp-4],eax"
+"	      005648e5    mov yScanLine,eax"
 );
 // LINE 467:
 	asm( 
-"	      005648e8    mov eax,[ebp+0Ch]"
-"	      005648eb    add eax,[ebp-34h]"
-"	      005648ee    mov [ebp-64h],eax"
+"	      005648e8    mov eax,centerPt.y"
+"	      005648eb    add eax,offset.y"
+"	      005648ee    mov yLine,eax"
 );
 // LINE 469:
 	asm( 
-"	      005648f1    mov eax,[ebp-0Ch]"
-"	      005648f4    sub eax,[ebp-4]"
-"	      005648f7    imul eax,[ebp-54h]"
-"	      005648fb    add eax,[ebp-2Ch]"
-"	      005648fe    mov [ebp-44h],eax"
+"	      005648f1    mov eax,faceCenter.y"
+"	      005648f4    sub eax,yScanLine"
+"	      005648f7    imul eax,pixLine.width"
+"	      005648fb    add eax,pixPtr"
+"	      005648fe    mov pixLine.ptr,eax"
 );
 // LINE 470:
 	asm( 
-"	      00564901    lea eax,[ebp-54h]"
+"	      00564901    lea eax,pixLine.width"
 "	      00564904    push eax"
-"	      00564905    mov eax,[ebp-8]"
+"	      00564905    mov eax,faceCenter.z"
 "	      00564908    push eax"
-"	      00564909    mov eax,[ebp-0Ch]"
+"	      00564909    mov eax,faceCenter.y"
 "	      0056490c    push eax"
-"	      0056490d    mov eax,[ebp-10h]"
+"	      0056490d    mov eax,faceCenter.x"
 "	      00564910    push eax"
-"	      00564911    mov eax,[ebp-30h]"
+"	      00564911    mov eax,offset.z"
 "	      00564914    push eax"
-"	      00564915    mov eax,[ebp-34h]"
+"	      00564915    mov eax,offset.y"
 "	      00564918    push eax"
-"	      00564919    mov eax,[ebp-38h]"
+"	      00564919    mov eax,offset.x"
 "	      0056491c    push eax"
-"	      0056491d    mov eax,[ebp-64h]"
+"	      0056491d    mov eax,yLine"
 "	      00564920    push eax"
-"	      00564921    mov eax,[ebp-1Ch]"
+"	      00564921    mov eax,endX"
 "	      00564924    push eax"
-"	      00564925    mov eax,[ebp-58h]"
+"	      00564925    mov eax,startX"
 "	      00564928    push eax"
 "	      00564929    call 005649D3h"
 "	      0056492e    add esp,28h"
 );
 // LINE 473:
 	asm( 
-"	      00564931    mov eax,[ebp+0Ch]"
-"	      00564934    sub eax,[ebp-34h]"
-"	      00564937    mov [ebp-64h],eax"
+"	      00564931    mov eax,centerPt.y"
+"	      00564934    sub eax,offset.y"
+"	      00564937    mov yLine,eax"
 );
 // LINE 474:
 	asm( 
-"	      0056493a    mov eax,[ebp-0Ch]"
-"	      0056493d    add eax,[ebp-4]"
-"	      00564940    imul eax,[ebp-54h]"
-"	      00564944    add eax,[ebp-2Ch]"
-"	      00564947    mov [ebp-44h],eax"
+"	      0056493a    mov eax,faceCenter.y"
+"	      0056493d    add eax,yScanLine"
+"	      00564940    imul eax,pixLine.width"
+"	      00564944    add eax,pixPtr"
+"	      00564947    mov pixLine.ptr,eax"
 );
 // LINE 475:
 	asm( 
-"	      0056494a    lea eax,[ebp-54h]"
+"	      0056494a    lea eax,pixLine.width"
 "	      0056494d    push eax"
-"	      0056494e    mov eax,[ebp-8]"
+"	      0056494e    mov eax,faceCenter.z"
 "	      00564951    push eax"
-"	      00564952    mov eax,[ebp-0Ch]"
+"	      00564952    mov eax,faceCenter.y"
 "	      00564955    push eax"
-"	      00564956    mov eax,[ebp-10h]"
+"	      00564956    mov eax,faceCenter.x"
 "	      00564959    push eax"
-"	      0056495a    mov eax,[ebp-30h]"
+"	      0056495a    mov eax,offset.z"
 "	      0056495d    push eax"
-"	      0056495e    mov eax,[ebp-34h]"
+"	      0056495e    mov eax,offset.y"
 "	      00564961    push eax"
-"	      00564962    mov eax,[ebp-38h]"
+"	      00564962    mov eax,offset.x"
 "	      00564965    push eax"
-"	      00564966    mov eax,[ebp-64h]"
+"	      00564966    mov eax,yLine"
 "	      00564969    push eax"
-"	      0056496a    mov eax,[ebp-1Ch]"
+"	      0056496a    mov eax,endX"
 "	      0056496d    push eax"
-"	      0056496e    mov eax,[ebp-58h]"
+"	      0056496e    mov eax,startX"
 "	      00564971    push eax"
 "	      00564972    call 005649D3h"
 "	      00564977    add esp,28h"
@@ -1141,32 +1141,32 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 );
 // LINE 478:
 	asm( 
-"	      0056497f    mov eax,[ebp-0Ch]"
-"	      00564982    imul eax,[ebp-54h]"
-"	      00564986    add eax,[ebp-2Ch]"
-"	      00564989    mov [ebp-44h],eax"
+"	      0056497f    mov eax,faceCenter.y"
+"	      00564982    imul eax,pixLine.width"
+"	      00564986    add eax,pixPtr"
+"	      00564989    mov pixLine.ptr,eax"
 );
 // LINE 479:
 	asm( 
-"	      0056498c    lea eax,[ebp-54h]"
+"	      0056498c    lea eax,pixLine.width"
 "	      0056498f    push eax"
-"	      00564990    mov eax,[ebp-8]"
+"	      00564990    mov eax,faceCenter.z"
 "	      00564993    push eax"
-"	      00564994    mov eax,[ebp-0Ch]"
+"	      00564994    mov eax,faceCenter.y"
 "	      00564997    push eax"
-"	      00564998    mov eax,[ebp-10h]"
+"	      00564998    mov eax,faceCenter.x"
 "	      0056499b    push eax"
-"	      0056499c    mov eax,[ebp-30h]"
+"	      0056499c    mov eax,offset.z"
 "	      0056499f    push eax"
-"	      005649a0    mov eax,[ebp-34h]"
+"	      005649a0    mov eax,offset.y"
 "	      005649a3    push eax"
-"	      005649a4    mov eax,[ebp-38h]"
+"	      005649a4    mov eax,offset.x"
 "	      005649a7    push eax"
-"	      005649a8    mov eax,[ebp+0Ch]"
+"	      005649a8    mov eax,centerPt.y"
 "	      005649ab    push eax"
-"	      005649ac    mov eax,[ebp-1Ch]"
+"	      005649ac    mov eax,endX"
 "	      005649af    push eax"
-"	      005649b0    mov eax,[ebp-58h]"
+"	      005649b0    mov eax,startX"
 "	      005649b3    push eax"
 "	      005649b4    call 005649D3h"
 "	      005649b9    add esp,28h"
@@ -1226,58 +1226,58 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 );
 // LINE 536:
 	asm( 
-"	      005649dc    mov eax,[ebp+14h]"
+"	      005649dc    mov eax,offset.x"
 "	      005649df    mov [ebp-24h],eax"
 "	      005649e2    fild dword ptr [ebp-24h]"
-"	      005649e5    mov eax,[ebp+2Ch]"
+"	      005649e5    mov eax,pixLine"
 "	      005649e8    fmul qword ptr [eax+8]"
 "	      005649eb    call 0056EBE8h"
-"	      005649f0    mov [ebp-1Ch],eax"
+"	      005649f0    mov scaledOffset.x,eax"
 );
 // LINE 537:
 	asm( 
-"	      005649f3    mov eax,[ebp+20h]"
-"	      005649f6    sub eax,[ebp-1Ch]"
-"	      005649f9    mov [ebp-20h],eax"
+"	      005649f3    mov eax,faceCenter.x"
+"	      005649f6    sub eax,scaledOffset.x"
+"	      005649f9    mov loBitmapLimit,eax"
 );
 // LINE 538:
 	asm( 
-"	      005649fc    mov eax,[ebp+20h]"
-"	      005649ff    add eax,[ebp-1Ch]"
-"	      00564a02    mov [ebp-0Ch],eax"
+"	      005649fc    mov eax,faceCenter.x"
+"	      005649ff    add eax,scaledOffset.x"
+"	      00564a02    mov hiBitmapLimit,eax"
 );
 // LINE 541:
 	asm( 
-"	      00564a05    cmp dword ptr [ebp-20h],0"
+"	      00564a05    cmp loBitmapLimit,0"
 "	      00564a09    jl near ptr 00564A56h"
-"	      00564a0f    mov eax,[ebp+2Ch]"
-"	      00564a12    mov ecx,[ebp-0Ch]"
+"	      00564a0f    mov eax,pixLine"
+"	      00564a12    mov ecx,hiBitmapLimit"
 "	      00564a15    cmp [eax],ecx"
 "	      00564a17    jle near ptr 00564A56h"
 );
 // LINE 543:
 	asm( 
-"	      00564a1d    mov eax,[ebp+20h]"
-"	      00564a20    sub eax,[ebp-1Ch]"
-"	      00564a23    mov ecx,[ebp+2Ch]"
+"	      00564a1d    mov eax,faceCenter.x"
+"	      00564a20    sub eax,scaledOffset.x"
+"	      00564a23    mov ecx,pixLine"
 "	      00564a26    add eax,[ecx+10h]"
-"	      00564a29    mov [ebp-4],eax"
+"	      00564a29    mov ptr,eax"
 );
 // LINE 544:
 	asm( 
-"	      00564a2c    mov eax,[ebp+2Ch]"
+"	      00564a2c    mov eax,pixLine"
 "	      00564a2f    mov ecx,[eax+0Ch]"
 "	      00564a32    push ecx"
 "	      00564a33    mov eax,[eax+8]"
 "	      00564a36    push eax"
 "	      00564a37    push 0"
-"	      00564a39    mov eax,[ebp-4]"
+"	      00564a39    mov eax,ptr"
 "	      00564a3c    push eax"
-"	      00564a3d    mov eax,[ebp+10h]"
+"	      00564a3d    mov eax,yLine"
 "	      00564a40    push eax"
-"	      00564a41    mov eax,[ebp+0Ch]"
+"	      00564a41    mov eax,endX"
 "	      00564a44    push eax"
-"	      00564a45    mov eax,[ebp+8]"
+"	      00564a45    mov eax,startX"
 "	      00564a48    push eax"
 "	      00564a49    call 00565641h"
 "	      00564a4e    add esp,1Ch"
@@ -1285,10 +1285,10 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 // LINE 546:
 	asm( 
 "	      00564a51    jmp near ptr 00564BB3h"
-"	      00564a56    cmp dword ptr [ebp-20h],0"
+"	      00564a56    cmp loBitmapLimit,0"
 "	      00564a5a    jge near ptr 00564A78h"
-"	      00564a60    mov eax,[ebp+2Ch]"
-"	      00564a63    mov ecx,[ebp-0Ch]"
+"	      00564a60    mov eax,pixLine"
+"	      00564a63    mov ecx,hiBitmapLimit"
 "	      00564a66    cmp [eax],ecx"
 "	      00564a68    jge near ptr 00564A78h"
 );
@@ -1299,87 +1299,87 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 // LINE 550:
 	asm( 
 "	      00564a73    jmp near ptr 00564BB3h"
-"	      00564a78    cmp dword ptr [ebp-20h],0"
+"	      00564a78    cmp loBitmapLimit,0"
 "	      00564a7c    jge near ptr 00564B1Eh"
 );
 // LINE 552:
 	asm( 
-"	      00564a82    mov eax,[ebp+20h]"
-"	      00564a85    sub eax,[ebp-1Ch]"
-"	      00564a88    mov ecx,[ebp+2Ch]"
+"	      00564a82    mov eax,faceCenter.x"
+"	      00564a85    sub eax,scaledOffset.x"
+"	      00564a88    mov ecx,pixLine"
 "	      00564a8b    add eax,[ecx]"
-"	      00564a8d    mov ecx,[ebp+2Ch]"
+"	      00564a8d    mov ecx,pixLine"
 "	      00564a90    add eax,[ecx+10h]"
-"	      00564a93    mov [ebp-4],eax"
+"	      00564a93    mov ptr,eax"
 );
 // LINE 553:
 	asm( 
-"	      00564a96    mov eax,[ebp+8]"
-"	      00564a99    mov [ebp-10h],eax"
+"	      00564a96    mov eax,startX"
+"	      00564a99    mov begin,eax"
 );
 // LINE 555:
 	asm( 
-"	      00564a9c    mov eax,[ebp-20h]"
+"	      00564a9c    mov eax,loBitmapLimit"
 "	      00564a9f    neg eax"
 "	      00564aa1    mov [ebp-28h],eax"
 "	      00564aa4    fild dword ptr [ebp-28h]"
-"	      00564aa7    mov eax,[ebp+2Ch]"
+"	      00564aa7    mov eax,pixLine"
 "	      00564aaa    fdiv qword ptr [eax+8]"
 "	      00564aad    call 0056EBE8h"
-"	      00564ab2    mov ecx,[ebp+8]"
+"	      00564ab2    mov ecx,startX"
 "	      00564ab5    add ecx,eax"
-"	      00564ab7    mov [ebp-8],ecx"
+"	      00564ab7    mov end,ecx"
 );
 // LINE 556:
 	asm( 
-"	      00564aba    mov eax,[ebp+2Ch]"
+"	      00564aba    mov eax,pixLine"
 "	      00564abd    mov ecx,[eax+0Ch]"
 "	      00564ac0    push ecx"
 "	      00564ac1    mov eax,[eax+8]"
 "	      00564ac4    push eax"
 "	      00564ac5    push 0"
-"	      00564ac7    mov eax,[ebp-4]"
+"	      00564ac7    mov eax,ptr"
 "	      00564aca    push eax"
-"	      00564acb    mov eax,[ebp+10h]"
+"	      00564acb    mov eax,yLine"
 "	      00564ace    push eax"
-"	      00564acf    mov eax,[ebp-8]"
+"	      00564acf    mov eax,end"
 "	      00564ad2    push eax"
-"	      00564ad3    mov eax,[ebp-10h]"
+"	      00564ad3    mov eax,begin"
 "	      00564ad6    push eax"
 "	      00564ad7    call 00565641h"
 "	      00564adc    add esp,1Ch"
 );
 // LINE 558:
 	asm( 
-"	      00564adf    mov eax,[ebp+2Ch]"
+"	      00564adf    mov eax,pixLine"
 "	      00564ae2    mov eax,[eax+10h]"
-"	      00564ae5    mov [ebp-4],eax"
+"	      00564ae5    mov ptr,eax"
 );
 // LINE 559:
 	asm( 
-"	      00564ae8    mov eax,[ebp-8]"
-"	      00564aeb    mov [ebp-10h],eax"
+"	      00564ae8    mov eax,end"
+"	      00564aeb    mov begin,eax"
 );
 // LINE 560:
 	asm( 
-"	      00564aee    mov eax,[ebp+0Ch]"
-"	      00564af1    mov [ebp-8],eax"
+"	      00564aee    mov eax,endX"
+"	      00564af1    mov end,eax"
 );
 // LINE 561:
 	asm( 
-"	      00564af4    mov eax,[ebp+2Ch]"
+"	      00564af4    mov eax,pixLine"
 "	      00564af7    mov ecx,[eax+0Ch]"
 "	      00564afa    push ecx"
 "	      00564afb    mov eax,[eax+8]"
 "	      00564afe    push eax"
 "	      00564aff    push 0"
-"	      00564b01    mov eax,[ebp-4]"
+"	      00564b01    mov eax,ptr"
 "	      00564b04    push eax"
-"	      00564b05    mov eax,[ebp+10h]"
+"	      00564b05    mov eax,yLine"
 "	      00564b08    push eax"
-"	      00564b09    mov eax,[ebp-8]"
+"	      00564b09    mov eax,end"
 "	      00564b0c    push eax"
-"	      00564b0d    mov eax,[ebp-10h]"
+"	      00564b0d    mov eax,begin"
 "	      00564b10    push eax"
 "	      00564b11    call 00565641h"
 "	      00564b16    add esp,1Ch"
@@ -1390,81 +1390,81 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 );
 // LINE 565:
 	asm( 
-"	      00564b1e    mov eax,[ebp+20h]"
-"	      00564b21    sub eax,[ebp-1Ch]"
-"	      00564b24    mov ecx,[ebp+2Ch]"
+"	      00564b1e    mov eax,faceCenter.x"
+"	      00564b21    sub eax,scaledOffset.x"
+"	      00564b24    mov ecx,pixLine"
 "	      00564b27    add eax,[ecx+10h]"
-"	      00564b2a    mov [ebp-4],eax"
+"	      00564b2a    mov ptr,eax"
 );
 // LINE 566:
 	asm( 
-"	      00564b2d    mov eax,[ebp+8]"
-"	      00564b30    mov [ebp-10h],eax"
+"	      00564b2d    mov eax,startX"
+"	      00564b30    mov begin,eax"
 );
 // LINE 567:
 	asm( 
-"	      00564b33    mov eax,[ebp+2Ch]"
+"	      00564b33    mov eax,pixLine"
 "	      00564b36    mov eax,[eax]"
-"	      00564b38    sub eax,[ebp-20h]"
+"	      00564b38    sub eax,loBitmapLimit"
 "	      00564b3b    mov [ebp-2Ch],eax"
 "	      00564b3e    fild dword ptr [ebp-2Ch]"
-"	      00564b41    mov eax,[ebp+2Ch]"
+"	      00564b41    mov eax,pixLine"
 "	      00564b44    fdiv qword ptr [eax+8]"
 "	      00564b47    call 0056EBE8h"
-"	      00564b4c    mov ecx,[ebp+8]"
+"	      00564b4c    mov ecx,startX"
 "	      00564b4f    add ecx,eax"
-"	      00564b51    mov [ebp-8],ecx"
+"	      00564b51    mov end,ecx"
 );
 // LINE 568:
 	asm( 
-"	      00564b54    mov eax,[ebp+2Ch]"
+"	      00564b54    mov eax,pixLine"
 "	      00564b57    mov ecx,[eax+0Ch]"
 "	      00564b5a    push ecx"
 "	      00564b5b    mov eax,[eax+8]"
 "	      00564b5e    push eax"
 "	      00564b5f    push 0"
-"	      00564b61    mov eax,[ebp-4]"
+"	      00564b61    mov eax,ptr"
 "	      00564b64    push eax"
-"	      00564b65    mov eax,[ebp+10h]"
+"	      00564b65    mov eax,yLine"
 "	      00564b68    push eax"
-"	      00564b69    mov eax,[ebp-8]"
+"	      00564b69    mov eax,end"
 "	      00564b6c    push eax"
-"	      00564b6d    mov eax,[ebp-10h]"
+"	      00564b6d    mov eax,begin"
 "	      00564b70    push eax"
 "	      00564b71    call 00565641h"
 "	      00564b76    add esp,1Ch"
 );
 // LINE 570:
 	asm( 
-"	      00564b79    mov eax,[ebp+2Ch]"
+"	      00564b79    mov eax,pixLine"
 "	      00564b7c    mov eax,[eax+10h]"
-"	      00564b7f    mov [ebp-4],eax"
+"	      00564b7f    mov ptr,eax"
 );
 // LINE 571:
 	asm( 
-"	      00564b82    mov eax,[ebp-8]"
-"	      00564b85    mov [ebp-10h],eax"
+"	      00564b82    mov eax,end"
+"	      00564b85    mov begin,eax"
 );
 // LINE 572:
 	asm( 
-"	      00564b88    mov eax,[ebp+0Ch]"
-"	      00564b8b    mov [ebp-8],eax"
+"	      00564b88    mov eax,endX"
+"	      00564b8b    mov end,eax"
 );
 // LINE 573:
 	asm( 
-"	      00564b8e    mov eax,[ebp+2Ch]"
+"	      00564b8e    mov eax,pixLine"
 "	      00564b91    mov ecx,[eax+0Ch]"
 "	      00564b94    push ecx"
 "	      00564b95    mov eax,[eax+8]"
 "	      00564b98    push eax"
 "	      00564b99    push 0"
-"	      00564b9b    mov eax,[ebp-4]"
+"	      00564b9b    mov eax,ptr"
 "	      00564b9e    push eax"
-"	      00564b9f    mov eax,[ebp+10h]"
+"	      00564b9f    mov eax,yLine"
 "	      00564ba2    push eax"
-"	      00564ba3    mov eax,[ebp-8]"
+"	      00564ba3    mov eax,end"
 "	      00564ba6    push eax"
-"	      00564ba7    mov eax,[ebp-10h]"
+"	      00564ba7    mov eax,begin"
 "	      00564baa    push eax"
 "	      00564bab    call 00565641h"
 "	      00564bb0    add esp,1Ch"
@@ -1494,36 +1494,36 @@ void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, s
 );
 // LINE 586:
 	asm( 
-"	      00564bc1    mov eax,[ebp+8]"
+"	      00564bc1    mov eax,bhdr"
 "	      00564bc4    mov eax,[eax]"
 "	      00564bc6    mov [ebp-0Ch],eax"
 "	      00564bc9    fild dword ptr [ebp-0Ch]"
 "	      00564bcc    fdiv qword ptr ds:[5939C0h]"
-"	      00564bd2    fstp qword ptr [ebp-8]"
+"	      00564bd2    fstp widthOverTwo"
 );
 // LINE 588:
 	asm( 
-"	      00564bd5    sub dword ptr [ebp+0Ch],6"
+"	      00564bd5    sub dir,6"
 );
 // LINE 589:
 	asm( 
-"	      00564bd9    cmp dword ptr [ebp+0Ch],0FFFFFFFDh"
+"	      00564bd9    cmp dir,0FFFFFFFDh"
 "	      00564bdd    jge near ptr 00564BE7h"
 );
 // LINE 590:
 	asm( 
-"	      00564be3    add dword ptr [ebp+0Ch],8"
+"	      00564be3    add dir,8"
 );
 // LINE 592:
 	asm( 
-"	      00564be7    mov eax,[ebp+0Ch]"
+"	      00564be7    mov eax,dir"
 "	      00564bea    mov [ebp-10h],eax"
 "	      00564bed    fild dword ptr [ebp-10h]"
-"	      00564bf0    fmul qword ptr [ebp-8]"
+"	      00564bf0    fmul widthOverTwo"
 "	      00564bf3    fdiv qword ptr ds:[5939B8h]"
-"	      00564bf9    fsubr qword ptr [ebp-8]"
+"	      00564bf9    fsubr widthOverTwo"
 "	      00564bfc    call 0056EBE8h"
-"	      00564c01    mov ecx,[ebp+28h]"
+"	      00564c01    mov ecx,faceCenter"
 "	      00564c04    mov [ecx],eax"
 );
 // LINE 594:
@@ -1556,7 +1556,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 604:
 	asm( 
-"	      00564c19    mov eax,[ebp+8]"
+"	      00564c19    mov eax,bhdr"
 "	      00564c1c    mov eax,[eax]"
 "	      00564c1e    mov [ebp-14h],eax"
 "	      00564c21    fild dword ptr [ebp-14h]"
@@ -1565,7 +1565,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 // LINE 605:
 	asm( 
 "	      00564c2a    fcom qword ptr ds:[5939D0h]"
-"	      00564c30    fstp qword ptr [ebp-10h]"
+"	      00564c30    fstp widthOverTwo"
 "	      00564c33    fnstsw ax"
 "	      00564c35    test ah,40h"
 "	      00564c38    jne near ptr 00564C5Ah"
@@ -1578,12 +1578,12 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 610:
 	asm( 
-"	      00564c5a    fld dword ptr [ebp+0Ch]"
+"	      00564c5a    fld psi"
 "	      00564c5d    fcomp dword ptr ds:[5939D8h]"
 "	      00564c63    fnstsw ax"
 "	      00564c65    test ah,1"
 "	      00564c68    jne near ptr 00564C82h"
-"	      00564c6e    fld dword ptr [ebp+0Ch]"
+"	      00564c6e    fld psi"
 "	      00564c71    fcomp qword ptr ds:[5939E0h]"
 "	      00564c77    fnstsw ax"
 "	      00564c79    test ah,1"
@@ -1597,10 +1597,10 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 611:
 	asm( 
-"	      00564c9e    fld dword ptr [ebp+0Ch]"
+"	      00564c9e    fld psi"
 "	      00564ca1    fmul dword ptr ds:[5939E8h]"
 "	      00564ca7    fdiv qword ptr ds:[5939E0h]"
-"	      00564cad    fst qword ptr [ebp-8]"
+"	      00564cad    fst mydir"
 );
 // LINE 612:
 	asm( 
@@ -1609,20 +1609,20 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 // LINE 613:
 	asm( 
 "	      00564cb6    fcom qword ptr ds:[5939F8h]"
-"	      00564cbc    fstp qword ptr [ebp-8]"
+"	      00564cbc    fstp mydir"
 "	      00564cbf    fnstsw ax"
 "	      00564cc1    test ah,1"
 "	      00564cc4    je near ptr 00564CD6h"
 );
 // LINE 614:
 	asm( 
-"	      00564cca    fld qword ptr [ebp-8]"
+"	      00564cca    fld mydir"
 "	      00564ccd    fadd qword ptr ds:[593A00h]"
-"	      00564cd3    fstp qword ptr [ebp-8]"
+"	      00564cd3    fstp mydir"
 );
 // LINE 615:
 	asm( 
-"	      00564cd6    fld qword ptr [ebp-8]"
+"	      00564cd6    fld mydir"
 "	      00564cd9    fcomp qword ptr ds:[5939F8h]"
 "	      00564cdf    fnstsw ax"
 "	      00564ce1    test ah,1"
@@ -1632,7 +1632,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 616:
 	asm( 
-"	      00564cf8    fld qword ptr [ebp-8]"
+"	      00564cf8    fld mydir"
 "	      00564cfb    fcomp qword ptr ds:[5939B8h]"
 "	      00564d01    fnstsw ax"
 "	      00564d03    test ah,41h"
@@ -1642,17 +1642,17 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 626:
 	asm( 
-"	      00564d1a    fld qword ptr [ebp-8]"
-"	      00564d1d    fmul qword ptr [ebp-10h]"
+"	      00564d1a    fld mydir"
+"	      00564d1d    fmul widthOverTwo"
 "	      00564d20    fdiv qword ptr ds:[5939B8h]"
-"	      00564d26    fsubr qword ptr [ebp-10h]"
+"	      00564d26    fsubr widthOverTwo"
 "	      00564d29    call 0056EBE8h"
-"	      00564d2e    mov ecx,[ebp+10h]"
+"	      00564d2e    mov ecx,faceCenter"
 "	      00564d31    mov [ecx],eax"
 );
 // LINE 627:
 	asm( 
-"	      00564d33    mov eax,[ebp+10h]"
+"	      00564d33    mov eax,faceCenter"
 "	      00564d36    cmp dword ptr [eax],34h"
 "	      00564d39    jl near ptr 00564D5Bh"
 "	      00564d3f    push 8C085h"
@@ -1664,7 +1664,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 );
 // LINE 628:
 	asm( 
-"	      00564d5b    mov eax,[ebp+10h]"
+"	      00564d5b    mov eax,faceCenter"
 "	      00564d5e    cmp dword ptr [eax],0"
 "	      00564d61    jge near ptr 00564D83h"
 "	      00564d67    push 8C085h"
@@ -1722,7 +1722,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 648:
 	asm( 
-"	      00564d99    mov dword ptr [ebp-64h],0"
+"	      00564d99    mov error,0"
 );
 // LINE 656:
 	asm( 
@@ -1733,7 +1733,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 659:
 	asm( 
-"	      00564db0    cmp dword ptr [ebp+28h],19h"
+"	      00564db0    cmp width,19h"
 "	      00564db4    jle near ptr 00564DBFh"
 );
 // LINE 660:
@@ -1742,7 +1742,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 662:
 	asm( 
-"	      00564dbf    cmp dword ptr [ebp+28h],0"
+"	      00564dbf    cmp width,0"
 "	      00564dc3    jne near ptr 00564DCEh"
 );
 // LINE 663:
@@ -1751,43 +1751,43 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 666:
 	asm( 
-"	      00564dce    cmp dword ptr [ebp+20h],0"
+"	      00564dce    cmp taper,0"
 "	      00564dd2    jne near ptr 00564DDFh"
 );
 // LINE 667:
 	asm( 
-"	      00564dd8    mov dword ptr [ebp+20h],1"
+"	      00564dd8    mov taper,1"
 );
 // LINE 669:
 	asm( 
-"	      00564ddf    mov eax,[ebp+20h]"
-"	      00564de2    cmp [ebp+28h],eax"
+"	      00564ddf    mov eax,taper"
+"	      00564de2    cmp width,eax"
 "	      00564de5    jne near ptr 00564DEEh"
 );
 // LINE 670:
 	asm( 
-"	      00564deb    inc dword ptr [ebp+28h]"
+"	      00564deb    inc width"
 );
 // LINE 677:
 	asm( 
-"	      00564dee    mov dword ptr [ebp-40h],0"
+"	      00564dee    mov i,0"
 "	      00564df5    jmp near ptr 00564DFDh"
-"	      00564dfa    inc dword ptr [ebp-40h]"
-"	      00564dfd    mov eax,[ebp-40h]"
-"	      00564e00    cmp [ebp+28h],eax"
+"	      00564dfa    inc i"
+"	      00564dfd    mov eax,i"
+"	      00564e00    cmp width,eax"
 "	      00564e03    jle near ptr 00564E6Ch"
 );
 // LINE 679:
 	asm( 
-"	      00564e09    fld qword ptr [ebp-2Ch]"
-"	      00564e0c    mov eax,[ebp+28h]"
+"	      00564e09    fld colorLimit"
+"	      00564e0c    mov eax,width"
 "	      00564e0f    mov [ebp-7Ch],eax"
 "	      00564e12    fidiv dword ptr [ebp-7Ch]"
-"	      00564e15    fstp qword ptr [ebp-5Ch]"
+"	      00564e15    fstp step"
 );
 // LINE 680:
 	asm( 
-"	      00564e18    cmp dword ptr [ebp-40h],1Ah"
+"	      00564e18    cmp i,1Ah"
 "	      00564e1c    jl near ptr 00564E3Eh"
 "	      00564e22    push 8C085h"
 "	      00564e27    push 5BF128h"
@@ -1798,16 +1798,16 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 681:
 	asm( 
-"	      00564e3e    mov eax,[ebp-40h]"
+"	      00564e3e    mov eax,i"
 "	      00564e41    mov [ebp-80h],eax"
 "	      00564e44    fild dword ptr [ebp-80h]"
-"	      00564e47    fmul qword ptr [ebp-5Ch]"
+"	      00564e47    fmul step"
 "	      00564e4a    xor eax,eax"
-"	      00564e4c    mov al,[ebp+24h]"
+"	      00564e4c    mov al,color"
 "	      00564e4f    mov [ebp-84h],eax"
 "	      00564e55    fiadd dword ptr [ebp-84h]"
 "	      00564e5b    call 0056EBE8h"
-"	      00564e60    mov ecx,[ebp-40h]"
+"	      00564e60    mov ecx,i"
 "	      00564e63    mov [ebp+ecx-1Ch],al"
 );
 // LINE 682:
@@ -1816,9 +1816,9 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 685:
 	asm( 
-"	      00564e6c    cmp dword ptr [ebp+8],0"
+"	      00564e6c    cmp startPt.x,0"
 "	      00564e70    jl near ptr 00564E80h"
-"	      00564e76    cmp dword ptr [ebp+14h],0"
+"	      00564e76    cmp endPt.x,0"
 "	      00564e7a    jge near ptr 00564E85h"
 );
 // LINE 686:
@@ -1827,9 +1827,9 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 687:
 	asm( 
-"	      00564e85    cmp dword ptr [ebp+0Ch],0"
+"	      00564e85    cmp startPt.y,0"
 "	      00564e89    jl near ptr 00564E99h"
-"	      00564e8f    cmp dword ptr [ebp+18h],0"
+"	      00564e8f    cmp endPt.y,0"
 "	      00564e93    jge near ptr 00564E9Eh"
 );
 // LINE 688:
@@ -1839,16 +1839,16 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 689:
 	asm( 
 "	      00564e9e    mov eax,ds:[5BEF2Ch]"
-"	      00564ea3    mov ecx,[ebp+28h]"
+"	      00564ea3    mov ecx,width"
 "	      00564ea6    dec ecx"
 "	      00564ea7    sub eax,ecx"
-"	      00564ea9    cmp eax,[ebp+8]"
+"	      00564ea9    cmp eax,startPt.x"
 "	      00564eac    jl near ptr 00564EC6h"
 "	      00564eb2    mov eax,ds:[5BEF2Ch]"
-"	      00564eb7    mov ecx,[ebp+28h]"
+"	      00564eb7    mov ecx,width"
 "	      00564eba    dec ecx"
 "	      00564ebb    sub eax,ecx"
-"	      00564ebd    cmp eax,[ebp+14h]"
+"	      00564ebd    cmp eax,endPt.x"
 "	      00564ec0    jge near ptr 00564ECBh"
 );
 // LINE 690:
@@ -1858,16 +1858,16 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 691:
 	asm( 
 "	      00564ecb    mov eax,ds:[5BEF30h]"
-"	      00564ed0    mov ecx,[ebp+28h]"
+"	      00564ed0    mov ecx,width"
 "	      00564ed3    dec ecx"
 "	      00564ed4    sub eax,ecx"
-"	      00564ed6    cmp eax,[ebp+0Ch]"
+"	      00564ed6    cmp eax,startPt.y"
 "	      00564ed9    jl near ptr 00564EF3h"
 "	      00564edf    mov eax,ds:[5BEF30h]"
-"	      00564ee4    mov ecx,[ebp+28h]"
+"	      00564ee4    mov ecx,width"
 "	      00564ee7    dec ecx"
 "	      00564ee8    sub eax,ecx"
-"	      00564eea    cmp eax,[ebp+18h]"
+"	      00564eea    cmp eax,endPt.y"
 "	      00564eed    jge near ptr 00564EF8h"
 );
 // LINE 692:
@@ -1876,24 +1876,24 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 695:
 	asm( 
-"	      00564ef8    mov eax,[ebp+14h]"
-"	      00564efb    sub eax,[ebp+8]"
-"	      00564efe    mov [ebp-6Ch],eax"
+"	      00564ef8    mov eax,endPt.x"
+"	      00564efb    sub eax,startPt.x"
+"	      00564efe    mov dx,eax"
 );
 // LINE 696:
 	asm( 
-"	      00564f01    mov eax,[ebp+18h]"
-"	      00564f04    sub eax,[ebp+0Ch]"
-"	      00564f07    mov [ebp-70h],eax"
+"	      00564f01    mov eax,endPt.y"
+"	      00564f04    sub eax,startPt.y"
+"	      00564f07    mov dy,eax"
 );
 // LINE 699:
 	asm( 
-"	      00564f0a    cmp dword ptr [ebp-6Ch],0"
+"	      00564f0a    cmp dx,0"
 "	      00564f0e    jl near ptr 00564F20h"
 );
 // LINE 700:
 	asm( 
-"	      00564f14    mov dword ptr [ebp-4Ch],1"
+"	      00564f14    mov xInc,1"
 );
 // LINE 701:
 	asm( 
@@ -1901,23 +1901,23 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 703:
 	asm( 
-"	      00564f20    mov dword ptr [ebp-4Ch],0FFFFFFFFh"
+"	      00564f20    mov xInc,0FFFFFFFFh"
 );
 // LINE 704:
 	asm( 
-"	      00564f27    mov eax,[ebp-6Ch]"
+"	      00564f27    mov eax,dx"
 "	      00564f2a    neg eax"
-"	      00564f2c    mov [ebp-6Ch],eax"
+"	      00564f2c    mov dx,eax"
 );
 // LINE 707:
 	asm( 
-"	      00564f2f    cmp dword ptr [ebp-70h],0"
+"	      00564f2f    cmp dy,0"
 "	      00564f33    jl near ptr 00564F46h"
 );
 // LINE 708:
 	asm( 
 "	      00564f39    mov eax,ds:[5BEF28h]"
-"	      00564f3e    mov [ebp-54h],eax"
+"	      00564f3e    mov yInc,eax"
 );
 // LINE 709:
 	asm( 
@@ -1927,97 +1927,97 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	asm( 
 "	      00564f46    mov eax,ds:[5BEF28h]"
 "	      00564f4b    neg eax"
-"	      00564f4d    mov [ebp-54h],eax"
+"	      00564f4d    mov yInc,eax"
 );
 // LINE 712:
 	asm( 
-"	      00564f50    mov eax,[ebp-70h]"
+"	      00564f50    mov eax,dy"
 "	      00564f53    neg eax"
-"	      00564f55    mov [ebp-70h],eax"
+"	      00564f55    mov dy,eax"
 );
 // LINE 717:
 	asm( 
-"	      00564f58    mov eax,[ebp-6Ch]"
-"	      00564f5b    cmp [ebp-70h],eax"
+"	      00564f58    mov eax,dx"
+"	      00564f5b    cmp dy,eax"
 "	      00564f5e    jge near ptr 00565065h"
 );
 // LINE 720:
 	asm( 
-"	      00564f64    mov ecx,[ebp+0Ch]"
-"	      00564f67    mov eax,[ebp+28h]"
+"	      00564f64    mov ecx,startPt.y"
+"	      00564f67    mov eax,width"
 "	      00564f6a    cdq"
 "	      00564f6b    sub eax,edx"
 "	      00564f6d    sar eax,1"
 "	      00564f70    sub ecx,eax"
 "	      00564f72    imul ecx,ds:[5BEF28h]"
-"	      00564f79    add ecx,[ebp+8]"
+"	      00564f79    add ecx,startPt.x"
 "	      00564f7c    add ecx,ds:[598EACh]"
-"	      00564f82    mov [ebp-24h],ecx"
+"	      00564f82    mov writeBuffer,ecx"
 );
 // LINE 722:
 	asm( 
-"	      00564f85    mov eax,[ebp-6Ch]"
-"	      00564f88    mov ecx,[ebp+20h]"
+"	      00564f85    mov eax,dx"
+"	      00564f88    mov ecx,taper"
 "	      00564f8b    inc ecx"
 "	      00564f8c    inc eax"
 "	      00564f8d    cdq"
 "	      00564f8e    idiv ecx"
-"	      00564f90    mov [ebp-34h],eax"
+"	      00564f90    mov segLen,eax"
 );
 // LINE 723:
 	asm( 
-"	      00564f93    cmp dword ptr [ebp-34h],1"
+"	      00564f93    cmp segLen,1"
 "	      00564f97    jge near ptr 00564FA2h"
 "	      00564f9d    jmp near ptr 00565220h"
 );
 // LINE 725:
 	asm( 
-"	      00564fa2    mov dword ptr [ebp-40h],0"
+"	      00564fa2    mov i,0"
 "	      00564fa9    jmp near ptr 00564FB1h"
-"	      00564fae    inc dword ptr [ebp-40h]"
-"	      00564fb1    mov eax,[ebp-6Ch]"
-"	      00564fb4    cmp [ebp-40h],eax"
+"	      00564fae    inc i"
+"	      00564fb1    mov eax,dx"
+"	      00564fb4    cmp i,eax"
 "	      00564fb7    jge near ptr 00565060h"
 );
 // LINE 727:
 	asm( 
-"	      00564fbd    mov eax,[ebp-24h]"
-"	      00564fc0    mov [ebp-30h],eax"
+"	      00564fbd    mov eax,writeBuffer"
+"	      00564fc0    mov writeBufferTmp,eax"
 );
 // LINE 731:
 	asm( 
-"	      00564fc3    mov eax,[ebp-40h]"
+"	      00564fc3    mov eax,i"
 "	      00564fc6    cdq"
-"	      00564fc7    idiv dword ptr [ebp-34h]"
-"	      00564fca    mov [ebp-68h],eax"
+"	      00564fc7    idiv segLen"
+"	      00564fca    mov startWidth,eax"
 );
 // LINE 735:
 	asm( 
-"	      00564fcd    mov eax,[ebp+28h]"
-"	      00564fd0    sub eax,[ebp-68h]"
-"	      00564fd3    mov [ebp-20h],eax"
+"	      00564fcd    mov eax,width"
+"	      00564fd0    sub eax,startWidth"
+"	      00564fd3    mov endWidth,eax"
 );
 // LINE 736:
 	asm( 
-"	      00564fd6    mov eax,[ebp-68h]"
+"	      00564fd6    mov eax,startWidth"
 "	      00564fd9    imul eax,ds:[5BEF28h]"
-"	      00564fe0    add [ebp-30h],eax"
+"	      00564fe0    add writeBufferTmp,eax"
 );
 // LINE 738:
 	asm( 
-"	      00564fe3    mov eax,[ebp-68h]"
-"	      00564fe6    mov [ebp-48h],eax"
+"	      00564fe3    mov eax,startWidth"
+"	      00564fe6    mov j,eax"
 "	      00564fe9    jmp near ptr 00564FF1h"
-"	      00564fee    inc dword ptr [ebp-48h]"
-"	      00564ff1    mov eax,[ebp-48h]"
-"	      00564ff4    cmp [ebp-20h],eax"
+"	      00564fee    inc j"
+"	      00564ff1    mov eax,j"
+"	      00564ff4    cmp endWidth,eax"
 "	      00564ff7    jle near ptr 00565033h"
 );
 // LINE 740:
 	asm( 
 "	      00564ffd    push 0"
 "	      00564fff    push 1"
-"	      00565001    mov eax,[ebp-30h]"
+"	      00565001    mov eax,writeBufferTmp"
 "	      00565004    push eax"
 "	      00565005    call 00563EA0h"
 "	      0056500a    add esp,0Ch"
@@ -2027,15 +2027,15 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 741:
 	asm( 
-"	      0056501a    mov eax,[ebp-48h]"
+"	      0056501a    mov eax,j"
 "	      0056501d    mov al,[ebp+eax-1Ch]"
-"	      00565021    mov ecx,[ebp-30h]"
+"	      00565021    mov ecx,writeBufferTmp"
 "	      00565024    mov [ecx],al"
 );
 // LINE 742:
 	asm( 
 "	      00565026    mov eax,ds:[5BEF28h]"
-"	      0056502b    add [ebp-30h],eax"
+"	      0056502b    add writeBufferTmp,eax"
 );
 // LINE 743:
 	asm( 
@@ -2043,31 +2043,31 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 745:
 	asm( 
-"	      00565033    mov eax,[ebp-70h]"
-"	      00565036    add [ebp-64h],eax"
+"	      00565033    mov eax,dy"
+"	      00565036    add error,eax"
 );
 // LINE 746:
 	asm( 
-"	      00565039    mov eax,[ebp-6Ch]"
-"	      0056503c    cmp [ebp-64h],eax"
+"	      00565039    mov eax,dx"
+"	      0056503c    cmp error,eax"
 "	      0056503f    jle near ptr 00565055h"
 );
 // LINE 748:
 	asm( 
 "	      00565045    xor eax,eax"
-"	      00565047    sub eax,[ebp-6Ch]"
+"	      00565047    sub eax,dx"
 "	      0056504a    neg eax"
-"	      0056504c    sub [ebp-64h],eax"
+"	      0056504c    sub error,eax"
 );
 // LINE 749:
 	asm( 
-"	      0056504f    mov eax,[ebp-54h]"
-"	      00565052    add [ebp-24h],eax"
+"	      0056504f    mov eax,yInc"
+"	      00565052    add writeBuffer,eax"
 );
 // LINE 751:
 	asm( 
-"	      00565055    mov eax,[ebp-4Ch]"
-"	      00565058    add [ebp-24h],eax"
+"	      00565055    mov eax,xInc"
+"	      00565058    add writeBuffer,eax"
 );
 // LINE 752:
 	asm( 
@@ -2079,109 +2079,109 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 756:
 	asm( 
-"	      00565065    mov ecx,[ebp+8]"
-"	      00565068    mov eax,[ebp+28h]"
+"	      00565065    mov ecx,startPt.x"
+"	      00565068    mov eax,width"
 "	      0056506b    cdq"
 "	      0056506c    sub eax,edx"
 "	      0056506e    sar eax,1"
 "	      00565071    sub ecx,eax"
-"	      00565073    mov eax,[ebp+0Ch]"
+"	      00565073    mov eax,startPt.y"
 "	      00565076    imul eax,ds:[5BEF28h]"
 "	      0056507d    add ecx,eax"
 "	      0056507f    add ecx,ds:[598EACh]"
-"	      00565085    mov [ebp-24h],ecx"
+"	      00565085    mov writeBuffer,ecx"
 );
 // LINE 758:
 	asm( 
-"	      00565088    mov eax,[ebp-70h]"
-"	      0056508b    mov ecx,[ebp+20h]"
+"	      00565088    mov eax,dy"
+"	      0056508b    mov ecx,taper"
 "	      0056508e    inc ecx"
 "	      0056508f    inc eax"
 "	      00565090    cdq"
 "	      00565091    idiv ecx"
-"	      00565093    mov [ebp-34h],eax"
+"	      00565093    mov segLen,eax"
 );
 // LINE 759:
 	asm( 
-"	      00565096    cmp dword ptr [ebp-34h],1"
+"	      00565096    cmp segLen,1"
 "	      0056509a    jge near ptr 005650A5h"
 "	      005650a0    jmp near ptr 00565220h"
 );
 // LINE 761:
 	asm( 
-"	      005650a5    cmp dword ptr [ebp-34h],0"
+"	      005650a5    cmp segLen,0"
 "	      005650a9    jne near ptr 005650B6h"
 );
 // LINE 762:
 	asm( 
-"	      005650af    mov dword ptr [ebp-34h],1"
+"	      005650af    mov segLen,1"
 );
 // LINE 764:
 	asm( 
-"	      005650b6    mov dword ptr [ebp-40h],0"
+"	      005650b6    mov i,0"
 "	      005650bd    jmp near ptr 005650C5h"
-"	      005650c2    inc dword ptr [ebp-40h]"
-"	      005650c5    mov eax,[ebp-70h]"
-"	      005650c8    cmp [ebp-40h],eax"
+"	      005650c2    inc i"
+"	      005650c5    mov eax,dy"
+"	      005650c8    cmp i,eax"
 "	      005650cb    jge near ptr 00565220h"
 );
 // LINE 766:
 	asm( 
-"	      005650d1    mov eax,[ebp-24h]"
-"	      005650d4    mov [ebp-30h],eax"
+"	      005650d1    mov eax,writeBuffer"
+"	      005650d4    mov writeBufferTmp,eax"
 );
 // LINE 775:
 	asm( 
-"	      005650d7    mov eax,[ebp-40h]"
+"	      005650d7    mov eax,i"
 "	      005650da    cdq"
-"	      005650db    idiv dword ptr [ebp-34h]"
-"	      005650de    mov [ebp-68h],eax"
+"	      005650db    idiv segLen"
+"	      005650de    mov startWidth,eax"
 );
 // LINE 776:
 	asm( 
-"	      005650e1    mov eax,[ebp+28h]"
-"	      005650e4    sub eax,[ebp-68h]"
-"	      005650e7    mov [ebp-20h],eax"
+"	      005650e1    mov eax,width"
+"	      005650e4    sub eax,startWidth"
+"	      005650e7    mov endWidth,eax"
 );
 // LINE 777:
 	asm( 
-"	      005650ea    mov eax,[ebp-20h]"
-"	      005650ed    sub eax,[ebp-68h]"
-"	      005650f0    mov [ebp-50h],eax"
+"	      005650ea    mov eax,endWidth"
+"	      005650ed    sub eax,startWidth"
+"	      005650f0    mov tapWidth,eax"
 );
 // LINE 778:
 	asm( 
-"	      005650f3    mov eax,[ebp-68h]"
-"	      005650f6    add [ebp-30h],eax"
+"	      005650f3    mov eax,startWidth"
+"	      005650f6    add writeBufferTmp,eax"
 );
 // LINE 780:
 	asm( 
-"	      005650f9    mov eax,[ebp-68h]"
-"	      005650fc    mov [ebp-60h],eax"
+"	      005650f9    mov eax,startWidth"
+"	      005650fc    mov cInc,eax"
 );
 // LINE 786:
 	asm( 
-"	      005650ff    mov eax,[ebp-50h]"
+"	      005650ff    mov eax,tapWidth"
 "	      00565102    and eax,3"
-"	      00565105    mov [ebp-3Ch],eax"
+"	      00565105    mov oneByteWrites,eax"
 );
 // LINE 787:
 	asm( 
-"	      00565108    mov eax,[ebp-50h]"
+"	      00565108    mov eax,tapWidth"
 "	      0056510b    sar eax,2"
-"	      0056510e    mov [ebp-38h],eax"
+"	      0056510e    mov fourByteWrites,eax"
 );
 // LINE 790:
 	asm( 
-"	      00565111    cmp dword ptr [ebp-3Ch],0"
+"	      00565111    cmp oneByteWrites,0"
 "	      00565115    jge near ptr 00565120h"
 "	      0056511b    jmp near ptr 00565220h"
 );
 // LINE 791:
 	asm( 
-"	      00565120    mov eax,[ebp-3Ch]"
+"	      00565120    mov eax,oneByteWrites"
 "	      00565123    mov [ebp-74h],eax"
-"	      00565126    dec dword ptr [ebp-3Ch]"
+"	      00565126    dec oneByteWrites"
 "	      00565129    cmp dword ptr [ebp-74h],0"
 "	      0056512d    je near ptr 0056516Ah"
 );
@@ -2189,7 +2189,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	asm( 
 "	      00565133    push 5BF19Ch"
 "	      00565138    push 1"
-"	      0056513a    mov eax,[ebp-30h]"
+"	      0056513a    mov eax,writeBufferTmp"
 "	      0056513d    push eax"
 "	      0056513e    call 00563EA0h"
 "	      00565143    add esp,0Ch"
@@ -2199,12 +2199,12 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 795:
 	asm( 
-"	      00565153    mov eax,[ebp-60h]"
+"	      00565153    mov eax,cInc"
 "	      00565156    mov al,[ebp+eax-1Ch]"
-"	      0056515a    mov ecx,[ebp-30h]"
+"	      0056515a    mov ecx,writeBufferTmp"
 "	      0056515d    mov [ecx],al"
-"	      0056515f    inc dword ptr [ebp-60h]"
-"	      00565162    inc dword ptr [ebp-30h]"
+"	      0056515f    inc cInc"
+"	      00565162    inc writeBufferTmp"
 );
 // LINE 796:
 	asm( 
@@ -2212,15 +2212,15 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 798:
 	asm( 
-"	      0056516a    cmp dword ptr [ebp-38h],0"
+"	      0056516a    cmp fourByteWrites,0"
 "	      0056516e    jge near ptr 00565179h"
 "	      00565174    jmp near ptr 00565220h"
 );
 // LINE 800:
 	asm( 
-"	      00565179    mov eax,[ebp-38h]"
+"	      00565179    mov eax,fourByteWrites"
 "	      0056517c    mov [ebp-78h],eax"
-"	      0056517f    dec dword ptr [ebp-38h]"
+"	      0056517f    dec fourByteWrites"
 "	      00565182    cmp dword ptr [ebp-78h],0"
 "	      00565186    je near ptr 005651F3h"
 );
@@ -2228,7 +2228,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	asm( 
 "	      0056518c    push 5BF1B0h"
 "	      00565191    push 4"
-"	      00565193    mov eax,[ebp-30h]"
+"	      00565193    mov eax,writeBufferTmp"
 "	      00565196    push eax"
 "	      00565197    call 00563EA0h"
 "	      0056519c    add esp,0Ch"
@@ -2238,35 +2238,35 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 803:
 	asm( 
-"	      005651ac    mov eax,[ebp-60h]"
+"	      005651ac    mov eax,cInc"
 "	      005651af    movsx eax,byte ptr [ebp+eax-1Ah]"
 "	      005651b4    shl eax,10h"
-"	      005651b7    mov ecx,[ebp-60h]"
+"	      005651b7    mov ecx,cInc"
 "	      005651ba    movsx ecx,byte ptr [ebp+ecx-19h]"
 "	      005651bf    shl ecx,18h"
 "	      005651c2    add eax,ecx"
-"	      005651c4    mov ecx,[ebp-60h]"
+"	      005651c4    mov ecx,cInc"
 "	      005651c7    movsx ecx,byte ptr [ebp+ecx-1Bh]"
 "	      005651cc    shl ecx,8"
 "	      005651cf    add eax,ecx"
-"	      005651d1    mov ecx,[ebp-60h]"
+"	      005651d1    mov ecx,cInc"
 "	      005651d4    movsx ecx,byte ptr [ebp+ecx-1Ch]"
 "	      005651d9    add eax,ecx"
-"	      005651db    mov [ebp-44h],eax"
+"	      005651db    mov longColor,eax"
 );
 // LINE 804:
 	asm( 
-"	      005651de    mov eax,[ebp-44h]"
-"	      005651e1    mov ecx,[ebp-30h]"
+"	      005651de    mov eax,longColor"
+"	      005651e1    mov ecx,writeBufferTmp"
 "	      005651e4    mov [ecx],eax"
 );
 // LINE 805:
 	asm( 
-"	      005651e6    add dword ptr [ebp-30h],4"
+"	      005651e6    add writeBufferTmp,4"
 );
 // LINE 806:
 	asm( 
-"	      005651ea    add dword ptr [ebp-60h],4"
+"	      005651ea    add cInc,4"
 );
 // LINE 807:
 	asm( 
@@ -2274,31 +2274,31 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 );
 // LINE 809:
 	asm( 
-"	      005651f3    mov eax,[ebp-6Ch]"
-"	      005651f6    add [ebp-64h],eax"
+"	      005651f3    mov eax,dx"
+"	      005651f6    add error,eax"
 );
 // LINE 810:
 	asm( 
-"	      005651f9    mov eax,[ebp-70h]"
-"	      005651fc    cmp [ebp-64h],eax"
+"	      005651f9    mov eax,dy"
+"	      005651fc    cmp error,eax"
 "	      005651ff    jle near ptr 00565215h"
 );
 // LINE 812:
 	asm( 
 "	      00565205    xor eax,eax"
-"	      00565207    sub eax,[ebp-70h]"
+"	      00565207    sub eax,dy"
 "	      0056520a    neg eax"
-"	      0056520c    sub [ebp-64h],eax"
+"	      0056520c    sub error,eax"
 );
 // LINE 813:
 	asm( 
-"	      0056520f    mov eax,[ebp-4Ch]"
-"	      00565212    add [ebp-24h],eax"
+"	      0056520f    mov eax,xInc"
+"	      00565212    add writeBuffer,eax"
 );
 // LINE 815:
 	asm( 
-"	      00565215    mov eax,[ebp-54h]"
-"	      00565218    add [ebp-24h],eax"
+"	      00565215    mov eax,yInc"
+"	      00565218    add writeBuffer,eax"
 );
 // LINE 816:
 	asm( 
@@ -2344,7 +2344,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 833:
 	asm( 
-"	      0056522e    mov dword ptr [ebp-58h],0"
+"	      0056522e    mov error,0"
 );
 // LINE 836:
 	asm( 
@@ -2355,7 +2355,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 848:
 	asm( 
-"	      00565245    cmp dword ptr [ebp+24h],19h"
+"	      00565245    cmp width,19h"
 "	      00565249    jle near ptr 00565254h"
 );
 // LINE 849:
@@ -2364,7 +2364,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 851:
 	asm( 
-"	      00565254    cmp dword ptr [ebp+24h],0"
+"	      00565254    cmp width,0"
 "	      00565258    jne near ptr 00565263h"
 );
 // LINE 852:
@@ -2373,24 +2373,24 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 855:
 	asm( 
-"	      00565263    mov dword ptr [ebp-38h],0"
+"	      00565263    mov i,0"
 "	      0056526a    jmp near ptr 00565272h"
-"	      0056526f    inc dword ptr [ebp-38h]"
-"	      00565272    mov eax,[ebp+24h]"
-"	      00565275    cmp [ebp-38h],eax"
+"	      0056526f    inc i"
+"	      00565272    mov eax,width"
+"	      00565275    cmp i,eax"
 "	      00565278    jge near ptr 005652DBh"
 );
 // LINE 857:
 	asm( 
-"	      0056527e    fld qword ptr [ebp-28h]"
-"	      00565281    mov eax,[ebp+24h]"
+"	      0056527e    fld colorLimit"
+"	      00565281    mov eax,width"
 "	      00565284    mov [ebp-6Ch],eax"
 "	      00565287    fidiv dword ptr [ebp-6Ch]"
-"	      0056528a    fstp qword ptr [ebp-54h]"
+"	      0056528a    fstp step"
 );
 // LINE 858:
 	asm( 
-"	      0056528d    cmp dword ptr [ebp-38h],1Ah"
+"	      0056528d    cmp i,1Ah"
 "	      00565291    jl near ptr 005652B3h"
 "	      00565297    push 8C085h"
 "	      0056529c    push 5BF1C4h"
@@ -2401,16 +2401,16 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 859:
 	asm( 
-"	      005652b3    mov eax,[ebp-38h]"
+"	      005652b3    mov eax,i"
 "	      005652b6    mov [ebp-70h],eax"
 "	      005652b9    fild dword ptr [ebp-70h]"
-"	      005652bc    fmul qword ptr [ebp-54h]"
+"	      005652bc    fmul step"
 "	      005652bf    xor eax,eax"
-"	      005652c1    mov al,[ebp+20h]"
+"	      005652c1    mov al,color"
 "	      005652c4    mov [ebp-74h],eax"
 "	      005652c7    fiadd dword ptr [ebp-74h]"
 "	      005652ca    call 0056EBE8h"
-"	      005652cf    mov ecx,[ebp-38h]"
+"	      005652cf    mov ecx,i"
 "	      005652d2    mov [ebp+ecx-1Ch],al"
 );
 // LINE 860:
@@ -2419,9 +2419,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 862:
 	asm( 
-"	      005652db    cmp dword ptr [ebp+8],0"
+"	      005652db    cmp startPt.x,0"
 "	      005652df    jl near ptr 005652EFh"
-"	      005652e5    cmp dword ptr [ebp+14h],0"
+"	      005652e5    cmp endPt.x,0"
 "	      005652e9    jge near ptr 005652F4h"
 );
 // LINE 863:
@@ -2430,9 +2430,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 864:
 	asm( 
-"	      005652f4    cmp dword ptr [ebp+0Ch],0"
+"	      005652f4    cmp startPt.y,0"
 "	      005652f8    jl near ptr 00565308h"
-"	      005652fe    cmp dword ptr [ebp+18h],0"
+"	      005652fe    cmp endPt.y,0"
 "	      00565302    jge near ptr 0056530Dh"
 );
 // LINE 865:
@@ -2442,16 +2442,16 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 866:
 	asm( 
 "	      0056530d    mov eax,ds:[5BEF2Ch]"
-"	      00565312    mov ecx,[ebp+24h]"
+"	      00565312    mov ecx,width"
 "	      00565315    dec ecx"
 "	      00565316    sub eax,ecx"
-"	      00565318    cmp eax,[ebp+8]"
+"	      00565318    cmp eax,startPt.x"
 "	      0056531b    jl near ptr 00565335h"
 "	      00565321    mov eax,ds:[5BEF2Ch]"
-"	      00565326    mov ecx,[ebp+24h]"
+"	      00565326    mov ecx,width"
 "	      00565329    dec ecx"
 "	      0056532a    sub eax,ecx"
-"	      0056532c    cmp eax,[ebp+14h]"
+"	      0056532c    cmp eax,endPt.x"
 "	      0056532f    jge near ptr 0056533Ah"
 );
 // LINE 867:
@@ -2461,16 +2461,16 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 868:
 	asm( 
 "	      0056533a    mov eax,ds:[5BEF30h]"
-"	      0056533f    mov ecx,[ebp+24h]"
+"	      0056533f    mov ecx,width"
 "	      00565342    dec ecx"
 "	      00565343    sub eax,ecx"
-"	      00565345    cmp eax,[ebp+0Ch]"
+"	      00565345    cmp eax,startPt.y"
 "	      00565348    jl near ptr 00565362h"
 "	      0056534e    mov eax,ds:[5BEF30h]"
-"	      00565353    mov ecx,[ebp+24h]"
+"	      00565353    mov ecx,width"
 "	      00565356    dec ecx"
 "	      00565357    sub eax,ecx"
-"	      00565359    cmp eax,[ebp+18h]"
+"	      00565359    cmp eax,endPt.y"
 "	      0056535c    jge near ptr 00565367h"
 );
 // LINE 869:
@@ -2479,24 +2479,24 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 871:
 	asm( 
-"	      00565367    mov eax,[ebp+14h]"
-"	      0056536a    sub eax,[ebp+8]"
-"	      0056536d    mov [ebp-5Ch],eax"
+"	      00565367    mov eax,endPt.x"
+"	      0056536a    sub eax,startPt.x"
+"	      0056536d    mov dx,eax"
 );
 // LINE 872:
 	asm( 
-"	      00565370    mov eax,[ebp+18h]"
-"	      00565373    sub eax,[ebp+0Ch]"
-"	      00565376    mov [ebp-60h],eax"
+"	      00565370    mov eax,endPt.y"
+"	      00565373    sub eax,startPt.y"
+"	      00565376    mov dy,eax"
 );
 // LINE 875:
 	asm( 
-"	      00565379    cmp dword ptr [ebp-5Ch],0"
+"	      00565379    cmp dx,0"
 "	      0056537d    jl near ptr 0056538Fh"
 );
 // LINE 876:
 	asm( 
-"	      00565383    mov dword ptr [ebp-44h],1"
+"	      00565383    mov xInc,1"
 );
 // LINE 877:
 	asm( 
@@ -2504,23 +2504,23 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 879:
 	asm( 
-"	      0056538f    mov dword ptr [ebp-44h],0FFFFFFFFh"
+"	      0056538f    mov xInc,0FFFFFFFFh"
 );
 // LINE 880:
 	asm( 
-"	      00565396    mov eax,[ebp-5Ch]"
+"	      00565396    mov eax,dx"
 "	      00565399    neg eax"
-"	      0056539b    mov [ebp-5Ch],eax"
+"	      0056539b    mov dx,eax"
 );
 // LINE 883:
 	asm( 
-"	      0056539e    cmp dword ptr [ebp-60h],0"
+"	      0056539e    cmp dy,0"
 "	      005653a2    jl near ptr 005653B5h"
 );
 // LINE 884:
 	asm( 
 "	      005653a8    mov eax,ds:[5BEF28h]"
-"	      005653ad    mov [ebp-48h],eax"
+"	      005653ad    mov yInc,eax"
 );
 // LINE 885:
 	asm( 
@@ -2530,61 +2530,61 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	asm( 
 "	      005653b5    mov eax,ds:[5BEF28h]"
 "	      005653ba    neg eax"
-"	      005653bc    mov [ebp-48h],eax"
+"	      005653bc    mov yInc,eax"
 );
 // LINE 888:
 	asm( 
-"	      005653bf    mov eax,[ebp-60h]"
+"	      005653bf    mov eax,dy"
 "	      005653c2    neg eax"
-"	      005653c4    mov [ebp-60h],eax"
+"	      005653c4    mov dy,eax"
 );
 // LINE 892:
 	asm( 
-"	      005653c7    mov eax,[ebp-5Ch]"
-"	      005653ca    cmp [ebp-60h],eax"
+"	      005653c7    mov eax,dx"
+"	      005653ca    cmp dy,eax"
 "	      005653cd    jge near ptr 00565498h"
 );
 // LINE 894:
 	asm( 
-"	      005653d3    mov ecx,[ebp+0Ch]"
-"	      005653d6    mov eax,[ebp+24h]"
+"	      005653d3    mov ecx,startPt.y"
+"	      005653d6    mov eax,width"
 "	      005653d9    cdq"
 "	      005653da    sub eax,edx"
 "	      005653dc    sar eax,1"
 "	      005653df    sub ecx,eax"
 "	      005653e1    imul ecx,ds:[5BEF28h]"
-"	      005653e8    add ecx,[ebp+8]"
+"	      005653e8    add ecx,startPt.x"
 "	      005653eb    add ecx,ds:[598EACh]"
-"	      005653f1    mov [ebp-20h],ecx"
+"	      005653f1    mov writeBuffer,ecx"
 );
 // LINE 896:
 	asm( 
-"	      005653f4    mov dword ptr [ebp-38h],0"
+"	      005653f4    mov i,0"
 "	      005653fb    jmp near ptr 00565403h"
-"	      00565400    inc dword ptr [ebp-38h]"
-"	      00565403    mov eax,[ebp-5Ch]"
-"	      00565406    cmp [ebp-38h],eax"
+"	      00565400    inc i"
+"	      00565403    mov eax,dx"
+"	      00565406    cmp i,eax"
 "	      00565409    jge near ptr 00565493h"
 );
 // LINE 898:
 	asm( 
-"	      0056540f    mov eax,[ebp-20h]"
-"	      00565412    mov [ebp-2Ch],eax"
+"	      0056540f    mov eax,writeBuffer"
+"	      00565412    mov writeBufferTmp,eax"
 );
 // LINE 900:
 	asm( 
-"	      00565415    mov dword ptr [ebp-40h],0"
+"	      00565415    mov j,0"
 "	      0056541c    jmp near ptr 00565424h"
-"	      00565421    inc dword ptr [ebp-40h]"
-"	      00565424    mov eax,[ebp+24h]"
-"	      00565427    cmp [ebp-40h],eax"
+"	      00565421    inc j"
+"	      00565424    mov eax,width"
+"	      00565427    cmp j,eax"
 "	      0056542a    jge near ptr 00565466h"
 );
 // LINE 902:
 	asm( 
 "	      00565430    push 0"
 "	      00565432    push 1"
-"	      00565434    mov eax,[ebp-2Ch]"
+"	      00565434    mov eax,writeBufferTmp"
 "	      00565437    push eax"
 "	      00565438    call 00563EA0h"
 "	      0056543d    add esp,0Ch"
@@ -2594,15 +2594,15 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 903:
 	asm( 
-"	      0056544d    mov eax,[ebp-40h]"
+"	      0056544d    mov eax,j"
 "	      00565450    mov al,[ebp+eax-1Ch]"
-"	      00565454    mov ecx,[ebp-2Ch]"
+"	      00565454    mov ecx,writeBufferTmp"
 "	      00565457    mov [ecx],al"
 );
 // LINE 904:
 	asm( 
 "	      00565459    mov eax,ds:[5BEF28h]"
-"	      0056545e    add [ebp-2Ch],eax"
+"	      0056545e    add writeBufferTmp,eax"
 );
 // LINE 905:
 	asm( 
@@ -2610,31 +2610,31 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 907:
 	asm( 
-"	      00565466    mov eax,[ebp-60h]"
-"	      00565469    add [ebp-58h],eax"
+"	      00565466    mov eax,dy"
+"	      00565469    add error,eax"
 );
 // LINE 908:
 	asm( 
-"	      0056546c    mov eax,[ebp-5Ch]"
-"	      0056546f    cmp [ebp-58h],eax"
+"	      0056546c    mov eax,dx"
+"	      0056546f    cmp error,eax"
 "	      00565472    jle near ptr 00565488h"
 );
 // LINE 910:
 	asm( 
 "	      00565478    xor eax,eax"
-"	      0056547a    sub eax,[ebp-5Ch]"
+"	      0056547a    sub eax,dx"
 "	      0056547d    neg eax"
-"	      0056547f    sub [ebp-58h],eax"
+"	      0056547f    sub error,eax"
 );
 // LINE 911:
 	asm( 
-"	      00565482    mov eax,[ebp-48h]"
-"	      00565485    add [ebp-20h],eax"
+"	      00565482    mov eax,yInc"
+"	      00565485    add writeBuffer,eax"
 );
 // LINE 913:
 	asm( 
-"	      00565488    mov eax,[ebp-44h]"
-"	      0056548b    add [ebp-20h],eax"
+"	      00565488    mov eax,xInc"
+"	      0056548b    add writeBuffer,eax"
 );
 // LINE 914:
 	asm( 
@@ -2646,51 +2646,51 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 918:
 	asm( 
-"	      00565498    mov ecx,[ebp+8]"
-"	      0056549b    mov eax,[ebp+24h]"
+"	      00565498    mov ecx,startPt.x"
+"	      0056549b    mov eax,width"
 "	      0056549e    cdq"
 "	      0056549f    sub eax,edx"
 "	      005654a1    sar eax,1"
 "	      005654a4    sub ecx,eax"
-"	      005654a6    mov eax,[ebp+0Ch]"
+"	      005654a6    mov eax,startPt.y"
 "	      005654a9    imul eax,ds:[5BEF28h]"
 "	      005654b0    add ecx,eax"
 "	      005654b2    add ecx,ds:[598EACh]"
-"	      005654b8    mov [ebp-20h],ecx"
+"	      005654b8    mov writeBuffer,ecx"
 );
 // LINE 920:
 	asm( 
-"	      005654bb    mov dword ptr [ebp-38h],0"
+"	      005654bb    mov i,0"
 "	      005654c2    jmp near ptr 005654CAh"
-"	      005654c7    inc dword ptr [ebp-38h]"
-"	      005654ca    mov eax,[ebp-60h]"
-"	      005654cd    cmp [ebp-38h],eax"
+"	      005654c7    inc i"
+"	      005654ca    mov eax,dy"
+"	      005654cd    cmp i,eax"
 "	      005654d0    jge near ptr 0056563Ch"
 );
 // LINE 922:
 	asm( 
-"	      005654d6    mov eax,[ebp-20h]"
-"	      005654d9    mov [ebp-2Ch],eax"
+"	      005654d6    mov eax,writeBuffer"
+"	      005654d9    mov writeBufferTmp,eax"
 );
 // LINE 923:
 	asm( 
-"	      005654dc    mov dword ptr [ebp-4Ch],0"
+"	      005654dc    mov cInc,0"
 );
 // LINE 929:
 	asm( 
-"	      005654e3    mov eax,[ebp+24h]"
+"	      005654e3    mov eax,width"
 "	      005654e6    and eax,3"
-"	      005654e9    mov [ebp-34h],eax"
+"	      005654e9    mov oneByteWrites,eax"
 );
 // LINE 930:
 	asm( 
-"	      005654ec    mov eax,[ebp+24h]"
+"	      005654ec    mov eax,width"
 "	      005654ef    sar eax,2"
-"	      005654f2    mov [ebp-30h],eax"
+"	      005654f2    mov fourByteWrites,eax"
 );
 // LINE 931:
 	asm( 
-"	      005654f5    cmp dword ptr [ebp-34h],0"
+"	      005654f5    cmp oneByteWrites,0"
 "	      005654f9    jge near ptr 00565520h"
 );
 // LINE 932:
@@ -2708,7 +2708,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 935:
 	asm( 
-"	      00565520    cmp dword ptr [ebp-30h],0"
+"	      00565520    cmp fourByteWrites,0"
 "	      00565524    jge near ptr 0056554Bh"
 );
 // LINE 936:
@@ -2726,9 +2726,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 940:
 	asm( 
-"	      0056554b    mov eax,[ebp-34h]"
+"	      0056554b    mov eax,oneByteWrites"
 "	      0056554e    mov [ebp-64h],eax"
-"	      00565551    dec dword ptr [ebp-34h]"
+"	      00565551    dec oneByteWrites"
 "	      00565554    cmp dword ptr [ebp-64h],0"
 "	      00565558    je near ptr 00565595h"
 );
@@ -2736,7 +2736,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	asm( 
 "	      0056555e    push 5BF2B0h"
 "	      00565563    push 1"
-"	      00565565    mov eax,[ebp-2Ch]"
+"	      00565565    mov eax,writeBufferTmp"
 "	      00565568    push eax"
 "	      00565569    call 00563EA0h"
 "	      0056556e    add esp,0Ch"
@@ -2746,12 +2746,12 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 944:
 	asm( 
-"	      0056557e    mov eax,[ebp-4Ch]"
+"	      0056557e    mov eax,cInc"
 "	      00565581    mov al,[ebp+eax-1Ch]"
-"	      00565585    mov ecx,[ebp-2Ch]"
+"	      00565585    mov ecx,writeBufferTmp"
 "	      00565588    mov [ecx],al"
-"	      0056558a    inc dword ptr [ebp-4Ch]"
-"	      0056558d    inc dword ptr [ebp-2Ch]"
+"	      0056558a    inc cInc"
+"	      0056558d    inc writeBufferTmp"
 );
 // LINE 945:
 	asm( 
@@ -2759,9 +2759,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 947:
 	asm( 
-"	      00565595    mov eax,[ebp-30h]"
+"	      00565595    mov eax,fourByteWrites"
 "	      00565598    mov [ebp-68h],eax"
-"	      0056559b    dec dword ptr [ebp-30h]"
+"	      0056559b    dec fourByteWrites"
 "	      0056559e    cmp dword ptr [ebp-68h],0"
 "	      005655a2    je near ptr 0056560Fh"
 );
@@ -2769,7 +2769,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	asm( 
 "	      005655a8    push 5BF2BCh"
 "	      005655ad    push 4"
-"	      005655af    mov eax,[ebp-2Ch]"
+"	      005655af    mov eax,writeBufferTmp"
 "	      005655b2    push eax"
 "	      005655b3    call 00563EA0h"
 "	      005655b8    add esp,0Ch"
@@ -2779,35 +2779,35 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 950:
 	asm( 
-"	      005655c8    mov eax,[ebp-4Ch]"
+"	      005655c8    mov eax,cInc"
 "	      005655cb    movsx eax,byte ptr [ebp+eax-1Ah]"
 "	      005655d0    shl eax,10h"
-"	      005655d3    mov ecx,[ebp-4Ch]"
+"	      005655d3    mov ecx,cInc"
 "	      005655d6    movsx ecx,byte ptr [ebp+ecx-19h]"
 "	      005655db    shl ecx,18h"
 "	      005655de    add eax,ecx"
-"	      005655e0    mov ecx,[ebp-4Ch]"
+"	      005655e0    mov ecx,cInc"
 "	      005655e3    movsx ecx,byte ptr [ebp+ecx-1Bh]"
 "	      005655e8    shl ecx,8"
 "	      005655eb    add eax,ecx"
-"	      005655ed    mov ecx,[ebp-4Ch]"
+"	      005655ed    mov ecx,cInc"
 "	      005655f0    movsx ecx,byte ptr [ebp+ecx-1Ch]"
 "	      005655f5    add eax,ecx"
-"	      005655f7    mov [ebp-3Ch],eax"
+"	      005655f7    mov longColor,eax"
 );
 // LINE 951:
 	asm( 
-"	      005655fa    mov eax,[ebp-3Ch]"
-"	      005655fd    mov ecx,[ebp-2Ch]"
+"	      005655fa    mov eax,longColor"
+"	      005655fd    mov ecx,writeBufferTmp"
 "	      00565600    mov [ecx],eax"
 );
 // LINE 952:
 	asm( 
-"	      00565602    add dword ptr [ebp-2Ch],4"
+"	      00565602    add writeBufferTmp,4"
 );
 // LINE 953:
 	asm( 
-"	      00565606    add dword ptr [ebp-4Ch],4"
+"	      00565606    add cInc,4"
 );
 // LINE 954:
 	asm( 
@@ -2815,31 +2815,31 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 );
 // LINE 956:
 	asm( 
-"	      0056560f    mov eax,[ebp-5Ch]"
-"	      00565612    add [ebp-58h],eax"
+"	      0056560f    mov eax,dx"
+"	      00565612    add error,eax"
 );
 // LINE 957:
 	asm( 
-"	      00565615    mov eax,[ebp-60h]"
-"	      00565618    cmp [ebp-58h],eax"
+"	      00565615    mov eax,dy"
+"	      00565618    cmp error,eax"
 "	      0056561b    jle near ptr 00565631h"
 );
 // LINE 959:
 	asm( 
 "	      00565621    xor eax,eax"
-"	      00565623    sub eax,[ebp-60h]"
+"	      00565623    sub eax,dy"
 "	      00565626    neg eax"
-"	      00565628    sub [ebp-58h],eax"
+"	      00565628    sub error,eax"
 );
 // LINE 960:
 	asm( 
-"	      0056562b    mov eax,[ebp-44h]"
-"	      0056562e    add [ebp-20h],eax"
+"	      0056562b    mov eax,xInc"
+"	      0056562e    add writeBuffer,eax"
 );
 // LINE 962:
 	asm( 
-"	      00565631    mov eax,[ebp-48h]"
-"	      00565634    add [ebp-20h],eax"
+"	      00565631    mov eax,yInc"
+"	      00565634    add writeBuffer,eax"
 );
 // LINE 963:
 	asm( 
@@ -2891,27 +2891,27 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 992:
 	asm( 
-"	      00565664    fld qword ptr [ebp+1Ch]"
+"	      00565664    fld xStride"
 "	      00565667    fmul qword ptr ds:[5939C0h]"
-"	      0056566d    fstp qword ptr [ebp-28h]"
+"	      0056566d    fstp stride2"
 );
 // LINE 993:
 	asm( 
-"	      00565670    fld qword ptr [ebp+1Ch]"
+"	      00565670    fld xStride"
 "	      00565673    fmul qword ptr ds:[593A10h]"
-"	      00565679    fstp qword ptr [ebp-30h]"
+"	      00565679    fstp stride3"
 );
 // LINE 994:
 	asm( 
-"	      0056567c    fld qword ptr [ebp+1Ch]"
+"	      0056567c    fld xStride"
 "	      0056567f    fmul qword ptr ds:[5939B8h]"
-"	      00565685    fstp qword ptr [ebp-0Ch]"
+"	      00565685    fstp stride4"
 );
 // LINE 997:
 	asm( 
-"	      00565688    cmp dword ptr [ebp+8],0"
+"	      00565688    cmp startX,0"
 "	      0056568c    jl near ptr 0056569Ch"
-"	      00565692    cmp dword ptr [ebp+0Ch],0"
+"	      00565692    cmp endX,0"
 "	      00565696    jge near ptr 005656A1h"
 );
 // LINE 998:
@@ -2920,7 +2920,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 999:
 	asm( 
-"	      005656a1    cmp dword ptr [ebp+10h],0"
+"	      005656a1    cmp yPos,0"
 "	      005656a5    jge near ptr 005656B0h"
 );
 // LINE 1000:
@@ -2929,10 +2929,10 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1001:
 	asm( 
-"	      005656b0    mov eax,[ebp+8]"
+"	      005656b0    mov eax,startX"
 "	      005656b3    cmp ds:[5BEF2Ch],eax"
 "	      005656b9    jl near ptr 005656CEh"
-"	      005656bf    mov eax,[ebp+0Ch]"
+"	      005656bf    mov eax,endX"
 "	      005656c2    cmp ds:[5BEF2Ch],eax"
 "	      005656c8    jge near ptr 005656D3h"
 );
@@ -2942,7 +2942,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1003:
 	asm( 
-"	      005656d3    mov eax,[ebp+10h]"
+"	      005656d3    mov eax,yPos"
 "	      005656d6    cmp ds:[5BEF30h],eax"
 "	      005656dc    jge near ptr 005656E7h"
 );
@@ -2952,34 +2952,34 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1006:
 	asm( 
-"	      005656e7    mov eax,[ebp+10h]"
+"	      005656e7    mov eax,yPos"
 "	      005656ea    imul eax,ds:[5BEF28h]"
-"	      005656f1    add eax,[ebp+8]"
+"	      005656f1    add eax,startX"
 "	      005656f4    add eax,ds:[598EACh]"
-"	      005656fa    mov [ebp-4],eax"
+"	      005656fa    mov writeBuffer,eax"
 );
 // LINE 1008:
 	asm( 
-"	      005656fd    mov eax,[ebp+0Ch]"
-"	      00565700    sub eax,[ebp+8]"
+"	      005656fd    mov eax,endX"
+"	      00565700    sub eax,startX"
 "	      00565703    inc eax"
-"	      00565704    mov [ebp-34h],eax"
+"	      00565704    mov dx,eax"
 );
 // LINE 1015:
 	asm( 
-"	      00565707    mov eax,[ebp-34h]"
+"	      00565707    mov eax,dx"
 "	      0056570a    and eax,3"
-"	      0056570d    mov [ebp-1Ch],eax"
+"	      0056570d    mov oneByteWrites,eax"
 );
 // LINE 1016:
 	asm( 
-"	      00565710    mov eax,[ebp-34h]"
+"	      00565710    mov eax,dx"
 "	      00565713    sar eax,2"
-"	      00565716    mov [ebp-10h],eax"
+"	      00565716    mov fourByteWrites,eax"
 );
 // LINE 1018:
 	asm( 
-"	      00565719    cmp dword ptr [ebp-1Ch],0"
+"	      00565719    cmp oneByteWrites,0"
 "	      0056571d    jge near ptr 00565744h"
 );
 // LINE 1019:
@@ -2997,7 +2997,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1022:
 	asm( 
-"	      00565744    cmp dword ptr [ebp-10h],0"
+"	      00565744    cmp fourByteWrites,0"
 "	      00565748    jge near ptr 0056576Fh"
 );
 // LINE 1023:
@@ -3015,9 +3015,9 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1027:
 	asm( 
-"	      0056576f    mov eax,[ebp-1Ch]"
+"	      0056576f    mov eax,oneByteWrites"
 "	      00565772    mov [ebp-40h],eax"
-"	      00565775    dec dword ptr [ebp-1Ch]"
+"	      00565775    dec oneByteWrites"
 "	      00565778    cmp dword ptr [ebp-40h],0"
 "	      0056577c    je near ptr 005657CFh"
 );
@@ -3025,7 +3025,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	asm( 
 "	      00565782    push 5BF384h"
 "	      00565787    push 1"
-"	      00565789    mov eax,[ebp-4]"
+"	      00565789    mov eax,writeBuffer"
 "	      0056578c    push eax"
 "	      0056578d    call 00563EA0h"
 "	      00565792    add esp,0Ch"
@@ -3035,23 +3035,23 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1031:
 	asm( 
-"	      005657a2    fld qword ptr [ebp-18h]"
+"	      005657a2    fld curPatOffset"
 "	      005657a5    call 0056EBE8h"
-"	      005657aa    mov ecx,[ebp+14h]"
+"	      005657aa    mov ecx,pixPtr"
 "	      005657ad    xor edx,edx"
 "	      005657af    mov dl,[ecx+eax]"
 "	      005657b2    xor eax,eax"
-"	      005657b4    mov al,[ebp+18h]"
+"	      005657b4    mov al,colorShift"
 "	      005657b7    add edx,eax"
-"	      005657b9    mov eax,[ebp-4]"
+"	      005657b9    mov eax,writeBuffer"
 "	      005657bc    mov [eax],dl"
-"	      005657be    inc dword ptr [ebp-4]"
+"	      005657be    inc writeBuffer"
 );
 // LINE 1032:
 	asm( 
-"	      005657c1    fld qword ptr [ebp-3Ch]"
-"	      005657c4    fadd qword ptr [ebp-18h]"
-"	      005657c7    fstp qword ptr [ebp-18h]"
+"	      005657c1    fld stride1"
+"	      005657c4    fadd curPatOffset"
+"	      005657c7    fstp curPatOffset"
 );
 // LINE 1033:
 	asm( 
@@ -3059,9 +3059,9 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1036:
 	asm( 
-"	      005657cf    mov eax,[ebp-10h]"
+"	      005657cf    mov eax,fourByteWrites"
 "	      005657d2    mov [ebp-44h],eax"
-"	      005657d5    dec dword ptr [ebp-10h]"
+"	      005657d5    dec fourByteWrites"
 "	      005657d8    cmp dword ptr [ebp-44h],0"
 "	      005657dc    je near ptr 00565893h"
 );
@@ -3069,7 +3069,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	asm( 
 "	      005657e2    push 5BF394h"
 "	      005657e7    push 4"
-"	      005657e9    mov eax,[ebp-4]"
+"	      005657e9    mov eax,writeBuffer"
 "	      005657ec    push eax"
 "	      005657ed    call 00563EA0h"
 "	      005657f2    add esp,0Ch"
@@ -3079,64 +3079,64 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 1042:
 	asm( 
-"	      00565802    fld qword ptr [ebp-28h]"
-"	      00565805    fadd qword ptr [ebp-18h]"
+"	      00565802    fld stride2"
+"	      00565805    fadd curPatOffset"
 "	      00565808    call 0056EBE8h"
-"	      0056580d    mov ecx,[ebp+14h]"
+"	      0056580d    mov ecx,pixPtr"
 "	      00565810    xor ebx,ebx"
 "	      00565812    mov bl,[ecx+eax]"
 "	      00565815    xor eax,eax"
-"	      00565817    mov al,[ebp+18h]"
+"	      00565817    mov al,colorShift"
 "	      0056581a    add ebx,eax"
 "	      0056581c    shl ebx,10h"
-"	      0056581f    fld qword ptr [ebp-30h]"
-"	      00565822    fadd qword ptr [ebp-18h]"
+"	      0056581f    fld stride3"
+"	      00565822    fadd curPatOffset"
 "	      00565825    call 0056EBE8h"
-"	      0056582a    mov ecx,[ebp+14h]"
+"	      0056582a    mov ecx,pixPtr"
 "	      0056582d    xor edx,edx"
 "	      0056582f    mov dl,[ecx+eax]"
 "	      00565832    xor eax,eax"
-"	      00565834    mov al,[ebp+18h]"
+"	      00565834    mov al,colorShift"
 "	      00565837    add edx,eax"
 "	      00565839    shl edx,18h"
 "	      0056583c    add ebx,edx"
-"	      0056583e    fld qword ptr [ebp-3Ch]"
-"	      00565841    fadd qword ptr [ebp-18h]"
+"	      0056583e    fld stride1"
+"	      00565841    fadd curPatOffset"
 "	      00565844    call 0056EBE8h"
-"	      00565849    mov ecx,[ebp+14h]"
+"	      00565849    mov ecx,pixPtr"
 "	      0056584c    xor edx,edx"
 "	      0056584e    mov dl,[ecx+eax]"
 "	      00565851    xor eax,eax"
-"	      00565853    mov al,[ebp+18h]"
+"	      00565853    mov al,colorShift"
 "	      00565856    add edx,eax"
 "	      00565858    shl edx,8"
 "	      0056585b    add ebx,edx"
-"	      0056585d    fld qword ptr [ebp-18h]"
+"	      0056585d    fld curPatOffset"
 "	      00565860    call 0056EBE8h"
-"	      00565865    mov ecx,[ebp+14h]"
+"	      00565865    mov ecx,pixPtr"
 "	      00565868    xor edx,edx"
 "	      0056586a    mov dl,[ecx+eax]"
 "	      0056586d    add ebx,edx"
 "	      0056586f    xor eax,eax"
-"	      00565871    mov al,[ebp+18h]"
+"	      00565871    mov al,colorShift"
 "	      00565874    add ebx,eax"
-"	      00565876    mov [ebp-20h],ebx"
+"	      00565876    mov longColor,ebx"
 );
 // LINE 1044:
 	asm( 
-"	      00565879    mov eax,[ebp-20h]"
-"	      0056587c    mov ecx,[ebp-4]"
+"	      00565879    mov eax,longColor"
+"	      0056587c    mov ecx,writeBuffer"
 "	      0056587f    mov [ecx],eax"
 );
 // LINE 1045:
 	asm( 
-"	      00565881    add dword ptr [ebp-4],4"
+"	      00565881    add writeBuffer,4"
 );
 // LINE 1046:
 	asm( 
-"	      00565885    fld qword ptr [ebp-0Ch]"
-"	      00565888    fadd qword ptr [ebp-18h]"
-"	      0056588b    fstp qword ptr [ebp-18h]"
+"	      00565885    fld stride4"
+"	      00565888    fadd curPatOffset"
+"	      0056588b    fstp curPatOffset"
 );
 // LINE 1047:
 	asm( 
@@ -3171,9 +3171,9 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1075:
 	asm( 
-"	      005658a1    cmp dword ptr [ebp+8],0"
+"	      005658a1    cmp startX,0"
 "	      005658a5    jl near ptr 005658B5h"
-"	      005658ab    cmp dword ptr [ebp+0Ch],0"
+"	      005658ab    cmp endX,0"
 "	      005658af    jge near ptr 005658BAh"
 );
 // LINE 1076:
@@ -3182,7 +3182,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1077:
 	asm( 
-"	      005658ba    cmp dword ptr [ebp+10h],0"
+"	      005658ba    cmp yPos,0"
 "	      005658be    jge near ptr 005658C9h"
 );
 // LINE 1078:
@@ -3192,10 +3192,10 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 // LINE 1079:
 	asm( 
 "	      005658c9    mov eax,ds:[5BEF2Ch]"
-"	      005658ce    cmp [ebp+8],eax"
+"	      005658ce    cmp startX,eax"
 "	      005658d1    jg near ptr 005658E5h"
 "	      005658d7    mov eax,ds:[5BEF2Ch]"
-"	      005658dc    cmp [ebp+0Ch],eax"
+"	      005658dc    cmp endX,eax"
 "	      005658df    jle near ptr 005658EAh"
 );
 // LINE 1080:
@@ -3205,7 +3205,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 // LINE 1081:
 	asm( 
 "	      005658ea    mov eax,ds:[5BEF30h]"
-"	      005658ef    cmp [ebp+10h],eax"
+"	      005658ef    cmp yPos,eax"
 "	      005658f2    jle near ptr 005658FDh"
 );
 // LINE 1082:
@@ -3214,52 +3214,52 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1084:
 	asm( 
-"	      005658fd    mov eax,[ebp+10h]"
+"	      005658fd    mov eax,yPos"
 "	      00565900    imul eax,ds:[5BEF28h]"
-"	      00565907    add eax,[ebp+8]"
+"	      00565907    add eax,startX"
 "	      0056590a    add eax,ds:[598EACh]"
-"	      00565910    mov [ebp-4],eax"
+"	      00565910    mov writeBuffer,eax"
 );
 // LINE 1086:
 	asm( 
-"	      00565913    mov eax,[ebp+0Ch]"
-"	      00565916    sub eax,[ebp+8]"
+"	      00565913    mov eax,endX"
+"	      00565916    sub eax,startX"
 "	      00565919    inc eax"
-"	      0056591a    mov [ebp-14h],eax"
+"	      0056591a    mov dx,eax"
 );
 // LINE 1088:
 	asm( 
 "	      0056591d    xor eax,eax"
-"	      0056591f    mov al,[ebp+14h]"
+"	      0056591f    mov al,color"
 "	      00565922    shl eax,18h"
 "	      00565925    xor ecx,ecx"
-"	      00565927    mov cl,[ebp+14h]"
+"	      00565927    mov cl,color"
 "	      0056592a    shl ecx,8"
 "	      0056592d    add eax,ecx"
 "	      0056592f    xor ecx,ecx"
-"	      00565931    mov cl,[ebp+14h]"
+"	      00565931    mov cl,color"
 "	      00565934    shl ecx,10h"
 "	      00565937    add eax,ecx"
 "	      00565939    xor ecx,ecx"
-"	      0056593b    mov cl,[ebp+14h]"
+"	      0056593b    mov cl,color"
 "	      0056593e    add eax,ecx"
-"	      00565940    mov [ebp-8],eax"
+"	      00565940    mov fourByteColor,eax"
 );
 // LINE 1097:
 	asm( 
-"	      00565943    mov eax,[ebp-14h]"
+"	      00565943    mov eax,dx"
 "	      00565946    and eax,3"
-"	      00565949    mov [ebp-10h],eax"
+"	      00565949    mov oneByteWrites,eax"
 );
 // LINE 1098:
 	asm( 
-"	      0056594c    mov eax,[ebp-14h]"
+"	      0056594c    mov eax,dx"
 "	      0056594f    sar eax,2"
-"	      00565952    mov [ebp-0Ch],eax"
+"	      00565952    mov fourByteWrites,eax"
 );
 // LINE 1099:
 	asm( 
-"	      00565955    cmp dword ptr [ebp-10h],0"
+"	      00565955    cmp oneByteWrites,0"
 "	      00565959    jge near ptr 00565980h"
 );
 // LINE 1100:
@@ -3277,7 +3277,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1103:
 	asm( 
-"	      00565980    cmp dword ptr [ebp-0Ch],0"
+"	      00565980    cmp fourByteWrites,0"
 "	      00565984    jge near ptr 005659ABh"
 );
 // LINE 1104:
@@ -3295,9 +3295,9 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1108:
 	asm( 
-"	      005659ab    mov eax,[ebp-10h]"
+"	      005659ab    mov eax,oneByteWrites"
 "	      005659ae    mov [ebp-18h],eax"
-"	      005659b1    dec dword ptr [ebp-10h]"
+"	      005659b1    dec oneByteWrites"
 "	      005659b4    cmp dword ptr [ebp-18h],0"
 "	      005659b8    je near ptr 005659EEh"
 );
@@ -3305,7 +3305,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	asm( 
 "	      005659be    push 5BF458h"
 "	      005659c3    push 1"
-"	      005659c5    mov eax,[ebp-4]"
+"	      005659c5    mov eax,writeBuffer"
 "	      005659c8    push eax"
 "	      005659c9    call 00563EA0h"
 "	      005659ce    add esp,0Ch"
@@ -3315,10 +3315,10 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1112:
 	asm( 
-"	      005659de    mov al,[ebp+14h]"
-"	      005659e1    mov ecx,[ebp-4]"
+"	      005659de    mov al,color"
+"	      005659e1    mov ecx,writeBuffer"
 "	      005659e4    mov [ecx],al"
-"	      005659e6    inc dword ptr [ebp-4]"
+"	      005659e6    inc writeBuffer"
 );
 // LINE 1113:
 	asm( 
@@ -3326,9 +3326,9 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1115:
 	asm( 
-"	      005659ee    mov eax,[ebp-0Ch]"
+"	      005659ee    mov eax,fourByteWrites"
 "	      005659f1    mov [ebp-1Ch],eax"
-"	      005659f4    dec dword ptr [ebp-0Ch]"
+"	      005659f4    dec fourByteWrites"
 "	      005659f7    cmp dword ptr [ebp-1Ch],0"
 "	      005659fb    je near ptr 00565A32h"
 );
@@ -3336,7 +3336,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	asm( 
 "	      00565a01    push 5BF468h"
 "	      00565a06    push 4"
-"	      00565a08    mov eax,[ebp-4]"
+"	      00565a08    mov eax,writeBuffer"
 "	      00565a0b    push eax"
 "	      00565a0c    call 00563EA0h"
 "	      00565a11    add esp,0Ch"
@@ -3346,13 +3346,13 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 );
 // LINE 1118:
 	asm( 
-"	      00565a21    mov eax,[ebp-8]"
-"	      00565a24    mov ecx,[ebp-4]"
+"	      00565a21    mov eax,fourByteColor"
+"	      00565a24    mov ecx,writeBuffer"
 "	      00565a27    mov [ecx],eax"
 );
 // LINE 1119:
 	asm( 
-"	      00565a29    add dword ptr [ebp-4],4"
+"	      00565a29    add writeBuffer,4"
 );
 // LINE 1120:
 	asm( 

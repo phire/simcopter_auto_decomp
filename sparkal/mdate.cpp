@@ -18,10 +18,10 @@ void MDate::MDate() {
 "	      004bc466    push ebx"
 "	      004bc467    push esi"
 "	      004bc468    push edi"
-"	      004bc469    mov [ebp-0Ch],ecx"
-"	      004bc46c    mov eax,[ebp-0Ch]"
+"	      004bc469    mov this,ecx"
+"	      004bc46c    mov eax,this"
 "	      004bc46f    mov dword ptr [eax+8],0"
-"	      004bc476    mov eax,[ebp-0Ch]"
+"	      004bc476    mov eax,this"
 "	      004bc479    mov dword ptr [eax],58F3E8h"
 );
 // LINE 76:
@@ -29,38 +29,38 @@ void MDate::MDate() {
 "	      004bc47f    push 0"
 "	      004bc481    call 0056EF00h"
 "	      004bc486    add esp,4"
-"	      004bc489    mov [ebp-4],eax"
+"	      004bc489    mov clk,eax"
 );
 // LINE 77:
 	asm( 
-"	      004bc48c    lea eax,[ebp-4]"
+"	      004bc48c    lea eax,clk"
 "	      004bc48f    push eax"
 "	      004bc490    call 0056ECA0h"
 "	      004bc495    add esp,4"
-"	      004bc498    mov [ebp-8],eax"
+"	      004bc498    mov now,eax"
 );
 // LINE 78:
 	asm( 
-"	      004bc49b    mov eax,[ebp-8]"
+"	      004bc49b    mov eax,now"
 "	      004bc49e    mov eax,[eax+14h]"
 "	      004bc4a1    add eax,76Ch"
 "	      004bc4a6    push eax"
-"	      004bc4a7    mov eax,[ebp-8]"
+"	      004bc4a7    mov eax,now"
 "	      004bc4aa    mov eax,[eax+0Ch]"
 "	      004bc4ad    push eax"
-"	      004bc4ae    mov eax,[ebp-8]"
+"	      004bc4ae    mov eax,now"
 "	      004bc4b1    mov eax,[eax+10h]"
 "	      004bc4b4    inc eax"
 "	      004bc4b5    push eax"
 "	      004bc4b6    call 004BC7C6h"
 "	      004bc4bb    add esp,0Ch"
-"	      004bc4be    mov ecx,[ebp-0Ch]"
+"	      004bc4be    mov ecx,this"
 "	      004bc4c1    mov [ecx+4],eax"
 );
 // LINE 79:
 	asm( 
 "	      004bc4c4    jmp near ptr 004BC4C9h"
-"	      004bc4c9    mov eax,[ebp-0Ch]"
+"	      004bc4c9    mov eax,this"
 "	      004bc4cc    pop edi"
 "	      004bc4cd    pop esi"
 "	      004bc4ce    pop ebx"
@@ -79,29 +79,29 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 "	      004bc4d7    push ebx"
 "	      004bc4d8    push esi"
 "	      004bc4d9    push edi"
-"	      004bc4da    mov [ebp-4],ecx"
-"	      004bc4dd    mov eax,[ebp-4]"
+"	      004bc4da    mov this,ecx"
+"	      004bc4dd    mov eax,this"
 "	      004bc4e0    mov dword ptr [eax+8],0"
-"	      004bc4e7    mov eax,[ebp-4]"
+"	      004bc4e7    mov eax,this"
 "	      004bc4ea    mov dword ptr [eax],58F3E8h"
 );
 // LINE 95:
 	asm( 
-"	      004bc4f0    cmp dword ptr [ebp+0Ch],0"
+"	      004bc4f0    cmp year,0"
 "	      004bc4f4    je near ptr 004BC51Bh"
 );
 // LINE 96:
 	asm( 
-"	      004bc4fa    mov eax,[ebp+0Ch]"
+"	      004bc4fa    mov eax,year"
 "	      004bc4fd    dec eax"
 "	      004bc4fe    push eax"
 "	      004bc4ff    push 1Fh"
 "	      004bc501    push 0Ch"
 "	      004bc503    call 004BC7C6h"
 "	      004bc508    add esp,0Ch"
-"	      004bc50b    mov ecx,[ebp+8]"
+"	      004bc50b    mov ecx,day"
 "	      004bc50e    add ecx,eax"
-"	      004bc510    mov eax,[ebp-4]"
+"	      004bc510    mov eax,this"
 "	      004bc513    mov [eax+4],ecx"
 );
 // LINE 97:
@@ -110,15 +110,15 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 );
 // LINE 98:
 	asm( 
-"	      004bc51b    mov eax,[ebp+8]"
+"	      004bc51b    mov eax,day"
 "	      004bc51e    add eax,24DB1Ah"
-"	      004bc523    mov ecx,[ebp-4]"
+"	      004bc523    mov ecx,this"
 "	      004bc526    mov [ecx+4],eax"
 );
 // LINE 99:
 	asm( 
 "	      004bc529    jmp near ptr 004BC52Eh"
-"	      004bc52e    mov eax,[ebp-4]"
+"	      004bc52e    mov eax,this"
 "	      004bc531    pop edi"
 "	      004bc532    pop esi"
 "	      004bc533    pop ebx"
@@ -137,32 +137,32 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 "	      004bc53e    push ebx"
 "	      004bc53f    push esi"
 "	      004bc540    push edi"
-"	      004bc541    mov [ebp-4],ecx"
-"	      004bc544    mov eax,[ebp-4]"
+"	      004bc541    mov this,ecx"
+"	      004bc544    mov eax,this"
 "	      004bc547    mov dword ptr [eax+8],0"
-"	      004bc54e    mov eax,[ebp-4]"
+"	      004bc54e    mov eax,this"
 "	      004bc551    mov dword ptr [eax],58F3E8h"
 );
 // LINE 113:
 	asm( 
-"	      004bc557    mov eax,[ebp+10h]"
+"	      004bc557    mov eax,year"
 "	      004bc55a    push eax"
-"	      004bc55b    mov eax,[ebp+8]"
+"	      004bc55b    mov eax,day"
 "	      004bc55e    push eax"
-"	      004bc55f    mov eax,[ebp+0Ch]"
+"	      004bc55f    mov eax,monthName"
 "	      004bc562    push eax"
 "	      004bc563    call 004BC7A2h"
 "	      004bc568    add esp,4"
 "	      004bc56b    push eax"
 "	      004bc56c    call 004BC7C6h"
 "	      004bc571    add esp,0Ch"
-"	      004bc574    mov ecx,[ebp-4]"
+"	      004bc574    mov ecx,this"
 "	      004bc577    mov [ecx+4],eax"
 );
 // LINE 114:
 	asm( 
 "	      004bc57a    jmp near ptr 004BC57Fh"
-"	      004bc57f    mov eax,[ebp-4]"
+"	      004bc57f    mov eax,this"
 "	      004bc582    pop edi"
 "	      004bc583    pop esi"
 "	      004bc584    pop ebx"
@@ -181,29 +181,29 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 "	      004bc58f    push ebx"
 "	      004bc590    push esi"
 "	      004bc591    push edi"
-"	      004bc592    mov [ebp-4],ecx"
-"	      004bc595    mov eax,[ebp-4]"
+"	      004bc592    mov this,ecx"
+"	      004bc595    mov eax,this"
 "	      004bc598    mov dword ptr [eax+8],0"
-"	      004bc59f    mov eax,[ebp-4]"
+"	      004bc59f    mov eax,this"
 "	      004bc5a2    mov dword ptr [eax],58F3E8h"
 );
 // LINE 128:
 	asm( 
-"	      004bc5a8    mov eax,[ebp+10h]"
+"	      004bc5a8    mov eax,year"
 "	      004bc5ab    push eax"
-"	      004bc5ac    mov eax,[ebp+8]"
+"	      004bc5ac    mov eax,day"
 "	      004bc5af    push eax"
-"	      004bc5b0    mov eax,[ebp+0Ch]"
+"	      004bc5b0    mov eax,month"
 "	      004bc5b3    push eax"
 "	      004bc5b4    call 004BC7C6h"
 "	      004bc5b9    add esp,0Ch"
-"	      004bc5bc    mov ecx,[ebp-4]"
+"	      004bc5bc    mov ecx,this"
 "	      004bc5bf    mov [ecx+4],eax"
 );
 // LINE 129:
 	asm( 
 "	      004bc5c2    jmp near ptr 004BC5C7h"
-"	      004bc5c7    mov eax,[ebp-4]"
+"	      004bc5c7    mov eax,this"
 "	      004bc5ca    pop edi"
 "	      004bc5cb    pop esi"
 "	      004bc5cc    pop ebx"
@@ -224,23 +224,23 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 "	      004bc5d7    push ebx"
 "	      004bc5d8    push esi"
 "	      004bc5d9    push edi"
-"	      004bc5da    mov [ebp-8],ecx"
+"	      004bc5da    mov this,ecx"
 );
 // LINE 137:
 	asm( 
-"	      004bc5dd    mov eax,[ebp-8]"
+"	      004bc5dd    mov eax,this"
 "	      004bc5e0    mov eax,[eax+8]"
-"	      004bc5e3    mov [ebp-4],eax"
+"	      004bc5e3    mov oldoption,eax"
 );
 // LINE 138:
 	asm( 
-"	      004bc5e6    mov eax,[ebp+8]"
-"	      004bc5e9    mov ecx,[ebp-8]"
+"	      004bc5e6    mov eax,h"
+"	      004bc5e9    mov ecx,this"
 "	      004bc5ec    mov [ecx+8],eax"
 );
 // LINE 139:
 	asm( 
-"	      004bc5ef    mov eax,[ebp-4]"
+"	      004bc5ef    mov eax,oldoption"
 "	      004bc5f2    jmp near ptr 004BC5F7h"
 );
 // LINE 140:
@@ -266,16 +266,16 @@ char * MDate::DayName(uint32_t weekDayNumber) {
 );
 // LINE 153:
 	asm( 
-"	      004bc607    cmp dword ptr [ebp+8],1"
+"	      004bc607    cmp weekDayNumber,1"
 "	      004bc60b    jb near ptr 004BC620h"
-"	      004bc611    cmp dword ptr [ebp+8],7"
+"	      004bc611    cmp weekDayNumber,7"
 "	      004bc615    ja near ptr 004BC620h"
 "	      004bc61b    jmp near ptr 004BC625h"
 "	      004bc620    jmp near ptr 004BC643h"
 "	      004bc625    jmp near ptr 004BC634h"
 "	      004bc62a    cmp dword ptr [ebp-4],0"
 "	      004bc62e    je near ptr 004BC643h"
-"	      004bc634    mov eax,[ebp+8]"
+"	      004bc634    mov eax,weekDayNumber"
 "	      004bc637    mov eax,[eax*4+59ACF4h]"
 "	      004bc63e    jmp near ptr 004BC645h"
 "	      004bc643    xor eax,eax"
@@ -305,7 +305,7 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 	asm( 
 "	      004bc655    push 7"
 "	      004bc657    push 59AD18h"
-"	      004bc65c    mov eax,[ebp+8]"
+"	      004bc65c    mov eax,nameOfDay"
 "	      004bc65f    push eax"
 "	      004bc660    call 004BC673h"
 "	      004bc665    add esp,0Ch"
@@ -337,29 +337,29 @@ int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 );
 // LINE 56:
 	asm( 
-"	      004bc67c    mov eax,[ebp+8]"
+"	      004bc67c    mov eax,str"
 "	      004bc67f    push eax"
 "	      004bc680    call 0056ABE0h"
 "	      004bc685    add esp,4"
-"	      004bc688    mov [ebp-4],eax"
+"	      004bc688    mov len,eax"
 );
 // LINE 58:
 	asm( 
-"	      004bc68b    mov eax,[ebp+10h]"
+"	      004bc68b    mov eax,icand"
 "	      004bc68e    mov [ebp-8],eax"
-"	      004bc691    dec dword ptr [ebp+10h]"
+"	      004bc691    dec icand"
 "	      004bc694    cmp dword ptr [ebp-8],0"
 "	      004bc698    je near ptr 004BC6CAh"
 );
 // LINE 59:
 	asm( 
-"	      004bc69e    mov eax,[ebp-4]"
+"	      004bc69e    mov eax,len"
 "	      004bc6a1    push eax"
-"	      004bc6a2    mov eax,[ebp+10h]"
-"	      004bc6a5    mov ecx,[ebp+0Ch]"
+"	      004bc6a2    mov eax,icand"
+"	      004bc6a5    mov ecx,candidates"
 "	      004bc6a8    mov eax,[ecx+eax*4]"
 "	      004bc6ab    push eax"
-"	      004bc6ac    mov eax,[ebp+8]"
+"	      004bc6ac    mov eax,str"
 "	      004bc6af    push eax"
 "	      004bc6b0    call 0058E570h"
 "	      004bc6b5    add esp,0Ch"
@@ -376,7 +376,7 @@ int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 );
 // LINE 62:
 	asm( 
-"	      004bc6ca    mov eax,[ebp+10h]"
+"	      004bc6ca    mov eax,icand"
 "	      004bc6cd    jmp near ptr 004BC6D2h"
 );
 // LINE 63:
@@ -404,11 +404,11 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 );
 // LINE 182:
 	asm( 
-"	      004bc6e0    cmp dword ptr [ebp+0Ch],0"
+"	      004bc6e0    cmp day,0"
 "	      004bc6e4    jbe near ptr 004BC717h"
-"	      004bc6ea    cmp dword ptr [ebp+8],1"
+"	      004bc6ea    cmp month,1"
 "	      004bc6ee    jb near ptr 004BC708h"
-"	      004bc6f4    cmp dword ptr [ebp+8],0Ch"
+"	      004bc6f4    cmp month,0Ch"
 "	      004bc6f8    ja near ptr 004BC708h"
 "	      004bc6fe    jmp near ptr 004BC71Eh"
 "	      004bc703    jmp near ptr 004BC708h"
@@ -423,30 +423,30 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 );
 // LINE 184:
 	asm( 
-"	      004bc71e    mov eax,[ebp+8]"
+"	      004bc71e    mov eax,month"
 "	      004bc721    xor ecx,ecx"
 "	      004bc723    mov cl,[eax+59237Fh]"
-"	      004bc729    mov [ebp-4],ecx"
+"	      004bc729    mov d,ecx"
 );
 // LINE 185:
 	asm( 
-"	      004bc72c    mov eax,[ebp+10h]"
+"	      004bc72c    mov eax,year"
 "	      004bc72f    push eax"
 "	      004bc730    call 004BC89Fh"
 "	      004bc735    add esp,4"
 "	      004bc738    test eax,eax"
 "	      004bc73a    je near ptr 004BC74Dh"
-"	      004bc740    cmp dword ptr [ebp+8],2"
+"	      004bc740    cmp month,2"
 "	      004bc744    jne near ptr 004BC74Dh"
 );
 // LINE 186:
 	asm( 
-"	      004bc74a    inc dword ptr [ebp-4]"
+"	      004bc74a    inc d"
 );
 // LINE 187:
 	asm( 
-"	      004bc74d    mov eax,[ebp+0Ch]"
-"	      004bc750    cmp [ebp-4],eax"
+"	      004bc74d    mov eax,day"
+"	      004bc750    cmp d,eax"
 "	      004bc753    jb near ptr 004BC763h"
 "	      004bc759    mov eax,1"
 "	      004bc75e    jmp near ptr 004BC765h"
@@ -475,7 +475,7 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 );
 // LINE 201:
 	asm( 
-"	      004bc775    mov eax,[ebp+8]"
+"	      004bc775    mov eax,year"
 "	      004bc778    push eax"
 "	      004bc779    call 004BC89Fh"
 "	      004bc77e    add esp,4"
@@ -510,7 +510,7 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 	asm( 
 "	      004bc7a8    push 0Ch"
 "	      004bc7aa    push 59ACC8h"
-"	      004bc7af    mov eax,[ebp+8]"
+"	      004bc7af    mov eax,nameOfMonth"
 "	      004bc7b2    push eax"
 "	      004bc7b3    call 004BC673h"
 "	      004bc7b8    add esp,0Ch"
@@ -543,20 +543,20 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 );
 // LINE 235:
 	asm( 
-"	      004bc7cf    cmp dword ptr [ebp+10h],63h"
+"	      004bc7cf    cmp y,63h"
 "	      004bc7d3    ja near ptr 004BC7E0h"
 );
 // LINE 236:
 	asm( 
-"	      004bc7d9    add dword ptr [ebp+10h],76Ch"
+"	      004bc7d9    add y,76Ch"
 );
 // LINE 237:
 	asm( 
-"	      004bc7e0    mov eax,[ebp+10h]"
+"	      004bc7e0    mov eax,y"
 "	      004bc7e3    push eax"
-"	      004bc7e4    mov eax,[ebp+0Ch]"
+"	      004bc7e4    mov eax,d"
 "	      004bc7e7    push eax"
-"	      004bc7e8    mov eax,[ebp+8]"
+"	      004bc7e8    mov eax,m"
 "	      004bc7eb    push eax"
 "	      004bc7ec    call 004BC6D7h"
 "	      004bc7f1    add esp,0Ch"
@@ -570,12 +570,12 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 );
 // LINE 240:
 	asm( 
-"	      004bc803    cmp dword ptr [ebp+8],2"
+"	      004bc803    cmp m,2"
 "	      004bc807    jbe near ptr 004BC816h"
 );
 // LINE 241:
 	asm( 
-"	      004bc80d    sub dword ptr [ebp+8],3"
+"	      004bc80d    sub m,3"
 );
 // LINE 242:
 	asm( 
@@ -583,33 +583,33 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 );
 // LINE 243:
 	asm( 
-"	      004bc816    add dword ptr [ebp+8],9"
+"	      004bc816    add m,9"
 );
 // LINE 244:
 	asm( 
-"	      004bc81a    dec dword ptr [ebp+10h]"
+"	      004bc81a    dec y"
 );
 // LINE 247:
 	asm( 
 "	      004bc81d    mov ecx,64h"
-"	      004bc822    mov eax,[ebp+10h]"
+"	      004bc822    mov eax,y"
 "	      004bc825    sub edx,edx"
 "	      004bc827    div ecx"
-"	      004bc829    mov [ebp-4],eax"
+"	      004bc829    mov c,eax"
 );
 // LINE 248:
 	asm( 
-"	      004bc82c    mov eax,[ebp+10h]"
-"	      004bc82f    mov ecx,[ebp-4]"
+"	      004bc82c    mov eax,y"
+"	      004bc82f    mov ecx,c"
 "	      004bc832    shl ecx,2"
 "	      004bc835    lea ecx,[ecx+ecx*4]"
 "	      004bc838    lea ecx,[ecx+ecx*4]"
 "	      004bc83b    sub eax,ecx"
-"	      004bc83d    mov [ebp-8],eax"
+"	      004bc83d    mov ya,eax"
 );
 // LINE 249:
 	asm( 
-"	      004bc840    mov eax,[ebp+8]"
+"	      004bc840    mov eax,m"
 "	      004bc843    mov ecx,eax"
 "	      004bc845    lea eax,[eax+eax*8]"
 "	      004bc848    lea eax,[ecx+eax*2]"
@@ -617,7 +617,7 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 "	      004bc850    lea eax,[ecx+eax*8+2]"
 "	      004bc854    sub edx,edx"
 "	      004bc856    div ebx"
-"	      004bc858    mov ecx,[ebp-8]"
+"	      004bc858    mov ecx,ya"
 "	      004bc85b    mov edx,ecx"
 "	      004bc85d    lea ecx,[ecx+ecx*8]"
 "	      004bc860    lea ecx,[edx+ecx*8]"
@@ -625,7 +625,7 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 "	      004bc866    lea ecx,[edx+ecx*4]"
 "	      004bc869    shr ecx,2"
 "	      004bc86c    add eax,ecx"
-"	      004bc86e    mov ecx,[ebp-4]"
+"	      004bc86e    mov ecx,c"
 "	      004bc871    mov edx,ecx"
 "	      004bc873    shl ecx,7"
 "	      004bc876    sub ecx,edx"
@@ -636,7 +636,7 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 "	      004bc883    lea ecx,[ecx+ecx*8]"
 "	      004bc886    shr ecx,2"
 "	      004bc889    add eax,ecx"
-"	      004bc88b    mov ecx,[ebp+0Ch]"
+"	      004bc88b    mov ecx,d"
 "	      004bc88e    lea eax,[eax+ecx+1A431Fh]"
 "	      004bc895    jmp near ptr 004BC89Ah"
 );
@@ -665,13 +665,13 @@ int32_t MDate::LeapYear(uint32_t year) {
 "	      004bc8a5    test byte ptr [ebp+8],3"
 "	      004bc8a9    jne near ptr 004BC8C3h"
 "	      004bc8af    mov ecx,64h"
-"	      004bc8b4    mov eax,[ebp+8]"
+"	      004bc8b4    mov eax,year"
 "	      004bc8b7    sub edx,edx"
 "	      004bc8b9    div ecx"
 "	      004bc8bb    test edx,edx"
 "	      004bc8bd    jne near ptr 004BC8D7h"
 "	      004bc8c3    mov ecx,190h"
-"	      004bc8c8    mov eax,[ebp+8]"
+"	      004bc8c8    mov eax,year"
 "	      004bc8cb    sub edx,edx"
 "	      004bc8cd    div ecx"
 "	      004bc8cf    test edx,edx"
@@ -704,16 +704,16 @@ char * MDate::MonthName(uint32_t monthNumber) {
 );
 // LINE 278:
 	asm( 
-"	      004bc8f6    cmp dword ptr [ebp+8],1"
+"	      004bc8f6    cmp monthNumber,1"
 "	      004bc8fa    jb near ptr 004BC90Fh"
-"	      004bc900    cmp dword ptr [ebp+8],0Ch"
+"	      004bc900    cmp monthNumber,0Ch"
 "	      004bc904    ja near ptr 004BC90Fh"
 "	      004bc90a    jmp near ptr 004BC914h"
 "	      004bc90f    jmp near ptr 004BC932h"
 "	      004bc914    jmp near ptr 004BC923h"
 "	      004bc919    cmp dword ptr [ebp-4],0"
 "	      004bc91d    je near ptr 004BC932h"
-"	      004bc923    mov eax,[ebp+8]"
+"	      004bc923    mov eax,monthNumber"
 "	      004bc926    mov eax,[eax*4+59AC94h]"
 "	      004bc92d    jmp near ptr 004BC934h"
 "	      004bc932    xor eax,eax"
@@ -739,12 +739,12 @@ int32_t MDate::CompareTo(const class MDate& d) {
 "	      004bc944    push ebx"
 "	      004bc945    push esi"
 "	      004bc946    push edi"
-"	      004bc947    mov [ebp-4],ecx"
+"	      004bc947    mov this,ecx"
 );
 // LINE 293:
 	asm( 
-"	      004bc94a    mov eax,[ebp-4]"
-"	      004bc94d    mov ecx,[ebp+8]"
+"	      004bc94a    mov eax,this"
+"	      004bc94d    mov ecx,d"
 "	      004bc950    mov ecx,[ecx+4]"
 "	      004bc953    cmp [eax+4],ecx"
 "	      004bc956    jae near ptr 004BC96Bh"
@@ -757,8 +757,8 @@ int32_t MDate::CompareTo(const class MDate& d) {
 // LINE 295:
 	asm( 
 "	      004bc966    jmp near ptr 004BC993h"
-"	      004bc96b    mov eax,[ebp-4]"
-"	      004bc96e    mov ecx,[ebp+8]"
+"	      004bc96b    mov eax,this"
+"	      004bc96e    mov ecx,d"
 "	      004bc971    mov ecx,[ecx+4]"
 "	      004bc974    cmp [eax+4],ecx"
 "	      004bc977    jbe near ptr 004BC98Ch"
@@ -797,13 +797,13 @@ uint32_t MDate::Day() {
 "	      004bc9a0    push ebx"
 "	      004bc9a1    push esi"
 "	      004bc9a2    push edi"
-"	      004bc9a3    mov [ebp-4],ecx"
+"	      004bc9a3    mov this,ecx"
 );
 // LINE 308:
 	asm( 
-"	      004bc9a6    mov eax,[ebp-4]"
+"	      004bc9a6    mov eax,this"
 "	      004bc9a9    mov ebx,[eax+4]"
-"	      004bc9ac    mov ecx,[ebp-4]"
+"	      004bc9ac    mov ecx,this"
 "	      004bc9af    call 004BCDB1h"
 "	      004bc9b4    dec eax"
 "	      004bc9b5    push eax"
@@ -839,22 +839,22 @@ uint32_t MDate::DayOfMonth() {
 "	      004bc9d6    push ebx"
 "	      004bc9d7    push esi"
 "	      004bc9d8    push edi"
-"	      004bc9d9    mov [ebp-10h],ecx"
+"	      004bc9d9    mov this,ecx"
 );
 // LINE 322:
 	asm( 
-"	      004bc9dc    lea eax,[ebp-8]"
+"	      004bc9dc    lea eax,y"
 "	      004bc9df    push eax"
-"	      004bc9e0    lea eax,[ebp-4]"
+"	      004bc9e0    lea eax,d"
 "	      004bc9e3    push eax"
-"	      004bc9e4    lea eax,[ebp-0Ch]"
+"	      004bc9e4    lea eax,m"
 "	      004bc9e7    push eax"
-"	      004bc9e8    mov ecx,[ebp-10h]"
+"	      004bc9e8    mov ecx,this"
 "	      004bc9eb    call 004BCAA0h"
 );
 // LINE 323:
 	asm( 
-"	      004bc9f0    mov eax,[ebp-4]"
+"	      004bc9f0    mov eax,d"
 "	      004bc9f3    jmp near ptr 004BC9F8h"
 );
 // LINE 324:
@@ -879,13 +879,13 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 "	      004bca03    push ebx"
 "	      004bca04    push esi"
 "	      004bca05    push edi"
-"	      004bca06    mov [ebp-0Ch],ecx"
+"	      004bca06    mov this,ecx"
 );
 // LINE 337:
 	asm( 
-"	      004bca09    cmp dword ptr [ebp+8],1"
+"	      004bca09    cmp month,1"
 "	      004bca0d    jb near ptr 004BCA27h"
-"	      004bca13    cmp dword ptr [ebp+8],0Ch"
+"	      004bca13    cmp month,0Ch"
 "	      004bca17    ja near ptr 004BCA27h"
 "	      004bca1d    jmp near ptr 004BCA3Dh"
 "	      004bca22    jmp near ptr 004BCA27h"
@@ -900,16 +900,16 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 );
 // LINE 339:
 	asm( 
-"	      004bca3d    mov eax,[ebp+8]"
+"	      004bca3d    mov eax,month"
 "	      004bca40    mov eax,[eax*4+59238Ch]"
-"	      004bca47    mov [ebp-4],eax"
+"	      004bca47    mov firstDay,eax"
 );
 // LINE 340:
 	asm( 
-"	      004bca4a    cmp dword ptr [ebp+8],2"
+"	      004bca4a    cmp month,2"
 "	      004bca4e    jbe near ptr 004BCA75h"
 "	      004bca54    jmp near ptr 004BCA59h"
-"	      004bca59    mov ecx,[ebp-0Ch]"
+"	      004bca59    mov ecx,this"
 "	      004bca5c    call 004BCDB1h"
 "	      004bca61    push eax"
 "	      004bca62    call 004BC89Fh"
@@ -919,11 +919,11 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 );
 // LINE 341:
 	asm( 
-"	      004bca72    inc dword ptr [ebp-4]"
+"	      004bca72    inc firstDay"
 );
 // LINE 342:
 	asm( 
-"	      004bca75    mov eax,[ebp-4]"
+"	      004bca75    mov eax,firstDay"
 "	      004bca78    jmp near ptr 004BCA7Dh"
 );
 // LINE 343:
@@ -946,11 +946,11 @@ uint32_t MDate::Hash() {
 "	      004bca8a    push ebx"
 "	      004bca8b    push esi"
 "	      004bca8c    push edi"
-"	      004bca8d    mov [ebp-4],ecx"
+"	      004bca8d    mov this,ecx"
 );
 // LINE 352:
 	asm( 
-"	      004bca90    mov eax,[ebp-4]"
+"	      004bca90    mov eax,this"
 "	      004bca93    mov eax,[eax+4]"
 "	      004bca96    jmp near ptr 004BCA9Bh"
 );
@@ -977,31 +977,31 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 "	      004bcaa6    push ebx"
 "	      004bcaa7    push esi"
 "	      004bcaa8    push edi"
-"	      004bcaa9    mov [ebp-0Ch],ecx"
+"	      004bcaa9    mov this,ecx"
 );
 // LINE 370:
 	asm( 
-"	      004bcaac    mov eax,[ebp-0Ch]"
+"	      004bcaac    mov eax,this"
 "	      004bcaaf    mov eax,[eax+4]"
 "	      004bcab2    sub eax,1A431Fh"
-"	      004bcab7    mov [ebp-8],eax"
+"	      004bcab7    mov j,eax"
 );
 // LINE 371:
 	asm( 
-"	      004bcaba    mov eax,[ebp-8]"
+"	      004bcaba    mov eax,j"
 "	      004bcabd    mov ecx,23AB1h"
 "	      004bcac2    lea eax,[eax*4-1]"
 "	      004bcac9    sub edx,edx"
 "	      004bcacb    div ecx"
-"	      004bcacd    mov ecx,[ebp+10h]"
+"	      004bcacd    mov ecx,y"
 "	      004bcad0    mov [ecx],eax"
 );
 // LINE 372:
 	asm( 
-"	      004bcad2    mov eax,[ebp-8]"
+"	      004bcad2    mov eax,j"
 "	      004bcad5    shl eax,2"
 "	      004bcad8    dec eax"
-"	      004bcad9    mov ecx,[ebp+10h]"
+"	      004bcad9    mov ecx,y"
 "	      004bcadc    mov ecx,[ecx]"
 "	      004bcade    mov edx,ecx"
 "	      004bcae0    shl ecx,7"
@@ -1012,98 +1012,98 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 "	      004bcaed    lea ecx,[edx+ecx*8]"
 "	      004bcaf0    lea ecx,[ecx+ecx*8]"
 "	      004bcaf3    sub eax,ecx"
-"	      004bcaf5    mov [ebp-8],eax"
+"	      004bcaf5    mov j,eax"
 );
 // LINE 373:
 	asm( 
-"	      004bcaf8    mov eax,[ebp-8]"
+"	      004bcaf8    mov eax,j"
 "	      004bcafb    shr eax,2"
-"	      004bcafe    mov [ebp-4],eax"
+"	      004bcafe    mov d,eax"
 );
 // LINE 374:
 	asm( 
-"	      004bcb01    mov eax,[ebp-4]"
+"	      004bcb01    mov eax,d"
 "	      004bcb04    mov ecx,5B5h"
 "	      004bcb09    lea eax,[eax*4+3]"
 "	      004bcb10    sub edx,edx"
 "	      004bcb12    div ecx"
-"	      004bcb14    mov [ebp-8],eax"
+"	      004bcb14    mov j,eax"
 );
 // LINE 375:
 	asm( 
-"	      004bcb17    mov eax,[ebp-4]"
+"	      004bcb17    mov eax,d"
 "	      004bcb1a    shl eax,2"
 "	      004bcb1d    add eax,3"
-"	      004bcb20    mov ecx,[ebp-8]"
+"	      004bcb20    mov ecx,j"
 "	      004bcb23    mov edx,ecx"
 "	      004bcb25    lea ecx,[ecx+ecx*8]"
 "	      004bcb28    lea ecx,[edx+ecx*8]"
 "	      004bcb2b    lea ecx,[ecx+ecx*4]"
 "	      004bcb2e    lea ecx,[edx+ecx*4]"
 "	      004bcb31    sub eax,ecx"
-"	      004bcb33    mov [ebp-4],eax"
+"	      004bcb33    mov d,eax"
 );
 // LINE 376:
 	asm( 
-"	      004bcb36    mov eax,[ebp-4]"
+"	      004bcb36    mov eax,d"
 "	      004bcb39    add eax,4"
 "	      004bcb3c    shr eax,2"
-"	      004bcb3f    mov [ebp-4],eax"
+"	      004bcb3f    mov d,eax"
 );
 // LINE 377:
 	asm( 
-"	      004bcb42    mov eax,[ebp-4]"
+"	      004bcb42    mov eax,d"
 "	      004bcb45    mov ecx,99h"
 "	      004bcb4a    lea eax,[eax+eax*4-3]"
 "	      004bcb4e    sub edx,edx"
 "	      004bcb50    div ecx"
-"	      004bcb52    mov ecx,[ebp+8]"
+"	      004bcb52    mov ecx,m"
 "	      004bcb55    mov [ecx],eax"
 );
 // LINE 378:
 	asm( 
-"	      004bcb57    mov eax,[ebp-4]"
+"	      004bcb57    mov eax,d"
 "	      004bcb5a    lea eax,[eax+eax*4]"
 "	      004bcb5d    sub eax,3"
-"	      004bcb60    mov ecx,[ebp+8]"
+"	      004bcb60    mov ecx,m"
 "	      004bcb63    mov ecx,[ecx]"
 "	      004bcb65    mov edx,ecx"
 "	      004bcb67    lea ecx,[ecx+ecx*8]"
 "	      004bcb6a    lea ecx,[edx+ecx*2]"
 "	      004bcb6d    lea ecx,[edx+ecx*8]"
 "	      004bcb70    sub eax,ecx"
-"	      004bcb72    mov [ebp-4],eax"
+"	      004bcb72    mov d,eax"
 );
 // LINE 379:
 	asm( 
-"	      004bcb75    mov eax,[ebp-4]"
+"	      004bcb75    mov eax,d"
 "	      004bcb78    mov ecx,5"
 "	      004bcb7d    add eax,5"
 "	      004bcb80    sub edx,edx"
 "	      004bcb82    div ecx"
-"	      004bcb84    mov ecx,[ebp+0Ch]"
+"	      004bcb84    mov ecx,D"
 "	      004bcb87    mov [ecx],eax"
 );
 // LINE 380:
 	asm( 
-"	      004bcb89    mov eax,[ebp+10h]"
+"	      004bcb89    mov eax,y"
 "	      004bcb8c    mov eax,[eax]"
 "	      004bcb8e    shl eax,2"
 "	      004bcb91    lea eax,[eax+eax*4]"
 "	      004bcb94    lea eax,[eax+eax*4]"
-"	      004bcb97    add eax,[ebp-8]"
-"	      004bcb9a    mov ecx,[ebp+10h]"
+"	      004bcb97    add eax,j"
+"	      004bcb9a    mov ecx,y"
 "	      004bcb9d    mov [ecx],eax"
 );
 // LINE 382:
 	asm( 
-"	      004bcb9f    mov eax,[ebp+8]"
+"	      004bcb9f    mov eax,m"
 "	      004bcba2    cmp dword ptr [eax],0Ah"
 "	      004bcba5    jae near ptr 004BCBB6h"
 );
 // LINE 383:
 	asm( 
-"	      004bcbab    mov eax,[ebp+8]"
+"	      004bcbab    mov eax,m"
 "	      004bcbae    add dword ptr [eax],3"
 );
 // LINE 384:
@@ -1112,12 +1112,12 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 );
 // LINE 385:
 	asm( 
-"	      004bcbb6    mov eax,[ebp+8]"
+"	      004bcbb6    mov eax,m"
 "	      004bcbb9    sub dword ptr [eax],9"
 );
 // LINE 386:
 	asm( 
-"	      004bcbbc    mov eax,[ebp+10h]"
+"	      004bcbbc    mov eax,y"
 "	      004bcbbf    inc dword ptr [eax]"
 );
 // LINE 388:
@@ -1141,34 +1141,34 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 "	      004bcbd3    push ebx"
 "	      004bcbd4    push esi"
 "	      004bcbd5    push edi"
-"	      004bcbd6    mov [ebp-0Ch],ecx"
+"	      004bcbd6    mov this,ecx"
 );
 // LINE 397:
 	asm( 
-"	      004bcbd9    mov eax,[ebp-0Ch]"
-"	      004bcbdc    mov ecx,[ebp+0Ch]"
+"	      004bcbd9    mov eax,this"
+"	      004bcbdc    mov ecx,dt"
 "	      004bcbdf    mov ecx,[ecx+4]"
 "	      004bcbe2    cmp [eax+4],ecx"
 "	      004bcbe5    jae near ptr 004BCBF6h"
-"	      004bcbeb    mov eax,[ebp+0Ch]"
+"	      004bcbeb    mov eax,dt"
 "	      004bcbee    mov [ebp-4],eax"
 "	      004bcbf1    jmp near ptr 004BCBFCh"
-"	      004bcbf6    mov eax,[ebp-0Ch]"
+"	      004bcbf6    mov eax,this"
 "	      004bcbf9    mov [ebp-4],eax"
 "	      004bcbfc    mov eax,[ebp-4]"
 "	      004bcbff    mov [ebp-8],eax"
 "	      004bcc02    mov eax,[ebp-8]"
 "	      004bcc05    mov eax,[eax+4]"
-"	      004bcc08    mov ecx,[ebp+8]"
+"	      004bcc08    mov ecx,__$ReturnUdt"
 "	      004bcc0b    mov [ecx+4],eax"
 "	      004bcc0e    mov eax,[ebp-8]"
 "	      004bcc11    mov eax,[eax+8]"
-"	      004bcc14    mov ecx,[ebp+8]"
+"	      004bcc14    mov ecx,__$ReturnUdt"
 "	      004bcc17    mov [ecx+8],eax"
-"	      004bcc1a    mov eax,[ebp+8]"
+"	      004bcc1a    mov eax,__$ReturnUdt"
 "	      004bcc1d    mov dword ptr [eax],58F3E8h"
 "	      004bcc23    jmp near ptr 004BCC28h"
-"	      004bcc28    mov eax,[ebp+8]"
+"	      004bcc28    mov eax,__$ReturnUdt"
 "	      004bcc2b    jmp near ptr 004BCC30h"
 );
 // LINE 398:
@@ -1191,34 +1191,34 @@ class MDate MDate::MinDate(const class MDate& dt) {
 "	      004bcc3d    push ebx"
 "	      004bcc3e    push esi"
 "	      004bcc3f    push edi"
-"	      004bcc40    mov [ebp-0Ch],ecx"
+"	      004bcc40    mov this,ecx"
 );
 // LINE 407:
 	asm( 
-"	      004bcc43    mov eax,[ebp-0Ch]"
-"	      004bcc46    mov ecx,[ebp+0Ch]"
+"	      004bcc43    mov eax,this"
+"	      004bcc46    mov ecx,dt"
 "	      004bcc49    mov ecx,[ecx+4]"
 "	      004bcc4c    cmp [eax+4],ecx"
 "	      004bcc4f    ja near ptr 004BCC60h"
-"	      004bcc55    mov eax,[ebp-0Ch]"
+"	      004bcc55    mov eax,this"
 "	      004bcc58    mov [ebp-4],eax"
 "	      004bcc5b    jmp near ptr 004BCC66h"
-"	      004bcc60    mov eax,[ebp+0Ch]"
+"	      004bcc60    mov eax,dt"
 "	      004bcc63    mov [ebp-4],eax"
 "	      004bcc66    mov eax,[ebp-4]"
 "	      004bcc69    mov [ebp-8],eax"
 "	      004bcc6c    mov eax,[ebp-8]"
 "	      004bcc6f    mov eax,[eax+4]"
-"	      004bcc72    mov ecx,[ebp+8]"
+"	      004bcc72    mov ecx,__$ReturnUdt"
 "	      004bcc75    mov [ecx+4],eax"
 "	      004bcc78    mov eax,[ebp-8]"
 "	      004bcc7b    mov eax,[eax+8]"
-"	      004bcc7e    mov ecx,[ebp+8]"
+"	      004bcc7e    mov ecx,__$ReturnUdt"
 "	      004bcc81    mov [ecx+8],eax"
-"	      004bcc84    mov eax,[ebp+8]"
+"	      004bcc84    mov eax,__$ReturnUdt"
 "	      004bcc87    mov dword ptr [eax],58F3E8h"
 "	      004bcc8d    jmp near ptr 004BCC92h"
-"	      004bcc92    mov eax,[ebp+8]"
+"	      004bcc92    mov eax,__$ReturnUdt"
 "	      004bcc95    jmp near ptr 004BCC9Ah"
 );
 // LINE 408:
@@ -1245,22 +1245,22 @@ uint32_t MDate::Month() {
 "	      004bcca7    push ebx"
 "	      004bcca8    push esi"
 "	      004bcca9    push edi"
-"	      004bccaa    mov [ebp-10h],ecx"
+"	      004bccaa    mov this,ecx"
 );
 // LINE 421:
 	asm( 
-"	      004bccad    lea eax,[ebp-8]"
+"	      004bccad    lea eax,y"
 "	      004bccb0    push eax"
-"	      004bccb1    lea eax,[ebp-4]"
+"	      004bccb1    lea eax,d"
 "	      004bccb4    push eax"
-"	      004bccb5    lea eax,[ebp-0Ch]"
+"	      004bccb5    lea eax,m"
 "	      004bccb8    push eax"
-"	      004bccb9    mov ecx,[ebp-10h]"
+"	      004bccb9    mov ecx,this"
 "	      004bccbc    call 004BCAA0h"
 );
 // LINE 422:
 	asm( 
-"	      004bccc1    mov eax,[ebp-0Ch]"
+"	      004bccc1    mov eax,m"
 "	      004bccc4    jmp near ptr 004BCCC9h"
 );
 // LINE 423:
@@ -1283,20 +1283,20 @@ class MDate MDate::Previous(char * dayName) {
 "	      004bccd4    push ebx"
 "	      004bccd5    push esi"
 "	      004bccd6    push edi"
-"	      004bccd7    mov [ebp-4],ecx"
+"	      004bccd7    mov this,ecx"
 );
 // LINE 436:
 	asm( 
-"	      004bccda    mov eax,[ebp+0Ch]"
+"	      004bccda    mov eax,dayName"
 "	      004bccdd    push eax"
 "	      004bccde    call 004BC64Fh"
 "	      004bcce3    add esp,4"
 "	      004bcce6    push eax"
-"	      004bcce7    mov eax,[ebp+8]"
+"	      004bcce7    mov eax,__$ReturnUdt"
 "	      004bccea    push eax"
-"	      004bcceb    mov ecx,[ebp-4]"
+"	      004bcceb    mov ecx,this"
 "	      004bccee    call 004BCD02h"
-"	      004bccf3    mov eax,[ebp+8]"
+"	      004bccf3    mov eax,__$ReturnUdt"
 "	      004bccf6    jmp near ptr 004BCCFBh"
 );
 // LINE 437:
@@ -1322,36 +1322,36 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 "	      004bcd08    push ebx"
 "	      004bcd09    push esi"
 "	      004bcd0a    push edi"
-"	      004bcd0b    mov [ebp-0Ch],ecx"
+"	      004bcd0b    mov this,ecx"
 );
 // LINE 451:
 	asm( 
-"	      004bcd0e    dec dword ptr [ebp+0Ch]"
+"	      004bcd0e    dec desiredDayOfWeek"
 );
 // LINE 452:
 	asm( 
-"	      004bcd11    mov ecx,[ebp-0Ch]"
+"	      004bcd11    mov ecx,this"
 "	      004bcd14    call 004BCD7Ch"
 "	      004bcd19    dec eax"
-"	      004bcd1a    mov [ebp-4],eax"
+"	      004bcd1a    mov thisDayOfWeek,eax"
 );
 // LINE 453:
 	asm( 
-"	      004bcd1d    mov eax,[ebp-0Ch]"
+"	      004bcd1d    mov eax,this"
 "	      004bcd20    mov eax,[eax+4]"
-"	      004bcd23    mov [ebp-8],eax"
+"	      004bcd23    mov j,eax"
 );
 // LINE 458:
 	asm( 
-"	      004bcd26    mov eax,[ebp+0Ch]"
-"	      004bcd29    cmp [ebp-4],eax"
+"	      004bcd26    mov eax,desiredDayOfWeek"
+"	      004bcd29    cmp thisDayOfWeek,eax"
 "	      004bcd2c    jae near ptr 004BCD42h"
 );
 // LINE 459:
 	asm( 
 "	      004bcd32    mov eax,7"
-"	      004bcd37    sub eax,[ebp+0Ch]"
-"	      004bcd3a    add [ebp-4],eax"
+"	      004bcd37    sub eax,desiredDayOfWeek"
+"	      004bcd3a    add thisDayOfWeek,eax"
 );
 // LINE 460:
 	asm( 
@@ -1360,26 +1360,26 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 // LINE 461:
 	asm( 
 "	      004bcd42    xor eax,eax"
-"	      004bcd44    sub eax,[ebp+0Ch]"
+"	      004bcd44    sub eax,desiredDayOfWeek"
 "	      004bcd47    neg eax"
-"	      004bcd49    sub [ebp-4],eax"
+"	      004bcd49    sub thisDayOfWeek,eax"
 );
 // LINE 462:
 	asm( 
 "	      004bcd4c    xor eax,eax"
-"	      004bcd4e    sub eax,[ebp-4]"
+"	      004bcd4e    sub eax,thisDayOfWeek"
 "	      004bcd51    neg eax"
-"	      004bcd53    sub [ebp-8],eax"
+"	      004bcd53    sub j,eax"
 );
 // LINE 463:
 	asm( 
-"	      004bcd56    mov eax,[ebp+8]"
+"	      004bcd56    mov eax,__$ReturnUdt"
 "	      004bcd59    mov dword ptr [eax],58F3E8h"
-"	      004bcd5f    mov eax,[ebp-8]"
-"	      004bcd62    mov ecx,[ebp+8]"
+"	      004bcd5f    mov eax,j"
+"	      004bcd62    mov ecx,__$ReturnUdt"
 "	      004bcd65    mov [ecx+4],eax"
 "	      004bcd68    jmp near ptr 004BCD6Dh"
-"	      004bcd6d    mov eax,[ebp+8]"
+"	      004bcd6d    mov eax,__$ReturnUdt"
 "	      004bcd70    jmp near ptr 004BCD75h"
 );
 // LINE 464:
@@ -1402,11 +1402,11 @@ uint32_t MDate::WeekDay() {
 "	      004bcd82    push ebx"
 "	      004bcd83    push esi"
 "	      004bcd84    push edi"
-"	      004bcd85    mov [ebp-4],ecx"
+"	      004bcd85    mov this,ecx"
 );
 // LINE 473:
 	asm( 
-"	      004bcd88    mov eax,[ebp-4]"
+"	      004bcd88    mov eax,this"
 "	      004bcd8b    mov eax,[eax+4]"
 "	      004bcd8e    mov ecx,7"
 "	      004bcd93    inc eax"
@@ -1443,22 +1443,22 @@ uint32_t MDate::Year() {
 "	      004bcdb7    push ebx"
 "	      004bcdb8    push esi"
 "	      004bcdb9    push edi"
-"	      004bcdba    mov [ebp-10h],ecx"
+"	      004bcdba    mov this,ecx"
 );
 // LINE 486:
 	asm( 
-"	      004bcdbd    lea eax,[ebp-8]"
+"	      004bcdbd    lea eax,y"
 "	      004bcdc0    push eax"
-"	      004bcdc1    lea eax,[ebp-4]"
+"	      004bcdc1    lea eax,d"
 "	      004bcdc4    push eax"
-"	      004bcdc5    lea eax,[ebp-0Ch]"
+"	      004bcdc5    lea eax,m"
 "	      004bcdc8    push eax"
-"	      004bcdc9    mov ecx,[ebp-10h]"
+"	      004bcdc9    mov ecx,this"
 "	      004bcdcc    call 004BCAA0h"
 );
 // LINE 487:
 	asm( 
-"	      004bcdd1    mov eax,[ebp-8]"
+"	      004bcdd1    mov eax,y"
 "	      004bcdd4    jmp near ptr 004BCDD9h"
 );
 // LINE 488:
@@ -1481,11 +1481,11 @@ uint32_t MDate::YearLastTwoDigits() {
 "	      004bcde4    push ebx"
 "	      004bcde5    push esi"
 "	      004bcde6    push edi"
-"	      004bcde7    mov [ebp-4],ecx"
+"	      004bcde7    mov this,ecx"
 );
 // LINE 499:
 	asm( 
-"	      004bcdea    mov ecx,[ebp-4]"
+"	      004bcdea    mov ecx,this"
 "	      004bcded    call 004BCDB1h"
 "	      004bcdf2    mov ecx,64h"
 "	      004bcdf7    sub edx,edx"
@@ -1515,20 +1515,20 @@ char * MDate::PrintString(char * szDate) {
 "	      004bce0d    push ebx"
 "	      004bce0e    push esi"
 "	      004bce0f    push edi"
-"	      004bce10    mov [ebp-64h],ecx"
+"	      004bce10    mov this,ecx"
 );
 // LINE 511:
 	asm( 
 "	      004bce13    push 1"
 "	      004bce15    push 2"
 "	      004bce17    push 4"
-"	      004bce19    mov eax,[ebp+8]"
+"	      004bce19    mov eax,szDate"
 "	      004bce1c    push eax"
-"	      004bce1d    lea ecx,[ebp-58h]"
+"	      004bce1d    lea ecx,strtemp.ios"
 "	      004bce20    call 0056C780h"
-"	      004bce25    mov eax,[ebp-64h]"
+"	      004bce25    mov eax,this"
 "	      004bce28    push eax"
-"	      004bce29    lea eax,[ebp-58h]"
+"	      004bce29    lea eax,strtemp.ios"
 "	      004bce2c    push eax"
 "	      004bce2d    call 004BD39Ah"
 "	      004bce32    add esp,8"
@@ -1544,12 +1544,12 @@ char * MDate::PrintString(char * szDate) {
 );
 // LINE 513:
 	asm( 
-"	      004bce49    mov eax,[ebp+8]"
+"	      004bce49    mov eax,szDate"
 "	      004bce4c    mov [ebp-5Ch],eax"
 "	      004bce4f    jmp near ptr 004BCE54h"
-"	      004bce54    lea ecx,[ebp-50h]"
+"	      004bce54    lea ecx,strtemp.<ostrstream+0x08>"
 "	      004bce57    call 0056C8D0h"
-"	      004bce5c    lea ecx,[ebp-50h]"
+"	      004bce5c    lea ecx,strtemp.<ostrstream+0x08>"
 "	      004bce5f    call 0056B140h"
 "	      004bce64    mov eax,[ebp-5Ch]"
 "	      004bce67    jmp near ptr 004BCE6Ch"
@@ -1578,19 +1578,19 @@ void MDate::ParseFrom(class istream& s) {
 "	      004bce79    push ebx"
 "	      004bce7a    push esi"
 "	      004bce7b    push edi"
-"	      004bce7c    mov [ebp-24h],ecx"
+"	      004bce7c    mov this,ecx"
 );
 // LINE 579:
 	asm( 
-"	      004bce7f    mov eax,[ebp-24h]"
+"	      004bce7f    mov eax,this"
 "	      004bce82    mov dword ptr [eax+4],0"
 );
 // LINE 581:
 	asm( 
-"	      004bce89    mov eax,[ebp+8]"
+"	      004bce89    mov eax,s"
 "	      004bce8c    mov eax,[eax]"
 "	      004bce8e    mov eax,[eax+4]"
-"	      004bce91    mov ecx,[ebp+8]"
+"	      004bce91    mov ecx,s"
 "	      004bce94    cmp dword ptr [eax+ecx+8],0"
 "	      004bce99    jne near ptr 004BCEA4h"
 "	      004bce9f    jmp near ptr 004BCEA9h"
@@ -1601,21 +1601,21 @@ void MDate::ParseFrom(class istream& s) {
 );
 // LINE 582:
 	asm( 
-"	      004bceb8    mov eax,[ebp+8]"
+"	      004bceb8    mov eax,s"
 "	      004bcebb    push eax"
 "	      004bcebc    call 004BD175h"
 "	      004bcec1    add esp,4"
 );
 // LINE 583:
 	asm( 
-"	      004bcec4    lea eax,[ebp-0Ch]"
+"	      004bcec4    lea eax,m"
 "	      004bcec7    push eax"
-"	      004bcec8    mov ecx,[ebp+8]"
+"	      004bcec8    mov ecx,s"
 "	      004bcecb    call 00571280h"
 );
 // LINE 584:
 	asm( 
-"	      004bced0    mov eax,[ebp+8]"
+"	      004bced0    mov eax,s"
 "	      004bced3    push eax"
 "	      004bced4    call 004BD175h"
 "	      004bced9    add esp,4"
@@ -1623,10 +1623,10 @@ void MDate::ParseFrom(class istream& s) {
 // LINE 585:
 	asm( 
 "	      004bcedc    jmp near ptr 004BCEE1h"
-"	      004bcee1    mov eax,[ebp+8]"
+"	      004bcee1    mov eax,s"
 "	      004bcee4    mov eax,[eax]"
 "	      004bcee6    mov eax,[eax+4]"
-"	      004bcee9    mov ecx,[ebp+8]"
+"	      004bcee9    mov ecx,s"
 "	      004bceec    test byte ptr [eax+ecx+8],1"
 "	      004bcef1    je near ptr 004BCEFCh"
 );
@@ -1637,16 +1637,16 @@ void MDate::ParseFrom(class istream& s) {
 // LINE 587:
 	asm( 
 "	      004bcefc    jmp near ptr 004BCF01h"
-"	      004bcf01    mov eax,[ebp+8]"
+"	      004bcf01    mov eax,s"
 "	      004bcf04    mov eax,[eax]"
 "	      004bcf06    mov eax,[eax+4]"
-"	      004bcf09    mov ecx,[ebp+8]"
+"	      004bcf09    mov ecx,s"
 "	      004bcf0c    test byte ptr [eax+ecx+8],6"
 "	      004bcf11    je near ptr 004BCFB5h"
-"	      004bcf17    mov eax,[ebp+8]"
+"	      004bcf17    mov eax,s"
 "	      004bcf1a    mov eax,[eax]"
 "	      004bcf1c    mov eax,[eax+4]"
-"	      004bcf1f    add eax,[ebp+8]"
+"	      004bcf1f    add eax,s"
 "	      004bcf22    mov [ebp-18h],eax"
 );
 // LINE 588:
@@ -1677,27 +1677,27 @@ void MDate::ParseFrom(class istream& s) {
 );
 // LINE 589:
 	asm( 
-"	      004bcf80    mov eax,[ebp+8]"
+"	      004bcf80    mov eax,s"
 "	      004bcf83    push eax"
 "	      004bcf84    call 004BD27Ch"
 "	      004bcf89    add esp,4"
 "	      004bcf8c    push eax"
 "	      004bcf8d    call 004BC7A2h"
 "	      004bcf92    add esp,4"
-"	      004bcf95    mov [ebp-0Ch],eax"
+"	      004bcf95    mov m,eax"
 );
 // LINE 590:
 	asm( 
-"	      004bcf98    mov eax,[ebp+8]"
+"	      004bcf98    mov eax,s"
 "	      004bcf9b    push eax"
 "	      004bcf9c    call 004BD175h"
 "	      004bcfa1    add esp,4"
 );
 // LINE 591:
 	asm( 
-"	      004bcfa4    lea eax,[ebp-4]"
+"	      004bcfa4    lea eax,d"
 "	      004bcfa7    push eax"
-"	      004bcfa8    mov ecx,[ebp+8]"
+"	      004bcfa8    mov ecx,s"
 "	      004bcfab    call 00571280h"
 );
 // LINE 593:
@@ -1706,18 +1706,18 @@ void MDate::ParseFrom(class istream& s) {
 );
 // LINE 594:
 	asm( 
-"	      004bcfb5    lea eax,[ebp-4]"
+"	      004bcfb5    lea eax,d"
 "	      004bcfb8    push eax"
-"	      004bcfb9    mov ecx,[ebp+8]"
+"	      004bcfb9    mov ecx,s"
 "	      004bcfbc    call 00571280h"
 );
 // LINE 595:
 	asm( 
 "	      004bcfc1    jmp near ptr 004BCFC6h"
-"	      004bcfc6    mov eax,[ebp+8]"
+"	      004bcfc6    mov eax,s"
 "	      004bcfc9    mov eax,[eax]"
 "	      004bcfcb    mov eax,[eax+4]"
-"	      004bcfce    mov ecx,[ebp+8]"
+"	      004bcfce    mov ecx,s"
 "	      004bcfd1    test byte ptr [eax+ecx+8],1"
 "	      004bcfd6    je near ptr 004BCFE1h"
 "	      004bcfdc    jmp near ptr 004BD16Eh"
@@ -1725,21 +1725,21 @@ void MDate::ParseFrom(class istream& s) {
 // LINE 596:
 	asm( 
 "	      004bcfe1    jmp near ptr 004BCFE6h"
-"	      004bcfe6    mov eax,[ebp+8]"
+"	      004bcfe6    mov eax,s"
 "	      004bcfe9    mov eax,[eax]"
 "	      004bcfeb    mov eax,[eax+4]"
-"	      004bcfee    mov ecx,[ebp+8]"
+"	      004bcfee    mov ecx,s"
 "	      004bcff1    test byte ptr [eax+ecx+8],6"
 "	      004bcff6    je near ptr 004BD083h"
 );
 // LINE 597:
 	asm( 
-"	      004bcffc    mov eax,[ebp-0Ch]"
-"	      004bcfff    mov [ebp-4],eax"
-"	      004bd002    mov eax,[ebp+8]"
+"	      004bcffc    mov eax,m"
+"	      004bcfff    mov d,eax"
+"	      004bd002    mov eax,s"
 "	      004bd005    mov eax,[eax]"
 "	      004bd007    mov eax,[eax+4]"
-"	      004bd00a    add eax,[ebp+8]"
+"	      004bd00a    add eax,s"
 "	      004bd00d    mov [ebp-1Ch],eax"
 );
 // LINE 598:
@@ -1770,35 +1770,35 @@ void MDate::ParseFrom(class istream& s) {
 );
 // LINE 599:
 	asm( 
-"	      004bd06b    mov eax,[ebp+8]"
+"	      004bd06b    mov eax,s"
 "	      004bd06e    push eax"
 "	      004bd06f    call 004BD27Ch"
 "	      004bd074    add esp,4"
 "	      004bd077    push eax"
 "	      004bd078    call 004BC7A2h"
 "	      004bd07d    add esp,4"
-"	      004bd080    mov [ebp-0Ch],eax"
+"	      004bd080    mov m,eax"
 );
 // LINE 602:
 	asm( 
-"	      004bd083    mov eax,[ebp+8]"
+"	      004bd083    mov eax,s"
 "	      004bd086    push eax"
 "	      004bd087    call 004BD175h"
 "	      004bd08c    add esp,4"
 );
 // LINE 603:
 	asm( 
-"	      004bd08f    lea eax,[ebp-8]"
+"	      004bd08f    lea eax,y"
 "	      004bd092    push eax"
-"	      004bd093    mov ecx,[ebp+8]"
+"	      004bd093    mov ecx,s"
 "	      004bd096    call 00571280h"
 );
 // LINE 605:
 	asm( 
-"	      004bd09b    mov eax,[ebp+8]"
+"	      004bd09b    mov eax,s"
 "	      004bd09e    mov eax,[eax]"
 "	      004bd0a0    mov eax,[eax+4]"
-"	      004bd0a3    mov ecx,[ebp+8]"
+"	      004bd0a3    mov ecx,s"
 "	      004bd0a6    cmp dword ptr [eax+ecx+8],0"
 "	      004bd0ab    jne near ptr 004BD0B6h"
 "	      004bd0b1    jmp near ptr 004BD0BBh"
@@ -1806,32 +1806,32 @@ void MDate::ParseFrom(class istream& s) {
 "	      004bd0bb    jmp near ptr 004BD0CAh"
 "	      004bd0c0    cmp dword ptr [ebp-14h],0"
 "	      004bd0c4    je near ptr 004BD0E9h"
-"	      004bd0ca    mov eax,[ebp-8]"
+"	      004bd0ca    mov eax,y"
 "	      004bd0cd    push eax"
-"	      004bd0ce    mov eax,[ebp-4]"
+"	      004bd0ce    mov eax,d"
 "	      004bd0d1    push eax"
-"	      004bd0d2    mov eax,[ebp-0Ch]"
+"	      004bd0d2    mov eax,m"
 "	      004bd0d5    push eax"
 "	      004bd0d6    call 004BC7C6h"
 "	      004bd0db    add esp,0Ch"
-"	      004bd0de    mov ecx,[ebp-24h]"
+"	      004bd0de    mov ecx,this"
 "	      004bd0e1    mov [ecx+4],eax"
 "	      004bd0e4    jmp near ptr 004BD0F3h"
-"	      004bd0e9    mov eax,[ebp-24h]"
+"	      004bd0e9    mov eax,this"
 "	      004bd0ec    mov dword ptr [eax+4],0"
 );
 // LINE 606:
 	asm( 
-"	      004bd0f3    mov eax,[ebp-24h]"
+"	      004bd0f3    mov eax,this"
 "	      004bd0f6    cmp dword ptr [eax+4],0"
 "	      004bd0fa    jne near ptr 004BD169h"
 );
 // LINE 607:
 	asm( 
-"	      004bd100    mov eax,[ebp+8]"
+"	      004bd100    mov eax,s"
 "	      004bd103    mov eax,[eax]"
 "	      004bd105    mov eax,[eax+4]"
-"	      004bd108    add eax,[ebp+8]"
+"	      004bd108    add eax,s"
 "	      004bd10b    mov [ebp-20h],eax"
 "	      004bd10e    mov eax,[ebp-20h]"
 "	      004bd111    cmp dword ptr [eax+34h],0"
@@ -1883,10 +1883,10 @@ void SkipDelim(class istream& strm) {
 );
 // LINE 527:
 	asm( 
-"	      004bd17e    mov eax,[ebp+8]"
+"	      004bd17e    mov eax,strm"
 "	      004bd181    mov eax,[eax]"
 "	      004bd183    mov eax,[eax+4]"
-"	      004bd186    mov ecx,[ebp+8]"
+"	      004bd186    mov ecx,strm"
 "	      004bd189    cmp dword ptr [eax+ecx+8],0"
 "	      004bd18e    jne near ptr 004BD19Eh"
 "	      004bd194    jmp near ptr 004BD1B2h"
@@ -1901,17 +1901,17 @@ void SkipDelim(class istream& strm) {
 );
 // LINE 531:
 	asm( 
-"	      004bd1b2    lea eax,[ebp-4]"
+"	      004bd1b2    lea eax,c"
 "	      004bd1b5    push eax"
-"	      004bd1b6    mov ecx,[ebp+8]"
+"	      004bd1b6    mov ecx,strm"
 "	      004bd1b9    call 00572160h"
 );
 // LINE 532:
 	asm( 
-"	      004bd1be    mov eax,[ebp+8]"
+"	      004bd1be    mov eax,strm"
 "	      004bd1c1    mov eax,[eax]"
 "	      004bd1c3    mov eax,[eax+4]"
-"	      004bd1c6    mov ecx,[ebp+8]"
+"	      004bd1c6    mov ecx,strm"
 "	      004bd1c9    cmp dword ptr [eax+ecx+8],0"
 "	      004bd1ce    jne near ptr 004BD1D9h"
 "	      004bd1d4    jmp near ptr 004BD1DEh"
@@ -1922,13 +1922,13 @@ void SkipDelim(class istream& strm) {
 "	      004bd1ed    cmp dword ptr ds:[5C0BA4h],1"
 "	      004bd1f4    jle near ptr 004BD214h"
 "	      004bd1fa    push 107h"
-"	      004bd1ff    movsx eax,byte ptr [ebp-4]"
+"	      004bd1ff    movsx eax,c"
 "	      004bd203    push eax"
 "	      004bd204    call 005720A0h"
 "	      004bd209    add esp,8"
 "	      004bd20c    mov [ebp-8],eax"
 "	      004bd20f    jmp near ptr 004BD22Dh"
-"	      004bd214    movsx eax,byte ptr [ebp-4]"
+"	      004bd214    movsx eax,c"
 "	      004bd218    mov ecx,ds:[5C0998h]"
 "	      004bd21e    xor edx,edx"
 "	      004bd220    mov dx,[ecx+eax*2]"
@@ -1939,10 +1939,10 @@ void SkipDelim(class istream& strm) {
 );
 // LINE 534:
 	asm( 
-"	      004bd237    mov eax,[ebp+8]"
+"	      004bd237    mov eax,strm"
 "	      004bd23a    mov eax,[eax]"
 "	      004bd23c    mov eax,[eax+4]"
-"	      004bd23f    mov ecx,[ebp+8]"
+"	      004bd23f    mov ecx,strm"
 "	      004bd242    cmp dword ptr [eax+ecx+8],0"
 "	      004bd247    jne near ptr 004BD252h"
 "	      004bd24d    jmp near ptr 004BD257h"
@@ -1955,7 +1955,7 @@ void SkipDelim(class istream& strm) {
 	asm( 
 "	      004bd266    mov eax,[ebp-4]"
 "	      004bd269    push eax"
-"	      004bd26a    mov ecx,[ebp+8]"
+"	      004bd26a    mov ecx,strm"
 "	      004bd26d    call 00571B20h"
 );
 // LINE 536:
@@ -1986,28 +1986,28 @@ char * ParseMonth(class istream& s) {
 );
 // LINE 549:
 	asm( 
-"	      004bd285    mov dword ptr [ebp-4],6069A8h"
+"	      004bd285    mov p,6069A8h"
 );
 // LINE 551:
 	asm( 
-"	      004bd28c    mov eax,[ebp+8]"
+"	      004bd28c    mov eax,s"
 "	      004bd28f    push eax"
 "	      004bd290    call 004BD175h"
 "	      004bd295    add esp,4"
 );
 // LINE 552:
 	asm( 
-"	      004bd298    lea eax,[ebp-8]"
+"	      004bd298    lea eax,c"
 "	      004bd29b    push eax"
-"	      004bd29c    mov ecx,[ebp+8]"
+"	      004bd29c    mov ecx,s"
 "	      004bd29f    call 00570410h"
 );
 // LINE 553:
 	asm( 
-"	      004bd2a4    mov eax,[ebp+8]"
+"	      004bd2a4    mov eax,s"
 "	      004bd2a7    mov eax,[eax]"
 "	      004bd2a9    mov eax,[eax+4]"
-"	      004bd2ac    mov ecx,[ebp+8]"
+"	      004bd2ac    mov ecx,s"
 "	      004bd2af    cmp dword ptr [eax+ecx+8],0"
 "	      004bd2b4    jne near ptr 004BD2BFh"
 "	      004bd2ba    jmp near ptr 004BD2C4h"
@@ -2018,13 +2018,13 @@ char * ParseMonth(class istream& s) {
 "	      004bd2d3    cmp dword ptr ds:[5C0BA4h],1"
 "	      004bd2da    jle near ptr 004BD2FAh"
 "	      004bd2e0    push 103h"
-"	      004bd2e5    movsx eax,byte ptr [ebp-8]"
+"	      004bd2e5    movsx eax,c"
 "	      004bd2e9    push eax"
 "	      004bd2ea    call 005720A0h"
 "	      004bd2ef    add esp,8"
 "	      004bd2f2    mov [ebp-0Ch],eax"
 "	      004bd2f5    jmp near ptr 004BD313h"
-"	      004bd2fa    movsx eax,byte ptr [ebp-8]"
+"	      004bd2fa    movsx eax,c"
 "	      004bd2fe    mov ecx,ds:[5C0998h]"
 "	      004bd304    xor edx,edx"
 "	      004bd306    mov dx,[ecx+eax*2]"
@@ -2034,21 +2034,21 @@ char * ParseMonth(class istream& s) {
 "	      004bd317    je near ptr 004BD34Ah"
 "	      004bd31d    mov eax,6069A8h"
 "	      004bd322    add eax,0Ah"
-"	      004bd325    cmp eax,[ebp-4]"
+"	      004bd325    cmp eax,p"
 "	      004bd328    je near ptr 004BD34Ah"
 );
 // LINE 554:
 	asm( 
-"	      004bd32e    mov al,[ebp-8]"
-"	      004bd331    mov ecx,[ebp-4]"
+"	      004bd32e    mov al,c"
+"	      004bd331    mov ecx,p"
 "	      004bd334    mov [ecx],al"
-"	      004bd336    inc dword ptr [ebp-4]"
+"	      004bd336    inc p"
 );
 // LINE 555:
 	asm( 
-"	      004bd339    lea eax,[ebp-8]"
+"	      004bd339    lea eax,c"
 "	      004bd33c    push eax"
-"	      004bd33d    mov ecx,[ebp+8]"
+"	      004bd33d    mov ecx,s"
 "	      004bd340    call 00570410h"
 );
 // LINE 556:
@@ -2057,10 +2057,10 @@ char * ParseMonth(class istream& s) {
 );
 // LINE 557:
 	asm( 
-"	      004bd34a    mov eax,[ebp+8]"
+"	      004bd34a    mov eax,s"
 "	      004bd34d    mov eax,[eax]"
 "	      004bd34f    mov eax,[eax+4]"
-"	      004bd352    mov ecx,[ebp+8]"
+"	      004bd352    mov ecx,s"
 "	      004bd355    cmp dword ptr [eax+ecx+8],0"
 "	      004bd35a    jne near ptr 004BD365h"
 "	      004bd360    jmp near ptr 004BD36Ah"
@@ -2073,12 +2073,12 @@ char * ParseMonth(class istream& s) {
 	asm( 
 "	      004bd379    mov eax,[ebp-8]"
 "	      004bd37c    push eax"
-"	      004bd37d    mov ecx,[ebp+8]"
+"	      004bd37d    mov ecx,s"
 "	      004bd380    call 00571B20h"
 );
 // LINE 559:
 	asm( 
-"	      004bd385    mov eax,[ebp-4]"
+"	      004bd385    mov eax,p"
 "	      004bd388    mov byte ptr [eax],0"
 );
 // LINE 560:
@@ -2115,14 +2115,14 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 "	      004bd3a6    push 1"
 "	      004bd3a8    push 2"
 "	      004bd3aa    push 50h"
-"	      004bd3ac    lea eax,[ebp-50h]"
+"	      004bd3ac    lea eax,buf[0]"
 "	      004bd3af    push eax"
-"	      004bd3b0    lea ecx,[ebp-0A8h]"
+"	      004bd3b0    lea ecx,out.ios"
 "	      004bd3b6    call 0056C780h"
 );
 // LINE 625:
 	asm( 
-"	      004bd3bb    mov eax,[ebp+0Ch]"
+"	      004bd3bb    mov eax,d"
 "	      004bd3be    mov eax,[eax+8]"
 "	      004bd3c1    mov [ebp-0C0h],eax"
 "	      004bd3c7    jmp near ptr 004BD5F3h"
@@ -2130,21 +2130,21 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 // LINE 630:
 	asm( 
 "	      004bd3cc    jmp near ptr 004BD3D1h"
-"	      004bd3d1    mov ecx,[ebp+0Ch]"
+"	      004bd3d1    mov ecx,d"
 "	      004bd3d4    call 004BCDB1h"
 "	      004bd3d9    push eax"
 "	      004bd3da    push 59AE98h"
-"	      004bd3df    mov ecx,[ebp+0Ch]"
+"	      004bd3df    mov ecx,d"
 "	      004bd3e2    call 004BC9D0h"
 "	      004bd3e7    push eax"
 "	      004bd3e8    push 59AE94h"
-"	      004bd3ed    mov ecx,[ebp+0Ch]"
+"	      004bd3ed    mov ecx,d"
 "	      004bd3f0    call 004BCCA1h"
 "	      004bd3f5    push eax"
 "	      004bd3f6    call 004BC8EDh"
 "	      004bd3fb    add esp,4"
 "	      004bd3fe    push eax"
-"	      004bd3ff    lea ecx,[ebp-0A8h]"
+"	      004bd3ff    lea ecx,out.ios"
 "	      004bd405    call 00569960h"
 "	      004bd40a    mov ecx,eax"
 "	      004bd40c    call 00569960h"
@@ -2168,23 +2168,23 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 // LINE 636:
 	asm( 
 "	      004bd445    jmp near ptr 004BD44Ah"
-"	      004bd44a    mov ecx,[ebp+0Ch]"
+"	      004bd44a    mov ecx,d"
 "	      004bd44d    call 004BCDB1h"
 "	      004bd452    mov ecx,64h"
 "	      004bd457    sub edx,edx"
 "	      004bd459    div ecx"
 "	      004bd45b    push edx"
-"	      004bd45c    mov ecx,[ebp+0Ch]"
+"	      004bd45c    mov ecx,d"
 "	      004bd45f    call 004BCCA1h"
 "	      004bd464    push eax"
 "	      004bd465    call 004BC8EDh"
 "	      004bd46a    add esp,4"
 "	      004bd46d    push eax"
-"	      004bd46e    mov ecx,[ebp+0Ch]"
+"	      004bd46e    mov ecx,d"
 "	      004bd471    call 004BC9D0h"
 "	      004bd476    push eax"
 "	      004bd477    push 59AE9Ch"
-"	      004bd47c    lea eax,[ebp-50h]"
+"	      004bd47c    lea eax,buf[0]"
 "	      004bd47f    push eax"
 "	      004bd480    call 0056CD30h"
 "	      004bd485    add esp,14h"
@@ -2195,21 +2195,21 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 );
 // LINE 638:
 	asm( 
-"	      004bd48d    mov ecx,[ebp+0Ch]"
+"	      004bd48d    mov ecx,d"
 "	      004bd490    call 004BCDB1h"
 "	      004bd495    mov ecx,64h"
 "	      004bd49a    sub edx,edx"
 "	      004bd49c    div ecx"
 "	      004bd49e    push edx"
 "	      004bd49f    push 59AEB0h"
-"	      004bd4a4    mov ecx,[ebp+0Ch]"
+"	      004bd4a4    mov ecx,d"
 "	      004bd4a7    call 004BC9D0h"
 "	      004bd4ac    push eax"
 "	      004bd4ad    push 59AEACh"
-"	      004bd4b2    mov ecx,[ebp+0Ch]"
+"	      004bd4b2    mov ecx,d"
 "	      004bd4b5    call 004BCCA1h"
 "	      004bd4ba    push eax"
-"	      004bd4bb    lea ecx,[ebp-0A8h]"
+"	      004bd4bb    lea ecx,out.ios"
 "	      004bd4c1    call 0056F090h"
 "	      004bd4c6    mov ecx,eax"
 "	      004bd4c8    call 00569960h"
@@ -2235,21 +2235,21 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 );
 // LINE 643:
 	asm( 
-"	      004bd501    mov ecx,[ebp+0Ch]"
+"	      004bd501    mov ecx,d"
 "	      004bd504    call 004BCDB1h"
 "	      004bd509    mov ecx,64h"
 "	      004bd50e    sub edx,edx"
 "	      004bd510    div ecx"
 "	      004bd512    push edx"
 "	      004bd513    push 59AEB8h"
-"	      004bd518    mov ecx,[ebp+0Ch]"
+"	      004bd518    mov ecx,d"
 "	      004bd51b    call 004BCCA1h"
 "	      004bd520    push eax"
 "	      004bd521    push 59AEB4h"
-"	      004bd526    mov ecx,[ebp+0Ch]"
+"	      004bd526    mov ecx,d"
 "	      004bd529    call 004BC9D0h"
 "	      004bd52e    push eax"
-"	      004bd52f    lea ecx,[ebp-0A8h]"
+"	      004bd52f    lea ecx,out.ios"
 "	      004bd535    call 0056F090h"
 "	      004bd53a    mov ecx,eax"
 "	      004bd53c    call 00569960h"
@@ -2276,21 +2276,21 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 // LINE 651:
 	asm( 
 "	      004bd575    jmp near ptr 004BD57Ah"
-"	      004bd57a    mov ecx,[ebp+0Ch]"
+"	      004bd57a    mov ecx,d"
 "	      004bd57d    call 004BCDB1h"
 "	      004bd582    push eax"
 "	      004bd583    push 59AEC0h"
-"	      004bd588    mov ecx,[ebp+0Ch]"
+"	      004bd588    mov ecx,d"
 "	      004bd58b    call 004BCCA1h"
 "	      004bd590    push eax"
 "	      004bd591    call 004BC8EDh"
 "	      004bd596    add esp,4"
 "	      004bd599    push eax"
 "	      004bd59a    push 59AEBCh"
-"	      004bd59f    mov ecx,[ebp+0Ch]"
+"	      004bd59f    mov ecx,d"
 "	      004bd5a2    call 004BC9D0h"
 "	      004bd5a7    push eax"
-"	      004bd5a8    lea ecx,[ebp-0A8h]"
+"	      004bd5a8    lea ecx,out.ios"
 "	      004bd5ae    call 0056F090h"
 "	      004bd5b3    mov ecx,eax"
 "	      004bd5b5    call 00569960h"
@@ -2318,31 +2318,31 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 "	      004bd5fa    ja near ptr 004BD621h"
 "	      004bd600    mov eax,[ebp-0C0h]"
 "	      004bd606    jmp dword ptr [eax*4+4BD60Dh]"
-"	      004bd60d    int 3"
+"	      004bd60d    int"
 "	      004bd60e    ror dword ptr [ebx],cl"
 "	      004bd611    inc ebp"
 "	      004bd612    aam 4Bh"
 "	      004bd614    add [ebp+1004BD4h],cl"
 "	      004bd61a    aad 4Bh"
-"	      004bd61c    add [ebp-2Bh],dh"
+"	      004bd61c    add buf[37],dh"
 "	      004bd61f    dec ebx"
 "	      004bd620    (bad)"
 );
 // LINE 658:
 	asm( 
-"	      004bd621    lea eax,[ebp-50h]"
+"	      004bd621    lea eax,buf[0]"
 "	      004bd624    push eax"
-"	      004bd625    mov ecx,[ebp+8]"
+"	      004bd625    mov ecx,s"
 "	      004bd628    call 00569960h"
 );
 // LINE 659:
 	asm( 
-"	      004bd62d    mov eax,[ebp+8]"
+"	      004bd62d    mov eax,s"
 "	      004bd630    mov [ebp-0ACh],eax"
 "	      004bd636    jmp near ptr 004BD63Bh"
-"	      004bd63b    lea ecx,[ebp-0A0h]"
+"	      004bd63b    lea ecx,out.<ostrstream+0x08>"
 "	      004bd641    call 0056C8D0h"
-"	      004bd646    lea ecx,[ebp-0A0h]"
+"	      004bd646    lea ecx,out.<ostrstream+0x08>"
 "	      004bd64c    call 0056B140h"
 "	      004bd651    mov eax,[ebp-0ACh]"
 "	      004bd657    jmp near ptr 004BD65Ch"

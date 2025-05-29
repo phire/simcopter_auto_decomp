@@ -27,7 +27,7 @@ int32_t SoundChangeNotificationSink::Initialize() {
 "	      00441ea8    push ebx"
 "	      00441ea9    push esi"
 "	      00441eaa    push edi"
-"	      00441eab    mov [ebp-4],ecx"
+"	      00441eab    mov this,ecx"
 );
 // LINE 57:
 	asm( 
@@ -36,7 +36,7 @@ int32_t SoundChangeNotificationSink::Initialize() {
 );
 // LINE 58:
 	asm( 
-"	      00441ebb    mov eax,[ebp-4]"
+"	      00441ebb    mov eax,this"
 "	      00441ebe    push eax"
 "	      00441ebf    push 4FFFFFFh"
 "	      00441ec4    mov eax,ds:[599BC4h]"
@@ -75,52 +75,52 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 "	      00441eeb    push ebx"
 "	      00441eec    push esi"
 "	      00441eed    push edi"
-"	      00441eee    mov [ebp-18h],ecx"
+"	      00441eee    mov this,ecx"
 );
 // LINE 84:
 	asm( 
-"	      00441ef1    cmp dword ptr [ebp+8],4FFFFFFh"
+"	      00441ef1    cmp lPreferenceType,4FFFFFFh"
 "	      00441ef8    jne near ptr 00441FA9h"
 );
 // LINE 85:
 	asm( 
 "	      00441efe    push 4FFFFFFh"
-"	      00441f03    mov eax,[ebp+0Ch]"
+"	      00441f03    mov eax,thePreferenceManager"
 "	      00441f06    mov eax,[eax]"
-"	      00441f08    mov ecx,[ebp+0Ch]"
+"	      00441f08    mov ecx,thePreferenceManager"
 "	      00441f0b    call dword ptr [eax+1Ch]"
-"	      00441f0e    mov [ebp-0Ch],eax"
+"	      00441f0e    mov chPrefsData,eax"
 );
 // LINE 86:
 	asm( 
-"	      00441f11    cmp dword ptr [ebp-0Ch],0"
+"	      00441f11    cmp chPrefsData,0"
 "	      00441f15    je near ptr 00441FA9h"
 );
 // LINE 87:
 	asm( 
-"	      00441f1b    mov eax,[ebp-0Ch]"
-"	      00441f1e    mov [ebp-8],eax"
+"	      00441f1b    mov eax,chPrefsData"
+"	      00441f1e    mov currentSoundPreferences,eax"
 );
 // LINE 88:
 	asm( 
-"	      00441f21    mov eax,[ebp-8]"
+"	      00441f21    mov eax,currentSoundPreferences"
 "	      00441f24    mov eax,[eax]"
 "	      00441f26    mov ds:[5C37F0h],eax"
 );
 // LINE 89:
 	asm( 
-"	      00441f2b    mov dword ptr [ebp-4],0"
+"	      00441f2b    mov i,0"
 "	      00441f32    jmp near ptr 00441F3Ah"
-"	      00441f37    inc dword ptr [ebp-4]"
-"	      00441f3a    cmp dword ptr [ebp-4],71h"
+"	      00441f37    inc i"
+"	      00441f3a    cmp i,71h"
 "	      00441f3e    jge near ptr 00441FA9h"
 );
 // LINE 90:
 	asm( 
-"	      00441f44    mov eax,[ebp-4]"
+"	      00441f44    mov eax,i"
 "	      00441f47    cmp dword ptr [eax*4+604604h],0"
 "	      00441f4f    je near ptr 00441FA4h"
-"	      00441f55    mov eax,[ebp-4]"
+"	      00441f55    mov eax,i"
 "	      00441f58    mov eax,[eax*4+5C3628h]"
 "	      00441f5f    mov [ebp-14h],eax"
 );
@@ -135,15 +135,15 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 "	      00441f77    idiv ecx"
 "	      00441f79    mov [ebp-14h],eax"
 "	      00441f7c    mov eax,[ebp-14h]"
-"	      00441f7f    mov [ebp-10h],eax"
+"	      00441f7f    mov lNewVolume,eax"
 "	      00441f82    jmp near ptr 00441F87h"
 );
 // LINE 92:
 	asm( 
-"	      00441f87    mov eax,[ebp-10h]"
+"	      00441f87    mov eax,lNewVolume"
 "	      00441f8a    push eax"
-"	      00441f8b    mov eax,[ebp-4]"
-"	      00441f8e    mov ecx,[ebp-4]"
+"	      00441f8b    mov eax,i"
+"	      00441f8e    mov ecx,i"
 "	      00441f91    mov ecx,[ecx*4+604604h]"
 "	      00441f98    mov edx,[ecx]"
 "	      00441f9a    mov ecx,[eax*4+604604h]"
@@ -179,15 +179,15 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 );
 // LINE 131:
 	asm( 
-"	      00441fbe    mov dword ptr [ebp-4],0"
+"	      00441fbe    mov i,0"
 "	      00441fc5    jmp near ptr 00441FCDh"
-"	      00441fca    inc dword ptr [ebp-4]"
-"	      00441fcd    cmp dword ptr [ebp-4],71h"
+"	      00441fca    inc i"
+"	      00441fcd    cmp i,71h"
 "	      00441fd1    jge near ptr 00441FEAh"
 );
 // LINE 132:
 	asm( 
-"	      00441fd7    mov eax,[ebp-4]"
+"	      00441fd7    mov eax,i"
 "	      00441fda    mov dword ptr [eax*4+5C3628h],2710h"
 );
 // LINE 133:
@@ -196,7 +196,7 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 );
 // LINE 134:
 	asm( 
-"	      00441fea    mov eax,[ebp+8]"
+"	      00441fea    mov eax,hWnd"
 "	      00441fed    push eax"
 "	      00441fee    mov ecx,604588h"
 "	      00441ff3    call 0042E009h"
@@ -228,7 +228,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 153:
 	asm( 
-"	      0044200e    lea eax,[ebp-104h]"
+"	      0044200e    lea eax,szFullSoundPath[0]"
 "	      00442014    push eax"
 "	      00442015    push 598974h"
 "	      0044201a    push 0"
@@ -244,7 +244,7 @@ int32_t S3LoadSounds() {
 "	      00442030    mov [ebp-73Ch],eax"
 "	      00442036    cmp dword ptr [ebp-73Ch],0"
 "	      0044203d    je near ptr 00442060h"
-"	      00442043    lea eax,[ebp-104h]"
+"	      00442043    lea eax,szFullSoundPath[0]"
 "	      00442049    push eax"
 "	      0044204a    mov ecx,[ebp-73Ch]"
 "	      00442050    call 0041DFE0h"
@@ -275,7 +275,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 156:
 	asm( 
-"	      004420d2    lea eax,[ebp-104h]"
+"	      004420d2    lea eax,szFullSoundPath[0]"
 "	      004420d8    push eax"
 "	      004420d9    push 598980h"
 "	      004420de    push 0"
@@ -291,7 +291,7 @@ int32_t S3LoadSounds() {
 "	      004420f4    mov [ebp-740h],eax"
 "	      004420fa    cmp dword ptr [ebp-740h],0"
 "	      00442101    je near ptr 00442124h"
-"	      00442107    lea eax,[ebp-104h]"
+"	      00442107    lea eax,szFullSoundPath[0]"
 "	      0044210d    push eax"
 "	      0044210e    mov ecx,[ebp-740h]"
 "	      00442114    call 0041DFE0h"
@@ -322,7 +322,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 159:
 	asm( 
-"	      00442196    lea eax,[ebp-104h]"
+"	      00442196    lea eax,szFullSoundPath[0]"
 "	      0044219c    push eax"
 "	      0044219d    push 59898Ch"
 "	      004421a2    push 0"
@@ -338,7 +338,7 @@ int32_t S3LoadSounds() {
 "	      004421b8    mov [ebp-744h],eax"
 "	      004421be    cmp dword ptr [ebp-744h],0"
 "	      004421c5    je near ptr 004421E8h"
-"	      004421cb    lea eax,[ebp-104h]"
+"	      004421cb    lea eax,szFullSoundPath[0]"
 "	      004421d1    push eax"
 "	      004421d2    mov ecx,[ebp-744h]"
 "	      004421d8    call 0041DFE0h"
@@ -369,7 +369,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 162:
 	asm( 
-"	      0044225a    lea eax,[ebp-104h]"
+"	      0044225a    lea eax,szFullSoundPath[0]"
 "	      00442260    push eax"
 "	      00442261    push 59899Ch"
 "	      00442266    push 0"
@@ -385,7 +385,7 @@ int32_t S3LoadSounds() {
 "	      0044227c    mov [ebp-748h],eax"
 "	      00442282    cmp dword ptr [ebp-748h],0"
 "	      00442289    je near ptr 004422ACh"
-"	      0044228f    lea eax,[ebp-104h]"
+"	      0044228f    lea eax,szFullSoundPath[0]"
 "	      00442295    push eax"
 "	      00442296    mov ecx,[ebp-748h]"
 "	      0044229c    call 0041DFE0h"
@@ -416,7 +416,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 165:
 	asm( 
-"	      0044231e    lea eax,[ebp-104h]"
+"	      0044231e    lea eax,szFullSoundPath[0]"
 "	      00442324    push eax"
 "	      00442325    push 5989ACh"
 "	      0044232a    push 0"
@@ -432,7 +432,7 @@ int32_t S3LoadSounds() {
 "	      00442340    mov [ebp-74Ch],eax"
 "	      00442346    cmp dword ptr [ebp-74Ch],0"
 "	      0044234d    je near ptr 00442370h"
-"	      00442353    lea eax,[ebp-104h]"
+"	      00442353    lea eax,szFullSoundPath[0]"
 "	      00442359    push eax"
 "	      0044235a    mov ecx,[ebp-74Ch]"
 "	      00442360    call 0041DFE0h"
@@ -463,7 +463,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 168:
 	asm( 
-"	      004423e2    lea eax,[ebp-104h]"
+"	      004423e2    lea eax,szFullSoundPath[0]"
 "	      004423e8    push eax"
 "	      004423e9    push 5989B8h"
 "	      004423ee    push 0"
@@ -479,7 +479,7 @@ int32_t S3LoadSounds() {
 "	      00442404    mov [ebp-750h],eax"
 "	      0044240a    cmp dword ptr [ebp-750h],0"
 "	      00442411    je near ptr 00442434h"
-"	      00442417    lea eax,[ebp-104h]"
+"	      00442417    lea eax,szFullSoundPath[0]"
 "	      0044241d    push eax"
 "	      0044241e    mov ecx,[ebp-750h]"
 "	      00442424    call 0041DFE0h"
@@ -510,7 +510,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 171:
 	asm( 
-"	      004424a6    lea eax,[ebp-104h]"
+"	      004424a6    lea eax,szFullSoundPath[0]"
 "	      004424ac    push eax"
 "	      004424ad    push 5989C8h"
 "	      004424b2    push 0"
@@ -526,7 +526,7 @@ int32_t S3LoadSounds() {
 "	      004424c8    mov [ebp-754h],eax"
 "	      004424ce    cmp dword ptr [ebp-754h],0"
 "	      004424d5    je near ptr 004424F8h"
-"	      004424db    lea eax,[ebp-104h]"
+"	      004424db    lea eax,szFullSoundPath[0]"
 "	      004424e1    push eax"
 "	      004424e2    mov ecx,[ebp-754h]"
 "	      004424e8    call 0041DFE0h"
@@ -557,7 +557,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 174:
 	asm( 
-"	      0044256a    lea eax,[ebp-104h]"
+"	      0044256a    lea eax,szFullSoundPath[0]"
 "	      00442570    push eax"
 "	      00442571    push 5989D4h"
 "	      00442576    push 0"
@@ -573,7 +573,7 @@ int32_t S3LoadSounds() {
 "	      0044258c    mov [ebp-758h],eax"
 "	      00442592    cmp dword ptr [ebp-758h],0"
 "	      00442599    je near ptr 004425BCh"
-"	      0044259f    lea eax,[ebp-104h]"
+"	      0044259f    lea eax,szFullSoundPath[0]"
 "	      004425a5    push eax"
 "	      004425a6    mov ecx,[ebp-758h]"
 "	      004425ac    call 0041DFE0h"
@@ -604,7 +604,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 177:
 	asm( 
-"	      0044262e    lea eax,[ebp-104h]"
+"	      0044262e    lea eax,szFullSoundPath[0]"
 "	      00442634    push eax"
 "	      00442635    push 5989E0h"
 "	      0044263a    push 0"
@@ -620,7 +620,7 @@ int32_t S3LoadSounds() {
 "	      00442650    mov [ebp-75Ch],eax"
 "	      00442656    cmp dword ptr [ebp-75Ch],0"
 "	      0044265d    je near ptr 00442680h"
-"	      00442663    lea eax,[ebp-104h]"
+"	      00442663    lea eax,szFullSoundPath[0]"
 "	      00442669    push eax"
 "	      0044266a    mov ecx,[ebp-75Ch]"
 "	      00442670    call 0041DFE0h"
@@ -651,7 +651,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 180:
 	asm( 
-"	      004426f2    lea eax,[ebp-104h]"
+"	      004426f2    lea eax,szFullSoundPath[0]"
 "	      004426f8    push eax"
 "	      004426f9    push 5989ECh"
 "	      004426fe    push 0"
@@ -667,7 +667,7 @@ int32_t S3LoadSounds() {
 "	      00442714    mov [ebp-760h],eax"
 "	      0044271a    cmp dword ptr [ebp-760h],0"
 "	      00442721    je near ptr 00442744h"
-"	      00442727    lea eax,[ebp-104h]"
+"	      00442727    lea eax,szFullSoundPath[0]"
 "	      0044272d    push eax"
 "	      0044272e    mov ecx,[ebp-760h]"
 "	      00442734    call 0041DFE0h"
@@ -698,7 +698,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 183:
 	asm( 
-"	      004427b6    lea eax,[ebp-104h]"
+"	      004427b6    lea eax,szFullSoundPath[0]"
 "	      004427bc    push eax"
 "	      004427bd    push 5989F8h"
 "	      004427c2    push 0"
@@ -714,7 +714,7 @@ int32_t S3LoadSounds() {
 "	      004427d8    mov [ebp-764h],eax"
 "	      004427de    cmp dword ptr [ebp-764h],0"
 "	      004427e5    je near ptr 00442808h"
-"	      004427eb    lea eax,[ebp-104h]"
+"	      004427eb    lea eax,szFullSoundPath[0]"
 "	      004427f1    push eax"
 "	      004427f2    mov ecx,[ebp-764h]"
 "	      004427f8    call 0041DFE0h"
@@ -745,7 +745,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 186:
 	asm( 
-"	      0044287a    lea eax,[ebp-104h]"
+"	      0044287a    lea eax,szFullSoundPath[0]"
 "	      00442880    push eax"
 "	      00442881    push 598A04h"
 "	      00442886    push 0"
@@ -761,7 +761,7 @@ int32_t S3LoadSounds() {
 "	      0044289c    mov [ebp-768h],eax"
 "	      004428a2    cmp dword ptr [ebp-768h],0"
 "	      004428a9    je near ptr 004428CCh"
-"	      004428af    lea eax,[ebp-104h]"
+"	      004428af    lea eax,szFullSoundPath[0]"
 "	      004428b5    push eax"
 "	      004428b6    mov ecx,[ebp-768h]"
 "	      004428bc    call 0041DFE0h"
@@ -792,7 +792,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 189:
 	asm( 
-"	      0044293e    lea eax,[ebp-104h]"
+"	      0044293e    lea eax,szFullSoundPath[0]"
 "	      00442944    push eax"
 "	      00442945    push 598A14h"
 "	      0044294a    push 0"
@@ -808,7 +808,7 @@ int32_t S3LoadSounds() {
 "	      00442960    mov [ebp-76Ch],eax"
 "	      00442966    cmp dword ptr [ebp-76Ch],0"
 "	      0044296d    je near ptr 00442990h"
-"	      00442973    lea eax,[ebp-104h]"
+"	      00442973    lea eax,szFullSoundPath[0]"
 "	      00442979    push eax"
 "	      0044297a    mov ecx,[ebp-76Ch]"
 "	      00442980    call 0041DFE0h"
@@ -839,7 +839,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 192:
 	asm( 
-"	      00442a02    lea eax,[ebp-104h]"
+"	      00442a02    lea eax,szFullSoundPath[0]"
 "	      00442a08    push eax"
 "	      00442a09    push 598A20h"
 "	      00442a0e    push 0"
@@ -855,7 +855,7 @@ int32_t S3LoadSounds() {
 "	      00442a24    mov [ebp-770h],eax"
 "	      00442a2a    cmp dword ptr [ebp-770h],0"
 "	      00442a31    je near ptr 00442A54h"
-"	      00442a37    lea eax,[ebp-104h]"
+"	      00442a37    lea eax,szFullSoundPath[0]"
 "	      00442a3d    push eax"
 "	      00442a3e    mov ecx,[ebp-770h]"
 "	      00442a44    call 0041DFE0h"
@@ -886,7 +886,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 195:
 	asm( 
-"	      00442ac6    lea eax,[ebp-104h]"
+"	      00442ac6    lea eax,szFullSoundPath[0]"
 "	      00442acc    push eax"
 "	      00442acd    push 598A30h"
 "	      00442ad2    push 0"
@@ -902,7 +902,7 @@ int32_t S3LoadSounds() {
 "	      00442ae8    mov [ebp-774h],eax"
 "	      00442aee    cmp dword ptr [ebp-774h],0"
 "	      00442af5    je near ptr 00442B18h"
-"	      00442afb    lea eax,[ebp-104h]"
+"	      00442afb    lea eax,szFullSoundPath[0]"
 "	      00442b01    push eax"
 "	      00442b02    mov ecx,[ebp-774h]"
 "	      00442b08    call 0041DFE0h"
@@ -933,7 +933,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 198:
 	asm( 
-"	      00442b8a    lea eax,[ebp-104h]"
+"	      00442b8a    lea eax,szFullSoundPath[0]"
 "	      00442b90    push eax"
 "	      00442b91    push 598A40h"
 "	      00442b96    push 0"
@@ -949,7 +949,7 @@ int32_t S3LoadSounds() {
 "	      00442bac    mov [ebp-778h],eax"
 "	      00442bb2    cmp dword ptr [ebp-778h],0"
 "	      00442bb9    je near ptr 00442BDCh"
-"	      00442bbf    lea eax,[ebp-104h]"
+"	      00442bbf    lea eax,szFullSoundPath[0]"
 "	      00442bc5    push eax"
 "	      00442bc6    mov ecx,[ebp-778h]"
 "	      00442bcc    call 0041DFE0h"
@@ -980,7 +980,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 201:
 	asm( 
-"	      00442c4e    lea eax,[ebp-104h]"
+"	      00442c4e    lea eax,szFullSoundPath[0]"
 "	      00442c54    push eax"
 "	      00442c55    push 598A4Ch"
 "	      00442c5a    push 0"
@@ -996,7 +996,7 @@ int32_t S3LoadSounds() {
 "	      00442c70    mov [ebp-77Ch],eax"
 "	      00442c76    cmp dword ptr [ebp-77Ch],0"
 "	      00442c7d    je near ptr 00442CA0h"
-"	      00442c83    lea eax,[ebp-104h]"
+"	      00442c83    lea eax,szFullSoundPath[0]"
 "	      00442c89    push eax"
 "	      00442c8a    mov ecx,[ebp-77Ch]"
 "	      00442c90    call 0041DFE0h"
@@ -1027,7 +1027,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 204:
 	asm( 
-"	      00442d12    lea eax,[ebp-104h]"
+"	      00442d12    lea eax,szFullSoundPath[0]"
 "	      00442d18    push eax"
 "	      00442d19    push 598A58h"
 "	      00442d1e    push 0"
@@ -1043,7 +1043,7 @@ int32_t S3LoadSounds() {
 "	      00442d34    mov [ebp-780h],eax"
 "	      00442d3a    cmp dword ptr [ebp-780h],0"
 "	      00442d41    je near ptr 00442D64h"
-"	      00442d47    lea eax,[ebp-104h]"
+"	      00442d47    lea eax,szFullSoundPath[0]"
 "	      00442d4d    push eax"
 "	      00442d4e    mov ecx,[ebp-780h]"
 "	      00442d54    call 0041DFE0h"
@@ -1074,7 +1074,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 207:
 	asm( 
-"	      00442dd6    lea eax,[ebp-104h]"
+"	      00442dd6    lea eax,szFullSoundPath[0]"
 "	      00442ddc    push eax"
 "	      00442ddd    push 598A68h"
 "	      00442de2    push 0"
@@ -1090,7 +1090,7 @@ int32_t S3LoadSounds() {
 "	      00442df8    mov [ebp-784h],eax"
 "	      00442dfe    cmp dword ptr [ebp-784h],0"
 "	      00442e05    je near ptr 00442E28h"
-"	      00442e0b    lea eax,[ebp-104h]"
+"	      00442e0b    lea eax,szFullSoundPath[0]"
 "	      00442e11    push eax"
 "	      00442e12    mov ecx,[ebp-784h]"
 "	      00442e18    call 0041DFE0h"
@@ -1121,7 +1121,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 210:
 	asm( 
-"	      00442e9a    lea eax,[ebp-104h]"
+"	      00442e9a    lea eax,szFullSoundPath[0]"
 "	      00442ea0    push eax"
 "	      00442ea1    push 598A78h"
 "	      00442ea6    push 0"
@@ -1137,7 +1137,7 @@ int32_t S3LoadSounds() {
 "	      00442ebc    mov [ebp-788h],eax"
 "	      00442ec2    cmp dword ptr [ebp-788h],0"
 "	      00442ec9    je near ptr 00442EECh"
-"	      00442ecf    lea eax,[ebp-104h]"
+"	      00442ecf    lea eax,szFullSoundPath[0]"
 "	      00442ed5    push eax"
 "	      00442ed6    mov ecx,[ebp-788h]"
 "	      00442edc    call 0041DFE0h"
@@ -1168,7 +1168,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 213:
 	asm( 
-"	      00442f5e    lea eax,[ebp-104h]"
+"	      00442f5e    lea eax,szFullSoundPath[0]"
 "	      00442f64    push eax"
 "	      00442f65    push 598A88h"
 "	      00442f6a    push 0"
@@ -1184,7 +1184,7 @@ int32_t S3LoadSounds() {
 "	      00442f80    mov [ebp-78Ch],eax"
 "	      00442f86    cmp dword ptr [ebp-78Ch],0"
 "	      00442f8d    je near ptr 00442FB0h"
-"	      00442f93    lea eax,[ebp-104h]"
+"	      00442f93    lea eax,szFullSoundPath[0]"
 "	      00442f99    push eax"
 "	      00442f9a    mov ecx,[ebp-78Ch]"
 "	      00442fa0    call 0041DFE0h"
@@ -1215,7 +1215,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 216:
 	asm( 
-"	      00443022    lea eax,[ebp-104h]"
+"	      00443022    lea eax,szFullSoundPath[0]"
 "	      00443028    push eax"
 "	      00443029    push 598A98h"
 "	      0044302e    push 0"
@@ -1231,7 +1231,7 @@ int32_t S3LoadSounds() {
 "	      00443044    mov [ebp-790h],eax"
 "	      0044304a    cmp dword ptr [ebp-790h],0"
 "	      00443051    je near ptr 00443074h"
-"	      00443057    lea eax,[ebp-104h]"
+"	      00443057    lea eax,szFullSoundPath[0]"
 "	      0044305d    push eax"
 "	      0044305e    mov ecx,[ebp-790h]"
 "	      00443064    call 0041DFE0h"
@@ -1262,7 +1262,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 219:
 	asm( 
-"	      004430e6    lea eax,[ebp-104h]"
+"	      004430e6    lea eax,szFullSoundPath[0]"
 "	      004430ec    push eax"
 "	      004430ed    push 598AA8h"
 "	      004430f2    push 0"
@@ -1278,7 +1278,7 @@ int32_t S3LoadSounds() {
 "	      00443108    mov [ebp-794h],eax"
 "	      0044310e    cmp dword ptr [ebp-794h],0"
 "	      00443115    je near ptr 00443138h"
-"	      0044311b    lea eax,[ebp-104h]"
+"	      0044311b    lea eax,szFullSoundPath[0]"
 "	      00443121    push eax"
 "	      00443122    mov ecx,[ebp-794h]"
 "	      00443128    call 0041DFE0h"
@@ -1309,7 +1309,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 222:
 	asm( 
-"	      004431aa    lea eax,[ebp-104h]"
+"	      004431aa    lea eax,szFullSoundPath[0]"
 "	      004431b0    push eax"
 "	      004431b1    push 598AB4h"
 "	      004431b6    push 0"
@@ -1325,7 +1325,7 @@ int32_t S3LoadSounds() {
 "	      004431cc    mov [ebp-798h],eax"
 "	      004431d2    cmp dword ptr [ebp-798h],0"
 "	      004431d9    je near ptr 004431FCh"
-"	      004431df    lea eax,[ebp-104h]"
+"	      004431df    lea eax,szFullSoundPath[0]"
 "	      004431e5    push eax"
 "	      004431e6    mov ecx,[ebp-798h]"
 "	      004431ec    call 0041DFE0h"
@@ -1356,7 +1356,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 225:
 	asm( 
-"	      0044326e    lea eax,[ebp-104h]"
+"	      0044326e    lea eax,szFullSoundPath[0]"
 "	      00443274    push eax"
 "	      00443275    push 598AC4h"
 "	      0044327a    push 0"
@@ -1372,7 +1372,7 @@ int32_t S3LoadSounds() {
 "	      00443290    mov [ebp-79Ch],eax"
 "	      00443296    cmp dword ptr [ebp-79Ch],0"
 "	      0044329d    je near ptr 004432C0h"
-"	      004432a3    lea eax,[ebp-104h]"
+"	      004432a3    lea eax,szFullSoundPath[0]"
 "	      004432a9    push eax"
 "	      004432aa    mov ecx,[ebp-79Ch]"
 "	      004432b0    call 0041DFE0h"
@@ -1403,7 +1403,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 228:
 	asm( 
-"	      00443332    lea eax,[ebp-104h]"
+"	      00443332    lea eax,szFullSoundPath[0]"
 "	      00443338    push eax"
 "	      00443339    push 598AD0h"
 "	      0044333e    push 0"
@@ -1419,7 +1419,7 @@ int32_t S3LoadSounds() {
 "	      00443354    mov [ebp-7A0h],eax"
 "	      0044335a    cmp dword ptr [ebp-7A0h],0"
 "	      00443361    je near ptr 00443384h"
-"	      00443367    lea eax,[ebp-104h]"
+"	      00443367    lea eax,szFullSoundPath[0]"
 "	      0044336d    push eax"
 "	      0044336e    mov ecx,[ebp-7A0h]"
 "	      00443374    call 0041DFE0h"
@@ -1450,7 +1450,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 231:
 	asm( 
-"	      004433f6    lea eax,[ebp-104h]"
+"	      004433f6    lea eax,szFullSoundPath[0]"
 "	      004433fc    push eax"
 "	      004433fd    push 598ADCh"
 "	      00443402    push 0"
@@ -1466,7 +1466,7 @@ int32_t S3LoadSounds() {
 "	      00443418    mov [ebp-7A4h],eax"
 "	      0044341e    cmp dword ptr [ebp-7A4h],0"
 "	      00443425    je near ptr 00443448h"
-"	      0044342b    lea eax,[ebp-104h]"
+"	      0044342b    lea eax,szFullSoundPath[0]"
 "	      00443431    push eax"
 "	      00443432    mov ecx,[ebp-7A4h]"
 "	      00443438    call 0041DFE0h"
@@ -1497,7 +1497,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 234:
 	asm( 
-"	      004434ba    lea eax,[ebp-104h]"
+"	      004434ba    lea eax,szFullSoundPath[0]"
 "	      004434c0    push eax"
 "	      004434c1    push 598AE8h"
 "	      004434c6    push 0"
@@ -1513,7 +1513,7 @@ int32_t S3LoadSounds() {
 "	      004434dc    mov [ebp-7A8h],eax"
 "	      004434e2    cmp dword ptr [ebp-7A8h],0"
 "	      004434e9    je near ptr 0044350Ch"
-"	      004434ef    lea eax,[ebp-104h]"
+"	      004434ef    lea eax,szFullSoundPath[0]"
 "	      004434f5    push eax"
 "	      004434f6    mov ecx,[ebp-7A8h]"
 "	      004434fc    call 0041DFE0h"
@@ -1544,7 +1544,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 237:
 	asm( 
-"	      0044357e    lea eax,[ebp-104h]"
+"	      0044357e    lea eax,szFullSoundPath[0]"
 "	      00443584    push eax"
 "	      00443585    push 598AF4h"
 "	      0044358a    push 0"
@@ -1560,7 +1560,7 @@ int32_t S3LoadSounds() {
 "	      004435a0    mov [ebp-7ACh],eax"
 "	      004435a6    cmp dword ptr [ebp-7ACh],0"
 "	      004435ad    je near ptr 004435D0h"
-"	      004435b3    lea eax,[ebp-104h]"
+"	      004435b3    lea eax,szFullSoundPath[0]"
 "	      004435b9    push eax"
 "	      004435ba    mov ecx,[ebp-7ACh]"
 "	      004435c0    call 0041DFE0h"
@@ -1591,7 +1591,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 240:
 	asm( 
-"	      00443642    lea eax,[ebp-104h]"
+"	      00443642    lea eax,szFullSoundPath[0]"
 "	      00443648    push eax"
 "	      00443649    push 598B00h"
 "	      0044364e    push 0"
@@ -1607,7 +1607,7 @@ int32_t S3LoadSounds() {
 "	      00443664    mov [ebp-7B0h],eax"
 "	      0044366a    cmp dword ptr [ebp-7B0h],0"
 "	      00443671    je near ptr 00443694h"
-"	      00443677    lea eax,[ebp-104h]"
+"	      00443677    lea eax,szFullSoundPath[0]"
 "	      0044367d    push eax"
 "	      0044367e    mov ecx,[ebp-7B0h]"
 "	      00443684    call 0041DFE0h"
@@ -1638,7 +1638,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 243:
 	asm( 
-"	      00443706    lea eax,[ebp-104h]"
+"	      00443706    lea eax,szFullSoundPath[0]"
 "	      0044370c    push eax"
 "	      0044370d    push 598B0Ch"
 "	      00443712    push 0"
@@ -1654,7 +1654,7 @@ int32_t S3LoadSounds() {
 "	      00443728    mov [ebp-7B4h],eax"
 "	      0044372e    cmp dword ptr [ebp-7B4h],0"
 "	      00443735    je near ptr 00443758h"
-"	      0044373b    lea eax,[ebp-104h]"
+"	      0044373b    lea eax,szFullSoundPath[0]"
 "	      00443741    push eax"
 "	      00443742    mov ecx,[ebp-7B4h]"
 "	      00443748    call 0041DFE0h"
@@ -1685,7 +1685,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 246:
 	asm( 
-"	      004437ca    lea eax,[ebp-104h]"
+"	      004437ca    lea eax,szFullSoundPath[0]"
 "	      004437d0    push eax"
 "	      004437d1    push 598B18h"
 "	      004437d6    push 0"
@@ -1701,7 +1701,7 @@ int32_t S3LoadSounds() {
 "	      004437ec    mov [ebp-7B8h],eax"
 "	      004437f2    cmp dword ptr [ebp-7B8h],0"
 "	      004437f9    je near ptr 0044381Ch"
-"	      004437ff    lea eax,[ebp-104h]"
+"	      004437ff    lea eax,szFullSoundPath[0]"
 "	      00443805    push eax"
 "	      00443806    mov ecx,[ebp-7B8h]"
 "	      0044380c    call 0041DFE0h"
@@ -1732,7 +1732,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 249:
 	asm( 
-"	      0044388e    lea eax,[ebp-104h]"
+"	      0044388e    lea eax,szFullSoundPath[0]"
 "	      00443894    push eax"
 "	      00443895    push 598B24h"
 "	      0044389a    push 0"
@@ -1748,7 +1748,7 @@ int32_t S3LoadSounds() {
 "	      004438b0    mov [ebp-7BCh],eax"
 "	      004438b6    cmp dword ptr [ebp-7BCh],0"
 "	      004438bd    je near ptr 004438E0h"
-"	      004438c3    lea eax,[ebp-104h]"
+"	      004438c3    lea eax,szFullSoundPath[0]"
 "	      004438c9    push eax"
 "	      004438ca    mov ecx,[ebp-7BCh]"
 "	      004438d0    call 0041DFE0h"
@@ -1779,7 +1779,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 252:
 	asm( 
-"	      00443952    lea eax,[ebp-104h]"
+"	      00443952    lea eax,szFullSoundPath[0]"
 "	      00443958    push eax"
 "	      00443959    push 598B30h"
 "	      0044395e    push 0"
@@ -1795,7 +1795,7 @@ int32_t S3LoadSounds() {
 "	      00443974    mov [ebp-7C0h],eax"
 "	      0044397a    cmp dword ptr [ebp-7C0h],0"
 "	      00443981    je near ptr 004439A4h"
-"	      00443987    lea eax,[ebp-104h]"
+"	      00443987    lea eax,szFullSoundPath[0]"
 "	      0044398d    push eax"
 "	      0044398e    mov ecx,[ebp-7C0h]"
 "	      00443994    call 0041DFE0h"
@@ -1826,7 +1826,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 255:
 	asm( 
-"	      00443a16    lea eax,[ebp-104h]"
+"	      00443a16    lea eax,szFullSoundPath[0]"
 "	      00443a1c    push eax"
 "	      00443a1d    push 598B3Ch"
 "	      00443a22    push 0"
@@ -1842,7 +1842,7 @@ int32_t S3LoadSounds() {
 "	      00443a38    mov [ebp-7C4h],eax"
 "	      00443a3e    cmp dword ptr [ebp-7C4h],0"
 "	      00443a45    je near ptr 00443A68h"
-"	      00443a4b    lea eax,[ebp-104h]"
+"	      00443a4b    lea eax,szFullSoundPath[0]"
 "	      00443a51    push eax"
 "	      00443a52    mov ecx,[ebp-7C4h]"
 "	      00443a58    call 0041DFE0h"
@@ -1873,7 +1873,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 258:
 	asm( 
-"	      00443ada    lea eax,[ebp-104h]"
+"	      00443ada    lea eax,szFullSoundPath[0]"
 "	      00443ae0    push eax"
 "	      00443ae1    push 598B48h"
 "	      00443ae6    push 0"
@@ -1889,7 +1889,7 @@ int32_t S3LoadSounds() {
 "	      00443afc    mov [ebp-7C8h],eax"
 "	      00443b02    cmp dword ptr [ebp-7C8h],0"
 "	      00443b09    je near ptr 00443B2Ch"
-"	      00443b0f    lea eax,[ebp-104h]"
+"	      00443b0f    lea eax,szFullSoundPath[0]"
 "	      00443b15    push eax"
 "	      00443b16    mov ecx,[ebp-7C8h]"
 "	      00443b1c    call 0041DFE0h"
@@ -1920,7 +1920,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 261:
 	asm( 
-"	      00443b9e    lea eax,[ebp-104h]"
+"	      00443b9e    lea eax,szFullSoundPath[0]"
 "	      00443ba4    push eax"
 "	      00443ba5    push 598B54h"
 "	      00443baa    push 0"
@@ -1936,7 +1936,7 @@ int32_t S3LoadSounds() {
 "	      00443bc0    mov [ebp-7CCh],eax"
 "	      00443bc6    cmp dword ptr [ebp-7CCh],0"
 "	      00443bcd    je near ptr 00443BF0h"
-"	      00443bd3    lea eax,[ebp-104h]"
+"	      00443bd3    lea eax,szFullSoundPath[0]"
 "	      00443bd9    push eax"
 "	      00443bda    mov ecx,[ebp-7CCh]"
 "	      00443be0    call 0041DFE0h"
@@ -1967,7 +1967,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 264:
 	asm( 
-"	      00443c62    lea eax,[ebp-104h]"
+"	      00443c62    lea eax,szFullSoundPath[0]"
 "	      00443c68    push eax"
 "	      00443c69    push 598B60h"
 "	      00443c6e    push 0"
@@ -1983,7 +1983,7 @@ int32_t S3LoadSounds() {
 "	      00443c84    mov [ebp-7D0h],eax"
 "	      00443c8a    cmp dword ptr [ebp-7D0h],0"
 "	      00443c91    je near ptr 00443CB4h"
-"	      00443c97    lea eax,[ebp-104h]"
+"	      00443c97    lea eax,szFullSoundPath[0]"
 "	      00443c9d    push eax"
 "	      00443c9e    mov ecx,[ebp-7D0h]"
 "	      00443ca4    call 0041DFE0h"
@@ -2014,7 +2014,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 267:
 	asm( 
-"	      00443d26    lea eax,[ebp-104h]"
+"	      00443d26    lea eax,szFullSoundPath[0]"
 "	      00443d2c    push eax"
 "	      00443d2d    push 598B70h"
 "	      00443d32    push 0"
@@ -2030,7 +2030,7 @@ int32_t S3LoadSounds() {
 "	      00443d48    mov [ebp-7D4h],eax"
 "	      00443d4e    cmp dword ptr [ebp-7D4h],0"
 "	      00443d55    je near ptr 00443D78h"
-"	      00443d5b    lea eax,[ebp-104h]"
+"	      00443d5b    lea eax,szFullSoundPath[0]"
 "	      00443d61    push eax"
 "	      00443d62    mov ecx,[ebp-7D4h]"
 "	      00443d68    call 0041DFE0h"
@@ -2061,7 +2061,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 270:
 	asm( 
-"	      00443dea    lea eax,[ebp-104h]"
+"	      00443dea    lea eax,szFullSoundPath[0]"
 "	      00443df0    push eax"
 "	      00443df1    push 598B80h"
 "	      00443df6    push 0"
@@ -2077,7 +2077,7 @@ int32_t S3LoadSounds() {
 "	      00443e0c    mov [ebp-7D8h],eax"
 "	      00443e12    cmp dword ptr [ebp-7D8h],0"
 "	      00443e19    je near ptr 00443E3Ch"
-"	      00443e1f    lea eax,[ebp-104h]"
+"	      00443e1f    lea eax,szFullSoundPath[0]"
 "	      00443e25    push eax"
 "	      00443e26    mov ecx,[ebp-7D8h]"
 "	      00443e2c    call 0041DFE0h"
@@ -2108,7 +2108,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 273:
 	asm( 
-"	      00443eae    lea eax,[ebp-104h]"
+"	      00443eae    lea eax,szFullSoundPath[0]"
 "	      00443eb4    push eax"
 "	      00443eb5    push 598B8Ch"
 "	      00443eba    push 0"
@@ -2124,7 +2124,7 @@ int32_t S3LoadSounds() {
 "	      00443ed0    mov [ebp-7DCh],eax"
 "	      00443ed6    cmp dword ptr [ebp-7DCh],0"
 "	      00443edd    je near ptr 00443F00h"
-"	      00443ee3    lea eax,[ebp-104h]"
+"	      00443ee3    lea eax,szFullSoundPath[0]"
 "	      00443ee9    push eax"
 "	      00443eea    mov ecx,[ebp-7DCh]"
 "	      00443ef0    call 0041DFE0h"
@@ -2155,7 +2155,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 276:
 	asm( 
-"	      00443f72    lea eax,[ebp-104h]"
+"	      00443f72    lea eax,szFullSoundPath[0]"
 "	      00443f78    push eax"
 "	      00443f79    push 598B94h"
 "	      00443f7e    push 0"
@@ -2171,7 +2171,7 @@ int32_t S3LoadSounds() {
 "	      00443f94    mov [ebp-7E0h],eax"
 "	      00443f9a    cmp dword ptr [ebp-7E0h],0"
 "	      00443fa1    je near ptr 00443FC4h"
-"	      00443fa7    lea eax,[ebp-104h]"
+"	      00443fa7    lea eax,szFullSoundPath[0]"
 "	      00443fad    push eax"
 "	      00443fae    mov ecx,[ebp-7E0h]"
 "	      00443fb4    call 0041DFE0h"
@@ -2202,7 +2202,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 279:
 	asm( 
-"	      00444036    lea eax,[ebp-104h]"
+"	      00444036    lea eax,szFullSoundPath[0]"
 "	      0044403c    push eax"
 "	      0044403d    push 598B9Ch"
 "	      00444042    push 0"
@@ -2218,7 +2218,7 @@ int32_t S3LoadSounds() {
 "	      00444058    mov [ebp-7E4h],eax"
 "	      0044405e    cmp dword ptr [ebp-7E4h],0"
 "	      00444065    je near ptr 00444088h"
-"	      0044406b    lea eax,[ebp-104h]"
+"	      0044406b    lea eax,szFullSoundPath[0]"
 "	      00444071    push eax"
 "	      00444072    mov ecx,[ebp-7E4h]"
 "	      00444078    call 0041DFE0h"
@@ -2249,7 +2249,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 282:
 	asm( 
-"	      004440fa    lea eax,[ebp-104h]"
+"	      004440fa    lea eax,szFullSoundPath[0]"
 "	      00444100    push eax"
 "	      00444101    push 598BA8h"
 "	      00444106    push 0"
@@ -2265,7 +2265,7 @@ int32_t S3LoadSounds() {
 "	      0044411c    mov [ebp-7E8h],eax"
 "	      00444122    cmp dword ptr [ebp-7E8h],0"
 "	      00444129    je near ptr 0044414Ch"
-"	      0044412f    lea eax,[ebp-104h]"
+"	      0044412f    lea eax,szFullSoundPath[0]"
 "	      00444135    push eax"
 "	      00444136    mov ecx,[ebp-7E8h]"
 "	      0044413c    call 0041DFE0h"
@@ -2296,7 +2296,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 285:
 	asm( 
-"	      004441be    lea eax,[ebp-104h]"
+"	      004441be    lea eax,szFullSoundPath[0]"
 "	      004441c4    push eax"
 "	      004441c5    push 598BB4h"
 "	      004441ca    push 0"
@@ -2312,7 +2312,7 @@ int32_t S3LoadSounds() {
 "	      004441e0    mov [ebp-7ECh],eax"
 "	      004441e6    cmp dword ptr [ebp-7ECh],0"
 "	      004441ed    je near ptr 00444210h"
-"	      004441f3    lea eax,[ebp-104h]"
+"	      004441f3    lea eax,szFullSoundPath[0]"
 "	      004441f9    push eax"
 "	      004441fa    mov ecx,[ebp-7ECh]"
 "	      00444200    call 0041DFE0h"
@@ -2343,7 +2343,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 288:
 	asm( 
-"	      00444282    lea eax,[ebp-104h]"
+"	      00444282    lea eax,szFullSoundPath[0]"
 "	      00444288    push eax"
 "	      00444289    push 598BC0h"
 "	      0044428e    push 0"
@@ -2359,7 +2359,7 @@ int32_t S3LoadSounds() {
 "	      004442a4    mov [ebp-7F0h],eax"
 "	      004442aa    cmp dword ptr [ebp-7F0h],0"
 "	      004442b1    je near ptr 004442D4h"
-"	      004442b7    lea eax,[ebp-104h]"
+"	      004442b7    lea eax,szFullSoundPath[0]"
 "	      004442bd    push eax"
 "	      004442be    mov ecx,[ebp-7F0h]"
 "	      004442c4    call 0041DFE0h"
@@ -2390,7 +2390,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 291:
 	asm( 
-"	      00444346    lea eax,[ebp-104h]"
+"	      00444346    lea eax,szFullSoundPath[0]"
 "	      0044434c    push eax"
 "	      0044434d    push 598BCCh"
 "	      00444352    push 0"
@@ -2406,7 +2406,7 @@ int32_t S3LoadSounds() {
 "	      00444368    mov [ebp-7F4h],eax"
 "	      0044436e    cmp dword ptr [ebp-7F4h],0"
 "	      00444375    je near ptr 00444398h"
-"	      0044437b    lea eax,[ebp-104h]"
+"	      0044437b    lea eax,szFullSoundPath[0]"
 "	      00444381    push eax"
 "	      00444382    mov ecx,[ebp-7F4h]"
 "	      00444388    call 0041DFE0h"
@@ -2437,7 +2437,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 294:
 	asm( 
-"	      0044440a    lea eax,[ebp-104h]"
+"	      0044440a    lea eax,szFullSoundPath[0]"
 "	      00444410    push eax"
 "	      00444411    push 598BD8h"
 "	      00444416    push 0"
@@ -2453,7 +2453,7 @@ int32_t S3LoadSounds() {
 "	      0044442c    mov [ebp-7F8h],eax"
 "	      00444432    cmp dword ptr [ebp-7F8h],0"
 "	      00444439    je near ptr 0044445Ch"
-"	      0044443f    lea eax,[ebp-104h]"
+"	      0044443f    lea eax,szFullSoundPath[0]"
 "	      00444445    push eax"
 "	      00444446    mov ecx,[ebp-7F8h]"
 "	      0044444c    call 0041DFE0h"
@@ -2484,7 +2484,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 297:
 	asm( 
-"	      004444ce    lea eax,[ebp-104h]"
+"	      004444ce    lea eax,szFullSoundPath[0]"
 "	      004444d4    push eax"
 "	      004444d5    push 598BE4h"
 "	      004444da    push 0"
@@ -2500,7 +2500,7 @@ int32_t S3LoadSounds() {
 "	      004444f0    mov [ebp-7FCh],eax"
 "	      004444f6    cmp dword ptr [ebp-7FCh],0"
 "	      004444fd    je near ptr 00444520h"
-"	      00444503    lea eax,[ebp-104h]"
+"	      00444503    lea eax,szFullSoundPath[0]"
 "	      00444509    push eax"
 "	      0044450a    mov ecx,[ebp-7FCh]"
 "	      00444510    call 0041DFE0h"
@@ -2531,7 +2531,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 300:
 	asm( 
-"	      00444592    lea eax,[ebp-104h]"
+"	      00444592    lea eax,szFullSoundPath[0]"
 "	      00444598    push eax"
 "	      00444599    push 598BF0h"
 "	      0044459e    push 0"
@@ -2547,7 +2547,7 @@ int32_t S3LoadSounds() {
 "	      004445b4    mov [ebp-800h],eax"
 "	      004445ba    cmp dword ptr [ebp-800h],0"
 "	      004445c1    je near ptr 004445E4h"
-"	      004445c7    lea eax,[ebp-104h]"
+"	      004445c7    lea eax,szFullSoundPath[0]"
 "	      004445cd    push eax"
 "	      004445ce    mov ecx,[ebp-800h]"
 "	      004445d4    call 0041DFE0h"
@@ -2578,7 +2578,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 305:
 	asm( 
-"	      00444656    lea eax,[ebp-104h]"
+"	      00444656    lea eax,szFullSoundPath[0]"
 "	      0044465c    push eax"
 "	      0044465d    push 598C00h"
 "	      00444662    push 0"
@@ -2594,7 +2594,7 @@ int32_t S3LoadSounds() {
 "	      00444678    mov [ebp-804h],eax"
 "	      0044467e    cmp dword ptr [ebp-804h],0"
 "	      00444685    je near ptr 004446A8h"
-"	      0044468b    lea eax,[ebp-104h]"
+"	      0044468b    lea eax,szFullSoundPath[0]"
 "	      00444691    push eax"
 "	      00444692    mov ecx,[ebp-804h]"
 "	      00444698    call 0041DFE0h"
@@ -2625,7 +2625,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 308:
 	asm( 
-"	      0044471a    lea eax,[ebp-104h]"
+"	      0044471a    lea eax,szFullSoundPath[0]"
 "	      00444720    push eax"
 "	      00444721    push 598C0Ch"
 "	      00444726    push 0"
@@ -2641,7 +2641,7 @@ int32_t S3LoadSounds() {
 "	      0044473c    mov [ebp-808h],eax"
 "	      00444742    cmp dword ptr [ebp-808h],0"
 "	      00444749    je near ptr 0044476Ch"
-"	      0044474f    lea eax,[ebp-104h]"
+"	      0044474f    lea eax,szFullSoundPath[0]"
 "	      00444755    push eax"
 "	      00444756    mov ecx,[ebp-808h]"
 "	      0044475c    call 0041DFE0h"
@@ -2672,7 +2672,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 311:
 	asm( 
-"	      004447de    lea eax,[ebp-104h]"
+"	      004447de    lea eax,szFullSoundPath[0]"
 "	      004447e4    push eax"
 "	      004447e5    push 598C18h"
 "	      004447ea    push 0"
@@ -2688,7 +2688,7 @@ int32_t S3LoadSounds() {
 "	      00444800    mov [ebp-80Ch],eax"
 "	      00444806    cmp dword ptr [ebp-80Ch],0"
 "	      0044480d    je near ptr 00444830h"
-"	      00444813    lea eax,[ebp-104h]"
+"	      00444813    lea eax,szFullSoundPath[0]"
 "	      00444819    push eax"
 "	      0044481a    mov ecx,[ebp-80Ch]"
 "	      00444820    call 0041DFE0h"
@@ -2719,7 +2719,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 314:
 	asm( 
-"	      004448a2    lea eax,[ebp-104h]"
+"	      004448a2    lea eax,szFullSoundPath[0]"
 "	      004448a8    push eax"
 "	      004448a9    push 598C24h"
 "	      004448ae    push 0"
@@ -2735,7 +2735,7 @@ int32_t S3LoadSounds() {
 "	      004448c4    mov [ebp-810h],eax"
 "	      004448ca    cmp dword ptr [ebp-810h],0"
 "	      004448d1    je near ptr 004448F4h"
-"	      004448d7    lea eax,[ebp-104h]"
+"	      004448d7    lea eax,szFullSoundPath[0]"
 "	      004448dd    push eax"
 "	      004448de    mov ecx,[ebp-810h]"
 "	      004448e4    call 0041DFE0h"
@@ -2766,7 +2766,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 317:
 	asm( 
-"	      00444966    lea eax,[ebp-104h]"
+"	      00444966    lea eax,szFullSoundPath[0]"
 "	      0044496c    push eax"
 "	      0044496d    push 598C30h"
 "	      00444972    push 0"
@@ -2782,7 +2782,7 @@ int32_t S3LoadSounds() {
 "	      00444988    mov [ebp-814h],eax"
 "	      0044498e    cmp dword ptr [ebp-814h],0"
 "	      00444995    je near ptr 004449B8h"
-"	      0044499b    lea eax,[ebp-104h]"
+"	      0044499b    lea eax,szFullSoundPath[0]"
 "	      004449a1    push eax"
 "	      004449a2    mov ecx,[ebp-814h]"
 "	      004449a8    call 0041DFE0h"
@@ -2813,7 +2813,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 320:
 	asm( 
-"	      00444a2a    lea eax,[ebp-104h]"
+"	      00444a2a    lea eax,szFullSoundPath[0]"
 "	      00444a30    push eax"
 "	      00444a31    push 598C3Ch"
 "	      00444a36    push 0"
@@ -2829,7 +2829,7 @@ int32_t S3LoadSounds() {
 "	      00444a4c    mov [ebp-818h],eax"
 "	      00444a52    cmp dword ptr [ebp-818h],0"
 "	      00444a59    je near ptr 00444A7Ch"
-"	      00444a5f    lea eax,[ebp-104h]"
+"	      00444a5f    lea eax,szFullSoundPath[0]"
 "	      00444a65    push eax"
 "	      00444a66    mov ecx,[ebp-818h]"
 "	      00444a6c    call 0041DFE0h"
@@ -2860,7 +2860,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 323:
 	asm( 
-"	      00444aee    lea eax,[ebp-104h]"
+"	      00444aee    lea eax,szFullSoundPath[0]"
 "	      00444af4    push eax"
 "	      00444af5    push 598C48h"
 "	      00444afa    push 0"
@@ -2876,7 +2876,7 @@ int32_t S3LoadSounds() {
 "	      00444b10    mov [ebp-81Ch],eax"
 "	      00444b16    cmp dword ptr [ebp-81Ch],0"
 "	      00444b1d    je near ptr 00444B40h"
-"	      00444b23    lea eax,[ebp-104h]"
+"	      00444b23    lea eax,szFullSoundPath[0]"
 "	      00444b29    push eax"
 "	      00444b2a    mov ecx,[ebp-81Ch]"
 "	      00444b30    call 0041DFE0h"
@@ -2907,7 +2907,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 326:
 	asm( 
-"	      00444bb2    lea eax,[ebp-104h]"
+"	      00444bb2    lea eax,szFullSoundPath[0]"
 "	      00444bb8    push eax"
 "	      00444bb9    push 598C54h"
 "	      00444bbe    push 0"
@@ -2923,7 +2923,7 @@ int32_t S3LoadSounds() {
 "	      00444bd4    mov [ebp-820h],eax"
 "	      00444bda    cmp dword ptr [ebp-820h],0"
 "	      00444be1    je near ptr 00444C04h"
-"	      00444be7    lea eax,[ebp-104h]"
+"	      00444be7    lea eax,szFullSoundPath[0]"
 "	      00444bed    push eax"
 "	      00444bee    mov ecx,[ebp-820h]"
 "	      00444bf4    call 0041DFE0h"
@@ -2954,7 +2954,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 329:
 	asm( 
-"	      00444c76    lea eax,[ebp-104h]"
+"	      00444c76    lea eax,szFullSoundPath[0]"
 "	      00444c7c    push eax"
 "	      00444c7d    push 598C60h"
 "	      00444c82    push 0"
@@ -2970,7 +2970,7 @@ int32_t S3LoadSounds() {
 "	      00444c98    mov [ebp-824h],eax"
 "	      00444c9e    cmp dword ptr [ebp-824h],0"
 "	      00444ca5    je near ptr 00444CC8h"
-"	      00444cab    lea eax,[ebp-104h]"
+"	      00444cab    lea eax,szFullSoundPath[0]"
 "	      00444cb1    push eax"
 "	      00444cb2    mov ecx,[ebp-824h]"
 "	      00444cb8    call 0041DFE0h"
@@ -3001,7 +3001,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 332:
 	asm( 
-"	      00444d3a    lea eax,[ebp-104h]"
+"	      00444d3a    lea eax,szFullSoundPath[0]"
 "	      00444d40    push eax"
 "	      00444d41    push 598C6Ch"
 "	      00444d46    push 0"
@@ -3017,7 +3017,7 @@ int32_t S3LoadSounds() {
 "	      00444d5c    mov [ebp-828h],eax"
 "	      00444d62    cmp dword ptr [ebp-828h],0"
 "	      00444d69    je near ptr 00444D8Ch"
-"	      00444d6f    lea eax,[ebp-104h]"
+"	      00444d6f    lea eax,szFullSoundPath[0]"
 "	      00444d75    push eax"
 "	      00444d76    mov ecx,[ebp-828h]"
 "	      00444d7c    call 0041DFE0h"
@@ -3048,7 +3048,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 335:
 	asm( 
-"	      00444dfe    lea eax,[ebp-104h]"
+"	      00444dfe    lea eax,szFullSoundPath[0]"
 "	      00444e04    push eax"
 "	      00444e05    push 598C78h"
 "	      00444e0a    push 0"
@@ -3064,7 +3064,7 @@ int32_t S3LoadSounds() {
 "	      00444e20    mov [ebp-82Ch],eax"
 "	      00444e26    cmp dword ptr [ebp-82Ch],0"
 "	      00444e2d    je near ptr 00444E50h"
-"	      00444e33    lea eax,[ebp-104h]"
+"	      00444e33    lea eax,szFullSoundPath[0]"
 "	      00444e39    push eax"
 "	      00444e3a    mov ecx,[ebp-82Ch]"
 "	      00444e40    call 0041DFE0h"
@@ -3095,7 +3095,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 338:
 	asm( 
-"	      00444ec2    lea eax,[ebp-104h]"
+"	      00444ec2    lea eax,szFullSoundPath[0]"
 "	      00444ec8    push eax"
 "	      00444ec9    push 598C84h"
 "	      00444ece    push 0"
@@ -3111,7 +3111,7 @@ int32_t S3LoadSounds() {
 "	      00444ee4    mov [ebp-830h],eax"
 "	      00444eea    cmp dword ptr [ebp-830h],0"
 "	      00444ef1    je near ptr 00444F14h"
-"	      00444ef7    lea eax,[ebp-104h]"
+"	      00444ef7    lea eax,szFullSoundPath[0]"
 "	      00444efd    push eax"
 "	      00444efe    mov ecx,[ebp-830h]"
 "	      00444f04    call 0041DFE0h"
@@ -3142,7 +3142,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 341:
 	asm( 
-"	      00444f86    lea eax,[ebp-104h]"
+"	      00444f86    lea eax,szFullSoundPath[0]"
 "	      00444f8c    push eax"
 "	      00444f8d    push 598C90h"
 "	      00444f92    push 0"
@@ -3158,7 +3158,7 @@ int32_t S3LoadSounds() {
 "	      00444fa8    mov [ebp-834h],eax"
 "	      00444fae    cmp dword ptr [ebp-834h],0"
 "	      00444fb5    je near ptr 00444FD8h"
-"	      00444fbb    lea eax,[ebp-104h]"
+"	      00444fbb    lea eax,szFullSoundPath[0]"
 "	      00444fc1    push eax"
 "	      00444fc2    mov ecx,[ebp-834h]"
 "	      00444fc8    call 0041DFE0h"
@@ -3189,7 +3189,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 344:
 	asm( 
-"	      0044504a    lea eax,[ebp-104h]"
+"	      0044504a    lea eax,szFullSoundPath[0]"
 "	      00445050    push eax"
 "	      00445051    push 598C9Ch"
 "	      00445056    push 0"
@@ -3205,7 +3205,7 @@ int32_t S3LoadSounds() {
 "	      0044506c    mov [ebp-838h],eax"
 "	      00445072    cmp dword ptr [ebp-838h],0"
 "	      00445079    je near ptr 0044509Ch"
-"	      0044507f    lea eax,[ebp-104h]"
+"	      0044507f    lea eax,szFullSoundPath[0]"
 "	      00445085    push eax"
 "	      00445086    mov ecx,[ebp-838h]"
 "	      0044508c    call 0041DFE0h"
@@ -3236,7 +3236,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 347:
 	asm( 
-"	      0044510e    lea eax,[ebp-104h]"
+"	      0044510e    lea eax,szFullSoundPath[0]"
 "	      00445114    push eax"
 "	      00445115    push 598CA8h"
 "	      0044511a    push 0"
@@ -3252,7 +3252,7 @@ int32_t S3LoadSounds() {
 "	      00445130    mov [ebp-83Ch],eax"
 "	      00445136    cmp dword ptr [ebp-83Ch],0"
 "	      0044513d    je near ptr 00445160h"
-"	      00445143    lea eax,[ebp-104h]"
+"	      00445143    lea eax,szFullSoundPath[0]"
 "	      00445149    push eax"
 "	      0044514a    mov ecx,[ebp-83Ch]"
 "	      00445150    call 0041DFE0h"
@@ -3283,7 +3283,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 350:
 	asm( 
-"	      004451d2    lea eax,[ebp-104h]"
+"	      004451d2    lea eax,szFullSoundPath[0]"
 "	      004451d8    push eax"
 "	      004451d9    push 598CB4h"
 "	      004451de    push 0"
@@ -3299,7 +3299,7 @@ int32_t S3LoadSounds() {
 "	      004451f4    mov [ebp-840h],eax"
 "	      004451fa    cmp dword ptr [ebp-840h],0"
 "	      00445201    je near ptr 00445224h"
-"	      00445207    lea eax,[ebp-104h]"
+"	      00445207    lea eax,szFullSoundPath[0]"
 "	      0044520d    push eax"
 "	      0044520e    mov ecx,[ebp-840h]"
 "	      00445214    call 0041DFE0h"
@@ -3330,7 +3330,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 353:
 	asm( 
-"	      00445296    lea eax,[ebp-104h]"
+"	      00445296    lea eax,szFullSoundPath[0]"
 "	      0044529c    push eax"
 "	      0044529d    push 598CC0h"
 "	      004452a2    push 0"
@@ -3346,7 +3346,7 @@ int32_t S3LoadSounds() {
 "	      004452b8    mov [ebp-844h],eax"
 "	      004452be    cmp dword ptr [ebp-844h],0"
 "	      004452c5    je near ptr 004452E8h"
-"	      004452cb    lea eax,[ebp-104h]"
+"	      004452cb    lea eax,szFullSoundPath[0]"
 "	      004452d1    push eax"
 "	      004452d2    mov ecx,[ebp-844h]"
 "	      004452d8    call 0041DFE0h"
@@ -3377,7 +3377,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 356:
 	asm( 
-"	      0044535a    lea eax,[ebp-104h]"
+"	      0044535a    lea eax,szFullSoundPath[0]"
 "	      00445360    push eax"
 "	      00445361    push 598CCCh"
 "	      00445366    push 0"
@@ -3393,7 +3393,7 @@ int32_t S3LoadSounds() {
 "	      0044537c    mov [ebp-848h],eax"
 "	      00445382    cmp dword ptr [ebp-848h],0"
 "	      00445389    je near ptr 004453ACh"
-"	      0044538f    lea eax,[ebp-104h]"
+"	      0044538f    lea eax,szFullSoundPath[0]"
 "	      00445395    push eax"
 "	      00445396    mov ecx,[ebp-848h]"
 "	      0044539c    call 0041DFE0h"
@@ -3424,7 +3424,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 359:
 	asm( 
-"	      0044541e    lea eax,[ebp-104h]"
+"	      0044541e    lea eax,szFullSoundPath[0]"
 "	      00445424    push eax"
 "	      00445425    push 598CD8h"
 "	      0044542a    push 0"
@@ -3440,7 +3440,7 @@ int32_t S3LoadSounds() {
 "	      00445440    mov [ebp-84Ch],eax"
 "	      00445446    cmp dword ptr [ebp-84Ch],0"
 "	      0044544d    je near ptr 00445470h"
-"	      00445453    lea eax,[ebp-104h]"
+"	      00445453    lea eax,szFullSoundPath[0]"
 "	      00445459    push eax"
 "	      0044545a    mov ecx,[ebp-84Ch]"
 "	      00445460    call 0041DFE0h"
@@ -3471,7 +3471,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 362:
 	asm( 
-"	      004454e2    lea eax,[ebp-104h]"
+"	      004454e2    lea eax,szFullSoundPath[0]"
 "	      004454e8    push eax"
 "	      004454e9    push 598CE4h"
 "	      004454ee    push 0"
@@ -3487,7 +3487,7 @@ int32_t S3LoadSounds() {
 "	      00445504    mov [ebp-850h],eax"
 "	      0044550a    cmp dword ptr [ebp-850h],0"
 "	      00445511    je near ptr 00445534h"
-"	      00445517    lea eax,[ebp-104h]"
+"	      00445517    lea eax,szFullSoundPath[0]"
 "	      0044551d    push eax"
 "	      0044551e    mov ecx,[ebp-850h]"
 "	      00445524    call 0041DFE0h"
@@ -3518,7 +3518,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 365:
 	asm( 
-"	      004455a6    lea eax,[ebp-104h]"
+"	      004455a6    lea eax,szFullSoundPath[0]"
 "	      004455ac    push eax"
 "	      004455ad    push 598CF0h"
 "	      004455b2    push 0"
@@ -3534,7 +3534,7 @@ int32_t S3LoadSounds() {
 "	      004455c8    mov [ebp-854h],eax"
 "	      004455ce    cmp dword ptr [ebp-854h],0"
 "	      004455d5    je near ptr 004455F8h"
-"	      004455db    lea eax,[ebp-104h]"
+"	      004455db    lea eax,szFullSoundPath[0]"
 "	      004455e1    push eax"
 "	      004455e2    mov ecx,[ebp-854h]"
 "	      004455e8    call 0041DFE0h"
@@ -3565,7 +3565,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 368:
 	asm( 
-"	      0044566a    lea eax,[ebp-104h]"
+"	      0044566a    lea eax,szFullSoundPath[0]"
 "	      00445670    push eax"
 "	      00445671    push 598CFCh"
 "	      00445676    push 0"
@@ -3581,7 +3581,7 @@ int32_t S3LoadSounds() {
 "	      0044568c    mov [ebp-858h],eax"
 "	      00445692    cmp dword ptr [ebp-858h],0"
 "	      00445699    je near ptr 004456BCh"
-"	      0044569f    lea eax,[ebp-104h]"
+"	      0044569f    lea eax,szFullSoundPath[0]"
 "	      004456a5    push eax"
 "	      004456a6    mov ecx,[ebp-858h]"
 "	      004456ac    call 0041DFE0h"
@@ -3612,7 +3612,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 371:
 	asm( 
-"	      0044572e    lea eax,[ebp-104h]"
+"	      0044572e    lea eax,szFullSoundPath[0]"
 "	      00445734    push eax"
 "	      00445735    push 598D08h"
 "	      0044573a    push 0"
@@ -3628,7 +3628,7 @@ int32_t S3LoadSounds() {
 "	      00445750    mov [ebp-85Ch],eax"
 "	      00445756    cmp dword ptr [ebp-85Ch],0"
 "	      0044575d    je near ptr 00445780h"
-"	      00445763    lea eax,[ebp-104h]"
+"	      00445763    lea eax,szFullSoundPath[0]"
 "	      00445769    push eax"
 "	      0044576a    mov ecx,[ebp-85Ch]"
 "	      00445770    call 0041DFE0h"
@@ -3659,7 +3659,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 374:
 	asm( 
-"	      004457f2    lea eax,[ebp-104h]"
+"	      004457f2    lea eax,szFullSoundPath[0]"
 "	      004457f8    push eax"
 "	      004457f9    push 598D14h"
 "	      004457fe    push 0"
@@ -3675,7 +3675,7 @@ int32_t S3LoadSounds() {
 "	      00445814    mov [ebp-860h],eax"
 "	      0044581a    cmp dword ptr [ebp-860h],0"
 "	      00445821    je near ptr 00445844h"
-"	      00445827    lea eax,[ebp-104h]"
+"	      00445827    lea eax,szFullSoundPath[0]"
 "	      0044582d    push eax"
 "	      0044582e    mov ecx,[ebp-860h]"
 "	      00445834    call 0041DFE0h"
@@ -3706,7 +3706,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 377:
 	asm( 
-"	      004458b6    lea eax,[ebp-104h]"
+"	      004458b6    lea eax,szFullSoundPath[0]"
 "	      004458bc    push eax"
 "	      004458bd    push 598D20h"
 "	      004458c2    push 0"
@@ -3722,7 +3722,7 @@ int32_t S3LoadSounds() {
 "	      004458d8    mov [ebp-864h],eax"
 "	      004458de    cmp dword ptr [ebp-864h],0"
 "	      004458e5    je near ptr 00445908h"
-"	      004458eb    lea eax,[ebp-104h]"
+"	      004458eb    lea eax,szFullSoundPath[0]"
 "	      004458f1    push eax"
 "	      004458f2    mov ecx,[ebp-864h]"
 "	      004458f8    call 0041DFE0h"
@@ -3753,7 +3753,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 380:
 	asm( 
-"	      0044597a    lea eax,[ebp-104h]"
+"	      0044597a    lea eax,szFullSoundPath[0]"
 "	      00445980    push eax"
 "	      00445981    push 598D2Ch"
 "	      00445986    push 0"
@@ -3769,7 +3769,7 @@ int32_t S3LoadSounds() {
 "	      0044599c    mov [ebp-868h],eax"
 "	      004459a2    cmp dword ptr [ebp-868h],0"
 "	      004459a9    je near ptr 004459CCh"
-"	      004459af    lea eax,[ebp-104h]"
+"	      004459af    lea eax,szFullSoundPath[0]"
 "	      004459b5    push eax"
 "	      004459b6    mov ecx,[ebp-868h]"
 "	      004459bc    call 0041DFE0h"
@@ -3800,7 +3800,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 383:
 	asm( 
-"	      00445a3e    lea eax,[ebp-104h]"
+"	      00445a3e    lea eax,szFullSoundPath[0]"
 "	      00445a44    push eax"
 "	      00445a45    push 598D38h"
 "	      00445a4a    push 0"
@@ -3816,7 +3816,7 @@ int32_t S3LoadSounds() {
 "	      00445a60    mov [ebp-86Ch],eax"
 "	      00445a66    cmp dword ptr [ebp-86Ch],0"
 "	      00445a6d    je near ptr 00445A90h"
-"	      00445a73    lea eax,[ebp-104h]"
+"	      00445a73    lea eax,szFullSoundPath[0]"
 "	      00445a79    push eax"
 "	      00445a7a    mov ecx,[ebp-86Ch]"
 "	      00445a80    call 0041DFE0h"
@@ -3847,7 +3847,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 386:
 	asm( 
-"	      00445b02    lea eax,[ebp-104h]"
+"	      00445b02    lea eax,szFullSoundPath[0]"
 "	      00445b08    push eax"
 "	      00445b09    push 598D44h"
 "	      00445b0e    push 0"
@@ -3863,7 +3863,7 @@ int32_t S3LoadSounds() {
 "	      00445b24    mov [ebp-870h],eax"
 "	      00445b2a    cmp dword ptr [ebp-870h],0"
 "	      00445b31    je near ptr 00445B54h"
-"	      00445b37    lea eax,[ebp-104h]"
+"	      00445b37    lea eax,szFullSoundPath[0]"
 "	      00445b3d    push eax"
 "	      00445b3e    mov ecx,[ebp-870h]"
 "	      00445b44    call 0041DFE0h"
@@ -3894,7 +3894,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 389:
 	asm( 
-"	      00445bc6    lea eax,[ebp-104h]"
+"	      00445bc6    lea eax,szFullSoundPath[0]"
 "	      00445bcc    push eax"
 "	      00445bcd    push 598D50h"
 "	      00445bd2    push 0"
@@ -3910,7 +3910,7 @@ int32_t S3LoadSounds() {
 "	      00445be8    mov [ebp-874h],eax"
 "	      00445bee    cmp dword ptr [ebp-874h],0"
 "	      00445bf5    je near ptr 00445C18h"
-"	      00445bfb    lea eax,[ebp-104h]"
+"	      00445bfb    lea eax,szFullSoundPath[0]"
 "	      00445c01    push eax"
 "	      00445c02    mov ecx,[ebp-874h]"
 "	      00445c08    call 0041DFE0h"
@@ -3941,7 +3941,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 392:
 	asm( 
-"	      00445c8a    lea eax,[ebp-104h]"
+"	      00445c8a    lea eax,szFullSoundPath[0]"
 "	      00445c90    push eax"
 "	      00445c91    push 598D5Ch"
 "	      00445c96    push 0"
@@ -3957,7 +3957,7 @@ int32_t S3LoadSounds() {
 "	      00445cac    mov [ebp-878h],eax"
 "	      00445cb2    cmp dword ptr [ebp-878h],0"
 "	      00445cb9    je near ptr 00445CDCh"
-"	      00445cbf    lea eax,[ebp-104h]"
+"	      00445cbf    lea eax,szFullSoundPath[0]"
 "	      00445cc5    push eax"
 "	      00445cc6    mov ecx,[ebp-878h]"
 "	      00445ccc    call 0041DFE0h"
@@ -3988,7 +3988,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 395:
 	asm( 
-"	      00445d4e    lea eax,[ebp-104h]"
+"	      00445d4e    lea eax,szFullSoundPath[0]"
 "	      00445d54    push eax"
 "	      00445d55    push 598D68h"
 "	      00445d5a    push 0"
@@ -4004,7 +4004,7 @@ int32_t S3LoadSounds() {
 "	      00445d70    mov [ebp-87Ch],eax"
 "	      00445d76    cmp dword ptr [ebp-87Ch],0"
 "	      00445d7d    je near ptr 00445DA0h"
-"	      00445d83    lea eax,[ebp-104h]"
+"	      00445d83    lea eax,szFullSoundPath[0]"
 "	      00445d89    push eax"
 "	      00445d8a    mov ecx,[ebp-87Ch]"
 "	      00445d90    call 0041DFE0h"
@@ -4035,7 +4035,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 398:
 	asm( 
-"	      00445e12    lea eax,[ebp-104h]"
+"	      00445e12    lea eax,szFullSoundPath[0]"
 "	      00445e18    push eax"
 "	      00445e19    push 598D74h"
 "	      00445e1e    push 0"
@@ -4051,7 +4051,7 @@ int32_t S3LoadSounds() {
 "	      00445e34    mov [ebp-880h],eax"
 "	      00445e3a    cmp dword ptr [ebp-880h],0"
 "	      00445e41    je near ptr 00445E64h"
-"	      00445e47    lea eax,[ebp-104h]"
+"	      00445e47    lea eax,szFullSoundPath[0]"
 "	      00445e4d    push eax"
 "	      00445e4e    mov ecx,[ebp-880h]"
 "	      00445e54    call 0041DFE0h"
@@ -4082,7 +4082,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 401:
 	asm( 
-"	      00445ed6    lea eax,[ebp-104h]"
+"	      00445ed6    lea eax,szFullSoundPath[0]"
 "	      00445edc    push eax"
 "	      00445edd    push 598D80h"
 "	      00445ee2    push 0"
@@ -4098,7 +4098,7 @@ int32_t S3LoadSounds() {
 "	      00445ef8    mov [ebp-884h],eax"
 "	      00445efe    cmp dword ptr [ebp-884h],0"
 "	      00445f05    je near ptr 00445F28h"
-"	      00445f0b    lea eax,[ebp-104h]"
+"	      00445f0b    lea eax,szFullSoundPath[0]"
 "	      00445f11    push eax"
 "	      00445f12    mov ecx,[ebp-884h]"
 "	      00445f18    call 0041DFE0h"
@@ -4129,7 +4129,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 404:
 	asm( 
-"	      00445f9a    lea eax,[ebp-104h]"
+"	      00445f9a    lea eax,szFullSoundPath[0]"
 "	      00445fa0    push eax"
 "	      00445fa1    push 598D8Ch"
 "	      00445fa6    push 0"
@@ -4145,7 +4145,7 @@ int32_t S3LoadSounds() {
 "	      00445fbc    mov [ebp-888h],eax"
 "	      00445fc2    cmp dword ptr [ebp-888h],0"
 "	      00445fc9    je near ptr 00445FECh"
-"	      00445fcf    lea eax,[ebp-104h]"
+"	      00445fcf    lea eax,szFullSoundPath[0]"
 "	      00445fd5    push eax"
 "	      00445fd6    mov ecx,[ebp-888h]"
 "	      00445fdc    call 0041DFE0h"
@@ -4176,7 +4176,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 407:
 	asm( 
-"	      0044605e    lea eax,[ebp-104h]"
+"	      0044605e    lea eax,szFullSoundPath[0]"
 "	      00446064    push eax"
 "	      00446065    push 598D98h"
 "	      0044606a    push 0"
@@ -4192,7 +4192,7 @@ int32_t S3LoadSounds() {
 "	      00446080    mov [ebp-88Ch],eax"
 "	      00446086    cmp dword ptr [ebp-88Ch],0"
 "	      0044608d    je near ptr 004460B0h"
-"	      00446093    lea eax,[ebp-104h]"
+"	      00446093    lea eax,szFullSoundPath[0]"
 "	      00446099    push eax"
 "	      0044609a    mov ecx,[ebp-88Ch]"
 "	      004460a0    call 0041DFE0h"
@@ -4223,7 +4223,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 410:
 	asm( 
-"	      00446122    lea eax,[ebp-104h]"
+"	      00446122    lea eax,szFullSoundPath[0]"
 "	      00446128    push eax"
 "	      00446129    push 598DA4h"
 "	      0044612e    push 0"
@@ -4239,7 +4239,7 @@ int32_t S3LoadSounds() {
 "	      00446144    mov [ebp-890h],eax"
 "	      0044614a    cmp dword ptr [ebp-890h],0"
 "	      00446151    je near ptr 00446174h"
-"	      00446157    lea eax,[ebp-104h]"
+"	      00446157    lea eax,szFullSoundPath[0]"
 "	      0044615d    push eax"
 "	      0044615e    mov ecx,[ebp-890h]"
 "	      00446164    call 0041DFE0h"
@@ -4270,7 +4270,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 413:
 	asm( 
-"	      004461e6    lea eax,[ebp-104h]"
+"	      004461e6    lea eax,szFullSoundPath[0]"
 "	      004461ec    push eax"
 "	      004461ed    push 598DB0h"
 "	      004461f2    push 0"
@@ -4286,7 +4286,7 @@ int32_t S3LoadSounds() {
 "	      00446208    mov [ebp-894h],eax"
 "	      0044620e    cmp dword ptr [ebp-894h],0"
 "	      00446215    je near ptr 00446238h"
-"	      0044621b    lea eax,[ebp-104h]"
+"	      0044621b    lea eax,szFullSoundPath[0]"
 "	      00446221    push eax"
 "	      00446222    mov ecx,[ebp-894h]"
 "	      00446228    call 0041DFE0h"
@@ -4317,7 +4317,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 416:
 	asm( 
-"	      004462aa    lea eax,[ebp-104h]"
+"	      004462aa    lea eax,szFullSoundPath[0]"
 "	      004462b0    push eax"
 "	      004462b1    push 598DBCh"
 "	      004462b6    push 0"
@@ -4333,7 +4333,7 @@ int32_t S3LoadSounds() {
 "	      004462cc    mov [ebp-898h],eax"
 "	      004462d2    cmp dword ptr [ebp-898h],0"
 "	      004462d9    je near ptr 004462FCh"
-"	      004462df    lea eax,[ebp-104h]"
+"	      004462df    lea eax,szFullSoundPath[0]"
 "	      004462e5    push eax"
 "	      004462e6    mov ecx,[ebp-898h]"
 "	      004462ec    call 0041DFE0h"
@@ -4364,7 +4364,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 419:
 	asm( 
-"	      0044636e    lea eax,[ebp-104h]"
+"	      0044636e    lea eax,szFullSoundPath[0]"
 "	      00446374    push eax"
 "	      00446375    push 598DC8h"
 "	      0044637a    push 0"
@@ -4380,7 +4380,7 @@ int32_t S3LoadSounds() {
 "	      00446390    mov [ebp-89Ch],eax"
 "	      00446396    cmp dword ptr [ebp-89Ch],0"
 "	      0044639d    je near ptr 004463C0h"
-"	      004463a3    lea eax,[ebp-104h]"
+"	      004463a3    lea eax,szFullSoundPath[0]"
 "	      004463a9    push eax"
 "	      004463aa    mov ecx,[ebp-89Ch]"
 "	      004463b0    call 0041DFE0h"
@@ -4411,7 +4411,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 422:
 	asm( 
-"	      00446432    lea eax,[ebp-104h]"
+"	      00446432    lea eax,szFullSoundPath[0]"
 "	      00446438    push eax"
 "	      00446439    push 598DD4h"
 "	      0044643e    push 0"
@@ -4427,7 +4427,7 @@ int32_t S3LoadSounds() {
 "	      00446454    mov [ebp-8A0h],eax"
 "	      0044645a    cmp dword ptr [ebp-8A0h],0"
 "	      00446461    je near ptr 00446484h"
-"	      00446467    lea eax,[ebp-104h]"
+"	      00446467    lea eax,szFullSoundPath[0]"
 "	      0044646d    push eax"
 "	      0044646e    mov ecx,[ebp-8A0h]"
 "	      00446474    call 0041DFE0h"
@@ -4458,7 +4458,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 425:
 	asm( 
-"	      004464f6    lea eax,[ebp-104h]"
+"	      004464f6    lea eax,szFullSoundPath[0]"
 "	      004464fc    push eax"
 "	      004464fd    push 598DE0h"
 "	      00446502    push 0"
@@ -4474,7 +4474,7 @@ int32_t S3LoadSounds() {
 "	      00446518    mov [ebp-8A4h],eax"
 "	      0044651e    cmp dword ptr [ebp-8A4h],0"
 "	      00446525    je near ptr 00446548h"
-"	      0044652b    lea eax,[ebp-104h]"
+"	      0044652b    lea eax,szFullSoundPath[0]"
 "	      00446531    push eax"
 "	      00446532    mov ecx,[ebp-8A4h]"
 "	      00446538    call 0041DFE0h"
@@ -4505,7 +4505,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 428:
 	asm( 
-"	      004465ba    lea eax,[ebp-104h]"
+"	      004465ba    lea eax,szFullSoundPath[0]"
 "	      004465c0    push eax"
 "	      004465c1    push 598DECh"
 "	      004465c6    push 0"
@@ -4521,7 +4521,7 @@ int32_t S3LoadSounds() {
 "	      004465dc    mov [ebp-8A8h],eax"
 "	      004465e2    cmp dword ptr [ebp-8A8h],0"
 "	      004465e9    je near ptr 0044660Ch"
-"	      004465ef    lea eax,[ebp-104h]"
+"	      004465ef    lea eax,szFullSoundPath[0]"
 "	      004465f5    push eax"
 "	      004465f6    mov ecx,[ebp-8A8h]"
 "	      004465fc    call 0041DFE0h"
@@ -4552,7 +4552,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 431:
 	asm( 
-"	      0044667e    lea eax,[ebp-104h]"
+"	      0044667e    lea eax,szFullSoundPath[0]"
 "	      00446684    push eax"
 "	      00446685    push 598DF8h"
 "	      0044668a    push 0"
@@ -4568,7 +4568,7 @@ int32_t S3LoadSounds() {
 "	      004466a0    mov [ebp-8ACh],eax"
 "	      004466a6    cmp dword ptr [ebp-8ACh],0"
 "	      004466ad    je near ptr 004466D0h"
-"	      004466b3    lea eax,[ebp-104h]"
+"	      004466b3    lea eax,szFullSoundPath[0]"
 "	      004466b9    push eax"
 "	      004466ba    mov ecx,[ebp-8ACh]"
 "	      004466c0    call 0041DFE0h"
@@ -4599,7 +4599,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 434:
 	asm( 
-"	      00446742    lea eax,[ebp-104h]"
+"	      00446742    lea eax,szFullSoundPath[0]"
 "	      00446748    push eax"
 "	      00446749    push 598E04h"
 "	      0044674e    push 0"
@@ -4611,7 +4611,7 @@ int32_t S3LoadSounds() {
 	asm( 
 "	      0044675a    push 2"
 "	      0044675c    push 5Dh"
-"	      0044675e    lea eax,[ebp-104h]"
+"	      0044675e    lea eax,szFullSoundPath[0]"
 "	      00446764    push eax"
 "	      00446765    lea ecx,[ebp-3F8h]"
 "	      0044676b    call 00411990h"
@@ -4634,7 +4634,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 437:
 	asm( 
-"	      004467bf    lea eax,[ebp-104h]"
+"	      004467bf    lea eax,szFullSoundPath[0]"
 "	      004467c5    push eax"
 "	      004467c6    push 598E10h"
 "	      004467cb    push 0"
@@ -4646,7 +4646,7 @@ int32_t S3LoadSounds() {
 	asm( 
 "	      004467d7    push 2"
 "	      004467d9    push 5Eh"
-"	      004467db    lea eax,[ebp-104h]"
+"	      004467db    lea eax,szFullSoundPath[0]"
 "	      004467e1    push eax"
 "	      004467e2    lea ecx,[ebp-400h]"
 "	      004467e8    call 00411990h"
@@ -4669,7 +4669,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 440:
 	asm( 
-"	      0044683c    lea eax,[ebp-104h]"
+"	      0044683c    lea eax,szFullSoundPath[0]"
 "	      00446842    push eax"
 "	      00446843    push 598E1Ch"
 "	      00446848    push 0"
@@ -4681,7 +4681,7 @@ int32_t S3LoadSounds() {
 	asm( 
 "	      00446854    push 2"
 "	      00446856    push 5Fh"
-"	      00446858    lea eax,[ebp-104h]"
+"	      00446858    lea eax,szFullSoundPath[0]"
 "	      0044685e    push eax"
 "	      0044685f    lea ecx,[ebp-408h]"
 "	      00446865    call 00411990h"
@@ -4704,7 +4704,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 443:
 	asm( 
-"	      004468b9    lea eax,[ebp-104h]"
+"	      004468b9    lea eax,szFullSoundPath[0]"
 "	      004468bf    push eax"
 "	      004468c0    push 598E28h"
 "	      004468c5    push 0"
@@ -4716,7 +4716,7 @@ int32_t S3LoadSounds() {
 	asm( 
 "	      004468d1    push 2"
 "	      004468d3    push 60h"
-"	      004468d5    lea eax,[ebp-104h]"
+"	      004468d5    lea eax,szFullSoundPath[0]"
 "	      004468db    push eax"
 "	      004468dc    lea ecx,[ebp-410h]"
 "	      004468e2    call 00411990h"
@@ -4739,7 +4739,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 446:
 	asm( 
-"	      00446936    lea eax,[ebp-104h]"
+"	      00446936    lea eax,szFullSoundPath[0]"
 "	      0044693c    push eax"
 "	      0044693d    push 598E34h"
 "	      00446942    push 0"
@@ -4751,7 +4751,7 @@ int32_t S3LoadSounds() {
 	asm( 
 "	      0044694e    push 2"
 "	      00446950    push 61h"
-"	      00446952    lea eax,[ebp-104h]"
+"	      00446952    lea eax,szFullSoundPath[0]"
 "	      00446958    push eax"
 "	      00446959    lea ecx,[ebp-418h]"
 "	      0044695f    call 00411990h"
@@ -4774,7 +4774,7 @@ int32_t S3LoadSounds() {
 );
 // LINE 449:
 	asm( 
-"	      004469b3    lea eax,[ebp-104h]"
+"	      004469b3    lea eax,szFullSoundPath[0]"
 "	      004469b9    push eax"
 "	      004469ba    push 598E40h"
 "	      004469bf    push 0"
@@ -4784,18 +4784,18 @@ int32_t S3LoadSounds() {
 );
 // LINE 450:
 	asm( 
-"	      004469cb    mov dword ptr [ebp-108h],62h"
+"	      004469cb    mov count,62h"
 "	      004469d5    jmp near ptr 004469E0h"
-"	      004469da    inc dword ptr [ebp-108h]"
-"	      004469e0    cmp dword ptr [ebp-108h],71h"
+"	      004469da    inc count"
+"	      004469e0    cmp count,71h"
 "	      004469e7    jge near ptr 00446A5Ch"
 );
 // LINE 451:
 	asm( 
 "	      004469ed    push 0"
-"	      004469ef    mov eax,[ebp-108h]"
+"	      004469ef    mov eax,count"
 "	      004469f5    push eax"
-"	      004469f6    lea eax,[ebp-104h]"
+"	      004469f6    lea eax,szFullSoundPath[0]"
 "	      004469fc    push eax"
 "	      004469fd    lea ecx,[ebp-420h]"
 "	      00446a03    call 00411990h"
@@ -4851,20 +4851,20 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 );
 // LINE 472:
 	asm( 
-"	      00446a77    mov eax,[ebp+8]"
+"	      00446a77    mov eax,nSoundIndex"
 "	      00446a7a    mov eax,[eax*4+604604h]"
-"	      00446a81    mov [ebp-108h],eax"
+"	      00446a81    mov theSound,eax"
 );
 // LINE 473:
 	asm( 
-"	      00446a87    cmp dword ptr [ebp-108h],0"
+"	      00446a87    cmp theSound,0"
 "	      00446a8e    je near ptr 00446CB8h"
 );
 // LINE 474:
 	asm( 
-"	      00446a94    lea eax,[ebp-104h]"
+"	      00446a94    lea eax,szFullSoundPath[0]"
 "	      00446a9a    push eax"
-"	      00446a9b    mov eax,[ebp+0Ch]"
+"	      00446a9b    mov eax,szSoundFile"
 "	      00446a9e    push eax"
 "	      00446a9f    push 0"
 "	      00446aa1    push 2"
@@ -4879,7 +4879,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 "	      00446ab5    mov [ebp-12Ch],eax"
 "	      00446abb    cmp dword ptr [ebp-12Ch],0"
 "	      00446ac2    je near ptr 00446B94h"
-"	      00446ac8    lea eax,[ebp-104h]"
+"	      00446ac8    lea eax,szFullSoundPath[0]"
 "	      00446ace    push eax"
 "	      00446acf    call 0056ABE0h"
 "	      00446ad4    add esp,4"
@@ -4908,7 +4908,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 "	      00446b38    mov [ebp-134h],eax"
 "	      00446b3e    mov eax,[ebp-130h]"
 "	      00446b44    push eax"
-"	      00446b45    lea eax,[ebp-104h]"
+"	      00446b45    lea eax,szFullSoundPath[0]"
 "	      00446b4b    push eax"
 "	      00446b4c    mov eax,[ebp-134h]"
 "	      00446b52    push eax"
@@ -4930,9 +4930,9 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 "	      00446bad    push 2"
 "	      00446baf    lea eax,[ebp-110h]"
 "	      00446bb5    push eax"
-"	      00446bb6    mov eax,[ebp-108h]"
+"	      00446bb6    mov eax,theSound"
 "	      00446bbc    mov eax,[eax]"
-"	      00446bbe    mov ecx,[ebp-108h]"
+"	      00446bbe    mov ecx,theSound"
 "	      00446bc4    call dword ptr [eax+2Ch]"
 "	      00446bc7    mov eax,[ebp-10Ch]"
 "	      00446bcd    dec dword ptr [eax+0Ch]"
@@ -5014,42 +5014,42 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 500:
 	asm( 
-"	      00446ccb    mov eax,[ebp+8]"
+"	      00446ccb    mov eax,nSoundIndex"
 "	      00446cce    mov eax,[eax*4+604604h]"
-"	      00446cd5    mov [ebp-4],eax"
+"	      00446cd5    mov theSound,eax"
 );
 // LINE 503:
 	asm( 
-"	      00446cd8    mov eax,[ebp+0Ch]"
+"	      00446cd8    mov eax,loc"
 "	      00446cdb    mov eax,[eax]"
 "	      00446cdd    sub eax,ds:[6C126Ch]"
-"	      00446ce3    mov [ebp-18h],eax"
+"	      00446ce3    mov viewvect.x,eax"
 );
 // LINE 504:
 	asm( 
-"	      00446ce6    mov eax,[ebp+0Ch]"
+"	      00446ce6    mov eax,loc"
 "	      00446ce9    mov eax,[eax+4]"
 "	      00446cec    sub eax,ds:[6C1270h]"
-"	      00446cf2    mov [ebp-14h],eax"
+"	      00446cf2    mov viewvect.y,eax"
 );
 // LINE 505:
 	asm( 
-"	      00446cf5    mov eax,[ebp+0Ch]"
+"	      00446cf5    mov eax,loc"
 "	      00446cf8    mov eax,[eax+8]"
 "	      00446cfb    sub eax,ds:[6C1274h]"
-"	      00446d01    mov [ebp-10h],eax"
+"	      00446d01    mov viewvect.z,eax"
 );
 // LINE 506:
 	asm( 
-"	      00446d04    lea eax,[ebp-18h]"
+"	      00446d04    lea eax,viewvect.x"
 "	      00446d07    push eax"
 "	      00446d08    call 004CA0C0h"
 "	      00446d0d    add esp,4"
-"	      00446d10    mov [ebp-0Ch],eax"
+"	      00446d10    mov fpDistance,eax"
 );
 // LINE 508:
 	asm( 
-"	      00446d13    cmp dword ptr [ebp-0Ch],7800000h"
+"	      00446d13    cmp fpDistance,7800000h"
 "	      00446d1a    jl near ptr 00446D27h"
 );
 // LINE 509:
@@ -5061,7 +5061,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	asm( 
 "	      00446d27    push 0F0600000h"
 "	      00446d2c    push 7800000h"
-"	      00446d31    mov eax,[ebp-0Ch]"
+"	      00446d31    mov eax,fpDistance"
 "	      00446d34    push eax"
 "	      00446d35    call 004D19DFh"
 "	      00446d3a    add esp,8"
@@ -5069,18 +5069,18 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 "	      00446d3e    call 004D19BDh"
 "	      00446d43    add esp,8"
 "	      00446d46    sar eax,10h"
-"	      00446d49    mov [ebp-24h],eax"
+"	      00446d49    mov lNewVolume,eax"
 );
 // LINE 513:
 	asm( 
-"	      00446d4c    add dword ptr [ebp-24h],2710h"
+"	      00446d4c    add lNewVolume,2710h"
 );
 // LINE 514:
 	asm( 
-"	      00446d53    mov eax,[ebp-24h]"
-"	      00446d56    mov ecx,[ebp+8]"
+"	      00446d53    mov eax,lNewVolume"
+"	      00446d56    mov ecx,nSoundIndex"
 "	      00446d59    mov [ecx*4+5C3628h],eax"
-"	      00446d60    mov eax,[ebp-24h]"
+"	      00446d60    mov eax,lNewVolume"
 "	      00446d63    mov [ebp-28h],eax"
 );
 // LINE 515:
@@ -5094,21 +5094,21 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 "	      00446d7b    idiv ecx"
 "	      00446d7d    mov [ebp-28h],eax"
 "	      00446d80    mov eax,[ebp-28h]"
-"	      00446d83    mov [ebp-24h],eax"
+"	      00446d83    mov lNewVolume,eax"
 "	      00446d86    jmp near ptr 00446D8Bh"
 );
 // LINE 516:
 	asm( 
-"	      00446d8b    cmp dword ptr [ebp-4],0"
+"	      00446d8b    cmp theSound,0"
 "	      00446d8f    je near ptr 00446DA4h"
 );
 // LINE 517:
 	asm( 
-"	      00446d95    mov eax,[ebp-24h]"
+"	      00446d95    mov eax,lNewVolume"
 "	      00446d98    push eax"
-"	      00446d99    mov eax,[ebp-4]"
+"	      00446d99    mov eax,theSound"
 "	      00446d9c    mov eax,[eax]"
-"	      00446d9e    mov ecx,[ebp-4]"
+"	      00446d9e    mov ecx,theSound"
 "	      00446da1    call dword ptr [eax+24h]"
 );
 // LINE 521:
@@ -5118,7 +5118,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 522:
 	asm( 
-"	      00446dae    mov dword ptr [ebp-20h],1"
+"	      00446dae    mov midparam,1"
 );
 // LINE 523:
 	asm( 
@@ -5126,7 +5126,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 524:
 	asm( 
-"	      00446dba    mov dword ptr [ebp-20h],0"
+"	      00446dba    mov midparam,0"
 );
 // LINE 525:
 	asm( 
@@ -5135,7 +5135,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 526:
 	asm( 
-"	      00446dcb    mov dword ptr [ebp-8],1"
+"	      00446dcb    mov lastparam,1"
 );
 // LINE 527:
 	asm( 
@@ -5143,23 +5143,23 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 528:
 	asm( 
-"	      00446dd7    mov dword ptr [ebp-8],2"
+"	      00446dd7    mov lastparam,2"
 );
 // LINE 530:
 	asm( 
-"	      00446dde    mov eax,[ebp-8]"
+"	      00446dde    mov eax,lastparam"
 "	      00446de1    push eax"
-"	      00446de2    mov eax,[ebp-20h]"
+"	      00446de2    mov eax,midparam"
 "	      00446de5    push eax"
-"	      00446de6    mov eax,[ebp+8]"
+"	      00446de6    mov eax,nSoundIndex"
 "	      00446de9    push eax"
 "	      00446dea    mov ecx,604600h"
 "	      00446def    call 0042E612h"
-"	      00446df4    mov [ebp-1Ch],eax"
+"	      00446df4    mov nReturnValue,eax"
 );
 // LINE 532:
 	asm( 
-"	      00446df7    mov eax,[ebp-1Ch]"
+"	      00446df7    mov eax,nReturnValue"
 "	      00446dfa    jmp near ptr 00446DFFh"
 );
 // LINE 533:
@@ -5184,7 +5184,7 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 );
 // LINE 552:
 	asm( 
-"	      00446e0a    mov eax,[ebp+8]"
+"	      00446e0a    mov eax,nSoundIndex"
 "	      00446e0d    push eax"
 "	      00446e0e    mov ecx,604600h"
 "	      00446e13    call 0042E663h"
@@ -5241,27 +5241,27 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 );
 // LINE 589:
 	asm( 
-"	      00446e45    mov eax,[ebp+8]"
+"	      00446e45    mov eax,nSoundIndex"
 "	      00446e48    mov eax,[eax*4+604604h]"
-"	      00446e4f    mov [ebp-4],eax"
+"	      00446e4f    mov theSound,eax"
 );
 // LINE 591:
 	asm( 
-"	      00446e52    cmp dword ptr [ebp-4],0"
+"	      00446e52    cmp theSound,0"
 "	      00446e56    je near ptr 00446E78h"
 );
 // LINE 592:
 	asm( 
-"	      00446e5c    mov eax,[ebp-4]"
+"	      00446e5c    mov eax,theSound"
 "	      00446e5f    mov eax,[eax]"
-"	      00446e61    mov ecx,[ebp-4]"
+"	      00446e61    mov ecx,theSound"
 "	      00446e64    call dword ptr [eax+5Ch]"
-"	      00446e67    mov ecx,[ebp+0Ch]"
+"	      00446e67    mov ecx,lFrequencyAdjustment"
 "	      00446e6a    add ecx,eax"
 "	      00446e6c    push ecx"
-"	      00446e6d    mov eax,[ebp-4]"
+"	      00446e6d    mov eax,theSound"
 "	      00446e70    mov eax,[eax]"
-"	      00446e72    mov ecx,[ebp-4]"
+"	      00446e72    mov ecx,theSound"
 "	      00446e75    call dword ptr [eax+64h]"
 );
 // LINE 593:
@@ -5288,8 +5288,8 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 );
 // LINE 614:
 	asm( 
-"	      00446e8b    add dword ptr [ebp+0Ch],2710h"
-"	      00446e92    mov eax,[ebp+0Ch]"
+"	      00446e8b    add lNewVolume,2710h"
+"	      00446e92    mov eax,lNewVolume"
 "	      00446e95    mov [ebp-4],eax"
 );
 // LINE 615:
@@ -5303,27 +5303,27 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 "	      00446ead    idiv ecx"
 "	      00446eaf    mov [ebp-4],eax"
 "	      00446eb2    mov eax,[ebp-4]"
-"	      00446eb5    mov [ebp+0Ch],eax"
+"	      00446eb5    mov lNewVolume,eax"
 "	      00446eb8    jmp near ptr 00446EBDh"
 );
 // LINE 616:
 	asm( 
-"	      00446ebd    mov eax,[ebp+0Ch]"
-"	      00446ec0    mov ecx,[ebp+8]"
+"	      00446ebd    mov eax,lNewVolume"
+"	      00446ec0    mov ecx,nSoundIndex"
 "	      00446ec3    mov [ecx*4+5C3628h],eax"
 );
 // LINE 617:
 	asm( 
-"	      00446eca    mov eax,[ebp+8]"
+"	      00446eca    mov eax,nSoundIndex"
 "	      00446ecd    cmp dword ptr [eax*4+604604h],0"
 "	      00446ed5    je near ptr 00446EF8h"
 );
 // LINE 618:
 	asm( 
-"	      00446edb    mov eax,[ebp+0Ch]"
+"	      00446edb    mov eax,lNewVolume"
 "	      00446ede    push eax"
-"	      00446edf    mov eax,[ebp+8]"
-"	      00446ee2    mov ecx,[ebp+8]"
+"	      00446edf    mov eax,nSoundIndex"
+"	      00446ee2    mov ecx,nSoundIndex"
 "	      00446ee5    mov ecx,[ecx*4+604604h]"
 "	      00446eec    mov edx,[ecx]"
 "	      00446eee    mov ecx,[eax*4+604604h]"
@@ -5352,14 +5352,14 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 );
 // LINE 638:
 	asm( 
-"	      00446f08    mov eax,[ebp+8]"
+"	      00446f08    mov eax,nSoundIndex"
 "	      00446f0b    cmp dword ptr [eax*4+604604h],0"
 "	      00446f13    je near ptr 00446F37h"
 );
 // LINE 639:
 	asm( 
-"	      00446f19    mov eax,[ebp+8]"
-"	      00446f1c    mov ecx,[ebp+8]"
+"	      00446f19    mov eax,nSoundIndex"
+"	      00446f1c    mov ecx,nSoundIndex"
 "	      00446f1f    mov ecx,[ecx*4+604604h]"
 "	      00446f26    mov edx,[ecx]"
 "	      00446f28    mov ecx,[eax*4+604604h]"
@@ -5401,13 +5401,13 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 );
 // LINE 680:
 	asm( 
-"	      00446f4c    mov eax,[ebp+8]"
+"	      00446f4c    mov eax,nSoundIndex"
 "	      00446f4f    mov eax,[eax*4+604604h]"
-"	      00446f56    mov [ebp-10h],eax"
+"	      00446f56    mov theSound,eax"
 );
 // LINE 686:
 	asm( 
-"	      00446f59    cmp dword ptr [ebp-10h],0"
+"	      00446f59    cmp theSound,0"
 "	      00446f5d    jne near ptr 00446F68h"
 );
 // LINE 687:
@@ -5416,45 +5416,45 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 );
 // LINE 691:
 	asm( 
-"	      00446f68    mov eax,[ebp+0Ch]"
+"	      00446f68    mov eax,loc"
 "	      00446f6b    mov eax,[eax]"
 "	      00446f6d    sub eax,ds:[6C1318h]"
-"	      00446f73    mov [ebp-0Ch],eax"
+"	      00446f73    mov positionTemp.x,eax"
 );
 // LINE 692:
 	asm( 
-"	      00446f76    mov eax,[ebp+0Ch]"
+"	      00446f76    mov eax,loc"
 "	      00446f79    mov eax,[eax+4]"
 "	      00446f7c    sub eax,ds:[6C131Ch]"
-"	      00446f82    mov [ebp-8],eax"
+"	      00446f82    mov positionTemp.y,eax"
 );
 // LINE 693:
 	asm( 
-"	      00446f85    mov eax,[ebp+0Ch]"
+"	      00446f85    mov eax,loc"
 "	      00446f88    mov eax,[eax+8]"
 "	      00446f8b    sub eax,ds:[6C1320h]"
-"	      00446f91    mov [ebp-4],eax"
+"	      00446f91    mov positionTemp.z,eax"
 );
 // LINE 694:
 	asm( 
 "	      00446f94    mov eax,6C12A0h"
 "	      00446f99    add eax,38h"
 "	      00446f9c    push eax"
-"	      00446f9d    lea eax,[ebp-20h]"
+"	      00446f9d    lea eax,positionRelative.x"
 "	      00446fa0    push eax"
-"	      00446fa1    lea eax,[ebp-0Ch]"
+"	      00446fa1    lea eax,positionTemp.x"
 "	      00446fa4    push eax"
 "	      00446fa5    call 004D2094h"
 "	      00446faa    add esp,0Ch"
 );
 // LINE 698:
 	asm( 
-"	      00446fad    mov eax,[ebp-20h]"
+"	      00446fad    mov eax,positionRelative.x"
 "	      00446fb0    mov [ebp-48h],eax"
 "	      00446fb3    fild dword ptr [ebp-48h]"
 "	      00446fb6    fdiv qword ptr ds:[58F5D0h]"
 "	      00446fbc    fstp qword ptr [ebp-3Ch]"
-"	      00446fbf    mov eax,[ebp-18h]"
+"	      00446fbf    mov eax,positionRelative.z"
 "	      00446fc2    mov [ebp-4Ch],eax"
 "	      00446fc5    fild dword ptr [ebp-4Ch]"
 "	      00446fc8    fdiv qword ptr ds:[58F5D0h]"
@@ -5476,27 +5476,27 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 "	      00447001    fdiv qword ptr [ebp-34h]"
 "	      00447004    fmul qword ptr ds:[58F5D0h]"
 "	      0044700a    call 0056EBE8h"
-"	      0044700f    mov [ebp-20h],eax"
+"	      0044700f    mov positionRelative.x,eax"
 "	      00447012    fld qword ptr [ebp-44h]"
 "	      00447015    fdiv qword ptr [ebp-34h]"
 "	      00447018    fmul qword ptr ds:[58F5D0h]"
 "	      0044701e    call 0056EBE8h"
-"	      00447023    mov [ebp-18h],eax"
+"	      00447023    mov positionRelative.z,eax"
 "	      00447026    jmp near ptr 00447038h"
-"	      0044702b    mov dword ptr [ebp-18h],0"
-"	      00447032    mov eax,[ebp-18h]"
-"	      00447035    mov [ebp-20h],eax"
+"	      0044702b    mov positionRelative.z,0"
+"	      00447032    mov eax,positionRelative.z"
+"	      00447035    mov positionRelative.x,eax"
 "	      00447038    fld qword ptr [ebp-34h]"
 "	      0044703b    fmul qword ptr ds:[58F5D0h]"
 "	      00447041    call 0056EBE8h"
-"	      00447046    mov [ebp-14h],eax"
+"	      00447046    mov fpDistance,eax"
 "	      00447049    jmp near ptr 0044704Eh"
 );
 // LINE 701:
 	asm( 
 "	      0044704e    push 0F0600000h"
 "	      00447053    push 7800000h"
-"	      00447058    mov eax,[ebp-14h]"
+"	      00447058    mov eax,fpDistance"
 "	      0044705b    push eax"
 "	      0044705c    call 004D19DFh"
 "	      00447061    add esp,8"
@@ -5504,15 +5504,15 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 "	      00447065    call 004D19BDh"
 "	      0044706a    add esp,8"
 "	      0044706d    sar eax,10h"
-"	      00447070    mov [ebp-28h],eax"
+"	      00447070    mov lVolume,eax"
 );
 // LINE 702:
 	asm( 
-"	      00447073    add dword ptr [ebp-28h],2710h"
+"	      00447073    add lVolume,2710h"
 );
 // LINE 714:
 	asm( 
-"	      0044707a    mov eax,[ebp-20h]"
+"	      0044707a    mov eax,positionRelative.x"
 "	      0044707d    push eax"
 "	      0044707e    push 27100000h"
 "	      00447083    call 004D19BDh"
@@ -5522,14 +5522,14 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 "	      0044708f    and edx,7"
 "	      00447092    add eax,edx"
 "	      00447094    sar eax,3"
-"	      00447097    mov [ebp-24h],eax"
+"	      00447097    mov lPan,eax"
 );
 // LINE 724:
 	asm( 
-"	      0044709a    mov eax,[ebp-28h]"
-"	      0044709d    mov ecx,[ebp+8]"
+"	      0044709a    mov eax,lVolume"
+"	      0044709d    mov ecx,nSoundIndex"
 "	      004470a0    mov [ecx*4+5C3628h],eax"
-"	      004470a7    mov eax,[ebp-28h]"
+"	      004470a7    mov eax,lVolume"
 "	      004470aa    mov [ebp-2Ch],eax"
 );
 // LINE 725:
@@ -5543,25 +5543,25 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 "	      004470c2    idiv ecx"
 "	      004470c4    mov [ebp-2Ch],eax"
 "	      004470c7    mov eax,[ebp-2Ch]"
-"	      004470ca    mov [ebp-28h],eax"
+"	      004470ca    mov lVolume,eax"
 "	      004470cd    jmp near ptr 004470D2h"
 );
 // LINE 728:
 	asm( 
-"	      004470d2    mov eax,[ebp-28h]"
+"	      004470d2    mov eax,lVolume"
 "	      004470d5    push eax"
-"	      004470d6    mov eax,[ebp-10h]"
+"	      004470d6    mov eax,theSound"
 "	      004470d9    mov eax,[eax]"
-"	      004470db    mov ecx,[ebp-10h]"
+"	      004470db    mov ecx,theSound"
 "	      004470de    call dword ptr [eax+24h]"
 );
 // LINE 729:
 	asm( 
-"	      004470e1    mov eax,[ebp-24h]"
+"	      004470e1    mov eax,lPan"
 "	      004470e4    push eax"
-"	      004470e5    mov eax,[ebp-10h]"
+"	      004470e5    mov eax,theSound"
 "	      004470e8    mov eax,[eax]"
-"	      004470ea    mov ecx,[ebp-10h]"
+"	      004470ea    mov ecx,theSound"
 "	      004470ed    call dword ptr [eax+54h]"
 );
 // LINE 730:
@@ -5591,9 +5591,9 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 );
 // LINE 737:
 	asm( 
-"	      00447103    mov eax,[ebp+0Ch]"
+"	      00447103    mov eax,nSoundIndex"
 "	      00447106    mov eax,[eax*4+604604h]"
-"	      0044710d    mov [ebp-4],eax"
+"	      0044710d    mov theSound,eax"
 "	      00447110    mov dword ptr [ebp-14h],2710h"
 );
 // LINE 738:
@@ -5607,21 +5607,21 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 "	      0044712c    idiv ecx"
 "	      0044712e    mov [ebp-14h],eax"
 "	      00447131    mov eax,[ebp-14h]"
-"	      00447134    mov [ebp-8],eax"
+"	      00447134    mov lNewVolume,eax"
 "	      00447137    jmp near ptr 0044713Ch"
 );
 // LINE 740:
 	asm( 
-"	      0044713c    cmp dword ptr [ebp-4],0"
+"	      0044713c    cmp theSound,0"
 "	      00447140    je near ptr 004471A3h"
 );
 // LINE 741:
 	asm( 
-"	      00447146    mov eax,[ebp-8]"
+"	      00447146    mov eax,lNewVolume"
 "	      00447149    push eax"
-"	      0044714a    mov eax,[ebp-4]"
+"	      0044714a    mov eax,theSound"
 "	      0044714d    mov eax,[eax]"
-"	      0044714f    mov ecx,[ebp-4]"
+"	      0044714f    mov ecx,theSound"
 "	      00447152    call dword ptr [eax+24h]"
 );
 // LINE 742:
@@ -5633,9 +5633,9 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 "	      00447162    cmp dword ptr [ebp-0Ch],0"
 "	      00447166    je near ptr 00447186h"
 "	      0044716c    push 0"
-"	      0044716e    mov eax,[ebp+10h]"
+"	      0044716e    mov eax,nDelayBeforePlay"
 "	      00447171    push eax"
-"	      00447172    mov eax,[ebp-4]"
+"	      00447172    mov eax,theSound"
 "	      00447175    push eax"
 "	      00447176    mov ecx,[ebp-0Ch]"
 "	      00447179    call 00420675h"
@@ -5644,7 +5644,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 "	      00447186    mov dword ptr [ebp-10h],0"
 "	      0044718d    mov eax,[ebp-10h]"
 "	      00447190    push eax"
-"	      00447191    mov eax,[ebp+8]"
+"	      00447191    mov eax,nQueue"
 "	      00447194    lea eax,[eax+eax*2]"
 "	      00447197    lea ecx,[eax*8+604450h]"
 "	      0044719e    call 0042185Bh"

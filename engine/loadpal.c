@@ -25,11 +25,11 @@ struct VRResource* LoadPalette() {
 "	      004d20e3    push eax"
 "	      004d20e4    call 004CB4ACh"
 "	      004d20e9    add esp,8"
-"	      004d20ec    mov [ebp-4],eax"
+"	      004d20ec    mov res,eax"
 );
 // LINE 57:
 	asm( 
-"	      004d20ef    cmp dword ptr [ebp-4],0"
+"	      004d20ef    cmp res,0"
 "	      004d20f3    jne near ptr 004D210Ah"
 );
 // LINE 58:
@@ -44,7 +44,7 @@ struct VRResource* LoadPalette() {
 // LINE 62:
 	asm( 
 "	      004d210a    push 300h"
-"	      004d210f    mov eax,[ebp-4]"
+"	      004d210f    mov eax,res"
 "	      004d2112    add eax,10h"
 "	      004d2115    push eax"
 "	      004d2116    call 004D5F1Eh"
@@ -59,22 +59,22 @@ struct VRResource* LoadPalette() {
 );
 // LINE 94:
 	asm( 
-"	      004d212d    mov eax,[ebp-4]"
+"	      004d212d    mov eax,res"
 "	      004d2130    mov dword ptr [eax],0"
 );
 // LINE 95:
 	asm( 
-"	      004d2136    mov eax,[ebp-4]"
+"	      004d2136    mov eax,res"
 "	      004d2139    mov dword ptr [eax+8],4"
 );
 // LINE 96:
 	asm( 
-"	      004d2140    mov eax,[ebp-4]"
+"	      004d2140    mov eax,res"
 "	      004d2143    mov dword ptr [eax+0Ch],0"
 );
 // LINE 97:
 	asm( 
-"	      004d214a    mov eax,[ebp-4]"
+"	      004d214a    mov eax,res"
 "	      004d214d    jmp near ptr 004D2152h"
 );
 // LINE 99:
@@ -102,12 +102,12 @@ char * VRGetPalFromResource(struct VRResource* res) {
 );
 // LINE 113:
 	asm( 
-"	      004d2160    mov eax,[ebp+8]"
-"	      004d2163    mov [ebp-4],eax"
+"	      004d2160    mov eax,res"
+"	      004d2163    mov cmp,eax"
 );
 // LINE 114:
 	asm( 
-"	      004d2166    mov eax,[ebp-4]"
+"	      004d2166    mov eax,cmp"
 "	      004d2169    add eax,10h"
 "	      004d216c    jmp near ptr 004D2171h"
 );

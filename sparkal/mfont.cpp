@@ -15,7 +15,7 @@ void MFont::MFont() {
 "	      0049f786    push ebx"
 "	      0049f787    push esi"
 "	      0049f788    push edi"
-"	      0049f789    mov [ebp-14h],ecx"
+"	      0049f789    mov this,ecx"
 "	      0049f78c    mov eax,ds:[59A950h]"
 "	      0049f791    mov [ebp-10h],eax"
 "	      0049f794    push 10h"
@@ -67,32 +67,32 @@ void MFont::MFont() {
 "	      0049f82a    mov dword ptr [eax+0Ch],1"
 "	      0049f831    jmp near ptr 0049F836h"
 "	      0049f836    mov eax,[ebp-4]"
-"	      0049f839    mov ecx,[ebp-14h]"
+"	      0049f839    mov ecx,this"
 "	      0049f83c    mov [ecx+8],eax"
 "	      0049f83f    jmp near ptr 0049F84Eh"
-"	      0049f844    mov eax,[ebp-14h]"
+"	      0049f844    mov eax,this"
 "	      0049f847    mov dword ptr [eax+8],0"
-"	      0049f84e    mov eax,[ebp-14h]"
+"	      0049f84e    mov eax,this"
 "	      0049f851    mov dword ptr [eax+4],0"
 "	      0049f858    jmp near ptr 0049F85Dh"
-"	      0049f85d    mov eax,[ebp-14h]"
+"	      0049f85d    mov eax,this"
 "	      0049f860    mov dword ptr [eax+0Ch],0Ch"
-"	      0049f867    mov eax,[ebp-14h]"
+"	      0049f867    mov eax,this"
 "	      0049f86a    mov dword ptr [eax+10h],0"
-"	      0049f871    mov eax,[ebp-14h]"
+"	      0049f871    mov eax,this"
 "	      0049f874    mov dword ptr [eax+14h],0"
-"	      0049f87b    mov eax,[ebp-14h]"
+"	      0049f87b    mov eax,this"
 "	      0049f87e    mov dword ptr [eax],591640h"
 );
 // LINE 30:
 	asm( 
-"	      0049f884    mov eax,[ebp-14h]"
+"	      0049f884    mov eax,this"
 "	      0049f887    mov dword ptr [eax+18h],0"
 );
 // LINE 32:
 	asm( 
 "	      0049f88e    jmp near ptr 0049F893h"
-"	      0049f893    mov eax,[ebp-14h]"
+"	      0049f893    mov eax,this"
 "	      0049f896    pop edi"
 "	      0049f897    pop esi"
 "	      0049f898    pop ebx"
@@ -111,7 +111,7 @@ void MFont::MFont(const class MFont& copyMFont) {
 "	      0049f8a1    push ebx"
 "	      0049f8a2    push esi"
 "	      0049f8a3    push edi"
-"	      0049f8a4    mov [ebp-8],ecx"
+"	      0049f8a4    mov this,ecx"
 "	      0049f8a7    push 10h"
 "	      0049f8a9    call 0056A600h"
 "	      0049f8ae    add esp,4"
@@ -130,28 +130,28 @@ void MFont::MFont(const class MFont& copyMFont) {
 "	      0049f8e0    mov dword ptr [eax+0Ch],1"
 "	      0049f8e7    jmp near ptr 0049F8ECh"
 "	      0049f8ec    mov eax,[ebp-4]"
-"	      0049f8ef    mov ecx,[ebp-8]"
+"	      0049f8ef    mov ecx,this"
 "	      0049f8f2    mov [ecx+8],eax"
 "	      0049f8f5    jmp near ptr 0049F904h"
-"	      0049f8fa    mov eax,[ebp-8]"
+"	      0049f8fa    mov eax,this"
 "	      0049f8fd    mov dword ptr [eax+8],0"
-"	      0049f904    mov eax,[ebp-8]"
+"	      0049f904    mov eax,this"
 "	      0049f907    mov dword ptr [eax+4],0"
 "	      0049f90e    jmp near ptr 0049F913h"
-"	      0049f913    mov eax,[ebp-8]"
+"	      0049f913    mov eax,this"
 "	      0049f916    mov dword ptr [eax],591640h"
 );
 // LINE 43:
 	asm( 
-"	      0049f91c    mov eax,[ebp+8]"
+"	      0049f91c    mov eax,copyMFont"
 "	      0049f91f    push eax"
-"	      0049f920    mov ecx,[ebp-8]"
+"	      0049f920    mov ecx,this"
 "	      0049f923    call 0049FD33h"
 );
 // LINE 44:
 	asm( 
 "	      0049f928    jmp near ptr 0049F92Dh"
-"	      0049f92d    mov eax,[ebp-8]"
+"	      0049f92d    mov eax,this"
 "	      0049f930    pop edi"
 "	      0049f931    pop esi"
 "	      0049f932    pop ebx"
@@ -170,7 +170,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049f93d    push ebx"
 "	      0049f93e    push esi"
 "	      0049f93f    push edi"
-"	      0049f940    mov [ebp-38h],ecx"
+"	      0049f940    mov this,ecx"
 "	      0049f943    push 10h"
 "	      0049f945    call 0056A600h"
 "	      0049f94a    add esp,4"
@@ -189,21 +189,21 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049f97c    mov dword ptr [eax+0Ch],1"
 "	      0049f983    jmp near ptr 0049F988h"
 "	      0049f988    mov eax,[ebp-34h]"
-"	      0049f98b    mov ecx,[ebp-38h]"
+"	      0049f98b    mov ecx,this"
 "	      0049f98e    mov [ecx+8],eax"
 "	      0049f991    jmp near ptr 0049F9A0h"
-"	      0049f996    mov eax,[ebp-38h]"
+"	      0049f996    mov eax,this"
 "	      0049f999    mov dword ptr [eax+8],0"
-"	      0049f9a0    mov eax,[ebp-38h]"
+"	      0049f9a0    mov eax,this"
 "	      0049f9a3    mov dword ptr [eax+4],0"
 "	      0049f9aa    jmp near ptr 0049F9AFh"
-"	      0049f9af    mov eax,[ebp-38h]"
+"	      0049f9af    mov eax,this"
 "	      0049f9b2    mov dword ptr [eax],591640h"
 );
 // LINE 55:
 	asm( 
 "	      0049f9b8    jmp near ptr 0049F9BDh"
-"	      0049f9bd    mov eax,[ebp+8]"
+"	      0049f9bd    mov eax,szFaceName"
 "	      0049f9c0    push eax"
 "	      0049f9c1    call 0056ABE0h"
 "	      0049f9c6    add esp,4"
@@ -224,14 +224,14 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049fa00    add esp,4"
 "	      0049fa03    jmp near ptr 0049FA08h"
 "	      0049fa08    jmp near ptr 0049FA0Dh"
-"	      0049fa0d    mov eax,[ebp-38h]"
+"	      0049fa0d    mov eax,this"
 "	      0049fa10    mov eax,[eax+8]"
 "	      0049fa13    cmp dword ptr [eax+0Ch],1"
 "	      0049fa17    ja near ptr 0049FA3Eh"
 "	      0049fa1d    cmp dword ptr [ebp-30h],0"
 "	      0049fa21    je near ptr 0049FBBFh"
 "	      0049fa27    jmp near ptr 0049FA2Ch"
-"	      0049fa2c    mov eax,[ebp-38h]"
+"	      0049fa2c    mov eax,this"
 "	      0049fa2f    mov eax,[eax+8]"
 "	      0049fa32    mov ecx,[ebp-30h]"
 "	      0049fa35    cmp [eax+8],ecx"
@@ -282,7 +282,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049fad5    mov [ebp-28h],eax"
 "	      0049fad8    mov eax,[ebp-24h]"
 "	      0049fadb    push eax"
-"	      0049fadc    mov eax,[ebp+8]"
+"	      0049fadc    mov eax,szFaceName"
 "	      0049fadf    push eax"
 "	      0049fae0    mov eax,[ebp-28h]"
 "	      0049fae3    push eax"
@@ -299,14 +299,14 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049fb11    mov [ebp-4],eax"
 "	      0049fb14    jmp near ptr 0049FB20h"
 "	      0049fb19    mov dword ptr [ebp-4],0"
-"	      0049fb20    mov eax,[ebp-38h]"
+"	      0049fb20    mov eax,this"
 "	      0049fb23    mov eax,[eax+8]"
 "	      0049fb26    dec dword ptr [eax+0Ch]"
-"	      0049fb29    mov eax,[ebp-38h]"
+"	      0049fb29    mov eax,this"
 "	      0049fb2c    mov eax,[eax+8]"
 "	      0049fb2f    cmp dword ptr [eax+0Ch],0"
 "	      0049fb33    jne near ptr 0049FBACh"
-"	      0049fb39    mov eax,[ebp-38h]"
+"	      0049fb39    mov eax,this"
 "	      0049fb3c    mov eax,[eax+8]"
 "	      0049fb3f    mov [ebp-18h],eax"
 "	      0049fb42    mov eax,[ebp-18h]"
@@ -339,19 +339,19 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049fba7    jmp near ptr 0049FBACh"
 "	      0049fbac    jmp near ptr 0049FBB1h"
 "	      0049fbb1    mov eax,[ebp-4]"
-"	      0049fbb4    mov ecx,[ebp-38h]"
+"	      0049fbb4    mov ecx,this"
 "	      0049fbb7    mov [ecx+8],eax"
 "	      0049fbba    jmp near ptr 0049FBF2h"
 "	      0049fbbf    cmp dword ptr [ebp-30h],0"
 "	      0049fbc3    je near ptr 0049FBF2h"
 "	      0049fbc9    jmp near ptr 0049FBCEh"
-"	      0049fbce    mov eax,[ebp-38h]"
+"	      0049fbce    mov eax,this"
 "	      0049fbd1    mov eax,[eax+8]"
 "	      0049fbd4    mov eax,[eax]"
 "	      0049fbd6    mov [ebp-0Ch],eax"
 "	      0049fbd9    mov eax,[ebp-30h]"
 "	      0049fbdc    push eax"
-"	      0049fbdd    mov eax,[ebp+8]"
+"	      0049fbdd    mov eax,szFaceName"
 "	      0049fbe0    push eax"
 "	      0049fbe1    mov eax,[ebp-0Ch]"
 "	      0049fbe4    push eax"
@@ -359,7 +359,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 "	      0049fbea    add esp,0Ch"
 "	      0049fbed    jmp near ptr 0049FBF2h"
 "	      0049fbf2    mov eax,[ebp-30h]"
-"	      0049fbf5    mov ecx,[ebp-38h]"
+"	      0049fbf5    mov ecx,this"
 "	      0049fbf8    mov ecx,[ecx+8]"
 "	      0049fbfb    mov [ecx+4],eax"
 "	      0049fbfe    jmp near ptr 0049FC03h"
@@ -367,41 +367,41 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 );
 // LINE 56:
 	asm( 
-"	      0049fc08    mov eax,[ebp+0Ch]"
-"	      0049fc0b    mov ecx,[ebp-38h]"
+"	      0049fc08    mov eax,lNewHeight"
+"	      0049fc0b    mov ecx,this"
 "	      0049fc0e    mov [ecx+0Ch],eax"
 );
 // LINE 57:
 	asm( 
-"	      0049fc11    mov eax,[ebp+10h]"
-"	      0049fc14    mov ecx,[ebp-38h]"
+"	      0049fc11    mov eax,lNewWidth"
+"	      0049fc14    mov ecx,this"
 "	      0049fc17    mov [ecx+10h],eax"
 );
 // LINE 58:
 	asm( 
-"	      0049fc1a    mov eax,[ebp+14h]"
-"	      0049fc1d    mov ecx,[ebp-38h]"
+"	      0049fc1a    mov eax,lNewAttributes"
+"	      0049fc1d    mov ecx,this"
 "	      0049fc20    mov [ecx+14h],eax"
 );
 // LINE 60:
 	asm( 
-"	      0049fc23    mov eax,[ebp-38h]"
+"	      0049fc23    mov eax,this"
 "	      0049fc26    mov dword ptr [eax+18h],0"
 );
 // LINE 62:
 	asm( 
-"	      0049fc2d    cmp dword ptr [ebp+18h],0"
+"	      0049fc2d    cmp bCreateNow,0"
 "	      0049fc31    je near ptr 0049FC3Fh"
 );
 // LINE 63:
 	asm( 
-"	      0049fc37    mov ecx,[ebp-38h]"
+"	      0049fc37    mov ecx,this"
 "	      0049fc3a    call 0049FF74h"
 );
 // LINE 64:
 	asm( 
 "	      0049fc3f    jmp near ptr 0049FC44h"
-"	      0049fc44    mov eax,[ebp-38h]"
+"	      0049fc44    mov eax,this"
 "	      0049fc47    pop edi"
 "	      0049fc48    pop esi"
 "	      0049fc49    pop ebx"
@@ -420,26 +420,26 @@ void MFont::~MFont() {
 "	      0049fc54    push ebx"
 "	      0049fc55    push esi"
 "	      0049fc56    push edi"
-"	      0049fc57    mov [ebp-1Ch],ecx"
-"	      0049fc5a    mov eax,[ebp-1Ch]"
+"	      0049fc57    mov this,ecx"
+"	      0049fc5a    mov eax,this"
 "	      0049fc5d    mov dword ptr [eax],591640h"
 );
 // LINE 73:
 	asm( 
-"	      0049fc63    mov ecx,[ebp-1Ch]"
+"	      0049fc63    mov ecx,this"
 "	      0049fc66    call 004A01E9h"
 );
 // LINE 74:
 	asm( 
 "	      0049fc6b    jmp near ptr 0049FC70h"
-"	      0049fc70    mov eax,[ebp-1Ch]"
+"	      0049fc70    mov eax,this"
 "	      0049fc73    mov eax,[eax+8]"
 "	      0049fc76    dec dword ptr [eax+0Ch]"
-"	      0049fc79    mov eax,[ebp-1Ch]"
+"	      0049fc79    mov eax,this"
 "	      0049fc7c    mov eax,[eax+8]"
 "	      0049fc7f    cmp dword ptr [eax+0Ch],0"
 "	      0049fc83    jne near ptr 0049FCFCh"
-"	      0049fc89    mov eax,[ebp-1Ch]"
+"	      0049fc89    mov eax,this"
 "	      0049fc8c    mov eax,[eax+8]"
 "	      0049fc8f    mov [ebp-10h],eax"
 "	      0049fc92    mov eax,[ebp-10h]"
@@ -471,10 +471,10 @@ void MFont::~MFont() {
 "	      0049fcf2    jmp near ptr 0049FCF7h"
 "	      0049fcf7    jmp near ptr 0049FCFCh"
 "	      0049fcfc    jmp near ptr 0049FD01h"
-"	      0049fd01    mov eax,[ebp-1Ch]"
+"	      0049fd01    mov eax,this"
 "	      0049fd04    cmp dword ptr [eax+4],0"
 "	      0049fd08    je near ptr 0049FD29h"
-"	      0049fd0e    mov eax,[ebp-1Ch]"
+"	      0049fd0e    mov eax,this"
 "	      0049fd11    mov eax,[eax+4]"
 "	      0049fd14    mov [ebp-4],eax"
 "	      0049fd17    mov eax,[ebp-4]"
@@ -502,35 +502,35 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 "	      0049fd39    push ebx"
 "	      0049fd3a    push esi"
 "	      0049fd3b    push edi"
-"	      0049fd3c    mov [ebp-28h],ecx"
+"	      0049fd3c    mov this,ecx"
 );
 // LINE 82:
 	asm( 
-"	      0049fd3f    mov eax,[ebp+8]"
-"	      0049fd42    cmp [ebp-28h],eax"
+"	      0049fd3f    mov eax,copyMFont"
+"	      0049fd42    cmp this,eax"
 "	      0049fd45    jne near ptr 0049FD53h"
 );
 // LINE 83:
 	asm( 
-"	      0049fd4b    mov eax,[ebp-28h]"
+"	      0049fd4b    mov eax,this"
 "	      0049fd4e    jmp near ptr 0049FF6Dh"
 );
 // LINE 84:
 	asm( 
-"	      0049fd53    mov eax,[ebp-28h]"
+"	      0049fd53    mov eax,this"
 "	      0049fd56    add eax,4"
-"	      0049fd59    mov ecx,[ebp+8]"
+"	      0049fd59    mov ecx,copyMFont"
 "	      0049fd5c    add ecx,4"
 "	      0049fd5f    cmp eax,ecx"
 "	      0049fd61    je near ptr 0049FF1Ah"
-"	      0049fd67    mov eax,[ebp-28h]"
+"	      0049fd67    mov eax,this"
 "	      0049fd6a    mov eax,[eax+8]"
 "	      0049fd6d    dec dword ptr [eax+0Ch]"
-"	      0049fd70    mov eax,[ebp-28h]"
+"	      0049fd70    mov eax,this"
 "	      0049fd73    mov eax,[eax+8]"
 "	      0049fd76    cmp dword ptr [eax+0Ch],0"
 "	      0049fd7a    jne near ptr 0049FDF3h"
-"	      0049fd80    mov eax,[ebp-28h]"
+"	      0049fd80    mov eax,this"
 "	      0049fd83    mov eax,[eax+8]"
 "	      0049fd86    mov [ebp-0Ch],eax"
 "	      0049fd89    mov eax,[ebp-0Ch]"
@@ -563,15 +563,15 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 "	      0049fdee    jmp near ptr 0049FDF3h"
 "	      0049fdf3    jmp near ptr 0049FDF8h"
 "	      0049fdf8    jmp near ptr 0049FDFDh"
-"	      0049fdfd    mov eax,[ebp+8]"
+"	      0049fdfd    mov eax,copyMFont"
 "	      0049fe00    mov eax,[eax+8]"
 "	      0049fe03    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0049fe07    je near ptr 0049FE27h"
-"	      0049fe0d    mov eax,[ebp+8]"
+"	      0049fe0d    mov eax,copyMFont"
 "	      0049fe10    mov eax,[eax+8]"
-"	      0049fe13    mov ecx,[ebp-28h]"
+"	      0049fe13    mov ecx,this"
 "	      0049fe16    mov [ecx+8],eax"
-"	      0049fe19    mov eax,[ebp-28h]"
+"	      0049fe19    mov eax,this"
 "	      0049fe1c    mov eax,[eax+8]"
 "	      0049fe1f    inc dword ptr [eax+0Ch]"
 "	      0049fe22    jmp near ptr 0049FF1Ah"
@@ -582,7 +582,7 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 "	      0049fe34    cmp dword ptr [ebp-4],0"
 "	      0049fe38    je near ptr 0049FF10h"
 "	      0049fe3e    jmp near ptr 0049FE43h"
-"	      0049fe43    mov eax,[ebp+8]"
+"	      0049fe43    mov eax,copyMFont"
 "	      0049fe46    mov eax,[eax+8]"
 "	      0049fe49    mov eax,[eax+4]"
 "	      0049fe4c    mov [ebp-24h],eax"
@@ -604,11 +604,11 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 "	      0049fe80    mov ecx,[ebp-4]"
 "	      0049fe83    mov [ecx],eax"
 "	      0049fe85    jmp near ptr 0049FE8Ah"
-"	      0049fe8a    mov eax,[ebp+8]"
+"	      0049fe8a    mov eax,copyMFont"
 "	      0049fe8d    mov eax,[eax+8]"
 "	      0049fe90    cmp dword ptr [eax+4],0"
 "	      0049fe94    je near ptr 0049FEAFh"
-"	      0049fe9a    mov eax,[ebp+8]"
+"	      0049fe9a    mov eax,copyMFont"
 "	      0049fe9d    mov eax,[eax+8]"
 "	      0049fea0    mov eax,[eax]"
 "	      0049fea2    mov [ebp-18h],eax"
@@ -638,57 +638,57 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 "	      0049fef6    mov dword ptr [eax+0Ch],1"
 "	      0049fefd    jmp near ptr 0049FF02h"
 "	      0049ff02    mov eax,[ebp-4]"
-"	      0049ff05    mov ecx,[ebp-28h]"
+"	      0049ff05    mov ecx,this"
 "	      0049ff08    mov [ecx+8],eax"
 "	      0049ff0b    jmp near ptr 0049FF1Ah"
-"	      0049ff10    mov eax,[ebp-28h]"
+"	      0049ff10    mov eax,this"
 "	      0049ff13    mov dword ptr [eax+8],0"
 "	      0049ff1a    jmp near ptr 0049FF1Fh"
 );
 // LINE 85:
 	asm( 
-"	      0049ff1f    mov eax,[ebp+8]"
+"	      0049ff1f    mov eax,copyMFont"
 "	      0049ff22    mov eax,[eax+0Ch]"
-"	      0049ff25    mov ecx,[ebp-28h]"
+"	      0049ff25    mov ecx,this"
 "	      0049ff28    mov [ecx+0Ch],eax"
 );
 // LINE 86:
 	asm( 
-"	      0049ff2b    mov eax,[ebp+8]"
+"	      0049ff2b    mov eax,copyMFont"
 "	      0049ff2e    mov eax,[eax+10h]"
-"	      0049ff31    mov ecx,[ebp-28h]"
+"	      0049ff31    mov ecx,this"
 "	      0049ff34    mov [ecx+10h],eax"
 );
 // LINE 87:
 	asm( 
-"	      0049ff37    mov eax,[ebp+8]"
+"	      0049ff37    mov eax,copyMFont"
 "	      0049ff3a    mov eax,[eax+14h]"
-"	      0049ff3d    mov ecx,[ebp-28h]"
+"	      0049ff3d    mov ecx,this"
 "	      0049ff40    mov [ecx+14h],eax"
 );
 // LINE 91:
 	asm( 
-"	      0049ff43    mov eax,[ebp-28h]"
+"	      0049ff43    mov eax,this"
 "	      0049ff46    mov eax,[eax]"
-"	      0049ff48    mov ecx,[ebp-28h]"
+"	      0049ff48    mov ecx,this"
 "	      0049ff4b    call dword ptr [eax+4]"
 );
 // LINE 92:
 	asm( 
-"	      0049ff4e    mov eax,[ebp+8]"
+"	      0049ff4e    mov eax,copyMFont"
 "	      0049ff51    cmp dword ptr [eax+18h],0"
 "	      0049ff55    je near ptr 0049FF65h"
 );
 // LINE 93:
 	asm( 
-"	      0049ff5b    mov eax,[ebp-28h]"
+"	      0049ff5b    mov eax,this"
 "	      0049ff5e    mov eax,[eax]"
-"	      0049ff60    mov ecx,[ebp-28h]"
+"	      0049ff60    mov ecx,this"
 "	      0049ff63    call dword ptr [eax]"
 );
 // LINE 95:
 	asm( 
-"	      0049ff65    mov eax,[ebp-28h]"
+"	      0049ff65    mov eax,this"
 "	      0049ff68    jmp near ptr 0049FF6Dh"
 );
 // LINE 96:
@@ -716,33 +716,33 @@ int32_t MFont::CreateFontA() {
 "	      0049ff7a    push ebx"
 "	      0049ff7b    push esi"
 "	      0049ff7c    push edi"
-"	      0049ff7d    mov [ebp-34h],ecx"
+"	      0049ff7d    mov this,ecx"
 );
 // LINE 128:
 	asm( 
-"	      0049ff80    mov eax,[ebp-34h]"
+"	      0049ff80    mov eax,this"
 "	      0049ff83    mov eax,[eax+14h]"
 "	      0049ff86    and eax,2"
-"	      0049ff89    mov [ebp-10h],eax"
+"	      0049ff89    mov dwItalic,eax"
 );
 // LINE 129:
 	asm( 
-"	      0049ff8c    mov eax,[ebp-34h]"
+"	      0049ff8c    mov eax,this"
 "	      0049ff8f    mov eax,[eax+14h]"
 "	      0049ff92    and eax,4"
-"	      0049ff95    mov [ebp-4],eax"
+"	      0049ff95    mov dwUnderline,eax"
 );
 // LINE 130:
 	asm( 
-"	      0049ff98    mov eax,[ebp-34h]"
+"	      0049ff98    mov eax,this"
 "	      0049ff9b    mov eax,[eax+14h]"
 "	      0049ff9e    and eax,8"
-"	      0049ffa1    mov [ebp-0Ch],eax"
+"	      0049ffa1    mov dwStrikeOut,eax"
 );
 // LINE 132:
 	asm( 
 "	      0049ffa4    jmp near ptr 0049FFA9h"
-"	      0049ffa9    mov eax,[ebp-34h]"
+"	      0049ffa9    mov eax,this"
 "	      0049ffac    mov eax,[eax+8]"
 "	      0049ffaf    cmp dword ptr [eax+4],0"
 "	      0049ffb3    jne near ptr 0049FFC0h"
@@ -754,13 +754,13 @@ int32_t MFont::CreateFontA() {
 );
 // LINE 134:
 	asm( 
-"	      0049ffc0    mov eax,[ebp-34h]"
+"	      0049ffc0    mov eax,this"
 "	      0049ffc3    test byte ptr [eax+14h],1"
 "	      0049ffc7    je near ptr 0049FFD9h"
 );
 // LINE 135:
 	asm( 
-"	      0049ffcd    mov dword ptr [ebp-8],2BCh"
+"	      0049ffcd    mov nWeight,2BCh"
 );
 // LINE 136:
 	asm( 
@@ -768,27 +768,27 @@ int32_t MFont::CreateFontA() {
 );
 // LINE 137:
 	asm( 
-"	      0049ffd9    mov dword ptr [ebp-8],190h"
+"	      0049ffd9    mov nWeight,190h"
 );
 // LINE 139:
 	asm( 
-"	      0049ffe0    mov eax,[ebp-34h]"
+"	      0049ffe0    mov eax,this"
 "	      0049ffe3    cmp dword ptr [eax+18h],0"
 "	      0049ffe7    je near ptr 0049FFF8h"
 );
 // LINE 140:
 	asm( 
-"	      0049ffed    mov eax,[ebp-34h]"
+"	      0049ffed    mov eax,this"
 "	      0049fff0    mov eax,[eax]"
-"	      0049fff2    mov ecx,[ebp-34h]"
+"	      0049fff2    mov ecx,this"
 "	      0049fff5    call dword ptr [eax+4]"
 );
 // LINE 144:
 	asm( 
-"	      0049fff8    mov eax,[ebp-34h]"
+"	      0049fff8    mov eax,this"
 "	      0049fffb    cmp dword ptr [eax+4],0"
 "	      0049ffff    je near ptr 004A0020h"
-"	      004a0005    mov eax,[ebp-34h]"
+"	      004a0005    mov eax,this"
 "	      004a0008    mov eax,[eax+4]"
 "	      004a000b    mov [ebp-14h],eax"
 "	      004a000e    mov eax,[ebp-14h]"
@@ -798,27 +798,27 @@ int32_t MFont::CreateFontA() {
 "	      004a0018    call 0056A740h"
 "	      004a001d    add esp,4"
 "	      004a0020    jmp near ptr 004A0025h"
-"	      004a0025    mov eax,[ebp-34h]"
+"	      004a0025    mov eax,this"
 "	      004a0028    mov eax,[eax+8]"
 "	      004a002b    mov eax,[eax+4]"
 "	      004a002e    inc eax"
 "	      004a002f    push eax"
 "	      004a0030    call 0056A600h"
 "	      004a0035    add esp,4"
-"	      004a0038    mov ecx,[ebp-34h]"
+"	      004a0038    mov ecx,this"
 "	      004a003b    mov [ecx+4],eax"
 "	      004a003e    jmp near ptr 004A0043h"
-"	      004a0043    mov eax,[ebp-34h]"
+"	      004a0043    mov eax,this"
 "	      004a0046    mov eax,[eax+8]"
 "	      004a0049    cmp dword ptr [eax+4],0"
 "	      004a004d    je near ptr 004A00BCh"
 "	      004a0053    jmp near ptr 004A0058h"
 "	      004a0058    jmp near ptr 004A005Dh"
-"	      004a005d    mov eax,[ebp-34h]"
+"	      004a005d    mov eax,this"
 "	      004a0060    mov eax,[eax+8]"
 "	      004a0063    cmp dword ptr [eax+4],0"
 "	      004a0067    je near ptr 004A0082h"
-"	      004a006d    mov eax,[ebp-34h]"
+"	      004a006d    mov eax,this"
 "	      004a0070    mov eax,[eax+8]"
 "	      004a0073    mov eax,[eax]"
 "	      004a0075    mov [ebp-28h],eax"
@@ -826,11 +826,11 @@ int32_t MFont::CreateFontA() {
 "	      004a007d    jmp near ptr 004A008Eh"
 "	      004a0082    mov dword ptr [ebp-28h],0"
 "	      004a0089    jmp near ptr 004A008Eh"
-"	      004a008e    mov eax,[ebp-34h]"
+"	      004a008e    mov eax,this"
 "	      004a0091    mov eax,[eax+8]"
 "	      004a0094    mov eax,[eax+4]"
 "	      004a0097    mov [ebp-2Ch],eax"
-"	      004a009a    mov eax,[ebp-34h]"
+"	      004a009a    mov eax,this"
 "	      004a009d    mov eax,[eax+4]"
 "	      004a00a0    mov [ebp-30h],eax"
 "	      004a00a3    mov eax,[ebp-2Ch]"
@@ -848,10 +848,10 @@ int32_t MFont::CreateFontA() {
 "	      004a00ca    lea eax,[ebp-18h]"
 "	      004a00cd    mov [ebp-20h],eax"
 "	      004a00d0    jmp near ptr 004A00D5h"
-"	      004a00d5    mov eax,[ebp-34h]"
+"	      004a00d5    mov eax,this"
 "	      004a00d8    mov eax,[eax+8]"
 "	      004a00db    mov eax,[eax+4]"
-"	      004a00de    mov ecx,[ebp-34h]"
+"	      004a00de    mov ecx,this"
 "	      004a00e1    add eax,[ecx+4]"
 "	      004a00e4    mov [ebp-24h],eax"
 "	      004a00e7    mov eax,[ebp-20h]"
@@ -860,7 +860,7 @@ int32_t MFont::CreateFontA() {
 "	      004a00ef    mov [ecx],al"
 "	      004a00f1    jmp near ptr 004A00F6h"
 "	      004a00f6    jmp near ptr 004A00FBh"
-"	      004a00fb    mov eax,[ebp-34h]"
+"	      004a00fb    mov eax,this"
 "	      004a00fe    mov eax,[eax+4]"
 "	      004a0101    push eax"
 "	      004a0102    push 0"
@@ -868,29 +868,29 @@ int32_t MFont::CreateFontA() {
 "	      004a0106    push 0"
 "	      004a0108    push 0"
 "	      004a010a    push 0"
-"	      004a010c    mov eax,[ebp-0Ch]"
+"	      004a010c    mov eax,dwStrikeOut"
 "	      004a010f    push eax"
-"	      004a0110    mov eax,[ebp-4]"
+"	      004a0110    mov eax,dwUnderline"
 "	      004a0113    push eax"
-"	      004a0114    mov eax,[ebp-10h]"
+"	      004a0114    mov eax,dwItalic"
 "	      004a0117    push eax"
-"	      004a0118    mov eax,[ebp-8]"
+"	      004a0118    mov eax,nWeight"
 "	      004a011b    push eax"
 "	      004a011c    push 0"
 "	      004a011e    push 0"
-"	      004a0120    mov eax,[ebp-34h]"
+"	      004a0120    mov eax,this"
 "	      004a0123    mov eax,[eax+10h]"
 "	      004a0126    push eax"
-"	      004a0127    mov eax,[ebp-34h]"
+"	      004a0127    mov eax,this"
 "	      004a012a    mov eax,[eax+0Ch]"
 "	      004a012d    push eax"
 "	      004a012e    call dword ptr ds:[6C3540h]"
-"	      004a0134    mov ecx,[ebp-34h]"
+"	      004a0134    mov ecx,this"
 "	      004a0137    mov [ecx+18h],eax"
 );
 // LINE 145:
 	asm( 
-"	      004a013a    mov eax,[ebp-34h]"
+"	      004a013a    mov eax,this"
 "	      004a013d    cmp dword ptr [eax+18h],0"
 "	      004a0141    je near ptr 004A0151h"
 );
@@ -926,74 +926,74 @@ void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAtt
 "	      004a0163    push ebx"
 "	      004a0164    push esi"
 "	      004a0165    push edi"
-"	      004a0166    mov [ebp-8],ecx"
+"	      004a0166    mov this,ecx"
 );
 // LINE 164:
 	asm( 
-"	      004a0169    mov dword ptr [ebp-4],0"
+"	      004a0169    mov bFontChanged,0"
 );
 // LINE 166:
 	asm( 
-"	      004a0170    cmp dword ptr [ebp+8],0"
+"	      004a0170    cmp lNewHeight,0"
 "	      004a0174    je near ptr 004A018Ah"
 );
 // LINE 167:
 	asm( 
-"	      004a017a    mov eax,[ebp+8]"
-"	      004a017d    mov ecx,[ebp-8]"
+"	      004a017a    mov eax,lNewHeight"
+"	      004a017d    mov ecx,this"
 "	      004a0180    mov [ecx+0Ch],eax"
 );
 // LINE 168:
 	asm( 
-"	      004a0183    mov dword ptr [ebp-4],1"
+"	      004a0183    mov bFontChanged,1"
 );
 // LINE 170:
 	asm( 
-"	      004a018a    cmp dword ptr [ebp+0Ch],0"
+"	      004a018a    cmp lNewWidth,0"
 "	      004a018e    je near ptr 004A01A4h"
 );
 // LINE 171:
 	asm( 
-"	      004a0194    mov eax,[ebp+0Ch]"
-"	      004a0197    mov ecx,[ebp-8]"
+"	      004a0194    mov eax,lNewWidth"
+"	      004a0197    mov ecx,this"
 "	      004a019a    mov [ecx+10h],eax"
 );
 // LINE 172:
 	asm( 
-"	      004a019d    mov dword ptr [ebp-4],1"
+"	      004a019d    mov bFontChanged,1"
 );
 // LINE 174:
 	asm( 
-"	      004a01a4    cmp dword ptr [ebp+10h],0"
+"	      004a01a4    cmp lNewAttributes,0"
 "	      004a01a8    je near ptr 004A01BEh"
 );
 // LINE 175:
 	asm( 
-"	      004a01ae    mov eax,[ebp+10h]"
-"	      004a01b1    mov ecx,[ebp-8]"
+"	      004a01ae    mov eax,lNewAttributes"
+"	      004a01b1    mov ecx,this"
 "	      004a01b4    mov [ecx+14h],eax"
 );
 // LINE 176:
 	asm( 
-"	      004a01b7    mov dword ptr [ebp-4],1"
+"	      004a01b7    mov bFontChanged,1"
 );
 // LINE 178:
 	asm( 
-"	      004a01be    cmp dword ptr [ebp-4],0"
+"	      004a01be    cmp bFontChanged,0"
 "	      004a01c2    je near ptr 004A01DDh"
 );
 // LINE 179:
 	asm( 
-"	      004a01c8    mov eax,[ebp-8]"
+"	      004a01c8    mov eax,this"
 "	      004a01cb    mov eax,[eax]"
-"	      004a01cd    mov ecx,[ebp-8]"
+"	      004a01cd    mov ecx,this"
 "	      004a01d0    call dword ptr [eax+4]"
 );
 // LINE 180:
 	asm( 
-"	      004a01d3    mov eax,[ebp-8]"
+"	      004a01d3    mov eax,this"
 "	      004a01d6    mov eax,[eax]"
-"	      004a01d8    mov ecx,[ebp-8]"
+"	      004a01d8    mov ecx,this"
 "	      004a01db    call dword ptr [eax]"
 );
 // LINE 182:
@@ -1017,24 +1017,24 @@ void MFont::DestroyFont() {
 "	      004a01ef    push ebx"
 "	      004a01f0    push esi"
 "	      004a01f1    push edi"
-"	      004a01f2    mov [ebp-4],ecx"
+"	      004a01f2    mov this,ecx"
 );
 // LINE 192:
 	asm( 
-"	      004a01f5    mov eax,[ebp-4]"
+"	      004a01f5    mov eax,this"
 "	      004a01f8    cmp dword ptr [eax+18h],0"
 "	      004a01fc    je near ptr 004A0219h"
 );
 // LINE 193:
 	asm( 
-"	      004a0202    mov eax,[ebp-4]"
+"	      004a0202    mov eax,this"
 "	      004a0205    mov eax,[eax+18h]"
 "	      004a0208    push eax"
 "	      004a0209    call dword ptr ds:[6C358Ch]"
 );
 // LINE 194:
 	asm( 
-"	      004a020f    mov eax,[ebp-4]"
+"	      004a020f    mov eax,this"
 "	      004a0212    mov dword ptr [eax+18h],0"
 );
 // LINE 199:
@@ -1088,14 +1088,14 @@ int32_t MFont::LoadFont(char * szPath) {
 );
 // LINE 224:
 	asm( 
-"	      004a023e    mov eax,[ebp+8]"
+"	      004a023e    mov eax,szPath"
 "	      004a0241    push eax"
 "	      004a0242    call dword ptr ds:[6C356Ch]"
-"	      004a0248    mov [ebp-4],eax"
+"	      004a0248    mov nReturnValue,eax"
 );
 // LINE 225:
 	asm( 
-"	      004a024b    cmp dword ptr [ebp-4],0"
+"	      004a024b    cmp nReturnValue,0"
 "	      004a024f    je near ptr 004A0266h"
 );
 // LINE 226:
@@ -1108,7 +1108,7 @@ int32_t MFont::LoadFont(char * szPath) {
 );
 // LINE 230:
 	asm( 
-"	      004a0266    mov eax,[ebp-4]"
+"	      004a0266    mov eax,nReturnValue"
 "	      004a0269    jmp near ptr 004A026Eh"
 );
 // LINE 231:
@@ -1136,14 +1136,14 @@ int32_t MFont::UnloadFont(char * szPath) {
 );
 // LINE 241:
 	asm( 
-"	      004a027c    mov eax,[ebp+8]"
+"	      004a027c    mov eax,szPath"
 "	      004a027f    push eax"
 "	      004a0280    call dword ptr ds:[6C3564h]"
-"	      004a0286    mov [ebp-4],eax"
+"	      004a0286    mov nReturnValue,eax"
 );
 // LINE 242:
 	asm( 
-"	      004a0289    cmp dword ptr [ebp-4],0"
+"	      004a0289    cmp nReturnValue,0"
 "	      004a028d    je near ptr 004A02A4h"
 );
 // LINE 243:
@@ -1156,7 +1156,7 @@ int32_t MFont::UnloadFont(char * szPath) {
 );
 // LINE 247:
 	asm( 
-"	      004a02a4    mov eax,[ebp-4]"
+"	      004a02a4    mov eax,nReturnValue"
 "	      004a02a7    jmp near ptr 004A02ACh"
 );
 // LINE 248:
@@ -1186,15 +1186,15 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 "	      004a02b7    push ebx"
 "	      004a02b8    push esi"
 "	      004a02b9    push edi"
-"	      004a02ba    mov [ebp-2Ch],ecx"
+"	      004a02ba    mov this,ecx"
 );
 // LINE 265:
 	asm( 
-"	      004a02bd    mov dword ptr [ebp-8],1"
+"	      004a02bd    mov nReturnValue,1"
 );
 // LINE 268:
 	asm( 
-"	      004a02c4    mov eax,[ebp-2Ch]"
+"	      004a02c4    mov eax,this"
 "	      004a02c7    cmp dword ptr [eax+18h],0"
 "	      004a02cb    jne near ptr 004A02D8h"
 );
@@ -1207,100 +1207,100 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 	asm( 
 "	      004a02d8    push 0"
 "	      004a02da    call dword ptr ds:[6C3850h]"
-"	      004a02e0    mov [ebp-10h],eax"
+"	      004a02e0    mov hdcScreen,eax"
 );
 // LINE 271:
 	asm( 
-"	      004a02e3    cmp dword ptr [ebp-10h],0"
+"	      004a02e3    cmp hdcScreen,0"
 "	      004a02e7    je near ptr 004A038Bh"
 );
 // LINE 272:
 	asm( 
-"	      004a02ed    cmp dword ptr [ebp+8],0"
+"	      004a02ed    cmp szString,0"
 "	      004a02f1    jne near ptr 004A02FFh"
 );
 // LINE 273:
 	asm( 
 "	      004a02f7    mov eax,ds:[59A94Ch]"
-"	      004a02fc    mov [ebp+8],eax"
+"	      004a02fc    mov szString,eax"
 );
 // LINE 274:
 	asm( 
-"	      004a02ff    mov eax,[ebp-2Ch]"
+"	      004a02ff    mov eax,this"
 "	      004a0302    mov eax,[eax+18h]"
 "	      004a0305    push eax"
-"	      004a0306    mov eax,[ebp-10h]"
+"	      004a0306    mov eax,hdcScreen"
 "	      004a0309    push eax"
 "	      004a030a    call dword ptr ds:[6C359Ch]"
-"	      004a0310    mov [ebp-4],eax"
+"	      004a0310    mov hFontOriginal,eax"
 );
 // LINE 275:
 	asm( 
-"	      004a0313    mov eax,[ebp+8]"
+"	      004a0313    mov eax,szString"
 "	      004a0316    push eax"
 "	      004a0317    call 0056ABE0h"
 "	      004a031c    add esp,4"
-"	      004a031f    mov [ebp-0Ch],eax"
+"	      004a031f    mov lStringLength,eax"
 );
 // LINE 276:
 	asm( 
-"	      004a0322    mov dword ptr [ebp-20h],0"
+"	      004a0322    mov rectText.left,0"
 );
 // LINE 277:
 	asm( 
-"	      004a0329    mov dword ptr [ebp-1Ch],0"
+"	      004a0329    mov rectText.top,0"
 );
 // LINE 278:
 	asm( 
-"	      004a0330    mov dword ptr [ebp-18h],0F4240h"
+"	      004a0330    mov rectText.right,0F4240h"
 );
 // LINE 279:
 	asm( 
-"	      004a0337    mov dword ptr [ebp-14h],0F4240h"
+"	      004a0337    mov rectText.bottom,0F4240h"
 );
 // LINE 280:
 	asm( 
 "	      004a033e    push 0C10h"
-"	      004a0343    lea eax,[ebp-20h]"
+"	      004a0343    lea eax,rectText.left"
 "	      004a0346    push eax"
-"	      004a0347    mov eax,[ebp-0Ch]"
+"	      004a0347    mov eax,lStringLength"
 "	      004a034a    push eax"
-"	      004a034b    mov eax,[ebp+8]"
+"	      004a034b    mov eax,szString"
 "	      004a034e    push eax"
-"	      004a034f    mov eax,[ebp-10h]"
+"	      004a034f    mov eax,hdcScreen"
 "	      004a0352    push eax"
 "	      004a0353    call dword ptr ds:[6C389Ch]"
 );
 // LINE 281:
 	asm( 
-"	      004a0359    mov eax,[ebp-14h]"
-"	      004a035c    mov ecx,[ebp+10h]"
+"	      004a0359    mov eax,rectText.bottom"
+"	      004a035c    mov ecx,lHeight"
 "	      004a035f    mov [ecx],eax"
 );
 // LINE 282:
 	asm( 
-"	      004a0361    mov eax,[ebp-18h]"
-"	      004a0364    mov ecx,[ebp+0Ch]"
+"	      004a0361    mov eax,rectText.right"
+"	      004a0364    mov ecx,lWidth"
 "	      004a0367    mov [ecx],eax"
 );
 // LINE 292:
 	asm( 
-"	      004a0369    mov eax,[ebp-4]"
+"	      004a0369    mov eax,hFontOriginal"
 "	      004a036c    push eax"
-"	      004a036d    mov eax,[ebp-10h]"
+"	      004a036d    mov eax,hdcScreen"
 "	      004a0370    push eax"
 "	      004a0371    call dword ptr ds:[6C359Ch]"
 );
 // LINE 293:
 	asm( 
-"	      004a0377    mov eax,[ebp-10h]"
+"	      004a0377    mov eax,hdcScreen"
 "	      004a037a    push eax"
 "	      004a037b    push 0"
 "	      004a037d    call dword ptr ds:[6C384Ch]"
 );
 // LINE 294:
 	asm( 
-"	      004a0383    mov eax,[ebp-8]"
+"	      004a0383    mov eax,nReturnValue"
 "	      004a0386    jmp near ptr 004A0392h"
 );
 // LINE 296:

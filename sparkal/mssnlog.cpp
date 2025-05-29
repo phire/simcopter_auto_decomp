@@ -15,17 +15,17 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046bca6    push ebx"
 "	      0046bca7    push esi"
 "	      0046bca8    push edi"
-"	      0046bca9    mov [ebp-50h],ecx"
+"	      0046bca9    mov this,ecx"
 "	      0046bcac    jmp near ptr 0046BCB1h"
 "	      0046bcb1    jmp near ptr 0046BCB6h"
-"	      0046bcb6    mov eax,[ebp+0Ch]"
+"	      0046bcb6    mov eax,windowNewParent"
 "	      0046bcb9    mov eax,[eax+1Ch]"
-"	      0046bcbc    mov ecx,[ebp+0Ch]"
+"	      0046bcbc    mov ecx,windowNewParent"
 "	      0046bcbf    sub eax,[ecx+14h]"
 "	      0046bcc2    mov [ebp-48h],eax"
-"	      0046bcc5    mov eax,[ebp+0Ch]"
+"	      0046bcc5    mov eax,windowNewParent"
 "	      0046bcc8    mov eax,[eax+18h]"
-"	      0046bccb    mov ecx,[ebp+0Ch]"
+"	      0046bccb    mov ecx,windowNewParent"
 "	      0046bcce    sub eax,[ecx+10h]"
 "	      0046bcd1    mov [ebp-4Ch],eax"
 "	      0046bcd4    jmp near ptr 0046BCD9h"
@@ -36,25 +36,25 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046bced    mov eax,[ebp-48h]"
 "	      0046bcf0    mov [ebp-4],eax"
 "	      0046bcf3    jmp near ptr 0046BCF8h"
-"	      0046bcf8    mov eax,[ebp+14h]"
+"	      0046bcf8    mov eax,bAddToParentList"
 "	      0046bcfb    push eax"
-"	      0046bcfc    mov eax,[ebp+10h]"
+"	      0046bcfc    mov eax,myNewOwner"
 "	      0046bcff    push eax"
-"	      0046bd00    mov eax,[ebp+0Ch]"
+"	      0046bd00    mov eax,windowNewParent"
 "	      0046bd03    push eax"
-"	      0046bd04    mov eax,[ebp+8]"
+"	      0046bd04    mov eax,nNewID"
 "	      0046bd07    push eax"
 "	      0046bd08    lea eax,[ebp-10h]"
 "	      0046bd0b    push eax"
-"	      0046bd0c    mov ecx,[ebp-50h]"
+"	      0046bd0c    mov ecx,this"
 "	      0046bd0f    call 004A33EEh"
-"	      0046bd14    mov eax,[ebp-50h]"
+"	      0046bd14    mov eax,this"
 "	      0046bd17    mov dword ptr [eax+74h],0"
-"	      0046bd1e    mov eax,[ebp-50h]"
+"	      0046bd1e    mov eax,this"
 "	      0046bd21    mov dword ptr [eax+78h],0"
-"	      0046bd28    mov eax,[ebp-50h]"
+"	      0046bd28    mov eax,this"
 "	      0046bd2b    mov dword ptr [eax+7Ch],0"
-"	      0046bd32    mov eax,[ebp-50h]"
+"	      0046bd32    mov eax,this"
 "	      0046bd35    mov dword ptr [eax],590708h"
 "	      0046bd3b    mov eax,ds:[599448h]"
 "	      0046bd40    mov [ebp-44h],eax"
@@ -83,14 +83,14 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046bd8b    add esp,4"
 "	      0046bd8e    jmp near ptr 0046BD93h"
 "	      0046bd93    jmp near ptr 0046BD98h"
-"	      0046bd98    mov eax,[ebp-50h]"
+"	      0046bd98    mov eax,this"
 "	      0046bd9b    mov eax,[eax+60h]"
 "	      0046bd9e    cmp dword ptr [eax+0Ch],1"
 "	      0046bda2    ja near ptr 0046BDC9h"
 "	      0046bda8    cmp dword ptr [ebp-40h],0"
 "	      0046bdac    je near ptr 0046BF4Ah"
 "	      0046bdb2    jmp near ptr 0046BDB7h"
-"	      0046bdb7    mov eax,[ebp-50h]"
+"	      0046bdb7    mov eax,this"
 "	      0046bdba    mov eax,[eax+60h]"
 "	      0046bdbd    mov ecx,[ebp-40h]"
 "	      0046bdc0    cmp [eax+8],ecx"
@@ -158,14 +158,14 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046be9c    mov [ebp-14h],eax"
 "	      0046be9f    jmp near ptr 0046BEABh"
 "	      0046bea4    mov dword ptr [ebp-14h],0"
-"	      0046beab    mov eax,[ebp-50h]"
+"	      0046beab    mov eax,this"
 "	      0046beae    mov eax,[eax+60h]"
 "	      0046beb1    dec dword ptr [eax+0Ch]"
-"	      0046beb4    mov eax,[ebp-50h]"
+"	      0046beb4    mov eax,this"
 "	      0046beb7    mov eax,[eax+60h]"
 "	      0046beba    cmp dword ptr [eax+0Ch],0"
 "	      0046bebe    jne near ptr 0046BF37h"
-"	      0046bec4    mov eax,[ebp-50h]"
+"	      0046bec4    mov eax,this"
 "	      0046bec7    mov eax,[eax+60h]"
 "	      0046beca    mov [ebp-28h],eax"
 "	      0046becd    mov eax,[ebp-28h]"
@@ -198,13 +198,13 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046bf32    jmp near ptr 0046BF37h"
 "	      0046bf37    jmp near ptr 0046BF3Ch"
 "	      0046bf3c    mov eax,[ebp-14h]"
-"	      0046bf3f    mov ecx,[ebp-50h]"
+"	      0046bf3f    mov ecx,this"
 "	      0046bf42    mov [ecx+60h],eax"
 "	      0046bf45    jmp near ptr 0046BF7Dh"
 "	      0046bf4a    cmp dword ptr [ebp-40h],0"
 "	      0046bf4e    je near ptr 0046BF7Dh"
 "	      0046bf54    jmp near ptr 0046BF59h"
-"	      0046bf59    mov eax,[ebp-50h]"
+"	      0046bf59    mov eax,this"
 "	      0046bf5c    mov eax,[eax+60h]"
 "	      0046bf5f    mov eax,[eax]"
 "	      0046bf61    mov [ebp-1Ch],eax"
@@ -218,7 +218,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 "	      0046bf75    add esp,0Ch"
 "	      0046bf78    jmp near ptr 0046BF7Dh"
 "	      0046bf7d    mov eax,[ebp-40h]"
-"	      0046bf80    mov ecx,[ebp-50h]"
+"	      0046bf80    mov ecx,this"
 "	      0046bf83    mov ecx,[ecx+60h]"
 "	      0046bf86    mov [ecx+4],eax"
 "	      0046bf89    jmp near ptr 0046BF8Eh"
@@ -227,18 +227,18 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 // LINE 50:
 	asm( 
 "	      0046bf93    push 1"
-"	      0046bf95    mov ecx,[ebp-50h]"
+"	      0046bf95    mov ecx,this"
 "	      0046bf98    call 0046CA4Ch"
 );
 // LINE 51:
 	asm( 
-"	      0046bf9d    mov ecx,[ebp-50h]"
+"	      0046bf9d    mov ecx,this"
 "	      0046bfa0    call 004A6BCDh"
 );
 // LINE 52:
 	asm( 
 "	      0046bfa5    jmp near ptr 0046BFAAh"
-"	      0046bfaa    mov eax,[ebp-50h]"
+"	      0046bfaa    mov eax,this"
 "	      0046bfad    pop edi"
 "	      0046bfae    pop esi"
 "	      0046bfaf    pop ebx"
@@ -257,19 +257,19 @@ void MissionLogWindow::~MissionLogWindow() {
 "	      0046bfba    push ebx"
 "	      0046bfbb    push esi"
 "	      0046bfbc    push edi"
-"	      0046bfbd    mov [ebp-4],ecx"
-"	      0046bfc0    mov eax,[ebp-4]"
+"	      0046bfbd    mov this,ecx"
+"	      0046bfc0    mov eax,this"
 "	      0046bfc3    mov dword ptr [eax],590708h"
 );
 // LINE 59:
 	asm( 
-"	      0046bfc9    mov ecx,[ebp-4]"
+"	      0046bfc9    mov ecx,this"
 "	      0046bfcc    call 0046CAF6h"
 );
 // LINE 60:
 	asm( 
 "	      0046bfd1    jmp near ptr 0046BFD6h"
-"	      0046bfd6    mov ecx,[ebp-4]"
+"	      0046bfd6    mov ecx,this"
 "	      0046bfd9    call 004A4045h"
 "	      0046bfde    pop edi"
 "	      0046bfdf    pop esi"
@@ -295,7 +295,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046bff0    push ebx"
 "	      0046bff1    push esi"
 "	      0046bff2    push edi"
-"	      0046bff3    mov [ebp-30B4h],ecx"
+"	      0046bff3    mov this,ecx"
 );
 // LINE 68:
 	asm( 
@@ -317,15 +317,15 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c032    mov dword ptr [eax+0Ch],1"
 "	      0046c039    jmp near ptr 0046C03Eh"
 "	      0046c03e    mov eax,[ebp-6Ch]"
-"	      0046c041    mov [ebp-0Ch],eax"
+"	      0046c041    mov sText.reference,eax"
 "	      0046c044    jmp near ptr 0046C050h"
-"	      0046c049    mov dword ptr [ebp-0Ch],0"
-"	      0046c050    mov dword ptr [ebp-10h],0"
+"	      0046c049    mov sText.reference,0"
+"	      0046c050    mov sText.c_str_ptr,0"
 "	      0046c057    jmp near ptr 0046C05Ch"
 );
 // LINE 71:
 	asm( 
-"	      0046c05c    mov ecx,[ebp-30B4h]"
+"	      0046c05c    mov ecx,this"
 "	      0046c062    call 004A44D4h"
 );
 // LINE 75:
@@ -343,20 +343,20 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c09b    mov dword ptr [ebp-1Ch],17Dh"
 "	      0046c0a2    jmp near ptr 0046C0A7h"
 "	      0046c0a7    push 1"
-"	      0046c0a9    mov eax,[ebp-30B4h]"
+"	      0046c0a9    mov eax,this"
 "	      0046c0af    push eax"
 "	      0046c0b0    mov eax,ds:[59944Ch]"
 "	      0046c0b5    push eax"
-"	      0046c0b6    mov eax,[ebp-30B4h]"
+"	      0046c0b6    mov eax,this"
 "	      0046c0bc    push eax"
 "	      0046c0bd    push 1"
 "	      0046c0bf    lea eax,[ebp-28h]"
 "	      0046c0c2    push eax"
 "	      0046c0c3    mov ecx,[ebp-18h]"
 "	      0046c0c6    call 00471847h"
-"	      0046c0cb    mov [ebp-14h],eax"
+"	      0046c0cb    mov tempButtonWindow,eax"
 "	      0046c0ce    jmp near ptr 0046C0DAh"
-"	      0046c0d3    mov dword ptr [ebp-14h],0"
+"	      0046c0d3    mov tempButtonWindow,0"
 );
 // LINE 76:
 	asm( 
@@ -364,14 +364,14 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c0dc    push 212h"
 "	      0046c0e1    call 0042B15Fh"
 "	      0046c0e6    add esp,8"
-"	      0046c0e9    mov [ebp-8],eax"
+"	      0046c0e9    mov nFullStringID,eax"
 );
 // LINE 77:
 	asm( 
 "	      0046c0ec    push 0FFFh"
 "	      0046c0f1    lea eax,[ebp-107Ch]"
 "	      0046c0f7    push eax"
-"	      0046c0f8    mov eax,[ebp-8]"
+"	      0046c0f8    mov eax,nFullStringID"
 "	      0046c0fb    push eax"
 "	      0046c0fc    mov eax,ds:[5C28C8h]"
 "	      0046c101    push eax"
@@ -383,7 +383,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c120    lea eax,[ebp-107Ch]"
 "	      0046c126    push eax"
 "	      0046c127    mov ecx,3E8h"
-"	      0046c12c    mov eax,[ebp-8]"
+"	      0046c12c    mov eax,nFullStringID"
 "	      0046c12f    sub edx,edx"
 "	      0046c131    div ecx"
 "	      0046c133    push edx"
@@ -399,7 +399,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c15a    push eax"
 "	      0046c15b    lea eax,[ebp-107Ch]"
 "	      0046c161    push eax"
-"	      0046c162    lea ecx,[ebp-10h]"
+"	      0046c162    lea ecx,sText.c_str_ptr"
 "	      0046c165    call 0040FEE0h"
 "	      0046c16a    jmp near ptr 0046C16Fh"
 "	      0046c16f    jmp near ptr 0046C174h"
@@ -408,7 +408,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c17e    add esp,4"
 "	      0046c181    push eax"
 "	      0046c182    push 597200h"
-"	      0046c187    lea ecx,[ebp-10h]"
+"	      0046c187    lea ecx,sText.c_str_ptr"
 "	      0046c18a    call 00410130h"
 "	      0046c18f    jmp near ptr 0046C194h"
 "	      0046c194    jmp near ptr 0046C2E9h"
@@ -434,13 +434,13 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c1f0    add esp,4"
 "	      0046c1f3    jmp near ptr 0046C1F8h"
 "	      0046c1f8    jmp near ptr 0046C1FDh"
-"	      0046c1fd    mov eax,[ebp-0Ch]"
+"	      0046c1fd    mov eax,sText.reference"
 "	      0046c200    cmp dword ptr [eax+0Ch],1"
 "	      0046c204    ja near ptr 0046C22Eh"
 "	      0046c20a    cmp dword ptr [ebp-1094h],0"
 "	      0046c211    je near ptr 0046C28Fh"
 "	      0046c217    jmp near ptr 0046C21Ch"
-"	      0046c21c    mov eax,[ebp-0Ch]"
+"	      0046c21c    mov eax,sText.reference"
 "	      0046c21f    mov ecx,[ebp-1094h]"
 "	      0046c225    cmp [eax+8],ecx"
 "	      0046c228    jae near ptr 0046C28Fh"
@@ -459,15 +459,15 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c264    mov [ebp-1084h],eax"
 "	      0046c26a    jmp near ptr 0046C279h"
 "	      0046c26f    mov dword ptr [ebp-1084h],0"
-"	      0046c279    lea ecx,[ebp-10h]"
+"	      0046c279    lea ecx,sText.c_str_ptr"
 "	      0046c27c    call 00412080h"
 "	      0046c281    mov eax,[ebp-1084h]"
-"	      0046c287    mov [ebp-0Ch],eax"
+"	      0046c287    mov sText.reference,eax"
 "	      0046c28a    jmp near ptr 0046C2CEh"
 "	      0046c28f    cmp dword ptr [ebp-1094h],0"
 "	      0046c296    je near ptr 0046C2CEh"
 "	      0046c29c    jmp near ptr 0046C2A1h"
-"	      0046c2a1    mov eax,[ebp-0Ch]"
+"	      0046c2a1    mov eax,sText.reference"
 "	      0046c2a4    mov eax,[eax]"
 "	      0046c2a6    mov [ebp-108Ch],eax"
 "	      0046c2ac    mov eax,[ebp-1094h]"
@@ -480,7 +480,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c2c6    add esp,0Ch"
 "	      0046c2c9    jmp near ptr 0046C2CEh"
 "	      0046c2ce    mov eax,[ebp-1094h]"
-"	      0046c2d4    mov ecx,[ebp-0Ch]"
+"	      0046c2d4    mov ecx,sText.reference"
 "	      0046c2d7    mov [ecx+4],eax"
 "	      0046c2da    jmp near ptr 0046C2DFh"
 "	      0046c2df    jmp near ptr 0046C2E4h"
@@ -488,18 +488,18 @@ int32_t MissionLogWindow::Initialize() {
 );
 // LINE 78:
 	asm( 
-"	      0046c2e9    lea eax,[ebp-10h]"
+"	      0046c2e9    lea eax,sText.c_str_ptr"
 "	      0046c2ec    push eax"
-"	      0046c2ed    mov eax,[ebp-14h]"
+"	      0046c2ed    mov eax,tempButtonWindow"
 "	      0046c2f0    mov eax,[eax]"
-"	      0046c2f2    mov ecx,[ebp-14h]"
+"	      0046c2f2    mov ecx,tempButtonWindow"
 "	      0046c2f5    call dword ptr [eax+48h]"
 );
 // LINE 79:
 	asm( 
-"	      0046c2f8    mov eax,[ebp-14h]"
+"	      0046c2f8    mov eax,tempButtonWindow"
 "	      0046c2fb    mov eax,[eax]"
-"	      0046c2fd    mov ecx,[ebp-14h]"
+"	      0046c2fd    mov ecx,tempButtonWindow"
 "	      0046c300    call dword ptr [eax+4]"
 );
 // LINE 83:
@@ -517,20 +517,20 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c337    mov dword ptr [ebp-30h],17Dh"
 "	      0046c33e    jmp near ptr 0046C343h"
 "	      0046c343    push 1"
-"	      0046c345    mov eax,[ebp-30B4h]"
+"	      0046c345    mov eax,this"
 "	      0046c34b    push eax"
 "	      0046c34c    mov eax,ds:[59944Ch]"
 "	      0046c351    push eax"
-"	      0046c352    mov eax,[ebp-30B4h]"
+"	      0046c352    mov eax,this"
 "	      0046c358    push eax"
 "	      0046c359    push 2"
 "	      0046c35b    lea eax,[ebp-3Ch]"
 "	      0046c35e    push eax"
 "	      0046c35f    mov ecx,[ebp-2Ch]"
 "	      0046c362    call 00471847h"
-"	      0046c367    mov [ebp-14h],eax"
+"	      0046c367    mov tempButtonWindow,eax"
 "	      0046c36a    jmp near ptr 0046C376h"
-"	      0046c36f    mov dword ptr [ebp-14h],0"
+"	      0046c36f    mov tempButtonWindow,0"
 );
 // LINE 84:
 	asm( 
@@ -538,14 +538,14 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c378    push 213h"
 "	      0046c37d    call 0042B15Fh"
 "	      0046c382    add esp,8"
-"	      0046c385    mov [ebp-8],eax"
+"	      0046c385    mov nFullStringID,eax"
 );
 // LINE 85:
 	asm( 
 "	      0046c388    push 0FFFh"
 "	      0046c38d    lea eax,[ebp-2094h]"
 "	      0046c393    push eax"
-"	      0046c394    mov eax,[ebp-8]"
+"	      0046c394    mov eax,nFullStringID"
 "	      0046c397    push eax"
 "	      0046c398    mov eax,ds:[5C28C8h]"
 "	      0046c39d    push eax"
@@ -557,7 +557,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c3bc    lea eax,[ebp-2094h]"
 "	      0046c3c2    push eax"
 "	      0046c3c3    mov ecx,3E8h"
-"	      0046c3c8    mov eax,[ebp-8]"
+"	      0046c3c8    mov eax,nFullStringID"
 "	      0046c3cb    sub edx,edx"
 "	      0046c3cd    div ecx"
 "	      0046c3cf    push edx"
@@ -573,7 +573,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c3f6    push eax"
 "	      0046c3f7    lea eax,[ebp-2094h]"
 "	      0046c3fd    push eax"
-"	      0046c3fe    lea ecx,[ebp-10h]"
+"	      0046c3fe    lea ecx,sText.c_str_ptr"
 "	      0046c401    call 0040FEE0h"
 "	      0046c406    jmp near ptr 0046C40Bh"
 "	      0046c40b    jmp near ptr 0046C410h"
@@ -582,7 +582,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c41a    add esp,4"
 "	      0046c41d    push eax"
 "	      0046c41e    push 597200h"
-"	      0046c423    lea ecx,[ebp-10h]"
+"	      0046c423    lea ecx,sText.c_str_ptr"
 "	      0046c426    call 00410130h"
 "	      0046c42b    jmp near ptr 0046C430h"
 "	      0046c430    jmp near ptr 0046C463h"
@@ -594,25 +594,25 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c449    push eax"
 "	      0046c44a    lea eax,[ebp-2094h]"
 "	      0046c450    push eax"
-"	      0046c451    lea ecx,[ebp-10h]"
+"	      0046c451    lea ecx,sText.c_str_ptr"
 "	      0046c454    call 0040FEE0h"
 "	      0046c459    jmp near ptr 0046C45Eh"
 "	      0046c45e    jmp near ptr 0046C463h"
 );
 // LINE 86:
 	asm( 
-"	      0046c463    lea eax,[ebp-10h]"
+"	      0046c463    lea eax,sText.c_str_ptr"
 "	      0046c466    push eax"
-"	      0046c467    mov eax,[ebp-14h]"
+"	      0046c467    mov eax,tempButtonWindow"
 "	      0046c46a    mov eax,[eax]"
-"	      0046c46c    mov ecx,[ebp-14h]"
+"	      0046c46c    mov ecx,tempButtonWindow"
 "	      0046c46f    call dword ptr [eax+48h]"
 );
 // LINE 87:
 	asm( 
-"	      0046c472    mov eax,[ebp-14h]"
+"	      0046c472    mov eax,tempButtonWindow"
 "	      0046c475    mov eax,[eax]"
-"	      0046c477    mov ecx,[ebp-14h]"
+"	      0046c477    mov ecx,tempButtonWindow"
 "	      0046c47a    call dword ptr [eax+4]"
 );
 // LINE 91:
@@ -630,20 +630,20 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c4b1    mov dword ptr [ebp-44h],17Dh"
 "	      0046c4b8    jmp near ptr 0046C4BDh"
 "	      0046c4bd    push 1"
-"	      0046c4bf    mov eax,[ebp-30B4h]"
+"	      0046c4bf    mov eax,this"
 "	      0046c4c5    push eax"
 "	      0046c4c6    mov eax,ds:[59944Ch]"
 "	      0046c4cb    push eax"
-"	      0046c4cc    mov eax,[ebp-30B4h]"
+"	      0046c4cc    mov eax,this"
 "	      0046c4d2    push eax"
 "	      0046c4d3    push 3"
 "	      0046c4d5    lea eax,[ebp-50h]"
 "	      0046c4d8    push eax"
 "	      0046c4d9    mov ecx,[ebp-40h]"
 "	      0046c4dc    call 00471847h"
-"	      0046c4e1    mov [ebp-14h],eax"
+"	      0046c4e1    mov tempButtonWindow,eax"
 "	      0046c4e4    jmp near ptr 0046C4F0h"
-"	      0046c4e9    mov dword ptr [ebp-14h],0"
+"	      0046c4e9    mov tempButtonWindow,0"
 );
 // LINE 92:
 	asm( 
@@ -651,14 +651,14 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c4f2    push 214h"
 "	      0046c4f7    call 0042B15Fh"
 "	      0046c4fc    add esp,8"
-"	      0046c4ff    mov [ebp-8],eax"
+"	      0046c4ff    mov nFullStringID,eax"
 );
 // LINE 93:
 	asm( 
 "	      0046c502    push 0FFFh"
 "	      0046c507    lea eax,[ebp-3098h]"
 "	      0046c50d    push eax"
-"	      0046c50e    mov eax,[ebp-8]"
+"	      0046c50e    mov eax,nFullStringID"
 "	      0046c511    push eax"
 "	      0046c512    mov eax,ds:[5C28C8h]"
 "	      0046c517    push eax"
@@ -670,7 +670,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c536    lea eax,[ebp-3098h]"
 "	      0046c53c    push eax"
 "	      0046c53d    mov ecx,3E8h"
-"	      0046c542    mov eax,[ebp-8]"
+"	      0046c542    mov eax,nFullStringID"
 "	      0046c545    sub edx,edx"
 "	      0046c547    div ecx"
 "	      0046c549    push edx"
@@ -686,7 +686,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c570    push eax"
 "	      0046c571    lea eax,[ebp-3098h]"
 "	      0046c577    push eax"
-"	      0046c578    lea ecx,[ebp-10h]"
+"	      0046c578    lea ecx,sText.c_str_ptr"
 "	      0046c57b    call 0040FEE0h"
 "	      0046c580    jmp near ptr 0046C585h"
 "	      0046c585    jmp near ptr 0046C58Ah"
@@ -695,7 +695,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c594    add esp,4"
 "	      0046c597    push eax"
 "	      0046c598    push 597200h"
-"	      0046c59d    lea ecx,[ebp-10h]"
+"	      0046c59d    lea ecx,sText.c_str_ptr"
 "	      0046c5a0    call 00410130h"
 "	      0046c5a5    jmp near ptr 0046C5AAh"
 "	      0046c5aa    jmp near ptr 0046C6FFh"
@@ -721,13 +721,13 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c606    add esp,4"
 "	      0046c609    jmp near ptr 0046C60Eh"
 "	      0046c60e    jmp near ptr 0046C613h"
-"	      0046c613    mov eax,[ebp-0Ch]"
+"	      0046c613    mov eax,sText.reference"
 "	      0046c616    cmp dword ptr [eax+0Ch],1"
 "	      0046c61a    ja near ptr 0046C644h"
 "	      0046c620    cmp dword ptr [ebp-30B0h],0"
 "	      0046c627    je near ptr 0046C6A5h"
 "	      0046c62d    jmp near ptr 0046C632h"
-"	      0046c632    mov eax,[ebp-0Ch]"
+"	      0046c632    mov eax,sText.reference"
 "	      0046c635    mov ecx,[ebp-30B0h]"
 "	      0046c63b    cmp [eax+8],ecx"
 "	      0046c63e    jae near ptr 0046C6A5h"
@@ -746,15 +746,15 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c67a    mov [ebp-30A0h],eax"
 "	      0046c680    jmp near ptr 0046C68Fh"
 "	      0046c685    mov dword ptr [ebp-30A0h],0"
-"	      0046c68f    lea ecx,[ebp-10h]"
+"	      0046c68f    lea ecx,sText.c_str_ptr"
 "	      0046c692    call 00412080h"
 "	      0046c697    mov eax,[ebp-30A0h]"
-"	      0046c69d    mov [ebp-0Ch],eax"
+"	      0046c69d    mov sText.reference,eax"
 "	      0046c6a0    jmp near ptr 0046C6E4h"
 "	      0046c6a5    cmp dword ptr [ebp-30B0h],0"
 "	      0046c6ac    je near ptr 0046C6E4h"
 "	      0046c6b2    jmp near ptr 0046C6B7h"
-"	      0046c6b7    mov eax,[ebp-0Ch]"
+"	      0046c6b7    mov eax,sText.reference"
 "	      0046c6ba    mov eax,[eax]"
 "	      0046c6bc    mov [ebp-30A8h],eax"
 "	      0046c6c2    mov eax,[ebp-30B0h]"
@@ -767,7 +767,7 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c6dc    add esp,0Ch"
 "	      0046c6df    jmp near ptr 0046C6E4h"
 "	      0046c6e4    mov eax,[ebp-30B0h]"
-"	      0046c6ea    mov ecx,[ebp-0Ch]"
+"	      0046c6ea    mov ecx,sText.reference"
 "	      0046c6ed    mov [ecx+4],eax"
 "	      0046c6f0    jmp near ptr 0046C6F5h"
 "	      0046c6f5    jmp near ptr 0046C6FAh"
@@ -775,18 +775,18 @@ int32_t MissionLogWindow::Initialize() {
 );
 // LINE 94:
 	asm( 
-"	      0046c6ff    lea eax,[ebp-10h]"
+"	      0046c6ff    lea eax,sText.c_str_ptr"
 "	      0046c702    push eax"
-"	      0046c703    mov eax,[ebp-14h]"
+"	      0046c703    mov eax,tempButtonWindow"
 "	      0046c706    mov eax,[eax]"
-"	      0046c708    mov ecx,[ebp-14h]"
+"	      0046c708    mov ecx,tempButtonWindow"
 "	      0046c70b    call dword ptr [eax+48h]"
 );
 // LINE 95:
 	asm( 
-"	      0046c70e    mov eax,[ebp-14h]"
+"	      0046c70e    mov eax,tempButtonWindow"
 "	      0046c711    mov eax,[eax]"
-"	      0046c713    mov ecx,[ebp-14h]"
+"	      0046c713    mov ecx,tempButtonWindow"
 "	      0046c716    call dword ptr [eax+4]"
 );
 // LINE 97:
@@ -804,25 +804,25 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c74d    mov dword ptr [ebp-58h],172h"
 "	      0046c754    jmp near ptr 0046C759h"
 "	      0046c759    push 1"
-"	      0046c75b    mov eax,[ebp-30B4h]"
+"	      0046c75b    mov eax,this"
 "	      0046c761    push eax"
-"	      0046c762    mov eax,[ebp-30B4h]"
+"	      0046c762    mov eax,this"
 "	      0046c768    push eax"
 "	      0046c769    push 4"
 "	      0046c76b    lea eax,[ebp-64h]"
 "	      0046c76e    push eax"
 "	      0046c76f    mov ecx,[ebp-54h]"
 "	      0046c772    call 004B4462h"
-"	      0046c777    mov ecx,[ebp-30B4h]"
+"	      0046c777    mov ecx,this"
 "	      0046c77d    mov [ecx+74h],eax"
 "	      0046c780    jmp near ptr 0046C792h"
-"	      0046c785    mov eax,[ebp-30B4h]"
+"	      0046c785    mov eax,this"
 "	      0046c78b    mov dword ptr [eax+74h],0"
 );
 // LINE 98:
 	asm( 
-"	      0046c792    mov eax,[ebp-30B4h]"
-"	      0046c798    mov ecx,[ebp-30B4h]"
+"	      0046c792    mov eax,this"
+"	      0046c798    mov ecx,this"
 "	      0046c79e    mov ecx,[ecx+74h]"
 "	      0046c7a1    mov edx,[ecx]"
 "	      0046c7a3    mov ecx,[eax+74h]"
@@ -833,8 +833,8 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c7a9    push 0"
 "	      0046c7ab    push 0"
 "	      0046c7ad    push 12h"
-"	      0046c7af    mov eax,[ebp-30B4h]"
-"	      0046c7b5    mov ecx,[ebp-30B4h]"
+"	      0046c7af    mov eax,this"
+"	      0046c7b5    mov ecx,this"
 "	      0046c7bb    mov ecx,[ecx+74h]"
 "	      0046c7be    mov edx,[ecx]"
 "	      0046c7c0    mov ecx,[eax+74h]"
@@ -843,8 +843,8 @@ int32_t MissionLogWindow::Initialize() {
 // LINE 100:
 	asm( 
 "	      0046c7c9    push 0"
-"	      0046c7cb    mov eax,[ebp-30B4h]"
-"	      0046c7d1    mov ecx,[ebp-30B4h]"
+"	      0046c7cb    mov eax,this"
+"	      0046c7d1    mov ecx,this"
 "	      0046c7d7    mov ecx,[ecx+74h]"
 "	      0046c7da    mov edx,[ecx]"
 "	      0046c7dc    mov ecx,[eax+74h]"
@@ -853,8 +853,8 @@ int32_t MissionLogWindow::Initialize() {
 // LINE 101:
 	asm( 
 "	      0046c7e2    push 0"
-"	      0046c7e4    mov eax,[ebp-30B4h]"
-"	      0046c7ea    mov ecx,[ebp-30B4h]"
+"	      0046c7e4    mov eax,this"
+"	      0046c7ea    mov ecx,this"
 "	      0046c7f0    mov ecx,[ecx+74h]"
 "	      0046c7f3    mov edx,[ecx]"
 "	      0046c7f5    mov ecx,[eax+74h]"
@@ -866,20 +866,20 @@ int32_t MissionLogWindow::Initialize() {
 );
 // LINE 103:
 	asm( 
-"	      0046c803    mov byte ptr [ebp-4],0"
-"	      0046c807    mov al,[ebp-4]"
-"	      0046c80a    mov [ebp-3],al"
-"	      0046c80d    mov al,[ebp-3]"
-"	      0046c810    mov [ebp-2],al"
+"	      0046c803    mov tempSparkalColor.Blue,0"
+"	      0046c807    mov al,tempSparkalColor.Blue"
+"	      0046c80a    mov tempSparkalColor.Green,al"
+"	      0046c80d    mov al,tempSparkalColor.Green"
+"	      0046c810    mov tempSparkalColor.Red,al"
 );
 // LINE 104:
 	asm( 
-"	      0046c813    lea eax,[ebp-4]"
+"	      0046c813    lea eax,tempSparkalColor.Blue"
 "	      0046c816    push eax"
-"	      0046c817    lea eax,[ebp-4]"
+"	      0046c817    lea eax,tempSparkalColor.Blue"
 "	      0046c81a    push eax"
-"	      0046c81b    mov eax,[ebp-30B4h]"
-"	      0046c821    mov ecx,[ebp-30B4h]"
+"	      0046c81b    mov eax,this"
+"	      0046c821    mov ecx,this"
 "	      0046c827    mov ecx,[ecx+74h]"
 "	      0046c82a    mov edx,[ecx]"
 "	      0046c82c    mov ecx,[eax+74h]"
@@ -887,8 +887,8 @@ int32_t MissionLogWindow::Initialize() {
 );
 // LINE 105:
 	asm( 
-"	      0046c835    mov eax,[ebp-30B4h]"
-"	      0046c83b    mov ecx,[ebp-30B4h]"
+"	      0046c835    mov eax,this"
+"	      0046c83b    mov ecx,this"
 "	      0046c841    mov ecx,[ecx+74h]"
 "	      0046c844    mov edx,[ecx]"
 "	      0046c846    mov ecx,[eax+74h]"
@@ -900,8 +900,8 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c854    push eax"
 "	      0046c855    push 0"
 "	      0046c857    push 1"
-"	      0046c859    mov eax,[ebp-30B4h]"
-"	      0046c85f    mov ecx,[ebp-30B4h]"
+"	      0046c859    mov eax,this"
+"	      0046c85f    mov ecx,this"
 "	      0046c865    mov ecx,[ecx+74h]"
 "	      0046c868    mov edx,[ecx]"
 "	      0046c86a    mov ecx,[eax+74h]"
@@ -909,18 +909,18 @@ int32_t MissionLogWindow::Initialize() {
 );
 // LINE 108:
 	asm( 
-"	      0046c873    mov ecx,[ebp-30B4h]"
+"	      0046c873    mov ecx,this"
 "	      0046c879    call 0046CD45h"
 );
 // LINE 110:
 	asm( 
 "	      0046c87e    mov dword ptr [ebp-68h],1"
-"	      0046c885    mov eax,[ebp-0Ch]"
+"	      0046c885    mov eax,sText.reference"
 "	      0046c888    dec dword ptr [eax+0Ch]"
-"	      0046c88b    mov eax,[ebp-0Ch]"
+"	      0046c88b    mov eax,sText.reference"
 "	      0046c88e    cmp dword ptr [eax+0Ch],0"
 "	      0046c892    jne near ptr 0046C8D1h"
-"	      0046c898    mov eax,[ebp-0Ch]"
+"	      0046c898    mov eax,sText.reference"
 "	      0046c89b    mov [ebp-7Ch],eax"
 "	      0046c89e    mov eax,[ebp-7Ch]"
 "	      0046c8a1    mov [ebp-78h],eax"
@@ -936,9 +936,9 @@ int32_t MissionLogWindow::Initialize() {
 "	      0046c8c7    jmp near ptr 0046C8CCh"
 "	      0046c8cc    jmp near ptr 0046C8D1h"
 "	      0046c8d1    jmp near ptr 0046C8D6h"
-"	      0046c8d6    cmp dword ptr [ebp-10h],0"
+"	      0046c8d6    cmp sText.c_str_ptr,0"
 "	      0046c8da    je near ptr 0046C8F8h"
-"	      0046c8e0    mov eax,[ebp-10h]"
+"	      0046c8e0    mov eax,sText.c_str_ptr"
 "	      0046c8e3    mov [ebp-70h],eax"
 "	      0046c8e6    mov eax,[ebp-70h]"
 "	      0046c8e9    mov [ebp-74h],eax"
@@ -970,14 +970,14 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0046c910    push ebx"
 "	      0046c911    push esi"
 "	      0046c912    push edi"
-"	      0046c913    mov [ebp-24h],ecx"
+"	      0046c913    mov this,ecx"
 );
 // LINE 119:
 	asm( 
-"	      0046c916    mov eax,[ebp-24h]"
+"	      0046c916    mov eax,this"
 "	      0046c919    cmp dword ptr [eax+64h],0"
 "	      0046c91d    je near ptr 0046C93Eh"
-"	      0046c923    mov eax,[ebp-24h]"
+"	      0046c923    mov eax,this"
 "	      0046c926    mov eax,[eax+64h]"
 "	      0046c929    mov [ebp-4],eax"
 "	      0046c92c    mov eax,[ebp-4]"
@@ -987,27 +987,27 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0046c936    call 0056A740h"
 "	      0046c93b    add esp,4"
 "	      0046c93e    jmp near ptr 0046C943h"
-"	      0046c943    mov eax,[ebp-24h]"
+"	      0046c943    mov eax,this"
 "	      0046c946    mov eax,[eax+68h]"
 "	      0046c949    mov eax,[eax+4]"
 "	      0046c94c    inc eax"
 "	      0046c94d    push eax"
 "	      0046c94e    call 0056A600h"
 "	      0046c953    add esp,4"
-"	      0046c956    mov ecx,[ebp-24h]"
+"	      0046c956    mov ecx,this"
 "	      0046c959    mov [ecx+64h],eax"
 "	      0046c95c    jmp near ptr 0046C961h"
-"	      0046c961    mov eax,[ebp-24h]"
+"	      0046c961    mov eax,this"
 "	      0046c964    mov eax,[eax+68h]"
 "	      0046c967    cmp dword ptr [eax+4],0"
 "	      0046c96b    je near ptr 0046C9DAh"
 "	      0046c971    jmp near ptr 0046C976h"
 "	      0046c976    jmp near ptr 0046C97Bh"
-"	      0046c97b    mov eax,[ebp-24h]"
+"	      0046c97b    mov eax,this"
 "	      0046c97e    mov eax,[eax+68h]"
 "	      0046c981    cmp dword ptr [eax+4],0"
 "	      0046c985    je near ptr 0046C9A0h"
-"	      0046c98b    mov eax,[ebp-24h]"
+"	      0046c98b    mov eax,this"
 "	      0046c98e    mov eax,[eax+68h]"
 "	      0046c991    mov eax,[eax]"
 "	      0046c993    mov [ebp-18h],eax"
@@ -1015,11 +1015,11 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0046c99b    jmp near ptr 0046C9ACh"
 "	      0046c9a0    mov dword ptr [ebp-18h],0"
 "	      0046c9a7    jmp near ptr 0046C9ACh"
-"	      0046c9ac    mov eax,[ebp-24h]"
+"	      0046c9ac    mov eax,this"
 "	      0046c9af    mov eax,[eax+68h]"
 "	      0046c9b2    mov eax,[eax+4]"
 "	      0046c9b5    mov [ebp-1Ch],eax"
-"	      0046c9b8    mov eax,[ebp-24h]"
+"	      0046c9b8    mov eax,this"
 "	      0046c9bb    mov eax,[eax+64h]"
 "	      0046c9be    mov [ebp-20h],eax"
 "	      0046c9c1    mov eax,[ebp-1Ch]"
@@ -1037,10 +1037,10 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0046c9e8    lea eax,[ebp-8]"
 "	      0046c9eb    mov [ebp-10h],eax"
 "	      0046c9ee    jmp near ptr 0046C9F3h"
-"	      0046c9f3    mov eax,[ebp-24h]"
+"	      0046c9f3    mov eax,this"
 "	      0046c9f6    mov eax,[eax+68h]"
 "	      0046c9f9    mov eax,[eax+4]"
-"	      0046c9fc    mov ecx,[ebp-24h]"
+"	      0046c9fc    mov ecx,this"
 "	      0046c9ff    add eax,[ecx+64h]"
 "	      0046ca02    mov [ebp-14h],eax"
 "	      0046ca05    mov eax,[ebp-10h]"
@@ -1049,9 +1049,9 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0046ca0d    mov [ecx],al"
 "	      0046ca0f    jmp near ptr 0046CA14h"
 "	      0046ca14    jmp near ptr 0046CA19h"
-"	      0046ca19    mov eax,[ebp+8]"
+"	      0046ca19    mov eax,pColorTable"
 "	      0046ca1c    push eax"
-"	      0046ca1d    mov eax,[ebp-24h]"
+"	      0046ca1d    mov eax,this"
 "	      0046ca20    mov eax,[eax+64h]"
 "	      0046ca23    push eax"
 "	      0046ca24    call 004704DBh"
@@ -1085,23 +1085,23 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 "	      0046ca55    push ebx"
 "	      0046ca56    push esi"
 "	      0046ca57    push edi"
-"	      0046ca58    mov [ebp-10Ch],ecx"
+"	      0046ca58    mov this,ecx"
 );
 // LINE 129:
 	asm( 
 "	      0046ca5e    push 0"
-"	      0046ca60    mov ecx,[ebp-10Ch]"
+"	      0046ca60    mov ecx,this"
 "	      0046ca66    call 004A4AA0h"
 );
 // LINE 131:
 	asm( 
-"	      0046ca6b    mov eax,[ebp-10Ch]"
+"	      0046ca6b    mov eax,this"
 "	      0046ca71    cmp dword ptr [eax+78h],0"
 "	      0046ca75    jne near ptr 0046CAE1h"
 );
 // LINE 132:
 	asm( 
-"	      0046ca7b    lea eax,[ebp-104h]"
+"	      0046ca7b    lea eax,szBackgroundBufferPath[0]"
 "	      0046ca81    push eax"
 "	      0046ca82    mov eax,ds:[599454h]"
 "	      0046ca87    push eax"
@@ -1118,19 +1118,19 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 "	      0046caa1    mov [ebp-108h],eax"
 "	      0046caa7    cmp dword ptr [ebp-108h],0"
 "	      0046caae    je near ptr 0046CAD4h"
-"	      0046cab4    lea eax,[ebp-104h]"
+"	      0046cab4    lea eax,szBackgroundBufferPath[0]"
 "	      0046caba    push eax"
 "	      0046cabb    mov ecx,[ebp-108h]"
 "	      0046cac1    call 0046E6DFh"
-"	      0046cac6    mov ecx,[ebp-10Ch]"
+"	      0046cac6    mov ecx,this"
 "	      0046cacc    mov [ecx+78h],eax"
 "	      0046cacf    jmp near ptr 0046CAE1h"
-"	      0046cad4    mov eax,[ebp-10Ch]"
+"	      0046cad4    mov eax,this"
 "	      0046cada    mov dword ptr [eax+78h],0"
 );
 // LINE 135:
 	asm( 
-"	      0046cae1    mov eax,[ebp-10Ch]"
+"	      0046cae1    mov eax,this"
 "	      0046cae7    mov eax,[eax+40h]"
 "	      0046caea    jmp near ptr 0046CAEFh"
 );
@@ -1154,17 +1154,17 @@ void MissionLogWindow::DestroyImage() {
 "	      0046cafc    push ebx"
 "	      0046cafd    push esi"
 "	      0046cafe    push edi"
-"	      0046caff    mov [ebp-0Ch],ecx"
+"	      0046caff    mov this,ecx"
 );
 // LINE 143:
 	asm( 
-"	      0046cb02    mov eax,[ebp-0Ch]"
+"	      0046cb02    mov eax,this"
 "	      0046cb05    cmp dword ptr [eax+78h],0"
 "	      0046cb09    je near ptr 0046CB50h"
 );
 // LINE 144:
 	asm( 
-"	      0046cb0f    mov eax,[ebp-0Ch]"
+"	      0046cb0f    mov eax,this"
 "	      0046cb12    mov eax,[eax+78h]"
 "	      0046cb15    mov [ebp-8],eax"
 "	      0046cb18    mov eax,[ebp-8]"
@@ -1182,12 +1182,12 @@ void MissionLogWindow::DestroyImage() {
 );
 // LINE 145:
 	asm( 
-"	      0046cb46    mov eax,[ebp-0Ch]"
+"	      0046cb46    mov eax,this"
 "	      0046cb49    mov dword ptr [eax+78h],0"
 );
 // LINE 147:
 	asm( 
-"	      0046cb50    mov ecx,[ebp-0Ch]"
+"	      0046cb50    mov ecx,this"
 "	      0046cb53    call 004A4CABh"
 );
 // LINE 148:
@@ -1211,11 +1211,11 @@ int32_t MissionLogWindow::ComposeSelf() {
 "	      0046cb68    push ebx"
 "	      0046cb69    push esi"
 "	      0046cb6a    push edi"
-"	      0046cb6b    mov [ebp-4],ecx"
+"	      0046cb6b    mov this,ecx"
 );
 // LINE 160:
 	asm( 
-"	      0046cb6e    mov eax,[ebp-4]"
+"	      0046cb6e    mov eax,this"
 "	      0046cb71    cmp dword ptr [eax+54h],0"
 "	      0046cb75    jne near ptr 0046CB82h"
 );
@@ -1226,9 +1226,9 @@ int32_t MissionLogWindow::ComposeSelf() {
 );
 // LINE 164:
 	asm( 
-"	      0046cb82    mov eax,[ebp-4]"
+"	      0046cb82    mov eax,this"
 "	      0046cb85    mov eax,[eax]"
-"	      0046cb87    mov ecx,[ebp-4]"
+"	      0046cb87    mov ecx,this"
 "	      0046cb8a    call dword ptr [eax+0C0h]"
 "	      0046cb90    test eax,eax"
 "	      0046cb92    je near ptr 0046CBE0h"
@@ -1237,41 +1237,41 @@ int32_t MissionLogWindow::ComposeSelf() {
 	asm( 
 "	      0046cb98    push 1"
 "	      0046cb9a    push 0"
-"	      0046cb9c    mov eax,[ebp-4]"
+"	      0046cb9c    mov eax,this"
 "	      0046cb9f    mov eax,[eax]"
-"	      0046cba1    mov ecx,[ebp-4]"
+"	      0046cba1    mov ecx,this"
 "	      0046cba4    call dword ptr [eax+30h]"
 );
 // LINE 166:
 	asm( 
-"	      0046cba7    mov eax,[ebp-4]"
+"	      0046cba7    mov eax,this"
 "	      0046cbaa    mov eax,[eax]"
-"	      0046cbac    mov ecx,[ebp-4]"
+"	      0046cbac    mov ecx,this"
 "	      0046cbaf    call dword ptr [eax+0BCh]"
 );
 // LINE 167:
 	asm( 
 "	      0046cbb5    jmp near ptr 0046CBBAh"
-"	      0046cbba    mov eax,[ebp-4]"
+"	      0046cbba    mov eax,this"
 "	      0046cbbd    mov eax,[eax+74h]"
 "	      0046cbc0    cmp dword ptr [eax+48h],0"
 "	      0046cbc4    je near ptr 0046CBD2h"
 );
 // LINE 168:
 	asm( 
-"	      0046cbca    mov ecx,[ebp-4]"
+"	      0046cbca    mov ecx,this"
 "	      0046cbcd    call 0046CC44h"
 );
 // LINE 169:
 	asm( 
-"	      0046cbd2    mov eax,[ebp-4]"
+"	      0046cbd2    mov eax,this"
 "	      0046cbd5    mov eax,[eax]"
-"	      0046cbd7    mov ecx,[ebp-4]"
+"	      0046cbd7    mov ecx,this"
 "	      0046cbda    call dword ptr [eax+0B8h]"
 );
 // LINE 171:
 	asm( 
-"	      0046cbe0    mov eax,[ebp-4]"
+"	      0046cbe0    mov eax,this"
 "	      0046cbe3    cmp dword ptr [eax+40h],0"
 "	      0046cbe7    je near ptr 0046CC35h"
 );
@@ -1279,27 +1279,27 @@ int32_t MissionLogWindow::ComposeSelf() {
 	asm( 
 "	      0046cbed    jmp near ptr 0046CBF2h"
 "	      0046cbf2    jmp near ptr 0046CBF7h"
-"	      0046cbf7    mov eax,[ebp-4]"
+"	      0046cbf7    mov eax,this"
 "	      0046cbfa    mov eax,[eax+40h]"
 "	      0046cbfd    mov eax,[eax+0Ch]"
 "	      0046cc00    push eax"
-"	      0046cc01    mov eax,[ebp-4]"
+"	      0046cc01    mov eax,this"
 "	      0046cc04    mov eax,[eax+40h]"
 "	      0046cc07    mov eax,[eax+8]"
 "	      0046cc0a    push eax"
 "	      0046cc0b    push 0"
 "	      0046cc0d    push 0"
-"	      0046cc0f    mov eax,[ebp-4]"
+"	      0046cc0f    mov eax,this"
 "	      0046cc12    mov eax,[eax+24h]"
 "	      0046cc15    push eax"
-"	      0046cc16    mov eax,[ebp-4]"
+"	      0046cc16    mov eax,this"
 "	      0046cc19    mov eax,[eax+20h]"
 "	      0046cc1c    push eax"
-"	      0046cc1d    mov eax,[ebp-4]"
+"	      0046cc1d    mov eax,this"
 "	      0046cc20    mov eax,[eax+44h]"
 "	      0046cc23    push eax"
-"	      0046cc24    mov eax,[ebp-4]"
-"	      0046cc27    mov ecx,[ebp-4]"
+"	      0046cc24    mov eax,this"
+"	      0046cc27    mov ecx,this"
 "	      0046cc2a    mov ecx,[ecx+40h]"
 "	      0046cc2d    mov edx,[ecx]"
 "	      0046cc2f    mov ecx,[eax+40h]"
@@ -1334,16 +1334,16 @@ void MissionLogWindow::DrawBackground() {
 "	      0046cc4a    push ebx"
 "	      0046cc4b    push esi"
 "	      0046cc4c    push edi"
-"	      0046cc4d    mov [ebp-10h],ecx"
+"	      0046cc4d    mov this,ecx"
 );
 // LINE 192:
 	asm( 
-"	      0046cc50    mov dword ptr [ebp-8],0"
-"	      0046cc57    mov dword ptr [ebp-4],42h"
-"	      0046cc5e    mov dword ptr [ebp-0Ch],50h"
+"	      0046cc50    mov i,0"
+"	      0046cc57    mov x,42h"
+"	      0046cc5e    mov y,50h"
 "	      0046cc65    jmp near ptr 0046CC6Dh"
-"	      0046cc6a    inc dword ptr [ebp-8]"
-"	      0046cc6d    cmp dword ptr [ebp-8],15h"
+"	      0046cc6a    inc i"
+"	      0046cc6d    cmp i,15h"
 "	      0046cc71    jge near ptr 0046CCABh"
 );
 // LINE 193:
@@ -1352,15 +1352,15 @@ void MissionLogWindow::DrawBackground() {
 "	      0046cc7c    push 18h"
 "	      0046cc7e    push 0"
 "	      0046cc80    push 0"
-"	      0046cc82    mov eax,[ebp-0Ch]"
+"	      0046cc82    mov eax,y"
 "	      0046cc85    push eax"
-"	      0046cc86    mov eax,[ebp-4]"
+"	      0046cc86    mov eax,x"
 "	      0046cc89    push eax"
-"	      0046cc8a    mov eax,[ebp-10h]"
+"	      0046cc8a    mov eax,this"
 "	      0046cc8d    mov eax,[eax+40h]"
 "	      0046cc90    push eax"
-"	      0046cc91    mov eax,[ebp-10h]"
-"	      0046cc94    mov ecx,[ebp-10h]"
+"	      0046cc91    mov eax,this"
+"	      0046cc94    mov ecx,this"
 "	      0046cc97    mov ecx,[ecx+78h]"
 "	      0046cc9a    mov edx,[ecx]"
 "	      0046cc9c    mov ecx,[eax+78h]"
@@ -1368,7 +1368,7 @@ void MissionLogWindow::DrawBackground() {
 );
 // LINE 194:
 	asm( 
-"	      0046cca2    add dword ptr [ebp-4],18h"
+"	      0046cca2    add x,18h"
 );
 // LINE 195:
 	asm( 
@@ -1397,59 +1397,59 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 "	      0046ccbb    push ebx"
 "	      0046ccbc    push esi"
 "	      0046ccbd    push edi"
-"	      0046ccbe    mov [ebp-8],ecx"
+"	      0046ccbe    mov this,ecx"
 );
 // LINE 206:
 	asm( 
-"	      0046ccc1    cmp dword ptr [ebp+0Ch],1"
+"	      0046ccc1    cmp lWindowID,1"
 "	      0046ccc5    jne near ptr 0046CCE5h"
 );
 // LINE 207:
 	asm( 
-"	      0046cccb    mov eax,[ebp-8]"
+"	      0046cccb    mov eax,this"
 "	      0046ccce    cmp dword ptr [eax+7Ch],0"
 "	      0046ccd2    je near ptr 0046CCE0h"
 );
 // LINE 208:
 	asm( 
-"	      0046ccd8    mov ecx,[ebp-8]"
+"	      0046ccd8    mov ecx,this"
 "	      0046ccdb    call 0046CD45h"
 );
 // LINE 210:
 	asm( 
 "	      0046cce0    jmp near ptr 0046CD34h"
-"	      0046cce5    cmp dword ptr [ebp+0Ch],2"
+"	      0046cce5    cmp lWindowID,2"
 "	      0046cce9    jne near ptr 0046CD09h"
 );
 // LINE 211:
 	asm( 
-"	      0046ccef    mov eax,[ebp-8]"
+"	      0046ccef    mov eax,this"
 "	      0046ccf2    cmp dword ptr [eax+7Ch],1"
 "	      0046ccf6    je near ptr 0046CD04h"
 );
 // LINE 212:
 	asm( 
-"	      0046ccfc    mov ecx,[ebp-8]"
+"	      0046ccfc    mov ecx,this"
 "	      0046ccff    call 0046CF77h"
 );
 // LINE 214:
 	asm( 
 "	      0046cd04    jmp near ptr 0046CD34h"
-"	      0046cd09    cmp dword ptr [ebp+0Ch],3"
+"	      0046cd09    cmp lWindowID,3"
 "	      0046cd0d    jne near ptr 0046CD34h"
 );
 // LINE 215:
 	asm( 
-"	      0046cd13    lea eax,[ebp-4]"
+"	      0046cd13    lea eax,lMyMessage"
 "	      0046cd16    push eax"
 "	      0046cd17    push 1"
-"	      0046cd19    mov eax,[ebp-8]"
+"	      0046cd19    mov eax,this"
 "	      0046cd1c    mov eax,[eax+4]"
 "	      0046cd1f    push eax"
-"	      0046cd20    mov eax,[ebp-8]"
+"	      0046cd20    mov eax,this"
 "	      0046cd23    push eax"
-"	      0046cd24    mov eax,[ebp-8]"
-"	      0046cd27    mov ecx,[ebp-8]"
+"	      0046cd24    mov eax,this"
+"	      0046cd27    mov ecx,this"
 "	      0046cd2a    mov ecx,[ecx+38h]"
 "	      0046cd2d    mov edx,[ecx]"
 "	      0046cd2f    mov ecx,[eax+38h]"
@@ -1483,7 +1483,7 @@ void MissionLogWindow::SortByTimeDate() {
 "	      0046cd4b    push ebx"
 "	      0046cd4c    push esi"
 "	      0046cd4d    push edi"
-"	      0046cd4e    mov [ebp-54h],ecx"
+"	      0046cd4e    mov this,ecx"
 );
 // LINE 225:
 	asm( 
@@ -1509,10 +1509,10 @@ void MissionLogWindow::SortByTimeDate() {
 "	      0046cd8f    mov dword ptr [eax+0Ch],1"
 "	      0046cd96    jmp near ptr 0046CD9Bh"
 "	      0046cd9b    mov eax,[ebp-34h]"
-"	      0046cd9e    mov [ebp-4],eax"
+"	      0046cd9e    mov sCurrentText.reference,eax"
 "	      0046cda1    jmp near ptr 0046CDADh"
-"	      0046cda6    mov dword ptr [ebp-4],0"
-"	      0046cdad    mov dword ptr [ebp-8],0"
+"	      0046cda6    mov sCurrentText.reference,0"
+"	      0046cdad    mov sCurrentText.c_str_ptr,0"
 "	      0046cdb4    jmp near ptr 0046CDB9h"
 );
 // LINE 228:
@@ -1522,8 +1522,8 @@ void MissionLogWindow::SortByTimeDate() {
 );
 // LINE 229:
 	asm( 
-"	      0046cdc3    mov eax,[ebp-54h]"
-"	      0046cdc6    mov ecx,[ebp-54h]"
+"	      0046cdc3    mov eax,this"
+"	      0046cdc6    mov ecx,this"
 "	      0046cdc9    mov ecx,[ecx+74h]"
 "	      0046cdcc    mov edx,[ecx]"
 "	      0046cdce    mov ecx,[eax+74h]"
@@ -1542,7 +1542,7 @@ void MissionLogWindow::SortByTimeDate() {
 "	      0046cdef    jmp near ptr 0046CDF4h"
 "	      0046cdf4    jmp near ptr 0046CDF9h"
 "	      0046cdf9    mov eax,[ebp-10h]"
-"	      0046cdfc    mov [ebp-0Ch],eax"
+"	      0046cdfc    mov iterator.node,eax"
 );
 // LINE 23:
 	asm( 
@@ -1558,7 +1558,7 @@ void MissionLogWindow::SortByTimeDate() {
 "	      0046ce12    mov [ebp-14h],eax"
 "	      0046ce15    jmp near ptr 0046CE1Ah"
 "	      0046ce1a    jmp near ptr 0046CE1Fh"
-"	      0046ce1f    mov eax,[ebp-0Ch]"
+"	      0046ce1f    mov eax,iterator.node"
 "	      0046ce22    cmp [ebp-14h],eax"
 "	      0046ce25    jne near ptr 0046CE35h"
 "	      0046ce2b    jmp near ptr 0046CE49h"
@@ -1576,9 +1576,9 @@ void MissionLogWindow::SortByTimeDate() {
 	asm( 
 "	      0046ce5d    jmp near ptr 0046CE62h"
 "	      0046ce62    push 1"
-"	      0046ce64    lea eax,[ebp-8]"
+"	      0046ce64    lea eax,sCurrentText.c_str_ptr"
 "	      0046ce67    push eax"
-"	      0046ce68    mov eax,[ebp-0Ch]"
+"	      0046ce68    mov eax,iterator.node"
 "	      0046ce6b    mov eax,[eax+8]"
 "	      0046ce6e    push eax"
 "	      0046ce6f    call 004EDB4Eh"
@@ -1587,10 +1587,10 @@ void MissionLogWindow::SortByTimeDate() {
 // LINE 233:
 	asm( 
 "	      0046ce77    push 0FFFFFFFFh"
-"	      0046ce79    lea eax,[ebp-8]"
+"	      0046ce79    lea eax,sCurrentText.c_str_ptr"
 "	      0046ce7c    push eax"
-"	      0046ce7d    mov eax,[ebp-54h]"
-"	      0046ce80    mov ecx,[ebp-54h]"
+"	      0046ce7d    mov eax,this"
+"	      0046ce80    mov ecx,this"
 "	      0046ce83    mov ecx,[ecx+74h]"
 "	      0046ce86    mov edx,[ecx]"
 "	      0046ce88    mov ecx,[eax+74h]"
@@ -1598,11 +1598,11 @@ void MissionLogWindow::SortByTimeDate() {
 );
 // LINE 234:
 	asm( 
-"	      0046ce91    mov eax,[ebp-0Ch]"
+"	      0046ce91    mov eax,iterator.node"
 "	      0046ce94    mov [ebp-50h],eax"
-"	      0046ce97    mov eax,[ebp-0Ch]"
+"	      0046ce97    mov eax,iterator.node"
 "	      0046ce9a    mov eax,[eax]"
-"	      0046ce9c    mov [ebp-0Ch],eax"
+"	      0046ce9c    mov iterator.node,eax"
 "	      0046ce9f    jmp near ptr 0046CEA4h"
 "	      0046cea4    mov eax,[ebp-50h]"
 "	      0046cea7    mov [ebp-18h],eax"
@@ -1614,17 +1614,17 @@ void MissionLogWindow::SortByTimeDate() {
 );
 // LINE 236:
 	asm( 
-"	      0046ceb4    mov eax,[ebp-54h]"
+"	      0046ceb4    mov eax,this"
 "	      0046ceb7    mov dword ptr [eax+7Ch],0"
 );
 // LINE 237:
 	asm( 
-"	      0046cebe    mov eax,[ebp-4]"
+"	      0046cebe    mov eax,sCurrentText.reference"
 "	      0046cec1    dec dword ptr [eax+0Ch]"
-"	      0046cec4    mov eax,[ebp-4]"
+"	      0046cec4    mov eax,sCurrentText.reference"
 "	      0046cec7    cmp dword ptr [eax+0Ch],0"
 "	      0046cecb    jne near ptr 0046CF41h"
-"	      0046ced1    mov eax,[ebp-4]"
+"	      0046ced1    mov eax,sCurrentText.reference"
 "	      0046ced4    mov [ebp-44h],eax"
 "	      0046ced7    mov eax,[ebp-44h]"
 "	      0046ceda    mov [ebp-40h],eax"
@@ -1655,9 +1655,9 @@ void MissionLogWindow::SortByTimeDate() {
 "	      0046cf37    jmp near ptr 0046CF3Ch"
 "	      0046cf3c    jmp near ptr 0046CF41h"
 "	      0046cf41    jmp near ptr 0046CF46h"
-"	      0046cf46    cmp dword ptr [ebp-8],0"
+"	      0046cf46    cmp sCurrentText.c_str_ptr,0"
 "	      0046cf4a    je near ptr 0046CF68h"
-"	      0046cf50    mov eax,[ebp-8]"
+"	      0046cf50    mov eax,sCurrentText.c_str_ptr"
 "	      0046cf53    mov [ebp-38h],eax"
 "	      0046cf56    mov eax,[ebp-38h]"
 "	      0046cf59    mov [ebp-3Ch],eax"
@@ -1689,7 +1689,7 @@ void MissionLogWindow::SortByType() {
 "	      0046cf80    push ebx"
 "	      0046cf81    push esi"
 "	      0046cf82    push edi"
-"	      0046cf83    mov [ebp-84h],ecx"
+"	      0046cf83    mov this,ecx"
 );
 // LINE 245:
 	asm( 
@@ -1715,10 +1715,10 @@ void MissionLogWindow::SortByType() {
 "	      0046cfc7    mov dword ptr [eax+0Ch],1"
 "	      0046cfce    jmp near ptr 0046CFD3h"
 "	      0046cfd3    mov eax,[ebp-40h]"
-"	      0046cfd6    mov [ebp-4],eax"
+"	      0046cfd6    mov sCurrentText.reference,eax"
 "	      0046cfd9    jmp near ptr 0046CFE5h"
-"	      0046cfde    mov dword ptr [ebp-4],0"
-"	      0046cfe5    mov dword ptr [ebp-8],0"
+"	      0046cfde    mov sCurrentText.reference,0"
+"	      0046cfe5    mov sCurrentText.c_str_ptr,0"
 "	      0046cfec    jmp near ptr 0046CFF1h"
 );
 // LINE 249:
@@ -1728,8 +1728,8 @@ void MissionLogWindow::SortByType() {
 );
 // LINE 250:
 	asm( 
-"	      0046cffb    mov eax,[ebp-84h]"
-"	      0046d001    mov ecx,[ebp-84h]"
+"	      0046cffb    mov eax,this"
+"	      0046d001    mov ecx,this"
 "	      0046d007    mov ecx,[ecx+74h]"
 "	      0046d00a    mov edx,[ecx]"
 "	      0046d00c    mov ecx,[eax+74h]"
@@ -1748,15 +1748,15 @@ void MissionLogWindow::SortByType() {
 "	      0046d02d    jmp near ptr 0046D032h"
 "	      0046d032    jmp near ptr 0046D037h"
 "	      0046d037    mov eax,[ebp-14h]"
-"	      0046d03a    mov [ebp-0Ch],eax"
+"	      0046d03a    mov iterator.node,eax"
 );
 // LINE 252:
 	asm( 
 "	      0046d03d    jmp near ptr 0046D042h"
-"	      0046d042    mov eax,[ebp-0Ch]"
+"	      0046d042    mov eax,iterator.node"
 "	      0046d045    mov eax,[eax+8]"
 "	      0046d048    mov eax,[eax+8]"
-"	      0046d04b    mov [ebp-10h],eax"
+"	      0046d04b    mov nCurrentMissionID,eax"
 );
 // LINE 23:
 	asm( 
@@ -1773,7 +1773,7 @@ void MissionLogWindow::SortByType() {
 "	      0046d064    jmp near ptr 0046D069h"
 "	      0046d069    jmp near ptr 0046D06Eh"
 "	      0046d06e    mov eax,[ebp-18h]"
-"	      0046d071    cmp [ebp-0Ch],eax"
+"	      0046d071    cmp iterator.node,eax"
 "	      0046d074    jne near ptr 0046D084h"
 "	      0046d07a    jmp near ptr 0046D098h"
 "	      0046d07f    jmp near ptr 0046D084h"
@@ -1789,9 +1789,9 @@ void MissionLogWindow::SortByType() {
 // LINE 254:
 	asm( 
 "	      0046d0ac    jmp near ptr 0046D0B1h"
-"	      0046d0b1    mov eax,[ebp-0Ch]"
+"	      0046d0b1    mov eax,iterator.node"
 "	      0046d0b4    mov eax,[eax+8]"
-"	      0046d0b7    mov ecx,[ebp-10h]"
+"	      0046d0b7    mov ecx,nCurrentMissionID"
 "	      0046d0ba    cmp [eax+8],ecx"
 "	      0046d0bd    je near ptr 0046D265h"
 );
@@ -1852,8 +1852,8 @@ void MissionLogWindow::SortByType() {
 "	      0046d185    push 0FFFFFFFFh"
 "	      0046d187    lea eax,[ebp-20h]"
 "	      0046d18a    push eax"
-"	      0046d18b    mov eax,[ebp-84h]"
-"	      0046d191    mov ecx,[ebp-84h]"
+"	      0046d18b    mov eax,this"
+"	      0046d191    mov ecx,this"
 "	      0046d197    mov ecx,[ecx+74h]"
 "	      0046d19a    mov edx,[ecx]"
 "	      0046d19c    mov ecx,[eax+74h]"
@@ -1909,18 +1909,18 @@ void MissionLogWindow::SortByType() {
 // LINE 256:
 	asm( 
 "	      0046d254    jmp near ptr 0046D259h"
-"	      0046d259    mov eax,[ebp-0Ch]"
+"	      0046d259    mov eax,iterator.node"
 "	      0046d25c    mov eax,[eax+8]"
 "	      0046d25f    mov eax,[eax+8]"
-"	      0046d262    mov [ebp-10h],eax"
+"	      0046d262    mov nCurrentMissionID,eax"
 );
 // LINE 258:
 	asm( 
 "	      0046d265    jmp near ptr 0046D26Ah"
 "	      0046d26a    push 1"
-"	      0046d26c    lea eax,[ebp-8]"
+"	      0046d26c    lea eax,sCurrentText.c_str_ptr"
 "	      0046d26f    push eax"
-"	      0046d270    mov eax,[ebp-0Ch]"
+"	      0046d270    mov eax,iterator.node"
 "	      0046d273    mov eax,[eax+8]"
 "	      0046d276    push eax"
 "	      0046d277    call 004EDB4Eh"
@@ -1929,10 +1929,10 @@ void MissionLogWindow::SortByType() {
 // LINE 259:
 	asm( 
 "	      0046d27f    push 0FFFFFFFFh"
-"	      0046d281    lea eax,[ebp-8]"
+"	      0046d281    lea eax,sCurrentText.c_str_ptr"
 "	      0046d284    push eax"
-"	      0046d285    mov eax,[ebp-84h]"
-"	      0046d28b    mov ecx,[ebp-84h]"
+"	      0046d285    mov eax,this"
+"	      0046d28b    mov ecx,this"
 "	      0046d291    mov ecx,[ecx+74h]"
 "	      0046d294    mov edx,[ecx]"
 "	      0046d296    mov ecx,[eax+74h]"
@@ -1940,11 +1940,11 @@ void MissionLogWindow::SortByType() {
 );
 // LINE 260:
 	asm( 
-"	      0046d29f    mov eax,[ebp-0Ch]"
+"	      0046d29f    mov eax,iterator.node"
 "	      0046d2a2    mov [ebp-74h],eax"
-"	      0046d2a5    mov eax,[ebp-0Ch]"
+"	      0046d2a5    mov eax,iterator.node"
 "	      0046d2a8    mov eax,[eax]"
-"	      0046d2aa    mov [ebp-0Ch],eax"
+"	      0046d2aa    mov iterator.node,eax"
 "	      0046d2ad    jmp near ptr 0046D2B2h"
 "	      0046d2b2    mov eax,[ebp-74h]"
 "	      0046d2b5    mov [ebp-24h],eax"
@@ -1956,17 +1956,17 @@ void MissionLogWindow::SortByType() {
 );
 // LINE 262:
 	asm( 
-"	      0046d2c2    mov eax,[ebp-84h]"
+"	      0046d2c2    mov eax,this"
 "	      0046d2c8    mov dword ptr [eax+7Ch],1"
 );
 // LINE 263:
 	asm( 
-"	      0046d2cf    mov eax,[ebp-4]"
+"	      0046d2cf    mov eax,sCurrentText.reference"
 "	      0046d2d2    dec dword ptr [eax+0Ch]"
-"	      0046d2d5    mov eax,[ebp-4]"
+"	      0046d2d5    mov eax,sCurrentText.reference"
 "	      0046d2d8    cmp dword ptr [eax+0Ch],0"
 "	      0046d2dc    jne near ptr 0046D352h"
-"	      0046d2e2    mov eax,[ebp-4]"
+"	      0046d2e2    mov eax,sCurrentText.reference"
 "	      0046d2e5    mov [ebp-68h],eax"
 "	      0046d2e8    mov eax,[ebp-68h]"
 "	      0046d2eb    mov [ebp-64h],eax"
@@ -1997,9 +1997,9 @@ void MissionLogWindow::SortByType() {
 "	      0046d348    jmp near ptr 0046D34Dh"
 "	      0046d34d    jmp near ptr 0046D352h"
 "	      0046d352    jmp near ptr 0046D357h"
-"	      0046d357    cmp dword ptr [ebp-8],0"
+"	      0046d357    cmp sCurrentText.c_str_ptr,0"
 "	      0046d35b    je near ptr 0046D379h"
-"	      0046d361    mov eax,[ebp-8]"
+"	      0046d361    mov eax,sCurrentText.c_str_ptr"
 "	      0046d364    mov [ebp-5Ch],eax"
 "	      0046d367    mov eax,[ebp-5Ch]"
 "	      0046d36a    mov [ebp-60h],eax"
@@ -2027,26 +2027,26 @@ void MessageDisplayManager::MessageDisplayManager() {
 "	      0046d38e    push ebx"
 "	      0046d38f    push esi"
 "	      0046d390    push edi"
-"	      0046d391    mov [ebp-10h],ecx"
+"	      0046d391    mov this,ecx"
 "	      0046d394    jmp near ptr 0046D399h"
-"	      0046d399    mov eax,[ebp-10h]"
+"	      0046d399    mov eax,this"
 "	      0046d39c    mov dword ptr [eax+4],14h"
-"	      0046d3a3    mov eax,[ebp-10h]"
+"	      0046d3a3    mov eax,this"
 "	      0046d3a6    mov dword ptr [eax+8],14h"
 "	      0046d3ad    jmp near ptr 0046D3B2h"
-"	      0046d3b2    mov eax,[ebp-10h]"
+"	      0046d3b2    mov eax,this"
 "	      0046d3b5    mov dword ptr [eax+0Ch],3"
-"	      0046d3bc    mov eax,[ebp-10h]"
+"	      0046d3bc    mov eax,this"
 "	      0046d3bf    mov dword ptr [eax+10h],0"
-"	      0046d3c6    mov eax,[ebp-10h]"
+"	      0046d3c6    mov eax,this"
 "	      0046d3c9    mov dword ptr [eax+14h],1"
-"	      0046d3d0    mov eax,[ebp-10h]"
+"	      0046d3d0    mov eax,this"
 "	      0046d3d3    mov dword ptr [eax+18h],0"
-"	      0046d3da    mov eax,[ebp-10h]"
+"	      0046d3da    mov eax,this"
 "	      0046d3dd    mov dword ptr [eax+1Ch],0"
-"	      0046d3e4    mov eax,[ebp-10h]"
+"	      0046d3e4    mov eax,this"
 "	      0046d3e7    mov dword ptr [eax+20h],0"
-"	      0046d3ee    mov eax,[ebp-10h]"
+"	      0046d3ee    mov eax,this"
 "	      0046d3f1    cmp dword ptr [eax+14h],0"
 "	      0046d3f5    jne near ptr 0046D419h"
 "	      0046d3fb    lea eax,[ebp-0Ch]"
@@ -2055,27 +2055,27 @@ void MessageDisplayManager::MessageDisplayManager() {
 "	      0046d405    mov eax,[ebp-0Ch]"
 "	      0046d408    mov [ebp-4],eax"
 "	      0046d40b    mov eax,[ebp-4]"
-"	      0046d40e    mov ecx,[ebp-10h]"
+"	      0046d40e    mov ecx,this"
 "	      0046d411    mov [ecx+20h],eax"
 "	      0046d414    jmp near ptr 0046D419h"
 "	      0046d419    jmp near ptr 0046D41Eh"
-"	      0046d41e    mov ecx,[ebp-10h]"
+"	      0046d41e    mov ecx,this"
 "	      0046d421    add ecx,24h"
 "	      0046d424    call 0049F780h"
-"	      0046d429    mov eax,[ebp-10h]"
+"	      0046d429    mov eax,this"
 "	      0046d42c    mov dword ptr [eax+40h],14h"
-"	      0046d433    mov eax,[ebp-10h]"
+"	      0046d433    mov eax,this"
 "	      0046d436    mov dword ptr [eax+44h],1388h"
-"	      0046d43d    mov eax,[ebp-10h]"
+"	      0046d43d    mov eax,this"
 "	      0046d440    mov dword ptr [eax+48h],0"
-"	      0046d447    mov eax,[ebp-10h]"
+"	      0046d447    mov eax,this"
 "	      0046d44a    mov byte ptr [eax+50h],0FFh"
-"	      0046d44e    mov eax,[ebp-10h]"
+"	      0046d44e    mov eax,this"
 "	      0046d451    mov byte ptr [eax+51h],0FFh"
-"	      0046d455    mov eax,[ebp-10h]"
+"	      0046d455    mov eax,this"
 "	      0046d458    mov byte ptr [eax+52h],0FFh"
 "	      0046d45c    jmp near ptr 0046D461h"
-"	      0046d461    mov eax,[ebp-10h]"
+"	      0046d461    mov eax,this"
 "	      0046d464    mov dword ptr [eax],5907D0h"
 );
 // LINE 292:
@@ -2083,14 +2083,14 @@ void MessageDisplayManager::MessageDisplayManager() {
 "	      0046d46a    push 0"
 "	      0046d46c    push 0"
 "	      0046d46e    push 14h"
-"	      0046d470    mov ecx,[ebp-10h]"
+"	      0046d470    mov ecx,this"
 "	      0046d473    add ecx,24h"
 "	      0046d476    call 004A015Dh"
 );
 // LINE 293:
 	asm( 
-"	      0046d47b    mov ecx,[ebp-10h]"
-"	      0046d47e    mov eax,[ebp-10h]"
+"	      0046d47b    mov ecx,this"
+"	      0046d47e    mov eax,this"
 "	      0046d481    mov eax,[eax+24h]"
 "	      0046d484    add ecx,24h"
 "	      0046d487    call dword ptr [eax]"
@@ -2098,7 +2098,7 @@ void MessageDisplayManager::MessageDisplayManager() {
 // LINE 294:
 	asm( 
 "	      0046d489    jmp near ptr 0046D48Eh"
-"	      0046d48e    mov eax,[ebp-10h]"
+"	      0046d48e    mov eax,this"
 "	      0046d491    pop edi"
 "	      0046d492    pop esi"
 "	      0046d493    pop ebx"
@@ -2117,19 +2117,19 @@ void MessageDisplayManager::~MessageDisplayManager() {
 "	      0046d49c    push ebx"
 "	      0046d49d    push esi"
 "	      0046d49e    push edi"
-"	      0046d49f    mov [ebp-2Ch],ecx"
-"	      0046d4a2    mov eax,[ebp-2Ch]"
+"	      0046d49f    mov this,ecx"
+"	      0046d4a2    mov eax,this"
 "	      0046d4a5    mov dword ptr [eax],5907D0h"
 );
 // LINE 300:
 	asm( 
-"	      0046d4ab    mov eax,[ebp-2Ch]"
+"	      0046d4ab    mov eax,this"
 "	      0046d4ae    cmp dword ptr [eax+10h],0"
 "	      0046d4b2    je near ptr 0046D5F8h"
 );
 // LINE 301:
 	asm( 
-"	      0046d4b8    mov eax,[ebp-2Ch]"
+"	      0046d4b8    mov eax,this"
 "	      0046d4bb    mov eax,[eax+10h]"
 "	      0046d4be    mov [ebp-8],eax"
 "	      0046d4c1    mov eax,[ebp-8]"
@@ -2218,13 +2218,13 @@ void MessageDisplayManager::~MessageDisplayManager() {
 );
 // LINE 302:
 	asm( 
-"	      0046d5ee    mov eax,[ebp-2Ch]"
+"	      0046d5ee    mov eax,this"
 "	      0046d5f1    mov dword ptr [eax+10h],0"
 );
 // LINE 304:
 	asm( 
 "	      0046d5f8    jmp near ptr 0046D5FDh"
-"	      0046d5fd    mov ecx,[ebp-2Ch]"
+"	      0046d5fd    mov ecx,this"
 "	      0046d600    add ecx,24h"
 "	      0046d603    call 0049FC4Eh"
 "	      0046d608    jmp near ptr 0046D60Dh"
@@ -2246,11 +2246,11 @@ int32_t MessageDisplayManager::Initialize() {
 "	      0046d618    push ebx"
 "	      0046d619    push esi"
 "	      0046d61a    push edi"
-"	      0046d61b    mov [ebp-3Ch],ecx"
+"	      0046d61b    mov this,ecx"
 );
 // LINE 310:
 	asm( 
-"	      0046d61e    mov eax,[ebp-3Ch]"
+"	      0046d61e    mov eax,this"
 "	      0046d621    cmp dword ptr [eax+0Ch],0"
 "	      0046d625    jle near ptr 0046D7E9h"
 );
@@ -2258,13 +2258,13 @@ int32_t MessageDisplayManager::Initialize() {
 // Block start:
 	uint32_t $S71;
 	asm( 
-"	      0046d62b    mov eax,[ebp-3Ch]"
+"	      0046d62b    mov eax,this"
 "	      0046d62e    cmp dword ptr [eax+10h],0"
 "	      0046d632    je near ptr 0046D76Eh"
 );
 // LINE 312:
 	asm( 
-"	      0046d638    mov eax,[ebp-3Ch]"
+"	      0046d638    mov eax,this"
 "	      0046d63b    mov eax,[eax+10h]"
 "	      0046d63e    mov [ebp-0Ch],eax"
 "	      0046d641    mov eax,[ebp-0Ch]"
@@ -2353,10 +2353,10 @@ int32_t MessageDisplayManager::Initialize() {
 );
 // LINE 313:
 	asm( 
-"	      0046d76e    mov eax,[ebp-3Ch]"
+"	      0046d76e    mov eax,this"
 "	      0046d771    mov eax,[eax+0Ch]"
-"	      0046d774    mov [ebp-4],eax"
-"	      0046d777    mov eax,[ebp-4]"
+"	      0046d774    mov $S71,eax"
+"	      0046d777    mov eax,$S71"
 "	      0046d77a    shl eax,3"
 "	      0046d77d    add eax,4"
 "	      0046d780    push eax"
@@ -2365,7 +2365,7 @@ int32_t MessageDisplayManager::Initialize() {
 "	      0046d789    mov [ebp-10h],eax"
 "	      0046d78c    cmp dword ptr [ebp-10h],0"
 "	      0046d790    je near ptr 0046D7DFh"
-"	      0046d796    mov eax,[ebp-4]"
+"	      0046d796    mov eax,$S71"
 "	      0046d799    mov ecx,[ebp-10h]"
 "	      0046d79c    mov [ecx],eax"
 "	      0046d79e    mov eax,[ebp-10h]"
@@ -2383,16 +2383,16 @@ int32_t MessageDisplayManager::Initialize() {
 "	      0046d7c9    jmp near ptr 0046D7CEh"
 "	      0046d7ce    mov eax,[ebp-10h]"
 "	      0046d7d1    add eax,4"
-"	      0046d7d4    mov ecx,[ebp-3Ch]"
+"	      0046d7d4    mov ecx,this"
 "	      0046d7d7    mov [ecx+10h],eax"
 "	      0046d7da    jmp near ptr 0046D7E9h"
-"	      0046d7df    mov eax,[ebp-3Ch]"
+"	      0046d7df    mov eax,this"
 "	      0046d7e2    mov dword ptr [eax+10h],0"
 );
 // LINE 315:
 // Block end:
 	asm( 
-"	      0046d7e9    mov eax,[ebp-3Ch]"
+"	      0046d7e9    mov eax,this"
 "	      0046d7ec    mov dword ptr [eax+48h],0"
 );
 // LINE 316:
@@ -2423,7 +2423,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046d808    push ebx"
 "	      0046d809    push esi"
 "	      0046d80a    push edi"
-"	      0046d80b    mov [ebp-70h],ecx"
+"	      0046d80b    mov this,ecx"
 );
 // LINE 324:
 	asm( 
@@ -2432,7 +2432,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 );
 // LINE 327:
 	asm( 
-"	      0046d818    mov eax,[ebp-70h]"
+"	      0046d818    mov eax,this"
 "	      0046d81b    cmp dword ptr [eax+48h],0"
 "	      0046d81f    jg near ptr 0046D82Ah"
 );
@@ -2442,21 +2442,21 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 );
 // LINE 330:
 	asm( 
-"	      0046d82a    mov eax,[ebp-70h]"
+"	      0046d82a    mov eax,this"
 "	      0046d82d    mov eax,[eax+1Ch]"
 "	      0046d830    mov [ebp-2Ch],eax"
 "	      0046d833    jmp near ptr 0046D838h"
-"	      0046d838    mov eax,[ebp-70h]"
+"	      0046d838    mov eax,this"
 "	      0046d83b    cmp dword ptr [eax+18h],0"
 "	      0046d83f    je near ptr 0046D8BBh"
-"	      0046d845    mov eax,[ebp-70h]"
+"	      0046d845    mov eax,this"
 "	      0046d848    cmp dword ptr [eax+14h],1"
 "	      0046d84c    jne near ptr 0046D865h"
 "	      0046d852    call dword ptr ds:[6C3908h]"
 "	      0046d858    mov [ebp-3Ch],eax"
 "	      0046d85b    jmp near ptr 0046D8A9h"
 "	      0046d860    jmp near ptr 0046D8A9h"
-"	      0046d865    mov eax,[ebp-70h]"
+"	      0046d865    mov eax,this"
 "	      0046d868    cmp dword ptr [eax+14h],0"
 "	      0046d86c    jne near ptr 0046D892h"
 "	      0046d872    lea eax,[ebp-38h]"
@@ -2475,18 +2475,18 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046d8a1    mov [ebp-3Ch],eax"
 "	      0046d8a4    jmp near ptr 0046D8A9h"
 "	      0046d8a9    mov eax,[ebp-3Ch]"
-"	      0046d8ac    mov ecx,[ebp-70h]"
+"	      0046d8ac    mov ecx,this"
 "	      0046d8af    sub eax,[ecx+18h]"
 "	      0046d8b2    mov [ebp-28h],eax"
 "	      0046d8b5    mov eax,[ebp-28h]"
 "	      0046d8b8    add [ebp-2Ch],eax"
-"	      0046d8bb    mov eax,[ebp-70h]"
+"	      0046d8bb    mov eax,this"
 "	      0046d8be    cmp dword ptr [eax+14h],0"
 "	      0046d8c2    jne near ptr 0046D902h"
-"	      0046d8c8    mov eax,[ebp-70h]"
+"	      0046d8c8    mov eax,this"
 "	      0046d8cb    cmp dword ptr [eax+20h],0"
 "	      0046d8cf    je near ptr 0046D902h"
-"	      0046d8d5    mov eax,[ebp-70h]"
+"	      0046d8d5    mov eax,this"
 "	      0046d8d8    mov eax,[eax+20h]"
 "	      0046d8db    push eax"
 "	      0046d8dc    push 0F4240h"
@@ -2494,42 +2494,42 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046d8e4    push eax"
 "	      0046d8e5    call dword ptr ds:[6C372Ch]"
 "	      0046d8eb    mov [ebp-2Ch],eax"
-"	      0046d8ee    mov eax,[ebp-70h]"
+"	      0046d8ee    mov eax,this"
 "	      0046d8f1    mov ecx,[ebp-2Ch]"
 "	      0046d8f4    cmp [eax+44h],ecx"
 "	      0046d8f7    jae near ptr 0046DBEEh"
 "	      0046d8fd    jmp near ptr 0046D925h"
-"	      0046d902    mov eax,[ebp-70h]"
+"	      0046d902    mov eax,this"
 "	      0046d905    mov ecx,[ebp-2Ch]"
 "	      0046d908    cmp [eax+44h],ecx"
 "	      0046d90b    jae near ptr 0046DBEEh"
 "	      0046d911    jmp near ptr 0046D925h"
-"	      0046d916    mov eax,[ebp-70h]"
+"	      0046d916    mov eax,this"
 "	      0046d919    mov ecx,[ebp-40h]"
 "	      0046d91c    cmp [eax+44h],ecx"
 "	      0046d91f    jae near ptr 0046DBEEh"
 );
 // LINE 331:
 	asm( 
-"	      0046d925    mov dword ptr [ebp-14h],0"
+"	      0046d925    mov i,0"
 "	      0046d92c    jmp near ptr 0046D934h"
-"	      0046d931    inc dword ptr [ebp-14h]"
-"	      0046d934    mov eax,[ebp-70h]"
+"	      0046d931    inc i"
+"	      0046d934    mov eax,this"
 "	      0046d937    mov eax,[eax+48h]"
 "	      0046d93a    dec eax"
-"	      0046d93b    cmp eax,[ebp-14h]"
+"	      0046d93b    cmp eax,i"
 "	      0046d93e    jle near ptr 0046DB2Fh"
 );
 // LINE 332:
 	asm( 
-"	      0046d944    mov eax,[ebp-14h]"
+"	      0046d944    mov eax,i"
 "	      0046d947    lea eax,[eax*8+8]"
-"	      0046d94e    mov ecx,[ebp-70h]"
+"	      0046d94e    mov ecx,this"
 "	      0046d951    add eax,[ecx+10h]"
 "	      0046d954    mov [ebp-68h],eax"
-"	      0046d957    mov eax,[ebp-70h]"
+"	      0046d957    mov eax,this"
 "	      0046d95a    mov eax,[eax+10h]"
-"	      0046d95d    mov ecx,[ebp-14h]"
+"	      0046d95d    mov ecx,i"
 "	      0046d960    lea eax,[eax+ecx*8]"
 "	      0046d963    mov [ebp-6Ch],eax"
 "	      0046d966    mov eax,[ebp-68h]"
@@ -2660,12 +2660,12 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 );
 // LINE 333:
 	asm( 
-"	      0046db2f    mov eax,[ebp-70h]"
+"	      0046db2f    mov eax,this"
 "	      0046db32    dec dword ptr [eax+48h]"
 );
 // LINE 334:
 	asm( 
-"	      0046db35    mov eax,[ebp-70h]"
+"	      0046db35    mov eax,this"
 "	      0046db38    cmp dword ptr [eax+48h],0"
 "	      0046db3c    jg near ptr 0046DB47h"
 );
@@ -2675,25 +2675,25 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 );
 // LINE 336:
 	asm( 
-"	      0046db47    mov eax,[ebp-70h]"
+"	      0046db47    mov eax,this"
 "	      0046db4a    mov dword ptr [eax+1Ch],0"
-"	      0046db51    mov eax,[ebp-70h]"
+"	      0046db51    mov eax,this"
 "	      0046db54    mov dword ptr [eax+18h],0"
 "	      0046db5b    jmp near ptr 0046DB60h"
 "	      0046db60    jmp near ptr 0046DB65h"
-"	      0046db65    mov eax,[ebp-70h]"
+"	      0046db65    mov eax,this"
 "	      0046db68    cmp dword ptr [eax+18h],0"
 "	      0046db6c    je near ptr 0046DB77h"
 "	      0046db72    jmp near ptr 0046DBE9h"
-"	      0046db77    mov eax,[ebp-70h]"
+"	      0046db77    mov eax,this"
 "	      0046db7a    cmp dword ptr [eax+14h],1"
 "	      0046db7e    jne near ptr 0046DB9Ah"
 "	      0046db84    call dword ptr ds:[6C3908h]"
-"	      0046db8a    mov ecx,[ebp-70h]"
+"	      0046db8a    mov ecx,this"
 "	      0046db8d    mov [ecx+18h],eax"
 "	      0046db90    jmp near ptr 0046DBE4h"
 "	      0046db95    jmp near ptr 0046DBE4h"
-"	      0046db9a    mov eax,[ebp-70h]"
+"	      0046db9a    mov eax,this"
 "	      0046db9d    cmp dword ptr [eax+14h],0"
 "	      0046dba1    jne near ptr 0046DBCAh"
 "	      0046dba7    lea eax,[ebp-20h]"
@@ -2702,7 +2702,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046dbb1    mov eax,[ebp-20h]"
 "	      0046dbb4    mov [ebp-18h],eax"
 "	      0046dbb7    mov eax,[ebp-18h]"
-"	      0046dbba    mov ecx,[ebp-70h]"
+"	      0046dbba    mov ecx,this"
 "	      0046dbbd    mov [ecx+18h],eax"
 "	      0046dbc0    jmp near ptr 0046DBE4h"
 "	      0046dbc5    jmp near ptr 0046DBE4h"
@@ -2710,7 +2710,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046dbd0    mov ecx,3E8h"
 "	      0046dbd5    sub edx,edx"
 "	      0046dbd7    div ecx"
-"	      0046dbd9    mov ecx,[ebp-70h]"
+"	      0046dbd9    mov ecx,this"
 "	      0046dbdc    mov [ecx+18h],eax"
 "	      0046dbdf    jmp near ptr 0046DBE4h"
 "	      0046dbe4    jmp near ptr 0046DBE9h"
@@ -2718,39 +2718,39 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 );
 // LINE 339:
 	asm( 
-"	      0046dbee    mov eax,[ebp-70h]"
+"	      0046dbee    mov eax,this"
 "	      0046dbf1    mov eax,[eax+4]"
-"	      0046dbf4    mov [ebp-10h],eax"
+"	      0046dbf4    mov rectCurrentMessage.left,eax"
 );
 // LINE 340:
 	asm( 
-"	      0046dbf7    mov eax,[ebp-70h]"
+"	      0046dbf7    mov eax,this"
 "	      0046dbfa    mov eax,[eax+8]"
-"	      0046dbfd    mov [ebp-0Ch],eax"
+"	      0046dbfd    mov rectCurrentMessage.top,eax"
 );
 // LINE 341:
 	asm( 
-"	      0046dc00    mov dword ptr [ebp-8],3E8h"
+"	      0046dc00    mov rectCurrentMessage.right,3E8h"
 );
 // LINE 342:
 	asm( 
-"	      0046dc07    mov dword ptr [ebp-4],3E8h"
+"	      0046dc07    mov rectCurrentMessage.bottom,3E8h"
 );
 // LINE 343:
 	asm( 
-"	      0046dc0e    mov eax,[ebp-70h]"
+"	      0046dc0e    mov eax,this"
 "	      0046dc11    mov eax,[eax+50h]"
-"	      0046dc14    mov ecx,[ebp+8]"
+"	      0046dc14    mov ecx,bufferDestination"
 "	      0046dc17    mov [ecx+38h],eax"
 "	      0046dc1a    jmp near ptr 0046DC1Fh"
 );
 // LINE 345:
 	asm( 
-"	      0046dc1f    mov dword ptr [ebp-14h],0"
+"	      0046dc1f    mov i,0"
 "	      0046dc26    jmp near ptr 0046DC2Eh"
-"	      0046dc2b    inc dword ptr [ebp-14h]"
-"	      0046dc2e    mov eax,[ebp-70h]"
-"	      0046dc31    mov ecx,[ebp-14h]"
+"	      0046dc2b    inc i"
+"	      0046dc2e    mov eax,this"
+"	      0046dc31    mov ecx,i"
 "	      0046dc34    cmp [eax+48h],ecx"
 "	      0046dc37    jle near ptr 0046DCC1h"
 );
@@ -2758,15 +2758,15 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	asm( 
 "	      0046dc3d    jmp near ptr 0046DC42h"
 "	      0046dc42    jmp near ptr 0046DC47h"
-"	      0046dc47    mov eax,[ebp-70h]"
+"	      0046dc47    mov eax,this"
 "	      0046dc4a    mov eax,[eax+10h]"
-"	      0046dc4d    mov ecx,[ebp-14h]"
+"	      0046dc4d    mov ecx,i"
 "	      0046dc50    mov eax,[eax+ecx*8+4]"
 "	      0046dc54    cmp dword ptr [eax+4],0"
 "	      0046dc58    je near ptr 0046DC7Ah"
-"	      0046dc5e    mov eax,[ebp-70h]"
+"	      0046dc5e    mov eax,this"
 "	      0046dc61    mov eax,[eax+10h]"
-"	      0046dc64    mov ecx,[ebp-14h]"
+"	      0046dc64    mov ecx,i"
 "	      0046dc67    mov eax,[eax+ecx*8+4]"
 "	      0046dc6b    mov eax,[eax]"
 "	      0046dc6d    mov [ebp-24h],eax"
@@ -2774,30 +2774,30 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 "	      0046dc75    jmp near ptr 0046DC86h"
 "	      0046dc7a    mov dword ptr [ebp-24h],0"
 "	      0046dc81    jmp near ptr 0046DC86h"
-"	      0046dc86    mov eax,[ebp-70h]"
+"	      0046dc86    mov eax,this"
 "	      0046dc89    add eax,24h"
 "	      0046dc8c    push eax"
-"	      0046dc8d    lea eax,[ebp-10h]"
+"	      0046dc8d    lea eax,rectCurrentMessage.left"
 "	      0046dc90    push eax"
 "	      0046dc91    push 0"
-"	      0046dc93    mov eax,[ebp-70h]"
+"	      0046dc93    mov eax,this"
 "	      0046dc96    mov eax,[eax+10h]"
-"	      0046dc99    mov ecx,[ebp-14h]"
+"	      0046dc99    mov ecx,i"
 "	      0046dc9c    mov eax,[eax+ecx*8+4]"
 "	      0046dca0    mov eax,[eax+4]"
 "	      0046dca3    push eax"
 "	      0046dca4    mov eax,[ebp-24h]"
 "	      0046dca7    push eax"
-"	      0046dca8    mov eax,[ebp+8]"
+"	      0046dca8    mov eax,bufferDestination"
 "	      0046dcab    mov eax,[eax]"
-"	      0046dcad    mov ecx,[ebp+8]"
+"	      0046dcad    mov ecx,bufferDestination"
 "	      0046dcb0    call dword ptr [eax+48h]"
 );
 // LINE 348:
 	asm( 
-"	      0046dcb3    mov eax,[ebp-70h]"
+"	      0046dcb3    mov eax,this"
 "	      0046dcb6    mov eax,[eax+40h]"
-"	      0046dcb9    add [ebp-0Ch],eax"
+"	      0046dcb9    add rectCurrentMessage.top,eax"
 );
 // LINE 349:
 	asm( 
@@ -2826,11 +2826,11 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046dcd6    push ebx"
 "	      0046dcd7    push esi"
 "	      0046dcd8    push edi"
-"	      0046dcd9    mov [ebp-88h],ecx"
+"	      0046dcd9    mov this,ecx"
 );
 // LINE 359:
 	asm( 
-"	      0046dcdf    mov eax,[ebp-88h]"
+"	      0046dcdf    mov eax,this"
 "	      0046dce5    cmp dword ptr [eax+0Ch],0"
 "	      0046dce9    jg near ptr 0046DCF4h"
 );
@@ -2840,33 +2840,33 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 );
 // LINE 362:
 	asm( 
-"	      0046dcf4    mov eax,[ebp-88h]"
-"	      0046dcfa    mov ecx,[ebp-88h]"
+"	      0046dcf4    mov eax,this"
+"	      0046dcfa    mov ecx,this"
 "	      0046dd00    mov ecx,[ecx+0Ch]"
 "	      0046dd03    cmp [eax+48h],ecx"
 "	      0046dd06    jl near ptr 0046E036h"
 );
 // LINE 363:
 	asm( 
-"	      0046dd0c    mov dword ptr [ebp-4],0"
+"	      0046dd0c    mov i,0"
 "	      0046dd13    jmp near ptr 0046DD1Bh"
-"	      0046dd18    inc dword ptr [ebp-4]"
-"	      0046dd1b    mov eax,[ebp-88h]"
+"	      0046dd18    inc i"
+"	      0046dd1b    mov eax,this"
 "	      0046dd21    mov eax,[eax+0Ch]"
 "	      0046dd24    dec eax"
-"	      0046dd25    cmp eax,[ebp-4]"
+"	      0046dd25    cmp eax,i"
 "	      0046dd28    jle near ptr 0046DE45h"
 );
 // LINE 364:
 	asm( 
-"	      0046dd2e    mov eax,[ebp-4]"
+"	      0046dd2e    mov eax,i"
 "	      0046dd31    lea eax,[eax*8+8]"
-"	      0046dd38    mov ecx,[ebp-88h]"
+"	      0046dd38    mov ecx,this"
 "	      0046dd3e    add eax,[ecx+10h]"
 "	      0046dd41    mov [ebp-80h],eax"
-"	      0046dd44    mov eax,[ebp-88h]"
+"	      0046dd44    mov eax,this"
 "	      0046dd4a    mov eax,[eax+10h]"
-"	      0046dd4d    mov ecx,[ebp-4]"
+"	      0046dd4d    mov ecx,i"
 "	      0046dd50    lea eax,[eax+ecx*8]"
 "	      0046dd53    mov [ebp-84h],eax"
 "	      0046dd59    mov eax,[ebp-80h]"
@@ -2927,16 +2927,16 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046de34    mov dword ptr [eax+4],0"
 "	      0046de3b    jmp near ptr 0046DE40h"
 "	      0046de40    jmp near ptr 0046DD18h"
-"	      0046de45    mov eax,[ebp-88h]"
+"	      0046de45    mov eax,this"
 "	      0046de4b    mov eax,[eax+10h]"
-"	      0046de4e    mov ecx,[ebp-4]"
+"	      0046de4e    mov ecx,i"
 "	      0046de51    lea eax,[eax+ecx*8]"
 "	      0046de54    mov [ebp-38h],eax"
 );
 // LINE 365:
 	asm( 
 "	      0046de57    jmp near ptr 0046DE5Ch"
-"	      0046de5c    mov eax,[ebp+8]"
+"	      0046de5c    mov eax,szNewMessage"
 "	      0046de5f    push eax"
 "	      0046de60    call 0056ABE0h"
 "	      0046de65    add esp,4"
@@ -2977,7 +2977,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046deee    je near ptr 0046DF0Ch"
 "	      0046def4    mov eax,[ebp-34h]"
 "	      0046def7    push eax"
-"	      0046def8    mov eax,[ebp+8]"
+"	      0046def8    mov eax,szNewMessage"
 "	      0046defb    push eax"
 "	      0046defc    mov ecx,[ebp-28h]"
 "	      0046deff    call 0041E090h"
@@ -2999,7 +2999,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046df40    mov [ebp-2Ch],eax"
 "	      0046df43    mov eax,[ebp-34h]"
 "	      0046df46    push eax"
-"	      0046df47    mov eax,[ebp+8]"
+"	      0046df47    mov eax,szNewMessage"
 "	      0046df4a    push eax"
 "	      0046df4b    mov eax,[ebp-2Ch]"
 "	      0046df4e    push eax"
@@ -3015,25 +3015,25 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 );
 // LINE 366:
 	asm( 
-"	      0046df72    mov eax,[ebp-88h]"
+"	      0046df72    mov eax,this"
 "	      0046df78    mov dword ptr [eax+1Ch],0"
-"	      0046df7f    mov eax,[ebp-88h]"
+"	      0046df7f    mov eax,this"
 "	      0046df85    mov dword ptr [eax+18h],0"
 "	      0046df8c    jmp near ptr 0046DF91h"
 "	      0046df91    jmp near ptr 0046DF96h"
-"	      0046df96    mov eax,[ebp-88h]"
+"	      0046df96    mov eax,this"
 "	      0046df9c    cmp dword ptr [eax+18h],0"
 "	      0046dfa0    je near ptr 0046DFABh"
 "	      0046dfa6    jmp near ptr 0046E02Ch"
-"	      0046dfab    mov eax,[ebp-88h]"
+"	      0046dfab    mov eax,this"
 "	      0046dfb1    cmp dword ptr [eax+14h],1"
 "	      0046dfb5    jne near ptr 0046DFD4h"
 "	      0046dfbb    call dword ptr ds:[6C3908h]"
-"	      0046dfc1    mov ecx,[ebp-88h]"
+"	      0046dfc1    mov ecx,this"
 "	      0046dfc7    mov [ecx+18h],eax"
 "	      0046dfca    jmp near ptr 0046E027h"
 "	      0046dfcf    jmp near ptr 0046E027h"
-"	      0046dfd4    mov eax,[ebp-88h]"
+"	      0046dfd4    mov eax,this"
 "	      0046dfda    cmp dword ptr [eax+14h],0"
 "	      0046dfde    jne near ptr 0046E00Ah"
 "	      0046dfe4    lea eax,[ebp-14h]"
@@ -3042,7 +3042,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046dfee    mov eax,[ebp-14h]"
 "	      0046dff1    mov [ebp-0Ch],eax"
 "	      0046dff4    mov eax,[ebp-0Ch]"
-"	      0046dff7    mov ecx,[ebp-88h]"
+"	      0046dff7    mov ecx,this"
 "	      0046dffd    mov [ecx+18h],eax"
 "	      0046e000    jmp near ptr 0046E027h"
 "	      0046e005    jmp near ptr 0046E027h"
@@ -3050,7 +3050,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e010    mov ecx,3E8h"
 "	      0046e015    sub edx,edx"
 "	      0046e017    div ecx"
-"	      0046e019    mov ecx,[ebp-88h]"
+"	      0046e019    mov ecx,this"
 "	      0046e01f    mov [ecx+18h],eax"
 "	      0046e022    jmp near ptr 0046E027h"
 "	      0046e027    jmp near ptr 0046E02Ch"
@@ -3059,17 +3059,17 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 // LINE 368:
 	asm( 
 "	      0046e031    jmp near ptr 0046E3BEh"
-"	      0046e036    mov eax,[ebp-88h]"
+"	      0046e036    mov eax,this"
 "	      0046e03c    cmp dword ptr [eax+48h],0"
 "	      0046e040    jg near ptr 0046E23Eh"
-"	      0046e046    mov eax,[ebp-88h]"
+"	      0046e046    mov eax,this"
 "	      0046e04c    mov eax,[eax+10h]"
 "	      0046e04f    mov [ebp-50h],eax"
 );
 // LINE 369:
 	asm( 
 "	      0046e052    jmp near ptr 0046E057h"
-"	      0046e057    mov eax,[ebp+8]"
+"	      0046e057    mov eax,szNewMessage"
 "	      0046e05a    push eax"
 "	      0046e05b    call 0056ABE0h"
 "	      0046e060    add esp,4"
@@ -3110,7 +3110,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e0e9    je near ptr 0046E107h"
 "	      0046e0ef    mov eax,[ebp-4Ch]"
 "	      0046e0f2    push eax"
-"	      0046e0f3    mov eax,[ebp+8]"
+"	      0046e0f3    mov eax,szNewMessage"
 "	      0046e0f6    push eax"
 "	      0046e0f7    mov ecx,[ebp-40h]"
 "	      0046e0fa    call 0041E090h"
@@ -3132,7 +3132,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e13b    mov [ebp-44h],eax"
 "	      0046e13e    mov eax,[ebp-4Ch]"
 "	      0046e141    push eax"
-"	      0046e142    mov eax,[ebp+8]"
+"	      0046e142    mov eax,szNewMessage"
 "	      0046e145    push eax"
 "	      0046e146    mov eax,[ebp-44h]"
 "	      0046e149    push eax"
@@ -3148,30 +3148,30 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 );
 // LINE 370:
 	asm( 
-"	      0046e16d    mov eax,[ebp-88h]"
+"	      0046e16d    mov eax,this"
 "	      0046e173    mov dword ptr [eax+48h],1"
 );
 // LINE 371:
 	asm( 
-"	      0046e17a    mov eax,[ebp-88h]"
+"	      0046e17a    mov eax,this"
 "	      0046e180    mov dword ptr [eax+1Ch],0"
-"	      0046e187    mov eax,[ebp-88h]"
+"	      0046e187    mov eax,this"
 "	      0046e18d    mov dword ptr [eax+18h],0"
 "	      0046e194    jmp near ptr 0046E199h"
 "	      0046e199    jmp near ptr 0046E19Eh"
-"	      0046e19e    mov eax,[ebp-88h]"
+"	      0046e19e    mov eax,this"
 "	      0046e1a4    cmp dword ptr [eax+18h],0"
 "	      0046e1a8    je near ptr 0046E1B3h"
 "	      0046e1ae    jmp near ptr 0046E234h"
-"	      0046e1b3    mov eax,[ebp-88h]"
+"	      0046e1b3    mov eax,this"
 "	      0046e1b9    cmp dword ptr [eax+14h],1"
 "	      0046e1bd    jne near ptr 0046E1DCh"
 "	      0046e1c3    call dword ptr ds:[6C3908h]"
-"	      0046e1c9    mov ecx,[ebp-88h]"
+"	      0046e1c9    mov ecx,this"
 "	      0046e1cf    mov [ecx+18h],eax"
 "	      0046e1d2    jmp near ptr 0046E22Fh"
 "	      0046e1d7    jmp near ptr 0046E22Fh"
-"	      0046e1dc    mov eax,[ebp-88h]"
+"	      0046e1dc    mov eax,this"
 "	      0046e1e2    cmp dword ptr [eax+14h],0"
 "	      0046e1e6    jne near ptr 0046E212h"
 "	      0046e1ec    lea eax,[ebp-20h]"
@@ -3180,7 +3180,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e1f6    mov eax,[ebp-20h]"
 "	      0046e1f9    mov [ebp-18h],eax"
 "	      0046e1fc    mov eax,[ebp-18h]"
-"	      0046e1ff    mov ecx,[ebp-88h]"
+"	      0046e1ff    mov ecx,this"
 "	      0046e205    mov [ecx+18h],eax"
 "	      0046e208    jmp near ptr 0046E22Fh"
 "	      0046e20d    jmp near ptr 0046E22Fh"
@@ -3188,7 +3188,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e218    mov ecx,3E8h"
 "	      0046e21d    sub edx,edx"
 "	      0046e21f    div ecx"
-"	      0046e221    mov ecx,[ebp-88h]"
+"	      0046e221    mov ecx,this"
 "	      0046e227    mov [ecx+18h],eax"
 "	      0046e22a    jmp near ptr 0046E22Fh"
 "	      0046e22f    jmp near ptr 0046E234h"
@@ -3200,18 +3200,18 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 );
 // LINE 374:
 	asm( 
-"	      0046e23e    mov eax,[ebp-88h]"
+"	      0046e23e    mov eax,this"
 "	      0046e244    mov eax,[eax+48h]"
 "	      0046e247    mov [ebp-8],eax"
-"	      0046e24a    mov eax,[ebp-88h]"
+"	      0046e24a    mov eax,this"
 "	      0046e250    inc dword ptr [eax+48h]"
-"	      0046e253    mov eax,[ebp-88h]"
+"	      0046e253    mov eax,this"
 "	      0046e259    mov eax,[eax+10h]"
 "	      0046e25c    mov ecx,[ebp-8]"
 "	      0046e25f    lea eax,[eax+ecx*8]"
 "	      0046e262    mov [ebp-70h],eax"
 "	      0046e265    jmp near ptr 0046E26Ah"
-"	      0046e26a    mov eax,[ebp+8]"
+"	      0046e26a    mov eax,szNewMessage"
 "	      0046e26d    push eax"
 "	      0046e26e    call 0056ABE0h"
 "	      0046e273    add esp,4"
@@ -3252,7 +3252,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e2fc    je near ptr 0046E31Ah"
 "	      0046e302    mov eax,[ebp-6Ch]"
 "	      0046e305    push eax"
-"	      0046e306    mov eax,[ebp+8]"
+"	      0046e306    mov eax,szNewMessage"
 "	      0046e309    push eax"
 "	      0046e30a    mov ecx,[ebp-58h]"
 "	      0046e30d    call 0041E090h"
@@ -3291,7 +3291,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 "	      0046e38c    mov [ebp-5Ch],eax"
 "	      0046e38f    mov eax,[ebp-6Ch]"
 "	      0046e392    push eax"
-"	      0046e393    mov eax,[ebp+8]"
+"	      0046e393    mov eax,szNewMessage"
 "	      0046e396    push eax"
 "	      0046e397    mov eax,[ebp-5Ch]"
 "	      0046e39a    push eax"
@@ -3326,14 +3326,14 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 "	      0046e3d0    push ebx"
 "	      0046e3d1    push esi"
 "	      0046e3d2    push edi"
-"	      0046e3d3    mov [ebp-24h],ecx"
+"	      0046e3d3    mov this,ecx"
 );
 // LINE 383:
 	asm( 
-"	      0046e3d6    mov eax,[ebp+8]"
+"	      0046e3d6    mov eax,sNewMessage"
 "	      0046e3d9    cmp dword ptr [eax],0"
 "	      0046e3dc    je near ptr 0046E3FCh"
-"	      0046e3e2    mov eax,[ebp+8]"
+"	      0046e3e2    mov eax,sNewMessage"
 "	      0046e3e5    mov eax,[eax]"
 "	      0046e3e7    mov [ebp-4],eax"
 "	      0046e3ea    mov eax,[ebp-4]"
@@ -3343,27 +3343,27 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 "	      0046e3f4    call 0056A740h"
 "	      0046e3f9    add esp,4"
 "	      0046e3fc    jmp near ptr 0046E401h"
-"	      0046e401    mov eax,[ebp+8]"
+"	      0046e401    mov eax,sNewMessage"
 "	      0046e404    mov eax,[eax+4]"
 "	      0046e407    mov eax,[eax+4]"
 "	      0046e40a    inc eax"
 "	      0046e40b    push eax"
 "	      0046e40c    call 0056A600h"
 "	      0046e411    add esp,4"
-"	      0046e414    mov ecx,[ebp+8]"
+"	      0046e414    mov ecx,sNewMessage"
 "	      0046e417    mov [ecx],eax"
 "	      0046e419    jmp near ptr 0046E41Eh"
-"	      0046e41e    mov eax,[ebp+8]"
+"	      0046e41e    mov eax,sNewMessage"
 "	      0046e421    mov eax,[eax+4]"
 "	      0046e424    cmp dword ptr [eax+4],0"
 "	      0046e428    je near ptr 0046E496h"
 "	      0046e42e    jmp near ptr 0046E433h"
 "	      0046e433    jmp near ptr 0046E438h"
-"	      0046e438    mov eax,[ebp+8]"
+"	      0046e438    mov eax,sNewMessage"
 "	      0046e43b    mov eax,[eax+4]"
 "	      0046e43e    cmp dword ptr [eax+4],0"
 "	      0046e442    je near ptr 0046E45Dh"
-"	      0046e448    mov eax,[ebp+8]"
+"	      0046e448    mov eax,sNewMessage"
 "	      0046e44b    mov eax,[eax+4]"
 "	      0046e44e    mov eax,[eax]"
 "	      0046e450    mov [ebp-18h],eax"
@@ -3371,11 +3371,11 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 "	      0046e458    jmp near ptr 0046E469h"
 "	      0046e45d    mov dword ptr [ebp-18h],0"
 "	      0046e464    jmp near ptr 0046E469h"
-"	      0046e469    mov eax,[ebp+8]"
+"	      0046e469    mov eax,sNewMessage"
 "	      0046e46c    mov eax,[eax+4]"
 "	      0046e46f    mov eax,[eax+4]"
 "	      0046e472    mov [ebp-1Ch],eax"
-"	      0046e475    mov eax,[ebp+8]"
+"	      0046e475    mov eax,sNewMessage"
 "	      0046e478    mov eax,[eax]"
 "	      0046e47a    mov [ebp-20h],eax"
 "	      0046e47d    mov eax,[ebp-1Ch]"
@@ -3393,10 +3393,10 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 "	      0046e4a4    lea eax,[ebp-8]"
 "	      0046e4a7    mov [ebp-10h],eax"
 "	      0046e4aa    jmp near ptr 0046E4AFh"
-"	      0046e4af    mov eax,[ebp+8]"
+"	      0046e4af    mov eax,sNewMessage"
 "	      0046e4b2    mov eax,[eax+4]"
 "	      0046e4b5    mov eax,[eax+4]"
-"	      0046e4b8    mov ecx,[ebp+8]"
+"	      0046e4b8    mov ecx,sNewMessage"
 "	      0046e4bb    add eax,[ecx]"
 "	      0046e4bd    mov [ebp-14h],eax"
 "	      0046e4c0    mov eax,[ebp-10h]"
@@ -3405,12 +3405,12 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 "	      0046e4c8    mov [ecx],al"
 "	      0046e4ca    jmp near ptr 0046E4CFh"
 "	      0046e4cf    jmp near ptr 0046E4D4h"
-"	      0046e4d4    mov eax,[ebp+8]"
+"	      0046e4d4    mov eax,sNewMessage"
 "	      0046e4d7    mov eax,[eax]"
 "	      0046e4d9    push eax"
-"	      0046e4da    mov eax,[ebp-24h]"
+"	      0046e4da    mov eax,this"
 "	      0046e4dd    mov eax,[eax]"
-"	      0046e4df    mov ecx,[ebp-24h]"
+"	      0046e4df    mov ecx,this"
 "	      0046e4e2    call dword ptr [eax+0Ch]"
 );
 // LINE 384:

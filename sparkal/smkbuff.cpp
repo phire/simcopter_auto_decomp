@@ -15,98 +15,98 @@ void SmackerBuffer::SmackerBuffer() {
 "	      00497c06    push ebx"
 "	      00497c07    push esi"
 "	      00497c08    push edi"
-"	      00497c09    mov [ebp-4],ecx"
+"	      00497c09    mov this,ecx"
 "	      00497c0c    jmp near ptr 00497C11h"
-"	      00497c11    mov eax,[ebp-4]"
+"	      00497c11    mov eax,this"
 "	      00497c14    mov dword ptr [eax],591138h"
 );
 // LINE 40:
 	asm( 
-"	      00497c1a    mov eax,[ebp-4]"
+"	      00497c1a    mov eax,this"
 "	      00497c1d    mov dword ptr [eax+4],0"
 );
 // LINE 41:
 	asm( 
-"	      00497c24    mov eax,[ebp-4]"
+"	      00497c24    mov eax,this"
 "	      00497c27    mov dword ptr [eax+8],0"
 );
 // LINE 42:
 	asm( 
-"	      00497c2e    mov eax,[ebp-4]"
+"	      00497c2e    mov eax,this"
 "	      00497c31    mov dword ptr [eax+0Ch],0"
 );
 // LINE 43:
 	asm( 
-"	      00497c38    mov eax,[ebp-4]"
+"	      00497c38    mov eax,this"
 "	      00497c3b    mov dword ptr [eax+10h],0"
 );
 // LINE 44:
 	asm( 
-"	      00497c42    mov eax,[ebp-4]"
+"	      00497c42    mov eax,this"
 "	      00497c45    mov byte ptr [eax+14h],0"
-"	      00497c49    mov eax,[ebp-4]"
+"	      00497c49    mov eax,this"
 "	      00497c4c    mov al,[eax+14h]"
-"	      00497c4f    mov ecx,[ebp-4]"
+"	      00497c4f    mov ecx,this"
 "	      00497c52    mov [ecx+15h],al"
-"	      00497c55    mov eax,[ebp-4]"
+"	      00497c55    mov eax,this"
 "	      00497c58    mov al,[eax+15h]"
-"	      00497c5b    mov ecx,[ebp-4]"
+"	      00497c5b    mov ecx,this"
 "	      00497c5e    mov [ecx+16h],al"
 );
 // LINE 45:
 	asm( 
-"	      00497c61    mov eax,[ebp-4]"
+"	      00497c61    mov eax,this"
 "	      00497c64    mov dword ptr [eax+18h],0"
 );
 // LINE 46:
 	asm( 
-"	      00497c6b    mov eax,[ebp-4]"
+"	      00497c6b    mov eax,this"
 "	      00497c6e    mov dword ptr [eax+1Ch],0"
 );
 // LINE 47:
 	asm( 
-"	      00497c75    mov eax,[ebp-4]"
+"	      00497c75    mov eax,this"
 "	      00497c78    mov dword ptr [eax+20h],0"
 );
 // LINE 48:
 	asm( 
-"	      00497c7f    mov eax,[ebp-4]"
+"	      00497c7f    mov eax,this"
 "	      00497c82    mov dword ptr [eax+24h],0"
 );
 // LINE 49:
 	asm( 
-"	      00497c89    mov eax,[ebp-4]"
+"	      00497c89    mov eax,this"
 "	      00497c8c    mov dword ptr [eax+28h],0"
 );
 // LINE 50:
 	asm( 
-"	      00497c93    mov eax,[ebp-4]"
+"	      00497c93    mov eax,this"
 "	      00497c96    mov dword ptr [eax+2Ch],0"
 );
 // LINE 51:
 	asm( 
-"	      00497c9d    mov eax,[ebp-4]"
+"	      00497c9d    mov eax,this"
 "	      00497ca0    mov dword ptr [eax+30h],0"
 );
 // LINE 52:
 	asm( 
-"	      00497ca7    mov eax,[ebp-4]"
+"	      00497ca7    mov eax,this"
 "	      00497caa    mov dword ptr [eax+34h],0"
 );
 // LINE 53:
 	asm( 
-"	      00497cb1    mov eax,[ebp-4]"
+"	      00497cb1    mov eax,this"
 "	      00497cb4    mov dword ptr [eax+38h],0"
 );
 // LINE 54:
 	asm( 
-"	      00497cbb    mov eax,[ebp-4]"
+"	      00497cbb    mov eax,this"
 "	      00497cbe    mov byte ptr [eax+3Ch],0"
 );
 // LINE 55:
 	asm( 
 "	      00497cc2    jmp near ptr 00497CC7h"
-"	      00497cc7    mov eax,[ebp-4]"
+"	      00497cc7    mov eax,this"
 "	      00497cca    pop edi"
 "	      00497ccb    pop esi"
 "	      00497ccc    pop ebx"
@@ -125,88 +125,88 @@ void SmackerBuffer::SmackerBuffer(char * szNewFilePath, int32_t nNewDestWidth, i
 "	      00497cd5    push ebx"
 "	      00497cd6    push esi"
 "	      00497cd7    push edi"
-"	      00497cd8    mov [ebp-4],ecx"
+"	      00497cd8    mov this,ecx"
 "	      00497cdb    jmp near ptr 00497CE0h"
-"	      00497ce0    mov eax,[ebp-4]"
+"	      00497ce0    mov eax,this"
 "	      00497ce3    mov dword ptr [eax],591138h"
 );
 // LINE 63:
 	asm( 
-"	      00497ce9    mov eax,[ebp-4]"
+"	      00497ce9    mov eax,this"
 "	      00497cec    mov dword ptr [eax+4],0"
 );
 // LINE 64:
 	asm( 
-"	      00497cf3    mov eax,[ebp-4]"
+"	      00497cf3    mov eax,this"
 "	      00497cf6    mov dword ptr [eax+8],0"
 );
 // LINE 65:
 	asm( 
-"	      00497cfd    mov eax,[ebp-4]"
+"	      00497cfd    mov eax,this"
 "	      00497d00    mov dword ptr [eax+0Ch],0"
 );
 // LINE 66:
 	asm( 
-"	      00497d07    mov eax,[ebp-4]"
+"	      00497d07    mov eax,this"
 "	      00497d0a    mov dword ptr [eax+10h],0"
 );
 // LINE 67:
 	asm( 
-"	      00497d11    mov eax,[ebp-4]"
+"	      00497d11    mov eax,this"
 "	      00497d14    mov dword ptr [eax+18h],0"
 );
 // LINE 68:
 	asm( 
-"	      00497d1b    mov eax,[ebp-4]"
+"	      00497d1b    mov eax,this"
 "	      00497d1e    mov dword ptr [eax+34h],0"
 );
 // LINE 69:
 	asm( 
-"	      00497d25    mov eax,[ebp-4]"
+"	      00497d25    mov eax,this"
 "	      00497d28    mov dword ptr [eax+38h],0"
 );
 // LINE 70:
 	asm( 
-"	      00497d2f    mov eax,[ebp-4]"
+"	      00497d2f    mov eax,this"
 "	      00497d32    mov dword ptr [eax+1Ch],0"
 );
 // LINE 71:
 	asm( 
-"	      00497d39    mov eax,[ebp-4]"
+"	      00497d39    mov eax,this"
 "	      00497d3c    mov dword ptr [eax+20h],0"
 );
 // LINE 72:
 	asm( 
-"	      00497d43    mov eax,[ebp-4]"
+"	      00497d43    mov eax,this"
 "	      00497d46    mov dword ptr [eax+24h],0"
 );
 // LINE 73:
 	asm( 
-"	      00497d4d    mov eax,[ebp-4]"
+"	      00497d4d    mov eax,this"
 "	      00497d50    mov dword ptr [eax+28h],0"
 );
 // LINE 74:
 	asm( 
-"	      00497d57    mov eax,[ebp+0Ch]"
-"	      00497d5a    mov ecx,[ebp-4]"
+"	      00497d57    mov eax,nNewDestWidth"
+"	      00497d5a    mov ecx,this"
 "	      00497d5d    mov [ecx+2Ch],eax"
 );
 // LINE 75:
 	asm( 
-"	      00497d60    mov eax,[ebp+10h]"
-"	      00497d63    mov ecx,[ebp-4]"
+"	      00497d60    mov eax,nNewDestHeight"
+"	      00497d63    mov ecx,this"
 "	      00497d66    mov [ecx+30h],eax"
 );
 // LINE 77:
 	asm( 
-"	      00497d69    cmp dword ptr [ebp+8],0"
+"	      00497d69    cmp szNewFilePath,0"
 "	      00497d6d    je near ptr 00497D8Bh"
 );
 // LINE 78:
 	asm( 
-"	      00497d73    mov eax,[ebp+8]"
+"	      00497d73    mov eax,szNewFilePath"
 "	      00497d76    push eax"
-"	      00497d77    mov eax,[ebp-4]"
+"	      00497d77    mov eax,this"
 "	      00497d7a    add eax,3Ch"
 "	      00497d7d    push eax"
 "	      00497d7e    call 0056CEB0h"
@@ -218,13 +218,13 @@ void SmackerBuffer::SmackerBuffer(char * szNewFilePath, int32_t nNewDestWidth, i
 );
 // LINE 80:
 	asm( 
-"	      00497d8b    mov eax,[ebp-4]"
+"	      00497d8b    mov eax,this"
 "	      00497d8e    mov byte ptr [eax+3Ch],0"
 );
 // LINE 81:
 	asm( 
 "	      00497d92    jmp near ptr 00497D97h"
-"	      00497d97    mov eax,[ebp-4]"
+"	      00497d97    mov eax,this"
 "	      00497d9a    pop edi"
 "	      00497d9b    pop esi"
 "	      00497d9c    pop ebx"
@@ -243,13 +243,13 @@ void SmackerBuffer::~SmackerBuffer() {
 "	      00497da7    push ebx"
 "	      00497da8    push esi"
 "	      00497da9    push edi"
-"	      00497daa    mov [ebp-4],ecx"
-"	      00497dad    mov eax,[ebp-4]"
+"	      00497daa    mov this,ecx"
+"	      00497dad    mov eax,this"
 "	      00497db0    mov dword ptr [eax],591138h"
 );
 // LINE 90:
 	asm( 
-"	      00497db6    mov ecx,[ebp-4]"
+"	      00497db6    mov ecx,this"
 "	      00497db9    call 00497F91h"
 );
 // LINE 91:
@@ -273,13 +273,13 @@ int32_t SmackerBuffer::Initialize() {
 "	      00497dce    push ebx"
 "	      00497dcf    push esi"
 "	      00497dd0    push edi"
-"	      00497dd1    mov [ebp-4],ecx"
+"	      00497dd1    mov this,ecx"
 );
 // LINE 106:
 	asm( 
-"	      00497dd4    mov eax,[ebp-4]"
+"	      00497dd4    mov eax,this"
 "	      00497dd7    mov eax,[eax]"
-"	      00497dd9    mov ecx,[ebp-4]"
+"	      00497dd9    mov ecx,this"
 "	      00497ddc    call dword ptr [eax+8]"
 "	      00497ddf    jmp near ptr 00497DE4h"
 );
@@ -303,17 +303,17 @@ int32_t SmackerBuffer::SetPalette() {
 "	      00497def    push ebx"
 "	      00497df0    push esi"
 "	      00497df1    push edi"
-"	      00497df2    mov [ebp-4],ecx"
+"	      00497df2    mov this,ecx"
 );
 // LINE 115:
 	asm( 
-"	      00497df5    mov eax,[ebp-4]"
+"	      00497df5    mov eax,this"
 "	      00497df8    cmp dword ptr [eax+34h],0"
 "	      00497dfc    je near ptr 00497E19h"
 );
 // LINE 116:
 	asm( 
-"	      00497e02    mov eax,[ebp-4]"
+"	      00497e02    mov eax,this"
 "	      00497e05    mov eax,[eax+34h]"
 "	      00497e08    push eax"
 "	      00497e09    call 004C4618h"
@@ -346,11 +346,11 @@ int32_t SmackerBuffer::CreateSurface() {
 "	      00497e2b    push ebx"
 "	      00497e2c    push esi"
 "	      00497e2d    push edi"
-"	      00497e2e    mov [ebp-4],ecx"
+"	      00497e2e    mov this,ecx"
 );
 // LINE 132:
 	asm( 
-"	      00497e31    mov eax,[ebp-4]"
+"	      00497e31    mov eax,this"
 "	      00497e34    cmp dword ptr [eax+34h],0"
 "	      00497e38    je near ptr 00497E48h"
 );
@@ -361,7 +361,7 @@ int32_t SmackerBuffer::CreateSurface() {
 );
 // LINE 134:
 	asm( 
-"	      00497e48    mov eax,[ebp-4]"
+"	      00497e48    mov eax,this"
 "	      00497e4b    cmp dword ptr [eax+38h],0"
 "	      00497e4f    jne near ptr 00497E5Ch"
 );
@@ -372,32 +372,32 @@ int32_t SmackerBuffer::CreateSurface() {
 );
 // LINE 137:
 	asm( 
-"	      00497e5c    mov eax,[ebp-4]"
+"	      00497e5c    mov eax,this"
 "	      00497e5f    mov eax,[eax+30h]"
 "	      00497e62    push eax"
-"	      00497e63    mov eax,[ebp-4]"
+"	      00497e63    mov eax,this"
 "	      00497e66    mov eax,[eax+2Ch]"
 "	      00497e69    push eax"
-"	      00497e6a    mov eax,[ebp-4]"
+"	      00497e6a    mov eax,this"
 "	      00497e6d    mov eax,[eax+38h]"
 "	      00497e70    mov eax,[eax+8]"
 "	      00497e73    push eax"
-"	      00497e74    mov eax,[ebp-4]"
+"	      00497e74    mov eax,this"
 "	      00497e77    mov eax,[eax+38h]"
 "	      00497e7a    mov eax,[eax+4]"
 "	      00497e7d    push eax"
 "	      00497e7e    push 0"
-"	      00497e80    mov eax,[ebp-4]"
+"	      00497e80    mov eax,this"
 "	      00497e83    mov eax,[eax+18h]"
 "	      00497e86    push eax"
 "	      00497e87    call 004C4624h"
 "	      00497e8c    add esp,18h"
-"	      00497e8f    mov ecx,[ebp-4]"
+"	      00497e8f    mov ecx,this"
 "	      00497e92    mov [ecx+34h],eax"
 );
 // LINE 138:
 	asm( 
-"	      00497e95    mov eax,[ebp-4]"
+"	      00497e95    mov eax,this"
 "	      00497e98    cmp dword ptr [eax+34h],0"
 "	      00497e9c    jne near ptr 00497EA9h"
 );
@@ -408,25 +408,25 @@ int32_t SmackerBuffer::CreateSurface() {
 );
 // LINE 143:
 	asm( 
-"	      00497ea9    mov eax,[ebp-4]"
+"	      00497ea9    mov eax,this"
 "	      00497eac    mov eax,[eax+34h]"
 "	      00497eaf    mov eax,[eax]"
 "	      00497eb1    push eax"
-"	      00497eb2    mov eax,[ebp-4]"
+"	      00497eb2    mov eax,this"
 "	      00497eb5    mov eax,[eax+34h]"
 "	      00497eb8    mov eax,[eax+43Ch]"
 "	      00497ebe    push eax"
-"	      00497ebf    mov eax,[ebp-4]"
+"	      00497ebf    mov eax,this"
 "	      00497ec2    mov eax,[eax+34h]"
 "	      00497ec5    mov eax,[eax+14h]"
 "	      00497ec8    push eax"
-"	      00497ec9    mov eax,[ebp-4]"
+"	      00497ec9    mov eax,this"
 "	      00497ecc    mov eax,[eax+34h]"
 "	      00497ecf    mov eax,[eax+10h]"
 "	      00497ed2    push eax"
 "	      00497ed3    push 0"
 "	      00497ed5    push 0"
-"	      00497ed7    mov eax,[ebp-4]"
+"	      00497ed7    mov eax,this"
 "	      00497eda    mov eax,[eax+38h]"
 "	      00497edd    push eax"
 "	      00497ede    call 004C461Eh"
@@ -434,26 +434,26 @@ int32_t SmackerBuffer::CreateSurface() {
 );
 // LINE 145:
 	asm( 
-"	      00497ee6    mov eax,[ebp-4]"
+"	      00497ee6    mov eax,this"
 "	      00497ee9    mov eax,[eax+38h]"
 "	      00497eec    mov eax,[eax+4]"
-"	      00497eef    mov ecx,[ebp-4]"
+"	      00497eef    mov ecx,this"
 "	      00497ef2    mov [ecx+1Ch],eax"
 );
 // LINE 146:
 	asm( 
-"	      00497ef5    mov eax,[ebp-4]"
+"	      00497ef5    mov eax,this"
 "	      00497ef8    mov eax,[eax+38h]"
 "	      00497efb    mov eax,[eax+8]"
-"	      00497efe    mov ecx,[ebp-4]"
+"	      00497efe    mov ecx,this"
 "	      00497f01    mov [ecx+20h],eax"
 );
 // LINE 148:
 	asm( 
-"	      00497f04    mov eax,[ebp-4]"
+"	      00497f04    mov eax,this"
 "	      00497f07    mov eax,[eax+18h]"
 "	      00497f0a    push eax"
-"	      00497f0b    mov ecx,[ebp-4]"
+"	      00497f0b    mov ecx,this"
 "	      00497f0e    call 0049805Bh"
 );
 // LINE 149:
@@ -481,18 +481,18 @@ int32_t SmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned
 "	      00497f28    push ebx"
 "	      00497f29    push esi"
 "	      00497f2a    push edi"
-"	      00497f2b    mov [ebp-4],ecx"
+"	      00497f2b    mov this,ecx"
 );
 // LINE 160:
 	asm( 
-"	      00497f2e    cmp dword ptr [ebp+8],0"
+"	      00497f2e    cmp szNewFilePath,0"
 "	      00497f32    je near ptr 00497F4Bh"
 );
 // LINE 161:
 	asm( 
-"	      00497f38    mov eax,[ebp+8]"
+"	      00497f38    mov eax,szNewFilePath"
 "	      00497f3b    push eax"
-"	      00497f3c    mov eax,[ebp-4]"
+"	      00497f3c    mov eax,this"
 "	      00497f3f    add eax,3Ch"
 "	      00497f42    push eax"
 "	      00497f43    call 0056CEB0h"
@@ -500,16 +500,16 @@ int32_t SmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned
 );
 // LINE 162:
 	asm( 
-"	      00497f4b    mov eax,[ebp+10h]"
+"	      00497f4b    mov eax,nExraBuffering"
 "	      00497f4e    push eax"
-"	      00497f4f    mov eax,[ebp+0Ch]"
+"	      00497f4f    mov eax,nFlags"
 "	      00497f52    push eax"
-"	      00497f53    mov eax,[ebp-4]"
+"	      00497f53    mov eax,this"
 "	      00497f56    add eax,3Ch"
 "	      00497f59    push eax"
 "	      00497f5a    call 004C4630h"
 "	      00497f5f    add esp,0Ch"
-"	      00497f62    mov ecx,[ebp-4]"
+"	      00497f62    mov ecx,this"
 "	      00497f65    mov [ecx+38h],eax"
 );
 // LINE 165:
@@ -520,9 +520,9 @@ int32_t SmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned
 );
 // LINE 168:
 	asm( 
-"	      00497f75    mov eax,[ebp-4]"
+"	      00497f75    mov eax,this"
 "	      00497f78    mov eax,[eax]"
-"	      00497f7a    mov ecx,[ebp-4]"
+"	      00497f7a    mov ecx,this"
 "	      00497f7d    call dword ptr [eax+8]"
 );
 // LINE 169:
@@ -550,17 +550,17 @@ void SmackerBuffer::Close() {
 "	      00497f97    push ebx"
 "	      00497f98    push esi"
 "	      00497f99    push edi"
-"	      00497f9a    mov [ebp-4],ecx"
+"	      00497f9a    mov this,ecx"
 );
 // LINE 179:
 	asm( 
-"	      00497f9d    mov eax,[ebp-4]"
+"	      00497f9d    mov eax,this"
 "	      00497fa0    cmp dword ptr [eax+34h],0"
 "	      00497fa4    je near ptr 00497FC3h"
 );
 // LINE 180:
 	asm( 
-"	      00497faa    mov eax,[ebp-4]"
+"	      00497faa    mov eax,this"
 "	      00497fad    mov eax,[eax+34h]"
 "	      00497fb0    push eax"
 "	      00497fb1    call 004C463Ch"
@@ -568,18 +568,18 @@ void SmackerBuffer::Close() {
 );
 // LINE 181:
 	asm( 
-"	      00497fb9    mov eax,[ebp-4]"
+"	      00497fb9    mov eax,this"
 "	      00497fbc    mov dword ptr [eax+34h],0"
 );
 // LINE 183:
 	asm( 
-"	      00497fc3    mov eax,[ebp-4]"
+"	      00497fc3    mov eax,this"
 "	      00497fc6    cmp dword ptr [eax+38h],0"
 "	      00497fca    je near ptr 00497FE9h"
 );
 // LINE 184:
 	asm( 
-"	      00497fd0    mov eax,[ebp-4]"
+"	      00497fd0    mov eax,this"
 "	      00497fd3    mov eax,[eax+38h]"
 "	      00497fd6    push eax"
 "	      00497fd7    call 004C4636h"
@@ -587,7 +587,7 @@ void SmackerBuffer::Close() {
 );
 // LINE 185:
 	asm( 
-"	      00497fdf    mov eax,[ebp-4]"
+"	      00497fdf    mov eax,this"
 "	      00497fe2    mov dword ptr [eax+38h],0"
 );
 // LINE 187:
@@ -611,21 +611,21 @@ void SmackerBuffer::Reset() {
 "	      00497ff9    push ebx"
 "	      00497ffa    push esi"
 "	      00497ffb    push edi"
-"	      00497ffc    mov [ebp-4],ecx"
+"	      00497ffc    mov this,ecx"
 );
 // LINE 196:
 	asm( 
-"	      00497fff    mov eax,[ebp-4]"
+"	      00497fff    mov eax,this"
 "	      00498002    cmp dword ptr [eax+4],1"
 "	      00498006    je near ptr 00498019h"
-"	      0049800c    mov eax,[ebp-4]"
+"	      0049800c    mov eax,this"
 "	      0049800f    cmp dword ptr [eax+4],2"
 "	      00498013    jne near ptr 00498039h"
 );
 // LINE 198:
 	asm( 
 "	      00498019    push 0"
-"	      0049801b    mov eax,[ebp-4]"
+"	      0049801b    mov eax,this"
 "	      0049801e    mov eax,[eax+38h]"
 "	      00498021    push eax"
 "	      00498022    call 004C4642h"
@@ -634,7 +634,7 @@ void SmackerBuffer::Reset() {
 );
 // LINE 199:
 	asm( 
-"	      0049802f    mov eax,[ebp-4]"
+"	      0049802f    mov eax,this"
 "	      00498032    mov dword ptr [eax+4],0"
 );
 // LINE 201:
@@ -658,7 +658,7 @@ void SmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 "	      00498049    push ebx"
 "	      0049804a    push esi"
 "	      0049804b    push edi"
-"	      0049804c    mov [ebp-4],ecx"
+"	      0049804c    mov this,ecx"
 );
 // LINE 219:
 	asm( 
@@ -684,12 +684,12 @@ void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
 "	      00498061    push ebx"
 "	      00498062    push esi"
 "	      00498063    push edi"
-"	      00498064    mov [ebp-24h],ecx"
+"	      00498064    mov this,ecx"
 );
 // LINE 229:
 	asm( 
-"	      00498067    mov eax,[ebp+8]"
-"	      0049806a    mov ecx,[ebp-24h]"
+"	      00498067    mov eax,myNewWindow"
+"	      0049806a    mov ecx,this"
 "	      0049806d    mov [ecx+18h],eax"
 );
 // LINE 233:
@@ -698,37 +698,37 @@ void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
 );
 // LINE 236:
 	asm( 
-"	      00498075    lea eax,[ebp-10h]"
+"	      00498075    lea eax,rectWindow.left"
 "	      00498078    push eax"
-"	      00498079    mov eax,[ebp+8]"
+"	      00498079    mov eax,myNewWindow"
 "	      0049807c    push eax"
 "	      0049807d    call dword ptr ds:[6C382Ch]"
 );
 // LINE 237:
 	asm( 
-"	      00498083    mov eax,[ebp-10h]"
-"	      00498086    mov [ebp-20h],eax"
+"	      00498083    mov eax,rectWindow.left"
+"	      00498086    mov rectWindowSparkal.left,eax"
 );
 // LINE 238:
 	asm( 
-"	      00498089    mov eax,[ebp-8]"
-"	      0049808c    mov [ebp-18h],eax"
+"	      00498089    mov eax,rectWindow.right"
+"	      0049808c    mov rectWindowSparkal.right,eax"
 );
 // LINE 239:
 	asm( 
-"	      0049808f    mov eax,[ebp-0Ch]"
-"	      00498092    mov [ebp-1Ch],eax"
+"	      0049808f    mov eax,rectWindow.top"
+"	      00498092    mov rectWindowSparkal.top,eax"
 );
 // LINE 240:
 	asm( 
-"	      00498095    mov eax,[ebp-4]"
-"	      00498098    mov [ebp-14h],eax"
+"	      00498095    mov eax,rectWindow.bottom"
+"	      00498098    mov rectWindowSparkal.bottom,eax"
 );
 // LINE 241:
 	asm( 
-"	      0049809b    lea eax,[ebp-20h]"
+"	      0049809b    lea eax,rectWindowSparkal.left"
 "	      0049809e    push eax"
-"	      0049809f    mov ecx,[ebp-24h]"
+"	      0049809f    mov ecx,this"
 "	      004980a2    call 004980DFh"
 );
 // LINE 243:
@@ -752,15 +752,15 @@ void SmackerBuffer::SetWindow(class CSparkalWindow* myNewWindow) {
 "	      004980b9    push ebx"
 "	      004980ba    push esi"
 "	      004980bb    push edi"
-"	      004980bc    mov [ebp-4],ecx"
+"	      004980bc    mov this,ecx"
 );
 // LINE 252:
 	asm( 
 "	      004980bf    jmp near ptr 004980C4h"
-"	      004980c4    mov eax,[ebp+8]"
+"	      004980c4    mov eax,myNewWindow"
 "	      004980c7    mov eax,[eax+18h]"
 "	      004980ca    push eax"
-"	      004980cb    mov ecx,[ebp-4]"
+"	      004980cb    mov ecx,this"
 "	      004980ce    call 0049805Bh"
 );
 // LINE 253:
@@ -787,19 +787,19 @@ void SmackerBuffer::CenterBufferInRect(struct SparkalRect* rectParent) {
 "	      004980e5    push ebx"
 "	      004980e6    push esi"
 "	      004980e7    push edi"
-"	      004980e8    mov [ebp-0Ch],ecx"
+"	      004980e8    mov this,ecx"
 );
 // LINE 272:
 	asm( 
-"	      004980eb    mov eax,[ebp-0Ch]"
+"	      004980eb    mov eax,this"
 "	      004980ee    cmp dword ptr [eax+2Ch],0"
 "	      004980f2    je near ptr 00498106h"
 );
 // LINE 273:
 	asm( 
-"	      004980f8    mov eax,[ebp-0Ch]"
+"	      004980f8    mov eax,this"
 "	      004980fb    mov eax,[eax+2Ch]"
-"	      004980fe    mov [ebp-4],eax"
+"	      004980fe    mov nActualDestinationWidth,eax"
 );
 // LINE 274:
 	asm( 
@@ -807,21 +807,21 @@ void SmackerBuffer::CenterBufferInRect(struct SparkalRect* rectParent) {
 );
 // LINE 275:
 	asm( 
-"	      00498106    mov eax,[ebp-0Ch]"
+"	      00498106    mov eax,this"
 "	      00498109    mov eax,[eax+1Ch]"
-"	      0049810c    mov [ebp-4],eax"
+"	      0049810c    mov nActualDestinationWidth,eax"
 );
 // LINE 277:
 	asm( 
-"	      0049810f    mov eax,[ebp-0Ch]"
+"	      0049810f    mov eax,this"
 "	      00498112    cmp dword ptr [eax+30h],0"
 "	      00498116    je near ptr 0049812Ah"
 );
 // LINE 278:
 	asm( 
-"	      0049811c    mov eax,[ebp-0Ch]"
+"	      0049811c    mov eax,this"
 "	      0049811f    mov eax,[eax+30h]"
-"	      00498122    mov [ebp-8],eax"
+"	      00498122    mov nActualDestinationHeight,eax"
 );
 // LINE 279:
 	asm( 
@@ -829,44 +829,44 @@ void SmackerBuffer::CenterBufferInRect(struct SparkalRect* rectParent) {
 );
 // LINE 280:
 	asm( 
-"	      0049812a    mov eax,[ebp-0Ch]"
+"	      0049812a    mov eax,this"
 "	      0049812d    mov eax,[eax+20h]"
-"	      00498130    mov [ebp-8],eax"
+"	      00498130    mov nActualDestinationHeight,eax"
 );
 // LINE 282:
 	asm( 
-"	      00498133    mov eax,[ebp+8]"
+"	      00498133    mov eax,rectParent"
 "	      00498136    mov eax,[eax+8]"
-"	      00498139    mov ecx,[ebp+8]"
+"	      00498139    mov ecx,rectParent"
 "	      0049813c    sub eax,[ecx]"
 "	      0049813e    cdq"
 "	      0049813f    sub eax,edx"
 "	      00498141    sar eax,1"
 "	      00498144    mov ecx,eax"
-"	      00498146    mov eax,[ebp-4]"
+"	      00498146    mov eax,nActualDestinationWidth"
 "	      00498149    cdq"
 "	      0049814a    sub eax,edx"
 "	      0049814c    sar eax,1"
 "	      0049814f    sub ecx,eax"
-"	      00498151    mov eax,[ebp-0Ch]"
+"	      00498151    mov eax,this"
 "	      00498154    mov [eax+24h],ecx"
 );
 // LINE 283:
 	asm( 
-"	      00498157    mov eax,[ebp+8]"
+"	      00498157    mov eax,rectParent"
 "	      0049815a    mov eax,[eax+0Ch]"
-"	      0049815d    mov ecx,[ebp+8]"
+"	      0049815d    mov ecx,rectParent"
 "	      00498160    sub eax,[ecx+4]"
 "	      00498163    cdq"
 "	      00498164    sub eax,edx"
 "	      00498166    sar eax,1"
 "	      00498169    mov ecx,eax"
-"	      0049816b    mov eax,[ebp-8]"
+"	      0049816b    mov eax,nActualDestinationHeight"
 "	      0049816e    cdq"
 "	      0049816f    sub eax,edx"
 "	      00498171    sar eax,1"
 "	      00498174    sub ecx,eax"
-"	      00498176    mov eax,[ebp-0Ch]"
+"	      00498176    mov eax,this"
 "	      00498179    mov [eax+28h],ecx"
 );
 // LINE 284:
@@ -895,11 +895,11 @@ int32_t SmackerBuffer::ComposeToWindow() {
 "	      0049818e    push ebx"
 "	      0049818f    push esi"
 "	      00498190    push edi"
-"	      00498191    mov [ebp-20h],ecx"
+"	      00498191    mov this,ecx"
 );
 // LINE 313:
 	asm( 
-"	      00498194    mov eax,[ebp-20h]"
+"	      00498194    mov eax,this"
 "	      00498197    cmp dword ptr [eax+38h],0"
 "	      0049819b    jne near ptr 004981A8h"
 );
@@ -910,95 +910,95 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 316:
 	asm( 
-"	      004981a8    mov eax,[ebp-20h]"
+"	      004981a8    mov eax,this"
 "	      004981ab    cmp dword ptr [eax+4],0"
 "	      004981af    jne near ptr 004981C4h"
 );
 // LINE 317:
 	asm( 
-"	      004981b5    mov eax,[ebp-20h]"
+"	      004981b5    mov eax,this"
 "	      004981b8    mov dword ptr [eax+4],1"
 );
 // LINE 319:
 	asm( 
 "	      004981bf    jmp near ptr 004982C8h"
-"	      004981c4    mov eax,[ebp-20h]"
+"	      004981c4    mov eax,this"
 "	      004981c7    cmp dword ptr [eax+4],2"
 "	      004981cb    jne near ptr 004982C8h"
 );
 // LINE 321:
 	asm( 
-"	      004981d1    mov eax,[ebp-20h]"
+"	      004981d1    mov eax,this"
 "	      004981d4    mov eax,[eax+18h]"
 "	      004981d7    push eax"
 "	      004981d8    call dword ptr ds:[6C3850h]"
-"	      004981de    mov [ebp-1Ch],eax"
+"	      004981de    mov dc,eax"
 );
 // LINE 322:
 	asm( 
-"	      004981e1    mov eax,[ebp-20h]"
+"	      004981e1    mov eax,this"
 "	      004981e4    cmp dword ptr [eax+0Ch],0"
 "	      004981e8    je near ptr 00498267h"
 );
 // LINE 325:
 	asm( 
-"	      004981ee    mov eax,[ebp-20h]"
+"	      004981ee    mov eax,this"
 "	      004981f1    xor ecx,ecx"
 "	      004981f3    mov cl,[eax+15h]"
 "	      004981f6    shl ecx,8"
-"	      004981f9    mov eax,[ebp-20h]"
+"	      004981f9    mov eax,this"
 "	      004981fc    xor edx,edx"
 "	      004981fe    mov dl,[eax+16h]"
 "	      00498201    or ecx,edx"
-"	      00498203    mov eax,[ebp-20h]"
+"	      00498203    mov eax,this"
 "	      00498206    xor edx,edx"
 "	      00498208    mov dl,[eax+14h]"
 "	      0049820b    shl edx,10h"
 "	      0049820e    or ecx,edx"
-"	      00498210    mov [ebp-8],ecx"
+"	      00498210    mov colorRefFill,ecx"
 );
 // LINE 326:
 	asm( 
-"	      00498213    mov eax,[ebp-8]"
+"	      00498213    mov eax,colorRefFill"
 "	      00498216    push eax"
 "	      00498217    call dword ptr ds:[6C35D0h]"
-"	      0049821d    mov [ebp-4],eax"
+"	      0049821d    mov hBrush,eax"
 );
 // LINE 327:
 	asm( 
-"	      00498220    mov dword ptr [ebp-18h],0"
+"	      00498220    mov rectFill.left,0"
 );
 // LINE 328:
 	asm( 
-"	      00498227    mov dword ptr [ebp-14h],0"
+"	      00498227    mov rectFill.top,0"
 );
 // LINE 329:
 	asm( 
-"	      0049822e    mov eax,[ebp-20h]"
+"	      0049822e    mov eax,this"
 "	      00498231    mov eax,[eax+38h]"
 "	      00498234    mov eax,[eax+4]"
-"	      00498237    mov [ebp-10h],eax"
+"	      00498237    mov rectFill.right,eax"
 );
 // LINE 330:
 	asm( 
-"	      0049823a    mov eax,[ebp-20h]"
+"	      0049823a    mov eax,this"
 "	      0049823d    mov eax,[eax+38h]"
 "	      00498240    mov eax,[eax+8]"
-"	      00498243    mov [ebp-0Ch],eax"
+"	      00498243    mov rectFill.bottom,eax"
 );
 // LINE 331:
 	asm( 
-"	      00498246    mov eax,[ebp-4]"
+"	      00498246    mov eax,hBrush"
 "	      00498249    push eax"
-"	      0049824a    lea eax,[ebp-18h]"
+"	      0049824a    lea eax,rectFill.left"
 "	      0049824d    push eax"
-"	      0049824e    mov eax,[ebp-1Ch]"
+"	      0049824e    mov eax,dc"
 "	      00498251    push eax"
 "	      00498252    call dword ptr ds:[6C3888h]"
 );
 // LINE 332:
 	asm( 
-"	      00498258    mov eax,[ebp-4]"
+"	      00498258    mov eax,hBrush"
 "	      0049825b    push eax"
 "	      0049825c    call dword ptr ds:[6C358Ch]"
 );
@@ -1008,31 +1008,31 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 337:
 	asm( 
-"	      00498267    mov eax,[ebp-20h]"
+"	      00498267    mov eax,this"
 "	      0049826a    cmp dword ptr [eax+34h],0"
 "	      0049826e    je near ptr 004982ADh"
 );
 // LINE 338:
 	asm( 
-"	      00498274    mov eax,[ebp-20h]"
+"	      00498274    mov eax,this"
 "	      00498277    mov eax,[eax+38h]"
 "	      0049827a    mov eax,[eax+8]"
 "	      0049827d    push eax"
-"	      0049827e    mov eax,[ebp-20h]"
+"	      0049827e    mov eax,this"
 "	      00498281    mov eax,[eax+38h]"
 "	      00498284    mov eax,[eax+4]"
 "	      00498287    push eax"
 "	      00498288    push 0"
 "	      0049828a    push 0"
-"	      0049828c    mov eax,[ebp-20h]"
+"	      0049828c    mov eax,this"
 "	      0049828f    mov eax,[eax+28h]"
 "	      00498292    push eax"
-"	      00498293    mov eax,[ebp-20h]"
+"	      00498293    mov eax,this"
 "	      00498296    mov eax,[eax+24h]"
 "	      00498299    push eax"
-"	      0049829a    mov eax,[ebp-1Ch]"
+"	      0049829a    mov eax,dc"
 "	      0049829d    push eax"
-"	      0049829e    mov eax,[ebp-20h]"
+"	      0049829e    mov eax,this"
 "	      004982a1    mov eax,[eax+34h]"
 "	      004982a4    push eax"
 "	      004982a5    call 004C464Eh"
@@ -1040,9 +1040,9 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 340:
 	asm( 
-"	      004982ad    mov eax,[ebp-1Ch]"
+"	      004982ad    mov eax,dc"
 "	      004982b0    push eax"
-"	      004982b1    mov eax,[ebp-20h]"
+"	      004982b1    mov eax,this"
 "	      004982b4    mov eax,[eax+18h]"
 "	      004982b7    push eax"
 "	      004982b8    call dword ptr ds:[6C384Ch]"
@@ -1054,13 +1054,13 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 347:
 	asm( 
-"	      004982c8    mov eax,[ebp-20h]"
+"	      004982c8    mov eax,this"
 "	      004982cb    cmp dword ptr [eax+38h],0"
 "	      004982cf    je near ptr 00498473h"
 );
 // LINE 348:
 	asm( 
-"	      004982d5    mov eax,[ebp-20h]"
+"	      004982d5    mov eax,this"
 "	      004982d8    mov eax,[eax+38h]"
 "	      004982db    push eax"
 "	      004982dc    call 004C466Ch"
@@ -1070,13 +1070,13 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 349:
 	asm( 
-"	      004982ec    mov eax,[ebp-20h]"
+"	      004982ec    mov eax,this"
 "	      004982ef    cmp dword ptr [eax+34h],0"
 "	      004982f3    je near ptr 00498422h"
 );
 // LINE 350:
 	asm( 
-"	      004982f9    mov eax,[ebp-20h]"
+"	      004982f9    mov eax,this"
 "	      004982fc    mov eax,[eax+38h]"
 "	      004982ff    cmp dword ptr [eax+68h],0"
 "	      00498303    je near ptr 00498367h"
@@ -1084,11 +1084,11 @@ int32_t SmackerBuffer::ComposeToWindow() {
 // LINE 351:
 	asm( 
 "	      00498309    push 0"
-"	      0049830b    mov eax,[ebp-20h]"
+"	      0049830b    mov eax,this"
 "	      0049830e    mov eax,[eax+38h]"
 "	      00498311    add eax,6Ch"
 "	      00498314    push eax"
-"	      00498315    mov eax,[ebp-20h]"
+"	      00498315    mov eax,this"
 "	      00498318    mov eax,[eax+34h]"
 "	      0049831b    push eax"
 "	      0049831c    call 004C4666h"
@@ -1096,26 +1096,26 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 352:
 	asm( 
-"	      00498324    mov eax,[ebp-20h]"
+"	      00498324    mov eax,this"
 "	      00498327    mov eax,[eax+34h]"
 "	      0049832a    cmp dword ptr [eax+2Ch],100h"
 "	      00498331    jae near ptr 00498367h"
 );
 // LINE 354:
 	asm( 
-"	      00498337    mov eax,[ebp-20h]"
+"	      00498337    mov eax,this"
 "	      0049833a    mov eax,[eax+34h]"
 "	      0049833d    mov eax,[eax+438h]"
 "	      00498343    push eax"
-"	      00498344    mov eax,[ebp-20h]"
+"	      00498344    mov eax,this"
 "	      00498347    mov eax,[eax+34h]"
 "	      0049834a    mov eax,[eax+28h]"
 "	      0049834d    push eax"
-"	      0049834e    mov eax,[ebp-20h]"
+"	      0049834e    mov eax,this"
 "	      00498351    mov eax,[eax+34h]"
 "	      00498354    add eax,38h"
 "	      00498357    push eax"
-"	      00498358    mov eax,[ebp-20h]"
+"	      00498358    mov eax,this"
 "	      0049835b    mov eax,[eax+38h]"
 "	      0049835e    push eax"
 "	      0049835f    call 004C4660h"
@@ -1123,7 +1123,7 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 357:
 	asm( 
-"	      00498367    mov eax,[ebp-20h]"
+"	      00498367    mov eax,this"
 "	      0049836a    mov eax,[eax+38h]"
 "	      0049836d    push eax"
 "	      0049836e    call 004C465Ah"
@@ -1131,19 +1131,19 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 359:
 	asm( 
-"	      00498376    mov eax,[ebp-20h]"
+"	      00498376    mov eax,this"
 "	      00498379    mov eax,[eax+18h]"
 "	      0049837c    push eax"
 "	      0049837d    call dword ptr ds:[6C3850h]"
-"	      00498383    mov [ebp-1Ch],eax"
+"	      00498383    mov dc,eax"
 );
 // LINE 360:
 	asm( 
-"	      00498386    mov eax,[ebp-20h]"
+"	      00498386    mov eax,this"
 "	      00498389    mov eax,[eax+34h]"
 "	      0049838c    mov eax,[eax+4]"
 "	      0049838f    push eax"
-"	      00498390    mov eax,[ebp-20h]"
+"	      00498390    mov eax,this"
 "	      00498393    mov eax,[eax+38h]"
 "	      00498396    push eax"
 "	      00498397    call 004C4654h"
@@ -1153,31 +1153,31 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 362:
 	asm( 
-"	      004983a7    mov eax,[ebp-20h]"
+"	      004983a7    mov eax,this"
 "	      004983aa    mov eax,[eax+38h]"
 "	      004983ad    mov eax,[eax+380h]"
 "	      004983b3    push eax"
-"	      004983b4    mov eax,[ebp-20h]"
+"	      004983b4    mov eax,this"
 "	      004983b7    mov eax,[eax+38h]"
 "	      004983ba    mov eax,[eax+37Ch]"
 "	      004983c0    push eax"
-"	      004983c1    mov eax,[ebp-20h]"
+"	      004983c1    mov eax,this"
 "	      004983c4    mov eax,[eax+38h]"
 "	      004983c7    mov eax,[eax+378h]"
 "	      004983cd    push eax"
-"	      004983ce    mov eax,[ebp-20h]"
+"	      004983ce    mov eax,this"
 "	      004983d1    mov eax,[eax+38h]"
 "	      004983d4    mov eax,[eax+374h]"
 "	      004983da    push eax"
-"	      004983db    mov eax,[ebp-20h]"
+"	      004983db    mov eax,this"
 "	      004983de    mov eax,[eax+28h]"
 "	      004983e1    push eax"
-"	      004983e2    mov eax,[ebp-20h]"
+"	      004983e2    mov eax,this"
 "	      004983e5    mov eax,[eax+24h]"
 "	      004983e8    push eax"
-"	      004983e9    mov eax,[ebp-1Ch]"
+"	      004983e9    mov eax,dc"
 "	      004983ec    push eax"
-"	      004983ed    mov eax,[ebp-20h]"
+"	      004983ed    mov eax,this"
 "	      004983f0    mov eax,[eax+34h]"
 "	      004983f3    push eax"
 "	      004983f4    call 004C464Eh"
@@ -1196,33 +1196,33 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 367:
 	asm( 
-"	      00498411    mov eax,[ebp-1Ch]"
+"	      00498411    mov eax,dc"
 "	      00498414    push eax"
-"	      00498415    mov eax,[ebp-20h]"
+"	      00498415    mov eax,this"
 "	      00498418    mov eax,[eax+18h]"
 "	      0049841b    push eax"
 "	      0049841c    call dword ptr ds:[6C384Ch]"
 );
 // LINE 373:
 	asm( 
-"	      00498422    mov eax,[ebp-20h]"
+"	      00498422    mov eax,this"
 "	      00498425    mov eax,[eax+38h]"
 "	      00498428    mov eax,[eax+0Ch]"
 "	      0049842b    dec eax"
-"	      0049842c    mov ecx,[ebp-20h]"
+"	      0049842c    mov ecx,this"
 "	      0049842f    mov ecx,[ecx+38h]"
 "	      00498432    cmp eax,[ecx+370h]"
 "	      00498438    jne near ptr 0049845Fh"
 );
 // LINE 374:
 	asm( 
-"	      0049843e    mov eax,[ebp-20h]"
+"	      0049843e    mov eax,this"
 "	      00498441    cmp dword ptr [eax+8],0"
 "	      00498445    jne near ptr 0049845Fh"
 );
 // LINE 375:
 	asm( 
-"	      0049844b    mov eax,[ebp-20h]"
+"	      0049844b    mov eax,this"
 "	      0049844e    mov dword ptr [eax+4],2"
 );
 // LINE 376:
@@ -1232,7 +1232,7 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 // LINE 379:
 	asm( 
-"	      0049845f    mov eax,[ebp-20h]"
+"	      0049845f    mov eax,this"
 "	      00498462    mov eax,[eax+38h]"
 "	      00498465    push eax"
 "	      00498466    call 004C4648h"
@@ -1283,21 +1283,21 @@ void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMe
 "	      0049849f    mov [ebp-8],eax"
 "	      004984a2    cmp dword ptr [ebp-8],0"
 "	      004984a6    je near ptr 004984C8h"
-"	      004984ac    mov eax,[ebp+0Ch]"
+"	      004984ac    mov eax,bPreserveBufferMemory"
 "	      004984af    push eax"
 "	      004984b0    push 0"
 "	      004984b2    push 0"
-"	      004984b4    mov eax,[ebp+8]"
+"	      004984b4    mov eax,szSmackerFilePath"
 "	      004984b7    push eax"
 "	      004984b8    mov ecx,[ebp-8]"
 "	      004984bb    call 004985F4h"
-"	      004984c0    mov [ebp-4],eax"
+"	      004984c0    mov tempVRBmpSmackerBuffer,eax"
 "	      004984c3    jmp near ptr 004984CFh"
-"	      004984c8    mov dword ptr [ebp-4],0"
+"	      004984c8    mov tempVRBmpSmackerBuffer,0"
 );
 // LINE 428:
 	asm( 
-"	      004984cf    mov eax,[ebp-4]"
+"	      004984cf    mov eax,tempVRBmpSmackerBuffer"
 "	      004984d2    jmp near ptr 004984D7h"
 );
 // LINE 429:
@@ -1323,7 +1323,7 @@ void VRSmackerDestroy(void * __ptr32 pVRSmacker) {
 );
 // LINE 433:
 	asm( 
-"	      004984e5    mov eax,[ebp+8]"
+"	      004984e5    mov eax,pVRSmacker"
 "	      004984e8    mov [ebp-8],eax"
 "	      004984eb    mov eax,[ebp-8]"
 "	      004984ee    mov [ebp-4],eax"
@@ -1359,15 +1359,15 @@ int32_t VRSmackerSetBitmap(void * __ptr32 pVRSmacker, char * szVRBitmap, int32_t
 );
 // LINE 441:
 	asm( 
-"	      0049851c    mov eax,[ebp+14h]"
+"	      0049851c    mov eax,bPreserveBitmapMemory"
 "	      0049851f    push eax"
-"	      00498520    mov eax,[ebp+10h]"
+"	      00498520    mov eax,nFlags"
 "	      00498523    push eax"
-"	      00498524    mov eax,[ebp+0Ch]"
+"	      00498524    mov eax,szVRBitmap"
 "	      00498527    push eax"
-"	      00498528    mov eax,[ebp+8]"
+"	      00498528    mov eax,pVRSmacker"
 "	      0049852b    mov eax,[eax]"
-"	      0049852d    mov ecx,[ebp+8]"
+"	      0049852d    mov ecx,pVRSmacker"
 "	      00498530    call dword ptr [eax+28h]"
 "	      00498533    jmp near ptr 00498538h"
 );
@@ -1393,7 +1393,7 @@ int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 );
 // LINE 446:
 	asm( 
-"	      00498543    mov ecx,[ebp+8]"
+"	      00498543    mov ecx,pVRSmacker"
 "	      00498546    call 00498A93h"
 "	      0049854b    jmp near ptr 00498550h"
 );
@@ -1419,7 +1419,7 @@ void VRSmackerReset(void * __ptr32 pVRSmacker) {
 );
 // LINE 450:
 	asm( 
-"	      0049855b    mov ecx,[ebp+8]"
+"	      0049855b    mov ecx,pVRSmacker"
 "	      0049855e    call 00497FF3h"
 );
 // LINE 451:
@@ -1445,7 +1445,7 @@ int32_t VRSmackerStatus(void * __ptr32 pVRSmacker) {
 );
 // LINE 454:
 	asm( 
-"	      00498573    mov eax,[ebp+8]"
+"	      00498573    mov eax,pVRSmacker"
 "	      00498576    mov eax,[eax+4]"
 "	      00498579    jmp near ptr 0049857Eh"
 );
@@ -1471,7 +1471,7 @@ struct VRBmpHdr* VRSmackerGetBitmap(void * __ptr32 pVRSmacker) {
 );
 // LINE 458:
 	asm( 
-"	      00498589    mov eax,[ebp+8]"
+"	      00498589    mov eax,pVRSmacker"
 "	      0049858c    mov eax,[eax+158h]"
 "	      00498592    jmp near ptr 00498597h"
 );
@@ -1497,7 +1497,7 @@ char * VRSmackerGetBitmapBits(void * __ptr32 pVRSmacker) {
 );
 // LINE 462:
 	asm( 
-"	      004985a2    mov eax,[ebp+8]"
+"	      004985a2    mov eax,pVRSmacker"
 "	      004985a5    mov eax,[eax+15Ch]"
 "	      004985ab    jmp near ptr 004985B0h"
 );
@@ -1521,23 +1521,23 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 "	      004985bb    push ebx"
 "	      004985bc    push esi"
 "	      004985bd    push edi"
-"	      004985be    mov [ebp-4],ecx"
-"	      004985c1    mov ecx,[ebp-4]"
+"	      004985be    mov this,ecx"
+"	      004985c1    mov ecx,this"
 "	      004985c4    call 00497C00h"
-"	      004985c9    mov eax,[ebp-4]"
+"	      004985c9    mov eax,this"
 "	      004985cc    mov dword ptr [eax+160h],0"
-"	      004985d6    mov eax,[ebp-4]"
+"	      004985d6    mov eax,this"
 "	      004985d9    mov dword ptr [eax],591158h"
 );
 // LINE 473:
 	asm( 
-"	      004985df    mov ecx,[ebp-4]"
+"	      004985df    mov ecx,this"
 "	      004985e2    call 004986BFh"
 );
 // LINE 474:
 	asm( 
 "	      004985e7    jmp near ptr 004985ECh"
-"	      004985ec    mov eax,[ebp-4]"
+"	      004985ec    mov eax,this"
 "	      004985ef    pop edi"
 "	      004985f0    pop esi"
 "	      004985f1    pop ebx"
@@ -1556,30 +1556,30 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char * szNewFilePath, int32_t nNewDe
 "	      004985fa    push ebx"
 "	      004985fb    push esi"
 "	      004985fc    push edi"
-"	      004985fd    mov [ebp-4],ecx"
-"	      00498600    mov eax,[ebp+10h]"
+"	      004985fd    mov this,ecx"
+"	      00498600    mov eax,nNewDestHeight"
 "	      00498603    push eax"
-"	      00498604    mov eax,[ebp+0Ch]"
+"	      00498604    mov eax,nNewDestWidth"
 "	      00498607    push eax"
-"	      00498608    mov eax,[ebp+8]"
+"	      00498608    mov eax,szNewFilePath"
 "	      0049860b    push eax"
-"	      0049860c    mov ecx,[ebp-4]"
+"	      0049860c    mov ecx,this"
 "	      0049860f    call 00497CCFh"
-"	      00498614    mov eax,[ebp+14h]"
-"	      00498617    mov ecx,[ebp-4]"
+"	      00498614    mov eax,bNewPreserveSmackerBuffer"
+"	      00498617    mov ecx,this"
 "	      0049861a    mov [ecx+160h],eax"
-"	      00498620    mov eax,[ebp-4]"
+"	      00498620    mov eax,this"
 "	      00498623    mov dword ptr [eax],591158h"
 );
 // LINE 486:
 	asm( 
-"	      00498629    mov ecx,[ebp-4]"
+"	      00498629    mov ecx,this"
 "	      0049862c    call 004986BFh"
 );
 // LINE 487:
 	asm( 
 "	      00498631    jmp near ptr 00498636h"
-"	      00498636    mov eax,[ebp-4]"
+"	      00498636    mov eax,this"
 "	      00498639    pop edi"
 "	      0049863a    pop esi"
 "	      0049863b    pop ebx"
@@ -1598,19 +1598,19 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 "	      00498646    push ebx"
 "	      00498647    push esi"
 "	      00498648    push edi"
-"	      00498649    mov [ebp-0Ch],ecx"
-"	      0049864c    mov eax,[ebp-0Ch]"
+"	      00498649    mov this,ecx"
+"	      0049864c    mov eax,this"
 "	      0049864f    mov dword ptr [eax],591158h"
 );
 // LINE 495:
 	asm( 
-"	      00498655    mov eax,[ebp-0Ch]"
+"	      00498655    mov eax,this"
 "	      00498658    cmp dword ptr [eax+140h],0"
 "	      0049865f    je near ptr 00498683h"
 );
 // LINE 496:
 	asm( 
-"	      00498665    mov eax,[ebp-0Ch]"
+"	      00498665    mov eax,this"
 "	      00498668    mov eax,[eax+140h]"
 "	      0049866e    mov [ebp-4],eax"
 "	      00498671    mov eax,[ebp-4]"
@@ -1622,13 +1622,13 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 );
 // LINE 497:
 	asm( 
-"	      00498683    mov eax,[ebp-0Ch]"
+"	      00498683    mov eax,this"
 "	      00498686    cmp dword ptr [eax+148h],0"
 "	      0049868d    je near ptr 004986A5h"
 );
 // LINE 498:
 	asm( 
-"	      00498693    mov eax,[ebp-0Ch]"
+"	      00498693    mov eax,this"
 "	      00498696    mov eax,[eax+148h]"
 "	      0049869c    push eax"
 "	      0049869d    call 004D5872h"
@@ -1636,13 +1636,13 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 );
 // LINE 499:
 	asm( 
-"	      004986a5    mov ecx,[ebp-0Ch]"
+"	      004986a5    mov ecx,this"
 "	      004986a8    call 0049891Fh"
 );
 // LINE 500:
 	asm( 
 "	      004986ad    jmp near ptr 004986B2h"
-"	      004986b2    mov ecx,[ebp-0Ch]"
+"	      004986b2    mov ecx,this"
 "	      004986b5    call 00497DA1h"
 "	      004986ba    pop edi"
 "	      004986bb    pop esi"
@@ -1662,46 +1662,46 @@ void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 "	      004986c5    push ebx"
 "	      004986c6    push esi"
 "	      004986c7    push edi"
-"	      004986c8    mov [ebp-4],ecx"
+"	      004986c8    mov this,ecx"
 );
 // LINE 508:
 	asm( 
-"	      004986cb    mov eax,[ebp-4]"
+"	      004986cb    mov eax,this"
 "	      004986ce    mov dword ptr [eax+140h],0"
 );
 // LINE 509:
 	asm( 
-"	      004986d8    mov eax,[ebp-4]"
+"	      004986d8    mov eax,this"
 "	      004986db    mov dword ptr [eax+144h],0"
 );
 // LINE 510:
 	asm( 
-"	      004986e5    mov eax,[ebp-4]"
+"	      004986e5    mov eax,this"
 "	      004986e8    mov dword ptr [eax+148h],0"
 );
 // LINE 511:
 	asm( 
-"	      004986f2    mov eax,[ebp-4]"
+"	      004986f2    mov eax,this"
 "	      004986f5    mov dword ptr [eax+14Ch],0"
 );
 // LINE 512:
 	asm( 
-"	      004986ff    mov eax,[ebp-4]"
+"	      004986ff    mov eax,this"
 "	      00498702    mov dword ptr [eax+154h],0"
 );
 // LINE 513:
 	asm( 
-"	      0049870c    mov eax,[ebp-4]"
+"	      0049870c    mov eax,this"
 "	      0049870f    mov dword ptr [eax+158h],0"
 );
 // LINE 514:
 	asm( 
-"	      00498719    mov eax,[ebp-4]"
+"	      00498719    mov eax,this"
 "	      0049871c    mov dword ptr [eax+15Ch],0"
 );
 // LINE 515:
 	asm( 
-"	      00498726    mov eax,[ebp-4]"
+"	      00498726    mov eax,this"
 "	      00498729    mov dword ptr [eax+150h],0"
 );
 // LINE 516:
@@ -1728,11 +1728,11 @@ int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
 "	      00498743    push ebx"
 "	      00498744    push esi"
 "	      00498745    push edi"
-"	      00498746    mov [ebp-0Ch],ecx"
+"	      00498746    mov this,ecx"
 );
 // LINE 536:
 	asm( 
-"	      00498749    mov eax,[ebp-0Ch]"
+"	      00498749    mov eax,this"
 "	      0049874c    cmp dword ptr [eax+158h],0"
 "	      00498753    je near ptr 00498763h"
 );
@@ -1743,148 +1743,148 @@ int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
 );
 // LINE 540:
 	asm( 
-"	      00498763    mov eax,[ebp-0Ch]"
+"	      00498763    mov eax,this"
 "	      00498766    cmp dword ptr [eax+1Ch],0"
 "	      0049876a    jne near ptr 0049878Ch"
-"	      00498770    mov eax,[ebp-0Ch]"
+"	      00498770    mov eax,this"
 "	      00498773    cmp dword ptr [eax+38h],0"
 "	      00498777    je near ptr 0049878Ch"
 );
 // LINE 541:
 	asm( 
-"	      0049877d    mov eax,[ebp-0Ch]"
+"	      0049877d    mov eax,this"
 "	      00498780    mov eax,[eax+38h]"
 "	      00498783    mov eax,[eax+4]"
-"	      00498786    mov ecx,[ebp-0Ch]"
+"	      00498786    mov ecx,this"
 "	      00498789    mov [ecx+1Ch],eax"
 );
 // LINE 542:
 	asm( 
-"	      0049878c    mov eax,[ebp-0Ch]"
+"	      0049878c    mov eax,this"
 "	      0049878f    cmp dword ptr [eax+20h],0"
 "	      00498793    jne near ptr 004987B5h"
-"	      00498799    mov eax,[ebp-0Ch]"
+"	      00498799    mov eax,this"
 "	      0049879c    cmp dword ptr [eax+38h],0"
 "	      004987a0    je near ptr 004987B5h"
 );
 // LINE 543:
 	asm( 
-"	      004987a6    mov eax,[ebp-0Ch]"
+"	      004987a6    mov eax,this"
 "	      004987a9    mov eax,[eax+38h]"
 "	      004987ac    mov eax,[eax+8]"
-"	      004987af    mov ecx,[ebp-0Ch]"
+"	      004987af    mov ecx,this"
 "	      004987b2    mov [ecx+20h],eax"
 );
 // LINE 545:
 	asm( 
-"	      004987b5    mov dword ptr [ebp-8],0Ch"
+"	      004987b5    mov nSizeOfHeader,0Ch"
 );
 // LINE 546:
 	asm( 
-"	      004987bc    mov eax,[ebp-0Ch]"
+"	      004987bc    mov eax,this"
 "	      004987bf    mov eax,[eax+20h]"
 "	      004987c2    shl eax,2"
-"	      004987c5    add [ebp-8],eax"
+"	      004987c5    add nSizeOfHeader,eax"
 );
 // LINE 547:
 	asm( 
-"	      004987c8    mov eax,[ebp-0Ch]"
+"	      004987c8    mov eax,this"
 "	      004987cb    mov eax,[eax+1Ch]"
-"	      004987ce    mov ecx,[ebp-0Ch]"
+"	      004987ce    mov ecx,this"
 "	      004987d1    imul eax,[ecx+20h]"
-"	      004987d5    add [ebp-8],eax"
+"	      004987d5    add nSizeOfHeader,eax"
 );
 // LINE 549:
 	asm( 
-"	      004987d8    mov eax,[ebp-8]"
+"	      004987d8    mov eax,nSizeOfHeader"
 "	      004987db    push eax"
 "	      004987dc    call 0056A600h"
 "	      004987e1    add esp,4"
-"	      004987e4    mov ecx,[ebp-0Ch]"
+"	      004987e4    mov ecx,this"
 "	      004987e7    mov [ecx+154h],eax"
 );
 // LINE 550:
 	asm( 
-"	      004987ed    mov eax,[ebp-0Ch]"
+"	      004987ed    mov eax,this"
 "	      004987f0    mov eax,[eax+154h]"
-"	      004987f6    mov ecx,[ebp-0Ch]"
+"	      004987f6    mov ecx,this"
 "	      004987f9    mov [ecx+158h],eax"
 );
 // LINE 551:
 	asm( 
-"	      004987ff    mov eax,[ebp-0Ch]"
+"	      004987ff    mov eax,this"
 "	      00498802    mov eax,[eax+158h]"
 "	      00498808    mov eax,[eax+4]"
 "	      0049880b    shl eax,2"
-"	      0049880e    mov ecx,[ebp-0Ch]"
+"	      0049880e    mov ecx,this"
 "	      00498811    add eax,[ecx+158h]"
 "	      00498817    add eax,0Ch"
-"	      0049881a    mov ecx,[ebp-0Ch]"
+"	      0049881a    mov ecx,this"
 "	      0049881d    mov [ecx+15Ch],eax"
 );
 // LINE 553:
 	asm( 
-"	      00498823    mov eax,[ebp-0Ch]"
+"	      00498823    mov eax,this"
 "	      00498826    mov eax,[eax+1Ch]"
-"	      00498829    mov ecx,[ebp-0Ch]"
+"	      00498829    mov ecx,this"
 "	      0049882c    mov ecx,[ecx+158h]"
 "	      00498832    mov [ecx],eax"
 );
 // LINE 554:
 	asm( 
-"	      00498834    mov eax,[ebp-0Ch]"
+"	      00498834    mov eax,this"
 "	      00498837    mov eax,[eax+20h]"
-"	      0049883a    mov ecx,[ebp-0Ch]"
+"	      0049883a    mov ecx,this"
 "	      0049883d    mov ecx,[ecx+158h]"
 "	      00498843    mov [ecx+4],eax"
 );
 // LINE 555:
 	asm( 
-"	      00498846    mov eax,[ebp-0Ch]"
+"	      00498846    mov eax,this"
 "	      00498849    mov eax,[eax+158h]"
 "	      0049884f    mov word ptr [eax+8],0"
 );
 // LINE 556:
 	asm( 
-"	      00498855    mov eax,[ebp-0Ch]"
+"	      00498855    mov eax,this"
 "	      00498858    mov eax,[eax+158h]"
 "	      0049885e    mov word ptr [eax+0Ah],0"
 );
 // LINE 560:
 	asm( 
-"	      00498864    mov eax,[ebp-0Ch]"
+"	      00498864    mov eax,this"
 "	      00498867    cmp dword ptr [eax+140h],0"
 "	      0049886e    je near ptr 004988CEh"
-"	      00498874    cmp dword ptr [ebp+8],0"
+"	      00498874    cmp bCopyOriginalBitmap,0"
 "	      00498878    je near ptr 004988CEh"
 );
 // LINE 561:
 	asm( 
-"	      0049887e    mov dword ptr [ebp-4],0"
+"	      0049887e    mov i,0"
 "	      00498885    jmp near ptr 0049888Dh"
-"	      0049888a    inc dword ptr [ebp-4]"
-"	      0049888d    mov eax,[ebp-0Ch]"
-"	      00498890    mov ecx,[ebp-4]"
+"	      0049888a    inc i"
+"	      0049888d    mov eax,this"
+"	      00498890    mov ecx,i"
 "	      00498893    cmp [eax+20h],ecx"
 "	      00498896    jle near ptr 004988BEh"
 );
 // LINE 562:
 	asm( 
-"	      0049889c    mov eax,[ebp-0Ch]"
+"	      0049889c    mov eax,this"
 "	      0049889f    mov eax,[eax+1Ch]"
-"	      004988a2    imul eax,[ebp-4]"
+"	      004988a2    imul eax,i"
 "	      004988a6    add eax,0Ch"
-"	      004988a9    mov ecx,[ebp-0Ch]"
+"	      004988a9    mov ecx,this"
 "	      004988ac    mov ecx,[ecx+158h]"
-"	      004988b2    mov edx,[ebp-4]"
+"	      004988b2    mov edx,i"
 "	      004988b5    mov [ecx+edx*4+0Ch],eax"
 "	      004988b9    jmp near ptr 0049888Ah"
 );
 // LINE 563:
 	asm( 
-"	      004988be    mov eax,[ebp-0Ch]"
+"	      004988be    mov eax,this"
 "	      004988c1    mov eax,[eax]"
-"	      004988c3    mov ecx,[ebp-0Ch]"
+"	      004988c3    mov ecx,this"
 "	      004988c6    call dword ptr [eax+2Ch]"
 );
 // LINE 565:
@@ -1893,23 +1893,23 @@ int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
 );
 // LINE 566:
 	asm( 
-"	      004988ce    mov dword ptr [ebp-4],0"
+"	      004988ce    mov i,0"
 "	      004988d5    jmp near ptr 004988DDh"
-"	      004988da    inc dword ptr [ebp-4]"
-"	      004988dd    mov eax,[ebp-0Ch]"
-"	      004988e0    mov ecx,[ebp-4]"
+"	      004988da    inc i"
+"	      004988dd    mov eax,this"
+"	      004988e0    mov ecx,i"
 "	      004988e3    cmp [eax+20h],ecx"
 "	      004988e6    jle near ptr 0049890Eh"
 );
 // LINE 567:
 	asm( 
-"	      004988ec    mov eax,[ebp-0Ch]"
+"	      004988ec    mov eax,this"
 "	      004988ef    mov eax,[eax+1Ch]"
-"	      004988f2    imul eax,[ebp-4]"
+"	      004988f2    imul eax,i"
 "	      004988f6    add eax,0Ch"
-"	      004988f9    mov ecx,[ebp-0Ch]"
+"	      004988f9    mov ecx,this"
 "	      004988fc    mov ecx,[ecx+158h]"
-"	      00498902    mov edx,[ebp-4]"
+"	      00498902    mov edx,i"
 "	      00498905    mov [ecx+edx*4+0Ch],eax"
 );
 // LINE 569:
@@ -1941,17 +1941,17 @@ void VRBmpSmackerBuffer::DeleteSurface() {
 "	      00498925    push ebx"
 "	      00498926    push esi"
 "	      00498927    push edi"
-"	      00498928    mov [ebp-0Ch],ecx"
+"	      00498928    mov this,ecx"
 );
 // LINE 581:
 	asm( 
-"	      0049892b    mov eax,[ebp-0Ch]"
+"	      0049892b    mov eax,this"
 "	      0049892e    cmp dword ptr [eax+154h],0"
 "	      00498935    je near ptr 00498980h"
 );
 // LINE 582:
 	asm( 
-"	      0049893b    mov eax,[ebp-0Ch]"
+"	      0049893b    mov eax,this"
 "	      0049893e    mov eax,[eax+154h]"
 "	      00498944    mov [ebp-4],eax"
 "	      00498947    mov eax,[ebp-4]"
@@ -1963,17 +1963,17 @@ void VRBmpSmackerBuffer::DeleteSurface() {
 );
 // LINE 583:
 	asm( 
-"	      00498959    mov eax,[ebp-0Ch]"
+"	      00498959    mov eax,this"
 "	      0049895c    mov dword ptr [eax+154h],0"
 );
 // LINE 584:
 	asm( 
-"	      00498966    mov eax,[ebp-0Ch]"
+"	      00498966    mov eax,this"
 "	      00498969    mov dword ptr [eax+158h],0"
 );
 // LINE 585:
 	asm( 
-"	      00498973    mov eax,[ebp-0Ch]"
+"	      00498973    mov eax,this"
 "	      00498976    mov dword ptr [eax+15Ch],0"
 );
 // LINE 587:
@@ -1997,18 +1997,18 @@ int32_t VRBmpSmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, uns
 "	      00498990    push ebx"
 "	      00498991    push esi"
 "	      00498992    push edi"
-"	      00498993    mov [ebp-4],ecx"
+"	      00498993    mov this,ecx"
 );
 // LINE 597:
 	asm( 
-"	      00498996    cmp dword ptr [ebp+8],0"
+"	      00498996    cmp szNewFilePath,0"
 "	      0049899a    je near ptr 004989B3h"
 );
 // LINE 598:
 	asm( 
-"	      004989a0    mov eax,[ebp+8]"
+"	      004989a0    mov eax,szNewFilePath"
 "	      004989a3    push eax"
-"	      004989a4    mov eax,[ebp-4]"
+"	      004989a4    mov eax,this"
 "	      004989a7    add eax,3Ch"
 "	      004989aa    push eax"
 "	      004989ab    call 0056CEB0h"
@@ -2016,16 +2016,16 @@ int32_t VRBmpSmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, uns
 );
 // LINE 599:
 	asm( 
-"	      004989b3    mov eax,[ebp+10h]"
+"	      004989b3    mov eax,nExraBuffering"
 "	      004989b6    push eax"
-"	      004989b7    mov eax,[ebp+0Ch]"
+"	      004989b7    mov eax,nFlags"
 "	      004989ba    push eax"
-"	      004989bb    mov eax,[ebp-4]"
+"	      004989bb    mov eax,this"
 "	      004989be    add eax,3Ch"
 "	      004989c1    push eax"
 "	      004989c2    call 004C4630h"
 "	      004989c7    add esp,0Ch"
-"	      004989ca    mov ecx,[ebp-4]"
+"	      004989ca    mov ecx,this"
 "	      004989cd    mov [ecx+38h],eax"
 );
 // LINE 602:
@@ -2036,16 +2036,16 @@ int32_t VRBmpSmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, uns
 );
 // LINE 607:
 	asm( 
-"	      004989dd    mov eax,[ebp-4]"
+"	      004989dd    mov eax,this"
 "	      004989e0    cmp dword ptr [eax+160h],0"
 "	      004989e7    je near ptr 004989FAh"
 );
 // LINE 608:
 	asm( 
 "	      004989ed    push 1"
-"	      004989ef    mov eax,[ebp-4]"
+"	      004989ef    mov eax,this"
 "	      004989f2    mov eax,[eax]"
-"	      004989f4    mov ecx,[ebp-4]"
+"	      004989f4    mov ecx,this"
 "	      004989f7    call dword ptr [eax+20h]"
 );
 // LINE 609:
@@ -2075,42 +2075,42 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 "	      00498a11    push ebx"
 "	      00498a12    push esi"
 "	      00498a13    push edi"
-"	      00498a14    mov [ebp-8],ecx"
+"	      00498a14    mov this,ecx"
 );
 // LINE 623:
 	asm( 
-"	      00498a17    mov dword ptr [ebp-4],0"
+"	      00498a17    mov i,0"
 "	      00498a1e    jmp near ptr 00498A26h"
-"	      00498a23    inc dword ptr [ebp-4]"
-"	      00498a26    mov eax,[ebp-8]"
-"	      00498a29    mov ecx,[ebp-4]"
+"	      00498a23    inc i"
+"	      00498a26    mov eax,this"
+"	      00498a29    mov ecx,i"
 "	      00498a2c    cmp [eax+20h],ecx"
 "	      00498a2f    jle near ptr 00498A87h"
 );
 // LINE 624:
 	asm( 
-"	      00498a35    mov eax,[ebp-8]"
+"	      00498a35    mov eax,this"
 "	      00498a38    mov eax,[eax+1Ch]"
-"	      00498a3b    imul eax,[ebp-4]"
+"	      00498a3b    imul eax,i"
 "	      00498a3f    add eax,0Ch"
-"	      00498a42    mov ecx,[ebp-8]"
+"	      00498a42    mov ecx,this"
 "	      00498a45    mov ecx,[ecx+158h]"
-"	      00498a4b    mov edx,[ebp-4]"
+"	      00498a4b    mov edx,i"
 "	      00498a4e    mov [ecx+edx*4+0Ch],eax"
 );
 // LINE 625:
 	asm( 
-"	      00498a52    mov eax,[ebp+8]"
+"	      00498a52    mov eax,nPaletteIndex"
 "	      00498a55    push eax"
-"	      00498a56    mov eax,[ebp-8]"
+"	      00498a56    mov eax,this"
 "	      00498a59    mov eax,[eax+1Ch]"
 "	      00498a5c    push eax"
-"	      00498a5d    mov eax,[ebp-8]"
+"	      00498a5d    mov eax,this"
 "	      00498a60    mov eax,[eax+158h]"
-"	      00498a66    mov ecx,[ebp-4]"
+"	      00498a66    mov ecx,i"
 "	      00498a69    mov eax,[eax+ecx*4+0Ch]"
 "	      00498a6d    shl eax,4"
-"	      00498a70    mov ecx,[ebp-8]"
+"	      00498a70    mov ecx,this"
 "	      00498a73    add eax,[ecx+158h]"
 "	      00498a79    push eax"
 "	      00498a7a    call 0056EB90h"
@@ -2141,55 +2141,55 @@ int32_t VRBmpSmackerBuffer::Compose() {
 "	      00498a99    push ebx"
 "	      00498a9a    push esi"
 "	      00498a9b    push edi"
-"	      00498a9c    mov [ebp-4],ecx"
+"	      00498a9c    mov this,ecx"
 );
 // LINE 650:
 	asm( 
-"	      00498a9f    mov eax,[ebp-4]"
+"	      00498a9f    mov eax,this"
 "	      00498aa2    cmp dword ptr [eax+4],0"
 "	      00498aa6    jne near ptr 00498AD8h"
 );
 // LINE 652:
 	asm( 
-"	      00498aac    mov eax,[ebp-4]"
+"	      00498aac    mov eax,this"
 "	      00498aaf    cmp dword ptr [eax+158h],0"
 "	      00498ab6    jne near ptr 00498AD3h"
 );
 // LINE 653:
 	asm( 
 "	      00498abc    push 0"
-"	      00498abe    mov eax,[ebp-4]"
+"	      00498abe    mov eax,this"
 "	      00498ac1    mov eax,[eax]"
-"	      00498ac3    mov ecx,[ebp-4]"
+"	      00498ac3    mov ecx,this"
 "	      00498ac6    call dword ptr [eax+20h]"
 );
 // LINE 654:
 	asm( 
-"	      00498ac9    mov eax,[ebp-4]"
+"	      00498ac9    mov eax,this"
 "	      00498acc    mov dword ptr [eax+4],1"
 );
 // LINE 658:
 	asm( 
 "	      00498ad3    jmp near ptr 00498BF4h"
-"	      00498ad8    mov eax,[ebp-4]"
+"	      00498ad8    mov eax,this"
 "	      00498adb    cmp dword ptr [eax+4],2"
 "	      00498adf    jne near ptr 00498B1Eh"
 );
 // LINE 659:
 	asm( 
-"	      00498ae5    mov eax,[ebp-4]"
+"	      00498ae5    mov eax,this"
 "	      00498ae8    cmp dword ptr [eax+0Ch],0"
 "	      00498aec    je near ptr 00498B0Fh"
-"	      00498af2    mov eax,[ebp-4]"
+"	      00498af2    mov eax,this"
 "	      00498af5    cmp dword ptr [eax+158h],0"
 "	      00498afc    je near ptr 00498B0Fh"
 );
 // LINE 660:
 	asm( 
 "	      00498b02    push 0"
-"	      00498b04    mov eax,[ebp-4]"
+"	      00498b04    mov eax,this"
 "	      00498b07    mov eax,[eax]"
-"	      00498b09    mov ecx,[ebp-4]"
+"	      00498b09    mov ecx,this"
 "	      00498b0c    call dword ptr [eax+0Ch]"
 );
 // LINE 661:
@@ -2200,13 +2200,13 @@ int32_t VRBmpSmackerBuffer::Compose() {
 // LINE 664:
 	asm( 
 "	      00498b19    jmp near ptr 00498BF4h"
-"	      00498b1e    mov eax,[ebp-4]"
+"	      00498b1e    mov eax,this"
 "	      00498b21    cmp dword ptr [eax+38h],0"
 "	      00498b25    je near ptr 00498BEAh"
 );
 // LINE 665:
 	asm( 
-"	      00498b2b    mov eax,[ebp-4]"
+"	      00498b2b    mov eax,this"
 "	      00498b2e    mov eax,[eax+38h]"
 "	      00498b31    push eax"
 "	      00498b32    call 004C466Ch"
@@ -2217,18 +2217,18 @@ int32_t VRBmpSmackerBuffer::Compose() {
 // LINE 666:
 	asm( 
 "	      00498b42    push 0"
-"	      00498b44    mov eax,[ebp-4]"
+"	      00498b44    mov eax,this"
 "	      00498b47    mov eax,[eax+15Ch]"
 "	      00498b4d    push eax"
-"	      00498b4e    mov eax,[ebp-4]"
+"	      00498b4e    mov eax,this"
 "	      00498b51    mov eax,[eax+20h]"
 "	      00498b54    push eax"
-"	      00498b55    mov eax,[ebp-4]"
+"	      00498b55    mov eax,this"
 "	      00498b58    mov eax,[eax+1Ch]"
 "	      00498b5b    push eax"
 "	      00498b5c    push 0"
 "	      00498b5e    push 0"
-"	      00498b60    mov eax,[ebp-4]"
+"	      00498b60    mov eax,this"
 "	      00498b63    mov eax,[eax+38h]"
 "	      00498b66    push eax"
 "	      00498b67    call 004C461Eh"
@@ -2236,7 +2236,7 @@ int32_t VRBmpSmackerBuffer::Compose() {
 );
 // LINE 667:
 	asm( 
-"	      00498b6f    mov eax,[ebp-4]"
+"	      00498b6f    mov eax,this"
 "	      00498b72    mov eax,[eax+38h]"
 "	      00498b75    push eax"
 "	      00498b76    call 004C465Ah"
@@ -2244,37 +2244,37 @@ int32_t VRBmpSmackerBuffer::Compose() {
 );
 // LINE 668:
 	asm( 
-"	      00498b7e    mov eax,[ebp-4]"
+"	      00498b7e    mov eax,this"
 "	      00498b81    mov eax,[eax+38h]"
 "	      00498b84    mov eax,[eax+0Ch]"
 "	      00498b87    dec eax"
-"	      00498b88    mov ecx,[ebp-4]"
+"	      00498b88    mov ecx,this"
 "	      00498b8b    mov ecx,[ecx+38h]"
 "	      00498b8e    cmp eax,[ecx+370h]"
 "	      00498b94    jne near ptr 00498BD6h"
 );
 // LINE 669:
 	asm( 
-"	      00498b9a    mov eax,[ebp-4]"
+"	      00498b9a    mov eax,this"
 "	      00498b9d    cmp dword ptr [eax+8],0"
 "	      00498ba1    jne near ptr 00498BD6h"
 );
 // LINE 670:
 	asm( 
-"	      00498ba7    mov eax,[ebp-4]"
+"	      00498ba7    mov eax,this"
 "	      00498baa    mov dword ptr [eax+4],2"
 );
 // LINE 671:
 	asm( 
-"	      00498bb1    mov eax,[ebp-4]"
+"	      00498bb1    mov eax,this"
 "	      00498bb4    cmp dword ptr [eax+160h],0"
 "	      00498bbb    jne near ptr 00498BCCh"
 );
 // LINE 672:
 	asm( 
-"	      00498bc1    mov eax,[ebp-4]"
+"	      00498bc1    mov eax,this"
 "	      00498bc4    mov eax,[eax]"
-"	      00498bc6    mov ecx,[ebp-4]"
+"	      00498bc6    mov ecx,this"
 "	      00498bc9    call dword ptr [eax+24h]"
 );
 // LINE 673:
@@ -2284,7 +2284,7 @@ int32_t VRBmpSmackerBuffer::Compose() {
 );
 // LINE 676:
 	asm( 
-"	      00498bd6    mov eax,[ebp-4]"
+"	      00498bd6    mov eax,this"
 "	      00498bd9    mov eax,[eax+38h]"
 "	      00498bdc    push eax"
 "	      00498bdd    call 004C4648h"
@@ -2324,17 +2324,17 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 "	      00498c06    push ebx"
 "	      00498c07    push esi"
 "	      00498c08    push edi"
-"	      00498c09    mov [ebp-0Ch],ecx"
+"	      00498c09    mov this,ecx"
 );
 // LINE 699:
 	asm( 
-"	      00498c0c    mov eax,[ebp-0Ch]"
+"	      00498c0c    mov eax,this"
 "	      00498c0f    cmp dword ptr [eax+140h],0"
 "	      00498c16    je near ptr 00498C3Ah"
 );
 // LINE 700:
 	asm( 
-"	      00498c1c    mov eax,[ebp-0Ch]"
+"	      00498c1c    mov eax,this"
 "	      00498c1f    mov eax,[eax+140h]"
 "	      00498c25    mov [ebp-4],eax"
 "	      00498c28    mov eax,[ebp-4]"
@@ -2346,7 +2346,7 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 );
 // LINE 701:
 	asm( 
-"	      00498c3a    mov eax,[ebp+8]"
+"	      00498c3a    mov eax,szNewVRBmpName"
 "	      00498c3d    push eax"
 "	      00498c3e    call 0056ABE0h"
 "	      00498c43    add esp,4"
@@ -2354,14 +2354,14 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 "	      00498c47    push eax"
 "	      00498c48    call 0056A600h"
 "	      00498c4d    add esp,4"
-"	      00498c50    mov ecx,[ebp-0Ch]"
+"	      00498c50    mov ecx,this"
 "	      00498c53    mov [ecx+140h],eax"
 );
 // LINE 702:
 	asm( 
-"	      00498c59    mov eax,[ebp+8]"
+"	      00498c59    mov eax,szNewVRBmpName"
 "	      00498c5c    push eax"
-"	      00498c5d    mov eax,[ebp-0Ch]"
+"	      00498c5d    mov eax,this"
 "	      00498c60    mov eax,[eax+140h]"
 "	      00498c66    push eax"
 "	      00498c67    call 0056CEB0h"
@@ -2369,21 +2369,21 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 );
 // LINE 703:
 	asm( 
-"	      00498c6f    mov eax,[ebp+0Ch]"
-"	      00498c72    mov ecx,[ebp-0Ch]"
+"	      00498c6f    mov eax,nNewVRBmpFlags"
+"	      00498c72    mov ecx,this"
 "	      00498c75    mov [ecx+144h],eax"
 );
 // LINE 704:
 	asm( 
-"	      00498c7b    mov eax,[ebp+10h]"
-"	      00498c7e    mov ecx,[ebp-0Ch]"
+"	      00498c7b    mov eax,bNewPreserveBmp"
+"	      00498c7e    mov ecx,this"
 "	      00498c81    mov [ecx+150h],eax"
 );
 // LINE 706:
 	asm( 
-"	      00498c87    mov eax,[ebp-0Ch]"
+"	      00498c87    mov eax,this"
 "	      00498c8a    mov eax,[eax]"
-"	      00498c8c    mov ecx,[ebp-0Ch]"
+"	      00498c8c    mov ecx,this"
 "	      00498c8f    call dword ptr [eax+2Ch]"
 );
 // LINE 707:
@@ -2417,37 +2417,37 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 "	      00498ca9    push ebx"
 "	      00498caa    push esi"
 "	      00498cab    push edi"
-"	      00498cac    mov [ebp-18h],ecx"
+"	      00498cac    mov this,ecx"
 );
 // LINE 730:
 	asm( 
-"	      00498caf    mov eax,[ebp-18h]"
+"	      00498caf    mov eax,this"
 "	      00498cb2    cmp dword ptr [eax+140h],0"
 "	      00498cb9    je near ptr 00498E8Dh"
 );
 // LINE 732:
 	asm( 
-"	      00498cbf    mov eax,[ebp-18h]"
+"	      00498cbf    mov eax,this"
 "	      00498cc2    cmp dword ptr [eax+148h],0"
 "	      00498cc9    jne near ptr 00498D2Dh"
 );
 // LINE 733:
 	asm( 
 "	      00498ccf    push 59A208h"
-"	      00498cd4    mov eax,[ebp-18h]"
+"	      00498cd4    mov eax,this"
 "	      00498cd7    mov eax,[eax+144h]"
 "	      00498cdd    push eax"
-"	      00498cde    mov eax,[ebp-18h]"
+"	      00498cde    mov eax,this"
 "	      00498ce1    mov eax,[eax+140h]"
 "	      00498ce7    push eax"
 "	      00498ce8    call 004D5356h"
 "	      00498ced    add esp,0Ch"
-"	      00498cf0    mov ecx,[ebp-18h]"
+"	      00498cf0    mov ecx,this"
 "	      00498cf3    mov [ecx+148h],eax"
 );
 // LINE 734:
 	asm( 
-"	      00498cf9    mov eax,[ebp-18h]"
+"	      00498cf9    mov eax,this"
 "	      00498cfc    cmp dword ptr [eax+148h],0"
 "	      00498d03    jne near ptr 00498D10h"
 );
@@ -2459,45 +2459,45 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 // LINE 736:
 	asm( 
 "	      00498d10    push 0"
-"	      00498d12    mov eax,[ebp-18h]"
+"	      00498d12    mov eax,this"
 "	      00498d15    mov eax,[eax+148h]"
 "	      00498d1b    push eax"
 "	      00498d1c    call 004D6246h"
 "	      00498d21    add esp,8"
-"	      00498d24    mov ecx,[ebp-18h]"
+"	      00498d24    mov ecx,this"
 "	      00498d27    mov [ecx+14Ch],eax"
 );
 // LINE 745:
 	asm( 
-"	      00498d2d    mov eax,[ebp-18h]"
+"	      00498d2d    mov eax,this"
 "	      00498d30    cmp dword ptr [eax+158h],0"
 "	      00498d37    je near ptr 00498E8Dh"
 );
 // LINE 746:
 	asm( 
-"	      00498d3d    mov eax,[ebp-18h]"
+"	      00498d3d    mov eax,this"
 "	      00498d40    mov eax,[eax+14Ch]"
 "	      00498d46    mov eax,[eax]"
-"	      00498d48    mov [ebp-4],eax"
+"	      00498d48    mov nBmpWidth,eax"
 );
 // LINE 747:
 	asm( 
-"	      00498d4b    mov eax,[ebp-18h]"
+"	      00498d4b    mov eax,this"
 "	      00498d4e    mov eax,[eax+14Ch]"
 "	      00498d54    mov eax,[eax+4]"
-"	      00498d57    mov [ebp-8],eax"
+"	      00498d57    mov nBmpHeight,eax"
 );
 // LINE 748:
 	asm( 
-"	      00498d5a    mov eax,[ebp-18h]"
-"	      00498d5d    mov ecx,[ebp-4]"
+"	      00498d5a    mov eax,this"
+"	      00498d5d    mov ecx,nBmpWidth"
 "	      00498d60    cmp [eax+1Ch],ecx"
 "	      00498d63    jle near ptr 00498D74h"
 );
 // LINE 749:
 	asm( 
-"	      00498d69    mov eax,[ebp-4]"
-"	      00498d6c    mov [ebp-10h],eax"
+"	      00498d69    mov eax,nBmpWidth"
+"	      00498d6c    mov nWidthToCopy,eax"
 );
 // LINE 750:
 	asm( 
@@ -2505,21 +2505,21 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 751:
 	asm( 
-"	      00498d74    mov eax,[ebp-18h]"
+"	      00498d74    mov eax,this"
 "	      00498d77    mov eax,[eax+1Ch]"
-"	      00498d7a    mov [ebp-10h],eax"
+"	      00498d7a    mov nWidthToCopy,eax"
 );
 // LINE 752:
 	asm( 
-"	      00498d7d    mov eax,[ebp-18h]"
-"	      00498d80    mov ecx,[ebp-8]"
+"	      00498d7d    mov eax,this"
+"	      00498d80    mov ecx,nBmpHeight"
 "	      00498d83    cmp [eax+20h],ecx"
 "	      00498d86    jle near ptr 00498D97h"
 );
 // LINE 753:
 	asm( 
-"	      00498d8c    mov eax,[ebp-8]"
-"	      00498d8f    mov [ebp-14h],eax"
+"	      00498d8c    mov eax,nBmpHeight"
+"	      00498d8f    mov nHeightToCopy,eax"
 );
 // LINE 754:
 	asm( 
@@ -2527,35 +2527,35 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 755:
 	asm( 
-"	      00498d97    mov eax,[ebp-18h]"
+"	      00498d97    mov eax,this"
 "	      00498d9a    mov eax,[eax+20h]"
-"	      00498d9d    mov [ebp-14h],eax"
+"	      00498d9d    mov nHeightToCopy,eax"
 );
 // LINE 757:
 	asm( 
-"	      00498da0    mov dword ptr [ebp-0Ch],0"
+"	      00498da0    mov i,0"
 "	      00498da7    jmp near ptr 00498DAFh"
-"	      00498dac    inc dword ptr [ebp-0Ch]"
-"	      00498daf    mov eax,[ebp-0Ch]"
-"	      00498db2    cmp [ebp-14h],eax"
+"	      00498dac    inc i"
+"	      00498daf    mov eax,i"
+"	      00498db2    cmp nHeightToCopy,eax"
 "	      00498db5    jle near ptr 00498E40h"
 );
 // LINE 759:
 	asm( 
-"	      00498dbb    mov eax,[ebp-10h]"
+"	      00498dbb    mov eax,nWidthToCopy"
 "	      00498dbe    push eax"
-"	      00498dbf    mov eax,[ebp-18h]"
+"	      00498dbf    mov eax,this"
 "	      00498dc2    mov eax,[eax+158h]"
-"	      00498dc8    mov ecx,[ebp-0Ch]"
+"	      00498dc8    mov ecx,i"
 "	      00498dcb    mov eax,[eax+ecx*4+0Ch]"
-"	      00498dcf    mov ecx,[ebp-18h]"
+"	      00498dcf    mov ecx,this"
 "	      00498dd2    add eax,[ecx+14Ch]"
 "	      00498dd8    push eax"
-"	      00498dd9    mov eax,[ebp-18h]"
+"	      00498dd9    mov eax,this"
 "	      00498ddc    mov eax,[eax+158h]"
-"	      00498de2    mov ecx,[ebp-0Ch]"
+"	      00498de2    mov ecx,i"
 "	      00498de5    mov eax,[eax+ecx*4+0Ch]"
-"	      00498de9    mov ecx,[ebp-18h]"
+"	      00498de9    mov ecx,this"
 "	      00498dec    add eax,[ecx+158h]"
 "	      00498df2    push eax"
 "	      00498df3    call 0056A800h"
@@ -2563,25 +2563,25 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 762:
 	asm( 
-"	      00498dfb    mov eax,[ebp-18h]"
-"	      00498dfe    mov ecx,[ebp-10h]"
+"	      00498dfb    mov eax,this"
+"	      00498dfe    mov ecx,nWidthToCopy"
 "	      00498e01    cmp [eax+1Ch],ecx"
 "	      00498e04    jle near ptr 00498E3Bh"
 );
 // LINE 764:
 	asm( 
 "	      00498e0a    push 0"
-"	      00498e0c    mov eax,[ebp-18h]"
+"	      00498e0c    mov eax,this"
 "	      00498e0f    mov eax,[eax+1Ch]"
-"	      00498e12    sub eax,[ebp-10h]"
+"	      00498e12    sub eax,nWidthToCopy"
 "	      00498e15    push eax"
-"	      00498e16    mov eax,[ebp-18h]"
+"	      00498e16    mov eax,this"
 "	      00498e19    mov eax,[eax+158h]"
-"	      00498e1f    mov ecx,[ebp-0Ch]"
+"	      00498e1f    mov ecx,i"
 "	      00498e22    mov eax,[eax+ecx*4+0Ch]"
-"	      00498e26    mov ecx,[ebp-18h]"
+"	      00498e26    mov ecx,this"
 "	      00498e29    add eax,[ecx+158h]"
-"	      00498e2f    add eax,[ebp-10h]"
+"	      00498e2f    add eax,nWidthToCopy"
 "	      00498e32    push eax"
 "	      00498e33    call 0056EB90h"
 "	      00498e38    add esp,0Ch"
@@ -2592,28 +2592,28 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 766:
 	asm( 
-"	      00498e40    mov eax,[ebp-8]"
-"	      00498e43    cmp [ebp-14h],eax"
+"	      00498e40    mov eax,nBmpHeight"
+"	      00498e43    cmp nHeightToCopy,eax"
 "	      00498e46    jge near ptr 00498E8Dh"
 );
 // LINE 767:
 	asm( 
 "	      00498e4c    jmp near ptr 00498E54h"
-"	      00498e51    inc dword ptr [ebp-0Ch]"
-"	      00498e54    mov eax,[ebp-0Ch]"
-"	      00498e57    cmp [ebp-8],eax"
+"	      00498e51    inc i"
+"	      00498e54    mov eax,i"
+"	      00498e57    cmp nBmpHeight,eax"
 "	      00498e5a    jle near ptr 00498E8Dh"
 );
 // LINE 768:
 	asm( 
 "	      00498e60    push 0"
-"	      00498e62    mov eax,[ebp-4]"
+"	      00498e62    mov eax,nBmpWidth"
 "	      00498e65    push eax"
-"	      00498e66    mov eax,[ebp-18h]"
+"	      00498e66    mov eax,this"
 "	      00498e69    mov eax,[eax+158h]"
-"	      00498e6f    mov ecx,[ebp-0Ch]"
+"	      00498e6f    mov ecx,i"
 "	      00498e72    mov eax,[eax+ecx*4+0Ch]"
-"	      00498e76    mov ecx,[ebp-18h]"
+"	      00498e76    mov ecx,this"
 "	      00498e79    add eax,[ecx+158h]"
 "	      00498e7f    push eax"
 "	      00498e80    call 0056EB90h"
@@ -2622,16 +2622,16 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 774:
 	asm( 
-"	      00498e8d    mov eax,[ebp-18h]"
+"	      00498e8d    mov eax,this"
 "	      00498e90    cmp dword ptr [eax+150h],0"
 "	      00498e97    jne near ptr 00498ED9h"
-"	      00498e9d    mov eax,[ebp-18h]"
+"	      00498e9d    mov eax,this"
 "	      00498ea0    cmp dword ptr [eax+148h],0"
 "	      00498ea7    je near ptr 00498ED9h"
 );
 // LINE 775:
 	asm( 
-"	      00498ead    mov eax,[ebp-18h]"
+"	      00498ead    mov eax,this"
 "	      00498eb0    mov eax,[eax+148h]"
 "	      00498eb6    push eax"
 "	      00498eb7    call 004D5872h"
@@ -2639,12 +2639,12 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 // LINE 776:
 	asm( 
-"	      00498ebf    mov eax,[ebp-18h]"
+"	      00498ebf    mov eax,this"
 "	      00498ec2    mov dword ptr [eax+148h],0"
 );
 // LINE 777:
 	asm( 
-"	      00498ecc    mov eax,[ebp-18h]"
+"	      00498ecc    mov eax,this"
 "	      00498ecf    mov dword ptr [eax+14Ch],0"
 );
 // LINE 779:
@@ -2672,41 +2672,41 @@ void SmackerBackBuffer::SmackerBackBuffer() {
 "	      00498eee    push ebx"
 "	      00498eef    push esi"
 "	      00498ef0    push edi"
-"	      00498ef1    mov [ebp-4],ecx"
-"	      00498ef4    mov ecx,[ebp-4]"
+"	      00498ef1    mov this,ecx"
+"	      00498ef4    mov ecx,this"
 "	      00498ef7    call 00497C00h"
-"	      00498efc    mov ecx,[ebp-4]"
+"	      00498efc    mov ecx,this"
 "	      00498eff    add ecx,140h"
 "	      00498f05    call 0046E690h"
-"	      00498f0a    mov eax,[ebp-4]"
+"	      00498f0a    mov eax,this"
 "	      00498f0d    mov dword ptr [eax],5911F0h"
-"	      00498f13    mov eax,[ebp-4]"
+"	      00498f13    mov eax,this"
 "	      00498f16    mov dword ptr [eax+140h],591188h"
 );
 // LINE 806:
 	asm( 
-"	      00498f20    mov eax,[ebp-4]"
+"	      00498f20    mov eax,this"
 "	      00498f23    mov dword ptr [eax+274h],0"
 );
 // LINE 807:
 	asm( 
-"	      00498f2d    mov eax,[ebp-4]"
+"	      00498f2d    mov eax,this"
 "	      00498f30    mov dword ptr [eax+148h],0"
 );
 // LINE 808:
 	asm( 
-"	      00498f3a    mov eax,[ebp-4]"
+"	      00498f3a    mov eax,this"
 "	      00498f3d    mov dword ptr [eax+14Ch],0"
 );
 // LINE 809:
 	asm( 
-"	      00498f47    mov eax,[ebp-4]"
+"	      00498f47    mov eax,this"
 "	      00498f4a    mov dword ptr [eax+278h],0"
 );
 // LINE 810:
 	asm( 
 "	      00498f54    jmp near ptr 00498F59h"
-"	      00498f59    mov eax,[ebp-4]"
+"	      00498f59    mov eax,this"
 "	      00498f5c    pop edi"
 "	      00498f5d    pop esi"
 "	      00498f5e    pop ebx"
@@ -2725,50 +2725,50 @@ void SmackerBackBuffer::SmackerBackBuffer(char * szNewFilePath, int32_t bNewUseS
 "	      00498f67    push ebx"
 "	      00498f68    push esi"
 "	      00498f69    push edi"
-"	      00498f6a    mov [ebp-4],ecx"
-"	      00498f6d    mov eax,[ebp+1Ch]"
+"	      00498f6a    mov this,ecx"
+"	      00498f6d    mov eax,nNewDestHeight"
 "	      00498f70    push eax"
-"	      00498f71    mov eax,[ebp+18h]"
+"	      00498f71    mov eax,nNewDestWidth"
 "	      00498f74    push eax"
-"	      00498f75    mov eax,[ebp+8]"
+"	      00498f75    mov eax,szNewFilePath"
 "	      00498f78    push eax"
-"	      00498f79    mov ecx,[ebp-4]"
+"	      00498f79    mov ecx,this"
 "	      00498f7c    call 00497CCFh"
-"	      00498f81    mov ecx,[ebp-4]"
+"	      00498f81    mov ecx,this"
 "	      00498f84    add ecx,140h"
 "	      00498f8a    call 0046E690h"
-"	      00498f8f    mov eax,[ebp-4]"
+"	      00498f8f    mov eax,this"
 "	      00498f92    mov dword ptr [eax],5911F0h"
-"	      00498f98    mov eax,[ebp-4]"
+"	      00498f98    mov eax,this"
 "	      00498f9b    mov dword ptr [eax+140h],591188h"
 );
 // LINE 820:
 	asm( 
-"	      00498fa5    mov eax,[ebp+0Ch]"
-"	      00498fa8    mov ecx,[ebp-4]"
+"	      00498fa5    mov eax,bNewUseSmackBuf"
+"	      00498fa8    mov ecx,this"
 "	      00498fab    mov [ecx+274h],eax"
 );
 // LINE 821:
 	asm( 
-"	      00498fb1    mov eax,[ebp+10h]"
-"	      00498fb4    mov ecx,[ebp-4]"
+"	      00498fb1    mov eax,nNewWidth"
+"	      00498fb4    mov ecx,this"
 "	      00498fb7    mov [ecx+148h],eax"
 );
 // LINE 822:
 	asm( 
-"	      00498fbd    mov eax,[ebp+14h]"
-"	      00498fc0    mov ecx,[ebp-4]"
+"	      00498fbd    mov eax,nNewHeight"
+"	      00498fc0    mov ecx,this"
 "	      00498fc3    mov [ecx+14Ch],eax"
 );
 // LINE 823:
 	asm( 
-"	      00498fc9    mov eax,[ebp-4]"
+"	      00498fc9    mov eax,this"
 "	      00498fcc    mov dword ptr [eax+278h],0"
 );
 // LINE 824:
 	asm( 
 "	      00498fd6    jmp near ptr 00498FDBh"
-"	      00498fdb    mov eax,[ebp-4]"
+"	      00498fdb    mov eax,this"
 "	      00498fde    pop edi"
 "	      00498fdf    pop esi"
 "	      00498fe0    pop ebx"
@@ -2787,46 +2787,46 @@ void SmackerBackBuffer::~SmackerBackBuffer() {
 "	      00498feb    push ebx"
 "	      00498fec    push esi"
 "	      00498fed    push edi"
-"	      00498fee    mov [ebp-8],ecx"
-"	      00498ff1    mov eax,[ebp-8]"
+"	      00498fee    mov this,ecx"
+"	      00498ff1    mov eax,this"
 "	      00498ff4    mov dword ptr [eax],5911F0h"
-"	      00498ffa    mov eax,[ebp-8]"
+"	      00498ffa    mov eax,this"
 "	      00498ffd    mov dword ptr [eax+140h],591188h"
 );
 // LINE 834:
 	asm( 
-"	      00499007    mov ecx,[ebp-8]"
+"	      00499007    mov ecx,this"
 "	      0049900a    call 00497F91h"
 );
 // LINE 835:
 	asm( 
-"	      0049900f    mov eax,[ebp-8]"
+"	      0049900f    mov eax,this"
 "	      00499012    cmp dword ptr [eax+278h],0"
 "	      00499019    je near ptr 00499039h"
 );
 // LINE 837:
 	asm( 
-"	      0049901f    mov eax,[ebp-8]"
+"	      0049901f    mov eax,this"
 "	      00499022    mov dword ptr [eax+18Ch],0"
 );
 // LINE 838:
 	asm( 
-"	      0049902c    mov eax,[ebp-8]"
+"	      0049902c    mov eax,this"
 "	      0049902f    mov dword ptr [eax+190h],0"
 );
 // LINE 841:
 	asm( 
 "	      00499039    jmp near ptr 0049903Eh"
-"	      0049903e    cmp dword ptr [ebp-8],0"
+"	      0049903e    cmp this,0"
 "	      00499042    je near ptr 00499058h"
-"	      00499048    mov eax,[ebp-8]"
+"	      00499048    mov eax,this"
 "	      0049904b    add eax,140h"
 "	      00499050    mov [ebp-4],eax"
 "	      00499053    jmp near ptr 0049905Fh"
 "	      00499058    mov dword ptr [ebp-4],0"
 "	      0049905f    mov ecx,[ebp-4]"
 "	      00499062    call 0046EC7Ah"
-"	      00499067    mov ecx,[ebp-8]"
+"	      00499067    mov ecx,this"
 "	      0049906a    call 00497DA1h"
 "	      0049906f    pop edi"
 "	      00499070    pop esi"
@@ -2846,11 +2846,11 @@ void SmackerBackBuffer::SetDirectBlit() {
 "	      0049907a    push ebx"
 "	      0049907b    push esi"
 "	      0049907c    push edi"
-"	      0049907d    mov [ebp-4],ecx"
+"	      0049907d    mov this,ecx"
 );
 // LINE 849:
 	asm( 
-"	      00499080    mov eax,[ebp-4]"
+"	      00499080    mov eax,this"
 "	      00499083    mov dword ptr [eax+278h],1"
 );
 // LINE 850:
@@ -2874,11 +2874,11 @@ int32_t SmackerBackBuffer::Initialize() {
 "	      0049909d    push ebx"
 "	      0049909e    push esi"
 "	      0049909f    push edi"
-"	      004990a0    mov [ebp-4],ecx"
+"	      004990a0    mov this,ecx"
 );
 // LINE 866:
 	asm( 
-"	      004990a3    mov eax,[ebp-4]"
+"	      004990a3    mov eax,this"
 "	      004990a6    cmp dword ptr [eax+278h],0"
 "	      004990ad    je near ptr 004990BDh"
 );
@@ -2889,9 +2889,9 @@ int32_t SmackerBackBuffer::Initialize() {
 );
 // LINE 868:
 	asm( 
-"	      004990bd    mov eax,[ebp-4]"
+"	      004990bd    mov eax,this"
 "	      004990c0    mov eax,[eax]"
-"	      004990c2    mov ecx,[ebp-4]"
+"	      004990c2    mov ecx,this"
 "	      004990c5    call dword ptr [eax+8]"
 "	      004990c8    jmp near ptr 004990CDh"
 );
@@ -2915,18 +2915,18 @@ void SmackerBackBuffer::SetBackBufferData(char * szNewFilePath, int32_t bNewUseS
 "	      004990d8    push ebx"
 "	      004990d9    push esi"
 "	      004990da    push edi"
-"	      004990db    mov [ebp-4],ecx"
+"	      004990db    mov this,ecx"
 );
 // LINE 884:
 	asm( 
-"	      004990de    cmp dword ptr [ebp+8],0"
+"	      004990de    cmp szNewFilePath,0"
 "	      004990e2    je near ptr 00499100h"
 );
 // LINE 885:
 	asm( 
-"	      004990e8    mov eax,[ebp+8]"
+"	      004990e8    mov eax,szNewFilePath"
 "	      004990eb    push eax"
-"	      004990ec    mov eax,[ebp-4]"
+"	      004990ec    mov eax,this"
 "	      004990ef    add eax,3Ch"
 "	      004990f2    push eax"
 "	      004990f3    call 0056CEB0h"
@@ -2938,37 +2938,37 @@ void SmackerBackBuffer::SetBackBufferData(char * szNewFilePath, int32_t bNewUseS
 );
 // LINE 887:
 	asm( 
-"	      00499100    mov eax,[ebp-4]"
+"	      00499100    mov eax,this"
 "	      00499103    mov byte ptr [eax+3Ch],0"
 );
 // LINE 889:
 	asm( 
-"	      00499107    mov eax,[ebp+0Ch]"
-"	      0049910a    mov ecx,[ebp-4]"
+"	      00499107    mov eax,bNewUseSmackBuf"
+"	      0049910a    mov ecx,this"
 "	      0049910d    mov [ecx+274h],eax"
 );
 // LINE 890:
 	asm( 
-"	      00499113    mov eax,[ebp+10h]"
-"	      00499116    mov ecx,[ebp-4]"
+"	      00499113    mov eax,nNewWidth"
+"	      00499116    mov ecx,this"
 "	      00499119    mov [ecx+148h],eax"
 );
 // LINE 891:
 	asm( 
-"	      0049911f    mov eax,[ebp+14h]"
-"	      00499122    mov ecx,[ebp-4]"
+"	      0049911f    mov eax,nNewHeight"
+"	      00499122    mov ecx,this"
 "	      00499125    mov [ecx+14Ch],eax"
 );
 // LINE 892:
 	asm( 
-"	      0049912b    mov eax,[ebp+18h]"
-"	      0049912e    mov ecx,[ebp-4]"
+"	      0049912b    mov eax,nNewDestinationWidth"
+"	      0049912e    mov ecx,this"
 "	      00499131    mov [ecx+2Ch],eax"
 );
 // LINE 893:
 	asm( 
-"	      00499134    mov eax,[ebp+1Ch]"
-"	      00499137    mov ecx,[ebp-4]"
+"	      00499134    mov eax,nNewDestinationHeight"
+"	      00499137    mov ecx,this"
 "	      0049913a    mov [ecx+30h],eax"
 );
 // LINE 894:
@@ -2992,18 +2992,18 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 "	      0049914f    push ebx"
 "	      00499150    push esi"
 "	      00499151    push edi"
-"	      00499152    mov [ebp-4],ecx"
+"	      00499152    mov this,ecx"
 );
 // LINE 902:
 	asm( 
-"	      00499155    cmp dword ptr [ebp+8],0"
+"	      00499155    cmp szNewFilePath,0"
 "	      00499159    je near ptr 00499172h"
 );
 // LINE 903:
 	asm( 
-"	      0049915f    mov eax,[ebp+8]"
+"	      0049915f    mov eax,szNewFilePath"
 "	      00499162    push eax"
-"	      00499163    mov eax,[ebp-4]"
+"	      00499163    mov eax,this"
 "	      00499166    add eax,3Ch"
 "	      00499169    push eax"
 "	      0049916a    call 0056CEB0h"
@@ -3011,21 +3011,21 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 );
 // LINE 904:
 	asm( 
-"	      00499172    mov eax,[ebp+10h]"
+"	      00499172    mov eax,nExraBuffering"
 "	      00499175    push eax"
-"	      00499176    mov eax,[ebp+0Ch]"
+"	      00499176    mov eax,nFlags"
 "	      00499179    push eax"
-"	      0049917a    mov eax,[ebp-4]"
+"	      0049917a    mov eax,this"
 "	      0049917d    add eax,3Ch"
 "	      00499180    push eax"
 "	      00499181    call 004C4630h"
 "	      00499186    add esp,0Ch"
-"	      00499189    mov ecx,[ebp-4]"
+"	      00499189    mov ecx,this"
 "	      0049918c    mov [ecx+38h],eax"
 );
 // LINE 905:
 	asm( 
-"	      0049918f    mov eax,[ebp-4]"
+"	      0049918f    mov eax,this"
 "	      00499192    cmp dword ptr [eax+38h],0"
 "	      00499196    jne near ptr 004991A3h"
 );
@@ -3036,18 +3036,18 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 );
 // LINE 908:
 	asm( 
-"	      004991a3    mov eax,[ebp-4]"
+"	      004991a3    mov eax,this"
 "	      004991a6    mov eax,[eax+38h]"
 "	      004991a9    mov eax,[eax+4]"
-"	      004991ac    mov ecx,[ebp-4]"
+"	      004991ac    mov ecx,this"
 "	      004991af    mov [ecx+148h],eax"
 );
 // LINE 909:
 	asm( 
-"	      004991b5    mov eax,[ebp-4]"
+"	      004991b5    mov eax,this"
 "	      004991b8    mov eax,[eax+38h]"
 "	      004991bb    mov eax,[eax+8]"
-"	      004991be    mov ecx,[ebp-4]"
+"	      004991be    mov ecx,this"
 "	      004991c1    mov [ecx+14Ch],eax"
 );
 // LINE 912:
@@ -3058,7 +3058,7 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 );
 // LINE 915:
 	asm( 
-"	      004991d4    mov eax,[ebp-4]"
+"	      004991d4    mov eax,this"
 "	      004991d7    cmp dword ptr [eax+278h],0"
 "	      004991de    je near ptr 004991EEh"
 );
@@ -3069,9 +3069,9 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 );
 // LINE 917:
 	asm( 
-"	      004991ee    mov eax,[ebp-4]"
+"	      004991ee    mov eax,this"
 "	      004991f1    mov eax,[eax]"
-"	      004991f3    mov ecx,[ebp-4]"
+"	      004991f3    mov ecx,this"
 "	      004991f6    call dword ptr [eax+8]"
 );
 // LINE 918:
@@ -3101,11 +3101,11 @@ int32_t SmackerBackBuffer::CreateSurface() {
 "	      00499210    push ebx"
 "	      00499211    push esi"
 "	      00499212    push edi"
-"	      00499213    mov [ebp-0Ch],ecx"
+"	      00499213    mov this,ecx"
 );
 // LINE 946:
 	asm( 
-"	      00499216    mov eax,[ebp-0Ch]"
+"	      00499216    mov eax,this"
 "	      00499219    cmp dword ptr [eax+278h],0"
 "	      00499220    je near ptr 00499230h"
 );
@@ -3116,7 +3116,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 );
 // LINE 952:
 	asm( 
-"	      00499230    mov eax,[ebp-0Ch]"
+"	      00499230    mov eax,this"
 "	      00499233    cmp dword ptr [eax+18Ch],0"
 "	      0049923a    je near ptr 0049924Ah"
 );
@@ -3129,7 +3129,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 	asm( 
 "	      0049924a    push 6Ch"
 "	      0049924c    push 0"
-"	      0049924e    mov eax,[ebp-0Ch]"
+"	      0049924e    mov eax,this"
 "	      00499251    add eax,198h"
 "	      00499256    push eax"
 "	      00499257    call 0056EB90h"
@@ -3137,69 +3137,69 @@ int32_t SmackerBackBuffer::CreateSurface() {
 );
 // LINE 957:
 	asm( 
-"	      0049925f    mov eax,[ebp-0Ch]"
+"	      0049925f    mov eax,this"
 "	      00499262    mov dword ptr [eax+198h],6Ch"
 );
 // LINE 958:
 	asm( 
-"	      0049926c    mov eax,[ebp-0Ch]"
+"	      0049926c    mov eax,this"
 "	      0049926f    mov dword ptr [eax+19Ch],6"
 );
 // LINE 959:
 	asm( 
-"	      00499279    mov eax,[ebp-0Ch]"
+"	      00499279    mov eax,this"
 "	      0049927c    mov dword ptr [eax+200h],840h"
 );
 // LINE 960:
 	asm( 
-"	      00499286    mov eax,[ebp-0Ch]"
+"	      00499286    mov eax,this"
 "	      00499289    mov dword ptr [eax+1ACh],0"
 );
 // LINE 961:
 	asm( 
-"	      00499293    mov eax,[ebp-0Ch]"
+"	      00499293    mov eax,this"
 "	      00499296    mov eax,[eax+148h]"
-"	      0049929c    mov ecx,[ebp-0Ch]"
+"	      0049929c    mov ecx,this"
 "	      0049929f    mov [ecx+1A4h],eax"
 );
 // LINE 962:
 	asm( 
-"	      004992a5    mov eax,[ebp-0Ch]"
+"	      004992a5    mov eax,this"
 "	      004992a8    mov eax,[eax+14Ch]"
-"	      004992ae    mov ecx,[ebp-0Ch]"
+"	      004992ae    mov ecx,this"
 "	      004992b1    mov [ecx+1A0h],eax"
 );
 // LINE 963:
 	asm( 
-"	      004992b7    mov eax,[ebp-0Ch]"
+"	      004992b7    mov eax,this"
 "	      004992ba    mov dword ptr [eax+15Ch],0"
 );
 // LINE 964:
 	asm( 
-"	      004992c4    mov eax,[ebp-0Ch]"
+"	      004992c4    mov eax,this"
 "	      004992c7    mov dword ptr [eax+160h],0"
 );
 // LINE 965:
 	asm( 
-"	      004992d1    mov eax,[ebp-0Ch]"
+"	      004992d1    mov eax,this"
 "	      004992d4    mov eax,[eax+148h]"
-"	      004992da    mov ecx,[ebp-0Ch]"
+"	      004992da    mov ecx,this"
 "	      004992dd    mov [ecx+164h],eax"
 );
 // LINE 966:
 	asm( 
-"	      004992e3    mov eax,[ebp-0Ch]"
+"	      004992e3    mov eax,this"
 "	      004992e6    mov eax,[eax+14Ch]"
-"	      004992ec    mov ecx,[ebp-0Ch]"
+"	      004992ec    mov ecx,this"
 "	      004992ef    mov [ecx+168h],eax"
 );
 // LINE 968:
 	asm( 
 "	      004992f5    push 0"
-"	      004992f7    mov eax,[ebp-0Ch]"
+"	      004992f7    mov eax,this"
 "	      004992fa    add eax,18Ch"
 "	      004992ff    push eax"
-"	      00499300    mov eax,[ebp-0Ch]"
+"	      00499300    mov eax,this"
 "	      00499303    add eax,198h"
 "	      00499308    push eax"
 "	      00499309    mov eax,ds:[597264h]"
@@ -3207,16 +3207,16 @@ int32_t SmackerBackBuffer::CreateSurface() {
 "	      0049930f    mov eax,ds:[597264h]"
 "	      00499314    mov eax,[eax]"
 "	      00499316    call dword ptr [eax+18h]"
-"	      00499319    mov [ebp-4],eax"
+"	      00499319    mov ddrval,eax"
 );
 // LINE 969:
 	asm( 
-"	      0049931c    cmp dword ptr [ebp-4],0"
+"	      0049931c    cmp ddrval,0"
 "	      00499320    je near ptr 00499345h"
 );
 // LINE 970:
 	asm( 
-"	      00499326    mov eax,[ebp-4]"
+"	      00499326    mov eax,ddrval"
 "	      00499329    mov [ebp-8],eax"
 "	      0049932c    jmp near ptr 00499331h"
 "	      00499331    push 59A20Ch"
@@ -3230,24 +3230,24 @@ int32_t SmackerBackBuffer::CreateSurface() {
 );
 // LINE 977:
 	asm( 
-"	      00499345    mov eax,[ebp-0Ch]"
+"	      00499345    mov eax,this"
 "	      00499348    mov eax,[eax+148h]"
-"	      0049934e    mov ecx,[ebp-0Ch]"
+"	      0049934e    mov ecx,this"
 "	      00499351    imul eax,[ecx+14Ch]"
 "	      00499358    add ds:[599DA0h],eax"
 );
 // LINE 981:
 	asm( 
-"	      0049935e    mov ecx,[ebp-0Ch]"
-"	      00499361    mov eax,[ebp-0Ch]"
+"	      0049935e    mov ecx,this"
+"	      00499361    mov eax,this"
 "	      00499364    mov eax,[eax+140h]"
 "	      0049936a    add ecx,140h"
 "	      00499370    call dword ptr [eax]"
 );
 // LINE 982:
 	asm( 
-"	      00499372    mov ecx,[ebp-0Ch]"
-"	      00499375    mov eax,[ebp-0Ch]"
+"	      00499372    mov ecx,this"
+"	      00499375    mov eax,this"
 "	      00499378    mov eax,[eax+140h]"
 "	      0049937e    add ecx,140h"
 "	      00499384    call dword ptr [eax+4]"
@@ -3277,29 +3277,29 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 "	      0049939c    push ebx"
 "	      0049939d    push esi"
 "	      0049939e    push edi"
-"	      0049939f    mov [ebp-14h],ecx"
+"	      0049939f    mov this,ecx"
 );
 // LINE 1015:
 	asm( 
-"	      004993a2    mov eax,[ebp-14h]"
+"	      004993a2    mov eax,this"
 "	      004993a5    cmp dword ptr [eax-13Ch],0"
 "	      004993ac    jne near ptr 004993C4h"
 );
 // LINE 1016:
 	asm( 
-"	      004993b2    mov eax,[ebp-14h]"
+"	      004993b2    mov eax,this"
 "	      004993b5    mov dword ptr [eax-13Ch],1"
 );
 // LINE 1018:
 	asm( 
 "	      004993bf    jmp near ptr 004994A2h"
-"	      004993c4    mov eax,[ebp-14h]"
+"	      004993c4    mov eax,this"
 "	      004993c7    cmp dword ptr [eax-13Ch],2"
 "	      004993ce    jne near ptr 004994A2h"
 );
 // LINE 1019:
 	asm( 
-"	      004993d4    mov eax,[ebp-14h]"
+"	      004993d4    mov eax,this"
 "	      004993d7    cmp dword ptr [eax-134h],0"
 "	      004993de    je near ptr 00499435h"
 );
@@ -3311,40 +3311,40 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1021:
 	asm( 
-"	      004993e9    mov eax,[ebp+0Ch]"
-"	      004993ec    mov [ebp-10h],eax"
+"	      004993e9    mov eax,DestLeft"
+"	      004993ec    mov rectFill.left,eax"
 );
 // LINE 1022:
 	asm( 
-"	      004993ef    mov eax,[ebp+10h]"
-"	      004993f2    mov [ebp-0Ch],eax"
+"	      004993ef    mov eax,DestTop"
+"	      004993f2    mov rectFill.top,eax"
 );
 // LINE 1023:
 	asm( 
 "	      004993f5    jmp near ptr 004993FAh"
-"	      004993fa    mov eax,[ebp-14h]"
+"	      004993fa    mov eax,this"
 "	      004993fd    mov eax,[eax+8]"
-"	      00499400    add eax,[ebp+0Ch]"
-"	      00499403    mov [ebp-8],eax"
+"	      00499400    add eax,DestLeft"
+"	      00499403    mov rectFill.right,eax"
 );
 // LINE 1024:
 	asm( 
 "	      00499406    jmp near ptr 0049940Bh"
-"	      0049940b    mov eax,[ebp-14h]"
+"	      0049940b    mov eax,this"
 "	      0049940e    mov eax,[eax+8]"
-"	      00499411    add eax,[ebp+10h]"
-"	      00499414    mov [ebp-4],eax"
+"	      00499411    add eax,DestTop"
+"	      00499414    mov rectFill.bottom,eax"
 );
 // LINE 1025:
 	asm( 
-"	      00499417    lea eax,[ebp-10h]"
+"	      00499417    lea eax,rectFill.left"
 "	      0049941a    push eax"
-"	      0049941b    mov eax,[ebp-14h]"
+"	      0049941b    mov eax,this"
 "	      0049941e    mov eax,[eax-130h]"
 "	      00499424    push eax"
-"	      00499425    mov eax,[ebp-14h]"
+"	      00499425    mov eax,this"
 "	      00499428    mov eax,[eax]"
-"	      0049942a    mov ecx,[ebp-14h]"
+"	      0049942a    mov ecx,this"
 "	      0049942d    call dword ptr [eax+44h]"
 );
 // LINE 1027:
@@ -3354,27 +3354,27 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1030:
 	asm( 
-"	      00499435    mov eax,[ebp-14h]"
+"	      00499435    mov eax,this"
 "	      00499438    cmp dword ptr [eax+134h],0"
 "	      0049943f    je near ptr 00499474h"
 );
 // LINE 1032:
 	asm( 
-"	      00499445    mov eax,[ebp+20h]"
+"	      00499445    mov eax,SrcBottom"
 "	      00499448    push eax"
-"	      00499449    mov eax,[ebp+1Ch]"
+"	      00499449    mov eax,SrcRight"
 "	      0049944c    push eax"
-"	      0049944d    mov eax,[ebp+18h]"
+"	      0049944d    mov eax,SrcTop"
 "	      00499450    push eax"
-"	      00499451    mov eax,[ebp+14h]"
+"	      00499451    mov eax,SrcLeft"
 "	      00499454    push eax"
-"	      00499455    mov eax,[ebp+10h]"
+"	      00499455    mov eax,DestTop"
 "	      00499458    push eax"
-"	      00499459    mov eax,[ebp+0Ch]"
+"	      00499459    mov eax,DestLeft"
 "	      0049945c    push eax"
-"	      0049945d    mov eax,[ebp+8]"
+"	      0049945d    mov eax,pDestImage"
 "	      00499460    push eax"
-"	      00499461    mov ecx,[ebp-14h]"
+"	      00499461    mov ecx,this"
 "	      00499464    sub ecx,140h"
 "	      0049946a    call 00499D5Ch"
 );
@@ -3384,21 +3384,21 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1036:
 	asm( 
-"	      00499474    mov eax,[ebp+20h]"
+"	      00499474    mov eax,SrcBottom"
 "	      00499477    push eax"
-"	      00499478    mov eax,[ebp+1Ch]"
+"	      00499478    mov eax,SrcRight"
 "	      0049947b    push eax"
-"	      0049947c    mov eax,[ebp+18h]"
+"	      0049947c    mov eax,SrcTop"
 "	      0049947f    push eax"
-"	      00499480    mov eax,[ebp+14h]"
+"	      00499480    mov eax,SrcLeft"
 "	      00499483    push eax"
-"	      00499484    mov eax,[ebp+10h]"
+"	      00499484    mov eax,DestTop"
 "	      00499487    push eax"
-"	      00499488    mov eax,[ebp+0Ch]"
+"	      00499488    mov eax,DestLeft"
 "	      0049948b    push eax"
-"	      0049948c    mov eax,[ebp+8]"
+"	      0049948c    mov eax,pDestImage"
 "	      0049948f    push eax"
-"	      00499490    mov ecx,[ebp-14h]"
+"	      00499490    mov ecx,this"
 "	      00499493    call 0046F948h"
 );
 // LINE 1039:
@@ -3408,13 +3408,13 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1042:
 	asm( 
-"	      004994a2    mov eax,[ebp-14h]"
+"	      004994a2    mov eax,this"
 "	      004994a5    cmp dword ptr [eax-108h],0"
 "	      004994ac    je near ptr 00499755h"
 );
 // LINE 1043:
 	asm( 
-"	      004994b2    mov eax,[ebp-14h]"
+"	      004994b2    mov eax,this"
 "	      004994b5    mov eax,[eax-108h]"
 "	      004994bb    push eax"
 "	      004994bc    call 004C466Ch"
@@ -3424,13 +3424,13 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1044:
 	asm( 
-"	      004994cc    mov eax,[ebp-14h]"
+"	      004994cc    mov eax,this"
 "	      004994cf    cmp dword ptr [eax+134h],0"
 "	      004994d6    je near ptr 004995F2h"
 );
 // LINE 1048:
 	asm( 
-"	      004994dc    mov eax,[ebp-14h]"
+"	      004994dc    mov eax,this"
 "	      004994df    mov eax,[eax-108h]"
 "	      004994e5    cmp dword ptr [eax+68h],0"
 "	      004994e9    je near ptr 00499562h"
@@ -3438,11 +3438,11 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 // LINE 1049:
 	asm( 
 "	      004994ef    push 0"
-"	      004994f1    mov eax,[ebp-14h]"
+"	      004994f1    mov eax,this"
 "	      004994f4    mov eax,[eax-108h]"
 "	      004994fa    add eax,6Ch"
 "	      004994fd    push eax"
-"	      004994fe    mov eax,[ebp-14h]"
+"	      004994fe    mov eax,this"
 "	      00499501    mov eax,[eax-10Ch]"
 "	      00499507    push eax"
 "	      00499508    call 004C4666h"
@@ -3450,26 +3450,26 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1050:
 	asm( 
-"	      00499510    mov eax,[ebp-14h]"
+"	      00499510    mov eax,this"
 "	      00499513    mov eax,[eax-10Ch]"
 "	      00499519    cmp dword ptr [eax+2Ch],100h"
 "	      00499520    jae near ptr 00499562h"
 );
 // LINE 1052:
 	asm( 
-"	      00499526    mov eax,[ebp-14h]"
+"	      00499526    mov eax,this"
 "	      00499529    mov eax,[eax-10Ch]"
 "	      0049952f    mov eax,[eax+438h]"
 "	      00499535    push eax"
-"	      00499536    mov eax,[ebp-14h]"
+"	      00499536    mov eax,this"
 "	      00499539    mov eax,[eax-10Ch]"
 "	      0049953f    mov eax,[eax+28h]"
 "	      00499542    push eax"
-"	      00499543    mov eax,[ebp-14h]"
+"	      00499543    mov eax,this"
 "	      00499546    mov eax,[eax-10Ch]"
 "	      0049954c    add eax,38h"
 "	      0049954f    push eax"
-"	      00499550    mov eax,[ebp-14h]"
+"	      00499550    mov eax,this"
 "	      00499553    mov eax,[eax-108h]"
 "	      00499559    push eax"
 "	      0049955a    call 004C4660h"
@@ -3477,7 +3477,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1055:
 	asm( 
-"	      00499562    mov eax,[ebp-14h]"
+"	      00499562    mov eax,this"
 "	      00499565    mov eax,[eax-108h]"
 "	      0049956b    push eax"
 "	      0049956c    call 004C465Ah"
@@ -3485,30 +3485,30 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1057:
 	asm( 
-"	      00499574    mov eax,[ebp-14h]"
+"	      00499574    mov eax,this"
 "	      00499577    cmp dword ptr [eax-114h],0"
 "	      0049957e    jne near ptr 004995C3h"
-"	      00499584    mov eax,[ebp-14h]"
+"	      00499584    mov eax,this"
 "	      00499587    cmp dword ptr [eax-110h],0"
 "	      0049958e    jne near ptr 004995C3h"
 );
 // LINE 1059:
 	asm( 
-"	      00499594    mov eax,[ebp+20h]"
+"	      00499594    mov eax,SrcBottom"
 "	      00499597    push eax"
-"	      00499598    mov eax,[ebp+1Ch]"
+"	      00499598    mov eax,SrcRight"
 "	      0049959b    push eax"
-"	      0049959c    mov eax,[ebp+18h]"
+"	      0049959c    mov eax,SrcTop"
 "	      0049959f    push eax"
-"	      004995a0    mov eax,[ebp+14h]"
+"	      004995a0    mov eax,SrcLeft"
 "	      004995a3    push eax"
-"	      004995a4    mov eax,[ebp+10h]"
+"	      004995a4    mov eax,DestTop"
 "	      004995a7    push eax"
-"	      004995a8    mov eax,[ebp+0Ch]"
+"	      004995a8    mov eax,DestLeft"
 "	      004995ab    push eax"
-"	      004995ac    mov eax,[ebp+8]"
+"	      004995ac    mov eax,pDestImage"
 "	      004995af    push eax"
-"	      004995b0    mov ecx,[ebp-14h]"
+"	      004995b0    mov ecx,this"
 "	      004995b3    sub ecx,140h"
 "	      004995b9    call 00499B35h"
 );
@@ -3518,21 +3518,21 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1062:
 	asm( 
-"	      004995c3    mov eax,[ebp+20h]"
+"	      004995c3    mov eax,SrcBottom"
 "	      004995c6    push eax"
-"	      004995c7    mov eax,[ebp+1Ch]"
+"	      004995c7    mov eax,SrcRight"
 "	      004995ca    push eax"
-"	      004995cb    mov eax,[ebp+18h]"
+"	      004995cb    mov eax,SrcTop"
 "	      004995ce    push eax"
-"	      004995cf    mov eax,[ebp+14h]"
+"	      004995cf    mov eax,SrcLeft"
 "	      004995d2    push eax"
-"	      004995d3    mov eax,[ebp+10h]"
+"	      004995d3    mov eax,DestTop"
 "	      004995d6    push eax"
-"	      004995d7    mov eax,[ebp+0Ch]"
+"	      004995d7    mov eax,DestLeft"
 "	      004995da    push eax"
-"	      004995db    mov eax,[ebp+8]"
+"	      004995db    mov eax,pDestImage"
 "	      004995de    push eax"
-"	      004995df    mov ecx,[ebp-14h]"
+"	      004995df    mov ecx,this"
 "	      004995e2    sub ecx,140h"
 "	      004995e8    call 00499D5Ch"
 );
@@ -3542,15 +3542,15 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1065:
 	asm( 
-"	      004995f2    mov eax,[ebp-14h]"
+"	      004995f2    mov eax,this"
 "	      004995f5    cmp dword ptr [eax+138h],0"
 "	      004995fc    je near ptr 0049966Eh"
 );
 // LINE 1066:
 	asm( 
-"	      00499602    mov eax,[ebp+8]"
+"	      00499602    mov eax,pDestImage"
 "	      00499605    mov eax,[eax]"
-"	      00499607    mov ecx,[ebp+8]"
+"	      00499607    mov ecx,pDestImage"
 "	      0049960a    call dword ptr [eax]"
 );
 // LINE 1067:
@@ -3559,20 +3559,20 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 "	      00499611    jmp near ptr 00499616h"
 "	      00499616    jmp near ptr 0049961Bh"
 "	      0049961b    push 0"
-"	      0049961d    mov eax,[ebp+8]"
+"	      0049961d    mov eax,pDestImage"
 "	      00499620    mov eax,[eax+10h]"
 "	      00499623    push eax"
-"	      00499624    mov eax,[ebp+8]"
+"	      00499624    mov eax,pDestImage"
 "	      00499627    mov eax,[eax+0Ch]"
 "	      0049962a    push eax"
-"	      0049962b    mov eax,[ebp+8]"
+"	      0049962b    mov eax,pDestImage"
 "	      0049962e    mov eax,[eax+14h]"
 "	      00499631    push eax"
-"	      00499632    mov eax,[ebp+10h]"
+"	      00499632    mov eax,DestTop"
 "	      00499635    push eax"
-"	      00499636    mov eax,[ebp+0Ch]"
+"	      00499636    mov eax,DestLeft"
 "	      00499639    push eax"
-"	      0049963a    mov eax,[ebp-14h]"
+"	      0049963a    mov eax,this"
 "	      0049963d    mov eax,[eax-108h]"
 "	      00499643    push eax"
 "	      00499644    call 004C461Eh"
@@ -3580,7 +3580,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1068:
 	asm( 
-"	      0049964c    mov eax,[ebp-14h]"
+"	      0049964c    mov eax,this"
 "	      0049964f    mov eax,[eax-108h]"
 "	      00499655    push eax"
 "	      00499656    call 004C465Ah"
@@ -3588,9 +3588,9 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1069:
 	asm( 
-"	      0049965e    mov eax,[ebp+8]"
+"	      0049965e    mov eax,pDestImage"
 "	      00499661    mov eax,[eax]"
-"	      00499663    mov ecx,[ebp+8]"
+"	      00499663    mov ecx,pDestImage"
 "	      00499666    call dword ptr [eax+4]"
 );
 // LINE 1071:
@@ -3599,9 +3599,9 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1072:
 	asm( 
-"	      0049966e    mov eax,[ebp-14h]"
+"	      0049966e    mov eax,this"
 "	      00499671    mov eax,[eax]"
-"	      00499673    mov ecx,[ebp-14h]"
+"	      00499673    mov ecx,this"
 "	      00499676    call dword ptr [eax]"
 );
 // LINE 1073:
@@ -3610,18 +3610,18 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 "	      0049967d    jmp near ptr 00499682h"
 "	      00499682    jmp near ptr 00499687h"
 "	      00499687    push 0"
-"	      00499689    mov eax,[ebp-14h]"
+"	      00499689    mov eax,this"
 "	      0049968c    mov eax,[eax+10h]"
 "	      0049968f    push eax"
-"	      00499690    mov eax,[ebp-14h]"
+"	      00499690    mov eax,this"
 "	      00499693    mov eax,[eax+0Ch]"
 "	      00499696    push eax"
-"	      00499697    mov eax,[ebp-14h]"
+"	      00499697    mov eax,this"
 "	      0049969a    mov eax,[eax+14h]"
 "	      0049969d    push eax"
 "	      0049969e    push 0"
 "	      004996a0    push 0"
-"	      004996a2    mov eax,[ebp-14h]"
+"	      004996a2    mov eax,this"
 "	      004996a5    mov eax,[eax-108h]"
 "	      004996ab    push eax"
 "	      004996ac    call 004C461Eh"
@@ -3629,7 +3629,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1074:
 	asm( 
-"	      004996b4    mov eax,[ebp-14h]"
+"	      004996b4    mov eax,this"
 "	      004996b7    mov eax,[eax-108h]"
 "	      004996bd    push eax"
 "	      004996be    call 004C465Ah"
@@ -3637,50 +3637,50 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1075:
 	asm( 
-"	      004996c6    mov eax,[ebp-14h]"
+"	      004996c6    mov eax,this"
 "	      004996c9    mov eax,[eax]"
-"	      004996cb    mov ecx,[ebp-14h]"
+"	      004996cb    mov ecx,this"
 "	      004996ce    call dword ptr [eax+4]"
 );
 // LINE 1078:
 	asm( 
-"	      004996d1    mov eax,[ebp+20h]"
+"	      004996d1    mov eax,SrcBottom"
 "	      004996d4    push eax"
-"	      004996d5    mov eax,[ebp+1Ch]"
+"	      004996d5    mov eax,SrcRight"
 "	      004996d8    push eax"
-"	      004996d9    mov eax,[ebp+18h]"
+"	      004996d9    mov eax,SrcTop"
 "	      004996dc    push eax"
-"	      004996dd    mov eax,[ebp+14h]"
+"	      004996dd    mov eax,SrcLeft"
 "	      004996e0    push eax"
-"	      004996e1    mov eax,[ebp+10h]"
+"	      004996e1    mov eax,DestTop"
 "	      004996e4    push eax"
-"	      004996e5    mov eax,[ebp+0Ch]"
+"	      004996e5    mov eax,DestLeft"
 "	      004996e8    push eax"
-"	      004996e9    mov eax,[ebp+8]"
+"	      004996e9    mov eax,pDestImage"
 "	      004996ec    push eax"
-"	      004996ed    mov ecx,[ebp-14h]"
+"	      004996ed    mov ecx,this"
 "	      004996f0    call 0046F948h"
 );
 // LINE 1081:
 	asm( 
-"	      004996f5    mov eax,[ebp-14h]"
+"	      004996f5    mov eax,this"
 "	      004996f8    mov eax,[eax-108h]"
 "	      004996fe    mov eax,[eax+0Ch]"
 "	      00499701    dec eax"
-"	      00499702    mov ecx,[ebp-14h]"
+"	      00499702    mov ecx,this"
 "	      00499705    mov ecx,[ecx-108h]"
 "	      0049970b    cmp eax,[ecx+370h]"
 "	      00499711    jne near ptr 0049973Eh"
 );
 // LINE 1082:
 	asm( 
-"	      00499717    mov eax,[ebp-14h]"
+"	      00499717    mov eax,this"
 "	      0049971a    cmp dword ptr [eax-138h],0"
 "	      00499721    jne near ptr 0049973Eh"
 );
 // LINE 1083:
 	asm( 
-"	      00499727    mov eax,[ebp-14h]"
+"	      00499727    mov eax,this"
 "	      0049972a    mov dword ptr [eax-13Ch],2"
 );
 // LINE 1084:
@@ -3690,7 +3690,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 );
 // LINE 1087:
 	asm( 
-"	      0049973e    mov eax,[ebp-14h]"
+"	      0049973e    mov eax,this"
 "	      00499741    mov eax,[eax-108h]"
 "	      00499747    push eax"
 "	      00499748    call 004C4648h"
@@ -3730,29 +3730,29 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 "	      00499773    push ebx"
 "	      00499774    push esi"
 "	      00499775    push edi"
-"	      00499776    mov [ebp-14h],ecx"
+"	      00499776    mov this,ecx"
 );
 // LINE 1105:
 	asm( 
-"	      00499779    mov eax,[ebp-14h]"
+"	      00499779    mov eax,this"
 "	      0049977c    cmp dword ptr [eax-13Ch],0"
 "	      00499783    jne near ptr 0049979Bh"
 );
 // LINE 1106:
 	asm( 
-"	      00499789    mov eax,[ebp-14h]"
+"	      00499789    mov eax,this"
 "	      0049978c    mov dword ptr [eax-13Ch],1"
 );
 // LINE 1108:
 	asm( 
 "	      00499796    jmp near ptr 0049986Bh"
-"	      0049979b    mov eax,[ebp-14h]"
+"	      0049979b    mov eax,this"
 "	      0049979e    cmp dword ptr [eax-13Ch],2"
 "	      004997a5    jne near ptr 0049986Bh"
 );
 // LINE 1109:
 	asm( 
-"	      004997ab    mov eax,[ebp-14h]"
+"	      004997ab    mov eax,this"
 "	      004997ae    cmp dword ptr [eax-134h],0"
 "	      004997b5    je near ptr 004997F6h"
 );
@@ -3764,34 +3764,34 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1111:
 	asm( 
-"	      004997c0    mov eax,[ebp+0Ch]"
-"	      004997c3    mov [ebp-10h],eax"
+"	      004997c0    mov eax,DestLeft"
+"	      004997c3    mov rectFill.left,eax"
 );
 // LINE 1112:
 	asm( 
-"	      004997c6    mov eax,[ebp+10h]"
-"	      004997c9    mov [ebp-0Ch],eax"
+"	      004997c6    mov eax,DestTop"
+"	      004997c9    mov rectFill.top,eax"
 );
 // LINE 1113:
 	asm( 
-"	      004997cc    mov eax,[ebp+14h]"
-"	      004997cf    mov [ebp-8],eax"
+"	      004997cc    mov eax,DestRight"
+"	      004997cf    mov rectFill.right,eax"
 );
 // LINE 1114:
 	asm( 
-"	      004997d2    mov eax,[ebp+18h]"
-"	      004997d5    mov [ebp-4],eax"
+"	      004997d2    mov eax,DestBottom"
+"	      004997d5    mov rectFill.bottom,eax"
 );
 // LINE 1115:
 	asm( 
-"	      004997d8    lea eax,[ebp-10h]"
+"	      004997d8    lea eax,rectFill.left"
 "	      004997db    push eax"
-"	      004997dc    mov eax,[ebp-14h]"
+"	      004997dc    mov eax,this"
 "	      004997df    mov eax,[eax-130h]"
 "	      004997e5    push eax"
-"	      004997e6    mov eax,[ebp-14h]"
+"	      004997e6    mov eax,this"
 "	      004997e9    mov eax,[eax]"
-"	      004997eb    mov ecx,[ebp-14h]"
+"	      004997eb    mov ecx,this"
 "	      004997ee    call dword ptr [eax+44h]"
 );
 // LINE 1117:
@@ -3801,27 +3801,27 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1120:
 	asm( 
-"	      004997f6    mov eax,[ebp-14h]"
+"	      004997f6    mov eax,this"
 "	      004997f9    cmp dword ptr [eax+134h],0"
 "	      00499800    je near ptr 00499835h"
 );
 // LINE 1122:
 	asm( 
-"	      00499806    mov eax,[ebp+28h]"
+"	      00499806    mov eax,SrcBottom"
 "	      00499809    push eax"
-"	      0049980a    mov eax,[ebp+24h]"
+"	      0049980a    mov eax,SrcRight"
 "	      0049980d    push eax"
-"	      0049980e    mov eax,[ebp+20h]"
+"	      0049980e    mov eax,SrcTop"
 "	      00499811    push eax"
-"	      00499812    mov eax,[ebp+1Ch]"
+"	      00499812    mov eax,SrcLeft"
 "	      00499815    push eax"
-"	      00499816    mov eax,[ebp+10h]"
+"	      00499816    mov eax,DestTop"
 "	      00499819    push eax"
-"	      0049981a    mov eax,[ebp+0Ch]"
+"	      0049981a    mov eax,DestLeft"
 "	      0049981d    push eax"
-"	      0049981e    mov eax,[ebp+8]"
+"	      0049981e    mov eax,pDestImage"
 "	      00499821    push eax"
-"	      00499822    mov ecx,[ebp-14h]"
+"	      00499822    mov ecx,this"
 "	      00499825    sub ecx,140h"
 "	      0049982b    call 00499D5Ch"
 );
@@ -3831,25 +3831,25 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1127:
 	asm( 
-"	      00499835    mov eax,[ebp+28h]"
+"	      00499835    mov eax,SrcBottom"
 "	      00499838    push eax"
-"	      00499839    mov eax,[ebp+24h]"
+"	      00499839    mov eax,SrcRight"
 "	      0049983c    push eax"
-"	      0049983d    mov eax,[ebp+20h]"
+"	      0049983d    mov eax,SrcTop"
 "	      00499840    push eax"
-"	      00499841    mov eax,[ebp+1Ch]"
+"	      00499841    mov eax,SrcLeft"
 "	      00499844    push eax"
-"	      00499845    mov eax,[ebp+18h]"
+"	      00499845    mov eax,DestBottom"
 "	      00499848    push eax"
-"	      00499849    mov eax,[ebp+14h]"
+"	      00499849    mov eax,DestRight"
 "	      0049984c    push eax"
-"	      0049984d    mov eax,[ebp+10h]"
+"	      0049984d    mov eax,DestTop"
 "	      00499850    push eax"
-"	      00499851    mov eax,[ebp+0Ch]"
+"	      00499851    mov eax,DestLeft"
 "	      00499854    push eax"
-"	      00499855    mov eax,[ebp+8]"
+"	      00499855    mov eax,pDestImage"
 "	      00499858    push eax"
-"	      00499859    mov ecx,[ebp-14h]"
+"	      00499859    mov ecx,this"
 "	      0049985c    call 0046FE13h"
 );
 // LINE 1130:
@@ -3859,13 +3859,13 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1133:
 	asm( 
-"	      0049986b    mov eax,[ebp-14h]"
+"	      0049986b    mov eax,this"
 "	      0049986e    cmp dword ptr [eax-108h],0"
 "	      00499875    je near ptr 00499B1Dh"
 );
 // LINE 1134:
 	asm( 
-"	      0049987b    mov eax,[ebp-14h]"
+"	      0049987b    mov eax,this"
 "	      0049987e    mov eax,[eax-108h]"
 "	      00499884    push eax"
 "	      00499885    call 004C466Ch"
@@ -3875,13 +3875,13 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1135:
 	asm( 
-"	      00499895    mov eax,[ebp-14h]"
+"	      00499895    mov eax,this"
 "	      00499898    cmp dword ptr [eax+134h],0"
 "	      0049989f    je near ptr 004999BBh"
 );
 // LINE 1139:
 	asm( 
-"	      004998a5    mov eax,[ebp-14h]"
+"	      004998a5    mov eax,this"
 "	      004998a8    mov eax,[eax-108h]"
 "	      004998ae    cmp dword ptr [eax+68h],0"
 "	      004998b2    je near ptr 0049992Bh"
@@ -3889,11 +3889,11 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 // LINE 1140:
 	asm( 
 "	      004998b8    push 0"
-"	      004998ba    mov eax,[ebp-14h]"
+"	      004998ba    mov eax,this"
 "	      004998bd    mov eax,[eax-108h]"
 "	      004998c3    add eax,6Ch"
 "	      004998c6    push eax"
-"	      004998c7    mov eax,[ebp-14h]"
+"	      004998c7    mov eax,this"
 "	      004998ca    mov eax,[eax-10Ch]"
 "	      004998d0    push eax"
 "	      004998d1    call 004C4666h"
@@ -3901,26 +3901,26 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1141:
 	asm( 
-"	      004998d9    mov eax,[ebp-14h]"
+"	      004998d9    mov eax,this"
 "	      004998dc    mov eax,[eax-10Ch]"
 "	      004998e2    cmp dword ptr [eax+2Ch],100h"
 "	      004998e9    jae near ptr 0049992Bh"
 );
 // LINE 1143:
 	asm( 
-"	      004998ef    mov eax,[ebp-14h]"
+"	      004998ef    mov eax,this"
 "	      004998f2    mov eax,[eax-10Ch]"
 "	      004998f8    mov eax,[eax+438h]"
 "	      004998fe    push eax"
-"	      004998ff    mov eax,[ebp-14h]"
+"	      004998ff    mov eax,this"
 "	      00499902    mov eax,[eax-10Ch]"
 "	      00499908    mov eax,[eax+28h]"
 "	      0049990b    push eax"
-"	      0049990c    mov eax,[ebp-14h]"
+"	      0049990c    mov eax,this"
 "	      0049990f    mov eax,[eax-10Ch]"
 "	      00499915    add eax,38h"
 "	      00499918    push eax"
-"	      00499919    mov eax,[ebp-14h]"
+"	      00499919    mov eax,this"
 "	      0049991c    mov eax,[eax-108h]"
 "	      00499922    push eax"
 "	      00499923    call 004C4660h"
@@ -3928,7 +3928,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1146:
 	asm( 
-"	      0049992b    mov eax,[ebp-14h]"
+"	      0049992b    mov eax,this"
 "	      0049992e    mov eax,[eax-108h]"
 "	      00499934    push eax"
 "	      00499935    call 004C465Ah"
@@ -3936,30 +3936,30 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1148:
 	asm( 
-"	      0049993d    mov eax,[ebp-14h]"
+"	      0049993d    mov eax,this"
 "	      00499940    cmp dword ptr [eax-114h],0"
 "	      00499947    jne near ptr 0049998Ch"
-"	      0049994d    mov eax,[ebp-14h]"
+"	      0049994d    mov eax,this"
 "	      00499950    cmp dword ptr [eax-110h],0"
 "	      00499957    jne near ptr 0049998Ch"
 );
 // LINE 1150:
 	asm( 
-"	      0049995d    mov eax,[ebp+28h]"
+"	      0049995d    mov eax,SrcBottom"
 "	      00499960    push eax"
-"	      00499961    mov eax,[ebp+24h]"
+"	      00499961    mov eax,SrcRight"
 "	      00499964    push eax"
-"	      00499965    mov eax,[ebp+20h]"
+"	      00499965    mov eax,SrcTop"
 "	      00499968    push eax"
-"	      00499969    mov eax,[ebp+1Ch]"
+"	      00499969    mov eax,SrcLeft"
 "	      0049996c    push eax"
-"	      0049996d    mov eax,[ebp+10h]"
+"	      0049996d    mov eax,DestTop"
 "	      00499970    push eax"
-"	      00499971    mov eax,[ebp+0Ch]"
+"	      00499971    mov eax,DestLeft"
 "	      00499974    push eax"
-"	      00499975    mov eax,[ebp+8]"
+"	      00499975    mov eax,pDestImage"
 "	      00499978    push eax"
-"	      00499979    mov ecx,[ebp-14h]"
+"	      00499979    mov ecx,this"
 "	      0049997c    sub ecx,140h"
 "	      00499982    call 00499B35h"
 );
@@ -3969,21 +3969,21 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1153:
 	asm( 
-"	      0049998c    mov eax,[ebp+28h]"
+"	      0049998c    mov eax,SrcBottom"
 "	      0049998f    push eax"
-"	      00499990    mov eax,[ebp+24h]"
+"	      00499990    mov eax,SrcRight"
 "	      00499993    push eax"
-"	      00499994    mov eax,[ebp+20h]"
+"	      00499994    mov eax,SrcTop"
 "	      00499997    push eax"
-"	      00499998    mov eax,[ebp+1Ch]"
+"	      00499998    mov eax,SrcLeft"
 "	      0049999b    push eax"
-"	      0049999c    mov eax,[ebp+10h]"
+"	      0049999c    mov eax,DestTop"
 "	      0049999f    push eax"
-"	      004999a0    mov eax,[ebp+0Ch]"
+"	      004999a0    mov eax,DestLeft"
 "	      004999a3    push eax"
-"	      004999a4    mov eax,[ebp+8]"
+"	      004999a4    mov eax,pDestImage"
 "	      004999a7    push eax"
-"	      004999a8    mov ecx,[ebp-14h]"
+"	      004999a8    mov ecx,this"
 "	      004999ab    sub ecx,140h"
 "	      004999b1    call 00499D5Ch"
 );
@@ -3993,15 +3993,15 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1156:
 	asm( 
-"	      004999bb    mov eax,[ebp-14h]"
+"	      004999bb    mov eax,this"
 "	      004999be    cmp dword ptr [eax+138h],0"
 "	      004999c5    je near ptr 00499A33h"
 );
 // LINE 1157:
 	asm( 
-"	      004999cb    mov eax,[ebp+8]"
+"	      004999cb    mov eax,pDestImage"
 "	      004999ce    mov eax,[eax]"
-"	      004999d0    mov ecx,[ebp+8]"
+"	      004999d0    mov ecx,pDestImage"
 "	      004999d3    call dword ptr [eax]"
 );
 // LINE 1158:
@@ -4010,18 +4010,18 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 "	      004999da    jmp near ptr 004999DFh"
 "	      004999df    jmp near ptr 004999E4h"
 "	      004999e4    push 0"
-"	      004999e6    mov eax,[ebp+8]"
+"	      004999e6    mov eax,pDestImage"
 "	      004999e9    mov eax,[eax+10h]"
 "	      004999ec    push eax"
-"	      004999ed    mov eax,[ebp+8]"
+"	      004999ed    mov eax,pDestImage"
 "	      004999f0    mov eax,[eax+0Ch]"
 "	      004999f3    push eax"
-"	      004999f4    mov eax,[ebp+8]"
+"	      004999f4    mov eax,pDestImage"
 "	      004999f7    mov eax,[eax+14h]"
 "	      004999fa    push eax"
 "	      004999fb    push 0"
 "	      004999fd    push 0"
-"	      004999ff    mov eax,[ebp-14h]"
+"	      004999ff    mov eax,this"
 "	      00499a02    mov eax,[eax-108h]"
 "	      00499a08    push eax"
 "	      00499a09    call 004C461Eh"
@@ -4029,7 +4029,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1159:
 	asm( 
-"	      00499a11    mov eax,[ebp-14h]"
+"	      00499a11    mov eax,this"
 "	      00499a14    mov eax,[eax-108h]"
 "	      00499a1a    push eax"
 "	      00499a1b    call 004C465Ah"
@@ -4037,9 +4037,9 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1160:
 	asm( 
-"	      00499a23    mov eax,[ebp+8]"
+"	      00499a23    mov eax,pDestImage"
 "	      00499a26    mov eax,[eax]"
-"	      00499a28    mov ecx,[ebp+8]"
+"	      00499a28    mov ecx,pDestImage"
 "	      00499a2b    call dword ptr [eax+4]"
 );
 // LINE 1162:
@@ -4048,9 +4048,9 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1163:
 	asm( 
-"	      00499a33    mov eax,[ebp-14h]"
+"	      00499a33    mov eax,this"
 "	      00499a36    mov eax,[eax]"
-"	      00499a38    mov ecx,[ebp-14h]"
+"	      00499a38    mov ecx,this"
 "	      00499a3b    call dword ptr [eax]"
 );
 // LINE 1164:
@@ -4058,18 +4058,18 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 "	      00499a3d    jmp near ptr 00499A42h"
 "	      00499a42    jmp near ptr 00499A47h"
 "	      00499a47    push 0"
-"	      00499a49    mov eax,[ebp-14h]"
+"	      00499a49    mov eax,this"
 "	      00499a4c    mov eax,[eax+10h]"
 "	      00499a4f    push eax"
-"	      00499a50    mov eax,[ebp-14h]"
+"	      00499a50    mov eax,this"
 "	      00499a53    mov eax,[eax+0Ch]"
 "	      00499a56    push eax"
-"	      00499a57    mov eax,[ebp-14h]"
+"	      00499a57    mov eax,this"
 "	      00499a5a    mov eax,[eax+14h]"
 "	      00499a5d    push eax"
 "	      00499a5e    push 0"
 "	      00499a60    push 0"
-"	      00499a62    mov eax,[ebp-14h]"
+"	      00499a62    mov eax,this"
 "	      00499a65    mov eax,[eax-108h]"
 "	      00499a6b    push eax"
 "	      00499a6c    call 004C461Eh"
@@ -4077,7 +4077,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1165:
 	asm( 
-"	      00499a74    mov eax,[ebp-14h]"
+"	      00499a74    mov eax,this"
 "	      00499a77    mov eax,[eax-108h]"
 "	      00499a7d    push eax"
 "	      00499a7e    call 004C465Ah"
@@ -4085,54 +4085,54 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1166:
 	asm( 
-"	      00499a86    mov eax,[ebp-14h]"
+"	      00499a86    mov eax,this"
 "	      00499a89    mov eax,[eax]"
-"	      00499a8b    mov ecx,[ebp-14h]"
+"	      00499a8b    mov ecx,this"
 "	      00499a8e    call dword ptr [eax+4]"
 );
 // LINE 1170:
 	asm( 
-"	      00499a91    mov eax,[ebp+28h]"
+"	      00499a91    mov eax,SrcBottom"
 "	      00499a94    push eax"
-"	      00499a95    mov eax,[ebp+24h]"
+"	      00499a95    mov eax,SrcRight"
 "	      00499a98    push eax"
-"	      00499a99    mov eax,[ebp+20h]"
+"	      00499a99    mov eax,SrcTop"
 "	      00499a9c    push eax"
-"	      00499a9d    mov eax,[ebp+1Ch]"
+"	      00499a9d    mov eax,SrcLeft"
 "	      00499aa0    push eax"
-"	      00499aa1    mov eax,[ebp+18h]"
+"	      00499aa1    mov eax,DestBottom"
 "	      00499aa4    push eax"
-"	      00499aa5    mov eax,[ebp+14h]"
+"	      00499aa5    mov eax,DestRight"
 "	      00499aa8    push eax"
-"	      00499aa9    mov eax,[ebp+10h]"
+"	      00499aa9    mov eax,DestTop"
 "	      00499aac    push eax"
-"	      00499aad    mov eax,[ebp+0Ch]"
+"	      00499aad    mov eax,DestLeft"
 "	      00499ab0    push eax"
-"	      00499ab1    mov eax,[ebp+8]"
+"	      00499ab1    mov eax,pDestImage"
 "	      00499ab4    push eax"
-"	      00499ab5    mov ecx,[ebp-14h]"
+"	      00499ab5    mov ecx,this"
 "	      00499ab8    call 0046FE13h"
 );
 // LINE 1173:
 	asm( 
-"	      00499abd    mov eax,[ebp-14h]"
+"	      00499abd    mov eax,this"
 "	      00499ac0    mov eax,[eax-108h]"
 "	      00499ac6    mov eax,[eax+0Ch]"
 "	      00499ac9    dec eax"
-"	      00499aca    mov ecx,[ebp-14h]"
+"	      00499aca    mov ecx,this"
 "	      00499acd    mov ecx,[ecx-108h]"
 "	      00499ad3    cmp eax,[ecx+370h]"
 "	      00499ad9    jne near ptr 00499B06h"
 );
 // LINE 1174:
 	asm( 
-"	      00499adf    mov eax,[ebp-14h]"
+"	      00499adf    mov eax,this"
 "	      00499ae2    cmp dword ptr [eax-138h],0"
 "	      00499ae9    jne near ptr 00499B06h"
 );
 // LINE 1175:
 	asm( 
-"	      00499aef    mov eax,[ebp-14h]"
+"	      00499aef    mov eax,this"
 "	      00499af2    mov dword ptr [eax-13Ch],2"
 );
 // LINE 1176:
@@ -4142,7 +4142,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 );
 // LINE 1179:
 	asm( 
-"	      00499b06    mov eax,[ebp-14h]"
+"	      00499b06    mov eax,this"
 "	      00499b09    mov eax,[eax-108h]"
 "	      00499b0f    push eax"
 "	      00499b10    call 004C4648h"
@@ -4196,11 +4196,11 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 "	      00499b3b    push ebx"
 "	      00499b3c    push esi"
 "	      00499b3d    push edi"
-"	      00499b3e    mov [ebp-38h],ecx"
+"	      00499b3e    mov this,ecx"
 );
 // LINE 1230:
 	asm( 
-"	      00499b41    mov eax,[ebp-38h]"
+"	      00499b41    mov eax,this"
 "	      00499b44    cmp dword ptr [eax+38h],0"
 "	      00499b48    jne near ptr 00499B53h"
 );
@@ -4210,75 +4210,75 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1233:
 	asm( 
-"	      00499b53    mov eax,[ebp+8]"
+"	      00499b53    mov eax,pDestImage"
 "	      00499b56    mov eax,[eax]"
-"	      00499b58    mov ecx,[ebp+8]"
+"	      00499b58    mov ecx,pDestImage"
 "	      00499b5b    call dword ptr [eax]"
 );
 // LINE 1234:
 	asm( 
 "	      00499b5d    jmp near ptr 00499B62h"
-"	      00499b62    mov eax,[ebp+8]"
+"	      00499b62    mov eax,pDestImage"
 "	      00499b65    mov eax,[eax+10h]"
-"	      00499b68    mov [ebp-8],eax"
+"	      00499b68    mov pOriginalDestImageBits,eax"
 );
 // LINE 1235:
 	asm( 
 "	      00499b6b    jmp near ptr 00499B70h"
-"	      00499b70    mov eax,[ebp+8]"
+"	      00499b70    mov eax,pDestImage"
 "	      00499b73    mov eax,[eax+14h]"
-"	      00499b76    mov [ebp-10h],eax"
+"	      00499b76    mov nDestImageStride,eax"
 );
 // LINE 1236:
 	asm( 
-"	      00499b79    mov eax,[ebp+10h]"
-"	      00499b7c    imul eax,[ebp-10h]"
-"	      00499b80    add eax,[ebp+0Ch]"
-"	      00499b83    add [ebp-8],eax"
+"	      00499b79    mov eax,DestTop"
+"	      00499b7c    imul eax,nDestImageStride"
+"	      00499b80    add eax,DestLeft"
+"	      00499b83    add pOriginalDestImageBits,eax"
 );
 // LINE 1237:
 	asm( 
-"	      00499b86    mov eax,[ebp-38h]"
+"	      00499b86    mov eax,this"
 "	      00499b89    mov eax,[eax+34h]"
 "	      00499b8c    mov eax,[eax+43Ch]"
-"	      00499b92    mov [ebp-34h],eax"
+"	      00499b92    mov pOriginalSourceImageBits,eax"
 );
 // LINE 1238:
 	asm( 
-"	      00499b95    mov eax,[ebp-38h]"
+"	      00499b95    mov eax,this"
 "	      00499b98    mov eax,[eax+34h]"
 "	      00499b9b    mov eax,[eax+10h]"
-"	      00499b9e    mov [ebp-18h],eax"
+"	      00499b9e    mov nSourceImageStride,eax"
 );
 // LINE 1243:
 	asm( 
-"	      00499ba1    cmp dword ptr [ebp+1Ch],0"
+"	      00499ba1    cmp SrcRight,0"
 "	      00499ba5    jne near ptr 00499BB7h"
 );
 // LINE 1244:
 	asm( 
-"	      00499bab    mov eax,[ebp-38h]"
+"	      00499bab    mov eax,this"
 "	      00499bae    mov eax,[eax+148h]"
-"	      00499bb4    mov [ebp+1Ch],eax"
+"	      00499bb4    mov SrcRight,eax"
 );
 // LINE 1245:
 	asm( 
-"	      00499bb7    cmp dword ptr [ebp+20h],0"
+"	      00499bb7    cmp SrcBottom,0"
 "	      00499bbb    jne near ptr 00499BCDh"
 );
 // LINE 1246:
 	asm( 
-"	      00499bc1    mov eax,[ebp-38h]"
+"	      00499bc1    mov eax,this"
 "	      00499bc4    mov eax,[eax+14Ch]"
-"	      00499bca    mov [ebp+20h],eax"
+"	      00499bca    mov SrcBottom,eax"
 );
 // LINE 1248:
 	asm( 
-"	      00499bcd    mov eax,[ebp-38h]"
+"	      00499bcd    mov eax,this"
 "	      00499bd0    mov eax,[eax+34h]"
 "	      00499bd3    mov eax,[eax+4]"
 "	      00499bd6    push eax"
-"	      00499bd7    mov eax,[ebp-38h]"
+"	      00499bd7    mov eax,this"
 "	      00499bda    mov eax,[eax+38h]"
 "	      00499bdd    push eax"
 "	      00499bde    call 004C4654h"
@@ -4288,56 +4288,56 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1250:
 	asm( 
-"	      00499bee    mov eax,[ebp-38h]"
+"	      00499bee    mov eax,this"
 "	      00499bf1    mov eax,[eax+38h]"
 "	      00499bf4    mov eax,[eax+374h]"
-"	      00499bfa    add eax,[ebp+0Ch]"
-"	      00499bfd    mov [ebp-20h],eax"
+"	      00499bfa    add eax,DestLeft"
+"	      00499bfd    mov nLastRectx,eax"
 );
 // LINE 1251:
 	asm( 
-"	      00499c00    mov eax,[ebp-38h]"
+"	      00499c00    mov eax,this"
 "	      00499c03    mov eax,[eax+38h]"
 "	      00499c06    mov eax,[eax+378h]"
-"	      00499c0c    add eax,[ebp+10h]"
-"	      00499c0f    mov [ebp-24h],eax"
+"	      00499c0c    add eax,DestTop"
+"	      00499c0f    mov nLastRecty,eax"
 );
 // LINE 1252:
 	asm( 
-"	      00499c12    mov eax,[ebp-38h]"
+"	      00499c12    mov eax,this"
 "	      00499c15    mov eax,[eax+38h]"
 "	      00499c18    mov eax,[eax+37Ch]"
-"	      00499c1e    mov [ebp-2Ch],eax"
+"	      00499c1e    mov nLastRectw,eax"
 );
 // LINE 1253:
 	asm( 
-"	      00499c21    mov eax,[ebp-38h]"
+"	      00499c21    mov eax,this"
 "	      00499c24    mov eax,[eax+38h]"
 "	      00499c27    mov eax,[eax+380h]"
-"	      00499c2d    mov [ebp-1Ch],eax"
+"	      00499c2d    mov nLastRecth,eax"
 );
 // LINE 1254:
 	asm( 
-"	      00499c30    mov eax,[ebp-2Ch]"
-"	      00499c33    add eax,[ebp-20h]"
-"	      00499c36    mov [ebp-4],eax"
+"	      00499c30    mov eax,nLastRectw"
+"	      00499c33    add eax,nLastRectx"
+"	      00499c36    mov nLastRectx2,eax"
 );
 // LINE 1255:
 	asm( 
-"	      00499c39    mov eax,[ebp-1Ch]"
-"	      00499c3c    add eax,[ebp-24h]"
-"	      00499c3f    mov [ebp-30h],eax"
+"	      00499c39    mov eax,nLastRecth"
+"	      00499c3c    add eax,nLastRecty"
+"	      00499c3f    mov nLastRecty2,eax"
 );
 // LINE 1259:
 	asm( 
-"	      00499c42    mov eax,[ebp-20h]"
-"	      00499c45    cmp [ebp+14h],eax"
+"	      00499c42    mov eax,nLastRectx"
+"	      00499c45    cmp SrcLeft,eax"
 "	      00499c48    jbe near ptr 00499C6Ah"
 );
 // LINE 1260:
 	asm( 
-"	      00499c4e    mov eax,[ebp-4]"
-"	      00499c51    cmp [ebp+14h],eax"
+"	      00499c4e    mov eax,nLastRectx2"
+"	      00499c51    cmp SrcLeft,eax"
 "	      00499c54    jbe near ptr 00499C64h"
 );
 // LINE 1261:
@@ -4350,19 +4350,19 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1263:
 	asm( 
-"	      00499c64    mov eax,[ebp+14h]"
-"	      00499c67    mov [ebp-20h],eax"
+"	      00499c64    mov eax,SrcLeft"
+"	      00499c67    mov nLastRectx,eax"
 );
 // LINE 1265:
 	asm( 
-"	      00499c6a    mov eax,[ebp-4]"
-"	      00499c6d    cmp [ebp+1Ch],eax"
+"	      00499c6a    mov eax,nLastRectx2"
+"	      00499c6d    cmp SrcRight,eax"
 "	      00499c70    jae near ptr 00499C95h"
 );
 // LINE 1266:
 	asm( 
-"	      00499c76    mov eax,[ebp-20h]"
-"	      00499c79    cmp [ebp+1Ch],eax"
+"	      00499c76    mov eax,nLastRectx"
+"	      00499c79    cmp SrcRight,eax"
 "	      00499c7c    jae near ptr 00499C8Ch"
 );
 // LINE 1267:
@@ -4375,20 +4375,20 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1269:
 	asm( 
-"	      00499c8c    mov eax,[ebp+1Ch]"
-"	      00499c8f    sub eax,[ebp-20h]"
-"	      00499c92    mov [ebp-2Ch],eax"
+"	      00499c8c    mov eax,SrcRight"
+"	      00499c8f    sub eax,nLastRectx"
+"	      00499c92    mov nLastRectw,eax"
 );
 // LINE 1271:
 	asm( 
-"	      00499c95    mov eax,[ebp-24h]"
-"	      00499c98    cmp [ebp+18h],eax"
+"	      00499c95    mov eax,nLastRecty"
+"	      00499c98    cmp SrcTop,eax"
 "	      00499c9b    jbe near ptr 00499CBDh"
 );
 // LINE 1272:
 	asm( 
-"	      00499ca1    mov eax,[ebp-30h]"
-"	      00499ca4    cmp [ebp+18h],eax"
+"	      00499ca1    mov eax,nLastRecty2"
+"	      00499ca4    cmp SrcTop,eax"
 "	      00499ca7    jbe near ptr 00499CB7h"
 );
 // LINE 1273:
@@ -4401,19 +4401,19 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1275:
 	asm( 
-"	      00499cb7    mov eax,[ebp+18h]"
-"	      00499cba    mov [ebp-24h],eax"
+"	      00499cb7    mov eax,SrcTop"
+"	      00499cba    mov nLastRecty,eax"
 );
 // LINE 1277:
 	asm( 
-"	      00499cbd    mov eax,[ebp-30h]"
-"	      00499cc0    cmp [ebp+20h],eax"
+"	      00499cbd    mov eax,nLastRecty2"
+"	      00499cc0    cmp SrcBottom,eax"
 "	      00499cc3    jae near ptr 00499CE8h"
 );
 // LINE 1278:
 	asm( 
-"	      00499cc9    mov eax,[ebp-24h]"
-"	      00499ccc    cmp [ebp+20h],eax"
+"	      00499cc9    mov eax,nLastRecty"
+"	      00499ccc    cmp SrcBottom,eax"
 "	      00499ccf    jae near ptr 00499CDFh"
 );
 // LINE 1279:
@@ -4426,56 +4426,56 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1281:
 	asm( 
-"	      00499cdf    mov eax,[ebp+20h]"
-"	      00499ce2    sub eax,[ebp-24h]"
-"	      00499ce5    mov [ebp-1Ch],eax"
+"	      00499cdf    mov eax,SrcBottom"
+"	      00499ce2    sub eax,nLastRecty"
+"	      00499ce5    mov nLastRecth,eax"
 );
 // LINE 1286:
 	asm( 
-"	      00499ce8    mov eax,[ebp-24h]"
-"	      00499ceb    imul eax,[ebp-10h]"
-"	      00499cef    add eax,[ebp-20h]"
-"	      00499cf2    add eax,[ebp-8]"
-"	      00499cf5    mov [ebp-14h],eax"
+"	      00499ce8    mov eax,nLastRecty"
+"	      00499ceb    imul eax,nDestImageStride"
+"	      00499cef    add eax,nLastRectx"
+"	      00499cf2    add eax,pOriginalDestImageBits"
+"	      00499cf5    mov pDestImageBits,eax"
 );
 // LINE 1288:
 	asm( 
-"	      00499cf8    mov eax,[ebp-24h]"
-"	      00499cfb    imul eax,[ebp-18h]"
-"	      00499cff    add eax,[ebp-20h]"
-"	      00499d02    add eax,[ebp-34h]"
-"	      00499d05    mov [ebp-0Ch],eax"
+"	      00499cf8    mov eax,nLastRecty"
+"	      00499cfb    imul eax,nSourceImageStride"
+"	      00499cff    add eax,nLastRectx"
+"	      00499d02    add eax,pOriginalSourceImageBits"
+"	      00499d05    mov pSourceImageBits,eax"
 );
 // LINE 1290:
 	asm( 
-"	      00499d08    mov dword ptr [ebp-28h],0"
+"	      00499d08    mov i,0"
 );
 // LINE 1291:
 	asm( 
-"	      00499d0f    mov eax,[ebp-1Ch]"
-"	      00499d12    cmp [ebp-28h],eax"
+"	      00499d0f    mov eax,nLastRecth"
+"	      00499d12    cmp i,eax"
 "	      00499d15    jae near ptr 00499D40h"
 );
 // LINE 1293:
 	asm( 
-"	      00499d1b    mov eax,[ebp-2Ch]"
+"	      00499d1b    mov eax,nLastRectw"
 "	      00499d1e    push eax"
-"	      00499d1f    mov eax,[ebp-0Ch]"
+"	      00499d1f    mov eax,pSourceImageBits"
 "	      00499d22    push eax"
-"	      00499d23    mov eax,[ebp-14h]"
+"	      00499d23    mov eax,pDestImageBits"
 "	      00499d26    push eax"
 "	      00499d27    call 0056A800h"
 "	      00499d2c    add esp,0Ch"
 );
 // LINE 1294:
 	asm( 
-"	      00499d2f    mov eax,[ebp-10h]"
-"	      00499d32    add [ebp-14h],eax"
+"	      00499d2f    mov eax,nDestImageStride"
+"	      00499d32    add pDestImageBits,eax"
 );
 // LINE 1295:
 	asm( 
-"	      00499d35    mov eax,[ebp-18h]"
-"	      00499d38    add [ebp-0Ch],eax"
+"	      00499d35    mov eax,nSourceImageStride"
+"	      00499d38    add pSourceImageBits,eax"
 );
 // LINE 1296:
 	asm( 
@@ -4487,9 +4487,9 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 );
 // LINE 1298:
 	asm( 
-"	      00499d45    mov eax,[ebp+8]"
+"	      00499d45    mov eax,pDestImage"
 "	      00499d48    mov eax,[eax]"
-"	      00499d4a    mov ecx,[ebp+8]"
+"	      00499d4a    mov ecx,pDestImage"
 "	      00499d4d    call dword ptr [eax+4]"
 );
 // LINE 1299:
@@ -4521,15 +4521,15 @@ void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long
 "	      00499d62    push ebx"
 "	      00499d63    push esi"
 "	      00499d64    push edi"
-"	      00499d65    mov [ebp-20h],ecx"
+"	      00499d65    mov this,ecx"
 );
 // LINE 1340:
 	asm( 
-"	      00499d68    mov dword ptr [ebp-14h],0"
+"	      00499d68    mov i,0"
 );
 // LINE 1342:
 	asm( 
-"	      00499d6f    mov eax,[ebp-20h]"
+"	      00499d6f    mov eax,this"
 "	      00499d72    cmp dword ptr [eax+38h],0"
 "	      00499d76    jne near ptr 00499D81h"
 );
@@ -4539,86 +4539,86 @@ void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long
 );
 // LINE 1345:
 	asm( 
-"	      00499d81    mov eax,[ebp+8]"
+"	      00499d81    mov eax,pDestImage"
 "	      00499d84    mov eax,[eax]"
-"	      00499d86    mov ecx,[ebp+8]"
+"	      00499d86    mov ecx,pDestImage"
 "	      00499d89    call dword ptr [eax]"
 );
 // LINE 1346:
 	asm( 
 "	      00499d8b    jmp near ptr 00499D90h"
-"	      00499d90    mov eax,[ebp+8]"
+"	      00499d90    mov eax,pDestImage"
 "	      00499d93    mov eax,[eax+10h]"
-"	      00499d96    mov [ebp-0Ch],eax"
+"	      00499d96    mov pDestImageBits,eax"
 );
 // LINE 1347:
 	asm( 
 "	      00499d99    jmp near ptr 00499D9Eh"
-"	      00499d9e    mov eax,[ebp+8]"
+"	      00499d9e    mov eax,pDestImage"
 "	      00499da1    mov eax,[eax+14h]"
-"	      00499da4    mov [ebp-8],eax"
+"	      00499da4    mov nDestImageStride,eax"
 );
 // LINE 1348:
 	asm( 
-"	      00499da7    mov eax,[ebp+10h]"
-"	      00499daa    imul eax,[ebp-8]"
-"	      00499dae    add eax,[ebp+0Ch]"
-"	      00499db1    add [ebp-0Ch],eax"
+"	      00499da7    mov eax,DestTop"
+"	      00499daa    imul eax,nDestImageStride"
+"	      00499dae    add eax,DestLeft"
+"	      00499db1    add pDestImageBits,eax"
 );
 // LINE 1349:
 	asm( 
-"	      00499db4    mov eax,[ebp-20h]"
+"	      00499db4    mov eax,this"
 "	      00499db7    mov eax,[eax+34h]"
 "	      00499dba    mov eax,[eax+43Ch]"
-"	      00499dc0    mov [ebp-4],eax"
+"	      00499dc0    mov pSourceImageBits,eax"
 );
 // LINE 1350:
 	asm( 
-"	      00499dc3    mov eax,[ebp-20h]"
+"	      00499dc3    mov eax,this"
 "	      00499dc6    mov eax,[eax+34h]"
 "	      00499dc9    mov eax,[eax+10h]"
-"	      00499dcc    mov [ebp-10h],eax"
+"	      00499dcc    mov nSourceImageStride,eax"
 );
 // LINE 1351:
 	asm( 
-"	      00499dcf    mov eax,[ebp-20h]"
+"	      00499dcf    mov eax,this"
 "	      00499dd2    mov eax,[eax+34h]"
 "	      00499dd5    mov eax,[eax+10h]"
-"	      00499dd8    mov [ebp-1Ch],eax"
+"	      00499dd8    mov nSourceImageWidth,eax"
 );
 // LINE 1352:
 	asm( 
-"	      00499ddb    mov eax,[ebp-20h]"
+"	      00499ddb    mov eax,this"
 "	      00499dde    mov eax,[eax+34h]"
 "	      00499de1    mov eax,[eax+14h]"
-"	      00499de4    mov [ebp-18h],eax"
+"	      00499de4    mov nSourceImageHeight,eax"
 );
 // LINE 1354:
 	asm( 
-"	      00499de7    mov eax,[ebp-18h]"
-"	      00499dea    cmp [ebp-14h],eax"
+"	      00499de7    mov eax,nSourceImageHeight"
+"	      00499dea    cmp i,eax"
 "	      00499ded    jge near ptr 00499E18h"
 );
 // LINE 1356:
 	asm( 
-"	      00499df3    mov eax,[ebp-1Ch]"
+"	      00499df3    mov eax,nSourceImageWidth"
 "	      00499df6    push eax"
-"	      00499df7    mov eax,[ebp-4]"
+"	      00499df7    mov eax,pSourceImageBits"
 "	      00499dfa    push eax"
-"	      00499dfb    mov eax,[ebp-0Ch]"
+"	      00499dfb    mov eax,pDestImageBits"
 "	      00499dfe    push eax"
 "	      00499dff    call 0056A800h"
 "	      00499e04    add esp,0Ch"
 );
 // LINE 1357:
 	asm( 
-"	      00499e07    mov eax,[ebp-8]"
-"	      00499e0a    add [ebp-0Ch],eax"
+"	      00499e07    mov eax,nDestImageStride"
+"	      00499e0a    add pDestImageBits,eax"
 );
 // LINE 1358:
 	asm( 
-"	      00499e0d    mov eax,[ebp-10h]"
-"	      00499e10    add [ebp-4],eax"
+"	      00499e0d    mov eax,nSourceImageStride"
+"	      00499e10    add pSourceImageBits,eax"
 );
 // LINE 1359:
 	asm( 
@@ -4626,9 +4626,9 @@ void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long
 );
 // LINE 1361:
 	asm( 
-"	      00499e18    mov eax,[ebp+8]"
+"	      00499e18    mov eax,pDestImage"
 "	      00499e1b    mov eax,[eax]"
-"	      00499e1d    mov ecx,[ebp+8]"
+"	      00499e1d    mov ecx,pDestImage"
 "	      00499e20    call dword ptr [eax+4]"
 );
 // LINE 1362:

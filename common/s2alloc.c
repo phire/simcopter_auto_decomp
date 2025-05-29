@@ -20,16 +20,16 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 );
 // LINE 268:
 	asm( 
-"	      004cb2b9    mov eax,[ebp+8]"
+"	      004cb2b9    mov eax,index"
 "	      004cb2bc    mov eax,[eax*4+6069D8h]"
-"	      004cb2c3    mov [ebp-4],eax"
+"	      004cb2c3    mov old,eax"
 );
 // LINE 270:
 	asm( 
 "	      004cb2c6    push 8"
 "	      004cb2c8    call 00572C10h"
 "	      004cb2cd    add esp,4"
-"	      004cb2d0    mov ecx,[ebp+8]"
+"	      004cb2d0    mov ecx,index"
 "	      004cb2d3    mov [ecx*4+6069D8h],eax"
 );
 // LINE 272:
@@ -43,33 +43,33 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 );
 // LINE 274:
 	asm( 
-"	      004cb2fc    mov eax,[ebp+0Ch]"
+"	      004cb2fc    mov eax,poolsize"
 "	      004cb2ff    push eax"
 "	      004cb300    call 004CB34Dh"
 "	      004cb305    add esp,4"
-"	      004cb308    mov ecx,[ebp+8]"
+"	      004cb308    mov ecx,index"
 "	      004cb30b    mov ecx,[ecx*4+6069D8h]"
 "	      004cb312    mov [ecx],eax"
 );
 // LINE 276:
 	asm( 
-"	      004cb314    mov eax,[ebp+8]"
+"	      004cb314    mov eax,index"
 "	      004cb317    mov eax,[eax*4+6069D8h]"
 "	      004cb31e    cmp dword ptr [eax],0"
 "	      004cb321    je near ptr 004CB340h"
 );
 // LINE 277:
 	asm( 
-"	      004cb327    mov eax,[ebp+8]"
+"	      004cb327    mov eax,index"
 "	      004cb32a    mov eax,[eax*4+6069D8h]"
 "	      004cb331    mov eax,[eax]"
-"	      004cb333    mov ecx,[ebp+8]"
+"	      004cb333    mov ecx,index"
 "	      004cb336    mov ecx,[ecx*4+6069D8h]"
 "	      004cb33d    mov [ecx+4],eax"
 );
 // LINE 279:
 	asm( 
-"	      004cb340    mov eax,[ebp-4]"
+"	      004cb340    mov eax,old"
 "	      004cb343    jmp near ptr 004CB348h"
 );
 // LINE 280:
@@ -98,24 +98,24 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 );
 // LINE 238:
 	asm( 
-"	      004cb356    mov eax,[ebp+8]"
+"	      004cb356    mov eax,size"
 "	      004cb359    push eax"
 "	      004cb35a    call 00572C10h"
 "	      004cb35f    add esp,4"
-"	      004cb362    mov [ebp-8],eax"
+"	      004cb362    mov block,eax"
 );
 // LINE 239:
 	asm( 
 "	      004cb365    push 10h"
 "	      004cb367    call 00572C10h"
 "	      004cb36c    add esp,4"
-"	      004cb36f    mov [ebp-4],eax"
+"	      004cb36f    mov hdr,eax"
 );
 // LINE 241:
 	asm( 
-"	      004cb372    cmp dword ptr [ebp-4],0"
+"	      004cb372    cmp hdr,0"
 "	      004cb376    je near ptr 004CB386h"
-"	      004cb37c    cmp dword ptr [ebp-8],0"
+"	      004cb37c    cmp block,0"
 "	      004cb380    jne near ptr 004CB3A6h"
 );
 // LINE 243:
@@ -135,31 +135,31 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 );
 // LINE 246:
 	asm( 
-"	      004cb3a6    mov eax,[ebp-8]"
-"	      004cb3a9    mov ecx,[ebp-4]"
+"	      004cb3a6    mov eax,block"
+"	      004cb3a9    mov ecx,hdr"
 "	      004cb3ac    mov [ecx+4],eax"
 );
 // LINE 247:
 	asm( 
-"	      004cb3af    mov eax,[ebp-8]"
-"	      004cb3b2    mov ecx,[ebp-4]"
+"	      004cb3af    mov eax,block"
+"	      004cb3b2    mov ecx,hdr"
 "	      004cb3b5    mov [ecx+8],eax"
 );
 // LINE 248:
 	asm( 
-"	      004cb3b8    mov eax,[ebp-4]"
+"	      004cb3b8    mov eax,hdr"
 "	      004cb3bb    mov dword ptr [eax],0"
 );
 // LINE 249:
 	asm( 
-"	      004cb3c1    mov eax,[ebp+8]"
-"	      004cb3c4    add eax,[ebp-8]"
-"	      004cb3c7    mov ecx,[ebp-4]"
+"	      004cb3c1    mov eax,size"
+"	      004cb3c4    add eax,block"
+"	      004cb3c7    mov ecx,hdr"
 "	      004cb3ca    mov [ecx+0Ch],eax"
 );
 // LINE 251:
 	asm( 
-"	      004cb3cd    mov eax,[ebp+8]"
+"	      004cb3cd    mov eax,size"
 "	      004cb3d0    add eax,10h"
 "	      004cb3d3    add ds:[59B524h],eax"
 "	      004cb3d9    mov eax,ds:[59B524h]"
@@ -170,7 +170,7 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 );
 // LINE 253:
 	asm( 
-"	      004cb3f4    mov eax,[ebp-4]"
+"	      004cb3f4    mov eax,hdr"
 "	      004cb3f7    jmp near ptr 004CB3FCh"
 );
 // LINE 254:
@@ -209,15 +209,15 @@ int32_t S2AllocPool(unsigned long poolsize) {
 );
 // LINE 299:
 	asm( 
-"	      004cb421    mov dword ptr [ebp-8],0"
+"	      004cb421    mov index,0"
 "	      004cb428    jmp near ptr 004CB430h"
-"	      004cb42d    inc dword ptr [ebp-8]"
-"	      004cb430    cmp dword ptr [ebp-8],20h"
+"	      004cb42d    inc index"
+"	      004cb430    cmp index,20h"
 "	      004cb434    jge near ptr 004CB455h"
 );
 // LINE 301:
 	asm( 
-"	      004cb43a    mov eax,[ebp-8]"
+"	      004cb43a    mov eax,index"
 "	      004cb43d    cmp dword ptr [eax*4+6069D8h],0"
 "	      004cb445    jne near ptr 004CB450h"
 );
@@ -231,7 +231,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 );
 // LINE 305:
 	asm( 
-"	      004cb455    cmp dword ptr [ebp-8],20h"
+"	      004cb455    cmp index,20h"
 "	      004cb459    jne near ptr 004CB469h"
 );
 // LINE 306:
@@ -241,17 +241,17 @@ int32_t S2AllocPool(unsigned long poolsize) {
 );
 // LINE 308:
 	asm( 
-"	      004cb469    mov eax,[ebp+8]"
+"	      004cb469    mov eax,poolsize"
 "	      004cb46c    push eax"
-"	      004cb46d    mov eax,[ebp-8]"
+"	      004cb46d    mov eax,index"
 "	      004cb470    push eax"
 "	      004cb471    call 004CB2B0h"
 "	      004cb476    add esp,8"
-"	      004cb479    mov [ebp-4],eax"
+"	      004cb479    mov lastPool,eax"
 );
 // LINE 310:
 	asm( 
-"	      004cb47c    mov eax,[ebp-8]"
+"	      004cb47c    mov eax,index"
 "	      004cb47f    mov eax,[eax*4+6069D8h]"
 "	      004cb486    cmp dword ptr [eax],0"
 "	      004cb489    jne near ptr 004CB499h"
@@ -267,7 +267,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 );
 // LINE 314:
 	asm( 
-"	      004cb49f    mov eax,[ebp-8]"
+"	      004cb49f    mov eax,index"
 "	      004cb4a2    jmp near ptr 004CB4A7h"
 );
 // LINE 315:
@@ -296,58 +296,58 @@ char * S2Alloc(int32_t index, int32_t size) {
 );
 // LINE 331:
 	asm( 
-"	      004cb4b5    mov eax,[ebp+8]"
+"	      004cb4b5    mov eax,index"
 "	      004cb4b8    mov eax,[eax*4+6069D8h]"
 "	      004cb4bf    mov eax,[eax+4]"
-"	      004cb4c2    mov [ebp-8],eax"
+"	      004cb4c2    mov hdr,eax"
 );
 // LINE 340:
 	asm( 
-"	      004cb4c5    mov eax,[ebp+0Ch]"
+"	      004cb4c5    mov eax,size"
 "	      004cb4c8    add eax,3"
 "	      004cb4cb    and eax,0FFFFFFFCh"
-"	      004cb4ce    mov [ebp+0Ch],eax"
+"	      004cb4ce    mov size,eax"
 );
 // LINE 342:
 	asm( 
-"	      004cb4d1    mov eax,[ebp-8]"
+"	      004cb4d1    mov eax,hdr"
 "	      004cb4d4    mov eax,[eax+8]"
-"	      004cb4d7    mov [ebp-4],eax"
+"	      004cb4d7    mov ptr,eax"
 );
 // LINE 343:
 	asm( 
-"	      004cb4da    mov eax,[ebp+0Ch]"
-"	      004cb4dd    mov ecx,[ebp-8]"
+"	      004cb4da    mov eax,size"
+"	      004cb4dd    mov ecx,hdr"
 "	      004cb4e0    add [ecx+8],eax"
 );
 // LINE 347:
 	asm( 
-"	      004cb4e3    mov eax,[ebp-8]"
-"	      004cb4e6    mov ecx,[ebp-8]"
+"	      004cb4e3    mov eax,hdr"
+"	      004cb4e6    mov ecx,hdr"
 "	      004cb4e9    mov ecx,[ecx+0Ch]"
 "	      004cb4ec    cmp [eax+8],ecx"
 "	      004cb4ef    jb near ptr 004CB595h"
 );
 // LINE 351:
 	asm( 
-"	      004cb4f5    mov eax,[ebp-8]"
+"	      004cb4f5    mov eax,hdr"
 "	      004cb4f8    cmp dword ptr [eax],0"
 "	      004cb4fb    je near ptr 004CB528h"
 );
 // LINE 354:
 	asm( 
-"	      004cb501    mov eax,[ebp-8]"
+"	      004cb501    mov eax,hdr"
 "	      004cb504    mov eax,[eax]"
 "	      004cb506    mov eax,[eax+4]"
-"	      004cb509    mov ecx,[ebp-8]"
+"	      004cb509    mov ecx,hdr"
 "	      004cb50c    mov ecx,[ecx]"
 "	      004cb50e    mov [ecx+8],eax"
 );
 // LINE 355:
 	asm( 
-"	      004cb511    mov eax,[ebp-8]"
+"	      004cb511    mov eax,hdr"
 "	      004cb514    mov eax,[eax]"
-"	      004cb516    mov ecx,[ebp+8]"
+"	      004cb516    mov ecx,index"
 "	      004cb519    mov ecx,[ecx*4+6069D8h]"
 "	      004cb520    mov [ecx+4],eax"
 );
@@ -357,16 +357,16 @@ char * S2Alloc(int32_t index, int32_t size) {
 );
 // LINE 360:
 	asm( 
-"	      004cb528    cmp dword ptr [ebp+0Ch],2000h"
+"	      004cb528    cmp size,2000h"
 "	      004cb52f    jle near ptr 004CB54Bh"
 );
 // LINE 361:
 	asm( 
-"	      004cb535    mov eax,[ebp+0Ch]"
+"	      004cb535    mov eax,size"
 "	      004cb538    push eax"
 "	      004cb539    call 004CB34Dh"
 "	      004cb53e    add esp,4"
-"	      004cb541    mov ecx,[ebp-8]"
+"	      004cb541    mov ecx,hdr"
 "	      004cb544    mov [ecx],eax"
 );
 // LINE 362:
@@ -378,41 +378,41 @@ char * S2Alloc(int32_t index, int32_t size) {
 "	      004cb54b    push 2000h"
 "	      004cb550    call 004CB34Dh"
 "	      004cb555    add esp,4"
-"	      004cb558    mov ecx,[ebp-8]"
+"	      004cb558    mov ecx,hdr"
 "	      004cb55b    mov [ecx],eax"
 );
 // LINE 364:
 	asm( 
-"	      004cb55d    mov eax,[ebp-8]"
+"	      004cb55d    mov eax,hdr"
 "	      004cb560    mov eax,[eax]"
-"	      004cb562    mov ecx,[ebp+8]"
+"	      004cb562    mov ecx,index"
 "	      004cb565    mov ecx,[ecx*4+6069D8h]"
 "	      004cb56c    mov [ecx+4],eax"
 );
 // LINE 368:
 	asm( 
-"	      004cb56f    mov eax,[ebp+8]"
+"	      004cb56f    mov eax,index"
 "	      004cb572    mov eax,[eax*4+6069D8h]"
 "	      004cb579    mov eax,[eax+4]"
 "	      004cb57c    mov eax,[eax+8]"
-"	      004cb57f    mov [ebp-4],eax"
+"	      004cb57f    mov ptr,eax"
 );
 // LINE 369:
 	asm( 
-"	      004cb582    mov eax,[ebp+0Ch]"
-"	      004cb585    mov ecx,[ebp+8]"
+"	      004cb582    mov eax,size"
+"	      004cb585    mov ecx,index"
 "	      004cb588    mov ecx,[ecx*4+6069D8h]"
 "	      004cb58f    mov ecx,[ecx+4]"
 "	      004cb592    add [ecx+8],eax"
 );
 // LINE 372:
 	asm( 
-"	      004cb595    mov eax,[ebp+0Ch]"
+"	      004cb595    mov eax,size"
 "	      004cb598    add ds:[59B530h],eax"
 );
 // LINE 383:
 	asm( 
-"	      004cb59e    mov eax,[ebp-4]"
+"	      004cb59e    mov eax,ptr"
 "	      004cb5a1    jmp near ptr 004CB5A6h"
 );
 // LINE 384:
@@ -437,11 +437,11 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 );
 // LINE 399:
 	asm( 
-"	      004cb5b1    mov eax,[ebp+10h]"
+"	      004cb5b1    mov eax,size"
 "	      004cb5b4    push eax"
-"	      004cb5b5    mov eax,[ebp+0Ch]"
+"	      004cb5b5    mov eax,name"
 "	      004cb5b8    push eax"
-"	      004cb5b9    mov eax,[ebp+8]"
+"	      004cb5b9    mov eax,index"
 "	      004cb5bc    push eax"
 "	      004cb5bd    call 004CB5CFh"
 "	      004cb5c2    add esp,0Ch"
@@ -472,17 +472,17 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 );
 // LINE 416:
 	asm( 
-"	      004cb5d8    mov eax,[ebp+10h]"
+"	      004cb5d8    mov eax,size"
 "	      004cb5db    push eax"
-"	      004cb5dc    mov eax,[ebp+8]"
+"	      004cb5dc    mov eax,index"
 "	      004cb5df    push eax"
 "	      004cb5e0    call 004CB4ACh"
 "	      004cb5e5    add esp,8"
-"	      004cb5e8    mov [ebp-4],eax"
+"	      004cb5e8    mov ptr,eax"
 );
 // LINE 423:
 	asm( 
-"	      004cb5eb    mov eax,[ebp-4]"
+"	      004cb5eb    mov eax,ptr"
 "	      004cb5ee    jmp near ptr 004CB5F3h"
 );
 // LINE 424:
@@ -510,19 +510,19 @@ struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newP
 );
 // LINE 438:
 	asm( 
-"	      004cb601    mov eax,[ebp+8]"
+"	      004cb601    mov eax,index"
 "	      004cb604    mov eax,[eax*4+6069D8h]"
-"	      004cb60b    mov [ebp-4],eax"
+"	      004cb60b    mov old,eax"
 );
 // LINE 440:
 	asm( 
-"	      004cb60e    mov eax,[ebp+0Ch]"
-"	      004cb611    mov ecx,[ebp+8]"
+"	      004cb60e    mov eax,newPtr"
+"	      004cb611    mov ecx,index"
 "	      004cb614    mov [ecx*4+6069D8h],eax"
 );
 // LINE 442:
 	asm( 
-"	      004cb61b    mov eax,[ebp-4]"
+"	      004cb61b    mov eax,old"
 "	      004cb61e    jmp near ptr 004CB623h"
 );
 // LINE 443:
@@ -550,7 +550,7 @@ void S2AllocReset(int32_t index) {
 );
 // LINE 459:
 	asm( 
-"	      004cb631    mov eax,[ebp+8]"
+"	      004cb631    mov eax,index"
 "	      004cb634    cmp dword ptr [eax*4+6069D8h],0"
 "	      004cb63c    jne near ptr 004CB647h"
 );
@@ -560,22 +560,22 @@ void S2AllocReset(int32_t index) {
 );
 // LINE 462:
 	asm( 
-"	      004cb647    mov eax,[ebp+8]"
+"	      004cb647    mov eax,index"
 "	      004cb64a    mov eax,[eax*4+6069D8h]"
 "	      004cb651    mov eax,[eax]"
-"	      004cb653    mov [ebp-4],eax"
+"	      004cb653    mov hdr,eax"
 );
 // LINE 463:
 	asm( 
-"	      004cb656    cmp dword ptr [ebp-4],0"
+"	      004cb656    cmp hdr,0"
 "	      004cb65a    je near ptr 004CB685h"
 );
 // LINE 465:
 	asm( 
 "	      004cb660    xor eax,eax"
-"	      004cb662    mov ecx,[ebp-4]"
+"	      004cb662    mov ecx,hdr"
 "	      004cb665    mov ecx,[ecx+8]"
-"	      004cb668    mov edx,[ebp-4]"
+"	      004cb668    mov edx,hdr"
 "	      004cb66b    sub ecx,[edx+4]"
 "	      004cb66e    sub eax,ecx"
 "	      004cb670    neg eax"
@@ -583,9 +583,9 @@ void S2AllocReset(int32_t index) {
 );
 // LINE 466:
 	asm( 
-"	      004cb678    mov eax,[ebp-4]"
+"	      004cb678    mov eax,hdr"
 "	      004cb67b    mov eax,[eax]"
-"	      004cb67d    mov [ebp-4],eax"
+"	      004cb67d    mov hdr,eax"
 );
 // LINE 467:
 	asm( 
@@ -593,20 +593,20 @@ void S2AllocReset(int32_t index) {
 );
 // LINE 469:
 	asm( 
-"	      004cb685    mov eax,[ebp+8]"
+"	      004cb685    mov eax,index"
 "	      004cb688    mov eax,[eax*4+6069D8h]"
 "	      004cb68f    mov eax,[eax]"
-"	      004cb691    mov ecx,[ebp+8]"
+"	      004cb691    mov ecx,index"
 "	      004cb694    mov ecx,[ecx*4+6069D8h]"
 "	      004cb69b    mov [ecx+4],eax"
 );
 // LINE 470:
 	asm( 
-"	      004cb69e    mov eax,[ebp+8]"
+"	      004cb69e    mov eax,index"
 "	      004cb6a1    mov eax,[eax*4+6069D8h]"
 "	      004cb6a8    mov eax,[eax+4]"
 "	      004cb6ab    mov eax,[eax+4]"
-"	      004cb6ae    mov ecx,[ebp+8]"
+"	      004cb6ae    mov ecx,index"
 "	      004cb6b1    mov ecx,[ecx*4+6069D8h]"
 "	      004cb6b8    mov ecx,[ecx+4]"
 "	      004cb6bb    mov [ecx+8],eax"
@@ -637,7 +637,7 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 493:
 	asm( 
-"	      004cb6cc    mov eax,[ebp+8]"
+"	      004cb6cc    mov eax,index"
 "	      004cb6cf    cmp dword ptr [eax*4+6069D8h],0"
 "	      004cb6d7    jne near ptr 004CB6E2h"
 );
@@ -647,28 +647,28 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 496:
 	asm( 
-"	      004cb6e2    mov eax,[ebp+8]"
+"	      004cb6e2    mov eax,index"
 "	      004cb6e5    mov eax,[eax*4+6069D8h]"
 "	      004cb6ec    mov eax,[eax]"
-"	      004cb6ee    mov [ebp-8],eax"
+"	      004cb6ee    mov hdr,eax"
 );
 // LINE 498:
 	asm( 
-"	      004cb6f1    cmp dword ptr [ebp-8],0"
+"	      004cb6f1    cmp hdr,0"
 "	      004cb6f5    je near ptr 004CB761h"
 );
 // LINE 500:
 	asm( 
-"	      004cb6fb    mov eax,[ebp-8]"
+"	      004cb6fb    mov eax,hdr"
 "	      004cb6fe    mov eax,[eax]"
-"	      004cb700    mov [ebp-4],eax"
+"	      004cb700    mov next_hdr,eax"
 );
 // LINE 501:
 	asm( 
 "	      004cb703    xor eax,eax"
-"	      004cb705    mov ecx,[ebp-8]"
+"	      004cb705    mov ecx,hdr"
 "	      004cb708    mov ecx,[ecx+0Ch]"
-"	      004cb70b    mov edx,[ebp-8]"
+"	      004cb70b    mov edx,hdr"
 "	      004cb70e    sub ecx,[edx+4]"
 "	      004cb711    sub eax,ecx"
 "	      004cb713    neg eax"
@@ -676,9 +676,9 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 502:
 	asm( 
-"	      004cb71b    mov eax,[ebp-8]"
+"	      004cb71b    mov eax,hdr"
 "	      004cb71e    mov eax,[eax+0Ch]"
-"	      004cb721    mov ecx,[ebp-8]"
+"	      004cb721    mov ecx,hdr"
 "	      004cb724    sub eax,[ecx+4]"
 "	      004cb727    add ds:[59B528h],eax"
 );
@@ -692,7 +692,7 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 505:
 	asm( 
-"	      004cb73b    mov eax,[ebp-8]"
+"	      004cb73b    mov eax,hdr"
 "	      004cb73e    mov eax,[eax+4]"
 "	      004cb741    push eax"
 "	      004cb742    call 005737A0h"
@@ -700,15 +700,15 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 506:
 	asm( 
-"	      004cb74a    mov eax,[ebp-8]"
+"	      004cb74a    mov eax,hdr"
 "	      004cb74d    push eax"
 "	      004cb74e    call 005737A0h"
 "	      004cb753    add esp,4"
 );
 // LINE 507:
 	asm( 
-"	      004cb756    mov eax,[ebp-4]"
-"	      004cb759    mov [ebp-8],eax"
+"	      004cb756    mov eax,next_hdr"
+"	      004cb759    mov hdr,eax"
 );
 // LINE 508:
 	asm( 
@@ -716,7 +716,7 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 509:
 	asm( 
-"	      004cb761    mov eax,[ebp+8]"
+"	      004cb761    mov eax,index"
 "	      004cb764    mov eax,[eax*4+6069D8h]"
 "	      004cb76b    push eax"
 "	      004cb76c    call 005737A0h"
@@ -732,7 +732,7 @@ void S2AllocFreePool(int32_t index) {
 );
 // LINE 512:
 	asm( 
-"	      004cb782    mov eax,[ebp+8]"
+"	      004cb782    mov eax,index"
 "	      004cb785    mov dword ptr [eax*4+6069D8h],0"
 );
 // LINE 513:
@@ -800,11 +800,11 @@ void * __ptr32 DOSAllocAlignedHack() {
 "	      004cb7c3    push 20000h"
 "	      004cb7c8    call 00572C10h"
 "	      004cb7cd    add esp,4"
-"	      004cb7d0    mov [ebp-4],eax"
+"	      004cb7d0    mov retaddr,eax"
 );
 // LINE 754:
 	asm( 
-"	      004cb7d3    cmp dword ptr [ebp-4],0"
+"	      004cb7d3    cmp retaddr,0"
 "	      004cb7d7    jne near ptr 004CB7E4h"
 );
 // LINE 755:
@@ -814,18 +814,18 @@ void * __ptr32 DOSAllocAlignedHack() {
 );
 // LINE 759:
 	asm( 
-"	      004cb7e4    test dword ptr [ebp-4],0FFFFh"
+"	      004cb7e4    test retaddr,0FFFFh"
 "	      004cb7eb    je near ptr 004CB803h"
 );
 // LINE 763:
 	asm( 
-"	      004cb7f1    mov eax,[ebp-4]"
+"	      004cb7f1    mov eax,retaddr"
 "	      004cb7f4    and eax,0FFFF0000h"
-"	      004cb7f9    mov [ebp-4],eax"
+"	      004cb7f9    mov retaddr,eax"
 );
 // LINE 764:
 	asm( 
-"	      004cb7fc    add dword ptr [ebp-4],10000h"
+"	      004cb7fc    add retaddr,10000h"
 );
 // LINE 767:
 	asm( 
@@ -842,7 +842,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 );
 // LINE 770:
 	asm( 
-"	      004cb832    mov eax,[ebp-4]"
+"	      004cb832    mov eax,retaddr"
 "	      004cb835    jmp near ptr 004CB83Ah"
 );
 // LINE 771:
@@ -869,7 +869,7 @@ void S2FreeAligned(void * __ptr32 mem) {
 	asm( 
 "	      004cb845    push 8000h"
 "	      004cb84a    push 0"
-"	      004cb84c    mov eax,[ebp+8]"
+"	      004cb84c    mov eax,mem"
 "	      004cb84f    push eax"
 "	      004cb850    call dword ptr ds:[6C3734h]"
 );

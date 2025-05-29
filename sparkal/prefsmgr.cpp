@@ -15,27 +15,27 @@ void PreferenceItem::PreferenceItem() {
 "	      0047bb76    push ebx"
 "	      0047bb77    push esi"
 "	      0047bb78    push edi"
-"	      0047bb79    mov [ebp-4],ecx"
+"	      0047bb79    mov this,ecx"
 );
 // LINE 18:
 	asm( 
-"	      0047bb7c    mov eax,[ebp-4]"
+"	      0047bb7c    mov eax,this"
 "	      0047bb7f    mov dword ptr [eax],0"
 );
 // LINE 19:
 	asm( 
-"	      0047bb85    mov eax,[ebp-4]"
+"	      0047bb85    mov eax,this"
 "	      0047bb88    mov dword ptr [eax+4],0"
 );
 // LINE 20:
 	asm( 
-"	      0047bb8f    mov eax,[ebp-4]"
+"	      0047bb8f    mov eax,this"
 "	      0047bb92    mov dword ptr [eax+8],0"
 );
 // LINE 21:
 	asm( 
 "	      0047bb99    jmp near ptr 0047BB9Eh"
-"	      0047bb9e    mov eax,[ebp-4]"
+"	      0047bb9e    mov eax,this"
 "	      0047bba1    pop edi"
 "	      0047bba2    pop esi"
 "	      0047bba3    pop ebx"
@@ -54,62 +54,62 @@ void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
 "	      0047bbac    push ebx"
 "	      0047bbad    push esi"
 "	      0047bbae    push edi"
-"	      0047bbaf    mov [ebp-4],ecx"
+"	      0047bbaf    mov this,ecx"
 );
 // LINE 32:
 	asm( 
-"	      0047bbb2    mov eax,[ebp+8]"
+"	      0047bbb2    mov eax,P1"
 "	      0047bbb5    mov eax,[eax]"
-"	      0047bbb7    mov ecx,[ebp-4]"
+"	      0047bbb7    mov ecx,this"
 "	      0047bbba    mov [ecx],eax"
 );
 // LINE 33:
 	asm( 
-"	      0047bbbc    mov eax,[ebp+8]"
+"	      0047bbbc    mov eax,P1"
 "	      0047bbbf    mov eax,[eax+4]"
-"	      0047bbc2    mov ecx,[ebp-4]"
+"	      0047bbc2    mov ecx,this"
 "	      0047bbc5    mov [ecx+4],eax"
 );
 // LINE 35:
 	asm( 
-"	      0047bbc8    mov eax,[ebp+8]"
+"	      0047bbc8    mov eax,P1"
 "	      0047bbcb    cmp dword ptr [eax+8],0"
 "	      0047bbcf    je near ptr 0047BC2Eh"
 );
 // LINE 36:
 	asm( 
-"	      0047bbd5    mov eax,[ebp-4]"
+"	      0047bbd5    mov eax,this"
 "	      0047bbd8    mov eax,[eax+4]"
 "	      0047bbdb    push eax"
 "	      0047bbdc    call 0056A600h"
 "	      0047bbe1    add esp,4"
-"	      0047bbe4    mov ecx,[ebp-4]"
+"	      0047bbe4    mov ecx,this"
 "	      0047bbe7    mov [ecx+8],eax"
 );
 // LINE 37:
 	asm( 
-"	      0047bbea    mov eax,[ebp-4]"
+"	      0047bbea    mov eax,this"
 "	      0047bbed    cmp dword ptr [eax+8],0"
 "	      0047bbf1    jne near ptr 0047BC0Ch"
 );
 // LINE 38:
 	asm( 
-"	      0047bbf7    mov eax,[ebp-4]"
+"	      0047bbf7    mov eax,this"
 "	      0047bbfa    mov dword ptr [eax+4],0"
-"	      0047bc01    mov eax,[ebp-4]"
+"	      0047bc01    mov eax,this"
 "	      0047bc04    mov eax,[eax+4]"
-"	      0047bc07    mov ecx,[ebp-4]"
+"	      0047bc07    mov ecx,this"
 "	      0047bc0a    mov [ecx],eax"
 );
 // LINE 41:
 	asm( 
-"	      0047bc0c    mov eax,[ebp-4]"
+"	      0047bc0c    mov eax,this"
 "	      0047bc0f    mov eax,[eax+4]"
 "	      0047bc12    push eax"
-"	      0047bc13    mov eax,[ebp+8]"
+"	      0047bc13    mov eax,P1"
 "	      0047bc16    mov eax,[eax+8]"
 "	      0047bc19    push eax"
-"	      0047bc1a    mov eax,[ebp-4]"
+"	      0047bc1a    mov eax,this"
 "	      0047bc1d    mov eax,[eax+8]"
 "	      0047bc20    push eax"
 "	      0047bc21    call 0056A800h"
@@ -121,13 +121,13 @@ void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
 );
 // LINE 44:
 	asm( 
-"	      0047bc2e    mov eax,[ebp-4]"
+"	      0047bc2e    mov eax,this"
 "	      0047bc31    mov dword ptr [eax+8],0"
 );
 // LINE 45:
 	asm( 
 "	      0047bc38    jmp near ptr 0047BC3Dh"
-"	      0047bc3d    mov eax,[ebp-4]"
+"	      0047bc3d    mov eax,this"
 "	      0047bc40    pop edi"
 "	      0047bc41    pop esi"
 "	      0047bc42    pop ebx"
@@ -146,17 +146,17 @@ void PreferenceItem::~PreferenceItem() {
 "	      0047bc4d    push ebx"
 "	      0047bc4e    push esi"
 "	      0047bc4f    push edi"
-"	      0047bc50    mov [ebp-0Ch],ecx"
+"	      0047bc50    mov this,ecx"
 );
 // LINE 53:
 	asm( 
-"	      0047bc53    mov eax,[ebp-0Ch]"
+"	      0047bc53    mov eax,this"
 "	      0047bc56    cmp dword ptr [eax+8],0"
 "	      0047bc5a    je near ptr 0047BC7Bh"
 );
 // LINE 54:
 	asm( 
-"	      0047bc60    mov eax,[ebp-0Ch]"
+"	      0047bc60    mov eax,this"
 "	      0047bc63    mov eax,[eax+8]"
 "	      0047bc66    mov [ebp-4],eax"
 "	      0047bc69    mov eax,[ebp-4]"
@@ -187,62 +187,62 @@ class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem& P2) 
 "	      0047bc8b    push ebx"
 "	      0047bc8c    push esi"
 "	      0047bc8d    push edi"
-"	      0047bc8e    mov [ebp-4],ecx"
+"	      0047bc8e    mov this,ecx"
 );
 // LINE 65:
 	asm( 
-"	      0047bc91    mov eax,[ebp+8]"
+"	      0047bc91    mov eax,P2"
 "	      0047bc94    mov eax,[eax]"
-"	      0047bc96    mov ecx,[ebp-4]"
+"	      0047bc96    mov ecx,this"
 "	      0047bc99    mov [ecx],eax"
 );
 // LINE 66:
 	asm( 
-"	      0047bc9b    mov eax,[ebp+8]"
+"	      0047bc9b    mov eax,P2"
 "	      0047bc9e    mov eax,[eax+4]"
-"	      0047bca1    mov ecx,[ebp-4]"
+"	      0047bca1    mov ecx,this"
 "	      0047bca4    mov [ecx+4],eax"
 );
 // LINE 67:
 	asm( 
-"	      0047bca7    mov eax,[ebp+8]"
+"	      0047bca7    mov eax,P2"
 "	      0047bcaa    cmp dword ptr [eax+8],0"
 "	      0047bcae    je near ptr 0047BD0Dh"
 );
 // LINE 68:
 	asm( 
-"	      0047bcb4    mov eax,[ebp-4]"
+"	      0047bcb4    mov eax,this"
 "	      0047bcb7    mov eax,[eax+4]"
 "	      0047bcba    push eax"
 "	      0047bcbb    call 0056A600h"
 "	      0047bcc0    add esp,4"
-"	      0047bcc3    mov ecx,[ebp-4]"
+"	      0047bcc3    mov ecx,this"
 "	      0047bcc6    mov [ecx+8],eax"
 );
 // LINE 69:
 	asm( 
-"	      0047bcc9    mov eax,[ebp-4]"
+"	      0047bcc9    mov eax,this"
 "	      0047bccc    cmp dword ptr [eax+8],0"
 "	      0047bcd0    jne near ptr 0047BCEBh"
 );
 // LINE 70:
 	asm( 
-"	      0047bcd6    mov eax,[ebp-4]"
+"	      0047bcd6    mov eax,this"
 "	      0047bcd9    mov dword ptr [eax+4],0"
-"	      0047bce0    mov eax,[ebp-4]"
+"	      0047bce0    mov eax,this"
 "	      0047bce3    mov eax,[eax+4]"
-"	      0047bce6    mov ecx,[ebp-4]"
+"	      0047bce6    mov ecx,this"
 "	      0047bce9    mov [ecx],eax"
 );
 // LINE 73:
 	asm( 
-"	      0047bceb    mov eax,[ebp-4]"
+"	      0047bceb    mov eax,this"
 "	      0047bcee    mov eax,[eax+4]"
 "	      0047bcf1    push eax"
-"	      0047bcf2    mov eax,[ebp+8]"
+"	      0047bcf2    mov eax,P2"
 "	      0047bcf5    mov eax,[eax+8]"
 "	      0047bcf8    push eax"
-"	      0047bcf9    mov eax,[ebp-4]"
+"	      0047bcf9    mov eax,this"
 "	      0047bcfc    mov eax,[eax+8]"
 "	      0047bcff    push eax"
 "	      0047bd00    call 0056A800h"
@@ -254,12 +254,12 @@ class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem& P2) 
 );
 // LINE 76:
 	asm( 
-"	      0047bd0d    mov eax,[ebp-4]"
+"	      0047bd0d    mov eax,this"
 "	      0047bd10    mov dword ptr [eax+8],0"
 );
 // LINE 77:
 	asm( 
-"	      0047bd17    mov eax,[ebp-4]"
+"	      0047bd17    mov eax,this"
 "	      0047bd1a    jmp near ptr 0047BD1Fh"
 );
 // LINE 78:
@@ -284,8 +284,8 @@ int32_t operator==(const class PreferenceItem& P1, const class PreferenceItem& P
 );
 // LINE 86:
 	asm( 
-"	      0047bd2c    mov eax,[ebp+8]"
-"	      0047bd2f    cmp [ebp+0Ch],eax"
+"	      0047bd2c    mov eax,P1"
+"	      0047bd2f    cmp P2,eax"
 "	      0047bd32    jne near ptr 0047BD42h"
 "	      0047bd38    mov eax,1"
 "	      0047bd3d    jmp near ptr 0047BD44h"
@@ -312,12 +312,12 @@ int32_t PreferenceItem::Compare(const class PreferenceItem& P2) {
 "	      0047bd54    push ebx"
 "	      0047bd55    push esi"
 "	      0047bd56    push edi"
-"	      0047bd57    mov [ebp-4],ecx"
+"	      0047bd57    mov this,ecx"
 );
 // LINE 95:
 	asm( 
-"	      0047bd5a    mov eax,[ebp+8]"
-"	      0047bd5d    cmp [ebp-4],eax"
+"	      0047bd5a    mov eax,P2"
+"	      0047bd5d    cmp this,eax"
 "	      0047bd60    jne near ptr 0047BD70h"
 );
 // LINE 96:
@@ -352,8 +352,8 @@ int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2
 );
 // LINE 120:
 	asm( 
-"	      0047bd84    mov eax,[ebp+8]"
-"	      0047bd87    mov ecx,[ebp+0Ch]"
+"	      0047bd84    mov eax,P1"
+"	      0047bd87    mov ecx,P2"
 "	      0047bd8a    mov ecx,[ecx]"
 "	      0047bd8c    cmp [eax],ecx"
 "	      0047bd8e    jge near ptr 0047BD9Eh"
@@ -384,7 +384,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 "	      0047bdb0    push ebx"
 "	      0047bdb1    push esi"
 "	      0047bdb2    push edi"
-"	      0047bdb3    mov [ebp-14h],ecx"
+"	      0047bdb3    mov this,ecx"
 );
 // LINE 132:
 	asm( 
@@ -396,55 +396,55 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 "	      0047bdc7    je near ptr 0047BDDDh"
 "	      0047bdcd    mov ecx,[ebp-8]"
 "	      0047bdd0    call 0047BB70h"
-"	      0047bdd5    mov [ebp-4],eax"
+"	      0047bdd5    mov prefItemReturn,eax"
 "	      0047bdd8    jmp near ptr 0047BDE4h"
-"	      0047bddd    mov dword ptr [ebp-4],0"
+"	      0047bddd    mov prefItemReturn,0"
 );
 // LINE 133:
 	asm( 
-"	      0047bde4    mov eax,[ebp-14h]"
+"	      0047bde4    mov eax,this"
 "	      0047bde7    mov eax,[eax]"
-"	      0047bde9    mov ecx,[ebp-4]"
+"	      0047bde9    mov ecx,prefItemReturn"
 "	      0047bdec    mov [ecx],eax"
 );
 // LINE 134:
 	asm( 
-"	      0047bdee    mov eax,[ebp-14h]"
+"	      0047bdee    mov eax,this"
 "	      0047bdf1    mov eax,[eax+4]"
-"	      0047bdf4    mov ecx,[ebp-4]"
+"	      0047bdf4    mov ecx,prefItemReturn"
 "	      0047bdf7    mov [ecx+4],eax"
 );
 // LINE 135:
 	asm( 
-"	      0047bdfa    mov eax,[ebp-14h]"
+"	      0047bdfa    mov eax,this"
 "	      0047bdfd    cmp dword ptr [eax+4],0"
 "	      0047be01    je near ptr 0047BE8Bh"
 );
 // LINE 136:
 	asm( 
-"	      0047be07    mov eax,[ebp-14h]"
+"	      0047be07    mov eax,this"
 "	      0047be0a    mov eax,[eax+4]"
 "	      0047be0d    push eax"
 "	      0047be0e    call 0056A600h"
 "	      0047be13    add esp,4"
-"	      0047be16    mov ecx,[ebp-4]"
+"	      0047be16    mov ecx,prefItemReturn"
 "	      0047be19    mov [ecx+8],eax"
 );
 // LINE 137:
 	asm( 
-"	      0047be1c    mov eax,[ebp-4]"
+"	      0047be1c    mov eax,prefItemReturn"
 "	      0047be1f    cmp dword ptr [eax+8],0"
 "	      0047be23    je near ptr 0047BE4Bh"
 );
 // LINE 139:
 	asm( 
-"	      0047be29    mov eax,[ebp-14h]"
+"	      0047be29    mov eax,this"
 "	      0047be2c    mov eax,[eax+4]"
 "	      0047be2f    push eax"
-"	      0047be30    mov eax,[ebp-14h]"
+"	      0047be30    mov eax,this"
 "	      0047be33    mov eax,[eax+8]"
 "	      0047be36    push eax"
-"	      0047be37    mov eax,[ebp-4]"
+"	      0047be37    mov eax,prefItemReturn"
 "	      0047be3a    mov eax,[eax+8]"
 "	      0047be3d    push eax"
 "	      0047be3e    call 0056A800h"
@@ -456,7 +456,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 );
 // LINE 142:
 	asm( 
-"	      0047be4b    mov eax,[ebp-4]"
+"	      0047be4b    mov eax,prefItemReturn"
 "	      0047be4e    mov [ebp-10h],eax"
 "	      0047be51    mov eax,[ebp-10h]"
 "	      0047be54    mov [ebp-0Ch],eax"
@@ -473,7 +473,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 );
 // LINE 143:
 	asm( 
-"	      0047be7f    mov dword ptr [ebp-4],0"
+"	      0047be7f    mov prefItemReturn,0"
 );
 // LINE 146:
 	asm( 
@@ -481,12 +481,12 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 );
 // LINE 147:
 	asm( 
-"	      0047be8b    mov eax,[ebp-4]"
+"	      0047be8b    mov eax,prefItemReturn"
 "	      0047be8e    mov dword ptr [eax+8],0"
 );
 // LINE 148:
 	asm( 
-"	      0047be95    mov eax,[ebp-4]"
+"	      0047be95    mov eax,prefItemReturn"
 "	      0047be98    jmp near ptr 0047BE9Dh"
 );
 // LINE 149:
@@ -509,8 +509,8 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 "	      0047bea8    push ebx"
 "	      0047bea9    push esi"
 "	      0047beaa    push edi"
-"	      0047beab    mov [ebp-54h],ecx"
-"	      0047beae    mov eax,[ebp-54h]"
+"	      0047beab    mov this,ecx"
+"	      0047beae    mov eax,this"
 "	      0047beb1    mov dword ptr [eax+0Ch],0"
 "	      0047beb8    inc dword ptr ds:[599A5Ch]"
 "	      0047bebe    mov eax,ds:[599A68h]"
@@ -649,60 +649,60 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 "	      0047c0c4    mov [ebp-50h],eax"
 "	      0047c0c7    jmp near ptr 0047C0CCh"
 "	      0047c0cc    mov eax,[ebp-50h]"
-"	      0047c0cf    mov ecx,[ebp-54h]"
+"	      0047c0cf    mov ecx,this"
 "	      0047c0d2    mov [ecx+8],eax"
-"	      0047c0d5    mov eax,[ebp-54h]"
+"	      0047c0d5    mov eax,this"
 "	      0047c0d8    mov eax,[eax+8]"
-"	      0047c0db    mov ecx,[ebp-54h]"
+"	      0047c0db    mov ecx,this"
 "	      0047c0de    mov ecx,[ecx+8]"
 "	      0047c0e1    mov [ecx],eax"
-"	      0047c0e3    mov eax,[ebp-54h]"
+"	      0047c0e3    mov eax,this"
 "	      0047c0e6    mov eax,[eax+8]"
-"	      0047c0e9    mov ecx,[ebp-54h]"
+"	      0047c0e9    mov ecx,this"
 "	      0047c0ec    mov ecx,[ecx+8]"
 "	      0047c0ef    mov [ecx+4],eax"
 "	      0047c0f2    jmp near ptr 0047C0F7h"
-"	      0047c0f7    mov eax,[ebp-54h]"
+"	      0047c0f7    mov eax,this"
 "	      0047c0fa    mov dword ptr [eax],590DB0h"
 );
 // LINE 166:
 	asm( 
-"	      0047c100    mov eax,[ebp+14h]"
-"	      0047c103    mov ecx,[ebp-54h]"
+"	      0047c100    mov eax,bSaveTheFileAtAllChanges"
+"	      0047c103    mov ecx,this"
 "	      0047c106    mov [ecx+4],eax"
 );
 // LINE 167:
 	asm( 
-"	      0047c109    mov eax,[ebp-54h]"
+"	      0047c109    mov eax,this"
 "	      0047c10c    mov dword ptr [eax+20h],0"
 );
 // LINE 168:
 	asm( 
-"	      0047c113    mov eax,[ebp-54h]"
+"	      0047c113    mov eax,this"
 "	      0047c116    mov dword ptr [eax+24h],0"
 );
 // LINE 169:
 	asm( 
-"	      0047c11d    mov eax,[ebp+8]"
-"	      0047c120    mov ecx,[ebp-54h]"
+"	      0047c11d    mov eax,lTheFileCreator"
+"	      0047c120    mov ecx,this"
 "	      0047c123    mov [ecx+14h],eax"
 );
 // LINE 170:
 	asm( 
-"	      0047c126    mov eax,[ebp+0Ch]"
-"	      0047c129    mov ecx,[ebp-54h]"
+"	      0047c126    mov eax,lTheFileType"
+"	      0047c129    mov ecx,this"
 "	      0047c12c    mov [ecx+18h],eax"
 );
 // LINE 171:
 	asm( 
-"	      0047c12f    mov eax,[ebp+10h]"
-"	      0047c132    mov ecx,[ebp-54h]"
+"	      0047c12f    mov eax,lTheFileVersion"
+"	      0047c132    mov ecx,this"
 "	      0047c135    mov [ecx+1Ch],eax"
 );
 // LINE 172:
 	asm( 
 "	      0047c138    jmp near ptr 0047C13Dh"
-"	      0047c13d    mov eax,[ebp-54h]"
+"	      0047c13d    mov eax,this"
 "	      0047c140    pop edi"
 "	      0047c141    pop esi"
 "	      0047c142    pop ebx"
@@ -721,7 +721,7 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 "	      0047c14d    push ebx"
 "	      0047c14e    push esi"
 "	      0047c14f    push edi"
-"	      0047c150    mov [ebp-8],ecx"
+"	      0047c150    mov this,ecx"
 );
 // LINE 179:
 	asm( 
@@ -731,19 +731,19 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 "	      0047c160    mov [ebp-4],eax"
 "	      0047c163    cmp dword ptr [ebp-4],0"
 "	      0047c167    je near ptr 0047C184h"
-"	      0047c16d    mov eax,[ebp+8]"
+"	      0047c16d    mov eax,szFilePath"
 "	      0047c170    push eax"
 "	      0047c171    mov ecx,[ebp-4]"
 "	      0047c174    call 004AB6F5h"
-"	      0047c179    mov ecx,[ebp-8]"
+"	      0047c179    mov ecx,this"
 "	      0047c17c    mov [ecx+10h],eax"
 "	      0047c17f    jmp near ptr 0047C18Eh"
-"	      0047c184    mov eax,[ebp-8]"
+"	      0047c184    mov eax,this"
 "	      0047c187    mov dword ptr [eax+10h],0"
 );
 // LINE 180:
 	asm( 
-"	      0047c18e    mov eax,[ebp-8]"
+"	      0047c18e    mov eax,this"
 "	      0047c191    cmp dword ptr [eax+10h],0"
 "	      0047c195    jne near ptr 0047C1A2h"
 );
@@ -754,9 +754,9 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 );
 // LINE 182:
 	asm( 
-"	      0047c1a2    mov eax,[ebp-8]"
+"	      0047c1a2    mov eax,this"
 "	      0047c1a5    mov eax,[eax]"
-"	      0047c1a7    mov ecx,[ebp-8]"
+"	      0047c1a7    mov ecx,this"
 "	      0047c1aa    call dword ptr [eax+8]"
 );
 // LINE 183:
@@ -784,24 +784,24 @@ void PreferenceManager::~PreferenceManager() {
 "	      0047c1c4    push ebx"
 "	      0047c1c5    push esi"
 "	      0047c1c6    push edi"
-"	      0047c1c7    mov [ebp-44h],ecx"
-"	      0047c1ca    mov eax,[ebp-44h]"
+"	      0047c1c7    mov this,ecx"
+"	      0047c1ca    mov eax,this"
 "	      0047c1cd    mov dword ptr [eax],590DB0h"
 );
 // LINE 192:
 	asm( 
-"	      0047c1d3    mov ecx,[ebp-44h]"
+"	      0047c1d3    mov ecx,this"
 "	      0047c1d6    call 0047C4ADh"
 );
 // LINE 193:
 	asm( 
-"	      0047c1db    mov eax,[ebp-44h]"
+"	      0047c1db    mov eax,this"
 "	      0047c1de    cmp dword ptr [eax+10h],0"
 "	      0047c1e2    je near ptr 0047C212h"
 );
 // LINE 194:
 	asm( 
-"	      0047c1e8    mov eax,[ebp-44h]"
+"	      0047c1e8    mov eax,this"
 "	      0047c1eb    mov eax,[eax+10h]"
 "	      0047c1ee    mov [ebp-8],eax"
 "	      0047c1f1    mov eax,[ebp-8]"
@@ -818,14 +818,14 @@ void PreferenceManager::~PreferenceManager() {
 // LINE 195:
 	asm( 
 "	      0047c212    jmp near ptr 0047C217h"
-"	      0047c217    mov eax,[ebp-44h]"
+"	      0047c217    mov eax,this"
 "	      0047c21a    mov eax,[eax+8]"
 "	      0047c21d    mov [ebp-18h],eax"
 "	      0047c220    mov eax,[ebp-18h]"
 "	      0047c223    mov [ebp-0Ch],eax"
 "	      0047c226    jmp near ptr 0047C22Bh"
 "	      0047c22b    jmp near ptr 0047C230h"
-"	      0047c230    mov eax,[ebp-44h]"
+"	      0047c230    mov eax,this"
 "	      0047c233    mov eax,[eax+8]"
 "	      0047c236    mov eax,[eax]"
 "	      0047c238    mov [ebp-1Ch],eax"
@@ -889,12 +889,12 @@ void PreferenceManager::~PreferenceManager() {
 "	      0047c30c    mov eax,[ebp-30h]"
 "	      0047c30f    mov ds:[599A68h],eax"
 "	      0047c314    jmp near ptr 0047C319h"
-"	      0047c319    mov eax,[ebp-44h]"
+"	      0047c319    mov eax,this"
 "	      0047c31c    dec dword ptr [eax+0Ch]"
 "	      0047c31f    jmp near ptr 0047C324h"
 "	      0047c324    jmp near ptr 0047C257h"
 "	      0047c329    jmp near ptr 0047C32Eh"
-"	      0047c32e    mov eax,[ebp-44h]"
+"	      0047c32e    mov eax,this"
 "	      0047c331    mov eax,[eax+8]"
 "	      0047c334    mov [ebp-14h],eax"
 "	      0047c337    mov eax,ds:[599A68h]"
@@ -954,7 +954,7 @@ void PreferenceManager::EnumeratePrefs() {
 "	      0047c3e8    push ebx"
 "	      0047c3e9    push esi"
 "	      0047c3ea    push edi"
-"	      0047c3eb    mov [ebp-2Ch],ecx"
+"	      0047c3eb    mov this,ecx"
 );
 // LINE 204:
 	asm( 
@@ -962,7 +962,7 @@ void PreferenceManager::EnumeratePrefs() {
 );
 // LINE 207:
 	asm( 
-"	      0047c3f3    mov eax,[ebp-2Ch]"
+"	      0047c3f3    mov eax,this"
 "	      0047c3f6    mov eax,[eax+8]"
 "	      0047c3f9    mov eax,[eax]"
 "	      0047c3fb    mov [ebp-24h],eax"
@@ -971,7 +971,7 @@ void PreferenceManager::EnumeratePrefs() {
 "	      0047c404    jmp near ptr 0047C409h"
 "	      0047c409    jmp near ptr 0047C40Eh"
 "	      0047c40e    mov eax,[ebp-0Ch]"
-"	      0047c411    mov [ebp-4],eax"
+"	      0047c411    mov i.node,eax"
 );
 // LINE 23:
 	asm( 
@@ -979,23 +979,23 @@ void PreferenceManager::EnumeratePrefs() {
 );
 // LINE 207:
 	asm( 
-"	      0047c419    mov eax,[ebp-4]"
+"	      0047c419    mov eax,i.node"
 "	      0047c41c    mov [ebp-28h],eax"
-"	      0047c41f    mov eax,[ebp-4]"
+"	      0047c41f    mov eax,i.node"
 "	      0047c422    mov eax,[eax]"
-"	      0047c424    mov [ebp-4],eax"
+"	      0047c424    mov i.node,eax"
 "	      0047c427    jmp near ptr 0047C42Ch"
 "	      0047c42c    mov eax,[ebp-28h]"
 "	      0047c42f    mov [ebp-10h],eax"
 "	      0047c432    jmp near ptr 0047C437h"
-"	      0047c437    mov eax,[ebp-2Ch]"
+"	      0047c437    mov eax,this"
 "	      0047c43a    mov eax,[eax+8]"
 "	      0047c43d    mov [ebp-18h],eax"
 "	      0047c440    mov eax,[ebp-18h]"
 "	      0047c443    mov [ebp-14h],eax"
 "	      0047c446    jmp near ptr 0047C44Bh"
 "	      0047c44b    jmp near ptr 0047C450h"
-"	      0047c450    mov eax,[ebp-4]"
+"	      0047c450    mov eax,i.node"
 "	      0047c453    cmp [ebp-14h],eax"
 "	      0047c456    jne near ptr 0047C466h"
 "	      0047c45c    jmp near ptr 0047C47Ah"
@@ -1012,10 +1012,10 @@ void PreferenceManager::EnumeratePrefs() {
 // LINE 208:
 	asm( 
 "	      0047c48e    jmp near ptr 0047C493h"
-"	      0047c493    mov eax,[ebp-4]"
+"	      0047c493    mov eax,i.node"
 "	      0047c496    add eax,8"
 "	      0047c499    mov eax,[eax]"
-"	      0047c49b    mov [ebp-8],eax"
+"	      0047c49b    mov j,eax"
 "	      0047c49e    jmp near ptr 0047C419h"
 );
 // LINE 209:
@@ -1042,7 +1042,7 @@ long PreferenceManager::SaveAllPrefs() {
 "	      0047c4b3    push ebx"
 "	      0047c4b4    push esi"
 "	      0047c4b5    push edi"
-"	      0047c4b6    mov [ebp-54h],ecx"
+"	      0047c4b6    mov this,ecx"
 );
 // LINE 227:
 	asm( 
@@ -1051,14 +1051,14 @@ long PreferenceManager::SaveAllPrefs() {
 // LINE 228:
 	asm( 
 "	      0047c4be    mov esi,599A30h"
-"	      0047c4c3    lea edi,[ebp-2Ch]"
+"	      0047c4c3    lea edi,szStringRudelyEmbeddedDirectly[0]"
 "	      0047c4c6    mov ecx,0Ah"
 "	      0047c4cb    rep movsd"
 "	      0047c4cd    movsb"
 );
 // LINE 230:
 	asm( 
-"	      0047c4ce    mov eax,[ebp-54h]"
+"	      0047c4ce    mov eax,this"
 "	      0047c4d1    cmp dword ptr [eax+20h],0"
 "	      0047c4d5    jne near ptr 0047C4E2h"
 );
@@ -1069,7 +1069,7 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 232:
 	asm( 
-"	      0047c4e2    mov eax,[ebp-54h]"
+"	      0047c4e2    mov eax,this"
 "	      0047c4e5    cmp dword ptr [eax+10h],0"
 "	      0047c4e9    jne near ptr 0047C4F6h"
 );
@@ -1080,17 +1080,17 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 235:
 	asm( 
-"	      0047c4f6    mov eax,[ebp-54h]"
+"	      0047c4f6    mov eax,this"
 "	      0047c4f9    mov eax,[eax+1Ch]"
 "	      0047c4fc    push eax"
-"	      0047c4fd    mov eax,[ebp-54h]"
+"	      0047c4fd    mov eax,this"
 "	      0047c500    mov eax,[eax+18h]"
 "	      0047c503    push eax"
-"	      0047c504    mov eax,[ebp-54h]"
+"	      0047c504    mov eax,this"
 "	      0047c507    mov eax,[eax+14h]"
 "	      0047c50a    push eax"
-"	      0047c50b    mov eax,[ebp-54h]"
-"	      0047c50e    mov ecx,[ebp-54h]"
+"	      0047c50b    mov eax,this"
+"	      0047c50e    mov ecx,this"
 "	      0047c511    mov ecx,[ecx+10h]"
 "	      0047c514    mov edx,[ecx]"
 "	      0047c516    mov ecx,[eax+10h]"
@@ -1100,7 +1100,7 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 239:
 	asm( 
-"	      0047c524    lea eax,[ebp-2Ch]"
+"	      0047c524    lea eax,szStringRudelyEmbeddedDirectly[0]"
 "	      0047c527    push eax"
 "	      0047c528    call 0056ABE0h"
 "	      0047c52d    add esp,4"
@@ -1109,11 +1109,11 @@ long PreferenceManager::SaveAllPrefs() {
 "	      0047c535    add eax,eax"
 "	      0047c537    sub eax,ecx"
 "	      0047c539    push eax"
-"	      0047c53a    lea eax,[ebp-2Ch]"
+"	      0047c53a    lea eax,szStringRudelyEmbeddedDirectly[0]"
 "	      0047c53d    push eax"
 "	      0047c53e    push 0FFFFFFh"
-"	      0047c543    mov eax,[ebp-54h]"
-"	      0047c546    mov ecx,[ebp-54h]"
+"	      0047c543    mov eax,this"
+"	      0047c546    mov ecx,this"
 "	      0047c549    mov ecx,[ecx+10h]"
 "	      0047c54c    mov edx,[ecx]"
 "	      0047c54e    mov ecx,[eax+10h]"
@@ -1121,7 +1121,7 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 241:
 	asm( 
-"	      0047c554    mov eax,[ebp-54h]"
+"	      0047c554    mov eax,this"
 "	      0047c557    mov eax,[eax+8]"
 "	      0047c55a    mov eax,[eax]"
 "	      0047c55c    mov [ebp-4Ch],eax"
@@ -1130,7 +1130,7 @@ long PreferenceManager::SaveAllPrefs() {
 "	      0047c565    jmp near ptr 0047C56Ah"
 "	      0047c56a    jmp near ptr 0047C56Fh"
 "	      0047c56f    mov eax,[ebp-34h]"
-"	      0047c572    mov [ebp-30h],eax"
+"	      0047c572    mov i.node,eax"
 );
 // LINE 23:
 	asm( 
@@ -1138,16 +1138,16 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 241:
 	asm( 
-"	      0047c57a    mov eax,[ebp-30h]"
+"	      0047c57a    mov eax,i.node"
 "	      0047c57d    mov [ebp-50h],eax"
-"	      0047c580    mov eax,[ebp-30h]"
+"	      0047c580    mov eax,i.node"
 "	      0047c583    mov eax,[eax]"
-"	      0047c585    mov [ebp-30h],eax"
+"	      0047c585    mov i.node,eax"
 "	      0047c588    jmp near ptr 0047C58Dh"
 "	      0047c58d    mov eax,[ebp-50h]"
 "	      0047c590    mov [ebp-38h],eax"
 "	      0047c593    jmp near ptr 0047C598h"
-"	      0047c598    mov eax,[ebp-54h]"
+"	      0047c598    mov eax,this"
 "	      0047c59b    mov eax,[eax+8]"
 "	      0047c59e    mov [ebp-40h],eax"
 "	      0047c5a1    mov eax,[ebp-40h]"
@@ -1155,7 +1155,7 @@ long PreferenceManager::SaveAllPrefs() {
 "	      0047c5a7    jmp near ptr 0047C5ACh"
 "	      0047c5ac    jmp near ptr 0047C5B1h"
 "	      0047c5b1    mov eax,[ebp-3Ch]"
-"	      0047c5b4    cmp [ebp-30h],eax"
+"	      0047c5b4    cmp i.node,eax"
 "	      0047c5b7    jne near ptr 0047C5C7h"
 "	      0047c5bd    jmp near ptr 0047C5DBh"
 "	      0047c5c2    jmp near ptr 0047C5C7h"
@@ -1173,17 +1173,17 @@ long PreferenceManager::SaveAllPrefs() {
 "	      0047c5ef    jmp near ptr 0047C5F4h"
 "	      0047c5f4    jmp near ptr 0047C5F9h"
 "	      0047c5f9    jmp near ptr 0047C5FEh"
-"	      0047c5fe    mov eax,[ebp-30h]"
+"	      0047c5fe    mov eax,i.node"
 "	      0047c601    mov eax,[eax+0Ch]"
 "	      0047c604    push eax"
-"	      0047c605    mov eax,[ebp-30h]"
+"	      0047c605    mov eax,i.node"
 "	      0047c608    mov eax,[eax+10h]"
 "	      0047c60b    push eax"
-"	      0047c60c    mov eax,[ebp-30h]"
+"	      0047c60c    mov eax,i.node"
 "	      0047c60f    mov eax,[eax+8]"
 "	      0047c612    push eax"
-"	      0047c613    mov eax,[ebp-54h]"
-"	      0047c616    mov ecx,[ebp-54h]"
+"	      0047c613    mov eax,this"
+"	      0047c616    mov ecx,this"
 "	      0047c619    mov ecx,[ecx+10h]"
 "	      0047c61c    mov edx,[ecx]"
 "	      0047c61e    mov ecx,[eax+10h]"
@@ -1192,8 +1192,8 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 245:
 	asm( 
-"	      0047c629    mov eax,[ebp-54h]"
-"	      0047c62c    mov ecx,[ebp-54h]"
+"	      0047c629    mov eax,this"
+"	      0047c62c    mov ecx,this"
 "	      0047c62f    mov ecx,[ecx+10h]"
 "	      0047c632    mov edx,[ecx]"
 "	      0047c634    mov ecx,[eax+10h]"
@@ -1201,8 +1201,8 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 246:
 	asm( 
-"	      0047c63a    mov eax,[ebp-54h]"
-"	      0047c63d    mov ecx,[ebp-54h]"
+"	      0047c63a    mov eax,this"
+"	      0047c63d    mov ecx,this"
 "	      0047c640    mov ecx,[ecx+10h]"
 "	      0047c643    mov edx,[ecx]"
 "	      0047c645    mov ecx,[eax+10h]"
@@ -1219,7 +1219,7 @@ long PreferenceManager::SaveAllPrefs() {
 );
 // LINE 251:
 	asm( 
-"	      0047c657    mov eax,[ebp-54h]"
+"	      0047c657    mov eax,this"
 "	      0047c65a    mov dword ptr [eax+20h],0"
 );
 // LINE 252:
@@ -1252,66 +1252,66 @@ long PreferenceManager::LoadAllPrefs() {
 "	      0047c676    push ebx"
 "	      0047c677    push esi"
 "	      0047c678    push edi"
-"	      0047c679    mov [ebp-34h],ecx"
+"	      0047c679    mov this,ecx"
 );
 // LINE 274:
 	asm( 
-"	      0047c67c    lea ecx,[ebp-10h]"
+"	      0047c67c    lea ecx,tempPrefItem.lPreferenceType"
 "	      0047c67f    call 0047BB70h"
 );
 // LINE 276:
 	asm( 
-"	      0047c684    mov eax,[ebp-34h]"
+"	      0047c684    mov eax,this"
 "	      0047c687    cmp dword ptr [eax+10h],0"
 "	      0047c68b    jne near ptr 0047C6A8h"
 );
 // LINE 277:
 	asm( 
 "	      0047c691    mov dword ptr [ebp-1Ch],0"
-"	      0047c698    lea ecx,[ebp-10h]"
+"	      0047c698    lea ecx,tempPrefItem.lPreferenceType"
 "	      0047c69b    call 0047BC47h"
 "	      0047c6a0    mov eax,[ebp-1Ch]"
 "	      0047c6a3    jmp near ptr 0047C82Fh"
 );
 // LINE 278:
 	asm( 
-"	      0047c6a8    mov eax,[ebp-34h]"
-"	      0047c6ab    mov ecx,[ebp-34h]"
+"	      0047c6a8    mov eax,this"
+"	      0047c6ab    mov ecx,this"
 "	      0047c6ae    mov ecx,[ecx+10h]"
 "	      0047c6b1    mov edx,[ecx]"
 "	      0047c6b3    mov ecx,[eax+10h]"
 "	      0047c6b6    call dword ptr [edx+4]"
-"	      0047c6b9    mov [ebp-14h],eax"
+"	      0047c6b9    mov bFileOK,eax"
 );
 // LINE 279:
 	asm( 
-"	      0047c6bc    cmp dword ptr [ebp-14h],0"
+"	      0047c6bc    cmp bFileOK,0"
 "	      0047c6c0    jne near ptr 0047C6DDh"
 );
 // LINE 280:
 	asm( 
 "	      0047c6c6    mov dword ptr [ebp-20h],0"
-"	      0047c6cd    lea ecx,[ebp-10h]"
+"	      0047c6cd    lea ecx,tempPrefItem.lPreferenceType"
 "	      0047c6d0    call 0047BC47h"
 "	      0047c6d5    mov eax,[ebp-20h]"
 "	      0047c6d8    jmp near ptr 0047C82Fh"
 );
 // LINE 281:
 	asm( 
-"	      0047c6dd    mov eax,[ebp-34h]"
-"	      0047c6e0    mov ecx,[ebp-34h]"
+"	      0047c6dd    mov eax,this"
+"	      0047c6e0    mov ecx,this"
 "	      0047c6e3    mov ecx,[ecx+10h]"
 "	      0047c6e6    mov edx,[ecx]"
 "	      0047c6e8    mov ecx,[eax+10h]"
 "	      0047c6eb    call dword ptr [edx+34h]"
-"	      0047c6ee    mov ecx,[ebp-34h]"
+"	      0047c6ee    mov ecx,this"
 "	      0047c6f1    cmp eax,[ecx+18h]"
 "	      0047c6f4    je near ptr 0047C722h"
 );
 // LINE 282:
 	asm( 
-"	      0047c6fa    mov eax,[ebp-34h]"
-"	      0047c6fd    mov ecx,[ebp-34h]"
+"	      0047c6fa    mov eax,this"
+"	      0047c6fd    mov ecx,this"
 "	      0047c700    mov ecx,[ecx+10h]"
 "	      0047c703    mov edx,[ecx]"
 "	      0047c705    mov ecx,[eax+10h]"
@@ -1320,37 +1320,37 @@ long PreferenceManager::LoadAllPrefs() {
 // LINE 283:
 	asm( 
 "	      0047c70b    mov dword ptr [ebp-24h],0"
-"	      0047c712    lea ecx,[ebp-10h]"
+"	      0047c712    lea ecx,tempPrefItem.lPreferenceType"
 "	      0047c715    call 0047BC47h"
 "	      0047c71a    mov eax,[ebp-24h]"
 "	      0047c71d    jmp near ptr 0047C82Fh"
 );
 // LINE 286:
 	asm( 
-"	      0047c722    mov eax,[ebp-34h]"
-"	      0047c725    mov ecx,[ebp-34h]"
+"	      0047c722    mov eax,this"
+"	      0047c725    mov ecx,this"
 "	      0047c728    mov ecx,[ecx+10h]"
 "	      0047c72b    mov edx,[ecx]"
 "	      0047c72d    mov ecx,[eax+10h]"
 "	      0047c730    call dword ptr [edx+44h]"
-"	      0047c733    mov [ebp-18h],eax"
+"	      0047c733    mov bStillMoreRecords,eax"
 );
 // LINE 288:
 	asm( 
 "	      0047c736    jmp near ptr 0047C74Fh"
-"	      0047c73b    mov eax,[ebp-34h]"
-"	      0047c73e    mov ecx,[ebp-34h]"
+"	      0047c73b    mov eax,this"
+"	      0047c73e    mov ecx,this"
 "	      0047c741    mov ecx,[ecx+10h]"
 "	      0047c744    mov edx,[ecx]"
 "	      0047c746    mov ecx,[eax+10h]"
 "	      0047c749    call dword ptr [edx+48h]"
-"	      0047c74c    mov [ebp-18h],eax"
-"	      0047c74f    cmp dword ptr [ebp-18h],0"
+"	      0047c74c    mov bStillMoreRecords,eax"
+"	      0047c74f    cmp bStillMoreRecords,0"
 "	      0047c753    je near ptr 0047C7FDh"
 );
 // LINE 290:
 	asm( 
-"	      0047c759    mov eax,[ebp-34h]"
+"	      0047c759    mov eax,this"
 "	      0047c75c    mov eax,[eax+10h]"
 "	      0047c75f    cmp dword ptr [eax+114h],0FFFFFFh"
 "	      0047c769    jne near ptr 0047C774h"
@@ -1361,45 +1361,45 @@ long PreferenceManager::LoadAllPrefs() {
 );
 // LINE 292:
 	asm( 
-"	      0047c774    mov eax,[ebp-34h]"
-"	      0047c777    mov ecx,[ebp-34h]"
+"	      0047c774    mov eax,this"
+"	      0047c777    mov ecx,this"
 "	      0047c77a    mov ecx,[ecx+10h]"
 "	      0047c77d    mov edx,[ecx]"
 "	      0047c77f    mov ecx,[eax+10h]"
 "	      0047c782    call dword ptr [edx+1Ch]"
-"	      0047c785    mov [ebp-4],eax"
+"	      0047c785    mov lRecordDataSize,eax"
 );
 // LINE 293:
 	asm( 
-"	      0047c788    mov eax,[ebp-34h]"
-"	      0047c78b    mov ecx,[ebp-34h]"
+"	      0047c788    mov eax,this"
+"	      0047c78b    mov ecx,this"
 "	      0047c78e    mov ecx,[ecx+10h]"
 "	      0047c791    mov edx,[ecx]"
 "	      0047c793    mov ecx,[eax+10h]"
 "	      0047c796    call dword ptr [edx+14h]"
-"	      0047c799    mov [ebp-10h],eax"
+"	      0047c799    mov tempPrefItem.lPreferenceType,eax"
 );
 // LINE 294:
 	asm( 
-"	      0047c79c    mov eax,[ebp-4]"
-"	      0047c79f    mov [ebp-0Ch],eax"
+"	      0047c79c    mov eax,lRecordDataSize"
+"	      0047c79f    mov tempPrefItem.lPreferenceDataLength,eax"
 );
 // LINE 295:
 	asm( 
-"	      0047c7a2    mov eax,[ebp-4]"
+"	      0047c7a2    mov eax,lRecordDataSize"
 "	      0047c7a5    push eax"
 "	      0047c7a6    call 0056A600h"
 "	      0047c7ab    add esp,4"
-"	      0047c7ae    mov [ebp-8],eax"
+"	      0047c7ae    mov tempPrefItem.chPreferenceData,eax"
 );
 // LINE 296:
 	asm( 
-"	      0047c7b1    mov eax,[ebp-4]"
+"	      0047c7b1    mov eax,lRecordDataSize"
 "	      0047c7b4    push eax"
-"	      0047c7b5    mov eax,[ebp-8]"
+"	      0047c7b5    mov eax,tempPrefItem.chPreferenceData"
 "	      0047c7b8    push eax"
-"	      0047c7b9    mov eax,[ebp-34h]"
-"	      0047c7bc    mov ecx,[ebp-34h]"
+"	      0047c7b9    mov eax,this"
+"	      0047c7bc    mov ecx,this"
 "	      0047c7bf    mov ecx,[ecx+10h]"
 "	      0047c7c2    mov edx,[ecx]"
 "	      0047c7c4    mov ecx,[eax+10h]"
@@ -1407,16 +1407,16 @@ long PreferenceManager::LoadAllPrefs() {
 );
 // LINE 297:
 	asm( 
-"	      0047c7ca    lea eax,[ebp-10h]"
+"	      0047c7ca    lea eax,tempPrefItem.lPreferenceType"
 "	      0047c7cd    push eax"
-"	      0047c7ce    mov eax,[ebp-34h]"
+"	      0047c7ce    mov eax,this"
 "	      0047c7d1    mov eax,[eax]"
-"	      0047c7d3    mov ecx,[ebp-34h]"
+"	      0047c7d3    mov ecx,this"
 "	      0047c7d6    call dword ptr [eax+28h]"
 );
 // LINE 298:
 	asm( 
-"	      0047c7d9    mov eax,[ebp-8]"
+"	      0047c7d9    mov eax,tempPrefItem.chPreferenceData"
 "	      0047c7dc    mov [ebp-28h],eax"
 "	      0047c7df    mov eax,[ebp-28h]"
 "	      0047c7e2    mov [ebp-30h],eax"
@@ -1427,7 +1427,7 @@ long PreferenceManager::LoadAllPrefs() {
 );
 // LINE 299:
 	asm( 
-"	      0047c7f1    mov dword ptr [ebp-8],0"
+"	      0047c7f1    mov tempPrefItem.chPreferenceData,0"
 );
 // LINE 300:
 	asm( 
@@ -1435,8 +1435,8 @@ long PreferenceManager::LoadAllPrefs() {
 );
 // LINE 301:
 	asm( 
-"	      0047c7fd    mov eax,[ebp-34h]"
-"	      0047c800    mov ecx,[ebp-34h]"
+"	      0047c7fd    mov eax,this"
+"	      0047c800    mov ecx,this"
 "	      0047c803    mov ecx,[ecx+10h]"
 "	      0047c806    mov edx,[ecx]"
 "	      0047c808    mov ecx,[eax+10h]"
@@ -1444,13 +1444,13 @@ long PreferenceManager::LoadAllPrefs() {
 );
 // LINE 302:
 	asm( 
-"	      0047c80e    mov eax,[ebp-34h]"
+"	      0047c80e    mov eax,this"
 "	      0047c811    mov dword ptr [eax+20h],0"
 );
 // LINE 303:
 	asm( 
 "	      0047c818    mov dword ptr [ebp-2Ch],1"
-"	      0047c81f    lea ecx,[ebp-10h]"
+"	      0047c81f    lea ecx,tempPrefItem.lPreferenceType"
 "	      0047c822    call 0047BC47h"
 "	      0047c827    mov eax,[ebp-2Ch]"
 "	      0047c82a    jmp near ptr 0047C82Fh"
@@ -1475,18 +1475,18 @@ long PreferenceManager::ClearPrefsMemory() {
 "	      0047c83a    push ebx"
 "	      0047c83b    push esi"
 "	      0047c83c    push edi"
-"	      0047c83d    mov [ebp-30h],ecx"
+"	      0047c83d    mov this,ecx"
 );
 // LINE 313:
 	asm( 
-"	      0047c840    mov eax,[ebp-30h]"
+"	      0047c840    mov eax,this"
 "	      0047c843    mov eax,[eax+8]"
 "	      0047c846    mov [ebp-0Ch],eax"
 "	      0047c849    mov eax,[ebp-0Ch]"
 "	      0047c84c    mov [ebp-4],eax"
 "	      0047c84f    jmp near ptr 0047C854h"
 "	      0047c854    jmp near ptr 0047C859h"
-"	      0047c859    mov eax,[ebp-30h]"
+"	      0047c859    mov eax,this"
 "	      0047c85c    mov eax,[eax+8]"
 "	      0047c85f    mov eax,[eax]"
 "	      0047c861    mov [ebp-10h],eax"
@@ -1550,7 +1550,7 @@ long PreferenceManager::ClearPrefsMemory() {
 "	      0047c935    mov eax,[ebp-24h]"
 "	      0047c938    mov ds:[599A68h],eax"
 "	      0047c93d    jmp near ptr 0047C942h"
-"	      0047c942    mov eax,[ebp-30h]"
+"	      0047c942    mov eax,this"
 "	      0047c945    dec dword ptr [eax+0Ch]"
 "	      0047c948    jmp near ptr 0047C94Dh"
 "	      0047c94d    jmp near ptr 0047C880h"
@@ -1558,7 +1558,7 @@ long PreferenceManager::ClearPrefsMemory() {
 );
 // LINE 314:
 	asm( 
-"	      0047c957    mov eax,[ebp-30h]"
+"	      0047c957    mov eax,this"
 "	      0047c95a    mov dword ptr [eax+20h],1"
 );
 // LINE 315:
@@ -1588,7 +1588,7 @@ long PreferenceManager::RemovePref(long lPrefType) {
 "	      0047c976    push ebx"
 "	      0047c977    push esi"
 "	      0047c978    push edi"
-"	      0047c979    mov [ebp-2Ch],ecx"
+"	      0047c979    mov this,ecx"
 );
 // LINE 327:
 	asm( 
@@ -1596,7 +1596,7 @@ long PreferenceManager::RemovePref(long lPrefType) {
 );
 // LINE 329:
 	asm( 
-"	      0047c981    mov eax,[ebp-2Ch]"
+"	      0047c981    mov eax,this"
 "	      0047c984    mov eax,[eax+8]"
 "	      0047c987    mov eax,[eax]"
 "	      0047c989    mov [ebp-20h],eax"
@@ -1605,7 +1605,7 @@ long PreferenceManager::RemovePref(long lPrefType) {
 "	      0047c992    jmp near ptr 0047C997h"
 "	      0047c997    jmp near ptr 0047C99Ch"
 "	      0047c99c    mov eax,[ebp-8]"
-"	      0047c99f    mov [ebp-4],eax"
+"	      0047c99f    mov i.node,eax"
 );
 // LINE 23:
 	asm( 
@@ -1613,16 +1613,16 @@ long PreferenceManager::RemovePref(long lPrefType) {
 );
 // LINE 329:
 	asm( 
-"	      0047c9a7    mov eax,[ebp-4]"
+"	      0047c9a7    mov eax,i.node"
 "	      0047c9aa    mov [ebp-24h],eax"
-"	      0047c9ad    mov eax,[ebp-4]"
+"	      0047c9ad    mov eax,i.node"
 "	      0047c9b0    mov eax,[eax]"
-"	      0047c9b2    mov [ebp-4],eax"
+"	      0047c9b2    mov i.node,eax"
 "	      0047c9b5    jmp near ptr 0047C9BAh"
 "	      0047c9ba    mov eax,[ebp-24h]"
 "	      0047c9bd    mov [ebp-0Ch],eax"
 "	      0047c9c0    jmp near ptr 0047C9C5h"
-"	      0047c9c5    mov eax,[ebp-2Ch]"
+"	      0047c9c5    mov eax,this"
 "	      0047c9c8    mov eax,[eax+8]"
 "	      0047c9cb    mov [ebp-14h],eax"
 "	      0047c9ce    mov eax,[ebp-14h]"
@@ -1630,7 +1630,7 @@ long PreferenceManager::RemovePref(long lPrefType) {
 "	      0047c9d4    jmp near ptr 0047C9D9h"
 "	      0047c9d9    jmp near ptr 0047C9DEh"
 "	      0047c9de    mov eax,[ebp-10h]"
-"	      0047c9e1    cmp [ebp-4],eax"
+"	      0047c9e1    cmp i.node,eax"
 "	      0047c9e4    jne near ptr 0047C9F4h"
 "	      0047c9ea    jmp near ptr 0047CA08h"
 "	      0047c9ef    jmp near ptr 0047C9F4h"
@@ -1646,11 +1646,11 @@ long PreferenceManager::RemovePref(long lPrefType) {
 // LINE 330:
 	asm( 
 "	      0047ca1c    jmp near ptr 0047CA21h"
-"	      0047ca21    mov eax,[ebp-4]"
-"	      0047ca24    mov ecx,[ebp+8]"
+"	      0047ca21    mov eax,i.node"
+"	      0047ca24    mov ecx,lPrefType"
 "	      0047ca27    cmp [eax+8],ecx"
 "	      0047ca2a    jne near ptr 0047CACDh"
-"	      0047ca30    mov eax,[ebp-4]"
+"	      0047ca30    mov eax,i.node"
 "	      0047ca33    mov [ebp-28h],eax"
 );
 // LINE 331:
@@ -1683,26 +1683,26 @@ long PreferenceManager::RemovePref(long lPrefType) {
 "	      0047ca89    mov eax,[ebp-28h]"
 "	      0047ca8c    mov ds:[599A68h],eax"
 "	      0047ca91    jmp near ptr 0047CA96h"
-"	      0047ca96    mov eax,[ebp-2Ch]"
+"	      0047ca96    mov eax,this"
 "	      0047ca99    dec dword ptr [eax+0Ch]"
 "	      0047ca9c    jmp near ptr 0047CAA1h"
 );
 // LINE 332:
 	asm( 
-"	      0047caa1    mov eax,[ebp-2Ch]"
+"	      0047caa1    mov eax,this"
 "	      0047caa4    mov dword ptr [eax+20h],1"
 );
 // LINE 333:
 	asm( 
-"	      0047caab    mov eax,[ebp-2Ch]"
+"	      0047caab    mov eax,this"
 "	      0047caae    cmp dword ptr [eax+4],0"
 "	      0047cab2    je near ptr 0047CAC3h"
 );
 // LINE 334:
 	asm( 
-"	      0047cab8    mov eax,[ebp-2Ch]"
+"	      0047cab8    mov eax,this"
 "	      0047cabb    mov eax,[eax]"
-"	      0047cabd    mov ecx,[ebp-2Ch]"
+"	      0047cabd    mov ecx,this"
 "	      0047cac0    call dword ptr [eax+4]"
 );
 // LINE 335:
@@ -1741,7 +1741,7 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 "	      0047cae6    push ebx"
 "	      0047cae7    push esi"
 "	      0047cae8    push edi"
-"	      0047cae9    mov [ebp-28h],ecx"
+"	      0047cae9    mov this,ecx"
 );
 // LINE 355:
 	asm( 
@@ -1749,7 +1749,7 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 );
 // LINE 357:
 	asm( 
-"	      0047caf1    mov eax,[ebp-28h]"
+"	      0047caf1    mov eax,this"
 "	      0047caf4    mov eax,[eax+8]"
 "	      0047caf7    mov eax,[eax]"
 "	      0047caf9    mov [ebp-20h],eax"
@@ -1758,7 +1758,7 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 "	      0047cb02    jmp near ptr 0047CB07h"
 "	      0047cb07    jmp near ptr 0047CB0Ch"
 "	      0047cb0c    mov eax,[ebp-8]"
-"	      0047cb0f    mov [ebp-4],eax"
+"	      0047cb0f    mov i.node,eax"
 );
 // LINE 23:
 	asm( 
@@ -1766,23 +1766,23 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 );
 // LINE 357:
 	asm( 
-"	      0047cb17    mov eax,[ebp-4]"
+"	      0047cb17    mov eax,i.node"
 "	      0047cb1a    mov [ebp-24h],eax"
-"	      0047cb1d    mov eax,[ebp-4]"
+"	      0047cb1d    mov eax,i.node"
 "	      0047cb20    mov eax,[eax]"
-"	      0047cb22    mov [ebp-4],eax"
+"	      0047cb22    mov i.node,eax"
 "	      0047cb25    jmp near ptr 0047CB2Ah"
 "	      0047cb2a    mov eax,[ebp-24h]"
 "	      0047cb2d    mov [ebp-0Ch],eax"
 "	      0047cb30    jmp near ptr 0047CB35h"
-"	      0047cb35    mov eax,[ebp-28h]"
+"	      0047cb35    mov eax,this"
 "	      0047cb38    mov eax,[eax+8]"
 "	      0047cb3b    mov [ebp-14h],eax"
 "	      0047cb3e    mov eax,[ebp-14h]"
 "	      0047cb41    mov [ebp-10h],eax"
 "	      0047cb44    jmp near ptr 0047CB49h"
 "	      0047cb49    jmp near ptr 0047CB4Eh"
-"	      0047cb4e    mov eax,[ebp-4]"
+"	      0047cb4e    mov eax,i.node"
 "	      0047cb51    cmp [ebp-10h],eax"
 "	      0047cb54    jne near ptr 0047CB64h"
 "	      0047cb5a    jmp near ptr 0047CB78h"
@@ -1799,15 +1799,15 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 // LINE 358:
 	asm( 
 "	      0047cb8c    jmp near ptr 0047CB91h"
-"	      0047cb91    mov eax,[ebp-4]"
-"	      0047cb94    mov ecx,[ebp+8]"
+"	      0047cb91    mov eax,i.node"
+"	      0047cb94    mov ecx,lPrefType"
 "	      0047cb97    cmp [eax+8],ecx"
 "	      0047cb9a    jne near ptr 0047CBB0h"
 );
 // LINE 359:
 	asm( 
 "	      0047cba0    jmp near ptr 0047CBA5h"
-"	      0047cba5    mov eax,[ebp-4]"
+"	      0047cba5    mov eax,i.node"
 "	      0047cba8    add eax,8"
 "	      0047cbab    jmp near ptr 0047CBBCh"
 );
@@ -1843,32 +1843,32 @@ class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
 "	      0047cbc9    push ebx"
 "	      0047cbca    push esi"
 "	      0047cbcb    push edi"
-"	      0047cbcc    mov [ebp-0Ch],ecx"
+"	      0047cbcc    mov this,ecx"
 );
 // LINE 379:
 	asm( 
-"	      0047cbcf    mov eax,[ebp+8]"
+"	      0047cbcf    mov eax,lPrefType"
 "	      0047cbd2    push eax"
-"	      0047cbd3    mov eax,[ebp-0Ch]"
+"	      0047cbd3    mov eax,this"
 "	      0047cbd6    mov eax,[eax]"
-"	      0047cbd8    mov ecx,[ebp-0Ch]"
+"	      0047cbd8    mov ecx,this"
 "	      0047cbdb    call dword ptr [eax+14h]"
-"	      0047cbde    mov [ebp-4],eax"
+"	      0047cbde    mov prefItemTemp,eax"
 );
 // LINE 380:
 	asm( 
-"	      0047cbe1    cmp dword ptr [ebp-4],0"
+"	      0047cbe1    cmp prefItemTemp,0"
 "	      0047cbe5    je near ptr 0047CBFEh"
 );
 // LINE 381:
 	asm( 
-"	      0047cbeb    mov ecx,[ebp-4]"
+"	      0047cbeb    mov ecx,prefItemTemp"
 "	      0047cbee    call 0047BDAAh"
-"	      0047cbf3    mov [ebp-8],eax"
+"	      0047cbf3    mov prefItemReturn,eax"
 );
 // LINE 382:
 	asm( 
-"	      0047cbf6    mov eax,[ebp-8]"
+"	      0047cbf6    mov eax,prefItemReturn"
 "	      0047cbf9    jmp near ptr 0047CC05h"
 );
 // LINE 384:
@@ -1898,26 +1898,26 @@ char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
 "	      0047cc12    push ebx"
 "	      0047cc13    push esi"
 "	      0047cc14    push edi"
-"	      0047cc15    mov [ebp-8],ecx"
+"	      0047cc15    mov this,ecx"
 );
 // LINE 404:
 	asm( 
-"	      0047cc18    mov eax,[ebp+8]"
+"	      0047cc18    mov eax,lPrefType"
 "	      0047cc1b    push eax"
-"	      0047cc1c    mov eax,[ebp-8]"
+"	      0047cc1c    mov eax,this"
 "	      0047cc1f    mov eax,[eax]"
-"	      0047cc21    mov ecx,[ebp-8]"
+"	      0047cc21    mov ecx,this"
 "	      0047cc24    call dword ptr [eax+14h]"
-"	      0047cc27    mov [ebp-4],eax"
+"	      0047cc27    mov prefItemTemp,eax"
 );
 // LINE 405:
 	asm( 
-"	      0047cc2a    cmp dword ptr [ebp-4],0"
+"	      0047cc2a    cmp prefItemTemp,0"
 "	      0047cc2e    je near ptr 0047CC3Fh"
 );
 // LINE 406:
 	asm( 
-"	      0047cc34    mov eax,[ebp-4]"
+"	      0047cc34    mov eax,prefItemTemp"
 "	      0047cc37    mov eax,[eax+8]"
 "	      0047cc3a    jmp near ptr 0047CC46h"
 );
@@ -1949,48 +1949,48 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 "	      0047cc53    push ebx"
 "	      0047cc54    push esi"
 "	      0047cc55    push edi"
-"	      0047cc56    mov [ebp-0Ch],ecx"
+"	      0047cc56    mov this,ecx"
 );
 // LINE 426:
 	asm( 
-"	      0047cc59    mov eax,[ebp+8]"
+"	      0047cc59    mov eax,lPrefType"
 "	      0047cc5c    push eax"
-"	      0047cc5d    mov eax,[ebp-0Ch]"
+"	      0047cc5d    mov eax,this"
 "	      0047cc60    mov eax,[eax]"
-"	      0047cc62    mov ecx,[ebp-0Ch]"
+"	      0047cc62    mov ecx,this"
 "	      0047cc65    call dword ptr [eax+14h]"
-"	      0047cc68    mov [ebp-8],eax"
+"	      0047cc68    mov prefItemTemp,eax"
 );
 // LINE 427:
 	asm( 
-"	      0047cc6b    cmp dword ptr [ebp-8],0"
+"	      0047cc6b    cmp prefItemTemp,0"
 "	      0047cc6f    je near ptr 0047CCA9h"
 );
 // LINE 428:
 	asm( 
-"	      0047cc75    mov eax,[ebp-8]"
+"	      0047cc75    mov eax,prefItemTemp"
 "	      0047cc78    mov eax,[eax+4]"
 "	      0047cc7b    push eax"
 "	      0047cc7c    call 0056A600h"
 "	      0047cc81    add esp,4"
-"	      0047cc84    mov [ebp-4],eax"
+"	      0047cc84    mov chDataCopy,eax"
 );
 // LINE 430:
 	asm( 
-"	      0047cc87    mov eax,[ebp-8]"
+"	      0047cc87    mov eax,prefItemTemp"
 "	      0047cc8a    mov eax,[eax+4]"
 "	      0047cc8d    push eax"
-"	      0047cc8e    mov eax,[ebp-8]"
+"	      0047cc8e    mov eax,prefItemTemp"
 "	      0047cc91    mov eax,[eax+8]"
 "	      0047cc94    push eax"
-"	      0047cc95    mov eax,[ebp-4]"
+"	      0047cc95    mov eax,chDataCopy"
 "	      0047cc98    push eax"
 "	      0047cc99    call 0056A800h"
 "	      0047cc9e    add esp,0Ch"
 );
 // LINE 433:
 	asm( 
-"	      0047cca1    mov eax,[ebp-4]"
+"	      0047cca1    mov eax,chDataCopy"
 "	      0047cca4    jmp near ptr 0047CCB0h"
 );
 // LINE 435:
@@ -2020,26 +2020,26 @@ long PreferenceManager::GetPrefDataLength(long lPrefType) {
 "	      0047ccbd    push ebx"
 "	      0047ccbe    push esi"
 "	      0047ccbf    push edi"
-"	      0047ccc0    mov [ebp-8],ecx"
+"	      0047ccc0    mov this,ecx"
 );
 // LINE 453:
 	asm( 
-"	      0047ccc3    mov eax,[ebp+8]"
+"	      0047ccc3    mov eax,lPrefType"
 "	      0047ccc6    push eax"
-"	      0047ccc7    mov eax,[ebp-8]"
+"	      0047ccc7    mov eax,this"
 "	      0047ccca    mov eax,[eax]"
-"	      0047cccc    mov ecx,[ebp-8]"
+"	      0047cccc    mov ecx,this"
 "	      0047cccf    call dword ptr [eax+14h]"
-"	      0047ccd2    mov [ebp-4],eax"
+"	      0047ccd2    mov prefItemTemp,eax"
 );
 // LINE 454:
 	asm( 
-"	      0047ccd5    cmp dword ptr [ebp-4],0"
+"	      0047ccd5    cmp prefItemTemp,0"
 "	      0047ccd9    je near ptr 0047CCEAh"
 );
 // LINE 455:
 	asm( 
-"	      0047ccdf    mov eax,[ebp-4]"
+"	      0047ccdf    mov eax,prefItemTemp"
 "	      0047cce2    mov eax,[eax+4]"
 "	      0047cce5    jmp near ptr 0047CCF1h"
 );
@@ -2070,13 +2070,13 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 "	      0047ccfe    push ebx"
 "	      0047ccff    push esi"
 "	      0047cd00    push edi"
-"	      0047cd01    mov [ebp-44h],ecx"
+"	      0047cd01    mov this,ecx"
 );
 // LINE 472:
 	asm( 
-"	      0047cd04    mov eax,[ebp-44h]"
+"	      0047cd04    mov eax,this"
 "	      0047cd07    mov eax,[eax]"
-"	      0047cd09    mov ecx,[ebp-44h]"
+"	      0047cd09    mov ecx,this"
 "	      0047cd0c    call dword ptr [eax+10h]"
 );
 // LINE 474:
@@ -2089,40 +2089,40 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 "	      0047cd20    je near ptr 0047CD36h"
 "	      0047cd26    mov ecx,[ebp-8]"
 "	      0047cd29    call 0047BB70h"
-"	      0047cd2e    mov [ebp-4],eax"
+"	      0047cd2e    mov prefItemToSet,eax"
 "	      0047cd31    jmp near ptr 0047CD3Dh"
-"	      0047cd36    mov dword ptr [ebp-4],0"
+"	      0047cd36    mov prefItemToSet,0"
 );
 // LINE 475:
 	asm( 
-"	      0047cd3d    mov eax,[ebp+8]"
-"	      0047cd40    mov ecx,[ebp-4]"
+"	      0047cd3d    mov eax,lPrefType"
+"	      0047cd40    mov ecx,prefItemToSet"
 "	      0047cd43    mov [ecx],eax"
 );
 // LINE 476:
 	asm( 
-"	      0047cd45    mov eax,[ebp+10h]"
-"	      0047cd48    mov ecx,[ebp-4]"
+"	      0047cd45    mov eax,lSizeofPref"
+"	      0047cd48    mov ecx,prefItemToSet"
 "	      0047cd4b    mov [ecx+4],eax"
 );
 // LINE 477:
 	asm( 
-"	      0047cd4e    mov eax,[ebp+10h]"
+"	      0047cd4e    mov eax,lSizeofPref"
 "	      0047cd51    push eax"
 "	      0047cd52    call 0056A600h"
 "	      0047cd57    add esp,4"
-"	      0047cd5a    mov ecx,[ebp-4]"
+"	      0047cd5a    mov ecx,prefItemToSet"
 "	      0047cd5d    mov [ecx+8],eax"
 );
 // LINE 478:
 	asm( 
-"	      0047cd60    mov eax,[ebp-4]"
+"	      0047cd60    mov eax,prefItemToSet"
 "	      0047cd63    cmp dword ptr [eax+8],0"
 "	      0047cd67    jne near ptr 0047CDA8h"
 );
 // LINE 479:
 	asm( 
-"	      0047cd6d    mov eax,[ebp-4]"
+"	      0047cd6d    mov eax,prefItemToSet"
 "	      0047cd70    mov [ebp-10h],eax"
 "	      0047cd73    mov eax,[ebp-10h]"
 "	      0047cd76    mov [ebp-0Ch],eax"
@@ -2144,11 +2144,11 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 );
 // LINE 484:
 	asm( 
-"	      0047cda8    mov eax,[ebp+10h]"
+"	      0047cda8    mov eax,lSizeofPref"
 "	      0047cdab    push eax"
-"	      0047cdac    mov eax,[ebp+0Ch]"
+"	      0047cdac    mov eax,chPref"
 "	      0047cdaf    push eax"
-"	      0047cdb0    mov eax,[ebp-4]"
+"	      0047cdb0    mov eax,prefItemToSet"
 "	      0047cdb3    mov eax,[eax+8]"
 "	      0047cdb6    push eax"
 "	      0047cdb7    call 0056A800h"
@@ -2156,16 +2156,16 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 );
 // LINE 488:
 	asm( 
-"	      0047cdbf    mov eax,[ebp+8]"
+"	      0047cdbf    mov eax,lPrefType"
 "	      0047cdc2    push eax"
-"	      0047cdc3    mov eax,[ebp-44h]"
+"	      0047cdc3    mov eax,this"
 "	      0047cdc6    mov eax,[eax]"
-"	      0047cdc8    mov ecx,[ebp-44h]"
+"	      0047cdc8    mov ecx,this"
 "	      0047cdcb    call dword ptr [eax+30h]"
 );
 // LINE 489:
 	asm( 
-"	      0047cdce    mov eax,[ebp-44h]"
+"	      0047cdce    mov eax,this"
 "	      0047cdd1    mov eax,[eax+8]"
 "	      0047cdd4    mov [ebp-24h],eax"
 "	      0047cdd7    mov eax,[ebp-24h]"
@@ -2187,7 +2187,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 "	      0047ce19    mov eax,ds:[599A64h]"
 "	      0047ce1e    cmp ds:[599A60h],eax"
 "	      0047ce24    jne near ptr 0047CE4Fh"
-"	      0047ce2a    mov ecx,[ebp-44h]"
+"	      0047ce2a    mov ecx,this"
 "	      0047ce2d    add ecx,8"
 "	      0047ce30    call 0047DAF0h"
 "	      0047ce35    mov eax,ds:[599A64h]"
@@ -2211,7 +2211,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 "	      0047ce7d    jmp near ptr 0047CE82h"
 "	      0047ce82    cmp dword ptr [ebp-2Ch],0"
 "	      0047ce86    je near ptr 0047CE9Dh"
-"	      0047ce8c    mov eax,[ebp-4]"
+"	      0047ce8c    mov eax,prefItemToSet"
 "	      0047ce8f    push eax"
 "	      0047ce90    mov ecx,[ebp-2Ch]"
 "	      0047ce93    call 0047BBA6h"
@@ -2231,7 +2231,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 "	      0047cec1    mov eax,[ebp-28h]"
 "	      0047cec4    mov ecx,[ebp-40h]"
 "	      0047cec7    mov [ecx+4],eax"
-"	      0047ceca    mov eax,[ebp-44h]"
+"	      0047ceca    mov eax,this"
 "	      0047cecd    inc dword ptr [eax+0Ch]"
 "	      0047ced0    mov eax,[ebp-28h]"
 "	      0047ced3    mov [ebp-20h],eax"
@@ -2241,7 +2241,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 );
 // LINE 492:
 	asm( 
-"	      0047cee5    mov eax,[ebp-4]"
+"	      0047cee5    mov eax,prefItemToSet"
 "	      0047cee8    mov [ebp-18h],eax"
 "	      0047ceeb    mov eax,[ebp-18h]"
 "	      0047ceee    mov [ebp-14h],eax"
@@ -2258,27 +2258,27 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 );
 // LINE 494:
 	asm( 
-"	      0047cf19    mov eax,[ebp-44h]"
+"	      0047cf19    mov eax,this"
 "	      0047cf1c    mov dword ptr [eax+20h],1"
 );
 // LINE 495:
 	asm( 
-"	      0047cf23    mov eax,[ebp-44h]"
+"	      0047cf23    mov eax,this"
 "	      0047cf26    cmp dword ptr [eax+4],0"
 "	      0047cf2a    je near ptr 0047CF3Bh"
 );
 // LINE 496:
 	asm( 
-"	      0047cf30    mov eax,[ebp-44h]"
+"	      0047cf30    mov eax,this"
 "	      0047cf33    mov eax,[eax]"
-"	      0047cf35    mov ecx,[ebp-44h]"
+"	      0047cf35    mov ecx,this"
 "	      0047cf38    call dword ptr [eax+4]"
 );
 // LINE 497:
 	asm( 
-"	      0047cf3b    mov eax,[ebp-44h]"
+"	      0047cf3b    mov eax,this"
 "	      0047cf3e    mov eax,[eax]"
-"	      0047cf40    mov ecx,[ebp-44h]"
+"	      0047cf40    mov ecx,this"
 "	      0047cf43    call dword ptr [eax+10h]"
 );
 // LINE 498:
@@ -2306,21 +2306,21 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 "	      0047cf5d    push ebx"
 "	      0047cf5e    push esi"
 "	      0047cf5f    push edi"
-"	      0047cf60    mov [ebp-6Ch],ecx"
+"	      0047cf60    mov this,ecx"
 );
 // LINE 511:
 	asm( 
-"	      0047cf63    mov eax,[ebp+8]"
+"	      0047cf63    mov eax,prefItemToUse"
 "	      0047cf66    mov eax,[eax]"
 "	      0047cf68    push eax"
-"	      0047cf69    mov eax,[ebp-6Ch]"
+"	      0047cf69    mov eax,this"
 "	      0047cf6c    mov eax,[eax]"
-"	      0047cf6e    mov ecx,[ebp-6Ch]"
+"	      0047cf6e    mov ecx,this"
 "	      0047cf71    call dword ptr [eax+30h]"
 );
 // LINE 512:
 	asm( 
-"	      0047cf74    mov eax,[ebp-6Ch]"
+"	      0047cf74    mov eax,this"
 "	      0047cf77    mov eax,[eax+8]"
 "	      0047cf7a    mov [ebp-0Ch],eax"
 "	      0047cf7d    mov eax,[ebp-0Ch]"
@@ -2473,7 +2473,7 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 "	      0047d1b5    jmp near ptr 0047D1BAh"
 "	      0047d1ba    cmp dword ptr [ebp-14h],0"
 "	      0047d1be    je near ptr 0047D1D5h"
-"	      0047d1c4    mov eax,[ebp+8]"
+"	      0047d1c4    mov eax,prefItemToUse"
 "	      0047d1c7    push eax"
 "	      0047d1c8    mov ecx,[ebp-14h]"
 "	      0047d1cb    call 0047BBA6h"
@@ -2493,7 +2493,7 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 "	      0047d1f9    mov eax,[ebp-10h]"
 "	      0047d1fc    mov ecx,[ebp-68h]"
 "	      0047d1ff    mov [ecx+4],eax"
-"	      0047d202    mov eax,[ebp-6Ch]"
+"	      0047d202    mov eax,this"
 "	      0047d205    inc dword ptr [eax+0Ch]"
 "	      0047d208    mov eax,[ebp-10h]"
 "	      0047d20b    mov [ebp-8],eax"
@@ -2503,20 +2503,20 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 );
 // LINE 514:
 	asm( 
-"	      0047d21d    mov eax,[ebp-6Ch]"
+"	      0047d21d    mov eax,this"
 "	      0047d220    mov dword ptr [eax+20h],1"
 );
 // LINE 515:
 	asm( 
-"	      0047d227    mov eax,[ebp-6Ch]"
+"	      0047d227    mov eax,this"
 "	      0047d22a    cmp dword ptr [eax+4],0"
 "	      0047d22e    je near ptr 0047D23Fh"
 );
 // LINE 516:
 	asm( 
-"	      0047d234    mov eax,[ebp-6Ch]"
+"	      0047d234    mov eax,this"
 "	      0047d237    mov eax,[eax]"
-"	      0047d239    mov ecx,[ebp-6Ch]"
+"	      0047d239    mov ecx,this"
 "	      0047d23c    call dword ptr [eax+4]"
 );
 // LINE 517:
@@ -2544,18 +2544,18 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 "	      0047d256    push ebx"
 "	      0047d257    push esi"
 "	      0047d258    push edi"
-"	      0047d259    mov [ebp-54h],ecx"
-"	      0047d25c    mov eax,[ebp+14h]"
+"	      0047d259    mov this,ecx"
+"	      0047d25c    mov eax,bSaveTheFileAtAllChanges"
 "	      0047d25f    push eax"
-"	      0047d260    mov eax,[ebp+10h]"
+"	      0047d260    mov eax,lTheFileVersion"
 "	      0047d263    push eax"
-"	      0047d264    mov eax,[ebp+0Ch]"
+"	      0047d264    mov eax,lTheFileType"
 "	      0047d267    push eax"
-"	      0047d268    mov eax,[ebp+8]"
+"	      0047d268    mov eax,lTheFileCreator"
 "	      0047d26b    push eax"
-"	      0047d26c    mov ecx,[ebp-54h]"
+"	      0047d26c    mov ecx,this"
 "	      0047d26f    call 0047BEA2h"
-"	      0047d274    mov eax,[ebp-54h]"
+"	      0047d274    mov eax,this"
 "	      0047d277    mov dword ptr [eax+2Ch],0"
 "	      0047d27e    inc dword ptr ds:[599A70h]"
 "	      0047d284    mov eax,ds:[599A7Ch]"
@@ -2692,26 +2692,26 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 "	      0047d484    mov [ebp-50h],eax"
 "	      0047d487    jmp near ptr 0047D48Ch"
 "	      0047d48c    mov eax,[ebp-50h]"
-"	      0047d48f    mov ecx,[ebp-54h]"
+"	      0047d48f    mov ecx,this"
 "	      0047d492    mov [ecx+28h],eax"
-"	      0047d495    mov eax,[ebp-54h]"
+"	      0047d495    mov eax,this"
 "	      0047d498    mov eax,[eax+28h]"
-"	      0047d49b    mov ecx,[ebp-54h]"
+"	      0047d49b    mov ecx,this"
 "	      0047d49e    mov ecx,[ecx+28h]"
 "	      0047d4a1    mov [ecx],eax"
-"	      0047d4a3    mov eax,[ebp-54h]"
+"	      0047d4a3    mov eax,this"
 "	      0047d4a6    mov eax,[eax+28h]"
-"	      0047d4a9    mov ecx,[ebp-54h]"
+"	      0047d4a9    mov ecx,this"
 "	      0047d4ac    mov ecx,[ecx+28h]"
 "	      0047d4af    mov [ecx+4],eax"
 "	      0047d4b2    jmp near ptr 0047D4B7h"
-"	      0047d4b7    mov eax,[ebp-54h]"
+"	      0047d4b7    mov eax,this"
 "	      0047d4ba    mov dword ptr [eax],590DE8h"
 );
 // LINE 535:
 	asm( 
 "	      0047d4c0    jmp near ptr 0047D4C5h"
-"	      0047d4c5    mov eax,[ebp-54h]"
+"	      0047d4c5    mov eax,this"
 "	      0047d4c8    pop edi"
 "	      0047d4c9    pop esi"
 "	      0047d4ca    pop ebx"
@@ -2732,24 +2732,24 @@ int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, cla
 "	      0047d4d5    push ebx"
 "	      0047d4d6    push esi"
 "	      0047d4d7    push edi"
-"	      0047d4d8    mov [ebp-0Ch],ecx"
+"	      0047d4d8    mov this,ecx"
 );
 // LINE 547:
 	asm( 
-"	      0047d4db    mov eax,[ebp+0Ch]"
+"	      0047d4db    mov eax,newNotificationSink"
 "	      0047d4de    push eax"
-"	      0047d4df    mov eax,[ebp+8]"
+"	      0047d4df    mov eax,lPreferenceType"
 "	      0047d4e2    push eax"
-"	      0047d4e3    lea ecx,[ebp-8]"
+"	      0047d4e3    lea ecx,tempNewNotificationItem.lPreferenceType"
 "	      0047d4e6    call 0043E1B3h"
 );
 // LINE 548:
 	asm( 
-"	      0047d4eb    lea eax,[ebp-8]"
+"	      0047d4eb    lea eax,tempNewNotificationItem.lPreferenceType"
 "	      0047d4ee    push eax"
-"	      0047d4ef    mov eax,[ebp-0Ch]"
+"	      0047d4ef    mov eax,this"
 "	      0047d4f2    mov eax,[eax]"
-"	      0047d4f4    mov ecx,[ebp-0Ch]"
+"	      0047d4f4    mov ecx,this"
 "	      0047d4f7    call dword ptr [eax+34h]"
 "	      0047d4fa    jmp near ptr 0047D4FFh"
 );
@@ -2773,11 +2773,11 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 "	      0047d50c    push ebx"
 "	      0047d50d    push esi"
 "	      0047d50e    push edi"
-"	      0047d50f    mov [ebp-6Ch],ecx"
+"	      0047d50f    mov this,ecx"
 );
 // LINE 556:
 	asm( 
-"	      0047d512    mov eax,[ebp-6Ch]"
+"	      0047d512    mov eax,this"
 "	      0047d515    mov eax,[eax+28h]"
 "	      0047d518    mov [ebp-0Ch],eax"
 "	      0047d51b    mov eax,[ebp-0Ch]"
@@ -2928,7 +2928,7 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 "	      0047d74d    jmp near ptr 0047D752h"
 "	      0047d752    cmp dword ptr [ebp-14h],0"
 "	      0047d756    je near ptr 0047D76Dh"
-"	      0047d75c    mov eax,[ebp+8]"
+"	      0047d75c    mov eax,newNotificationItem"
 "	      0047d75f    push eax"
 "	      0047d760    mov ecx,[ebp-14h]"
 "	      0047d763    call 0043E18Ch"
@@ -2948,7 +2948,7 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 "	      0047d791    mov eax,[ebp-10h]"
 "	      0047d794    mov ecx,[ebp-68h]"
 "	      0047d797    mov [ecx+4],eax"
-"	      0047d79a    mov eax,[ebp-6Ch]"
+"	      0047d79a    mov eax,this"
 "	      0047d79d    add dword ptr [eax+2Ch],1"
 "	      0047d7a1    mov eax,[ebp-10h]"
 "	      0047d7a4    mov [ebp-8],eax"
@@ -2984,7 +2984,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 "	      0047d7cd    push ebx"
 "	      0047d7ce    push esi"
 "	      0047d7cf    push edi"
-"	      0047d7d0    mov [ebp-38h],ecx"
+"	      0047d7d0    mov this,ecx"
 );
 // LINE 571:
 	asm( 
@@ -2992,11 +2992,11 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 );
 // LINE 572:
 	asm( 
-"	      0047d7d8    mov dword ptr [ebp-4],0"
+"	      0047d7d8    mov nFound,0"
 );
 // LINE 574:
 	asm( 
-"	      0047d7df    mov eax,[ebp-38h]"
+"	      0047d7df    mov eax,this"
 "	      0047d7e2    mov eax,[eax+28h]"
 "	      0047d7e5    mov eax,[eax]"
 "	      0047d7e7    mov [ebp-2Ch],eax"
@@ -3005,11 +3005,11 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 "	      0047d7f0    jmp near ptr 0047D7F5h"
 "	      0047d7f5    jmp near ptr 0047D7FAh"
 "	      0047d7fa    mov eax,[ebp-0Ch]"
-"	      0047d7fd    mov [ebp-8],eax"
+"	      0047d7fd    mov iterator.node,eax"
 );
 // LINE 575:
 	asm( 
-"	      0047d800    mov eax,[ebp-38h]"
+"	      0047d800    mov eax,this"
 "	      0047d803    mov eax,[eax+28h]"
 "	      0047d806    mov [ebp-20h],eax"
 "	      0047d809    mov eax,[ebp-20h]"
@@ -3017,7 +3017,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 "	      0047d80f    jmp near ptr 0047D814h"
 "	      0047d814    jmp near ptr 0047D819h"
 "	      0047d819    mov eax,[ebp-10h]"
-"	      0047d81c    cmp [ebp-8],eax"
+"	      0047d81c    cmp iterator.node,eax"
 "	      0047d81f    jne near ptr 0047D82Fh"
 "	      0047d825    jmp near ptr 0047D843h"
 "	      0047d82a    jmp near ptr 0047D82Fh"
@@ -3033,25 +3033,25 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 // LINE 577:
 	asm( 
 "	      0047d857    jmp near ptr 0047D85Ch"
-"	      0047d85c    mov eax,[ebp-8]"
-"	      0047d85f    mov ecx,[ebp+8]"
+"	      0047d85c    mov eax,iterator.node"
+"	      0047d85f    mov ecx,theNotificationSink"
 "	      0047d862    cmp [eax+0Ch],ecx"
 "	      0047d865    jne near ptr 0047D8FDh"
 "	      0047d86b    jmp near ptr 0047D870h"
-"	      0047d870    mov eax,[ebp-8]"
-"	      0047d873    mov ecx,[ebp+0Ch]"
+"	      0047d870    mov eax,iterator.node"
+"	      0047d873    mov ecx,lPreferenceType"
 "	      0047d876    cmp [eax+8],ecx"
 "	      0047d879    je near ptr 0047D889h"
-"	      0047d87f    cmp dword ptr [ebp+0Ch],0"
+"	      0047d87f    cmp lPreferenceType,0"
 "	      0047d883    jne near ptr 0047D8FDh"
 );
 // LINE 579:
 	asm( 
-"	      0047d889    mov eax,[ebp-8]"
+"	      0047d889    mov eax,iterator.node"
 "	      0047d88c    mov [ebp-1Ch],eax"
-"	      0047d88f    mov eax,[ebp-8]"
+"	      0047d88f    mov eax,iterator.node"
 "	      0047d892    mov eax,[eax]"
-"	      0047d894    mov [ebp-8],eax"
+"	      0047d894    mov iterator.node,eax"
 "	      0047d897    jmp near ptr 0047D89Ch"
 "	      0047d89c    mov eax,[ebp-1Ch]"
 "	      0047d89f    mov [ebp-14h],eax"
@@ -3076,13 +3076,13 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 "	      0047d8dc    mov eax,[ebp-34h]"
 "	      0047d8df    mov ds:[599A7Ch],eax"
 "	      0047d8e4    jmp near ptr 0047D8E9h"
-"	      0047d8e9    mov eax,[ebp-38h]"
+"	      0047d8e9    mov eax,this"
 "	      0047d8ec    dec dword ptr [eax+2Ch]"
 "	      0047d8ef    jmp near ptr 0047D8F4h"
 );
 // LINE 580:
 	asm( 
-"	      0047d8f4    add dword ptr [ebp-4],1"
+"	      0047d8f4    add nFound,1"
 );
 // LINE 582:
 	asm( 
@@ -3090,11 +3090,11 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 );
 // LINE 583:
 	asm( 
-"	      0047d8fd    mov eax,[ebp-8]"
+"	      0047d8fd    mov eax,iterator.node"
 "	      0047d900    mov [ebp-30h],eax"
-"	      0047d903    mov eax,[ebp-8]"
+"	      0047d903    mov eax,iterator.node"
 "	      0047d906    mov eax,[eax]"
-"	      0047d908    mov [ebp-8],eax"
+"	      0047d908    mov iterator.node,eax"
 "	      0047d90b    jmp near ptr 0047D910h"
 "	      0047d910    mov eax,[ebp-30h]"
 "	      0047d913    mov [ebp-18h],eax"
@@ -3106,7 +3106,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 );
 // LINE 585:
 	asm( 
-"	      0047d920    mov eax,[ebp-4]"
+"	      0047d920    mov eax,nFound"
 "	      0047d923    jmp near ptr 0047D928h"
 );
 // LINE 586:
@@ -3131,37 +3131,37 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 "	      0047d935    push ebx"
 "	      0047d936    push esi"
 "	      0047d937    push edi"
-"	      0047d938    mov [ebp-8],ecx"
+"	      0047d938    mov this,ecx"
 );
 // LINE 594:
 	asm( 
-"	      0047d93b    mov eax,[ebp+10h]"
+"	      0047d93b    mov eax,lSizeofPref"
 "	      0047d93e    push eax"
-"	      0047d93f    mov eax,[ebp+0Ch]"
+"	      0047d93f    mov eax,chPref"
 "	      0047d942    push eax"
-"	      0047d943    mov eax,[ebp+8]"
+"	      0047d943    mov eax,lPrefType"
 "	      0047d946    push eax"
-"	      0047d947    mov ecx,[ebp-8]"
+"	      0047d947    mov ecx,this"
 "	      0047d94a    call 0047CCF8h"
-"	      0047d94f    mov [ebp-4],eax"
+"	      0047d94f    mov lReturnValue,eax"
 );
 // LINE 595:
 	asm( 
-"	      0047d952    cmp dword ptr [ebp-4],0"
+"	      0047d952    cmp lReturnValue,0"
 "	      0047d956    je near ptr 0047D96Bh"
 );
 // LINE 596:
 	asm( 
-"	      0047d95c    mov eax,[ebp+8]"
+"	      0047d95c    mov eax,lPrefType"
 "	      0047d95f    push eax"
-"	      0047d960    mov eax,[ebp-8]"
+"	      0047d960    mov eax,this"
 "	      0047d963    mov eax,[eax]"
-"	      0047d965    mov ecx,[ebp-8]"
+"	      0047d965    mov ecx,this"
 "	      0047d968    call dword ptr [eax+40h]"
 );
 // LINE 597:
 	asm( 
-"	      0047d96b    mov eax,[ebp-4]"
+"	      0047d96b    mov eax,lReturnValue"
 "	      0047d96e    jmp near ptr 0047D973h"
 );
 // LINE 598:
@@ -3186,34 +3186,34 @@ long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse)
 "	      0047d980    push ebx"
 "	      0047d981    push esi"
 "	      0047d982    push edi"
-"	      0047d983    mov [ebp-8],ecx"
+"	      0047d983    mov this,ecx"
 );
 // LINE 605:
 	asm( 
-"	      0047d986    mov eax,[ebp+8]"
+"	      0047d986    mov eax,prefItemToUse"
 "	      0047d989    push eax"
-"	      0047d98a    mov ecx,[ebp-8]"
+"	      0047d98a    mov ecx,this"
 "	      0047d98d    call 0047CF57h"
-"	      0047d992    mov [ebp-4],eax"
+"	      0047d992    mov lReturnValue,eax"
 );
 // LINE 606:
 	asm( 
-"	      0047d995    cmp dword ptr [ebp-4],0"
+"	      0047d995    cmp lReturnValue,0"
 "	      0047d999    je near ptr 0047D9B0h"
 );
 // LINE 607:
 	asm( 
-"	      0047d99f    mov eax,[ebp+8]"
+"	      0047d99f    mov eax,prefItemToUse"
 "	      0047d9a2    mov eax,[eax]"
 "	      0047d9a4    push eax"
-"	      0047d9a5    mov eax,[ebp-8]"
+"	      0047d9a5    mov eax,this"
 "	      0047d9a8    mov eax,[eax]"
-"	      0047d9aa    mov ecx,[ebp-8]"
+"	      0047d9aa    mov ecx,this"
 "	      0047d9ad    call dword ptr [eax+40h]"
 );
 // LINE 608:
 	asm( 
-"	      0047d9b0    mov eax,[ebp-4]"
+"	      0047d9b0    mov eax,lReturnValue"
 "	      0047d9b3    jmp near ptr 0047D9B8h"
 );
 // LINE 609:
@@ -3238,29 +3238,29 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 "	      0047d9c5    push ebx"
 "	      0047d9c6    push esi"
 "	      0047d9c7    push edi"
-"	      0047d9c8    mov [ebp-2Ch],ecx"
+"	      0047d9c8    mov this,ecx"
 );
 // LINE 618:
 	asm( 
-"	      0047d9cb    mov eax,[ebp-2Ch]"
+"	      0047d9cb    mov eax,this"
 "	      0047d9ce    mov eax,[eax+28h]"
 "	      0047d9d1    mov eax,[eax]"
 "	      0047d9d3    mov [ebp-24h],eax"
 "	      0047d9d6    mov eax,[ebp-24h]"
-"	      0047d9d9    mov [ebp-4],eax"
+"	      0047d9d9    mov iterator.node,eax"
 "	      0047d9dc    jmp near ptr 0047D9E1h"
 "	      0047d9e1    jmp near ptr 0047D9E6h"
 );
 // LINE 620:
 	asm( 
-"	      0047d9e6    mov eax,[ebp-2Ch]"
+"	      0047d9e6    mov eax,this"
 "	      0047d9e9    mov eax,[eax+28h]"
 "	      0047d9ec    mov [ebp-18h],eax"
 "	      0047d9ef    mov eax,[ebp-18h]"
 "	      0047d9f2    mov [ebp-8],eax"
 "	      0047d9f5    jmp near ptr 0047D9FAh"
 "	      0047d9fa    jmp near ptr 0047D9FFh"
-"	      0047d9ff    mov eax,[ebp-4]"
+"	      0047d9ff    mov eax,iterator.node"
 "	      0047da02    cmp [ebp-8],eax"
 "	      0047da05    jne near ptr 0047DA15h"
 "	      0047da0b    jmp near ptr 0047DA29h"
@@ -3277,23 +3277,23 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 // LINE 621:
 	asm( 
 "	      0047da3d    jmp near ptr 0047DA42h"
-"	      0047da42    mov eax,[ebp-4]"
-"	      0047da45    mov ecx,[ebp+8]"
+"	      0047da42    mov eax,iterator.node"
+"	      0047da45    mov ecx,lPrefType"
 "	      0047da48    cmp [eax+8],ecx"
 "	      0047da4b    jne near ptr 0047DA77h"
 );
 // LINE 622:
 	asm( 
 "	      0047da51    jmp near ptr 0047DA56h"
-"	      0047da56    mov eax,[ebp-4]"
+"	      0047da56    mov eax,iterator.node"
 "	      0047da59    mov eax,[eax+0Ch]"
 "	      0047da5c    mov [ebp-10h],eax"
 "	      0047da5f    mov eax,[ebp-10h]"
 "	      0047da62    mov eax,[eax]"
 "	      0047da64    mov [ebp-14h],eax"
-"	      0047da67    mov eax,[ebp-2Ch]"
+"	      0047da67    mov eax,this"
 "	      0047da6a    push eax"
-"	      0047da6b    mov eax,[ebp+8]"
+"	      0047da6b    mov eax,lPrefType"
 "	      0047da6e    push eax"
 "	      0047da6f    mov eax,[ebp-14h]"
 "	      0047da72    mov ecx,[ebp-10h]"
@@ -3301,11 +3301,11 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 );
 // LINE 623:
 	asm( 
-"	      0047da77    mov eax,[ebp-4]"
+"	      0047da77    mov eax,iterator.node"
 "	      0047da7a    mov [ebp-28h],eax"
-"	      0047da7d    mov eax,[ebp-4]"
+"	      0047da7d    mov eax,iterator.node"
 "	      0047da80    mov eax,[eax]"
-"	      0047da82    mov [ebp-4],eax"
+"	      0047da82    mov iterator.node,eax"
 "	      0047da85    jmp near ptr 0047DA8Ah"
 "	      0047da8a    mov eax,[ebp-28h]"
 "	      0047da8d    mov [ebp-0Ch],eax"

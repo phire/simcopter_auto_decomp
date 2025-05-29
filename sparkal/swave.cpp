@@ -24,26 +24,26 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 49:
 	asm( 
-"	      0048ebb9    mov dword ptr [ebp-1Ch],0"
+"	      0048ebb9    mov hmmioIn,0"
 );
 // LINE 53:
 	asm( 
-"	      0048ebc0    mov dword ptr [ebp-4],0"
+"	      0048ebc0    mov nError,0"
 );
 // LINE 61:
 	asm( 
 "	      0048ebc7    push 10000h"
 "	      0048ebcc    push 0"
-"	      0048ebce    mov eax,[ebp+8]"
+"	      0048ebce    mov eax,pszFileName"
 "	      0048ebd1    push eax"
 "	      0048ebd2    call dword ptr ds:[6C38F4h]"
-"	      0048ebd8    mov [ebp-1Ch],eax"
-"	      0048ebdb    cmp dword ptr [ebp-1Ch],0"
+"	      0048ebd8    mov hmmioIn,eax"
+"	      0048ebdb    cmp hmmioIn,0"
 "	      0048ebdf    jne near ptr 0048EBF6h"
 );
 // LINE 62:
 	asm( 
-"	      0048ebe5    mov dword ptr [ebp-4],0E100h"
+"	      0048ebe5    mov nError,0E100h"
 );
 // LINE 63:
 	asm( 
@@ -54,13 +54,13 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	asm( 
 "	      0048ebf6    push 0"
 "	      0048ebf8    push 0"
-"	      0048ebfa    mov eax,[ebp+14h]"
+"	      0048ebfa    mov eax,pckInRIFF"
 "	      0048ebfd    push eax"
-"	      0048ebfe    mov eax,[ebp-1Ch]"
+"	      0048ebfe    mov eax,hmmioIn"
 "	      0048ec01    push eax"
 "	      0048ec02    call dword ptr ds:[6C3904h]"
-"	      0048ec08    mov [ebp-4],eax"
-"	      0048ec0b    cmp dword ptr [ebp-4],0"
+"	      0048ec08    mov nError,eax"
+"	      0048ec0b    cmp nError,0"
 "	      0048ec0f    je near ptr 0048EC1Fh"
 );
 // LINE 68:
@@ -70,16 +70,16 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 70:
 	asm( 
-"	      0048ec1f    mov eax,[ebp+14h]"
+"	      0048ec1f    mov eax,pckInRIFF"
 "	      0048ec22    cmp dword ptr [eax],46464952h"
 "	      0048ec28    jne near ptr 0048EC3Eh"
-"	      0048ec2e    mov eax,[ebp+14h]"
+"	      0048ec2e    mov eax,pckInRIFF"
 "	      0048ec31    cmp dword ptr [eax+8],45564157h"
 "	      0048ec38    je near ptr 0048EC4Fh"
 );
 // LINE 71:
 	asm( 
-"	      0048ec3e    mov dword ptr [ebp-4],0E101h"
+"	      0048ec3e    mov nError,0E101h"
 );
 // LINE 72:
 	asm( 
@@ -88,20 +88,20 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 76:
 	asm( 
-"	      0048ec4f    mov dword ptr [ebp-18h],20746D66h"
+"	      0048ec4f    mov ckIn.ckid,20746D66h"
 );
 // LINE 77:
 	asm( 
 "	      0048ec56    push 10h"
-"	      0048ec58    mov eax,[ebp+14h]"
+"	      0048ec58    mov eax,pckInRIFF"
 "	      0048ec5b    push eax"
-"	      0048ec5c    lea eax,[ebp-18h]"
+"	      0048ec5c    lea eax,ckIn.ckid"
 "	      0048ec5f    push eax"
-"	      0048ec60    mov eax,[ebp-1Ch]"
+"	      0048ec60    mov eax,hmmioIn"
 "	      0048ec63    push eax"
 "	      0048ec64    call dword ptr ds:[6C3904h]"
-"	      0048ec6a    mov [ebp-4],eax"
-"	      0048ec6d    cmp dword ptr [ebp-4],0"
+"	      0048ec6a    mov nError,eax"
+"	      0048ec6d    cmp nError,0"
 "	      0048ec71    je near ptr 0048EC81h"
 );
 // LINE 78:
@@ -111,12 +111,12 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 83:
 	asm( 
-"	      0048ec81    cmp dword ptr [ebp-14h],10h"
+"	      0048ec81    cmp ckIn.cksize,10h"
 "	      0048ec85    jae near ptr 0048EC9Ch"
 );
 // LINE 84:
 	asm( 
-"	      0048ec8b    mov dword ptr [ebp-4],0E101h"
+"	      0048ec8b    mov nError,0E101h"
 );
 // LINE 85:
 	asm( 
@@ -126,9 +126,9 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 // LINE 89:
 	asm( 
 "	      0048ec9c    push 10h"
-"	      0048ec9e    lea eax,[ebp-2Ch]"
+"	      0048ec9e    lea eax,pcmWaveFormat.wf.wFormatTag"
 "	      0048eca1    push eax"
-"	      0048eca2    mov eax,[ebp-1Ch]"
+"	      0048eca2    mov eax,hmmioIn"
 "	      0048eca5    push eax"
 "	      0048eca6    call dword ptr ds:[6C38F8h]"
 "	      0048ecac    cmp eax,10h"
@@ -136,7 +136,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 90:
 	asm( 
-"	      0048ecb5    mov dword ptr [ebp-4],0E102h"
+"	      0048ecb5    mov nError,0E102h"
 );
 // LINE 91:
 	asm( 
@@ -152,7 +152,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 99:
 	asm( 
-"	      0048ecd7    mov word ptr [ebp-30h],0"
+"	      0048ecd7    mov cbExtraAlloc,0"
 );
 // LINE 101:
 	asm( 
@@ -161,9 +161,9 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 // LINE 103:
 	asm( 
 "	      0048ece2    push 2"
-"	      0048ece4    lea eax,[ebp-30h]"
+"	      0048ece4    lea eax,cbExtraAlloc"
 "	      0048ece7    push eax"
-"	      0048ece8    mov eax,[ebp-1Ch]"
+"	      0048ece8    mov eax,hmmioIn"
 "	      0048eceb    push eax"
 "	      0048ecec    call dword ptr ds:[6C38F8h]"
 "	      0048ecf2    cmp eax,2"
@@ -171,7 +171,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 104:
 	asm( 
-"	      0048ecfb    mov dword ptr [ebp-4],0E102h"
+"	      0048ecfb    mov nError,0E102h"
 );
 // LINE 105:
 	asm( 
@@ -181,29 +181,29 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 // LINE 110:
 	asm( 
 "	      0048ed0c    push 10h"
-"	      0048ed0e    lea eax,[ebp-2Ch]"
+"	      0048ed0e    lea eax,pcmWaveFormat.wf.wFormatTag"
 "	      0048ed11    push eax"
-"	      0048ed12    mov eax,[ebp+10h]"
+"	      0048ed12    mov eax,pwfxInfo"
 "	      0048ed15    push eax"
 "	      0048ed16    call 0056A800h"
 "	      0048ed1b    add esp,0Ch"
 );
 // LINE 111:
 	asm( 
-"	      0048ed1e    mov ax,[ebp-30h]"
-"	      0048ed22    mov ecx,[ebp+10h]"
+"	      0048ed1e    mov ax,cbExtraAlloc"
+"	      0048ed22    mov ecx,pwfxInfo"
 "	      0048ed25    mov [ecx+10h],ax"
 );
 // LINE 126:
 	asm( 
 "	      0048ed29    push 0"
-"	      0048ed2b    lea eax,[ebp-18h]"
+"	      0048ed2b    lea eax,ckIn.ckid"
 "	      0048ed2e    push eax"
-"	      0048ed2f    mov eax,[ebp-1Ch]"
+"	      0048ed2f    mov eax,hmmioIn"
 "	      0048ed32    push eax"
 "	      0048ed33    call dword ptr ds:[6C38FCh]"
-"	      0048ed39    mov [ebp-4],eax"
-"	      0048ed3c    cmp dword ptr [ebp-4],0"
+"	      0048ed39    mov nError,eax"
+"	      0048ed3c    cmp nError,0"
 "	      0048ed40    je near ptr 0048ED50h"
 );
 // LINE 127:
@@ -219,30 +219,30 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 // LINE 132:
 ERROR_READING_WAVE:
 	asm( 
-"	      0048ed5a    cmp dword ptr [ebp-1Ch],0"
+"	      0048ed5a    cmp hmmioIn,0"
 "	      0048ed5e    je near ptr 0048ED77h"
 );
 // LINE 133:
 	asm( 
 "	      0048ed64    push 0"
-"	      0048ed66    mov eax,[ebp-1Ch]"
+"	      0048ed66    mov eax,hmmioIn"
 "	      0048ed69    push eax"
 "	      0048ed6a    call dword ptr ds:[6C391Ch]"
 );
 // LINE 134:
 	asm( 
-"	      0048ed70    mov dword ptr [ebp-1Ch],0"
+"	      0048ed70    mov hmmioIn,0"
 );
 // LINE 138:
 END_OF_ROUTINE:
 	asm( 
-"	      0048ed77    mov eax,[ebp-1Ch]"
-"	      0048ed7a    mov ecx,[ebp+0Ch]"
+"	      0048ed77    mov eax,hmmioIn"
+"	      0048ed7a    mov ecx,phmmioIn"
 "	      0048ed7d    mov [ecx],eax"
 );
 // LINE 140:
 	asm( 
-"	      0048ed7f    mov eax,[ebp-4]"
+"	      0048ed7f    mov eax,nError"
 "	      0048ed82    jmp near ptr 0048EDB4h"
 );
 // LINE 141:
@@ -280,16 +280,16 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 // LINE 160:
 	asm( 
 "	      0048edc2    push 0"
-"	      0048edc4    mov eax,[ebp+10h]"
+"	      0048edc4    mov eax,pckInRIFF"
 "	      0048edc7    mov eax,[eax+0Ch]"
 "	      0048edca    add eax,4"
 "	      0048edcd    push eax"
-"	      0048edce    mov eax,[ebp+8]"
+"	      0048edce    mov eax,phmmioIn"
 "	      0048edd1    mov eax,[eax]"
 "	      0048edd3    push eax"
 "	      0048edd4    call dword ptr ds:[6C3900h]"
-"	      0048edda    mov [ebp-4],eax"
-"	      0048eddd    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0048edda    mov nError,eax"
+"	      0048eddd    cmp nError,0FFFFFFFFh"
 "	      0048ede1    jne near ptr 0048EDF1h"
 );
 // LINE 161:
@@ -299,26 +299,26 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 );
 // LINE 164:
 	asm( 
-"	      0048edf1    mov eax,[ebp+0Ch]"
+"	      0048edf1    mov eax,pckIn"
 "	      0048edf4    mov dword ptr [eax],61746164h"
 );
 // LINE 165:
 	asm( 
 "	      0048edfa    push 10h"
-"	      0048edfc    mov eax,[ebp+10h]"
+"	      0048edfc    mov eax,pckInRIFF"
 "	      0048edff    push eax"
-"	      0048ee00    mov eax,[ebp+0Ch]"
+"	      0048ee00    mov eax,pckIn"
 "	      0048ee03    push eax"
-"	      0048ee04    mov eax,[ebp+8]"
+"	      0048ee04    mov eax,phmmioIn"
 "	      0048ee07    mov eax,[eax]"
 "	      0048ee09    push eax"
 "	      0048ee0a    call dword ptr ds:[6C3904h]"
-"	      0048ee10    mov [ebp-4],eax"
+"	      0048ee10    mov nError,eax"
 );
 // LINE 168:
 ERROR_READING_WAVE:
 	asm( 
-"	      0048ee13    mov eax,[ebp-4]"
+"	      0048ee13    mov eax,nError"
 "	      0048ee16    jmp near ptr 0048EE20h"
 );
 // LINE 169:
@@ -351,16 +351,16 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 // LINE 197:
 	asm( 
 "	      0048ee2e    push 0"
-"	      0048ee30    lea eax,[ebp-54h]"
+"	      0048ee30    lea eax,mmioinfoIn.dwFlags"
 "	      0048ee33    push eax"
-"	      0048ee34    mov eax,[ebp+8]"
+"	      0048ee34    mov eax,hmmioIn"
 "	      0048ee37    push eax"
 "	      0048ee38    call dword ptr ds:[6C38E8h]"
-"	      0048ee3e    mov [ebp-8],eax"
+"	      0048ee3e    mov nError,eax"
 );
 // LINE 199:
 	asm( 
-"	      0048ee41    cmp dword ptr [ebp-8],0"
+"	      0048ee41    cmp nError,0"
 "	      0048ee45    je near ptr 0048EE55h"
 );
 // LINE 200:
@@ -370,50 +370,50 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 );
 // LINE 203:
 	asm( 
-"	      0048ee55    mov eax,[ebp+14h]"
-"	      0048ee58    mov ecx,[ebp+0Ch]"
+"	      0048ee55    mov eax,pckIn"
+"	      0048ee58    mov ecx,cbRead"
 "	      0048ee5b    cmp [eax+4],ecx"
 "	      0048ee5e    jae near ptr 0048EE6Dh"
 );
 // LINE 204:
 	asm( 
-"	      0048ee64    mov eax,[ebp+14h]"
+"	      0048ee64    mov eax,pckIn"
 "	      0048ee67    mov eax,[eax+4]"
-"	      0048ee6a    mov [ebp+0Ch],eax"
+"	      0048ee6a    mov cbRead,eax"
 );
 // LINE 206:
 	asm( 
 "	      0048ee6d    xor eax,eax"
-"	      0048ee6f    sub eax,[ebp+0Ch]"
+"	      0048ee6f    sub eax,cbRead"
 "	      0048ee72    neg eax"
-"	      0048ee74    mov ecx,[ebp+14h]"
+"	      0048ee74    mov ecx,pckIn"
 "	      0048ee77    sub [ecx+4],eax"
 );
 // LINE 208:
 	asm( 
-"	      0048ee7a    mov dword ptr [ebp-0Ch],0"
+"	      0048ee7a    mov cT,0"
 "	      0048ee81    jmp near ptr 0048EE89h"
-"	      0048ee86    inc dword ptr [ebp-0Ch]"
-"	      0048ee89    mov eax,[ebp+0Ch]"
-"	      0048ee8c    cmp [ebp-0Ch],eax"
+"	      0048ee86    inc cT"
+"	      0048ee89    mov eax,cbRead"
+"	      0048ee8c    cmp cT,eax"
 "	      0048ee8f    jae near ptr 0048EF07h"
 );
 // LINE 210:
 	asm( 
-"	      0048ee95    mov eax,[ebp-34h]"
-"	      0048ee98    cmp [ebp-38h],eax"
+"	      0048ee95    mov eax,mmioinfoIn.pchEndRead"
+"	      0048ee98    cmp mmioinfoIn.pchNext,eax"
 "	      0048ee9b    jne near ptr 0048EEE5h"
 );
 // LINE 211:
 	asm( 
 "	      0048eea1    push 0"
-"	      0048eea3    lea eax,[ebp-54h]"
+"	      0048eea3    lea eax,mmioinfoIn.dwFlags"
 "	      0048eea6    push eax"
-"	      0048eea7    mov eax,[ebp+8]"
+"	      0048eea7    mov eax,hmmioIn"
 "	      0048eeaa    push eax"
 "	      0048eeab    call dword ptr ds:[6C38ECh]"
-"	      0048eeb1    mov [ebp-8],eax"
-"	      0048eeb4    cmp dword ptr [ebp-8],0"
+"	      0048eeb1    mov nError,eax"
+"	      0048eeb4    cmp nError,0"
 "	      0048eeb8    je near ptr 0048EEC8h"
 );
 // LINE 212:
@@ -423,13 +423,13 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 );
 // LINE 214:
 	asm( 
-"	      0048eec8    mov eax,[ebp-34h]"
-"	      0048eecb    cmp [ebp-38h],eax"
+"	      0048eec8    mov eax,mmioinfoIn.pchEndRead"
+"	      0048eecb    cmp mmioinfoIn.pchNext,eax"
 "	      0048eece    jne near ptr 0048EEE5h"
 );
 // LINE 215:
 	asm( 
-"	      0048eed4    mov dword ptr [ebp-8],0E103h"
+"	      0048eed4    mov nError,0E103h"
 );
 // LINE 216:
 	asm( 
@@ -438,25 +438,25 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 );
 // LINE 222:
 	asm( 
-"	      0048eee5    mov eax,[ebp-38h]"
+"	      0048eee5    mov eax,mmioinfoIn.pchNext"
 "	      0048eee8    mov al,[eax]"
-"	      0048eeea    mov ecx,[ebp-0Ch]"
-"	      0048eeed    mov edx,[ebp+10h]"
+"	      0048eeea    mov ecx,cT"
+"	      0048eeed    mov edx,pbDest"
 "	      0048eef0    mov [ecx+edx],al"
 );
 // LINE 223:
 	asm( 
-"	      0048eef3    mov eax,[ebp-38h]"
-"	      0048eef6    mov [ebp-4],eax"
+"	      0048eef3    mov eax,mmioinfoIn.pchNext"
+"	      0048eef6    mov tempBYTEPointerToFoolCrappyMicrosoftCompiler,eax"
 );
 // LINE 224:
 	asm( 
-"	      0048eef9    inc dword ptr [ebp-4]"
+"	      0048eef9    inc tempBYTEPointerToFoolCrappyMicrosoftCompiler"
 );
 // LINE 225:
 	asm( 
-"	      0048eefc    mov eax,[ebp-4]"
-"	      0048eeff    mov [ebp-38h],eax"
+"	      0048eefc    mov eax,tempBYTEPointerToFoolCrappyMicrosoftCompiler"
+"	      0048eeff    mov mmioinfoIn.pchNext,eax"
 );
 // LINE 226:
 	asm( 
@@ -465,13 +465,13 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 // LINE 228:
 	asm( 
 "	      0048ef07    push 0"
-"	      0048ef09    lea eax,[ebp-54h]"
+"	      0048ef09    lea eax,mmioinfoIn.dwFlags"
 "	      0048ef0c    push eax"
-"	      0048ef0d    mov eax,[ebp+8]"
+"	      0048ef0d    mov eax,hmmioIn"
 "	      0048ef10    push eax"
 "	      0048ef11    call dword ptr ds:[6C38F0h]"
-"	      0048ef17    mov [ebp-8],eax"
-"	      0048ef1a    cmp dword ptr [ebp-8],0"
+"	      0048ef17    mov nError,eax"
+"	      0048ef1a    cmp nError,0"
 "	      0048ef1e    je near ptr 0048EF2Eh"
 );
 // LINE 229:
@@ -481,8 +481,8 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 );
 // LINE 231:
 	asm( 
-"	      0048ef2e    mov eax,[ebp+0Ch]"
-"	      0048ef31    mov ecx,[ebp+18h]"
+"	      0048ef2e    mov eax,cbRead"
+"	      0048ef31    mov ecx,cbActualRead"
 "	      0048ef34    mov [ecx],eax"
 );
 // LINE 232:
@@ -493,13 +493,13 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 // LINE 235:
 ERROR_CANNOT_READ:
 	asm( 
-"	      0048ef40    mov eax,[ebp+18h]"
+"	      0048ef40    mov eax,cbActualRead"
 "	      0048ef43    mov dword ptr [eax],0"
 );
 // LINE 238:
 FINISHED_READING:
 	asm( 
-"	      0048ef49    mov eax,[ebp-8]"
+"	      0048ef49    mov eax,nError"
 "	      0048ef4c    jmp near ptr 0048EF6Ah"
 );
 // LINE 239:
@@ -529,21 +529,21 @@ int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
 );
 // LINE 252:
 	asm( 
-"	      0048ef75    mov eax,[ebp+8]"
+"	      0048ef75    mov eax,phmmio"
 "	      0048ef78    cmp dword ptr [eax],0"
 "	      0048ef7b    je near ptr 0048EF98h"
 );
 // LINE 253:
 	asm( 
 "	      0048ef81    push 0"
-"	      0048ef83    mov eax,[ebp+8]"
+"	      0048ef83    mov eax,phmmio"
 "	      0048ef86    mov eax,[eax]"
 "	      0048ef88    push eax"
 "	      0048ef89    call dword ptr ds:[6C391Ch]"
 );
 // LINE 254:
 	asm( 
-"	      0048ef8f    mov eax,[ebp+8]"
+"	      0048ef8f    mov eax,phmmio"
 "	      0048ef92    mov dword ptr [eax],0"
 );
 // LINE 257:
@@ -580,28 +580,28 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 );
 // LINE 285:
 	asm( 
-"	      0048efad    mov eax,[ebp+14h]"
+"	      0048efad    mov eax,ppbData"
 "	      0048efb0    mov dword ptr [eax],0"
 );
 // LINE 286:
 	asm( 
-"	      0048efb6    mov eax,[ebp+0Ch]"
+"	      0048efb6    mov eax,cbSize"
 "	      0048efb9    mov dword ptr [eax],0"
 );
 // LINE 288:
 	asm( 
-"	      0048efbf    lea eax,[ebp-2Ch]"
+"	      0048efbf    lea eax,ckInRiff.ckid"
 "	      0048efc2    push eax"
-"	      0048efc3    mov eax,[ebp+10h]"
+"	      0048efc3    mov eax,pwfxInfo"
 "	      0048efc6    push eax"
-"	      0048efc7    lea eax,[ebp-30h]"
+"	      0048efc7    lea eax,hmmioIn"
 "	      0048efca    push eax"
-"	      0048efcb    mov eax,[ebp+8]"
+"	      0048efcb    mov eax,pszFileName"
 "	      0048efce    push eax"
 "	      0048efcf    call 0048EBB0h"
 "	      0048efd4    add esp,10h"
-"	      0048efd7    mov [ebp-4],eax"
-"	      0048efda    cmp dword ptr [ebp-4],0"
+"	      0048efd7    mov nError,eax"
+"	      0048efda    cmp nError,0"
 "	      0048efde    je near ptr 0048EFEEh"
 );
 // LINE 289:
@@ -612,10 +612,10 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 // LINE 294:
 	asm( 
 "	      0048efee    push 0"
-"	      0048eff0    mov eax,[ebp-20h]"
+"	      0048eff0    mov eax,ckInRiff.dwDataOffset"
 "	      0048eff3    add eax,4"
 "	      0048eff6    push eax"
-"	      0048eff7    mov eax,[ebp-30h]"
+"	      0048eff7    mov eax,hmmioIn"
 "	      0048effa    push eax"
 "	      0048effb    call dword ptr ds:[6C3900h]"
 "	      0048f001    cmp eax,0FFFFFFFFh"
@@ -628,16 +628,16 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 );
 // LINE 298:
 	asm( 
-"	      0048f014    mov dword ptr [ebp-18h],61746164h"
+"	      0048f014    mov ckIn.ckid,61746164h"
 );
 // LINE 299:
 	asm( 
 "	      0048f01b    push 10h"
-"	      0048f01d    lea eax,[ebp-2Ch]"
+"	      0048f01d    lea eax,ckInRiff.ckid"
 "	      0048f020    push eax"
-"	      0048f021    lea eax,[ebp-18h]"
+"	      0048f021    lea eax,ckIn.ckid"
 "	      0048f024    push eax"
-"	      0048f025    mov eax,[ebp-30h]"
+"	      0048f025    mov eax,hmmioIn"
 "	      0048f028    push eax"
 "	      0048f029    call dword ptr ds:[6C3904h]"
 "	      0048f02f    test eax,eax"
@@ -650,19 +650,19 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 );
 // LINE 303:
 	asm( 
-"	      0048f041    mov eax,[ebp-14h]"
+"	      0048f041    mov eax,ckIn.cksize"
 "	      0048f044    push eax"
 "	      0048f045    push 0"
 "	      0048f047    call dword ptr ds:[6C3730h]"
-"	      0048f04d    mov ecx,[ebp+14h]"
+"	      0048f04d    mov ecx,ppbData"
 "	      0048f050    mov [ecx],eax"
-"	      0048f052    mov eax,[ebp+14h]"
+"	      0048f052    mov eax,ppbData"
 "	      0048f055    cmp dword ptr [eax],0"
 "	      0048f058    jne near ptr 0048F06Fh"
 );
 // LINE 304:
 	asm( 
-"	      0048f05e    mov dword ptr [ebp-4],0E000h"
+"	      0048f05e    mov nError,0E000h"
 );
 // LINE 305:
 	asm( 
@@ -671,21 +671,21 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 );
 // LINE 311:
 	asm( 
-"	      0048f06f    lea eax,[ebp-34h]"
+"	      0048f06f    lea eax,cbActualRead"
 "	      0048f072    push eax"
-"	      0048f073    lea eax,[ebp-18h]"
+"	      0048f073    lea eax,ckIn.ckid"
 "	      0048f076    push eax"
-"	      0048f077    mov eax,[ebp+14h]"
+"	      0048f077    mov eax,ppbData"
 "	      0048f07a    mov eax,[eax]"
 "	      0048f07c    push eax"
-"	      0048f07d    mov eax,[ebp-14h]"
+"	      0048f07d    mov eax,ckIn.cksize"
 "	      0048f080    push eax"
-"	      0048f081    mov eax,[ebp-30h]"
+"	      0048f081    mov eax,hmmioIn"
 "	      0048f084    push eax"
 "	      0048f085    call 0048EE25h"
 "	      0048f08a    add esp,14h"
-"	      0048f08d    mov [ebp-4],eax"
-"	      0048f090    cmp dword ptr [ebp-4],0"
+"	      0048f08d    mov nError,eax"
+"	      0048f090    cmp nError,0"
 "	      0048f094    je near ptr 0048F0A4h"
 );
 // LINE 312:
@@ -695,8 +695,8 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 );
 // LINE 315:
 	asm( 
-"	      0048f0a4    mov eax,[ebp-34h]"
-"	      0048f0a7    mov ecx,[ebp+0Ch]"
+"	      0048f0a4    mov eax,cbActualRead"
+"	      0048f0a7    mov ecx,cbSize"
 "	      0048f0aa    mov [ecx],eax"
 );
 // LINE 316:
@@ -707,42 +707,42 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 // LINE 319:
 ERROR_LOADING:
 	asm( 
-"	      0048f0b6    mov eax,[ebp+14h]"
+"	      0048f0b6    mov eax,ppbData"
 "	      0048f0b9    cmp dword ptr [eax],0"
 "	      0048f0bc    je near ptr 0048F0D7h"
 );
 // LINE 320:
 	asm( 
-"	      0048f0c2    mov eax,[ebp+14h]"
+"	      0048f0c2    mov eax,ppbData"
 "	      0048f0c5    mov eax,[eax]"
 "	      0048f0c7    push eax"
 "	      0048f0c8    call dword ptr ds:[6C3650h]"
 );
 // LINE 321:
 	asm( 
-"	      0048f0ce    mov eax,[ebp+14h]"
+"	      0048f0ce    mov eax,ppbData"
 "	      0048f0d1    mov dword ptr [eax],0"
 );
 // LINE 326:
 DONE_LOADING:
 	asm( 
-"	      0048f0d7    cmp dword ptr [ebp-30h],0"
+"	      0048f0d7    cmp hmmioIn,0"
 "	      0048f0db    je near ptr 0048F0F4h"
 );
 // LINE 327:
 	asm( 
 "	      0048f0e1    push 0"
-"	      0048f0e3    mov eax,[ebp-30h]"
+"	      0048f0e3    mov eax,hmmioIn"
 "	      0048f0e6    push eax"
 "	      0048f0e7    call dword ptr ds:[6C391Ch]"
 );
 // LINE 328:
 	asm( 
-"	      0048f0ed    mov dword ptr [ebp-30h],0"
+"	      0048f0ed    mov hmmioIn,0"
 );
 // LINE 331:
 	asm( 
-"	      0048f0f4    mov eax,[ebp-4]"
+"	      0048f0f4    mov eax,nError"
 "	      0048f0f7    jmp near ptr 0048F11Ah"
 );
 // LINE 332:

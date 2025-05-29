@@ -66,43 +66,43 @@ void RoadGraph::Init() {
 "	      0053bd70    push ebx"
 "	      0053bd71    push esi"
 "	      0053bd72    push edi"
-"	      0053bd73    mov [ebp-30h],ecx"
+"	      0053bd73    mov this,ecx"
 );
 // LINE 91:
 	asm( 
-"	      0053bd76    mov dword ptr [ebp-4],0"
+"	      0053bd76    mov x,0"
 "	      0053bd7d    jmp near ptr 0053BD85h"
-"	      0053bd82    inc dword ptr [ebp-4]"
-"	      0053bd85    cmp dword ptr [ebp-4],80h"
+"	      0053bd82    inc x"
+"	      0053bd85    cmp x,80h"
 "	      0053bd8c    jge near ptr 0053BDA5h"
-"	      0053bd92    mov eax,[ebp-4]"
-"	      0053bd95    mov ecx,[ebp-30h]"
+"	      0053bd92    mov eax,x"
+"	      0053bd95    mov ecx,this"
 "	      0053bd98    mov byte ptr [eax+ecx+200h],0"
 "	      0053bda0    jmp near ptr 0053BD82h"
 );
 // LINE 96:
 	asm( 
-"	      0053bda5    mov dword ptr [ebp-4],0"
+"	      0053bda5    mov x,0"
 "	      0053bdac    jmp near ptr 0053BDB4h"
-"	      0053bdb1    inc dword ptr [ebp-4]"
-"	      0053bdb4    cmp dword ptr [ebp-4],80h"
+"	      0053bdb1    inc x"
+"	      0053bdb4    cmp x,80h"
 "	      0053bdbb    jge near ptr 0053BF05h"
 );
 // LINE 98:
 // Block start:
 	int32_t y;
 	asm( 
-"	      0053bdc1    mov dword ptr [ebp-10h],0"
+"	      0053bdc1    mov y,0"
 "	      0053bdc8    jmp near ptr 0053BDD0h"
-"	      0053bdcd    inc dword ptr [ebp-10h]"
-"	      0053bdd0    cmp dword ptr [ebp-10h],80h"
+"	      0053bdcd    inc y"
+"	      0053bdd0    cmp y,80h"
 "	      0053bdd7    jge near ptr 0053BF00h"
 );
 // LINE 99:
 	asm( 
-"	      0053bddd    mov eax,[ebp-10h]"
+"	      0053bddd    mov eax,y"
 "	      0053bde0    push eax"
-"	      0053bde1    mov eax,[ebp-4]"
+"	      0053bde1    mov eax,x"
 "	      0053bde4    push eax"
 "	      0053bde5    call 00539260h"
 "	      0053bdea    add esp,8"
@@ -111,27 +111,27 @@ void RoadGraph::Init() {
 );
 // LINE 101:
 	asm( 
-"	      0053bdf5    cmp dword ptr [ebp-4],0"
+"	      0053bdf5    cmp x,0"
 "	      0053bdf9    jl near ptr 0053BE23h"
-"	      0053bdff    cmp dword ptr [ebp-10h],0"
+"	      0053bdff    cmp y,0"
 "	      0053be03    jl near ptr 0053BE23h"
-"	      0053be09    cmp dword ptr [ebp-4],80h"
+"	      0053be09    cmp x,80h"
 "	      0053be10    jge near ptr 0053BE23h"
-"	      0053be16    cmp dword ptr [ebp-10h],80h"
+"	      0053be16    cmp y,80h"
 "	      0053be1d    jl near ptr 0053BE2Eh"
 "	      0053be23    mov word ptr [ebp-28h],0"
 "	      0053be29    jmp near ptr 0053BE66h"
-"	      0053be2e    mov eax,[ebp-4]"
+"	      0053be2e    mov eax,x"
 "	      0053be31    mov eax,[eax*4+638F70h]"
-"	      0053be38    mov ecx,[ebp-10h]"
+"	      0053be38    mov ecx,y"
 "	      0053be3b    xor edx,edx"
 "	      0053be3d    mov dl,[eax+ecx]"
 "	      0053be40    and edx,2"
 "	      0053be43    movsx eax,dx"
 "	      0053be46    shl eax,0Eh"
-"	      0053be49    mov ecx,[ebp-4]"
+"	      0053be49    mov ecx,x"
 "	      0053be4c    mov ecx,[ecx*4+639850h]"
-"	      0053be53    mov edx,[ebp-10h]"
+"	      0053be53    mov edx,y"
 "	      0053be56    xor ebx,ebx"
 "	      0053be58    mov bl,[ecx+edx]"
 "	      0053be5b    or eax,ebx"
@@ -160,7 +160,7 @@ void RoadGraph::Init() {
 );
 // LINE 103:
 	asm( 
-"	      0053becc    mov eax,[ebp-4]"
+"	      0053becc    mov eax,x"
 "	      0053becf    dec eax"
 "	      0053bed0    test al,1"
 "	      0053bed2    je near ptr 0053BEDDh"
@@ -168,7 +168,7 @@ void RoadGraph::Init() {
 );
 // LINE 104:
 	asm( 
-"	      0053bedd    mov eax,[ebp-10h]"
+"	      0053bedd    mov eax,y"
 "	      0053bee0    dec eax"
 "	      0053bee1    test al,1"
 "	      0053bee3    je near ptr 0053BEEEh"
@@ -176,8 +176,8 @@ void RoadGraph::Init() {
 );
 // LINE 107:
 	asm( 
-"	      0053beee    mov eax,[ebp-4]"
-"	      0053bef1    mov ecx,[ebp-30h]"
+"	      0053beee    mov eax,x"
+"	      0053bef1    mov ecx,this"
 "	      0053bef4    inc byte ptr [eax+ecx+200h]"
 );
 // LINE 109:
@@ -190,16 +190,16 @@ void RoadGraph::Init() {
 );
 // LINE 113:
 	asm( 
-"	      0053bf05    mov dword ptr [ebp-4],0"
+"	      0053bf05    mov x,0"
 "	      0053bf0c    jmp near ptr 0053BF14h"
-"	      0053bf11    inc dword ptr [ebp-4]"
-"	      0053bf14    cmp dword ptr [ebp-4],80h"
+"	      0053bf11    inc x"
+"	      0053bf14    cmp x,80h"
 "	      0053bf1b    jge near ptr 0053BF58h"
 );
 // LINE 114:
 	asm( 
-"	      0053bf21    mov eax,[ebp-4]"
-"	      0053bf24    mov ecx,[ebp-30h]"
+"	      0053bf21    mov eax,x"
+"	      0053bf24    mov ecx,this"
 "	      0053bf27    xor edx,edx"
 "	      0053bf29    mov dl,[eax+ecx+200h]"
 "	      0053bf30    mov eax,edx"
@@ -211,33 +211,33 @@ void RoadGraph::Init() {
 "	      0053bf41    push eax"
 "	      0053bf42    call 004CB4ACh"
 "	      0053bf47    add esp,8"
-"	      0053bf4a    mov ecx,[ebp-4]"
-"	      0053bf4d    mov edx,[ebp-30h]"
+"	      0053bf4a    mov ecx,x"
+"	      0053bf4d    mov edx,this"
 "	      0053bf50    mov [edx+ecx*4],eax"
 "	      0053bf53    jmp near ptr 0053BF11h"
 );
 // LINE 118:
 	asm( 
-"	      0053bf58    mov dword ptr [ebp-4],0"
+"	      0053bf58    mov x,0"
 "	      0053bf5f    jmp near ptr 0053BF67h"
-"	      0053bf64    inc dword ptr [ebp-4]"
-"	      0053bf67    cmp dword ptr [ebp-4],80h"
+"	      0053bf64    inc x"
+"	      0053bf67    cmp x,80h"
 "	      0053bf6e    jge near ptr 0053C1E7h"
 );
 // LINE 120:
 	asm( 
-"	      0053bf74    mov dword ptr [ebp-8],0"
-"	      0053bf7b    mov byte ptr [ebp-0Ch],0"
+"	      0053bf74    mov y,0"
+"	      0053bf7b    mov yindex,0"
 "	      0053bf7f    jmp near ptr 0053BF87h"
-"	      0053bf84    inc dword ptr [ebp-8]"
-"	      0053bf87    cmp dword ptr [ebp-8],80h"
+"	      0053bf84    inc y"
+"	      0053bf87    cmp y,80h"
 "	      0053bf8e    jge near ptr 0053C1E2h"
 );
 // LINE 122:
 	asm( 
-"	      0053bf94    mov eax,[ebp-8]"
+"	      0053bf94    mov eax,y"
 "	      0053bf97    push eax"
-"	      0053bf98    mov eax,[ebp-4]"
+"	      0053bf98    mov eax,x"
 "	      0053bf9b    push eax"
 "	      0053bf9c    call 00539260h"
 "	      0053bfa1    add esp,8"
@@ -248,27 +248,27 @@ void RoadGraph::Init() {
 // Block start:
 	int32_t i;
 	asm( 
-"	      0053bfac    cmp dword ptr [ebp-4],0"
+"	      0053bfac    cmp x,0"
 "	      0053bfb0    jl near ptr 0053BFDAh"
-"	      0053bfb6    cmp dword ptr [ebp-8],0"
+"	      0053bfb6    cmp y,0"
 "	      0053bfba    jl near ptr 0053BFDAh"
-"	      0053bfc0    cmp dword ptr [ebp-4],80h"
+"	      0053bfc0    cmp x,80h"
 "	      0053bfc7    jge near ptr 0053BFDAh"
-"	      0053bfcd    cmp dword ptr [ebp-8],80h"
+"	      0053bfcd    cmp y,80h"
 "	      0053bfd4    jl near ptr 0053BFE5h"
 "	      0053bfda    mov word ptr [ebp-20h],0"
 "	      0053bfe0    jmp near ptr 0053C01Dh"
-"	      0053bfe5    mov eax,[ebp-4]"
+"	      0053bfe5    mov eax,x"
 "	      0053bfe8    mov eax,[eax*4+638F70h]"
-"	      0053bfef    mov ecx,[ebp-8]"
+"	      0053bfef    mov ecx,y"
 "	      0053bff2    xor edx,edx"
 "	      0053bff4    mov dl,[eax+ecx]"
 "	      0053bff7    and edx,2"
 "	      0053bffa    movsx eax,dx"
 "	      0053bffd    shl eax,0Eh"
-"	      0053c000    mov ecx,[ebp-4]"
+"	      0053c000    mov ecx,x"
 "	      0053c003    mov ecx,[ecx*4+639850h]"
-"	      0053c00a    mov edx,[ebp-8]"
+"	      0053c00a    mov edx,y"
 "	      0053c00d    xor ebx,ebx"
 "	      0053c00f    mov bl,[ecx+edx]"
 "	      0053c012    or eax,ebx"
@@ -297,7 +297,7 @@ void RoadGraph::Init() {
 );
 // LINE 128:
 	asm( 
-"	      0053c083    mov eax,[ebp-4]"
+"	      0053c083    mov eax,x"
 "	      0053c086    dec eax"
 "	      0053c087    test al,1"
 "	      0053c089    je near ptr 0053C094h"
@@ -305,7 +305,7 @@ void RoadGraph::Init() {
 );
 // LINE 129:
 	asm( 
-"	      0053c094    mov eax,[ebp-8]"
+"	      0053c094    mov eax,y"
 "	      0053c097    dec eax"
 "	      0053c098    test al,1"
 "	      0053c09a    je near ptr 0053C0A5h"
@@ -314,11 +314,11 @@ void RoadGraph::Init() {
 // LINE 132:
 	asm( 
 "	      0053c0a5    mov al,[ebp-4]"
-"	      0053c0a8    mov ecx,[ebp-4]"
-"	      0053c0ab    mov edx,[ebp-30h]"
+"	      0053c0a8    mov ecx,x"
+"	      0053c0ab    mov edx,this"
 "	      0053c0ae    mov ecx,[edx+ecx*4]"
 "	      0053c0b1    xor edx,edx"
-"	      0053c0b3    mov dl,[ebp-0Ch]"
+"	      0053c0b3    mov dl,yindex"
 "	      0053c0b6    mov ebx,edx"
 "	      0053c0b8    lea edx,[edx+edx*4]"
 "	      0053c0bb    lea edx,[edx+edx*4]"
@@ -328,11 +328,11 @@ void RoadGraph::Init() {
 // LINE 133:
 	asm( 
 "	      0053c0c4    mov al,[ebp-8]"
-"	      0053c0c7    mov ecx,[ebp-4]"
-"	      0053c0ca    mov edx,[ebp-30h]"
+"	      0053c0c7    mov ecx,x"
+"	      0053c0ca    mov edx,this"
 "	      0053c0cd    mov ecx,[edx+ecx*4]"
 "	      0053c0d0    xor edx,edx"
-"	      0053c0d2    mov dl,[ebp-0Ch]"
+"	      0053c0d2    mov dl,yindex"
 "	      0053c0d5    mov ebx,edx"
 "	      0053c0d7    lea edx,[edx+edx*4]"
 "	      0053c0da    lea edx,[edx+edx*4]"
@@ -341,11 +341,11 @@ void RoadGraph::Init() {
 );
 // LINE 134:
 	asm( 
-"	      0053c0e4    mov eax,[ebp-4]"
-"	      0053c0e7    mov ecx,[ebp-30h]"
+"	      0053c0e4    mov eax,x"
+"	      0053c0e7    mov ecx,this"
 "	      0053c0ea    mov eax,[ecx+eax*4]"
 "	      0053c0ed    xor ecx,ecx"
-"	      0053c0ef    mov cl,[ebp-0Ch]"
+"	      0053c0ef    mov cl,yindex"
 "	      0053c0f2    mov edx,ecx"
 "	      0053c0f4    lea ecx,[ecx+ecx*4]"
 "	      0053c0f7    lea ecx,[ecx+ecx*4]"
@@ -354,11 +354,11 @@ void RoadGraph::Init() {
 );
 // LINE 135:
 	asm( 
-"	      0053c102    mov eax,[ebp-4]"
-"	      0053c105    mov ecx,[ebp-30h]"
+"	      0053c102    mov eax,x"
+"	      0053c105    mov ecx,this"
 "	      0053c108    mov eax,[ecx+eax*4]"
 "	      0053c10b    xor ecx,ecx"
-"	      0053c10d    mov cl,[ebp-0Ch]"
+"	      0053c10d    mov cl,yindex"
 "	      0053c110    mov edx,ecx"
 "	      0053c112    lea ecx,[ecx+ecx*4]"
 "	      0053c115    lea ecx,[ecx+ecx*4]"
@@ -367,73 +367,73 @@ void RoadGraph::Init() {
 );
 // LINE 137:
 	asm( 
-"	      0053c120    mov dword ptr [ebp-14h],0"
+"	      0053c120    mov i,0"
 "	      0053c127    jmp near ptr 0053C12Fh"
-"	      0053c12c    inc dword ptr [ebp-14h]"
-"	      0053c12f    cmp dword ptr [ebp-14h],4"
+"	      0053c12c    inc i"
+"	      0053c12f    cmp i,4"
 "	      0053c133    jge near ptr 0053C1DAh"
 );
 // LINE 139:
 	asm( 
-"	      0053c139    mov eax,[ebp-4]"
-"	      0053c13c    mov ecx,[ebp-30h]"
+"	      0053c139    mov eax,x"
+"	      0053c13c    mov ecx,this"
 "	      0053c13f    mov eax,[ecx+eax*4]"
 "	      0053c142    xor ecx,ecx"
-"	      0053c144    mov cl,[ebp-0Ch]"
+"	      0053c144    mov cl,yindex"
 "	      0053c147    mov edx,ecx"
 "	      0053c149    lea ecx,[ecx+ecx*4]"
 "	      0053c14c    lea ecx,[ecx+ecx*4]"
 "	      0053c14f    lea ecx,[edx+ecx*2]"
 "	      0053c152    add eax,ecx"
-"	      0053c154    mov ecx,[ebp-14h]"
+"	      0053c154    mov ecx,i"
 "	      0053c157    lea ecx,[ecx+ecx*4]"
 "	      0053c15a    mov word ptr [eax+ecx*2+8],0"
 );
 // LINE 140:
 	asm( 
-"	      0053c161    mov eax,[ebp-4]"
-"	      0053c164    mov ecx,[ebp-30h]"
+"	      0053c161    mov eax,x"
+"	      0053c164    mov ecx,this"
 "	      0053c167    mov eax,[ecx+eax*4]"
 "	      0053c16a    xor ecx,ecx"
-"	      0053c16c    mov cl,[ebp-0Ch]"
+"	      0053c16c    mov cl,yindex"
 "	      0053c16f    mov edx,ecx"
 "	      0053c171    lea ecx,[ecx+ecx*4]"
 "	      0053c174    lea ecx,[ecx+ecx*4]"
 "	      0053c177    lea ecx,[edx+ecx*2]"
 "	      0053c17a    add eax,ecx"
-"	      0053c17c    mov ecx,[ebp-14h]"
+"	      0053c17c    mov ecx,i"
 "	      0053c17f    lea ecx,[ecx+ecx*4]"
 "	      0053c182    mov word ptr [eax+ecx*2+6],0"
 );
 // LINE 141:
 	asm( 
-"	      0053c189    mov eax,[ebp-4]"
-"	      0053c18c    mov ecx,[ebp-30h]"
+"	      0053c189    mov eax,x"
+"	      0053c18c    mov ecx,this"
 "	      0053c18f    mov eax,[ecx+eax*4]"
 "	      0053c192    xor ecx,ecx"
-"	      0053c194    mov cl,[ebp-0Ch]"
+"	      0053c194    mov cl,yindex"
 "	      0053c197    mov edx,ecx"
 "	      0053c199    lea ecx,[ecx+ecx*4]"
 "	      0053c19c    lea ecx,[ecx+ecx*4]"
 "	      0053c19f    lea ecx,[edx+ecx*2]"
 "	      0053c1a2    add eax,ecx"
-"	      0053c1a4    mov ecx,[ebp-14h]"
+"	      0053c1a4    mov ecx,i"
 "	      0053c1a7    lea ecx,[ecx+ecx*4]"
 "	      0053c1aa    mov byte ptr [eax+ecx*2+4],0FFh"
 );
 // LINE 142:
 	asm( 
-"	      0053c1af    mov eax,[ebp-4]"
-"	      0053c1b2    mov ecx,[ebp-30h]"
+"	      0053c1af    mov eax,x"
+"	      0053c1b2    mov ecx,this"
 "	      0053c1b5    mov eax,[ecx+eax*4]"
 "	      0053c1b8    xor ecx,ecx"
-"	      0053c1ba    mov cl,[ebp-0Ch]"
+"	      0053c1ba    mov cl,yindex"
 "	      0053c1bd    mov edx,ecx"
 "	      0053c1bf    lea ecx,[ecx+ecx*4]"
 "	      0053c1c2    lea ecx,[ecx+ecx*4]"
 "	      0053c1c5    lea ecx,[edx+ecx*2]"
 "	      0053c1c8    add eax,ecx"
-"	      0053c1ca    mov ecx,[ebp-14h]"
+"	      0053c1ca    mov ecx,i"
 "	      0053c1cd    lea ecx,[ecx+ecx*4]"
 "	      0053c1d0    mov byte ptr [eax+ecx*2+5],0FFh"
 );
@@ -443,7 +443,7 @@ void RoadGraph::Init() {
 );
 // LINE 145:
 	asm( 
-"	      0053c1da    inc byte ptr [ebp-0Ch]"
+"	      0053c1da    inc yindex"
 );
 // LINE 147:
 // Block end:
@@ -456,28 +456,28 @@ void RoadGraph::Init() {
 );
 // LINE 150:
 	asm( 
-"	      0053c1e7    mov ecx,[ebp-30h]"
+"	      0053c1e7    mov ecx,this"
 "	      0053c1ea    call 0053D400h"
 );
 // LINE 156:
 	asm( 
-"	      0053c1ef    mov dword ptr [ebp-4],0"
+"	      0053c1ef    mov x,0"
 "	      0053c1f6    jmp near ptr 0053C1FEh"
-"	      0053c1fb    inc dword ptr [ebp-4]"
-"	      0053c1fe    cmp dword ptr [ebp-4],80h"
+"	      0053c1fb    inc x"
+"	      0053c1fe    cmp x,80h"
 "	      0053c205    jge near ptr 0053C28Bh"
 );
 // LINE 158:
 	asm( 
-"	      0053c20b    mov byte ptr [ebp-0Ch],0"
+"	      0053c20b    mov yindex,0"
 "	      0053c20f    jmp near ptr 0053C217h"
-"	      0053c214    inc byte ptr [ebp-0Ch]"
-"	      0053c217    mov eax,[ebp-4]"
-"	      0053c21a    mov ecx,[ebp-30h]"
+"	      0053c214    inc yindex"
+"	      0053c217    mov eax,x"
+"	      0053c21a    mov ecx,this"
 "	      0053c21d    xor edx,edx"
 "	      0053c21f    mov dl,[eax+ecx+200h]"
 "	      0053c226    xor eax,eax"
-"	      0053c228    mov al,[ebp-0Ch]"
+"	      0053c228    mov al,yindex"
 "	      0053c22b    cmp edx,eax"
 "	      0053c22d    jle near ptr 0053C286h"
 );
@@ -485,27 +485,27 @@ void RoadGraph::Init() {
 // Block start:
 	struct RGVertex* pRGV;
 	asm( 
-"	      0053c233    mov eax,[ebp-4]"
-"	      0053c236    mov ecx,[ebp-30h]"
+"	      0053c233    mov eax,x"
+"	      0053c236    mov ecx,this"
 "	      0053c239    mov eax,[ecx+eax*4]"
 "	      0053c23c    xor ecx,ecx"
-"	      0053c23e    mov cl,[ebp-0Ch]"
+"	      0053c23e    mov cl,yindex"
 "	      0053c241    mov edx,ecx"
 "	      0053c243    lea ecx,[ecx+ecx*4]"
 "	      0053c246    lea ecx,[ecx+ecx*4]"
 "	      0053c249    lea ecx,[edx+ecx*2]"
 "	      0053c24c    add eax,ecx"
-"	      0053c24e    mov [ebp-18h],eax"
+"	      0053c24e    mov pRGV,eax"
 );
 // LINE 161:
 	asm( 
-"	      0053c251    mov eax,[ebp-18h]"
+"	      0053c251    mov eax,pRGV"
 "	      0053c254    push eax"
-"	      0053c255    mov eax,[ebp-4]"
-"	      0053c258    mov ecx,[ebp-30h]"
+"	      0053c255    mov eax,x"
+"	      0053c258    mov ecx,this"
 "	      0053c25b    mov eax,[ecx+eax*4]"
 "	      0053c25e    xor ecx,ecx"
-"	      0053c260    mov cl,[ebp-0Ch]"
+"	      0053c260    mov cl,yindex"
 "	      0053c263    mov edx,ecx"
 "	      0053c265    lea ecx,[ecx+ecx*4]"
 "	      0053c268    lea ecx,[ecx+ecx*4]"
@@ -513,9 +513,9 @@ void RoadGraph::Init() {
 "	      0053c26e    xor edx,edx"
 "	      0053c270    mov dl,[eax+ecx+1]"
 "	      0053c274    push edx"
-"	      0053c275    mov eax,[ebp-4]"
+"	      0053c275    mov eax,x"
 "	      0053c278    push eax"
-"	      0053c279    mov ecx,[ebp-30h]"
+"	      0053c279    mov ecx,this"
 "	      0053c27c    call 0053D9D2h"
 );
 // LINE 162:
@@ -529,23 +529,23 @@ void RoadGraph::Init() {
 );
 // LINE 167:
 	asm( 
-"	      0053c28b    mov dword ptr [ebp-4],0"
+"	      0053c28b    mov x,0"
 "	      0053c292    jmp near ptr 0053C29Ah"
-"	      0053c297    inc dword ptr [ebp-4]"
-"	      0053c29a    cmp dword ptr [ebp-4],80h"
+"	      0053c297    inc x"
+"	      0053c29a    cmp x,80h"
 "	      0053c2a1    jge near ptr 0053C327h"
 );
 // LINE 169:
 	asm( 
-"	      0053c2a7    mov byte ptr [ebp-0Ch],0"
+"	      0053c2a7    mov yindex,0"
 "	      0053c2ab    jmp near ptr 0053C2B3h"
-"	      0053c2b0    inc byte ptr [ebp-0Ch]"
-"	      0053c2b3    mov eax,[ebp-4]"
-"	      0053c2b6    mov ecx,[ebp-30h]"
+"	      0053c2b0    inc yindex"
+"	      0053c2b3    mov eax,x"
+"	      0053c2b6    mov ecx,this"
 "	      0053c2b9    xor edx,edx"
 "	      0053c2bb    mov dl,[eax+ecx+200h]"
 "	      0053c2c2    xor eax,eax"
-"	      0053c2c4    mov al,[ebp-0Ch]"
+"	      0053c2c4    mov al,yindex"
 "	      0053c2c7    cmp edx,eax"
 "	      0053c2c9    jle near ptr 0053C322h"
 );
@@ -553,27 +553,27 @@ void RoadGraph::Init() {
 // Block start:
 	struct RGVertex* pRGV;
 	asm( 
-"	      0053c2cf    mov eax,[ebp-4]"
-"	      0053c2d2    mov ecx,[ebp-30h]"
+"	      0053c2cf    mov eax,x"
+"	      0053c2d2    mov ecx,this"
 "	      0053c2d5    mov eax,[ecx+eax*4]"
 "	      0053c2d8    xor ecx,ecx"
-"	      0053c2da    mov cl,[ebp-0Ch]"
+"	      0053c2da    mov cl,yindex"
 "	      0053c2dd    mov edx,ecx"
 "	      0053c2df    lea ecx,[ecx+ecx*4]"
 "	      0053c2e2    lea ecx,[ecx+ecx*4]"
 "	      0053c2e5    lea ecx,[edx+ecx*2]"
 "	      0053c2e8    add eax,ecx"
-"	      0053c2ea    mov [ebp-1Ch],eax"
+"	      0053c2ea    mov pRGV,eax"
 );
 // LINE 172:
 	asm( 
-"	      0053c2ed    mov eax,[ebp-1Ch]"
+"	      0053c2ed    mov eax,pRGV"
 "	      0053c2f0    push eax"
-"	      0053c2f1    mov eax,[ebp-4]"
-"	      0053c2f4    mov ecx,[ebp-30h]"
+"	      0053c2f1    mov eax,x"
+"	      0053c2f4    mov ecx,this"
 "	      0053c2f7    mov eax,[ecx+eax*4]"
 "	      0053c2fa    xor ecx,ecx"
-"	      0053c2fc    mov cl,[ebp-0Ch]"
+"	      0053c2fc    mov cl,yindex"
 "	      0053c2ff    mov edx,ecx"
 "	      0053c301    lea ecx,[ecx+ecx*4]"
 "	      0053c304    lea ecx,[ecx+ecx*4]"
@@ -581,9 +581,9 @@ void RoadGraph::Init() {
 "	      0053c30a    xor edx,edx"
 "	      0053c30c    mov dl,[eax+ecx+1]"
 "	      0053c310    push edx"
-"	      0053c311    mov eax,[ebp-4]"
+"	      0053c311    mov eax,x"
 "	      0053c314    push eax"
-"	      0053c315    mov ecx,[ebp-30h]"
+"	      0053c315    mov ecx,this"
 "	      0053c318    call 0054048Dh"
 );
 // LINE 173:
@@ -621,27 +621,27 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 "	      0053c337    push ebx"
 "	      0053c338    push esi"
 "	      0053c339    push edi"
-"	      0053c33a    mov [ebp-20h],ecx"
+"	      0053c33a    mov this,ecx"
 );
 // LINE 199:
 	asm( 
-"	      0053c33d    mov eax,[ebp+8]"
+"	      0053c33d    mov eax,pGoal"
 "	      0053c340    mov eax,[eax]"
-"	      0053c342    mov [ebp-8],eax"
+"	      0053c342    mov pRGV,eax"
 );
 // LINE 200:
 	asm( 
-"	      0053c345    mov eax,[ebp+8]"
+"	      0053c345    mov eax,pGoal"
 "	      0053c348    mov eax,[eax+0Eh]"
 "	      0053c34b    lea eax,[eax+eax*4]"
 "	      0053c34e    add eax,eax"
-"	      0053c350    add eax,[ebp-8]"
+"	      0053c350    add eax,pRGV"
 "	      0053c353    add eax,4"
-"	      0053c356    mov [ebp-10h],eax"
+"	      0053c356    mov pEdge,eax"
 );
 // LINE 205:
 	asm( 
-"	      0053c359    mov eax,[ebp-10h]"
+"	      0053c359    mov eax,pEdge"
 "	      0053c35c    xor ecx,ecx"
 "	      0053c35e    mov cx,[eax+4]"
 "	      0053c362    test ecx,ecx"
@@ -654,54 +654,54 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 );
 // LINE 210:
 	asm( 
-"	      0053c374    mov eax,[ebp+8]"
+"	      0053c374    mov eax,pGoal"
 "	      0053c377    mov eax,[eax+4]"
 "	      0053c37a    add eax,eax"
-"	      0053c37c    mov ecx,[ebp-10h]"
+"	      0053c37c    mov ecx,pEdge"
 "	      0053c37f    add eax,[ecx+6]"
-"	      0053c382    mov [ebp-4],eax"
+"	      0053c382    mov pRoad,eax"
 );
 // LINE 213:
 	asm( 
-"	      0053c385    mov eax,[ebp-4]"
+"	      0053c385    mov eax,pRoad"
 "	      0053c388    xor ecx,ecx"
 "	      0053c38a    mov cl,[eax+1]"
-"	      0053c38d    mov eax,[ebp+8]"
+"	      0053c38d    mov eax,pGoal"
 "	      0053c390    cmp ecx,[eax+8]"
 "	      0053c393    jle near ptr 0053C3DCh"
 );
 // LINE 217:
 	asm( 
-"	      0053c399    mov eax,[ebp+8]"
+"	      0053c399    mov eax,pGoal"
 "	      0053c39c    inc dword ptr [eax+8]"
 );
 // LINE 240:
 	asm( 
-"	      0053c39f    mov eax,[ebp+8]"
+"	      0053c39f    mov eax,pGoal"
 "	      0053c3a2    cmp dword ptr [eax+8],0"
 "	      0053c3a6    jne near ptr 0053C3D7h"
 );
 // LINE 242:
 	asm( 
-"	      0053c3ac    mov eax,[ebp-10h]"
+"	      0053c3ac    mov eax,pEdge"
 "	      0053c3af    mov eax,[eax+6]"
 "	      0053c3b2    mov al,[eax]"
 "	      0053c3b4    and al,3"
 "	      0053c3b6    xor ecx,ecx"
 "	      0053c3b8    mov cl,al"
-"	      0053c3ba    mov eax,[ebp+8]"
+"	      0053c3ba    mov eax,pGoal"
 "	      0053c3bd    mov [eax+12h],ecx"
 );
 // LINE 244:
 	asm( 
-"	      0053c3c0    mov eax,[ebp-10h]"
+"	      0053c3c0    mov eax,pEdge"
 "	      0053c3c3    mov eax,[eax+6]"
 "	      0053c3c6    mov al,[eax]"
 "	      0053c3c8    shr al,2"
 "	      0053c3cb    and al,3"
 "	      0053c3cd    xor ecx,ecx"
 "	      0053c3cf    mov cl,al"
-"	      0053c3d1    mov eax,[ebp+8]"
+"	      0053c3d1    mov eax,pGoal"
 "	      0053c3d4    mov [eax+26h],ecx"
 );
 // LINE 247:
@@ -710,56 +710,56 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 );
 // LINE 250:
 	asm( 
-"	      0053c3dc    mov eax,[ebp-4]"
+"	      0053c3dc    mov eax,pRoad"
 "	      0053c3df    mov al,[eax]"
 "	      0053c3e1    shr al,4"
 "	      0053c3e4    and al,1"
 "	      0053c3e6    xor ecx,ecx"
 "	      0053c3e8    mov cl,al"
-"	      0053c3ea    mov eax,[ebp+8]"
+"	      0053c3ea    mov eax,pGoal"
 "	      0053c3ed    mov [eax+22h],ecx"
 );
 // LINE 251:
 	asm( 
-"	      0053c3f0    mov eax,[ebp-4]"
+"	      0053c3f0    mov eax,pRoad"
 "	      0053c3f3    mov al,[eax]"
 "	      0053c3f5    shr al,2"
 "	      0053c3f8    and al,3"
 "	      0053c3fa    xor ecx,ecx"
 "	      0053c3fc    mov cl,al"
-"	      0053c3fe    mov eax,[ebp+8]"
+"	      0053c3fe    mov eax,pGoal"
 "	      0053c401    mov [eax+26h],ecx"
 );
 // LINE 252:
 	asm( 
-"	      0053c404    mov eax,[ebp+8]"
+"	      0053c404    mov eax,pGoal"
 "	      0053c407    inc dword ptr [eax+4]"
 );
 // LINE 255:
 	asm( 
-"	      0053c40a    mov eax,[ebp-10h]"
+"	      0053c40a    mov eax,pEdge"
 "	      0053c40d    xor ecx,ecx"
 "	      0053c40f    mov cx,[eax+4]"
-"	      0053c413    mov eax,[ebp+8]"
+"	      0053c413    mov eax,pGoal"
 "	      0053c416    cmp ecx,[eax+4]"
 "	      0053c419    jle near ptr 0053C449h"
 );
 // LINE 257:
 	asm( 
-"	      0053c41f    mov eax,[ebp+8]"
+"	      0053c41f    mov eax,pGoal"
 "	      0053c422    mov dword ptr [eax+8],0"
 );
 // LINE 258:
 	asm( 
-"	      0053c429    mov eax,[ebp+8]"
+"	      0053c429    mov eax,pGoal"
 "	      0053c42c    mov eax,[eax+4]"
-"	      0053c42f    mov ecx,[ebp-10h]"
+"	      0053c42f    mov ecx,pEdge"
 "	      0053c432    mov ecx,[ecx+6]"
 "	      0053c435    mov al,[ecx+eax*2]"
 "	      0053c438    and al,3"
 "	      0053c43a    xor ecx,ecx"
 "	      0053c43c    mov cl,al"
-"	      0053c43e    mov eax,[ebp+8]"
+"	      0053c43e    mov eax,pGoal"
 "	      0053c441    mov [eax+12h],ecx"
 );
 // LINE 260:
@@ -773,82 +773,82 @@ IntersectionKludge:
 	unsigned char x;
 	struct RGVertex* pRGV;
 	asm( 
-"	      0053c449    mov eax,[ebp+8]"
+"	      0053c449    mov eax,pGoal"
 "	      0053c44c    mov eax,[eax]"
-"	      0053c44e    mov [ebp-14h],eax"
+"	      0053c44e    mov pRGV,eax"
 );
 // LINE 269:
 	asm( 
-"	      0053c451    mov eax,[ebp+8]"
+"	      0053c451    mov eax,pGoal"
 "	      0053c454    mov eax,[eax+0Eh]"
 "	      0053c457    lea eax,[eax+eax*4]"
-"	      0053c45a    mov ecx,[ebp-14h]"
+"	      0053c45a    mov ecx,pRGV"
 "	      0053c45d    mov al,[ecx+eax*2+4]"
-"	      0053c461    mov [ebp-1Ch],al"
+"	      0053c461    mov yindex,al"
 );
 // LINE 270:
 	asm( 
-"	      0053c464    mov eax,[ebp+8]"
+"	      0053c464    mov eax,pGoal"
 "	      0053c467    mov eax,[eax+0Eh]"
 "	      0053c46a    lea eax,[eax+eax*4]"
-"	      0053c46d    mov ecx,[ebp-14h]"
+"	      0053c46d    mov ecx,pRGV"
 "	      0053c470    mov al,[ecx+eax*2+5]"
-"	      0053c474    mov [ebp-18h],al"
+"	      0053c474    mov x,al"
 );
 // LINE 273:
 	asm( 
 "	      0053c477    xor eax,eax"
-"	      0053c479    mov al,[ebp-18h]"
-"	      0053c47c    mov ecx,[ebp-20h]"
+"	      0053c479    mov al,x"
+"	      0053c47c    mov ecx,this"
 "	      0053c47f    mov eax,[ecx+eax*4]"
 "	      0053c482    xor ecx,ecx"
-"	      0053c484    mov cl,[ebp-1Ch]"
+"	      0053c484    mov cl,yindex"
 "	      0053c487    mov edx,ecx"
 "	      0053c489    lea ecx,[ecx+ecx*4]"
 "	      0053c48c    lea ecx,[ecx+ecx*4]"
 "	      0053c48f    lea ecx,[edx+ecx*2]"
 "	      0053c492    add eax,ecx"
-"	      0053c494    mov ecx,[ebp+8]"
+"	      0053c494    mov ecx,pGoal"
 "	      0053c497    mov [ecx],eax"
-"	      0053c499    mov eax,[ebp+8]"
+"	      0053c499    mov eax,pGoal"
 "	      0053c49c    mov eax,[eax]"
-"	      0053c49e    mov [ebp-14h],eax"
+"	      0053c49e    mov pRGV,eax"
 );
 // LINE 274:
 	asm( 
-"	      0053c4a1    mov eax,[ebp-14h]"
+"	      0053c4a1    mov eax,pRGV"
 "	      0053c4a4    xor ecx,ecx"
 "	      0053c4a6    mov cl,[eax+3]"
-"	      0053c4a9    mov eax,[ebp+8]"
+"	      0053c4a9    mov eax,pGoal"
 "	      0053c4ac    mov [eax+22h],ecx"
 );
 // LINE 275:
 	asm( 
-"	      0053c4af    mov eax,[ebp-14h]"
+"	      0053c4af    mov eax,pRGV"
 "	      0053c4b2    mov al,[eax+2]"
 "	      0053c4b5    and al,0Fh"
 "	      0053c4b7    xor ecx,ecx"
 "	      0053c4b9    mov cl,al"
-"	      0053c4bb    mov eax,[ebp+8]"
+"	      0053c4bb    mov eax,pGoal"
 "	      0053c4be    mov [eax+1Ah],ecx"
 );
 // LINE 276:
 	asm( 
-"	      0053c4c1    mov eax,[ebp-14h]"
+"	      0053c4c1    mov eax,pRGV"
 "	      0053c4c4    mov al,[eax+2]"
 "	      0053c4c7    shr al,4"
 "	      0053c4ca    and al,0Fh"
 "	      0053c4cc    xor ecx,ecx"
 "	      0053c4ce    mov cl,al"
-"	      0053c4d0    mov eax,[ebp+8]"
+"	      0053c4d0    mov eax,pGoal"
 "	      0053c4d3    mov [eax+1Eh],ecx"
 );
 // LINE 284:
 	asm( 
-"	      0053c4d6    mov eax,[ebp+8]"
+"	      0053c4d6    mov eax,pGoal"
 "	      0053c4d9    xor ecx,ecx"
 "	      0053c4db    mov cl,[eax+0Ch]"
-"	      0053c4de    mov eax,[ebp-14h]"
+"	      0053c4de    mov eax,pRGV"
 "	      0053c4e1    xor edx,edx"
 "	      0053c4e3    mov dl,[eax]"
 "	      0053c4e5    cmp ecx,edx"
@@ -863,10 +863,10 @@ IntersectionKludge:
 );
 // LINE 285:
 	asm( 
-"	      0053c50e    mov eax,[ebp+8]"
+"	      0053c50e    mov eax,pGoal"
 "	      0053c511    xor ecx,ecx"
 "	      0053c513    mov cl,[eax+0Dh]"
-"	      0053c516    mov eax,[ebp-14h]"
+"	      0053c516    mov eax,pRGV"
 "	      0053c519    xor edx,edx"
 "	      0053c51b    mov dl,[eax+1]"
 "	      0053c51e    cmp ecx,edx"
@@ -881,28 +881,28 @@ IntersectionKludge:
 );
 // LINE 293:
 	asm( 
-"	      0053c547    mov eax,[ebp+8]"
+"	      0053c547    mov eax,pGoal"
 "	      0053c54a    mov dword ptr [eax+0Eh],0FFFFFFFEh"
 );
 // LINE 294:
 	asm( 
-"	      0053c551    mov eax,[ebp+8]"
+"	      0053c551    mov eax,pGoal"
 "	      0053c554    mov dword ptr [eax+4],0"
 );
 // LINE 299:
 	asm( 
-"	      0053c55b    mov eax,[ebp+8]"
+"	      0053c55b    mov eax,pGoal"
 "	      0053c55e    mov dword ptr [eax+8],0FFFFFFFFh"
 );
 // LINE 310:
 // Block end:
 	asm( 
-"	      0053c565    mov eax,[ebp+8]"
+"	      0053c565    mov eax,pGoal"
 "	      0053c568    xor ecx,ecx"
 "	      0053c56a    mov cl,[eax+0Ch]"
 "	      0053c56d    cmp ecx,80h"
 "	      0053c573    jge near ptr 0053C67Dh"
-"	      0053c579    mov eax,[ebp+8]"
+"	      0053c579    mov eax,pGoal"
 "	      0053c57c    xor ecx,ecx"
 "	      0053c57e    mov cl,[eax+0Dh]"
 "	      0053c581    cmp ecx,80h"
@@ -910,11 +910,11 @@ IntersectionKludge:
 );
 // LINE 312:
 	asm( 
-"	      0053c58d    mov eax,[ebp+8]"
+"	      0053c58d    mov eax,pGoal"
 "	      0053c590    xor ecx,ecx"
 "	      0053c592    mov cl,[eax+0Ch]"
 "	      0053c595    mov eax,[ecx*4+63A270h]"
-"	      0053c59c    mov ecx,[ebp+8]"
+"	      0053c59c    mov ecx,pGoal"
 "	      0053c59f    xor edx,edx"
 "	      0053c5a1    mov dl,[ecx+0Dh]"
 "	      0053c5a4    xor ecx,ecx"
@@ -924,47 +924,47 @@ IntersectionKludge:
 );
 // LINE 314:
 	asm( 
-"	      0053c5b1    mov eax,[ebp+8]"
+"	      0053c5b1    mov eax,pGoal"
 "	      0053c5b4    cmp dword ptr [eax+12h],3"
 "	      0053c5b8    jne near ptr 0053C5CAh"
-"	      0053c5be    mov dword ptr [ebp-0Ch],2"
+"	      0053c5be    mov slope,2"
 "	      0053c5c5    jmp near ptr 0053C5D1h"
-"	      0053c5ca    mov dword ptr [ebp-0Ch],0"
+"	      0053c5ca    mov slope,0"
 "	      0053c5d1    jmp near ptr 0053C678h"
 );
 // LINE 315:
 	asm( 
-"	      0053c5d6    mov eax,[ebp+8]"
+"	      0053c5d6    mov eax,pGoal"
 "	      0053c5d9    cmp dword ptr [eax+12h],0"
 "	      0053c5dd    jne near ptr 0053C5EFh"
-"	      0053c5e3    mov dword ptr [ebp-0Ch],2"
+"	      0053c5e3    mov slope,2"
 "	      0053c5ea    jmp near ptr 0053C5F6h"
-"	      0053c5ef    mov dword ptr [ebp-0Ch],0"
+"	      0053c5ef    mov slope,0"
 "	      0053c5f6    jmp near ptr 0053C678h"
 );
 // LINE 316:
 	asm( 
-"	      0053c5fb    mov eax,[ebp+8]"
+"	      0053c5fb    mov eax,pGoal"
 "	      0053c5fe    cmp dword ptr [eax+12h],1"
 "	      0053c602    jne near ptr 0053C614h"
-"	      0053c608    mov dword ptr [ebp-0Ch],2"
+"	      0053c608    mov slope,2"
 "	      0053c60f    jmp near ptr 0053C61Bh"
-"	      0053c614    mov dword ptr [ebp-0Ch],0"
+"	      0053c614    mov slope,0"
 "	      0053c61b    jmp near ptr 0053C678h"
 );
 // LINE 317:
 	asm( 
-"	      0053c620    mov eax,[ebp+8]"
+"	      0053c620    mov eax,pGoal"
 "	      0053c623    cmp dword ptr [eax+12h],2"
 "	      0053c627    jne near ptr 0053C639h"
-"	      0053c62d    mov dword ptr [ebp-0Ch],2"
+"	      0053c62d    mov slope,2"
 "	      0053c634    jmp near ptr 0053C640h"
-"	      0053c639    mov dword ptr [ebp-0Ch],0"
+"	      0053c639    mov slope,0"
 "	      0053c640    jmp near ptr 0053C678h"
 );
 // LINE 318:
 	asm( 
-"	      0053c645    mov dword ptr [ebp-0Ch],1"
+"	      0053c645    mov slope,1"
 );
 // LINE 319:
 	asm( 
@@ -990,12 +990,12 @@ IntersectionKludge:
 );
 // LINE 323:
 	asm( 
-"	      0053c67d    mov dword ptr [ebp-0Ch],1"
+"	      0053c67d    mov slope,1"
 );
 // LINE 325:
 	asm( 
-"	      0053c684    mov eax,[ebp-0Ch]"
-"	      0053c687    mov ecx,[ebp+8]"
+"	      0053c684    mov eax,slope"
+"	      0053c687    mov ecx,pGoal"
 "	      0053c68a    mov [ecx+26h],eax"
 );
 // LINE 327:
@@ -1027,35 +1027,35 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 "	      0053c6a4    push ebx"
 "	      0053c6a5    push esi"
 "	      0053c6a6    push edi"
-"	      0053c6a7    mov [ebp-28h],ecx"
+"	      0053c6a7    mov this,ecx"
 );
 // LINE 338:
 	asm( 
-"	      0053c6aa    mov eax,[ebp+10h]"
+"	      0053c6aa    mov eax,y"
 "	      0053c6ad    push eax"
-"	      0053c6ae    mov eax,[ebp+0Ch]"
+"	      0053c6ae    mov eax,x"
 "	      0053c6b1    push eax"
-"	      0053c6b2    mov ecx,[ebp-28h]"
+"	      0053c6b2    mov ecx,this"
 "	      0053c6b5    call 0053D167h"
-"	      0053c6ba    mov [ebp-10h],al"
+"	      0053c6ba    mov yindex,al"
 );
 // LINE 339:
 	asm( 
-"	      0053c6bd    mov eax,[ebp+0Ch]"
-"	      0053c6c0    mov ecx,[ebp-28h]"
+"	      0053c6bd    mov eax,x"
+"	      0053c6c0    mov ecx,this"
 "	      0053c6c3    mov eax,[ecx+eax*4]"
 "	      0053c6c6    xor ecx,ecx"
-"	      0053c6c8    mov cl,[ebp-10h]"
+"	      0053c6c8    mov cl,yindex"
 "	      0053c6cb    mov edx,ecx"
 "	      0053c6cd    lea ecx,[ecx+ecx*4]"
 "	      0053c6d0    lea ecx,[ecx+ecx*4]"
 "	      0053c6d3    lea ecx,[edx+ecx*2]"
 "	      0053c6d6    add eax,ecx"
-"	      0053c6d8    mov [ebp-8],eax"
+"	      0053c6d8    mov pRGV,eax"
 );
 // LINE 344:
 	asm( 
-"	      0053c6db    mov dword ptr [ebp-4],0"
+"	      0053c6db    mov loopCounter,0"
 );
 // LINE 350:
 	asm( 
@@ -1067,14 +1067,14 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 "	      0053c6ef    and eax,3"
 "	      0053c6f2    xor eax,edx"
 "	      0053c6f4    sub eax,edx"
-"	      0053c6f6    mov ecx,[ebp+8]"
+"	      0053c6f6    mov ecx,pGoal"
 "	      0053c6f9    mov [ecx+0Eh],eax"
 );
 // LINE 353:
 	asm( 
-"	      0053c6fc    mov eax,[ebp-4]"
+"	      0053c6fc    mov eax,loopCounter"
 "	      0053c6ff    mov [ebp-24h],eax"
-"	      0053c702    inc dword ptr [ebp-4]"
+"	      0053c702    inc loopCounter"
 "	      0053c705    cmp dword ptr [ebp-24h],10h"
 "	      0053c709    jle near ptr 0053C730h"
 );
@@ -1090,39 +1090,39 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 );
 // LINE 356:
 	asm( 
-"	      0053c730    mov eax,[ebp+8]"
+"	      0053c730    mov eax,pGoal"
 "	      0053c733    mov eax,[eax+0Eh]"
 "	      0053c736    mov eax,[eax*4+593430h]"
-"	      0053c73d    mov [ebp-18h],eax"
+"	      0053c73d    mov tempDir,eax"
 );
 // LINE 357:
 	asm( 
-"	      0053c740    mov eax,[ebp-8]"
+"	      0053c740    mov eax,pRGV"
 "	      0053c743    mov al,[eax+2]"
 "	      0053c746    and al,0Fh"
 "	      0053c748    xor ecx,ecx"
 "	      0053c74a    mov cl,al"
-"	      0053c74c    and ecx,[ebp-18h]"
-"	      0053c74f    mov [ebp-14h],ecx"
+"	      0053c74c    and ecx,tempDir"
+"	      0053c74f    mov validTurn,ecx"
 );
 // LINE 359:
 	asm( 
-"	      0053c752    cmp dword ptr [ebp-14h],0"
+"	      0053c752    cmp validTurn,0"
 "	      0053c756    je near ptr 0053C6E2h"
 );
 // LINE 361:
 	asm( 
-"	      0053c75c    mov eax,[ebp+8]"
+"	      0053c75c    mov eax,pGoal"
 "	      0053c75f    mov eax,[eax+0Eh]"
 "	      0053c762    lea eax,[eax+eax*4]"
 "	      0053c765    add eax,eax"
-"	      0053c767    add eax,[ebp-8]"
+"	      0053c767    add eax,pRGV"
 "	      0053c76a    add eax,4"
-"	      0053c76d    mov [ebp-0Ch],eax"
+"	      0053c76d    mov pEdge,eax"
 );
 // LINE 363:
 	asm( 
-"	      0053c770    mov eax,[ebp-0Ch]"
+"	      0053c770    mov eax,pEdge"
 "	      0053c773    xor ecx,ecx"
 "	      0053c775    mov cx,[eax+4]"
 "	      0053c779    test ecx,ecx"
@@ -1133,29 +1133,29 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	int32_t i;
 	struct Road* pRoad;
 	asm( 
-"	      0053c781    mov eax,[ebp+8]"
+"	      0053c781    mov eax,pGoal"
 "	      0053c784    mov eax,[eax+0Eh]"
 "	      0053c787    mov [ebp-2Ch],eax"
 "	      0053c78a    jmp near ptr 0053C7B4h"
 );
 // LINE 368:
 	asm( 
-"	      0053c78f    dec dword ptr [ebp+10h]"
+"	      0053c78f    dec y"
 "	      0053c792    jmp near ptr 0053C7D8h"
 );
 // LINE 369:
 	asm( 
-"	      0053c797    inc dword ptr [ebp+0Ch]"
+"	      0053c797    inc x"
 "	      0053c79a    jmp near ptr 0053C7D8h"
 );
 // LINE 370:
 	asm( 
-"	      0053c79f    inc dword ptr [ebp+10h]"
+"	      0053c79f    inc y"
 "	      0053c7a2    jmp near ptr 0053C7D8h"
 );
 // LINE 371:
 	asm( 
-"	      0053c7a7    dec dword ptr [ebp+0Ch]"
+"	      0053c7a7    dec x"
 "	      0053c7aa    jmp near ptr 0053C7D8h"
 );
 // LINE 372:
@@ -1174,39 +1174,39 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 // LINE 375:
 	asm( 
 "	      0053c7d8    call 0056EC50h"
-"	      0053c7dd    mov ecx,[ebp-0Ch]"
+"	      0053c7dd    mov ecx,pEdge"
 "	      0053c7e0    xor ebx,ebx"
 "	      0053c7e2    mov bx,[ecx+4]"
 "	      0053c7e6    movsx eax,ax"
 "	      0053c7e9    cdq"
 "	      0053c7ea    idiv ebx"
-"	      0053c7ec    mov eax,[ebp+8]"
+"	      0053c7ec    mov eax,pGoal"
 "	      0053c7ef    mov [eax+4],edx"
 );
 // LINE 378:
 	asm( 
-"	      0053c7f2    mov eax,[ebp+8]"
+"	      0053c7f2    mov eax,pGoal"
 "	      0053c7f5    mov eax,[eax+4]"
 "	      0053c7f8    add eax,eax"
-"	      0053c7fa    mov ecx,[ebp-0Ch]"
+"	      0053c7fa    mov ecx,pEdge"
 "	      0053c7fd    add eax,[ecx+6]"
-"	      0053c800    mov [ebp-1Ch],eax"
+"	      0053c800    mov pRoad,eax"
 );
 // LINE 382:
 	asm( 
-"	      0053c803    mov dword ptr [ebp-20h],0"
+"	      0053c803    mov i,0"
 "	      0053c80a    jmp near ptr 0053C812h"
-"	      0053c80f    inc dword ptr [ebp-20h]"
-"	      0053c812    mov eax,[ebp+8]"
-"	      0053c815    mov ecx,[ebp-20h]"
+"	      0053c80f    inc i"
+"	      0053c812    mov eax,pGoal"
+"	      0053c815    mov ecx,i"
 "	      0053c818    cmp [eax+4],ecx"
 "	      0053c81b    jle near ptr 0053C8D5h"
 );
 // LINE 384:
 	asm( 
-"	      0053c821    mov eax,[ebp-0Ch]"
+"	      0053c821    mov eax,pEdge"
 "	      0053c824    mov eax,[eax+6]"
-"	      0053c827    mov ecx,[ebp-20h]"
+"	      0053c827    mov ecx,i"
 "	      0053c82a    mov al,[eax+ecx*2]"
 "	      0053c82d    and al,3"
 "	      0053c82f    xor ecx,ecx"
@@ -1217,51 +1217,51 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 // LINE 386:
 	asm( 
 "	      0053c83b    xor eax,eax"
-"	      0053c83d    mov ecx,[ebp-0Ch]"
+"	      0053c83d    mov ecx,pEdge"
 "	      0053c840    mov ecx,[ecx+6]"
-"	      0053c843    mov edx,[ebp-20h]"
+"	      0053c843    mov edx,i"
 "	      0053c846    xor ebx,ebx"
 "	      0053c848    mov bl,[ecx+edx*2+1]"
 "	      0053c84c    inc ebx"
 "	      0053c84d    sub eax,ebx"
 "	      0053c84f    neg eax"
-"	      0053c851    sub [ebp+10h],eax"
+"	      0053c851    sub y,eax"
 "	      0053c854    jmp near ptr 0053C8D0h"
 );
 // LINE 387:
 	asm( 
-"	      0053c859    mov eax,[ebp-0Ch]"
+"	      0053c859    mov eax,pEdge"
 "	      0053c85c    mov eax,[eax+6]"
-"	      0053c85f    mov ecx,[ebp-20h]"
+"	      0053c85f    mov ecx,i"
 "	      0053c862    xor edx,edx"
 "	      0053c864    mov dl,[eax+ecx*2+1]"
 "	      0053c868    inc edx"
-"	      0053c869    add [ebp+0Ch],edx"
+"	      0053c869    add x,edx"
 "	      0053c86c    jmp near ptr 0053C8D0h"
 );
 // LINE 388:
 	asm( 
-"	      0053c871    mov eax,[ebp-0Ch]"
+"	      0053c871    mov eax,pEdge"
 "	      0053c874    mov eax,[eax+6]"
-"	      0053c877    mov ecx,[ebp-20h]"
+"	      0053c877    mov ecx,i"
 "	      0053c87a    xor edx,edx"
 "	      0053c87c    mov dl,[eax+ecx*2+1]"
 "	      0053c880    inc edx"
-"	      0053c881    add [ebp+10h],edx"
+"	      0053c881    add y,edx"
 "	      0053c884    jmp near ptr 0053C8D0h"
 );
 // LINE 389:
 	asm( 
 "	      0053c889    xor eax,eax"
-"	      0053c88b    mov ecx,[ebp-0Ch]"
+"	      0053c88b    mov ecx,pEdge"
 "	      0053c88e    mov ecx,[ecx+6]"
-"	      0053c891    mov edx,[ebp-20h]"
+"	      0053c891    mov edx,i"
 "	      0053c894    xor ebx,ebx"
 "	      0053c896    mov bl,[ecx+edx*2+1]"
 "	      0053c89a    inc ebx"
 "	      0053c89b    sub eax,ebx"
 "	      0053c89d    neg eax"
-"	      0053c89f    sub [ebp+0Ch],eax"
+"	      0053c89f    sub x,eax"
 "	      0053c8a2    jmp near ptr 0053C8D0h"
 );
 // LINE 390:
@@ -1285,34 +1285,34 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 );
 // LINE 395:
 	asm( 
-"	      0053c8d5    mov eax,[ebp-1Ch]"
+"	      0053c8d5    mov eax,pRoad"
 "	      0053c8d8    mov al,[eax]"
 "	      0053c8da    and al,3"
 "	      0053c8dc    xor ecx,ecx"
 "	      0053c8de    mov cl,al"
-"	      0053c8e0    mov eax,[ebp+8]"
+"	      0053c8e0    mov eax,pGoal"
 "	      0053c8e3    mov [eax+12h],ecx"
 );
 // LINE 396:
 	asm( 
-"	      0053c8e6    mov eax,[ebp-1Ch]"
+"	      0053c8e6    mov eax,pRoad"
 "	      0053c8e9    mov al,[eax]"
 "	      0053c8eb    shr al,4"
 "	      0053c8ee    and al,1"
 "	      0053c8f0    xor ecx,ecx"
 "	      0053c8f2    mov cl,al"
-"	      0053c8f4    mov eax,[ebp+8]"
+"	      0053c8f4    mov eax,pGoal"
 "	      0053c8f7    mov [eax+22h],ecx"
 );
 // LINE 397:
 	asm( 
-"	      0053c8fa    mov eax,[ebp-1Ch]"
+"	      0053c8fa    mov eax,pRoad"
 "	      0053c8fd    mov al,[eax]"
 "	      0053c8ff    shr al,2"
 "	      0053c902    and al,3"
 "	      0053c904    xor ecx,ecx"
 "	      0053c906    mov cl,al"
-"	      0053c908    mov eax,[ebp+8]"
+"	      0053c908    mov eax,pGoal"
 "	      0053c90b    mov [eax+26h],ecx"
 );
 // LINE 399:
@@ -1322,71 +1322,71 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 );
 // LINE 401:
 	asm( 
-"	      0053c913    mov eax,[ebp+8]"
+"	      0053c913    mov eax,pGoal"
 "	      0053c916    mov eax,[eax+0Eh]"
-"	      0053c919    mov ecx,[ebp+8]"
+"	      0053c919    mov ecx,pGoal"
 "	      0053c91c    mov [ecx+12h],eax"
 );
 // LINE 402:
 	asm( 
-"	      0053c91f    mov eax,[ebp+8]"
+"	      0053c91f    mov eax,pGoal"
 "	      0053c922    mov dword ptr [eax+4],0"
 );
 // LINE 403:
 	asm( 
-"	      0053c929    mov eax,[ebp-8]"
+"	      0053c929    mov eax,pRGV"
 "	      0053c92c    xor ecx,ecx"
 "	      0053c92e    mov cl,[eax+3]"
-"	      0053c931    mov eax,[ebp+8]"
+"	      0053c931    mov eax,pGoal"
 "	      0053c934    mov [eax+22h],ecx"
 );
 // LINE 404:
 	asm( 
-"	      0053c937    mov eax,[ebp+8]"
+"	      0053c937    mov eax,pGoal"
 "	      0053c93a    mov dword ptr [eax+26h],1"
 );
 // LINE 407:
 	asm( 
-"	      0053c941    mov eax,[ebp-8]"
-"	      0053c944    mov ecx,[ebp+8]"
+"	      0053c941    mov eax,pRGV"
+"	      0053c944    mov ecx,pGoal"
 "	      0053c947    mov [ecx],eax"
 );
 // LINE 408:
 	asm( 
-"	      0053c949    mov eax,[ebp+8]"
+"	      0053c949    mov eax,pGoal"
 "	      0053c94c    mov dword ptr [eax+8],0"
 );
 // LINE 409:
 	asm( 
 "	      0053c953    mov al,[ebp+0Ch]"
-"	      0053c956    mov ecx,[ebp+8]"
+"	      0053c956    mov ecx,pGoal"
 "	      0053c959    mov [ecx+0Ch],al"
 );
 // LINE 410:
 	asm( 
 "	      0053c95c    mov al,[ebp+10h]"
-"	      0053c95f    mov ecx,[ebp+8]"
+"	      0053c95f    mov ecx,pGoal"
 "	      0053c962    mov [ecx+0Dh],al"
 );
 // LINE 411:
 	asm( 
-"	      0053c965    mov eax,[ebp-8]"
+"	      0053c965    mov eax,pRGV"
 "	      0053c968    mov al,[eax+2]"
 "	      0053c96b    and al,0Fh"
 "	      0053c96d    xor ecx,ecx"
 "	      0053c96f    mov cl,al"
-"	      0053c971    mov eax,[ebp+8]"
+"	      0053c971    mov eax,pGoal"
 "	      0053c974    mov [eax+1Ah],ecx"
 );
 // LINE 412:
 	asm( 
-"	      0053c977    mov eax,[ebp-8]"
+"	      0053c977    mov eax,pRGV"
 "	      0053c97a    mov al,[eax+2]"
 "	      0053c97d    shr al,4"
 "	      0053c980    and al,0Fh"
 "	      0053c982    xor ecx,ecx"
 "	      0053c984    mov cl,al"
-"	      0053c986    mov eax,[ebp+8]"
+"	      0053c986    mov eax,pGoal"
 "	      0053c989    mov [eax+1Eh],ecx"
 );
 // LINE 413:
@@ -1415,63 +1415,63 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053c99e    push ebx"
 "	      0053c99f    push esi"
 "	      0053c9a0    push edi"
-"	      0053c9a1    mov [ebp-50h],ecx"
+"	      0053c9a1    mov this,ecx"
 );
 // LINE 420:
 	asm( 
 "	      0053c9a4    xor eax,eax"
-"	      0053c9a6    mov al,[ebp+0Ch]"
+"	      0053c9a6    mov al,startLoc.x"
 "	      0053c9a9    test eax,eax"
 "	      0053c9ab    jl near ptr 0053C9DEh"
 "	      0053c9b1    xor eax,eax"
-"	      0053c9b3    mov al,[ebp+0Dh]"
+"	      0053c9b3    mov al,startLoc.y"
 "	      0053c9b6    test eax,eax"
 "	      0053c9b8    jl near ptr 0053C9DEh"
 "	      0053c9be    xor eax,eax"
-"	      0053c9c0    mov al,[ebp+0Ch]"
+"	      0053c9c0    mov al,startLoc.x"
 "	      0053c9c3    cmp eax,80h"
 "	      0053c9c8    jge near ptr 0053C9DEh"
 "	      0053c9ce    xor eax,eax"
-"	      0053c9d0    mov al,[ebp+0Dh]"
+"	      0053c9d0    mov al,startLoc.y"
 "	      0053c9d3    cmp eax,80h"
 "	      0053c9d8    jl near ptr 0053C9E9h"
-"	      0053c9de    mov word ptr [ebp-30h],0"
+"	      0053c9de    mov fromTile,0"
 "	      0053c9e4    jmp near ptr 0053CA29h"
 "	      0053c9e9    xor eax,eax"
-"	      0053c9eb    mov al,[ebp+0Ch]"
+"	      0053c9eb    mov al,startLoc.x"
 "	      0053c9ee    mov eax,[eax*4+638F70h]"
 "	      0053c9f5    xor ecx,ecx"
-"	      0053c9f7    mov cl,[ebp+0Dh]"
+"	      0053c9f7    mov cl,startLoc.y"
 "	      0053c9fa    xor edx,edx"
 "	      0053c9fc    mov dl,[eax+ecx]"
 "	      0053c9ff    and edx,2"
 "	      0053ca02    movsx eax,dx"
 "	      0053ca05    shl eax,0Eh"
 "	      0053ca08    xor ecx,ecx"
-"	      0053ca0a    mov cl,[ebp+0Ch]"
+"	      0053ca0a    mov cl,startLoc.x"
 "	      0053ca0d    mov ecx,[ecx*4+639850h]"
 "	      0053ca14    xor edx,edx"
-"	      0053ca16    mov dl,[ebp+0Dh]"
+"	      0053ca16    mov dl,startLoc.y"
 "	      0053ca19    xor ebx,ebx"
 "	      0053ca1b    mov bl,[ecx+edx]"
 "	      0053ca1e    or eax,ebx"
-"	      0053ca20    mov [ebp-30h],ax"
+"	      0053ca20    mov fromTile,ax"
 "	      0053ca24    jmp near ptr 0053CA29h"
 );
 // LINE 426:
 	asm( 
-"	      0053ca29    mov eax,[ebp+14h]"
+"	      0053ca29    mov eax,goal1"
 "	      0053ca2c    mov dword ptr [eax],0"
 );
 // LINE 427:
 	asm( 
-"	      0053ca32    mov eax,[ebp+18h]"
+"	      0053ca32    mov eax,goal2"
 "	      0053ca35    mov dword ptr [eax],0"
 );
 // LINE 428:
 	asm( 
-"	      0053ca3b    lea edi,[ebp-2Ch]"
-"	      0053ca3e    mov esi,[ebp+14h]"
+"	      0053ca3b    lea edi,resultGoal.pRGV"
+"	      0053ca3e    mov esi,goal1"
 "	      0053ca41    mov ecx,0Ah"
 "	      0053ca46    rep movsd"
 "	      0053ca48    movsw"
@@ -1479,10 +1479,10 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 431:
 	asm( 
 "	      0053ca4a    xor eax,eax"
-"	      0053ca4c    mov al,[ebp+0Dh]"
+"	      0053ca4c    mov al,startLoc.y"
 "	      0053ca4f    push eax"
 "	      0053ca50    xor eax,eax"
-"	      0053ca52    mov al,[ebp+0Ch]"
+"	      0053ca52    mov al,startLoc.x"
 "	      0053ca55    push eax"
 "	      0053ca56    call 00539260h"
 "	      0053ca5b    add esp,8"
@@ -1494,12 +1494,12 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	struct RGVertex* pRGV;
 	asm( 
 "	      0053ca66    xor eax,eax"
-"	      0053ca68    mov al,[ebp+0Dh]"
+"	      0053ca68    mov al,startLoc.y"
 "	      0053ca6b    push eax"
 "	      0053ca6c    xor eax,eax"
-"	      0053ca6e    mov al,[ebp+0Ch]"
+"	      0053ca6e    mov al,startLoc.x"
 "	      0053ca71    push eax"
-"	      0053ca72    mov ecx,[ebp-50h]"
+"	      0053ca72    mov ecx,this"
 "	      0053ca75    call 0053D167h"
 "	      0053ca7a    xor ecx,ecx"
 "	      0053ca7c    mov cl,al"
@@ -1508,93 +1508,93 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ca83    lea ecx,[ecx+ecx*4]"
 "	      0053ca86    lea ecx,[eax+ecx*2]"
 "	      0053ca89    xor eax,eax"
-"	      0053ca8b    mov al,[ebp+0Ch]"
-"	      0053ca8e    mov edx,[ebp-50h]"
+"	      0053ca8b    mov al,startLoc.x"
+"	      0053ca8e    mov edx,this"
 "	      0053ca91    add ecx,[edx+eax*4]"
-"	      0053ca94    mov [ebp-3Ch],ecx"
-"	      0053ca97    mov eax,[ebp-3Ch]"
-"	      0053ca9a    mov ecx,[ebp+14h]"
+"	      0053ca94    mov pRGV,ecx"
+"	      0053ca97    mov eax,pRGV"
+"	      0053ca9a    mov ecx,goal1"
 "	      0053ca9d    mov [ecx],eax"
 );
 // LINE 436:
 	asm( 
-"	      0053ca9f    mov eax,[ebp+14h]"
+"	      0053ca9f    mov eax,goal1"
 "	      0053caa2    mov dword ptr [eax+4],0"
 );
 // LINE 437:
 	asm( 
-"	      0053caa9    mov eax,[ebp+14h]"
+"	      0053caa9    mov eax,goal1"
 "	      0053caac    mov dword ptr [eax+8],0FFFFFFFFh"
 );
 // LINE 438:
 	asm( 
-"	      0053cab3    mov al,[ebp+0Ch]"
-"	      0053cab6    mov ecx,[ebp+14h]"
+"	      0053cab3    mov al,startLoc.x"
+"	      0053cab6    mov ecx,goal1"
 "	      0053cab9    mov [ecx+0Ch],al"
 );
 // LINE 439:
 	asm( 
-"	      0053cabc    mov al,[ebp+0Dh]"
-"	      0053cabf    mov ecx,[ebp+14h]"
+"	      0053cabc    mov al,startLoc.y"
+"	      0053cabf    mov ecx,goal1"
 "	      0053cac2    mov [ecx+0Dh],al"
 );
 // LINE 440:
 	asm( 
-"	      0053cac5    mov eax,[ebp-3Ch]"
+"	      0053cac5    mov eax,pRGV"
 "	      0053cac8    mov al,[eax+2]"
 "	      0053cacb    and al,0Fh"
 "	      0053cacd    xor ecx,ecx"
 "	      0053cacf    mov cl,al"
-"	      0053cad1    mov eax,[ebp+14h]"
+"	      0053cad1    mov eax,goal1"
 "	      0053cad4    mov [eax+1Ah],ecx"
 );
 // LINE 441:
 	asm( 
-"	      0053cad7    mov eax,[ebp-3Ch]"
+"	      0053cad7    mov eax,pRGV"
 "	      0053cada    mov al,[eax+2]"
 "	      0053cadd    shr al,4"
 "	      0053cae0    and al,0Fh"
 "	      0053cae2    xor ecx,ecx"
 "	      0053cae4    mov cl,al"
-"	      0053cae6    mov eax,[ebp+14h]"
+"	      0053cae6    mov eax,goal1"
 "	      0053cae9    mov [eax+1Eh],ecx"
 );
 // LINE 442:
 	asm( 
-"	      0053caec    mov eax,[ebp-3Ch]"
+"	      0053caec    mov eax,pRGV"
 "	      0053caef    xor ecx,ecx"
 "	      0053caf1    mov cl,[eax+3]"
-"	      0053caf4    mov eax,[ebp+14h]"
+"	      0053caf4    mov eax,goal1"
 "	      0053caf7    mov [eax+22h],ecx"
 );
 // LINE 443:
 	asm( 
-"	      0053cafa    mov eax,[ebp+14h]"
+"	      0053cafa    mov eax,goal1"
 "	      0053cafd    mov dword ptr [eax+26h],1"
 );
 // LINE 446:
 	asm( 
-"	      0053cb04    mov eax,[ebp+14h]"
+"	      0053cb04    mov eax,goal1"
 "	      0053cb07    mov dword ptr [eax+16h],0"
 );
 // LINE 447:
 	asm( 
-"	      0053cb0e    mov eax,[ebp+14h]"
+"	      0053cb0e    mov eax,goal1"
 "	      0053cb11    mov dword ptr [eax+12h],0FFFFFFFEh"
 );
 // LINE 448:
 	asm( 
-"	      0053cb18    mov eax,[ebp+14h]"
+"	      0053cb18    mov eax,goal1"
 "	      0053cb1b    mov dword ptr [eax+0Eh],0FFFFFFFEh"
 );
 // LINE 450:
 	asm( 
-"	      0053cb22    mov edi,[ebp+8]"
-"	      0053cb25    mov esi,[ebp+14h]"
+"	      0053cb22    mov edi,__$ReturnUdt"
+"	      0053cb25    mov esi,goal1"
 "	      0053cb28    mov ecx,0Ah"
 "	      0053cb2d    rep movsd"
 "	      0053cb2f    movsw"
-"	      0053cb31    mov eax,[ebp+8]"
+"	      0053cb31    mov eax,__$ReturnUdt"
 "	      0053cb34    jmp near ptr 0053D025h"
 );
 // LINE 453:
@@ -1607,11 +1607,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 );
 // LINE 455:
 	asm( 
-"	      0053cb4a    mov dword ptr [ebp-38h],2"
+"	      0053cb4a    mov stepSize,2"
 );
 // LINE 456:
 	asm( 
-"	      0053cb51    mov dword ptr [ebp-34h],1"
+"	      0053cb51    mov Offset,1"
 );
 // LINE 458:
 	asm( 
@@ -1619,55 +1619,55 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 );
 // LINE 460:
 	asm( 
-"	      0053cb5d    mov dword ptr [ebp-38h],1"
+"	      0053cb5d    mov stepSize,1"
 );
 // LINE 461:
 	asm( 
-"	      0053cb64    mov dword ptr [ebp-34h],0"
+"	      0053cb64    mov Offset,0"
 );
 // LINE 469:
 	asm( 
 "	      0053cb6b    xor eax,eax"
-"	      0053cb6d    mov al,[ebp+0Dh]"
-"	      0053cb70    cmp eax,[ebp-34h]"
+"	      0053cb6d    mov al,startLoc.y"
+"	      0053cb70    cmp eax,Offset"
 "	      0053cb73    jle near ptr 0053CC54h"
 );
 // LINE 471:
 	asm( 
 "	      0053cb79    xor eax,eax"
-"	      0053cb7b    mov al,[ebp+0Ch]"
+"	      0053cb7b    mov al,startLoc.x"
 "	      0053cb7e    test eax,eax"
 "	      0053cb80    jl near ptr 0053CBB3h"
 "	      0053cb86    xor eax,eax"
-"	      0053cb88    mov al,[ebp+0Dh]"
+"	      0053cb88    mov al,startLoc.y"
 "	      0053cb8b    dec eax"
 "	      0053cb8c    js near ptr 0053CBB3h"
 "	      0053cb92    xor eax,eax"
-"	      0053cb94    mov al,[ebp+0Ch]"
+"	      0053cb94    mov al,startLoc.x"
 "	      0053cb97    cmp eax,80h"
 "	      0053cb9c    jge near ptr 0053CBB3h"
 "	      0053cba2    xor eax,eax"
-"	      0053cba4    mov al,[ebp+0Dh]"
+"	      0053cba4    mov al,startLoc.y"
 "	      0053cba7    dec eax"
 "	      0053cba8    cmp eax,80h"
 "	      0053cbad    jl near ptr 0053CBBEh"
 "	      0053cbb3    mov word ptr [ebp-40h],0"
 "	      0053cbb9    jmp near ptr 0053CC00h"
 "	      0053cbbe    xor eax,eax"
-"	      0053cbc0    mov al,[ebp+0Ch]"
+"	      0053cbc0    mov al,startLoc.x"
 "	      0053cbc3    mov eax,[eax*4+638F70h]"
 "	      0053cbca    xor ecx,ecx"
-"	      0053cbcc    mov cl,[ebp+0Dh]"
+"	      0053cbcc    mov cl,startLoc.y"
 "	      0053cbcf    xor edx,edx"
 "	      0053cbd1    mov dl,[eax+ecx-1]"
 "	      0053cbd5    and edx,2"
 "	      0053cbd8    movsx eax,dx"
 "	      0053cbdb    shl eax,0Eh"
 "	      0053cbde    xor ecx,ecx"
-"	      0053cbe0    mov cl,[ebp+0Ch]"
+"	      0053cbe0    mov cl,startLoc.x"
 "	      0053cbe3    mov ecx,[ecx*4+639850h]"
 "	      0053cbea    xor edx,edx"
-"	      0053cbec    mov dl,[ebp+0Dh]"
+"	      0053cbec    mov dl,startLoc.y"
 "	      0053cbef    xor ebx,ebx"
 "	      0053cbf1    mov bl,[ecx+edx-1]"
 "	      0053cbf5    or eax,ebx"
@@ -1692,22 +1692,22 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cc22    mov eax,[ebp+0Ch]"
 "	      0053cc25    push eax"
 "	      0053cc26    xor eax,eax"
-"	      0053cc28    mov al,[ebp+0Dh]"
+"	      0053cc28    mov al,startLoc.y"
 "	      0053cc2b    dec eax"
 "	      0053cc2c    push eax"
 "	      0053cc2d    mov eax,[ebp+0Ch]"
 "	      0053cc30    push eax"
-"	      0053cc31    mov eax,[ebp+14h]"
+"	      0053cc31    mov eax,goal1"
 "	      0053cc34    push eax"
-"	      0053cc35    mov ecx,[ebp-50h]"
+"	      0053cc35    mov ecx,this"
 "	      0053cc38    call 0053D21Bh"
 "	      0053cc3d    test eax,eax"
 "	      0053cc3f    je near ptr 0053CC54h"
 );
 // LINE 474:
 	asm( 
-"	      0053cc45    lea edi,[ebp-2Ch]"
-"	      0053cc48    mov esi,[ebp+14h]"
+"	      0053cc45    lea edi,resultGoal.pRGV"
+"	      0053cc48    mov esi,goal1"
 "	      0053cc4b    mov ecx,0Ah"
 "	      0053cc50    rep movsd"
 "	      0053cc52    movsw"
@@ -1715,50 +1715,50 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 478:
 	asm( 
 "	      0053cc54    xor eax,eax"
-"	      0053cc56    mov al,[ebp+0Ch]"
+"	      0053cc56    mov al,startLoc.x"
 "	      0053cc59    mov ecx,7Fh"
-"	      0053cc5e    sub ecx,[ebp-34h]"
+"	      0053cc5e    sub ecx,Offset"
 "	      0053cc61    cmp eax,ecx"
 "	      0053cc63    jge near ptr 0053CD99h"
 );
 // LINE 480:
 	asm( 
 "	      0053cc69    xor eax,eax"
-"	      0053cc6b    mov al,[ebp+0Ch]"
-"	      0053cc6e    add eax,[ebp-38h]"
+"	      0053cc6b    mov al,startLoc.x"
+"	      0053cc6e    add eax,stepSize"
 "	      0053cc71    js near ptr 0053CCA7h"
 "	      0053cc77    xor eax,eax"
-"	      0053cc79    mov al,[ebp+0Dh]"
+"	      0053cc79    mov al,startLoc.y"
 "	      0053cc7c    test eax,eax"
 "	      0053cc7e    jl near ptr 0053CCA7h"
 "	      0053cc84    xor eax,eax"
-"	      0053cc86    mov al,[ebp+0Ch]"
-"	      0053cc89    add eax,[ebp-38h]"
+"	      0053cc86    mov al,startLoc.x"
+"	      0053cc89    add eax,stepSize"
 "	      0053cc8c    cmp eax,80h"
 "	      0053cc91    jge near ptr 0053CCA7h"
 "	      0053cc97    xor eax,eax"
-"	      0053cc99    mov al,[ebp+0Dh]"
+"	      0053cc99    mov al,startLoc.y"
 "	      0053cc9c    cmp eax,80h"
 "	      0053cca1    jl near ptr 0053CCB2h"
 "	      0053cca7    mov word ptr [ebp-44h],0"
 "	      0053ccad    jmp near ptr 0053CCF8h"
 "	      0053ccb2    xor eax,eax"
-"	      0053ccb4    mov al,[ebp+0Ch]"
-"	      0053ccb7    add eax,[ebp-38h]"
+"	      0053ccb4    mov al,startLoc.x"
+"	      0053ccb7    add eax,stepSize"
 "	      0053ccba    mov eax,[eax*4+638F70h]"
 "	      0053ccc1    xor ecx,ecx"
-"	      0053ccc3    mov cl,[ebp+0Dh]"
+"	      0053ccc3    mov cl,startLoc.y"
 "	      0053ccc6    xor edx,edx"
 "	      0053ccc8    mov dl,[eax+ecx]"
 "	      0053cccb    and edx,2"
 "	      0053ccce    movsx eax,dx"
 "	      0053ccd1    shl eax,0Eh"
 "	      0053ccd4    xor ecx,ecx"
-"	      0053ccd6    mov cl,[ebp+0Ch]"
-"	      0053ccd9    add ecx,[ebp-38h]"
+"	      0053ccd6    mov cl,startLoc.x"
+"	      0053ccd9    add ecx,stepSize"
 "	      0053ccdc    mov ecx,[ecx*4+639850h]"
 "	      0053cce3    xor edx,edx"
-"	      0053cce5    mov dl,[ebp+0Dh]"
+"	      0053cce5    mov dl,startLoc.y"
 "	      0053cce8    xor ebx,ebx"
 "	      0053ccea    mov bl,[ecx+edx]"
 "	      0053cced    or eax,ebx"
@@ -1777,7 +1777,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 );
 // LINE 482:
 	asm( 
-"	      0053cd14    mov eax,[ebp+14h]"
+"	      0053cd14    mov eax,goal1"
 "	      0053cd17    cmp dword ptr [eax],0"
 "	      0053cd1a    je near ptr 0053CD5Fh"
 );
@@ -1791,20 +1791,20 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cd2a    mov eax,[ebp+0Dh]"
 "	      0053cd2d    push eax"
 "	      0053cd2e    xor eax,eax"
-"	      0053cd30    mov al,[ebp+0Ch]"
-"	      0053cd33    add eax,[ebp-38h]"
+"	      0053cd30    mov al,startLoc.x"
+"	      0053cd33    add eax,stepSize"
 "	      0053cd36    push eax"
-"	      0053cd37    mov eax,[ebp+18h]"
+"	      0053cd37    mov eax,goal2"
 "	      0053cd3a    push eax"
-"	      0053cd3b    mov ecx,[ebp-50h]"
+"	      0053cd3b    mov ecx,this"
 "	      0053cd3e    call 0053D21Bh"
 "	      0053cd43    test eax,eax"
 "	      0053cd45    je near ptr 0053CD5Ah"
 );
 // LINE 485:
 	asm( 
-"	      0053cd4b    lea edi,[ebp-2Ch]"
-"	      0053cd4e    mov esi,[ebp+18h]"
+"	      0053cd4b    lea edi,resultGoal.pRGV"
+"	      0053cd4e    mov esi,goal2"
 "	      0053cd51    mov ecx,0Ah"
 "	      0053cd56    rep movsd"
 "	      0053cd58    movsw"
@@ -1823,20 +1823,20 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cd69    mov eax,[ebp+0Dh]"
 "	      0053cd6c    push eax"
 "	      0053cd6d    xor eax,eax"
-"	      0053cd6f    mov al,[ebp+0Ch]"
-"	      0053cd72    add eax,[ebp-38h]"
+"	      0053cd6f    mov al,startLoc.x"
+"	      0053cd72    add eax,stepSize"
 "	      0053cd75    push eax"
-"	      0053cd76    mov eax,[ebp+14h]"
+"	      0053cd76    mov eax,goal1"
 "	      0053cd79    push eax"
-"	      0053cd7a    mov ecx,[ebp-50h]"
+"	      0053cd7a    mov ecx,this"
 "	      0053cd7d    call 0053D21Bh"
 "	      0053cd82    test eax,eax"
 "	      0053cd84    je near ptr 0053CD99h"
 );
 // LINE 490:
 	asm( 
-"	      0053cd8a    lea edi,[ebp-2Ch]"
-"	      0053cd8d    mov esi,[ebp+14h]"
+"	      0053cd8a    lea edi,resultGoal.pRGV"
+"	      0053cd8d    mov esi,goal1"
 "	      0053cd90    mov ecx,0Ah"
 "	      0053cd95    rep movsd"
 "	      0053cd97    movsw"
@@ -1844,38 +1844,38 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 495:
 	asm( 
 "	      0053cd99    xor eax,eax"
-"	      0053cd9b    mov al,[ebp+0Dh]"
+"	      0053cd9b    mov al,startLoc.y"
 "	      0053cd9e    mov ecx,7Fh"
-"	      0053cda3    sub ecx,[ebp-34h]"
+"	      0053cda3    sub ecx,Offset"
 "	      0053cda6    cmp eax,ecx"
 "	      0053cda8    jge near ptr 0053CEDEh"
 );
 // LINE 497:
 	asm( 
 "	      0053cdae    xor eax,eax"
-"	      0053cdb0    mov al,[ebp+0Ch]"
+"	      0053cdb0    mov al,startLoc.x"
 "	      0053cdb3    test eax,eax"
 "	      0053cdb5    jl near ptr 0053CDECh"
 "	      0053cdbb    xor eax,eax"
-"	      0053cdbd    mov al,[ebp+0Dh]"
-"	      0053cdc0    add eax,[ebp-38h]"
+"	      0053cdbd    mov al,startLoc.y"
+"	      0053cdc0    add eax,stepSize"
 "	      0053cdc3    js near ptr 0053CDECh"
 "	      0053cdc9    xor eax,eax"
-"	      0053cdcb    mov al,[ebp+0Ch]"
+"	      0053cdcb    mov al,startLoc.x"
 "	      0053cdce    cmp eax,80h"
 "	      0053cdd3    jge near ptr 0053CDECh"
 "	      0053cdd9    xor eax,eax"
-"	      0053cddb    mov al,[ebp+0Dh]"
-"	      0053cdde    add eax,[ebp-38h]"
+"	      0053cddb    mov al,startLoc.y"
+"	      0053cdde    add eax,stepSize"
 "	      0053cde1    cmp eax,80h"
 "	      0053cde6    jl near ptr 0053CDF7h"
 "	      0053cdec    mov word ptr [ebp-48h],0"
 "	      0053cdf2    jmp near ptr 0053CE3Dh"
 "	      0053cdf7    xor eax,eax"
-"	      0053cdf9    mov al,[ebp+0Dh]"
-"	      0053cdfc    add eax,[ebp-38h]"
+"	      0053cdf9    mov al,startLoc.y"
+"	      0053cdfc    add eax,stepSize"
 "	      0053cdff    xor ecx,ecx"
-"	      0053ce01    mov cl,[ebp+0Ch]"
+"	      0053ce01    mov cl,startLoc.x"
 "	      0053ce04    mov ecx,[ecx*4+638F70h]"
 "	      0053ce0b    xor edx,edx"
 "	      0053ce0d    mov dl,[eax+ecx]"
@@ -1883,11 +1883,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ce13    movsx eax,dx"
 "	      0053ce16    shl eax,0Eh"
 "	      0053ce19    xor ecx,ecx"
-"	      0053ce1b    mov cl,[ebp+0Ch]"
+"	      0053ce1b    mov cl,startLoc.x"
 "	      0053ce1e    mov ecx,[ecx*4+639850h]"
 "	      0053ce25    xor edx,edx"
-"	      0053ce27    mov dl,[ebp+0Dh]"
-"	      0053ce2a    add edx,[ebp-38h]"
+"	      0053ce27    mov dl,startLoc.y"
+"	      0053ce2a    add edx,stepSize"
 "	      0053ce2d    xor ebx,ebx"
 "	      0053ce2f    mov bl,[ecx+edx]"
 "	      0053ce32    or eax,ebx"
@@ -1906,7 +1906,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 );
 // LINE 499:
 	asm( 
-"	      0053ce59    mov eax,[ebp+14h]"
+"	      0053ce59    mov eax,goal1"
 "	      0053ce5c    cmp dword ptr [eax],0"
 "	      0053ce5f    je near ptr 0053CEA4h"
 );
@@ -1918,22 +1918,22 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ce6b    mov eax,[ebp+0Ch]"
 "	      0053ce6e    push eax"
 "	      0053ce6f    xor eax,eax"
-"	      0053ce71    mov al,[ebp+0Dh]"
-"	      0053ce74    add eax,[ebp-38h]"
+"	      0053ce71    mov al,startLoc.y"
+"	      0053ce74    add eax,stepSize"
 "	      0053ce77    push eax"
 "	      0053ce78    mov eax,[ebp+0Ch]"
 "	      0053ce7b    push eax"
-"	      0053ce7c    mov eax,[ebp+18h]"
+"	      0053ce7c    mov eax,goal2"
 "	      0053ce7f    push eax"
-"	      0053ce80    mov ecx,[ebp-50h]"
+"	      0053ce80    mov ecx,this"
 "	      0053ce83    call 0053D21Bh"
 "	      0053ce88    test eax,eax"
 "	      0053ce8a    je near ptr 0053CE9Fh"
 );
 // LINE 502:
 	asm( 
-"	      0053ce90    lea edi,[ebp-2Ch]"
-"	      0053ce93    mov esi,[ebp+18h]"
+"	      0053ce90    lea edi,resultGoal.pRGV"
+"	      0053ce93    mov esi,goal2"
 "	      0053ce96    mov ecx,0Ah"
 "	      0053ce9b    rep movsd"
 "	      0053ce9d    movsw"
@@ -1950,22 +1950,22 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ceaa    mov eax,[ebp+0Ch]"
 "	      0053cead    push eax"
 "	      0053ceae    xor eax,eax"
-"	      0053ceb0    mov al,[ebp+0Dh]"
-"	      0053ceb3    add eax,[ebp-38h]"
+"	      0053ceb0    mov al,startLoc.y"
+"	      0053ceb3    add eax,stepSize"
 "	      0053ceb6    push eax"
 "	      0053ceb7    mov eax,[ebp+0Ch]"
 "	      0053ceba    push eax"
-"	      0053cebb    mov eax,[ebp+14h]"
+"	      0053cebb    mov eax,goal1"
 "	      0053cebe    push eax"
-"	      0053cebf    mov ecx,[ebp-50h]"
+"	      0053cebf    mov ecx,this"
 "	      0053cec2    call 0053D21Bh"
 "	      0053cec7    test eax,eax"
 "	      0053cec9    je near ptr 0053CEDEh"
 );
 // LINE 507:
 	asm( 
-"	      0053cecf    lea edi,[ebp-2Ch]"
-"	      0053ced2    mov esi,[ebp+14h]"
+"	      0053cecf    lea edi,resultGoal.pRGV"
+"	      0053ced2    mov esi,goal1"
 "	      0053ced5    mov ecx,0Ah"
 "	      0053ceda    rep movsd"
 "	      0053cedc    movsw"
@@ -1973,46 +1973,46 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 512:
 	asm( 
 "	      0053cede    xor eax,eax"
-"	      0053cee0    mov al,[ebp+0Ch]"
-"	      0053cee3    cmp eax,[ebp-34h]"
+"	      0053cee0    mov al,startLoc.x"
+"	      0053cee3    cmp eax,Offset"
 "	      0053cee6    jle near ptr 0053D00Eh"
 );
 // LINE 514:
 	asm( 
 "	      0053ceec    xor eax,eax"
-"	      0053ceee    mov al,[ebp+0Ch]"
+"	      0053ceee    mov al,startLoc.x"
 "	      0053cef1    dec eax"
 "	      0053cef2    js near ptr 0053CF26h"
 "	      0053cef8    xor eax,eax"
-"	      0053cefa    mov al,[ebp+0Dh]"
+"	      0053cefa    mov al,startLoc.y"
 "	      0053cefd    test eax,eax"
 "	      0053ceff    jl near ptr 0053CF26h"
 "	      0053cf05    xor eax,eax"
-"	      0053cf07    mov al,[ebp+0Ch]"
+"	      0053cf07    mov al,startLoc.x"
 "	      0053cf0a    dec eax"
 "	      0053cf0b    cmp eax,80h"
 "	      0053cf10    jge near ptr 0053CF26h"
 "	      0053cf16    xor eax,eax"
-"	      0053cf18    mov al,[ebp+0Dh]"
+"	      0053cf18    mov al,startLoc.y"
 "	      0053cf1b    cmp eax,80h"
 "	      0053cf20    jl near ptr 0053CF31h"
 "	      0053cf26    mov word ptr [ebp-4Ch],0"
 "	      0053cf2c    jmp near ptr 0053CF71h"
 "	      0053cf31    xor eax,eax"
-"	      0053cf33    mov al,[ebp+0Ch]"
+"	      0053cf33    mov al,startLoc.x"
 "	      0053cf36    mov eax,[eax*4+638F6Ch]"
 "	      0053cf3d    xor ecx,ecx"
-"	      0053cf3f    mov cl,[ebp+0Dh]"
+"	      0053cf3f    mov cl,startLoc.y"
 "	      0053cf42    xor edx,edx"
 "	      0053cf44    mov dl,[eax+ecx]"
 "	      0053cf47    and edx,2"
 "	      0053cf4a    movsx eax,dx"
 "	      0053cf4d    shl eax,0Eh"
 "	      0053cf50    xor ecx,ecx"
-"	      0053cf52    mov cl,[ebp+0Ch]"
+"	      0053cf52    mov cl,startLoc.x"
 "	      0053cf55    mov ecx,[ecx*4+63984Ch]"
 "	      0053cf5c    xor edx,edx"
-"	      0053cf5e    mov dl,[ebp+0Dh]"
+"	      0053cf5e    mov dl,startLoc.y"
 "	      0053cf61    xor ebx,ebx"
 "	      0053cf63    mov bl,[ecx+edx]"
 "	      0053cf66    or eax,ebx"
@@ -2031,7 +2031,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 );
 // LINE 516:
 	asm( 
-"	      0053cf8d    mov eax,[ebp+14h]"
+"	      0053cf8d    mov eax,goal1"
 "	      0053cf90    cmp dword ptr [eax],0"
 "	      0053cf93    je near ptr 0053CFD6h"
 );
@@ -2045,20 +2045,20 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cfa3    mov eax,[ebp+0Dh]"
 "	      0053cfa6    push eax"
 "	      0053cfa7    xor eax,eax"
-"	      0053cfa9    mov al,[ebp+0Ch]"
+"	      0053cfa9    mov al,startLoc.x"
 "	      0053cfac    dec eax"
 "	      0053cfad    push eax"
-"	      0053cfae    mov eax,[ebp+18h]"
+"	      0053cfae    mov eax,goal2"
 "	      0053cfb1    push eax"
-"	      0053cfb2    mov ecx,[ebp-50h]"
+"	      0053cfb2    mov ecx,this"
 "	      0053cfb5    call 0053D21Bh"
 "	      0053cfba    test eax,eax"
 "	      0053cfbc    je near ptr 0053CFD1h"
 );
 // LINE 519:
 	asm( 
-"	      0053cfc2    lea edi,[ebp-2Ch]"
-"	      0053cfc5    mov esi,[ebp+18h]"
+"	      0053cfc2    lea edi,resultGoal.pRGV"
+"	      0053cfc5    mov esi,goal2"
 "	      0053cfc8    mov ecx,0Ah"
 "	      0053cfcd    rep movsd"
 "	      0053cfcf    movsw"
@@ -2077,32 +2077,32 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cfe0    mov eax,[ebp+0Dh]"
 "	      0053cfe3    push eax"
 "	      0053cfe4    xor eax,eax"
-"	      0053cfe6    mov al,[ebp+0Ch]"
+"	      0053cfe6    mov al,startLoc.x"
 "	      0053cfe9    dec eax"
 "	      0053cfea    push eax"
-"	      0053cfeb    mov eax,[ebp+14h]"
+"	      0053cfeb    mov eax,goal1"
 "	      0053cfee    push eax"
-"	      0053cfef    mov ecx,[ebp-50h]"
+"	      0053cfef    mov ecx,this"
 "	      0053cff2    call 0053D21Bh"
 "	      0053cff7    test eax,eax"
 "	      0053cff9    je near ptr 0053D00Eh"
 );
 // LINE 524:
 	asm( 
-"	      0053cfff    lea edi,[ebp-2Ch]"
-"	      0053d002    mov esi,[ebp+14h]"
+"	      0053cfff    lea edi,resultGoal.pRGV"
+"	      0053d002    mov esi,goal1"
 "	      0053d005    mov ecx,0Ah"
 "	      0053d00a    rep movsd"
 "	      0053d00c    movsw"
 );
 // LINE 529:
 	asm( 
-"	      0053d00e    lea esi,[ebp-2Ch]"
-"	      0053d011    mov edi,[ebp+8]"
+"	      0053d00e    lea esi,resultGoal.pRGV"
+"	      0053d011    mov edi,__$ReturnUdt"
 "	      0053d014    mov ecx,0Ah"
 "	      0053d019    rep movsd"
 "	      0053d01b    movsw"
-"	      0053d01d    mov eax,[ebp+8]"
+"	      0053d01d    mov eax,__$ReturnUdt"
 "	      0053d020    jmp near ptr 0053D025h"
 );
 // LINE 530:
@@ -2128,21 +2128,21 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 "	      0053d032    push ebx"
 "	      0053d033    push esi"
 "	      0053d034    push edi"
-"	      0053d035    mov [ebp-0Ch],ecx"
+"	      0053d035    mov this,ecx"
 );
 // LINE 554:
 	asm( 
-"	      0053d038    mov eax,[ebp+8]"
+"	      0053d038    mov eax,pGoal"
 "	      0053d03b    mov ax,[eax+0Ch]"
 "	      0053d03f    mov [ebp-4],ax"
 );
 // LINE 557:
 	asm( 
-"	      0053d043    mov eax,[ebp+8]"
+"	      0053d043    mov eax,pGoal"
 "	      0053d046    xor ecx,ecx"
 "	      0053d048    mov cl,[eax+0Dh]"
 "	      0053d04b    push ecx"
-"	      0053d04c    mov eax,[ebp+8]"
+"	      0053d04c    mov eax,pGoal"
 "	      0053d04f    xor ecx,ecx"
 "	      0053d051    mov cl,[eax+0Ch]"
 "	      0053d054    push ecx"
@@ -2153,20 +2153,20 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 );
 // LINE 560:
 	asm( 
-"	      0053d065    mov eax,[ebp+8]"
+"	      0053d065    mov eax,pGoal"
 "	      0053d068    mov eax,[eax+12h]"
 "	      0053d06b    sub eax,2"
 "	      0053d06e    and eax,3"
-"	      0053d071    mov ecx,[ebp+8]"
+"	      0053d071    mov ecx,pGoal"
 "	      0053d074    mov [ecx+12h],eax"
 );
 // LINE 561:
 	asm( 
-"	      0053d077    mov eax,[ebp+8]"
+"	      0053d077    mov eax,pGoal"
 "	      0053d07a    mov eax,[eax+0Eh]"
 "	      0053d07d    sub eax,2"
 "	      0053d080    and eax,3"
-"	      0053d083    mov ecx,[ebp+8]"
+"	      0053d083    mov ecx,pGoal"
 "	      0053d086    mov [ecx+0Eh],eax"
 );
 // LINE 562:
@@ -2175,38 +2175,38 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 );
 // LINE 567:
 	asm( 
-"	      0053d08e    mov eax,[ebp+8]"
+"	      0053d08e    mov eax,pGoal"
 "	      0053d091    mov eax,[eax+12h]"
-"	      0053d094    mov [ebp-8],eax"
+"	      0053d094    mov prevDir,eax"
 );
 // LINE 570:
 	asm( 
-"	      0053d097    mov eax,[ebp+8]"
+"	      0053d097    mov eax,pGoal"
 "	      0053d09a    mov eax,[eax+12h]"
 "	      0053d09d    mov [ebp-10h],eax"
 "	      0053d0a0    jmp near ptr 0053D0D6h"
 );
 // LINE 572:
 	asm( 
-"	      0053d0a5    mov eax,[ebp+8]"
+"	      0053d0a5    mov eax,pGoal"
 "	      0053d0a8    dec byte ptr [eax+0Dh]"
 "	      0053d0ab    jmp near ptr 0053D0FAh"
 );
 // LINE 573:
 	asm( 
-"	      0053d0b0    mov eax,[ebp+8]"
+"	      0053d0b0    mov eax,pGoal"
 "	      0053d0b3    inc byte ptr [eax+0Ch]"
 "	      0053d0b6    jmp near ptr 0053D0FAh"
 );
 // LINE 574:
 	asm( 
-"	      0053d0bb    mov eax,[ebp+8]"
+"	      0053d0bb    mov eax,pGoal"
 "	      0053d0be    inc byte ptr [eax+0Dh]"
 "	      0053d0c1    jmp near ptr 0053D0FAh"
 );
 // LINE 575:
 	asm( 
-"	      0053d0c6    mov eax,[ebp+8]"
+"	      0053d0c6    mov eax,pGoal"
 "	      0053d0c9    dec byte ptr [eax+0Ch]"
 "	      0053d0cc    jmp near ptr 0053D0FAh"
 );
@@ -2226,47 +2226,47 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 );
 // LINE 578:
 	asm( 
-"	      0053d0fa    mov eax,[ebp+8]"
+"	      0053d0fa    mov eax,pGoal"
 "	      0053d0fd    push eax"
-"	      0053d0fe    mov ecx,[ebp-0Ch]"
+"	      0053d0fe    mov ecx,this"
 "	      0053d101    call 0053C331h"
 );
 // LINE 580:
 	asm( 
-"	      0053d106    mov eax,[ebp+8]"
+"	      0053d106    mov eax,pGoal"
 "	      0053d109    cmp dword ptr [eax+0Eh],0FFFFFFFEh"
 "	      0053d10d    jne near ptr 0053D131h"
 );
 // LINE 582:
 	asm( 
-"	      0053d113    mov eax,[ebp+8]"
+"	      0053d113    mov eax,pGoal"
 "	      0053d116    mov eax,[eax+12h]"
 "	      0053d119    sub eax,2"
 "	      0053d11c    and eax,3"
-"	      0053d11f    mov ecx,[ebp+8]"
+"	      0053d11f    mov ecx,pGoal"
 "	      0053d122    mov [ecx+12h],eax"
 );
 // LINE 583:
 	asm( 
-"	      0053d125    mov eax,[ebp+8]"
+"	      0053d125    mov eax,pGoal"
 "	      0053d128    mov eax,[eax+12h]"
-"	      0053d12b    mov ecx,[ebp+8]"
+"	      0053d12b    mov ecx,pGoal"
 "	      0053d12e    mov [ecx+0Eh],eax"
 );
 // LINE 586:
 	asm( 
-"	      0053d131    mov eax,[ebp+8]"
+"	      0053d131    mov eax,pGoal"
 "	      0053d134    xor ecx,ecx"
 "	      0053d136    mov cl,[eax+0Ch]"
 "	      0053d139    xor eax,eax"
-"	      0053d13b    mov al,[ebp-4]"
+"	      0053d13b    mov al,here.x"
 "	      0053d13e    cmp ecx,eax"
 "	      0053d140    jne near ptr 0053D08Eh"
-"	      0053d146    mov eax,[ebp+8]"
+"	      0053d146    mov eax,pGoal"
 "	      0053d149    xor ecx,ecx"
 "	      0053d14b    mov cl,[eax+0Dh]"
 "	      0053d14e    xor eax,eax"
-"	      0053d150    mov al,[ebp-3]"
+"	      0053d150    mov al,here.y"
 "	      0053d153    cmp ecx,eax"
 "	      0053d155    jne near ptr 0053D08Eh"
 );
@@ -2293,52 +2293,52 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 "	      0053d16d    push ebx"
 "	      0053d16e    push esi"
 "	      0053d16f    push edi"
-"	      0053d170    mov [ebp-8],ecx"
+"	      0053d170    mov this,ecx"
 );
 // LINE 597:
 	asm( 
-"	      0053d173    mov byte ptr [ebp-4],0"
+"	      0053d173    mov yindex,0"
 "	      0053d177    jmp near ptr 0053D17Fh"
-"	      0053d17c    inc byte ptr [ebp-4]"
-"	      0053d17f    mov eax,[ebp+8]"
-"	      0053d182    mov ecx,[ebp-8]"
+"	      0053d17c    inc yindex"
+"	      0053d17f    mov eax,x"
+"	      0053d182    mov ecx,this"
 "	      0053d185    xor edx,edx"
 "	      0053d187    mov dl,[eax+ecx+200h]"
 "	      0053d18e    xor eax,eax"
-"	      0053d190    mov al,[ebp-4]"
+"	      0053d190    mov al,yindex"
 "	      0053d193    cmp edx,eax"
 "	      0053d195    jle near ptr 0053D1D0h"
 );
 // LINE 598:
 	asm( 
-"	      0053d19b    mov eax,[ebp+8]"
-"	      0053d19e    mov ecx,[ebp-8]"
+"	      0053d19b    mov eax,x"
+"	      0053d19e    mov ecx,this"
 "	      0053d1a1    mov eax,[ecx+eax*4]"
 "	      0053d1a4    xor ecx,ecx"
-"	      0053d1a6    mov cl,[ebp-4]"
+"	      0053d1a6    mov cl,yindex"
 "	      0053d1a9    mov edx,ecx"
 "	      0053d1ab    lea ecx,[ecx+ecx*4]"
 "	      0053d1ae    lea ecx,[ecx+ecx*4]"
 "	      0053d1b1    lea ecx,[edx+ecx*2]"
 "	      0053d1b4    xor edx,edx"
 "	      0053d1b6    mov dl,[eax+ecx+1]"
-"	      0053d1ba    cmp edx,[ebp+0Ch]"
+"	      0053d1ba    cmp edx,y"
 "	      0053d1bd    jne near ptr 0053D1CBh"
 );
 // LINE 599:
 	asm( 
-"	      0053d1c3    mov al,[ebp-4]"
+"	      0053d1c3    mov al,yindex"
 "	      0053d1c6    jmp near ptr 0053D214h"
 );
 // LINE 603:
 	asm( 
 "	      0053d1cb    jmp near ptr 0053D17Ch"
-"	      0053d1d0    mov eax,[ebp+8]"
-"	      0053d1d3    mov ecx,[ebp-8]"
+"	      0053d1d0    mov eax,x"
+"	      0053d1d3    mov ecx,this"
 "	      0053d1d6    xor edx,edx"
 "	      0053d1d8    mov dl,[eax+ecx+200h]"
 "	      0053d1df    xor eax,eax"
-"	      0053d1e1    mov al,[ebp-4]"
+"	      0053d1e1    mov al,yindex"
 "	      0053d1e4    cmp edx,eax"
 "	      0053d1e6    jg near ptr 0053D208h"
 "	      0053d1ec    push 25Bh"
@@ -2380,35 +2380,35 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d221    push ebx"
 "	      0053d222    push esi"
 "	      0053d223    push edi"
-"	      0053d224    mov [ebp-1Ch],ecx"
+"	      0053d224    mov this,ecx"
 );
 // LINE 632:
 	asm( 
-"	      0053d227    mov eax,[ebp+1Ch]"
+"	      0053d227    mov eax,currentDirType"
 "	      0053d22a    mov eax,[eax*4+593440h]"
-"	      0053d231    mov [ebp-8],eax"
+"	      0053d231    mov currentDir,eax"
 );
 // LINE 634:
 	asm( 
-"	      0053d234    mov dword ptr [ebp-0Ch],0"
+"	      0053d234    mov returnVal,0"
 );
 // LINE 636:
 	asm( 
-"	      0053d23b    mov al,[ebp+0Ch]"
-"	      0053d23e    mov [ebp-10h],al"
+"	      0053d23b    mov al,x"
+"	      0053d23e    mov here.x,al"
 );
 // LINE 637:
 	asm( 
-"	      0053d241    mov al,[ebp+10h]"
-"	      0053d244    mov [ebp-0Fh],al"
+"	      0053d241    mov al,y"
+"	      0053d244    mov here.y,al"
 );
 // LINE 639:
 	asm( 
 "	      0053d247    xor eax,eax"
-"	      0053d249    mov al,[ebp+10h]"
+"	      0053d249    mov al,y"
 "	      0053d24c    push eax"
 "	      0053d24d    xor eax,eax"
-"	      0053d24f    mov al,[ebp+0Ch]"
+"	      0053d24f    mov al,x"
 "	      0053d252    push eax"
 "	      0053d253    call 00539260h"
 "	      0053d258    add esp,8"
@@ -2417,8 +2417,8 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 );
 // LINE 641:
 	asm( 
-"	      0053d263    mov eax,[ebp-8]"
-"	      0053d266    mov [ebp-14h],eax"
+"	      0053d263    mov eax,currentDir"
+"	      0053d266    mov returnDir,eax"
 );
 // LINE 642:
 	asm( 
@@ -2428,21 +2428,21 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 // LINE 647:
 	asm( 
 "	      0053d273    xor eax,eax"
-"	      0053d275    mov al,[ebp+18h]"
+"	      0053d275    mov al,destLoc.x"
 "	      0053d278    xor ecx,ecx"
-"	      0053d27a    mov cl,[ebp+0Ch]"
+"	      0053d27a    mov cl,x"
 "	      0053d27d    cmp eax,ecx"
 "	      0053d27f    jne near ptr 0053D29Eh"
 "	      0053d285    xor eax,eax"
-"	      0053d287    mov al,[ebp+19h]"
+"	      0053d287    mov al,destLoc.y"
 "	      0053d28a    xor ecx,ecx"
-"	      0053d28c    mov cl,[ebp+10h]"
+"	      0053d28c    mov cl,y"
 "	      0053d28f    cmp eax,ecx"
 "	      0053d291    jne near ptr 0053D29Eh"
 );
 // LINE 649:
 	asm( 
-"	      0053d297    mov dword ptr [ebp-0Ch],1"
+"	      0053d297    mov returnVal,1"
 );
 // LINE 655:
 	asm( 
@@ -2450,38 +2450,38 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d2a1    push eax"
 "	      0053d2a2    mov eax,[ebp-10h]"
 "	      0053d2a5    push eax"
-"	      0053d2a6    lea eax,[ebp-14h]"
+"	      0053d2a6    lea eax,returnDir"
 "	      0053d2a9    push eax"
-"	      0053d2aa    mov eax,[ebp-8]"
+"	      0053d2aa    mov eax,currentDir"
 "	      0053d2ad    push eax"
-"	      0053d2ae    mov ecx,[ebp-1Ch]"
+"	      0053d2ae    mov ecx,this"
 "	      0053d2b1    call 0053E8B0h"
-"	      0053d2b6    mov [ebp-4],eax"
+"	      0053d2b6    mov result,eax"
 );
 // LINE 658:
 	asm( 
-"	      0053d2b9    mov eax,[ebp-14h]"
+"	      0053d2b9    mov eax,returnDir"
 "	      0053d2bc    mov [ebp-20h],eax"
 "	      0053d2bf    jmp near ptr 0053D2E9h"
 );
 // LINE 660:
 	asm( 
-"	      0053d2c4    dec byte ptr [ebp-0Fh]"
+"	      0053d2c4    dec here.y"
 "	      0053d2c7    jmp near ptr 0053D30Dh"
 );
 // LINE 661:
 	asm( 
-"	      0053d2cc    inc byte ptr [ebp-10h]"
+"	      0053d2cc    inc here.x"
 "	      0053d2cf    jmp near ptr 0053D30Dh"
 );
 // LINE 662:
 	asm( 
-"	      0053d2d4    inc byte ptr [ebp-0Fh]"
+"	      0053d2d4    inc here.y"
 "	      0053d2d7    jmp near ptr 0053D30Dh"
 );
 // LINE 663:
 	asm( 
-"	      0053d2dc    dec byte ptr [ebp-10h]"
+"	      0053d2dc    dec here.x"
 "	      0053d2df    jmp near ptr 0053D30Dh"
 );
 // LINE 664:
@@ -2492,7 +2492,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d2f3    mov eax,[ebp-20h]"
 "	      0053d2f6    jmp dword ptr [eax*4+53D2FDh]"
 "	      0053d2fd    (bad)"
-"	      0053d301    int 3"
+"	      0053d301    int"
 "	      0053d302    rcl byte ptr [ebx],cl"
 "	      0053d305    aam 0D2h"
 "	      0053d307    push ebx"
@@ -2502,30 +2502,30 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 // LINE 668:
 	asm( 
 "	      0053d30d    xor eax,eax"
-"	      0053d30f    mov al,[ebp-10h]"
+"	      0053d30f    mov al,here.x"
 "	      0053d312    xor ecx,ecx"
-"	      0053d314    mov cl,[ebp+18h]"
+"	      0053d314    mov cl,destLoc.x"
 "	      0053d317    cmp eax,ecx"
 "	      0053d319    jne near ptr 0053D338h"
 "	      0053d31f    xor eax,eax"
-"	      0053d321    mov al,[ebp-0Fh]"
+"	      0053d321    mov al,here.y"
 "	      0053d324    xor ecx,ecx"
-"	      0053d326    mov cl,[ebp+19h]"
+"	      0053d326    mov cl,destLoc.y"
 "	      0053d329    cmp eax,ecx"
 "	      0053d32b    jne near ptr 0053D338h"
 );
 // LINE 670:
 	asm( 
-"	      0053d331    mov dword ptr [ebp-0Ch],1"
+"	      0053d331    mov returnVal,1"
 );
 // LINE 674:
 	asm( 
-"	      0053d338    mov eax,[ebp-14h]"
-"	      0053d33b    mov [ebp-8],eax"
+"	      0053d338    mov eax,returnDir"
+"	      0053d33b    mov currentDir,eax"
 );
 // LINE 677:
 	asm( 
-"	      0053d33e    cmp dword ptr [ebp-4],0FFFFFFFEh"
+"	      0053d33e    cmp result,0FFFFFFFEh"
 "	      0053d342    jne near ptr 0053D3C7h"
 );
 // LINE 682:
@@ -2533,62 +2533,62 @@ KlugeFirstStepIsAnIntersection:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      0053d348    mov eax,[ebp-14h]"
+"	      0053d348    mov eax,returnDir"
 "	      0053d34b    sub eax,2"
 "	      0053d34e    and eax,3"
-"	      0053d351    mov ecx,[ebp+8]"
+"	      0053d351    mov ecx,goal"
 "	      0053d354    mov [ecx+12h],eax"
-"	      0053d357    mov eax,[ebp+8]"
+"	      0053d357    mov eax,goal"
 "	      0053d35a    mov eax,[eax+12h]"
-"	      0053d35d    mov ecx,[ebp+8]"
+"	      0053d35d    mov ecx,goal"
 "	      0053d360    mov [ecx+0Eh],eax"
 );
 // LINE 683:
 	asm( 
 "	      0053d363    xor eax,eax"
-"	      0053d365    mov al,[ebp-0Fh]"
+"	      0053d365    mov al,here.y"
 "	      0053d368    push eax"
 "	      0053d369    xor eax,eax"
-"	      0053d36b    mov al,[ebp-10h]"
+"	      0053d36b    mov al,here.x"
 "	      0053d36e    push eax"
-"	      0053d36f    mov ecx,[ebp-1Ch]"
+"	      0053d36f    mov ecx,this"
 "	      0053d372    call 0053D167h"
 "	      0053d377    xor ecx,ecx"
 "	      0053d379    mov cl,al"
-"	      0053d37b    mov [ebp-18h],ecx"
+"	      0053d37b    mov yindex,ecx"
 );
 // LINE 684:
 	asm( 
 "	      0053d37e    xor eax,eax"
-"	      0053d380    mov al,[ebp-10h]"
-"	      0053d383    mov ecx,[ebp-1Ch]"
+"	      0053d380    mov al,here.x"
+"	      0053d383    mov ecx,this"
 "	      0053d386    mov eax,[ecx+eax*4]"
-"	      0053d389    mov ecx,[ebp-18h]"
+"	      0053d389    mov ecx,yindex"
 "	      0053d38c    mov edx,ecx"
 "	      0053d38e    lea ecx,[ecx+ecx*4]"
 "	      0053d391    lea ecx,[ecx+ecx*4]"
 "	      0053d394    lea ecx,[edx+ecx*2]"
 "	      0053d397    add eax,ecx"
-"	      0053d399    mov ecx,[ebp+8]"
+"	      0053d399    mov ecx,goal"
 "	      0053d39c    mov [ecx],eax"
 );
 // LINE 685:
 	asm( 
-"	      0053d39e    mov eax,[ebp+8]"
+"	      0053d39e    mov eax,goal"
 "	      0053d3a1    mov dword ptr [eax+8],0FFFFFFFFh"
 );
 // LINE 686:
 	asm( 
-"	      0053d3a8    mov eax,[ebp+8]"
+"	      0053d3a8    mov eax,goal"
 "	      0053d3ab    mov dword ptr [eax+4],0"
 );
 // LINE 688:
 	asm( 
 "	      0053d3b2    mov eax,[ebp+14h]"
 "	      0053d3b5    push eax"
-"	      0053d3b6    mov eax,[ebp+8]"
+"	      0053d3b6    mov eax,goal"
 "	      0053d3b9    push eax"
-"	      0053d3ba    mov ecx,[ebp-1Ch]"
+"	      0053d3ba    mov ecx,this"
 "	      0053d3bd    call 00541130h"
 );
 // LINE 689:
@@ -2598,12 +2598,12 @@ KlugeFirstStepIsAnIntersection:
 // LINE 694:
 // Block end:
 	asm( 
-"	      0053d3c7    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      0053d3c7    cmp result,0FFFFFFFFh"
 "	      0053d3cb    jne near ptr 0053D3E7h"
 );
 // LINE 696:
 	asm( 
-"	      0053d3d1    mov eax,[ebp+8]"
+"	      0053d3d1    mov eax,goal"
 "	      0053d3d4    cmp dword ptr [eax],0"
 "	      0053d3d7    jne near ptr 0053D3E2h"
 "	      0053d3dd    jmp near ptr 0053D3E2h"
@@ -2618,7 +2618,7 @@ KlugeFirstStepIsAnIntersection:
 );
 // LINE 701:
 	asm( 
-"	      0053d3ec    mov eax,[ebp-0Ch]"
+"	      0053d3ec    mov eax,returnVal"
 "	      0053d3ef    jmp near ptr 0053D3F9h"
 );
 // LINE 702:
@@ -2647,28 +2647,28 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d406    push ebx"
 "	      0053d407    push esi"
 "	      0053d408    push edi"
-"	      0053d409    mov [ebp-30h],ecx"
+"	      0053d409    mov this,ecx"
 );
 // LINE 713:
 	asm( 
-"	      0053d40c    mov dword ptr [ebp-4],0"
+"	      0053d40c    mov x,0"
 "	      0053d413    jmp near ptr 0053D41Bh"
-"	      0053d418    inc dword ptr [ebp-4]"
-"	      0053d41b    cmp dword ptr [ebp-4],80h"
+"	      0053d418    inc x"
+"	      0053d41b    cmp x,80h"
 "	      0053d422    jge near ptr 0053D8CBh"
 );
 // LINE 715:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      0053d428    mov dword ptr [ebp-14h],0"
+"	      0053d428    mov yindex,0"
 "	      0053d42f    jmp near ptr 0053D437h"
-"	      0053d434    inc dword ptr [ebp-14h]"
-"	      0053d437    mov eax,[ebp-4]"
-"	      0053d43a    mov ecx,[ebp-30h]"
+"	      0053d434    inc yindex"
+"	      0053d437    mov eax,x"
+"	      0053d43a    mov ecx,this"
 "	      0053d43d    xor edx,edx"
 "	      0053d43f    mov dl,[eax+ecx+200h]"
-"	      0053d446    cmp edx,[ebp-14h]"
+"	      0053d446    cmp edx,yindex"
 "	      0053d449    jle near ptr 0053D8C6h"
 );
 // LINE 717:
@@ -2676,51 +2676,51 @@ void RoadGraph::FindDeadEnds() {
 	unsigned short fromTile;
 	struct RGVertex* pRGV;
 	asm( 
-"	      0053d44f    mov eax,[ebp-4]"
-"	      0053d452    mov ecx,[ebp-30h]"
+"	      0053d44f    mov eax,x"
+"	      0053d452    mov ecx,this"
 "	      0053d455    mov eax,[ecx+eax*4]"
-"	      0053d458    mov ecx,[ebp-14h]"
+"	      0053d458    mov ecx,yindex"
 "	      0053d45b    mov edx,ecx"
 "	      0053d45d    lea ecx,[ecx+ecx*4]"
 "	      0053d460    lea ecx,[ecx+ecx*4]"
 "	      0053d463    lea ecx,[edx+ecx*2]"
 "	      0053d466    add eax,ecx"
-"	      0053d468    mov [ebp-18h],eax"
+"	      0053d468    mov pRGV,eax"
 );
 // LINE 719:
 	asm( 
-"	      0053d46b    mov eax,[ebp-18h]"
+"	      0053d46b    mov eax,pRGV"
 "	      0053d46e    xor ecx,ecx"
 "	      0053d470    mov cl,[eax+1]"
-"	      0053d473    mov [ebp-8],ecx"
+"	      0053d473    mov y,ecx"
 );
 // LINE 720:
 	asm( 
-"	      0053d476    cmp dword ptr [ebp-4],0"
+"	      0053d476    cmp x,0"
 "	      0053d47a    jl near ptr 0053D4A4h"
-"	      0053d480    cmp dword ptr [ebp-8],0"
+"	      0053d480    cmp y,0"
 "	      0053d484    jl near ptr 0053D4A4h"
-"	      0053d48a    cmp dword ptr [ebp-4],80h"
+"	      0053d48a    cmp x,80h"
 "	      0053d491    jge near ptr 0053D4A4h"
-"	      0053d497    cmp dword ptr [ebp-8],80h"
+"	      0053d497    cmp y,80h"
 "	      0053d49e    jl near ptr 0053D4AFh"
-"	      0053d4a4    mov word ptr [ebp-1Ch],0"
+"	      0053d4a4    mov fromTile,0"
 "	      0053d4aa    jmp near ptr 0053D4E7h"
-"	      0053d4af    mov eax,[ebp-4]"
+"	      0053d4af    mov eax,x"
 "	      0053d4b2    mov eax,[eax*4+638F70h]"
-"	      0053d4b9    mov ecx,[ebp-8]"
+"	      0053d4b9    mov ecx,y"
 "	      0053d4bc    xor edx,edx"
 "	      0053d4be    mov dl,[eax+ecx]"
 "	      0053d4c1    and edx,2"
 "	      0053d4c4    movsx eax,dx"
 "	      0053d4c7    shl eax,0Eh"
-"	      0053d4ca    mov ecx,[ebp-4]"
+"	      0053d4ca    mov ecx,x"
 "	      0053d4cd    mov ecx,[ecx*4+639850h]"
-"	      0053d4d4    mov edx,[ebp-8]"
+"	      0053d4d4    mov edx,y"
 "	      0053d4d7    xor ebx,ebx"
 "	      0053d4d9    mov bl,[ecx+edx]"
 "	      0053d4dc    or eax,ebx"
-"	      0053d4de    mov [ebp-1Ch],ax"
+"	      0053d4de    mov fromTile,ax"
 "	      0053d4e2    jmp near ptr 0053D4E7h"
 );
 // LINE 722:
@@ -2732,11 +2732,11 @@ void RoadGraph::FindDeadEnds() {
 );
 // LINE 724:
 	asm( 
-"	      0053d4f8    mov dword ptr [ebp-10h],2"
+"	      0053d4f8    mov stepSize,2"
 );
 // LINE 725:
 	asm( 
-"	      0053d4ff    mov dword ptr [ebp-0Ch],1"
+"	      0053d4ff    mov Offset,1"
 );
 // LINE 727:
 	asm( 
@@ -2744,41 +2744,41 @@ void RoadGraph::FindDeadEnds() {
 );
 // LINE 729:
 	asm( 
-"	      0053d50b    mov dword ptr [ebp-10h],1"
+"	      0053d50b    mov stepSize,1"
 );
 // LINE 730:
 	asm( 
-"	      0053d512    mov dword ptr [ebp-0Ch],0"
+"	      0053d512    mov Offset,0"
 );
 // LINE 734:
 	asm( 
-"	      0053d519    mov eax,[ebp-0Ch]"
-"	      0053d51c    cmp [ebp-8],eax"
+"	      0053d519    mov eax,Offset"
+"	      0053d51c    cmp y,eax"
 "	      0053d51f    jle near ptr 0053D5FDh"
-"	      0053d525    cmp dword ptr [ebp-4],0"
+"	      0053d525    cmp x,0"
 "	      0053d529    jl near ptr 0053D555h"
-"	      0053d52f    mov eax,[ebp-8]"
+"	      0053d52f    mov eax,y"
 "	      0053d532    dec eax"
 "	      0053d533    js near ptr 0053D555h"
-"	      0053d539    cmp dword ptr [ebp-4],80h"
+"	      0053d539    cmp x,80h"
 "	      0053d540    jge near ptr 0053D555h"
-"	      0053d546    mov eax,[ebp-8]"
+"	      0053d546    mov eax,y"
 "	      0053d549    dec eax"
 "	      0053d54a    cmp eax,80h"
 "	      0053d54f    jl near ptr 0053D560h"
 "	      0053d555    mov word ptr [ebp-20h],0"
 "	      0053d55b    jmp near ptr 0053D59Ah"
-"	      0053d560    mov eax,[ebp-4]"
+"	      0053d560    mov eax,x"
 "	      0053d563    mov eax,[eax*4+638F70h]"
-"	      0053d56a    mov ecx,[ebp-8]"
+"	      0053d56a    mov ecx,y"
 "	      0053d56d    xor edx,edx"
 "	      0053d56f    mov dl,[eax+ecx-1]"
 "	      0053d573    and edx,2"
 "	      0053d576    movsx eax,dx"
 "	      0053d579    shl eax,0Eh"
-"	      0053d57c    mov ecx,[ebp-4]"
+"	      0053d57c    mov ecx,x"
 "	      0053d57f    mov ecx,[ecx*4+639850h]"
-"	      0053d586    mov edx,[ebp-8]"
+"	      0053d586    mov edx,y"
 "	      0053d589    xor ebx,ebx"
 "	      0053d58b    mov bl,[ecx+edx-1]"
 "	      0053d58f    or eax,ebx"
@@ -2794,23 +2794,23 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d5ab    add esp,10h"
 "	      0053d5ae    test eax,eax"
 "	      0053d5b0    je near ptr 0053D5FDh"
-"	      0053d5b6    mov eax,[ebp-18h]"
+"	      0053d5b6    mov eax,pRGV"
 "	      0053d5b9    xor ecx,ecx"
 "	      0053d5bb    mov cl,[eax+1]"
 "	      0053d5be    dec ecx"
 "	      0053d5bf    push ecx"
-"	      0053d5c0    mov eax,[ebp-18h]"
+"	      0053d5c0    mov eax,pRGV"
 "	      0053d5c3    mov al,[eax]"
 "	      0053d5c5    push eax"
 "	      0053d5c6    push 0"
-"	      0053d5c8    mov ecx,[ebp-30h]"
+"	      0053d5c8    mov ecx,this"
 "	      0053d5cb    call 0053D8D5h"
 "	      0053d5d0    test eax,eax"
 "	      0053d5d2    je near ptr 0053D5FDh"
 );
 // LINE 736:
 	asm( 
-"	      0053d5d8    mov eax,[ebp-18h]"
+"	      0053d5d8    mov eax,pRGV"
 "	      0053d5db    mov al,[eax+2]"
 "	      0053d5de    shr al,4"
 "	      0053d5e1    and al,0Fh"
@@ -2818,45 +2818,45 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d5e5    mov cl,al"
 "	      0053d5e7    or ecx,1"
 "	      0053d5ea    shl cl,4"
-"	      0053d5ed    mov eax,[ebp-18h]"
+"	      0053d5ed    mov eax,pRGV"
 "	      0053d5f0    mov al,[eax+2]"
 "	      0053d5f3    and al,0Fh"
 "	      0053d5f5    or cl,al"
-"	      0053d5f7    mov eax,[ebp-18h]"
+"	      0053d5f7    mov eax,pRGV"
 "	      0053d5fa    mov [eax+2],cl"
 );
 // LINE 740:
 	asm( 
 "	      0053d5fd    mov eax,7Fh"
-"	      0053d602    sub eax,[ebp-0Ch]"
-"	      0053d605    cmp eax,[ebp-4]"
+"	      0053d602    sub eax,Offset"
+"	      0053d605    cmp eax,x"
 "	      0053d608    jle near ptr 0053D6EEh"
-"	      0053d60e    mov eax,[ebp-4]"
-"	      0053d611    add eax,[ebp-10h]"
+"	      0053d60e    mov eax,x"
+"	      0053d611    add eax,stepSize"
 "	      0053d614    js near ptr 0053D642h"
-"	      0053d61a    cmp dword ptr [ebp-8],0"
+"	      0053d61a    cmp y,0"
 "	      0053d61e    jl near ptr 0053D642h"
-"	      0053d624    mov eax,[ebp-4]"
-"	      0053d627    add eax,[ebp-10h]"
+"	      0053d624    mov eax,x"
+"	      0053d627    add eax,stepSize"
 "	      0053d62a    cmp eax,80h"
 "	      0053d62f    jge near ptr 0053D642h"
-"	      0053d635    cmp dword ptr [ebp-8],80h"
+"	      0053d635    cmp y,80h"
 "	      0053d63c    jl near ptr 0053D64Dh"
 "	      0053d642    mov word ptr [ebp-24h],0"
 "	      0053d648    jmp near ptr 0053D68Bh"
-"	      0053d64d    mov eax,[ebp-4]"
-"	      0053d650    add eax,[ebp-10h]"
+"	      0053d64d    mov eax,x"
+"	      0053d650    add eax,stepSize"
 "	      0053d653    mov eax,[eax*4+638F70h]"
-"	      0053d65a    mov ecx,[ebp-8]"
+"	      0053d65a    mov ecx,y"
 "	      0053d65d    xor edx,edx"
 "	      0053d65f    mov dl,[eax+ecx]"
 "	      0053d662    and edx,2"
 "	      0053d665    movsx eax,dx"
 "	      0053d668    shl eax,0Eh"
-"	      0053d66b    mov ecx,[ebp-4]"
-"	      0053d66e    add ecx,[ebp-10h]"
+"	      0053d66b    mov ecx,x"
+"	      0053d66e    add ecx,stepSize"
 "	      0053d671    mov ecx,[ecx*4+639850h]"
-"	      0053d678    mov edx,[ebp-8]"
+"	      0053d678    mov edx,y"
 "	      0053d67b    xor ebx,ebx"
 "	      0053d67d    mov bl,[ecx+edx]"
 "	      0053d680    or eax,ebx"
@@ -2872,23 +2872,23 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d69c    add esp,10h"
 "	      0053d69f    test eax,eax"
 "	      0053d6a1    je near ptr 0053D6EEh"
-"	      0053d6a7    mov eax,[ebp-18h]"
+"	      0053d6a7    mov eax,pRGV"
 "	      0053d6aa    mov al,[eax+1]"
 "	      0053d6ad    push eax"
-"	      0053d6ae    mov eax,[ebp-18h]"
+"	      0053d6ae    mov eax,pRGV"
 "	      0053d6b1    xor ecx,ecx"
 "	      0053d6b3    mov cl,[eax]"
 "	      0053d6b5    inc ecx"
 "	      0053d6b6    push ecx"
 "	      0053d6b7    push 1"
-"	      0053d6b9    mov ecx,[ebp-30h]"
+"	      0053d6b9    mov ecx,this"
 "	      0053d6bc    call 0053D8D5h"
 "	      0053d6c1    test eax,eax"
 "	      0053d6c3    je near ptr 0053D6EEh"
 );
 // LINE 742:
 	asm( 
-"	      0053d6c9    mov eax,[ebp-18h]"
+"	      0053d6c9    mov eax,pRGV"
 "	      0053d6cc    mov al,[eax+2]"
 "	      0053d6cf    shr al,4"
 "	      0053d6d2    and al,0Fh"
@@ -2896,45 +2896,45 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d6d6    mov cl,al"
 "	      0053d6d8    or ecx,2"
 "	      0053d6db    shl cl,4"
-"	      0053d6de    mov eax,[ebp-18h]"
+"	      0053d6de    mov eax,pRGV"
 "	      0053d6e1    mov al,[eax+2]"
 "	      0053d6e4    and al,0Fh"
 "	      0053d6e6    or cl,al"
-"	      0053d6e8    mov eax,[ebp-18h]"
+"	      0053d6e8    mov eax,pRGV"
 "	      0053d6eb    mov [eax+2],cl"
 );
 // LINE 746:
 	asm( 
 "	      0053d6ee    mov eax,7Fh"
-"	      0053d6f3    sub eax,[ebp-0Ch]"
-"	      0053d6f6    cmp eax,[ebp-8]"
+"	      0053d6f3    sub eax,Offset"
+"	      0053d6f6    cmp eax,y"
 "	      0053d6f9    jle near ptr 0053D7DFh"
-"	      0053d6ff    cmp dword ptr [ebp-4],0"
+"	      0053d6ff    cmp x,0"
 "	      0053d703    jl near ptr 0053D733h"
-"	      0053d709    mov eax,[ebp-8]"
-"	      0053d70c    add eax,[ebp-10h]"
+"	      0053d709    mov eax,y"
+"	      0053d70c    add eax,stepSize"
 "	      0053d70f    js near ptr 0053D733h"
-"	      0053d715    cmp dword ptr [ebp-4],80h"
+"	      0053d715    cmp x,80h"
 "	      0053d71c    jge near ptr 0053D733h"
-"	      0053d722    mov eax,[ebp-8]"
-"	      0053d725    add eax,[ebp-10h]"
+"	      0053d722    mov eax,y"
+"	      0053d725    add eax,stepSize"
 "	      0053d728    cmp eax,80h"
 "	      0053d72d    jl near ptr 0053D73Eh"
 "	      0053d733    mov word ptr [ebp-28h],0"
 "	      0053d739    jmp near ptr 0053D77Ch"
-"	      0053d73e    mov eax,[ebp-4]"
+"	      0053d73e    mov eax,x"
 "	      0053d741    mov eax,[eax*4+638F70h]"
-"	      0053d748    mov ecx,[ebp-8]"
-"	      0053d74b    add ecx,[ebp-10h]"
+"	      0053d748    mov ecx,y"
+"	      0053d74b    add ecx,stepSize"
 "	      0053d74e    xor edx,edx"
 "	      0053d750    mov dl,[eax+ecx]"
 "	      0053d753    and edx,2"
 "	      0053d756    movsx eax,dx"
 "	      0053d759    shl eax,0Eh"
-"	      0053d75c    mov ecx,[ebp-4]"
+"	      0053d75c    mov ecx,x"
 "	      0053d75f    mov ecx,[ecx*4+639850h]"
-"	      0053d766    mov edx,[ebp-8]"
-"	      0053d769    add edx,[ebp-10h]"
+"	      0053d766    mov edx,y"
+"	      0053d769    add edx,stepSize"
 "	      0053d76c    xor ebx,ebx"
 "	      0053d76e    mov bl,[ecx+edx]"
 "	      0053d771    or eax,ebx"
@@ -2950,23 +2950,23 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d78d    add esp,10h"
 "	      0053d790    test eax,eax"
 "	      0053d792    je near ptr 0053D7DFh"
-"	      0053d798    mov eax,[ebp-18h]"
+"	      0053d798    mov eax,pRGV"
 "	      0053d79b    xor ecx,ecx"
 "	      0053d79d    mov cl,[eax+1]"
 "	      0053d7a0    inc ecx"
 "	      0053d7a1    push ecx"
-"	      0053d7a2    mov eax,[ebp-18h]"
+"	      0053d7a2    mov eax,pRGV"
 "	      0053d7a5    mov al,[eax]"
 "	      0053d7a7    push eax"
 "	      0053d7a8    push 2"
-"	      0053d7aa    mov ecx,[ebp-30h]"
+"	      0053d7aa    mov ecx,this"
 "	      0053d7ad    call 0053D8D5h"
 "	      0053d7b2    test eax,eax"
 "	      0053d7b4    je near ptr 0053D7DFh"
 );
 // LINE 748:
 	asm( 
-"	      0053d7ba    mov eax,[ebp-18h]"
+"	      0053d7ba    mov eax,pRGV"
 "	      0053d7bd    mov al,[eax+2]"
 "	      0053d7c0    shr al,4"
 "	      0053d7c3    and al,0Fh"
@@ -2974,42 +2974,42 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d7c7    mov cl,al"
 "	      0053d7c9    or ecx,4"
 "	      0053d7cc    shl cl,4"
-"	      0053d7cf    mov eax,[ebp-18h]"
+"	      0053d7cf    mov eax,pRGV"
 "	      0053d7d2    mov al,[eax+2]"
 "	      0053d7d5    and al,0Fh"
 "	      0053d7d7    or cl,al"
-"	      0053d7d9    mov eax,[ebp-18h]"
+"	      0053d7d9    mov eax,pRGV"
 "	      0053d7dc    mov [eax+2],cl"
 );
 // LINE 752:
 	asm( 
-"	      0053d7df    mov eax,[ebp-0Ch]"
-"	      0053d7e2    cmp [ebp-4],eax"
+"	      0053d7df    mov eax,Offset"
+"	      0053d7e2    cmp x,eax"
 "	      0053d7e5    jle near ptr 0053D8C1h"
-"	      0053d7eb    mov eax,[ebp-4]"
+"	      0053d7eb    mov eax,x"
 "	      0053d7ee    dec eax"
 "	      0053d7ef    js near ptr 0053D81Bh"
-"	      0053d7f5    cmp dword ptr [ebp-8],0"
+"	      0053d7f5    cmp y,0"
 "	      0053d7f9    jl near ptr 0053D81Bh"
-"	      0053d7ff    mov eax,[ebp-4]"
+"	      0053d7ff    mov eax,x"
 "	      0053d802    dec eax"
 "	      0053d803    cmp eax,80h"
 "	      0053d808    jge near ptr 0053D81Bh"
-"	      0053d80e    cmp dword ptr [ebp-8],80h"
+"	      0053d80e    cmp y,80h"
 "	      0053d815    jl near ptr 0053D826h"
 "	      0053d81b    mov word ptr [ebp-2Ch],0"
 "	      0053d821    jmp near ptr 0053D85Eh"
-"	      0053d826    mov eax,[ebp-4]"
+"	      0053d826    mov eax,x"
 "	      0053d829    mov eax,[eax*4+638F6Ch]"
-"	      0053d830    mov ecx,[ebp-8]"
+"	      0053d830    mov ecx,y"
 "	      0053d833    xor edx,edx"
 "	      0053d835    mov dl,[eax+ecx]"
 "	      0053d838    and edx,2"
 "	      0053d83b    movsx eax,dx"
 "	      0053d83e    shl eax,0Eh"
-"	      0053d841    mov ecx,[ebp-4]"
+"	      0053d841    mov ecx,x"
 "	      0053d844    mov ecx,[ecx*4+63984Ch]"
-"	      0053d84b    mov edx,[ebp-8]"
+"	      0053d84b    mov edx,y"
 "	      0053d84e    xor ebx,ebx"
 "	      0053d850    mov bl,[ecx+edx]"
 "	      0053d853    or eax,ebx"
@@ -3025,23 +3025,23 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d86f    add esp,10h"
 "	      0053d872    test eax,eax"
 "	      0053d874    je near ptr 0053D8C1h"
-"	      0053d87a    mov eax,[ebp-18h]"
+"	      0053d87a    mov eax,pRGV"
 "	      0053d87d    mov al,[eax+1]"
 "	      0053d880    push eax"
-"	      0053d881    mov eax,[ebp-18h]"
+"	      0053d881    mov eax,pRGV"
 "	      0053d884    xor ecx,ecx"
 "	      0053d886    mov cl,[eax]"
 "	      0053d888    dec ecx"
 "	      0053d889    push ecx"
 "	      0053d88a    push 3"
-"	      0053d88c    mov ecx,[ebp-30h]"
+"	      0053d88c    mov ecx,this"
 "	      0053d88f    call 0053D8D5h"
 "	      0053d894    test eax,eax"
 "	      0053d896    je near ptr 0053D8C1h"
 );
 // LINE 754:
 	asm( 
-"	      0053d89c    mov eax,[ebp-18h]"
+"	      0053d89c    mov eax,pRGV"
 "	      0053d89f    mov al,[eax+2]"
 "	      0053d8a2    shr al,4"
 "	      0053d8a5    and al,0Fh"
@@ -3049,11 +3049,11 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d8a9    mov cl,al"
 "	      0053d8ab    or ecx,8"
 "	      0053d8ae    shl cl,4"
-"	      0053d8b1    mov eax,[ebp-18h]"
+"	      0053d8b1    mov eax,pRGV"
 "	      0053d8b4    mov al,[eax+2]"
 "	      0053d8b7    and al,0Fh"
 "	      0053d8b9    or cl,al"
-"	      0053d8bb    mov eax,[ebp-18h]"
+"	      0053d8bb    mov eax,pRGV"
 "	      0053d8be    mov [eax+2],cl"
 );
 // LINE 756:
@@ -3092,24 +3092,24 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 "	      0053d8db    push ebx"
 "	      0053d8dc    push esi"
 "	      0053d8dd    push edi"
-"	      0053d8de    mov [ebp-14h],ecx"
+"	      0053d8de    mov this,ecx"
 );
 // LINE 763:
 	asm( 
-"	      0053d8e1    mov dword ptr [ebp-10h],0"
+"	      0053d8e1    mov repeatCount,0"
 );
 // LINE 766:
 	asm( 
-"	      0053d8e8    mov eax,[ebp+8]"
-"	      0053d8eb    mov [ebp-4],eax"
+"	      0053d8e8    mov eax,currentDir"
+"	      0053d8eb    mov startingDir,eax"
 );
 // LINE 769:
 	asm( 
 "	      0053d8ee    xor eax,eax"
-"	      0053d8f0    mov al,[ebp+10h]"
+"	      0053d8f0    mov al,y"
 "	      0053d8f3    push eax"
 "	      0053d8f4    xor eax,eax"
-"	      0053d8f6    mov al,[ebp+0Ch]"
+"	      0053d8f6    mov al,x"
 "	      0053d8f9    push eax"
 "	      0053d8fa    call 00539260h"
 "	      0053d8ff    add esp,8"
@@ -3127,17 +3127,17 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 "	      0053d914    push eax"
 "	      0053d915    mov eax,[ebp+0Ch]"
 "	      0053d918    push eax"
-"	      0053d919    lea eax,[ebp-8]"
+"	      0053d919    lea eax,returnDir"
 "	      0053d91c    push eax"
-"	      0053d91d    mov eax,[ebp+8]"
+"	      0053d91d    mov eax,currentDir"
 "	      0053d920    push eax"
-"	      0053d921    mov ecx,[ebp-14h]"
+"	      0053d921    mov ecx,this"
 "	      0053d924    call 0053E8B0h"
-"	      0053d929    mov [ebp-0Ch],eax"
+"	      0053d929    mov returnStatus,eax"
 );
 // LINE 778:
 	asm( 
-"	      0053d92c    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      0053d92c    cmp returnStatus,0FFFFFFFFh"
 "	      0053d930    jne near ptr 0053D940h"
 );
 // LINE 779:
@@ -3147,7 +3147,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 );
 // LINE 781:
 	asm( 
-"	      0053d940    cmp dword ptr [ebp-0Ch],0FFFFFFFEh"
+"	      0053d940    cmp returnStatus,0FFFFFFFEh"
 "	      0053d944    jne near ptr 0053D951h"
 );
 // LINE 782:
@@ -3157,13 +3157,13 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 );
 // LINE 785:
 	asm( 
-"	      0053d951    mov eax,[ebp+8]"
-"	      0053d954    cmp [ebp-8],eax"
+"	      0053d951    mov eax,currentDir"
+"	      0053d954    cmp returnDir,eax"
 "	      0053d957    jne near ptr 0053D965h"
 );
 // LINE 787:
 	asm( 
-"	      0053d95d    inc dword ptr [ebp-10h]"
+"	      0053d95d    inc repeatCount"
 );
 // LINE 789:
 	asm( 
@@ -3171,37 +3171,37 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 );
 // LINE 791:
 	asm( 
-"	      0053d965    mov dword ptr [ebp-10h],0"
+"	      0053d965    mov repeatCount,0"
 );
 // LINE 792:
 	asm( 
-"	      0053d96c    mov eax,[ebp-8]"
-"	      0053d96f    mov [ebp+8],eax"
+"	      0053d96c    mov eax,returnDir"
+"	      0053d96f    mov currentDir,eax"
 );
 // LINE 795:
 	asm( 
-"	      0053d972    mov eax,[ebp+8]"
+"	      0053d972    mov eax,currentDir"
 "	      0053d975    mov [ebp-18h],eax"
 "	      0053d978    jmp near ptr 0053D9A2h"
 );
 // LINE 797:
 	asm( 
-"	      0053d97d    dec byte ptr [ebp+10h]"
+"	      0053d97d    dec y"
 "	      0053d980    jmp near ptr 0053D9C6h"
 );
 // LINE 798:
 	asm( 
-"	      0053d985    inc byte ptr [ebp+0Ch]"
+"	      0053d985    inc x"
 "	      0053d988    jmp near ptr 0053D9C6h"
 );
 // LINE 799:
 	asm( 
-"	      0053d98d    inc byte ptr [ebp+10h]"
+"	      0053d98d    inc y"
 "	      0053d990    jmp near ptr 0053D9C6h"
 );
 // LINE 800:
 	asm( 
-"	      0053d995    dec byte ptr [ebp+0Ch]"
+"	      0053d995    dec x"
 "	      0053d998    jmp near ptr 0053D9C6h"
 );
 // LINE 801:
@@ -3249,35 +3249,35 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053d9d8    push ebx"
 "	      0053d9d9    push esi"
 "	      0053d9da    push edi"
-"	      0053d9db    mov [ebp-30h],ecx"
+"	      0053d9db    mov this,ecx"
 );
 // LINE 810:
 	asm( 
-"	      0053d9de    cmp dword ptr [ebp+8],0"
+"	      0053d9de    cmp x,0"
 "	      0053d9e2    jl near ptr 0053DA0Ch"
-"	      0053d9e8    cmp dword ptr [ebp+0Ch],0"
+"	      0053d9e8    cmp y,0"
 "	      0053d9ec    jl near ptr 0053DA0Ch"
-"	      0053d9f2    cmp dword ptr [ebp+8],80h"
+"	      0053d9f2    cmp x,80h"
 "	      0053d9f9    jge near ptr 0053DA0Ch"
-"	      0053d9ff    cmp dword ptr [ebp+0Ch],80h"
+"	      0053d9ff    cmp y,80h"
 "	      0053da06    jl near ptr 0053DA17h"
-"	      0053da0c    mov word ptr [ebp-4],0"
+"	      0053da0c    mov fromTile,0"
 "	      0053da12    jmp near ptr 0053DA4Fh"
-"	      0053da17    mov eax,[ebp+8]"
+"	      0053da17    mov eax,x"
 "	      0053da1a    mov eax,[eax*4+638F70h]"
-"	      0053da21    mov ecx,[ebp+0Ch]"
+"	      0053da21    mov ecx,y"
 "	      0053da24    xor edx,edx"
 "	      0053da26    mov dl,[eax+ecx]"
 "	      0053da29    and edx,2"
 "	      0053da2c    movsx eax,dx"
 "	      0053da2f    shl eax,0Eh"
-"	      0053da32    mov ecx,[ebp+8]"
+"	      0053da32    mov ecx,x"
 "	      0053da35    mov ecx,[ecx*4+639850h]"
-"	      0053da3c    mov edx,[ebp+0Ch]"
+"	      0053da3c    mov edx,y"
 "	      0053da3f    xor ebx,ebx"
 "	      0053da41    mov bl,[ecx+edx]"
 "	      0053da44    or eax,ebx"
-"	      0053da46    mov [ebp-4],ax"
+"	      0053da46    mov fromTile,ax"
 "	      0053da4a    jmp near ptr 0053DA4Fh"
 );
 // LINE 815:
@@ -3286,10 +3286,10 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053da52    and eax,0FFFFh"
 "	      0053da57    mov [ebp-34h],eax"
 "	      0053da5a    jmp near ptr 0053DA7Ch"
-"	      0053da5f    mov eax,[ebp+10h]"
+"	      0053da5f    mov eax,pRGV"
 "	      0053da62    mov byte ptr [eax+3],1"
 "	      0053da66    jmp near ptr 0053DAD1h"
-"	      0053da6b    mov eax,[ebp+10h]"
+"	      0053da6b    mov eax,pRGV"
 "	      0053da6e    mov byte ptr [eax+3],0"
 "	      0053da72    jmp near ptr 0053DAD1h"
 "	      0053da77    jmp near ptr 0053DAC8h"
@@ -3308,7 +3308,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053dabd    jle near ptr 0053DA5Fh"
 "	      0053dac3    jmp near ptr 0053DA6Bh"
 "	      0053dac8    mov al,[ebp-14h]"
-"	      0053dacb    mov ecx,[ebp+10h]"
+"	      0053dacb    mov ecx,pRGV"
 "	      0053dace    mov [ecx+3],al"
 );
 // LINE 817:
@@ -3320,11 +3320,11 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 819:
 	asm( 
-"	      0053dae2    mov dword ptr [ebp-10h],2"
+"	      0053dae2    mov stepSize,2"
 );
 // LINE 820:
 	asm( 
-"	      0053dae9    mov dword ptr [ebp-0Ch],1"
+"	      0053dae9    mov Offset,1"
 );
 // LINE 822:
 	asm( 
@@ -3332,44 +3332,44 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 824:
 	asm( 
-"	      0053daf5    mov dword ptr [ebp-10h],1"
+"	      0053daf5    mov stepSize,1"
 );
 // LINE 825:
 	asm( 
-"	      0053dafc    mov dword ptr [ebp-0Ch],0"
+"	      0053dafc    mov Offset,0"
 );
 // LINE 833:
 	asm( 
-"	      0053db03    mov eax,[ebp+0Ch]"
-"	      0053db06    cmp [ebp-0Ch],eax"
+"	      0053db03    mov eax,y"
+"	      0053db06    cmp Offset,eax"
 "	      0053db09    jge near ptr 0053DDDEh"
 );
 // LINE 835:
 	asm( 
-"	      0053db0f    cmp dword ptr [ebp+8],0"
+"	      0053db0f    cmp x,0"
 "	      0053db13    jl near ptr 0053DB3Fh"
-"	      0053db19    mov eax,[ebp+0Ch]"
+"	      0053db19    mov eax,y"
 "	      0053db1c    dec eax"
 "	      0053db1d    js near ptr 0053DB3Fh"
-"	      0053db23    cmp dword ptr [ebp+8],80h"
+"	      0053db23    cmp x,80h"
 "	      0053db2a    jge near ptr 0053DB3Fh"
-"	      0053db30    mov eax,[ebp+0Ch]"
+"	      0053db30    mov eax,y"
 "	      0053db33    dec eax"
 "	      0053db34    cmp eax,80h"
 "	      0053db39    jl near ptr 0053DB4Ah"
 "	      0053db3f    mov word ptr [ebp-18h],0"
 "	      0053db45    jmp near ptr 0053DB84h"
-"	      0053db4a    mov eax,[ebp+8]"
+"	      0053db4a    mov eax,x"
 "	      0053db4d    mov eax,[eax*4+638F70h]"
-"	      0053db54    mov ecx,[ebp+0Ch]"
+"	      0053db54    mov ecx,y"
 "	      0053db57    xor edx,edx"
 "	      0053db59    mov dl,[eax+ecx-1]"
 "	      0053db5d    and edx,2"
 "	      0053db60    movsx eax,dx"
 "	      0053db63    shl eax,0Eh"
-"	      0053db66    mov ecx,[ebp+8]"
+"	      0053db66    mov ecx,x"
 "	      0053db69    mov ecx,[ecx*4+639850h]"
-"	      0053db70    mov edx,[ebp+0Ch]"
+"	      0053db70    mov edx,y"
 "	      0053db73    xor ebx,ebx"
 "	      0053db75    mov bl,[ecx+edx-1]"
 "	      0053db79    or eax,ebx"
@@ -3388,9 +3388,9 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 837:
 	asm( 
-"	      0053dba0    mov eax,[ebp+10h]"
+"	      0053dba0    mov eax,pRGV"
 "	      0053dba3    add eax,4"
-"	      0053dba6    mov [ebp-8],eax"
+"	      0053dba6    mov pEdge,eax"
 );
 // LINE 838:
 	asm( 
@@ -3494,28 +3494,28 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053dd7a    add cl,[ebx-36CC07BBh]"
 "	      0053dd80    mov cx,[eax+2]"
 "	      0053dd84    add ecx,[ebp-28h]"
-"	      0053dd87    mov eax,[ebp-8]"
+"	      0053dd87    mov eax,pEdge"
 "	      0053dd8a    mov [eax+2],cx"
 );
 // LINE 839:
 	asm( 
-"	      0053dd8e    mov eax,[ebp+10h]"
+"	      0053dd8e    mov eax,pRGV"
 "	      0053dd91    mov al,[eax+2]"
 "	      0053dd94    and al,0Fh"
 "	      0053dd96    xor ecx,ecx"
 "	      0053dd98    mov cl,al"
 "	      0053dd9a    or ecx,1"
 "	      0053dd9d    and cl,0Fh"
-"	      0053dda0    mov eax,[ebp+10h]"
+"	      0053dda0    mov eax,pRGV"
 "	      0053dda3    mov al,[eax+2]"
 "	      0053dda6    and al,0F0h"
 "	      0053dda8    or cl,al"
-"	      0053ddaa    mov eax,[ebp+10h]"
+"	      0053ddaa    mov eax,pRGV"
 "	      0053ddad    mov [eax+2],cl"
 );
 // LINE 840:
 	asm( 
-"	      0053ddb0    mov eax,[ebp+10h]"
+"	      0053ddb0    mov eax,pRGV"
 "	      0053ddb3    mov al,[eax+2]"
 "	      0053ddb6    shr al,4"
 "	      0053ddb9    and al,0Fh"
@@ -3523,54 +3523,54 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053ddbd    mov cl,al"
 "	      0053ddbf    and ecx,1"
 "	      0053ddc2    push ecx"
-"	      0053ddc3    mov eax,[ebp+0Ch]"
+"	      0053ddc3    mov eax,y"
 "	      0053ddc6    dec eax"
 "	      0053ddc7    push eax"
-"	      0053ddc8    mov eax,[ebp+8]"
+"	      0053ddc8    mov eax,x"
 "	      0053ddcb    push eax"
 "	      0053ddcc    push 0"
-"	      0053ddce    mov eax,[ebp-8]"
+"	      0053ddce    mov eax,pEdge"
 "	      0053ddd1    push eax"
-"	      0053ddd2    mov eax,[ebp+10h]"
+"	      0053ddd2    mov eax,pRGV"
 "	      0053ddd5    push eax"
-"	      0053ddd6    mov ecx,[ebp-30h]"
+"	      0053ddd6    mov ecx,this"
 "	      0053ddd9    call 0053E305h"
 );
 // LINE 844:
 	asm( 
 "	      0053ddde    mov eax,7Fh"
-"	      0053dde3    sub eax,[ebp-0Ch]"
-"	      0053dde6    cmp eax,[ebp+8]"
+"	      0053dde3    sub eax,Offset"
+"	      0053dde6    cmp eax,x"
 "	      0053dde9    jle near ptr 0053E0C6h"
 );
 // LINE 846:
 	asm( 
-"	      0053ddef    mov eax,[ebp-10h]"
-"	      0053ddf2    add eax,[ebp+8]"
+"	      0053ddef    mov eax,stepSize"
+"	      0053ddf2    add eax,x"
 "	      0053ddf5    js near ptr 0053DE23h"
-"	      0053ddfb    cmp dword ptr [ebp+0Ch],0"
+"	      0053ddfb    cmp y,0"
 "	      0053ddff    jl near ptr 0053DE23h"
-"	      0053de05    mov eax,[ebp-10h]"
-"	      0053de08    add eax,[ebp+8]"
+"	      0053de05    mov eax,stepSize"
+"	      0053de08    add eax,x"
 "	      0053de0b    cmp eax,80h"
 "	      0053de10    jge near ptr 0053DE23h"
-"	      0053de16    cmp dword ptr [ebp+0Ch],80h"
+"	      0053de16    cmp y,80h"
 "	      0053de1d    jl near ptr 0053DE2Eh"
 "	      0053de23    mov word ptr [ebp-1Ch],0"
 "	      0053de29    jmp near ptr 0053DE6Ch"
-"	      0053de2e    mov eax,[ebp-10h]"
-"	      0053de31    add eax,[ebp+8]"
+"	      0053de2e    mov eax,stepSize"
+"	      0053de31    add eax,x"
 "	      0053de34    mov eax,[eax*4+638F70h]"
-"	      0053de3b    mov ecx,[ebp+0Ch]"
+"	      0053de3b    mov ecx,y"
 "	      0053de3e    xor edx,edx"
 "	      0053de40    mov dl,[eax+ecx]"
 "	      0053de43    and edx,2"
 "	      0053de46    movsx eax,dx"
 "	      0053de49    shl eax,0Eh"
-"	      0053de4c    mov ecx,[ebp-10h]"
-"	      0053de4f    add ecx,[ebp+8]"
+"	      0053de4c    mov ecx,stepSize"
+"	      0053de4f    add ecx,x"
 "	      0053de52    mov ecx,[ecx*4+639850h]"
-"	      0053de59    mov edx,[ebp+0Ch]"
+"	      0053de59    mov edx,y"
 "	      0053de5c    xor ebx,ebx"
 "	      0053de5e    mov bl,[ecx+edx]"
 "	      0053de61    or eax,ebx"
@@ -3589,9 +3589,9 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 848:
 	asm( 
-"	      0053de88    mov eax,[ebp+10h]"
+"	      0053de88    mov eax,pRGV"
 "	      0053de8b    add eax,0Eh"
-"	      0053de8e    mov [ebp-8],eax"
+"	      0053de8e    mov pEdge,eax"
 );
 // LINE 849:
 	asm( 
@@ -3695,28 +3695,28 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e062    add cl,[ebx-36CC07BBh]"
 "	      0053e068    mov cx,[eax+2]"
 "	      0053e06c    add ecx,[ebp-2Ch]"
-"	      0053e06f    mov eax,[ebp-8]"
+"	      0053e06f    mov eax,pEdge"
 "	      0053e072    mov [eax+2],cx"
 );
 // LINE 850:
 	asm( 
-"	      0053e076    mov eax,[ebp+10h]"
+"	      0053e076    mov eax,pRGV"
 "	      0053e079    mov al,[eax+2]"
 "	      0053e07c    and al,0Fh"
 "	      0053e07e    xor ecx,ecx"
 "	      0053e080    mov cl,al"
 "	      0053e082    or ecx,2"
 "	      0053e085    and cl,0Fh"
-"	      0053e088    mov eax,[ebp+10h]"
+"	      0053e088    mov eax,pRGV"
 "	      0053e08b    mov al,[eax+2]"
 "	      0053e08e    and al,0F0h"
 "	      0053e090    or cl,al"
-"	      0053e092    mov eax,[ebp+10h]"
+"	      0053e092    mov eax,pRGV"
 "	      0053e095    mov [eax+2],cl"
 );
 // LINE 851:
 	asm( 
-"	      0053e098    mov eax,[ebp+10h]"
+"	      0053e098    mov eax,pRGV"
 "	      0053e09b    mov al,[eax+2]"
 "	      0053e09e    shr al,4"
 "	      0053e0a1    and al,0Fh"
@@ -3724,54 +3724,54 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e0a5    mov cl,al"
 "	      0053e0a7    and ecx,2"
 "	      0053e0aa    push ecx"
-"	      0053e0ab    mov eax,[ebp+0Ch]"
+"	      0053e0ab    mov eax,y"
 "	      0053e0ae    push eax"
-"	      0053e0af    mov eax,[ebp+8]"
+"	      0053e0af    mov eax,x"
 "	      0053e0b2    inc eax"
 "	      0053e0b3    push eax"
 "	      0053e0b4    push 1"
-"	      0053e0b6    mov eax,[ebp-8]"
+"	      0053e0b6    mov eax,pEdge"
 "	      0053e0b9    push eax"
-"	      0053e0ba    mov eax,[ebp+10h]"
+"	      0053e0ba    mov eax,pRGV"
 "	      0053e0bd    push eax"
-"	      0053e0be    mov ecx,[ebp-30h]"
+"	      0053e0be    mov ecx,this"
 "	      0053e0c1    call 0053E305h"
 );
 // LINE 855:
 	asm( 
 "	      0053e0c6    mov eax,7Fh"
-"	      0053e0cb    sub eax,[ebp-0Ch]"
-"	      0053e0ce    cmp eax,[ebp+0Ch]"
+"	      0053e0cb    sub eax,Offset"
+"	      0053e0ce    cmp eax,y"
 "	      0053e0d1    jle near ptr 0053E1E7h"
 );
 // LINE 857:
 	asm( 
-"	      0053e0d7    cmp dword ptr [ebp+8],0"
+"	      0053e0d7    cmp x,0"
 "	      0053e0db    jl near ptr 0053E10Bh"
-"	      0053e0e1    mov eax,[ebp-10h]"
-"	      0053e0e4    add eax,[ebp+0Ch]"
+"	      0053e0e1    mov eax,stepSize"
+"	      0053e0e4    add eax,y"
 "	      0053e0e7    js near ptr 0053E10Bh"
-"	      0053e0ed    cmp dword ptr [ebp+8],80h"
+"	      0053e0ed    cmp x,80h"
 "	      0053e0f4    jge near ptr 0053E10Bh"
-"	      0053e0fa    mov eax,[ebp-10h]"
-"	      0053e0fd    add eax,[ebp+0Ch]"
+"	      0053e0fa    mov eax,stepSize"
+"	      0053e0fd    add eax,y"
 "	      0053e100    cmp eax,80h"
 "	      0053e105    jl near ptr 0053E116h"
 "	      0053e10b    mov word ptr [ebp-20h],0"
 "	      0053e111    jmp near ptr 0053E154h"
-"	      0053e116    mov eax,[ebp+8]"
+"	      0053e116    mov eax,x"
 "	      0053e119    mov eax,[eax*4+638F70h]"
-"	      0053e120    mov ecx,[ebp-10h]"
-"	      0053e123    add ecx,[ebp+0Ch]"
+"	      0053e120    mov ecx,stepSize"
+"	      0053e123    add ecx,y"
 "	      0053e126    xor edx,edx"
 "	      0053e128    mov dl,[eax+ecx]"
 "	      0053e12b    and edx,2"
 "	      0053e12e    movsx eax,dx"
 "	      0053e131    shl eax,0Eh"
-"	      0053e134    mov ecx,[ebp+8]"
+"	      0053e134    mov ecx,x"
 "	      0053e137    mov ecx,[ecx*4+639850h]"
-"	      0053e13e    mov edx,[ebp-10h]"
-"	      0053e141    add edx,[ebp+0Ch]"
+"	      0053e13e    mov edx,stepSize"
+"	      0053e141    add edx,y"
 "	      0053e144    xor ebx,ebx"
 "	      0053e146    mov bl,[ecx+edx]"
 "	      0053e149    or eax,ebx"
@@ -3790,9 +3790,9 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 859:
 	asm( 
-"	      0053e170    mov eax,[ebp+10h]"
+"	      0053e170    mov eax,pRGV"
 "	      0053e173    add eax,18h"
-"	      0053e176    mov [ebp-8],eax"
+"	      0053e176    mov pEdge,eax"
 );
 // LINE 860:
 	asm( 
@@ -3800,32 +3800,32 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e17c    push eax"
 "	      0053e17d    call 00541360h"
 "	      0053e182    add esp,4"
-"	      0053e185    mov ecx,[ebp-8]"
+"	      0053e185    mov ecx,pEdge"
 "	      0053e188    xor edx,edx"
 "	      0053e18a    mov dx,[ecx+2]"
 "	      0053e18e    add eax,edx"
-"	      0053e190    mov ecx,[ebp-8]"
+"	      0053e190    mov ecx,pEdge"
 "	      0053e193    mov [ecx+2],ax"
 );
 // LINE 861:
 	asm( 
-"	      0053e197    mov eax,[ebp+10h]"
+"	      0053e197    mov eax,pRGV"
 "	      0053e19a    mov al,[eax+2]"
 "	      0053e19d    and al,0Fh"
 "	      0053e19f    xor ecx,ecx"
 "	      0053e1a1    mov cl,al"
 "	      0053e1a3    or ecx,4"
 "	      0053e1a6    and cl,0Fh"
-"	      0053e1a9    mov eax,[ebp+10h]"
+"	      0053e1a9    mov eax,pRGV"
 "	      0053e1ac    mov al,[eax+2]"
 "	      0053e1af    and al,0F0h"
 "	      0053e1b1    or cl,al"
-"	      0053e1b3    mov eax,[ebp+10h]"
+"	      0053e1b3    mov eax,pRGV"
 "	      0053e1b6    mov [eax+2],cl"
 );
 // LINE 862:
 	asm( 
-"	      0053e1b9    mov eax,[ebp+10h]"
+"	      0053e1b9    mov eax,pRGV"
 "	      0053e1bc    mov al,[eax+2]"
 "	      0053e1bf    shr al,4"
 "	      0053e1c2    and al,0Fh"
@@ -3833,51 +3833,51 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e1c6    mov cl,al"
 "	      0053e1c8    and ecx,4"
 "	      0053e1cb    push ecx"
-"	      0053e1cc    mov eax,[ebp+0Ch]"
+"	      0053e1cc    mov eax,y"
 "	      0053e1cf    inc eax"
 "	      0053e1d0    push eax"
-"	      0053e1d1    mov eax,[ebp+8]"
+"	      0053e1d1    mov eax,x"
 "	      0053e1d4    push eax"
 "	      0053e1d5    push 2"
-"	      0053e1d7    mov eax,[ebp-8]"
+"	      0053e1d7    mov eax,pEdge"
 "	      0053e1da    push eax"
-"	      0053e1db    mov eax,[ebp+10h]"
+"	      0053e1db    mov eax,pRGV"
 "	      0053e1de    push eax"
-"	      0053e1df    mov ecx,[ebp-30h]"
+"	      0053e1df    mov ecx,this"
 "	      0053e1e2    call 0053E305h"
 );
 // LINE 866:
 	asm( 
-"	      0053e1e7    mov eax,[ebp+8]"
-"	      0053e1ea    cmp [ebp-0Ch],eax"
+"	      0053e1e7    mov eax,x"
+"	      0053e1ea    cmp Offset,eax"
 "	      0053e1ed    jge near ptr 0053E2F9h"
 );
 // LINE 868:
 	asm( 
-"	      0053e1f3    mov eax,[ebp+8]"
+"	      0053e1f3    mov eax,x"
 "	      0053e1f6    dec eax"
 "	      0053e1f7    js near ptr 0053E223h"
-"	      0053e1fd    cmp dword ptr [ebp+0Ch],0"
+"	      0053e1fd    cmp y,0"
 "	      0053e201    jl near ptr 0053E223h"
-"	      0053e207    mov eax,[ebp+8]"
+"	      0053e207    mov eax,x"
 "	      0053e20a    dec eax"
 "	      0053e20b    cmp eax,80h"
 "	      0053e210    jge near ptr 0053E223h"
-"	      0053e216    cmp dword ptr [ebp+0Ch],80h"
+"	      0053e216    cmp y,80h"
 "	      0053e21d    jl near ptr 0053E22Eh"
 "	      0053e223    mov word ptr [ebp-24h],0"
 "	      0053e229    jmp near ptr 0053E266h"
-"	      0053e22e    mov eax,[ebp+8]"
+"	      0053e22e    mov eax,x"
 "	      0053e231    mov eax,[eax*4+638F6Ch]"
-"	      0053e238    mov ecx,[ebp+0Ch]"
+"	      0053e238    mov ecx,y"
 "	      0053e23b    xor edx,edx"
 "	      0053e23d    mov dl,[eax+ecx]"
 "	      0053e240    and edx,2"
 "	      0053e243    movsx eax,dx"
 "	      0053e246    shl eax,0Eh"
-"	      0053e249    mov ecx,[ebp+8]"
+"	      0053e249    mov ecx,x"
 "	      0053e24c    mov ecx,[ecx*4+63984Ch]"
-"	      0053e253    mov edx,[ebp+0Ch]"
+"	      0053e253    mov edx,y"
 "	      0053e256    xor ebx,ebx"
 "	      0053e258    mov bl,[ecx+edx]"
 "	      0053e25b    or eax,ebx"
@@ -3896,9 +3896,9 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 870:
 	asm( 
-"	      0053e282    mov eax,[ebp+10h]"
+"	      0053e282    mov eax,pRGV"
 "	      0053e285    add eax,22h"
-"	      0053e288    mov [ebp-8],eax"
+"	      0053e288    mov pEdge,eax"
 );
 // LINE 871:
 	asm( 
@@ -3906,32 +3906,32 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e28e    push eax"
 "	      0053e28f    call 00541360h"
 "	      0053e294    add esp,4"
-"	      0053e297    mov ecx,[ebp-8]"
+"	      0053e297    mov ecx,pEdge"
 "	      0053e29a    xor edx,edx"
 "	      0053e29c    mov dx,[ecx+2]"
 "	      0053e2a0    add eax,edx"
-"	      0053e2a2    mov ecx,[ebp-8]"
+"	      0053e2a2    mov ecx,pEdge"
 "	      0053e2a5    mov [ecx+2],ax"
 );
 // LINE 872:
 	asm( 
-"	      0053e2a9    mov eax,[ebp+10h]"
+"	      0053e2a9    mov eax,pRGV"
 "	      0053e2ac    mov al,[eax+2]"
 "	      0053e2af    and al,0Fh"
 "	      0053e2b1    xor ecx,ecx"
 "	      0053e2b3    mov cl,al"
 "	      0053e2b5    or ecx,8"
 "	      0053e2b8    and cl,0Fh"
-"	      0053e2bb    mov eax,[ebp+10h]"
+"	      0053e2bb    mov eax,pRGV"
 "	      0053e2be    mov al,[eax+2]"
 "	      0053e2c1    and al,0F0h"
 "	      0053e2c3    or cl,al"
-"	      0053e2c5    mov eax,[ebp+10h]"
+"	      0053e2c5    mov eax,pRGV"
 "	      0053e2c8    mov [eax+2],cl"
 );
 // LINE 873:
 	asm( 
-"	      0053e2cb    mov eax,[ebp+10h]"
+"	      0053e2cb    mov eax,pRGV"
 "	      0053e2ce    mov al,[eax+2]"
 "	      0053e2d1    shr al,4"
 "	      0053e2d4    and al,0Fh"
@@ -3939,17 +3939,17 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e2d8    mov cl,al"
 "	      0053e2da    and ecx,8"
 "	      0053e2dd    push ecx"
-"	      0053e2de    mov eax,[ebp+0Ch]"
+"	      0053e2de    mov eax,y"
 "	      0053e2e1    push eax"
-"	      0053e2e2    mov eax,[ebp+8]"
+"	      0053e2e2    mov eax,x"
 "	      0053e2e5    dec eax"
 "	      0053e2e6    push eax"
 "	      0053e2e7    push 3"
-"	      0053e2e9    mov eax,[ebp-8]"
+"	      0053e2e9    mov eax,pEdge"
 "	      0053e2ec    push eax"
-"	      0053e2ed    mov eax,[ebp+10h]"
+"	      0053e2ed    mov eax,pRGV"
 "	      0053e2f0    push eax"
-"	      0053e2f1    mov ecx,[ebp-30h]"
+"	      0053e2f1    mov ecx,this"
 "	      0053e2f4    call 0053E305h"
 );
 // LINE 876:
@@ -3979,24 +3979,24 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e30b    push ebx"
 "	      0053e30c    push esi"
 "	      0053e30d    push edi"
-"	      0053e30e    mov [ebp-24h],ecx"
+"	      0053e30e    mov this,ecx"
 );
 // LINE 881:
 	asm( 
-"	      0053e311    mov dword ptr [ebp-10h],0"
+"	      0053e311    mov repeatCount,0"
 );
 // LINE 884:
 	asm( 
-"	      0053e318    mov eax,[ebp+10h]"
-"	      0053e31b    mov [ebp-4],eax"
+"	      0053e318    mov eax,currentDir"
+"	      0053e31b    mov startingDir,eax"
 );
 // LINE 887:
 	asm( 
 "	      0053e31e    xor eax,eax"
-"	      0053e320    mov al,[ebp+18h]"
+"	      0053e320    mov al,y"
 "	      0053e323    push eax"
 "	      0053e324    xor eax,eax"
-"	      0053e326    mov al,[ebp+14h]"
+"	      0053e326    mov al,x"
 "	      0053e329    push eax"
 "	      0053e32a    call 00539260h"
 "	      0053e32f    add esp,8"
@@ -4006,25 +4006,25 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 // LINE 889:
 	asm( 
 "	      0053e33a    xor eax,eax"
-"	      0053e33c    mov al,[ebp+18h]"
+"	      0053e33c    mov al,y"
 "	      0053e33f    push eax"
 "	      0053e340    xor eax,eax"
-"	      0053e342    mov al,[ebp+14h]"
+"	      0053e342    mov al,x"
 "	      0053e345    push eax"
-"	      0053e346    mov ecx,[ebp-24h]"
+"	      0053e346    mov ecx,this"
 "	      0053e349    call 0053D167h"
-"	      0053e34e    mov ecx,[ebp+0Ch]"
+"	      0053e34e    mov ecx,pEdge"
 "	      0053e351    mov [ecx],al"
 );
 // LINE 890:
 	asm( 
-"	      0053e353    mov al,[ebp+14h]"
-"	      0053e356    mov ecx,[ebp+0Ch]"
+"	      0053e353    mov al,x"
+"	      0053e356    mov ecx,pEdge"
 "	      0053e359    mov [ecx+1],al"
 );
 // LINE 891:
 	asm( 
-"	      0053e35c    mov eax,[ebp+0Ch]"
+"	      0053e35c    mov eax,pEdge"
 "	      0053e35f    mov word ptr [eax+4],0"
 );
 // LINE 892:
@@ -4033,12 +4033,12 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 895:
 	asm( 
-"	      0053e36a    cmp dword ptr [ebp+1Ch],0"
+"	      0053e36a    cmp fDeadEnd,0"
 "	      0053e36e    je near ptr 0053E37Bh"
 );
 // LINE 896:
 	asm( 
-"	      0053e374    mov eax,[ebp+0Ch]"
+"	      0053e374    mov eax,pEdge"
 "	      0053e377    inc word ptr [eax+4]"
 );
 // LINE 900:
@@ -4047,17 +4047,17 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e37e    push eax"
 "	      0053e37f    mov eax,[ebp+14h]"
 "	      0053e382    push eax"
-"	      0053e383    lea eax,[ebp-8]"
+"	      0053e383    lea eax,returnDir"
 "	      0053e386    push eax"
-"	      0053e387    mov eax,[ebp+10h]"
+"	      0053e387    mov eax,currentDir"
 "	      0053e38a    push eax"
-"	      0053e38b    mov ecx,[ebp-24h]"
+"	      0053e38b    mov ecx,this"
 "	      0053e38e    call 0053E8B0h"
-"	      0053e393    mov [ebp-0Ch],eax"
+"	      0053e393    mov returnStatus,eax"
 );
 // LINE 901:
 	asm( 
-"	      0053e396    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      0053e396    cmp returnStatus,0FFFFFFFFh"
 "	      0053e39a    jne near ptr 0053E3A5h"
 );
 // LINE 902:
@@ -4066,7 +4066,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 904:
 	asm( 
-"	      0053e3a5    cmp dword ptr [ebp-0Ch],0FFFFFFFEh"
+"	      0053e3a5    cmp returnStatus,0FFFFFFFEh"
 "	      0053e3a9    jne near ptr 0053E3B4h"
 );
 // LINE 905:
@@ -4075,13 +4075,13 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 907:
 	asm( 
-"	      0053e3b4    mov eax,[ebp+10h]"
-"	      0053e3b7    cmp [ebp-8],eax"
+"	      0053e3b4    mov eax,currentDir"
+"	      0053e3b7    cmp returnDir,eax"
 "	      0053e3ba    jne near ptr 0053E3C8h"
 );
 // LINE 909:
 	asm( 
-"	      0053e3c0    inc dword ptr [ebp-10h]"
+"	      0053e3c0    inc repeatCount"
 );
 // LINE 911:
 	asm( 
@@ -4089,47 +4089,47 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 913:
 	asm( 
-"	      0053e3c8    mov dword ptr [ebp-10h],0"
+"	      0053e3c8    mov repeatCount,0"
 );
 // LINE 914:
 	asm( 
-"	      0053e3cf    mov eax,[ebp-8]"
-"	      0053e3d2    mov [ebp+10h],eax"
+"	      0053e3cf    mov eax,returnDir"
+"	      0053e3d2    mov currentDir,eax"
 );
 // LINE 918:
 	asm( 
-"	      0053e3d5    cmp dword ptr [ebp+1Ch],0"
+"	      0053e3d5    cmp fDeadEnd,0"
 "	      0053e3d9    je near ptr 0053E3E6h"
 );
 // LINE 920:
 	asm( 
-"	      0053e3df    mov eax,[ebp+0Ch]"
+"	      0053e3df    mov eax,pEdge"
 "	      0053e3e2    inc word ptr [eax+4]"
 );
 // LINE 924:
 	asm( 
-"	      0053e3e6    mov eax,[ebp-8]"
+"	      0053e3e6    mov eax,returnDir"
 "	      0053e3e9    mov [ebp-28h],eax"
 "	      0053e3ec    jmp near ptr 0053E416h"
 );
 // LINE 926:
 	asm( 
-"	      0053e3f1    dec byte ptr [ebp+18h]"
+"	      0053e3f1    dec y"
 "	      0053e3f4    jmp near ptr 0053E43Ah"
 );
 // LINE 927:
 	asm( 
-"	      0053e3f9    inc byte ptr [ebp+14h]"
+"	      0053e3f9    inc x"
 "	      0053e3fc    jmp near ptr 0053E43Ah"
 );
 // LINE 928:
 	asm( 
-"	      0053e401    inc byte ptr [ebp+18h]"
+"	      0053e401    inc y"
 "	      0053e404    jmp near ptr 0053E43Ah"
 );
 // LINE 929:
 	asm( 
-"	      0053e409    dec byte ptr [ebp+14h]"
+"	      0053e409    dec x"
 "	      0053e40c    jmp near ptr 0053E43Ah"
 );
 // LINE 930:
@@ -4155,7 +4155,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 936:
 	asm( 
-"	      0053e43f    cmp dword ptr [ebp-0Ch],0FFFFFFFEh"
+"	      0053e43f    cmp returnStatus,0FFFFFFFEh"
 "	      0053e443    jne near ptr 0053E4D0h"
 );
 // LINE 940:
@@ -4163,38 +4163,38 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	unsigned char tempy;
 	unsigned char tempx;
 	asm( 
-"	      0053e449    mov al,[ebp+14h]"
-"	      0053e44c    mov [ebp-14h],al"
+"	      0053e449    mov al,x"
+"	      0053e44c    mov tempx,al"
 );
 // LINE 941:
 	asm( 
-"	      0053e44f    mov al,[ebp+18h]"
-"	      0053e452    mov [ebp-18h],al"
+"	      0053e44f    mov al,y"
+"	      0053e452    mov tempy,al"
 );
 // LINE 943:
 	asm( 
-"	      0053e455    mov eax,[ebp-8]"
+"	      0053e455    mov eax,returnDir"
 "	      0053e458    mov [ebp-2Ch],eax"
 "	      0053e45b    jmp near ptr 0053E485h"
 );
 // LINE 945:
 	asm( 
-"	      0053e460    dec byte ptr [ebp-18h]"
+"	      0053e460    dec tempy"
 "	      0053e463    jmp near ptr 0053E4A9h"
 );
 // LINE 946:
 	asm( 
-"	      0053e468    inc byte ptr [ebp-14h]"
+"	      0053e468    inc tempx"
 "	      0053e46b    jmp near ptr 0053E4A9h"
 );
 // LINE 947:
 	asm( 
-"	      0053e470    inc byte ptr [ebp-18h]"
+"	      0053e470    inc tempy"
 "	      0053e473    jmp near ptr 0053E4A9h"
 );
 // LINE 948:
 	asm( 
-"	      0053e478    dec byte ptr [ebp-14h]"
+"	      0053e478    dec tempx"
 "	      0053e47b    jmp near ptr 0053E4A9h"
 );
 // LINE 949:
@@ -4217,102 +4217,102 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 // LINE 951:
 	asm( 
 "	      0053e4a9    xor eax,eax"
-"	      0053e4ab    mov al,[ebp-18h]"
+"	      0053e4ab    mov al,tempy"
 "	      0053e4ae    push eax"
 "	      0053e4af    xor eax,eax"
-"	      0053e4b1    mov al,[ebp-14h]"
+"	      0053e4b1    mov al,tempx"
 "	      0053e4b4    push eax"
-"	      0053e4b5    mov ecx,[ebp-24h]"
+"	      0053e4b5    mov ecx,this"
 "	      0053e4b8    call 0053D167h"
-"	      0053e4bd    mov ecx,[ebp+0Ch]"
+"	      0053e4bd    mov ecx,pEdge"
 "	      0053e4c0    mov [ecx],al"
 );
 // LINE 952:
 	asm( 
-"	      0053e4c2    mov al,[ebp-14h]"
-"	      0053e4c5    mov ecx,[ebp+0Ch]"
+"	      0053e4c2    mov al,tempx"
+"	      0053e4c5    mov ecx,pEdge"
 "	      0053e4c8    mov [ecx+1],al"
 );
 // LINE 954:
 // Block end:
 	asm( 
 "	      0053e4cb    jmp near ptr 0053E503h"
-"	      0053e4d0    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      0053e4d0    cmp returnStatus,0FFFFFFFFh"
 "	      0053e4d4    jne near ptr 0053E503h"
 );
 // LINE 956:
 	asm( 
-"	      0053e4da    mov eax,[ebp+8]"
+"	      0053e4da    mov eax,pRGV"
 "	      0053e4dd    mov al,[eax]"
-"	      0053e4df    mov ecx,[ebp+0Ch]"
+"	      0053e4df    mov ecx,pEdge"
 "	      0053e4e2    mov [ecx+1],al"
 );
 // LINE 957:
 	asm( 
-"	      0053e4e5    mov eax,[ebp+8]"
+"	      0053e4e5    mov eax,pRGV"
 "	      0053e4e8    xor ecx,ecx"
 "	      0053e4ea    mov cl,[eax+1]"
 "	      0053e4ed    push ecx"
-"	      0053e4ee    mov eax,[ebp+8]"
+"	      0053e4ee    mov eax,pRGV"
 "	      0053e4f1    xor ecx,ecx"
 "	      0053e4f3    mov cl,[eax]"
 "	      0053e4f5    push ecx"
-"	      0053e4f6    mov ecx,[ebp-24h]"
+"	      0053e4f6    mov ecx,this"
 "	      0053e4f9    call 0053D167h"
-"	      0053e4fe    mov ecx,[ebp+0Ch]"
+"	      0053e4fe    mov ecx,pEdge"
 "	      0053e501    mov [ecx],al"
 );
 // LINE 962:
 	asm( 
-"	      0053e503    mov eax,[ebp-8]"
+"	      0053e503    mov eax,returnDir"
 "	      0053e506    sub eax,2"
 "	      0053e509    and eax,3"
-"	      0053e50c    mov [ebp+10h],eax"
+"	      0053e50c    mov currentDir,eax"
 );
 // LINE 963:
 	asm( 
-"	      0053e50f    mov eax,[ebp+0Ch]"
+"	      0053e50f    mov eax,pEdge"
 "	      0053e512    inc word ptr [eax+4]"
 );
 // LINE 965:
 	asm( 
-"	      0053e516    mov dword ptr [ebp-10h],0"
+"	      0053e516    mov repeatCount,0"
 );
 // LINE 969:
 	asm( 
 "	      0053e51d    xor eax,eax"
-"	      0053e51f    mov al,[ebp+14h]"
+"	      0053e51f    mov al,x"
 "	      0053e522    test eax,eax"
 "	      0053e524    jl near ptr 0053E557h"
 "	      0053e52a    xor eax,eax"
-"	      0053e52c    mov al,[ebp+18h]"
+"	      0053e52c    mov al,y"
 "	      0053e52f    test eax,eax"
 "	      0053e531    jl near ptr 0053E557h"
 "	      0053e537    xor eax,eax"
-"	      0053e539    mov al,[ebp+14h]"
+"	      0053e539    mov al,x"
 "	      0053e53c    cmp eax,80h"
 "	      0053e541    jge near ptr 0053E557h"
 "	      0053e547    xor eax,eax"
-"	      0053e549    mov al,[ebp+18h]"
+"	      0053e549    mov al,y"
 "	      0053e54c    cmp eax,80h"
 "	      0053e551    jl near ptr 0053E562h"
 "	      0053e557    mov word ptr [ebp-1Ch],0"
 "	      0053e55d    jmp near ptr 0053E5A2h"
 "	      0053e562    xor eax,eax"
-"	      0053e564    mov al,[ebp+14h]"
+"	      0053e564    mov al,x"
 "	      0053e567    mov eax,[eax*4+638F70h]"
 "	      0053e56e    xor ecx,ecx"
-"	      0053e570    mov cl,[ebp+18h]"
+"	      0053e570    mov cl,y"
 "	      0053e573    xor edx,edx"
 "	      0053e575    mov dl,[eax+ecx]"
 "	      0053e578    and edx,2"
 "	      0053e57b    movsx eax,dx"
 "	      0053e57e    shl eax,0Eh"
 "	      0053e581    xor ecx,ecx"
-"	      0053e583    mov cl,[ebp+14h]"
+"	      0053e583    mov cl,x"
 "	      0053e586    mov ecx,[ecx*4+639850h]"
 "	      0053e58d    xor edx,edx"
-"	      0053e58f    mov dl,[ebp+18h]"
+"	      0053e58f    mov dl,y"
 "	      0053e592    xor ebx,ebx"
 "	      0053e594    mov bl,[ecx+edx]"
 "	      0053e597    or eax,ebx"
@@ -4418,16 +4418,16 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e76e    add eax,[ebx]"
 "	      0053e770    add eax,[ebx]"
 "	      0053e772    add al,[edx]"
-"	      0053e774    mov eax,[ebp+0Ch]"
+"	      0053e774    mov eax,pEdge"
 "	      0053e777    xor ecx,ecx"
 "	      0053e779    mov cx,[eax+2]"
 "	      0053e77d    add ecx,[ebp-20h]"
-"	      0053e780    mov eax,[ebp+0Ch]"
+"	      0053e780    mov eax,pEdge"
 "	      0053e783    mov [eax+2],cx"
 );
 // LINE 970:
 	asm( 
-"	      0053e787    mov eax,[ebp+0Ch]"
+"	      0053e787    mov eax,pEdge"
 "	      0053e78a    xor ecx,ecx"
 "	      0053e78c    mov cx,[eax+2]"
 "	      0053e790    cmp ecx,7D00h"
@@ -4446,17 +4446,17 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e7c0    push eax"
 "	      0053e7c1    mov eax,[ebp+14h]"
 "	      0053e7c4    push eax"
-"	      0053e7c5    lea eax,[ebp-8]"
+"	      0053e7c5    lea eax,returnDir"
 "	      0053e7c8    push eax"
-"	      0053e7c9    mov eax,[ebp+10h]"
+"	      0053e7c9    mov eax,currentDir"
 "	      0053e7cc    push eax"
-"	      0053e7cd    mov ecx,[ebp-24h]"
+"	      0053e7cd    mov ecx,this"
 "	      0053e7d0    call 0053E8B0h"
-"	      0053e7d5    mov [ebp-0Ch],eax"
+"	      0053e7d5    mov returnStatus,eax"
 );
 // LINE 973:
 	asm( 
-"	      0053e7d8    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"
+"	      0053e7d8    cmp returnStatus,0FFFFFFFFh"
 "	      0053e7dc    jne near ptr 0053E7E7h"
 );
 // LINE 974:
@@ -4465,7 +4465,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 977:
 	asm( 
-"	      0053e7e7    cmp dword ptr [ebp-0Ch],0FFFFFFFEh"
+"	      0053e7e7    cmp returnStatus,0FFFFFFFEh"
 "	      0053e7eb    jne near ptr 0053E7F6h"
 );
 // LINE 978:
@@ -4474,13 +4474,13 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 980:
 	asm( 
-"	      0053e7f6    mov eax,[ebp+10h]"
-"	      0053e7f9    cmp [ebp-8],eax"
+"	      0053e7f6    mov eax,currentDir"
+"	      0053e7f9    cmp returnDir,eax"
 "	      0053e7fc    jne near ptr 0053E80Ah"
 );
 // LINE 982:
 	asm( 
-"	      0053e802    inc dword ptr [ebp-10h]"
+"	      0053e802    inc repeatCount"
 );
 // LINE 984:
 	asm( 
@@ -4488,42 +4488,42 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 986:
 	asm( 
-"	      0053e80a    mov dword ptr [ebp-10h],0"
+"	      0053e80a    mov repeatCount,0"
 );
 // LINE 987:
 	asm( 
-"	      0053e811    mov eax,[ebp-8]"
-"	      0053e814    mov [ebp+10h],eax"
+"	      0053e811    mov eax,returnDir"
+"	      0053e814    mov currentDir,eax"
 );
 // LINE 988:
 	asm( 
-"	      0053e817    mov eax,[ebp+0Ch]"
+"	      0053e817    mov eax,pEdge"
 "	      0053e81a    inc word ptr [eax+4]"
 );
 // LINE 991:
 	asm( 
-"	      0053e81e    mov eax,[ebp+10h]"
+"	      0053e81e    mov eax,currentDir"
 "	      0053e821    mov [ebp-34h],eax"
 "	      0053e824    jmp near ptr 0053E84Eh"
 );
 // LINE 993:
 	asm( 
-"	      0053e829    dec byte ptr [ebp+18h]"
+"	      0053e829    dec y"
 "	      0053e82c    jmp near ptr 0053E872h"
 );
 // LINE 994:
 	asm( 
-"	      0053e831    inc byte ptr [ebp+14h]"
+"	      0053e831    inc x"
 "	      0053e834    jmp near ptr 0053E872h"
 );
 // LINE 995:
 	asm( 
-"	      0053e839    inc byte ptr [ebp+18h]"
+"	      0053e839    inc y"
 "	      0053e83c    jmp near ptr 0053E872h"
 );
 // LINE 996:
 	asm( 
-"	      0053e841    dec byte ptr [ebp+14h]"
+"	      0053e841    dec x"
 "	      0053e844    jmp near ptr 0053E872h"
 );
 // LINE 997:
@@ -4548,19 +4548,19 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 1007:
 	asm( 
-"	      0053e877    cmp dword ptr [ebp+1Ch],0"
+"	      0053e877    cmp fDeadEnd,0"
 "	      0053e87b    je near ptr 0053E8A4h"
-"	      0053e881    mov eax,[ebp+0Ch]"
+"	      0053e881    mov eax,pEdge"
 "	      0053e884    xor ecx,ecx"
 "	      0053e886    mov cx,[eax+4]"
 "	      0053e88a    cmp ecx,2"
 "	      0053e88d    jne near ptr 0053E8A4h"
-"	      0053e893    cmp dword ptr [ebp-10h],0"
+"	      0053e893    cmp repeatCount,0"
 "	      0053e897    jne near ptr 0053E8A4h"
 );
 // LINE 1008:
 	asm( 
-"	      0053e89d    mov eax,[ebp+0Ch]"
+"	      0053e89d    mov eax,pEdge"
 "	      0053e8a0    dec word ptr [eax+4]"
 );
 // LINE 1009:
@@ -4588,56 +4588,56 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 "	      0053e8b6    push ebx"
 "	      0053e8b7    push esi"
 "	      0053e8b8    push edi"
-"	      0053e8b9    mov [ebp-24h],ecx"
+"	      0053e8b9    mov this,ecx"
 );
 // LINE 1014:
 	asm( 
 "	      0053e8bc    xor eax,eax"
-"	      0053e8be    mov al,[ebp+10h]"
+"	      0053e8be    mov al,x"
 "	      0053e8c1    test eax,eax"
 "	      0053e8c3    jl near ptr 0053E8F6h"
 "	      0053e8c9    xor eax,eax"
-"	      0053e8cb    mov al,[ebp+14h]"
+"	      0053e8cb    mov al,y"
 "	      0053e8ce    test eax,eax"
 "	      0053e8d0    jl near ptr 0053E8F6h"
 "	      0053e8d6    xor eax,eax"
-"	      0053e8d8    mov al,[ebp+10h]"
+"	      0053e8d8    mov al,x"
 "	      0053e8db    cmp eax,80h"
 "	      0053e8e0    jge near ptr 0053E8F6h"
 "	      0053e8e6    xor eax,eax"
-"	      0053e8e8    mov al,[ebp+14h]"
+"	      0053e8e8    mov al,y"
 "	      0053e8eb    cmp eax,80h"
 "	      0053e8f0    jl near ptr 0053E901h"
-"	      0053e8f6    mov word ptr [ebp-4],0"
+"	      0053e8f6    mov LocalTile,0"
 "	      0053e8fc    jmp near ptr 0053E941h"
 "	      0053e901    xor eax,eax"
-"	      0053e903    mov al,[ebp+10h]"
+"	      0053e903    mov al,x"
 "	      0053e906    mov eax,[eax*4+638F70h]"
 "	      0053e90d    xor ecx,ecx"
-"	      0053e90f    mov cl,[ebp+14h]"
+"	      0053e90f    mov cl,y"
 "	      0053e912    xor edx,edx"
 "	      0053e914    mov dl,[eax+ecx]"
 "	      0053e917    and edx,2"
 "	      0053e91a    movsx eax,dx"
 "	      0053e91d    shl eax,0Eh"
 "	      0053e920    xor ecx,ecx"
-"	      0053e922    mov cl,[ebp+10h]"
+"	      0053e922    mov cl,x"
 "	      0053e925    mov ecx,[ecx*4+639850h]"
 "	      0053e92c    xor edx,edx"
-"	      0053e92e    mov dl,[ebp+14h]"
+"	      0053e92e    mov dl,y"
 "	      0053e931    xor ebx,ebx"
 "	      0053e933    mov bl,[ecx+edx]"
 "	      0053e936    or eax,ebx"
-"	      0053e938    mov [ebp-4],ax"
+"	      0053e938    mov LocalTile,ax"
 "	      0053e93c    jmp near ptr 0053E941h"
 );
 // LINE 1021:
 	asm( 
 "	      0053e941    xor eax,eax"
-"	      0053e943    mov al,[ebp+10h]"
+"	      0053e943    mov al,x"
 "	      0053e946    mov eax,[eax*4+639510h]"
 "	      0053e94d    xor ecx,ecx"
-"	      0053e94f    mov cl,[ebp+14h]"
+"	      0053e94f    mov cl,y"
 "	      0053e952    xor edx,edx"
 "	      0053e954    mov dx,[eax+ecx*2]"
 "	      0053e958    shr edx,0Ah"
@@ -4646,13 +4646,13 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1023:
 	asm( 
-"	      0053e964    mov eax,[ebp+8]"
-"	      0053e967    mov ecx,[ebp+0Ch]"
+"	      0053e964    mov eax,currentDir"
+"	      0053e967    mov ecx,pNextDir"
 "	      0053e96a    mov [ecx],eax"
 );
 // LINE 1024:
 	asm( 
-"	      0053e96c    mov eax,[ebp+8]"
+"	      0053e96c    mov eax,currentDir"
 "	      0053e96f    jmp near ptr 0053EECFh"
 );
 // LINE 1029:
@@ -4680,25 +4680,25 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1031:
 	asm( 
-"	      0053e9da    mov dword ptr [ebp-0Ch],2"
+"	      0053e9da    mov stepSize,2"
 );
 // LINE 1032:
 	asm( 
-"	      0053e9e1    mov dword ptr [ebp-8],1"
+"	      0053e9e1    mov Offset,1"
 );
 // LINE 1033:
 	asm( 
 "	      0053e9e8    xor eax,eax"
-"	      0053e9ea    mov al,[ebp+10h]"
+"	      0053e9ea    mov al,x"
 "	      0053e9ed    and al,0FEh"
-"	      0053e9ef    mov [ebp+10h],al"
+"	      0053e9ef    mov x,al"
 );
 // LINE 1034:
 	asm( 
 "	      0053e9f2    xor eax,eax"
-"	      0053e9f4    mov al,[ebp+14h]"
+"	      0053e9f4    mov al,y"
 "	      0053e9f7    and al,0FEh"
-"	      0053e9f9    mov [ebp+14h],al"
+"	      0053e9f9    mov y,al"
 );
 // LINE 1036:
 	asm( 
@@ -4706,105 +4706,105 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1038:
 	asm( 
-"	      0053ea01    mov dword ptr [ebp-0Ch],1"
+"	      0053ea01    mov stepSize,1"
 );
 // LINE 1039:
 	asm( 
-"	      0053ea08    mov dword ptr [ebp-8],0"
+"	      0053ea08    mov Offset,0"
 );
 // LINE 1043:
 	asm( 
 "	      0053ea0f    xor eax,eax"
-"	      0053ea11    mov al,[ebp+10h]"
+"	      0053ea11    mov al,x"
 "	      0053ea14    test eax,eax"
 "	      0053ea16    jl near ptr 0053EA49h"
 "	      0053ea1c    xor eax,eax"
-"	      0053ea1e    mov al,[ebp+14h]"
+"	      0053ea1e    mov al,y"
 "	      0053ea21    test eax,eax"
 "	      0053ea23    jl near ptr 0053EA49h"
 "	      0053ea29    xor eax,eax"
-"	      0053ea2b    mov al,[ebp+10h]"
+"	      0053ea2b    mov al,x"
 "	      0053ea2e    cmp eax,80h"
 "	      0053ea33    jge near ptr 0053EA49h"
 "	      0053ea39    xor eax,eax"
-"	      0053ea3b    mov al,[ebp+14h]"
+"	      0053ea3b    mov al,y"
 "	      0053ea3e    cmp eax,80h"
 "	      0053ea43    jl near ptr 0053EA54h"
-"	      0053ea49    mov word ptr [ebp-4],0"
+"	      0053ea49    mov LocalTile,0"
 "	      0053ea4f    jmp near ptr 0053EA94h"
 "	      0053ea54    xor eax,eax"
-"	      0053ea56    mov al,[ebp+10h]"
+"	      0053ea56    mov al,x"
 "	      0053ea59    mov eax,[eax*4+638F70h]"
 "	      0053ea60    xor ecx,ecx"
-"	      0053ea62    mov cl,[ebp+14h]"
+"	      0053ea62    mov cl,y"
 "	      0053ea65    xor edx,edx"
 "	      0053ea67    mov dl,[eax+ecx]"
 "	      0053ea6a    and edx,2"
 "	      0053ea6d    movsx eax,dx"
 "	      0053ea70    shl eax,0Eh"
 "	      0053ea73    xor ecx,ecx"
-"	      0053ea75    mov cl,[ebp+10h]"
+"	      0053ea75    mov cl,x"
 "	      0053ea78    mov ecx,[ecx*4+639850h]"
 "	      0053ea7f    xor edx,edx"
-"	      0053ea81    mov dl,[ebp+14h]"
+"	      0053ea81    mov dl,y"
 "	      0053ea84    xor ebx,ebx"
 "	      0053ea86    mov bl,[ecx+edx]"
 "	      0053ea89    or eax,ebx"
-"	      0053ea8b    mov [ebp-4],ax"
+"	      0053ea8b    mov LocalTile,ax"
 "	      0053ea8f    jmp near ptr 0053EA94h"
 );
 // LINE 1047:
 	asm( 
-"	      0053ea94    cmp dword ptr [ebp+8],2"
+"	      0053ea94    cmp currentDir,2"
 "	      0053ea98    je near ptr 0053EB94h"
 "	      0053ea9e    xor eax,eax"
-"	      0053eaa0    mov al,[ebp+14h]"
-"	      0053eaa3    cmp eax,[ebp-8]"
+"	      0053eaa0    mov al,y"
+"	      0053eaa3    cmp eax,Offset"
 "	      0053eaa6    jl near ptr 0053EB94h"
 );
 // LINE 1048:
 	asm( 
 "	      0053eaac    xor eax,eax"
-"	      0053eaae    mov al,[ebp+10h]"
+"	      0053eaae    mov al,x"
 "	      0053eab1    test eax,eax"
 "	      0053eab3    jl near ptr 0053EAE6h"
 "	      0053eab9    xor eax,eax"
-"	      0053eabb    mov al,[ebp+14h]"
+"	      0053eabb    mov al,y"
 "	      0053eabe    dec eax"
 "	      0053eabf    js near ptr 0053EAE6h"
 "	      0053eac5    xor eax,eax"
-"	      0053eac7    mov al,[ebp+10h]"
+"	      0053eac7    mov al,x"
 "	      0053eaca    cmp eax,80h"
 "	      0053eacf    jge near ptr 0053EAE6h"
 "	      0053ead5    xor eax,eax"
-"	      0053ead7    mov al,[ebp+14h]"
+"	      0053ead7    mov al,y"
 "	      0053eada    dec eax"
 "	      0053eadb    cmp eax,80h"
 "	      0053eae0    jl near ptr 0053EAF1h"
 "	      0053eae6    mov word ptr [ebp-14h],0"
 "	      0053eaec    jmp near ptr 0053EB33h"
 "	      0053eaf1    xor eax,eax"
-"	      0053eaf3    mov al,[ebp+10h]"
+"	      0053eaf3    mov al,x"
 "	      0053eaf6    mov eax,[eax*4+638F70h]"
 "	      0053eafd    xor ecx,ecx"
-"	      0053eaff    mov cl,[ebp+14h]"
+"	      0053eaff    mov cl,y"
 "	      0053eb02    xor edx,edx"
 "	      0053eb04    mov dl,[eax+ecx-1]"
 "	      0053eb08    and edx,2"
 "	      0053eb0b    movsx eax,dx"
 "	      0053eb0e    shl eax,0Eh"
 "	      0053eb11    xor ecx,ecx"
-"	      0053eb13    mov cl,[ebp+10h]"
+"	      0053eb13    mov cl,x"
 "	      0053eb16    mov ecx,[ecx*4+639850h]"
 "	      0053eb1d    xor edx,edx"
-"	      0053eb1f    mov dl,[ebp+14h]"
+"	      0053eb1f    mov dl,y"
 "	      0053eb22    xor ebx,ebx"
 "	      0053eb24    mov bl,[ecx+edx-1]"
 "	      0053eb28    or eax,ebx"
 "	      0053eb2a    mov [ebp-14h],ax"
 "	      0053eb2e    jmp near ptr 0053EB33h"
 "	      0053eb33    push 1"
-"	      0053eb35    mov eax,[ebp+8]"
+"	      0053eb35    mov eax,currentDir"
 "	      0053eb38    mov eax,[eax*4+593430h]"
 "	      0053eb3f    push eax"
 "	      0053eb40    mov eax,[ebp-14h]"
@@ -4818,17 +4818,17 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1050:
 	asm( 
-"	      0053eb58    mov eax,[ebp+0Ch]"
+"	      0053eb58    mov eax,pNextDir"
 "	      0053eb5b    mov dword ptr [eax],0"
 );
 // LINE 1051:
 	asm( 
 "	      0053eb61    xor eax,eax"
-"	      0053eb63    mov al,[ebp+14h]"
+"	      0053eb63    mov al,y"
 "	      0053eb66    dec eax"
 "	      0053eb67    push eax"
 "	      0053eb68    xor eax,eax"
-"	      0053eb6a    mov al,[ebp+10h]"
+"	      0053eb6a    mov al,x"
 "	      0053eb6d    push eax"
 "	      0053eb6e    call 00539260h"
 "	      0053eb73    add esp,8"
@@ -4851,60 +4851,60 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1057:
 	asm( 
-"	      0053eb94    cmp dword ptr [ebp+8],3"
+"	      0053eb94    cmp currentDir,3"
 "	      0053eb98    je near ptr 0053ECA8h"
 "	      0053eb9e    xor eax,eax"
-"	      0053eba0    mov al,[ebp+10h]"
+"	      0053eba0    mov al,x"
 "	      0053eba3    mov ecx,7Fh"
-"	      0053eba8    sub ecx,[ebp-8]"
+"	      0053eba8    sub ecx,Offset"
 "	      0053ebab    cmp eax,ecx"
 "	      0053ebad    jg near ptr 0053ECA8h"
 );
 // LINE 1058:
 	asm( 
 "	      0053ebb3    xor eax,eax"
-"	      0053ebb5    mov al,[ebp+10h]"
-"	      0053ebb8    add eax,[ebp-0Ch]"
+"	      0053ebb5    mov al,x"
+"	      0053ebb8    add eax,stepSize"
 "	      0053ebbb    js near ptr 0053EBF1h"
 "	      0053ebc1    xor eax,eax"
-"	      0053ebc3    mov al,[ebp+14h]"
+"	      0053ebc3    mov al,y"
 "	      0053ebc6    test eax,eax"
 "	      0053ebc8    jl near ptr 0053EBF1h"
 "	      0053ebce    xor eax,eax"
-"	      0053ebd0    mov al,[ebp+10h]"
-"	      0053ebd3    add eax,[ebp-0Ch]"
+"	      0053ebd0    mov al,x"
+"	      0053ebd3    add eax,stepSize"
 "	      0053ebd6    cmp eax,80h"
 "	      0053ebdb    jge near ptr 0053EBF1h"
 "	      0053ebe1    xor eax,eax"
-"	      0053ebe3    mov al,[ebp+14h]"
+"	      0053ebe3    mov al,y"
 "	      0053ebe6    cmp eax,80h"
 "	      0053ebeb    jl near ptr 0053EBFCh"
 "	      0053ebf1    mov word ptr [ebp-18h],0"
 "	      0053ebf7    jmp near ptr 0053EC42h"
 "	      0053ebfc    xor eax,eax"
-"	      0053ebfe    mov al,[ebp+10h]"
-"	      0053ec01    add eax,[ebp-0Ch]"
+"	      0053ebfe    mov al,x"
+"	      0053ec01    add eax,stepSize"
 "	      0053ec04    mov eax,[eax*4+638F70h]"
 "	      0053ec0b    xor ecx,ecx"
-"	      0053ec0d    mov cl,[ebp+14h]"
+"	      0053ec0d    mov cl,y"
 "	      0053ec10    xor edx,edx"
 "	      0053ec12    mov dl,[eax+ecx]"
 "	      0053ec15    and edx,2"
 "	      0053ec18    movsx eax,dx"
 "	      0053ec1b    shl eax,0Eh"
 "	      0053ec1e    xor ecx,ecx"
-"	      0053ec20    mov cl,[ebp+10h]"
-"	      0053ec23    add ecx,[ebp-0Ch]"
+"	      0053ec20    mov cl,x"
+"	      0053ec23    add ecx,stepSize"
 "	      0053ec26    mov ecx,[ecx*4+639850h]"
 "	      0053ec2d    xor edx,edx"
-"	      0053ec2f    mov dl,[ebp+14h]"
+"	      0053ec2f    mov dl,y"
 "	      0053ec32    xor ebx,ebx"
 "	      0053ec34    mov bl,[ecx+edx]"
 "	      0053ec37    or eax,ebx"
 "	      0053ec39    mov [ebp-18h],ax"
 "	      0053ec3d    jmp near ptr 0053EC42h"
 "	      0053ec42    push 2"
-"	      0053ec44    mov eax,[ebp+8]"
+"	      0053ec44    mov eax,currentDir"
 "	      0053ec47    mov eax,[eax*4+593430h]"
 "	      0053ec4e    push eax"
 "	      0053ec4f    mov eax,[ebp-18h]"
@@ -4918,17 +4918,17 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1060:
 	asm( 
-"	      0053ec67    mov eax,[ebp+0Ch]"
+"	      0053ec67    mov eax,pNextDir"
 "	      0053ec6a    mov dword ptr [eax],1"
 );
 // LINE 1061:
 	asm( 
 "	      0053ec70    xor eax,eax"
-"	      0053ec72    mov al,[ebp+14h]"
+"	      0053ec72    mov al,y"
 "	      0053ec75    push eax"
 "	      0053ec76    xor eax,eax"
-"	      0053ec78    mov al,[ebp+10h]"
-"	      0053ec7b    add eax,[ebp-0Ch]"
+"	      0053ec78    mov al,x"
+"	      0053ec7b    add eax,stepSize"
 "	      0053ec7e    push eax"
 "	      0053ec7f    call 00539260h"
 "	      0053ec84    add esp,8"
@@ -4951,56 +4951,56 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1067:
 	asm( 
-"	      0053eca8    cmp dword ptr [ebp+8],1"
+"	      0053eca8    cmp currentDir,1"
 "	      0053ecac    je near ptr 0053EDA9h"
 "	      0053ecb2    xor eax,eax"
-"	      0053ecb4    mov al,[ebp+10h]"
-"	      0053ecb7    cmp eax,[ebp-8]"
+"	      0053ecb4    mov al,x"
+"	      0053ecb7    cmp eax,Offset"
 "	      0053ecba    jl near ptr 0053EDA9h"
 );
 // LINE 1068:
 	asm( 
 "	      0053ecc0    xor eax,eax"
-"	      0053ecc2    mov al,[ebp+10h]"
+"	      0053ecc2    mov al,x"
 "	      0053ecc5    dec eax"
 "	      0053ecc6    js near ptr 0053ECFAh"
 "	      0053eccc    xor eax,eax"
-"	      0053ecce    mov al,[ebp+14h]"
+"	      0053ecce    mov al,y"
 "	      0053ecd1    test eax,eax"
 "	      0053ecd3    jl near ptr 0053ECFAh"
 "	      0053ecd9    xor eax,eax"
-"	      0053ecdb    mov al,[ebp+10h]"
+"	      0053ecdb    mov al,x"
 "	      0053ecde    dec eax"
 "	      0053ecdf    cmp eax,80h"
 "	      0053ece4    jge near ptr 0053ECFAh"
 "	      0053ecea    xor eax,eax"
-"	      0053ecec    mov al,[ebp+14h]"
+"	      0053ecec    mov al,y"
 "	      0053ecef    cmp eax,80h"
 "	      0053ecf4    jl near ptr 0053ED05h"
 "	      0053ecfa    mov word ptr [ebp-1Ch],0"
 "	      0053ed00    jmp near ptr 0053ED45h"
 "	      0053ed05    xor eax,eax"
-"	      0053ed07    mov al,[ebp+10h]"
+"	      0053ed07    mov al,x"
 "	      0053ed0a    mov eax,[eax*4+638F6Ch]"
 "	      0053ed11    xor ecx,ecx"
-"	      0053ed13    mov cl,[ebp+14h]"
+"	      0053ed13    mov cl,y"
 "	      0053ed16    xor edx,edx"
 "	      0053ed18    mov dl,[eax+ecx]"
 "	      0053ed1b    and edx,2"
 "	      0053ed1e    movsx eax,dx"
 "	      0053ed21    shl eax,0Eh"
 "	      0053ed24    xor ecx,ecx"
-"	      0053ed26    mov cl,[ebp+10h]"
+"	      0053ed26    mov cl,x"
 "	      0053ed29    mov ecx,[ecx*4+63984Ch]"
 "	      0053ed30    xor edx,edx"
-"	      0053ed32    mov dl,[ebp+14h]"
+"	      0053ed32    mov dl,y"
 "	      0053ed35    xor ebx,ebx"
 "	      0053ed37    mov bl,[ecx+edx]"
 "	      0053ed3a    or eax,ebx"
 "	      0053ed3c    mov [ebp-1Ch],ax"
 "	      0053ed40    jmp near ptr 0053ED45h"
 "	      0053ed45    push 8"
-"	      0053ed47    mov eax,[ebp+8]"
+"	      0053ed47    mov eax,currentDir"
 "	      0053ed4a    mov eax,[eax*4+593430h]"
 "	      0053ed51    push eax"
 "	      0053ed52    mov eax,[ebp-1Ch]"
@@ -5014,16 +5014,16 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1070:
 	asm( 
-"	      0053ed6a    mov eax,[ebp+0Ch]"
+"	      0053ed6a    mov eax,pNextDir"
 "	      0053ed6d    mov dword ptr [eax],3"
 );
 // LINE 1071:
 	asm( 
 "	      0053ed73    xor eax,eax"
-"	      0053ed75    mov al,[ebp+14h]"
+"	      0053ed75    mov al,y"
 "	      0053ed78    push eax"
 "	      0053ed79    xor eax,eax"
-"	      0053ed7b    mov al,[ebp+10h]"
+"	      0053ed7b    mov al,x"
 "	      0053ed7e    dec eax"
 "	      0053ed7f    push eax"
 "	      0053ed80    call 00539260h"
@@ -5047,60 +5047,60 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1077:
 	asm( 
-"	      0053eda9    cmp dword ptr [ebp+8],0"
+"	      0053eda9    cmp currentDir,0"
 "	      0053edad    je near ptr 0053EEBDh"
 "	      0053edb3    xor eax,eax"
-"	      0053edb5    mov al,[ebp+14h]"
+"	      0053edb5    mov al,y"
 "	      0053edb8    mov ecx,7Fh"
-"	      0053edbd    sub ecx,[ebp-8]"
+"	      0053edbd    sub ecx,Offset"
 "	      0053edc0    cmp eax,ecx"
 "	      0053edc2    jg near ptr 0053EEBDh"
 );
 // LINE 1078:
 	asm( 
 "	      0053edc8    xor eax,eax"
-"	      0053edca    mov al,[ebp+10h]"
+"	      0053edca    mov al,x"
 "	      0053edcd    test eax,eax"
 "	      0053edcf    jl near ptr 0053EE06h"
 "	      0053edd5    xor eax,eax"
-"	      0053edd7    mov al,[ebp+14h]"
-"	      0053edda    add eax,[ebp-0Ch]"
+"	      0053edd7    mov al,y"
+"	      0053edda    add eax,stepSize"
 "	      0053eddd    js near ptr 0053EE06h"
 "	      0053ede3    xor eax,eax"
-"	      0053ede5    mov al,[ebp+10h]"
+"	      0053ede5    mov al,x"
 "	      0053ede8    cmp eax,80h"
 "	      0053eded    jge near ptr 0053EE06h"
 "	      0053edf3    xor eax,eax"
-"	      0053edf5    mov al,[ebp+14h]"
-"	      0053edf8    add eax,[ebp-0Ch]"
+"	      0053edf5    mov al,y"
+"	      0053edf8    add eax,stepSize"
 "	      0053edfb    cmp eax,80h"
 "	      0053ee00    jl near ptr 0053EE11h"
 "	      0053ee06    mov word ptr [ebp-20h],0"
 "	      0053ee0c    jmp near ptr 0053EE57h"
 "	      0053ee11    xor eax,eax"
-"	      0053ee13    mov al,[ebp+10h]"
+"	      0053ee13    mov al,x"
 "	      0053ee16    mov eax,[eax*4+638F70h]"
 "	      0053ee1d    xor ecx,ecx"
-"	      0053ee1f    mov cl,[ebp+14h]"
-"	      0053ee22    add ecx,[ebp-0Ch]"
+"	      0053ee1f    mov cl,y"
+"	      0053ee22    add ecx,stepSize"
 "	      0053ee25    xor edx,edx"
 "	      0053ee27    mov dl,[eax+ecx]"
 "	      0053ee2a    and edx,2"
 "	      0053ee2d    movsx eax,dx"
 "	      0053ee30    shl eax,0Eh"
 "	      0053ee33    xor ecx,ecx"
-"	      0053ee35    mov cl,[ebp+10h]"
+"	      0053ee35    mov cl,x"
 "	      0053ee38    mov ecx,[ecx*4+639850h]"
 "	      0053ee3f    xor edx,edx"
-"	      0053ee41    mov dl,[ebp+14h]"
-"	      0053ee44    add edx,[ebp-0Ch]"
+"	      0053ee41    mov dl,y"
+"	      0053ee44    add edx,stepSize"
 "	      0053ee47    xor ebx,ebx"
 "	      0053ee49    mov bl,[ecx+edx]"
 "	      0053ee4c    or eax,ebx"
 "	      0053ee4e    mov [ebp-20h],ax"
 "	      0053ee52    jmp near ptr 0053EE57h"
 "	      0053ee57    push 4"
-"	      0053ee59    mov eax,[ebp+8]"
+"	      0053ee59    mov eax,currentDir"
 "	      0053ee5c    mov eax,[eax*4+593430h]"
 "	      0053ee63    push eax"
 "	      0053ee64    mov eax,[ebp-20h]"
@@ -5114,17 +5114,17 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1080:
 	asm( 
-"	      0053ee7c    mov eax,[ebp+0Ch]"
+"	      0053ee7c    mov eax,pNextDir"
 "	      0053ee7f    mov dword ptr [eax],2"
 );
 // LINE 1081:
 	asm( 
 "	      0053ee85    xor eax,eax"
-"	      0053ee87    mov al,[ebp+14h]"
-"	      0053ee8a    add eax,[ebp-0Ch]"
+"	      0053ee87    mov al,y"
+"	      0053ee8a    add eax,stepSize"
 "	      0053ee8d    push eax"
 "	      0053ee8e    xor eax,eax"
-"	      0053ee90    mov al,[ebp+10h]"
+"	      0053ee90    mov al,x"
 "	      0053ee93    push eax"
 "	      0053ee94    call 00539260h"
 "	      0053ee99    add esp,8"
@@ -5147,8 +5147,8 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1088:
 	asm( 
-"	      0053eebd    mov eax,[ebp+8]"
-"	      0053eec0    mov ecx,[ebp+0Ch]"
+"	      0053eebd    mov eax,currentDir"
+"	      0053eec0    mov ecx,pNextDir"
 "	      0053eec3    mov [ecx],eax"
 );
 // LINE 1089:
@@ -5186,7 +5186,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053eedc    push ebx"
 "	      0053eedd    push esi"
 "	      0053eede    push edi"
-"	      0053eedf    mov [ebp-28h],ecx"
+"	      0053eedf    mov this,ecx"
 );
 // LINE 1099:
 	asm( 
@@ -5197,25 +5197,25 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1102:
 	asm( 
-"	      0053eef2    cmp dword ptr [ebp+8],1"
+"	      0053eef2    cmp x,1"
 "	      0053eef6    jle near ptr 0053F18Eh"
-"	      0053eefc    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0053eefc    cmp y,7Fh"
 "	      0053ef00    jge near ptr 0053F18Eh"
 );
 // LINE 1103:
 	asm( 
-"	      0053ef06    mov eax,[ebp+0Ch]"
+"	      0053ef06    mov eax,y"
 "	      0053ef09    sub eax,2"
 "	      0053ef0c    push eax"
-"	      0053ef0d    mov eax,[ebp+8]"
+"	      0053ef0d    mov eax,x"
 "	      0053ef10    push eax"
 "	      0053ef11    call 00539260h"
 "	      0053ef16    add esp,8"
 "	      0053ef19    test eax,eax"
 "	      0053ef1b    je near ptr 0053F18Eh"
-"	      0053ef21    mov eax,[ebp+0Ch]"
+"	      0053ef21    mov eax,y"
 "	      0053ef24    push eax"
-"	      0053ef25    mov eax,[ebp+8]"
+"	      0053ef25    mov eax,x"
 "	      0053ef28    inc eax"
 "	      0053ef29    push eax"
 "	      0053ef2a    call 00539260h"
@@ -5225,29 +5225,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1105:
 	asm( 
-"	      0053ef3a    mov eax,[ebp+0Ch]"
+"	      0053ef3a    mov eax,y"
 "	      0053ef3d    sub eax,2"
 "	      0053ef40    push eax"
-"	      0053ef41    mov eax,[ebp+8]"
+"	      0053ef41    mov eax,x"
 "	      0053ef44    push eax"
-"	      0053ef45    mov ecx,[ebp-28h]"
+"	      0053ef45    mov ecx,this"
 "	      0053ef48    call 0053D167h"
-"	      0053ef4d    mov [ebp-4],al"
+"	      0053ef4d    mov yindex,al"
 );
 // LINE 1106:
 	asm( 
-"	      0053ef50    mov eax,[ebp+0Ch]"
+"	      0053ef50    mov eax,y"
 "	      0053ef53    push eax"
-"	      0053ef54    mov eax,[ebp+8]"
+"	      0053ef54    mov eax,x"
 "	      0053ef57    inc eax"
 "	      0053ef58    push eax"
-"	      0053ef59    mov ecx,[ebp-28h]"
+"	      0053ef59    mov ecx,this"
 "	      0053ef5c    call 0053D167h"
-"	      0053ef61    mov ecx,[ebp+8]"
-"	      0053ef64    mov edx,[ebp-28h]"
+"	      0053ef61    mov ecx,x"
+"	      0053ef64    mov edx,this"
 "	      0053ef67    mov ecx,[edx+ecx*4]"
 "	      0053ef6a    xor edx,edx"
-"	      0053ef6c    mov dl,[ebp-4]"
+"	      0053ef6c    mov dl,yindex"
 "	      0053ef6f    mov ebx,edx"
 "	      0053ef71    lea edx,[edx+edx*4]"
 "	      0053ef74    lea edx,[edx+edx*4]"
@@ -5256,13 +5256,13 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1107:
 	asm( 
-"	      0053ef7e    mov eax,[ebp+8]"
+"	      0053ef7e    mov eax,x"
 "	      0053ef81    inc eax"
-"	      0053ef82    mov ecx,[ebp+8]"
-"	      0053ef85    mov edx,[ebp-28h]"
+"	      0053ef82    mov ecx,x"
+"	      0053ef85    mov edx,this"
 "	      0053ef88    mov ecx,[edx+ecx*4]"
 "	      0053ef8b    xor edx,edx"
-"	      0053ef8d    mov dl,[ebp-4]"
+"	      0053ef8d    mov dl,yindex"
 "	      0053ef90    mov ebx,edx"
 "	      0053ef92    lea edx,[edx+edx*4]"
 "	      0053ef95    lea edx,[edx+edx*4]"
@@ -5371,11 +5371,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053f169    add eax,[ebx]"
 "	      0053f16b    add al,[edx]"
 "	      0053f16d    mov eax,[ebp-8]"
-"	      0053f170    mov ecx,[ebp+8]"
-"	      0053f173    mov edx,[ebp-28h]"
+"	      0053f170    mov ecx,x"
+"	      0053f173    mov edx,this"
 "	      0053f176    mov ecx,[edx+ecx*4]"
 "	      0053f179    xor edx,edx"
-"	      0053f17b    mov dl,[ebp-4]"
+"	      0053f17b    mov dl,yindex"
 "	      0053f17e    mov ebx,edx"
 "	      0053f180    lea edx,[edx+edx*4]"
 "	      0053f183    lea edx,[edx+edx*4]"
@@ -5388,25 +5388,25 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1113:
 	asm( 
-"	      0053f193    cmp dword ptr [ebp+8],1"
+"	      0053f193    cmp x,1"
 "	      0053f197    jle near ptr 0053F431h"
-"	      0053f19d    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0053f19d    cmp y,7Fh"
 "	      0053f1a1    jge near ptr 0053F431h"
 );
 // LINE 1114:
 	asm( 
-"	      0053f1a7    mov eax,[ebp+0Ch]"
+"	      0053f1a7    mov eax,y"
 "	      0053f1aa    inc eax"
 "	      0053f1ab    push eax"
-"	      0053f1ac    mov eax,[ebp+8]"
+"	      0053f1ac    mov eax,x"
 "	      0053f1af    push eax"
 "	      0053f1b0    call 00539260h"
 "	      0053f1b5    add esp,8"
 "	      0053f1b8    test eax,eax"
 "	      0053f1ba    je near ptr 0053F431h"
-"	      0053f1c0    mov eax,[ebp+0Ch]"
+"	      0053f1c0    mov eax,y"
 "	      0053f1c3    push eax"
-"	      0053f1c4    mov eax,[ebp+8]"
+"	      0053f1c4    mov eax,x"
 "	      0053f1c7    sub eax,2"
 "	      0053f1ca    push eax"
 "	      0053f1cb    call 00539260h"
@@ -5416,29 +5416,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1116:
 	asm( 
-"	      0053f1db    mov eax,[ebp+0Ch]"
+"	      0053f1db    mov eax,y"
 "	      0053f1de    inc eax"
 "	      0053f1df    push eax"
-"	      0053f1e0    mov eax,[ebp+8]"
+"	      0053f1e0    mov eax,x"
 "	      0053f1e3    push eax"
-"	      0053f1e4    mov ecx,[ebp-28h]"
+"	      0053f1e4    mov ecx,this"
 "	      0053f1e7    call 0053D167h"
-"	      0053f1ec    mov [ebp-4],al"
+"	      0053f1ec    mov yindex,al"
 );
 // LINE 1117:
 	asm( 
-"	      0053f1ef    mov eax,[ebp+0Ch]"
+"	      0053f1ef    mov eax,y"
 "	      0053f1f2    push eax"
-"	      0053f1f3    mov eax,[ebp+8]"
+"	      0053f1f3    mov eax,x"
 "	      0053f1f6    sub eax,2"
 "	      0053f1f9    push eax"
-"	      0053f1fa    mov ecx,[ebp-28h]"
+"	      0053f1fa    mov ecx,this"
 "	      0053f1fd    call 0053D167h"
-"	      0053f202    mov ecx,[ebp+8]"
-"	      0053f205    mov edx,[ebp-28h]"
+"	      0053f202    mov ecx,x"
+"	      0053f205    mov edx,this"
 "	      0053f208    mov ecx,[edx+ecx*4]"
 "	      0053f20b    xor edx,edx"
-"	      0053f20d    mov dl,[ebp-4]"
+"	      0053f20d    mov dl,yindex"
 "	      0053f210    mov ebx,edx"
 "	      0053f212    lea edx,[edx+edx*4]"
 "	      0053f215    lea edx,[edx+edx*4]"
@@ -5447,13 +5447,13 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1118:
 	asm( 
-"	      0053f21f    mov eax,[ebp+8]"
+"	      0053f21f    mov eax,x"
 "	      0053f222    sub eax,2"
-"	      0053f225    mov ecx,[ebp+8]"
-"	      0053f228    mov edx,[ebp-28h]"
+"	      0053f225    mov ecx,x"
+"	      0053f228    mov edx,this"
 "	      0053f22b    mov ecx,[edx+ecx*4]"
 "	      0053f22e    xor edx,edx"
-"	      0053f230    mov dl,[ebp-4]"
+"	      0053f230    mov dl,yindex"
 "	      0053f233    mov ebx,edx"
 "	      0053f235    lea edx,[edx+edx*4]"
 "	      0053f238    lea edx,[edx+edx*4]"
@@ -5559,11 +5559,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053f40c    add eax,[ebx]"
 "	      0053f40e    add al,[edx]"
 "	      0053f410    mov eax,[ebp-0Ch]"
-"	      0053f413    mov ecx,[ebp+8]"
-"	      0053f416    mov edx,[ebp-28h]"
+"	      0053f413    mov ecx,x"
+"	      0053f416    mov edx,this"
 "	      0053f419    mov ecx,[edx+ecx*4]"
 "	      0053f41c    xor edx,edx"
-"	      0053f41e    mov dl,[ebp-4]"
+"	      0053f41e    mov dl,yindex"
 "	      0053f421    mov ebx,edx"
 "	      0053f423    lea edx,[edx+edx*4]"
 "	      0053f426    lea edx,[edx+edx*4]"
@@ -5576,26 +5576,26 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1124:
 	asm( 
-"	      0053f436    cmp dword ptr [ebp+8],0"
+"	      0053f436    cmp x,0"
 "	      0053f43a    jle near ptr 0053F6D4h"
-"	      0053f440    cmp dword ptr [ebp+0Ch],1"
+"	      0053f440    cmp y,1"
 "	      0053f444    jle near ptr 0053F6D4h"
 );
 // LINE 1125:
 	asm( 
-"	      0053f44a    mov eax,[ebp+0Ch]"
+"	      0053f44a    mov eax,y"
 "	      0053f44d    push eax"
-"	      0053f44e    mov eax,[ebp+8]"
+"	      0053f44e    mov eax,x"
 "	      0053f451    dec eax"
 "	      0053f452    push eax"
 "	      0053f453    call 00539260h"
 "	      0053f458    add esp,8"
 "	      0053f45b    test eax,eax"
 "	      0053f45d    je near ptr 0053F6D4h"
-"	      0053f463    mov eax,[ebp+0Ch]"
+"	      0053f463    mov eax,y"
 "	      0053f466    sub eax,2"
 "	      0053f469    push eax"
-"	      0053f46a    mov eax,[ebp+8]"
+"	      0053f46a    mov eax,x"
 "	      0053f46d    push eax"
 "	      0053f46e    call 00539260h"
 "	      0053f473    add esp,8"
@@ -5604,29 +5604,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1127:
 	asm( 
-"	      0053f47e    mov eax,[ebp+0Ch]"
+"	      0053f47e    mov eax,y"
 "	      0053f481    push eax"
-"	      0053f482    mov eax,[ebp+8]"
+"	      0053f482    mov eax,x"
 "	      0053f485    dec eax"
 "	      0053f486    push eax"
-"	      0053f487    mov ecx,[ebp-28h]"
+"	      0053f487    mov ecx,this"
 "	      0053f48a    call 0053D167h"
-"	      0053f48f    mov [ebp-4],al"
+"	      0053f48f    mov yindex,al"
 );
 // LINE 1128:
 	asm( 
-"	      0053f492    mov eax,[ebp+0Ch]"
+"	      0053f492    mov eax,y"
 "	      0053f495    sub eax,2"
 "	      0053f498    push eax"
-"	      0053f499    mov eax,[ebp+8]"
+"	      0053f499    mov eax,x"
 "	      0053f49c    push eax"
-"	      0053f49d    mov ecx,[ebp-28h]"
+"	      0053f49d    mov ecx,this"
 "	      0053f4a0    call 0053D167h"
-"	      0053f4a5    mov ecx,[ebp+8]"
-"	      0053f4a8    mov edx,[ebp-28h]"
+"	      0053f4a5    mov ecx,x"
+"	      0053f4a8    mov edx,this"
 "	      0053f4ab    mov ecx,[edx+ecx*4-4]"
 "	      0053f4af    xor edx,edx"
-"	      0053f4b1    mov dl,[ebp-4]"
+"	      0053f4b1    mov dl,yindex"
 "	      0053f4b4    mov ebx,edx"
 "	      0053f4b6    lea edx,[edx+edx*4]"
 "	      0053f4b9    lea edx,[edx+edx*4]"
@@ -5636,11 +5636,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1129:
 	asm( 
 "	      0053f4c3    mov al,[ebp+8]"
-"	      0053f4c6    mov ecx,[ebp+8]"
-"	      0053f4c9    mov edx,[ebp-28h]"
+"	      0053f4c6    mov ecx,x"
+"	      0053f4c9    mov edx,this"
 "	      0053f4cc    mov ecx,[edx+ecx*4-4]"
 "	      0053f4d0    xor edx,edx"
-"	      0053f4d2    mov dl,[ebp-4]"
+"	      0053f4d2    mov dl,yindex"
 "	      0053f4d5    mov ebx,edx"
 "	      0053f4d7    lea edx,[edx+edx*4]"
 "	      0053f4da    lea edx,[edx+edx*4]"
@@ -5748,11 +5748,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053f6ae    add eax,[ebx]"
 "	      0053f6b0    add al,[edx]"
 "	      0053f6b2    mov eax,[ebp-10h]"
-"	      0053f6b5    mov ecx,[ebp+8]"
-"	      0053f6b8    mov edx,[ebp-28h]"
+"	      0053f6b5    mov ecx,x"
+"	      0053f6b8    mov edx,this"
 "	      0053f6bb    mov ecx,[edx+ecx*4-4]"
 "	      0053f6bf    xor edx,edx"
-"	      0053f6c1    mov dl,[ebp-4]"
+"	      0053f6c1    mov dl,yindex"
 "	      0053f6c4    mov ebx,edx"
 "	      0053f6c6    lea edx,[edx+edx*4]"
 "	      0053f6c9    lea edx,[edx+edx*4]"
@@ -5765,26 +5765,26 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1135:
 	asm( 
-"	      0053f6d9    cmp dword ptr [ebp+8],1"
+"	      0053f6d9    cmp x,1"
 "	      0053f6dd    jle near ptr 0053F977h"
-"	      0053f6e3    cmp dword ptr [ebp+0Ch],0"
+"	      0053f6e3    cmp y,0"
 "	      0053f6e7    jle near ptr 0053F977h"
 );
 // LINE 1136:
 	asm( 
-"	      0053f6ed    mov eax,[ebp+0Ch]"
+"	      0053f6ed    mov eax,y"
 "	      0053f6f0    push eax"
-"	      0053f6f1    mov eax,[ebp+8]"
+"	      0053f6f1    mov eax,x"
 "	      0053f6f4    sub eax,2"
 "	      0053f6f7    push eax"
 "	      0053f6f8    call 00539260h"
 "	      0053f6fd    add esp,8"
 "	      0053f700    test eax,eax"
 "	      0053f702    je near ptr 0053F977h"
-"	      0053f708    mov eax,[ebp+0Ch]"
+"	      0053f708    mov eax,y"
 "	      0053f70b    dec eax"
 "	      0053f70c    push eax"
-"	      0053f70d    mov eax,[ebp+8]"
+"	      0053f70d    mov eax,x"
 "	      0053f710    push eax"
 "	      0053f711    call 00539260h"
 "	      0053f716    add esp,8"
@@ -5793,29 +5793,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1138:
 	asm( 
-"	      0053f721    mov eax,[ebp+0Ch]"
+"	      0053f721    mov eax,y"
 "	      0053f724    push eax"
-"	      0053f725    mov eax,[ebp+8]"
+"	      0053f725    mov eax,x"
 "	      0053f728    sub eax,2"
 "	      0053f72b    push eax"
-"	      0053f72c    mov ecx,[ebp-28h]"
+"	      0053f72c    mov ecx,this"
 "	      0053f72f    call 0053D167h"
-"	      0053f734    mov [ebp-4],al"
+"	      0053f734    mov yindex,al"
 );
 // LINE 1139:
 	asm( 
-"	      0053f737    mov eax,[ebp+0Ch]"
+"	      0053f737    mov eax,y"
 "	      0053f73a    dec eax"
 "	      0053f73b    push eax"
-"	      0053f73c    mov eax,[ebp+8]"
+"	      0053f73c    mov eax,x"
 "	      0053f73f    push eax"
-"	      0053f740    mov ecx,[ebp-28h]"
+"	      0053f740    mov ecx,this"
 "	      0053f743    call 0053D167h"
-"	      0053f748    mov ecx,[ebp+8]"
-"	      0053f74b    mov edx,[ebp-28h]"
+"	      0053f748    mov ecx,x"
+"	      0053f74b    mov edx,this"
 "	      0053f74e    mov ecx,[edx+ecx*4-8]"
 "	      0053f752    xor edx,edx"
-"	      0053f754    mov dl,[ebp-4]"
+"	      0053f754    mov dl,yindex"
 "	      0053f757    mov ebx,edx"
 "	      0053f759    lea edx,[edx+edx*4]"
 "	      0053f75c    lea edx,[edx+edx*4]"
@@ -5825,11 +5825,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1140:
 	asm( 
 "	      0053f766    mov al,[ebp+8]"
-"	      0053f769    mov ecx,[ebp+8]"
-"	      0053f76c    mov edx,[ebp-28h]"
+"	      0053f769    mov ecx,x"
+"	      0053f76c    mov edx,this"
 "	      0053f76f    mov ecx,[edx+ecx*4-8]"
 "	      0053f773    xor edx,edx"
-"	      0053f775    mov dl,[ebp-4]"
+"	      0053f775    mov dl,yindex"
 "	      0053f778    mov ebx,edx"
 "	      0053f77a    lea edx,[edx+edx*4]"
 "	      0053f77d    lea edx,[edx+edx*4]"
@@ -5937,11 +5937,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053f951    add eax,[ebx]"
 "	      0053f953    add al,[edx]"
 "	      0053f955    mov eax,[ebp-14h]"
-"	      0053f958    mov ecx,[ebp+8]"
-"	      0053f95b    mov edx,[ebp-28h]"
+"	      0053f958    mov ecx,x"
+"	      0053f95b    mov edx,this"
 "	      0053f95e    mov ecx,[edx+ecx*4-8]"
 "	      0053f962    xor edx,edx"
-"	      0053f964    mov dl,[ebp-4]"
+"	      0053f964    mov dl,yindex"
 "	      0053f967    mov ebx,edx"
 "	      0053f969    lea edx,[edx+edx*4]"
 "	      0053f96c    lea edx,[edx+edx*4]"
@@ -5954,25 +5954,25 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1146:
 	asm( 
-"	      0053f97c    cmp dword ptr [ebp+8],0"
+"	      0053f97c    cmp x,0"
 "	      0053f980    jle near ptr 0053FC14h"
-"	      0053f986    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0053f986    cmp y,7Fh"
 "	      0053f98a    jge near ptr 0053FC14h"
 );
 // LINE 1147:
 	asm( 
-"	      0053f990    mov eax,[ebp+0Ch]"
+"	      0053f990    mov eax,y"
 "	      0053f993    inc eax"
 "	      0053f994    push eax"
-"	      0053f995    mov eax,[ebp+8]"
+"	      0053f995    mov eax,x"
 "	      0053f998    push eax"
 "	      0053f999    call 00539260h"
 "	      0053f99e    add esp,8"
 "	      0053f9a1    test eax,eax"
 "	      0053f9a3    je near ptr 0053FC14h"
-"	      0053f9a9    mov eax,[ebp+0Ch]"
+"	      0053f9a9    mov eax,y"
 "	      0053f9ac    push eax"
-"	      0053f9ad    mov eax,[ebp+8]"
+"	      0053f9ad    mov eax,x"
 "	      0053f9b0    dec eax"
 "	      0053f9b1    push eax"
 "	      0053f9b2    call 00539260h"
@@ -5982,29 +5982,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1149:
 	asm( 
-"	      0053f9c2    mov eax,[ebp+0Ch]"
+"	      0053f9c2    mov eax,y"
 "	      0053f9c5    inc eax"
 "	      0053f9c6    push eax"
-"	      0053f9c7    mov eax,[ebp+8]"
+"	      0053f9c7    mov eax,x"
 "	      0053f9ca    push eax"
-"	      0053f9cb    mov ecx,[ebp-28h]"
+"	      0053f9cb    mov ecx,this"
 "	      0053f9ce    call 0053D167h"
-"	      0053f9d3    mov [ebp-4],al"
+"	      0053f9d3    mov yindex,al"
 );
 // LINE 1150:
 	asm( 
-"	      0053f9d6    mov eax,[ebp+0Ch]"
+"	      0053f9d6    mov eax,y"
 "	      0053f9d9    push eax"
-"	      0053f9da    mov eax,[ebp+8]"
+"	      0053f9da    mov eax,x"
 "	      0053f9dd    dec eax"
 "	      0053f9de    push eax"
-"	      0053f9df    mov ecx,[ebp-28h]"
+"	      0053f9df    mov ecx,this"
 "	      0053f9e2    call 0053D167h"
-"	      0053f9e7    mov ecx,[ebp+8]"
-"	      0053f9ea    mov edx,[ebp-28h]"
+"	      0053f9e7    mov ecx,x"
+"	      0053f9ea    mov edx,this"
 "	      0053f9ed    mov ecx,[edx+ecx*4]"
 "	      0053f9f0    xor edx,edx"
-"	      0053f9f2    mov dl,[ebp-4]"
+"	      0053f9f2    mov dl,yindex"
 "	      0053f9f5    mov ebx,edx"
 "	      0053f9f7    lea edx,[edx+edx*4]"
 "	      0053f9fa    lea edx,[edx+edx*4]"
@@ -6013,13 +6013,13 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1151:
 	asm( 
-"	      0053fa04    mov eax,[ebp+8]"
+"	      0053fa04    mov eax,x"
 "	      0053fa07    dec eax"
-"	      0053fa08    mov ecx,[ebp+8]"
-"	      0053fa0b    mov edx,[ebp-28h]"
+"	      0053fa08    mov ecx,x"
+"	      0053fa0b    mov edx,this"
 "	      0053fa0e    mov ecx,[edx+ecx*4]"
 "	      0053fa11    xor edx,edx"
-"	      0053fa13    mov dl,[ebp-4]"
+"	      0053fa13    mov dl,yindex"
 "	      0053fa16    mov ebx,edx"
 "	      0053fa18    lea edx,[edx+edx*4]"
 "	      0053fa1b    lea edx,[edx+edx*4]"
@@ -6127,11 +6127,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053fbef    add eax,[ebx]"
 "	      0053fbf1    add al,[edx]"
 "	      0053fbf3    mov eax,[ebp-18h]"
-"	      0053fbf6    mov ecx,[ebp+8]"
-"	      0053fbf9    mov edx,[ebp-28h]"
+"	      0053fbf6    mov ecx,x"
+"	      0053fbf9    mov edx,this"
 "	      0053fbfc    mov ecx,[edx+ecx*4]"
 "	      0053fbff    xor edx,edx"
-"	      0053fc01    mov dl,[ebp-4]"
+"	      0053fc01    mov dl,yindex"
 "	      0053fc04    mov ebx,edx"
 "	      0053fc06    lea edx,[edx+edx*4]"
 "	      0053fc09    lea edx,[edx+edx*4]"
@@ -6144,25 +6144,25 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1157:
 	asm( 
-"	      0053fc19    cmp dword ptr [ebp+8],0"
+"	      0053fc19    cmp x,0"
 "	      0053fc1d    jle near ptr 0053FEB1h"
-"	      0053fc23    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0053fc23    cmp y,7Fh"
 "	      0053fc27    jge near ptr 0053FEB1h"
 );
 // LINE 1158:
 	asm( 
-"	      0053fc2d    mov eax,[ebp+0Ch]"
+"	      0053fc2d    mov eax,y"
 "	      0053fc30    dec eax"
 "	      0053fc31    push eax"
-"	      0053fc32    mov eax,[ebp+8]"
+"	      0053fc32    mov eax,x"
 "	      0053fc35    push eax"
 "	      0053fc36    call 00539260h"
 "	      0053fc3b    add esp,8"
 "	      0053fc3e    test eax,eax"
 "	      0053fc40    je near ptr 0053FEB1h"
-"	      0053fc46    mov eax,[ebp+0Ch]"
+"	      0053fc46    mov eax,y"
 "	      0053fc49    push eax"
-"	      0053fc4a    mov eax,[ebp+8]"
+"	      0053fc4a    mov eax,x"
 "	      0053fc4d    inc eax"
 "	      0053fc4e    push eax"
 "	      0053fc4f    call 00539260h"
@@ -6172,29 +6172,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1160:
 	asm( 
-"	      0053fc5f    mov eax,[ebp+0Ch]"
+"	      0053fc5f    mov eax,y"
 "	      0053fc62    dec eax"
 "	      0053fc63    push eax"
-"	      0053fc64    mov eax,[ebp+8]"
+"	      0053fc64    mov eax,x"
 "	      0053fc67    push eax"
-"	      0053fc68    mov ecx,[ebp-28h]"
+"	      0053fc68    mov ecx,this"
 "	      0053fc6b    call 0053D167h"
-"	      0053fc70    mov [ebp-4],al"
+"	      0053fc70    mov yindex,al"
 );
 // LINE 1161:
 	asm( 
-"	      0053fc73    mov eax,[ebp+0Ch]"
+"	      0053fc73    mov eax,y"
 "	      0053fc76    push eax"
-"	      0053fc77    mov eax,[ebp+8]"
+"	      0053fc77    mov eax,x"
 "	      0053fc7a    inc eax"
 "	      0053fc7b    push eax"
-"	      0053fc7c    mov ecx,[ebp-28h]"
+"	      0053fc7c    mov ecx,this"
 "	      0053fc7f    call 0053D167h"
-"	      0053fc84    mov ecx,[ebp+8]"
-"	      0053fc87    mov edx,[ebp-28h]"
+"	      0053fc84    mov ecx,x"
+"	      0053fc87    mov edx,this"
 "	      0053fc8a    mov ecx,[edx+ecx*4]"
 "	      0053fc8d    xor edx,edx"
-"	      0053fc8f    mov dl,[ebp-4]"
+"	      0053fc8f    mov dl,yindex"
 "	      0053fc92    mov ebx,edx"
 "	      0053fc94    lea edx,[edx+edx*4]"
 "	      0053fc97    lea edx,[edx+edx*4]"
@@ -6203,13 +6203,13 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1162:
 	asm( 
-"	      0053fca1    mov eax,[ebp+8]"
+"	      0053fca1    mov eax,x"
 "	      0053fca4    inc eax"
-"	      0053fca5    mov ecx,[ebp+8]"
-"	      0053fca8    mov edx,[ebp-28h]"
+"	      0053fca5    mov ecx,x"
+"	      0053fca8    mov edx,this"
 "	      0053fcab    mov ecx,[edx+ecx*4]"
 "	      0053fcae    xor edx,edx"
-"	      0053fcb0    mov dl,[ebp-4]"
+"	      0053fcb0    mov dl,yindex"
 "	      0053fcb3    mov ebx,edx"
 "	      0053fcb5    lea edx,[edx+edx*4]"
 "	      0053fcb8    lea edx,[edx+edx*4]"
@@ -6319,11 +6319,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      0053fe8c    add eax,[ebx]"
 "	      0053fe8e    add al,[edx]"
 "	      0053fe90    mov eax,[ebp-1Ch]"
-"	      0053fe93    mov ecx,[ebp+8]"
-"	      0053fe96    mov edx,[ebp-28h]"
+"	      0053fe93    mov ecx,x"
+"	      0053fe96    mov edx,this"
 "	      0053fe99    mov ecx,[edx+ecx*4]"
 "	      0053fe9c    xor edx,edx"
-"	      0053fe9e    mov dl,[ebp-4]"
+"	      0053fe9e    mov dl,yindex"
 "	      0053fea1    mov ebx,edx"
 "	      0053fea3    lea edx,[edx+edx*4]"
 "	      0053fea6    lea edx,[edx+edx*4]"
@@ -6336,26 +6336,26 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1168:
 	asm( 
-"	      0053feb6    cmp dword ptr [ebp+8],7Fh"
+"	      0053feb6    cmp x,7Fh"
 "	      0053feba    jge near ptr 00540150h"
-"	      0053fec0    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0053fec0    cmp y,7Fh"
 "	      0053fec4    jge near ptr 00540150h"
 );
 // LINE 1169:
 	asm( 
-"	      0053feca    mov eax,[ebp+0Ch]"
+"	      0053feca    mov eax,y"
 "	      0053fecd    push eax"
-"	      0053fece    mov eax,[ebp+8]"
+"	      0053fece    mov eax,x"
 "	      0053fed1    inc eax"
 "	      0053fed2    push eax"
 "	      0053fed3    call 00539260h"
 "	      0053fed8    add esp,8"
 "	      0053fedb    test eax,eax"
 "	      0053fedd    je near ptr 00540150h"
-"	      0053fee3    mov eax,[ebp+0Ch]"
+"	      0053fee3    mov eax,y"
 "	      0053fee6    inc eax"
 "	      0053fee7    push eax"
-"	      0053fee8    mov eax,[ebp+8]"
+"	      0053fee8    mov eax,x"
 "	      0053feeb    push eax"
 "	      0053feec    call 00539260h"
 "	      0053fef1    add esp,8"
@@ -6364,29 +6364,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1171:
 	asm( 
-"	      0053fefc    mov eax,[ebp+0Ch]"
+"	      0053fefc    mov eax,y"
 "	      0053feff    push eax"
-"	      0053ff00    mov eax,[ebp+8]"
+"	      0053ff00    mov eax,x"
 "	      0053ff03    inc eax"
 "	      0053ff04    push eax"
-"	      0053ff05    mov ecx,[ebp-28h]"
+"	      0053ff05    mov ecx,this"
 "	      0053ff08    call 0053D167h"
-"	      0053ff0d    mov [ebp-4],al"
+"	      0053ff0d    mov yindex,al"
 );
 // LINE 1172:
 	asm( 
-"	      0053ff10    mov eax,[ebp+0Ch]"
+"	      0053ff10    mov eax,y"
 "	      0053ff13    inc eax"
 "	      0053ff14    push eax"
-"	      0053ff15    mov eax,[ebp+8]"
+"	      0053ff15    mov eax,x"
 "	      0053ff18    push eax"
-"	      0053ff19    mov ecx,[ebp-28h]"
+"	      0053ff19    mov ecx,this"
 "	      0053ff1c    call 0053D167h"
-"	      0053ff21    mov ecx,[ebp+8]"
-"	      0053ff24    mov edx,[ebp-28h]"
+"	      0053ff21    mov ecx,x"
+"	      0053ff24    mov edx,this"
 "	      0053ff27    mov ecx,[edx+ecx*4+4]"
 "	      0053ff2b    xor edx,edx"
-"	      0053ff2d    mov dl,[ebp-4]"
+"	      0053ff2d    mov dl,yindex"
 "	      0053ff30    mov ebx,edx"
 "	      0053ff32    lea edx,[edx+edx*4]"
 "	      0053ff35    lea edx,[edx+edx*4]"
@@ -6396,11 +6396,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1173:
 	asm( 
 "	      0053ff3f    mov al,[ebp+8]"
-"	      0053ff42    mov ecx,[ebp+8]"
-"	      0053ff45    mov edx,[ebp-28h]"
+"	      0053ff42    mov ecx,x"
+"	      0053ff45    mov edx,this"
 "	      0053ff48    mov ecx,[edx+ecx*4+4]"
 "	      0053ff4c    xor edx,edx"
-"	      0053ff4e    mov dl,[ebp-4]"
+"	      0053ff4e    mov dl,yindex"
 "	      0053ff51    mov ebx,edx"
 "	      0053ff53    lea edx,[edx+edx*4]"
 "	      0053ff56    lea edx,[edx+edx*4]"
@@ -6519,26 +6519,26 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1179:
 	asm( 
-"	      00540155    cmp dword ptr [ebp+8],7Fh"
+"	      00540155    cmp x,7Fh"
 "	      00540159    jge near ptr 005403EFh"
-"	      0054015f    cmp dword ptr [ebp+0Ch],7Fh"
+"	      0054015f    cmp y,7Fh"
 "	      00540163    jge near ptr 005403EFh"
 );
 // LINE 1180:
 	asm( 
-"	      00540169    mov eax,[ebp+0Ch]"
+"	      00540169    mov eax,y"
 "	      0054016c    push eax"
-"	      0054016d    mov eax,[ebp+8]"
+"	      0054016d    mov eax,x"
 "	      00540170    inc eax"
 "	      00540171    push eax"
 "	      00540172    call 00539260h"
 "	      00540177    add esp,8"
 "	      0054017a    test eax,eax"
 "	      0054017c    je near ptr 005403EFh"
-"	      00540182    mov eax,[ebp+0Ch]"
+"	      00540182    mov eax,y"
 "	      00540185    inc eax"
 "	      00540186    push eax"
-"	      00540187    mov eax,[ebp+8]"
+"	      00540187    mov eax,x"
 "	      0054018a    push eax"
 "	      0054018b    call 00539260h"
 "	      00540190    add esp,8"
@@ -6547,29 +6547,29 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1182:
 	asm( 
-"	      0054019b    mov eax,[ebp+0Ch]"
+"	      0054019b    mov eax,y"
 "	      0054019e    push eax"
-"	      0054019f    mov eax,[ebp+8]"
+"	      0054019f    mov eax,x"
 "	      005401a2    inc eax"
 "	      005401a3    push eax"
-"	      005401a4    mov ecx,[ebp-28h]"
+"	      005401a4    mov ecx,this"
 "	      005401a7    call 0053D167h"
-"	      005401ac    mov [ebp-4],al"
+"	      005401ac    mov yindex,al"
 );
 // LINE 1183:
 	asm( 
-"	      005401af    mov eax,[ebp+0Ch]"
+"	      005401af    mov eax,y"
 "	      005401b2    inc eax"
 "	      005401b3    push eax"
-"	      005401b4    mov eax,[ebp+8]"
+"	      005401b4    mov eax,x"
 "	      005401b7    push eax"
-"	      005401b8    mov ecx,[ebp-28h]"
+"	      005401b8    mov ecx,this"
 "	      005401bb    call 0053D167h"
-"	      005401c0    mov ecx,[ebp+8]"
-"	      005401c3    mov edx,[ebp-28h]"
+"	      005401c0    mov ecx,x"
+"	      005401c3    mov edx,this"
 "	      005401c6    mov ecx,[edx+ecx*4+4]"
 "	      005401ca    xor edx,edx"
-"	      005401cc    mov dl,[ebp-4]"
+"	      005401cc    mov dl,yindex"
 "	      005401cf    mov ebx,edx"
 "	      005401d1    lea edx,[edx+edx*4]"
 "	      005401d4    lea edx,[edx+edx*4]"
@@ -6579,11 +6579,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1184:
 	asm( 
 "	      005401de    mov al,[ebp+8]"
-"	      005401e1    mov ecx,[ebp+8]"
-"	      005401e4    mov edx,[ebp-28h]"
+"	      005401e1    mov ecx,x"
+"	      005401e4    mov edx,this"
 "	      005401e7    mov ecx,[edx+ecx*4+4]"
 "	      005401eb    xor edx,edx"
-"	      005401ed    mov dl,[ebp-4]"
+"	      005401ed    mov dl,yindex"
 "	      005401f0    mov ebx,edx"
 "	      005401f2    lea edx,[edx+edx*4]"
 "	      005401f5    lea edx,[edx+edx*4]"
@@ -6687,11 +6687,11 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 "	      005403c9    add eax,[ebx]"
 "	      005403cb    add al,[edx]"
 "	      005403cd    mov eax,[ebp-24h]"
-"	      005403d0    mov ecx,[ebp+8]"
-"	      005403d3    mov edx,[ebp-28h]"
+"	      005403d0    mov ecx,x"
+"	      005403d3    mov edx,this"
 "	      005403d6    mov ecx,[edx+ecx*4+4]"
 "	      005403da    xor edx,edx"
-"	      005403dc    mov dl,[ebp-4]"
+"	      005403dc    mov dl,yindex"
 "	      005403df    mov ebx,edx"
 "	      005403e1    lea edx,[edx+edx*4]"
 "	      005403e4    lea edx,[edx+edx*4]"
@@ -6765,35 +6765,35 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      00540493    push ebx"
 "	      00540494    push esi"
 "	      00540495    push edi"
-"	      00540496    mov [ebp-10h],ecx"
+"	      00540496    mov this,ecx"
 );
 // LINE 1198:
 	asm( 
-"	      00540499    cmp dword ptr [ebp+8],0"
+"	      00540499    cmp x,0"
 "	      0054049d    jl near ptr 005404C7h"
-"	      005404a3    cmp dword ptr [ebp+0Ch],0"
+"	      005404a3    cmp y,0"
 "	      005404a7    jl near ptr 005404C7h"
-"	      005404ad    cmp dword ptr [ebp+8],80h"
+"	      005404ad    cmp x,80h"
 "	      005404b4    jge near ptr 005404C7h"
-"	      005404ba    cmp dword ptr [ebp+0Ch],80h"
+"	      005404ba    cmp y,80h"
 "	      005404c1    jl near ptr 005404D2h"
-"	      005404c7    mov word ptr [ebp-4],0"
+"	      005404c7    mov fromTile,0"
 "	      005404cd    jmp near ptr 0054050Ah"
-"	      005404d2    mov eax,[ebp+8]"
+"	      005404d2    mov eax,x"
 "	      005404d5    mov eax,[eax*4+638F70h]"
-"	      005404dc    mov ecx,[ebp+0Ch]"
+"	      005404dc    mov ecx,y"
 "	      005404df    xor edx,edx"
 "	      005404e1    mov dl,[eax+ecx]"
 "	      005404e4    and edx,2"
 "	      005404e7    movsx eax,dx"
 "	      005404ea    shl eax,0Eh"
-"	      005404ed    mov ecx,[ebp+8]"
+"	      005404ed    mov ecx,x"
 "	      005404f0    mov ecx,[ecx*4+639850h]"
-"	      005404f7    mov edx,[ebp+0Ch]"
+"	      005404f7    mov edx,y"
 "	      005404fa    xor ebx,ebx"
 "	      005404fc    mov bl,[ecx+edx]"
 "	      005404ff    or eax,ebx"
-"	      00540501    mov [ebp-4],ax"
+"	      00540501    mov fromTile,ax"
 "	      00540505    jmp near ptr 0054050Ah"
 );
 // LINE 1202:
@@ -6805,11 +6805,11 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 1204:
 	asm( 
-"	      0054051b    mov dword ptr [ebp-0Ch],2"
+"	      0054051b    mov stepSize,2"
 );
 // LINE 1205:
 	asm( 
-"	      00540522    mov dword ptr [ebp-8],1"
+"	      00540522    mov Offset,1"
 );
 // LINE 1207:
 	asm( 
@@ -6817,21 +6817,21 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 1209:
 	asm( 
-"	      0054052e    mov dword ptr [ebp-0Ch],1"
+"	      0054052e    mov stepSize,1"
 );
 // LINE 1210:
 	asm( 
-"	      00540535    mov dword ptr [ebp-8],0"
+"	      00540535    mov Offset,0"
 );
 // LINE 1213:
 	asm( 
-"	      0054053c    mov eax,[ebp-8]"
-"	      0054053f    cmp [ebp+0Ch],eax"
+"	      0054053c    mov eax,Offset"
+"	      0054053f    cmp y,eax"
 "	      00540542    jle near ptr 00540574h"
 );
 // LINE 1215:
 	asm( 
-"	      00540548    mov eax,[ebp+10h]"
+"	      00540548    mov eax,pRGV"
 "	      0054054b    mov al,[eax+2]"
 "	      0054054e    and al,0Fh"
 "	      00540550    xor ecx,ecx"
@@ -6842,26 +6842,26 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 1216:
 	asm( 
 "	      0054055d    push 0"
-"	      0054055f    mov eax,[ebp+0Ch]"
+"	      0054055f    mov eax,y"
 "	      00540562    dec eax"
 "	      00540563    push eax"
-"	      00540564    mov eax,[ebp+8]"
+"	      00540564    mov eax,x"
 "	      00540567    push eax"
-"	      00540568    mov eax,[ebp+10h]"
+"	      00540568    mov eax,pRGV"
 "	      0054056b    push eax"
-"	      0054056c    mov ecx,[ebp-10h]"
+"	      0054056c    mov ecx,this"
 "	      0054056f    call 00540636h"
 );
 // LINE 1219:
 	asm( 
 "	      00540574    mov eax,7Fh"
-"	      00540579    sub eax,[ebp-8]"
-"	      0054057c    cmp eax,[ebp+8]"
+"	      00540579    sub eax,Offset"
+"	      0054057c    cmp eax,x"
 "	      0054057f    jle near ptr 005405B3h"
 );
 // LINE 1221:
 	asm( 
-"	      00540585    mov eax,[ebp+10h]"
+"	      00540585    mov eax,pRGV"
 "	      00540588    mov al,[eax+2]"
 "	      0054058b    and al,0Fh"
 "	      0054058d    xor ecx,ecx"
@@ -6872,26 +6872,26 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 1222:
 	asm( 
 "	      0054059a    push 1"
-"	      0054059c    mov eax,[ebp+0Ch]"
+"	      0054059c    mov eax,y"
 "	      0054059f    push eax"
-"	      005405a0    mov eax,[ebp+8]"
-"	      005405a3    add eax,[ebp-0Ch]"
+"	      005405a0    mov eax,x"
+"	      005405a3    add eax,stepSize"
 "	      005405a6    push eax"
-"	      005405a7    mov eax,[ebp+10h]"
+"	      005405a7    mov eax,pRGV"
 "	      005405aa    push eax"
-"	      005405ab    mov ecx,[ebp-10h]"
+"	      005405ab    mov ecx,this"
 "	      005405ae    call 00540636h"
 );
 // LINE 1225:
 	asm( 
 "	      005405b3    mov eax,7Fh"
-"	      005405b8    sub eax,[ebp-8]"
-"	      005405bb    cmp eax,[ebp+0Ch]"
+"	      005405b8    sub eax,Offset"
+"	      005405bb    cmp eax,y"
 "	      005405be    jle near ptr 005405F2h"
 );
 // LINE 1227:
 	asm( 
-"	      005405c4    mov eax,[ebp+10h]"
+"	      005405c4    mov eax,pRGV"
 "	      005405c7    mov al,[eax+2]"
 "	      005405ca    and al,0Fh"
 "	      005405cc    xor ecx,ecx"
@@ -6902,25 +6902,25 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 1228:
 	asm( 
 "	      005405d9    push 2"
-"	      005405db    mov eax,[ebp+0Ch]"
-"	      005405de    add eax,[ebp-0Ch]"
+"	      005405db    mov eax,y"
+"	      005405de    add eax,stepSize"
 "	      005405e1    push eax"
-"	      005405e2    mov eax,[ebp+8]"
+"	      005405e2    mov eax,x"
 "	      005405e5    push eax"
-"	      005405e6    mov eax,[ebp+10h]"
+"	      005405e6    mov eax,pRGV"
 "	      005405e9    push eax"
-"	      005405ea    mov ecx,[ebp-10h]"
+"	      005405ea    mov ecx,this"
 "	      005405ed    call 00540636h"
 );
 // LINE 1231:
 	asm( 
-"	      005405f2    mov eax,[ebp-8]"
-"	      005405f5    cmp [ebp+8],eax"
+"	      005405f2    mov eax,Offset"
+"	      005405f5    cmp x,eax"
 "	      005405f8    jle near ptr 0054062Ah"
 );
 // LINE 1233:
 	asm( 
-"	      005405fe    mov eax,[ebp+10h]"
+"	      005405fe    mov eax,pRGV"
 "	      00540601    mov al,[eax+2]"
 "	      00540604    and al,0Fh"
 "	      00540606    xor ecx,ecx"
@@ -6931,14 +6931,14 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 1234:
 	asm( 
 "	      00540613    push 3"
-"	      00540615    mov eax,[ebp+0Ch]"
+"	      00540615    mov eax,y"
 "	      00540618    push eax"
-"	      00540619    mov eax,[ebp+8]"
+"	      00540619    mov eax,x"
 "	      0054061c    dec eax"
 "	      0054061d    push eax"
-"	      0054061e    mov eax,[ebp+10h]"
+"	      0054061e    mov eax,pRGV"
 "	      00540621    push eax"
-"	      00540622    mov ecx,[ebp-10h]"
+"	      00540622    mov ecx,this"
 "	      00540625    call 00540636h"
 );
 // LINE 1236:
@@ -6974,39 +6974,39 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      0054063c    push ebx"
 "	      0054063d    push esi"
 "	      0054063e    push edi"
-"	      0054063f    mov [ebp-54h],ecx"
+"	      0054063f    mov this,ecx"
 );
 // LINE 1259:
 	asm( 
-"	      00540642    mov dword ptr [ebp-24h],0"
+"	      00540642    mov element,0"
 );
 // LINE 1260:
 	asm( 
-"	      00540649    mov dword ptr [ebp-2Ch],0"
+"	      00540649    mov repeatCount,0"
 );
 // LINE 1261:
 	asm( 
-"	      00540650    mov eax,[ebp+8]"
+"	      00540650    mov eax,pRGV"
 "	      00540653    mov al,[eax+2]"
 "	      00540656    shr al,4"
 "	      00540659    and al,0Fh"
 "	      0054065b    xor ecx,ecx"
 "	      0054065d    mov cl,al"
-"	      0054065f    mov eax,[ebp+14h]"
+"	      0054065f    mov eax,currentDir"
 "	      00540662    and ecx,[eax*4+593430h]"
-"	      00540669    mov [ebp-4],ecx"
+"	      00540669    mov deadEnd,ecx"
 );
 // LINE 1262:
 	asm( 
-"	      0054066c    mov dword ptr [ebp-18h],0"
+"	      0054066c    mov decrementFlag,0"
 );
 // LINE 1266:
 	asm( 
 "	      00540673    xor eax,eax"
-"	      00540675    mov al,[ebp+10h]"
+"	      00540675    mov al,y"
 "	      00540678    push eax"
 "	      00540679    xor eax,eax"
-"	      0054067b    mov al,[ebp+0Ch]"
+"	      0054067b    mov al,x"
 "	      0054067e    push eax"
 "	      0054067f    call 00539260h"
 "	      00540684    add esp,8"
@@ -7016,26 +7016,26 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1270:
 	asm( 
-"	      00540694    mov al,[ebp+0Ch]"
-"	      00540697    mov [ebp-14h],al"
+"	      00540694    mov al,x"
+"	      00540697    mov startLoc.x,al"
 );
 // LINE 1271:
 	asm( 
-"	      0054069a    mov al,[ebp+10h]"
-"	      0054069d    mov [ebp-13h],al"
+"	      0054069a    mov al,y"
+"	      0054069d    mov startLoc.y,al"
 );
 // LINE 1275:
 	asm( 
-"	      005406a0    mov eax,[ebp+14h]"
+"	      005406a0    mov eax,currentDir"
 "	      005406a3    lea eax,[eax+eax*4]"
 "	      005406a6    add eax,eax"
-"	      005406a8    add eax,[ebp+8]"
+"	      005406a8    add eax,pRGV"
 "	      005406ab    add eax,4"
-"	      005406ae    mov [ebp-20h],eax"
+"	      005406ae    mov pEdge,eax"
 );
 // LINE 1276:
 	asm( 
-"	      005406b1    mov eax,[ebp-20h]"
+"	      005406b1    mov eax,pEdge"
 "	      005406b4    xor ecx,ecx"
 "	      005406b6    mov cx,[eax+4]"
 "	      005406ba    lea eax,[ecx*2]"
@@ -7044,20 +7044,20 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      005406c7    push eax"
 "	      005406c8    call 004CB4ACh"
 "	      005406cd    add esp,8"
-"	      005406d0    mov ecx,[ebp-20h]"
+"	      005406d0    mov ecx,pEdge"
 "	      005406d3    mov [ecx+6],eax"
 );
 // LINE 1281:
 	asm( 
-"	      005406d6    mov eax,[ebp-20h]"
+"	      005406d6    mov eax,pEdge"
 "	      005406d9    mov eax,[eax+6]"
-"	      005406dc    mov [ebp-8],eax"
+"	      005406dc    mov pRoad,eax"
 );
 // LINE 1282:
 	asm( 
-"	      005406df    cmp dword ptr [ebp-4],0"
+"	      005406df    cmp deadEnd,0"
 "	      005406e3    je near ptr 00540983h"
-"	      005406e9    mov eax,[ebp-20h]"
+"	      005406e9    mov eax,pEdge"
 "	      005406ec    xor ecx,ecx"
 "	      005406ee    mov cx,[eax+4]"
 "	      005406f2    cmp ecx,1"
@@ -7065,56 +7065,56 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1284:
 	asm( 
-"	      005406fb    mov eax,[ebp-8]"
+"	      005406fb    mov eax,pRoad"
 "	      005406fe    mov byte ptr [eax+1],0"
 );
 // LINE 1285:
 	asm( 
-"	      00540702    mov eax,[ebp+14h]"
+"	      00540702    mov eax,currentDir"
 "	      00540705    sub eax,2"
 "	      00540708    and al,3"
-"	      0054070a    mov ecx,[ebp-8]"
+"	      0054070a    mov ecx,pRoad"
 "	      0054070d    mov cl,[ecx]"
 "	      0054070f    and cl,0FCh"
 "	      00540712    or al,cl"
-"	      00540714    mov ecx,[ebp-8]"
+"	      00540714    mov ecx,pRoad"
 "	      00540717    mov [ecx],al"
 );
 // LINE 1288:
 	asm( 
 "	      00540719    xor eax,eax"
-"	      0054071b    mov al,[ebp+0Ch]"
+"	      0054071b    mov al,x"
 "	      0054071e    test eax,eax"
 "	      00540720    jl near ptr 00540753h"
 "	      00540726    xor eax,eax"
-"	      00540728    mov al,[ebp+10h]"
+"	      00540728    mov al,y"
 "	      0054072b    test eax,eax"
 "	      0054072d    jl near ptr 00540753h"
 "	      00540733    xor eax,eax"
-"	      00540735    mov al,[ebp+0Ch]"
+"	      00540735    mov al,x"
 "	      00540738    cmp eax,80h"
 "	      0054073d    jge near ptr 00540753h"
 "	      00540743    xor eax,eax"
-"	      00540745    mov al,[ebp+10h]"
+"	      00540745    mov al,y"
 "	      00540748    cmp eax,80h"
 "	      0054074d    jl near ptr 0054075Eh"
 "	      00540753    mov word ptr [ebp-50h],0"
 "	      00540759    jmp near ptr 0054079Eh"
 "	      0054075e    xor eax,eax"
-"	      00540760    mov al,[ebp+0Ch]"
+"	      00540760    mov al,x"
 "	      00540763    mov eax,[eax*4+638F70h]"
 "	      0054076a    xor ecx,ecx"
-"	      0054076c    mov cl,[ebp+10h]"
+"	      0054076c    mov cl,y"
 "	      0054076f    xor edx,edx"
 "	      00540771    mov dl,[eax+ecx]"
 "	      00540774    and edx,2"
 "	      00540777    movsx eax,dx"
 "	      0054077a    shl eax,0Eh"
 "	      0054077d    xor ecx,ecx"
-"	      0054077f    mov cl,[ebp+0Ch]"
+"	      0054077f    mov cl,x"
 "	      00540782    mov ecx,[ecx*4+639850h]"
 "	      00540789    xor edx,edx"
-"	      0054078b    mov dl,[ebp+10h]"
+"	      0054078b    mov dl,y"
 "	      0054078e    xor ebx,ebx"
 "	      00540790    mov bl,[ecx+edx]"
 "	      00540793    or eax,ebx"
@@ -7146,64 +7146,64 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540817    mov eax,[ebp-30h]"
 "	      0054081a    and al,1"
 "	      0054081c    shl al,4"
-"	      0054081f    mov ecx,[ebp-8]"
+"	      0054081f    mov ecx,pRoad"
 "	      00540822    mov cl,[ecx]"
 "	      00540824    and cl,0EFh"
 "	      00540827    or al,cl"
-"	      00540829    mov ecx,[ebp-8]"
+"	      00540829    mov ecx,pRoad"
 "	      0054082c    mov [ecx],al"
 );
 // LINE 1289:
 	asm( 
 "	      0054082e    xor eax,eax"
-"	      00540830    mov al,[ebp+0Ch]"
+"	      00540830    mov al,x"
 "	      00540833    test eax,eax"
 "	      00540835    jl near ptr 00540868h"
 "	      0054083b    xor eax,eax"
-"	      0054083d    mov al,[ebp+0Ch]"
+"	      0054083d    mov al,x"
 "	      00540840    cmp eax,80h"
 "	      00540845    jge near ptr 00540868h"
 "	      0054084b    xor eax,eax"
-"	      0054084d    mov al,[ebp+10h]"
+"	      0054084d    mov al,y"
 "	      00540850    test eax,eax"
 "	      00540852    jl near ptr 00540868h"
 "	      00540858    xor eax,eax"
-"	      0054085a    mov al,[ebp+10h]"
+"	      0054085a    mov al,y"
 "	      0054085d    cmp eax,80h"
 "	      00540862    jl near ptr 00540874h"
 "	      00540868    mov dword ptr [ebp-34h],1"
 "	      0054086f    jmp near ptr 00540967h"
 "	      00540874    xor eax,eax"
-"	      00540876    mov al,[ebp+0Ch]"
+"	      00540876    mov al,x"
 "	      00540879    mov eax,[eax*4+639850h]"
 "	      00540880    xor ecx,ecx"
-"	      00540882    mov cl,[ebp+10h]"
+"	      00540882    mov cl,y"
 "	      00540885    xor edx,edx"
 "	      00540887    mov dl,[eax+ecx]"
 "	      0054088a    mov [ebp-5Ch],edx"
 "	      0054088d    jmp near ptr 0054093Fh"
-"	      00540892    cmp dword ptr [ebp+14h],3"
+"	      00540892    cmp currentDir,3"
 "	      00540896    jne near ptr 005408A8h"
 "	      0054089c    mov dword ptr [ebp-34h],2"
 "	      005408a3    jmp near ptr 005408AFh"
 "	      005408a8    mov dword ptr [ebp-34h],0"
 "	      005408af    jmp near ptr 00540967h"
 "	      005408b4    jmp near ptr 00540967h"
-"	      005408b9    cmp dword ptr [ebp+14h],0"
+"	      005408b9    cmp currentDir,0"
 "	      005408bd    jne near ptr 005408CFh"
 "	      005408c3    mov dword ptr [ebp-34h],2"
 "	      005408ca    jmp near ptr 005408D6h"
 "	      005408cf    mov dword ptr [ebp-34h],0"
 "	      005408d6    jmp near ptr 00540967h"
 "	      005408db    jmp near ptr 00540967h"
-"	      005408e0    cmp dword ptr [ebp+14h],1"
+"	      005408e0    cmp currentDir,1"
 "	      005408e4    jne near ptr 005408F6h"
 "	      005408ea    mov dword ptr [ebp-34h],2"
 "	      005408f1    jmp near ptr 005408FDh"
 "	      005408f6    mov dword ptr [ebp-34h],0"
 "	      005408fd    jmp near ptr 00540967h"
 "	      00540902    jmp near ptr 00540967h"
-"	      00540907    cmp dword ptr [ebp+14h],2"
+"	      00540907    cmp currentDir,2"
 "	      0054090b    jne near ptr 0054091Dh"
 "	      00540911    mov dword ptr [ebp-34h],2"
 "	      00540918    jmp near ptr 00540924h"
@@ -7224,14 +7224,14 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540960    or [eax+eax+7],dl"
 "	      00540964    or [eax+eax-75h],edx"
 "	      00540968    inc ebp"
-"	      00540969    int 3"
+"	      00540969    int"
 "	      0054096a    and al,3"
 "	      0054096c    shl al,2"
-"	      0054096f    mov ecx,[ebp-8]"
+"	      0054096f    mov ecx,pRoad"
 "	      00540972    mov cl,[ecx]"
 "	      00540974    and cl,0F3h"
 "	      00540977    or al,cl"
-"	      00540979    mov ecx,[ebp-8]"
+"	      00540979    mov ecx,pRoad"
 "	      0054097c    mov [ecx],al"
 );
 // LINE 1290:
@@ -7240,7 +7240,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1296:
 	asm( 
-"	      00540983    cmp dword ptr [ebp-4],0"
+"	      00540983    cmp deadEnd,0"
 "	      00540987    jne near ptr 00540A31h"
 );
 // LINE 1300:
@@ -7249,17 +7249,17 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540990    push eax"
 "	      00540991    mov eax,[ebp+0Ch]"
 "	      00540994    push eax"
-"	      00540995    lea eax,[ebp-1Ch]"
+"	      00540995    lea eax,returnDir"
 "	      00540998    push eax"
-"	      00540999    mov eax,[ebp+14h]"
+"	      00540999    mov eax,currentDir"
 "	      0054099c    push eax"
-"	      0054099d    mov ecx,[ebp-54h]"
+"	      0054099d    mov ecx,this"
 "	      005409a0    call 0053E8B0h"
-"	      005409a5    mov [ebp-28h],eax"
+"	      005409a5    mov returnStatus,eax"
 );
 // LINE 1301:
 	asm( 
-"	      005409a8    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      005409a8    cmp returnStatus,0FFFFFFFFh"
 "	      005409ac    jne near ptr 005409B7h"
 );
 // LINE 1302:
@@ -7268,7 +7268,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1304:
 	asm( 
-"	      005409b7    cmp dword ptr [ebp-28h],0FFFFFFFEh"
+"	      005409b7    cmp returnStatus,0FFFFFFFEh"
 "	      005409bb    jne near ptr 005409C6h"
 );
 // LINE 1305:
@@ -7277,33 +7277,33 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1307:
 	asm( 
-"	      005409c6    mov eax,[ebp-1Ch]"
-"	      005409c9    mov [ebp+14h],eax"
+"	      005409c6    mov eax,returnDir"
+"	      005409c9    mov currentDir,eax"
 );
 // LINE 1308:
 	asm( 
-"	      005409cc    mov eax,[ebp+14h]"
+"	      005409cc    mov eax,currentDir"
 "	      005409cf    mov [ebp-60h],eax"
 "	      005409d2    jmp near ptr 005409FCh"
 );
 // LINE 1310:
 	asm( 
-"	      005409d7    dec byte ptr [ebp+10h]"
+"	      005409d7    dec y"
 "	      005409da    jmp near ptr 00540A20h"
 );
 // LINE 1311:
 	asm( 
-"	      005409df    inc byte ptr [ebp+0Ch]"
+"	      005409df    inc x"
 "	      005409e2    jmp near ptr 00540A20h"
 );
 // LINE 1312:
 	asm( 
-"	      005409e7    inc byte ptr [ebp+10h]"
+"	      005409e7    inc y"
 "	      005409ea    jmp near ptr 00540A20h"
 );
 // LINE 1313:
 	asm( 
-"	      005409ef    dec byte ptr [ebp+0Ch]"
+"	      005409ef    dec x"
 "	      005409f2    jmp near ptr 00540A20h"
 );
 // LINE 1314:
@@ -7325,79 +7325,79 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1319:
 	asm( 
-"	      00540a25    mov eax,[ebp-1Ch]"
+"	      00540a25    mov eax,returnDir"
 "	      00540a28    sub eax,2"
 "	      00540a2b    and eax,3"
-"	      00540a2e    mov [ebp+14h],eax"
+"	      00540a2e    mov currentDir,eax"
 );
 // LINE 1325:
 	asm( 
-"	      00540a31    mov eax,[ebp-20h]"
+"	      00540a31    mov eax,pEdge"
 "	      00540a34    xor ecx,ecx"
 "	      00540a36    mov cx,[eax+4]"
 "	      00540a3a    dec ecx"
-"	      00540a3b    mov [ebp-24h],ecx"
+"	      00540a3b    mov element,ecx"
 );
 // LINE 1326:
 	asm( 
-"	      00540a3e    mov eax,[ebp-20h]"
+"	      00540a3e    mov eax,pEdge"
 "	      00540a41    mov eax,[eax+6]"
-"	      00540a44    mov ecx,[ebp-24h]"
+"	      00540a44    mov ecx,element"
 "	      00540a47    lea eax,[eax+ecx*2]"
-"	      00540a4a    mov [ebp-8],eax"
+"	      00540a4a    mov pRoad,eax"
 );
 // LINE 1327:
 	asm( 
-"	      00540a4d    mov eax,[ebp-8]"
+"	      00540a4d    mov eax,pRoad"
 "	      00540a50    mov byte ptr [eax+1],0"
 );
 // LINE 1328:
 	asm( 
-"	      00540a54    mov eax,[ebp+14h]"
+"	      00540a54    mov eax,currentDir"
 "	      00540a57    sub eax,2"
 "	      00540a5a    and al,3"
-"	      00540a5c    mov ecx,[ebp-8]"
+"	      00540a5c    mov ecx,pRoad"
 "	      00540a5f    mov cl,[ecx]"
 "	      00540a61    and cl,0FCh"
 "	      00540a64    or al,cl"
-"	      00540a66    mov ecx,[ebp-8]"
+"	      00540a66    mov ecx,pRoad"
 "	      00540a69    mov [ecx],al"
 );
 // LINE 1331:
 	asm( 
 "	      00540a6b    xor eax,eax"
-"	      00540a6d    mov al,[ebp+0Ch]"
+"	      00540a6d    mov al,x"
 "	      00540a70    test eax,eax"
 "	      00540a72    jl near ptr 00540AA5h"
 "	      00540a78    xor eax,eax"
-"	      00540a7a    mov al,[ebp+10h]"
+"	      00540a7a    mov al,y"
 "	      00540a7d    test eax,eax"
 "	      00540a7f    jl near ptr 00540AA5h"
 "	      00540a85    xor eax,eax"
-"	      00540a87    mov al,[ebp+0Ch]"
+"	      00540a87    mov al,x"
 "	      00540a8a    cmp eax,80h"
 "	      00540a8f    jge near ptr 00540AA5h"
 "	      00540a95    xor eax,eax"
-"	      00540a97    mov al,[ebp+10h]"
+"	      00540a97    mov al,y"
 "	      00540a9a    cmp eax,80h"
 "	      00540a9f    jl near ptr 00540AB0h"
 "	      00540aa5    mov word ptr [ebp-4Ch],0"
 "	      00540aab    jmp near ptr 00540AF0h"
 "	      00540ab0    xor eax,eax"
-"	      00540ab2    mov al,[ebp+0Ch]"
+"	      00540ab2    mov al,x"
 "	      00540ab5    mov eax,[eax*4+638F70h]"
 "	      00540abc    xor ecx,ecx"
-"	      00540abe    mov cl,[ebp+10h]"
+"	      00540abe    mov cl,y"
 "	      00540ac1    xor edx,edx"
 "	      00540ac3    mov dl,[eax+ecx]"
 "	      00540ac6    and edx,2"
 "	      00540ac9    movsx eax,dx"
 "	      00540acc    shl eax,0Eh"
 "	      00540acf    xor ecx,ecx"
-"	      00540ad1    mov cl,[ebp+0Ch]"
+"	      00540ad1    mov cl,x"
 "	      00540ad4    mov ecx,[ecx*4+639850h]"
 "	      00540adb    xor edx,edx"
-"	      00540add    mov dl,[ebp+10h]"
+"	      00540add    mov dl,y"
 "	      00540ae0    xor ebx,ebx"
 "	      00540ae2    mov bl,[ecx+edx]"
 "	      00540ae5    or eax,ebx"
@@ -7429,64 +7429,64 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540b69    mov eax,[ebp-38h]"
 "	      00540b6c    and al,1"
 "	      00540b6e    shl al,4"
-"	      00540b71    mov ecx,[ebp-8]"
+"	      00540b71    mov ecx,pRoad"
 "	      00540b74    mov cl,[ecx]"
 "	      00540b76    and cl,0EFh"
 "	      00540b79    or al,cl"
-"	      00540b7b    mov ecx,[ebp-8]"
+"	      00540b7b    mov ecx,pRoad"
 "	      00540b7e    mov [ecx],al"
 );
 // LINE 1332:
 	asm( 
 "	      00540b80    xor eax,eax"
-"	      00540b82    mov al,[ebp+0Ch]"
+"	      00540b82    mov al,x"
 "	      00540b85    test eax,eax"
 "	      00540b87    jl near ptr 00540BBAh"
 "	      00540b8d    xor eax,eax"
-"	      00540b8f    mov al,[ebp+0Ch]"
+"	      00540b8f    mov al,x"
 "	      00540b92    cmp eax,80h"
 "	      00540b97    jge near ptr 00540BBAh"
 "	      00540b9d    xor eax,eax"
-"	      00540b9f    mov al,[ebp+10h]"
+"	      00540b9f    mov al,y"
 "	      00540ba2    test eax,eax"
 "	      00540ba4    jl near ptr 00540BBAh"
 "	      00540baa    xor eax,eax"
-"	      00540bac    mov al,[ebp+10h]"
+"	      00540bac    mov al,y"
 "	      00540baf    cmp eax,80h"
 "	      00540bb4    jl near ptr 00540BC6h"
 "	      00540bba    mov dword ptr [ebp-3Ch],1"
 "	      00540bc1    jmp near ptr 00540CB9h"
 "	      00540bc6    xor eax,eax"
-"	      00540bc8    mov al,[ebp+0Ch]"
+"	      00540bc8    mov al,x"
 "	      00540bcb    mov eax,[eax*4+639850h]"
 "	      00540bd2    xor ecx,ecx"
-"	      00540bd4    mov cl,[ebp+10h]"
+"	      00540bd4    mov cl,y"
 "	      00540bd7    xor edx,edx"
 "	      00540bd9    mov dl,[eax+ecx]"
 "	      00540bdc    mov [ebp-68h],edx"
 "	      00540bdf    jmp near ptr 00540C91h"
-"	      00540be4    cmp dword ptr [ebp+14h],3"
+"	      00540be4    cmp currentDir,3"
 "	      00540be8    jne near ptr 00540BFAh"
 "	      00540bee    mov dword ptr [ebp-3Ch],2"
 "	      00540bf5    jmp near ptr 00540C01h"
 "	      00540bfa    mov dword ptr [ebp-3Ch],0"
 "	      00540c01    jmp near ptr 00540CB9h"
 "	      00540c06    jmp near ptr 00540CB9h"
-"	      00540c0b    cmp dword ptr [ebp+14h],0"
+"	      00540c0b    cmp currentDir,0"
 "	      00540c0f    jne near ptr 00540C21h"
 "	      00540c15    mov dword ptr [ebp-3Ch],2"
 "	      00540c1c    jmp near ptr 00540C28h"
 "	      00540c21    mov dword ptr [ebp-3Ch],0"
 "	      00540c28    jmp near ptr 00540CB9h"
 "	      00540c2d    jmp near ptr 00540CB9h"
-"	      00540c32    cmp dword ptr [ebp+14h],1"
+"	      00540c32    cmp currentDir,1"
 "	      00540c36    jne near ptr 00540C48h"
 "	      00540c3c    mov dword ptr [ebp-3Ch],2"
 "	      00540c43    jmp near ptr 00540C4Fh"
 "	      00540c48    mov dword ptr [ebp-3Ch],0"
 "	      00540c4f    jmp near ptr 00540CB9h"
 "	      00540c54    jmp near ptr 00540CB9h"
-"	      00540c59    cmp dword ptr [ebp+14h],2"
+"	      00540c59    cmp currentDir,2"
 "	      00540c5d    jne near ptr 00540C6Fh"
 "	      00540c63    mov dword ptr [ebp-3Ch],2"
 "	      00540c6a    jmp near ptr 00540C76h"
@@ -7511,28 +7511,28 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540cb7    push esp"
 "	      00540cb8    add [ebx+324C445h],cl"
 "	      00540cbe    shl al,2"
-"	      00540cc1    mov ecx,[ebp-8]"
+"	      00540cc1    mov ecx,pRoad"
 "	      00540cc4    mov cl,[ecx]"
 "	      00540cc6    and cl,0F3h"
 "	      00540cc9    or al,cl"
-"	      00540ccb    mov ecx,[ebp-8]"
+"	      00540ccb    mov ecx,pRoad"
 "	      00540cce    mov [ecx],al"
 );
 // LINE 1333:
 	asm( 
-"	      00540cd0    mov dword ptr [ebp-10h],1"
+"	      00540cd0    mov fStart,1"
 );
 // LINE 1336:
 	asm( 
 "	      00540cd7    xor eax,eax"
-"	      00540cd9    mov al,[ebp+0Ch]"
+"	      00540cd9    mov al,x"
 "	      00540cdc    mov eax,[eax*4+639510h]"
 "	      00540ce3    xor ecx,ecx"
-"	      00540ce5    mov cl,[ebp+10h]"
+"	      00540ce5    mov cl,y"
 "	      00540ce8    xor edx,edx"
 "	      00540cea    mov dx,[eax+ecx*2]"
 "	      00540cee    and edx,1Fh"
-"	      00540cf1    mov [ebp-0Ch],dx"
+"	      00540cf1    mov lastAlt,dx"
 );
 // LINE 1339:
 	asm( 
@@ -7540,34 +7540,34 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540cf8    push eax"
 "	      00540cf9    mov eax,[ebp+0Ch]"
 "	      00540cfc    push eax"
-"	      00540cfd    lea eax,[ebp-1Ch]"
+"	      00540cfd    lea eax,returnDir"
 "	      00540d00    push eax"
-"	      00540d01    mov eax,[ebp+14h]"
+"	      00540d01    mov eax,currentDir"
 "	      00540d04    push eax"
-"	      00540d05    mov ecx,[ebp-54h]"
+"	      00540d05    mov ecx,this"
 "	      00540d08    call 0053E8B0h"
-"	      00540d0d    mov [ebp-28h],eax"
+"	      00540d0d    mov returnStatus,eax"
 );
 // LINE 1341:
 	asm( 
-"	      00540d10    cmp dword ptr [ebp-4],0"
+"	      00540d10    cmp deadEnd,0"
 "	      00540d14    je near ptr 00540DCFh"
 );
 // LINE 1343:
 	asm( 
 "	      00540d1a    xor eax,eax"
-"	      00540d1c    mov al,[ebp-14h]"
+"	      00540d1c    mov al,startLoc.x"
 "	      00540d1f    xor ecx,ecx"
-"	      00540d21    mov cl,[ebp+0Ch]"
+"	      00540d21    mov cl,x"
 "	      00540d24    cmp eax,ecx"
 "	      00540d26    jne near ptr 00540D52h"
 "	      00540d2c    xor eax,eax"
-"	      00540d2e    mov al,[ebp-13h]"
+"	      00540d2e    mov al,startLoc.y"
 "	      00540d31    xor ecx,ecx"
-"	      00540d33    mov cl,[ebp+10h]"
+"	      00540d33    mov cl,y"
 "	      00540d36    cmp eax,ecx"
 "	      00540d38    jne near ptr 00540D52h"
-"	      00540d3e    cmp dword ptr [ebp-10h],0"
+"	      00540d3e    cmp fStart,0"
 "	      00540d42    jne near ptr 00540D52h"
 );
 // LINE 1345:
@@ -7577,37 +7577,37 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 // LINE 1347:
 	asm( 
 "	      00540d4d    jmp near ptr 00540DC3h"
-"	      00540d52    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      00540d52    cmp returnStatus,0FFFFFFFFh"
 "	      00540d56    jne near ptr 00540DC3h"
 );
 // LINE 1349:
 	asm( 
-"	      00540d5c    mov dword ptr [ebp-18h],1"
+"	      00540d5c    mov decrementFlag,1"
 );
 // LINE 1351:
 	asm( 
-"	      00540d63    mov eax,[ebp+14h]"
+"	      00540d63    mov eax,currentDir"
 "	      00540d66    mov [ebp-6Ch],eax"
 "	      00540d69    jmp near ptr 00540D93h"
 );
 // LINE 1353:
 	asm( 
-"	      00540d6e    dec byte ptr [ebp+10h]"
+"	      00540d6e    dec y"
 "	      00540d71    jmp near ptr 00540DB7h"
 );
 // LINE 1354:
 	asm( 
-"	      00540d76    inc byte ptr [ebp+0Ch]"
+"	      00540d76    inc x"
 "	      00540d79    jmp near ptr 00540DB7h"
 );
 // LINE 1355:
 	asm( 
-"	      00540d7e    inc byte ptr [ebp+10h]"
+"	      00540d7e    inc y"
 "	      00540d81    jmp near ptr 00540DB7h"
 );
 // LINE 1356:
 	asm( 
-"	      00540d86    dec byte ptr [ebp+0Ch]"
+"	      00540d86    dec x"
 "	      00540d89    jmp near ptr 00540DB7h"
 );
 // LINE 1357:
@@ -7626,14 +7626,14 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1359:
 	asm( 
-"	      00540db7    mov eax,[ebp-1Ch]"
+"	      00540db7    mov eax,returnDir"
 "	      00540dba    sub eax,2"
 "	      00540dbd    and eax,3"
-"	      00540dc0    mov [ebp-1Ch],eax"
+"	      00540dc0    mov returnDir,eax"
 );
 // LINE 1362:
 	asm( 
-"	      00540dc3    mov dword ptr [ebp-10h],0"
+"	      00540dc3    mov fStart,0"
 );
 // LINE 1364:
 	asm( 
@@ -7641,7 +7641,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1366:
 	asm( 
-"	      00540dcf    cmp dword ptr [ebp-28h],0FFFFFFFEh"
+"	      00540dcf    cmp returnStatus,0FFFFFFFEh"
 "	      00540dd3    jne near ptr 00540DDEh"
 );
 // LINE 1367:
@@ -7650,13 +7650,13 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1371:
 	asm( 
-"	      00540dde    mov eax,[ebp-1Ch]"
-"	      00540de1    cmp [ebp+14h],eax"
+"	      00540dde    mov eax,returnDir"
+"	      00540de1    cmp currentDir,eax"
 "	      00540de4    jne near ptr 00540DF5h"
 );
 // LINE 1373:
 	asm( 
-"	      00540dea    mov eax,[ebp-8]"
+"	      00540dea    mov eax,pRoad"
 "	      00540ded    inc byte ptr [eax+1]"
 );
 // LINE 1375:
@@ -7665,34 +7665,34 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1377:
 	asm( 
-"	      00540df5    mov eax,[ebp-1Ch]"
-"	      00540df8    mov [ebp+14h],eax"
+"	      00540df5    mov eax,returnDir"
+"	      00540df8    mov currentDir,eax"
 );
 // LINE 1378:
 	asm( 
-"	      00540dfb    dec dword ptr [ebp-24h]"
+"	      00540dfb    dec element"
 );
 // LINE 1379:
 	asm( 
-"	      00540dfe    mov eax,[ebp-20h]"
+"	      00540dfe    mov eax,pEdge"
 "	      00540e01    mov eax,[eax+6]"
-"	      00540e04    mov ecx,[ebp-24h]"
+"	      00540e04    mov ecx,element"
 "	      00540e07    lea eax,[eax+ecx*2]"
-"	      00540e0a    mov [ebp-8],eax"
+"	      00540e0a    mov pRoad,eax"
 );
 // LINE 1381:
 	asm( 
-"	      00540e0d    cmp dword ptr [ebp-18h],0"
+"	      00540e0d    cmp decrementFlag,0"
 "	      00540e11    je near ptr 00540E2Ah"
 );
 // LINE 1383:
 	asm( 
-"	      00540e17    mov eax,[ebp-8]"
+"	      00540e17    mov eax,pRoad"
 "	      00540e1a    mov byte ptr [eax+1],0FFh"
 );
 // LINE 1384:
 	asm( 
-"	      00540e1e    mov dword ptr [ebp-18h],0"
+"	      00540e1e    mov decrementFlag,0"
 );
 // LINE 1386:
 	asm( 
@@ -7700,56 +7700,56 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1387:
 	asm( 
-"	      00540e2a    mov eax,[ebp-8]"
+"	      00540e2a    mov eax,pRoad"
 "	      00540e2d    mov byte ptr [eax+1],0"
 );
 // LINE 1389:
 	asm( 
-"	      00540e31    mov eax,[ebp+14h]"
+"	      00540e31    mov eax,currentDir"
 "	      00540e34    sub eax,2"
 "	      00540e37    and al,3"
-"	      00540e39    mov ecx,[ebp-8]"
+"	      00540e39    mov ecx,pRoad"
 "	      00540e3c    mov cl,[ecx]"
 "	      00540e3e    and cl,0FCh"
 "	      00540e41    or al,cl"
-"	      00540e43    mov ecx,[ebp-8]"
+"	      00540e43    mov ecx,pRoad"
 "	      00540e46    mov [ecx],al"
 );
 // LINE 1392:
 	asm( 
 "	      00540e48    xor eax,eax"
-"	      00540e4a    mov al,[ebp+0Ch]"
+"	      00540e4a    mov al,x"
 "	      00540e4d    test eax,eax"
 "	      00540e4f    jl near ptr 00540E82h"
 "	      00540e55    xor eax,eax"
-"	      00540e57    mov al,[ebp+10h]"
+"	      00540e57    mov al,y"
 "	      00540e5a    test eax,eax"
 "	      00540e5c    jl near ptr 00540E82h"
 "	      00540e62    xor eax,eax"
-"	      00540e64    mov al,[ebp+0Ch]"
+"	      00540e64    mov al,x"
 "	      00540e67    cmp eax,80h"
 "	      00540e6c    jge near ptr 00540E82h"
 "	      00540e72    xor eax,eax"
-"	      00540e74    mov al,[ebp+10h]"
+"	      00540e74    mov al,y"
 "	      00540e77    cmp eax,80h"
 "	      00540e7c    jl near ptr 00540E8Dh"
 "	      00540e82    mov word ptr [ebp-48h],0"
 "	      00540e88    jmp near ptr 00540ECDh"
 "	      00540e8d    xor eax,eax"
-"	      00540e8f    mov al,[ebp+0Ch]"
+"	      00540e8f    mov al,x"
 "	      00540e92    mov eax,[eax*4+638F70h]"
 "	      00540e99    xor ecx,ecx"
-"	      00540e9b    mov cl,[ebp+10h]"
+"	      00540e9b    mov cl,y"
 "	      00540e9e    xor edx,edx"
 "	      00540ea0    mov dl,[eax+ecx]"
 "	      00540ea3    and edx,2"
 "	      00540ea6    movsx eax,dx"
 "	      00540ea9    shl eax,0Eh"
 "	      00540eac    xor ecx,ecx"
-"	      00540eae    mov cl,[ebp+0Ch]"
+"	      00540eae    mov cl,x"
 "	      00540eb1    mov ecx,[ecx*4+639850h]"
 "	      00540eb8    xor edx,edx"
-"	      00540eba    mov dl,[ebp+10h]"
+"	      00540eba    mov dl,y"
 "	      00540ebd    xor ebx,ebx"
 "	      00540ebf    mov bl,[ecx+edx]"
 "	      00540ec2    or eax,ebx"
@@ -7781,64 +7781,64 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      00540f46    mov eax,[ebp-40h]"
 "	      00540f49    and al,1"
 "	      00540f4b    shl al,4"
-"	      00540f4e    mov ecx,[ebp-8]"
+"	      00540f4e    mov ecx,pRoad"
 "	      00540f51    mov cl,[ecx]"
 "	      00540f53    and cl,0EFh"
 "	      00540f56    or al,cl"
-"	      00540f58    mov ecx,[ebp-8]"
+"	      00540f58    mov ecx,pRoad"
 "	      00540f5b    mov [ecx],al"
 );
 // LINE 1393:
 	asm( 
 "	      00540f5d    xor eax,eax"
-"	      00540f5f    mov al,[ebp+0Ch]"
+"	      00540f5f    mov al,x"
 "	      00540f62    test eax,eax"
 "	      00540f64    jl near ptr 00540F97h"
 "	      00540f6a    xor eax,eax"
-"	      00540f6c    mov al,[ebp+0Ch]"
+"	      00540f6c    mov al,x"
 "	      00540f6f    cmp eax,80h"
 "	      00540f74    jge near ptr 00540F97h"
 "	      00540f7a    xor eax,eax"
-"	      00540f7c    mov al,[ebp+10h]"
+"	      00540f7c    mov al,y"
 "	      00540f7f    test eax,eax"
 "	      00540f81    jl near ptr 00540F97h"
 "	      00540f87    xor eax,eax"
-"	      00540f89    mov al,[ebp+10h]"
+"	      00540f89    mov al,y"
 "	      00540f8c    cmp eax,80h"
 "	      00540f91    jl near ptr 00540FA3h"
 "	      00540f97    mov dword ptr [ebp-44h],1"
 "	      00540f9e    jmp near ptr 00541096h"
 "	      00540fa3    xor eax,eax"
-"	      00540fa5    mov al,[ebp+0Ch]"
+"	      00540fa5    mov al,x"
 "	      00540fa8    mov eax,[eax*4+639850h]"
 "	      00540faf    xor ecx,ecx"
-"	      00540fb1    mov cl,[ebp+10h]"
+"	      00540fb1    mov cl,y"
 "	      00540fb4    xor edx,edx"
 "	      00540fb6    mov dl,[eax+ecx]"
 "	      00540fb9    mov [ebp-74h],edx"
 "	      00540fbc    jmp near ptr 0054106Eh"
-"	      00540fc1    cmp dword ptr [ebp+14h],3"
+"	      00540fc1    cmp currentDir,3"
 "	      00540fc5    jne near ptr 00540FD7h"
 "	      00540fcb    mov dword ptr [ebp-44h],2"
 "	      00540fd2    jmp near ptr 00540FDEh"
 "	      00540fd7    mov dword ptr [ebp-44h],0"
 "	      00540fde    jmp near ptr 00541096h"
 "	      00540fe3    jmp near ptr 00541096h"
-"	      00540fe8    cmp dword ptr [ebp+14h],0"
+"	      00540fe8    cmp currentDir,0"
 "	      00540fec    jne near ptr 00540FFEh"
 "	      00540ff2    mov dword ptr [ebp-44h],2"
 "	      00540ff9    jmp near ptr 00541005h"
 "	      00540ffe    mov dword ptr [ebp-44h],0"
 "	      00541005    jmp near ptr 00541096h"
 "	      0054100a    jmp near ptr 00541096h"
-"	      0054100f    cmp dword ptr [ebp+14h],1"
+"	      0054100f    cmp currentDir,1"
 "	      00541013    jne near ptr 00541025h"
 "	      00541019    mov dword ptr [ebp-44h],2"
 "	      00541020    jmp near ptr 0054102Ch"
 "	      00541025    mov dword ptr [ebp-44h],0"
 "	      0054102c    jmp near ptr 00541096h"
 "	      00541031    jmp near ptr 00541096h"
-"	      00541036    cmp dword ptr [ebp+14h],2"
+"	      00541036    cmp currentDir,2"
 "	      0054103a    jne near ptr 0054104Ch"
 "	      00541040    mov dword ptr [ebp-44h],2"
 "	      00541047    jmp near ptr 00541053h"
@@ -7863,45 +7863,45 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 "	      0054109d    add cl,[ebx+98AF84Dh]"
 "	      005410a3    and cl,0F3h"
 "	      005410a6    or al,cl"
-"	      005410a8    mov ecx,[ebp-8]"
+"	      005410a8    mov ecx,pRoad"
 "	      005410ab    mov [ecx],al"
 );
 // LINE 1396:
 	asm( 
 "	      005410ad    xor eax,eax"
-"	      005410af    mov al,[ebp+0Ch]"
+"	      005410af    mov al,x"
 "	      005410b2    mov eax,[eax*4+639510h]"
 "	      005410b9    xor ecx,ecx"
-"	      005410bb    mov cl,[ebp+10h]"
+"	      005410bb    mov cl,y"
 "	      005410be    xor edx,edx"
 "	      005410c0    mov dx,[eax+ecx*2]"
 "	      005410c4    and edx,1Fh"
-"	      005410c7    mov [ebp-0Ch],dx"
+"	      005410c7    mov lastAlt,dx"
 );
 // LINE 1397:
 	asm( 
-"	      005410cb    mov eax,[ebp+14h]"
+"	      005410cb    mov eax,currentDir"
 "	      005410ce    mov [ebp-78h],eax"
 "	      005410d1    jmp near ptr 005410FBh"
 );
 // LINE 1399:
 	asm( 
-"	      005410d6    dec byte ptr [ebp+10h]"
+"	      005410d6    dec y"
 "	      005410d9    jmp near ptr 0054111Fh"
 );
 // LINE 1400:
 	asm( 
-"	      005410de    inc byte ptr [ebp+0Ch]"
+"	      005410de    inc x"
 "	      005410e1    jmp near ptr 0054111Fh"
 );
 // LINE 1401:
 	asm( 
-"	      005410e6    inc byte ptr [ebp+10h]"
+"	      005410e6    inc y"
 "	      005410e9    jmp near ptr 0054111Fh"
 );
 // LINE 1402:
 	asm( 
-"	      005410ee    dec byte ptr [ebp+0Ch]"
+"	      005410ee    dec x"
 "	      005410f1    jmp near ptr 0054111Fh"
 );
 // LINE 1403:
@@ -7944,85 +7944,85 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 "	      00541136    push ebx"
 "	      00541137    push esi"
 "	      00541138    push edi"
-"	      00541139    mov [ebp-8],ecx"
+"	      00541139    mov this,ecx"
 );
 // LINE 1414:
 	asm( 
-"	      0054113c    mov eax,[ebp+8]"
+"	      0054113c    mov eax,goal"
 "	      0054113f    mov eax,[eax]"
 "	      00541141    mov al,[eax]"
-"	      00541143    mov ecx,[ebp+8]"
+"	      00541143    mov ecx,goal"
 "	      00541146    mov [ecx+0Ch],al"
 );
 // LINE 1415:
 	asm( 
-"	      00541149    mov eax,[ebp+8]"
+"	      00541149    mov eax,goal"
 "	      0054114c    mov eax,[eax]"
 "	      0054114e    mov al,[eax+1]"
-"	      00541151    mov ecx,[ebp+8]"
+"	      00541151    mov ecx,goal"
 "	      00541154    mov [ecx+0Dh],al"
 );
 // LINE 1417:
 	asm( 
-"	      00541157    mov eax,[ebp+8]"
+"	      00541157    mov eax,goal"
 "	      0054115a    xor ecx,ecx"
 "	      0054115c    mov cl,[eax+0Ch]"
 "	      0054115f    xor eax,eax"
-"	      00541161    mov al,[ebp+0Ch]"
+"	      00541161    mov al,currLoc.x"
 "	      00541164    cmp ecx,eax"
 "	      00541166    jne near ptr 00541181h"
-"	      0054116c    mov eax,[ebp+8]"
+"	      0054116c    mov eax,goal"
 "	      0054116f    xor ecx,ecx"
 "	      00541171    mov cl,[eax+0Dh]"
 "	      00541174    xor eax,eax"
-"	      00541176    mov al,[ebp+0Dh]"
+"	      00541176    mov al,currLoc.y"
 "	      00541179    cmp ecx,eax"
 "	      0054117b    je near ptr 00541254h"
 );
 // LINE 1419:
 	asm( 
-"	      00541181    mov eax,[ebp+8]"
+"	      00541181    mov eax,goal"
 "	      00541184    mov eax,[eax+12h]"
 "	      00541187    mov [ebp-0Ch],eax"
 "	      0054118a    jmp near ptr 005411E4h"
 );
 // LINE 1421:
 	asm( 
-"	      0054118f    mov eax,[ebp+8]"
+"	      0054118f    mov eax,goal"
 "	      00541192    xor ecx,ecx"
 "	      00541194    mov cl,[eax+0Dh]"
 "	      00541197    dec ecx"
-"	      00541198    mov eax,[ebp+8]"
+"	      00541198    mov eax,goal"
 "	      0054119b    mov [eax+0Dh],cl"
 "	      0054119e    jmp near ptr 00541208h"
 );
 // LINE 1422:
 	asm( 
-"	      005411a3    mov eax,[ebp+8]"
+"	      005411a3    mov eax,goal"
 "	      005411a6    xor ecx,ecx"
 "	      005411a8    mov cl,[eax+0Ch]"
 "	      005411ab    inc ecx"
-"	      005411ac    mov eax,[ebp+8]"
+"	      005411ac    mov eax,goal"
 "	      005411af    mov [eax+0Ch],cl"
 "	      005411b2    jmp near ptr 00541208h"
 );
 // LINE 1423:
 	asm( 
-"	      005411b7    mov eax,[ebp+8]"
+"	      005411b7    mov eax,goal"
 "	      005411ba    xor ecx,ecx"
 "	      005411bc    mov cl,[eax+0Dh]"
 "	      005411bf    inc ecx"
-"	      005411c0    mov eax,[ebp+8]"
+"	      005411c0    mov eax,goal"
 "	      005411c3    mov [eax+0Dh],cl"
 "	      005411c6    jmp near ptr 00541208h"
 );
 // LINE 1424:
 	asm( 
-"	      005411cb    mov eax,[ebp+8]"
+"	      005411cb    mov eax,goal"
 "	      005411ce    xor ecx,ecx"
 "	      005411d0    mov cl,[eax+0Ch]"
 "	      005411d3    dec ecx"
-"	      005411d4    mov eax,[ebp+8]"
+"	      005411d4    mov eax,goal"
 "	      005411d7    mov [eax+0Ch],cl"
 "	      005411da    jmp near ptr 00541208h"
 );
@@ -8040,17 +8040,17 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 );
 // LINE 1427:
 	asm( 
-"	      00541208    mov eax,[ebp+8]"
+"	      00541208    mov eax,goal"
 "	      0054120b    push eax"
-"	      0054120c    mov ecx,[ebp-8]"
+"	      0054120c    mov ecx,this"
 "	      0054120f    call 0053C331h"
 );
 // LINE 1430:
 	asm( 
-"	      00541214    mov eax,[ebp+8]"
+"	      00541214    mov eax,goal"
 "	      00541217    cmp dword ptr [eax+0Eh],0FFFFFFFEh"
 "	      0054121b    je near ptr 0054122Eh"
-"	      00541221    mov eax,[ebp+8]"
+"	      00541221    mov eax,goal"
 "	      00541224    cmp dword ptr [eax+0Eh],0FFFFFFFFh"
 "	      00541228    jne near ptr 0054124Fh"
 );
@@ -8070,60 +8070,60 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 );
 // LINE 1435:
 	asm( 
-"	      00541254    mov eax,[ebp+8]"
+"	      00541254    mov eax,goal"
 "	      00541257    mov eax,[eax+0Eh]"
 "	      0054125a    lea eax,[eax+eax*4]"
-"	      0054125d    mov ecx,[ebp+8]"
+"	      0054125d    mov ecx,goal"
 "	      00541260    mov ecx,[ecx]"
 "	      00541262    mov eax,[ecx+eax*2+0Ah]"
-"	      00541266    mov ecx,[ebp+8]"
+"	      00541266    mov ecx,goal"
 "	      00541269    mov ecx,[ecx+4]"
 "	      0054126c    lea eax,[eax+ecx*2]"
-"	      0054126f    mov [ebp-4],eax"
+"	      0054126f    mov pRoad,eax"
 );
 // LINE 1436:
 	asm( 
-"	      00541272    mov eax,[ebp-4]"
+"	      00541272    mov eax,pRoad"
 "	      00541275    mov al,[eax]"
 "	      00541277    shr al,4"
 "	      0054127a    and al,1"
 "	      0054127c    xor ecx,ecx"
 "	      0054127e    mov cl,al"
-"	      00541280    mov eax,[ebp+8]"
+"	      00541280    mov eax,goal"
 "	      00541283    mov [eax+22h],ecx"
 );
 // LINE 1437:
 	asm( 
-"	      00541286    mov eax,[ebp-4]"
+"	      00541286    mov eax,pRoad"
 "	      00541289    mov al,[eax]"
 "	      0054128b    shr al,2"
 "	      0054128e    and al,3"
 "	      00541290    xor ecx,ecx"
 "	      00541292    mov cl,al"
-"	      00541294    mov eax,[ebp+8]"
+"	      00541294    mov eax,goal"
 "	      00541297    mov [eax+26h],ecx"
 );
 // LINE 1438:
 	asm( 
-"	      0054129a    mov eax,[ebp+8]"
+"	      0054129a    mov eax,goal"
 "	      0054129d    mov eax,[eax]"
 "	      0054129f    mov al,[eax+2]"
 "	      005412a2    shr al,4"
 "	      005412a5    and al,0Fh"
 "	      005412a7    xor ecx,ecx"
 "	      005412a9    mov cl,al"
-"	      005412ab    mov eax,[ebp+8]"
+"	      005412ab    mov eax,goal"
 "	      005412ae    mov [eax+1Eh],ecx"
 );
 // LINE 1439:
 	asm( 
-"	      005412b1    mov eax,[ebp+8]"
+"	      005412b1    mov eax,goal"
 "	      005412b4    mov eax,[eax]"
 "	      005412b6    mov al,[eax+2]"
 "	      005412b9    and al,0Fh"
 "	      005412bb    xor ecx,ecx"
 "	      005412bd    mov cl,al"
-"	      005412bf    mov eax,[ebp+8]"
+"	      005412bf    mov eax,goal"
 "	      005412c2    mov [eax+1Ah],ecx"
 );
 // LINE 1440:
@@ -8147,7 +8147,7 @@ int32_t RoadGraph::SetElevation(unsigned short t) {
 "	      005412d7    push ebx"
 "	      005412d8    push esi"
 "	      005412d9    push edi"
-"	      005412da    mov [ebp-8],ecx"
+"	      005412da    mov this,ecx"
 );
 // LINE 1447:
 	asm( 

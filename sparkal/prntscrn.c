@@ -25,7 +25,7 @@ void S3PrintScreen() {
 "	      0046b881    push eax"
 "	      0046b882    call 004D2157h"
 "	      0046b887    add esp,4"
-"	      0046b88a    mov [ebp-108h],eax"
+"	      0046b88a    mov chPalette,eax"
 );
 // LINE 57:
 	asm( 
@@ -35,16 +35,16 @@ void S3PrintScreen() {
 "	      0046b8a4    movsx eax,word ptr [ebp-10Ch]"
 "	      0046b8ab    push eax"
 "	      0046b8ac    push 599434h"
-"	      0046b8b1    lea eax,[ebp-104h]"
+"	      0046b8b1    lea eax,fname[0]"
 "	      0046b8b7    push eax"
 "	      0046b8b8    call 0056CD30h"
 "	      0046b8bd    add esp,0Ch"
 );
 // LINE 58:
 	asm( 
-"	      0046b8c0    mov eax,[ebp-108h]"
+"	      0046b8c0    mov eax,chPalette"
 "	      0046b8c6    push eax"
-"	      0046b8c7    lea eax,[ebp-104h]"
+"	      0046b8c7    lea eax,fname[0]"
 "	      0046b8cd    push eax"
 "	      0046b8ce    call 0046B8DBh"
 "	      0046b8d3    add esp,8"
@@ -85,17 +85,17 @@ void S3BufferPrint(char * fname, char * chPalette) {
 // LINE 76:
 	asm( 
 "	      0046b8f1    mov eax,ds:[598EE8h]"
-"	      0046b8f6    mov [ebp-0Ch],eax"
+"	      0046b8f6    mov xdim,eax"
 );
 // LINE 77:
 	asm( 
 "	      0046b8f9    mov eax,ds:[598EECh]"
-"	      0046b8fe    mov [ebp-14h],eax"
+"	      0046b8fe    mov ydim,eax"
 );
 // LINE 78:
 	asm( 
 "	      0046b901    mov eax,ds:[598EF4h]"
-"	      0046b906    mov [ebp-10h],eax"
+"	      0046b906    mov pitch,eax"
 );
 // LINE 80:
 	asm( 
@@ -104,17 +104,17 @@ void S3BufferPrint(char * fname, char * chPalette) {
 // LINE 82:
 	asm( 
 "	      0046b90e    mov eax,ds:[598EC8h]"
-"	      0046b913    mov [ebp-0Ch],eax"
+"	      0046b913    mov xdim,eax"
 );
 // LINE 83:
 	asm( 
 "	      0046b916    mov eax,ds:[598ECCh]"
-"	      0046b91b    mov [ebp-14h],eax"
+"	      0046b91b    mov ydim,eax"
 );
 // LINE 84:
 	asm( 
 "	      0046b91e    mov eax,ds:[598ED4h]"
-"	      0046b923    mov [ebp-10h],eax"
+"	      0046b923    mov pitch,eax"
 );
 // LINE 87:
 	asm( 
@@ -132,13 +132,13 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 90:
 	asm( 
-"	      0046b949    mov eax,[ebp-0Ch]"
+"	      0046b949    mov eax,xdim"
 "	      0046b94c    dec eax"
 "	      0046b94d    mov ds:[603DD0h],ax"
 );
 // LINE 91:
 	asm( 
-"	      0046b953    mov eax,[ebp-14h]"
+"	      0046b953    mov eax,ydim"
 "	      0046b956    dec eax"
 "	      0046b957    mov ds:[603DD2h],ax"
 );
@@ -160,26 +160,26 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 96:
 	asm( 
-"	      0046b97b    mov eax,[ebp-0Ch]"
+"	      0046b97b    mov eax,xdim"
 "	      0046b97e    mov ds:[603E0Ah],ax"
 );
 // LINE 99:
 	asm( 
 "	      0046b984    push 599444h"
-"	      0046b989    mov eax,[ebp+8]"
+"	      0046b989    mov eax,fname"
 "	      0046b98c    push eax"
 "	      0046b98d    call 0056D910h"
 "	      0046b992    add esp,8"
-"	      0046b995    mov [ebp-18h],eax"
+"	      0046b995    mov hFileOut,eax"
 );
 // LINE 100:
 	asm( 
-"	      0046b998    cmp dword ptr [ebp-18h],0"
+"	      0046b998    cmp hFileOut,0"
 "	      0046b99c    je near ptr 0046BABEh"
 );
 // LINE 101:
 	asm( 
-"	      0046b9a2    mov eax,[ebp-18h]"
+"	      0046b9a2    mov eax,hFileOut"
 "	      0046b9a5    push eax"
 "	      0046b9a6    push 1"
 "	      0046b9a8    push 80h"
@@ -190,32 +190,32 @@ void S3BufferPrint(char * fname, char * chPalette) {
 // LINE 103:
 	asm( 
 "	      0046b9ba    mov eax,ds:[598EACh]"
-"	      0046b9bf    mov [ebp-4],eax"
+"	      0046b9bf    mov ptr,eax"
 );
 // LINE 104:
 	asm( 
-"	      0046b9c2    mov dword ptr [ebp-8],0"
+"	      0046b9c2    mov y,0"
 "	      0046b9c9    jmp near ptr 0046B9D1h"
-"	      0046b9ce    inc dword ptr [ebp-8]"
-"	      0046b9d1    mov eax,[ebp-8]"
-"	      0046b9d4    cmp [ebp-14h],eax"
+"	      0046b9ce    inc y"
+"	      0046b9d1    mov eax,y"
+"	      0046b9d4    cmp ydim,eax"
 "	      0046b9d7    jle near ptr 0046B9FCh"
 );
 // LINE 106:
 	asm( 
-"	      0046b9dd    mov eax,[ebp-0Ch]"
+"	      0046b9dd    mov eax,xdim"
 "	      0046b9e0    push eax"
-"	      0046b9e1    mov eax,[ebp-4]"
+"	      0046b9e1    mov eax,ptr"
 "	      0046b9e4    push eax"
-"	      0046b9e5    mov eax,[ebp-18h]"
+"	      0046b9e5    mov eax,hFileOut"
 "	      0046b9e8    push eax"
 "	      0046b9e9    call 0046BAC3h"
 "	      0046b9ee    add esp,0Ch"
 );
 // LINE 107:
 	asm( 
-"	      0046b9f1    mov eax,[ebp-10h]"
-"	      0046b9f4    add [ebp-4],eax"
+"	      0046b9f1    mov eax,pitch"
+"	      0046b9f4    add ptr,eax"
 );
 // LINE 108:
 	asm( 
@@ -223,7 +223,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 109:
 	asm( 
-"	      0046b9fc    mov eax,[ebp-18h]"
+"	      0046b9fc    mov eax,hFileOut"
 "	      0046b9ff    push eax"
 "	      0046ba00    push 0Ch"
 "	      0046ba02    call 0056F8B0h"
@@ -253,31 +253,31 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 114:
 	asm( 
-"	      0046ba3d    mov dword ptr [ebp-8],0"
+"	      0046ba3d    mov y,0"
 "	      0046ba44    jmp near ptr 0046BA4Ch"
-"	      0046ba49    inc dword ptr [ebp-8]"
-"	      0046ba4c    cmp dword ptr [ebp-8],100h"
+"	      0046ba49    inc y"
+"	      0046ba4c    cmp y,100h"
 "	      0046ba53    jge near ptr 0046BA9Ah"
 );
 // LINE 116:
 	asm( 
-"	      0046ba59    mov eax,[ebp-8]"
+"	      0046ba59    mov eax,y"
 "	      0046ba5c    mov al,[eax*4+603E48h]"
-"	      0046ba63    mov ecx,[ebp-8]"
+"	      0046ba63    mov ecx,y"
 "	      0046ba66    mov [ecx+ecx*2+603AC0h],al"
 );
 // LINE 117:
 	asm( 
-"	      0046ba6d    mov eax,[ebp-8]"
+"	      0046ba6d    mov eax,y"
 "	      0046ba70    mov al,[eax*4+603E49h]"
-"	      0046ba77    mov ecx,[ebp-8]"
+"	      0046ba77    mov ecx,y"
 "	      0046ba7a    mov [ecx+ecx*2+603AC1h],al"
 );
 // LINE 118:
 	asm( 
-"	      0046ba81    mov eax,[ebp-8]"
+"	      0046ba81    mov eax,y"
 "	      0046ba84    mov al,[eax*4+603E4Ah]"
-"	      0046ba8b    mov ecx,[ebp-8]"
+"	      0046ba8b    mov ecx,y"
 "	      0046ba8e    mov [ecx+ecx*2+603AC2h],al"
 );
 // LINE 119:
@@ -286,7 +286,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 120:
 	asm( 
-"	      0046ba9a    mov eax,[ebp-18h]"
+"	      0046ba9a    mov eax,hFileOut"
 "	      0046ba9d    push eax"
 "	      0046ba9e    push 1"
 "	      0046baa0    push 300h"
@@ -296,7 +296,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 );
 // LINE 124:
 	asm( 
-"	      0046bab2    mov eax,[ebp-18h]"
+"	      0046bab2    mov eax,hFileOut"
 "	      0046bab5    push eax"
 "	      0046bab6    call 0056D120h"
 "	      0046babb    add esp,4"
@@ -328,13 +328,13 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 137:
 	asm( 
-"	      0046bacc    mov word ptr [ebp-8],0"
-"	      0046bad2    mov word ptr [ebp-0Ch],0"
-"	      0046bad8    mov word ptr [ebp-4],0"
+"	      0046bacc    mov i,0"
+"	      0046bad2    mov j,0"
+"	      0046bad8    mov t,0"
 );
 // LINE 140:
 	asm( 
-"	      0046bade    mov word ptr [ebp-8],0"
+"	      0046bade    mov i,0"
 );
 // LINE 141:
 	asm( 
@@ -343,14 +343,14 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 "	      0046baec    mov ecx,[ebp-8]"
 "	      0046baef    and ecx,0FFFFh"
 "	      0046baf5    add eax,ecx"
-"	      0046baf7    mov ecx,[ebp+0Ch]"
+"	      0046baf7    mov ecx,p"
 "	      0046bafa    movsx eax,byte ptr [eax+ecx+1]"
 "	      0046baff    mov ecx,[ebp-4]"
 "	      0046bb02    and ecx,0FFFFh"
 "	      0046bb08    mov edx,[ebp-8]"
 "	      0046bb0b    and edx,0FFFFh"
 "	      0046bb11    add ecx,edx"
-"	      0046bb13    mov edx,[ebp+0Ch]"
+"	      0046bb13    mov edx,p"
 "	      0046bb16    movsx ecx,byte ptr [ecx+edx]"
 "	      0046bb1a    cmp eax,ecx"
 "	      0046bb1c    jne near ptr 0046BB60h"
@@ -367,7 +367,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 "	      0046bb49    and eax,0FFFFh"
 "	      0046bb4e    cmp eax,3Fh"
 "	      0046bb51    jge near ptr 0046BB60h"
-"	      0046bb57    inc word ptr [ebp-8]"
+"	      0046bb57    inc i"
 "	      0046bb5b    jmp near ptr 0046BAE4h"
 );
 // LINE 142:
@@ -377,7 +377,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 143:
 	asm( 
-"	      0046bb6d    mov eax,[ebp+8]"
+"	      0046bb6d    mov eax,fp"
 "	      0046bb70    push eax"
 "	      0046bb71    mov eax,[ebp-8]"
 "	      0046bb74    and eax,0FFFFh"
@@ -392,11 +392,11 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 144:
 	asm( 
-"	      0046bb9a    mov eax,[ebp+8]"
+"	      0046bb9a    mov eax,fp"
 "	      0046bb9d    push eax"
 "	      0046bb9e    mov eax,[ebp-4]"
 "	      0046bba1    and eax,0FFFFh"
-"	      0046bba6    mov ecx,[ebp+0Ch]"
+"	      0046bba6    mov ecx,p"
 "	      0046bba9    movsx eax,byte ptr [eax+ecx]"
 "	      0046bbad    push eax"
 "	      0046bbae    call 0056F8B0h"
@@ -413,14 +413,14 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 "	      0046bbd1    mov ecx,[ebp-8]"
 "	      0046bbd4    and ecx,0FFFFh"
 "	      0046bbda    add eax,ecx"
-"	      0046bbdc    mov [ebp-4],ax"
+"	      0046bbdc    mov t,ax"
 );
 // LINE 146:
 	asm( 
 "	      0046bbe0    mov eax,[ebp-0Ch]"
 "	      0046bbe3    and eax,0FFFFh"
 "	      0046bbe8    add eax,2"
-"	      0046bbeb    mov [ebp-0Ch],ax"
+"	      0046bbeb    mov j,ax"
 );
 // LINE 148:
 	asm( 
@@ -430,7 +430,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	asm( 
 "	      0046bbf4    mov eax,[ebp-4]"
 "	      0046bbf7    and eax,0FFFFh"
-"	      0046bbfc    mov ecx,[ebp+0Ch]"
+"	      0046bbfc    mov ecx,p"
 "	      0046bbff    movsx eax,byte ptr [eax+ecx]"
 "	      0046bc03    and al,0C0h"
 "	      0046bc05    cmp al,0C0h"
@@ -438,7 +438,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 150:
 	asm( 
-"	      0046bc0d    mov eax,[ebp+8]"
+"	      0046bc0d    mov eax,fp"
 "	      0046bc10    push eax"
 "	      0046bc11    push 0C1h"
 "	      0046bc16    call 0056F8B0h"
@@ -450,18 +450,18 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 151:
 	asm( 
-"	      0046bc31    inc word ptr [ebp-0Ch]"
+"	      0046bc31    inc j"
 );
 // LINE 153:
 	asm( 
-"	      0046bc35    mov ax,[ebp-4]"
+"	      0046bc35    mov ax,t"
 "	      0046bc39    mov [ebp-10h],ax"
-"	      0046bc3d    inc word ptr [ebp-4]"
-"	      0046bc41    mov eax,[ebp+8]"
+"	      0046bc3d    inc t"
+"	      0046bc41    mov eax,fp"
 "	      0046bc44    push eax"
 "	      0046bc45    mov eax,[ebp-10h]"
 "	      0046bc48    and eax,0FFFFh"
-"	      0046bc4d    mov ecx,[ebp+0Ch]"
+"	      0046bc4d    mov ecx,p"
 "	      0046bc50    movsx eax,byte ptr [eax+ecx]"
 "	      0046bc54    push eax"
 "	      0046bc55    call 0056F8B0h"
@@ -473,7 +473,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 154:
 	asm( 
-"	      0046bc70    inc word ptr [ebp-0Ch]"
+"	      0046bc70    inc j"
 );
 // LINE 156:
 	asm( 

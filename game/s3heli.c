@@ -29,26 +29,26 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 490:
 	asm( 
-"	      004ef1c9    mov eax,[ebp+8]"
+"	      004ef1c9    mov eax,hd"
 "	      004ef1cc    mov eax,[eax]"
 "	      004ef1ce    mov ecx,eax"
 "	      004ef1d0    lea eax,[eax+eax*4]"
 "	      004ef1d3    lea eax,[ecx+eax*2]"
 "	      004ef1d6    lea eax,[eax*8+5B4978h]"
-"	      004ef1dd    mov [ebp-44h],eax"
+"	      004ef1dd    mov htd,eax"
 );
 // LINE 491:
 	asm( 
-"	      004ef1e0    mov eax,[ebp+8]"
+"	      004ef1e0    mov eax,hd"
 "	      004ef1e3    sub eax,6BF1D0h"
 "	      004ef1e8    mov ecx,32Ch"
 "	      004ef1ed    cdq"
 "	      004ef1ee    idiv ecx"
-"	      004ef1f0    mov [ebp-30h],eax"
+"	      004ef1f0    mov hdindex,eax"
 );
 // LINE 493:
 	asm( 
-"	      004ef1f3    mov eax,[ebp+8]"
+"	      004ef1f3    mov eax,hd"
 "	      004ef1f6    mov eax,[eax]"
 "	      004ef1f8    mov [ebp-4Ch],eax"
 "	      004ef1fb    jmp near ptr 004EF4AEh"
@@ -58,28 +58,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef200    push 76h"
 "	      004ef202    call 004D8821h"
 "	      004ef207    add esp,4"
-"	      004ef20a    mov [ebp-40h],eax"
+"	      004ef20a    mov heliobj,eax"
 );
 // LINE 497:
 	asm( 
 "	      004ef20d    push 117h"
 "	      004ef212    call 004D8821h"
 "	      004ef217    add esp,4"
-"	      004ef21a    mov [ebp-2Ch],eax"
+"	      004ef21a    mov rotobj,eax"
 );
 // LINE 498:
 	asm( 
 "	      004ef21d    push 159h"
 "	      004ef222    call 004D8821h"
 "	      004ef227    add esp,4"
-"	      004ef22a    mov [ebp-48h],eax"
+"	      004ef22a    mov shadobj,eax"
 );
 // LINE 499:
 	asm( 
 "	      004ef22d    push 160h"
 "	      004ef232    call 004D8821h"
 "	      004ef237    add esp,4"
-"	      004ef23a    mov [ebp-34h],eax"
+"	      004ef23a    mov rotshadobj,eax"
 );
 // LINE 500:
 	asm( 
@@ -90,28 +90,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef242    push 116h"
 "	      004ef247    call 004D8821h"
 "	      004ef24c    add esp,4"
-"	      004ef24f    mov [ebp-40h],eax"
+"	      004ef24f    mov heliobj,eax"
 );
 // LINE 503:
 	asm( 
 "	      004ef252    push 78h"
 "	      004ef254    call 004D8821h"
 "	      004ef259    add esp,4"
-"	      004ef25c    mov [ebp-2Ch],eax"
+"	      004ef25c    mov rotobj,eax"
 );
 // LINE 504:
 	asm( 
 "	      004ef25f    push 158h"
 "	      004ef264    call 004D8821h"
 "	      004ef269    add esp,4"
-"	      004ef26c    mov [ebp-48h],eax"
+"	      004ef26c    mov shadobj,eax"
 );
 // LINE 505:
 	asm( 
 "	      004ef26f    push 15Fh"
 "	      004ef274    call 004D8821h"
 "	      004ef279    add esp,4"
-"	      004ef27c    mov [ebp-34h],eax"
+"	      004ef27c    mov rotshadobj,eax"
 );
 // LINE 506:
 	asm( 
@@ -122,28 +122,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef284    push 119h"
 "	      004ef289    call 004D8821h"
 "	      004ef28e    add esp,4"
-"	      004ef291    mov [ebp-40h],eax"
+"	      004ef291    mov heliobj,eax"
 );
 // LINE 509:
 	asm( 
 "	      004ef294    push 11Ah"
 "	      004ef299    call 004D8821h"
 "	      004ef29e    add esp,4"
-"	      004ef2a1    mov [ebp-2Ch],eax"
+"	      004ef2a1    mov rotobj,eax"
 );
 // LINE 510:
 	asm( 
 "	      004ef2a4    push 15Bh"
 "	      004ef2a9    call 004D8821h"
 "	      004ef2ae    add esp,4"
-"	      004ef2b1    mov [ebp-48h],eax"
+"	      004ef2b1    mov shadobj,eax"
 );
 // LINE 511:
 	asm( 
 "	      004ef2b4    push 162h"
 "	      004ef2b9    call 004D8821h"
 "	      004ef2be    add esp,4"
-"	      004ef2c1    mov [ebp-34h],eax"
+"	      004ef2c1    mov rotshadobj,eax"
 );
 // LINE 512:
 	asm( 
@@ -154,28 +154,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef2c9    push 124h"
 "	      004ef2ce    call 004D8821h"
 "	      004ef2d3    add esp,4"
-"	      004ef2d6    mov [ebp-40h],eax"
+"	      004ef2d6    mov heliobj,eax"
 );
 // LINE 515:
 	asm( 
 "	      004ef2d9    push 126h"
 "	      004ef2de    call 004D8821h"
 "	      004ef2e3    add esp,4"
-"	      004ef2e6    mov [ebp-2Ch],eax"
+"	      004ef2e6    mov rotobj,eax"
 );
 // LINE 516:
 	asm( 
 "	      004ef2e9    push 156h"
 "	      004ef2ee    call 004D8821h"
 "	      004ef2f3    add esp,4"
-"	      004ef2f6    mov [ebp-48h],eax"
+"	      004ef2f6    mov shadobj,eax"
 );
 // LINE 517:
 	asm( 
 "	      004ef2f9    push 15Dh"
 "	      004ef2fe    call 004D8821h"
 "	      004ef303    add esp,4"
-"	      004ef306    mov [ebp-34h],eax"
+"	      004ef306    mov rotshadobj,eax"
 );
 // LINE 518:
 	asm( 
@@ -186,28 +186,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef30e    push 125h"
 "	      004ef313    call 004D8821h"
 "	      004ef318    add esp,4"
-"	      004ef31b    mov [ebp-40h],eax"
+"	      004ef31b    mov heliobj,eax"
 );
 // LINE 521:
 	asm( 
 "	      004ef31e    push 127h"
 "	      004ef323    call 004D8821h"
 "	      004ef328    add esp,4"
-"	      004ef32b    mov [ebp-2Ch],eax"
+"	      004ef32b    mov rotobj,eax"
 );
 // LINE 522:
 	asm( 
 "	      004ef32e    push 15Ah"
 "	      004ef333    call 004D8821h"
 "	      004ef338    add esp,4"
-"	      004ef33b    mov [ebp-48h],eax"
+"	      004ef33b    mov shadobj,eax"
 );
 // LINE 523:
 	asm( 
 "	      004ef33e    push 161h"
 "	      004ef343    call 004D8821h"
 "	      004ef348    add esp,4"
-"	      004ef34b    mov [ebp-34h],eax"
+"	      004ef34b    mov rotshadobj,eax"
 );
 // LINE 524:
 	asm( 
@@ -218,28 +218,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef353    push 141h"
 "	      004ef358    call 004D8821h"
 "	      004ef35d    add esp,4"
-"	      004ef360    mov [ebp-40h],eax"
+"	      004ef360    mov heliobj,eax"
 );
 // LINE 527:
 	asm( 
 "	      004ef363    push 142h"
 "	      004ef368    call 004D8821h"
 "	      004ef36d    add esp,4"
-"	      004ef370    mov [ebp-2Ch],eax"
+"	      004ef370    mov rotobj,eax"
 );
 // LINE 528:
 	asm( 
 "	      004ef373    push 155h"
 "	      004ef378    call 004D8821h"
 "	      004ef37d    add esp,4"
-"	      004ef380    mov [ebp-48h],eax"
+"	      004ef380    mov shadobj,eax"
 );
 // LINE 529:
 	asm( 
 "	      004ef383    push 15Ch"
 "	      004ef388    call 004D8821h"
 "	      004ef38d    add esp,4"
-"	      004ef390    mov [ebp-34h],eax"
+"	      004ef390    mov rotshadobj,eax"
 );
 // LINE 530:
 	asm( 
@@ -250,28 +250,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef398    push 153h"
 "	      004ef39d    call 004D8821h"
 "	      004ef3a2    add esp,4"
-"	      004ef3a5    mov [ebp-40h],eax"
+"	      004ef3a5    mov heliobj,eax"
 );
 // LINE 533:
 	asm( 
 "	      004ef3a8    push 154h"
 "	      004ef3ad    call 004D8821h"
 "	      004ef3b2    add esp,4"
-"	      004ef3b5    mov [ebp-2Ch],eax"
+"	      004ef3b5    mov rotobj,eax"
 );
 // LINE 534:
 	asm( 
 "	      004ef3b8    push 157h"
 "	      004ef3bd    call 004D8821h"
 "	      004ef3c2    add esp,4"
-"	      004ef3c5    mov [ebp-48h],eax"
+"	      004ef3c5    mov shadobj,eax"
 );
 // LINE 535:
 	asm( 
 "	      004ef3c8    push 15Eh"
 "	      004ef3cd    call 004D8821h"
 "	      004ef3d2    add esp,4"
-"	      004ef3d5    mov [ebp-34h],eax"
+"	      004ef3d5    mov rotshadobj,eax"
 );
 // LINE 536:
 	asm( 
@@ -282,28 +282,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef3dd    push 170h"
 "	      004ef3e2    call 004D8821h"
 "	      004ef3e7    add esp,4"
-"	      004ef3ea    mov [ebp-40h],eax"
+"	      004ef3ea    mov heliobj,eax"
 );
 // LINE 539:
 	asm( 
 "	      004ef3ed    push 172h"
 "	      004ef3f2    call 004D8821h"
 "	      004ef3f7    add esp,4"
-"	      004ef3fa    mov [ebp-2Ch],eax"
+"	      004ef3fa    mov rotobj,eax"
 );
 // LINE 540:
 	asm( 
 "	      004ef3fd    push 174h"
 "	      004ef402    call 004D8821h"
 "	      004ef407    add esp,4"
-"	      004ef40a    mov [ebp-48h],eax"
+"	      004ef40a    mov shadobj,eax"
 );
 // LINE 541:
 	asm( 
 "	      004ef40d    push 176h"
 "	      004ef412    call 004D8821h"
 "	      004ef417    add esp,4"
-"	      004ef41a    mov [ebp-34h],eax"
+"	      004ef41a    mov rotshadobj,eax"
 );
 // LINE 542:
 	asm( 
@@ -314,28 +314,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef422    push 171h"
 "	      004ef427    call 004D8821h"
 "	      004ef42c    add esp,4"
-"	      004ef42f    mov [ebp-40h],eax"
+"	      004ef42f    mov heliobj,eax"
 );
 // LINE 545:
 	asm( 
 "	      004ef432    push 173h"
 "	      004ef437    call 004D8821h"
 "	      004ef43c    add esp,4"
-"	      004ef43f    mov [ebp-2Ch],eax"
+"	      004ef43f    mov rotobj,eax"
 );
 // LINE 546:
 	asm( 
 "	      004ef442    push 175h"
 "	      004ef447    call 004D8821h"
 "	      004ef44c    add esp,4"
-"	      004ef44f    mov [ebp-48h],eax"
+"	      004ef44f    mov shadobj,eax"
 );
 // LINE 547:
 	asm( 
 "	      004ef452    push 177h"
 "	      004ef457    call 004D8821h"
 "	      004ef45c    add esp,4"
-"	      004ef45f    mov [ebp-34h],eax"
+"	      004ef45f    mov rotshadobj,eax"
 );
 // LINE 548:
 	asm( 
@@ -346,28 +346,28 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef467    push 76h"
 "	      004ef469    call 004D8821h"
 "	      004ef46e    add esp,4"
-"	      004ef471    mov [ebp-40h],eax"
+"	      004ef471    mov heliobj,eax"
 );
 // LINE 551:
 	asm( 
 "	      004ef474    push 117h"
 "	      004ef479    call 004D8821h"
 "	      004ef47e    add esp,4"
-"	      004ef481    mov [ebp-2Ch],eax"
+"	      004ef481    mov rotobj,eax"
 );
 // LINE 552:
 	asm( 
 "	      004ef484    push 159h"
 "	      004ef489    call 004D8821h"
 "	      004ef48e    add esp,4"
-"	      004ef491    mov [ebp-48h],eax"
+"	      004ef491    mov shadobj,eax"
 );
 // LINE 553:
 	asm( 
 "	      004ef494    push 160h"
 "	      004ef499    call 004D8821h"
 "	      004ef49e    add esp,4"
-"	      004ef4a1    mov [ebp-34h],eax"
+"	      004ef4a1    mov rotshadobj,eax"
 );
 // LINE 554:
 	asm( 
@@ -399,7 +399,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 560:
 	asm( 
-"	      004ef4e6    mov eax,[ebp+8]"
+"	      004ef4e6    mov eax,hd"
 "	      004ef4e9    mov dword ptr [eax+8],0"
 );
 // LINE 564:
@@ -409,7 +409,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef4f7    push eax"
 "	      004ef4f8    call 004CB4ACh"
 "	      004ef4fd    add esp,8"
-"	      004ef500    mov ecx,[ebp+8]"
+"	      004ef500    mov ecx,hd"
 "	      004ef503    mov [ecx+0A4h],eax"
 );
 // LINE 566:
@@ -419,7 +419,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef510    push eax"
 "	      004ef511    call 004CB4ACh"
 "	      004ef516    add esp,8"
-"	      004ef519    mov ecx,[ebp+8]"
+"	      004ef519    mov ecx,hd"
 "	      004ef51c    mov [ecx+0BCh],eax"
 );
 // LINE 568:
@@ -429,7 +429,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef529    push eax"
 "	      004ef52a    call 004CB4ACh"
 "	      004ef52f    add esp,8"
-"	      004ef532    mov ecx,[ebp+8]"
+"	      004ef532    mov ecx,hd"
 "	      004ef535    mov [ecx+0A8h],eax"
 );
 // LINE 570:
@@ -439,7 +439,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef542    push eax"
 "	      004ef543    call 004CB4ACh"
 "	      004ef548    add esp,8"
-"	      004ef54b    mov ecx,[ebp+8]"
+"	      004ef54b    mov ecx,hd"
 "	      004ef54e    mov [ecx+0C0h],eax"
 );
 // LINE 572:
@@ -449,7 +449,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef55b    push eax"
 "	      004ef55c    call 004CB4ACh"
 "	      004ef561    add esp,8"
-"	      004ef564    mov ecx,[ebp+8]"
+"	      004ef564    mov ecx,hd"
 "	      004ef567    mov [ecx+0ACh],eax"
 );
 // LINE 574:
@@ -459,7 +459,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef574    push eax"
 "	      004ef575    call 004CB4ACh"
 "	      004ef57a    add esp,8"
-"	      004ef57d    mov ecx,[ebp+8]"
+"	      004ef57d    mov ecx,hd"
 "	      004ef580    mov [ecx+0B0h],eax"
 );
 // LINE 576:
@@ -469,7 +469,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef58d    push eax"
 "	      004ef58e    call 004CB4ACh"
 "	      004ef593    add esp,8"
-"	      004ef596    mov ecx,[ebp+8]"
+"	      004ef596    mov ecx,hd"
 "	      004ef599    mov [ecx+0B4h],eax"
 );
 // LINE 578:
@@ -479,7 +479,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef5a6    push eax"
 "	      004ef5a7    call 004CB4ACh"
 "	      004ef5ac    add esp,8"
-"	      004ef5af    mov ecx,[ebp+8]"
+"	      004ef5af    mov ecx,hd"
 "	      004ef5b2    mov [ecx+0C4h],eax"
 );
 // LINE 580:
@@ -489,7 +489,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef5bf    push eax"
 "	      004ef5c0    call 004CB4ACh"
 "	      004ef5c5    add esp,8"
-"	      004ef5c8    mov ecx,[ebp+8]"
+"	      004ef5c8    mov ecx,hd"
 "	      004ef5cb    mov [ecx+0B8h],eax"
 );
 // LINE 582:
@@ -499,42 +499,42 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef5d8    push eax"
 "	      004ef5d9    call 004CB4ACh"
 "	      004ef5de    add esp,8"
-"	      004ef5e1    mov ecx,[ebp+8]"
+"	      004ef5e1    mov ecx,hd"
 "	      004ef5e4    mov [ecx+0A0h],eax"
 );
 // LINE 591:
 	asm( 
-"	      004ef5ea    mov eax,[ebp-44h]"
+"	      004ef5ea    mov eax,htd"
 "	      004ef5ed    cmp dword ptr [eax],0"
 "	      004ef5f0    jle near ptr 004EF767h"
 );
 // LINE 593:
 	asm( 
-"	      004ef5f6    mov eax,[ebp-40h]"
+"	      004ef5f6    mov eax,heliobj"
 "	      004ef5f9    push eax"
 "	      004ef5fa    call 004D8520h"
 "	      004ef5ff    add esp,4"
-"	      004ef602    mov [ebp-28h],eax"
+"	      004ef602    mov size,eax"
 );
 // LINE 594:
 	asm( 
-"	      004ef605    mov eax,[ebp-28h]"
+"	      004ef605    mov eax,size"
 "	      004ef608    push eax"
 "	      004ef609    mov eax,ds:[5B5E78h]"
 "	      004ef60e    push eax"
 "	      004ef60f    call 004CB4ACh"
 "	      004ef614    add esp,8"
-"	      004ef617    mov [ebp-38h],eax"
+"	      004ef617    mov mem,eax"
 );
 // LINE 595:
 	asm( 
-"	      004ef61a    mov eax,[ebp-38h]"
+"	      004ef61a    mov eax,mem"
 "	      004ef61d    push eax"
-"	      004ef61e    mov eax,[ebp-40h]"
+"	      004ef61e    mov eax,heliobj"
 "	      004ef621    push eax"
 "	      004ef622    call 004D8570h"
 "	      004ef627    add esp,8"
-"	      004ef62a    mov ecx,[ebp+8]"
+"	      004ef62a    mov ecx,hd"
 "	      004ef62d    mov ecx,[ecx+0A4h]"
 "	      004ef633    mov [ecx+8],eax"
 );
@@ -542,7 +542,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef636    mov eax,ds:[5B4780h]"
 "	      004ef63b    push eax"
-"	      004ef63c    mov eax,[ebp+8]"
+"	      004ef63c    mov eax,hd"
 "	      004ef63f    mov eax,[eax+0A4h]"
 "	      004ef645    mov eax,[eax+8]"
 "	      004ef648    push eax"
@@ -551,31 +551,31 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 598:
 	asm( 
-"	      004ef651    mov eax,[ebp-2Ch]"
+"	      004ef651    mov eax,rotobj"
 "	      004ef654    push eax"
 "	      004ef655    call 004D8520h"
 "	      004ef65a    add esp,4"
-"	      004ef65d    mov [ebp-28h],eax"
+"	      004ef65d    mov size,eax"
 );
 // LINE 599:
 	asm( 
-"	      004ef660    mov eax,[ebp-28h]"
+"	      004ef660    mov eax,size"
 "	      004ef663    push eax"
 "	      004ef664    mov eax,ds:[5B5E78h]"
 "	      004ef669    push eax"
 "	      004ef66a    call 004CB4ACh"
 "	      004ef66f    add esp,8"
-"	      004ef672    mov [ebp-38h],eax"
+"	      004ef672    mov mem,eax"
 );
 // LINE 600:
 	asm( 
-"	      004ef675    mov eax,[ebp-38h]"
+"	      004ef675    mov eax,mem"
 "	      004ef678    push eax"
-"	      004ef679    mov eax,[ebp-2Ch]"
+"	      004ef679    mov eax,rotobj"
 "	      004ef67c    push eax"
 "	      004ef67d    call 004D8570h"
 "	      004ef682    add esp,8"
-"	      004ef685    mov ecx,[ebp+8]"
+"	      004ef685    mov ecx,hd"
 "	      004ef688    mov ecx,[ecx+0ACh]"
 "	      004ef68e    mov [ecx+8],eax"
 );
@@ -583,7 +583,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef691    mov eax,ds:[5B4780h]"
 "	      004ef696    push eax"
-"	      004ef697    mov eax,[ebp+8]"
+"	      004ef697    mov eax,hd"
 "	      004ef69a    mov eax,[eax+0ACh]"
 "	      004ef6a0    mov eax,[eax+8]"
 "	      004ef6a3    push eax"
@@ -592,31 +592,31 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 603:
 	asm( 
-"	      004ef6ac    mov eax,[ebp-48h]"
+"	      004ef6ac    mov eax,shadobj"
 "	      004ef6af    push eax"
 "	      004ef6b0    call 004D8520h"
 "	      004ef6b5    add esp,4"
-"	      004ef6b8    mov [ebp-28h],eax"
+"	      004ef6b8    mov size,eax"
 );
 // LINE 604:
 	asm( 
-"	      004ef6bb    mov eax,[ebp-28h]"
+"	      004ef6bb    mov eax,size"
 "	      004ef6be    push eax"
 "	      004ef6bf    mov eax,ds:[5B5E78h]"
 "	      004ef6c4    push eax"
 "	      004ef6c5    call 004CB4ACh"
 "	      004ef6ca    add esp,8"
-"	      004ef6cd    mov [ebp-38h],eax"
+"	      004ef6cd    mov mem,eax"
 );
 // LINE 605:
 	asm( 
-"	      004ef6d0    mov eax,[ebp-38h]"
+"	      004ef6d0    mov eax,mem"
 "	      004ef6d3    push eax"
-"	      004ef6d4    mov eax,[ebp-48h]"
+"	      004ef6d4    mov eax,shadobj"
 "	      004ef6d7    push eax"
 "	      004ef6d8    call 004D8570h"
 "	      004ef6dd    add esp,8"
-"	      004ef6e0    mov ecx,[ebp+8]"
+"	      004ef6e0    mov ecx,hd"
 "	      004ef6e3    mov ecx,[ecx+0A8h]"
 "	      004ef6e9    mov [ecx+8],eax"
 );
@@ -624,7 +624,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef6ec    mov eax,ds:[5B4780h]"
 "	      004ef6f1    push eax"
-"	      004ef6f2    mov eax,[ebp+8]"
+"	      004ef6f2    mov eax,hd"
 "	      004ef6f5    mov eax,[eax+0A8h]"
 "	      004ef6fb    mov eax,[eax+8]"
 "	      004ef6fe    push eax"
@@ -633,31 +633,31 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 608:
 	asm( 
-"	      004ef707    mov eax,[ebp-34h]"
+"	      004ef707    mov eax,rotshadobj"
 "	      004ef70a    push eax"
 "	      004ef70b    call 004D8520h"
 "	      004ef710    add esp,4"
-"	      004ef713    mov [ebp-28h],eax"
+"	      004ef713    mov size,eax"
 );
 // LINE 609:
 	asm( 
-"	      004ef716    mov eax,[ebp-28h]"
+"	      004ef716    mov eax,size"
 "	      004ef719    push eax"
 "	      004ef71a    mov eax,ds:[5B5E78h]"
 "	      004ef71f    push eax"
 "	      004ef720    call 004CB4ACh"
 "	      004ef725    add esp,8"
-"	      004ef728    mov [ebp-38h],eax"
+"	      004ef728    mov mem,eax"
 );
 // LINE 610:
 	asm( 
-"	      004ef72b    mov eax,[ebp-38h]"
+"	      004ef72b    mov eax,mem"
 "	      004ef72e    push eax"
-"	      004ef72f    mov eax,[ebp-34h]"
+"	      004ef72f    mov eax,rotshadobj"
 "	      004ef732    push eax"
 "	      004ef733    call 004D8570h"
 "	      004ef738    add esp,8"
-"	      004ef73b    mov ecx,[ebp+8]"
+"	      004ef73b    mov ecx,hd"
 "	      004ef73e    mov ecx,[ecx+0B4h]"
 "	      004ef744    mov [ecx+8],eax"
 );
@@ -665,7 +665,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef747    mov eax,ds:[5B4780h]"
 "	      004ef74c    push eax"
-"	      004ef74d    mov eax,[ebp+8]"
+"	      004ef74d    mov eax,hd"
 "	      004ef750    mov eax,[eax+0B4h]"
 "	      004ef756    mov eax,[eax+8]"
 "	      004ef759    push eax"
@@ -678,29 +678,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 615:
 	asm( 
-"	      004ef767    mov eax,[ebp-40h]"
-"	      004ef76a    mov ecx,[ebp+8]"
+"	      004ef767    mov eax,heliobj"
+"	      004ef76a    mov ecx,hd"
 "	      004ef76d    mov ecx,[ecx+0A4h]"
 "	      004ef773    mov [ecx+8],eax"
 );
 // LINE 616:
 	asm( 
-"	      004ef776    mov eax,[ebp-2Ch]"
-"	      004ef779    mov ecx,[ebp+8]"
+"	      004ef776    mov eax,rotobj"
+"	      004ef779    mov ecx,hd"
 "	      004ef77c    mov ecx,[ecx+0ACh]"
 "	      004ef782    mov [ecx+8],eax"
 );
 // LINE 617:
 	asm( 
-"	      004ef785    mov eax,[ebp-34h]"
-"	      004ef788    mov ecx,[ebp+8]"
+"	      004ef785    mov eax,rotshadobj"
+"	      004ef788    mov ecx,hd"
 "	      004ef78b    mov ecx,[ecx+0B4h]"
 "	      004ef791    mov [ecx+8],eax"
 );
 // LINE 618:
 	asm( 
-"	      004ef794    mov eax,[ebp-48h]"
-"	      004ef797    mov ecx,[ebp+8]"
+"	      004ef794    mov eax,shadobj"
+"	      004ef797    mov ecx,hd"
 "	      004ef79a    mov ecx,[ecx+0A8h]"
 "	      004ef7a0    mov [ecx+8],eax"
 );
@@ -717,21 +717,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef7ba    push eax"
 "	      004ef7bb    call 004D8520h"
 "	      004ef7c0    add esp,4"
-"	      004ef7c3    mov [ebp-28h],eax"
+"	      004ef7c3    mov size,eax"
 );
 // LINE 628:
 	asm( 
-"	      004ef7c6    mov eax,[ebp-28h]"
+"	      004ef7c6    mov eax,size"
 "	      004ef7c9    push eax"
 "	      004ef7ca    mov eax,ds:[5B5E78h]"
 "	      004ef7cf    push eax"
 "	      004ef7d0    call 004CB4ACh"
 "	      004ef7d5    add esp,8"
-"	      004ef7d8    mov [ebp-38h],eax"
+"	      004ef7d8    mov mem,eax"
 );
 // LINE 629:
 	asm( 
-"	      004ef7db    mov eax,[ebp-38h]"
+"	      004ef7db    mov eax,mem"
 "	      004ef7de    push eax"
 "	      004ef7df    push 7Bh"
 "	      004ef7e1    call 004D8821h"
@@ -739,7 +739,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef7e9    push eax"
 "	      004ef7ea    call 004D8570h"
 "	      004ef7ef    add esp,8"
-"	      004ef7f2    mov ecx,[ebp+8]"
+"	      004ef7f2    mov ecx,hd"
 "	      004ef7f5    mov ecx,[ecx+0BCh]"
 "	      004ef7fb    mov [ecx+8],eax"
 );
@@ -747,7 +747,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef7fe    mov eax,ds:[5B4780h]"
 "	      004ef803    push eax"
-"	      004ef804    mov eax,[ebp+8]"
+"	      004ef804    mov eax,hd"
 "	      004ef807    mov eax,[eax+0BCh]"
 "	      004ef80d    mov eax,[eax+8]"
 "	      004ef810    push eax"
@@ -756,10 +756,10 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 631:
 	asm( 
-"	      004ef819    mov eax,[ebp+8]"
+"	      004ef819    mov eax,hd"
 "	      004ef81c    mov eax,[eax+0BCh]"
 "	      004ef822    mov eax,[eax+8]"
-"	      004ef825    mov ecx,[ebp+8]"
+"	      004ef825    mov ecx,hd"
 "	      004ef828    mov [ecx+0C8h],eax"
 );
 // LINE 633:
@@ -770,21 +770,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef83b    push eax"
 "	      004ef83c    call 004D8520h"
 "	      004ef841    add esp,4"
-"	      004ef844    mov [ebp-28h],eax"
+"	      004ef844    mov size,eax"
 );
 // LINE 634:
 	asm( 
-"	      004ef847    mov eax,[ebp-28h]"
+"	      004ef847    mov eax,size"
 "	      004ef84a    push eax"
 "	      004ef84b    mov eax,ds:[5B5E78h]"
 "	      004ef850    push eax"
 "	      004ef851    call 004CB4ACh"
 "	      004ef856    add esp,8"
-"	      004ef859    mov [ebp-38h],eax"
+"	      004ef859    mov mem,eax"
 );
 // LINE 635:
 	asm( 
-"	      004ef85c    mov eax,[ebp-38h]"
+"	      004ef85c    mov eax,mem"
 "	      004ef85f    push eax"
 "	      004ef860    push 16Dh"
 "	      004ef865    call 004D8821h"
@@ -792,14 +792,14 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef86d    push eax"
 "	      004ef86e    call 004D8570h"
 "	      004ef873    add esp,8"
-"	      004ef876    mov ecx,[ebp+8]"
+"	      004ef876    mov ecx,hd"
 "	      004ef879    mov [ecx+0CCh],eax"
 );
 // LINE 636:
 	asm( 
 "	      004ef87f    mov eax,ds:[5B4780h]"
 "	      004ef884    push eax"
-"	      004ef885    mov eax,[ebp+8]"
+"	      004ef885    mov eax,hd"
 "	      004ef888    mov eax,[eax+0CCh]"
 "	      004ef88e    push eax"
 "	      004ef88f    call 004D84DBh"
@@ -813,21 +813,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef8a4    push eax"
 "	      004ef8a5    call 004D8520h"
 "	      004ef8aa    add esp,4"
-"	      004ef8ad    mov [ebp-28h],eax"
+"	      004ef8ad    mov size,eax"
 );
 // LINE 639:
 	asm( 
-"	      004ef8b0    mov eax,[ebp-28h]"
+"	      004ef8b0    mov eax,size"
 "	      004ef8b3    push eax"
 "	      004ef8b4    mov eax,ds:[5B5E78h]"
 "	      004ef8b9    push eax"
 "	      004ef8ba    call 004CB4ACh"
 "	      004ef8bf    add esp,8"
-"	      004ef8c2    mov [ebp-38h],eax"
+"	      004ef8c2    mov mem,eax"
 );
 // LINE 640:
 	asm( 
-"	      004ef8c5    mov eax,[ebp-38h]"
+"	      004ef8c5    mov eax,mem"
 "	      004ef8c8    push eax"
 "	      004ef8c9    push 118h"
 "	      004ef8ce    call 004D8821h"
@@ -835,7 +835,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef8d6    push eax"
 "	      004ef8d7    call 004D8570h"
 "	      004ef8dc    add esp,8"
-"	      004ef8df    mov ecx,[ebp+8]"
+"	      004ef8df    mov ecx,hd"
 "	      004ef8e2    mov ecx,[ecx+0C0h]"
 "	      004ef8e8    mov [ecx+8],eax"
 );
@@ -843,7 +843,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef8eb    mov eax,ds:[5B4780h]"
 "	      004ef8f0    push eax"
-"	      004ef8f1    mov eax,[ebp+8]"
+"	      004ef8f1    mov eax,hd"
 "	      004ef8f4    mov eax,[eax+0C0h]"
 "	      004ef8fa    mov eax,[eax+8]"
 "	      004ef8fd    push eax"
@@ -858,21 +858,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef913    push eax"
 "	      004ef914    call 004D8520h"
 "	      004ef919    add esp,4"
-"	      004ef91c    mov [ebp-28h],eax"
+"	      004ef91c    mov size,eax"
 );
 // LINE 644:
 	asm( 
-"	      004ef91f    mov eax,[ebp-28h]"
+"	      004ef91f    mov eax,size"
 "	      004ef922    push eax"
 "	      004ef923    mov eax,ds:[5B5E78h]"
 "	      004ef928    push eax"
 "	      004ef929    call 004CB4ACh"
 "	      004ef92e    add esp,8"
-"	      004ef931    mov [ebp-38h],eax"
+"	      004ef931    mov mem,eax"
 );
 // LINE 645:
 	asm( 
-"	      004ef934    mov eax,[ebp-38h]"
+"	      004ef934    mov eax,mem"
 "	      004ef937    push eax"
 "	      004ef938    push 83h"
 "	      004ef93d    call 004D8821h"
@@ -880,7 +880,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef945    push eax"
 "	      004ef946    call 004D8570h"
 "	      004ef94b    add esp,8"
-"	      004ef94e    mov ecx,[ebp+8]"
+"	      004ef94e    mov ecx,hd"
 "	      004ef951    mov ecx,[ecx+0B0h]"
 "	      004ef957    mov [ecx+8],eax"
 );
@@ -888,7 +888,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef95a    mov eax,ds:[5B4780h]"
 "	      004ef95f    push eax"
-"	      004ef960    mov eax,[ebp+8]"
+"	      004ef960    mov eax,hd"
 "	      004ef963    mov eax,[eax+0B0h]"
 "	      004ef969    mov eax,[eax+8]"
 "	      004ef96c    push eax"
@@ -903,21 +903,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef982    push eax"
 "	      004ef983    call 004D8520h"
 "	      004ef988    add esp,4"
-"	      004ef98b    mov [ebp-28h],eax"
+"	      004ef98b    mov size,eax"
 );
 // LINE 650:
 	asm( 
-"	      004ef98e    mov eax,[ebp-28h]"
+"	      004ef98e    mov eax,size"
 "	      004ef991    push eax"
 "	      004ef992    mov eax,ds:[5B5E78h]"
 "	      004ef997    push eax"
 "	      004ef998    call 004CB4ACh"
 "	      004ef99d    add esp,8"
-"	      004ef9a0    mov [ebp-38h],eax"
+"	      004ef9a0    mov mem,eax"
 );
 // LINE 651:
 	asm( 
-"	      004ef9a3    mov eax,[ebp-38h]"
+"	      004ef9a3    mov eax,mem"
 "	      004ef9a6    push eax"
 "	      004ef9a7    push 16Ch"
 "	      004ef9ac    call 004D8821h"
@@ -925,7 +925,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef9b4    push eax"
 "	      004ef9b5    call 004D8570h"
 "	      004ef9ba    add esp,8"
-"	      004ef9bd    mov ecx,[ebp+8]"
+"	      004ef9bd    mov ecx,hd"
 "	      004ef9c0    mov ecx,[ecx+0C4h]"
 "	      004ef9c6    mov [ecx+8],eax"
 );
@@ -933,7 +933,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004ef9c9    mov eax,ds:[5B4780h]"
 "	      004ef9ce    push eax"
-"	      004ef9cf    mov eax,[ebp+8]"
+"	      004ef9cf    mov eax,hd"
 "	      004ef9d2    mov eax,[eax+0C4h]"
 "	      004ef9d8    mov eax,[eax+8]"
 "	      004ef9db    push eax"
@@ -948,21 +948,21 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004ef9f1    push eax"
 "	      004ef9f2    call 004D8520h"
 "	      004ef9f7    add esp,4"
-"	      004ef9fa    mov [ebp-28h],eax"
+"	      004ef9fa    mov size,eax"
 );
 // LINE 655:
 	asm( 
-"	      004ef9fd    mov eax,[ebp-28h]"
+"	      004ef9fd    mov eax,size"
 "	      004efa00    push eax"
 "	      004efa01    mov eax,ds:[5B5E78h]"
 "	      004efa06    push eax"
 "	      004efa07    call 004CB4ACh"
 "	      004efa0c    add esp,8"
-"	      004efa0f    mov [ebp-38h],eax"
+"	      004efa0f    mov mem,eax"
 );
 // LINE 656:
 	asm( 
-"	      004efa12    mov eax,[ebp-38h]"
+"	      004efa12    mov eax,mem"
 "	      004efa15    push eax"
 "	      004efa16    push 16Eh"
 "	      004efa1b    call 004D8821h"
@@ -970,7 +970,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efa23    push eax"
 "	      004efa24    call 004D8570h"
 "	      004efa29    add esp,8"
-"	      004efa2c    mov ecx,[ebp+8]"
+"	      004efa2c    mov ecx,hd"
 "	      004efa2f    mov ecx,[ecx+0A0h]"
 "	      004efa35    mov [ecx+8],eax"
 );
@@ -978,7 +978,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004efa38    mov eax,ds:[5B4780h]"
 "	      004efa3d    push eax"
-"	      004efa3e    mov eax,[ebp+8]"
+"	      004efa3e    mov eax,hd"
 "	      004efa41    mov eax,[eax+0A0h]"
 "	      004efa47    mov eax,[eax+8]"
 "	      004efa4a    push eax"
@@ -994,7 +994,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efa58    push 16Dh"
 "	      004efa5d    call 004D8821h"
 "	      004efa62    add esp,4"
-"	      004efa65    mov ecx,[ebp+8]"
+"	      004efa65    mov ecx,hd"
 "	      004efa68    mov [ecx+0CCh],eax"
 );
 // LINE 662:
@@ -1002,14 +1002,14 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efa6e    push 7Bh"
 "	      004efa70    call 004D8821h"
 "	      004efa75    add esp,4"
-"	      004efa78    mov ecx,[ebp+8]"
+"	      004efa78    mov ecx,hd"
 "	      004efa7b    mov [ecx+0C8h],eax"
 );
 // LINE 663:
 	asm( 
-"	      004efa81    mov eax,[ebp+8]"
+"	      004efa81    mov eax,hd"
 "	      004efa84    mov eax,[eax+0C8h]"
-"	      004efa8a    mov ecx,[ebp+8]"
+"	      004efa8a    mov ecx,hd"
 "	      004efa8d    mov ecx,[ecx+0BCh]"
 "	      004efa93    mov [ecx+8],eax"
 );
@@ -1018,7 +1018,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efa96    push 118h"
 "	      004efa9b    call 004D8821h"
 "	      004efaa0    add esp,4"
-"	      004efaa3    mov ecx,[ebp+8]"
+"	      004efaa3    mov ecx,hd"
 "	      004efaa6    mov ecx,[ecx+0C0h]"
 "	      004efaac    mov [ecx+8],eax"
 );
@@ -1027,7 +1027,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efaaf    push 83h"
 "	      004efab4    call 004D8821h"
 "	      004efab9    add esp,4"
-"	      004efabc    mov ecx,[ebp+8]"
+"	      004efabc    mov ecx,hd"
 "	      004efabf    mov ecx,[ecx+0B0h]"
 "	      004efac5    mov [ecx+8],eax"
 );
@@ -1036,7 +1036,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efac8    push 16Ch"
 "	      004efacd    call 004D8821h"
 "	      004efad2    add esp,4"
-"	      004efad5    mov ecx,[ebp+8]"
+"	      004efad5    mov ecx,hd"
 "	      004efad8    mov ecx,[ecx+0C4h]"
 "	      004efade    mov [ecx+8],eax"
 );
@@ -1045,7 +1045,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efae1    push 16Eh"
 "	      004efae6    call 004D8821h"
 "	      004efaeb    add esp,4"
-"	      004efaee    mov ecx,[ebp+8]"
+"	      004efaee    mov ecx,hd"
 "	      004efaf1    mov ecx,[ecx+0A0h]"
 "	      004efaf7    mov [ecx+8],eax"
 );
@@ -1108,22 +1108,22 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 684:
 	asm( 
-"	      004efb84    mov eax,[ebp-30h]"
-"	      004efb87    mov ecx,[ebp+8]"
+"	      004efb84    mov eax,hdindex"
+"	      004efb87    mov ecx,hd"
 "	      004efb8a    mov ecx,[ecx+0A4h]"
 "	      004efb90    mov [ecx+0Eh],ax"
 );
 // LINE 685:
 	asm( 
-"	      004efb94    mov eax,[ebp+8]"
+"	      004efb94    mov eax,hd"
 "	      004efb97    mov eax,[eax+0A4h]"
 "	      004efb9d    mov word ptr [eax+0Ch],5"
 );
 // LINE 686:
 	asm( 
-"	      004efba3    lea eax,[ebp-24h]"
+"	      004efba3    lea eax,oinfo.Faces"
 "	      004efba6    push eax"
-"	      004efba7    mov eax,[ebp+8]"
+"	      004efba7    mov eax,hd"
 "	      004efbaa    mov eax,[eax+0A4h]"
 "	      004efbb0    mov eax,[eax+8]"
 "	      004efbb3    push eax"
@@ -1132,41 +1132,41 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 687:
 	asm( 
-"	      004efbbc    mov eax,[ebp-18h]"
-"	      004efbbf    mov ecx,[ebp+8]"
+"	      004efbbc    mov eax,oinfo.Radius"
+"	      004efbbf    mov ecx,hd"
 "	      004efbc2    mov ecx,[ecx+0A4h]"
 "	      004efbc8    mov [ecx+10h],eax"
 );
 // LINE 688:
 	asm( 
-"	      004efbcb    mov eax,[ebp+8]"
+"	      004efbcb    mov eax,hd"
 "	      004efbce    mov eax,[eax+0A4h]"
 "	      004efbd4    mov eax,[eax+8]"
 "	      004efbd7    push eax"
 "	      004efbd8    call 004D3E9Dh"
 "	      004efbdd    add esp,4"
-"	      004efbe0    mov ecx,[ebp+8]"
+"	      004efbe0    mov ecx,hd"
 "	      004efbe3    mov ecx,[ecx+0A4h]"
 "	      004efbe9    mov [ecx+14h],eax"
 );
 // LINE 693:
 	asm( 
-"	      004efbec    mov eax,[ebp-30h]"
-"	      004efbef    mov ecx,[ebp+8]"
+"	      004efbec    mov eax,hdindex"
+"	      004efbef    mov ecx,hd"
 "	      004efbf2    mov ecx,[ecx+0BCh]"
 "	      004efbf8    mov [ecx+0Eh],ax"
 );
 // LINE 694:
 	asm( 
-"	      004efbfc    mov eax,[ebp+8]"
+"	      004efbfc    mov eax,hd"
 "	      004efbff    mov eax,[eax+0BCh]"
 "	      004efc05    mov word ptr [eax+0Ch],21h"
 );
 // LINE 695:
 	asm( 
-"	      004efc0b    lea eax,[ebp-24h]"
+"	      004efc0b    lea eax,oinfo.Faces"
 "	      004efc0e    push eax"
-"	      004efc0f    mov eax,[ebp+8]"
+"	      004efc0f    mov eax,hd"
 "	      004efc12    mov eax,[eax+0BCh]"
 "	      004efc18    mov eax,[eax+8]"
 "	      004efc1b    push eax"
@@ -1175,41 +1175,41 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 696:
 	asm( 
-"	      004efc24    mov eax,[ebp-18h]"
-"	      004efc27    mov ecx,[ebp+8]"
+"	      004efc24    mov eax,oinfo.Radius"
+"	      004efc27    mov ecx,hd"
 "	      004efc2a    mov ecx,[ecx+0BCh]"
 "	      004efc30    mov [ecx+10h],eax"
 );
 // LINE 697:
 	asm( 
-"	      004efc33    mov eax,[ebp+8]"
+"	      004efc33    mov eax,hd"
 "	      004efc36    mov eax,[eax+0BCh]"
 "	      004efc3c    mov eax,[eax+8]"
 "	      004efc3f    push eax"
 "	      004efc40    call 004D3E9Dh"
 "	      004efc45    add esp,4"
-"	      004efc48    mov ecx,[ebp+8]"
+"	      004efc48    mov ecx,hd"
 "	      004efc4b    mov ecx,[ecx+0BCh]"
 "	      004efc51    mov [ecx+14h],eax"
 );
 // LINE 702:
 	asm( 
-"	      004efc54    mov eax,[ebp-30h]"
-"	      004efc57    mov ecx,[ebp+8]"
+"	      004efc54    mov eax,hdindex"
+"	      004efc57    mov ecx,hd"
 "	      004efc5a    mov ecx,[ecx+0C0h]"
 "	      004efc60    mov [ecx+0Eh],ax"
 );
 // LINE 703:
 	asm( 
-"	      004efc64    mov eax,[ebp+8]"
+"	      004efc64    mov eax,hd"
 "	      004efc67    mov eax,[eax+0C0h]"
 "	      004efc6d    mov word ptr [eax+0Ch],21h"
 );
 // LINE 704:
 	asm( 
-"	      004efc73    lea eax,[ebp-24h]"
+"	      004efc73    lea eax,oinfo.Faces"
 "	      004efc76    push eax"
-"	      004efc77    mov eax,[ebp+8]"
+"	      004efc77    mov eax,hd"
 "	      004efc7a    mov eax,[eax+0C0h]"
 "	      004efc80    mov eax,[eax+8]"
 "	      004efc83    push eax"
@@ -1218,29 +1218,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 705:
 	asm( 
-"	      004efc8c    mov eax,[ebp-18h]"
-"	      004efc8f    mov ecx,[ebp+8]"
+"	      004efc8c    mov eax,oinfo.Radius"
+"	      004efc8f    mov ecx,hd"
 "	      004efc92    mov ecx,[ecx+0C0h]"
 "	      004efc98    mov [ecx+10h],eax"
 );
 // LINE 710:
 	asm( 
-"	      004efc9b    mov eax,[ebp-30h]"
-"	      004efc9e    mov ecx,[ebp+8]"
+"	      004efc9b    mov eax,hdindex"
+"	      004efc9e    mov ecx,hd"
 "	      004efca1    mov ecx,[ecx+0A8h]"
 "	      004efca7    mov [ecx+0Eh],ax"
 );
 // LINE 711:
 	asm( 
-"	      004efcab    mov eax,[ebp+8]"
+"	      004efcab    mov eax,hd"
 "	      004efcae    mov eax,[eax+0A8h]"
 "	      004efcb4    mov word ptr [eax+0Ch],21h"
 );
 // LINE 712:
 	asm( 
-"	      004efcba    lea eax,[ebp-24h]"
+"	      004efcba    lea eax,oinfo.Faces"
 "	      004efcbd    push eax"
-"	      004efcbe    mov eax,[ebp+8]"
+"	      004efcbe    mov eax,hd"
 "	      004efcc1    mov eax,[eax+0A8h]"
 "	      004efcc7    mov eax,[eax+8]"
 "	      004efcca    push eax"
@@ -1249,29 +1249,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 713:
 	asm( 
-"	      004efcd3    mov eax,[ebp-18h]"
-"	      004efcd6    mov ecx,[ebp+8]"
+"	      004efcd3    mov eax,oinfo.Radius"
+"	      004efcd6    mov ecx,hd"
 "	      004efcd9    mov ecx,[ecx+0A8h]"
 "	      004efcdf    mov [ecx+10h],eax"
 );
 // LINE 718:
 	asm( 
-"	      004efce2    mov eax,[ebp-30h]"
-"	      004efce5    mov ecx,[ebp+8]"
+"	      004efce2    mov eax,hdindex"
+"	      004efce5    mov ecx,hd"
 "	      004efce8    mov ecx,[ecx+0B4h]"
 "	      004efcee    mov [ecx+0Eh],ax"
 );
 // LINE 719:
 	asm( 
-"	      004efcf2    mov eax,[ebp+8]"
+"	      004efcf2    mov eax,hd"
 "	      004efcf5    mov eax,[eax+0B4h]"
 "	      004efcfb    mov word ptr [eax+0Ch],21h"
 );
 // LINE 720:
 	asm( 
-"	      004efd01    lea eax,[ebp-24h]"
+"	      004efd01    lea eax,oinfo.Faces"
 "	      004efd04    push eax"
-"	      004efd05    mov eax,[ebp+8]"
+"	      004efd05    mov eax,hd"
 "	      004efd08    mov eax,[eax+0B4h]"
 "	      004efd0e    mov eax,[eax+8]"
 "	      004efd11    push eax"
@@ -1280,29 +1280,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 721:
 	asm( 
-"	      004efd1a    mov eax,[ebp-18h]"
-"	      004efd1d    mov ecx,[ebp+8]"
+"	      004efd1a    mov eax,oinfo.Radius"
+"	      004efd1d    mov ecx,hd"
 "	      004efd20    mov ecx,[ecx+0B4h]"
 "	      004efd26    mov [ecx+10h],eax"
 );
 // LINE 726:
 	asm( 
-"	      004efd29    mov eax,[ebp-30h]"
-"	      004efd2c    mov ecx,[ebp+8]"
+"	      004efd29    mov eax,hdindex"
+"	      004efd2c    mov ecx,hd"
 "	      004efd2f    mov ecx,[ecx+0ACh]"
 "	      004efd35    mov [ecx+0Eh],ax"
 );
 // LINE 727:
 	asm( 
-"	      004efd39    mov eax,[ebp+8]"
+"	      004efd39    mov eax,hd"
 "	      004efd3c    mov eax,[eax+0ACh]"
 "	      004efd42    mov word ptr [eax+0Ch],21h"
 );
 // LINE 728:
 	asm( 
-"	      004efd48    lea eax,[ebp-24h]"
+"	      004efd48    lea eax,oinfo.Faces"
 "	      004efd4b    push eax"
-"	      004efd4c    mov eax,[ebp+8]"
+"	      004efd4c    mov eax,hd"
 "	      004efd4f    mov eax,[eax+0ACh]"
 "	      004efd55    mov eax,[eax+8]"
 "	      004efd58    push eax"
@@ -1311,29 +1311,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 729:
 	asm( 
-"	      004efd61    mov eax,[ebp-18h]"
-"	      004efd64    mov ecx,[ebp+8]"
+"	      004efd61    mov eax,oinfo.Radius"
+"	      004efd64    mov ecx,hd"
 "	      004efd67    mov ecx,[ecx+0ACh]"
 "	      004efd6d    mov [ecx+10h],eax"
 );
 // LINE 734:
 	asm( 
-"	      004efd70    mov eax,[ebp-30h]"
-"	      004efd73    mov ecx,[ebp+8]"
+"	      004efd70    mov eax,hdindex"
+"	      004efd73    mov ecx,hd"
 "	      004efd76    mov ecx,[ecx+0B0h]"
 "	      004efd7c    mov [ecx+0Eh],ax"
 );
 // LINE 735:
 	asm( 
-"	      004efd80    mov eax,[ebp+8]"
+"	      004efd80    mov eax,hd"
 "	      004efd83    mov eax,[eax+0B0h]"
 "	      004efd89    mov word ptr [eax+0Ch],21h"
 );
 // LINE 736:
 	asm( 
-"	      004efd8f    lea eax,[ebp-24h]"
+"	      004efd8f    lea eax,oinfo.Faces"
 "	      004efd92    push eax"
-"	      004efd93    mov eax,[ebp+8]"
+"	      004efd93    mov eax,hd"
 "	      004efd96    mov eax,[eax+0B0h]"
 "	      004efd9c    mov eax,[eax+8]"
 "	      004efd9f    push eax"
@@ -1342,29 +1342,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 737:
 	asm( 
-"	      004efda8    mov eax,[ebp-18h]"
-"	      004efdab    mov ecx,[ebp+8]"
+"	      004efda8    mov eax,oinfo.Radius"
+"	      004efdab    mov ecx,hd"
 "	      004efdae    mov ecx,[ecx+0B0h]"
 "	      004efdb4    mov [ecx+10h],eax"
 );
 // LINE 742:
 	asm( 
-"	      004efdb7    mov eax,[ebp-30h]"
-"	      004efdba    mov ecx,[ebp+8]"
+"	      004efdb7    mov eax,hdindex"
+"	      004efdba    mov ecx,hd"
 "	      004efdbd    mov ecx,[ecx+0C4h]"
 "	      004efdc3    mov [ecx+0Eh],ax"
 );
 // LINE 743:
 	asm( 
-"	      004efdc7    mov eax,[ebp+8]"
+"	      004efdc7    mov eax,hd"
 "	      004efdca    mov eax,[eax+0C4h]"
 "	      004efdd0    mov word ptr [eax+0Ch],21h"
 );
 // LINE 744:
 	asm( 
-"	      004efdd6    lea eax,[ebp-24h]"
+"	      004efdd6    lea eax,oinfo.Faces"
 "	      004efdd9    push eax"
-"	      004efdda    mov eax,[ebp+8]"
+"	      004efdda    mov eax,hd"
 "	      004efddd    mov eax,[eax+0C4h]"
 "	      004efde3    mov eax,[eax+8]"
 "	      004efde6    push eax"
@@ -1373,29 +1373,29 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 745:
 	asm( 
-"	      004efdef    mov eax,[ebp-18h]"
-"	      004efdf2    mov ecx,[ebp+8]"
+"	      004efdef    mov eax,oinfo.Radius"
+"	      004efdf2    mov ecx,hd"
 "	      004efdf5    mov ecx,[ecx+0C4h]"
 "	      004efdfb    mov [ecx+10h],eax"
 );
 // LINE 750:
 	asm( 
-"	      004efdfe    mov eax,[ebp-30h]"
-"	      004efe01    mov ecx,[ebp+8]"
+"	      004efdfe    mov eax,hdindex"
+"	      004efe01    mov ecx,hd"
 "	      004efe04    mov ecx,[ecx+0A0h]"
 "	      004efe0a    mov [ecx+0Eh],ax"
 );
 // LINE 751:
 	asm( 
-"	      004efe0e    mov eax,[ebp+8]"
+"	      004efe0e    mov eax,hd"
 "	      004efe11    mov eax,[eax+0A0h]"
 "	      004efe17    mov word ptr [eax+0Ch],21h"
 );
 // LINE 752:
 	asm( 
-"	      004efe1d    lea eax,[ebp-24h]"
+"	      004efe1d    lea eax,oinfo.Faces"
 "	      004efe20    push eax"
-"	      004efe21    mov eax,[ebp+8]"
+"	      004efe21    mov eax,hd"
 "	      004efe24    mov eax,[eax+0A0h]"
 "	      004efe2a    mov eax,[eax+8]"
 "	      004efe2d    push eax"
@@ -1404,8 +1404,8 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 753:
 	asm( 
-"	      004efe36    mov eax,[ebp-18h]"
-"	      004efe39    mov ecx,[ebp+8]"
+"	      004efe36    mov eax,oinfo.Radius"
+"	      004efe39    mov ecx,hd"
 "	      004efe3c    mov ecx,[ecx+0A0h]"
 "	      004efe42    mov [ecx+10h],eax"
 );
@@ -1417,11 +1417,11 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 "	      004efe4d    push 14h"
 "	      004efe4f    call 004D496Eh"
 "	      004efe54    add esp,0Ch"
-"	      004efe57    mov [ebp-3Ch],eax"
+"	      004efe57    mov obj,eax"
 );
 // LINE 761:
 	asm( 
-"	      004efe5a    cmp dword ptr [ebp-3Ch],0"
+"	      004efe5a    cmp obj,0"
 "	      004efe5e    jne near ptr 004EFE71h"
 );
 // LINE 762:
@@ -1433,7 +1433,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 // LINE 764:
 	asm( 
 "	      004efe71    push 2"
-"	      004efe73    mov eax,[ebp-3Ch]"
+"	      004efe73    mov eax,obj"
 "	      004efe76    push eax"
 "	      004efe77    call 004D6970h"
 "	      004efe7c    add esp,8"
@@ -1441,7 +1441,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 // LINE 765:
 	asm( 
 "	      004efe7f    push 0"
-"	      004efe81    mov eax,[ebp-3Ch]"
+"	      004efe81    mov eax,obj"
 "	      004efe84    push eax"
 "	      004efe85    call 004D6970h"
 "	      004efe8a    add esp,8"
@@ -1450,77 +1450,77 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	asm( 
 "	      004efe8d    mov eax,ds:[5B4780h]"
 "	      004efe92    push eax"
-"	      004efe93    mov eax,[ebp-3Ch]"
+"	      004efe93    mov eax,obj"
 "	      004efe96    push eax"
 "	      004efe97    call 004D84DBh"
 "	      004efe9c    add esp,8"
 );
 // LINE 769:
 	asm( 
-"	      004efe9f    lea eax,[ebp-24h]"
+"	      004efe9f    lea eax,oinfo.Faces"
 "	      004efea2    push eax"
-"	      004efea3    mov eax,[ebp-3Ch]"
+"	      004efea3    mov eax,obj"
 "	      004efea6    push eax"
 "	      004efea7    call 004D8859h"
 "	      004efeac    add esp,8"
 );
 // LINE 770:
 	asm( 
-"	      004efeaf    mov eax,[ebp-10h]"
-"	      004efeb2    mov ecx,[ebp+8]"
+"	      004efeaf    mov eax,oinfo.VertsPtr"
+"	      004efeb2    mov ecx,hd"
 "	      004efeb5    mov [ecx+178h],eax"
 );
 // LINE 777:
 	asm( 
-"	      004efebb    mov eax,[ebp+8]"
+"	      004efebb    mov eax,hd"
 "	      004efebe    mov eax,[eax+178h]"
 "	      004efec4    add eax,0E4h"
-"	      004efec9    mov ecx,[ebp+8]"
+"	      004efec9    mov ecx,hd"
 "	      004efecc    mov [ecx+17Ch],eax"
 );
 // LINE 778:
 	asm( 
-"	      004efed2    mov eax,[ebp+8]"
+"	      004efed2    mov eax,hd"
 "	      004efed5    mov eax,[eax+178h]"
 "	      004efedb    add eax,0D8h"
-"	      004efee0    mov ecx,[ebp+8]"
+"	      004efee0    mov ecx,hd"
 "	      004efee3    mov [ecx+180h],eax"
 );
 // LINE 781:
 	asm( 
-"	      004efee9    mov eax,[ebp-3Ch]"
-"	      004efeec    mov ecx,[ebp+8]"
+"	      004efee9    mov eax,obj"
+"	      004efeec    mov ecx,hd"
 "	      004efeef    mov ecx,[ecx+0B8h]"
 "	      004efef5    mov [ecx+8],eax"
 );
 // LINE 782:
 	asm( 
-"	      004efef8    mov eax,[ebp-30h]"
-"	      004efefb    mov ecx,[ebp+8]"
+"	      004efef8    mov eax,hdindex"
+"	      004efefb    mov ecx,hd"
 "	      004efefe    mov ecx,[ecx+0B8h]"
 "	      004eff04    mov [ecx+0Eh],ax"
 );
 // LINE 783:
 	asm( 
-"	      004eff08    mov eax,[ebp+8]"
+"	      004eff08    mov eax,hd"
 "	      004eff0b    mov eax,[eax+0B8h]"
 "	      004eff11    mov word ptr [eax+0Ch],21h"
 );
 // LINE 784:
 	asm( 
-"	      004eff17    mov eax,[ebp+8]"
+"	      004eff17    mov eax,hd"
 "	      004eff1a    mov eax,[eax+0B8h]"
 "	      004eff20    mov dword ptr [eax+10h],20000h"
 );
 // LINE 789:
 	asm( 
-"	      004eff27    mov eax,[ebp+8]"
+"	      004eff27    mov eax,hd"
 "	      004eff2a    mov dword ptr [eax+1C0h],0"
 );
 // LINE 795:
 	asm( 
 "	      004eff34    push 1"
-"	      004eff36    mov eax,[ebp+8]"
+"	      004eff36    mov eax,hd"
 "	      004eff39    mov eax,[eax+0A8h]"
 "	      004eff3f    mov eax,[eax+8]"
 "	      004eff42    push eax"
@@ -1530,7 +1530,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 // LINE 796:
 	asm( 
 "	      004eff4b    push 1"
-"	      004eff4d    mov eax,[ebp+8]"
+"	      004eff4d    mov eax,hd"
 "	      004eff50    mov eax,[eax+0C0h]"
 "	      004eff56    mov eax,[eax+8]"
 "	      004eff59    push eax"
@@ -1540,7 +1540,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 // LINE 797:
 	asm( 
 "	      004eff62    push 1"
-"	      004eff64    mov eax,[ebp+8]"
+"	      004eff64    mov eax,hd"
 "	      004eff67    mov eax,[eax+0B4h]"
 "	      004eff6d    mov eax,[eax+8]"
 "	      004eff70    push eax"
@@ -1553,15 +1553,15 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 );
 // LINE 801:
 	asm( 
-"	      004eff7f    mov eax,[ebp-44h]"
+"	      004eff7f    mov eax,htd"
 "	      004eff82    inc dword ptr [eax]"
 );
 // LINE 804:
 	asm( 
-"	      004eff84    mov eax,[ebp+8]"
+"	      004eff84    mov eax,hd"
 "	      004eff87    mov eax,[eax]"
 "	      004eff89    push eax"
-"	      004eff8a    mov eax,[ebp+8]"
+"	      004eff8a    mov eax,hd"
 "	      004eff8d    add eax,1C4h"
 "	      004eff92    push eax"
 "	      004eff93    call 004F9BFDh"
@@ -1595,32 +1595,32 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 829:
 	asm( 
-"	      004effa9    mov eax,[ebp+8]"
+"	      004effa9    mov eax,hd"
 "	      004effac    mov eax,[eax]"
 "	      004effae    mov ecx,eax"
 "	      004effb0    lea eax,[eax+eax*4]"
 "	      004effb3    lea eax,[ecx+eax*2]"
 "	      004effb6    lea eax,[eax*8+5B4978h]"
-"	      004effbd    mov [ebp-10h],eax"
+"	      004effbd    mov htd,eax"
 );
 // LINE 832:
 	asm( 
-"	      004effc0    mov dword ptr [ebp-4],0"
+"	      004effc0    mov heliidx,0"
 "	      004effc7    jmp near ptr 004EFFCFh"
-"	      004effcc    inc dword ptr [ebp-4]"
-"	      004effcf    cmp dword ptr [ebp-4],0Ah"
+"	      004effcc    inc heliidx"
+"	      004effcf    cmp heliidx,0Ah"
 "	      004effd3    jge near ptr 004F0001h"
 );
 // LINE 834:
 	asm( 
-"	      004effd9    mov eax,[ebp-4]"
+"	      004effd9    mov eax,heliidx"
 "	      004effdc    cmp dword ptr [eax*4+5B4940h],0"
 "	      004effe4    jne near ptr 004EFFFCh"
 );
 // LINE 836:
 	asm( 
-"	      004effea    mov eax,[ebp+8]"
-"	      004effed    mov ecx,[ebp-4]"
+"	      004effea    mov eax,hd"
+"	      004effed    mov ecx,heliidx"
 "	      004efff0    mov [ecx*4+5B4940h],eax"
 );
 // LINE 837:
@@ -1633,50 +1633,50 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 842:
 	asm( 
-"	      004f0001    mov eax,[ebp+10h]"
+"	      004f0001    mov eax,mapy"
 "	      004f0004    and eax,0FFh"
-"	      004f0009    mov ecx,[ebp+0Ch]"
+"	      004f0009    mov ecx,mapx"
 "	      004f000c    and ecx,0FFh"
 "	      004f0012    shl ecx,0Ah"
 "	      004f0015    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f001c    mov [ebp-0Ch],eax"
+"	      004f001c    mov cptr,eax"
 );
 // LINE 843:
 	asm( 
-"	      004f001f    mov eax,[ebp-0Ch]"
+"	      004f001f    mov eax,cptr"
 "	      004f0022    movsx eax,word ptr [eax+4]"
-"	      004f0026    mov [ebp-8],eax"
+"	      004f0026    mov alt,eax"
 );
 // LINE 847:
 	asm( 
-"	      004f0029    mov eax,[ebp-0Ch]"
+"	      004f0029    mov eax,cptr"
 "	      004f002c    movsx eax,word ptr [eax+2]"
 "	      004f0030    shl eax,10h"
-"	      004f0033    mov ecx,[ebp+8]"
+"	      004f0033    mov ecx,hd"
 "	      004f0036    mov ecx,[ecx+0A4h]"
 "	      004f003c    mov [ecx+18h],eax"
 );
 // LINE 848:
 	asm( 
-"	      004f003f    mov eax,[ebp-0Ch]"
+"	      004f003f    mov eax,cptr"
 "	      004f0042    movsx eax,word ptr [eax+4]"
 "	      004f0046    shl eax,10h"
-"	      004f0049    mov ecx,[ebp+8]"
+"	      004f0049    mov ecx,hd"
 "	      004f004c    mov ecx,[ecx+0A4h]"
 "	      004f0052    mov [ecx+1Ch],eax"
 );
 // LINE 849:
 	asm( 
-"	      004f0055    mov eax,[ebp-0Ch]"
+"	      004f0055    mov eax,cptr"
 "	      004f0058    movsx eax,word ptr [eax+6]"
 "	      004f005c    shl eax,10h"
-"	      004f005f    mov ecx,[ebp+8]"
+"	      004f005f    mov ecx,hd"
 "	      004f0062    mov ecx,[ecx+0A4h]"
 "	      004f0068    mov [ecx+20h],eax"
 );
 // LINE 851:
 	asm( 
-"	      004f006b    mov eax,[ebp+8]"
+"	      004f006b    mov eax,hd"
 "	      004f006e    mov eax,[eax+0A4h]"
 "	      004f0074    add eax,24h"
 "	      004f0077    push eax"
@@ -1685,34 +1685,34 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 854:
 	asm( 
-"	      004f0080    mov eax,[ebp-0Ch]"
+"	      004f0080    mov eax,cptr"
 "	      004f0083    movsx eax,word ptr [eax+2]"
 "	      004f0087    shl eax,10h"
-"	      004f008a    mov ecx,[ebp+8]"
+"	      004f008a    mov ecx,hd"
 "	      004f008d    mov ecx,[ecx+0A0h]"
 "	      004f0093    mov [ecx+18h],eax"
 );
 // LINE 855:
 	asm( 
-"	      004f0096    mov eax,[ebp-0Ch]"
+"	      004f0096    mov eax,cptr"
 "	      004f0099    movsx eax,word ptr [eax+4]"
 "	      004f009d    shl eax,10h"
-"	      004f00a0    mov ecx,[ebp+8]"
+"	      004f00a0    mov ecx,hd"
 "	      004f00a3    mov ecx,[ecx+0A0h]"
 "	      004f00a9    mov [ecx+1Ch],eax"
 );
 // LINE 856:
 	asm( 
-"	      004f00ac    mov eax,[ebp-0Ch]"
+"	      004f00ac    mov eax,cptr"
 "	      004f00af    movsx eax,word ptr [eax+6]"
 "	      004f00b3    shl eax,10h"
-"	      004f00b6    mov ecx,[ebp+8]"
+"	      004f00b6    mov ecx,hd"
 "	      004f00b9    mov ecx,[ecx+0A0h]"
 "	      004f00bf    mov [ecx+20h],eax"
 );
 // LINE 857:
 	asm( 
-"	      004f00c2    mov eax,[ebp+8]"
+"	      004f00c2    mov eax,hd"
 "	      004f00c5    mov eax,[eax+0A0h]"
 "	      004f00cb    add eax,24h"
 "	      004f00ce    push eax"
@@ -1721,10 +1721,10 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 862:
 	asm( 
-"	      004f00d7    mov eax,[ebp+8]"
+"	      004f00d7    mov eax,hd"
 "	      004f00da    mov eax,[eax+0A4h]"
 "	      004f00e0    add eax,18h"
-"	      004f00e3    mov ecx,[ebp+8]"
+"	      004f00e3    mov ecx,hd"
 "	      004f00e6    mov ecx,[ecx+0B8h]"
 "	      004f00ec    add ecx,18h"
 "	      004f00ef    mov edx,[eax]"
@@ -1736,7 +1736,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 863:
 	asm( 
-"	      004f00ff    mov eax,[ebp+8]"
+"	      004f00ff    mov eax,hd"
 "	      004f0102    mov eax,[eax+0B8h]"
 "	      004f0108    add eax,24h"
 "	      004f010b    push eax"
@@ -1745,76 +1745,76 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 868:
 	asm( 
-"	      004f0114    mov eax,[ebp+8]"
+"	      004f0114    mov eax,hd"
 "	      004f0117    mov eax,[eax+0A4h]"
 "	      004f011d    mov eax,[eax+18h]"
-"	      004f0120    mov ecx,[ebp+8]"
+"	      004f0120    mov ecx,hd"
 "	      004f0123    mov ecx,[ecx+17Ch]"
 "	      004f0129    add eax,[ecx]"
-"	      004f012b    mov ecx,[ebp+8]"
+"	      004f012b    mov ecx,hd"
 "	      004f012e    mov ecx,[ecx+0BCh]"
 "	      004f0134    mov [ecx+18h],eax"
 );
 // LINE 869:
 	asm( 
-"	      004f0137    mov eax,[ebp+8]"
+"	      004f0137    mov eax,hd"
 "	      004f013a    mov eax,[eax+17Ch]"
 "	      004f0140    mov eax,[eax+4]"
-"	      004f0143    mov ecx,[ebp+8]"
+"	      004f0143    mov ecx,hd"
 "	      004f0146    mov ecx,[ecx+0A4h]"
 "	      004f014c    add eax,[ecx+1Ch]"
-"	      004f014f    mov ecx,[ebp+8]"
+"	      004f014f    mov ecx,hd"
 "	      004f0152    mov ecx,[ecx+0BCh]"
 "	      004f0158    mov [ecx+1Ch],eax"
 );
 // LINE 870:
 	asm( 
-"	      004f015b    mov eax,[ebp+8]"
+"	      004f015b    mov eax,hd"
 "	      004f015e    mov eax,[eax+17Ch]"
 "	      004f0164    mov eax,[eax+8]"
-"	      004f0167    mov ecx,[ebp+8]"
+"	      004f0167    mov ecx,hd"
 "	      004f016a    mov ecx,[ecx+0A4h]"
 "	      004f0170    add eax,[ecx+20h]"
-"	      004f0173    mov ecx,[ebp+8]"
+"	      004f0173    mov ecx,hd"
 "	      004f0176    mov ecx,[ecx+0BCh]"
 "	      004f017c    mov [ecx+20h],eax"
 );
 // LINE 871:
 	asm( 
-"	      004f017f    mov eax,[ebp+8]"
+"	      004f017f    mov eax,hd"
 "	      004f0182    mov eax,[eax+180h]"
 "	      004f0188    mov eax,[eax]"
-"	      004f018a    mov ecx,[ebp+8]"
+"	      004f018a    mov ecx,hd"
 "	      004f018d    mov ecx,[ecx+17Ch]"
 "	      004f0193    sub eax,[ecx]"
-"	      004f0195    mov ecx,[ebp+8]"
+"	      004f0195    mov ecx,hd"
 "	      004f0198    mov [ecx+184h],eax"
 );
 // LINE 872:
 	asm( 
-"	      004f019e    mov eax,[ebp+8]"
+"	      004f019e    mov eax,hd"
 "	      004f01a1    mov eax,[eax+180h]"
 "	      004f01a7    mov eax,[eax+4]"
-"	      004f01aa    mov ecx,[ebp+8]"
+"	      004f01aa    mov ecx,hd"
 "	      004f01ad    mov ecx,[ecx+17Ch]"
 "	      004f01b3    sub eax,[ecx+4]"
-"	      004f01b6    mov ecx,[ebp+8]"
+"	      004f01b6    mov ecx,hd"
 "	      004f01b9    mov [ecx+188h],eax"
 );
 // LINE 873:
 	asm( 
-"	      004f01bf    mov eax,[ebp+8]"
+"	      004f01bf    mov eax,hd"
 "	      004f01c2    mov eax,[eax+180h]"
 "	      004f01c8    mov eax,[eax+8]"
-"	      004f01cb    mov ecx,[ebp+8]"
+"	      004f01cb    mov ecx,hd"
 "	      004f01ce    mov ecx,[ecx+17Ch]"
 "	      004f01d4    sub eax,[ecx+8]"
-"	      004f01d7    mov ecx,[ebp+8]"
+"	      004f01d7    mov ecx,hd"
 "	      004f01da    mov [ecx+18Ch],eax"
 );
 // LINE 874:
 	asm( 
-"	      004f01e0    mov eax,[ebp+8]"
+"	      004f01e0    mov eax,hd"
 "	      004f01e3    add eax,184h"
 "	      004f01e8    push eax"
 "	      004f01e9    call 004CA1E3h"
@@ -1822,10 +1822,10 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 875:
 	asm( 
-"	      004f01f1    mov eax,[ebp+8]"
+"	      004f01f1    mov eax,hd"
 "	      004f01f4    add eax,184h"
 "	      004f01f9    push eax"
-"	      004f01fa    mov eax,[ebp+8]"
+"	      004f01fa    mov eax,hd"
 "	      004f01fd    mov eax,[eax+0BCh]"
 "	      004f0203    add eax,24h"
 "	      004f0206    push eax"
@@ -1834,34 +1834,34 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 880:
 	asm( 
-"	      004f020f    mov eax,[ebp-0Ch]"
+"	      004f020f    mov eax,cptr"
 "	      004f0212    movsx eax,word ptr [eax+2]"
 "	      004f0216    shl eax,10h"
-"	      004f0219    mov ecx,[ebp+8]"
+"	      004f0219    mov ecx,hd"
 "	      004f021c    mov ecx,[ecx+0C0h]"
 "	      004f0222    mov [ecx+18h],eax"
 );
 // LINE 881:
 	asm( 
-"	      004f0225    mov eax,[ebp-0Ch]"
+"	      004f0225    mov eax,cptr"
 "	      004f0228    movsx eax,word ptr [eax+4]"
 "	      004f022c    shl eax,10h"
-"	      004f022f    mov ecx,[ebp+8]"
+"	      004f022f    mov ecx,hd"
 "	      004f0232    mov ecx,[ecx+0C0h]"
 "	      004f0238    mov [ecx+1Ch],eax"
 );
 // LINE 882:
 	asm( 
-"	      004f023b    mov eax,[ebp-0Ch]"
+"	      004f023b    mov eax,cptr"
 "	      004f023e    movsx eax,word ptr [eax+6]"
 "	      004f0242    shl eax,10h"
-"	      004f0245    mov ecx,[ebp+8]"
+"	      004f0245    mov ecx,hd"
 "	      004f0248    mov ecx,[ecx+0C0h]"
 "	      004f024e    mov [ecx+20h],eax"
 );
 // LINE 884:
 	asm( 
-"	      004f0251    mov eax,[ebp+8]"
+"	      004f0251    mov eax,hd"
 "	      004f0254    mov eax,[eax+0C0h]"
 "	      004f025a    add eax,24h"
 "	      004f025d    push eax"
@@ -1870,34 +1870,34 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 888:
 	asm( 
-"	      004f0266    mov eax,[ebp-0Ch]"
+"	      004f0266    mov eax,cptr"
 "	      004f0269    movsx eax,word ptr [eax+2]"
 "	      004f026d    shl eax,10h"
-"	      004f0270    mov ecx,[ebp+8]"
+"	      004f0270    mov ecx,hd"
 "	      004f0273    mov ecx,[ecx+0A8h]"
 "	      004f0279    mov [ecx+18h],eax"
 );
 // LINE 889:
 	asm( 
-"	      004f027c    mov eax,[ebp-0Ch]"
+"	      004f027c    mov eax,cptr"
 "	      004f027f    movsx eax,word ptr [eax+4]"
 "	      004f0283    shl eax,10h"
-"	      004f0286    mov ecx,[ebp+8]"
+"	      004f0286    mov ecx,hd"
 "	      004f0289    mov ecx,[ecx+0A8h]"
 "	      004f028f    mov [ecx+1Ch],eax"
 );
 // LINE 890:
 	asm( 
-"	      004f0292    mov eax,[ebp-0Ch]"
+"	      004f0292    mov eax,cptr"
 "	      004f0295    movsx eax,word ptr [eax+6]"
 "	      004f0299    shl eax,10h"
-"	      004f029c    mov ecx,[ebp+8]"
+"	      004f029c    mov ecx,hd"
 "	      004f029f    mov ecx,[ecx+0A8h]"
 "	      004f02a5    mov [ecx+20h],eax"
 );
 // LINE 892:
 	asm( 
-"	      004f02a8    mov eax,[ebp+8]"
+"	      004f02a8    mov eax,hd"
 "	      004f02ab    mov eax,[eax+0A8h]"
 "	      004f02b1    add eax,24h"
 "	      004f02b4    push eax"
@@ -1906,34 +1906,34 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 896:
 	asm( 
-"	      004f02bd    mov eax,[ebp-0Ch]"
+"	      004f02bd    mov eax,cptr"
 "	      004f02c0    movsx eax,word ptr [eax+2]"
 "	      004f02c4    shl eax,10h"
-"	      004f02c7    mov ecx,[ebp+8]"
+"	      004f02c7    mov ecx,hd"
 "	      004f02ca    mov ecx,[ecx+0ACh]"
 "	      004f02d0    mov [ecx+18h],eax"
 );
 // LINE 897:
 	asm( 
-"	      004f02d3    mov eax,[ebp-0Ch]"
+"	      004f02d3    mov eax,cptr"
 "	      004f02d6    movsx eax,word ptr [eax+4]"
 "	      004f02da    shl eax,10h"
-"	      004f02dd    mov ecx,[ebp+8]"
+"	      004f02dd    mov ecx,hd"
 "	      004f02e0    mov ecx,[ecx+0ACh]"
 "	      004f02e6    mov [ecx+1Ch],eax"
 );
 // LINE 898:
 	asm( 
-"	      004f02e9    mov eax,[ebp-0Ch]"
+"	      004f02e9    mov eax,cptr"
 "	      004f02ec    movsx eax,word ptr [eax+6]"
 "	      004f02f0    shl eax,10h"
-"	      004f02f3    mov ecx,[ebp+8]"
+"	      004f02f3    mov ecx,hd"
 "	      004f02f6    mov ecx,[ecx+0ACh]"
 "	      004f02fc    mov [ecx+20h],eax"
 );
 // LINE 899:
 	asm( 
-"	      004f02ff    mov eax,[ebp+8]"
+"	      004f02ff    mov eax,hd"
 "	      004f0302    add eax,20h"
 "	      004f0305    push eax"
 "	      004f0306    call 004D1FF1h"
@@ -1941,61 +1941,61 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 903:
 	asm( 
-"	      004f030e    mov eax,[ebp-0Ch]"
+"	      004f030e    mov eax,cptr"
 "	      004f0311    movsx eax,word ptr [eax+2]"
 "	      004f0315    shl eax,10h"
-"	      004f0318    mov ecx,[ebp+8]"
+"	      004f0318    mov ecx,hd"
 "	      004f031b    mov ecx,[ecx+0C4h]"
 "	      004f0321    mov [ecx+18h],eax"
 );
 // LINE 904:
 	asm( 
-"	      004f0324    mov eax,[ebp-0Ch]"
+"	      004f0324    mov eax,cptr"
 "	      004f0327    movsx eax,word ptr [eax+4]"
 "	      004f032b    shl eax,10h"
-"	      004f032e    mov ecx,[ebp+8]"
+"	      004f032e    mov ecx,hd"
 "	      004f0331    mov ecx,[ecx+0C4h]"
 "	      004f0337    mov [ecx+1Ch],eax"
 );
 // LINE 905:
 	asm( 
-"	      004f033a    mov eax,[ebp-0Ch]"
+"	      004f033a    mov eax,cptr"
 "	      004f033d    movsx eax,word ptr [eax+6]"
 "	      004f0341    shl eax,10h"
-"	      004f0344    mov ecx,[ebp+8]"
+"	      004f0344    mov ecx,hd"
 "	      004f0347    mov ecx,[ecx+0C4h]"
 "	      004f034d    mov [ecx+20h],eax"
 );
 // LINE 909:
 	asm( 
-"	      004f0350    mov eax,[ebp-0Ch]"
+"	      004f0350    mov eax,cptr"
 "	      004f0353    movsx eax,word ptr [eax+2]"
 "	      004f0357    shl eax,10h"
-"	      004f035a    mov ecx,[ebp+8]"
+"	      004f035a    mov ecx,hd"
 "	      004f035d    mov ecx,[ecx+0B0h]"
 "	      004f0363    mov [ecx+18h],eax"
 );
 // LINE 910:
 	asm( 
-"	      004f0366    mov eax,[ebp-0Ch]"
+"	      004f0366    mov eax,cptr"
 "	      004f0369    movsx eax,word ptr [eax+4]"
 "	      004f036d    shl eax,10h"
-"	      004f0370    mov ecx,[ebp+8]"
+"	      004f0370    mov ecx,hd"
 "	      004f0373    mov ecx,[ecx+0B0h]"
 "	      004f0379    mov [ecx+1Ch],eax"
 );
 // LINE 911:
 	asm( 
-"	      004f037c    mov eax,[ebp-0Ch]"
+"	      004f037c    mov eax,cptr"
 "	      004f037f    movsx eax,word ptr [eax+6]"
 "	      004f0383    shl eax,10h"
-"	      004f0386    mov ecx,[ebp+8]"
+"	      004f0386    mov ecx,hd"
 "	      004f0389    mov ecx,[ecx+0B0h]"
 "	      004f038f    mov [ecx+20h],eax"
 );
 // LINE 912:
 	asm( 
-"	      004f0392    mov eax,[ebp+8]"
+"	      004f0392    mov eax,hd"
 "	      004f0395    add eax,60h"
 "	      004f0398    push eax"
 "	      004f0399    call 004D1FF1h"
@@ -2003,10 +2003,10 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 916:
 	asm( 
-"	      004f03a1    mov eax,[ebp+8]"
+"	      004f03a1    mov eax,hd"
 "	      004f03a4    mov eax,[eax+0ACh]"
 "	      004f03aa    add eax,18h"
-"	      004f03ad    mov ecx,[ebp+8]"
+"	      004f03ad    mov ecx,hd"
 "	      004f03b0    mov ecx,[ecx+0B4h]"
 "	      004f03b6    add ecx,18h"
 "	      004f03b9    mov edx,[eax]"
@@ -2018,202 +2018,202 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 919:
 	asm( 
-"	      004f03c9    mov eax,[ebp+8]"
+"	      004f03c9    mov eax,hd"
 "	      004f03cc    mov eax,[eax+0ACh]"
-"	      004f03d2    mov ecx,[ebp+8]"
+"	      004f03d2    mov ecx,hd"
 "	      004f03d5    mov ecx,[ecx+0A4h]"
 "	      004f03db    mov [ecx],eax"
 );
 // LINE 920:
 	asm( 
-"	      004f03dd    mov eax,[ebp+8]"
+"	      004f03dd    mov eax,hd"
 "	      004f03e0    mov eax,[eax+0B0h]"
-"	      004f03e6    mov ecx,[ebp+8]"
+"	      004f03e6    mov ecx,hd"
 "	      004f03e9    mov ecx,[ecx+0ACh]"
 "	      004f03ef    mov [ecx],eax"
 );
 // LINE 921:
 	asm( 
-"	      004f03f1    mov eax,[ebp+8]"
+"	      004f03f1    mov eax,hd"
 "	      004f03f4    mov eax,[eax+0B4h]"
-"	      004f03fa    mov ecx,[ebp+8]"
+"	      004f03fa    mov ecx,hd"
 "	      004f03fd    mov ecx,[ecx+0B0h]"
 "	      004f0403    mov [ecx],eax"
 );
 // LINE 922:
 	asm( 
-"	      004f0405    mov eax,[ebp+8]"
+"	      004f0405    mov eax,hd"
 "	      004f0408    mov eax,[eax+0A8h]"
-"	      004f040e    mov ecx,[ebp+8]"
+"	      004f040e    mov ecx,hd"
 "	      004f0411    mov ecx,[ecx+0B4h]"
 "	      004f0417    mov [ecx],eax"
 );
 // LINE 923:
 	asm( 
-"	      004f0419    mov eax,[ebp+8]"
+"	      004f0419    mov eax,hd"
 "	      004f041c    mov eax,[eax+0B8h]"
-"	      004f0422    mov ecx,[ebp+8]"
+"	      004f0422    mov ecx,hd"
 "	      004f0425    mov ecx,[ecx+0A8h]"
 "	      004f042b    mov [ecx],eax"
 );
 // LINE 924:
 	asm( 
-"	      004f042d    mov eax,[ebp+8]"
+"	      004f042d    mov eax,hd"
 "	      004f0430    mov eax,[eax+0BCh]"
-"	      004f0436    mov ecx,[ebp+8]"
+"	      004f0436    mov ecx,hd"
 "	      004f0439    mov ecx,[ecx+0B8h]"
 "	      004f043f    mov [ecx],eax"
 );
 // LINE 925:
 	asm( 
-"	      004f0441    mov eax,[ebp+8]"
+"	      004f0441    mov eax,hd"
 "	      004f0444    mov eax,[eax+0A0h]"
-"	      004f044a    mov ecx,[ebp+8]"
+"	      004f044a    mov ecx,hd"
 "	      004f044d    mov ecx,[ecx+0BCh]"
 "	      004f0453    mov [ecx],eax"
 );
 // LINE 926:
 	asm( 
-"	      004f0455    mov eax,[ebp+8]"
+"	      004f0455    mov eax,hd"
 "	      004f0458    mov eax,[eax+0C0h]"
-"	      004f045e    mov ecx,[ebp+8]"
+"	      004f045e    mov ecx,hd"
 "	      004f0461    mov ecx,[ecx+0A0h]"
 "	      004f0467    mov [ecx],eax"
 );
 // LINE 927:
 	asm( 
-"	      004f0469    mov eax,[ebp+8]"
+"	      004f0469    mov eax,hd"
 "	      004f046c    mov eax,[eax+0C4h]"
-"	      004f0472    mov ecx,[ebp+8]"
+"	      004f0472    mov ecx,hd"
 "	      004f0475    mov ecx,[ecx+0C0h]"
 "	      004f047b    mov [ecx],eax"
 );
 // LINE 928:
 	asm( 
-"	      004f047d    mov eax,[ebp-0Ch]"
+"	      004f047d    mov eax,cptr"
 "	      004f0480    mov eax,[eax+10h]"
-"	      004f0483    mov ecx,[ebp+8]"
+"	      004f0483    mov ecx,hd"
 "	      004f0486    mov ecx,[ecx+0C4h]"
 "	      004f048c    mov [ecx],eax"
 );
 // LINE 929:
 	asm( 
-"	      004f048e    mov eax,[ebp+8]"
+"	      004f048e    mov eax,hd"
 "	      004f0491    mov eax,[eax+0A4h]"
-"	      004f0497    mov ecx,[ebp-0Ch]"
+"	      004f0497    mov ecx,cptr"
 "	      004f049a    mov [ecx+10h],eax"
 );
 // LINE 932:
 	asm( 
-"	      004f049d    mov eax,[ebp+8]"
+"	      004f049d    mov eax,hd"
 "	      004f04a0    mov eax,[eax+0ACh]"
-"	      004f04a6    mov ecx,[ebp+8]"
+"	      004f04a6    mov ecx,hd"
 "	      004f04a9    mov ecx,[ecx+0A4h]"
 "	      004f04af    mov [ecx+4],eax"
 );
 // LINE 933:
 	asm( 
-"	      004f04b2    mov eax,[ebp+8]"
+"	      004f04b2    mov eax,hd"
 "	      004f04b5    mov eax,[eax+0B0h]"
-"	      004f04bb    mov ecx,[ebp+8]"
+"	      004f04bb    mov ecx,hd"
 "	      004f04be    mov ecx,[ecx+0ACh]"
 "	      004f04c4    mov [ecx+4],eax"
 );
 // LINE 934:
 	asm( 
-"	      004f04c7    mov eax,[ebp+8]"
+"	      004f04c7    mov eax,hd"
 "	      004f04ca    mov eax,[eax+0B4h]"
-"	      004f04d0    mov ecx,[ebp+8]"
+"	      004f04d0    mov ecx,hd"
 "	      004f04d3    mov ecx,[ecx+0B0h]"
 "	      004f04d9    mov [ecx+4],eax"
 );
 // LINE 935:
 	asm( 
-"	      004f04dc    mov eax,[ebp+8]"
+"	      004f04dc    mov eax,hd"
 "	      004f04df    mov eax,[eax+0A8h]"
-"	      004f04e5    mov ecx,[ebp+8]"
+"	      004f04e5    mov ecx,hd"
 "	      004f04e8    mov ecx,[ecx+0B4h]"
 "	      004f04ee    mov [ecx+4],eax"
 );
 // LINE 936:
 	asm( 
-"	      004f04f1    mov eax,[ebp+8]"
+"	      004f04f1    mov eax,hd"
 "	      004f04f4    mov eax,[eax+0B8h]"
-"	      004f04fa    mov ecx,[ebp+8]"
+"	      004f04fa    mov ecx,hd"
 "	      004f04fd    mov ecx,[ecx+0A8h]"
 "	      004f0503    mov [ecx+4],eax"
 );
 // LINE 937:
 	asm( 
-"	      004f0506    mov eax,[ebp+8]"
+"	      004f0506    mov eax,hd"
 "	      004f0509    mov eax,[eax+0BCh]"
-"	      004f050f    mov ecx,[ebp+8]"
+"	      004f050f    mov ecx,hd"
 "	      004f0512    mov ecx,[ecx+0B8h]"
 "	      004f0518    mov [ecx+4],eax"
 );
 // LINE 938:
 	asm( 
-"	      004f051b    mov eax,[ebp+8]"
+"	      004f051b    mov eax,hd"
 "	      004f051e    mov eax,[eax+0A0h]"
-"	      004f0524    mov ecx,[ebp+8]"
+"	      004f0524    mov ecx,hd"
 "	      004f0527    mov ecx,[ecx+0BCh]"
 "	      004f052d    mov [ecx+4],eax"
 );
 // LINE 939:
 	asm( 
-"	      004f0530    mov eax,[ebp+8]"
+"	      004f0530    mov eax,hd"
 "	      004f0533    mov eax,[eax+0C0h]"
-"	      004f0539    mov ecx,[ebp+8]"
+"	      004f0539    mov ecx,hd"
 "	      004f053c    mov ecx,[ecx+0A0h]"
 "	      004f0542    mov [ecx+4],eax"
 );
 // LINE 940:
 	asm( 
-"	      004f0545    mov eax,[ebp+8]"
+"	      004f0545    mov eax,hd"
 "	      004f0548    mov eax,[eax+0C4h]"
-"	      004f054e    mov ecx,[ebp+8]"
+"	      004f054e    mov ecx,hd"
 "	      004f0551    mov ecx,[ecx+0C0h]"
 "	      004f0557    mov [ecx+4],eax"
 );
 // LINE 941:
 	asm( 
-"	      004f055a    mov eax,[ebp+8]"
+"	      004f055a    mov eax,hd"
 "	      004f055d    mov eax,[eax+0C4h]"
 "	      004f0563    mov dword ptr [eax+4],0"
 );
 // LINE 944:
 	asm( 
 "	      004f056a    movsx eax,word ptr [ebp+0Ch]"
-"	      004f056e    mov ecx,[ebp+8]"
+"	      004f056e    mov ecx,hd"
 "	      004f0571    mov [ecx+18h],eax"
-"	      004f0574    mov eax,[ebp+8]"
+"	      004f0574    mov eax,hd"
 "	      004f0577    mov eax,[eax+18h]"
-"	      004f057a    mov ecx,[ebp+8]"
+"	      004f057a    mov ecx,hd"
 "	      004f057d    mov [ecx+10h],eax"
 );
 // LINE 945:
 	asm( 
 "	      004f0580    movsx eax,word ptr [ebp+10h]"
-"	      004f0584    mov ecx,[ebp+8]"
+"	      004f0584    mov ecx,hd"
 "	      004f0587    mov [ecx+1Ch],eax"
-"	      004f058a    mov eax,[ebp+8]"
+"	      004f058a    mov eax,hd"
 "	      004f058d    mov eax,[eax+1Ch]"
-"	      004f0590    mov ecx,[ebp+8]"
+"	      004f0590    mov ecx,hd"
 "	      004f0593    mov [ecx+14h],eax"
 );
 // LINE 947:
 	asm( 
-"	      004f0596    mov eax,[ebp+8]"
+"	      004f0596    mov eax,hd"
 "	      004f0599    mov dword ptr [eax+100h],0"
 );
 // LINE 948:
 	asm( 
-"	      004f05a3    mov eax,[ebp+8]"
+"	      004f05a3    mov eax,hd"
 "	      004f05a6    mov dword ptr [eax+104h],0"
 );
 // LINE 949:
 	asm( 
-"	      004f05b0    mov eax,[ebp+8]"
+"	      004f05b0    mov eax,hd"
 "	      004f05b3    mov dword ptr [eax+108h],10000h"
 );
 // LINE 952:
@@ -2227,7 +2227,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 954:
 	asm( 
-"	      004f05d2    mov eax,[ebp+8]"
+"	      004f05d2    mov eax,hd"
 "	      004f05d5    add eax,0E0h"
 "	      004f05da    mov dword ptr [eax],0"
 "	      004f05e0    mov dword ptr [eax+4],0"
@@ -2235,152 +2235,152 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 956:
 	asm( 
-"	      004f05ee    mov eax,[ebp+8]"
+"	      004f05ee    mov eax,hd"
 "	      004f05f1    mov dword ptr [eax+4],0"
 );
 // LINE 957:
 	asm( 
-"	      004f05f8    mov eax,[ebp+8]"
+"	      004f05f8    mov eax,hd"
 "	      004f05fb    mov dword ptr [eax+148h],0"
 );
 // LINE 958:
 	asm( 
-"	      004f0605    mov eax,[ebp+8]"
+"	      004f0605    mov eax,hd"
 "	      004f0608    mov dword ptr [eax+144h],1"
 );
 // LINE 959:
 	asm( 
-"	      004f0612    mov eax,[ebp+8]"
+"	      004f0612    mov eax,hd"
 "	      004f0615    mov dword ptr [eax+1ACh],0"
 );
 // LINE 960:
 	asm( 
-"	      004f061f    mov eax,[ebp+8]"
+"	      004f061f    mov eax,hd"
 "	      004f0622    mov dword ptr [eax+11Ch],0"
 );
 // LINE 961:
 	asm( 
-"	      004f062c    mov eax,[ebp+8]"
+"	      004f062c    mov eax,hd"
 "	      004f062f    mov dword ptr [eax+120h],0"
 );
 // LINE 962:
 	asm( 
-"	      004f0639    mov eax,[ebp+8]"
+"	      004f0639    mov eax,hd"
 "	      004f063c    mov dword ptr [eax+128h],0"
 );
 // LINE 964:
 	asm( 
-"	      004f0646    mov eax,[ebp+8]"
+"	      004f0646    mov eax,hd"
 "	      004f0649    mov dword ptr [eax+0D8h],10000h"
 );
 // LINE 965:
 	asm( 
-"	      004f0653    mov eax,[ebp+8]"
+"	      004f0653    mov eax,hd"
 "	      004f0656    mov dword ptr [eax+0ECh],10000h"
 );
 // LINE 966:
 	asm( 
-"	      004f0660    mov eax,[ebp+8]"
+"	      004f0660    mov eax,hd"
 "	      004f0663    mov dword ptr [eax+10Ch],0"
 );
 // LINE 967:
 	asm( 
-"	      004f066d    mov eax,[ebp+8]"
+"	      004f066d    mov eax,hd"
 "	      004f0670    mov dword ptr [eax+114h],0"
 );
 // LINE 968:
 	asm( 
-"	      004f067a    mov eax,[ebp+8]"
+"	      004f067a    mov eax,hd"
 "	      004f067d    mov dword ptr [eax+118h],0"
 );
 // LINE 969:
 	asm( 
-"	      004f0687    mov eax,[ebp+8]"
+"	      004f0687    mov eax,hd"
 "	      004f068a    mov dword ptr [eax+110h],0"
 );
 // LINE 970:
 	asm( 
-"	      004f0694    mov eax,[ebp+8]"
+"	      004f0694    mov eax,hd"
 "	      004f0697    mov dword ptr [eax+14Ch],0"
 );
 // LINE 971:
 	asm( 
-"	      004f06a1    mov eax,[ebp+8]"
+"	      004f06a1    mov eax,hd"
 "	      004f06a4    mov dword ptr [eax+13Ch],1"
 );
 // LINE 972:
 	asm( 
-"	      004f06ae    mov eax,[ebp-10h]"
+"	      004f06ae    mov eax,htd"
 "	      004f06b1    mov eax,[eax+4Ch]"
-"	      004f06b4    mov ecx,[ebp+8]"
+"	      004f06b4    mov ecx,hd"
 "	      004f06b7    mov [ecx+0D0h],eax"
 );
 // LINE 973:
 	asm( 
-"	      004f06bd    mov eax,[ebp-10h]"
+"	      004f06bd    mov eax,htd"
 "	      004f06c0    mov eax,[eax+40h]"
-"	      004f06c3    mov ecx,[ebp+8]"
+"	      004f06c3    mov ecx,hd"
 "	      004f06c6    mov [ecx+320h],eax"
 );
 // LINE 974:
 	asm( 
-"	      004f06cc    mov eax,[ebp+8]"
+"	      004f06cc    mov eax,hd"
 "	      004f06cf    mov dword ptr [eax+324h],0"
 );
 // LINE 975:
 	asm( 
-"	      004f06d9    mov eax,[ebp+8]"
+"	      004f06d9    mov eax,hd"
 "	      004f06dc    mov dword ptr [eax+0D4h],0"
 );
 // LINE 976:
 	asm( 
-"	      004f06e6    mov eax,[ebp+8]"
+"	      004f06e6    mov eax,hd"
 "	      004f06e9    mov dword ptr [eax+140h],0"
 );
 // LINE 978:
 	asm( 
-"	      004f06f3    mov eax,[ebp+8]"
+"	      004f06f3    mov eax,hd"
 "	      004f06f6    mov dword ptr [eax+138h],0"
 );
 // LINE 980:
 	asm( 
-"	      004f0700    mov eax,[ebp+8]"
+"	      004f0700    mov eax,hd"
 "	      004f0703    mov dword ptr [eax+0Ch],0"
 );
 // LINE 981:
 	asm( 
-"	      004f070a    mov eax,[ebp+8]"
+"	      004f070a    mov eax,hd"
 "	      004f070d    mov dword ptr [eax+1B8h],0"
 );
 // LINE 982:
 	asm( 
-"	      004f0717    mov eax,[ebp+8]"
+"	      004f0717    mov eax,hd"
 "	      004f071a    mov dword ptr [eax+1BCh],0"
 );
 // LINE 983:
 	asm( 
-"	      004f0724    mov eax,[ebp+8]"
+"	      004f0724    mov eax,hd"
 "	      004f0727    mov dword ptr [eax+1C0h],0"
 );
 // LINE 986:
 	asm( 
-"	      004f0731    mov eax,[ebp+8]"
+"	      004f0731    mov eax,hd"
 "	      004f0734    mov dword ptr [eax+1ACh],11h"
 );
 // LINE 987:
 	asm( 
-"	      004f073e    mov eax,[ebp+8]"
+"	      004f073e    mov eax,hd"
 "	      004f0741    mov dword ptr [eax+1B0h],1"
 );
 // LINE 988:
 	asm( 
-"	      004f074b    mov eax,[ebp+8]"
+"	      004f074b    mov eax,hd"
 "	      004f074e    mov dword ptr [eax+1B4h],1"
 );
 // LINE 989:
 	asm( 
 "	      004f0758    push 1"
-"	      004f075a    mov eax,[ebp+8]"
+"	      004f075a    mov eax,hd"
 "	      004f075d    mov eax,[eax+0B8h]"
 "	      004f0763    mov eax,[eax+8]"
 "	      004f0766    push eax"
@@ -2390,7 +2390,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 // LINE 990:
 	asm( 
 "	      004f076f    push 1"
-"	      004f0771    mov eax,[ebp+8]"
+"	      004f0771    mov eax,hd"
 "	      004f0774    mov eax,[eax+0BCh]"
 "	      004f077a    mov eax,[eax+8]"
 "	      004f077d    push eax"
@@ -2399,12 +2399,12 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 992:
 	asm( 
-"	      004f0786    mov eax,[ebp+8]"
+"	      004f0786    mov eax,hd"
 "	      004f0789    or dword ptr [eax+8],2"
 );
 // LINE 993:
 	asm( 
-"	      004f078d    mov eax,[ebp+8]"
+"	      004f078d    mov eax,hd"
 "	      004f0790    cmp dword ptr [eax],2"
 "	      004f0793    jne near ptr 004F07A3h"
 );
@@ -2414,7 +2414,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 996:
 	asm( 
-"	      004f07a3    mov eax,[ebp+8]"
+"	      004f07a3    mov eax,hd"
 "	      004f07a6    test byte ptr [eax+8],1"
 "	      004f07aa    je near ptr 004F07B5h"
 );
@@ -2460,48 +2460,48 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1011:
 	asm( 
-"	      004f07c6    mov eax,[ebp+8]"
+"	      004f07c6    mov eax,hd"
 "	      004f07c9    mov eax,[eax]"
 "	      004f07cb    mov ecx,eax"
 "	      004f07cd    lea eax,[eax+eax*4]"
 "	      004f07d0    lea eax,[ecx+eax*2]"
 "	      004f07d3    lea eax,[eax*8+5B4978h]"
-"	      004f07da    mov [ebp-0ACh],eax"
+"	      004f07da    mov htd,eax"
 );
 // LINE 1025:
 	asm( 
-"	      004f07e0    mov eax,[ebp-0ACh]"
+"	      004f07e0    mov eax,htd"
 "	      004f07e6    mov eax,[eax+4]"
 "	      004f07e9    shl eax,3"
 "	      004f07ec    lea eax,[eax+eax*2]"
 "	      004f07ef    lea eax,[eax+eax*4]"
-"	      004f07f2    mov ecx,[ebp-0ACh]"
+"	      004f07f2    mov ecx,htd"
 "	      004f07f8    add eax,[ecx+8]"
 "	      004f07fb    shl eax,10h"
-"	      004f07fe    mov [ebp-0A8h],eax"
+"	      004f07fe    mov maxload,eax"
 );
 // LINE 1027:
 	asm( 
-"	      004f0804    mov eax,[ebp+8]"
+"	      004f0804    mov eax,hd"
 "	      004f0807    mov eax,[eax+1CCh]"
 "	      004f080d    shl eax,3"
 "	      004f0810    lea eax,[eax+eax*2]"
 "	      004f0813    lea eax,[eax+eax*4]"
-"	      004f0816    mov ecx,[ebp+8]"
+"	      004f0816    mov ecx,hd"
 "	      004f0819    add eax,[ecx+1C0h]"
 "	      004f081f    shl eax,10h"
-"	      004f0822    mov [ebp-58h],eax"
+"	      004f0822    mov currload,eax"
 );
 // LINE 1028:
 	asm( 
-"	      004f0825    mov eax,[ebp-0A8h]"
+"	      004f0825    mov eax,maxload"
 "	      004f082b    push eax"
-"	      004f082c    mov eax,[ebp-0A8h]"
-"	      004f0832    sub eax,[ebp-58h]"
+"	      004f082c    mov eax,maxload"
+"	      004f0832    sub eax,currload"
 "	      004f0835    push eax"
 "	      004f0836    call 004D19DFh"
 "	      004f083b    add esp,8"
-"	      004f083e    mov ecx,[ebp+8]"
+"	      004f083e    mov ecx,hd"
 "	      004f0841    mov [ecx+328h],eax"
 );
 // LINE 1032:
@@ -2512,7 +2512,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1034:
 	asm( 
 "	      004f0854    push 0"
-"	      004f0856    mov eax,[ebp+8]"
+"	      004f0856    mov eax,hd"
 "	      004f0859    mov eax,[eax+0A4h]"
 "	      004f085f    mov eax,[eax+8]"
 "	      004f0862    push eax"
@@ -2521,7 +2521,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1038:
 	asm( 
-"	      004f086b    mov eax,[ebp+8]"
+"	      004f086b    mov eax,hd"
 "	      004f086e    test byte ptr [eax+8],1"
 "	      004f0872    je near ptr 004F0B6Fh"
 );
@@ -2531,14 +2531,14 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1043:
 	asm( 
-"	      004f0882    mov eax,[ebp+8]"
+"	      004f0882    mov eax,hd"
 "	      004f0885    cmp dword ptr [eax+1ACh],11h"
 "	      004f088c    jne near ptr 004F08C5h"
 );
 // LINE 1045:
 	asm( 
 "	      004f0892    push 1"
-"	      004f0894    mov eax,[ebp+8]"
+"	      004f0894    mov eax,hd"
 "	      004f0897    mov eax,[eax+0B8h]"
 "	      004f089d    mov eax,[eax+8]"
 "	      004f08a0    push eax"
@@ -2548,7 +2548,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1046:
 	asm( 
 "	      004f08a9    push 1"
-"	      004f08ab    mov eax,[ebp+8]"
+"	      004f08ab    mov eax,hd"
 "	      004f08ae    mov eax,[eax+0BCh]"
 "	      004f08b4    mov eax,[eax+8]"
 "	      004f08b7    push eax"
@@ -2562,7 +2562,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1050:
 	asm( 
 "	      004f08c5    push 0"
-"	      004f08c7    mov eax,[ebp+8]"
+"	      004f08c7    mov eax,hd"
 "	      004f08ca    mov eax,[eax+0B8h]"
 "	      004f08d0    mov eax,[eax+8]"
 "	      004f08d3    push eax"
@@ -2572,7 +2572,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1051:
 	asm( 
 "	      004f08dc    push 0"
-"	      004f08de    mov eax,[ebp+8]"
+"	      004f08de    mov eax,hd"
 "	      004f08e1    mov eax,[eax+0BCh]"
 "	      004f08e7    mov eax,[eax+8]"
 "	      004f08ea    push eax"
@@ -2588,7 +2588,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1057:
 	asm( 
 "	      004f0902    push 0"
-"	      004f0904    mov eax,[ebp+8]"
+"	      004f0904    mov eax,hd"
 "	      004f0907    mov eax,[eax+0C4h]"
 "	      004f090d    mov eax,[eax+8]"
 "	      004f0910    push eax"
@@ -2602,7 +2602,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1061:
 	asm( 
 "	      004f091e    push 1"
-"	      004f0920    mov eax,[ebp+8]"
+"	      004f0920    mov eax,hd"
 "	      004f0923    mov eax,[eax+0C4h]"
 "	      004f0929    mov eax,[eax+8]"
 "	      004f092c    push eax"
@@ -2618,7 +2618,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1066:
 	asm( 
 "	      004f0944    push 0"
-"	      004f0946    mov eax,[ebp+8]"
+"	      004f0946    mov eax,hd"
 "	      004f0949    mov eax,[eax+0A0h]"
 "	      004f094f    mov eax,[eax+8]"
 "	      004f0952    push eax"
@@ -2632,7 +2632,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1070:
 	asm( 
 "	      004f0960    push 1"
-"	      004f0962    mov eax,[ebp+8]"
+"	      004f0962    mov eax,hd"
 "	      004f0965    mov eax,[eax+0A0h]"
 "	      004f096b    mov eax,[eax+8]"
 "	      004f096e    push eax"
@@ -2641,33 +2641,33 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1074:
 	asm( 
-"	      004f0977    mov eax,[ebp+8]"
+"	      004f0977    mov eax,hd"
 "	      004f097a    cmp dword ptr [eax+4],5"
 "	      004f097e    jne near ptr 004F09AEh"
-"	      004f0984    mov eax,[ebp+8]"
+"	      004f0984    mov eax,hd"
 "	      004f0987    mov eax,[eax+168h]"
 "	      004f098d    cmp dword ptr [eax+4],0"
 "	      004f0991    jge near ptr 004F09AEh"
 );
 // LINE 1076:
 	asm( 
-"	      004f0997    mov eax,[ebp+8]"
+"	      004f0997    mov eax,hd"
 "	      004f099a    mov dword ptr [eax+4],6"
 );
 // LINE 1077:
 	asm( 
-"	      004f09a1    mov eax,[ebp+8]"
+"	      004f09a1    mov eax,hd"
 "	      004f09a4    mov dword ptr [eax+170h],0"
 );
 // LINE 1080:
 	asm( 
-"	      004f09ae    mov eax,[ebp+8]"
+"	      004f09ae    mov eax,hd"
 "	      004f09b1    cmp dword ptr [eax+4],6"
 "	      004f09b5    jne near ptr 004F0A66h"
 );
 // LINE 1082:
 	asm( 
-"	      004f09bb    mov eax,[ebp+8]"
+"	      004f09bb    mov eax,hd"
 "	      004f09be    push eax"
 "	      004f09bf    call 004F78FAh"
 "	      004f09c4    add esp,4"
@@ -2677,7 +2677,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1085:
 	asm( 
 "	      004f09d0    push 1"
-"	      004f09d2    mov eax,[ebp+8]"
+"	      004f09d2    mov eax,hd"
 "	      004f09d5    mov eax,[eax+0A8h]"
 "	      004f09db    mov eax,[eax+8]"
 "	      004f09de    push eax"
@@ -2687,7 +2687,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1086:
 	asm( 
 "	      004f09e7    push 1"
-"	      004f09e9    mov eax,[ebp+8]"
+"	      004f09e9    mov eax,hd"
 "	      004f09ec    mov eax,[eax+0B4h]"
 "	      004f09f2    mov eax,[eax+8]"
 "	      004f09f5    push eax"
@@ -2697,7 +2697,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1087:
 	asm( 
 "	      004f09fe    push 1"
-"	      004f0a00    mov eax,[ebp+8]"
+"	      004f0a00    mov eax,hd"
 "	      004f0a03    mov eax,[eax+0C0h]"
 "	      004f0a09    mov eax,[eax+8]"
 "	      004f0a0c    push eax"
@@ -2706,22 +2706,22 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1088:
 	asm( 
-"	      004f0a15    mov eax,[ebp+8]"
+"	      004f0a15    mov eax,hd"
 "	      004f0a18    and dword ptr [eax+8],0FFFFFFFEh"
 );
 // LINE 1089:
 	asm( 
 "	      004f0a1c    call 004F81BBh"
-"	      004f0a21    mov [ebp-4],eax"
+"	      004f0a21    mov freepad,eax"
 );
 // LINE 1090:
 	asm( 
 "	      004f0a24    push 50000h"
 "	      004f0a29    push 50000h"
-"	      004f0a2e    mov eax,[ebp-4]"
+"	      004f0a2e    mov eax,freepad"
 "	      004f0a31    mov eax,[eax+4]"
 "	      004f0a34    push eax"
-"	      004f0a35    mov eax,[ebp-4]"
+"	      004f0a35    mov eax,freepad"
 "	      004f0a38    mov eax,[eax]"
 "	      004f0a3a    push eax"
 "	      004f0a3b    call 0054634Ch"
@@ -2753,59 +2753,59 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1103:
 	asm( 
-"	      004f0a66    mov eax,[ebp+8]"
+"	      004f0a66    mov eax,hd"
 "	      004f0a69    cmp dword ptr [eax+0D0h],0"
 "	      004f0a70    jge near ptr 004F0AF4h"
-"	      004f0a76    mov eax,[ebp+8]"
+"	      004f0a76    mov eax,hd"
 "	      004f0a79    cmp dword ptr [eax+4],5"
 "	      004f0a7d    je near ptr 004F0AF4h"
 );
 // LINE 1106:
 	asm( 
-"	      004f0a83    mov eax,[ebp+8]"
+"	      004f0a83    mov eax,hd"
 "	      004f0a86    mov dword ptr [eax+4],5"
 );
 // LINE 1107:
 	asm( 
-"	      004f0a8d    mov eax,[ebp+8]"
+"	      004f0a8d    mov eax,hd"
 "	      004f0a90    mov dword ptr [eax+16Ch],0CCCCh"
 );
 // LINE 1108:
 	asm( 
-"	      004f0a9a    mov eax,[ebp-0ACh]"
+"	      004f0a9a    mov eax,htd"
 "	      004f0aa0    mov eax,[eax+4Ch]"
-"	      004f0aa3    mov ecx,[ebp+8]"
+"	      004f0aa3    mov ecx,hd"
 "	      004f0aa6    mov [ecx+0D0h],eax"
 );
 // LINE 1119:
 	asm( 
 "	      004f0aac    push 0FFFFFFFFh"
-"	      004f0aae    mov eax,[ebp+8]"
+"	      004f0aae    mov eax,hd"
 "	      004f0ab1    mov eax,[eax+128h]"
 "	      004f0ab7    push eax"
-"	      004f0ab8    mov eax,[ebp+8]"
+"	      004f0ab8    mov eax,hd"
 "	      004f0abb    mov eax,[eax+0A4h]"
 "	      004f0ac1    push eax"
 "	      004f0ac2    push 1"
-"	      004f0ac4    mov eax,[ebp+8]"
+"	      004f0ac4    mov eax,hd"
 "	      004f0ac7    add eax,100h"
 "	      004f0acc    push eax"
-"	      004f0acd    mov eax,[ebp+8]"
+"	      004f0acd    mov eax,hd"
 "	      004f0ad0    mov eax,[eax+0A4h]"
 "	      004f0ad6    add eax,18h"
 "	      004f0ad9    push eax"
-"	      004f0ada    mov eax,[ebp+8]"
+"	      004f0ada    mov eax,hd"
 "	      004f0add    add eax,18h"
 "	      004f0ae0    push eax"
 "	      004f0ae1    push 8"
 "	      004f0ae3    call 0051EEE5h"
 "	      004f0ae8    add esp,20h"
-"	      004f0aeb    mov ecx,[ebp+8]"
+"	      004f0aeb    mov ecx,hd"
 "	      004f0aee    mov [ecx+168h],eax"
 );
 // LINE 1122:
 	asm( 
-"	      004f0af4    mov eax,[ebp+8]"
+"	      004f0af4    mov eax,hd"
 "	      004f0af7    push eax"
 "	      004f0af8    call 004F1E8Ah"
 "	      004f0afd    add esp,4"
@@ -2815,7 +2815,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1125:
 	asm( 
 "	      004f0b08    push 1"
-"	      004f0b0a    mov eax,[ebp+8]"
+"	      004f0b0a    mov eax,hd"
 "	      004f0b0d    mov eax,[eax+0A8h]"
 "	      004f0b13    mov eax,[eax+8]"
 "	      004f0b16    push eax"
@@ -2825,7 +2825,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1126:
 	asm( 
 "	      004f0b1f    push 1"
-"	      004f0b21    mov eax,[ebp+8]"
+"	      004f0b21    mov eax,hd"
 "	      004f0b24    mov eax,[eax+0B4h]"
 "	      004f0b2a    mov eax,[eax+8]"
 "	      004f0b2d    push eax"
@@ -2835,7 +2835,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1127:
 	asm( 
 "	      004f0b36    push 1"
-"	      004f0b38    mov eax,[ebp+8]"
+"	      004f0b38    mov eax,hd"
 "	      004f0b3b    mov eax,[eax+0C0h]"
 "	      004f0b41    mov eax,[eax+8]"
 "	      004f0b44    push eax"
@@ -2844,7 +2844,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1128:
 	asm( 
-"	      004f0b4d    mov eax,[ebp+8]"
+"	      004f0b4d    mov eax,hd"
 "	      004f0b50    and dword ptr [eax+8],0FFFFFFFEh"
 );
 // LINE 1129:
@@ -2857,7 +2857,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1132:
 	asm( 
-"	      004f0b5e    mov eax,[ebp+8]"
+"	      004f0b5e    mov eax,hd"
 "	      004f0b61    push eax"
 "	      004f0b62    call 004F6555h"
 "	      004f0b67    add esp,4"
@@ -2869,7 +2869,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1139:
 	asm( 
 "	      004f0b6f    push 1"
-"	      004f0b71    mov eax,[ebp+8]"
+"	      004f0b71    mov eax,hd"
 "	      004f0b74    mov eax,[eax+0C4h]"
 "	      004f0b7a    mov eax,[eax+8]"
 "	      004f0b7d    push eax"
@@ -2879,7 +2879,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1140:
 	asm( 
 "	      004f0b86    push 1"
-"	      004f0b88    mov eax,[ebp+8]"
+"	      004f0b88    mov eax,hd"
 "	      004f0b8b    mov eax,[eax+0A0h]"
 "	      004f0b91    mov eax,[eax+8]"
 "	      004f0b94    push eax"
@@ -2889,7 +2889,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1143:
 	asm( 
 "	      004f0b9d    push 1"
-"	      004f0b9f    mov eax,[ebp+8]"
+"	      004f0b9f    mov eax,hd"
 "	      004f0ba2    mov eax,[eax+0A8h]"
 "	      004f0ba8    mov eax,[eax+8]"
 "	      004f0bab    push eax"
@@ -2899,7 +2899,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1144:
 	asm( 
 "	      004f0bb4    push 1"
-"	      004f0bb6    mov eax,[ebp+8]"
+"	      004f0bb6    mov eax,hd"
 "	      004f0bb9    mov eax,[eax+0B4h]"
 "	      004f0bbf    mov eax,[eax+8]"
 "	      004f0bc2    push eax"
@@ -2909,7 +2909,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1145:
 	asm( 
 "	      004f0bcb    push 1"
-"	      004f0bcd    mov eax,[ebp+8]"
+"	      004f0bcd    mov eax,hd"
 "	      004f0bd0    mov eax,[eax+0C0h]"
 "	      004f0bd6    mov eax,[eax+8]"
 "	      004f0bd9    push eax"
@@ -2919,7 +2919,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1146:
 	asm( 
 "	      004f0be2    push 1"
-"	      004f0be4    mov eax,[ebp+8]"
+"	      004f0be4    mov eax,hd"
 "	      004f0be7    mov eax,[eax+0B8h]"
 "	      004f0bed    mov eax,[eax+8]"
 "	      004f0bf0    push eax"
@@ -2929,7 +2929,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1147:
 	asm( 
 "	      004f0bf9    push 1"
-"	      004f0bfb    mov eax,[ebp+8]"
+"	      004f0bfb    mov eax,hd"
 "	      004f0bfe    mov eax,[eax+0BCh]"
 "	      004f0c04    mov eax,[eax+8]"
 "	      004f0c07    push eax"
@@ -2938,32 +2938,32 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1150:
 	asm( 
-"	      004f0c10    mov eax,[ebp+8]"
+"	      004f0c10    mov eax,hd"
 "	      004f0c13    cmp dword ptr [eax+0D0h],0"
 "	      004f0c1a    jge near ptr 004F0C44h"
-"	      004f0c20    mov eax,[ebp+8]"
+"	      004f0c20    mov eax,hd"
 "	      004f0c23    cmp dword ptr [eax+4],6"
 "	      004f0c27    je near ptr 004F0C44h"
 );
 // LINE 1152:
 	asm( 
-"	      004f0c2d    mov eax,[ebp+8]"
+"	      004f0c2d    mov eax,hd"
 "	      004f0c30    mov dword ptr [eax+4],6"
 );
 // LINE 1153:
 	asm( 
-"	      004f0c37    mov eax,[ebp+8]"
+"	      004f0c37    mov eax,hd"
 "	      004f0c3a    mov dword ptr [eax+170h],0"
 );
 // LINE 1156:
 	asm( 
-"	      004f0c44    mov eax,[ebp+8]"
+"	      004f0c44    mov eax,hd"
 "	      004f0c47    cmp dword ptr [eax+4],6"
 "	      004f0c4b    jne near ptr 004F0C6Bh"
 );
 // LINE 1158:
 	asm( 
-"	      004f0c51    mov eax,[ebp+8]"
+"	      004f0c51    mov eax,hd"
 "	      004f0c54    push eax"
 "	      004f0c55    call 004F78FAh"
 "	      004f0c5a    add esp,4"
@@ -2976,48 +2976,48 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1165:
 	asm( 
-"	      004f0c6b    mov eax,[ebp+8]"
+"	      004f0c6b    mov eax,hd"
 "	      004f0c6e    push eax"
 "	      004f0c6f    call 004F2916h"
 "	      004f0c74    add esp,4"
 );
 // LINE 1166:
 	asm( 
-"	      004f0c77    mov eax,[ebp+8]"
+"	      004f0c77    mov eax,hd"
 "	      004f0c7a    push eax"
 "	      004f0c7b    call 004F2EC9h"
 "	      004f0c80    add esp,4"
 );
 // LINE 1167:
 	asm( 
-"	      004f0c83    mov eax,[ebp+8]"
+"	      004f0c83    mov eax,hd"
 "	      004f0c86    mov eax,[eax+0A4h]"
 "	      004f0c8c    mov eax,[eax+18h]"
 "	      004f0c8f    add eax,20000000h"
 "	      004f0c94    sar eax,16h"
-"	      004f0c97    mov ecx,[ebp+8]"
+"	      004f0c97    mov ecx,hd"
 "	      004f0c9a    mov [ecx+18h],eax"
 );
 // LINE 1168:
 	asm( 
 "	      004f0c9d    mov eax,20000000h"
-"	      004f0ca2    mov ecx,[ebp+8]"
+"	      004f0ca2    mov ecx,hd"
 "	      004f0ca5    mov ecx,[ecx+0A4h]"
 "	      004f0cab    sub eax,[ecx+20h]"
 "	      004f0cae    sar eax,16h"
-"	      004f0cb1    mov ecx,[ebp+8]"
+"	      004f0cb1    mov ecx,hd"
 "	      004f0cb4    mov [ecx+1Ch],eax"
 );
 // LINE 1169:
 	asm( 
-"	      004f0cb7    mov eax,[ebp+8]"
+"	      004f0cb7    mov eax,hd"
 "	      004f0cba    push eax"
 "	      004f0cbb    call 004F32FEh"
 "	      004f0cc0    add esp,4"
 );
 // LINE 1173:
 	asm( 
-"	      004f0cc3    mov eax,[ebp+8]"
+"	      004f0cc3    mov eax,hd"
 "	      004f0cc6    test byte ptr [eax+8],1"
 "	      004f0cca    je near ptr 004F0CDAh"
 );
@@ -3031,55 +3031,55 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1183:
 	asm( 
-"	      004f0cda    mov eax,[ebp+8]"
+"	      004f0cda    mov eax,hd"
 "	      004f0cdd    mov eax,[eax+1Ch]"
 "	      004f0ce0    and eax,0FFh"
-"	      004f0ce5    mov ecx,[ebp+8]"
+"	      004f0ce5    mov ecx,hd"
 "	      004f0ce8    mov ecx,[ecx+18h]"
 "	      004f0ceb    and ecx,0FFh"
 "	      004f0cf1    shl ecx,0Ah"
 "	      004f0cf4    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f0cfb    mov [ebp-0A4h],eax"
+"	      004f0cfb    mov cptr,eax"
 );
 // LINE 1187:
 	asm( 
-"	      004f0d01    mov eax,[ebp+8]"
-"	      004f0d04    mov ecx,[ebp+8]"
+"	      004f0d01    mov eax,hd"
+"	      004f0d04    mov ecx,hd"
 "	      004f0d07    mov ecx,[ecx+10h]"
 "	      004f0d0a    cmp [eax+18h],ecx"
 "	      004f0d0d    jne near ptr 004F0D25h"
-"	      004f0d13    mov eax,[ebp+8]"
-"	      004f0d16    mov ecx,[ebp+8]"
+"	      004f0d13    mov eax,hd"
+"	      004f0d16    mov ecx,hd"
 "	      004f0d19    mov ecx,[ecx+1Ch]"
 "	      004f0d1c    cmp [eax+14h],ecx"
 "	      004f0d1f    je near ptr 004F0DADh"
 );
 // LINE 1190:
 	asm( 
-"	      004f0d25    mov eax,[ebp+8]"
+"	      004f0d25    mov eax,hd"
 "	      004f0d28    mov eax,[eax+14h]"
 "	      004f0d2b    and eax,0FFh"
-"	      004f0d30    mov ecx,[ebp+8]"
+"	      004f0d30    mov ecx,hd"
 "	      004f0d33    mov ecx,[ecx+10h]"
 "	      004f0d36    and ecx,0FFh"
 "	      004f0d3c    shl ecx,0Ah"
 "	      004f0d3f    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f0d46    mov [ebp-0A0h],eax"
+"	      004f0d46    mov lcptr,eax"
 );
 // LINE 1191:
 	asm( 
-"	      004f0d4c    mov eax,[ebp-0A0h]"
+"	      004f0d4c    mov eax,lcptr"
 "	      004f0d52    push eax"
-"	      004f0d53    mov eax,[ebp+8]"
+"	      004f0d53    mov eax,hd"
 "	      004f0d56    push eax"
 "	      004f0d57    call 004F85E8h"
 "	      004f0d5c    add esp,8"
 );
 // LINE 1193:
 	asm( 
-"	      004f0d5f    mov eax,[ebp-0A4h]"
+"	      004f0d5f    mov eax,cptr"
 "	      004f0d65    mov eax,[eax+10h]"
-"	      004f0d68    mov ecx,[ebp+8]"
+"	      004f0d68    mov ecx,hd"
 "	      004f0d6b    mov ecx,[ecx+0A4h]"
 "	      004f0d71    mov ecx,[ecx]"
 "	      004f0d73    mov ecx,[ecx]"
@@ -3094,28 +3094,28 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1194:
 	asm( 
-"	      004f0d85    mov eax,[ebp+8]"
+"	      004f0d85    mov eax,hd"
 "	      004f0d88    mov eax,[eax+0A4h]"
-"	      004f0d8e    mov ecx,[ebp-0A4h]"
+"	      004f0d8e    mov ecx,cptr"
 "	      004f0d94    mov [ecx+10h],eax"
 );
 // LINE 1197:
 	asm( 
-"	      004f0d97    mov eax,[ebp+8]"
+"	      004f0d97    mov eax,hd"
 "	      004f0d9a    add eax,18h"
 "	      004f0d9d    mov ecx,[eax]"
 "	      004f0d9f    mov eax,[eax+4]"
-"	      004f0da2    mov edx,[ebp+8]"
+"	      004f0da2    mov edx,hd"
 "	      004f0da5    add edx,10h"
 "	      004f0da8    mov [edx],ecx"
 "	      004f0daa    mov [edx+4],eax"
 );
 // LINE 1202:
 	asm( 
-"	      004f0dad    mov eax,[ebp+8]"
+"	      004f0dad    mov eax,hd"
 "	      004f0db0    mov eax,[eax+0A4h]"
 "	      004f0db6    add eax,18h"
-"	      004f0db9    lea ecx,[ebp-108h]"
+"	      004f0db9    lea ecx,pos.loc.x"
 "	      004f0dbf    mov edx,[eax]"
 "	      004f0dc1    mov [ecx],edx"
 "	      004f0dc3    mov edx,[eax+4]"
@@ -3125,9 +3125,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1203:
 	asm( 
-"	      004f0dcf    mov eax,[ebp+8]"
+"	      004f0dcf    mov eax,hd"
 "	      004f0dd2    mov esi,[eax+0A4h]"
-"	      004f0dd8    lea edi,[ebp-0F0h]"
+"	      004f0dd8    lea edi,pos.matrix[0][0]"
 "	      004f0dde    add esi,24h"
 "	      004f0de1    mov ecx,10h"
 "	      004f0de6    rep movsd"
@@ -3135,9 +3135,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1204:
 	asm( 
 "	      004f0de8    push 3"
-"	      004f0dea    lea eax,[ebp-108h]"
+"	      004f0dea    lea eax,pos.loc.x"
 "	      004f0df0    push eax"
-"	      004f0df1    mov eax,[ebp+8]"
+"	      004f0df1    mov eax,hd"
 "	      004f0df4    mov eax,[eax+0A4h]"
 "	      004f0dfa    mov eax,[eax+8]"
 "	      004f0dfd    push eax"
@@ -3146,10 +3146,10 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1207:
 	asm( 
-"	      004f0e06    mov eax,[ebp+8]"
+"	      004f0e06    mov eax,hd"
 "	      004f0e09    mov eax,[eax+0A4h]"
 "	      004f0e0f    add eax,18h"
-"	      004f0e12    mov ecx,[ebp+8]"
+"	      004f0e12    mov ecx,hd"
 "	      004f0e15    mov ecx,[ecx+0C4h]"
 "	      004f0e1b    add ecx,18h"
 "	      004f0e1e    mov edx,[eax]"
@@ -3161,9 +3161,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1208:
 	asm( 
-"	      004f0e2e    mov eax,[ebp+8]"
+"	      004f0e2e    mov eax,hd"
 "	      004f0e31    mov esi,[eax+0A4h]"
-"	      004f0e37    mov eax,[ebp+8]"
+"	      004f0e37    mov eax,hd"
 "	      004f0e3a    mov edi,[eax+0C4h]"
 "	      004f0e40    add edi,24h"
 "	      004f0e43    add esi,24h"
@@ -3173,9 +3173,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1209:
 	asm( 
 "	      004f0e4d    push 3"
-"	      004f0e4f    lea eax,[ebp-108h]"
+"	      004f0e4f    lea eax,pos.loc.x"
 "	      004f0e55    push eax"
-"	      004f0e56    mov eax,[ebp+8]"
+"	      004f0e56    mov eax,hd"
 "	      004f0e59    mov eax,[eax+0C4h]"
 "	      004f0e5f    mov eax,[eax+8]"
 "	      004f0e62    push eax"
@@ -3184,10 +3184,10 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1212:
 	asm( 
-"	      004f0e6b    mov eax,[ebp+8]"
+"	      004f0e6b    mov eax,hd"
 "	      004f0e6e    mov eax,[eax+0A4h]"
 "	      004f0e74    add eax,18h"
-"	      004f0e77    mov ecx,[ebp+8]"
+"	      004f0e77    mov ecx,hd"
 "	      004f0e7a    mov ecx,[ecx+0A0h]"
 "	      004f0e80    add ecx,18h"
 "	      004f0e83    mov edx,[eax]"
@@ -3199,9 +3199,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1213:
 	asm( 
-"	      004f0e93    mov eax,[ebp+8]"
+"	      004f0e93    mov eax,hd"
 "	      004f0e96    mov esi,[eax+0A4h]"
-"	      004f0e9c    mov eax,[ebp+8]"
+"	      004f0e9c    mov eax,hd"
 "	      004f0e9f    mov edi,[eax+0A0h]"
 "	      004f0ea5    add edi,24h"
 "	      004f0ea8    add esi,24h"
@@ -3211,9 +3211,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1214:
 	asm( 
 "	      004f0eb2    push 3"
-"	      004f0eb4    lea eax,[ebp-108h]"
+"	      004f0eb4    lea eax,pos.loc.x"
 "	      004f0eba    push eax"
-"	      004f0ebb    mov eax,[ebp+8]"
+"	      004f0ebb    mov eax,hd"
 "	      004f0ebe    mov eax,[eax+0A0h]"
 "	      004f0ec4    mov eax,[eax+8]"
 "	      004f0ec7    push eax"
@@ -3222,132 +3222,132 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1216:
 	asm( 
-"	      004f0ed0    mov eax,[ebp+8]"
+"	      004f0ed0    mov eax,hd"
 "	      004f0ed3    push eax"
 "	      004f0ed4    call 004F3B82h"
 "	      004f0ed9    add esp,4"
 );
 // LINE 1217:
 	asm( 
-"	      004f0edc    mov eax,[ebp-0A4h]"
+"	      004f0edc    mov eax,cptr"
 "	      004f0ee2    push eax"
-"	      004f0ee3    mov eax,[ebp+8]"
+"	      004f0ee3    mov eax,hd"
 "	      004f0ee6    push eax"
 "	      004f0ee7    call 004F40C7h"
 "	      004f0eec    add esp,8"
 );
 // LINE 1229:
 	asm( 
-"	      004f0eef    mov eax,[ebp+8]"
+"	      004f0eef    mov eax,hd"
 "	      004f0ef2    mov eax,[eax+0A4h]"
 "	      004f0ef8    mov eax,[eax+18h]"
-"	      004f0efb    mov ecx,[ebp-0A4h]"
+"	      004f0efb    mov ecx,cptr"
 "	      004f0f01    movsx ecx,word ptr [ecx+2]"
 "	      004f0f05    shl ecx,10h"
 "	      004f0f08    sub eax,ecx"
-"	      004f0f0a    mov [ebp-0B0h],eax"
+"	      004f0f0a    mov normx,eax"
 );
 // LINE 1230:
 	asm( 
-"	      004f0f10    mov eax,[ebp+8]"
+"	      004f0f10    mov eax,hd"
 "	      004f0f13    mov eax,[eax+0A4h]"
 "	      004f0f19    mov eax,[eax+20h]"
-"	      004f0f1c    mov ecx,[ebp-0A4h]"
+"	      004f0f1c    mov ecx,cptr"
 "	      004f0f22    movsx ecx,word ptr [ecx+6]"
 "	      004f0f26    shl ecx,10h"
 "	      004f0f29    sub eax,ecx"
-"	      004f0f2b    mov [ebp-8],eax"
+"	      004f0f2b    mov normz,eax"
 );
 // LINE 1231:
 	asm( 
-"	      004f0f2e    mov eax,[ebp+8]"
+"	      004f0f2e    mov eax,hd"
 "	      004f0f31    mov eax,[eax+0A4h]"
 "	      004f0f37    mov eax,[eax+1Ch]"
-"	      004f0f3a    mov ecx,[ebp-0A4h]"
+"	      004f0f3a    mov ecx,cptr"
 "	      004f0f40    movsx ecx,word ptr [ecx+4]"
 "	      004f0f44    shl ecx,10h"
 "	      004f0f47    sub eax,ecx"
-"	      004f0f49    mov [ebp-10Ch],eax"
+"	      004f0f49    mov normy,eax"
 );
 // LINE 1233:
 	asm( 
-"	      004f0f4f    mov eax,[ebp-0A4h]"
+"	      004f0f4f    mov eax,cptr"
 "	      004f0f55    push eax"
-"	      004f0f56    mov eax,[ebp+8]"
+"	      004f0f56    mov eax,hd"
 "	      004f0f59    mov eax,[eax+154h]"
 "	      004f0f5f    push eax"
-"	      004f0f60    mov eax,[ebp+8]"
+"	      004f0f60    mov eax,hd"
 "	      004f0f63    push eax"
 "	      004f0f64    call 004F4766h"
 "	      004f0f69    add esp,0Ch"
 );
 // LINE 1234:
 	asm( 
-"	      004f0f6c    mov eax,[ebp+8]"
+"	      004f0f6c    mov eax,hd"
 "	      004f0f6f    mov eax,[eax+154h]"
 "	      004f0f75    push eax"
-"	      004f0f76    mov eax,[ebp+8]"
+"	      004f0f76    mov eax,hd"
 "	      004f0f79    push eax"
 "	      004f0f7a    call 004F48ECh"
 "	      004f0f7f    add esp,8"
 );
 // LINE 1235:
 	asm( 
-"	      004f0f82    mov eax,[ebp+8]"
+"	      004f0f82    mov eax,hd"
 "	      004f0f85    mov eax,[eax+164h]"
 "	      004f0f8b    push eax"
-"	      004f0f8c    mov eax,[ebp+8]"
+"	      004f0f8c    mov eax,hd"
 "	      004f0f8f    mov eax,[eax+154h]"
 "	      004f0f95    push eax"
-"	      004f0f96    mov eax,[ebp+8]"
+"	      004f0f96    mov eax,hd"
 "	      004f0f99    mov eax,[eax+154h]"
-"	      004f0f9f    mov ecx,[ebp+8]"
+"	      004f0f9f    mov ecx,hd"
 "	      004f0fa2    sub eax,[ecx+150h]"
 "	      004f0fa8    push eax"
-"	      004f0fa9    mov eax,[ebp+8]"
+"	      004f0fa9    mov eax,hd"
 "	      004f0fac    push eax"
 "	      004f0fad    call 004F1C83h"
 "	      004f0fb2    add esp,10h"
 );
 // LINE 1236:
 	asm( 
-"	      004f0fb5    mov eax,[ebp+8]"
+"	      004f0fb5    mov eax,hd"
 "	      004f0fb8    mov eax,[eax+164h]"
 "	      004f0fbe    push eax"
-"	      004f0fbf    mov eax,[ebp+8]"
+"	      004f0fbf    mov eax,hd"
 "	      004f0fc2    mov eax,[eax+154h]"
 "	      004f0fc8    push eax"
-"	      004f0fc9    mov eax,[ebp+8]"
+"	      004f0fc9    mov eax,hd"
 "	      004f0fcc    mov eax,[eax+154h]"
-"	      004f0fd2    mov ecx,[ebp+8]"
+"	      004f0fd2    mov ecx,hd"
 "	      004f0fd5    sub eax,[ecx+150h]"
 "	      004f0fdb    push eax"
-"	      004f0fdc    mov eax,[ebp+8]"
+"	      004f0fdc    mov eax,hd"
 "	      004f0fdf    push eax"
 "	      004f0fe0    call 004F5E67h"
 "	      004f0fe5    add esp,10h"
 );
 // LINE 1239:
 	asm( 
-"	      004f0fe8    mov eax,[ebp+8]"
+"	      004f0fe8    mov eax,hd"
 "	      004f0feb    test byte ptr [eax+8],1"
 "	      004f0fef    je near ptr 004F1003h"
 );
 // LINE 1241:
 	asm( 
-"	      004f0ff5    mov eax,[ebp+8]"
+"	      004f0ff5    mov eax,hd"
 "	      004f0ff8    mov eax,[eax+150h]"
 "	      004f0ffe    mov ds:[6BF194h],eax"
 );
 // LINE 1245:
 	asm( 
-"	      004f1003    mov eax,[ebp+8]"
+"	      004f1003    mov eax,hd"
 "	      004f1006    cmp dword ptr [eax+4],1"
 "	      004f100a    jne near ptr 004F108Ah"
 );
 // LINE 1247:
 	asm( 
-"	      004f1010    mov eax,[ebp+8]"
+"	      004f1010    mov eax,hd"
 "	      004f1013    cmp dword ptr [eax+320h],0"
 "	      004f101a    jle near ptr 004F107Ch"
 "	      004f1020    cmp dword ptr ds:[5C3810h],0"
@@ -3362,62 +3362,62 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1037    call 004D19BDh"
 "	      004f103c    add esp,8"
 "	      004f103f    push eax"
-"	      004f1040    mov eax,[ebp-0ACh]"
+"	      004f1040    mov eax,htd"
 "	      004f1046    mov eax,[eax+44h]"
 "	      004f1049    push eax"
 "	      004f104a    call 004D19BDh"
 "	      004f104f    add esp,8"
 "	      004f1052    sub ebx,eax"
 "	      004f1054    neg ebx"
-"	      004f1056    mov eax,[ebp+8]"
+"	      004f1056    mov eax,hd"
 "	      004f1059    sub [eax+320h],ebx"
 );
 // LINE 1250:
 	asm( 
-"	      004f105f    mov eax,[ebp+8]"
+"	      004f105f    mov eax,hd"
 "	      004f1062    cmp dword ptr [eax+320h],0"
 "	      004f1069    jge near ptr 004F107Ch"
 );
 // LINE 1253:
 	asm( 
-"	      004f106f    mov eax,[ebp+8]"
+"	      004f106f    mov eax,hd"
 "	      004f1072    mov dword ptr [eax+320h],0"
 );
 // LINE 1256:
 	asm( 
 "	      004f107c    mov eax,ds:[5B4768h]"
-"	      004f1081    mov ecx,[ebp+8]"
+"	      004f1081    mov ecx,hd"
 "	      004f1084    add [ecx+324h],eax"
 );
 // LINE 1265:
 	asm( 
-"	      004f108a    mov eax,[ebp+8]"
+"	      004f108a    mov eax,hd"
 "	      004f108d    cmp dword ptr [eax+4],5"
 "	      004f1091    je near ptr 004F160Ch"
-"	      004f1097    mov eax,[ebp+8]"
+"	      004f1097    mov eax,hd"
 "	      004f109a    cmp dword ptr [eax+4],6"
 "	      004f109e    je near ptr 004F160Ch"
-"	      004f10a4    mov eax,[ebp+8]"
+"	      004f10a4    mov eax,hd"
 "	      004f10a7    cmp dword ptr [eax+4],0"
 "	      004f10ab    je near ptr 004F160Ch"
 );
 // LINE 1268:
 	asm( 
-"	      004f10b1    mov eax,[ebp+8]"
+"	      004f10b1    mov eax,hd"
 "	      004f10b4    mov eax,[eax+0A4h]"
-"	      004f10ba    mov ecx,[ebp+8]"
+"	      004f10ba    mov ecx,hd"
 "	      004f10bd    mov ecx,[ecx+150h]"
 "	      004f10c3    cmp [eax+1Ch],ecx"
 "	      004f10c6    jge near ptr 004F11DCh"
-"	      004f10cc    mov eax,[ebp+8]"
+"	      004f10cc    mov eax,hd"
 "	      004f10cf    cmp dword ptr [eax+174h],1"
 "	      004f10d6    jne near ptr 004F11DCh"
 );
 // LINE 1270:
 	asm( 
-"	      004f10dc    mov eax,[ebp+8]"
+"	      004f10dc    mov eax,hd"
 "	      004f10df    mov eax,[eax+150h]"
-"	      004f10e5    mov ecx,[ebp+8]"
+"	      004f10e5    mov ecx,hd"
 "	      004f10e8    mov ecx,[ecx+0A4h]"
 "	      004f10ee    mov [ecx+1Ch],eax"
 );
@@ -3428,12 +3428,12 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1272:
 	asm( 
-"	      004f10fe    mov eax,[ebp+8]"
+"	      004f10fe    mov eax,hd"
 "	      004f1101    sub dword ptr [eax+0D0h],4"
 );
 // LINE 1274:
 	asm( 
-"	      004f1108    mov eax,[ebp+8]"
+"	      004f1108    mov eax,hd"
 "	      004f110b    cmp dword ptr [eax+320h],0"
 "	      004f1112    jne near ptr 004F1130h"
 );
@@ -3444,17 +3444,17 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1120    shl ecx,2"
 "	      004f1123    sub eax,ecx"
 "	      004f1125    neg eax"
-"	      004f1127    mov ecx,[ebp+8]"
+"	      004f1127    mov ecx,hd"
 "	      004f112a    sub [ecx+0D0h],eax"
 );
 // LINE 1279:
 	asm( 
 "	      004f1130    push 9"
-"	      004f1132    mov eax,[ebp+8]"
+"	      004f1132    mov eax,hd"
 "	      004f1135    mov eax,[eax+0A4h]"
 "	      004f113b    add eax,18h"
 "	      004f113e    push eax"
-"	      004f113f    mov eax,[ebp-0A4h]"
+"	      004f113f    mov eax,cptr"
 "	      004f1145    push eax"
 "	      004f1146    call 005240DCh"
 "	      004f114b    add esp,0Ch"
@@ -3470,7 +3470,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1282:
 	asm( 
 "	      004f1160    push 0"
-"	      004f1162    mov eax,[ebp+8]"
+"	      004f1162    mov eax,hd"
 "	      004f1165    mov eax,[eax+0A4h]"
 "	      004f116b    add eax,18h"
 "	      004f116e    push eax"
@@ -3487,11 +3487,11 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f118b    cdq"
 "	      004f118c    idiv ecx"
 "	      004f118e    sub ebx,edx"
-"	      004f1190    mov eax,[ebp-0ACh]"
+"	      004f1190    mov eax,htd"
 "	      004f1196    mov eax,[eax+14h]"
 "	      004f1199    sar eax,2"
 "	      004f119c    imul ebx,eax"
-"	      004f119f    mov eax,[ebp+8]"
+"	      004f119f    mov eax,hd"
 "	      004f11a2    mov [eax+11Ch],ebx"
 );
 // LINE 1285:
@@ -3503,31 +3503,31 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f11ba    cdq"
 "	      004f11bb    idiv ecx"
 "	      004f11bd    sub ebx,edx"
-"	      004f11bf    mov eax,[ebp-0ACh]"
+"	      004f11bf    mov eax,htd"
 "	      004f11c5    mov eax,[eax+10h]"
 "	      004f11c8    sar eax,2"
 "	      004f11cb    imul ebx,eax"
-"	      004f11ce    mov eax,[ebp+8]"
+"	      004f11ce    mov eax,hd"
 "	      004f11d1    mov [eax+118h],ebx"
 );
 // LINE 1288:
 	asm( 
 "	      004f11d7    jmp near ptr 004F160Ch"
-"	      004f11dc    mov eax,[ebp+8]"
+"	      004f11dc    mov eax,hd"
 "	      004f11df    mov eax,[eax+0A4h]"
-"	      004f11e5    mov ecx,[ebp+8]"
+"	      004f11e5    mov ecx,hd"
 "	      004f11e8    mov ecx,[ecx+150h]"
 "	      004f11ee    cmp [eax+1Ch],ecx"
 "	      004f11f1    jge near ptr 004F12F5h"
-"	      004f11f7    mov eax,[ebp+8]"
+"	      004f11f7    mov eax,hd"
 "	      004f11fa    cmp dword ptr [eax+13Ch],0"
 "	      004f1201    jne near ptr 004F12F5h"
 );
 // LINE 1290:
 	asm( 
-"	      004f1207    mov eax,[ebp+8]"
+"	      004f1207    mov eax,hd"
 "	      004f120a    mov eax,[eax+150h]"
-"	      004f1210    mov ecx,[ebp+8]"
+"	      004f1210    mov ecx,hd"
 "	      004f1213    mov ecx,[ecx+0A4h]"
 "	      004f1219    mov [ecx+1Ch],eax"
 );
@@ -3538,12 +3538,12 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1292:
 	asm( 
-"	      004f1229    mov eax,[ebp+8]"
+"	      004f1229    mov eax,hd"
 "	      004f122c    sub dword ptr [eax+0D0h],4"
 );
 // LINE 1294:
 	asm( 
-"	      004f1233    mov eax,[ebp+8]"
+"	      004f1233    mov eax,hd"
 "	      004f1236    cmp dword ptr [eax+320h],0"
 "	      004f123d    jne near ptr 004F125Bh"
 );
@@ -3554,17 +3554,17 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f124b    shl ecx,2"
 "	      004f124e    sub eax,ecx"
 "	      004f1250    neg eax"
-"	      004f1252    mov ecx,[ebp+8]"
+"	      004f1252    mov ecx,hd"
 "	      004f1255    sub [ecx+0D0h],eax"
 );
 // LINE 1299:
 	asm( 
 "	      004f125b    push 1"
-"	      004f125d    mov eax,[ebp+8]"
+"	      004f125d    mov eax,hd"
 "	      004f1260    mov eax,[eax+0A4h]"
 "	      004f1266    add eax,18h"
 "	      004f1269    push eax"
-"	      004f126a    mov eax,[ebp-0A4h]"
+"	      004f126a    mov eax,cptr"
 "	      004f1270    push eax"
 "	      004f1271    call 005240DCh"
 "	      004f1276    add esp,0Ch"
@@ -3572,7 +3572,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1301:
 	asm( 
 "	      004f1279    push 0"
-"	      004f127b    mov eax,[ebp+8]"
+"	      004f127b    mov eax,hd"
 "	      004f127e    mov eax,[eax+0A4h]"
 "	      004f1284    add eax,18h"
 "	      004f1287    push eax"
@@ -3589,11 +3589,11 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f12a4    cdq"
 "	      004f12a5    idiv ecx"
 "	      004f12a7    sub ebx,edx"
-"	      004f12a9    mov eax,[ebp-0ACh]"
+"	      004f12a9    mov eax,htd"
 "	      004f12af    mov eax,[eax+14h]"
 "	      004f12b2    sar eax,2"
 "	      004f12b5    imul ebx,eax"
-"	      004f12b8    mov eax,[ebp+8]"
+"	      004f12b8    mov eax,hd"
 "	      004f12bb    mov [eax+11Ch],ebx"
 );
 // LINE 1304:
@@ -3605,23 +3605,23 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f12d3    cdq"
 "	      004f12d4    idiv ecx"
 "	      004f12d6    sub ebx,edx"
-"	      004f12d8    mov eax,[ebp-0ACh]"
+"	      004f12d8    mov eax,htd"
 "	      004f12de    mov eax,[eax+10h]"
 "	      004f12e1    sar eax,2"
 "	      004f12e4    imul ebx,eax"
-"	      004f12e7    mov eax,[ebp+8]"
+"	      004f12e7    mov eax,hd"
 "	      004f12ea    mov [eax+118h],ebx"
 );
 // LINE 1307:
 	asm( 
 "	      004f12f0    jmp near ptr 004F160Ch"
-"	      004f12f5    mov eax,[ebp+8]"
+"	      004f12f5    mov eax,hd"
 "	      004f12f8    mov eax,[eax+0A4h]"
-"	      004f12fe    mov ecx,[ebp+8]"
+"	      004f12fe    mov ecx,hd"
 "	      004f1301    mov ecx,[ecx+154h]"
 "	      004f1307    cmp [eax+1Ch],ecx"
 "	      004f130a    jge near ptr 004F151Ch"
-"	      004f1310    mov eax,[ebp+8]"
+"	      004f1310    mov eax,hd"
 "	      004f1313    cmp dword ptr [eax+110h],0"
 "	      004f131a    jg near ptr 004F151Ch"
 );
@@ -3635,12 +3635,12 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f132d    xor eax,eax"
 "	      004f132f    sub eax,ds:[5B48F8h]"
 "	      004f1335    neg eax"
-"	      004f1337    mov ecx,[ebp+8]"
+"	      004f1337    mov ecx,hd"
 "	      004f133a    sub [ecx+0D0h],eax"
 );
 // LINE 1313:
 	asm( 
-"	      004f1340    mov eax,[ebp+8]"
+"	      004f1340    mov eax,hd"
 "	      004f1343    cmp dword ptr [eax+320h],0"
 "	      004f134a    jne near ptr 004F1368h"
 );
@@ -3651,52 +3651,52 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1358    shl ecx,2"
 "	      004f135b    sub eax,ecx"
 "	      004f135d    neg eax"
-"	      004f135f    mov ecx,[ebp+8]"
+"	      004f135f    mov ecx,hd"
 "	      004f1362    sub [ecx+0D0h],eax"
 );
 // LINE 1318:
 	asm( 
-"	      004f1368    mov eax,[ebp+8]"
+"	      004f1368    mov eax,hd"
 "	      004f136b    mov eax,[eax+0A4h]"
-"	      004f1371    mov ecx,[ebp+8]"
+"	      004f1371    mov ecx,hd"
 "	      004f1374    mov ecx,[ecx+150h]"
 "	      004f137a    cmp [eax+1Ch],ecx"
 "	      004f137d    jge near ptr 004F1398h"
 );
 // LINE 1320:
 	asm( 
-"	      004f1383    mov eax,[ebp+8]"
+"	      004f1383    mov eax,hd"
 "	      004f1386    mov eax,[eax+150h]"
-"	      004f138c    mov ecx,[ebp+8]"
+"	      004f138c    mov ecx,hd"
 "	      004f138f    mov ecx,[ecx+0A4h]"
 "	      004f1395    mov [ecx+1Ch],eax"
 );
 // LINE 1324:
 	asm( 
-"	      004f1398    mov eax,[ebp+8]"
+"	      004f1398    mov eax,hd"
 "	      004f139b    add eax,100h"
 "	      004f13a0    push eax"
-"	      004f13a1    lea eax,[ebp-48h]"
+"	      004f13a1    lea eax,tmpmatrix[0][0]"
 "	      004f13a4    push eax"
 "	      004f13a5    call 004CAEFBh"
 "	      004f13aa    add esp,8"
 );
 // LINE 1325:
 	asm( 
-"	      004f13ad    lea eax,[ebp-9Ch]"
+"	      004f13ad    lea eax,matrix[0][0]"
 "	      004f13b3    push eax"
-"	      004f13b4    lea eax,[ebp-48h]"
+"	      004f13b4    lea eax,tmpmatrix[0][0]"
 "	      004f13b7    push eax"
 "	      004f13b8    call 004D8C2Eh"
 "	      004f13bd    add esp,8"
 );
 // LINE 1327:
 	asm( 
-"	      004f13c0    lea eax,[ebp-9Ch]"
+"	      004f13c0    lea eax,matrix[0][0]"
 "	      004f13c6    push eax"
-"	      004f13c7    lea eax,[ebp-54h]"
+"	      004f13c7    lea eax,vec.x"
 "	      004f13ca    push eax"
-"	      004f13cb    mov eax,[ebp+8]"
+"	      004f13cb    mov eax,hd"
 "	      004f13ce    add eax,158h"
 "	      004f13d3    push eax"
 "	      004f13d4    call 004D2094h"
@@ -3704,14 +3704,14 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1328:
 	asm( 
-"	      004f13dc    lea eax,[ebp-54h]"
+"	      004f13dc    lea eax,vec.x"
 "	      004f13df    push eax"
 "	      004f13e0    call 004CA1E3h"
 "	      004f13e5    add esp,4"
 );
 // LINE 1329:
 	asm( 
-"	      004f13e8    mov eax,[ebp+8]"
+"	      004f13e8    mov eax,hd"
 "	      004f13eb    add eax,158h"
 "	      004f13f0    push eax"
 "	      004f13f1    call 004CA1E3h"
@@ -3719,45 +3719,45 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1330:
 	asm( 
-"	      004f13f9    mov eax,[ebp-4Ch]"
+"	      004f13f9    mov eax,vec.z"
 "	      004f13fc    push eax"
-"	      004f13fd    mov eax,[ebp-0ACh]"
+"	      004f13fd    mov eax,htd"
 "	      004f1403    mov eax,[eax+14h]"
 "	      004f1406    push eax"
 "	      004f1407    call 004D19BDh"
 "	      004f140c    add esp,8"
 "	      004f140f    neg eax"
-"	      004f1411    mov ecx,[ebp+8]"
+"	      004f1411    mov ecx,hd"
 "	      004f1414    mov [ecx+11Ch],eax"
 );
 // LINE 1331:
 	asm( 
-"	      004f141a    mov eax,[ebp-54h]"
+"	      004f141a    mov eax,vec.x"
 "	      004f141d    push eax"
-"	      004f141e    mov eax,[ebp-0ACh]"
+"	      004f141e    mov eax,htd"
 "	      004f1424    mov eax,[eax+10h]"
 "	      004f1427    push eax"
 "	      004f1428    call 004D19BDh"
 "	      004f142d    add esp,8"
-"	      004f1430    mov ecx,[ebp+8]"
+"	      004f1430    mov ecx,hd"
 "	      004f1433    mov [ecx+118h],eax"
 );
 // LINE 1337:
 	asm( 
-"	      004f1439    mov eax,[ebp+8]"
+"	      004f1439    mov eax,hd"
 "	      004f143c    mov dword ptr [eax+110h],3333h"
 );
 // LINE 1339:
 	asm( 
-"	      004f1446    mov eax,[ebp+8]"
+"	      004f1446    mov eax,hd"
 "	      004f1449    mov eax,[eax+0A4h]"
 "	      004f144f    mov eax,[eax+1Ch]"
-"	      004f1452    mov [ebp-5Ch],eax"
+"	      004f1452    mov alt,eax"
 );
 // LINE 1341:
 	asm( 
 "	      004f1455    push 0"
-"	      004f1457    mov eax,[ebp+8]"
+"	      004f1457    mov eax,hd"
 "	      004f145a    mov eax,[eax+0A4h]"
 "	      004f1460    add eax,18h"
 "	      004f1463    push eax"
@@ -3774,24 +3774,24 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	asm( 
 "	      004f147b    push 0FFFFFFFFh"
 "	      004f147d    push 2"
-"	      004f147f    mov eax,[ebp+8]"
+"	      004f147f    mov eax,hd"
 "	      004f1482    mov eax,[eax+108h]"
 "	      004f1488    shl eax,3"
-"	      004f148b    add eax,[ebp-8]"
+"	      004f148b    add eax,normz"
 "	      004f148e    push eax"
-"	      004f148f    mov eax,[ebp-5Ch]"
-"	      004f1492    mov ecx,[ebp-0A4h]"
+"	      004f148f    mov eax,alt"
+"	      004f1492    mov ecx,cptr"
 "	      004f1498    movsx ecx,word ptr [ecx+4]"
 "	      004f149c    shl ecx,10h"
 "	      004f149f    sub eax,ecx"
 "	      004f14a1    add eax,50000h"
 "	      004f14a6    push eax"
-"	      004f14a7    mov eax,[ebp+8]"
+"	      004f14a7    mov eax,hd"
 "	      004f14aa    mov eax,[eax+100h]"
 "	      004f14b0    shl eax,3"
-"	      004f14b3    add eax,[ebp-0B0h]"
+"	      004f14b3    add eax,normx"
 "	      004f14b9    push eax"
-"	      004f14ba    mov eax,[ebp-0A4h]"
+"	      004f14ba    mov eax,cptr"
 "	      004f14c0    push eax"
 "	      004f14c1    call 00523F50h"
 "	      004f14c6    add esp,18h"
@@ -3804,23 +3804,23 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	asm( 
 "	      004f14ce    push 0FFFFFFFFh"
 "	      004f14d0    push 1"
-"	      004f14d2    mov eax,[ebp+8]"
+"	      004f14d2    mov eax,hd"
 "	      004f14d5    mov eax,[eax+160h]"
 "	      004f14db    lea eax,[eax+eax*4]"
-"	      004f14de    add eax,[ebp-8]"
+"	      004f14de    add eax,normz"
 "	      004f14e1    push eax"
-"	      004f14e2    mov eax,[ebp-5Ch]"
-"	      004f14e5    mov ecx,[ebp-0A4h]"
+"	      004f14e2    mov eax,alt"
+"	      004f14e5    mov ecx,cptr"
 "	      004f14eb    movsx ecx,word ptr [ecx+4]"
 "	      004f14ef    shl ecx,10h"
 "	      004f14f2    sub eax,ecx"
 "	      004f14f4    push eax"
-"	      004f14f5    mov eax,[ebp+8]"
+"	      004f14f5    mov eax,hd"
 "	      004f14f8    mov eax,[eax+158h]"
 "	      004f14fe    lea eax,[eax+eax*4]"
-"	      004f1501    add eax,[ebp-0B0h]"
+"	      004f1501    add eax,normx"
 "	      004f1507    push eax"
-"	      004f1508    mov eax,[ebp-0A4h]"
+"	      004f1508    mov eax,cptr"
 "	      004f150e    push eax"
 "	      004f150f    call 00523F50h"
 "	      004f1514    add esp,18h"
@@ -3828,7 +3828,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1359:
 	asm( 
 "	      004f1517    jmp near ptr 004F160Ch"
-"	      004f151c    mov eax,[ebp+8]"
+"	      004f151c    mov eax,hd"
 "	      004f151f    push eax"
 "	      004f1520    call 004F7DE6h"
 "	      004f1525    add esp,4"
@@ -3842,12 +3842,12 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1362:
 	asm( 
-"	      004f153e    mov eax,[ebp+8]"
+"	      004f153e    mov eax,hd"
 "	      004f1541    sub dword ptr [eax+0D0h],4"
 );
 // LINE 1364:
 	asm( 
-"	      004f1548    mov eax,[ebp+8]"
+"	      004f1548    mov eax,hd"
 "	      004f154b    cmp dword ptr [eax+320h],0"
 "	      004f1552    jne near ptr 004F1570h"
 );
@@ -3858,20 +3858,20 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1560    shl ecx,2"
 "	      004f1563    sub eax,ecx"
 "	      004f1565    neg eax"
-"	      004f1567    mov ecx,[ebp+8]"
+"	      004f1567    mov ecx,hd"
 "	      004f156a    sub [ecx+0D0h],eax"
 );
 // LINE 1369:
 	asm( 
 "	      004f1570    push 0FFFFFFFFh"
 "	      004f1572    push 1"
-"	      004f1574    mov eax,[ebp-8]"
+"	      004f1574    mov eax,normz"
 "	      004f1577    push eax"
-"	      004f1578    mov eax,[ebp-10Ch]"
+"	      004f1578    mov eax,normy"
 "	      004f157e    push eax"
-"	      004f157f    mov eax,[ebp-0B0h]"
+"	      004f157f    mov eax,normx"
 "	      004f1585    push eax"
-"	      004f1586    mov eax,[ebp-0A4h]"
+"	      004f1586    mov eax,cptr"
 "	      004f158c    push eax"
 "	      004f158d    call 00523F50h"
 "	      004f1592    add esp,18h"
@@ -3879,7 +3879,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1371:
 	asm( 
 "	      004f1595    push 0"
-"	      004f1597    mov eax,[ebp+8]"
+"	      004f1597    mov eax,hd"
 "	      004f159a    mov eax,[eax+0A4h]"
 "	      004f15a0    add eax,18h"
 "	      004f15a3    push eax"
@@ -3896,11 +3896,11 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f15c0    cdq"
 "	      004f15c1    idiv ecx"
 "	      004f15c3    sub ebx,edx"
-"	      004f15c5    mov eax,[ebp-0ACh]"
+"	      004f15c5    mov eax,htd"
 "	      004f15cb    mov eax,[eax+14h]"
 "	      004f15ce    sar eax,2"
 "	      004f15d1    imul ebx,eax"
-"	      004f15d4    mov eax,[ebp+8]"
+"	      004f15d4    mov eax,hd"
 "	      004f15d7    mov [eax+11Ch],ebx"
 );
 // LINE 1374:
@@ -3912,23 +3912,23 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f15ef    cdq"
 "	      004f15f0    idiv ecx"
 "	      004f15f2    sub ebx,edx"
-"	      004f15f4    mov eax,[ebp-0ACh]"
+"	      004f15f4    mov eax,htd"
 "	      004f15fa    mov eax,[eax+10h]"
 "	      004f15fd    sar eax,2"
 "	      004f1600    imul ebx,eax"
-"	      004f1603    mov eax,[ebp+8]"
+"	      004f1603    mov eax,hd"
 "	      004f1606    mov [eax+118h],ebx"
 );
 // LINE 1379:
 	asm( 
-"	      004f160c    mov eax,[ebp+8]"
+"	      004f160c    mov eax,hd"
 "	      004f160f    push eax"
 "	      004f1610    call 004F6912h"
 "	      004f1615    add esp,4"
 );
 // LINE 1381:
 	asm( 
-"	      004f1618    mov eax,[ebp+8]"
+"	      004f1618    mov eax,hd"
 "	      004f161b    cmp dword ptr [eax+14Ch],0"
 "	      004f1622    je near ptr 004F1768h"
 );
@@ -3937,35 +3937,35 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	struct Point3d loc;
 	int32_t speed;
 	asm( 
-"	      004f1628    mov eax,[ebp+8]"
+"	      004f1628    mov eax,hd"
 "	      004f162b    cmp dword ptr [eax+14Ch],1"
 "	      004f1632    jne near ptr 004F1647h"
 );
 // LINE 1387:
 	asm( 
-"	      004f1638    mov dword ptr [ebp-110h],1C20000h"
+"	      004f1638    mov speed,1C20000h"
 );
 // LINE 1388:
 	asm( 
 "	      004f1642    jmp near ptr 004F16E5h"
-"	      004f1647    mov eax,[ebp+8]"
+"	      004f1647    mov eax,hd"
 "	      004f164a    cmp dword ptr [eax+14Ch],2"
 "	      004f1651    jne near ptr 004F1666h"
 );
 // LINE 1389:
 	asm( 
-"	      004f1657    mov dword ptr [ebp-110h],2580000h"
+"	      004f1657    mov speed,2580000h"
 );
 // LINE 1390:
 	asm( 
 "	      004f1661    jmp near ptr 004F16E5h"
-"	      004f1666    mov eax,[ebp+8]"
+"	      004f1666    mov eax,hd"
 "	      004f1669    cmp dword ptr [eax+14Ch],3"
 "	      004f1670    jne near ptr 004F1685h"
 );
 // LINE 1391:
 	asm( 
-"	      004f1676    mov dword ptr [ebp-110h],640000h"
+"	      004f1676    mov speed,640000h"
 );
 // LINE 1392:
 	asm( 
@@ -3973,17 +3973,17 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1393:
 	asm( 
-"	      004f1685    mov eax,[ebp+8]"
+"	      004f1685    mov eax,hd"
 "	      004f1688    cmp dword ptr [eax+14Ch],5"
 "	      004f168f    je near ptr 004F16A5h"
-"	      004f1695    mov eax,[ebp+8]"
+"	      004f1695    mov eax,hd"
 "	      004f1698    cmp dword ptr [eax+14Ch],6"
 "	      004f169f    jne near ptr 004F16E5h"
 );
 // LINE 1395:
 	asm( 
 "	      004f16a5    mov eax,ds:[5B48E8h]"
-"	      004f16aa    mov [ebp-110h],eax"
+"	      004f16aa    mov speed,eax"
 );
 // LINE 1396:
 	asm( 
@@ -3992,26 +3992,26 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f16b8    sar ecx,1"
 "	      004f16bb    sub eax,ecx"
 "	      004f16bd    neg eax"
-"	      004f16bf    mov ecx,[ebp+8]"
+"	      004f16bf    mov ecx,hd"
 "	      004f16c2    sub [ecx+1C0h],eax"
 );
 // LINE 1397:
 	asm( 
-"	      004f16c8    mov eax,[ebp+8]"
+"	      004f16c8    mov eax,hd"
 "	      004f16cb    cmp dword ptr [eax+1C0h],0"
 "	      004f16d2    jge near ptr 004F16E5h"
 );
 // LINE 1398:
 	asm( 
-"	      004f16d8    mov eax,[ebp+8]"
+"	      004f16d8    mov eax,hd"
 "	      004f16db    mov dword ptr [eax+1C0h],0"
 );
 // LINE 1402:
 	asm( 
-"	      004f16e5    mov eax,[ebp+8]"
+"	      004f16e5    mov eax,hd"
 "	      004f16e8    mov eax,[eax+0A4h]"
 "	      004f16ee    add eax,18h"
-"	      004f16f1    lea ecx,[ebp-11Ch]"
+"	      004f16f1    lea ecx,loc.x"
 "	      004f16f7    mov edx,[eax]"
 "	      004f16f9    mov [ecx],edx"
 "	      004f16fb    mov edx,[eax+4]"
@@ -4021,15 +4021,15 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 );
 // LINE 1403:
 	asm( 
-"	      004f1707    add dword ptr [ebp-118h],30000h"
+"	      004f1707    add loc.y,30000h"
 );
 // LINE 1405:
 	asm( 
-"	      004f1711    mov eax,[ebp+8]"
+"	      004f1711    mov eax,hd"
 "	      004f1714    mov eax,[eax+0A4h]"
 "	      004f171a    add eax,24h"
 "	      004f171d    push eax"
-"	      004f171e    lea eax,[ebp-54h]"
+"	      004f171e    lea eax,vec.x"
 "	      004f1721    push eax"
 "	      004f1722    push 59B518h"
 "	      004f1727    call 004D2094h"
@@ -4038,20 +4038,20 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1415:
 	asm( 
 "	      004f172f    push 0FFFFFFFFh"
-"	      004f1731    mov eax,[ebp-110h]"
+"	      004f1731    mov eax,speed"
 "	      004f1737    push eax"
-"	      004f1738    mov eax,[ebp+8]"
+"	      004f1738    mov eax,hd"
 "	      004f173b    mov eax,[eax+0A4h]"
 "	      004f1741    push eax"
 "	      004f1742    push 1"
-"	      004f1744    lea eax,[ebp-54h]"
+"	      004f1744    lea eax,vec.x"
 "	      004f1747    push eax"
-"	      004f1748    lea eax,[ebp-11Ch]"
+"	      004f1748    lea eax,loc.x"
 "	      004f174e    push eax"
-"	      004f174f    mov eax,[ebp+8]"
+"	      004f174f    mov eax,hd"
 "	      004f1752    add eax,18h"
 "	      004f1755    push eax"
-"	      004f1756    mov eax,[ebp+8]"
+"	      004f1756    mov eax,hd"
 "	      004f1759    mov eax,[eax+14Ch]"
 "	      004f175f    push eax"
 "	      004f1760    call 0051EEE5h"
@@ -4089,24 +4089,24 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1446:
 	asm( 
-"	      004f1776    mov eax,[ebp+8]"
+"	      004f1776    mov eax,hd"
 "	      004f1779    mov eax,[eax+128h]"
-"	      004f177f    mov [ebp-30h],eax"
+"	      004f177f    mov fwd_speed,eax"
 );
 // LINE 1447:
 	asm( 
-"	      004f1782    mov eax,[ebp+8]"
+"	      004f1782    mov eax,hd"
 "	      004f1785    mov eax,[eax+0A4h]"
 "	      004f178b    add eax,18h"
-"	      004f178e    lea ecx,[ebp-2Ch]"
+"	      004f178e    lea ecx,loc.x"
 "	      004f1791    mov edx,[eax]"
 "	      004f1793    mov [ecx],edx"
 "	      004f1795    mov edx,[eax+4]"
 "	      004f1798    mov [ecx+4],edx"
 "	      004f179b    mov eax,[eax+8]"
 "	      004f179e    mov [ecx+8],eax"
-"	      004f17a1    lea eax,[ebp-2Ch]"
-"	      004f17a4    lea ecx,[ebp-0Ch]"
+"	      004f17a1    lea eax,loc.x"
+"	      004f17a4    lea ecx,saveloc.x"
 "	      004f17a7    mov edx,[eax]"
 "	      004f17a9    mov [ecx],edx"
 "	      004f17ab    mov edx,[eax+4]"
@@ -4116,7 +4116,7 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1448:
 	asm( 
-"	      004f17b7    cmp dword ptr [ebp-30h],0"
+"	      004f17b7    cmp fwd_speed,0"
 "	      004f17bb    jne near ptr 004F17C8h"
 );
 // LINE 1449:
@@ -4131,36 +4131,36 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1455:
 	asm( 
-"	      004f17d5    mov eax,[ebp+8]"
-"	      004f17d8    mov ecx,[ebp-30h]"
+"	      004f17d5    mov eax,hd"
+"	      004f17d8    mov ecx,fwd_speed"
 "	      004f17db    cmp [eax+11Ch],ecx"
 "	      004f17e1    jle near ptr 004F17F9h"
 );
 // LINE 1456:
 	asm( 
-"	      004f17e7    mov eax,[ebp+8]"
+"	      004f17e7    mov eax,hd"
 "	      004f17ea    mov eax,[eax+11Ch]"
-"	      004f17f0    sub eax,[ebp-30h]"
+"	      004f17f0    sub eax,fwd_speed"
 "	      004f17f3    sar eax,5"
-"	      004f17f6    add [ebp-30h],eax"
+"	      004f17f6    add fwd_speed,eax"
 );
 // LINE 1457:
 	asm( 
-"	      004f17f9    mov eax,[ebp+8]"
-"	      004f17fc    mov ecx,[ebp-30h]"
+"	      004f17f9    mov eax,hd"
+"	      004f17fc    mov ecx,fwd_speed"
 "	      004f17ff    cmp [eax+11Ch],ecx"
 "	      004f1805    jge near ptr 004F1823h"
 );
 // LINE 1458:
 	asm( 
 "	      004f180b    xor eax,eax"
-"	      004f180d    mov ecx,[ebp-30h]"
-"	      004f1810    mov edx,[ebp+8]"
+"	      004f180d    mov ecx,fwd_speed"
+"	      004f1810    mov edx,hd"
 "	      004f1813    sub ecx,[edx+11Ch]"
 "	      004f1819    sar ecx,5"
 "	      004f181c    sub eax,ecx"
 "	      004f181e    neg eax"
-"	      004f1820    sub [ebp-30h],eax"
+"	      004f1820    sub fwd_speed,eax"
 );
 // LINE 1460:
 	asm( 
@@ -4168,115 +4168,115 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1462:
 	asm( 
-"	      004f1828    mov eax,[ebp+8]"
+"	      004f1828    mov eax,hd"
 "	      004f182b    mov eax,[eax+11Ch]"
 "	      004f1831    add eax,eax"
-"	      004f1833    cmp eax,[ebp-30h]"
+"	      004f1833    cmp eax,fwd_speed"
 "	      004f1836    jle near ptr 004F1850h"
 );
 // LINE 1463:
 	asm( 
-"	      004f183c    mov eax,[ebp+8]"
+"	      004f183c    mov eax,hd"
 "	      004f183f    mov eax,[eax+11Ch]"
 "	      004f1845    add eax,eax"
-"	      004f1847    sub eax,[ebp-30h]"
+"	      004f1847    sub eax,fwd_speed"
 "	      004f184a    sar eax,5"
-"	      004f184d    add [ebp-30h],eax"
+"	      004f184d    add fwd_speed,eax"
 );
 // LINE 1464:
 	asm( 
-"	      004f1850    mov eax,[ebp+8]"
+"	      004f1850    mov eax,hd"
 "	      004f1853    mov eax,[eax+11Ch]"
 "	      004f1859    add eax,eax"
-"	      004f185b    cmp eax,[ebp-30h]"
+"	      004f185b    cmp eax,fwd_speed"
 "	      004f185e    jge near ptr 004F1880h"
 );
 // LINE 1465:
 	asm( 
 "	      004f1864    xor eax,eax"
-"	      004f1866    mov ecx,[ebp-30h]"
-"	      004f1869    mov edx,[ebp+8]"
+"	      004f1866    mov ecx,fwd_speed"
+"	      004f1869    mov edx,hd"
 "	      004f186c    mov edx,[edx+11Ch]"
 "	      004f1872    add edx,edx"
 "	      004f1874    sub ecx,edx"
 "	      004f1876    sar ecx,4"
 "	      004f1879    sub eax,ecx"
 "	      004f187b    neg eax"
-"	      004f187d    sub [ebp-30h],eax"
+"	      004f187d    sub fwd_speed,eax"
 );
 // LINE 1468:
 	asm( 
-"	      004f1880    mov eax,[ebp+8]"
+"	      004f1880    mov eax,hd"
 "	      004f1883    cmp dword ptr [eax+4],0"
 "	      004f1887    jne near ptr 004F18ADh"
 );
 // LINE 1470:
 	asm( 
 "	      004f188d    push 0D6D8h"
-"	      004f1892    mov eax,[ebp+8]"
+"	      004f1892    mov eax,hd"
 "	      004f1895    mov eax,[eax+128h]"
 "	      004f189b    push eax"
 "	      004f189c    call 004D19BDh"
 "	      004f18a1    add esp,8"
-"	      004f18a4    mov ecx,[ebp+8]"
+"	      004f18a4    mov ecx,hd"
 "	      004f18a7    mov [ecx+128h],eax"
 );
 // LINE 1474:
 	asm( 
-"	      004f18ad    mov eax,[ebp-30h]"
+"	      004f18ad    mov eax,fwd_speed"
 "	      004f18b0    push eax"
-"	      004f18b1    mov eax,[ebp+8]"
+"	      004f18b1    mov eax,hd"
 "	      004f18b4    mov eax,[eax+100h]"
 "	      004f18ba    push eax"
 "	      004f18bb    call 004D19BDh"
 "	      004f18c0    add esp,8"
-"	      004f18c3    mov [ebp-18h],eax"
+"	      004f18c3    mov V.x,eax"
 );
 // LINE 1475:
 	asm( 
-"	      004f18c6    mov eax,[ebp-30h]"
+"	      004f18c6    mov eax,fwd_speed"
 "	      004f18c9    push eax"
-"	      004f18ca    mov eax,[ebp+8]"
+"	      004f18ca    mov eax,hd"
 "	      004f18cd    mov eax,[eax+108h]"
 "	      004f18d3    push eax"
 "	      004f18d4    call 004D19BDh"
 "	      004f18d9    add esp,8"
-"	      004f18dc    mov [ebp-10h],eax"
+"	      004f18dc    mov V.z,eax"
 );
 // LINE 1478:
 	asm( 
 "	      004f18df    xor ebx,ebx"
 "	      004f18e1    push 7D00h"
-"	      004f18e6    mov eax,[ebp+8]"
+"	      004f18e6    mov eax,hd"
 "	      004f18e9    mov eax,[eax+118h]"
 "	      004f18ef    push eax"
 "	      004f18f0    call 004D19BDh"
 "	      004f18f5    add esp,8"
 "	      004f18f8    push eax"
-"	      004f18f9    mov eax,[ebp+8]"
+"	      004f18f9    mov eax,hd"
 "	      004f18fc    mov eax,[eax+108h]"
 "	      004f1902    push eax"
 "	      004f1903    call 004D19BDh"
 "	      004f1908    add esp,8"
 "	      004f190b    sub ebx,eax"
 "	      004f190d    neg ebx"
-"	      004f190f    sub [ebp-18h],ebx"
+"	      004f190f    sub V.x,ebx"
 );
 // LINE 1479:
 	asm( 
 "	      004f1912    push 7D00h"
-"	      004f1917    mov eax,[ebp+8]"
+"	      004f1917    mov eax,hd"
 "	      004f191a    mov eax,[eax+118h]"
 "	      004f1920    push eax"
 "	      004f1921    call 004D19BDh"
 "	      004f1926    add esp,8"
 "	      004f1929    push eax"
-"	      004f192a    mov eax,[ebp+8]"
+"	      004f192a    mov eax,hd"
 "	      004f192d    mov eax,[eax+100h]"
 "	      004f1933    push eax"
 "	      004f1934    call 004D19BDh"
 "	      004f1939    add esp,8"
-"	      004f193c    add [ebp-10h],eax"
+"	      004f193c    add V.z,eax"
 );
 // LINE 1481:
 	asm( 
@@ -4286,12 +4286,12 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 "	      004f194a    call 004D19BDh"
 "	      004f194f    add esp,8"
 "	      004f1952    push eax"
-"	      004f1953    mov eax,[ebp+8]"
+"	      004f1953    mov eax,hd"
 "	      004f1956    mov eax,[eax+0E0h]"
 "	      004f195c    push eax"
 "	      004f195d    call 004D19BDh"
 "	      004f1962    add esp,8"
-"	      004f1965    mov [ebp-1Ch],eax"
+"	      004f1965    mov movex,eax"
 );
 // LINE 1482:
 	asm( 
@@ -4301,39 +4301,39 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 "	      004f1973    call 004D19BDh"
 "	      004f1978    add esp,8"
 "	      004f197b    push eax"
-"	      004f197c    mov eax,[ebp+8]"
+"	      004f197c    mov eax,hd"
 "	      004f197f    mov eax,[eax+0E8h]"
 "	      004f1985    push eax"
 "	      004f1986    call 004D19BDh"
 "	      004f198b    add esp,8"
-"	      004f198e    mov [ebp-20h],eax"
+"	      004f198e    mov movez,eax"
 );
 // LINE 1483:
 	asm( 
-"	      004f1991    mov eax,[ebp-1Ch]"
-"	      004f1994    imul eax,[ebp+0Ch]"
-"	      004f1998    mov [ebp-1Ch],eax"
+"	      004f1991    mov eax,movex"
+"	      004f1994    imul eax,no_frames"
+"	      004f1998    mov movex,eax"
 );
 // LINE 1484:
 	asm( 
-"	      004f199b    mov eax,[ebp-20h]"
-"	      004f199e    imul eax,[ebp+0Ch]"
-"	      004f19a2    mov [ebp-20h],eax"
+"	      004f199b    mov eax,movez"
+"	      004f199e    imul eax,no_frames"
+"	      004f19a2    mov movez,eax"
 );
 // LINE 1486:
 	asm( 
-"	      004f19a5    mov eax,[ebp-20h]"
-"	      004f19a8    add [ebp-24h],eax"
+"	      004f19a5    mov eax,movez"
+"	      004f19a8    add loc.z,eax"
 );
 // LINE 1487:
 	asm( 
-"	      004f19ab    mov eax,[ebp-1Ch]"
-"	      004f19ae    add [ebp-2Ch],eax"
+"	      004f19ab    mov eax,movex"
+"	      004f19ae    add loc.x,eax"
 );
 // LINE 1490:
 	asm( 
-"	      004f19b1    lea eax,[ebp-2Ch]"
-"	      004f19b4    mov ecx,[ebp+8]"
+"	      004f19b1    lea eax,loc.x"
+"	      004f19b4    mov ecx,hd"
 "	      004f19b7    mov ecx,[ecx+0A4h]"
 "	      004f19bd    add ecx,18h"
 "	      004f19c0    mov edx,[eax]"
@@ -4345,16 +4345,16 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1491:
 	asm( 
-"	      004f19d0    mov eax,[ebp+8]"
+"	      004f19d0    mov eax,hd"
 "	      004f19d3    push eax"
 "	      004f19d4    call 004F517Dh"
 "	      004f19d9    add esp,4"
-"	      004f19dc    mov [ebp-34h],eax"
+"	      004f19dc    mov alt,eax"
 );
 // LINE 1493:
 	asm( 
-"	      004f19df    lea eax,[ebp-0Ch]"
-"	      004f19e2    mov ecx,[ebp+8]"
+"	      004f19df    lea eax,saveloc.x"
+"	      004f19e2    mov ecx,hd"
 "	      004f19e5    mov ecx,[ecx+0A4h]"
 "	      004f19eb    add ecx,18h"
 "	      004f19ee    mov edx,[eax]"
@@ -4366,8 +4366,8 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 );
 // LINE 1495:
 	asm( 
-"	      004f19fe    mov eax,[ebp-34h]"
-"	      004f1a01    cmp [ebp-28h],eax"
+"	      004f19fe    mov eax,alt"
+"	      004f1a01    cmp loc.y,eax"
 "	      004f1a04    jge near ptr 004F1A14h"
 );
 // LINE 1496:
@@ -4412,66 +4412,66 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 1516:
 	asm( 
-"	      004f1a29    mov dword ptr [ebp-8],0"
+"	      004f1a29    mov dist,0"
 );
 // LINE 1517:
 	asm( 
-"	      004f1a30    mov dword ptr [ebp-4],0"
+"	      004f1a30    mov newyaw,0"
 );
 // LINE 1518:
 	asm( 
-"	      004f1a37    mov dword ptr [ebp-20h],0"
+"	      004f1a37    mov curryaw,0"
 );
 // LINE 1519:
 	asm( 
-"	      004f1a3e    mov dword ptr [ebp-10h],0"
+"	      004f1a3e    mov deltayaw,0"
 );
 // LINE 1520:
 	asm( 
-"	      004f1a45    mov dword ptr [ebp-0Ch],0"
+"	      004f1a45    mov deflectangle,0"
 );
 // LINE 1521:
 	asm( 
-"	      004f1a4c    mov dword ptr [ebp-24h],0"
+"	      004f1a4c    mov alt,0"
 );
 // LINE 1524:
 	asm( 
-"	      004f1a53    mov dword ptr [ebp-2Ch],0"
+"	      004f1a53    mov newvect.y,0"
 );
 // LINE 1525:
 	asm( 
-"	      004f1a5a    mov eax,[ebp+0Ch]"
+"	      004f1a5a    mov eax,loc"
 "	      004f1a5d    mov eax,[eax+8]"
-"	      004f1a60    mov ecx,[ebp+8]"
+"	      004f1a60    mov ecx,hd"
 "	      004f1a63    mov ecx,[ecx+0A4h]"
 "	      004f1a69    sub eax,[ecx+20h]"
-"	      004f1a6c    mov [ebp-28h],eax"
+"	      004f1a6c    mov newvect.z,eax"
 );
 // LINE 1526:
 	asm( 
-"	      004f1a6f    mov eax,[ebp+0Ch]"
+"	      004f1a6f    mov eax,loc"
 "	      004f1a72    mov eax,[eax]"
-"	      004f1a74    mov ecx,[ebp+8]"
+"	      004f1a74    mov ecx,hd"
 "	      004f1a77    mov ecx,[ecx+0A4h]"
 "	      004f1a7d    sub eax,[ecx+18h]"
-"	      004f1a80    mov [ebp-30h],eax"
+"	      004f1a80    mov newvect.x,eax"
 );
 // LINE 1529:
 	asm( 
-"	      004f1a83    lea eax,[ebp-30h]"
+"	      004f1a83    lea eax,newvect.x"
 "	      004f1a86    push eax"
 "	      004f1a87    call 004CA1E3h"
 "	      004f1a8c    add esp,4"
-"	      004f1a8f    mov [ebp-8],eax"
+"	      004f1a8f    mov dist,eax"
 );
 // LINE 1532:
 	asm( 
-"	      004f1a92    cmp dword ptr [ebp-8],140000h"
+"	      004f1a92    cmp dist,140000h"
 "	      004f1a99    jg near ptr 004F1AB6h"
 );
 // LINE 1534:
 	asm( 
-"	      004f1a9f    mov eax,[ebp+8]"
+"	      004f1a9f    mov eax,hd"
 "	      004f1aa2    mov dword ptr [eax+120h],0"
 );
 // LINE 1535:
@@ -4481,116 +4481,116 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 1541:
 	asm( 
-"	      004f1ab6    mov eax,[ebp+8]"
+"	      004f1ab6    mov eax,hd"
 "	      004f1ab9    mov eax,[eax+108h]"
 "	      004f1abf    push eax"
-"	      004f1ac0    mov eax,[ebp+8]"
+"	      004f1ac0    mov eax,hd"
 "	      004f1ac3    mov eax,[eax+100h]"
 "	      004f1ac9    push eax"
 "	      004f1aca    call 004D20B1h"
 "	      004f1acf    add esp,8"
-"	      004f1ad2    mov [ebp-20h],eax"
+"	      004f1ad2    mov curryaw,eax"
 );
 // LINE 1545:
 	asm( 
-"	      004f1ad5    mov eax,[ebp-28h]"
+"	      004f1ad5    mov eax,newvect.z"
 "	      004f1ad8    push eax"
-"	      004f1ad9    mov eax,[ebp-30h]"
+"	      004f1ad9    mov eax,newvect.x"
 "	      004f1adc    push eax"
 "	      004f1add    call 004D20B1h"
 "	      004f1ae2    add esp,8"
-"	      004f1ae5    mov [ebp-4],eax"
+"	      004f1ae5    mov newyaw,eax"
 );
 // LINE 1550:
 	asm( 
-"	      004f1ae8    mov eax,[ebp-4]"
-"	      004f1aeb    sub eax,[ebp-20h]"
+"	      004f1ae8    mov eax,newyaw"
+"	      004f1aeb    sub eax,curryaw"
 "	      004f1aee    cdq"
 "	      004f1aef    xor eax,edx"
 "	      004f1af1    sub eax,edx"
-"	      004f1af3    mov [ebp-10h],eax"
+"	      004f1af3    mov deltayaw,eax"
 );
 // LINE 1551:
 	asm( 
-"	      004f1af6    cmp dword ptr [ebp-8],400000h"
+"	      004f1af6    cmp dist,400000h"
 "	      004f1afd    jg near ptr 004F1B1Dh"
-"	      004f1b03    cmp dword ptr [ebp-10h],1E0000h"
+"	      004f1b03    cmp deltayaw,1E0000h"
 "	      004f1b0a    jle near ptr 004F1B1Dh"
 );
 // LINE 1553:
 	asm( 
-"	      004f1b10    mov eax,[ebp+8]"
+"	      004f1b10    mov eax,hd"
 "	      004f1b13    mov dword ptr [eax+11Ch],0"
 );
 // LINE 1558:
 	asm( 
-"	      004f1b1d    lea eax,[ebp-24h]"
+"	      004f1b1d    lea eax,alt"
 "	      004f1b20    push eax"
-"	      004f1b21    lea eax,[ebp-8]"
+"	      004f1b21    lea eax,dist"
 "	      004f1b24    push eax"
-"	      004f1b25    lea eax,[ebp-30h]"
+"	      004f1b25    lea eax,newvect.x"
 "	      004f1b28    push eax"
-"	      004f1b29    mov eax,[ebp+8]"
+"	      004f1b29    mov eax,hd"
 "	      004f1b2c    push eax"
 "	      004f1b2d    call 004F58A3h"
 "	      004f1b32    add esp,10h"
-"	      004f1b35    mov [ebp-0Ch],eax"
+"	      004f1b35    mov deflectangle,eax"
 );
 // LINE 1559:
 	asm( 
-"	      004f1b38    cmp dword ptr [ebp-0Ch],0"
+"	      004f1b38    cmp deflectangle,0"
 "	      004f1b3c    jle near ptr 004F1BA8h"
 );
 // LINE 1562:
 	asm( 
 "	      004f1b42    xor eax,eax"
-"	      004f1b44    mov ecx,[ebp+8]"
+"	      004f1b44    mov ecx,hd"
 "	      004f1b47    sub eax,[ecx+138h]"
 "	      004f1b4d    neg eax"
-"	      004f1b4f    sub [ebp-24h],eax"
+"	      004f1b4f    sub alt,eax"
 );
 // LINE 1563:
 	asm( 
-"	      004f1b52    mov eax,[ebp-8]"
-"	      004f1b55    mov [ebp-1Ch],eax"
+"	      004f1b52    mov eax,dist"
+"	      004f1b55    mov tmpvect.x,eax"
 );
 // LINE 1564:
 	asm( 
-"	      004f1b58    mov eax,[ebp-24h]"
-"	      004f1b5b    mov [ebp-18h],eax"
+"	      004f1b58    mov eax,alt"
+"	      004f1b5b    mov tmpvect.y,eax"
 );
 // LINE 1565:
 	asm( 
-"	      004f1b5e    mov dword ptr [ebp-14h],0"
+"	      004f1b5e    mov tmpvect.z,0"
 );
 // LINE 1566:
 	asm( 
-"	      004f1b65    lea eax,[ebp-1Ch]"
+"	      004f1b65    lea eax,tmpvect.x"
 "	      004f1b68    push eax"
 "	      004f1b69    call 004CA1E3h"
 "	      004f1b6e    add esp,4"
-"	      004f1b71    mov [ebp-8],eax"
+"	      004f1b71    mov dist,eax"
 );
 // LINE 1567:
 	asm( 
-"	      004f1b74    mov eax,[ebp-18h]"
+"	      004f1b74    mov eax,tmpvect.y"
 "	      004f1b77    push eax"
-"	      004f1b78    mov eax,[ebp-1Ch]"
+"	      004f1b78    mov eax,tmpvect.x"
 "	      004f1b7b    push eax"
 "	      004f1b7c    call 004D20B1h"
 "	      004f1b81    add esp,8"
-"	      004f1b84    mov [ebp-8],eax"
+"	      004f1b84    mov dist,eax"
 );
 // LINE 1568:
 	asm( 
-"	      004f1b87    mov eax,[ebp-0Ch]"
-"	      004f1b8a    cmp [ebp-8],eax"
+"	      004f1b87    mov eax,deflectangle"
+"	      004f1b8a    cmp dist,eax"
 "	      004f1b8d    jle near ptr 004F1B9Eh"
 );
 // LINE 1569:
 	asm( 
-"	      004f1b93    mov eax,[ebp-0Ch]"
-"	      004f1b96    add [ebp-4],eax"
+"	      004f1b93    mov eax,deflectangle"
+"	      004f1b96    add newyaw,eax"
 );
 // LINE 1570:
 	asm( 
@@ -4598,23 +4598,23 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 1571:
 	asm( 
-"	      004f1b9e    mov eax,[ebp+8]"
+"	      004f1b9e    mov eax,hd"
 "	      004f1ba1    mov dword ptr [eax+0Ch],1"
 );
 // LINE 1581:
 	asm( 
-"	      004f1ba8    mov eax,[ebp-20h]"
+"	      004f1ba8    mov eax,curryaw"
 "	      004f1bab    sub eax,64h"
-"	      004f1bae    cmp eax,[ebp-4]"
+"	      004f1bae    cmp eax,newyaw"
 "	      004f1bb1    jge near ptr 004F1BD8h"
-"	      004f1bb7    mov eax,[ebp-20h]"
+"	      004f1bb7    mov eax,curryaw"
 "	      004f1bba    add eax,64h"
-"	      004f1bbd    cmp eax,[ebp-4]"
+"	      004f1bbd    cmp eax,newyaw"
 "	      004f1bc0    jle near ptr 004F1BD8h"
 );
 // LINE 1583:
 	asm( 
-"	      004f1bc6    mov eax,[ebp+8]"
+"	      004f1bc6    mov eax,hd"
 "	      004f1bc9    mov dword ptr [eax+120h],0"
 );
 // LINE 1585:
@@ -4623,12 +4623,12 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 1587:
 	asm( 
-"	      004f1bd8    mov eax,[ebp-4]"
-"	      004f1bdb    sub eax,[ebp-20h]"
+"	      004f1bd8    mov eax,newyaw"
+"	      004f1bdb    sub eax,curryaw"
 "	      004f1bde    push eax"
 "	      004f1bdf    call 004CA7B4h"
 "	      004f1be4    add esp,4"
-"	      004f1be7    mov [ebp-10h],eax"
+"	      004f1be7    mov deltayaw,eax"
 );
 // LINE 1591:
 	asm( 
@@ -4638,11 +4638,11 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 // LINE 1592:
 	asm( 
 "	      004f1bfa    push 4000h"
-"	      004f1bff    mov eax,[ebp-10h]"
+"	      004f1bff    mov eax,deltayaw"
 "	      004f1c02    push eax"
 "	      004f1c03    call 004D19DFh"
 "	      004f1c08    add esp,8"
-"	      004f1c0b    mov ecx,[ebp+8]"
+"	      004f1c0b    mov ecx,hd"
 "	      004f1c0e    mov [ecx+120h],eax"
 );
 // LINE 1593:
@@ -4654,33 +4654,33 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 "	      004f1c19    mov eax,ds:[5B4768h]"
 "	      004f1c1e    shl eax,4"
 "	      004f1c21    push eax"
-"	      004f1c22    mov eax,[ebp-10h]"
+"	      004f1c22    mov eax,deltayaw"
 "	      004f1c25    push eax"
 "	      004f1c26    call 004D19DFh"
 "	      004f1c2b    add esp,8"
-"	      004f1c2e    mov ecx,[ebp+8]"
+"	      004f1c2e    mov ecx,hd"
 "	      004f1c31    mov [ecx+120h],eax"
 );
 // LINE 1597:
 	asm( 
-"	      004f1c37    mov eax,[ebp+8]"
+"	      004f1c37    mov eax,hd"
 "	      004f1c3a    cmp dword ptr [eax+120h],320000h"
 "	      004f1c44    jle near ptr 004F1C57h"
 );
 // LINE 1598:
 	asm( 
-"	      004f1c4a    mov eax,[ebp+8]"
+"	      004f1c4a    mov eax,hd"
 "	      004f1c4d    mov dword ptr [eax+120h],320000h"
 );
 // LINE 1599:
 	asm( 
-"	      004f1c57    mov eax,[ebp+8]"
+"	      004f1c57    mov eax,hd"
 "	      004f1c5a    cmp dword ptr [eax+120h],0FFCE0000h"
 "	      004f1c64    jge near ptr 004F1C77h"
 );
 // LINE 1600:
 	asm( 
-"	      004f1c6a    mov eax,[ebp+8]"
+"	      004f1c6a    mov eax,hd"
 "	      004f1c6d    mov dword ptr [eax+120h],0FFCE0000h"
 );
 // LINE 1602:
@@ -4721,7 +4721,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1623:
 	asm( 
 "	      004f1ca6    push 1"
-"	      004f1ca8    mov eax,[ebp+8]"
+"	      004f1ca8    mov eax,hd"
 "	      004f1cab    mov eax,[eax+0A8h]"
 "	      004f1cb1    mov eax,[eax+8]"
 "	      004f1cb4    push eax"
@@ -4731,7 +4731,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1624:
 	asm( 
 "	      004f1cbd    push 1"
-"	      004f1cbf    mov eax,[ebp+8]"
+"	      004f1cbf    mov eax,hd"
 "	      004f1cc2    mov eax,[eax+0B4h]"
 "	      004f1cc8    mov eax,[eax+8]"
 "	      004f1ccb    push eax"
@@ -4744,7 +4744,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1628:
 	asm( 
-"	      004f1cd9    mov eax,[ebp+8]"
+"	      004f1cd9    mov eax,hd"
 "	      004f1cdc    test byte ptr [eax+8],1"
 "	      004f1ce0    jne near ptr 004F1CEBh"
 );
@@ -4755,7 +4755,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1631:
 	asm( 
 "	      004f1ceb    push 0"
-"	      004f1ced    mov eax,[ebp+8]"
+"	      004f1ced    mov eax,hd"
 "	      004f1cf0    mov eax,[eax+0A8h]"
 "	      004f1cf6    mov eax,[eax+8]"
 "	      004f1cf9    push eax"
@@ -4765,7 +4765,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1632:
 	asm( 
 "	      004f1d02    push 0"
-"	      004f1d04    mov eax,[ebp+8]"
+"	      004f1d04    mov eax,hd"
 "	      004f1d07    mov eax,[eax+0B4h]"
 "	      004f1d0d    mov eax,[eax+8]"
 "	      004f1d10    push eax"
@@ -4774,10 +4774,10 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1640:
 	asm( 
-"	      004f1d19    mov eax,[ebp+8]"
+"	      004f1d19    mov eax,hd"
 "	      004f1d1c    add eax,100h"
 "	      004f1d21    push eax"
-"	      004f1d22    mov eax,[ebp+8]"
+"	      004f1d22    mov eax,hd"
 "	      004f1d25    mov eax,[eax+0A8h]"
 "	      004f1d2b    add eax,24h"
 "	      004f1d2e    push eax"
@@ -4786,14 +4786,14 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1641:
 	asm( 
-"	      004f1d37    mov eax,[ebp+8]"
+"	      004f1d37    mov eax,hd"
 "	      004f1d3a    mov eax,[eax+0B4h]"
 "	      004f1d40    add eax,24h"
 "	      004f1d43    push eax"
-"	      004f1d44    mov eax,[ebp+8]"
+"	      004f1d44    mov eax,hd"
 "	      004f1d47    add eax,20h"
 "	      004f1d4a    push eax"
-"	      004f1d4b    mov eax,[ebp+8]"
+"	      004f1d4b    mov eax,hd"
 "	      004f1d4e    mov eax,[eax+0A8h]"
 "	      004f1d54    add eax,24h"
 "	      004f1d57    push eax"
@@ -4802,18 +4802,18 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1658:
 	asm( 
-"	      004f1d60    mov eax,[ebp+8]"
+"	      004f1d60    mov eax,hd"
 "	      004f1d63    mov eax,[eax+0A4h]"
 "	      004f1d69    add eax,18h"
-"	      004f1d6c    lea ecx,[ebp-58h]"
+"	      004f1d6c    lea ecx,pos.loc.x"
 "	      004f1d6f    mov edx,[eax]"
 "	      004f1d71    mov [ecx],edx"
 "	      004f1d73    mov edx,[eax+4]"
 "	      004f1d76    mov [ecx+4],edx"
 "	      004f1d79    mov eax,[eax+8]"
 "	      004f1d7c    mov [ecx+8],eax"
-"	      004f1d7f    lea eax,[ebp-58h]"
-"	      004f1d82    mov ecx,[ebp+8]"
+"	      004f1d7f    lea eax,pos.loc.x"
+"	      004f1d82    mov ecx,hd"
 "	      004f1d85    mov ecx,[ecx+0B4h]"
 "	      004f1d8b    add ecx,18h"
 "	      004f1d8e    mov edx,[eax]"
@@ -4822,10 +4822,10 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 "	      004f1d95    mov [ecx+4],edx"
 "	      004f1d98    mov eax,[eax+8]"
 "	      004f1d9b    mov [ecx+8],eax"
-"	      004f1d9e    mov eax,[ebp+8]"
+"	      004f1d9e    mov eax,hd"
 "	      004f1da1    mov eax,[eax+0B4h]"
 "	      004f1da7    add eax,18h"
-"	      004f1daa    mov ecx,[ebp+8]"
+"	      004f1daa    mov ecx,hd"
 "	      004f1dad    mov ecx,[ecx+0A8h]"
 "	      004f1db3    add ecx,18h"
 "	      004f1db6    mov edx,[eax]"
@@ -4837,7 +4837,7 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1661:
 	asm( 
-"	      004f1dc6    mov eax,[ebp+8]"
+"	      004f1dc6    mov eax,hd"
 "	      004f1dc9    mov eax,[eax+154h]"
 "	      004f1dcf    mov ecx,ds:[5B4C9Ch]"
 "	      004f1dd5    sub eax,ecx"
@@ -4848,34 +4848,34 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1664:
 	asm( 
 "	      004f1de2    mov eax,ds:[5B4C9Ch]"
-"	      004f1de7    mov [ebp-54h],eax"
+"	      004f1de7    mov pos.loc.y,eax"
 );
 // LINE 1667:
 	asm( 
-"	      004f1dea    mov eax,[ebp-54h]"
-"	      004f1ded    mov ecx,[ebp+8]"
+"	      004f1dea    mov eax,pos.loc.y"
+"	      004f1ded    mov ecx,hd"
 "	      004f1df0    mov ecx,[ecx+0B4h]"
 "	      004f1df6    mov [ecx+1Ch],eax"
-"	      004f1df9    mov eax,[ebp+8]"
+"	      004f1df9    mov eax,hd"
 "	      004f1dfc    mov eax,[eax+0B4h]"
 "	      004f1e02    mov eax,[eax+1Ch]"
-"	      004f1e05    mov ecx,[ebp+8]"
+"	      004f1e05    mov ecx,hd"
 "	      004f1e08    mov ecx,[ecx+0A8h]"
 "	      004f1e0e    mov [ecx+1Ch],eax"
 );
 // LINE 1670:
 	asm( 
-"	      004f1e11    mov eax,[ebp+8]"
+"	      004f1e11    mov eax,hd"
 "	      004f1e14    mov eax,[eax+0A4h]"
 "	      004f1e1a    mov eax,[eax+1Ch]"
-"	      004f1e1d    sub eax,[ebp+10h]"
-"	      004f1e20    mov [ebp+10h],eax"
+"	      004f1e1d    sub eax,alt"
+"	      004f1e20    mov alt,eax"
 );
 // LINE 1672:
 	asm( 
-"	      004f1e23    mov eax,[ebp+8]"
+"	      004f1e23    mov eax,hd"
 "	      004f1e26    mov esi,[eax+0A8h]"
-"	      004f1e2c    lea edi,[ebp-40h]"
+"	      004f1e2c    lea edi,pos.matrix[0][0]"
 "	      004f1e2f    add esi,24h"
 "	      004f1e32    mov ecx,10h"
 "	      004f1e37    rep movsd"
@@ -4883,9 +4883,9 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1673:
 	asm( 
 "	      004f1e39    push 3"
-"	      004f1e3b    lea eax,[ebp-58h]"
+"	      004f1e3b    lea eax,pos.loc.x"
 "	      004f1e3e    push eax"
-"	      004f1e3f    mov eax,[ebp+8]"
+"	      004f1e3f    mov eax,hd"
 "	      004f1e42    mov eax,[eax+0A8h]"
 "	      004f1e48    mov eax,[eax+8]"
 "	      004f1e4b    push eax"
@@ -4894,9 +4894,9 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 );
 // LINE 1675:
 	asm( 
-"	      004f1e54    mov eax,[ebp+8]"
+"	      004f1e54    mov eax,hd"
 "	      004f1e57    mov esi,[eax+0B4h]"
-"	      004f1e5d    lea edi,[ebp-40h]"
+"	      004f1e5d    lea edi,pos.matrix[0][0]"
 "	      004f1e60    add esi,24h"
 "	      004f1e63    mov ecx,10h"
 "	      004f1e68    rep movsd"
@@ -4904,9 +4904,9 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 // LINE 1676:
 	asm( 
 "	      004f1e6a    push 3"
-"	      004f1e6c    lea eax,[ebp-58h]"
+"	      004f1e6c    lea eax,pos.loc.x"
 "	      004f1e6f    push eax"
-"	      004f1e70    mov eax,[ebp+8]"
+"	      004f1e70    mov eax,hd"
 "	      004f1e73    mov eax,[eax+0B4h]"
 "	      004f1e79    mov eax,[eax+8]"
 "	      004f1e7c    push eax"
@@ -4946,13 +4946,13 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1689:
 	asm( 
-"	      004f1e93    mov eax,[ebp+8]"
+"	      004f1e93    mov eax,hd"
 "	      004f1e96    mov eax,[eax]"
 "	      004f1e98    mov ecx,eax"
 "	      004f1e9a    lea eax,[eax+eax*4]"
 "	      004f1e9d    lea eax,[ecx+eax*2]"
 "	      004f1ea0    lea eax,[eax*8+5B4978h]"
-"	      004f1ea7    mov [ebp-24h],eax"
+"	      004f1ea7    mov htd,eax"
 );
 // LINE 1699:
 	asm( 
@@ -4961,7 +4961,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1701:
 	asm( 
-"	      004f1eb7    mov eax,[ebp+8]"
+"	      004f1eb7    mov eax,hd"
 "	      004f1eba    push eax"
 "	      004f1ebb    call 004F5316h"
 "	      004f1ec0    add esp,4"
@@ -4973,26 +4973,26 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1706:
 	asm( 
-"	      004f1ecd    mov eax,[ebp+8]"
+"	      004f1ecd    mov eax,hd"
 "	      004f1ed0    cmp dword ptr [eax+4],5"
 "	      004f1ed4    je near ptr 004F1EE7h"
-"	      004f1eda    mov eax,[ebp+8]"
+"	      004f1eda    mov eax,hd"
 "	      004f1edd    cmp dword ptr [eax+4],6"
 "	      004f1ee1    jne near ptr 004F1F18h"
 );
 // LINE 1708:
 	asm( 
-"	      004f1ee7    mov eax,[ebp+8]"
+"	      004f1ee7    mov eax,hd"
 "	      004f1eea    mov dword ptr [eax+1B8h],0"
 );
 // LINE 1709:
 	asm( 
-"	      004f1ef4    mov eax,[ebp+8]"
+"	      004f1ef4    mov eax,hd"
 "	      004f1ef7    mov dword ptr [eax+1BCh],0"
 );
 // LINE 1710:
 	asm( 
-"	      004f1f01    mov eax,[ebp+8]"
+"	      004f1f01    mov eax,hd"
 "	      004f1f04    mov dword ptr [eax+14Ch],0"
 );
 // LINE 1711:
@@ -5002,7 +5002,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1714:
 	asm( 
-"	      004f1f18    mov eax,[ebp+8]"
+"	      004f1f18    mov eax,hd"
 "	      004f1f1b    cmp dword ptr [eax+110h],0"
 "	      004f1f22    jle near ptr 004F1F32h"
 );
@@ -5013,15 +5013,15 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1718:
 	asm( 
-"	      004f1f32    mov eax,[ebp+8]"
+"	      004f1f32    mov eax,hd"
 "	      004f1f35    mov eax,[eax+328h]"
 "	      004f1f3b    push eax"
-"	      004f1f3c    mov eax,[ebp-24h]"
+"	      004f1f3c    mov eax,htd"
 "	      004f1f3f    mov eax,[eax+1Ch]"
 "	      004f1f42    push eax"
 "	      004f1f43    call 004D19BDh"
 "	      004f1f48    add esp,8"
-"	      004f1f4b    mov [ebp-1Ch],eax"
+"	      004f1f4b    mov pitchrate,eax"
 );
 // LINE 1720:
 	asm( 
@@ -5030,7 +5030,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1721:
 	asm( 
-"	      004f1f5b    sar dword ptr [ebp-1Ch],1"
+"	      004f1f5b    sar pitchrate,1"
 );
 // LINE 1723:
 	asm( 
@@ -5038,7 +5038,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f1f61    push 6"
 "	      004f1f63    call 00431BFBh"
 "	      004f1f68    add esp,8"
-"	      004f1f6b    mov [ebp-18h],eax"
+"	      004f1f6b    mov lJoystickLeftRightValue,eax"
 );
 // LINE 1724:
 	asm( 
@@ -5052,9 +5052,9 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f1f87    add esp,4"
 "	      004f1f8a    test eax,eax"
 "	      004f1f8c    je near ptr 004F1F9Eh"
-"	      004f1f92    mov dword ptr [ebp-14h],1"
+"	      004f1f92    mov bSlideEventIsSet,1"
 "	      004f1f99    jmp near ptr 004F1FA5h"
-"	      004f1f9e    mov dword ptr [ebp-14h],0"
+"	      004f1f9e    mov bSlideEventIsSet,0"
 );
 // LINE 1727:
 	asm( 
@@ -5066,13 +5066,13 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1728:
 	asm( 
-"	      004f1fb7    mov eax,[ebp-1Ch]"
+"	      004f1fb7    mov eax,pitchrate"
 "	      004f1fba    push eax"
 "	      004f1fbb    mov eax,ds:[5B4768h]"
 "	      004f1fc0    push eax"
 "	      004f1fc1    call 004D19BDh"
 "	      004f1fc6    add esp,8"
-"	      004f1fc9    mov ecx,[ebp+8]"
+"	      004f1fc9    mov ecx,hd"
 "	      004f1fcc    add [ecx+11Ch],eax"
 );
 // LINE 1729:
@@ -5087,7 +5087,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 // LINE 1730:
 	asm( 
 "	      004f1fe9    xor ebx,ebx"
-"	      004f1feb    mov eax,[ebp-1Ch]"
+"	      004f1feb    mov eax,pitchrate"
 "	      004f1fee    push eax"
 "	      004f1fef    mov eax,ds:[5B4768h]"
 "	      004f1ff4    push eax"
@@ -5095,7 +5095,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f1ffa    add esp,8"
 "	      004f1ffd    sub ebx,eax"
 "	      004f1fff    neg ebx"
-"	      004f2001    mov eax,[ebp+8]"
+"	      004f2001    mov eax,hd"
 "	      004f2004    sub [eax+11Ch],ebx"
 );
 // LINE 1731:
@@ -5105,50 +5105,50 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2011    push 9"
 "	      004f2013    call 00431BFBh"
 "	      004f2018    add esp,8"
-"	      004f201b    mov [ebp-10h],eax"
-"	      004f201e    cmp dword ptr [ebp-10h],0"
+"	      004f201b    mov lJoystickUpDownValue,eax"
+"	      004f201e    cmp lJoystickUpDownValue,0"
 "	      004f2022    je near ptr 004F208Ch"
 );
 // LINE 1733:
 	asm( 
 "	      004f2028    push 30000h"
-"	      004f202d    mov eax,[ebp-10h]"
+"	      004f202d    mov eax,lJoystickUpDownValue"
 "	      004f2030    shl eax,10h"
 "	      004f2033    neg eax"
 "	      004f2035    push eax"
 "	      004f2036    call 004D19BDh"
 "	      004f203b    add esp,8"
-"	      004f203e    mov [ebp-4],eax"
+"	      004f203e    mov tempfix,eax"
 );
 // LINE 1734:
 	asm( 
 "	      004f2041    xor eax,eax"
-"	      004f2043    mov ecx,[ebp+8]"
+"	      004f2043    mov ecx,hd"
 "	      004f2046    sub eax,[ecx+11Ch]"
 "	      004f204c    neg eax"
-"	      004f204e    sub [ebp-4],eax"
+"	      004f204e    sub tempfix,eax"
 );
 // LINE 1735:
 	asm( 
 "	      004f2051    mov eax,ds:[5B4768h]"
 "	      004f2056    add eax,eax"
 "	      004f2058    push eax"
-"	      004f2059    mov eax,[ebp-4]"
+"	      004f2059    mov eax,tempfix"
 "	      004f205c    push eax"
 "	      004f205d    call 004D19BDh"
 "	      004f2062    add esp,8"
-"	      004f2065    mov [ebp-4],eax"
+"	      004f2065    mov tempfix,eax"
 );
 // LINE 1736:
 	asm( 
-"	      004f2068    mov eax,[ebp+8]"
+"	      004f2068    mov eax,hd"
 "	      004f206b    mov eax,[eax+328h]"
 "	      004f2071    push eax"
-"	      004f2072    mov eax,[ebp-4]"
+"	      004f2072    mov eax,tempfix"
 "	      004f2075    push eax"
 "	      004f2076    call 004D19BDh"
 "	      004f207b    add esp,8"
-"	      004f207e    mov ecx,[ebp+8]"
+"	      004f207e    mov ecx,hd"
 "	      004f2081    add [ecx+11Ch],eax"
 );
 // LINE 1738:
@@ -5167,12 +5167,12 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f20a4    add ecx,ecx"
 "	      004f20a6    sub eax,ecx"
 "	      004f20a8    push eax"
-"	      004f20a9    mov eax,[ebp+8]"
+"	      004f20a9    mov eax,hd"
 "	      004f20ac    mov eax,[eax+11Ch]"
 "	      004f20b2    push eax"
 "	      004f20b3    call 004D19BDh"
 "	      004f20b8    add esp,8"
-"	      004f20bb    mov ecx,[ebp+8]"
+"	      004f20bb    mov ecx,hd"
 "	      004f20be    mov [ecx+11Ch],eax"
 );
 // LINE 1742:
@@ -5184,12 +5184,12 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f20c9    mov eax,10000h"
 "	      004f20ce    sub eax,ds:[5B4768h]"
 "	      004f20d4    push eax"
-"	      004f20d5    mov eax,[ebp+8]"
+"	      004f20d5    mov eax,hd"
 "	      004f20d8    mov eax,[eax+11Ch]"
 "	      004f20de    push eax"
 "	      004f20df    call 004D19BDh"
 "	      004f20e4    add esp,8"
-"	      004f20e7    mov ecx,[ebp+8]"
+"	      004f20e7    mov ecx,hd"
 "	      004f20ea    mov [ecx+11Ch],eax"
 );
 // LINE 1747:
@@ -5203,7 +5203,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 // LINE 1748:
 	asm( 
 "	      004f2102    xor ebx,ebx"
-"	      004f2104    mov eax,[ebp-24h]"
+"	      004f2104    mov eax,htd"
 "	      004f2107    mov eax,[eax+24h]"
 "	      004f210a    push eax"
 "	      004f210b    mov eax,ds:[5B4768h]"
@@ -5212,7 +5212,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2116    add esp,8"
 "	      004f2119    sub ebx,eax"
 "	      004f211b    neg ebx"
-"	      004f211d    mov eax,[ebp+8]"
+"	      004f211d    mov eax,hd"
 "	      004f2120    sub [eax+114h],ebx"
 );
 // LINE 1749:
@@ -5226,57 +5226,57 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1750:
 	asm( 
-"	      004f213d    mov eax,[ebp-24h]"
+"	      004f213d    mov eax,htd"
 "	      004f2140    mov eax,[eax+24h]"
 "	      004f2143    push eax"
 "	      004f2144    mov eax,ds:[5B4768h]"
 "	      004f2149    push eax"
 "	      004f214a    call 004D19BDh"
 "	      004f214f    add esp,8"
-"	      004f2152    mov ecx,[ebp+8]"
+"	      004f2152    mov ecx,hd"
 "	      004f2155    add [ecx+114h],eax"
 );
 // LINE 1751:
 	asm( 
 "	      004f215b    jmp near ptr 004F21EFh"
-"	      004f2160    cmp dword ptr [ebp-18h],0"
+"	      004f2160    cmp lJoystickLeftRightValue,0"
 "	      004f2164    je near ptr 004F21C3h"
-"	      004f216a    cmp dword ptr [ebp-14h],0"
+"	      004f216a    cmp bSlideEventIsSet,0"
 "	      004f216e    jne near ptr 004F21C3h"
 );
 // LINE 1753:
 	asm( 
 "	      004f2174    push 60000h"
-"	      004f2179    mov eax,[ebp-18h]"
+"	      004f2179    mov eax,lJoystickLeftRightValue"
 "	      004f217c    shl eax,10h"
 "	      004f217f    neg eax"
 "	      004f2181    push eax"
 "	      004f2182    call 004D19BDh"
 "	      004f2187    add esp,8"
-"	      004f218a    mov [ebp-4],eax"
+"	      004f218a    mov tempfix,eax"
 );
 // LINE 1754:
 	asm( 
 "	      004f218d    xor eax,eax"
-"	      004f218f    mov ecx,[ebp+8]"
+"	      004f218f    mov ecx,hd"
 "	      004f2192    sub eax,[ecx+114h]"
 "	      004f2198    neg eax"
-"	      004f219a    sub [ebp-4],eax"
+"	      004f219a    sub tempfix,eax"
 );
 // LINE 1755:
 	asm( 
 "	      004f219d    mov eax,ds:[5B4768h]"
 "	      004f21a2    push eax"
-"	      004f21a3    mov eax,[ebp-4]"
+"	      004f21a3    mov eax,tempfix"
 "	      004f21a6    push eax"
 "	      004f21a7    call 004D19BDh"
 "	      004f21ac    add esp,8"
-"	      004f21af    mov [ebp-4],eax"
+"	      004f21af    mov tempfix,eax"
 );
 // LINE 1756:
 	asm( 
-"	      004f21b2    mov eax,[ebp-4]"
-"	      004f21b5    mov ecx,[ebp+8]"
+"	      004f21b2    mov eax,tempfix"
+"	      004f21b5    mov ecx,hd"
 "	      004f21b8    add [ecx+114h],eax"
 );
 // LINE 1758:
@@ -5290,25 +5290,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f21ce    shl ecx,2"
 "	      004f21d1    sub eax,ecx"
 "	      004f21d3    push eax"
-"	      004f21d4    mov eax,[ebp+8]"
+"	      004f21d4    mov eax,hd"
 "	      004f21d7    mov eax,[eax+114h]"
 "	      004f21dd    push eax"
 "	      004f21de    call 004D19BDh"
 "	      004f21e3    add esp,8"
-"	      004f21e6    mov ecx,[ebp+8]"
+"	      004f21e6    mov ecx,hd"
 "	      004f21e9    mov [ecx+114h],eax"
 );
 // LINE 1764:
 	asm( 
-"	      004f21ef    mov eax,[ebp+8]"
+"	      004f21ef    mov eax,hd"
 "	      004f21f2    mov eax,[eax+328h]"
 "	      004f21f8    push eax"
-"	      004f21f9    mov eax,[ebp-24h]"
+"	      004f21f9    mov eax,htd"
 "	      004f21fc    mov eax,[eax+20h]"
 "	      004f21ff    push eax"
 "	      004f2200    call 004D19BDh"
 "	      004f2205    add esp,8"
-"	      004f2208    mov [ebp-20h],eax"
+"	      004f2208    mov yawrate,eax"
 );
 // LINE 1766:
 	asm( 
@@ -5320,13 +5320,13 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1767:
 	asm( 
-"	      004f221d    mov eax,[ebp-20h]"
+"	      004f221d    mov eax,yawrate"
 "	      004f2220    push eax"
 "	      004f2221    mov eax,ds:[5B4768h]"
 "	      004f2226    push eax"
 "	      004f2227    call 004D19BDh"
 "	      004f222c    add esp,8"
-"	      004f222f    mov ecx,[ebp+8]"
+"	      004f222f    mov ecx,hd"
 "	      004f2232    add [ecx+120h],eax"
 );
 // LINE 1768:
@@ -5341,7 +5341,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 // LINE 1769:
 	asm( 
 "	      004f224f    xor ebx,ebx"
-"	      004f2251    mov eax,[ebp-20h]"
+"	      004f2251    mov eax,yawrate"
 "	      004f2254    push eax"
 "	      004f2255    mov eax,ds:[5B4768h]"
 "	      004f225a    push eax"
@@ -5349,24 +5349,24 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2260    add esp,8"
 "	      004f2263    sub ebx,eax"
 "	      004f2265    neg ebx"
-"	      004f2267    mov eax,[ebp+8]"
+"	      004f2267    mov eax,hd"
 "	      004f226a    sub [eax+120h],ebx"
 );
 // LINE 1770:
 	asm( 
 "	      004f2270    jmp near ptr 004F22E7h"
-"	      004f2275    cmp dword ptr [ebp-18h],0"
+"	      004f2275    cmp lJoystickLeftRightValue,0"
 "	      004f2279    je near ptr 004F22BBh"
-"	      004f227f    cmp dword ptr [ebp-14h],0"
+"	      004f227f    cmp bSlideEventIsSet,0"
 "	      004f2283    jne near ptr 004F22BBh"
 );
 // LINE 1772:
 	asm( 
 "	      004f2289    xor ebx,ebx"
-"	      004f228b    mov eax,[ebp+8]"
+"	      004f228b    mov eax,hd"
 "	      004f228e    mov eax,[eax+328h]"
 "	      004f2294    push eax"
-"	      004f2295    mov eax,[ebp-18h]"
+"	      004f2295    mov eax,lJoystickLeftRightValue"
 "	      004f2298    neg eax"
 "	      004f229a    sar eax,2"
 "	      004f229d    shl eax,10h"
@@ -5375,7 +5375,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f22a6    add esp,8"
 "	      004f22a9    sub ebx,eax"
 "	      004f22ab    neg ebx"
-"	      004f22ad    mov eax,[ebp+8]"
+"	      004f22ad    mov eax,hd"
 "	      004f22b0    sub [eax+120h],ebx"
 );
 // LINE 1773:
@@ -5389,25 +5389,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f22c6    shl ecx,2"
 "	      004f22c9    sub eax,ecx"
 "	      004f22cb    push eax"
-"	      004f22cc    mov eax,[ebp+8]"
+"	      004f22cc    mov eax,hd"
 "	      004f22cf    mov eax,[eax+120h]"
 "	      004f22d5    push eax"
 "	      004f22d6    call 004D19BDh"
 "	      004f22db    add esp,8"
-"	      004f22de    mov ecx,[ebp+8]"
+"	      004f22de    mov ecx,hd"
 "	      004f22e1    mov [ecx+120h],eax"
 );
 // LINE 1777:
 	asm( 
-"	      004f22e7    mov eax,[ebp+8]"
+"	      004f22e7    mov eax,hd"
 "	      004f22ea    mov eax,[eax+328h]"
 "	      004f22f0    push eax"
-"	      004f22f1    mov eax,[ebp-24h]"
+"	      004f22f1    mov eax,htd"
 "	      004f22f4    mov eax,[eax+28h]"
 "	      004f22f7    push eax"
 "	      004f22f8    call 004D19BDh"
 "	      004f22fd    add esp,8"
-"	      004f2300    mov [ebp-8],eax"
+"	      004f2300    mov sliderate,eax"
 );
 // LINE 1780:
 	asm( 
@@ -5419,13 +5419,13 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1781:
 	asm( 
-"	      004f2315    mov eax,[ebp-8]"
+"	      004f2315    mov eax,sliderate"
 "	      004f2318    push eax"
 "	      004f2319    mov eax,ds:[5B4768h]"
 "	      004f231e    push eax"
 "	      004f231f    call 004D19BDh"
 "	      004f2324    add esp,8"
-"	      004f2327    mov ecx,[ebp+8]"
+"	      004f2327    mov ecx,hd"
 "	      004f232a    add [ecx+118h],eax"
 );
 // LINE 1782:
@@ -5440,7 +5440,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 // LINE 1783:
 	asm( 
 "	      004f2347    xor ebx,ebx"
-"	      004f2349    mov eax,[ebp-8]"
+"	      004f2349    mov eax,sliderate"
 "	      004f234c    push eax"
 "	      004f234d    mov eax,ds:[5B4768h]"
 "	      004f2352    push eax"
@@ -5448,56 +5448,56 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2358    add esp,8"
 "	      004f235b    sub ebx,eax"
 "	      004f235d    neg ebx"
-"	      004f235f    mov eax,[ebp+8]"
+"	      004f235f    mov eax,hd"
 "	      004f2362    sub [eax+118h],ebx"
 );
 // LINE 1784:
 	asm( 
 "	      004f2368    jmp near ptr 004F243Ch"
-"	      004f236d    cmp dword ptr [ebp-18h],0"
+"	      004f236d    cmp lJoystickLeftRightValue,0"
 "	      004f2371    je near ptr 004F23E3h"
-"	      004f2377    cmp dword ptr [ebp-14h],0"
+"	      004f2377    cmp bSlideEventIsSet,0"
 "	      004f237b    je near ptr 004F23E3h"
 );
 // LINE 1786:
 	asm( 
 "	      004f2381    push 20000h"
-"	      004f2386    mov eax,[ebp-18h]"
+"	      004f2386    mov eax,lJoystickLeftRightValue"
 "	      004f2389    shl eax,10h"
 "	      004f238c    neg eax"
 "	      004f238e    push eax"
 "	      004f238f    call 004D19BDh"
 "	      004f2394    add esp,8"
-"	      004f2397    mov [ebp-4],eax"
+"	      004f2397    mov tempfix,eax"
 );
 // LINE 1787:
 	asm( 
 "	      004f239a    xor eax,eax"
-"	      004f239c    mov ecx,[ebp+8]"
+"	      004f239c    mov ecx,hd"
 "	      004f239f    sub eax,[ecx+118h]"
 "	      004f23a5    neg eax"
-"	      004f23a7    sub [ebp-4],eax"
+"	      004f23a7    sub tempfix,eax"
 );
 // LINE 1788:
 	asm( 
 "	      004f23aa    mov eax,ds:[5B4768h]"
 "	      004f23af    push eax"
-"	      004f23b0    mov eax,[ebp-4]"
+"	      004f23b0    mov eax,tempfix"
 "	      004f23b3    push eax"
 "	      004f23b4    call 004D19BDh"
 "	      004f23b9    add esp,8"
-"	      004f23bc    mov [ebp-4],eax"
+"	      004f23bc    mov tempfix,eax"
 );
 // LINE 1789:
 	asm( 
-"	      004f23bf    mov eax,[ebp+8]"
+"	      004f23bf    mov eax,hd"
 "	      004f23c2    mov eax,[eax+328h]"
 "	      004f23c8    push eax"
-"	      004f23c9    mov eax,[ebp-4]"
+"	      004f23c9    mov eax,tempfix"
 "	      004f23cc    push eax"
 "	      004f23cd    call 004D19BDh"
 "	      004f23d2    add esp,8"
-"	      004f23d5    mov ecx,[ebp+8]"
+"	      004f23d5    mov ecx,hd"
 "	      004f23d8    add [ecx+118h],eax"
 );
 // LINE 1791:
@@ -5519,7 +5519,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2400    idiv ecx"
 "	      004f2402    lea eax,[edx-5]"
 "	      004f2405    shl eax,10h"
-"	      004f2408    mov ecx,[ebp+8]"
+"	      004f2408    mov ecx,hd"
 "	      004f240b    add [ecx+118h],eax"
 );
 // LINE 1795:
@@ -5529,12 +5529,12 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f241c    add ecx,ecx"
 "	      004f241e    sub eax,ecx"
 "	      004f2420    push eax"
-"	      004f2421    mov eax,[ebp+8]"
+"	      004f2421    mov eax,hd"
 "	      004f2424    mov eax,[eax+118h]"
 "	      004f242a    push eax"
 "	      004f242b    call 004D19BDh"
 "	      004f2430    add esp,8"
-"	      004f2433    mov ecx,[ebp+8]"
+"	      004f2433    mov ecx,hd"
 "	      004f2436    mov [ecx+118h],eax"
 );
 // LINE 1799:
@@ -5547,7 +5547,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1800:
 	asm( 
-"	      004f244e    mov eax,[ebp+8]"
+"	      004f244e    mov eax,hd"
 "	      004f2451    mov dword ptr [eax+0Ch],1"
 );
 // LINE 1801:
@@ -5561,7 +5561,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1802:
 	asm( 
-"	      004f246f    mov eax,[ebp+8]"
+"	      004f246f    mov eax,hd"
 "	      004f2472    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 1803:
@@ -5571,8 +5571,8 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2480    push 0Ch"
 "	      004f2482    call 00431BFBh"
 "	      004f2487    add esp,8"
-"	      004f248a    mov [ebp-0Ch],eax"
-"	      004f248d    cmp dword ptr [ebp-0Ch],0"
+"	      004f248a    mov lJoystickMiscValue1,eax"
+"	      004f248d    cmp lJoystickMiscValue1,0"
 "	      004f2491    je near ptr 004F24BBh"
 );
 // LINE 1804:
@@ -5581,7 +5581,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1805:
 	asm( 
-"	      004f249d    mov eax,[ebp+8]"
+"	      004f249d    mov eax,hd"
 "	      004f24a0    mov dword ptr [eax+0Ch],1"
 );
 // LINE 1806:
@@ -5590,7 +5590,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1807:
 	asm( 
-"	      004f24ac    mov eax,[ebp+8]"
+"	      004f24ac    mov eax,hd"
 "	      004f24af    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 1809:
@@ -5599,23 +5599,23 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1810:
 	asm( 
-"	      004f24bb    mov eax,[ebp+8]"
+"	      004f24bb    mov eax,hd"
 "	      004f24be    mov dword ptr [eax+0Ch],0"
 );
 // LINE 1813:
 	asm( 
-"	      004f24c5    mov eax,[ebp+8]"
+"	      004f24c5    mov eax,hd"
 "	      004f24c8    cmp dword ptr [eax+320h],0"
 "	      004f24cf    jg near ptr 004F24DFh"
 );
 // LINE 1814:
 	asm( 
-"	      004f24d5    mov eax,[ebp+8]"
+"	      004f24d5    mov eax,hd"
 "	      004f24d8    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 1820:
 	asm( 
-"	      004f24df    mov eax,[ebp+8]"
+"	      004f24df    mov eax,hd"
 "	      004f24e2    mov dword ptr [eax+1B8h],0"
 );
 // LINE 1821:
@@ -5634,25 +5634,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1823:
 	asm( 
-"	      004f250d    mov eax,[ebp+8]"
+"	      004f250d    mov eax,hd"
 "	      004f2510    cmp dword ptr [eax+1B4h],0"
 "	      004f2517    jne near ptr 004F252Fh"
 );
 // LINE 1824:
 	asm( 
-"	      004f251d    mov eax,[ebp+8]"
+"	      004f251d    mov eax,hd"
 "	      004f2520    mov dword ptr [eax+1B8h],2"
 );
 // LINE 1825:
 	asm( 
 "	      004f252a    jmp near ptr 004F254Ch"
-"	      004f252f    mov eax,[ebp+8]"
+"	      004f252f    mov eax,hd"
 "	      004f2532    cmp dword ptr [eax+1ACh],3"
 "	      004f2539    jle near ptr 004F254Ch"
 );
 // LINE 1826:
 	asm( 
-"	      004f253f    mov eax,[ebp+8]"
+"	      004f253f    mov eax,hd"
 "	      004f2542    mov dword ptr [eax+1B8h],0FFFFFFFFh"
 );
 // LINE 1828:
@@ -5666,16 +5666,16 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1829:
 	asm( 
-"	      004f2563    mov eax,[ebp+8]"
+"	      004f2563    mov eax,hd"
 "	      004f2566    cmp dword ptr [eax+1B0h],0"
 "	      004f256d    jne near ptr 004F2590h"
-"	      004f2573    mov eax,[ebp+8]"
+"	      004f2573    mov eax,hd"
 "	      004f2576    cmp dword ptr [eax+1ACh],11h"
 "	      004f257d    jge near ptr 004F2590h"
 );
 // LINE 1830:
 	asm( 
-"	      004f2583    mov eax,[ebp+8]"
+"	      004f2583    mov eax,hd"
 "	      004f2586    mov dword ptr [eax+1B8h],1"
 );
 // LINE 1832:
@@ -5685,8 +5685,8 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2597    push 0Eh"
 "	      004f2599    call 00431BFBh"
 "	      004f259e    add esp,8"
-"	      004f25a1    mov [ebp-0Ch],eax"
-"	      004f25a4    cmp dword ptr [ebp-0Ch],0"
+"	      004f25a1    mov lJoystickMiscValue1,eax"
+"	      004f25a4    cmp lJoystickMiscValue1,0"
 "	      004f25a8    je near ptr 004F2625h"
 );
 // LINE 1833:
@@ -5695,25 +5695,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1834:
 	asm( 
-"	      004f25b4    mov eax,[ebp+8]"
+"	      004f25b4    mov eax,hd"
 "	      004f25b7    cmp dword ptr [eax+1B4h],0"
 "	      004f25be    jne near ptr 004F25D6h"
 );
 // LINE 1835:
 	asm( 
-"	      004f25c4    mov eax,[ebp+8]"
+"	      004f25c4    mov eax,hd"
 "	      004f25c7    mov dword ptr [eax+1B8h],2"
 );
 // LINE 1836:
 	asm( 
 "	      004f25d1    jmp near ptr 004F25F3h"
-"	      004f25d6    mov eax,[ebp+8]"
+"	      004f25d6    mov eax,hd"
 "	      004f25d9    cmp dword ptr [eax+1ACh],3"
 "	      004f25e0    jle near ptr 004F25F3h"
 );
 // LINE 1837:
 	asm( 
-"	      004f25e6    mov eax,[ebp+8]"
+"	      004f25e6    mov eax,hd"
 "	      004f25e9    mov dword ptr [eax+1B8h],0FFFFFFFFh"
 );
 // LINE 1839:
@@ -5722,16 +5722,16 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1840:
 	asm( 
-"	      004f25f8    mov eax,[ebp+8]"
+"	      004f25f8    mov eax,hd"
 "	      004f25fb    cmp dword ptr [eax+1B0h],0"
 "	      004f2602    jne near ptr 004F2625h"
-"	      004f2608    mov eax,[ebp+8]"
+"	      004f2608    mov eax,hd"
 "	      004f260b    cmp dword ptr [eax+1ACh],11h"
 "	      004f2612    jge near ptr 004F2625h"
 );
 // LINE 1841:
 	asm( 
-"	      004f2618    mov eax,[ebp+8]"
+"	      004f2618    mov eax,hd"
 "	      004f261b    mov dword ptr [eax+1B8h],1"
 );
 // LINE 1846:
@@ -5750,25 +5750,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1848:
 	asm( 
-"	      004f2646    mov eax,[ebp+8]"
+"	      004f2646    mov eax,hd"
 "	      004f2649    cmp dword ptr [eax+1B0h],0"
 "	      004f2650    jne near ptr 004F2668h"
 );
 // LINE 1849:
 	asm( 
-"	      004f2656    mov eax,[ebp+8]"
+"	      004f2656    mov eax,hd"
 "	      004f2659    mov dword ptr [eax+1B8h],1"
 );
 // LINE 1850:
 	asm( 
 "	      004f2663    jmp near ptr 004F2685h"
-"	      004f2668    mov eax,[ebp+8]"
+"	      004f2668    mov eax,hd"
 "	      004f266b    cmp dword ptr [eax+1ACh],3"
 "	      004f2672    jle near ptr 004F2685h"
 );
 // LINE 1851:
 	asm( 
-"	      004f2678    mov eax,[ebp+8]"
+"	      004f2678    mov eax,hd"
 "	      004f267b    mov dword ptr [eax+1B8h],0FFFFFFFEh"
 );
 // LINE 1853:
@@ -5782,16 +5782,16 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1854:
 	asm( 
-"	      004f269c    mov eax,[ebp+8]"
+"	      004f269c    mov eax,hd"
 "	      004f269f    cmp dword ptr [eax+1B4h],0"
 "	      004f26a6    jne near ptr 004F26C9h"
-"	      004f26ac    mov eax,[ebp+8]"
+"	      004f26ac    mov eax,hd"
 "	      004f26af    cmp dword ptr [eax+1ACh],11h"
 "	      004f26b6    jge near ptr 004F26C9h"
 );
 // LINE 1855:
 	asm( 
-"	      004f26bc    mov eax,[ebp+8]"
+"	      004f26bc    mov eax,hd"
 "	      004f26bf    mov dword ptr [eax+1B8h],2"
 );
 // LINE 1857:
@@ -5801,8 +5801,8 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f26d0    push 11h"
 "	      004f26d2    call 00431BFBh"
 "	      004f26d7    add esp,8"
-"	      004f26da    mov [ebp-0Ch],eax"
-"	      004f26dd    cmp dword ptr [ebp-0Ch],0"
+"	      004f26da    mov lJoystickMiscValue1,eax"
+"	      004f26dd    cmp lJoystickMiscValue1,0"
 "	      004f26e1    je near ptr 004F275Eh"
 );
 // LINE 1858:
@@ -5811,25 +5811,25 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1859:
 	asm( 
-"	      004f26ed    mov eax,[ebp+8]"
+"	      004f26ed    mov eax,hd"
 "	      004f26f0    cmp dword ptr [eax+1B0h],0"
 "	      004f26f7    jne near ptr 004F270Fh"
 );
 // LINE 1860:
 	asm( 
-"	      004f26fd    mov eax,[ebp+8]"
+"	      004f26fd    mov eax,hd"
 "	      004f2700    mov dword ptr [eax+1B8h],1"
 );
 // LINE 1861:
 	asm( 
 "	      004f270a    jmp near ptr 004F272Ch"
-"	      004f270f    mov eax,[ebp+8]"
+"	      004f270f    mov eax,hd"
 "	      004f2712    cmp dword ptr [eax+1ACh],3"
 "	      004f2719    jle near ptr 004F272Ch"
 );
 // LINE 1862:
 	asm( 
-"	      004f271f    mov eax,[ebp+8]"
+"	      004f271f    mov eax,hd"
 "	      004f2722    mov dword ptr [eax+1B8h],0FFFFFFFEh"
 );
 // LINE 1864:
@@ -5838,16 +5838,16 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1865:
 	asm( 
-"	      004f2731    mov eax,[ebp+8]"
+"	      004f2731    mov eax,hd"
 "	      004f2734    cmp dword ptr [eax+1B4h],0"
 "	      004f273b    jne near ptr 004F275Eh"
-"	      004f2741    mov eax,[ebp+8]"
+"	      004f2741    mov eax,hd"
 "	      004f2744    cmp dword ptr [eax+1ACh],11h"
 "	      004f274b    jge near ptr 004F275Eh"
 );
 // LINE 1866:
 	asm( 
-"	      004f2751    mov eax,[ebp+8]"
+"	      004f2751    mov eax,hd"
 "	      004f2754    mov dword ptr [eax+1B8h],2"
 );
 // LINE 1873:
@@ -5862,10 +5862,10 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f2777    add esp,4"
 "	      004f277a    test eax,eax"
 "	      004f277c    je near ptr 004F27C3h"
-"	      004f2782    mov eax,[ebp+8]"
+"	      004f2782    mov eax,hd"
 "	      004f2785    cmp dword ptr [eax+1B0h],0"
 "	      004f278c    jne near ptr 004F27C3h"
-"	      004f2792    mov eax,[ebp+8]"
+"	      004f2792    mov eax,hd"
 "	      004f2795    cmp dword ptr [eax+1C0h],0"
 "	      004f279c    je near ptr 004F27C3h"
 );
@@ -5877,7 +5877,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1876:
 	asm( 
-"	      004f27b1    mov eax,[ebp+8]"
+"	      004f27b1    mov eax,hd"
 "	      004f27b4    mov dword ptr [eax+1BCh],1"
 );
 // LINE 1878:
@@ -5886,7 +5886,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1879:
 	asm( 
-"	      004f27c3    mov eax,[ebp+8]"
+"	      004f27c3    mov eax,hd"
 "	      004f27c6    mov dword ptr [eax+1BCh],0"
 );
 // LINE 1882:
@@ -5910,13 +5910,13 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1886:
 	asm( 
-"	      004f2803    mov eax,[ebp+8]"
+"	      004f2803    mov eax,hd"
 "	      004f2806    cmp dword ptr [eax],2"
 "	      004f2809    jne near ptr 004F2821h"
 );
 // LINE 1887:
 	asm( 
-"	      004f280f    mov eax,[ebp+8]"
+"	      004f280f    mov eax,hd"
 "	      004f2812    mov dword ptr [eax+14Ch],1"
 );
 // LINE 1888:
@@ -5931,7 +5931,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1890:
 	asm( 
-"	      004f2830    mov eax,[ebp+8]"
+"	      004f2830    mov eax,hd"
 "	      004f2833    mov dword ptr [eax+14Ch],3"
 );
 // LINE 1896:
@@ -5956,31 +5956,31 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1900:
 	asm( 
-"	      004f2875    mov eax,[ebp+8]"
+"	      004f2875    mov eax,hd"
 "	      004f2878    cmp dword ptr [eax],2"
 "	      004f287b    jne near ptr 004F2893h"
 );
 // LINE 1901:
 	asm( 
-"	      004f2881    mov eax,[ebp+8]"
+"	      004f2881    mov eax,hd"
 "	      004f2884    mov dword ptr [eax+14Ch],2"
 );
 // LINE 1902:
 	asm( 
 "	      004f288e    jmp near ptr 004F28E3h"
-"	      004f2893    mov eax,[ebp+8]"
+"	      004f2893    mov eax,hd"
 "	      004f2896    cmp dword ptr [eax+1C0h],0"
 "	      004f289d    je near ptr 004F28D6h"
 );
 // LINE 1904:
 	asm( 
-"	      004f28a3    mov eax,[ebp+8]"
+"	      004f28a3    mov eax,hd"
 "	      004f28a6    mov dword ptr [eax+14Ch],5"
 );
 // LINE 1906:
 	asm( 
 "	      004f28b0    xor ebx,ebx"
-"	      004f28b2    mov eax,[ebp-1Ch]"
+"	      004f28b2    mov eax,pitchrate"
 "	      004f28b5    push eax"
 "	      004f28b6    mov eax,ds:[5B4768h]"
 "	      004f28bb    push eax"
@@ -5988,7 +5988,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 "	      004f28c1    add esp,8"
 "	      004f28c4    sub ebx,eax"
 "	      004f28c6    neg ebx"
-"	      004f28c8    mov eax,[ebp+8]"
+"	      004f28c8    mov eax,hd"
 "	      004f28cb    sub [eax+11Ch],ebx"
 );
 // LINE 1908:
@@ -5997,7 +5997,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1909:
 	asm( 
-"	      004f28d6    mov eax,[ebp+8]"
+"	      004f28d6    mov eax,hd"
 "	      004f28d9    mov dword ptr [eax+14Ch],0"
 );
 // LINE 1911:
@@ -6006,7 +6006,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1912:
 	asm( 
-"	      004f28e8    mov eax,[ebp+8]"
+"	      004f28e8    mov eax,hd"
 "	      004f28eb    mov dword ptr [eax+14Ch],0"
 );
 // LINE 1914:
@@ -6015,7 +6015,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 );
 // LINE 1915:
 	asm( 
-"	      004f28fa    mov eax,[ebp+8]"
+"	      004f28fa    mov eax,hd"
 "	      004f28fd    mov dword ptr [eax+14Ch],0"
 );
 // LINE 1917:
@@ -6052,32 +6052,32 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1932:
 	asm( 
-"	      004f291f    mov eax,[ebp+8]"
+"	      004f291f    mov eax,hd"
 "	      004f2922    mov eax,[eax]"
 "	      004f2924    mov ecx,eax"
 "	      004f2926    lea eax,[eax+eax*4]"
 "	      004f2929    lea eax,[ecx+eax*2]"
 "	      004f292c    lea eax,[eax*8+5B4978h]"
-"	      004f2933    mov [ebp-48h],eax"
+"	      004f2933    mov htd,eax"
 );
 // LINE 1935:
 	asm( 
-"	      004f2936    mov eax,[ebp-48h]"
+"	      004f2936    mov eax,htd"
 "	      004f2939    mov eax,[eax+14h]"
-"	      004f293c    mov [ebp-50h],eax"
+"	      004f293c    mov max_pitch,eax"
 );
 // LINE 1938:
 	asm( 
-"	      004f293f    mov eax,[ebp+8]"
+"	      004f293f    mov eax,hd"
 "	      004f2942    cmp dword ptr [eax+4],5"
 "	      004f2946    je near ptr 004F2959h"
-"	      004f294c    mov eax,[ebp+8]"
+"	      004f294c    mov eax,hd"
 "	      004f294f    cmp dword ptr [eax+4],6"
 "	      004f2953    jne near ptr 004F2A34h"
 );
 // LINE 1941:
 	asm( 
-"	      004f2959    mov eax,[ebp+8]"
+"	      004f2959    mov eax,hd"
 "	      004f295c    mov eax,[eax+168h]"
 "	      004f2962    cmp dword ptr [eax+0Ch],30000h"
 "	      004f2969    jle near ptr 004F29EAh"
@@ -6097,22 +6097,22 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 "	      004f298f    push eax"
 "	      004f2990    call 004D19BDh"
 "	      004f2995    add esp,8"
-"	      004f2998    mov [ebp-4],eax"
+"	      004f2998    mov tempfix,eax"
 );
 // LINE 1945:
 	asm( 
-"	      004f299b    mov eax,[ebp+8]"
+"	      004f299b    mov eax,hd"
 "	      004f299e    mov eax,[eax+168h]"
 "	      004f29a4    cmp dword ptr [eax+38h],1"
 "	      004f29a8    jne near ptr 004F29CCh"
 );
 // LINE 1947:
 	asm( 
-"	      004f29ae    mov eax,[ebp+8]"
+"	      004f29ae    mov eax,hd"
 "	      004f29b1    mov eax,[eax+0A4h]"
 "	      004f29b7    add eax,24h"
 "	      004f29ba    push eax"
-"	      004f29bb    mov eax,[ebp-4]"
+"	      004f29bb    mov eax,tempfix"
 "	      004f29be    push eax"
 "	      004f29bf    call 004D2034h"
 "	      004f29c4    add esp,8"
@@ -6123,11 +6123,11 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1951:
 	asm( 
-"	      004f29cc    mov eax,[ebp+8]"
+"	      004f29cc    mov eax,hd"
 "	      004f29cf    mov eax,[eax+0A4h]"
 "	      004f29d5    add eax,24h"
 "	      004f29d8    push eax"
-"	      004f29d9    mov eax,[ebp-4]"
+"	      004f29d9    mov eax,tempfix"
 "	      004f29dc    push eax"
 "	      004f29dd    call 004D201Ch"
 "	      004f29e2    add esp,8"
@@ -6151,15 +6151,15 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 "	      004f2a0a    push eax"
 "	      004f2a0b    call 004D19BDh"
 "	      004f2a10    add esp,8"
-"	      004f2a13    mov [ebp-4],eax"
+"	      004f2a13    mov tempfix,eax"
 );
 // LINE 1957:
 	asm( 
-"	      004f2a16    mov eax,[ebp+8]"
+"	      004f2a16    mov eax,hd"
 "	      004f2a19    mov eax,[eax+0A4h]"
 "	      004f2a1f    add eax,24h"
 "	      004f2a22    push eax"
-"	      004f2a23    mov eax,[ebp-4]"
+"	      004f2a23    mov eax,tempfix"
 "	      004f2a26    push eax"
 "	      004f2a27    call 004D2004h"
 "	      004f2a2c    add esp,8"
@@ -6170,53 +6170,53 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1962:
 	asm( 
-"	      004f2a34    mov eax,[ebp+8]"
+"	      004f2a34    mov eax,hd"
 "	      004f2a37    cmp dword ptr [eax+4],0"
 "	      004f2a3b    jne near ptr 004F2ABDh"
 );
 // LINE 1964:
 	asm( 
-"	      004f2a41    mov eax,[ebp+8]"
+"	      004f2a41    mov eax,hd"
 "	      004f2a44    mov dword ptr [eax+11Ch],0"
 );
 // LINE 1965:
 	asm( 
-"	      004f2a4e    mov eax,[ebp+8]"
+"	      004f2a4e    mov eax,hd"
 "	      004f2a51    mov dword ptr [eax+114h],0"
 );
 // LINE 1966:
 	asm( 
-"	      004f2a5b    mov eax,[ebp+8]"
+"	      004f2a5b    mov eax,hd"
 "	      004f2a5e    mov dword ptr [eax+120h],0"
 );
 // LINE 1967:
 	asm( 
-"	      004f2a68    mov eax,[ebp+8]"
+"	      004f2a68    mov eax,hd"
 "	      004f2a6b    mov dword ptr [eax+118h],0"
 );
 // LINE 1968:
 	asm( 
-"	      004f2a75    mov eax,[ebp+8]"
+"	      004f2a75    mov eax,hd"
 "	      004f2a78    mov eax,[eax+114h]"
 "	      004f2a7e    push eax"
-"	      004f2a7f    mov eax,[ebp+8]"
+"	      004f2a7f    mov eax,hd"
 "	      004f2a82    mov eax,[eax+11Ch]"
 "	      004f2a88    push eax"
-"	      004f2a89    mov eax,[ebp+8]"
+"	      004f2a89    mov eax,hd"
 "	      004f2a8c    mov eax,[eax+10Ch]"
 "	      004f2a92    push eax"
-"	      004f2a93    lea eax,[ebp-44h]"
+"	      004f2a93    lea eax,matrix[0][0]"
 "	      004f2a96    push eax"
 "	      004f2a97    call 004F955Fh"
 "	      004f2a9c    add esp,10h"
 );
 // LINE 1969:
 	asm( 
-"	      004f2a9f    mov eax,[ebp+8]"
+"	      004f2a9f    mov eax,hd"
 "	      004f2aa2    mov eax,[eax+0A4h]"
 "	      004f2aa8    add eax,24h"
 "	      004f2aab    push eax"
-"	      004f2aac    lea eax,[ebp-44h]"
+"	      004f2aac    lea eax,matrix[0][0]"
 "	      004f2aaf    push eax"
 "	      004f2ab0    call 004D8C2Eh"
 "	      004f2ab5    add esp,8"
@@ -6227,62 +6227,62 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1974:
 	asm( 
-"	      004f2abd    mov eax,[ebp+8]"
+"	      004f2abd    mov eax,hd"
 "	      004f2ac0    test byte ptr [eax+8],1"
 "	      004f2ac4    je near ptr 004F2AD8h"
 );
 // LINE 1975:
 	asm( 
 "	      004f2aca    mov eax,ds:[607290h]"
-"	      004f2acf    mov ecx,[ebp+8]"
+"	      004f2acf    mov ecx,hd"
 "	      004f2ad2    add [ecx+11Ch],eax"
 );
 // LINE 1978:
 	asm( 
-"	      004f2ad8    mov eax,[ebp+8]"
+"	      004f2ad8    mov eax,hd"
 "	      004f2adb    mov eax,[eax+0A4h]"
 "	      004f2ae1    mov eax,[eax+1Ch]"
-"	      004f2ae4    mov ecx,[ebp+8]"
+"	      004f2ae4    mov ecx,hd"
 "	      004f2ae7    sub eax,[ecx+150h]"
-"	      004f2aed    mov [ebp-4],eax"
+"	      004f2aed    mov tempfix,eax"
 );
 // LINE 1979:
 	asm( 
 "	      004f2af0    mov eax,960000h"
-"	      004f2af5    sub eax,[ebp-4]"
-"	      004f2af8    mov [ebp-4],eax"
+"	      004f2af5    sub eax,tempfix"
+"	      004f2af8    mov tempfix,eax"
 );
 // LINE 1981:
 	asm( 
-"	      004f2afb    mov dword ptr [ebp-4Ch],0"
+"	      004f2afb    mov tempfix2,0"
 );
 // LINE 1982:
 	asm( 
-"	      004f2b02    cmp dword ptr [ebp-4],0"
+"	      004f2b02    cmp tempfix,0"
 "	      004f2b06    jle near ptr 004F2B48h"
-"	      004f2b0c    cmp dword ptr [ebp-4],960000h"
+"	      004f2b0c    cmp tempfix,960000h"
 "	      004f2b13    jge near ptr 004F2B48h"
 );
 // LINE 1984:
 	asm( 
 "	      004f2b19    push 960000h"
 "	      004f2b1e    mov eax,960000h"
-"	      004f2b23    sub eax,[ebp-4]"
+"	      004f2b23    sub eax,tempfix"
 "	      004f2b26    push eax"
 "	      004f2b27    call 004D19DFh"
 "	      004f2b2c    add esp,8"
-"	      004f2b2f    mov [ebp-4],eax"
+"	      004f2b2f    mov tempfix,eax"
 );
 // LINE 1985:
 	asm( 
-"	      004f2b32    mov eax,[ebp-4]"
+"	      004f2b32    mov eax,tempfix"
 "	      004f2b35    push eax"
-"	      004f2b36    mov eax,[ebp-50h]"
+"	      004f2b36    mov eax,max_pitch"
 "	      004f2b39    sar eax,3"
 "	      004f2b3c    push eax"
 "	      004f2b3d    call 004D19BDh"
 "	      004f2b42    add esp,8"
-"	      004f2b45    mov [ebp-4Ch],eax"
+"	      004f2b45    mov tempfix2,eax"
 );
 // LINE 1989:
 	asm( 
@@ -6291,34 +6291,34 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1991:
 	asm( 
-"	      004f2b55    mov eax,[ebp-50h]"
-"	      004f2b58    add eax,[ebp-4Ch]"
-"	      004f2b5b    mov ecx,[ebp+8]"
+"	      004f2b55    mov eax,max_pitch"
+"	      004f2b58    add eax,tempfix2"
+"	      004f2b5b    mov ecx,hd"
 "	      004f2b5e    cmp eax,[ecx+11Ch]"
 "	      004f2b64    jge near ptr 004F2B79h"
 );
 // LINE 1992:
 	asm( 
-"	      004f2b6a    mov eax,[ebp-50h]"
-"	      004f2b6d    add eax,[ebp-4Ch]"
-"	      004f2b70    mov ecx,[ebp+8]"
+"	      004f2b6a    mov eax,max_pitch"
+"	      004f2b6d    add eax,tempfix2"
+"	      004f2b70    mov ecx,hd"
 "	      004f2b73    mov [ecx+11Ch],eax"
 );
 // LINE 1993:
 	asm( 
-"	      004f2b79    mov eax,[ebp-50h]"
+"	      004f2b79    mov eax,max_pitch"
 "	      004f2b7c    neg eax"
-"	      004f2b7e    sub eax,[ebp-4Ch]"
-"	      004f2b81    mov ecx,[ebp+8]"
+"	      004f2b7e    sub eax,tempfix2"
+"	      004f2b81    mov ecx,hd"
 "	      004f2b84    cmp eax,[ecx+11Ch]"
 "	      004f2b8a    jle near ptr 004F2BA1h"
 );
 // LINE 1994:
 	asm( 
-"	      004f2b90    mov eax,[ebp-50h]"
+"	      004f2b90    mov eax,max_pitch"
 "	      004f2b93    neg eax"
-"	      004f2b95    sub eax,[ebp-4Ch]"
-"	      004f2b98    mov ecx,[ebp+8]"
+"	      004f2b95    sub eax,tempfix2"
+"	      004f2b98    mov ecx,hd"
 "	      004f2b9b    mov [ecx+11Ch],eax"
 );
 // LINE 1996:
@@ -6327,228 +6327,228 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 );
 // LINE 1998:
 	asm( 
-"	      004f2ba6    mov eax,[ebp-50h]"
+"	      004f2ba6    mov eax,max_pitch"
 "	      004f2ba9    sar eax,1"
-"	      004f2bac    mov ecx,[ebp-4Ch]"
+"	      004f2bac    mov ecx,tempfix2"
 "	      004f2baf    sar ecx,1"
 "	      004f2bb2    add eax,ecx"
-"	      004f2bb4    mov ecx,[ebp+8]"
+"	      004f2bb4    mov ecx,hd"
 "	      004f2bb7    cmp eax,[ecx+11Ch]"
 "	      004f2bbd    jge near ptr 004F2BDAh"
 );
 // LINE 1999:
 	asm( 
-"	      004f2bc3    mov eax,[ebp-50h]"
+"	      004f2bc3    mov eax,max_pitch"
 "	      004f2bc6    sar eax,1"
-"	      004f2bc9    mov ecx,[ebp-4Ch]"
+"	      004f2bc9    mov ecx,tempfix2"
 "	      004f2bcc    sar ecx,1"
 "	      004f2bcf    add eax,ecx"
-"	      004f2bd1    mov ecx,[ebp+8]"
+"	      004f2bd1    mov ecx,hd"
 "	      004f2bd4    mov [ecx+11Ch],eax"
 );
 // LINE 2000:
 	asm( 
-"	      004f2bda    mov eax,[ebp-50h]"
+"	      004f2bda    mov eax,max_pitch"
 "	      004f2bdd    sar eax,1"
 "	      004f2be0    neg eax"
-"	      004f2be2    mov ecx,[ebp-4Ch]"
+"	      004f2be2    mov ecx,tempfix2"
 "	      004f2be5    sar ecx,1"
 "	      004f2be8    sub eax,ecx"
-"	      004f2bea    mov ecx,[ebp+8]"
+"	      004f2bea    mov ecx,hd"
 "	      004f2bed    cmp eax,[ecx+11Ch]"
 "	      004f2bf3    jle near ptr 004F2C12h"
 );
 // LINE 2001:
 	asm( 
-"	      004f2bf9    mov eax,[ebp-50h]"
+"	      004f2bf9    mov eax,max_pitch"
 "	      004f2bfc    sar eax,1"
 "	      004f2bff    neg eax"
-"	      004f2c01    mov ecx,[ebp-4Ch]"
+"	      004f2c01    mov ecx,tempfix2"
 "	      004f2c04    sar ecx,1"
 "	      004f2c07    sub eax,ecx"
-"	      004f2c09    mov ecx,[ebp+8]"
+"	      004f2c09    mov ecx,hd"
 "	      004f2c0c    mov [ecx+11Ch],eax"
 );
 // LINE 2020:
 	asm( 
-"	      004f2c12    mov eax,[ebp+8]"
-"	      004f2c15    mov ecx,[ebp-48h]"
+"	      004f2c12    mov eax,hd"
+"	      004f2c15    mov ecx,htd"
 "	      004f2c18    mov ecx,[ecx+0Ch]"
 "	      004f2c1b    cmp [eax+114h],ecx"
 "	      004f2c21    jle near ptr 004F2C36h"
 );
 // LINE 2021:
 	asm( 
-"	      004f2c27    mov eax,[ebp-48h]"
+"	      004f2c27    mov eax,htd"
 "	      004f2c2a    mov eax,[eax+0Ch]"
-"	      004f2c2d    mov ecx,[ebp+8]"
+"	      004f2c2d    mov ecx,hd"
 "	      004f2c30    mov [ecx+114h],eax"
 );
 // LINE 2022:
 	asm( 
-"	      004f2c36    mov eax,[ebp-48h]"
+"	      004f2c36    mov eax,htd"
 "	      004f2c39    mov eax,[eax+0Ch]"
 "	      004f2c3c    neg eax"
-"	      004f2c3e    mov ecx,[ebp+8]"
+"	      004f2c3e    mov ecx,hd"
 "	      004f2c41    cmp eax,[ecx+114h]"
 "	      004f2c47    jle near ptr 004F2C5Eh"
 );
 // LINE 2023:
 	asm( 
-"	      004f2c4d    mov eax,[ebp-48h]"
+"	      004f2c4d    mov eax,htd"
 "	      004f2c50    mov eax,[eax+0Ch]"
 "	      004f2c53    neg eax"
-"	      004f2c55    mov ecx,[ebp+8]"
+"	      004f2c55    mov ecx,hd"
 "	      004f2c58    mov [ecx+114h],eax"
 );
 // LINE 2024:
 	asm( 
-"	      004f2c5e    mov eax,[ebp+8]"
+"	      004f2c5e    mov eax,hd"
 "	      004f2c61    mov eax,[eax+11Ch]"
-"	      004f2c67    mov [ebp-4],eax"
+"	      004f2c67    mov tempfix,eax"
 );
 // LINE 2025:
 	asm( 
-"	      004f2c6a    cmp dword ptr [ebp-4],0"
+"	      004f2c6a    cmp tempfix,0"
 "	      004f2c6e    jge near ptr 004F2C7Ch"
 );
 // LINE 2026:
 	asm( 
-"	      004f2c74    mov eax,[ebp-4]"
+"	      004f2c74    mov eax,tempfix"
 "	      004f2c77    neg eax"
-"	      004f2c79    mov [ebp-4],eax"
+"	      004f2c79    mov tempfix,eax"
 );
 // LINE 2027:
 	asm( 
-"	      004f2c7c    add dword ptr [ebp-4],12C0000h"
+"	      004f2c7c    add tempfix,12C0000h"
 );
 // LINE 2028:
 	asm( 
-"	      004f2c83    mov eax,[ebp+8]"
+"	      004f2c83    mov eax,hd"
 "	      004f2c86    cmp dword ptr [eax+114h],0"
 "	      004f2c8d    jle near ptr 004F2CB6h"
 );
 // LINE 2030:
 	asm( 
-"	      004f2c93    mov eax,[ebp+8]"
-"	      004f2c96    mov ecx,[ebp-4]"
+"	      004f2c93    mov eax,hd"
+"	      004f2c96    mov ecx,tempfix"
 "	      004f2c99    cmp [eax+114h],ecx"
 "	      004f2c9f    jle near ptr 004F2CB1h"
 );
 // LINE 2031:
 	asm( 
-"	      004f2ca5    mov eax,[ebp-4]"
-"	      004f2ca8    mov ecx,[ebp+8]"
+"	      004f2ca5    mov eax,tempfix"
+"	      004f2ca8    mov ecx,hd"
 "	      004f2cab    mov [ecx+114h],eax"
 );
 // LINE 2033:
 	asm( 
 "	      004f2cb1    jmp near ptr 004F2CE8h"
-"	      004f2cb6    mov eax,[ebp+8]"
+"	      004f2cb6    mov eax,hd"
 "	      004f2cb9    cmp dword ptr [eax+114h],0"
 "	      004f2cc0    jge near ptr 004F2CE8h"
 );
 // LINE 2035:
 	asm( 
-"	      004f2cc6    mov eax,[ebp+8]"
-"	      004f2cc9    mov ecx,[ebp-4]"
+"	      004f2cc6    mov eax,hd"
+"	      004f2cc9    mov ecx,tempfix"
 "	      004f2ccc    neg ecx"
 "	      004f2cce    cmp [eax+114h],ecx"
 "	      004f2cd4    jge near ptr 004F2CE8h"
 );
 // LINE 2036:
 	asm( 
-"	      004f2cda    mov eax,[ebp-4]"
+"	      004f2cda    mov eax,tempfix"
 "	      004f2cdd    neg eax"
-"	      004f2cdf    mov ecx,[ebp+8]"
+"	      004f2cdf    mov ecx,hd"
 "	      004f2ce2    mov [ecx+114h],eax"
 );
 // LINE 2040:
 	asm( 
-"	      004f2ce8    mov eax,[ebp+8]"
+"	      004f2ce8    mov eax,hd"
 "	      004f2ceb    test byte ptr [eax+8],1"
 "	      004f2cef    je near ptr 004F2D03h"
 );
 // LINE 2041:
 	asm( 
 "	      004f2cf5    mov eax,ds:[607268h]"
-"	      004f2cfa    mov ecx,[ebp+8]"
+"	      004f2cfa    mov ecx,hd"
 "	      004f2cfd    add [ecx+118h],eax"
 );
 // LINE 2044:
 	asm( 
-"	      004f2d03    mov eax,[ebp+8]"
-"	      004f2d06    mov ecx,[ebp-48h]"
+"	      004f2d03    mov eax,hd"
+"	      004f2d06    mov ecx,htd"
 "	      004f2d09    mov ecx,[ecx+10h]"
 "	      004f2d0c    cmp [eax+118h],ecx"
 "	      004f2d12    jle near ptr 004F2D27h"
 );
 // LINE 2045:
 	asm( 
-"	      004f2d18    mov eax,[ebp-48h]"
+"	      004f2d18    mov eax,htd"
 "	      004f2d1b    mov eax,[eax+10h]"
-"	      004f2d1e    mov ecx,[ebp+8]"
+"	      004f2d1e    mov ecx,hd"
 "	      004f2d21    mov [ecx+118h],eax"
 );
 // LINE 2046:
 	asm( 
-"	      004f2d27    mov eax,[ebp-48h]"
+"	      004f2d27    mov eax,htd"
 "	      004f2d2a    mov eax,[eax+10h]"
 "	      004f2d2d    neg eax"
-"	      004f2d2f    mov ecx,[ebp+8]"
+"	      004f2d2f    mov ecx,hd"
 "	      004f2d32    cmp eax,[ecx+118h]"
 "	      004f2d38    jle near ptr 004F2D4Fh"
 );
 // LINE 2047:
 	asm( 
-"	      004f2d3e    mov eax,[ebp-48h]"
+"	      004f2d3e    mov eax,htd"
 "	      004f2d41    mov eax,[eax+10h]"
 "	      004f2d44    neg eax"
-"	      004f2d46    mov ecx,[ebp+8]"
+"	      004f2d46    mov ecx,hd"
 "	      004f2d49    mov [ecx+118h],eax"
 );
 // LINE 2051:
 	asm( 
-"	      004f2d4f    mov eax,[ebp+8]"
+"	      004f2d4f    mov eax,hd"
 "	      004f2d52    test byte ptr [eax+8],1"
 "	      004f2d56    je near ptr 004F2D6Ah"
 );
 // LINE 2052:
 	asm( 
 "	      004f2d5c    mov eax,ds:[6071F0h]"
-"	      004f2d61    mov ecx,[ebp+8]"
+"	      004f2d61    mov ecx,hd"
 "	      004f2d64    add [ecx+120h],eax"
 );
 // LINE 2055:
 	asm( 
-"	      004f2d6a    mov eax,[ebp-48h]"
-"	      004f2d6d    mov ecx,[ebp+8]"
+"	      004f2d6a    mov eax,htd"
+"	      004f2d6d    mov ecx,hd"
 "	      004f2d70    mov ecx,[ecx+120h]"
 "	      004f2d76    cmp [eax+18h],ecx"
 "	      004f2d79    jge near ptr 004F2D8Eh"
 );
 // LINE 2056:
 	asm( 
-"	      004f2d7f    mov eax,[ebp-48h]"
+"	      004f2d7f    mov eax,htd"
 "	      004f2d82    mov eax,[eax+18h]"
-"	      004f2d85    mov ecx,[ebp+8]"
+"	      004f2d85    mov ecx,hd"
 "	      004f2d88    mov [ecx+120h],eax"
 );
 // LINE 2057:
 	asm( 
-"	      004f2d8e    mov eax,[ebp-48h]"
+"	      004f2d8e    mov eax,htd"
 "	      004f2d91    mov eax,[eax+18h]"
 "	      004f2d94    neg eax"
-"	      004f2d96    mov ecx,[ebp+8]"
+"	      004f2d96    mov ecx,hd"
 "	      004f2d99    cmp eax,[ecx+120h]"
 "	      004f2d9f    jle near ptr 004F2DB6h"
 );
 // LINE 2058:
 	asm( 
-"	      004f2da5    mov eax,[ebp-48h]"
+"	      004f2da5    mov eax,htd"
 "	      004f2da8    mov eax,[eax+18h]"
 "	      004f2dab    neg eax"
-"	      004f2dad    mov ecx,[ebp+8]"
+"	      004f2dad    mov ecx,hd"
 "	      004f2db0    mov [ecx+120h],eax"
 );
 // LINE 2060:
@@ -6559,107 +6559,107 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 "	      004f2dc1    call 004D19BDh"
 "	      004f2dc6    add esp,8"
 "	      004f2dc9    push eax"
-"	      004f2dca    mov eax,[ebp+8]"
+"	      004f2dca    mov eax,hd"
 "	      004f2dcd    mov eax,[eax+120h]"
 "	      004f2dd3    push eax"
 "	      004f2dd4    call 004D19BDh"
 "	      004f2dd9    add esp,8"
-"	      004f2ddc    mov ecx,[ebp+8]"
+"	      004f2ddc    mov ecx,hd"
 "	      004f2ddf    add [ecx+10Ch],eax"
 );
 // LINE 2062:
 	asm( 
-"	      004f2de5    mov eax,[ebp+8]"
+"	      004f2de5    mov eax,hd"
 "	      004f2de8    cmp dword ptr [eax+10Ch],0E100000h"
 "	      004f2df2    jle near ptr 004F2E0Ah"
 );
 // LINE 2063:
 	asm( 
-"	      004f2df8    mov eax,[ebp+8]"
+"	      004f2df8    mov eax,hd"
 "	      004f2dfb    sub dword ptr [eax+10Ch],0E100000h"
 );
 // LINE 2064:
 	asm( 
 "	      004f2e05    jmp near ptr 004F2E27h"
-"	      004f2e0a    mov eax,[ebp+8]"
+"	      004f2e0a    mov eax,hd"
 "	      004f2e0d    cmp dword ptr [eax+10Ch],0"
 "	      004f2e14    jge near ptr 004F2E27h"
 );
 // LINE 2065:
 	asm( 
-"	      004f2e1a    mov eax,[ebp+8]"
+"	      004f2e1a    mov eax,hd"
 "	      004f2e1d    add dword ptr [eax+10Ch],0E100000h"
 );
 // LINE 2068:
 	asm( 
-"	      004f2e27    mov eax,[ebp+8]"
+"	      004f2e27    mov eax,hd"
 "	      004f2e2a    mov eax,[eax+114h]"
-"	      004f2e30    mov [ebp-4],eax"
+"	      004f2e30    mov tempfix,eax"
 );
 // LINE 2069:
 	asm( 
-"	      004f2e33    cmp dword ptr [ebp-4],0"
+"	      004f2e33    cmp tempfix,0"
 "	      004f2e37    jge near ptr 004F2E45h"
 );
 // LINE 2070:
 	asm( 
-"	      004f2e3d    mov eax,[ebp-4]"
+"	      004f2e3d    mov eax,tempfix"
 "	      004f2e40    neg eax"
-"	      004f2e42    mov [ebp-4],eax"
+"	      004f2e42    mov tempfix,eax"
 );
 // LINE 2071:
 	asm( 
-"	      004f2e45    mov eax,[ebp+8]"
+"	      004f2e45    mov eax,hd"
 "	      004f2e48    mov eax,[eax+118h]"
-"	      004f2e4e    mov [ebp-4Ch],eax"
+"	      004f2e4e    mov tempfix2,eax"
 );
 // LINE 2072:
 	asm( 
-"	      004f2e51    cmp dword ptr [ebp-4Ch],0"
+"	      004f2e51    cmp tempfix2,0"
 "	      004f2e55    jge near ptr 004F2E63h"
 );
 // LINE 2073:
 	asm( 
-"	      004f2e5b    mov eax,[ebp-4Ch]"
+"	      004f2e5b    mov eax,tempfix2"
 "	      004f2e5e    neg eax"
-"	      004f2e60    mov [ebp-4Ch],eax"
+"	      004f2e60    mov tempfix2,eax"
 );
 // LINE 2074:
 	asm( 
-"	      004f2e63    mov eax,[ebp-4]"
-"	      004f2e66    cmp [ebp-4Ch],eax"
+"	      004f2e63    mov eax,tempfix"
+"	      004f2e66    cmp tempfix2,eax"
 "	      004f2e69    jle near ptr 004F2E81h"
 );
 // LINE 2075:
 	asm( 
-"	      004f2e6f    mov eax,[ebp+8]"
+"	      004f2e6f    mov eax,hd"
 "	      004f2e72    mov eax,[eax+118h]"
-"	      004f2e78    mov ecx,[ebp+8]"
+"	      004f2e78    mov ecx,hd"
 "	      004f2e7b    mov [ecx+114h],eax"
 );
 // LINE 2077:
 	asm( 
-"	      004f2e81    mov eax,[ebp+8]"
+"	      004f2e81    mov eax,hd"
 "	      004f2e84    mov eax,[eax+114h]"
 "	      004f2e8a    push eax"
-"	      004f2e8b    mov eax,[ebp+8]"
+"	      004f2e8b    mov eax,hd"
 "	      004f2e8e    mov eax,[eax+11Ch]"
 "	      004f2e94    push eax"
-"	      004f2e95    mov eax,[ebp+8]"
+"	      004f2e95    mov eax,hd"
 "	      004f2e98    mov eax,[eax+10Ch]"
 "	      004f2e9e    push eax"
-"	      004f2e9f    lea eax,[ebp-44h]"
+"	      004f2e9f    lea eax,matrix[0][0]"
 "	      004f2ea2    push eax"
 "	      004f2ea3    call 004F955Fh"
 "	      004f2ea8    add esp,10h"
 );
 // LINE 2078:
 	asm( 
-"	      004f2eab    mov eax,[ebp+8]"
+"	      004f2eab    mov eax,hd"
 "	      004f2eae    mov eax,[eax+0A4h]"
 "	      004f2eb4    add eax,24h"
 "	      004f2eb7    push eax"
-"	      004f2eb8    lea eax,[ebp-44h]"
+"	      004f2eb8    lea eax,matrix[0][0]"
 "	      004f2ebb    push eax"
 "	      004f2ebc    call 004D8C2Eh"
 "	      004f2ec1    add esp,8"
@@ -6690,24 +6690,24 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2090:
 	asm( 
-"	      004f2ed2    mov eax,[ebp+8]"
+"	      004f2ed2    mov eax,hd"
 "	      004f2ed5    mov eax,[eax+128h]"
-"	      004f2edb    mov [ebp-4],eax"
+"	      004f2edb    mov origFwdSpeed,eax"
 );
 // LINE 2093:
 	asm( 
-"	      004f2ede    mov eax,[ebp+8]"
+"	      004f2ede    mov eax,hd"
 "	      004f2ee1    cmp dword ptr [eax+4],6"
 "	      004f2ee5    jne near ptr 004F2F0Ah"
 );
 // LINE 2095:
 	asm( 
-"	      004f2eeb    mov eax,[ebp+8]"
+"	      004f2eeb    mov eax,hd"
 "	      004f2eee    mov dword ptr [eax+130h],0"
 );
 // LINE 2096:
 	asm( 
-"	      004f2ef8    mov eax,[ebp+8]"
+"	      004f2ef8    mov eax,hd"
 "	      004f2efb    mov dword ptr [eax+134h],0"
 );
 // LINE 2097:
@@ -6716,41 +6716,41 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2101:
 	asm( 
-"	      004f2f0a    mov eax,[ebp+8]"
+"	      004f2f0a    mov eax,hd"
 "	      004f2f0d    cmp dword ptr [eax+4],5"
 "	      004f2f11    jne near ptr 004F2F8Fh"
 );
 // LINE 2103:
 	asm( 
-"	      004f2f17    mov eax,[ebp+8]"
+"	      004f2f17    mov eax,hd"
 "	      004f2f1a    mov eax,[eax+168h]"
 "	      004f2f20    mov eax,[eax+28h]"
 "	      004f2f23    mov eax,[eax+18h]"
-"	      004f2f26    mov ecx,[ebp+8]"
+"	      004f2f26    mov ecx,hd"
 "	      004f2f29    mov ecx,[ecx+0A4h]"
 "	      004f2f2f    sub eax,[ecx+18h]"
-"	      004f2f32    mov ecx,[ebp+8]"
+"	      004f2f32    mov ecx,hd"
 "	      004f2f35    mov [ecx+130h],eax"
 );
 // LINE 2104:
 	asm( 
-"	      004f2f3b    mov eax,[ebp+8]"
+"	      004f2f3b    mov eax,hd"
 "	      004f2f3e    mov eax,[eax+168h]"
 "	      004f2f44    mov eax,[eax+28h]"
 "	      004f2f47    mov eax,[eax+20h]"
-"	      004f2f4a    mov ecx,[ebp+8]"
+"	      004f2f4a    mov ecx,hd"
 "	      004f2f4d    mov ecx,[ecx+0A4h]"
 "	      004f2f53    sub eax,[ecx+20h]"
-"	      004f2f56    mov ecx,[ebp+8]"
+"	      004f2f56    mov ecx,hd"
 "	      004f2f59    mov [ecx+134h],eax"
 );
 // LINE 2105:
 	asm( 
-"	      004f2f5f    mov eax,[ebp+8]"
+"	      004f2f5f    mov eax,hd"
 "	      004f2f62    mov eax,[eax+168h]"
 "	      004f2f68    mov eax,[eax+28h]"
 "	      004f2f6b    add eax,18h"
-"	      004f2f6e    mov ecx,[ebp+8]"
+"	      004f2f6e    mov ecx,hd"
 "	      004f2f71    mov ecx,[ecx+0A4h]"
 "	      004f2f77    add ecx,18h"
 "	      004f2f7a    mov edx,[eax]"
@@ -6766,11 +6766,11 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2110:
 	asm( 
-"	      004f2f8f    mov eax,[ebp+8]"
+"	      004f2f8f    mov eax,hd"
 "	      004f2f92    mov eax,[eax+0A4h]"
 "	      004f2f98    add eax,24h"
 "	      004f2f9b    push eax"
-"	      004f2f9c    mov eax,[ebp+8]"
+"	      004f2f9c    mov eax,hd"
 "	      004f2f9f    add eax,100h"
 "	      004f2fa4    push eax"
 "	      004f2fa5    push 5B4910h"
@@ -6779,12 +6779,12 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2111:
 	asm( 
-"	      004f2fb2    mov eax,[ebp+8]"
+"	      004f2fb2    mov eax,hd"
 "	      004f2fb5    mov dword ptr [eax+104h],0"
 );
 // LINE 2112:
 	asm( 
-"	      004f2fbf    mov eax,[ebp+8]"
+"	      004f2fbf    mov eax,hd"
 "	      004f2fc2    add eax,100h"
 "	      004f2fc7    push eax"
 "	      004f2fc8    call 004F4AD4h"
@@ -6792,7 +6792,7 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2116:
 	asm( 
-"	      004f2fd0    mov eax,[ebp+8]"
+"	      004f2fd0    mov eax,hd"
 "	      004f2fd3    cmp dword ptr [eax+110h],0"
 "	      004f2fda    jle near ptr 004F300Dh"
 );
@@ -6801,15 +6801,15 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 "	      004f2fe0    xor eax,eax"
 "	      004f2fe2    sub eax,ds:[5B4768h]"
 "	      004f2fe8    neg eax"
-"	      004f2fea    mov ecx,[ebp+8]"
+"	      004f2fea    mov ecx,hd"
 "	      004f2fed    sub [ecx+110h],eax"
 );
 // LINE 2119:
 	asm( 
-"	      004f2ff3    mov eax,[ebp+8]"
+"	      004f2ff3    mov eax,hd"
 "	      004f2ff6    mov eax,[eax+11Ch]"
 "	      004f2ffc    sar eax,3"
-"	      004f2fff    mov ecx,[ebp+8]"
+"	      004f2fff    mov ecx,hd"
 "	      004f3002    mov [ecx+128h],eax"
 );
 // LINE 2121:
@@ -6820,26 +6820,26 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2123:
 	asm( 
-"	      004f301a    mov eax,[ebp+8]"
-"	      004f301d    mov ecx,[ebp+8]"
+"	      004f301a    mov eax,hd"
+"	      004f301d    mov ecx,hd"
 "	      004f3020    mov ecx,[ecx+11Ch]"
 "	      004f3026    cmp [eax+128h],ecx"
 "	      004f302c    jge near ptr 004F3050h"
 );
 // LINE 2124:
 	asm( 
-"	      004f3032    mov eax,[ebp+8]"
+"	      004f3032    mov eax,hd"
 "	      004f3035    mov eax,[eax+11Ch]"
-"	      004f303b    mov ecx,[ebp+8]"
+"	      004f303b    mov ecx,hd"
 "	      004f303e    sub eax,[ecx+128h]"
 "	      004f3044    sar eax,5"
-"	      004f3047    mov ecx,[ebp+8]"
+"	      004f3047    mov ecx,hd"
 "	      004f304a    add [ecx+128h],eax"
 );
 // LINE 2125:
 	asm( 
-"	      004f3050    mov eax,[ebp+8]"
-"	      004f3053    mov ecx,[ebp+8]"
+"	      004f3050    mov eax,hd"
+"	      004f3053    mov ecx,hd"
 "	      004f3056    mov ecx,[ecx+11Ch]"
 "	      004f305c    cmp [eax+128h],ecx"
 "	      004f3062    jle near ptr 004F308Ch"
@@ -6847,14 +6847,14 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 // LINE 2126:
 	asm( 
 "	      004f3068    xor eax,eax"
-"	      004f306a    mov ecx,[ebp+8]"
+"	      004f306a    mov ecx,hd"
 "	      004f306d    mov ecx,[ecx+128h]"
-"	      004f3073    mov edx,[ebp+8]"
+"	      004f3073    mov edx,hd"
 "	      004f3076    sub ecx,[edx+11Ch]"
 "	      004f307c    sar ecx,5"
 "	      004f307f    sub eax,ecx"
 "	      004f3081    neg eax"
-"	      004f3083    mov ecx,[ebp+8]"
+"	      004f3083    mov ecx,hd"
 "	      004f3086    sub [ecx+128h],eax"
 );
 // LINE 2128:
@@ -6863,72 +6863,72 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 );
 // LINE 2130:
 	asm( 
-"	      004f3091    mov eax,[ebp+8]"
+"	      004f3091    mov eax,hd"
 "	      004f3094    mov eax,[eax+11Ch]"
 "	      004f309a    add eax,eax"
-"	      004f309c    mov ecx,[ebp+8]"
+"	      004f309c    mov ecx,hd"
 "	      004f309f    cmp eax,[ecx+128h]"
 "	      004f30a5    jle near ptr 004F30CBh"
 );
 // LINE 2131:
 	asm( 
-"	      004f30ab    mov eax,[ebp+8]"
+"	      004f30ab    mov eax,hd"
 "	      004f30ae    mov eax,[eax+11Ch]"
 "	      004f30b4    add eax,eax"
-"	      004f30b6    mov ecx,[ebp+8]"
+"	      004f30b6    mov ecx,hd"
 "	      004f30b9    sub eax,[ecx+128h]"
 "	      004f30bf    sar eax,5"
-"	      004f30c2    mov ecx,[ebp+8]"
+"	      004f30c2    mov ecx,hd"
 "	      004f30c5    add [ecx+128h],eax"
 );
 // LINE 2132:
 	asm( 
-"	      004f30cb    mov eax,[ebp+8]"
+"	      004f30cb    mov eax,hd"
 "	      004f30ce    mov eax,[eax+11Ch]"
 "	      004f30d4    add eax,eax"
-"	      004f30d6    mov ecx,[ebp+8]"
+"	      004f30d6    mov ecx,hd"
 "	      004f30d9    cmp eax,[ecx+128h]"
 "	      004f30df    jge near ptr 004F310Dh"
 );
 // LINE 2133:
 	asm( 
 "	      004f30e5    xor eax,eax"
-"	      004f30e7    mov ecx,[ebp+8]"
+"	      004f30e7    mov ecx,hd"
 "	      004f30ea    mov ecx,[ecx+128h]"
-"	      004f30f0    mov edx,[ebp+8]"
+"	      004f30f0    mov edx,hd"
 "	      004f30f3    mov edx,[edx+11Ch]"
 "	      004f30f9    add edx,edx"
 "	      004f30fb    sub ecx,edx"
 "	      004f30fd    sar ecx,4"
 "	      004f3100    sub eax,ecx"
 "	      004f3102    neg eax"
-"	      004f3104    mov ecx,[ebp+8]"
+"	      004f3104    mov ecx,hd"
 "	      004f3107    sub [ecx+128h],eax"
 );
 // LINE 2136:
 	asm( 
-"	      004f310d    mov eax,[ebp+8]"
+"	      004f310d    mov eax,hd"
 "	      004f3110    cmp dword ptr [eax+4],0"
 "	      004f3114    jne near ptr 004F3127h"
 );
 // LINE 2138:
 	asm( 
-"	      004f311a    mov eax,[ebp+8]"
+"	      004f311a    mov eax,hd"
 "	      004f311d    mov dword ptr [eax+128h],0"
 );
 // LINE 2142:
 	asm( 
-"	      004f3127    mov eax,[ebp+8]"
+"	      004f3127    mov eax,hd"
 "	      004f312a    mov eax,[eax+128h]"
-"	      004f3130    sub eax,[ebp-4]"
-"	      004f3133    mov ecx,[ebp+8]"
+"	      004f3130    sub eax,origFwdSpeed"
+"	      004f3133    mov ecx,hd"
 "	      004f3136    mov [ecx+12Ch],eax"
 );
 // LINE 2144:
 	asm( 
-"	      004f313c    mov eax,[ebp+8]"
+"	      004f313c    mov eax,hd"
 "	      004f313f    mov eax,[eax+128h]"
-"	      004f3145    mov [ebp-8],eax"
+"	      004f3145    mov velocity,eax"
 );
 // LINE 2147:
 	asm( 
@@ -6954,88 +6954,88 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 // LINE 2149:
 	asm( 
 "	      004f318d    push 0A0000h"
-"	      004f3192    mov eax,[ebp-8]"
+"	      004f3192    mov eax,velocity"
 "	      004f3195    push eax"
 "	      004f3196    call 004D19BDh"
 "	      004f319b    add esp,8"
-"	      004f319e    mov [ebp-8],eax"
+"	      004f319e    mov velocity,eax"
 );
 // LINE 2152:
 	asm( 
-"	      004f31a1    mov eax,[ebp-8]"
+"	      004f31a1    mov eax,velocity"
 "	      004f31a4    push eax"
 "	      004f31a5    call 00544760h"
 "	      004f31aa    add esp,4"
 );
 // LINE 2154:
 	asm( 
-"	      004f31ad    mov eax,[ebp-8]"
+"	      004f31ad    mov eax,velocity"
 "	      004f31b0    push eax"
-"	      004f31b1    mov eax,[ebp+8]"
+"	      004f31b1    mov eax,hd"
 "	      004f31b4    mov eax,[eax+100h]"
 "	      004f31ba    push eax"
 "	      004f31bb    call 004D19BDh"
 "	      004f31c0    add esp,8"
-"	      004f31c3    mov ecx,[ebp+8]"
+"	      004f31c3    mov ecx,hd"
 "	      004f31c6    mov [ecx+0E0h],eax"
 );
 // LINE 2155:
 	asm( 
-"	      004f31cc    mov eax,[ebp-8]"
+"	      004f31cc    mov eax,velocity"
 "	      004f31cf    push eax"
-"	      004f31d0    mov eax,[ebp+8]"
+"	      004f31d0    mov eax,hd"
 "	      004f31d3    mov eax,[eax+108h]"
 "	      004f31d9    push eax"
 "	      004f31da    call 004D19BDh"
 "	      004f31df    add esp,8"
-"	      004f31e2    mov ecx,[ebp+8]"
+"	      004f31e2    mov ecx,hd"
 "	      004f31e5    mov [ecx+0E8h],eax"
 );
 // LINE 2158:
 	asm( 
 "	      004f31eb    xor ebx,ebx"
 "	      004f31ed    push 7D00h"
-"	      004f31f2    mov eax,[ebp+8]"
+"	      004f31f2    mov eax,hd"
 "	      004f31f5    mov eax,[eax+118h]"
 "	      004f31fb    push eax"
 "	      004f31fc    call 004D19BDh"
 "	      004f3201    add esp,8"
 "	      004f3204    push eax"
-"	      004f3205    mov eax,[ebp+8]"
+"	      004f3205    mov eax,hd"
 "	      004f3208    mov eax,[eax+108h]"
 "	      004f320e    push eax"
 "	      004f320f    call 004D19BDh"
 "	      004f3214    add esp,8"
 "	      004f3217    sub ebx,eax"
 "	      004f3219    neg ebx"
-"	      004f321b    mov eax,[ebp+8]"
+"	      004f321b    mov eax,hd"
 "	      004f321e    sub [eax+0E0h],ebx"
 );
 // LINE 2159:
 	asm( 
 "	      004f3224    push 7D00h"
-"	      004f3229    mov eax,[ebp+8]"
+"	      004f3229    mov eax,hd"
 "	      004f322c    mov eax,[eax+118h]"
 "	      004f3232    push eax"
 "	      004f3233    call 004D19BDh"
 "	      004f3238    add esp,8"
 "	      004f323b    push eax"
-"	      004f323c    mov eax,[ebp+8]"
+"	      004f323c    mov eax,hd"
 "	      004f323f    mov eax,[eax+100h]"
 "	      004f3245    push eax"
 "	      004f3246    call 004D19BDh"
 "	      004f324b    add esp,8"
-"	      004f324e    mov ecx,[ebp+8]"
+"	      004f324e    mov ecx,hd"
 "	      004f3251    add [ecx+0E8h],eax"
 );
 // LINE 2161:
 	asm( 
-"	      004f3257    mov eax,[ebp+8]"
+"	      004f3257    mov eax,hd"
 "	      004f325a    add eax,0E0h"
 "	      004f325f    push eax"
 "	      004f3260    call 004CA0C0h"
 "	      004f3265    add esp,4"
-"	      004f3268    mov ecx,[ebp+8]"
+"	      004f3268    mov ecx,hd"
 "	      004f326b    mov [ecx+0DCh],eax"
 );
 // LINE 2163:
@@ -7046,12 +7046,12 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 "	      004f327c    call 004D19BDh"
 "	      004f3281    add esp,8"
 "	      004f3284    push eax"
-"	      004f3285    mov eax,[ebp+8]"
+"	      004f3285    mov eax,hd"
 "	      004f3288    mov eax,[eax+0E0h]"
 "	      004f328e    push eax"
 "	      004f328f    call 004D19BDh"
 "	      004f3294    add esp,8"
-"	      004f3297    mov ecx,[ebp+8]"
+"	      004f3297    mov ecx,hd"
 "	      004f329a    mov [ecx+130h],eax"
 );
 // LINE 2165:
@@ -7062,27 +7062,27 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 "	      004f32ab    call 004D19BDh"
 "	      004f32b0    add esp,8"
 "	      004f32b3    push eax"
-"	      004f32b4    mov eax,[ebp+8]"
+"	      004f32b4    mov eax,hd"
 "	      004f32b7    mov eax,[eax+0E8h]"
 "	      004f32bd    push eax"
 "	      004f32be    call 004D19BDh"
 "	      004f32c3    add esp,8"
-"	      004f32c6    mov ecx,[ebp+8]"
+"	      004f32c6    mov ecx,hd"
 "	      004f32c9    mov [ecx+134h],eax"
 );
 // LINE 2167:
 	asm( 
-"	      004f32cf    mov eax,[ebp+8]"
+"	      004f32cf    mov eax,hd"
 "	      004f32d2    mov eax,[eax+134h]"
-"	      004f32d8    mov ecx,[ebp+8]"
+"	      004f32d8    mov ecx,hd"
 "	      004f32db    mov ecx,[ecx+0A4h]"
 "	      004f32e1    add [ecx+20h],eax"
 );
 // LINE 2168:
 	asm( 
-"	      004f32e4    mov eax,[ebp+8]"
+"	      004f32e4    mov eax,hd"
 "	      004f32e7    mov eax,[eax+130h]"
-"	      004f32ed    mov ecx,[ebp+8]"
+"	      004f32ed    mov ecx,hd"
 "	      004f32f0    mov ecx,[ecx+0A4h]"
 "	      004f32f6    add [ecx+18h],eax"
 );
@@ -7113,30 +7113,30 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2182:
 	asm( 
-"	      004f3307    mov eax,[ebp+8]"
+"	      004f3307    mov eax,hd"
 "	      004f330a    mov eax,[eax]"
 "	      004f330c    mov ecx,eax"
 "	      004f330e    lea eax,[eax+eax*4]"
 "	      004f3311    lea eax,[ecx+eax*2]"
 "	      004f3314    lea eax,[eax*8+5B4978h]"
-"	      004f331b    mov [ebp-0Ch],eax"
+"	      004f331b    mov htd,eax"
 );
 // LINE 2187:
 	asm( 
-"	      004f331e    mov eax,[ebp+8]"
+"	      004f331e    mov eax,hd"
 "	      004f3321    push eax"
 "	      004f3322    call 004F5139h"
 "	      004f3327    add esp,4"
-"	      004f332a    mov ecx,[ebp+8]"
+"	      004f332a    mov ecx,hd"
 "	      004f332d    mov [ecx+150h],eax"
 );
 // LINE 2189:
 	asm( 
-"	      004f3333    mov eax,[ebp+8]"
+"	      004f3333    mov eax,hd"
 "	      004f3336    push eax"
 "	      004f3337    call 004F517Dh"
 "	      004f333c    add esp,4"
-"	      004f333f    mov ecx,[ebp+8]"
+"	      004f333f    mov ecx,hd"
 "	      004f3342    mov [ecx+154h],eax"
 );
 // LINE 2193:
@@ -7146,46 +7146,46 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f3350    sar ecx,2"
 "	      004f3353    sub eax,ecx"
 "	      004f3355    neg eax"
-"	      004f3357    mov ecx,[ebp+8]"
+"	      004f3357    mov ecx,hd"
 "	      004f335a    sub [ecx+124h],eax"
 );
 // LINE 2196:
 	asm( 
-"	      004f3360    mov eax,[ebp+8]"
+"	      004f3360    mov eax,hd"
 "	      004f3363    mov eax,[eax+18h]"
 "	      004f3366    and eax,0FFh"
 "	      004f336b    shl eax,8"
-"	      004f336e    mov ecx,[ebp+8]"
+"	      004f336e    mov ecx,hd"
 "	      004f3371    mov ecx,[ecx+1Ch]"
 "	      004f3374    and ecx,0FFh"
 "	      004f337a    xor edx,edx"
 "	      004f337c    mov dl,[eax+ecx+66EB10h]"
-"	      004f3383    mov [ebp-8],edx"
+"	      004f3383    mov texid,edx"
 );
 // LINE 2197:
 	asm( 
-"	      004f3386    cmp dword ptr [ebp-8],0"
+"	      004f3386    cmp texid,0"
 "	      004f338a    jl near ptr 004F339Ah"
-"	      004f3390    cmp dword ptr [ebp-8],5"
+"	      004f3390    cmp texid,5"
 "	      004f3394    jl near ptr 004F33AEh"
-"	      004f339a    cmp dword ptr [ebp-8],5"
+"	      004f339a    cmp texid,5"
 "	      004f339e    jl near ptr 004F33E5h"
-"	      004f33a4    cmp dword ptr [ebp-8],0Ah"
+"	      004f33a4    cmp texid,0Ah"
 "	      004f33a8    jge near ptr 004F33E5h"
-"	      004f33ae    mov eax,[ebp+8]"
-"	      004f33b1    mov ecx,[ebp+8]"
+"	      004f33ae    mov eax,hd"
+"	      004f33b1    mov ecx,hd"
 "	      004f33b4    mov ecx,[ecx+154h]"
 "	      004f33ba    cmp [eax+150h],ecx"
 "	      004f33c0    jl near ptr 004F33E5h"
 );
 // LINE 2199:
 	asm( 
-"	      004f33c6    mov eax,[ebp+8]"
+"	      004f33c6    mov eax,hd"
 "	      004f33c9    mov dword ptr [eax+13Ch],0"
 );
 // LINE 2200:
 	asm( 
-"	      004f33d3    mov eax,[ebp+8]"
+"	      004f33d3    mov eax,hd"
 "	      004f33d6    mov dword ptr [eax+174h],1"
 );
 // LINE 2202:
@@ -7194,15 +7194,15 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2204:
 	asm( 
-"	      004f33e5    mov eax,[ebp+8]"
+"	      004f33e5    mov eax,hd"
 "	      004f33e8    mov dword ptr [eax+174h],0"
 );
 // LINE 2208:
 	asm( 
-"	      004f33f2    mov eax,[ebp+8]"
+"	      004f33f2    mov eax,hd"
 "	      004f33f5    cmp dword ptr [eax+4],5"
 "	      004f33f9    je near ptr 004F340Ch"
-"	      004f33ff    mov eax,[ebp+8]"
+"	      004f33ff    mov eax,hd"
 "	      004f3402    cmp dword ptr [eax+4],6"
 "	      004f3406    jne near ptr 004F3411h"
 );
@@ -7212,34 +7212,34 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2213:
 	asm( 
-"	      004f3411    mov eax,[ebp+8]"
+"	      004f3411    mov eax,hd"
 "	      004f3414    cmp dword ptr [eax+0Ch],0"
 "	      004f3418    jle near ptr 004F358Ah"
 );
 // LINE 2216:
 	asm( 
-"	      004f341e    mov eax,[ebp+8]"
+"	      004f341e    mov eax,hd"
 "	      004f3421    mov eax,[eax+328h]"
 "	      004f3427    push eax"
-"	      004f3428    mov eax,[ebp-0Ch]"
+"	      004f3428    mov eax,htd"
 "	      004f342b    mov eax,[eax+2Ch]"
 "	      004f342e    shl eax,2"
 "	      004f3431    push eax"
 "	      004f3432    call 004D19BDh"
 "	      004f3437    add esp,8"
-"	      004f343a    mov [ebp-4],eax"
+"	      004f343a    mov yrate,eax"
 );
 // LINE 2218:
 	asm( 
-"	      004f343d    mov eax,[ebp+8]"
-"	      004f3440    mov ecx,[ebp-4]"
+"	      004f343d    mov eax,hd"
+"	      004f3440    mov ecx,yrate"
 "	      004f3443    cmp [eax+124h],ecx"
 "	      004f3449    jle near ptr 004F345Bh"
 );
 // LINE 2220:
 	asm( 
-"	      004f344f    mov eax,[ebp-4]"
-"	      004f3452    mov ecx,[ebp+8]"
+"	      004f344f    mov eax,yrate"
+"	      004f3452    mov ecx,hd"
 "	      004f3455    mov [ecx+124h],eax"
 );
 // LINE 2225:
@@ -7265,39 +7265,39 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2227:
 	asm( 
 "	      004f349e    push 0A0000h"
-"	      004f34a3    mov eax,[ebp+8]"
+"	      004f34a3    mov eax,hd"
 "	      004f34a6    mov eax,[eax+124h]"
 "	      004f34ac    push eax"
 "	      004f34ad    call 004D19BDh"
 "	      004f34b2    add esp,8"
-"	      004f34b5    mov ecx,[ebp+8]"
+"	      004f34b5    mov ecx,hd"
 "	      004f34b8    mov [ecx+124h],eax"
 );
 // LINE 2231:
 	asm( 
-"	      004f34be    mov eax,[ebp+8]"
+"	      004f34be    mov eax,hd"
 "	      004f34c1    cmp dword ptr [eax+148h],12Ch"
 "	      004f34cb    jge near ptr 004F3504h"
 );
 // LINE 2233:
 	asm( 
-"	      004f34d1    mov eax,[ebp+8]"
+"	      004f34d1    mov eax,hd"
 "	      004f34d4    add dword ptr [eax+148h],4"
 );
 // LINE 2235:
 	asm( 
-"	      004f34db    mov eax,[ebp+8]"
+"	      004f34db    mov eax,hd"
 "	      004f34de    test byte ptr [eax+8],1"
 "	      004f34e2    je near ptr 004F34F2h"
 );
 // LINE 2237:
 	asm( 
-"	      004f34e8    mov eax,[ebp+8]"
+"	      004f34e8    mov eax,hd"
 "	      004f34eb    add dword ptr [eax+148h],14h"
 );
 // LINE 2240:
 	asm( 
-"	      004f34f2    mov eax,[ebp+8]"
+"	      004f34f2    mov eax,hd"
 "	      004f34f5    mov dword ptr [eax+124h],0"
 );
 // LINE 2242:
@@ -7309,56 +7309,56 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f3504    mov eax,ds:[5B4768h]"
 "	      004f3509    add eax,eax"
 "	      004f350b    push eax"
-"	      004f350c    mov eax,[ebp-0Ch]"
+"	      004f350c    mov eax,htd"
 "	      004f350f    mov eax,[eax+2Ch]"
 "	      004f3512    push eax"
 "	      004f3513    call 004D19BDh"
 "	      004f3518    add esp,8"
-"	      004f351b    mov [ebp-4],eax"
+"	      004f351b    mov yrate,eax"
 );
 // LINE 2246:
 	asm( 
-"	      004f351e    mov eax,[ebp+8]"
+"	      004f351e    mov eax,hd"
 "	      004f3521    mov eax,[eax+328h]"
 "	      004f3527    push eax"
-"	      004f3528    mov eax,[ebp-4]"
+"	      004f3528    mov eax,yrate"
 "	      004f352b    push eax"
 "	      004f352c    call 004D19BDh"
 "	      004f3531    add esp,8"
-"	      004f3534    mov [ebp-4],eax"
+"	      004f3534    mov yrate,eax"
 );
 // LINE 2247:
 	asm( 
 "	      004f3537    mov eax,ds:[5B4768h]"
 "	      004f353c    add eax,eax"
 "	      004f353e    push eax"
-"	      004f353f    mov eax,[ebp-0Ch]"
+"	      004f353f    mov eax,htd"
 "	      004f3542    mov eax,[eax+2Ch]"
 "	      004f3545    push eax"
 "	      004f3546    call 004D19BDh"
 "	      004f354b    add esp,8"
-"	      004f354e    mov ecx,[ebp+8]"
+"	      004f354e    mov ecx,hd"
 "	      004f3551    add [ecx+124h],eax"
 );
 // LINE 2251:
 	asm( 
-"	      004f3557    mov eax,[ebp+8]"
+"	      004f3557    mov eax,hd"
 "	      004f355a    mov eax,[eax+0A4h]"
 "	      004f3560    mov eax,[eax+1Ch]"
-"	      004f3563    mov ecx,[ebp+8]"
+"	      004f3563    mov ecx,hd"
 "	      004f3566    sub eax,[ecx+150h]"
 "	      004f356c    cmp eax,ds:[5B48F4h]"
 "	      004f3572    jle near ptr 004F3585h"
 );
 // LINE 2252:
 	asm( 
-"	      004f3578    mov eax,[ebp+8]"
+"	      004f3578    mov eax,hd"
 "	      004f357b    mov dword ptr [eax+124h],0"
 );
 // LINE 2254:
 	asm( 
 "	      004f3585    jmp near ptr 004F3804h"
-"	      004f358a    mov eax,[ebp+8]"
+"	      004f358a    mov eax,hd"
 "	      004f358d    cmp dword ptr [eax+0Ch],0"
 "	      004f3591    jge near ptr 004F3709h"
 );
@@ -7374,7 +7374,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f35ac    add esp,8"
 "	      004f35af    sub ebx,eax"
 "	      004f35b1    neg ebx"
-"	      004f35b3    mov eax,[ebp+8]"
+"	      004f35b3    mov eax,hd"
 "	      004f35b6    sub [eax+124h],ebx"
 );
 // LINE 2263:
@@ -7382,7 +7382,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f35bc    mov eax,ds:[5B48D0h]"
 "	      004f35c1    shl eax,2"
 "	      004f35c4    neg eax"
-"	      004f35c6    mov ecx,[ebp+8]"
+"	      004f35c6    mov ecx,hd"
 "	      004f35c9    cmp eax,[ecx+124h]"
 "	      004f35cf    jle near ptr 004F35E8h"
 );
@@ -7391,38 +7391,38 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f35d5    mov eax,ds:[5B48D0h]"
 "	      004f35da    shl eax,2"
 "	      004f35dd    neg eax"
-"	      004f35df    mov ecx,[ebp+8]"
+"	      004f35df    mov ecx,hd"
 "	      004f35e2    mov [ecx+124h],eax"
 );
 // LINE 2272:
 	asm( 
-"	      004f35e8    mov eax,[ebp+8]"
+"	      004f35e8    mov eax,hd"
 "	      004f35eb    cmp dword ptr [eax+320h],0"
 "	      004f35f2    jne near ptr 004F364Fh"
-"	      004f35f8    mov eax,[ebp+8]"
+"	      004f35f8    mov eax,hd"
 "	      004f35fb    cmp dword ptr [eax+128h],0"
 "	      004f3602    jle near ptr 004F364Fh"
-"	      004f3608    mov eax,[ebp+8]"
+"	      004f3608    mov eax,hd"
 "	      004f360b    cmp dword ptr [eax+12Ch],0"
 "	      004f3612    jge near ptr 004F364Fh"
 );
 // LINE 2274:
 	asm( 
 "	      004f3618    xor eax,eax"
-"	      004f361a    mov ecx,[ebp+8]"
+"	      004f361a    mov ecx,hd"
 "	      004f361d    mov ecx,[ecx+12Ch]"
 "	      004f3623    add ecx,ecx"
 "	      004f3625    sub eax,ecx"
 "	      004f3627    neg eax"
-"	      004f3629    mov ecx,[ebp+8]"
+"	      004f3629    mov ecx,hd"
 "	      004f362c    sub [ecx+124h],eax"
 );
 // LINE 2275:
 	asm( 
-"	      004f3632    mov eax,[ebp+8]"
+"	      004f3632    mov eax,hd"
 "	      004f3635    cmp dword ptr [eax+124h],0"
 "	      004f363c    jle near ptr 004F364Fh"
-"	      004f3642    mov eax,[ebp+8]"
+"	      004f3642    mov eax,hd"
 "	      004f3645    mov dword ptr [eax+124h],0"
 );
 // LINE 2280:
@@ -7448,36 +7448,36 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2282:
 	asm( 
 "	      004f3692    push 0A0000h"
-"	      004f3697    mov eax,[ebp+8]"
+"	      004f3697    mov eax,hd"
 "	      004f369a    mov eax,[eax+124h]"
 "	      004f36a0    push eax"
 "	      004f36a1    call 004D19BDh"
 "	      004f36a6    add esp,8"
 "	      004f36a9    neg eax"
-"	      004f36ab    mov ecx,[ebp+8]"
+"	      004f36ab    mov ecx,hd"
 "	      004f36ae    mov [ecx+124h],eax"
 );
 // LINE 2287:
 	asm( 
-"	      004f36b4    mov eax,[ebp+8]"
+"	      004f36b4    mov eax,hd"
 "	      004f36b7    mov eax,[eax+0A4h]"
-"	      004f36bd    mov ecx,[ebp+8]"
+"	      004f36bd    mov ecx,hd"
 "	      004f36c0    mov ecx,[ecx+154h]"
 "	      004f36c6    cmp [eax+1Ch],ecx"
 "	      004f36c9    jle near ptr 004F36F7h"
-"	      004f36cf    mov eax,[ebp+8]"
+"	      004f36cf    mov eax,hd"
 "	      004f36d2    mov eax,[eax+0A4h]"
-"	      004f36d8    mov ecx,[ebp+8]"
+"	      004f36d8    mov ecx,hd"
 "	      004f36db    mov ecx,[ecx+150h]"
 "	      004f36e1    cmp [eax+1Ch],ecx"
 "	      004f36e4    jle near ptr 004F36F7h"
-"	      004f36ea    mov eax,[ebp+8]"
+"	      004f36ea    mov eax,hd"
 "	      004f36ed    cmp dword ptr [eax+4],0"
 "	      004f36f1    jne near ptr 004F3704h"
 );
 // LINE 2289:
 	asm( 
-"	      004f36f7    mov eax,[ebp+8]"
+"	      004f36f7    mov eax,hd"
 "	      004f36fa    mov dword ptr [eax+124h],0"
 );
 // LINE 2292:
@@ -7486,14 +7486,14 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2295:
 	asm( 
-"	      004f3709    mov eax,[ebp+8]"
+"	      004f3709    mov eax,hd"
 "	      004f370c    cmp dword ptr [eax+124h],0"
 "	      004f3713    jle near ptr 004F3761h"
 );
 // LINE 2297:
 	asm( 
 "	      004f3719    xor ebx,ebx"
-"	      004f371b    mov eax,[ebp+8]"
+"	      004f371b    mov eax,hd"
 "	      004f371e    mov eax,[eax+124h]"
 "	      004f3724    push eax"
 "	      004f3725    push 0CCCh"
@@ -7501,28 +7501,28 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f372f    add esp,8"
 "	      004f3732    sub ebx,eax"
 "	      004f3734    neg ebx"
-"	      004f3736    mov eax,[ebp+8]"
+"	      004f3736    mov eax,hd"
 "	      004f3739    sub [eax+124h],ebx"
 );
 // LINE 2298:
 	asm( 
-"	      004f373f    mov eax,[ebp+8]"
+"	      004f373f    mov eax,hd"
 "	      004f3742    cmp dword ptr [eax+124h],0"
 "	      004f3749    jge near ptr 004F375Ch"
-"	      004f374f    mov eax,[ebp+8]"
+"	      004f374f    mov eax,hd"
 "	      004f3752    mov dword ptr [eax+124h],0"
 );
 // LINE 2300:
 	asm( 
 "	      004f375c    jmp near ptr 004F37B4h"
-"	      004f3761    mov eax,[ebp+8]"
+"	      004f3761    mov eax,hd"
 "	      004f3764    cmp dword ptr [eax+124h],0"
 "	      004f376b    jge near ptr 004F37B4h"
 );
 // LINE 2302:
 	asm( 
 "	      004f3771    xor ebx,ebx"
-"	      004f3773    mov eax,[ebp+8]"
+"	      004f3773    mov eax,hd"
 "	      004f3776    mov eax,[eax+124h]"
 "	      004f377c    push eax"
 "	      004f377d    push 1999h"
@@ -7530,72 +7530,72 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 "	      004f3787    add esp,8"
 "	      004f378a    sub ebx,eax"
 "	      004f378c    neg ebx"
-"	      004f378e    mov eax,[ebp+8]"
+"	      004f378e    mov eax,hd"
 "	      004f3791    sub [eax+124h],ebx"
 );
 // LINE 2303:
 	asm( 
-"	      004f3797    mov eax,[ebp+8]"
+"	      004f3797    mov eax,hd"
 "	      004f379a    cmp dword ptr [eax+124h],0"
 "	      004f37a1    jle near ptr 004F37B4h"
-"	      004f37a7    mov eax,[ebp+8]"
+"	      004f37a7    mov eax,hd"
 "	      004f37aa    mov dword ptr [eax+124h],0"
 );
 // LINE 2308:
 	asm( 
-"	      004f37b4    mov eax,[ebp+8]"
+"	      004f37b4    mov eax,hd"
 "	      004f37b7    mov eax,[eax+0A4h]"
-"	      004f37bd    mov ecx,[ebp+8]"
+"	      004f37bd    mov ecx,hd"
 "	      004f37c0    mov ecx,[ecx+154h]"
 "	      004f37c6    cmp [eax+1Ch],ecx"
 "	      004f37c9    jle near ptr 004F37F7h"
-"	      004f37cf    mov eax,[ebp+8]"
+"	      004f37cf    mov eax,hd"
 "	      004f37d2    mov eax,[eax+0A4h]"
-"	      004f37d8    mov ecx,[ebp+8]"
+"	      004f37d8    mov ecx,hd"
 "	      004f37db    mov ecx,[ecx+150h]"
 "	      004f37e1    cmp [eax+1Ch],ecx"
 "	      004f37e4    jle near ptr 004F37F7h"
-"	      004f37ea    mov eax,[ebp+8]"
+"	      004f37ea    mov eax,hd"
 "	      004f37ed    cmp dword ptr [eax+4],0"
 "	      004f37f1    jne near ptr 004F3804h"
 );
 // LINE 2309:
 	asm( 
-"	      004f37f7    mov eax,[ebp+8]"
+"	      004f37f7    mov eax,hd"
 "	      004f37fa    mov dword ptr [eax+124h],0"
 );
 // LINE 2313:
 	asm( 
 "	      004f3804    mov eax,ds:[5B4768h]"
 "	      004f3809    push eax"
-"	      004f380a    mov eax,[ebp+8]"
+"	      004f380a    mov eax,hd"
 "	      004f380d    mov eax,[eax+124h]"
 "	      004f3813    push eax"
 "	      004f3814    call 004D19BDh"
 "	      004f3819    add esp,8"
-"	      004f381c    mov ecx,[ebp+8]"
+"	      004f381c    mov ecx,hd"
 "	      004f381f    mov ecx,[ecx+0A4h]"
 "	      004f3825    add [ecx+1Ch],eax"
 );
 // LINE 2314:
 	asm( 
-"	      004f3828    mov eax,[ebp+8]"
+"	      004f3828    mov eax,hd"
 "	      004f382b    mov eax,[eax+0A4h]"
 "	      004f3831    mov eax,[eax+1Ch]"
-"	      004f3834    mov ecx,[ebp+8]"
+"	      004f3834    mov ecx,hd"
 "	      004f3837    sub eax,[ecx+150h]"
-"	      004f383d    mov ecx,[ebp+8]"
+"	      004f383d    mov ecx,hd"
 "	      004f3840    mov [ecx+138h],eax"
 );
 // LINE 2316:
 	asm( 
-"	      004f3846    mov eax,[ebp+8]"
+"	      004f3846    mov eax,hd"
 "	      004f3849    cmp dword ptr [eax+4],0"
 "	      004f384d    jne near ptr 004F38C9h"
 );
 // LINE 2318:
 	asm( 
-"	      004f3853    mov eax,[ebp+8]"
+"	      004f3853    mov eax,hd"
 "	      004f3856    cmp dword ptr [eax+0Ch],0"
 "	      004f385a    jle near ptr 004F38C4h"
 );
@@ -7610,7 +7610,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2322:
 	asm( 
 "	      004f3872    push 0"
-"	      004f3874    mov eax,[ebp+8]"
+"	      004f3874    mov eax,hd"
 "	      004f3877    mov eax,[eax+0A4h]"
 "	      004f387d    add eax,18h"
 "	      004f3880    push eax"
@@ -7620,19 +7620,19 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2324:
 	asm( 
-"	      004f388b    mov eax,[ebp+8]"
+"	      004f388b    mov eax,hd"
 "	      004f388e    test byte ptr [eax+8],1"
 "	      004f3892    je near ptr 004F38BAh"
 );
 // LINE 2326:
 	asm( 
-"	      004f3898    mov eax,[ebp+8]"
+"	      004f3898    mov eax,hd"
 "	      004f389b    cmp dword ptr [eax+148h],12Ch"
 "	      004f38a5    jl near ptr 004F38B5h"
 );
 // LINE 2327:
 	asm( 
-"	      004f38ab    mov eax,[ebp+8]"
+"	      004f38ab    mov eax,hd"
 "	      004f38ae    mov dword ptr [eax+4],1"
 );
 // LINE 2329:
@@ -7641,7 +7641,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2330:
 	asm( 
-"	      004f38ba    mov eax,[ebp+8]"
+"	      004f38ba    mov eax,hd"
 "	      004f38bd    mov dword ptr [eax+4],4"
 );
 // LINE 2335:
@@ -7650,38 +7650,38 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2340:
 	asm( 
-"	      004f38c9    mov eax,[ebp+8]"
+"	      004f38c9    mov eax,hd"
 "	      004f38cc    cmp dword ptr [eax+13Ch],1"
 "	      004f38d3    jne near ptr 004F3A0Dh"
-"	      004f38d9    mov eax,[ebp+8]"
+"	      004f38d9    mov eax,hd"
 "	      004f38dc    mov eax,[eax+0A4h]"
-"	      004f38e2    mov ecx,[ebp+8]"
+"	      004f38e2    mov ecx,hd"
 "	      004f38e5    mov ecx,[ecx+150h]"
 "	      004f38eb    add ecx,10000h"
 "	      004f38f1    cmp [eax+1Ch],ecx"
 "	      004f38f4    jge near ptr 004F3A0Dh"
-"	      004f38fa    mov eax,[ebp+8]"
+"	      004f38fa    mov eax,hd"
 "	      004f38fd    mov eax,[eax+11Ch]"
 "	      004f3903    cdq"
 "	      004f3904    xor eax,edx"
 "	      004f3906    sub eax,edx"
 "	      004f3908    cmp eax,ds:[5B48C4h]"
 "	      004f390e    jg near ptr 004F3A0Dh"
-"	      004f3914    mov eax,[ebp+8]"
+"	      004f3914    mov eax,hd"
 "	      004f3917    mov eax,[eax+124h]"
 "	      004f391d    cdq"
 "	      004f391e    xor eax,edx"
 "	      004f3920    sub eax,edx"
 "	      004f3922    cmp eax,ds:[5B48C0h]"
 "	      004f3928    jg near ptr 004F3A0Dh"
-"	      004f392e    mov eax,[ebp+8]"
+"	      004f392e    mov eax,hd"
 "	      004f3931    mov eax,[eax+118h]"
 "	      004f3937    cdq"
 "	      004f3938    xor eax,edx"
 "	      004f393a    sub eax,edx"
 "	      004f393c    cmp eax,ds:[5B48C8h]"
 "	      004f3942    jg near ptr 004F3A0Dh"
-"	      004f3948    mov eax,[ebp+8]"
+"	      004f3948    mov eax,hd"
 "	      004f394b    mov eax,[eax+128h]"
 "	      004f3951    cdq"
 "	      004f3952    xor eax,edx"
@@ -7691,26 +7691,26 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2342:
 	asm( 
-"	      004f3962    mov eax,[ebp+8]"
+"	      004f3962    mov eax,hd"
 "	      004f3965    cmp dword ptr [eax+4],4"
 "	      004f3969    je near ptr 004F3A08h"
-"	      004f396f    mov eax,[ebp+8]"
+"	      004f396f    mov eax,hd"
 "	      004f3972    cmp dword ptr [eax+4],0"
 "	      004f3976    je near ptr 004F3A08h"
-"	      004f397c    mov eax,[ebp+8]"
+"	      004f397c    mov eax,hd"
 "	      004f397f    cmp dword ptr [eax+0Ch],1"
 "	      004f3983    je near ptr 004F3A08h"
 );
 // LINE 2345:
 	asm( 
-"	      004f3989    mov eax,[ebp+8]"
+"	      004f3989    mov eax,hd"
 "	      004f398c    cmp dword ptr [eax+320h],0"
 "	      004f3993    jle near ptr 004F39B7h"
 );
 // LINE 2346:
 	asm( 
 "	      004f3999    push 0"
-"	      004f399b    mov eax,[ebp+8]"
+"	      004f399b    mov eax,hd"
 "	      004f399e    mov eax,[eax+0A4h]"
 "	      004f39a4    add eax,18h"
 "	      004f39a7    push eax"
@@ -7725,7 +7725,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2348:
 	asm( 
 "	      004f39b7    push 0"
-"	      004f39b9    mov eax,[ebp+8]"
+"	      004f39b9    mov eax,hd"
 "	      004f39bc    mov eax,[eax+0A4h]"
 "	      004f39c2    add eax,18h"
 "	      004f39c5    push eax"
@@ -7735,16 +7735,16 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2350:
 	asm( 
-"	      004f39d0    mov eax,[ebp+8]"
+"	      004f39d0    mov eax,hd"
 "	      004f39d3    mov eax,[eax+150h]"
 "	      004f39d9    add eax,13333h"
-"	      004f39de    mov ecx,[ebp+8]"
+"	      004f39de    mov ecx,hd"
 "	      004f39e1    mov ecx,[ecx+0A4h]"
 "	      004f39e7    mov [ecx+1Ch],eax"
 );
 // LINE 2351:
 	asm( 
-"	      004f39ea    mov eax,[ebp+8]"
+"	      004f39ea    mov eax,hd"
 "	      004f39ed    mov dword ptr [eax+4],0"
 );
 // LINE 2352:
@@ -7753,9 +7753,9 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2355:
 	asm( 
-"	      004f39f9    mov eax,[ebp-0Ch]"
+"	      004f39f9    mov eax,htd"
 "	      004f39fc    mov eax,[eax+4Ch]"
-"	      004f39ff    mov ecx,[ebp+8]"
+"	      004f39ff    mov ecx,hd"
 "	      004f3a02    mov [ecx+0D0h],eax"
 );
 // LINE 2359:
@@ -7764,48 +7764,48 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2366:
 	asm( 
-"	      004f3a0d    mov eax,[ebp+8]"
+"	      004f3a0d    mov eax,hd"
 "	      004f3a10    cmp dword ptr [eax+13Ch],1"
 "	      004f3a17    jne near ptr 004F3B7Dh"
-"	      004f3a1d    mov eax,[ebp+8]"
+"	      004f3a1d    mov eax,hd"
 "	      004f3a20    mov eax,[eax+0A4h]"
-"	      004f3a26    mov ecx,[ebp+8]"
+"	      004f3a26    mov ecx,hd"
 "	      004f3a29    mov ecx,[ecx+154h]"
 "	      004f3a2f    add ecx,10000h"
 "	      004f3a35    cmp [eax+1Ch],ecx"
 "	      004f3a38    jge near ptr 004F3B7Dh"
-"	      004f3a3e    mov eax,[ebp+8]"
+"	      004f3a3e    mov eax,hd"
 "	      004f3a41    mov eax,[eax+0A4h]"
-"	      004f3a47    mov ecx,[ebp+8]"
+"	      004f3a47    mov ecx,hd"
 "	      004f3a4a    mov ecx,[ecx+154h]"
 "	      004f3a50    sub ecx,10000h"
 "	      004f3a56    cmp [eax+1Ch],ecx"
 "	      004f3a59    jle near ptr 004F3B7Dh"
-"	      004f3a5f    mov eax,[ebp+8]"
+"	      004f3a5f    mov eax,hd"
 "	      004f3a62    cmp dword ptr [eax+110h],0"
 "	      004f3a69    jg near ptr 004F3B7Dh"
-"	      004f3a6f    mov eax,[ebp+8]"
+"	      004f3a6f    mov eax,hd"
 "	      004f3a72    mov eax,[eax+11Ch]"
 "	      004f3a78    cdq"
 "	      004f3a79    xor eax,edx"
 "	      004f3a7b    sub eax,edx"
 "	      004f3a7d    cmp eax,ds:[5B48C4h]"
 "	      004f3a83    jg near ptr 004F3B7Dh"
-"	      004f3a89    mov eax,[ebp+8]"
+"	      004f3a89    mov eax,hd"
 "	      004f3a8c    mov eax,[eax+124h]"
 "	      004f3a92    cdq"
 "	      004f3a93    xor eax,edx"
 "	      004f3a95    sub eax,edx"
 "	      004f3a97    cmp eax,ds:[5B48C0h]"
 "	      004f3a9d    jg near ptr 004F3B7Dh"
-"	      004f3aa3    mov eax,[ebp+8]"
+"	      004f3aa3    mov eax,hd"
 "	      004f3aa6    mov eax,[eax+118h]"
 "	      004f3aac    cdq"
 "	      004f3aad    xor eax,edx"
 "	      004f3aaf    sub eax,edx"
 "	      004f3ab1    cmp eax,ds:[5B48C8h]"
 "	      004f3ab7    jg near ptr 004F3B7Dh"
-"	      004f3abd    mov eax,[ebp+8]"
+"	      004f3abd    mov eax,hd"
 "	      004f3ac0    mov eax,[eax+128h]"
 "	      004f3ac6    cdq"
 "	      004f3ac7    xor eax,edx"
@@ -7815,26 +7815,26 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2368:
 	asm( 
-"	      004f3ad7    mov eax,[ebp+8]"
+"	      004f3ad7    mov eax,hd"
 "	      004f3ada    cmp dword ptr [eax+4],4"
 "	      004f3ade    je near ptr 004F3B7Dh"
-"	      004f3ae4    mov eax,[ebp+8]"
+"	      004f3ae4    mov eax,hd"
 "	      004f3ae7    cmp dword ptr [eax+4],0"
 "	      004f3aeb    je near ptr 004F3B7Dh"
-"	      004f3af1    mov eax,[ebp+8]"
+"	      004f3af1    mov eax,hd"
 "	      004f3af4    cmp dword ptr [eax+0Ch],1"
 "	      004f3af8    je near ptr 004F3B7Dh"
 );
 // LINE 2371:
 	asm( 
-"	      004f3afe    mov eax,[ebp+8]"
+"	      004f3afe    mov eax,hd"
 "	      004f3b01    cmp dword ptr [eax+320h],0"
 "	      004f3b08    jle near ptr 004F3B2Ch"
 );
 // LINE 2372:
 	asm( 
 "	      004f3b0e    push 0"
-"	      004f3b10    mov eax,[ebp+8]"
+"	      004f3b10    mov eax,hd"
 "	      004f3b13    mov eax,[eax+0A4h]"
 "	      004f3b19    add eax,18h"
 "	      004f3b1c    push eax"
@@ -7849,7 +7849,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2374:
 	asm( 
 "	      004f3b2c    push 0"
-"	      004f3b2e    mov eax,[ebp+8]"
+"	      004f3b2e    mov eax,hd"
 "	      004f3b31    mov eax,[eax+0A4h]"
 "	      004f3b37    add eax,18h"
 "	      004f3b3a    push eax"
@@ -7859,15 +7859,15 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2376:
 	asm( 
-"	      004f3b45    mov eax,[ebp+8]"
+"	      004f3b45    mov eax,hd"
 "	      004f3b48    mov dword ptr [eax+4],0"
 );
 // LINE 2377:
 	asm( 
-"	      004f3b4f    mov eax,[ebp+8]"
+"	      004f3b4f    mov eax,hd"
 "	      004f3b52    mov eax,[eax+154h]"
 "	      004f3b58    add eax,13333h"
-"	      004f3b5d    mov ecx,[ebp+8]"
+"	      004f3b5d    mov ecx,hd"
 "	      004f3b60    mov ecx,[ecx+0A4h]"
 "	      004f3b66    mov [ecx+1Ch],eax"
 );
@@ -7877,9 +7877,9 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 );
 // LINE 2381:
 	asm( 
-"	      004f3b6e    mov eax,[ebp-0Ch]"
+"	      004f3b6e    mov eax,htd"
 "	      004f3b71    mov eax,[eax+4Ch]"
-"	      004f3b74    mov ecx,[ebp+8]"
+"	      004f3b74    mov ecx,hd"
 "	      004f3b77    mov [ecx+0D0h],eax"
 );
 // LINE 2385:
@@ -7915,31 +7915,31 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2406:
 	asm( 
-"	      004f3b8e    mov eax,[ebp+8]"
+"	      004f3b8e    mov eax,hd"
 "	      004f3b91    cmp dword ptr [eax+4],0"
 "	      004f3b95    jne near ptr 004F3BB9h"
 );
 // LINE 2409:
 	asm( 
-"	      004f3b9b    mov eax,[ebp+8]"
+"	      004f3b9b    mov eax,hd"
 "	      004f3b9e    cmp dword ptr [eax+148h],0"
 "	      004f3ba5    jle near ptr 004F3BB4h"
-"	      004f3bab    mov eax,[ebp+8]"
+"	      004f3bab    mov eax,hd"
 "	      004f3bae    dec dword ptr [eax+148h]"
 );
 // LINE 2411:
 	asm( 
 "	      004f3bb4    jmp near ptr 004F3C02h"
-"	      004f3bb9    mov eax,[ebp+8]"
+"	      004f3bb9    mov eax,hd"
 "	      004f3bbc    cmp dword ptr [eax+4],5"
 "	      004f3bc0    jne near ptr 004F3BE5h"
 );
 // LINE 2414:
 	asm( 
-"	      004f3bc6    mov eax,[ebp+8]"
+"	      004f3bc6    mov eax,hd"
 "	      004f3bc9    cmp dword ptr [eax+148h],0Ah"
 "	      004f3bd0    jle near ptr 004F3BE0h"
-"	      004f3bd6    mov eax,[ebp+8]"
+"	      004f3bd6    mov eax,hd"
 "	      004f3bd9    sub dword ptr [eax+148h],0Ah"
 );
 // LINE 2416:
@@ -7948,24 +7948,24 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2419:
 	asm( 
-"	      004f3be5    mov eax,[ebp+8]"
+"	      004f3be5    mov eax,hd"
 "	      004f3be8    cmp dword ptr [eax+148h],168h"
 "	      004f3bf2    jge near ptr 004F3C02h"
 );
 // LINE 2420:
 	asm( 
-"	      004f3bf8    mov eax,[ebp+8]"
+"	      004f3bf8    mov eax,hd"
 "	      004f3bfb    add dword ptr [eax+148h],3"
 );
 // LINE 2423:
 	asm( 
-"	      004f3c02    mov eax,[ebp+8]"
+"	      004f3c02    mov eax,hd"
 "	      004f3c05    cmp dword ptr [eax+148h],0FAh"
 "	      004f3c0f    jle near ptr 004F3C21h"
 );
 // LINE 2425:
 	asm( 
-"	      004f3c15    mov dword ptr [ebp-4],1870000h"
+"	      004f3c15    mov tempfix,1870000h"
 );
 // LINE 2427:
 	asm( 
@@ -7973,94 +7973,94 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2429:
 	asm( 
-"	      004f3c21    mov eax,[ebp+8]"
+"	      004f3c21    mov eax,hd"
 "	      004f3c24    mov eax,[eax+148h]"
 "	      004f3c2a    shl eax,10h"
-"	      004f3c2d    mov [ebp-4],eax"
+"	      004f3c2d    mov tempfix,eax"
 );
 // LINE 2430:
 	asm( 
 "	      004f3c30    mov eax,ds:[5B4768h]"
 "	      004f3c35    shl eax,5"
 "	      004f3c38    push eax"
-"	      004f3c39    mov eax,[ebp-4]"
+"	      004f3c39    mov eax,tempfix"
 "	      004f3c3c    push eax"
 "	      004f3c3d    call 004D19BDh"
 "	      004f3c42    add esp,8"
-"	      004f3c45    mov [ebp-4],eax"
+"	      004f3c45    mov tempfix,eax"
 );
 // LINE 2431:
 	asm( 
-"	      004f3c48    mov eax,[ebp-4]"
+"	      004f3c48    mov eax,tempfix"
 "	      004f3c4b    add eax,eax"
-"	      004f3c4d    mov [ebp-98h],eax"
+"	      004f3c4d    mov tempfix2,eax"
 );
 // LINE 2434:
 	asm( 
-"	      004f3c53    mov eax,[ebp+8]"
+"	      004f3c53    mov eax,hd"
 "	      004f3c56    add eax,20h"
 "	      004f3c59    push eax"
-"	      004f3c5a    mov eax,[ebp-4]"
+"	      004f3c5a    mov eax,tempfix"
 "	      004f3c5d    push eax"
 "	      004f3c5e    call 004D201Ch"
 "	      004f3c63    add esp,8"
 );
 // LINE 2435:
 	asm( 
-"	      004f3c66    mov eax,[ebp+8]"
+"	      004f3c66    mov eax,hd"
 "	      004f3c69    add eax,60h"
 "	      004f3c6c    push eax"
-"	      004f3c6d    mov eax,[ebp-4]"
+"	      004f3c6d    mov eax,tempfix"
 "	      004f3c70    push eax"
 "	      004f3c71    call 004D2004h"
 "	      004f3c76    add esp,8"
 );
 // LINE 2439:
 	asm( 
-"	      004f3c79    mov esi,[ebp+8]"
-"	      004f3c7c    lea edi,[ebp-94h]"
+"	      004f3c79    mov esi,hd"
+"	      004f3c7c    lea edi,tmpmat[0][0]"
 "	      004f3c82    add esi,60h"
 "	      004f3c85    mov ecx,10h"
 "	      004f3c8a    rep movsd"
 );
 // LINE 2440:
 	asm( 
-"	      004f3c8c    mov eax,[ebp+8]"
+"	      004f3c8c    mov eax,hd"
 "	      004f3c8f    mov eax,[eax]"
 "	      004f3c91    mov ecx,eax"
 "	      004f3c93    lea eax,[eax+eax*4]"
 "	      004f3c96    lea eax,[ecx+eax*2]"
 "	      004f3c99    lea eax,[eax*8+5B4978h]"
-"	      004f3ca0    mov [ebp-54h],eax"
+"	      004f3ca0    mov htd,eax"
 );
 // LINE 2441:
 	asm( 
-"	      004f3ca3    mov eax,[ebp-54h]"
+"	      004f3ca3    mov eax,htd"
 "	      004f3ca6    mov eax,[eax+30h]"
-"	      004f3ca9    mov [ebp-88h],eax"
+"	      004f3ca9    mov tmpmat[0][3],eax"
 );
 // LINE 2442:
 	asm( 
-"	      004f3caf    mov eax,[ebp-54h]"
+"	      004f3caf    mov eax,htd"
 "	      004f3cb2    mov eax,[eax+34h]"
-"	      004f3cb5    mov [ebp-78h],eax"
+"	      004f3cb5    mov tmpmat[1][3],eax"
 );
 // LINE 2443:
 	asm( 
-"	      004f3cb8    mov eax,[ebp-54h]"
+"	      004f3cb8    mov eax,htd"
 "	      004f3cbb    mov eax,[eax+38h]"
-"	      004f3cbe    mov [ebp-68h],eax"
+"	      004f3cbe    mov tmpmat[2][3],eax"
 );
 // LINE 2447:
 	asm( 
-"	      004f3cc1    mov eax,[ebp+8]"
+"	      004f3cc1    mov eax,hd"
 "	      004f3cc4    mov eax,[eax+0ACh]"
 "	      004f3cca    add eax,24h"
 "	      004f3ccd    push eax"
-"	      004f3cce    mov eax,[ebp+8]"
+"	      004f3cce    mov eax,hd"
 "	      004f3cd1    add eax,20h"
 "	      004f3cd4    push eax"
-"	      004f3cd5    mov eax,[ebp+8]"
+"	      004f3cd5    mov eax,hd"
 "	      004f3cd8    mov eax,[eax+0A4h]"
 "	      004f3cde    add eax,24h"
 "	      004f3ce1    push eax"
@@ -8069,13 +8069,13 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2448:
 	asm( 
-"	      004f3cea    mov eax,[ebp+8]"
+"	      004f3cea    mov eax,hd"
 "	      004f3ced    mov eax,[eax+0B0h]"
 "	      004f3cf3    add eax,24h"
 "	      004f3cf6    push eax"
-"	      004f3cf7    lea eax,[ebp-94h]"
+"	      004f3cf7    lea eax,tmpmat[0][0]"
 "	      004f3cfd    push eax"
-"	      004f3cfe    mov eax,[ebp+8]"
+"	      004f3cfe    mov eax,hd"
 "	      004f3d01    mov eax,[eax+0A4h]"
 "	      004f3d07    add eax,24h"
 "	      004f3d0a    push eax"
@@ -8084,18 +8084,18 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2451:
 	asm( 
-"	      004f3d13    mov eax,[ebp+8]"
+"	      004f3d13    mov eax,hd"
 "	      004f3d16    mov eax,[eax+0A4h]"
 "	      004f3d1c    add eax,18h"
-"	      004f3d1f    lea ecx,[ebp-0F0h]"
+"	      004f3d1f    lea ecx,pos.loc.x"
 "	      004f3d25    mov edx,[eax]"
 "	      004f3d27    mov [ecx],edx"
 "	      004f3d29    mov edx,[eax+4]"
 "	      004f3d2c    mov [ecx+4],edx"
 "	      004f3d2f    mov eax,[eax+8]"
 "	      004f3d32    mov [ecx+8],eax"
-"	      004f3d35    lea eax,[ebp-0F0h]"
-"	      004f3d3b    mov ecx,[ebp+8]"
+"	      004f3d35    lea eax,pos.loc.x"
+"	      004f3d3b    mov ecx,hd"
 "	      004f3d3e    mov ecx,[ecx+0B0h]"
 "	      004f3d44    add ecx,18h"
 "	      004f3d47    mov edx,[eax]"
@@ -8104,10 +8104,10 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 "	      004f3d4e    mov [ecx+4],edx"
 "	      004f3d51    mov eax,[eax+8]"
 "	      004f3d54    mov [ecx+8],eax"
-"	      004f3d57    mov eax,[ebp+8]"
+"	      004f3d57    mov eax,hd"
 "	      004f3d5a    mov eax,[eax+0B0h]"
 "	      004f3d60    add eax,18h"
-"	      004f3d63    mov ecx,[ebp+8]"
+"	      004f3d63    mov ecx,hd"
 "	      004f3d66    mov ecx,[ecx+0ACh]"
 "	      004f3d6c    add ecx,18h"
 "	      004f3d6f    mov edx,[eax]"
@@ -8119,9 +8119,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2452:
 	asm( 
-"	      004f3d7f    mov eax,[ebp+8]"
+"	      004f3d7f    mov eax,hd"
 "	      004f3d82    mov esi,[eax+0ACh]"
-"	      004f3d88    lea edi,[ebp-0D8h]"
+"	      004f3d88    lea edi,pos.matrix[0][0]"
 "	      004f3d8e    add esi,24h"
 "	      004f3d91    mov ecx,10h"
 "	      004f3d96    rep movsd"
@@ -8129,9 +8129,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 // LINE 2453:
 	asm( 
 "	      004f3d98    push 3"
-"	      004f3d9a    lea eax,[ebp-0F0h]"
+"	      004f3d9a    lea eax,pos.loc.x"
 "	      004f3da0    push eax"
-"	      004f3da1    mov eax,[ebp+8]"
+"	      004f3da1    mov eax,hd"
 "	      004f3da4    mov eax,[eax+0ACh]"
 "	      004f3daa    mov eax,[eax+8]"
 "	      004f3dad    push eax"
@@ -8140,14 +8140,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2455:
 	asm( 
-"	      004f3db6    mov eax,[ebp-54h]"
+"	      004f3db6    mov eax,htd"
 "	      004f3db9    test byte ptr [eax+3Ch],1"
 "	      004f3dbd    je near ptr 004F3DDFh"
 );
 // LINE 2457:
 	asm( 
 "	      004f3dc3    push 1"
-"	      004f3dc5    mov eax,[ebp+8]"
+"	      004f3dc5    mov eax,hd"
 "	      004f3dc8    mov eax,[eax+0B0h]"
 "	      004f3dce    mov eax,[eax+8]"
 "	      004f3dd1    push eax"
@@ -8160,9 +8160,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2461:
 	asm( 
-"	      004f3ddf    mov eax,[ebp+8]"
+"	      004f3ddf    mov eax,hd"
 "	      004f3de2    mov esi,[eax+0B0h]"
-"	      004f3de8    lea edi,[ebp-0D8h]"
+"	      004f3de8    lea edi,pos.matrix[0][0]"
 "	      004f3dee    add esi,24h"
 "	      004f3df1    mov ecx,10h"
 "	      004f3df6    rep movsd"
@@ -8170,9 +8170,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 // LINE 2462:
 	asm( 
 "	      004f3df8    push 3"
-"	      004f3dfa    lea eax,[ebp-0F0h]"
+"	      004f3dfa    lea eax,pos.loc.x"
 "	      004f3e00    push eax"
-"	      004f3e01    mov eax,[ebp+8]"
+"	      004f3e01    mov eax,hd"
 "	      004f3e04    mov eax,[eax+0B0h]"
 "	      004f3e0a    mov eax,[eax+8]"
 "	      004f3e0d    push eax"
@@ -8181,18 +8181,18 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2466:
 	asm( 
-"	      004f3e16    mov eax,[ebp+8]"
+"	      004f3e16    mov eax,hd"
 "	      004f3e19    cmp dword ptr [eax+148h],12Ch"
 "	      004f3e23    jge near ptr 004F3F70h"
-"	      004f3e29    mov eax,[ebp+8]"
+"	      004f3e29    mov eax,hd"
 "	      004f3e2c    cmp dword ptr [eax+144h],1"
 "	      004f3e33    jne near ptr 004F3F70h"
 );
 // LINE 2468:
 	asm( 
-"	      004f3e39    lea eax,[ebp-28h]"
+"	      004f3e39    lea eax,oinfo.Faces"
 "	      004f3e3c    push eax"
-"	      004f3e3d    mov eax,[ebp+8]"
+"	      004f3e3d    mov eax,hd"
 "	      004f3e40    mov eax,[eax+0ACh]"
 "	      004f3e46    mov eax,[eax+8]"
 "	      004f3e49    push eax"
@@ -8201,59 +8201,59 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2469:
 	asm( 
-"	      004f3e52    mov eax,[ebp+8]"
+"	      004f3e52    mov eax,hd"
 "	      004f3e55    mov eax,[eax+0ACh]"
 "	      004f3e5b    mov eax,[eax+8]"
 "	      004f3e5e    push eax"
 "	      004f3e5f    call 004D85CDh"
 "	      004f3e64    add esp,4"
-"	      004f3e67    mov [ebp-2Ch],eax"
+"	      004f3e67    mov face,eax"
 );
 // LINE 2470:
 	asm( 
-"	      004f3e6a    mov dword ptr [ebp-30h],0"
+"	      004f3e6a    mov count,0"
 "	      004f3e71    jmp near ptr 004F3E79h"
-"	      004f3e76    inc dword ptr [ebp-30h]"
-"	      004f3e79    mov eax,[ebp-30h]"
-"	      004f3e7c    cmp [ebp-28h],eax"
+"	      004f3e76    inc count"
+"	      004f3e79    mov eax,count"
+"	      004f3e7c    cmp oinfo.Faces,eax"
 "	      004f3e7f    jle near ptr 004F3ECEh"
 );
 // LINE 2472:
 	asm( 
-"	      004f3e85    lea eax,[ebp-50h]"
+"	      004f3e85    lea eax,finfo.Face"
 "	      004f3e88    push eax"
-"	      004f3e89    mov eax,[ebp-2Ch]"
+"	      004f3e89    mov eax,face"
 "	      004f3e8c    push eax"
 "	      004f3e8d    call 004D6905h"
 "	      004f3e92    add esp,8"
 );
 // LINE 2473:
 	asm( 
-"	      004f3e95    cmp dword ptr [ebp-44h],0Bh"
+"	      004f3e95    cmp finfo.Plotter,0Bh"
 "	      004f3e99    jne near ptr 004F3EBAh"
 );
 // LINE 2475:
 	asm( 
-"	      004f3e9f    mov eax,[ebp-48h]"
+"	      004f3e9f    mov eax,finfo.Attribute"
 "	      004f3ea2    or eax,80000000h"
-"	      004f3ea7    mov [ebp-48h],eax"
+"	      004f3ea7    mov finfo.Attribute,eax"
 );
 // LINE 2476:
 	asm( 
-"	      004f3eaa    lea eax,[ebp-50h]"
+"	      004f3eaa    lea eax,finfo.Face"
 "	      004f3ead    push eax"
-"	      004f3eae    mov eax,[ebp-2Ch]"
+"	      004f3eae    mov eax,face"
 "	      004f3eb1    push eax"
 "	      004f3eb2    call 004D6941h"
 "	      004f3eb7    add esp,8"
 );
 // LINE 2478:
 	asm( 
-"	      004f3eba    mov eax,[ebp-2Ch]"
+"	      004f3eba    mov eax,face"
 "	      004f3ebd    push eax"
 "	      004f3ebe    call 004D85F8h"
 "	      004f3ec3    add esp,4"
-"	      004f3ec6    mov [ebp-2Ch],eax"
+"	      004f3ec6    mov face,eax"
 );
 // LINE 2479:
 	asm( 
@@ -8261,9 +8261,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2481:
 	asm( 
-"	      004f3ece    lea eax,[ebp-28h]"
+"	      004f3ece    lea eax,oinfo.Faces"
 "	      004f3ed1    push eax"
-"	      004f3ed2    mov eax,[ebp+8]"
+"	      004f3ed2    mov eax,hd"
 "	      004f3ed5    mov eax,[eax+0B0h]"
 "	      004f3edb    mov eax,[eax+8]"
 "	      004f3ede    push eax"
@@ -8272,59 +8272,59 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2482:
 	asm( 
-"	      004f3ee7    mov eax,[ebp+8]"
+"	      004f3ee7    mov eax,hd"
 "	      004f3eea    mov eax,[eax+0B0h]"
 "	      004f3ef0    mov eax,[eax+8]"
 "	      004f3ef3    push eax"
 "	      004f3ef4    call 004D85CDh"
 "	      004f3ef9    add esp,4"
-"	      004f3efc    mov [ebp-2Ch],eax"
+"	      004f3efc    mov face,eax"
 );
 // LINE 2483:
 	asm( 
-"	      004f3eff    mov dword ptr [ebp-30h],0"
+"	      004f3eff    mov count,0"
 "	      004f3f06    jmp near ptr 004F3F0Eh"
-"	      004f3f0b    inc dword ptr [ebp-30h]"
-"	      004f3f0e    mov eax,[ebp-30h]"
-"	      004f3f11    cmp [ebp-28h],eax"
+"	      004f3f0b    inc count"
+"	      004f3f0e    mov eax,count"
+"	      004f3f11    cmp oinfo.Faces,eax"
 "	      004f3f14    jle near ptr 004F3F63h"
 );
 // LINE 2485:
 	asm( 
-"	      004f3f1a    lea eax,[ebp-50h]"
+"	      004f3f1a    lea eax,finfo.Face"
 "	      004f3f1d    push eax"
-"	      004f3f1e    mov eax,[ebp-2Ch]"
+"	      004f3f1e    mov eax,face"
 "	      004f3f21    push eax"
 "	      004f3f22    call 004D6905h"
 "	      004f3f27    add esp,8"
 );
 // LINE 2486:
 	asm( 
-"	      004f3f2a    cmp dword ptr [ebp-44h],0Bh"
+"	      004f3f2a    cmp finfo.Plotter,0Bh"
 "	      004f3f2e    jne near ptr 004F3F4Fh"
 );
 // LINE 2488:
 	asm( 
-"	      004f3f34    mov eax,[ebp-48h]"
+"	      004f3f34    mov eax,finfo.Attribute"
 "	      004f3f37    or eax,80000000h"
-"	      004f3f3c    mov [ebp-48h],eax"
+"	      004f3f3c    mov finfo.Attribute,eax"
 );
 // LINE 2489:
 	asm( 
-"	      004f3f3f    lea eax,[ebp-50h]"
+"	      004f3f3f    lea eax,finfo.Face"
 "	      004f3f42    push eax"
-"	      004f3f43    mov eax,[ebp-2Ch]"
+"	      004f3f43    mov eax,face"
 "	      004f3f46    push eax"
 "	      004f3f47    call 004D6941h"
 "	      004f3f4c    add esp,8"
 );
 // LINE 2491:
 	asm( 
-"	      004f3f4f    mov eax,[ebp-2Ch]"
+"	      004f3f4f    mov eax,face"
 "	      004f3f52    push eax"
 "	      004f3f53    call 004D85F8h"
 "	      004f3f58    add esp,4"
-"	      004f3f5b    mov [ebp-2Ch],eax"
+"	      004f3f5b    mov face,eax"
 );
 // LINE 2492:
 	asm( 
@@ -8332,23 +8332,23 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2493:
 	asm( 
-"	      004f3f63    mov eax,[ebp+8]"
+"	      004f3f63    mov eax,hd"
 "	      004f3f66    mov dword ptr [eax+144h],0"
 );
 // LINE 2496:
 	asm( 
-"	      004f3f70    mov eax,[ebp+8]"
+"	      004f3f70    mov eax,hd"
 "	      004f3f73    cmp dword ptr [eax+148h],12Ch"
 "	      004f3f7d    jl near ptr 004F40C2h"
-"	      004f3f83    mov eax,[ebp+8]"
+"	      004f3f83    mov eax,hd"
 "	      004f3f86    cmp dword ptr [eax+144h],0"
 "	      004f3f8d    jne near ptr 004F40C2h"
 );
 // LINE 2498:
 	asm( 
-"	      004f3f93    lea eax,[ebp-28h]"
+"	      004f3f93    lea eax,oinfo.Faces"
 "	      004f3f96    push eax"
-"	      004f3f97    mov eax,[ebp+8]"
+"	      004f3f97    mov eax,hd"
 "	      004f3f9a    mov eax,[eax+0ACh]"
 "	      004f3fa0    mov eax,[eax+8]"
 "	      004f3fa3    push eax"
@@ -8357,57 +8357,57 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2499:
 	asm( 
-"	      004f3fac    mov eax,[ebp+8]"
+"	      004f3fac    mov eax,hd"
 "	      004f3faf    mov eax,[eax+0ACh]"
 "	      004f3fb5    mov eax,[eax+8]"
 "	      004f3fb8    push eax"
 "	      004f3fb9    call 004D85CDh"
 "	      004f3fbe    add esp,4"
-"	      004f3fc1    mov [ebp-2Ch],eax"
+"	      004f3fc1    mov face,eax"
 );
 // LINE 2500:
 	asm( 
-"	      004f3fc4    mov dword ptr [ebp-30h],0"
+"	      004f3fc4    mov count,0"
 "	      004f3fcb    jmp near ptr 004F3FD3h"
-"	      004f3fd0    inc dword ptr [ebp-30h]"
-"	      004f3fd3    mov eax,[ebp-30h]"
-"	      004f3fd6    cmp [ebp-28h],eax"
+"	      004f3fd0    inc count"
+"	      004f3fd3    mov eax,count"
+"	      004f3fd6    cmp oinfo.Faces,eax"
 "	      004f3fd9    jle near ptr 004F4024h"
 );
 // LINE 2502:
 	asm( 
-"	      004f3fdf    lea eax,[ebp-50h]"
+"	      004f3fdf    lea eax,finfo.Face"
 "	      004f3fe2    push eax"
-"	      004f3fe3    mov eax,[ebp-2Ch]"
+"	      004f3fe3    mov eax,face"
 "	      004f3fe6    push eax"
 "	      004f3fe7    call 004D6905h"
 "	      004f3fec    add esp,8"
 );
 // LINE 2503:
 	asm( 
-"	      004f3fef    cmp dword ptr [ebp-44h],0Bh"
+"	      004f3fef    cmp finfo.Plotter,0Bh"
 "	      004f3ff3    jne near ptr 004F4010h"
 );
 // LINE 2505:
 	asm( 
-"	      004f3ff9    and dword ptr [ebp-48h],7FFFFFFFh"
+"	      004f3ff9    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 2506:
 	asm( 
-"	      004f4000    lea eax,[ebp-50h]"
+"	      004f4000    lea eax,finfo.Face"
 "	      004f4003    push eax"
-"	      004f4004    mov eax,[ebp-2Ch]"
+"	      004f4004    mov eax,face"
 "	      004f4007    push eax"
 "	      004f4008    call 004D6941h"
 "	      004f400d    add esp,8"
 );
 // LINE 2509:
 	asm( 
-"	      004f4010    mov eax,[ebp-2Ch]"
+"	      004f4010    mov eax,face"
 "	      004f4013    push eax"
 "	      004f4014    call 004D85F8h"
 "	      004f4019    add esp,4"
-"	      004f401c    mov [ebp-2Ch],eax"
+"	      004f401c    mov face,eax"
 );
 // LINE 2510:
 	asm( 
@@ -8415,9 +8415,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2512:
 	asm( 
-"	      004f4024    lea eax,[ebp-28h]"
+"	      004f4024    lea eax,oinfo.Faces"
 "	      004f4027    push eax"
-"	      004f4028    mov eax,[ebp+8]"
+"	      004f4028    mov eax,hd"
 "	      004f402b    mov eax,[eax+0B0h]"
 "	      004f4031    mov eax,[eax+8]"
 "	      004f4034    push eax"
@@ -8426,57 +8426,57 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2513:
 	asm( 
-"	      004f403d    mov eax,[ebp+8]"
+"	      004f403d    mov eax,hd"
 "	      004f4040    mov eax,[eax+0B0h]"
 "	      004f4046    mov eax,[eax+8]"
 "	      004f4049    push eax"
 "	      004f404a    call 004D85CDh"
 "	      004f404f    add esp,4"
-"	      004f4052    mov [ebp-2Ch],eax"
+"	      004f4052    mov face,eax"
 );
 // LINE 2514:
 	asm( 
-"	      004f4055    mov dword ptr [ebp-30h],0"
+"	      004f4055    mov count,0"
 "	      004f405c    jmp near ptr 004F4064h"
-"	      004f4061    inc dword ptr [ebp-30h]"
-"	      004f4064    mov eax,[ebp-30h]"
-"	      004f4067    cmp [ebp-28h],eax"
+"	      004f4061    inc count"
+"	      004f4064    mov eax,count"
+"	      004f4067    cmp oinfo.Faces,eax"
 "	      004f406a    jle near ptr 004F40B5h"
 );
 // LINE 2516:
 	asm( 
-"	      004f4070    lea eax,[ebp-50h]"
+"	      004f4070    lea eax,finfo.Face"
 "	      004f4073    push eax"
-"	      004f4074    mov eax,[ebp-2Ch]"
+"	      004f4074    mov eax,face"
 "	      004f4077    push eax"
 "	      004f4078    call 004D6905h"
 "	      004f407d    add esp,8"
 );
 // LINE 2517:
 	asm( 
-"	      004f4080    cmp dword ptr [ebp-44h],0Bh"
+"	      004f4080    cmp finfo.Plotter,0Bh"
 "	      004f4084    jne near ptr 004F40A1h"
 );
 // LINE 2519:
 	asm( 
-"	      004f408a    and dword ptr [ebp-48h],7FFFFFFFh"
+"	      004f408a    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 2520:
 	asm( 
-"	      004f4091    lea eax,[ebp-50h]"
+"	      004f4091    lea eax,finfo.Face"
 "	      004f4094    push eax"
-"	      004f4095    mov eax,[ebp-2Ch]"
+"	      004f4095    mov eax,face"
 "	      004f4098    push eax"
 "	      004f4099    call 004D6941h"
 "	      004f409e    add esp,8"
 );
 // LINE 2522:
 	asm( 
-"	      004f40a1    mov eax,[ebp-2Ch]"
+"	      004f40a1    mov eax,face"
 "	      004f40a4    push eax"
 "	      004f40a5    call 004D85F8h"
 "	      004f40aa    add esp,4"
-"	      004f40ad    mov [ebp-2Ch],eax"
+"	      004f40ad    mov face,eax"
 );
 // LINE 2523:
 	asm( 
@@ -8484,7 +8484,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 );
 // LINE 2524:
 	asm( 
-"	      004f40b5    mov eax,[ebp+8]"
+"	      004f40b5    mov eax,hd"
 "	      004f40b8    mov dword ptr [eax+144h],1"
 );
 // LINE 2526:
@@ -8518,23 +8518,23 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2542:
 	asm( 
-"	      004f40d0    mov eax,[ebp+8]"
+"	      004f40d0    mov eax,hd"
 "	      004f40d3    mov eax,[eax]"
 "	      004f40d5    mov ecx,eax"
 "	      004f40d7    lea eax,[eax+eax*4]"
 "	      004f40da    lea eax,[ecx+eax*2]"
 "	      004f40dd    lea eax,[eax*8+5B4978h]"
-"	      004f40e4    mov [ebp-1Ch],eax"
+"	      004f40e4    mov htd,eax"
 );
 // LINE 2545:
 	asm( 
-"	      004f40e7    mov eax,[ebp+8]"
+"	      004f40e7    mov eax,hd"
 "	      004f40ea    cmp dword ptr [eax+1B8h],0"
 "	      004f40f1    jge near ptr 004F41EBh"
 );
 // LINE 2548:
 	asm( 
-"	      004f40f7    mov eax,[ebp+8]"
+"	      004f40f7    mov eax,hd"
 "	      004f40fa    test byte ptr [eax+8],1"
 "	      004f40fe    je near ptr 004F412Fh"
 "	      004f4104    push 15h"
@@ -8546,7 +8546,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2550:
 	asm( 
 "	      004f4116    push 1"
-"	      004f4118    mov eax,[ebp+8]"
+"	      004f4118    mov eax,hd"
 "	      004f411b    mov eax,[eax+0A4h]"
 "	      004f4121    add eax,18h"
 "	      004f4124    push eax"
@@ -8556,19 +8556,19 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2553:
 	asm( 
-"	      004f412f    mov eax,[ebp+8]"
+"	      004f412f    mov eax,hd"
 "	      004f4132    dec dword ptr [eax+1ACh]"
 );
 // LINE 2555:
 	asm( 
-"	      004f4138    mov eax,[ebp+8]"
+"	      004f4138    mov eax,hd"
 "	      004f413b    cmp dword ptr [eax+1ACh],10h"
 "	      004f4142    jne near ptr 004F41E6h"
 );
 // LINE 2557:
 	asm( 
 "	      004f4148    push 0"
-"	      004f414a    mov eax,[ebp+8]"
+"	      004f414a    mov eax,hd"
 "	      004f414d    mov eax,[eax+0B8h]"
 "	      004f4153    mov eax,[eax+8]"
 "	      004f4156    push eax"
@@ -8577,27 +8577,27 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2558:
 	asm( 
-"	      004f415f    mov eax,[ebp+8]"
+"	      004f415f    mov eax,hd"
 "	      004f4162    cmp dword ptr [eax+1B8h],0FFFFFFFFh"
 "	      004f4169    jne near ptr 004F41ADh"
 );
 // LINE 2560:
 	asm( 
-"	      004f416f    mov eax,[ebp+8]"
+"	      004f416f    mov eax,hd"
 "	      004f4172    mov dword ptr [eax+1B0h],0"
 );
 // LINE 2561:
 	asm( 
-"	      004f417c    mov eax,[ebp+8]"
+"	      004f417c    mov eax,hd"
 "	      004f417f    mov eax,[eax+0C8h]"
-"	      004f4185    mov ecx,[ebp+8]"
+"	      004f4185    mov ecx,hd"
 "	      004f4188    mov ecx,[ecx+0BCh]"
 "	      004f418e    mov [ecx+8],eax"
 );
 // LINE 2562:
 	asm( 
 "	      004f4191    push 0"
-"	      004f4193    mov eax,[ebp+8]"
+"	      004f4193    mov eax,hd"
 "	      004f4196    mov eax,[eax+0BCh]"
 "	      004f419c    mov eax,[eax+8]"
 "	      004f419f    push eax"
@@ -8610,21 +8610,21 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2566:
 	asm( 
-"	      004f41ad    mov eax,[ebp+8]"
+"	      004f41ad    mov eax,hd"
 "	      004f41b0    mov dword ptr [eax+1B4h],0"
 );
 // LINE 2567:
 	asm( 
-"	      004f41ba    mov eax,[ebp+8]"
+"	      004f41ba    mov eax,hd"
 "	      004f41bd    mov eax,[eax+0CCh]"
-"	      004f41c3    mov ecx,[ebp+8]"
+"	      004f41c3    mov ecx,hd"
 "	      004f41c6    mov ecx,[ecx+0BCh]"
 "	      004f41cc    mov [ecx+8],eax"
 );
 // LINE 2568:
 	asm( 
 "	      004f41cf    push 0"
-"	      004f41d1    mov eax,[ebp+8]"
+"	      004f41d1    mov eax,hd"
 "	      004f41d4    mov eax,[eax+0BCh]"
 "	      004f41da    mov eax,[eax+8]"
 "	      004f41dd    push eax"
@@ -8634,13 +8634,13 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2572:
 	asm( 
 "	      004f41e6    jmp near ptr 004F42E7h"
-"	      004f41eb    mov eax,[ebp+8]"
+"	      004f41eb    mov eax,hd"
 "	      004f41ee    cmp dword ptr [eax+1B8h],0"
 "	      004f41f5    jle near ptr 004F42BDh"
 );
 // LINE 2575:
 	asm( 
-"	      004f41fb    mov eax,[ebp+8]"
+"	      004f41fb    mov eax,hd"
 "	      004f41fe    test byte ptr [eax+8],1"
 "	      004f4202    je near ptr 004F4242h"
 );
@@ -8655,7 +8655,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2579:
 	asm( 
 "	      004f421a    push 1"
-"	      004f421c    mov eax,[ebp+8]"
+"	      004f421c    mov eax,hd"
 "	      004f421f    mov eax,[eax+0A4h]"
 "	      004f4225    add eax,18h"
 "	      004f4228    push eax"
@@ -8672,19 +8672,19 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2584:
 	asm( 
-"	      004f4242    mov eax,[ebp+8]"
+"	      004f4242    mov eax,hd"
 "	      004f4245    inc dword ptr [eax+1ACh]"
 );
 // LINE 2588:
 	asm( 
-"	      004f424b    mov eax,[ebp+8]"
+"	      004f424b    mov eax,hd"
 "	      004f424e    cmp dword ptr [eax+1ACh],11h"
 "	      004f4255    jne near ptr 004F42B8h"
 );
 // LINE 2590:
 	asm( 
 "	      004f425b    push 1"
-"	      004f425d    mov eax,[ebp+8]"
+"	      004f425d    mov eax,hd"
 "	      004f4260    mov eax,[eax+0B8h]"
 "	      004f4266    mov eax,[eax+8]"
 "	      004f4269    push eax"
@@ -8694,7 +8694,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2591:
 	asm( 
 "	      004f4272    push 1"
-"	      004f4274    mov eax,[ebp+8]"
+"	      004f4274    mov eax,hd"
 "	      004f4277    mov eax,[eax+0BCh]"
 "	      004f427d    mov eax,[eax+8]"
 "	      004f4280    push eax"
@@ -8703,13 +8703,13 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2592:
 	asm( 
-"	      004f4289    mov eax,[ebp+8]"
+"	      004f4289    mov eax,hd"
 "	      004f428c    cmp dword ptr [eax+1B8h],1"
 "	      004f4293    jne near ptr 004F42ABh"
 );
 // LINE 2594:
 	asm( 
-"	      004f4299    mov eax,[ebp+8]"
+"	      004f4299    mov eax,hd"
 "	      004f429c    mov dword ptr [eax+1B0h],1"
 );
 // LINE 2596:
@@ -8718,13 +8718,13 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2598:
 	asm( 
-"	      004f42ab    mov eax,[ebp+8]"
+"	      004f42ab    mov eax,hd"
 "	      004f42ae    mov dword ptr [eax+1B4h],1"
 );
 // LINE 2603:
 	asm( 
 "	      004f42b8    jmp near ptr 004F42E7h"
-"	      004f42bd    mov eax,[ebp+8]"
+"	      004f42bd    mov eax,hd"
 "	      004f42c0    test byte ptr [eax+8],1"
 "	      004f42c4    je near ptr 004F42E7h"
 );
@@ -8744,10 +8744,10 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2612:
 	asm( 
-"	      004f42e7    mov eax,[ebp+8]"
+"	      004f42e7    mov eax,hd"
 "	      004f42ea    mov eax,[eax+0A4h]"
 "	      004f42f0    add eax,18h"
-"	      004f42f3    mov ecx,[ebp+8]"
+"	      004f42f3    mov ecx,hd"
 "	      004f42f6    mov ecx,[ecx+0B8h]"
 "	      004f42fc    add ecx,18h"
 "	      004f42ff    mov edx,[eax]"
@@ -8759,17 +8759,17 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2615:
 	asm( 
-"	      004f430f    mov eax,[ebp+8]"
+"	      004f430f    mov eax,hd"
 "	      004f4312    cmp dword ptr [eax+1B4h],0"
 "	      004f4319    jne near ptr 004F436Ah"
 );
 // LINE 2617:
 	asm( 
-"	      004f431f    mov eax,[ebp+8]"
+"	      004f431f    mov eax,hd"
 "	      004f4322    mov eax,[eax+0A4h]"
 "	      004f4328    add eax,24h"
 "	      004f432b    push eax"
-"	      004f432c    lea eax,[ebp-14h]"
+"	      004f432c    lea eax,loc.x"
 "	      004f432f    push eax"
 "	      004f4330    push 5B4C90h"
 "	      004f4335    call 004D2094h"
@@ -8777,31 +8777,31 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2618:
 	asm( 
-"	      004f433d    mov eax,[ebp-14h]"
-"	      004f4340    mov ecx,[ebp+8]"
+"	      004f433d    mov eax,loc.x"
+"	      004f4340    mov ecx,hd"
 "	      004f4343    mov ecx,[ecx+0B8h]"
 "	      004f4349    add [ecx+18h],eax"
 );
 // LINE 2619:
 	asm( 
-"	      004f434c    mov eax,[ebp-10h]"
-"	      004f434f    mov ecx,[ebp+8]"
+"	      004f434c    mov eax,loc.y"
+"	      004f434f    mov ecx,hd"
 "	      004f4352    mov ecx,[ecx+0B8h]"
 "	      004f4358    add [ecx+1Ch],eax"
 );
 // LINE 2620:
 	asm( 
-"	      004f435b    mov eax,[ebp-0Ch]"
-"	      004f435e    mov ecx,[ebp+8]"
+"	      004f435b    mov eax,loc.z"
+"	      004f435e    mov ecx,hd"
 "	      004f4361    mov ecx,[ecx+0B8h]"
 "	      004f4367    add [ecx+20h],eax"
 );
 // LINE 2625:
 	asm( 
-"	      004f436a    mov eax,[ebp+8]"
+"	      004f436a    mov eax,hd"
 "	      004f436d    cmp dword ptr [eax+1B0h],1"
 "	      004f4374    jne near ptr 004F438Fh"
-"	      004f437a    mov eax,[ebp+8]"
+"	      004f437a    mov eax,hd"
 "	      004f437d    cmp dword ptr [eax+1B4h],1"
 "	      004f4384    jne near ptr 004F438Fh"
 );
@@ -8811,10 +8811,10 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2628:
 	asm( 
-"	      004f438f    mov eax,[ebp+8]"
+"	      004f438f    mov eax,hd"
 "	      004f4392    mov eax,[eax+0B8h]"
 "	      004f4398    add eax,18h"
-"	      004f439b    lea ecx,[ebp-78h]"
+"	      004f439b    lea ecx,pos.loc.x"
 "	      004f439e    mov edx,[eax]"
 "	      004f43a0    mov [ecx],edx"
 "	      004f43a2    mov edx,[eax+4]"
@@ -8824,9 +8824,9 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2630:
 	asm( 
-"	      004f43ae    mov eax,[ebp+8]"
+"	      004f43ae    mov eax,hd"
 "	      004f43b1    mov esi,[eax+0B8h]"
-"	      004f43b7    lea edi,[ebp-60h]"
+"	      004f43b7    lea edi,pos.matrix[0][0]"
 "	      004f43ba    add esi,24h"
 "	      004f43bd    mov ecx,10h"
 "	      004f43c2    rep movsd"
@@ -8834,9 +8834,9 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2631:
 	asm( 
 "	      004f43c4    push 3"
-"	      004f43c6    lea eax,[ebp-78h]"
+"	      004f43c6    lea eax,pos.loc.x"
 "	      004f43c9    push eax"
-"	      004f43ca    mov eax,[ebp+8]"
+"	      004f43ca    mov eax,hd"
 "	      004f43cd    mov eax,[eax+0B8h]"
 "	      004f43d3    mov eax,[eax+8]"
 "	      004f43d6    push eax"
@@ -8846,169 +8846,169 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2633:
 	asm( 
 "	      004f43df    push 0"
-"	      004f43e1    mov eax,[ebp-70h]"
+"	      004f43e1    mov eax,pos.loc.z"
 "	      004f43e4    push eax"
-"	      004f43e5    mov eax,[ebp-78h]"
+"	      004f43e5    mov eax,pos.loc.x"
 "	      004f43e8    push eax"
 "	      004f43e9    call 00518A8Ch"
 "	      004f43ee    add esp,0Ch"
-"	      004f43f1    mov [ebp-20h],eax"
+"	      004f43f1    mov galt,eax"
 );
 // LINE 2634:
 	asm( 
-"	      004f43f4    mov eax,[ebp+0Ch]"
+"	      004f43f4    mov eax,cptr"
 "	      004f43f7    push eax"
-"	      004f43f8    mov eax,[ebp-20h]"
+"	      004f43f8    mov eax,galt"
 "	      004f43fb    push eax"
-"	      004f43fc    mov eax,[ebp+8]"
+"	      004f43fc    mov eax,hd"
 "	      004f43ff    push eax"
 "	      004f4400    call 004F4C0Eh"
 "	      004f4405    add esp,0Ch"
 );
 // LINE 2636:
 	asm( 
-"	      004f4408    mov eax,[ebp+8]"
+"	      004f4408    mov eax,hd"
 "	      004f440b    mov eax,[eax+0BCh]"
 "	      004f4411    mov eax,[eax+18h]"
-"	      004f4414    mov ecx,[ebp+8]"
+"	      004f4414    mov ecx,hd"
 "	      004f4417    mov [ecx+190h],eax"
 );
 // LINE 2637:
 	asm( 
-"	      004f441d    mov eax,[ebp+8]"
+"	      004f441d    mov eax,hd"
 "	      004f4420    mov eax,[eax+0BCh]"
 "	      004f4426    mov eax,[eax+1Ch]"
-"	      004f4429    mov ecx,[ebp+8]"
+"	      004f4429    mov ecx,hd"
 "	      004f442c    mov [ecx+194h],eax"
 );
 // LINE 2638:
 	asm( 
-"	      004f4432    mov eax,[ebp+8]"
+"	      004f4432    mov eax,hd"
 "	      004f4435    mov eax,[eax+0BCh]"
 "	      004f443b    mov eax,[eax+20h]"
-"	      004f443e    mov ecx,[ebp+8]"
+"	      004f443e    mov ecx,hd"
 "	      004f4441    mov [ecx+198h],eax"
 );
 // LINE 2643:
 	asm( 
-"	      004f4447    mov eax,[ebp+8]"
+"	      004f4447    mov eax,hd"
 "	      004f444a    mov eax,[eax+0B8h]"
 "	      004f4450    mov eax,[eax+18h]"
-"	      004f4453    mov ecx,[ebp+8]"
+"	      004f4453    mov ecx,hd"
 "	      004f4456    mov ecx,[ecx+180h]"
 "	      004f445c    add eax,[ecx]"
-"	      004f445e    mov ecx,[ebp+8]"
+"	      004f445e    mov ecx,hd"
 "	      004f4461    mov ecx,[ecx+0BCh]"
 "	      004f4467    mov [ecx+18h],eax"
 );
 // LINE 2644:
 	asm( 
-"	      004f446a    mov eax,[ebp+8]"
+"	      004f446a    mov eax,hd"
 "	      004f446d    mov eax,[eax+180h]"
 "	      004f4473    mov eax,[eax+4]"
-"	      004f4476    mov ecx,[ebp+8]"
+"	      004f4476    mov ecx,hd"
 "	      004f4479    mov ecx,[ecx+0B8h]"
 "	      004f447f    add eax,[ecx+1Ch]"
-"	      004f4482    mov ecx,[ebp+8]"
+"	      004f4482    mov ecx,hd"
 "	      004f4485    mov ecx,[ecx+0BCh]"
 "	      004f448b    mov [ecx+1Ch],eax"
 );
 // LINE 2645:
 	asm( 
-"	      004f448e    mov eax,[ebp+8]"
+"	      004f448e    mov eax,hd"
 "	      004f4491    mov eax,[eax+180h]"
 "	      004f4497    mov eax,[eax+8]"
-"	      004f449a    mov ecx,[ebp+8]"
+"	      004f449a    mov ecx,hd"
 "	      004f449d    mov ecx,[ecx+0B8h]"
 "	      004f44a3    add eax,[ecx+20h]"
-"	      004f44a6    mov ecx,[ebp+8]"
+"	      004f44a6    mov ecx,hd"
 "	      004f44a9    mov ecx,[ecx+0BCh]"
 "	      004f44af    mov [ecx+20h],eax"
 );
 // LINE 2649:
 	asm( 
-"	      004f44b2    mov eax,[ebp+8]"
+"	      004f44b2    mov eax,hd"
 "	      004f44b5    mov eax,[eax+0BCh]"
-"	      004f44bb    mov ecx,[ebp-20h]"
+"	      004f44bb    mov ecx,galt"
 "	      004f44be    add ecx,20000h"
 "	      004f44c4    cmp [eax+1Ch],ecx"
 "	      004f44c7    jg near ptr 004F460Fh"
-"	      004f44cd    mov eax,[ebp+8]"
+"	      004f44cd    mov eax,hd"
 "	      004f44d0    cmp dword ptr [eax+1B0h],0"
 "	      004f44d7    jne near ptr 004F460Fh"
 );
 // LINE 2651:
 	asm( 
-"	      004f44dd    mov eax,[ebp+8]"
+"	      004f44dd    mov eax,hd"
 "	      004f44e0    mov eax,[eax+0BCh]"
 "	      004f44e6    mov eax,[eax+18h]"
 "	      004f44e9    add eax,20000000h"
 "	      004f44ee    sar eax,16h"
-"	      004f44f1    mov [ebp-4],eax"
+"	      004f44f1    mov x,eax"
 );
 // LINE 2652:
 	asm( 
 "	      004f44f4    mov eax,20000000h"
-"	      004f44f9    mov ecx,[ebp+8]"
+"	      004f44f9    mov ecx,hd"
 "	      004f44fc    mov ecx,[ecx+0BCh]"
 "	      004f4502    sub eax,[ecx+20h]"
 "	      004f4505    sar eax,16h"
-"	      004f4508    mov [ebp-8],eax"
+"	      004f4508    mov y,eax"
 );
 // LINE 2654:
 	asm( 
-"	      004f450b    mov eax,[ebp-8]"
+"	      004f450b    mov eax,y"
 "	      004f450e    and eax,0FFh"
-"	      004f4513    mov ecx,[ebp-4]"
+"	      004f4513    mov ecx,x"
 "	      004f4516    and ecx,0FFh"
 "	      004f451c    shl ecx,8"
 "	      004f451f    mov al,[eax+ecx+66EB10h]"
-"	      004f4526    mov [ebp-18h],al"
+"	      004f4526    mov texid,al"
 );
 // LINE 2655:
 	asm( 
-"	      004f4529    movsx eax,byte ptr [ebp-18h]"
+"	      004f4529    movsx eax,texid"
 "	      004f452d    test eax,eax"
 "	      004f452f    jl near ptr 004F4542h"
-"	      004f4535    movsx eax,byte ptr [ebp-18h]"
+"	      004f4535    movsx eax,texid"
 "	      004f4539    cmp eax,5"
 "	      004f453c    jl near ptr 004F455Ch"
-"	      004f4542    movsx eax,byte ptr [ebp-18h]"
+"	      004f4542    movsx eax,texid"
 "	      004f4546    cmp eax,5"
 "	      004f4549    jl near ptr 004F460Fh"
-"	      004f454f    movsx eax,byte ptr [ebp-18h]"
+"	      004f454f    movsx eax,texid"
 "	      004f4553    cmp eax,0Ah"
 "	      004f4556    jge near ptr 004F460Fh"
 );
 // LINE 2657:
 	asm( 
 "	      004f455c    mov eax,ds:[5B48D4h]"
-"	      004f4561    mov ecx,[ebp+8]"
+"	      004f4561    mov ecx,hd"
 "	      004f4564    add [ecx+1C0h],eax"
 );
 // LINE 2658:
 	asm( 
-"	      004f456a    mov eax,[ebp-1Ch]"
-"	      004f456d    mov ecx,[ebp+8]"
+"	      004f456a    mov eax,htd"
+"	      004f456d    mov ecx,hd"
 "	      004f4570    mov ecx,[ecx+1C0h]"
 "	      004f4576    cmp [eax+8],ecx"
 "	      004f4579    jge near ptr 004F45AEh"
 );
 // LINE 2660:
 	asm( 
-"	      004f457f    mov eax,[ebp-1Ch]"
+"	      004f457f    mov eax,htd"
 "	      004f4582    mov eax,[eax+8]"
-"	      004f4585    mov ecx,[ebp+8]"
+"	      004f4585    mov ecx,hd"
 "	      004f4588    mov [ecx+1C0h],eax"
 );
 // LINE 2661:
 	asm( 
 "	      004f458e    push 3"
-"	      004f4590    mov eax,[ebp+8]"
+"	      004f4590    mov eax,hd"
 "	      004f4593    mov eax,[eax+0BCh]"
 "	      004f4599    add eax,18h"
 "	      004f459c    push eax"
-"	      004f459d    mov eax,[ebp+0Ch]"
+"	      004f459d    mov eax,cptr"
 "	      004f45a0    push eax"
 "	      004f45a1    call 005240DCh"
 "	      004f45a6    add esp,0Ch"
@@ -9028,7 +9028,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2667:
 	asm( 
 "	      004f45c0    push 0"
-"	      004f45c2    mov eax,[ebp+8]"
+"	      004f45c2    mov eax,hd"
 "	      004f45c5    mov eax,[eax+0BCh]"
 "	      004f45cb    add eax,18h"
 "	      004f45ce    push eax"
@@ -9039,11 +9039,11 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2669:
 	asm( 
 "	      004f45d9    push 8"
-"	      004f45db    mov eax,[ebp+8]"
+"	      004f45db    mov eax,hd"
 "	      004f45de    mov eax,[eax+0BCh]"
 "	      004f45e4    add eax,18h"
 "	      004f45e7    push eax"
-"	      004f45e8    mov eax,[ebp+0Ch]"
+"	      004f45e8    mov eax,cptr"
 "	      004f45eb    push eax"
 "	      004f45ec    call 005240DCh"
 "	      004f45f1    add esp,0Ch"
@@ -9051,20 +9051,20 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2670:
 	asm( 
 "	      004f45f4    push 3"
-"	      004f45f6    mov eax,[ebp+8]"
+"	      004f45f6    mov eax,hd"
 "	      004f45f9    mov eax,[eax+0BCh]"
 "	      004f45ff    add eax,18h"
 "	      004f4602    push eax"
-"	      004f4603    mov eax,[ebp+0Ch]"
+"	      004f4603    mov eax,cptr"
 "	      004f4606    push eax"
 "	      004f4607    call 005240DCh"
 "	      004f460c    add esp,0Ch"
 );
 // LINE 2675:
 	asm( 
-"	      004f460f    mov eax,[ebp+8]"
+"	      004f460f    mov eax,hd"
 "	      004f4612    add eax,184h"
-"	      004f4617    mov ecx,[ebp+8]"
+"	      004f4617    mov ecx,hd"
 "	      004f461a    add ecx,19Ch"
 "	      004f4620    mov edx,[eax]"
 "	      004f4622    mov [ecx],edx"
@@ -9075,40 +9075,40 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2676:
 	asm( 
-"	      004f4630    mov eax,[ebp+8]"
+"	      004f4630    mov eax,hd"
 "	      004f4633    mov eax,[eax+180h]"
 "	      004f4639    mov eax,[eax]"
-"	      004f463b    mov ecx,[ebp+8]"
+"	      004f463b    mov ecx,hd"
 "	      004f463e    mov ecx,[ecx+17Ch]"
 "	      004f4644    sub eax,[ecx]"
-"	      004f4646    mov ecx,[ebp+8]"
+"	      004f4646    mov ecx,hd"
 "	      004f4649    mov [ecx+184h],eax"
 );
 // LINE 2677:
 	asm( 
-"	      004f464f    mov eax,[ebp+8]"
+"	      004f464f    mov eax,hd"
 "	      004f4652    mov eax,[eax+180h]"
 "	      004f4658    mov eax,[eax+4]"
-"	      004f465b    mov ecx,[ebp+8]"
+"	      004f465b    mov ecx,hd"
 "	      004f465e    mov ecx,[ecx+17Ch]"
 "	      004f4664    sub eax,[ecx+4]"
-"	      004f4667    mov ecx,[ebp+8]"
+"	      004f4667    mov ecx,hd"
 "	      004f466a    mov [ecx+188h],eax"
 );
 // LINE 2678:
 	asm( 
-"	      004f4670    mov eax,[ebp+8]"
+"	      004f4670    mov eax,hd"
 "	      004f4673    mov eax,[eax+180h]"
 "	      004f4679    mov eax,[eax+8]"
-"	      004f467c    mov ecx,[ebp+8]"
+"	      004f467c    mov ecx,hd"
 "	      004f467f    mov ecx,[ecx+17Ch]"
 "	      004f4685    sub eax,[ecx+8]"
-"	      004f4688    mov ecx,[ebp+8]"
+"	      004f4688    mov ecx,hd"
 "	      004f468b    mov [ecx+18Ch],eax"
 );
 // LINE 2679:
 	asm( 
-"	      004f4691    mov eax,[ebp+8]"
+"	      004f4691    mov eax,hd"
 "	      004f4694    add eax,184h"
 "	      004f4699    push eax"
 "	      004f469a    call 004CA1E3h"
@@ -9116,38 +9116,38 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2681:
 	asm( 
-"	      004f46a2    mov eax,[ebp+8]"
+"	      004f46a2    mov eax,hd"
 "	      004f46a5    mov eax,[eax+1A0h]"
-"	      004f46ab    mov ecx,[ebp+8]"
+"	      004f46ab    mov ecx,hd"
 "	      004f46ae    sub eax,[ecx+188h]"
-"	      004f46b4    mov ecx,[ebp+8]"
+"	      004f46b4    mov ecx,hd"
 "	      004f46b7    mov [ecx+1A8h],eax"
 );
 // LINE 2682:
 	asm( 
-"	      004f46bd    mov eax,[ebp+8]"
+"	      004f46bd    mov eax,hd"
 "	      004f46c0    cmp dword ptr [eax+1A8h],0"
 "	      004f46c7    jge near ptr 004F46DAh"
 );
 // LINE 2683:
 	asm( 
-"	      004f46cd    mov eax,[ebp+8]"
+"	      004f46cd    mov eax,hd"
 "	      004f46d0    mov dword ptr [eax+1A8h],0"
 );
 // LINE 2684:
 	asm( 
-"	      004f46da    mov eax,[ebp+8]"
+"	      004f46da    mov eax,hd"
 "	      004f46dd    mov eax,[eax+1A8h]"
 "	      004f46e3    imul eax,ds:[5B48E4h]"
-"	      004f46ea    mov ecx,[ebp+8]"
+"	      004f46ea    mov ecx,hd"
 "	      004f46ed    mov [ecx+1A8h],eax"
 );
 // LINE 2687:
 	asm( 
-"	      004f46f3    mov eax,[ebp+8]"
+"	      004f46f3    mov eax,hd"
 "	      004f46f6    add eax,184h"
 "	      004f46fb    push eax"
-"	      004f46fc    mov eax,[ebp+8]"
+"	      004f46fc    mov eax,hd"
 "	      004f46ff    mov eax,[eax+0BCh]"
 "	      004f4705    add eax,24h"
 "	      004f4708    push eax"
@@ -9156,10 +9156,10 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2688:
 	asm( 
-"	      004f4711    mov eax,[ebp+8]"
+"	      004f4711    mov eax,hd"
 "	      004f4714    mov eax,[eax+0BCh]"
 "	      004f471a    add eax,18h"
-"	      004f471d    lea ecx,[ebp-78h]"
+"	      004f471d    lea ecx,pos.loc.x"
 "	      004f4720    mov edx,[eax]"
 "	      004f4722    mov [ecx],edx"
 "	      004f4724    mov edx,[eax+4]"
@@ -9169,9 +9169,9 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 2689:
 	asm( 
-"	      004f4730    mov eax,[ebp+8]"
+"	      004f4730    mov eax,hd"
 "	      004f4733    mov esi,[eax+0BCh]"
-"	      004f4739    lea edi,[ebp-60h]"
+"	      004f4739    lea edi,pos.matrix[0][0]"
 "	      004f473c    add esi,24h"
 "	      004f473f    mov ecx,10h"
 "	      004f4744    rep movsd"
@@ -9179,9 +9179,9 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2690:
 	asm( 
 "	      004f4746    push 3"
-"	      004f4748    lea eax,[ebp-78h]"
+"	      004f4748    lea eax,pos.loc.x"
 "	      004f474b    push eax"
-"	      004f474c    mov eax,[ebp+8]"
+"	      004f474c    mov eax,hd"
 "	      004f474f    mov eax,[eax+0BCh]"
 "	      004f4755    mov eax,[eax+8]"
 "	      004f4758    push eax"
@@ -9216,7 +9216,7 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 );
 // LINE 2706:
 	asm( 
-"	      004f476f    mov eax,[ebp+8]"
+"	      004f476f    mov eax,hd"
 "	      004f4772    cmp dword ptr [eax+1C0h],0"
 "	      004f4779    jne near ptr 004F4784h"
 );
@@ -9226,7 +9226,7 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 );
 // LINE 2710:
 	asm( 
-"	      004f4784    mov eax,[ebp+8]"
+"	      004f4784    mov eax,hd"
 "	      004f4787    cmp dword ptr [eax+1BCh],1"
 "	      004f478e    jne near ptr 004F48E2h"
 );
@@ -9235,65 +9235,65 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 "	      004f4794    xor eax,eax"
 "	      004f4796    sub eax,ds:[5B48D8h]"
 "	      004f479c    neg eax"
-"	      004f479e    mov ecx,[ebp+8]"
+"	      004f479e    mov ecx,hd"
 "	      004f47a1    sub [ecx+1C0h],eax"
 );
 // LINE 2713:
 	asm( 
-"	      004f47a7    mov eax,[ebp+8]"
+"	      004f47a7    mov eax,hd"
 "	      004f47aa    cmp dword ptr [eax+1C0h],0"
 "	      004f47b1    jge near ptr 004F47C4h"
 );
 // LINE 2714:
 	asm( 
-"	      004f47b7    mov eax,[ebp+8]"
+"	      004f47b7    mov eax,hd"
 "	      004f47ba    mov dword ptr [eax+1C0h],0"
 );
 // LINE 2716:
 	asm( 
-"	      004f47c4    mov eax,[ebp+8]"
+"	      004f47c4    mov eax,hd"
 "	      004f47c7    mov eax,[eax+190h]"
-"	      004f47cd    mov ecx,[ebp+8]"
+"	      004f47cd    mov ecx,hd"
 "	      004f47d0    mov ecx,[ecx+0BCh]"
 "	      004f47d6    sub eax,[ecx+18h]"
-"	      004f47d9    mov [ebp-20h],eax"
+"	      004f47d9    mov dx,eax"
 );
 // LINE 2717:
 	asm( 
-"	      004f47dc    mov eax,[ebp+8]"
+"	      004f47dc    mov eax,hd"
 "	      004f47df    mov eax,[eax+198h]"
-"	      004f47e5    mov ecx,[ebp+8]"
+"	      004f47e5    mov ecx,hd"
 "	      004f47e8    mov ecx,[ecx+0BCh]"
 "	      004f47ee    sub eax,[ecx+20h]"
-"	      004f47f1    mov [ebp-4],eax"
+"	      004f47f1    mov dz,eax"
 );
 // LINE 2720:
 	asm( 
-"	      004f47f4    mov eax,[ebp+8]"
+"	      004f47f4    mov eax,hd"
 "	      004f47f7    mov eax,[eax+184h]"
 "	      004f47fd    neg eax"
-"	      004f47ff    mov [ebp-10h],eax"
+"	      004f47ff    mov vec.x,eax"
 );
 // LINE 2721:
 	asm( 
-"	      004f4802    mov eax,[ebp+8]"
+"	      004f4802    mov eax,hd"
 "	      004f4805    mov eax,[eax+188h]"
 "	      004f480b    neg eax"
-"	      004f480d    mov [ebp-0Ch],eax"
+"	      004f480d    mov vec.y,eax"
 );
 // LINE 2722:
 	asm( 
-"	      004f4810    mov eax,[ebp+8]"
+"	      004f4810    mov eax,hd"
 "	      004f4813    mov eax,[eax+18Ch]"
 "	      004f4819    neg eax"
-"	      004f481b    mov [ebp-8],eax"
+"	      004f481b    mov vec.z,eax"
 );
 // LINE 2723:
 	asm( 
-"	      004f481e    mov eax,[ebp+8]"
+"	      004f481e    mov eax,hd"
 "	      004f4821    mov eax,[eax+0BCh]"
 "	      004f4827    add eax,18h"
-"	      004f482a    lea ecx,[ebp-1Ch]"
+"	      004f482a    lea ecx,loc.x"
 "	      004f482d    mov edx,[eax]"
 "	      004f482f    mov [ecx],edx"
 "	      004f4831    mov edx,[eax+4]"
@@ -9303,25 +9303,25 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 );
 // LINE 2724:
 	asm( 
-"	      004f483d    mov eax,[ebp-10h]"
+"	      004f483d    mov eax,vec.x"
 "	      004f4840    shl eax,3"
-"	      004f4843    add [ebp-1Ch],eax"
+"	      004f4843    add loc.x,eax"
 );
 // LINE 2725:
 	asm( 
-"	      004f4846    mov eax,[ebp-0Ch]"
+"	      004f4846    mov eax,vec.y"
 "	      004f4849    shl eax,3"
-"	      004f484c    add [ebp-18h],eax"
+"	      004f484c    add loc.y,eax"
 );
 // LINE 2726:
 	asm( 
-"	      004f484f    mov eax,[ebp-8]"
+"	      004f484f    mov eax,vec.z"
 "	      004f4852    shl eax,3"
-"	      004f4855    add [ebp-14h],eax"
+"	      004f4855    add loc.z,eax"
 );
 // LINE 2727:
 	asm( 
-"	      004f4858    mov eax,[ebp+8]"
+"	      004f4858    mov eax,hd"
 "	      004f485b    mov eax,[eax+1A8h]"
 "	      004f4861    push eax"
 "	      004f4862    call 0056EC50h"
@@ -9333,15 +9333,15 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 "	      004f4872    xor eax,edx"
 "	      004f4874    sub eax,edx"
 "	      004f4876    inc eax"
-"	      004f4877    imul eax,[ebp-20h]"
+"	      004f4877    imul eax,dx"
 "	      004f487b    push eax"
 "	      004f487c    call 004D19BDh"
 "	      004f4881    add esp,8"
-"	      004f4884    add [ebp-1Ch],eax"
+"	      004f4884    add loc.x,eax"
 );
 // LINE 2728:
 	asm( 
-"	      004f4887    mov eax,[ebp+8]"
+"	      004f4887    mov eax,hd"
 "	      004f488a    mov eax,[eax+1A8h]"
 "	      004f4890    push eax"
 "	      004f4891    call 0056EC50h"
@@ -9353,25 +9353,25 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 "	      004f48a1    xor eax,edx"
 "	      004f48a3    sub eax,edx"
 "	      004f48a5    inc eax"
-"	      004f48a6    imul eax,[ebp-4]"
+"	      004f48a6    imul eax,dz"
 "	      004f48aa    push eax"
 "	      004f48ab    call 004D19BDh"
 "	      004f48b0    add esp,8"
-"	      004f48b3    add [ebp-14h],eax"
+"	      004f48b3    add loc.z,eax"
 );
 // LINE 2739:
 	asm( 
 "	      004f48b6    push 0FFFFFFFFh"
 "	      004f48b8    push 0F0000h"
-"	      004f48bd    mov eax,[ebp+8]"
+"	      004f48bd    mov eax,hd"
 "	      004f48c0    mov eax,[eax+0BCh]"
 "	      004f48c6    push eax"
 "	      004f48c7    push 1"
-"	      004f48c9    lea eax,[ebp-10h]"
+"	      004f48c9    lea eax,vec.x"
 "	      004f48cc    push eax"
-"	      004f48cd    lea eax,[ebp-1Ch]"
+"	      004f48cd    lea eax,loc.x"
 "	      004f48d0    push eax"
-"	      004f48d1    mov eax,[ebp+8]"
+"	      004f48d1    mov eax,hd"
 "	      004f48d4    add eax,18h"
 "	      004f48d7    push eax"
 "	      004f48d8    push 6"
@@ -9412,29 +9412,29 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 );
 // LINE 2760:
 	asm( 
-"	      004f48f5    mov eax,[ebp+8]"
+"	      004f48f5    mov eax,hd"
 "	      004f48f8    mov eax,[eax+0A4h]"
 "	      004f48fe    mov eax,[eax+1Ch]"
-"	      004f4901    sub eax,[ebp+0Ch]"
+"	      004f4901    sub eax,alt"
 "	      004f4904    cmp eax,140000h"
 "	      004f4909    jge near ptr 004F4A5Fh"
-"	      004f490f    mov eax,[ebp+8]"
+"	      004f490f    mov eax,hd"
 "	      004f4912    cmp dword ptr [eax+148h],118h"
 "	      004f491c    jle near ptr 004F4A5Fh"
 );
 // LINE 2763:
 	asm( 
-"	      004f4922    mov eax,[ebp+8]"
+"	      004f4922    mov eax,hd"
 "	      004f4925    cmp dword ptr [eax+4],0"
 "	      004f4929    jne near ptr 004F4948h"
 );
 // LINE 2764:
 	asm( 
-"	      004f492f    mov eax,[ebp+8]"
+"	      004f492f    mov eax,hd"
 "	      004f4932    mov eax,[eax+148h]"
 "	      004f4938    sub eax,118h"
 "	      004f493d    sar eax,2"
-"	      004f4940    mov [ebp-6Ch],eax"
+"	      004f4940    mov num,eax"
 );
 // LINE 2765:
 	asm( 
@@ -9443,27 +9443,27 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 // LINE 2766:
 	asm( 
 "	      004f4948    mov eax,14h"
-"	      004f494d    mov ecx,[ebp+8]"
+"	      004f494d    mov ecx,hd"
 "	      004f4950    mov ecx,[ecx+0A4h]"
 "	      004f4956    mov ecx,[ecx+1Ch]"
-"	      004f4959    sub ecx,[ebp+0Ch]"
+"	      004f4959    sub ecx,alt"
 "	      004f495c    sar ecx,10h"
 "	      004f495f    sub eax,ecx"
 "	      004f4961    sar eax,1"
-"	      004f4964    mov [ebp-6Ch],eax"
+"	      004f4964    mov num,eax"
 );
 // LINE 2768:
 	asm( 
-"	      004f4967    cmp dword ptr [ebp-6Ch],0"
+"	      004f4967    cmp num,0"
 "	      004f496b    jge near ptr 004F4976h"
 "	      004f4971    jmp near ptr 004F4A64h"
 );
 // LINE 2770:
 	asm( 
-"	      004f4976    mov eax,[ebp+8]"
+"	      004f4976    mov eax,hd"
 "	      004f4979    mov eax,[eax+0A4h]"
 "	      004f497f    add eax,18h"
-"	      004f4982    lea ecx,[ebp-64h]"
+"	      004f4982    lea ecx,loc.x"
 "	      004f4985    mov edx,[eax]"
 "	      004f4987    mov [ecx],edx"
 "	      004f4989    mov edx,[eax+4]"
@@ -9473,40 +9473,40 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 );
 // LINE 2771:
 	asm( 
-"	      004f4995    mov eax,[ebp+0Ch]"
-"	      004f4998    mov [ebp-60h],eax"
+"	      004f4995    mov eax,alt"
+"	      004f4998    mov loc.y,eax"
 );
 // LINE 2773:
 	asm( 
-"	      004f499b    lea eax,[ebp-40h]"
+"	      004f499b    lea eax,mat[0][0]"
 "	      004f499e    push eax"
 "	      004f499f    call 004D1FF1h"
 "	      004f49a4    add esp,4"
 );
 // LINE 2774:
 	asm( 
-"	      004f49a7    mov eax,[ebp+8]"
+"	      004f49a7    mov eax,hd"
 "	      004f49aa    mov eax,[eax+100h]"
 "	      004f49b0    neg eax"
-"	      004f49b2    mov [ebp-58h],eax"
+"	      004f49b2    mov vec.x,eax"
 );
 // LINE 2775:
 	asm( 
-"	      004f49b5    mov eax,[ebp+8]"
+"	      004f49b5    mov eax,hd"
 "	      004f49b8    mov eax,[eax+104h]"
 "	      004f49be    neg eax"
-"	      004f49c0    mov [ebp-54h],eax"
+"	      004f49c0    mov vec.y,eax"
 );
 // LINE 2776:
 	asm( 
-"	      004f49c3    mov eax,[ebp+8]"
+"	      004f49c3    mov eax,hd"
 "	      004f49c6    mov eax,[eax+108h]"
 "	      004f49cc    neg eax"
-"	      004f49ce    mov [ebp-50h],eax"
+"	      004f49ce    mov vec.z,eax"
 );
 // LINE 2777:
 	asm( 
-"	      004f49d1    lea eax,[ebp-40h]"
+"	      004f49d1    lea eax,mat[0][0]"
 "	      004f49d4    push eax"
 "	      004f49d5    mov ebx,5DC0000h"
 "	      004f49da    call 0056EC50h"
@@ -9523,51 +9523,51 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 );
 // LINE 2778:
 	asm( 
-"	      004f49fa    lea eax,[ebp-40h]"
+"	      004f49fa    lea eax,mat[0][0]"
 "	      004f49fd    push eax"
-"	      004f49fe    lea eax,[ebp-4Ch]"
+"	      004f49fe    lea eax,dvec.x"
 "	      004f4a01    push eax"
-"	      004f4a02    lea eax,[ebp-58h]"
+"	      004f4a02    lea eax,vec.x"
 "	      004f4a05    push eax"
 "	      004f4a06    call 004D2094h"
 "	      004f4a0b    add esp,0Ch"
 );
 // LINE 2779:
 	asm( 
-"	      004f4a0e    mov eax,[ebp-4Ch]"
+"	      004f4a0e    mov eax,dvec.x"
 "	      004f4a11    shl eax,5"
-"	      004f4a14    add [ebp-64h],eax"
+"	      004f4a14    add loc.x,eax"
 );
 // LINE 2780:
 	asm( 
-"	      004f4a17    mov eax,[ebp-48h]"
+"	      004f4a17    mov eax,dvec.y"
 "	      004f4a1a    shl eax,5"
-"	      004f4a1d    add [ebp-60h],eax"
+"	      004f4a1d    add loc.y,eax"
 );
 // LINE 2781:
 	asm( 
-"	      004f4a20    mov eax,[ebp-44h]"
+"	      004f4a20    mov eax,dvec.z"
 "	      004f4a23    shl eax,5"
-"	      004f4a26    add [ebp-5Ch],eax"
+"	      004f4a26    add loc.z,eax"
 );
 // LINE 2782:
 	asm( 
-"	      004f4a29    mov eax,[ebp+8]"
+"	      004f4a29    mov eax,hd"
 "	      004f4a2c    mov eax,[eax+1Ch]"
 "	      004f4a2f    and eax,0FFh"
-"	      004f4a34    mov ecx,[ebp+8]"
+"	      004f4a34    mov ecx,hd"
 "	      004f4a37    mov ecx,[ecx+18h]"
 "	      004f4a3a    and ecx,0FFh"
 "	      004f4a40    shl ecx,0Ah"
 "	      004f4a43    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f4a4a    mov [ebp-68h],eax"
+"	      004f4a4a    mov cptr,eax"
 );
 // LINE 2783:
 	asm( 
 "	      004f4a4d    push 8"
-"	      004f4a4f    lea eax,[ebp-64h]"
+"	      004f4a4f    lea eax,loc.x"
 "	      004f4a52    push eax"
-"	      004f4a53    mov eax,[ebp-68h]"
+"	      004f4a53    mov eax,cptr"
 "	      004f4a56    push eax"
 "	      004f4a57    call 005240DCh"
 "	      004f4a5c    add esp,0Ch"
@@ -9598,46 +9598,46 @@ void NormalizeMapPoints(int32_t * x, int32_t * z) {
 );
 // LINE 2813:
 	asm( 
-"	      004f4a6f    mov eax,[ebp+8]"
+"	      004f4a6f    mov eax,x"
 "	      004f4a72    cmp dword ptr [eax],20000000h"
 "	      004f4a78    jle near ptr 004F4A87h"
 );
 // LINE 2814:
 	asm( 
-"	      004f4a7e    mov eax,[ebp+8]"
+"	      004f4a7e    mov eax,x"
 "	      004f4a81    sub dword ptr [eax],40000000h"
 );
 // LINE 2815:
 	asm( 
-"	      004f4a87    mov eax,[ebp+8]"
+"	      004f4a87    mov eax,x"
 "	      004f4a8a    cmp dword ptr [eax],0E0000000h"
 "	      004f4a90    jge near ptr 004F4A9Fh"
 );
 // LINE 2816:
 	asm( 
-"	      004f4a96    mov eax,[ebp+8]"
+"	      004f4a96    mov eax,x"
 "	      004f4a99    add dword ptr [eax],40000000h"
 );
 // LINE 2818:
 	asm( 
-"	      004f4a9f    mov eax,[ebp+0Ch]"
+"	      004f4a9f    mov eax,z"
 "	      004f4aa2    cmp dword ptr [eax],20000000h"
 "	      004f4aa8    jle near ptr 004F4AB7h"
 );
 // LINE 2819:
 	asm( 
-"	      004f4aae    mov eax,[ebp+0Ch]"
+"	      004f4aae    mov eax,z"
 "	      004f4ab1    sub dword ptr [eax],40000000h"
 );
 // LINE 2820:
 	asm( 
-"	      004f4ab7    mov eax,[ebp+0Ch]"
+"	      004f4ab7    mov eax,z"
 "	      004f4aba    cmp dword ptr [eax],0E0000000h"
 "	      004f4ac0    jge near ptr 004F4ACFh"
 );
 // LINE 2821:
 	asm( 
-"	      004f4ac6    mov eax,[ebp+0Ch]"
+"	      004f4ac6    mov eax,z"
 "	      004f4ac9    add dword ptr [eax],40000000h"
 );
 // LINE 2822:
@@ -9666,61 +9666,61 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2838:
 	asm( 
-"	      004f4add    mov eax,[ebp+8]"
+"	      004f4add    mov eax,vector"
 "	      004f4ae0    mov dword ptr [eax+4],0"
 );
 // LINE 2840:
 	asm( 
-"	      004f4ae7    mov eax,[ebp+8]"
+"	      004f4ae7    mov eax,vector"
 "	      004f4aea    mov eax,[eax+8]"
 "	      004f4aed    push eax"
-"	      004f4aee    mov eax,[ebp+8]"
+"	      004f4aee    mov eax,vector"
 "	      004f4af1    mov eax,[eax]"
 "	      004f4af3    push eax"
 "	      004f4af4    call 004D20B1h"
 "	      004f4af9    add esp,8"
-"	      004f4afc    mov [ebp-4],eax"
+"	      004f4afc    mov angle,eax"
 );
 // LINE 2841:
 	asm( 
-"	      004f4aff    mov eax,[ebp+8]"
+"	      004f4aff    mov eax,vector"
 "	      004f4b02    add eax,8"
 "	      004f4b05    push eax"
-"	      004f4b06    mov eax,[ebp+8]"
+"	      004f4b06    mov eax,vector"
 "	      004f4b09    push eax"
-"	      004f4b0a    mov eax,[ebp-4]"
+"	      004f4b0a    mov eax,angle"
 "	      004f4b0d    push eax"
 "	      004f4b0e    call 004D19FCh"
 "	      004f4b13    add esp,0Ch"
 );
 // LINE 2847:
 	asm( 
-"	      004f4b16    mov eax,[ebp+8]"
+"	      004f4b16    mov eax,vector"
 "	      004f4b19    push eax"
 "	      004f4b1a    call 004CA0C0h"
 "	      004f4b1f    add esp,4"
-"	      004f4b22    mov [ebp-8],eax"
+"	      004f4b22    mov length,eax"
 );
 // LINE 2848:
 	asm( 
-"	      004f4b25    cmp dword ptr [ebp-8],10000h"
+"	      004f4b25    cmp length,10000h"
 "	      004f4b2c    jge near ptr 004F4BFCh"
 );
 // LINE 2850:
 	asm( 
-"	      004f4b32    mov eax,[ebp+8]"
+"	      004f4b32    mov eax,vector"
 "	      004f4b35    cmp dword ptr [eax],0"
 "	      004f4b38    jne near ptr 004F4B69h"
 );
 // LINE 2852:
 	asm( 
-"	      004f4b3e    mov eax,[ebp+8]"
+"	      004f4b3e    mov eax,vector"
 "	      004f4b41    cmp dword ptr [eax+8],0"
 "	      004f4b45    jle near ptr 004F4B5Ah"
 );
 // LINE 2853:
 	asm( 
-"	      004f4b4b    mov eax,[ebp+8]"
+"	      004f4b4b    mov eax,vector"
 "	      004f4b4e    mov dword ptr [eax+8],10000h"
 );
 // LINE 2854:
@@ -9729,25 +9729,25 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2855:
 	asm( 
-"	      004f4b5a    mov eax,[ebp+8]"
+"	      004f4b5a    mov eax,vector"
 "	      004f4b5d    mov dword ptr [eax+8],0FFFF0000h"
 );
 // LINE 2857:
 	asm( 
 "	      004f4b64    jmp near ptr 004F4BFCh"
-"	      004f4b69    mov eax,[ebp+8]"
+"	      004f4b69    mov eax,vector"
 "	      004f4b6c    cmp dword ptr [eax+8],0"
 "	      004f4b70    jne near ptr 004F4B9Fh"
 );
 // LINE 2859:
 	asm( 
-"	      004f4b76    mov eax,[ebp+8]"
+"	      004f4b76    mov eax,vector"
 "	      004f4b79    cmp dword ptr [eax+8],0"
 "	      004f4b7d    jle near ptr 004F4B91h"
 );
 // LINE 2860:
 	asm( 
-"	      004f4b83    mov eax,[ebp+8]"
+"	      004f4b83    mov eax,vector"
 "	      004f4b86    mov dword ptr [eax],10000h"
 );
 // LINE 2861:
@@ -9756,19 +9756,19 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2862:
 	asm( 
-"	      004f4b91    mov eax,[ebp+8]"
+"	      004f4b91    mov eax,vector"
 "	      004f4b94    mov dword ptr [eax],0FFFF0000h"
 );
 // LINE 2864:
 	asm( 
 "	      004f4b9a    jmp near ptr 004F4BFCh"
-"	      004f4b9f    mov eax,[ebp+8]"
+"	      004f4b9f    mov eax,vector"
 "	      004f4ba2    mov eax,[eax]"
 "	      004f4ba4    cdq"
 "	      004f4ba5    xor eax,edx"
 "	      004f4ba7    sub eax,edx"
 "	      004f4ba9    mov ecx,eax"
-"	      004f4bab    mov eax,[ebp+8]"
+"	      004f4bab    mov eax,vector"
 "	      004f4bae    mov eax,[eax+8]"
 "	      004f4bb1    cdq"
 "	      004f4bb2    xor eax,edx"
@@ -9778,13 +9778,13 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2866:
 	asm( 
-"	      004f4bbe    mov eax,[ebp+8]"
+"	      004f4bbe    mov eax,vector"
 "	      004f4bc1    cmp dword ptr [eax],0"
 "	      004f4bc4    jle near ptr 004F4BD4h"
 );
 // LINE 2867:
 	asm( 
-"	      004f4bca    mov eax,[ebp+8]"
+"	      004f4bca    mov eax,vector"
 "	      004f4bcd    inc dword ptr [eax]"
 );
 // LINE 2868:
@@ -9793,7 +9793,7 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2869:
 	asm( 
-"	      004f4bd4    mov eax,[ebp+8]"
+"	      004f4bd4    mov eax,vector"
 "	      004f4bd7    dec dword ptr [eax]"
 );
 // LINE 2871:
@@ -9802,13 +9802,13 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2873:
 	asm( 
-"	      004f4bde    mov eax,[ebp+8]"
+"	      004f4bde    mov eax,vector"
 "	      004f4be1    cmp dword ptr [eax+8],0"
 "	      004f4be5    jle near ptr 004F4BF6h"
 );
 // LINE 2874:
 	asm( 
-"	      004f4beb    mov eax,[ebp+8]"
+"	      004f4beb    mov eax,vector"
 "	      004f4bee    inc dword ptr [eax+8]"
 );
 // LINE 2875:
@@ -9817,12 +9817,12 @@ void NormalizeXZVector(struct Point3d* vector) {
 );
 // LINE 2876:
 	asm( 
-"	      004f4bf6    mov eax,[ebp+8]"
+"	      004f4bf6    mov eax,vector"
 "	      004f4bf9    dec dword ptr [eax+8]"
 );
 // LINE 2879:
 	asm( 
-"	      004f4bfc    cmp dword ptr [ebp-8],10000h"
+"	      004f4bfc    cmp length,10000h"
 "	      004f4c03    jl near ptr 004F4B16h"
 );
 // LINE 2881:
@@ -9875,95 +9875,95 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 2906:
 	asm( 
-"	      004f4c1a    mov dword ptr [ebp-1Ch],8"
+"	      004f4c1a    mov ropeload,8"
 );
 // LINE 2907:
 	asm( 
-"	      004f4c21    mov eax,[ebp+8]"
+"	      004f4c21    mov eax,hd"
 "	      004f4c24    mov eax,[eax]"
 "	      004f4c26    mov ecx,eax"
 "	      004f4c28    lea eax,[eax+eax*4]"
 "	      004f4c2b    lea eax,[ecx+eax*2]"
 "	      004f4c2e    lea eax,[eax*8+5B4978h]"
-"	      004f4c35    mov [ebp-74h],eax"
+"	      004f4c35    mov htd,eax"
 );
 // LINE 2910:
 	asm( 
-"	      004f4c38    mov eax,[ebp+8]"
+"	      004f4c38    mov eax,hd"
 "	      004f4c3b    cmp dword ptr [eax+1B0h],0"
 "	      004f4c42    jne near ptr 004F4C6Eh"
 );
 // LINE 2912:
 	asm( 
-"	      004f4c48    mov eax,[ebp+8]"
+"	      004f4c48    mov eax,hd"
 "	      004f4c4b    mov eax,[eax+1C0h]"
 "	      004f4c51    shl eax,10h"
-"	      004f4c54    mov ecx,[ebp-74h]"
+"	      004f4c54    mov ecx,htd"
 "	      004f4c57    cdq"
 "	      004f4c58    idiv dword ptr [ecx+8]"
 "	      004f4c5b    imul eax,ds:[5B48DCh]"
-"	      004f4c62    mov [ebp-2Ch],eax"
+"	      004f4c62    mov c,eax"
 );
 // LINE 2913:
 	asm( 
-"	      004f4c65    mov eax,[ebp-2Ch]"
+"	      004f4c65    mov eax,c"
 "	      004f4c68    sar eax,10h"
-"	      004f4c6b    add [ebp-1Ch],eax"
+"	      004f4c6b    add ropeload,eax"
 );
 // LINE 2918:
 	asm( 
-"	      004f4c6e    mov eax,[ebp+8]"
+"	      004f4c6e    mov eax,hd"
 "	      004f4c71    mov eax,[eax+130h]"
-"	      004f4c77    mov [ebp-3Ch],eax"
+"	      004f4c77    mov absdx,eax"
 );
 // LINE 2919:
 	asm( 
-"	      004f4c7a    mov eax,[ebp+8]"
+"	      004f4c7a    mov eax,hd"
 "	      004f4c7d    mov eax,[eax+134h]"
-"	      004f4c83    mov [ebp-50h],eax"
+"	      004f4c83    mov absdz,eax"
 );
 // LINE 2920:
 	asm( 
-"	      004f4c86    cmp dword ptr [ebp-3Ch],0"
+"	      004f4c86    cmp absdx,0"
 "	      004f4c8a    jge near ptr 004F4C98h"
-"	      004f4c90    mov eax,[ebp-3Ch]"
+"	      004f4c90    mov eax,absdx"
 "	      004f4c93    neg eax"
-"	      004f4c95    mov [ebp-3Ch],eax"
+"	      004f4c95    mov absdx,eax"
 );
 // LINE 2921:
 	asm( 
-"	      004f4c98    cmp dword ptr [ebp-50h],0"
+"	      004f4c98    cmp absdz,0"
 "	      004f4c9c    jge near ptr 004F4CAAh"
-"	      004f4ca2    mov eax,[ebp-50h]"
+"	      004f4ca2    mov eax,absdz"
 "	      004f4ca5    neg eax"
-"	      004f4ca7    mov [ebp-50h],eax"
+"	      004f4ca7    mov absdz,eax"
 );
 // LINE 2924:
 	asm( 
-"	      004f4caa    mov dword ptr [ebp-2Ch],0"
-"	      004f4cb1    mov eax,[ebp+8]"
+"	      004f4caa    mov c,0"
+"	      004f4cb1    mov eax,hd"
 "	      004f4cb4    mov eax,[eax+178h]"
-"	      004f4cba    mov [ebp-38h],eax"
+"	      004f4cba    mov vert,eax"
 "	      004f4cbd    jmp near ptr 004F4CC9h"
-"	      004f4cc2    inc dword ptr [ebp-2Ch]"
-"	      004f4cc5    add dword ptr [ebp-38h],0Ch"
-"	      004f4cc9    mov eax,[ebp+8]"
+"	      004f4cc2    inc c"
+"	      004f4cc5    add vert,0Ch"
+"	      004f4cc9    mov eax,hd"
 "	      004f4ccc    mov eax,[eax+1ACh]"
 "	      004f4cd2    inc eax"
-"	      004f4cd3    cmp eax,[ebp-2Ch]"
+"	      004f4cd3    cmp eax,c"
 "	      004f4cd6    jle near ptr 004F4D02h"
 );
 // LINE 2926:
 	asm( 
-"	      004f4cdc    mov eax,[ebp-38h]"
+"	      004f4cdc    mov eax,vert"
 "	      004f4cdf    mov dword ptr [eax+8],0"
-"	      004f4ce6    mov eax,[ebp-38h]"
+"	      004f4ce6    mov eax,vert"
 "	      004f4ce9    mov eax,[eax+8]"
-"	      004f4cec    mov ecx,[ebp-38h]"
+"	      004f4cec    mov ecx,vert"
 "	      004f4cef    mov [ecx+4],eax"
-"	      004f4cf2    mov eax,[ebp-38h]"
+"	      004f4cf2    mov eax,vert"
 "	      004f4cf5    mov eax,[eax+4]"
-"	      004f4cf8    mov ecx,[ebp-38h]"
+"	      004f4cf8    mov ecx,vert"
 "	      004f4cfb    mov [ecx],eax"
 );
 // LINE 2927:
@@ -9972,88 +9972,88 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 2930:
 	asm( 
-"	      004f4d02    mov eax,[ebp+8]"
+"	      004f4d02    mov eax,hd"
 "	      004f4d05    mov eax,[eax+1ACh]"
 "	      004f4d0b    lea eax,[eax+eax*2]"
 "	      004f4d0e    shl eax,2"
-"	      004f4d11    mov ecx,[ebp+8]"
+"	      004f4d11    mov ecx,hd"
 "	      004f4d14    add eax,[ecx+178h]"
-"	      004f4d1a    mov [ebp-4Ch],eax"
+"	      004f4d1a    mov pvert,eax"
 );
 // LINE 2931:
 	asm( 
-"	      004f4d1d    mov eax,[ebp+8]"
+"	      004f4d1d    mov eax,hd"
 "	      004f4d20    mov eax,[eax+1ACh]"
 "	      004f4d26    lea eax,[eax+eax*2+3]"
 "	      004f4d2a    shl eax,2"
-"	      004f4d2d    mov ecx,[ebp+8]"
+"	      004f4d2d    mov ecx,hd"
 "	      004f4d30    add eax,[ecx+178h]"
-"	      004f4d36    mov [ebp-38h],eax"
+"	      004f4d36    mov vert,eax"
 );
 // LINE 2932:
 	asm( 
-"	      004f4d39    mov eax,[ebp+8]"
+"	      004f4d39    mov eax,hd"
 "	      004f4d3c    mov eax,[eax+1ACh]"
 "	      004f4d42    inc eax"
-"	      004f4d43    mov [ebp-2Ch],eax"
+"	      004f4d43    mov c,eax"
 "	      004f4d46    jmp near ptr 004F4D56h"
-"	      004f4d4b    inc dword ptr [ebp-2Ch]"
-"	      004f4d4e    add dword ptr [ebp-38h],0Ch"
-"	      004f4d52    add dword ptr [ebp-4Ch],0Ch"
-"	      004f4d56    cmp dword ptr [ebp-2Ch],14h"
+"	      004f4d4b    inc c"
+"	      004f4d4e    add vert,0Ch"
+"	      004f4d52    add pvert,0Ch"
+"	      004f4d56    cmp c,14h"
 "	      004f4d5a    jge near ptr 004F5129h"
 );
 // LINE 2934:
 	asm( 
-"	      004f4d60    mov eax,[ebp-38h]"
+"	      004f4d60    mov eax,vert"
 "	      004f4d63    mov eax,[eax]"
-"	      004f4d65    mov ecx,[ebp-4Ch]"
+"	      004f4d65    mov ecx,pvert"
 "	      004f4d68    sub eax,[ecx]"
-"	      004f4d6a    mov ecx,[ebp+8]"
+"	      004f4d6a    mov ecx,hd"
 "	      004f4d6d    add eax,[ecx+130h]"
-"	      004f4d73    mov [ebp-70h],eax"
+"	      004f4d73    mov distx,eax"
 );
 // LINE 2935:
 	asm( 
-"	      004f4d76    mov eax,[ebp-38h]"
+"	      004f4d76    mov eax,vert"
 "	      004f4d79    mov eax,[eax+8]"
-"	      004f4d7c    mov ecx,[ebp-4Ch]"
+"	      004f4d7c    mov ecx,pvert"
 "	      004f4d7f    sub eax,[ecx+8]"
-"	      004f4d82    mov ecx,[ebp+8]"
+"	      004f4d82    mov ecx,hd"
 "	      004f4d85    add eax,[ecx+134h]"
-"	      004f4d8b    mov [ebp-78h],eax"
+"	      004f4d8b    mov distz,eax"
 );
 // LINE 2943:
 	asm( 
 "	      004f4d8e    mov eax,ds:[5B48E0h]"
 "	      004f4d93    push eax"
-"	      004f4d94    mov eax,[ebp-78h]"
+"	      004f4d94    mov eax,distz"
 "	      004f4d97    push eax"
 "	      004f4d98    call 004D19BDh"
 "	      004f4d9d    add esp,8"
-"	      004f4da0    mov [ebp-18h],eax"
+"	      004f4da0    mov vectorz,eax"
 );
 // LINE 2944:
 	asm( 
 "	      004f4da3    mov eax,ds:[5B48E0h]"
 "	      004f4da8    push eax"
-"	      004f4da9    mov eax,[ebp-70h]"
+"	      004f4da9    mov eax,distx"
 "	      004f4dac    push eax"
 "	      004f4dad    call 004D19BDh"
 "	      004f4db2    add esp,8"
-"	      004f4db5    mov [ebp-28h],eax"
+"	      004f4db5    mov vectorx,eax"
 );
 // LINE 2946:
 	asm( 
-"	      004f4db8    cmp dword ptr [ebp-70h],0"
+"	      004f4db8    cmp distx,0"
 "	      004f4dbc    jl near ptr 004F4DD1h"
 );
 // LINE 2947:
 	asm( 
-"	      004f4dc2    mov eax,[ebp-70h]"
+"	      004f4dc2    mov eax,distx"
 "	      004f4dc5    cdq"
-"	      004f4dc6    idiv dword ptr [ebp-1Ch]"
-"	      004f4dc9    mov [ebp-5Ch],eax"
+"	      004f4dc6    idiv ropeload"
+"	      004f4dc9    mov absvectorx,eax"
 );
 // LINE 2948:
 	asm( 
@@ -10061,23 +10061,23 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 2949:
 	asm( 
-"	      004f4dd1    mov eax,[ebp-70h]"
+"	      004f4dd1    mov eax,distx"
 "	      004f4dd4    cdq"
-"	      004f4dd5    idiv dword ptr [ebp-1Ch]"
+"	      004f4dd5    idiv ropeload"
 "	      004f4dd8    neg eax"
-"	      004f4dda    mov [ebp-5Ch],eax"
+"	      004f4dda    mov absvectorx,eax"
 );
 // LINE 2951:
 	asm( 
-"	      004f4ddd    cmp dword ptr [ebp-78h],0"
+"	      004f4ddd    cmp distz,0"
 "	      004f4de1    jl near ptr 004F4DF6h"
 );
 // LINE 2952:
 	asm( 
-"	      004f4de7    mov eax,[ebp-78h]"
+"	      004f4de7    mov eax,distz"
 "	      004f4dea    cdq"
-"	      004f4deb    idiv dword ptr [ebp-1Ch]"
-"	      004f4dee    mov [ebp-54h],eax"
+"	      004f4deb    idiv ropeload"
+"	      004f4dee    mov absvectorz,eax"
 );
 // LINE 2953:
 	asm( 
@@ -10085,116 +10085,116 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 2954:
 	asm( 
-"	      004f4df6    mov eax,[ebp-78h]"
+"	      004f4df6    mov eax,distz"
 "	      004f4df9    cdq"
-"	      004f4dfa    idiv dword ptr [ebp-1Ch]"
+"	      004f4dfa    idiv ropeload"
 "	      004f4dfd    neg eax"
-"	      004f4dff    mov [ebp-54h],eax"
+"	      004f4dff    mov absvectorz,eax"
 );
 // LINE 2957:
 	asm( 
-"	      004f4e02    mov eax,[ebp-5Ch]"
-"	      004f4e05    add eax,[ebp-54h]"
-"	      004f4e08    mov [ebp-30h],eax"
+"	      004f4e02    mov eax,absvectorx"
+"	      004f4e05    add eax,absvectorz"
+"	      004f4e08    mov absvectorxz,eax"
 );
 // LINE 2958:
 	asm( 
-"	      004f4e0b    mov eax,[ebp-30h]"
+"	      004f4e0b    mov eax,absvectorxz"
 "	      004f4e0e    cmp ds:[5B4908h],eax"
 "	      004f4e14    jge near ptr 004F4E22h"
 );
 // LINE 2959:
 	asm( 
 "	      004f4e1a    mov eax,ds:[5B4908h]"
-"	      004f4e1f    mov [ebp-30h],eax"
+"	      004f4e1f    mov absvectorxz,eax"
 );
 // LINE 2961:
 	asm( 
-"	      004f4e22    mov eax,[ebp-4Ch]"
+"	      004f4e22    mov eax,pvert"
 "	      004f4e25    mov eax,[eax+4]"
 "	      004f4e28    sub eax,ds:[5B4908h]"
-"	      004f4e2e    add eax,[ebp-30h]"
-"	      004f4e31    mov ecx,[ebp-38h]"
+"	      004f4e2e    add eax,absvectorxz"
+"	      004f4e31    mov ecx,vert"
 "	      004f4e34    mov [ecx+4],eax"
 );
 // LINE 2969:
 	asm( 
-"	      004f4e37    mov eax,[ebp+8]"
+"	      004f4e37    mov eax,hd"
 "	      004f4e3a    mov eax,[eax+0B8h]"
 "	      004f4e40    mov eax,[eax+18h]"
-"	      004f4e43    mov ecx,[ebp-38h]"
+"	      004f4e43    mov ecx,vert"
 "	      004f4e46    add eax,[ecx]"
-"	      004f4e48    mov [ebp-0Ch],eax"
+"	      004f4e48    mov ploc.x,eax"
 );
 // LINE 2970:
 	asm( 
-"	      004f4e4b    mov eax,[ebp+8]"
+"	      004f4e4b    mov eax,hd"
 "	      004f4e4e    mov eax,[eax+0B8h]"
 "	      004f4e54    mov eax,[eax+20h]"
-"	      004f4e57    mov ecx,[ebp-38h]"
+"	      004f4e57    mov ecx,vert"
 "	      004f4e5a    add eax,[ecx+8]"
-"	      004f4e5d    mov [ebp-4],eax"
+"	      004f4e5d    mov ploc.z,eax"
 );
 // LINE 2971:
 	asm( 
-"	      004f4e60    mov eax,[ebp+8]"
+"	      004f4e60    mov eax,hd"
 "	      004f4e63    mov eax,[eax+0B8h]"
 "	      004f4e69    mov eax,[eax+1Ch]"
-"	      004f4e6c    mov ecx,[ebp-38h]"
+"	      004f4e6c    mov ecx,vert"
 "	      004f4e6f    add eax,[ecx+4]"
-"	      004f4e72    mov [ebp-8],eax"
+"	      004f4e72    mov ploc.y,eax"
 );
 // LINE 2974:
 	asm( 
-"	      004f4e75    mov eax,[ebp-0Ch]"
-"	      004f4e78    mov ecx,[ebp+10h]"
+"	      004f4e75    mov eax,ploc.x"
+"	      004f4e78    mov ecx,cptr"
 "	      004f4e7b    movsx ecx,word ptr [ecx+2]"
 "	      004f4e7f    shl ecx,10h"
 "	      004f4e82    sub eax,ecx"
-"	      004f4e84    mov [ebp-7Ch],eax"
+"	      004f4e84    mov normx,eax"
 );
 // LINE 2975:
 	asm( 
-"	      004f4e87    mov eax,[ebp-4]"
-"	      004f4e8a    mov ecx,[ebp+10h]"
+"	      004f4e87    mov eax,ploc.z"
+"	      004f4e8a    mov ecx,cptr"
 "	      004f4e8d    movsx ecx,word ptr [ecx+6]"
 "	      004f4e91    shl ecx,10h"
 "	      004f4e94    sub eax,ecx"
-"	      004f4e96    mov [ebp-14h],eax"
+"	      004f4e96    mov normz,eax"
 );
 // LINE 2976:
 	asm( 
-"	      004f4e99    mov eax,[ebp-8]"
-"	      004f4e9c    mov ecx,[ebp+10h]"
+"	      004f4e99    mov eax,ploc.y"
+"	      004f4e9c    mov ecx,cptr"
 "	      004f4e9f    movsx ecx,word ptr [ecx+4]"
 "	      004f4ea3    shl ecx,10h"
 "	      004f4ea6    sub eax,ecx"
-"	      004f4ea8    mov [ebp-80h],eax"
+"	      004f4ea8    mov normy,eax"
 );
 // LINE 2979:
 	asm( 
-"	      004f4eab    mov eax,[ebp+10h]"
+"	      004f4eab    mov eax,cptr"
 "	      004f4eae    mov eax,[eax+0Ch]"
-"	      004f4eb1    mov [ebp-34h],eax"
+"	      004f4eb1    mov stobj,eax"
 );
 // LINE 2980:
 	asm( 
-"	      004f4eb4    mov dword ptr [ebp-58h],0"
+"	      004f4eb4    mov objy,0"
 );
 // LINE 2981:
 	asm( 
-"	      004f4ebb    mov dword ptr [ebp-20h],0"
+"	      004f4ebb    mov maxobjy,0"
 );
 // LINE 2982:
 	asm( 
-"	      004f4ec2    cmp dword ptr [ebp-34h],0"
+"	      004f4ec2    cmp stobj,0"
 "	      004f4ec6    je near ptr 004F4F26h"
 );
 // LINE 2984:
 	asm( 
-"	      004f4ecc    mov eax,[ebp-34h]"
+"	      004f4ecc    mov eax,stobj"
 "	      004f4ecf    mov eax,[eax+8]"
-"	      004f4ed2    mov [ebp-10h],eax"
+"	      004f4ed2    mov flags,eax"
 );
 // LINE 2985:
 	asm( 
@@ -10204,37 +10204,37 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 "	      004f4ede    push eax"
 "	      004f4edf    mov eax,ds:[5B490Ch]"
 "	      004f4ee4    push eax"
-"	      004f4ee5    lea eax,[ebp-10h]"
+"	      004f4ee5    lea eax,flags"
 "	      004f4ee8    push eax"
-"	      004f4ee9    mov eax,[ebp-14h]"
+"	      004f4ee9    mov eax,normz"
 "	      004f4eec    push eax"
-"	      004f4eed    mov eax,[ebp-80h]"
+"	      004f4eed    mov eax,normy"
 "	      004f4ef0    push eax"
-"	      004f4ef1    mov eax,[ebp-7Ch]"
+"	      004f4ef1    mov eax,normx"
 "	      004f4ef4    push eax"
-"	      004f4ef5    mov eax,[ebp-34h]"
+"	      004f4ef5    mov eax,stobj"
 "	      004f4ef8    mov eax,[eax+4]"
 "	      004f4efb    push eax"
 "	      004f4efc    call 004D31E7h"
 "	      004f4f01    add esp,24h"
-"	      004f4f04    mov [ebp-58h],eax"
+"	      004f4f04    mov objy,eax"
 );
 // LINE 2986:
 	asm( 
-"	      004f4f07    mov eax,[ebp-58h]"
-"	      004f4f0a    cmp [ebp-20h],eax"
+"	      004f4f07    mov eax,objy"
+"	      004f4f0a    cmp maxobjy,eax"
 "	      004f4f0d    jge near ptr 004F4F19h"
 );
 // LINE 2987:
 	asm( 
-"	      004f4f13    mov eax,[ebp-58h]"
-"	      004f4f16    mov [ebp-20h],eax"
+"	      004f4f13    mov eax,objy"
+"	      004f4f16    mov maxobjy,eax"
 );
 // LINE 2988:
 	asm( 
-"	      004f4f19    mov eax,[ebp-34h]"
+"	      004f4f19    mov eax,stobj"
 "	      004f4f1c    mov eax,[eax]"
-"	      004f4f1e    mov [ebp-34h],eax"
+"	      004f4f1e    mov stobj,eax"
 );
 // LINE 2989:
 	asm( 
@@ -10242,36 +10242,36 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 2992:
 	asm( 
-"	      004f4f26    mov eax,[ebp+0Ch]"
-"	      004f4f29    add eax,[ebp-20h]"
-"	      004f4f2c    mov ecx,[ebp+8]"
+"	      004f4f26    mov eax,gralt"
+"	      004f4f29    add eax,maxobjy"
+"	      004f4f2c    mov ecx,hd"
 "	      004f4f2f    mov ecx,[ecx+0B8h]"
 "	      004f4f35    sub eax,[ecx+1Ch]"
-"	      004f4f38    mov [ebp-6Ch],eax"
+"	      004f4f38    mov alt,eax"
 );
 // LINE 2994:
 	asm( 
-"	      004f4f3b    mov eax,[ebp+10h]"
+"	      004f4f3b    mov eax,cptr"
 "	      004f4f3e    mov eax,[eax+10h]"
-"	      004f4f41    mov [ebp-24h],eax"
+"	      004f4f41    mov dyobj,eax"
 );
 // LINE 2995:
 	asm( 
-"	      004f4f44    mov dword ptr [ebp-58h],0"
+"	      004f4f44    mov objy,0"
 );
 // LINE 2996:
 	asm( 
-"	      004f4f4b    mov dword ptr [ebp-20h],0"
+"	      004f4f4b    mov maxobjy,0"
 );
 // LINE 2997:
 	asm( 
-"	      004f4f52    cmp dword ptr [ebp-24h],0"
+"	      004f4f52    cmp dyobj,0"
 "	      004f4f56    je near ptr 004F501Dh"
 );
 // LINE 3000:
 	asm( 
 "	      004f4f5c    mov eax,ds:[5B4968h]"
-"	      004f4f61    mov ecx,[ebp-24h]"
+"	      004f4f61    mov ecx,dyobj"
 "	      004f4f64    cmp [eax+0A4h],ecx"
 "	      004f4f6a    jne near ptr 004F4F75h"
 );
@@ -10281,7 +10281,7 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 3005:
 	asm( 
-"	      004f4f75    mov eax,[ebp-24h]"
+"	      004f4f75    mov eax,dyobj"
 "	      004f4f78    movsx eax,word ptr [eax+0Ch]"
 "	      004f4f7c    test al,8"
 "	      004f4f7e    je near ptr 004F4F89h"
@@ -10292,63 +10292,63 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 );
 // LINE 3009:
 	asm( 
-"	      004f4f89    mov eax,[ebp-0Ch]"
-"	      004f4f8c    mov ecx,[ebp-24h]"
+"	      004f4f89    mov eax,ploc.x"
+"	      004f4f8c    mov ecx,dyobj"
 "	      004f4f8f    sub eax,[ecx+18h]"
-"	      004f4f92    mov [ebp-68h],eax"
+"	      004f4f92    mov oloc.x,eax"
 );
 // LINE 3010:
 	asm( 
-"	      004f4f95    mov eax,[ebp-8]"
-"	      004f4f98    mov ecx,[ebp-24h]"
+"	      004f4f95    mov eax,ploc.y"
+"	      004f4f98    mov ecx,dyobj"
 "	      004f4f9b    sub eax,[ecx+1Ch]"
-"	      004f4f9e    mov [ebp-64h],eax"
+"	      004f4f9e    mov oloc.y,eax"
 );
 // LINE 3011:
 	asm( 
-"	      004f4fa1    mov eax,[ebp-4]"
-"	      004f4fa4    mov ecx,[ebp-24h]"
+"	      004f4fa1    mov eax,ploc.z"
+"	      004f4fa4    mov ecx,dyobj"
 "	      004f4fa7    sub eax,[ecx+20h]"
-"	      004f4faa    mov [ebp-60h],eax"
+"	      004f4faa    mov oloc.z,eax"
 );
 // LINE 3016:
 	asm( 
 "	      004f4fad    mov eax,ds:[5B490Ch]"
 "	      004f4fb2    push eax"
-"	      004f4fb3    lea eax,[ebp-68h]"
+"	      004f4fb3    lea eax,oloc.x"
 "	      004f4fb6    push eax"
-"	      004f4fb7    mov eax,[ebp-24h]"
+"	      004f4fb7    mov eax,dyobj"
 "	      004f4fba    add eax,24h"
 "	      004f4fbd    push eax"
-"	      004f4fbe    mov eax,[ebp-24h]"
+"	      004f4fbe    mov eax,dyobj"
 "	      004f4fc1    mov eax,[eax+8]"
 "	      004f4fc4    push eax"
 "	      004f4fc5    call 004D2AC6h"
 "	      004f4fca    add esp,10h"
-"	      004f4fcd    mov [ebp-58h],eax"
+"	      004f4fcd    mov objy,eax"
 );
 // LINE 3017:
 	asm( 
-"	      004f4fd0    mov eax,[ebp-58h]"
-"	      004f4fd3    cmp [ebp-20h],eax"
+"	      004f4fd0    mov eax,objy"
+"	      004f4fd3    cmp maxobjy,eax"
 "	      004f4fd6    jge near ptr 004F4FE2h"
 );
 // LINE 3018:
 	asm( 
-"	      004f4fdc    mov eax,[ebp-58h]"
-"	      004f4fdf    mov [ebp-20h],eax"
+"	      004f4fdc    mov eax,objy"
+"	      004f4fdf    mov maxobjy,eax"
 );
 // LINE 3022:
 next_dyobj:
 	asm( 
-"	      004f4fe2    mov eax,[ebp-24h]"
+"	      004f4fe2    mov eax,dyobj"
 "	      004f4fe5    movsx eax,word ptr [eax+0Ch]"
 "	      004f4fe9    test al,4"
 "	      004f4feb    je near ptr 004F5010h"
 );
 // LINE 3024:
 	asm( 
-"	      004f4ff1    mov eax,[ebp-24h]"
+"	      004f4ff1    mov eax,dyobj"
 "	      004f4ff4    mov eax,[eax]"
 "	      004f4ff6    mov eax,[eax]"
 "	      004f4ff8    mov eax,[eax]"
@@ -10359,7 +10359,7 @@ next_dyobj:
 "	      004f5002    mov eax,[eax]"
 "	      004f5004    mov eax,[eax]"
 "	      004f5006    mov eax,[eax]"
-"	      004f5008    mov [ebp-24h],eax"
+"	      004f5008    mov dyobj,eax"
 );
 // LINE 3026:
 	asm( 
@@ -10367,9 +10367,9 @@ next_dyobj:
 );
 // LINE 3027:
 	asm( 
-"	      004f5010    mov eax,[ebp-24h]"
+"	      004f5010    mov eax,dyobj"
 "	      004f5013    mov eax,[eax]"
-"	      004f5015    mov [ebp-24h],eax"
+"	      004f5015    mov dyobj,eax"
 );
 // LINE 3028:
 	asm( 
@@ -10377,34 +10377,34 @@ next_dyobj:
 );
 // LINE 3030:
 	asm( 
-"	      004f501d    mov eax,[ebp-20h]"
-"	      004f5020    add [ebp-6Ch],eax"
+"	      004f501d    mov eax,maxobjy"
+"	      004f5020    add alt,eax"
 );
 // LINE 3032:
 	asm( 
-"	      004f5023    mov eax,[ebp-38h]"
-"	      004f5026    mov ecx,[ebp-6Ch]"
+"	      004f5023    mov eax,vert"
+"	      004f5026    mov ecx,alt"
 "	      004f5029    cmp [eax+4],ecx"
 "	      004f502c    jge near ptr 004F50A0h"
 );
 // LINE 3034:
 	asm( 
-"	      004f5032    mov eax,[ebp-6Ch]"
-"	      004f5035    mov ecx,[ebp-38h]"
+"	      004f5032    mov eax,alt"
+"	      004f5035    mov ecx,vert"
 "	      004f5038    mov [ecx+4],eax"
 );
 // LINE 3035:
 	asm( 
-"	      004f503b    mov eax,[ebp-3Ch]"
-"	      004f503e    cmp [ebp-5Ch],eax"
+"	      004f503b    mov eax,absdx"
+"	      004f503e    cmp absvectorx,eax"
 "	      004f5041    jle near ptr 004F5058h"
 );
 // LINE 3036:
 	asm( 
 "	      004f5047    xor eax,eax"
-"	      004f5049    sub eax,[ebp-28h]"
+"	      004f5049    sub eax,vectorx"
 "	      004f504c    neg eax"
-"	      004f504e    mov ecx,[ebp-38h]"
+"	      004f504e    mov ecx,vert"
 "	      004f5051    sub [ecx],eax"
 );
 // LINE 3037:
@@ -10414,24 +10414,24 @@ next_dyobj:
 // LINE 3038:
 	asm( 
 "	      004f5058    xor eax,eax"
-"	      004f505a    mov ecx,[ebp+8]"
+"	      004f505a    mov ecx,hd"
 "	      004f505d    sub eax,[ecx+130h]"
 "	      004f5063    neg eax"
-"	      004f5065    mov ecx,[ebp-38h]"
+"	      004f5065    mov ecx,vert"
 "	      004f5068    sub [ecx],eax"
 );
 // LINE 3040:
 	asm( 
-"	      004f506a    mov eax,[ebp-54h]"
-"	      004f506d    cmp [ebp-50h],eax"
+"	      004f506a    mov eax,absvectorz"
+"	      004f506d    cmp absdz,eax"
 "	      004f5070    jge near ptr 004F5088h"
 );
 // LINE 3041:
 	asm( 
 "	      004f5076    xor eax,eax"
-"	      004f5078    sub eax,[ebp-18h]"
+"	      004f5078    sub eax,vectorz"
 "	      004f507b    neg eax"
-"	      004f507d    mov ecx,[ebp-38h]"
+"	      004f507d    mov ecx,vert"
 "	      004f5080    sub [ecx+8],eax"
 );
 // LINE 3042:
@@ -10441,10 +10441,10 @@ next_dyobj:
 // LINE 3043:
 	asm( 
 "	      004f5088    xor eax,eax"
-"	      004f508a    mov ecx,[ebp+8]"
+"	      004f508a    mov ecx,hd"
 "	      004f508d    sub eax,[ecx+134h]"
 "	      004f5093    neg eax"
-"	      004f5095    mov ecx,[ebp-38h]"
+"	      004f5095    mov ecx,vert"
 "	      004f5098    sub [ecx+8],eax"
 );
 // LINE 3045:
@@ -10454,75 +10454,75 @@ next_dyobj:
 // LINE 3047:
 	asm( 
 "	      004f50a0    xor eax,eax"
-"	      004f50a2    sub eax,[ebp-28h]"
+"	      004f50a2    sub eax,vectorx"
 "	      004f50a5    neg eax"
-"	      004f50a7    mov ecx,[ebp-38h]"
+"	      004f50a7    mov ecx,vert"
 "	      004f50aa    sub [ecx],eax"
 );
 // LINE 3048:
 	asm( 
 "	      004f50ac    xor eax,eax"
-"	      004f50ae    sub eax,[ebp-18h]"
+"	      004f50ae    sub eax,vectorz"
 "	      004f50b1    neg eax"
-"	      004f50b3    mov ecx,[ebp-38h]"
+"	      004f50b3    mov ecx,vert"
 "	      004f50b6    sub [ecx+8],eax"
 );
 // LINE 3053:
 	asm( 
-"	      004f50b9    mov eax,[ebp-38h]"
+"	      004f50b9    mov eax,vert"
 "	      004f50bc    mov eax,[eax]"
-"	      004f50be    mov ecx,[ebp-4Ch]"
+"	      004f50be    mov ecx,pvert"
 "	      004f50c1    sub eax,[ecx]"
-"	      004f50c3    mov [ebp-48h],eax"
+"	      004f50c3    mov vec.x,eax"
 );
 // LINE 3054:
 	asm( 
-"	      004f50c6    mov eax,[ebp-38h]"
+"	      004f50c6    mov eax,vert"
 "	      004f50c9    mov eax,[eax+4]"
-"	      004f50cc    mov ecx,[ebp-4Ch]"
+"	      004f50cc    mov ecx,pvert"
 "	      004f50cf    sub eax,[ecx+4]"
-"	      004f50d2    mov [ebp-44h],eax"
+"	      004f50d2    mov vec.y,eax"
 );
 // LINE 3055:
 	asm( 
-"	      004f50d5    mov eax,[ebp-38h]"
+"	      004f50d5    mov eax,vert"
 "	      004f50d8    mov eax,[eax+8]"
-"	      004f50db    mov ecx,[ebp-4Ch]"
+"	      004f50db    mov ecx,pvert"
 "	      004f50de    sub eax,[ecx+8]"
-"	      004f50e1    mov [ebp-40h],eax"
+"	      004f50e1    mov vec.z,eax"
 );
 // LINE 3056:
 	asm( 
-"	      004f50e4    lea eax,[ebp-48h]"
+"	      004f50e4    lea eax,vec.x"
 "	      004f50e7    push eax"
 "	      004f50e8    call 004CA1E3h"
 "	      004f50ed    add esp,4"
 );
 // LINE 3057:
 	asm( 
-"	      004f50f0    mov eax,[ebp-48h]"
+"	      004f50f0    mov eax,vec.x"
 "	      004f50f3    shl eax,2"
-"	      004f50f6    mov ecx,[ebp-4Ch]"
+"	      004f50f6    mov ecx,pvert"
 "	      004f50f9    add eax,[ecx]"
-"	      004f50fb    mov ecx,[ebp-38h]"
+"	      004f50fb    mov ecx,vert"
 "	      004f50fe    mov [ecx],eax"
 );
 // LINE 3058:
 	asm( 
-"	      004f5100    mov eax,[ebp-44h]"
+"	      004f5100    mov eax,vec.y"
 "	      004f5103    shl eax,2"
-"	      004f5106    mov ecx,[ebp-4Ch]"
+"	      004f5106    mov ecx,pvert"
 "	      004f5109    add eax,[ecx+4]"
-"	      004f510c    mov ecx,[ebp-38h]"
+"	      004f510c    mov ecx,vert"
 "	      004f510f    mov [ecx+4],eax"
 );
 // LINE 3059:
 	asm( 
-"	      004f5112    mov eax,[ebp-40h]"
+"	      004f5112    mov eax,vec.z"
 "	      004f5115    shl eax,2"
-"	      004f5118    mov ecx,[ebp-4Ch]"
+"	      004f5118    mov ecx,pvert"
 "	      004f511b    add eax,[ecx+8]"
-"	      004f511e    mov ecx,[ebp-38h]"
+"	      004f511e    mov ecx,vert"
 "	      004f5121    mov [ecx+8],eax"
 );
 // LINE 3061:
@@ -10574,24 +10574,24 @@ int32_t GetCopterTerAlt(struct _HELI_DATA* hd) {
 );
 // LINE 3327:
 	asm( 
-"	      004f5142    mov eax,[ebp+8]"
+"	      004f5142    mov eax,hd"
 "	      004f5145    add eax,13Ch"
 "	      004f514a    push eax"
-"	      004f514b    mov eax,[ebp+8]"
+"	      004f514b    mov eax,hd"
 "	      004f514e    mov eax,[eax+0A4h]"
 "	      004f5154    mov eax,[eax+20h]"
 "	      004f5157    push eax"
-"	      004f5158    mov eax,[ebp+8]"
+"	      004f5158    mov eax,hd"
 "	      004f515b    mov eax,[eax+0A4h]"
 "	      004f5161    mov eax,[eax+18h]"
 "	      004f5164    push eax"
 "	      004f5165    call 00518A8Ch"
 "	      004f516a    add esp,0Ch"
-"	      004f516d    mov [ebp-4],eax"
+"	      004f516d    mov alt,eax"
 );
 // LINE 3329:
 	asm( 
-"	      004f5170    mov eax,[ebp-4]"
+"	      004f5170    mov eax,alt"
 "	      004f5173    jmp near ptr 004F5178h"
 );
 // LINE 3331:
@@ -10629,128 +10629,128 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 );
 // LINE 3345:
 	asm( 
-"	      004f5186    mov eax,[ebp+8]"
+"	      004f5186    mov eax,hd"
 "	      004f5189    mov eax,[eax+1Ch]"
 "	      004f518c    and eax,0FFh"
-"	      004f5191    mov ecx,[ebp+8]"
+"	      004f5191    mov ecx,hd"
 "	      004f5194    mov ecx,[ecx+18h]"
 "	      004f5197    and ecx,0FFh"
 "	      004f519d    shl ecx,0Ah"
 "	      004f51a0    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f51a7    mov [ebp-2Ch],eax"
+"	      004f51a7    mov cptr,eax"
 );
 // LINE 3347:
 	asm( 
-"	      004f51aa    mov eax,[ebp+8]"
+"	      004f51aa    mov eax,hd"
 "	      004f51ad    mov eax,[eax+0A4h]"
 "	      004f51b3    mov eax,[eax+18h]"
-"	      004f51b6    mov ecx,[ebp-2Ch]"
+"	      004f51b6    mov ecx,cptr"
 "	      004f51b9    movsx ecx,word ptr [ecx+2]"
 "	      004f51bd    shl ecx,10h"
 "	      004f51c0    sub eax,ecx"
-"	      004f51c2    mov [ebp-30h],eax"
+"	      004f51c2    mov normx,eax"
 );
 // LINE 3348:
 	asm( 
-"	      004f51c5    mov eax,[ebp+8]"
+"	      004f51c5    mov eax,hd"
 "	      004f51c8    mov eax,[eax+0A4h]"
 "	      004f51ce    mov eax,[eax+20h]"
-"	      004f51d1    mov ecx,[ebp-2Ch]"
+"	      004f51d1    mov ecx,cptr"
 "	      004f51d4    movsx ecx,word ptr [ecx+6]"
 "	      004f51d8    shl ecx,10h"
 "	      004f51db    sub eax,ecx"
-"	      004f51dd    mov [ebp-8],eax"
+"	      004f51dd    mov normz,eax"
 );
 // LINE 3349:
 	asm( 
-"	      004f51e0    mov eax,[ebp+8]"
+"	      004f51e0    mov eax,hd"
 "	      004f51e3    mov eax,[eax+0A4h]"
 "	      004f51e9    mov eax,[eax+1Ch]"
-"	      004f51ec    mov ecx,[ebp-2Ch]"
+"	      004f51ec    mov ecx,cptr"
 "	      004f51ef    movsx ecx,word ptr [ecx+4]"
 "	      004f51f3    shl ecx,10h"
 "	      004f51f6    sub eax,ecx"
-"	      004f51f8    mov [ebp-34h],eax"
+"	      004f51f8    mov normy,eax"
 );
 // LINE 3351:
 	asm( 
-"	      004f51fb    mov dword ptr [ebp-24h],0"
+"	      004f51fb    mov objy,0"
 );
 // LINE 3352:
 	asm( 
-"	      004f5202    mov dword ptr [ebp-10h],0"
+"	      004f5202    mov maxobjy,0"
 );
 // LINE 3353:
 	asm( 
-"	      004f5209    mov dword ptr [ebp-0Ch],0"
+"	      004f5209    mov landable,0"
 );
 // LINE 3354:
 	asm( 
-"	      004f5210    mov eax,[ebp-2Ch]"
+"	      004f5210    mov eax,cptr"
 "	      004f5213    mov eax,[eax+0Ch]"
-"	      004f5216    mov [ebp-14h],eax"
+"	      004f5216    mov stobj,eax"
 );
 // LINE 3355:
 	asm( 
-"	      004f5219    cmp dword ptr [ebp-14h],0"
+"	      004f5219    cmp stobj,0"
 "	      004f521d    je near ptr 004F52C3h"
 );
 // LINE 3357:
 	asm( 
-"	      004f5223    mov eax,[ebp-14h]"
+"	      004f5223    mov eax,stobj"
 "	      004f5226    mov eax,[eax+8]"
-"	      004f5229    mov [ebp-4],eax"
+"	      004f5229    mov flags,eax"
 );
 // LINE 3363:
 	asm( 
-"	      004f522c    lea eax,[ebp-0Ch]"
+"	      004f522c    lea eax,landable"
 "	      004f522f    push eax"
-"	      004f5230    lea eax,[ebp-20h]"
+"	      004f5230    lea eax,vec.x"
 "	      004f5233    push eax"
-"	      004f5234    mov eax,[ebp+8]"
+"	      004f5234    mov eax,hd"
 "	      004f5237    mov eax,[eax+0A4h]"
 "	      004f523d    mov eax,[eax+14h]"
 "	      004f5240    push eax"
-"	      004f5241    mov eax,[ebp+8]"
+"	      004f5241    mov eax,hd"
 "	      004f5244    mov eax,[eax+0A4h]"
 "	      004f524a    mov eax,[eax+10h]"
 "	      004f524d    push eax"
-"	      004f524e    lea eax,[ebp-4]"
+"	      004f524e    lea eax,flags"
 "	      004f5251    push eax"
-"	      004f5252    mov eax,[ebp-8]"
+"	      004f5252    mov eax,normz"
 "	      004f5255    push eax"
-"	      004f5256    mov eax,[ebp-34h]"
+"	      004f5256    mov eax,normy"
 "	      004f5259    push eax"
-"	      004f525a    mov eax,[ebp-30h]"
+"	      004f525a    mov eax,normx"
 "	      004f525d    push eax"
-"	      004f525e    mov eax,[ebp-14h]"
+"	      004f525e    mov eax,stobj"
 "	      004f5261    mov eax,[eax+4]"
 "	      004f5264    push eax"
 "	      004f5265    call 004D31E7h"
 "	      004f526a    add esp,24h"
-"	      004f526d    mov [ebp-24h],eax"
+"	      004f526d    mov objy,eax"
 );
 // LINE 3364:
 	asm( 
-"	      004f5270    mov eax,[ebp-24h]"
-"	      004f5273    cmp [ebp-10h],eax"
+"	      004f5270    mov eax,objy"
+"	      004f5273    cmp maxobjy,eax"
 "	      004f5276    jge near ptr 004F52B6h"
 );
 // LINE 3366:
 	asm( 
-"	      004f527c    mov eax,[ebp-4]"
-"	      004f527f    mov ecx,[ebp+8]"
+"	      004f527c    mov eax,flags"
+"	      004f527f    mov ecx,hd"
 "	      004f5282    mov [ecx+164h],eax"
 );
 // LINE 3367:
 	asm( 
-"	      004f5288    mov eax,[ebp-24h]"
-"	      004f528b    mov [ebp-10h],eax"
+"	      004f5288    mov eax,objy"
+"	      004f528b    mov maxobjy,eax"
 );
 // LINE 3368:
 	asm( 
-"	      004f528e    lea eax,[ebp-20h]"
-"	      004f5291    mov ecx,[ebp+8]"
+"	      004f528e    lea eax,vec.x"
+"	      004f5291    mov ecx,hd"
 "	      004f5294    add ecx,158h"
 "	      004f529a    mov edx,[eax]"
 "	      004f529c    mov [ecx],edx"
@@ -10761,15 +10761,15 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 );
 // LINE 3369:
 	asm( 
-"	      004f52aa    mov eax,[ebp-0Ch]"
-"	      004f52ad    mov ecx,[ebp+8]"
+"	      004f52aa    mov eax,landable"
+"	      004f52ad    mov ecx,hd"
 "	      004f52b0    mov [ecx+13Ch],eax"
 );
 // LINE 3371:
 	asm( 
-"	      004f52b6    mov eax,[ebp-14h]"
+"	      004f52b6    mov eax,stobj"
 "	      004f52b9    mov eax,[eax]"
-"	      004f52bb    mov [ebp-14h],eax"
+"	      004f52bb    mov stobj,eax"
 );
 // LINE 3372:
 	asm( 
@@ -10777,23 +10777,23 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 );
 // LINE 3377:
 	asm( 
-"	      004f52c3    cmp dword ptr [ebp-10h],0"
+"	      004f52c3    cmp maxobjy,0"
 "	      004f52c7    jne near ptr 004F52F9h"
 );
 // LINE 3378:
 	asm( 
 "	      004f52cd    push 0"
-"	      004f52cf    mov eax,[ebp+8]"
+"	      004f52cf    mov eax,hd"
 "	      004f52d2    mov eax,[eax+0A4h]"
 "	      004f52d8    mov eax,[eax+20h]"
 "	      004f52db    push eax"
-"	      004f52dc    mov eax,[ebp+8]"
+"	      004f52dc    mov eax,hd"
 "	      004f52df    mov eax,[eax+0A4h]"
 "	      004f52e5    mov eax,[eax+18h]"
 "	      004f52e8    push eax"
 "	      004f52e9    call 00518A8Ch"
 "	      004f52ee    add esp,0Ch"
-"	      004f52f1    mov [ebp-28h],eax"
+"	      004f52f1    mov alt,eax"
 );
 // LINE 3379:
 	asm( 
@@ -10801,15 +10801,15 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 );
 // LINE 3380:
 	asm( 
-"	      004f52f9    mov eax,[ebp-2Ch]"
+"	      004f52f9    mov eax,cptr"
 "	      004f52fc    movsx eax,word ptr [eax+4]"
 "	      004f5300    shl eax,10h"
-"	      004f5303    add eax,[ebp-10h]"
-"	      004f5306    mov [ebp-28h],eax"
+"	      004f5303    add eax,maxobjy"
+"	      004f5306    mov alt,eax"
 );
 // LINE 3382:
 	asm( 
-"	      004f5309    mov eax,[ebp-28h]"
+"	      004f5309    mov eax,alt"
 "	      004f530c    jmp near ptr 004F5311h"
 );
 // LINE 3383:
@@ -10840,7 +10840,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3403:
 	asm( 
-"	      004f531f    cmp dword ptr [ebp+8],0"
+"	      004f531f    cmp hd,0"
 "	      004f5323    jne near ptr 004F532Eh"
 );
 // LINE 3404:
@@ -10862,14 +10862,14 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3413:
 	asm( 
-"	      004f5346    mov eax,[ebp+8]"
+"	      004f5346    mov eax,hd"
 "	      004f5349    cmp dword ptr [eax+4],1"
 "	      004f534d    je near ptr 004F5360h"
-"	      004f5353    mov eax,[ebp+8]"
+"	      004f5353    mov eax,hd"
 "	      004f5356    cmp dword ptr [eax+4],2"
 "	      004f535a    jne near ptr 004F53A0h"
 "	      004f5360    push 8"
-"	      004f5362    mov eax,[ebp+8]"
+"	      004f5362    mov eax,hd"
 "	      004f5365    push eax"
 "	      004f5366    call 004F176Dh"
 "	      004f536b    add esp,8"
@@ -10878,12 +10878,12 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3416:
 	asm( 
-"	      004f5377    mov eax,[ebp+8]"
+"	      004f5377    mov eax,hd"
 "	      004f537a    mov dword ptr [eax+11Ch],0FED40000h"
 );
 // LINE 3417:
 	asm( 
-"	      004f5384    mov eax,[ebp+8]"
+"	      004f5384    mov eax,hd"
 "	      004f5387    mov dword ptr [eax+118h],0FA0000h"
 );
 // LINE 3418:
@@ -10896,30 +10896,30 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3421:
 	asm( 
-"	      004f53a0    mov eax,[ebp+8]"
+"	      004f53a0    mov eax,hd"
 "	      004f53a3    cmp dword ptr [eax+4],3"
 "	      004f53a7    je near ptr 004F53C7h"
-"	      004f53ad    mov eax,[ebp+8]"
+"	      004f53ad    mov eax,hd"
 "	      004f53b0    cmp dword ptr [eax+4],2"
 "	      004f53b4    je near ptr 004F53C7h"
-"	      004f53ba    mov eax,[ebp+8]"
+"	      004f53ba    mov eax,hd"
 "	      004f53bd    cmp dword ptr [eax+4],0"
 "	      004f53c1    jne near ptr 004F54B6h"
 );
 // LINE 3423:
 	asm( 
-"	      004f53c7    mov eax,[ebp+8]"
+"	      004f53c7    mov eax,hd"
 "	      004f53ca    mov dword ptr [eax+1BCh],0"
 );
 // LINE 3424:
 	asm( 
-"	      004f53d4    mov eax,[ebp+8]"
+"	      004f53d4    mov eax,hd"
 "	      004f53d7    cmp dword ptr [eax+1ACh],11h"
 "	      004f53de    jge near ptr 004F53F6h"
 );
 // LINE 3426:
 	asm( 
-"	      004f53e4    mov eax,[ebp+8]"
+"	      004f53e4    mov eax,hd"
 "	      004f53e7    mov dword ptr [eax+1B8h],1"
 );
 // LINE 3428:
@@ -10928,13 +10928,13 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3430:
 	asm( 
-"	      004f53f6    mov eax,[ebp+8]"
+"	      004f53f6    mov eax,hd"
 "	      004f53f9    mov dword ptr [eax+1B8h],0"
 );
 // LINE 3432:
 	asm( 
 "	      004f5403    push 6BF1C0h"
-"	      004f5408    mov eax,[ebp+8]"
+"	      004f5408    mov eax,hd"
 "	      004f540b    push eax"
 "	      004f540c    call 004F56B9h"
 "	      004f5411    add esp,8"
@@ -10943,7 +10943,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3434:
 	asm( 
-"	      004f541d    mov eax,[ebp+8]"
+"	      004f541d    mov eax,hd"
 "	      004f5420    mov dword ptr [eax+4],4"
 );
 // LINE 3437:
@@ -10955,7 +10955,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f5435    idiv ecx"
 "	      004f5437    mov eax,edx"
 "	      004f5439    neg eax"
-"	      004f543b    mov [ebp-10h],eax"
+"	      004f543b    mov randx,eax"
 );
 // LINE 3438:
 	asm( 
@@ -10964,17 +10964,17 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f5448    movsx eax,ax"
 "	      004f544b    cdq"
 "	      004f544c    idiv ecx"
-"	      004f544e    mov [ebp-4],edx"
+"	      004f544e    mov randz,edx"
 );
 // LINE 3441:
 	asm( 
-"	      004f5451    mov eax,[ebp-10h]"
+"	      004f5451    mov eax,randx"
 "	      004f5454    shl eax,10h"
 "	      004f5457    mov ds:[6BF1C0h],eax"
 );
 // LINE 3442:
 	asm( 
-"	      004f545c    mov eax,[ebp-4]"
+"	      004f545c    mov eax,randz"
 "	      004f545f    shl eax,10h"
 "	      004f5462    mov ds:[6BF1C8h],eax"
 );
@@ -10983,20 +10983,20 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f5467    mov eax,ds:[6BF1C0h]"
 "	      004f546c    add eax,20000000h"
 "	      004f5471    sar eax,16h"
-"	      004f5474    mov [ebp-8],eax"
+"	      004f5474    mov x,eax"
 );
 // LINE 3444:
 	asm( 
 "	      004f5477    mov eax,20000000h"
 "	      004f547c    sub eax,ds:[6BF1C8h]"
 "	      004f5482    sar eax,16h"
-"	      004f5485    mov [ebp-0Ch],eax"
+"	      004f5485    mov y,eax"
 );
 // LINE 3445:
 	asm( 
-"	      004f5488    mov eax,[ebp-0Ch]"
+"	      004f5488    mov eax,y"
 "	      004f548b    and eax,0FFh"
-"	      004f5490    mov ecx,[ebp-8]"
+"	      004f5490    mov ecx,x"
 "	      004f5493    and ecx,0FFh"
 "	      004f5499    shl ecx,0Ah"
 "	      004f549c    mov eax,[ecx+eax*4+67ED30h]"
@@ -11008,19 +11008,19 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 // LINE 3448:
 	asm( 
 "	      004f54b1    jmp near ptr 004F56B4h"
-"	      004f54b6    mov eax,[ebp+8]"
+"	      004f54b6    mov eax,hd"
 "	      004f54b9    cmp dword ptr [eax+4],4"
 "	      004f54bd    jne near ptr 004F5523h"
 );
 // LINE 3450:
 	asm( 
-"	      004f54c3    mov eax,[ebp+8]"
+"	      004f54c3    mov eax,hd"
 "	      004f54c6    cmp dword ptr [eax+1ACh],3"
 "	      004f54cd    jle near ptr 004F54E5h"
 );
 // LINE 3452:
 	asm( 
-"	      004f54d3    mov eax,[ebp+8]"
+"	      004f54d3    mov eax,hd"
 "	      004f54d6    mov dword ptr [eax+1B8h],0FFFFFFFFh"
 );
 // LINE 3454:
@@ -11029,17 +11029,17 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3456:
 	asm( 
-"	      004f54e5    mov eax,[ebp+8]"
+"	      004f54e5    mov eax,hd"
 "	      004f54e8    mov dword ptr [eax+1B8h],0"
 );
 // LINE 3458:
 	asm( 
-"	      004f54f2    mov eax,[ebp+8]"
+"	      004f54f2    mov eax,hd"
 "	      004f54f5    mov dword ptr [eax+1BCh],0"
 );
 // LINE 3459:
 	asm( 
-"	      004f54ff    mov eax,[ebp+8]"
+"	      004f54ff    mov eax,hd"
 "	      004f5502    push eax"
 "	      004f5503    call 004F5800h"
 "	      004f5508    add esp,4"
@@ -11048,7 +11048,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3461:
 	asm( 
-"	      004f5514    mov eax,[ebp+8]"
+"	      004f5514    mov eax,hd"
 "	      004f5517    mov dword ptr [eax+4],1"
 );
 // LINE 3464:
@@ -11057,33 +11057,33 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3467:
 	asm( 
-"	      004f5523    mov eax,[ebp+8]"
+"	      004f5523    mov eax,hd"
 "	      004f5526    cmp dword ptr [eax+4],0"
 "	      004f552a    jne near ptr 004F553Ah"
 );
 // LINE 3468:
 	asm( 
-"	      004f5530    mov eax,[ebp+8]"
+"	      004f5530    mov eax,hd"
 "	      004f5533    mov dword ptr [eax+4],4"
 );
 // LINE 3471:
 	asm( 
-"	      004f553a    mov eax,[ebp+8]"
+"	      004f553a    mov eax,hd"
 "	      004f553d    mov dword ptr [eax+11Ch],4B0000h"
 );
 // LINE 3472:
 	asm( 
-"	      004f5547    mov eax,[ebp+8]"
+"	      004f5547    mov eax,hd"
 "	      004f554a    mov dword ptr [eax+118h],0"
 );
 // LINE 3473:
 	asm( 
-"	      004f5554    mov eax,[ebp+8]"
+"	      004f5554    mov eax,hd"
 "	      004f5557    mov dword ptr [eax+114h],0"
 );
 // LINE 3476:
 	asm( 
-"	      004f5561    mov eax,[ebp+8]"
+"	      004f5561    mov eax,hd"
 "	      004f5564    mov ecx,ds:[5B493Ch]"
 "	      004f556a    add ecx,0B40000h"
 "	      004f5570    cmp [eax+138h],ecx"
@@ -11091,13 +11091,13 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3477:
 	asm( 
-"	      004f557c    mov eax,[ebp+8]"
+"	      004f557c    mov eax,hd"
 "	      004f557f    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 3478:
 	asm( 
 "	      004f5586    jmp near ptr 004F55BFh"
-"	      004f558b    mov eax,[ebp+8]"
+"	      004f558b    mov eax,hd"
 "	      004f558e    mov ecx,ds:[5B493Ch]"
 "	      004f5594    add ecx,960000h"
 "	      004f559a    cmp [eax+138h],ecx"
@@ -11105,7 +11105,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3479:
 	asm( 
-"	      004f55a6    mov eax,[ebp+8]"
+"	      004f55a6    mov eax,hd"
 "	      004f55a9    mov dword ptr [eax+0Ch],1"
 );
 // LINE 3480:
@@ -11114,13 +11114,13 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3481:
 	asm( 
-"	      004f55b5    mov eax,[ebp+8]"
+"	      004f55b5    mov eax,hd"
 "	      004f55b8    mov dword ptr [eax+0Ch],0"
 );
 // LINE 3483:
 	asm( 
 "	      004f55bf    push 6BF1C0h"
-"	      004f55c4    mov eax,[ebp+8]"
+"	      004f55c4    mov eax,hd"
 "	      004f55c7    push eax"
 "	      004f55c8    call 004F1A20h"
 "	      004f55cd    add esp,8"
@@ -11136,7 +11136,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f55e7    idiv ecx"
 "	      004f55e9    mov eax,edx"
 "	      004f55eb    neg eax"
-"	      004f55ed    mov [ebp-10h],eax"
+"	      004f55ed    mov randx,eax"
 );
 // LINE 3487:
 	asm( 
@@ -11145,17 +11145,17 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f55fa    movsx eax,ax"
 "	      004f55fd    cdq"
 "	      004f55fe    idiv ecx"
-"	      004f5600    mov [ebp-4],edx"
+"	      004f5600    mov randz,edx"
 );
 // LINE 3490:
 	asm( 
-"	      004f5603    mov eax,[ebp-10h]"
+"	      004f5603    mov eax,randx"
 "	      004f5606    shl eax,10h"
 "	      004f5609    mov ds:[6BF1C0h],eax"
 );
 // LINE 3491:
 	asm( 
-"	      004f560e    mov eax,[ebp-4]"
+"	      004f560e    mov eax,randz"
 "	      004f5611    shl eax,10h"
 "	      004f5614    mov ds:[6BF1C8h],eax"
 );
@@ -11164,20 +11164,20 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 "	      004f5619    mov eax,ds:[6BF1C0h]"
 "	      004f561e    add eax,20000000h"
 "	      004f5623    sar eax,16h"
-"	      004f5626    mov [ebp-8],eax"
+"	      004f5626    mov x,eax"
 );
 // LINE 3493:
 	asm( 
 "	      004f5629    mov eax,20000000h"
 "	      004f562e    sub eax,ds:[6BF1C8h]"
 "	      004f5634    sar eax,16h"
-"	      004f5637    mov [ebp-0Ch],eax"
+"	      004f5637    mov y,eax"
 );
 // LINE 3494:
 	asm( 
-"	      004f563a    mov eax,[ebp-0Ch]"
+"	      004f563a    mov eax,y"
 "	      004f563d    and eax,0FFh"
-"	      004f5642    mov ecx,[ebp-8]"
+"	      004f5642    mov ecx,x"
 "	      004f5645    and ecx,0FFh"
 "	      004f564b    shl ecx,0Ah"
 "	      004f564e    mov eax,[ecx+eax*4+67ED30h]"
@@ -11196,7 +11196,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3512:
 	asm( 
-"	      004f567b    mov eax,[ebp+8]"
+"	      004f567b    mov eax,hd"
 "	      004f567e    mov dword ptr [eax+1BCh],1"
 );
 // LINE 3514:
@@ -11205,7 +11205,7 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 );
 // LINE 3516:
 	asm( 
-"	      004f568d    mov eax,[ebp+8]"
+"	      004f568d    mov eax,hd"
 "	      004f5690    mov dword ptr [eax+1BCh],0"
 );
 // LINE 3517:
@@ -11236,46 +11236,46 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3537:
 	asm( 
-"	      004f56bf    mov eax,[ebp+8]"
+"	      004f56bf    mov eax,hd"
 "	      004f56c2    mov dword ptr [eax+118h],0"
 );
 // LINE 3538:
 	asm( 
-"	      004f56cc    mov eax,[ebp+8]"
+"	      004f56cc    mov eax,hd"
 "	      004f56cf    mov dword ptr [eax+114h],0"
 );
 // LINE 3542:
 	asm( 
-"	      004f56d9    mov eax,[ebp+8]"
+"	      004f56d9    mov eax,hd"
 "	      004f56dc    cmp dword ptr [eax+4],2"
 "	      004f56e0    jne near ptr 004F57A7h"
 );
 // LINE 3546:
 	asm( 
-"	      004f56e6    mov eax,[ebp+0Ch]"
+"	      004f56e6    mov eax,loc"
 "	      004f56e9    mov eax,[eax+4]"
 "	      004f56ec    add eax,960000h"
-"	      004f56f1    mov ecx,[ebp+8]"
+"	      004f56f1    mov ecx,hd"
 "	      004f56f4    mov ecx,[ecx+0A4h]"
 "	      004f56fa    cmp eax,[ecx+1Ch]"
 "	      004f56fd    jge near ptr 004F571Fh"
 );
 // LINE 3548:
 	asm( 
-"	      004f5703    mov eax,[ebp+8]"
+"	      004f5703    mov eax,hd"
 "	      004f5706    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 3549:
 	asm( 
-"	      004f570d    mov eax,[ebp+8]"
+"	      004f570d    mov eax,hd"
 "	      004f5710    mov dword ptr [eax+11Ch],140000h"
 );
 // LINE 3551:
 	asm( 
 "	      004f571a    jmp near ptr 004F5770h"
-"	      004f571f    mov eax,[ebp+8]"
+"	      004f571f    mov eax,hd"
 "	      004f5722    mov eax,[eax+0A4h]"
-"	      004f5728    mov ecx,[ebp+0Ch]"
+"	      004f5728    mov ecx,loc"
 "	      004f572b    mov ecx,[ecx+4]"
 "	      004f572e    add ecx,640000h"
 "	      004f5734    cmp [eax+1Ch],ecx"
@@ -11283,12 +11283,12 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3553:
 	asm( 
-"	      004f573d    mov eax,[ebp+8]"
+"	      004f573d    mov eax,hd"
 "	      004f5740    mov dword ptr [eax+0Ch],1"
 );
 // LINE 3554:
 	asm( 
-"	      004f5747    mov eax,[ebp+8]"
+"	      004f5747    mov eax,hd"
 "	      004f574a    mov dword ptr [eax+11Ch],140000h"
 );
 // LINE 3556:
@@ -11297,19 +11297,19 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3558:
 	asm( 
-"	      004f5759    mov eax,[ebp+8]"
+"	      004f5759    mov eax,hd"
 "	      004f575c    mov dword ptr [eax+0Ch],0"
 );
 // LINE 3559:
 	asm( 
-"	      004f5763    mov eax,[ebp+8]"
+"	      004f5763    mov eax,hd"
 "	      004f5766    mov dword ptr [eax+11Ch],4B0000h"
 );
 // LINE 3561:
 	asm( 
-"	      004f5770    mov eax,[ebp+0Ch]"
+"	      004f5770    mov eax,loc"
 "	      004f5773    push eax"
-"	      004f5774    mov eax,[ebp+8]"
+"	      004f5774    mov eax,hd"
 "	      004f5777    push eax"
 "	      004f5778    call 004F1A20h"
 "	      004f577d    add esp,8"
@@ -11318,12 +11318,12 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3563:
 	asm( 
-"	      004f5789    mov eax,[ebp+8]"
+"	      004f5789    mov eax,hd"
 "	      004f578c    mov dword ptr [eax+4],3"
 );
 // LINE 3564:
 	asm( 
-"	      004f5793    mov eax,[ebp+8]"
+"	      004f5793    mov eax,hd"
 "	      004f5796    mov dword ptr [eax+128h],0"
 );
 // LINE 3567:
@@ -11333,23 +11333,23 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3571:
 	asm( 
-"	      004f57a7    mov eax,[ebp+8]"
+"	      004f57a7    mov eax,hd"
 "	      004f57aa    mov dword ptr [eax+11Ch],0"
 );
 // LINE 3572:
 	asm( 
-"	      004f57b4    mov eax,[ebp+8]"
+"	      004f57b4    mov eax,hd"
 "	      004f57b7    mov dword ptr [eax+0Ch],0"
 );
 // LINE 3574:
 	asm( 
-"	      004f57be    mov eax,[ebp+8]"
+"	      004f57be    mov eax,hd"
 "	      004f57c1    cmp dword ptr [eax+4],0"
 "	      004f57c5    jne near ptr 004F57EAh"
 );
 // LINE 3577:
 	asm( 
-"	      004f57cb    mov eax,[ebp+8]"
+"	      004f57cb    mov eax,hd"
 "	      004f57ce    cmp dword ptr [eax+148h],14h"
 "	      004f57d5    jge near ptr 004F57E5h"
 );
@@ -11364,7 +11364,7 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 );
 // LINE 3582:
 	asm( 
-"	      004f57ea    mov eax,[ebp+8]"
+"	      004f57ea    mov eax,hd"
 "	      004f57ed    mov dword ptr [eax+0Ch],0FFFFFFFFh"
 );
 // LINE 3585:
@@ -11397,27 +11397,27 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 );
 // LINE 3602:
 	asm( 
-"	      004f5809    mov eax,[ebp+8]"
+"	      004f5809    mov eax,hd"
 "	      004f580c    mov dword ptr [eax+118h],0"
 );
 // LINE 3603:
 	asm( 
-"	      004f5816    mov eax,[ebp+8]"
+"	      004f5816    mov eax,hd"
 "	      004f5819    mov dword ptr [eax+114h],0"
 );
 // LINE 3604:
 	asm( 
-"	      004f5823    mov eax,[ebp+8]"
+"	      004f5823    mov eax,hd"
 "	      004f5826    mov dword ptr [eax+11Ch],0"
 );
 // LINE 3607:
 	asm( 
-"	      004f5830    mov eax,[ebp+8]"
+"	      004f5830    mov eax,hd"
 "	      004f5833    mov dword ptr [eax+0Ch],1"
 );
 // LINE 3609:
 	asm( 
-"	      004f583a    mov eax,[ebp+8]"
+"	      004f583a    mov eax,hd"
 "	      004f583d    cmp dword ptr [eax+4],0"
 "	      004f5841    jne near ptr 004F584Eh"
 );
@@ -11428,17 +11428,17 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 );
 // LINE 3615:
 	asm( 
-"	      004f584e    mov eax,[ebp+8]"
+"	      004f584e    mov eax,hd"
 "	      004f5851    push eax"
 "	      004f5852    call 004F517Dh"
 "	      004f5857    add esp,4"
-"	      004f585a    mov [ebp-4],eax"
+"	      004f585a    mov alt,eax"
 );
 // LINE 3616:
 	asm( 
-"	      004f585d    mov eax,[ebp+8]"
+"	      004f585d    mov eax,hd"
 "	      004f5860    mov eax,[eax+0A4h]"
-"	      004f5866    mov ecx,[ebp-4]"
+"	      004f5866    mov ecx,alt"
 "	      004f5869    add ecx,960000h"
 "	      004f586f    cmp [eax+1Ch],ecx"
 "	      004f5872    jge near ptr 004F587Fh"
@@ -11450,7 +11450,7 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 );
 // LINE 3622:
 	asm( 
-"	      004f587f    mov eax,[ebp+8]"
+"	      004f587f    mov eax,hd"
 "	      004f5882    mov dword ptr [eax+0Ch],0"
 );
 // LINE 3623:
@@ -11513,80 +11513,80 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 );
 // LINE 3667:
 	asm( 
-"	      004f58ac    mov eax,[ebp+0Ch]"
+"	      004f58ac    mov eax,vector"
 "	      004f58af    mov eax,[eax]"
 "	      004f58b1    shl eax,2"
-"	      004f58b4    mov [ebp-2Ch],eax"
+"	      004f58b4    mov deltax,eax"
 );
 // LINE 3668:
 	asm( 
-"	      004f58b7    mov eax,[ebp+0Ch]"
+"	      004f58b7    mov eax,vector"
 "	      004f58ba    mov eax,[eax+8]"
 "	      004f58bd    shl eax,2"
-"	      004f58c0    mov [ebp-4],eax"
+"	      004f58c0    mov deltaz,eax"
 );
 // LINE 3671:
 	asm( 
-"	      004f58c3    mov eax,[ebp+8]"
+"	      004f58c3    mov eax,hd"
 "	      004f58c6    mov eax,[eax+0A4h]"
 "	      004f58cc    mov eax,[eax+18h]"
-"	      004f58cf    mov ecx,[ebp-2Ch]"
+"	      004f58cf    mov ecx,deltax"
 "	      004f58d2    lea eax,[eax+ecx*2]"
-"	      004f58d5    mov [ebp-0Ch],eax"
+"	      004f58d5    mov fx,eax"
 );
 // LINE 3672:
 	asm( 
-"	      004f58d8    mov eax,[ebp+8]"
+"	      004f58d8    mov eax,hd"
 "	      004f58db    mov eax,[eax+0A4h]"
 "	      004f58e1    mov eax,[eax+20h]"
-"	      004f58e4    mov ecx,[ebp-4]"
+"	      004f58e4    mov ecx,deltaz"
 "	      004f58e7    lea eax,[eax+ecx*2]"
-"	      004f58ea    mov [ebp-18h],eax"
+"	      004f58ea    mov fz,eax"
 );
 // LINE 3675:
 	asm( 
-"	      004f58ed    mov dword ptr [ebp-24h],0"
+"	      004f58ed    mov lcptr,0"
 );
 // LINE 3680:
 	asm( 
-"	      004f58f4    mov dword ptr [ebp-1Ch],0"
+"	      004f58f4    mov i,0"
 "	      004f58fb    jmp near ptr 004F590Fh"
-"	      004f5900    inc dword ptr [ebp-1Ch]"
-"	      004f5903    mov eax,[ebp-2Ch]"
-"	      004f5906    add [ebp-0Ch],eax"
-"	      004f5909    mov eax,[ebp-4]"
-"	      004f590c    add [ebp-18h],eax"
-"	      004f590f    cmp dword ptr [ebp-1Ch],50h"
+"	      004f5900    inc i"
+"	      004f5903    mov eax,deltax"
+"	      004f5906    add fx,eax"
+"	      004f5909    mov eax,deltaz"
+"	      004f590c    add fz,eax"
+"	      004f590f    cmp i,50h"
 "	      004f5913    jge near ptr 004F5995h"
 );
 // LINE 3683:
 	asm( 
-"	      004f5919    mov eax,[ebp-0Ch]"
+"	      004f5919    mov eax,fx"
 "	      004f591c    add eax,20000000h"
 "	      004f5921    sar eax,16h"
-"	      004f5924    mov [ebp-14h],eax"
+"	      004f5924    mov x,eax"
 );
 // LINE 3684:
 	asm( 
 "	      004f5927    mov eax,20000000h"
-"	      004f592c    sub eax,[ebp-18h]"
+"	      004f592c    sub eax,fz"
 "	      004f592f    sar eax,16h"
-"	      004f5932    mov [ebp-20h],eax"
+"	      004f5932    mov y,eax"
 );
 // LINE 3685:
 	asm( 
-"	      004f5935    mov eax,[ebp-20h]"
+"	      004f5935    mov eax,y"
 "	      004f5938    and eax,0FFh"
-"	      004f593d    mov ecx,[ebp-14h]"
+"	      004f593d    mov ecx,x"
 "	      004f5940    and ecx,0FFh"
 "	      004f5946    shl ecx,0Ah"
 "	      004f5949    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f5950    mov [ebp-28h],eax"
+"	      004f5950    mov cptr,eax"
 );
 // LINE 3686:
 	asm( 
-"	      004f5953    mov eax,[ebp-28h]"
-"	      004f5956    cmp [ebp-24h],eax"
+"	      004f5953    mov eax,cptr"
+"	      004f5956    cmp lcptr,eax"
 "	      004f5959    jne near ptr 004F5964h"
 );
 // LINE 3687:
@@ -11595,21 +11595,21 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 );
 // LINE 3688:
 	asm( 
-"	      004f5964    mov eax,[ebp-28h]"
-"	      004f5967    mov [ebp-24h],eax"
+"	      004f5964    mov eax,cptr"
+"	      004f5967    mov lcptr,eax"
 );
 // LINE 3693:
 	asm( 
-"	      004f596a    mov eax,[ebp-28h]"
+"	      004f596a    mov eax,cptr"
 "	      004f596d    push eax"
 "	      004f596e    call 004F5A0Ch"
 "	      004f5973    add esp,4"
-"	      004f5976    mov [ebp-10h],eax"
+"	      004f5976    mov maxradius,eax"
 );
 // LINE 3694:
 	asm( 
-"	      004f5979    mov eax,[ebp+8]"
-"	      004f597c    mov ecx,[ebp-10h]"
+"	      004f5979    mov eax,hd"
+"	      004f597c    mov ecx,maxradius"
 "	      004f597f    cmp [eax+138h],ecx"
 "	      004f5985    jge near ptr 004F5990h"
 );
@@ -11623,13 +11623,13 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 );
 // LINE 3698:
 	asm( 
-"	      004f5995    mov eax,[ebp-10h]"
-"	      004f5998    mov ecx,[ebp+14h]"
+"	      004f5995    mov eax,maxradius"
+"	      004f5998    mov ecx,alt"
 "	      004f599b    mov [ecx],eax"
 );
 // LINE 3701:
 	asm( 
-"	      004f599d    cmp dword ptr [ebp-1Ch],50h"
+"	      004f599d    cmp i,50h"
 "	      004f59a1    jne near ptr 004F59AEh"
 );
 // LINE 3702:
@@ -11639,15 +11639,15 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 );
 // LINE 3706:
 	asm( 
-"	      004f59ae    mov eax,[ebp-1Ch]"
+"	      004f59ae    mov eax,i"
 "	      004f59b1    inc eax"
 "	      004f59b2    shl eax,12h"
-"	      004f59b5    mov ecx,[ebp+10h]"
+"	      004f59b5    mov ecx,dist"
 "	      004f59b8    mov [ecx],eax"
 );
 // LINE 3707:
 	asm( 
-"	      004f59ba    mov eax,[ebp+10h]"
+"	      004f59ba    mov eax,dist"
 "	      004f59bd    cmp dword ptr [eax],1400000h"
 "	      004f59c3    jl near ptr 004F59D0h"
 );
@@ -11660,26 +11660,26 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	asm( 
 "	      004f59d0    mov ebx,10000h"
 "	      004f59d5    push 1400000h"
-"	      004f59da    mov eax,[ebp+10h]"
+"	      004f59da    mov eax,dist"
 "	      004f59dd    mov eax,[eax]"
 "	      004f59df    push eax"
 "	      004f59e0    call 004D19DFh"
 "	      004f59e5    add esp,8"
 "	      004f59e8    sub ebx,eax"
-"	      004f59ea    mov [ebp-8],ebx"
+"	      004f59ea    mov deflectangle,ebx"
 );
 // LINE 3711:
 	asm( 
-"	      004f59ed    mov eax,[ebp-8]"
+"	      004f59ed    mov eax,deflectangle"
 "	      004f59f0    lea eax,[eax+eax*4]"
 "	      004f59f3    lea eax,[eax+eax*4]"
 "	      004f59f6    shl eax,3"
 "	      004f59f9    lea eax,[eax+eax*8]"
-"	      004f59fc    mov [ebp-8],eax"
+"	      004f59fc    mov deflectangle,eax"
 );
 // LINE 3713:
 	asm( 
-"	      004f59ff    mov eax,[ebp-8]"
+"	      004f59ff    mov eax,deflectangle"
 "	      004f5a02    jmp near ptr 004F5A07h"
 );
 // LINE 3715:
@@ -11709,30 +11709,30 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 );
 // LINE 3733:
 	asm( 
-"	      004f5a15    mov eax,[ebp+8]"
+"	      004f5a15    mov eax,cptr"
 "	      004f5a18    mov eax,[eax+0Ch]"
-"	      004f5a1b    mov [ebp-28h],eax"
+"	      004f5a1b    mov stobj,eax"
 );
 // LINE 3734:
 	asm( 
-"	      004f5a1e    mov dword ptr [ebp-2Ch],0"
+"	      004f5a1e    mov maxradius,0"
 );
 // LINE 3735:
 	asm( 
-"	      004f5a25    cmp dword ptr [ebp-28h],0"
+"	      004f5a25    cmp stobj,0"
 "	      004f5a29    je near ptr 004F5A71h"
 );
 // LINE 3737:
 	asm( 
-"	      004f5a2f    mov eax,[ebp-28h]"
+"	      004f5a2f    mov eax,stobj"
 "	      004f5a32    test dword ptr [eax+8],1A4h"
 "	      004f5a39    je near ptr 004F5A64h"
 );
 // LINE 3739:
 	asm( 
-"	      004f5a3f    lea eax,[ebp-24h]"
+"	      004f5a3f    lea eax,oinfo.Faces"
 "	      004f5a42    push eax"
-"	      004f5a43    mov eax,[ebp-28h]"
+"	      004f5a43    mov eax,stobj"
 "	      004f5a46    mov eax,[eax+4]"
 "	      004f5a49    push eax"
 "	      004f5a4a    call 004D8859h"
@@ -11740,20 +11740,20 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 );
 // LINE 3740:
 	asm( 
-"	      004f5a52    mov eax,[ebp-2Ch]"
-"	      004f5a55    cmp [ebp-18h],eax"
+"	      004f5a52    mov eax,maxradius"
+"	      004f5a55    cmp oinfo.Radius,eax"
 "	      004f5a58    jle near ptr 004F5A64h"
 );
 // LINE 3741:
 	asm( 
-"	      004f5a5e    mov eax,[ebp-18h]"
-"	      004f5a61    mov [ebp-2Ch],eax"
+"	      004f5a5e    mov eax,oinfo.Radius"
+"	      004f5a61    mov maxradius,eax"
 );
 // LINE 3744:
 	asm( 
-"	      004f5a64    mov eax,[ebp-28h]"
+"	      004f5a64    mov eax,stobj"
 "	      004f5a67    mov eax,[eax]"
-"	      004f5a69    mov [ebp-28h],eax"
+"	      004f5a69    mov stobj,eax"
 );
 // LINE 3745:
 	asm( 
@@ -11761,7 +11761,7 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 );
 // LINE 3747:
 	asm( 
-"	      004f5a71    mov eax,[ebp-2Ch]"
+"	      004f5a71    mov eax,maxradius"
 "	      004f5a74    add eax,eax"
 "	      004f5a76    jmp near ptr 004F5A7Bh"
 );
@@ -11814,29 +11814,29 @@ struct _HELI_DATA* S3HeliGetDataByDyObj(struct _DYOBJ_INST* dyheli) {
 );
 // LINE 3775:
 	asm( 
-"	      004f5a99    mov dword ptr [ebp-4],0"
+"	      004f5a99    mov heliidx,0"
 "	      004f5aa0    jmp near ptr 004F5AA8h"
-"	      004f5aa5    inc dword ptr [ebp-4]"
-"	      004f5aa8    cmp dword ptr [ebp-4],0Ah"
+"	      004f5aa5    inc heliidx"
+"	      004f5aa8    cmp heliidx,0Ah"
 "	      004f5aac    jge near ptr 004F5AF0h"
 );
 // LINE 3777:
 	asm( 
-"	      004f5ab2    mov eax,[ebp-4]"
+"	      004f5ab2    mov eax,heliidx"
 "	      004f5ab5    cmp dword ptr [eax*4+5B4940h],0"
 "	      004f5abd    je near ptr 004F5AEBh"
 );
 // LINE 3779:
 	asm( 
-"	      004f5ac3    mov eax,[ebp-4]"
+"	      004f5ac3    mov eax,heliidx"
 "	      004f5ac6    mov eax,[eax*4+5B4940h]"
-"	      004f5acd    mov ecx,[ebp+8]"
+"	      004f5acd    mov ecx,dyheli"
 "	      004f5ad0    cmp [eax+0A4h],ecx"
 "	      004f5ad6    jne near ptr 004F5AEBh"
 );
 // LINE 3780:
 	asm( 
-"	      004f5adc    mov eax,[ebp-4]"
+"	      004f5adc    mov eax,heliidx"
 "	      004f5adf    mov eax,[eax*4+5B4940h]"
 "	      004f5ae6    jmp near ptr 004F5AF7h"
 );
@@ -11874,21 +11874,21 @@ void S3HeliNextFrameDriver() {
 );
 // LINE 3800:
 	asm( 
-"	      004f5b05    mov dword ptr [ebp-4],0"
+"	      004f5b05    mov heliidx,0"
 "	      004f5b0c    jmp near ptr 004F5B14h"
-"	      004f5b11    inc dword ptr [ebp-4]"
-"	      004f5b14    cmp dword ptr [ebp-4],0Ah"
+"	      004f5b11    inc heliidx"
+"	      004f5b14    cmp heliidx,0Ah"
 "	      004f5b18    jge near ptr 004F5B60h"
 );
 // LINE 3802:
 	asm( 
-"	      004f5b1e    mov eax,[ebp-4]"
+"	      004f5b1e    mov eax,heliidx"
 "	      004f5b21    cmp dword ptr [eax*4+5B4940h],0"
 "	      004f5b29    je near ptr 004F5B5Bh"
 );
 // LINE 3804:
 	asm( 
-"	      004f5b2f    mov eax,[ebp-4]"
+"	      004f5b2f    mov eax,heliidx"
 "	      004f5b32    mov eax,[eax*4+5B4940h]"
 "	      004f5b39    test byte ptr [eax+8],1"
 "	      004f5b3d    je near ptr 004F5B48h"
@@ -11899,7 +11899,7 @@ void S3HeliNextFrameDriver() {
 );
 // LINE 3810:
 	asm( 
-"	      004f5b48    mov eax,[ebp-4]"
+"	      004f5b48    mov eax,heliidx"
 "	      004f5b4b    mov eax,[eax*4+5B4940h]"
 "	      004f5b52    push eax"
 "	      004f5b53    call 004F07BAh"
@@ -11970,7 +11970,7 @@ void S3HeliSoundDriver() {
 // LINE 3854:
 	asm( 
 "	      004f5bac    mov eax,ds:[5B4968h]"
-"	      004f5bb1    mov [ebp-10h],eax"
+"	      004f5bb1    mov hd,eax"
 );
 // LINE 3856:
 	asm( 
@@ -11978,85 +11978,85 @@ void S3HeliSoundDriver() {
 );
 // LINE 3859:
 	asm( 
-"	      004f5bb9    mov dword ptr [ebp-24h],7800000h"
+"	      004f5bb9    mov closest,7800000h"
 );
 // LINE 3860:
 	asm( 
-"	      004f5bc0    mov dword ptr [ebp-4],0"
+"	      004f5bc0    mov closehd,0"
 );
 // LINE 3862:
 	asm( 
-"	      004f5bc7    mov dword ptr [ebp-8],0"
+"	      004f5bc7    mov heliidx,0"
 "	      004f5bce    jmp near ptr 004F5BD6h"
-"	      004f5bd3    inc dword ptr [ebp-8]"
-"	      004f5bd6    cmp dword ptr [ebp-8],0Ah"
+"	      004f5bd3    inc heliidx"
+"	      004f5bd6    cmp heliidx,0Ah"
 "	      004f5bda    jge near ptr 004F5C79h"
 );
 // LINE 3864:
 	asm( 
-"	      004f5be0    mov eax,[ebp-8]"
+"	      004f5be0    mov eax,heliidx"
 "	      004f5be3    cmp dword ptr [eax*4+5B4940h],0"
 "	      004f5beb    je near ptr 004F5C74h"
 );
 // LINE 3866:
 	asm( 
-"	      004f5bf1    mov eax,[ebp-8]"
+"	      004f5bf1    mov eax,heliidx"
 "	      004f5bf4    mov eax,[eax*4+5B4940h]"
-"	      004f5bfb    mov [ebp-10h],eax"
+"	      004f5bfb    mov hd,eax"
 );
 // LINE 3867:
 	asm( 
-"	      004f5bfe    mov eax,[ebp-10h]"
+"	      004f5bfe    mov eax,hd"
 "	      004f5c01    cmp dword ptr [eax+148h],0"
 "	      004f5c08    je near ptr 004F5C74h"
 );
 // LINE 3869:
 	asm( 
-"	      004f5c0e    mov eax,[ebp-10h]"
+"	      004f5c0e    mov eax,hd"
 "	      004f5c11    mov eax,[eax+0A4h]"
 "	      004f5c17    mov eax,[eax+18h]"
 "	      004f5c1a    sub eax,ds:[6C126Ch]"
-"	      004f5c20    mov [ebp-1Ch],eax"
+"	      004f5c20    mov viewvect.x,eax"
 );
 // LINE 3870:
 	asm( 
-"	      004f5c23    mov eax,[ebp-10h]"
+"	      004f5c23    mov eax,hd"
 "	      004f5c26    mov eax,[eax+0A4h]"
 "	      004f5c2c    mov eax,[eax+1Ch]"
 "	      004f5c2f    sub eax,ds:[6C1270h]"
-"	      004f5c35    mov [ebp-18h],eax"
+"	      004f5c35    mov viewvect.y,eax"
 );
 // LINE 3871:
 	asm( 
-"	      004f5c38    mov eax,[ebp-10h]"
+"	      004f5c38    mov eax,hd"
 "	      004f5c3b    mov eax,[eax+0A4h]"
 "	      004f5c41    mov eax,[eax+20h]"
 "	      004f5c44    sub eax,ds:[6C1274h]"
-"	      004f5c4a    mov [ebp-14h],eax"
+"	      004f5c4a    mov viewvect.z,eax"
 );
 // LINE 3872:
 	asm( 
-"	      004f5c4d    lea eax,[ebp-1Ch]"
+"	      004f5c4d    lea eax,viewvect.x"
 "	      004f5c50    push eax"
 "	      004f5c51    call 004CA0C0h"
 "	      004f5c56    add esp,4"
-"	      004f5c59    mov [ebp-0Ch],eax"
+"	      004f5c59    mov dist,eax"
 );
 // LINE 3873:
 	asm( 
-"	      004f5c5c    mov eax,[ebp-0Ch]"
-"	      004f5c5f    cmp [ebp-24h],eax"
+"	      004f5c5c    mov eax,dist"
+"	      004f5c5f    cmp closest,eax"
 "	      004f5c62    jle near ptr 004F5C74h"
 );
 // LINE 3875:
 	asm( 
-"	      004f5c68    mov eax,[ebp-0Ch]"
-"	      004f5c6b    mov [ebp-24h],eax"
+"	      004f5c68    mov eax,dist"
+"	      004f5c6b    mov closest,eax"
 );
 // LINE 3876:
 	asm( 
-"	      004f5c6e    mov eax,[ebp-10h]"
-"	      004f5c71    mov [ebp-4],eax"
+"	      004f5c6e    mov eax,hd"
+"	      004f5c71    mov closehd,eax"
 );
 // LINE 3880:
 	asm( 
@@ -12064,7 +12064,7 @@ void S3HeliSoundDriver() {
 );
 // LINE 3882:
 	asm( 
-"	      004f5c79    cmp dword ptr [ebp-4],0"
+"	      004f5c79    cmp closehd,0"
 "	      004f5c7d    jne near ptr 004F5C97h"
 );
 // LINE 3884:
@@ -12083,55 +12083,55 @@ void S3HeliSoundDriver() {
 );
 // LINE 3889:
 	asm( 
-"	      004f5c97    mov eax,[ebp-4]"
-"	      004f5c9a    mov [ebp-10h],eax"
+"	      004f5c97    mov eax,closehd"
+"	      004f5c9a    mov hd,eax"
 );
 // LINE 3893:
 	asm( 
-"	      004f5c9d    mov eax,[ebp-10h]"
+"	      004f5c9d    mov eax,hd"
 "	      004f5ca0    cmp dword ptr [eax+4],0"
 "	      004f5ca4    je near ptr 004F5DB1h"
 );
 // LINE 3895:
 	asm( 
-"	      004f5caa    mov eax,[ebp-10h]"
+"	      004f5caa    mov eax,hd"
 "	      004f5cad    mov eax,[eax+0A4h]"
 "	      004f5cb3    mov eax,[eax+18h]"
 "	      004f5cb6    sub eax,ds:[6C126Ch]"
-"	      004f5cbc    mov [ebp-1Ch],eax"
+"	      004f5cbc    mov viewvect.x,eax"
 );
 // LINE 3896:
 	asm( 
-"	      004f5cbf    mov eax,[ebp-10h]"
+"	      004f5cbf    mov eax,hd"
 "	      004f5cc2    mov eax,[eax+0A4h]"
 "	      004f5cc8    mov eax,[eax+1Ch]"
 "	      004f5ccb    sub eax,ds:[6C1270h]"
-"	      004f5cd1    mov [ebp-18h],eax"
+"	      004f5cd1    mov viewvect.y,eax"
 );
 // LINE 3897:
 	asm( 
-"	      004f5cd4    mov eax,[ebp-10h]"
+"	      004f5cd4    mov eax,hd"
 "	      004f5cd7    mov eax,[eax+0A4h]"
 "	      004f5cdd    mov eax,[eax+20h]"
 "	      004f5ce0    sub eax,ds:[6C1274h]"
-"	      004f5ce6    mov [ebp-14h],eax"
+"	      004f5ce6    mov viewvect.z,eax"
 );
 // LINE 3898:
 	asm( 
-"	      004f5ce9    lea eax,[ebp-1Ch]"
+"	      004f5ce9    lea eax,viewvect.x"
 "	      004f5cec    push eax"
 "	      004f5ced    call 004CA0C0h"
 "	      004f5cf2    add esp,4"
-"	      004f5cf5    mov [ebp-0Ch],eax"
+"	      004f5cf5    mov dist,eax"
 );
 // LINE 3901:
 	asm( 
-"	      004f5cf8    cmp dword ptr [ebp-0Ch],7800000h"
+"	      004f5cf8    cmp dist,7800000h"
 "	      004f5cff    jge near ptr 004F5D28h"
-"	      004f5d05    mov eax,[ebp-10h]"
+"	      004f5d05    mov eax,hd"
 "	      004f5d08    cmp dword ptr [eax+148h],96h"
 "	      004f5d12    jl near ptr 004F5D28h"
-"	      004f5d18    mov eax,[ebp-10h]"
+"	      004f5d18    mov eax,hd"
 "	      004f5d1b    cmp dword ptr [eax+320h],0"
 "	      004f5d22    jg near ptr 004F5D37h"
 );
@@ -12156,7 +12156,7 @@ void S3HeliSoundDriver() {
 // LINE 3911:
 	asm( 
 "	      004f5d49    push 1"
-"	      004f5d4b    mov eax,[ebp-10h]"
+"	      004f5d4b    mov eax,hd"
 "	      004f5d4e    mov eax,[eax+0A4h]"
 "	      004f5d54    add eax,18h"
 "	      004f5d57    push eax"
@@ -12166,7 +12166,7 @@ void S3HeliSoundDriver() {
 );
 // LINE 3914:
 	asm( 
-"	      004f5d62    mov eax,[ebp-10h]"
+"	      004f5d62    mov eax,hd"
 "	      004f5d65    mov eax,[eax+0DCh]"
 "	      004f5d6b    sar eax,0Ch"
 "	      004f5d6e    push eax"
@@ -12178,7 +12178,7 @@ void S3HeliSoundDriver() {
 	asm( 
 "	      004f5d79    push 0F0600000h"
 "	      004f5d7e    push 7800000h"
-"	      004f5d83    mov eax,[ebp-0Ch]"
+"	      004f5d83    mov eax,dist"
 "	      004f5d86    push eax"
 "	      004f5d87    call 004D19DFh"
 "	      004f5d8c    add esp,8"
@@ -12186,11 +12186,11 @@ void S3HeliSoundDriver() {
 "	      004f5d90    call 004D19BDh"
 "	      004f5d95    add esp,8"
 "	      004f5d98    sar eax,10h"
-"	      004f5d9b    mov [ebp-20h],eax"
+"	      004f5d9b    mov vol_adj,eax"
 );
 // LINE 3921:
 	asm( 
-"	      004f5d9e    mov eax,[ebp-20h]"
+"	      004f5d9e    mov eax,vol_adj"
 "	      004f5da1    push eax"
 "	      004f5da2    push 0"
 "	      004f5da4    call 00446E82h"
@@ -12202,7 +12202,7 @@ void S3HeliSoundDriver() {
 );
 // LINE 3927:
 	asm( 
-"	      004f5db1    mov eax,[ebp-10h]"
+"	      004f5db1    mov eax,hd"
 "	      004f5db4    cmp dword ptr [eax+148h],0FAh"
 "	      004f5dbe    jge near ptr 004F5DD3h"
 );
@@ -12226,14 +12226,14 @@ void S3HeliSoundDriver() {
 );
 // LINE 3937:
 	asm( 
-"	      004f5de5    mov eax,[ebp-10h]"
+"	      004f5de5    mov eax,hd"
 "	      004f5de8    cmp dword ptr [eax+320h],0"
 "	      004f5def    jle near ptr 004F5E13h"
 );
 // LINE 3938:
 	asm( 
 "	      004f5df5    push 1"
-"	      004f5df7    mov eax,[ebp-10h]"
+"	      004f5df7    mov eax,hd"
 "	      004f5dfa    mov eax,[eax+0A4h]"
 "	      004f5e00    add eax,18h"
 "	      004f5e03    push eax"
@@ -12251,14 +12251,14 @@ void S3HeliSoundDriver() {
 );
 // LINE 3944:
 	asm( 
-"	      004f5e18    mov eax,[ebp-10h]"
+"	      004f5e18    mov eax,hd"
 "	      004f5e1b    mov eax,[eax+148h]"
 "	      004f5e21    sub eax,168h"
-"	      004f5e26    mov [ebp-20h],eax"
+"	      004f5e26    mov vol_adj,eax"
 );
 // LINE 3945:
 	asm( 
-"	      004f5e29    mov eax,[ebp-20h]"
+"	      004f5e29    mov eax,vol_adj"
 "	      004f5e2c    shl eax,2"
 "	      004f5e2f    lea eax,[eax+eax*2]"
 "	      004f5e32    lea eax,[eax+eax*4]"
@@ -12269,16 +12269,16 @@ void S3HeliSoundDriver() {
 );
 // LINE 3946:
 	asm( 
-"	      004f5e40    mov eax,[ebp-20h]"
+"	      004f5e40    mov eax,vol_adj"
 "	      004f5e43    cdq"
 "	      004f5e44    and edx,3"
 "	      004f5e47    add eax,edx"
 "	      004f5e49    sar eax,2"
-"	      004f5e4c    mov [ebp-20h],eax"
+"	      004f5e4c    mov vol_adj,eax"
 );
 // LINE 3947:
 	asm( 
-"	      004f5e4f    mov eax,[ebp-20h]"
+"	      004f5e4f    mov eax,vol_adj"
 "	      004f5e52    push eax"
 "	      004f5e53    push 0"
 "	      004f5e55    call 00446E82h"
@@ -12323,7 +12323,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3979:
 	asm( 
-"	      004f5e73    mov eax,[ebp+8]"
+"	      004f5e73    mov eax,hd"
 "	      004f5e76    test byte ptr [eax+8],1"
 "	      004f5e7a    jne near ptr 004F5E85h"
 );
@@ -12333,16 +12333,16 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3983:
 	asm( 
-"	      004f5e85    mov dword ptr [ebp+14h],1"
-"	      004f5e8c    mov eax,[ebp+14h]"
-"	      004f5e8f    mov [ebp+0Ch],eax"
-"	      004f5e92    mov eax,[ebp+0Ch]"
-"	      004f5e95    mov [ebp+10h],eax"
+"	      004f5e85    mov color,1"
+"	      004f5e8c    mov eax,color"
+"	      004f5e8f    mov maxobjy,eax"
+"	      004f5e92    mov eax,maxobjy"
+"	      004f5e95    mov alt,eax"
 );
 // LINE 3985:
 	asm( 
 "	      004f5e98    push 0"
-"	      004f5e9a    mov eax,[ebp+8]"
+"	      004f5e9a    mov eax,hd"
 "	      004f5e9d    mov eax,[eax+0C0h]"
 "	      004f5ea3    mov eax,[eax+8]"
 "	      004f5ea6    push eax"
@@ -12351,10 +12351,10 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3988:
 	asm( 
-"	      004f5eaf    mov eax,[ebp+8]"
+"	      004f5eaf    mov eax,hd"
 "	      004f5eb2    add eax,100h"
 "	      004f5eb7    push eax"
-"	      004f5eb8    mov eax,[ebp+8]"
+"	      004f5eb8    mov eax,hd"
 "	      004f5ebb    mov eax,[eax+0C0h]"
 "	      004f5ec1    add eax,24h"
 "	      004f5ec4    push eax"
@@ -12363,11 +12363,11 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3989:
 	asm( 
-"	      004f5ecd    mov eax,[ebp+8]"
+"	      004f5ecd    mov eax,hd"
 "	      004f5ed0    mov eax,[eax+0C0h]"
 "	      004f5ed6    add eax,24h"
 "	      004f5ed9    push eax"
-"	      004f5eda    lea eax,[ebp-10h]"
+"	      004f5eda    lea eax,svec.x"
 "	      004f5edd    push eax"
 "	      004f5ede    push 6071E0h"
 "	      004f5ee3    call 004D2094h"
@@ -12375,28 +12375,28 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3991:
 	asm( 
-"	      004f5eeb    mov eax,[ebp-10h]"
+"	      004f5eeb    mov eax,svec.x"
 "	      004f5eee    shl eax,5"
-"	      004f5ef1    mov [ebp-20h],eax"
+"	      004f5ef1    mov vstep.x,eax"
 );
 // LINE 3992:
 	asm( 
-"	      004f5ef4    mov eax,[ebp-0Ch]"
+"	      004f5ef4    mov eax,svec.y"
 "	      004f5ef7    shl eax,5"
-"	      004f5efa    mov [ebp-1Ch],eax"
+"	      004f5efa    mov vstep.y,eax"
 );
 // LINE 3993:
 	asm( 
-"	      004f5efd    mov eax,[ebp-8]"
+"	      004f5efd    mov eax,svec.z"
 "	      004f5f00    shl eax,5"
-"	      004f5f03    mov [ebp-18h],eax"
+"	      004f5f03    mov vstep.z,eax"
 );
 // LINE 3996:
 	asm( 
-"	      004f5f06    mov eax,[ebp+8]"
+"	      004f5f06    mov eax,hd"
 "	      004f5f09    mov eax,[eax+0A4h]"
 "	      004f5f0f    add eax,18h"
-"	      004f5f12    lea ecx,[ebp-38h]"
+"	      004f5f12    lea ecx,loc.x"
 "	      004f5f15    mov edx,[eax]"
 "	      004f5f17    mov [ecx],edx"
 "	      004f5f19    mov edx,[eax+4]"
@@ -12406,68 +12406,68 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 3998:
 	asm( 
-"	      004f5f25    mov dword ptr [ebp-14h],0"
+"	      004f5f25    mov totdist,0"
 );
 // LINE 4002:
 	asm( 
-"	      004f5f2c    mov dword ptr [ebp-2Ch],0"
+"	      004f5f2c    mov i,0"
 "	      004f5f33    jmp near ptr 004F5F3Bh"
-"	      004f5f38    inc dword ptr [ebp-2Ch]"
-"	      004f5f3b    cmp dword ptr [ebp-2Ch],10h"
+"	      004f5f38    inc i"
+"	      004f5f3b    cmp i,10h"
 "	      004f5f3f    jge near ptr 004F6035h"
 );
 // LINE 4004:
 	asm( 
 "	      004f5f45    mov eax,20000000h"
-"	      004f5f4a    sub eax,[ebp-30h]"
+"	      004f5f4a    sub eax,loc.z"
 "	      004f5f4d    shr eax,16h"
 "	      004f5f50    and eax,0FFh"
-"	      004f5f55    mov ecx,[ebp-38h]"
+"	      004f5f55    mov ecx,loc.x"
 "	      004f5f58    add ecx,20000000h"
 "	      004f5f5e    shr ecx,16h"
 "	      004f5f61    and ecx,0FFh"
 "	      004f5f67    shl ecx,0Ah"
 "	      004f5f6a    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f5f71    mov [ebp-40h],eax"
+"	      004f5f71    mov cptr,eax"
 );
 // LINE 4005:
 	asm( 
 "	      004f5f74    mov eax,20000000h"
-"	      004f5f79    sub eax,[ebp-30h]"
-"	      004f5f7c    add eax,[ebp-18h]"
+"	      004f5f79    sub eax,loc.z"
+"	      004f5f7c    add eax,vstep.z"
 "	      004f5f7f    shr eax,16h"
 "	      004f5f82    and eax,0FFh"
-"	      004f5f87    mov ecx,[ebp-38h]"
-"	      004f5f8a    add ecx,[ebp-20h]"
+"	      004f5f87    mov ecx,loc.x"
+"	      004f5f8a    add ecx,vstep.x"
 "	      004f5f8d    add ecx,20000000h"
 "	      004f5f93    shr ecx,16h"
 "	      004f5f96    and ecx,0FFh"
 "	      004f5f9c    shl ecx,0Ah"
 "	      004f5f9f    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f5fa6    mov [ebp-3Ch],eax"
+"	      004f5fa6    mov ncptr,eax"
 );
 // LINE 4008:
 	asm( 
-"	      004f5fa9    mov eax,[ebp-40h]"
+"	      004f5fa9    mov eax,cptr"
 "	      004f5fac    push eax"
 "	      004f5fad    push 200000h"
-"	      004f5fb2    lea eax,[ebp-10h]"
+"	      004f5fb2    lea eax,svec.x"
 "	      004f5fb5    push eax"
-"	      004f5fb6    lea eax,[ebp-38h]"
+"	      004f5fb6    lea eax,loc.x"
 "	      004f5fb9    push eax"
 "	      004f5fba    call 004F6341h"
 "	      004f5fbf    add esp,10h"
-"	      004f5fc2    mov [ebp-24h],eax"
+"	      004f5fc2    mov dist,eax"
 );
 // LINE 4010:
 	asm( 
-"	      004f5fc5    cmp dword ptr [ebp-24h],0"
+"	      004f5fc5    cmp dist,0"
 "	      004f5fc9    jle near ptr 004F5FDAh"
 );
 // LINE 4012:
 	asm( 
-"	      004f5fcf    mov eax,[ebp-24h]"
-"	      004f5fd2    add [ebp-14h],eax"
+"	      004f5fcf    mov eax,dist"
+"	      004f5fd2    add totdist,eax"
 );
 // LINE 4014:
 	asm( 
@@ -12475,32 +12475,32 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4017:
 	asm( 
-"	      004f5fda    mov eax,[ebp-40h]"
-"	      004f5fdd    cmp [ebp-3Ch],eax"
+"	      004f5fda    mov eax,cptr"
+"	      004f5fdd    cmp ncptr,eax"
 "	      004f5fe0    je near ptr 004F6002h"
 );
 // LINE 4018:
 	asm( 
-"	      004f5fe6    mov eax,[ebp-3Ch]"
+"	      004f5fe6    mov eax,ncptr"
 "	      004f5fe9    push eax"
 "	      004f5fea    push 200000h"
-"	      004f5fef    lea eax,[ebp-10h]"
+"	      004f5fef    lea eax,svec.x"
 "	      004f5ff2    push eax"
-"	      004f5ff3    lea eax,[ebp-38h]"
+"	      004f5ff3    lea eax,loc.x"
 "	      004f5ff6    push eax"
 "	      004f5ff7    call 004F6341h"
 "	      004f5ffc    add esp,10h"
-"	      004f5fff    mov [ebp-24h],eax"
+"	      004f5fff    mov dist,eax"
 );
 // LINE 4019:
 	asm( 
-"	      004f6002    cmp dword ptr [ebp-24h],0"
+"	      004f6002    cmp dist,0"
 "	      004f6006    jle near ptr 004F6017h"
 );
 // LINE 4021:
 	asm( 
-"	      004f600c    mov eax,[ebp-24h]"
-"	      004f600f    add [ebp-14h],eax"
+"	      004f600c    mov eax,dist"
+"	      004f600f    add totdist,eax"
 );
 // LINE 4023:
 	asm( 
@@ -12508,22 +12508,22 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4027:
 	asm( 
-"	      004f6017    mov eax,[ebp-20h]"
-"	      004f601a    add [ebp-38h],eax"
+"	      004f6017    mov eax,vstep.x"
+"	      004f601a    add loc.x,eax"
 );
 // LINE 4028:
 	asm( 
-"	      004f601d    mov eax,[ebp-1Ch]"
-"	      004f6020    add [ebp-34h],eax"
+"	      004f601d    mov eax,vstep.y"
+"	      004f6020    add loc.y,eax"
 );
 // LINE 4029:
 	asm( 
-"	      004f6023    mov eax,[ebp-18h]"
-"	      004f6026    add [ebp-30h],eax"
+"	      004f6023    mov eax,vstep.z"
+"	      004f6026    add loc.z,eax"
 );
 // LINE 4030:
 	asm( 
-"	      004f6029    add dword ptr [ebp-14h],200000h"
+"	      004f6029    add totdist,200000h"
 );
 // LINE 4032:
 	asm( 
@@ -12531,12 +12531,12 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4036:
 	asm( 
-"	      004f6035    cmp dword ptr [ebp-14h],2000000h"
+"	      004f6035    cmp totdist,2000000h"
 "	      004f603c    jl near ptr 004F6049h"
 );
 // LINE 4040:
 	asm( 
-"	      004f6042    mov dword ptr [ebp-14h],1FF0000h"
+"	      004f6042    mov totdist,1FF0000h"
 );
 // LINE 4044:
 	asm( 
@@ -12544,7 +12544,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 "	      004f604e    mov ecx,eax"
 "	      004f6050    shl eax,3"
 "	      004f6053    sub eax,ecx"
-"	      004f6055    add eax,[ebp-14h]"
+"	      004f6055    add eax,totdist"
 "	      004f6058    sar eax,3"
 "	      004f605b    mov ds:[5B4CA0h],eax"
 );
@@ -12555,7 +12555,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4049:
 	asm( 
-"	      004f6070    mov dword ptr [ebp-28h],0"
+"	      004f6070    mov spotlevel,0"
 );
 // LINE 4051:
 	asm( 
@@ -12565,7 +12565,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4053:
 	asm( 
-"	      004f608c    mov dword ptr [ebp-28h],1"
+"	      004f608c    mov spotlevel,1"
 );
 // LINE 4055:
 	asm( 
@@ -12575,7 +12575,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4057:
 	asm( 
-"	      004f60a8    mov dword ptr [ebp-28h],2"
+"	      004f60a8    mov spotlevel,2"
 );
 // LINE 4059:
 	asm( 
@@ -12583,12 +12583,12 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4061:
 	asm( 
-"	      004f60b4    mov dword ptr [ebp-28h],3"
+"	      004f60b4    mov spotlevel,3"
 );
 // LINE 4065:
 	asm( 
-"	      004f60bb    mov eax,[ebp+8]"
-"	      004f60be    mov ecx,[ebp-28h]"
+"	      004f60bb    mov eax,hd"
+"	      004f60be    mov ecx,spotlevel"
 "	      004f60c1    cmp [eax+140h],ecx"
 "	      004f60c7    je near ptr 004F6184h"
 );
@@ -12598,9 +12598,9 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	int32_t face;
 	struct VRObjInfo oinfo;
 	asm( 
-"	      004f60cd    lea eax,[ebp-0BCh]"
+"	      004f60cd    lea eax,oinfo.Faces"
 "	      004f60d3    push eax"
-"	      004f60d4    mov eax,[ebp+8]"
+"	      004f60d4    mov eax,hd"
 "	      004f60d7    mov eax,[eax+0C0h]"
 "	      004f60dd    mov eax,[eax+8]"
 "	      004f60e0    push eax"
@@ -12609,54 +12609,54 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4072:
 	asm( 
-"	      004f60e9    mov eax,[ebp+8]"
+"	      004f60e9    mov eax,hd"
 "	      004f60ec    mov eax,[eax+0C0h]"
 "	      004f60f2    mov eax,[eax+8]"
 "	      004f60f5    push eax"
 "	      004f60f6    call 004D85CDh"
 "	      004f60fb    add esp,4"
-"	      004f60fe    mov [ebp-0C0h],eax"
+"	      004f60fe    mov face,eax"
 );
 // LINE 4073:
 	asm( 
-"	      004f6104    mov dword ptr [ebp-2Ch],0"
+"	      004f6104    mov i,0"
 "	      004f610b    jmp near ptr 004F6113h"
-"	      004f6110    inc dword ptr [ebp-2Ch]"
-"	      004f6113    mov eax,[ebp-2Ch]"
-"	      004f6116    cmp [ebp-0BCh],eax"
+"	      004f6110    inc i"
+"	      004f6113    mov eax,i"
+"	      004f6116    cmp oinfo.Faces,eax"
 "	      004f611c    jle near ptr 004F6178h"
 );
 // LINE 4075:
 	asm( 
-"	      004f6122    lea eax,[ebp-0E0h]"
+"	      004f6122    lea eax,finfo.Face"
 "	      004f6128    push eax"
-"	      004f6129    mov eax,[ebp-0C0h]"
+"	      004f6129    mov eax,face"
 "	      004f612f    push eax"
 "	      004f6130    call 004D6905h"
 "	      004f6135    add esp,8"
 );
 // LINE 4076:
 	asm( 
-"	      004f6138    mov eax,[ebp-28h]"
+"	      004f6138    mov eax,spotlevel"
 "	      004f613b    mov eax,[eax*4+6C1200h]"
-"	      004f6142    mov [ebp-0D0h],eax"
+"	      004f6142    mov finfo.Bitmap,eax"
 );
 // LINE 4077:
 	asm( 
-"	      004f6148    lea eax,[ebp-0E0h]"
+"	      004f6148    lea eax,finfo.Face"
 "	      004f614e    push eax"
-"	      004f614f    mov eax,[ebp-0C0h]"
+"	      004f614f    mov eax,face"
 "	      004f6155    push eax"
 "	      004f6156    call 004D6941h"
 "	      004f615b    add esp,8"
 );
 // LINE 4078:
 	asm( 
-"	      004f615e    mov eax,[ebp-0C0h]"
+"	      004f615e    mov eax,face"
 "	      004f6164    push eax"
 "	      004f6165    call 004D85F8h"
 "	      004f616a    add esp,4"
-"	      004f616d    mov [ebp-0C0h],eax"
+"	      004f616d    mov face,eax"
 );
 // LINE 4079:
 	asm( 
@@ -12664,8 +12664,8 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4081:
 	asm( 
-"	      004f6178    mov eax,[ebp-28h]"
-"	      004f617b    mov ecx,[ebp+8]"
+"	      004f6178    mov eax,spotlevel"
+"	      004f617b    mov ecx,hd"
 "	      004f617e    mov [ecx+140h],eax"
 );
 // LINE 4085:
@@ -12673,48 +12673,48 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	asm( 
 "	      004f6184    mov eax,ds:[5B4CA0h]"
 "	      004f6189    push eax"
-"	      004f618a    mov eax,[ebp-10h]"
+"	      004f618a    mov eax,svec.x"
 "	      004f618d    push eax"
 "	      004f618e    call 004D19BDh"
 "	      004f6193    add esp,8"
-"	      004f6196    mov ecx,[ebp+8]"
+"	      004f6196    mov ecx,hd"
 "	      004f6199    mov ecx,[ecx+0A4h]"
 "	      004f619f    mov ecx,[ecx+18h]"
 "	      004f61a2    add ecx,eax"
-"	      004f61a4    mov [ebp-98h],ecx"
+"	      004f61a4    mov pos.loc.x,ecx"
 );
 // LINE 4086:
 	asm( 
 "	      004f61aa    mov eax,ds:[5B4CA0h]"
 "	      004f61af    push eax"
-"	      004f61b0    mov eax,[ebp-8]"
+"	      004f61b0    mov eax,svec.z"
 "	      004f61b3    push eax"
 "	      004f61b4    call 004D19BDh"
 "	      004f61b9    add esp,8"
-"	      004f61bc    mov ecx,[ebp+8]"
+"	      004f61bc    mov ecx,hd"
 "	      004f61bf    mov ecx,[ecx+0A4h]"
 "	      004f61c5    mov ecx,[ecx+20h]"
 "	      004f61c8    add ecx,eax"
-"	      004f61ca    mov [ebp-90h],ecx"
+"	      004f61ca    mov pos.loc.z,ecx"
 );
 // LINE 4087:
 	asm( 
 "	      004f61d0    mov eax,ds:[5B4CA0h]"
 "	      004f61d5    push eax"
-"	      004f61d6    mov eax,[ebp-0Ch]"
+"	      004f61d6    mov eax,svec.y"
 "	      004f61d9    push eax"
 "	      004f61da    call 004D19BDh"
 "	      004f61df    add esp,8"
-"	      004f61e2    mov ecx,[ebp+8]"
+"	      004f61e2    mov ecx,hd"
 "	      004f61e5    mov ecx,[ecx+0A4h]"
 "	      004f61eb    mov ecx,[ecx+1Ch]"
 "	      004f61ee    add ecx,eax"
-"	      004f61f0    mov [ebp-94h],ecx"
+"	      004f61f0    mov pos.loc.y,ecx"
 );
 // LINE 4089:
 	asm( 
-"	      004f61f6    lea eax,[ebp-98h]"
-"	      004f61fc    mov ecx,[ebp+8]"
+"	      004f61f6    lea eax,pos.loc.x"
+"	      004f61fc    mov ecx,hd"
 "	      004f61ff    mov ecx,[ecx+0C0h]"
 "	      004f6205    add ecx,18h"
 "	      004f6208    mov edx,[eax]"
@@ -12731,35 +12731,35 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 "	      004f6222    push eax"
 "	      004f6223    call 004D19DFh"
 "	      004f6228    add esp,8"
-"	      004f622b    mov [ebp-4],eax"
+"	      004f622b    mov scale,eax"
 );
 // LINE 4093:
 	asm( 
-"	      004f622e    mov eax,[ebp-4]"
+"	      004f622e    mov eax,scale"
 "	      004f6231    lea eax,[eax+eax*4]"
 "	      004f6234    add eax,eax"
-"	      004f6236    mov [ebp-4],eax"
+"	      004f6236    mov scale,eax"
 );
 // LINE 4094:
 	asm( 
-"	      004f6239    cmp dword ptr [ebp-4],4CCCh"
+"	      004f6239    cmp scale,4CCCh"
 "	      004f6240    jge near ptr 004F624Dh"
-"	      004f6246    mov dword ptr [ebp-4],4CCCh"
+"	      004f6246    mov scale,4CCCh"
 );
 // LINE 4095:
 	asm( 
-"	      004f624d    mov eax,[ebp-4]"
-"	      004f6250    mov [ebp-84h],eax"
-"	      004f6256    mov eax,[ebp-84h]"
-"	      004f625c    mov [ebp-88h],eax"
-"	      004f6262    mov eax,[ebp-88h]"
-"	      004f6268    mov [ebp-8Ch],eax"
+"	      004f624d    mov eax,scale"
+"	      004f6250    mov pos.scale.z,eax"
+"	      004f6256    mov eax,pos.scale.z"
+"	      004f625c    mov pos.scale.y,eax"
+"	      004f6262    mov eax,pos.scale.y"
+"	      004f6268    mov pos.scale.x,eax"
 );
 // LINE 4096:
 	asm( 
-"	      004f626e    mov eax,[ebp+8]"
+"	      004f626e    mov eax,hd"
 "	      004f6271    mov esi,[eax+0C0h]"
-"	      004f6277    lea edi,[ebp-80h]"
+"	      004f6277    lea edi,pos.matrix[0][0]"
 "	      004f627a    add esi,24h"
 "	      004f627d    mov ecx,10h"
 "	      004f6282    rep movsd"
@@ -12767,9 +12767,9 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 4102:
 	asm( 
 "	      004f6284    push 1"
-"	      004f6286    lea eax,[ebp-98h]"
+"	      004f6286    lea eax,pos.loc.x"
 "	      004f628c    push eax"
-"	      004f628d    mov eax,[ebp+8]"
+"	      004f628d    mov eax,hd"
 "	      004f6290    mov eax,[eax+0C0h]"
 "	      004f6296    mov eax,[eax+8]"
 "	      004f6299    push eax"
@@ -12778,7 +12778,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4105:
 	asm( 
-"	      004f62a2    mov eax,[ebp+8]"
+"	      004f62a2    mov eax,hd"
 "	      004f62a5    mov eax,[eax+0C0h]"
 "	      004f62ab    mov eax,[eax+18h]"
 "	      004f62ae    add eax,20000000h"
@@ -12788,7 +12788,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 4106:
 	asm( 
 "	      004f62bb    mov eax,20000000h"
-"	      004f62c0    mov ecx,[ebp+8]"
+"	      004f62c0    mov ecx,hd"
 "	      004f62c3    mov ecx,[ecx+0C0h]"
 "	      004f62c9    sub eax,[ecx+20h]"
 "	      004f62cc    sar eax,16h"
@@ -12796,10 +12796,10 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 );
 // LINE 4109:
 	asm( 
-"	      004f62d4    mov eax,[ebp-28h]"
+"	      004f62d4    mov eax,spotlevel"
 "	      004f62d7    push eax"
 "	      004f62d8    push 0FFFFFFFFh"
-"	      004f62da    mov eax,[ebp+8]"
+"	      004f62da    mov eax,hd"
 "	      004f62dd    mov eax,[eax+0C0h]"
 "	      004f62e3    push eax"
 "	      004f62e4    push 6BF1B8h"
@@ -12815,7 +12815,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 4114:
 	asm( 
 "	      004f6300    push 1"
-"	      004f6302    mov eax,[ebp+8]"
+"	      004f6302    mov eax,hd"
 "	      004f6305    mov eax,[eax+0C0h]"
 "	      004f630b    mov eax,[eax+8]"
 "	      004f630e    push eax"
@@ -12849,13 +12849,13 @@ void S3HeliGetSpotLoc(struct Point2d* loc) {
 // LINE 4130:
 	asm( 
 "	      004f6327    mov eax,ds:[6BF1B8h]"
-"	      004f632c    mov ecx,[ebp+8]"
+"	      004f632c    mov ecx,loc"
 "	      004f632f    mov [ecx],eax"
 );
 // LINE 4131:
 	asm( 
 "	      004f6331    mov eax,ds:[6BF1BCh]"
-"	      004f6336    mov ecx,[ebp+8]"
+"	      004f6336    mov ecx,loc"
 "	      004f6339    mov [ecx+4],eax"
 );
 // LINE 4132:
@@ -12888,41 +12888,41 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 );
 // LINE 4152:
 	asm( 
-"	      004f634a    mov eax,[ebp+14h]"
+"	      004f634a    mov eax,cptr"
 "	      004f634d    movsx eax,word ptr [eax+2]"
 "	      004f6351    shl eax,10h"
-"	      004f6354    mov [ebp-30h],eax"
+"	      004f6354    mov cloc.x,eax"
 );
 // LINE 4153:
 	asm( 
-"	      004f6357    mov eax,[ebp+14h]"
+"	      004f6357    mov eax,cptr"
 "	      004f635a    movsx eax,word ptr [eax+4]"
 "	      004f635e    shl eax,10h"
-"	      004f6361    mov [ebp-2Ch],eax"
+"	      004f6361    mov cloc.y,eax"
 );
 // LINE 4154:
 	asm( 
-"	      004f6364    mov eax,[ebp+14h]"
+"	      004f6364    mov eax,cptr"
 "	      004f6367    movsx eax,word ptr [eax+6]"
 "	      004f636b    shl eax,10h"
-"	      004f636e    mov [ebp-28h],eax"
+"	      004f636e    mov cloc.z,eax"
 );
 // LINE 4156:
 	asm( 
-"	      004f6371    mov eax,[ebp+14h]"
+"	      004f6371    mov eax,cptr"
 "	      004f6374    mov eax,[eax+0Ch]"
-"	      004f6377    mov [ebp-34h],eax"
+"	      004f6377    mov stobj,eax"
 );
 // LINE 4158:
 	asm( 
-"	      004f637a    cmp dword ptr [ebp-34h],0"
+"	      004f637a    cmp stobj,0"
 "	      004f637e    je near ptr 004F643Eh"
 );
 // LINE 4161:
 	asm( 
-"	      004f6384    lea eax,[ebp-24h]"
+"	      004f6384    lea eax,oinfo.Faces"
 "	      004f6387    push eax"
-"	      004f6388    mov eax,[ebp-34h]"
+"	      004f6388    mov eax,stobj"
 "	      004f638b    mov eax,[eax+4]"
 "	      004f638e    push eax"
 "	      004f638f    call 004D8859h"
@@ -12930,9 +12930,9 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 );
 // LINE 4162:
 	asm( 
-"	      004f6397    lea eax,[ebp-40h]"
+"	      004f6397    lea eax,center.x"
 "	      004f639a    push eax"
-"	      004f639b    mov eax,[ebp-34h]"
+"	      004f639b    mov eax,stobj"
 "	      004f639e    mov eax,[eax+4]"
 "	      004f63a1    push eax"
 "	      004f63a2    call 004D88C3h"
@@ -12940,8 +12940,8 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 );
 // LINE 4165:
 	asm( 
-"	      004f63aa    lea eax,[ebp-30h]"
-"	      004f63ad    lea ecx,[ebp-4Ch]"
+"	      004f63aa    lea eax,cloc.x"
+"	      004f63ad    lea ecx,oloc.x"
 "	      004f63b0    mov edx,[eax]"
 "	      004f63b2    mov [ecx],edx"
 "	      004f63b4    mov edx,[eax+4]"
@@ -12951,73 +12951,73 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 );
 // LINE 4166:
 	asm( 
-"	      004f63c0    mov eax,[ebp-40h]"
-"	      004f63c3    add [ebp-4Ch],eax"
+"	      004f63c0    mov eax,center.x"
+"	      004f63c3    add oloc.x,eax"
 );
 // LINE 4167:
 	asm( 
-"	      004f63c6    mov eax,[ebp-3Ch]"
-"	      004f63c9    add [ebp-48h],eax"
+"	      004f63c6    mov eax,center.y"
+"	      004f63c9    add oloc.y,eax"
 );
 // LINE 4168:
 	asm( 
-"	      004f63cc    mov eax,[ebp-38h]"
-"	      004f63cf    add [ebp-44h],eax"
+"	      004f63cc    mov eax,center.z"
+"	      004f63cf    add oloc.z,eax"
 );
 // LINE 4174:
 	asm( 
-"	      004f63d2    mov eax,[ebp-18h]"
+"	      004f63d2    mov eax,oinfo.Radius"
 "	      004f63d5    push eax"
-"	      004f63d6    lea eax,[ebp-4Ch]"
+"	      004f63d6    lea eax,oloc.x"
 "	      004f63d9    push eax"
-"	      004f63da    mov eax,[ebp+10h]"
+"	      004f63da    mov eax,dist"
 "	      004f63dd    push eax"
-"	      004f63de    mov eax,[ebp+0Ch]"
+"	      004f63de    mov eax,spotvec"
 "	      004f63e1    push eax"
-"	      004f63e2    mov eax,[ebp+8]"
+"	      004f63e2    mov eax,spotloc"
 "	      004f63e5    push eax"
 "	      004f63e6    call 00522EB3h"
 "	      004f63eb    add esp,14h"
-"	      004f63ee    mov [ebp-50h],eax"
+"	      004f63ee    mov newdist,eax"
 );
 // LINE 4178:
 	asm( 
-"	      004f63f1    cmp dword ptr [ebp-50h],0"
+"	      004f63f1    cmp newdist,0"
 "	      004f63f5    jle near ptr 004F641Fh"
 );
 // LINE 4185:
 	asm( 
 "	      004f63fb    push 0"
-"	      004f63fd    mov eax,[ebp-34h]"
+"	      004f63fd    mov eax,stobj"
 "	      004f6400    mov eax,[eax+4]"
 "	      004f6403    push eax"
-"	      004f6404    lea eax,[ebp-30h]"
+"	      004f6404    lea eax,cloc.x"
 "	      004f6407    push eax"
-"	      004f6408    mov eax,[ebp+10h]"
+"	      004f6408    mov eax,dist"
 "	      004f640b    push eax"
-"	      004f640c    mov eax,[ebp+0Ch]"
+"	      004f640c    mov eax,spotvec"
 "	      004f640f    push eax"
-"	      004f6410    mov eax,[ebp+8]"
+"	      004f6410    mov eax,spotloc"
 "	      004f6413    push eax"
 "	      004f6414    call 004D4F25h"
 "	      004f6419    add esp,18h"
-"	      004f641c    mov [ebp-50h],eax"
+"	      004f641c    mov newdist,eax"
 );
 // LINE 4188:
 	asm( 
-"	      004f641f    cmp dword ptr [ebp-50h],0"
+"	      004f641f    cmp newdist,0"
 "	      004f6423    jle near ptr 004F6431h"
 );
 // LINE 4191:
 	asm( 
-"	      004f6429    mov eax,[ebp-50h]"
+"	      004f6429    mov eax,newdist"
 "	      004f642c    jmp near ptr 004F6472h"
 );
 // LINE 4196:
 	asm( 
-"	      004f6431    mov eax,[ebp-34h]"
+"	      004f6431    mov eax,stobj"
 "	      004f6434    mov eax,[eax]"
-"	      004f6436    mov [ebp-34h],eax"
+"	      004f6436    mov stobj,eax"
 );
 // LINE 4197:
 	asm( 
@@ -13025,26 +13025,26 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 );
 // LINE 4203:
 	asm( 
-"	      004f643e    lea eax,[ebp-30h]"
+"	      004f643e    lea eax,cloc.x"
 "	      004f6441    push eax"
-"	      004f6442    mov eax,[ebp+10h]"
+"	      004f6442    mov eax,dist"
 "	      004f6445    push eax"
-"	      004f6446    mov eax,[ebp+0Ch]"
+"	      004f6446    mov eax,spotvec"
 "	      004f6449    push eax"
-"	      004f644a    mov eax,[ebp+8]"
+"	      004f644a    mov eax,spotloc"
 "	      004f644d    push eax"
 "	      004f644e    call 00522DBCh"
 "	      004f6453    add esp,10h"
-"	      004f6456    mov [ebp-50h],eax"
+"	      004f6456    mov newdist,eax"
 );
 // LINE 4204:
 	asm( 
-"	      004f6459    cmp dword ptr [ebp-50h],0"
+"	      004f6459    cmp newdist,0"
 "	      004f645d    jle near ptr 004F646Bh"
 );
 // LINE 4206:
 	asm( 
-"	      004f6463    mov eax,[ebp-50h]"
+"	      004f6463    mov eax,newdist"
 "	      004f6466    jmp near ptr 004F6472h"
 );
 // LINE 4209:
@@ -13074,7 +13074,7 @@ void S3HeliRotateSpotLite(int32_t rotx, int32_t roty) {
 );
 // LINE 4254:
 	asm( 
-"	      004f647d    mov eax,[ebp+8]"
+"	      004f647d    mov eax,rotx"
 "	      004f6480    add ds:[5B492Ch],eax"
 );
 // LINE 4255:
@@ -13098,7 +13098,7 @@ void S3HeliRotateSpotLite(int32_t rotx, int32_t roty) {
 );
 // LINE 4260:
 	asm( 
-"	      004f64bf    mov eax,[ebp+0Ch]"
+"	      004f64bf    mov eax,roty"
 "	      004f64c2    add ds:[5B4930h],eax"
 );
 // LINE 4261:
@@ -13185,13 +13185,13 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 );
 // LINE 4292:
 	asm( 
-"	      004f655e    mov eax,[ebp+8]"
+"	      004f655e    mov eax,hd"
 "	      004f6561    mov eax,[eax]"
 "	      004f6563    mov ecx,eax"
 "	      004f6565    lea eax,[eax+eax*4]"
 "	      004f6568    lea eax,[ecx+eax*2]"
 "	      004f656b    lea eax,[eax*8+5B4978h]"
-"	      004f6572    mov [ebp-24h],eax"
+"	      004f6572    mov htd,eax"
 );
 // LINE 4294:
 	asm( 
@@ -13199,7 +13199,7 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 );
 // LINE 4298:
 	asm( 
-"	      004f657f    mov eax,[ebp+8]"
+"	      004f657f    mov eax,hd"
 "	      004f6582    mov eax,[eax+0A4h]"
 "	      004f6588    mov eax,[eax+18h]"
 "	      004f658b    add eax,20000000h"
@@ -13207,88 +13207,88 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 "	      004f6593    and eax,0FFh"
 "	      004f6598    shl eax,0Ah"
 "	      004f659b    mov ecx,20000000h"
-"	      004f65a0    mov edx,[ebp+8]"
+"	      004f65a0    mov edx,hd"
 "	      004f65a3    mov edx,[edx+0A4h]"
 "	      004f65a9    sub ecx,[edx+20h]"
 "	      004f65ac    shr ecx,16h"
 "	      004f65af    and ecx,0FFh"
 "	      004f65b5    mov eax,[eax+ecx*4+67ED30h]"
-"	      004f65bc    mov [ebp-18h],eax"
+"	      004f65bc    mov cptr,eax"
 );
 // LINE 4301:
 	asm( 
-"	      004f65bf    mov eax,[ebp+8]"
+"	      004f65bf    mov eax,hd"
 "	      004f65c2    mov eax,[eax+0A4h]"
 "	      004f65c8    mov eax,[eax+18h]"
-"	      004f65cb    mov ecx,[ebp-18h]"
+"	      004f65cb    mov ecx,cptr"
 "	      004f65ce    movsx ecx,word ptr [ecx+2]"
 "	      004f65d2    shl ecx,10h"
 "	      004f65d5    sub eax,ecx"
-"	      004f65d7    mov [ebp-10h],eax"
+"	      004f65d7    mov loc.x,eax"
 );
 // LINE 4302:
 	asm( 
-"	      004f65da    mov eax,[ebp+8]"
+"	      004f65da    mov eax,hd"
 "	      004f65dd    mov eax,[eax+0A4h]"
 "	      004f65e3    mov eax,[eax+1Ch]"
-"	      004f65e6    mov ecx,[ebp-18h]"
+"	      004f65e6    mov ecx,cptr"
 "	      004f65e9    movsx ecx,word ptr [ecx+4]"
 "	      004f65ed    shl ecx,10h"
 "	      004f65f0    sub eax,ecx"
-"	      004f65f2    mov [ebp-0Ch],eax"
+"	      004f65f2    mov loc.y,eax"
 );
 // LINE 4303:
 	asm( 
-"	      004f65f5    mov eax,[ebp+8]"
+"	      004f65f5    mov eax,hd"
 "	      004f65f8    mov eax,[eax+0A4h]"
 "	      004f65fe    mov eax,[eax+20h]"
-"	      004f6601    mov ecx,[ebp-18h]"
+"	      004f6601    mov ecx,cptr"
 "	      004f6604    movsx ecx,word ptr [ecx+6]"
 "	      004f6608    shl ecx,10h"
 "	      004f660b    sub eax,ecx"
-"	      004f660d    mov [ebp-8],eax"
+"	      004f660d    mov loc.z,eax"
 );
 // LINE 4306:
 	asm( 
-"	      004f6610    lea eax,[ebp-10h]"
+"	      004f6610    lea eax,loc.x"
 "	      004f6613    push eax"
-"	      004f6614    mov eax,[ebp-18h]"
+"	      004f6614    mov eax,cptr"
 "	      004f6617    push eax"
 "	      004f6618    call 00526192h"
 "	      004f661d    add esp,8"
-"	      004f6620    mov [ebp-20h],eax"
+"	      004f6620    mov firealt,eax"
 );
 // LINE 4307:
 	asm( 
-"	      004f6623    cmp dword ptr [ebp-20h],0"
+"	      004f6623    cmp firealt,0"
 "	      004f6627    je near ptr 004F664Eh"
-"	      004f662d    mov eax,[ebp+8]"
+"	      004f662d    mov eax,hd"
 "	      004f6630    test byte ptr [eax+8],1"
 "	      004f6634    je near ptr 004F664Eh"
 );
 // LINE 4309:
 	asm( 
-"	      004f663a    mov eax,[ebp+8]"
+"	      004f663a    mov eax,hd"
 "	      004f663d    mov eax,[eax+0A4h]"
 "	      004f6643    mov eax,[eax+1Ch]"
-"	      004f6646    sub eax,[ebp-20h]"
+"	      004f6646    sub eax,firealt"
 "	      004f6649    mov ds:[6BF190h],eax"
 );
 // LINE 4313:
 	asm( 
-"	      004f664e    mov eax,[ebp-24h]"
-"	      004f6651    mov ecx,[ebp+8]"
+"	      004f664e    mov eax,htd"
+"	      004f6651    mov ecx,hd"
 "	      004f6654    mov ecx,[ecx+0D0h]"
 "	      004f665a    cmp [eax+4Ch],ecx"
 "	      004f665d    jne near ptr 004F66BFh"
-"	      004f6663    cmp dword ptr [ebp-20h],0"
+"	      004f6663    cmp firealt,0"
 "	      004f6667    je near ptr 004F667Ah"
-"	      004f666d    cmp dword ptr [ebp-20h],0FA0000h"
+"	      004f666d    cmp firealt,0FA0000h"
 "	      004f6674    jle near ptr 004F66BFh"
 );
 // LINE 4322:
 	asm( 
-"	      004f667a    mov dword ptr [ebp-30h],3"
+"	      004f667a    mov tfactor,3"
 );
 // LINE 4323:
 	asm( 
@@ -13338,20 +13338,20 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 );
 // LINE 4338:
 	asm( 
-"	      004f66f8    mov dword ptr [ebp-2Ch],0"
+"	      004f66f8    mov ffactor,0"
 );
 // LINE 4339:
 	asm( 
-"	      004f66ff    cmp dword ptr [ebp-20h],0"
+"	      004f66ff    cmp firealt,0"
 "	      004f6703    je near ptr 004F67A1h"
 );
 // LINE 4342:
 	asm( 
 "	      004f6709    mov eax,ds:[5B48ECh]"
-"	      004f670e    cmp [ebp-20h],eax"
+"	      004f670e    cmp firealt,eax"
 "	      004f6711    jl near ptr 004F676Bh"
 "	      004f6717    mov eax,ds:[5B48F0h]"
-"	      004f671c    cmp [ebp-20h],eax"
+"	      004f671c    cmp firealt,eax"
 "	      004f671f    jg near ptr 004F676Bh"
 "	      004f6725    cmp dword ptr ds:[5C380Ch],0"
 "	      004f672c    jne near ptr 004F676Bh"
@@ -13361,18 +13361,18 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 "	      004f6732    xor eax,eax"
 "	      004f6734    mov ecx,ds:[5B48F0h]"
 "	      004f673a    sar ecx,10h"
-"	      004f673d    mov edx,[ebp-20h]"
+"	      004f673d    mov edx,firealt"
 "	      004f6740    sar edx,10h"
 "	      004f6743    sub ecx,edx"
 "	      004f6745    sub eax,ecx"
 "	      004f6747    neg eax"
-"	      004f6749    mov ecx,[ebp+8]"
+"	      004f6749    mov ecx,hd"
 "	      004f674c    sub [ecx+0D0h],eax"
 );
 // LINE 4346:
 	asm( 
 "	      004f6752    push 0"
-"	      004f6754    mov eax,[ebp+8]"
+"	      004f6754    mov eax,hd"
 "	      004f6757    mov eax,[eax+0A4h]"
 "	      004f675d    add eax,18h"
 "	      004f6760    push eax"
@@ -13382,18 +13382,18 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 );
 // LINE 4353:
 	asm( 
-"	      004f676b    cmp dword ptr [ebp-20h],0FFD00000h"
+"	      004f676b    cmp firealt,0FFD00000h"
 "	      004f6772    jl near ptr 004F679Ah"
-"	      004f6778    cmp dword ptr [ebp-20h],0FA0000h"
+"	      004f6778    cmp firealt,0FA0000h"
 "	      004f677f    jg near ptr 004F679Ah"
 );
 // LINE 4355:
 	asm( 
 "	      004f6785    mov eax,0FAh"
-"	      004f678a    mov ecx,[ebp-20h]"
+"	      004f678a    mov ecx,firealt"
 "	      004f678d    sar ecx,10h"
 "	      004f6790    sub eax,ecx"
-"	      004f6792    mov [ebp-2Ch],eax"
+"	      004f6792    mov ffactor,eax"
 );
 // LINE 4357:
 	asm( 
@@ -13401,26 +13401,26 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 );
 // LINE 4359:
 	asm( 
-"	      004f679a    mov dword ptr [ebp-2Ch],0"
+"	      004f679a    mov ffactor,0"
 );
 // LINE 4364:
 	asm( 
-"	      004f67a1    mov eax,[ebp-24h]"
+"	      004f67a1    mov eax,htd"
 "	      004f67a4    mov eax,[eax+4Ch]"
-"	      004f67a7    mov ecx,[ebp+8]"
+"	      004f67a7    mov ecx,hd"
 "	      004f67aa    sub eax,[ecx+0D0h]"
 "	      004f67b0    mov ecx,14h"
 "	      004f67b5    cdq"
 "	      004f67b6    idiv ecx"
-"	      004f67b8    mov ecx,[ebp-2Ch]"
+"	      004f67b8    mov ecx,ffactor"
 "	      004f67bb    add ecx,eax"
-"	      004f67bd    mov [ebp-30h],ecx"
+"	      004f67bd    mov tfactor,ecx"
 );
 // LINE 4366:
 	asm( 
-"	      004f67c0    cmp dword ptr [ebp-30h],0"
+"	      004f67c0    cmp tfactor,0"
 "	      004f67c4    jg near ptr 004F67D1h"
-"	      004f67ca    mov dword ptr [ebp-30h],1"
+"	      004f67ca    mov tfactor,1"
 );
 // LINE 4369:
 calc_turbulence:
@@ -13428,8 +13428,8 @@ calc_turbulence:
 "	      004f67d1    call 0056EC50h"
 "	      004f67d6    movsx eax,ax"
 "	      004f67d9    cdq"
-"	      004f67da    idiv dword ptr [ebp-30h]"
-"	      004f67dd    mov [ebp-4],edx"
+"	      004f67da    idiv tfactor"
+"	      004f67dd    mov slide,edx"
 );
 // LINE 4370:
 	asm( 
@@ -13445,17 +13445,17 @@ calc_turbulence:
 );
 // LINE 4371:
 	asm( 
-"	      004f67fa    mov eax,[ebp-4]"
+"	      004f67fa    mov eax,slide"
 "	      004f67fd    neg eax"
-"	      004f67ff    mov [ebp-4],eax"
+"	      004f67ff    mov slide,eax"
 );
 // LINE 4372:
 	asm( 
 "	      004f6802    call 0056EC50h"
 "	      004f6807    movsx eax,ax"
 "	      004f680a    cdq"
-"	      004f680b    idiv dword ptr [ebp-30h]"
-"	      004f680e    mov [ebp-28h],edx"
+"	      004f680b    idiv tfactor"
+"	      004f680e    mov pitch,edx"
 );
 // LINE 4373:
 	asm( 
@@ -13471,17 +13471,17 @@ calc_turbulence:
 );
 // LINE 4374:
 	asm( 
-"	      004f682b    mov eax,[ebp-28h]"
+"	      004f682b    mov eax,pitch"
 "	      004f682e    neg eax"
-"	      004f6830    mov [ebp-28h],eax"
+"	      004f6830    mov pitch,eax"
 );
 // LINE 4375:
 	asm( 
 "	      004f6833    call 0056EC50h"
 "	      004f6838    movsx eax,ax"
 "	      004f683b    cdq"
-"	      004f683c    idiv dword ptr [ebp-30h]"
-"	      004f683f    mov [ebp-1Ch],edx"
+"	      004f683c    idiv tfactor"
+"	      004f683f    mov yaw,edx"
 );
 // LINE 4376:
 	asm( 
@@ -13497,61 +13497,61 @@ calc_turbulence:
 );
 // LINE 4377:
 	asm( 
-"	      004f685c    mov eax,[ebp-1Ch]"
+"	      004f685c    mov eax,yaw"
 "	      004f685f    neg eax"
-"	      004f6861    mov [ebp-1Ch],eax"
+"	      004f6861    mov yaw,eax"
 );
 // LINE 4380:
 	asm( 
-"	      004f6864    mov eax,[ebp-4]"
+"	      004f6864    mov eax,slide"
 "	      004f6867    shl eax,10h"
 "	      004f686a    mov ds:[60728Ch],eax"
 );
 // LINE 4381:
 	asm( 
-"	      004f686f    mov eax,[ebp-1Ch]"
+"	      004f686f    mov eax,yaw"
 "	      004f6872    shl eax,10h"
 "	      004f6875    mov ds:[607214h],eax"
 );
 // LINE 4382:
 	asm( 
-"	      004f687a    mov eax,[ebp-28h]"
+"	      004f687a    mov eax,pitch"
 "	      004f687d    shl eax,10h"
 "	      004f6880    mov ds:[6072B4h],eax"
 );
 // LINE 4385:
 	asm( 
-"	      004f6885    mov dword ptr [ebp-1Ch],0"
-"	      004f688c    mov eax,[ebp-1Ch]"
-"	      004f688f    mov [ebp-28h],eax"
-"	      004f6892    mov eax,[ebp-28h]"
-"	      004f6895    mov [ebp-4],eax"
+"	      004f6885    mov yaw,0"
+"	      004f688c    mov eax,yaw"
+"	      004f688f    mov pitch,eax"
+"	      004f6892    mov eax,pitch"
+"	      004f6895    mov slide,eax"
 );
 // LINE 4386:
 	asm( 
-"	      004f6898    mov dword ptr [ebp-14h],1"
+"	      004f6898    mov i,1"
 "	      004f689f    jmp near ptr 004F68A7h"
-"	      004f68a4    inc dword ptr [ebp-14h]"
-"	      004f68a7    cmp dword ptr [ebp-14h],0Ah"
+"	      004f68a4    inc i"
+"	      004f68a7    cmp i,0Ah"
 "	      004f68ab    jge near ptr 004F68DDh"
 );
 // LINE 4388:
 	asm( 
-"	      004f68b1    mov eax,[ebp-14h]"
+"	      004f68b1    mov eax,i"
 "	      004f68b4    mov eax,[eax*4+607268h]"
-"	      004f68bb    add [ebp-4],eax"
+"	      004f68bb    add slide,eax"
 );
 // LINE 4389:
 	asm( 
-"	      004f68be    mov eax,[ebp-14h]"
+"	      004f68be    mov eax,i"
 "	      004f68c1    mov eax,[eax*4+6071F0h]"
-"	      004f68c8    add [ebp-1Ch],eax"
+"	      004f68c8    add yaw,eax"
 );
 // LINE 4390:
 	asm( 
-"	      004f68cb    mov eax,[ebp-14h]"
+"	      004f68cb    mov eax,i"
 "	      004f68ce    mov eax,[eax*4+607290h]"
-"	      004f68d5    add [ebp-28h],eax"
+"	      004f68d5    add pitch,eax"
 );
 // LINE 4391:
 	asm( 
@@ -13560,7 +13560,7 @@ calc_turbulence:
 // LINE 4394:
 	asm( 
 "	      004f68dd    mov ecx,9"
-"	      004f68e2    mov eax,[ebp-4]"
+"	      004f68e2    mov eax,slide"
 "	      004f68e5    cdq"
 "	      004f68e6    idiv ecx"
 "	      004f68e8    mov ds:[607268h],eax"
@@ -13568,7 +13568,7 @@ calc_turbulence:
 // LINE 4395:
 	asm( 
 "	      004f68ed    mov ecx,9"
-"	      004f68f2    mov eax,[ebp-1Ch]"
+"	      004f68f2    mov eax,yaw"
 "	      004f68f5    cdq"
 "	      004f68f6    idiv ecx"
 "	      004f68f8    mov ds:[6071F0h],eax"
@@ -13576,7 +13576,7 @@ calc_turbulence:
 // LINE 4396:
 	asm( 
 "	      004f68fd    mov ecx,9"
-"	      004f6902    mov eax,[ebp-28h]"
+"	      004f6902    mov eax,pitch"
 "	      004f6905    cdq"
 "	      004f6906    idiv ecx"
 "	      004f6908    mov ds:[607290h],eax"
@@ -13612,29 +13612,29 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4417:
 	asm( 
-"	      004f691b    mov eax,[ebp+8]"
+"	      004f691b    mov eax,hd"
 "	      004f691e    mov eax,[eax]"
 "	      004f6920    mov ecx,eax"
 "	      004f6922    lea eax,[eax+eax*4]"
 "	      004f6925    lea eax,[ecx+eax*2]"
 "	      004f6928    lea eax,[eax*8+5B4978h]"
-"	      004f692f    mov [ebp-68h],eax"
+"	      004f692f    mov htd,eax"
 );
 // LINE 4419:
 	asm( 
-"	      004f6932    mov eax,[ebp+8]"
+"	      004f6932    mov eax,hd"
 "	      004f6935    mov eax,[eax+1Ch]"
 "	      004f6938    and eax,0FFh"
-"	      004f693d    mov ecx,[ebp+8]"
+"	      004f693d    mov ecx,hd"
 "	      004f6940    mov ecx,[ecx+18h]"
 "	      004f6943    and ecx,0FFh"
 "	      004f6949    shl ecx,0Ah"
 "	      004f694c    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f6953    mov [ebp-64h],eax"
+"	      004f6953    mov cptr,eax"
 );
 // LINE 4423:
 	asm( 
-"	      004f6956    mov eax,[ebp+8]"
+"	      004f6956    mov eax,hd"
 "	      004f6959    cmp dword ptr [eax+4],5"
 "	      004f695d    jne near ptr 004F6C9Ch"
 );
@@ -13643,34 +13643,34 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6963    xor eax,eax"
 "	      004f6965    sub eax,ds:[5B4768h]"
 "	      004f696b    neg eax"
-"	      004f696d    mov ecx,[ebp+8]"
+"	      004f696d    mov ecx,hd"
 "	      004f6970    sub [ecx+16Ch],eax"
 );
 // LINE 4426:
 	asm( 
-"	      004f6976    mov eax,[ebp+8]"
+"	      004f6976    mov eax,hd"
 "	      004f6979    cmp dword ptr [eax+16Ch],0"
 "	      004f6980    jge near ptr 004F6993h"
 );
 // LINE 4427:
 	asm( 
-"	      004f6986    mov eax,[ebp+8]"
+"	      004f6986    mov eax,hd"
 "	      004f6989    mov dword ptr [eax+16Ch],11999h"
 );
 // LINE 4429:
 	asm( 
-"	      004f6993    mov eax,[ebp+8]"
+"	      004f6993    mov eax,hd"
 "	      004f6996    cmp dword ptr [eax+16Ch],10000h"
 "	      004f69a0    jle near ptr 004F69C6h"
 );
 // LINE 4430:
 	asm( 
 "	      004f69a6    push 5"
-"	      004f69a8    mov eax,[ebp+8]"
+"	      004f69a8    mov eax,hd"
 "	      004f69ab    mov eax,[eax+0A4h]"
 "	      004f69b1    add eax,18h"
 "	      004f69b4    push eax"
-"	      004f69b5    mov eax,[ebp-64h]"
+"	      004f69b5    mov eax,cptr"
 "	      004f69b8    push eax"
 "	      004f69b9    call 005240DCh"
 "	      004f69be    add esp,0Ch"
@@ -13678,18 +13678,18 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4431:
 	asm( 
 "	      004f69c1    jmp near ptr 004F6A5Ah"
-"	      004f69c6    mov eax,[ebp+8]"
+"	      004f69c6    mov eax,hd"
 "	      004f69c9    cmp dword ptr [eax+16Ch],0E666h"
 "	      004f69d3    jle near ptr 004F69F9h"
 );
 // LINE 4432:
 	asm( 
 "	      004f69d9    push 4"
-"	      004f69db    mov eax,[ebp+8]"
+"	      004f69db    mov eax,hd"
 "	      004f69de    mov eax,[eax+0A4h]"
 "	      004f69e4    add eax,18h"
 "	      004f69e7    push eax"
-"	      004f69e8    mov eax,[ebp-64h]"
+"	      004f69e8    mov eax,cptr"
 "	      004f69eb    push eax"
 "	      004f69ec    call 005240DCh"
 "	      004f69f1    add esp,0Ch"
@@ -13697,18 +13697,18 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4433:
 	asm( 
 "	      004f69f4    jmp near ptr 004F6A5Ah"
-"	      004f69f9    mov eax,[ebp+8]"
+"	      004f69f9    mov eax,hd"
 "	      004f69fc    cmp dword ptr [eax+16Ch],1999h"
 "	      004f6a06    jge near ptr 004F6A2Ch"
 );
 // LINE 4434:
 	asm( 
 "	      004f6a0c    push 2"
-"	      004f6a0e    mov eax,[ebp+8]"
+"	      004f6a0e    mov eax,hd"
 "	      004f6a11    mov eax,[eax+0A4h]"
 "	      004f6a17    add eax,18h"
 "	      004f6a1a    push eax"
-"	      004f6a1b    mov eax,[ebp-64h]"
+"	      004f6a1b    mov eax,cptr"
 "	      004f6a1e    push eax"
 "	      004f6a1f    call 005240DCh"
 "	      004f6a24    add esp,0Ch"
@@ -13716,39 +13716,39 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4435:
 	asm( 
 "	      004f6a27    jmp near ptr 004F6A5Ah"
-"	      004f6a2c    mov eax,[ebp+8]"
+"	      004f6a2c    mov eax,hd"
 "	      004f6a2f    cmp dword ptr [eax+16Ch],3333h"
 "	      004f6a39    jge near ptr 004F6A5Ah"
 );
 // LINE 4436:
 	asm( 
 "	      004f6a3f    push 1"
-"	      004f6a41    mov eax,[ebp+8]"
+"	      004f6a41    mov eax,hd"
 "	      004f6a44    mov eax,[eax+0A4h]"
 "	      004f6a4a    add eax,18h"
 "	      004f6a4d    push eax"
-"	      004f6a4e    mov eax,[ebp-64h]"
+"	      004f6a4e    mov eax,cptr"
 "	      004f6a51    push eax"
 "	      004f6a52    call 005240DCh"
 "	      004f6a57    add esp,0Ch"
 );
 // LINE 4439:
 	asm( 
-"	      004f6a5a    mov eax,[ebp+8]"
+"	      004f6a5a    mov eax,hd"
 "	      004f6a5d    mov eax,[eax+168h]"
 "	      004f6a63    cmp dword ptr [eax+8],0"
 "	      004f6a67    jge near ptr 004F6C97h"
-"	      004f6a6d    mov eax,[ebp+8]"
+"	      004f6a6d    mov eax,hd"
 "	      004f6a70    mov eax,[eax+168h]"
 "	      004f6a76    cmp dword ptr [eax+38h],1"
 "	      004f6a7a    jne near ptr 004F6C97h"
 );
 // LINE 4441:
 	asm( 
-"	      004f6a80    mov eax,[ebp+8]"
+"	      004f6a80    mov eax,hd"
 "	      004f6a83    mov eax,[eax+0A4h]"
 "	      004f6a89    add eax,18h"
-"	      004f6a8c    lea ecx,[ebp-60h]"
+"	      004f6a8c    lea ecx,loc.x"
 "	      004f6a8f    mov edx,[eax]"
 "	      004f6a91    mov [ecx],edx"
 "	      004f6a93    mov edx,[eax+4]"
@@ -13767,7 +13767,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6aaf    xor eax,edx"
 "	      004f6ab1    sub eax,edx"
 "	      004f6ab3    inc eax"
-"	      004f6ab4    mov [ebp-4],eax"
+"	      004f6ab4    mov scale,eax"
 );
 // LINE 4445:
 	asm( 
@@ -13776,11 +13776,11 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4447:
 	asm( 
-"	      004f6ac4    mov eax,[ebp+8]"
+"	      004f6ac4    mov eax,hd"
 "	      004f6ac7    mov eax,[eax+0A4h]"
 "	      004f6acd    add eax,24h"
 "	      004f6ad0    push eax"
-"	      004f6ad1    lea eax,[ebp-54h]"
+"	      004f6ad1    lea eax,vec.x"
 "	      004f6ad4    push eax"
 "	      004f6ad5    push 59B518h"
 "	      004f6ada    call 004D2094h"
@@ -13788,21 +13788,21 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4448:
 	asm( 
-"	      004f6ae2    mov eax,[ebp-54h]"
+"	      004f6ae2    mov eax,vec.x"
 "	      004f6ae5    shl eax,4"
-"	      004f6ae8    add [ebp-60h],eax"
+"	      004f6ae8    add loc.x,eax"
 );
 // LINE 4449:
 	asm( 
-"	      004f6aeb    mov eax,[ebp-50h]"
+"	      004f6aeb    mov eax,vec.y"
 "	      004f6aee    shl eax,4"
-"	      004f6af1    add [ebp-5Ch],eax"
+"	      004f6af1    add loc.y,eax"
 );
 // LINE 4450:
 	asm( 
-"	      004f6af4    mov eax,[ebp-4Ch]"
+"	      004f6af4    mov eax,vec.z"
 "	      004f6af7    shl eax,4"
-"	      004f6afa    add [ebp-58h],eax"
+"	      004f6afa    add loc.z,eax"
 );
 // LINE 4452:
 	asm( 
@@ -13818,7 +13818,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6b15    idiv ecx"
 "	      004f6b17    sub ebx,edx"
 "	      004f6b19    shl ebx,10h"
-"	      004f6b1c    add [ebp-60h],ebx"
+"	      004f6b1c    add loc.x,ebx"
 );
 // LINE 4455:
 	asm( 
@@ -13830,7 +13830,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6b32    idiv ecx"
 "	      004f6b34    sub ebx,edx"
 "	      004f6b36    shl ebx,10h"
-"	      004f6b39    add [ebp-5Ch],ebx"
+"	      004f6b39    add loc.y,ebx"
 );
 // LINE 4456:
 	asm( 
@@ -13842,11 +13842,11 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6b4f    idiv ecx"
 "	      004f6b51    sub ebx,edx"
 "	      004f6b53    shl ebx,10h"
-"	      004f6b56    add [ebp-58h],ebx"
+"	      004f6b56    add loc.z,ebx"
 );
 // LINE 4459:
 	asm( 
-"	      004f6b59    mov eax,[ebp+8]"
+"	      004f6b59    mov eax,hd"
 "	      004f6b5c    mov eax,[eax+168h]"
 "	      004f6b62    mov dword ptr [eax+8],0CCCCh"
 );
@@ -13870,18 +13870,18 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 "	      004f6b91    mov eax,edx"
 "	      004f6b93    shl eax,10h"
 "	      004f6b96    add eax,320000h"
-"	      004f6b9b    mov [ebp-8],eax"
+"	      004f6b9b    mov speed,eax"
 );
 // LINE 4464:
 	asm( 
-"	      004f6b9e    lea eax,[ebp-48h]"
+"	      004f6b9e    lea eax,mat[0][0]"
 "	      004f6ba1    push eax"
 "	      004f6ba2    call 004D1FF1h"
 "	      004f6ba7    add esp,4"
 );
 // LINE 4465:
 	asm( 
-"	      004f6baa    lea eax,[ebp-48h]"
+"	      004f6baa    lea eax,mat[0][0]"
 "	      004f6bad    push eax"
 "	      004f6bae    call 0056EC50h"
 "	      004f6bb3    mov ecx,0E10h"
@@ -13896,7 +13896,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4466:
 	asm( 
-"	      004f6bcc    lea eax,[ebp-48h]"
+"	      004f6bcc    lea eax,mat[0][0]"
 "	      004f6bcf    push eax"
 "	      004f6bd0    call 0056EC50h"
 "	      004f6bd5    mov ecx,0C8h"
@@ -13911,9 +13911,9 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4467:
 	asm( 
-"	      004f6bf2    lea eax,[ebp-48h]"
+"	      004f6bf2    lea eax,mat[0][0]"
 "	      004f6bf5    push eax"
-"	      004f6bf6    lea eax,[ebp-54h]"
+"	      004f6bf6    lea eax,vec.x"
 "	      004f6bf9    push eax"
 "	      004f6bfa    push 59B518h"
 "	      004f6bff    call 004D2094h"
@@ -13922,17 +13922,17 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4478:
 	asm( 
 "	      004f6c07    push 0FFFFFFFFh"
-"	      004f6c09    mov eax,[ebp-8]"
+"	      004f6c09    mov eax,speed"
 "	      004f6c0c    push eax"
-"	      004f6c0d    mov eax,[ebp+8]"
+"	      004f6c0d    mov eax,hd"
 "	      004f6c10    mov eax,[eax+0A4h]"
 "	      004f6c16    push eax"
 "	      004f6c17    push 3"
-"	      004f6c19    lea eax,[ebp-54h]"
+"	      004f6c19    lea eax,vec.x"
 "	      004f6c1c    push eax"
-"	      004f6c1d    lea eax,[ebp-60h]"
+"	      004f6c1d    lea eax,loc.x"
 "	      004f6c20    push eax"
-"	      004f6c21    mov eax,[ebp+8]"
+"	      004f6c21    mov eax,hd"
 "	      004f6c24    add eax,18h"
 "	      004f6c27    push eax"
 "	      004f6c28    push 4"
@@ -13942,40 +13942,40 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4485:
 	asm( 
 "	      004f6c32    push 0FFFFFFFFh"
-"	      004f6c34    mov eax,[ebp-4]"
+"	      004f6c34    mov eax,scale"
 "	      004f6c37    push eax"
-"	      004f6c38    mov eax,[ebp-58h]"
-"	      004f6c3b    mov ecx,[ebp-64h]"
+"	      004f6c38    mov eax,loc.z"
+"	      004f6c3b    mov ecx,cptr"
 "	      004f6c3e    movsx ecx,word ptr [ecx+6]"
 "	      004f6c42    shl ecx,10h"
 "	      004f6c45    sub eax,ecx"
 "	      004f6c47    push eax"
-"	      004f6c48    mov eax,[ebp-5Ch]"
-"	      004f6c4b    mov ecx,[ebp-64h]"
+"	      004f6c48    mov eax,loc.y"
+"	      004f6c4b    mov ecx,cptr"
 "	      004f6c4e    movsx ecx,word ptr [ecx+4]"
 "	      004f6c52    shl ecx,10h"
 "	      004f6c55    sub eax,ecx"
 "	      004f6c57    push eax"
-"	      004f6c58    mov eax,[ebp-60h]"
-"	      004f6c5b    mov ecx,[ebp-64h]"
+"	      004f6c58    mov eax,loc.x"
+"	      004f6c5b    mov ecx,cptr"
 "	      004f6c5e    movsx ecx,word ptr [ecx+2]"
 "	      004f6c62    shl ecx,10h"
 "	      004f6c65    sub eax,ecx"
 "	      004f6c67    push eax"
-"	      004f6c68    mov eax,[ebp-64h]"
+"	      004f6c68    mov eax,cptr"
 "	      004f6c6b    push eax"
 "	      004f6c6c    call 00523F50h"
 "	      004f6c71    add esp,18h"
 );
 // LINE 4487:
 	asm( 
-"	      004f6c74    cmp dword ptr [ebp-4],0"
+"	      004f6c74    cmp scale,0"
 "	      004f6c78    jle near ptr 004F6C97h"
 );
 // LINE 4490:
 	asm( 
 "	      004f6c7e    push 0"
-"	      004f6c80    mov eax,[ebp+8]"
+"	      004f6c80    mov eax,hd"
 "	      004f6c83    mov eax,[eax+0A4h]"
 "	      004f6c89    add eax,18h"
 "	      004f6c8c    push eax"
@@ -13989,7 +13989,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4498:
 	asm( 
-"	      004f6c9c    mov eax,[ebp+8]"
+"	      004f6c9c    mov eax,hd"
 "	      004f6c9f    cmp dword ptr [eax+4],6"
 "	      004f6ca3    jne near ptr 004F6CAEh"
 );
@@ -13999,8 +13999,8 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4504:
 	asm( 
-"	      004f6cae    mov eax,[ebp+8]"
-"	      004f6cb1    mov ecx,[ebp-68h]"
+"	      004f6cae    mov eax,hd"
+"	      004f6cb1    mov ecx,htd"
 "	      004f6cb4    mov ecx,[ecx+4Ch]"
 "	      004f6cb7    cmp [eax+0D0h],ecx"
 "	      004f6cbd    jl near ptr 004F6CC8h"
@@ -14011,7 +14011,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4509:
 	asm( 
-"	      004f6cc8    mov eax,[ebp+8]"
+"	      004f6cc8    mov eax,hd"
 "	      004f6ccb    cmp dword ptr [eax+4],0"
 "	      004f6ccf    jne near ptr 004F6CDAh"
 );
@@ -14021,22 +14021,22 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4516:
 	asm( 
-"	      004f6cda    mov eax,[ebp+8]"
+"	      004f6cda    mov eax,hd"
 "	      004f6cdd    inc dword ptr [eax+0D4h]"
 );
 // LINE 4517:
 	asm( 
-"	      004f6ce3    mov eax,[ebp+8]"
+"	      004f6ce3    mov eax,hd"
 "	      004f6ce6    cmp dword ptr [eax+0D4h],7"
 "	      004f6ced    jle near ptr 004F6D4Eh"
 );
 // LINE 4519:
 	asm( 
-"	      004f6cf3    mov eax,[ebp+8]"
+"	      004f6cf3    mov eax,hd"
 "	      004f6cf6    mov eax,[eax+0D0h]"
 "	      004f6cfc    sar eax,3"
 "	      004f6cff    add eax,7"
-"	      004f6d02    mov ecx,[ebp+8]"
+"	      004f6d02    mov ecx,hd"
 "	      004f6d05    cmp eax,[ecx+0D4h]"
 "	      004f6d0b    jg near ptr 004F6D49h"
 );
@@ -14051,7 +14051,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4523:
 	asm( 
 "	      004f6d23    push 0"
-"	      004f6d25    mov eax,[ebp+8]"
+"	      004f6d25    mov eax,hd"
 "	      004f6d28    mov eax,[eax+0A4h]"
 "	      004f6d2e    add eax,18h"
 "	      004f6d31    push eax"
@@ -14061,7 +14061,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 );
 // LINE 4525:
 	asm( 
-"	      004f6d3c    mov eax,[ebp+8]"
+"	      004f6d3c    mov eax,hd"
 "	      004f6d3f    mov dword ptr [eax+0D4h],0"
 );
 // LINE 4527:
@@ -14071,11 +14071,11 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4530:
 	asm( 
 "	      004f6d4e    push 1"
-"	      004f6d50    mov eax,[ebp+8]"
+"	      004f6d50    mov eax,hd"
 "	      004f6d53    mov eax,[eax+0A4h]"
 "	      004f6d59    add eax,18h"
 "	      004f6d5c    push eax"
-"	      004f6d5d    mov eax,[ebp-64h]"
+"	      004f6d5d    mov eax,cptr"
 "	      004f6d60    push eax"
 "	      004f6d61    call 005240DCh"
 "	      004f6d66    add esp,0Ch"
@@ -14133,97 +14133,97 @@ void S3HeliTweakInit() {
 );
 // LINE 4560:
 	asm( 
-"	      004f6d90    mov dword ptr [ebp-4],5B4978h"
+"	      004f6d90    mov htd,5B4978h"
 );
 // LINE 4562:
 	asm( 
-"	      004f6d97    mov eax,[ebp-4]"
+"	      004f6d97    mov eax,htd"
 "	      004f6d9a    add eax,0Ch"
-"	      004f6d9d    mov [ebp-3Ch],eax"
+"	      004f6d9d    mov pvals[0],eax"
 );
 // LINE 4563:
 	asm( 
-"	      004f6da0    mov eax,[ebp-4]"
+"	      004f6da0    mov eax,htd"
 "	      004f6da3    add eax,10h"
-"	      004f6da6    mov [ebp-38h],eax"
+"	      004f6da6    mov pvals[1],eax"
 );
 // LINE 4564:
 	asm( 
-"	      004f6da9    mov eax,[ebp-4]"
+"	      004f6da9    mov eax,htd"
 "	      004f6dac    add eax,14h"
-"	      004f6daf    mov [ebp-34h],eax"
+"	      004f6daf    mov pvals[2],eax"
 );
 // LINE 4565:
 	asm( 
-"	      004f6db2    mov eax,[ebp-4]"
+"	      004f6db2    mov eax,htd"
 "	      004f6db5    add eax,1Ch"
-"	      004f6db8    mov [ebp-30h],eax"
+"	      004f6db8    mov pvals[3],eax"
 );
 // LINE 4566:
 	asm( 
-"	      004f6dbb    mov eax,[ebp-4]"
+"	      004f6dbb    mov eax,htd"
 "	      004f6dbe    add eax,20h"
-"	      004f6dc1    mov [ebp-2Ch],eax"
+"	      004f6dc1    mov pvals[4],eax"
 );
 // LINE 4567:
 	asm( 
-"	      004f6dc4    mov eax,[ebp-4]"
+"	      004f6dc4    mov eax,htd"
 "	      004f6dc7    add eax,24h"
-"	      004f6dca    mov [ebp-28h],eax"
+"	      004f6dca    mov pvals[5],eax"
 );
 // LINE 4568:
 	asm( 
-"	      004f6dcd    mov eax,[ebp-4]"
+"	      004f6dcd    mov eax,htd"
 "	      004f6dd0    add eax,28h"
-"	      004f6dd3    mov [ebp-24h],eax"
+"	      004f6dd3    mov pvals[6],eax"
 );
 // LINE 4569:
 	asm( 
-"	      004f6dd6    mov eax,[ebp-4]"
+"	      004f6dd6    mov eax,htd"
 "	      004f6dd9    add eax,2Ch"
-"	      004f6ddc    mov [ebp-20h],eax"
+"	      004f6ddc    mov pvals[7],eax"
 );
 // LINE 4570:
 	asm( 
-"	      004f6ddf    mov eax,[ebp-4]"
+"	      004f6ddf    mov eax,htd"
 "	      004f6de2    add eax,8"
-"	      004f6de5    mov [ebp-1Ch],eax"
+"	      004f6de5    mov pvals[8],eax"
 );
 // LINE 4571:
 	asm( 
-"	      004f6de8    mov eax,[ebp-4]"
+"	      004f6de8    mov eax,htd"
 "	      004f6deb    add eax,18h"
-"	      004f6dee    mov [ebp-18h],eax"
+"	      004f6dee    mov pvals[9],eax"
 );
 // LINE 4572:
 	asm( 
-"	      004f6df1    mov eax,[ebp-4]"
+"	      004f6df1    mov eax,htd"
 "	      004f6df4    add eax,44h"
-"	      004f6df7    mov [ebp-14h],eax"
+"	      004f6df7    mov pvals[10],eax"
 );
 // LINE 4573:
 	asm( 
-"	      004f6dfa    mov eax,[ebp-4]"
+"	      004f6dfa    mov eax,htd"
 "	      004f6dfd    add eax,48h"
-"	      004f6e00    mov [ebp-10h],eax"
+"	      004f6e00    mov pvals[11],eax"
 );
 // LINE 4574:
 	asm( 
-"	      004f6e03    mov eax,[ebp-4]"
+"	      004f6e03    mov eax,htd"
 "	      004f6e06    add eax,4Ch"
-"	      004f6e09    mov [ebp-0Ch],eax"
+"	      004f6e09    mov pvals[12],eax"
 );
 // LINE 4575:
 	asm( 
-"	      004f6e0c    mov eax,[ebp-4]"
+"	      004f6e0c    mov eax,htd"
 "	      004f6e0f    add eax,40h"
-"	      004f6e12    mov [ebp-8],eax"
+"	      004f6e12    mov pvals[13],eax"
 );
 // LINE 4577:
 	asm( 
 "	      004f6e15    push 5B4CC4h"
 "	      004f6e1a    push 0Eh"
-"	      004f6e1c    lea eax,[ebp-3Ch]"
+"	      004f6e1c    lea eax,pvals[0]"
 "	      004f6e1f    push eax"
 "	      004f6e20    call 004C9AD0h"
 "	      004f6e25    add esp,0Ch"
@@ -14232,97 +14232,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f6e28    mov eax,5B4978h"
 "	      004f6e2d    add eax,58h"
-"	      004f6e30    mov [ebp-4],eax"
+"	      004f6e30    mov htd,eax"
 );
 // LINE 4581:
 	asm( 
-"	      004f6e33    mov eax,[ebp-4]"
+"	      004f6e33    mov eax,htd"
 "	      004f6e36    add eax,0Ch"
-"	      004f6e39    mov [ebp-3Ch],eax"
+"	      004f6e39    mov pvals[0],eax"
 );
 // LINE 4582:
 	asm( 
-"	      004f6e3c    mov eax,[ebp-4]"
+"	      004f6e3c    mov eax,htd"
 "	      004f6e3f    add eax,10h"
-"	      004f6e42    mov [ebp-38h],eax"
+"	      004f6e42    mov pvals[1],eax"
 );
 // LINE 4583:
 	asm( 
-"	      004f6e45    mov eax,[ebp-4]"
+"	      004f6e45    mov eax,htd"
 "	      004f6e48    add eax,14h"
-"	      004f6e4b    mov [ebp-34h],eax"
+"	      004f6e4b    mov pvals[2],eax"
 );
 // LINE 4584:
 	asm( 
-"	      004f6e4e    mov eax,[ebp-4]"
+"	      004f6e4e    mov eax,htd"
 "	      004f6e51    add eax,1Ch"
-"	      004f6e54    mov [ebp-30h],eax"
+"	      004f6e54    mov pvals[3],eax"
 );
 // LINE 4585:
 	asm( 
-"	      004f6e57    mov eax,[ebp-4]"
+"	      004f6e57    mov eax,htd"
 "	      004f6e5a    add eax,20h"
-"	      004f6e5d    mov [ebp-2Ch],eax"
+"	      004f6e5d    mov pvals[4],eax"
 );
 // LINE 4586:
 	asm( 
-"	      004f6e60    mov eax,[ebp-4]"
+"	      004f6e60    mov eax,htd"
 "	      004f6e63    add eax,24h"
-"	      004f6e66    mov [ebp-28h],eax"
+"	      004f6e66    mov pvals[5],eax"
 );
 // LINE 4587:
 	asm( 
-"	      004f6e69    mov eax,[ebp-4]"
+"	      004f6e69    mov eax,htd"
 "	      004f6e6c    add eax,28h"
-"	      004f6e6f    mov [ebp-24h],eax"
+"	      004f6e6f    mov pvals[6],eax"
 );
 // LINE 4588:
 	asm( 
-"	      004f6e72    mov eax,[ebp-4]"
+"	      004f6e72    mov eax,htd"
 "	      004f6e75    add eax,2Ch"
-"	      004f6e78    mov [ebp-20h],eax"
+"	      004f6e78    mov pvals[7],eax"
 );
 // LINE 4589:
 	asm( 
-"	      004f6e7b    mov eax,[ebp-4]"
+"	      004f6e7b    mov eax,htd"
 "	      004f6e7e    add eax,8"
-"	      004f6e81    mov [ebp-1Ch],eax"
+"	      004f6e81    mov pvals[8],eax"
 );
 // LINE 4590:
 	asm( 
-"	      004f6e84    mov eax,[ebp-4]"
+"	      004f6e84    mov eax,htd"
 "	      004f6e87    add eax,18h"
-"	      004f6e8a    mov [ebp-18h],eax"
+"	      004f6e8a    mov pvals[9],eax"
 );
 // LINE 4591:
 	asm( 
-"	      004f6e8d    mov eax,[ebp-4]"
+"	      004f6e8d    mov eax,htd"
 "	      004f6e90    add eax,44h"
-"	      004f6e93    mov [ebp-14h],eax"
+"	      004f6e93    mov pvals[10],eax"
 );
 // LINE 4592:
 	asm( 
-"	      004f6e96    mov eax,[ebp-4]"
+"	      004f6e96    mov eax,htd"
 "	      004f6e99    add eax,48h"
-"	      004f6e9c    mov [ebp-10h],eax"
+"	      004f6e9c    mov pvals[11],eax"
 );
 // LINE 4593:
 	asm( 
-"	      004f6e9f    mov eax,[ebp-4]"
+"	      004f6e9f    mov eax,htd"
 "	      004f6ea2    add eax,4Ch"
-"	      004f6ea5    mov [ebp-0Ch],eax"
+"	      004f6ea5    mov pvals[12],eax"
 );
 // LINE 4594:
 	asm( 
-"	      004f6ea8    mov eax,[ebp-4]"
+"	      004f6ea8    mov eax,htd"
 "	      004f6eab    add eax,40h"
-"	      004f6eae    mov [ebp-8],eax"
+"	      004f6eae    mov pvals[13],eax"
 );
 // LINE 4596:
 	asm( 
 "	      004f6eb1    push 5B4CD0h"
 "	      004f6eb6    push 0Eh"
-"	      004f6eb8    lea eax,[ebp-3Ch]"
+"	      004f6eb8    lea eax,pvals[0]"
 "	      004f6ebb    push eax"
 "	      004f6ebc    call 004C9AD0h"
 "	      004f6ec1    add esp,0Ch"
@@ -14331,97 +14331,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f6ec4    mov eax,5B4978h"
 "	      004f6ec9    add eax,0B0h"
-"	      004f6ece    mov [ebp-4],eax"
+"	      004f6ece    mov htd,eax"
 );
 // LINE 4600:
 	asm( 
-"	      004f6ed1    mov eax,[ebp-4]"
+"	      004f6ed1    mov eax,htd"
 "	      004f6ed4    add eax,0Ch"
-"	      004f6ed7    mov [ebp-3Ch],eax"
+"	      004f6ed7    mov pvals[0],eax"
 );
 // LINE 4601:
 	asm( 
-"	      004f6eda    mov eax,[ebp-4]"
+"	      004f6eda    mov eax,htd"
 "	      004f6edd    add eax,10h"
-"	      004f6ee0    mov [ebp-38h],eax"
+"	      004f6ee0    mov pvals[1],eax"
 );
 // LINE 4602:
 	asm( 
-"	      004f6ee3    mov eax,[ebp-4]"
+"	      004f6ee3    mov eax,htd"
 "	      004f6ee6    add eax,14h"
-"	      004f6ee9    mov [ebp-34h],eax"
+"	      004f6ee9    mov pvals[2],eax"
 );
 // LINE 4603:
 	asm( 
-"	      004f6eec    mov eax,[ebp-4]"
+"	      004f6eec    mov eax,htd"
 "	      004f6eef    add eax,1Ch"
-"	      004f6ef2    mov [ebp-30h],eax"
+"	      004f6ef2    mov pvals[3],eax"
 );
 // LINE 4604:
 	asm( 
-"	      004f6ef5    mov eax,[ebp-4]"
+"	      004f6ef5    mov eax,htd"
 "	      004f6ef8    add eax,20h"
-"	      004f6efb    mov [ebp-2Ch],eax"
+"	      004f6efb    mov pvals[4],eax"
 );
 // LINE 4605:
 	asm( 
-"	      004f6efe    mov eax,[ebp-4]"
+"	      004f6efe    mov eax,htd"
 "	      004f6f01    add eax,24h"
-"	      004f6f04    mov [ebp-28h],eax"
+"	      004f6f04    mov pvals[5],eax"
 );
 // LINE 4606:
 	asm( 
-"	      004f6f07    mov eax,[ebp-4]"
+"	      004f6f07    mov eax,htd"
 "	      004f6f0a    add eax,28h"
-"	      004f6f0d    mov [ebp-24h],eax"
+"	      004f6f0d    mov pvals[6],eax"
 );
 // LINE 4607:
 	asm( 
-"	      004f6f10    mov eax,[ebp-4]"
+"	      004f6f10    mov eax,htd"
 "	      004f6f13    add eax,2Ch"
-"	      004f6f16    mov [ebp-20h],eax"
+"	      004f6f16    mov pvals[7],eax"
 );
 // LINE 4608:
 	asm( 
-"	      004f6f19    mov eax,[ebp-4]"
+"	      004f6f19    mov eax,htd"
 "	      004f6f1c    add eax,8"
-"	      004f6f1f    mov [ebp-1Ch],eax"
+"	      004f6f1f    mov pvals[8],eax"
 );
 // LINE 4609:
 	asm( 
-"	      004f6f22    mov eax,[ebp-4]"
+"	      004f6f22    mov eax,htd"
 "	      004f6f25    add eax,18h"
-"	      004f6f28    mov [ebp-18h],eax"
+"	      004f6f28    mov pvals[9],eax"
 );
 // LINE 4610:
 	asm( 
-"	      004f6f2b    mov eax,[ebp-4]"
+"	      004f6f2b    mov eax,htd"
 "	      004f6f2e    add eax,44h"
-"	      004f6f31    mov [ebp-14h],eax"
+"	      004f6f31    mov pvals[10],eax"
 );
 // LINE 4611:
 	asm( 
-"	      004f6f34    mov eax,[ebp-4]"
+"	      004f6f34    mov eax,htd"
 "	      004f6f37    add eax,48h"
-"	      004f6f3a    mov [ebp-10h],eax"
+"	      004f6f3a    mov pvals[11],eax"
 );
 // LINE 4612:
 	asm( 
-"	      004f6f3d    mov eax,[ebp-4]"
+"	      004f6f3d    mov eax,htd"
 "	      004f6f40    add eax,4Ch"
-"	      004f6f43    mov [ebp-0Ch],eax"
+"	      004f6f43    mov pvals[12],eax"
 );
 // LINE 4613:
 	asm( 
-"	      004f6f46    mov eax,[ebp-4]"
+"	      004f6f46    mov eax,htd"
 "	      004f6f49    add eax,40h"
-"	      004f6f4c    mov [ebp-8],eax"
+"	      004f6f4c    mov pvals[13],eax"
 );
 // LINE 4615:
 	asm( 
 "	      004f6f4f    push 5B4CDCh"
 "	      004f6f54    push 0Eh"
-"	      004f6f56    lea eax,[ebp-3Ch]"
+"	      004f6f56    lea eax,pvals[0]"
 "	      004f6f59    push eax"
 "	      004f6f5a    call 004C9AD0h"
 "	      004f6f5f    add esp,0Ch"
@@ -14430,97 +14430,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f6f62    mov eax,5B4978h"
 "	      004f6f67    add eax,108h"
-"	      004f6f6c    mov [ebp-4],eax"
+"	      004f6f6c    mov htd,eax"
 );
 // LINE 4619:
 	asm( 
-"	      004f6f6f    mov eax,[ebp-4]"
+"	      004f6f6f    mov eax,htd"
 "	      004f6f72    add eax,0Ch"
-"	      004f6f75    mov [ebp-3Ch],eax"
+"	      004f6f75    mov pvals[0],eax"
 );
 // LINE 4620:
 	asm( 
-"	      004f6f78    mov eax,[ebp-4]"
+"	      004f6f78    mov eax,htd"
 "	      004f6f7b    add eax,10h"
-"	      004f6f7e    mov [ebp-38h],eax"
+"	      004f6f7e    mov pvals[1],eax"
 );
 // LINE 4621:
 	asm( 
-"	      004f6f81    mov eax,[ebp-4]"
+"	      004f6f81    mov eax,htd"
 "	      004f6f84    add eax,14h"
-"	      004f6f87    mov [ebp-34h],eax"
+"	      004f6f87    mov pvals[2],eax"
 );
 // LINE 4622:
 	asm( 
-"	      004f6f8a    mov eax,[ebp-4]"
+"	      004f6f8a    mov eax,htd"
 "	      004f6f8d    add eax,1Ch"
-"	      004f6f90    mov [ebp-30h],eax"
+"	      004f6f90    mov pvals[3],eax"
 );
 // LINE 4623:
 	asm( 
-"	      004f6f93    mov eax,[ebp-4]"
+"	      004f6f93    mov eax,htd"
 "	      004f6f96    add eax,20h"
-"	      004f6f99    mov [ebp-2Ch],eax"
+"	      004f6f99    mov pvals[4],eax"
 );
 // LINE 4624:
 	asm( 
-"	      004f6f9c    mov eax,[ebp-4]"
+"	      004f6f9c    mov eax,htd"
 "	      004f6f9f    add eax,24h"
-"	      004f6fa2    mov [ebp-28h],eax"
+"	      004f6fa2    mov pvals[5],eax"
 );
 // LINE 4625:
 	asm( 
-"	      004f6fa5    mov eax,[ebp-4]"
+"	      004f6fa5    mov eax,htd"
 "	      004f6fa8    add eax,28h"
-"	      004f6fab    mov [ebp-24h],eax"
+"	      004f6fab    mov pvals[6],eax"
 );
 // LINE 4626:
 	asm( 
-"	      004f6fae    mov eax,[ebp-4]"
+"	      004f6fae    mov eax,htd"
 "	      004f6fb1    add eax,2Ch"
-"	      004f6fb4    mov [ebp-20h],eax"
+"	      004f6fb4    mov pvals[7],eax"
 );
 // LINE 4627:
 	asm( 
-"	      004f6fb7    mov eax,[ebp-4]"
+"	      004f6fb7    mov eax,htd"
 "	      004f6fba    add eax,8"
-"	      004f6fbd    mov [ebp-1Ch],eax"
+"	      004f6fbd    mov pvals[8],eax"
 );
 // LINE 4628:
 	asm( 
-"	      004f6fc0    mov eax,[ebp-4]"
+"	      004f6fc0    mov eax,htd"
 "	      004f6fc3    add eax,18h"
-"	      004f6fc6    mov [ebp-18h],eax"
+"	      004f6fc6    mov pvals[9],eax"
 );
 // LINE 4629:
 	asm( 
-"	      004f6fc9    mov eax,[ebp-4]"
+"	      004f6fc9    mov eax,htd"
 "	      004f6fcc    add eax,44h"
-"	      004f6fcf    mov [ebp-14h],eax"
+"	      004f6fcf    mov pvals[10],eax"
 );
 // LINE 4630:
 	asm( 
-"	      004f6fd2    mov eax,[ebp-4]"
+"	      004f6fd2    mov eax,htd"
 "	      004f6fd5    add eax,48h"
-"	      004f6fd8    mov [ebp-10h],eax"
+"	      004f6fd8    mov pvals[11],eax"
 );
 // LINE 4631:
 	asm( 
-"	      004f6fdb    mov eax,[ebp-4]"
+"	      004f6fdb    mov eax,htd"
 "	      004f6fde    add eax,4Ch"
-"	      004f6fe1    mov [ebp-0Ch],eax"
+"	      004f6fe1    mov pvals[12],eax"
 );
 // LINE 4632:
 	asm( 
-"	      004f6fe4    mov eax,[ebp-4]"
+"	      004f6fe4    mov eax,htd"
 "	      004f6fe7    add eax,40h"
-"	      004f6fea    mov [ebp-8],eax"
+"	      004f6fea    mov pvals[13],eax"
 );
 // LINE 4634:
 	asm( 
 "	      004f6fed    push 5B4CE4h"
 "	      004f6ff2    push 0Eh"
-"	      004f6ff4    lea eax,[ebp-3Ch]"
+"	      004f6ff4    lea eax,pvals[0]"
 "	      004f6ff7    push eax"
 "	      004f6ff8    call 004C9AD0h"
 "	      004f6ffd    add esp,0Ch"
@@ -14529,97 +14529,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f7000    mov eax,5B4978h"
 "	      004f7005    add eax,160h"
-"	      004f700a    mov [ebp-4],eax"
+"	      004f700a    mov htd,eax"
 );
 // LINE 4638:
 	asm( 
-"	      004f700d    mov eax,[ebp-4]"
+"	      004f700d    mov eax,htd"
 "	      004f7010    add eax,0Ch"
-"	      004f7013    mov [ebp-3Ch],eax"
+"	      004f7013    mov pvals[0],eax"
 );
 // LINE 4639:
 	asm( 
-"	      004f7016    mov eax,[ebp-4]"
+"	      004f7016    mov eax,htd"
 "	      004f7019    add eax,10h"
-"	      004f701c    mov [ebp-38h],eax"
+"	      004f701c    mov pvals[1],eax"
 );
 // LINE 4640:
 	asm( 
-"	      004f701f    mov eax,[ebp-4]"
+"	      004f701f    mov eax,htd"
 "	      004f7022    add eax,14h"
-"	      004f7025    mov [ebp-34h],eax"
+"	      004f7025    mov pvals[2],eax"
 );
 // LINE 4641:
 	asm( 
-"	      004f7028    mov eax,[ebp-4]"
+"	      004f7028    mov eax,htd"
 "	      004f702b    add eax,1Ch"
-"	      004f702e    mov [ebp-30h],eax"
+"	      004f702e    mov pvals[3],eax"
 );
 // LINE 4642:
 	asm( 
-"	      004f7031    mov eax,[ebp-4]"
+"	      004f7031    mov eax,htd"
 "	      004f7034    add eax,20h"
-"	      004f7037    mov [ebp-2Ch],eax"
+"	      004f7037    mov pvals[4],eax"
 );
 // LINE 4643:
 	asm( 
-"	      004f703a    mov eax,[ebp-4]"
+"	      004f703a    mov eax,htd"
 "	      004f703d    add eax,24h"
-"	      004f7040    mov [ebp-28h],eax"
+"	      004f7040    mov pvals[5],eax"
 );
 // LINE 4644:
 	asm( 
-"	      004f7043    mov eax,[ebp-4]"
+"	      004f7043    mov eax,htd"
 "	      004f7046    add eax,28h"
-"	      004f7049    mov [ebp-24h],eax"
+"	      004f7049    mov pvals[6],eax"
 );
 // LINE 4645:
 	asm( 
-"	      004f704c    mov eax,[ebp-4]"
+"	      004f704c    mov eax,htd"
 "	      004f704f    add eax,2Ch"
-"	      004f7052    mov [ebp-20h],eax"
+"	      004f7052    mov pvals[7],eax"
 );
 // LINE 4646:
 	asm( 
-"	      004f7055    mov eax,[ebp-4]"
+"	      004f7055    mov eax,htd"
 "	      004f7058    add eax,8"
-"	      004f705b    mov [ebp-1Ch],eax"
+"	      004f705b    mov pvals[8],eax"
 );
 // LINE 4647:
 	asm( 
-"	      004f705e    mov eax,[ebp-4]"
+"	      004f705e    mov eax,htd"
 "	      004f7061    add eax,18h"
-"	      004f7064    mov [ebp-18h],eax"
+"	      004f7064    mov pvals[9],eax"
 );
 // LINE 4648:
 	asm( 
-"	      004f7067    mov eax,[ebp-4]"
+"	      004f7067    mov eax,htd"
 "	      004f706a    add eax,44h"
-"	      004f706d    mov [ebp-14h],eax"
+"	      004f706d    mov pvals[10],eax"
 );
 // LINE 4649:
 	asm( 
-"	      004f7070    mov eax,[ebp-4]"
+"	      004f7070    mov eax,htd"
 "	      004f7073    add eax,48h"
-"	      004f7076    mov [ebp-10h],eax"
+"	      004f7076    mov pvals[11],eax"
 );
 // LINE 4650:
 	asm( 
-"	      004f7079    mov eax,[ebp-4]"
+"	      004f7079    mov eax,htd"
 "	      004f707c    add eax,4Ch"
-"	      004f707f    mov [ebp-0Ch],eax"
+"	      004f707f    mov pvals[12],eax"
 );
 // LINE 4651:
 	asm( 
-"	      004f7082    mov eax,[ebp-4]"
+"	      004f7082    mov eax,htd"
 "	      004f7085    add eax,40h"
-"	      004f7088    mov [ebp-8],eax"
+"	      004f7088    mov pvals[13],eax"
 );
 // LINE 4653:
 	asm( 
 "	      004f708b    push 5B4CF0h"
 "	      004f7090    push 0Eh"
-"	      004f7092    lea eax,[ebp-3Ch]"
+"	      004f7092    lea eax,pvals[0]"
 "	      004f7095    push eax"
 "	      004f7096    call 004C9AD0h"
 "	      004f709b    add esp,0Ch"
@@ -14628,97 +14628,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f709e    mov eax,5B4978h"
 "	      004f70a3    add eax,1B8h"
-"	      004f70a8    mov [ebp-4],eax"
+"	      004f70a8    mov htd,eax"
 );
 // LINE 4657:
 	asm( 
-"	      004f70ab    mov eax,[ebp-4]"
+"	      004f70ab    mov eax,htd"
 "	      004f70ae    add eax,0Ch"
-"	      004f70b1    mov [ebp-3Ch],eax"
+"	      004f70b1    mov pvals[0],eax"
 );
 // LINE 4658:
 	asm( 
-"	      004f70b4    mov eax,[ebp-4]"
+"	      004f70b4    mov eax,htd"
 "	      004f70b7    add eax,10h"
-"	      004f70ba    mov [ebp-38h],eax"
+"	      004f70ba    mov pvals[1],eax"
 );
 // LINE 4659:
 	asm( 
-"	      004f70bd    mov eax,[ebp-4]"
+"	      004f70bd    mov eax,htd"
 "	      004f70c0    add eax,14h"
-"	      004f70c3    mov [ebp-34h],eax"
+"	      004f70c3    mov pvals[2],eax"
 );
 // LINE 4660:
 	asm( 
-"	      004f70c6    mov eax,[ebp-4]"
+"	      004f70c6    mov eax,htd"
 "	      004f70c9    add eax,1Ch"
-"	      004f70cc    mov [ebp-30h],eax"
+"	      004f70cc    mov pvals[3],eax"
 );
 // LINE 4661:
 	asm( 
-"	      004f70cf    mov eax,[ebp-4]"
+"	      004f70cf    mov eax,htd"
 "	      004f70d2    add eax,20h"
-"	      004f70d5    mov [ebp-2Ch],eax"
+"	      004f70d5    mov pvals[4],eax"
 );
 // LINE 4662:
 	asm( 
-"	      004f70d8    mov eax,[ebp-4]"
+"	      004f70d8    mov eax,htd"
 "	      004f70db    add eax,24h"
-"	      004f70de    mov [ebp-28h],eax"
+"	      004f70de    mov pvals[5],eax"
 );
 // LINE 4663:
 	asm( 
-"	      004f70e1    mov eax,[ebp-4]"
+"	      004f70e1    mov eax,htd"
 "	      004f70e4    add eax,28h"
-"	      004f70e7    mov [ebp-24h],eax"
+"	      004f70e7    mov pvals[6],eax"
 );
 // LINE 4664:
 	asm( 
-"	      004f70ea    mov eax,[ebp-4]"
+"	      004f70ea    mov eax,htd"
 "	      004f70ed    add eax,2Ch"
-"	      004f70f0    mov [ebp-20h],eax"
+"	      004f70f0    mov pvals[7],eax"
 );
 // LINE 4665:
 	asm( 
-"	      004f70f3    mov eax,[ebp-4]"
+"	      004f70f3    mov eax,htd"
 "	      004f70f6    add eax,8"
-"	      004f70f9    mov [ebp-1Ch],eax"
+"	      004f70f9    mov pvals[8],eax"
 );
 // LINE 4666:
 	asm( 
-"	      004f70fc    mov eax,[ebp-4]"
+"	      004f70fc    mov eax,htd"
 "	      004f70ff    add eax,18h"
-"	      004f7102    mov [ebp-18h],eax"
+"	      004f7102    mov pvals[9],eax"
 );
 // LINE 4667:
 	asm( 
-"	      004f7105    mov eax,[ebp-4]"
+"	      004f7105    mov eax,htd"
 "	      004f7108    add eax,44h"
-"	      004f710b    mov [ebp-14h],eax"
+"	      004f710b    mov pvals[10],eax"
 );
 // LINE 4668:
 	asm( 
-"	      004f710e    mov eax,[ebp-4]"
+"	      004f710e    mov eax,htd"
 "	      004f7111    add eax,48h"
-"	      004f7114    mov [ebp-10h],eax"
+"	      004f7114    mov pvals[11],eax"
 );
 // LINE 4669:
 	asm( 
-"	      004f7117    mov eax,[ebp-4]"
+"	      004f7117    mov eax,htd"
 "	      004f711a    add eax,4Ch"
-"	      004f711d    mov [ebp-0Ch],eax"
+"	      004f711d    mov pvals[12],eax"
 );
 // LINE 4670:
 	asm( 
-"	      004f7120    mov eax,[ebp-4]"
+"	      004f7120    mov eax,htd"
 "	      004f7123    add eax,40h"
-"	      004f7126    mov [ebp-8],eax"
+"	      004f7126    mov pvals[13],eax"
 );
 // LINE 4672:
 	asm( 
 "	      004f7129    push 5B4D00h"
 "	      004f712e    push 0Eh"
-"	      004f7130    lea eax,[ebp-3Ch]"
+"	      004f7130    lea eax,pvals[0]"
 "	      004f7133    push eax"
 "	      004f7134    call 004C9AD0h"
 "	      004f7139    add esp,0Ch"
@@ -14727,97 +14727,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f713c    mov eax,5B4978h"
 "	      004f7141    add eax,210h"
-"	      004f7146    mov [ebp-4],eax"
+"	      004f7146    mov htd,eax"
 );
 // LINE 4676:
 	asm( 
-"	      004f7149    mov eax,[ebp-4]"
+"	      004f7149    mov eax,htd"
 "	      004f714c    add eax,0Ch"
-"	      004f714f    mov [ebp-3Ch],eax"
+"	      004f714f    mov pvals[0],eax"
 );
 // LINE 4677:
 	asm( 
-"	      004f7152    mov eax,[ebp-4]"
+"	      004f7152    mov eax,htd"
 "	      004f7155    add eax,10h"
-"	      004f7158    mov [ebp-38h],eax"
+"	      004f7158    mov pvals[1],eax"
 );
 // LINE 4678:
 	asm( 
-"	      004f715b    mov eax,[ebp-4]"
+"	      004f715b    mov eax,htd"
 "	      004f715e    add eax,14h"
-"	      004f7161    mov [ebp-34h],eax"
+"	      004f7161    mov pvals[2],eax"
 );
 // LINE 4679:
 	asm( 
-"	      004f7164    mov eax,[ebp-4]"
+"	      004f7164    mov eax,htd"
 "	      004f7167    add eax,1Ch"
-"	      004f716a    mov [ebp-30h],eax"
+"	      004f716a    mov pvals[3],eax"
 );
 // LINE 4680:
 	asm( 
-"	      004f716d    mov eax,[ebp-4]"
+"	      004f716d    mov eax,htd"
 "	      004f7170    add eax,20h"
-"	      004f7173    mov [ebp-2Ch],eax"
+"	      004f7173    mov pvals[4],eax"
 );
 // LINE 4681:
 	asm( 
-"	      004f7176    mov eax,[ebp-4]"
+"	      004f7176    mov eax,htd"
 "	      004f7179    add eax,24h"
-"	      004f717c    mov [ebp-28h],eax"
+"	      004f717c    mov pvals[5],eax"
 );
 // LINE 4682:
 	asm( 
-"	      004f717f    mov eax,[ebp-4]"
+"	      004f717f    mov eax,htd"
 "	      004f7182    add eax,28h"
-"	      004f7185    mov [ebp-24h],eax"
+"	      004f7185    mov pvals[6],eax"
 );
 // LINE 4683:
 	asm( 
-"	      004f7188    mov eax,[ebp-4]"
+"	      004f7188    mov eax,htd"
 "	      004f718b    add eax,2Ch"
-"	      004f718e    mov [ebp-20h],eax"
+"	      004f718e    mov pvals[7],eax"
 );
 // LINE 4684:
 	asm( 
-"	      004f7191    mov eax,[ebp-4]"
+"	      004f7191    mov eax,htd"
 "	      004f7194    add eax,8"
-"	      004f7197    mov [ebp-1Ch],eax"
+"	      004f7197    mov pvals[8],eax"
 );
 // LINE 4685:
 	asm( 
-"	      004f719a    mov eax,[ebp-4]"
+"	      004f719a    mov eax,htd"
 "	      004f719d    add eax,18h"
-"	      004f71a0    mov [ebp-18h],eax"
+"	      004f71a0    mov pvals[9],eax"
 );
 // LINE 4686:
 	asm( 
-"	      004f71a3    mov eax,[ebp-4]"
+"	      004f71a3    mov eax,htd"
 "	      004f71a6    add eax,44h"
-"	      004f71a9    mov [ebp-14h],eax"
+"	      004f71a9    mov pvals[10],eax"
 );
 // LINE 4687:
 	asm( 
-"	      004f71ac    mov eax,[ebp-4]"
+"	      004f71ac    mov eax,htd"
 "	      004f71af    add eax,48h"
-"	      004f71b2    mov [ebp-10h],eax"
+"	      004f71b2    mov pvals[11],eax"
 );
 // LINE 4688:
 	asm( 
-"	      004f71b5    mov eax,[ebp-4]"
+"	      004f71b5    mov eax,htd"
 "	      004f71b8    add eax,4Ch"
-"	      004f71bb    mov [ebp-0Ch],eax"
+"	      004f71bb    mov pvals[12],eax"
 );
 // LINE 4689:
 	asm( 
-"	      004f71be    mov eax,[ebp-4]"
+"	      004f71be    mov eax,htd"
 "	      004f71c1    add eax,40h"
-"	      004f71c4    mov [ebp-8],eax"
+"	      004f71c4    mov pvals[13],eax"
 );
 // LINE 4691:
 	asm( 
 "	      004f71c7    push 5B4D08h"
 "	      004f71cc    push 0Eh"
-"	      004f71ce    lea eax,[ebp-3Ch]"
+"	      004f71ce    lea eax,pvals[0]"
 "	      004f71d1    push eax"
 "	      004f71d2    call 004C9AD0h"
 "	      004f71d7    add esp,0Ch"
@@ -14826,97 +14826,97 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f71da    mov eax,5B4978h"
 "	      004f71df    add eax,268h"
-"	      004f71e4    mov [ebp-4],eax"
+"	      004f71e4    mov htd,eax"
 );
 // LINE 4695:
 	asm( 
-"	      004f71e7    mov eax,[ebp-4]"
+"	      004f71e7    mov eax,htd"
 "	      004f71ea    add eax,0Ch"
-"	      004f71ed    mov [ebp-3Ch],eax"
+"	      004f71ed    mov pvals[0],eax"
 );
 // LINE 4696:
 	asm( 
-"	      004f71f0    mov eax,[ebp-4]"
+"	      004f71f0    mov eax,htd"
 "	      004f71f3    add eax,10h"
-"	      004f71f6    mov [ebp-38h],eax"
+"	      004f71f6    mov pvals[1],eax"
 );
 // LINE 4697:
 	asm( 
-"	      004f71f9    mov eax,[ebp-4]"
+"	      004f71f9    mov eax,htd"
 "	      004f71fc    add eax,14h"
-"	      004f71ff    mov [ebp-34h],eax"
+"	      004f71ff    mov pvals[2],eax"
 );
 // LINE 4698:
 	asm( 
-"	      004f7202    mov eax,[ebp-4]"
+"	      004f7202    mov eax,htd"
 "	      004f7205    add eax,1Ch"
-"	      004f7208    mov [ebp-30h],eax"
+"	      004f7208    mov pvals[3],eax"
 );
 // LINE 4699:
 	asm( 
-"	      004f720b    mov eax,[ebp-4]"
+"	      004f720b    mov eax,htd"
 "	      004f720e    add eax,20h"
-"	      004f7211    mov [ebp-2Ch],eax"
+"	      004f7211    mov pvals[4],eax"
 );
 // LINE 4700:
 	asm( 
-"	      004f7214    mov eax,[ebp-4]"
+"	      004f7214    mov eax,htd"
 "	      004f7217    add eax,24h"
-"	      004f721a    mov [ebp-28h],eax"
+"	      004f721a    mov pvals[5],eax"
 );
 // LINE 4701:
 	asm( 
-"	      004f721d    mov eax,[ebp-4]"
+"	      004f721d    mov eax,htd"
 "	      004f7220    add eax,28h"
-"	      004f7223    mov [ebp-24h],eax"
+"	      004f7223    mov pvals[6],eax"
 );
 // LINE 4702:
 	asm( 
-"	      004f7226    mov eax,[ebp-4]"
+"	      004f7226    mov eax,htd"
 "	      004f7229    add eax,2Ch"
-"	      004f722c    mov [ebp-20h],eax"
+"	      004f722c    mov pvals[7],eax"
 );
 // LINE 4703:
 	asm( 
-"	      004f722f    mov eax,[ebp-4]"
+"	      004f722f    mov eax,htd"
 "	      004f7232    add eax,8"
-"	      004f7235    mov [ebp-1Ch],eax"
+"	      004f7235    mov pvals[8],eax"
 );
 // LINE 4704:
 	asm( 
-"	      004f7238    mov eax,[ebp-4]"
+"	      004f7238    mov eax,htd"
 "	      004f723b    add eax,18h"
-"	      004f723e    mov [ebp-18h],eax"
+"	      004f723e    mov pvals[9],eax"
 );
 // LINE 4705:
 	asm( 
-"	      004f7241    mov eax,[ebp-4]"
+"	      004f7241    mov eax,htd"
 "	      004f7244    add eax,44h"
-"	      004f7247    mov [ebp-14h],eax"
+"	      004f7247    mov pvals[10],eax"
 );
 // LINE 4706:
 	asm( 
-"	      004f724a    mov eax,[ebp-4]"
+"	      004f724a    mov eax,htd"
 "	      004f724d    add eax,48h"
-"	      004f7250    mov [ebp-10h],eax"
+"	      004f7250    mov pvals[11],eax"
 );
 // LINE 4707:
 	asm( 
-"	      004f7253    mov eax,[ebp-4]"
+"	      004f7253    mov eax,htd"
 "	      004f7256    add eax,4Ch"
-"	      004f7259    mov [ebp-0Ch],eax"
+"	      004f7259    mov pvals[12],eax"
 );
 // LINE 4708:
 	asm( 
-"	      004f725c    mov eax,[ebp-4]"
+"	      004f725c    mov eax,htd"
 "	      004f725f    add eax,40h"
-"	      004f7262    mov [ebp-8],eax"
+"	      004f7262    mov pvals[13],eax"
 );
 // LINE 4710:
 	asm( 
 "	      004f7265    push 5B4D10h"
 "	      004f726a    push 0Eh"
-"	      004f726c    lea eax,[ebp-3Ch]"
+"	      004f726c    lea eax,pvals[0]"
 "	      004f726f    push eax"
 "	      004f7270    call 004C9AD0h"
 "	      004f7275    add esp,0Ch"
@@ -14925,184 +14925,184 @@ void S3HeliTweakInit() {
 	asm( 
 "	      004f7278    mov eax,5B4978h"
 "	      004f727d    add eax,2C0h"
-"	      004f7282    mov [ebp-4],eax"
+"	      004f7282    mov htd,eax"
 );
 // LINE 4714:
 	asm( 
-"	      004f7285    mov eax,[ebp-4]"
+"	      004f7285    mov eax,htd"
 "	      004f7288    add eax,0Ch"
-"	      004f728b    mov [ebp-3Ch],eax"
+"	      004f728b    mov pvals[0],eax"
 );
 // LINE 4715:
 	asm( 
-"	      004f728e    mov eax,[ebp-4]"
+"	      004f728e    mov eax,htd"
 "	      004f7291    add eax,10h"
-"	      004f7294    mov [ebp-38h],eax"
+"	      004f7294    mov pvals[1],eax"
 );
 // LINE 4716:
 	asm( 
-"	      004f7297    mov eax,[ebp-4]"
+"	      004f7297    mov eax,htd"
 "	      004f729a    add eax,14h"
-"	      004f729d    mov [ebp-34h],eax"
+"	      004f729d    mov pvals[2],eax"
 );
 // LINE 4717:
 	asm( 
-"	      004f72a0    mov eax,[ebp-4]"
+"	      004f72a0    mov eax,htd"
 "	      004f72a3    add eax,1Ch"
-"	      004f72a6    mov [ebp-30h],eax"
+"	      004f72a6    mov pvals[3],eax"
 );
 // LINE 4718:
 	asm( 
-"	      004f72a9    mov eax,[ebp-4]"
+"	      004f72a9    mov eax,htd"
 "	      004f72ac    add eax,20h"
-"	      004f72af    mov [ebp-2Ch],eax"
+"	      004f72af    mov pvals[4],eax"
 );
 // LINE 4719:
 	asm( 
-"	      004f72b2    mov eax,[ebp-4]"
+"	      004f72b2    mov eax,htd"
 "	      004f72b5    add eax,24h"
-"	      004f72b8    mov [ebp-28h],eax"
+"	      004f72b8    mov pvals[5],eax"
 );
 // LINE 4720:
 	asm( 
-"	      004f72bb    mov eax,[ebp-4]"
+"	      004f72bb    mov eax,htd"
 "	      004f72be    add eax,28h"
-"	      004f72c1    mov [ebp-24h],eax"
+"	      004f72c1    mov pvals[6],eax"
 );
 // LINE 4721:
 	asm( 
-"	      004f72c4    mov eax,[ebp-4]"
+"	      004f72c4    mov eax,htd"
 "	      004f72c7    add eax,2Ch"
-"	      004f72ca    mov [ebp-20h],eax"
+"	      004f72ca    mov pvals[7],eax"
 );
 // LINE 4722:
 	asm( 
-"	      004f72cd    mov eax,[ebp-4]"
+"	      004f72cd    mov eax,htd"
 "	      004f72d0    add eax,8"
-"	      004f72d3    mov [ebp-1Ch],eax"
+"	      004f72d3    mov pvals[8],eax"
 );
 // LINE 4723:
 	asm( 
-"	      004f72d6    mov eax,[ebp-4]"
+"	      004f72d6    mov eax,htd"
 "	      004f72d9    add eax,18h"
-"	      004f72dc    mov [ebp-18h],eax"
+"	      004f72dc    mov pvals[9],eax"
 );
 // LINE 4724:
 	asm( 
-"	      004f72df    mov eax,[ebp-4]"
+"	      004f72df    mov eax,htd"
 "	      004f72e2    add eax,44h"
-"	      004f72e5    mov [ebp-14h],eax"
+"	      004f72e5    mov pvals[10],eax"
 );
 // LINE 4725:
 	asm( 
-"	      004f72e8    mov eax,[ebp-4]"
+"	      004f72e8    mov eax,htd"
 "	      004f72eb    add eax,48h"
-"	      004f72ee    mov [ebp-10h],eax"
+"	      004f72ee    mov pvals[11],eax"
 );
 // LINE 4726:
 	asm( 
-"	      004f72f1    mov eax,[ebp-4]"
+"	      004f72f1    mov eax,htd"
 "	      004f72f4    add eax,4Ch"
-"	      004f72f7    mov [ebp-0Ch],eax"
+"	      004f72f7    mov pvals[12],eax"
 );
 // LINE 4727:
 	asm( 
-"	      004f72fa    mov eax,[ebp-4]"
+"	      004f72fa    mov eax,htd"
 "	      004f72fd    add eax,40h"
-"	      004f7300    mov [ebp-8],eax"
+"	      004f7300    mov pvals[13],eax"
 );
 // LINE 4729:
 	asm( 
 "	      004f7303    push 5B4D1Ch"
 "	      004f7308    push 0Eh"
-"	      004f730a    lea eax,[ebp-3Ch]"
+"	      004f730a    lea eax,pvals[0]"
 "	      004f730d    push eax"
 "	      004f730e    call 004C9AD0h"
 "	      004f7313    add esp,0Ch"
 );
 // LINE 4731:
 	asm( 
-"	      004f7316    mov dword ptr [ebp-3Ch],5B48C4h"
+"	      004f7316    mov pvals[0],5B48C4h"
 );
 // LINE 4732:
 	asm( 
-"	      004f731d    mov dword ptr [ebp-38h],5B48C8h"
+"	      004f731d    mov pvals[1],5B48C8h"
 );
 // LINE 4733:
 	asm( 
-"	      004f7324    mov dword ptr [ebp-34h],5B48CCh"
+"	      004f7324    mov pvals[2],5B48CCh"
 );
 // LINE 4734:
 	asm( 
-"	      004f732b    mov dword ptr [ebp-30h],5B48C0h"
+"	      004f732b    mov pvals[3],5B48C0h"
 );
 // LINE 4735:
 	asm( 
-"	      004f7332    mov dword ptr [ebp-2Ch],5B48D0h"
+"	      004f7332    mov pvals[4],5B48D0h"
 );
 // LINE 4737:
 	asm( 
 "	      004f7339    push 5B4D24h"
 "	      004f733e    push 5"
-"	      004f7340    lea eax,[ebp-3Ch]"
+"	      004f7340    lea eax,pvals[0]"
 "	      004f7343    push eax"
 "	      004f7344    call 004C9AD0h"
 "	      004f7349    add esp,0Ch"
 );
 // LINE 4739:
 	asm( 
-"	      004f734c    mov dword ptr [ebp-3Ch],5B48D4h"
+"	      004f734c    mov pvals[0],5B48D4h"
 );
 // LINE 4740:
 	asm( 
-"	      004f7353    mov dword ptr [ebp-38h],5B48D8h"
+"	      004f7353    mov pvals[1],5B48D8h"
 );
 // LINE 4741:
 	asm( 
-"	      004f735a    mov dword ptr [ebp-34h],5B48DCh"
+"	      004f735a    mov pvals[2],5B48DCh"
 );
 // LINE 4742:
 	asm( 
-"	      004f7361    mov dword ptr [ebp-30h],5B48E0h"
+"	      004f7361    mov pvals[3],5B48E0h"
 );
 // LINE 4743:
 	asm( 
-"	      004f7368    mov dword ptr [ebp-2Ch],5B48E4h"
+"	      004f7368    mov pvals[4],5B48E4h"
 );
 // LINE 4744:
 	asm( 
-"	      004f736f    mov dword ptr [ebp-28h],5B48E8h"
+"	      004f736f    mov pvals[5],5B48E8h"
 );
 // LINE 4746:
 	asm( 
 "	      004f7376    push 5B4D34h"
 "	      004f737b    push 6"
-"	      004f737d    lea eax,[ebp-3Ch]"
+"	      004f737d    lea eax,pvals[0]"
 "	      004f7380    push eax"
 "	      004f7381    call 004C9AD0h"
 "	      004f7386    add esp,0Ch"
 );
 // LINE 4748:
 	asm( 
-"	      004f7389    mov dword ptr [ebp-3Ch],5B48ECh"
+"	      004f7389    mov pvals[0],5B48ECh"
 );
 // LINE 4749:
 	asm( 
-"	      004f7390    mov dword ptr [ebp-38h],5B48F0h"
+"	      004f7390    mov pvals[1],5B48F0h"
 );
 // LINE 4750:
 	asm( 
-"	      004f7397    mov dword ptr [ebp-34h],5B48FCh"
+"	      004f7397    mov pvals[2],5B48FCh"
 );
 // LINE 4751:
 	asm( 
-"	      004f739e    mov dword ptr [ebp-30h],5B48F8h"
+"	      004f739e    mov pvals[3],5B48F8h"
 );
 // LINE 4753:
 	asm( 
 "	      004f73a5    push 5B4D44h"
 "	      004f73aa    push 4"
-"	      004f73ac    lea eax,[ebp-3Ch]"
+"	      004f73ac    lea eax,pvals[0]"
 "	      004f73af    push eax"
 "	      004f73b0    call 004C9AD0h"
 "	      004f73b5    add esp,0Ch"
@@ -15132,17 +15132,17 @@ int32_t S3HeliGetRepairRate(struct _HELI_DATA* hd) {
 );
 // LINE 4763:
 	asm( 
-"	      004f73c6    mov eax,[ebp+8]"
+"	      004f73c6    mov eax,hd"
 "	      004f73c9    mov eax,[eax]"
 "	      004f73cb    mov ecx,eax"
 "	      004f73cd    lea eax,[eax+eax*4]"
 "	      004f73d0    lea eax,[ecx+eax*2]"
 "	      004f73d3    lea eax,[eax*8+5B4978h]"
-"	      004f73da    mov [ebp-4],eax"
+"	      004f73da    mov htd,eax"
 );
 // LINE 4764:
 	asm( 
-"	      004f73dd    mov eax,[ebp-4]"
+"	      004f73dd    mov eax,htd"
 "	      004f73e0    mov eax,[eax+50h]"
 "	      004f73e3    jmp near ptr 004F73E8h"
 );
@@ -15171,17 +15171,17 @@ int32_t S3HeliGetFuelRate(struct _HELI_DATA* hd) {
 );
 // LINE 4771:
 	asm( 
-"	      004f73f6    mov eax,[ebp+8]"
+"	      004f73f6    mov eax,hd"
 "	      004f73f9    mov eax,[eax]"
 "	      004f73fb    mov ecx,eax"
 "	      004f73fd    lea eax,[eax+eax*4]"
 "	      004f7400    lea eax,[ecx+eax*2]"
 "	      004f7403    lea eax,[eax*8+5B4978h]"
-"	      004f740a    mov [ebp-4],eax"
+"	      004f740a    mov htd,eax"
 );
 // LINE 4772:
 	asm( 
-"	      004f740d    mov eax,[ebp-4]"
+"	      004f740d    mov eax,htd"
 "	      004f7410    mov eax,[eax+54h]"
 "	      004f7413    jmp near ptr 004F7418h"
 );
@@ -15212,32 +15212,32 @@ long S3GetFullRepairCost(struct _HELI_DATA* hd) {
 );
 // LINE 4784:
 	asm( 
-"	      004f7426    mov eax,[ebp+8]"
+"	      004f7426    mov eax,hd"
 "	      004f7429    push eax"
 "	      004f742a    call 004F73BDh"
 "	      004f742f    add esp,4"
-"	      004f7432    mov [ebp-4],eax"
+"	      004f7432    mov repair_rate,eax"
 );
 // LINE 4785:
 	asm( 
-"	      004f7435    mov eax,[ebp+8]"
+"	      004f7435    mov eax,hd"
 "	      004f7438    mov eax,[eax+0D0h]"
-"	      004f743e    mov [ebp-8],eax"
+"	      004f743e    mov current_damage,eax"
 );
 // LINE 4786:
 	asm( 
-"	      004f7441    mov eax,[ebp+8]"
+"	      004f7441    mov eax,hd"
 "	      004f7444    push eax"
 "	      004f7445    call 004F75B5h"
 "	      004f744a    add esp,4"
-"	      004f744d    mov [ebp-0Ch],eax"
+"	      004f744d    mov max_damage,eax"
 );
 // LINE 4787:
 	asm( 
-"	      004f7450    mov eax,[ebp-4]"
+"	      004f7450    mov eax,repair_rate"
 "	      004f7453    push eax"
-"	      004f7454    mov eax,[ebp-0Ch]"
-"	      004f7457    sub eax,[ebp-8]"
+"	      004f7454    mov eax,max_damage"
+"	      004f7457    sub eax,current_damage"
 "	      004f745a    shl eax,10h"
 "	      004f745d    push eax"
 "	      004f745e    call 004D19BDh"
@@ -15272,51 +15272,51 @@ void S3HeliPurchaseRepairs(struct _HELI_DATA* hd, long lPurchaseBucks) {
 );
 // LINE 4804:
 	asm( 
-"	      004f747c    mov eax,[ebp+8]"
+"	      004f747c    mov eax,hd"
 "	      004f747f    push eax"
 "	      004f7480    call 004F73BDh"
 "	      004f7485    add esp,4"
-"	      004f7488    mov [ebp-4],eax"
+"	      004f7488    mov repair_rate,eax"
 );
 // LINE 4805:
 	asm( 
-"	      004f748b    mov eax,[ebp+8]"
+"	      004f748b    mov eax,hd"
 "	      004f748e    mov eax,[eax+0D0h]"
-"	      004f7494    mov [ebp-8],eax"
+"	      004f7494    mov current_damage,eax"
 );
 // LINE 4806:
 	asm( 
-"	      004f7497    mov eax,[ebp+8]"
+"	      004f7497    mov eax,hd"
 "	      004f749a    push eax"
 "	      004f749b    call 004F75B5h"
 "	      004f74a0    add esp,4"
-"	      004f74a3    mov [ebp-0Ch],eax"
+"	      004f74a3    mov max_damage,eax"
 );
 // LINE 4808:
 	asm( 
-"	      004f74a6    mov eax,[ebp-4]"
+"	      004f74a6    mov eax,repair_rate"
 "	      004f74a9    push eax"
-"	      004f74aa    mov eax,[ebp+0Ch]"
+"	      004f74aa    mov eax,lPurchaseBucks"
 "	      004f74ad    shl eax,10h"
 "	      004f74b0    push eax"
 "	      004f74b1    call 004D19BDh"
 "	      004f74b6    add esp,8"
 "	      004f74b9    sar eax,10h"
-"	      004f74bc    add eax,[ebp-8]"
-"	      004f74bf    mov ecx,[ebp+8]"
+"	      004f74bc    add eax,current_damage"
+"	      004f74bf    mov ecx,hd"
 "	      004f74c2    mov [ecx+0D0h],eax"
 );
 // LINE 4809:
 	asm( 
-"	      004f74c8    mov eax,[ebp+8]"
-"	      004f74cb    mov ecx,[ebp-0Ch]"
+"	      004f74c8    mov eax,hd"
+"	      004f74cb    mov ecx,max_damage"
 "	      004f74ce    cmp [eax+0D0h],ecx"
 "	      004f74d4    jle near ptr 004F74E6h"
 );
 // LINE 4810:
 	asm( 
-"	      004f74da    mov eax,[ebp-0Ch]"
-"	      004f74dd    mov ecx,[ebp+8]"
+"	      004f74da    mov eax,max_damage"
+"	      004f74dd    mov ecx,hd"
 "	      004f74e0    mov [ecx+0D0h],eax"
 );
 // LINE 4811:
@@ -15346,32 +15346,32 @@ long S3GetFullRefuelCost(struct _HELI_DATA* hd) {
 );
 // LINE 4824:
 	asm( 
-"	      004f74f4    mov eax,[ebp+8]"
+"	      004f74f4    mov eax,hd"
 "	      004f74f7    push eax"
 "	      004f74f8    call 004F73EDh"
 "	      004f74fd    add esp,4"
-"	      004f7500    mov [ebp-4],eax"
+"	      004f7500    mov fuel_purchase_rate,eax"
 );
 // LINE 4825:
 	asm( 
-"	      004f7503    mov eax,[ebp+8]"
+"	      004f7503    mov eax,hd"
 "	      004f7506    mov eax,[eax+320h]"
-"	      004f750c    mov [ebp-8],eax"
+"	      004f750c    mov current_fuel,eax"
 );
 // LINE 4826:
 	asm( 
-"	      004f750f    mov eax,[ebp+8]"
+"	      004f750f    mov eax,hd"
 "	      004f7512    push eax"
 "	      004f7513    call 004F75FEh"
 "	      004f7518    add esp,4"
-"	      004f751b    mov [ebp-0Ch],eax"
+"	      004f751b    mov max_fuel,eax"
 );
 // LINE 4827:
 	asm( 
-"	      004f751e    mov eax,[ebp-4]"
+"	      004f751e    mov eax,fuel_purchase_rate"
 "	      004f7521    push eax"
-"	      004f7522    mov eax,[ebp-0Ch]"
-"	      004f7525    sub eax,[ebp-8]"
+"	      004f7522    mov eax,max_fuel"
+"	      004f7525    sub eax,current_fuel"
 "	      004f7528    push eax"
 "	      004f7529    call 004D19BDh"
 "	      004f752e    add esp,8"
@@ -15405,51 +15405,51 @@ void S3HeliPurchaseFuel(struct _HELI_DATA* hd, long lPurchaseBucks) {
 );
 // LINE 4843:
 	asm( 
-"	      004f7547    mov eax,[ebp+8]"
+"	      004f7547    mov eax,hd"
 "	      004f754a    push eax"
 "	      004f754b    call 004F73EDh"
 "	      004f7550    add esp,4"
-"	      004f7553    mov [ebp-4],eax"
+"	      004f7553    mov fuel_purchase_rate,eax"
 );
 // LINE 4844:
 	asm( 
-"	      004f7556    mov eax,[ebp+8]"
+"	      004f7556    mov eax,hd"
 "	      004f7559    mov eax,[eax+320h]"
-"	      004f755f    mov [ebp-8],eax"
+"	      004f755f    mov current_fuel,eax"
 );
 // LINE 4845:
 	asm( 
-"	      004f7562    mov eax,[ebp+8]"
+"	      004f7562    mov eax,hd"
 "	      004f7565    push eax"
 "	      004f7566    call 004F75FEh"
 "	      004f756b    add esp,4"
-"	      004f756e    mov [ebp-0Ch],eax"
+"	      004f756e    mov max_fuel,eax"
 );
 // LINE 4847:
 	asm( 
-"	      004f7571    mov eax,[ebp-4]"
+"	      004f7571    mov eax,fuel_purchase_rate"
 "	      004f7574    push eax"
-"	      004f7575    mov eax,[ebp+0Ch]"
+"	      004f7575    mov eax,lPurchaseBucks"
 "	      004f7578    shl eax,10h"
 "	      004f757b    push eax"
 "	      004f757c    call 004D19BDh"
 "	      004f7581    add esp,8"
-"	      004f7584    mov ecx,[ebp-8]"
+"	      004f7584    mov ecx,current_fuel"
 "	      004f7587    add ecx,eax"
-"	      004f7589    mov eax,[ebp+8]"
+"	      004f7589    mov eax,hd"
 "	      004f758c    mov [eax+320h],ecx"
 );
 // LINE 4848:
 	asm( 
-"	      004f7592    mov eax,[ebp+8]"
-"	      004f7595    mov ecx,[ebp-0Ch]"
+"	      004f7592    mov eax,hd"
+"	      004f7595    mov ecx,max_fuel"
 "	      004f7598    cmp [eax+320h],ecx"
 "	      004f759e    jle near ptr 004F75B0h"
 );
 // LINE 4849:
 	asm( 
-"	      004f75a4    mov eax,[ebp-0Ch]"
-"	      004f75a7    mov ecx,[ebp+8]"
+"	      004f75a4    mov eax,max_fuel"
+"	      004f75a7    mov ecx,hd"
 "	      004f75aa    mov [ecx+320h],eax"
 );
 // LINE 4850:
@@ -15477,17 +15477,17 @@ int32_t S3HeliGetMaximumDamage(struct _HELI_DATA* hd) {
 );
 // LINE 4858:
 	asm( 
-"	      004f75be    mov eax,[ebp+8]"
+"	      004f75be    mov eax,hd"
 "	      004f75c1    mov eax,[eax]"
 "	      004f75c3    mov ecx,eax"
 "	      004f75c5    lea eax,[eax+eax*4]"
 "	      004f75c8    lea eax,[ecx+eax*2]"
 "	      004f75cb    lea eax,[eax*8+5B4978h]"
-"	      004f75d2    mov [ebp-4],eax"
+"	      004f75d2    mov htd,eax"
 );
 // LINE 4859:
 	asm( 
-"	      004f75d5    mov eax,[ebp-4]"
+"	      004f75d5    mov eax,htd"
 "	      004f75d8    mov eax,[eax+4Ch]"
 "	      004f75db    jmp near ptr 004F75E0h"
 );
@@ -15513,7 +15513,7 @@ int32_t S3HeliGetCurrentDamage(struct _HELI_DATA* hd) {
 );
 // LINE 4867:
 	asm( 
-"	      004f75eb    mov eax,[ebp+8]"
+"	      004f75eb    mov eax,hd"
 "	      004f75ee    mov eax,[eax+0D0h]"
 "	      004f75f4    jmp near ptr 004F75F9h"
 );
@@ -15542,17 +15542,17 @@ int32_t S3HeliGetMaximumFuel(struct _HELI_DATA* hd) {
 );
 // LINE 4875:
 	asm( 
-"	      004f7607    mov eax,[ebp+8]"
+"	      004f7607    mov eax,hd"
 "	      004f760a    mov eax,[eax]"
 "	      004f760c    mov ecx,eax"
 "	      004f760e    lea eax,[eax+eax*4]"
 "	      004f7611    lea eax,[ecx+eax*2]"
 "	      004f7614    lea eax,[eax*8+5B4978h]"
-"	      004f761b    mov [ebp-4],eax"
+"	      004f761b    mov htd,eax"
 );
 // LINE 4876:
 	asm( 
-"	      004f761e    mov eax,[ebp-4]"
+"	      004f761e    mov eax,htd"
 "	      004f7621    mov eax,[eax+40h]"
 "	      004f7624    jmp near ptr 004F7629h"
 );
@@ -15578,7 +15578,7 @@ void S3HeliCommand(int32_t nCommand) {
 );
 // LINE 4889:
 	asm( 
-"	      004f7634    cmp dword ptr [ebp+8],3"
+"	      004f7634    cmp nCommand,3"
 "	      004f7638    jne near ptr 004F76F3h"
 );
 // LINE 4891:
@@ -15659,7 +15659,7 @@ void S3HeliCommand(int32_t nCommand) {
 // LINE 4904:
 	asm( 
 "	      004f76ee    jmp near ptr 004F7816h"
-"	      004f76f3    cmp dword ptr [ebp+8],15h"
+"	      004f76f3    cmp nCommand,15h"
 "	      004f76f7    jne near ptr 004F773Dh"
 );
 // LINE 4906:
@@ -15684,7 +15684,7 @@ void S3HeliCommand(int32_t nCommand) {
 // LINE 4908:
 	asm( 
 "	      004f7738    jmp near ptr 004F7816h"
-"	      004f773d    cmp dword ptr [ebp+8],16h"
+"	      004f773d    cmp nCommand,16h"
 "	      004f7741    jne near ptr 004F7787h"
 );
 // LINE 4910:
@@ -15709,7 +15709,7 @@ void S3HeliCommand(int32_t nCommand) {
 // LINE 4912:
 	asm( 
 "	      004f7782    jmp near ptr 004F7816h"
-"	      004f7787    cmp dword ptr [ebp+8],17h"
+"	      004f7787    cmp nCommand,17h"
 "	      004f778b    jne near ptr 004F77D1h"
 );
 // LINE 4914:
@@ -15734,7 +15734,7 @@ void S3HeliCommand(int32_t nCommand) {
 // LINE 4916:
 	asm( 
 "	      004f77cc    jmp near ptr 004F7816h"
-"	      004f77d1    cmp dword ptr [ebp+8],18h"
+"	      004f77d1    cmp nCommand,18h"
 "	      004f77d5    jne near ptr 004F7816h"
 );
 // LINE 4918:
@@ -15782,7 +15782,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 // LINE 4937:
 	asm( 
 "	      004f7824    mov eax,5B4D5Ch"
-"	      004f7829    lea ecx,[ebp-30h]"
+"	      004f7829    lea ecx,szSoundFiles[0][0]"
 "	      004f782c    mov edx,[eax]"
 "	      004f782e    mov [ecx],edx"
 "	      004f7830    mov edx,[eax+4]"
@@ -15791,7 +15791,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 "	      004f783a    mov [ecx+8],ax"
 "	      004f783e    mov word ptr [ebp-26h],0"
 "	      004f7844    mov eax,5B4D74h"
-"	      004f7849    lea ecx,[ebp-24h]"
+"	      004f7849    lea ecx,szSoundFiles[1][0]"
 "	      004f784c    mov edx,[eax]"
 "	      004f784e    mov [ecx],edx"
 "	      004f7850    mov edx,[eax+4]"
@@ -15800,9 +15800,9 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 "	      004f785a    mov [ecx+8],dx"
 "	      004f785e    mov al,[eax+0Ah]"
 "	      004f7861    mov [ecx+0Ah],al"
-"	      004f7864    mov byte ptr [ebp-19h],0"
+"	      004f7864    mov szSoundFiles[1][11],0"
 "	      004f7868    mov eax,5B4D8Ch"
-"	      004f786d    lea ecx,[ebp-18h]"
+"	      004f786d    lea ecx,szSoundFiles[2][0]"
 "	      004f7870    mov edx,[eax]"
 "	      004f7872    mov [ecx],edx"
 "	      004f7874    mov edx,[eax+4]"
@@ -15811,7 +15811,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 "	      004f787e    mov [ecx+8],ax"
 "	      004f7882    mov word ptr [ebp-0Eh],0"
 "	      004f7888    mov eax,5B4DA8h"
-"	      004f788d    lea ecx,[ebp-0Ch]"
+"	      004f788d    lea ecx,szSoundFiles[3][0]"
 "	      004f7890    mov edx,[eax]"
 "	      004f7892    mov [ecx],edx"
 "	      004f7894    mov edx,[eax+4]"
@@ -15821,7 +15821,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 );
 // LINE 4938:
 	asm( 
-"	      004f78a0    mov eax,[ebp+8]"
+"	      004f78a0    mov eax,nMessageType"
 "	      004f78a3    lea eax,[eax+eax*2]"
 "	      004f78a6    lea eax,[ebp+eax*4-30h]"
 "	      004f78aa    push eax"
@@ -15842,7 +15842,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 );
 // LINE 4943:
 	asm( 
-"	      004f78d0    mov eax,[ebp+8]"
+"	      004f78d0    mov eax,nMessageType"
 "	      004f78d3    push eax"
 "	      004f78d4    push 0FFFFFFFFh"
 "	      004f78d6    mov eax,ds:[5B4968h]"
@@ -15887,22 +15887,22 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4967:
 	asm( 
-"	      004f7903    mov eax,[ebp+8]"
+"	      004f7903    mov eax,hd"
 "	      004f7906    mov eax,[eax+1Ch]"
 "	      004f7909    and eax,0FFh"
-"	      004f790e    mov ecx,[ebp+8]"
+"	      004f790e    mov ecx,hd"
 "	      004f7911    mov ecx,[ecx+18h]"
 "	      004f7914    and ecx,0FFh"
 "	      004f791a    shl ecx,0Ah"
 "	      004f791d    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f7924    mov [ebp-6Ch],eax"
+"	      004f7924    mov cptr,eax"
 );
 // LINE 4969:
 	asm( 
-"	      004f7927    mov eax,[ebp+8]"
+"	      004f7927    mov eax,hd"
 "	      004f792a    mov eax,[eax+0A4h]"
 "	      004f7930    add eax,18h"
-"	      004f7933    lea ecx,[ebp-64h]"
+"	      004f7933    lea ecx,loc.x"
 "	      004f7936    mov edx,[eax]"
 "	      004f7938    mov [ecx],edx"
 "	      004f793a    mov edx,[eax+4]"
@@ -15912,7 +15912,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4971:
 	asm( 
-"	      004f7946    mov eax,[ebp+8]"
+"	      004f7946    mov eax,hd"
 "	      004f7949    test byte ptr [eax+8],1"
 "	      004f794d    je near ptr 004F7999h"
 "	      004f7953    cmp dword ptr ds:[5B4DB8h],1"
@@ -15920,11 +15920,11 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4973:
 	asm( 
-"	      004f7960    mov eax,[ebp+8]"
+"	      004f7960    mov eax,hd"
 "	      004f7963    mov eax,[eax+0A4h]"
 "	      004f7969    add eax,24h"
 "	      004f796c    push eax"
-"	      004f796d    lea eax,[ebp-54h]"
+"	      004f796d    lea eax,vec.x"
 "	      004f7970    push eax"
 "	      004f7971    push 59B518h"
 "	      004f7976    call 004D2094h"
@@ -15932,41 +15932,41 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4974:
 	asm( 
-"	      004f797e    mov eax,[ebp-54h]"
+"	      004f797e    mov eax,vec.x"
 "	      004f7981    shl eax,4"
-"	      004f7984    add [ebp-64h],eax"
+"	      004f7984    add loc.x,eax"
 );
 // LINE 4975:
 	asm( 
-"	      004f7987    mov eax,[ebp-50h]"
+"	      004f7987    mov eax,vec.y"
 "	      004f798a    shl eax,4"
-"	      004f798d    add [ebp-60h],eax"
+"	      004f798d    add loc.y,eax"
 );
 // LINE 4976:
 	asm( 
-"	      004f7990    mov eax,[ebp-4Ch]"
+"	      004f7990    mov eax,vec.z"
 "	      004f7993    shl eax,4"
-"	      004f7996    add [ebp-5Ch],eax"
+"	      004f7996    add loc.z,eax"
 );
 // LINE 4980:
 	asm( 
-"	      004f7999    mov eax,[ebp+8]"
+"	      004f7999    mov eax,hd"
 "	      004f799c    mov eax,[eax+170h]"
 "	      004f79a2    mov [ebp-70h],eax"
 "	      004f79a5    jmp near ptr 004F7DB2h"
 );
 // LINE 4984:
 	asm( 
-"	      004f79aa    mov eax,[ebp-6Ch]"
+"	      004f79aa    mov eax,cptr"
 "	      004f79ad    push eax"
-"	      004f79ae    mov eax,[ebp+8]"
+"	      004f79ae    mov eax,hd"
 "	      004f79b1    push eax"
 "	      004f79b2    call 004F85E8h"
 "	      004f79b7    add esp,8"
 );
 // LINE 4985:
 	asm( 
-"	      004f79ba    mov eax,[ebp+8]"
+"	      004f79ba    mov eax,hd"
 "	      004f79bd    inc dword ptr [eax+170h]"
 );
 // LINE 4986:
@@ -15976,21 +15976,21 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 4989:
 	asm( 
 "	      004f79c8    push 1"
-"	      004f79ca    mov eax,[ebp+8]"
+"	      004f79ca    mov eax,hd"
 "	      004f79cd    mov eax,[eax+0A4h]"
 "	      004f79d3    add eax,18h"
 "	      004f79d6    push eax"
-"	      004f79d7    mov eax,[ebp-6Ch]"
+"	      004f79d7    mov eax,cptr"
 "	      004f79da    push eax"
 "	      004f79db    call 005240DCh"
 "	      004f79e0    add esp,0Ch"
 );
 // LINE 4991:
 	asm( 
-"	      004f79e3    mov dword ptr [ebp-58h],0"
+"	      004f79e3    mov i,0"
 "	      004f79ea    jmp near ptr 004F79F2h"
-"	      004f79ef    inc dword ptr [ebp-58h]"
-"	      004f79f2    cmp dword ptr [ebp-58h],5"
+"	      004f79ef    inc i"
+"	      004f79f2    cmp i,5"
 "	      004f79f6    jge near ptr 004F7AB2h"
 );
 // LINE 4993:
@@ -16003,18 +16003,18 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 "	      004f7a0c    mov eax,edx"
 "	      004f7a0e    shl eax,10h"
 "	      004f7a11    add eax,320000h"
-"	      004f7a16    mov [ebp-8],eax"
+"	      004f7a16    mov speed,eax"
 );
 // LINE 4994:
 	asm( 
-"	      004f7a19    lea eax,[ebp-48h]"
+"	      004f7a19    lea eax,mat[0][0]"
 "	      004f7a1c    push eax"
 "	      004f7a1d    call 004D1FF1h"
 "	      004f7a22    add esp,4"
 );
 // LINE 4995:
 	asm( 
-"	      004f7a25    lea eax,[ebp-48h]"
+"	      004f7a25    lea eax,mat[0][0]"
 "	      004f7a28    push eax"
 "	      004f7a29    call 0056EC50h"
 "	      004f7a2e    mov ecx,0E10h"
@@ -16029,7 +16029,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4996:
 	asm( 
-"	      004f7a47    lea eax,[ebp-48h]"
+"	      004f7a47    lea eax,mat[0][0]"
 "	      004f7a4a    push eax"
 "	      004f7a4b    call 0056EC50h"
 "	      004f7a50    mov ecx,0C8h"
@@ -16044,9 +16044,9 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 4997:
 	asm( 
-"	      004f7a6d    lea eax,[ebp-48h]"
+"	      004f7a6d    lea eax,mat[0][0]"
 "	      004f7a70    push eax"
-"	      004f7a71    lea eax,[ebp-54h]"
+"	      004f7a71    lea eax,vec.x"
 "	      004f7a74    push eax"
 "	      004f7a75    push 59B518h"
 "	      004f7a7a    call 004D2094h"
@@ -16055,17 +16055,17 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5008:
 	asm( 
 "	      004f7a82    push 0FFFFFFFFh"
-"	      004f7a84    mov eax,[ebp-8]"
+"	      004f7a84    mov eax,speed"
 "	      004f7a87    push eax"
-"	      004f7a88    mov eax,[ebp+8]"
+"	      004f7a88    mov eax,hd"
 "	      004f7a8b    mov eax,[eax+0A4h]"
 "	      004f7a91    push eax"
 "	      004f7a92    push 3"
-"	      004f7a94    lea eax,[ebp-54h]"
+"	      004f7a94    lea eax,vec.x"
 "	      004f7a97    push eax"
-"	      004f7a98    lea eax,[ebp-64h]"
+"	      004f7a98    lea eax,loc.x"
 "	      004f7a9b    push eax"
-"	      004f7a9c    mov eax,[ebp+8]"
+"	      004f7a9c    mov eax,hd"
 "	      004f7a9f    add eax,18h"
 "	      004f7aa2    push eax"
 "	      004f7aa3    push 4"
@@ -16080,25 +16080,25 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	asm( 
 "	      004f7ab2    push 0FFFFFFFFh"
 "	      004f7ab4    push 4"
-"	      004f7ab6    mov eax,[ebp-5Ch]"
-"	      004f7ab9    mov ecx,[ebp-6Ch]"
+"	      004f7ab6    mov eax,loc.z"
+"	      004f7ab9    mov ecx,cptr"
 "	      004f7abc    movsx ecx,word ptr [ecx+6]"
 "	      004f7ac0    shl ecx,10h"
 "	      004f7ac3    sub eax,ecx"
 "	      004f7ac5    push eax"
-"	      004f7ac6    mov eax,[ebp-60h]"
-"	      004f7ac9    mov ecx,[ebp-6Ch]"
+"	      004f7ac6    mov eax,loc.y"
+"	      004f7ac9    mov ecx,cptr"
 "	      004f7acc    movsx ecx,word ptr [ecx+4]"
 "	      004f7ad0    shl ecx,10h"
 "	      004f7ad3    sub eax,ecx"
 "	      004f7ad5    push eax"
-"	      004f7ad6    mov eax,[ebp-64h]"
-"	      004f7ad9    mov ecx,[ebp-6Ch]"
+"	      004f7ad6    mov eax,loc.x"
+"	      004f7ad9    mov ecx,cptr"
 "	      004f7adc    movsx ecx,word ptr [ecx+2]"
 "	      004f7ae0    shl ecx,10h"
 "	      004f7ae3    sub eax,ecx"
 "	      004f7ae5    push eax"
-"	      004f7ae6    mov eax,[ebp-6Ch]"
+"	      004f7ae6    mov eax,cptr"
 "	      004f7ae9    push eax"
 "	      004f7aea    call 00523F50h"
 "	      004f7aef    add esp,18h"
@@ -16106,7 +16106,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5018:
 	asm( 
 "	      004f7af2    push 0"
-"	      004f7af4    mov eax,[ebp+8]"
+"	      004f7af4    mov eax,hd"
 "	      004f7af7    mov eax,[eax+0A4h]"
 "	      004f7afd    add eax,18h"
 "	      004f7b00    push eax"
@@ -16116,13 +16116,13 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 5022:
 	asm( 
-"	      004f7b0b    mov eax,[ebp+8]"
+"	      004f7b0b    mov eax,hd"
 "	      004f7b0e    test byte ptr [eax+8],1"
 "	      004f7b12    je near ptr 004F7B81h"
 );
 // LINE 5024:
 	asm( 
-"	      004f7b18    mov eax,[ebp+8]"
+"	      004f7b18    mov eax,hd"
 "	      004f7b1b    mov eax,[eax+0A4h]"
 "	      004f7b21    add eax,18h"
 "	      004f7b24    mov ecx,607258h"
@@ -16155,12 +16155,12 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 5032:
 	asm( 
-"	      004f7b66    mov eax,[ebp+8]"
+"	      004f7b66    mov eax,hd"
 "	      004f7b69    mov dword ptr [eax+16Ch],30000h"
 );
 // LINE 5033:
 	asm( 
-"	      004f7b73    mov eax,[ebp+8]"
+"	      004f7b73    mov eax,hd"
 "	      004f7b76    inc dword ptr [eax+170h]"
 );
 // LINE 5035:
@@ -16169,7 +16169,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 5039:
 	asm( 
-"	      004f7b81    mov eax,[ebp+8]"
+"	      004f7b81    mov eax,hd"
 "	      004f7b84    mov dword ptr [eax+170h],4"
 );
 // LINE 5042:
@@ -16200,21 +16200,21 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 "	      004f7bc1    xor eax,eax"
 "	      004f7bc3    sub eax,ds:[5B4768h]"
 "	      004f7bc9    neg eax"
-"	      004f7bcb    mov ecx,[ebp+8]"
+"	      004f7bcb    mov ecx,hd"
 "	      004f7bce    sub [ecx+16Ch],eax"
 );
 // LINE 5050:
 	asm( 
-"	      004f7bd4    mov eax,[ebp+8]"
+"	      004f7bd4    mov eax,hd"
 "	      004f7bd7    cmp dword ptr [eax+16Ch],10000h"
 "	      004f7be1    jle near ptr 004F7BFEh"
 );
 // LINE 5052:
 	asm( 
 "	      004f7be7    push 1"
-"	      004f7be9    lea eax,[ebp-64h]"
+"	      004f7be9    lea eax,loc.x"
 "	      004f7bec    push eax"
-"	      004f7bed    mov eax,[ebp-6Ch]"
+"	      004f7bed    mov eax,cptr"
 "	      004f7bf0    push eax"
 "	      004f7bf1    call 005240DCh"
 "	      004f7bf6    add esp,0Ch"
@@ -16226,27 +16226,27 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5056:
 	asm( 
 "	      004f7bfe    push 4"
-"	      004f7c00    lea eax,[ebp-64h]"
+"	      004f7c00    lea eax,loc.x"
 "	      004f7c03    push eax"
-"	      004f7c04    mov eax,[ebp-6Ch]"
+"	      004f7c04    mov eax,cptr"
 "	      004f7c07    push eax"
 "	      004f7c08    call 005240DCh"
 "	      004f7c0d    add esp,0Ch"
 );
 // LINE 5059:
 	asm( 
-"	      004f7c10    mov eax,[ebp+8]"
+"	      004f7c10    mov eax,hd"
 "	      004f7c13    cmp dword ptr [eax+16Ch],0"
 "	      004f7c1a    jge near ptr 004F7C36h"
 );
 // LINE 5061:
 	asm( 
-"	      004f7c20    mov eax,[ebp+8]"
+"	      004f7c20    mov eax,hd"
 "	      004f7c23    mov dword ptr [eax+16Ch],80000h"
 );
 // LINE 5062:
 	asm( 
-"	      004f7c2d    mov eax,[ebp+8]"
+"	      004f7c2d    mov eax,hd"
 "	      004f7c30    inc dword ptr [eax+170h]"
 );
 // LINE 5064:
@@ -16277,23 +16277,23 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 "	      004f7c69    xor eax,eax"
 "	      004f7c6b    sub eax,ds:[5B4768h]"
 "	      004f7c71    neg eax"
-"	      004f7c73    mov ecx,[ebp+8]"
+"	      004f7c73    mov ecx,hd"
 "	      004f7c76    sub [ecx+16Ch],eax"
 );
 // LINE 5072:
 	asm( 
-"	      004f7c7c    mov eax,[ebp+8]"
+"	      004f7c7c    mov eax,hd"
 "	      004f7c7f    cmp dword ptr [eax+16Ch],0"
 "	      004f7c86    jge near ptr 004F7CA2h"
 );
 // LINE 5074:
 	asm( 
-"	      004f7c8c    mov eax,[ebp+8]"
+"	      004f7c8c    mov eax,hd"
 "	      004f7c8f    mov dword ptr [eax+16Ch],80000h"
 );
 // LINE 5075:
 	asm( 
-"	      004f7c99    mov eax,[ebp+8]"
+"	      004f7c99    mov eax,hd"
 "	      004f7c9c    inc dword ptr [eax+170h]"
 );
 // LINE 5077:
@@ -16302,22 +16302,22 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 );
 // LINE 5080:
 	asm( 
-"	      004f7ca7    mov dword ptr [ebp-58h],0"
+"	      004f7ca7    mov i,0"
 "	      004f7cae    jmp near ptr 004F7CB6h"
-"	      004f7cb3    inc dword ptr [ebp-58h]"
-"	      004f7cb6    cmp dword ptr [ebp-58h],0Ah"
+"	      004f7cb3    inc i"
+"	      004f7cb6    cmp i,0Ah"
 "	      004f7cba    jge near ptr 004F7CEBh"
 );
 // LINE 5082:
 	asm( 
-"	      004f7cc0    mov eax,[ebp-58h]"
-"	      004f7cc3    mov ecx,[ebp+8]"
+"	      004f7cc0    mov eax,i"
+"	      004f7cc3    mov ecx,hd"
 "	      004f7cc6    cmp [eax*4+5B4940h],ecx"
 "	      004f7ccd    jne near ptr 004F7CE6h"
 );
 // LINE 5084:
 	asm( 
-"	      004f7cd3    mov eax,[ebp-58h]"
+"	      004f7cd3    mov eax,i"
 "	      004f7cd6    mov dword ptr [eax*4+5B4940h],0"
 );
 // LINE 5085:
@@ -16331,21 +16331,21 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5089:
 	asm( 
 "	      004f7ceb    call 00428F4Ah"
-"	      004f7cf0    mov [ebp-68h],eax"
+"	      004f7cf0    mov up,eax"
 );
 // LINE 5090:
 	asm( 
 "	      004f7cf3    mov eax,1"
-"	      004f7cf8    mov edx,[ebp+8]"
+"	      004f7cf8    mov edx,hd"
 "	      004f7cfb    mov cl,[edx]"
 "	      004f7cfd    shl eax,cl"
 "	      004f7cff    not eax"
-"	      004f7d01    mov ecx,[ebp-68h]"
+"	      004f7d01    mov ecx,up"
 "	      004f7d04    and [ecx+44h],eax"
 );
 // LINE 5092:
 	asm( 
-"	      004f7d07    mov eax,[ebp+8]"
+"	      004f7d07    mov eax,hd"
 "	      004f7d0a    test byte ptr [eax+8],1"
 "	      004f7d0e    je near ptr 004F7D9Eh"
 );
@@ -16358,54 +16358,54 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5098:
 	asm( 
 "	      004f7d1e    call 004F81BBh"
-"	      004f7d23    mov [ebp-4],eax"
+"	      004f7d23    mov freepad,eax"
 );
 // LINE 5102:
 	asm( 
-"	      004f7d26    mov eax,[ebp-4]"
+"	      004f7d26    mov eax,freepad"
 "	      004f7d29    mov ecx,[eax]"
 "	      004f7d2b    mov eax,[eax+4]"
-"	      004f7d2e    mov edx,[ebp+8]"
+"	      004f7d2e    mov edx,hd"
 "	      004f7d31    add edx,18h"
 "	      004f7d34    mov [edx],ecx"
 "	      004f7d36    mov [edx+4],eax"
 );
 // LINE 5103:
 	asm( 
-"	      004f7d39    mov eax,[ebp-4]"
+"	      004f7d39    mov eax,freepad"
 "	      004f7d3c    mov eax,[eax+4]"
 "	      004f7d3f    and eax,0FFh"
-"	      004f7d44    mov ecx,[ebp-4]"
+"	      004f7d44    mov ecx,freepad"
 "	      004f7d47    mov ecx,[ecx]"
 "	      004f7d49    and ecx,0FFh"
 "	      004f7d4f    shl ecx,0Ah"
 "	      004f7d52    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f7d59    mov [ebp-6Ch],eax"
+"	      004f7d59    mov cptr,eax"
 );
 // LINE 5104:
 	asm( 
-"	      004f7d5c    mov eax,[ebp-6Ch]"
+"	      004f7d5c    mov eax,cptr"
 "	      004f7d5f    movsx eax,word ptr [eax+2]"
 "	      004f7d63    shl eax,10h"
-"	      004f7d66    mov ecx,[ebp+8]"
+"	      004f7d66    mov ecx,hd"
 "	      004f7d69    mov ecx,[ecx+0A4h]"
 "	      004f7d6f    mov [ecx+18h],eax"
 );
 // LINE 5105:
 	asm( 
-"	      004f7d72    mov eax,[ebp-6Ch]"
+"	      004f7d72    mov eax,cptr"
 "	      004f7d75    movsx eax,word ptr [eax+4]"
 "	      004f7d79    shl eax,10h"
-"	      004f7d7c    mov ecx,[ebp+8]"
+"	      004f7d7c    mov ecx,hd"
 "	      004f7d7f    mov ecx,[ecx+0A4h]"
 "	      004f7d85    mov [ecx+1Ch],eax"
 );
 // LINE 5106:
 	asm( 
-"	      004f7d88    mov eax,[ebp-6Ch]"
+"	      004f7d88    mov eax,cptr"
 "	      004f7d8b    movsx eax,word ptr [eax+6]"
 "	      004f7d8f    shl eax,10h"
-"	      004f7d92    mov ecx,[ebp+8]"
+"	      004f7d92    mov ecx,hd"
 "	      004f7d95    mov ecx,[ecx+0A4h]"
 "	      004f7d9b    mov [ecx+20h],eax"
 );
@@ -16466,35 +16466,35 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5131:
 	asm( 
-"	      004f7def    mov dword ptr [ebp-4],0"
+"	      004f7def    mov ret_code,0"
 );
 // LINE 5134:
 	asm( 
-"	      004f7df6    mov eax,[ebp+8]"
+"	      004f7df6    mov eax,hd"
 "	      004f7df9    mov eax,[eax+1Ch]"
 "	      004f7dfc    and eax,0FFh"
-"	      004f7e01    mov ecx,[ebp+8]"
+"	      004f7e01    mov ecx,hd"
 "	      004f7e04    mov ecx,[ecx+18h]"
 "	      004f7e07    and ecx,0FFh"
 "	      004f7e0d    shl ecx,0Ah"
 "	      004f7e10    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f7e17    mov [ebp-18h],eax"
+"	      004f7e17    mov cptr,eax"
 );
 // LINE 5137:
 	asm( 
-"	      004f7e1a    mov eax,[ebp-18h]"
+"	      004f7e1a    mov eax,cptr"
 "	      004f7e1d    mov eax,[eax+10h]"
-"	      004f7e20    mov [ebp-8],eax"
+"	      004f7e20    mov dyobj,eax"
 );
 // LINE 5138:
 	asm( 
-"	      004f7e23    cmp dword ptr [ebp-8],0"
+"	      004f7e23    cmp dyobj,0"
 "	      004f7e27    je near ptr 004F7F70h"
 );
 // LINE 5141:
 	asm( 
-"	      004f7e2d    mov eax,[ebp+8]"
-"	      004f7e30    mov ecx,[ebp-8]"
+"	      004f7e2d    mov eax,hd"
+"	      004f7e30    mov ecx,dyobj"
 "	      004f7e33    cmp [eax+0A4h],ecx"
 "	      004f7e39    jne near ptr 004F7E44h"
 );
@@ -16504,7 +16504,7 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5148:
 	asm( 
-"	      004f7e44    mov eax,[ebp-8]"
+"	      004f7e44    mov eax,dyobj"
 "	      004f7e47    movsx eax,word ptr [eax+0Ch]"
 "	      004f7e4b    test al,20h"
 "	      004f7e4d    je near ptr 004F7E58h"
@@ -16515,7 +16515,7 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5154:
 	asm( 
-"	      004f7e58    mov eax,[ebp-8]"
+"	      004f7e58    mov eax,dyobj"
 "	      004f7e5b    movsx eax,word ptr [eax+0Ch]"
 "	      004f7e5f    test al,40h"
 "	      004f7e61    je near ptr 004F7E6Ch"
@@ -16526,10 +16526,10 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5159:
 	asm( 
-"	      004f7e6c    mov eax,[ebp+8]"
+"	      004f7e6c    mov eax,hd"
 "	      004f7e6f    mov eax,[eax+0A4h]"
 "	      004f7e75    add eax,18h"
-"	      004f7e78    lea ecx,[ebp-14h]"
+"	      004f7e78    lea ecx,loc.x"
 "	      004f7e7b    mov edx,[eax]"
 "	      004f7e7d    mov [ecx],edx"
 "	      004f7e7f    mov edx,[eax+4]"
@@ -16539,48 +16539,48 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5167:
 	asm( 
-"	      004f7e8b    mov eax,[ebp-8]"
+"	      004f7e8b    mov eax,dyobj"
 "	      004f7e8e    mov eax,[eax+18h]"
-"	      004f7e91    mov ecx,[ebp-8]"
+"	      004f7e91    mov ecx,dyobj"
 "	      004f7e94    add eax,[ecx+10h]"
-"	      004f7e97    cmp eax,[ebp-14h]"
+"	      004f7e97    cmp eax,loc.x"
 "	      004f7e9a    jle near ptr 004F7F35h"
-"	      004f7ea0    mov eax,[ebp-8]"
+"	      004f7ea0    mov eax,dyobj"
 "	      004f7ea3    mov eax,[eax+18h]"
-"	      004f7ea6    mov ecx,[ebp-8]"
+"	      004f7ea6    mov ecx,dyobj"
 "	      004f7ea9    sub eax,[ecx+10h]"
-"	      004f7eac    cmp eax,[ebp-14h]"
+"	      004f7eac    cmp eax,loc.x"
 "	      004f7eaf    jge near ptr 004F7F35h"
-"	      004f7eb5    mov eax,[ebp-8]"
-"	      004f7eb8    mov ecx,[ebp-10h]"
+"	      004f7eb5    mov eax,dyobj"
+"	      004f7eb8    mov ecx,loc.y"
 "	      004f7ebb    cmp [eax+1Ch],ecx"
 "	      004f7ebe    jge near ptr 004F7F35h"
-"	      004f7ec4    mov eax,[ebp-8]"
+"	      004f7ec4    mov eax,dyobj"
 "	      004f7ec7    mov eax,[eax+14h]"
-"	      004f7eca    mov ecx,[ebp-8]"
+"	      004f7eca    mov ecx,dyobj"
 "	      004f7ecd    add eax,[ecx+1Ch]"
-"	      004f7ed0    cmp eax,[ebp-10h]"
+"	      004f7ed0    cmp eax,loc.y"
 "	      004f7ed3    jle near ptr 004F7F35h"
-"	      004f7ed9    mov eax,[ebp-8]"
+"	      004f7ed9    mov eax,dyobj"
 "	      004f7edc    mov eax,[eax+20h]"
-"	      004f7edf    mov ecx,[ebp-8]"
+"	      004f7edf    mov ecx,dyobj"
 "	      004f7ee2    add eax,[ecx+10h]"
-"	      004f7ee5    cmp eax,[ebp-0Ch]"
+"	      004f7ee5    cmp eax,loc.z"
 "	      004f7ee8    jle near ptr 004F7F35h"
-"	      004f7eee    mov eax,[ebp-8]"
+"	      004f7eee    mov eax,dyobj"
 "	      004f7ef1    mov eax,[eax+20h]"
-"	      004f7ef4    mov ecx,[ebp-8]"
+"	      004f7ef4    mov ecx,dyobj"
 "	      004f7ef7    sub eax,[ecx+10h]"
-"	      004f7efa    cmp eax,[ebp-0Ch]"
+"	      004f7efa    cmp eax,loc.z"
 "	      004f7efd    jge near ptr 004F7F35h"
 );
 // LINE 5170:
 	asm( 
 "	      004f7f03    push 0"
 "	      004f7f05    push 0FFFFFFFFh"
-"	      004f7f07    mov eax,[ebp-8]"
+"	      004f7f07    mov eax,dyobj"
 "	      004f7f0a    push eax"
-"	      004f7f0b    mov eax,[ebp+8]"
+"	      004f7f0b    mov eax,hd"
 "	      004f7f0e    mov eax,[eax+0A4h]"
 "	      004f7f14    push eax"
 "	      004f7f15    push 0Ch"
@@ -16589,26 +16589,26 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 );
 // LINE 5177:
 	asm( 
-"	      004f7f1f    mov eax,[ebp-8]"
+"	      004f7f1f    mov eax,dyobj"
 "	      004f7f22    movsx eax,word ptr [eax+0Ch]"
 "	      004f7f26    test al,8"
 "	      004f7f28    jne near ptr 004F7F35h"
 );
 // LINE 5178:
 	asm( 
-"	      004f7f2e    mov dword ptr [ebp-4],1"
+"	      004f7f2e    mov ret_code,1"
 );
 // LINE 5190:
 next_dyobj:
 	asm( 
-"	      004f7f35    mov eax,[ebp-8]"
+"	      004f7f35    mov eax,dyobj"
 "	      004f7f38    movsx eax,word ptr [eax+0Ch]"
 "	      004f7f3c    test al,4"
 "	      004f7f3e    je near ptr 004F7F63h"
 );
 // LINE 5192:
 	asm( 
-"	      004f7f44    mov eax,[ebp-8]"
+"	      004f7f44    mov eax,dyobj"
 "	      004f7f47    mov eax,[eax]"
 "	      004f7f49    mov eax,[eax]"
 "	      004f7f4b    mov eax,[eax]"
@@ -16619,7 +16619,7 @@ next_dyobj:
 "	      004f7f55    mov eax,[eax]"
 "	      004f7f57    mov eax,[eax]"
 "	      004f7f59    mov eax,[eax]"
-"	      004f7f5b    mov [ebp-8],eax"
+"	      004f7f5b    mov dyobj,eax"
 );
 // LINE 5194:
 	asm( 
@@ -16627,9 +16627,9 @@ next_dyobj:
 );
 // LINE 5195:
 	asm( 
-"	      004f7f63    mov eax,[ebp-8]"
+"	      004f7f63    mov eax,dyobj"
 "	      004f7f66    mov eax,[eax]"
-"	      004f7f68    mov [ebp-8],eax"
+"	      004f7f68    mov dyobj,eax"
 );
 // LINE 5196:
 	asm( 
@@ -16637,7 +16637,7 @@ next_dyobj:
 );
 // LINE 5198:
 	asm( 
-"	      004f7f70    mov eax,[ebp-4]"
+"	      004f7f70    mov eax,ret_code"
 "	      004f7f73    jmp near ptr 004F7F78h"
 );
 // LINE 5199:
@@ -16675,25 +16675,25 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5214:
 	asm( 
-"	      004f7f86    mov dword ptr [ebp-10h],0"
+"	      004f7f86    mov curr_dist,0"
 );
 // LINE 5215:
 	asm( 
-"	      004f7f8d    mov dword ptr [ebp-24h],0FFFFFFFFh"
+"	      004f7f8d    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 5217:
 	asm( 
-"	      004f7f94    mov dword ptr [ebp-2Ch],0"
+"	      004f7f94    mov stop_now,0"
 );
 // LINE 5225:
 	asm( 
-"	      004f7f9b    mov eax,[ebp+8]"
+"	      004f7f9b    mov eax,hit_type"
 "	      004f7f9e    mov [ebp-30h],eax"
 "	      004f7fa1    jmp near ptr 004F7FCDh"
 );
 // LINE 5228:
 	asm( 
-"	      004f7fa6    mov dword ptr [ebp-14h],3"
+"	      004f7fa6    mov spiral_dist,3"
 );
 // LINE 5229:
 	asm( 
@@ -16701,7 +16701,7 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5231:
 	asm( 
-"	      004f7fb2    mov dword ptr [ebp-14h],5"
+"	      004f7fb2    mov spiral_dist,5"
 );
 // LINE 5232:
 	asm( 
@@ -16726,41 +16726,41 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5238:
 	asm( 
-"	      004f7fe6    mov eax,[ebp+0Ch]"
+"	      004f7fe6    mov eax,cell"
 "	      004f7fe9    mov eax,[eax]"
-"	      004f7feb    mov [ebp-18h],eax"
+"	      004f7feb    mov x,eax"
 );
 // LINE 5239:
 	asm( 
-"	      004f7fee    mov eax,[ebp+0Ch]"
+"	      004f7fee    mov eax,cell"
 "	      004f7ff1    mov eax,[eax+4]"
-"	      004f7ff4    mov [ebp-1Ch],eax"
+"	      004f7ff4    mov y,eax"
 );
 // LINE 5247:
 	asm( 
-"	      004f7ff7    inc dword ptr [ebp-24h]"
+"	      004f7ff7    inc curr_dir"
 );
 // LINE 5248:
 	asm( 
-"	      004f7ffa    mov eax,[ebp-24h]"
+"	      004f7ffa    mov eax,curr_dir"
 "	      004f7ffd    mov [ebp-34h],eax"
 "	      004f8000    jmp near ptr 004F8063h"
 );
 // LINE 5252:
 	asm( 
-"	      004f8005    mov dword ptr [ebp-24h],0"
+"	      004f8005    mov curr_dir,0"
 );
 // LINE 5253:
 	asm( 
-"	      004f800c    inc dword ptr [ebp-10h]"
+"	      004f800c    inc curr_dist"
 );
 // LINE 5254:
 	asm( 
-"	      004f800f    mov dword ptr [ebp-4],0"
+"	      004f800f    mov xdir,0"
 );
 // LINE 5255:
 	asm( 
-"	      004f8016    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      004f8016    mov ydir,0FFFFFFFFh"
 );
 // LINE 5256:
 	asm( 
@@ -16768,11 +16768,11 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5258:
 	asm( 
-"	      004f8022    mov dword ptr [ebp-4],1"
+"	      004f8022    mov xdir,1"
 );
 // LINE 5259:
 	asm( 
-"	      004f8029    mov dword ptr [ebp-8],0"
+"	      004f8029    mov ydir,0"
 );
 // LINE 5260:
 	asm( 
@@ -16780,15 +16780,15 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5262:
 	asm( 
-"	      004f8035    inc dword ptr [ebp-10h]"
+"	      004f8035    inc curr_dist"
 );
 // LINE 5263:
 	asm( 
-"	      004f8038    mov dword ptr [ebp-4],0"
+"	      004f8038    mov xdir,0"
 );
 // LINE 5264:
 	asm( 
-"	      004f803f    mov dword ptr [ebp-8],1"
+"	      004f803f    mov ydir,1"
 );
 // LINE 5265:
 	asm( 
@@ -16796,11 +16796,11 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5267:
 	asm( 
-"	      004f804b    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      004f804b    mov xdir,0FFFFFFFFh"
 );
 // LINE 5268:
 	asm( 
-"	      004f8052    mov dword ptr [ebp-8],0"
+"	      004f8052    mov ydir,0"
 );
 // LINE 5269:
 	asm( 
@@ -16821,51 +16821,51 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5274:
 	asm( 
-"	      004f808b    mov eax,[ebp-10h]"
-"	      004f808e    cmp [ebp-14h],eax"
+"	      004f808b    mov eax,curr_dist"
+"	      004f808e    cmp spiral_dist,eax"
 "	      004f8091    jne near ptr 004F80A1h"
 );
 // LINE 5276:
 	asm( 
-"	      004f8097    dec dword ptr [ebp-10h]"
+"	      004f8097    dec curr_dist"
 );
 // LINE 5277:
 	asm( 
-"	      004f809a    mov dword ptr [ebp-2Ch],1"
+"	      004f809a    mov stop_now,1"
 );
 // LINE 5281:
 	asm( 
-"	      004f80a1    mov dword ptr [ebp-20h],0"
+"	      004f80a1    mov i,0"
 "	      004f80a8    jmp near ptr 004F80B0h"
-"	      004f80ad    inc dword ptr [ebp-20h]"
-"	      004f80b0    mov eax,[ebp-20h]"
-"	      004f80b3    cmp [ebp-10h],eax"
+"	      004f80ad    inc i"
+"	      004f80b0    mov eax,i"
+"	      004f80b3    cmp curr_dist,eax"
 "	      004f80b6    jle near ptr 004F81A2h"
 );
 // LINE 5284:
 	asm( 
-"	      004f80bc    mov eax,[ebp-1Ch]"
+"	      004f80bc    mov eax,y"
 "	      004f80bf    and eax,0FFh"
-"	      004f80c4    mov ecx,[ebp-18h]"
+"	      004f80c4    mov ecx,x"
 "	      004f80c7    and ecx,0FFh"
 "	      004f80cd    shl ecx,0Ah"
 "	      004f80d0    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f80d7    mov [ebp-28h],eax"
+"	      004f80d7    mov cptr,eax"
 );
 // LINE 5287:
 	asm( 
-"	      004f80da    mov eax,[ebp-28h]"
+"	      004f80da    mov eax,cptr"
 "	      004f80dd    mov eax,[eax+10h]"
-"	      004f80e0    mov [ebp-0Ch],eax"
+"	      004f80e0    mov dyobj,eax"
 );
 // LINE 5288:
 	asm( 
-"	      004f80e3    cmp dword ptr [ebp-0Ch],0"
+"	      004f80e3    cmp dyobj,0"
 "	      004f80e7    je near ptr 004F8191h"
 );
 // LINE 5291:
 	asm( 
-"	      004f80ed    mov eax,[ebp-0Ch]"
+"	      004f80ed    mov eax,dyobj"
 "	      004f80f0    movsx eax,word ptr [eax+0Ch]"
 "	      004f80f4    test al,4"
 "	      004f80f6    je near ptr 004F8101h"
@@ -16876,8 +16876,8 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5297:
 	asm( 
-"	      004f8101    mov eax,[ebp+10h]"
-"	      004f8104    cmp [ebp-0Ch],eax"
+"	      004f8101    mov eax,dyhitter"
+"	      004f8104    cmp dyobj,eax"
 "	      004f8107    jne near ptr 004F8112h"
 );
 // LINE 5299:
@@ -16886,7 +16886,7 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5303:
 	asm( 
-"	      004f8112    mov eax,[ebp-0Ch]"
+"	      004f8112    mov eax,dyobj"
 "	      004f8115    movsx eax,word ptr [eax+0Ch]"
 "	      004f8119    test al,20h"
 "	      004f811b    je near ptr 004F8126h"
@@ -16897,7 +16897,7 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5309:
 	asm( 
-"	      004f8126    mov eax,[ebp-0Ch]"
+"	      004f8126    mov eax,dyobj"
 "	      004f8129    movsx eax,word ptr [eax+0Ch]"
 "	      004f812d    test al,40h"
 "	      004f812f    je near ptr 004F813Ah"
@@ -16908,15 +16908,15 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 );
 // LINE 5315:
 	asm( 
-"	      004f813a    mov eax,[ebp+18h]"
+"	      004f813a    mov eax,xtra_msg"
 "	      004f813d    push eax"
-"	      004f813e    mov eax,[ebp+14h]"
+"	      004f813e    mov eax,mission_id"
 "	      004f8141    push eax"
-"	      004f8142    mov eax,[ebp-0Ch]"
+"	      004f8142    mov eax,dyobj"
 "	      004f8145    push eax"
-"	      004f8146    mov eax,[ebp+10h]"
+"	      004f8146    mov eax,dyhitter"
 "	      004f8149    push eax"
-"	      004f814a    mov eax,[ebp+8]"
+"	      004f814a    mov eax,hit_type"
 "	      004f814d    push eax"
 "	      004f814e    call 0051DA96h"
 "	      004f8153    add esp,14h"
@@ -16924,14 +16924,14 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 // LINE 5319:
 next_dyobj:
 	asm( 
-"	      004f8156    mov eax,[ebp-0Ch]"
+"	      004f8156    mov eax,dyobj"
 "	      004f8159    movsx eax,word ptr [eax+0Ch]"
 "	      004f815d    test al,4"
 "	      004f815f    je near ptr 004F8184h"
 );
 // LINE 5321:
 	asm( 
-"	      004f8165    mov eax,[ebp-0Ch]"
+"	      004f8165    mov eax,dyobj"
 "	      004f8168    mov eax,[eax]"
 "	      004f816a    mov eax,[eax]"
 "	      004f816c    mov eax,[eax]"
@@ -16942,7 +16942,7 @@ next_dyobj:
 "	      004f8176    mov eax,[eax]"
 "	      004f8178    mov eax,[eax]"
 "	      004f817a    mov eax,[eax]"
-"	      004f817c    mov [ebp-0Ch],eax"
+"	      004f817c    mov dyobj,eax"
 );
 // LINE 5323:
 	asm( 
@@ -16950,9 +16950,9 @@ next_dyobj:
 );
 // LINE 5324:
 	asm( 
-"	      004f8184    mov eax,[ebp-0Ch]"
+"	      004f8184    mov eax,dyobj"
 "	      004f8187    mov eax,[eax]"
-"	      004f8189    mov [ebp-0Ch],eax"
+"	      004f8189    mov dyobj,eax"
 );
 // LINE 5325:
 	asm( 
@@ -16960,13 +16960,13 @@ next_dyobj:
 );
 // LINE 5328:
 	asm( 
-"	      004f8191    mov eax,[ebp-4]"
-"	      004f8194    add [ebp-18h],eax"
+"	      004f8191    mov eax,xdir"
+"	      004f8194    add x,eax"
 );
 // LINE 5329:
 	asm( 
-"	      004f8197    mov eax,[ebp-8]"
-"	      004f819a    add [ebp-1Ch],eax"
+"	      004f8197    mov eax,ydir"
+"	      004f819a    add y,eax"
 );
 // LINE 5330:
 	asm( 
@@ -16974,7 +16974,7 @@ next_dyobj:
 );
 // LINE 5332:
 	asm( 
-"	      004f81a2    cmp dword ptr [ebp-2Ch],1"
+"	      004f81a2    cmp stop_now,1"
 "	      004f81a6    jne near ptr 004F81B1h"
 );
 // LINE 5333:
@@ -17013,58 +17013,58 @@ struct Point2d* S3HeliGetFreePad() {
 );
 // LINE 5355:
 	asm( 
-"	      004f81c4    mov dword ptr [ebp-10h],0"
+"	      004f81c4    mov noheliloc,0"
 );
 // LINE 5358:
 	asm( 
-"	      004f81cb    mov dword ptr [ebp-8],6C1190h"
+"	      004f81cb    mov pad,6C1190h"
 );
 // LINE 5361:
 	asm( 
 "	      004f81d2    jmp near ptr 004F81DBh"
-"	      004f81d7    add dword ptr [ebp-8],8"
+"	      004f81d7    add pad,8"
 "	      004f81db    mov eax,6C1190h"
 "	      004f81e0    add eax,60h"
-"	      004f81e3    cmp eax,[ebp-8]"
+"	      004f81e3    cmp eax,pad"
 "	      004f81e6    je near ptr 004F8263h"
 );
 // LINE 5364:
 	asm( 
-"	      004f81ec    mov eax,[ebp-8]"
+"	      004f81ec    mov eax,pad"
 "	      004f81ef    mov eax,[eax+4]"
 "	      004f81f2    and eax,0FFh"
-"	      004f81f7    mov ecx,[ebp-8]"
+"	      004f81f7    mov ecx,pad"
 "	      004f81fa    mov ecx,[ecx]"
 "	      004f81fc    and ecx,0FFh"
 "	      004f8202    shl ecx,0Ah"
 "	      004f8205    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f820c    mov [ebp-0Ch],eax"
+"	      004f820c    mov cptr,eax"
 );
 // LINE 5367:
 	asm( 
-"	      004f820f    mov eax,[ebp-0Ch]"
+"	      004f820f    mov eax,cptr"
 "	      004f8212    cmp dword ptr [eax+10h],0"
 "	      004f8216    jne near ptr 004F8224h"
 );
 // LINE 5368:
 	asm( 
-"	      004f821c    mov eax,[ebp-8]"
+"	      004f821c    mov eax,pad"
 "	      004f821f    jmp near ptr 004F826Bh"
 );
 // LINE 5371:
 	asm( 
-"	      004f8224    mov eax,[ebp-0Ch]"
+"	      004f8224    mov eax,cptr"
 "	      004f8227    mov eax,[eax+10h]"
-"	      004f822a    mov [ebp-4],eax"
+"	      004f822a    mov dyobj,eax"
 );
 // LINE 5372:
 	asm( 
-"	      004f822d    cmp dword ptr [ebp-4],0"
+"	      004f822d    cmp dyobj,0"
 "	      004f8231    je near ptr 004F8258h"
 );
 // LINE 5374:
 	asm( 
-"	      004f8237    mov eax,[ebp-4]"
+"	      004f8237    mov eax,dyobj"
 "	      004f823a    movsx eax,word ptr [eax+0Ch]"
 "	      004f823e    test al,4"
 "	      004f8240    je near ptr 004F824Bh"
@@ -17075,9 +17075,9 @@ struct Point2d* S3HeliGetFreePad() {
 );
 // LINE 5378:
 	asm( 
-"	      004f824b    mov eax,[ebp-4]"
+"	      004f824b    mov eax,dyobj"
 "	      004f824e    mov eax,[eax]"
-"	      004f8250    mov [ebp-4],eax"
+"	      004f8250    mov dyobj,eax"
 );
 // LINE 5379:
 	asm( 
@@ -17085,8 +17085,8 @@ struct Point2d* S3HeliGetFreePad() {
 );
 // LINE 5382:
 	asm( 
-"	      004f8258    mov eax,[ebp-8]"
-"	      004f825b    mov [ebp-10h],eax"
+"	      004f8258    mov eax,pad"
+"	      004f825b    mov noheliloc,eax"
 );
 // LINE 5386:
 contains_a_heli:
@@ -17095,7 +17095,7 @@ contains_a_heli:
 );
 // LINE 5390:
 	asm( 
-"	      004f8263    mov eax,[ebp-10h]"
+"	      004f8263    mov eax,noheliloc"
 "	      004f8266    jmp near ptr 004F826Bh"
 );
 // LINE 5391:
@@ -17123,27 +17123,27 @@ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 );
 // LINE 5405:
 	asm( 
-"	      004f8279    mov dword ptr [ebp-4],0"
+"	      004f8279    mov i,0"
 "	      004f8280    jmp near ptr 004F8288h"
-"	      004f8285    inc dword ptr [ebp-4]"
-"	      004f8288    cmp dword ptr [ebp-4],0Ah"
+"	      004f8285    inc i"
+"	      004f8288    cmp i,0Ah"
 "	      004f828c    jge near ptr 004F82D3h"
 );
 // LINE 5406:
 	asm( 
-"	      004f8292    mov eax,[ebp-4]"
+"	      004f8292    mov eax,i"
 "	      004f8295    mov ecx,eax"
 "	      004f8297    lea eax,[eax+eax*4]"
 "	      004f829a    lea eax,[eax+eax*8]"
 "	      004f829d    lea eax,[eax+eax*8]"
 "	      004f82a0    add eax,ecx"
-"	      004f82a2    mov ecx,[ebp+8]"
+"	      004f82a2    mov ecx,lHeliType"
 "	      004f82a5    cmp [eax*2+6BF1D0h],ecx"
 "	      004f82ac    jne near ptr 004F82CEh"
 );
 // LINE 5407:
 	asm( 
-"	      004f82b2    mov eax,[ebp-4]"
+"	      004f82b2    mov eax,i"
 "	      004f82b5    mov ecx,eax"
 "	      004f82b7    lea eax,[eax+eax*4]"
 "	      004f82ba    lea eax,[eax+eax*8]"
@@ -17186,21 +17186,21 @@ long S3HeliGetNewValue(long lHeliType) {
 );
 // LINE 5420:
 	asm( 
-"	      004f82e8    mov eax,[ebp+8]"
+"	      004f82e8    mov eax,lHeliType"
 "	      004f82eb    mov ecx,eax"
 "	      004f82ed    lea eax,[eax+eax*4]"
 "	      004f82f0    lea eax,[ecx+eax*2]"
 "	      004f82f3    lea eax,[eax*8+5B4978h]"
-"	      004f82fa    mov [ebp-4],eax"
+"	      004f82fa    mov htd,eax"
 );
 // LINE 5422:
 	asm( 
-"	      004f82fd    cmp dword ptr [ebp-4],0"
+"	      004f82fd    cmp htd,0"
 "	      004f8301    je near ptr 004F8312h"
 );
 // LINE 5425:
 	asm( 
-"	      004f8307    mov eax,[ebp-4]"
+"	      004f8307    mov eax,htd"
 "	      004f830a    mov eax,[eax+48h]"
 "	      004f830d    jmp near ptr 004F8319h"
 );
@@ -17236,52 +17236,52 @@ long S3HeliGetCurrentValue(long lHeliType) {
 );
 // LINE 5439:
 	asm( 
-"	      004f8327    mov eax,[ebp+8]"
+"	      004f8327    mov eax,lHeliType"
 "	      004f832a    push eax"
 "	      004f832b    call 004F8270h"
 "	      004f8330    add esp,4"
-"	      004f8333    mov [ebp-8],eax"
+"	      004f8333    mov hd,eax"
 );
 // LINE 5440:
 	asm( 
-"	      004f8336    mov eax,[ebp+8]"
+"	      004f8336    mov eax,lHeliType"
 "	      004f8339    mov ecx,eax"
 "	      004f833b    lea eax,[eax+eax*4]"
 "	      004f833e    lea eax,[ecx+eax*2]"
 "	      004f8341    lea eax,[eax*8+5B4978h]"
-"	      004f8348    mov [ebp-0Ch],eax"
+"	      004f8348    mov htd,eax"
 );
 // LINE 5443:
 	asm( 
-"	      004f834b    cmp dword ptr [ebp-8],0"
+"	      004f834b    cmp hd,0"
 "	      004f834f    je near ptr 004F839Ch"
 );
 // LINE 5448:
 	asm( 
 "	      004f8355    mov eax,ds:[5B48FCh]"
 "	      004f835a    push eax"
-"	      004f835b    mov eax,[ebp-8]"
+"	      004f835b    mov eax,hd"
 "	      004f835e    mov eax,[eax+324h]"
 "	      004f8364    push eax"
 "	      004f8365    call 004D19BDh"
 "	      004f836a    add esp,8"
-"	      004f836d    mov [ebp-4],eax"
+"	      004f836d    mov newval,eax"
 );
 // LINE 5449:
 	asm( 
-"	      004f8370    mov eax,[ebp-0Ch]"
+"	      004f8370    mov eax,htd"
 "	      004f8373    mov eax,[eax+48h]"
-"	      004f8376    mov ecx,[ebp-4]"
+"	      004f8376    mov ecx,newval"
 "	      004f8379    sar ecx,10h"
 "	      004f837c    sub eax,ecx"
-"	      004f837e    mov [ebp-4],eax"
+"	      004f837e    mov newval,eax"
 );
 // LINE 5452:
 	asm( 
-"	      004f8381    mov eax,[ebp-0Ch]"
+"	      004f8381    mov eax,htd"
 "	      004f8384    mov eax,[eax+48h]"
 "	      004f8387    sar eax,1"
-"	      004f838a    mov ecx,[ebp-4]"
+"	      004f838a    mov ecx,newval"
 "	      004f838d    cmp eax,ecx"
 "	      004f838f    jg near ptr 004F8397h"
 "	      004f8395    mov eax,ecx"
@@ -17318,27 +17318,27 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 );
 // LINE 5468:
 	asm( 
-"	      004f83b1    mov dword ptr [ebp-14h],7D0h"
+"	      004f83b1    mov lValues[0],7D0h"
 );
 // LINE 5469:
 	asm( 
-"	      004f83b8    mov dword ptr [ebp-10h],3E8h"
+"	      004f83b8    mov lValues[1],3E8h"
 );
 // LINE 5470:
 	asm( 
-"	      004f83bf    mov dword ptr [ebp-0Ch],7D0h"
+"	      004f83bf    mov lValues[2],7D0h"
 );
 // LINE 5471:
 	asm( 
-"	      004f83c6    mov dword ptr [ebp-8],64h"
+"	      004f83c6    mov lValues[3],64h"
 );
 // LINE 5472:
 	asm( 
-"	      004f83cd    mov dword ptr [ebp-4],7D0h"
+"	      004f83cd    mov lValues[4],7D0h"
 );
 // LINE 5476:
 	asm( 
-"	      004f83d4    cmp dword ptr [ebp+8],3"
+"	      004f83d4    cmp lEquipmentType,3"
 "	      004f83d8    jne near ptr 004F842Dh"
 );
 // LINE 5484:
@@ -17349,7 +17349,7 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 );
 // LINE 5485:
 	asm( 
-"	      004f83ed    mov eax,[ebp-8]"
+"	      004f83ed    mov eax,lValues[3]"
 "	      004f83f0    shl eax,2"
 "	      004f83f3    lea eax,[eax+eax*4]"
 "	      004f83f6    jmp near ptr 004F8439h"
@@ -17362,27 +17362,27 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	asm( 
 "	      004f8400    call 00428F4Ah"
 "	      004f8405    mov eax,[eax+54h]"
-"	      004f8408    mov [ebp-18h],eax"
+"	      004f8408    mov lTeargasCanisterCount,eax"
 );
 // LINE 5488:
 	asm( 
-"	      004f840b    cmp dword ptr [ebp-18h],0Ah"
+"	      004f840b    cmp lTeargasCanisterCount,0Ah"
 "	      004f840f    jle near ptr 004F841Ch"
 );
 // LINE 5489:
 	asm( 
-"	      004f8415    mov dword ptr [ebp-18h],0Ah"
+"	      004f8415    mov lTeargasCanisterCount,0Ah"
 );
 // LINE 5490:
 	asm( 
 "	      004f841c    mov eax,0Ah"
-"	      004f8421    sub eax,[ebp-18h]"
-"	      004f8424    imul eax,[ebp-8]"
+"	      004f8421    sub eax,lTeargasCanisterCount"
+"	      004f8424    imul eax,lValues[3]"
 "	      004f8428    jmp near ptr 004F8439h"
 );
 // LINE 5493:
 	asm( 
-"	      004f842d    mov eax,[ebp+8]"
+"	      004f842d    mov eax,lEquipmentType"
 "	      004f8430    mov eax,[ebp+eax*4-14h]"
 "	      004f8434    jmp near ptr 004F8439h"
 );
@@ -17412,7 +17412,7 @@ void S3HeliPurchaseTeargasCanisters(long lBucks) {
 "	      004f8447    call 00428F4Ah"
 "	      004f844c    mov [ebp-4],eax"
 "	      004f844f    mov ecx,64h"
-"	      004f8454    mov eax,[ebp+8]"
+"	      004f8454    mov eax,lBucks"
 "	      004f8457    cdq"
 "	      004f8458    idiv ecx"
 "	      004f845a    mov ecx,[ebp-4]"
@@ -17440,7 +17440,7 @@ long S3HeliGetEquipmentCurrentValue(long lEquipmentType) {
 );
 // LINE 5516:
 	asm( 
-"	      004f846b    mov eax,[ebp+8]"
+"	      004f846b    mov eax,lEquipmentType"
 "	      004f846e    push eax"
 "	      004f846f    call 004F83A8h"
 "	      004f8474    add esp,4"
@@ -17479,20 +17479,20 @@ void S3HeliMakeHelicopter(long lHeliType) {
 );
 // LINE 5529:
 	asm( 
-"	      004f849b    mov eax,[ebp+8]"
+"	      004f849b    mov eax,lHeliType"
 "	      004f849e    push eax"
 "	      004f849f    call 004F8270h"
 "	      004f84a4    add esp,4"
-"	      004f84a7    mov [ebp-8],eax"
+"	      004f84a7    mov hd,eax"
 );
 // LINE 5534:
 	asm( 
 "	      004f84aa    call 00428F4Ah"
-"	      004f84af    mov [ebp-0Ch],eax"
+"	      004f84af    mov up,eax"
 );
 // LINE 5537:
 	asm( 
-"	      004f84b2    mov eax,[ebp-0Ch]"
+"	      004f84b2    mov eax,up"
 "	      004f84b5    mov edx,1"
 "	      004f84ba    mov cl,[ebp+8]"
 "	      004f84bd    shl edx,cl"
@@ -17505,7 +17505,7 @@ void S3HeliMakeHelicopter(long lHeliType) {
 );
 // LINE 5540:
 	asm( 
-"	      004f84cd    cmp dword ptr [ebp+8],2"
+"	      004f84cd    cmp lHeliType,2"
 "	      004f84d1    jne near ptr 004F84F4h"
 "	      004f84d7    cmp dword ptr ds:[5B4920h],1"
 "	      004f84de    jne near ptr 004F84F4h"
@@ -17514,7 +17514,7 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	asm( 
 "	      004f84e4    mov eax,6C1190h"
 "	      004f84e9    add eax,68h"
-"	      004f84ec    mov [ebp-4],eax"
+"	      004f84ec    mov freepad,eax"
 );
 // LINE 5542:
 	asm( 
@@ -17523,25 +17523,25 @@ void S3HeliMakeHelicopter(long lHeliType) {
 // LINE 5543:
 	asm( 
 "	      004f84f4    call 004F81BBh"
-"	      004f84f9    mov [ebp-4],eax"
+"	      004f84f9    mov freepad,eax"
 );
 // LINE 5545:
 	asm( 
 "	      004f84fc    mov eax,1"
 "	      004f8501    mov cl,[ebp+8]"
 "	      004f8504    shl eax,cl"
-"	      004f8506    mov ecx,[ebp-0Ch]"
+"	      004f8506    mov ecx,up"
 "	      004f8509    or [ecx+44h],eax"
 );
 // LINE 5546:
 	asm( 
-"	      004f850c    mov eax,[ebp-4]"
+"	      004f850c    mov eax,freepad"
 "	      004f850f    mov eax,[eax+4]"
 "	      004f8512    push eax"
-"	      004f8513    mov eax,[ebp-4]"
+"	      004f8513    mov eax,freepad"
 "	      004f8516    mov eax,[eax]"
 "	      004f8518    push eax"
-"	      004f8519    mov eax,[ebp-8]"
+"	      004f8519    mov eax,hd"
 "	      004f851c    push eax"
 "	      004f851d    call 004EFFA0h"
 "	      004f8522    add esp,0Ch"
@@ -17574,15 +17574,15 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 );
 // LINE 5557:
 	asm( 
-"	      004f8533    mov eax,[ebp+8]"
+"	      004f8533    mov eax,lHeliType"
 "	      004f8536    push eax"
 "	      004f8537    call 004F8270h"
 "	      004f853c    add esp,4"
-"	      004f853f    mov [ebp-8],eax"
+"	      004f853f    mov hd,eax"
 );
 // LINE 5563:
 	asm( 
-"	      004f8542    cmp dword ptr [ebp-8],0"
+"	      004f8542    cmp hd,0"
 "	      004f8546    jne near ptr 004F8551h"
 );
 // LINE 5564:
@@ -17592,47 +17592,47 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 // LINE 5566:
 	asm( 
 "	      004f8551    call 00428F4Ah"
-"	      004f8556    mov [ebp-0Ch],eax"
+"	      004f8556    mov up,eax"
 );
 // LINE 5569:
 	asm( 
-"	      004f8559    mov dword ptr [ebp-4],0"
+"	      004f8559    mov i,0"
 "	      004f8560    jmp near ptr 004F8568h"
-"	      004f8565    inc dword ptr [ebp-4]"
-"	      004f8568    cmp dword ptr [ebp-4],0Ah"
+"	      004f8565    inc i"
+"	      004f8568    cmp i,0Ah"
 "	      004f856c    jge near ptr 004F85E3h"
 );
 // LINE 5571:
 	asm( 
-"	      004f8572    mov eax,[ebp-4]"
-"	      004f8575    mov ecx,[ebp-8]"
+"	      004f8572    mov eax,i"
+"	      004f8575    mov ecx,hd"
 "	      004f8578    cmp [eax*4+5B4940h],ecx"
 "	      004f857f    jne near ptr 004F85DEh"
 );
 // LINE 5573:
 	asm( 
-"	      004f8585    mov eax,[ebp-8]"
+"	      004f8585    mov eax,hd"
 "	      004f8588    mov eax,[eax+1Ch]"
 "	      004f858b    and eax,0FFh"
-"	      004f8590    mov ecx,[ebp-8]"
+"	      004f8590    mov ecx,hd"
 "	      004f8593    mov ecx,[ecx+18h]"
 "	      004f8596    and ecx,0FFh"
 "	      004f859c    shl ecx,0Ah"
 "	      004f859f    mov eax,[ecx+eax*4+67ED30h]"
-"	      004f85a6    mov [ebp-10h],eax"
+"	      004f85a6    mov cptr,eax"
 );
 // LINE 5574:
 	asm( 
-"	      004f85a9    mov eax,[ebp-10h]"
+"	      004f85a9    mov eax,cptr"
 "	      004f85ac    push eax"
-"	      004f85ad    mov eax,[ebp-8]"
+"	      004f85ad    mov eax,hd"
 "	      004f85b0    push eax"
 "	      004f85b1    call 004F85E8h"
 "	      004f85b6    add esp,8"
 );
 // LINE 5575:
 	asm( 
-"	      004f85b9    mov eax,[ebp-4]"
+"	      004f85b9    mov eax,i"
 "	      004f85bc    mov dword ptr [eax*4+5B4940h],0"
 );
 // LINE 5576:
@@ -17641,7 +17641,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 "	      004f85cc    mov cl,[ebp+8]"
 "	      004f85cf    shl eax,cl"
 "	      004f85d1    not eax"
-"	      004f85d3    mov ecx,[ebp-0Ch]"
+"	      004f85d3    mov ecx,up"
 "	      004f85d6    and [ecx+44h],eax"
 );
 // LINE 5577:
@@ -17677,27 +17677,27 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 5594:
 	asm( 
-"	      004f85f1    mov eax,[ebp+0Ch]"
+"	      004f85f1    mov eax,cptr"
 "	      004f85f4    add eax,10h"
-"	      004f85f7    mov [ebp-4],eax"
+"	      004f85f7    mov dyptrptr,eax"
 );
 // LINE 5595:
 	asm( 
-"	      004f85fa    mov eax,[ebp-4]"
+"	      004f85fa    mov eax,dyptrptr"
 "	      004f85fd    cmp dword ptr [eax],0"
 "	      004f8600    je near ptr 004F864Eh"
 );
 // LINE 5597:
 	asm( 
-"	      004f8606    mov eax,[ebp+8]"
-"	      004f8609    mov ecx,[ebp-4]"
+"	      004f8606    mov eax,hd"
+"	      004f8609    mov ecx,dyptrptr"
 "	      004f860c    mov ecx,[ecx]"
 "	      004f860e    cmp [eax+0A4h],ecx"
 "	      004f8614    jne near ptr 004F8641h"
 );
 // LINE 5599:
 	asm( 
-"	      004f861a    mov eax,[ebp+8]"
+"	      004f861a    mov eax,hd"
 "	      004f861d    mov eax,[eax+0A4h]"
 "	      004f8623    mov eax,[eax]"
 "	      004f8625    mov eax,[eax]"
@@ -17709,7 +17709,7 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 "	      004f8631    mov eax,[eax]"
 "	      004f8633    mov eax,[eax]"
 "	      004f8635    mov eax,[eax]"
-"	      004f8637    mov ecx,[ebp-4]"
+"	      004f8637    mov ecx,dyptrptr"
 "	      004f863a    mov [ecx],eax"
 );
 // LINE 5600:
@@ -17718,9 +17718,9 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 );
 // LINE 5602:
 	asm( 
-"	      004f8641    mov eax,[ebp-4]"
+"	      004f8641    mov eax,dyptrptr"
 "	      004f8644    mov eax,[eax]"
-"	      004f8646    mov [ebp-4],eax"
+"	      004f8646    mov dyptrptr,eax"
 );
 // LINE 5603:
 	asm( 
@@ -17751,7 +17751,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 5617:
 	asm( 
-"	      004f865c    mov eax,[ebp+10h]"
+"	      004f865c    mov eax,dyhittee"
 "	      004f865f    movsx eax,word ptr [eax+0Eh]"
 "	      004f8663    mov ecx,eax"
 "	      004f8665    lea eax,[eax+eax*4]"
@@ -17759,11 +17759,11 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f866b    lea eax,[eax+eax*8]"
 "	      004f866e    add eax,ecx"
 "	      004f8670    lea eax,[eax*2+6BF1D0h]"
-"	      004f8677    mov [ebp-4],eax"
+"	      004f8677    mov hd,eax"
 );
 // LINE 5620:
 	asm( 
-"	      004f867a    mov eax,[ebp+8]"
+"	      004f867a    mov eax,hitter_type"
 "	      004f867d    mov [ebp-8],eax"
 "	      004f8680    jmp near ptr 004F87EAh"
 );
@@ -17779,7 +17779,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f869a    sar ecx,2"
 "	      004f869d    sub eax,ecx"
 "	      004f869f    neg eax"
-"	      004f86a1    mov ecx,[ebp-4]"
+"	      004f86a1    mov ecx,hd"
 "	      004f86a4    sub [ecx+0D0h],eax"
 );
 // LINE 5625:
@@ -17806,7 +17806,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f86ce    shl ecx,2"
 "	      004f86d1    sub eax,ecx"
 "	      004f86d3    neg eax"
-"	      004f86d5    mov ecx,[ebp-4]"
+"	      004f86d5    mov ecx,hd"
 "	      004f86d8    sub [ecx+0D0h],eax"
 );
 // LINE 5633:
@@ -17833,7 +17833,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f8702    shl ecx,2"
 "	      004f8705    sub eax,ecx"
 "	      004f8707    neg eax"
-"	      004f8709    mov ecx,[ebp-4]"
+"	      004f8709    mov ecx,hd"
 "	      004f870c    sub [ecx+0D0h],eax"
 );
 // LINE 5641:
@@ -17850,7 +17850,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f8724    xor eax,eax"
 "	      004f8726    sub eax,ds:[5B48F8h]"
 "	      004f872c    neg eax"
-"	      004f872e    mov ecx,[ebp-4]"
+"	      004f872e    mov ecx,hd"
 "	      004f8731    sub [ecx+0D0h],eax"
 );
 // LINE 5645:
@@ -17873,7 +17873,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f8756    shl ecx,2"
 "	      004f8759    sub eax,ecx"
 "	      004f875b    neg eax"
-"	      004f875d    mov ecx,[ebp-4]"
+"	      004f875d    mov ecx,hd"
 "	      004f8760    sub [ecx+0D0h],eax"
 );
 // LINE 5651:
@@ -17898,7 +17898,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f8782    xor eax,eax"
 "	      004f8784    sub eax,ds:[5B48F8h]"
 "	      004f878a    neg eax"
-"	      004f878c    mov ecx,[ebp-4]"
+"	      004f878c    mov ecx,hd"
 "	      004f878f    sub [ecx+0D0h],eax"
 );
 // LINE 5659:
@@ -17915,7 +17915,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 );
 // LINE 5666:
 	asm( 
-"	      004f87a4    mov eax,[ebp-4]"
+"	      004f87a4    mov eax,hd"
 "	      004f87a7    mov dword ptr [eax+0D0h],0FFFFFFFFh"
 );
 // LINE 5667:
@@ -17934,7 +17934,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      004f87cb    sar ecx,3"
 "	      004f87ce    sub eax,ecx"
 "	      004f87d0    neg eax"
-"	      004f87d2    mov ecx,[ebp-4]"
+"	      004f87d2    mov ecx,hd"
 "	      004f87d5    sub [ecx+0D0h],eax"
 );
 // LINE 5671:
@@ -18009,15 +18009,15 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 "	      004f8855    push 606EB0h"
 "	      004f885a    mov eax,ds:[5B4CA4h]"
 "	      004f885f    push eax"
-"	      004f8860    mov eax,[ebp+8]"
+"	      004f8860    mov eax,miffReader"
 "	      004f8863    push eax"
 "	      004f8864    call 004AB530h"
 "	      004f8869    add esp,10h"
-"	      004f886c    mov [ebp-4],eax"
+"	      004f886c    mov ret,eax"
 );
 // LINE 5703:
 	asm( 
-"	      004f886f    cmp dword ptr [ebp-4],0"
+"	      004f886f    cmp ret,0"
 "	      004f8873    jne near ptr 004F8880h"
 );
 // LINE 5704:
@@ -18027,50 +18027,50 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 5707:
 	asm( 
-"	      004f8880    mov dword ptr [ebp-8],0"
+"	      004f8880    mov i,0"
 "	      004f8887    jmp near ptr 004F888Fh"
-"	      004f888c    inc dword ptr [ebp-8]"
-"	      004f888f    cmp dword ptr [ebp-8],0Ah"
+"	      004f888c    inc i"
+"	      004f888f    cmp i,0Ah"
 "	      004f8893    jge near ptr 004F8940h"
 );
 // LINE 5709:
 	asm( 
-"	      004f8899    mov eax,[ebp-8]"
+"	      004f8899    mov eax,i"
 "	      004f889c    mov ecx,eax"
 "	      004f889e    lea eax,[eax+eax*4]"
 "	      004f88a1    lea eax,[eax+eax*8]"
 "	      004f88a4    lea eax,[eax+eax*8]"
 "	      004f88a7    add eax,ecx"
 "	      004f88a9    lea eax,[eax*2+6BF1D0h]"
-"	      004f88b0    mov [ebp-0Ch],eax"
+"	      004f88b0    mov hd,eax"
 );
 // LINE 5712:
 	asm( 
 "	      004f88b3    mov eax,ds:[606F80h]"
-"	      004f88b8    mov ecx,[ebp-0Ch]"
+"	      004f88b8    mov ecx,hd"
 "	      004f88bb    mov [ecx+0D0h],eax"
 );
 // LINE 5713:
 	asm( 
 "	      004f88c1    mov eax,ds:[607070h]"
-"	      004f88c6    mov ecx,[ebp-0Ch]"
+"	      004f88c6    mov ecx,hd"
 "	      004f88c9    mov [ecx+1C0h],eax"
 );
 // LINE 5714:
 	asm( 
 "	      004f88cf    mov eax,ds:[6071D0h]"
-"	      004f88d4    mov ecx,[ebp-0Ch]"
+"	      004f88d4    mov ecx,hd"
 "	      004f88d7    mov [ecx+320h],eax"
 );
 // LINE 5715:
 	asm( 
 "	      004f88dd    mov eax,ds:[6071D4h]"
-"	      004f88e2    mov ecx,[ebp-0Ch]"
+"	      004f88e2    mov ecx,hd"
 "	      004f88e5    mov [ecx+324h],eax"
 );
 // LINE 5716:
 	asm( 
-"	      004f88eb    mov edi,[ebp-0Ch]"
+"	      004f88eb    mov edi,hd"
 "	      004f88ee    add edi,1C4h"
 "	      004f88f4    lea esi,ds:[607074h]"
 "	      004f88fa    mov ecx,57h"
@@ -18082,17 +18082,17 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 "	      004f8906    push 606EB0h"
 "	      004f890b    mov eax,ds:[5B4CA4h]"
 "	      004f8910    push eax"
-"	      004f8911    mov eax,[ebp+8]"
+"	      004f8911    mov eax,miffReader"
 "	      004f8914    push eax"
 "	      004f8915    call 004AB57Ch"
 "	      004f891a    add esp,10h"
-"	      004f891d    mov [ebp-4],eax"
+"	      004f891d    mov ret,eax"
 );
 // LINE 5724:
 	asm( 
-"	      004f8920    cmp dword ptr [ebp-4],0"
+"	      004f8920    cmp ret,0"
 "	      004f8924    jne near ptr 004F893Bh"
-"	      004f892a    cmp dword ptr [ebp-8],9"
+"	      004f892a    cmp i,9"
 "	      004f892e    je near ptr 004F893Bh"
 );
 // LINE 5725:
@@ -18135,16 +18135,16 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 5737:
 	asm( 
-"	      004f8958    mov dword ptr [ebp-8],0"
+"	      004f8958    mov i,0"
 "	      004f895f    jmp near ptr 004F8967h"
-"	      004f8964    inc dword ptr [ebp-8]"
-"	      004f8967    cmp dword ptr [ebp-8],0Ah"
+"	      004f8964    inc i"
+"	      004f8967    cmp i,0Ah"
 "	      004f896b    jge near ptr 004F89B9h"
 );
 // LINE 5742:
 	asm( 
 "	      004f8971    push 32Ch"
-"	      004f8976    mov eax,[ebp-8]"
+"	      004f8976    mov eax,i"
 "	      004f8979    mov ecx,eax"
 "	      004f897b    lea eax,[eax+eax*4]"
 "	      004f897e    lea eax,[eax+eax*8]"
@@ -18154,15 +18154,15 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 "	      004f898d    push eax"
 "	      004f898e    mov eax,ds:[5B4CA4h]"
 "	      004f8993    push eax"
-"	      004f8994    mov eax,[ebp+8]"
+"	      004f8994    mov eax,miffWriter"
 "	      004f8997    push eax"
 "	      004f8998    call 004AB5BDh"
 "	      004f899d    add esp,10h"
-"	      004f89a0    mov [ebp-4],eax"
+"	      004f89a0    mov ret,eax"
 );
 // LINE 5743:
 	asm( 
-"	      004f89a3    cmp dword ptr [ebp-4],0"
+"	      004f89a3    cmp ret,0"
 "	      004f89a7    jne near ptr 004F89B4h"
 );
 // LINE 5744:
@@ -18213,7 +18213,7 @@ void S3HeliUserExit() {
 "	      004f89d1    mov eax,ds:[5B4968h]"
 "	      004f89d6    mov eax,[eax+0A4h]"
 "	      004f89dc    add eax,18h"
-"	      004f89df    lea ecx,[ebp-10h]"
+"	      004f89df    lea ecx,vehicleLoc.x"
 "	      004f89e2    mov edx,[eax]"
 "	      004f89e4    mov [ecx],edx"
 "	      004f89e6    mov edx,[eax+4]"
@@ -18223,81 +18223,81 @@ void S3HeliUserExit() {
 );
 // LINE 5762:
 	asm( 
-"	      004f89f2    mov dword ptr [ebp-2Ch],200000h"
+"	      004f89f2    mov maxRadius,200000h"
 );
 // LINE 5768:
 	asm( 
-"	      004f89f9    mov dword ptr [ebp-28h],80000h"
+"	      004f89f9    mov radius,80000h"
 "	      004f8a00    jmp near ptr 004F8A0Ch"
-"	      004f8a05    add dword ptr [ebp-28h],80000h"
-"	      004f8a0c    mov eax,[ebp-2Ch]"
-"	      004f8a0f    cmp [ebp-28h],eax"
+"	      004f8a05    add radius,80000h"
+"	      004f8a0c    mov eax,maxRadius"
+"	      004f8a0f    cmp radius,eax"
 "	      004f8a12    jge near ptr 004F8AE7h"
 );
 // LINE 5770:
 	asm( 
-"	      004f8a18    mov dword ptr [ebp-14h],0"
+"	      004f8a18    mov angle,0"
 "	      004f8a1f    jmp near ptr 004F8A2Bh"
-"	      004f8a24    add dword ptr [ebp-14h],640000h"
-"	      004f8a2b    cmp dword ptr [ebp-14h],0E100000h"
+"	      004f8a24    add angle,640000h"
+"	      004f8a2b    cmp angle,0E100000h"
 "	      004f8a32    jge near ptr 004F8AE2h"
 );
 // LINE 5772:
 	asm( 
-"	      004f8a38    lea eax,[ebp-4]"
+"	      004f8a38    lea eax,rcos"
 "	      004f8a3b    push eax"
-"	      004f8a3c    lea eax,[ebp-24h]"
+"	      004f8a3c    lea eax,rsin"
 "	      004f8a3f    push eax"
-"	      004f8a40    mov eax,[ebp-14h]"
+"	      004f8a40    mov eax,angle"
 "	      004f8a43    push eax"
 "	      004f8a44    call 004D19FCh"
 "	      004f8a49    add esp,0Ch"
 );
 // LINE 5773:
 	asm( 
-"	      004f8a4c    mov eax,[ebp-4]"
+"	      004f8a4c    mov eax,rcos"
 "	      004f8a4f    push eax"
-"	      004f8a50    mov eax,[ebp-28h]"
+"	      004f8a50    mov eax,radius"
 "	      004f8a53    push eax"
 "	      004f8a54    call 004D19BDh"
 "	      004f8a59    add esp,8"
-"	      004f8a5c    mov ecx,[ebp-10h]"
+"	      004f8a5c    mov ecx,vehicleLoc.x"
 "	      004f8a5f    add ecx,eax"
-"	      004f8a61    mov [ebp-20h],ecx"
+"	      004f8a61    mov personLoc.x,ecx"
 );
 // LINE 5774:
 	asm( 
-"	      004f8a64    mov eax,[ebp-24h]"
+"	      004f8a64    mov eax,rsin"
 "	      004f8a67    push eax"
-"	      004f8a68    mov eax,[ebp-28h]"
+"	      004f8a68    mov eax,radius"
 "	      004f8a6b    push eax"
 "	      004f8a6c    call 004D19BDh"
 "	      004f8a71    add esp,8"
-"	      004f8a74    mov ecx,[ebp-8]"
+"	      004f8a74    mov ecx,vehicleLoc.z"
 "	      004f8a77    add ecx,eax"
-"	      004f8a79    mov [ebp-18h],ecx"
+"	      004f8a79    mov personLoc.z,ecx"
 );
 // LINE 5775:
 	asm( 
-"	      004f8a7c    mov eax,[ebp-18h]"
+"	      004f8a7c    mov eax,personLoc.z"
 "	      004f8a7f    push eax"
-"	      004f8a80    mov eax,[ebp-20h]"
+"	      004f8a80    mov eax,personLoc.x"
 "	      004f8a83    push eax"
 "	      004f8a84    call 00518E76h"
 "	      004f8a89    add esp,8"
-"	      004f8a8c    mov [ebp-1Ch],eax"
+"	      004f8a8c    mov personLoc.y,eax"
 );
 // LINE 5781:
 	asm( 
 "	      004f8a8f    mov eax,ds:[5B4968h]"
 "	      004f8a94    mov eax,[eax+154h]"
 "	      004f8a9a    sub eax,50000h"
-"	      004f8a9f    cmp eax,[ebp-1Ch]"
+"	      004f8a9f    cmp eax,personLoc.y"
 "	      004f8aa2    jg near ptr 004F8ADDh"
 "	      004f8aa8    mov eax,ds:[5B4968h]"
 "	      004f8aad    mov eax,[eax+154h]"
 "	      004f8ab3    add eax,50000h"
-"	      004f8ab8    cmp eax,[ebp-1Ch]"
+"	      004f8ab8    cmp eax,personLoc.y"
 "	      004f8abb    jl near ptr 004F8ADDh"
 );
 // LINE 5784:
@@ -18305,7 +18305,7 @@ void S3HeliUserExit() {
 "	      004f8ac1    mov eax,ds:[5B4968h]"
 "	      004f8ac6    add eax,100h"
 "	      004f8acb    push eax"
-"	      004f8acc    lea eax,[ebp-20h]"
+"	      004f8acc    lea eax,personLoc.x"
 "	      004f8acf    push eax"
 "	      004f8ad0    call 0054617Ch"
 "	      004f8ad5    add esp,8"

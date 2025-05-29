@@ -15,27 +15,27 @@ void CBackBuffer::CBackBuffer() {
 "	      0046e696    push ebx"
 "	      0046e697    push esi"
 "	      0046e698    push edi"
-"	      0046e699    mov [ebp-4],ecx"
-"	      0046e69c    mov ecx,[ebp-4]"
+"	      0046e699    mov this,ecx"
+"	      0046e69c    mov ecx,this"
 "	      0046e69f    call 0048F120h"
-"	      0046e6a4    mov eax,[ebp-4]"
+"	      0046e6a4    mov eax,this"
 "	      0046e6a7    mov dword ptr [eax],5907E0h"
 "	      0046e6ad    jmp near ptr 0046E6B2h"
 "	      0046e6b2    jmp near ptr 0046E6B7h"
 "	      0046e6b7    jmp near ptr 0046E6BCh"
 "	      0046e6bc    jmp near ptr 0046E6C1h"
-"	      0046e6c1    mov eax,[ebp-4]"
+"	      0046e6c1    mov eax,this"
 "	      0046e6c4    mov dword ptr [eax],590808h"
 );
 // LINE 45:
 	asm( 
-"	      0046e6ca    mov ecx,[ebp-4]"
+"	      0046e6ca    mov ecx,this"
 "	      0046e6cd    call 0046EB58h"
 );
 // LINE 46:
 	asm( 
 "	      0046e6d2    jmp near ptr 0046E6D7h"
-"	      0046e6d7    mov eax,[ebp-4]"
+"	      0046e6d7    mov eax,this"
 "	      0046e6da    pop edi"
 "	      0046e6db    pop esi"
 "	      0046e6dc    pop ebx"
@@ -60,31 +60,31 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 "	      0046e6e5    push ebx"
 "	      0046e6e6    push esi"
 "	      0046e6e7    push edi"
-"	      0046e6e8    mov [ebp-64h],ecx"
-"	      0046e6eb    mov ecx,[ebp-64h]"
+"	      0046e6e8    mov this,ecx"
+"	      0046e6eb    mov ecx,this"
 "	      0046e6ee    call 0048F120h"
-"	      0046e6f3    mov eax,[ebp-64h]"
+"	      0046e6f3    mov eax,this"
 "	      0046e6f6    mov dword ptr [eax],5907E0h"
 "	      0046e6fc    jmp near ptr 0046E701h"
 "	      0046e701    jmp near ptr 0046E706h"
 "	      0046e706    jmp near ptr 0046E70Bh"
 "	      0046e70b    jmp near ptr 0046E710h"
-"	      0046e710    mov eax,[ebp-64h]"
+"	      0046e710    mov eax,this"
 "	      0046e713    mov dword ptr [eax],590808h"
 );
 // LINE 68:
 	asm( 
-"	      0046e719    mov ecx,[ebp-64h]"
+"	      0046e719    mov ecx,this"
 "	      0046e71c    call 0046EB58h"
 );
 // LINE 69:
 	asm( 
-"	      0046e721    mov eax,[ebp-64h]"
+"	      0046e721    mov eax,this"
 "	      0046e724    mov dword ptr [eax+2Ch],0"
 );
 // LINE 70:
 	asm( 
-"	      0046e72b    cmp dword ptr [ebp+8],0"
+"	      0046e72b    cmp imageFileName,0"
 "	      0046e72f    jne near ptr 0046E74Eh"
 "	      0046e735    push 46h"
 "	      0046e737    push 599498h"
@@ -96,27 +96,27 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 );
 // LINE 71:
 	asm( 
-"	      0046e753    mov eax,[ebp+8]"
+"	      0046e753    mov eax,imageFileName"
 "	      0046e756    push eax"
 "	      0046e757    call 0056ABE0h"
 "	      0046e75c    add esp,4"
-"	      0046e75f    mov [ebp-44h],eax"
+"	      0046e75f    mov nFileNameLength,eax"
 );
 // LINE 72:
 	asm( 
-"	      0046e762    mov eax,[ebp-44h]"
+"	      0046e762    mov eax,nFileNameLength"
 "	      0046e765    inc eax"
 "	      0046e766    push eax"
 "	      0046e767    call 0056A600h"
 "	      0046e76c    add esp,4"
-"	      0046e76f    mov ecx,[ebp-64h]"
+"	      0046e76f    mov ecx,this"
 "	      0046e772    mov [ecx+18h],eax"
 );
 // LINE 73:
 	asm( 
-"	      0046e775    mov eax,[ebp+8]"
+"	      0046e775    mov eax,imageFileName"
 "	      0046e778    push eax"
-"	      0046e779    mov eax,[ebp-64h]"
+"	      0046e779    mov eax,this"
 "	      0046e77c    mov eax,[eax+18h]"
 "	      0046e77f    push eax"
 "	      0046e780    call 0056CEB0h"
@@ -137,9 +137,9 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 "	      0046e7bc    mov eax,[ebp-48h]"
 "	      0046e7bf    mov dword ptr [eax],590468h"
 "	      0046e7c5    mov dword ptr ds:[5C0920h],8000h"
-"	      0046e7cf    cmp dword ptr [ebp+8],0"
+"	      0046e7cf    cmp imageFileName,0"
 "	      0046e7d3    je near ptr 0046E7F1h"
-"	      0046e7d9    mov eax,[ebp+8]"
+"	      0046e7d9    mov eax,imageFileName"
 "	      0046e7dc    push eax"
 "	      0046e7dd    mov eax,[ebp-48h]"
 "	      0046e7e0    add eax,4"
@@ -151,9 +151,9 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 "	      0046e7f4    mov byte ptr [eax+4],0"
 "	      0046e7f8    jmp near ptr 0046E7FDh"
 "	      0046e7fd    mov eax,[ebp-48h]"
-"	      0046e800    mov [ebp-4],eax"
+"	      0046e800    mov fileImage,eax"
 "	      0046e803    jmp near ptr 0046E80Fh"
-"	      0046e808    mov dword ptr [ebp-4],0"
+"	      0046e808    mov fileImage,0"
 );
 // LINE 78:
 	asm( 
@@ -161,12 +161,12 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 "	      0046e811    push 180h"
 "	      0046e816    push 0"
 "	      0046e818    push 0"
-"	      0046e81a    mov ecx,[ebp-4]"
+"	      0046e81a    mov ecx,fileImage"
 "	      0046e81d    call 004A03A0h"
 );
 // LINE 79:
 	asm( 
-"	      0046e822    mov eax,[ebp-4]"
+"	      0046e822    mov eax,fileImage"
 "	      0046e825    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      0046e82c    jle near ptr 0046E83Ch"
 "	      0046e832    jmp near ptr 0046E895h"
@@ -177,21 +177,21 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 );
 // LINE 80:
 	asm( 
-"	      0046e84b    mov eax,[ebp-64h]"
+"	      0046e84b    mov eax,this"
 "	      0046e84e    mov dword ptr [eax+0Ch],0"
-"	      0046e855    mov eax,[ebp-64h]"
+"	      0046e855    mov eax,this"
 "	      0046e858    mov eax,[eax+0Ch]"
-"	      0046e85b    mov ecx,[ebp-64h]"
+"	      0046e85b    mov ecx,this"
 "	      0046e85e    mov [ecx+8],eax"
 );
 // LINE 81:
 	asm( 
-"	      0046e861    mov ecx,[ebp-4]"
+"	      0046e861    mov ecx,fileImage"
 "	      0046e864    call 004A04F0h"
 );
 // LINE 82:
 	asm( 
-"	      0046e869    mov eax,[ebp-4]"
+"	      0046e869    mov eax,fileImage"
 "	      0046e86c    mov [ebp-50h],eax"
 "	      0046e86f    mov eax,[ebp-50h]"
 "	      0046e872    mov [ebp-4Ch],eax"
@@ -211,9 +211,9 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 // LINE 86:
 	asm( 
 "	      0046e895    push 0Eh"
-"	      0046e897    lea eax,[ebp-14h]"
+"	      0046e897    lea eax,bfHeader.bfType"
 "	      0046e89a    push eax"
-"	      0046e89b    mov eax,[ebp-4]"
+"	      0046e89b    mov eax,fileImage"
 "	      0046e89e    mov eax,[eax+108h]"
 "	      0046e8a4    push eax"
 "	      0046e8a5    call 00580B50h"
@@ -223,9 +223,9 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 // LINE 87:
 	asm( 
 "	      0046e8b2    push 28h"
-"	      0046e8b4    lea eax,[ebp-40h]"
+"	      0046e8b4    lea eax,biHeader.biSize"
 "	      0046e8b7    push eax"
-"	      0046e8b8    mov eax,[ebp-4]"
+"	      0046e8b8    mov eax,fileImage"
 "	      0046e8bb    mov eax,[eax+108h]"
 "	      0046e8c1    push eax"
 "	      0046e8c2    call 00580B50h"
@@ -234,48 +234,48 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 );
 // LINE 88:
 	asm( 
-"	      0046e8cf    mov eax,[ebp-3Ch]"
-"	      0046e8d2    mov ecx,[ebp-64h]"
+"	      0046e8cf    mov eax,biHeader.biWidth"
+"	      0046e8d2    mov ecx,this"
 "	      0046e8d5    mov [ecx+8],eax"
 );
 // LINE 89:
 	asm( 
-"	      0046e8d8    mov eax,[ebp-38h]"
-"	      0046e8db    mov ecx,[ebp-64h]"
+"	      0046e8d8    mov eax,biHeader.biHeight"
+"	      0046e8db    mov ecx,this"
 "	      0046e8de    mov [ecx+0Ch],eax"
 );
 // LINE 90:
 	asm( 
-"	      0046e8e1    mov eax,[ebp-64h]"
+"	      0046e8e1    mov eax,this"
 "	      0046e8e4    mov dword ptr [eax+1Ch],0"
 );
 // LINE 91:
 	asm( 
-"	      0046e8eb    mov eax,[ebp-64h]"
+"	      0046e8eb    mov eax,this"
 "	      0046e8ee    mov dword ptr [eax+20h],0"
 );
 // LINE 92:
 	asm( 
-"	      0046e8f5    mov eax,[ebp-64h]"
+"	      0046e8f5    mov eax,this"
 "	      0046e8f8    mov eax,[eax+8]"
-"	      0046e8fb    mov ecx,[ebp-64h]"
+"	      0046e8fb    mov ecx,this"
 "	      0046e8fe    mov [ecx+24h],eax"
 );
 // LINE 93:
 	asm( 
-"	      0046e901    mov eax,[ebp-64h]"
+"	      0046e901    mov eax,this"
 "	      0046e904    mov eax,[eax+0Ch]"
-"	      0046e907    mov ecx,[ebp-64h]"
+"	      0046e907    mov ecx,this"
 "	      0046e90a    mov [ecx+28h],eax"
 );
 // LINE 94:
 	asm( 
-"	      0046e90d    mov ecx,[ebp-4]"
+"	      0046e90d    mov ecx,fileImage"
 "	      0046e910    call 004A04F0h"
 );
 // LINE 95:
 	asm( 
-"	      0046e915    mov eax,[ebp-4]"
+"	      0046e915    mov eax,fileImage"
 "	      0046e918    mov [ebp-58h],eax"
 "	      0046e91b    mov eax,[ebp-58h]"
 "	      0046e91e    mov [ebp-54h],eax"
@@ -292,7 +292,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	asm( 
 "	      0046e93c    push 6Ch"
 "	      0046e93e    push 0"
-"	      0046e940    mov eax,[ebp-64h]"
+"	      0046e940    mov eax,this"
 "	      0046e943    add eax,58h"
 "	      0046e946    push eax"
 "	      0046e947    call 0056EB90h"
@@ -300,45 +300,45 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 );
 // LINE 100:
 	asm( 
-"	      0046e94f    mov eax,[ebp-64h]"
+"	      0046e94f    mov eax,this"
 "	      0046e952    mov dword ptr [eax+58h],6Ch"
 );
 // LINE 102:
 	asm( 
-"	      0046e959    mov eax,[ebp-64h]"
+"	      0046e959    mov eax,this"
 "	      0046e95c    mov dword ptr [eax+5Ch],6"
 );
 // LINE 113:
 	asm( 
-"	      0046e963    mov eax,[ebp-64h]"
+"	      0046e963    mov eax,this"
 "	      0046e966    mov dword ptr [eax+0C0h],840h"
 );
 // LINE 118:
 	asm( 
-"	      0046e970    mov eax,[ebp-64h]"
+"	      0046e970    mov eax,this"
 "	      0046e973    mov dword ptr [eax+6Ch],0"
 );
 // LINE 119:
 	asm( 
-"	      0046e97a    mov eax,[ebp-64h]"
+"	      0046e97a    mov eax,this"
 "	      0046e97d    mov eax,[eax+8]"
-"	      0046e980    mov ecx,[ebp-64h]"
+"	      0046e980    mov ecx,this"
 "	      0046e983    mov [ecx+64h],eax"
 );
 // LINE 120:
 	asm( 
-"	      0046e986    mov eax,[ebp-64h]"
+"	      0046e986    mov eax,this"
 "	      0046e989    mov eax,[eax+0Ch]"
-"	      0046e98c    mov ecx,[ebp-64h]"
+"	      0046e98c    mov ecx,this"
 "	      0046e98f    mov [ecx+60h],eax"
 );
 // LINE 123:
 	asm( 
 "	      0046e992    push 0"
-"	      0046e994    mov eax,[ebp-64h]"
+"	      0046e994    mov eax,this"
 "	      0046e997    add eax,4Ch"
 "	      0046e99a    push eax"
-"	      0046e99b    mov eax,[ebp-64h]"
+"	      0046e99b    mov eax,this"
 "	      0046e99e    add eax,58h"
 "	      0046e9a1    push eax"
 "	      0046e9a2    mov eax,ds:[597264h]"
@@ -346,16 +346,16 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 "	      0046e9a8    mov eax,ds:[597264h]"
 "	      0046e9ad    mov eax,[eax]"
 "	      0046e9af    call dword ptr [eax+18h]"
-"	      0046e9b2    mov [ebp-18h],eax"
+"	      0046e9b2    mov ddrval,eax"
 );
 // LINE 124:
 	asm( 
-"	      0046e9b5    cmp dword ptr [ebp-18h],0"
+"	      0046e9b5    cmp ddrval,0"
 "	      0046e9b9    je near ptr 0046E9DCh"
 );
 // LINE 125:
 	asm( 
-"	      0046e9bf    mov eax,[ebp-18h]"
+"	      0046e9bf    mov eax,ddrval"
 "	      0046e9c2    mov [ebp-5Ch],eax"
 "	      0046e9c5    jmp near ptr 0046E9CAh"
 "	      0046e9ca    push 5994D0h"
@@ -368,21 +368,21 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 );
 // LINE 139:
 	asm( 
-"	      0046e9dc    mov eax,[ebp-64h]"
+"	      0046e9dc    mov eax,this"
 "	      0046e9df    mov eax,[eax+8]"
-"	      0046e9e2    mov ecx,[ebp-64h]"
+"	      0046e9e2    mov ecx,this"
 "	      0046e9e5    imul eax,[ecx+0Ch]"
 "	      0046e9e9    add ds:[599DA0h],eax"
 );
 // LINE 142:
 	asm( 
-"	      0046e9ef    mov ecx,[ebp-64h]"
+"	      0046e9ef    mov ecx,this"
 "	      0046e9f2    call 0046EDCAh"
 );
 // LINE 145:
 	asm( 
 "	      0046e9f7    jmp near ptr 0046E9FCh"
-"	      0046e9fc    mov eax,[ebp-64h]"
+"	      0046e9fc    mov eax,this"
 "	      0046e9ff    pop edi"
 "	      0046ea00    pop esi"
 "	      0046ea01    pop ebx"
@@ -403,28 +403,28 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 "	      0046ea0c    push ebx"
 "	      0046ea0d    push esi"
 "	      0046ea0e    push edi"
-"	      0046ea0f    mov [ebp-0Ch],ecx"
-"	      0046ea12    mov ecx,[ebp-0Ch]"
+"	      0046ea0f    mov this,ecx"
+"	      0046ea12    mov ecx,this"
 "	      0046ea15    call 0048F120h"
-"	      0046ea1a    mov eax,[ebp-0Ch]"
+"	      0046ea1a    mov eax,this"
 "	      0046ea1d    mov dword ptr [eax],5907E0h"
 "	      0046ea23    jmp near ptr 0046EA28h"
 "	      0046ea28    jmp near ptr 0046EA2Dh"
 "	      0046ea2d    jmp near ptr 0046EA32h"
 "	      0046ea32    jmp near ptr 0046EA37h"
-"	      0046ea37    mov eax,[ebp-0Ch]"
+"	      0046ea37    mov eax,this"
 "	      0046ea3a    mov dword ptr [eax],590808h"
 );
 // LINE 161:
 	asm( 
-"	      0046ea40    mov ecx,[ebp-0Ch]"
+"	      0046ea40    mov ecx,this"
 "	      0046ea43    call 0046EB58h"
 );
 // LINE 165:
 	asm( 
 "	      0046ea48    push 6Ch"
 "	      0046ea4a    push 0"
-"	      0046ea4c    mov eax,[ebp-0Ch]"
+"	      0046ea4c    mov eax,this"
 "	      0046ea4f    add eax,58h"
 "	      0046ea52    push eax"
 "	      0046ea53    call 0056EB90h"
@@ -432,75 +432,75 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 );
 // LINE 166:
 	asm( 
-"	      0046ea5b    mov eax,[ebp-0Ch]"
+"	      0046ea5b    mov eax,this"
 "	      0046ea5e    mov dword ptr [eax+58h],6Ch"
 );
 // LINE 167:
 	asm( 
-"	      0046ea65    mov eax,[ebp-0Ch]"
+"	      0046ea65    mov eax,this"
 "	      0046ea68    mov dword ptr [eax+5Ch],6"
 );
 // LINE 170:
 	asm( 
-"	      0046ea6f    mov eax,[ebp-0Ch]"
+"	      0046ea6f    mov eax,this"
 "	      0046ea72    mov dword ptr [eax+0C0h],840h"
 );
 // LINE 175:
 	asm( 
-"	      0046ea7c    mov eax,[ebp-0Ch]"
+"	      0046ea7c    mov eax,this"
 "	      0046ea7f    mov dword ptr [eax+6Ch],0"
 );
 // LINE 176:
 	asm( 
-"	      0046ea86    mov eax,[ebp+8]"
-"	      0046ea89    mov ecx,[ebp-0Ch]"
+"	      0046ea86    mov eax,Width"
+"	      0046ea89    mov ecx,this"
 "	      0046ea8c    mov [ecx+8],eax"
-"	      0046ea8f    mov eax,[ebp-0Ch]"
+"	      0046ea8f    mov eax,this"
 "	      0046ea92    mov eax,[eax+8]"
-"	      0046ea95    mov ecx,[ebp-0Ch]"
+"	      0046ea95    mov ecx,this"
 "	      0046ea98    mov [ecx+64h],eax"
 );
 // LINE 177:
 	asm( 
-"	      0046ea9b    mov eax,[ebp+0Ch]"
-"	      0046ea9e    mov ecx,[ebp-0Ch]"
+"	      0046ea9b    mov eax,Height"
+"	      0046ea9e    mov ecx,this"
 "	      0046eaa1    mov [ecx+0Ch],eax"
-"	      0046eaa4    mov eax,[ebp-0Ch]"
+"	      0046eaa4    mov eax,this"
 "	      0046eaa7    mov eax,[eax+0Ch]"
-"	      0046eaaa    mov ecx,[ebp-0Ch]"
+"	      0046eaaa    mov ecx,this"
 "	      0046eaad    mov [ecx+60h],eax"
 );
 // LINE 178:
 	asm( 
-"	      0046eab0    mov eax,[ebp-0Ch]"
+"	      0046eab0    mov eax,this"
 "	      0046eab3    mov dword ptr [eax+1Ch],0"
 );
 // LINE 179:
 	asm( 
-"	      0046eaba    mov eax,[ebp-0Ch]"
+"	      0046eaba    mov eax,this"
 "	      0046eabd    mov dword ptr [eax+20h],0"
 );
 // LINE 180:
 	asm( 
-"	      0046eac4    mov eax,[ebp-0Ch]"
+"	      0046eac4    mov eax,this"
 "	      0046eac7    mov eax,[eax+8]"
-"	      0046eaca    mov ecx,[ebp-0Ch]"
+"	      0046eaca    mov ecx,this"
 "	      0046eacd    mov [ecx+24h],eax"
 );
 // LINE 181:
 	asm( 
-"	      0046ead0    mov eax,[ebp-0Ch]"
+"	      0046ead0    mov eax,this"
 "	      0046ead3    mov eax,[eax+0Ch]"
-"	      0046ead6    mov ecx,[ebp-0Ch]"
+"	      0046ead6    mov ecx,this"
 "	      0046ead9    mov [ecx+28h],eax"
 );
 // LINE 183:
 	asm( 
 "	      0046eadc    push 0"
-"	      0046eade    mov eax,[ebp-0Ch]"
+"	      0046eade    mov eax,this"
 "	      0046eae1    add eax,4Ch"
 "	      0046eae4    push eax"
-"	      0046eae5    mov eax,[ebp-0Ch]"
+"	      0046eae5    mov eax,this"
 "	      0046eae8    add eax,58h"
 "	      0046eaeb    push eax"
 "	      0046eaec    mov eax,ds:[597264h]"
@@ -508,16 +508,16 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 "	      0046eaf2    mov eax,ds:[597264h]"
 "	      0046eaf7    mov eax,[eax]"
 "	      0046eaf9    call dword ptr [eax+18h]"
-"	      0046eafc    mov [ebp-4],eax"
+"	      0046eafc    mov ddrval,eax"
 );
 // LINE 184:
 	asm( 
-"	      0046eaff    cmp dword ptr [ebp-4],0"
+"	      0046eaff    cmp ddrval,0"
 "	      0046eb03    je near ptr 0046EB26h"
 );
 // LINE 185:
 	asm( 
-"	      0046eb09    mov eax,[ebp-4]"
+"	      0046eb09    mov eax,ddrval"
 "	      0046eb0c    mov [ebp-8],eax"
 "	      0046eb0f    jmp near ptr 0046EB14h"
 "	      0046eb14    push 59950Ch"
@@ -530,26 +530,26 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 );
 // LINE 191:
 	asm( 
-"	      0046eb26    mov eax,[ebp-0Ch]"
+"	      0046eb26    mov eax,this"
 "	      0046eb29    mov eax,[eax+8]"
-"	      0046eb2c    mov ecx,[ebp-0Ch]"
+"	      0046eb2c    mov ecx,this"
 "	      0046eb2f    imul eax,[ecx+0Ch]"
 "	      0046eb33    add ds:[599DA0h],eax"
 );
 // LINE 204:
 	asm( 
-"	      0046eb39    mov ecx,[ebp-0Ch]"
+"	      0046eb39    mov ecx,this"
 "	      0046eb3c    call 0047006Fh"
 );
 // LINE 205:
 	asm( 
-"	      0046eb41    mov ecx,[ebp-0Ch]"
+"	      0046eb41    mov ecx,this"
 "	      0046eb44    call 00470149h"
 );
 // LINE 208:
 	asm( 
 "	      0046eb49    jmp near ptr 0046EB4Eh"
-"	      0046eb4e    mov eax,[ebp-0Ch]"
+"	      0046eb4e    mov eax,this"
 "	      0046eb51    pop edi"
 "	      0046eb52    pop esi"
 "	      0046eb53    pop ebx"
@@ -568,109 +568,109 @@ void CBackBuffer::InitializeMemberVariables() {
 "	      0046eb5e    push ebx"
 "	      0046eb5f    push esi"
 "	      0046eb60    push edi"
-"	      0046eb61    mov [ebp-4],ecx"
+"	      0046eb61    mov this,ecx"
 );
 // LINE 216:
 	asm( 
-"	      0046eb64    mov eax,[ebp-4]"
+"	      0046eb64    mov eax,this"
 "	      0046eb67    mov dword ptr [eax+2Ch],0"
 );
 // LINE 217:
 	asm( 
-"	      0046eb6e    mov eax,[ebp-4]"
+"	      0046eb6e    mov eax,this"
 "	      0046eb71    mov dword ptr [eax+30h],0"
 );
 // LINE 218:
 	asm( 
-"	      0046eb78    mov eax,[ebp-4]"
+"	      0046eb78    mov eax,this"
 "	      0046eb7b    mov dword ptr [eax+18h],0"
 );
 // LINE 219:
 	asm( 
-"	      0046eb82    mov eax,[ebp-4]"
+"	      0046eb82    mov eax,this"
 "	      0046eb85    mov dword ptr [eax+34h],0"
 );
 // LINE 222:
 	asm( 
-"	      0046eb8c    mov eax,[ebp-4]"
+"	      0046eb8c    mov eax,this"
 "	      0046eb8f    mov byte ptr [eax+38h],0"
-"	      0046eb93    mov eax,[ebp-4]"
+"	      0046eb93    mov eax,this"
 "	      0046eb96    mov al,[eax+38h]"
-"	      0046eb99    mov ecx,[ebp-4]"
+"	      0046eb99    mov ecx,this"
 "	      0046eb9c    mov [ecx+39h],al"
-"	      0046eb9f    mov eax,[ebp-4]"
+"	      0046eb9f    mov eax,this"
 "	      0046eba2    mov al,[eax+39h]"
-"	      0046eba5    mov ecx,[ebp-4]"
+"	      0046eba5    mov ecx,this"
 "	      0046eba8    mov [ecx+3Ah],al"
 );
 // LINE 225:
 	asm( 
-"	      0046ebab    mov eax,[ebp-4]"
+"	      0046ebab    mov eax,this"
 "	      0046ebae    mov byte ptr [eax+3Ch],0"
-"	      0046ebb2    mov eax,[ebp-4]"
+"	      0046ebb2    mov eax,this"
 "	      0046ebb5    mov al,[eax+3Ch]"
-"	      0046ebb8    mov ecx,[ebp-4]"
+"	      0046ebb8    mov ecx,this"
 "	      0046ebbb    mov [ecx+3Dh],al"
-"	      0046ebbe    mov eax,[ebp-4]"
+"	      0046ebbe    mov eax,this"
 "	      0046ebc1    mov al,[eax+3Dh]"
-"	      0046ebc4    mov ecx,[ebp-4]"
+"	      0046ebc4    mov ecx,this"
 "	      0046ebc7    mov [ecx+3Eh],al"
 );
 // LINE 226:
 	asm( 
-"	      0046ebca    mov eax,[ebp-4]"
+"	      0046ebca    mov eax,this"
 "	      0046ebcd    mov dword ptr [eax+40h],0"
 );
 // LINE 227:
 	asm( 
-"	      0046ebd4    mov eax,[ebp-4]"
+"	      0046ebd4    mov eax,this"
 "	      0046ebd7    mov dword ptr [eax+44h],0"
 );
 // LINE 228:
 	asm( 
-"	      0046ebde    mov eax,[ebp-4]"
+"	      0046ebde    mov eax,this"
 "	      0046ebe1    mov dword ptr [eax+48h],0"
 );
 // LINE 231:
 	asm( 
-"	      0046ebe8    mov eax,[ebp-4]"
+"	      0046ebe8    mov eax,this"
 "	      0046ebeb    mov dword ptr [eax+4Ch],0"
 );
 // LINE 232:
 	asm( 
-"	      0046ebf2    mov eax,[ebp-4]"
+"	      0046ebf2    mov eax,this"
 "	      0046ebf5    mov dword ptr [eax+50h],0"
 );
 // LINE 233:
 	asm( 
-"	      0046ebfc    mov eax,[ebp-4]"
+"	      0046ebfc    mov eax,this"
 "	      0046ebff    mov dword ptr [eax+54h],0"
 );
 // LINE 234:
 	asm( 
-"	      0046ec06    mov eax,[ebp-4]"
+"	      0046ec06    mov eax,this"
 "	      0046ec09    mov dword ptr [eax+1Ch],0"
 );
 // LINE 235:
 	asm( 
-"	      0046ec10    mov eax,[ebp-4]"
+"	      0046ec10    mov eax,this"
 "	      0046ec13    mov dword ptr [eax+20h],0"
 );
 // LINE 236:
 	asm( 
-"	      0046ec1a    mov eax,[ebp-4]"
+"	      0046ec1a    mov eax,this"
 "	      0046ec1d    mov dword ptr [eax+24h],0"
 );
 // LINE 237:
 	asm( 
-"	      0046ec24    mov eax,[ebp-4]"
+"	      0046ec24    mov eax,this"
 "	      0046ec27    mov dword ptr [eax+28h],0"
 );
 // LINE 238:
 	asm( 
 "	      0046ec2e    push 6Ch"
 "	      0046ec30    push 0"
-"	      0046ec32    mov eax,[ebp-4]"
+"	      0046ec32    mov eax,this"
 "	      0046ec35    add eax,58h"
 "	      0046ec38    push eax"
 "	      0046ec39    call 0056EB90h"
@@ -680,7 +680,7 @@ void CBackBuffer::InitializeMemberVariables() {
 	asm( 
 "	      0046ec41    push 64h"
 "	      0046ec43    push 0"
-"	      0046ec45    mov eax,[ebp-4]"
+"	      0046ec45    mov eax,this"
 "	      0046ec48    add eax,0C4h"
 "	      0046ec4d    push eax"
 "	      0046ec4e    call 0056EB90h"
@@ -688,12 +688,12 @@ void CBackBuffer::InitializeMemberVariables() {
 );
 // LINE 240:
 	asm( 
-"	      0046ec56    mov eax,[ebp-4]"
+"	      0046ec56    mov eax,this"
 "	      0046ec59    mov dword ptr [eax+128h],0"
 );
 // LINE 241:
 	asm( 
-"	      0046ec63    mov eax,[ebp-4]"
+"	      0046ec63    mov eax,this"
 "	      0046ec66    mov dword ptr [eax+12Ch],0"
 );
 // LINE 245:
@@ -717,19 +717,19 @@ void CBackBuffer::~CBackBuffer() {
 "	      0046ec80    push ebx"
 "	      0046ec81    push esi"
 "	      0046ec82    push edi"
-"	      0046ec83    mov [ebp-14h],ecx"
-"	      0046ec86    mov eax,[ebp-14h]"
+"	      0046ec83    mov this,ecx"
+"	      0046ec86    mov eax,this"
 "	      0046ec89    mov dword ptr [eax],590808h"
 );
 // LINE 254:
 	asm( 
-"	      0046ec8f    mov eax,[ebp-14h]"
+"	      0046ec8f    mov eax,this"
 "	      0046ec92    cmp dword ptr [eax+34h],0"
 "	      0046ec96    je near ptr 0046ECDDh"
 );
 // LINE 255:
 	asm( 
-"	      0046ec9c    mov eax,[ebp-14h]"
+"	      0046ec9c    mov eax,this"
 "	      0046ec9f    mov eax,[eax+34h]"
 "	      0046eca2    mov [ebp-8],eax"
 "	      0046eca5    mov eax,[ebp-8]"
@@ -747,18 +747,18 @@ void CBackBuffer::~CBackBuffer() {
 );
 // LINE 256:
 	asm( 
-"	      0046ecd3    mov eax,[ebp-14h]"
+"	      0046ecd3    mov eax,this"
 "	      0046ecd6    mov dword ptr [eax+34h],0"
 );
 // LINE 259:
 	asm( 
-"	      0046ecdd    mov eax,[ebp-14h]"
+"	      0046ecdd    mov eax,this"
 "	      0046ece0    cmp dword ptr [eax+18h],0"
 "	      0046ece4    je near ptr 0046ED0Fh"
 );
 // LINE 260:
 	asm( 
-"	      0046ecea    mov eax,[ebp-14h]"
+"	      0046ecea    mov eax,this"
 "	      0046eced    mov eax,[eax+18h]"
 "	      0046ecf0    mov [ebp-0Ch],eax"
 "	      0046ecf3    mov eax,[ebp-0Ch]"
@@ -770,36 +770,36 @@ void CBackBuffer::~CBackBuffer() {
 );
 // LINE 261:
 	asm( 
-"	      0046ed05    mov eax,[ebp-14h]"
+"	      0046ed05    mov eax,this"
 "	      0046ed08    mov dword ptr [eax+18h],0"
 );
 // LINE 271:
 	asm( 
-"	      0046ed0f    mov eax,[ebp-14h]"
+"	      0046ed0f    mov eax,this"
 "	      0046ed12    cmp dword ptr [eax+4Ch],0"
 "	      0046ed16    je near ptr 0046ED51h"
 );
 // LINE 272:
 	asm( 
-"	      0046ed1c    mov eax,[ebp-14h]"
+"	      0046ed1c    mov eax,this"
 "	      0046ed1f    mov eax,[eax+4Ch]"
 "	      0046ed22    push eax"
-"	      0046ed23    mov eax,[ebp-14h]"
+"	      0046ed23    mov eax,this"
 "	      0046ed26    mov eax,[eax+4Ch]"
 "	      0046ed29    mov eax,[eax]"
 "	      0046ed2b    call dword ptr [eax+8]"
 );
 // LINE 273:
 	asm( 
-"	      0046ed2e    mov eax,[ebp-14h]"
+"	      0046ed2e    mov eax,this"
 "	      0046ed31    mov dword ptr [eax+4Ch],0"
 );
 // LINE 277:
 	asm( 
 "	      0046ed38    xor eax,eax"
-"	      0046ed3a    mov ecx,[ebp-14h]"
+"	      0046ed3a    mov ecx,this"
 "	      0046ed3d    mov ecx,[ecx+8]"
-"	      0046ed40    mov edx,[ebp-14h]"
+"	      0046ed40    mov edx,this"
 "	      0046ed43    imul ecx,[edx+0Ch]"
 "	      0046ed47    sub eax,ecx"
 "	      0046ed49    neg eax"
@@ -807,31 +807,31 @@ void CBackBuffer::~CBackBuffer() {
 );
 // LINE 281:
 	asm( 
-"	      0046ed51    mov eax,[ebp-14h]"
+"	      0046ed51    mov eax,this"
 "	      0046ed54    cmp dword ptr [eax+50h],0"
 "	      0046ed58    je near ptr 0046ED93h"
 );
 // LINE 282:
 	asm( 
-"	      0046ed5e    mov eax,[ebp-14h]"
+"	      0046ed5e    mov eax,this"
 "	      0046ed61    mov eax,[eax+50h]"
 "	      0046ed64    push eax"
-"	      0046ed65    mov eax,[ebp-14h]"
+"	      0046ed65    mov eax,this"
 "	      0046ed68    mov eax,[eax+50h]"
 "	      0046ed6b    mov eax,[eax]"
 "	      0046ed6d    call dword ptr [eax+8]"
 );
 // LINE 283:
 	asm( 
-"	      0046ed70    mov eax,[ebp-14h]"
+"	      0046ed70    mov eax,this"
 "	      0046ed73    mov dword ptr [eax+50h],0"
 );
 // LINE 287:
 	asm( 
 "	      0046ed7a    xor eax,eax"
-"	      0046ed7c    mov ecx,[ebp-14h]"
+"	      0046ed7c    mov ecx,this"
 "	      0046ed7f    mov ecx,[ecx+8]"
-"	      0046ed82    mov edx,[ebp-14h]"
+"	      0046ed82    mov edx,this"
 "	      0046ed85    imul ecx,[edx+0Ch]"
 "	      0046ed89    sub eax,ecx"
 "	      0046ed8b    neg eax"
@@ -839,20 +839,20 @@ void CBackBuffer::~CBackBuffer() {
 );
 // LINE 291:
 	asm( 
-"	      0046ed93    mov eax,[ebp-14h]"
+"	      0046ed93    mov eax,this"
 "	      0046ed96    cmp dword ptr [eax+128h],0"
 "	      0046ed9d    je near ptr 0046EDC0h"
 );
 // LINE 292:
 	asm( 
-"	      0046eda3    mov eax,[ebp-14h]"
+"	      0046eda3    mov eax,this"
 "	      0046eda6    mov eax,[eax+128h]"
 "	      0046edac    push eax"
 "	      0046edad    call dword ptr ds:[6C358Ch]"
 );
 // LINE 293:
 	asm( 
-"	      0046edb3    mov eax,[ebp-14h]"
+"	      0046edb3    mov eax,this"
 "	      0046edb6    mov dword ptr [eax+128h],0"
 );
 // LINE 297:
@@ -886,7 +886,7 @@ unsigned long CBackBuffer::Load() {
 "	      0046edd3    push ebx"
 "	      0046edd4    push esi"
 "	      0046edd5    push edi"
-"	      0046edd6    mov [ebp-47Ch],ecx"
+"	      0046edd6    mov this,ecx"
 );
 // LINE 316:
 	asm( 
@@ -896,7 +896,7 @@ unsigned long CBackBuffer::Load() {
 "	      0046ede9    mov [ebp-454h],eax"
 "	      0046edef    cmp dword ptr [ebp-454h],0"
 "	      0046edf6    je near ptr 0046EE89h"
-"	      0046edfc    mov eax,[ebp-47Ch]"
+"	      0046edfc    mov eax,this"
 "	      0046ee02    mov eax,[eax+18h]"
 "	      0046ee05    mov [ebp-478h],eax"
 "	      0046ee0b    mov eax,[ebp-454h]"
@@ -920,9 +920,9 @@ unsigned long CBackBuffer::Load() {
 "	      0046ee72    mov byte ptr [eax+4],0"
 "	      0046ee76    jmp near ptr 0046EE7Bh"
 "	      0046ee7b    mov eax,[ebp-454h]"
-"	      0046ee81    mov [ebp-0Ch],eax"
+"	      0046ee81    mov fileImage,eax"
 "	      0046ee84    jmp near ptr 0046EE90h"
-"	      0046ee89    mov dword ptr [ebp-0Ch],0"
+"	      0046ee89    mov fileImage,0"
 );
 // LINE 317:
 	asm( 
@@ -930,18 +930,18 @@ unsigned long CBackBuffer::Load() {
 "	      0046ee92    push 180h"
 "	      0046ee97    push 0"
 "	      0046ee99    push 0"
-"	      0046ee9b    mov ecx,[ebp-0Ch]"
+"	      0046ee9b    mov ecx,fileImage"
 "	      0046ee9e    call 004A03A0h"
 );
 // LINE 318:
 	asm( 
-"	      0046eea3    mov ecx,[ebp-0Ch]"
+"	      0046eea3    mov ecx,fileImage"
 "	      0046eea6    call 004A0562h"
-"	      0046eeab    mov [ebp-8],eax"
+"	      0046eeab    mov nFileLength,eax"
 );
 // LINE 319:
 	asm( 
-"	      0046eeae    mov eax,[ebp-0Ch]"
+"	      0046eeae    mov eax,fileImage"
 "	      0046eeb1    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      0046eeb8    jle near ptr 0046EEC8h"
 "	      0046eebe    jmp near ptr 0046EF3Fh"
@@ -952,22 +952,22 @@ unsigned long CBackBuffer::Load() {
 );
 // LINE 320:
 	asm( 
-"	      0046eeda    mov eax,[ebp-47Ch]"
+"	      0046eeda    mov eax,this"
 "	      0046eee0    mov dword ptr [eax+8],0"
 );
 // LINE 321:
 	asm( 
-"	      0046eee7    mov eax,[ebp-47Ch]"
+"	      0046eee7    mov eax,this"
 "	      0046eeed    mov dword ptr [eax+0Ch],0"
 );
 // LINE 322:
 	asm( 
-"	      0046eef4    mov ecx,[ebp-0Ch]"
+"	      0046eef4    mov ecx,fileImage"
 "	      0046eef7    call 004A04F0h"
 );
 // LINE 323:
 	asm( 
-"	      0046eefc    mov eax,[ebp-0Ch]"
+"	      0046eefc    mov eax,fileImage"
 "	      0046eeff    mov [ebp-45Ch],eax"
 "	      0046ef05    mov eax,[ebp-45Ch]"
 "	      0046ef0b    mov [ebp-458h],eax"
@@ -988,48 +988,48 @@ unsigned long CBackBuffer::Load() {
 // LINE 327:
 	asm( 
 "	      0046ef3f    push 0Eh"
-"	      0046ef41    lea eax,[ebp-20h]"
+"	      0046ef41    lea eax,bfHeader.bfType"
 "	      0046ef44    push eax"
-"	      0046ef45    mov eax,[ebp-0Ch]"
+"	      0046ef45    mov eax,fileImage"
 "	      0046ef48    mov eax,[eax+108h]"
 "	      0046ef4e    push eax"
 "	      0046ef4f    call 00580B50h"
 "	      0046ef54    add esp,0Ch"
-"	      0046ef57    mov [ebp-4],eax"
+"	      0046ef57    mov nBytesRead,eax"
 "	      0046ef5a    jmp near ptr 0046EF5Fh"
 );
 // LINE 328:
 	asm( 
 "	      0046ef5f    push 28h"
-"	      0046ef61    lea eax,[ebp-450h]"
+"	      0046ef61    lea eax,biHeader.biSize"
 "	      0046ef67    push eax"
-"	      0046ef68    mov eax,[ebp-0Ch]"
+"	      0046ef68    mov eax,fileImage"
 "	      0046ef6b    mov eax,[eax+108h]"
 "	      0046ef71    push eax"
 "	      0046ef72    call 00580B50h"
 "	      0046ef77    add esp,0Ch"
-"	      0046ef7a    mov [ebp-4],eax"
+"	      0046ef7a    mov nBytesRead,eax"
 "	      0046ef7d    jmp near ptr 0046EF82h"
 );
 // LINE 329:
 	asm( 
 "	      0046ef82    jmp near ptr 0046EF87h"
-"	      0046ef87    mov eax,[ebp-0Ch]"
+"	      0046ef87    mov eax,fileImage"
 "	      0046ef8a    mov eax,[eax+108h]"
 "	      0046ef90    push eax"
 "	      0046ef91    call 0058E430h"
 "	      0046ef96    add esp,4"
-"	      0046ef99    mov [ebp-10h],eax"
+"	      0046ef99    mov nPosition,eax"
 );
 // LINE 330:
 	asm( 
-"	      0046ef9c    mov ecx,[ebp-0Ch]"
+"	      0046ef9c    mov ecx,fileImage"
 "	      0046ef9f    call 004A0562h"
-"	      0046efa4    mov [ebp-8],eax"
+"	      0046efa4    mov nFileLength,eax"
 );
 // LINE 335:
 	asm( 
-"	      0046efa7    cmp dword ptr [ebp-430h],0"
+"	      0046efa7    cmp biHeader.biClrUsed,0"
 "	      0046efae    jne near ptr 0046EFC7h"
 );
 // LINE 336:
@@ -1037,173 +1037,173 @@ unsigned long CBackBuffer::Load() {
 "	      0046efb4    mov eax,1"
 "	      0046efb9    mov cl,[ebp-442h]"
 "	      0046efbf    shl eax,cl"
-"	      0046efc1    mov [ebp-430h],eax"
+"	      0046efc1    mov biHeader.biClrUsed,eax"
 );
 // LINE 338:
 	asm( 
-"	      0046efc7    mov eax,[ebp-430h]"
+"	      0046efc7    mov eax,biHeader.biClrUsed"
 "	      0046efcd    shl eax,2"
 "	      0046efd0    mov [ebp-46Ch],eax"
 "	      0046efd6    mov eax,[ebp-46Ch]"
 "	      0046efdc    push eax"
-"	      0046efdd    lea eax,[ebp-428h]"
+"	      0046efdd    lea eax,biColors[0].rgbBlue"
 "	      0046efe3    push eax"
-"	      0046efe4    mov eax,[ebp-0Ch]"
+"	      0046efe4    mov eax,fileImage"
 "	      0046efe7    mov eax,[eax+108h]"
 "	      0046efed    push eax"
 "	      0046efee    call 00580B50h"
 "	      0046eff3    add esp,0Ch"
-"	      0046eff6    mov [ebp-4],eax"
+"	      0046eff6    mov nBytesRead,eax"
 "	      0046eff9    jmp near ptr 0046EFFEh"
 );
 // LINE 339:
 	asm( 
 "	      0046effe    jmp near ptr 0046F003h"
-"	      0046f003    mov eax,[ebp-0Ch]"
+"	      0046f003    mov eax,fileImage"
 "	      0046f006    mov eax,[eax+108h]"
 "	      0046f00c    push eax"
 "	      0046f00d    call 0058E430h"
 "	      0046f012    add esp,4"
-"	      0046f015    mov [ebp-10h],eax"
+"	      0046f015    mov nPosition,eax"
 );
 // LINE 340:
 	asm( 
-"	      0046f018    mov ecx,[ebp-0Ch]"
+"	      0046f018    mov ecx,fileImage"
 "	      0046f01b    call 004A0562h"
-"	      0046f020    mov [ebp-8],eax"
+"	      0046f020    mov nFileLength,eax"
 );
 // LINE 344:
 	asm( 
-"	      0046f023    mov eax,[ebp-47Ch]"
+"	      0046f023    mov eax,this"
 "	      0046f029    mov eax,[eax]"
-"	      0046f02b    mov ecx,[ebp-47Ch]"
+"	      0046f02b    mov ecx,this"
 "	      0046f031    call dword ptr [eax]"
 );
 // LINE 346:
 	asm( 
-"	      0046f033    mov eax,[ebp-47Ch]"
+"	      0046f033    mov eax,this"
 "	      0046f039    mov eax,[eax+10h]"
-"	      0046f03c    mov [ebp-24h],eax"
+"	      0046f03c    mov biData,eax"
 );
 // LINE 347:
 	asm( 
-"	      0046f03f    mov eax,[ebp-44Ch]"
+"	      0046f03f    mov eax,biHeader.biWidth"
 "	      0046f045    add eax,3"
 "	      0046f048    and eax,0FFFFFFFCh"
-"	      0046f04b    mov [ebp-44Ch],eax"
+"	      0046f04b    mov biHeader.biWidth,eax"
 );
 // LINE 348:
 	asm( 
-"	      0046f051    mov eax,[ebp-448h]"
+"	      0046f051    mov eax,biHeader.biHeight"
 "	      0046f057    dec eax"
-"	      0046f058    mov ecx,[ebp-47Ch]"
+"	      0046f058    mov ecx,this"
 "	      0046f05e    imul eax,[ecx+14h]"
-"	      0046f062    add [ebp-24h],eax"
+"	      0046f062    add biData,eax"
 );
 // LINE 350:
 	asm( 
-"	      0046f065    mov ecx,[ebp-0Ch]"
+"	      0046f065    mov ecx,fileImage"
 "	      0046f068    call 004A0562h"
-"	      0046f06d    mov [ebp-8],eax"
+"	      0046f06d    mov nFileLength,eax"
 );
 // LINE 351:
 	asm( 
 "	      0046f070    jmp near ptr 0046F075h"
-"	      0046f075    mov eax,[ebp-0Ch]"
+"	      0046f075    mov eax,fileImage"
 "	      0046f078    mov eax,[eax+108h]"
 "	      0046f07e    push eax"
 "	      0046f07f    call 0058E430h"
 "	      0046f084    add esp,4"
-"	      0046f087    mov [ebp-10h],eax"
+"	      0046f087    mov nPosition,eax"
 );
 // LINE 352:
 	asm( 
-"	      0046f08a    mov dword ptr [ebp-28h],0"
+"	      0046f08a    mov i,0"
 "	      0046f091    jmp near ptr 0046F099h"
-"	      0046f096    inc dword ptr [ebp-28h]"
-"	      0046f099    mov eax,[ebp-448h]"
+"	      0046f096    inc i"
+"	      0046f099    mov eax,biHeader.biHeight"
 "	      0046f09f    dec eax"
-"	      0046f0a0    cmp eax,[ebp-28h]"
+"	      0046f0a0    cmp eax,i"
 "	      0046f0a3    jle near ptr 0046F114h"
-"	      0046f0a9    mov eax,[ebp-44Ch]"
+"	      0046f0a9    mov eax,biHeader.biWidth"
 "	      0046f0af    mov [ebp-470h],eax"
 );
 // LINE 353:
 	asm( 
 "	      0046f0b5    mov eax,[ebp-470h]"
 "	      0046f0bb    push eax"
-"	      0046f0bc    mov eax,[ebp-24h]"
+"	      0046f0bc    mov eax,biData"
 "	      0046f0bf    push eax"
-"	      0046f0c0    mov eax,[ebp-0Ch]"
+"	      0046f0c0    mov eax,fileImage"
 "	      0046f0c3    mov eax,[eax+108h]"
 "	      0046f0c9    push eax"
 "	      0046f0ca    call 00580B50h"
 "	      0046f0cf    add esp,0Ch"
-"	      0046f0d2    mov [ebp-4],eax"
+"	      0046f0d2    mov nBytesRead,eax"
 "	      0046f0d5    jmp near ptr 0046F0DAh"
 );
 // LINE 354:
 	asm( 
-"	      0046f0da    mov ecx,[ebp-0Ch]"
+"	      0046f0da    mov ecx,fileImage"
 "	      0046f0dd    call 004A0562h"
-"	      0046f0e2    mov [ebp-8],eax"
+"	      0046f0e2    mov nFileLength,eax"
 );
 // LINE 355:
 	asm( 
 "	      0046f0e5    jmp near ptr 0046F0EAh"
-"	      0046f0ea    mov eax,[ebp-0Ch]"
+"	      0046f0ea    mov eax,fileImage"
 "	      0046f0ed    mov eax,[eax+108h]"
 "	      0046f0f3    push eax"
 "	      0046f0f4    call 0058E430h"
 "	      0046f0f9    add esp,4"
-"	      0046f0fc    mov [ebp-10h],eax"
+"	      0046f0fc    mov nPosition,eax"
 );
 // LINE 356:
 	asm( 
 "	      0046f0ff    xor eax,eax"
-"	      0046f101    mov ecx,[ebp-47Ch]"
+"	      0046f101    mov ecx,this"
 "	      0046f107    sub eax,[ecx+14h]"
 "	      0046f10a    neg eax"
-"	      0046f10c    sub [ebp-24h],eax"
+"	      0046f10c    sub biData,eax"
 );
 // LINE 357:
 	asm( 
 "	      0046f10f    jmp near ptr 0046F096h"
-"	      0046f114    mov eax,[ebp-44Ch]"
+"	      0046f114    mov eax,biHeader.biWidth"
 "	      0046f11a    mov [ebp-474h],eax"
 );
 // LINE 361:
 	asm( 
 "	      0046f120    mov eax,[ebp-474h]"
 "	      0046f126    push eax"
-"	      0046f127    mov eax,[ebp-24h]"
+"	      0046f127    mov eax,biData"
 "	      0046f12a    push eax"
-"	      0046f12b    mov eax,[ebp-0Ch]"
+"	      0046f12b    mov eax,fileImage"
 "	      0046f12e    mov eax,[eax+108h]"
 "	      0046f134    push eax"
 "	      0046f135    call 00580B50h"
 "	      0046f13a    add esp,0Ch"
-"	      0046f13d    mov [ebp-4],eax"
+"	      0046f13d    mov nBytesRead,eax"
 "	      0046f140    jmp near ptr 0046F145h"
 );
 // LINE 362:
 	asm( 
 "	      0046f145    jmp near ptr 0046F14Ah"
-"	      0046f14a    mov eax,[ebp-0Ch]"
+"	      0046f14a    mov eax,fileImage"
 "	      0046f14d    mov eax,[eax+108h]"
 "	      0046f153    push eax"
 "	      0046f154    call 0058E430h"
 "	      0046f159    add esp,4"
-"	      0046f15c    mov [ebp-10h],eax"
+"	      0046f15c    mov nPosition,eax"
 );
 // LINE 363:
 	asm( 
-"	      0046f15f    mov ecx,[ebp-0Ch]"
+"	      0046f15f    mov ecx,fileImage"
 "	      0046f162    call 004A04F0h"
 );
 // LINE 364:
 	asm( 
-"	      0046f167    mov eax,[ebp-0Ch]"
+"	      0046f167    mov eax,fileImage"
 "	      0046f16a    mov [ebp-464h],eax"
 "	      0046f170    mov eax,[ebp-464h]"
 "	      0046f176    mov [ebp-460h],eax"
@@ -1218,9 +1218,9 @@ unsigned long CBackBuffer::Load() {
 );
 // LINE 366:
 	asm( 
-"	      0046f1a0    mov eax,[ebp-47Ch]"
+"	      0046f1a0    mov eax,this"
 "	      0046f1a6    mov eax,[eax]"
-"	      0046f1a8    mov ecx,[ebp-47Ch]"
+"	      0046f1a8    mov ecx,this"
 "	      0046f1ae    call dword ptr [eax+4]"
 );
 // LINE 367:
@@ -1255,19 +1255,19 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 "	      0046f1c3    push ebx"
 "	      0046f1c4    push esi"
 "	      0046f1c5    push edi"
-"	      0046f1c6    mov [ebp-2Ch],ecx"
+"	      0046f1c6    mov this,ecx"
 );
 // LINE 389:
 	asm( 
-"	      0046f1c9    mov eax,[ebp-2Ch]"
+"	      0046f1c9    mov eax,this"
 "	      0046f1cc    mov eax,[eax]"
-"	      0046f1ce    mov ecx,[ebp-2Ch]"
+"	      0046f1ce    mov ecx,this"
 "	      0046f1d1    call dword ptr [eax+60h]"
-"	      0046f1d4    mov [ebp-14h],eax"
+"	      0046f1d4    mov pOurSurface,eax"
 );
 // LINE 390:
 	asm( 
-"	      0046f1d7    cmp dword ptr [ebp-14h],0"
+"	      0046f1d7    cmp pOurSurface,0"
 "	      0046f1db    jne near ptr 0046F1EBh"
 );
 // LINE 391:
@@ -1277,26 +1277,26 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 393:
 	asm( 
-"	      0046f1eb    mov eax,[ebp+10h]"
+"	      0046f1eb    mov eax,pRectLeft"
 "	      0046f1ee    mov eax,[eax]"
-"	      0046f1f0    mov [ebp-24h],eax"
+"	      0046f1f0    mov rectText.left,eax"
 );
 // LINE 394:
 	asm( 
-"	      0046f1f3    mov eax,[ebp+14h]"
+"	      0046f1f3    mov eax,pRectTop"
 "	      0046f1f6    mov eax,[eax]"
-"	      0046f1f8    mov [ebp-20h],eax"
+"	      0046f1f8    mov rectText.top,eax"
 );
 // LINE 395:
 	asm( 
-"	      0046f1fb    cmp dword ptr [ebp+18h],0"
+"	      0046f1fb    cmp pRectRight,0"
 "	      0046f1ff    je near ptr 0046F212h"
 );
 // LINE 396:
 	asm( 
-"	      0046f205    mov eax,[ebp+18h]"
+"	      0046f205    mov eax,pRectRight"
 "	      0046f208    mov eax,[eax]"
-"	      0046f20a    mov [ebp-1Ch],eax"
+"	      0046f20a    mov rectText.right,eax"
 );
 // LINE 397:
 	asm( 
@@ -1304,20 +1304,20 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 398:
 	asm( 
-"	      0046f212    mov eax,[ebp-2Ch]"
+"	      0046f212    mov eax,this"
 "	      0046f215    mov eax,[eax+8]"
-"	      0046f218    mov [ebp-1Ch],eax"
+"	      0046f218    mov rectText.right,eax"
 );
 // LINE 399:
 	asm( 
-"	      0046f21b    cmp dword ptr [ebp+1Ch],0"
+"	      0046f21b    cmp pRectBottom,0"
 "	      0046f21f    je near ptr 0046F232h"
 );
 // LINE 400:
 	asm( 
-"	      0046f225    mov eax,[ebp+1Ch]"
+"	      0046f225    mov eax,pRectBottom"
 "	      0046f228    mov eax,[eax]"
-"	      0046f22a    mov [ebp-18h],eax"
+"	      0046f22a    mov rectText.bottom,eax"
 );
 // LINE 401:
 	asm( 
@@ -1325,29 +1325,29 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 402:
 	asm( 
-"	      0046f232    mov eax,[ebp-2Ch]"
+"	      0046f232    mov eax,this"
 "	      0046f235    mov eax,[eax+0Ch]"
-"	      0046f238    mov [ebp-18h],eax"
+"	      0046f238    mov rectText.bottom,eax"
 );
 // LINE 404:
 	asm( 
-"	      0046f23b    lea eax,[ebp-10h]"
+"	      0046f23b    lea eax,hdcSurface"
 "	      0046f23e    push eax"
-"	      0046f23f    mov eax,[ebp-14h]"
+"	      0046f23f    mov eax,pOurSurface"
 "	      0046f242    push eax"
-"	      0046f243    mov eax,[ebp-14h]"
+"	      0046f243    mov eax,pOurSurface"
 "	      0046f246    mov eax,[eax]"
 "	      0046f248    call dword ptr [eax+44h]"
-"	      0046f24b    mov [ebp-0Ch],eax"
+"	      0046f24b    mov ddrval,eax"
 );
 // LINE 405:
 	asm( 
-"	      0046f24e    cmp dword ptr [ebp-0Ch],0"
+"	      0046f24e    cmp ddrval,0"
 "	      0046f252    je near ptr 0046F27Fh"
 );
 // LINE 406:
 	asm( 
-"	      0046f258    mov eax,[ebp-0Ch]"
+"	      0046f258    mov eax,ddrval"
 "	      0046f25b    mov [ebp-28h],eax"
 "	      0046f25e    jmp near ptr 0046F263h"
 "	      0046f263    push 599548h"
@@ -1365,7 +1365,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 411:
 	asm( 
-"	      0046f27f    mov dword ptr [ebp-8],10h"
+"	      0046f27f    mov nFormat,10h"
 );
 // LINE 412:
 	asm( 
@@ -1374,7 +1374,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 413:
 	asm( 
-"	      0046f290    or dword ptr [ebp-8],1"
+"	      0046f290    or nFormat,1"
 );
 // LINE 414:
 	asm( 
@@ -1384,7 +1384,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 415:
 	asm( 
-"	      0046f2a3    or dword ptr [ebp-8],2"
+"	      0046f2a3    or nFormat,2"
 );
 // LINE 416:
 	asm( 
@@ -1397,7 +1397,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 419:
 	asm( 
-"	      0046f2b6    or dword ptr [ebp-8],4"
+"	      0046f2b6    or nFormat,4"
 );
 // LINE 420:
 	asm( 
@@ -1407,7 +1407,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 // LINE 421:
 	asm( 
 "	      0046f2c4    push 2"
-"	      0046f2c6    mov eax,[ebp-10h]"
+"	      0046f2c6    mov eax,hdcSurface"
 "	      0046f2c9    push eax"
 "	      0046f2ca    call dword ptr ds:[6C3574h]"
 );
@@ -1418,7 +1418,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 // LINE 423:
 	asm( 
 "	      0046f2d5    push 1"
-"	      0046f2d7    mov eax,[ebp-10h]"
+"	      0046f2d7    mov eax,hdcSurface"
 "	      0046f2da    push eax"
 "	      0046f2db    call dword ptr ds:[6C3574h]"
 );
@@ -1429,77 +1429,77 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 425:
 	asm( 
-"	      0046f2eb    or dword ptr [ebp-8],400h"
+"	      0046f2eb    or nFormat,400h"
 );
 // LINE 427:
 	asm( 
-"	      0046f2f2    cmp dword ptr [ebp+20h],0"
+"	      0046f2f2    cmp mfontToUse,0"
 "	      0046f2f6    je near ptr 0046F31Ah"
 );
 // LINE 428:
 	asm( 
 "	      0046f2fc    jmp near ptr 0046F301h"
-"	      0046f301    mov eax,[ebp+20h]"
+"	      0046f301    mov eax,mfontToUse"
 "	      0046f304    mov eax,[eax+18h]"
 "	      0046f307    push eax"
-"	      0046f308    mov eax,[ebp-10h]"
+"	      0046f308    mov eax,hdcSurface"
 "	      0046f30b    push eax"
 "	      0046f30c    call dword ptr ds:[6C359Ch]"
-"	      0046f312    mov [ebp-4],eax"
+"	      0046f312    mov hFontOriginal,eax"
 );
 // LINE 429:
 	asm( 
 "	      0046f315    jmp near ptr 0046F343h"
-"	      0046f31a    mov eax,[ebp-2Ch]"
+"	      0046f31a    mov eax,this"
 "	      0046f31d    cmp dword ptr [eax+34h],0"
 "	      0046f321    je near ptr 0046F343h"
 );
 // LINE 430:
 	asm( 
 "	      0046f327    jmp near ptr 0046F32Ch"
-"	      0046f32c    mov eax,[ebp-2Ch]"
+"	      0046f32c    mov eax,this"
 "	      0046f32f    mov eax,[eax+34h]"
 "	      0046f332    mov eax,[eax+18h]"
 "	      0046f335    push eax"
-"	      0046f336    mov eax,[ebp-10h]"
+"	      0046f336    mov eax,hdcSurface"
 "	      0046f339    push eax"
 "	      0046f33a    call dword ptr ds:[6C359Ch]"
-"	      0046f340    mov [ebp-4],eax"
+"	      0046f340    mov hFontOriginal,eax"
 );
 // LINE 432:
 	asm( 
-"	      0046f343    mov eax,[ebp-2Ch]"
+"	      0046f343    mov eax,this"
 "	      0046f346    xor ecx,ecx"
 "	      0046f348    mov cl,[eax+39h]"
 "	      0046f34b    shl ecx,8"
-"	      0046f34e    mov eax,[ebp-2Ch]"
+"	      0046f34e    mov eax,this"
 "	      0046f351    xor edx,edx"
 "	      0046f353    mov dl,[eax+3Ah]"
 "	      0046f356    or ecx,edx"
-"	      0046f358    mov eax,[ebp-2Ch]"
+"	      0046f358    mov eax,this"
 "	      0046f35b    xor edx,edx"
 "	      0046f35d    mov dl,[eax+38h]"
 "	      0046f360    shl edx,10h"
 "	      0046f363    or ecx,edx"
 "	      0046f365    push ecx"
-"	      0046f366    mov eax,[ebp-10h]"
+"	      0046f366    mov eax,hdcSurface"
 "	      0046f369    push eax"
 "	      0046f36a    call dword ptr ds:[6C3594h]"
 );
 // LINE 434:
 	asm( 
-"	      0046f370    mov eax,[ebp-8]"
+"	      0046f370    mov eax,nFormat"
 "	      0046f373    push eax"
-"	      0046f374    lea eax,[ebp-24h]"
+"	      0046f374    lea eax,rectText.left"
 "	      0046f377    push eax"
-"	      0046f378    mov eax,[ebp+8]"
+"	      0046f378    mov eax,pText"
 "	      0046f37b    push eax"
 "	      0046f37c    call 0056ABE0h"
 "	      0046f381    add esp,4"
 "	      0046f384    push eax"
-"	      0046f385    mov eax,[ebp+8]"
+"	      0046f385    mov eax,pText"
 "	      0046f388    push eax"
-"	      0046f389    mov eax,[ebp-10h]"
+"	      0046f389    mov eax,hdcSurface"
 "	      0046f38c    push eax"
 "	      0046f38d    call dword ptr ds:[6C389Ch]"
 );
@@ -1510,52 +1510,52 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 437:
 	asm( 
-"	      0046f39d    mov eax,[ebp-24h]"
-"	      0046f3a0    mov ecx,[ebp+10h]"
+"	      0046f39d    mov eax,rectText.left"
+"	      0046f3a0    mov ecx,pRectLeft"
 "	      0046f3a3    mov [ecx],eax"
 );
 // LINE 438:
 	asm( 
-"	      0046f3a5    mov eax,[ebp-20h]"
-"	      0046f3a8    mov ecx,[ebp+14h]"
+"	      0046f3a5    mov eax,rectText.top"
+"	      0046f3a8    mov ecx,pRectTop"
 "	      0046f3ab    mov [ecx],eax"
 );
 // LINE 439:
 	asm( 
-"	      0046f3ad    mov eax,[ebp-1Ch]"
-"	      0046f3b0    mov ecx,[ebp+18h]"
+"	      0046f3ad    mov eax,rectText.right"
+"	      0046f3b0    mov ecx,pRectRight"
 "	      0046f3b3    mov [ecx],eax"
 );
 // LINE 440:
 	asm( 
-"	      0046f3b5    mov eax,[ebp-18h]"
-"	      0046f3b8    mov ecx,[ebp+1Ch]"
+"	      0046f3b5    mov eax,rectText.bottom"
+"	      0046f3b8    mov ecx,pRectBottom"
 "	      0046f3bb    mov [ecx],eax"
 );
 // LINE 443:
 	asm( 
-"	      0046f3bd    mov eax,[ebp-2Ch]"
+"	      0046f3bd    mov eax,this"
 "	      0046f3c0    cmp dword ptr [eax+34h],0"
 "	      0046f3c4    jne near ptr 0046F3D4h"
-"	      0046f3ca    cmp dword ptr [ebp+20h],0"
+"	      0046f3ca    cmp mfontToUse,0"
 "	      0046f3ce    je near ptr 0046F3E5h"
 );
 // LINE 444:
 	asm( 
-"	      0046f3d4    mov eax,[ebp-4]"
+"	      0046f3d4    mov eax,hFontOriginal"
 "	      0046f3d7    push eax"
-"	      0046f3d8    mov eax,[ebp-10h]"
+"	      0046f3d8    mov eax,hdcSurface"
 "	      0046f3db    push eax"
 "	      0046f3dc    call dword ptr ds:[6C359Ch]"
-"	      0046f3e2    mov [ebp-4],eax"
+"	      0046f3e2    mov hFontOriginal,eax"
 );
 // LINE 445:
 	asm( 
-"	      0046f3e5    mov eax,[ebp-10h]"
+"	      0046f3e5    mov eax,hdcSurface"
 "	      0046f3e8    push eax"
-"	      0046f3e9    mov eax,[ebp-14h]"
+"	      0046f3e9    mov eax,pOurSurface"
 "	      0046f3ec    push eax"
-"	      0046f3ed    mov eax,[ebp-14h]"
+"	      0046f3ed    mov eax,pOurSurface"
 "	      0046f3f0    mov eax,[eax]"
 "	      0046f3f2    call dword ptr [eax+68h]"
 );
@@ -1590,19 +1590,19 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 "	      0046f409    push ebx"
 "	      0046f40a    push esi"
 "	      0046f40b    push edi"
-"	      0046f40c    mov [ebp-1Ch],ecx"
+"	      0046f40c    mov this,ecx"
 );
 // LINE 468:
 	asm( 
-"	      0046f40f    mov eax,[ebp-1Ch]"
+"	      0046f40f    mov eax,this"
 "	      0046f412    mov eax,[eax]"
-"	      0046f414    mov ecx,[ebp-1Ch]"
+"	      0046f414    mov ecx,this"
 "	      0046f417    call dword ptr [eax+60h]"
-"	      0046f41a    mov [ebp-14h],eax"
+"	      0046f41a    mov pOurSurface,eax"
 );
 // LINE 469:
 	asm( 
-"	      0046f41d    cmp dword ptr [ebp-14h],0"
+"	      0046f41d    cmp pOurSurface,0"
 "	      0046f421    jne near ptr 0046F431h"
 );
 // LINE 470:
@@ -1612,23 +1612,23 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 472:
 	asm( 
-"	      0046f431    lea eax,[ebp-10h]"
+"	      0046f431    lea eax,hdcSurface"
 "	      0046f434    push eax"
-"	      0046f435    mov eax,[ebp-14h]"
+"	      0046f435    mov eax,pOurSurface"
 "	      0046f438    push eax"
-"	      0046f439    mov eax,[ebp-14h]"
+"	      0046f439    mov eax,pOurSurface"
 "	      0046f43c    mov eax,[eax]"
 "	      0046f43e    call dword ptr [eax+44h]"
-"	      0046f441    mov [ebp-0Ch],eax"
+"	      0046f441    mov ddrval,eax"
 );
 // LINE 473:
 	asm( 
-"	      0046f444    cmp dword ptr [ebp-0Ch],0"
+"	      0046f444    cmp ddrval,0"
 "	      0046f448    je near ptr 0046F475h"
 );
 // LINE 474:
 	asm( 
-"	      0046f44e    mov eax,[ebp-0Ch]"
+"	      0046f44e    mov eax,ddrval"
 "	      0046f451    mov [ebp-18h],eax"
 "	      0046f454    jmp near ptr 0046F459h"
 "	      0046f459    push 599580h"
@@ -1646,7 +1646,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 479:
 	asm( 
-"	      0046f475    mov dword ptr [ebp-8],10h"
+"	      0046f475    mov nFormat,10h"
 );
 // LINE 480:
 	asm( 
@@ -1655,7 +1655,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 481:
 	asm( 
-"	      0046f486    or dword ptr [ebp-8],1"
+"	      0046f486    or nFormat,1"
 );
 // LINE 482:
 	asm( 
@@ -1665,7 +1665,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 483:
 	asm( 
-"	      0046f499    or dword ptr [ebp-8],2"
+"	      0046f499    or nFormat,2"
 );
 // LINE 484:
 	asm( 
@@ -1678,7 +1678,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 487:
 	asm( 
-"	      0046f4ac    or dword ptr [ebp-8],4"
+"	      0046f4ac    or nFormat,4"
 );
 // LINE 488:
 	asm( 
@@ -1688,7 +1688,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 // LINE 489:
 	asm( 
 "	      0046f4ba    push 2"
-"	      0046f4bc    mov eax,[ebp-10h]"
+"	      0046f4bc    mov eax,hdcSurface"
 "	      0046f4bf    push eax"
 "	      0046f4c0    call dword ptr ds:[6C3574h]"
 );
@@ -1699,7 +1699,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 // LINE 491:
 	asm( 
 "	      0046f4cb    push 1"
-"	      0046f4cd    mov eax,[ebp-10h]"
+"	      0046f4cd    mov eax,hdcSurface"
 "	      0046f4d0    push eax"
 "	      0046f4d1    call dword ptr ds:[6C3574h]"
 );
@@ -1710,101 +1710,101 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 493:
 	asm( 
-"	      0046f4e1    or dword ptr [ebp-8],400h"
+"	      0046f4e1    or nFormat,400h"
 );
 // LINE 495:
 	asm( 
-"	      0046f4e8    cmp dword ptr [ebp+18h],0"
+"	      0046f4e8    cmp mfontToUse,0"
 "	      0046f4ec    je near ptr 0046F510h"
 );
 // LINE 496:
 	asm( 
 "	      0046f4f2    jmp near ptr 0046F4F7h"
-"	      0046f4f7    mov eax,[ebp+18h]"
+"	      0046f4f7    mov eax,mfontToUse"
 "	      0046f4fa    mov eax,[eax+18h]"
 "	      0046f4fd    push eax"
-"	      0046f4fe    mov eax,[ebp-10h]"
+"	      0046f4fe    mov eax,hdcSurface"
 "	      0046f501    push eax"
 "	      0046f502    call dword ptr ds:[6C359Ch]"
-"	      0046f508    mov [ebp-4],eax"
+"	      0046f508    mov hFontOriginal,eax"
 );
 // LINE 497:
 	asm( 
 "	      0046f50b    jmp near ptr 0046F539h"
-"	      0046f510    mov eax,[ebp-1Ch]"
+"	      0046f510    mov eax,this"
 "	      0046f513    cmp dword ptr [eax+34h],0"
 "	      0046f517    je near ptr 0046F539h"
 );
 // LINE 498:
 	asm( 
 "	      0046f51d    jmp near ptr 0046F522h"
-"	      0046f522    mov eax,[ebp-1Ch]"
+"	      0046f522    mov eax,this"
 "	      0046f525    mov eax,[eax+34h]"
 "	      0046f528    mov eax,[eax+18h]"
 "	      0046f52b    push eax"
-"	      0046f52c    mov eax,[ebp-10h]"
+"	      0046f52c    mov eax,hdcSurface"
 "	      0046f52f    push eax"
 "	      0046f530    call dword ptr ds:[6C359Ch]"
-"	      0046f536    mov [ebp-4],eax"
+"	      0046f536    mov hFontOriginal,eax"
 );
 // LINE 500:
 	asm( 
-"	      0046f539    mov eax,[ebp-1Ch]"
+"	      0046f539    mov eax,this"
 "	      0046f53c    xor ecx,ecx"
 "	      0046f53e    mov cl,[eax+39h]"
 "	      0046f541    shl ecx,8"
-"	      0046f544    mov eax,[ebp-1Ch]"
+"	      0046f544    mov eax,this"
 "	      0046f547    xor edx,edx"
 "	      0046f549    mov dl,[eax+3Ah]"
 "	      0046f54c    or ecx,edx"
-"	      0046f54e    mov eax,[ebp-1Ch]"
+"	      0046f54e    mov eax,this"
 "	      0046f551    xor edx,edx"
 "	      0046f553    mov dl,[eax+38h]"
 "	      0046f556    shl edx,10h"
 "	      0046f559    or ecx,edx"
 "	      0046f55b    push ecx"
-"	      0046f55c    mov eax,[ebp-10h]"
+"	      0046f55c    mov eax,hdcSurface"
 "	      0046f55f    push eax"
 "	      0046f560    call dword ptr ds:[6C3594h]"
 );
 // LINE 501:
 	asm( 
-"	      0046f566    mov eax,[ebp-8]"
+"	      0046f566    mov eax,nFormat"
 "	      0046f569    push eax"
-"	      0046f56a    mov eax,[ebp+14h]"
+"	      0046f56a    mov eax,rectText"
 "	      0046f56d    push eax"
-"	      0046f56e    mov eax,[ebp+0Ch]"
+"	      0046f56e    mov eax,nTextLength"
 "	      0046f571    push eax"
-"	      0046f572    mov eax,[ebp+8]"
+"	      0046f572    mov eax,pText"
 "	      0046f575    push eax"
-"	      0046f576    mov eax,[ebp-10h]"
+"	      0046f576    mov eax,hdcSurface"
 "	      0046f579    push eax"
 "	      0046f57a    call dword ptr ds:[6C389Ch]"
 );
 // LINE 503:
 	asm( 
-"	      0046f580    mov eax,[ebp-1Ch]"
+"	      0046f580    mov eax,this"
 "	      0046f583    cmp dword ptr [eax+34h],0"
 "	      0046f587    jne near ptr 0046F597h"
-"	      0046f58d    cmp dword ptr [ebp+18h],0"
+"	      0046f58d    cmp mfontToUse,0"
 "	      0046f591    je near ptr 0046F5A8h"
 );
 // LINE 504:
 	asm( 
-"	      0046f597    mov eax,[ebp-4]"
+"	      0046f597    mov eax,hFontOriginal"
 "	      0046f59a    push eax"
-"	      0046f59b    mov eax,[ebp-10h]"
+"	      0046f59b    mov eax,hdcSurface"
 "	      0046f59e    push eax"
 "	      0046f59f    call dword ptr ds:[6C359Ch]"
-"	      0046f5a5    mov [ebp-4],eax"
+"	      0046f5a5    mov hFontOriginal,eax"
 );
 // LINE 505:
 	asm( 
-"	      0046f5a8    mov eax,[ebp-10h]"
+"	      0046f5a8    mov eax,hdcSurface"
 "	      0046f5ab    push eax"
-"	      0046f5ac    mov eax,[ebp-14h]"
+"	      0046f5ac    mov eax,pOurSurface"
 "	      0046f5af    push eax"
-"	      0046f5b0    mov eax,[ebp-14h]"
+"	      0046f5b0    mov eax,pOurSurface"
 "	      0046f5b3    mov eax,[eax]"
 "	      0046f5b5    call dword ptr [eax+68h]"
 );
@@ -1840,19 +1840,19 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 "	      0046f5cc    push ebx"
 "	      0046f5cd    push esi"
 "	      0046f5ce    push edi"
-"	      0046f5cf    mov [ebp-24h],ecx"
+"	      0046f5cf    mov this,ecx"
 );
 // LINE 546:
 	asm( 
-"	      0046f5d2    mov eax,[ebp-24h]"
+"	      0046f5d2    mov eax,this"
 "	      0046f5d5    mov eax,[eax]"
-"	      0046f5d7    mov ecx,[ebp-24h]"
+"	      0046f5d7    mov ecx,this"
 "	      0046f5da    call dword ptr [eax+60h]"
-"	      0046f5dd    mov [ebp-18h],eax"
+"	      0046f5dd    mov pOurSurface,eax"
 );
 // LINE 547:
 	asm( 
-"	      0046f5e0    cmp dword ptr [ebp-18h],0"
+"	      0046f5e0    cmp pOurSurface,0"
 "	      0046f5e4    jne near ptr 0046F5F4h"
 );
 // LINE 548:
@@ -1862,33 +1862,33 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 );
 // LINE 555:
 	asm( 
-"	      0046f5f4    mov eax,[ebp-24h]"
+"	      0046f5f4    mov eax,this"
 "	      0046f5f7    cmp dword ptr [eax+128h],0"
 "	      0046f5fe    je near ptr 0046F667h"
-"	      0046f604    mov eax,[ebp-24h]"
-"	      0046f607    mov ecx,[ebp+18h]"
+"	      0046f604    mov eax,this"
+"	      0046f607    mov ecx,nThickness"
 "	      0046f60a    cmp [eax+12Ch],ecx"
 "	      0046f610    jne near ptr 0046F667h"
-"	      0046f616    mov eax,[ebp-24h]"
+"	      0046f616    mov eax,this"
 "	      0046f619    xor ecx,ecx"
 "	      0046f61b    mov cl,[eax+132h]"
-"	      0046f621    mov eax,[ebp-24h]"
+"	      0046f621    mov eax,this"
 "	      0046f624    xor edx,edx"
 "	      0046f626    mov dl,[eax+3Eh]"
 "	      0046f629    cmp ecx,edx"
 "	      0046f62b    jne near ptr 0046F667h"
-"	      0046f631    mov eax,[ebp-24h]"
+"	      0046f631    mov eax,this"
 "	      0046f634    xor ecx,ecx"
 "	      0046f636    mov cl,[eax+3Dh]"
-"	      0046f639    mov eax,[ebp-24h]"
+"	      0046f639    mov eax,this"
 "	      0046f63c    xor edx,edx"
 "	      0046f63e    mov dl,[eax+131h]"
 "	      0046f644    cmp ecx,edx"
 "	      0046f646    jne near ptr 0046F667h"
-"	      0046f64c    mov eax,[ebp-24h]"
+"	      0046f64c    mov eax,this"
 "	      0046f64f    xor ecx,ecx"
 "	      0046f651    mov cl,[eax+3Ch]"
-"	      0046f654    mov eax,[ebp-24h]"
+"	      0046f654    mov eax,this"
 "	      0046f657    xor edx,edx"
 "	      0046f659    mov dl,[eax+130h]"
 "	      0046f65f    cmp ecx,edx"
@@ -1896,61 +1896,61 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 );
 // LINE 557:
 	asm( 
-"	      0046f667    mov eax,[ebp-24h]"
+"	      0046f667    mov eax,this"
 "	      0046f66a    cmp dword ptr [eax+128h],0"
 "	      0046f671    je near ptr 0046F687h"
 );
 // LINE 558:
 	asm( 
-"	      0046f677    mov eax,[ebp-24h]"
+"	      0046f677    mov eax,this"
 "	      0046f67a    mov eax,[eax+128h]"
 "	      0046f680    push eax"
 "	      0046f681    call dword ptr ds:[6C358Ch]"
 );
 // LINE 559:
 	asm( 
-"	      0046f687    mov eax,[ebp+18h]"
-"	      0046f68a    mov ecx,[ebp-24h]"
+"	      0046f687    mov eax,nThickness"
+"	      0046f68a    mov ecx,this"
 "	      0046f68d    mov [ecx+12Ch],eax"
 );
 // LINE 560:
 	asm( 
-"	      0046f693    mov eax,[ebp-24h]"
+"	      0046f693    mov eax,this"
 "	      0046f696    mov eax,[eax+3Ch]"
-"	      0046f699    mov ecx,[ebp-24h]"
+"	      0046f699    mov ecx,this"
 "	      0046f69c    mov [ecx+130h],eax"
 );
 // LINE 561:
 	asm( 
-"	      0046f6a2    mov eax,[ebp-24h]"
+"	      0046f6a2    mov eax,this"
 "	      0046f6a5    xor ecx,ecx"
 "	      0046f6a7    mov cl,[eax+3Dh]"
 "	      0046f6aa    shl ecx,8"
-"	      0046f6ad    mov eax,[ebp-24h]"
+"	      0046f6ad    mov eax,this"
 "	      0046f6b0    xor edx,edx"
 "	      0046f6b2    mov dl,[eax+3Eh]"
 "	      0046f6b5    or ecx,edx"
-"	      0046f6b7    mov eax,[ebp-24h]"
+"	      0046f6b7    mov eax,this"
 "	      0046f6ba    xor edx,edx"
 "	      0046f6bc    mov dl,[eax+3Ch]"
 "	      0046f6bf    shl edx,10h"
 "	      0046f6c2    or ecx,edx"
-"	      0046f6c4    mov [ebp-4],ecx"
+"	      0046f6c4    mov crPen,ecx"
 );
 // LINE 562:
 	asm( 
-"	      0046f6c7    mov eax,[ebp-4]"
+"	      0046f6c7    mov eax,crPen"
 "	      0046f6ca    push eax"
-"	      0046f6cb    mov eax,[ebp+18h]"
+"	      0046f6cb    mov eax,nThickness"
 "	      0046f6ce    push eax"
 "	      0046f6cf    push 0"
 "	      0046f6d1    call dword ptr ds:[6C35A0h]"
-"	      0046f6d7    mov ecx,[ebp-24h]"
+"	      0046f6d7    mov ecx,this"
 "	      0046f6da    mov [ecx+128h],eax"
 );
 // LINE 563:
 	asm( 
-"	      0046f6e0    mov eax,[ebp-24h]"
+"	      0046f6e0    mov eax,this"
 "	      0046f6e3    cmp dword ptr [eax+128h],0"
 "	      0046f6ea    jne near ptr 0046F70Ch"
 );
@@ -1968,23 +1968,23 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 );
 // LINE 570:
 	asm( 
-"	      0046f70c    lea eax,[ebp-14h]"
+"	      0046f70c    lea eax,hdcSurface"
 "	      0046f70f    push eax"
-"	      0046f710    mov eax,[ebp-18h]"
+"	      0046f710    mov eax,pOurSurface"
 "	      0046f713    push eax"
-"	      0046f714    mov eax,[ebp-18h]"
+"	      0046f714    mov eax,pOurSurface"
 "	      0046f717    mov eax,[eax]"
 "	      0046f719    call dword ptr [eax+44h]"
-"	      0046f71c    mov [ebp-10h],eax"
+"	      0046f71c    mov ddrval,eax"
 );
 // LINE 571:
 	asm( 
-"	      0046f71f    cmp dword ptr [ebp-10h],0"
+"	      0046f71f    cmp ddrval,0"
 "	      0046f723    je near ptr 0046F750h"
 );
 // LINE 572:
 	asm( 
-"	      0046f729    mov eax,[ebp-10h]"
+"	      0046f729    mov eax,ddrval"
 "	      0046f72c    mov [ebp-20h],eax"
 "	      0046f72f    jmp near ptr 0046F734h"
 "	      0046f734    push 5995F4h"
@@ -2002,51 +2002,51 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 );
 // LINE 576:
 	asm( 
-"	      0046f750    mov eax,[ebp-24h]"
+"	      0046f750    mov eax,this"
 "	      0046f753    mov eax,[eax+128h]"
 "	      0046f759    push eax"
-"	      0046f75a    mov eax,[ebp-14h]"
+"	      0046f75a    mov eax,hdcSurface"
 "	      0046f75d    push eax"
 "	      0046f75e    call dword ptr ds:[6C359Ch]"
-"	      0046f764    mov [ebp-1Ch],eax"
+"	      0046f764    mov hPenOld,eax"
 );
 // LINE 577:
 	asm( 
-"	      0046f767    lea eax,[ebp-0Ch]"
+"	      0046f767    lea eax,ptPositionOld.x"
 "	      0046f76a    push eax"
-"	      0046f76b    mov eax,[ebp+0Ch]"
+"	      0046f76b    mov eax,nStartY"
 "	      0046f76e    push eax"
-"	      0046f76f    mov eax,[ebp+8]"
+"	      0046f76f    mov eax,nStartX"
 "	      0046f772    push eax"
-"	      0046f773    mov eax,[ebp-14h]"
+"	      0046f773    mov eax,hdcSurface"
 "	      0046f776    push eax"
 "	      0046f777    call dword ptr ds:[6C35A8h]"
 );
 // LINE 578:
 	asm( 
-"	      0046f77d    mov eax,[ebp+14h]"
+"	      0046f77d    mov eax,nEndY"
 "	      0046f780    push eax"
-"	      0046f781    mov eax,[ebp+10h]"
+"	      0046f781    mov eax,nEndX"
 "	      0046f784    push eax"
-"	      0046f785    mov eax,[ebp-14h]"
+"	      0046f785    mov eax,hdcSurface"
 "	      0046f788    push eax"
 "	      0046f789    call dword ptr ds:[6C3598h]"
 );
 // LINE 579:
 	asm( 
-"	      0046f78f    mov eax,[ebp-1Ch]"
+"	      0046f78f    mov eax,hPenOld"
 "	      0046f792    push eax"
-"	      0046f793    mov eax,[ebp-14h]"
+"	      0046f793    mov eax,hdcSurface"
 "	      0046f796    push eax"
 "	      0046f797    call dword ptr ds:[6C359Ch]"
 );
 // LINE 580:
 	asm( 
-"	      0046f79d    mov eax,[ebp-14h]"
+"	      0046f79d    mov eax,hdcSurface"
 "	      0046f7a0    push eax"
-"	      0046f7a1    mov eax,[ebp-18h]"
+"	      0046f7a1    mov eax,pOurSurface"
 "	      0046f7a4    push eax"
-"	      0046f7a5    mov eax,[ebp-18h]"
+"	      0046f7a5    mov eax,pOurSurface"
 "	      0046f7a8    mov eax,[eax]"
 "	      0046f7aa    call dword ptr [eax+68h]"
 );
@@ -2077,11 +2077,11 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 "	      0046f7c1    push ebx"
 "	      0046f7c2    push esi"
 "	      0046f7c3    push edi"
-"	      0046f7c4    mov [ebp-0Ch],ecx"
+"	      0046f7c4    mov this,ecx"
 );
 // LINE 602:
 	asm( 
-"	      0046f7c7    mov eax,[ebp-0Ch]"
+"	      0046f7c7    mov eax,this"
 "	      0046f7ca    cmp dword ptr [eax+4Ch],0"
 "	      0046f7ce    jne near ptr 0046F7DEh"
 );
@@ -2094,23 +2094,23 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 	asm( 
 "	      0046f7de    push 1"
 "	      0046f7e0    push 0"
-"	      0046f7e2    mov eax,[ebp-0Ch]"
+"	      0046f7e2    mov eax,this"
 "	      0046f7e5    mov eax,[eax+4Ch]"
 "	      0046f7e8    push eax"
-"	      0046f7e9    mov eax,[ebp-0Ch]"
+"	      0046f7e9    mov eax,this"
 "	      0046f7ec    mov eax,[eax+4Ch]"
 "	      0046f7ef    mov eax,[eax]"
 "	      0046f7f1    call dword ptr [eax+2Ch]"
-"	      0046f7f4    mov [ebp-4],eax"
+"	      0046f7f4    mov ddrval,eax"
 );
 // LINE 606:
 	asm( 
-"	      0046f7f7    cmp dword ptr [ebp-4],0"
+"	      0046f7f7    cmp ddrval,0"
 "	      0046f7fb    je near ptr 0046F819h"
 );
 // LINE 607:
 	asm( 
-"	      0046f801    mov eax,[ebp-4]"
+"	      0046f801    mov eax,ddrval"
 "	      0046f804    mov [ebp-8],eax"
 "	      0046f807    jmp near ptr 0046F80Ch"
 "	      0046f80c    push 59962Ch"
@@ -2119,7 +2119,7 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 );
 // LINE 609:
 	asm( 
-"	      0046f819    mov eax,[ebp-4]"
+"	      0046f819    mov eax,ddrval"
 "	      0046f81c    jmp near ptr 0046F821h"
 );
 // LINE 611:
@@ -2148,19 +2148,19 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 "	      0046f831    push ebx"
 "	      0046f832    push esi"
 "	      0046f833    push edi"
-"	      0046f834    mov [ebp-98h],ecx"
+"	      0046f834    mov this,ecx"
 );
 // LINE 634:
 	asm( 
-"	      0046f83a    mov eax,[ebp-98h]"
+"	      0046f83a    mov eax,this"
 "	      0046f840    mov eax,[eax]"
-"	      0046f842    mov ecx,[ebp-98h]"
+"	      0046f842    mov ecx,this"
 "	      0046f848    call dword ptr [eax+60h]"
-"	      0046f84b    mov [ebp-8Ch],eax"
+"	      0046f84b    mov pOurSurface,eax"
 );
 // LINE 635:
 	asm( 
-"	      0046f851    cmp dword ptr [ebp-8Ch],0"
+"	      0046f851    cmp pOurSurface,0"
 "	      0046f858    jne near ptr 0046F868h"
 );
 // LINE 636:
@@ -2170,7 +2170,7 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 );
 // LINE 638:
 	asm( 
-"	      0046f868    mov eax,[ebp+8]"
+"	      0046f868    mov eax,pDest"
 "	      0046f86b    mov eax,[eax+14h]"
 "	      0046f86e    mov [ebp-90h],eax"
 "	      0046f874    jmp near ptr 0046F879h"
@@ -2180,84 +2180,84 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 "	      0046f887    mov eax,[ebp-94h]"
 "	      0046f88d    mov ecx,[ebp-90h]"
 "	      0046f893    call dword ptr [eax+60h]"
-"	      0046f896    mov [ebp-88h],eax"
+"	      0046f896    mov pDestSurface,eax"
 );
 // LINE 640:
 	asm( 
-"	      0046f89c    mov eax,[ebp+0Ch]"
-"	      0046f89f    mov [ebp-10h],eax"
+"	      0046f89c    mov eax,SrcLeft"
+"	      0046f89f    mov srcRect.left,eax"
 );
 // LINE 641:
 	asm( 
-"	      0046f8a2    mov eax,[ebp+10h]"
-"	      0046f8a5    mov [ebp-0Ch],eax"
+"	      0046f8a2    mov eax,SrcTop"
+"	      0046f8a5    mov srcRect.top,eax"
 );
 // LINE 642:
 	asm( 
-"	      0046f8a8    mov eax,[ebp+14h]"
-"	      0046f8ab    mov [ebp-8],eax"
+"	      0046f8a8    mov eax,SrcRight"
+"	      0046f8ab    mov srcRect.right,eax"
 );
 // LINE 643:
 	asm( 
-"	      0046f8ae    mov eax,[ebp+18h]"
-"	      0046f8b1    mov [ebp-4],eax"
+"	      0046f8ae    mov eax,SrcBottom"
+"	      0046f8b1    mov srcRect.bottom,eax"
 );
 // LINE 645:
 	asm( 
-"	      0046f8b4    mov eax,[ebp+1Ch]"
-"	      0046f8b7    mov [ebp-84h],eax"
+"	      0046f8b4    mov eax,DestLeft"
+"	      0046f8b7    mov destRect.left,eax"
 );
 // LINE 646:
 	asm( 
-"	      0046f8bd    mov eax,[ebp+20h]"
-"	      0046f8c0    mov [ebp-80h],eax"
+"	      0046f8bd    mov eax,DestTop"
+"	      0046f8c0    mov destRect.top,eax"
 );
 // LINE 649:
 	asm( 
-"	      0046f8c3    mov eax,[ebp+14h]"
-"	      0046f8c6    sub eax,[ebp+0Ch]"
-"	      0046f8c9    add eax,[ebp+1Ch]"
-"	      0046f8cc    mov ecx,[ebp-98h]"
+"	      0046f8c3    mov eax,SrcRight"
+"	      0046f8c6    sub eax,SrcLeft"
+"	      0046f8c9    add eax,DestLeft"
+"	      0046f8cc    mov ecx,this"
 "	      0046f8d2    mov ecx,[ecx+8]"
 "	      0046f8d5    cmp eax,ecx"
 "	      0046f8d7    jl near ptr 0046F8DFh"
 "	      0046f8dd    mov eax,ecx"
-"	      0046f8df    mov [ebp-7Ch],eax"
+"	      0046f8df    mov destRect.right,eax"
 );
 // LINE 650:
 	asm( 
-"	      0046f8e2    mov eax,[ebp+18h]"
-"	      0046f8e5    sub eax,[ebp+10h]"
-"	      0046f8e8    add eax,[ebp+20h]"
-"	      0046f8eb    mov ecx,[ebp-98h]"
+"	      0046f8e2    mov eax,SrcBottom"
+"	      0046f8e5    sub eax,SrcTop"
+"	      0046f8e8    add eax,DestTop"
+"	      0046f8eb    mov ecx,this"
 "	      0046f8f1    mov ecx,[ecx+0Ch]"
 "	      0046f8f4    cmp eax,ecx"
 "	      0046f8f6    jl near ptr 0046F8FEh"
 "	      0046f8fc    mov eax,ecx"
-"	      0046f8fe    mov [ebp-78h],eax"
+"	      0046f8fe    mov destRect.bottom,eax"
 );
 // LINE 652:
 	asm( 
-"	      0046f901    mov dword ptr [ebp-74h],64h"
+"	      0046f901    mov ddbltfx.dwSize,64h"
 );
 // LINE 653:
 	asm( 
-"	      0046f908    mov dword ptr [ebp-6Ch],0CC0020h"
+"	      0046f908    mov ddbltfx.dwROP,0CC0020h"
 );
 // LINE 656:
 	asm( 
-"	      0046f90f    lea eax,[ebp-74h]"
+"	      0046f90f    lea eax,ddbltfx.dwSize"
 "	      0046f912    push eax"
 "	      0046f913    push 1020000h"
-"	      0046f918    lea eax,[ebp-10h]"
+"	      0046f918    lea eax,srcRect.left"
 "	      0046f91b    push eax"
-"	      0046f91c    mov eax,[ebp-8Ch]"
+"	      0046f91c    mov eax,pOurSurface"
 "	      0046f922    push eax"
-"	      0046f923    lea eax,[ebp-84h]"
+"	      0046f923    lea eax,destRect.left"
 "	      0046f929    push eax"
-"	      0046f92a    mov eax,[ebp-88h]"
+"	      0046f92a    mov eax,pDestSurface"
 "	      0046f930    push eax"
-"	      0046f931    mov eax,[ebp-88h]"
+"	      0046f931    mov eax,pDestSurface"
 "	      0046f937    mov eax,[eax]"
 "	      0046f939    call dword ptr [eax+14h]"
 "	      0046f93c    jmp near ptr 0046F941h"
@@ -2291,13 +2291,13 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 "	      0046f951    push ebx"
 "	      0046f952    push esi"
 "	      0046f953    push edi"
-"	      0046f954    mov [ebp-0A0h],ecx"
+"	      0046f954    mov this,ecx"
 );
 // LINE 682:
 	asm( 
 "	      0046f95a    jmp near ptr 0046F95Fh"
-"	      0046f95f    mov eax,[ebp+8]"
-"	      0046f962    mov ecx,[ebp+0Ch]"
+"	      0046f95f    mov eax,pDestImage"
+"	      0046f962    mov ecx,DestLeft"
 "	      0046f965    cmp [eax+8],ecx"
 "	      0046f968    jg near ptr 0046F975h"
 );
@@ -2309,8 +2309,8 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 // LINE 684:
 	asm( 
 "	      0046f975    jmp near ptr 0046F97Ah"
-"	      0046f97a    mov eax,[ebp+8]"
-"	      0046f97d    mov ecx,[ebp+10h]"
+"	      0046f97a    mov eax,pDestImage"
+"	      0046f97d    mov ecx,DestTop"
 "	      0046f980    cmp [eax+0Ch],ecx"
 "	      0046f983    jg near ptr 0046F990h"
 );
@@ -2321,9 +2321,9 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 );
 // LINE 686:
 	asm( 
-"	      0046f990    mov eax,[ebp+1Ch]"
-"	      0046f993    sub eax,[ebp+14h]"
-"	      0046f996    add eax,[ebp+0Ch]"
+"	      0046f990    mov eax,SrcRight"
+"	      0046f993    sub eax,SrcLeft"
+"	      0046f996    add eax,DestLeft"
 "	      0046f999    jns near ptr 0046F9A6h"
 );
 // LINE 687:
@@ -2333,9 +2333,9 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 );
 // LINE 688:
 	asm( 
-"	      0046f9a6    mov eax,[ebp+20h]"
-"	      0046f9a9    sub eax,[ebp+18h]"
-"	      0046f9ac    add eax,[ebp+10h]"
+"	      0046f9a6    mov eax,SrcBottom"
+"	      0046f9a9    sub eax,SrcTop"
+"	      0046f9ac    add eax,DestTop"
 "	      0046f9af    jns near ptr 0046F9BCh"
 );
 // LINE 689:
@@ -2345,15 +2345,15 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 );
 // LINE 691:
 	asm( 
-"	      0046f9bc    mov eax,[ebp-0A0h]"
+"	      0046f9bc    mov eax,this"
 "	      0046f9c2    mov eax,[eax]"
-"	      0046f9c4    mov ecx,[ebp-0A0h]"
+"	      0046f9c4    mov ecx,this"
 "	      0046f9ca    call dword ptr [eax+60h]"
-"	      0046f9cd    mov [ebp-98h],eax"
+"	      0046f9cd    mov pOurSurface,eax"
 );
 // LINE 692:
 	asm( 
-"	      0046f9d3    cmp dword ptr [ebp-98h],0"
+"	      0046f9d3    cmp pOurSurface,0"
 "	      0046f9da    jne near ptr 0046F9EAh"
 );
 // LINE 693:
@@ -2363,189 +2363,189 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 );
 // LINE 697:
 	asm( 
-"	      0046f9ea    mov eax,[ebp+8]"
+"	      0046f9ea    mov eax,pDestImage"
 "	      0046f9ed    mov eax,[eax]"
-"	      0046f9ef    mov ecx,[ebp+8]"
+"	      0046f9ef    mov ecx,pDestImage"
 "	      0046f9f2    call dword ptr [eax+60h]"
-"	      0046f9f5    mov [ebp-8Ch],eax"
+"	      0046f9f5    mov pDestSurface,eax"
 );
 // LINE 699:
 	asm( 
-"	      0046f9fb    mov eax,[ebp+14h]"
-"	      0046f9fe    mov [ebp-10h],eax"
+"	      0046f9fb    mov eax,SrcLeft"
+"	      0046f9fe    mov srcRect.left,eax"
 );
 // LINE 700:
 	asm( 
-"	      0046fa01    mov eax,[ebp+18h]"
-"	      0046fa04    mov [ebp-0Ch],eax"
+"	      0046fa01    mov eax,SrcTop"
+"	      0046fa04    mov srcRect.top,eax"
 );
 // LINE 701:
 	asm( 
-"	      0046fa07    mov eax,[ebp+1Ch]"
-"	      0046fa0a    mov [ebp-8],eax"
+"	      0046fa07    mov eax,SrcRight"
+"	      0046fa0a    mov srcRect.right,eax"
 );
 // LINE 702:
 	asm( 
-"	      0046fa0d    mov eax,[ebp+20h]"
-"	      0046fa10    mov [ebp-4],eax"
+"	      0046fa0d    mov eax,SrcBottom"
+"	      0046fa10    mov srcRect.bottom,eax"
 );
 // LINE 704:
 	asm( 
-"	      0046fa13    mov eax,[ebp+0Ch]"
-"	      0046fa16    mov [ebp-84h],eax"
+"	      0046fa13    mov eax,DestLeft"
+"	      0046fa16    mov destRect.left,eax"
 );
 // LINE 705:
 	asm( 
-"	      0046fa1c    mov eax,[ebp+10h]"
-"	      0046fa1f    mov [ebp-80h],eax"
+"	      0046fa1c    mov eax,DestTop"
+"	      0046fa1f    mov destRect.top,eax"
 );
 // LINE 706:
 	asm( 
-"	      0046fa22    mov eax,[ebp+1Ch]"
-"	      0046fa25    sub eax,[ebp+14h]"
-"	      0046fa28    add eax,[ebp+0Ch]"
-"	      0046fa2b    mov [ebp-7Ch],eax"
+"	      0046fa22    mov eax,SrcRight"
+"	      0046fa25    sub eax,SrcLeft"
+"	      0046fa28    add eax,DestLeft"
+"	      0046fa2b    mov destRect.right,eax"
 );
 // LINE 707:
 	asm( 
-"	      0046fa2e    mov eax,[ebp+20h]"
-"	      0046fa31    sub eax,[ebp+18h]"
-"	      0046fa34    add eax,[ebp+10h]"
-"	      0046fa37    mov [ebp-78h],eax"
+"	      0046fa2e    mov eax,SrcBottom"
+"	      0046fa31    sub eax,SrcTop"
+"	      0046fa34    add eax,DestTop"
+"	      0046fa37    mov destRect.bottom,eax"
 );
 // LINE 710:
 	asm( 
 "	      0046fa3a    jmp near ptr 0046FA3Fh"
-"	      0046fa3f    mov eax,[ebp-7Ch]"
-"	      0046fa42    mov ecx,[ebp+8]"
+"	      0046fa3f    mov eax,destRect.right"
+"	      0046fa42    mov ecx,pDestImage"
 "	      0046fa45    sub eax,[ecx+8]"
-"	      0046fa48    mov [ebp-90h],eax"
-"	      0046fa4e    cmp dword ptr [ebp-90h],0"
+"	      0046fa48    mov nOverhangDistance,eax"
+"	      0046fa4e    cmp nOverhangDistance,0"
 "	      0046fa55    jle near ptr 0046FA75h"
 );
 // LINE 711:
 	asm( 
 "	      0046fa5b    xor eax,eax"
-"	      0046fa5d    sub eax,[ebp-90h]"
+"	      0046fa5d    sub eax,nOverhangDistance"
 "	      0046fa63    neg eax"
-"	      0046fa65    sub [ebp-7Ch],eax"
+"	      0046fa65    sub destRect.right,eax"
 );
 // LINE 712:
 	asm( 
 "	      0046fa68    xor eax,eax"
-"	      0046fa6a    sub eax,[ebp-90h]"
+"	      0046fa6a    sub eax,nOverhangDistance"
 "	      0046fa70    neg eax"
-"	      0046fa72    sub [ebp-8],eax"
+"	      0046fa72    sub srcRect.right,eax"
 );
 // LINE 714:
 	asm( 
 "	      0046fa75    xor eax,eax"
-"	      0046fa77    sub eax,[ebp-84h]"
-"	      0046fa7d    mov [ebp-90h],eax"
-"	      0046fa83    cmp dword ptr [ebp-90h],0"
+"	      0046fa77    sub eax,destRect.left"
+"	      0046fa7d    mov nOverhangDistance,eax"
+"	      0046fa83    cmp nOverhangDistance,0"
 "	      0046fa8a    jle near ptr 0046FAA5h"
 );
 // LINE 715:
 	asm( 
-"	      0046fa90    mov eax,[ebp-90h]"
-"	      0046fa96    add [ebp-84h],eax"
+"	      0046fa90    mov eax,nOverhangDistance"
+"	      0046fa96    add destRect.left,eax"
 );
 // LINE 716:
 	asm( 
-"	      0046fa9c    mov eax,[ebp-90h]"
-"	      0046faa2    add [ebp-10h],eax"
+"	      0046fa9c    mov eax,nOverhangDistance"
+"	      0046faa2    add srcRect.left,eax"
 );
 // LINE 718:
 	asm( 
 "	      0046faa5    jmp near ptr 0046FAAAh"
-"	      0046faaa    mov eax,[ebp-78h]"
-"	      0046faad    mov ecx,[ebp+8]"
+"	      0046faaa    mov eax,destRect.bottom"
+"	      0046faad    mov ecx,pDestImage"
 "	      0046fab0    sub eax,[ecx+0Ch]"
-"	      0046fab3    mov [ebp-90h],eax"
-"	      0046fab9    cmp dword ptr [ebp-90h],0"
+"	      0046fab3    mov nOverhangDistance,eax"
+"	      0046fab9    cmp nOverhangDistance,0"
 "	      0046fac0    jle near ptr 0046FAE0h"
 );
 // LINE 719:
 	asm( 
 "	      0046fac6    xor eax,eax"
-"	      0046fac8    sub eax,[ebp-90h]"
+"	      0046fac8    sub eax,nOverhangDistance"
 "	      0046face    neg eax"
-"	      0046fad0    sub [ebp-78h],eax"
+"	      0046fad0    sub destRect.bottom,eax"
 );
 // LINE 720:
 	asm( 
 "	      0046fad3    xor eax,eax"
-"	      0046fad5    sub eax,[ebp-90h]"
+"	      0046fad5    sub eax,nOverhangDistance"
 "	      0046fadb    neg eax"
-"	      0046fadd    sub [ebp-4],eax"
+"	      0046fadd    sub srcRect.bottom,eax"
 );
 // LINE 722:
 	asm( 
 "	      0046fae0    xor eax,eax"
-"	      0046fae2    sub eax,[ebp-80h]"
-"	      0046fae5    mov [ebp-90h],eax"
-"	      0046faeb    cmp dword ptr [ebp-90h],0"
+"	      0046fae2    sub eax,destRect.top"
+"	      0046fae5    mov nOverhangDistance,eax"
+"	      0046faeb    cmp nOverhangDistance,0"
 "	      0046faf2    jle near ptr 0046FB0Ah"
 );
 // LINE 723:
 	asm( 
-"	      0046faf8    mov eax,[ebp-90h]"
-"	      0046fafe    add [ebp-80h],eax"
+"	      0046faf8    mov eax,nOverhangDistance"
+"	      0046fafe    add destRect.top,eax"
 );
 // LINE 724:
 	asm( 
-"	      0046fb01    mov eax,[ebp-90h]"
-"	      0046fb07    add [ebp-0Ch],eax"
+"	      0046fb01    mov eax,nOverhangDistance"
+"	      0046fb07    add srcRect.top,eax"
 );
 // LINE 728:
 	asm( 
-"	      0046fb0a    mov dword ptr [ebp-74h],64h"
+"	      0046fb0a    mov ddbltfx.dwSize,64h"
 );
 // LINE 729:
 	asm( 
-"	      0046fb11    mov dword ptr [ebp-6Ch],0CC0020h"
+"	      0046fb11    mov ddbltfx.dwROP,0CC0020h"
 );
 // LINE 730:
 	asm( 
-"	      0046fb18    mov dword ptr [ebp-88h],1020000h"
+"	      0046fb18    mov ddBltFlags,1020000h"
 );
 // LINE 732:
 	asm( 
-"	      0046fb22    mov eax,[ebp-0A0h]"
+"	      0046fb22    mov eax,this"
 "	      0046fb28    cmp dword ptr [eax+30h],0"
 "	      0046fb2c    je near ptr 0046FB3Ch"
 );
 // LINE 733:
 	asm( 
-"	      0046fb32    or dword ptr [ebp-88h],8000h"
+"	      0046fb32    or ddBltFlags,8000h"
 );
 // LINE 736:
 	asm( 
-"	      0046fb3c    lea eax,[ebp-74h]"
+"	      0046fb3c    lea eax,ddbltfx.dwSize"
 "	      0046fb3f    push eax"
-"	      0046fb40    mov eax,[ebp-88h]"
+"	      0046fb40    mov eax,ddBltFlags"
 "	      0046fb46    push eax"
-"	      0046fb47    lea eax,[ebp-10h]"
+"	      0046fb47    lea eax,srcRect.left"
 "	      0046fb4a    push eax"
-"	      0046fb4b    mov eax,[ebp-98h]"
+"	      0046fb4b    mov eax,pOurSurface"
 "	      0046fb51    push eax"
-"	      0046fb52    lea eax,[ebp-84h]"
+"	      0046fb52    lea eax,destRect.left"
 "	      0046fb58    push eax"
-"	      0046fb59    mov eax,[ebp-8Ch]"
+"	      0046fb59    mov eax,pDestSurface"
 "	      0046fb5f    push eax"
-"	      0046fb60    mov eax,[ebp-8Ch]"
+"	      0046fb60    mov eax,pDestSurface"
 "	      0046fb66    mov eax,[eax]"
 "	      0046fb68    call dword ptr [eax+14h]"
-"	      0046fb6b    mov [ebp-94h],eax"
+"	      0046fb6b    mov ddrval,eax"
 );
 // LINE 737:
 	asm( 
-"	      0046fb71    cmp dword ptr [ebp-94h],0"
+"	      0046fb71    cmp ddrval,0"
 "	      0046fb78    je near ptr 0046FB9Fh"
 );
 // LINE 738:
 	asm( 
-"	      0046fb7e    mov eax,[ebp-94h]"
+"	      0046fb7e    mov eax,ddrval"
 "	      0046fb84    mov [ebp-9Ch],eax"
 "	      0046fb8a    jmp near ptr 0046FB8Fh"
 "	      0046fb8f    push 599678h"
@@ -2554,7 +2554,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 );
 // LINE 740:
 	asm( 
-"	      0046fb9f    mov eax,[ebp-94h]"
+"	      0046fb9f    mov eax,ddrval"
 "	      0046fba5    jmp near ptr 0046FBAAh"
 );
 // LINE 787:
@@ -2585,103 +2585,103 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long Dest
 "	      0046fbba    push ebx"
 "	      0046fbbb    push esi"
 "	      0046fbbc    push edi"
-"	      0046fbbd    mov [ebp-9Ch],ecx"
+"	      0046fbbd    mov this,ecx"
 );
 // LINE 802:
 	asm( 
 "	      0046fbc3    jmp near ptr 0046FBC8h"
-"	      0046fbc8    mov eax,[ebp+0Ch]"
-"	      0046fbcb    mov [ebp-84h],eax"
-"	      0046fbd1    mov eax,[ebp+10h]"
-"	      0046fbd4    mov [ebp-80h],eax"
-"	      0046fbd7    mov eax,[ebp+1Ch]"
-"	      0046fbda    sub eax,[ebp+14h]"
-"	      0046fbdd    add eax,[ebp+0Ch]"
-"	      0046fbe0    mov [ebp-7Ch],eax"
-"	      0046fbe3    mov eax,[ebp+20h]"
-"	      0046fbe6    sub eax,[ebp+18h]"
-"	      0046fbe9    add eax,[ebp+10h]"
-"	      0046fbec    mov [ebp-78h],eax"
+"	      0046fbc8    mov eax,DestLeft"
+"	      0046fbcb    mov destRect.left,eax"
+"	      0046fbd1    mov eax,DestTop"
+"	      0046fbd4    mov destRect.top,eax"
+"	      0046fbd7    mov eax,SrcRight"
+"	      0046fbda    sub eax,SrcLeft"
+"	      0046fbdd    add eax,DestLeft"
+"	      0046fbe0    mov destRect.right,eax"
+"	      0046fbe3    mov eax,SrcBottom"
+"	      0046fbe6    sub eax,SrcTop"
+"	      0046fbe9    add eax,DestTop"
+"	      0046fbec    mov destRect.bottom,eax"
 "	      0046fbef    jmp near ptr 0046FBF4h"
 );
 // LINE 803:
 	asm( 
 "	      0046fbf4    jmp near ptr 0046FBF9h"
-"	      0046fbf9    mov eax,[ebp+14h]"
-"	      0046fbfc    mov [ebp-10h],eax"
-"	      0046fbff    mov eax,[ebp+18h]"
-"	      0046fc02    mov [ebp-0Ch],eax"
-"	      0046fc05    mov eax,[ebp+1Ch]"
-"	      0046fc08    mov [ebp-8],eax"
-"	      0046fc0b    mov eax,[ebp+20h]"
-"	      0046fc0e    mov [ebp-4],eax"
+"	      0046fbf9    mov eax,SrcLeft"
+"	      0046fbfc    mov sourceRect.left,eax"
+"	      0046fbff    mov eax,SrcTop"
+"	      0046fc02    mov sourceRect.top,eax"
+"	      0046fc05    mov eax,SrcRight"
+"	      0046fc08    mov sourceRect.right,eax"
+"	      0046fc0b    mov eax,SrcBottom"
+"	      0046fc0e    mov sourceRect.bottom,eax"
 "	      0046fc11    jmp near ptr 0046FC16h"
 );
 // LINE 805:
 	asm( 
-"	      0046fc16    mov eax,[ebp-9Ch]"
+"	      0046fc16    mov eax,this"
 "	      0046fc1c    mov eax,[eax]"
-"	      0046fc1e    mov ecx,[ebp-9Ch]"
+"	      0046fc1e    mov ecx,this"
 "	      0046fc24    call dword ptr [eax+60h]"
-"	      0046fc27    mov [ebp-94h],eax"
+"	      0046fc27    mov pOurSurface,eax"
 );
 // LINE 806:
 	asm( 
-"	      0046fc2d    mov eax,[ebp+8]"
+"	      0046fc2d    mov eax,pDestImage"
 "	      0046fc30    mov eax,[eax]"
-"	      0046fc32    mov ecx,[ebp+8]"
+"	      0046fc32    mov ecx,pDestImage"
 "	      0046fc35    call dword ptr [eax+60h]"
-"	      0046fc38    mov [ebp-8Ch],eax"
+"	      0046fc38    mov pDestSurface,eax"
 );
 // LINE 809:
 	asm( 
-"	      0046fc3e    mov dword ptr [ebp-74h],64h"
+"	      0046fc3e    mov ddbltfx.dwSize,64h"
 );
 // LINE 810:
 	asm( 
-"	      0046fc45    mov dword ptr [ebp-6Ch],0CC0020h"
+"	      0046fc45    mov ddbltfx.dwROP,0CC0020h"
 );
 // LINE 811:
 	asm( 
-"	      0046fc4c    mov dword ptr [ebp-88h],1020000h"
+"	      0046fc4c    mov ddBltFlags,1020000h"
 );
 // LINE 813:
 	asm( 
-"	      0046fc56    mov eax,[ebp-9Ch]"
+"	      0046fc56    mov eax,this"
 "	      0046fc5c    cmp dword ptr [eax+30h],0"
 "	      0046fc60    je near ptr 0046FC70h"
 );
 // LINE 814:
 	asm( 
-"	      0046fc66    or dword ptr [ebp-88h],8000h"
+"	      0046fc66    or ddBltFlags,8000h"
 );
 // LINE 817:
 	asm( 
-"	      0046fc70    lea eax,[ebp-74h]"
+"	      0046fc70    lea eax,ddbltfx.dwSize"
 "	      0046fc73    push eax"
-"	      0046fc74    mov eax,[ebp-88h]"
+"	      0046fc74    mov eax,ddBltFlags"
 "	      0046fc7a    push eax"
-"	      0046fc7b    lea eax,[ebp-10h]"
+"	      0046fc7b    lea eax,sourceRect.left"
 "	      0046fc7e    push eax"
-"	      0046fc7f    mov eax,[ebp-94h]"
+"	      0046fc7f    mov eax,pOurSurface"
 "	      0046fc85    push eax"
-"	      0046fc86    lea eax,[ebp-84h]"
+"	      0046fc86    lea eax,destRect.left"
 "	      0046fc8c    push eax"
-"	      0046fc8d    mov eax,[ebp-8Ch]"
+"	      0046fc8d    mov eax,pDestSurface"
 "	      0046fc93    push eax"
-"	      0046fc94    mov eax,[ebp-8Ch]"
+"	      0046fc94    mov eax,pDestSurface"
 "	      0046fc9a    mov eax,[eax]"
 "	      0046fc9c    call dword ptr [eax+14h]"
-"	      0046fc9f    mov [ebp-90h],eax"
+"	      0046fc9f    mov ddrval,eax"
 );
 // LINE 818:
 	asm( 
-"	      0046fca5    cmp dword ptr [ebp-90h],0"
+"	      0046fca5    cmp ddrval,0"
 "	      0046fcac    je near ptr 0046FCD3h"
 );
 // LINE 819:
 	asm( 
-"	      0046fcb2    mov eax,[ebp-90h]"
+"	      0046fcb2    mov eax,ddrval"
 "	      0046fcb8    mov [ebp-98h],eax"
 "	      0046fcbe    jmp near ptr 0046FCC3h"
 "	      0046fcc3    push 5996B4h"
@@ -2713,33 +2713,33 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, const str
 "	      0046fcea    push ebx"
 "	      0046fceb    push esi"
 "	      0046fcec    push edi"
-"	      0046fced    mov [ebp-4],ecx"
+"	      0046fced    mov this,ecx"
 );
 // LINE 836:
 	asm( 
-"	      0046fcf0    mov eax,[ebp+10h]"
+"	      0046fcf0    mov eax,rectSource"
 "	      0046fcf3    mov eax,[eax+0Ch]"
 "	      0046fcf6    push eax"
-"	      0046fcf7    mov eax,[ebp+10h]"
+"	      0046fcf7    mov eax,rectSource"
 "	      0046fcfa    mov eax,[eax+8]"
 "	      0046fcfd    push eax"
-"	      0046fcfe    mov eax,[ebp+10h]"
+"	      0046fcfe    mov eax,rectSource"
 "	      0046fd01    mov eax,[eax+4]"
 "	      0046fd04    push eax"
-"	      0046fd05    mov eax,[ebp+10h]"
+"	      0046fd05    mov eax,rectSource"
 "	      0046fd08    mov eax,[eax]"
 "	      0046fd0a    push eax"
-"	      0046fd0b    mov eax,[ebp+0Ch]"
+"	      0046fd0b    mov eax,ptDestination"
 "	      0046fd0e    mov eax,[eax+4]"
 "	      0046fd11    push eax"
-"	      0046fd12    mov eax,[ebp+0Ch]"
+"	      0046fd12    mov eax,ptDestination"
 "	      0046fd15    mov eax,[eax]"
 "	      0046fd17    push eax"
-"	      0046fd18    mov eax,[ebp+8]"
+"	      0046fd18    mov eax,pDestImage"
 "	      0046fd1b    push eax"
-"	      0046fd1c    mov eax,[ebp-4]"
+"	      0046fd1c    mov eax,this"
 "	      0046fd1f    mov eax,[eax]"
-"	      0046fd21    mov ecx,[ebp-4]"
+"	      0046fd21    mov ecx,this"
 "	      0046fd24    call dword ptr [eax+3Ch]"
 "	      0046fd27    jmp near ptr 0046FD2Ch"
 );
@@ -2763,33 +2763,33 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, const struct Sp
 "	      0046fd39    push ebx"
 "	      0046fd3a    push esi"
 "	      0046fd3b    push edi"
-"	      0046fd3c    mov [ebp-4],ecx"
+"	      0046fd3c    mov this,ecx"
 );
 // LINE 848:
 	asm( 
-"	      0046fd3f    mov eax,[ebp+10h]"
+"	      0046fd3f    mov eax,rectSource"
 "	      0046fd42    mov eax,[eax+0Ch]"
 "	      0046fd45    push eax"
-"	      0046fd46    mov eax,[ebp+10h]"
+"	      0046fd46    mov eax,rectSource"
 "	      0046fd49    mov eax,[eax+8]"
 "	      0046fd4c    push eax"
-"	      0046fd4d    mov eax,[ebp+10h]"
+"	      0046fd4d    mov eax,rectSource"
 "	      0046fd50    mov eax,[eax+4]"
 "	      0046fd53    push eax"
-"	      0046fd54    mov eax,[ebp+10h]"
+"	      0046fd54    mov eax,rectSource"
 "	      0046fd57    mov eax,[eax]"
 "	      0046fd59    push eax"
-"	      0046fd5a    mov eax,[ebp+0Ch]"
+"	      0046fd5a    mov eax,ptDestination"
 "	      0046fd5d    mov eax,[eax+4]"
 "	      0046fd60    push eax"
-"	      0046fd61    mov eax,[ebp+0Ch]"
+"	      0046fd61    mov eax,ptDestination"
 "	      0046fd64    mov eax,[eax]"
 "	      0046fd66    push eax"
-"	      0046fd67    mov eax,[ebp+8]"
+"	      0046fd67    mov eax,pDestImage"
 "	      0046fd6a    push eax"
-"	      0046fd6b    mov eax,[ebp-4]"
+"	      0046fd6b    mov eax,this"
 "	      0046fd6e    mov eax,[eax]"
-"	      0046fd70    mov ecx,[ebp-4]"
+"	      0046fd70    mov ecx,this"
 "	      0046fd73    call dword ptr [eax+0Ch]"
 "	      0046fd76    jmp near ptr 0046FD7Bh"
 );
@@ -2818,19 +2818,19 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const st
 "	      0046fd88    push ebx"
 "	      0046fd89    push esi"
 "	      0046fd8a    push edi"
-"	      0046fd8b    mov [ebp-74h],ecx"
+"	      0046fd8b    mov this,ecx"
 );
 // LINE 872:
 	asm( 
-"	      0046fd8e    mov eax,[ebp-74h]"
+"	      0046fd8e    mov eax,this"
 "	      0046fd91    mov eax,[eax]"
-"	      0046fd93    mov ecx,[ebp-74h]"
+"	      0046fd93    mov ecx,this"
 "	      0046fd96    call dword ptr [eax+60h]"
-"	      0046fd99    mov [ebp-70h],eax"
+"	      0046fd99    mov pOurSurface,eax"
 );
 // LINE 873:
 	asm( 
-"	      0046fd9c    cmp dword ptr [ebp-70h],0"
+"	      0046fd9c    cmp pOurSurface,0"
 "	      0046fda0    jne near ptr 0046FDB0h"
 );
 // LINE 874:
@@ -2840,49 +2840,49 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const st
 );
 // LINE 878:
 	asm( 
-"	      0046fdb0    mov eax,[ebp+8]"
+"	      0046fdb0    mov eax,pDestImage"
 "	      0046fdb3    mov eax,[eax]"
-"	      0046fdb5    mov ecx,[ebp+8]"
+"	      0046fdb5    mov ecx,pDestImage"
 "	      0046fdb8    call dword ptr [eax+60h]"
-"	      0046fdbb    mov [ebp-6Ch],eax"
+"	      0046fdbb    mov pDestSurface,eax"
 );
 // LINE 880:
 	asm( 
-"	      0046fdbe    mov dword ptr [ebp-64h],64h"
+"	      0046fdbe    mov ddbltfx.dwSize,64h"
 );
 // LINE 881:
 	asm( 
-"	      0046fdc5    mov dword ptr [ebp-5Ch],0CC0020h"
+"	      0046fdc5    mov ddbltfx.dwROP,0CC0020h"
 );
 // LINE 883:
 	asm( 
-"	      0046fdcc    mov dword ptr [ebp-68h],1020000h"
+"	      0046fdcc    mov ddBltFlags,1020000h"
 );
 // LINE 885:
 	asm( 
-"	      0046fdd3    mov eax,[ebp-74h]"
+"	      0046fdd3    mov eax,this"
 "	      0046fdd6    cmp dword ptr [eax+30h],0"
 "	      0046fdda    je near ptr 0046FDE7h"
 );
 // LINE 886:
 	asm( 
-"	      0046fde0    or dword ptr [ebp-68h],8000h"
+"	      0046fde0    or ddBltFlags,8000h"
 );
 // LINE 890:
 	asm( 
-"	      0046fde7    lea eax,[ebp-64h]"
+"	      0046fde7    lea eax,ddbltfx.dwSize"
 "	      0046fdea    push eax"
-"	      0046fdeb    mov eax,[ebp-68h]"
+"	      0046fdeb    mov eax,ddBltFlags"
 "	      0046fdee    push eax"
-"	      0046fdef    mov eax,[ebp+10h]"
+"	      0046fdef    mov eax,srcRect"
 "	      0046fdf2    push eax"
-"	      0046fdf3    mov eax,[ebp-70h]"
+"	      0046fdf3    mov eax,pOurSurface"
 "	      0046fdf6    push eax"
-"	      0046fdf7    mov eax,[ebp+0Ch]"
+"	      0046fdf7    mov eax,destRect"
 "	      0046fdfa    push eax"
-"	      0046fdfb    mov eax,[ebp-6Ch]"
+"	      0046fdfb    mov eax,pDestSurface"
 "	      0046fdfe    push eax"
-"	      0046fdff    mov eax,[ebp-6Ch]"
+"	      0046fdff    mov eax,pDestSurface"
 "	      0046fe02    mov eax,[eax]"
 "	      0046fe04    call dword ptr [eax+14h]"
 "	      0046fe07    jmp near ptr 0046FE0Ch"
@@ -2910,7 +2910,7 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long Des
 "	      0046fe19    push ebx"
 "	      0046fe1a    push esi"
 "	      0046fe1b    push edi"
-"	      0046fe1c    mov [ebp-24h],ecx"
+"	      0046fe1c    mov this,ecx"
 );
 // LINE 904:
 	asm( 
@@ -2919,55 +2919,55 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long Des
 );
 // LINE 906:
 	asm( 
-"	      0046fe29    mov eax,[ebp+1Ch]"
-"	      0046fe2c    mov [ebp-10h],eax"
+"	      0046fe29    mov eax,SrcLeft"
+"	      0046fe2c    mov srcRect.left,eax"
 );
 // LINE 907:
 	asm( 
-"	      0046fe2f    mov eax,[ebp+20h]"
-"	      0046fe32    mov [ebp-0Ch],eax"
+"	      0046fe2f    mov eax,SrcTop"
+"	      0046fe32    mov srcRect.top,eax"
 );
 // LINE 908:
 	asm( 
-"	      0046fe35    mov eax,[ebp+24h]"
-"	      0046fe38    mov [ebp-8],eax"
+"	      0046fe35    mov eax,SrcRight"
+"	      0046fe38    mov srcRect.right,eax"
 );
 // LINE 909:
 	asm( 
-"	      0046fe3b    mov eax,[ebp+28h]"
-"	      0046fe3e    mov [ebp-4],eax"
+"	      0046fe3b    mov eax,SrcBottom"
+"	      0046fe3e    mov srcRect.bottom,eax"
 );
 // LINE 911:
 	asm( 
-"	      0046fe41    mov eax,[ebp+0Ch]"
-"	      0046fe44    mov [ebp-20h],eax"
+"	      0046fe41    mov eax,DestLeft"
+"	      0046fe44    mov destRect.left,eax"
 );
 // LINE 912:
 	asm( 
-"	      0046fe47    mov eax,[ebp+10h]"
-"	      0046fe4a    mov [ebp-1Ch],eax"
+"	      0046fe47    mov eax,DestTop"
+"	      0046fe4a    mov destRect.top,eax"
 );
 // LINE 913:
 	asm( 
-"	      0046fe4d    mov eax,[ebp+14h]"
-"	      0046fe50    mov [ebp-18h],eax"
+"	      0046fe4d    mov eax,DestRight"
+"	      0046fe50    mov destRect.right,eax"
 );
 // LINE 914:
 	asm( 
-"	      0046fe53    mov eax,[ebp+18h]"
-"	      0046fe56    mov [ebp-14h],eax"
+"	      0046fe53    mov eax,DestBottom"
+"	      0046fe56    mov destRect.bottom,eax"
 );
 // LINE 916:
 	asm( 
-"	      0046fe59    lea eax,[ebp-10h]"
+"	      0046fe59    lea eax,srcRect.left"
 "	      0046fe5c    push eax"
-"	      0046fe5d    lea eax,[ebp-20h]"
+"	      0046fe5d    lea eax,destRect.left"
 "	      0046fe60    push eax"
-"	      0046fe61    mov eax,[ebp+8]"
+"	      0046fe61    mov eax,pDestImage"
 "	      0046fe64    push eax"
-"	      0046fe65    mov eax,[ebp-24h]"
+"	      0046fe65    mov eax,this"
 "	      0046fe68    mov eax,[eax]"
-"	      0046fe6a    mov ecx,[ebp-24h]"
+"	      0046fe6a    mov ecx,this"
 "	      0046fe6d    call dword ptr [eax+30h]"
 "	      0046fe70    jmp near ptr 0046FE75h"
 );
@@ -2999,19 +2999,19 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 "	      0046fe85    push ebx"
 "	      0046fe86    push esi"
 "	      0046fe87    push edi"
-"	      0046fe88    mov [ebp-9Ch],ecx"
+"	      0046fe88    mov this,ecx"
 );
 // LINE 939:
 	asm( 
-"	      0046fe8e    mov eax,[ebp-9Ch]"
+"	      0046fe8e    mov eax,this"
 "	      0046fe94    mov eax,[eax]"
-"	      0046fe96    mov ecx,[ebp-9Ch]"
+"	      0046fe96    mov ecx,this"
 "	      0046fe9c    call dword ptr [eax+60h]"
-"	      0046fe9f    mov [ebp-94h],eax"
+"	      0046fe9f    mov pOurSurface,eax"
 );
 // LINE 940:
 	asm( 
-"	      0046fea5    cmp dword ptr [ebp-94h],0"
+"	      0046fea5    cmp pOurSurface,0"
 "	      0046feac    jne near ptr 0046FEBCh"
 );
 // LINE 941:
@@ -3021,93 +3021,93 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 );
 // LINE 945:
 	asm( 
-"	      0046febc    mov eax,[ebp+8]"
+"	      0046febc    mov eax,pDestImage"
 "	      0046febf    mov eax,[eax]"
-"	      0046fec1    mov ecx,[ebp+8]"
+"	      0046fec1    mov ecx,pDestImage"
 "	      0046fec4    call dword ptr [eax+60h]"
-"	      0046fec7    mov [ebp-8Ch],eax"
+"	      0046fec7    mov pDestSurface,eax"
 );
 // LINE 947:
 	asm( 
-"	      0046fecd    mov dword ptr [ebp-84h],0"
-"	      0046fed7    mov eax,[ebp-84h]"
-"	      0046fedd    mov [ebp-10h],eax"
+"	      0046fecd    mov destRect.left,0"
+"	      0046fed7    mov eax,destRect.left"
+"	      0046fedd    mov srcRect.left,eax"
 );
 // LINE 948:
 	asm( 
-"	      0046fee0    mov dword ptr [ebp-80h],0"
-"	      0046fee7    mov eax,[ebp-80h]"
-"	      0046feea    mov [ebp-0Ch],eax"
+"	      0046fee0    mov destRect.top,0"
+"	      0046fee7    mov eax,destRect.top"
+"	      0046feea    mov srcRect.top,eax"
 );
 // LINE 949:
 	asm( 
-"	      0046feed    mov eax,[ebp-9Ch]"
+"	      0046feed    mov eax,this"
 "	      0046fef3    mov eax,[eax+8]"
-"	      0046fef6    mov [ebp-7Ch],eax"
+"	      0046fef6    mov destRect.right,eax"
 "	      0046fef9    jmp near ptr 0046FEFEh"
-"	      0046fefe    mov eax,[ebp-7Ch]"
-"	      0046ff01    mov [ebp-8],eax"
+"	      0046fefe    mov eax,destRect.right"
+"	      0046ff01    mov srcRect.right,eax"
 );
 // LINE 950:
 	asm( 
-"	      0046ff04    mov eax,[ebp-9Ch]"
+"	      0046ff04    mov eax,this"
 "	      0046ff0a    mov eax,[eax+0Ch]"
-"	      0046ff0d    mov [ebp-78h],eax"
+"	      0046ff0d    mov destRect.bottom,eax"
 "	      0046ff10    jmp near ptr 0046FF15h"
-"	      0046ff15    mov eax,[ebp-78h]"
-"	      0046ff18    mov [ebp-4],eax"
+"	      0046ff15    mov eax,destRect.bottom"
+"	      0046ff18    mov srcRect.bottom,eax"
 );
 // LINE 952:
 	asm( 
-"	      0046ff1b    mov dword ptr [ebp-74h],64h"
+"	      0046ff1b    mov ddbltfx.dwSize,64h"
 );
 // LINE 953:
 	asm( 
-"	      0046ff22    mov dword ptr [ebp-6Ch],0CC0020h"
+"	      0046ff22    mov ddbltfx.dwROP,0CC0020h"
 );
 // LINE 955:
 	asm( 
-"	      0046ff29    mov dword ptr [ebp-88h],1020000h"
+"	      0046ff29    mov ddBltFlags,1020000h"
 );
 // LINE 957:
 	asm( 
-"	      0046ff33    mov eax,[ebp-9Ch]"
+"	      0046ff33    mov eax,this"
 "	      0046ff39    cmp dword ptr [eax+30h],0"
 "	      0046ff3d    je near ptr 0046FF57h"
-"	      0046ff43    cmp dword ptr [ebp+0Ch],0"
+"	      0046ff43    cmp bAllowTransparent,0"
 "	      0046ff47    je near ptr 0046FF57h"
 );
 // LINE 958:
 	asm( 
-"	      0046ff4d    or dword ptr [ebp-88h],8000h"
+"	      0046ff4d    or ddBltFlags,8000h"
 );
 // LINE 961:
 	asm( 
-"	      0046ff57    lea eax,[ebp-74h]"
+"	      0046ff57    lea eax,ddbltfx.dwSize"
 "	      0046ff5a    push eax"
-"	      0046ff5b    mov eax,[ebp-88h]"
+"	      0046ff5b    mov eax,ddBltFlags"
 "	      0046ff61    push eax"
-"	      0046ff62    lea eax,[ebp-10h]"
+"	      0046ff62    lea eax,srcRect.left"
 "	      0046ff65    push eax"
-"	      0046ff66    mov eax,[ebp-94h]"
+"	      0046ff66    mov eax,pOurSurface"
 "	      0046ff6c    push eax"
-"	      0046ff6d    lea eax,[ebp-84h]"
+"	      0046ff6d    lea eax,destRect.left"
 "	      0046ff73    push eax"
-"	      0046ff74    mov eax,[ebp-8Ch]"
+"	      0046ff74    mov eax,pDestSurface"
 "	      0046ff7a    push eax"
-"	      0046ff7b    mov eax,[ebp-8Ch]"
+"	      0046ff7b    mov eax,pDestSurface"
 "	      0046ff81    mov eax,[eax]"
 "	      0046ff83    call dword ptr [eax+14h]"
-"	      0046ff86    mov [ebp-90h],eax"
+"	      0046ff86    mov ddrval,eax"
 );
 // LINE 962:
 	asm( 
-"	      0046ff8c    cmp dword ptr [ebp-90h],0"
+"	      0046ff8c    cmp ddrval,0"
 "	      0046ff93    je near ptr 0046FFBAh"
 );
 // LINE 963:
 	asm( 
-"	      0046ff99    mov eax,[ebp-90h]"
+"	      0046ff99    mov eax,ddrval"
 "	      0046ff9f    mov [ebp-98h],eax"
 "	      0046ffa5    jmp near ptr 0046FFAAh"
 "	      0046ffaa    push 5996F0h"
@@ -3116,7 +3116,7 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 );
 // LINE 965:
 	asm( 
-"	      0046ffba    mov eax,[ebp-90h]"
+"	      0046ffba    mov eax,ddrval"
 "	      0046ffc0    jmp near ptr 0046FFC5h"
 );
 // LINE 967:
@@ -3139,7 +3139,7 @@ unsigned long CBackBuffer::StretchRect(class CSparkalWindow* pDest, long __forma
 "	      0046ffd2    push ebx"
 "	      0046ffd3    push esi"
 "	      0046ffd4    push edi"
-"	      0046ffd5    mov [ebp-4],ecx"
+"	      0046ffd5    mov this,ecx"
 );
 // LINE 981:
 	asm( 
@@ -3169,22 +3169,22 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 "	      0046ffec    push ebx"
 "	      0046ffed    push esi"
 "	      0046ffee    push edi"
-"	      0046ffef    mov [ebp-10h],ecx"
+"	      0046ffef    mov this,ecx"
 );
 // LINE 992:
 	asm( 
-"	      0046fff2    cmp dword ptr [ebp+8],0"
+"	      0046fff2    cmp bEnable,0"
 "	      0046fff6    je near ptr 00470014h"
 );
 // LINE 993:
 	asm( 
-"	      0046fffc    mov eax,[ebp-10h]"
+"	      0046fffc    mov eax,this"
 "	      0046ffff    mov dword ptr [eax+30h],1"
 );
 // LINE 994:
 	asm( 
-"	      00470006    mov eax,[ebp+0Ch]"
-"	      00470009    mov ecx,[ebp-10h]"
+"	      00470006    mov eax,nPaletteIndex"
+"	      00470009    mov ecx,this"
 "	      0047000c    mov [ecx+48h],eax"
 );
 // LINE 996:
@@ -3193,20 +3193,20 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 );
 // LINE 997:
 	asm( 
-"	      00470014    mov eax,[ebp-10h]"
+"	      00470014    mov eax,this"
 "	      00470017    mov dword ptr [eax+30h],0"
 );
 // LINE 1004:
 	asm( 
-"	      0047001e    mov eax,[ebp-10h]"
+"	      0047001e    mov eax,this"
 "	      00470021    mov eax,[eax]"
-"	      00470023    mov ecx,[ebp-10h]"
+"	      00470023    mov ecx,this"
 "	      00470026    call dword ptr [eax+60h]"
-"	      00470029    mov [ebp-0Ch],eax"
+"	      00470029    mov pOurSurface,eax"
 );
 // LINE 1005:
 	asm( 
-"	      0047002c    cmp dword ptr [ebp-0Ch],0"
+"	      0047002c    cmp pOurSurface,0"
 "	      00470030    jne near ptr 0047003Bh"
 );
 // LINE 1006:
@@ -3215,27 +3215,27 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 );
 // LINE 1008:
 	asm( 
-"	      0047003b    cmp dword ptr [ebp+8],0"
+"	      0047003b    cmp bEnable,0"
 "	      0047003f    je near ptr 00470063h"
 );
 // LINE 1009:
 	asm( 
-"	      00470045    mov eax,[ebp+0Ch]"
-"	      00470048    mov [ebp-8],eax"
+"	      00470045    mov eax,nPaletteIndex"
+"	      00470048    mov DDColorKey.dwColorSpaceLowValue,eax"
 );
 // LINE 1010:
 	asm( 
-"	      0047004b    mov eax,[ebp+0Ch]"
-"	      0047004e    mov [ebp-4],eax"
+"	      0047004b    mov eax,nPaletteIndex"
+"	      0047004e    mov DDColorKey.dwColorSpaceHighValue,eax"
 );
 // LINE 1011:
 	asm( 
-"	      00470051    lea eax,[ebp-8]"
+"	      00470051    lea eax,DDColorKey.dwColorSpaceLowValue"
 "	      00470054    push eax"
 "	      00470055    push 8"
-"	      00470057    mov eax,[ebp-0Ch]"
+"	      00470057    mov eax,pOurSurface"
 "	      0047005a    push eax"
-"	      0047005b    mov eax,[ebp-0Ch]"
+"	      0047005b    mov eax,pOurSurface"
 "	      0047005e    mov eax,[eax]"
 "	      00470060    call dword ptr [eax+74h]"
 );
@@ -3263,17 +3263,17 @@ unsigned long CBackBuffer::Lock() {
 "	      00470075    push ebx"
 "	      00470076    push esi"
 "	      00470077    push edi"
-"	      00470078    mov [ebp-10h],ecx"
+"	      00470078    mov this,ecx"
 );
 // LINE 1036:
 	asm( 
-"	      0047007b    mov eax,[ebp-10h]"
+"	      0047007b    mov eax,this"
 "	      0047007e    cmp dword ptr [eax+4],0"
 "	      00470082    jbe near ptr 0047009Fh"
 );
 // LINE 1037:
 	asm( 
-"	      00470088    mov eax,[ebp-10h]"
+"	      00470088    mov eax,this"
 "	      0047008b    inc dword ptr [eax+4]"
 );
 // LINE 1039:
@@ -3282,21 +3282,21 @@ unsigned long CBackBuffer::Lock() {
 );
 // LINE 1041:
 	asm( 
-"	      00470094    mov eax,[ebp-10h]"
+"	      00470094    mov eax,this"
 "	      00470097    mov eax,[eax+4]"
 "	      0047009a    jmp near ptr 00470144h"
 );
 // LINE 1045:
 	asm( 
-"	      0047009f    mov eax,[ebp-10h]"
+"	      0047009f    mov eax,this"
 "	      004700a2    mov eax,[eax]"
-"	      004700a4    mov ecx,[ebp-10h]"
+"	      004700a4    mov ecx,this"
 "	      004700a7    call dword ptr [eax+60h]"
-"	      004700aa    mov [ebp-8],eax"
+"	      004700aa    mov pOurSurface,eax"
 );
 // LINE 1046:
 	asm( 
-"	      004700ad    cmp dword ptr [ebp-8],0"
+"	      004700ad    cmp pOurSurface,0"
 "	      004700b1    jne near ptr 004700BEh"
 );
 // LINE 1047:
@@ -3308,28 +3308,28 @@ unsigned long CBackBuffer::Lock() {
 	asm( 
 "	      004700be    push 0"
 "	      004700c0    push 0"
-"	      004700c2    mov eax,[ebp-10h]"
+"	      004700c2    mov eax,this"
 "	      004700c5    add eax,58h"
 "	      004700c8    push eax"
 "	      004700c9    push 0"
-"	      004700cb    mov eax,[ebp-8]"
+"	      004700cb    mov eax,pOurSurface"
 "	      004700ce    push eax"
-"	      004700cf    mov eax,[ebp-8]"
+"	      004700cf    mov eax,pOurSurface"
 "	      004700d2    mov eax,[eax]"
 "	      004700d4    call dword ptr [eax+64h]"
-"	      004700d7    mov [ebp-4],eax"
-"	      004700da    cmp dword ptr [ebp-4],8876021Ch"
+"	      004700d7    mov ddrval,eax"
+"	      004700da    cmp ddrval,8876021Ch"
 "	      004700e1    jne near ptr 004700ECh"
 "	      004700e7    jmp near ptr 004700BEh"
 );
 // LINE 1051:
 	asm( 
-"	      004700ec    cmp dword ptr [ebp-4],0"
+"	      004700ec    cmp ddrval,0"
 "	      004700f0    je near ptr 00470115h"
 );
 // LINE 1052:
 	asm( 
-"	      004700f6    mov eax,[ebp-4]"
+"	      004700f6    mov eax,ddrval"
 "	      004700f9    mov [ebp-0Ch],eax"
 "	      004700fc    jmp near ptr 00470101h"
 "	      00470101    push 59972Ch"
@@ -3343,21 +3343,21 @@ unsigned long CBackBuffer::Lock() {
 );
 // LINE 1055:
 	asm( 
-"	      00470115    mov eax,[ebp-10h]"
+"	      00470115    mov eax,this"
 "	      00470118    mov eax,[eax+7Ch]"
-"	      0047011b    mov ecx,[ebp-10h]"
+"	      0047011b    mov ecx,this"
 "	      0047011e    mov [ecx+10h],eax"
 );
 // LINE 1056:
 	asm( 
-"	      00470121    mov eax,[ebp-10h]"
+"	      00470121    mov eax,this"
 "	      00470124    mov eax,[eax+68h]"
-"	      00470127    mov ecx,[ebp-10h]"
+"	      00470127    mov ecx,this"
 "	      0047012a    mov [ecx+14h],eax"
 );
 // LINE 1058:
 	asm( 
-"	      0047012d    mov eax,[ebp-10h]"
+"	      0047012d    mov eax,this"
 "	      00470130    inc dword ptr [eax+4]"
 );
 // LINE 1060:
@@ -3366,7 +3366,7 @@ unsigned long CBackBuffer::Lock() {
 );
 // LINE 1062:
 	asm( 
-"	      00470139    mov eax,[ebp-10h]"
+"	      00470139    mov eax,this"
 "	      0047013c    mov eax,[eax+4]"
 "	      0047013f    jmp near ptr 00470144h"
 );
@@ -3393,17 +3393,17 @@ unsigned long CBackBuffer::Unlock() {
 "	      0047014f    push ebx"
 "	      00470150    push esi"
 "	      00470151    push edi"
-"	      00470152    mov [ebp-10h],ecx"
+"	      00470152    mov this,ecx"
 );
 // LINE 1089:
 	asm( 
-"	      00470155    mov eax,[ebp-10h]"
+"	      00470155    mov eax,this"
 "	      00470158    cmp dword ptr [eax+4],1"
 "	      0047015c    jbe near ptr 00470179h"
 );
 // LINE 1090:
 	asm( 
-"	      00470162    mov eax,[ebp-10h]"
+"	      00470162    mov eax,this"
 "	      00470165    dec dword ptr [eax+4]"
 );
 // LINE 1092:
@@ -3412,13 +3412,13 @@ unsigned long CBackBuffer::Unlock() {
 );
 // LINE 1094:
 	asm( 
-"	      0047016e    mov eax,[ebp-10h]"
+"	      0047016e    mov eax,this"
 "	      00470171    mov eax,[eax+4]"
 "	      00470174    jmp near ptr 0047021Ch"
 );
 // LINE 1098:
 	asm( 
-"	      00470179    mov eax,[ebp-10h]"
+"	      00470179    mov eax,this"
 "	      0047017c    cmp dword ptr [eax+10h],0"
 "	      00470180    jne near ptr 0047018Dh"
 );
@@ -3429,15 +3429,15 @@ unsigned long CBackBuffer::Unlock() {
 );
 // LINE 1101:
 	asm( 
-"	      0047018d    mov eax,[ebp-10h]"
+"	      0047018d    mov eax,this"
 "	      00470190    mov eax,[eax]"
-"	      00470192    mov ecx,[ebp-10h]"
+"	      00470192    mov ecx,this"
 "	      00470195    call dword ptr [eax+60h]"
-"	      00470198    mov [ebp-8],eax"
+"	      00470198    mov pOurSurface,eax"
 );
 // LINE 1102:
 	asm( 
-"	      0047019b    cmp dword ptr [ebp-8],0"
+"	      0047019b    cmp pOurSurface,0"
 "	      0047019f    jne near ptr 004701ACh"
 );
 // LINE 1103:
@@ -3447,24 +3447,24 @@ unsigned long CBackBuffer::Unlock() {
 );
 // LINE 1104:
 	asm( 
-"	      004701ac    mov eax,[ebp-10h]"
+"	      004701ac    mov eax,this"
 "	      004701af    mov eax,[eax+10h]"
 "	      004701b2    push eax"
-"	      004701b3    mov eax,[ebp-8]"
+"	      004701b3    mov eax,pOurSurface"
 "	      004701b6    push eax"
-"	      004701b7    mov eax,[ebp-8]"
+"	      004701b7    mov eax,pOurSurface"
 "	      004701ba    mov eax,[eax]"
 "	      004701bc    call dword ptr [eax+80h]"
-"	      004701c2    mov [ebp-4],eax"
+"	      004701c2    mov ddrval,eax"
 );
 // LINE 1105:
 	asm( 
-"	      004701c5    cmp dword ptr [ebp-4],0"
+"	      004701c5    cmp ddrval,0"
 "	      004701c9    je near ptr 004701EEh"
 );
 // LINE 1106:
 	asm( 
-"	      004701cf    mov eax,[ebp-4]"
+"	      004701cf    mov eax,ddrval"
 "	      004701d2    mov [ebp-0Ch],eax"
 "	      004701d5    jmp near ptr 004701DAh"
 "	      004701da    push 599758h"
@@ -3478,7 +3478,7 @@ unsigned long CBackBuffer::Unlock() {
 );
 // LINE 1109:
 	asm( 
-"	      004701ee    mov eax,[ebp-10h]"
+"	      004701ee    mov eax,this"
 "	      004701f1    dec dword ptr [eax+4]"
 );
 // LINE 1111:
@@ -3487,18 +3487,18 @@ unsigned long CBackBuffer::Unlock() {
 );
 // LINE 1114:
 	asm( 
-"	      004701fa    mov eax,[ebp-10h]"
+"	      004701fa    mov eax,this"
 "	      004701fd    cmp dword ptr [eax+4],0"
 "	      00470201    jne near ptr 00470211h"
 );
 // LINE 1115:
 	asm( 
-"	      00470207    mov eax,[ebp-10h]"
+"	      00470207    mov eax,this"
 "	      0047020a    mov dword ptr [eax+10h],0"
 );
 // LINE 1117:
 	asm( 
-"	      00470211    mov eax,[ebp-10h]"
+"	      00470211    mov eax,this"
 "	      00470214    mov eax,[eax+4]"
 "	      00470217    jmp near ptr 0047021Ch"
 );
@@ -3525,54 +3525,54 @@ void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColo
 "	      0047022a    push ebx"
 "	      0047022b    push esi"
 "	      0047022c    push edi"
-"	      0047022d    mov [ebp-408h],ecx"
+"	      0047022d    mov this,ecx"
 );
 // LINE 1132:
 	asm( 
-"	      00470233    mov eax,[ebp-408h]"
+"	      00470233    mov eax,this"
 "	      00470239    cmp dword ptr [eax+54h],0"
 "	      0047023d    je near ptr 004702E5h"
 );
 // LINE 1133:
 	asm( 
-"	      00470243    mov eax,[ebp+8]"
-"	      00470246    mov [ebp-404h],eax"
+"	      00470243    mov eax,start"
+"	      00470246    mov i,eax"
 "	      0047024c    jmp near ptr 00470257h"
-"	      00470251    inc dword ptr [ebp-404h]"
-"	      00470257    mov eax,[ebp+0Ch]"
-"	      0047025a    add eax,[ebp+8]"
-"	      0047025d    cmp eax,[ebp-404h]"
+"	      00470251    inc i"
+"	      00470257    mov eax,count"
+"	      0047025a    add eax,start"
+"	      0047025d    cmp eax,i"
 "	      00470263    jle near ptr 004702B8h"
 );
 // LINE 1134:
 	asm( 
-"	      00470269    mov eax,[ebp+10h]"
+"	      00470269    mov eax,pColor"
 "	      0047026c    mov al,[eax+2]"
-"	      0047026f    mov ecx,[ebp-404h]"
+"	      0047026f    mov ecx,i"
 "	      00470275    mov [ebp+ecx*4-400h],al"
 );
 // LINE 1135:
 	asm( 
-"	      0047027c    mov eax,[ebp+10h]"
+"	      0047027c    mov eax,pColor"
 "	      0047027f    mov al,[eax+1]"
-"	      00470282    mov ecx,[ebp-404h]"
+"	      00470282    mov ecx,i"
 "	      00470288    mov [ebp+ecx*4-3FFh],al"
 );
 // LINE 1136:
 	asm( 
-"	      0047028f    mov eax,[ebp+10h]"
+"	      0047028f    mov eax,pColor"
 "	      00470292    mov al,[eax]"
-"	      00470294    mov ecx,[ebp-404h]"
+"	      00470294    mov ecx,i"
 "	      0047029a    mov [ebp+ecx*4-3FEh],al"
 );
 // LINE 1137:
 	asm( 
-"	      004702a1    mov eax,[ebp-404h]"
+"	      004702a1    mov eax,i"
 "	      004702a7    mov byte ptr [ebp+eax*4-3FDh],5"
 );
 // LINE 1138:
 	asm( 
-"	      004702af    add dword ptr [ebp+10h],4"
+"	      004702af    add pColor,4"
 );
 // LINE 1139:
 	asm( 
@@ -3580,18 +3580,18 @@ void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColo
 );
 // LINE 1141:
 	asm( 
-"	      004702b8    mov eax,[ebp+8]"
+"	      004702b8    mov eax,start"
 "	      004702bb    lea eax,[ebp+eax*4-400h]"
 "	      004702c2    push eax"
-"	      004702c3    mov eax,[ebp+0Ch]"
+"	      004702c3    mov eax,count"
 "	      004702c6    push eax"
-"	      004702c7    mov eax,[ebp+8]"
+"	      004702c7    mov eax,start"
 "	      004702ca    push eax"
 "	      004702cb    push 0"
-"	      004702cd    mov eax,[ebp-408h]"
+"	      004702cd    mov eax,this"
 "	      004702d3    mov eax,[eax+54h]"
 "	      004702d6    push eax"
-"	      004702d7    mov eax,[ebp-408h]"
+"	      004702d7    mov eax,this"
 "	      004702dd    mov eax,[eax+54h]"
 "	      004702e0    mov eax,[eax]"
 "	      004702e2    call dword ptr [eax+18h]"
@@ -3622,19 +3622,19 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 "	      004702f7    push ebx"
 "	      004702f8    push esi"
 "	      004702f9    push edi"
-"	      004702fa    mov [ebp-24h],ecx"
+"	      004702fa    mov this,ecx"
 );
 // LINE 1176:
 	asm( 
-"	      004702fd    mov eax,[ebp-24h]"
+"	      004702fd    mov eax,this"
 "	      00470300    mov eax,[eax]"
-"	      00470302    mov ecx,[ebp-24h]"
+"	      00470302    mov ecx,this"
 "	      00470305    call dword ptr [eax+60h]"
-"	      00470308    mov [ebp-1Ch],eax"
+"	      00470308    mov pOurSurface,eax"
 );
 // LINE 1177:
 	asm( 
-"	      0047030b    cmp dword ptr [ebp-1Ch],0"
+"	      0047030b    cmp pOurSurface,0"
 "	      0047030f    jne near ptr 0047031Fh"
 );
 // LINE 1178:
@@ -3644,104 +3644,104 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 );
 // LINE 1180:
 	asm( 
-"	      0047031f    mov eax,[ebp-24h]"
+"	      0047031f    mov eax,this"
 "	      00470322    mov dword ptr [eax+58h],6Ch"
 );
 // LINE 1181:
 	asm( 
-"	      00470329    mov eax,[ebp-24h]"
+"	      00470329    mov eax,this"
 "	      0047032c    mov dword ptr [eax+0C4h],64h"
 );
 // LINE 1182:
 	asm( 
-"	      00470336    mov eax,[ebp+8]"
-"	      00470339    mov ecx,[ebp-24h]"
+"	      00470336    mov eax,nPaletteIndex"
+"	      00470339    mov ecx,this"
 "	      0047033c    mov [ecx+114h],eax"
 );
 // LINE 1184:
 	asm( 
-"	      00470342    cmp dword ptr [ebp+0Ch],0"
+"	      00470342    cmp rectFill,0"
 "	      00470346    je near ptr 004703E2h"
 );
 // LINE 1185:
 	asm( 
-"	      0047034c    mov eax,[ebp+0Ch]"
+"	      0047034c    mov eax,rectFill"
 "	      0047034f    mov eax,[eax]"
-"	      00470351    mov [ebp-18h],eax"
+"	      00470351    mov rectFillTemp.left,eax"
 );
 // LINE 1186:
 	asm( 
-"	      00470354    mov eax,[ebp+0Ch]"
+"	      00470354    mov eax,rectFill"
 "	      00470357    mov eax,[eax+4]"
-"	      0047035a    mov [ebp-14h],eax"
+"	      0047035a    mov rectFillTemp.top,eax"
 );
 // LINE 1187:
 	asm( 
-"	      0047035d    mov eax,[ebp+0Ch]"
+"	      0047035d    mov eax,rectFill"
 "	      00470360    mov eax,[eax+8]"
-"	      00470363    mov [ebp-10h],eax"
+"	      00470363    mov rectFillTemp.right,eax"
 );
 // LINE 1188:
 	asm( 
-"	      00470366    mov eax,[ebp+0Ch]"
+"	      00470366    mov eax,rectFill"
 "	      00470369    mov eax,[eax+0Ch]"
-"	      0047036c    mov [ebp-0Ch],eax"
+"	      0047036c    mov rectFillTemp.bottom,eax"
 );
 // LINE 1189:
 	asm( 
-"	      0047036f    lea eax,[ebp-18h]"
-"	      00470372    mov [ebp-4],eax"
+"	      0047036f    lea eax,rectFillTemp.left"
+"	      00470372    mov rectToUse,eax"
 );
 // LINE 1190:
 	asm( 
-"	      00470375    mov eax,[ebp-4]"
+"	      00470375    mov eax,rectToUse"
 "	      00470378    cmp dword ptr [eax],0"
 "	      0047037b    jge near ptr 0047038Ah"
 );
 // LINE 1191:
 	asm( 
-"	      00470381    mov eax,[ebp-4]"
+"	      00470381    mov eax,rectToUse"
 "	      00470384    mov dword ptr [eax],0"
 );
 // LINE 1192:
 	asm( 
-"	      0047038a    mov eax,[ebp-4]"
+"	      0047038a    mov eax,rectToUse"
 "	      0047038d    cmp dword ptr [eax+4],0"
 "	      00470391    jge near ptr 004703A1h"
 );
 // LINE 1193:
 	asm( 
-"	      00470397    mov eax,[ebp-4]"
+"	      00470397    mov eax,rectToUse"
 "	      0047039a    mov dword ptr [eax+4],0"
 );
 // LINE 1194:
 	asm( 
-"	      004703a1    mov eax,[ebp-24h]"
-"	      004703a4    mov ecx,[ebp-4]"
+"	      004703a1    mov eax,this"
+"	      004703a4    mov ecx,rectToUse"
 "	      004703a7    mov ecx,[ecx+8]"
 "	      004703aa    cmp [eax+24h],ecx"
 "	      004703ad    jge near ptr 004703BFh"
 );
 // LINE 1195:
 	asm( 
-"	      004703b3    mov eax,[ebp-24h]"
+"	      004703b3    mov eax,this"
 "	      004703b6    mov eax,[eax+24h]"
-"	      004703b9    mov ecx,[ebp-4]"
+"	      004703b9    mov ecx,rectToUse"
 "	      004703bc    mov [ecx+8],eax"
 );
 // LINE 1196:
 	asm( 
-"	      004703bf    mov eax,[ebp-24h]"
-"	      004703c2    mov ecx,[ebp-4]"
+"	      004703bf    mov eax,this"
+"	      004703c2    mov ecx,rectToUse"
 "	      004703c5    mov ecx,[ecx+0Ch]"
 "	      004703c8    cmp [eax+28h],ecx"
 "	      004703cb    jge near ptr 004703DDh"
 );
 // LINE 1197:
 	asm( 
-"	      004703d1    mov eax,[ebp-24h]"
+"	      004703d1    mov eax,this"
 "	      004703d4    mov eax,[eax+28h]"
-"	      004703d7    mov ecx,[ebp-4]"
+"	      004703d7    mov ecx,rectToUse"
 "	      004703da    mov [ecx+0Ch],eax"
 );
 // LINE 1199:
@@ -3750,35 +3750,35 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 );
 // LINE 1200:
 	asm( 
-"	      004703e2    mov eax,[ebp-24h]"
+"	      004703e2    mov eax,this"
 "	      004703e5    add eax,1Ch"
-"	      004703e8    mov [ebp-4],eax"
+"	      004703e8    mov rectToUse,eax"
 );
 // LINE 1206:
 	asm( 
-"	      004703eb    mov eax,[ebp-24h]"
+"	      004703eb    mov eax,this"
 "	      004703ee    add eax,0C4h"
 "	      004703f3    push eax"
 "	      004703f4    push 1000400h"
 "	      004703f9    push 0"
 "	      004703fb    push 0"
-"	      004703fd    mov eax,[ebp-4]"
+"	      004703fd    mov eax,rectToUse"
 "	      00470400    push eax"
-"	      00470401    mov eax,[ebp-1Ch]"
+"	      00470401    mov eax,pOurSurface"
 "	      00470404    push eax"
-"	      00470405    mov eax,[ebp-1Ch]"
+"	      00470405    mov eax,pOurSurface"
 "	      00470408    mov eax,[eax]"
 "	      0047040a    call dword ptr [eax+14h]"
-"	      0047040d    mov [ebp-8],eax"
+"	      0047040d    mov ddrval,eax"
 );
 // LINE 1207:
 	asm( 
-"	      00470410    cmp dword ptr [ebp-8],0"
+"	      00470410    cmp ddrval,0"
 "	      00470414    je near ptr 00470432h"
 );
 // LINE 1208:
 	asm( 
-"	      0047041a    mov eax,[ebp-8]"
+"	      0047041a    mov eax,ddrval"
 "	      0047041d    mov [ebp-20h],eax"
 "	      00470420    jmp near ptr 00470425h"
 "	      00470425    push 599788h"
@@ -3810,17 +3810,17 @@ unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
 "	      00470446    push ebx"
 "	      00470447    push esi"
 "	      00470448    push edi"
-"	      00470449    mov [ebp-0Ch],ecx"
+"	      00470449    mov this,ecx"
 );
 // LINE 1225:
 	asm( 
-"	      0047044c    mov eax,[ebp-0Ch]"
+"	      0047044c    mov eax,this"
 "	      0047044f    cmp dword ptr [eax+34h],0"
 "	      00470453    je near ptr 00470490h"
 );
 // LINE 1226:
 	asm( 
-"	      00470459    mov eax,[ebp-0Ch]"
+"	      00470459    mov eax,this"
 "	      0047045c    mov eax,[eax+34h]"
 "	      0047045f    mov [ebp-8],eax"
 "	      00470462    mov eax,[ebp-8]"
@@ -3838,8 +3838,8 @@ unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
 );
 // LINE 1227:
 	asm( 
-"	      00470490    mov eax,[ebp+8]"
-"	      00470493    mov ecx,[ebp-0Ch]"
+"	      00470490    mov eax,mNewFont"
+"	      00470493    mov ecx,this"
 "	      00470496    mov [ecx+34h],eax"
 );
 // LINE 1228:
@@ -3867,23 +3867,23 @@ struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 "	      004704ad    push ebx"
 "	      004704ae    push esi"
 "	      004704af    push edi"
-"	      004704b0    mov [ebp-4],ecx"
+"	      004704b0    mov this,ecx"
 );
 // LINE 1244:
 	asm( 
-"	      004704b3    mov eax,[ebp-4]"
+"	      004704b3    mov eax,this"
 "	      004704b6    cmp dword ptr [eax+2Ch],0"
 "	      004704ba    je near ptr 004704CBh"
 );
 // LINE 1245:
 	asm( 
-"	      004704c0    mov eax,[ebp-4]"
+"	      004704c0    mov eax,this"
 "	      004704c3    mov eax,[eax+50h]"
 "	      004704c6    jmp near ptr 004704D6h"
 );
 // LINE 1246:
 	asm( 
-"	      004704cb    mov eax,[ebp-4]"
+"	      004704cb    mov eax,this"
 "	      004704ce    mov eax,[eax+4Ch]"
 "	      004704d1    jmp near ptr 004704D6h"
 );
@@ -3927,9 +3927,9 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 "	      00470518    mov eax,[ebp-40h]"
 "	      0047051b    mov dword ptr [eax],590468h"
 "	      00470521    mov dword ptr ds:[5C0920h],8000h"
-"	      0047052b    cmp dword ptr [ebp+8],0"
+"	      0047052b    cmp imageFileName,0"
 "	      0047052f    je near ptr 0047054Dh"
-"	      00470535    mov eax,[ebp+8]"
+"	      00470535    mov eax,imageFileName"
 "	      00470538    push eax"
 "	      00470539    mov eax,[ebp-40h]"
 "	      0047053c    add eax,4"
@@ -3941,9 +3941,9 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 "	      00470550    mov byte ptr [eax+4],0"
 "	      00470554    jmp near ptr 00470559h"
 "	      00470559    mov eax,[ebp-40h]"
-"	      0047055c    mov [ebp-4],eax"
+"	      0047055c    mov fileImage,eax"
 "	      0047055f    jmp near ptr 0047056Bh"
-"	      00470564    mov dword ptr [ebp-4],0"
+"	      00470564    mov fileImage,0"
 );
 // LINE 1264:
 	asm( 
@@ -3951,12 +3951,12 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 "	      0047056d    push 180h"
 "	      00470572    push 0"
 "	      00470574    push 0"
-"	      00470576    mov ecx,[ebp-4]"
+"	      00470576    mov ecx,fileImage"
 "	      00470579    call 004A03A0h"
 );
 // LINE 1265:
 	asm( 
-"	      0047057e    mov eax,[ebp-4]"
+"	      0047057e    mov eax,fileImage"
 "	      00470581    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      00470588    jle near ptr 00470598h"
 "	      0047058e    jmp near ptr 004705E0h"
@@ -3967,12 +3967,12 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 );
 // LINE 1266:
 	asm( 
-"	      004705a7    mov ecx,[ebp-4]"
+"	      004705a7    mov ecx,fileImage"
 "	      004705aa    call 004A04F0h"
 );
 // LINE 1267:
 	asm( 
-"	      004705af    mov eax,[ebp-4]"
+"	      004705af    mov eax,fileImage"
 "	      004705b2    mov [ebp-48h],eax"
 "	      004705b5    mov eax,[ebp-48h]"
 "	      004705b8    mov [ebp-44h],eax"
@@ -3993,9 +3993,9 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 // LINE 1271:
 	asm( 
 "	      004705e0    push 0Eh"
-"	      004705e2    lea eax,[ebp-14h]"
+"	      004705e2    lea eax,bfHeader.bfType"
 "	      004705e5    push eax"
-"	      004705e6    mov eax,[ebp-4]"
+"	      004705e6    mov eax,fileImage"
 "	      004705e9    mov eax,[eax+108h]"
 "	      004705ef    push eax"
 "	      004705f0    call 00580B50h"
@@ -4005,9 +4005,9 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 // LINE 1272:
 	asm( 
 "	      004705fd    push 28h"
-"	      004705ff    lea eax,[ebp-3Ch]"
+"	      004705ff    lea eax,biHeader.biSize"
 "	      00470602    push eax"
-"	      00470603    mov eax,[ebp-4]"
+"	      00470603    mov eax,fileImage"
 "	      00470606    mov eax,[eax+108h]"
 "	      0047060c    push eax"
 "	      0047060d    call 00580B50h"
@@ -4016,7 +4016,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 );
 // LINE 1278:
 	asm( 
-"	      0047061a    cmp dword ptr [ebp-1Ch],0"
+"	      0047061a    cmp biHeader.biClrUsed,0"
 "	      0047061e    jne near ptr 00470631h"
 );
 // LINE 1279:
@@ -4024,23 +4024,23 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 "	      00470624    mov eax,1"
 "	      00470629    mov cl,[ebp-2Eh]"
 "	      0047062c    shl eax,cl"
-"	      0047062e    mov [ebp-1Ch],eax"
+"	      0047062e    mov biHeader.biClrUsed,eax"
 );
 // LINE 1280:
 	asm( 
-"	      00470631    cmp dword ptr [ebp-1Ch],100h"
+"	      00470631    cmp biHeader.biClrUsed,100h"
 "	      00470638    ja near ptr 00470648h"
-"	      0047063e    cmp dword ptr [ebp-1Ch],0"
+"	      0047063e    cmp biHeader.biClrUsed,0"
 "	      00470642    ja near ptr 00470681h"
 );
 // LINE 1281:
 	asm( 
-"	      00470648    mov ecx,[ebp-4]"
+"	      00470648    mov ecx,fileImage"
 "	      0047064b    call 004A04F0h"
 );
 // LINE 1282:
 	asm( 
-"	      00470650    mov eax,[ebp-4]"
+"	      00470650    mov eax,fileImage"
 "	      00470653    mov [ebp-50h],eax"
 "	      00470656    mov eax,[ebp-50h]"
 "	      00470659    mov [ebp-4Ch],eax"
@@ -4060,14 +4060,14 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 );
 // LINE 1285:
 	asm( 
-"	      00470681    mov eax,[ebp-1Ch]"
+"	      00470681    mov eax,biHeader.biClrUsed"
 "	      00470684    shl eax,2"
 "	      00470687    mov [ebp-60h],eax"
 "	      0047068a    mov eax,[ebp-60h]"
 "	      0047068d    push eax"
-"	      0047068e    mov eax,[ebp+0Ch]"
+"	      0047068e    mov eax,pColors"
 "	      00470691    push eax"
-"	      00470692    mov eax,[ebp-4]"
+"	      00470692    mov eax,fileImage"
 "	      00470695    mov eax,[eax+108h]"
 "	      0047069b    push eax"
 "	      0047069c    call 00580B50h"
@@ -4076,12 +4076,12 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 );
 // LINE 1286:
 	asm( 
-"	      004706a9    mov ecx,[ebp-4]"
+"	      004706a9    mov ecx,fileImage"
 "	      004706ac    call 004A04F0h"
 );
 // LINE 1287:
 	asm( 
-"	      004706b1    mov eax,[ebp-4]"
+"	      004706b1    mov eax,fileImage"
 "	      004706b4    mov [ebp-58h],eax"
 "	      004706b7    mov eax,[ebp-58h]"
 "	      004706ba    mov [ebp-54h],eax"
@@ -4119,90 +4119,90 @@ unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect& rectOu
 "	      004706ea    push ebx"
 "	      004706eb    push esi"
 "	      004706ec    push edi"
-"	      004706ed    mov [ebp-4],ecx"
+"	      004706ed    mov this,ecx"
 );
 // LINE 1301:
 	asm( 
-"	      004706f0    mov eax,[ebp+0Ch]"
+"	      004706f0    mov eax,nThickness"
 "	      004706f3    push eax"
-"	      004706f4    mov eax,[ebp+8]"
+"	      004706f4    mov eax,rectOutline"
 "	      004706f7    mov eax,[eax+4]"
 "	      004706fa    push eax"
-"	      004706fb    mov eax,[ebp+8]"
+"	      004706fb    mov eax,rectOutline"
 "	      004706fe    mov eax,[eax+8]"
 "	      00470701    push eax"
-"	      00470702    mov eax,[ebp+8]"
+"	      00470702    mov eax,rectOutline"
 "	      00470705    mov eax,[eax+4]"
 "	      00470708    push eax"
-"	      00470709    mov eax,[ebp+8]"
+"	      00470709    mov eax,rectOutline"
 "	      0047070c    mov eax,[eax]"
 "	      0047070e    push eax"
-"	      0047070f    mov eax,[ebp-4]"
+"	      0047070f    mov eax,this"
 "	      00470712    mov eax,[eax]"
-"	      00470714    mov ecx,[ebp-4]"
+"	      00470714    mov ecx,this"
 "	      00470717    call dword ptr [eax+54h]"
 );
 // LINE 1305:
 	asm( 
-"	      0047071a    mov eax,[ebp+0Ch]"
+"	      0047071a    mov eax,nThickness"
 "	      0047071d    push eax"
-"	      0047071e    mov eax,[ebp+8]"
+"	      0047071e    mov eax,rectOutline"
 "	      00470721    mov eax,[eax+0Ch]"
 "	      00470724    push eax"
-"	      00470725    mov eax,[ebp+8]"
+"	      00470725    mov eax,rectOutline"
 "	      00470728    mov eax,[eax+8]"
 "	      0047072b    push eax"
-"	      0047072c    mov eax,[ebp+8]"
+"	      0047072c    mov eax,rectOutline"
 "	      0047072f    mov eax,[eax+0Ch]"
 "	      00470732    push eax"
-"	      00470733    mov eax,[ebp+8]"
+"	      00470733    mov eax,rectOutline"
 "	      00470736    mov eax,[eax]"
 "	      00470738    push eax"
-"	      00470739    mov eax,[ebp-4]"
+"	      00470739    mov eax,this"
 "	      0047073c    mov eax,[eax]"
-"	      0047073e    mov ecx,[ebp-4]"
+"	      0047073e    mov ecx,this"
 "	      00470741    call dword ptr [eax+54h]"
 );
 // LINE 1309:
 	asm( 
-"	      00470744    mov eax,[ebp+0Ch]"
+"	      00470744    mov eax,nThickness"
 "	      00470747    push eax"
-"	      00470748    mov eax,[ebp+8]"
+"	      00470748    mov eax,rectOutline"
 "	      0047074b    mov eax,[eax+0Ch]"
 "	      0047074e    push eax"
-"	      0047074f    mov eax,[ebp+8]"
+"	      0047074f    mov eax,rectOutline"
 "	      00470752    mov eax,[eax+8]"
 "	      00470755    push eax"
-"	      00470756    mov eax,[ebp+8]"
+"	      00470756    mov eax,rectOutline"
 "	      00470759    mov eax,[eax+4]"
 "	      0047075c    push eax"
-"	      0047075d    mov eax,[ebp+8]"
+"	      0047075d    mov eax,rectOutline"
 "	      00470760    mov eax,[eax+8]"
 "	      00470763    push eax"
-"	      00470764    mov eax,[ebp-4]"
+"	      00470764    mov eax,this"
 "	      00470767    mov eax,[eax]"
-"	      00470769    mov ecx,[ebp-4]"
+"	      00470769    mov ecx,this"
 "	      0047076c    call dword ptr [eax+54h]"
 );
 // LINE 1313:
 	asm( 
-"	      0047076f    mov eax,[ebp+0Ch]"
+"	      0047076f    mov eax,nThickness"
 "	      00470772    push eax"
-"	      00470773    mov eax,[ebp+8]"
+"	      00470773    mov eax,rectOutline"
 "	      00470776    mov eax,[eax+0Ch]"
 "	      00470779    push eax"
-"	      0047077a    mov eax,[ebp+8]"
+"	      0047077a    mov eax,rectOutline"
 "	      0047077d    mov eax,[eax]"
 "	      0047077f    push eax"
-"	      00470780    mov eax,[ebp+8]"
+"	      00470780    mov eax,rectOutline"
 "	      00470783    mov eax,[eax+4]"
 "	      00470786    push eax"
-"	      00470787    mov eax,[ebp+8]"
+"	      00470787    mov eax,rectOutline"
 "	      0047078a    mov eax,[eax]"
 "	      0047078c    push eax"
-"	      0047078d    mov eax,[ebp-4]"
+"	      0047078d    mov eax,this"
 "	      00470790    mov eax,[eax]"
-"	      00470792    mov ecx,[ebp-4]"
+"	      00470792    mov ecx,this"
 "	      00470795    call dword ptr [eax+54h]"
 "	      00470798    jmp near ptr 0047079Dh"
 );
@@ -4226,90 +4226,90 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRec
 "	      004707aa    push ebx"
 "	      004707ab    push esi"
 "	      004707ac    push edi"
-"	      004707ad    mov [ebp-4],ecx"
+"	      004707ad    mov this,ecx"
 );
 // LINE 1325:
 	asm( 
-"	      004707b0    mov eax,[ebp+0Ch]"
+"	      004707b0    mov eax,nThickness"
 "	      004707b3    push eax"
-"	      004707b4    mov eax,[ebp+8]"
+"	      004707b4    mov eax,rectOutline"
 "	      004707b7    mov eax,[eax+4]"
 "	      004707ba    push eax"
-"	      004707bb    mov eax,[ebp+8]"
+"	      004707bb    mov eax,rectOutline"
 "	      004707be    mov eax,[eax+8]"
 "	      004707c1    push eax"
-"	      004707c2    mov eax,[ebp+8]"
+"	      004707c2    mov eax,rectOutline"
 "	      004707c5    mov eax,[eax+4]"
 "	      004707c8    push eax"
-"	      004707c9    mov eax,[ebp+8]"
+"	      004707c9    mov eax,rectOutline"
 "	      004707cc    mov eax,[eax]"
 "	      004707ce    push eax"
-"	      004707cf    mov eax,[ebp-4]"
+"	      004707cf    mov eax,this"
 "	      004707d2    mov eax,[eax]"
-"	      004707d4    mov ecx,[ebp-4]"
+"	      004707d4    mov ecx,this"
 "	      004707d7    call dword ptr [eax+50h]"
 );
 // LINE 1329:
 	asm( 
-"	      004707da    mov eax,[ebp+0Ch]"
+"	      004707da    mov eax,nThickness"
 "	      004707dd    push eax"
-"	      004707de    mov eax,[ebp+8]"
+"	      004707de    mov eax,rectOutline"
 "	      004707e1    mov eax,[eax+0Ch]"
 "	      004707e4    push eax"
-"	      004707e5    mov eax,[ebp+8]"
+"	      004707e5    mov eax,rectOutline"
 "	      004707e8    mov eax,[eax+8]"
 "	      004707eb    push eax"
-"	      004707ec    mov eax,[ebp+8]"
+"	      004707ec    mov eax,rectOutline"
 "	      004707ef    mov eax,[eax+0Ch]"
 "	      004707f2    push eax"
-"	      004707f3    mov eax,[ebp+8]"
+"	      004707f3    mov eax,rectOutline"
 "	      004707f6    mov eax,[eax]"
 "	      004707f8    push eax"
-"	      004707f9    mov eax,[ebp-4]"
+"	      004707f9    mov eax,this"
 "	      004707fc    mov eax,[eax]"
-"	      004707fe    mov ecx,[ebp-4]"
+"	      004707fe    mov ecx,this"
 "	      00470801    call dword ptr [eax+50h]"
 );
 // LINE 1333:
 	asm( 
-"	      00470804    mov eax,[ebp+0Ch]"
+"	      00470804    mov eax,nThickness"
 "	      00470807    push eax"
-"	      00470808    mov eax,[ebp+8]"
+"	      00470808    mov eax,rectOutline"
 "	      0047080b    mov eax,[eax+0Ch]"
 "	      0047080e    push eax"
-"	      0047080f    mov eax,[ebp+8]"
+"	      0047080f    mov eax,rectOutline"
 "	      00470812    mov eax,[eax+8]"
 "	      00470815    push eax"
-"	      00470816    mov eax,[ebp+8]"
+"	      00470816    mov eax,rectOutline"
 "	      00470819    mov eax,[eax+4]"
 "	      0047081c    push eax"
-"	      0047081d    mov eax,[ebp+8]"
+"	      0047081d    mov eax,rectOutline"
 "	      00470820    mov eax,[eax+8]"
 "	      00470823    push eax"
-"	      00470824    mov eax,[ebp-4]"
+"	      00470824    mov eax,this"
 "	      00470827    mov eax,[eax]"
-"	      00470829    mov ecx,[ebp-4]"
+"	      00470829    mov ecx,this"
 "	      0047082c    call dword ptr [eax+50h]"
 );
 // LINE 1337:
 	asm( 
-"	      0047082f    mov eax,[ebp+0Ch]"
+"	      0047082f    mov eax,nThickness"
 "	      00470832    push eax"
-"	      00470833    mov eax,[ebp+8]"
+"	      00470833    mov eax,rectOutline"
 "	      00470836    mov eax,[eax+0Ch]"
 "	      00470839    push eax"
-"	      0047083a    mov eax,[ebp+8]"
+"	      0047083a    mov eax,rectOutline"
 "	      0047083d    mov eax,[eax]"
 "	      0047083f    push eax"
-"	      00470840    mov eax,[ebp+8]"
+"	      00470840    mov eax,rectOutline"
 "	      00470843    mov eax,[eax+4]"
 "	      00470846    push eax"
-"	      00470847    mov eax,[ebp+8]"
+"	      00470847    mov eax,rectOutline"
 "	      0047084a    mov eax,[eax]"
 "	      0047084c    push eax"
-"	      0047084d    mov eax,[ebp-4]"
+"	      0047084d    mov eax,this"
 "	      00470850    mov eax,[eax]"
-"	      00470852    mov ecx,[ebp-4]"
+"	      00470852    mov ecx,this"
 "	      00470855    call dword ptr [eax+50h]"
 "	      00470858    jmp near ptr 0047085Dh"
 );
@@ -4341,97 +4341,97 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 "	      0047086a    push ebx"
 "	      0047086b    push esi"
 "	      0047086c    push edi"
-"	      0047086d    mov [ebp-5Ch],ecx"
+"	      0047086d    mov this,ecx"
 );
 // LINE 1456:
 	asm( 
-"	      00470870    mov eax,[ebp-5Ch]"
+"	      00470870    mov eax,this"
 "	      00470873    mov eax,[eax]"
-"	      00470875    mov ecx,[ebp-5Ch]"
+"	      00470875    mov ecx,this"
 "	      00470878    call dword ptr [eax]"
 );
 // LINE 1463:
 	asm( 
 "	      0047087a    jmp near ptr 0047087Fh"
-"	      0047087f    mov eax,[ebp-5Ch]"
+"	      0047087f    mov eax,this"
 "	      00470882    mov eax,[eax+8]"
-"	      00470885    mov [ebp-1Ch],eax"
+"	      00470885    mov bufferWidth,eax"
 );
 // LINE 1464:
 	asm( 
 "	      00470888    jmp near ptr 0047088Dh"
-"	      0047088d    mov eax,[ebp-5Ch]"
+"	      0047088d    mov eax,this"
 "	      00470890    mov eax,[eax+0Ch]"
-"	      00470893    mov [ebp-8],eax"
+"	      00470893    mov bufferHeight,eax"
 );
 // LINE 1467:
 	asm( 
-"	      00470896    mov eax,[ebp+0Ch]"
-"	      00470899    cmp [ebp+14h],eax"
+"	      00470896    mov eax,nStartY"
+"	      00470899    cmp nEndY,eax"
 "	      0047089c    jne near ptr 00470923h"
 );
 // LINE 1469:
 	asm( 
-"	      004708a2    mov eax,[ebp+8]"
-"	      004708a5    cmp [ebp+10h],eax"
+"	      004708a2    mov eax,nStartX"
+"	      004708a5    cmp nEndX,eax"
 "	      004708a8    jg near ptr 004708C0h"
 );
 // LINE 1471:
 	asm( 
-"	      004708ae    mov eax,[ebp+8]"
-"	      004708b1    mov [ebp-10h],eax"
-"	      004708b4    mov eax,[ebp+10h]"
-"	      004708b7    mov [ebp+8],eax"
-"	      004708ba    mov eax,[ebp-10h]"
-"	      004708bd    mov [ebp+10h],eax"
+"	      004708ae    mov eax,nStartX"
+"	      004708b1    mov temp,eax"
+"	      004708b4    mov eax,nEndX"
+"	      004708b7    mov nStartX,eax"
+"	      004708ba    mov eax,temp"
+"	      004708bd    mov nEndX,eax"
 );
 // LINE 1474:
 	asm( 
-"	      004708c0    mov eax,[ebp+10h]"
-"	      004708c3    sub eax,[ebp+8]"
+"	      004708c0    mov eax,nEndX"
+"	      004708c3    sub eax,nStartX"
 "	      004708c6    inc eax"
-"	      004708c7    mov [ebp-0Ch],eax"
+"	      004708c7    mov length,eax"
 );
 // LINE 1476:
 	asm( 
-"	      004708ca    mov eax,[ebp-5Ch]"
+"	      004708ca    mov eax,this"
 "	      004708cd    mov eax,[eax+14h]"
-"	      004708d0    imul eax,[ebp+0Ch]"
-"	      004708d4    add eax,[ebp+8]"
-"	      004708d7    mov ecx,[ebp-5Ch]"
+"	      004708d0    imul eax,nStartY"
+"	      004708d4    add eax,nStartX"
+"	      004708d7    mov ecx,this"
 "	      004708da    add eax,[ecx+10h]"
-"	      004708dd    mov [ebp-4],eax"
+"	      004708dd    mov address,eax"
 );
 // LINE 1477:
 	asm( 
-"	      004708e0    mov eax,[ebp+18h]"
-"	      004708e3    mov [ebp-14h],eax"
+"	      004708e0    mov eax,nThickness"
+"	      004708e3    mov i,eax"
 );
 // LINE 1478:
 	asm( 
-"	      004708e6    mov eax,[ebp-14h]"
+"	      004708e6    mov eax,i"
 "	      004708e9    mov [ebp-50h],eax"
-"	      004708ec    dec dword ptr [ebp-14h]"
+"	      004708ec    dec i"
 "	      004708ef    cmp dword ptr [ebp-50h],0"
 "	      004708f3    je near ptr 0047091Eh"
 );
 // LINE 1480:
 	asm( 
-"	      004708f9    mov eax,[ebp-0Ch]"
+"	      004708f9    mov eax,length"
 "	      004708fc    push eax"
-"	      004708fd    mov eax,[ebp-5Ch]"
+"	      004708fd    mov eax,this"
 "	      00470900    mov eax,[eax+44h]"
 "	      00470903    push eax"
-"	      00470904    mov eax,[ebp-4]"
+"	      00470904    mov eax,address"
 "	      00470907    push eax"
 "	      00470908    call 0056EB90h"
 "	      0047090d    add esp,0Ch"
 );
 // LINE 1481:
 	asm( 
-"	      00470910    mov eax,[ebp-5Ch]"
+"	      00470910    mov eax,this"
 "	      00470913    mov eax,[eax+14h]"
-"	      00470916    add [ebp-4],eax"
+"	      00470916    add address,eax"
 );
 // LINE 1482:
 	asm( 
@@ -4440,67 +4440,67 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 // LINE 1486:
 	asm( 
 "	      0047091e    jmp near ptr 00470C09h"
-"	      00470923    mov eax,[ebp+8]"
-"	      00470926    cmp [ebp+10h],eax"
+"	      00470923    mov eax,nStartX"
+"	      00470926    cmp nEndX,eax"
 "	      00470929    jne near ptr 004709AAh"
 );
 // LINE 1488:
 	asm( 
-"	      0047092f    mov eax,[ebp+0Ch]"
-"	      00470932    cmp [ebp+14h],eax"
+"	      0047092f    mov eax,nStartY"
+"	      00470932    cmp nEndY,eax"
 "	      00470935    jg near ptr 0047094Dh"
 );
 // LINE 1490:
 	asm( 
-"	      0047093b    mov eax,[ebp+0Ch]"
-"	      0047093e    mov [ebp-10h],eax"
-"	      00470941    mov eax,[ebp+14h]"
-"	      00470944    mov [ebp+0Ch],eax"
-"	      00470947    mov eax,[ebp-10h]"
-"	      0047094a    mov [ebp+14h],eax"
+"	      0047093b    mov eax,nStartY"
+"	      0047093e    mov temp,eax"
+"	      00470941    mov eax,nEndY"
+"	      00470944    mov nStartY,eax"
+"	      00470947    mov eax,temp"
+"	      0047094a    mov nEndY,eax"
 );
 // LINE 1492:
 	asm( 
-"	      0047094d    mov eax,[ebp-5Ch]"
+"	      0047094d    mov eax,this"
 "	      00470950    mov eax,[eax+14h]"
-"	      00470953    imul eax,[ebp+0Ch]"
-"	      00470957    add eax,[ebp+8]"
-"	      0047095a    mov ecx,[ebp-5Ch]"
+"	      00470953    imul eax,nStartY"
+"	      00470957    add eax,nStartX"
+"	      0047095a    mov ecx,this"
 "	      0047095d    add eax,[ecx+10h]"
-"	      00470960    mov [ebp-4],eax"
+"	      00470960    mov address,eax"
 );
 // LINE 1493:
 	asm( 
-"	      00470963    mov eax,[ebp+14h]"
-"	      00470966    sub eax,[ebp+0Ch]"
+"	      00470963    mov eax,nEndY"
+"	      00470966    sub eax,nStartY"
 "	      00470969    inc eax"
-"	      0047096a    mov [ebp-14h],eax"
+"	      0047096a    mov i,eax"
 );
 // LINE 1494:
 	asm( 
-"	      0047096d    mov eax,[ebp-14h]"
+"	      0047096d    mov eax,i"
 "	      00470970    mov [ebp-54h],eax"
-"	      00470973    dec dword ptr [ebp-14h]"
+"	      00470973    dec i"
 "	      00470976    cmp dword ptr [ebp-54h],0"
 "	      0047097a    je near ptr 004709A5h"
 );
 // LINE 1496:
 	asm( 
-"	      00470980    mov eax,[ebp+18h]"
+"	      00470980    mov eax,nThickness"
 "	      00470983    push eax"
-"	      00470984    mov eax,[ebp-5Ch]"
+"	      00470984    mov eax,this"
 "	      00470987    mov eax,[eax+44h]"
 "	      0047098a    push eax"
-"	      0047098b    mov eax,[ebp-4]"
+"	      0047098b    mov eax,address"
 "	      0047098e    push eax"
 "	      0047098f    call 0056EB90h"
 "	      00470994    add esp,0Ch"
 );
 // LINE 1497:
 	asm( 
-"	      00470997    mov eax,[ebp-5Ch]"
+"	      00470997    mov eax,this"
 "	      0047099a    mov eax,[eax+14h]"
-"	      0047099d    add [ebp-4],eax"
+"	      0047099d    add address,eax"
 );
 // LINE 1498:
 	asm( 
@@ -4525,61 +4525,61 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	int32_t xinc1;
 	int32_t d;
 	asm( 
-"	      004709aa    mov eax,[ebp+10h]"
-"	      004709ad    sub eax,[ebp+8]"
+"	      004709aa    mov eax,nEndX"
+"	      004709ad    sub eax,nStartX"
 "	      004709b0    push eax"
 "	      004709b1    call 0056F300h"
 "	      004709b6    add esp,4"
-"	      004709b9    mov [ebp-38h],eax"
+"	      004709b9    mov deltax,eax"
 );
 // LINE 1509:
 	asm( 
-"	      004709bc    mov eax,[ebp+14h]"
-"	      004709bf    sub eax,[ebp+0Ch]"
+"	      004709bc    mov eax,nEndY"
+"	      004709bf    sub eax,nStartY"
 "	      004709c2    push eax"
 "	      004709c3    call 0056F300h"
 "	      004709c8    add esp,4"
-"	      004709cb    mov [ebp-3Ch],eax"
+"	      004709cb    mov deltay,eax"
 );
 // LINE 1511:
 	asm( 
-"	      004709ce    mov eax,[ebp-38h]"
-"	      004709d1    cmp [ebp-3Ch],eax"
+"	      004709ce    mov eax,deltax"
+"	      004709d1    cmp deltay,eax"
 "	      004709d4    jg near ptr 00470A12h"
 );
 // LINE 1513:
 	asm( 
-"	      004709da    mov eax,[ebp-38h]"
+"	      004709da    mov eax,deltax"
 "	      004709dd    inc eax"
-"	      004709de    mov [ebp-34h],eax"
+"	      004709de    mov numpixels,eax"
 );
 // LINE 1514:
 	asm( 
-"	      004709e1    mov eax,[ebp-3Ch]"
+"	      004709e1    mov eax,deltay"
 "	      004709e4    add eax,eax"
-"	      004709e6    sub eax,[ebp-38h]"
-"	      004709e9    mov [ebp-20h],eax"
+"	      004709e6    sub eax,deltax"
+"	      004709e9    mov d,eax"
 );
 // LINE 1515:
 	asm( 
-"	      004709ec    mov eax,[ebp-3Ch]"
+"	      004709ec    mov eax,deltay"
 "	      004709ef    add eax,eax"
-"	      004709f1    mov [ebp-44h],eax"
+"	      004709f1    mov dinc1,eax"
 );
 // LINE 1516:
 	asm( 
-"	      004709f4    mov eax,[ebp-3Ch]"
-"	      004709f7    sub eax,[ebp-38h]"
+"	      004709f4    mov eax,deltay"
+"	      004709f7    sub eax,deltax"
 "	      004709fa    add eax,eax"
-"	      004709fc    mov [ebp-4Ch],eax"
+"	      004709fc    mov dinc2,eax"
 );
 // LINE 1517:
 	asm( 
-"	      004709ff    mov dword ptr [ebp-24h],1"
+"	      004709ff    mov xinc1,1"
 );
 // LINE 1518:
 	asm( 
-"	      00470a06    mov dword ptr [ebp-40h],0"
+"	      00470a06    mov yinc1,0"
 );
 // LINE 1520:
 	asm( 
@@ -4587,53 +4587,53 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1522:
 	asm( 
-"	      00470a12    mov eax,[ebp-3Ch]"
+"	      00470a12    mov eax,deltay"
 "	      00470a15    inc eax"
-"	      00470a16    mov [ebp-34h],eax"
+"	      00470a16    mov numpixels,eax"
 );
 // LINE 1523:
 	asm( 
-"	      00470a19    mov eax,[ebp-38h]"
+"	      00470a19    mov eax,deltax"
 "	      00470a1c    add eax,eax"
-"	      00470a1e    sub eax,[ebp-3Ch]"
-"	      00470a21    mov [ebp-20h],eax"
+"	      00470a1e    sub eax,deltay"
+"	      00470a21    mov d,eax"
 );
 // LINE 1524:
 	asm( 
-"	      00470a24    mov eax,[ebp-38h]"
+"	      00470a24    mov eax,deltax"
 "	      00470a27    add eax,eax"
-"	      00470a29    mov [ebp-44h],eax"
+"	      00470a29    mov dinc1,eax"
 );
 // LINE 1525:
 	asm( 
-"	      00470a2c    mov eax,[ebp-38h]"
-"	      00470a2f    sub eax,[ebp-3Ch]"
+"	      00470a2c    mov eax,deltax"
+"	      00470a2f    sub eax,deltay"
 "	      00470a32    add eax,eax"
-"	      00470a34    mov [ebp-4Ch],eax"
+"	      00470a34    mov dinc2,eax"
 );
 // LINE 1526:
 	asm( 
-"	      00470a37    mov dword ptr [ebp-24h],0"
+"	      00470a37    mov xinc1,0"
 );
 // LINE 1527:
 	asm( 
-"	      00470a3e    mov dword ptr [ebp-40h],1"
+"	      00470a3e    mov yinc1,1"
 );
 // LINE 1531:
 	asm( 
-"	      00470a45    mov eax,[ebp+8]"
-"	      00470a48    cmp [ebp+10h],eax"
+"	      00470a45    mov eax,nStartX"
+"	      00470a48    cmp nEndX,eax"
 "	      00470a4b    jge near ptr 00470A65h"
 );
 // LINE 1533:
 	asm( 
-"	      00470a51    mov eax,[ebp-24h]"
+"	      00470a51    mov eax,xinc1"
 "	      00470a54    neg eax"
-"	      00470a56    mov [ebp-24h],eax"
+"	      00470a56    mov xinc1,eax"
 );
 // LINE 1534:
 	asm( 
-"	      00470a59    mov dword ptr [ebp-28h],0FFFFFFFFh"
+"	      00470a59    mov xinc2,0FFFFFFFFh"
 );
 // LINE 1536:
 	asm( 
@@ -4641,23 +4641,23 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1537:
 	asm( 
-"	      00470a65    mov dword ptr [ebp-28h],1"
+"	      00470a65    mov xinc2,1"
 );
 // LINE 1539:
 	asm( 
-"	      00470a6c    mov eax,[ebp+0Ch]"
-"	      00470a6f    cmp [ebp+14h],eax"
+"	      00470a6c    mov eax,nStartY"
+"	      00470a6f    cmp nEndY,eax"
 "	      00470a72    jge near ptr 00470A8Ch"
 );
 // LINE 1541:
 	asm( 
-"	      00470a78    mov eax,[ebp-40h]"
+"	      00470a78    mov eax,yinc1"
 "	      00470a7b    neg eax"
-"	      00470a7d    mov [ebp-40h],eax"
+"	      00470a7d    mov yinc1,eax"
 );
 // LINE 1542:
 	asm( 
-"	      00470a80    mov dword ptr [ebp-48h],0FFFFFFFFh"
+"	      00470a80    mov yinc2,0FFFFFFFFh"
 );
 // LINE 1544:
 	asm( 
@@ -4665,63 +4665,63 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1545:
 	asm( 
-"	      00470a8c    mov dword ptr [ebp-48h],1"
+"	      00470a8c    mov yinc2,1"
 );
 // LINE 1548:
 	asm( 
-"	      00470a93    mov eax,[ebp+8]"
-"	      00470a96    mov [ebp-2Ch],eax"
+"	      00470a93    mov eax,nStartX"
+"	      00470a96    mov x,eax"
 );
 // LINE 1549:
 	asm( 
-"	      00470a99    mov eax,[ebp+0Ch]"
-"	      00470a9c    mov [ebp-30h],eax"
+"	      00470a99    mov eax,nStartY"
+"	      00470a9c    mov y,eax"
 );
 // LINE 1553:
 	asm( 
-"	      00470a9f    cmp dword ptr [ebp+18h],1"
+"	      00470a9f    cmp nThickness,1"
 "	      00470aa3    jne near ptr 00470B1Dh"
 );
 // LINE 1555:
 	asm( 
-"	      00470aa9    mov dword ptr [ebp-14h],1"
+"	      00470aa9    mov i,1"
 "	      00470ab0    jmp near ptr 00470AB8h"
-"	      00470ab5    inc dword ptr [ebp-14h]"
-"	      00470ab8    mov eax,[ebp-14h]"
-"	      00470abb    cmp [ebp-34h],eax"
+"	      00470ab5    inc i"
+"	      00470ab8    mov eax,i"
+"	      00470abb    cmp numpixels,eax"
 "	      00470abe    jl near ptr 00470B18h"
 );
 // LINE 1557:
 	asm( 
-"	      00470ac4    mov eax,[ebp-5Ch]"
+"	      00470ac4    mov eax,this"
 "	      00470ac7    mov al,[eax+44h]"
-"	      00470aca    mov ecx,[ebp-5Ch]"
+"	      00470aca    mov ecx,this"
 "	      00470acd    mov ecx,[ecx+14h]"
-"	      00470ad0    imul ecx,[ebp-30h]"
-"	      00470ad4    mov edx,[ebp-5Ch]"
+"	      00470ad0    imul ecx,y"
+"	      00470ad4    mov edx,this"
 "	      00470ad7    add ecx,[edx+10h]"
-"	      00470ada    mov edx,[ebp-2Ch]"
+"	      00470ada    mov edx,x"
 "	      00470add    mov [ecx+edx],al"
 );
 // LINE 1559:
 	asm( 
-"	      00470ae0    cmp dword ptr [ebp-20h],0"
+"	      00470ae0    cmp d,0"
 "	      00470ae4    jge near ptr 00470B01h"
 );
 // LINE 1561:
 	asm( 
-"	      00470aea    mov eax,[ebp-44h]"
-"	      00470aed    add [ebp-20h],eax"
+"	      00470aea    mov eax,dinc1"
+"	      00470aed    add d,eax"
 );
 // LINE 1562:
 	asm( 
-"	      00470af0    mov eax,[ebp-24h]"
-"	      00470af3    add [ebp-2Ch],eax"
+"	      00470af0    mov eax,xinc1"
+"	      00470af3    add x,eax"
 );
 // LINE 1563:
 	asm( 
-"	      00470af6    mov eax,[ebp-40h]"
-"	      00470af9    add [ebp-30h],eax"
+"	      00470af6    mov eax,yinc1"
+"	      00470af9    add y,eax"
 );
 // LINE 1565:
 	asm( 
@@ -4729,18 +4729,18 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1567:
 	asm( 
-"	      00470b01    mov eax,[ebp-4Ch]"
-"	      00470b04    add [ebp-20h],eax"
+"	      00470b01    mov eax,dinc2"
+"	      00470b04    add d,eax"
 );
 // LINE 1568:
 	asm( 
-"	      00470b07    mov eax,[ebp-28h]"
-"	      00470b0a    add [ebp-2Ch],eax"
+"	      00470b07    mov eax,xinc2"
+"	      00470b0a    add x,eax"
 );
 // LINE 1569:
 	asm( 
-"	      00470b0d    mov eax,[ebp-48h]"
-"	      00470b10    add [ebp-30h],eax"
+"	      00470b0d    mov eax,yinc2"
+"	      00470b10    add y,eax"
 );
 // LINE 1571:
 	asm( 
@@ -4752,29 +4752,29 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1575:
 	asm( 
-"	      00470b1d    mov dword ptr [ebp-14h],1"
+"	      00470b1d    mov i,1"
 "	      00470b24    jmp near ptr 00470B2Ch"
-"	      00470b29    inc dword ptr [ebp-14h]"
-"	      00470b2c    mov eax,[ebp-14h]"
-"	      00470b2f    cmp [ebp-34h],eax"
+"	      00470b29    inc i"
+"	      00470b2c    mov eax,i"
+"	      00470b2f    cmp numpixels,eax"
 "	      00470b32    jl near ptr 00470C09h"
 );
 // LINE 1581:
 	asm( 
-"	      00470b38    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      00470b38    cmp xinc2,0FFFFFFFFh"
 "	      00470b3c    jne near ptr 00470B61h"
 );
 // LINE 1582:
 	asm( 
-"	      00470b42    mov eax,[ebp-5Ch]"
+"	      00470b42    mov eax,this"
 "	      00470b45    mov eax,[eax+14h]"
-"	      00470b48    imul eax,[ebp-30h]"
-"	      00470b4c    mov ecx,[ebp-5Ch]"
+"	      00470b48    imul eax,y"
+"	      00470b4c    mov ecx,this"
 "	      00470b4f    add eax,[ecx+10h]"
-"	      00470b52    add eax,[ebp-2Ch]"
-"	      00470b55    sub eax,[ebp+18h]"
+"	      00470b52    add eax,x"
+"	      00470b55    sub eax,nThickness"
 "	      00470b58    inc eax"
-"	      00470b59    mov [ebp-4],eax"
+"	      00470b59    mov address,eax"
 );
 // LINE 1583:
 	asm( 
@@ -4782,51 +4782,51 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1584:
 	asm( 
-"	      00470b61    mov eax,[ebp-5Ch]"
+"	      00470b61    mov eax,this"
 "	      00470b64    mov eax,[eax+14h]"
-"	      00470b67    imul eax,[ebp-30h]"
-"	      00470b6b    mov ecx,[ebp-5Ch]"
+"	      00470b67    imul eax,y"
+"	      00470b6b    mov ecx,this"
 "	      00470b6e    add eax,[ecx+10h]"
-"	      00470b71    add eax,[ebp-2Ch]"
-"	      00470b74    mov [ebp-4],eax"
+"	      00470b71    add eax,x"
+"	      00470b74    mov address,eax"
 );
 // LINE 1586:
 	asm( 
-"	      00470b77    mov eax,[ebp+18h]"
-"	      00470b7a    mov [ebp-18h],eax"
+"	      00470b77    mov eax,nThickness"
+"	      00470b7a    mov j,eax"
 );
 // LINE 1587:
 	asm( 
-"	      00470b7d    mov eax,[ebp-18h]"
+"	      00470b7d    mov eax,j"
 "	      00470b80    mov [ebp-58h],eax"
-"	      00470b83    dec dword ptr [ebp-18h]"
+"	      00470b83    dec j"
 "	      00470b86    cmp dword ptr [ebp-58h],0"
 "	      00470b8a    je near ptr 00470BD1h"
 );
 // LINE 1589:
 	asm( 
-"	      00470b90    mov eax,[ebp+18h]"
+"	      00470b90    mov eax,nThickness"
 "	      00470b93    push eax"
-"	      00470b94    mov eax,[ebp-5Ch]"
+"	      00470b94    mov eax,this"
 "	      00470b97    mov eax,[eax+44h]"
 "	      00470b9a    push eax"
-"	      00470b9b    mov eax,[ebp-4]"
+"	      00470b9b    mov eax,address"
 "	      00470b9e    push eax"
 "	      00470b9f    call 0056EB90h"
 "	      00470ba4    add esp,0Ch"
 );
 // LINE 1590:
 	asm( 
-"	      00470ba7    cmp dword ptr [ebp-48h],0FFFFFFFFh"
+"	      00470ba7    cmp yinc2,0FFFFFFFFh"
 "	      00470bab    jne near ptr 00470BC3h"
 );
 // LINE 1591:
 	asm( 
 "	      00470bb1    xor eax,eax"
-"	      00470bb3    mov ecx,[ebp-5Ch]"
+"	      00470bb3    mov ecx,this"
 "	      00470bb6    sub eax,[ecx+14h]"
 "	      00470bb9    neg eax"
-"	      00470bbb    sub [ebp-4],eax"
+"	      00470bbb    sub address,eax"
 );
 // LINE 1592:
 	asm( 
@@ -4834,9 +4834,9 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1593:
 	asm( 
-"	      00470bc3    mov eax,[ebp-5Ch]"
+"	      00470bc3    mov eax,this"
 "	      00470bc6    mov eax,[eax+14h]"
-"	      00470bc9    add [ebp-4],eax"
+"	      00470bc9    add address,eax"
 );
 // LINE 1594:
 	asm( 
@@ -4844,23 +4844,23 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1596:
 	asm( 
-"	      00470bd1    cmp dword ptr [ebp-20h],0"
+"	      00470bd1    cmp d,0"
 "	      00470bd5    jge near ptr 00470BF2h"
 );
 // LINE 1598:
 	asm( 
-"	      00470bdb    mov eax,[ebp-44h]"
-"	      00470bde    add [ebp-20h],eax"
+"	      00470bdb    mov eax,dinc1"
+"	      00470bde    add d,eax"
 );
 // LINE 1599:
 	asm( 
-"	      00470be1    mov eax,[ebp-24h]"
-"	      00470be4    add [ebp-2Ch],eax"
+"	      00470be1    mov eax,xinc1"
+"	      00470be4    add x,eax"
 );
 // LINE 1600:
 	asm( 
-"	      00470be7    mov eax,[ebp-40h]"
-"	      00470bea    add [ebp-30h],eax"
+"	      00470be7    mov eax,yinc1"
+"	      00470bea    add y,eax"
 );
 // LINE 1602:
 	asm( 
@@ -4868,18 +4868,18 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 );
 // LINE 1604:
 	asm( 
-"	      00470bf2    mov eax,[ebp-4Ch]"
-"	      00470bf5    add [ebp-20h],eax"
+"	      00470bf2    mov eax,dinc2"
+"	      00470bf5    add d,eax"
 );
 // LINE 1605:
 	asm( 
-"	      00470bf8    mov eax,[ebp-28h]"
-"	      00470bfb    add [ebp-2Ch],eax"
+"	      00470bf8    mov eax,xinc2"
+"	      00470bfb    add x,eax"
 );
 // LINE 1606:
 	asm( 
-"	      00470bfe    mov eax,[ebp-48h]"
-"	      00470c01    add [ebp-30h],eax"
+"	      00470bfe    mov eax,yinc2"
+"	      00470c01    add y,eax"
 );
 // LINE 1608:
 	asm( 
@@ -4888,9 +4888,9 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 // LINE 1612:
 // Block end:
 	asm( 
-"	      00470c09    mov eax,[ebp-5Ch]"
+"	      00470c09    mov eax,this"
 "	      00470c0c    mov eax,[eax]"
-"	      00470c0e    mov ecx,[ebp-5Ch]"
+"	      00470c0e    mov ecx,this"
 "	      00470c11    call dword ptr [eax+4]"
 );
 // LINE 1613:
@@ -4926,68 +4926,68 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      00470c2b    push ebx"
 "	      00470c2c    push esi"
 "	      00470c2d    push edi"
-"	      00470c2e    mov [ebp-0A4h],ecx"
+"	      00470c2e    mov this,ecx"
 );
 // LINE 1626:
 	asm( 
-"	      00470c34    mov eax,[ebp-0A4h]"
+"	      00470c34    mov eax,this"
 "	      00470c3a    mov eax,[eax]"
-"	      00470c3c    mov ecx,[ebp-0A4h]"
+"	      00470c3c    mov ecx,this"
 "	      00470c42    call dword ptr [eax]"
 );
 // LINE 1633:
 	asm( 
 "	      00470c44    jmp near ptr 00470C49h"
-"	      00470c49    mov eax,[ebp-0A4h]"
+"	      00470c49    mov eax,this"
 "	      00470c4f    mov eax,[eax+8]"
-"	      00470c52    mov [ebp-1Ch],eax"
+"	      00470c52    mov bufferWidth,eax"
 );
 // LINE 1634:
 	asm( 
 "	      00470c55    jmp near ptr 00470C5Ah"
-"	      00470c5a    mov eax,[ebp-0A4h]"
+"	      00470c5a    mov eax,this"
 "	      00470c60    mov eax,[eax+0Ch]"
-"	      00470c63    mov [ebp-8],eax"
+"	      00470c63    mov bufferHeight,eax"
 );
 // LINE 1637:
 	asm( 
 "	      00470c66    mov dword ptr [ebp-7Ch],0"
 "	      00470c6d    mov dword ptr [ebp-80h],0"
 "	      00470c74    mov dword ptr [ebp-94h],0"
-"	      00470c7e    cmp dword ptr [ebp+8],0"
+"	      00470c7e    cmp nStartX,0"
 "	      00470c82    jge near ptr 00470C8Fh"
 "	      00470c88    add dword ptr [ebp-94h],4"
-"	      00470c8f    mov eax,[ebp-1Ch]"
+"	      00470c8f    mov eax,bufferWidth"
 "	      00470c92    dec eax"
-"	      00470c93    cmp eax,[ebp+8]"
+"	      00470c93    cmp eax,nStartX"
 "	      00470c96    jge near ptr 00470CA3h"
 "	      00470c9c    add dword ptr [ebp-94h],8"
-"	      00470ca3    cmp dword ptr [ebp+0Ch],0"
+"	      00470ca3    cmp nStartY,0"
 "	      00470ca7    jge near ptr 00470CB3h"
 "	      00470cad    inc dword ptr [ebp-94h]"
-"	      00470cb3    mov eax,[ebp-8]"
+"	      00470cb3    mov eax,bufferHeight"
 "	      00470cb6    dec eax"
-"	      00470cb7    cmp eax,[ebp+0Ch]"
+"	      00470cb7    cmp eax,nStartY"
 "	      00470cba    jge near ptr 00470CC7h"
 "	      00470cc0    add dword ptr [ebp-94h],2"
 "	      00470cc7    mov eax,[ebp-94h]"
 "	      00470ccd    mov [ebp-88h],eax"
 "	      00470cd3    jmp near ptr 00470CD8h"
 "	      00470cd8    mov dword ptr [ebp-98h],0"
-"	      00470ce2    cmp dword ptr [ebp+10h],0"
+"	      00470ce2    cmp nEndX,0"
 "	      00470ce6    jge near ptr 00470CF3h"
 "	      00470cec    add dword ptr [ebp-98h],4"
-"	      00470cf3    mov eax,[ebp-1Ch]"
+"	      00470cf3    mov eax,bufferWidth"
 "	      00470cf6    dec eax"
-"	      00470cf7    cmp eax,[ebp+10h]"
+"	      00470cf7    cmp eax,nEndX"
 "	      00470cfa    jge near ptr 00470D07h"
 "	      00470d00    add dword ptr [ebp-98h],8"
-"	      00470d07    cmp dword ptr [ebp+14h],0"
+"	      00470d07    cmp nEndY,0"
 "	      00470d0b    jge near ptr 00470D17h"
 "	      00470d11    inc dword ptr [ebp-98h]"
-"	      00470d17    mov eax,[ebp-8]"
+"	      00470d17    mov eax,bufferHeight"
 "	      00470d1a    dec eax"
-"	      00470d1b    cmp eax,[ebp+14h]"
+"	      00470d1b    cmp eax,nEndY"
 "	      00470d1e    jge near ptr 00470D2Bh"
 "	      00470d24    add dword ptr [ebp-98h],2"
 "	      00470d2b    mov eax,[ebp-98h]"
@@ -5013,70 +5013,70 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      00470da0    mov [ebp-78h],eax"
 "	      00470da3    test byte ptr [ebp-78h],1"
 "	      00470da7    je near ptr 00470DDEh"
-"	      00470dad    mov eax,[ebp+10h]"
-"	      00470db0    sub eax,[ebp+8]"
+"	      00470dad    mov eax,nEndX"
+"	      00470db0    sub eax,nStartX"
 "	      00470db3    xor ecx,ecx"
-"	      00470db5    sub ecx,[ebp+0Ch]"
+"	      00470db5    sub ecx,nStartY"
 "	      00470db8    imul eax,ecx"
-"	      00470dbb    mov ecx,[ebp+14h]"
-"	      00470dbe    sub ecx,[ebp+0Ch]"
+"	      00470dbb    mov ecx,nEndY"
+"	      00470dbe    sub ecx,nStartY"
 "	      00470dc1    cdq"
 "	      00470dc2    idiv ecx"
-"	      00470dc4    mov ecx,[ebp+8]"
+"	      00470dc4    mov ecx,nStartX"
 "	      00470dc7    add ecx,eax"
 "	      00470dc9    mov [ebp-84h],ecx"
 "	      00470dcf    mov dword ptr [ebp-8Ch],0"
 "	      00470dd9    jmp near ptr 00470E8Eh"
 "	      00470dde    test byte ptr [ebp-78h],2"
 "	      00470de2    je near ptr 00470E1Bh"
-"	      00470de8    mov eax,[ebp-8]"
+"	      00470de8    mov eax,bufferHeight"
 "	      00470deb    dec eax"
-"	      00470dec    sub eax,[ebp+0Ch]"
-"	      00470def    mov ecx,[ebp+10h]"
-"	      00470df2    sub ecx,[ebp+8]"
+"	      00470dec    sub eax,nStartY"
+"	      00470def    mov ecx,nEndX"
+"	      00470df2    sub ecx,nStartX"
 "	      00470df5    imul eax,ecx"
-"	      00470df8    mov ecx,[ebp+14h]"
-"	      00470dfb    sub ecx,[ebp+0Ch]"
+"	      00470df8    mov ecx,nEndY"
+"	      00470dfb    sub ecx,nStartY"
 "	      00470dfe    cdq"
 "	      00470dff    idiv ecx"
-"	      00470e01    mov ecx,[ebp+8]"
+"	      00470e01    mov ecx,nStartX"
 "	      00470e04    add ecx,eax"
 "	      00470e06    mov [ebp-84h],ecx"
-"	      00470e0c    mov eax,[ebp-8]"
+"	      00470e0c    mov eax,bufferHeight"
 "	      00470e0f    dec eax"
 "	      00470e10    mov [ebp-8Ch],eax"
 "	      00470e16    jmp near ptr 00470E8Eh"
 "	      00470e1b    test byte ptr [ebp-78h],8"
 "	      00470e1f    je near ptr 00470E58h"
-"	      00470e25    mov eax,[ebp-1Ch]"
+"	      00470e25    mov eax,bufferWidth"
 "	      00470e28    dec eax"
-"	      00470e29    sub eax,[ebp+8]"
-"	      00470e2c    mov ecx,[ebp+14h]"
-"	      00470e2f    sub ecx,[ebp+0Ch]"
+"	      00470e29    sub eax,nStartX"
+"	      00470e2c    mov ecx,nEndY"
+"	      00470e2f    sub ecx,nStartY"
 "	      00470e32    imul eax,ecx"
-"	      00470e35    mov ecx,[ebp+10h]"
-"	      00470e38    sub ecx,[ebp+8]"
+"	      00470e35    mov ecx,nEndX"
+"	      00470e38    sub ecx,nStartX"
 "	      00470e3b    cdq"
 "	      00470e3c    idiv ecx"
-"	      00470e3e    mov ecx,[ebp+0Ch]"
+"	      00470e3e    mov ecx,nStartY"
 "	      00470e41    add ecx,eax"
 "	      00470e43    mov [ebp-8Ch],ecx"
-"	      00470e49    mov eax,[ebp-1Ch]"
+"	      00470e49    mov eax,bufferWidth"
 "	      00470e4c    dec eax"
 "	      00470e4d    mov [ebp-84h],eax"
 "	      00470e53    jmp near ptr 00470E8Eh"
 "	      00470e58    test byte ptr [ebp-78h],4"
 "	      00470e5c    je near ptr 00470E8Eh"
-"	      00470e62    mov eax,[ebp+14h]"
-"	      00470e65    sub eax,[ebp+0Ch]"
+"	      00470e62    mov eax,nEndY"
+"	      00470e65    sub eax,nStartY"
 "	      00470e68    xor ecx,ecx"
-"	      00470e6a    sub ecx,[ebp+8]"
+"	      00470e6a    sub ecx,nStartX"
 "	      00470e6d    imul eax,ecx"
-"	      00470e70    mov ecx,[ebp+10h]"
-"	      00470e73    sub ecx,[ebp+8]"
+"	      00470e70    mov ecx,nEndX"
+"	      00470e73    sub ecx,nStartX"
 "	      00470e76    cdq"
 "	      00470e77    idiv ecx"
-"	      00470e79    mov ecx,[ebp+0Ch]"
+"	      00470e79    mov ecx,nStartY"
 "	      00470e7c    add ecx,eax"
 "	      00470e7e    mov [ebp-8Ch],ecx"
 "	      00470e84    mov dword ptr [ebp-84h],0"
@@ -5084,24 +5084,24 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      00470e94    cmp [ebp-78h],eax"
 "	      00470e97    jne near ptr 00470F18h"
 "	      00470e9d    mov eax,[ebp-84h]"
-"	      00470ea3    mov [ebp+8],eax"
+"	      00470ea3    mov nStartX,eax"
 "	      00470ea6    mov eax,[ebp-8Ch]"
-"	      00470eac    mov [ebp+0Ch],eax"
+"	      00470eac    mov nStartY,eax"
 "	      00470eaf    mov dword ptr [ebp-9Ch],0"
-"	      00470eb9    cmp dword ptr [ebp+8],0"
+"	      00470eb9    cmp nStartX,0"
 "	      00470ebd    jge near ptr 00470ECAh"
 "	      00470ec3    add dword ptr [ebp-9Ch],4"
-"	      00470eca    mov eax,[ebp-1Ch]"
+"	      00470eca    mov eax,bufferWidth"
 "	      00470ecd    dec eax"
-"	      00470ece    cmp eax,[ebp+8]"
+"	      00470ece    cmp eax,nStartX"
 "	      00470ed1    jge near ptr 00470EDEh"
 "	      00470ed7    add dword ptr [ebp-9Ch],8"
-"	      00470ede    cmp dword ptr [ebp+0Ch],0"
+"	      00470ede    cmp nStartY,0"
 "	      00470ee2    jge near ptr 00470EEEh"
 "	      00470ee8    inc dword ptr [ebp-9Ch]"
-"	      00470eee    mov eax,[ebp-8]"
+"	      00470eee    mov eax,bufferHeight"
 "	      00470ef1    dec eax"
-"	      00470ef2    cmp eax,[ebp+0Ch]"
+"	      00470ef2    cmp eax,nStartY"
 "	      00470ef5    jge near ptr 00470F02h"
 "	      00470efb    add dword ptr [ebp-9Ch],2"
 "	      00470f02    mov eax,[ebp-9Ch]"
@@ -5109,24 +5109,24 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      00470f0e    jmp near ptr 00470F13h"
 "	      00470f13    jmp near ptr 00470F8Eh"
 "	      00470f18    mov eax,[ebp-84h]"
-"	      00470f1e    mov [ebp+10h],eax"
+"	      00470f1e    mov nEndX,eax"
 "	      00470f21    mov eax,[ebp-8Ch]"
-"	      00470f27    mov [ebp+14h],eax"
+"	      00470f27    mov nEndY,eax"
 "	      00470f2a    mov dword ptr [ebp-0A0h],0"
-"	      00470f34    cmp dword ptr [ebp+10h],0"
+"	      00470f34    cmp nEndX,0"
 "	      00470f38    jge near ptr 00470F45h"
 "	      00470f3e    add dword ptr [ebp-0A0h],4"
-"	      00470f45    mov eax,[ebp-1Ch]"
+"	      00470f45    mov eax,bufferWidth"
 "	      00470f48    dec eax"
-"	      00470f49    cmp eax,[ebp+10h]"
+"	      00470f49    cmp eax,nEndX"
 "	      00470f4c    jge near ptr 00470F59h"
 "	      00470f52    add dword ptr [ebp-0A0h],8"
-"	      00470f59    cmp dword ptr [ebp+14h],0"
+"	      00470f59    cmp nEndY,0"
 "	      00470f5d    jge near ptr 00470F69h"
 "	      00470f63    inc dword ptr [ebp-0A0h]"
-"	      00470f69    mov eax,[ebp-8]"
+"	      00470f69    mov eax,bufferHeight"
 "	      00470f6c    dec eax"
-"	      00470f6d    cmp eax,[ebp+14h]"
+"	      00470f6d    cmp eax,nEndY"
 "	      00470f70    jge near ptr 00470F7Dh"
 "	      00470f76    add dword ptr [ebp-0A0h],2"
 "	      00470f7d    mov eax,[ebp-0A0h]"
@@ -5140,72 +5140,72 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1640:
 	asm( 
-"	      00470fa7    mov eax,[ebp+0Ch]"
-"	      00470faa    cmp [ebp+14h],eax"
+"	      00470fa7    mov eax,nStartY"
+"	      00470faa    cmp nEndY,eax"
 "	      00470fad    jne near ptr 00471040h"
 );
 // LINE 1642:
 	asm( 
-"	      00470fb3    mov eax,[ebp+8]"
-"	      00470fb6    cmp [ebp+10h],eax"
+"	      00470fb3    mov eax,nStartX"
+"	      00470fb6    cmp nEndX,eax"
 "	      00470fb9    jg near ptr 00470FD1h"
 );
 // LINE 1644:
 	asm( 
-"	      00470fbf    mov eax,[ebp+8]"
-"	      00470fc2    mov [ebp-10h],eax"
-"	      00470fc5    mov eax,[ebp+10h]"
-"	      00470fc8    mov [ebp+8],eax"
-"	      00470fcb    mov eax,[ebp-10h]"
-"	      00470fce    mov [ebp+10h],eax"
+"	      00470fbf    mov eax,nStartX"
+"	      00470fc2    mov temp,eax"
+"	      00470fc5    mov eax,nEndX"
+"	      00470fc8    mov nStartX,eax"
+"	      00470fcb    mov eax,temp"
+"	      00470fce    mov nEndX,eax"
 );
 // LINE 1647:
 	asm( 
-"	      00470fd1    mov eax,[ebp+10h]"
-"	      00470fd4    sub eax,[ebp+8]"
+"	      00470fd1    mov eax,nEndX"
+"	      00470fd4    sub eax,nStartX"
 "	      00470fd7    inc eax"
-"	      00470fd8    mov [ebp-0Ch],eax"
+"	      00470fd8    mov length,eax"
 );
 // LINE 1649:
 	asm( 
-"	      00470fdb    mov eax,[ebp-0A4h]"
+"	      00470fdb    mov eax,this"
 "	      00470fe1    mov eax,[eax+14h]"
-"	      00470fe4    imul eax,[ebp+0Ch]"
-"	      00470fe8    add eax,[ebp+8]"
-"	      00470feb    mov ecx,[ebp-0A4h]"
+"	      00470fe4    imul eax,nStartY"
+"	      00470fe8    add eax,nStartX"
+"	      00470feb    mov ecx,this"
 "	      00470ff1    add eax,[ecx+10h]"
-"	      00470ff4    mov [ebp-4],eax"
+"	      00470ff4    mov address,eax"
 );
 // LINE 1650:
 	asm( 
-"	      00470ff7    mov eax,[ebp+18h]"
-"	      00470ffa    mov [ebp-14h],eax"
+"	      00470ff7    mov eax,nThickness"
+"	      00470ffa    mov i,eax"
 );
 // LINE 1651:
 	asm( 
-"	      00470ffd    mov eax,[ebp-14h]"
+"	      00470ffd    mov eax,i"
 "	      00471000    mov [ebp-68h],eax"
-"	      00471003    dec dword ptr [ebp-14h]"
+"	      00471003    dec i"
 "	      00471006    cmp dword ptr [ebp-68h],0"
 "	      0047100a    je near ptr 0047103Bh"
 );
 // LINE 1653:
 	asm( 
-"	      00471010    mov eax,[ebp-0Ch]"
+"	      00471010    mov eax,length"
 "	      00471013    push eax"
-"	      00471014    mov eax,[ebp-0A4h]"
+"	      00471014    mov eax,this"
 "	      0047101a    mov eax,[eax+44h]"
 "	      0047101d    push eax"
-"	      0047101e    mov eax,[ebp-4]"
+"	      0047101e    mov eax,address"
 "	      00471021    push eax"
 "	      00471022    call 0056EB90h"
 "	      00471027    add esp,0Ch"
 );
 // LINE 1654:
 	asm( 
-"	      0047102a    mov eax,[ebp-0A4h]"
+"	      0047102a    mov eax,this"
 "	      00471030    mov eax,[eax+14h]"
-"	      00471033    add [ebp-4],eax"
+"	      00471033    add address,eax"
 );
 // LINE 1655:
 	asm( 
@@ -5214,67 +5214,67 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 // LINE 1659:
 	asm( 
 "	      0047103b    jmp near ptr 00471543h"
-"	      00471040    mov eax,[ebp+8]"
-"	      00471043    cmp [ebp+10h],eax"
+"	      00471040    mov eax,nStartX"
+"	      00471043    cmp nEndX,eax"
 "	      00471046    jne near ptr 004710D3h"
 );
 // LINE 1661:
 	asm( 
-"	      0047104c    mov eax,[ebp+0Ch]"
-"	      0047104f    cmp [ebp+14h],eax"
+"	      0047104c    mov eax,nStartY"
+"	      0047104f    cmp nEndY,eax"
 "	      00471052    jg near ptr 0047106Ah"
 );
 // LINE 1663:
 	asm( 
-"	      00471058    mov eax,[ebp+0Ch]"
-"	      0047105b    mov [ebp-10h],eax"
-"	      0047105e    mov eax,[ebp+14h]"
-"	      00471061    mov [ebp+0Ch],eax"
-"	      00471064    mov eax,[ebp-10h]"
-"	      00471067    mov [ebp+14h],eax"
+"	      00471058    mov eax,nStartY"
+"	      0047105b    mov temp,eax"
+"	      0047105e    mov eax,nEndY"
+"	      00471061    mov nStartY,eax"
+"	      00471064    mov eax,temp"
+"	      00471067    mov nEndY,eax"
 );
 // LINE 1665:
 	asm( 
-"	      0047106a    mov eax,[ebp-0A4h]"
+"	      0047106a    mov eax,this"
 "	      00471070    mov eax,[eax+14h]"
-"	      00471073    imul eax,[ebp+0Ch]"
-"	      00471077    add eax,[ebp+8]"
-"	      0047107a    mov ecx,[ebp-0A4h]"
+"	      00471073    imul eax,nStartY"
+"	      00471077    add eax,nStartX"
+"	      0047107a    mov ecx,this"
 "	      00471080    add eax,[ecx+10h]"
-"	      00471083    mov [ebp-4],eax"
+"	      00471083    mov address,eax"
 );
 // LINE 1666:
 	asm( 
-"	      00471086    mov eax,[ebp+14h]"
-"	      00471089    sub eax,[ebp+0Ch]"
+"	      00471086    mov eax,nEndY"
+"	      00471089    sub eax,nStartY"
 "	      0047108c    inc eax"
-"	      0047108d    mov [ebp-14h],eax"
+"	      0047108d    mov i,eax"
 );
 // LINE 1667:
 	asm( 
-"	      00471090    mov eax,[ebp-14h]"
+"	      00471090    mov eax,i"
 "	      00471093    mov [ebp-6Ch],eax"
-"	      00471096    dec dword ptr [ebp-14h]"
+"	      00471096    dec i"
 "	      00471099    cmp dword ptr [ebp-6Ch],0"
 "	      0047109d    je near ptr 004710CEh"
 );
 // LINE 1669:
 	asm( 
-"	      004710a3    mov eax,[ebp+18h]"
+"	      004710a3    mov eax,nThickness"
 "	      004710a6    push eax"
-"	      004710a7    mov eax,[ebp-0A4h]"
+"	      004710a7    mov eax,this"
 "	      004710ad    mov eax,[eax+44h]"
 "	      004710b0    push eax"
-"	      004710b1    mov eax,[ebp-4]"
+"	      004710b1    mov eax,address"
 "	      004710b4    push eax"
 "	      004710b5    call 0056EB90h"
 "	      004710ba    add esp,0Ch"
 );
 // LINE 1670:
 	asm( 
-"	      004710bd    mov eax,[ebp-0A4h]"
+"	      004710bd    mov eax,this"
 "	      004710c3    mov eax,[eax+14h]"
-"	      004710c6    add [ebp-4],eax"
+"	      004710c6    add address,eax"
 );
 // LINE 1671:
 	asm( 
@@ -5299,61 +5299,61 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	int32_t xinc1;
 	int32_t d;
 	asm( 
-"	      004710d3    mov eax,[ebp+10h]"
-"	      004710d6    sub eax,[ebp+8]"
+"	      004710d3    mov eax,nEndX"
+"	      004710d6    sub eax,nStartX"
 "	      004710d9    push eax"
 "	      004710da    call 0056F300h"
 "	      004710df    add esp,4"
-"	      004710e2    mov [ebp-38h],eax"
+"	      004710e2    mov deltax,eax"
 );
 // LINE 1682:
 	asm( 
-"	      004710e5    mov eax,[ebp+14h]"
-"	      004710e8    sub eax,[ebp+0Ch]"
+"	      004710e5    mov eax,nEndY"
+"	      004710e8    sub eax,nStartY"
 "	      004710eb    push eax"
 "	      004710ec    call 0056F300h"
 "	      004710f1    add esp,4"
-"	      004710f4    mov [ebp-3Ch],eax"
+"	      004710f4    mov deltay,eax"
 );
 // LINE 1684:
 	asm( 
-"	      004710f7    mov eax,[ebp-38h]"
-"	      004710fa    cmp [ebp-3Ch],eax"
+"	      004710f7    mov eax,deltax"
+"	      004710fa    cmp deltay,eax"
 "	      004710fd    jg near ptr 0047113Bh"
 );
 // LINE 1686:
 	asm( 
-"	      00471103    mov eax,[ebp-38h]"
+"	      00471103    mov eax,deltax"
 "	      00471106    inc eax"
-"	      00471107    mov [ebp-34h],eax"
+"	      00471107    mov numpixels,eax"
 );
 // LINE 1687:
 	asm( 
-"	      0047110a    mov eax,[ebp-3Ch]"
+"	      0047110a    mov eax,deltay"
 "	      0047110d    add eax,eax"
-"	      0047110f    sub eax,[ebp-38h]"
-"	      00471112    mov [ebp-20h],eax"
+"	      0047110f    sub eax,deltax"
+"	      00471112    mov d,eax"
 );
 // LINE 1688:
 	asm( 
-"	      00471115    mov eax,[ebp-3Ch]"
+"	      00471115    mov eax,deltay"
 "	      00471118    add eax,eax"
-"	      0047111a    mov [ebp-44h],eax"
+"	      0047111a    mov dinc1,eax"
 );
 // LINE 1689:
 	asm( 
-"	      0047111d    mov eax,[ebp-3Ch]"
-"	      00471120    sub eax,[ebp-38h]"
+"	      0047111d    mov eax,deltay"
+"	      00471120    sub eax,deltax"
 "	      00471123    add eax,eax"
-"	      00471125    mov [ebp-4Ch],eax"
+"	      00471125    mov dinc2,eax"
 );
 // LINE 1690:
 	asm( 
-"	      00471128    mov dword ptr [ebp-24h],1"
+"	      00471128    mov xinc1,1"
 );
 // LINE 1691:
 	asm( 
-"	      0047112f    mov dword ptr [ebp-40h],0"
+"	      0047112f    mov yinc1,0"
 );
 // LINE 1693:
 	asm( 
@@ -5361,53 +5361,53 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1695:
 	asm( 
-"	      0047113b    mov eax,[ebp-3Ch]"
+"	      0047113b    mov eax,deltay"
 "	      0047113e    inc eax"
-"	      0047113f    mov [ebp-34h],eax"
+"	      0047113f    mov numpixels,eax"
 );
 // LINE 1696:
 	asm( 
-"	      00471142    mov eax,[ebp-38h]"
+"	      00471142    mov eax,deltax"
 "	      00471145    add eax,eax"
-"	      00471147    sub eax,[ebp-3Ch]"
-"	      0047114a    mov [ebp-20h],eax"
+"	      00471147    sub eax,deltay"
+"	      0047114a    mov d,eax"
 );
 // LINE 1697:
 	asm( 
-"	      0047114d    mov eax,[ebp-38h]"
+"	      0047114d    mov eax,deltax"
 "	      00471150    add eax,eax"
-"	      00471152    mov [ebp-44h],eax"
+"	      00471152    mov dinc1,eax"
 );
 // LINE 1698:
 	asm( 
-"	      00471155    mov eax,[ebp-38h]"
-"	      00471158    sub eax,[ebp-3Ch]"
+"	      00471155    mov eax,deltax"
+"	      00471158    sub eax,deltay"
 "	      0047115b    add eax,eax"
-"	      0047115d    mov [ebp-4Ch],eax"
+"	      0047115d    mov dinc2,eax"
 );
 // LINE 1699:
 	asm( 
-"	      00471160    mov dword ptr [ebp-24h],0"
+"	      00471160    mov xinc1,0"
 );
 // LINE 1700:
 	asm( 
-"	      00471167    mov dword ptr [ebp-40h],1"
+"	      00471167    mov yinc1,1"
 );
 // LINE 1704:
 	asm( 
-"	      0047116e    mov eax,[ebp+8]"
-"	      00471171    cmp [ebp+10h],eax"
+"	      0047116e    mov eax,nStartX"
+"	      00471171    cmp nEndX,eax"
 "	      00471174    jge near ptr 0047118Eh"
 );
 // LINE 1706:
 	asm( 
-"	      0047117a    mov eax,[ebp-24h]"
+"	      0047117a    mov eax,xinc1"
 "	      0047117d    neg eax"
-"	      0047117f    mov [ebp-24h],eax"
+"	      0047117f    mov xinc1,eax"
 );
 // LINE 1707:
 	asm( 
-"	      00471182    mov dword ptr [ebp-28h],0FFFFFFFFh"
+"	      00471182    mov xinc2,0FFFFFFFFh"
 );
 // LINE 1709:
 	asm( 
@@ -5415,23 +5415,23 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1710:
 	asm( 
-"	      0047118e    mov dword ptr [ebp-28h],1"
+"	      0047118e    mov xinc2,1"
 );
 // LINE 1712:
 	asm( 
-"	      00471195    mov eax,[ebp+0Ch]"
-"	      00471198    cmp [ebp+14h],eax"
+"	      00471195    mov eax,nStartY"
+"	      00471198    cmp nEndY,eax"
 "	      0047119b    jge near ptr 004711B5h"
 );
 // LINE 1714:
 	asm( 
-"	      004711a1    mov eax,[ebp-40h]"
+"	      004711a1    mov eax,yinc1"
 "	      004711a4    neg eax"
-"	      004711a6    mov [ebp-40h],eax"
+"	      004711a6    mov yinc1,eax"
 );
 // LINE 1715:
 	asm( 
-"	      004711a9    mov dword ptr [ebp-48h],0FFFFFFFFh"
+"	      004711a9    mov yinc2,0FFFFFFFFh"
 );
 // LINE 1717:
 	asm( 
@@ -5439,63 +5439,63 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1718:
 	asm( 
-"	      004711b5    mov dword ptr [ebp-48h],1"
+"	      004711b5    mov yinc2,1"
 );
 // LINE 1721:
 	asm( 
-"	      004711bc    mov eax,[ebp+8]"
-"	      004711bf    mov [ebp-2Ch],eax"
+"	      004711bc    mov eax,nStartX"
+"	      004711bf    mov x,eax"
 );
 // LINE 1722:
 	asm( 
-"	      004711c2    mov eax,[ebp+0Ch]"
-"	      004711c5    mov [ebp-30h],eax"
+"	      004711c2    mov eax,nStartY"
+"	      004711c5    mov y,eax"
 );
 // LINE 1726:
 	asm( 
-"	      004711c8    cmp dword ptr [ebp+18h],1"
+"	      004711c8    cmp nThickness,1"
 "	      004711cc    jne near ptr 0047124Fh"
 );
 // LINE 1728:
 	asm( 
-"	      004711d2    mov dword ptr [ebp-14h],1"
+"	      004711d2    mov i,1"
 "	      004711d9    jmp near ptr 004711E1h"
-"	      004711de    inc dword ptr [ebp-14h]"
-"	      004711e1    mov eax,[ebp-14h]"
-"	      004711e4    cmp [ebp-34h],eax"
+"	      004711de    inc i"
+"	      004711e1    mov eax,i"
+"	      004711e4    cmp numpixels,eax"
 "	      004711e7    jl near ptr 0047124Ah"
 );
 // LINE 1730:
 	asm( 
-"	      004711ed    mov eax,[ebp-0A4h]"
+"	      004711ed    mov eax,this"
 "	      004711f3    mov al,[eax+44h]"
-"	      004711f6    mov ecx,[ebp-0A4h]"
+"	      004711f6    mov ecx,this"
 "	      004711fc    mov ecx,[ecx+14h]"
-"	      004711ff    imul ecx,[ebp-30h]"
-"	      00471203    mov edx,[ebp-0A4h]"
+"	      004711ff    imul ecx,y"
+"	      00471203    mov edx,this"
 "	      00471209    add ecx,[edx+10h]"
-"	      0047120c    mov edx,[ebp-2Ch]"
+"	      0047120c    mov edx,x"
 "	      0047120f    mov [ecx+edx],al"
 );
 // LINE 1732:
 	asm( 
-"	      00471212    cmp dword ptr [ebp-20h],0"
+"	      00471212    cmp d,0"
 "	      00471216    jge near ptr 00471233h"
 );
 // LINE 1734:
 	asm( 
-"	      0047121c    mov eax,[ebp-44h]"
-"	      0047121f    add [ebp-20h],eax"
+"	      0047121c    mov eax,dinc1"
+"	      0047121f    add d,eax"
 );
 // LINE 1735:
 	asm( 
-"	      00471222    mov eax,[ebp-24h]"
-"	      00471225    add [ebp-2Ch],eax"
+"	      00471222    mov eax,xinc1"
+"	      00471225    add x,eax"
 );
 // LINE 1736:
 	asm( 
-"	      00471228    mov eax,[ebp-40h]"
-"	      0047122b    add [ebp-30h],eax"
+"	      00471228    mov eax,yinc1"
+"	      0047122b    add y,eax"
 );
 // LINE 1738:
 	asm( 
@@ -5503,18 +5503,18 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1740:
 	asm( 
-"	      00471233    mov eax,[ebp-4Ch]"
-"	      00471236    add [ebp-20h],eax"
+"	      00471233    mov eax,dinc2"
+"	      00471236    add d,eax"
 );
 // LINE 1741:
 	asm( 
-"	      00471239    mov eax,[ebp-28h]"
-"	      0047123c    add [ebp-2Ch],eax"
+"	      00471239    mov eax,xinc2"
+"	      0047123c    add x,eax"
 );
 // LINE 1742:
 	asm( 
-"	      0047123f    mov eax,[ebp-48h]"
-"	      00471242    add [ebp-30h],eax"
+"	      0047123f    mov eax,yinc2"
+"	      00471242    add y,eax"
 );
 // LINE 1744:
 	asm( 
@@ -5531,61 +5531,61 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	int32_t maxSafeY;
 	int32_t minSafeX;
 	asm( 
-"	      0047124f    mov eax,[ebp+18h]"
+"	      0047124f    mov eax,nThickness"
 "	      00471252    dec eax"
-"	      00471253    mov [ebp-50h],eax"
+"	      00471253    mov minSafeX,eax"
 );
 // LINE 1762:
 	asm( 
-"	      00471256    mov eax,[ebp+18h]"
+"	      00471256    mov eax,nThickness"
 "	      00471259    dec eax"
-"	      0047125a    mov [ebp-5Ch],eax"
+"	      0047125a    mov minSafeY,eax"
 );
 // LINE 1763:
 	asm( 
-"	      0047125d    mov eax,[ebp-1Ch]"
-"	      00471260    sub eax,[ebp+18h]"
-"	      00471263    mov [ebp-58h],eax"
+"	      0047125d    mov eax,bufferWidth"
+"	      00471260    sub eax,nThickness"
+"	      00471263    mov maxSafeX,eax"
 );
 // LINE 1764:
 	asm( 
-"	      00471266    mov eax,[ebp-8]"
-"	      00471269    sub eax,[ebp+18h]"
-"	      0047126c    mov [ebp-54h],eax"
+"	      00471266    mov eax,bufferHeight"
+"	      00471269    sub eax,nThickness"
+"	      0047126c    mov maxSafeY,eax"
 );
 // LINE 1768:
 	asm( 
-"	      0047126f    cmp dword ptr [ebp-34h],0"
+"	      0047126f    cmp numpixels,0"
 "	      00471273    je near ptr 00471392h"
-"	      00471279    mov eax,[ebp-2Ch]"
-"	      0047127c    cmp [ebp-50h],eax"
+"	      00471279    mov eax,x"
+"	      0047127c    cmp minSafeX,eax"
 "	      0047127f    jg near ptr 00471392h"
-"	      00471285    mov eax,[ebp-2Ch]"
-"	      00471288    cmp [ebp-58h],eax"
+"	      00471285    mov eax,x"
+"	      00471288    cmp maxSafeX,eax"
 "	      0047128b    jl near ptr 00471392h"
-"	      00471291    mov eax,[ebp-30h]"
-"	      00471294    cmp [ebp-5Ch],eax"
+"	      00471291    mov eax,y"
+"	      00471294    cmp minSafeY,eax"
 "	      00471297    jg near ptr 00471392h"
-"	      0047129d    mov eax,[ebp-30h]"
-"	      004712a0    cmp [ebp-54h],eax"
+"	      0047129d    mov eax,y"
+"	      004712a0    cmp maxSafeY,eax"
 "	      004712a3    jl near ptr 00471392h"
 );
 // LINE 1771:
 	asm( 
-"	      004712a9    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      004712a9    cmp xinc2,0FFFFFFFFh"
 "	      004712ad    jne near ptr 004712D8h"
 );
 // LINE 1772:
 	asm( 
-"	      004712b3    mov eax,[ebp-0A4h]"
+"	      004712b3    mov eax,this"
 "	      004712b9    mov eax,[eax+14h]"
-"	      004712bc    imul eax,[ebp-30h]"
-"	      004712c0    mov ecx,[ebp-0A4h]"
+"	      004712bc    imul eax,y"
+"	      004712c0    mov ecx,this"
 "	      004712c6    add eax,[ecx+10h]"
-"	      004712c9    add eax,[ebp-2Ch]"
-"	      004712cc    sub eax,[ebp+18h]"
+"	      004712c9    add eax,x"
+"	      004712cc    sub eax,nThickness"
 "	      004712cf    inc eax"
-"	      004712d0    mov [ebp-4],eax"
+"	      004712d0    mov address,eax"
 );
 // LINE 1773:
 	asm( 
@@ -5593,51 +5593,51 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1774:
 	asm( 
-"	      004712d8    mov eax,[ebp-0A4h]"
+"	      004712d8    mov eax,this"
 "	      004712de    mov eax,[eax+14h]"
-"	      004712e1    imul eax,[ebp-30h]"
-"	      004712e5    mov ecx,[ebp-0A4h]"
+"	      004712e1    imul eax,y"
+"	      004712e5    mov ecx,this"
 "	      004712eb    add eax,[ecx+10h]"
-"	      004712ee    add eax,[ebp-2Ch]"
-"	      004712f1    mov [ebp-4],eax"
+"	      004712ee    add eax,x"
+"	      004712f1    mov address,eax"
 );
 // LINE 1776:
 	asm( 
-"	      004712f4    mov eax,[ebp+18h]"
-"	      004712f7    mov [ebp-18h],eax"
+"	      004712f4    mov eax,nThickness"
+"	      004712f7    mov j,eax"
 );
 // LINE 1777:
 	asm( 
-"	      004712fa    mov eax,[ebp-18h]"
+"	      004712fa    mov eax,j"
 "	      004712fd    mov [ebp-70h],eax"
-"	      00471300    dec dword ptr [ebp-18h]"
+"	      00471300    dec j"
 "	      00471303    cmp dword ptr [ebp-70h],0"
 "	      00471307    je near ptr 00471357h"
 );
 // LINE 1779:
 	asm( 
-"	      0047130d    mov eax,[ebp+18h]"
+"	      0047130d    mov eax,nThickness"
 "	      00471310    push eax"
-"	      00471311    mov eax,[ebp-0A4h]"
+"	      00471311    mov eax,this"
 "	      00471317    mov eax,[eax+44h]"
 "	      0047131a    push eax"
-"	      0047131b    mov eax,[ebp-4]"
+"	      0047131b    mov eax,address"
 "	      0047131e    push eax"
 "	      0047131f    call 0056EB90h"
 "	      00471324    add esp,0Ch"
 );
 // LINE 1780:
 	asm( 
-"	      00471327    cmp dword ptr [ebp-48h],0FFFFFFFFh"
+"	      00471327    cmp yinc2,0FFFFFFFFh"
 "	      0047132b    jne near ptr 00471346h"
 );
 // LINE 1781:
 	asm( 
 "	      00471331    xor eax,eax"
-"	      00471333    mov ecx,[ebp-0A4h]"
+"	      00471333    mov ecx,this"
 "	      00471339    sub eax,[ecx+14h]"
 "	      0047133c    neg eax"
-"	      0047133e    sub [ebp-4],eax"
+"	      0047133e    sub address,eax"
 );
 // LINE 1782:
 	asm( 
@@ -5645,9 +5645,9 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1783:
 	asm( 
-"	      00471346    mov eax,[ebp-0A4h]"
+"	      00471346    mov eax,this"
 "	      0047134c    mov eax,[eax+14h]"
-"	      0047134f    add [ebp-4],eax"
+"	      0047134f    add address,eax"
 );
 // LINE 1784:
 	asm( 
@@ -5655,23 +5655,23 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1786:
 	asm( 
-"	      00471357    cmp dword ptr [ebp-20h],0"
+"	      00471357    cmp d,0"
 "	      0047135b    jge near ptr 00471378h"
 );
 // LINE 1788:
 	asm( 
-"	      00471361    mov eax,[ebp-44h]"
-"	      00471364    add [ebp-20h],eax"
+"	      00471361    mov eax,dinc1"
+"	      00471364    add d,eax"
 );
 // LINE 1789:
 	asm( 
-"	      00471367    mov eax,[ebp-24h]"
-"	      0047136a    add [ebp-2Ch],eax"
+"	      00471367    mov eax,xinc1"
+"	      0047136a    add x,eax"
 );
 // LINE 1790:
 	asm( 
-"	      0047136d    mov eax,[ebp-40h]"
-"	      00471370    add [ebp-30h],eax"
+"	      0047136d    mov eax,yinc1"
+"	      00471370    add y,eax"
 );
 // LINE 1792:
 	asm( 
@@ -5679,22 +5679,22 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1794:
 	asm( 
-"	      00471378    mov eax,[ebp-4Ch]"
-"	      0047137b    add [ebp-20h],eax"
+"	      00471378    mov eax,dinc2"
+"	      0047137b    add d,eax"
 );
 // LINE 1795:
 	asm( 
-"	      0047137e    mov eax,[ebp-28h]"
-"	      00471381    add [ebp-2Ch],eax"
+"	      0047137e    mov eax,xinc2"
+"	      00471381    add x,eax"
 );
 // LINE 1796:
 	asm( 
-"	      00471384    mov eax,[ebp-48h]"
-"	      00471387    add [ebp-30h],eax"
+"	      00471384    mov eax,yinc2"
+"	      00471387    add y,eax"
 );
 // LINE 1799:
 	asm( 
-"	      0047138a    dec dword ptr [ebp-34h]"
+"	      0047138a    dec numpixels"
 );
 // LINE 1800:
 	asm( 
@@ -5702,31 +5702,31 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1804:
 	asm( 
-"	      00471392    cmp dword ptr [ebp-34h],0"
+"	      00471392    cmp numpixels,0"
 "	      00471396    je near ptr 00471543h"
 );
 // LINE 1807:
 // Block start:
 	char * bufferEnd;
 	asm( 
-"	      0047139c    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      0047139c    cmp xinc2,0FFFFFFFFh"
 "	      004713a0    jne near ptr 004713D7h"
 );
 // LINE 1809:
 	asm( 
-"	      004713a6    mov eax,[ebp-0A4h]"
+"	      004713a6    mov eax,this"
 "	      004713ac    mov eax,[eax+14h]"
-"	      004713af    imul eax,[ebp-30h]"
-"	      004713b3    mov ecx,[ebp-2Ch]"
-"	      004713b6    sub ecx,[ebp+18h]"
+"	      004713af    imul eax,y"
+"	      004713b3    mov ecx,x"
+"	      004713b6    sub ecx,nThickness"
 "	      004713b9    inc ecx"
 "	      004713ba    test ecx,ecx"
 "	      004713bc    jg near ptr 004713C4h"
 "	      004713c2    xor ecx,ecx"
 "	      004713c4    add eax,ecx"
-"	      004713c6    mov ecx,[ebp-0A4h]"
+"	      004713c6    mov ecx,this"
 "	      004713cc    add eax,[ecx+10h]"
-"	      004713cf    mov [ebp-4],eax"
+"	      004713cf    mov address,eax"
 );
 // LINE 1810:
 	asm( 
@@ -5734,80 +5734,80 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1812:
 	asm( 
-"	      004713d7    mov eax,[ebp-0A4h]"
+"	      004713d7    mov eax,this"
 "	      004713dd    mov eax,[eax+14h]"
-"	      004713e0    imul eax,[ebp-30h]"
-"	      004713e4    mov ecx,[ebp-1Ch]"
+"	      004713e0    imul eax,y"
+"	      004713e4    mov ecx,bufferWidth"
 "	      004713e7    dec ecx"
-"	      004713e8    mov edx,[ebp-2Ch]"
+"	      004713e8    mov edx,x"
 "	      004713eb    cmp ecx,edx"
 "	      004713ed    jl near ptr 004713F5h"
 "	      004713f3    mov ecx,edx"
 "	      004713f5    add eax,ecx"
-"	      004713f7    mov ecx,[ebp-0A4h]"
+"	      004713f7    mov ecx,this"
 "	      004713fd    add eax,[ecx+10h]"
-"	      00471400    mov [ebp-4],eax"
+"	      00471400    mov address,eax"
 );
 // LINE 1814:
 	asm( 
-"	      00471403    mov eax,[ebp-0A4h]"
+"	      00471403    mov eax,this"
 "	      00471409    mov eax,[eax+14h]"
-"	      0047140c    imul eax,[ebp-8]"
-"	      00471410    mov ecx,[ebp-0A4h]"
+"	      0047140c    imul eax,bufferHeight"
+"	      00471410    mov ecx,this"
 "	      00471416    add eax,[ecx+10h]"
-"	      00471419    mov [ebp-60h],eax"
+"	      00471419    mov bufferEnd,eax"
 );
 // LINE 1816:
 	asm( 
-"	      0047141c    mov eax,[ebp+18h]"
-"	      0047141f    mov [ebp-18h],eax"
+"	      0047141c    mov eax,nThickness"
+"	      0047141f    mov j,eax"
 );
 // LINE 1818:
 	asm( 
-"	      00471422    mov eax,[ebp-18h]"
+"	      00471422    mov eax,j"
 "	      00471425    mov [ebp-74h],eax"
-"	      00471428    dec dword ptr [ebp-18h]"
+"	      00471428    dec j"
 "	      0047142b    cmp dword ptr [ebp-74h],0"
 "	      0047142f    je near ptr 00471508h"
 );
 // LINE 1822:
 	asm( 
-"	      00471435    mov eax,[ebp-0A4h]"
-"	      0047143b    mov ecx,[ebp-4]"
+"	      00471435    mov eax,this"
+"	      0047143b    mov ecx,address"
 "	      0047143e    cmp [eax+10h],ecx"
 "	      00471441    ja near ptr 004714D8h"
-"	      00471447    mov eax,[ebp-60h]"
-"	      0047144a    cmp [ebp-4],eax"
+"	      00471447    mov eax,bufferEnd"
+"	      0047144a    cmp address,eax"
 "	      0047144d    jae near ptr 004714D8h"
 );
 // LINE 1825:
 // Block start:
 	int32_t nPixels;
 	asm( 
-"	      00471453    cmp dword ptr [ebp-28h],0FFFFFFFFh"
+"	      00471453    cmp xinc2,0FFFFFFFFh"
 "	      00471457    jne near ptr 0047149Bh"
 );
 // LINE 1827:
 	asm( 
-"	      0047145d    mov eax,[ebp+18h]"
+"	      0047145d    mov eax,nThickness"
 "	      00471460    dec eax"
-"	      00471461    cmp eax,[ebp-2Ch]"
+"	      00471461    cmp eax,x"
 "	      00471464    jg near ptr 00471475h"
-"	      0047146a    mov eax,[ebp+18h]"
-"	      0047146d    mov [ebp-64h],eax"
+"	      0047146a    mov eax,nThickness"
+"	      0047146d    mov nPixels,eax"
 "	      00471470    jmp near ptr 0047147Ch"
-"	      00471475    mov eax,[ebp-2Ch]"
+"	      00471475    mov eax,x"
 "	      00471478    inc eax"
-"	      00471479    mov [ebp-64h],eax"
+"	      00471479    mov nPixels,eax"
 );
 // LINE 1828:
 	asm( 
-"	      0047147c    mov eax,[ebp-64h]"
+"	      0047147c    mov eax,nPixels"
 "	      0047147f    push eax"
-"	      00471480    mov eax,[ebp-0A4h]"
+"	      00471480    mov eax,this"
 "	      00471486    mov eax,[eax+44h]"
 "	      00471489    push eax"
-"	      0047148a    mov eax,[ebp-4]"
+"	      0047148a    mov eax,address"
 "	      0047148d    push eax"
 "	      0047148e    call 0056EB90h"
 "	      00471493    add esp,0Ch"
@@ -5818,25 +5818,25 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1832:
 	asm( 
-"	      0047149b    mov eax,[ebp-1Ch]"
-"	      0047149e    sub eax,[ebp+18h]"
-"	      004714a1    cmp eax,[ebp-2Ch]"
+"	      0047149b    mov eax,bufferWidth"
+"	      0047149e    sub eax,nThickness"
+"	      004714a1    cmp eax,x"
 "	      004714a4    jge near ptr 004714B8h"
-"	      004714aa    mov eax,[ebp-1Ch]"
-"	      004714ad    sub eax,[ebp-2Ch]"
-"	      004714b0    mov [ebp-64h],eax"
+"	      004714aa    mov eax,bufferWidth"
+"	      004714ad    sub eax,x"
+"	      004714b0    mov nPixels,eax"
 "	      004714b3    jmp near ptr 004714BEh"
-"	      004714b8    mov eax,[ebp+18h]"
-"	      004714bb    mov [ebp-64h],eax"
+"	      004714b8    mov eax,nThickness"
+"	      004714bb    mov nPixels,eax"
 );
 // LINE 1833:
 	asm( 
-"	      004714be    mov eax,[ebp-64h]"
+"	      004714be    mov eax,nPixels"
 "	      004714c1    push eax"
-"	      004714c2    mov eax,[ebp-0A4h]"
+"	      004714c2    mov eax,this"
 "	      004714c8    mov eax,[eax+44h]"
 "	      004714cb    push eax"
-"	      004714cc    mov eax,[ebp-4]"
+"	      004714cc    mov eax,address"
 "	      004714cf    push eax"
 "	      004714d0    call 0056EB90h"
 "	      004714d5    add esp,0Ch"
@@ -5844,16 +5844,16 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 // LINE 1837:
 // Block end:
 	asm( 
-"	      004714d8    cmp dword ptr [ebp-48h],0FFFFFFFFh"
+"	      004714d8    cmp yinc2,0FFFFFFFFh"
 "	      004714dc    jne near ptr 004714F7h"
 );
 // LINE 1838:
 	asm( 
 "	      004714e2    xor eax,eax"
-"	      004714e4    mov ecx,[ebp-0A4h]"
+"	      004714e4    mov ecx,this"
 "	      004714ea    sub eax,[ecx+14h]"
 "	      004714ed    neg eax"
-"	      004714ef    sub [ebp-4],eax"
+"	      004714ef    sub address,eax"
 );
 // LINE 1839:
 	asm( 
@@ -5861,9 +5861,9 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1840:
 	asm( 
-"	      004714f7    mov eax,[ebp-0A4h]"
+"	      004714f7    mov eax,this"
 "	      004714fd    mov eax,[eax+14h]"
-"	      00471500    add [ebp-4],eax"
+"	      00471500    add address,eax"
 );
 // LINE 1841:
 	asm( 
@@ -5871,23 +5871,23 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1843:
 	asm( 
-"	      00471508    cmp dword ptr [ebp-20h],0"
+"	      00471508    cmp d,0"
 "	      0047150c    jge near ptr 00471529h"
 );
 // LINE 1845:
 	asm( 
-"	      00471512    mov eax,[ebp-44h]"
-"	      00471515    add [ebp-20h],eax"
+"	      00471512    mov eax,dinc1"
+"	      00471515    add d,eax"
 );
 // LINE 1846:
 	asm( 
-"	      00471518    mov eax,[ebp-24h]"
-"	      0047151b    add [ebp-2Ch],eax"
+"	      00471518    mov eax,xinc1"
+"	      0047151b    add x,eax"
 );
 // LINE 1847:
 	asm( 
-"	      0047151e    mov eax,[ebp-40h]"
-"	      00471521    add [ebp-30h],eax"
+"	      0047151e    mov eax,yinc1"
+"	      00471521    add y,eax"
 );
 // LINE 1849:
 	asm( 
@@ -5895,22 +5895,22 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1851:
 	asm( 
-"	      00471529    mov eax,[ebp-4Ch]"
-"	      0047152c    add [ebp-20h],eax"
+"	      00471529    mov eax,dinc2"
+"	      0047152c    add d,eax"
 );
 // LINE 1852:
 	asm( 
-"	      0047152f    mov eax,[ebp-28h]"
-"	      00471532    add [ebp-2Ch],eax"
+"	      0047152f    mov eax,xinc2"
+"	      00471532    add x,eax"
 );
 // LINE 1853:
 	asm( 
-"	      00471535    mov eax,[ebp-48h]"
-"	      00471538    add [ebp-30h],eax"
+"	      00471535    mov eax,yinc2"
+"	      00471538    add y,eax"
 );
 // LINE 1856:
 	asm( 
-"	      0047153b    dec dword ptr [ebp-34h]"
+"	      0047153b    dec numpixels"
 );
 // LINE 1857:
 // Block end:
@@ -5925,13 +5925,13 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 );
 // LINE 1864:
 	asm( 
-"	      00471548    mov dword ptr [ebp-14h],1"
+"	      00471548    mov i,1"
 );
 // LINE 1867:
 	asm( 
-"	      0047154f    mov eax,[ebp-0A4h]"
+"	      0047154f    mov eax,this"
 "	      00471555    mov eax,[eax]"
-"	      00471557    mov ecx,[ebp-0A4h]"
+"	      00471557    mov ecx,this"
 "	      0047155d    call dword ptr [eax+4]"
 );
 // LINE 1868:

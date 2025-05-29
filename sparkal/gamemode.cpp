@@ -15,17 +15,17 @@ void CopterGameMode::CopterGameMode() {
 "	      004bd676    push ebx"
 "	      004bd677    push esi"
 "	      004bd678    push edi"
-"	      004bd679    mov [ebp-4],ecx"
+"	      004bd679    mov this,ecx"
 );
 // LINE 51:
 	asm( 
-"	      004bd67c    mov eax,[ebp-4]"
+"	      004bd67c    mov eax,this"
 "	      004bd67f    mov dword ptr [eax],0"
 );
 // LINE 52:
 	asm( 
 "	      004bd685    jmp near ptr 004BD68Ah"
-"	      004bd68a    mov eax,[ebp-4]"
+"	      004bd68a    mov eax,this"
 "	      004bd68d    pop edi"
 "	      004bd68e    pop esi"
 "	      004bd68f    pop ebx"
@@ -44,15 +44,15 @@ void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 "	      004bd698    push ebx"
 "	      004bd699    push esi"
 "	      004bd69a    push edi"
-"	      004bd69b    mov [ebp-4],ecx"
-"	      004bd69e    mov eax,[ebp+8]"
-"	      004bd6a1    mov ecx,[ebp-4]"
+"	      004bd69b    mov this,ecx"
+"	      004bd69e    mov eax,nNewModeID"
+"	      004bd6a1    mov ecx,this"
 "	      004bd6a4    mov [ecx],eax"
 );
 // LINE 57:
 	asm( 
 "	      004bd6a6    jmp near ptr 004BD6ABh"
-"	      004bd6ab    mov eax,[ebp-4]"
+"	      004bd6ab    mov eax,this"
 "	      004bd6ae    pop edi"
 "	      004bd6af    pop esi"
 "	      004bd6b0    pop ebx"
@@ -71,19 +71,19 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 "	      004bd6bb    push ebx"
 "	      004bd6bc    push esi"
 "	      004bd6bd    push edi"
-"	      004bd6be    mov [ebp-4],ecx"
+"	      004bd6be    mov this,ecx"
 );
 // LINE 61:
 	asm( 
-"	      004bd6c1    mov eax,[ebp+8]"
+"	      004bd6c1    mov eax,newGameMode"
 "	      004bd6c4    push eax"
-"	      004bd6c5    mov ecx,[ebp-4]"
+"	      004bd6c5    mov ecx,this"
 "	      004bd6c8    call 004BD6DCh"
 );
 // LINE 62:
 	asm( 
 "	      004bd6cd    jmp near ptr 004BD6D2h"
-"	      004bd6d2    mov eax,[ebp-4]"
+"	      004bd6d2    mov eax,this"
 "	      004bd6d5    pop edi"
 "	      004bd6d6    pop esi"
 "	      004bd6d7    pop ebx"
@@ -102,18 +102,18 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newG
 "	      004bd6e2    push ebx"
 "	      004bd6e3    push esi"
 "	      004bd6e4    push edi"
-"	      004bd6e5    mov [ebp-4],ecx"
+"	      004bd6e5    mov this,ecx"
 );
 // LINE 65:
 	asm( 
-"	      004bd6e8    mov eax,[ebp+8]"
+"	      004bd6e8    mov eax,newGameMode"
 "	      004bd6eb    mov eax,[eax]"
-"	      004bd6ed    mov ecx,[ebp-4]"
+"	      004bd6ed    mov ecx,this"
 "	      004bd6f0    mov [ecx],eax"
 );
 // LINE 66:
 	asm( 
-"	      004bd6f2    mov eax,[ebp-4]"
+"	      004bd6f2    mov eax,this"
 "	      004bd6f5    jmp near ptr 004BD6FAh"
 );
 // LINE 67:
@@ -138,8 +138,8 @@ int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGame
 );
 // LINE 70:
 	asm( 
-"	      004bd707    mov eax,[ebp+8]"
-"	      004bd70a    mov ecx,[ebp+0Ch]"
+"	      004bd707    mov eax,gameMode1"
+"	      004bd70a    mov ecx,gameMode2"
 "	      004bd70d    mov ecx,[ecx]"
 "	      004bd70f    cmp [eax],ecx"
 "	      004bd711    jne near ptr 004BD721h"
@@ -168,22 +168,22 @@ void GameModeCoreData::GameModeCoreData() {
 "	      004bd733    push ebx"
 "	      004bd734    push esi"
 "	      004bd735    push edi"
-"	      004bd736    mov [ebp-4],ecx"
-"	      004bd739    mov eax,[ebp-4]"
+"	      004bd736    mov this,ecx"
+"	      004bd739    mov eax,this"
 "	      004bd73c    mov dword ptr [eax+4],0"
-"	      004bd743    mov eax,[ebp-4]"
+"	      004bd743    mov eax,this"
 "	      004bd746    mov dword ptr [eax+8],0"
-"	      004bd74d    mov eax,[ebp-4]"
+"	      004bd74d    mov eax,this"
 "	      004bd750    mov dword ptr [eax+0Ch],0"
-"	      004bd757    mov eax,[ebp-4]"
+"	      004bd757    mov eax,this"
 "	      004bd75a    mov dword ptr [eax+10h],0"
-"	      004bd761    mov eax,[ebp-4]"
+"	      004bd761    mov eax,this"
 "	      004bd764    mov dword ptr [eax],5923C0h"
 );
 // LINE 133:
 	asm( 
 "	      004bd76a    jmp near ptr 004BD76Fh"
-"	      004bd76f    mov eax,[ebp-4]"
+"	      004bd76f    mov eax,this"
 "	      004bd772    pop edi"
 "	      004bd773    pop esi"
 "	      004bd774    pop ebx"
@@ -202,19 +202,19 @@ void GameModeCoreData::~GameModeCoreData() {
 "	      004bd77d    push ebx"
 "	      004bd77e    push esi"
 "	      004bd77f    push edi"
-"	      004bd780    mov [ebp-0Ch],ecx"
-"	      004bd783    mov eax,[ebp-0Ch]"
+"	      004bd780    mov this,ecx"
+"	      004bd783    mov eax,this"
 "	      004bd786    mov dword ptr [eax],5923C0h"
 );
 // LINE 140:
 	asm( 
-"	      004bd78c    mov eax,[ebp-0Ch]"
+"	      004bd78c    mov eax,this"
 "	      004bd78f    cmp dword ptr [eax+8],0"
 "	      004bd793    je near ptr 004BD7BEh"
 );
 // LINE 141:
 	asm( 
-"	      004bd799    mov eax,[ebp-0Ch]"
+"	      004bd799    mov eax,this"
 "	      004bd79c    mov eax,[eax+8]"
 "	      004bd79f    mov [ebp-4],eax"
 "	      004bd7a2    mov eax,[ebp-4]"
@@ -226,7 +226,7 @@ void GameModeCoreData::~GameModeCoreData() {
 );
 // LINE 142:
 	asm( 
-"	      004bd7b4    mov eax,[ebp-0Ch]"
+"	      004bd7b4    mov eax,this"
 "	      004bd7b7    mov dword ptr [eax+8],0"
 );
 // LINE 144:
@@ -250,36 +250,36 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 "	      004bd7ce    push ebx"
 "	      004bd7cf    push esi"
 "	      004bd7d0    push edi"
-"	      004bd7d1    mov [ebp-4],ecx"
-"	      004bd7d4    mov ecx,[ebp-4]"
+"	      004bd7d1    mov this,ecx"
+"	      004bd7d4    mov ecx,this"
 "	      004bd7d7    call 004BD72Dh"
-"	      004bd7dc    mov eax,[ebp-4]"
+"	      004bd7dc    mov eax,this"
 "	      004bd7df    mov dword ptr [eax],5923C4h"
 );
 // LINE 157:
 	asm( 
-"	      004bd7e5    mov eax,[ebp-4]"
+"	      004bd7e5    mov eax,this"
 "	      004bd7e8    mov dword ptr [eax+8],0"
 );
 // LINE 158:
 	asm( 
-"	      004bd7ef    mov eax,[ebp-4]"
+"	      004bd7ef    mov eax,this"
 "	      004bd7f2    mov dword ptr [eax+0Ch],0"
 );
 // LINE 159:
 	asm( 
-"	      004bd7f9    mov eax,[ebp-4]"
+"	      004bd7f9    mov eax,this"
 "	      004bd7fc    mov dword ptr [eax+10h],0"
 );
 // LINE 160:
 	asm( 
-"	      004bd803    mov eax,[ebp-4]"
+"	      004bd803    mov eax,this"
 "	      004bd806    mov dword ptr [eax+14h],0"
 );
 // LINE 161:
 	asm( 
 "	      004bd80d    jmp near ptr 004BD812h"
-"	      004bd812    mov eax,[ebp-4]"
+"	      004bd812    mov eax,this"
 "	      004bd815    pop edi"
 "	      004bd816    pop esi"
 "	      004bd817    pop ebx"
@@ -300,11 +300,11 @@ void GameModeMainMenuData::CreatePalette() {
 "	      004bd823    push ebx"
 "	      004bd824    push esi"
 "	      004bd825    push edi"
-"	      004bd826    mov [ebp-114h],ecx"
+"	      004bd826    mov this,ecx"
 );
 // LINE 172:
 	asm( 
-"	      004bd82c    mov eax,[ebp-114h]"
+"	      004bd82c    mov eax,this"
 "	      004bd832    cmp dword ptr [eax+8],0"
 "	      004bd836    jne near ptr 004BD8BBh"
 );
@@ -327,15 +327,15 @@ void GameModeMainMenuData::CreatePalette() {
 "	      004bd890    jmp near ptr 004BD872h"
 "	      004bd895    jmp near ptr 004BD89Ah"
 "	      004bd89a    mov eax,[ebp-108h]"
-"	      004bd8a0    mov ecx,[ebp-114h]"
+"	      004bd8a0    mov ecx,this"
 "	      004bd8a6    mov [ecx+8],eax"
 "	      004bd8a9    jmp near ptr 004BD8BBh"
-"	      004bd8ae    mov eax,[ebp-114h]"
+"	      004bd8ae    mov eax,this"
 "	      004bd8b4    mov dword ptr [eax+8],0"
 );
 // LINE 175:
 	asm( 
-"	      004bd8bb    lea eax,[ebp-104h]"
+"	      004bd8bb    lea eax,szPath[0]"
 "	      004bd8c1    push eax"
 "	      004bd8c2    mov eax,ds:[59AECCh]"
 "	      004bd8c7    push eax"
@@ -346,10 +346,10 @@ void GameModeMainMenuData::CreatePalette() {
 );
 // LINE 176:
 	asm( 
-"	      004bd8d4    mov eax,[ebp-114h]"
+"	      004bd8d4    mov eax,this"
 "	      004bd8da    mov eax,[eax+8]"
 "	      004bd8dd    push eax"
-"	      004bd8de    lea eax,[ebp-104h]"
+"	      004bd8de    lea eax,szPath[0]"
 "	      004bd8e4    push eax"
 "	      004bd8e5    call 004704DBh"
 "	      004bd8ea    add esp,8"
@@ -375,16 +375,16 @@ void GameModeMainMenuData::UsePalette() {
 "	      004bd8fd    push ebx"
 "	      004bd8fe    push esi"
 "	      004bd8ff    push edi"
-"	      004bd900    mov [ebp-4],ecx"
+"	      004bd900    mov this,ecx"
 );
 // LINE 185:
 	asm( 
-"	      004bd903    mov eax,[ebp-4]"
+"	      004bd903    mov eax,this"
 "	      004bd906    mov eax,[eax+8]"
 "	      004bd909    push eax"
-"	      004bd90a    mov eax,[ebp-4]"
+"	      004bd90a    mov eax,this"
 "	      004bd90d    mov eax,[eax+0Ch]"
-"	      004bd910    mov ecx,[ebp-4]"
+"	      004bd910    mov ecx,this"
 "	      004bd913    mov ecx,[ecx+0Ch]"
 "	      004bd916    mov ecx,[ecx+34h]"
 "	      004bd919    mov edx,[ecx]"
@@ -393,7 +393,7 @@ void GameModeMainMenuData::UsePalette() {
 );
 // LINE 186:
 	asm( 
-"	      004bd921    mov eax,[ebp-4]"
+"	      004bd921    mov eax,this"
 "	      004bd924    mov eax,[eax+8]"
 "	      004bd927    mov ds:[60480Ch],eax"
 );
@@ -429,7 +429,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bd953    push ebx"
 "	      004bd954    push esi"
 "	      004bd955    push edi"
-"	      004bd956    mov [ebp-0A8h],ecx"
+"	      004bd956    mov this,ecx"
 );
 // LINE 198:
 	asm( 
@@ -451,10 +451,10 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bd9aa    mov dword ptr [eax+0Ch],1"
 "	      004bd9b1    jmp near ptr 004BD9B6h"
 "	      004bd9b6    mov eax,[ebp-0A4h]"
-"	      004bd9bc    mov [ebp-54h],eax"
+"	      004bd9bc    mov tempUMWD.sImageFileName.reference,eax"
 "	      004bd9bf    jmp near ptr 004BD9CBh"
-"	      004bd9c4    mov dword ptr [ebp-54h],0"
-"	      004bd9cb    mov dword ptr [ebp-58h],0"
+"	      004bd9c4    mov tempUMWD.sImageFileName.reference,0"
+"	      004bd9cb    mov tempUMWD.sImageFileName.c_str_ptr,0"
 "	      004bd9d2    jmp near ptr 004BD9D7h"
 "	      004bd9d7    jmp near ptr 004BD9DCh"
 "	      004bd9dc    jmp near ptr 004BD9E1h"
@@ -478,14 +478,14 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bda23    push eax"
 "	      004bda24    mov eax,[ebp-0A0h]"
 "	      004bda2a    push eax"
-"	      004bda2b    lea ecx,[ebp-58h]"
+"	      004bda2b    lea ecx,tempUMWD.sImageFileName.c_str_ptr"
 "	      004bda2e    call 0040FEE0h"
 "	      004bda33    jmp near ptr 004BDA38h"
 );
 // LINE 201:
 	asm( 
 "	      004bda38    mov eax,ds:[606988h]"
-"	      004bda3d    mov [ebp-50h],eax"
+"	      004bda3d    mov tempUMWD.nTransparentIndex,eax"
 );
 // LINE 202:
 	asm( 
@@ -496,7 +496,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bda5a    mov dword ptr [ebp-5Ch],1A0h"
 "	      004bda61    jmp near ptr 004BDA66h"
 "	      004bda66    lea eax,[ebp-68h]"
-"	      004bda69    lea ecx,[ebp-4Ch]"
+"	      004bda69    lea ecx,tempUMWD.rectPosition.left"
 "	      004bda6c    mov edx,[eax]"
 "	      004bda6e    mov [ecx],edx"
 "	      004bda70    mov edx,[eax+4]"
@@ -508,15 +508,15 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 );
 // LINE 203:
 	asm( 
-"	      004bda82    mov dword ptr [ebp-3Ch],37h"
+"	      004bda82    mov tempUMWD.lMenuStringResourceIndex,37h"
 );
 // LINE 204:
 	asm( 
-"	      004bda89    mov dword ptr [ebp-38h],5"
+"	      004bda89    mov tempUMWD.lMenuStringResourceCount,5"
 );
 // LINE 205:
 	asm( 
-"	      004bda90    mov dword ptr [ebp-34h],0"
+"	      004bda90    mov tempUMWD.lSelectionBase,0"
 );
 // LINE 206:
 	asm( 
@@ -544,25 +544,25 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdad8    jmp near ptr 004BDADDh"
 "	      004bdadd    mov eax,[ebp-78h]"
 "	      004bdae0    mov ecx,[ebp-74h]"
-"	      004bdae3    lea edx,[ebp-28h]"
+"	      004bdae3    lea edx,tempUMWD.ptPositionFirstItem.x"
 "	      004bdae6    mov [edx],eax"
 "	      004bdae8    mov [edx+4],ecx"
 );
 // LINE 211:
 	asm( 
-"	      004bdaeb    mov dword ptr [ebp-20h],1Ah"
+"	      004bdaeb    mov tempUMWD.nSizeItemFont,1Ah"
 );
 // LINE 212:
 	asm( 
-"	      004bdaf2    mov dword ptr [ebp-1Ch],40h"
+"	      004bdaf2    mov tempUMWD.nLineHeight,40h"
 );
 // LINE 213:
 	asm( 
-"	      004bdaf9    mov dword ptr [ebp-18h],0FFFFFFFFh"
+"	      004bdaf9    mov tempUMWD.lTitleStringResourceIndex,0FFFFFFFFh"
 );
 // LINE 214:
 	asm( 
-"	      004bdb00    mov dword ptr [ebp-14h],0"
+"	      004bdb00    mov tempUMWD.bTitleCentered,0"
 );
 // LINE 215:
 	asm( 
@@ -572,13 +572,13 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdb1a    jmp near ptr 004BDB1Fh"
 "	      004bdb1f    mov eax,[ebp-80h]"
 "	      004bdb22    mov ecx,[ebp-7Ch]"
-"	      004bdb25    lea edx,[ebp-10h]"
+"	      004bdb25    lea edx,tempUMWD.ptTitlePosition.x"
 "	      004bdb28    mov [edx],eax"
 "	      004bdb2a    mov [edx+4],ecx"
 );
 // LINE 216:
 	asm( 
-"	      004bdb2d    mov dword ptr [ebp-8],24h"
+"	      004bdb2d    mov tempUMWD.nSizeTitleFont,24h"
 );
 // LINE 219:
 	asm( 
@@ -588,10 +588,10 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdb41    mov [ebp-84h],eax"
 "	      004bdb47    cmp dword ptr [ebp-84h],0"
 "	      004bdb4e    je near ptr 004BDBB4h"
-"	      004bdb54    mov eax,[ebp-0A8h]"
+"	      004bdb54    mov eax,this"
 "	      004bdb5a    cmp dword ptr [eax+0Ch],0"
 "	      004bdb5e    je near ptr 004BDB7Bh"
-"	      004bdb64    mov eax,[ebp-0A8h]"
+"	      004bdb64    mov eax,this"
 "	      004bdb6a    mov eax,[eax+0Ch]"
 "	      004bdb6d    add eax,14h"
 "	      004bdb70    mov [ebp-8Ch],eax"
@@ -600,40 +600,40 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdb85    push 1"
 "	      004bdb87    mov eax,[ebp-8Ch]"
 "	      004bdb8d    push eax"
-"	      004bdb8e    mov eax,[ebp-0A8h]"
+"	      004bdb8e    mov eax,this"
 "	      004bdb94    mov eax,[eax+10h]"
 "	      004bdb97    push eax"
 "	      004bdb98    push 7D2h"
-"	      004bdb9d    lea eax,[ebp-58h]"
+"	      004bdb9d    lea eax,tempUMWD.sImageFileName.c_str_ptr"
 "	      004bdba0    push eax"
 "	      004bdba1    mov ecx,[ebp-84h]"
 "	      004bdba7    call 0049CCBBh"
-"	      004bdbac    mov [ebp-4],eax"
+"	      004bdbac    mov myUserMenuWindow,eax"
 "	      004bdbaf    jmp near ptr 004BDBBBh"
-"	      004bdbb4    mov dword ptr [ebp-4],0"
+"	      004bdbb4    mov myUserMenuWindow,0"
 );
 // LINE 220:
 	asm( 
-"	      004bdbbb    mov eax,[ebp-4]"
+"	      004bdbbb    mov eax,myUserMenuWindow"
 "	      004bdbbe    mov eax,[eax]"
-"	      004bdbc0    mov ecx,[ebp-4]"
+"	      004bdbc0    mov ecx,myUserMenuWindow"
 "	      004bdbc3    call dword ptr [eax+4]"
 );
 // LINE 221:
 	asm( 
-"	      004bdbc6    mov ecx,[ebp-0A8h]"
+"	      004bdbc6    mov ecx,this"
 "	      004bdbcc    call 004BD81Ah"
 );
 // LINE 222:
 	asm( 
 "	      004bdbd1    mov dword ptr [ebp-88h],1"
 "	      004bdbdb    jmp near ptr 004BDBE0h"
-"	      004bdbe0    mov eax,[ebp-54h]"
+"	      004bdbe0    mov eax,tempUMWD.sImageFileName.reference"
 "	      004bdbe3    dec dword ptr [eax+0Ch]"
-"	      004bdbe6    mov eax,[ebp-54h]"
+"	      004bdbe6    mov eax,tempUMWD.sImageFileName.reference"
 "	      004bdbe9    cmp dword ptr [eax+0Ch],0"
 "	      004bdbed    jne near ptr 004BDC27h"
-"	      004bdbf3    mov eax,[ebp-54h]"
+"	      004bdbf3    mov eax,tempUMWD.sImageFileName.reference"
 "	      004bdbf6    mov [ebp-9Ch],eax"
 "	      004bdbfc    mov eax,[ebp-9Ch]"
 "	      004bdc02    mov [ebp-98h],eax"
@@ -644,9 +644,9 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdc1d    call 0041DD70h"
 "	      004bdc22    jmp near ptr 004BDC27h"
 "	      004bdc27    jmp near ptr 004BDC2Ch"
-"	      004bdc2c    cmp dword ptr [ebp-58h],0"
+"	      004bdc2c    cmp tempUMWD.sImageFileName.c_str_ptr,0"
 "	      004bdc30    je near ptr 004BDC5Ah"
-"	      004bdc36    mov eax,[ebp-58h]"
+"	      004bdc36    mov eax,tempUMWD.sImageFileName.c_str_ptr"
 "	      004bdc39    mov [ebp-90h],eax"
 "	      004bdc3f    mov eax,[ebp-90h]"
 "	      004bdc45    mov [ebp-94h],eax"
@@ -678,17 +678,17 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 "	      004bdc75    push ebx"
 "	      004bdc76    push esi"
 "	      004bdc77    push edi"
-"	      004bdc78    mov [ebp-0Ch],ecx"
+"	      004bdc78    mov this,ecx"
 );
 // LINE 230:
 	asm( 
-"	      004bdc7b    mov eax,[ebp-0Ch]"
+"	      004bdc7b    mov eax,this"
 "	      004bdc7e    cmp dword ptr [eax+14h],0"
 "	      004bdc82    je near ptr 004BDCBCh"
 );
 // LINE 231:
 	asm( 
-"	      004bdc88    mov eax,[ebp-0Ch]"
+"	      004bdc88    mov eax,this"
 "	      004bdc8b    mov eax,[eax+14h]"
 "	      004bdc8e    mov [ebp-8],eax"
 "	      004bdc91    mov eax,[ebp-8]"
@@ -704,7 +704,7 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 );
 // LINE 232:
 	asm( 
-"	      004bdcb2    mov eax,[ebp-0Ch]"
+"	      004bdcb2    mov eax,this"
 "	      004bdcb5    mov dword ptr [eax+14h],0"
 );
 // LINE 234:
@@ -732,48 +732,48 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 "	      004bdcd1    push ebx"
 "	      004bdcd2    push esi"
 "	      004bdcd3    push edi"
-"	      004bdcd4    mov [ebp-4],ecx"
-"	      004bdcd7    mov ecx,[ebp-4]"
+"	      004bdcd4    mov this,ecx"
+"	      004bdcd7    mov ecx,this"
 "	      004bdcda    call 004BD72Dh"
 "	      004bdcdf    jmp near ptr 004BDCE4h"
 "	      004bdce4    jmp near ptr 004BDCE9h"
-"	      004bdce9    mov eax,[ebp-4]"
+"	      004bdce9    mov eax,this"
 "	      004bdcec    mov dword ptr [eax],5923C8h"
 );
 // LINE 251:
 	asm( 
-"	      004bdcf2    mov eax,[ebp-4]"
+"	      004bdcf2    mov eax,this"
 "	      004bdcf5    mov dword ptr [eax+8],0"
 );
 // LINE 252:
 	asm( 
-"	      004bdcfc    mov eax,[ebp-4]"
+"	      004bdcfc    mov eax,this"
 "	      004bdcff    mov dword ptr [eax+0Ch],0"
 );
 // LINE 253:
 	asm( 
-"	      004bdd06    mov eax,[ebp-4]"
+"	      004bdd06    mov eax,this"
 "	      004bdd09    mov dword ptr [eax+10h],0"
 );
 // LINE 254:
 	asm( 
-"	      004bdd10    mov eax,[ebp-4]"
+"	      004bdd10    mov eax,this"
 "	      004bdd13    mov dword ptr [eax+14h],0"
 );
 // LINE 255:
 	asm( 
-"	      004bdd1a    mov eax,[ebp-4]"
+"	      004bdd1a    mov eax,this"
 "	      004bdd1d    mov dword ptr [eax+18h],0"
 );
 // LINE 256:
 	asm( 
-"	      004bdd24    mov eax,[ebp-4]"
+"	      004bdd24    mov eax,this"
 "	      004bdd27    mov dword ptr [eax+2Ch],1"
 );
 // LINE 257:
 	asm( 
 "	      004bdd2e    jmp near ptr 004BDD33h"
-"	      004bdd33    mov eax,[ebp-4]"
+"	      004bdd33    mov eax,this"
 "	      004bdd36    pop edi"
 "	      004bdd37    pop esi"
 "	      004bdd38    pop ebx"
@@ -792,11 +792,11 @@ void GameModePickCareerCityData::Initialize() {
 "	      004bdd41    push ebx"
 "	      004bdd42    push esi"
 "	      004bdd43    push edi"
-"	      004bdd44    mov [ebp-4],ecx"
+"	      004bdd44    mov this,ecx"
 );
 // LINE 265:
 	asm( 
-"	      004bdd47    mov eax,[ebp-4]"
+"	      004bdd47    mov eax,this"
 "	      004bdd4a    mov dword ptr [eax+18h],0"
 );
 // LINE 266:
@@ -822,11 +822,11 @@ void GameModePickCareerCityData::CreatePalette() {
 "	      004bdd64    push ebx"
 "	      004bdd65    push esi"
 "	      004bdd66    push edi"
-"	      004bdd67    mov [ebp-114h],ecx"
+"	      004bdd67    mov this,ecx"
 );
 // LINE 276:
 	asm( 
-"	      004bdd6d    mov eax,[ebp-114h]"
+"	      004bdd6d    mov eax,this"
 "	      004bdd73    cmp dword ptr [eax+8],0"
 "	      004bdd77    jne near ptr 004BDDFCh"
 );
@@ -849,15 +849,15 @@ void GameModePickCareerCityData::CreatePalette() {
 "	      004bddd1    jmp near ptr 004BDDB3h"
 "	      004bddd6    jmp near ptr 004BDDDBh"
 "	      004bdddb    mov eax,[ebp-108h]"
-"	      004bdde1    mov ecx,[ebp-114h]"
+"	      004bdde1    mov ecx,this"
 "	      004bdde7    mov [ecx+8],eax"
 "	      004bddea    jmp near ptr 004BDDFCh"
-"	      004bddef    mov eax,[ebp-114h]"
+"	      004bddef    mov eax,this"
 "	      004bddf5    mov dword ptr [eax+8],0"
 );
 // LINE 279:
 	asm( 
-"	      004bddfc    lea eax,[ebp-104h]"
+"	      004bddfc    lea eax,szPath[0]"
 "	      004bde02    push eax"
 "	      004bde03    mov eax,ds:[59AED0h]"
 "	      004bde08    push eax"
@@ -868,10 +868,10 @@ void GameModePickCareerCityData::CreatePalette() {
 );
 // LINE 280:
 	asm( 
-"	      004bde15    mov eax,[ebp-114h]"
+"	      004bde15    mov eax,this"
 "	      004bde1b    mov eax,[eax+8]"
 "	      004bde1e    push eax"
-"	      004bde1f    lea eax,[ebp-104h]"
+"	      004bde1f    lea eax,szPath[0]"
 "	      004bde25    push eax"
 "	      004bde26    call 004704DBh"
 "	      004bde2b    add esp,8"
@@ -897,16 +897,16 @@ void GameModePickCareerCityData::UsePalette() {
 "	      004bde3e    push ebx"
 "	      004bde3f    push esi"
 "	      004bde40    push edi"
-"	      004bde41    mov [ebp-4],ecx"
+"	      004bde41    mov this,ecx"
 );
 // LINE 289:
 	asm( 
-"	      004bde44    mov eax,[ebp-4]"
+"	      004bde44    mov eax,this"
 "	      004bde47    mov eax,[eax+8]"
 "	      004bde4a    push eax"
-"	      004bde4b    mov eax,[ebp-4]"
+"	      004bde4b    mov eax,this"
 "	      004bde4e    mov eax,[eax+0Ch]"
-"	      004bde51    mov ecx,[ebp-4]"
+"	      004bde51    mov ecx,this"
 "	      004bde54    mov ecx,[ecx+0Ch]"
 "	      004bde57    mov ecx,[ecx+34h]"
 "	      004bde5a    mov edx,[ecx]"
@@ -915,7 +915,7 @@ void GameModePickCareerCityData::UsePalette() {
 );
 // LINE 290:
 	asm( 
-"	      004bde62    mov eax,[ebp-4]"
+"	      004bde62    mov eax,this"
 "	      004bde65    mov eax,[eax+8]"
 "	      004bde68    mov ds:[60480Ch],eax"
 );
@@ -951,17 +951,17 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 "	      004bde91    push ebx"
 "	      004bde92    push esi"
 "	      004bde93    push edi"
-"	      004bde94    mov [ebp-24h],ecx"
+"	      004bde94    mov this,ecx"
 );
 // LINE 303:
 	asm( 
-"	      004bde97    mov eax,[ebp-24h]"
+"	      004bde97    mov eax,this"
 "	      004bde9a    cmp dword ptr [eax+2Ch],0"
 "	      004bde9e    je near ptr 004BDEB0h"
 );
 // LINE 304:
 	asm( 
-"	      004bdea4    mov dword ptr [ebp-4],0"
+"	      004bdea4    mov lNewCitiesPointer,0"
 );
 // LINE 305:
 	asm( 
@@ -974,7 +974,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 "	      004bdeb8    lea eax,[eax+eax*8]"
 "	      004bdebb    add eax,5C2B18h"
 "	      004bdec0    add eax,28h"
-"	      004bdec3    mov [ebp-4],eax"
+"	      004bdec3    mov lNewCitiesPointer,eax"
 );
 // LINE 312:
 	asm( 
@@ -984,10 +984,10 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 "	      004bded3    mov [ebp-0Ch],eax"
 "	      004bded6    cmp dword ptr [ebp-0Ch],0"
 "	      004bdeda    je near ptr 004BDF6Eh"
-"	      004bdee0    mov eax,[ebp-24h]"
+"	      004bdee0    mov eax,this"
 "	      004bdee3    cmp dword ptr [eax+0Ch],0"
 "	      004bdee7    je near ptr 004BDEFEh"
-"	      004bdeed    mov eax,[ebp-24h]"
+"	      004bdeed    mov eax,this"
 "	      004bdef0    mov eax,[eax+0Ch]"
 "	      004bdef3    add eax,14h"
 "	      004bdef6    mov [ebp-20h],eax"
@@ -1000,18 +1000,18 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 "	      004bdf1d    mov dword ptr [ebp-14h],1"
 "	      004bdf24    mov dword ptr [ebp-10h],1"
 "	      004bdf2b    jmp near ptr 004BDF30h"
-"	      004bdf30    mov eax,[ebp-24h]"
+"	      004bdf30    mov eax,this"
 "	      004bdf33    mov eax,[eax+2Ch]"
 "	      004bdf36    push eax"
 "	      004bdf37    push 1"
 "	      004bdf39    mov eax,[ebp-20h]"
 "	      004bdf3c    push eax"
-"	      004bdf3d    mov eax,[ebp-24h]"
+"	      004bdf3d    mov eax,this"
 "	      004bdf40    mov eax,[eax+10h]"
 "	      004bdf43    push eax"
-"	      004bdf44    mov eax,[ebp-4]"
+"	      004bdf44    mov eax,lNewCitiesPointer"
 "	      004bdf47    push eax"
-"	      004bdf48    mov eax,[ebp-24h]"
+"	      004bdf48    mov eax,this"
 "	      004bdf4b    mov eax,[eax+0Ch]"
 "	      004bdf4e    mov eax,[eax+50h]"
 "	      004bdf51    mov eax,[eax+18h]"
@@ -1021,30 +1021,30 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 "	      004bdf5d    push eax"
 "	      004bdf5e    mov ecx,[ebp-0Ch]"
 "	      004bdf61    call 0047DEFEh"
-"	      004bdf66    mov [ebp-8],eax"
+"	      004bdf66    mov myCareerWindow,eax"
 "	      004bdf69    jmp near ptr 004BDF75h"
-"	      004bdf6e    mov dword ptr [ebp-8],0"
+"	      004bdf6e    mov myCareerWindow,0"
 );
 // LINE 313:
 	asm( 
-"	      004bdf75    mov eax,[ebp-8]"
+"	      004bdf75    mov eax,myCareerWindow"
 "	      004bdf78    mov eax,[eax]"
-"	      004bdf7a    mov ecx,[ebp-8]"
+"	      004bdf7a    mov ecx,myCareerWindow"
 "	      004bdf7d    call dword ptr [eax+4]"
 );
 // LINE 314:
 	asm( 
-"	      004bdf80    mov eax,[ebp-24h]"
+"	      004bdf80    mov eax,this"
 "	      004bdf83    mov eax,[eax+10h]"
 "	      004bdf86    push eax"
-"	      004bdf87    mov eax,[ebp-8]"
+"	      004bdf87    mov eax,myCareerWindow"
 "	      004bdf8a    mov eax,[eax]"
-"	      004bdf8c    mov ecx,[ebp-8]"
+"	      004bdf8c    mov ecx,myCareerWindow"
 "	      004bdf8f    call dword ptr [eax+40h]"
 );
 // LINE 316:
 	asm( 
-"	      004bdf92    mov ecx,[ebp-24h]"
+"	      004bdf92    mov ecx,this"
 "	      004bdf95    call 004BDD5Bh"
 );
 // LINE 317:
@@ -1072,17 +1072,17 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 "	      004bdfaf    push ebx"
 "	      004bdfb0    push esi"
 "	      004bdfb1    push edi"
-"	      004bdfb2    mov [ebp-0Ch],ecx"
+"	      004bdfb2    mov this,ecx"
 );
 // LINE 325:
 	asm( 
-"	      004bdfb5    mov eax,[ebp-0Ch]"
+"	      004bdfb5    mov eax,this"
 "	      004bdfb8    cmp dword ptr [eax+14h],0"
 "	      004bdfbc    je near ptr 004BDFF6h"
 );
 // LINE 326:
 	asm( 
-"	      004bdfc2    mov eax,[ebp-0Ch]"
+"	      004bdfc2    mov eax,this"
 "	      004bdfc5    mov eax,[eax+14h]"
 "	      004bdfc8    mov [ebp-8],eax"
 "	      004bdfcb    mov eax,[ebp-8]"
@@ -1098,7 +1098,7 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 );
 // LINE 327:
 	asm( 
-"	      004bdfec    mov eax,[ebp-0Ch]"
+"	      004bdfec    mov eax,this"
 "	      004bdfef    mov dword ptr [eax+14h],0"
 );
 // LINE 329:
@@ -1126,154 +1126,154 @@ void GameModePlayData::GameModePlayData() {
 "	      004be00b    push ebx"
 "	      004be00c    push esi"
 "	      004be00d    push edi"
-"	      004be00e    mov [ebp-4],ecx"
-"	      004be011    mov ecx,[ebp-4]"
+"	      004be00e    mov this,ecx"
+"	      004be011    mov ecx,this"
 "	      004be014    call 004BD72Dh"
-"	      004be019    mov ecx,[ebp-4]"
+"	      004be019    mov ecx,this"
 "	      004be01c    add ecx,70h"
 "	      004be01f    call 0048B2B0h"
-"	      004be024    mov eax,[ebp-4]"
+"	      004be024    mov eax,this"
 "	      004be027    mov dword ptr [eax],5923CCh"
 );
 // LINE 343:
 	asm( 
-"	      004be02d    mov eax,[ebp-4]"
+"	      004be02d    mov eax,this"
 "	      004be030    mov dword ptr [eax+14h],0"
 );
 // LINE 344:
 	asm( 
-"	      004be037    mov eax,[ebp-4]"
+"	      004be037    mov eax,this"
 "	      004be03a    mov dword ptr [eax+18h],0"
 );
 // LINE 345:
 	asm( 
-"	      004be041    mov eax,[ebp-4]"
+"	      004be041    mov eax,this"
 "	      004be044    mov dword ptr [eax+1Ch],0"
 );
 // LINE 346:
 	asm( 
-"	      004be04b    mov eax,[ebp-4]"
+"	      004be04b    mov eax,this"
 "	      004be04e    mov dword ptr [eax+20h],0"
 );
 // LINE 347:
 	asm( 
-"	      004be055    mov eax,[ebp-4]"
+"	      004be055    mov eax,this"
 "	      004be058    mov dword ptr [eax+24h],0"
 );
 // LINE 348:
 	asm( 
-"	      004be05f    mov eax,[ebp-4]"
+"	      004be05f    mov eax,this"
 "	      004be062    mov dword ptr [eax+28h],1"
 );
 // LINE 349:
 	asm( 
-"	      004be069    mov eax,[ebp-4]"
+"	      004be069    mov eax,this"
 "	      004be06c    mov dword ptr [eax+2Ch],0"
 );
 // LINE 350:
 	asm( 
-"	      004be073    mov eax,[ebp-4]"
+"	      004be073    mov eax,this"
 "	      004be076    mov dword ptr [eax+30h],1"
 );
 // LINE 351:
 	asm( 
-"	      004be07d    mov eax,[ebp-4]"
+"	      004be07d    mov eax,this"
 "	      004be080    mov dword ptr [eax+34h],0"
 );
 // LINE 352:
 	asm( 
-"	      004be087    mov eax,[ebp-4]"
+"	      004be087    mov eax,this"
 "	      004be08a    mov dword ptr [eax+0Ch],0"
 );
 // LINE 353:
 	asm( 
-"	      004be091    mov eax,[ebp-4]"
+"	      004be091    mov eax,this"
 "	      004be094    mov dword ptr [eax+4],0"
 );
 // LINE 354:
 	asm( 
-"	      004be09b    mov eax,[ebp-4]"
+"	      004be09b    mov eax,this"
 "	      004be09e    mov dword ptr [eax+10h],0"
 );
 // LINE 355:
 	asm( 
-"	      004be0a5    mov eax,[ebp-4]"
+"	      004be0a5    mov eax,this"
 "	      004be0a8    mov dword ptr [eax+38h],0"
 );
 // LINE 356:
 	asm( 
-"	      004be0af    mov eax,[ebp-4]"
+"	      004be0af    mov eax,this"
 "	      004be0b2    mov dword ptr [eax+3Ch],0"
 );
 // LINE 357:
 	asm( 
-"	      004be0b9    mov eax,[ebp-4]"
+"	      004be0b9    mov eax,this"
 "	      004be0bc    mov dword ptr [eax+40h],0"
 );
 // LINE 358:
 	asm( 
-"	      004be0c3    mov eax,[ebp-4]"
+"	      004be0c3    mov eax,this"
 "	      004be0c6    mov dword ptr [eax+44h],0"
 );
 // LINE 359:
 	asm( 
-"	      004be0cd    mov eax,[ebp-4]"
+"	      004be0cd    mov eax,this"
 "	      004be0d0    mov dword ptr [eax+48h],0"
 );
 // LINE 360:
 	asm( 
-"	      004be0d7    mov eax,[ebp-4]"
+"	      004be0d7    mov eax,this"
 "	      004be0da    mov dword ptr [eax+4Ch],0"
 );
 // LINE 361:
 	asm( 
-"	      004be0e1    mov eax,[ebp-4]"
+"	      004be0e1    mov eax,this"
 "	      004be0e4    mov dword ptr [eax+50h],0"
 );
 // LINE 362:
 	asm( 
-"	      004be0eb    mov eax,[ebp-4]"
+"	      004be0eb    mov eax,this"
 "	      004be0ee    mov dword ptr [eax+54h],0"
 );
 // LINE 363:
 	asm( 
-"	      004be0f5    mov eax,[ebp-4]"
+"	      004be0f5    mov eax,this"
 "	      004be0f8    mov dword ptr [eax+58h],0"
 );
 // LINE 364:
 	asm( 
-"	      004be0ff    mov eax,[ebp-4]"
+"	      004be0ff    mov eax,this"
 "	      004be102    mov dword ptr [eax+5Ch],0"
 );
 // LINE 365:
 	asm( 
-"	      004be109    mov eax,[ebp-4]"
+"	      004be109    mov eax,this"
 "	      004be10c    mov dword ptr [eax+60h],0"
 );
 // LINE 366:
 	asm( 
-"	      004be113    mov eax,[ebp-4]"
+"	      004be113    mov eax,this"
 "	      004be116    mov dword ptr [eax+64h],0"
 );
 // LINE 367:
 	asm( 
-"	      004be11d    mov eax,[ebp-4]"
+"	      004be11d    mov eax,this"
 "	      004be120    mov dword ptr [eax+68h],0"
 );
 // LINE 368:
 	asm( 
-"	      004be127    mov eax,[ebp-4]"
+"	      004be127    mov eax,this"
 "	      004be12a    mov dword ptr [eax+6Ch],0"
 );
 // LINE 369:
 	asm( 
-"	      004be131    mov eax,[ebp-4]"
+"	      004be131    mov eax,this"
 "	      004be134    mov dword ptr [eax+8],0"
 );
 // LINE 370:
 	asm( 
 "	      004be13b    jmp near ptr 004BE140h"
-"	      004be140    mov eax,[ebp-4]"
+"	      004be140    mov eax,this"
 "	      004be143    pop edi"
 "	      004be144    pop esi"
 "	      004be145    pop ebx"
@@ -1292,16 +1292,16 @@ void GameModePlayData::Initialize() {
 "	      004be14e    push ebx"
 "	      004be14f    push esi"
 "	      004be150    push edi"
-"	      004be151    mov [ebp-4],ecx"
+"	      004be151    mov this,ecx"
 );
 // LINE 390:
 	asm( 
-"	      004be154    mov ecx,[ebp-4]"
+"	      004be154    mov ecx,this"
 "	      004be157    call 004C0326h"
 );
 // LINE 391:
 	asm( 
-"	      004be15c    mov ecx,[ebp-4]"
+"	      004be15c    mov ecx,this"
 "	      004be15f    call 004C0176h"
 );
 // LINE 392:
@@ -1329,11 +1329,11 @@ void GameModePlayData::CreatePalette() {
 "	      004be177    push ebx"
 "	      004be178    push esi"
 "	      004be179    push edi"
-"	      004be17a    mov [ebp-11Ch],ecx"
+"	      004be17a    mov this,ecx"
 );
 // LINE 411:
 	asm( 
-"	      004be180    mov eax,[ebp-11Ch]"
+"	      004be180    mov eax,this"
 "	      004be186    cmp dword ptr [eax+8],0"
 "	      004be18a    jne near ptr 004BE20Fh"
 );
@@ -1356,10 +1356,10 @@ void GameModePlayData::CreatePalette() {
 "	      004be1e4    jmp near ptr 004BE1C6h"
 "	      004be1e9    jmp near ptr 004BE1EEh"
 "	      004be1ee    mov eax,[ebp-110h]"
-"	      004be1f4    mov ecx,[ebp-11Ch]"
+"	      004be1f4    mov ecx,this"
 "	      004be1fa    mov [ecx+8],eax"
 "	      004be1fd    jmp near ptr 004BE20Fh"
-"	      004be202    mov eax,[ebp-11Ch]"
+"	      004be202    mov eax,this"
 "	      004be208    mov dword ptr [eax+8],0"
 );
 // LINE 418:
@@ -1369,7 +1369,7 @@ void GameModePlayData::CreatePalette() {
 );
 // LINE 419:
 	asm( 
-"	      004be21c    lea eax,[ebp-104h]"
+"	      004be21c    lea eax,szPath[0]"
 "	      004be222    push eax"
 "	      004be223    mov eax,ds:[59AEC4h]"
 "	      004be228    push eax"
@@ -1383,7 +1383,7 @@ void GameModePlayData::CreatePalette() {
 "	      004be235    mov eax,ds:[59AEC8h]"
 "	      004be23a    push eax"
 "	      004be23b    push 4"
-"	      004be23d    lea eax,[ebp-104h]"
+"	      004be23d    lea eax,szPath[0]"
 "	      004be243    push eax"
 "	      004be244    call 004D5356h"
 "	      004be249    add esp,0Ch"
@@ -1400,45 +1400,45 @@ void GameModePlayData::CreatePalette() {
 // LINE 424:
 	asm( 
 "	      004be264    mov eax,ds:[598EFCh]"
-"	      004be269    mov [ebp-108h],eax"
+"	      004be269    mov pPalettePosition,eax"
 );
 // LINE 425:
 	asm( 
-"	      004be26f    mov dword ptr [ebp-10Ch],0"
+"	      004be26f    mov i,0"
 "	      004be279    jmp near ptr 004BE284h"
-"	      004be27e    inc dword ptr [ebp-10Ch]"
-"	      004be284    cmp dword ptr [ebp-10Ch],100h"
+"	      004be27e    inc i"
+"	      004be284    cmp i,100h"
 "	      004be28e    jge near ptr 004BE2FBh"
 );
 // LINE 426:
 	asm( 
-"	      004be294    mov eax,[ebp-108h]"
+"	      004be294    mov eax,pPalettePosition"
 "	      004be29a    mov al,[eax]"
-"	      004be29c    mov ecx,[ebp-11Ch]"
+"	      004be29c    mov ecx,this"
 "	      004be2a2    mov ecx,[ecx+8]"
-"	      004be2a5    mov edx,[ebp-10Ch]"
+"	      004be2a5    mov edx,i"
 "	      004be2ab    mov [ecx+edx*4+2],al"
-"	      004be2af    inc dword ptr [ebp-108h]"
+"	      004be2af    inc pPalettePosition"
 );
 // LINE 427:
 	asm( 
-"	      004be2b5    mov eax,[ebp-108h]"
+"	      004be2b5    mov eax,pPalettePosition"
 "	      004be2bb    mov al,[eax]"
-"	      004be2bd    mov ecx,[ebp-11Ch]"
+"	      004be2bd    mov ecx,this"
 "	      004be2c3    mov ecx,[ecx+8]"
-"	      004be2c6    mov edx,[ebp-10Ch]"
+"	      004be2c6    mov edx,i"
 "	      004be2cc    mov [ecx+edx*4+1],al"
-"	      004be2d0    inc dword ptr [ebp-108h]"
+"	      004be2d0    inc pPalettePosition"
 );
 // LINE 428:
 	asm( 
-"	      004be2d6    mov eax,[ebp-108h]"
+"	      004be2d6    mov eax,pPalettePosition"
 "	      004be2dc    mov al,[eax]"
-"	      004be2de    mov ecx,[ebp-11Ch]"
+"	      004be2de    mov ecx,this"
 "	      004be2e4    mov ecx,[ecx+8]"
-"	      004be2e7    mov edx,[ebp-10Ch]"
+"	      004be2e7    mov edx,i"
 "	      004be2ed    mov [ecx+edx*4],al"
-"	      004be2f0    inc dword ptr [ebp-108h]"
+"	      004be2f0    inc pPalettePosition"
 );
 // LINE 429:
 	asm( 
@@ -1465,16 +1465,16 @@ void GameModePlayData::UsePalette() {
 "	      004be30b    push ebx"
 "	      004be30c    push esi"
 "	      004be30d    push edi"
-"	      004be30e    mov [ebp-4],ecx"
+"	      004be30e    mov this,ecx"
 );
 // LINE 439:
 	asm( 
-"	      004be311    mov eax,[ebp-4]"
+"	      004be311    mov eax,this"
 "	      004be314    mov eax,[eax+8]"
 "	      004be317    push eax"
-"	      004be318    mov eax,[ebp-4]"
+"	      004be318    mov eax,this"
 "	      004be31b    mov eax,[eax+0Ch]"
-"	      004be31e    mov ecx,[ebp-4]"
+"	      004be31e    mov ecx,this"
 "	      004be321    mov ecx,[ecx+0Ch]"
 "	      004be324    mov ecx,[ecx+34h]"
 "	      004be327    mov edx,[ecx]"
@@ -1483,7 +1483,7 @@ void GameModePlayData::UsePalette() {
 );
 // LINE 440:
 	asm( 
-"	      004be32f    mov eax,[ebp-4]"
+"	      004be32f    mov eax,this"
 "	      004be332    mov eax,[eax+8]"
 "	      004be335    mov ds:[60480Ch],eax"
 );
@@ -1516,18 +1516,18 @@ void GameModePlayData::Sleep() {
 "	      004be35e    push ebx"
 "	      004be35f    push esi"
 "	      004be360    push edi"
-"	      004be361    mov [ebp-34h],ecx"
+"	      004be361    mov this,ecx"
 );
 // LINE 451:
 	asm( 
-"	      004be364    mov eax,[ebp-34h]"
+"	      004be364    mov eax,this"
 "	      004be367    inc dword ptr [eax+4]"
 );
 // LINE 452:
 	asm( 
-"	      004be36a    mov ecx,[ebp-34h]"
+"	      004be36a    mov ecx,this"
 "	      004be36d    call 004BF5CAh"
-"	      004be372    mov eax,[ebp-34h]"
+"	      004be372    mov eax,this"
 "	      004be375    mov eax,[eax+40h]"
 "	      004be378    mov [ebp-4],eax"
 );
@@ -1536,7 +1536,7 @@ void GameModePlayData::Sleep() {
 "	      004be37b    mov eax,[ebp-4]"
 "	      004be37e    mov dword ptr [eax+54h],0"
 "	      004be385    jmp near ptr 004BE38Ah"
-"	      004be38a    mov eax,[ebp-34h]"
+"	      004be38a    mov eax,this"
 "	      004be38d    mov eax,[eax+44h]"
 "	      004be390    mov [ebp-8],eax"
 );
@@ -1545,7 +1545,7 @@ void GameModePlayData::Sleep() {
 "	      004be393    mov eax,[ebp-8]"
 "	      004be396    mov dword ptr [eax+54h],0"
 "	      004be39d    jmp near ptr 004BE3A2h"
-"	      004be3a2    mov eax,[ebp-34h]"
+"	      004be3a2    mov eax,this"
 "	      004be3a5    mov eax,[eax+48h]"
 "	      004be3a8    mov [ebp-0Ch],eax"
 );
@@ -1554,7 +1554,7 @@ void GameModePlayData::Sleep() {
 "	      004be3ab    mov eax,[ebp-0Ch]"
 "	      004be3ae    mov dword ptr [eax+54h],0"
 "	      004be3b5    jmp near ptr 004BE3BAh"
-"	      004be3ba    mov eax,[ebp-34h]"
+"	      004be3ba    mov eax,this"
 "	      004be3bd    mov eax,[eax+4Ch]"
 "	      004be3c0    mov [ebp-10h],eax"
 );
@@ -1563,7 +1563,7 @@ void GameModePlayData::Sleep() {
 "	      004be3c3    mov eax,[ebp-10h]"
 "	      004be3c6    mov dword ptr [eax+54h],0"
 "	      004be3cd    jmp near ptr 004BE3D2h"
-"	      004be3d2    mov eax,[ebp-34h]"
+"	      004be3d2    mov eax,this"
 "	      004be3d5    mov eax,[eax+50h]"
 "	      004be3d8    mov [ebp-14h],eax"
 );
@@ -1572,7 +1572,7 @@ void GameModePlayData::Sleep() {
 "	      004be3db    mov eax,[ebp-14h]"
 "	      004be3de    mov dword ptr [eax+54h],0"
 "	      004be3e5    jmp near ptr 004BE3EAh"
-"	      004be3ea    mov eax,[ebp-34h]"
+"	      004be3ea    mov eax,this"
 "	      004be3ed    mov eax,[eax+54h]"
 "	      004be3f0    mov [ebp-18h],eax"
 );
@@ -1581,7 +1581,7 @@ void GameModePlayData::Sleep() {
 "	      004be3f3    mov eax,[ebp-18h]"
 "	      004be3f6    mov dword ptr [eax+54h],0"
 "	      004be3fd    jmp near ptr 004BE402h"
-"	      004be402    mov eax,[ebp-34h]"
+"	      004be402    mov eax,this"
 "	      004be405    mov eax,[eax+58h]"
 "	      004be408    mov [ebp-1Ch],eax"
 );
@@ -1593,13 +1593,13 @@ void GameModePlayData::Sleep() {
 );
 // LINE 460:
 	asm( 
-"	      004be41a    mov eax,[ebp-34h]"
+"	      004be41a    mov eax,this"
 "	      004be41d    cmp dword ptr [eax+5Ch],0"
 "	      004be421    je near ptr 004BE43Fh"
 );
 // LINE 461:
 	asm( 
-"	      004be427    mov eax,[ebp-34h]"
+"	      004be427    mov eax,this"
 "	      004be42a    mov eax,[eax+5Ch]"
 "	      004be42d    mov [ebp-20h],eax"
 "	      004be430    mov eax,[ebp-20h]"
@@ -1608,13 +1608,13 @@ void GameModePlayData::Sleep() {
 );
 // LINE 462:
 	asm( 
-"	      004be43f    mov eax,[ebp-34h]"
+"	      004be43f    mov eax,this"
 "	      004be442    cmp dword ptr [eax+60h],0"
 "	      004be446    je near ptr 004BE464h"
 );
 // LINE 463:
 	asm( 
-"	      004be44c    mov eax,[ebp-34h]"
+"	      004be44c    mov eax,this"
 "	      004be44f    mov eax,[eax+60h]"
 "	      004be452    mov [ebp-24h],eax"
 "	      004be455    mov eax,[ebp-24h]"
@@ -1623,13 +1623,13 @@ void GameModePlayData::Sleep() {
 );
 // LINE 464:
 	asm( 
-"	      004be464    mov eax,[ebp-34h]"
+"	      004be464    mov eax,this"
 "	      004be467    cmp dword ptr [eax+64h],0"
 "	      004be46b    je near ptr 004BE489h"
 );
 // LINE 465:
 	asm( 
-"	      004be471    mov eax,[ebp-34h]"
+"	      004be471    mov eax,this"
 "	      004be474    mov eax,[eax+64h]"
 "	      004be477    mov [ebp-28h],eax"
 "	      004be47a    mov eax,[ebp-28h]"
@@ -1638,13 +1638,13 @@ void GameModePlayData::Sleep() {
 );
 // LINE 466:
 	asm( 
-"	      004be489    mov eax,[ebp-34h]"
+"	      004be489    mov eax,this"
 "	      004be48c    cmp dword ptr [eax+68h],0"
 "	      004be490    je near ptr 004BE4AEh"
 );
 // LINE 467:
 	asm( 
-"	      004be496    mov eax,[ebp-34h]"
+"	      004be496    mov eax,this"
 "	      004be499    mov eax,[eax+68h]"
 "	      004be49c    mov [ebp-2Ch],eax"
 "	      004be49f    mov eax,[ebp-2Ch]"
@@ -1653,7 +1653,7 @@ void GameModePlayData::Sleep() {
 );
 // LINE 468:
 	asm( 
-"	      004be4ae    mov eax,[ebp-34h]"
+"	      004be4ae    mov eax,this"
 "	      004be4b1    mov eax,[eax+6Ch]"
 "	      004be4b4    mov [ebp-30h],eax"
 "	      004be4b7    mov eax,[ebp-30h]"
@@ -1662,8 +1662,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 469:
 	asm( 
-"	      004be4c6    mov eax,[ebp-34h]"
-"	      004be4c9    mov ecx,[ebp-34h]"
+"	      004be4c6    mov eax,this"
+"	      004be4c9    mov ecx,this"
 "	      004be4cc    mov ecx,[ecx+40h]"
 "	      004be4cf    mov edx,[ecx]"
 "	      004be4d1    mov ecx,[eax+40h]"
@@ -1671,8 +1671,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 470:
 	asm( 
-"	      004be4d7    mov eax,[ebp-34h]"
-"	      004be4da    mov ecx,[ebp-34h]"
+"	      004be4d7    mov eax,this"
+"	      004be4da    mov ecx,this"
 "	      004be4dd    mov ecx,[ecx+44h]"
 "	      004be4e0    mov edx,[ecx]"
 "	      004be4e2    mov ecx,[eax+44h]"
@@ -1680,8 +1680,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 471:
 	asm( 
-"	      004be4e8    mov eax,[ebp-34h]"
-"	      004be4eb    mov ecx,[ebp-34h]"
+"	      004be4e8    mov eax,this"
+"	      004be4eb    mov ecx,this"
 "	      004be4ee    mov ecx,[ecx+48h]"
 "	      004be4f1    mov edx,[ecx]"
 "	      004be4f3    mov ecx,[eax+48h]"
@@ -1689,8 +1689,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 472:
 	asm( 
-"	      004be4f9    mov eax,[ebp-34h]"
-"	      004be4fc    mov ecx,[ebp-34h]"
+"	      004be4f9    mov eax,this"
+"	      004be4fc    mov ecx,this"
 "	      004be4ff    mov ecx,[ecx+4Ch]"
 "	      004be502    mov edx,[ecx]"
 "	      004be504    mov ecx,[eax+4Ch]"
@@ -1698,8 +1698,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 473:
 	asm( 
-"	      004be50a    mov eax,[ebp-34h]"
-"	      004be50d    mov ecx,[ebp-34h]"
+"	      004be50a    mov eax,this"
+"	      004be50d    mov ecx,this"
 "	      004be510    mov ecx,[ecx+50h]"
 "	      004be513    mov edx,[ecx]"
 "	      004be515    mov ecx,[eax+50h]"
@@ -1707,8 +1707,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 474:
 	asm( 
-"	      004be51b    mov eax,[ebp-34h]"
-"	      004be51e    mov ecx,[ebp-34h]"
+"	      004be51b    mov eax,this"
+"	      004be51e    mov ecx,this"
 "	      004be521    mov ecx,[ecx+54h]"
 "	      004be524    mov edx,[ecx]"
 "	      004be526    mov ecx,[eax+54h]"
@@ -1716,8 +1716,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 475:
 	asm( 
-"	      004be52c    mov eax,[ebp-34h]"
-"	      004be52f    mov ecx,[ebp-34h]"
+"	      004be52c    mov eax,this"
+"	      004be52f    mov ecx,this"
 "	      004be532    mov ecx,[ecx+58h]"
 "	      004be535    mov edx,[ecx]"
 "	      004be537    mov ecx,[eax+58h]"
@@ -1725,14 +1725,14 @@ void GameModePlayData::Sleep() {
 );
 // LINE 476:
 	asm( 
-"	      004be53d    mov eax,[ebp-34h]"
+"	      004be53d    mov eax,this"
 "	      004be540    cmp dword ptr [eax+5Ch],0"
 "	      004be544    je near ptr 004BE55Bh"
 );
 // LINE 477:
 	asm( 
-"	      004be54a    mov eax,[ebp-34h]"
-"	      004be54d    mov ecx,[ebp-34h]"
+"	      004be54a    mov eax,this"
+"	      004be54d    mov ecx,this"
 "	      004be550    mov ecx,[ecx+5Ch]"
 "	      004be553    mov edx,[ecx]"
 "	      004be555    mov ecx,[eax+5Ch]"
@@ -1740,14 +1740,14 @@ void GameModePlayData::Sleep() {
 );
 // LINE 478:
 	asm( 
-"	      004be55b    mov eax,[ebp-34h]"
+"	      004be55b    mov eax,this"
 "	      004be55e    cmp dword ptr [eax+60h],0"
 "	      004be562    je near ptr 004BE579h"
 );
 // LINE 479:
 	asm( 
-"	      004be568    mov eax,[ebp-34h]"
-"	      004be56b    mov ecx,[ebp-34h]"
+"	      004be568    mov eax,this"
+"	      004be56b    mov ecx,this"
 "	      004be56e    mov ecx,[ecx+60h]"
 "	      004be571    mov edx,[ecx]"
 "	      004be573    mov ecx,[eax+60h]"
@@ -1755,14 +1755,14 @@ void GameModePlayData::Sleep() {
 );
 // LINE 480:
 	asm( 
-"	      004be579    mov eax,[ebp-34h]"
+"	      004be579    mov eax,this"
 "	      004be57c    cmp dword ptr [eax+64h],0"
 "	      004be580    je near ptr 004BE597h"
 );
 // LINE 481:
 	asm( 
-"	      004be586    mov eax,[ebp-34h]"
-"	      004be589    mov ecx,[ebp-34h]"
+"	      004be586    mov eax,this"
+"	      004be589    mov ecx,this"
 "	      004be58c    mov ecx,[ecx+64h]"
 "	      004be58f    mov edx,[ecx]"
 "	      004be591    mov ecx,[eax+64h]"
@@ -1770,14 +1770,14 @@ void GameModePlayData::Sleep() {
 );
 // LINE 482:
 	asm( 
-"	      004be597    mov eax,[ebp-34h]"
+"	      004be597    mov eax,this"
 "	      004be59a    cmp dword ptr [eax+68h],0"
 "	      004be59e    je near ptr 004BE5B5h"
 );
 // LINE 483:
 	asm( 
-"	      004be5a4    mov eax,[ebp-34h]"
-"	      004be5a7    mov ecx,[ebp-34h]"
+"	      004be5a4    mov eax,this"
+"	      004be5a7    mov ecx,this"
 "	      004be5aa    mov ecx,[ecx+68h]"
 "	      004be5ad    mov edx,[ecx]"
 "	      004be5af    mov ecx,[eax+68h]"
@@ -1785,8 +1785,8 @@ void GameModePlayData::Sleep() {
 );
 // LINE 484:
 	asm( 
-"	      004be5b5    mov eax,[ebp-34h]"
-"	      004be5b8    mov ecx,[ebp-34h]"
+"	      004be5b5    mov eax,this"
+"	      004be5b8    mov ecx,this"
 "	      004be5bb    mov ecx,[ecx+6Ch]"
 "	      004be5be    mov edx,[ecx]"
 "	      004be5c0    mov ecx,[eax+6Ch]"
@@ -1813,25 +1813,25 @@ void GameModePlayData::Awake() {
 "	      004be5d6    push ebx"
 "	      004be5d7    push esi"
 "	      004be5d8    push edi"
-"	      004be5d9    mov [ebp-34h],ecx"
+"	      004be5d9    mov this,ecx"
 );
 // LINE 492:
 	asm( 
-"	      004be5dc    mov eax,[ebp-34h]"
+"	      004be5dc    mov eax,this"
 "	      004be5df    dec dword ptr [eax+4]"
 );
 // LINE 493:
 	asm( 
-"	      004be5e2    mov eax,[ebp-34h]"
+"	      004be5e2    mov eax,this"
 "	      004be5e5    cmp dword ptr [eax+4],0"
 "	      004be5e9    jne near ptr 004BE88Eh"
 );
 // LINE 494:
 	asm( 
 "	      004be5ef    push 0"
-"	      004be5f1    mov eax,[ebp-34h]"
+"	      004be5f1    mov eax,this"
 "	      004be5f4    mov eax,[eax+0Ch]"
-"	      004be5f7    mov ecx,[ebp-34h]"
+"	      004be5f7    mov ecx,this"
 "	      004be5fa    mov ecx,[ecx+0Ch]"
 "	      004be5fd    mov ecx,[ecx+34h]"
 "	      004be600    mov edx,[ecx]"
@@ -1840,13 +1840,13 @@ void GameModePlayData::Awake() {
 );
 // LINE 495:
 	asm( 
-"	      004be608    mov ecx,[ebp-34h]"
+"	      004be608    mov ecx,this"
 "	      004be60b    call 004BF4FCh"
 );
 // LINE 496:
 	asm( 
-"	      004be610    mov eax,[ebp-34h]"
-"	      004be613    mov ecx,[ebp-34h]"
+"	      004be610    mov eax,this"
+"	      004be613    mov ecx,this"
 "	      004be616    mov ecx,[ecx+40h]"
 "	      004be619    mov edx,[ecx]"
 "	      004be61b    mov ecx,[eax+40h]"
@@ -1854,8 +1854,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 497:
 	asm( 
-"	      004be621    mov eax,[ebp-34h]"
-"	      004be624    mov ecx,[ebp-34h]"
+"	      004be621    mov eax,this"
+"	      004be624    mov ecx,this"
 "	      004be627    mov ecx,[ecx+44h]"
 "	      004be62a    mov edx,[ecx]"
 "	      004be62c    mov ecx,[eax+44h]"
@@ -1863,8 +1863,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 498:
 	asm( 
-"	      004be632    mov eax,[ebp-34h]"
-"	      004be635    mov ecx,[ebp-34h]"
+"	      004be632    mov eax,this"
+"	      004be635    mov ecx,this"
 "	      004be638    mov ecx,[ecx+48h]"
 "	      004be63b    mov edx,[ecx]"
 "	      004be63d    mov ecx,[eax+48h]"
@@ -1872,8 +1872,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 499:
 	asm( 
-"	      004be643    mov eax,[ebp-34h]"
-"	      004be646    mov ecx,[ebp-34h]"
+"	      004be643    mov eax,this"
+"	      004be646    mov ecx,this"
 "	      004be649    mov ecx,[ecx+4Ch]"
 "	      004be64c    mov edx,[ecx]"
 "	      004be64e    mov ecx,[eax+4Ch]"
@@ -1881,8 +1881,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 500:
 	asm( 
-"	      004be654    mov eax,[ebp-34h]"
-"	      004be657    mov ecx,[ebp-34h]"
+"	      004be654    mov eax,this"
+"	      004be657    mov ecx,this"
 "	      004be65a    mov ecx,[ecx+50h]"
 "	      004be65d    mov edx,[ecx]"
 "	      004be65f    mov ecx,[eax+50h]"
@@ -1890,8 +1890,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 501:
 	asm( 
-"	      004be665    mov eax,[ebp-34h]"
-"	      004be668    mov ecx,[ebp-34h]"
+"	      004be665    mov eax,this"
+"	      004be668    mov ecx,this"
 "	      004be66b    mov ecx,[ecx+54h]"
 "	      004be66e    mov edx,[ecx]"
 "	      004be670    mov ecx,[eax+54h]"
@@ -1899,8 +1899,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 502:
 	asm( 
-"	      004be676    mov eax,[ebp-34h]"
-"	      004be679    mov ecx,[ebp-34h]"
+"	      004be676    mov eax,this"
+"	      004be679    mov ecx,this"
 "	      004be67c    mov ecx,[ecx+58h]"
 "	      004be67f    mov edx,[ecx]"
 "	      004be681    mov ecx,[eax+58h]"
@@ -1908,19 +1908,19 @@ void GameModePlayData::Awake() {
 );
 // LINE 504:
 	asm( 
-"	      004be687    mov ecx,[ebp-34h]"
+"	      004be687    mov ecx,this"
 "	      004be68a    call 004BF018h"
 );
 // LINE 505:
 	asm( 
-"	      004be68f    mov eax,[ebp-34h]"
+"	      004be68f    mov eax,this"
 "	      004be692    cmp dword ptr [eax+5Ch],0"
 "	      004be696    je near ptr 004BE6ADh"
 );
 // LINE 506:
 	asm( 
-"	      004be69c    mov eax,[ebp-34h]"
-"	      004be69f    mov ecx,[ebp-34h]"
+"	      004be69c    mov eax,this"
+"	      004be69f    mov ecx,this"
 "	      004be6a2    mov ecx,[ecx+5Ch]"
 "	      004be6a5    mov edx,[ecx]"
 "	      004be6a7    mov ecx,[eax+5Ch]"
@@ -1928,14 +1928,14 @@ void GameModePlayData::Awake() {
 );
 // LINE 507:
 	asm( 
-"	      004be6ad    mov eax,[ebp-34h]"
+"	      004be6ad    mov eax,this"
 "	      004be6b0    cmp dword ptr [eax+60h],0"
 "	      004be6b4    je near ptr 004BE6CBh"
 );
 // LINE 508:
 	asm( 
-"	      004be6ba    mov eax,[ebp-34h]"
-"	      004be6bd    mov ecx,[ebp-34h]"
+"	      004be6ba    mov eax,this"
+"	      004be6bd    mov ecx,this"
 "	      004be6c0    mov ecx,[ecx+60h]"
 "	      004be6c3    mov edx,[ecx]"
 "	      004be6c5    mov ecx,[eax+60h]"
@@ -1943,14 +1943,14 @@ void GameModePlayData::Awake() {
 );
 // LINE 509:
 	asm( 
-"	      004be6cb    mov eax,[ebp-34h]"
+"	      004be6cb    mov eax,this"
 "	      004be6ce    cmp dword ptr [eax+64h],0"
 "	      004be6d2    je near ptr 004BE6E9h"
 );
 // LINE 510:
 	asm( 
-"	      004be6d8    mov eax,[ebp-34h]"
-"	      004be6db    mov ecx,[ebp-34h]"
+"	      004be6d8    mov eax,this"
+"	      004be6db    mov ecx,this"
 "	      004be6de    mov ecx,[ecx+64h]"
 "	      004be6e1    mov edx,[ecx]"
 "	      004be6e3    mov ecx,[eax+64h]"
@@ -1958,14 +1958,14 @@ void GameModePlayData::Awake() {
 );
 // LINE 511:
 	asm( 
-"	      004be6e9    mov eax,[ebp-34h]"
+"	      004be6e9    mov eax,this"
 "	      004be6ec    cmp dword ptr [eax+68h],0"
 "	      004be6f0    je near ptr 004BE707h"
 );
 // LINE 512:
 	asm( 
-"	      004be6f6    mov eax,[ebp-34h]"
-"	      004be6f9    mov ecx,[ebp-34h]"
+"	      004be6f6    mov eax,this"
+"	      004be6f9    mov ecx,this"
 "	      004be6fc    mov ecx,[ecx+68h]"
 "	      004be6ff    mov edx,[ecx]"
 "	      004be701    mov ecx,[eax+68h]"
@@ -1973,8 +1973,8 @@ void GameModePlayData::Awake() {
 );
 // LINE 513:
 	asm( 
-"	      004be707    mov eax,[ebp-34h]"
-"	      004be70a    mov ecx,[ebp-34h]"
+"	      004be707    mov eax,this"
+"	      004be70a    mov ecx,this"
 "	      004be70d    mov ecx,[ecx+6Ch]"
 "	      004be710    mov edx,[ecx]"
 "	      004be712    mov ecx,[eax+6Ch]"
@@ -1982,10 +1982,10 @@ void GameModePlayData::Awake() {
 );
 // LINE 514:
 	asm( 
-"	      004be718    mov eax,[ebp-34h]"
+"	      004be718    mov eax,this"
 "	      004be71b    cmp dword ptr [eax+2Ch],0"
 "	      004be71f    je near ptr 004BE886h"
-"	      004be725    mov eax,[ebp-34h]"
+"	      004be725    mov eax,this"
 "	      004be728    mov eax,[eax+40h]"
 "	      004be72b    mov [ebp-4],eax"
 );
@@ -1994,7 +1994,7 @@ void GameModePlayData::Awake() {
 "	      004be72e    mov eax,[ebp-4]"
 "	      004be731    mov dword ptr [eax+54h],1"
 "	      004be738    jmp near ptr 004BE73Dh"
-"	      004be73d    mov eax,[ebp-34h]"
+"	      004be73d    mov eax,this"
 "	      004be740    mov eax,[eax+44h]"
 "	      004be743    mov [ebp-8],eax"
 );
@@ -2003,7 +2003,7 @@ void GameModePlayData::Awake() {
 "	      004be746    mov eax,[ebp-8]"
 "	      004be749    mov dword ptr [eax+54h],1"
 "	      004be750    jmp near ptr 004BE755h"
-"	      004be755    mov eax,[ebp-34h]"
+"	      004be755    mov eax,this"
 "	      004be758    mov eax,[eax+48h]"
 "	      004be75b    mov [ebp-0Ch],eax"
 );
@@ -2012,7 +2012,7 @@ void GameModePlayData::Awake() {
 "	      004be75e    mov eax,[ebp-0Ch]"
 "	      004be761    mov dword ptr [eax+54h],1"
 "	      004be768    jmp near ptr 004BE76Dh"
-"	      004be76d    mov eax,[ebp-34h]"
+"	      004be76d    mov eax,this"
 "	      004be770    mov eax,[eax+4Ch]"
 "	      004be773    mov [ebp-10h],eax"
 );
@@ -2021,7 +2021,7 @@ void GameModePlayData::Awake() {
 "	      004be776    mov eax,[ebp-10h]"
 "	      004be779    mov dword ptr [eax+54h],1"
 "	      004be780    jmp near ptr 004BE785h"
-"	      004be785    mov eax,[ebp-34h]"
+"	      004be785    mov eax,this"
 "	      004be788    mov eax,[eax+50h]"
 "	      004be78b    mov [ebp-14h],eax"
 );
@@ -2030,7 +2030,7 @@ void GameModePlayData::Awake() {
 "	      004be78e    mov eax,[ebp-14h]"
 "	      004be791    mov dword ptr [eax+54h],1"
 "	      004be798    jmp near ptr 004BE79Dh"
-"	      004be79d    mov eax,[ebp-34h]"
+"	      004be79d    mov eax,this"
 "	      004be7a0    mov eax,[eax+54h]"
 "	      004be7a3    mov [ebp-18h],eax"
 );
@@ -2039,7 +2039,7 @@ void GameModePlayData::Awake() {
 "	      004be7a6    mov eax,[ebp-18h]"
 "	      004be7a9    mov dword ptr [eax+54h],1"
 "	      004be7b0    jmp near ptr 004BE7B5h"
-"	      004be7b5    mov eax,[ebp-34h]"
+"	      004be7b5    mov eax,this"
 "	      004be7b8    mov eax,[eax+58h]"
 "	      004be7bb    mov [ebp-1Ch],eax"
 );
@@ -2048,7 +2048,7 @@ void GameModePlayData::Awake() {
 "	      004be7be    mov eax,[ebp-1Ch]"
 "	      004be7c1    mov dword ptr [eax+54h],1"
 "	      004be7c8    jmp near ptr 004BE7CDh"
-"	      004be7cd    mov eax,[ebp-34h]"
+"	      004be7cd    mov eax,this"
 "	      004be7d0    mov eax,[eax+6Ch]"
 "	      004be7d3    mov [ebp-20h],eax"
 );
@@ -2060,19 +2060,19 @@ void GameModePlayData::Awake() {
 );
 // LINE 523:
 	asm( 
-"	      004be7e5    mov eax,[ebp-34h]"
+"	      004be7e5    mov eax,this"
 "	      004be7e8    cmp dword ptr [eax+30h],0"
 "	      004be7ec    je near ptr 004BE886h"
 );
 // LINE 524:
 	asm( 
-"	      004be7f2    mov eax,[ebp-34h]"
+"	      004be7f2    mov eax,this"
 "	      004be7f5    cmp dword ptr [eax+5Ch],0"
 "	      004be7f9    je near ptr 004BE817h"
 );
 // LINE 525:
 	asm( 
-"	      004be7ff    mov eax,[ebp-34h]"
+"	      004be7ff    mov eax,this"
 "	      004be802    mov eax,[eax+5Ch]"
 "	      004be805    mov [ebp-24h],eax"
 "	      004be808    mov eax,[ebp-24h]"
@@ -2081,13 +2081,13 @@ void GameModePlayData::Awake() {
 );
 // LINE 526:
 	asm( 
-"	      004be817    mov eax,[ebp-34h]"
+"	      004be817    mov eax,this"
 "	      004be81a    cmp dword ptr [eax+60h],0"
 "	      004be81e    je near ptr 004BE83Ch"
 );
 // LINE 527:
 	asm( 
-"	      004be824    mov eax,[ebp-34h]"
+"	      004be824    mov eax,this"
 "	      004be827    mov eax,[eax+60h]"
 "	      004be82a    mov [ebp-28h],eax"
 "	      004be82d    mov eax,[ebp-28h]"
@@ -2096,13 +2096,13 @@ void GameModePlayData::Awake() {
 );
 // LINE 528:
 	asm( 
-"	      004be83c    mov eax,[ebp-34h]"
+"	      004be83c    mov eax,this"
 "	      004be83f    cmp dword ptr [eax+64h],0"
 "	      004be843    je near ptr 004BE861h"
 );
 // LINE 529:
 	asm( 
-"	      004be849    mov eax,[ebp-34h]"
+"	      004be849    mov eax,this"
 "	      004be84c    mov eax,[eax+64h]"
 "	      004be84f    mov [ebp-2Ch],eax"
 "	      004be852    mov eax,[ebp-2Ch]"
@@ -2111,13 +2111,13 @@ void GameModePlayData::Awake() {
 );
 // LINE 530:
 	asm( 
-"	      004be861    mov eax,[ebp-34h]"
+"	      004be861    mov eax,this"
 "	      004be864    cmp dword ptr [eax+68h],0"
 "	      004be868    je near ptr 004BE886h"
 );
 // LINE 531:
 	asm( 
-"	      004be86e    mov eax,[ebp-34h]"
+"	      004be86e    mov eax,this"
 "	      004be871    mov eax,[eax+68h]"
 "	      004be874    mov [ebp-30h],eax"
 "	      004be877    mov eax,[ebp-30h]"
@@ -2126,7 +2126,7 @@ void GameModePlayData::Awake() {
 );
 // LINE 534:
 	asm( 
-"	      004be886    mov ecx,[ebp-34h]"
+"	      004be886    mov ecx,this"
 "	      004be889    call 004BE305h"
 );
 // LINE 536:
@@ -2150,21 +2150,21 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 "	      004be89e    push ebx"
 "	      004be89f    push esi"
 "	      004be8a0    push edi"
-"	      004be8a1    mov [ebp-4],ecx"
+"	      004be8a1    mov this,ecx"
 );
 // LINE 543:
 	asm( 
-"	      004be8a4    mov ecx,[ebp-4]"
+"	      004be8a4    mov ecx,this"
 "	      004be8a7    call 004BF4FCh"
 );
 // LINE 544:
 	asm( 
-"	      004be8ac    mov ecx,[ebp-4]"
+"	      004be8ac    mov ecx,this"
 "	      004be8af    call 004BE8CBh"
 );
 // LINE 545:
 	asm( 
-"	      004be8b4    mov ecx,[ebp-4]"
+"	      004be8b4    mov ecx,this"
 "	      004be8b7    call 004BE16Eh"
 );
 // LINE 546:
@@ -2201,7 +2201,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004be8d4    push ebx"
 "	      004be8d5    push esi"
 "	      004be8d6    push edi"
-"	      004be8d7    mov [ebp-0D4h],ecx"
+"	      004be8d7    mov this,ecx"
 );
 // LINE 556:
 	asm( 
@@ -2250,66 +2250,66 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 565:
 	asm( 
-"	      004be93a    mov dword ptr [ebp-30h],0"
-"	      004be941    mov dword ptr [ebp-2Ch],0"
-"	      004be948    mov dword ptr [ebp-28h],10h"
-"	      004be94f    mov dword ptr [ebp-24h],10h"
+"	      004be93a    mov rectPanel0.left,0"
+"	      004be941    mov rectPanel0.top,0"
+"	      004be948    mov rectPanel0.right,10h"
+"	      004be94f    mov rectPanel0.bottom,10h"
 "	      004be956    jmp near ptr 004BE95Bh"
 );
 // LINE 566:
 	asm( 
-"	      004be95b    mov dword ptr [ebp-20h],1EEh"
-"	      004be962    mov dword ptr [ebp-1Ch],0"
-"	      004be969    mov dword ptr [ebp-18h],22Ch"
-"	      004be970    mov dword ptr [ebp-14h],3Eh"
+"	      004be95b    mov rectPanel1.left,1EEh"
+"	      004be962    mov rectPanel1.top,0"
+"	      004be969    mov rectPanel1.right,22Ch"
+"	      004be970    mov rectPanel1.bottom,3Eh"
 "	      004be977    jmp near ptr 004BE97Ch"
 );
 // LINE 567:
 	asm( 
-"	      004be97c    mov dword ptr [ebp-10h],22Ch"
-"	      004be983    mov dword ptr [ebp-0Ch],0"
-"	      004be98a    mov dword ptr [ebp-8],280h"
-"	      004be991    mov dword ptr [ebp-4],124h"
+"	      004be97c    mov rectPanel2.left,22Ch"
+"	      004be983    mov rectPanel2.top,0"
+"	      004be98a    mov rectPanel2.right,280h"
+"	      004be991    mov rectPanel2.bottom,124h"
 "	      004be998    jmp near ptr 004BE99Dh"
 );
 // LINE 568:
 	asm( 
-"	      004be99d    mov dword ptr [ebp-80h],212h"
-"	      004be9a4    mov dword ptr [ebp-7Ch],3Eh"
-"	      004be9ab    mov dword ptr [ebp-78h],22Ch"
-"	      004be9b2    mov dword ptr [ebp-74h],124h"
+"	      004be99d    mov rectPanel3.left,212h"
+"	      004be9a4    mov rectPanel3.top,3Eh"
+"	      004be9ab    mov rectPanel3.right,22Ch"
+"	      004be9b2    mov rectPanel3.bottom,124h"
 "	      004be9b9    jmp near ptr 004BE9BEh"
 );
 // LINE 569:
 	asm( 
-"	      004be9be    mov dword ptr [ebp-70h],0"
-"	      004be9c5    mov dword ptr [ebp-6Ch],163h"
-"	      004be9cc    mov dword ptr [ebp-68h],1C8h"
-"	      004be9d3    mov dword ptr [ebp-64h],18Eh"
+"	      004be9be    mov rectPanel4.left,0"
+"	      004be9c5    mov rectPanel4.top,163h"
+"	      004be9cc    mov rectPanel4.right,1C8h"
+"	      004be9d3    mov rectPanel4.bottom,18Eh"
 "	      004be9da    jmp near ptr 004BE9DFh"
 );
 // LINE 570:
 	asm( 
-"	      004be9df    mov dword ptr [ebp-60h],1C7h"
-"	      004be9e6    mov dword ptr [ebp-5Ch],122h"
-"	      004be9ed    mov dword ptr [ebp-58h],280h"
-"	      004be9f4    mov dword ptr [ebp-54h],1B6h"
+"	      004be9df    mov rectPanel5.left,1C7h"
+"	      004be9e6    mov rectPanel5.top,122h"
+"	      004be9ed    mov rectPanel5.right,280h"
+"	      004be9f4    mov rectPanel5.bottom,1B6h"
 "	      004be9fb    jmp near ptr 004BEA00h"
 );
 // LINE 571:
 	asm( 
-"	      004bea00    mov dword ptr [ebp-40h],0"
-"	      004bea07    mov dword ptr [ebp-3Ch],18Eh"
-"	      004bea0e    mov dword ptr [ebp-38h],1C8h"
-"	      004bea15    mov dword ptr [ebp-34h],1E0h"
+"	      004bea00    mov rectPanel6.left,0"
+"	      004bea07    mov rectPanel6.top,18Eh"
+"	      004bea0e    mov rectPanel6.right,1C8h"
+"	      004bea15    mov rectPanel6.bottom,1E0h"
 "	      004bea1c    jmp near ptr 004BEA21h"
 );
 // LINE 572:
 	asm( 
-"	      004bea21    mov dword ptr [ebp-50h],1C6h"
-"	      004bea28    mov dword ptr [ebp-4Ch],1B5h"
-"	      004bea2f    mov dword ptr [ebp-48h],280h"
-"	      004bea36    mov dword ptr [ebp-44h],1E0h"
+"	      004bea21    mov rectPassengerWindow.left,1C6h"
+"	      004bea28    mov rectPassengerWindow.top,1B5h"
+"	      004bea2f    mov rectPassengerWindow.right,280h"
+"	      004bea36    mov rectPassengerWindow.bottom,1E0h"
 "	      004bea3d    jmp near ptr 004BEA42h"
 );
 // LINE 574:
@@ -2335,27 +2335,27 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bea83    push 0FFFFFFFFh"
 "	      004bea85    push 1"
 "	      004bea87    push 0"
-"	      004bea89    mov eax,[ebp-0D4h]"
+"	      004bea89    mov eax,this"
 "	      004bea8f    mov eax,[eax+10h]"
 "	      004bea92    push eax"
 "	      004bea93    push 0"
-"	      004bea95    lea eax,[ebp-30h]"
+"	      004bea95    lea eax,rectPanel0.left"
 "	      004bea98    push eax"
 "	      004bea99    mov eax,ds:[59AED4h]"
 "	      004bea9e    push eax"
 "	      004bea9f    mov ecx,[ebp-84h]"
 "	      004beaa5    call 004A393Dh"
-"	      004beaaa    mov ecx,[ebp-0D4h]"
+"	      004beaaa    mov ecx,this"
 "	      004beab0    mov [ecx+40h],eax"
 "	      004beab3    jmp near ptr 004BEAC5h"
-"	      004beab8    mov eax,[ebp-0D4h]"
+"	      004beab8    mov eax,this"
 "	      004beabe    mov dword ptr [eax+40h],0"
 );
 // LINE 582:
 	asm( 
 "	      004beac5    push 0FEh"
-"	      004beaca    mov eax,[ebp-0D4h]"
-"	      004bead0    mov ecx,[ebp-0D4h]"
+"	      004beaca    mov eax,this"
+"	      004bead0    mov ecx,this"
 "	      004bead6    mov ecx,[ecx+40h]"
 "	      004bead9    mov edx,[ecx]"
 "	      004beadb    mov ecx,[eax+40h]"
@@ -2372,27 +2372,27 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004beafe    push 0FFFFFFFFh"
 "	      004beb00    push 1"
 "	      004beb02    push 0"
-"	      004beb04    mov eax,[ebp-0D4h]"
+"	      004beb04    mov eax,this"
 "	      004beb0a    mov eax,[eax+10h]"
 "	      004beb0d    push eax"
 "	      004beb0e    push 0"
-"	      004beb10    lea eax,[ebp-20h]"
+"	      004beb10    lea eax,rectPanel1.left"
 "	      004beb13    push eax"
 "	      004beb14    mov eax,ds:[59AED8h]"
 "	      004beb19    push eax"
 "	      004beb1a    mov ecx,[ebp-88h]"
 "	      004beb20    call 004A393Dh"
-"	      004beb25    mov ecx,[ebp-0D4h]"
+"	      004beb25    mov ecx,this"
 "	      004beb2b    mov [ecx+44h],eax"
 "	      004beb2e    jmp near ptr 004BEB40h"
-"	      004beb33    mov eax,[ebp-0D4h]"
+"	      004beb33    mov eax,this"
 "	      004beb39    mov dword ptr [eax+44h],0"
 );
 // LINE 585:
 	asm( 
 "	      004beb40    push 0FEh"
-"	      004beb45    mov eax,[ebp-0D4h]"
-"	      004beb4b    mov ecx,[ebp-0D4h]"
+"	      004beb45    mov eax,this"
+"	      004beb4b    mov ecx,this"
 "	      004beb51    mov ecx,[ecx+44h]"
 "	      004beb54    mov edx,[ecx]"
 "	      004beb56    mov ecx,[eax+44h]"
@@ -2409,27 +2409,27 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004beb79    push 0FFFFFFFFh"
 "	      004beb7b    push 1"
 "	      004beb7d    push 0"
-"	      004beb7f    mov eax,[ebp-0D4h]"
+"	      004beb7f    mov eax,this"
 "	      004beb85    mov eax,[eax+10h]"
 "	      004beb88    push eax"
 "	      004beb89    push 0"
-"	      004beb8b    lea eax,[ebp-10h]"
+"	      004beb8b    lea eax,rectPanel2.left"
 "	      004beb8e    push eax"
 "	      004beb8f    mov eax,ds:[59AEDCh]"
 "	      004beb94    push eax"
 "	      004beb95    mov ecx,[ebp-8Ch]"
 "	      004beb9b    call 004A393Dh"
-"	      004beba0    mov ecx,[ebp-0D4h]"
+"	      004beba0    mov ecx,this"
 "	      004beba6    mov [ecx+48h],eax"
 "	      004beba9    jmp near ptr 004BEBBBh"
-"	      004bebae    mov eax,[ebp-0D4h]"
+"	      004bebae    mov eax,this"
 "	      004bebb4    mov dword ptr [eax+48h],0"
 );
 // LINE 588:
 	asm( 
 "	      004bebbb    push 0FFFFFFFFh"
-"	      004bebbd    mov eax,[ebp-0D4h]"
-"	      004bebc3    mov ecx,[ebp-0D4h]"
+"	      004bebbd    mov eax,this"
+"	      004bebc3    mov ecx,this"
 "	      004bebc9    mov ecx,[ecx+48h]"
 "	      004bebcc    mov edx,[ecx]"
 "	      004bebce    mov ecx,[eax+48h]"
@@ -2446,27 +2446,27 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bebf1    push 0FFFFFFFFh"
 "	      004bebf3    push 1"
 "	      004bebf5    push 0"
-"	      004bebf7    mov eax,[ebp-0D4h]"
+"	      004bebf7    mov eax,this"
 "	      004bebfd    mov eax,[eax+10h]"
 "	      004bec00    push eax"
 "	      004bec01    push 0"
-"	      004bec03    lea eax,[ebp-80h]"
+"	      004bec03    lea eax,rectPanel3.left"
 "	      004bec06    push eax"
 "	      004bec07    mov eax,ds:[59AEE0h]"
 "	      004bec0c    push eax"
 "	      004bec0d    mov ecx,[ebp-90h]"
 "	      004bec13    call 004A393Dh"
-"	      004bec18    mov ecx,[ebp-0D4h]"
+"	      004bec18    mov ecx,this"
 "	      004bec1e    mov [ecx+4Ch],eax"
 "	      004bec21    jmp near ptr 004BEC33h"
-"	      004bec26    mov eax,[ebp-0D4h]"
+"	      004bec26    mov eax,this"
 "	      004bec2c    mov dword ptr [eax+4Ch],0"
 );
 // LINE 591:
 	asm( 
 "	      004bec33    push 0FEh"
-"	      004bec38    mov eax,[ebp-0D4h]"
-"	      004bec3e    mov ecx,[ebp-0D4h]"
+"	      004bec38    mov eax,this"
+"	      004bec3e    mov ecx,this"
 "	      004bec44    mov ecx,[ecx+4Ch]"
 "	      004bec47    mov edx,[ecx]"
 "	      004bec49    mov ecx,[eax+4Ch]"
@@ -2483,24 +2483,24 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bec6f    push 1"
 "	      004bec71    push 0"
 "	      004bec73    push 604480h"
-"	      004bec78    mov eax,[ebp-0D4h]"
+"	      004bec78    mov eax,this"
 "	      004bec7e    mov eax,[eax+10h]"
 "	      004bec81    push eax"
 "	      004bec82    push 0"
-"	      004bec84    lea eax,[ebp-70h]"
+"	      004bec84    lea eax,rectPanel4.left"
 "	      004bec87    push eax"
 "	      004bec88    mov ecx,[ebp-94h]"
 "	      004bec8e    call 00448270h"
-"	      004bec93    mov ecx,[ebp-0D4h]"
+"	      004bec93    mov ecx,this"
 "	      004bec99    mov [ecx+50h],eax"
 "	      004bec9c    jmp near ptr 004BECAEh"
-"	      004beca1    mov eax,[ebp-0D4h]"
+"	      004beca1    mov eax,this"
 "	      004beca7    mov dword ptr [eax+50h],0"
 );
 // LINE 594:
 	asm( 
-"	      004becae    mov eax,[ebp-0D4h]"
-"	      004becb4    mov ecx,[ebp-0D4h]"
+"	      004becae    mov eax,this"
+"	      004becb4    mov ecx,this"
 "	      004becba    mov ecx,[ecx+50h]"
 "	      004becbd    mov edx,[ecx]"
 "	      004becbf    mov ecx,[eax+50h]"
@@ -2516,24 +2516,24 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004becdf    je near ptr 004BED12h"
 "	      004bece5    push 1"
 "	      004bece7    push 0"
-"	      004bece9    mov eax,[ebp-0D4h]"
+"	      004bece9    mov eax,this"
 "	      004becef    mov eax,[eax+10h]"
 "	      004becf2    push eax"
 "	      004becf3    push 0"
-"	      004becf5    lea eax,[ebp-60h]"
+"	      004becf5    lea eax,rectPanel5.left"
 "	      004becf8    push eax"
 "	      004becf9    mov ecx,[ebp-98h]"
 "	      004becff    call 0044D2C4h"
-"	      004bed04    mov ecx,[ebp-0D4h]"
+"	      004bed04    mov ecx,this"
 "	      004bed0a    mov [ecx+54h],eax"
 "	      004bed0d    jmp near ptr 004BED1Fh"
-"	      004bed12    mov eax,[ebp-0D4h]"
+"	      004bed12    mov eax,this"
 "	      004bed18    mov dword ptr [eax+54h],0"
 );
 // LINE 597:
 	asm( 
-"	      004bed1f    mov eax,[ebp-0D4h]"
-"	      004bed25    mov ecx,[ebp-0D4h]"
+"	      004bed1f    mov eax,this"
+"	      004bed25    mov ecx,this"
 "	      004bed2b    mov ecx,[ecx+54h]"
 "	      004bed2e    mov edx,[ecx]"
 "	      004bed30    mov ecx,[eax+54h]"
@@ -2549,27 +2549,27 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bed50    je near ptr 004BED8Dh"
 "	      004bed56    push 1"
 "	      004bed58    push 0"
-"	      004bed5a    mov eax,[ebp-0D4h]"
+"	      004bed5a    mov eax,this"
 "	      004bed60    mov eax,[eax+10h]"
 "	      004bed63    push eax"
-"	      004bed64    mov eax,[ebp-0D4h]"
+"	      004bed64    mov eax,this"
 "	      004bed6a    add eax,70h"
 "	      004bed6d    push eax"
 "	      004bed6e    push 0"
-"	      004bed70    lea eax,[ebp-40h]"
+"	      004bed70    lea eax,rectPanel6.left"
 "	      004bed73    push eax"
 "	      004bed74    mov ecx,[ebp-9Ch]"
 "	      004bed7a    call 004490D7h"
-"	      004bed7f    mov ecx,[ebp-0D4h]"
+"	      004bed7f    mov ecx,this"
 "	      004bed85    mov [ecx+58h],eax"
 "	      004bed88    jmp near ptr 004BED9Ah"
-"	      004bed8d    mov eax,[ebp-0D4h]"
+"	      004bed8d    mov eax,this"
 "	      004bed93    mov dword ptr [eax+58h],0"
 );
 // LINE 600:
 	asm( 
-"	      004bed9a    mov eax,[ebp-0D4h]"
-"	      004beda0    mov ecx,[ebp-0D4h]"
+"	      004bed9a    mov eax,this"
+"	      004beda0    mov ecx,this"
 "	      004beda6    mov ecx,[ecx+58h]"
 "	      004beda9    mov edx,[ecx]"
 "	      004bedab    mov ecx,[eax+58h]"
@@ -2577,7 +2577,7 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 602:
 	asm( 
-"	      004bedb1    mov ecx,[ebp-0D4h]"
+"	      004bedb1    mov ecx,this"
 "	      004bedb7    call 004BF018h"
 );
 // LINE 604:
@@ -2590,24 +2590,24 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bedd6    je near ptr 004BEE09h"
 "	      004beddc    push 1"
 "	      004bedde    push 0"
-"	      004bede0    mov eax,[ebp-0D4h]"
+"	      004bede0    mov eax,this"
 "	      004bede6    mov eax,[eax+10h]"
 "	      004bede9    push eax"
 "	      004bedea    push 0"
-"	      004bedec    lea eax,[ebp-50h]"
+"	      004bedec    lea eax,rectPassengerWindow.left"
 "	      004bedef    push eax"
 "	      004bedf0    mov ecx,[ebp-0A0h]"
 "	      004bedf6    call 0044BE4Ah"
-"	      004bedfb    mov ecx,[ebp-0D4h]"
+"	      004bedfb    mov ecx,this"
 "	      004bee01    mov [ecx+6Ch],eax"
 "	      004bee04    jmp near ptr 004BEE16h"
-"	      004bee09    mov eax,[ebp-0D4h]"
+"	      004bee09    mov eax,this"
 "	      004bee0f    mov dword ptr [eax+6Ch],0"
 );
 // LINE 605:
 	asm( 
-"	      004bee16    mov eax,[ebp-0D4h]"
-"	      004bee1c    mov ecx,[ebp-0D4h]"
+"	      004bee16    mov eax,this"
+"	      004bee1c    mov ecx,this"
 "	      004bee22    mov ecx,[ecx+6Ch]"
 "	      004bee25    mov edx,[ecx]"
 "	      004bee27    mov ecx,[eax+6Ch]"
@@ -2615,10 +2615,10 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 609:
 	asm( 
-"	      004bee2d    mov eax,[ebp-0D4h]"
+"	      004bee2d    mov eax,this"
 "	      004bee33    cmp dword ptr [eax+2Ch],0"
 "	      004bee37    jne near ptr 004BF009h"
-"	      004bee3d    mov eax,[ebp-0D4h]"
+"	      004bee3d    mov eax,this"
 "	      004bee43    mov eax,[eax+40h]"
 "	      004bee46    mov [ebp-0A4h],eax"
 );
@@ -2627,7 +2627,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bee4c    mov eax,[ebp-0A4h]"
 "	      004bee52    mov dword ptr [eax+54h],0"
 "	      004bee59    jmp near ptr 004BEE5Eh"
-"	      004bee5e    mov eax,[ebp-0D4h]"
+"	      004bee5e    mov eax,this"
 "	      004bee64    mov eax,[eax+44h]"
 "	      004bee67    mov [ebp-0A8h],eax"
 );
@@ -2636,7 +2636,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bee6d    mov eax,[ebp-0A8h]"
 "	      004bee73    mov dword ptr [eax+54h],0"
 "	      004bee7a    jmp near ptr 004BEE7Fh"
-"	      004bee7f    mov eax,[ebp-0D4h]"
+"	      004bee7f    mov eax,this"
 "	      004bee85    mov eax,[eax+48h]"
 "	      004bee88    mov [ebp-0ACh],eax"
 );
@@ -2645,7 +2645,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bee8e    mov eax,[ebp-0ACh]"
 "	      004bee94    mov dword ptr [eax+54h],0"
 "	      004bee9b    jmp near ptr 004BEEA0h"
-"	      004beea0    mov eax,[ebp-0D4h]"
+"	      004beea0    mov eax,this"
 "	      004beea6    mov eax,[eax+4Ch]"
 "	      004beea9    mov [ebp-0B0h],eax"
 );
@@ -2654,7 +2654,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004beeaf    mov eax,[ebp-0B0h]"
 "	      004beeb5    mov dword ptr [eax+54h],0"
 "	      004beebc    jmp near ptr 004BEEC1h"
-"	      004beec1    mov eax,[ebp-0D4h]"
+"	      004beec1    mov eax,this"
 "	      004beec7    mov eax,[eax+50h]"
 "	      004beeca    mov [ebp-0B4h],eax"
 );
@@ -2663,7 +2663,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004beed0    mov eax,[ebp-0B4h]"
 "	      004beed6    mov dword ptr [eax+54h],0"
 "	      004beedd    jmp near ptr 004BEEE2h"
-"	      004beee2    mov eax,[ebp-0D4h]"
+"	      004beee2    mov eax,this"
 "	      004beee8    mov eax,[eax+54h]"
 "	      004beeeb    mov [ebp-0B8h],eax"
 );
@@ -2672,7 +2672,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004beef1    mov eax,[ebp-0B8h]"
 "	      004beef7    mov dword ptr [eax+54h],0"
 "	      004beefe    jmp near ptr 004BEF03h"
-"	      004bef03    mov eax,[ebp-0D4h]"
+"	      004bef03    mov eax,this"
 "	      004bef09    mov eax,[eax+58h]"
 "	      004bef0c    mov [ebp-0BCh],eax"
 );
@@ -2681,7 +2681,7 @@ int32_t GameModePlayData::CreatePanels() {
 "	      004bef12    mov eax,[ebp-0BCh]"
 "	      004bef18    mov dword ptr [eax+54h],0"
 "	      004bef1f    jmp near ptr 004BEF24h"
-"	      004bef24    mov eax,[ebp-0D4h]"
+"	      004bef24    mov eax,this"
 "	      004bef2a    mov eax,[eax+6Ch]"
 "	      004bef2d    mov [ebp-0C0h],eax"
 );
@@ -2693,13 +2693,13 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 618:
 	asm( 
-"	      004bef45    mov eax,[ebp-0D4h]"
+"	      004bef45    mov eax,this"
 "	      004bef4b    cmp dword ptr [eax+5Ch],0"
 "	      004bef4f    je near ptr 004BEF76h"
 );
 // LINE 619:
 	asm( 
-"	      004bef55    mov eax,[ebp-0D4h]"
+"	      004bef55    mov eax,this"
 "	      004bef5b    mov eax,[eax+5Ch]"
 "	      004bef5e    mov [ebp-0C4h],eax"
 "	      004bef64    mov eax,[ebp-0C4h]"
@@ -2708,13 +2708,13 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 620:
 	asm( 
-"	      004bef76    mov eax,[ebp-0D4h]"
+"	      004bef76    mov eax,this"
 "	      004bef7c    cmp dword ptr [eax+60h],0"
 "	      004bef80    je near ptr 004BEFA7h"
 );
 // LINE 621:
 	asm( 
-"	      004bef86    mov eax,[ebp-0D4h]"
+"	      004bef86    mov eax,this"
 "	      004bef8c    mov eax,[eax+60h]"
 "	      004bef8f    mov [ebp-0C8h],eax"
 "	      004bef95    mov eax,[ebp-0C8h]"
@@ -2723,13 +2723,13 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 622:
 	asm( 
-"	      004befa7    mov eax,[ebp-0D4h]"
+"	      004befa7    mov eax,this"
 "	      004befad    cmp dword ptr [eax+64h],0"
 "	      004befb1    je near ptr 004BEFD8h"
 );
 // LINE 623:
 	asm( 
-"	      004befb7    mov eax,[ebp-0D4h]"
+"	      004befb7    mov eax,this"
 "	      004befbd    mov eax,[eax+64h]"
 "	      004befc0    mov [ebp-0CCh],eax"
 "	      004befc6    mov eax,[ebp-0CCh]"
@@ -2738,13 +2738,13 @@ int32_t GameModePlayData::CreatePanels() {
 );
 // LINE 624:
 	asm( 
-"	      004befd8    mov eax,[ebp-0D4h]"
+"	      004befd8    mov eax,this"
 "	      004befde    cmp dword ptr [eax+68h],0"
 "	      004befe2    je near ptr 004BF009h"
 );
 // LINE 625:
 	asm( 
-"	      004befe8    mov eax,[ebp-0D4h]"
+"	      004befe8    mov eax,this"
 "	      004befee    mov eax,[eax+68h]"
 "	      004beff1    mov [ebp-0D0h],eax"
 "	      004beff7    mov eax,[ebp-0D0h]"
@@ -2782,7 +2782,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf01e    push ebx"
 "	      004bf01f    push esi"
 "	      004bf020    push edi"
-"	      004bf021    mov [ebp-74h],ecx"
+"	      004bf021    mov this,ecx"
 );
 // LINE 638:
 	asm( 
@@ -2807,7 +2807,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 642:
 	asm( 
 "	      004bf04c    call 00428F4Ah"
-"	      004bf051    mov [ebp-24h],eax"
+"	      004bf051    mov userPersonalInfo,eax"
 );
 // LINE 644:
 	asm( 
@@ -2816,45 +2816,45 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 645:
 	asm( 
-"	      004bf061    mov dword ptr [ebp-44h],1F6h"
-"	      004bf068    mov dword ptr [ebp-40h],18h"
-"	      004bf06f    mov dword ptr [ebp-3Ch],280h"
-"	      004bf076    mov dword ptr [ebp-38h],52h"
+"	      004bf061    mov rectFlap0.left,1F6h"
+"	      004bf068    mov rectFlap0.top,18h"
+"	      004bf06f    mov rectFlap0.right,280h"
+"	      004bf076    mov rectFlap0.bottom,52h"
 "	      004bf07d    jmp near ptr 004BF082h"
 );
 // LINE 646:
 	asm( 
-"	      004bf082    mov dword ptr [ebp-20h],1F6h"
-"	      004bf089    mov dword ptr [ebp-1Ch],5Ah"
-"	      004bf090    mov dword ptr [ebp-18h],280h"
-"	      004bf097    mov dword ptr [ebp-14h],94h"
+"	      004bf082    mov rectFlap1.left,1F6h"
+"	      004bf089    mov rectFlap1.top,5Ah"
+"	      004bf090    mov rectFlap1.right,280h"
+"	      004bf097    mov rectFlap1.bottom,94h"
 "	      004bf09e    jmp near ptr 004BF0A3h"
 );
 // LINE 647:
 	asm( 
-"	      004bf0a3    mov dword ptr [ebp-34h],1F6h"
-"	      004bf0aa    mov dword ptr [ebp-30h],9Ch"
-"	      004bf0b1    mov dword ptr [ebp-2Ch],280h"
-"	      004bf0b8    mov dword ptr [ebp-28h],0D6h"
+"	      004bf0a3    mov rectFlap2.left,1F6h"
+"	      004bf0aa    mov rectFlap2.top,9Ch"
+"	      004bf0b1    mov rectFlap2.right,280h"
+"	      004bf0b8    mov rectFlap2.bottom,0D6h"
 "	      004bf0bf    jmp near ptr 004BF0C4h"
 );
 // LINE 648:
 	asm( 
-"	      004bf0c4    mov dword ptr [ebp-10h],1F6h"
-"	      004bf0cb    mov dword ptr [ebp-0Ch],0DEh"
-"	      004bf0d2    mov dword ptr [ebp-8],280h"
-"	      004bf0d9    mov dword ptr [ebp-4],118h"
+"	      004bf0c4    mov rectFlap3.left,1F6h"
+"	      004bf0cb    mov rectFlap3.top,0DEh"
+"	      004bf0d2    mov rectFlap3.right,280h"
+"	      004bf0d9    mov rectFlap3.bottom,118h"
 "	      004bf0e0    jmp near ptr 004BF0E5h"
 );
 // LINE 651:
 	asm( 
-"	      004bf0e5    mov eax,[ebp-24h]"
+"	      004bf0e5    mov eax,userPersonalInfo"
 "	      004bf0e8    test byte ptr [eax+48h],1"
 "	      004bf0ec    je near ptr 004BF1A3h"
 );
 // LINE 652:
 	asm( 
-"	      004bf0f2    mov eax,[ebp-74h]"
+"	      004bf0f2    mov eax,this"
 "	      004bf0f5    cmp dword ptr [eax+5Ch],0"
 "	      004bf0f9    jne near ptr 004BF19Eh"
 );
@@ -2867,29 +2867,29 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf10f    cmp dword ptr [ebp-48h],0"
 "	      004bf113    je near ptr 004BF148h"
 "	      004bf119    push 0"
-"	      004bf11b    mov eax,[ebp-74h]"
+"	      004bf11b    mov eax,this"
 "	      004bf11e    mov eax,[eax+10h]"
 "	      004bf121    push eax"
-"	      004bf122    mov eax,[ebp-74h]"
+"	      004bf122    mov eax,this"
 "	      004bf125    add eax,70h"
 "	      004bf128    push eax"
 "	      004bf129    push 0"
-"	      004bf12b    lea eax,[ebp-44h]"
+"	      004bf12b    lea eax,rectFlap0.left"
 "	      004bf12e    push eax"
 "	      004bf12f    mov eax,ds:[59AEF0h]"
 "	      004bf134    push eax"
 "	      004bf135    mov ecx,[ebp-48h]"
 "	      004bf138    call 0044E44Ah"
-"	      004bf13d    mov ecx,[ebp-74h]"
+"	      004bf13d    mov ecx,this"
 "	      004bf140    mov [ecx+5Ch],eax"
 "	      004bf143    jmp near ptr 004BF152h"
-"	      004bf148    mov eax,[ebp-74h]"
+"	      004bf148    mov eax,this"
 "	      004bf14b    mov dword ptr [eax+5Ch],0"
 );
 // LINE 654:
 	asm( 
-"	      004bf152    mov eax,[ebp-74h]"
-"	      004bf155    mov ecx,[ebp-74h]"
+"	      004bf152    mov eax,this"
+"	      004bf155    mov ecx,this"
 "	      004bf158    mov ecx,[ecx+5Ch]"
 "	      004bf15b    mov edx,[ecx]"
 "	      004bf15d    mov ecx,[eax+5Ch]"
@@ -2898,8 +2898,8 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 655:
 	asm( 
 "	      004bf163    push 0FEh"
-"	      004bf168    mov eax,[ebp-74h]"
-"	      004bf16b    mov ecx,[ebp-74h]"
+"	      004bf168    mov eax,this"
+"	      004bf16b    mov ecx,this"
 "	      004bf16e    mov ecx,[ecx+5Ch]"
 "	      004bf171    mov edx,[ecx]"
 "	      004bf173    mov ecx,[eax+5Ch]"
@@ -2912,7 +2912,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 657:
 	asm( 
-"	      004bf186    mov eax,[ebp-74h]"
+"	      004bf186    mov eax,this"
 "	      004bf189    mov eax,[eax+5Ch]"
 "	      004bf18c    mov [ebp-64h],eax"
 "	      004bf18f    mov eax,[ebp-64h]"
@@ -2925,14 +2925,14 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 661:
 	asm( 
-"	      004bf1a3    mov eax,[ebp-74h]"
+"	      004bf1a3    mov eax,this"
 "	      004bf1a6    cmp dword ptr [eax+5Ch],0"
 "	      004bf1aa    je near ptr 004BF1CBh"
 );
 // LINE 662:
 	asm( 
-"	      004bf1b0    mov eax,[ebp-74h]"
-"	      004bf1b3    mov ecx,[ebp-74h]"
+"	      004bf1b0    mov eax,this"
+"	      004bf1b3    mov ecx,this"
 "	      004bf1b6    mov ecx,[ecx+5Ch]"
 "	      004bf1b9    mov edx,[ecx]"
 "	      004bf1bb    mov ecx,[eax+5Ch]"
@@ -2940,18 +2940,18 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 663:
 	asm( 
-"	      004bf1c1    mov eax,[ebp-74h]"
+"	      004bf1c1    mov eax,this"
 "	      004bf1c4    mov dword ptr [eax+5Ch],0"
 );
 // LINE 666:
 	asm( 
-"	      004bf1cb    mov eax,[ebp-24h]"
+"	      004bf1cb    mov eax,userPersonalInfo"
 "	      004bf1ce    test byte ptr [eax+48h],2"
 "	      004bf1d2    je near ptr 004BF2B0h"
 );
 // LINE 667:
 	asm( 
-"	      004bf1d8    mov eax,[ebp-74h]"
+"	      004bf1d8    mov eax,this"
 "	      004bf1db    cmp dword ptr [eax+60h],0"
 "	      004bf1df    jne near ptr 004BF2ABh"
 );
@@ -2963,10 +2963,10 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf1f2    mov [ebp-4Ch],eax"
 "	      004bf1f5    cmp dword ptr [ebp-4Ch],0"
 "	      004bf1f9    je near ptr 004BF255h"
-"	      004bf1ff    mov eax,[ebp-74h]"
+"	      004bf1ff    mov eax,this"
 "	      004bf202    cmp dword ptr [eax+0Ch],0"
 "	      004bf206    je near ptr 004BF21Dh"
-"	      004bf20c    mov eax,[ebp-74h]"
+"	      004bf20c    mov eax,this"
 "	      004bf20f    mov eax,[eax+0Ch]"
 "	      004bf212    add eax,14h"
 "	      004bf215    mov [ebp-58h],eax"
@@ -2974,29 +2974,29 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf21d    mov dword ptr [ebp-58h],0"
 "	      004bf224    mov eax,[ebp-58h]"
 "	      004bf227    push eax"
-"	      004bf228    mov eax,[ebp-74h]"
+"	      004bf228    mov eax,this"
 "	      004bf22b    mov eax,[eax+10h]"
 "	      004bf22e    push eax"
-"	      004bf22f    mov eax,[ebp-74h]"
+"	      004bf22f    mov eax,this"
 "	      004bf232    add eax,70h"
 "	      004bf235    push eax"
 "	      004bf236    push 1"
-"	      004bf238    lea eax,[ebp-20h]"
+"	      004bf238    lea eax,rectFlap1.left"
 "	      004bf23b    push eax"
 "	      004bf23c    mov eax,ds:[59AEF4h]"
 "	      004bf241    push eax"
 "	      004bf242    mov ecx,[ebp-4Ch]"
 "	      004bf245    call 0044E44Ah"
-"	      004bf24a    mov ecx,[ebp-74h]"
+"	      004bf24a    mov ecx,this"
 "	      004bf24d    mov [ecx+60h],eax"
 "	      004bf250    jmp near ptr 004BF25Fh"
-"	      004bf255    mov eax,[ebp-74h]"
+"	      004bf255    mov eax,this"
 "	      004bf258    mov dword ptr [eax+60h],0"
 );
 // LINE 669:
 	asm( 
-"	      004bf25f    mov eax,[ebp-74h]"
-"	      004bf262    mov ecx,[ebp-74h]"
+"	      004bf25f    mov eax,this"
+"	      004bf262    mov ecx,this"
 "	      004bf265    mov ecx,[ecx+60h]"
 "	      004bf268    mov edx,[ecx]"
 "	      004bf26a    mov ecx,[eax+60h]"
@@ -3005,8 +3005,8 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 670:
 	asm( 
 "	      004bf270    push 0FEh"
-"	      004bf275    mov eax,[ebp-74h]"
-"	      004bf278    mov ecx,[ebp-74h]"
+"	      004bf275    mov eax,this"
+"	      004bf278    mov ecx,this"
 "	      004bf27b    mov ecx,[ecx+60h]"
 "	      004bf27e    mov edx,[ecx]"
 "	      004bf280    mov ecx,[eax+60h]"
@@ -3019,7 +3019,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 672:
 	asm( 
-"	      004bf293    mov eax,[ebp-74h]"
+"	      004bf293    mov eax,this"
 "	      004bf296    mov eax,[eax+60h]"
 "	      004bf299    mov [ebp-68h],eax"
 "	      004bf29c    mov eax,[ebp-68h]"
@@ -3032,14 +3032,14 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 676:
 	asm( 
-"	      004bf2b0    mov eax,[ebp-74h]"
+"	      004bf2b0    mov eax,this"
 "	      004bf2b3    cmp dword ptr [eax+60h],0"
 "	      004bf2b7    je near ptr 004BF2D8h"
 );
 // LINE 677:
 	asm( 
-"	      004bf2bd    mov eax,[ebp-74h]"
-"	      004bf2c0    mov ecx,[ebp-74h]"
+"	      004bf2bd    mov eax,this"
+"	      004bf2c0    mov ecx,this"
 "	      004bf2c3    mov ecx,[ecx+60h]"
 "	      004bf2c6    mov edx,[ecx]"
 "	      004bf2c8    mov ecx,[eax+60h]"
@@ -3047,18 +3047,18 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 678:
 	asm( 
-"	      004bf2ce    mov eax,[ebp-74h]"
+"	      004bf2ce    mov eax,this"
 "	      004bf2d1    mov dword ptr [eax+60h],0"
 );
 // LINE 681:
 	asm( 
-"	      004bf2d8    mov eax,[ebp-24h]"
+"	      004bf2d8    mov eax,userPersonalInfo"
 "	      004bf2db    test byte ptr [eax+48h],4"
 "	      004bf2df    je near ptr 004BF3BDh"
 );
 // LINE 682:
 	asm( 
-"	      004bf2e5    mov eax,[ebp-74h]"
+"	      004bf2e5    mov eax,this"
 "	      004bf2e8    cmp dword ptr [eax+64h],0"
 "	      004bf2ec    jne near ptr 004BF3B8h"
 );
@@ -3070,10 +3070,10 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf2ff    mov [ebp-50h],eax"
 "	      004bf302    cmp dword ptr [ebp-50h],0"
 "	      004bf306    je near ptr 004BF362h"
-"	      004bf30c    mov eax,[ebp-74h]"
+"	      004bf30c    mov eax,this"
 "	      004bf30f    cmp dword ptr [eax+0Ch],0"
 "	      004bf313    je near ptr 004BF32Ah"
-"	      004bf319    mov eax,[ebp-74h]"
+"	      004bf319    mov eax,this"
 "	      004bf31c    mov eax,[eax+0Ch]"
 "	      004bf31f    add eax,14h"
 "	      004bf322    mov [ebp-5Ch],eax"
@@ -3081,29 +3081,29 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf32a    mov dword ptr [ebp-5Ch],0"
 "	      004bf331    mov eax,[ebp-5Ch]"
 "	      004bf334    push eax"
-"	      004bf335    mov eax,[ebp-74h]"
+"	      004bf335    mov eax,this"
 "	      004bf338    mov eax,[eax+10h]"
 "	      004bf33b    push eax"
-"	      004bf33c    mov eax,[ebp-74h]"
+"	      004bf33c    mov eax,this"
 "	      004bf33f    add eax,70h"
 "	      004bf342    push eax"
 "	      004bf343    push 2"
-"	      004bf345    lea eax,[ebp-34h]"
+"	      004bf345    lea eax,rectFlap2.left"
 "	      004bf348    push eax"
 "	      004bf349    mov eax,ds:[59AEF8h]"
 "	      004bf34e    push eax"
 "	      004bf34f    mov ecx,[ebp-50h]"
 "	      004bf352    call 0044E44Ah"
-"	      004bf357    mov ecx,[ebp-74h]"
+"	      004bf357    mov ecx,this"
 "	      004bf35a    mov [ecx+64h],eax"
 "	      004bf35d    jmp near ptr 004BF36Ch"
-"	      004bf362    mov eax,[ebp-74h]"
+"	      004bf362    mov eax,this"
 "	      004bf365    mov dword ptr [eax+64h],0"
 );
 // LINE 684:
 	asm( 
-"	      004bf36c    mov eax,[ebp-74h]"
-"	      004bf36f    mov ecx,[ebp-74h]"
+"	      004bf36c    mov eax,this"
+"	      004bf36f    mov ecx,this"
 "	      004bf372    mov ecx,[ecx+64h]"
 "	      004bf375    mov edx,[ecx]"
 "	      004bf377    mov ecx,[eax+64h]"
@@ -3112,8 +3112,8 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 685:
 	asm( 
 "	      004bf37d    push 0FEh"
-"	      004bf382    mov eax,[ebp-74h]"
-"	      004bf385    mov ecx,[ebp-74h]"
+"	      004bf382    mov eax,this"
+"	      004bf385    mov ecx,this"
 "	      004bf388    mov ecx,[ecx+64h]"
 "	      004bf38b    mov edx,[ecx]"
 "	      004bf38d    mov ecx,[eax+64h]"
@@ -3126,7 +3126,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 687:
 	asm( 
-"	      004bf3a0    mov eax,[ebp-74h]"
+"	      004bf3a0    mov eax,this"
 "	      004bf3a3    mov eax,[eax+64h]"
 "	      004bf3a6    mov [ebp-6Ch],eax"
 "	      004bf3a9    mov eax,[ebp-6Ch]"
@@ -3139,14 +3139,14 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 691:
 	asm( 
-"	      004bf3bd    mov eax,[ebp-74h]"
+"	      004bf3bd    mov eax,this"
 "	      004bf3c0    cmp dword ptr [eax+64h],0"
 "	      004bf3c4    je near ptr 004BF3E5h"
 );
 // LINE 692:
 	asm( 
-"	      004bf3ca    mov eax,[ebp-74h]"
-"	      004bf3cd    mov ecx,[ebp-74h]"
+"	      004bf3ca    mov eax,this"
+"	      004bf3cd    mov ecx,this"
 "	      004bf3d0    mov ecx,[ecx+64h]"
 "	      004bf3d3    mov edx,[ecx]"
 "	      004bf3d5    mov ecx,[eax+64h]"
@@ -3154,18 +3154,18 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 693:
 	asm( 
-"	      004bf3db    mov eax,[ebp-74h]"
+"	      004bf3db    mov eax,this"
 "	      004bf3de    mov dword ptr [eax+64h],0"
 );
 // LINE 696:
 	asm( 
-"	      004bf3e5    mov eax,[ebp-24h]"
+"	      004bf3e5    mov eax,userPersonalInfo"
 "	      004bf3e8    test byte ptr [eax+48h],8"
 "	      004bf3ec    je near ptr 004BF4CAh"
 );
 // LINE 697:
 	asm( 
-"	      004bf3f2    mov eax,[ebp-74h]"
+"	      004bf3f2    mov eax,this"
 "	      004bf3f5    cmp dword ptr [eax+68h],0"
 "	      004bf3f9    jne near ptr 004BF4C5h"
 );
@@ -3177,10 +3177,10 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf40c    mov [ebp-54h],eax"
 "	      004bf40f    cmp dword ptr [ebp-54h],0"
 "	      004bf413    je near ptr 004BF46Fh"
-"	      004bf419    mov eax,[ebp-74h]"
+"	      004bf419    mov eax,this"
 "	      004bf41c    cmp dword ptr [eax+0Ch],0"
 "	      004bf420    je near ptr 004BF437h"
-"	      004bf426    mov eax,[ebp-74h]"
+"	      004bf426    mov eax,this"
 "	      004bf429    mov eax,[eax+0Ch]"
 "	      004bf42c    add eax,14h"
 "	      004bf42f    mov [ebp-60h],eax"
@@ -3188,29 +3188,29 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 "	      004bf437    mov dword ptr [ebp-60h],0"
 "	      004bf43e    mov eax,[ebp-60h]"
 "	      004bf441    push eax"
-"	      004bf442    mov eax,[ebp-74h]"
+"	      004bf442    mov eax,this"
 "	      004bf445    mov eax,[eax+10h]"
 "	      004bf448    push eax"
-"	      004bf449    mov eax,[ebp-74h]"
+"	      004bf449    mov eax,this"
 "	      004bf44c    add eax,70h"
 "	      004bf44f    push eax"
 "	      004bf450    push 3"
-"	      004bf452    lea eax,[ebp-10h]"
+"	      004bf452    lea eax,rectFlap3.left"
 "	      004bf455    push eax"
 "	      004bf456    mov eax,ds:[59AEFCh]"
 "	      004bf45b    push eax"
 "	      004bf45c    mov ecx,[ebp-54h]"
 "	      004bf45f    call 0044E44Ah"
-"	      004bf464    mov ecx,[ebp-74h]"
+"	      004bf464    mov ecx,this"
 "	      004bf467    mov [ecx+68h],eax"
 "	      004bf46a    jmp near ptr 004BF479h"
-"	      004bf46f    mov eax,[ebp-74h]"
+"	      004bf46f    mov eax,this"
 "	      004bf472    mov dword ptr [eax+68h],0"
 );
 // LINE 699:
 	asm( 
-"	      004bf479    mov eax,[ebp-74h]"
-"	      004bf47c    mov ecx,[ebp-74h]"
+"	      004bf479    mov eax,this"
+"	      004bf47c    mov ecx,this"
 "	      004bf47f    mov ecx,[ecx+68h]"
 "	      004bf482    mov edx,[ecx]"
 "	      004bf484    mov ecx,[eax+68h]"
@@ -3219,8 +3219,8 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 700:
 	asm( 
 "	      004bf48a    push 0FEh"
-"	      004bf48f    mov eax,[ebp-74h]"
-"	      004bf492    mov ecx,[ebp-74h]"
+"	      004bf48f    mov eax,this"
+"	      004bf492    mov ecx,this"
 "	      004bf495    mov ecx,[ecx+68h]"
 "	      004bf498    mov edx,[ecx]"
 "	      004bf49a    mov ecx,[eax+68h]"
@@ -3233,7 +3233,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 702:
 	asm( 
-"	      004bf4ad    mov eax,[ebp-74h]"
+"	      004bf4ad    mov eax,this"
 "	      004bf4b0    mov eax,[eax+68h]"
 "	      004bf4b3    mov [ebp-70h],eax"
 "	      004bf4b6    mov eax,[ebp-70h]"
@@ -3246,14 +3246,14 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 706:
 	asm( 
-"	      004bf4ca    mov eax,[ebp-74h]"
+"	      004bf4ca    mov eax,this"
 "	      004bf4cd    cmp dword ptr [eax+68h],0"
 "	      004bf4d1    je near ptr 004BF4F2h"
 );
 // LINE 707:
 	asm( 
-"	      004bf4d7    mov eax,[ebp-74h]"
-"	      004bf4da    mov ecx,[ebp-74h]"
+"	      004bf4d7    mov eax,this"
+"	      004bf4da    mov ecx,this"
 "	      004bf4dd    mov ecx,[ecx+68h]"
 "	      004bf4e0    mov edx,[ecx]"
 "	      004bf4e2    mov ecx,[eax+68h]"
@@ -3261,7 +3261,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 // LINE 708:
 	asm( 
-"	      004bf4e8    mov eax,[ebp-74h]"
+"	      004bf4e8    mov eax,this"
 "	      004bf4eb    mov dword ptr [eax+68h],0"
 );
 // LINE 712:
@@ -3285,7 +3285,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 "	      004bf502    push ebx"
 "	      004bf503    push esi"
 "	      004bf504    push edi"
-"	      004bf505    mov [ebp-0Ch],ecx"
+"	      004bf505    mov this,ecx"
 );
 // LINE 721:
 	asm( 
@@ -3301,21 +3301,21 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 "	      004bf531    push eax"
 "	      004bf532    mov ecx,[ebp-4]"
 "	      004bf535    call 00495400h"
-"	      004bf53a    mov ecx,[ebp-0Ch]"
+"	      004bf53a    mov ecx,this"
 "	      004bf53d    mov [ecx+3Ch],eax"
 "	      004bf540    jmp near ptr 004BF54Fh"
-"	      004bf545    mov eax,[ebp-0Ch]"
+"	      004bf545    mov eax,this"
 "	      004bf548    mov dword ptr [eax+3Ch],0"
 );
 // LINE 724:
 	asm( 
-"	      004bf54f    mov eax,[ebp-0Ch]"
+"	      004bf54f    mov eax,this"
 "	      004bf552    add eax,1Ch"
 "	      004bf555    push eax"
-"	      004bf556    mov eax,[ebp-0Ch]"
+"	      004bf556    mov eax,this"
 "	      004bf559    add eax,18h"
 "	      004bf55c    push eax"
-"	      004bf55d    mov eax,[ebp-0Ch]"
+"	      004bf55d    mov eax,this"
 "	      004bf560    mov ecx,[eax+0Ch]"
 "	      004bf563    call 00495B40h"
 );
@@ -3328,13 +3328,13 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 "	      004bf578    cmp dword ptr [ebp-8],0"
 "	      004bf57c    je near ptr 004BF5B1h"
 "	      004bf582    push 0"
-"	      004bf584    mov eax,[ebp-0Ch]"
+"	      004bf584    mov eax,this"
 "	      004bf587    mov eax,[eax+1Ch]"
 "	      004bf58a    cdq"
 "	      004bf58b    sub eax,edx"
 "	      004bf58d    sar eax,1"
 "	      004bf590    push eax"
-"	      004bf591    mov eax,[ebp-0Ch]"
+"	      004bf591    mov eax,this"
 "	      004bf594    mov eax,[eax+18h]"
 "	      004bf597    cdq"
 "	      004bf598    sub eax,edx"
@@ -3342,10 +3342,10 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 "	      004bf59d    push eax"
 "	      004bf59e    mov ecx,[ebp-8]"
 "	      004bf5a1    call 0046EA06h"
-"	      004bf5a6    mov ecx,[ebp-0Ch]"
+"	      004bf5a6    mov ecx,this"
 "	      004bf5a9    mov [ecx+38h],eax"
 "	      004bf5ac    jmp near ptr 004BF5BBh"
-"	      004bf5b1    mov eax,[ebp-0Ch]"
+"	      004bf5b1    mov eax,this"
 "	      004bf5b4    mov dword ptr [eax+38h],0"
 );
 // LINE 726:
@@ -3373,17 +3373,17 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 "	      004bf5d0    push ebx"
 "	      004bf5d1    push esi"
 "	      004bf5d2    push edi"
-"	      004bf5d3    mov [ebp-14h],ecx"
+"	      004bf5d3    mov this,ecx"
 );
 // LINE 736:
 	asm( 
-"	      004bf5d6    mov eax,[ebp-14h]"
+"	      004bf5d6    mov eax,this"
 "	      004bf5d9    cmp dword ptr [eax+38h],0"
 "	      004bf5dd    je near ptr 004BF624h"
 );
 // LINE 737:
 	asm( 
-"	      004bf5e3    mov eax,[ebp-14h]"
+"	      004bf5e3    mov eax,this"
 "	      004bf5e6    mov eax,[eax+38h]"
 "	      004bf5e9    mov [ebp-8],eax"
 "	      004bf5ec    mov eax,[ebp-8]"
@@ -3401,18 +3401,18 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 );
 // LINE 738:
 	asm( 
-"	      004bf61a    mov eax,[ebp-14h]"
+"	      004bf61a    mov eax,this"
 "	      004bf61d    mov dword ptr [eax+38h],0"
 );
 // LINE 740:
 	asm( 
-"	      004bf624    mov eax,[ebp-14h]"
+"	      004bf624    mov eax,this"
 "	      004bf627    cmp dword ptr [eax+3Ch],0"
 "	      004bf62b    je near ptr 004BF677h"
 );
 // LINE 741:
 	asm( 
-"	      004bf631    mov eax,[ebp-14h]"
+"	      004bf631    mov eax,this"
 "	      004bf634    mov eax,[eax+3Ch]"
 "	      004bf637    mov [ebp-10h],eax"
 "	      004bf63a    mov eax,[ebp-10h]"
@@ -3431,7 +3431,7 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 );
 // LINE 742:
 	asm( 
-"	      004bf66d    mov eax,[ebp-14h]"
+"	      004bf66d    mov eax,this"
 "	      004bf670    mov dword ptr [eax+3Ch],0"
 );
 // LINE 744:
@@ -3455,16 +3455,16 @@ void GameModePlayData::DestroyAllSurfaces() {
 "	      004bf687    push ebx"
 "	      004bf688    push esi"
 "	      004bf689    push edi"
-"	      004bf68a    mov [ebp-4],ecx"
+"	      004bf68a    mov this,ecx"
 );
 // LINE 753:
 	asm( 
-"	      004bf68d    mov ecx,[ebp-4]"
+"	      004bf68d    mov ecx,this"
 "	      004bf690    call 004BF5CAh"
 );
 // LINE 754:
 	asm( 
-"	      004bf695    mov ecx,[ebp-4]"
+"	      004bf695    mov ecx,this"
 "	      004bf698    call 004BF6A7h"
 );
 // LINE 755:
@@ -3488,18 +3488,18 @@ int32_t GameModePlayData::DestroyPanels() {
 "	      004bf6ad    push ebx"
 "	      004bf6ae    push esi"
 "	      004bf6af    push edi"
-"	      004bf6b0    mov [ebp-4],ecx"
+"	      004bf6b0    mov this,ecx"
 );
 // LINE 763:
 	asm( 
-"	      004bf6b3    mov eax,[ebp-4]"
+"	      004bf6b3    mov eax,this"
 "	      004bf6b6    cmp dword ptr [eax+40h],0"
 "	      004bf6ba    je near ptr 004BF6DBh"
 );
 // LINE 764:
 	asm( 
-"	      004bf6c0    mov eax,[ebp-4]"
-"	      004bf6c3    mov ecx,[ebp-4]"
+"	      004bf6c0    mov eax,this"
+"	      004bf6c3    mov ecx,this"
 "	      004bf6c6    mov ecx,[ecx+40h]"
 "	      004bf6c9    mov edx,[ecx]"
 "	      004bf6cb    mov ecx,[eax+40h]"
@@ -3507,19 +3507,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 765:
 	asm( 
-"	      004bf6d1    mov eax,[ebp-4]"
+"	      004bf6d1    mov eax,this"
 "	      004bf6d4    mov dword ptr [eax+40h],0"
 );
 // LINE 767:
 	asm( 
-"	      004bf6db    mov eax,[ebp-4]"
+"	      004bf6db    mov eax,this"
 "	      004bf6de    cmp dword ptr [eax+44h],0"
 "	      004bf6e2    je near ptr 004BF703h"
 );
 // LINE 768:
 	asm( 
-"	      004bf6e8    mov eax,[ebp-4]"
-"	      004bf6eb    mov ecx,[ebp-4]"
+"	      004bf6e8    mov eax,this"
+"	      004bf6eb    mov ecx,this"
 "	      004bf6ee    mov ecx,[ecx+44h]"
 "	      004bf6f1    mov edx,[ecx]"
 "	      004bf6f3    mov ecx,[eax+44h]"
@@ -3527,19 +3527,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 769:
 	asm( 
-"	      004bf6f9    mov eax,[ebp-4]"
+"	      004bf6f9    mov eax,this"
 "	      004bf6fc    mov dword ptr [eax+44h],0"
 );
 // LINE 771:
 	asm( 
-"	      004bf703    mov eax,[ebp-4]"
+"	      004bf703    mov eax,this"
 "	      004bf706    cmp dword ptr [eax+48h],0"
 "	      004bf70a    je near ptr 004BF72Bh"
 );
 // LINE 772:
 	asm( 
-"	      004bf710    mov eax,[ebp-4]"
-"	      004bf713    mov ecx,[ebp-4]"
+"	      004bf710    mov eax,this"
+"	      004bf713    mov ecx,this"
 "	      004bf716    mov ecx,[ecx+48h]"
 "	      004bf719    mov edx,[ecx]"
 "	      004bf71b    mov ecx,[eax+48h]"
@@ -3547,19 +3547,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 773:
 	asm( 
-"	      004bf721    mov eax,[ebp-4]"
+"	      004bf721    mov eax,this"
 "	      004bf724    mov dword ptr [eax+48h],0"
 );
 // LINE 775:
 	asm( 
-"	      004bf72b    mov eax,[ebp-4]"
+"	      004bf72b    mov eax,this"
 "	      004bf72e    cmp dword ptr [eax+4Ch],0"
 "	      004bf732    je near ptr 004BF753h"
 );
 // LINE 776:
 	asm( 
-"	      004bf738    mov eax,[ebp-4]"
-"	      004bf73b    mov ecx,[ebp-4]"
+"	      004bf738    mov eax,this"
+"	      004bf73b    mov ecx,this"
 "	      004bf73e    mov ecx,[ecx+4Ch]"
 "	      004bf741    mov edx,[ecx]"
 "	      004bf743    mov ecx,[eax+4Ch]"
@@ -3567,19 +3567,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 777:
 	asm( 
-"	      004bf749    mov eax,[ebp-4]"
+"	      004bf749    mov eax,this"
 "	      004bf74c    mov dword ptr [eax+4Ch],0"
 );
 // LINE 779:
 	asm( 
-"	      004bf753    mov eax,[ebp-4]"
+"	      004bf753    mov eax,this"
 "	      004bf756    cmp dword ptr [eax+50h],0"
 "	      004bf75a    je near ptr 004BF77Bh"
 );
 // LINE 780:
 	asm( 
-"	      004bf760    mov eax,[ebp-4]"
-"	      004bf763    mov ecx,[ebp-4]"
+"	      004bf760    mov eax,this"
+"	      004bf763    mov ecx,this"
 "	      004bf766    mov ecx,[ecx+50h]"
 "	      004bf769    mov edx,[ecx]"
 "	      004bf76b    mov ecx,[eax+50h]"
@@ -3587,19 +3587,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 781:
 	asm( 
-"	      004bf771    mov eax,[ebp-4]"
+"	      004bf771    mov eax,this"
 "	      004bf774    mov dword ptr [eax+50h],0"
 );
 // LINE 783:
 	asm( 
-"	      004bf77b    mov eax,[ebp-4]"
+"	      004bf77b    mov eax,this"
 "	      004bf77e    cmp dword ptr [eax+54h],0"
 "	      004bf782    je near ptr 004BF7A3h"
 );
 // LINE 784:
 	asm( 
-"	      004bf788    mov eax,[ebp-4]"
-"	      004bf78b    mov ecx,[ebp-4]"
+"	      004bf788    mov eax,this"
+"	      004bf78b    mov ecx,this"
 "	      004bf78e    mov ecx,[ecx+54h]"
 "	      004bf791    mov edx,[ecx]"
 "	      004bf793    mov ecx,[eax+54h]"
@@ -3607,19 +3607,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 785:
 	asm( 
-"	      004bf799    mov eax,[ebp-4]"
+"	      004bf799    mov eax,this"
 "	      004bf79c    mov dword ptr [eax+54h],0"
 );
 // LINE 787:
 	asm( 
-"	      004bf7a3    mov eax,[ebp-4]"
+"	      004bf7a3    mov eax,this"
 "	      004bf7a6    cmp dword ptr [eax+58h],0"
 "	      004bf7aa    je near ptr 004BF7CBh"
 );
 // LINE 788:
 	asm( 
-"	      004bf7b0    mov eax,[ebp-4]"
-"	      004bf7b3    mov ecx,[ebp-4]"
+"	      004bf7b0    mov eax,this"
+"	      004bf7b3    mov ecx,this"
 "	      004bf7b6    mov ecx,[ecx+58h]"
 "	      004bf7b9    mov edx,[ecx]"
 "	      004bf7bb    mov ecx,[eax+58h]"
@@ -3627,19 +3627,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 789:
 	asm( 
-"	      004bf7c1    mov eax,[ebp-4]"
+"	      004bf7c1    mov eax,this"
 "	      004bf7c4    mov dword ptr [eax+58h],0"
 );
 // LINE 791:
 	asm( 
-"	      004bf7cb    mov eax,[ebp-4]"
+"	      004bf7cb    mov eax,this"
 "	      004bf7ce    cmp dword ptr [eax+5Ch],0"
 "	      004bf7d2    je near ptr 004BF7F3h"
 );
 // LINE 792:
 	asm( 
-"	      004bf7d8    mov eax,[ebp-4]"
-"	      004bf7db    mov ecx,[ebp-4]"
+"	      004bf7d8    mov eax,this"
+"	      004bf7db    mov ecx,this"
 "	      004bf7de    mov ecx,[ecx+5Ch]"
 "	      004bf7e1    mov edx,[ecx]"
 "	      004bf7e3    mov ecx,[eax+5Ch]"
@@ -3647,19 +3647,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 793:
 	asm( 
-"	      004bf7e9    mov eax,[ebp-4]"
+"	      004bf7e9    mov eax,this"
 "	      004bf7ec    mov dword ptr [eax+5Ch],0"
 );
 // LINE 795:
 	asm( 
-"	      004bf7f3    mov eax,[ebp-4]"
+"	      004bf7f3    mov eax,this"
 "	      004bf7f6    cmp dword ptr [eax+60h],0"
 "	      004bf7fa    je near ptr 004BF81Bh"
 );
 // LINE 796:
 	asm( 
-"	      004bf800    mov eax,[ebp-4]"
-"	      004bf803    mov ecx,[ebp-4]"
+"	      004bf800    mov eax,this"
+"	      004bf803    mov ecx,this"
 "	      004bf806    mov ecx,[ecx+60h]"
 "	      004bf809    mov edx,[ecx]"
 "	      004bf80b    mov ecx,[eax+60h]"
@@ -3667,19 +3667,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 797:
 	asm( 
-"	      004bf811    mov eax,[ebp-4]"
+"	      004bf811    mov eax,this"
 "	      004bf814    mov dword ptr [eax+60h],0"
 );
 // LINE 799:
 	asm( 
-"	      004bf81b    mov eax,[ebp-4]"
+"	      004bf81b    mov eax,this"
 "	      004bf81e    cmp dword ptr [eax+64h],0"
 "	      004bf822    je near ptr 004BF843h"
 );
 // LINE 800:
 	asm( 
-"	      004bf828    mov eax,[ebp-4]"
-"	      004bf82b    mov ecx,[ebp-4]"
+"	      004bf828    mov eax,this"
+"	      004bf82b    mov ecx,this"
 "	      004bf82e    mov ecx,[ecx+64h]"
 "	      004bf831    mov edx,[ecx]"
 "	      004bf833    mov ecx,[eax+64h]"
@@ -3687,19 +3687,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 801:
 	asm( 
-"	      004bf839    mov eax,[ebp-4]"
+"	      004bf839    mov eax,this"
 "	      004bf83c    mov dword ptr [eax+64h],0"
 );
 // LINE 803:
 	asm( 
-"	      004bf843    mov eax,[ebp-4]"
+"	      004bf843    mov eax,this"
 "	      004bf846    cmp dword ptr [eax+68h],0"
 "	      004bf84a    je near ptr 004BF86Bh"
 );
 // LINE 804:
 	asm( 
-"	      004bf850    mov eax,[ebp-4]"
-"	      004bf853    mov ecx,[ebp-4]"
+"	      004bf850    mov eax,this"
+"	      004bf853    mov ecx,this"
 "	      004bf856    mov ecx,[ecx+68h]"
 "	      004bf859    mov edx,[ecx]"
 "	      004bf85b    mov ecx,[eax+68h]"
@@ -3707,19 +3707,19 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 805:
 	asm( 
-"	      004bf861    mov eax,[ebp-4]"
+"	      004bf861    mov eax,this"
 "	      004bf864    mov dword ptr [eax+68h],0"
 );
 // LINE 807:
 	asm( 
-"	      004bf86b    mov eax,[ebp-4]"
+"	      004bf86b    mov eax,this"
 "	      004bf86e    cmp dword ptr [eax+6Ch],0"
 "	      004bf872    je near ptr 004BF893h"
 );
 // LINE 808:
 	asm( 
-"	      004bf878    mov eax,[ebp-4]"
-"	      004bf87b    mov ecx,[ebp-4]"
+"	      004bf878    mov eax,this"
+"	      004bf87b    mov ecx,this"
 "	      004bf87e    mov ecx,[ecx+6Ch]"
 "	      004bf881    mov edx,[ecx]"
 "	      004bf883    mov ecx,[eax+6Ch]"
@@ -3727,7 +3727,7 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 // LINE 809:
 	asm( 
-"	      004bf889    mov eax,[ebp-4]"
+"	      004bf889    mov eax,this"
 "	      004bf88c    mov dword ptr [eax+6Ch],0"
 );
 // LINE 811:
@@ -3755,31 +3755,31 @@ void GameModePlayData::ShowPanels() {
 "	      004bf8a8    push ebx"
 "	      004bf8a9    push esi"
 "	      004bf8aa    push edi"
-"	      004bf8ab    mov [ebp-34h],ecx"
+"	      004bf8ab    mov this,ecx"
 );
 // LINE 835:
 	asm( 
-"	      004bf8ae    mov eax,[ebp-34h]"
+"	      004bf8ae    mov eax,this"
 "	      004bf8b1    cmp dword ptr [eax+2Ch],0"
 "	      004bf8b5    jne near ptr 004BFAA1h"
-"	      004bf8bb    mov eax,[ebp-34h]"
+"	      004bf8bb    mov eax,this"
 "	      004bf8be    cmp dword ptr [eax+34h],0"
 "	      004bf8c2    je near ptr 004BFAA1h"
 );
 // LINE 836:
 	asm( 
-"	      004bf8c8    mov eax,[ebp-34h]"
+"	      004bf8c8    mov eax,this"
 "	      004bf8cb    mov dword ptr [eax+2Ch],1"
 );
 // LINE 839:
 	asm( 
-"	      004bf8d2    mov eax,[ebp-34h]"
+"	      004bf8d2    mov eax,this"
 "	      004bf8d5    cmp dword ptr [eax+38h],0"
 "	      004bf8d9    je near ptr 004BF914h"
 );
 // LINE 840:
 	asm( 
-"	      004bf8df    mov eax,[ebp-34h]"
+"	      004bf8df    mov eax,this"
 "	      004bf8e2    mov eax,[eax+20h]"
 "	      004bf8e5    cdq"
 "	      004bf8e6    sub eax,edx"
@@ -3788,7 +3788,7 @@ void GameModePlayData::ShowPanels() {
 );
 // LINE 841:
 	asm( 
-"	      004bf8f0    mov eax,[ebp-34h]"
+"	      004bf8f0    mov eax,this"
 "	      004bf8f3    mov eax,[eax+24h]"
 "	      004bf8f6    cdq"
 "	      004bf8f7    sub eax,edx"
@@ -3798,32 +3798,32 @@ void GameModePlayData::ShowPanels() {
 // LINE 842:
 	asm( 
 "	      004bf901    jmp near ptr 004BF906h"
-"	      004bf906    mov eax,[ebp-34h]"
+"	      004bf906    mov eax,this"
 "	      004bf909    mov eax,[eax+38h]"
 "	      004bf90c    mov eax,[eax+14h]"
 "	      004bf90f    mov ds:[598ED4h],eax"
 );
 // LINE 845:
 	asm( 
-"	      004bf914    mov eax,[ebp-34h]"
+"	      004bf914    mov eax,this"
 "	      004bf917    mov eax,[eax+20h]"
 "	      004bf91a    mov ds:[598EE8h],eax"
 );
 // LINE 846:
 	asm( 
-"	      004bf91f    mov eax,[ebp-34h]"
+"	      004bf91f    mov eax,this"
 "	      004bf922    mov eax,[eax+24h]"
 "	      004bf925    mov ds:[598EECh],eax"
 );
 // LINE 847:
 	asm( 
 "	      004bf92a    jmp near ptr 004BF92Fh"
-"	      004bf92f    mov eax,[ebp-34h]"
+"	      004bf92f    mov eax,this"
 "	      004bf932    mov eax,[eax+0Ch]"
 "	      004bf935    mov eax,[eax+34h]"
 "	      004bf938    mov eax,[eax+14h]"
 "	      004bf93b    mov ds:[598EF4h],eax"
-"	      004bf940    mov eax,[ebp-34h]"
+"	      004bf940    mov eax,this"
 "	      004bf943    mov eax,[eax+40h]"
 "	      004bf946    mov [ebp-4],eax"
 );
@@ -3832,7 +3832,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf949    mov eax,[ebp-4]"
 "	      004bf94c    mov dword ptr [eax+54h],1"
 "	      004bf953    jmp near ptr 004BF958h"
-"	      004bf958    mov eax,[ebp-34h]"
+"	      004bf958    mov eax,this"
 "	      004bf95b    mov eax,[eax+44h]"
 "	      004bf95e    mov [ebp-8],eax"
 );
@@ -3841,7 +3841,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf961    mov eax,[ebp-8]"
 "	      004bf964    mov dword ptr [eax+54h],1"
 "	      004bf96b    jmp near ptr 004BF970h"
-"	      004bf970    mov eax,[ebp-34h]"
+"	      004bf970    mov eax,this"
 "	      004bf973    mov eax,[eax+48h]"
 "	      004bf976    mov [ebp-0Ch],eax"
 );
@@ -3850,7 +3850,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf979    mov eax,[ebp-0Ch]"
 "	      004bf97c    mov dword ptr [eax+54h],1"
 "	      004bf983    jmp near ptr 004BF988h"
-"	      004bf988    mov eax,[ebp-34h]"
+"	      004bf988    mov eax,this"
 "	      004bf98b    mov eax,[eax+4Ch]"
 "	      004bf98e    mov [ebp-10h],eax"
 );
@@ -3859,7 +3859,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf991    mov eax,[ebp-10h]"
 "	      004bf994    mov dword ptr [eax+54h],1"
 "	      004bf99b    jmp near ptr 004BF9A0h"
-"	      004bf9a0    mov eax,[ebp-34h]"
+"	      004bf9a0    mov eax,this"
 "	      004bf9a3    mov eax,[eax+50h]"
 "	      004bf9a6    mov [ebp-14h],eax"
 );
@@ -3868,7 +3868,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf9a9    mov eax,[ebp-14h]"
 "	      004bf9ac    mov dword ptr [eax+54h],1"
 "	      004bf9b3    jmp near ptr 004BF9B8h"
-"	      004bf9b8    mov eax,[ebp-34h]"
+"	      004bf9b8    mov eax,this"
 "	      004bf9bb    mov eax,[eax+54h]"
 "	      004bf9be    mov [ebp-18h],eax"
 );
@@ -3877,7 +3877,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf9c1    mov eax,[ebp-18h]"
 "	      004bf9c4    mov dword ptr [eax+54h],1"
 "	      004bf9cb    jmp near ptr 004BF9D0h"
-"	      004bf9d0    mov eax,[ebp-34h]"
+"	      004bf9d0    mov eax,this"
 "	      004bf9d3    mov eax,[eax+58h]"
 "	      004bf9d6    mov [ebp-1Ch],eax"
 );
@@ -3886,7 +3886,7 @@ void GameModePlayData::ShowPanels() {
 "	      004bf9d9    mov eax,[ebp-1Ch]"
 "	      004bf9dc    mov dword ptr [eax+54h],1"
 "	      004bf9e3    jmp near ptr 004BF9E8h"
-"	      004bf9e8    mov eax,[ebp-34h]"
+"	      004bf9e8    mov eax,this"
 "	      004bf9eb    mov eax,[eax+6Ch]"
 "	      004bf9ee    mov [ebp-20h],eax"
 );
@@ -3898,19 +3898,19 @@ void GameModePlayData::ShowPanels() {
 );
 // LINE 858:
 	asm( 
-"	      004bfa00    mov eax,[ebp-34h]"
+"	      004bfa00    mov eax,this"
 "	      004bfa03    cmp dword ptr [eax+30h],0"
 "	      004bfa07    je near ptr 004BFAA1h"
 );
 // LINE 859:
 	asm( 
-"	      004bfa0d    mov eax,[ebp-34h]"
+"	      004bfa0d    mov eax,this"
 "	      004bfa10    cmp dword ptr [eax+5Ch],0"
 "	      004bfa14    je near ptr 004BFA32h"
 );
 // LINE 860:
 	asm( 
-"	      004bfa1a    mov eax,[ebp-34h]"
+"	      004bfa1a    mov eax,this"
 "	      004bfa1d    mov eax,[eax+5Ch]"
 "	      004bfa20    mov [ebp-24h],eax"
 "	      004bfa23    mov eax,[ebp-24h]"
@@ -3919,13 +3919,13 @@ void GameModePlayData::ShowPanels() {
 );
 // LINE 861:
 	asm( 
-"	      004bfa32    mov eax,[ebp-34h]"
+"	      004bfa32    mov eax,this"
 "	      004bfa35    cmp dword ptr [eax+60h],0"
 "	      004bfa39    je near ptr 004BFA57h"
 );
 // LINE 862:
 	asm( 
-"	      004bfa3f    mov eax,[ebp-34h]"
+"	      004bfa3f    mov eax,this"
 "	      004bfa42    mov eax,[eax+60h]"
 "	      004bfa45    mov [ebp-28h],eax"
 "	      004bfa48    mov eax,[ebp-28h]"
@@ -3934,13 +3934,13 @@ void GameModePlayData::ShowPanels() {
 );
 // LINE 863:
 	asm( 
-"	      004bfa57    mov eax,[ebp-34h]"
+"	      004bfa57    mov eax,this"
 "	      004bfa5a    cmp dword ptr [eax+64h],0"
 "	      004bfa5e    je near ptr 004BFA7Ch"
 );
 // LINE 864:
 	asm( 
-"	      004bfa64    mov eax,[ebp-34h]"
+"	      004bfa64    mov eax,this"
 "	      004bfa67    mov eax,[eax+64h]"
 "	      004bfa6a    mov [ebp-2Ch],eax"
 "	      004bfa6d    mov eax,[ebp-2Ch]"
@@ -3949,13 +3949,13 @@ void GameModePlayData::ShowPanels() {
 );
 // LINE 865:
 	asm( 
-"	      004bfa7c    mov eax,[ebp-34h]"
+"	      004bfa7c    mov eax,this"
 "	      004bfa7f    cmp dword ptr [eax+68h],0"
 "	      004bfa83    je near ptr 004BFAA1h"
 );
 // LINE 866:
 	asm( 
-"	      004bfa89    mov eax,[ebp-34h]"
+"	      004bfa89    mov eax,this"
 "	      004bfa8c    mov eax,[eax+68h]"
 "	      004bfa8f    mov [ebp-30h],eax"
 "	      004bfa92    mov eax,[ebp-30h]"
@@ -3983,28 +3983,28 @@ void GameModePlayData::HidePanels() {
 "	      004bfab1    push ebx"
 "	      004bfab2    push esi"
 "	      004bfab3    push edi"
-"	      004bfab4    mov [ebp-34h],ecx"
+"	      004bfab4    mov this,ecx"
 );
 // LINE 889:
 	asm( 
-"	      004bfab7    mov eax,[ebp-34h]"
+"	      004bfab7    mov eax,this"
 "	      004bfaba    cmp dword ptr [eax+2Ch],0"
 "	      004bfabe    je near ptr 004BFC90h"
 );
 // LINE 890:
 	asm( 
-"	      004bfac4    mov eax,[ebp-34h]"
+"	      004bfac4    mov eax,this"
 "	      004bfac7    mov dword ptr [eax+2Ch],0"
 );
 // LINE 892:
 	asm( 
-"	      004bface    mov eax,[ebp-34h]"
+"	      004bface    mov eax,this"
 "	      004bfad1    cmp dword ptr [eax+38h],0"
 "	      004bfad5    je near ptr 004BFB10h"
 );
 // LINE 893:
 	asm( 
-"	      004bfadb    mov eax,[ebp-34h]"
+"	      004bfadb    mov eax,this"
 "	      004bfade    mov eax,[eax+18h]"
 "	      004bfae1    cdq"
 "	      004bfae2    sub eax,edx"
@@ -4013,7 +4013,7 @@ void GameModePlayData::HidePanels() {
 );
 // LINE 894:
 	asm( 
-"	      004bfaec    mov eax,[ebp-34h]"
+"	      004bfaec    mov eax,this"
 "	      004bfaef    mov eax,[eax+1Ch]"
 "	      004bfaf2    cdq"
 "	      004bfaf3    sub eax,edx"
@@ -4023,32 +4023,32 @@ void GameModePlayData::HidePanels() {
 // LINE 895:
 	asm( 
 "	      004bfafd    jmp near ptr 004BFB02h"
-"	      004bfb02    mov eax,[ebp-34h]"
+"	      004bfb02    mov eax,this"
 "	      004bfb05    mov eax,[eax+38h]"
 "	      004bfb08    mov eax,[eax+14h]"
 "	      004bfb0b    mov ds:[598ED4h],eax"
 );
 // LINE 898:
 	asm( 
-"	      004bfb10    mov eax,[ebp-34h]"
+"	      004bfb10    mov eax,this"
 "	      004bfb13    mov eax,[eax+18h]"
 "	      004bfb16    mov ds:[598EE8h],eax"
 );
 // LINE 899:
 	asm( 
-"	      004bfb1b    mov eax,[ebp-34h]"
+"	      004bfb1b    mov eax,this"
 "	      004bfb1e    mov eax,[eax+1Ch]"
 "	      004bfb21    mov ds:[598EECh],eax"
 );
 // LINE 900:
 	asm( 
 "	      004bfb26    jmp near ptr 004BFB2Bh"
-"	      004bfb2b    mov eax,[ebp-34h]"
+"	      004bfb2b    mov eax,this"
 "	      004bfb2e    mov eax,[eax+0Ch]"
 "	      004bfb31    mov eax,[eax+34h]"
 "	      004bfb34    mov eax,[eax+14h]"
 "	      004bfb37    mov ds:[598EF4h],eax"
-"	      004bfb3c    mov eax,[ebp-34h]"
+"	      004bfb3c    mov eax,this"
 "	      004bfb3f    mov eax,[eax+40h]"
 "	      004bfb42    mov [ebp-4],eax"
 );
@@ -4057,7 +4057,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfb45    mov eax,[ebp-4]"
 "	      004bfb48    mov dword ptr [eax+54h],0"
 "	      004bfb4f    jmp near ptr 004BFB54h"
-"	      004bfb54    mov eax,[ebp-34h]"
+"	      004bfb54    mov eax,this"
 "	      004bfb57    mov eax,[eax+44h]"
 "	      004bfb5a    mov [ebp-8],eax"
 );
@@ -4066,7 +4066,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfb5d    mov eax,[ebp-8]"
 "	      004bfb60    mov dword ptr [eax+54h],0"
 "	      004bfb67    jmp near ptr 004BFB6Ch"
-"	      004bfb6c    mov eax,[ebp-34h]"
+"	      004bfb6c    mov eax,this"
 "	      004bfb6f    mov eax,[eax+48h]"
 "	      004bfb72    mov [ebp-0Ch],eax"
 );
@@ -4075,7 +4075,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfb75    mov eax,[ebp-0Ch]"
 "	      004bfb78    mov dword ptr [eax+54h],0"
 "	      004bfb7f    jmp near ptr 004BFB84h"
-"	      004bfb84    mov eax,[ebp-34h]"
+"	      004bfb84    mov eax,this"
 "	      004bfb87    mov eax,[eax+4Ch]"
 "	      004bfb8a    mov [ebp-10h],eax"
 );
@@ -4084,7 +4084,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfb8d    mov eax,[ebp-10h]"
 "	      004bfb90    mov dword ptr [eax+54h],0"
 "	      004bfb97    jmp near ptr 004BFB9Ch"
-"	      004bfb9c    mov eax,[ebp-34h]"
+"	      004bfb9c    mov eax,this"
 "	      004bfb9f    mov eax,[eax+50h]"
 "	      004bfba2    mov [ebp-14h],eax"
 );
@@ -4093,7 +4093,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfba5    mov eax,[ebp-14h]"
 "	      004bfba8    mov dword ptr [eax+54h],0"
 "	      004bfbaf    jmp near ptr 004BFBB4h"
-"	      004bfbb4    mov eax,[ebp-34h]"
+"	      004bfbb4    mov eax,this"
 "	      004bfbb7    mov eax,[eax+54h]"
 "	      004bfbba    mov [ebp-18h],eax"
 );
@@ -4102,7 +4102,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfbbd    mov eax,[ebp-18h]"
 "	      004bfbc0    mov dword ptr [eax+54h],0"
 "	      004bfbc7    jmp near ptr 004BFBCCh"
-"	      004bfbcc    mov eax,[ebp-34h]"
+"	      004bfbcc    mov eax,this"
 "	      004bfbcf    mov eax,[eax+58h]"
 "	      004bfbd2    mov [ebp-1Ch],eax"
 );
@@ -4111,7 +4111,7 @@ void GameModePlayData::HidePanels() {
 "	      004bfbd5    mov eax,[ebp-1Ch]"
 "	      004bfbd8    mov dword ptr [eax+54h],0"
 "	      004bfbdf    jmp near ptr 004BFBE4h"
-"	      004bfbe4    mov eax,[ebp-34h]"
+"	      004bfbe4    mov eax,this"
 "	      004bfbe7    mov eax,[eax+6Ch]"
 "	      004bfbea    mov [ebp-20h],eax"
 );
@@ -4123,13 +4123,13 @@ void GameModePlayData::HidePanels() {
 );
 // LINE 912:
 	asm( 
-"	      004bfbfc    mov eax,[ebp-34h]"
+"	      004bfbfc    mov eax,this"
 "	      004bfbff    cmp dword ptr [eax+5Ch],0"
 "	      004bfc03    je near ptr 004BFC21h"
 );
 // LINE 913:
 	asm( 
-"	      004bfc09    mov eax,[ebp-34h]"
+"	      004bfc09    mov eax,this"
 "	      004bfc0c    mov eax,[eax+5Ch]"
 "	      004bfc0f    mov [ebp-24h],eax"
 "	      004bfc12    mov eax,[ebp-24h]"
@@ -4138,13 +4138,13 @@ void GameModePlayData::HidePanels() {
 );
 // LINE 914:
 	asm( 
-"	      004bfc21    mov eax,[ebp-34h]"
+"	      004bfc21    mov eax,this"
 "	      004bfc24    cmp dword ptr [eax+60h],0"
 "	      004bfc28    je near ptr 004BFC46h"
 );
 // LINE 915:
 	asm( 
-"	      004bfc2e    mov eax,[ebp-34h]"
+"	      004bfc2e    mov eax,this"
 "	      004bfc31    mov eax,[eax+60h]"
 "	      004bfc34    mov [ebp-28h],eax"
 "	      004bfc37    mov eax,[ebp-28h]"
@@ -4153,13 +4153,13 @@ void GameModePlayData::HidePanels() {
 );
 // LINE 916:
 	asm( 
-"	      004bfc46    mov eax,[ebp-34h]"
+"	      004bfc46    mov eax,this"
 "	      004bfc49    cmp dword ptr [eax+64h],0"
 "	      004bfc4d    je near ptr 004BFC6Bh"
 );
 // LINE 917:
 	asm( 
-"	      004bfc53    mov eax,[ebp-34h]"
+"	      004bfc53    mov eax,this"
 "	      004bfc56    mov eax,[eax+64h]"
 "	      004bfc59    mov [ebp-2Ch],eax"
 "	      004bfc5c    mov eax,[ebp-2Ch]"
@@ -4168,13 +4168,13 @@ void GameModePlayData::HidePanels() {
 );
 // LINE 918:
 	asm( 
-"	      004bfc6b    mov eax,[ebp-34h]"
+"	      004bfc6b    mov eax,this"
 "	      004bfc6e    cmp dword ptr [eax+68h],0"
 "	      004bfc72    je near ptr 004BFC90h"
 );
 // LINE 919:
 	asm( 
-"	      004bfc78    mov eax,[ebp-34h]"
+"	      004bfc78    mov eax,this"
 "	      004bfc7b    mov eax,[eax+68h]"
 "	      004bfc7e    mov [ebp-30h],eax"
 "	      004bfc81    mov eax,[ebp-30h]"
@@ -4202,37 +4202,37 @@ void GameModePlayData::ShowEquipment() {
 "	      004bfca0    push ebx"
 "	      004bfca1    push esi"
 "	      004bfca2    push edi"
-"	      004bfca3    mov [ebp-14h],ecx"
+"	      004bfca3    mov this,ecx"
 );
 // LINE 930:
 	asm( 
-"	      004bfca6    mov eax,[ebp-14h]"
+"	      004bfca6    mov eax,this"
 "	      004bfca9    cmp dword ptr [eax+30h],0"
 "	      004bfcad    jne near ptr 004BFD6Bh"
-"	      004bfcb3    mov eax,[ebp-14h]"
+"	      004bfcb3    mov eax,this"
 "	      004bfcb6    cmp dword ptr [eax+34h],0"
 "	      004bfcba    je near ptr 004BFD6Bh"
 );
 // LINE 931:
 	asm( 
-"	      004bfcc0    mov eax,[ebp-14h]"
+"	      004bfcc0    mov eax,this"
 "	      004bfcc3    mov dword ptr [eax+30h],1"
 );
 // LINE 932:
 	asm( 
-"	      004bfcca    mov eax,[ebp-14h]"
+"	      004bfcca    mov eax,this"
 "	      004bfccd    cmp dword ptr [eax+2Ch],0"
 "	      004bfcd1    je near ptr 004BFD6Bh"
 );
 // LINE 933:
 	asm( 
-"	      004bfcd7    mov eax,[ebp-14h]"
+"	      004bfcd7    mov eax,this"
 "	      004bfcda    cmp dword ptr [eax+5Ch],0"
 "	      004bfcde    je near ptr 004BFCFCh"
 );
 // LINE 934:
 	asm( 
-"	      004bfce4    mov eax,[ebp-14h]"
+"	      004bfce4    mov eax,this"
 "	      004bfce7    mov eax,[eax+5Ch]"
 "	      004bfcea    mov [ebp-4],eax"
 "	      004bfced    mov eax,[ebp-4]"
@@ -4241,13 +4241,13 @@ void GameModePlayData::ShowEquipment() {
 );
 // LINE 935:
 	asm( 
-"	      004bfcfc    mov eax,[ebp-14h]"
+"	      004bfcfc    mov eax,this"
 "	      004bfcff    cmp dword ptr [eax+60h],0"
 "	      004bfd03    je near ptr 004BFD21h"
 );
 // LINE 936:
 	asm( 
-"	      004bfd09    mov eax,[ebp-14h]"
+"	      004bfd09    mov eax,this"
 "	      004bfd0c    mov eax,[eax+60h]"
 "	      004bfd0f    mov [ebp-8],eax"
 "	      004bfd12    mov eax,[ebp-8]"
@@ -4256,13 +4256,13 @@ void GameModePlayData::ShowEquipment() {
 );
 // LINE 937:
 	asm( 
-"	      004bfd21    mov eax,[ebp-14h]"
+"	      004bfd21    mov eax,this"
 "	      004bfd24    cmp dword ptr [eax+64h],0"
 "	      004bfd28    je near ptr 004BFD46h"
 );
 // LINE 938:
 	asm( 
-"	      004bfd2e    mov eax,[ebp-14h]"
+"	      004bfd2e    mov eax,this"
 "	      004bfd31    mov eax,[eax+64h]"
 "	      004bfd34    mov [ebp-0Ch],eax"
 "	      004bfd37    mov eax,[ebp-0Ch]"
@@ -4271,13 +4271,13 @@ void GameModePlayData::ShowEquipment() {
 );
 // LINE 939:
 	asm( 
-"	      004bfd46    mov eax,[ebp-14h]"
+"	      004bfd46    mov eax,this"
 "	      004bfd49    cmp dword ptr [eax+68h],0"
 "	      004bfd4d    je near ptr 004BFD6Bh"
 );
 // LINE 940:
 	asm( 
-"	      004bfd53    mov eax,[ebp-14h]"
+"	      004bfd53    mov eax,this"
 "	      004bfd56    mov eax,[eax+68h]"
 "	      004bfd59    mov [ebp-10h],eax"
 "	      004bfd5c    mov eax,[ebp-10h]"
@@ -4305,28 +4305,28 @@ void GameModePlayData::HideEquipment() {
 "	      004bfd7b    push ebx"
 "	      004bfd7c    push esi"
 "	      004bfd7d    push edi"
-"	      004bfd7e    mov [ebp-14h],ecx"
+"	      004bfd7e    mov this,ecx"
 );
 // LINE 952:
 	asm( 
-"	      004bfd81    mov eax,[ebp-14h]"
+"	      004bfd81    mov eax,this"
 "	      004bfd84    cmp dword ptr [eax+30h],0"
 "	      004bfd88    je near ptr 004BFE2Ch"
 );
 // LINE 953:
 	asm( 
-"	      004bfd8e    mov eax,[ebp-14h]"
+"	      004bfd8e    mov eax,this"
 "	      004bfd91    mov dword ptr [eax+30h],0"
 );
 // LINE 954:
 	asm( 
-"	      004bfd98    mov eax,[ebp-14h]"
+"	      004bfd98    mov eax,this"
 "	      004bfd9b    cmp dword ptr [eax+5Ch],0"
 "	      004bfd9f    je near ptr 004BFDBDh"
 );
 // LINE 955:
 	asm( 
-"	      004bfda5    mov eax,[ebp-14h]"
+"	      004bfda5    mov eax,this"
 "	      004bfda8    mov eax,[eax+5Ch]"
 "	      004bfdab    mov [ebp-4],eax"
 "	      004bfdae    mov eax,[ebp-4]"
@@ -4335,13 +4335,13 @@ void GameModePlayData::HideEquipment() {
 );
 // LINE 956:
 	asm( 
-"	      004bfdbd    mov eax,[ebp-14h]"
+"	      004bfdbd    mov eax,this"
 "	      004bfdc0    cmp dword ptr [eax+60h],0"
 "	      004bfdc4    je near ptr 004BFDE2h"
 );
 // LINE 957:
 	asm( 
-"	      004bfdca    mov eax,[ebp-14h]"
+"	      004bfdca    mov eax,this"
 "	      004bfdcd    mov eax,[eax+60h]"
 "	      004bfdd0    mov [ebp-8],eax"
 "	      004bfdd3    mov eax,[ebp-8]"
@@ -4350,13 +4350,13 @@ void GameModePlayData::HideEquipment() {
 );
 // LINE 958:
 	asm( 
-"	      004bfde2    mov eax,[ebp-14h]"
+"	      004bfde2    mov eax,this"
 "	      004bfde5    cmp dword ptr [eax+64h],0"
 "	      004bfde9    je near ptr 004BFE07h"
 );
 // LINE 959:
 	asm( 
-"	      004bfdef    mov eax,[ebp-14h]"
+"	      004bfdef    mov eax,this"
 "	      004bfdf2    mov eax,[eax+64h]"
 "	      004bfdf5    mov [ebp-0Ch],eax"
 "	      004bfdf8    mov eax,[ebp-0Ch]"
@@ -4365,13 +4365,13 @@ void GameModePlayData::HideEquipment() {
 );
 // LINE 960:
 	asm( 
-"	      004bfe07    mov eax,[ebp-14h]"
+"	      004bfe07    mov eax,this"
 "	      004bfe0a    cmp dword ptr [eax+68h],0"
 "	      004bfe0e    je near ptr 004BFE2Ch"
 );
 // LINE 961:
 	asm( 
-"	      004bfe14    mov eax,[ebp-14h]"
+"	      004bfe14    mov eax,this"
 "	      004bfe17    mov eax,[eax+68h]"
 "	      004bfe1a    mov [ebp-10h],eax"
 "	      004bfe1d    mov eax,[ebp-10h]"
@@ -4399,22 +4399,22 @@ void GameModePlayData::TogglePanelDisplay() {
 "	      004bfe3c    push ebx"
 "	      004bfe3d    push esi"
 "	      004bfe3e    push edi"
-"	      004bfe3f    mov [ebp-4],ecx"
+"	      004bfe3f    mov this,ecx"
 );
 // LINE 972:
 	asm( 
-"	      004bfe42    mov eax,[ebp-4]"
+"	      004bfe42    mov eax,this"
 "	      004bfe45    cmp dword ptr [eax+2Ch],0"
 "	      004bfe49    je near ptr 004BFE66h"
 );
 // LINE 974:
 	asm( 
-"	      004bfe4f    mov eax,[ebp-4]"
+"	      004bfe4f    mov eax,this"
 "	      004bfe52    mov dword ptr [eax+28h],0"
 );
 // LINE 975:
 	asm( 
-"	      004bfe59    mov ecx,[ebp-4]"
+"	      004bfe59    mov ecx,this"
 "	      004bfe5c    call 004BFAABh"
 );
 // LINE 977:
@@ -4423,12 +4423,12 @@ void GameModePlayData::TogglePanelDisplay() {
 );
 // LINE 979:
 	asm( 
-"	      004bfe66    mov eax,[ebp-4]"
+"	      004bfe66    mov eax,this"
 "	      004bfe69    mov dword ptr [eax+28h],1"
 );
 // LINE 980:
 	asm( 
-"	      004bfe70    mov ecx,[ebp-4]"
+"	      004bfe70    mov ecx,this"
 "	      004bfe73    call 004BF8A2h"
 );
 // LINE 982:
@@ -4452,17 +4452,17 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 "	      004bfe88    push ebx"
 "	      004bfe89    push esi"
 "	      004bfe8a    push edi"
-"	      004bfe8b    mov [ebp-4],ecx"
+"	      004bfe8b    mov this,ecx"
 );
 // LINE 991:
 	asm( 
-"	      004bfe8e    mov eax,[ebp-4]"
+"	      004bfe8e    mov eax,this"
 "	      004bfe91    cmp dword ptr [eax+30h],0"
 "	      004bfe95    je near ptr 004BFEA8h"
 );
 // LINE 992:
 	asm( 
-"	      004bfe9b    mov ecx,[ebp-4]"
+"	      004bfe9b    mov ecx,this"
 "	      004bfe9e    call 004BFD75h"
 );
 // LINE 993:
@@ -4471,7 +4471,7 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 );
 // LINE 994:
 	asm( 
-"	      004bfea8    mov ecx,[ebp-4]"
+"	      004bfea8    mov ecx,this"
 "	      004bfeab    call 004BFC9Ah"
 );
 // LINE 995:
@@ -4495,11 +4495,11 @@ void GameModePlayData::Shutdown() {
 "	      004bfec0    push ebx"
 "	      004bfec1    push esi"
 "	      004bfec2    push edi"
-"	      004bfec3    mov [ebp-4],ecx"
+"	      004bfec3    mov this,ecx"
 );
 // LINE 1003:
 	asm( 
-"	      004bfec6    mov ecx,[ebp-4]"
+"	      004bfec6    mov ecx,this"
 "	      004bfec9    call 004BF681h"
 );
 // LINE 1004:
@@ -4525,11 +4525,11 @@ long GameModePlayData::TestForUserInHelicopter() {
 "	      004bfede    push ebx"
 "	      004bfedf    push esi"
 "	      004bfee0    push edi"
-"	      004bfee1    mov [ebp-0Ch],ecx"
+"	      004bfee1    mov this,ecx"
 );
 // LINE 1012:
 	asm( 
-"	      004bfee4    mov dword ptr [ebp-4],0"
+"	      004bfee4    mov lReturnValue,0"
 );
 // LINE 1014:
 	asm( 
@@ -4543,18 +4543,18 @@ long GameModePlayData::TestForUserInHelicopter() {
 );
 // LINE 1015:
 	asm( 
-"	      004bff11    mov eax,[ebp-0Ch]"
+"	      004bff11    mov eax,this"
 "	      004bff14    cmp dword ptr [eax+34h],0"
 "	      004bff18    jne near ptr 004BFF35h"
 );
 // LINE 1020:
 	asm( 
-"	      004bff1e    mov eax,[ebp-0Ch]"
+"	      004bff1e    mov eax,this"
 "	      004bff21    mov dword ptr [eax+34h],1"
 );
 // LINE 1021:
 	asm( 
-"	      004bff28    mov ecx,[ebp-0Ch]"
+"	      004bff28    mov ecx,this"
 "	      004bff2b    call 004BFF6Bh"
 "	      004bff30    jmp near ptr 004BFF66h"
 );
@@ -4564,24 +4564,24 @@ long GameModePlayData::TestForUserInHelicopter() {
 );
 // LINE 1025:
 	asm( 
-"	      004bff3a    mov eax,[ebp-0Ch]"
+"	      004bff3a    mov eax,this"
 "	      004bff3d    cmp dword ptr [eax+34h],0"
 "	      004bff41    je near ptr 004BFF5Eh"
 );
 // LINE 1030:
 	asm( 
-"	      004bff47    mov eax,[ebp-0Ch]"
+"	      004bff47    mov eax,this"
 "	      004bff4a    mov dword ptr [eax+34h],0"
 );
 // LINE 1031:
 	asm( 
-"	      004bff51    mov ecx,[ebp-0Ch]"
+"	      004bff51    mov ecx,this"
 "	      004bff54    call 004BFFA3h"
 "	      004bff59    jmp near ptr 004BFF66h"
 );
 // LINE 1034:
 	asm( 
-"	      004bff5e    mov eax,[ebp-4]"
+"	      004bff5e    mov eax,lReturnValue"
 "	      004bff61    jmp near ptr 004BFF66h"
 );
 // LINE 1035:
@@ -4604,22 +4604,22 @@ long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 "	      004bff71    push ebx"
 "	      004bff72    push esi"
 "	      004bff73    push edi"
-"	      004bff74    mov [ebp-4],ecx"
+"	      004bff74    mov this,ecx"
 );
 // LINE 1046:
 	asm( 
-"	      004bff77    mov ecx,[ebp-4]"
+"	      004bff77    mov ecx,this"
 "	      004bff7a    call 004BF018h"
 );
 // LINE 1047:
 	asm( 
-"	      004bff7f    mov eax,[ebp-4]"
+"	      004bff7f    mov eax,this"
 "	      004bff82    cmp dword ptr [eax+28h],0"
 "	      004bff86    je near ptr 004BFF94h"
 );
 // LINE 1048:
 	asm( 
-"	      004bff8c    mov ecx,[ebp-4]"
+"	      004bff8c    mov ecx,this"
 "	      004bff8f    call 004BF8A2h"
 );
 // LINE 1049:
@@ -4647,11 +4647,11 @@ long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 "	      004bffa9    push ebx"
 "	      004bffaa    push esi"
 "	      004bffab    push edi"
-"	      004bffac    mov [ebp-4],ecx"
+"	      004bffac    mov this,ecx"
 );
 // LINE 1060:
 	asm( 
-"	      004bffaf    mov ecx,[ebp-4]"
+"	      004bffaf    mov ecx,this"
 "	      004bffb2    call 004BFAABh"
 );
 // LINE 1065:
@@ -4689,32 +4689,32 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 "	      004bffe0    push ebx"
 "	      004bffe1    push esi"
 "	      004bffe2    push edi"
-"	      004bffe3    mov [ebp-4],ecx"
+"	      004bffe3    mov this,ecx"
 );
 // LINE 1084:
 	asm( 
-"	      004bffe6    mov eax,[ebp-4]"
+"	      004bffe6    mov eax,this"
 "	      004bffe9    add eax,1Ch"
 "	      004bffec    push eax"
-"	      004bffed    mov eax,[ebp-4]"
+"	      004bffed    mov eax,this"
 "	      004bfff0    add eax,18h"
 "	      004bfff3    push eax"
-"	      004bfff4    mov eax,[ebp-4]"
+"	      004bfff4    mov eax,this"
 "	      004bfff7    mov ecx,[eax+0Ch]"
 "	      004bfffa    call 00495B40h"
 );
 // LINE 1085:
 	asm( 
-"	      004bffff    mov eax,[ebp-4]"
+"	      004bffff    mov eax,this"
 "	      004c0002    mov eax,[eax+18h]"
-"	      004c0005    mov ecx,[ebp-4]"
+"	      004c0005    mov ecx,this"
 "	      004c0008    mov [ecx+20h],eax"
 );
 // LINE 1086:
 	asm( 
-"	      004c000b    mov eax,[ebp-4]"
+"	      004c000b    mov eax,this"
 "	      004c000e    mov eax,[eax+1Ch]"
-"	      004c0011    mov ecx,[ebp-4]"
+"	      004c0011    mov ecx,this"
 "	      004c0014    mov [ecx+24h],eax"
 );
 // LINE 1088:
@@ -4724,12 +4724,12 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1089:
 	asm( 
-"	      004c0024    mov eax,[ebp-4]"
+"	      004c0024    mov eax,this"
 "	      004c0027    sub dword ptr [eax+20h],28h"
 );
 // LINE 1090:
 	asm( 
-"	      004c002b    mov eax,[ebp-4]"
+"	      004c002b    mov eax,this"
 "	      004c002e    sub dword ptr [eax+24h],28h"
 );
 // LINE 1092:
@@ -4740,12 +4740,12 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1093:
 	asm( 
-"	      004c0044    mov eax,[ebp-4]"
+"	      004c0044    mov eax,this"
 "	      004c0047    sub dword ptr [eax+20h],50h"
 );
 // LINE 1094:
 	asm( 
-"	      004c004b    mov eax,[ebp-4]"
+"	      004c004b    mov eax,this"
 "	      004c004e    sub dword ptr [eax+24h],50h"
 );
 // LINE 1096:
@@ -4756,12 +4756,12 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1097:
 	asm( 
-"	      004c0064    mov eax,[ebp-4]"
+"	      004c0064    mov eax,this"
 "	      004c0067    sub dword ptr [eax+20h],64h"
 );
 // LINE 1098:
 	asm( 
-"	      004c006b    mov eax,[ebp-4]"
+"	      004c006b    mov eax,this"
 "	      004c006e    sub dword ptr [eax+24h],64h"
 );
 // LINE 1100:
@@ -4772,23 +4772,23 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1101:
 	asm( 
-"	      004c0084    mov eax,[ebp-4]"
+"	      004c0084    mov eax,this"
 "	      004c0087    sub dword ptr [eax+20h],80h"
 );
 // LINE 1102:
 	asm( 
-"	      004c008e    mov eax,[ebp-4]"
+"	      004c008e    mov eax,this"
 "	      004c0091    sub dword ptr [eax+24h],80h"
 );
 // LINE 1105:
 	asm( 
-"	      004c0098    mov eax,[ebp-4]"
+"	      004c0098    mov eax,this"
 "	      004c009b    cmp dword ptr [eax+2Ch],0"
 "	      004c009f    je near ptr 004C010Bh"
 );
 // LINE 1106:
 	asm( 
-"	      004c00a5    mov eax,[ebp-4]"
+"	      004c00a5    mov eax,this"
 "	      004c00a8    mov eax,[eax+20h]"
 "	      004c00ab    cdq"
 "	      004c00ac    sub eax,edx"
@@ -4797,7 +4797,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1107:
 	asm( 
-"	      004c00b6    mov eax,[ebp-4]"
+"	      004c00b6    mov eax,this"
 "	      004c00b9    mov eax,[eax+24h]"
 "	      004c00bc    cdq"
 "	      004c00bd    sub eax,edx"
@@ -4807,27 +4807,27 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1108:
 	asm( 
 "	      004c00c7    jmp near ptr 004C00CCh"
-"	      004c00cc    mov eax,[ebp-4]"
+"	      004c00cc    mov eax,this"
 "	      004c00cf    mov eax,[eax+38h]"
 "	      004c00d2    mov eax,[eax+14h]"
 "	      004c00d5    mov ds:[598ED4h],eax"
 );
 // LINE 1111:
 	asm( 
-"	      004c00da    mov eax,[ebp-4]"
+"	      004c00da    mov eax,this"
 "	      004c00dd    mov eax,[eax+20h]"
 "	      004c00e0    mov ds:[598EE8h],eax"
 );
 // LINE 1112:
 	asm( 
-"	      004c00e5    mov eax,[ebp-4]"
+"	      004c00e5    mov eax,this"
 "	      004c00e8    mov eax,[eax+24h]"
 "	      004c00eb    mov ds:[598EECh],eax"
 );
 // LINE 1113:
 	asm( 
 "	      004c00f0    jmp near ptr 004C00F5h"
-"	      004c00f5    mov eax,[ebp-4]"
+"	      004c00f5    mov eax,this"
 "	      004c00f8    mov eax,[eax+0Ch]"
 "	      004c00fb    mov eax,[eax+34h]"
 "	      004c00fe    mov eax,[eax+14h]"
@@ -4839,7 +4839,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1116:
 	asm( 
-"	      004c010b    mov eax,[ebp-4]"
+"	      004c010b    mov eax,this"
 "	      004c010e    mov eax,[eax+18h]"
 "	      004c0111    cdq"
 "	      004c0112    sub eax,edx"
@@ -4848,7 +4848,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 // LINE 1117:
 	asm( 
-"	      004c011c    mov eax,[ebp-4]"
+"	      004c011c    mov eax,this"
 "	      004c011f    mov eax,[eax+1Ch]"
 "	      004c0122    cdq"
 "	      004c0123    sub eax,edx"
@@ -4858,27 +4858,27 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1118:
 	asm( 
 "	      004c012d    jmp near ptr 004C0132h"
-"	      004c0132    mov eax,[ebp-4]"
+"	      004c0132    mov eax,this"
 "	      004c0135    mov eax,[eax+38h]"
 "	      004c0138    mov eax,[eax+14h]"
 "	      004c013b    mov ds:[598ED4h],eax"
 );
 // LINE 1121:
 	asm( 
-"	      004c0140    mov eax,[ebp-4]"
+"	      004c0140    mov eax,this"
 "	      004c0143    mov eax,[eax+18h]"
 "	      004c0146    mov ds:[598EE8h],eax"
 );
 // LINE 1122:
 	asm( 
-"	      004c014b    mov eax,[ebp-4]"
+"	      004c014b    mov eax,this"
 "	      004c014e    mov eax,[eax+1Ch]"
 "	      004c0151    mov ds:[598EECh],eax"
 );
 // LINE 1123:
 	asm( 
 "	      004c0156    jmp near ptr 004C015Bh"
-"	      004c015b    mov eax,[ebp-4]"
+"	      004c015b    mov eax,this"
 "	      004c015e    mov eax,[eax+0Ch]"
 "	      004c0161    mov eax,[eax+34h]"
 "	      004c0164    mov eax,[eax+14h]"
@@ -4905,11 +4905,11 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 "	      004c017c    push ebx"
 "	      004c017d    push esi"
 "	      004c017e    push edi"
-"	      004c017f    mov [ebp-4],ecx"
+"	      004c017f    mov this,ecx"
 );
 // LINE 1134:
 	asm( 
-"	      004c0182    mov eax,[ebp-4]"
+"	      004c0182    mov eax,this"
 "	      004c0185    add eax,148h"
 "	      004c018a    push eax"
 "	      004c018b    call 0048C234h"
@@ -4919,12 +4919,12 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 );
 // LINE 1135:
 	asm( 
-"	      004c019b    mov ecx,[ebp-4]"
+"	      004c019b    mov ecx,this"
 "	      004c019e    call 004C02FFh"
 );
 // LINE 1136:
 	asm( 
-"	      004c01a3    mov ecx,[ebp-4]"
+"	      004c01a3    mov ecx,this"
 "	      004c01a6    add ecx,70h"
 "	      004c01a9    call 0048B6EDh"
 );
@@ -4952,22 +4952,22 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 "	      004c01be    push ebx"
 "	      004c01bf    push esi"
 "	      004c01c0    push edi"
-"	      004c01c1    mov [ebp-34h],ecx"
+"	      004c01c1    mov this,ecx"
 );
 // LINE 1144:
 	asm( 
-"	      004c01c4    mov eax,[ebp-34h]"
+"	      004c01c4    mov eax,this"
 "	      004c01c7    mov eax,[eax+148h]"
 "	      004c01cd    mov eax,[eax]"
 "	      004c01cf    mov [ebp-28h],eax"
 "	      004c01d2    mov eax,[ebp-28h]"
-"	      004c01d5    mov [ebp-4],eax"
+"	      004c01d5    mov tempShortcutListIterator.node,eax"
 "	      004c01d8    jmp near ptr 004C01DDh"
 "	      004c01dd    jmp near ptr 004C01E2h"
 );
 // LINE 1147:
 	asm( 
-"	      004c01e2    mov eax,[ebp-34h]"
+"	      004c01e2    mov eax,this"
 "	      004c01e5    mov eax,[eax+148h]"
 "	      004c01eb    mov [ebp-1Ch],eax"
 "	      004c01ee    mov eax,[ebp-1Ch]"
@@ -4975,7 +4975,7 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 "	      004c01f4    jmp near ptr 004C01F9h"
 "	      004c01f9    jmp near ptr 004C01FEh"
 "	      004c01fe    mov eax,[ebp-0Ch]"
-"	      004c0201    cmp [ebp-4],eax"
+"	      004c0201    cmp tempShortcutListIterator.node,eax"
 "	      004c0204    jne near ptr 004C0214h"
 "	      004c020a    jmp near ptr 004C0228h"
 "	      004c020f    jmp near ptr 004C0214h"
@@ -4991,13 +4991,13 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 // LINE 1148:
 	asm( 
 "	      004c023c    jmp near ptr 004C0241h"
-"	      004c0241    mov eax,[ebp-4]"
+"	      004c0241    mov eax,tempShortcutListIterator.node"
 "	      004c0244    mov eax,[eax+0Ch]"
-"	      004c0247    mov [ebp-8],eax"
+"	      004c0247    mov lCurrentCommand,eax"
 );
 // LINE 1149:
 	asm( 
-"	      004c024a    mov eax,[ebp-8]"
+"	      004c024a    mov eax,lCurrentCommand"
 "	      004c024d    push eax"
 "	      004c024e    call 0048E696h"
 "	      004c0253    add esp,4"
@@ -5006,11 +5006,11 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 );
 // LINE 1150:
 	asm( 
-"	      004c025e    mov eax,[ebp-4]"
+"	      004c025e    mov eax,tempShortcutListIterator.node"
 "	      004c0261    mov [ebp-18h],eax"
-"	      004c0264    mov eax,[ebp-4]"
+"	      004c0264    mov eax,tempShortcutListIterator.node"
 "	      004c0267    mov eax,[eax]"
-"	      004c0269    mov [ebp-4],eax"
+"	      004c0269    mov tempShortcutListIterator.node,eax"
 "	      004c026c    jmp near ptr 004C0271h"
 "	      004c0271    mov eax,[ebp-18h]"
 "	      004c0274    mov [ebp-10h],eax"
@@ -5035,7 +5035,7 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 "	      004c02b1    mov eax,[ebp-30h]"
 "	      004c02b4    mov ds:[597224h],eax"
 "	      004c02b9    jmp near ptr 004C02BEh"
-"	      004c02be    mov eax,[ebp-34h]"
+"	      004c02be    mov eax,this"
 "	      004c02c1    add dword ptr [eax+14Ch],0FFFFFFFFh"
 "	      004c02c8    jmp near ptr 004C02CDh"
 );
@@ -5045,11 +5045,11 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 );
 // LINE 1152:
 	asm( 
-"	      004c02d2    mov eax,[ebp-4]"
+"	      004c02d2    mov eax,tempShortcutListIterator.node"
 "	      004c02d5    mov [ebp-2Ch],eax"
-"	      004c02d8    mov eax,[ebp-4]"
+"	      004c02d8    mov eax,tempShortcutListIterator.node"
 "	      004c02db    mov eax,[eax]"
-"	      004c02dd    mov [ebp-4],eax"
+"	      004c02dd    mov tempShortcutListIterator.node,eax"
 "	      004c02e0    jmp near ptr 004C02E5h"
 "	      004c02e5    mov eax,[ebp-2Ch]"
 "	      004c02e8    mov [ebp-14h],eax"
@@ -5080,11 +5080,11 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 "	      004c0305    push ebx"
 "	      004c0306    push esi"
 "	      004c0307    push edi"
-"	      004c0308    mov [ebp-4],ecx"
+"	      004c0308    mov this,ecx"
 );
 // LINE 1164:
 	asm( 
-"	      004c030b    mov eax,[ebp-4]"
+"	      004c030b    mov eax,this"
 "	      004c030e    add eax,148h"
 "	      004c0313    push eax"
 "	      004c0314    call 0048C8BDh"
@@ -5113,515 +5113,515 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c032f    push ebx"
 "	      004c0330    push esi"
 "	      004c0331    push edi"
-"	      004c0332    mov [ebp-19Ch],ecx"
+"	      004c0332    mov this,ecx"
 );
 // LINE 1178:
 	asm( 
-"	      004c0338    mov dword ptr [ebp-18h],0"
+"	      004c0338    mov tempShortcut.lDeviceID,0"
 );
 // LINE 1180:
 	asm( 
-"	      004c033f    mov dword ptr [ebp-14h],0"
+"	      004c033f    mov tempShortcut.lCommand,0"
 );
 // LINE 1181:
 	asm( 
-"	      004c0346    mov dword ptr [ebp-10h],0"
+"	      004c0346    mov tempShortcut.lKey,0"
 );
 // LINE 1182:
 	asm( 
-"	      004c034d    mov dword ptr [ebp-0Ch],0"
+"	      004c034d    mov tempShortcut.lModifiers,0"
 );
 // LINE 1183:
 	asm( 
-"	      004c0354    mov dword ptr [ebp-8],0"
+"	      004c0354    mov tempShortcut.lPush,0"
 );
 // LINE 1184:
 	asm( 
-"	      004c035b    mov dword ptr [ebp-4],0"
+"	      004c035b    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1185:
 	asm( 
-"	      004c0362    mov eax,[ebp-19Ch]"
+"	      004c0362    mov eax,this"
 "	      004c0368    mov eax,[eax+148h]"
 "	      004c036e    mov [ebp-24h],eax"
 "	      004c0371    mov eax,[ebp-24h]"
 "	      004c0374    mov [ebp-1Ch],eax"
 "	      004c0377    jmp near ptr 004C037Ch"
 "	      004c037c    jmp near ptr 004C0381h"
-"	      004c0381    lea eax,[ebp-18h]"
+"	      004c0381    lea eax,tempShortcut.lDeviceID"
 "	      004c0384    push eax"
 "	      004c0385    mov eax,[ebp-1Ch]"
 "	      004c0388    push eax"
 "	      004c0389    lea eax,[ebp-20h]"
 "	      004c038c    push eax"
-"	      004c038d    mov ecx,[ebp-19Ch]"
+"	      004c038d    mov ecx,this"
 "	      004c0393    add ecx,148h"
 "	      004c0399    call 0048E910h"
 "	      004c039e    jmp near ptr 004C03A3h"
 );
 // LINE 1187:
 	asm( 
-"	      004c03a3    mov dword ptr [ebp-14h],38h"
+"	      004c03a3    mov tempShortcut.lCommand,38h"
 );
 // LINE 1188:
 	asm( 
-"	      004c03aa    mov dword ptr [ebp-10h],1Bh"
+"	      004c03aa    mov tempShortcut.lKey,1Bh"
 );
 // LINE 1189:
 	asm( 
-"	      004c03b1    mov dword ptr [ebp-0Ch],0"
+"	      004c03b1    mov tempShortcut.lModifiers,0"
 );
 // LINE 1190:
 	asm( 
-"	      004c03b8    mov dword ptr [ebp-8],1"
+"	      004c03b8    mov tempShortcut.lPush,1"
 );
 // LINE 1191:
 	asm( 
-"	      004c03bf    mov dword ptr [ebp-4],0"
+"	      004c03bf    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1192:
 	asm( 
-"	      004c03c6    mov eax,[ebp-19Ch]"
+"	      004c03c6    mov eax,this"
 "	      004c03cc    mov eax,[eax+148h]"
 "	      004c03d2    mov [ebp-30h],eax"
 "	      004c03d5    mov eax,[ebp-30h]"
 "	      004c03d8    mov [ebp-28h],eax"
 "	      004c03db    jmp near ptr 004C03E0h"
 "	      004c03e0    jmp near ptr 004C03E5h"
-"	      004c03e5    lea eax,[ebp-18h]"
+"	      004c03e5    lea eax,tempShortcut.lDeviceID"
 "	      004c03e8    push eax"
 "	      004c03e9    mov eax,[ebp-28h]"
 "	      004c03ec    push eax"
 "	      004c03ed    lea eax,[ebp-2Ch]"
 "	      004c03f0    push eax"
-"	      004c03f1    mov ecx,[ebp-19Ch]"
+"	      004c03f1    mov ecx,this"
 "	      004c03f7    add ecx,148h"
 "	      004c03fd    call 0048E910h"
 "	      004c0402    jmp near ptr 004C0407h"
 );
 // LINE 1194:
 	asm( 
-"	      004c0407    mov dword ptr [ebp-14h],22h"
+"	      004c0407    mov tempShortcut.lCommand,22h"
 );
 // LINE 1195:
 	asm( 
-"	      004c040e    mov dword ptr [ebp-10h],70h"
+"	      004c040e    mov tempShortcut.lKey,70h"
 );
 // LINE 1196:
 	asm( 
-"	      004c0415    mov dword ptr [ebp-0Ch],2"
+"	      004c0415    mov tempShortcut.lModifiers,2"
 );
 // LINE 1197:
 	asm( 
-"	      004c041c    mov dword ptr [ebp-8],1"
+"	      004c041c    mov tempShortcut.lPush,1"
 );
 // LINE 1198:
 	asm( 
-"	      004c0423    mov dword ptr [ebp-4],0"
+"	      004c0423    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1199:
 	asm( 
-"	      004c042a    mov eax,[ebp-19Ch]"
+"	      004c042a    mov eax,this"
 "	      004c0430    mov eax,[eax+148h]"
 "	      004c0436    mov [ebp-3Ch],eax"
 "	      004c0439    mov eax,[ebp-3Ch]"
 "	      004c043c    mov [ebp-34h],eax"
 "	      004c043f    jmp near ptr 004C0444h"
 "	      004c0444    jmp near ptr 004C0449h"
-"	      004c0449    lea eax,[ebp-18h]"
+"	      004c0449    lea eax,tempShortcut.lDeviceID"
 "	      004c044c    push eax"
 "	      004c044d    mov eax,[ebp-34h]"
 "	      004c0450    push eax"
 "	      004c0451    lea eax,[ebp-38h]"
 "	      004c0454    push eax"
-"	      004c0455    mov ecx,[ebp-19Ch]"
+"	      004c0455    mov ecx,this"
 "	      004c045b    add ecx,148h"
 "	      004c0461    call 0048E910h"
 "	      004c0466    jmp near ptr 004C046Bh"
 );
 // LINE 1201:
 	asm( 
-"	      004c046b    mov dword ptr [ebp-14h],23h"
+"	      004c046b    mov tempShortcut.lCommand,23h"
 );
 // LINE 1202:
 	asm( 
-"	      004c0472    mov dword ptr [ebp-10h],71h"
+"	      004c0472    mov tempShortcut.lKey,71h"
 );
 // LINE 1203:
 	asm( 
-"	      004c0479    mov dword ptr [ebp-0Ch],2"
+"	      004c0479    mov tempShortcut.lModifiers,2"
 );
 // LINE 1204:
 	asm( 
-"	      004c0480    mov dword ptr [ebp-8],1"
+"	      004c0480    mov tempShortcut.lPush,1"
 );
 // LINE 1205:
 	asm( 
-"	      004c0487    mov dword ptr [ebp-4],0"
+"	      004c0487    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1206:
 	asm( 
-"	      004c048e    mov eax,[ebp-19Ch]"
+"	      004c048e    mov eax,this"
 "	      004c0494    mov eax,[eax+148h]"
 "	      004c049a    mov [ebp-48h],eax"
 "	      004c049d    mov eax,[ebp-48h]"
 "	      004c04a0    mov [ebp-40h],eax"
 "	      004c04a3    jmp near ptr 004C04A8h"
 "	      004c04a8    jmp near ptr 004C04ADh"
-"	      004c04ad    lea eax,[ebp-18h]"
+"	      004c04ad    lea eax,tempShortcut.lDeviceID"
 "	      004c04b0    push eax"
 "	      004c04b1    mov eax,[ebp-40h]"
 "	      004c04b4    push eax"
 "	      004c04b5    lea eax,[ebp-44h]"
 "	      004c04b8    push eax"
-"	      004c04b9    mov ecx,[ebp-19Ch]"
+"	      004c04b9    mov ecx,this"
 "	      004c04bf    add ecx,148h"
 "	      004c04c5    call 0048E910h"
 "	      004c04ca    jmp near ptr 004C04CFh"
 );
 // LINE 1208:
 	asm( 
-"	      004c04cf    mov dword ptr [ebp-14h],24h"
+"	      004c04cf    mov tempShortcut.lCommand,24h"
 );
 // LINE 1209:
 	asm( 
-"	      004c04d6    mov dword ptr [ebp-10h],72h"
+"	      004c04d6    mov tempShortcut.lKey,72h"
 );
 // LINE 1210:
 	asm( 
-"	      004c04dd    mov dword ptr [ebp-0Ch],2"
+"	      004c04dd    mov tempShortcut.lModifiers,2"
 );
 // LINE 1211:
 	asm( 
-"	      004c04e4    mov dword ptr [ebp-8],1"
+"	      004c04e4    mov tempShortcut.lPush,1"
 );
 // LINE 1212:
 	asm( 
-"	      004c04eb    mov dword ptr [ebp-4],0"
+"	      004c04eb    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1213:
 	asm( 
-"	      004c04f2    mov eax,[ebp-19Ch]"
+"	      004c04f2    mov eax,this"
 "	      004c04f8    mov eax,[eax+148h]"
 "	      004c04fe    mov [ebp-54h],eax"
 "	      004c0501    mov eax,[ebp-54h]"
 "	      004c0504    mov [ebp-4Ch],eax"
 "	      004c0507    jmp near ptr 004C050Ch"
 "	      004c050c    jmp near ptr 004C0511h"
-"	      004c0511    lea eax,[ebp-18h]"
+"	      004c0511    lea eax,tempShortcut.lDeviceID"
 "	      004c0514    push eax"
 "	      004c0515    mov eax,[ebp-4Ch]"
 "	      004c0518    push eax"
 "	      004c0519    lea eax,[ebp-50h]"
 "	      004c051c    push eax"
-"	      004c051d    mov ecx,[ebp-19Ch]"
+"	      004c051d    mov ecx,this"
 "	      004c0523    add ecx,148h"
 "	      004c0529    call 0048E910h"
 "	      004c052e    jmp near ptr 004C0533h"
 );
 // LINE 1215:
 	asm( 
-"	      004c0533    mov dword ptr [ebp-14h],25h"
+"	      004c0533    mov tempShortcut.lCommand,25h"
 );
 // LINE 1216:
 	asm( 
-"	      004c053a    mov dword ptr [ebp-10h],73h"
+"	      004c053a    mov tempShortcut.lKey,73h"
 );
 // LINE 1217:
 	asm( 
-"	      004c0541    mov dword ptr [ebp-0Ch],2"
+"	      004c0541    mov tempShortcut.lModifiers,2"
 );
 // LINE 1218:
 	asm( 
-"	      004c0548    mov dword ptr [ebp-8],1"
+"	      004c0548    mov tempShortcut.lPush,1"
 );
 // LINE 1219:
 	asm( 
-"	      004c054f    mov dword ptr [ebp-4],0"
+"	      004c054f    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1220:
 	asm( 
-"	      004c0556    mov eax,[ebp-19Ch]"
+"	      004c0556    mov eax,this"
 "	      004c055c    mov eax,[eax+148h]"
 "	      004c0562    mov [ebp-60h],eax"
 "	      004c0565    mov eax,[ebp-60h]"
 "	      004c0568    mov [ebp-58h],eax"
 "	      004c056b    jmp near ptr 004C0570h"
 "	      004c0570    jmp near ptr 004C0575h"
-"	      004c0575    lea eax,[ebp-18h]"
+"	      004c0575    lea eax,tempShortcut.lDeviceID"
 "	      004c0578    push eax"
 "	      004c0579    mov eax,[ebp-58h]"
 "	      004c057c    push eax"
 "	      004c057d    lea eax,[ebp-5Ch]"
 "	      004c0580    push eax"
-"	      004c0581    mov ecx,[ebp-19Ch]"
+"	      004c0581    mov ecx,this"
 "	      004c0587    add ecx,148h"
 "	      004c058d    call 0048E910h"
 "	      004c0592    jmp near ptr 004C0597h"
 );
 // LINE 1222:
 	asm( 
-"	      004c0597    mov dword ptr [ebp-14h],26h"
+"	      004c0597    mov tempShortcut.lCommand,26h"
 );
 // LINE 1223:
 	asm( 
-"	      004c059e    mov dword ptr [ebp-10h],31h"
+"	      004c059e    mov tempShortcut.lKey,31h"
 );
 // LINE 1224:
 	asm( 
-"	      004c05a5    mov dword ptr [ebp-0Ch],2"
+"	      004c05a5    mov tempShortcut.lModifiers,2"
 );
 // LINE 1225:
 	asm( 
-"	      004c05ac    mov dword ptr [ebp-8],0"
+"	      004c05ac    mov tempShortcut.lPush,0"
 );
 // LINE 1226:
 	asm( 
-"	      004c05b3    mov dword ptr [ebp-4],0"
+"	      004c05b3    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1227:
 	asm( 
-"	      004c05ba    mov eax,[ebp-19Ch]"
+"	      004c05ba    mov eax,this"
 "	      004c05c0    mov eax,[eax+148h]"
 "	      004c05c6    mov [ebp-6Ch],eax"
 "	      004c05c9    mov eax,[ebp-6Ch]"
 "	      004c05cc    mov [ebp-64h],eax"
 "	      004c05cf    jmp near ptr 004C05D4h"
 "	      004c05d4    jmp near ptr 004C05D9h"
-"	      004c05d9    lea eax,[ebp-18h]"
+"	      004c05d9    lea eax,tempShortcut.lDeviceID"
 "	      004c05dc    push eax"
 "	      004c05dd    mov eax,[ebp-64h]"
 "	      004c05e0    push eax"
 "	      004c05e1    lea eax,[ebp-68h]"
 "	      004c05e4    push eax"
-"	      004c05e5    mov ecx,[ebp-19Ch]"
+"	      004c05e5    mov ecx,this"
 "	      004c05eb    add ecx,148h"
 "	      004c05f1    call 0048E910h"
 "	      004c05f6    jmp near ptr 004C05FBh"
 );
 // LINE 1229:
 	asm( 
-"	      004c05fb    mov dword ptr [ebp-14h],27h"
+"	      004c05fb    mov tempShortcut.lCommand,27h"
 );
 // LINE 1230:
 	asm( 
-"	      004c0602    mov dword ptr [ebp-10h],32h"
+"	      004c0602    mov tempShortcut.lKey,32h"
 );
 // LINE 1231:
 	asm( 
-"	      004c0609    mov dword ptr [ebp-0Ch],2"
+"	      004c0609    mov tempShortcut.lModifiers,2"
 );
 // LINE 1232:
 	asm( 
-"	      004c0610    mov dword ptr [ebp-8],0"
+"	      004c0610    mov tempShortcut.lPush,0"
 );
 // LINE 1233:
 	asm( 
-"	      004c0617    mov dword ptr [ebp-4],0"
+"	      004c0617    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1234:
 	asm( 
-"	      004c061e    mov eax,[ebp-19Ch]"
+"	      004c061e    mov eax,this"
 "	      004c0624    mov eax,[eax+148h]"
 "	      004c062a    mov [ebp-78h],eax"
 "	      004c062d    mov eax,[ebp-78h]"
 "	      004c0630    mov [ebp-70h],eax"
 "	      004c0633    jmp near ptr 004C0638h"
 "	      004c0638    jmp near ptr 004C063Dh"
-"	      004c063d    lea eax,[ebp-18h]"
+"	      004c063d    lea eax,tempShortcut.lDeviceID"
 "	      004c0640    push eax"
 "	      004c0641    mov eax,[ebp-70h]"
 "	      004c0644    push eax"
 "	      004c0645    lea eax,[ebp-74h]"
 "	      004c0648    push eax"
-"	      004c0649    mov ecx,[ebp-19Ch]"
+"	      004c0649    mov ecx,this"
 "	      004c064f    add ecx,148h"
 "	      004c0655    call 0048E910h"
 "	      004c065a    jmp near ptr 004C065Fh"
 );
 // LINE 1236:
 	asm( 
-"	      004c065f    mov dword ptr [ebp-14h],28h"
+"	      004c065f    mov tempShortcut.lCommand,28h"
 );
 // LINE 1237:
 	asm( 
-"	      004c0666    mov dword ptr [ebp-10h],33h"
+"	      004c0666    mov tempShortcut.lKey,33h"
 );
 // LINE 1238:
 	asm( 
-"	      004c066d    mov dword ptr [ebp-0Ch],2"
+"	      004c066d    mov tempShortcut.lModifiers,2"
 );
 // LINE 1239:
 	asm( 
-"	      004c0674    mov dword ptr [ebp-8],0"
+"	      004c0674    mov tempShortcut.lPush,0"
 );
 // LINE 1240:
 	asm( 
-"	      004c067b    mov dword ptr [ebp-4],0"
+"	      004c067b    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1241:
 	asm( 
-"	      004c0682    mov eax,[ebp-19Ch]"
+"	      004c0682    mov eax,this"
 "	      004c0688    mov eax,[eax+148h]"
 "	      004c068e    mov [ebp-84h],eax"
 "	      004c0694    mov eax,[ebp-84h]"
 "	      004c069a    mov [ebp-7Ch],eax"
 "	      004c069d    jmp near ptr 004C06A2h"
 "	      004c06a2    jmp near ptr 004C06A7h"
-"	      004c06a7    lea eax,[ebp-18h]"
+"	      004c06a7    lea eax,tempShortcut.lDeviceID"
 "	      004c06aa    push eax"
 "	      004c06ab    mov eax,[ebp-7Ch]"
 "	      004c06ae    push eax"
 "	      004c06af    lea eax,[ebp-80h]"
 "	      004c06b2    push eax"
-"	      004c06b3    mov ecx,[ebp-19Ch]"
+"	      004c06b3    mov ecx,this"
 "	      004c06b9    add ecx,148h"
 "	      004c06bf    call 0048E910h"
 "	      004c06c4    jmp near ptr 004C06C9h"
 );
 // LINE 1243:
 	asm( 
-"	      004c06c9    mov dword ptr [ebp-14h],29h"
+"	      004c06c9    mov tempShortcut.lCommand,29h"
 );
 // LINE 1244:
 	asm( 
-"	      004c06d0    mov dword ptr [ebp-10h],34h"
+"	      004c06d0    mov tempShortcut.lKey,34h"
 );
 // LINE 1245:
 	asm( 
-"	      004c06d7    mov dword ptr [ebp-0Ch],2"
+"	      004c06d7    mov tempShortcut.lModifiers,2"
 );
 // LINE 1246:
 	asm( 
-"	      004c06de    mov dword ptr [ebp-8],0"
+"	      004c06de    mov tempShortcut.lPush,0"
 );
 // LINE 1247:
 	asm( 
-"	      004c06e5    mov dword ptr [ebp-4],0"
+"	      004c06e5    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1248:
 	asm( 
-"	      004c06ec    mov eax,[ebp-19Ch]"
+"	      004c06ec    mov eax,this"
 "	      004c06f2    mov eax,[eax+148h]"
 "	      004c06f8    mov [ebp-90h],eax"
 "	      004c06fe    mov eax,[ebp-90h]"
 "	      004c0704    mov [ebp-88h],eax"
 "	      004c070a    jmp near ptr 004C070Fh"
 "	      004c070f    jmp near ptr 004C0714h"
-"	      004c0714    lea eax,[ebp-18h]"
+"	      004c0714    lea eax,tempShortcut.lDeviceID"
 "	      004c0717    push eax"
 "	      004c0718    mov eax,[ebp-88h]"
 "	      004c071e    push eax"
 "	      004c071f    lea eax,[ebp-8Ch]"
 "	      004c0725    push eax"
-"	      004c0726    mov ecx,[ebp-19Ch]"
+"	      004c0726    mov ecx,this"
 "	      004c072c    add ecx,148h"
 "	      004c0732    call 0048E910h"
 "	      004c0737    jmp near ptr 004C073Ch"
 );
 // LINE 1250:
 	asm( 
-"	      004c073c    mov dword ptr [ebp-14h],2Ah"
+"	      004c073c    mov tempShortcut.lCommand,2Ah"
 );
 // LINE 1251:
 	asm( 
-"	      004c0743    mov dword ptr [ebp-10h],48h"
+"	      004c0743    mov tempShortcut.lKey,48h"
 );
 // LINE 1252:
 	asm( 
-"	      004c074a    mov dword ptr [ebp-0Ch],2"
+"	      004c074a    mov tempShortcut.lModifiers,2"
 );
 // LINE 1253:
 	asm( 
-"	      004c0751    mov dword ptr [ebp-8],1"
+"	      004c0751    mov tempShortcut.lPush,1"
 );
 // LINE 1254:
 	asm( 
-"	      004c0758    mov dword ptr [ebp-4],0"
+"	      004c0758    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1255:
 	asm( 
-"	      004c075f    mov eax,[ebp-19Ch]"
+"	      004c075f    mov eax,this"
 "	      004c0765    mov eax,[eax+148h]"
 "	      004c076b    mov [ebp-9Ch],eax"
 "	      004c0771    mov eax,[ebp-9Ch]"
 "	      004c0777    mov [ebp-94h],eax"
 "	      004c077d    jmp near ptr 004C0782h"
 "	      004c0782    jmp near ptr 004C0787h"
-"	      004c0787    lea eax,[ebp-18h]"
+"	      004c0787    lea eax,tempShortcut.lDeviceID"
 "	      004c078a    push eax"
 "	      004c078b    mov eax,[ebp-94h]"
 "	      004c0791    push eax"
 "	      004c0792    lea eax,[ebp-98h]"
 "	      004c0798    push eax"
-"	      004c0799    mov ecx,[ebp-19Ch]"
+"	      004c0799    mov ecx,this"
 "	      004c079f    add ecx,148h"
 "	      004c07a5    call 0048E910h"
 "	      004c07aa    jmp near ptr 004C07AFh"
 );
 // LINE 1257:
 	asm( 
-"	      004c07af    mov dword ptr [ebp-14h],2Dh"
+"	      004c07af    mov tempShortcut.lCommand,2Dh"
 );
 // LINE 1258:
 	asm( 
-"	      004c07b6    mov dword ptr [ebp-10h],4Fh"
+"	      004c07b6    mov tempShortcut.lKey,4Fh"
 );
 // LINE 1259:
 	asm( 
-"	      004c07bd    mov dword ptr [ebp-0Ch],2"
+"	      004c07bd    mov tempShortcut.lModifiers,2"
 );
 // LINE 1260:
 	asm( 
-"	      004c07c4    mov dword ptr [ebp-8],1"
+"	      004c07c4    mov tempShortcut.lPush,1"
 );
 // LINE 1261:
 	asm( 
-"	      004c07cb    mov dword ptr [ebp-4],0"
+"	      004c07cb    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1262:
 	asm( 
-"	      004c07d2    mov eax,[ebp-19Ch]"
+"	      004c07d2    mov eax,this"
 "	      004c07d8    mov eax,[eax+148h]"
 "	      004c07de    mov [ebp-0A8h],eax"
 "	      004c07e4    mov eax,[ebp-0A8h]"
 "	      004c07ea    mov [ebp-0A0h],eax"
 "	      004c07f0    jmp near ptr 004C07F5h"
 "	      004c07f5    jmp near ptr 004C07FAh"
-"	      004c07fa    lea eax,[ebp-18h]"
+"	      004c07fa    lea eax,tempShortcut.lDeviceID"
 "	      004c07fd    push eax"
 "	      004c07fe    mov eax,[ebp-0A0h]"
 "	      004c0804    push eax"
 "	      004c0805    lea eax,[ebp-0A4h]"
 "	      004c080b    push eax"
-"	      004c080c    mov ecx,[ebp-19Ch]"
+"	      004c080c    mov ecx,this"
 "	      004c0812    add ecx,148h"
 "	      004c0818    call 0048E910h"
 "	      004c081d    jmp near ptr 004C0822h"
 );
 // LINE 1264:
 	asm( 
-"	      004c0822    mov dword ptr [ebp-14h],2Eh"
+"	      004c0822    mov tempShortcut.lCommand,2Eh"
 );
 // LINE 1265:
 	asm( 
-"	      004c0829    mov dword ptr [ebp-10h],47h"
+"	      004c0829    mov tempShortcut.lKey,47h"
 );
 // LINE 1266:
 	asm( 
-"	      004c0830    mov dword ptr [ebp-0Ch],2"
+"	      004c0830    mov tempShortcut.lModifiers,2"
 );
 // LINE 1267:
 	asm( 
-"	      004c0837    mov dword ptr [ebp-8],1"
+"	      004c0837    mov tempShortcut.lPush,1"
 );
 // LINE 1268:
 	asm( 
-"	      004c083e    mov dword ptr [ebp-4],0"
+"	      004c083e    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1269:
 	asm( 
-"	      004c0845    mov eax,[ebp-19Ch]"
+"	      004c0845    mov eax,this"
 "	      004c084b    mov eax,[eax+148h]"
 "	      004c0851    mov [ebp-0B4h],eax"
 "	      004c0857    mov eax,[ebp-0B4h]"
@@ -5630,7 +5630,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0868    jmp near ptr 004C086Dh"
 "	      004c086d    mov eax,[ebp-0ACh]"
 "	      004c0873    mov [ebp-0C0h],eax"
-"	      004c0879    mov ecx,[ebp-19Ch]"
+"	      004c0879    mov ecx,this"
 "	      004c087f    add ecx,148h"
 "	      004c0885    call 0048ACD0h"
 "	      004c088a    mov [ebp-0B8h],eax"
@@ -5641,7 +5641,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c08a4    jmp near ptr 004C08A9h"
 "	      004c08a9    cmp dword ptr [ebp-0BCh],0"
 "	      004c08b0    je near ptr 004C08CBh"
-"	      004c08b6    lea esi,[ebp-18h]"
+"	      004c08b6    lea esi,tempShortcut.lDeviceID"
 "	      004c08b9    mov edi,[ebp-0BCh]"
 "	      004c08bf    mov ecx,6"
 "	      004c08c4    rep movsd"
@@ -5661,7 +5661,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0901    mov eax,[ebp-0B8h]"
 "	      004c0907    mov ecx,[ebp-0C0h]"
 "	      004c090d    mov [ecx+4],eax"
-"	      004c0910    mov eax,[ebp-19Ch]"
+"	      004c0910    mov eax,this"
 "	      004c0916    add dword ptr [eax+14Ch],1"
 "	      004c091d    mov eax,[ebp-0B8h]"
 "	      004c0923    mov [ebp-0B0h],eax"
@@ -5671,67 +5671,67 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1271:
 	asm( 
-"	      004c0938    mov dword ptr [ebp-14h],33h"
+"	      004c0938    mov tempShortcut.lCommand,33h"
 );
 // LINE 1272:
 	asm( 
-"	      004c093f    mov dword ptr [ebp-10h],53h"
+"	      004c093f    mov tempShortcut.lKey,53h"
 );
 // LINE 1273:
 	asm( 
-"	      004c0946    mov dword ptr [ebp-0Ch],2"
+"	      004c0946    mov tempShortcut.lModifiers,2"
 );
 // LINE 1274:
 	asm( 
-"	      004c094d    mov dword ptr [ebp-8],1"
+"	      004c094d    mov tempShortcut.lPush,1"
 );
 // LINE 1275:
 	asm( 
-"	      004c0954    mov dword ptr [ebp-4],0"
+"	      004c0954    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1276:
 	asm( 
-"	      004c095b    mov eax,[ebp-19Ch]"
+"	      004c095b    mov eax,this"
 "	      004c0961    mov eax,[eax+148h]"
 "	      004c0967    mov [ebp-0CCh],eax"
 "	      004c096d    mov eax,[ebp-0CCh]"
 "	      004c0973    mov [ebp-0C4h],eax"
 "	      004c0979    jmp near ptr 004C097Eh"
 "	      004c097e    jmp near ptr 004C0983h"
-"	      004c0983    lea eax,[ebp-18h]"
+"	      004c0983    lea eax,tempShortcut.lDeviceID"
 "	      004c0986    push eax"
 "	      004c0987    mov eax,[ebp-0C4h]"
 "	      004c098d    push eax"
 "	      004c098e    lea eax,[ebp-0C8h]"
 "	      004c0994    push eax"
-"	      004c0995    mov ecx,[ebp-19Ch]"
+"	      004c0995    mov ecx,this"
 "	      004c099b    add ecx,148h"
 "	      004c09a1    call 0048E910h"
 "	      004c09a6    jmp near ptr 004C09ABh"
 );
 // LINE 1278:
 	asm( 
-"	      004c09ab    mov dword ptr [ebp-14h],34h"
+"	      004c09ab    mov tempShortcut.lCommand,34h"
 );
 // LINE 1279:
 	asm( 
-"	      004c09b2    mov dword ptr [ebp-10h],45h"
+"	      004c09b2    mov tempShortcut.lKey,45h"
 );
 // LINE 1280:
 	asm( 
-"	      004c09b9    mov dword ptr [ebp-0Ch],2"
+"	      004c09b9    mov tempShortcut.lModifiers,2"
 );
 // LINE 1281:
 	asm( 
-"	      004c09c0    mov dword ptr [ebp-8],1"
+"	      004c09c0    mov tempShortcut.lPush,1"
 );
 // LINE 1282:
 	asm( 
-"	      004c09c7    mov dword ptr [ebp-4],0"
+"	      004c09c7    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1283:
 	asm( 
-"	      004c09ce    mov eax,[ebp-19Ch]"
+"	      004c09ce    mov eax,this"
 "	      004c09d4    mov eax,[eax+148h]"
 "	      004c09da    mov [ebp-0D8h],eax"
 "	      004c09e0    mov eax,[ebp-0D8h]"
@@ -5740,7 +5740,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c09f1    jmp near ptr 004C09F6h"
 "	      004c09f6    mov eax,[ebp-0D0h]"
 "	      004c09fc    mov [ebp-0E4h],eax"
-"	      004c0a02    mov ecx,[ebp-19Ch]"
+"	      004c0a02    mov ecx,this"
 "	      004c0a08    add ecx,148h"
 "	      004c0a0e    call 0048ACD0h"
 "	      004c0a13    mov [ebp-0DCh],eax"
@@ -5751,7 +5751,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0a2d    jmp near ptr 004C0A32h"
 "	      004c0a32    cmp dword ptr [ebp-0E0h],0"
 "	      004c0a39    je near ptr 004C0A54h"
-"	      004c0a3f    lea esi,[ebp-18h]"
+"	      004c0a3f    lea esi,tempShortcut.lDeviceID"
 "	      004c0a42    mov edi,[ebp-0E0h]"
 "	      004c0a48    mov ecx,6"
 "	      004c0a4d    rep movsd"
@@ -5771,7 +5771,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0a8a    mov eax,[ebp-0DCh]"
 "	      004c0a90    mov ecx,[ebp-0E4h]"
 "	      004c0a96    mov [ecx+4],eax"
-"	      004c0a99    mov eax,[ebp-19Ch]"
+"	      004c0a99    mov eax,this"
 "	      004c0a9f    add dword ptr [eax+14Ch],1"
 "	      004c0aa6    mov eax,[ebp-0DCh]"
 "	      004c0aac    mov [ebp-0D4h],eax"
@@ -5781,27 +5781,27 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1285:
 	asm( 
-"	      004c0ac1    mov dword ptr [ebp-14h],2Ch"
+"	      004c0ac1    mov tempShortcut.lCommand,2Ch"
 );
 // LINE 1286:
 	asm( 
-"	      004c0ac8    mov dword ptr [ebp-10h],4Ch"
+"	      004c0ac8    mov tempShortcut.lKey,4Ch"
 );
 // LINE 1287:
 	asm( 
-"	      004c0acf    mov dword ptr [ebp-0Ch],2"
+"	      004c0acf    mov tempShortcut.lModifiers,2"
 );
 // LINE 1288:
 	asm( 
-"	      004c0ad6    mov dword ptr [ebp-8],0"
+"	      004c0ad6    mov tempShortcut.lPush,0"
 );
 // LINE 1289:
 	asm( 
-"	      004c0add    mov dword ptr [ebp-4],0"
+"	      004c0add    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1290:
 	asm( 
-"	      004c0ae4    mov eax,[ebp-19Ch]"
+"	      004c0ae4    mov eax,this"
 "	      004c0aea    mov eax,[eax+148h]"
 "	      004c0af0    mov [ebp-0F0h],eax"
 "	      004c0af6    mov eax,[ebp-0F0h]"
@@ -5810,7 +5810,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0b07    jmp near ptr 004C0B0Ch"
 "	      004c0b0c    mov eax,[ebp-0E8h]"
 "	      004c0b12    mov [ebp-0FCh],eax"
-"	      004c0b18    mov ecx,[ebp-19Ch]"
+"	      004c0b18    mov ecx,this"
 "	      004c0b1e    add ecx,148h"
 "	      004c0b24    call 0048ACD0h"
 "	      004c0b29    mov [ebp-0F4h],eax"
@@ -5821,7 +5821,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0b43    jmp near ptr 004C0B48h"
 "	      004c0b48    cmp dword ptr [ebp-0F8h],0"
 "	      004c0b4f    je near ptr 004C0B6Ah"
-"	      004c0b55    lea esi,[ebp-18h]"
+"	      004c0b55    lea esi,tempShortcut.lDeviceID"
 "	      004c0b58    mov edi,[ebp-0F8h]"
 "	      004c0b5e    mov ecx,6"
 "	      004c0b63    rep movsd"
@@ -5841,7 +5841,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0ba0    mov eax,[ebp-0F4h]"
 "	      004c0ba6    mov ecx,[ebp-0FCh]"
 "	      004c0bac    mov [ecx+4],eax"
-"	      004c0baf    mov eax,[ebp-19Ch]"
+"	      004c0baf    mov eax,this"
 "	      004c0bb5    add dword ptr [eax+14Ch],1"
 "	      004c0bbc    mov eax,[ebp-0F4h]"
 "	      004c0bc2    mov [ebp-0ECh],eax"
@@ -5851,67 +5851,67 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1292:
 	asm( 
-"	      004c0bd7    mov dword ptr [ebp-14h],2Bh"
+"	      004c0bd7    mov tempShortcut.lCommand,2Bh"
 );
 // LINE 1293:
 	asm( 
-"	      004c0bde    mov dword ptr [ebp-10h],4Bh"
+"	      004c0bde    mov tempShortcut.lKey,4Bh"
 );
 // LINE 1294:
 	asm( 
-"	      004c0be5    mov dword ptr [ebp-0Ch],2"
+"	      004c0be5    mov tempShortcut.lModifiers,2"
 );
 // LINE 1295:
 	asm( 
-"	      004c0bec    mov dword ptr [ebp-8],0"
+"	      004c0bec    mov tempShortcut.lPush,0"
 );
 // LINE 1296:
 	asm( 
-"	      004c0bf3    mov dword ptr [ebp-4],0"
+"	      004c0bf3    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1297:
 	asm( 
-"	      004c0bfa    mov eax,[ebp-19Ch]"
+"	      004c0bfa    mov eax,this"
 "	      004c0c00    mov eax,[eax+148h]"
 "	      004c0c06    mov [ebp-108h],eax"
 "	      004c0c0c    mov eax,[ebp-108h]"
 "	      004c0c12    mov [ebp-100h],eax"
 "	      004c0c18    jmp near ptr 004C0C1Dh"
 "	      004c0c1d    jmp near ptr 004C0C22h"
-"	      004c0c22    lea eax,[ebp-18h]"
+"	      004c0c22    lea eax,tempShortcut.lDeviceID"
 "	      004c0c25    push eax"
 "	      004c0c26    mov eax,[ebp-100h]"
 "	      004c0c2c    push eax"
 "	      004c0c2d    lea eax,[ebp-104h]"
 "	      004c0c33    push eax"
-"	      004c0c34    mov ecx,[ebp-19Ch]"
+"	      004c0c34    mov ecx,this"
 "	      004c0c3a    add ecx,148h"
 "	      004c0c40    call 0048E910h"
 "	      004c0c45    jmp near ptr 004C0C4Ah"
 );
 // LINE 1299:
 	asm( 
-"	      004c0c4a    mov dword ptr [ebp-14h],2Fh"
+"	      004c0c4a    mov tempShortcut.lCommand,2Fh"
 );
 // LINE 1300:
 	asm( 
-"	      004c0c51    mov dword ptr [ebp-10h],44h"
+"	      004c0c51    mov tempShortcut.lKey,44h"
 );
 // LINE 1301:
 	asm( 
-"	      004c0c58    mov dword ptr [ebp-0Ch],2"
+"	      004c0c58    mov tempShortcut.lModifiers,2"
 );
 // LINE 1302:
 	asm( 
-"	      004c0c5f    mov dword ptr [ebp-8],1"
+"	      004c0c5f    mov tempShortcut.lPush,1"
 );
 // LINE 1303:
 	asm( 
-"	      004c0c66    mov dword ptr [ebp-4],0"
+"	      004c0c66    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1304:
 	asm( 
-"	      004c0c6d    mov eax,[ebp-19Ch]"
+"	      004c0c6d    mov eax,this"
 "	      004c0c73    mov eax,[eax+148h]"
 "	      004c0c79    mov [ebp-114h],eax"
 "	      004c0c7f    mov eax,[ebp-114h]"
@@ -5920,7 +5920,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0c90    jmp near ptr 004C0C95h"
 "	      004c0c95    mov eax,[ebp-10Ch]"
 "	      004c0c9b    mov [ebp-120h],eax"
-"	      004c0ca1    mov ecx,[ebp-19Ch]"
+"	      004c0ca1    mov ecx,this"
 "	      004c0ca7    add ecx,148h"
 "	      004c0cad    call 0048ACD0h"
 "	      004c0cb2    mov [ebp-118h],eax"
@@ -5931,7 +5931,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0ccc    jmp near ptr 004C0CD1h"
 "	      004c0cd1    cmp dword ptr [ebp-11Ch],0"
 "	      004c0cd8    je near ptr 004C0CF3h"
-"	      004c0cde    lea esi,[ebp-18h]"
+"	      004c0cde    lea esi,tempShortcut.lDeviceID"
 "	      004c0ce1    mov edi,[ebp-11Ch]"
 "	      004c0ce7    mov ecx,6"
 "	      004c0cec    rep movsd"
@@ -5951,7 +5951,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0d29    mov eax,[ebp-118h]"
 "	      004c0d2f    mov ecx,[ebp-120h]"
 "	      004c0d35    mov [ecx+4],eax"
-"	      004c0d38    mov eax,[ebp-19Ch]"
+"	      004c0d38    mov eax,this"
 "	      004c0d3e    add dword ptr [eax+14Ch],1"
 "	      004c0d45    mov eax,[ebp-118h]"
 "	      004c0d4b    mov [ebp-110h],eax"
@@ -5961,27 +5961,27 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1306:
 	asm( 
-"	      004c0d60    mov dword ptr [ebp-14h],35h"
+"	      004c0d60    mov tempShortcut.lCommand,35h"
 );
 // LINE 1307:
 	asm( 
-"	      004c0d67    mov dword ptr [ebp-10h],49h"
+"	      004c0d67    mov tempShortcut.lKey,49h"
 );
 // LINE 1308:
 	asm( 
-"	      004c0d6e    mov dword ptr [ebp-0Ch],2"
+"	      004c0d6e    mov tempShortcut.lModifiers,2"
 );
 // LINE 1309:
 	asm( 
-"	      004c0d75    mov dword ptr [ebp-8],1"
+"	      004c0d75    mov tempShortcut.lPush,1"
 );
 // LINE 1310:
 	asm( 
-"	      004c0d7c    mov dword ptr [ebp-4],0"
+"	      004c0d7c    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1311:
 	asm( 
-"	      004c0d83    mov eax,[ebp-19Ch]"
+"	      004c0d83    mov eax,this"
 "	      004c0d89    mov eax,[eax+148h]"
 "	      004c0d8f    mov [ebp-12Ch],eax"
 "	      004c0d95    mov eax,[ebp-12Ch]"
@@ -5990,7 +5990,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0da6    jmp near ptr 004C0DABh"
 "	      004c0dab    mov eax,[ebp-124h]"
 "	      004c0db1    mov [ebp-138h],eax"
-"	      004c0db7    mov ecx,[ebp-19Ch]"
+"	      004c0db7    mov ecx,this"
 "	      004c0dbd    add ecx,148h"
 "	      004c0dc3    call 0048ACD0h"
 "	      004c0dc8    mov [ebp-130h],eax"
@@ -6001,7 +6001,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0de2    jmp near ptr 004C0DE7h"
 "	      004c0de7    cmp dword ptr [ebp-134h],0"
 "	      004c0dee    je near ptr 004C0E09h"
-"	      004c0df4    lea esi,[ebp-18h]"
+"	      004c0df4    lea esi,tempShortcut.lDeviceID"
 "	      004c0df7    mov edi,[ebp-134h]"
 "	      004c0dfd    mov ecx,6"
 "	      004c0e02    rep movsd"
@@ -6021,7 +6021,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0e3f    mov eax,[ebp-130h]"
 "	      004c0e45    mov ecx,[ebp-138h]"
 "	      004c0e4b    mov [ecx+4],eax"
-"	      004c0e4e    mov eax,[ebp-19Ch]"
+"	      004c0e4e    mov eax,this"
 "	      004c0e54    add dword ptr [eax+14Ch],1"
 "	      004c0e5b    mov eax,[ebp-130h]"
 "	      004c0e61    mov [ebp-128h],eax"
@@ -6031,67 +6031,67 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1313:
 	asm( 
-"	      004c0e76    mov dword ptr [ebp-14h],37h"
+"	      004c0e76    mov tempShortcut.lCommand,37h"
 );
 // LINE 1314:
 	asm( 
-"	      004c0e7d    mov dword ptr [ebp-10h],0Dh"
+"	      004c0e7d    mov tempShortcut.lKey,0Dh"
 );
 // LINE 1315:
 	asm( 
-"	      004c0e84    mov dword ptr [ebp-0Ch],4"
+"	      004c0e84    mov tempShortcut.lModifiers,4"
 );
 // LINE 1316:
 	asm( 
-"	      004c0e8b    mov dword ptr [ebp-8],1"
+"	      004c0e8b    mov tempShortcut.lPush,1"
 );
 // LINE 1317:
 	asm( 
-"	      004c0e92    mov dword ptr [ebp-4],0"
+"	      004c0e92    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1318:
 	asm( 
-"	      004c0e99    mov eax,[ebp-19Ch]"
+"	      004c0e99    mov eax,this"
 "	      004c0e9f    mov eax,[eax+148h]"
 "	      004c0ea5    mov [ebp-144h],eax"
 "	      004c0eab    mov eax,[ebp-144h]"
 "	      004c0eb1    mov [ebp-13Ch],eax"
 "	      004c0eb7    jmp near ptr 004C0EBCh"
 "	      004c0ebc    jmp near ptr 004C0EC1h"
-"	      004c0ec1    lea eax,[ebp-18h]"
+"	      004c0ec1    lea eax,tempShortcut.lDeviceID"
 "	      004c0ec4    push eax"
 "	      004c0ec5    mov eax,[ebp-13Ch]"
 "	      004c0ecb    push eax"
 "	      004c0ecc    lea eax,[ebp-140h]"
 "	      004c0ed2    push eax"
-"	      004c0ed3    mov ecx,[ebp-19Ch]"
+"	      004c0ed3    mov ecx,this"
 "	      004c0ed9    add ecx,148h"
 "	      004c0edf    call 0048E910h"
 "	      004c0ee4    jmp near ptr 004C0EE9h"
 );
 // LINE 1320:
 	asm( 
-"	      004c0ee9    mov dword ptr [ebp-14h],31h"
+"	      004c0ee9    mov tempShortcut.lCommand,31h"
 );
 // LINE 1321:
 	asm( 
-"	      004c0ef0    mov dword ptr [ebp-10h],51h"
+"	      004c0ef0    mov tempShortcut.lKey,51h"
 );
 // LINE 1322:
 	asm( 
-"	      004c0ef7    mov dword ptr [ebp-0Ch],2"
+"	      004c0ef7    mov tempShortcut.lModifiers,2"
 );
 // LINE 1323:
 	asm( 
-"	      004c0efe    mov dword ptr [ebp-8],1"
+"	      004c0efe    mov tempShortcut.lPush,1"
 );
 // LINE 1324:
 	asm( 
-"	      004c0f05    mov dword ptr [ebp-4],0"
+"	      004c0f05    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1325:
 	asm( 
-"	      004c0f0c    mov eax,[ebp-19Ch]"
+"	      004c0f0c    mov eax,this"
 "	      004c0f12    mov eax,[eax+148h]"
 "	      004c0f18    mov [ebp-150h],eax"
 "	      004c0f1e    mov eax,[ebp-150h]"
@@ -6100,7 +6100,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0f2f    jmp near ptr 004C0F34h"
 "	      004c0f34    mov eax,[ebp-148h]"
 "	      004c0f3a    mov [ebp-15Ch],eax"
-"	      004c0f40    mov ecx,[ebp-19Ch]"
+"	      004c0f40    mov ecx,this"
 "	      004c0f46    add ecx,148h"
 "	      004c0f4c    call 0048ACD0h"
 "	      004c0f51    mov [ebp-154h],eax"
@@ -6111,7 +6111,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0f6b    jmp near ptr 004C0F70h"
 "	      004c0f70    cmp dword ptr [ebp-158h],0"
 "	      004c0f77    je near ptr 004C0F92h"
-"	      004c0f7d    lea esi,[ebp-18h]"
+"	      004c0f7d    lea esi,tempShortcut.lDeviceID"
 "	      004c0f80    mov edi,[ebp-158h]"
 "	      004c0f86    mov ecx,6"
 "	      004c0f8b    rep movsd"
@@ -6131,7 +6131,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c0fc8    mov eax,[ebp-154h]"
 "	      004c0fce    mov ecx,[ebp-15Ch]"
 "	      004c0fd4    mov [ecx+4],eax"
-"	      004c0fd7    mov eax,[ebp-19Ch]"
+"	      004c0fd7    mov eax,this"
 "	      004c0fdd    add dword ptr [eax+14Ch],1"
 "	      004c0fe4    mov eax,[ebp-154h]"
 "	      004c0fea    mov [ebp-14Ch],eax"
@@ -6141,27 +6141,27 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1327:
 	asm( 
-"	      004c0fff    mov dword ptr [ebp-14h],32h"
+"	      004c0fff    mov tempShortcut.lCommand,32h"
 );
 // LINE 1328:
 	asm( 
-"	      004c1006    mov dword ptr [ebp-10h],50h"
+"	      004c1006    mov tempShortcut.lKey,50h"
 );
 // LINE 1329:
 	asm( 
-"	      004c100d    mov dword ptr [ebp-0Ch],2"
+"	      004c100d    mov tempShortcut.lModifiers,2"
 );
 // LINE 1330:
 	asm( 
-"	      004c1014    mov dword ptr [ebp-8],1"
+"	      004c1014    mov tempShortcut.lPush,1"
 );
 // LINE 1331:
 	asm( 
-"	      004c101b    mov dword ptr [ebp-4],0"
+"	      004c101b    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1332:
 	asm( 
-"	      004c1022    mov eax,[ebp-19Ch]"
+"	      004c1022    mov eax,this"
 "	      004c1028    mov eax,[eax+148h]"
 "	      004c102e    mov [ebp-168h],eax"
 "	      004c1034    mov eax,[ebp-168h]"
@@ -6170,7 +6170,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c1045    jmp near ptr 004C104Ah"
 "	      004c104a    mov eax,[ebp-160h]"
 "	      004c1050    mov [ebp-174h],eax"
-"	      004c1056    mov ecx,[ebp-19Ch]"
+"	      004c1056    mov ecx,this"
 "	      004c105c    add ecx,148h"
 "	      004c1062    call 0048ACD0h"
 "	      004c1067    mov [ebp-16Ch],eax"
@@ -6181,7 +6181,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c1081    jmp near ptr 004C1086h"
 "	      004c1086    cmp dword ptr [ebp-170h],0"
 "	      004c108d    je near ptr 004C10A8h"
-"	      004c1093    lea esi,[ebp-18h]"
+"	      004c1093    lea esi,tempShortcut.lDeviceID"
 "	      004c1096    mov edi,[ebp-170h]"
 "	      004c109c    mov ecx,6"
 "	      004c10a1    rep movsd"
@@ -6201,7 +6201,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c10de    mov eax,[ebp-16Ch]"
 "	      004c10e4    mov ecx,[ebp-174h]"
 "	      004c10ea    mov [ecx+4],eax"
-"	      004c10ed    mov eax,[ebp-19Ch]"
+"	      004c10ed    mov eax,this"
 "	      004c10f3    add dword ptr [eax+14Ch],1"
 "	      004c10fa    mov eax,[ebp-16Ch]"
 "	      004c1100    mov [ebp-164h],eax"
@@ -6211,67 +6211,67 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 // LINE 1334:
 	asm( 
-"	      004c1115    mov dword ptr [ebp-14h],36h"
+"	      004c1115    mov tempShortcut.lCommand,36h"
 );
 // LINE 1335:
 	asm( 
-"	      004c111c    mov dword ptr [ebp-10h],52h"
+"	      004c111c    mov tempShortcut.lKey,52h"
 );
 // LINE 1336:
 	asm( 
-"	      004c1123    mov dword ptr [ebp-0Ch],6"
+"	      004c1123    mov tempShortcut.lModifiers,6"
 );
 // LINE 1337:
 	asm( 
-"	      004c112a    mov dword ptr [ebp-8],1"
+"	      004c112a    mov tempShortcut.lPush,1"
 );
 // LINE 1338:
 	asm( 
-"	      004c1131    mov dword ptr [ebp-4],0"
+"	      004c1131    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1339:
 	asm( 
-"	      004c1138    mov eax,[ebp-19Ch]"
+"	      004c1138    mov eax,this"
 "	      004c113e    mov eax,[eax+148h]"
 "	      004c1144    mov [ebp-180h],eax"
 "	      004c114a    mov eax,[ebp-180h]"
 "	      004c1150    mov [ebp-178h],eax"
 "	      004c1156    jmp near ptr 004C115Bh"
 "	      004c115b    jmp near ptr 004C1160h"
-"	      004c1160    lea eax,[ebp-18h]"
+"	      004c1160    lea eax,tempShortcut.lDeviceID"
 "	      004c1163    push eax"
 "	      004c1164    mov eax,[ebp-178h]"
 "	      004c116a    push eax"
 "	      004c116b    lea eax,[ebp-17Ch]"
 "	      004c1171    push eax"
-"	      004c1172    mov ecx,[ebp-19Ch]"
+"	      004c1172    mov ecx,this"
 "	      004c1178    add ecx,148h"
 "	      004c117e    call 0048E910h"
 "	      004c1183    jmp near ptr 004C1188h"
 );
 // LINE 1341:
 	asm( 
-"	      004c1188    mov dword ptr [ebp-14h],3Ah"
+"	      004c1188    mov tempShortcut.lCommand,3Ah"
 );
 // LINE 1342:
 	asm( 
-"	      004c118f    mov dword ptr [ebp-10h],58h"
+"	      004c118f    mov tempShortcut.lKey,58h"
 );
 // LINE 1343:
 	asm( 
-"	      004c1196    mov dword ptr [ebp-0Ch],6"
+"	      004c1196    mov tempShortcut.lModifiers,6"
 );
 // LINE 1344:
 	asm( 
-"	      004c119d    mov dword ptr [ebp-8],1"
+"	      004c119d    mov tempShortcut.lPush,1"
 );
 // LINE 1345:
 	asm( 
-"	      004c11a4    mov dword ptr [ebp-4],0"
+"	      004c11a4    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1346:
 	asm( 
-"	      004c11ab    mov eax,[ebp-19Ch]"
+"	      004c11ab    mov eax,this"
 "	      004c11b1    mov eax,[eax+148h]"
 "	      004c11b7    mov [ebp-18Ch],eax"
 "	      004c11bd    mov eax,[ebp-18Ch]"
@@ -6280,7 +6280,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c11ce    jmp near ptr 004C11D3h"
 "	      004c11d3    mov eax,[ebp-184h]"
 "	      004c11d9    mov [ebp-198h],eax"
-"	      004c11df    mov ecx,[ebp-19Ch]"
+"	      004c11df    mov ecx,this"
 "	      004c11e5    add ecx,148h"
 "	      004c11eb    call 0048ACD0h"
 "	      004c11f0    mov [ebp-190h],eax"
@@ -6291,7 +6291,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c120a    jmp near ptr 004C120Fh"
 "	      004c120f    cmp dword ptr [ebp-194h],0"
 "	      004c1216    je near ptr 004C1231h"
-"	      004c121c    lea esi,[ebp-18h]"
+"	      004c121c    lea esi,tempShortcut.lDeviceID"
 "	      004c121f    mov edi,[ebp-194h]"
 "	      004c1225    mov ecx,6"
 "	      004c122a    rep movsd"
@@ -6311,7 +6311,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 "	      004c1267    mov eax,[ebp-190h]"
 "	      004c126d    mov ecx,[ebp-198h]"
 "	      004c1273    mov [ecx+4],eax"
-"	      004c1276    mov eax,[ebp-19Ch]"
+"	      004c1276    mov eax,this"
 "	      004c127c    add dword ptr [eax+14Ch],1"
 "	      004c1283    mov eax,[ebp-190h]"
 "	      004c1289    mov [ebp-188h],eax"
@@ -6340,49 +6340,49 @@ void GameModeHangarData::GameModeHangarData() {
 "	      004c12ae    push ebx"
 "	      004c12af    push esi"
 "	      004c12b0    push edi"
-"	      004c12b1    mov [ebp-4],ecx"
-"	      004c12b4    mov ecx,[ebp-4]"
+"	      004c12b1    mov this,ecx"
+"	      004c12b4    mov ecx,this"
 "	      004c12b7    call 004BD72Dh"
-"	      004c12bc    mov ecx,[ebp-4]"
+"	      004c12bc    mov ecx,this"
 "	      004c12bf    add ecx,18h"
 "	      004c12c2    call 0048B2B0h"
-"	      004c12c7    mov eax,[ebp-4]"
+"	      004c12c7    mov eax,this"
 "	      004c12ca    mov dword ptr [eax],5923D0h"
 );
 // LINE 1427:
 	asm( 
-"	      004c12d0    mov eax,[ebp-4]"
+"	      004c12d0    mov eax,this"
 "	      004c12d3    mov dword ptr [eax+4],0"
 );
 // LINE 1428:
 	asm( 
-"	      004c12da    mov eax,[ebp-4]"
+"	      004c12da    mov eax,this"
 "	      004c12dd    mov dword ptr [eax+14h],0"
 );
 // LINE 1429:
 	asm( 
-"	      004c12e4    mov eax,[ebp-4]"
+"	      004c12e4    mov eax,this"
 "	      004c12e7    mov dword ptr [eax+0Ch],0"
 );
 // LINE 1430:
 	asm( 
-"	      004c12ee    mov eax,[ebp-4]"
+"	      004c12ee    mov eax,this"
 "	      004c12f1    mov dword ptr [eax+10h],0"
 );
 // LINE 1431:
 	asm( 
-"	      004c12f8    mov eax,[ebp-4]"
+"	      004c12f8    mov eax,this"
 "	      004c12fb    mov dword ptr [eax+8],0"
 );
 // LINE 1432:
 	asm( 
-"	      004c1302    mov ecx,[ebp-4]"
+"	      004c1302    mov ecx,this"
 "	      004c1305    call 004C15B3h"
 );
 // LINE 1433:
 	asm( 
 "	      004c130a    jmp near ptr 004C130Fh"
-"	      004c130f    mov eax,[ebp-4]"
+"	      004c130f    mov eax,this"
 "	      004c1312    pop edi"
 "	      004c1313    pop esi"
 "	      004c1314    pop ebx"
@@ -6401,7 +6401,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 "	      004c131d    push ebx"
 "	      004c131e    push esi"
 "	      004c131f    push edi"
-"	      004c1320    mov [ebp-0Ch],ecx"
+"	      004c1320    mov this,ecx"
 );
 // LINE 1443:
 	asm( 
@@ -6411,10 +6411,10 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 "	      004c1330    mov [ebp-4],eax"
 "	      004c1333    cmp dword ptr [ebp-4],0"
 "	      004c1337    je near ptr 004C1387h"
-"	      004c133d    mov eax,[ebp-0Ch]"
+"	      004c133d    mov eax,this"
 "	      004c1340    cmp dword ptr [eax+0Ch],0"
 "	      004c1344    je near ptr 004C135Bh"
-"	      004c134a    mov eax,[ebp-0Ch]"
+"	      004c134a    mov eax,this"
 "	      004c134d    mov eax,[eax+0Ch]"
 "	      004c1350    add eax,14h"
 "	      004c1353    mov [ebp-8],eax"
@@ -6423,22 +6423,22 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 "	      004c1362    push 1"
 "	      004c1364    mov eax,[ebp-8]"
 "	      004c1367    push eax"
-"	      004c1368    mov eax,[ebp-0Ch]"
+"	      004c1368    mov eax,this"
 "	      004c136b    mov eax,[eax+10h]"
 "	      004c136e    push eax"
 "	      004c136f    push 835h"
 "	      004c1374    mov ecx,[ebp-4]"
 "	      004c1377    call 00471F70h"
-"	      004c137c    mov ecx,[ebp-0Ch]"
+"	      004c137c    mov ecx,this"
 "	      004c137f    mov [ecx+14h],eax"
 "	      004c1382    jmp near ptr 004C1391h"
-"	      004c1387    mov eax,[ebp-0Ch]"
+"	      004c1387    mov eax,this"
 "	      004c138a    mov dword ptr [eax+14h],0"
 );
 // LINE 1444:
 	asm( 
-"	      004c1391    mov eax,[ebp-0Ch]"
-"	      004c1394    mov ecx,[ebp-0Ch]"
+"	      004c1391    mov eax,this"
+"	      004c1394    mov ecx,this"
 "	      004c1397    mov ecx,[ecx+14h]"
 "	      004c139a    mov edx,[ecx]"
 "	      004c139c    mov ecx,[eax+14h]"
@@ -6446,7 +6446,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 );
 // LINE 1445:
 	asm( 
-"	      004c13a2    mov ecx,[ebp-0Ch]"
+"	      004c13a2    mov ecx,this"
 "	      004c13a5    call 004C14AFh"
 );
 // LINE 1446:
@@ -6474,18 +6474,18 @@ void GameModeHangarData::DestroyAllSurfaces() {
 "	      004c13bf    push ebx"
 "	      004c13c0    push esi"
 "	      004c13c1    push edi"
-"	      004c13c2    mov [ebp-4],ecx"
+"	      004c13c2    mov this,ecx"
 );
 // LINE 1453:
 	asm( 
-"	      004c13c5    mov eax,[ebp-4]"
+"	      004c13c5    mov eax,this"
 "	      004c13c8    cmp dword ptr [eax+14h],0"
 "	      004c13cc    je near ptr 004C13EDh"
 );
 // LINE 1454:
 	asm( 
-"	      004c13d2    mov eax,[ebp-4]"
-"	      004c13d5    mov ecx,[ebp-4]"
+"	      004c13d2    mov eax,this"
+"	      004c13d5    mov ecx,this"
 "	      004c13d8    mov ecx,[ecx+14h]"
 "	      004c13db    mov edx,[ecx]"
 "	      004c13dd    mov ecx,[eax+14h]"
@@ -6493,7 +6493,7 @@ void GameModeHangarData::DestroyAllSurfaces() {
 );
 // LINE 1455:
 	asm( 
-"	      004c13e3    mov eax,[ebp-4]"
+"	      004c13e3    mov eax,this"
 "	      004c13e6    mov dword ptr [eax+14h],0"
 );
 // LINE 1457:
@@ -6517,13 +6517,13 @@ void GameModeHangarData::Sleep() {
 "	      004c13fd    push ebx"
 "	      004c13fe    push esi"
 "	      004c13ff    push edi"
-"	      004c1400    mov [ebp-8],ecx"
+"	      004c1400    mov this,ecx"
 );
 // LINE 1464:
 	asm( 
-"	      004c1403    mov eax,[ebp-8]"
+"	      004c1403    mov eax,this"
 "	      004c1406    inc dword ptr [eax+4]"
-"	      004c1409    mov eax,[ebp-8]"
+"	      004c1409    mov eax,this"
 "	      004c140c    mov eax,[eax+14h]"
 "	      004c140f    mov [ebp-4],eax"
 );
@@ -6535,8 +6535,8 @@ void GameModeHangarData::Sleep() {
 );
 // LINE 1466:
 	asm( 
-"	      004c1421    mov eax,[ebp-8]"
-"	      004c1424    mov ecx,[ebp-8]"
+"	      004c1421    mov eax,this"
+"	      004c1424    mov ecx,this"
 "	      004c1427    mov ecx,[ecx+14h]"
 "	      004c142a    mov edx,[ecx]"
 "	      004c142c    mov ecx,[eax+14h]"
@@ -6563,23 +6563,23 @@ void GameModeHangarData::Awake() {
 "	      004c1442    push ebx"
 "	      004c1443    push esi"
 "	      004c1444    push edi"
-"	      004c1445    mov [ebp-8],ecx"
+"	      004c1445    mov this,ecx"
 );
 // LINE 1473:
 	asm( 
-"	      004c1448    mov eax,[ebp-8]"
+"	      004c1448    mov eax,this"
 "	      004c144b    dec dword ptr [eax+4]"
 );
 // LINE 1474:
 	asm( 
-"	      004c144e    mov eax,[ebp-8]"
+"	      004c144e    mov eax,this"
 "	      004c1451    cmp dword ptr [eax+4],0"
 "	      004c1455    jne near ptr 004C14A5h"
 );
 // LINE 1475:
 	asm( 
-"	      004c145b    mov eax,[ebp-8]"
-"	      004c145e    mov ecx,[ebp-8]"
+"	      004c145b    mov eax,this"
+"	      004c145e    mov ecx,this"
 "	      004c1461    mov ecx,[ecx+14h]"
 "	      004c1464    mov edx,[ecx]"
 "	      004c1466    mov ecx,[eax+14h]"
@@ -6588,9 +6588,9 @@ void GameModeHangarData::Awake() {
 // LINE 1477:
 	asm( 
 "	      004c146c    push 0"
-"	      004c146e    mov eax,[ebp-8]"
+"	      004c146e    mov eax,this"
 "	      004c1471    mov eax,[eax+0Ch]"
-"	      004c1474    mov ecx,[ebp-8]"
+"	      004c1474    mov ecx,this"
 "	      004c1477    mov ecx,[ecx+0Ch]"
 "	      004c147a    mov ecx,[ecx+34h]"
 "	      004c147d    mov edx,[ecx]"
@@ -6599,9 +6599,9 @@ void GameModeHangarData::Awake() {
 );
 // LINE 1478:
 	asm( 
-"	      004c1485    mov ecx,[ebp-8]"
+"	      004c1485    mov ecx,this"
 "	      004c1488    call 004C1542h"
-"	      004c148d    mov eax,[ebp-8]"
+"	      004c148d    mov eax,this"
 "	      004c1490    mov eax,[eax+14h]"
 "	      004c1493    mov [ebp-4],eax"
 );
@@ -6632,11 +6632,11 @@ void GameModeHangarData::CreatePalette() {
 "	      004c14b5    push ebx"
 "	      004c14b6    push esi"
 "	      004c14b7    push edi"
-"	      004c14b8    mov [ebp-10h],ecx"
+"	      004c14b8    mov this,ecx"
 );
 // LINE 1488:
 	asm( 
-"	      004c14bb    mov eax,[ebp-10h]"
+"	      004c14bb    mov eax,this"
 "	      004c14be    cmp dword ptr [eax+8],0"
 "	      004c14c2    jne near ptr 004C1526h"
 );
@@ -6659,18 +6659,18 @@ void GameModeHangarData::CreatePalette() {
 "	      004c1504    jmp near ptr 004C14EFh"
 "	      004c1509    jmp near ptr 004C150Eh"
 "	      004c150e    mov eax,[ebp-4]"
-"	      004c1511    mov ecx,[ebp-10h]"
+"	      004c1511    mov ecx,this"
 "	      004c1514    mov [ecx+8],eax"
 "	      004c1517    jmp near ptr 004C1526h"
-"	      004c151c    mov eax,[ebp-10h]"
+"	      004c151c    mov eax,this"
 "	      004c151f    mov dword ptr [eax+8],0"
 );
 // LINE 1491:
 	asm( 
-"	      004c1526    mov eax,[ebp-10h]"
+"	      004c1526    mov eax,this"
 "	      004c1529    mov eax,[eax+8]"
 "	      004c152c    push eax"
-"	      004c152d    mov eax,[ebp-10h]"
+"	      004c152d    mov eax,this"
 "	      004c1530    mov ecx,[eax+14h]"
 "	      004c1533    call 00472F61h"
 );
@@ -6695,16 +6695,16 @@ void GameModeHangarData::UsePalette() {
 "	      004c1548    push ebx"
 "	      004c1549    push esi"
 "	      004c154a    push edi"
-"	      004c154b    mov [ebp-4],ecx"
+"	      004c154b    mov this,ecx"
 );
 // LINE 1499:
 	asm( 
-"	      004c154e    mov eax,[ebp-4]"
+"	      004c154e    mov eax,this"
 "	      004c1551    mov eax,[eax+8]"
 "	      004c1554    push eax"
-"	      004c1555    mov eax,[ebp-4]"
+"	      004c1555    mov eax,this"
 "	      004c1558    mov eax,[eax+0Ch]"
-"	      004c155b    mov ecx,[ebp-4]"
+"	      004c155b    mov ecx,this"
 "	      004c155e    mov ecx,[ecx+0Ch]"
 "	      004c1561    mov ecx,[ecx+34h]"
 "	      004c1564    mov edx,[ecx]"
@@ -6713,7 +6713,7 @@ void GameModeHangarData::UsePalette() {
 );
 // LINE 1500:
 	asm( 
-"	      004c156c    mov eax,[ebp-4]"
+"	      004c156c    mov eax,this"
 "	      004c156f    mov eax,[eax+8]"
 "	      004c1572    mov ds:[60480Ch],eax"
 );
@@ -6746,11 +6746,11 @@ void GameModeHangarData::Shutdown() {
 "	      004c159b    push ebx"
 "	      004c159c    push esi"
 "	      004c159d    push edi"
-"	      004c159e    mov [ebp-4],ecx"
+"	      004c159e    mov this,ecx"
 );
 // LINE 1510:
 	asm( 
-"	      004c15a1    mov ecx,[ebp-4]"
+"	      004c15a1    mov ecx,this"
 "	      004c15a4    call 004C13B9h"
 );
 // LINE 1511:
@@ -6776,18 +6776,18 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c15bc    push ebx"
 "	      004c15bd    push esi"
 "	      004c15be    push edi"
-"	      004c15bf    mov [ebp-0BCh],ecx"
+"	      004c15bf    mov this,ecx"
 );
 // LINE 1522:
 	asm( 
-"	      004c15c5    mov eax,[ebp-0BCh]"
+"	      004c15c5    mov eax,this"
 "	      004c15cb    mov eax,[eax+0F0h]"
 "	      004c15d1    mov [ebp-24h],eax"
 "	      004c15d4    mov eax,[ebp-24h]"
 "	      004c15d7    mov [ebp-1Ch],eax"
 "	      004c15da    jmp near ptr 004C15DFh"
 "	      004c15df    jmp near ptr 004C15E4h"
-"	      004c15e4    mov eax,[ebp-0BCh]"
+"	      004c15e4    mov eax,this"
 "	      004c15ea    mov eax,[eax+0F0h]"
 "	      004c15f0    mov eax,[eax]"
 "	      004c15f2    mov [ebp-28h],eax"
@@ -6823,7 +6823,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c168c    jmp near ptr 004C1691h"
 "	      004c1691    mov eax,[ebp-0A4h]"
 "	      004c1697    push eax"
-"	      004c1698    mov ecx,[ebp-0BCh]"
+"	      004c1698    mov ecx,this"
 "	      004c169e    add ecx,0F0h"
 "	      004c16a4    call 0040E3C0h"
 "	      004c16a9    jmp near ptr 004C1617h"
@@ -6831,31 +6831,31 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 // LINE 1524:
 	asm( 
-"	      004c16b3    mov dword ptr [ebp-18h],0"
+"	      004c16b3    mov tempShortcut.lDeviceID,0"
 );
 // LINE 1526:
 	asm( 
-"	      004c16ba    mov dword ptr [ebp-14h],0"
+"	      004c16ba    mov tempShortcut.lCommand,0"
 );
 // LINE 1527:
 	asm( 
-"	      004c16c1    mov dword ptr [ebp-10h],0"
+"	      004c16c1    mov tempShortcut.lKey,0"
 );
 // LINE 1528:
 	asm( 
-"	      004c16c8    mov dword ptr [ebp-0Ch],0"
+"	      004c16c8    mov tempShortcut.lModifiers,0"
 );
 // LINE 1529:
 	asm( 
-"	      004c16cf    mov dword ptr [ebp-8],0"
+"	      004c16cf    mov tempShortcut.lPush,0"
 );
 // LINE 1530:
 	asm( 
-"	      004c16d6    mov dword ptr [ebp-4],0"
+"	      004c16d6    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1531:
 	asm( 
-"	      004c16dd    mov eax,[ebp-0BCh]"
+"	      004c16dd    mov eax,this"
 "	      004c16e3    mov eax,[eax+0F0h]"
 "	      004c16e9    mov [ebp-34h],eax"
 "	      004c16ec    mov eax,[ebp-34h]"
@@ -6864,7 +6864,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c16f7    jmp near ptr 004C16FCh"
 "	      004c16fc    mov eax,[ebp-2Ch]"
 "	      004c16ff    mov [ebp-40h],eax"
-"	      004c1702    mov ecx,[ebp-0BCh]"
+"	      004c1702    mov ecx,this"
 "	      004c1708    add ecx,0F0h"
 "	      004c170e    call 0048ACD0h"
 "	      004c1713    mov [ebp-38h],eax"
@@ -6875,7 +6875,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1724    jmp near ptr 004C1729h"
 "	      004c1729    cmp dword ptr [ebp-3Ch],0"
 "	      004c172d    je near ptr 004C1745h"
-"	      004c1733    lea esi,[ebp-18h]"
+"	      004c1733    lea esi,tempShortcut.lDeviceID"
 "	      004c1736    mov edi,[ebp-3Ch]"
 "	      004c1739    mov ecx,6"
 "	      004c173e    rep movsd"
@@ -6895,7 +6895,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1769    mov eax,[ebp-38h]"
 "	      004c176c    mov ecx,[ebp-40h]"
 "	      004c176f    mov [ecx+4],eax"
-"	      004c1772    mov eax,[ebp-0BCh]"
+"	      004c1772    mov eax,this"
 "	      004c1778    add dword ptr [eax+0F4h],1"
 "	      004c177f    mov eax,[ebp-38h]"
 "	      004c1782    mov [ebp-30h],eax"
@@ -6905,67 +6905,67 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 // LINE 1533:
 	asm( 
-"	      004c1794    mov dword ptr [ebp-14h],1"
+"	      004c1794    mov tempShortcut.lCommand,1"
 );
 // LINE 1534:
 	asm( 
-"	      004c179b    mov dword ptr [ebp-10h],1Bh"
+"	      004c179b    mov tempShortcut.lKey,1Bh"
 );
 // LINE 1535:
 	asm( 
-"	      004c17a2    mov dword ptr [ebp-0Ch],0"
+"	      004c17a2    mov tempShortcut.lModifiers,0"
 );
 // LINE 1536:
 	asm( 
-"	      004c17a9    mov dword ptr [ebp-8],1"
+"	      004c17a9    mov tempShortcut.lPush,1"
 );
 // LINE 1537:
 	asm( 
-"	      004c17b0    mov dword ptr [ebp-4],0"
+"	      004c17b0    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1538:
 	asm( 
-"	      004c17b7    mov eax,[ebp-0BCh]"
+"	      004c17b7    mov eax,this"
 "	      004c17bd    mov eax,[eax+0F0h]"
 "	      004c17c3    mov [ebp-4Ch],eax"
 "	      004c17c6    mov eax,[ebp-4Ch]"
 "	      004c17c9    mov [ebp-44h],eax"
 "	      004c17cc    jmp near ptr 004C17D1h"
 "	      004c17d1    jmp near ptr 004C17D6h"
-"	      004c17d6    lea eax,[ebp-18h]"
+"	      004c17d6    lea eax,tempShortcut.lDeviceID"
 "	      004c17d9    push eax"
 "	      004c17da    mov eax,[ebp-44h]"
 "	      004c17dd    push eax"
 "	      004c17de    lea eax,[ebp-48h]"
 "	      004c17e1    push eax"
-"	      004c17e2    mov ecx,[ebp-0BCh]"
+"	      004c17e2    mov ecx,this"
 "	      004c17e8    add ecx,0F0h"
 "	      004c17ee    call 0048E910h"
 "	      004c17f3    jmp near ptr 004C17F8h"
 );
 // LINE 1540:
 	asm( 
-"	      004c17f8    mov dword ptr [ebp-14h],1"
+"	      004c17f8    mov tempShortcut.lCommand,1"
 );
 // LINE 1541:
 	asm( 
-"	      004c17ff    mov dword ptr [ebp-10h],48h"
+"	      004c17ff    mov tempShortcut.lKey,48h"
 );
 // LINE 1542:
 	asm( 
-"	      004c1806    mov dword ptr [ebp-0Ch],2"
+"	      004c1806    mov tempShortcut.lModifiers,2"
 );
 // LINE 1543:
 	asm( 
-"	      004c180d    mov dword ptr [ebp-8],1"
+"	      004c180d    mov tempShortcut.lPush,1"
 );
 // LINE 1544:
 	asm( 
-"	      004c1814    mov dword ptr [ebp-4],0"
+"	      004c1814    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1545:
 	asm( 
-"	      004c181b    mov eax,[ebp-0BCh]"
+"	      004c181b    mov eax,this"
 "	      004c1821    mov eax,[eax+0F0h]"
 "	      004c1827    mov [ebp-58h],eax"
 "	      004c182a    mov eax,[ebp-58h]"
@@ -6974,7 +6974,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1835    jmp near ptr 004C183Ah"
 "	      004c183a    mov eax,[ebp-50h]"
 "	      004c183d    mov [ebp-64h],eax"
-"	      004c1840    mov ecx,[ebp-0BCh]"
+"	      004c1840    mov ecx,this"
 "	      004c1846    add ecx,0F0h"
 "	      004c184c    call 0048ACD0h"
 "	      004c1851    mov [ebp-5Ch],eax"
@@ -6985,7 +6985,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1862    jmp near ptr 004C1867h"
 "	      004c1867    cmp dword ptr [ebp-60h],0"
 "	      004c186b    je near ptr 004C1883h"
-"	      004c1871    lea esi,[ebp-18h]"
+"	      004c1871    lea esi,tempShortcut.lDeviceID"
 "	      004c1874    mov edi,[ebp-60h]"
 "	      004c1877    mov ecx,6"
 "	      004c187c    rep movsd"
@@ -7005,7 +7005,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c18a7    mov eax,[ebp-5Ch]"
 "	      004c18aa    mov ecx,[ebp-64h]"
 "	      004c18ad    mov [ecx+4],eax"
-"	      004c18b0    mov eax,[ebp-0BCh]"
+"	      004c18b0    mov eax,this"
 "	      004c18b6    add dword ptr [eax+0F4h],1"
 "	      004c18bd    mov eax,[ebp-5Ch]"
 "	      004c18c0    mov [ebp-54h],eax"
@@ -7015,27 +7015,27 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 // LINE 1547:
 	asm( 
-"	      004c18d2    mov dword ptr [ebp-14h],2"
+"	      004c18d2    mov tempShortcut.lCommand,2"
 );
 // LINE 1548:
 	asm( 
-"	      004c18d9    mov dword ptr [ebp-10h],43h"
+"	      004c18d9    mov tempShortcut.lKey,43h"
 );
 // LINE 1549:
 	asm( 
-"	      004c18e0    mov dword ptr [ebp-0Ch],2"
+"	      004c18e0    mov tempShortcut.lModifiers,2"
 );
 // LINE 1550:
 	asm( 
-"	      004c18e7    mov dword ptr [ebp-8],1"
+"	      004c18e7    mov tempShortcut.lPush,1"
 );
 // LINE 1551:
 	asm( 
-"	      004c18ee    mov dword ptr [ebp-4],0"
+"	      004c18ee    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1552:
 	asm( 
-"	      004c18f5    mov eax,[ebp-0BCh]"
+"	      004c18f5    mov eax,this"
 "	      004c18fb    mov eax,[eax+0F0h]"
 "	      004c1901    mov [ebp-70h],eax"
 "	      004c1904    mov eax,[ebp-70h]"
@@ -7044,7 +7044,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c190f    jmp near ptr 004C1914h"
 "	      004c1914    mov eax,[ebp-68h]"
 "	      004c1917    mov [ebp-7Ch],eax"
-"	      004c191a    mov ecx,[ebp-0BCh]"
+"	      004c191a    mov ecx,this"
 "	      004c1920    add ecx,0F0h"
 "	      004c1926    call 0048ACD0h"
 "	      004c192b    mov [ebp-74h],eax"
@@ -7055,7 +7055,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c193c    jmp near ptr 004C1941h"
 "	      004c1941    cmp dword ptr [ebp-78h],0"
 "	      004c1945    je near ptr 004C195Dh"
-"	      004c194b    lea esi,[ebp-18h]"
+"	      004c194b    lea esi,tempShortcut.lDeviceID"
 "	      004c194e    mov edi,[ebp-78h]"
 "	      004c1951    mov ecx,6"
 "	      004c1956    rep movsd"
@@ -7075,7 +7075,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1981    mov eax,[ebp-74h]"
 "	      004c1984    mov ecx,[ebp-7Ch]"
 "	      004c1987    mov [ecx+4],eax"
-"	      004c198a    mov eax,[ebp-0BCh]"
+"	      004c198a    mov eax,this"
 "	      004c1990    add dword ptr [eax+0F4h],1"
 "	      004c1997    mov eax,[ebp-74h]"
 "	      004c199a    mov [ebp-6Ch],eax"
@@ -7085,67 +7085,67 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 // LINE 1554:
 	asm( 
-"	      004c19ac    mov dword ptr [ebp-14h],3"
+"	      004c19ac    mov tempShortcut.lCommand,3"
 );
 // LINE 1555:
 	asm( 
-"	      004c19b3    mov dword ptr [ebp-10h],4Dh"
+"	      004c19b3    mov tempShortcut.lKey,4Dh"
 );
 // LINE 1556:
 	asm( 
-"	      004c19ba    mov dword ptr [ebp-0Ch],2"
+"	      004c19ba    mov tempShortcut.lModifiers,2"
 );
 // LINE 1557:
 	asm( 
-"	      004c19c1    mov dword ptr [ebp-8],1"
+"	      004c19c1    mov tempShortcut.lPush,1"
 );
 // LINE 1558:
 	asm( 
-"	      004c19c8    mov dword ptr [ebp-4],0"
+"	      004c19c8    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1559:
 	asm( 
-"	      004c19cf    mov eax,[ebp-0BCh]"
+"	      004c19cf    mov eax,this"
 "	      004c19d5    mov eax,[eax+0F0h]"
 "	      004c19db    mov [ebp-88h],eax"
 "	      004c19e1    mov eax,[ebp-88h]"
 "	      004c19e7    mov [ebp-80h],eax"
 "	      004c19ea    jmp near ptr 004C19EFh"
 "	      004c19ef    jmp near ptr 004C19F4h"
-"	      004c19f4    lea eax,[ebp-18h]"
+"	      004c19f4    lea eax,tempShortcut.lDeviceID"
 "	      004c19f7    push eax"
 "	      004c19f8    mov eax,[ebp-80h]"
 "	      004c19fb    push eax"
 "	      004c19fc    lea eax,[ebp-84h]"
 "	      004c1a02    push eax"
-"	      004c1a03    mov ecx,[ebp-0BCh]"
+"	      004c1a03    mov ecx,this"
 "	      004c1a09    add ecx,0F0h"
 "	      004c1a0f    call 0048E910h"
 "	      004c1a14    jmp near ptr 004C1A19h"
 );
 // LINE 1561:
 	asm( 
-"	      004c1a19    mov dword ptr [ebp-14h],4"
+"	      004c1a19    mov tempShortcut.lCommand,4"
 );
 // LINE 1562:
 	asm( 
-"	      004c1a20    mov dword ptr [ebp-10h],49h"
+"	      004c1a20    mov tempShortcut.lKey,49h"
 );
 // LINE 1563:
 	asm( 
-"	      004c1a27    mov dword ptr [ebp-0Ch],2"
+"	      004c1a27    mov tempShortcut.lModifiers,2"
 );
 // LINE 1564:
 	asm( 
-"	      004c1a2e    mov dword ptr [ebp-8],1"
+"	      004c1a2e    mov tempShortcut.lPush,1"
 );
 // LINE 1565:
 	asm( 
-"	      004c1a35    mov dword ptr [ebp-4],0"
+"	      004c1a35    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1566:
 	asm( 
-"	      004c1a3c    mov eax,[ebp-0BCh]"
+"	      004c1a3c    mov eax,this"
 "	      004c1a42    mov eax,[eax+0F0h]"
 "	      004c1a48    mov [ebp-94h],eax"
 "	      004c1a4e    mov eax,[ebp-94h]"
@@ -7154,7 +7154,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1a5f    jmp near ptr 004C1A64h"
 "	      004c1a64    mov eax,[ebp-8Ch]"
 "	      004c1a6a    mov [ebp-0A0h],eax"
-"	      004c1a70    mov ecx,[ebp-0BCh]"
+"	      004c1a70    mov ecx,this"
 "	      004c1a76    add ecx,0F0h"
 "	      004c1a7c    call 0048ACD0h"
 "	      004c1a81    mov [ebp-98h],eax"
@@ -7165,7 +7165,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1a9b    jmp near ptr 004C1AA0h"
 "	      004c1aa0    cmp dword ptr [ebp-9Ch],0"
 "	      004c1aa7    je near ptr 004C1AC2h"
-"	      004c1aad    lea esi,[ebp-18h]"
+"	      004c1aad    lea esi,tempShortcut.lDeviceID"
 "	      004c1ab0    mov edi,[ebp-9Ch]"
 "	      004c1ab6    mov ecx,6"
 "	      004c1abb    rep movsd"
@@ -7185,7 +7185,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 "	      004c1af8    mov eax,[ebp-98h]"
 "	      004c1afe    mov ecx,[ebp-0A0h]"
 "	      004c1b04    mov [ecx+4],eax"
-"	      004c1b07    mov eax,[ebp-0BCh]"
+"	      004c1b07    mov eax,this"
 "	      004c1b0d    inc dword ptr [eax+0F4h]"
 "	      004c1b13    mov eax,[ebp-98h]"
 "	      004c1b19    mov [ebp-90h],eax"
@@ -7195,7 +7195,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 // LINE 1568:
 	asm( 
-"	      004c1b2e    mov ecx,[ebp-0BCh]"
+"	      004c1b2e    mov ecx,this"
 "	      004c1b34    add ecx,18h"
 "	      004c1b37    call 0048B6EDh"
 );
@@ -7220,29 +7220,29 @@ void GameModeCatalogData::GameModeCatalogData() {
 "	      004c1b4c    push ebx"
 "	      004c1b4d    push esi"
 "	      004c1b4e    push edi"
-"	      004c1b4f    mov [ebp-4],ecx"
-"	      004c1b52    mov ecx,[ebp-4]"
+"	      004c1b4f    mov this,ecx"
+"	      004c1b52    mov ecx,this"
 "	      004c1b55    call 004BD72Dh"
-"	      004c1b5a    mov ecx,[ebp-4]"
+"	      004c1b5a    mov ecx,this"
 "	      004c1b5d    add ecx,18h"
 "	      004c1b60    call 0048B2B0h"
-"	      004c1b65    mov eax,[ebp-4]"
+"	      004c1b65    mov eax,this"
 "	      004c1b68    mov dword ptr [eax],5923D4h"
 );
 // LINE 1586:
 	asm( 
-"	      004c1b6e    mov eax,[ebp-4]"
+"	      004c1b6e    mov eax,this"
 "	      004c1b71    mov dword ptr [eax+14h],0"
 );
 // LINE 1587:
 	asm( 
-"	      004c1b78    mov ecx,[ebp-4]"
+"	      004c1b78    mov ecx,this"
 "	      004c1b7b    call 004C1E29h"
 );
 // LINE 1588:
 	asm( 
 "	      004c1b80    jmp near ptr 004C1B85h"
-"	      004c1b85    mov eax,[ebp-4]"
+"	      004c1b85    mov eax,this"
 "	      004c1b88    pop edi"
 "	      004c1b89    pop esi"
 "	      004c1b8a    pop ebx"
@@ -7261,7 +7261,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 "	      004c1b93    push ebx"
 "	      004c1b94    push esi"
 "	      004c1b95    push edi"
-"	      004c1b96    mov [ebp-0Ch],ecx"
+"	      004c1b96    mov this,ecx"
 );
 // LINE 1597:
 	asm( 
@@ -7271,10 +7271,10 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 "	      004c1ba6    mov [ebp-4],eax"
 "	      004c1ba9    cmp dword ptr [ebp-4],0"
 "	      004c1bad    je near ptr 004C1BFDh"
-"	      004c1bb3    mov eax,[ebp-0Ch]"
+"	      004c1bb3    mov eax,this"
 "	      004c1bb6    cmp dword ptr [eax+0Ch],0"
 "	      004c1bba    je near ptr 004C1BD1h"
-"	      004c1bc0    mov eax,[ebp-0Ch]"
+"	      004c1bc0    mov eax,this"
 "	      004c1bc3    mov eax,[eax+0Ch]"
 "	      004c1bc6    add eax,14h"
 "	      004c1bc9    mov [ebp-8],eax"
@@ -7283,22 +7283,22 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 "	      004c1bd8    push 1"
 "	      004c1bda    mov eax,[ebp-8]"
 "	      004c1bdd    push eax"
-"	      004c1bde    mov eax,[ebp-0Ch]"
+"	      004c1bde    mov eax,this"
 "	      004c1be1    mov eax,[eax+10h]"
 "	      004c1be4    push eax"
 "	      004c1be5    push 836h"
 "	      004c1bea    mov ecx,[ebp-4]"
 "	      004c1bed    call 00474960h"
-"	      004c1bf2    mov ecx,[ebp-0Ch]"
+"	      004c1bf2    mov ecx,this"
 "	      004c1bf5    mov [ecx+14h],eax"
 "	      004c1bf8    jmp near ptr 004C1C07h"
-"	      004c1bfd    mov eax,[ebp-0Ch]"
+"	      004c1bfd    mov eax,this"
 "	      004c1c00    mov dword ptr [eax+14h],0"
 );
 // LINE 1598:
 	asm( 
-"	      004c1c07    mov eax,[ebp-0Ch]"
-"	      004c1c0a    mov ecx,[ebp-0Ch]"
+"	      004c1c07    mov eax,this"
+"	      004c1c0a    mov ecx,this"
 "	      004c1c0d    mov ecx,[ecx+14h]"
 "	      004c1c10    mov edx,[ecx]"
 "	      004c1c12    mov ecx,[eax+14h]"
@@ -7306,7 +7306,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 );
 // LINE 1599:
 	asm( 
-"	      004c1c18    mov ecx,[ebp-0Ch]"
+"	      004c1c18    mov ecx,this"
 "	      004c1c1b    call 004C1D25h"
 );
 // LINE 1600:
@@ -7334,18 +7334,18 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 "	      004c1c35    push ebx"
 "	      004c1c36    push esi"
 "	      004c1c37    push edi"
-"	      004c1c38    mov [ebp-4],ecx"
+"	      004c1c38    mov this,ecx"
 );
 // LINE 1607:
 	asm( 
-"	      004c1c3b    mov eax,[ebp-4]"
+"	      004c1c3b    mov eax,this"
 "	      004c1c3e    cmp dword ptr [eax+14h],0"
 "	      004c1c42    je near ptr 004C1C63h"
 );
 // LINE 1608:
 	asm( 
-"	      004c1c48    mov eax,[ebp-4]"
-"	      004c1c4b    mov ecx,[ebp-4]"
+"	      004c1c48    mov eax,this"
+"	      004c1c4b    mov ecx,this"
 "	      004c1c4e    mov ecx,[ecx+14h]"
 "	      004c1c51    mov edx,[ecx]"
 "	      004c1c53    mov ecx,[eax+14h]"
@@ -7353,7 +7353,7 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 );
 // LINE 1609:
 	asm( 
-"	      004c1c59    mov eax,[ebp-4]"
+"	      004c1c59    mov eax,this"
 "	      004c1c5c    mov dword ptr [eax+14h],0"
 );
 // LINE 1611:
@@ -7377,13 +7377,13 @@ void GameModeCatalogData::Sleep() {
 "	      004c1c73    push ebx"
 "	      004c1c74    push esi"
 "	      004c1c75    push edi"
-"	      004c1c76    mov [ebp-8],ecx"
+"	      004c1c76    mov this,ecx"
 );
 // LINE 1618:
 	asm( 
-"	      004c1c79    mov eax,[ebp-8]"
+"	      004c1c79    mov eax,this"
 "	      004c1c7c    inc dword ptr [eax+4]"
-"	      004c1c7f    mov eax,[ebp-8]"
+"	      004c1c7f    mov eax,this"
 "	      004c1c82    mov eax,[eax+14h]"
 "	      004c1c85    mov [ebp-4],eax"
 );
@@ -7395,8 +7395,8 @@ void GameModeCatalogData::Sleep() {
 );
 // LINE 1620:
 	asm( 
-"	      004c1c97    mov eax,[ebp-8]"
-"	      004c1c9a    mov ecx,[ebp-8]"
+"	      004c1c97    mov eax,this"
+"	      004c1c9a    mov ecx,this"
 "	      004c1c9d    mov ecx,[ecx+14h]"
 "	      004c1ca0    mov edx,[ecx]"
 "	      004c1ca2    mov ecx,[eax+14h]"
@@ -7423,23 +7423,23 @@ void GameModeCatalogData::Awake() {
 "	      004c1cb8    push ebx"
 "	      004c1cb9    push esi"
 "	      004c1cba    push edi"
-"	      004c1cbb    mov [ebp-8],ecx"
+"	      004c1cbb    mov this,ecx"
 );
 // LINE 1627:
 	asm( 
-"	      004c1cbe    mov eax,[ebp-8]"
+"	      004c1cbe    mov eax,this"
 "	      004c1cc1    dec dword ptr [eax+4]"
 );
 // LINE 1628:
 	asm( 
-"	      004c1cc4    mov eax,[ebp-8]"
+"	      004c1cc4    mov eax,this"
 "	      004c1cc7    cmp dword ptr [eax+4],0"
 "	      004c1ccb    jne near ptr 004C1D1Bh"
 );
 // LINE 1629:
 	asm( 
-"	      004c1cd1    mov eax,[ebp-8]"
-"	      004c1cd4    mov ecx,[ebp-8]"
+"	      004c1cd1    mov eax,this"
+"	      004c1cd4    mov ecx,this"
 "	      004c1cd7    mov ecx,[ecx+14h]"
 "	      004c1cda    mov edx,[ecx]"
 "	      004c1cdc    mov ecx,[eax+14h]"
@@ -7448,9 +7448,9 @@ void GameModeCatalogData::Awake() {
 // LINE 1631:
 	asm( 
 "	      004c1ce2    push 0"
-"	      004c1ce4    mov eax,[ebp-8]"
+"	      004c1ce4    mov eax,this"
 "	      004c1ce7    mov eax,[eax+0Ch]"
-"	      004c1cea    mov ecx,[ebp-8]"
+"	      004c1cea    mov ecx,this"
 "	      004c1ced    mov ecx,[ecx+0Ch]"
 "	      004c1cf0    mov ecx,[ecx+34h]"
 "	      004c1cf3    mov edx,[ecx]"
@@ -7459,9 +7459,9 @@ void GameModeCatalogData::Awake() {
 );
 // LINE 1632:
 	asm( 
-"	      004c1cfb    mov ecx,[ebp-8]"
+"	      004c1cfb    mov ecx,this"
 "	      004c1cfe    call 004C1DB8h"
-"	      004c1d03    mov eax,[ebp-8]"
+"	      004c1d03    mov eax,this"
 "	      004c1d06    mov eax,[eax+14h]"
 "	      004c1d09    mov [ebp-4],eax"
 );
@@ -7492,11 +7492,11 @@ void GameModeCatalogData::CreatePalette() {
 "	      004c1d2b    push ebx"
 "	      004c1d2c    push esi"
 "	      004c1d2d    push edi"
-"	      004c1d2e    mov [ebp-10h],ecx"
+"	      004c1d2e    mov this,ecx"
 );
 // LINE 1642:
 	asm( 
-"	      004c1d31    mov eax,[ebp-10h]"
+"	      004c1d31    mov eax,this"
 "	      004c1d34    cmp dword ptr [eax+8],0"
 "	      004c1d38    jne near ptr 004C1D9Ch"
 );
@@ -7519,18 +7519,18 @@ void GameModeCatalogData::CreatePalette() {
 "	      004c1d7a    jmp near ptr 004C1D65h"
 "	      004c1d7f    jmp near ptr 004C1D84h"
 "	      004c1d84    mov eax,[ebp-4]"
-"	      004c1d87    mov ecx,[ebp-10h]"
+"	      004c1d87    mov ecx,this"
 "	      004c1d8a    mov [ecx+8],eax"
 "	      004c1d8d    jmp near ptr 004C1D9Ch"
-"	      004c1d92    mov eax,[ebp-10h]"
+"	      004c1d92    mov eax,this"
 "	      004c1d95    mov dword ptr [eax+8],0"
 );
 // LINE 1645:
 	asm( 
-"	      004c1d9c    mov eax,[ebp-10h]"
+"	      004c1d9c    mov eax,this"
 "	      004c1d9f    mov eax,[eax+8]"
 "	      004c1da2    push eax"
-"	      004c1da3    mov eax,[ebp-10h]"
+"	      004c1da3    mov eax,this"
 "	      004c1da6    mov ecx,[eax+14h]"
 "	      004c1da9    call 0047A9B3h"
 );
@@ -7555,16 +7555,16 @@ void GameModeCatalogData::UsePalette() {
 "	      004c1dbe    push ebx"
 "	      004c1dbf    push esi"
 "	      004c1dc0    push edi"
-"	      004c1dc1    mov [ebp-4],ecx"
+"	      004c1dc1    mov this,ecx"
 );
 // LINE 1653:
 	asm( 
-"	      004c1dc4    mov eax,[ebp-4]"
+"	      004c1dc4    mov eax,this"
 "	      004c1dc7    mov eax,[eax+8]"
 "	      004c1dca    push eax"
-"	      004c1dcb    mov eax,[ebp-4]"
+"	      004c1dcb    mov eax,this"
 "	      004c1dce    mov eax,[eax+0Ch]"
-"	      004c1dd1    mov ecx,[ebp-4]"
+"	      004c1dd1    mov ecx,this"
 "	      004c1dd4    mov ecx,[ecx+0Ch]"
 "	      004c1dd7    mov ecx,[ecx+34h]"
 "	      004c1dda    mov edx,[ecx]"
@@ -7573,7 +7573,7 @@ void GameModeCatalogData::UsePalette() {
 );
 // LINE 1654:
 	asm( 
-"	      004c1de2    mov eax,[ebp-4]"
+"	      004c1de2    mov eax,this"
 "	      004c1de5    mov eax,[eax+8]"
 "	      004c1de8    mov ds:[60480Ch],eax"
 );
@@ -7606,11 +7606,11 @@ void GameModeCatalogData::Shutdown() {
 "	      004c1e11    push ebx"
 "	      004c1e12    push esi"
 "	      004c1e13    push edi"
-"	      004c1e14    mov [ebp-4],ecx"
+"	      004c1e14    mov this,ecx"
 );
 // LINE 1664:
 	asm( 
-"	      004c1e17    mov ecx,[ebp-4]"
+"	      004c1e17    mov ecx,this"
 "	      004c1e1a    call 004C1C2Fh"
 );
 // LINE 1665:
@@ -7636,18 +7636,18 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c1e32    push ebx"
 "	      004c1e33    push esi"
 "	      004c1e34    push edi"
-"	      004c1e35    mov [ebp-0F8h],ecx"
+"	      004c1e35    mov this,ecx"
 );
 // LINE 1676:
 	asm( 
-"	      004c1e3b    mov eax,[ebp-0F8h]"
+"	      004c1e3b    mov eax,this"
 "	      004c1e41    mov eax,[eax+0F0h]"
 "	      004c1e47    mov [ebp-24h],eax"
 "	      004c1e4a    mov eax,[ebp-24h]"
 "	      004c1e4d    mov [ebp-1Ch],eax"
 "	      004c1e50    jmp near ptr 004C1E55h"
 "	      004c1e55    jmp near ptr 004C1E5Ah"
-"	      004c1e5a    mov eax,[ebp-0F8h]"
+"	      004c1e5a    mov eax,this"
 "	      004c1e60    mov eax,[eax+0F0h]"
 "	      004c1e66    mov eax,[eax]"
 "	      004c1e68    mov [ebp-28h],eax"
@@ -7701,7 +7701,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c1f51    mov eax,[ebp-0ECh]"
 "	      004c1f57    mov ds:[597224h],eax"
 "	      004c1f5c    jmp near ptr 004C1F61h"
-"	      004c1f61    mov eax,[ebp-0F8h]"
+"	      004c1f61    mov eax,this"
 "	      004c1f67    dec dword ptr [eax+0F4h]"
 "	      004c1f6d    jmp near ptr 004C1F72h"
 "	      004c1f72    jmp near ptr 004C1E8Dh"
@@ -7709,31 +7709,31 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 );
 // LINE 1678:
 	asm( 
-"	      004c1f7c    mov dword ptr [ebp-18h],0"
+"	      004c1f7c    mov tempShortcut.lDeviceID,0"
 );
 // LINE 1680:
 	asm( 
-"	      004c1f83    mov dword ptr [ebp-14h],0"
+"	      004c1f83    mov tempShortcut.lCommand,0"
 );
 // LINE 1681:
 	asm( 
-"	      004c1f8a    mov dword ptr [ebp-10h],0"
+"	      004c1f8a    mov tempShortcut.lKey,0"
 );
 // LINE 1682:
 	asm( 
-"	      004c1f91    mov dword ptr [ebp-0Ch],0"
+"	      004c1f91    mov tempShortcut.lModifiers,0"
 );
 // LINE 1683:
 	asm( 
-"	      004c1f98    mov dword ptr [ebp-8],0"
+"	      004c1f98    mov tempShortcut.lPush,0"
 );
 // LINE 1684:
 	asm( 
-"	      004c1f9f    mov dword ptr [ebp-4],0"
+"	      004c1f9f    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1685:
 	asm( 
-"	      004c1fa6    mov eax,[ebp-0F8h]"
+"	      004c1fa6    mov eax,this"
 "	      004c1fac    mov eax,[eax+0F0h]"
 "	      004c1fb2    mov [ebp-34h],eax"
 "	      004c1fb5    mov eax,[ebp-34h]"
@@ -7845,7 +7845,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c2150    jmp near ptr 004C2155h"
 "	      004c2155    cmp dword ptr [ebp-3Ch],0"
 "	      004c2159    je near ptr 004C2171h"
-"	      004c215f    lea esi,[ebp-18h]"
+"	      004c215f    lea esi,tempShortcut.lDeviceID"
 "	      004c2162    mov edi,[ebp-3Ch]"
 "	      004c2165    mov ecx,6"
 "	      004c216a    rep movsd"
@@ -7865,7 +7865,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c2195    mov eax,[ebp-38h]"
 "	      004c2198    mov ecx,[ebp-80h]"
 "	      004c219b    mov [ecx+4],eax"
-"	      004c219e    mov eax,[ebp-0F8h]"
+"	      004c219e    mov eax,this"
 "	      004c21a4    add dword ptr [eax+0F4h],1"
 "	      004c21ab    mov eax,[ebp-38h]"
 "	      004c21ae    mov [ebp-30h],eax"
@@ -7875,27 +7875,27 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 );
 // LINE 1687:
 	asm( 
-"	      004c21c0    mov dword ptr [ebp-14h],1"
+"	      004c21c0    mov tempShortcut.lCommand,1"
 );
 // LINE 1688:
 	asm( 
-"	      004c21c7    mov dword ptr [ebp-10h],1Bh"
+"	      004c21c7    mov tempShortcut.lKey,1Bh"
 );
 // LINE 1689:
 	asm( 
-"	      004c21ce    mov dword ptr [ebp-0Ch],0"
+"	      004c21ce    mov tempShortcut.lModifiers,0"
 );
 // LINE 1690:
 	asm( 
-"	      004c21d5    mov dword ptr [ebp-8],1"
+"	      004c21d5    mov tempShortcut.lPush,1"
 );
 // LINE 1691:
 	asm( 
-"	      004c21dc    mov dword ptr [ebp-4],0"
+"	      004c21dc    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1692:
 	asm( 
-"	      004c21e3    mov eax,[ebp-0F8h]"
+"	      004c21e3    mov eax,this"
 "	      004c21e9    mov eax,[eax+0F0h]"
 "	      004c21ef    mov [ebp-8Ch],eax"
 "	      004c21f5    mov eax,[ebp-8Ch]"
@@ -8007,7 +8007,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c2423    jmp near ptr 004C2428h"
 "	      004c2428    cmp dword ptr [ebp-94h],0"
 "	      004c242f    je near ptr 004C244Ah"
-"	      004c2435    lea esi,[ebp-18h]"
+"	      004c2435    lea esi,tempShortcut.lDeviceID"
 "	      004c2438    mov edi,[ebp-94h]"
 "	      004c243e    mov ecx,6"
 "	      004c2443    rep movsd"
@@ -8027,7 +8027,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 "	      004c2480    mov eax,[ebp-90h]"
 "	      004c2486    mov ecx,[ebp-0D8h]"
 "	      004c248c    mov [ecx+4],eax"
-"	      004c248f    mov eax,[ebp-0F8h]"
+"	      004c248f    mov eax,this"
 "	      004c2495    inc dword ptr [eax+0F4h]"
 "	      004c249b    mov eax,[ebp-90h]"
 "	      004c24a1    mov [ebp-88h],eax"
@@ -8037,7 +8037,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 );
 // LINE 1694:
 	asm( 
-"	      004c24b6    mov ecx,[ebp-0F8h]"
+"	      004c24b6    mov ecx,this"
 "	      004c24bc    add ecx,18h"
 "	      004c24bf    call 0048B6EDh"
 );
@@ -8062,29 +8062,29 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 "	      004c24d4    push ebx"
 "	      004c24d5    push esi"
 "	      004c24d6    push edi"
-"	      004c24d7    mov [ebp-4],ecx"
-"	      004c24da    mov ecx,[ebp-4]"
+"	      004c24d7    mov this,ecx"
+"	      004c24da    mov ecx,this"
 "	      004c24dd    call 004BD72Dh"
-"	      004c24e2    mov ecx,[ebp-4]"
+"	      004c24e2    mov ecx,this"
 "	      004c24e5    add ecx,18h"
 "	      004c24e8    call 0048B2B0h"
-"	      004c24ed    mov eax,[ebp-4]"
+"	      004c24ed    mov eax,this"
 "	      004c24f0    mov dword ptr [eax],5923D8h"
 );
 // LINE 1711:
 	asm( 
-"	      004c24f6    mov eax,[ebp-4]"
+"	      004c24f6    mov eax,this"
 "	      004c24f9    mov dword ptr [eax+14h],0"
 );
 // LINE 1712:
 	asm( 
-"	      004c2500    mov ecx,[ebp-4]"
+"	      004c2500    mov ecx,this"
 "	      004c2503    call 004C27B1h"
 );
 // LINE 1713:
 	asm( 
 "	      004c2508    jmp near ptr 004C250Dh"
-"	      004c250d    mov eax,[ebp-4]"
+"	      004c250d    mov eax,this"
 "	      004c2510    pop edi"
 "	      004c2511    pop esi"
 "	      004c2512    pop ebx"
@@ -8103,7 +8103,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 "	      004c251b    push ebx"
 "	      004c251c    push esi"
 "	      004c251d    push edi"
-"	      004c251e    mov [ebp-0Ch],ecx"
+"	      004c251e    mov this,ecx"
 );
 // LINE 1722:
 	asm( 
@@ -8113,10 +8113,10 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 "	      004c252e    mov [ebp-4],eax"
 "	      004c2531    cmp dword ptr [ebp-4],0"
 "	      004c2535    je near ptr 004C2585h"
-"	      004c253b    mov eax,[ebp-0Ch]"
+"	      004c253b    mov eax,this"
 "	      004c253e    cmp dword ptr [eax+0Ch],0"
 "	      004c2542    je near ptr 004C2559h"
-"	      004c2548    mov eax,[ebp-0Ch]"
+"	      004c2548    mov eax,this"
 "	      004c254b    mov eax,[eax+0Ch]"
 "	      004c254e    add eax,14h"
 "	      004c2551    mov [ebp-8],eax"
@@ -8125,22 +8125,22 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 "	      004c2560    push 1"
 "	      004c2562    mov eax,[ebp-8]"
 "	      004c2565    push eax"
-"	      004c2566    mov eax,[ebp-0Ch]"
+"	      004c2566    mov eax,this"
 "	      004c2569    mov eax,[eax+10h]"
 "	      004c256c    push eax"
 "	      004c256d    push 838h"
 "	      004c2572    mov ecx,[ebp-4]"
 "	      004c2575    call 0046BCA0h"
-"	      004c257a    mov ecx,[ebp-0Ch]"
+"	      004c257a    mov ecx,this"
 "	      004c257d    mov [ecx+14h],eax"
 "	      004c2580    jmp near ptr 004C258Fh"
-"	      004c2585    mov eax,[ebp-0Ch]"
+"	      004c2585    mov eax,this"
 "	      004c2588    mov dword ptr [eax+14h],0"
 );
 // LINE 1723:
 	asm( 
-"	      004c258f    mov eax,[ebp-0Ch]"
-"	      004c2592    mov ecx,[ebp-0Ch]"
+"	      004c258f    mov eax,this"
+"	      004c2592    mov ecx,this"
 "	      004c2595    mov ecx,[ecx+14h]"
 "	      004c2598    mov edx,[ecx]"
 "	      004c259a    mov ecx,[eax+14h]"
@@ -8148,7 +8148,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 );
 // LINE 1724:
 	asm( 
-"	      004c25a0    mov ecx,[ebp-0Ch]"
+"	      004c25a0    mov ecx,this"
 "	      004c25a3    call 004C26ADh"
 );
 // LINE 1725:
@@ -8176,18 +8176,18 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 "	      004c25bd    push ebx"
 "	      004c25be    push esi"
 "	      004c25bf    push edi"
-"	      004c25c0    mov [ebp-4],ecx"
+"	      004c25c0    mov this,ecx"
 );
 // LINE 1732:
 	asm( 
-"	      004c25c3    mov eax,[ebp-4]"
+"	      004c25c3    mov eax,this"
 "	      004c25c6    cmp dword ptr [eax+14h],0"
 "	      004c25ca    je near ptr 004C25EBh"
 );
 // LINE 1733:
 	asm( 
-"	      004c25d0    mov eax,[ebp-4]"
-"	      004c25d3    mov ecx,[ebp-4]"
+"	      004c25d0    mov eax,this"
+"	      004c25d3    mov ecx,this"
 "	      004c25d6    mov ecx,[ecx+14h]"
 "	      004c25d9    mov edx,[ecx]"
 "	      004c25db    mov ecx,[eax+14h]"
@@ -8195,7 +8195,7 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 );
 // LINE 1734:
 	asm( 
-"	      004c25e1    mov eax,[ebp-4]"
+"	      004c25e1    mov eax,this"
 "	      004c25e4    mov dword ptr [eax+14h],0"
 );
 // LINE 1736:
@@ -8219,13 +8219,13 @@ void GameModeMissionLogData::Sleep() {
 "	      004c25fb    push ebx"
 "	      004c25fc    push esi"
 "	      004c25fd    push edi"
-"	      004c25fe    mov [ebp-8],ecx"
+"	      004c25fe    mov this,ecx"
 );
 // LINE 1743:
 	asm( 
-"	      004c2601    mov eax,[ebp-8]"
+"	      004c2601    mov eax,this"
 "	      004c2604    inc dword ptr [eax+4]"
-"	      004c2607    mov eax,[ebp-8]"
+"	      004c2607    mov eax,this"
 "	      004c260a    mov eax,[eax+14h]"
 "	      004c260d    mov [ebp-4],eax"
 );
@@ -8237,8 +8237,8 @@ void GameModeMissionLogData::Sleep() {
 );
 // LINE 1745:
 	asm( 
-"	      004c261f    mov eax,[ebp-8]"
-"	      004c2622    mov ecx,[ebp-8]"
+"	      004c261f    mov eax,this"
+"	      004c2622    mov ecx,this"
 "	      004c2625    mov ecx,[ecx+14h]"
 "	      004c2628    mov edx,[ecx]"
 "	      004c262a    mov ecx,[eax+14h]"
@@ -8265,23 +8265,23 @@ void GameModeMissionLogData::Awake() {
 "	      004c2640    push ebx"
 "	      004c2641    push esi"
 "	      004c2642    push edi"
-"	      004c2643    mov [ebp-8],ecx"
+"	      004c2643    mov this,ecx"
 );
 // LINE 1752:
 	asm( 
-"	      004c2646    mov eax,[ebp-8]"
+"	      004c2646    mov eax,this"
 "	      004c2649    dec dword ptr [eax+4]"
 );
 // LINE 1753:
 	asm( 
-"	      004c264c    mov eax,[ebp-8]"
+"	      004c264c    mov eax,this"
 "	      004c264f    cmp dword ptr [eax+4],0"
 "	      004c2653    jne near ptr 004C26A3h"
 );
 // LINE 1754:
 	asm( 
-"	      004c2659    mov eax,[ebp-8]"
-"	      004c265c    mov ecx,[ebp-8]"
+"	      004c2659    mov eax,this"
+"	      004c265c    mov ecx,this"
 "	      004c265f    mov ecx,[ecx+14h]"
 "	      004c2662    mov edx,[ecx]"
 "	      004c2664    mov ecx,[eax+14h]"
@@ -8290,9 +8290,9 @@ void GameModeMissionLogData::Awake() {
 // LINE 1756:
 	asm( 
 "	      004c266a    push 0"
-"	      004c266c    mov eax,[ebp-8]"
+"	      004c266c    mov eax,this"
 "	      004c266f    mov eax,[eax+0Ch]"
-"	      004c2672    mov ecx,[ebp-8]"
+"	      004c2672    mov ecx,this"
 "	      004c2675    mov ecx,[ecx+0Ch]"
 "	      004c2678    mov ecx,[ecx+34h]"
 "	      004c267b    mov edx,[ecx]"
@@ -8301,9 +8301,9 @@ void GameModeMissionLogData::Awake() {
 );
 // LINE 1757:
 	asm( 
-"	      004c2683    mov ecx,[ebp-8]"
+"	      004c2683    mov ecx,this"
 "	      004c2686    call 004C2740h"
-"	      004c268b    mov eax,[ebp-8]"
+"	      004c268b    mov eax,this"
 "	      004c268e    mov eax,[eax+14h]"
 "	      004c2691    mov [ebp-4],eax"
 );
@@ -8334,11 +8334,11 @@ void GameModeMissionLogData::CreatePalette() {
 "	      004c26b3    push ebx"
 "	      004c26b4    push esi"
 "	      004c26b5    push edi"
-"	      004c26b6    mov [ebp-10h],ecx"
+"	      004c26b6    mov this,ecx"
 );
 // LINE 1767:
 	asm( 
-"	      004c26b9    mov eax,[ebp-10h]"
+"	      004c26b9    mov eax,this"
 "	      004c26bc    cmp dword ptr [eax+8],0"
 "	      004c26c0    jne near ptr 004C2724h"
 );
@@ -8361,18 +8361,18 @@ void GameModeMissionLogData::CreatePalette() {
 "	      004c2702    jmp near ptr 004C26EDh"
 "	      004c2707    jmp near ptr 004C270Ch"
 "	      004c270c    mov eax,[ebp-4]"
-"	      004c270f    mov ecx,[ebp-10h]"
+"	      004c270f    mov ecx,this"
 "	      004c2712    mov [ecx+8],eax"
 "	      004c2715    jmp near ptr 004C2724h"
-"	      004c271a    mov eax,[ebp-10h]"
+"	      004c271a    mov eax,this"
 "	      004c271d    mov dword ptr [eax+8],0"
 );
 // LINE 1770:
 	asm( 
-"	      004c2724    mov eax,[ebp-10h]"
+"	      004c2724    mov eax,this"
 "	      004c2727    mov eax,[eax+8]"
 "	      004c272a    push eax"
-"	      004c272b    mov eax,[ebp-10h]"
+"	      004c272b    mov eax,this"
 "	      004c272e    mov ecx,[eax+14h]"
 "	      004c2731    call 0046C90Ah"
 );
@@ -8397,16 +8397,16 @@ void GameModeMissionLogData::UsePalette() {
 "	      004c2746    push ebx"
 "	      004c2747    push esi"
 "	      004c2748    push edi"
-"	      004c2749    mov [ebp-4],ecx"
+"	      004c2749    mov this,ecx"
 );
 // LINE 1778:
 	asm( 
-"	      004c274c    mov eax,[ebp-4]"
+"	      004c274c    mov eax,this"
 "	      004c274f    mov eax,[eax+8]"
 "	      004c2752    push eax"
-"	      004c2753    mov eax,[ebp-4]"
+"	      004c2753    mov eax,this"
 "	      004c2756    mov eax,[eax+0Ch]"
-"	      004c2759    mov ecx,[ebp-4]"
+"	      004c2759    mov ecx,this"
 "	      004c275c    mov ecx,[ecx+0Ch]"
 "	      004c275f    mov ecx,[ecx+34h]"
 "	      004c2762    mov edx,[ecx]"
@@ -8415,7 +8415,7 @@ void GameModeMissionLogData::UsePalette() {
 );
 // LINE 1779:
 	asm( 
-"	      004c276a    mov eax,[ebp-4]"
+"	      004c276a    mov eax,this"
 "	      004c276d    mov eax,[eax+8]"
 "	      004c2770    mov ds:[60480Ch],eax"
 );
@@ -8448,11 +8448,11 @@ void GameModeMissionLogData::Shutdown() {
 "	      004c2799    push ebx"
 "	      004c279a    push esi"
 "	      004c279b    push edi"
-"	      004c279c    mov [ebp-4],ecx"
+"	      004c279c    mov this,ecx"
 );
 // LINE 1789:
 	asm( 
-"	      004c279f    mov ecx,[ebp-4]"
+"	      004c279f    mov ecx,this"
 "	      004c27a2    call 004C25B7h"
 );
 // LINE 1790:
@@ -8478,18 +8478,18 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c27ba    push ebx"
 "	      004c27bb    push esi"
 "	      004c27bc    push edi"
-"	      004c27bd    mov [ebp-0F8h],ecx"
+"	      004c27bd    mov this,ecx"
 );
 // LINE 1801:
 	asm( 
-"	      004c27c3    mov eax,[ebp-0F8h]"
+"	      004c27c3    mov eax,this"
 "	      004c27c9    mov eax,[eax+0F0h]"
 "	      004c27cf    mov [ebp-24h],eax"
 "	      004c27d2    mov eax,[ebp-24h]"
 "	      004c27d5    mov [ebp-1Ch],eax"
 "	      004c27d8    jmp near ptr 004C27DDh"
 "	      004c27dd    jmp near ptr 004C27E2h"
-"	      004c27e2    mov eax,[ebp-0F8h]"
+"	      004c27e2    mov eax,this"
 "	      004c27e8    mov eax,[eax+0F0h]"
 "	      004c27ee    mov eax,[eax]"
 "	      004c27f0    mov [ebp-28h],eax"
@@ -8543,7 +8543,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c28d9    mov eax,[ebp-0ECh]"
 "	      004c28df    mov ds:[597224h],eax"
 "	      004c28e4    jmp near ptr 004C28E9h"
-"	      004c28e9    mov eax,[ebp-0F8h]"
+"	      004c28e9    mov eax,this"
 "	      004c28ef    dec dword ptr [eax+0F4h]"
 "	      004c28f5    jmp near ptr 004C28FAh"
 "	      004c28fa    jmp near ptr 004C2815h"
@@ -8551,31 +8551,31 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 );
 // LINE 1803:
 	asm( 
-"	      004c2904    mov dword ptr [ebp-18h],0"
+"	      004c2904    mov tempShortcut.lDeviceID,0"
 );
 // LINE 1805:
 	asm( 
-"	      004c290b    mov dword ptr [ebp-14h],0"
+"	      004c290b    mov tempShortcut.lCommand,0"
 );
 // LINE 1806:
 	asm( 
-"	      004c2912    mov dword ptr [ebp-10h],0"
+"	      004c2912    mov tempShortcut.lKey,0"
 );
 // LINE 1807:
 	asm( 
-"	      004c2919    mov dword ptr [ebp-0Ch],0"
+"	      004c2919    mov tempShortcut.lModifiers,0"
 );
 // LINE 1808:
 	asm( 
-"	      004c2920    mov dword ptr [ebp-8],0"
+"	      004c2920    mov tempShortcut.lPush,0"
 );
 // LINE 1809:
 	asm( 
-"	      004c2927    mov dword ptr [ebp-4],0"
+"	      004c2927    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1810:
 	asm( 
-"	      004c292e    mov eax,[ebp-0F8h]"
+"	      004c292e    mov eax,this"
 "	      004c2934    mov eax,[eax+0F0h]"
 "	      004c293a    mov [ebp-34h],eax"
 "	      004c293d    mov eax,[ebp-34h]"
@@ -8687,7 +8687,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c2ad8    jmp near ptr 004C2ADDh"
 "	      004c2add    cmp dword ptr [ebp-3Ch],0"
 "	      004c2ae1    je near ptr 004C2AF9h"
-"	      004c2ae7    lea esi,[ebp-18h]"
+"	      004c2ae7    lea esi,tempShortcut.lDeviceID"
 "	      004c2aea    mov edi,[ebp-3Ch]"
 "	      004c2aed    mov ecx,6"
 "	      004c2af2    rep movsd"
@@ -8707,7 +8707,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c2b1d    mov eax,[ebp-38h]"
 "	      004c2b20    mov ecx,[ebp-80h]"
 "	      004c2b23    mov [ecx+4],eax"
-"	      004c2b26    mov eax,[ebp-0F8h]"
+"	      004c2b26    mov eax,this"
 "	      004c2b2c    add dword ptr [eax+0F4h],1"
 "	      004c2b33    mov eax,[ebp-38h]"
 "	      004c2b36    mov [ebp-30h],eax"
@@ -8717,27 +8717,27 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 );
 // LINE 1812:
 	asm( 
-"	      004c2b48    mov dword ptr [ebp-14h],1"
+"	      004c2b48    mov tempShortcut.lCommand,1"
 );
 // LINE 1813:
 	asm( 
-"	      004c2b4f    mov dword ptr [ebp-10h],1Bh"
+"	      004c2b4f    mov tempShortcut.lKey,1Bh"
 );
 // LINE 1814:
 	asm( 
-"	      004c2b56    mov dword ptr [ebp-0Ch],0"
+"	      004c2b56    mov tempShortcut.lModifiers,0"
 );
 // LINE 1815:
 	asm( 
-"	      004c2b5d    mov dword ptr [ebp-8],1"
+"	      004c2b5d    mov tempShortcut.lPush,1"
 );
 // LINE 1816:
 	asm( 
-"	      004c2b64    mov dword ptr [ebp-4],0"
+"	      004c2b64    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1817:
 	asm( 
-"	      004c2b6b    mov eax,[ebp-0F8h]"
+"	      004c2b6b    mov eax,this"
 "	      004c2b71    mov eax,[eax+0F0h]"
 "	      004c2b77    mov [ebp-8Ch],eax"
 "	      004c2b7d    mov eax,[ebp-8Ch]"
@@ -8849,7 +8849,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c2dab    jmp near ptr 004C2DB0h"
 "	      004c2db0    cmp dword ptr [ebp-94h],0"
 "	      004c2db7    je near ptr 004C2DD2h"
-"	      004c2dbd    lea esi,[ebp-18h]"
+"	      004c2dbd    lea esi,tempShortcut.lDeviceID"
 "	      004c2dc0    mov edi,[ebp-94h]"
 "	      004c2dc6    mov ecx,6"
 "	      004c2dcb    rep movsd"
@@ -8869,7 +8869,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 "	      004c2e08    mov eax,[ebp-90h]"
 "	      004c2e0e    mov ecx,[ebp-0D8h]"
 "	      004c2e14    mov [ecx+4],eax"
-"	      004c2e17    mov eax,[ebp-0F8h]"
+"	      004c2e17    mov eax,this"
 "	      004c2e1d    inc dword ptr [eax+0F4h]"
 "	      004c2e23    mov eax,[ebp-90h]"
 "	      004c2e29    mov [ebp-88h],eax"
@@ -8879,7 +8879,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 );
 // LINE 1819:
 	asm( 
-"	      004c2e3e    mov ecx,[ebp-0F8h]"
+"	      004c2e3e    mov ecx,this"
 "	      004c2e44    add ecx,18h"
 "	      004c2e47    call 0048B6EDh"
 );
@@ -8904,29 +8904,29 @@ void GameModeInventoryData::GameModeInventoryData() {
 "	      004c2e5c    push ebx"
 "	      004c2e5d    push esi"
 "	      004c2e5e    push edi"
-"	      004c2e5f    mov [ebp-4],ecx"
-"	      004c2e62    mov ecx,[ebp-4]"
+"	      004c2e5f    mov this,ecx"
+"	      004c2e62    mov ecx,this"
 "	      004c2e65    call 004BD72Dh"
-"	      004c2e6a    mov ecx,[ebp-4]"
+"	      004c2e6a    mov ecx,this"
 "	      004c2e6d    add ecx,18h"
 "	      004c2e70    call 0048B2B0h"
-"	      004c2e75    mov eax,[ebp-4]"
+"	      004c2e75    mov eax,this"
 "	      004c2e78    mov dword ptr [eax],5923DCh"
 );
 // LINE 1833:
 	asm( 
-"	      004c2e7e    mov eax,[ebp-4]"
+"	      004c2e7e    mov eax,this"
 "	      004c2e81    mov dword ptr [eax+14h],0"
 );
 // LINE 1834:
 	asm( 
-"	      004c2e88    mov ecx,[ebp-4]"
+"	      004c2e88    mov ecx,this"
 "	      004c2e8b    call 004C3139h"
 );
 // LINE 1835:
 	asm( 
 "	      004c2e90    jmp near ptr 004C2E95h"
-"	      004c2e95    mov eax,[ebp-4]"
+"	      004c2e95    mov eax,this"
 "	      004c2e98    pop edi"
 "	      004c2e99    pop esi"
 "	      004c2e9a    pop ebx"
@@ -8945,7 +8945,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 "	      004c2ea3    push ebx"
 "	      004c2ea4    push esi"
 "	      004c2ea5    push edi"
-"	      004c2ea6    mov [ebp-0Ch],ecx"
+"	      004c2ea6    mov this,ecx"
 );
 // LINE 1844:
 	asm( 
@@ -8955,10 +8955,10 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 "	      004c2eb6    mov [ebp-4],eax"
 "	      004c2eb9    cmp dword ptr [ebp-4],0"
 "	      004c2ebd    je near ptr 004C2F0Dh"
-"	      004c2ec3    mov eax,[ebp-0Ch]"
+"	      004c2ec3    mov eax,this"
 "	      004c2ec6    cmp dword ptr [eax+0Ch],0"
 "	      004c2eca    je near ptr 004C2EE1h"
-"	      004c2ed0    mov eax,[ebp-0Ch]"
+"	      004c2ed0    mov eax,this"
 "	      004c2ed3    mov eax,[eax+0Ch]"
 "	      004c2ed6    add eax,14h"
 "	      004c2ed9    mov [ebp-8],eax"
@@ -8967,22 +8967,22 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 "	      004c2ee8    push 1"
 "	      004c2eea    mov eax,[ebp-8]"
 "	      004c2eed    push eax"
-"	      004c2eee    mov eax,[ebp-0Ch]"
+"	      004c2eee    mov eax,this"
 "	      004c2ef1    mov eax,[eax+10h]"
 "	      004c2ef4    push eax"
 "	      004c2ef5    push 837h"
 "	      004c2efa    mov ecx,[ebp-4]"
 "	      004c2efd    call 004A8360h"
-"	      004c2f02    mov ecx,[ebp-0Ch]"
+"	      004c2f02    mov ecx,this"
 "	      004c2f05    mov [ecx+14h],eax"
 "	      004c2f08    jmp near ptr 004C2F17h"
-"	      004c2f0d    mov eax,[ebp-0Ch]"
+"	      004c2f0d    mov eax,this"
 "	      004c2f10    mov dword ptr [eax+14h],0"
 );
 // LINE 1845:
 	asm( 
-"	      004c2f17    mov eax,[ebp-0Ch]"
-"	      004c2f1a    mov ecx,[ebp-0Ch]"
+"	      004c2f17    mov eax,this"
+"	      004c2f1a    mov ecx,this"
 "	      004c2f1d    mov ecx,[ecx+14h]"
 "	      004c2f20    mov edx,[ecx]"
 "	      004c2f22    mov ecx,[eax+14h]"
@@ -8990,7 +8990,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 );
 // LINE 1846:
 	asm( 
-"	      004c2f28    mov ecx,[ebp-0Ch]"
+"	      004c2f28    mov ecx,this"
 "	      004c2f2b    call 004C3035h"
 );
 // LINE 1847:
@@ -9018,18 +9018,18 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 "	      004c2f45    push ebx"
 "	      004c2f46    push esi"
 "	      004c2f47    push edi"
-"	      004c2f48    mov [ebp-4],ecx"
+"	      004c2f48    mov this,ecx"
 );
 // LINE 1854:
 	asm( 
-"	      004c2f4b    mov eax,[ebp-4]"
+"	      004c2f4b    mov eax,this"
 "	      004c2f4e    cmp dword ptr [eax+14h],0"
 "	      004c2f52    je near ptr 004C2F73h"
 );
 // LINE 1855:
 	asm( 
-"	      004c2f58    mov eax,[ebp-4]"
-"	      004c2f5b    mov ecx,[ebp-4]"
+"	      004c2f58    mov eax,this"
+"	      004c2f5b    mov ecx,this"
 "	      004c2f5e    mov ecx,[ecx+14h]"
 "	      004c2f61    mov edx,[ecx]"
 "	      004c2f63    mov ecx,[eax+14h]"
@@ -9037,7 +9037,7 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 );
 // LINE 1856:
 	asm( 
-"	      004c2f69    mov eax,[ebp-4]"
+"	      004c2f69    mov eax,this"
 "	      004c2f6c    mov dword ptr [eax+14h],0"
 );
 // LINE 1858:
@@ -9061,13 +9061,13 @@ void GameModeInventoryData::Sleep() {
 "	      004c2f83    push ebx"
 "	      004c2f84    push esi"
 "	      004c2f85    push edi"
-"	      004c2f86    mov [ebp-8],ecx"
+"	      004c2f86    mov this,ecx"
 );
 // LINE 1865:
 	asm( 
-"	      004c2f89    mov eax,[ebp-8]"
+"	      004c2f89    mov eax,this"
 "	      004c2f8c    inc dword ptr [eax+4]"
-"	      004c2f8f    mov eax,[ebp-8]"
+"	      004c2f8f    mov eax,this"
 "	      004c2f92    mov eax,[eax+14h]"
 "	      004c2f95    mov [ebp-4],eax"
 );
@@ -9079,8 +9079,8 @@ void GameModeInventoryData::Sleep() {
 );
 // LINE 1867:
 	asm( 
-"	      004c2fa7    mov eax,[ebp-8]"
-"	      004c2faa    mov ecx,[ebp-8]"
+"	      004c2fa7    mov eax,this"
+"	      004c2faa    mov ecx,this"
 "	      004c2fad    mov ecx,[ecx+14h]"
 "	      004c2fb0    mov edx,[ecx]"
 "	      004c2fb2    mov ecx,[eax+14h]"
@@ -9107,23 +9107,23 @@ void GameModeInventoryData::Awake() {
 "	      004c2fc8    push ebx"
 "	      004c2fc9    push esi"
 "	      004c2fca    push edi"
-"	      004c2fcb    mov [ebp-8],ecx"
+"	      004c2fcb    mov this,ecx"
 );
 // LINE 1874:
 	asm( 
-"	      004c2fce    mov eax,[ebp-8]"
+"	      004c2fce    mov eax,this"
 "	      004c2fd1    dec dword ptr [eax+4]"
 );
 // LINE 1875:
 	asm( 
-"	      004c2fd4    mov eax,[ebp-8]"
+"	      004c2fd4    mov eax,this"
 "	      004c2fd7    cmp dword ptr [eax+4],0"
 "	      004c2fdb    jne near ptr 004C302Bh"
 );
 // LINE 1876:
 	asm( 
-"	      004c2fe1    mov eax,[ebp-8]"
-"	      004c2fe4    mov ecx,[ebp-8]"
+"	      004c2fe1    mov eax,this"
+"	      004c2fe4    mov ecx,this"
 "	      004c2fe7    mov ecx,[ecx+14h]"
 "	      004c2fea    mov edx,[ecx]"
 "	      004c2fec    mov ecx,[eax+14h]"
@@ -9132,9 +9132,9 @@ void GameModeInventoryData::Awake() {
 // LINE 1878:
 	asm( 
 "	      004c2ff2    push 0"
-"	      004c2ff4    mov eax,[ebp-8]"
+"	      004c2ff4    mov eax,this"
 "	      004c2ff7    mov eax,[eax+0Ch]"
-"	      004c2ffa    mov ecx,[ebp-8]"
+"	      004c2ffa    mov ecx,this"
 "	      004c2ffd    mov ecx,[ecx+0Ch]"
 "	      004c3000    mov ecx,[ecx+34h]"
 "	      004c3003    mov edx,[ecx]"
@@ -9143,9 +9143,9 @@ void GameModeInventoryData::Awake() {
 );
 // LINE 1879:
 	asm( 
-"	      004c300b    mov ecx,[ebp-8]"
+"	      004c300b    mov ecx,this"
 "	      004c300e    call 004C30C8h"
-"	      004c3013    mov eax,[ebp-8]"
+"	      004c3013    mov eax,this"
 "	      004c3016    mov eax,[eax+14h]"
 "	      004c3019    mov [ebp-4],eax"
 );
@@ -9176,11 +9176,11 @@ void GameModeInventoryData::CreatePalette() {
 "	      004c303b    push ebx"
 "	      004c303c    push esi"
 "	      004c303d    push edi"
-"	      004c303e    mov [ebp-10h],ecx"
+"	      004c303e    mov this,ecx"
 );
 // LINE 1889:
 	asm( 
-"	      004c3041    mov eax,[ebp-10h]"
+"	      004c3041    mov eax,this"
 "	      004c3044    cmp dword ptr [eax+8],0"
 "	      004c3048    jne near ptr 004C30ACh"
 );
@@ -9203,18 +9203,18 @@ void GameModeInventoryData::CreatePalette() {
 "	      004c308a    jmp near ptr 004C3075h"
 "	      004c308f    jmp near ptr 004C3094h"
 "	      004c3094    mov eax,[ebp-4]"
-"	      004c3097    mov ecx,[ebp-10h]"
+"	      004c3097    mov ecx,this"
 "	      004c309a    mov [ecx+8],eax"
 "	      004c309d    jmp near ptr 004C30ACh"
-"	      004c30a2    mov eax,[ebp-10h]"
+"	      004c30a2    mov eax,this"
 "	      004c30a5    mov dword ptr [eax+8],0"
 );
 // LINE 1892:
 	asm( 
-"	      004c30ac    mov eax,[ebp-10h]"
+"	      004c30ac    mov eax,this"
 "	      004c30af    mov eax,[eax+8]"
 "	      004c30b2    push eax"
-"	      004c30b3    mov eax,[ebp-10h]"
+"	      004c30b3    mov eax,this"
 "	      004c30b6    mov ecx,[eax+14h]"
 "	      004c30b9    call 004A981Dh"
 );
@@ -9239,16 +9239,16 @@ void GameModeInventoryData::UsePalette() {
 "	      004c30ce    push ebx"
 "	      004c30cf    push esi"
 "	      004c30d0    push edi"
-"	      004c30d1    mov [ebp-4],ecx"
+"	      004c30d1    mov this,ecx"
 );
 // LINE 1900:
 	asm( 
-"	      004c30d4    mov eax,[ebp-4]"
+"	      004c30d4    mov eax,this"
 "	      004c30d7    mov eax,[eax+8]"
 "	      004c30da    push eax"
-"	      004c30db    mov eax,[ebp-4]"
+"	      004c30db    mov eax,this"
 "	      004c30de    mov eax,[eax+0Ch]"
-"	      004c30e1    mov ecx,[ebp-4]"
+"	      004c30e1    mov ecx,this"
 "	      004c30e4    mov ecx,[ecx+0Ch]"
 "	      004c30e7    mov ecx,[ecx+34h]"
 "	      004c30ea    mov edx,[ecx]"
@@ -9257,7 +9257,7 @@ void GameModeInventoryData::UsePalette() {
 );
 // LINE 1901:
 	asm( 
-"	      004c30f2    mov eax,[ebp-4]"
+"	      004c30f2    mov eax,this"
 "	      004c30f5    mov eax,[eax+8]"
 "	      004c30f8    mov ds:[60480Ch],eax"
 );
@@ -9290,11 +9290,11 @@ void GameModeInventoryData::Shutdown() {
 "	      004c3121    push ebx"
 "	      004c3122    push esi"
 "	      004c3123    push edi"
-"	      004c3124    mov [ebp-4],ecx"
+"	      004c3124    mov this,ecx"
 );
 // LINE 1911:
 	asm( 
-"	      004c3127    mov ecx,[ebp-4]"
+"	      004c3127    mov ecx,this"
 "	      004c312a    call 004C2F3Fh"
 );
 // LINE 1912:
@@ -9320,18 +9320,18 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c3142    push ebx"
 "	      004c3143    push esi"
 "	      004c3144    push edi"
-"	      004c3145    mov [ebp-0F8h],ecx"
+"	      004c3145    mov this,ecx"
 );
 // LINE 1922:
 	asm( 
-"	      004c314b    mov eax,[ebp-0F8h]"
+"	      004c314b    mov eax,this"
 "	      004c3151    mov eax,[eax+0F0h]"
 "	      004c3157    mov [ebp-24h],eax"
 "	      004c315a    mov eax,[ebp-24h]"
 "	      004c315d    mov [ebp-1Ch],eax"
 "	      004c3160    jmp near ptr 004C3165h"
 "	      004c3165    jmp near ptr 004C316Ah"
-"	      004c316a    mov eax,[ebp-0F8h]"
+"	      004c316a    mov eax,this"
 "	      004c3170    mov eax,[eax+0F0h]"
 "	      004c3176    mov eax,[eax]"
 "	      004c3178    mov [ebp-28h],eax"
@@ -9385,7 +9385,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c3261    mov eax,[ebp-0ECh]"
 "	      004c3267    mov ds:[597224h],eax"
 "	      004c326c    jmp near ptr 004C3271h"
-"	      004c3271    mov eax,[ebp-0F8h]"
+"	      004c3271    mov eax,this"
 "	      004c3277    dec dword ptr [eax+0F4h]"
 "	      004c327d    jmp near ptr 004C3282h"
 "	      004c3282    jmp near ptr 004C319Dh"
@@ -9393,31 +9393,31 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 );
 // LINE 1924:
 	asm( 
-"	      004c328c    mov dword ptr [ebp-18h],0"
+"	      004c328c    mov tempShortcut.lDeviceID,0"
 );
 // LINE 1926:
 	asm( 
-"	      004c3293    mov dword ptr [ebp-14h],0"
+"	      004c3293    mov tempShortcut.lCommand,0"
 );
 // LINE 1927:
 	asm( 
-"	      004c329a    mov dword ptr [ebp-10h],0"
+"	      004c329a    mov tempShortcut.lKey,0"
 );
 // LINE 1928:
 	asm( 
-"	      004c32a1    mov dword ptr [ebp-0Ch],0"
+"	      004c32a1    mov tempShortcut.lModifiers,0"
 );
 // LINE 1929:
 	asm( 
-"	      004c32a8    mov dword ptr [ebp-8],0"
+"	      004c32a8    mov tempShortcut.lPush,0"
 );
 // LINE 1930:
 	asm( 
-"	      004c32af    mov dword ptr [ebp-4],0"
+"	      004c32af    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1931:
 	asm( 
-"	      004c32b6    mov eax,[ebp-0F8h]"
+"	      004c32b6    mov eax,this"
 "	      004c32bc    mov eax,[eax+0F0h]"
 "	      004c32c2    mov [ebp-34h],eax"
 "	      004c32c5    mov eax,[ebp-34h]"
@@ -9529,7 +9529,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c3460    jmp near ptr 004C3465h"
 "	      004c3465    cmp dword ptr [ebp-3Ch],0"
 "	      004c3469    je near ptr 004C3481h"
-"	      004c346f    lea esi,[ebp-18h]"
+"	      004c346f    lea esi,tempShortcut.lDeviceID"
 "	      004c3472    mov edi,[ebp-3Ch]"
 "	      004c3475    mov ecx,6"
 "	      004c347a    rep movsd"
@@ -9549,7 +9549,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c34a5    mov eax,[ebp-38h]"
 "	      004c34a8    mov ecx,[ebp-80h]"
 "	      004c34ab    mov [ecx+4],eax"
-"	      004c34ae    mov eax,[ebp-0F8h]"
+"	      004c34ae    mov eax,this"
 "	      004c34b4    add dword ptr [eax+0F4h],1"
 "	      004c34bb    mov eax,[ebp-38h]"
 "	      004c34be    mov [ebp-30h],eax"
@@ -9559,27 +9559,27 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 );
 // LINE 1933:
 	asm( 
-"	      004c34d0    mov dword ptr [ebp-14h],1"
+"	      004c34d0    mov tempShortcut.lCommand,1"
 );
 // LINE 1934:
 	asm( 
-"	      004c34d7    mov dword ptr [ebp-10h],1Bh"
+"	      004c34d7    mov tempShortcut.lKey,1Bh"
 );
 // LINE 1935:
 	asm( 
-"	      004c34de    mov dword ptr [ebp-0Ch],0"
+"	      004c34de    mov tempShortcut.lModifiers,0"
 );
 // LINE 1936:
 	asm( 
-"	      004c34e5    mov dword ptr [ebp-8],1"
+"	      004c34e5    mov tempShortcut.lPush,1"
 );
 // LINE 1937:
 	asm( 
-"	      004c34ec    mov dword ptr [ebp-4],0"
+"	      004c34ec    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 1938:
 	asm( 
-"	      004c34f3    mov eax,[ebp-0F8h]"
+"	      004c34f3    mov eax,this"
 "	      004c34f9    mov eax,[eax+0F0h]"
 "	      004c34ff    mov [ebp-8Ch],eax"
 "	      004c3505    mov eax,[ebp-8Ch]"
@@ -9691,7 +9691,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c3733    jmp near ptr 004C3738h"
 "	      004c3738    cmp dword ptr [ebp-94h],0"
 "	      004c373f    je near ptr 004C375Ah"
-"	      004c3745    lea esi,[ebp-18h]"
+"	      004c3745    lea esi,tempShortcut.lDeviceID"
 "	      004c3748    mov edi,[ebp-94h]"
 "	      004c374e    mov ecx,6"
 "	      004c3753    rep movsd"
@@ -9711,7 +9711,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 "	      004c3790    mov eax,[ebp-90h]"
 "	      004c3796    mov ecx,[ebp-0D8h]"
 "	      004c379c    mov [ecx+4],eax"
-"	      004c379f    mov eax,[ebp-0F8h]"
+"	      004c379f    mov eax,this"
 "	      004c37a5    inc dword ptr [eax+0F4h]"
 "	      004c37ab    mov eax,[ebp-90h]"
 "	      004c37b1    mov [ebp-88h],eax"
@@ -9721,7 +9721,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 );
 // LINE 1940:
 	asm( 
-"	      004c37c6    mov ecx,[ebp-0F8h]"
+"	      004c37c6    mov ecx,this"
 "	      004c37cc    add ecx,18h"
 "	      004c37cf    call 0048B6EDh"
 );

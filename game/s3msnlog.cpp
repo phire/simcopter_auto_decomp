@@ -30,9 +30,9 @@ void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {
 // LINE 37:
 	asm( 
 "	      004ebc31    push 1"
-"	      004ebc33    mov eax,[ebp+0Ch]"
+"	      004ebc33    mov eax,bShowUserMessage"
 "	      004ebc36    push eax"
-"	      004ebc37    mov eax,[ebp+8]"
+"	      004ebc37    mov eax,logData"
 "	      004ebc3a    push eax"
 "	      004ebc3b    mov ecx,606E78h"
 "	      004ebc40    call 004EC749h"
@@ -58,10 +58,10 @@ void LogManager::LogManager() {
 "	      004ebc55    push ebx"
 "	      004ebc56    push esi"
 "	      004ebc57    push edi"
-"	      004ebc58    mov [ebp-58h],ecx"
-"	      004ebc5b    mov eax,[ebp-58h]"
+"	      004ebc58    mov this,ecx"
+"	      004ebc5b    mov eax,this"
 "	      004ebc5e    mov dword ptr [eax+4],0"
-"	      004ebc65    mov eax,[ebp-58h]"
+"	      004ebc65    mov eax,this"
 "	      004ebc68    mov dword ptr [eax+8],1F4h"
 );
 // LINE 47:
@@ -225,16 +225,16 @@ void LogManager::LogManager() {
 "	      004ebec2    mov [ecx+4],eax"
 "	      004ebec5    jmp near ptr 004EBECAh"
 "	      004ebeca    mov eax,[ebp-4]"
-"	      004ebecd    mov ecx,[ebp-58h]"
+"	      004ebecd    mov ecx,this"
 "	      004ebed0    mov [ecx],eax"
 "	      004ebed2    jmp near ptr 004EBEE0h"
-"	      004ebed7    mov eax,[ebp-58h]"
+"	      004ebed7    mov eax,this"
 "	      004ebeda    mov dword ptr [eax],0"
 );
 // LINE 48:
 	asm( 
 "	      004ebee0    jmp near ptr 004EBEE5h"
-"	      004ebee5    mov eax,[ebp-58h]"
+"	      004ebee5    mov eax,this"
 "	      004ebee8    pop edi"
 "	      004ebee9    pop esi"
 "	      004ebeea    pop ebx"
@@ -253,22 +253,22 @@ void LogManager::~LogManager() {
 "	      004ebef3    push ebx"
 "	      004ebef4    push esi"
 "	      004ebef5    push edi"
-"	      004ebef6    mov [ebp-44h],ecx"
+"	      004ebef6    mov this,ecx"
 );
 // LINE 54:
 	asm( 
-"	      004ebef9    mov eax,[ebp-44h]"
+"	      004ebef9    mov eax,this"
 "	      004ebefc    cmp dword ptr [eax],0"
 "	      004ebeff    je near ptr 004EC0E3h"
 );
 // LINE 55:
 	asm( 
-"	      004ebf05    mov ecx,[ebp-44h]"
+"	      004ebf05    mov ecx,this"
 "	      004ebf08    call 004ED729h"
 );
 // LINE 56:
 	asm( 
-"	      004ebf0d    mov eax,[ebp-44h]"
+"	      004ebf0d    mov eax,this"
 "	      004ebf10    mov eax,[eax]"
 "	      004ebf12    mov [ebp-8],eax"
 "	      004ebf15    mov eax,[ebp-8]"
@@ -389,7 +389,7 @@ void LogManager::~LogManager() {
 );
 // LINE 57:
 	asm( 
-"	      004ec0da    mov eax,[ebp-44h]"
+"	      004ec0da    mov eax,this"
 "	      004ec0dd    mov dword ptr [eax],0"
 );
 // LINE 59:
@@ -416,38 +416,38 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 "	      004ec0f6    push ebx"
 "	      004ec0f7    push esi"
 "	      004ec0f8    push edi"
-"	      004ec0f9    mov [ebp-154h],ecx"
+"	      004ec0f9    mov this,ecx"
 );
 // LINE 67:
 	asm( 
-"	      004ec0ff    mov eax,[ebp+8]"
+"	      004ec0ff    mov eax,szFilePath"
 "	      004ec102    push eax"
-"	      004ec103    lea ecx,[ebp-148h]"
+"	      004ec103    lea ecx,tempMIFF.<vftable>"
 "	      004ec109    call 004AB6F5h"
 );
 // LINE 70:
 	asm( 
-"	      004ec10e    lea ecx,[ebp-148h]"
+"	      004ec10e    lea ecx,tempMIFF.<vftable>"
 "	      004ec114    call 004AB878h"
 );
 // LINE 71:
 	asm( 
-"	      004ec119    lea eax,[ebp-148h]"
+"	      004ec119    lea eax,tempMIFF.<vftable>"
 "	      004ec11f    push eax"
-"	      004ec120    mov ecx,[ebp-154h]"
+"	      004ec120    mov ecx,this"
 "	      004ec126    call 004EC1DDh"
-"	      004ec12b    mov [ebp-14Ch],eax"
+"	      004ec12b    mov nReturnValue,eax"
 );
 // LINE 72:
 	asm( 
-"	      004ec131    lea ecx,[ebp-148h]"
+"	      004ec131    lea ecx,tempMIFF.<vftable>"
 "	      004ec137    call 004ABB47h"
 );
 // LINE 73:
 	asm( 
-"	      004ec13c    mov eax,[ebp-14Ch]"
+"	      004ec13c    mov eax,nReturnValue"
 "	      004ec142    mov [ebp-150h],eax"
-"	      004ec148    lea ecx,[ebp-148h]"
+"	      004ec148    lea ecx,tempMIFF.<vftable>"
 "	      004ec14e    call 004AB7CFh"
 "	      004ec153    mov eax,[ebp-150h]"
 "	      004ec159    jmp near ptr 004EC15Eh"
@@ -475,38 +475,38 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 "	      004ec16e    push ebx"
 "	      004ec16f    push esi"
 "	      004ec170    push edi"
-"	      004ec171    mov [ebp-154h],ecx"
+"	      004ec171    mov this,ecx"
 );
 // LINE 82:
 	asm( 
-"	      004ec177    mov eax,[ebp+8]"
+"	      004ec177    mov eax,szFilePath"
 "	      004ec17a    push eax"
-"	      004ec17b    lea ecx,[ebp-148h]"
+"	      004ec17b    lea ecx,tempMIFF.<vftable>"
 "	      004ec181    call 004AB6F5h"
 );
 // LINE 85:
 	asm( 
-"	      004ec186    lea ecx,[ebp-148h]"
+"	      004ec186    lea ecx,tempMIFF.<vftable>"
 "	      004ec18c    call 004ABA2Ch"
 );
 // LINE 86:
 	asm( 
-"	      004ec191    lea eax,[ebp-148h]"
+"	      004ec191    lea eax,tempMIFF.<vftable>"
 "	      004ec197    push eax"
-"	      004ec198    mov ecx,[ebp-154h]"
+"	      004ec198    mov ecx,this"
 "	      004ec19e    call 004EC284h"
-"	      004ec1a3    mov [ebp-14Ch],eax"
+"	      004ec1a3    mov nReturnValue,eax"
 );
 // LINE 87:
 	asm( 
-"	      004ec1a9    lea ecx,[ebp-148h]"
+"	      004ec1a9    lea ecx,tempMIFF.<vftable>"
 "	      004ec1af    call 004ABB47h"
 );
 // LINE 88:
 	asm( 
-"	      004ec1b4    mov eax,[ebp-14Ch]"
+"	      004ec1b4    mov eax,nReturnValue"
 "	      004ec1ba    mov [ebp-150h],eax"
-"	      004ec1c0    lea ecx,[ebp-148h]"
+"	      004ec1c0    lea ecx,tempMIFF.<vftable>"
 "	      004ec1c6    call 004AB7CFh"
 "	      004ec1cb    mov eax,[ebp-150h]"
 "	      004ec1d1    jmp near ptr 004EC1D6h"
@@ -534,36 +534,36 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 "	      004ec1e3    push ebx"
 "	      004ec1e4    push esi"
 "	      004ec1e5    push edi"
-"	      004ec1e6    mov [ebp-14h],ecx"
+"	      004ec1e6    mov this,ecx"
 );
 // LINE 103:
 	asm( 
-"	      004ec1e9    mov eax,[ebp+8]"
+"	      004ec1e9    mov eax,miffReader"
 "	      004ec1ec    mov eax,[eax]"
-"	      004ec1ee    mov ecx,[ebp+8]"
+"	      004ec1ee    mov ecx,miffReader"
 "	      004ec1f1    call dword ptr [eax+44h]"
 );
 // LINE 104:
 	asm( 
 "	      004ec1f4    push 434C4F47h"
-"	      004ec1f9    mov eax,[ebp+8]"
+"	      004ec1f9    mov eax,miffReader"
 "	      004ec1fc    mov eax,[eax]"
-"	      004ec1fe    mov ecx,[ebp+8]"
+"	      004ec1fe    mov ecx,miffReader"
 "	      004ec201    call dword ptr [eax+54h]"
 "	      004ec204    test eax,eax"
 "	      004ec206    je near ptr 004EC273h"
 );
 // LINE 105:
 	asm( 
-"	      004ec20c    mov eax,[ebp+8]"
+"	      004ec20c    mov eax,miffReader"
 "	      004ec20f    mov eax,[eax]"
-"	      004ec211    mov ecx,[ebp+8]"
+"	      004ec211    mov ecx,miffReader"
 "	      004ec214    call dword ptr [eax+18h]"
-"	      004ec217    mov [ebp-4],eax"
+"	      004ec217    mov lPresentRecordDataLength,eax"
 );
 // LINE 106:
 	asm( 
-"	      004ec21a    cmp dword ptr [ebp-4],0Ch"
+"	      004ec21a    cmp lPresentRecordDataLength,0Ch"
 "	      004ec21e    jge near ptr 004EC229h"
 );
 // LINE 107:
@@ -572,7 +572,7 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 );
 // LINE 108:
 	asm( 
-"	      004ec229    cmp dword ptr [ebp-4],38h"
+"	      004ec229    cmp lPresentRecordDataLength,38h"
 "	      004ec22d    jle near ptr 004EC238h"
 );
 // LINE 109:
@@ -582,18 +582,18 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 // LINE 110:
 	asm( 
 "	      004ec238    push 0Ch"
-"	      004ec23a    lea eax,[ebp-10h]"
+"	      004ec23a    lea eax,tempLogBase.nType"
 "	      004ec23d    push eax"
-"	      004ec23e    mov eax,[ebp+8]"
+"	      004ec23e    mov eax,miffReader"
 "	      004ec241    mov eax,[eax]"
-"	      004ec243    mov ecx,[ebp+8]"
+"	      004ec243    mov ecx,miffReader"
 "	      004ec246    call dword ptr [eax+40h]"
 );
 // LINE 111:
 	asm( 
-"	      004ec249    lea eax,[ebp-10h]"
+"	      004ec249    lea eax,tempLogBase.nType"
 "	      004ec24c    push eax"
-"	      004ec24d    mov ecx,[ebp-14h]"
+"	      004ec24d    mov ecx,this"
 "	      004ec250    call 004EC70Dh"
 "	      004ec255    test eax,eax"
 "	      004ec257    jne near ptr 004EC262h"
@@ -604,9 +604,9 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 );
 // LINE 113:
 	asm( 
-"	      004ec262    mov eax,[ebp+8]"
+"	      004ec262    mov eax,miffReader"
 "	      004ec265    push eax"
-"	      004ec266    mov ecx,[ebp-14h]"
+"	      004ec266    mov ecx,this"
 "	      004ec269    call 004EC65Bh"
 );
 // LINE 114:
@@ -640,8 +640,8 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec28d    push ebx"
 "	      004ec28e    push esi"
 "	      004ec28f    push edi"
-"	      004ec290    mov [ebp-184h],ecx"
-"	      004ec296    mov eax,[ebp-184h]"
+"	      004ec290    mov this,ecx"
+"	      004ec296    mov eax,this"
 "	      004ec29c    mov eax,[eax]"
 "	      004ec29e    mov [ebp-15Ch],eax"
 );
@@ -652,13 +652,13 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec2ac    mov eax,[eax]"
 "	      004ec2ae    mov [ebp-158h],eax"
 "	      004ec2b4    mov eax,[ebp-158h]"
-"	      004ec2ba    mov [ebp-4],eax"
+"	      004ec2ba    mov iterator.node,eax"
 "	      004ec2bd    jmp near ptr 004EC2C2h"
 "	      004ec2c2    jmp near ptr 004EC2C7h"
 );
 // LINE 23:
 	asm( 
-"	      004ec2c7    mov eax,[ebp-184h]"
+"	      004ec2c7    mov eax,this"
 "	      004ec2cd    mov eax,[eax]"
 "	      004ec2cf    mov [ebp-14Ch],eax"
 );
@@ -672,7 +672,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec2ef    jmp near ptr 004EC2F4h"
 "	      004ec2f4    jmp near ptr 004EC2F9h"
 "	      004ec2f9    mov eax,[ebp-128h]"
-"	      004ec2ff    cmp [ebp-4],eax"
+"	      004ec2ff    cmp iterator.node,eax"
 "	      004ec302    jne near ptr 004EC312h"
 "	      004ec308    jmp near ptr 004EC329h"
 "	      004ec30d    jmp near ptr 004EC312h"
@@ -688,7 +688,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 // LINE 126:
 	asm( 
 "	      004ec340    jmp near ptr 004EC345h"
-"	      004ec345    mov eax,[ebp-4]"
+"	      004ec345    mov eax,iterator.node"
 "	      004ec348    mov eax,[eax+8]"
 "	      004ec34b    cmp dword ptr [eax],1"
 "	      004ec34e    jne near ptr 004EC407h"
@@ -701,25 +701,25 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 	char[276] chStringBuffer;
 	asm( 
 "	      004ec354    jmp near ptr 004EC359h"
-"	      004ec359    mov eax,[ebp-4]"
+"	      004ec359    mov eax,iterator.node"
 "	      004ec35c    mov eax,[eax+8]"
-"	      004ec35f    mov [ebp-11Ch],eax"
+"	      004ec35f    mov tempLogStringSource,eax"
 );
 // LINE 131:
 	asm( 
-"	      004ec365    lea eax,[ebp-118h]"
-"	      004ec36b    mov [ebp-120h],eax"
+"	      004ec365    lea eax,chStringBuffer[0]"
+"	      004ec36b    mov tempLogStringDestination,eax"
 );
 // LINE 133:
 	asm( 
-"	      004ec371    mov edi,[ebp-120h]"
-"	      004ec377    mov esi,[ebp-11Ch]"
+"	      004ec371    mov edi,tempLogStringDestination"
+"	      004ec377    mov esi,tempLogStringSource"
 "	      004ec37d    mov ecx,5"
 "	      004ec382    rep movsd"
 );
 // LINE 134:
 	asm( 
-"	      004ec384    mov eax,[ebp-11Ch]"
+"	      004ec384    mov eax,tempLogStringSource"
 "	      004ec38a    mov edi,[eax+0Ch]"
 "	      004ec38d    mov ecx,0FFFFFFFFh"
 "	      004ec392    sub eax,eax"
@@ -728,25 +728,25 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec398    mov eax,ecx"
 "	      004ec39a    or eax,3"
 "	      004ec39d    inc eax"
-"	      004ec39e    mov [ebp-124h],eax"
+"	      004ec39e    mov lStringLength,eax"
 );
 // LINE 135:
 	asm( 
-"	      004ec3a4    cmp dword ptr [ebp-124h],100h"
+"	      004ec3a4    cmp lStringLength,100h"
 "	      004ec3ae    jle near ptr 004EC3BEh"
 );
 // LINE 136:
 	asm( 
-"	      004ec3b4    mov dword ptr [ebp-124h],100h"
+"	      004ec3b4    mov lStringLength,100h"
 );
 // LINE 137:
 	asm( 
-"	      004ec3be    mov eax,[ebp-124h]"
+"	      004ec3be    mov eax,lStringLength"
 "	      004ec3c4    push eax"
-"	      004ec3c5    mov eax,[ebp-11Ch]"
+"	      004ec3c5    mov eax,tempLogStringSource"
 "	      004ec3cb    mov eax,[eax+0Ch]"
 "	      004ec3ce    push eax"
-"	      004ec3cf    mov eax,[ebp-120h]"
+"	      004ec3cf    mov eax,tempLogStringDestination"
 "	      004ec3d5    add eax,10h"
 "	      004ec3d8    push eax"
 "	      004ec3d9    call 0056AD40h"
@@ -754,15 +754,15 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 );
 // LINE 140:
 	asm( 
-"	      004ec3e1    mov eax,[ebp-124h]"
+"	      004ec3e1    mov eax,lStringLength"
 "	      004ec3e7    add eax,10h"
 "	      004ec3ea    push eax"
-"	      004ec3eb    mov eax,[ebp-120h]"
+"	      004ec3eb    mov eax,tempLogStringDestination"
 "	      004ec3f1    push eax"
 "	      004ec3f2    push 434C4F47h"
-"	      004ec3f7    mov eax,[ebp+8]"
+"	      004ec3f7    mov eax,miffWriter"
 "	      004ec3fa    mov eax,[eax]"
-"	      004ec3fc    mov ecx,[ebp+8]"
+"	      004ec3fc    mov ecx,miffWriter"
 "	      004ec3ff    call dword ptr [eax+64h]"
 );
 // LINE 142:
@@ -774,28 +774,28 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 	asm( 
 "	      004ec407    jmp near ptr 004EC40Ch"
 "	      004ec40c    jmp near ptr 004EC411h"
-"	      004ec411    mov eax,[ebp-4]"
+"	      004ec411    mov eax,iterator.node"
 "	      004ec414    mov eax,[eax+8]"
 "	      004ec417    push eax"
-"	      004ec418    mov ecx,[ebp-184h]"
+"	      004ec418    mov ecx,this"
 "	      004ec41e    call 004EC5F0h"
 "	      004ec423    push eax"
-"	      004ec424    mov eax,[ebp-4]"
+"	      004ec424    mov eax,iterator.node"
 "	      004ec427    mov eax,[eax+8]"
 "	      004ec42a    push eax"
 "	      004ec42b    push 434C4F47h"
-"	      004ec430    mov eax,[ebp+8]"
+"	      004ec430    mov eax,miffWriter"
 "	      004ec433    mov eax,[eax]"
-"	      004ec435    mov ecx,[ebp+8]"
+"	      004ec435    mov ecx,miffWriter"
 "	      004ec438    call dword ptr [eax+64h]"
 );
 // LINE 146:
 	asm( 
-"	      004ec43b    mov eax,[ebp-4]"
+"	      004ec43b    mov eax,iterator.node"
 "	      004ec43e    mov [ebp-180h],eax"
-"	      004ec444    mov eax,[ebp-4]"
+"	      004ec444    mov eax,iterator.node"
 "	      004ec447    mov eax,[eax]"
-"	      004ec449    mov [ebp-4],eax"
+"	      004ec449    mov iterator.node,eax"
 "	      004ec44c    jmp near ptr 004EC451h"
 "	      004ec451    mov eax,[ebp-180h]"
 "	      004ec457    mov [ebp-12Ch],eax"
@@ -804,7 +804,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 // LINE 147:
 	asm( 
 "	      004ec462    jmp near ptr 004EC2C7h"
-"	      004ec467    mov eax,[ebp-184h]"
+"	      004ec467    mov eax,this"
 "	      004ec46d    mov eax,[eax]"
 "	      004ec46f    mov [ebp-13Ch],eax"
 );
@@ -817,7 +817,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec489    mov [ebp-130h],eax"
 "	      004ec48f    jmp near ptr 004EC494h"
 "	      004ec494    jmp near ptr 004EC499h"
-"	      004ec499    mov eax,[ebp-184h]"
+"	      004ec499    mov eax,this"
 "	      004ec49f    mov eax,[eax]"
 "	      004ec4a1    mov [ebp-144h],eax"
 "	      004ec4a7    mov eax,[ebp-144h]"
@@ -832,7 +832,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec4d3    mov [ebp-174h],eax"
 "	      004ec4d9    mov eax,[ebp-134h]"
 "	      004ec4df    mov [ebp-178h],eax"
-"	      004ec4e5    mov eax,[ebp-184h]"
+"	      004ec4e5    mov eax,this"
 "	      004ec4eb    mov eax,[eax]"
 "	      004ec4ed    mov [ebp-17Ch],eax"
 "	      004ec4f3    mov eax,[ebp-174h]"
@@ -908,11 +908,11 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 "	      004ec5f6    push ebx"
 "	      004ec5f7    push esi"
 "	      004ec5f8    push edi"
-"	      004ec5f9    mov [ebp-4],ecx"
+"	      004ec5f9    mov this,ecx"
 );
 // LINE 158:
 	asm( 
-"	      004ec5fc    mov eax,[ebp+8]"
+"	      004ec5fc    mov eax,logRecord"
 "	      004ec5ff    cmp dword ptr [eax],1"
 "	      004ec602    jne near ptr 004EC612h"
 );
@@ -923,7 +923,7 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 );
 // LINE 160:
 	asm( 
-"	      004ec612    mov eax,[ebp+8]"
+"	      004ec612    mov eax,logRecord"
 "	      004ec615    cmp dword ptr [eax],2"
 "	      004ec618    jne near ptr 004EC628h"
 );
@@ -934,10 +934,10 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 );
 // LINE 162:
 	asm( 
-"	      004ec628    mov eax,[ebp+8]"
+"	      004ec628    mov eax,logRecord"
 "	      004ec62b    cmp dword ptr [eax],3"
 "	      004ec62e    jb near ptr 004EC64Ah"
-"	      004ec634    mov eax,[ebp+8]"
+"	      004ec634    mov eax,logRecord"
 "	      004ec637    cmp dword ptr [eax],0Eh"
 "	      004ec63a    ja near ptr 004EC64Ah"
 );
@@ -974,21 +974,21 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 "	      004ec664    push ebx"
 "	      004ec665    push esi"
 "	      004ec666    push edi"
-"	      004ec667    mov [ebp-160h],ecx"
+"	      004ec667    mov this,ecx"
 );
 // LINE 180:
 	asm( 
 "	      004ec66d    push 0Ch"
-"	      004ec66f    lea eax,[ebp-44h]"
+"	      004ec66f    lea eax,tempLogBase.nType"
 "	      004ec672    push eax"
-"	      004ec673    mov eax,[ebp+8]"
+"	      004ec673    mov eax,miffReader"
 "	      004ec676    mov eax,[eax]"
-"	      004ec678    mov ecx,[ebp+8]"
+"	      004ec678    mov ecx,miffReader"
 "	      004ec67b    call dword ptr [eax+40h]"
 );
 // LINE 182:
 	asm( 
-"	      004ec67e    cmp dword ptr [ebp-44h],1"
+"	      004ec67e    cmp tempLogBase.nType,1"
 "	      004ec682    jne near ptr 004EC6D8h"
 );
 // LINE 188:
@@ -997,32 +997,32 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 	char[276] chStringBuffer;
 	asm( 
 "	      004ec688    push 114h"
-"	      004ec68d    lea eax,[ebp-158h]"
+"	      004ec68d    lea eax,chStringBuffer[0]"
 "	      004ec693    push eax"
-"	      004ec694    mov eax,[ebp+8]"
+"	      004ec694    mov eax,miffReader"
 "	      004ec697    mov eax,[eax]"
-"	      004ec699    mov ecx,[ebp+8]"
+"	      004ec699    mov ecx,miffReader"
 "	      004ec69c    call dword ptr [eax+40h]"
 );
 // LINE 189:
 	asm( 
-"	      004ec69f    lea eax,[ebp-158h]"
-"	      004ec6a5    mov [ebp-15Ch],eax"
+"	      004ec69f    lea eax,chStringBuffer[0]"
+"	      004ec6a5    mov tempLogString,eax"
 );
 // LINE 190:
 	asm( 
-"	      004ec6ab    mov eax,[ebp-15Ch]"
+"	      004ec6ab    mov eax,tempLogString"
 "	      004ec6b1    add eax,10h"
-"	      004ec6b4    mov ecx,[ebp-15Ch]"
+"	      004ec6b4    mov ecx,tempLogString"
 "	      004ec6ba    mov [ecx+0Ch],eax"
 );
 // LINE 191:
 	asm( 
 "	      004ec6bd    push 0"
 "	      004ec6bf    push 0"
-"	      004ec6c1    lea eax,[ebp-158h]"
+"	      004ec6c1    lea eax,chStringBuffer[0]"
 "	      004ec6c7    push eax"
-"	      004ec6c8    mov ecx,[ebp-160h]"
+"	      004ec6c8    mov ecx,this"
 "	      004ec6ce    call 004EC749h"
 );
 // LINE 193:
@@ -1033,20 +1033,20 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 // LINE 196:
 	asm( 
 "	      004ec6d8    push 38h"
-"	      004ec6da    lea eax,[ebp-38h]"
+"	      004ec6da    lea eax,chBuffer[0]"
 "	      004ec6dd    push eax"
-"	      004ec6de    mov eax,[ebp+8]"
+"	      004ec6de    mov eax,miffReader"
 "	      004ec6e1    mov eax,[eax]"
-"	      004ec6e3    mov ecx,[ebp+8]"
+"	      004ec6e3    mov ecx,miffReader"
 "	      004ec6e6    call dword ptr [eax+40h]"
 );
 // LINE 197:
 	asm( 
 "	      004ec6e9    push 0"
 "	      004ec6eb    push 0"
-"	      004ec6ed    lea eax,[ebp-38h]"
+"	      004ec6ed    lea eax,chBuffer[0]"
 "	      004ec6f0    push eax"
-"	      004ec6f1    mov ecx,[ebp-160h]"
+"	      004ec6f1    mov ecx,this"
 "	      004ec6f7    call 004EC749h"
 );
 // LINE 199:
@@ -1074,14 +1074,14 @@ int32_t LogManager::ValidateLogEntry(struct tagLogBase* logData) {
 "	      004ec713    push ebx"
 "	      004ec714    push esi"
 "	      004ec715    push edi"
-"	      004ec716    mov [ebp-4],ecx"
+"	      004ec716    mov this,ecx"
 );
 // LINE 208:
 	asm( 
-"	      004ec719    mov eax,[ebp+8]"
+"	      004ec719    mov eax,logData"
 "	      004ec71c    cmp dword ptr [eax],0"
 "	      004ec71f    jb near ptr 004EC73Bh"
-"	      004ec725    mov eax,[ebp+8]"
+"	      004ec725    mov eax,logData"
 "	      004ec728    cmp dword ptr [eax],0Fh"
 "	      004ec72b    jae near ptr 004EC73Bh"
 "	      004ec731    mov eax,1"
@@ -1109,12 +1109,12 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec752    push ebx"
 "	      004ec753    push esi"
 "	      004ec754    push edi"
-"	      004ec755    mov [ebp-0B8h],ecx"
+"	      004ec755    mov this,ecx"
 );
 // LINE 220:
 	asm( 
 "	      004ec75b    jmp near ptr 004EC760h"
-"	      004ec760    mov eax,[ebp-0B8h]"
+"	      004ec760    mov eax,this"
 "	      004ec766    mov eax,[eax]"
 "	      004ec768    cmp dword ptr [eax+4],1F4h"
 "	      004ec76f    jb near ptr 004EC782h"
@@ -1122,12 +1122,12 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 // LINE 221:
 	asm( 
 "	      004ec775    push 64h"
-"	      004ec777    mov ecx,[ebp-0B8h]"
+"	      004ec777    mov ecx,this"
 "	      004ec77d    call 004ED947h"
 );
 // LINE 223:
 	asm( 
-"	      004ec782    cmp dword ptr [ebp+10h],0"
+"	      004ec782    cmp bSetTime,0"
 "	      004ec786    je near ptr 004EC7A7h"
 );
 // LINE 224:
@@ -1137,13 +1137,13 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec794    mov [ebp-40h],eax"
 "	      004ec797    mov eax,[ebp-40h]"
 "	      004ec79a    mov eax,[eax]"
-"	      004ec79c    mov ecx,[ebp+8]"
+"	      004ec79c    mov ecx,logData"
 "	      004ec79f    mov [ecx+4],eax"
 "	      004ec7a2    jmp near ptr 004EC7A7h"
 );
 // LINE 225:
 	asm( 
-"	      004ec7a7    mov eax,[ebp+8]"
+"	      004ec7a7    mov eax,logData"
 "	      004ec7aa    cmp dword ptr [eax],1"
 "	      004ec7ad    jne near ptr 004EC8C2h"
 );
@@ -1155,18 +1155,18 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec7b3    push 14h"
 "	      004ec7b5    call 0056A600h"
 "	      004ec7ba    add esp,4"
-"	      004ec7bd    mov [ebp-8],eax"
+"	      004ec7bd    mov newLogString,eax"
 );
 // LINE 229:
 	asm( 
-"	      004ec7c0    mov edi,[ebp-8]"
-"	      004ec7c3    mov esi,[ebp+8]"
+"	      004ec7c0    mov edi,newLogString"
+"	      004ec7c3    mov esi,logData"
 "	      004ec7c6    mov ecx,5"
 "	      004ec7cb    rep movsd"
 );
 // LINE 230:
 	asm( 
-"	      004ec7cd    mov eax,[ebp-8]"
+"	      004ec7cd    mov eax,newLogString"
 "	      004ec7d0    mov edi,[eax+0Ch]"
 "	      004ec7d3    mov ecx,0FFFFFFFFh"
 "	      004ec7d8    sub eax,eax"
@@ -1178,11 +1178,11 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec7e4    push eax"
 "	      004ec7e5    call 0056A600h"
 "	      004ec7ea    add esp,4"
-"	      004ec7ed    mov [ebp-4],eax"
+"	      004ec7ed    mov szNewStringPointer,eax"
 );
 // LINE 231:
 	asm( 
-"	      004ec7f0    mov eax,[ebp-8]"
+"	      004ec7f0    mov eax,newLogString"
 "	      004ec7f3    mov edi,[eax+0Ch]"
 "	      004ec7f6    mov ecx,0FFFFFFFFh"
 "	      004ec7fb    sub eax,eax"
@@ -1191,7 +1191,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec801    sub edi,ecx"
 "	      004ec803    mov eax,ecx"
 "	      004ec805    mov edx,edi"
-"	      004ec807    mov edi,[ebp-4]"
+"	      004ec807    mov edi,szNewStringPointer"
 "	      004ec80a    mov esi,edx"
 "	      004ec80c    shr ecx,2"
 "	      004ec80f    rep movsd"
@@ -1201,17 +1201,17 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 );
 // LINE 232:
 	asm( 
-"	      004ec818    mov eax,[ebp-4]"
-"	      004ec81b    mov ecx,[ebp-8]"
+"	      004ec818    mov eax,szNewStringPointer"
+"	      004ec81b    mov ecx,newLogString"
 "	      004ec81e    mov [ecx+0Ch],eax"
 );
 // LINE 233:
 	asm( 
-"	      004ec821    mov eax,[ebp-8]"
+"	      004ec821    mov eax,newLogString"
 "	      004ec824    mov [ebp-28h],eax"
 "	      004ec827    lea eax,[ebp-28h]"
 "	      004ec82a    mov [ebp-34h],eax"
-"	      004ec82d    mov eax,[ebp-0B8h]"
+"	      004ec82d    mov eax,this"
 "	      004ec833    mov eax,[eax]"
 "	      004ec835    mov [ebp-58h],eax"
 "	      004ec838    mov eax,[ebp-58h]"
@@ -1260,10 +1260,10 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 // Block end:
 	asm( 
 "	      004ec8bd    jmp near ptr 004ECB68h"
-"	      004ec8c2    mov eax,[ebp+8]"
+"	      004ec8c2    mov eax,logData"
 "	      004ec8c5    cmp dword ptr [eax],3"
 "	      004ec8c8    jb near ptr 004EC995h"
-"	      004ec8ce    mov eax,[ebp+8]"
+"	      004ec8ce    mov eax,logData"
 "	      004ec8d1    cmp dword ptr [eax],0Eh"
 "	      004ec8d4    ja near ptr 004EC995h"
 );
@@ -1274,22 +1274,22 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec8da    push 14h"
 "	      004ec8dc    call 0056A600h"
 "	      004ec8e1    add esp,4"
-"	      004ec8e4    mov [ebp-0Ch],eax"
+"	      004ec8e4    mov newLogMissionEvent,eax"
 );
 // LINE 237:
 	asm( 
-"	      004ec8e7    mov edi,[ebp-0Ch]"
-"	      004ec8ea    mov esi,[ebp+8]"
+"	      004ec8e7    mov edi,newLogMissionEvent"
+"	      004ec8ea    mov esi,logData"
 "	      004ec8ed    mov ecx,5"
 "	      004ec8f2    rep movsd"
 );
 // LINE 238:
 	asm( 
-"	      004ec8f4    mov eax,[ebp-0Ch]"
+"	      004ec8f4    mov eax,newLogMissionEvent"
 "	      004ec8f7    mov [ebp-2Ch],eax"
 "	      004ec8fa    lea eax,[ebp-2Ch]"
 "	      004ec8fd    mov [ebp-38h],eax"
-"	      004ec900    mov eax,[ebp-0B8h]"
+"	      004ec900    mov eax,this"
 "	      004ec906    mov eax,[eax]"
 "	      004ec908    mov [ebp-70h],eax"
 "	      004ec90b    mov eax,[ebp-70h]"
@@ -1338,7 +1338,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 // Block end:
 	asm( 
 "	      004ec990    jmp near ptr 004ECB68h"
-"	      004ec995    mov eax,[ebp+8]"
+"	      004ec995    mov eax,logData"
 "	      004ec998    cmp dword ptr [eax],2"
 "	      004ec99b    jne near ptr 004ECA77h"
 );
@@ -1349,22 +1349,22 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec9a1    push 30h"
 "	      004ec9a3    call 0056A600h"
 "	      004ec9a8    add esp,4"
-"	      004ec9ab    mov [ebp-10h],eax"
+"	      004ec9ab    mov newLogCityEnterExit,eax"
 );
 // LINE 242:
 	asm( 
-"	      004ec9ae    mov edi,[ebp-10h]"
-"	      004ec9b1    mov esi,[ebp+8]"
+"	      004ec9ae    mov edi,newLogCityEnterExit"
+"	      004ec9b1    mov esi,logData"
 "	      004ec9b4    mov ecx,0Ch"
 "	      004ec9b9    rep movsd"
 );
 // LINE 243:
 	asm( 
-"	      004ec9bb    mov eax,[ebp-10h]"
+"	      004ec9bb    mov eax,newLogCityEnterExit"
 "	      004ec9be    mov [ebp-30h],eax"
 "	      004ec9c1    lea eax,[ebp-30h]"
 "	      004ec9c4    mov [ebp-3Ch],eax"
-"	      004ec9c7    mov eax,[ebp-0B8h]"
+"	      004ec9c7    mov eax,this"
 "	      004ec9cd    mov eax,[eax]"
 "	      004ec9cf    mov [ebp-88h],eax"
 "	      004ec9d5    mov eax,[ebp-88h]"
@@ -1421,19 +1421,19 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004eca77    push 0Ch"
 "	      004eca79    call 0056A600h"
 "	      004eca7e    add esp,4"
-"	      004eca81    mov [ebp-14h],eax"
+"	      004eca81    mov newLogBase,eax"
 );
 // LINE 247:
 	asm( 
-"	      004eca84    mov eax,[ebp+8]"
-"	      004eca87    mov ecx,[ebp-14h]"
+"	      004eca84    mov eax,logData"
+"	      004eca87    mov ecx,newLogBase"
 "	      004eca8a    mov edx,[eax]"
 "	      004eca8c    mov [ecx],edx"
 "	      004eca8e    mov edx,[eax+4]"
 "	      004eca91    mov [ecx+4],edx"
 "	      004eca94    mov eax,[eax+8]"
 "	      004eca97    mov [ecx+8],eax"
-"	      004eca9a    mov eax,[ebp-0B8h]"
+"	      004eca9a    mov eax,this"
 "	      004ecaa0    mov eax,[eax]"
 "	      004ecaa2    mov [ebp-0A0h],eax"
 );
@@ -1452,7 +1452,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ecade    call 004EE280h"
 "	      004ecae3    mov [ebp-98h],eax"
 "	      004ecae9    jmp near ptr 004ECAEEh"
-"	      004ecaee    lea eax,[ebp-14h]"
+"	      004ecaee    lea eax,newLogBase"
 "	      004ecaf1    push eax"
 "	      004ecaf2    mov eax,[ebp-98h]"
 "	      004ecaf8    add eax,8"
@@ -1484,9 +1484,9 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 // LINE 251:
 // Block end:
 	asm( 
-"	      004ecb68    cmp dword ptr [ebp+0Ch],0"
+"	      004ecb68    cmp bShowUserMessage,0"
 "	      004ecb6c    je near ptr 004ECCC0h"
-"	      004ecb72    mov eax,[ebp-0B8h]"
+"	      004ecb72    mov eax,this"
 "	      004ecb78    cmp dword ptr [eax+4],0"
 "	      004ecb7c    je near ptr 004ECCC0h"
 );
@@ -1512,28 +1512,28 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ecbd0    mov dword ptr [eax+0Ch],1"
 "	      004ecbd7    jmp near ptr 004ECBDCh"
 "	      004ecbdc    mov eax,[ebp-0A4h]"
-"	      004ecbe2    mov [ebp-18h],eax"
+"	      004ecbe2    mov sCurrentText.reference,eax"
 "	      004ecbe5    jmp near ptr 004ECBF1h"
-"	      004ecbea    mov dword ptr [ebp-18h],0"
-"	      004ecbf1    mov dword ptr [ebp-1Ch],0"
+"	      004ecbea    mov sCurrentText.reference,0"
+"	      004ecbf1    mov sCurrentText.c_str_ptr,0"
 "	      004ecbf8    jmp near ptr 004ECBFDh"
 );
 // LINE 253:
 	asm( 
 "	      004ecbfd    push 0"
-"	      004ecbff    lea eax,[ebp-1Ch]"
+"	      004ecbff    lea eax,sCurrentText.c_str_ptr"
 "	      004ecc02    push eax"
-"	      004ecc03    mov eax,[ebp+8]"
+"	      004ecc03    mov eax,logData"
 "	      004ecc06    push eax"
 "	      004ecc07    call 004EDB4Eh"
 "	      004ecc0c    add esp,0Ch"
 );
 // LINE 254:
 	asm( 
-"	      004ecc0f    lea eax,[ebp-1Ch]"
+"	      004ecc0f    lea eax,sCurrentText.c_str_ptr"
 "	      004ecc12    push eax"
-"	      004ecc13    mov eax,[ebp-0B8h]"
-"	      004ecc19    mov ecx,[ebp-0B8h]"
+"	      004ecc13    mov eax,this"
+"	      004ecc19    mov ecx,this"
 "	      004ecc1f    mov ecx,[ecx+4]"
 "	      004ecc22    mov edx,[ecx]"
 "	      004ecc24    mov ecx,[eax+4]"
@@ -1541,12 +1541,12 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 );
 // LINE 255:
 	asm( 
-"	      004ecc2a    mov eax,[ebp-18h]"
+"	      004ecc2a    mov eax,sCurrentText.reference"
 "	      004ecc2d    dec dword ptr [eax+0Ch]"
-"	      004ecc30    mov eax,[ebp-18h]"
+"	      004ecc30    mov eax,sCurrentText.reference"
 "	      004ecc33    cmp dword ptr [eax+0Ch],0"
 "	      004ecc37    jne near ptr 004ECC88h"
-"	      004ecc3d    mov eax,[ebp-18h]"
+"	      004ecc3d    mov eax,sCurrentText.reference"
 "	      004ecc40    mov [ebp-0B4h],eax"
 "	      004ecc46    mov eax,[ebp-0B4h]"
 "	      004ecc4c    mov [ebp-0B0h],eax"
@@ -1562,9 +1562,9 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ecc7e    jmp near ptr 004ECC83h"
 "	      004ecc83    jmp near ptr 004ECC88h"
 "	      004ecc88    jmp near ptr 004ECC8Dh"
-"	      004ecc8d    cmp dword ptr [ebp-1Ch],0"
+"	      004ecc8d    cmp sCurrentText.c_str_ptr,0"
 "	      004ecc91    je near ptr 004ECCBBh"
-"	      004ecc97    mov eax,[ebp-1Ch]"
+"	      004ecc97    mov eax,sCurrentText.c_str_ptr"
 "	      004ecc9a    mov [ebp-0A8h],eax"
 "	      004ecca0    mov eax,[ebp-0A8h]"
 "	      004ecca6    mov [ebp-0ACh],eax"
@@ -1604,7 +1604,7 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004eccda    push ebx"
 "	      004eccdb    push esi"
 "	      004eccdc    push edi"
-"	      004eccdd    mov [ebp-0BCh],ecx"
+"	      004eccdd    mov this,ecx"
 );
 // LINE 266:
 	asm( 
@@ -1727,9 +1727,9 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004ecefc    mov [ecx+4],eax"
 "	      004eceff    jmp near ptr 004ECF04h"
 "	      004ecf04    mov eax,[ebp-10h]"
-"	      004ecf07    mov [ebp-4],eax"
+"	      004ecf07    mov newLogBasePtrList,eax"
 "	      004ecf0a    jmp near ptr 004ECF16h"
-"	      004ecf0f    mov dword ptr [ebp-4],0"
+"	      004ecf0f    mov newLogBasePtrList,0"
 );
 // LINE 267:
 	asm( 
@@ -1742,11 +1742,11 @@ int32_t LogManager::SortLogEntriesByDate() {
 // LINE 270:
 	asm( 
 "	      004ecf20    jmp near ptr 004ECF25h"
-"	      004ecf25    mov eax,[ebp-0BCh]"
+"	      004ecf25    mov eax,this"
 "	      004ecf2b    mov eax,[eax]"
 "	      004ecf2d    cmp dword ptr [eax+4],0"
 "	      004ecf31    je near ptr 004ED138h"
-"	      004ecf37    mov eax,[ebp-0BCh]"
+"	      004ecf37    mov eax,this"
 "	      004ecf3d    mov eax,[eax]"
 "	      004ecf3f    mov [ebp-3Ch],eax"
 );
@@ -1761,16 +1761,16 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004ecf52    jmp near ptr 004ECF57h"
 "	      004ecf57    jmp near ptr 004ECF5Ch"
 "	      004ecf5c    mov eax,[ebp-14h]"
-"	      004ecf5f    mov [ebp-8],eax"
+"	      004ecf5f    mov iterator.node,eax"
 );
 // LINE 272:
 	asm( 
-"	      004ecf62    mov eax,[ebp-8]"
-"	      004ecf65    mov [ebp-0Ch],eax"
+"	      004ecf62    mov eax,iterator.node"
+"	      004ecf65    mov currentLowest.node,eax"
 );
 // LINE 23:
 	asm( 
-"	      004ecf68    mov eax,[ebp-0BCh]"
+"	      004ecf68    mov eax,this"
 "	      004ecf6e    mov eax,[eax]"
 "	      004ecf70    mov [ebp-2Ch],eax"
 );
@@ -1784,7 +1784,7 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004ecf81    jmp near ptr 004ECF86h"
 "	      004ecf86    jmp near ptr 004ECF8Bh"
 "	      004ecf8b    mov eax,[ebp-18h]"
-"	      004ecf8e    cmp [ebp-8],eax"
+"	      004ecf8e    cmp iterator.node,eax"
 "	      004ecf91    jne near ptr 004ECFA1h"
 "	      004ecf97    jmp near ptr 004ECFB5h"
 "	      004ecf9c    jmp near ptr 004ECFA1h"
@@ -1801,9 +1801,9 @@ int32_t LogManager::SortLogEntriesByDate() {
 	asm( 
 "	      004ecfc9    jmp near ptr 004ECFCEh"
 "	      004ecfce    jmp near ptr 004ECFD3h"
-"	      004ecfd3    mov eax,[ebp-0Ch]"
+"	      004ecfd3    mov eax,currentLowest.node"
 "	      004ecfd6    mov eax,[eax+8]"
-"	      004ecfd9    mov ecx,[ebp-8]"
+"	      004ecfd9    mov ecx,iterator.node"
 "	      004ecfdc    mov ecx,[ecx+8]"
 "	      004ecfdf    mov ecx,[ecx+4]"
 "	      004ecfe2    cmp [eax+4],ecx"
@@ -1811,16 +1811,16 @@ int32_t LogManager::SortLogEntriesByDate() {
 );
 // LINE 275:
 	asm( 
-"	      004ecfeb    mov eax,[ebp-8]"
-"	      004ecfee    mov [ebp-0Ch],eax"
+"	      004ecfeb    mov eax,iterator.node"
+"	      004ecfee    mov currentLowest.node,eax"
 );
 // LINE 276:
 	asm( 
-"	      004ecff1    mov eax,[ebp-8]"
+"	      004ecff1    mov eax,iterator.node"
 "	      004ecff4    mov [ebp-70h],eax"
-"	      004ecff7    mov eax,[ebp-8]"
+"	      004ecff7    mov eax,iterator.node"
 "	      004ecffa    mov eax,[eax]"
-"	      004ecffc    mov [ebp-8],eax"
+"	      004ecffc    mov iterator.node,eax"
 "	      004ecfff    jmp near ptr 004ED004h"
 "	      004ed004    mov eax,[ebp-70h]"
 "	      004ed007    mov [ebp-1Ch],eax"
@@ -1833,10 +1833,10 @@ int32_t LogManager::SortLogEntriesByDate() {
 // LINE 278:
 	asm( 
 "	      004ed014    jmp near ptr 004ED019h"
-"	      004ed019    mov eax,[ebp-0Ch]"
+"	      004ed019    mov eax,currentLowest.node"
 "	      004ed01c    add eax,8"
 "	      004ed01f    mov [ebp-58h],eax"
-"	      004ed022    mov eax,[ebp-4]"
+"	      004ed022    mov eax,newLogBasePtrList"
 "	      004ed025    mov eax,[eax]"
 "	      004ed027    mov [ebp-48h],eax"
 "	      004ed02a    mov eax,[ebp-48h]"
@@ -1845,7 +1845,7 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004ed035    jmp near ptr 004ED03Ah"
 "	      004ed03a    mov eax,[ebp-40h]"
 "	      004ed03d    mov [ebp-54h],eax"
-"	      004ed040    mov ecx,[ebp-4]"
+"	      004ed040    mov ecx,newLogBasePtrList"
 "	      004ed043    call 004EE280h"
 "	      004ed048    mov [ebp-4Ch],eax"
 "	      004ed04b    jmp near ptr 004ED050h"
@@ -1875,16 +1875,16 @@ int32_t LogManager::SortLogEntriesByDate() {
 "	      004ed09b    mov eax,[ebp-4Ch]"
 "	      004ed09e    mov ecx,[ebp-54h]"
 "	      004ed0a1    mov [ecx+4],eax"
-"	      004ed0a4    mov eax,[ebp-4]"
+"	      004ed0a4    mov eax,newLogBasePtrList"
 "	      004ed0a7    add dword ptr [eax+4],1"
 "	      004ed0ab    mov eax,[ebp-4Ch]"
 "	      004ed0ae    mov [ebp-44h],eax"
 "	      004ed0b1    jmp near ptr 004ED0B6h"
 "	      004ed0b6    jmp near ptr 004ED0BBh"
 "	      004ed0bb    jmp near ptr 004ED0C0h"
-"	      004ed0c0    mov eax,[ebp-0Ch]"
+"	      004ed0c0    mov eax,currentLowest.node"
 "	      004ed0c3    mov [ebp-0B4h],eax"
-"	      004ed0c9    mov eax,[ebp-0BCh]"
+"	      004ed0c9    mov eax,this"
 "	      004ed0cf    mov eax,[eax]"
 "	      004ed0d1    mov [ebp-0B8h],eax"
 );
@@ -1918,7 +1918,7 @@ int32_t LogManager::SortLogEntriesByDate() {
 );
 // LINE 281:
 	asm( 
-"	      004ed138    mov eax,[ebp-0BCh]"
+"	      004ed138    mov eax,this"
 "	      004ed13e    mov eax,[eax]"
 "	      004ed140    mov [ebp-24h],eax"
 "	      004ed143    mov eax,[ebp-24h]"
@@ -1969,8 +1969,8 @@ int32_t LogManager::SortLogEntriesByDate() {
 );
 // LINE 282:
 	asm( 
-"	      004ed1e3    mov eax,[ebp-4]"
-"	      004ed1e6    mov ecx,[ebp-0BCh]"
+"	      004ed1e3    mov eax,newLogBasePtrList"
+"	      004ed1e6    mov ecx,this"
 "	      004ed1ec    mov [ecx],eax"
 );
 // LINE 283:
@@ -2002,7 +2002,7 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed206    push ebx"
 "	      004ed207    push esi"
 "	      004ed208    push edi"
-"	      004ed209    mov [ebp-0BCh],ecx"
+"	      004ed209    mov this,ecx"
 );
 // LINE 292:
 	asm( 
@@ -2125,9 +2125,9 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed428    mov [ecx+4],eax"
 "	      004ed42b    jmp near ptr 004ED430h"
 "	      004ed430    mov eax,[ebp-10h]"
-"	      004ed433    mov [ebp-4],eax"
+"	      004ed433    mov newLogBasePtrList,eax"
 "	      004ed436    jmp near ptr 004ED442h"
-"	      004ed43b    mov dword ptr [ebp-4],0"
+"	      004ed43b    mov newLogBasePtrList,0"
 );
 // LINE 293:
 	asm( 
@@ -2140,11 +2140,11 @@ int32_t LogManager::SortLogEntriesByType() {
 // LINE 296:
 	asm( 
 "	      004ed44c    jmp near ptr 004ED451h"
-"	      004ed451    mov eax,[ebp-0BCh]"
+"	      004ed451    mov eax,this"
 "	      004ed457    mov eax,[eax]"
 "	      004ed459    cmp dword ptr [eax+4],0"
 "	      004ed45d    je near ptr 004ED664h"
-"	      004ed463    mov eax,[ebp-0BCh]"
+"	      004ed463    mov eax,this"
 "	      004ed469    mov eax,[eax]"
 "	      004ed46b    mov [ebp-3Ch],eax"
 );
@@ -2159,16 +2159,16 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed47e    jmp near ptr 004ED483h"
 "	      004ed483    jmp near ptr 004ED488h"
 "	      004ed488    mov eax,[ebp-14h]"
-"	      004ed48b    mov [ebp-8],eax"
+"	      004ed48b    mov iterator.node,eax"
 );
 // LINE 298:
 	asm( 
-"	      004ed48e    mov eax,[ebp-8]"
-"	      004ed491    mov [ebp-0Ch],eax"
+"	      004ed48e    mov eax,iterator.node"
+"	      004ed491    mov currentLowest.node,eax"
 );
 // LINE 23:
 	asm( 
-"	      004ed494    mov eax,[ebp-0BCh]"
+"	      004ed494    mov eax,this"
 "	      004ed49a    mov eax,[eax]"
 "	      004ed49c    mov [ebp-2Ch],eax"
 );
@@ -2181,7 +2181,7 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed4aa    mov [ebp-18h],eax"
 "	      004ed4ad    jmp near ptr 004ED4B2h"
 "	      004ed4b2    jmp near ptr 004ED4B7h"
-"	      004ed4b7    mov eax,[ebp-8]"
+"	      004ed4b7    mov eax,iterator.node"
 "	      004ed4ba    cmp [ebp-18h],eax"
 "	      004ed4bd    jne near ptr 004ED4CDh"
 "	      004ed4c3    jmp near ptr 004ED4E1h"
@@ -2199,9 +2199,9 @@ int32_t LogManager::SortLogEntriesByType() {
 	asm( 
 "	      004ed4f5    jmp near ptr 004ED4FAh"
 "	      004ed4fa    jmp near ptr 004ED4FFh"
-"	      004ed4ff    mov eax,[ebp-8]"
+"	      004ed4ff    mov eax,iterator.node"
 "	      004ed502    mov eax,[eax+8]"
-"	      004ed505    mov ecx,[ebp-0Ch]"
+"	      004ed505    mov ecx,currentLowest.node"
 "	      004ed508    mov ecx,[ecx+8]"
 "	      004ed50b    mov ecx,[ecx+8]"
 "	      004ed50e    cmp [eax+8],ecx"
@@ -2209,16 +2209,16 @@ int32_t LogManager::SortLogEntriesByType() {
 );
 // LINE 301:
 	asm( 
-"	      004ed517    mov eax,[ebp-8]"
-"	      004ed51a    mov [ebp-0Ch],eax"
+"	      004ed517    mov eax,iterator.node"
+"	      004ed51a    mov currentLowest.node,eax"
 );
 // LINE 302:
 	asm( 
-"	      004ed51d    mov eax,[ebp-8]"
+"	      004ed51d    mov eax,iterator.node"
 "	      004ed520    mov [ebp-70h],eax"
-"	      004ed523    mov eax,[ebp-8]"
+"	      004ed523    mov eax,iterator.node"
 "	      004ed526    mov eax,[eax]"
-"	      004ed528    mov [ebp-8],eax"
+"	      004ed528    mov iterator.node,eax"
 "	      004ed52b    jmp near ptr 004ED530h"
 "	      004ed530    mov eax,[ebp-70h]"
 "	      004ed533    mov [ebp-1Ch],eax"
@@ -2231,10 +2231,10 @@ int32_t LogManager::SortLogEntriesByType() {
 // LINE 304:
 	asm( 
 "	      004ed540    jmp near ptr 004ED545h"
-"	      004ed545    mov eax,[ebp-0Ch]"
+"	      004ed545    mov eax,currentLowest.node"
 "	      004ed548    add eax,8"
 "	      004ed54b    mov [ebp-58h],eax"
-"	      004ed54e    mov eax,[ebp-4]"
+"	      004ed54e    mov eax,newLogBasePtrList"
 "	      004ed551    mov eax,[eax]"
 "	      004ed553    mov [ebp-48h],eax"
 "	      004ed556    mov eax,[ebp-48h]"
@@ -2243,7 +2243,7 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed561    jmp near ptr 004ED566h"
 "	      004ed566    mov eax,[ebp-40h]"
 "	      004ed569    mov [ebp-54h],eax"
-"	      004ed56c    mov ecx,[ebp-4]"
+"	      004ed56c    mov ecx,newLogBasePtrList"
 "	      004ed56f    call 004EE280h"
 "	      004ed574    mov [ebp-4Ch],eax"
 "	      004ed577    jmp near ptr 004ED57Ch"
@@ -2273,16 +2273,16 @@ int32_t LogManager::SortLogEntriesByType() {
 "	      004ed5c7    mov eax,[ebp-4Ch]"
 "	      004ed5ca    mov ecx,[ebp-54h]"
 "	      004ed5cd    mov [ecx+4],eax"
-"	      004ed5d0    mov eax,[ebp-4]"
+"	      004ed5d0    mov eax,newLogBasePtrList"
 "	      004ed5d3    add dword ptr [eax+4],1"
 "	      004ed5d7    mov eax,[ebp-4Ch]"
 "	      004ed5da    mov [ebp-44h],eax"
 "	      004ed5dd    jmp near ptr 004ED5E2h"
 "	      004ed5e2    jmp near ptr 004ED5E7h"
 "	      004ed5e7    jmp near ptr 004ED5ECh"
-"	      004ed5ec    mov eax,[ebp-0Ch]"
+"	      004ed5ec    mov eax,currentLowest.node"
 "	      004ed5ef    mov [ebp-0B4h],eax"
-"	      004ed5f5    mov eax,[ebp-0BCh]"
+"	      004ed5f5    mov eax,this"
 "	      004ed5fb    mov eax,[eax]"
 "	      004ed5fd    mov [ebp-0B8h],eax"
 );
@@ -2316,7 +2316,7 @@ int32_t LogManager::SortLogEntriesByType() {
 );
 // LINE 307:
 	asm( 
-"	      004ed664    mov eax,[ebp-0BCh]"
+"	      004ed664    mov eax,this"
 "	      004ed66a    mov eax,[eax]"
 "	      004ed66c    mov [ebp-24h],eax"
 "	      004ed66f    mov eax,[ebp-24h]"
@@ -2367,8 +2367,8 @@ int32_t LogManager::SortLogEntriesByType() {
 );
 // LINE 308:
 	asm( 
-"	      004ed70f    mov eax,[ebp-4]"
-"	      004ed712    mov ecx,[ebp-0BCh]"
+"	      004ed70f    mov eax,newLogBasePtrList"
+"	      004ed712    mov ecx,this"
 "	      004ed718    mov [ecx],eax"
 );
 // LINE 309:
@@ -2398,8 +2398,8 @@ int32_t LogManager::PurgeAllEntries() {
 "	      004ed72f    push ebx"
 "	      004ed730    push esi"
 "	      004ed731    push edi"
-"	      004ed732    mov [ebp-74h],ecx"
-"	      004ed735    mov eax,[ebp-74h]"
+"	      004ed732    mov this,ecx"
+"	      004ed735    mov eax,this"
 "	      004ed738    mov eax,[eax]"
 "	      004ed73a    mov [ebp-4Ch],eax"
 );
@@ -2410,13 +2410,13 @@ int32_t LogManager::PurgeAllEntries() {
 "	      004ed742    mov eax,[eax]"
 "	      004ed744    mov [ebp-48h],eax"
 "	      004ed747    mov eax,[ebp-48h]"
-"	      004ed74a    mov [ebp-4],eax"
+"	      004ed74a    mov iterator.node,eax"
 "	      004ed74d    jmp near ptr 004ED752h"
 "	      004ed752    jmp near ptr 004ED757h"
 );
 // LINE 23:
 	asm( 
-"	      004ed757    mov eax,[ebp-74h]"
+"	      004ed757    mov eax,this"
 "	      004ed75a    mov eax,[eax]"
 "	      004ed75c    mov [ebp-3Ch],eax"
 );
@@ -2429,7 +2429,7 @@ int32_t LogManager::PurgeAllEntries() {
 "	      004ed76a    mov [ebp-8],eax"
 "	      004ed76d    jmp near ptr 004ED772h"
 "	      004ed772    jmp near ptr 004ED777h"
-"	      004ed777    mov eax,[ebp-4]"
+"	      004ed777    mov eax,iterator.node"
 "	      004ed77a    cmp [ebp-8],eax"
 "	      004ed77d    jne near ptr 004ED78Dh"
 "	      004ed783    jmp near ptr 004ED7A1h"
@@ -2446,7 +2446,7 @@ int32_t LogManager::PurgeAllEntries() {
 // LINE 325:
 	asm( 
 "	      004ed7b5    jmp near ptr 004ED7BAh"
-"	      004ed7ba    mov eax,[ebp-4]"
+"	      004ed7ba    mov eax,iterator.node"
 "	      004ed7bd    mov eax,[eax+8]"
 "	      004ed7c0    cmp dword ptr [eax],1"
 "	      004ed7c3    jne near ptr 004ED7ECh"
@@ -2454,7 +2454,7 @@ int32_t LogManager::PurgeAllEntries() {
 // LINE 326:
 	asm( 
 "	      004ed7c9    jmp near ptr 004ED7CEh"
-"	      004ed7ce    mov eax,[ebp-4]"
+"	      004ed7ce    mov eax,iterator.node"
 "	      004ed7d1    mov eax,[eax+8]"
 "	      004ed7d4    mov eax,[eax+0Ch]"
 "	      004ed7d7    mov [ebp-0Ch],eax"
@@ -2468,7 +2468,7 @@ int32_t LogManager::PurgeAllEntries() {
 // LINE 327:
 	asm( 
 "	      004ed7ec    jmp near ptr 004ED7F1h"
-"	      004ed7f1    mov eax,[ebp-4]"
+"	      004ed7f1    mov eax,iterator.node"
 "	      004ed7f4    mov eax,[eax+8]"
 "	      004ed7f7    mov [ebp-10h],eax"
 "	      004ed7fa    mov eax,[ebp-10h]"
@@ -2480,11 +2480,11 @@ int32_t LogManager::PurgeAllEntries() {
 );
 // LINE 328:
 	asm( 
-"	      004ed80c    mov eax,[ebp-4]"
+"	      004ed80c    mov eax,iterator.node"
 "	      004ed80f    mov [ebp-70h],eax"
-"	      004ed812    mov eax,[ebp-4]"
+"	      004ed812    mov eax,iterator.node"
 "	      004ed815    mov eax,[eax]"
-"	      004ed817    mov [ebp-4],eax"
+"	      004ed817    mov iterator.node,eax"
 "	      004ed81a    jmp near ptr 004ED81Fh"
 "	      004ed81f    mov eax,[ebp-70h]"
 "	      004ed822    mov [ebp-14h],eax"
@@ -2493,7 +2493,7 @@ int32_t LogManager::PurgeAllEntries() {
 // LINE 329:
 	asm( 
 "	      004ed82a    jmp near ptr 004ED757h"
-"	      004ed82f    mov eax,[ebp-74h]"
+"	      004ed82f    mov eax,this"
 "	      004ed832    mov eax,[eax]"
 "	      004ed834    mov [ebp-2Ch],eax"
 );
@@ -2506,7 +2506,7 @@ int32_t LogManager::PurgeAllEntries() {
 "	      004ed842    mov [ebp-18h],eax"
 "	      004ed845    jmp near ptr 004ED84Ah"
 "	      004ed84a    jmp near ptr 004ED84Fh"
-"	      004ed84f    mov eax,[ebp-74h]"
+"	      004ed84f    mov eax,this"
 "	      004ed852    mov eax,[eax]"
 "	      004ed854    mov [ebp-34h],eax"
 "	      004ed857    mov eax,[ebp-34h]"
@@ -2521,7 +2521,7 @@ int32_t LogManager::PurgeAllEntries() {
 "	      004ed874    mov [ebp-64h],eax"
 "	      004ed877    mov eax,[ebp-1Ch]"
 "	      004ed87a    mov [ebp-68h],eax"
-"	      004ed87d    mov eax,[ebp-74h]"
+"	      004ed87d    mov eax,this"
 "	      004ed880    mov eax,[eax]"
 "	      004ed882    mov [ebp-6Ch],eax"
 "	      004ed885    mov eax,[ebp-64h]"
@@ -2600,8 +2600,8 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 "	      004ed94d    push ebx"
 "	      004ed94e    push esi"
 "	      004ed94f    push edi"
-"	      004ed950    mov [ebp-68h],ecx"
-"	      004ed953    mov eax,[ebp-68h]"
+"	      004ed950    mov this,ecx"
+"	      004ed953    mov eax,this"
 "	      004ed956    mov eax,[eax]"
 "	      004ed958    mov [ebp-40h],eax"
 );
@@ -2612,19 +2612,19 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 "	      004ed960    mov eax,[eax]"
 "	      004ed962    mov [ebp-3Ch],eax"
 "	      004ed965    mov eax,[ebp-3Ch]"
-"	      004ed968    mov [ebp-8],eax"
+"	      004ed968    mov iterator.node,eax"
 "	      004ed96b    jmp near ptr 004ED970h"
 "	      004ed970    jmp near ptr 004ED975h"
 );
 // LINE 347:
 	asm( 
-"	      004ed975    mov dword ptr [ebp-4],0"
+"	      004ed975    mov i,0"
 "	      004ed97c    jmp near ptr 004ED984h"
-"	      004ed981    inc dword ptr [ebp-4]"
-"	      004ed984    mov eax,[ebp+8]"
-"	      004ed987    cmp [ebp-4],eax"
+"	      004ed981    inc i"
+"	      004ed984    mov eax,lEntryCountToPurge"
+"	      004ed987    cmp i,eax"
 "	      004ed98a    jge near ptr 004EDA54h"
-"	      004ed990    mov eax,[ebp-68h]"
+"	      004ed990    mov eax,this"
 "	      004ed993    mov eax,[eax]"
 "	      004ed995    mov [ebp-34h],eax"
 );
@@ -2637,7 +2637,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 "	      004ed9a3    mov [ebp-0Ch],eax"
 "	      004ed9a6    jmp near ptr 004ED9ABh"
 "	      004ed9ab    jmp near ptr 004ED9B0h"
-"	      004ed9b0    mov eax,[ebp-8]"
+"	      004ed9b0    mov eax,iterator.node"
 "	      004ed9b3    cmp [ebp-0Ch],eax"
 "	      004ed9b6    jne near ptr 004ED9C1h"
 "	      004ed9bc    jmp near ptr 004ED9C6h"
@@ -2653,7 +2653,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // LINE 350:
 	asm( 
 "	      004ed9da    jmp near ptr 004ED9DFh"
-"	      004ed9df    mov eax,[ebp-8]"
+"	      004ed9df    mov eax,iterator.node"
 "	      004ed9e2    mov eax,[eax+8]"
 "	      004ed9e5    cmp dword ptr [eax],1"
 "	      004ed9e8    jne near ptr 004EDA11h"
@@ -2661,7 +2661,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // LINE 351:
 	asm( 
 "	      004ed9ee    jmp near ptr 004ED9F3h"
-"	      004ed9f3    mov eax,[ebp-8]"
+"	      004ed9f3    mov eax,iterator.node"
 "	      004ed9f6    mov eax,[eax+8]"
 "	      004ed9f9    mov eax,[eax+0Ch]"
 "	      004ed9fc    mov [ebp-10h],eax"
@@ -2675,7 +2675,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // LINE 352:
 	asm( 
 "	      004eda11    jmp near ptr 004EDA16h"
-"	      004eda16    mov eax,[ebp-8]"
+"	      004eda16    mov eax,iterator.node"
 "	      004eda19    mov eax,[eax+8]"
 "	      004eda1c    mov [ebp-14h],eax"
 "	      004eda1f    mov eax,[ebp-14h]"
@@ -2687,11 +2687,11 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 );
 // LINE 353:
 	asm( 
-"	      004eda31    mov eax,[ebp-8]"
+"	      004eda31    mov eax,iterator.node"
 "	      004eda34    mov [ebp-64h],eax"
-"	      004eda37    mov eax,[ebp-8]"
+"	      004eda37    mov eax,iterator.node"
 "	      004eda3a    mov eax,[eax]"
-"	      004eda3c    mov [ebp-8],eax"
+"	      004eda3c    mov iterator.node,eax"
 "	      004eda3f    jmp near ptr 004EDA44h"
 "	      004eda44    mov eax,[ebp-64h]"
 "	      004eda47    mov [ebp-18h],eax"
@@ -2700,7 +2700,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // LINE 354:
 	asm( 
 "	      004eda4f    jmp near ptr 004ED981h"
-"	      004eda54    mov eax,[ebp-68h]"
+"	      004eda54    mov eax,this"
 "	      004eda57    mov eax,[eax]"
 "	      004eda59    mov [ebp-2Ch],eax"
 );
@@ -2714,11 +2714,11 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 "	      004eda69    mov [ebp-1Ch],eax"
 "	      004eda6c    jmp near ptr 004EDA71h"
 "	      004eda71    jmp near ptr 004EDA76h"
-"	      004eda76    mov eax,[ebp-8]"
+"	      004eda76    mov eax,iterator.node"
 "	      004eda79    mov [ebp-58h],eax"
 "	      004eda7c    mov eax,[ebp-1Ch]"
 "	      004eda7f    mov [ebp-5Ch],eax"
-"	      004eda82    mov eax,[ebp-68h]"
+"	      004eda82    mov eax,this"
 "	      004eda85    mov eax,[eax]"
 "	      004eda87    mov [ebp-60h],eax"
 "	      004eda8a    mov eax,[ebp-58h]"
@@ -2804,8 +2804,8 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // LINE 366:
 	asm( 
 "	      004edb5a    mov al,ds:[5B4878h]"
-"	      004edb5f    mov [ebp-100h],al"
-"	      004edb65    lea edi,[ebp-0FFh]"
+"	      004edb5f    mov szBuffer[0],al"
+"	      004edb65    lea edi,szBuffer[1]"
 "	      004edb6b    xor eax,eax"
 "	      004edb6d    mov ecx,3Fh"
 "	      004edb72    rep stosd"
@@ -2815,8 +2815,8 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // LINE 367:
 	asm( 
 "	      004edb77    mov al,ds:[5B487Ch]"
-"	      004edb7c    mov [ebp-244h],al"
-"	      004edb82    lea edi,[ebp-243h]"
+"	      004edb7c    mov szBuffer1[0],al"
+"	      004edb82    lea edi,szBuffer1[1]"
 "	      004edb88    xor eax,eax"
 "	      004edb8a    mov ecx,3Fh"
 "	      004edb8f    rep stosd"
@@ -2826,53 +2826,53 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // LINE 368:
 	asm( 
 "	      004edb94    mov al,ds:[5B4880h]"
-"	      004edb99    mov [ebp-144h],al"
-"	      004edb9f    lea edi,[ebp-143h]"
+"	      004edb99    mov szTime[0],al"
+"	      004edb9f    lea edi,szTime[1]"
 "	      004edba5    xor eax,eax"
 "	      004edba7    mov ecx,0Fh"
 "	      004edbac    rep stosd"
 "	      004edbae    stosw"
 "	      004edbb0    stosb"
-"	      004edbb1    mov eax,[ebp+8]"
+"	      004edbb1    mov eax,logData"
 "	      004edbb4    mov eax,[eax+4]"
 "	      004edbb7    mov [ebp-268h],eax"
 );
 // LINE 370:
 	asm( 
-"	      004edbbd    mov dword ptr [ebp-24Ch],0"
+"	      004edbbd    mov tempTime.<MTimeLocalized+0x08>,0"
 "	      004edbc7    mov eax,[ebp-268h]"
-"	      004edbcd    mov [ebp-250h],eax"
+"	      004edbcd    mov tempTime.<MTimeLocalized+0x04>,eax"
 "	      004edbd3    jmp near ptr 004EDBD8h"
-"	      004edbd8    mov dword ptr [ebp-248h],0"
-"	      004edbe2    mov dword ptr [ebp-254h],592680h"
+"	      004edbd8    mov tempTime.nLanguage,0"
+"	      004edbe2    mov tempTime.<vftable>,592680h"
 "	      004edbec    jmp near ptr 004EDBF1h"
 );
 // LINE 372:
 	asm( 
-"	      004edbf1    cmp dword ptr [ebp+10h],0"
+"	      004edbf1    cmp bPrintTime,0"
 "	      004edbf5    je near ptr 004EDEE1h"
 );
 // LINE 373:
 	asm( 
 "	      004edbfb    push 0"
-"	      004edbfd    lea eax,[ebp-144h]"
+"	      004edbfd    lea eax,szTime[0]"
 "	      004edc03    push eax"
-"	      004edc04    lea ecx,[ebp-254h]"
+"	      004edc04    lea ecx,tempTime.<vftable>"
 "	      004edc0a    call 0041FAD0h"
 );
 // LINE 374:
 	asm( 
 "	      004edc0f    jmp near ptr 004EDC14h"
-"	      004edc14    lea edi,[ebp-144h]"
+"	      004edc14    lea edi,szTime[0]"
 "	      004edc1a    mov ecx,0FFFFFFFFh"
 "	      004edc1f    sub eax,eax"
 "	      004edc21    repne scasb"
 "	      004edc23    not ecx"
 "	      004edc25    lea eax,[ecx-1]"
 "	      004edc28    push eax"
-"	      004edc29    lea eax,[ebp-144h]"
+"	      004edc29    lea eax,szTime[0]"
 "	      004edc2f    push eax"
-"	      004edc30    mov ecx,[ebp+0Ch]"
+"	      004edc30    mov ecx,sCurrentText"
 "	      004edc33    call 0040FEE0h"
 "	      004edc38    jmp near ptr 004EDC3Dh"
 "	      004edc3d    mov byte ptr [ebp-2A4h],20h"
@@ -2880,7 +2880,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // LINE 375:
 	asm( 
 "	      004edc44    jmp near ptr 004EDC49h"
-"	      004edc49    mov eax,[ebp+0Ch]"
+"	      004edc49    mov eax,sCurrentText"
 "	      004edc4c    mov eax,[eax+4]"
 "	      004edc4f    cmp dword ptr [eax+4],0FFFFFFFEh"
 "	      004edc53    jb near ptr 004EDC91h"
@@ -2898,15 +2898,15 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edc89    add esp,4"
 "	      004edc8c    jmp near ptr 004EDC91h"
 "	      004edc91    jmp near ptr 004EDC96h"
-"	      004edc96    mov eax,[ebp+0Ch]"
+"	      004edc96    mov eax,sCurrentText"
 "	      004edc99    mov eax,[eax+4]"
 "	      004edc9c    cmp dword ptr [eax+0Ch],1"
 "	      004edca0    jne near ptr 004EDCC8h"
 "	      004edca6    jmp near ptr 004EDCABh"
 "	      004edcab    jmp near ptr 004EDCB0h"
-"	      004edcb0    mov eax,[ebp+0Ch]"
+"	      004edcb0    mov eax,sCurrentText"
 "	      004edcb3    mov eax,[eax+4]"
-"	      004edcb6    mov ecx,[ebp+0Ch]"
+"	      004edcb6    mov ecx,sCurrentText"
 "	      004edcb9    mov ecx,[ecx+4]"
 "	      004edcbc    mov ecx,[ecx+4]"
 "	      004edcbf    cmp [eax+8],ecx"
@@ -2920,11 +2920,11 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edce5    jmp near ptr 004EDCEAh"
 "	      004edcea    jmp near ptr 004EDCEFh"
 "	      004edcef    jmp near ptr 004EDCF4h"
-"	      004edcf4    mov eax,[ebp+0Ch]"
+"	      004edcf4    mov eax,sCurrentText"
 "	      004edcf7    mov eax,[eax+4]"
 "	      004edcfa    cmp dword ptr [eax+4],0"
 "	      004edcfe    je near ptr 004EDD1Ch"
-"	      004edd04    mov eax,[ebp+0Ch]"
+"	      004edd04    mov eax,sCurrentText"
 "	      004edd07    mov eax,[eax+4]"
 "	      004edd0a    mov eax,[eax]"
 "	      004edd0c    mov [ebp-284h],eax"
@@ -2932,12 +2932,12 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edd17    jmp near ptr 004EDD2Bh"
 "	      004edd1c    mov dword ptr [ebp-284h],0"
 "	      004edd26    jmp near ptr 004EDD2Bh"
-"	      004edd2b    mov eax,[ebp+0Ch]"
+"	      004edd2b    mov eax,sCurrentText"
 "	      004edd2e    mov eax,[eax+4]"
 "	      004edd31    mov eax,[eax+4]"
 "	      004edd34    inc eax"
 "	      004edd35    mov [ebp-29Ch],eax"
-"	      004edd3b    mov eax,[ebp+0Ch]"
+"	      004edd3b    mov eax,sCurrentText"
 "	      004edd3e    mov eax,[eax+4]"
 "	      004edd41    mov eax,[eax+4]"
 "	      004edd44    mov [ebp-2A0h],eax"
@@ -2986,14 +2986,14 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ede0d    mov [ebp-278h],eax"
 "	      004ede13    jmp near ptr 004EDE22h"
 "	      004ede18    mov dword ptr [ebp-278h],0"
-"	      004ede22    mov eax,[ebp+0Ch]"
+"	      004ede22    mov eax,sCurrentText"
 "	      004ede25    mov eax,[eax+4]"
 "	      004ede28    dec dword ptr [eax+0Ch]"
-"	      004ede2b    mov eax,[ebp+0Ch]"
+"	      004ede2b    mov eax,sCurrentText"
 "	      004ede2e    mov eax,[eax+4]"
 "	      004ede31    cmp dword ptr [eax+0Ch],0"
 "	      004ede35    jne near ptr 004EDE89h"
-"	      004ede3b    mov eax,[ebp+0Ch]"
+"	      004ede3b    mov eax,sCurrentText"
 "	      004ede3e    mov eax,[eax+4]"
 "	      004ede41    mov [ebp-290h],eax"
 "	      004ede47    mov eax,[ebp-290h]"
@@ -3011,14 +3011,14 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ede84    jmp near ptr 004EDE89h"
 "	      004ede89    jmp near ptr 004EDE8Eh"
 "	      004ede8e    mov eax,[ebp-278h]"
-"	      004ede94    mov ecx,[ebp+0Ch]"
+"	      004ede94    mov ecx,sCurrentText"
 "	      004ede97    mov [ecx+4],eax"
 "	      004ede9a    jmp near ptr 004EDE9Fh"
 "	      004ede9f    jmp near ptr 004EDEA4h"
-"	      004edea4    mov eax,[ebp+0Ch]"
+"	      004edea4    mov eax,sCurrentText"
 "	      004edea7    mov eax,[eax+4]"
 "	      004edeaa    mov eax,[eax+4]"
-"	      004edead    mov ecx,[ebp+0Ch]"
+"	      004edead    mov ecx,sCurrentText"
 "	      004edeb0    mov ecx,[ecx+4]"
 "	      004edeb3    add eax,[ecx]"
 "	      004edeb5    mov [ebp-280h],eax"
@@ -3026,7 +3026,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edec1    mov ecx,[ebp-280h]"
 "	      004edec7    mov [ecx],al"
 "	      004edec9    jmp near ptr 004EDECEh"
-"	      004edece    mov eax,[ebp+0Ch]"
+"	      004edece    mov eax,sCurrentText"
 "	      004eded1    mov eax,[eax+4]"
 "	      004eded4    inc dword ptr [eax+4]"
 "	      004eded7    jmp near ptr 004EDEDCh"
@@ -3039,12 +3039,12 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 	asm( 
 "	      004edee1    push 0FFFFFFFFh"
 "	      004edee3    push 0"
-"	      004edee5    mov ecx,[ebp+0Ch]"
+"	      004edee5    mov ecx,sCurrentText"
 "	      004edee8    call 004157D0h"
 );
 // LINE 380:
 	asm( 
-"	      004edeed    mov eax,[ebp+8]"
+"	      004edeed    mov eax,logData"
 "	      004edef0    cmp dword ptr [eax],1"
 "	      004edef3    jne near ptr 004EDF49h"
 );
@@ -3052,9 +3052,9 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // Block start:
 	const struct tagLogString* lS;
 	asm( 
-"	      004edef9    mov eax,[ebp+8]"
-"	      004edefc    mov [ebp-258h],eax"
-"	      004edf02    mov eax,[ebp-258h]"
+"	      004edef9    mov eax,logData"
+"	      004edefc    mov lS,eax"
+"	      004edf02    mov eax,lS"
 "	      004edf08    mov eax,[eax+0Ch]"
 "	      004edf0b    mov [ebp-264h],eax"
 );
@@ -3070,7 +3070,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edf2a    push eax"
 "	      004edf2b    mov eax,[ebp-264h]"
 "	      004edf31    push eax"
-"	      004edf32    mov ecx,[ebp+0Ch]"
+"	      004edf32    mov ecx,sCurrentText"
 "	      004edf35    call 00410130h"
 "	      004edf3a    jmp near ptr 004EDF3Fh"
 );
@@ -3082,10 +3082,10 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // Block end:
 	asm( 
 "	      004edf44    jmp near ptr 004EE22Ch"
-"	      004edf49    mov eax,[ebp+8]"
+"	      004edf49    mov eax,logData"
 "	      004edf4c    cmp dword ptr [eax],3"
 "	      004edf4f    jb near ptr 004EE03Bh"
-"	      004edf55    mov eax,[ebp+8]"
+"	      004edf55    mov eax,logData"
 "	      004edf58    cmp dword ptr [eax],0Eh"
 "	      004edf5b    ja near ptr 004EE03Bh"
 );
@@ -3093,32 +3093,32 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // Block start:
 	const struct tagLogMissionEvent* lME;
 	asm( 
-"	      004edf61    mov eax,[ebp+8]"
-"	      004edf64    mov [ebp-25Ch],eax"
+"	      004edf61    mov eax,logData"
+"	      004edf64    mov lME,eax"
 );
 // LINE 387:
 	asm( 
-"	      004edf6a    mov eax,[ebp-25Ch]"
+"	      004edf6a    mov eax,lME"
 "	      004edf70    push eax"
 "	      004edf71    call 004EE264h"
 "	      004edf76    add esp,4"
-"	      004edf79    mov [ebp-104h],eax"
+"	      004edf79    mov nFullStringID,eax"
 );
 // LINE 388:
 	asm( 
 "	      004edf7f    push 0"
-"	      004edf81    mov eax,[ebp-104h]"
+"	      004edf81    mov eax,nFullStringID"
 "	      004edf87    push eax"
 "	      004edf88    call 0042B15Fh"
 "	      004edf8d    add esp,8"
-"	      004edf90    mov [ebp-104h],eax"
+"	      004edf90    mov nFullStringID,eax"
 );
 // LINE 389:
 	asm( 
 "	      004edf96    push 0FFFh"
-"	      004edf9b    lea eax,[ebp-100h]"
+"	      004edf9b    lea eax,szBuffer[0]"
 "	      004edfa1    push eax"
-"	      004edfa2    mov eax,[ebp-104h]"
+"	      004edfa2    mov eax,nFullStringID"
 "	      004edfa8    push eax"
 "	      004edfa9    mov eax,ds:[5C28C8h]"
 "	      004edfae    push eax"
@@ -3127,10 +3127,10 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edfbb    cmp dword ptr [ebp-26Ch],0"
 "	      004edfc2    jne near ptr 004EE031h"
 "	      004edfc8    push 0FFFh"
-"	      004edfcd    lea eax,[ebp-100h]"
+"	      004edfcd    lea eax,szBuffer[0]"
 "	      004edfd3    push eax"
 "	      004edfd4    mov ecx,3E8h"
-"	      004edfd9    mov eax,[ebp-104h]"
+"	      004edfd9    mov eax,nFullStringID"
 "	      004edfdf    sub edx,edx"
 "	      004edfe1    div ecx"
 "	      004edfe3    push edx"
@@ -3146,7 +3146,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee006    sub edi,ecx"
 "	      004ee008    mov edx,edi"
 "	      004ee00a    mov ebx,ecx"
-"	      004ee00c    lea edi,[ebp-100h]"
+"	      004ee00c    lea edi,szBuffer[0]"
 "	      004ee012    mov ecx,0FFFFFFFFh"
 "	      004ee017    sub eax,eax"
 "	      004ee019    repne scasb"
@@ -3165,7 +3165,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // Block end:
 	asm( 
 "	      004ee036    jmp near ptr 004EE22Ch"
-"	      004ee03b    mov eax,[ebp+8]"
+"	      004ee03b    mov eax,logData"
 "	      004ee03e    cmp dword ptr [eax],2"
 "	      004ee041    jne near ptr 004EE154h"
 );
@@ -3173,12 +3173,12 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // Block start:
 	const struct tagLogCityEnterExit* lCEE;
 	asm( 
-"	      004ee047    mov eax,[ebp+8]"
-"	      004ee04a    mov [ebp-260h],eax"
+"	      004ee047    mov eax,logData"
+"	      004ee04a    mov lCEE,eax"
 );
 // LINE 393:
 	asm( 
-"	      004ee050    mov eax,[ebp-260h]"
+"	      004ee050    mov eax,lCEE"
 "	      004ee056    cmp dword ptr [eax+0Ch],0"
 "	      004ee05a    jne near ptr 004EE07Ah"
 );
@@ -3188,7 +3188,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee062    push 216h"
 "	      004ee067    call 0042B15Fh"
 "	      004ee06c    add esp,8"
-"	      004ee06f    mov [ebp-104h],eax"
+"	      004ee06f    mov nFullStringID,eax"
 );
 // LINE 395:
 	asm( 
@@ -3200,14 +3200,14 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee07c    push 217h"
 "	      004ee081    call 0042B15Fh"
 "	      004ee086    add esp,8"
-"	      004ee089    mov [ebp-104h],eax"
+"	      004ee089    mov nFullStringID,eax"
 );
 // LINE 397:
 	asm( 
 "	      004ee08f    push 0FFFh"
-"	      004ee094    lea eax,[ebp-244h]"
+"	      004ee094    lea eax,szBuffer1[0]"
 "	      004ee09a    push eax"
-"	      004ee09b    mov eax,[ebp-104h]"
+"	      004ee09b    mov eax,nFullStringID"
 "	      004ee0a1    push eax"
 "	      004ee0a2    mov eax,ds:[5C28C8h]"
 "	      004ee0a7    push eax"
@@ -3216,10 +3216,10 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee0b4    cmp dword ptr [ebp-270h],0"
 "	      004ee0bb    jne near ptr 004EE12Ah"
 "	      004ee0c1    push 0FFFh"
-"	      004ee0c6    lea eax,[ebp-244h]"
+"	      004ee0c6    lea eax,szBuffer1[0]"
 "	      004ee0cc    push eax"
 "	      004ee0cd    mov ecx,3E8h"
-"	      004ee0d2    mov eax,[ebp-104h]"
+"	      004ee0d2    mov eax,nFullStringID"
 "	      004ee0d8    sub edx,edx"
 "	      004ee0da    div ecx"
 "	      004ee0dc    push edx"
@@ -3235,7 +3235,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee0ff    sub edi,ecx"
 "	      004ee101    mov edx,edi"
 "	      004ee103    mov ebx,ecx"
-"	      004ee105    lea edi,[ebp-244h]"
+"	      004ee105    lea edi,szBuffer1[0]"
 "	      004ee10b    mov ecx,0FFFFFFFFh"
 "	      004ee110    sub eax,eax"
 "	      004ee112    repne scasb"
@@ -3252,12 +3252,12 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 );
 // LINE 398:
 	asm( 
-"	      004ee12f    mov eax,[ebp-260h]"
+"	      004ee12f    mov eax,lCEE"
 "	      004ee135    add eax,10h"
 "	      004ee138    push eax"
-"	      004ee139    lea eax,[ebp-244h]"
+"	      004ee139    lea eax,szBuffer1[0]"
 "	      004ee13f    push eax"
-"	      004ee140    lea eax,[ebp-100h]"
+"	      004ee140    lea eax,szBuffer[0]"
 "	      004ee146    push eax"
 "	      004ee147    call 0056CD30h"
 "	      004ee14c    add esp,0Ch"
@@ -3273,14 +3273,14 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee156    push 215h"
 "	      004ee15b    call 0042B15Fh"
 "	      004ee160    add esp,8"
-"	      004ee163    mov [ebp-104h],eax"
+"	      004ee163    mov nFullStringID,eax"
 );
 // LINE 402:
 	asm( 
 "	      004ee169    push 0FFFh"
-"	      004ee16e    lea eax,[ebp-244h]"
+"	      004ee16e    lea eax,szBuffer1[0]"
 "	      004ee174    push eax"
-"	      004ee175    mov eax,[ebp-104h]"
+"	      004ee175    mov eax,nFullStringID"
 "	      004ee17b    push eax"
 "	      004ee17c    mov eax,ds:[5C28C8h]"
 "	      004ee181    push eax"
@@ -3289,10 +3289,10 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee18e    cmp dword ptr [ebp-274h],0"
 "	      004ee195    jne near ptr 004EE204h"
 "	      004ee19b    push 0FFFh"
-"	      004ee1a0    lea eax,[ebp-244h]"
+"	      004ee1a0    lea eax,szBuffer1[0]"
 "	      004ee1a6    push eax"
 "	      004ee1a7    mov ecx,3E8h"
-"	      004ee1ac    mov eax,[ebp-104h]"
+"	      004ee1ac    mov eax,nFullStringID"
 "	      004ee1b2    sub edx,edx"
 "	      004ee1b4    div ecx"
 "	      004ee1b6    push edx"
@@ -3308,7 +3308,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee1d9    sub edi,ecx"
 "	      004ee1db    mov edx,edi"
 "	      004ee1dd    mov ebx,ecx"
-"	      004ee1df    lea edi,[ebp-244h]"
+"	      004ee1df    lea edi,szBuffer1[0]"
 "	      004ee1e5    mov ecx,0FFFFFFFFh"
 "	      004ee1ea    sub eax,eax"
 "	      004ee1ec    repne scasb"
@@ -3325,15 +3325,15 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 );
 // LINE 403:
 	asm( 
-"	      004ee209    mov eax,[ebp+8]"
+"	      004ee209    mov eax,logData"
 "	      004ee20c    mov eax,[eax+8]"
 "	      004ee20f    push eax"
-"	      004ee210    mov eax,[ebp+8]"
+"	      004ee210    mov eax,logData"
 "	      004ee213    mov eax,[eax]"
 "	      004ee215    push eax"
-"	      004ee216    lea eax,[ebp-244h]"
+"	      004ee216    lea eax,szBuffer1[0]"
 "	      004ee21c    push eax"
-"	      004ee21d    lea eax,[ebp-100h]"
+"	      004ee21d    lea eax,szBuffer[0]"
 "	      004ee223    push eax"
 "	      004ee224    call 0056CD30h"
 "	      004ee229    add esp,10h"
@@ -3341,16 +3341,16 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 // LINE 406:
 	asm( 
 "	      004ee22c    jmp near ptr 004EE231h"
-"	      004ee231    lea edi,[ebp-100h]"
+"	      004ee231    lea edi,szBuffer[0]"
 "	      004ee237    mov ecx,0FFFFFFFFh"
 "	      004ee23c    sub eax,eax"
 "	      004ee23e    repne scasb"
 "	      004ee240    not ecx"
 "	      004ee242    lea eax,[ecx-1]"
 "	      004ee245    push eax"
-"	      004ee246    lea eax,[ebp-100h]"
+"	      004ee246    lea eax,szBuffer[0]"
 "	      004ee24c    push eax"
-"	      004ee24d    mov ecx,[ebp+0Ch]"
+"	      004ee24d    mov ecx,sCurrentText"
 "	      004ee250    call 00410130h"
 "	      004ee255    jmp near ptr 004EE25Ah"
 );
@@ -3377,7 +3377,7 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
 );
 // LINE 416:
 	asm( 
-"	      004ee26a    mov eax,[ebp+8]"
+"	      004ee26a    mov eax,lME"
 "	      004ee26d    mov eax,[eax]"
 "	      004ee26f    add eax,214h"
 "	      004ee274    jmp near ptr 004EE279h"

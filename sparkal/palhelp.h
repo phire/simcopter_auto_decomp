@@ -9,15 +9,15 @@ void SparkalPalette::GetRGBValue(int32_t nIndex, struct SparkalColor& colorValue
 "	      00497b56    push ebx"
 "	      00497b57    push esi"
 "	      00497b58    push edi"
-"	      00497b59    mov [ebp-4],ecx"
+"	      00497b59    mov this,ecx"
 );
 // LINE 108:
 	asm( 
-"	      00497b5c    mov eax,[ebp-4]"
+"	      00497b5c    mov eax,this"
 "	      00497b5f    mov eax,[eax+4]"
-"	      00497b62    mov ecx,[ebp+8]"
+"	      00497b62    mov ecx,nIndex"
 "	      00497b65    mov eax,[eax+ecx*4]"
-"	      00497b68    mov ecx,[ebp+0Ch]"
+"	      00497b68    mov ecx,colorValue"
 "	      00497b6b    mov [ecx],eax"
 );
 // LINE 109:

@@ -14,12 +14,12 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 );
 // LINE 227:
 	asm( 
-"	      0055e6f9    mov word ptr [ebp-4],40h"
+"	      0055e6f9    mov size1,40h"
 );
 // LINE 228:
 	asm( 
-"	      0055e6ff    movsx eax,word ptr [ebp-4]"
-"	      0055e703    cmp eax,[ebp+0Ch]"
+"	      0055e6ff    movsx eax,size1"
+"	      0055e703    cmp eax,size"
 "	      0055e706    jle near ptr 0055E728h"
 "	      0055e70c    push 8C085h"
 "	      0055e711    push 5BE230h"
@@ -30,7 +30,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 );
 // LINE 230:
 	asm( 
-"	      0055e728    mov eax,[ebp+8]"
+"	      0055e728    mov eax,val"
 "	      0055e72b    push eax"
 "	      0055e72c    call 00566906h"
 "	      0055e731    add esp,4"
@@ -57,7 +57,7 @@ unsigned long cBBase::GetBodyType() {
 "	      0055f1e6    push ebx"
 "	      0055f1e7    push esi"
 "	      0055f1e8    push edi"
-"	      0055f1e9    mov [ebp-4],ecx"
+"	      0055f1e9    mov this,ecx"
 "	      0055f1ec    push 8C085h"
 "	      0055f1f1    push 5BE330h"
 "	      0055f1f6    push 12h"
@@ -85,7 +85,7 @@ class cBList<cBBase>* cBBase::GetList() {
 "	      0055f226    push ebx"
 "	      0055f227    push esi"
 "	      0055f228    push edi"
-"	      0055f229    mov [ebp-4],ecx"
+"	      0055f229    mov this,ecx"
 "	      0055f22c    push 8C085h"
 "	      0055f231    push 5BE358h"
 "	      0055f236    push 15h"
@@ -113,7 +113,7 @@ unsigned short cBBase::CanDestroy() {
 "	      0055f266    push ebx"
 "	      0055f267    push esi"
 "	      0055f268    push edi"
-"	      0055f269    mov [ebp-4],ecx"
+"	      0055f269    mov this,ecx"
 "	      0055f26c    mov ax,1"
 "	      0055f270    jmp near ptr 0055F275h"
 "	      0055f275    pop edi"
@@ -135,7 +135,7 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 "	      0055f286    push ebx"
 "	      0055f287    push esi"
 "	      0055f288    push edi"
-"	      0055f289    mov [ebp-4],ecx"
+"	      0055f289    mov this,ecx"
 "	      0055f28c    push 8C085h"
 "	      0055f291    push 5BE37Ch"
 "	      0055f296    push 1Ch"
@@ -162,19 +162,19 @@ void cBBase::~cBBase() {
 "	      0055f2c6    push ebx"
 "	      0055f2c7    push esi"
 "	      0055f2c8    push edi"
-"	      0055f2c9    mov [ebp-4],ecx"
-"	      0055f2cc    mov eax,[ebp-4]"
+"	      0055f2c9    mov this,ecx"
+"	      0055f2cc    mov eax,this"
 "	      0055f2cf    mov dword ptr [eax],593688h"
 );
 // LINE 44:
 	asm( 
-"	      0055f2d5    mov eax,[ebp-4]"
+"	      0055f2d5    mov eax,this"
 "	      0055f2d8    cmp dword ptr [eax+4],0"
 "	      0055f2dc    je near ptr 0055F300h"
 );
 // LINE 46:
 	asm( 
-"	      0055f2e2    mov eax,[ebp-4]"
+"	      0055f2e2    mov eax,this"
 "	      0055f2e5    mov eax,[eax+4]"
 "	      0055f2e8    push eax"
 "	      0055f2e9    call 00554A3Dh"
@@ -182,7 +182,7 @@ void cBBase::~cBBase() {
 );
 // LINE 47:
 	asm( 
-"	      0055f2f1    mov eax,[ebp-4]"
+"	      0055f2f1    mov eax,this"
 "	      0055f2f4    mov eax,[eax+4]"
 "	      0055f2f7    push eax"
 "	      0055f2f8    call 005548C3h"
@@ -210,13 +210,13 @@ void cBBase::Destroy() {
 "	      0055f316    push ebx"
 "	      0055f317    push esi"
 "	      0055f318    push edi"
-"	      0055f319    mov [ebp-34h],ecx"
+"	      0055f319    mov this,ecx"
 );
 // LINE 57:
 	asm( 
-"	      0055f31c    mov eax,[ebp-34h]"
+"	      0055f31c    mov eax,this"
 "	      0055f31f    mov eax,[eax]"
-"	      0055f321    mov ecx,[ebp-34h]"
+"	      0055f321    mov ecx,this"
 "	      0055f324    call dword ptr [eax+8]"
 "	      0055f327    movzx eax,ax"
 "	      0055f32a    test eax,eax"
@@ -225,7 +225,7 @@ void cBBase::Destroy() {
 );
 // LINE 59:
 	asm( 
-"	      0055f337    mov eax,[ebp-34h]"
+"	      0055f337    mov eax,this"
 "	      0055f33a    movsx eax,word ptr [eax+20h]"
 "	      0055f33e    cmp eax,0FFFFFFFFh"
 "	      0055f341    je near ptr 0055F3F9h"
@@ -235,39 +235,39 @@ void cBBase::Destroy() {
 	unsigned short fileOpened;
 	void * __ptr32 h;
 	asm( 
-"	      0055f347    mov eax,[ebp-34h]"
+"	      0055f347    mov eax,this"
 "	      0055f34a    mov eax,[eax]"
-"	      0055f34c    mov ecx,[ebp-34h]"
+"	      0055f34c    mov ecx,this"
 "	      0055f34f    call dword ptr [eax+4]"
 "	      0055f352    mov eax,[eax+0Ch]"
 "	      0055f355    push eax"
 "	      0055f356    call 005674E0h"
 "	      0055f35b    add esp,4"
-"	      0055f35e    mov [ebp-8],ax"
+"	      0055f35e    mov fileOpened,ax"
 );
 // LINE 61:
 	asm( 
 "	      0055f362    push 0"
-"	      0055f364    mov eax,[ebp-34h]"
+"	      0055f364    mov eax,this"
 "	      0055f367    mov ax,[eax+20h]"
 "	      0055f36b    push eax"
-"	      0055f36c    mov eax,[ebp-34h]"
+"	      0055f36c    mov eax,this"
 "	      0055f36f    mov eax,[eax]"
-"	      0055f371    mov ecx,[ebp-34h]"
+"	      0055f371    mov ecx,this"
 "	      0055f374    call dword ptr [eax+4]"
 "	      0055f377    mov eax,[eax+10h]"
 "	      0055f37a    push eax"
-"	      0055f37b    mov eax,[ebp-34h]"
+"	      0055f37b    mov eax,this"
 "	      0055f37e    mov eax,[eax]"
-"	      0055f380    mov ecx,[ebp-34h]"
+"	      0055f380    mov ecx,this"
 "	      0055f383    call dword ptr [eax+4]"
 "	      0055f386    mov ecx,[eax+0Ch]"
 "	      0055f389    call 0055320Bh"
-"	      0055f38e    mov [ebp-4],eax"
+"	      0055f38e    mov h,eax"
 );
 // LINE 62:
 	asm( 
-"	      0055f391    cmp dword ptr [ebp-4],0"
+"	      0055f391    cmp h,0"
 "	      0055f395    jne near ptr 0055F3B4h"
 "	      0055f39b    push 8C085h"
 "	      0055f3a0    push 5BE3ACh"
@@ -275,9 +275,9 @@ void cBBase::Destroy() {
 "	      0055f3a7    push 5BE258h"
 "	      0055f3ac    call 00554F30h"
 "	      0055f3b1    add esp,10h"
-"	      0055f3b4    mov eax,[ebp-34h]"
+"	      0055f3b4    mov eax,this"
 "	      0055f3b7    mov eax,[eax]"
-"	      0055f3b9    mov ecx,[ebp-34h]"
+"	      0055f3b9    mov ecx,this"
 "	      0055f3bc    call dword ptr [eax+4]"
 "	      0055f3bf    mov eax,[eax+0Ch]"
 "	      0055f3c2    mov [ebp-14h],eax"
@@ -293,9 +293,9 @@ void cBBase::Destroy() {
 );
 // LINE 65:
 	asm( 
-"	      0055f3d7    mov eax,[ebp-34h]"
+"	      0055f3d7    mov eax,this"
 "	      0055f3da    mov eax,[eax]"
-"	      0055f3dc    mov ecx,[ebp-34h]"
+"	      0055f3dc    mov ecx,this"
 "	      0055f3df    call dword ptr [eax+4]"
 "	      0055f3e2    mov eax,[eax+0Ch]"
 "	      0055f3e5    mov [ebp-0Ch],eax"
@@ -309,9 +309,9 @@ void cBBase::Destroy() {
 // LINE 67:
 // Block end:
 	asm( 
-"	      0055f3f9    mov eax,[ebp-34h]"
+"	      0055f3f9    mov eax,this"
 "	      0055f3fc    mov eax,[eax]"
-"	      0055f3fe    mov ecx,[ebp-34h]"
+"	      0055f3fe    mov ecx,this"
 "	      0055f401    call dword ptr [eax+4]"
 "	      0055f404    add eax,4"
 "	      0055f407    mov [ebp-30h],eax"
@@ -322,7 +322,7 @@ void cBBase::Destroy() {
 "	      0055f416    je near ptr 0055F49Dh"
 "	      0055f41c    mov eax,[ebp-24h]"
 "	      0055f41f    mov eax,[eax]"
-"	      0055f421    mov ecx,[ebp-34h]"
+"	      0055f421    mov ecx,this"
 "	      0055f424    cmp [eax],ecx"
 "	      0055f426    jne near ptr 0055F48Dh"
 "	      0055f42c    mov eax,[ebp-24h]"
@@ -360,7 +360,7 @@ void cBBase::Destroy() {
 "	      0055f495    mov [ebp-24h],eax"
 "	      0055f498    jmp near ptr 0055F410h"
 "	      0055f49d    jmp near ptr 0055F4A2h"
-"	      0055f4a2    mov eax,[ebp-34h]"
+"	      0055f4a2    mov eax,this"
 "	      0055f4a5    mov [ebp-1Ch],eax"
 "	      0055f4a8    mov eax,[ebp-1Ch]"
 "	      0055f4ab    mov [ebp-18h],eax"
@@ -396,11 +396,11 @@ void cBBase::Dirty() {
 "	      0055f4e6    push ebx"
 "	      0055f4e7    push esi"
 "	      0055f4e8    push edi"
-"	      0055f4e9    mov [ebp-4],ecx"
+"	      0055f4e9    mov this,ecx"
 );
 // LINE 76:
 	asm( 
-"	      0055f4ec    mov eax,[ebp-4]"
+"	      0055f4ec    mov eax,this"
 "	      0055f4ef    mov word ptr [eax+22h],1"
 );
 // LINE 77:
@@ -425,11 +425,11 @@ unsigned short cBBase::IsDirty() {
 "	      0055f506    push ebx"
 "	      0055f507    push esi"
 "	      0055f508    push edi"
-"	      0055f509    mov [ebp-4],ecx"
+"	      0055f509    mov this,ecx"
 );
 // LINE 80:
 	asm( 
-"	      0055f50c    mov eax,[ebp-4]"
+"	      0055f50c    mov eax,this"
 "	      0055f50f    mov ax,[eax+22h]"
 "	      0055f513    jmp near ptr 0055F518h"
 );
@@ -454,7 +454,7 @@ void cBBase::WriteToDisk() {
 "	      0055f526    push ebx"
 "	      0055f527    push esi"
 "	      0055f528    push edi"
-"	      0055f529    mov [ebp-4],ecx"
+"	      0055f529    mov this,ecx"
 );
 // LINE 113:
 	asm( 

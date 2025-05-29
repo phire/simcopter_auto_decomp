@@ -15,7 +15,7 @@ void  CGameApp::EnableSoundTrack() {
 "	      00471e46    push ebx"
 "	      00471e47    push esi"
 "	      00471e48    push edi"
-"	      00471e49    mov [ebp-4],ecx"
+"	      00471e49    mov this,ecx"
 );
 // LINE 27:
 	asm( 
@@ -44,7 +44,7 @@ void  CGameApp::DisableSoundTrack() {
 "	      00471e68    push ebx"
 "	      00471e69    push esi"
 "	      00471e6a    push edi"
-"	      00471e6b    mov [ebp-4],ecx"
+"	      00471e6b    mov this,ecx"
 );
 // LINE 39:
 	asm( 
@@ -73,7 +73,7 @@ void  CGameApp::ToggleMusicSoundTrack() {
 "	      00471e8a    push ebx"
 "	      00471e8b    push esi"
 "	      00471e8c    push edi"
-"	      00471e8d    mov [ebp-4],ecx"
+"	      00471e8d    mov this,ecx"
 );
 // LINE 48:
 	asm( 
@@ -142,7 +142,7 @@ void  CGameApp::PlayNextSoundTrackIfNeeded() {
 "	      00471f47    push ebx"
 "	      00471f48    push esi"
 "	      00471f49    push edi"
-"	      00471f4a    mov [ebp-4],ecx"
+"	      00471f4a    mov this,ecx"
 );
 // LINE 62:
 	asm( 

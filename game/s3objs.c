@@ -35,16 +35,16 @@ void S3ObjInit() {
 "	      00518fa3    push eax"
 "	      00518fa4    call 004D6246h"
 "	      00518fa9    add esp,8"
-"	      00518fac    mov [ebp-28h],eax"
+"	      00518fac    mov bhdr,eax"
 );
 // LINE 391:
 	asm( 
-"	      00518faf    mov eax,[ebp-28h]"
+"	      00518faf    mov eax,bhdr"
 "	      00518fb2    mov ds:[66EAECh],eax"
 );
 // LINE 392:
 	asm( 
-"	      00518fb7    mov eax,[ebp-28h]"
+"	      00518fb7    mov eax,bhdr"
 "	      00518fba    mov eax,[eax+4]"
 "	      00518fbd    shl eax,2"
 "	      00518fc0    add eax,0Ch"
@@ -57,16 +57,16 @@ void S3ObjInit() {
 "	      00518fd0    push eax"
 "	      00518fd1    call 004D6246h"
 "	      00518fd6    add esp,8"
-"	      00518fd9    mov [ebp-28h],eax"
+"	      00518fd9    mov bhdr,eax"
 );
 // LINE 395:
 	asm( 
-"	      00518fdc    mov eax,[ebp-28h]"
+"	      00518fdc    mov eax,bhdr"
 "	      00518fdf    mov ds:[66EAE8h],eax"
 );
 // LINE 396:
 	asm( 
-"	      00518fe4    mov eax,[ebp-28h]"
+"	      00518fe4    mov eax,bhdr"
 "	      00518fe7    mov eax,[eax+4]"
 "	      00518fea    shl eax,2"
 "	      00518fed    add eax,0Ch"
@@ -79,16 +79,16 @@ void S3ObjInit() {
 "	      00518ffd    push eax"
 "	      00518ffe    call 004D6246h"
 "	      00519003    add esp,8"
-"	      00519006    mov [ebp-28h],eax"
+"	      00519006    mov bhdr,eax"
 );
 // LINE 399:
 	asm( 
-"	      00519009    mov eax,[ebp-28h]"
+"	      00519009    mov eax,bhdr"
 "	      0051900c    mov ds:[66EAE4h],eax"
 );
 // LINE 400:
 	asm( 
-"	      00519011    mov eax,[ebp-28h]"
+"	      00519011    mov eax,bhdr"
 "	      00519014    mov eax,[eax+4]"
 "	      00519017    shl eax,2"
 "	      0051901a    add eax,0Ch"
@@ -101,16 +101,16 @@ void S3ObjInit() {
 "	      0051902a    push eax"
 "	      0051902b    call 004D6246h"
 "	      00519030    add esp,8"
-"	      00519033    mov [ebp-28h],eax"
+"	      00519033    mov bhdr,eax"
 );
 // LINE 403:
 	asm( 
-"	      00519036    mov eax,[ebp-28h]"
+"	      00519036    mov eax,bhdr"
 "	      00519039    mov ds:[66EAF0h],eax"
 );
 // LINE 404:
 	asm( 
-"	      0051903e    mov eax,[ebp-28h]"
+"	      0051903e    mov eax,bhdr"
 "	      00519041    mov eax,[eax+4]"
 "	      00519044    shl eax,2"
 "	      00519047    add eax,0Ch"
@@ -123,16 +123,16 @@ void S3ObjInit() {
 "	      00519057    push eax"
 "	      00519058    call 004D6246h"
 "	      0051905d    add esp,8"
-"	      00519060    mov [ebp-28h],eax"
+"	      00519060    mov bhdr,eax"
 );
 // LINE 407:
 	asm( 
-"	      00519063    mov eax,[ebp-28h]"
+"	      00519063    mov eax,bhdr"
 "	      00519066    mov ds:[66EAE0h],eax"
 );
 // LINE 408:
 	asm( 
-"	      0051906b    mov eax,[ebp-28h]"
+"	      0051906b    mov eax,bhdr"
 "	      0051906e    mov eax,[eax+4]"
 "	      00519071    shl eax,2"
 "	      00519074    add eax,0Ch"
@@ -144,7 +144,7 @@ void S3ObjInit() {
 "	      00519082    push eax"
 "	      00519083    call 004D23C7h"
 "	      00519088    add esp,4"
-"	      0051908b    mov [ebp-30h],eax"
+"	      0051908b    mov objcount,eax"
 );
 // LINE 412:
 	asm( 
@@ -152,7 +152,7 @@ void S3ObjInit() {
 "	      00519093    push eax"
 "	      00519094    call 004D23C7h"
 "	      00519099    add esp,4"
-"	      0051909c    add [ebp-30h],eax"
+"	      0051909c    add objcount,eax"
 );
 // LINE 413:
 	asm( 
@@ -160,52 +160,52 @@ void S3ObjInit() {
 "	      005190a4    push eax"
 "	      005190a5    call 004D23C7h"
 "	      005190aa    add esp,4"
-"	      005190ad    add [ebp-30h],eax"
+"	      005190ad    add objcount,eax"
 );
 // LINE 418:
 	asm( 
-"	      005190b0    mov dword ptr [ebp-54h],0"
+"	      005190b0    mov i,0"
 "	      005190b7    jmp near ptr 005190BFh"
-"	      005190bc    inc dword ptr [ebp-54h]"
-"	      005190bf    mov eax,[ebp-30h]"
-"	      005190c2    cmp [ebp-54h],eax"
+"	      005190bc    inc i"
+"	      005190bf    mov eax,objcount"
+"	      005190c2    cmp i,eax"
 "	      005190c5    jge near ptr 00519576h"
 );
 // LINE 420:
 	asm( 
-"	      005190cb    mov eax,[ebp-54h]"
+"	      005190cb    mov eax,i"
 "	      005190ce    push eax"
 "	      005190cf    call 004D8821h"
 "	      005190d4    add esp,4"
-"	      005190d7    mov [ebp-5Ch],eax"
+"	      005190d7    mov obj,eax"
 );
 // LINE 421:
 	asm( 
-"	      005190da    cmp dword ptr [ebp-5Ch],0"
+"	      005190da    cmp obj,0"
 "	      005190de    jne near ptr 0051910Bh"
 );
 // LINE 423:
 	asm( 
-"	      005190e4    mov eax,[ebp-54h]"
+"	      005190e4    mov eax,i"
 "	      005190e7    push eax"
 "	      005190e8    push 5B72A4h"
-"	      005190ed    lea eax,[ebp-0ACh]"
+"	      005190ed    lea eax,msg[0]"
 "	      005190f3    push eax"
 "	      005190f4    call 0056CD30h"
 "	      005190f9    add esp,0Ch"
 );
 // LINE 424:
 	asm( 
-"	      005190fc    lea eax,[ebp-0ACh]"
+"	      005190fc    lea eax,msg[0]"
 "	      00519102    push eax"
 "	      00519103    call 0058E320h"
 "	      00519108    add esp,4"
 );
 // LINE 428:
 	asm( 
-"	      0051910b    lea eax,[ebp-24h]"
+"	      0051910b    lea eax,oinfo.Faces"
 "	      0051910e    push eax"
-"	      0051910f    mov eax,[ebp-5Ch]"
+"	      0051910f    mov eax,obj"
 "	      00519112    push eax"
 "	      00519113    call 004D8859h"
 "	      00519118    add esp,8"
@@ -213,21 +213,21 @@ void S3ObjInit() {
 // LINE 432:
 	asm( 
 "	      0051911b    push 0"
-"	      0051911d    mov eax,[ebp-5Ch]"
+"	      0051911d    mov eax,obj"
 "	      00519120    push eax"
 "	      00519121    call 004D6970h"
 "	      00519126    add esp,8"
 );
 // LINE 435:
 	asm( 
-"	      00519129    mov eax,[ebp-54h]"
+"	      00519129    mov eax,i"
 "	      0051912c    mov [ebp-0B0h],eax"
 "	      00519132    jmp near ptr 00519154h"
 );
 // LINE 509:
 	asm( 
 "	      00519137    push 2"
-"	      00519139    mov eax,[ebp-5Ch]"
+"	      00519139    mov eax,obj"
 "	      0051913c    push eax"
 "	      0051913d    call 004D6970h"
 "	      00519142    add esp,8"
@@ -409,48 +409,48 @@ void S3ObjInit() {
 );
 // LINE 530:
 	asm( 
-"	      005192b7    mov eax,[ebp-5Ch]"
+"	      005192b7    mov eax,obj"
 "	      005192ba    push eax"
 "	      005192bb    call 004D85CDh"
 "	      005192c0    add esp,4"
-"	      005192c3    mov [ebp-2Ch],eax"
+"	      005192c3    mov face,eax"
 );
 // LINE 531:
 	asm( 
-"	      005192c6    mov dword ptr [ebp-58h],0"
+"	      005192c6    mov j,0"
 "	      005192cd    jmp near ptr 005192D5h"
-"	      005192d2    inc dword ptr [ebp-58h]"
-"	      005192d5    mov eax,[ebp-58h]"
-"	      005192d8    cmp [ebp-24h],eax"
+"	      005192d2    inc j"
+"	      005192d5    mov eax,j"
+"	      005192d8    cmp oinfo.Faces,eax"
 "	      005192db    jle near ptr 00519565h"
 );
 // LINE 534:
 	asm( 
-"	      005192e1    lea eax,[ebp-50h]"
+"	      005192e1    lea eax,finfo.Face"
 "	      005192e4    push eax"
-"	      005192e5    mov eax,[ebp-2Ch]"
+"	      005192e5    mov eax,face"
 "	      005192e8    push eax"
 "	      005192e9    call 004D6905h"
 "	      005192ee    add esp,8"
 );
 // LINE 539:
 	asm( 
-"	      005192f1    cmp dword ptr [ebp-44h],0"
+"	      005192f1    cmp finfo.Plotter,0"
 "	      005192f5    jne near ptr 00519302h"
 );
 // LINE 540:
 	asm( 
-"	      005192fb    mov dword ptr [ebp-44h],0Dh"
+"	      005192fb    mov finfo.Plotter,0Dh"
 );
 // LINE 543:
 	asm( 
-"	      00519302    mov eax,[ebp-54h]"
+"	      00519302    mov eax,i"
 "	      00519305    mov [ebp-0B4h],eax"
 "	      0051930b    jmp near ptr 00519351h"
 );
 // LINE 606:
 	asm( 
-"	      00519310    or dword ptr [ebp-48h],40000000h"
+"	      00519310    or finfo.Attribute,40000000h"
 );
 // LINE 607:
 	asm( 
@@ -458,7 +458,7 @@ void S3ObjInit() {
 );
 // LINE 611:
 	asm( 
-"	      0051931c    or dword ptr [ebp-48h],40080000h"
+"	      0051931c    or finfo.Attribute,40080000h"
 );
 // LINE 612:
 	asm( 
@@ -466,7 +466,7 @@ void S3ObjInit() {
 );
 // LINE 655:
 	asm( 
-"	      00519328    or dword ptr [ebp-48h],20000h"
+"	      00519328    or finfo.Attribute,20000h"
 );
 // LINE 656:
 	asm( 
@@ -474,11 +474,11 @@ void S3ObjInit() {
 );
 // LINE 659:
 	asm( 
-"	      00519334    mov dword ptr [ebp-40h],0Fh"
+"	      00519334    mov finfo.Bitmap,0Fh"
 );
 // LINE 660:
 	asm( 
-"	      0051933b    mov dword ptr [ebp-44h],18h"
+"	      0051933b    mov finfo.Plotter,18h"
 );
 // LINE 661:
 	asm( 
@@ -695,27 +695,27 @@ void S3ObjInit() {
 );
 // LINE 667:
 	asm( 
-"	      00519535    lea eax,[ebp-50h]"
+"	      00519535    lea eax,finfo.Face"
 "	      00519538    push eax"
-"	      00519539    mov eax,[ebp-2Ch]"
+"	      00519539    mov eax,face"
 "	      0051953c    push eax"
 "	      0051953d    call 004D6941h"
 "	      00519542    add esp,8"
 );
 // LINE 670:
 	asm( 
-"	      00519545    mov eax,[ebp-2Ch]"
+"	      00519545    mov eax,face"
 "	      00519548    push eax"
 "	      00519549    call 004D8FD7h"
 "	      0051954e    add esp,4"
 );
 // LINE 673:
 	asm( 
-"	      00519551    mov eax,[ebp-2Ch]"
+"	      00519551    mov eax,face"
 "	      00519554    push eax"
 "	      00519555    call 004D85F8h"
 "	      0051955a    add esp,4"
-"	      0051955d    mov [ebp-2Ch],eax"
+"	      0051955d    mov face,eax"
 );
 // LINE 674:
 	asm( 
@@ -723,7 +723,7 @@ void S3ObjInit() {
 );
 // LINE 677:
 	asm( 
-"	      00519565    mov eax,[ebp-5Ch]"
+"	      00519565    mov eax,obj"
 "	      00519568    push eax"
 "	      00519569    call 004D918Bh"
 "	      0051956e    add esp,4"
@@ -1307,32 +1307,32 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 853:
 	asm( 
-"	      00519aad    mov dword ptr [ebp-0Ch],140h"
+"	      00519aad    mov bufwidth,140h"
 );
 // LINE 854:
 	asm( 
-"	      00519ab4    mov dword ptr [ebp-8],13Fh"
+"	      00519ab4    mov winwidth,13Fh"
 );
 // LINE 855:
 	asm( 
-"	      00519abb    mov dword ptr [ebp-1Ch],0C7h"
+"	      00519abb    mov winheight,0C7h"
 );
 // LINE 860:
 	asm( 
 "	      00519ac2    mov eax,ds:[5B4788h]"
 "	      00519ac7    and eax,7"
-"	      00519aca    mov [ebp-18h],eax"
+"	      00519aca    mov ctr,eax"
 );
 // LINE 862:
 	asm( 
-"	      00519acd    mov eax,[ebp+8]"
+"	      00519acd    mov eax,blit"
 "	      00519ad0    mov eax,[eax+0Ch]"
 "	      00519ad3    mov [ebp-20h],eax"
 "	      00519ad6    jmp near ptr 00519B58h"
 );
 // LINE 865:
 	asm( 
-"	      00519adb    cmp dword ptr [ebp-18h],0"
+"	      00519adb    cmp ctr,0"
 "	      00519adf    je near ptr 00519AEAh"
 "	      00519ae5    jmp near ptr 00519C81h"
 );
@@ -1342,7 +1342,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 868:
 	asm( 
-"	      00519aef    cmp dword ptr [ebp-18h],1"
+"	      00519aef    cmp ctr,1"
 "	      00519af3    je near ptr 00519AFEh"
 "	      00519af9    jmp near ptr 00519C81h"
 );
@@ -1352,7 +1352,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 871:
 	asm( 
-"	      00519b03    cmp dword ptr [ebp-18h],2"
+"	      00519b03    cmp ctr,2"
 "	      00519b07    je near ptr 00519B12h"
 "	      00519b0d    jmp near ptr 00519C81h"
 );
@@ -1362,7 +1362,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 874:
 	asm( 
-"	      00519b17    cmp dword ptr [ebp-18h],3"
+"	      00519b17    cmp ctr,3"
 "	      00519b1b    je near ptr 00519B26h"
 "	      00519b21    jmp near ptr 00519C81h"
 );
@@ -1372,7 +1372,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 877:
 	asm( 
-"	      00519b2b    cmp dword ptr [ebp-18h],4"
+"	      00519b2b    cmp ctr,4"
 "	      00519b2f    je near ptr 00519B3Ah"
 "	      00519b35    jmp near ptr 00519C81h"
 );
@@ -1382,7 +1382,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 880:
 	asm( 
-"	      00519b3f    cmp dword ptr [ebp-18h],5"
+"	      00519b3f    cmp ctr,5"
 "	      00519b43    je near ptr 00519B4Eh"
 "	      00519b49    jmp near ptr 00519C81h"
 );
@@ -1421,19 +1421,19 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 // LINE 896:
 	asm( 
 "	      00519b9c    mov eax,ds:[598EF4h]"
-"	      00519ba1    mov [ebp-0Ch],eax"
+"	      00519ba1    mov bufwidth,eax"
 );
 // LINE 897:
 	asm( 
 "	      00519ba4    mov eax,ds:[598EE8h]"
 "	      00519ba9    dec eax"
-"	      00519baa    mov [ebp-8],eax"
+"	      00519baa    mov winwidth,eax"
 );
 // LINE 898:
 	asm( 
 "	      00519bad    mov eax,ds:[598EECh]"
 "	      00519bb2    dec eax"
-"	      00519bb3    mov [ebp-1Ch],eax"
+"	      00519bb3    mov winheight,eax"
 );
 // LINE 900:
 	asm( 
@@ -1442,43 +1442,43 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 // LINE 903:
 	asm( 
 "	      00519bbb    mov eax,ds:[598ED4h]"
-"	      00519bc0    mov [ebp-0Ch],eax"
+"	      00519bc0    mov bufwidth,eax"
 );
 // LINE 904:
 	asm( 
 "	      00519bc3    mov eax,ds:[598EC8h]"
 "	      00519bc8    dec eax"
-"	      00519bc9    mov [ebp-8],eax"
+"	      00519bc9    mov winwidth,eax"
 );
 // LINE 905:
 	asm( 
 "	      00519bcc    mov eax,ds:[598ECCh]"
 "	      00519bd1    dec eax"
-"	      00519bd2    mov [ebp-1Ch],eax"
+"	      00519bd2    mov winheight,eax"
 );
 // LINE 913:
 	asm( 
-"	      00519bd5    mov eax,[ebp+8]"
+"	      00519bd5    mov eax,blit"
 "	      00519bd8    mov eax,[eax+4]"
 "	      00519bdb    mov eax,[eax]"
 "	      00519bdd    sar eax,0Ch"
-"	      00519be0    mov [ebp-10h],eax"
+"	      00519be0    mov x,eax"
 );
 // LINE 914:
 	asm( 
-"	      00519be3    mov eax,[ebp+8]"
+"	      00519be3    mov eax,blit"
 "	      00519be6    mov eax,[eax+4]"
 "	      00519be9    mov eax,[eax+4]"
 "	      00519bec    sar eax,0Ch"
-"	      00519bef    mov [ebp-14h],eax"
+"	      00519bef    mov y,eax"
 );
 // LINE 916:
 	asm( 
-"	      00519bf2    mov eax,[ebp-0Ch]"
-"	      00519bf5    imul eax,[ebp-14h]"
-"	      00519bf9    add eax,[ebp-10h]"
+"	      00519bf2    mov eax,bufwidth"
+"	      00519bf5    imul eax,y"
+"	      00519bf9    add eax,x"
 "	      00519bfc    add eax,ds:[598EACh]"
-"	      00519c02    mov [ebp-4],eax"
+"	      00519c02    mov ptr,eax"
 );
 // LINE 918:
 	asm( 
@@ -1487,16 +1487,16 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 920:
 	asm( 
-"	      00519c0f    mov eax,[ebp+8]"
+"	      00519c0f    mov eax,blit"
 "	      00519c12    mov al,[eax+0Ch]"
-"	      00519c15    mov ecx,[ebp-4]"
+"	      00519c15    mov ecx,ptr"
 "	      00519c18    mov [ecx],al"
 );
 // LINE 922:
 	asm( 
-"	      00519c1a    mov eax,[ebp-1Ch]"
+"	      00519c1a    mov eax,winheight"
 "	      00519c1d    dec eax"
-"	      00519c1e    cmp eax,[ebp-14h]"
+"	      00519c1e    cmp eax,y"
 "	      00519c21    jle near ptr 00519C40h"
 );
 // LINE 924:
@@ -1506,35 +1506,35 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 925:
 	asm( 
-"	      00519c31    mov eax,[ebp+8]"
+"	      00519c31    mov eax,blit"
 "	      00519c34    mov al,[eax+0Ch]"
-"	      00519c37    mov ecx,[ebp-0Ch]"
-"	      00519c3a    mov edx,[ebp-4]"
+"	      00519c37    mov ecx,bufwidth"
+"	      00519c3a    mov edx,ptr"
 "	      00519c3d    mov [ecx+edx],al"
 );
 // LINE 928:
 	asm( 
-"	      00519c40    inc dword ptr [ebp-4]"
+"	      00519c40    inc ptr"
 );
 // LINE 930:
 	asm( 
-"	      00519c43    mov eax,[ebp-8]"
+"	      00519c43    mov eax,winwidth"
 "	      00519c46    dec eax"
-"	      00519c47    cmp eax,[ebp-10h]"
+"	      00519c47    cmp eax,x"
 "	      00519c4a    jle near ptr 00519C81h"
 );
 // LINE 932:
 	asm( 
-"	      00519c50    mov eax,[ebp+8]"
+"	      00519c50    mov eax,blit"
 "	      00519c53    mov al,[eax+0Ch]"
-"	      00519c56    mov ecx,[ebp-4]"
+"	      00519c56    mov ecx,ptr"
 "	      00519c59    mov [ecx],al"
 );
 // LINE 933:
 	asm( 
-"	      00519c5b    mov eax,[ebp-1Ch]"
+"	      00519c5b    mov eax,winheight"
 "	      00519c5e    dec eax"
-"	      00519c5f    cmp eax,[ebp-14h]"
+"	      00519c5f    cmp eax,y"
 "	      00519c62    jle near ptr 00519C81h"
 );
 // LINE 935:
@@ -1544,10 +1544,10 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 );
 // LINE 936:
 	asm( 
-"	      00519c72    mov eax,[ebp+8]"
+"	      00519c72    mov eax,blit"
 "	      00519c75    mov al,[eax+0Ch]"
-"	      00519c78    mov ecx,[ebp-0Ch]"
-"	      00519c7b    mov edx,[ebp-4]"
+"	      00519c78    mov ecx,bufwidth"
+"	      00519c7b    mov edx,ptr"
 "	      00519c7e    mov [ecx+edx],al"
 );
 // LINE 940:
@@ -1596,15 +1596,15 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 955:
 	asm( 
-"	      00519c8f    mov dword ptr [ebp-18h],140h"
+"	      00519c8f    mov bufwidth,140h"
 );
 // LINE 956:
 	asm( 
-"	      00519c96    mov dword ptr [ebp-14h],13Fh"
+"	      00519c96    mov winwidth,13Fh"
 );
 // LINE 957:
 	asm( 
-"	      00519c9d    mov dword ptr [ebp-58h],0C7h"
+"	      00519c9d    mov winheight,0C7h"
 );
 // LINE 977:
 	asm( 
@@ -1614,19 +1614,19 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 979:
 	asm( 
 "	      00519cb1    mov eax,ds:[598EF4h]"
-"	      00519cb6    mov [ebp-18h],eax"
+"	      00519cb6    mov bufwidth,eax"
 );
 // LINE 980:
 	asm( 
 "	      00519cb9    mov eax,ds:[598EE8h]"
 "	      00519cbe    dec eax"
-"	      00519cbf    mov [ebp-14h],eax"
+"	      00519cbf    mov winwidth,eax"
 );
 // LINE 981:
 	asm( 
 "	      00519cc2    mov eax,ds:[598EECh]"
 "	      00519cc7    dec eax"
-"	      00519cc8    mov [ebp-58h],eax"
+"	      00519cc8    mov winheight,eax"
 );
 // LINE 983:
 	asm( 
@@ -1635,44 +1635,44 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 986:
 	asm( 
 "	      00519cd0    mov eax,ds:[598ED4h]"
-"	      00519cd5    mov [ebp-18h],eax"
+"	      00519cd5    mov bufwidth,eax"
 );
 // LINE 987:
 	asm( 
 "	      00519cd8    mov eax,ds:[598EC8h]"
 "	      00519cdd    dec eax"
-"	      00519cde    mov [ebp-14h],eax"
+"	      00519cde    mov winwidth,eax"
 );
 // LINE 988:
 	asm( 
 "	      00519ce1    mov eax,ds:[598ECCh]"
 "	      00519ce6    dec eax"
-"	      00519ce7    mov [ebp-58h],eax"
+"	      00519ce7    mov winheight,eax"
 );
 // LINE 996:
 	asm( 
-"	      00519cea    mov eax,[ebp+8]"
+"	      00519cea    mov eax,blit"
 "	      00519ced    mov eax,[eax+4]"
 "	      00519cf0    mov eax,[eax]"
 "	      00519cf2    sar eax,0Ch"
-"	      00519cf5    mov [ebp-38h],eax"
+"	      00519cf5    mov x,eax"
 );
 // LINE 997:
 	asm( 
-"	      00519cf8    mov eax,[ebp+8]"
+"	      00519cf8    mov eax,blit"
 "	      00519cfb    mov eax,[eax+4]"
 "	      00519cfe    mov eax,[eax+4]"
 "	      00519d01    sar eax,0Ch"
-"	      00519d04    mov [ebp-40h],eax"
+"	      00519d04    mov y,eax"
 );
 // LINE 1001:
 	asm( 
 "	      00519d07    mov eax,ds:[66EAECh]"
-"	      00519d0c    mov [ebp-24h],eax"
+"	      00519d0c    mov table,eax"
 );
 // LINE 1002:
 	asm( 
-"	      00519d0f    mov dword ptr [ebp-48h],7"
+"	      00519d0f    mov tablerows,7"
 );
 // LINE 1003:
 	asm( 
@@ -1681,14 +1681,14 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1005:
 	asm( 
 "	      00519d20    mov eax,5900000h"
-"	      00519d25    mov ecx,[ebp+8]"
+"	      00519d25    mov ecx,blit"
 "	      00519d28    mov ecx,[ecx+4]"
 "	      00519d2b    sub eax,[ecx+8]"
-"	      00519d2e    mov [ebp-50h],eax"
+"	      00519d2e    mov z,eax"
 );
 // LINE 1006:
 	asm( 
-"	      00519d31    cmp dword ptr [ebp-50h],0"
+"	      00519d31    cmp z,0"
 "	      00519d35    jg near ptr 00519D40h"
 );
 // LINE 1007:
@@ -1698,54 +1698,54 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1009:
 	asm( 
 "	      00519d40    push 5900000h"
-"	      00519d45    mov eax,[ebp-50h]"
+"	      00519d45    mov eax,z"
 "	      00519d48    push eax"
 "	      00519d49    call 004D19DFh"
 "	      00519d4e    add esp,8"
-"	      00519d51    mov [ebp-4],eax"
+"	      00519d51    mov scale,eax"
 );
 // LINE 1010:
 	asm( 
-"	      00519d54    mov eax,[ebp+8]"
+"	      00519d54    mov eax,blit"
 "	      00519d57    mov eax,[eax+0Ch]"
 "	      00519d5a    mov [ebp-5Ch],eax"
 "	      00519d5d    jmp near ptr 00519EDEh"
 );
 // LINE 1016:
 	asm( 
-"	      00519d62    mov eax,[ebp-4]"
+"	      00519d62    mov eax,scale"
 "	      00519d65    shl eax,3"
 "	      00519d68    sar eax,10h"
-"	      00519d6b    mov [ebp-2Ch],eax"
+"	      00519d6b    mov minval,eax"
 );
 // LINE 1017:
 	asm( 
-"	      00519d6e    mov eax,[ebp-4]"
+"	      00519d6e    mov eax,scale"
 "	      00519d71    lea eax,[eax+eax*8]"
 "	      00519d74    sar eax,10h"
-"	      00519d77    mov [ebp-28h],eax"
+"	      00519d77    mov maxval,eax"
 );
 // LINE 1018:
 	asm( 
-"	      00519d7a    mov eax,[ebp-28h]"
-"	      00519d7d    sub eax,[ebp-2Ch]"
-"	      00519d80    mov [ebp-10h],eax"
+"	      00519d7a    mov eax,maxval"
+"	      00519d7d    sub eax,minval"
+"	      00519d80    mov numvals,eax"
 );
 // LINE 1019:
 	asm( 
-"	      00519d83    mov eax,[ebp-4]"
+"	      00519d83    mov eax,scale"
 "	      00519d86    shl eax,2"
 "	      00519d89    lea eax,[eax+eax*4]"
 "	      00519d8c    sar eax,10h"
-"	      00519d8f    mov [ebp-54h],eax"
+"	      00519d8f    mov num,eax"
 );
 // LINE 1020:
 	asm( 
-"	      00519d92    mov eax,[ebp-4]"
+"	      00519d92    mov eax,scale"
 "	      00519d95    shl eax,2"
 "	      00519d98    lea eax,[eax+eax*4]"
 "	      00519d9b    sar eax,10h"
-"	      00519d9e    mov [ebp-3Ch],eax"
+"	      00519d9e    mov num3,eax"
 );
 // LINE 1021:
 	asm( 
@@ -1753,40 +1753,40 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1024:
 	asm( 
-"	      00519da6    mov eax,[ebp-4]"
+"	      00519da6    mov eax,scale"
 "	      00519da9    lea eax,[eax+eax*2]"
 "	      00519dac    sar eax,10h"
-"	      00519daf    mov [ebp-2Ch],eax"
+"	      00519daf    mov minval,eax"
 );
 // LINE 1025:
 	asm( 
-"	      00519db2    mov eax,[ebp-4]"
+"	      00519db2    mov eax,scale"
 "	      00519db5    lea eax,[eax+eax*2]"
 "	      00519db8    add eax,eax"
 "	      00519dba    sar eax,10h"
-"	      00519dbd    mov [ebp-28h],eax"
+"	      00519dbd    mov maxval,eax"
 );
 // LINE 1026:
 	asm( 
-"	      00519dc0    mov eax,[ebp-28h]"
-"	      00519dc3    sub eax,[ebp-2Ch]"
-"	      00519dc6    mov [ebp-10h],eax"
+"	      00519dc0    mov eax,maxval"
+"	      00519dc3    sub eax,minval"
+"	      00519dc6    mov numvals,eax"
 );
 // LINE 1027:
 	asm( 
-"	      00519dc9    mov eax,[ebp-4]"
+"	      00519dc9    mov eax,scale"
 "	      00519dcc    lea eax,[eax+eax*2]"
 "	      00519dcf    lea eax,[eax+eax*4]"
 "	      00519dd2    sar eax,10h"
-"	      00519dd5    mov [ebp-54h],eax"
+"	      00519dd5    mov num,eax"
 );
 // LINE 1028:
 	asm( 
-"	      00519dd8    mov eax,[ebp-4]"
+"	      00519dd8    mov eax,scale"
 "	      00519ddb    lea eax,[eax+eax*2]"
 "	      00519dde    lea eax,[eax+eax*4]"
 "	      00519de1    sar eax,10h"
-"	      00519de4    mov [ebp-3Ch],eax"
+"	      00519de4    mov num3,eax"
 );
 // LINE 1029:
 	asm( 
@@ -1794,35 +1794,35 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1031:
 	asm( 
-"	      00519dec    mov eax,[ebp-4]"
+"	      00519dec    mov eax,scale"
 "	      00519def    add eax,eax"
 "	      00519df1    sar eax,10h"
-"	      00519df4    mov [ebp-2Ch],eax"
+"	      00519df4    mov minval,eax"
 );
 // LINE 1032:
 	asm( 
-"	      00519df7    mov eax,[ebp-4]"
+"	      00519df7    mov eax,scale"
 "	      00519dfa    mov ecx,eax"
 "	      00519dfc    shl eax,3"
 "	      00519dff    sub eax,ecx"
 "	      00519e01    sar eax,10h"
-"	      00519e04    mov [ebp-28h],eax"
+"	      00519e04    mov maxval,eax"
 );
 // LINE 1033:
 	asm( 
-"	      00519e07    mov eax,[ebp-4]"
+"	      00519e07    mov eax,scale"
 "	      00519e0a    lea eax,[eax+eax*2]"
 "	      00519e0d    lea eax,[eax+eax*4]"
 "	      00519e10    sar eax,10h"
-"	      00519e13    mov [ebp-54h],eax"
+"	      00519e13    mov num,eax"
 );
 // LINE 1034:
 	asm( 
-"	      00519e16    mov eax,[ebp-4]"
+"	      00519e16    mov eax,scale"
 "	      00519e19    lea eax,[eax+eax*2]"
 "	      00519e1c    lea eax,[eax+eax*4]"
 "	      00519e1f    sar eax,10h"
-"	      00519e22    mov [ebp-3Ch],eax"
+"	      00519e22    mov num3,eax"
 );
 // LINE 1035:
 	asm( 
@@ -1830,32 +1830,32 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1037:
 	asm( 
-"	      00519e2a    mov eax,[ebp-4]"
+"	      00519e2a    mov eax,scale"
 "	      00519e2d    sar eax,10h"
-"	      00519e30    mov [ebp-2Ch],eax"
+"	      00519e30    mov minval,eax"
 );
 // LINE 1038:
 	asm( 
-"	      00519e33    mov eax,[ebp-4]"
+"	      00519e33    mov eax,scale"
 "	      00519e36    lea eax,[eax+eax*2]"
 "	      00519e39    sar eax,10h"
-"	      00519e3c    mov [ebp-28h],eax"
+"	      00519e3c    mov maxval,eax"
 );
 // LINE 1039:
 	asm( 
-"	      00519e3f    mov eax,[ebp-4]"
+"	      00519e3f    mov eax,scale"
 "	      00519e42    lea eax,[eax+eax*2]"
 "	      00519e45    shl eax,2"
 "	      00519e48    sar eax,10h"
-"	      00519e4b    mov [ebp-54h],eax"
+"	      00519e4b    mov num,eax"
 );
 // LINE 1040:
 	asm( 
-"	      00519e4e    mov eax,[ebp-4]"
+"	      00519e4e    mov eax,scale"
 "	      00519e51    lea eax,[eax+eax*2]"
 "	      00519e54    shl eax,2"
 "	      00519e57    sar eax,10h"
-"	      00519e5a    mov [ebp-3Ch],eax"
+"	      00519e5a    mov num3,eax"
 );
 // LINE 1041:
 	asm( 
@@ -1863,33 +1863,33 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1045:
 	asm( 
-"	      00519e62    mov eax,[ebp-4]"
+"	      00519e62    mov eax,scale"
 "	      00519e65    add eax,eax"
 "	      00519e67    sar eax,10h"
-"	      00519e6a    mov [ebp-2Ch],eax"
+"	      00519e6a    mov minval,eax"
 );
 // LINE 1046:
 	asm( 
-"	      00519e6d    mov eax,[ebp-4]"
+"	      00519e6d    mov eax,scale"
 "	      00519e70    lea eax,[eax+eax*4]"
 "	      00519e73    sar eax,10h"
-"	      00519e76    mov [ebp-28h],eax"
+"	      00519e76    mov maxval,eax"
 );
 // LINE 1047:
 	asm( 
-"	      00519e79    mov eax,[ebp-4]"
+"	      00519e79    mov eax,scale"
 "	      00519e7c    lea eax,[eax+eax*4]"
 "	      00519e7f    add eax,eax"
 "	      00519e81    sar eax,10h"
-"	      00519e84    mov [ebp-54h],eax"
+"	      00519e84    mov num,eax"
 );
 // LINE 1048:
 	asm( 
-"	      00519e87    mov eax,[ebp-4]"
+"	      00519e87    mov eax,scale"
 "	      00519e8a    lea eax,[eax+eax*4]"
 "	      00519e8d    add eax,eax"
 "	      00519e8f    sar eax,10h"
-"	      00519e92    mov [ebp-3Ch],eax"
+"	      00519e92    mov num3,eax"
 );
 // LINE 1049:
 	asm( 
@@ -1897,33 +1897,33 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1051:
 	asm( 
-"	      00519e9a    mov eax,[ebp-4]"
+"	      00519e9a    mov eax,scale"
 "	      00519e9d    add eax,eax"
 "	      00519e9f    sar eax,10h"
-"	      00519ea2    mov [ebp-2Ch],eax"
+"	      00519ea2    mov minval,eax"
 );
 // LINE 1052:
 	asm( 
-"	      00519ea5    mov eax,[ebp-4]"
+"	      00519ea5    mov eax,scale"
 "	      00519ea8    lea eax,[eax+eax*2]"
 "	      00519eab    sar eax,10h"
-"	      00519eae    mov [ebp-28h],eax"
+"	      00519eae    mov maxval,eax"
 );
 // LINE 1053:
 	asm( 
-"	      00519eb1    mov eax,[ebp-4]"
+"	      00519eb1    mov eax,scale"
 "	      00519eb4    lea eax,[eax+eax*2]"
 "	      00519eb7    shl eax,2"
 "	      00519eba    sar eax,10h"
-"	      00519ebd    mov [ebp-54h],eax"
+"	      00519ebd    mov num,eax"
 );
 // LINE 1054:
 	asm( 
-"	      00519ec0    mov eax,[ebp-4]"
+"	      00519ec0    mov eax,scale"
 "	      00519ec3    lea eax,[eax+eax*2]"
 "	      00519ec6    shl eax,2"
 "	      00519ec9    sar eax,10h"
-"	      00519ecc    mov [ebp-3Ch],eax"
+"	      00519ecc    mov num3,eax"
 );
 // LINE 1055:
 	asm( 
@@ -1968,22 +1968,22 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1060:
 	asm( 
-"	      00519f22    mov eax,[ebp-28h]"
-"	      00519f25    sub eax,[ebp-2Ch]"
+"	      00519f22    mov eax,maxval"
+"	      00519f25    sub eax,minval"
 "	      00519f28    inc eax"
-"	      00519f29    mov [ebp-10h],eax"
+"	      00519f29    mov numvals,eax"
 );
 // LINE 1061:
 	asm( 
-"	      00519f2c    mov eax,[ebp-54h]"
+"	      00519f2c    mov eax,num"
 "	      00519f2f    add eax,eax"
-"	      00519f31    mov [ebp-30h],eax"
+"	      00519f31    mov num2,eax"
 );
 // LINE 1181:
 	asm( 
-"	      00519f34    cmp dword ptr [ebp-3Ch],1Eh"
+"	      00519f34    cmp num3,1Eh"
 "	      00519f38    jle near ptr 00519F45h"
-"	      00519f3e    mov dword ptr [ebp-3Ch],1Eh"
+"	      00519f3e    mov num3,1Eh"
 );
 // LINE 1185:
 	asm( 
@@ -1992,23 +1992,23 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1187:
 	asm( 
-"	      00519f52    shl dword ptr [ebp-54h],1"
+"	      00519f52    shl num,1"
 );
 // LINE 1188:
 	asm( 
-"	      00519f56    mov eax,[ebp-54h]"
+"	      00519f56    mov eax,num"
 "	      00519f59    add eax,eax"
-"	      00519f5b    mov [ebp-30h],eax"
+"	      00519f5b    mov num2,eax"
 );
 // LINE 1194:
 	asm( 
-"	      00519f5e    mov eax,[ebp+8]"
+"	      00519f5e    mov eax,blit"
 "	      00519f61    cmp dword ptr [eax+0Ch],1"
 "	      00519f65    je near ptr 00519F85h"
-"	      00519f6b    mov eax,[ebp+8]"
+"	      00519f6b    mov eax,blit"
 "	      00519f6e    cmp dword ptr [eax+0Ch],4"
 "	      00519f72    je near ptr 00519F85h"
-"	      00519f78    mov eax,[ebp+8]"
+"	      00519f78    mov eax,blit"
 "	      00519f7b    cmp dword ptr [eax+0Ch],0Bh"
 "	      00519f7f    jne near ptr 00519FC4h"
 );
@@ -2016,7 +2016,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	asm( 
 "	      00519f85    mov eax,ds:[662834h]"
 "	      00519f8a    add eax,400h"
-"	      00519f8f    mov [ebp-24h],eax"
+"	      00519f8f    mov table,eax"
 );
 // LINE 1198:
 	asm( 
@@ -2037,15 +2037,15 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1202:
 	asm( 
-"	      00519fb8    mov dword ptr [ebp-48h],7"
+"	      00519fb8    mov tablerows,7"
 );
 // LINE 1204:
 	asm( 
 "	      00519fbf    jmp near ptr 0051A07Eh"
-"	      00519fc4    mov eax,[ebp+8]"
+"	      00519fc4    mov eax,blit"
 "	      00519fc7    cmp dword ptr [eax+0Ch],7"
 "	      00519fcb    je near ptr 00519FDEh"
-"	      00519fd1    mov eax,[ebp+8]"
+"	      00519fd1    mov eax,blit"
 "	      00519fd4    cmp dword ptr [eax+0Ch],6"
 "	      00519fd8    jne near ptr 0051A001h"
 );
@@ -2053,7 +2053,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	asm( 
 "	      00519fde    mov eax,ds:[66EAE0h]"
 "	      00519fe3    add eax,400h"
-"	      00519fe8    mov [ebp-24h],eax"
+"	      00519fe8    mov table,eax"
 );
 // LINE 1208:
 	asm( 
@@ -2061,15 +2061,15 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1209:
 	asm( 
-"	      00519ff5    mov dword ptr [ebp-48h],7"
+"	      00519ff5    mov tablerows,7"
 );
 // LINE 1211:
 	asm( 
 "	      00519ffc    jmp near ptr 0051A07Eh"
-"	      0051a001    mov eax,[ebp+8]"
+"	      0051a001    mov eax,blit"
 "	      0051a004    cmp dword ptr [eax+0Ch],9"
 "	      0051a008    je near ptr 0051A01Bh"
-"	      0051a00e    mov eax,[ebp+8]"
+"	      0051a00e    mov eax,blit"
 "	      0051a011    cmp dword ptr [eax+0Ch],8"
 "	      0051a015    jne near ptr 0051A03Eh"
 );
@@ -2077,7 +2077,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	asm( 
 "	      0051a01b    mov eax,ds:[66EAF0h]"
 "	      0051a020    add eax,400h"
-"	      0051a025    mov [ebp-24h],eax"
+"	      0051a025    mov table,eax"
 );
 // LINE 1215:
 	asm( 
@@ -2085,7 +2085,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1216:
 	asm( 
-"	      0051a032    mov dword ptr [ebp-48h],7"
+"	      0051a032    mov tablerows,7"
 );
 // LINE 1218:
 	asm( 
@@ -2093,20 +2093,20 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1219:
 	asm( 
-"	      0051a03e    mov eax,[ebp+8]"
+"	      0051a03e    mov eax,blit"
 "	      0051a041    cmp dword ptr [eax+0Ch],2"
 "	      0051a045    je near ptr 0051A065h"
-"	      0051a04b    mov eax,[ebp+8]"
+"	      0051a04b    mov eax,blit"
 "	      0051a04e    cmp dword ptr [eax+0Ch],5"
 "	      0051a052    je near ptr 0051A065h"
-"	      0051a058    mov eax,[ebp+8]"
+"	      0051a058    mov eax,blit"
 "	      0051a05b    cmp dword ptr [eax+0Ch],0Ah"
 "	      0051a05f    jne near ptr 0051A07Eh"
 );
 // LINE 1221:
 	asm( 
 "	      0051a065    mov eax,ds:[66EAE8h]"
-"	      0051a06a    mov [ebp-24h],eax"
+"	      0051a06a    mov table,eax"
 );
 // LINE 1222:
 	asm( 
@@ -2114,19 +2114,19 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1223:
 	asm( 
-"	      0051a077    mov dword ptr [ebp-48h],7"
+"	      0051a077    mov tablerows,7"
 );
 // LINE 1226:
 	asm( 
 "	      0051a07e    call 0056EC50h"
 "	      0051a083    movsx eax,ax"
 "	      0051a086    cdq"
-"	      0051a087    idiv dword ptr [ebp-48h]"
+"	      0051a087    idiv tablerows"
 "	      0051a08a    mov eax,edx"
 "	      0051a08c    shl eax,8"
-"	      0051a08f    add eax,[ebp-24h]"
+"	      0051a08f    add eax,table"
 "	      0051a092    add eax,100h"
-"	      0051a097    mov [ebp-4Ch],eax"
+"	      0051a097    mov tablerow,eax"
 );
 // LINE 1230:
 	asm( 
@@ -2135,11 +2135,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1232:
 	asm( 
-"	      0051a0a7    mov dword ptr [ebp-44h],0"
+"	      0051a0a7    mov i,0"
 "	      0051a0ae    jmp near ptr 0051A0B6h"
-"	      0051a0b3    inc dword ptr [ebp-44h]"
-"	      0051a0b6    mov eax,[ebp-44h]"
-"	      0051a0b9    cmp [ebp-3Ch],eax"
+"	      0051a0b3    inc i"
+"	      0051a0b6    mov eax,i"
+"	      0051a0b9    cmp num3,eax"
 "	      0051a0bc    jle near ptr 0051BF61h"
 );
 // LINE 1234:
@@ -2147,87 +2147,87 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051a0c2    call 0056EC50h"
 "	      0051a0c7    movsx eax,ax"
 "	      0051a0ca    cdq"
-"	      0051a0cb    idiv dword ptr [ebp-30h]"
-"	      0051a0ce    mov eax,[ebp-38h]"
-"	      0051a0d1    sub eax,[ebp-54h]"
+"	      0051a0cb    idiv num2"
+"	      0051a0ce    mov eax,x"
+"	      0051a0d1    sub eax,num"
 "	      0051a0d4    add eax,edx"
-"	      0051a0d6    mov [ebp-0Ch],eax"
+"	      0051a0d6    mov plotx,eax"
 );
 // LINE 1235:
 	asm( 
 "	      0051a0d9    call 0056EC50h"
 "	      0051a0de    movsx eax,ax"
 "	      0051a0e1    cdq"
-"	      0051a0e2    idiv dword ptr [ebp-30h]"
-"	      0051a0e5    mov eax,[ebp-40h]"
-"	      0051a0e8    sub eax,[ebp-54h]"
+"	      0051a0e2    idiv num2"
+"	      0051a0e5    mov eax,y"
+"	      0051a0e8    sub eax,num"
 "	      0051a0eb    add eax,edx"
-"	      0051a0ed    mov [ebp-20h],eax"
+"	      0051a0ed    mov ploty,eax"
 );
 // LINE 1238:
 	asm( 
 "	      0051a0f0    call 0056EC50h"
 "	      0051a0f5    movsx eax,ax"
 "	      0051a0f8    cdq"
-"	      0051a0f9    idiv dword ptr [ebp-10h]"
-"	      0051a0fc    mov eax,[ebp-2Ch]"
+"	      0051a0f9    idiv numvals"
+"	      0051a0fc    mov eax,minval"
 "	      0051a0ff    add eax,edx"
-"	      0051a101    mov [ebp-34h],eax"
+"	      0051a101    mov dim,eax"
 );
 // LINE 1241:
 	asm( 
-"	      0051a104    cmp dword ptr [ebp-0Ch],0"
+"	      0051a104    cmp plotx,0"
 "	      0051a108    jge near ptr 0051A113h"
 "	      0051a10e    jmp near ptr 0051DA56h"
 );
 // LINE 1242:
 	asm( 
-"	      0051a113    cmp dword ptr [ebp-20h],0"
+"	      0051a113    cmp ploty,0"
 "	      0051a117    jge near ptr 0051A122h"
 "	      0051a11d    jmp near ptr 0051DA56h"
 );
 // LINE 1243:
 	asm( 
-"	      0051a122    mov eax,[ebp-14h]"
-"	      0051a125    sub eax,[ebp-34h]"
-"	      0051a128    cmp eax,[ebp-0Ch]"
+"	      0051a122    mov eax,winwidth"
+"	      0051a125    sub eax,dim"
+"	      0051a128    cmp eax,plotx"
 "	      0051a12b    jge near ptr 0051A136h"
 "	      0051a131    jmp near ptr 0051DA56h"
 );
 // LINE 1244:
 	asm( 
-"	      0051a136    mov eax,[ebp-58h]"
-"	      0051a139    sub eax,[ebp-34h]"
-"	      0051a13c    cmp eax,[ebp-20h]"
+"	      0051a136    mov eax,winheight"
+"	      0051a139    sub eax,dim"
+"	      0051a13c    cmp eax,ploty"
 "	      0051a13f    jge near ptr 0051A14Ah"
 "	      0051a145    jmp near ptr 0051DA56h"
 );
 // LINE 1247:
 	asm( 
-"	      0051a14a    mov eax,[ebp-18h]"
-"	      0051a14d    imul eax,[ebp-20h]"
-"	      0051a151    add eax,[ebp-0Ch]"
+"	      0051a14a    mov eax,bufwidth"
+"	      0051a14d    imul eax,ploty"
+"	      0051a151    add eax,plotx"
 "	      0051a154    add eax,ds:[598EACh]"
-"	      0051a15a    mov [ebp-8],eax"
+"	      0051a15a    mov ptr,eax"
 );
 // LINE 1251:
 	asm( 
-"	      0051a15d    mov eax,[ebp-34h]"
+"	      0051a15d    mov eax,dim"
 "	      0051a160    mov [ebp-60h],eax"
 "	      0051a163    jmp near ptr 0051BF20h"
 );
 // LINE 1254:
 	asm( 
-"	      0051a168    mov eax,[ebp-8]"
+"	      0051a168    mov eax,ptr"
 "	      0051a16b    movsx eax,byte ptr [eax]"
-"	      0051a16e    mov ecx,[ebp-4Ch]"
+"	      0051a16e    mov ecx,tablerow"
 "	      0051a171    mov al,[eax+ecx]"
-"	      0051a174    mov [ebp-1Ch],al"
+"	      0051a174    mov color,al"
 );
 // LINE 1255:
 	asm( 
-"	      0051a177    mov al,[ebp-1Ch]"
-"	      0051a17a    mov ecx,[ebp-8]"
+"	      0051a177    mov al,color"
+"	      0051a17a    mov ecx,ptr"
 "	      0051a17d    mov [ecx],al"
 );
 // LINE 1256:
@@ -2236,64 +2236,64 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1258:
 	asm( 
-"	      0051a184    mov eax,[ebp-8]"
+"	      0051a184    mov eax,ptr"
 "	      0051a187    movsx eax,byte ptr [eax]"
-"	      0051a18a    mov ecx,[ebp-4Ch]"
+"	      0051a18a    mov ecx,tablerow"
 "	      0051a18d    mov al,[eax+ecx]"
-"	      0051a190    mov [ebp-1Ch],al"
+"	      0051a190    mov color,al"
 );
 // LINE 1259:
 	asm( 
-"	      0051a193    mov al,[ebp-1Ch]"
-"	      0051a196    mov ecx,[ebp-8]"
+"	      0051a193    mov al,color"
+"	      0051a196    mov ecx,ptr"
 "	      0051a199    mov [ecx],al"
 );
 // LINE 1260:
 	asm( 
-"	      0051a19b    inc dword ptr [ebp-8]"
+"	      0051a19b    inc ptr"
 );
 // LINE 1261:
 	asm( 
-"	      0051a19e    mov eax,[ebp-8]"
+"	      0051a19e    mov eax,ptr"
 "	      0051a1a1    movsx eax,byte ptr [eax]"
-"	      0051a1a4    mov ecx,[ebp-4Ch]"
+"	      0051a1a4    mov ecx,tablerow"
 "	      0051a1a7    mov al,[eax+ecx]"
-"	      0051a1aa    mov [ebp-1Ch],al"
+"	      0051a1aa    mov color,al"
 );
 // LINE 1262:
 	asm( 
-"	      0051a1ad    mov al,[ebp-1Ch]"
-"	      0051a1b0    mov ecx,[ebp-8]"
+"	      0051a1ad    mov al,color"
+"	      0051a1b0    mov ecx,ptr"
 "	      0051a1b3    mov [ecx],al"
 );
 // LINE 1263:
 	asm( 
-"	      0051a1b5    mov eax,[ebp-18h]"
+"	      0051a1b5    mov eax,bufwidth"
 "	      0051a1b8    dec eax"
-"	      0051a1b9    add [ebp-8],eax"
+"	      0051a1b9    add ptr,eax"
 );
 // LINE 1264:
 	asm( 
-"	      0051a1bc    mov al,[ebp-1Ch]"
-"	      0051a1bf    mov ecx,[ebp-8]"
+"	      0051a1bc    mov al,color"
+"	      0051a1bf    mov ecx,ptr"
 "	      0051a1c2    mov [ecx],al"
 );
 // LINE 1265:
 	asm( 
-"	      0051a1c4    inc dword ptr [ebp-8]"
+"	      0051a1c4    inc ptr"
 );
 // LINE 1266:
 	asm( 
-"	      0051a1c7    mov eax,[ebp-8]"
+"	      0051a1c7    mov eax,ptr"
 "	      0051a1ca    movsx eax,byte ptr [eax]"
-"	      0051a1cd    mov ecx,[ebp-4Ch]"
+"	      0051a1cd    mov ecx,tablerow"
 "	      0051a1d0    mov al,[eax+ecx]"
-"	      0051a1d3    mov [ebp-1Ch],al"
+"	      0051a1d3    mov color,al"
 );
 // LINE 1267:
 	asm( 
-"	      0051a1d6    mov al,[ebp-1Ch]"
-"	      0051a1d9    mov ecx,[ebp-8]"
+"	      0051a1d6    mov al,color"
+"	      0051a1d9    mov ecx,ptr"
 "	      0051a1dc    mov [ecx],al"
 );
 // LINE 1268:
@@ -2302,132 +2302,132 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1270:
 	asm( 
-"	      0051a1e3    mov eax,[ebp-8]"
+"	      0051a1e3    mov eax,ptr"
 "	      0051a1e6    movsx eax,byte ptr [eax]"
-"	      0051a1e9    mov ecx,[ebp-4Ch]"
+"	      0051a1e9    mov ecx,tablerow"
 "	      0051a1ec    mov al,[eax+ecx]"
-"	      0051a1ef    mov [ebp-1Ch],al"
+"	      0051a1ef    mov color,al"
 );
 // LINE 1271:
 	asm( 
-"	      0051a1f2    mov al,[ebp-1Ch]"
-"	      0051a1f5    mov ecx,[ebp-8]"
+"	      0051a1f2    mov al,color"
+"	      0051a1f5    mov ecx,ptr"
 "	      0051a1f8    mov [ecx],al"
 );
 // LINE 1272:
 	asm( 
-"	      0051a1fa    inc dword ptr [ebp-8]"
+"	      0051a1fa    inc ptr"
 );
 // LINE 1273:
 	asm( 
-"	      0051a1fd    mov al,[ebp-1Ch]"
-"	      0051a200    mov ecx,[ebp-8]"
+"	      0051a1fd    mov al,color"
+"	      0051a200    mov ecx,ptr"
 "	      0051a203    mov [ecx],al"
 );
 // LINE 1274:
 	asm( 
-"	      0051a205    inc dword ptr [ebp-8]"
+"	      0051a205    inc ptr"
 );
 // LINE 1276:
 	asm( 
-"	      0051a208    mov al,[ebp-1Ch]"
-"	      0051a20b    mov ecx,[ebp-8]"
+"	      0051a208    mov al,color"
+"	      0051a20b    mov ecx,ptr"
 "	      0051a20e    mov [ecx],al"
 );
 // LINE 1277:
 	asm( 
-"	      0051a210    mov eax,[ebp-18h]"
+"	      0051a210    mov eax,bufwidth"
 "	      0051a213    sub eax,2"
-"	      0051a216    add [ebp-8],eax"
+"	      0051a216    add ptr,eax"
 );
 // LINE 1278:
 	asm( 
-"	      0051a219    mov eax,[ebp-8]"
+"	      0051a219    mov eax,ptr"
 "	      0051a21c    movsx eax,byte ptr [eax]"
-"	      0051a21f    mov ecx,[ebp-4Ch]"
+"	      0051a21f    mov ecx,tablerow"
 "	      0051a222    mov al,[eax+ecx]"
-"	      0051a225    mov [ebp-1Ch],al"
+"	      0051a225    mov color,al"
 );
 // LINE 1279:
 	asm( 
-"	      0051a228    mov al,[ebp-1Ch]"
-"	      0051a22b    mov ecx,[ebp-8]"
+"	      0051a228    mov al,color"
+"	      0051a22b    mov ecx,ptr"
 "	      0051a22e    mov [ecx],al"
 );
 // LINE 1280:
 	asm( 
-"	      0051a230    inc dword ptr [ebp-8]"
+"	      0051a230    inc ptr"
 );
 // LINE 1282:
 	asm( 
-"	      0051a233    mov al,[ebp-1Ch]"
-"	      0051a236    mov ecx,[ebp-8]"
+"	      0051a233    mov al,color"
+"	      0051a236    mov ecx,ptr"
 "	      0051a239    mov [ecx],al"
 );
 // LINE 1283:
 	asm( 
-"	      0051a23b    inc dword ptr [ebp-8]"
+"	      0051a23b    inc ptr"
 );
 // LINE 1284:
 	asm( 
-"	      0051a23e    mov eax,[ebp-8]"
+"	      0051a23e    mov eax,ptr"
 "	      0051a241    movsx eax,byte ptr [eax]"
-"	      0051a244    mov ecx,[ebp-4Ch]"
+"	      0051a244    mov ecx,tablerow"
 "	      0051a247    mov al,[eax+ecx]"
-"	      0051a24a    mov [ebp-1Ch],al"
+"	      0051a24a    mov color,al"
 );
 // LINE 1285:
 	asm( 
-"	      0051a24d    mov al,[ebp-1Ch]"
-"	      0051a250    mov ecx,[ebp-8]"
+"	      0051a24d    mov al,color"
+"	      0051a250    mov ecx,ptr"
 "	      0051a253    mov [ecx],al"
 );
 // LINE 1286:
 	asm( 
-"	      0051a255    mov eax,[ebp-18h]"
+"	      0051a255    mov eax,bufwidth"
 "	      0051a258    sub eax,2"
-"	      0051a25b    add [ebp-8],eax"
+"	      0051a25b    add ptr,eax"
 );
 // LINE 1287:
 	asm( 
-"	      0051a25e    mov eax,[ebp-8]"
+"	      0051a25e    mov eax,ptr"
 "	      0051a261    movsx eax,byte ptr [eax]"
-"	      0051a264    mov ecx,[ebp-4Ch]"
+"	      0051a264    mov ecx,tablerow"
 "	      0051a267    mov al,[eax+ecx]"
-"	      0051a26a    mov [ebp-1Ch],al"
+"	      0051a26a    mov color,al"
 );
 // LINE 1288:
 	asm( 
-"	      0051a26d    mov al,[ebp-1Ch]"
-"	      0051a270    mov ecx,[ebp-8]"
+"	      0051a26d    mov al,color"
+"	      0051a270    mov ecx,ptr"
 "	      0051a273    mov [ecx],al"
 );
 // LINE 1289:
 	asm( 
-"	      0051a275    inc dword ptr [ebp-8]"
+"	      0051a275    inc ptr"
 );
 // LINE 1291:
 	asm( 
-"	      0051a278    mov al,[ebp-1Ch]"
-"	      0051a27b    mov ecx,[ebp-8]"
+"	      0051a278    mov al,color"
+"	      0051a27b    mov ecx,ptr"
 "	      0051a27e    mov [ecx],al"
 );
 // LINE 1292:
 	asm( 
-"	      0051a280    inc dword ptr [ebp-8]"
+"	      0051a280    inc ptr"
 );
 // LINE 1293:
 	asm( 
-"	      0051a283    mov eax,[ebp-8]"
+"	      0051a283    mov eax,ptr"
 "	      0051a286    movsx eax,byte ptr [eax]"
-"	      0051a289    mov ecx,[ebp-4Ch]"
+"	      0051a289    mov ecx,tablerow"
 "	      0051a28c    mov al,[eax+ecx]"
-"	      0051a28f    mov [ebp-1Ch],al"
+"	      0051a28f    mov color,al"
 );
 // LINE 1294:
 	asm( 
-"	      0051a292    mov al,[ebp-1Ch]"
-"	      0051a295    mov ecx,[ebp-8]"
+"	      0051a292    mov al,color"
+"	      0051a295    mov ecx,ptr"
 "	      0051a298    mov [ecx],al"
 );
 // LINE 1295:
@@ -2436,228 +2436,228 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1297:
 	asm( 
-"	      0051a29f    mov eax,[ebp-8]"
+"	      0051a29f    mov eax,ptr"
 "	      0051a2a2    movsx eax,byte ptr [eax]"
-"	      0051a2a5    mov ecx,[ebp-4Ch]"
+"	      0051a2a5    mov ecx,tablerow"
 "	      0051a2a8    mov al,[eax+ecx]"
-"	      0051a2ab    mov [ebp-1Ch],al"
+"	      0051a2ab    mov color,al"
 );
 // LINE 1298:
 	asm( 
-"	      0051a2ae    mov al,[ebp-1Ch]"
-"	      0051a2b1    mov ecx,[ebp-8]"
+"	      0051a2ae    mov al,color"
+"	      0051a2b1    mov ecx,ptr"
 "	      0051a2b4    mov [ecx],al"
 );
 // LINE 1299:
 	asm( 
-"	      0051a2b6    inc dword ptr [ebp-8]"
+"	      0051a2b6    inc ptr"
 );
 // LINE 1301:
 	asm( 
-"	      0051a2b9    mov al,[ebp-1Ch]"
-"	      0051a2bc    mov ecx,[ebp-8]"
+"	      0051a2b9    mov al,color"
+"	      0051a2bc    mov ecx,ptr"
 "	      0051a2bf    mov [ecx],al"
 );
 // LINE 1302:
 	asm( 
-"	      0051a2c1    inc dword ptr [ebp-8]"
+"	      0051a2c1    inc ptr"
 );
 // LINE 1303:
 	asm( 
-"	      0051a2c4    mov eax,[ebp-8]"
+"	      0051a2c4    mov eax,ptr"
 "	      0051a2c7    movsx eax,byte ptr [eax]"
-"	      0051a2ca    mov ecx,[ebp-4Ch]"
+"	      0051a2ca    mov ecx,tablerow"
 "	      0051a2cd    mov al,[eax+ecx]"
-"	      0051a2d0    mov [ebp-1Ch],al"
+"	      0051a2d0    mov color,al"
 );
 // LINE 1304:
 	asm( 
-"	      0051a2d3    mov al,[ebp-1Ch]"
-"	      0051a2d6    mov ecx,[ebp-8]"
+"	      0051a2d3    mov al,color"
+"	      0051a2d6    mov ecx,ptr"
 "	      0051a2d9    mov [ecx],al"
 );
 // LINE 1305:
 	asm( 
-"	      0051a2db    inc dword ptr [ebp-8]"
+"	      0051a2db    inc ptr"
 );
 // LINE 1307:
 	asm( 
-"	      0051a2de    mov al,[ebp-1Ch]"
-"	      0051a2e1    mov ecx,[ebp-8]"
+"	      0051a2de    mov al,color"
+"	      0051a2e1    mov ecx,ptr"
 "	      0051a2e4    mov [ecx],al"
 );
 // LINE 1308:
 	asm( 
-"	      0051a2e6    mov eax,[ebp-18h]"
+"	      0051a2e6    mov eax,bufwidth"
 "	      0051a2e9    sub eax,3"
-"	      0051a2ec    add [ebp-8],eax"
+"	      0051a2ec    add ptr,eax"
 );
 // LINE 1309:
 	asm( 
-"	      0051a2ef    mov eax,[ebp-8]"
+"	      0051a2ef    mov eax,ptr"
 "	      0051a2f2    movsx eax,byte ptr [eax]"
-"	      0051a2f5    mov ecx,[ebp-4Ch]"
+"	      0051a2f5    mov ecx,tablerow"
 "	      0051a2f8    mov al,[eax+ecx]"
-"	      0051a2fb    mov [ebp-1Ch],al"
+"	      0051a2fb    mov color,al"
 );
 // LINE 1310:
 	asm( 
-"	      0051a2fe    mov al,[ebp-1Ch]"
-"	      0051a301    mov ecx,[ebp-8]"
+"	      0051a2fe    mov al,color"
+"	      0051a301    mov ecx,ptr"
 "	      0051a304    mov [ecx],al"
 );
 // LINE 1311:
 	asm( 
-"	      0051a306    inc dword ptr [ebp-8]"
+"	      0051a306    inc ptr"
 );
 // LINE 1313:
 	asm( 
-"	      0051a309    mov al,[ebp-1Ch]"
-"	      0051a30c    mov ecx,[ebp-8]"
+"	      0051a309    mov al,color"
+"	      0051a30c    mov ecx,ptr"
 "	      0051a30f    mov [ecx],al"
 );
 // LINE 1314:
 	asm( 
-"	      0051a311    inc dword ptr [ebp-8]"
+"	      0051a311    inc ptr"
 );
 // LINE 1316:
 	asm( 
-"	      0051a314    mov al,[ebp-1Ch]"
-"	      0051a317    mov ecx,[ebp-8]"
+"	      0051a314    mov al,color"
+"	      0051a317    mov ecx,ptr"
 "	      0051a31a    mov [ecx],al"
 );
 // LINE 1317:
 	asm( 
-"	      0051a31c    inc dword ptr [ebp-8]"
+"	      0051a31c    inc ptr"
 );
 // LINE 1318:
 	asm( 
-"	      0051a31f    mov eax,[ebp-8]"
+"	      0051a31f    mov eax,ptr"
 "	      0051a322    movsx eax,byte ptr [eax]"
-"	      0051a325    mov ecx,[ebp-4Ch]"
+"	      0051a325    mov ecx,tablerow"
 "	      0051a328    mov al,[eax+ecx]"
-"	      0051a32b    mov [ebp-1Ch],al"
+"	      0051a32b    mov color,al"
 );
 // LINE 1319:
 	asm( 
-"	      0051a32e    mov al,[ebp-1Ch]"
-"	      0051a331    mov ecx,[ebp-8]"
+"	      0051a32e    mov al,color"
+"	      0051a331    mov ecx,ptr"
 "	      0051a334    mov [ecx],al"
 );
 // LINE 1320:
 	asm( 
-"	      0051a336    mov eax,[ebp-18h]"
+"	      0051a336    mov eax,bufwidth"
 "	      0051a339    sub eax,3"
-"	      0051a33c    add [ebp-8],eax"
+"	      0051a33c    add ptr,eax"
 );
 // LINE 1321:
 	asm( 
-"	      0051a33f    mov eax,[ebp-8]"
+"	      0051a33f    mov eax,ptr"
 "	      0051a342    movsx eax,byte ptr [eax]"
-"	      0051a345    mov ecx,[ebp-4Ch]"
+"	      0051a345    mov ecx,tablerow"
 "	      0051a348    mov al,[eax+ecx]"
-"	      0051a34b    mov [ebp-1Ch],al"
+"	      0051a34b    mov color,al"
 );
 // LINE 1322:
 	asm( 
-"	      0051a34e    mov al,[ebp-1Ch]"
-"	      0051a351    mov ecx,[ebp-8]"
+"	      0051a34e    mov al,color"
+"	      0051a351    mov ecx,ptr"
 "	      0051a354    mov [ecx],al"
 );
 // LINE 1323:
 	asm( 
-"	      0051a356    inc dword ptr [ebp-8]"
+"	      0051a356    inc ptr"
 );
 // LINE 1325:
 	asm( 
-"	      0051a359    mov al,[ebp-1Ch]"
-"	      0051a35c    mov ecx,[ebp-8]"
+"	      0051a359    mov al,color"
+"	      0051a35c    mov ecx,ptr"
 "	      0051a35f    mov [ecx],al"
 );
 // LINE 1326:
 	asm( 
-"	      0051a361    inc dword ptr [ebp-8]"
+"	      0051a361    inc ptr"
 );
 // LINE 1328:
 	asm( 
-"	      0051a364    mov al,[ebp-1Ch]"
-"	      0051a367    mov ecx,[ebp-8]"
+"	      0051a364    mov al,color"
+"	      0051a367    mov ecx,ptr"
 "	      0051a36a    mov [ecx],al"
 );
 // LINE 1329:
 	asm( 
-"	      0051a36c    inc dword ptr [ebp-8]"
+"	      0051a36c    inc ptr"
 );
 // LINE 1330:
 	asm( 
-"	      0051a36f    mov eax,[ebp-8]"
+"	      0051a36f    mov eax,ptr"
 "	      0051a372    movsx eax,byte ptr [eax]"
-"	      0051a375    mov ecx,[ebp-4Ch]"
+"	      0051a375    mov ecx,tablerow"
 "	      0051a378    mov al,[eax+ecx]"
-"	      0051a37b    mov [ebp-1Ch],al"
+"	      0051a37b    mov color,al"
 );
 // LINE 1331:
 	asm( 
-"	      0051a37e    mov al,[ebp-1Ch]"
-"	      0051a381    mov ecx,[ebp-8]"
+"	      0051a37e    mov al,color"
+"	      0051a381    mov ecx,ptr"
 "	      0051a384    mov [ecx],al"
 );
 // LINE 1332:
 	asm( 
-"	      0051a386    mov eax,[ebp-18h]"
+"	      0051a386    mov eax,bufwidth"
 "	      0051a389    sub eax,3"
-"	      0051a38c    add [ebp-8],eax"
+"	      0051a38c    add ptr,eax"
 );
 // LINE 1334:
 	asm( 
-"	      0051a38f    mov al,[ebp-1Ch]"
-"	      0051a392    mov ecx,[ebp-8]"
+"	      0051a38f    mov al,color"
+"	      0051a392    mov ecx,ptr"
 "	      0051a395    mov [ecx],al"
 );
 // LINE 1335:
 	asm( 
-"	      0051a397    inc dword ptr [ebp-8]"
+"	      0051a397    inc ptr"
 );
 // LINE 1336:
 	asm( 
-"	      0051a39a    mov eax,[ebp-8]"
+"	      0051a39a    mov eax,ptr"
 "	      0051a39d    movsx eax,byte ptr [eax]"
-"	      0051a3a0    mov ecx,[ebp-4Ch]"
+"	      0051a3a0    mov ecx,tablerow"
 "	      0051a3a3    mov al,[eax+ecx]"
-"	      0051a3a6    mov [ebp-1Ch],al"
+"	      0051a3a6    mov color,al"
 );
 // LINE 1337:
 	asm( 
-"	      0051a3a9    mov al,[ebp-1Ch]"
-"	      0051a3ac    mov ecx,[ebp-8]"
+"	      0051a3a9    mov al,color"
+"	      0051a3ac    mov ecx,ptr"
 "	      0051a3af    mov [ecx],al"
 );
 // LINE 1338:
 	asm( 
-"	      0051a3b1    inc dword ptr [ebp-8]"
+"	      0051a3b1    inc ptr"
 );
 // LINE 1339:
 	asm( 
-"	      0051a3b4    mov eax,[ebp-8]"
+"	      0051a3b4    mov eax,ptr"
 "	      0051a3b7    movsx eax,byte ptr [eax]"
-"	      0051a3ba    mov ecx,[ebp-4Ch]"
+"	      0051a3ba    mov ecx,tablerow"
 "	      0051a3bd    mov al,[eax+ecx]"
-"	      0051a3c0    mov [ebp-1Ch],al"
+"	      0051a3c0    mov color,al"
 );
 // LINE 1340:
 	asm( 
-"	      0051a3c3    mov al,[ebp-1Ch]"
-"	      0051a3c6    mov ecx,[ebp-8]"
+"	      0051a3c3    mov al,color"
+"	      0051a3c6    mov ecx,ptr"
 "	      0051a3c9    mov [ecx],al"
 );
 // LINE 1341:
 	asm( 
-"	      0051a3cb    inc dword ptr [ebp-8]"
+"	      0051a3cb    inc ptr"
 );
 // LINE 1343:
 	asm( 
-"	      0051a3ce    mov al,[ebp-1Ch]"
-"	      0051a3d1    mov ecx,[ebp-8]"
+"	      0051a3ce    mov al,color"
+"	      0051a3d1    mov ecx,ptr"
 "	      0051a3d4    mov [ecx],al"
 );
 // LINE 1344:
@@ -2666,352 +2666,352 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1346:
 	asm( 
-"	      0051a3db    mov eax,[ebp-8]"
+"	      0051a3db    mov eax,ptr"
 "	      0051a3de    movsx eax,byte ptr [eax]"
-"	      0051a3e1    mov ecx,[ebp-4Ch]"
+"	      0051a3e1    mov ecx,tablerow"
 "	      0051a3e4    mov al,[eax+ecx]"
-"	      0051a3e7    mov [ebp-1Ch],al"
+"	      0051a3e7    mov color,al"
 );
 // LINE 1347:
 	asm( 
-"	      0051a3ea    mov al,[ebp-1Ch]"
-"	      0051a3ed    mov ecx,[ebp-8]"
+"	      0051a3ea    mov al,color"
+"	      0051a3ed    mov ecx,ptr"
 "	      0051a3f0    mov [ecx],al"
 );
 // LINE 1348:
 	asm( 
-"	      0051a3f2    inc dword ptr [ebp-8]"
+"	      0051a3f2    inc ptr"
 );
 // LINE 1349:
 	asm( 
-"	      0051a3f5    mov eax,[ebp-8]"
+"	      0051a3f5    mov eax,ptr"
 "	      0051a3f8    movsx eax,byte ptr [eax]"
-"	      0051a3fb    mov ecx,[ebp-4Ch]"
+"	      0051a3fb    mov ecx,tablerow"
 "	      0051a3fe    mov al,[eax+ecx]"
-"	      0051a401    mov [ebp-1Ch],al"
+"	      0051a401    mov color,al"
 );
 // LINE 1350:
 	asm( 
-"	      0051a404    mov al,[ebp-1Ch]"
-"	      0051a407    mov ecx,[ebp-8]"
+"	      0051a404    mov al,color"
+"	      0051a407    mov ecx,ptr"
 "	      0051a40a    mov [ecx],al"
 );
 // LINE 1351:
 	asm( 
-"	      0051a40c    inc dword ptr [ebp-8]"
+"	      0051a40c    inc ptr"
 );
 // LINE 1353:
 	asm( 
-"	      0051a40f    mov al,[ebp-1Ch]"
-"	      0051a412    mov ecx,[ebp-8]"
+"	      0051a40f    mov al,color"
+"	      0051a412    mov ecx,ptr"
 "	      0051a415    mov [ecx],al"
 );
 // LINE 1354:
 	asm( 
-"	      0051a417    inc dword ptr [ebp-8]"
+"	      0051a417    inc ptr"
 );
 // LINE 1355:
 	asm( 
-"	      0051a41a    mov eax,[ebp-8]"
+"	      0051a41a    mov eax,ptr"
 "	      0051a41d    movsx eax,byte ptr [eax]"
-"	      0051a420    mov ecx,[ebp-4Ch]"
+"	      0051a420    mov ecx,tablerow"
 "	      0051a423    mov al,[eax+ecx]"
-"	      0051a426    mov [ebp-1Ch],al"
+"	      0051a426    mov color,al"
 );
 // LINE 1356:
 	asm( 
-"	      0051a429    mov al,[ebp-1Ch]"
-"	      0051a42c    mov ecx,[ebp-8]"
+"	      0051a429    mov al,color"
+"	      0051a42c    mov ecx,ptr"
 "	      0051a42f    mov [ecx],al"
 );
 // LINE 1357:
 	asm( 
-"	      0051a431    inc dword ptr [ebp-8]"
+"	      0051a431    inc ptr"
 );
 // LINE 1359:
 	asm( 
-"	      0051a434    mov al,[ebp-1Ch]"
-"	      0051a437    mov ecx,[ebp-8]"
+"	      0051a434    mov al,color"
+"	      0051a437    mov ecx,ptr"
 "	      0051a43a    mov [ecx],al"
 );
 // LINE 1360:
 	asm( 
-"	      0051a43c    mov eax,[ebp-18h]"
+"	      0051a43c    mov eax,bufwidth"
 "	      0051a43f    sub eax,4"
-"	      0051a442    add [ebp-8],eax"
+"	      0051a442    add ptr,eax"
 );
 // LINE 1362:
 	asm( 
-"	      0051a445    mov al,[ebp-1Ch]"
-"	      0051a448    mov ecx,[ebp-8]"
+"	      0051a445    mov al,color"
+"	      0051a448    mov ecx,ptr"
 "	      0051a44b    mov [ecx],al"
 );
 // LINE 1363:
 	asm( 
-"	      0051a44d    inc dword ptr [ebp-8]"
+"	      0051a44d    inc ptr"
 );
 // LINE 1365:
 	asm( 
-"	      0051a450    mov al,[ebp-1Ch]"
-"	      0051a453    mov ecx,[ebp-8]"
+"	      0051a450    mov al,color"
+"	      0051a453    mov ecx,ptr"
 "	      0051a456    mov [ecx],al"
 );
 // LINE 1366:
 	asm( 
-"	      0051a458    inc dword ptr [ebp-8]"
+"	      0051a458    inc ptr"
 );
 // LINE 1367:
 	asm( 
-"	      0051a45b    mov eax,[ebp-8]"
+"	      0051a45b    mov eax,ptr"
 "	      0051a45e    movsx eax,byte ptr [eax]"
-"	      0051a461    mov ecx,[ebp-4Ch]"
+"	      0051a461    mov ecx,tablerow"
 "	      0051a464    mov al,[eax+ecx]"
-"	      0051a467    mov [ebp-1Ch],al"
+"	      0051a467    mov color,al"
 );
 // LINE 1368:
 	asm( 
-"	      0051a46a    mov al,[ebp-1Ch]"
-"	      0051a46d    mov ecx,[ebp-8]"
+"	      0051a46a    mov al,color"
+"	      0051a46d    mov ecx,ptr"
 "	      0051a470    mov [ecx],al"
 );
 // LINE 1369:
 	asm( 
-"	      0051a472    inc dword ptr [ebp-8]"
+"	      0051a472    inc ptr"
 );
 // LINE 1370:
 	asm( 
-"	      0051a475    mov eax,[ebp-8]"
+"	      0051a475    mov eax,ptr"
 "	      0051a478    movsx eax,byte ptr [eax]"
-"	      0051a47b    mov ecx,[ebp-4Ch]"
+"	      0051a47b    mov ecx,tablerow"
 "	      0051a47e    mov al,[eax+ecx]"
-"	      0051a481    mov [ebp-1Ch],al"
+"	      0051a481    mov color,al"
 );
 // LINE 1371:
 	asm( 
-"	      0051a484    mov al,[ebp-1Ch]"
-"	      0051a487    mov ecx,[ebp-8]"
+"	      0051a484    mov al,color"
+"	      0051a487    mov ecx,ptr"
 "	      0051a48a    mov [ecx],al"
 );
 // LINE 1372:
 	asm( 
-"	      0051a48c    inc dword ptr [ebp-8]"
+"	      0051a48c    inc ptr"
 );
 // LINE 1373:
 	asm( 
-"	      0051a48f    mov eax,[ebp-8]"
+"	      0051a48f    mov eax,ptr"
 "	      0051a492    movsx eax,byte ptr [eax]"
-"	      0051a495    mov ecx,[ebp-4Ch]"
+"	      0051a495    mov ecx,tablerow"
 "	      0051a498    mov al,[eax+ecx]"
-"	      0051a49b    mov [ebp-1Ch],al"
+"	      0051a49b    mov color,al"
 );
 // LINE 1374:
 	asm( 
-"	      0051a49e    mov al,[ebp-1Ch]"
-"	      0051a4a1    mov ecx,[ebp-8]"
+"	      0051a49e    mov al,color"
+"	      0051a4a1    mov ecx,ptr"
 "	      0051a4a4    mov [ecx],al"
 );
 // LINE 1375:
 	asm( 
-"	      0051a4a6    mov eax,[ebp-18h]"
+"	      0051a4a6    mov eax,bufwidth"
 "	      0051a4a9    sub eax,4"
-"	      0051a4ac    add [ebp-8],eax"
+"	      0051a4ac    add ptr,eax"
 );
 // LINE 1377:
 	asm( 
-"	      0051a4af    mov al,[ebp-1Ch]"
-"	      0051a4b2    mov ecx,[ebp-8]"
+"	      0051a4af    mov al,color"
+"	      0051a4b2    mov ecx,ptr"
 "	      0051a4b5    mov [ecx],al"
 );
 // LINE 1378:
 	asm( 
-"	      0051a4b7    inc dword ptr [ebp-8]"
+"	      0051a4b7    inc ptr"
 );
 // LINE 1379:
 	asm( 
-"	      0051a4ba    mov eax,[ebp-8]"
+"	      0051a4ba    mov eax,ptr"
 "	      0051a4bd    movsx eax,byte ptr [eax]"
-"	      0051a4c0    mov ecx,[ebp-4Ch]"
+"	      0051a4c0    mov ecx,tablerow"
 "	      0051a4c3    mov al,[eax+ecx]"
-"	      0051a4c6    mov [ebp-1Ch],al"
+"	      0051a4c6    mov color,al"
 );
 // LINE 1380:
 	asm( 
-"	      0051a4c9    mov al,[ebp-1Ch]"
-"	      0051a4cc    mov ecx,[ebp-8]"
+"	      0051a4c9    mov al,color"
+"	      0051a4cc    mov ecx,ptr"
 "	      0051a4cf    mov [ecx],al"
 );
 // LINE 1381:
 	asm( 
-"	      0051a4d1    inc dword ptr [ebp-8]"
+"	      0051a4d1    inc ptr"
 );
 // LINE 1383:
 	asm( 
-"	      0051a4d4    mov al,[ebp-1Ch]"
-"	      0051a4d7    mov ecx,[ebp-8]"
+"	      0051a4d4    mov al,color"
+"	      0051a4d7    mov ecx,ptr"
 "	      0051a4da    mov [ecx],al"
 );
 // LINE 1384:
 	asm( 
-"	      0051a4dc    inc dword ptr [ebp-8]"
+"	      0051a4dc    inc ptr"
 );
 // LINE 1386:
 	asm( 
-"	      0051a4df    mov al,[ebp-1Ch]"
-"	      0051a4e2    mov ecx,[ebp-8]"
+"	      0051a4df    mov al,color"
+"	      0051a4e2    mov ecx,ptr"
 "	      0051a4e5    mov [ecx],al"
 );
 // LINE 1387:
 	asm( 
-"	      0051a4e7    inc dword ptr [ebp-8]"
+"	      0051a4e7    inc ptr"
 );
 // LINE 1389:
 	asm( 
-"	      0051a4ea    mov al,[ebp-1Ch]"
-"	      0051a4ed    mov ecx,[ebp-8]"
+"	      0051a4ea    mov al,color"
+"	      0051a4ed    mov ecx,ptr"
 "	      0051a4f0    mov [ecx],al"
 );
 // LINE 1390:
 	asm( 
-"	      0051a4f2    mov eax,[ebp-18h]"
+"	      0051a4f2    mov eax,bufwidth"
 "	      0051a4f5    sub eax,4"
-"	      0051a4f8    add [ebp-8],eax"
+"	      0051a4f8    add ptr,eax"
 );
 // LINE 1391:
 	asm( 
-"	      0051a4fb    mov eax,[ebp-8]"
+"	      0051a4fb    mov eax,ptr"
 "	      0051a4fe    movsx eax,byte ptr [eax]"
-"	      0051a501    mov ecx,[ebp-4Ch]"
+"	      0051a501    mov ecx,tablerow"
 "	      0051a504    mov al,[eax+ecx]"
-"	      0051a507    mov [ebp-1Ch],al"
+"	      0051a507    mov color,al"
 );
 // LINE 1392:
 	asm( 
-"	      0051a50a    mov al,[ebp-1Ch]"
-"	      0051a50d    mov ecx,[ebp-8]"
+"	      0051a50a    mov al,color"
+"	      0051a50d    mov ecx,ptr"
 "	      0051a510    mov [ecx],al"
 );
 // LINE 1393:
 	asm( 
-"	      0051a512    inc dword ptr [ebp-8]"
+"	      0051a512    inc ptr"
 );
 // LINE 1395:
 	asm( 
-"	      0051a515    mov al,[ebp-1Ch]"
-"	      0051a518    mov ecx,[ebp-8]"
+"	      0051a515    mov al,color"
+"	      0051a518    mov ecx,ptr"
 "	      0051a51b    mov [ecx],al"
 );
 // LINE 1396:
 	asm( 
-"	      0051a51d    inc dword ptr [ebp-8]"
+"	      0051a51d    inc ptr"
 );
 // LINE 1397:
 	asm( 
-"	      0051a520    mov eax,[ebp-8]"
+"	      0051a520    mov eax,ptr"
 "	      0051a523    movsx eax,byte ptr [eax]"
-"	      0051a526    mov ecx,[ebp-4Ch]"
+"	      0051a526    mov ecx,tablerow"
 "	      0051a529    mov al,[eax+ecx]"
-"	      0051a52c    mov [ebp-1Ch],al"
+"	      0051a52c    mov color,al"
 );
 // LINE 1398:
 	asm( 
-"	      0051a52f    mov al,[ebp-1Ch]"
-"	      0051a532    mov ecx,[ebp-8]"
+"	      0051a52f    mov al,color"
+"	      0051a532    mov ecx,ptr"
 "	      0051a535    mov [ecx],al"
 );
 // LINE 1399:
 	asm( 
-"	      0051a537    inc dword ptr [ebp-8]"
+"	      0051a537    inc ptr"
 );
 // LINE 1400:
 	asm( 
-"	      0051a53a    mov eax,[ebp-8]"
+"	      0051a53a    mov eax,ptr"
 "	      0051a53d    movsx eax,byte ptr [eax]"
-"	      0051a540    mov ecx,[ebp-4Ch]"
+"	      0051a540    mov ecx,tablerow"
 "	      0051a543    mov al,[eax+ecx]"
-"	      0051a546    mov [ebp-1Ch],al"
+"	      0051a546    mov color,al"
 );
 // LINE 1401:
 	asm( 
-"	      0051a549    mov al,[ebp-1Ch]"
-"	      0051a54c    mov ecx,[ebp-8]"
+"	      0051a549    mov al,color"
+"	      0051a54c    mov ecx,ptr"
 "	      0051a54f    mov [ecx],al"
 );
 // LINE 1402:
 	asm( 
-"	      0051a551    inc dword ptr [ebp-8]"
+"	      0051a551    inc ptr"
 );
 // LINE 1403:
 	asm( 
-"	      0051a554    mov eax,[ebp-8]"
+"	      0051a554    mov eax,ptr"
 "	      0051a557    movsx eax,byte ptr [eax]"
-"	      0051a55a    mov ecx,[ebp-4Ch]"
+"	      0051a55a    mov ecx,tablerow"
 "	      0051a55d    mov al,[eax+ecx]"
-"	      0051a560    mov [ebp-1Ch],al"
+"	      0051a560    mov color,al"
 );
 // LINE 1404:
 	asm( 
-"	      0051a563    mov al,[ebp-1Ch]"
-"	      0051a566    mov ecx,[ebp-8]"
+"	      0051a563    mov al,color"
+"	      0051a566    mov ecx,ptr"
 "	      0051a569    mov [ecx],al"
 );
 // LINE 1405:
 	asm( 
-"	      0051a56b    mov eax,[ebp-18h]"
+"	      0051a56b    mov eax,bufwidth"
 "	      0051a56e    sub eax,4"
-"	      0051a571    add [ebp-8],eax"
+"	      0051a571    add ptr,eax"
 );
 // LINE 1407:
 	asm( 
-"	      0051a574    mov al,[ebp-1Ch]"
-"	      0051a577    mov ecx,[ebp-8]"
+"	      0051a574    mov al,color"
+"	      0051a577    mov ecx,ptr"
 "	      0051a57a    mov [ecx],al"
 );
 // LINE 1408:
 	asm( 
-"	      0051a57c    inc dword ptr [ebp-8]"
+"	      0051a57c    inc ptr"
 );
 // LINE 1410:
 	asm( 
-"	      0051a57f    mov al,[ebp-1Ch]"
-"	      0051a582    mov ecx,[ebp-8]"
+"	      0051a57f    mov al,color"
+"	      0051a582    mov ecx,ptr"
 "	      0051a585    mov [ecx],al"
 );
 // LINE 1411:
 	asm( 
-"	      0051a587    inc dword ptr [ebp-8]"
+"	      0051a587    inc ptr"
 );
 // LINE 1413:
 	asm( 
-"	      0051a58a    mov al,[ebp-1Ch]"
-"	      0051a58d    mov ecx,[ebp-8]"
+"	      0051a58a    mov al,color"
+"	      0051a58d    mov ecx,ptr"
 "	      0051a590    mov [ecx],al"
 );
 // LINE 1414:
 	asm( 
-"	      0051a592    inc dword ptr [ebp-8]"
+"	      0051a592    inc ptr"
 );
 // LINE 1415:
 	asm( 
-"	      0051a595    mov eax,[ebp-8]"
+"	      0051a595    mov eax,ptr"
 "	      0051a598    movsx eax,byte ptr [eax]"
-"	      0051a59b    mov ecx,[ebp-4Ch]"
+"	      0051a59b    mov ecx,tablerow"
 "	      0051a59e    mov al,[eax+ecx]"
-"	      0051a5a1    mov [ebp-1Ch],al"
+"	      0051a5a1    mov color,al"
 );
 // LINE 1416:
 	asm( 
-"	      0051a5a4    mov al,[ebp-1Ch]"
-"	      0051a5a7    mov ecx,[ebp-8]"
+"	      0051a5a4    mov al,color"
+"	      0051a5a7    mov ecx,ptr"
 "	      0051a5aa    mov [ecx],al"
 );
 // LINE 1417:
 	asm( 
-"	      0051a5ac    inc dword ptr [ebp-8]"
+"	      0051a5ac    inc ptr"
 );
 // LINE 1419:
 	asm( 
-"	      0051a5af    mov al,[ebp-1Ch]"
-"	      0051a5b2    mov ecx,[ebp-8]"
+"	      0051a5af    mov al,color"
+"	      0051a5b2    mov ecx,ptr"
 "	      0051a5b5    mov [ecx],al"
 );
 // LINE 1420:
@@ -3020,544 +3020,544 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1422:
 	asm( 
-"	      0051a5bc    mov eax,[ebp-8]"
+"	      0051a5bc    mov eax,ptr"
 "	      0051a5bf    movsx eax,byte ptr [eax]"
-"	      0051a5c2    mov ecx,[ebp-4Ch]"
+"	      0051a5c2    mov ecx,tablerow"
 "	      0051a5c5    mov al,[eax+ecx]"
-"	      0051a5c8    mov [ebp-1Ch],al"
+"	      0051a5c8    mov color,al"
 );
 // LINE 1423:
 	asm( 
-"	      0051a5cb    mov al,[ebp-1Ch]"
-"	      0051a5ce    mov ecx,[ebp-8]"
+"	      0051a5cb    mov al,color"
+"	      0051a5ce    mov ecx,ptr"
 "	      0051a5d1    mov [ecx],al"
 );
 // LINE 1424:
 	asm( 
-"	      0051a5d3    inc dword ptr [ebp-8]"
+"	      0051a5d3    inc ptr"
 );
 // LINE 1425:
 	asm( 
-"	      0051a5d6    mov eax,[ebp-8]"
+"	      0051a5d6    mov eax,ptr"
 "	      0051a5d9    movsx eax,byte ptr [eax]"
-"	      0051a5dc    mov ecx,[ebp-4Ch]"
+"	      0051a5dc    mov ecx,tablerow"
 "	      0051a5df    mov al,[eax+ecx]"
-"	      0051a5e2    mov [ebp-1Ch],al"
+"	      0051a5e2    mov color,al"
 );
 // LINE 1426:
 	asm( 
-"	      0051a5e5    mov al,[ebp-1Ch]"
-"	      0051a5e8    mov ecx,[ebp-8]"
+"	      0051a5e5    mov al,color"
+"	      0051a5e8    mov ecx,ptr"
 "	      0051a5eb    mov [ecx],al"
 );
 // LINE 1427:
 	asm( 
-"	      0051a5ed    inc dword ptr [ebp-8]"
+"	      0051a5ed    inc ptr"
 );
 // LINE 1429:
 	asm( 
-"	      0051a5f0    mov al,[ebp-1Ch]"
-"	      0051a5f3    mov ecx,[ebp-8]"
+"	      0051a5f0    mov al,color"
+"	      0051a5f3    mov ecx,ptr"
 "	      0051a5f6    mov [ecx],al"
 );
 // LINE 1430:
 	asm( 
-"	      0051a5f8    inc dword ptr [ebp-8]"
+"	      0051a5f8    inc ptr"
 );
 // LINE 1431:
 	asm( 
-"	      0051a5fb    mov eax,[ebp-8]"
+"	      0051a5fb    mov eax,ptr"
 "	      0051a5fe    movsx eax,byte ptr [eax]"
-"	      0051a601    mov ecx,[ebp-4Ch]"
+"	      0051a601    mov ecx,tablerow"
 "	      0051a604    mov al,[eax+ecx]"
-"	      0051a607    mov [ebp-1Ch],al"
+"	      0051a607    mov color,al"
 );
 // LINE 1432:
 	asm( 
-"	      0051a60a    mov al,[ebp-1Ch]"
-"	      0051a60d    mov ecx,[ebp-8]"
+"	      0051a60a    mov al,color"
+"	      0051a60d    mov ecx,ptr"
 "	      0051a610    mov [ecx],al"
 );
 // LINE 1433:
 	asm( 
-"	      0051a612    inc dword ptr [ebp-8]"
+"	      0051a612    inc ptr"
 );
 // LINE 1434:
 	asm( 
-"	      0051a615    mov eax,[ebp-8]"
+"	      0051a615    mov eax,ptr"
 "	      0051a618    movsx eax,byte ptr [eax]"
-"	      0051a61b    mov ecx,[ebp-4Ch]"
+"	      0051a61b    mov ecx,tablerow"
 "	      0051a61e    mov al,[eax+ecx]"
-"	      0051a621    mov [ebp-1Ch],al"
+"	      0051a621    mov color,al"
 );
 // LINE 1435:
 	asm( 
-"	      0051a624    mov al,[ebp-1Ch]"
-"	      0051a627    mov ecx,[ebp-8]"
+"	      0051a624    mov al,color"
+"	      0051a627    mov ecx,ptr"
 "	      0051a62a    mov [ecx],al"
 );
 // LINE 1436:
 	asm( 
-"	      0051a62c    inc dword ptr [ebp-8]"
+"	      0051a62c    inc ptr"
 );
 // LINE 1438:
 	asm( 
-"	      0051a62f    mov al,[ebp-1Ch]"
-"	      0051a632    mov ecx,[ebp-8]"
+"	      0051a62f    mov al,color"
+"	      0051a632    mov ecx,ptr"
 "	      0051a635    mov [ecx],al"
 );
 // LINE 1439:
 	asm( 
-"	      0051a637    mov eax,[ebp-18h]"
+"	      0051a637    mov eax,bufwidth"
 "	      0051a63a    sub eax,5"
-"	      0051a63d    add [ebp-8],eax"
+"	      0051a63d    add ptr,eax"
 );
 // LINE 1441:
 	asm( 
-"	      0051a640    mov al,[ebp-1Ch]"
-"	      0051a643    mov ecx,[ebp-8]"
+"	      0051a640    mov al,color"
+"	      0051a643    mov ecx,ptr"
 "	      0051a646    mov [ecx],al"
 );
 // LINE 1442:
 	asm( 
-"	      0051a648    inc dword ptr [ebp-8]"
+"	      0051a648    inc ptr"
 );
 // LINE 1444:
 	asm( 
-"	      0051a64b    mov al,[ebp-1Ch]"
-"	      0051a64e    mov ecx,[ebp-8]"
+"	      0051a64b    mov al,color"
+"	      0051a64e    mov ecx,ptr"
 "	      0051a651    mov [ecx],al"
 );
 // LINE 1445:
 	asm( 
-"	      0051a653    inc dword ptr [ebp-8]"
+"	      0051a653    inc ptr"
 );
 // LINE 1446:
 	asm( 
-"	      0051a656    mov eax,[ebp-8]"
+"	      0051a656    mov eax,ptr"
 "	      0051a659    movsx eax,byte ptr [eax]"
-"	      0051a65c    mov ecx,[ebp-4Ch]"
+"	      0051a65c    mov ecx,tablerow"
 "	      0051a65f    mov al,[eax+ecx]"
-"	      0051a662    mov [ebp-1Ch],al"
+"	      0051a662    mov color,al"
 );
 // LINE 1447:
 	asm( 
-"	      0051a665    mov al,[ebp-1Ch]"
-"	      0051a668    mov ecx,[ebp-8]"
+"	      0051a665    mov al,color"
+"	      0051a668    mov ecx,ptr"
 "	      0051a66b    mov [ecx],al"
 );
 // LINE 1448:
 	asm( 
-"	      0051a66d    inc dword ptr [ebp-8]"
+"	      0051a66d    inc ptr"
 );
 // LINE 1449:
 	asm( 
-"	      0051a670    mov eax,[ebp-8]"
+"	      0051a670    mov eax,ptr"
 "	      0051a673    movsx eax,byte ptr [eax]"
-"	      0051a676    mov ecx,[ebp-4Ch]"
+"	      0051a676    mov ecx,tablerow"
 "	      0051a679    mov al,[eax+ecx]"
-"	      0051a67c    mov [ebp-1Ch],al"
+"	      0051a67c    mov color,al"
 );
 // LINE 1450:
 	asm( 
-"	      0051a67f    mov al,[ebp-1Ch]"
-"	      0051a682    mov ecx,[ebp-8]"
+"	      0051a67f    mov al,color"
+"	      0051a682    mov ecx,ptr"
 "	      0051a685    mov [ecx],al"
 );
 // LINE 1451:
 	asm( 
-"	      0051a687    inc dword ptr [ebp-8]"
+"	      0051a687    inc ptr"
 );
 // LINE 1452:
 	asm( 
-"	      0051a68a    mov eax,[ebp-8]"
+"	      0051a68a    mov eax,ptr"
 "	      0051a68d    movsx eax,byte ptr [eax]"
-"	      0051a690    mov ecx,[ebp-4Ch]"
+"	      0051a690    mov ecx,tablerow"
 "	      0051a693    mov al,[eax+ecx]"
-"	      0051a696    mov [ebp-1Ch],al"
+"	      0051a696    mov color,al"
 );
 // LINE 1453:
 	asm( 
-"	      0051a699    mov al,[ebp-1Ch]"
-"	      0051a69c    mov ecx,[ebp-8]"
+"	      0051a699    mov al,color"
+"	      0051a69c    mov ecx,ptr"
 "	      0051a69f    mov [ecx],al"
 );
 // LINE 1454:
 	asm( 
-"	      0051a6a1    inc dword ptr [ebp-8]"
+"	      0051a6a1    inc ptr"
 );
 // LINE 1455:
 	asm( 
-"	      0051a6a4    mov eax,[ebp-8]"
+"	      0051a6a4    mov eax,ptr"
 "	      0051a6a7    movsx eax,byte ptr [eax]"
-"	      0051a6aa    mov ecx,[ebp-4Ch]"
+"	      0051a6aa    mov ecx,tablerow"
 "	      0051a6ad    mov al,[eax+ecx]"
-"	      0051a6b0    mov [ebp-1Ch],al"
+"	      0051a6b0    mov color,al"
 );
 // LINE 1456:
 	asm( 
-"	      0051a6b3    mov al,[ebp-1Ch]"
-"	      0051a6b6    mov ecx,[ebp-8]"
+"	      0051a6b3    mov al,color"
+"	      0051a6b6    mov ecx,ptr"
 "	      0051a6b9    mov [ecx],al"
 );
 // LINE 1457:
 	asm( 
-"	      0051a6bb    mov eax,[ebp-18h]"
+"	      0051a6bb    mov eax,bufwidth"
 "	      0051a6be    sub eax,5"
-"	      0051a6c1    add [ebp-8],eax"
+"	      0051a6c1    add ptr,eax"
 );
 // LINE 1459:
 	asm( 
-"	      0051a6c4    mov al,[ebp-1Ch]"
-"	      0051a6c7    mov ecx,[ebp-8]"
+"	      0051a6c4    mov al,color"
+"	      0051a6c7    mov ecx,ptr"
 "	      0051a6ca    mov [ecx],al"
 );
 // LINE 1460:
 	asm( 
-"	      0051a6cc    inc dword ptr [ebp-8]"
+"	      0051a6cc    inc ptr"
 );
 // LINE 1462:
 	asm( 
-"	      0051a6cf    mov al,[ebp-1Ch]"
-"	      0051a6d2    mov ecx,[ebp-8]"
+"	      0051a6cf    mov al,color"
+"	      0051a6d2    mov ecx,ptr"
 "	      0051a6d5    mov [ecx],al"
 );
 // LINE 1463:
 	asm( 
-"	      0051a6d7    inc dword ptr [ebp-8]"
+"	      0051a6d7    inc ptr"
 );
 // LINE 1465:
 	asm( 
-"	      0051a6da    mov al,[ebp-1Ch]"
-"	      0051a6dd    mov ecx,[ebp-8]"
+"	      0051a6da    mov al,color"
+"	      0051a6dd    mov ecx,ptr"
 "	      0051a6e0    mov [ecx],al"
 );
 // LINE 1466:
 	asm( 
-"	      0051a6e2    inc dword ptr [ebp-8]"
+"	      0051a6e2    inc ptr"
 );
 // LINE 1467:
 	asm( 
-"	      0051a6e5    mov eax,[ebp-8]"
+"	      0051a6e5    mov eax,ptr"
 "	      0051a6e8    movsx eax,byte ptr [eax]"
-"	      0051a6eb    mov ecx,[ebp-4Ch]"
+"	      0051a6eb    mov ecx,tablerow"
 "	      0051a6ee    mov al,[eax+ecx]"
-"	      0051a6f1    mov [ebp-1Ch],al"
+"	      0051a6f1    mov color,al"
 );
 // LINE 1468:
 	asm( 
-"	      0051a6f4    mov al,[ebp-1Ch]"
-"	      0051a6f7    mov ecx,[ebp-8]"
+"	      0051a6f4    mov al,color"
+"	      0051a6f7    mov ecx,ptr"
 "	      0051a6fa    mov [ecx],al"
 );
 // LINE 1469:
 	asm( 
-"	      0051a6fc    inc dword ptr [ebp-8]"
+"	      0051a6fc    inc ptr"
 );
 // LINE 1470:
 	asm( 
-"	      0051a6ff    mov eax,[ebp-8]"
+"	      0051a6ff    mov eax,ptr"
 "	      0051a702    movsx eax,byte ptr [eax]"
-"	      0051a705    mov ecx,[ebp-4Ch]"
+"	      0051a705    mov ecx,tablerow"
 "	      0051a708    mov al,[eax+ecx]"
-"	      0051a70b    mov [ebp-1Ch],al"
+"	      0051a70b    mov color,al"
 );
 // LINE 1471:
 	asm( 
-"	      0051a70e    mov al,[ebp-1Ch]"
-"	      0051a711    mov ecx,[ebp-8]"
+"	      0051a70e    mov al,color"
+"	      0051a711    mov ecx,ptr"
 "	      0051a714    mov [ecx],al"
 );
 // LINE 1472:
 	asm( 
-"	      0051a716    inc dword ptr [ebp-8]"
+"	      0051a716    inc ptr"
 );
 // LINE 1473:
 	asm( 
-"	      0051a719    mov eax,[ebp-8]"
+"	      0051a719    mov eax,ptr"
 "	      0051a71c    movsx eax,byte ptr [eax]"
-"	      0051a71f    mov ecx,[ebp-4Ch]"
+"	      0051a71f    mov ecx,tablerow"
 "	      0051a722    mov al,[eax+ecx]"
-"	      0051a725    mov [ebp-1Ch],al"
+"	      0051a725    mov color,al"
 );
 // LINE 1474:
 	asm( 
-"	      0051a728    mov al,[ebp-1Ch]"
-"	      0051a72b    mov ecx,[ebp-8]"
+"	      0051a728    mov al,color"
+"	      0051a72b    mov ecx,ptr"
 "	      0051a72e    mov [ecx],al"
 );
 // LINE 1475:
 	asm( 
-"	      0051a730    mov eax,[ebp-18h]"
+"	      0051a730    mov eax,bufwidth"
 "	      0051a733    sub eax,5"
-"	      0051a736    add [ebp-8],eax"
+"	      0051a736    add ptr,eax"
 );
 // LINE 1476:
 	asm( 
-"	      0051a739    mov eax,[ebp-8]"
+"	      0051a739    mov eax,ptr"
 "	      0051a73c    movsx eax,byte ptr [eax]"
-"	      0051a73f    mov ecx,[ebp-4Ch]"
+"	      0051a73f    mov ecx,tablerow"
 "	      0051a742    mov al,[eax+ecx]"
-"	      0051a745    mov [ebp-1Ch],al"
+"	      0051a745    mov color,al"
 );
 // LINE 1477:
 	asm( 
-"	      0051a748    mov al,[ebp-1Ch]"
-"	      0051a74b    mov ecx,[ebp-8]"
+"	      0051a748    mov al,color"
+"	      0051a74b    mov ecx,ptr"
 "	      0051a74e    mov [ecx],al"
 );
 // LINE 1478:
 	asm( 
-"	      0051a750    inc dword ptr [ebp-8]"
+"	      0051a750    inc ptr"
 );
 // LINE 1480:
 	asm( 
-"	      0051a753    mov al,[ebp-1Ch]"
-"	      0051a756    mov ecx,[ebp-8]"
+"	      0051a753    mov al,color"
+"	      0051a756    mov ecx,ptr"
 "	      0051a759    mov [ecx],al"
 );
 // LINE 1481:
 	asm( 
-"	      0051a75b    inc dword ptr [ebp-8]"
+"	      0051a75b    inc ptr"
 );
 // LINE 1482:
 	asm( 
-"	      0051a75e    mov eax,[ebp-8]"
+"	      0051a75e    mov eax,ptr"
 "	      0051a761    movsx eax,byte ptr [eax]"
-"	      0051a764    mov ecx,[ebp-4Ch]"
+"	      0051a764    mov ecx,tablerow"
 "	      0051a767    mov al,[eax+ecx]"
-"	      0051a76a    mov [ebp-1Ch],al"
+"	      0051a76a    mov color,al"
 );
 // LINE 1483:
 	asm( 
-"	      0051a76d    mov al,[ebp-1Ch]"
-"	      0051a770    mov ecx,[ebp-8]"
+"	      0051a76d    mov al,color"
+"	      0051a770    mov ecx,ptr"
 "	      0051a773    mov [ecx],al"
 );
 // LINE 1484:
 	asm( 
-"	      0051a775    inc dword ptr [ebp-8]"
+"	      0051a775    inc ptr"
 );
 // LINE 1485:
 	asm( 
-"	      0051a778    mov eax,[ebp-8]"
+"	      0051a778    mov eax,ptr"
 "	      0051a77b    movsx eax,byte ptr [eax]"
-"	      0051a77e    mov ecx,[ebp-4Ch]"
+"	      0051a77e    mov ecx,tablerow"
 "	      0051a781    mov al,[eax+ecx]"
-"	      0051a784    mov [ebp-1Ch],al"
+"	      0051a784    mov color,al"
 );
 // LINE 1486:
 	asm( 
-"	      0051a787    mov al,[ebp-1Ch]"
-"	      0051a78a    mov ecx,[ebp-8]"
+"	      0051a787    mov al,color"
+"	      0051a78a    mov ecx,ptr"
 "	      0051a78d    mov [ecx],al"
 );
 // LINE 1487:
 	asm( 
-"	      0051a78f    inc dword ptr [ebp-8]"
+"	      0051a78f    inc ptr"
 );
 // LINE 1489:
 	asm( 
-"	      0051a792    mov al,[ebp-1Ch]"
-"	      0051a795    mov ecx,[ebp-8]"
+"	      0051a792    mov al,color"
+"	      0051a795    mov ecx,ptr"
 "	      0051a798    mov [ecx],al"
 );
 // LINE 1490:
 	asm( 
-"	      0051a79a    inc dword ptr [ebp-8]"
+"	      0051a79a    inc ptr"
 );
 // LINE 1491:
 	asm( 
-"	      0051a79d    mov eax,[ebp-8]"
+"	      0051a79d    mov eax,ptr"
 "	      0051a7a0    movsx eax,byte ptr [eax]"
-"	      0051a7a3    mov ecx,[ebp-4Ch]"
+"	      0051a7a3    mov ecx,tablerow"
 "	      0051a7a6    mov al,[eax+ecx]"
-"	      0051a7a9    mov [ebp-1Ch],al"
+"	      0051a7a9    mov color,al"
 );
 // LINE 1492:
 	asm( 
-"	      0051a7ac    mov al,[ebp-1Ch]"
-"	      0051a7af    mov ecx,[ebp-8]"
+"	      0051a7ac    mov al,color"
+"	      0051a7af    mov ecx,ptr"
 "	      0051a7b2    mov [ecx],al"
 );
 // LINE 1493:
 	asm( 
-"	      0051a7b4    mov eax,[ebp-18h]"
+"	      0051a7b4    mov eax,bufwidth"
 "	      0051a7b7    sub eax,5"
-"	      0051a7ba    add [ebp-8],eax"
+"	      0051a7ba    add ptr,eax"
 );
 // LINE 1494:
 	asm( 
-"	      0051a7bd    mov eax,[ebp-8]"
+"	      0051a7bd    mov eax,ptr"
 "	      0051a7c0    movsx eax,byte ptr [eax]"
-"	      0051a7c3    mov ecx,[ebp-4Ch]"
+"	      0051a7c3    mov ecx,tablerow"
 "	      0051a7c6    mov al,[eax+ecx]"
-"	      0051a7c9    mov [ebp-1Ch],al"
+"	      0051a7c9    mov color,al"
 );
 // LINE 1495:
 	asm( 
-"	      0051a7cc    mov al,[ebp-1Ch]"
-"	      0051a7cf    mov ecx,[ebp-8]"
+"	      0051a7cc    mov al,color"
+"	      0051a7cf    mov ecx,ptr"
 "	      0051a7d2    mov [ecx],al"
 );
 // LINE 1496:
 	asm( 
-"	      0051a7d4    inc dword ptr [ebp-8]"
+"	      0051a7d4    inc ptr"
 );
 // LINE 1497:
 	asm( 
-"	      0051a7d7    mov eax,[ebp-8]"
+"	      0051a7d7    mov eax,ptr"
 "	      0051a7da    movsx eax,byte ptr [eax]"
-"	      0051a7dd    mov ecx,[ebp-4Ch]"
+"	      0051a7dd    mov ecx,tablerow"
 "	      0051a7e0    mov al,[eax+ecx]"
-"	      0051a7e3    mov [ebp-1Ch],al"
+"	      0051a7e3    mov color,al"
 );
 // LINE 1498:
 	asm( 
-"	      0051a7e6    mov al,[ebp-1Ch]"
-"	      0051a7e9    mov ecx,[ebp-8]"
+"	      0051a7e6    mov al,color"
+"	      0051a7e9    mov ecx,ptr"
 "	      0051a7ec    mov [ecx],al"
 );
 // LINE 1499:
 	asm( 
-"	      0051a7ee    inc dword ptr [ebp-8]"
+"	      0051a7ee    inc ptr"
 );
 // LINE 1501:
 	asm( 
-"	      0051a7f1    mov al,[ebp-1Ch]"
-"	      0051a7f4    mov ecx,[ebp-8]"
+"	      0051a7f1    mov al,color"
+"	      0051a7f4    mov ecx,ptr"
 "	      0051a7f7    mov [ecx],al"
 );
 // LINE 1502:
 	asm( 
-"	      0051a7f9    inc dword ptr [ebp-8]"
+"	      0051a7f9    inc ptr"
 );
 // LINE 1504:
 	asm( 
-"	      0051a7fc    mov al,[ebp-1Ch]"
-"	      0051a7ff    mov ecx,[ebp-8]"
+"	      0051a7fc    mov al,color"
+"	      0051a7ff    mov ecx,ptr"
 "	      0051a802    mov [ecx],al"
 );
 // LINE 1505:
 	asm( 
-"	      0051a804    inc dword ptr [ebp-8]"
+"	      0051a804    inc ptr"
 );
 // LINE 1506:
 	asm( 
-"	      0051a807    mov eax,[ebp-8]"
+"	      0051a807    mov eax,ptr"
 "	      0051a80a    movsx eax,byte ptr [eax]"
-"	      0051a80d    mov ecx,[ebp-4Ch]"
+"	      0051a80d    mov ecx,tablerow"
 "	      0051a810    mov al,[eax+ecx]"
-"	      0051a813    mov [ebp-1Ch],al"
+"	      0051a813    mov color,al"
 );
 // LINE 1507:
 	asm( 
-"	      0051a816    mov al,[ebp-1Ch]"
-"	      0051a819    mov ecx,[ebp-8]"
+"	      0051a816    mov al,color"
+"	      0051a819    mov ecx,ptr"
 "	      0051a81c    mov [ecx],al"
 );
 // LINE 1508:
 	asm( 
-"	      0051a81e    inc dword ptr [ebp-8]"
+"	      0051a81e    inc ptr"
 );
 // LINE 1509:
 	asm( 
-"	      0051a821    mov eax,[ebp-8]"
+"	      0051a821    mov eax,ptr"
 "	      0051a824    movsx eax,byte ptr [eax]"
-"	      0051a827    mov ecx,[ebp-4Ch]"
+"	      0051a827    mov ecx,tablerow"
 "	      0051a82a    mov al,[eax+ecx]"
-"	      0051a82d    mov [ebp-1Ch],al"
+"	      0051a82d    mov color,al"
 );
 // LINE 1510:
 	asm( 
-"	      0051a830    mov al,[ebp-1Ch]"
-"	      0051a833    mov ecx,[ebp-8]"
+"	      0051a830    mov al,color"
+"	      0051a833    mov ecx,ptr"
 "	      0051a836    mov [ecx],al"
 );
 // LINE 1511:
 	asm( 
-"	      0051a838    mov eax,[ebp-18h]"
+"	      0051a838    mov eax,bufwidth"
 "	      0051a83b    sub eax,5"
-"	      0051a83e    add [ebp-8],eax"
+"	      0051a83e    add ptr,eax"
 );
 // LINE 1513:
 	asm( 
-"	      0051a841    mov al,[ebp-1Ch]"
-"	      0051a844    mov ecx,[ebp-8]"
+"	      0051a841    mov al,color"
+"	      0051a844    mov ecx,ptr"
 "	      0051a847    mov [ecx],al"
 );
 // LINE 1514:
 	asm( 
-"	      0051a849    inc dword ptr [ebp-8]"
+"	      0051a849    inc ptr"
 );
 // LINE 1515:
 	asm( 
-"	      0051a84c    mov eax,[ebp-8]"
+"	      0051a84c    mov eax,ptr"
 "	      0051a84f    movsx eax,byte ptr [eax]"
-"	      0051a852    mov ecx,[ebp-4Ch]"
+"	      0051a852    mov ecx,tablerow"
 "	      0051a855    mov al,[eax+ecx]"
-"	      0051a858    mov [ebp-1Ch],al"
+"	      0051a858    mov color,al"
 );
 // LINE 1516:
 	asm( 
-"	      0051a85b    mov al,[ebp-1Ch]"
-"	      0051a85e    mov ecx,[ebp-8]"
+"	      0051a85b    mov al,color"
+"	      0051a85e    mov ecx,ptr"
 "	      0051a861    mov [ecx],al"
 );
 // LINE 1517:
 	asm( 
-"	      0051a863    inc dword ptr [ebp-8]"
+"	      0051a863    inc ptr"
 );
 // LINE 1519:
 	asm( 
-"	      0051a866    mov al,[ebp-1Ch]"
-"	      0051a869    mov ecx,[ebp-8]"
+"	      0051a866    mov al,color"
+"	      0051a869    mov ecx,ptr"
 "	      0051a86c    mov [ecx],al"
 );
 // LINE 1520:
 	asm( 
-"	      0051a86e    inc dword ptr [ebp-8]"
+"	      0051a86e    inc ptr"
 );
 // LINE 1521:
 	asm( 
-"	      0051a871    mov eax,[ebp-8]"
+"	      0051a871    mov eax,ptr"
 "	      0051a874    movsx eax,byte ptr [eax]"
-"	      0051a877    mov ecx,[ebp-4Ch]"
+"	      0051a877    mov ecx,tablerow"
 "	      0051a87a    mov al,[eax+ecx]"
-"	      0051a87d    mov [ebp-1Ch],al"
+"	      0051a87d    mov color,al"
 );
 // LINE 1522:
 	asm( 
-"	      0051a880    mov al,[ebp-1Ch]"
-"	      0051a883    mov ecx,[ebp-8]"
+"	      0051a880    mov al,color"
+"	      0051a883    mov ecx,ptr"
 "	      0051a886    mov [ecx],al"
 );
 // LINE 1523:
 	asm( 
-"	      0051a888    inc dword ptr [ebp-8]"
+"	      0051a888    inc ptr"
 );
 // LINE 1525:
 	asm( 
-"	      0051a88b    mov al,[ebp-1Ch]"
-"	      0051a88e    mov ecx,[ebp-8]"
+"	      0051a88b    mov al,color"
+"	      0051a88e    mov ecx,ptr"
 "	      0051a891    mov [ecx],al"
 );
 // LINE 1526:
 	asm( 
-"	      0051a893    inc dword ptr [ebp-8]"
+"	      0051a893    inc ptr"
 );
 // LINE 1527:
 	asm( 
-"	      0051a896    mov eax,[ebp-8]"
+"	      0051a896    mov eax,ptr"
 "	      0051a899    movsx eax,byte ptr [eax]"
-"	      0051a89c    mov ecx,[ebp-4Ch]"
+"	      0051a89c    mov ecx,tablerow"
 "	      0051a89f    mov al,[eax+ecx]"
-"	      0051a8a2    mov [ebp-1Ch],al"
+"	      0051a8a2    mov color,al"
 );
 // LINE 1528:
 	asm( 
-"	      0051a8a5    mov al,[ebp-1Ch]"
-"	      0051a8a8    mov ecx,[ebp-8]"
+"	      0051a8a5    mov al,color"
+"	      0051a8a8    mov ecx,ptr"
 "	      0051a8ab    mov [ecx],al"
 );
 // LINE 1529:
@@ -3566,700 +3566,700 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1531:
 	asm( 
-"	      0051a8b2    mov eax,[ebp-8]"
+"	      0051a8b2    mov eax,ptr"
 "	      0051a8b5    movsx eax,byte ptr [eax]"
-"	      0051a8b8    mov ecx,[ebp-4Ch]"
+"	      0051a8b8    mov ecx,tablerow"
 "	      0051a8bb    mov al,[eax+ecx]"
-"	      0051a8be    mov [ebp-1Ch],al"
+"	      0051a8be    mov color,al"
 );
 // LINE 1532:
 	asm( 
-"	      0051a8c1    mov al,[ebp-1Ch]"
-"	      0051a8c4    mov ecx,[ebp-8]"
+"	      0051a8c1    mov al,color"
+"	      0051a8c4    mov ecx,ptr"
 "	      0051a8c7    mov [ecx],al"
 );
 // LINE 1533:
 	asm( 
-"	      0051a8c9    inc dword ptr [ebp-8]"
+"	      0051a8c9    inc ptr"
 );
 // LINE 1535:
 	asm( 
-"	      0051a8cc    mov al,[ebp-1Ch]"
-"	      0051a8cf    mov ecx,[ebp-8]"
+"	      0051a8cc    mov al,color"
+"	      0051a8cf    mov ecx,ptr"
 "	      0051a8d2    mov [ecx],al"
 );
 // LINE 1536:
 	asm( 
-"	      0051a8d4    inc dword ptr [ebp-8]"
+"	      0051a8d4    inc ptr"
 );
 // LINE 1537:
 	asm( 
-"	      0051a8d7    mov eax,[ebp-8]"
+"	      0051a8d7    mov eax,ptr"
 "	      0051a8da    movsx eax,byte ptr [eax]"
-"	      0051a8dd    mov ecx,[ebp-4Ch]"
+"	      0051a8dd    mov ecx,tablerow"
 "	      0051a8e0    mov al,[eax+ecx]"
-"	      0051a8e3    mov [ebp-1Ch],al"
+"	      0051a8e3    mov color,al"
 );
 // LINE 1538:
 	asm( 
-"	      0051a8e6    mov al,[ebp-1Ch]"
-"	      0051a8e9    mov ecx,[ebp-8]"
+"	      0051a8e6    mov al,color"
+"	      0051a8e9    mov ecx,ptr"
 "	      0051a8ec    mov [ecx],al"
 );
 // LINE 1539:
 	asm( 
-"	      0051a8ee    inc dword ptr [ebp-8]"
+"	      0051a8ee    inc ptr"
 );
 // LINE 1540:
 	asm( 
-"	      0051a8f1    mov eax,[ebp-8]"
+"	      0051a8f1    mov eax,ptr"
 "	      0051a8f4    movsx eax,byte ptr [eax]"
-"	      0051a8f7    mov ecx,[ebp-4Ch]"
+"	      0051a8f7    mov ecx,tablerow"
 "	      0051a8fa    mov al,[eax+ecx]"
-"	      0051a8fd    mov [ebp-1Ch],al"
+"	      0051a8fd    mov color,al"
 );
 // LINE 1541:
 	asm( 
-"	      0051a900    mov al,[ebp-1Ch]"
-"	      0051a903    mov ecx,[ebp-8]"
+"	      0051a900    mov al,color"
+"	      0051a903    mov ecx,ptr"
 "	      0051a906    mov [ecx],al"
 );
 // LINE 1542:
 	asm( 
-"	      0051a908    inc dword ptr [ebp-8]"
+"	      0051a908    inc ptr"
 );
 // LINE 1544:
 	asm( 
-"	      0051a90b    mov al,[ebp-1Ch]"
-"	      0051a90e    mov ecx,[ebp-8]"
+"	      0051a90b    mov al,color"
+"	      0051a90e    mov ecx,ptr"
 "	      0051a911    mov [ecx],al"
 );
 // LINE 1545:
 	asm( 
-"	      0051a913    inc dword ptr [ebp-8]"
+"	      0051a913    inc ptr"
 );
 // LINE 1547:
 	asm( 
-"	      0051a916    mov al,[ebp-1Ch]"
-"	      0051a919    mov ecx,[ebp-8]"
+"	      0051a916    mov al,color"
+"	      0051a919    mov ecx,ptr"
 "	      0051a91c    mov [ecx],al"
 );
 // LINE 1548:
 	asm( 
-"	      0051a91e    inc dword ptr [ebp-8]"
+"	      0051a91e    inc ptr"
 );
 // LINE 1549:
 	asm( 
-"	      0051a921    mov eax,[ebp-8]"
+"	      0051a921    mov eax,ptr"
 "	      0051a924    movsx eax,byte ptr [eax]"
-"	      0051a927    mov ecx,[ebp-4Ch]"
+"	      0051a927    mov ecx,tablerow"
 "	      0051a92a    mov al,[eax+ecx]"
-"	      0051a92d    mov [ebp-1Ch],al"
+"	      0051a92d    mov color,al"
 );
 // LINE 1550:
 	asm( 
-"	      0051a930    mov al,[ebp-1Ch]"
-"	      0051a933    mov ecx,[ebp-8]"
+"	      0051a930    mov al,color"
+"	      0051a933    mov ecx,ptr"
 "	      0051a936    mov [ecx],al"
 );
 // LINE 1551:
 	asm( 
-"	      0051a938    mov eax,[ebp-18h]"
+"	      0051a938    mov eax,bufwidth"
 "	      0051a93b    sub eax,6"
-"	      0051a93e    add [ebp-8],eax"
+"	      0051a93e    add ptr,eax"
 );
 // LINE 1553:
 	asm( 
-"	      0051a941    mov al,[ebp-1Ch]"
-"	      0051a944    mov ecx,[ebp-8]"
+"	      0051a941    mov al,color"
+"	      0051a944    mov ecx,ptr"
 "	      0051a947    mov [ecx],al"
 );
 // LINE 1554:
 	asm( 
-"	      0051a949    inc dword ptr [ebp-8]"
+"	      0051a949    inc ptr"
 );
 // LINE 1556:
 	asm( 
-"	      0051a94c    mov al,[ebp-1Ch]"
-"	      0051a94f    mov ecx,[ebp-8]"
+"	      0051a94c    mov al,color"
+"	      0051a94f    mov ecx,ptr"
 "	      0051a952    mov [ecx],al"
 );
 // LINE 1557:
 	asm( 
-"	      0051a954    inc dword ptr [ebp-8]"
+"	      0051a954    inc ptr"
 );
 // LINE 1558:
 	asm( 
-"	      0051a957    mov eax,[ebp-8]"
+"	      0051a957    mov eax,ptr"
 "	      0051a95a    movsx eax,byte ptr [eax]"
-"	      0051a95d    mov ecx,[ebp-4Ch]"
+"	      0051a95d    mov ecx,tablerow"
 "	      0051a960    mov al,[eax+ecx]"
-"	      0051a963    mov [ebp-1Ch],al"
+"	      0051a963    mov color,al"
 );
 // LINE 1559:
 	asm( 
-"	      0051a966    mov al,[ebp-1Ch]"
-"	      0051a969    mov ecx,[ebp-8]"
+"	      0051a966    mov al,color"
+"	      0051a969    mov ecx,ptr"
 "	      0051a96c    mov [ecx],al"
 );
 // LINE 1560:
 	asm( 
-"	      0051a96e    inc dword ptr [ebp-8]"
+"	      0051a96e    inc ptr"
 );
 // LINE 1562:
 	asm( 
-"	      0051a971    mov al,[ebp-1Ch]"
-"	      0051a974    mov ecx,[ebp-8]"
+"	      0051a971    mov al,color"
+"	      0051a974    mov ecx,ptr"
 "	      0051a977    mov [ecx],al"
 );
 // LINE 1563:
 	asm( 
-"	      0051a979    inc dword ptr [ebp-8]"
+"	      0051a979    inc ptr"
 );
 // LINE 1564:
 	asm( 
-"	      0051a97c    mov eax,[ebp-8]"
+"	      0051a97c    mov eax,ptr"
 "	      0051a97f    movsx eax,byte ptr [eax]"
-"	      0051a982    mov ecx,[ebp-4Ch]"
+"	      0051a982    mov ecx,tablerow"
 "	      0051a985    mov al,[eax+ecx]"
-"	      0051a988    mov [ebp-1Ch],al"
+"	      0051a988    mov color,al"
 );
 // LINE 1565:
 	asm( 
-"	      0051a98b    mov al,[ebp-1Ch]"
-"	      0051a98e    mov ecx,[ebp-8]"
+"	      0051a98b    mov al,color"
+"	      0051a98e    mov ecx,ptr"
 "	      0051a991    mov [ecx],al"
 );
 // LINE 1566:
 	asm( 
-"	      0051a993    inc dword ptr [ebp-8]"
+"	      0051a993    inc ptr"
 );
 // LINE 1567:
 	asm( 
-"	      0051a996    mov eax,[ebp-8]"
+"	      0051a996    mov eax,ptr"
 "	      0051a999    movsx eax,byte ptr [eax]"
-"	      0051a99c    mov ecx,[ebp-4Ch]"
+"	      0051a99c    mov ecx,tablerow"
 "	      0051a99f    mov al,[eax+ecx]"
-"	      0051a9a2    mov [ebp-1Ch],al"
+"	      0051a9a2    mov color,al"
 );
 // LINE 1568:
 	asm( 
-"	      0051a9a5    mov al,[ebp-1Ch]"
-"	      0051a9a8    mov ecx,[ebp-8]"
+"	      0051a9a5    mov al,color"
+"	      0051a9a8    mov ecx,ptr"
 "	      0051a9ab    mov [ecx],al"
 );
 // LINE 1569:
 	asm( 
-"	      0051a9ad    inc dword ptr [ebp-8]"
+"	      0051a9ad    inc ptr"
 );
 // LINE 1571:
 	asm( 
-"	      0051a9b0    mov al,[ebp-1Ch]"
-"	      0051a9b3    mov ecx,[ebp-8]"
+"	      0051a9b0    mov al,color"
+"	      0051a9b3    mov ecx,ptr"
 "	      0051a9b6    mov [ecx],al"
 );
 // LINE 1572:
 	asm( 
-"	      0051a9b8    mov eax,[ebp-18h]"
+"	      0051a9b8    mov eax,bufwidth"
 "	      0051a9bb    sub eax,6"
-"	      0051a9be    add [ebp-8],eax"
+"	      0051a9be    add ptr,eax"
 );
 // LINE 1574:
 	asm( 
-"	      0051a9c1    mov al,[ebp-1Ch]"
-"	      0051a9c4    mov ecx,[ebp-8]"
+"	      0051a9c1    mov al,color"
+"	      0051a9c4    mov ecx,ptr"
 "	      0051a9c7    mov [ecx],al"
 );
 // LINE 1575:
 	asm( 
-"	      0051a9c9    inc dword ptr [ebp-8]"
+"	      0051a9c9    inc ptr"
 );
 // LINE 1577:
 	asm( 
-"	      0051a9cc    mov al,[ebp-1Ch]"
-"	      0051a9cf    mov ecx,[ebp-8]"
+"	      0051a9cc    mov al,color"
+"	      0051a9cf    mov ecx,ptr"
 "	      0051a9d2    mov [ecx],al"
 );
 // LINE 1578:
 	asm( 
-"	      0051a9d4    inc dword ptr [ebp-8]"
+"	      0051a9d4    inc ptr"
 );
 // LINE 1579:
 	asm( 
-"	      0051a9d7    mov eax,[ebp-8]"
+"	      0051a9d7    mov eax,ptr"
 "	      0051a9da    movsx eax,byte ptr [eax]"
-"	      0051a9dd    mov ecx,[ebp-4Ch]"
+"	      0051a9dd    mov ecx,tablerow"
 "	      0051a9e0    mov al,[eax+ecx]"
-"	      0051a9e3    mov [ebp-1Ch],al"
+"	      0051a9e3    mov color,al"
 );
 // LINE 1580:
 	asm( 
-"	      0051a9e6    mov al,[ebp-1Ch]"
-"	      0051a9e9    mov ecx,[ebp-8]"
+"	      0051a9e6    mov al,color"
+"	      0051a9e9    mov ecx,ptr"
 "	      0051a9ec    mov [ecx],al"
 );
 // LINE 1581:
 	asm( 
-"	      0051a9ee    inc dword ptr [ebp-8]"
+"	      0051a9ee    inc ptr"
 );
 // LINE 1582:
 	asm( 
-"	      0051a9f1    mov eax,[ebp-8]"
+"	      0051a9f1    mov eax,ptr"
 "	      0051a9f4    movsx eax,byte ptr [eax]"
-"	      0051a9f7    mov ecx,[ebp-4Ch]"
+"	      0051a9f7    mov ecx,tablerow"
 "	      0051a9fa    mov al,[eax+ecx]"
-"	      0051a9fd    mov [ebp-1Ch],al"
+"	      0051a9fd    mov color,al"
 );
 // LINE 1583:
 	asm( 
-"	      0051aa00    mov al,[ebp-1Ch]"
-"	      0051aa03    mov ecx,[ebp-8]"
+"	      0051aa00    mov al,color"
+"	      0051aa03    mov ecx,ptr"
 "	      0051aa06    mov [ecx],al"
 );
 // LINE 1584:
 	asm( 
-"	      0051aa08    inc dword ptr [ebp-8]"
+"	      0051aa08    inc ptr"
 );
 // LINE 1586:
 	asm( 
-"	      0051aa0b    mov al,[ebp-1Ch]"
-"	      0051aa0e    mov ecx,[ebp-8]"
+"	      0051aa0b    mov al,color"
+"	      0051aa0e    mov ecx,ptr"
 "	      0051aa11    mov [ecx],al"
 );
 // LINE 1587:
 	asm( 
-"	      0051aa13    inc dword ptr [ebp-8]"
+"	      0051aa13    inc ptr"
 );
 // LINE 1588:
 	asm( 
-"	      0051aa16    mov eax,[ebp-8]"
+"	      0051aa16    mov eax,ptr"
 "	      0051aa19    movsx eax,byte ptr [eax]"
-"	      0051aa1c    mov ecx,[ebp-4Ch]"
+"	      0051aa1c    mov ecx,tablerow"
 "	      0051aa1f    mov al,[eax+ecx]"
-"	      0051aa22    mov [ebp-1Ch],al"
+"	      0051aa22    mov color,al"
 );
 // LINE 1589:
 	asm( 
-"	      0051aa25    mov al,[ebp-1Ch]"
-"	      0051aa28    mov ecx,[ebp-8]"
+"	      0051aa25    mov al,color"
+"	      0051aa28    mov ecx,ptr"
 "	      0051aa2b    mov [ecx],al"
 );
 // LINE 1590:
 	asm( 
-"	      0051aa2d    inc dword ptr [ebp-8]"
+"	      0051aa2d    inc ptr"
 );
 // LINE 1592:
 	asm( 
-"	      0051aa30    mov al,[ebp-1Ch]"
-"	      0051aa33    mov ecx,[ebp-8]"
+"	      0051aa30    mov al,color"
+"	      0051aa33    mov ecx,ptr"
 "	      0051aa36    mov [ecx],al"
 );
 // LINE 1593:
 	asm( 
-"	      0051aa38    mov eax,[ebp-18h]"
+"	      0051aa38    mov eax,bufwidth"
 "	      0051aa3b    sub eax,6"
-"	      0051aa3e    add [ebp-8],eax"
+"	      0051aa3e    add ptr,eax"
 );
 // LINE 1594:
 	asm( 
-"	      0051aa41    mov eax,[ebp-8]"
+"	      0051aa41    mov eax,ptr"
 "	      0051aa44    movsx eax,byte ptr [eax]"
-"	      0051aa47    mov ecx,[ebp-4Ch]"
+"	      0051aa47    mov ecx,tablerow"
 "	      0051aa4a    mov al,[eax+ecx]"
-"	      0051aa4d    mov [ebp-1Ch],al"
+"	      0051aa4d    mov color,al"
 );
 // LINE 1595:
 	asm( 
-"	      0051aa50    mov al,[ebp-1Ch]"
-"	      0051aa53    mov ecx,[ebp-8]"
+"	      0051aa50    mov al,color"
+"	      0051aa53    mov ecx,ptr"
 "	      0051aa56    mov [ecx],al"
 );
 // LINE 1596:
 	asm( 
-"	      0051aa58    inc dword ptr [ebp-8]"
+"	      0051aa58    inc ptr"
 );
 // LINE 1598:
 	asm( 
-"	      0051aa5b    mov al,[ebp-1Ch]"
-"	      0051aa5e    mov ecx,[ebp-8]"
+"	      0051aa5b    mov al,color"
+"	      0051aa5e    mov ecx,ptr"
 "	      0051aa61    mov [ecx],al"
 );
 // LINE 1599:
 	asm( 
-"	      0051aa63    inc dword ptr [ebp-8]"
+"	      0051aa63    inc ptr"
 );
 // LINE 1600:
 	asm( 
-"	      0051aa66    mov eax,[ebp-8]"
+"	      0051aa66    mov eax,ptr"
 "	      0051aa69    movsx eax,byte ptr [eax]"
-"	      0051aa6c    mov ecx,[ebp-4Ch]"
+"	      0051aa6c    mov ecx,tablerow"
 "	      0051aa6f    mov al,[eax+ecx]"
-"	      0051aa72    mov [ebp-1Ch],al"
+"	      0051aa72    mov color,al"
 );
 // LINE 1601:
 	asm( 
-"	      0051aa75    mov al,[ebp-1Ch]"
-"	      0051aa78    mov ecx,[ebp-8]"
+"	      0051aa75    mov al,color"
+"	      0051aa78    mov ecx,ptr"
 "	      0051aa7b    mov [ecx],al"
 );
 // LINE 1602:
 	asm( 
-"	      0051aa7d    inc dword ptr [ebp-8]"
+"	      0051aa7d    inc ptr"
 );
 // LINE 1604:
 	asm( 
-"	      0051aa80    mov al,[ebp-1Ch]"
-"	      0051aa83    mov ecx,[ebp-8]"
+"	      0051aa80    mov al,color"
+"	      0051aa83    mov ecx,ptr"
 "	      0051aa86    mov [ecx],al"
 );
 // LINE 1605:
 	asm( 
-"	      0051aa88    inc dword ptr [ebp-8]"
+"	      0051aa88    inc ptr"
 );
 // LINE 1607:
 	asm( 
-"	      0051aa8b    mov al,[ebp-1Ch]"
-"	      0051aa8e    mov ecx,[ebp-8]"
+"	      0051aa8b    mov al,color"
+"	      0051aa8e    mov ecx,ptr"
 "	      0051aa91    mov [ecx],al"
 );
 // LINE 1608:
 	asm( 
-"	      0051aa93    inc dword ptr [ebp-8]"
+"	      0051aa93    inc ptr"
 );
 // LINE 1610:
 	asm( 
-"	      0051aa96    mov al,[ebp-1Ch]"
-"	      0051aa99    mov ecx,[ebp-8]"
+"	      0051aa96    mov al,color"
+"	      0051aa99    mov ecx,ptr"
 "	      0051aa9c    mov [ecx],al"
 );
 // LINE 1611:
 	asm( 
-"	      0051aa9e    inc dword ptr [ebp-8]"
+"	      0051aa9e    inc ptr"
 );
 // LINE 1612:
 	asm( 
-"	      0051aaa1    mov eax,[ebp-8]"
+"	      0051aaa1    mov eax,ptr"
 "	      0051aaa4    movsx eax,byte ptr [eax]"
-"	      0051aaa7    mov ecx,[ebp-4Ch]"
+"	      0051aaa7    mov ecx,tablerow"
 "	      0051aaaa    mov al,[eax+ecx]"
-"	      0051aaad    mov [ebp-1Ch],al"
+"	      0051aaad    mov color,al"
 );
 // LINE 1613:
 	asm( 
-"	      0051aab0    mov al,[ebp-1Ch]"
-"	      0051aab3    mov ecx,[ebp-8]"
+"	      0051aab0    mov al,color"
+"	      0051aab3    mov ecx,ptr"
 "	      0051aab6    mov [ecx],al"
 );
 // LINE 1614:
 	asm( 
-"	      0051aab8    mov eax,[ebp-18h]"
+"	      0051aab8    mov eax,bufwidth"
 "	      0051aabb    sub eax,6"
-"	      0051aabe    add [ebp-8],eax"
+"	      0051aabe    add ptr,eax"
 );
 // LINE 1615:
 	asm( 
-"	      0051aac1    mov eax,[ebp-8]"
+"	      0051aac1    mov eax,ptr"
 "	      0051aac4    movsx eax,byte ptr [eax]"
-"	      0051aac7    mov ecx,[ebp-4Ch]"
+"	      0051aac7    mov ecx,tablerow"
 "	      0051aaca    mov al,[eax+ecx]"
-"	      0051aacd    mov [ebp-1Ch],al"
+"	      0051aacd    mov color,al"
 );
 // LINE 1616:
 	asm( 
-"	      0051aad0    mov al,[ebp-1Ch]"
-"	      0051aad3    mov ecx,[ebp-8]"
+"	      0051aad0    mov al,color"
+"	      0051aad3    mov ecx,ptr"
 "	      0051aad6    mov [ecx],al"
 );
 // LINE 1617:
 	asm( 
-"	      0051aad8    inc dword ptr [ebp-8]"
+"	      0051aad8    inc ptr"
 );
 // LINE 1618:
 	asm( 
-"	      0051aadb    mov eax,[ebp-8]"
+"	      0051aadb    mov eax,ptr"
 "	      0051aade    movsx eax,byte ptr [eax]"
-"	      0051aae1    mov ecx,[ebp-4Ch]"
+"	      0051aae1    mov ecx,tablerow"
 "	      0051aae4    mov al,[eax+ecx]"
-"	      0051aae7    mov [ebp-1Ch],al"
+"	      0051aae7    mov color,al"
 );
 // LINE 1619:
 	asm( 
-"	      0051aaea    mov al,[ebp-1Ch]"
-"	      0051aaed    mov ecx,[ebp-8]"
+"	      0051aaea    mov al,color"
+"	      0051aaed    mov ecx,ptr"
 "	      0051aaf0    mov [ecx],al"
 );
 // LINE 1620:
 	asm( 
-"	      0051aaf2    inc dword ptr [ebp-8]"
+"	      0051aaf2    inc ptr"
 );
 // LINE 1621:
 	asm( 
-"	      0051aaf5    mov eax,[ebp-8]"
+"	      0051aaf5    mov eax,ptr"
 "	      0051aaf8    movsx eax,byte ptr [eax]"
-"	      0051aafb    mov ecx,[ebp-4Ch]"
+"	      0051aafb    mov ecx,tablerow"
 "	      0051aafe    mov al,[eax+ecx]"
-"	      0051ab01    mov [ebp-1Ch],al"
+"	      0051ab01    mov color,al"
 );
 // LINE 1622:
 	asm( 
-"	      0051ab04    mov al,[ebp-1Ch]"
-"	      0051ab07    mov ecx,[ebp-8]"
+"	      0051ab04    mov al,color"
+"	      0051ab07    mov ecx,ptr"
 "	      0051ab0a    mov [ecx],al"
 );
 // LINE 1623:
 	asm( 
-"	      0051ab0c    inc dword ptr [ebp-8]"
+"	      0051ab0c    inc ptr"
 );
 // LINE 1625:
 	asm( 
-"	      0051ab0f    mov al,[ebp-1Ch]"
-"	      0051ab12    mov ecx,[ebp-8]"
+"	      0051ab0f    mov al,color"
+"	      0051ab12    mov ecx,ptr"
 "	      0051ab15    mov [ecx],al"
 );
 // LINE 1626:
 	asm( 
-"	      0051ab17    inc dword ptr [ebp-8]"
+"	      0051ab17    inc ptr"
 );
 // LINE 1627:
 	asm( 
-"	      0051ab1a    mov eax,[ebp-8]"
+"	      0051ab1a    mov eax,ptr"
 "	      0051ab1d    movsx eax,byte ptr [eax]"
-"	      0051ab20    mov ecx,[ebp-4Ch]"
+"	      0051ab20    mov ecx,tablerow"
 "	      0051ab23    mov al,[eax+ecx]"
-"	      0051ab26    mov [ebp-1Ch],al"
+"	      0051ab26    mov color,al"
 );
 // LINE 1628:
 	asm( 
-"	      0051ab29    mov al,[ebp-1Ch]"
-"	      0051ab2c    mov ecx,[ebp-8]"
+"	      0051ab29    mov al,color"
+"	      0051ab2c    mov ecx,ptr"
 "	      0051ab2f    mov [ecx],al"
 );
 // LINE 1629:
 	asm( 
-"	      0051ab31    inc dword ptr [ebp-8]"
+"	      0051ab31    inc ptr"
 );
 // LINE 1631:
 	asm( 
-"	      0051ab34    mov al,[ebp-1Ch]"
-"	      0051ab37    mov ecx,[ebp-8]"
+"	      0051ab34    mov al,color"
+"	      0051ab37    mov ecx,ptr"
 "	      0051ab3a    mov [ecx],al"
 );
 // LINE 1632:
 	asm( 
-"	      0051ab3c    inc dword ptr [ebp-8]"
+"	      0051ab3c    inc ptr"
 );
 // LINE 1634:
 	asm( 
-"	      0051ab3f    mov al,[ebp-1Ch]"
-"	      0051ab42    mov ecx,[ebp-8]"
+"	      0051ab3f    mov al,color"
+"	      0051ab42    mov ecx,ptr"
 "	      0051ab45    mov [ecx],al"
 );
 // LINE 1635:
 	asm( 
-"	      0051ab47    mov eax,[ebp-18h]"
+"	      0051ab47    mov eax,bufwidth"
 "	      0051ab4a    sub eax,6"
-"	      0051ab4d    add [ebp-8],eax"
+"	      0051ab4d    add ptr,eax"
 );
 // LINE 1636:
 	asm( 
-"	      0051ab50    mov eax,[ebp-8]"
+"	      0051ab50    mov eax,ptr"
 "	      0051ab53    movsx eax,byte ptr [eax]"
-"	      0051ab56    mov ecx,[ebp-4Ch]"
+"	      0051ab56    mov ecx,tablerow"
 "	      0051ab59    mov al,[eax+ecx]"
-"	      0051ab5c    mov [ebp-1Ch],al"
+"	      0051ab5c    mov color,al"
 );
 // LINE 1637:
 	asm( 
-"	      0051ab5f    mov al,[ebp-1Ch]"
-"	      0051ab62    mov ecx,[ebp-8]"
+"	      0051ab5f    mov al,color"
+"	      0051ab62    mov ecx,ptr"
 "	      0051ab65    mov [ecx],al"
 );
 // LINE 1638:
 	asm( 
-"	      0051ab67    inc dword ptr [ebp-8]"
+"	      0051ab67    inc ptr"
 );
 // LINE 1639:
 	asm( 
-"	      0051ab6a    mov eax,[ebp-8]"
+"	      0051ab6a    mov eax,ptr"
 "	      0051ab6d    movsx eax,byte ptr [eax]"
-"	      0051ab70    mov ecx,[ebp-4Ch]"
+"	      0051ab70    mov ecx,tablerow"
 "	      0051ab73    mov al,[eax+ecx]"
-"	      0051ab76    mov [ebp-1Ch],al"
+"	      0051ab76    mov color,al"
 );
 // LINE 1640:
 	asm( 
-"	      0051ab79    mov al,[ebp-1Ch]"
-"	      0051ab7c    mov ecx,[ebp-8]"
+"	      0051ab79    mov al,color"
+"	      0051ab7c    mov ecx,ptr"
 "	      0051ab7f    mov [ecx],al"
 );
 // LINE 1641:
 	asm( 
-"	      0051ab81    inc dword ptr [ebp-8]"
+"	      0051ab81    inc ptr"
 );
 // LINE 1643:
 	asm( 
-"	      0051ab84    mov al,[ebp-1Ch]"
-"	      0051ab87    mov ecx,[ebp-8]"
+"	      0051ab84    mov al,color"
+"	      0051ab87    mov ecx,ptr"
 "	      0051ab8a    mov [ecx],al"
 );
 // LINE 1644:
 	asm( 
-"	      0051ab8c    inc dword ptr [ebp-8]"
+"	      0051ab8c    inc ptr"
 );
 // LINE 1646:
 	asm( 
-"	      0051ab8f    mov al,[ebp-1Ch]"
-"	      0051ab92    mov ecx,[ebp-8]"
+"	      0051ab8f    mov al,color"
+"	      0051ab92    mov ecx,ptr"
 "	      0051ab95    mov [ecx],al"
 );
 // LINE 1647:
 	asm( 
-"	      0051ab97    inc dword ptr [ebp-8]"
+"	      0051ab97    inc ptr"
 );
 // LINE 1649:
 	asm( 
-"	      0051ab9a    mov al,[ebp-1Ch]"
-"	      0051ab9d    mov ecx,[ebp-8]"
+"	      0051ab9a    mov al,color"
+"	      0051ab9d    mov ecx,ptr"
 "	      0051aba0    mov [ecx],al"
 );
 // LINE 1650:
 	asm( 
-"	      0051aba2    inc dword ptr [ebp-8]"
+"	      0051aba2    inc ptr"
 );
 // LINE 1651:
 	asm( 
-"	      0051aba5    mov eax,[ebp-8]"
+"	      0051aba5    mov eax,ptr"
 "	      0051aba8    movsx eax,byte ptr [eax]"
-"	      0051abab    mov ecx,[ebp-4Ch]"
+"	      0051abab    mov ecx,tablerow"
 "	      0051abae    mov al,[eax+ecx]"
-"	      0051abb1    mov [ebp-1Ch],al"
+"	      0051abb1    mov color,al"
 );
 // LINE 1652:
 	asm( 
-"	      0051abb4    mov al,[ebp-1Ch]"
-"	      0051abb7    mov ecx,[ebp-8]"
+"	      0051abb4    mov al,color"
+"	      0051abb7    mov ecx,ptr"
 "	      0051abba    mov [ecx],al"
 );
 // LINE 1653:
 	asm( 
-"	      0051abbc    inc dword ptr [ebp-8]"
+"	      0051abbc    inc ptr"
 );
 // LINE 1655:
 	asm( 
-"	      0051abbf    mov al,[ebp-1Ch]"
-"	      0051abc2    mov ecx,[ebp-8]"
+"	      0051abbf    mov al,color"
+"	      0051abc2    mov ecx,ptr"
 "	      0051abc5    mov [ecx],al"
 );
 // LINE 1656:
 	asm( 
-"	      0051abc7    mov eax,[ebp-18h]"
+"	      0051abc7    mov eax,bufwidth"
 "	      0051abca    sub eax,6"
-"	      0051abcd    add [ebp-8],eax"
+"	      0051abcd    add ptr,eax"
 );
 // LINE 1657:
 	asm( 
-"	      0051abd0    mov eax,[ebp-8]"
+"	      0051abd0    mov eax,ptr"
 "	      0051abd3    movsx eax,byte ptr [eax]"
-"	      0051abd6    mov ecx,[ebp-4Ch]"
+"	      0051abd6    mov ecx,tablerow"
 "	      0051abd9    mov al,[eax+ecx]"
-"	      0051abdc    mov [ebp-1Ch],al"
+"	      0051abdc    mov color,al"
 );
 // LINE 1658:
 	asm( 
-"	      0051abdf    mov al,[ebp-1Ch]"
-"	      0051abe2    mov ecx,[ebp-8]"
+"	      0051abdf    mov al,color"
+"	      0051abe2    mov ecx,ptr"
 "	      0051abe5    mov [ecx],al"
 );
 // LINE 1659:
 	asm( 
-"	      0051abe7    inc dword ptr [ebp-8]"
+"	      0051abe7    inc ptr"
 );
 // LINE 1661:
 	asm( 
-"	      0051abea    mov al,[ebp-1Ch]"
-"	      0051abed    mov ecx,[ebp-8]"
+"	      0051abea    mov al,color"
+"	      0051abed    mov ecx,ptr"
 "	      0051abf0    mov [ecx],al"
 );
 // LINE 1662:
 	asm( 
-"	      0051abf2    inc dword ptr [ebp-8]"
+"	      0051abf2    inc ptr"
 );
 // LINE 1663:
 	asm( 
-"	      0051abf5    mov eax,[ebp-8]"
+"	      0051abf5    mov eax,ptr"
 "	      0051abf8    movsx eax,byte ptr [eax]"
-"	      0051abfb    mov ecx,[ebp-4Ch]"
+"	      0051abfb    mov ecx,tablerow"
 "	      0051abfe    mov al,[eax+ecx]"
-"	      0051ac01    mov [ebp-1Ch],al"
+"	      0051ac01    mov color,al"
 );
 // LINE 1664:
 	asm( 
-"	      0051ac04    mov al,[ebp-1Ch]"
-"	      0051ac07    mov ecx,[ebp-8]"
+"	      0051ac04    mov al,color"
+"	      0051ac07    mov ecx,ptr"
 "	      0051ac0a    mov [ecx],al"
 );
 // LINE 1665:
 	asm( 
-"	      0051ac0c    inc dword ptr [ebp-8]"
+"	      0051ac0c    inc ptr"
 );
 // LINE 1666:
 	asm( 
-"	      0051ac0f    mov eax,[ebp-8]"
+"	      0051ac0f    mov eax,ptr"
 "	      0051ac12    movsx eax,byte ptr [eax]"
-"	      0051ac15    mov ecx,[ebp-4Ch]"
+"	      0051ac15    mov ecx,tablerow"
 "	      0051ac18    mov al,[eax+ecx]"
-"	      0051ac1b    mov [ebp-1Ch],al"
+"	      0051ac1b    mov color,al"
 );
 // LINE 1667:
 	asm( 
-"	      0051ac1e    mov al,[ebp-1Ch]"
-"	      0051ac21    mov ecx,[ebp-8]"
+"	      0051ac1e    mov al,color"
+"	      0051ac21    mov ecx,ptr"
 "	      0051ac24    mov [ecx],al"
 );
 // LINE 1668:
 	asm( 
-"	      0051ac26    inc dword ptr [ebp-8]"
+"	      0051ac26    inc ptr"
 );
 // LINE 1670:
 	asm( 
-"	      0051ac29    mov al,[ebp-1Ch]"
-"	      0051ac2c    mov ecx,[ebp-8]"
+"	      0051ac29    mov al,color"
+"	      0051ac2c    mov ecx,ptr"
 "	      0051ac2f    mov [ecx],al"
 );
 // LINE 1671:
 	asm( 
-"	      0051ac31    inc dword ptr [ebp-8]"
+"	      0051ac31    inc ptr"
 );
 // LINE 1672:
 	asm( 
-"	      0051ac34    mov eax,[ebp-8]"
+"	      0051ac34    mov eax,ptr"
 "	      0051ac37    movsx eax,byte ptr [eax]"
-"	      0051ac3a    mov ecx,[ebp-4Ch]"
+"	      0051ac3a    mov ecx,tablerow"
 "	      0051ac3d    mov al,[eax+ecx]"
-"	      0051ac40    mov [ebp-1Ch],al"
+"	      0051ac40    mov color,al"
 );
 // LINE 1673:
 	asm( 
-"	      0051ac43    mov al,[ebp-1Ch]"
-"	      0051ac46    mov ecx,[ebp-8]"
+"	      0051ac43    mov al,color"
+"	      0051ac46    mov ecx,ptr"
 "	      0051ac49    mov [ecx],al"
 );
 // LINE 1674:
 	asm( 
-"	      0051ac4b    inc dword ptr [ebp-8]"
+"	      0051ac4b    inc ptr"
 );
 // LINE 1675:
 	asm( 
-"	      0051ac4e    mov eax,[ebp-8]"
+"	      0051ac4e    mov eax,ptr"
 "	      0051ac51    movsx eax,byte ptr [eax]"
-"	      0051ac54    mov ecx,[ebp-4Ch]"
+"	      0051ac54    mov ecx,tablerow"
 "	      0051ac57    mov al,[eax+ecx]"
-"	      0051ac5a    mov [ebp-1Ch],al"
+"	      0051ac5a    mov color,al"
 );
 // LINE 1676:
 	asm( 
-"	      0051ac5d    mov al,[ebp-1Ch]"
-"	      0051ac60    mov ecx,[ebp-8]"
+"	      0051ac5d    mov al,color"
+"	      0051ac60    mov ecx,ptr"
 "	      0051ac63    mov [ecx],al"
 );
 // LINE 1677:
@@ -4268,908 +4268,908 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1679:
 	asm( 
-"	      0051ac6a    mov eax,[ebp-8]"
+"	      0051ac6a    mov eax,ptr"
 "	      0051ac6d    movsx eax,byte ptr [eax]"
-"	      0051ac70    mov ecx,[ebp-4Ch]"
+"	      0051ac70    mov ecx,tablerow"
 "	      0051ac73    mov al,[eax+ecx]"
-"	      0051ac76    mov [ebp-1Ch],al"
+"	      0051ac76    mov color,al"
 );
 // LINE 1680:
 	asm( 
-"	      0051ac79    mov al,[ebp-1Ch]"
-"	      0051ac7c    mov ecx,[ebp-8]"
+"	      0051ac79    mov al,color"
+"	      0051ac7c    mov ecx,ptr"
 "	      0051ac7f    mov [ecx],al"
 );
 // LINE 1681:
 	asm( 
-"	      0051ac81    inc dword ptr [ebp-8]"
+"	      0051ac81    inc ptr"
 );
 // LINE 1683:
 	asm( 
-"	      0051ac84    mov al,[ebp-1Ch]"
-"	      0051ac87    mov ecx,[ebp-8]"
+"	      0051ac84    mov al,color"
+"	      0051ac87    mov ecx,ptr"
 "	      0051ac8a    mov [ecx],al"
 );
 // LINE 1684:
 	asm( 
-"	      0051ac8c    inc dword ptr [ebp-8]"
+"	      0051ac8c    inc ptr"
 );
 // LINE 1685:
 	asm( 
-"	      0051ac8f    mov eax,[ebp-8]"
+"	      0051ac8f    mov eax,ptr"
 "	      0051ac92    movsx eax,byte ptr [eax]"
-"	      0051ac95    mov ecx,[ebp-4Ch]"
+"	      0051ac95    mov ecx,tablerow"
 "	      0051ac98    mov al,[eax+ecx]"
-"	      0051ac9b    mov [ebp-1Ch],al"
+"	      0051ac9b    mov color,al"
 );
 // LINE 1686:
 	asm( 
-"	      0051ac9e    mov al,[ebp-1Ch]"
-"	      0051aca1    mov ecx,[ebp-8]"
+"	      0051ac9e    mov al,color"
+"	      0051aca1    mov ecx,ptr"
 "	      0051aca4    mov [ecx],al"
 );
 // LINE 1687:
 	asm( 
-"	      0051aca6    inc dword ptr [ebp-8]"
+"	      0051aca6    inc ptr"
 );
 // LINE 1689:
 	asm( 
-"	      0051aca9    mov al,[ebp-1Ch]"
-"	      0051acac    mov ecx,[ebp-8]"
+"	      0051aca9    mov al,color"
+"	      0051acac    mov ecx,ptr"
 "	      0051acaf    mov [ecx],al"
 );
 // LINE 1690:
 	asm( 
-"	      0051acb1    inc dword ptr [ebp-8]"
+"	      0051acb1    inc ptr"
 );
 // LINE 1691:
 	asm( 
-"	      0051acb4    mov eax,[ebp-8]"
+"	      0051acb4    mov eax,ptr"
 "	      0051acb7    movsx eax,byte ptr [eax]"
-"	      0051acba    mov ecx,[ebp-4Ch]"
+"	      0051acba    mov ecx,tablerow"
 "	      0051acbd    mov al,[eax+ecx]"
-"	      0051acc0    mov [ebp-1Ch],al"
+"	      0051acc0    mov color,al"
 );
 // LINE 1692:
 	asm( 
-"	      0051acc3    mov al,[ebp-1Ch]"
-"	      0051acc6    mov ecx,[ebp-8]"
+"	      0051acc3    mov al,color"
+"	      0051acc6    mov ecx,ptr"
 "	      0051acc9    mov [ecx],al"
 );
 // LINE 1693:
 	asm( 
-"	      0051accb    inc dword ptr [ebp-8]"
+"	      0051accb    inc ptr"
 );
 // LINE 1694:
 	asm( 
-"	      0051acce    mov eax,[ebp-8]"
+"	      0051acce    mov eax,ptr"
 "	      0051acd1    movsx eax,byte ptr [eax]"
-"	      0051acd4    mov ecx,[ebp-4Ch]"
+"	      0051acd4    mov ecx,tablerow"
 "	      0051acd7    mov al,[eax+ecx]"
-"	      0051acda    mov [ebp-1Ch],al"
+"	      0051acda    mov color,al"
 );
 // LINE 1695:
 	asm( 
-"	      0051acdd    mov al,[ebp-1Ch]"
-"	      0051ace0    mov ecx,[ebp-8]"
+"	      0051acdd    mov al,color"
+"	      0051ace0    mov ecx,ptr"
 "	      0051ace3    mov [ecx],al"
 );
 // LINE 1696:
 	asm( 
-"	      0051ace5    inc dword ptr [ebp-8]"
+"	      0051ace5    inc ptr"
 );
 // LINE 1698:
 	asm( 
-"	      0051ace8    mov al,[ebp-1Ch]"
-"	      0051aceb    mov ecx,[ebp-8]"
+"	      0051ace8    mov al,color"
+"	      0051aceb    mov ecx,ptr"
 "	      0051acee    mov [ecx],al"
 );
 // LINE 1699:
 	asm( 
-"	      0051acf0    inc dword ptr [ebp-8]"
+"	      0051acf0    inc ptr"
 );
 // LINE 1701:
 	asm( 
-"	      0051acf3    mov al,[ebp-1Ch]"
-"	      0051acf6    mov ecx,[ebp-8]"
+"	      0051acf3    mov al,color"
+"	      0051acf6    mov ecx,ptr"
 "	      0051acf9    mov [ecx],al"
 );
 // LINE 1702:
 	asm( 
-"	      0051acfb    mov eax,[ebp-18h]"
+"	      0051acfb    mov eax,bufwidth"
 "	      0051acfe    sub eax,7"
-"	      0051ad01    add [ebp-8],eax"
+"	      0051ad01    add ptr,eax"
 );
 // LINE 1704:
 	asm( 
-"	      0051ad04    mov al,[ebp-1Ch]"
-"	      0051ad07    mov ecx,[ebp-8]"
+"	      0051ad04    mov al,color"
+"	      0051ad07    mov ecx,ptr"
 "	      0051ad0a    mov [ecx],al"
 );
 // LINE 1705:
 	asm( 
-"	      0051ad0c    inc dword ptr [ebp-8]"
+"	      0051ad0c    inc ptr"
 );
 // LINE 1707:
 	asm( 
-"	      0051ad0f    mov al,[ebp-1Ch]"
-"	      0051ad12    mov ecx,[ebp-8]"
+"	      0051ad0f    mov al,color"
+"	      0051ad12    mov ecx,ptr"
 "	      0051ad15    mov [ecx],al"
 );
 // LINE 1708:
 	asm( 
-"	      0051ad17    inc dword ptr [ebp-8]"
+"	      0051ad17    inc ptr"
 );
 // LINE 1709:
 	asm( 
-"	      0051ad1a    mov eax,[ebp-8]"
+"	      0051ad1a    mov eax,ptr"
 "	      0051ad1d    movsx eax,byte ptr [eax]"
-"	      0051ad20    mov ecx,[ebp-4Ch]"
+"	      0051ad20    mov ecx,tablerow"
 "	      0051ad23    mov al,[eax+ecx]"
-"	      0051ad26    mov [ebp-1Ch],al"
+"	      0051ad26    mov color,al"
 );
 // LINE 1710:
 	asm( 
-"	      0051ad29    mov al,[ebp-1Ch]"
-"	      0051ad2c    mov ecx,[ebp-8]"
+"	      0051ad29    mov al,color"
+"	      0051ad2c    mov ecx,ptr"
 "	      0051ad2f    mov [ecx],al"
 );
 // LINE 1711:
 	asm( 
-"	      0051ad31    inc dword ptr [ebp-8]"
+"	      0051ad31    inc ptr"
 );
 // LINE 1712:
 	asm( 
-"	      0051ad34    mov eax,[ebp-8]"
+"	      0051ad34    mov eax,ptr"
 "	      0051ad37    movsx eax,byte ptr [eax]"
-"	      0051ad3a    mov ecx,[ebp-4Ch]"
+"	      0051ad3a    mov ecx,tablerow"
 "	      0051ad3d    mov al,[eax+ecx]"
-"	      0051ad40    mov [ebp-1Ch],al"
+"	      0051ad40    mov color,al"
 );
 // LINE 1713:
 	asm( 
-"	      0051ad43    mov al,[ebp-1Ch]"
-"	      0051ad46    mov ecx,[ebp-8]"
+"	      0051ad43    mov al,color"
+"	      0051ad46    mov ecx,ptr"
 "	      0051ad49    mov [ecx],al"
 );
 // LINE 1714:
 	asm( 
-"	      0051ad4b    inc dword ptr [ebp-8]"
+"	      0051ad4b    inc ptr"
 );
 // LINE 1715:
 	asm( 
-"	      0051ad4e    mov eax,[ebp-8]"
+"	      0051ad4e    mov eax,ptr"
 "	      0051ad51    movsx eax,byte ptr [eax]"
-"	      0051ad54    mov ecx,[ebp-4Ch]"
+"	      0051ad54    mov ecx,tablerow"
 "	      0051ad57    mov al,[eax+ecx]"
-"	      0051ad5a    mov [ebp-1Ch],al"
+"	      0051ad5a    mov color,al"
 );
 // LINE 1716:
 	asm( 
-"	      0051ad5d    mov al,[ebp-1Ch]"
-"	      0051ad60    mov ecx,[ebp-8]"
+"	      0051ad5d    mov al,color"
+"	      0051ad60    mov ecx,ptr"
 "	      0051ad63    mov [ecx],al"
 );
 // LINE 1717:
 	asm( 
-"	      0051ad65    inc dword ptr [ebp-8]"
+"	      0051ad65    inc ptr"
 );
 // LINE 1719:
 	asm( 
-"	      0051ad68    mov al,[ebp-1Ch]"
-"	      0051ad6b    mov ecx,[ebp-8]"
+"	      0051ad68    mov al,color"
+"	      0051ad6b    mov ecx,ptr"
 "	      0051ad6e    mov [ecx],al"
 );
 // LINE 1720:
 	asm( 
-"	      0051ad70    inc dword ptr [ebp-8]"
+"	      0051ad70    inc ptr"
 );
 // LINE 1721:
 	asm( 
-"	      0051ad73    mov eax,[ebp-8]"
+"	      0051ad73    mov eax,ptr"
 "	      0051ad76    movsx eax,byte ptr [eax]"
-"	      0051ad79    mov ecx,[ebp-4Ch]"
+"	      0051ad79    mov ecx,tablerow"
 "	      0051ad7c    mov al,[eax+ecx]"
-"	      0051ad7f    mov [ebp-1Ch],al"
+"	      0051ad7f    mov color,al"
 );
 // LINE 1722:
 	asm( 
-"	      0051ad82    mov al,[ebp-1Ch]"
-"	      0051ad85    mov ecx,[ebp-8]"
+"	      0051ad82    mov al,color"
+"	      0051ad85    mov ecx,ptr"
 "	      0051ad88    mov [ecx],al"
 );
 // LINE 1723:
 	asm( 
-"	      0051ad8a    inc dword ptr [ebp-8]"
+"	      0051ad8a    inc ptr"
 );
 // LINE 1724:
 	asm( 
-"	      0051ad8d    mov eax,[ebp-8]"
+"	      0051ad8d    mov eax,ptr"
 "	      0051ad90    movsx eax,byte ptr [eax]"
-"	      0051ad93    mov ecx,[ebp-4Ch]"
+"	      0051ad93    mov ecx,tablerow"
 "	      0051ad96    mov al,[eax+ecx]"
-"	      0051ad99    mov [ebp-1Ch],al"
+"	      0051ad99    mov color,al"
 );
 // LINE 1725:
 	asm( 
-"	      0051ad9c    mov al,[ebp-1Ch]"
-"	      0051ad9f    mov ecx,[ebp-8]"
+"	      0051ad9c    mov al,color"
+"	      0051ad9f    mov ecx,ptr"
 "	      0051ada2    mov [ecx],al"
 );
 // LINE 1726:
 	asm( 
-"	      0051ada4    mov eax,[ebp-18h]"
+"	      0051ada4    mov eax,bufwidth"
 "	      0051ada7    sub eax,7"
-"	      0051adaa    add [ebp-8],eax"
+"	      0051adaa    add ptr,eax"
 );
 // LINE 1728:
 	asm( 
-"	      0051adad    mov al,[ebp-1Ch]"
-"	      0051adb0    mov ecx,[ebp-8]"
+"	      0051adad    mov al,color"
+"	      0051adb0    mov ecx,ptr"
 "	      0051adb3    mov [ecx],al"
 );
 // LINE 1729:
 	asm( 
-"	      0051adb5    inc dword ptr [ebp-8]"
+"	      0051adb5    inc ptr"
 );
 // LINE 1731:
 	asm( 
-"	      0051adb8    mov al,[ebp-1Ch]"
-"	      0051adbb    mov ecx,[ebp-8]"
+"	      0051adb8    mov al,color"
+"	      0051adbb    mov ecx,ptr"
 "	      0051adbe    mov [ecx],al"
 );
 // LINE 1732:
 	asm( 
-"	      0051adc0    inc dword ptr [ebp-8]"
+"	      0051adc0    inc ptr"
 );
 // LINE 1733:
 	asm( 
-"	      0051adc3    mov eax,[ebp-8]"
+"	      0051adc3    mov eax,ptr"
 "	      0051adc6    movsx eax,byte ptr [eax]"
-"	      0051adc9    mov ecx,[ebp-4Ch]"
+"	      0051adc9    mov ecx,tablerow"
 "	      0051adcc    mov al,[eax+ecx]"
-"	      0051adcf    mov [ebp-1Ch],al"
+"	      0051adcf    mov color,al"
 );
 // LINE 1734:
 	asm( 
-"	      0051add2    mov al,[ebp-1Ch]"
-"	      0051add5    mov ecx,[ebp-8]"
+"	      0051add2    mov al,color"
+"	      0051add5    mov ecx,ptr"
 "	      0051add8    mov [ecx],al"
 );
 // LINE 1735:
 	asm( 
-"	      0051adda    inc dword ptr [ebp-8]"
+"	      0051adda    inc ptr"
 );
 // LINE 1737:
 	asm( 
-"	      0051addd    mov al,[ebp-1Ch]"
-"	      0051ade0    mov ecx,[ebp-8]"
+"	      0051addd    mov al,color"
+"	      0051ade0    mov ecx,ptr"
 "	      0051ade3    mov [ecx],al"
 );
 // LINE 1738:
 	asm( 
-"	      0051ade5    inc dword ptr [ebp-8]"
+"	      0051ade5    inc ptr"
 );
 // LINE 1740:
 	asm( 
-"	      0051ade8    mov al,[ebp-1Ch]"
-"	      0051adeb    mov ecx,[ebp-8]"
+"	      0051ade8    mov al,color"
+"	      0051adeb    mov ecx,ptr"
 "	      0051adee    mov [ecx],al"
 );
 // LINE 1741:
 	asm( 
-"	      0051adf0    inc dword ptr [ebp-8]"
+"	      0051adf0    inc ptr"
 );
 // LINE 1743:
 	asm( 
-"	      0051adf3    mov al,[ebp-1Ch]"
-"	      0051adf6    mov ecx,[ebp-8]"
+"	      0051adf3    mov al,color"
+"	      0051adf6    mov ecx,ptr"
 "	      0051adf9    mov [ecx],al"
 );
 // LINE 1744:
 	asm( 
-"	      0051adfb    inc dword ptr [ebp-8]"
+"	      0051adfb    inc ptr"
 );
 // LINE 1745:
 	asm( 
-"	      0051adfe    mov eax,[ebp-8]"
+"	      0051adfe    mov eax,ptr"
 "	      0051ae01    movsx eax,byte ptr [eax]"
-"	      0051ae04    mov ecx,[ebp-4Ch]"
+"	      0051ae04    mov ecx,tablerow"
 "	      0051ae07    mov al,[eax+ecx]"
-"	      0051ae0a    mov [ebp-1Ch],al"
+"	      0051ae0a    mov color,al"
 );
 // LINE 1746:
 	asm( 
-"	      0051ae0d    mov al,[ebp-1Ch]"
-"	      0051ae10    mov ecx,[ebp-8]"
+"	      0051ae0d    mov al,color"
+"	      0051ae10    mov ecx,ptr"
 "	      0051ae13    mov [ecx],al"
 );
 // LINE 1747:
 	asm( 
-"	      0051ae15    inc dword ptr [ebp-8]"
+"	      0051ae15    inc ptr"
 );
 // LINE 1748:
 	asm( 
-"	      0051ae18    mov eax,[ebp-8]"
+"	      0051ae18    mov eax,ptr"
 "	      0051ae1b    movsx eax,byte ptr [eax]"
-"	      0051ae1e    mov ecx,[ebp-4Ch]"
+"	      0051ae1e    mov ecx,tablerow"
 "	      0051ae21    mov al,[eax+ecx]"
-"	      0051ae24    mov [ebp-1Ch],al"
+"	      0051ae24    mov color,al"
 );
 // LINE 1749:
 	asm( 
-"	      0051ae27    mov al,[ebp-1Ch]"
-"	      0051ae2a    mov ecx,[ebp-8]"
+"	      0051ae27    mov al,color"
+"	      0051ae2a    mov ecx,ptr"
 "	      0051ae2d    mov [ecx],al"
 );
 // LINE 1750:
 	asm( 
-"	      0051ae2f    mov eax,[ebp-18h]"
+"	      0051ae2f    mov eax,bufwidth"
 "	      0051ae32    sub eax,7"
-"	      0051ae35    add [ebp-8],eax"
+"	      0051ae35    add ptr,eax"
 );
 // LINE 1752:
 	asm( 
-"	      0051ae38    mov al,[ebp-1Ch]"
-"	      0051ae3b    mov ecx,[ebp-8]"
+"	      0051ae38    mov al,color"
+"	      0051ae3b    mov ecx,ptr"
 "	      0051ae3e    mov [ecx],al"
 );
 // LINE 1753:
 	asm( 
-"	      0051ae40    inc dword ptr [ebp-8]"
+"	      0051ae40    inc ptr"
 );
 // LINE 1755:
 	asm( 
-"	      0051ae43    mov al,[ebp-1Ch]"
-"	      0051ae46    mov ecx,[ebp-8]"
+"	      0051ae43    mov al,color"
+"	      0051ae46    mov ecx,ptr"
 "	      0051ae49    mov [ecx],al"
 );
 // LINE 1756:
 	asm( 
-"	      0051ae4b    inc dword ptr [ebp-8]"
+"	      0051ae4b    inc ptr"
 );
 // LINE 1758:
 	asm( 
-"	      0051ae4e    mov al,[ebp-1Ch]"
-"	      0051ae51    mov ecx,[ebp-8]"
+"	      0051ae4e    mov al,color"
+"	      0051ae51    mov ecx,ptr"
 "	      0051ae54    mov [ecx],al"
 );
 // LINE 1759:
 	asm( 
-"	      0051ae56    inc dword ptr [ebp-8]"
+"	      0051ae56    inc ptr"
 );
 // LINE 1760:
 	asm( 
-"	      0051ae59    mov eax,[ebp-8]"
+"	      0051ae59    mov eax,ptr"
 "	      0051ae5c    movsx eax,byte ptr [eax]"
-"	      0051ae5f    mov ecx,[ebp-4Ch]"
+"	      0051ae5f    mov ecx,tablerow"
 "	      0051ae62    mov al,[eax+ecx]"
-"	      0051ae65    mov [ebp-1Ch],al"
+"	      0051ae65    mov color,al"
 );
 // LINE 1761:
 	asm( 
-"	      0051ae68    mov al,[ebp-1Ch]"
-"	      0051ae6b    mov ecx,[ebp-8]"
+"	      0051ae68    mov al,color"
+"	      0051ae6b    mov ecx,ptr"
 "	      0051ae6e    mov [ecx],al"
 );
 // LINE 1762:
 	asm( 
-"	      0051ae70    inc dword ptr [ebp-8]"
+"	      0051ae70    inc ptr"
 );
 // LINE 1764:
 	asm( 
-"	      0051ae73    mov al,[ebp-1Ch]"
-"	      0051ae76    mov ecx,[ebp-8]"
+"	      0051ae73    mov al,color"
+"	      0051ae76    mov ecx,ptr"
 "	      0051ae79    mov [ecx],al"
 );
 // LINE 1765:
 	asm( 
-"	      0051ae7b    inc dword ptr [ebp-8]"
+"	      0051ae7b    inc ptr"
 );
 // LINE 1766:
 	asm( 
-"	      0051ae7e    mov eax,[ebp-8]"
+"	      0051ae7e    mov eax,ptr"
 "	      0051ae81    movsx eax,byte ptr [eax]"
-"	      0051ae84    mov ecx,[ebp-4Ch]"
+"	      0051ae84    mov ecx,tablerow"
 "	      0051ae87    mov al,[eax+ecx]"
-"	      0051ae8a    mov [ebp-1Ch],al"
+"	      0051ae8a    mov color,al"
 );
 // LINE 1767:
 	asm( 
-"	      0051ae8d    mov al,[ebp-1Ch]"
-"	      0051ae90    mov ecx,[ebp-8]"
+"	      0051ae8d    mov al,color"
+"	      0051ae90    mov ecx,ptr"
 "	      0051ae93    mov [ecx],al"
 );
 // LINE 1768:
 	asm( 
-"	      0051ae95    inc dword ptr [ebp-8]"
+"	      0051ae95    inc ptr"
 );
 // LINE 1770:
 	asm( 
-"	      0051ae98    mov al,[ebp-1Ch]"
-"	      0051ae9b    mov ecx,[ebp-8]"
+"	      0051ae98    mov al,color"
+"	      0051ae9b    mov ecx,ptr"
 "	      0051ae9e    mov [ecx],al"
 );
 // LINE 1771:
 	asm( 
-"	      0051aea0    inc dword ptr [ebp-8]"
+"	      0051aea0    inc ptr"
 );
 // LINE 1773:
 	asm( 
-"	      0051aea3    mov al,[ebp-1Ch]"
-"	      0051aea6    mov ecx,[ebp-8]"
+"	      0051aea3    mov al,color"
+"	      0051aea6    mov ecx,ptr"
 "	      0051aea9    mov [ecx],al"
 );
 // LINE 1774:
 	asm( 
-"	      0051aeab    mov eax,[ebp-18h]"
+"	      0051aeab    mov eax,bufwidth"
 "	      0051aeae    sub eax,7"
-"	      0051aeb1    add [ebp-8],eax"
+"	      0051aeb1    add ptr,eax"
 );
 // LINE 1776:
 	asm( 
-"	      0051aeb4    mov al,[ebp-1Ch]"
-"	      0051aeb7    mov ecx,[ebp-8]"
+"	      0051aeb4    mov al,color"
+"	      0051aeb7    mov ecx,ptr"
 "	      0051aeba    mov [ecx],al"
 );
 // LINE 1777:
 	asm( 
-"	      0051aebc    inc dword ptr [ebp-8]"
+"	      0051aebc    inc ptr"
 );
 // LINE 1778:
 	asm( 
-"	      0051aebf    mov eax,[ebp-8]"
+"	      0051aebf    mov eax,ptr"
 "	      0051aec2    movsx eax,byte ptr [eax]"
-"	      0051aec5    mov ecx,[ebp-4Ch]"
+"	      0051aec5    mov ecx,tablerow"
 "	      0051aec8    mov al,[eax+ecx]"
-"	      0051aecb    mov [ebp-1Ch],al"
+"	      0051aecb    mov color,al"
 );
 // LINE 1779:
 	asm( 
-"	      0051aece    mov al,[ebp-1Ch]"
-"	      0051aed1    mov ecx,[ebp-8]"
+"	      0051aece    mov al,color"
+"	      0051aed1    mov ecx,ptr"
 "	      0051aed4    mov [ecx],al"
 );
 // LINE 1780:
 	asm( 
-"	      0051aed6    inc dword ptr [ebp-8]"
+"	      0051aed6    inc ptr"
 );
 // LINE 1781:
 	asm( 
-"	      0051aed9    mov eax,[ebp-8]"
+"	      0051aed9    mov eax,ptr"
 "	      0051aedc    movsx eax,byte ptr [eax]"
-"	      0051aedf    mov ecx,[ebp-4Ch]"
+"	      0051aedf    mov ecx,tablerow"
 "	      0051aee2    mov al,[eax+ecx]"
-"	      0051aee5    mov [ebp-1Ch],al"
+"	      0051aee5    mov color,al"
 );
 // LINE 1782:
 	asm( 
-"	      0051aee8    mov al,[ebp-1Ch]"
-"	      0051aeeb    mov ecx,[ebp-8]"
+"	      0051aee8    mov al,color"
+"	      0051aeeb    mov ecx,ptr"
 "	      0051aeee    mov [ecx],al"
 );
 // LINE 1783:
 	asm( 
-"	      0051aef0    inc dword ptr [ebp-8]"
+"	      0051aef0    inc ptr"
 );
 // LINE 1785:
 	asm( 
-"	      0051aef3    mov al,[ebp-1Ch]"
-"	      0051aef6    mov ecx,[ebp-8]"
+"	      0051aef3    mov al,color"
+"	      0051aef6    mov ecx,ptr"
 "	      0051aef9    mov [ecx],al"
 );
 // LINE 1786:
 	asm( 
-"	      0051aefb    inc dword ptr [ebp-8]"
+"	      0051aefb    inc ptr"
 );
 // LINE 1788:
 	asm( 
-"	      0051aefe    mov al,[ebp-1Ch]"
-"	      0051af01    mov ecx,[ebp-8]"
+"	      0051aefe    mov al,color"
+"	      0051af01    mov ecx,ptr"
 "	      0051af04    mov [ecx],al"
 );
 // LINE 1789:
 	asm( 
-"	      0051af06    inc dword ptr [ebp-8]"
+"	      0051af06    inc ptr"
 );
 // LINE 1790:
 	asm( 
-"	      0051af09    mov eax,[ebp-8]"
+"	      0051af09    mov eax,ptr"
 "	      0051af0c    movsx eax,byte ptr [eax]"
-"	      0051af0f    mov ecx,[ebp-4Ch]"
+"	      0051af0f    mov ecx,tablerow"
 "	      0051af12    mov al,[eax+ecx]"
-"	      0051af15    mov [ebp-1Ch],al"
+"	      0051af15    mov color,al"
 );
 // LINE 1791:
 	asm( 
-"	      0051af18    mov al,[ebp-1Ch]"
-"	      0051af1b    mov ecx,[ebp-8]"
+"	      0051af18    mov al,color"
+"	      0051af1b    mov ecx,ptr"
 "	      0051af1e    mov [ecx],al"
 );
 // LINE 1792:
 	asm( 
-"	      0051af20    inc dword ptr [ebp-8]"
+"	      0051af20    inc ptr"
 );
 // LINE 1793:
 	asm( 
-"	      0051af23    mov eax,[ebp-8]"
+"	      0051af23    mov eax,ptr"
 "	      0051af26    movsx eax,byte ptr [eax]"
-"	      0051af29    mov ecx,[ebp-4Ch]"
+"	      0051af29    mov ecx,tablerow"
 "	      0051af2c    mov al,[eax+ecx]"
-"	      0051af2f    mov [ebp-1Ch],al"
+"	      0051af2f    mov color,al"
 );
 // LINE 1794:
 	asm( 
-"	      0051af32    mov al,[ebp-1Ch]"
-"	      0051af35    mov ecx,[ebp-8]"
+"	      0051af32    mov al,color"
+"	      0051af35    mov ecx,ptr"
 "	      0051af38    mov [ecx],al"
 );
 // LINE 1795:
 	asm( 
-"	      0051af3a    inc dword ptr [ebp-8]"
+"	      0051af3a    inc ptr"
 );
 // LINE 1796:
 	asm( 
-"	      0051af3d    mov eax,[ebp-8]"
+"	      0051af3d    mov eax,ptr"
 "	      0051af40    movsx eax,byte ptr [eax]"
-"	      0051af43    mov ecx,[ebp-4Ch]"
+"	      0051af43    mov ecx,tablerow"
 "	      0051af46    mov al,[eax+ecx]"
-"	      0051af49    mov [ebp-1Ch],al"
+"	      0051af49    mov color,al"
 );
 // LINE 1797:
 	asm( 
-"	      0051af4c    mov al,[ebp-1Ch]"
-"	      0051af4f    mov ecx,[ebp-8]"
+"	      0051af4c    mov al,color"
+"	      0051af4f    mov ecx,ptr"
 "	      0051af52    mov [ecx],al"
 );
 // LINE 1798:
 	asm( 
-"	      0051af54    mov eax,[ebp-18h]"
+"	      0051af54    mov eax,bufwidth"
 "	      0051af57    sub eax,7"
-"	      0051af5a    add [ebp-8],eax"
+"	      0051af5a    add ptr,eax"
 );
 // LINE 1800:
 	asm( 
-"	      0051af5d    mov al,[ebp-1Ch]"
-"	      0051af60    mov ecx,[ebp-8]"
+"	      0051af5d    mov al,color"
+"	      0051af60    mov ecx,ptr"
 "	      0051af63    mov [ecx],al"
 );
 // LINE 1801:
 	asm( 
-"	      0051af65    inc dword ptr [ebp-8]"
+"	      0051af65    inc ptr"
 );
 // LINE 1803:
 	asm( 
-"	      0051af68    mov al,[ebp-1Ch]"
-"	      0051af6b    mov ecx,[ebp-8]"
+"	      0051af68    mov al,color"
+"	      0051af6b    mov ecx,ptr"
 "	      0051af6e    mov [ecx],al"
 );
 // LINE 1804:
 	asm( 
-"	      0051af70    inc dword ptr [ebp-8]"
+"	      0051af70    inc ptr"
 );
 // LINE 1806:
 	asm( 
-"	      0051af73    mov al,[ebp-1Ch]"
-"	      0051af76    mov ecx,[ebp-8]"
+"	      0051af73    mov al,color"
+"	      0051af76    mov ecx,ptr"
 "	      0051af79    mov [ecx],al"
 );
 // LINE 1807:
 	asm( 
-"	      0051af7b    inc dword ptr [ebp-8]"
+"	      0051af7b    inc ptr"
 );
 // LINE 1808:
 	asm( 
-"	      0051af7e    mov eax,[ebp-8]"
+"	      0051af7e    mov eax,ptr"
 "	      0051af81    movsx eax,byte ptr [eax]"
-"	      0051af84    mov ecx,[ebp-4Ch]"
+"	      0051af84    mov ecx,tablerow"
 "	      0051af87    mov al,[eax+ecx]"
-"	      0051af8a    mov [ebp-1Ch],al"
+"	      0051af8a    mov color,al"
 );
 // LINE 1809:
 	asm( 
-"	      0051af8d    mov al,[ebp-1Ch]"
-"	      0051af90    mov ecx,[ebp-8]"
+"	      0051af8d    mov al,color"
+"	      0051af90    mov ecx,ptr"
 "	      0051af93    mov [ecx],al"
 );
 // LINE 1810:
 	asm( 
-"	      0051af95    inc dword ptr [ebp-8]"
+"	      0051af95    inc ptr"
 );
 // LINE 1811:
 	asm( 
-"	      0051af98    mov eax,[ebp-8]"
+"	      0051af98    mov eax,ptr"
 "	      0051af9b    movsx eax,byte ptr [eax]"
-"	      0051af9e    mov ecx,[ebp-4Ch]"
+"	      0051af9e    mov ecx,tablerow"
 "	      0051afa1    mov al,[eax+ecx]"
-"	      0051afa4    mov [ebp-1Ch],al"
+"	      0051afa4    mov color,al"
 );
 // LINE 1812:
 	asm( 
-"	      0051afa7    mov al,[ebp-1Ch]"
-"	      0051afaa    mov ecx,[ebp-8]"
+"	      0051afa7    mov al,color"
+"	      0051afaa    mov ecx,ptr"
 "	      0051afad    mov [ecx],al"
 );
 // LINE 1813:
 	asm( 
-"	      0051afaf    inc dword ptr [ebp-8]"
+"	      0051afaf    inc ptr"
 );
 // LINE 1814:
 	asm( 
-"	      0051afb2    mov eax,[ebp-8]"
+"	      0051afb2    mov eax,ptr"
 "	      0051afb5    movsx eax,byte ptr [eax]"
-"	      0051afb8    mov ecx,[ebp-4Ch]"
+"	      0051afb8    mov ecx,tablerow"
 "	      0051afbb    mov al,[eax+ecx]"
-"	      0051afbe    mov [ebp-1Ch],al"
+"	      0051afbe    mov color,al"
 );
 // LINE 1815:
 	asm( 
-"	      0051afc1    mov al,[ebp-1Ch]"
-"	      0051afc4    mov ecx,[ebp-8]"
+"	      0051afc1    mov al,color"
+"	      0051afc4    mov ecx,ptr"
 "	      0051afc7    mov [ecx],al"
 );
 // LINE 1816:
 	asm( 
-"	      0051afc9    inc dword ptr [ebp-8]"
+"	      0051afc9    inc ptr"
 );
 // LINE 1818:
 	asm( 
-"	      0051afcc    mov al,[ebp-1Ch]"
-"	      0051afcf    mov ecx,[ebp-8]"
+"	      0051afcc    mov al,color"
+"	      0051afcf    mov ecx,ptr"
 "	      0051afd2    mov [ecx],al"
 );
 // LINE 1819:
 	asm( 
-"	      0051afd4    inc dword ptr [ebp-8]"
+"	      0051afd4    inc ptr"
 );
 // LINE 1821:
 	asm( 
-"	      0051afd7    mov al,[ebp-1Ch]"
-"	      0051afda    mov ecx,[ebp-8]"
+"	      0051afd7    mov al,color"
+"	      0051afda    mov ecx,ptr"
 "	      0051afdd    mov [ecx],al"
 );
 // LINE 1822:
 	asm( 
-"	      0051afdf    mov eax,[ebp-18h]"
+"	      0051afdf    mov eax,bufwidth"
 "	      0051afe2    sub eax,7"
-"	      0051afe5    add [ebp-8],eax"
+"	      0051afe5    add ptr,eax"
 );
 // LINE 1824:
 	asm( 
-"	      0051afe8    mov al,[ebp-1Ch]"
-"	      0051afeb    mov ecx,[ebp-8]"
+"	      0051afe8    mov al,color"
+"	      0051afeb    mov ecx,ptr"
 "	      0051afee    mov [ecx],al"
 );
 // LINE 1825:
 	asm( 
-"	      0051aff0    inc dword ptr [ebp-8]"
+"	      0051aff0    inc ptr"
 );
 // LINE 1826:
 	asm( 
-"	      0051aff3    mov eax,[ebp-8]"
+"	      0051aff3    mov eax,ptr"
 "	      0051aff6    movsx eax,byte ptr [eax]"
-"	      0051aff9    mov ecx,[ebp-4Ch]"
+"	      0051aff9    mov ecx,tablerow"
 "	      0051affc    mov al,[eax+ecx]"
-"	      0051afff    mov [ebp-1Ch],al"
+"	      0051afff    mov color,al"
 );
 // LINE 1827:
 	asm( 
-"	      0051b002    mov al,[ebp-1Ch]"
-"	      0051b005    mov ecx,[ebp-8]"
+"	      0051b002    mov al,color"
+"	      0051b005    mov ecx,ptr"
 "	      0051b008    mov [ecx],al"
 );
 // LINE 1828:
 	asm( 
-"	      0051b00a    inc dword ptr [ebp-8]"
+"	      0051b00a    inc ptr"
 );
 // LINE 1829:
 	asm( 
-"	      0051b00d    mov eax,[ebp-8]"
+"	      0051b00d    mov eax,ptr"
 "	      0051b010    movsx eax,byte ptr [eax]"
-"	      0051b013    mov ecx,[ebp-4Ch]"
+"	      0051b013    mov ecx,tablerow"
 "	      0051b016    mov al,[eax+ecx]"
-"	      0051b019    mov [ebp-1Ch],al"
+"	      0051b019    mov color,al"
 );
 // LINE 1830:
 	asm( 
-"	      0051b01c    mov al,[ebp-1Ch]"
-"	      0051b01f    mov ecx,[ebp-8]"
+"	      0051b01c    mov al,color"
+"	      0051b01f    mov ecx,ptr"
 "	      0051b022    mov [ecx],al"
 );
 // LINE 1831:
 	asm( 
-"	      0051b024    inc dword ptr [ebp-8]"
+"	      0051b024    inc ptr"
 );
 // LINE 1833:
 	asm( 
-"	      0051b027    mov al,[ebp-1Ch]"
-"	      0051b02a    mov ecx,[ebp-8]"
+"	      0051b027    mov al,color"
+"	      0051b02a    mov ecx,ptr"
 "	      0051b02d    mov [ecx],al"
 );
 // LINE 1834:
 	asm( 
-"	      0051b02f    inc dword ptr [ebp-8]"
+"	      0051b02f    inc ptr"
 );
 // LINE 1836:
 	asm( 
-"	      0051b032    mov al,[ebp-1Ch]"
-"	      0051b035    mov ecx,[ebp-8]"
+"	      0051b032    mov al,color"
+"	      0051b035    mov ecx,ptr"
 "	      0051b038    mov [ecx],al"
 );
 // LINE 1837:
 	asm( 
-"	      0051b03a    inc dword ptr [ebp-8]"
+"	      0051b03a    inc ptr"
 );
 // LINE 1839:
 	asm( 
-"	      0051b03d    mov al,[ebp-1Ch]"
-"	      0051b040    mov ecx,[ebp-8]"
+"	      0051b03d    mov al,color"
+"	      0051b040    mov ecx,ptr"
 "	      0051b043    mov [ecx],al"
 );
 // LINE 1840:
 	asm( 
-"	      0051b045    inc dword ptr [ebp-8]"
+"	      0051b045    inc ptr"
 );
 // LINE 1841:
 	asm( 
-"	      0051b048    mov eax,[ebp-8]"
+"	      0051b048    mov eax,ptr"
 "	      0051b04b    movsx eax,byte ptr [eax]"
-"	      0051b04e    mov ecx,[ebp-4Ch]"
+"	      0051b04e    mov ecx,tablerow"
 "	      0051b051    mov al,[eax+ecx]"
-"	      0051b054    mov [ebp-1Ch],al"
+"	      0051b054    mov color,al"
 );
 // LINE 1842:
 	asm( 
-"	      0051b057    mov al,[ebp-1Ch]"
-"	      0051b05a    mov ecx,[ebp-8]"
+"	      0051b057    mov al,color"
+"	      0051b05a    mov ecx,ptr"
 "	      0051b05d    mov [ecx],al"
 );
 // LINE 1843:
 	asm( 
-"	      0051b05f    inc dword ptr [ebp-8]"
+"	      0051b05f    inc ptr"
 );
 // LINE 1844:
 	asm( 
-"	      0051b062    mov eax,[ebp-8]"
+"	      0051b062    mov eax,ptr"
 "	      0051b065    movsx eax,byte ptr [eax]"
-"	      0051b068    mov ecx,[ebp-4Ch]"
+"	      0051b068    mov ecx,tablerow"
 "	      0051b06b    mov al,[eax+ecx]"
-"	      0051b06e    mov [ebp-1Ch],al"
+"	      0051b06e    mov color,al"
 );
 // LINE 1845:
 	asm( 
-"	      0051b071    mov al,[ebp-1Ch]"
-"	      0051b074    mov ecx,[ebp-8]"
+"	      0051b071    mov al,color"
+"	      0051b074    mov ecx,ptr"
 "	      0051b077    mov [ecx],al"
 );
 // LINE 1846:
 	asm( 
-"	      0051b079    mov eax,[ebp-18h]"
+"	      0051b079    mov eax,bufwidth"
 "	      0051b07c    sub eax,7"
-"	      0051b07f    add [ebp-8],eax"
+"	      0051b07f    add ptr,eax"
 );
 // LINE 1847:
 	asm( 
-"	      0051b082    mov eax,[ebp-8]"
+"	      0051b082    mov eax,ptr"
 "	      0051b085    movsx eax,byte ptr [eax]"
-"	      0051b088    mov ecx,[ebp-4Ch]"
+"	      0051b088    mov ecx,tablerow"
 "	      0051b08b    mov al,[eax+ecx]"
-"	      0051b08e    mov [ebp-1Ch],al"
+"	      0051b08e    mov color,al"
 );
 // LINE 1848:
 	asm( 
-"	      0051b091    mov al,[ebp-1Ch]"
-"	      0051b094    mov ecx,[ebp-8]"
+"	      0051b091    mov al,color"
+"	      0051b094    mov ecx,ptr"
 "	      0051b097    mov [ecx],al"
 );
 // LINE 1849:
 	asm( 
-"	      0051b099    inc dword ptr [ebp-8]"
+"	      0051b099    inc ptr"
 );
 // LINE 1851:
 	asm( 
-"	      0051b09c    mov al,[ebp-1Ch]"
-"	      0051b09f    mov ecx,[ebp-8]"
+"	      0051b09c    mov al,color"
+"	      0051b09f    mov ecx,ptr"
 "	      0051b0a2    mov [ecx],al"
 );
 // LINE 1852:
 	asm( 
-"	      0051b0a4    inc dword ptr [ebp-8]"
+"	      0051b0a4    inc ptr"
 );
 // LINE 1853:
 	asm( 
-"	      0051b0a7    mov eax,[ebp-8]"
+"	      0051b0a7    mov eax,ptr"
 "	      0051b0aa    movsx eax,byte ptr [eax]"
-"	      0051b0ad    mov ecx,[ebp-4Ch]"
+"	      0051b0ad    mov ecx,tablerow"
 "	      0051b0b0    mov al,[eax+ecx]"
-"	      0051b0b3    mov [ebp-1Ch],al"
+"	      0051b0b3    mov color,al"
 );
 // LINE 1854:
 	asm( 
-"	      0051b0b6    mov al,[ebp-1Ch]"
-"	      0051b0b9    mov ecx,[ebp-8]"
+"	      0051b0b6    mov al,color"
+"	      0051b0b9    mov ecx,ptr"
 "	      0051b0bc    mov [ecx],al"
 );
 // LINE 1855:
 	asm( 
-"	      0051b0be    inc dword ptr [ebp-8]"
+"	      0051b0be    inc ptr"
 );
 // LINE 1856:
 	asm( 
-"	      0051b0c1    mov eax,[ebp-8]"
+"	      0051b0c1    mov eax,ptr"
 "	      0051b0c4    movsx eax,byte ptr [eax]"
-"	      0051b0c7    mov ecx,[ebp-4Ch]"
+"	      0051b0c7    mov ecx,tablerow"
 "	      0051b0ca    mov al,[eax+ecx]"
-"	      0051b0cd    mov [ebp-1Ch],al"
+"	      0051b0cd    mov color,al"
 );
 // LINE 1857:
 	asm( 
-"	      0051b0d0    mov al,[ebp-1Ch]"
-"	      0051b0d3    mov ecx,[ebp-8]"
+"	      0051b0d0    mov al,color"
+"	      0051b0d3    mov ecx,ptr"
 "	      0051b0d6    mov [ecx],al"
 );
 // LINE 1858:
 	asm( 
-"	      0051b0d8    inc dword ptr [ebp-8]"
+"	      0051b0d8    inc ptr"
 );
 // LINE 1859:
 	asm( 
-"	      0051b0db    mov eax,[ebp-8]"
+"	      0051b0db    mov eax,ptr"
 "	      0051b0de    movsx eax,byte ptr [eax]"
-"	      0051b0e1    mov ecx,[ebp-4Ch]"
+"	      0051b0e1    mov ecx,tablerow"
 "	      0051b0e4    mov al,[eax+ecx]"
-"	      0051b0e7    mov [ebp-1Ch],al"
+"	      0051b0e7    mov color,al"
 );
 // LINE 1860:
 	asm( 
-"	      0051b0ea    mov al,[ebp-1Ch]"
-"	      0051b0ed    mov ecx,[ebp-8]"
+"	      0051b0ea    mov al,color"
+"	      0051b0ed    mov ecx,ptr"
 "	      0051b0f0    mov [ecx],al"
 );
 // LINE 1861:
 	asm( 
-"	      0051b0f2    inc dword ptr [ebp-8]"
+"	      0051b0f2    inc ptr"
 );
 // LINE 1863:
 	asm( 
-"	      0051b0f5    mov al,[ebp-1Ch]"
-"	      0051b0f8    mov ecx,[ebp-8]"
+"	      0051b0f5    mov al,color"
+"	      0051b0f8    mov ecx,ptr"
 "	      0051b0fb    mov [ecx],al"
 );
 // LINE 1864:
 	asm( 
-"	      0051b0fd    inc dword ptr [ebp-8]"
+"	      0051b0fd    inc ptr"
 );
 // LINE 1865:
 	asm( 
-"	      0051b100    mov eax,[ebp-8]"
+"	      0051b100    mov eax,ptr"
 "	      0051b103    movsx eax,byte ptr [eax]"
-"	      0051b106    mov ecx,[ebp-4Ch]"
+"	      0051b106    mov ecx,tablerow"
 "	      0051b109    mov al,[eax+ecx]"
-"	      0051b10c    mov [ebp-1Ch],al"
+"	      0051b10c    mov color,al"
 );
 // LINE 1866:
 	asm( 
-"	      0051b10f    mov al,[ebp-1Ch]"
-"	      0051b112    mov ecx,[ebp-8]"
+"	      0051b10f    mov al,color"
+"	      0051b112    mov ecx,ptr"
 "	      0051b115    mov [ecx],al"
 );
 // LINE 1867:
 	asm( 
-"	      0051b117    inc dword ptr [ebp-8]"
+"	      0051b117    inc ptr"
 );
 // LINE 1868:
 	asm( 
-"	      0051b11a    mov eax,[ebp-8]"
+"	      0051b11a    mov eax,ptr"
 "	      0051b11d    movsx eax,byte ptr [eax]"
-"	      0051b120    mov ecx,[ebp-4Ch]"
+"	      0051b120    mov ecx,tablerow"
 "	      0051b123    mov al,[eax+ecx]"
-"	      0051b126    mov [ebp-1Ch],al"
+"	      0051b126    mov color,al"
 );
 // LINE 1869:
 	asm( 
-"	      0051b129    mov al,[ebp-1Ch]"
-"	      0051b12c    mov ecx,[ebp-8]"
+"	      0051b129    mov al,color"
+"	      0051b12c    mov ecx,ptr"
 "	      0051b12f    mov [ecx],al"
 );
 // LINE 1870:
@@ -5178,2622 +5178,2622 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 1872:
 	asm( 
-"	      0051b136    mov eax,[ebp-8]"
+"	      0051b136    mov eax,ptr"
 "	      0051b139    movsx eax,byte ptr [eax]"
-"	      0051b13c    mov ecx,[ebp-4Ch]"
+"	      0051b13c    mov ecx,tablerow"
 "	      0051b13f    mov al,[eax+ecx]"
-"	      0051b142    mov [ebp-1Ch],al"
+"	      0051b142    mov color,al"
 );
 // LINE 1873:
 	asm( 
-"	      0051b145    mov al,[ebp-1Ch]"
-"	      0051b148    mov ecx,[ebp-8]"
+"	      0051b145    mov al,color"
+"	      0051b148    mov ecx,ptr"
 "	      0051b14b    mov [ecx],al"
 );
 // LINE 1874:
 	asm( 
-"	      0051b14d    inc dword ptr [ebp-8]"
+"	      0051b14d    inc ptr"
 );
 // LINE 1875:
 	asm( 
-"	      0051b150    mov eax,[ebp-8]"
+"	      0051b150    mov eax,ptr"
 "	      0051b153    movsx eax,byte ptr [eax]"
-"	      0051b156    mov ecx,[ebp-4Ch]"
+"	      0051b156    mov ecx,tablerow"
 "	      0051b159    mov al,[eax+ecx]"
-"	      0051b15c    mov [ebp-1Ch],al"
+"	      0051b15c    mov color,al"
 );
 // LINE 1876:
 	asm( 
-"	      0051b15f    mov al,[ebp-1Ch]"
-"	      0051b162    mov ecx,[ebp-8]"
+"	      0051b15f    mov al,color"
+"	      0051b162    mov ecx,ptr"
 "	      0051b165    mov [ecx],al"
 );
 // LINE 1877:
 	asm( 
-"	      0051b167    inc dword ptr [ebp-8]"
+"	      0051b167    inc ptr"
 );
 // LINE 1879:
 	asm( 
-"	      0051b16a    mov al,[ebp-1Ch]"
-"	      0051b16d    mov ecx,[ebp-8]"
+"	      0051b16a    mov al,color"
+"	      0051b16d    mov ecx,ptr"
 "	      0051b170    mov [ecx],al"
 );
 // LINE 1880:
 	asm( 
-"	      0051b172    inc dword ptr [ebp-8]"
+"	      0051b172    inc ptr"
 );
 // LINE 1882:
 	asm( 
-"	      0051b175    mov al,[ebp-1Ch]"
-"	      0051b178    mov ecx,[ebp-8]"
+"	      0051b175    mov al,color"
+"	      0051b178    mov ecx,ptr"
 "	      0051b17b    mov [ecx],al"
 );
 // LINE 1883:
 	asm( 
-"	      0051b17d    inc dword ptr [ebp-8]"
+"	      0051b17d    inc ptr"
 );
 // LINE 1885:
 	asm( 
-"	      0051b180    mov al,[ebp-1Ch]"
-"	      0051b183    mov ecx,[ebp-8]"
+"	      0051b180    mov al,color"
+"	      0051b183    mov ecx,ptr"
 "	      0051b186    mov [ecx],al"
 );
 // LINE 1886:
 	asm( 
-"	      0051b188    inc dword ptr [ebp-8]"
+"	      0051b188    inc ptr"
 );
 // LINE 1888:
 	asm( 
-"	      0051b18b    mov al,[ebp-1Ch]"
-"	      0051b18e    mov ecx,[ebp-8]"
+"	      0051b18b    mov al,color"
+"	      0051b18e    mov ecx,ptr"
 "	      0051b191    mov [ecx],al"
 );
 // LINE 1889:
 	asm( 
-"	      0051b193    inc dword ptr [ebp-8]"
+"	      0051b193    inc ptr"
 );
 // LINE 1890:
 	asm( 
-"	      0051b196    mov eax,[ebp-8]"
+"	      0051b196    mov eax,ptr"
 "	      0051b199    movsx eax,byte ptr [eax]"
-"	      0051b19c    mov ecx,[ebp-4Ch]"
+"	      0051b19c    mov ecx,tablerow"
 "	      0051b19f    mov al,[eax+ecx]"
-"	      0051b1a2    mov [ebp-1Ch],al"
+"	      0051b1a2    mov color,al"
 );
 // LINE 1891:
 	asm( 
-"	      0051b1a5    mov al,[ebp-1Ch]"
-"	      0051b1a8    mov ecx,[ebp-8]"
+"	      0051b1a5    mov al,color"
+"	      0051b1a8    mov ecx,ptr"
 "	      0051b1ab    mov [ecx],al"
 );
 // LINE 1892:
 	asm( 
-"	      0051b1ad    inc dword ptr [ebp-8]"
+"	      0051b1ad    inc ptr"
 );
 // LINE 1893:
 	asm( 
-"	      0051b1b0    mov eax,[ebp-8]"
+"	      0051b1b0    mov eax,ptr"
 "	      0051b1b3    movsx eax,byte ptr [eax]"
-"	      0051b1b6    mov ecx,[ebp-4Ch]"
+"	      0051b1b6    mov ecx,tablerow"
 "	      0051b1b9    mov al,[eax+ecx]"
-"	      0051b1bc    mov [ebp-1Ch],al"
+"	      0051b1bc    mov color,al"
 );
 // LINE 1894:
 	asm( 
-"	      0051b1bf    mov al,[ebp-1Ch]"
-"	      0051b1c2    mov ecx,[ebp-8]"
+"	      0051b1bf    mov al,color"
+"	      0051b1c2    mov ecx,ptr"
 "	      0051b1c5    mov [ecx],al"
 );
 // LINE 1895:
 	asm( 
-"	      0051b1c7    inc dword ptr [ebp-8]"
+"	      0051b1c7    inc ptr"
 );
 // LINE 1897:
 	asm( 
-"	      0051b1ca    mov al,[ebp-1Ch]"
-"	      0051b1cd    mov ecx,[ebp-8]"
+"	      0051b1ca    mov al,color"
+"	      0051b1cd    mov ecx,ptr"
 "	      0051b1d0    mov [ecx],al"
 );
 // LINE 1898:
 	asm( 
-"	      0051b1d2    mov eax,[ebp-18h]"
+"	      0051b1d2    mov eax,bufwidth"
 "	      0051b1d5    sub eax,8"
-"	      0051b1d8    add [ebp-8],eax"
+"	      0051b1d8    add ptr,eax"
 );
 // LINE 1900:
 	asm( 
-"	      0051b1db    mov al,[ebp-1Ch]"
-"	      0051b1de    mov ecx,[ebp-8]"
+"	      0051b1db    mov al,color"
+"	      0051b1de    mov ecx,ptr"
 "	      0051b1e1    mov [ecx],al"
 );
 // LINE 1901:
 	asm( 
-"	      0051b1e3    inc dword ptr [ebp-8]"
+"	      0051b1e3    inc ptr"
 );
 // LINE 1902:
 	asm( 
-"	      0051b1e6    mov eax,[ebp-8]"
+"	      0051b1e6    mov eax,ptr"
 "	      0051b1e9    movsx eax,byte ptr [eax]"
-"	      0051b1ec    mov ecx,[ebp-4Ch]"
+"	      0051b1ec    mov ecx,tablerow"
 "	      0051b1ef    mov al,[eax+ecx]"
-"	      0051b1f2    mov [ebp-1Ch],al"
+"	      0051b1f2    mov color,al"
 );
 // LINE 1903:
 	asm( 
-"	      0051b1f5    mov al,[ebp-1Ch]"
-"	      0051b1f8    mov ecx,[ebp-8]"
+"	      0051b1f5    mov al,color"
+"	      0051b1f8    mov ecx,ptr"
 "	      0051b1fb    mov [ecx],al"
 );
 // LINE 1904:
 	asm( 
-"	      0051b1fd    inc dword ptr [ebp-8]"
+"	      0051b1fd    inc ptr"
 );
 // LINE 1905:
 	asm( 
-"	      0051b200    mov eax,[ebp-8]"
+"	      0051b200    mov eax,ptr"
 "	      0051b203    movsx eax,byte ptr [eax]"
-"	      0051b206    mov ecx,[ebp-4Ch]"
+"	      0051b206    mov ecx,tablerow"
 "	      0051b209    mov al,[eax+ecx]"
-"	      0051b20c    mov [ebp-1Ch],al"
+"	      0051b20c    mov color,al"
 );
 // LINE 1906:
 	asm( 
-"	      0051b20f    mov al,[ebp-1Ch]"
-"	      0051b212    mov ecx,[ebp-8]"
+"	      0051b20f    mov al,color"
+"	      0051b212    mov ecx,ptr"
 "	      0051b215    mov [ecx],al"
 );
 // LINE 1907:
 	asm( 
-"	      0051b217    inc dword ptr [ebp-8]"
+"	      0051b217    inc ptr"
 );
 // LINE 1909:
 	asm( 
-"	      0051b21a    mov al,[ebp-1Ch]"
-"	      0051b21d    mov ecx,[ebp-8]"
+"	      0051b21a    mov al,color"
+"	      0051b21d    mov ecx,ptr"
 "	      0051b220    mov [ecx],al"
 );
 // LINE 1910:
 	asm( 
-"	      0051b222    inc dword ptr [ebp-8]"
+"	      0051b222    inc ptr"
 );
 // LINE 1911:
 	asm( 
-"	      0051b225    mov eax,[ebp-8]"
+"	      0051b225    mov eax,ptr"
 "	      0051b228    movsx eax,byte ptr [eax]"
-"	      0051b22b    mov ecx,[ebp-4Ch]"
+"	      0051b22b    mov ecx,tablerow"
 "	      0051b22e    mov al,[eax+ecx]"
-"	      0051b231    mov [ebp-1Ch],al"
+"	      0051b231    mov color,al"
 );
 // LINE 1912:
 	asm( 
-"	      0051b234    mov al,[ebp-1Ch]"
-"	      0051b237    mov ecx,[ebp-8]"
+"	      0051b234    mov al,color"
+"	      0051b237    mov ecx,ptr"
 "	      0051b23a    mov [ecx],al"
 );
 // LINE 1913:
 	asm( 
-"	      0051b23c    inc dword ptr [ebp-8]"
+"	      0051b23c    inc ptr"
 );
 // LINE 1915:
 	asm( 
-"	      0051b23f    mov al,[ebp-1Ch]"
-"	      0051b242    mov ecx,[ebp-8]"
+"	      0051b23f    mov al,color"
+"	      0051b242    mov ecx,ptr"
 "	      0051b245    mov [ecx],al"
 );
 // LINE 1916:
 	asm( 
-"	      0051b247    inc dword ptr [ebp-8]"
+"	      0051b247    inc ptr"
 );
 // LINE 1917:
 	asm( 
-"	      0051b24a    mov eax,[ebp-8]"
+"	      0051b24a    mov eax,ptr"
 "	      0051b24d    movsx eax,byte ptr [eax]"
-"	      0051b250    mov ecx,[ebp-4Ch]"
+"	      0051b250    mov ecx,tablerow"
 "	      0051b253    mov al,[eax+ecx]"
-"	      0051b256    mov [ebp-1Ch],al"
+"	      0051b256    mov color,al"
 );
 // LINE 1918:
 	asm( 
-"	      0051b259    mov al,[ebp-1Ch]"
-"	      0051b25c    mov ecx,[ebp-8]"
+"	      0051b259    mov al,color"
+"	      0051b25c    mov ecx,ptr"
 "	      0051b25f    mov [ecx],al"
 );
 // LINE 1919:
 	asm( 
-"	      0051b261    inc dword ptr [ebp-8]"
+"	      0051b261    inc ptr"
 );
 // LINE 1921:
 	asm( 
-"	      0051b264    mov al,[ebp-1Ch]"
-"	      0051b267    mov ecx,[ebp-8]"
+"	      0051b264    mov al,color"
+"	      0051b267    mov ecx,ptr"
 "	      0051b26a    mov [ecx],al"
 );
 // LINE 1922:
 	asm( 
-"	      0051b26c    inc dword ptr [ebp-8]"
+"	      0051b26c    inc ptr"
 );
 // LINE 1923:
 	asm( 
-"	      0051b26f    mov eax,[ebp-8]"
+"	      0051b26f    mov eax,ptr"
 "	      0051b272    movsx eax,byte ptr [eax]"
-"	      0051b275    mov ecx,[ebp-4Ch]"
+"	      0051b275    mov ecx,tablerow"
 "	      0051b278    mov al,[eax+ecx]"
-"	      0051b27b    mov [ebp-1Ch],al"
+"	      0051b27b    mov color,al"
 );
 // LINE 1924:
 	asm( 
-"	      0051b27e    mov al,[ebp-1Ch]"
-"	      0051b281    mov ecx,[ebp-8]"
+"	      0051b27e    mov al,color"
+"	      0051b281    mov ecx,ptr"
 "	      0051b284    mov [ecx],al"
 );
 // LINE 1925:
 	asm( 
-"	      0051b286    mov eax,[ebp-18h]"
+"	      0051b286    mov eax,bufwidth"
 "	      0051b289    sub eax,8"
-"	      0051b28c    add [ebp-8],eax"
+"	      0051b28c    add ptr,eax"
 );
 // LINE 1926:
 	asm( 
-"	      0051b28f    mov eax,[ebp-8]"
+"	      0051b28f    mov eax,ptr"
 "	      0051b292    movsx eax,byte ptr [eax]"
-"	      0051b295    mov ecx,[ebp-4Ch]"
+"	      0051b295    mov ecx,tablerow"
 "	      0051b298    mov al,[eax+ecx]"
-"	      0051b29b    mov [ebp-1Ch],al"
+"	      0051b29b    mov color,al"
 );
 // LINE 1927:
 	asm( 
-"	      0051b29e    mov al,[ebp-1Ch]"
-"	      0051b2a1    mov ecx,[ebp-8]"
+"	      0051b29e    mov al,color"
+"	      0051b2a1    mov ecx,ptr"
 "	      0051b2a4    mov [ecx],al"
 );
 // LINE 1928:
 	asm( 
-"	      0051b2a6    inc dword ptr [ebp-8]"
+"	      0051b2a6    inc ptr"
 );
 // LINE 1930:
 	asm( 
-"	      0051b2a9    mov al,[ebp-1Ch]"
-"	      0051b2ac    mov ecx,[ebp-8]"
+"	      0051b2a9    mov al,color"
+"	      0051b2ac    mov ecx,ptr"
 "	      0051b2af    mov [ecx],al"
 );
 // LINE 1931:
 	asm( 
-"	      0051b2b1    inc dword ptr [ebp-8]"
+"	      0051b2b1    inc ptr"
 );
 // LINE 1932:
 	asm( 
-"	      0051b2b4    mov eax,[ebp-8]"
+"	      0051b2b4    mov eax,ptr"
 "	      0051b2b7    movsx eax,byte ptr [eax]"
-"	      0051b2ba    mov ecx,[ebp-4Ch]"
+"	      0051b2ba    mov ecx,tablerow"
 "	      0051b2bd    mov al,[eax+ecx]"
-"	      0051b2c0    mov [ebp-1Ch],al"
+"	      0051b2c0    mov color,al"
 );
 // LINE 1933:
 	asm( 
-"	      0051b2c3    mov al,[ebp-1Ch]"
-"	      0051b2c6    mov ecx,[ebp-8]"
+"	      0051b2c3    mov al,color"
+"	      0051b2c6    mov ecx,ptr"
 "	      0051b2c9    mov [ecx],al"
 );
 // LINE 1934:
 	asm( 
-"	      0051b2cb    inc dword ptr [ebp-8]"
+"	      0051b2cb    inc ptr"
 );
 // LINE 1935:
 	asm( 
-"	      0051b2ce    mov eax,[ebp-8]"
+"	      0051b2ce    mov eax,ptr"
 "	      0051b2d1    movsx eax,byte ptr [eax]"
-"	      0051b2d4    mov ecx,[ebp-4Ch]"
+"	      0051b2d4    mov ecx,tablerow"
 "	      0051b2d7    mov al,[eax+ecx]"
-"	      0051b2da    mov [ebp-1Ch],al"
+"	      0051b2da    mov color,al"
 );
 // LINE 1936:
 	asm( 
-"	      0051b2dd    mov al,[ebp-1Ch]"
-"	      0051b2e0    mov ecx,[ebp-8]"
+"	      0051b2dd    mov al,color"
+"	      0051b2e0    mov ecx,ptr"
 "	      0051b2e3    mov [ecx],al"
 );
 // LINE 1937:
 	asm( 
-"	      0051b2e5    inc dword ptr [ebp-8]"
+"	      0051b2e5    inc ptr"
 );
 // LINE 1939:
 	asm( 
-"	      0051b2e8    mov al,[ebp-1Ch]"
-"	      0051b2eb    mov ecx,[ebp-8]"
+"	      0051b2e8    mov al,color"
+"	      0051b2eb    mov ecx,ptr"
 "	      0051b2ee    mov [ecx],al"
 );
 // LINE 1940:
 	asm( 
-"	      0051b2f0    inc dword ptr [ebp-8]"
+"	      0051b2f0    inc ptr"
 );
 // LINE 1941:
 	asm( 
-"	      0051b2f3    mov eax,[ebp-8]"
+"	      0051b2f3    mov eax,ptr"
 "	      0051b2f6    movsx eax,byte ptr [eax]"
-"	      0051b2f9    mov ecx,[ebp-4Ch]"
+"	      0051b2f9    mov ecx,tablerow"
 "	      0051b2fc    mov al,[eax+ecx]"
-"	      0051b2ff    mov [ebp-1Ch],al"
+"	      0051b2ff    mov color,al"
 );
 // LINE 1942:
 	asm( 
-"	      0051b302    mov al,[ebp-1Ch]"
-"	      0051b305    mov ecx,[ebp-8]"
+"	      0051b302    mov al,color"
+"	      0051b305    mov ecx,ptr"
 "	      0051b308    mov [ecx],al"
 );
 // LINE 1943:
 	asm( 
-"	      0051b30a    inc dword ptr [ebp-8]"
+"	      0051b30a    inc ptr"
 );
 // LINE 1944:
 	asm( 
-"	      0051b30d    mov eax,[ebp-8]"
+"	      0051b30d    mov eax,ptr"
 "	      0051b310    movsx eax,byte ptr [eax]"
-"	      0051b313    mov ecx,[ebp-4Ch]"
+"	      0051b313    mov ecx,tablerow"
 "	      0051b316    mov al,[eax+ecx]"
-"	      0051b319    mov [ebp-1Ch],al"
+"	      0051b319    mov color,al"
 );
 // LINE 1945:
 	asm( 
-"	      0051b31c    mov al,[ebp-1Ch]"
-"	      0051b31f    mov ecx,[ebp-8]"
+"	      0051b31c    mov al,color"
+"	      0051b31f    mov ecx,ptr"
 "	      0051b322    mov [ecx],al"
 );
 // LINE 1946:
 	asm( 
-"	      0051b324    inc dword ptr [ebp-8]"
+"	      0051b324    inc ptr"
 );
 // LINE 1948:
 	asm( 
-"	      0051b327    mov al,[ebp-1Ch]"
-"	      0051b32a    mov ecx,[ebp-8]"
+"	      0051b327    mov al,color"
+"	      0051b32a    mov ecx,ptr"
 "	      0051b32d    mov [ecx],al"
 );
 // LINE 1949:
 	asm( 
-"	      0051b32f    inc dword ptr [ebp-8]"
+"	      0051b32f    inc ptr"
 );
 // LINE 1950:
 	asm( 
-"	      0051b332    mov eax,[ebp-8]"
+"	      0051b332    mov eax,ptr"
 "	      0051b335    movsx eax,byte ptr [eax]"
-"	      0051b338    mov ecx,[ebp-4Ch]"
+"	      0051b338    mov ecx,tablerow"
 "	      0051b33b    mov al,[eax+ecx]"
-"	      0051b33e    mov [ebp-1Ch],al"
+"	      0051b33e    mov color,al"
 );
 // LINE 1951:
 	asm( 
-"	      0051b341    mov al,[ebp-1Ch]"
-"	      0051b344    mov ecx,[ebp-8]"
+"	      0051b341    mov al,color"
+"	      0051b344    mov ecx,ptr"
 "	      0051b347    mov [ecx],al"
 );
 // LINE 1952:
 	asm( 
-"	      0051b349    mov eax,[ebp-18h]"
+"	      0051b349    mov eax,bufwidth"
 "	      0051b34c    sub eax,8"
-"	      0051b34f    add [ebp-8],eax"
+"	      0051b34f    add ptr,eax"
 );
 // LINE 1953:
 	asm( 
-"	      0051b352    mov eax,[ebp-8]"
+"	      0051b352    mov eax,ptr"
 "	      0051b355    movsx eax,byte ptr [eax]"
-"	      0051b358    mov ecx,[ebp-4Ch]"
+"	      0051b358    mov ecx,tablerow"
 "	      0051b35b    mov al,[eax+ecx]"
-"	      0051b35e    mov [ebp-1Ch],al"
+"	      0051b35e    mov color,al"
 );
 // LINE 1954:
 	asm( 
-"	      0051b361    mov al,[ebp-1Ch]"
-"	      0051b364    mov ecx,[ebp-8]"
+"	      0051b361    mov al,color"
+"	      0051b364    mov ecx,ptr"
 "	      0051b367    mov [ecx],al"
 );
 // LINE 1955:
 	asm( 
-"	      0051b369    inc dword ptr [ebp-8]"
+"	      0051b369    inc ptr"
 );
 // LINE 1957:
 	asm( 
-"	      0051b36c    mov al,[ebp-1Ch]"
-"	      0051b36f    mov ecx,[ebp-8]"
+"	      0051b36c    mov al,color"
+"	      0051b36f    mov ecx,ptr"
 "	      0051b372    mov [ecx],al"
 );
 // LINE 1958:
 	asm( 
-"	      0051b374    inc dword ptr [ebp-8]"
+"	      0051b374    inc ptr"
 );
 // LINE 1959:
 	asm( 
-"	      0051b377    mov eax,[ebp-8]"
+"	      0051b377    mov eax,ptr"
 "	      0051b37a    movsx eax,byte ptr [eax]"
-"	      0051b37d    mov ecx,[ebp-4Ch]"
+"	      0051b37d    mov ecx,tablerow"
 "	      0051b380    mov al,[eax+ecx]"
-"	      0051b383    mov [ebp-1Ch],al"
+"	      0051b383    mov color,al"
 );
 // LINE 1960:
 	asm( 
-"	      0051b386    mov al,[ebp-1Ch]"
-"	      0051b389    mov ecx,[ebp-8]"
+"	      0051b386    mov al,color"
+"	      0051b389    mov ecx,ptr"
 "	      0051b38c    mov [ecx],al"
 );
 // LINE 1961:
 	asm( 
-"	      0051b38e    inc dword ptr [ebp-8]"
+"	      0051b38e    inc ptr"
 );
 // LINE 1963:
 	asm( 
-"	      0051b391    mov al,[ebp-1Ch]"
-"	      0051b394    mov ecx,[ebp-8]"
+"	      0051b391    mov al,color"
+"	      0051b394    mov ecx,ptr"
 "	      0051b397    mov [ecx],al"
 );
 // LINE 1964:
 	asm( 
-"	      0051b399    inc dword ptr [ebp-8]"
+"	      0051b399    inc ptr"
 );
 // LINE 1965:
 	asm( 
-"	      0051b39c    mov eax,[ebp-8]"
+"	      0051b39c    mov eax,ptr"
 "	      0051b39f    movsx eax,byte ptr [eax]"
-"	      0051b3a2    mov ecx,[ebp-4Ch]"
+"	      0051b3a2    mov ecx,tablerow"
 "	      0051b3a5    mov al,[eax+ecx]"
-"	      0051b3a8    mov [ebp-1Ch],al"
+"	      0051b3a8    mov color,al"
 );
 // LINE 1966:
 	asm( 
-"	      0051b3ab    mov al,[ebp-1Ch]"
-"	      0051b3ae    mov ecx,[ebp-8]"
+"	      0051b3ab    mov al,color"
+"	      0051b3ae    mov ecx,ptr"
 "	      0051b3b1    mov [ecx],al"
 );
 // LINE 1967:
 	asm( 
-"	      0051b3b3    inc dword ptr [ebp-8]"
+"	      0051b3b3    inc ptr"
 );
 // LINE 1968:
 	asm( 
-"	      0051b3b6    mov eax,[ebp-8]"
+"	      0051b3b6    mov eax,ptr"
 "	      0051b3b9    movsx eax,byte ptr [eax]"
-"	      0051b3bc    mov ecx,[ebp-4Ch]"
+"	      0051b3bc    mov ecx,tablerow"
 "	      0051b3bf    mov al,[eax+ecx]"
-"	      0051b3c2    mov [ebp-1Ch],al"
+"	      0051b3c2    mov color,al"
 );
 // LINE 1969:
 	asm( 
-"	      0051b3c5    mov al,[ebp-1Ch]"
-"	      0051b3c8    mov ecx,[ebp-8]"
+"	      0051b3c5    mov al,color"
+"	      0051b3c8    mov ecx,ptr"
 "	      0051b3cb    mov [ecx],al"
 );
 // LINE 1970:
 	asm( 
-"	      0051b3cd    inc dword ptr [ebp-8]"
+"	      0051b3cd    inc ptr"
 );
 // LINE 1972:
 	asm( 
-"	      0051b3d0    mov al,[ebp-1Ch]"
-"	      0051b3d3    mov ecx,[ebp-8]"
+"	      0051b3d0    mov al,color"
+"	      0051b3d3    mov ecx,ptr"
 "	      0051b3d6    mov [ecx],al"
 );
 // LINE 1973:
 	asm( 
-"	      0051b3d8    inc dword ptr [ebp-8]"
+"	      0051b3d8    inc ptr"
 );
 // LINE 1974:
 	asm( 
-"	      0051b3db    mov eax,[ebp-8]"
+"	      0051b3db    mov eax,ptr"
 "	      0051b3de    movsx eax,byte ptr [eax]"
-"	      0051b3e1    mov ecx,[ebp-4Ch]"
+"	      0051b3e1    mov ecx,tablerow"
 "	      0051b3e4    mov al,[eax+ecx]"
-"	      0051b3e7    mov [ebp-1Ch],al"
+"	      0051b3e7    mov color,al"
 );
 // LINE 1975:
 	asm( 
-"	      0051b3ea    mov al,[ebp-1Ch]"
-"	      0051b3ed    mov ecx,[ebp-8]"
+"	      0051b3ea    mov al,color"
+"	      0051b3ed    mov ecx,ptr"
 "	      0051b3f0    mov [ecx],al"
 );
 // LINE 1976:
 	asm( 
-"	      0051b3f2    inc dword ptr [ebp-8]"
+"	      0051b3f2    inc ptr"
 );
 // LINE 1977:
 	asm( 
-"	      0051b3f5    mov eax,[ebp-8]"
+"	      0051b3f5    mov eax,ptr"
 "	      0051b3f8    movsx eax,byte ptr [eax]"
-"	      0051b3fb    mov ecx,[ebp-4Ch]"
+"	      0051b3fb    mov ecx,tablerow"
 "	      0051b3fe    mov al,[eax+ecx]"
-"	      0051b401    mov [ebp-1Ch],al"
+"	      0051b401    mov color,al"
 );
 // LINE 1978:
 	asm( 
-"	      0051b404    mov al,[ebp-1Ch]"
-"	      0051b407    mov ecx,[ebp-8]"
+"	      0051b404    mov al,color"
+"	      0051b407    mov ecx,ptr"
 "	      0051b40a    mov [ecx],al"
 );
 // LINE 1979:
 	asm( 
-"	      0051b40c    mov eax,[ebp-18h]"
+"	      0051b40c    mov eax,bufwidth"
 "	      0051b40f    sub eax,8"
-"	      0051b412    add [ebp-8],eax"
+"	      0051b412    add ptr,eax"
 );
 // LINE 1980:
 	asm( 
-"	      0051b415    mov eax,[ebp-8]"
+"	      0051b415    mov eax,ptr"
 "	      0051b418    movsx eax,byte ptr [eax]"
-"	      0051b41b    mov ecx,[ebp-4Ch]"
+"	      0051b41b    mov ecx,tablerow"
 "	      0051b41e    mov al,[eax+ecx]"
-"	      0051b421    mov [ebp-1Ch],al"
+"	      0051b421    mov color,al"
 );
 // LINE 1981:
 	asm( 
-"	      0051b424    mov al,[ebp-1Ch]"
-"	      0051b427    mov ecx,[ebp-8]"
+"	      0051b424    mov al,color"
+"	      0051b427    mov ecx,ptr"
 "	      0051b42a    mov [ecx],al"
 );
 // LINE 1982:
 	asm( 
-"	      0051b42c    inc dword ptr [ebp-8]"
+"	      0051b42c    inc ptr"
 );
 // LINE 1983:
 	asm( 
-"	      0051b42f    mov eax,[ebp-8]"
+"	      0051b42f    mov eax,ptr"
 "	      0051b432    movsx eax,byte ptr [eax]"
-"	      0051b435    mov ecx,[ebp-4Ch]"
+"	      0051b435    mov ecx,tablerow"
 "	      0051b438    mov al,[eax+ecx]"
-"	      0051b43b    mov [ebp-1Ch],al"
+"	      0051b43b    mov color,al"
 );
 // LINE 1984:
 	asm( 
-"	      0051b43e    mov al,[ebp-1Ch]"
-"	      0051b441    mov ecx,[ebp-8]"
+"	      0051b43e    mov al,color"
+"	      0051b441    mov ecx,ptr"
 "	      0051b444    mov [ecx],al"
 );
 // LINE 1985:
 	asm( 
-"	      0051b446    inc dword ptr [ebp-8]"
+"	      0051b446    inc ptr"
 );
 // LINE 1987:
 	asm( 
-"	      0051b449    mov al,[ebp-1Ch]"
-"	      0051b44c    mov ecx,[ebp-8]"
+"	      0051b449    mov al,color"
+"	      0051b44c    mov ecx,ptr"
 "	      0051b44f    mov [ecx],al"
 );
 // LINE 1988:
 	asm( 
-"	      0051b451    inc dword ptr [ebp-8]"
+"	      0051b451    inc ptr"
 );
 // LINE 1989:
 	asm( 
-"	      0051b454    mov eax,[ebp-8]"
+"	      0051b454    mov eax,ptr"
 "	      0051b457    movsx eax,byte ptr [eax]"
-"	      0051b45a    mov ecx,[ebp-4Ch]"
+"	      0051b45a    mov ecx,tablerow"
 "	      0051b45d    mov al,[eax+ecx]"
-"	      0051b460    mov [ebp-1Ch],al"
+"	      0051b460    mov color,al"
 );
 // LINE 1990:
 	asm( 
-"	      0051b463    mov al,[ebp-1Ch]"
-"	      0051b466    mov ecx,[ebp-8]"
+"	      0051b463    mov al,color"
+"	      0051b466    mov ecx,ptr"
 "	      0051b469    mov [ecx],al"
 );
 // LINE 1991:
 	asm( 
-"	      0051b46b    inc dword ptr [ebp-8]"
+"	      0051b46b    inc ptr"
 );
 // LINE 1992:
 	asm( 
-"	      0051b46e    mov eax,[ebp-8]"
+"	      0051b46e    mov eax,ptr"
 "	      0051b471    movsx eax,byte ptr [eax]"
-"	      0051b474    mov ecx,[ebp-4Ch]"
+"	      0051b474    mov ecx,tablerow"
 "	      0051b477    mov al,[eax+ecx]"
-"	      0051b47a    mov [ebp-1Ch],al"
+"	      0051b47a    mov color,al"
 );
 // LINE 1993:
 	asm( 
-"	      0051b47d    mov al,[ebp-1Ch]"
-"	      0051b480    mov ecx,[ebp-8]"
+"	      0051b47d    mov al,color"
+"	      0051b480    mov ecx,ptr"
 "	      0051b483    mov [ecx],al"
 );
 // LINE 1994:
 	asm( 
-"	      0051b485    inc dword ptr [ebp-8]"
+"	      0051b485    inc ptr"
 );
 // LINE 1995:
 	asm( 
-"	      0051b488    mov eax,[ebp-8]"
+"	      0051b488    mov eax,ptr"
 "	      0051b48b    movsx eax,byte ptr [eax]"
-"	      0051b48e    mov ecx,[ebp-4Ch]"
+"	      0051b48e    mov ecx,tablerow"
 "	      0051b491    mov al,[eax+ecx]"
-"	      0051b494    mov [ebp-1Ch],al"
+"	      0051b494    mov color,al"
 );
 // LINE 1996:
 	asm( 
-"	      0051b497    mov al,[ebp-1Ch]"
-"	      0051b49a    mov ecx,[ebp-8]"
+"	      0051b497    mov al,color"
+"	      0051b49a    mov ecx,ptr"
 "	      0051b49d    mov [ecx],al"
 );
 // LINE 1997:
 	asm( 
-"	      0051b49f    inc dword ptr [ebp-8]"
+"	      0051b49f    inc ptr"
 );
 // LINE 1999:
 	asm( 
-"	      0051b4a2    mov al,[ebp-1Ch]"
-"	      0051b4a5    mov ecx,[ebp-8]"
+"	      0051b4a2    mov al,color"
+"	      0051b4a5    mov ecx,ptr"
 "	      0051b4a8    mov [ecx],al"
 );
 // LINE 2000:
 	asm( 
-"	      0051b4aa    inc dword ptr [ebp-8]"
+"	      0051b4aa    inc ptr"
 );
 // LINE 2002:
 	asm( 
-"	      0051b4ad    mov al,[ebp-1Ch]"
-"	      0051b4b0    mov ecx,[ebp-8]"
+"	      0051b4ad    mov al,color"
+"	      0051b4b0    mov ecx,ptr"
 "	      0051b4b3    mov [ecx],al"
 );
 // LINE 2003:
 	asm( 
-"	      0051b4b5    inc dword ptr [ebp-8]"
+"	      0051b4b5    inc ptr"
 );
 // LINE 2005:
 	asm( 
-"	      0051b4b8    mov al,[ebp-1Ch]"
-"	      0051b4bb    mov ecx,[ebp-8]"
+"	      0051b4b8    mov al,color"
+"	      0051b4bb    mov ecx,ptr"
 "	      0051b4be    mov [ecx],al"
 );
 // LINE 2006:
 	asm( 
-"	      0051b4c0    mov eax,[ebp-18h]"
+"	      0051b4c0    mov eax,bufwidth"
 "	      0051b4c3    sub eax,8"
-"	      0051b4c6    add [ebp-8],eax"
+"	      0051b4c6    add ptr,eax"
 );
 // LINE 2008:
 	asm( 
-"	      0051b4c9    mov al,[ebp-1Ch]"
-"	      0051b4cc    mov ecx,[ebp-8]"
+"	      0051b4c9    mov al,color"
+"	      0051b4cc    mov ecx,ptr"
 "	      0051b4cf    mov [ecx],al"
 );
 // LINE 2009:
 	asm( 
-"	      0051b4d1    inc dword ptr [ebp-8]"
+"	      0051b4d1    inc ptr"
 );
 // LINE 2011:
 	asm( 
-"	      0051b4d4    mov al,[ebp-1Ch]"
-"	      0051b4d7    mov ecx,[ebp-8]"
+"	      0051b4d4    mov al,color"
+"	      0051b4d7    mov ecx,ptr"
 "	      0051b4da    mov [ecx],al"
 );
 // LINE 2012:
 	asm( 
-"	      0051b4dc    inc dword ptr [ebp-8]"
+"	      0051b4dc    inc ptr"
 );
 // LINE 2013:
 	asm( 
-"	      0051b4df    mov eax,[ebp-8]"
+"	      0051b4df    mov eax,ptr"
 "	      0051b4e2    movsx eax,byte ptr [eax]"
-"	      0051b4e5    mov ecx,[ebp-4Ch]"
+"	      0051b4e5    mov ecx,tablerow"
 "	      0051b4e8    mov al,[eax+ecx]"
-"	      0051b4eb    mov [ebp-1Ch],al"
+"	      0051b4eb    mov color,al"
 );
 // LINE 2014:
 	asm( 
-"	      0051b4ee    mov al,[ebp-1Ch]"
-"	      0051b4f1    mov ecx,[ebp-8]"
+"	      0051b4ee    mov al,color"
+"	      0051b4f1    mov ecx,ptr"
 "	      0051b4f4    mov [ecx],al"
 );
 // LINE 2015:
 	asm( 
-"	      0051b4f6    inc dword ptr [ebp-8]"
+"	      0051b4f6    inc ptr"
 );
 // LINE 2016:
 	asm( 
-"	      0051b4f9    mov eax,[ebp-8]"
+"	      0051b4f9    mov eax,ptr"
 "	      0051b4fc    movsx eax,byte ptr [eax]"
-"	      0051b4ff    mov ecx,[ebp-4Ch]"
+"	      0051b4ff    mov ecx,tablerow"
 "	      0051b502    mov al,[eax+ecx]"
-"	      0051b505    mov [ebp-1Ch],al"
+"	      0051b505    mov color,al"
 );
 // LINE 2017:
 	asm( 
-"	      0051b508    mov al,[ebp-1Ch]"
-"	      0051b50b    mov ecx,[ebp-8]"
+"	      0051b508    mov al,color"
+"	      0051b50b    mov ecx,ptr"
 "	      0051b50e    mov [ecx],al"
 );
 // LINE 2018:
 	asm( 
-"	      0051b510    inc dword ptr [ebp-8]"
+"	      0051b510    inc ptr"
 );
 // LINE 2019:
 	asm( 
-"	      0051b513    mov eax,[ebp-8]"
+"	      0051b513    mov eax,ptr"
 "	      0051b516    movsx eax,byte ptr [eax]"
-"	      0051b519    mov ecx,[ebp-4Ch]"
+"	      0051b519    mov ecx,tablerow"
 "	      0051b51c    mov al,[eax+ecx]"
-"	      0051b51f    mov [ebp-1Ch],al"
+"	      0051b51f    mov color,al"
 );
 // LINE 2020:
 	asm( 
-"	      0051b522    mov al,[ebp-1Ch]"
-"	      0051b525    mov ecx,[ebp-8]"
+"	      0051b522    mov al,color"
+"	      0051b525    mov ecx,ptr"
 "	      0051b528    mov [ecx],al"
 );
 // LINE 2021:
 	asm( 
-"	      0051b52a    inc dword ptr [ebp-8]"
+"	      0051b52a    inc ptr"
 );
 // LINE 2022:
 	asm( 
-"	      0051b52d    mov eax,[ebp-8]"
+"	      0051b52d    mov eax,ptr"
 "	      0051b530    movsx eax,byte ptr [eax]"
-"	      0051b533    mov ecx,[ebp-4Ch]"
+"	      0051b533    mov ecx,tablerow"
 "	      0051b536    mov al,[eax+ecx]"
-"	      0051b539    mov [ebp-1Ch],al"
+"	      0051b539    mov color,al"
 );
 // LINE 2023:
 	asm( 
-"	      0051b53c    mov al,[ebp-1Ch]"
-"	      0051b53f    mov ecx,[ebp-8]"
+"	      0051b53c    mov al,color"
+"	      0051b53f    mov ecx,ptr"
 "	      0051b542    mov [ecx],al"
 );
 // LINE 2024:
 	asm( 
-"	      0051b544    inc dword ptr [ebp-8]"
+"	      0051b544    inc ptr"
 );
 // LINE 2026:
 	asm( 
-"	      0051b547    mov al,[ebp-1Ch]"
-"	      0051b54a    mov ecx,[ebp-8]"
+"	      0051b547    mov al,color"
+"	      0051b54a    mov ecx,ptr"
 "	      0051b54d    mov [ecx],al"
 );
 // LINE 2027:
 	asm( 
-"	      0051b54f    inc dword ptr [ebp-8]"
+"	      0051b54f    inc ptr"
 );
 // LINE 2029:
 	asm( 
-"	      0051b552    mov al,[ebp-1Ch]"
-"	      0051b555    mov ecx,[ebp-8]"
+"	      0051b552    mov al,color"
+"	      0051b555    mov ecx,ptr"
 "	      0051b558    mov [ecx],al"
 );
 // LINE 2030:
 	asm( 
-"	      0051b55a    inc dword ptr [ebp-8]"
+"	      0051b55a    inc ptr"
 );
 // LINE 2031:
 	asm( 
-"	      0051b55d    mov eax,[ebp-8]"
+"	      0051b55d    mov eax,ptr"
 "	      0051b560    movsx eax,byte ptr [eax]"
-"	      0051b563    mov ecx,[ebp-4Ch]"
+"	      0051b563    mov ecx,tablerow"
 "	      0051b566    mov al,[eax+ecx]"
-"	      0051b569    mov [ebp-1Ch],al"
+"	      0051b569    mov color,al"
 );
 // LINE 2032:
 	asm( 
-"	      0051b56c    mov al,[ebp-1Ch]"
-"	      0051b56f    mov ecx,[ebp-8]"
+"	      0051b56c    mov al,color"
+"	      0051b56f    mov ecx,ptr"
 "	      0051b572    mov [ecx],al"
 );
 // LINE 2033:
 	asm( 
-"	      0051b574    mov eax,[ebp-18h]"
+"	      0051b574    mov eax,bufwidth"
 "	      0051b577    sub eax,8"
-"	      0051b57a    add [ebp-8],eax"
+"	      0051b57a    add ptr,eax"
 );
 // LINE 2035:
 	asm( 
-"	      0051b57d    mov al,[ebp-1Ch]"
-"	      0051b580    mov ecx,[ebp-8]"
+"	      0051b57d    mov al,color"
+"	      0051b580    mov ecx,ptr"
 "	      0051b583    mov [ecx],al"
 );
 // LINE 2036:
 	asm( 
-"	      0051b585    inc dword ptr [ebp-8]"
+"	      0051b585    inc ptr"
 );
 // LINE 2037:
 	asm( 
-"	      0051b588    mov eax,[ebp-8]"
+"	      0051b588    mov eax,ptr"
 "	      0051b58b    movsx eax,byte ptr [eax]"
-"	      0051b58e    mov ecx,[ebp-4Ch]"
+"	      0051b58e    mov ecx,tablerow"
 "	      0051b591    mov al,[eax+ecx]"
-"	      0051b594    mov [ebp-1Ch],al"
+"	      0051b594    mov color,al"
 );
 // LINE 2038:
 	asm( 
-"	      0051b597    mov al,[ebp-1Ch]"
-"	      0051b59a    mov ecx,[ebp-8]"
+"	      0051b597    mov al,color"
+"	      0051b59a    mov ecx,ptr"
 "	      0051b59d    mov [ecx],al"
 );
 // LINE 2039:
 	asm( 
-"	      0051b59f    inc dword ptr [ebp-8]"
+"	      0051b59f    inc ptr"
 );
 // LINE 2040:
 	asm( 
-"	      0051b5a2    mov eax,[ebp-8]"
+"	      0051b5a2    mov eax,ptr"
 "	      0051b5a5    movsx eax,byte ptr [eax]"
-"	      0051b5a8    mov ecx,[ebp-4Ch]"
+"	      0051b5a8    mov ecx,tablerow"
 "	      0051b5ab    mov al,[eax+ecx]"
-"	      0051b5ae    mov [ebp-1Ch],al"
+"	      0051b5ae    mov color,al"
 );
 // LINE 2041:
 	asm( 
-"	      0051b5b1    mov al,[ebp-1Ch]"
-"	      0051b5b4    mov ecx,[ebp-8]"
+"	      0051b5b1    mov al,color"
+"	      0051b5b4    mov ecx,ptr"
 "	      0051b5b7    mov [ecx],al"
 );
 // LINE 2042:
 	asm( 
-"	      0051b5b9    inc dword ptr [ebp-8]"
+"	      0051b5b9    inc ptr"
 );
 // LINE 2043:
 	asm( 
-"	      0051b5bc    mov eax,[ebp-8]"
+"	      0051b5bc    mov eax,ptr"
 "	      0051b5bf    movsx eax,byte ptr [eax]"
-"	      0051b5c2    mov ecx,[ebp-4Ch]"
+"	      0051b5c2    mov ecx,tablerow"
 "	      0051b5c5    mov al,[eax+ecx]"
-"	      0051b5c8    mov [ebp-1Ch],al"
+"	      0051b5c8    mov color,al"
 );
 // LINE 2044:
 	asm( 
-"	      0051b5cb    mov al,[ebp-1Ch]"
-"	      0051b5ce    mov ecx,[ebp-8]"
+"	      0051b5cb    mov al,color"
+"	      0051b5ce    mov ecx,ptr"
 "	      0051b5d1    mov [ecx],al"
 );
 // LINE 2045:
 	asm( 
-"	      0051b5d3    inc dword ptr [ebp-8]"
+"	      0051b5d3    inc ptr"
 );
 // LINE 2046:
 	asm( 
-"	      0051b5d6    mov eax,[ebp-8]"
+"	      0051b5d6    mov eax,ptr"
 "	      0051b5d9    movsx eax,byte ptr [eax]"
-"	      0051b5dc    mov ecx,[ebp-4Ch]"
+"	      0051b5dc    mov ecx,tablerow"
 "	      0051b5df    mov al,[eax+ecx]"
-"	      0051b5e2    mov [ebp-1Ch],al"
+"	      0051b5e2    mov color,al"
 );
 // LINE 2047:
 	asm( 
-"	      0051b5e5    mov al,[ebp-1Ch]"
-"	      0051b5e8    mov ecx,[ebp-8]"
+"	      0051b5e5    mov al,color"
+"	      0051b5e8    mov ecx,ptr"
 "	      0051b5eb    mov [ecx],al"
 );
 // LINE 2048:
 	asm( 
-"	      0051b5ed    inc dword ptr [ebp-8]"
+"	      0051b5ed    inc ptr"
 );
 // LINE 2050:
 	asm( 
-"	      0051b5f0    mov al,[ebp-1Ch]"
-"	      0051b5f3    mov ecx,[ebp-8]"
+"	      0051b5f0    mov al,color"
+"	      0051b5f3    mov ecx,ptr"
 "	      0051b5f6    mov [ecx],al"
 );
 // LINE 2051:
 	asm( 
-"	      0051b5f8    inc dword ptr [ebp-8]"
+"	      0051b5f8    inc ptr"
 );
 // LINE 2053:
 	asm( 
-"	      0051b5fb    mov al,[ebp-1Ch]"
-"	      0051b5fe    mov ecx,[ebp-8]"
+"	      0051b5fb    mov al,color"
+"	      0051b5fe    mov ecx,ptr"
 "	      0051b601    mov [ecx],al"
 );
 // LINE 2054:
 	asm( 
-"	      0051b603    inc dword ptr [ebp-8]"
+"	      0051b603    inc ptr"
 );
 // LINE 2056:
 	asm( 
-"	      0051b606    mov al,[ebp-1Ch]"
-"	      0051b609    mov ecx,[ebp-8]"
+"	      0051b606    mov al,color"
+"	      0051b609    mov ecx,ptr"
 "	      0051b60c    mov [ecx],al"
 );
 // LINE 2057:
 	asm( 
-"	      0051b60e    inc dword ptr [ebp-8]"
+"	      0051b60e    inc ptr"
 );
 // LINE 2058:
 	asm( 
-"	      0051b611    mov eax,[ebp-8]"
+"	      0051b611    mov eax,ptr"
 "	      0051b614    movsx eax,byte ptr [eax]"
-"	      0051b617    mov ecx,[ebp-4Ch]"
+"	      0051b617    mov ecx,tablerow"
 "	      0051b61a    mov al,[eax+ecx]"
-"	      0051b61d    mov [ebp-1Ch],al"
+"	      0051b61d    mov color,al"
 );
 // LINE 2059:
 	asm( 
-"	      0051b620    mov al,[ebp-1Ch]"
-"	      0051b623    mov ecx,[ebp-8]"
+"	      0051b620    mov al,color"
+"	      0051b623    mov ecx,ptr"
 "	      0051b626    mov [ecx],al"
 );
 // LINE 2060:
 	asm( 
-"	      0051b628    mov eax,[ebp-18h]"
+"	      0051b628    mov eax,bufwidth"
 "	      0051b62b    sub eax,8"
-"	      0051b62e    add [ebp-8],eax"
+"	      0051b62e    add ptr,eax"
 );
 // LINE 2061:
 	asm( 
-"	      0051b631    mov eax,[ebp-8]"
+"	      0051b631    mov eax,ptr"
 "	      0051b634    movsx eax,byte ptr [eax]"
-"	      0051b637    mov ecx,[ebp-4Ch]"
+"	      0051b637    mov ecx,tablerow"
 "	      0051b63a    mov al,[eax+ecx]"
-"	      0051b63d    mov [ebp-1Ch],al"
+"	      0051b63d    mov color,al"
 );
 // LINE 2062:
 	asm( 
-"	      0051b640    mov al,[ebp-1Ch]"
-"	      0051b643    mov ecx,[ebp-8]"
+"	      0051b640    mov al,color"
+"	      0051b643    mov ecx,ptr"
 "	      0051b646    mov [ecx],al"
 );
 // LINE 2063:
 	asm( 
-"	      0051b648    inc dword ptr [ebp-8]"
+"	      0051b648    inc ptr"
 );
 // LINE 2064:
 	asm( 
-"	      0051b64b    mov eax,[ebp-8]"
+"	      0051b64b    mov eax,ptr"
 "	      0051b64e    movsx eax,byte ptr [eax]"
-"	      0051b651    mov ecx,[ebp-4Ch]"
+"	      0051b651    mov ecx,tablerow"
 "	      0051b654    mov al,[eax+ecx]"
-"	      0051b657    mov [ebp-1Ch],al"
+"	      0051b657    mov color,al"
 );
 // LINE 2065:
 	asm( 
-"	      0051b65a    mov al,[ebp-1Ch]"
-"	      0051b65d    mov ecx,[ebp-8]"
+"	      0051b65a    mov al,color"
+"	      0051b65d    mov ecx,ptr"
 "	      0051b660    mov [ecx],al"
 );
 // LINE 2066:
 	asm( 
-"	      0051b662    inc dword ptr [ebp-8]"
+"	      0051b662    inc ptr"
 );
 // LINE 2067:
 	asm( 
-"	      0051b665    mov eax,[ebp-8]"
+"	      0051b665    mov eax,ptr"
 "	      0051b668    movsx eax,byte ptr [eax]"
-"	      0051b66b    mov ecx,[ebp-4Ch]"
+"	      0051b66b    mov ecx,tablerow"
 "	      0051b66e    mov al,[eax+ecx]"
-"	      0051b671    mov [ebp-1Ch],al"
+"	      0051b671    mov color,al"
 );
 // LINE 2068:
 	asm( 
-"	      0051b674    mov al,[ebp-1Ch]"
-"	      0051b677    mov ecx,[ebp-8]"
+"	      0051b674    mov al,color"
+"	      0051b677    mov ecx,ptr"
 "	      0051b67a    mov [ecx],al"
 );
 // LINE 2069:
 	asm( 
-"	      0051b67c    inc dword ptr [ebp-8]"
+"	      0051b67c    inc ptr"
 );
 // LINE 2071:
 	asm( 
-"	      0051b67f    mov al,[ebp-1Ch]"
-"	      0051b682    mov ecx,[ebp-8]"
+"	      0051b67f    mov al,color"
+"	      0051b682    mov ecx,ptr"
 "	      0051b685    mov [ecx],al"
 );
 // LINE 2072:
 	asm( 
-"	      0051b687    inc dword ptr [ebp-8]"
+"	      0051b687    inc ptr"
 );
 // LINE 2074:
 	asm( 
-"	      0051b68a    mov al,[ebp-1Ch]"
-"	      0051b68d    mov ecx,[ebp-8]"
+"	      0051b68a    mov al,color"
+"	      0051b68d    mov ecx,ptr"
 "	      0051b690    mov [ecx],al"
 );
 // LINE 2075:
 	asm( 
-"	      0051b692    inc dword ptr [ebp-8]"
+"	      0051b692    inc ptr"
 );
 // LINE 2077:
 	asm( 
-"	      0051b695    mov al,[ebp-1Ch]"
-"	      0051b698    mov ecx,[ebp-8]"
+"	      0051b695    mov al,color"
+"	      0051b698    mov ecx,ptr"
 "	      0051b69b    mov [ecx],al"
 );
 // LINE 2078:
 	asm( 
-"	      0051b69d    inc dword ptr [ebp-8]"
+"	      0051b69d    inc ptr"
 );
 // LINE 2080:
 	asm( 
-"	      0051b6a0    mov al,[ebp-1Ch]"
-"	      0051b6a3    mov ecx,[ebp-8]"
+"	      0051b6a0    mov al,color"
+"	      0051b6a3    mov ecx,ptr"
 "	      0051b6a6    mov [ecx],al"
 );
 // LINE 2081:
 	asm( 
-"	      0051b6a8    inc dword ptr [ebp-8]"
+"	      0051b6a8    inc ptr"
 );
 // LINE 2082:
 	asm( 
-"	      0051b6ab    mov eax,[ebp-8]"
+"	      0051b6ab    mov eax,ptr"
 "	      0051b6ae    movsx eax,byte ptr [eax]"
-"	      0051b6b1    mov ecx,[ebp-4Ch]"
+"	      0051b6b1    mov ecx,tablerow"
 "	      0051b6b4    mov al,[eax+ecx]"
-"	      0051b6b7    mov [ebp-1Ch],al"
+"	      0051b6b7    mov color,al"
 );
 // LINE 2083:
 	asm( 
-"	      0051b6ba    mov al,[ebp-1Ch]"
-"	      0051b6bd    mov ecx,[ebp-8]"
+"	      0051b6ba    mov al,color"
+"	      0051b6bd    mov ecx,ptr"
 "	      0051b6c0    mov [ecx],al"
 );
 // LINE 2084:
 	asm( 
-"	      0051b6c2    inc dword ptr [ebp-8]"
+"	      0051b6c2    inc ptr"
 );
 // LINE 2085:
 	asm( 
-"	      0051b6c5    mov eax,[ebp-8]"
+"	      0051b6c5    mov eax,ptr"
 "	      0051b6c8    movsx eax,byte ptr [eax]"
-"	      0051b6cb    mov ecx,[ebp-4Ch]"
+"	      0051b6cb    mov ecx,tablerow"
 "	      0051b6ce    mov al,[eax+ecx]"
-"	      0051b6d1    mov [ebp-1Ch],al"
+"	      0051b6d1    mov color,al"
 );
 // LINE 2086:
 	asm( 
-"	      0051b6d4    mov al,[ebp-1Ch]"
-"	      0051b6d7    mov ecx,[ebp-8]"
+"	      0051b6d4    mov al,color"
+"	      0051b6d7    mov ecx,ptr"
 "	      0051b6da    mov [ecx],al"
 );
 // LINE 2087:
 	asm( 
-"	      0051b6dc    mov eax,[ebp-18h]"
+"	      0051b6dc    mov eax,bufwidth"
 "	      0051b6df    sub eax,8"
-"	      0051b6e2    add [ebp-8],eax"
+"	      0051b6e2    add ptr,eax"
 );
 // LINE 2088:
 	asm( 
-"	      0051b6e5    mov eax,[ebp-8]"
+"	      0051b6e5    mov eax,ptr"
 "	      0051b6e8    movsx eax,byte ptr [eax]"
-"	      0051b6eb    mov ecx,[ebp-4Ch]"
+"	      0051b6eb    mov ecx,tablerow"
 "	      0051b6ee    mov al,[eax+ecx]"
-"	      0051b6f1    mov [ebp-1Ch],al"
+"	      0051b6f1    mov color,al"
 );
 // LINE 2089:
 	asm( 
-"	      0051b6f4    mov al,[ebp-1Ch]"
-"	      0051b6f7    mov ecx,[ebp-8]"
+"	      0051b6f4    mov al,color"
+"	      0051b6f7    mov ecx,ptr"
 "	      0051b6fa    mov [ecx],al"
 );
 // LINE 2090:
 	asm( 
-"	      0051b6fc    inc dword ptr [ebp-8]"
+"	      0051b6fc    inc ptr"
 );
 // LINE 2091:
 	asm( 
-"	      0051b6ff    mov eax,[ebp-8]"
+"	      0051b6ff    mov eax,ptr"
 "	      0051b702    movsx eax,byte ptr [eax]"
-"	      0051b705    mov ecx,[ebp-4Ch]"
+"	      0051b705    mov ecx,tablerow"
 "	      0051b708    mov al,[eax+ecx]"
-"	      0051b70b    mov [ebp-1Ch],al"
+"	      0051b70b    mov color,al"
 );
 // LINE 2092:
 	asm( 
-"	      0051b70e    mov al,[ebp-1Ch]"
-"	      0051b711    mov ecx,[ebp-8]"
+"	      0051b70e    mov al,color"
+"	      0051b711    mov ecx,ptr"
 "	      0051b714    mov [ecx],al"
 );
 // LINE 2093:
 	asm( 
-"	      0051b716    inc dword ptr [ebp-8]"
+"	      0051b716    inc ptr"
 );
 // LINE 2095:
 	asm( 
-"	      0051b719    mov al,[ebp-1Ch]"
-"	      0051b71c    mov ecx,[ebp-8]"
+"	      0051b719    mov al,color"
+"	      0051b71c    mov ecx,ptr"
 "	      0051b71f    mov [ecx],al"
 );
 // LINE 2096:
 	asm( 
-"	      0051b721    inc dword ptr [ebp-8]"
+"	      0051b721    inc ptr"
 );
 // LINE 2098:
 	asm( 
-"	      0051b724    mov al,[ebp-1Ch]"
-"	      0051b727    mov ecx,[ebp-8]"
+"	      0051b724    mov al,color"
+"	      0051b727    mov ecx,ptr"
 "	      0051b72a    mov [ecx],al"
 );
 // LINE 2099:
 	asm( 
-"	      0051b72c    inc dword ptr [ebp-8]"
+"	      0051b72c    inc ptr"
 );
 // LINE 2100:
 	asm( 
-"	      0051b72f    mov eax,[ebp-8]"
+"	      0051b72f    mov eax,ptr"
 "	      0051b732    movsx eax,byte ptr [eax]"
-"	      0051b735    mov ecx,[ebp-4Ch]"
+"	      0051b735    mov ecx,tablerow"
 "	      0051b738    mov al,[eax+ecx]"
-"	      0051b73b    mov [ebp-1Ch],al"
+"	      0051b73b    mov color,al"
 );
 // LINE 2101:
 	asm( 
-"	      0051b73e    mov al,[ebp-1Ch]"
-"	      0051b741    mov ecx,[ebp-8]"
+"	      0051b73e    mov al,color"
+"	      0051b741    mov ecx,ptr"
 "	      0051b744    mov [ecx],al"
 );
 // LINE 2102:
 	asm( 
-"	      0051b746    inc dword ptr [ebp-8]"
+"	      0051b746    inc ptr"
 );
 // LINE 2103:
 	asm( 
-"	      0051b749    mov eax,[ebp-8]"
+"	      0051b749    mov eax,ptr"
 "	      0051b74c    movsx eax,byte ptr [eax]"
-"	      0051b74f    mov ecx,[ebp-4Ch]"
+"	      0051b74f    mov ecx,tablerow"
 "	      0051b752    mov al,[eax+ecx]"
-"	      0051b755    mov [ebp-1Ch],al"
+"	      0051b755    mov color,al"
 );
 // LINE 2104:
 	asm( 
-"	      0051b758    mov al,[ebp-1Ch]"
-"	      0051b75b    mov ecx,[ebp-8]"
+"	      0051b758    mov al,color"
+"	      0051b75b    mov ecx,ptr"
 "	      0051b75e    mov [ecx],al"
 );
 // LINE 2105:
 	asm( 
-"	      0051b760    inc dword ptr [ebp-8]"
+"	      0051b760    inc ptr"
 );
 // LINE 2106:
 	asm( 
-"	      0051b763    mov eax,[ebp-8]"
+"	      0051b763    mov eax,ptr"
 "	      0051b766    movsx eax,byte ptr [eax]"
-"	      0051b769    mov ecx,[ebp-4Ch]"
+"	      0051b769    mov ecx,tablerow"
 "	      0051b76c    mov al,[eax+ecx]"
-"	      0051b76f    mov [ebp-1Ch],al"
+"	      0051b76f    mov color,al"
 );
 // LINE 2107:
 	asm( 
-"	      0051b772    mov al,[ebp-1Ch]"
-"	      0051b775    mov ecx,[ebp-8]"
+"	      0051b772    mov al,color"
+"	      0051b775    mov ecx,ptr"
 "	      0051b778    mov [ecx],al"
 );
 // LINE 2108:
 	asm( 
-"	      0051b77a    inc dword ptr [ebp-8]"
+"	      0051b77a    inc ptr"
 );
 // LINE 2110:
 	asm( 
-"	      0051b77d    mov al,[ebp-1Ch]"
-"	      0051b780    mov ecx,[ebp-8]"
+"	      0051b77d    mov al,color"
+"	      0051b780    mov ecx,ptr"
 "	      0051b783    mov [ecx],al"
 );
 // LINE 2111:
 	asm( 
-"	      0051b785    inc dword ptr [ebp-8]"
+"	      0051b785    inc ptr"
 );
 // LINE 2113:
 	asm( 
-"	      0051b788    mov al,[ebp-1Ch]"
-"	      0051b78b    mov ecx,[ebp-8]"
+"	      0051b788    mov al,color"
+"	      0051b78b    mov ecx,ptr"
 "	      0051b78e    mov [ecx],al"
 );
 // LINE 2115:
 	asm( 
-"	      0051b790    mov eax,[ebp-8]"
+"	      0051b790    mov eax,ptr"
 "	      0051b793    movsx eax,byte ptr [eax]"
-"	      0051b796    mov ecx,[ebp-4Ch]"
+"	      0051b796    mov ecx,tablerow"
 "	      0051b799    mov al,[eax+ecx]"
-"	      0051b79c    mov [ebp-1Ch],al"
+"	      0051b79c    mov color,al"
 );
 // LINE 2116:
 	asm( 
-"	      0051b79f    mov al,[ebp-1Ch]"
-"	      0051b7a2    mov ecx,[ebp-8]"
+"	      0051b79f    mov al,color"
+"	      0051b7a2    mov ecx,ptr"
 "	      0051b7a5    mov [ecx],al"
 );
 // LINE 2117:
 	asm( 
-"	      0051b7a7    inc dword ptr [ebp-8]"
+"	      0051b7a7    inc ptr"
 );
 // LINE 2119:
 	asm( 
-"	      0051b7aa    mov al,[ebp-1Ch]"
-"	      0051b7ad    mov ecx,[ebp-8]"
+"	      0051b7aa    mov al,color"
+"	      0051b7ad    mov ecx,ptr"
 "	      0051b7b0    mov [ecx],al"
 );
 // LINE 2120:
 	asm( 
-"	      0051b7b2    inc dword ptr [ebp-8]"
+"	      0051b7b2    inc ptr"
 );
 // LINE 2122:
 	asm( 
-"	      0051b7b5    mov al,[ebp-1Ch]"
-"	      0051b7b8    mov ecx,[ebp-8]"
+"	      0051b7b5    mov al,color"
+"	      0051b7b8    mov ecx,ptr"
 "	      0051b7bb    mov [ecx],al"
 );
 // LINE 2123:
 	asm( 
-"	      0051b7bd    inc dword ptr [ebp-8]"
+"	      0051b7bd    inc ptr"
 );
 // LINE 2125:
 	asm( 
-"	      0051b7c0    mov al,[ebp-1Ch]"
-"	      0051b7c3    mov ecx,[ebp-8]"
+"	      0051b7c0    mov al,color"
+"	      0051b7c3    mov ecx,ptr"
 "	      0051b7c6    mov [ecx],al"
 );
 // LINE 2126:
 	asm( 
-"	      0051b7c8    inc dword ptr [ebp-8]"
+"	      0051b7c8    inc ptr"
 );
 // LINE 2127:
 	asm( 
-"	      0051b7cb    mov eax,[ebp-8]"
+"	      0051b7cb    mov eax,ptr"
 "	      0051b7ce    movsx eax,byte ptr [eax]"
-"	      0051b7d1    mov ecx,[ebp-4Ch]"
+"	      0051b7d1    mov ecx,tablerow"
 "	      0051b7d4    mov al,[eax+ecx]"
-"	      0051b7d7    mov [ebp-1Ch],al"
+"	      0051b7d7    mov color,al"
 );
 // LINE 2128:
 	asm( 
-"	      0051b7da    mov al,[ebp-1Ch]"
-"	      0051b7dd    mov ecx,[ebp-8]"
+"	      0051b7da    mov al,color"
+"	      0051b7dd    mov ecx,ptr"
 "	      0051b7e0    mov [ecx],al"
 );
 // LINE 2129:
 	asm( 
-"	      0051b7e2    inc dword ptr [ebp-8]"
+"	      0051b7e2    inc ptr"
 );
 // LINE 2130:
 	asm( 
-"	      0051b7e5    mov eax,[ebp-8]"
+"	      0051b7e5    mov eax,ptr"
 "	      0051b7e8    movsx eax,byte ptr [eax]"
-"	      0051b7eb    mov ecx,[ebp-4Ch]"
+"	      0051b7eb    mov ecx,tablerow"
 "	      0051b7ee    mov al,[eax+ecx]"
-"	      0051b7f1    mov [ebp-1Ch],al"
+"	      0051b7f1    mov color,al"
 );
 // LINE 2131:
 	asm( 
-"	      0051b7f4    mov al,[ebp-1Ch]"
-"	      0051b7f7    mov ecx,[ebp-8]"
+"	      0051b7f4    mov al,color"
+"	      0051b7f7    mov ecx,ptr"
 "	      0051b7fa    mov [ecx],al"
 );
 // LINE 2132:
 	asm( 
-"	      0051b7fc    inc dword ptr [ebp-8]"
+"	      0051b7fc    inc ptr"
 );
 // LINE 2133:
 	asm( 
-"	      0051b7ff    mov eax,[ebp-8]"
+"	      0051b7ff    mov eax,ptr"
 "	      0051b802    movsx eax,byte ptr [eax]"
-"	      0051b805    mov ecx,[ebp-4Ch]"
+"	      0051b805    mov ecx,tablerow"
 "	      0051b808    mov al,[eax+ecx]"
-"	      0051b80b    mov [ebp-1Ch],al"
+"	      0051b80b    mov color,al"
 );
 // LINE 2134:
 	asm( 
-"	      0051b80e    mov al,[ebp-1Ch]"
-"	      0051b811    mov ecx,[ebp-8]"
+"	      0051b80e    mov al,color"
+"	      0051b811    mov ecx,ptr"
 "	      0051b814    mov [ecx],al"
 );
 // LINE 2135:
 	asm( 
-"	      0051b816    inc dword ptr [ebp-8]"
+"	      0051b816    inc ptr"
 );
 // LINE 2137:
 	asm( 
-"	      0051b819    mov al,[ebp-1Ch]"
-"	      0051b81c    mov ecx,[ebp-8]"
+"	      0051b819    mov al,color"
+"	      0051b81c    mov ecx,ptr"
 "	      0051b81f    mov [ecx],al"
 );
 // LINE 2138:
 	asm( 
-"	      0051b821    inc dword ptr [ebp-8]"
+"	      0051b821    inc ptr"
 );
 // LINE 2140:
 	asm( 
-"	      0051b824    mov al,[ebp-1Ch]"
-"	      0051b827    mov ecx,[ebp-8]"
+"	      0051b824    mov al,color"
+"	      0051b827    mov ecx,ptr"
 "	      0051b82a    mov [ecx],al"
 );
 // LINE 2141:
 	asm( 
-"	      0051b82c    inc dword ptr [ebp-8]"
+"	      0051b82c    inc ptr"
 );
 // LINE 2143:
 	asm( 
-"	      0051b82f    mov al,[ebp-1Ch]"
-"	      0051b832    mov ecx,[ebp-8]"
+"	      0051b82f    mov al,color"
+"	      0051b832    mov ecx,ptr"
 "	      0051b835    mov [ecx],al"
 );
 // LINE 2144:
 	asm( 
-"	      0051b837    mov eax,[ebp-18h]"
+"	      0051b837    mov eax,bufwidth"
 "	      0051b83a    sub eax,9"
-"	      0051b83d    add [ebp-8],eax"
+"	      0051b83d    add ptr,eax"
 );
 // LINE 2146:
 	asm( 
-"	      0051b840    mov al,[ebp-1Ch]"
-"	      0051b843    mov ecx,[ebp-8]"
+"	      0051b840    mov al,color"
+"	      0051b843    mov ecx,ptr"
 "	      0051b846    mov [ecx],al"
 );
 // LINE 2147:
 	asm( 
-"	      0051b848    inc dword ptr [ebp-8]"
+"	      0051b848    inc ptr"
 );
 // LINE 2148:
 	asm( 
-"	      0051b84b    mov eax,[ebp-8]"
+"	      0051b84b    mov eax,ptr"
 "	      0051b84e    movsx eax,byte ptr [eax]"
-"	      0051b851    mov ecx,[ebp-4Ch]"
+"	      0051b851    mov ecx,tablerow"
 "	      0051b854    mov al,[eax+ecx]"
-"	      0051b857    mov [ebp-1Ch],al"
+"	      0051b857    mov color,al"
 );
 // LINE 2149:
 	asm( 
-"	      0051b85a    mov al,[ebp-1Ch]"
-"	      0051b85d    mov ecx,[ebp-8]"
+"	      0051b85a    mov al,color"
+"	      0051b85d    mov ecx,ptr"
 "	      0051b860    mov [ecx],al"
 );
 // LINE 2150:
 	asm( 
-"	      0051b862    inc dword ptr [ebp-8]"
+"	      0051b862    inc ptr"
 );
 // LINE 2151:
 	asm( 
-"	      0051b865    mov eax,[ebp-8]"
+"	      0051b865    mov eax,ptr"
 "	      0051b868    movsx eax,byte ptr [eax]"
-"	      0051b86b    mov ecx,[ebp-4Ch]"
+"	      0051b86b    mov ecx,tablerow"
 "	      0051b86e    mov al,[eax+ecx]"
-"	      0051b871    mov [ebp-1Ch],al"
+"	      0051b871    mov color,al"
 );
 // LINE 2152:
 	asm( 
-"	      0051b874    mov al,[ebp-1Ch]"
-"	      0051b877    mov ecx,[ebp-8]"
+"	      0051b874    mov al,color"
+"	      0051b877    mov ecx,ptr"
 "	      0051b87a    mov [ecx],al"
 );
 // LINE 2153:
 	asm( 
-"	      0051b87c    inc dword ptr [ebp-8]"
+"	      0051b87c    inc ptr"
 );
 // LINE 2154:
 	asm( 
-"	      0051b87f    mov eax,[ebp-8]"
+"	      0051b87f    mov eax,ptr"
 "	      0051b882    movsx eax,byte ptr [eax]"
-"	      0051b885    mov ecx,[ebp-4Ch]"
+"	      0051b885    mov ecx,tablerow"
 "	      0051b888    mov al,[eax+ecx]"
-"	      0051b88b    mov [ebp-1Ch],al"
+"	      0051b88b    mov color,al"
 );
 // LINE 2155:
 	asm( 
-"	      0051b88e    mov al,[ebp-1Ch]"
-"	      0051b891    mov ecx,[ebp-8]"
+"	      0051b88e    mov al,color"
+"	      0051b891    mov ecx,ptr"
 "	      0051b894    mov [ecx],al"
 );
 // LINE 2156:
 	asm( 
-"	      0051b896    inc dword ptr [ebp-8]"
+"	      0051b896    inc ptr"
 );
 // LINE 2157:
 	asm( 
-"	      0051b899    mov eax,[ebp-8]"
+"	      0051b899    mov eax,ptr"
 "	      0051b89c    movsx eax,byte ptr [eax]"
-"	      0051b89f    mov ecx,[ebp-4Ch]"
+"	      0051b89f    mov ecx,tablerow"
 "	      0051b8a2    mov al,[eax+ecx]"
-"	      0051b8a5    mov [ebp-1Ch],al"
+"	      0051b8a5    mov color,al"
 );
 // LINE 2158:
 	asm( 
-"	      0051b8a8    mov al,[ebp-1Ch]"
-"	      0051b8ab    mov ecx,[ebp-8]"
+"	      0051b8a8    mov al,color"
+"	      0051b8ab    mov ecx,ptr"
 "	      0051b8ae    mov [ecx],al"
 );
 // LINE 2159:
 	asm( 
-"	      0051b8b0    inc dword ptr [ebp-8]"
+"	      0051b8b0    inc ptr"
 );
 // LINE 2160:
 	asm( 
-"	      0051b8b3    mov eax,[ebp-8]"
+"	      0051b8b3    mov eax,ptr"
 "	      0051b8b6    movsx eax,byte ptr [eax]"
-"	      0051b8b9    mov ecx,[ebp-4Ch]"
+"	      0051b8b9    mov ecx,tablerow"
 "	      0051b8bc    mov al,[eax+ecx]"
-"	      0051b8bf    mov [ebp-1Ch],al"
+"	      0051b8bf    mov color,al"
 );
 // LINE 2161:
 	asm( 
-"	      0051b8c2    mov al,[ebp-1Ch]"
-"	      0051b8c5    mov ecx,[ebp-8]"
+"	      0051b8c2    mov al,color"
+"	      0051b8c5    mov ecx,ptr"
 "	      0051b8c8    mov [ecx],al"
 );
 // LINE 2162:
 	asm( 
-"	      0051b8ca    inc dword ptr [ebp-8]"
+"	      0051b8ca    inc ptr"
 );
 // LINE 2164:
 	asm( 
-"	      0051b8cd    mov al,[ebp-1Ch]"
-"	      0051b8d0    mov ecx,[ebp-8]"
+"	      0051b8cd    mov al,color"
+"	      0051b8d0    mov ecx,ptr"
 "	      0051b8d3    mov [ecx],al"
 );
 // LINE 2165:
 	asm( 
-"	      0051b8d5    inc dword ptr [ebp-8]"
+"	      0051b8d5    inc ptr"
 );
 // LINE 2167:
 	asm( 
-"	      0051b8d8    mov al,[ebp-1Ch]"
-"	      0051b8db    mov ecx,[ebp-8]"
+"	      0051b8d8    mov al,color"
+"	      0051b8db    mov ecx,ptr"
 "	      0051b8de    mov [ecx],al"
 );
 // LINE 2168:
 	asm( 
-"	      0051b8e0    inc dword ptr [ebp-8]"
+"	      0051b8e0    inc ptr"
 );
 // LINE 2169:
 	asm( 
-"	      0051b8e3    mov eax,[ebp-8]"
+"	      0051b8e3    mov eax,ptr"
 "	      0051b8e6    movsx eax,byte ptr [eax]"
-"	      0051b8e9    mov ecx,[ebp-4Ch]"
+"	      0051b8e9    mov ecx,tablerow"
 "	      0051b8ec    mov al,[eax+ecx]"
-"	      0051b8ef    mov [ebp-1Ch],al"
+"	      0051b8ef    mov color,al"
 );
 // LINE 2170:
 	asm( 
-"	      0051b8f2    mov al,[ebp-1Ch]"
-"	      0051b8f5    mov ecx,[ebp-8]"
+"	      0051b8f2    mov al,color"
+"	      0051b8f5    mov ecx,ptr"
 "	      0051b8f8    mov [ecx],al"
 );
 // LINE 2171:
 	asm( 
-"	      0051b8fa    inc dword ptr [ebp-8]"
+"	      0051b8fa    inc ptr"
 );
 // LINE 2172:
 	asm( 
-"	      0051b8fd    mov eax,[ebp-8]"
+"	      0051b8fd    mov eax,ptr"
 "	      0051b900    movsx eax,byte ptr [eax]"
-"	      0051b903    mov ecx,[ebp-4Ch]"
+"	      0051b903    mov ecx,tablerow"
 "	      0051b906    mov al,[eax+ecx]"
-"	      0051b909    mov [ebp-1Ch],al"
+"	      0051b909    mov color,al"
 );
 // LINE 2173:
 	asm( 
-"	      0051b90c    mov al,[ebp-1Ch]"
-"	      0051b90f    mov ecx,[ebp-8]"
+"	      0051b90c    mov al,color"
+"	      0051b90f    mov ecx,ptr"
 "	      0051b912    mov [ecx],al"
 );
 // LINE 2174:
 	asm( 
-"	      0051b914    mov eax,[ebp-18h]"
+"	      0051b914    mov eax,bufwidth"
 "	      0051b917    sub eax,9"
-"	      0051b91a    add [ebp-8],eax"
+"	      0051b91a    add ptr,eax"
 );
 // LINE 2175:
 	asm( 
-"	      0051b91d    mov eax,[ebp-8]"
+"	      0051b91d    mov eax,ptr"
 "	      0051b920    movsx eax,byte ptr [eax]"
-"	      0051b923    mov ecx,[ebp-4Ch]"
+"	      0051b923    mov ecx,tablerow"
 "	      0051b926    mov al,[eax+ecx]"
-"	      0051b929    mov [ebp-1Ch],al"
+"	      0051b929    mov color,al"
 );
 // LINE 2176:
 	asm( 
-"	      0051b92c    mov al,[ebp-1Ch]"
-"	      0051b92f    mov ecx,[ebp-8]"
+"	      0051b92c    mov al,color"
+"	      0051b92f    mov ecx,ptr"
 "	      0051b932    mov [ecx],al"
 );
 // LINE 2177:
 	asm( 
-"	      0051b934    inc dword ptr [ebp-8]"
+"	      0051b934    inc ptr"
 );
 // LINE 2179:
 	asm( 
-"	      0051b937    mov al,[ebp-1Ch]"
-"	      0051b93a    mov ecx,[ebp-8]"
+"	      0051b937    mov al,color"
+"	      0051b93a    mov ecx,ptr"
 "	      0051b93d    mov [ecx],al"
 );
 // LINE 2180:
 	asm( 
-"	      0051b93f    inc dword ptr [ebp-8]"
+"	      0051b93f    inc ptr"
 );
 // LINE 2181:
 	asm( 
-"	      0051b942    mov eax,[ebp-8]"
+"	      0051b942    mov eax,ptr"
 "	      0051b945    movsx eax,byte ptr [eax]"
-"	      0051b948    mov ecx,[ebp-4Ch]"
+"	      0051b948    mov ecx,tablerow"
 "	      0051b94b    mov al,[eax+ecx]"
-"	      0051b94e    mov [ebp-1Ch],al"
+"	      0051b94e    mov color,al"
 );
 // LINE 2182:
 	asm( 
-"	      0051b951    mov al,[ebp-1Ch]"
-"	      0051b954    mov ecx,[ebp-8]"
+"	      0051b951    mov al,color"
+"	      0051b954    mov ecx,ptr"
 "	      0051b957    mov [ecx],al"
 );
 // LINE 2183:
 	asm( 
-"	      0051b959    inc dword ptr [ebp-8]"
+"	      0051b959    inc ptr"
 );
 // LINE 2185:
 	asm( 
-"	      0051b95c    mov al,[ebp-1Ch]"
-"	      0051b95f    mov ecx,[ebp-8]"
+"	      0051b95c    mov al,color"
+"	      0051b95f    mov ecx,ptr"
 "	      0051b962    mov [ecx],al"
 );
 // LINE 2186:
 	asm( 
-"	      0051b964    inc dword ptr [ebp-8]"
+"	      0051b964    inc ptr"
 );
 // LINE 2188:
 	asm( 
-"	      0051b967    mov al,[ebp-1Ch]"
-"	      0051b96a    mov ecx,[ebp-8]"
+"	      0051b967    mov al,color"
+"	      0051b96a    mov ecx,ptr"
 "	      0051b96d    mov [ecx],al"
 );
 // LINE 2189:
 	asm( 
-"	      0051b96f    inc dword ptr [ebp-8]"
+"	      0051b96f    inc ptr"
 );
 // LINE 2191:
 	asm( 
-"	      0051b972    mov al,[ebp-1Ch]"
-"	      0051b975    mov ecx,[ebp-8]"
+"	      0051b972    mov al,color"
+"	      0051b975    mov ecx,ptr"
 "	      0051b978    mov [ecx],al"
 );
 // LINE 2192:
 	asm( 
-"	      0051b97a    inc dword ptr [ebp-8]"
+"	      0051b97a    inc ptr"
 );
 // LINE 2193:
 	asm( 
-"	      0051b97d    mov eax,[ebp-8]"
+"	      0051b97d    mov eax,ptr"
 "	      0051b980    movsx eax,byte ptr [eax]"
-"	      0051b983    mov ecx,[ebp-4Ch]"
+"	      0051b983    mov ecx,tablerow"
 "	      0051b986    mov al,[eax+ecx]"
-"	      0051b989    mov [ebp-1Ch],al"
+"	      0051b989    mov color,al"
 );
 // LINE 2194:
 	asm( 
-"	      0051b98c    mov al,[ebp-1Ch]"
-"	      0051b98f    mov ecx,[ebp-8]"
+"	      0051b98c    mov al,color"
+"	      0051b98f    mov ecx,ptr"
 "	      0051b992    mov [ecx],al"
 );
 // LINE 2195:
 	asm( 
-"	      0051b994    inc dword ptr [ebp-8]"
+"	      0051b994    inc ptr"
 );
 // LINE 2196:
 	asm( 
-"	      0051b997    mov eax,[ebp-8]"
+"	      0051b997    mov eax,ptr"
 "	      0051b99a    movsx eax,byte ptr [eax]"
-"	      0051b99d    mov ecx,[ebp-4Ch]"
+"	      0051b99d    mov ecx,tablerow"
 "	      0051b9a0    mov al,[eax+ecx]"
-"	      0051b9a3    mov [ebp-1Ch],al"
+"	      0051b9a3    mov color,al"
 );
 // LINE 2197:
 	asm( 
-"	      0051b9a6    mov al,[ebp-1Ch]"
-"	      0051b9a9    mov ecx,[ebp-8]"
+"	      0051b9a6    mov al,color"
+"	      0051b9a9    mov ecx,ptr"
 "	      0051b9ac    mov [ecx],al"
 );
 // LINE 2198:
 	asm( 
-"	      0051b9ae    inc dword ptr [ebp-8]"
+"	      0051b9ae    inc ptr"
 );
 // LINE 2199:
 	asm( 
-"	      0051b9b1    mov eax,[ebp-8]"
+"	      0051b9b1    mov eax,ptr"
 "	      0051b9b4    movsx eax,byte ptr [eax]"
-"	      0051b9b7    mov ecx,[ebp-4Ch]"
+"	      0051b9b7    mov ecx,tablerow"
 "	      0051b9ba    mov al,[eax+ecx]"
-"	      0051b9bd    mov [ebp-1Ch],al"
+"	      0051b9bd    mov color,al"
 );
 // LINE 2200:
 	asm( 
-"	      0051b9c0    mov al,[ebp-1Ch]"
-"	      0051b9c3    mov ecx,[ebp-8]"
+"	      0051b9c0    mov al,color"
+"	      0051b9c3    mov ecx,ptr"
 "	      0051b9c6    mov [ecx],al"
 );
 // LINE 2201:
 	asm( 
-"	      0051b9c8    inc dword ptr [ebp-8]"
+"	      0051b9c8    inc ptr"
 );
 // LINE 2203:
 	asm( 
-"	      0051b9cb    mov al,[ebp-1Ch]"
-"	      0051b9ce    mov ecx,[ebp-8]"
+"	      0051b9cb    mov al,color"
+"	      0051b9ce    mov ecx,ptr"
 "	      0051b9d1    mov [ecx],al"
 );
 // LINE 2204:
 	asm( 
-"	      0051b9d3    mov eax,[ebp-18h]"
+"	      0051b9d3    mov eax,bufwidth"
 "	      0051b9d6    sub eax,9"
-"	      0051b9d9    add [ebp-8],eax"
+"	      0051b9d9    add ptr,eax"
 );
 // LINE 2206:
 	asm( 
-"	      0051b9dc    mov al,[ebp-1Ch]"
-"	      0051b9df    mov ecx,[ebp-8]"
+"	      0051b9dc    mov al,color"
+"	      0051b9df    mov ecx,ptr"
 "	      0051b9e2    mov [ecx],al"
 );
 // LINE 2207:
 	asm( 
-"	      0051b9e4    inc dword ptr [ebp-8]"
+"	      0051b9e4    inc ptr"
 );
 // LINE 2208:
 	asm( 
-"	      0051b9e7    mov eax,[ebp-8]"
+"	      0051b9e7    mov eax,ptr"
 "	      0051b9ea    movsx eax,byte ptr [eax]"
-"	      0051b9ed    mov ecx,[ebp-4Ch]"
+"	      0051b9ed    mov ecx,tablerow"
 "	      0051b9f0    mov al,[eax+ecx]"
-"	      0051b9f3    mov [ebp-1Ch],al"
+"	      0051b9f3    mov color,al"
 );
 // LINE 2209:
 	asm( 
-"	      0051b9f6    mov al,[ebp-1Ch]"
-"	      0051b9f9    mov ecx,[ebp-8]"
+"	      0051b9f6    mov al,color"
+"	      0051b9f9    mov ecx,ptr"
 "	      0051b9fc    mov [ecx],al"
 );
 // LINE 2210:
 	asm( 
-"	      0051b9fe    inc dword ptr [ebp-8]"
+"	      0051b9fe    inc ptr"
 );
 // LINE 2211:
 	asm( 
-"	      0051ba01    mov eax,[ebp-8]"
+"	      0051ba01    mov eax,ptr"
 "	      0051ba04    movsx eax,byte ptr [eax]"
-"	      0051ba07    mov ecx,[ebp-4Ch]"
+"	      0051ba07    mov ecx,tablerow"
 "	      0051ba0a    mov al,[eax+ecx]"
-"	      0051ba0d    mov [ebp-1Ch],al"
+"	      0051ba0d    mov color,al"
 );
 // LINE 2212:
 	asm( 
-"	      0051ba10    mov al,[ebp-1Ch]"
-"	      0051ba13    mov ecx,[ebp-8]"
+"	      0051ba10    mov al,color"
+"	      0051ba13    mov ecx,ptr"
 "	      0051ba16    mov [ecx],al"
 );
 // LINE 2213:
 	asm( 
-"	      0051ba18    inc dword ptr [ebp-8]"
+"	      0051ba18    inc ptr"
 );
 // LINE 2214:
 	asm( 
-"	      0051ba1b    mov eax,[ebp-8]"
+"	      0051ba1b    mov eax,ptr"
 "	      0051ba1e    movsx eax,byte ptr [eax]"
-"	      0051ba21    mov ecx,[ebp-4Ch]"
+"	      0051ba21    mov ecx,tablerow"
 "	      0051ba24    mov al,[eax+ecx]"
-"	      0051ba27    mov [ebp-1Ch],al"
+"	      0051ba27    mov color,al"
 );
 // LINE 2215:
 	asm( 
-"	      0051ba2a    mov al,[ebp-1Ch]"
-"	      0051ba2d    mov ecx,[ebp-8]"
+"	      0051ba2a    mov al,color"
+"	      0051ba2d    mov ecx,ptr"
 "	      0051ba30    mov [ecx],al"
 );
 // LINE 2216:
 	asm( 
-"	      0051ba32    inc dword ptr [ebp-8]"
+"	      0051ba32    inc ptr"
 );
 // LINE 2217:
 	asm( 
-"	      0051ba35    mov eax,[ebp-8]"
+"	      0051ba35    mov eax,ptr"
 "	      0051ba38    movsx eax,byte ptr [eax]"
-"	      0051ba3b    mov ecx,[ebp-4Ch]"
+"	      0051ba3b    mov ecx,tablerow"
 "	      0051ba3e    mov al,[eax+ecx]"
-"	      0051ba41    mov [ebp-1Ch],al"
+"	      0051ba41    mov color,al"
 );
 // LINE 2218:
 	asm( 
-"	      0051ba44    mov al,[ebp-1Ch]"
-"	      0051ba47    mov ecx,[ebp-8]"
+"	      0051ba44    mov al,color"
+"	      0051ba47    mov ecx,ptr"
 "	      0051ba4a    mov [ecx],al"
 );
 // LINE 2219:
 	asm( 
-"	      0051ba4c    inc dword ptr [ebp-8]"
+"	      0051ba4c    inc ptr"
 );
 // LINE 2221:
 	asm( 
-"	      0051ba4f    mov al,[ebp-1Ch]"
-"	      0051ba52    mov ecx,[ebp-8]"
+"	      0051ba4f    mov al,color"
+"	      0051ba52    mov ecx,ptr"
 "	      0051ba55    mov [ecx],al"
 );
 // LINE 2222:
 	asm( 
-"	      0051ba57    inc dword ptr [ebp-8]"
+"	      0051ba57    inc ptr"
 );
 // LINE 2223:
 	asm( 
-"	      0051ba5a    mov eax,[ebp-8]"
+"	      0051ba5a    mov eax,ptr"
 "	      0051ba5d    movsx eax,byte ptr [eax]"
-"	      0051ba60    mov ecx,[ebp-4Ch]"
+"	      0051ba60    mov ecx,tablerow"
 "	      0051ba63    mov al,[eax+ecx]"
-"	      0051ba66    mov [ebp-1Ch],al"
+"	      0051ba66    mov color,al"
 );
 // LINE 2224:
 	asm( 
-"	      0051ba69    mov al,[ebp-1Ch]"
-"	      0051ba6c    mov ecx,[ebp-8]"
+"	      0051ba69    mov al,color"
+"	      0051ba6c    mov ecx,ptr"
 "	      0051ba6f    mov [ecx],al"
 );
 // LINE 2225:
 	asm( 
-"	      0051ba71    inc dword ptr [ebp-8]"
+"	      0051ba71    inc ptr"
 );
 // LINE 2226:
 	asm( 
-"	      0051ba74    mov eax,[ebp-8]"
+"	      0051ba74    mov eax,ptr"
 "	      0051ba77    movsx eax,byte ptr [eax]"
-"	      0051ba7a    mov ecx,[ebp-4Ch]"
+"	      0051ba7a    mov ecx,tablerow"
 "	      0051ba7d    mov al,[eax+ecx]"
-"	      0051ba80    mov [ebp-1Ch],al"
+"	      0051ba80    mov color,al"
 );
 // LINE 2227:
 	asm( 
-"	      0051ba83    mov al,[ebp-1Ch]"
-"	      0051ba86    mov ecx,[ebp-8]"
+"	      0051ba83    mov al,color"
+"	      0051ba86    mov ecx,ptr"
 "	      0051ba89    mov [ecx],al"
 );
 // LINE 2228:
 	asm( 
-"	      0051ba8b    inc dword ptr [ebp-8]"
+"	      0051ba8b    inc ptr"
 );
 // LINE 2230:
 	asm( 
-"	      0051ba8e    mov al,[ebp-1Ch]"
-"	      0051ba91    mov ecx,[ebp-8]"
+"	      0051ba8e    mov al,color"
+"	      0051ba91    mov ecx,ptr"
 "	      0051ba94    mov [ecx],al"
 );
 // LINE 2231:
 	asm( 
-"	      0051ba96    inc dword ptr [ebp-8]"
+"	      0051ba96    inc ptr"
 );
 // LINE 2232:
 	asm( 
-"	      0051ba99    mov eax,[ebp-8]"
+"	      0051ba99    mov eax,ptr"
 "	      0051ba9c    movsx eax,byte ptr [eax]"
-"	      0051ba9f    mov ecx,[ebp-4Ch]"
+"	      0051ba9f    mov ecx,tablerow"
 "	      0051baa2    mov al,[eax+ecx]"
-"	      0051baa5    mov [ebp-1Ch],al"
+"	      0051baa5    mov color,al"
 );
 // LINE 2233:
 	asm( 
-"	      0051baa8    mov al,[ebp-1Ch]"
-"	      0051baab    mov ecx,[ebp-8]"
+"	      0051baa8    mov al,color"
+"	      0051baab    mov ecx,ptr"
 "	      0051baae    mov [ecx],al"
 );
 // LINE 2234:
 	asm( 
-"	      0051bab0    mov eax,[ebp-18h]"
+"	      0051bab0    mov eax,bufwidth"
 "	      0051bab3    sub eax,9"
-"	      0051bab6    add [ebp-8],eax"
+"	      0051bab6    add ptr,eax"
 );
 // LINE 2235:
 	asm( 
-"	      0051bab9    mov eax,[ebp-8]"
+"	      0051bab9    mov eax,ptr"
 "	      0051babc    movsx eax,byte ptr [eax]"
-"	      0051babf    mov ecx,[ebp-4Ch]"
+"	      0051babf    mov ecx,tablerow"
 "	      0051bac2    mov al,[eax+ecx]"
-"	      0051bac5    mov [ebp-1Ch],al"
+"	      0051bac5    mov color,al"
 );
 // LINE 2236:
 	asm( 
-"	      0051bac8    mov al,[ebp-1Ch]"
-"	      0051bacb    mov ecx,[ebp-8]"
+"	      0051bac8    mov al,color"
+"	      0051bacb    mov ecx,ptr"
 "	      0051bace    mov [ecx],al"
 );
 // LINE 2237:
 	asm( 
-"	      0051bad0    inc dword ptr [ebp-8]"
+"	      0051bad0    inc ptr"
 );
 // LINE 2239:
 	asm( 
-"	      0051bad3    mov al,[ebp-1Ch]"
-"	      0051bad6    mov ecx,[ebp-8]"
+"	      0051bad3    mov al,color"
+"	      0051bad6    mov ecx,ptr"
 "	      0051bad9    mov [ecx],al"
 );
 // LINE 2240:
 	asm( 
-"	      0051badb    inc dword ptr [ebp-8]"
+"	      0051badb    inc ptr"
 );
 // LINE 2242:
 	asm( 
-"	      0051bade    mov al,[ebp-1Ch]"
-"	      0051bae1    mov ecx,[ebp-8]"
+"	      0051bade    mov al,color"
+"	      0051bae1    mov ecx,ptr"
 "	      0051bae4    mov [ecx],al"
 );
 // LINE 2243:
 	asm( 
-"	      0051bae6    inc dword ptr [ebp-8]"
+"	      0051bae6    inc ptr"
 );
 // LINE 2245:
 	asm( 
-"	      0051bae9    mov al,[ebp-1Ch]"
-"	      0051baec    mov ecx,[ebp-8]"
+"	      0051bae9    mov al,color"
+"	      0051baec    mov ecx,ptr"
 "	      0051baef    mov [ecx],al"
 );
 // LINE 2246:
 	asm( 
-"	      0051baf1    inc dword ptr [ebp-8]"
+"	      0051baf1    inc ptr"
 );
 // LINE 2247:
 	asm( 
-"	      0051baf4    mov eax,[ebp-8]"
+"	      0051baf4    mov eax,ptr"
 "	      0051baf7    movsx eax,byte ptr [eax]"
-"	      0051bafa    mov ecx,[ebp-4Ch]"
+"	      0051bafa    mov ecx,tablerow"
 "	      0051bafd    mov al,[eax+ecx]"
-"	      0051bb00    mov [ebp-1Ch],al"
+"	      0051bb00    mov color,al"
 );
 // LINE 2248:
 	asm( 
-"	      0051bb03    mov al,[ebp-1Ch]"
-"	      0051bb06    mov ecx,[ebp-8]"
+"	      0051bb03    mov al,color"
+"	      0051bb06    mov ecx,ptr"
 "	      0051bb09    mov [ecx],al"
 );
 // LINE 2249:
 	asm( 
-"	      0051bb0b    inc dword ptr [ebp-8]"
+"	      0051bb0b    inc ptr"
 );
 // LINE 2251:
 	asm( 
-"	      0051bb0e    mov al,[ebp-1Ch]"
-"	      0051bb11    mov ecx,[ebp-8]"
+"	      0051bb0e    mov al,color"
+"	      0051bb11    mov ecx,ptr"
 "	      0051bb14    mov [ecx],al"
 );
 // LINE 2252:
 	asm( 
-"	      0051bb16    inc dword ptr [ebp-8]"
+"	      0051bb16    inc ptr"
 );
 // LINE 2254:
 	asm( 
-"	      0051bb19    mov al,[ebp-1Ch]"
-"	      0051bb1c    mov ecx,[ebp-8]"
+"	      0051bb19    mov al,color"
+"	      0051bb1c    mov ecx,ptr"
 "	      0051bb1f    mov [ecx],al"
 );
 // LINE 2255:
 	asm( 
-"	      0051bb21    inc dword ptr [ebp-8]"
+"	      0051bb21    inc ptr"
 );
 // LINE 2256:
 	asm( 
-"	      0051bb24    mov eax,[ebp-8]"
+"	      0051bb24    mov eax,ptr"
 "	      0051bb27    movsx eax,byte ptr [eax]"
-"	      0051bb2a    mov ecx,[ebp-4Ch]"
+"	      0051bb2a    mov ecx,tablerow"
 "	      0051bb2d    mov al,[eax+ecx]"
-"	      0051bb30    mov [ebp-1Ch],al"
+"	      0051bb30    mov color,al"
 );
 // LINE 2257:
 	asm( 
-"	      0051bb33    mov al,[ebp-1Ch]"
-"	      0051bb36    mov ecx,[ebp-8]"
+"	      0051bb33    mov al,color"
+"	      0051bb36    mov ecx,ptr"
 "	      0051bb39    mov [ecx],al"
 );
 // LINE 2258:
 	asm( 
-"	      0051bb3b    inc dword ptr [ebp-8]"
+"	      0051bb3b    inc ptr"
 );
 // LINE 2259:
 	asm( 
-"	      0051bb3e    mov eax,[ebp-8]"
+"	      0051bb3e    mov eax,ptr"
 "	      0051bb41    movsx eax,byte ptr [eax]"
-"	      0051bb44    mov ecx,[ebp-4Ch]"
+"	      0051bb44    mov ecx,tablerow"
 "	      0051bb47    mov al,[eax+ecx]"
-"	      0051bb4a    mov [ebp-1Ch],al"
+"	      0051bb4a    mov color,al"
 );
 // LINE 2260:
 	asm( 
-"	      0051bb4d    mov al,[ebp-1Ch]"
-"	      0051bb50    mov ecx,[ebp-8]"
+"	      0051bb4d    mov al,color"
+"	      0051bb50    mov ecx,ptr"
 "	      0051bb53    mov [ecx],al"
 );
 // LINE 2261:
 	asm( 
-"	      0051bb55    inc dword ptr [ebp-8]"
+"	      0051bb55    inc ptr"
 );
 // LINE 2262:
 	asm( 
-"	      0051bb58    mov eax,[ebp-8]"
+"	      0051bb58    mov eax,ptr"
 "	      0051bb5b    movsx eax,byte ptr [eax]"
-"	      0051bb5e    mov ecx,[ebp-4Ch]"
+"	      0051bb5e    mov ecx,tablerow"
 "	      0051bb61    mov al,[eax+ecx]"
-"	      0051bb64    mov [ebp-1Ch],al"
+"	      0051bb64    mov color,al"
 );
 // LINE 2263:
 	asm( 
-"	      0051bb67    mov al,[ebp-1Ch]"
-"	      0051bb6a    mov ecx,[ebp-8]"
+"	      0051bb67    mov al,color"
+"	      0051bb6a    mov ecx,ptr"
 "	      0051bb6d    mov [ecx],al"
 );
 // LINE 2264:
 	asm( 
-"	      0051bb6f    mov eax,[ebp-18h]"
+"	      0051bb6f    mov eax,bufwidth"
 "	      0051bb72    sub eax,9"
-"	      0051bb75    add [ebp-8],eax"
+"	      0051bb75    add ptr,eax"
 );
 // LINE 2266:
 	asm( 
-"	      0051bb78    mov al,[ebp-1Ch]"
-"	      0051bb7b    mov ecx,[ebp-8]"
+"	      0051bb78    mov al,color"
+"	      0051bb7b    mov ecx,ptr"
 "	      0051bb7e    mov [ecx],al"
 );
 // LINE 2267:
 	asm( 
-"	      0051bb80    inc dword ptr [ebp-8]"
+"	      0051bb80    inc ptr"
 );
 // LINE 2269:
 	asm( 
-"	      0051bb83    mov al,[ebp-1Ch]"
-"	      0051bb86    mov ecx,[ebp-8]"
+"	      0051bb83    mov al,color"
+"	      0051bb86    mov ecx,ptr"
 "	      0051bb89    mov [ecx],al"
 );
 // LINE 2270:
 	asm( 
-"	      0051bb8b    inc dword ptr [ebp-8]"
+"	      0051bb8b    inc ptr"
 );
 // LINE 2272:
 	asm( 
-"	      0051bb8e    mov al,[ebp-1Ch]"
-"	      0051bb91    mov ecx,[ebp-8]"
+"	      0051bb8e    mov al,color"
+"	      0051bb91    mov ecx,ptr"
 "	      0051bb94    mov [ecx],al"
 );
 // LINE 2273:
 	asm( 
-"	      0051bb96    inc dword ptr [ebp-8]"
+"	      0051bb96    inc ptr"
 );
 // LINE 2275:
 	asm( 
-"	      0051bb99    mov al,[ebp-1Ch]"
-"	      0051bb9c    mov ecx,[ebp-8]"
+"	      0051bb99    mov al,color"
+"	      0051bb9c    mov ecx,ptr"
 "	      0051bb9f    mov [ecx],al"
 );
 // LINE 2276:
 	asm( 
-"	      0051bba1    inc dword ptr [ebp-8]"
+"	      0051bba1    inc ptr"
 );
 // LINE 2277:
 	asm( 
-"	      0051bba4    mov eax,[ebp-8]"
+"	      0051bba4    mov eax,ptr"
 "	      0051bba7    movsx eax,byte ptr [eax]"
-"	      0051bbaa    mov ecx,[ebp-4Ch]"
+"	      0051bbaa    mov ecx,tablerow"
 "	      0051bbad    mov al,[eax+ecx]"
-"	      0051bbb0    mov [ebp-1Ch],al"
+"	      0051bbb0    mov color,al"
 );
 // LINE 2278:
 	asm( 
-"	      0051bbb3    mov al,[ebp-1Ch]"
-"	      0051bbb6    mov ecx,[ebp-8]"
+"	      0051bbb3    mov al,color"
+"	      0051bbb6    mov ecx,ptr"
 "	      0051bbb9    mov [ecx],al"
 );
 // LINE 2279:
 	asm( 
-"	      0051bbbb    inc dword ptr [ebp-8]"
+"	      0051bbbb    inc ptr"
 );
 // LINE 2280:
 	asm( 
-"	      0051bbbe    mov eax,[ebp-8]"
+"	      0051bbbe    mov eax,ptr"
 "	      0051bbc1    movsx eax,byte ptr [eax]"
-"	      0051bbc4    mov ecx,[ebp-4Ch]"
+"	      0051bbc4    mov ecx,tablerow"
 "	      0051bbc7    mov al,[eax+ecx]"
-"	      0051bbca    mov [ebp-1Ch],al"
+"	      0051bbca    mov color,al"
 );
 // LINE 2281:
 	asm( 
-"	      0051bbcd    mov al,[ebp-1Ch]"
-"	      0051bbd0    mov ecx,[ebp-8]"
+"	      0051bbcd    mov al,color"
+"	      0051bbd0    mov ecx,ptr"
 "	      0051bbd3    mov [ecx],al"
 );
 // LINE 2282:
 	asm( 
-"	      0051bbd5    inc dword ptr [ebp-8]"
+"	      0051bbd5    inc ptr"
 );
 // LINE 2283:
 	asm( 
-"	      0051bbd8    mov eax,[ebp-8]"
+"	      0051bbd8    mov eax,ptr"
 "	      0051bbdb    movsx eax,byte ptr [eax]"
-"	      0051bbde    mov ecx,[ebp-4Ch]"
+"	      0051bbde    mov ecx,tablerow"
 "	      0051bbe1    mov al,[eax+ecx]"
-"	      0051bbe4    mov [ebp-1Ch],al"
+"	      0051bbe4    mov color,al"
 );
 // LINE 2284:
 	asm( 
-"	      0051bbe7    mov al,[ebp-1Ch]"
-"	      0051bbea    mov ecx,[ebp-8]"
+"	      0051bbe7    mov al,color"
+"	      0051bbea    mov ecx,ptr"
 "	      0051bbed    mov [ecx],al"
 );
 // LINE 2285:
 	asm( 
-"	      0051bbef    inc dword ptr [ebp-8]"
+"	      0051bbef    inc ptr"
 );
 // LINE 2286:
 	asm( 
-"	      0051bbf2    mov eax,[ebp-8]"
+"	      0051bbf2    mov eax,ptr"
 "	      0051bbf5    movsx eax,byte ptr [eax]"
-"	      0051bbf8    mov ecx,[ebp-4Ch]"
+"	      0051bbf8    mov ecx,tablerow"
 "	      0051bbfb    mov al,[eax+ecx]"
-"	      0051bbfe    mov [ebp-1Ch],al"
+"	      0051bbfe    mov color,al"
 );
 // LINE 2287:
 	asm( 
-"	      0051bc01    mov al,[ebp-1Ch]"
-"	      0051bc04    mov ecx,[ebp-8]"
+"	      0051bc01    mov al,color"
+"	      0051bc04    mov ecx,ptr"
 "	      0051bc07    mov [ecx],al"
 );
 // LINE 2288:
 	asm( 
-"	      0051bc09    inc dword ptr [ebp-8]"
+"	      0051bc09    inc ptr"
 );
 // LINE 2290:
 	asm( 
-"	      0051bc0c    mov al,[ebp-1Ch]"
-"	      0051bc0f    mov ecx,[ebp-8]"
+"	      0051bc0c    mov al,color"
+"	      0051bc0f    mov ecx,ptr"
 "	      0051bc12    mov [ecx],al"
 );
 // LINE 2291:
 	asm( 
-"	      0051bc14    inc dword ptr [ebp-8]"
+"	      0051bc14    inc ptr"
 );
 // LINE 2293:
 	asm( 
-"	      0051bc17    mov al,[ebp-1Ch]"
-"	      0051bc1a    mov ecx,[ebp-8]"
+"	      0051bc17    mov al,color"
+"	      0051bc1a    mov ecx,ptr"
 "	      0051bc1d    mov [ecx],al"
 );
 // LINE 2294:
 	asm( 
-"	      0051bc1f    mov eax,[ebp-18h]"
+"	      0051bc1f    mov eax,bufwidth"
 "	      0051bc22    sub eax,9"
-"	      0051bc25    add [ebp-8],eax"
+"	      0051bc25    add ptr,eax"
 );
 // LINE 2295:
 	asm( 
-"	      0051bc28    mov eax,[ebp-8]"
+"	      0051bc28    mov eax,ptr"
 "	      0051bc2b    movsx eax,byte ptr [eax]"
-"	      0051bc2e    mov ecx,[ebp-4Ch]"
+"	      0051bc2e    mov ecx,tablerow"
 "	      0051bc31    mov al,[eax+ecx]"
-"	      0051bc34    mov [ebp-1Ch],al"
+"	      0051bc34    mov color,al"
 );
 // LINE 2296:
 	asm( 
-"	      0051bc37    mov al,[ebp-1Ch]"
-"	      0051bc3a    mov ecx,[ebp-8]"
+"	      0051bc37    mov al,color"
+"	      0051bc3a    mov ecx,ptr"
 "	      0051bc3d    mov [ecx],al"
 );
 // LINE 2297:
 	asm( 
-"	      0051bc3f    inc dword ptr [ebp-8]"
+"	      0051bc3f    inc ptr"
 );
 // LINE 2298:
 	asm( 
-"	      0051bc42    mov eax,[ebp-8]"
+"	      0051bc42    mov eax,ptr"
 "	      0051bc45    movsx eax,byte ptr [eax]"
-"	      0051bc48    mov ecx,[ebp-4Ch]"
+"	      0051bc48    mov ecx,tablerow"
 "	      0051bc4b    mov al,[eax+ecx]"
-"	      0051bc4e    mov [ebp-1Ch],al"
+"	      0051bc4e    mov color,al"
 );
 // LINE 2299:
 	asm( 
-"	      0051bc51    mov al,[ebp-1Ch]"
-"	      0051bc54    mov ecx,[ebp-8]"
+"	      0051bc51    mov al,color"
+"	      0051bc54    mov ecx,ptr"
 "	      0051bc57    mov [ecx],al"
 );
 // LINE 2300:
 	asm( 
-"	      0051bc59    inc dword ptr [ebp-8]"
+"	      0051bc59    inc ptr"
 );
 // LINE 2302:
 	asm( 
-"	      0051bc5c    mov al,[ebp-1Ch]"
-"	      0051bc5f    mov ecx,[ebp-8]"
+"	      0051bc5c    mov al,color"
+"	      0051bc5f    mov ecx,ptr"
 "	      0051bc62    mov [ecx],al"
 );
 // LINE 2303:
 	asm( 
-"	      0051bc64    inc dword ptr [ebp-8]"
+"	      0051bc64    inc ptr"
 );
 // LINE 2305:
 	asm( 
-"	      0051bc67    mov al,[ebp-1Ch]"
-"	      0051bc6a    mov ecx,[ebp-8]"
+"	      0051bc67    mov al,color"
+"	      0051bc6a    mov ecx,ptr"
 "	      0051bc6d    mov [ecx],al"
 );
 // LINE 2306:
 	asm( 
-"	      0051bc6f    inc dword ptr [ebp-8]"
+"	      0051bc6f    inc ptr"
 );
 // LINE 2307:
 	asm( 
-"	      0051bc72    mov eax,[ebp-8]"
+"	      0051bc72    mov eax,ptr"
 "	      0051bc75    movsx eax,byte ptr [eax]"
-"	      0051bc78    mov ecx,[ebp-4Ch]"
+"	      0051bc78    mov ecx,tablerow"
 "	      0051bc7b    mov al,[eax+ecx]"
-"	      0051bc7e    mov [ebp-1Ch],al"
+"	      0051bc7e    mov color,al"
 );
 // LINE 2308:
 	asm( 
-"	      0051bc81    mov al,[ebp-1Ch]"
-"	      0051bc84    mov ecx,[ebp-8]"
+"	      0051bc81    mov al,color"
+"	      0051bc84    mov ecx,ptr"
 "	      0051bc87    mov [ecx],al"
 );
 // LINE 2309:
 	asm( 
-"	      0051bc89    inc dword ptr [ebp-8]"
+"	      0051bc89    inc ptr"
 );
 // LINE 2310:
 	asm( 
-"	      0051bc8c    mov eax,[ebp-8]"
+"	      0051bc8c    mov eax,ptr"
 "	      0051bc8f    movsx eax,byte ptr [eax]"
-"	      0051bc92    mov ecx,[ebp-4Ch]"
+"	      0051bc92    mov ecx,tablerow"
 "	      0051bc95    mov al,[eax+ecx]"
-"	      0051bc98    mov [ebp-1Ch],al"
+"	      0051bc98    mov color,al"
 );
 // LINE 2311:
 	asm( 
-"	      0051bc9b    mov al,[ebp-1Ch]"
-"	      0051bc9e    mov ecx,[ebp-8]"
+"	      0051bc9b    mov al,color"
+"	      0051bc9e    mov ecx,ptr"
 "	      0051bca1    mov [ecx],al"
 );
 // LINE 2312:
 	asm( 
-"	      0051bca3    inc dword ptr [ebp-8]"
+"	      0051bca3    inc ptr"
 );
 // LINE 2314:
 	asm( 
-"	      0051bca6    mov al,[ebp-1Ch]"
-"	      0051bca9    mov ecx,[ebp-8]"
+"	      0051bca6    mov al,color"
+"	      0051bca9    mov ecx,ptr"
 "	      0051bcac    mov [ecx],al"
 );
 // LINE 2315:
 	asm( 
-"	      0051bcae    inc dword ptr [ebp-8]"
+"	      0051bcae    inc ptr"
 );
 // LINE 2316:
 	asm( 
-"	      0051bcb1    mov eax,[ebp-8]"
+"	      0051bcb1    mov eax,ptr"
 "	      0051bcb4    movsx eax,byte ptr [eax]"
-"	      0051bcb7    mov ecx,[ebp-4Ch]"
+"	      0051bcb7    mov ecx,tablerow"
 "	      0051bcba    mov al,[eax+ecx]"
-"	      0051bcbd    mov [ebp-1Ch],al"
+"	      0051bcbd    mov color,al"
 );
 // LINE 2317:
 	asm( 
-"	      0051bcc0    mov al,[ebp-1Ch]"
-"	      0051bcc3    mov ecx,[ebp-8]"
+"	      0051bcc0    mov al,color"
+"	      0051bcc3    mov ecx,ptr"
 "	      0051bcc6    mov [ecx],al"
 );
 // LINE 2318:
 	asm( 
-"	      0051bcc8    inc dword ptr [ebp-8]"
+"	      0051bcc8    inc ptr"
 );
 // LINE 2320:
 	asm( 
-"	      0051bccb    mov al,[ebp-1Ch]"
-"	      0051bcce    mov ecx,[ebp-8]"
+"	      0051bccb    mov al,color"
+"	      0051bcce    mov ecx,ptr"
 "	      0051bcd1    mov [ecx],al"
 );
 // LINE 2321:
 	asm( 
-"	      0051bcd3    inc dword ptr [ebp-8]"
+"	      0051bcd3    inc ptr"
 );
 // LINE 2323:
 	asm( 
-"	      0051bcd6    mov al,[ebp-1Ch]"
-"	      0051bcd9    mov ecx,[ebp-8]"
+"	      0051bcd6    mov al,color"
+"	      0051bcd9    mov ecx,ptr"
 "	      0051bcdc    mov [ecx],al"
 );
 // LINE 2324:
 	asm( 
-"	      0051bcde    mov eax,[ebp-18h]"
+"	      0051bcde    mov eax,bufwidth"
 "	      0051bce1    sub eax,9"
-"	      0051bce4    add [ebp-8],eax"
+"	      0051bce4    add ptr,eax"
 );
 // LINE 2326:
 	asm( 
-"	      0051bce7    mov al,[ebp-1Ch]"
-"	      0051bcea    mov ecx,[ebp-8]"
+"	      0051bce7    mov al,color"
+"	      0051bcea    mov ecx,ptr"
 "	      0051bced    mov [ecx],al"
 );
 // LINE 2327:
 	asm( 
-"	      0051bcef    inc dword ptr [ebp-8]"
+"	      0051bcef    inc ptr"
 );
 // LINE 2328:
 	asm( 
-"	      0051bcf2    mov eax,[ebp-8]"
+"	      0051bcf2    mov eax,ptr"
 "	      0051bcf5    movsx eax,byte ptr [eax]"
-"	      0051bcf8    mov ecx,[ebp-4Ch]"
+"	      0051bcf8    mov ecx,tablerow"
 "	      0051bcfb    mov al,[eax+ecx]"
-"	      0051bcfe    mov [ebp-1Ch],al"
+"	      0051bcfe    mov color,al"
 );
 // LINE 2329:
 	asm( 
-"	      0051bd01    mov al,[ebp-1Ch]"
-"	      0051bd04    mov ecx,[ebp-8]"
+"	      0051bd01    mov al,color"
+"	      0051bd04    mov ecx,ptr"
 "	      0051bd07    mov [ecx],al"
 );
 // LINE 2330:
 	asm( 
-"	      0051bd09    inc dword ptr [ebp-8]"
+"	      0051bd09    inc ptr"
 );
 // LINE 2331:
 	asm( 
-"	      0051bd0c    mov eax,[ebp-8]"
+"	      0051bd0c    mov eax,ptr"
 "	      0051bd0f    movsx eax,byte ptr [eax]"
-"	      0051bd12    mov ecx,[ebp-4Ch]"
+"	      0051bd12    mov ecx,tablerow"
 "	      0051bd15    mov al,[eax+ecx]"
-"	      0051bd18    mov [ebp-1Ch],al"
+"	      0051bd18    mov color,al"
 );
 // LINE 2332:
 	asm( 
-"	      0051bd1b    mov al,[ebp-1Ch]"
-"	      0051bd1e    mov ecx,[ebp-8]"
+"	      0051bd1b    mov al,color"
+"	      0051bd1e    mov ecx,ptr"
 "	      0051bd21    mov [ecx],al"
 );
 // LINE 2333:
 	asm( 
-"	      0051bd23    inc dword ptr [ebp-8]"
+"	      0051bd23    inc ptr"
 );
 // LINE 2334:
 	asm( 
-"	      0051bd26    mov eax,[ebp-8]"
+"	      0051bd26    mov eax,ptr"
 "	      0051bd29    movsx eax,byte ptr [eax]"
-"	      0051bd2c    mov ecx,[ebp-4Ch]"
+"	      0051bd2c    mov ecx,tablerow"
 "	      0051bd2f    mov al,[eax+ecx]"
-"	      0051bd32    mov [ebp-1Ch],al"
+"	      0051bd32    mov color,al"
 );
 // LINE 2335:
 	asm( 
-"	      0051bd35    mov al,[ebp-1Ch]"
-"	      0051bd38    mov ecx,[ebp-8]"
+"	      0051bd35    mov al,color"
+"	      0051bd38    mov ecx,ptr"
 "	      0051bd3b    mov [ecx],al"
 );
 // LINE 2336:
 	asm( 
-"	      0051bd3d    inc dword ptr [ebp-8]"
+"	      0051bd3d    inc ptr"
 );
 // LINE 2338:
 	asm( 
-"	      0051bd40    mov al,[ebp-1Ch]"
-"	      0051bd43    mov ecx,[ebp-8]"
+"	      0051bd40    mov al,color"
+"	      0051bd43    mov ecx,ptr"
 "	      0051bd46    mov [ecx],al"
 );
 // LINE 2339:
 	asm( 
-"	      0051bd48    inc dword ptr [ebp-8]"
+"	      0051bd48    inc ptr"
 );
 // LINE 2341:
 	asm( 
-"	      0051bd4b    mov al,[ebp-1Ch]"
-"	      0051bd4e    mov ecx,[ebp-8]"
+"	      0051bd4b    mov al,color"
+"	      0051bd4e    mov ecx,ptr"
 "	      0051bd51    mov [ecx],al"
 );
 // LINE 2342:
 	asm( 
-"	      0051bd53    inc dword ptr [ebp-8]"
+"	      0051bd53    inc ptr"
 );
 // LINE 2344:
 	asm( 
-"	      0051bd56    mov al,[ebp-1Ch]"
-"	      0051bd59    mov ecx,[ebp-8]"
+"	      0051bd56    mov al,color"
+"	      0051bd59    mov ecx,ptr"
 "	      0051bd5c    mov [ecx],al"
 );
 // LINE 2345:
 	asm( 
-"	      0051bd5e    inc dword ptr [ebp-8]"
+"	      0051bd5e    inc ptr"
 );
 // LINE 2346:
 	asm( 
-"	      0051bd61    mov eax,[ebp-8]"
+"	      0051bd61    mov eax,ptr"
 "	      0051bd64    movsx eax,byte ptr [eax]"
-"	      0051bd67    mov ecx,[ebp-4Ch]"
+"	      0051bd67    mov ecx,tablerow"
 "	      0051bd6a    mov al,[eax+ecx]"
-"	      0051bd6d    mov [ebp-1Ch],al"
+"	      0051bd6d    mov color,al"
 );
 // LINE 2347:
 	asm( 
-"	      0051bd70    mov al,[ebp-1Ch]"
-"	      0051bd73    mov ecx,[ebp-8]"
+"	      0051bd70    mov al,color"
+"	      0051bd73    mov ecx,ptr"
 "	      0051bd76    mov [ecx],al"
 );
 // LINE 2348:
 	asm( 
-"	      0051bd78    inc dword ptr [ebp-8]"
+"	      0051bd78    inc ptr"
 );
 // LINE 2349:
 	asm( 
-"	      0051bd7b    mov eax,[ebp-8]"
+"	      0051bd7b    mov eax,ptr"
 "	      0051bd7e    movsx eax,byte ptr [eax]"
-"	      0051bd81    mov ecx,[ebp-4Ch]"
+"	      0051bd81    mov ecx,tablerow"
 "	      0051bd84    mov al,[eax+ecx]"
-"	      0051bd87    mov [ebp-1Ch],al"
+"	      0051bd87    mov color,al"
 );
 // LINE 2350:
 	asm( 
-"	      0051bd8a    mov al,[ebp-1Ch]"
-"	      0051bd8d    mov ecx,[ebp-8]"
+"	      0051bd8a    mov al,color"
+"	      0051bd8d    mov ecx,ptr"
 "	      0051bd90    mov [ecx],al"
 );
 // LINE 2351:
 	asm( 
-"	      0051bd92    inc dword ptr [ebp-8]"
+"	      0051bd92    inc ptr"
 );
 // LINE 2353:
 	asm( 
-"	      0051bd95    mov al,[ebp-1Ch]"
-"	      0051bd98    mov ecx,[ebp-8]"
+"	      0051bd95    mov al,color"
+"	      0051bd98    mov ecx,ptr"
 "	      0051bd9b    mov [ecx],al"
 );
 // LINE 2354:
 	asm( 
-"	      0051bd9d    mov eax,[ebp-18h]"
+"	      0051bd9d    mov eax,bufwidth"
 "	      0051bda0    sub eax,9"
-"	      0051bda3    add [ebp-8],eax"
+"	      0051bda3    add ptr,eax"
 );
 // LINE 2356:
 	asm( 
-"	      0051bda6    mov al,[ebp-1Ch]"
-"	      0051bda9    mov ecx,[ebp-8]"
+"	      0051bda6    mov al,color"
+"	      0051bda9    mov ecx,ptr"
 "	      0051bdac    mov [ecx],al"
 );
 // LINE 2357:
 	asm( 
-"	      0051bdae    inc dword ptr [ebp-8]"
+"	      0051bdae    inc ptr"
 );
 // LINE 2358:
 	asm( 
-"	      0051bdb1    mov eax,[ebp-8]"
+"	      0051bdb1    mov eax,ptr"
 "	      0051bdb4    movsx eax,byte ptr [eax]"
-"	      0051bdb7    mov ecx,[ebp-4Ch]"
+"	      0051bdb7    mov ecx,tablerow"
 "	      0051bdba    mov al,[eax+ecx]"
-"	      0051bdbd    mov [ebp-1Ch],al"
+"	      0051bdbd    mov color,al"
 );
 // LINE 2359:
 	asm( 
-"	      0051bdc0    mov al,[ebp-1Ch]"
-"	      0051bdc3    mov ecx,[ebp-8]"
+"	      0051bdc0    mov al,color"
+"	      0051bdc3    mov ecx,ptr"
 "	      0051bdc6    mov [ecx],al"
 );
 // LINE 2360:
 	asm( 
-"	      0051bdc8    inc dword ptr [ebp-8]"
+"	      0051bdc8    inc ptr"
 );
 // LINE 2361:
 	asm( 
-"	      0051bdcb    mov eax,[ebp-8]"
+"	      0051bdcb    mov eax,ptr"
 "	      0051bdce    movsx eax,byte ptr [eax]"
-"	      0051bdd1    mov ecx,[ebp-4Ch]"
+"	      0051bdd1    mov ecx,tablerow"
 "	      0051bdd4    mov al,[eax+ecx]"
-"	      0051bdd7    mov [ebp-1Ch],al"
+"	      0051bdd7    mov color,al"
 );
 // LINE 2362:
 	asm( 
-"	      0051bdda    mov al,[ebp-1Ch]"
-"	      0051bddd    mov ecx,[ebp-8]"
+"	      0051bdda    mov al,color"
+"	      0051bddd    mov ecx,ptr"
 "	      0051bde0    mov [ecx],al"
 );
 // LINE 2363:
 	asm( 
-"	      0051bde2    inc dword ptr [ebp-8]"
+"	      0051bde2    inc ptr"
 );
 // LINE 2365:
 	asm( 
-"	      0051bde5    mov al,[ebp-1Ch]"
-"	      0051bde8    mov ecx,[ebp-8]"
+"	      0051bde5    mov al,color"
+"	      0051bde8    mov ecx,ptr"
 "	      0051bdeb    mov [ecx],al"
 );
 // LINE 2366:
 	asm( 
-"	      0051bded    inc dword ptr [ebp-8]"
+"	      0051bded    inc ptr"
 );
 // LINE 2368:
 	asm( 
-"	      0051bdf0    mov al,[ebp-1Ch]"
-"	      0051bdf3    mov ecx,[ebp-8]"
+"	      0051bdf0    mov al,color"
+"	      0051bdf3    mov ecx,ptr"
 "	      0051bdf6    mov [ecx],al"
 );
 // LINE 2369:
 	asm( 
-"	      0051bdf8    inc dword ptr [ebp-8]"
+"	      0051bdf8    inc ptr"
 );
 // LINE 2370:
 	asm( 
-"	      0051bdfb    mov eax,[ebp-8]"
+"	      0051bdfb    mov eax,ptr"
 "	      0051bdfe    movsx eax,byte ptr [eax]"
-"	      0051be01    mov ecx,[ebp-4Ch]"
+"	      0051be01    mov ecx,tablerow"
 "	      0051be04    mov al,[eax+ecx]"
-"	      0051be07    mov [ebp-1Ch],al"
+"	      0051be07    mov color,al"
 );
 // LINE 2371:
 	asm( 
-"	      0051be0a    mov al,[ebp-1Ch]"
-"	      0051be0d    mov ecx,[ebp-8]"
+"	      0051be0a    mov al,color"
+"	      0051be0d    mov ecx,ptr"
 "	      0051be10    mov [ecx],al"
 );
 // LINE 2372:
 	asm( 
-"	      0051be12    inc dword ptr [ebp-8]"
+"	      0051be12    inc ptr"
 );
 // LINE 2373:
 	asm( 
-"	      0051be15    mov eax,[ebp-8]"
+"	      0051be15    mov eax,ptr"
 "	      0051be18    movsx eax,byte ptr [eax]"
-"	      0051be1b    mov ecx,[ebp-4Ch]"
+"	      0051be1b    mov ecx,tablerow"
 "	      0051be1e    mov al,[eax+ecx]"
-"	      0051be21    mov [ebp-1Ch],al"
+"	      0051be21    mov color,al"
 );
 // LINE 2374:
 	asm( 
-"	      0051be24    mov al,[ebp-1Ch]"
-"	      0051be27    mov ecx,[ebp-8]"
+"	      0051be24    mov al,color"
+"	      0051be27    mov ecx,ptr"
 "	      0051be2a    mov [ecx],al"
 );
 // LINE 2375:
 	asm( 
-"	      0051be2c    inc dword ptr [ebp-8]"
+"	      0051be2c    inc ptr"
 );
 // LINE 2377:
 	asm( 
-"	      0051be2f    mov al,[ebp-1Ch]"
-"	      0051be32    mov ecx,[ebp-8]"
+"	      0051be2f    mov al,color"
+"	      0051be32    mov ecx,ptr"
 "	      0051be35    mov [ecx],al"
 );
 // LINE 2378:
 	asm( 
-"	      0051be37    inc dword ptr [ebp-8]"
+"	      0051be37    inc ptr"
 );
 // LINE 2380:
 	asm( 
-"	      0051be3a    mov al,[ebp-1Ch]"
-"	      0051be3d    mov ecx,[ebp-8]"
+"	      0051be3a    mov al,color"
+"	      0051be3d    mov ecx,ptr"
 "	      0051be40    mov [ecx],al"
 );
 // LINE 2381:
 	asm( 
-"	      0051be42    inc dword ptr [ebp-8]"
+"	      0051be42    inc ptr"
 );
 // LINE 2382:
 	asm( 
-"	      0051be45    mov eax,[ebp-8]"
+"	      0051be45    mov eax,ptr"
 "	      0051be48    movsx eax,byte ptr [eax]"
-"	      0051be4b    mov ecx,[ebp-4Ch]"
+"	      0051be4b    mov ecx,tablerow"
 "	      0051be4e    mov al,[eax+ecx]"
-"	      0051be51    mov [ebp-1Ch],al"
+"	      0051be51    mov color,al"
 );
 // LINE 2383:
 	asm( 
-"	      0051be54    mov al,[ebp-1Ch]"
-"	      0051be57    mov ecx,[ebp-8]"
+"	      0051be54    mov al,color"
+"	      0051be57    mov ecx,ptr"
 "	      0051be5a    mov [ecx],al"
 );
 // LINE 2384:
 	asm( 
-"	      0051be5c    mov eax,[ebp-18h]"
+"	      0051be5c    mov eax,bufwidth"
 "	      0051be5f    sub eax,9"
-"	      0051be62    add [ebp-8],eax"
+"	      0051be62    add ptr,eax"
 );
 // LINE 2385:
 	asm( 
-"	      0051be65    mov eax,[ebp-8]"
+"	      0051be65    mov eax,ptr"
 "	      0051be68    movsx eax,byte ptr [eax]"
-"	      0051be6b    mov ecx,[ebp-4Ch]"
+"	      0051be6b    mov ecx,tablerow"
 "	      0051be6e    mov al,[eax+ecx]"
-"	      0051be71    mov [ebp-1Ch],al"
+"	      0051be71    mov color,al"
 );
 // LINE 2386:
 	asm( 
-"	      0051be74    mov al,[ebp-1Ch]"
-"	      0051be77    mov ecx,[ebp-8]"
+"	      0051be74    mov al,color"
+"	      0051be77    mov ecx,ptr"
 "	      0051be7a    mov [ecx],al"
 );
 // LINE 2387:
 	asm( 
-"	      0051be7c    inc dword ptr [ebp-8]"
+"	      0051be7c    inc ptr"
 );
 // LINE 2389:
 	asm( 
-"	      0051be7f    mov al,[ebp-1Ch]"
-"	      0051be82    mov ecx,[ebp-8]"
+"	      0051be7f    mov al,color"
+"	      0051be82    mov ecx,ptr"
 "	      0051be85    mov [ecx],al"
 );
 // LINE 2390:
 	asm( 
-"	      0051be87    inc dword ptr [ebp-8]"
+"	      0051be87    inc ptr"
 );
 // LINE 2392:
 	asm( 
-"	      0051be8a    mov al,[ebp-1Ch]"
-"	      0051be8d    mov ecx,[ebp-8]"
+"	      0051be8a    mov al,color"
+"	      0051be8d    mov ecx,ptr"
 "	      0051be90    mov [ecx],al"
 );
 // LINE 2393:
 	asm( 
-"	      0051be92    inc dword ptr [ebp-8]"
+"	      0051be92    inc ptr"
 );
 // LINE 2394:
 	asm( 
-"	      0051be95    mov eax,[ebp-8]"
+"	      0051be95    mov eax,ptr"
 "	      0051be98    movsx eax,byte ptr [eax]"
-"	      0051be9b    mov ecx,[ebp-4Ch]"
+"	      0051be9b    mov ecx,tablerow"
 "	      0051be9e    mov al,[eax+ecx]"
-"	      0051bea1    mov [ebp-1Ch],al"
+"	      0051bea1    mov color,al"
 );
 // LINE 2395:
 	asm( 
-"	      0051bea4    mov al,[ebp-1Ch]"
-"	      0051bea7    mov ecx,[ebp-8]"
+"	      0051bea4    mov al,color"
+"	      0051bea7    mov ecx,ptr"
 "	      0051beaa    mov [ecx],al"
 );
 // LINE 2396:
 	asm( 
-"	      0051beac    inc dword ptr [ebp-8]"
+"	      0051beac    inc ptr"
 );
 // LINE 2397:
 	asm( 
-"	      0051beaf    mov eax,[ebp-8]"
+"	      0051beaf    mov eax,ptr"
 "	      0051beb2    movsx eax,byte ptr [eax]"
-"	      0051beb5    mov ecx,[ebp-4Ch]"
+"	      0051beb5    mov ecx,tablerow"
 "	      0051beb8    mov al,[eax+ecx]"
-"	      0051bebb    mov [ebp-1Ch],al"
+"	      0051bebb    mov color,al"
 );
 // LINE 2398:
 	asm( 
-"	      0051bebe    mov al,[ebp-1Ch]"
-"	      0051bec1    mov ecx,[ebp-8]"
+"	      0051bebe    mov al,color"
+"	      0051bec1    mov ecx,ptr"
 "	      0051bec4    mov [ecx],al"
 );
 // LINE 2399:
 	asm( 
-"	      0051bec6    inc dword ptr [ebp-8]"
+"	      0051bec6    inc ptr"
 );
 // LINE 2400:
 	asm( 
-"	      0051bec9    mov eax,[ebp-8]"
+"	      0051bec9    mov eax,ptr"
 "	      0051becc    movsx eax,byte ptr [eax]"
-"	      0051becf    mov ecx,[ebp-4Ch]"
+"	      0051becf    mov ecx,tablerow"
 "	      0051bed2    mov al,[eax+ecx]"
-"	      0051bed5    mov [ebp-1Ch],al"
+"	      0051bed5    mov color,al"
 );
 // LINE 2401:
 	asm( 
-"	      0051bed8    mov al,[ebp-1Ch]"
-"	      0051bedb    mov ecx,[ebp-8]"
+"	      0051bed8    mov al,color"
+"	      0051bedb    mov ecx,ptr"
 "	      0051bede    mov [ecx],al"
 );
 // LINE 2402:
 	asm( 
-"	      0051bee0    inc dword ptr [ebp-8]"
+"	      0051bee0    inc ptr"
 );
 // LINE 2404:
 	asm( 
-"	      0051bee3    mov al,[ebp-1Ch]"
-"	      0051bee6    mov ecx,[ebp-8]"
+"	      0051bee3    mov al,color"
+"	      0051bee6    mov ecx,ptr"
 "	      0051bee9    mov [ecx],al"
 );
 // LINE 2405:
 	asm( 
-"	      0051beeb    inc dword ptr [ebp-8]"
+"	      0051beeb    inc ptr"
 );
 // LINE 2407:
 	asm( 
-"	      0051beee    mov al,[ebp-1Ch]"
-"	      0051bef1    mov ecx,[ebp-8]"
+"	      0051beee    mov al,color"
+"	      0051bef1    mov ecx,ptr"
 "	      0051bef4    mov [ecx],al"
 );
 // LINE 2408:
 	asm( 
-"	      0051bef6    inc dword ptr [ebp-8]"
+"	      0051bef6    inc ptr"
 );
 // LINE 2410:
 	asm( 
-"	      0051bef9    mov al,[ebp-1Ch]"
-"	      0051befc    mov ecx,[ebp-8]"
+"	      0051bef9    mov al,color"
+"	      0051befc    mov ecx,ptr"
 "	      0051beff    mov [ecx],al"
 );
 // LINE 2411:
 	asm( 
-"	      0051bf01    inc dword ptr [ebp-8]"
+"	      0051bf01    inc ptr"
 );
 // LINE 2412:
 	asm( 
-"	      0051bf04    mov eax,[ebp-8]"
+"	      0051bf04    mov eax,ptr"
 "	      0051bf07    movsx eax,byte ptr [eax]"
-"	      0051bf0a    mov ecx,[ebp-4Ch]"
+"	      0051bf0a    mov ecx,tablerow"
 "	      0051bf0d    mov al,[eax+ecx]"
-"	      0051bf10    mov [ebp-1Ch],al"
+"	      0051bf10    mov color,al"
 );
 // LINE 2413:
 	asm( 
-"	      0051bf13    mov al,[ebp-1Ch]"
-"	      0051bf16    mov ecx,[ebp-8]"
+"	      0051bf13    mov al,color"
+"	      0051bf16    mov ecx,ptr"
 "	      0051bf19    mov [ecx],al"
 );
 // LINE 2414:
@@ -7826,11 +7826,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 );
 // LINE 2421:
 	asm( 
-"	      0051bf66    mov dword ptr [ebp-44h],0"
+"	      0051bf66    mov i,0"
 "	      0051bf6d    jmp near ptr 0051BF75h"
-"	      0051bf72    inc dword ptr [ebp-44h]"
-"	      0051bf75    mov eax,[ebp-44h]"
-"	      0051bf78    cmp [ebp-3Ch],eax"
+"	      0051bf72    inc i"
+"	      0051bf75    mov eax,i"
+"	      0051bf78    cmp num3,eax"
 "	      0051bf7b    jle near ptr 0051DA56h"
 );
 // LINE 2423:
@@ -7838,76 +7838,76 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051bf81    call 0056EC50h"
 "	      0051bf86    movsx eax,ax"
 "	      0051bf89    cdq"
-"	      0051bf8a    idiv dword ptr [ebp-30h]"
-"	      0051bf8d    mov eax,[ebp-38h]"
-"	      0051bf90    sub eax,[ebp-54h]"
+"	      0051bf8a    idiv num2"
+"	      0051bf8d    mov eax,x"
+"	      0051bf90    sub eax,num"
 "	      0051bf93    add eax,edx"
-"	      0051bf95    mov [ebp-0Ch],eax"
+"	      0051bf95    mov plotx,eax"
 );
 // LINE 2424:
 	asm( 
 "	      0051bf98    call 0056EC50h"
 "	      0051bf9d    movsx eax,ax"
 "	      0051bfa0    cdq"
-"	      0051bfa1    idiv dword ptr [ebp-30h]"
-"	      0051bfa4    mov eax,[ebp-40h]"
-"	      0051bfa7    sub eax,[ebp-54h]"
+"	      0051bfa1    idiv num2"
+"	      0051bfa4    mov eax,y"
+"	      0051bfa7    sub eax,num"
 "	      0051bfaa    add eax,edx"
-"	      0051bfac    mov [ebp-20h],eax"
+"	      0051bfac    mov ploty,eax"
 );
 // LINE 2427:
 	asm( 
 "	      0051bfaf    call 0056EC50h"
 "	      0051bfb4    movsx eax,ax"
 "	      0051bfb7    cdq"
-"	      0051bfb8    idiv dword ptr [ebp-10h]"
-"	      0051bfbb    mov eax,[ebp-2Ch]"
+"	      0051bfb8    idiv numvals"
+"	      0051bfbb    mov eax,minval"
 "	      0051bfbe    add eax,edx"
-"	      0051bfc0    mov [ebp-34h],eax"
+"	      0051bfc0    mov dim,eax"
 );
 // LINE 2430:
 	asm( 
-"	      0051bfc3    cmp dword ptr [ebp-0Ch],0"
+"	      0051bfc3    cmp plotx,0"
 "	      0051bfc7    jge near ptr 0051BFD2h"
 "	      0051bfcd    jmp near ptr 0051DA56h"
 );
 // LINE 2431:
 	asm( 
-"	      0051bfd2    cmp dword ptr [ebp-20h],0"
+"	      0051bfd2    cmp ploty,0"
 "	      0051bfd6    jge near ptr 0051BFE1h"
 "	      0051bfdc    jmp near ptr 0051DA56h"
 );
 // LINE 2432:
 	asm( 
-"	      0051bfe1    mov eax,[ebp-14h]"
-"	      0051bfe4    mov ecx,[ebp-34h]"
+"	      0051bfe1    mov eax,winwidth"
+"	      0051bfe4    mov ecx,dim"
 "	      0051bfe7    add ecx,ecx"
 "	      0051bfe9    sub eax,ecx"
-"	      0051bfeb    cmp eax,[ebp-0Ch]"
+"	      0051bfeb    cmp eax,plotx"
 "	      0051bfee    jge near ptr 0051BFF9h"
 "	      0051bff4    jmp near ptr 0051DA56h"
 );
 // LINE 2433:
 	asm( 
-"	      0051bff9    mov eax,[ebp-58h]"
-"	      0051bffc    mov ecx,[ebp-34h]"
+"	      0051bff9    mov eax,winheight"
+"	      0051bffc    mov ecx,dim"
 "	      0051bfff    add ecx,ecx"
 "	      0051c001    sub eax,ecx"
-"	      0051c003    cmp eax,[ebp-20h]"
+"	      0051c003    cmp eax,ploty"
 "	      0051c006    jge near ptr 0051C011h"
 "	      0051c00c    jmp near ptr 0051DA56h"
 );
 // LINE 2436:
 	asm( 
-"	      0051c011    mov eax,[ebp-18h]"
-"	      0051c014    imul eax,[ebp-20h]"
-"	      0051c018    add eax,[ebp-0Ch]"
+"	      0051c011    mov eax,bufwidth"
+"	      0051c014    imul eax,ploty"
+"	      0051c018    add eax,plotx"
 "	      0051c01b    add eax,ds:[598EACh]"
-"	      0051c021    mov [ebp-8],eax"
+"	      0051c021    mov ptr,eax"
 );
 // LINE 2440:
 	asm( 
-"	      0051c024    mov eax,[ebp-34h]"
+"	      0051c024    mov eax,dim"
 "	      0051c027    mov [ebp-64h],eax"
 "	      0051c02a    jmp near ptr 0051DA15h"
 );
@@ -7917,13 +7917,13 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c034    and eax,7"
 "	      0051c037    mov ecx,ds:[62A528h]"
 "	      0051c03d    mov al,[eax+ecx]"
-"	      0051c040    mov [ebp-1Ch],al"
+"	      0051c040    mov color,al"
 "	      0051c043    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2445:
 	asm( 
-"	      0051c049    mov al,[ebp-1Ch]"
-"	      0051c04c    mov ecx,[ebp-8]"
+"	      0051c049    mov al,color"
+"	      0051c04c    mov ecx,ptr"
 "	      0051c04f    mov [ecx],al"
 );
 // LINE 2446:
@@ -7936,23 +7936,23 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c05b    and eax,7"
 "	      0051c05e    mov ecx,ds:[62A528h]"
 "	      0051c064    mov al,[eax+ecx]"
-"	      0051c067    mov [ebp-1Ch],al"
+"	      0051c067    mov color,al"
 "	      0051c06a    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2450:
 	asm( 
-"	      0051c070    mov al,[ebp-1Ch]"
-"	      0051c073    mov ecx,[ebp-8]"
+"	      0051c070    mov al,color"
+"	      0051c073    mov ecx,ptr"
 "	      0051c076    mov [ecx],al"
 );
 // LINE 2451:
 	asm( 
-"	      0051c078    add dword ptr [ebp-8],2"
+"	      0051c078    add ptr,2"
 );
 // LINE 2453:
 	asm( 
-"	      0051c07c    mov al,[ebp-1Ch]"
-"	      0051c07f    mov ecx,[ebp-8]"
+"	      0051c07c    mov al,color"
+"	      0051c07f    mov ecx,ptr"
 "	      0051c082    mov [ecx],al"
 );
 // LINE 2454:
@@ -7961,30 +7961,30 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c089    and eax,7"
 "	      0051c08c    mov ecx,ds:[62A528h]"
 "	      0051c092    mov al,[eax+ecx]"
-"	      0051c095    mov [ebp-1Ch],al"
+"	      0051c095    mov color,al"
 "	      0051c098    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2455:
 	asm( 
-"	      0051c09e    mov eax,[ebp-18h]"
+"	      0051c09e    mov eax,bufwidth"
 "	      0051c0a1    add eax,eax"
 "	      0051c0a3    sub eax,2"
-"	      0051c0a6    add [ebp-8],eax"
+"	      0051c0a6    add ptr,eax"
 );
 // LINE 2456:
 	asm( 
-"	      0051c0a9    mov al,[ebp-1Ch]"
-"	      0051c0ac    mov ecx,[ebp-8]"
+"	      0051c0a9    mov al,color"
+"	      0051c0ac    mov ecx,ptr"
 "	      0051c0af    mov [ecx],al"
 );
 // LINE 2457:
 	asm( 
-"	      0051c0b1    add dword ptr [ebp-8],2"
+"	      0051c0b1    add ptr,2"
 );
 // LINE 2459:
 	asm( 
-"	      0051c0b5    mov al,[ebp-1Ch]"
-"	      0051c0b8    mov ecx,[ebp-8]"
+"	      0051c0b5    mov al,color"
+"	      0051c0b8    mov ecx,ptr"
 "	      0051c0bb    mov [ecx],al"
 );
 // LINE 2460:
@@ -7997,46 +7997,46 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c0c7    and eax,7"
 "	      0051c0ca    mov ecx,ds:[62A528h]"
 "	      0051c0d0    mov al,[eax+ecx]"
-"	      0051c0d3    mov [ebp-1Ch],al"
+"	      0051c0d3    mov color,al"
 "	      0051c0d6    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2464:
 	asm( 
-"	      0051c0dc    mov al,[ebp-1Ch]"
-"	      0051c0df    mov ecx,[ebp-8]"
+"	      0051c0dc    mov al,color"
+"	      0051c0df    mov ecx,ptr"
 "	      0051c0e2    mov [ecx],al"
 );
 // LINE 2465:
 	asm( 
-"	      0051c0e4    add dword ptr [ebp-8],2"
+"	      0051c0e4    add ptr,2"
 );
 // LINE 2466:
 	asm( 
-"	      0051c0e8    mov al,[ebp-1Ch]"
-"	      0051c0eb    mov ecx,[ebp-8]"
+"	      0051c0e8    mov al,color"
+"	      0051c0eb    mov ecx,ptr"
 "	      0051c0ee    mov [ecx],al"
 );
 // LINE 2467:
 	asm( 
-"	      0051c0f0    add dword ptr [ebp-8],2"
+"	      0051c0f0    add ptr,2"
 );
 // LINE 2469:
 	asm( 
-"	      0051c0f4    mov al,[ebp-1Ch]"
-"	      0051c0f7    mov ecx,[ebp-8]"
+"	      0051c0f4    mov al,color"
+"	      0051c0f7    mov ecx,ptr"
 "	      0051c0fa    mov [ecx],al"
 );
 // LINE 2470:
 	asm( 
-"	      0051c0fc    mov eax,[ebp-18h]"
+"	      0051c0fc    mov eax,bufwidth"
 "	      0051c0ff    add eax,eax"
 "	      0051c101    sub eax,4"
-"	      0051c104    add [ebp-8],eax"
+"	      0051c104    add ptr,eax"
 );
 // LINE 2472:
 	asm( 
-"	      0051c107    mov al,[ebp-1Ch]"
-"	      0051c10a    mov ecx,[ebp-8]"
+"	      0051c107    mov al,color"
+"	      0051c10a    mov ecx,ptr"
 "	      0051c10d    mov [ecx],al"
 );
 // LINE 2473:
@@ -8045,40 +8045,40 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c114    and eax,7"
 "	      0051c117    mov ecx,ds:[62A528h]"
 "	      0051c11d    mov al,[eax+ecx]"
-"	      0051c120    mov [ebp-1Ch],al"
+"	      0051c120    mov color,al"
 "	      0051c123    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2474:
 	asm( 
-"	      0051c129    add dword ptr [ebp-8],2"
+"	      0051c129    add ptr,2"
 );
 // LINE 2476:
 	asm( 
-"	      0051c12d    mov al,[ebp-1Ch]"
-"	      0051c130    mov ecx,[ebp-8]"
+"	      0051c12d    mov al,color"
+"	      0051c130    mov ecx,ptr"
 "	      0051c133    mov [ecx],al"
 );
 // LINE 2477:
 	asm( 
-"	      0051c135    add dword ptr [ebp-8],2"
+"	      0051c135    add ptr,2"
 );
 // LINE 2479:
 	asm( 
-"	      0051c139    mov al,[ebp-1Ch]"
-"	      0051c13c    mov ecx,[ebp-8]"
+"	      0051c139    mov al,color"
+"	      0051c13c    mov ecx,ptr"
 "	      0051c13f    mov [ecx],al"
 );
 // LINE 2480:
 	asm( 
-"	      0051c141    mov eax,[ebp-18h]"
+"	      0051c141    mov eax,bufwidth"
 "	      0051c144    add eax,eax"
 "	      0051c146    sub eax,4"
-"	      0051c149    add [ebp-8],eax"
+"	      0051c149    add ptr,eax"
 );
 // LINE 2482:
 	asm( 
-"	      0051c14c    mov al,[ebp-1Ch]"
-"	      0051c14f    mov ecx,[ebp-8]"
+"	      0051c14c    mov al,color"
+"	      0051c14f    mov ecx,ptr"
 "	      0051c152    mov [ecx],al"
 );
 // LINE 2483:
@@ -8087,27 +8087,27 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c159    and eax,7"
 "	      0051c15c    mov ecx,ds:[62A528h]"
 "	      0051c162    mov al,[eax+ecx]"
-"	      0051c165    mov [ebp-1Ch],al"
+"	      0051c165    mov color,al"
 "	      0051c168    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2484:
 	asm( 
-"	      0051c16e    add dword ptr [ebp-8],2"
+"	      0051c16e    add ptr,2"
 );
 // LINE 2486:
 	asm( 
-"	      0051c172    mov al,[ebp-1Ch]"
-"	      0051c175    mov ecx,[ebp-8]"
+"	      0051c172    mov al,color"
+"	      0051c175    mov ecx,ptr"
 "	      0051c178    mov [ecx],al"
 );
 // LINE 2487:
 	asm( 
-"	      0051c17a    add dword ptr [ebp-8],2"
+"	      0051c17a    add ptr,2"
 );
 // LINE 2489:
 	asm( 
-"	      0051c17e    mov al,[ebp-1Ch]"
-"	      0051c181    mov ecx,[ebp-8]"
+"	      0051c17e    mov al,color"
+"	      0051c181    mov ecx,ptr"
 "	      0051c184    mov [ecx],al"
 );
 // LINE 2490:
@@ -8120,43 +8120,43 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c190    and eax,7"
 "	      0051c193    mov ecx,ds:[62A528h]"
 "	      0051c199    mov al,[eax+ecx]"
-"	      0051c19c    mov [ebp-1Ch],al"
+"	      0051c19c    mov color,al"
 "	      0051c19f    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2494:
 	asm( 
-"	      0051c1a5    mov al,[ebp-1Ch]"
-"	      0051c1a8    mov ecx,[ebp-8]"
+"	      0051c1a5    mov al,color"
+"	      0051c1a8    mov ecx,ptr"
 "	      0051c1ab    mov [ecx],al"
 );
 // LINE 2495:
 	asm( 
-"	      0051c1ad    add dword ptr [ebp-8],2"
+"	      0051c1ad    add ptr,2"
 );
 // LINE 2497:
 	asm( 
-"	      0051c1b1    mov al,[ebp-1Ch]"
-"	      0051c1b4    mov ecx,[ebp-8]"
+"	      0051c1b1    mov al,color"
+"	      0051c1b4    mov ecx,ptr"
 "	      0051c1b7    mov [ecx],al"
 );
 // LINE 2498:
 	asm( 
-"	      0051c1b9    add dword ptr [ebp-8],2"
+"	      0051c1b9    add ptr,2"
 );
 // LINE 2500:
 	asm( 
-"	      0051c1bd    mov al,[ebp-1Ch]"
-"	      0051c1c0    mov ecx,[ebp-8]"
+"	      0051c1bd    mov al,color"
+"	      0051c1c0    mov ecx,ptr"
 "	      0051c1c3    mov [ecx],al"
 );
 // LINE 2501:
 	asm( 
-"	      0051c1c5    add dword ptr [ebp-8],2"
+"	      0051c1c5    add ptr,2"
 );
 // LINE 2503:
 	asm( 
-"	      0051c1c9    mov al,[ebp-1Ch]"
-"	      0051c1cc    mov ecx,[ebp-8]"
+"	      0051c1c9    mov al,color"
+"	      0051c1cc    mov ecx,ptr"
 "	      0051c1cf    mov [ecx],al"
 );
 // LINE 2504:
@@ -8165,68 +8165,68 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c1d6    and eax,7"
 "	      0051c1d9    mov ecx,ds:[62A528h]"
 "	      0051c1df    mov al,[eax+ecx]"
-"	      0051c1e2    mov [ebp-1Ch],al"
+"	      0051c1e2    mov color,al"
 "	      0051c1e5    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2505:
 	asm( 
-"	      0051c1eb    mov eax,[ebp-18h]"
+"	      0051c1eb    mov eax,bufwidth"
 "	      0051c1ee    add eax,eax"
 "	      0051c1f0    sub eax,6"
-"	      0051c1f3    add [ebp-8],eax"
+"	      0051c1f3    add ptr,eax"
 );
 // LINE 2507:
 	asm( 
-"	      0051c1f6    mov al,[ebp-1Ch]"
-"	      0051c1f9    mov ecx,[ebp-8]"
+"	      0051c1f6    mov al,color"
+"	      0051c1f9    mov ecx,ptr"
 "	      0051c1fc    mov [ecx],al"
 );
 // LINE 2508:
 	asm( 
-"	      0051c1fe    add dword ptr [ebp-8],2"
+"	      0051c1fe    add ptr,2"
 );
 // LINE 2510:
 	asm( 
-"	      0051c202    mov al,[ebp-1Ch]"
-"	      0051c205    mov ecx,[ebp-8]"
+"	      0051c202    mov al,color"
+"	      0051c205    mov ecx,ptr"
 "	      0051c208    mov [ecx],al"
 );
 // LINE 2511:
 	asm( 
-"	      0051c20a    add dword ptr [ebp-8],2"
+"	      0051c20a    add ptr,2"
 );
 // LINE 2513:
 	asm( 
-"	      0051c20e    mov al,[ebp-1Ch]"
-"	      0051c211    mov ecx,[ebp-8]"
+"	      0051c20e    mov al,color"
+"	      0051c211    mov ecx,ptr"
 "	      0051c214    mov [ecx],al"
 );
 // LINE 2514:
 	asm( 
-"	      0051c216    add dword ptr [ebp-8],2"
+"	      0051c216    add ptr,2"
 );
 // LINE 2516:
 	asm( 
-"	      0051c21a    mov al,[ebp-1Ch]"
-"	      0051c21d    mov ecx,[ebp-8]"
+"	      0051c21a    mov al,color"
+"	      0051c21d    mov ecx,ptr"
 "	      0051c220    mov [ecx],al"
 );
 // LINE 2517:
 	asm( 
-"	      0051c222    mov eax,[ebp-18h]"
+"	      0051c222    mov eax,bufwidth"
 "	      0051c225    add eax,eax"
 "	      0051c227    sub eax,6"
-"	      0051c22a    add [ebp-8],eax"
+"	      0051c22a    add ptr,eax"
 );
 // LINE 2519:
 	asm( 
-"	      0051c22d    mov al,[ebp-1Ch]"
-"	      0051c230    mov ecx,[ebp-8]"
+"	      0051c22d    mov al,color"
+"	      0051c230    mov ecx,ptr"
 "	      0051c233    mov [ecx],al"
 );
 // LINE 2520:
 	asm( 
-"	      0051c235    add dword ptr [ebp-8],2"
+"	      0051c235    add ptr,2"
 );
 // LINE 2522:
 	asm( 
@@ -8234,56 +8234,56 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c23e    and eax,7"
 "	      0051c241    mov ecx,ds:[62A528h]"
 "	      0051c247    mov al,[eax+ecx]"
-"	      0051c24a    mov [ebp-1Ch],al"
+"	      0051c24a    mov color,al"
 "	      0051c24d    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2523:
 	asm( 
-"	      0051c253    mov al,[ebp-1Ch]"
-"	      0051c256    mov ecx,[ebp-8]"
+"	      0051c253    mov al,color"
+"	      0051c256    mov ecx,ptr"
 "	      0051c259    mov [ecx],al"
 );
 // LINE 2524:
 	asm( 
-"	      0051c25b    add dword ptr [ebp-8],2"
+"	      0051c25b    add ptr,2"
 );
 // LINE 2526:
 	asm( 
-"	      0051c25f    mov al,[ebp-1Ch]"
-"	      0051c262    mov ecx,[ebp-8]"
+"	      0051c25f    mov al,color"
+"	      0051c262    mov ecx,ptr"
 "	      0051c265    mov [ecx],al"
 );
 // LINE 2527:
 	asm( 
-"	      0051c267    add dword ptr [ebp-8],2"
+"	      0051c267    add ptr,2"
 );
 // LINE 2529:
 	asm( 
-"	      0051c26b    mov al,[ebp-1Ch]"
-"	      0051c26e    mov ecx,[ebp-8]"
+"	      0051c26b    mov al,color"
+"	      0051c26e    mov ecx,ptr"
 "	      0051c271    mov [ecx],al"
 );
 // LINE 2530:
 	asm( 
-"	      0051c273    mov eax,[ebp-18h]"
+"	      0051c273    mov eax,bufwidth"
 "	      0051c276    add eax,eax"
 "	      0051c278    sub eax,6"
-"	      0051c27b    add [ebp-8],eax"
+"	      0051c27b    add ptr,eax"
 );
 // LINE 2532:
 	asm( 
-"	      0051c27e    mov al,[ebp-1Ch]"
-"	      0051c281    mov ecx,[ebp-8]"
+"	      0051c27e    mov al,color"
+"	      0051c281    mov ecx,ptr"
 "	      0051c284    mov [ecx],al"
 );
 // LINE 2533:
 	asm( 
-"	      0051c286    add dword ptr [ebp-8],2"
+"	      0051c286    add ptr,2"
 );
 // LINE 2535:
 	asm( 
-"	      0051c28a    mov al,[ebp-1Ch]"
-"	      0051c28d    mov ecx,[ebp-8]"
+"	      0051c28a    mov al,color"
+"	      0051c28d    mov ecx,ptr"
 "	      0051c290    mov [ecx],al"
 );
 // LINE 2536:
@@ -8292,27 +8292,27 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c297    and eax,7"
 "	      0051c29a    mov ecx,ds:[62A528h]"
 "	      0051c2a0    mov al,[eax+ecx]"
-"	      0051c2a3    mov [ebp-1Ch],al"
+"	      0051c2a3    mov color,al"
 "	      0051c2a6    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2537:
 	asm( 
-"	      0051c2ac    add dword ptr [ebp-8],2"
+"	      0051c2ac    add ptr,2"
 );
 // LINE 2539:
 	asm( 
-"	      0051c2b0    mov al,[ebp-1Ch]"
-"	      0051c2b3    mov ecx,[ebp-8]"
+"	      0051c2b0    mov al,color"
+"	      0051c2b3    mov ecx,ptr"
 "	      0051c2b6    mov [ecx],al"
 );
 // LINE 2540:
 	asm( 
-"	      0051c2b8    add dword ptr [ebp-8],2"
+"	      0051c2b8    add ptr,2"
 );
 // LINE 2542:
 	asm( 
-"	      0051c2bc    mov al,[ebp-1Ch]"
-"	      0051c2bf    mov ecx,[ebp-8]"
+"	      0051c2bc    mov al,color"
+"	      0051c2bf    mov ecx,ptr"
 "	      0051c2c2    mov [ecx],al"
 );
 // LINE 2543:
@@ -8325,48 +8325,48 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c2ce    and eax,7"
 "	      0051c2d1    mov ecx,ds:[62A528h]"
 "	      0051c2d7    mov al,[eax+ecx]"
-"	      0051c2da    mov [ebp-1Ch],al"
+"	      0051c2da    mov color,al"
 "	      0051c2dd    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2547:
 	asm( 
-"	      0051c2e3    mov al,[ebp-1Ch]"
-"	      0051c2e6    mov ecx,[ebp-8]"
+"	      0051c2e3    mov al,color"
+"	      0051c2e6    mov ecx,ptr"
 "	      0051c2e9    mov [ecx],al"
 );
 // LINE 2548:
 	asm( 
-"	      0051c2eb    add dword ptr [ebp-8],2"
+"	      0051c2eb    add ptr,2"
 );
 // LINE 2550:
 	asm( 
-"	      0051c2ef    mov al,[ebp-1Ch]"
-"	      0051c2f2    mov ecx,[ebp-8]"
+"	      0051c2ef    mov al,color"
+"	      0051c2f2    mov ecx,ptr"
 "	      0051c2f5    mov [ecx],al"
 );
 // LINE 2551:
 	asm( 
-"	      0051c2f7    add dword ptr [ebp-8],2"
+"	      0051c2f7    add ptr,2"
 );
 // LINE 2553:
 	asm( 
-"	      0051c2fb    mov al,[ebp-1Ch]"
-"	      0051c2fe    mov ecx,[ebp-8]"
+"	      0051c2fb    mov al,color"
+"	      0051c2fe    mov ecx,ptr"
 "	      0051c301    mov [ecx],al"
 );
 // LINE 2554:
 	asm( 
-"	      0051c303    add dword ptr [ebp-8],2"
+"	      0051c303    add ptr,2"
 );
 // LINE 2556:
 	asm( 
-"	      0051c307    mov al,[ebp-1Ch]"
-"	      0051c30a    mov ecx,[ebp-8]"
+"	      0051c307    mov al,color"
+"	      0051c30a    mov ecx,ptr"
 "	      0051c30d    mov [ecx],al"
 );
 // LINE 2557:
 	asm( 
-"	      0051c30f    add dword ptr [ebp-8],2"
+"	      0051c30f    add ptr,2"
 );
 // LINE 2558:
 	asm( 
@@ -8374,61 +8374,61 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c318    and eax,7"
 "	      0051c31b    mov ecx,ds:[62A528h]"
 "	      0051c321    mov al,[eax+ecx]"
-"	      0051c324    mov [ebp-1Ch],al"
+"	      0051c324    mov color,al"
 "	      0051c327    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2560:
 	asm( 
-"	      0051c32d    mov al,[ebp-1Ch]"
-"	      0051c330    mov ecx,[ebp-8]"
+"	      0051c32d    mov al,color"
+"	      0051c330    mov ecx,ptr"
 "	      0051c333    mov [ecx],al"
 );
 // LINE 2561:
 	asm( 
-"	      0051c335    mov eax,[ebp-18h]"
+"	      0051c335    mov eax,bufwidth"
 "	      0051c338    add eax,eax"
 "	      0051c33a    sub eax,8"
-"	      0051c33d    add [ebp-8],eax"
+"	      0051c33d    add ptr,eax"
 );
 // LINE 2563:
 	asm( 
-"	      0051c340    mov al,[ebp-1Ch]"
-"	      0051c343    mov ecx,[ebp-8]"
+"	      0051c340    mov al,color"
+"	      0051c343    mov ecx,ptr"
 "	      0051c346    mov [ecx],al"
 );
 // LINE 2564:
 	asm( 
-"	      0051c348    add dword ptr [ebp-8],2"
+"	      0051c348    add ptr,2"
 );
 // LINE 2566:
 	asm( 
-"	      0051c34c    mov al,[ebp-1Ch]"
-"	      0051c34f    mov ecx,[ebp-8]"
+"	      0051c34c    mov al,color"
+"	      0051c34f    mov ecx,ptr"
 "	      0051c352    mov [ecx],al"
 );
 // LINE 2567:
 	asm( 
-"	      0051c354    add dword ptr [ebp-8],2"
+"	      0051c354    add ptr,2"
 );
 // LINE 2569:
 	asm( 
-"	      0051c358    mov al,[ebp-1Ch]"
-"	      0051c35b    mov ecx,[ebp-8]"
+"	      0051c358    mov al,color"
+"	      0051c35b    mov ecx,ptr"
 "	      0051c35e    mov [ecx],al"
 );
 // LINE 2570:
 	asm( 
-"	      0051c360    add dword ptr [ebp-8],2"
+"	      0051c360    add ptr,2"
 );
 // LINE 2572:
 	asm( 
-"	      0051c364    mov al,[ebp-1Ch]"
-"	      0051c367    mov ecx,[ebp-8]"
+"	      0051c364    mov al,color"
+"	      0051c367    mov ecx,ptr"
 "	      0051c36a    mov [ecx],al"
 );
 // LINE 2573:
 	asm( 
-"	      0051c36c    add dword ptr [ebp-8],2"
+"	      0051c36c    add ptr,2"
 );
 // LINE 2574:
 	asm( 
@@ -8436,51 +8436,51 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c375    and eax,7"
 "	      0051c378    mov ecx,ds:[62A528h]"
 "	      0051c37e    mov al,[eax+ecx]"
-"	      0051c381    mov [ebp-1Ch],al"
+"	      0051c381    mov color,al"
 "	      0051c384    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2576:
 	asm( 
-"	      0051c38a    mov al,[ebp-1Ch]"
-"	      0051c38d    mov ecx,[ebp-8]"
+"	      0051c38a    mov al,color"
+"	      0051c38d    mov ecx,ptr"
 "	      0051c390    mov [ecx],al"
 );
 // LINE 2577:
 	asm( 
-"	      0051c392    mov eax,[ebp-18h]"
+"	      0051c392    mov eax,bufwidth"
 "	      0051c395    add eax,eax"
 "	      0051c397    sub eax,8"
-"	      0051c39a    add [ebp-8],eax"
+"	      0051c39a    add ptr,eax"
 );
 // LINE 2579:
 	asm( 
-"	      0051c39d    mov al,[ebp-1Ch]"
-"	      0051c3a0    mov ecx,[ebp-8]"
+"	      0051c39d    mov al,color"
+"	      0051c3a0    mov ecx,ptr"
 "	      0051c3a3    mov [ecx],al"
 );
 // LINE 2580:
 	asm( 
-"	      0051c3a5    add dword ptr [ebp-8],2"
+"	      0051c3a5    add ptr,2"
 );
 // LINE 2582:
 	asm( 
-"	      0051c3a9    mov al,[ebp-1Ch]"
-"	      0051c3ac    mov ecx,[ebp-8]"
+"	      0051c3a9    mov al,color"
+"	      0051c3ac    mov ecx,ptr"
 "	      0051c3af    mov [ecx],al"
 );
 // LINE 2583:
 	asm( 
-"	      0051c3b1    add dword ptr [ebp-8],2"
+"	      0051c3b1    add ptr,2"
 );
 // LINE 2585:
 	asm( 
-"	      0051c3b5    mov al,[ebp-1Ch]"
-"	      0051c3b8    mov ecx,[ebp-8]"
+"	      0051c3b5    mov al,color"
+"	      0051c3b8    mov ecx,ptr"
 "	      0051c3bb    mov [ecx],al"
 );
 // LINE 2586:
 	asm( 
-"	      0051c3bd    add dword ptr [ebp-8],2"
+"	      0051c3bd    add ptr,2"
 );
 // LINE 2587:
 	asm( 
@@ -8488,51 +8488,51 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c3c6    and eax,7"
 "	      0051c3c9    mov ecx,ds:[62A528h]"
 "	      0051c3cf    mov al,[eax+ecx]"
-"	      0051c3d2    mov [ebp-1Ch],al"
+"	      0051c3d2    mov color,al"
 "	      0051c3d5    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2589:
 	asm( 
-"	      0051c3db    mov al,[ebp-1Ch]"
-"	      0051c3de    mov ecx,[ebp-8]"
+"	      0051c3db    mov al,color"
+"	      0051c3de    mov ecx,ptr"
 "	      0051c3e1    mov [ecx],al"
 );
 // LINE 2590:
 	asm( 
-"	      0051c3e3    add dword ptr [ebp-8],2"
+"	      0051c3e3    add ptr,2"
 );
 // LINE 2592:
 	asm( 
-"	      0051c3e7    mov al,[ebp-1Ch]"
-"	      0051c3ea    mov ecx,[ebp-8]"
+"	      0051c3e7    mov al,color"
+"	      0051c3ea    mov ecx,ptr"
 "	      0051c3ed    mov [ecx],al"
 );
 // LINE 2593:
 	asm( 
-"	      0051c3ef    mov eax,[ebp-18h]"
+"	      0051c3ef    mov eax,bufwidth"
 "	      0051c3f2    add eax,eax"
 "	      0051c3f4    sub eax,8"
-"	      0051c3f7    add [ebp-8],eax"
+"	      0051c3f7    add ptr,eax"
 );
 // LINE 2595:
 	asm( 
-"	      0051c3fa    mov al,[ebp-1Ch]"
-"	      0051c3fd    mov ecx,[ebp-8]"
+"	      0051c3fa    mov al,color"
+"	      0051c3fd    mov ecx,ptr"
 "	      0051c400    mov [ecx],al"
 );
 // LINE 2596:
 	asm( 
-"	      0051c402    add dword ptr [ebp-8],2"
+"	      0051c402    add ptr,2"
 );
 // LINE 2598:
 	asm( 
-"	      0051c406    mov al,[ebp-1Ch]"
-"	      0051c409    mov ecx,[ebp-8]"
+"	      0051c406    mov al,color"
+"	      0051c409    mov ecx,ptr"
 "	      0051c40c    mov [ecx],al"
 );
 // LINE 2599:
 	asm( 
-"	      0051c40e    add dword ptr [ebp-8],2"
+"	      0051c40e    add ptr,2"
 );
 // LINE 2601:
 	asm( 
@@ -8540,86 +8540,86 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c417    and eax,7"
 "	      0051c41a    mov ecx,ds:[62A528h]"
 "	      0051c420    mov al,[eax+ecx]"
-"	      0051c423    mov [ebp-1Ch],al"
+"	      0051c423    mov color,al"
 "	      0051c426    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2602:
 	asm( 
-"	      0051c42c    mov al,[ebp-1Ch]"
-"	      0051c42f    mov ecx,[ebp-8]"
+"	      0051c42c    mov al,color"
+"	      0051c42f    mov ecx,ptr"
 "	      0051c432    mov [ecx],al"
 );
 // LINE 2603:
 	asm( 
-"	      0051c434    add dword ptr [ebp-8],2"
+"	      0051c434    add ptr,2"
 );
 // LINE 2605:
 	asm( 
-"	      0051c438    mov al,[ebp-1Ch]"
-"	      0051c43b    mov ecx,[ebp-8]"
+"	      0051c438    mov al,color"
+"	      0051c43b    mov ecx,ptr"
 "	      0051c43e    mov [ecx],al"
 );
 // LINE 2606:
 	asm( 
-"	      0051c440    add dword ptr [ebp-8],2"
+"	      0051c440    add ptr,2"
 );
 // LINE 2608:
 	asm( 
-"	      0051c444    mov al,[ebp-1Ch]"
-"	      0051c447    mov ecx,[ebp-8]"
+"	      0051c444    mov al,color"
+"	      0051c447    mov ecx,ptr"
 "	      0051c44a    mov [ecx],al"
 );
 // LINE 2609:
 	asm( 
-"	      0051c44c    mov eax,[ebp-18h]"
+"	      0051c44c    mov eax,bufwidth"
 "	      0051c44f    add eax,eax"
 "	      0051c451    sub eax,8"
-"	      0051c454    add [ebp-8],eax"
+"	      0051c454    add ptr,eax"
 );
 // LINE 2611:
 	asm( 
-"	      0051c457    mov al,[ebp-1Ch]"
-"	      0051c45a    mov ecx,[ebp-8]"
+"	      0051c457    mov al,color"
+"	      0051c45a    mov ecx,ptr"
 "	      0051c45d    mov [ecx],al"
 );
 // LINE 2612:
 	asm( 
-"	      0051c45f    add dword ptr [ebp-8],2"
+"	      0051c45f    add ptr,2"
 );
 // LINE 2614:
 	asm( 
-"	      0051c463    mov al,[ebp-1Ch]"
-"	      0051c466    mov ecx,[ebp-8]"
+"	      0051c463    mov al,color"
+"	      0051c466    mov ecx,ptr"
 "	      0051c469    mov [ecx],al"
 );
 // LINE 2615:
 	asm( 
-"	      0051c46b    add dword ptr [ebp-8],2"
+"	      0051c46b    add ptr,2"
 );
 // LINE 2617:
 	asm( 
-"	      0051c46f    mov al,[ebp-1Ch]"
-"	      0051c472    mov ecx,[ebp-8]"
+"	      0051c46f    mov al,color"
+"	      0051c472    mov ecx,ptr"
 "	      0051c475    mov [ecx],al"
 );
 // LINE 2618:
 	asm( 
-"	      0051c477    add dword ptr [ebp-8],2"
+"	      0051c477    add ptr,2"
 );
 // LINE 2620:
 	asm( 
-"	      0051c47b    mov al,[ebp-1Ch]"
-"	      0051c47e    mov ecx,[ebp-8]"
+"	      0051c47b    mov al,color"
+"	      0051c47e    mov ecx,ptr"
 "	      0051c481    mov [ecx],al"
 );
 // LINE 2621:
 	asm( 
-"	      0051c483    add dword ptr [ebp-8],2"
+"	      0051c483    add ptr,2"
 );
 // LINE 2623:
 	asm( 
-"	      0051c487    mov al,[ebp-1Ch]"
-"	      0051c48a    mov ecx,[ebp-8]"
+"	      0051c487    mov al,color"
+"	      0051c48a    mov ecx,ptr"
 "	      0051c48d    mov [ecx],al"
 );
 // LINE 2624:
@@ -8632,28 +8632,28 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c499    and eax,7"
 "	      0051c49c    mov ecx,ds:[62A528h]"
 "	      0051c4a2    mov al,[eax+ecx]"
-"	      0051c4a5    mov [ebp-1Ch],al"
+"	      0051c4a5    mov color,al"
 "	      0051c4a8    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2628:
 	asm( 
-"	      0051c4ae    mov al,[ebp-1Ch]"
-"	      0051c4b1    mov ecx,[ebp-8]"
+"	      0051c4ae    mov al,color"
+"	      0051c4b1    mov ecx,ptr"
 "	      0051c4b4    mov [ecx],al"
 );
 // LINE 2629:
 	asm( 
-"	      0051c4b6    add dword ptr [ebp-8],2"
+"	      0051c4b6    add ptr,2"
 );
 // LINE 2631:
 	asm( 
-"	      0051c4ba    mov al,[ebp-1Ch]"
-"	      0051c4bd    mov ecx,[ebp-8]"
+"	      0051c4ba    mov al,color"
+"	      0051c4bd    mov ecx,ptr"
 "	      0051c4c0    mov [ecx],al"
 );
 // LINE 2632:
 	asm( 
-"	      0051c4c2    add dword ptr [ebp-8],2"
+"	      0051c4c2    add ptr,2"
 );
 // LINE 2633:
 	asm( 
@@ -8661,51 +8661,51 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c4cb    and eax,7"
 "	      0051c4ce    mov ecx,ds:[62A528h]"
 "	      0051c4d4    mov al,[eax+ecx]"
-"	      0051c4d7    mov [ebp-1Ch],al"
+"	      0051c4d7    mov color,al"
 "	      0051c4da    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2635:
 	asm( 
-"	      0051c4e0    mov al,[ebp-1Ch]"
-"	      0051c4e3    mov ecx,[ebp-8]"
+"	      0051c4e0    mov al,color"
+"	      0051c4e3    mov ecx,ptr"
 "	      0051c4e6    mov [ecx],al"
 );
 // LINE 2636:
 	asm( 
-"	      0051c4e8    add dword ptr [ebp-8],2"
+"	      0051c4e8    add ptr,2"
 );
 // LINE 2638:
 	asm( 
-"	      0051c4ec    mov al,[ebp-1Ch]"
-"	      0051c4ef    mov ecx,[ebp-8]"
+"	      0051c4ec    mov al,color"
+"	      0051c4ef    mov ecx,ptr"
 "	      0051c4f2    mov [ecx],al"
 );
 // LINE 2639:
 	asm( 
-"	      0051c4f4    add dword ptr [ebp-8],2"
+"	      0051c4f4    add ptr,2"
 );
 // LINE 2641:
 	asm( 
-"	      0051c4f8    mov al,[ebp-1Ch]"
-"	      0051c4fb    mov ecx,[ebp-8]"
+"	      0051c4f8    mov al,color"
+"	      0051c4fb    mov ecx,ptr"
 "	      0051c4fe    mov [ecx],al"
 );
 // LINE 2642:
 	asm( 
-"	      0051c500    add dword ptr [ebp-8],2"
+"	      0051c500    add ptr,2"
 );
 // LINE 2644:
 	asm( 
-"	      0051c504    mov al,[ebp-1Ch]"
-"	      0051c507    mov ecx,[ebp-8]"
+"	      0051c504    mov al,color"
+"	      0051c507    mov ecx,ptr"
 "	      0051c50a    mov [ecx],al"
 );
 // LINE 2645:
 	asm( 
-"	      0051c50c    mov eax,[ebp-18h]"
+"	      0051c50c    mov eax,bufwidth"
 "	      0051c50f    add eax,eax"
 "	      0051c511    sub eax,0Ah"
-"	      0051c514    add [ebp-8],eax"
+"	      0051c514    add ptr,eax"
 );
 // LINE 2647:
 	asm( 
@@ -8713,71 +8713,71 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c51c    and eax,7"
 "	      0051c51f    mov ecx,ds:[62A528h]"
 "	      0051c525    mov al,[eax+ecx]"
-"	      0051c528    mov [ebp-1Ch],al"
+"	      0051c528    mov color,al"
 "	      0051c52b    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2648:
 	asm( 
-"	      0051c531    mov al,[ebp-1Ch]"
-"	      0051c534    mov ecx,[ebp-8]"
+"	      0051c531    mov al,color"
+"	      0051c534    mov ecx,ptr"
 "	      0051c537    mov [ecx],al"
 );
 // LINE 2649:
 	asm( 
-"	      0051c539    add dword ptr [ebp-8],2"
+"	      0051c539    add ptr,2"
 );
 // LINE 2651:
 	asm( 
-"	      0051c53d    mov al,[ebp-1Ch]"
-"	      0051c540    mov ecx,[ebp-8]"
+"	      0051c53d    mov al,color"
+"	      0051c540    mov ecx,ptr"
 "	      0051c543    mov [ecx],al"
 );
 // LINE 2652:
 	asm( 
-"	      0051c545    add dword ptr [ebp-8],2"
+"	      0051c545    add ptr,2"
 );
 // LINE 2654:
 	asm( 
-"	      0051c549    mov al,[ebp-1Ch]"
-"	      0051c54c    mov ecx,[ebp-8]"
+"	      0051c549    mov al,color"
+"	      0051c54c    mov ecx,ptr"
 "	      0051c54f    mov [ecx],al"
 );
 // LINE 2655:
 	asm( 
-"	      0051c551    add dword ptr [ebp-8],2"
+"	      0051c551    add ptr,2"
 );
 // LINE 2657:
 	asm( 
-"	      0051c555    mov al,[ebp-1Ch]"
-"	      0051c558    mov ecx,[ebp-8]"
+"	      0051c555    mov al,color"
+"	      0051c558    mov ecx,ptr"
 "	      0051c55b    mov [ecx],al"
 );
 // LINE 2658:
 	asm( 
-"	      0051c55d    add dword ptr [ebp-8],2"
+"	      0051c55d    add ptr,2"
 );
 // LINE 2660:
 	asm( 
-"	      0051c561    mov al,[ebp-1Ch]"
-"	      0051c564    mov ecx,[ebp-8]"
+"	      0051c561    mov al,color"
+"	      0051c564    mov ecx,ptr"
 "	      0051c567    mov [ecx],al"
 );
 // LINE 2661:
 	asm( 
-"	      0051c569    add dword ptr [ebp-8],2"
+"	      0051c569    add ptr,2"
 );
 // LINE 2663:
 	asm( 
-"	      0051c56d    mov al,[ebp-1Ch]"
-"	      0051c570    mov ecx,[ebp-8]"
+"	      0051c56d    mov al,color"
+"	      0051c570    mov ecx,ptr"
 "	      0051c573    mov [ecx],al"
 );
 // LINE 2664:
 	asm( 
-"	      0051c575    mov eax,[ebp-18h]"
+"	      0051c575    mov eax,bufwidth"
 "	      0051c578    add eax,eax"
 "	      0051c57a    sub eax,0Ah"
-"	      0051c57d    add [ebp-8],eax"
+"	      0051c57d    add ptr,eax"
 );
 // LINE 2666:
 	asm( 
@@ -8785,63 +8785,63 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c585    and eax,7"
 "	      0051c588    mov ecx,ds:[62A528h]"
 "	      0051c58e    mov al,[eax+ecx]"
-"	      0051c591    mov [ebp-1Ch],al"
+"	      0051c591    mov color,al"
 "	      0051c594    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2667:
 	asm( 
-"	      0051c59a    mov al,[ebp-1Ch]"
-"	      0051c59d    mov ecx,[ebp-8]"
+"	      0051c59a    mov al,color"
+"	      0051c59d    mov ecx,ptr"
 "	      0051c5a0    mov [ecx],al"
 );
 // LINE 2668:
 	asm( 
-"	      0051c5a2    add dword ptr [ebp-8],2"
+"	      0051c5a2    add ptr,2"
 );
 // LINE 2670:
 	asm( 
-"	      0051c5a6    mov al,[ebp-1Ch]"
-"	      0051c5a9    mov ecx,[ebp-8]"
+"	      0051c5a6    mov al,color"
+"	      0051c5a9    mov ecx,ptr"
 "	      0051c5ac    mov [ecx],al"
 );
 // LINE 2671:
 	asm( 
-"	      0051c5ae    add dword ptr [ebp-8],2"
+"	      0051c5ae    add ptr,2"
 );
 // LINE 2673:
 	asm( 
-"	      0051c5b2    mov al,[ebp-1Ch]"
-"	      0051c5b5    mov ecx,[ebp-8]"
+"	      0051c5b2    mov al,color"
+"	      0051c5b5    mov ecx,ptr"
 "	      0051c5b8    mov [ecx],al"
 );
 // LINE 2674:
 	asm( 
-"	      0051c5ba    add dword ptr [ebp-8],2"
+"	      0051c5ba    add ptr,2"
 );
 // LINE 2676:
 	asm( 
-"	      0051c5be    mov al,[ebp-1Ch]"
-"	      0051c5c1    mov ecx,[ebp-8]"
+"	      0051c5be    mov al,color"
+"	      0051c5c1    mov ecx,ptr"
 "	      0051c5c4    mov [ecx],al"
 );
 // LINE 2677:
 	asm( 
-"	      0051c5c6    add dword ptr [ebp-8],2"
+"	      0051c5c6    add ptr,2"
 );
 // LINE 2679:
 	asm( 
-"	      0051c5ca    mov al,[ebp-1Ch]"
-"	      0051c5cd    mov ecx,[ebp-8]"
+"	      0051c5ca    mov al,color"
+"	      0051c5cd    mov ecx,ptr"
 "	      0051c5d0    mov [ecx],al"
 );
 // LINE 2680:
 	asm( 
-"	      0051c5d2    add dword ptr [ebp-8],2"
+"	      0051c5d2    add ptr,2"
 );
 // LINE 2682:
 	asm( 
-"	      0051c5d6    mov al,[ebp-1Ch]"
-"	      0051c5d9    mov ecx,[ebp-8]"
+"	      0051c5d6    mov al,color"
+"	      0051c5d9    mov ecx,ptr"
 "	      0051c5dc    mov [ecx],al"
 );
 // LINE 2683:
@@ -8850,78 +8850,78 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c5e3    and eax,7"
 "	      0051c5e6    mov ecx,ds:[62A528h]"
 "	      0051c5ec    mov al,[eax+ecx]"
-"	      0051c5ef    mov [ebp-1Ch],al"
+"	      0051c5ef    mov color,al"
 "	      0051c5f2    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2684:
 	asm( 
-"	      0051c5f8    mov eax,[ebp-18h]"
+"	      0051c5f8    mov eax,bufwidth"
 "	      0051c5fb    add eax,eax"
 "	      0051c5fd    sub eax,0Ah"
-"	      0051c600    add [ebp-8],eax"
+"	      0051c600    add ptr,eax"
 );
 // LINE 2686:
 	asm( 
-"	      0051c603    mov al,[ebp-1Ch]"
-"	      0051c606    mov ecx,[ebp-8]"
+"	      0051c603    mov al,color"
+"	      0051c606    mov ecx,ptr"
 "	      0051c609    mov [ecx],al"
 );
 // LINE 2687:
 	asm( 
-"	      0051c60b    add dword ptr [ebp-8],2"
+"	      0051c60b    add ptr,2"
 );
 // LINE 2689:
 	asm( 
-"	      0051c60f    mov al,[ebp-1Ch]"
-"	      0051c612    mov ecx,[ebp-8]"
+"	      0051c60f    mov al,color"
+"	      0051c612    mov ecx,ptr"
 "	      0051c615    mov [ecx],al"
 );
 // LINE 2690:
 	asm( 
-"	      0051c617    add dword ptr [ebp-8],2"
+"	      0051c617    add ptr,2"
 );
 // LINE 2692:
 	asm( 
-"	      0051c61b    mov al,[ebp-1Ch]"
-"	      0051c61e    mov ecx,[ebp-8]"
+"	      0051c61b    mov al,color"
+"	      0051c61e    mov ecx,ptr"
 "	      0051c621    mov [ecx],al"
 );
 // LINE 2693:
 	asm( 
-"	      0051c623    add dword ptr [ebp-8],2"
+"	      0051c623    add ptr,2"
 );
 // LINE 2695:
 	asm( 
-"	      0051c627    mov al,[ebp-1Ch]"
-"	      0051c62a    mov ecx,[ebp-8]"
+"	      0051c627    mov al,color"
+"	      0051c62a    mov ecx,ptr"
 "	      0051c62d    mov [ecx],al"
 );
 // LINE 2696:
 	asm( 
-"	      0051c62f    add dword ptr [ebp-8],2"
+"	      0051c62f    add ptr,2"
 );
 // LINE 2698:
 	asm( 
-"	      0051c633    mov al,[ebp-1Ch]"
-"	      0051c636    mov ecx,[ebp-8]"
+"	      0051c633    mov al,color"
+"	      0051c636    mov ecx,ptr"
 "	      0051c639    mov [ecx],al"
 );
 // LINE 2699:
 	asm( 
-"	      0051c63b    add dword ptr [ebp-8],2"
+"	      0051c63b    add ptr,2"
 );
 // LINE 2701:
 	asm( 
-"	      0051c63f    mov al,[ebp-1Ch]"
-"	      0051c642    mov ecx,[ebp-8]"
+"	      0051c63f    mov al,color"
+"	      0051c642    mov ecx,ptr"
 "	      0051c645    mov [ecx],al"
 );
 // LINE 2702:
 	asm( 
-"	      0051c647    mov eax,[ebp-18h]"
+"	      0051c647    mov eax,bufwidth"
 "	      0051c64a    add eax,eax"
 "	      0051c64c    sub eax,0Ah"
-"	      0051c64f    add [ebp-8],eax"
+"	      0051c64f    add ptr,eax"
 );
 // LINE 2704:
 	asm( 
@@ -8929,71 +8929,71 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c657    and eax,7"
 "	      0051c65a    mov ecx,ds:[62A528h]"
 "	      0051c660    mov al,[eax+ecx]"
-"	      0051c663    mov [ebp-1Ch],al"
+"	      0051c663    mov color,al"
 "	      0051c666    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2705:
 	asm( 
-"	      0051c66c    mov al,[ebp-1Ch]"
-"	      0051c66f    mov ecx,[ebp-8]"
+"	      0051c66c    mov al,color"
+"	      0051c66f    mov ecx,ptr"
 "	      0051c672    mov [ecx],al"
 );
 // LINE 2706:
 	asm( 
-"	      0051c674    add dword ptr [ebp-8],2"
+"	      0051c674    add ptr,2"
 );
 // LINE 2708:
 	asm( 
-"	      0051c678    mov al,[ebp-1Ch]"
-"	      0051c67b    mov ecx,[ebp-8]"
+"	      0051c678    mov al,color"
+"	      0051c67b    mov ecx,ptr"
 "	      0051c67e    mov [ecx],al"
 );
 // LINE 2709:
 	asm( 
-"	      0051c680    add dword ptr [ebp-8],2"
+"	      0051c680    add ptr,2"
 );
 // LINE 2711:
 	asm( 
-"	      0051c684    mov al,[ebp-1Ch]"
-"	      0051c687    mov ecx,[ebp-8]"
+"	      0051c684    mov al,color"
+"	      0051c687    mov ecx,ptr"
 "	      0051c68a    mov [ecx],al"
 );
 // LINE 2712:
 	asm( 
-"	      0051c68c    add dword ptr [ebp-8],2"
+"	      0051c68c    add ptr,2"
 );
 // LINE 2714:
 	asm( 
-"	      0051c690    mov al,[ebp-1Ch]"
-"	      0051c693    mov ecx,[ebp-8]"
+"	      0051c690    mov al,color"
+"	      0051c693    mov ecx,ptr"
 "	      0051c696    mov [ecx],al"
 );
 // LINE 2715:
 	asm( 
-"	      0051c698    add dword ptr [ebp-8],2"
+"	      0051c698    add ptr,2"
 );
 // LINE 2717:
 	asm( 
-"	      0051c69c    mov al,[ebp-1Ch]"
-"	      0051c69f    mov ecx,[ebp-8]"
+"	      0051c69c    mov al,color"
+"	      0051c69f    mov ecx,ptr"
 "	      0051c6a2    mov [ecx],al"
 );
 // LINE 2718:
 	asm( 
-"	      0051c6a4    add dword ptr [ebp-8],2"
+"	      0051c6a4    add ptr,2"
 );
 // LINE 2720:
 	asm( 
-"	      0051c6a8    mov al,[ebp-1Ch]"
-"	      0051c6ab    mov ecx,[ebp-8]"
+"	      0051c6a8    mov al,color"
+"	      0051c6ab    mov ecx,ptr"
 "	      0051c6ae    mov [ecx],al"
 );
 // LINE 2721:
 	asm( 
-"	      0051c6b0    mov eax,[ebp-18h]"
+"	      0051c6b0    mov eax,bufwidth"
 "	      0051c6b3    add eax,eax"
 "	      0051c6b5    sub eax,0Ah"
-"	      0051c6b8    add [ebp-8],eax"
+"	      0051c6b8    add ptr,eax"
 );
 // LINE 2722:
 	asm( 
@@ -9001,63 +9001,63 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c6c0    and eax,7"
 "	      0051c6c3    mov ecx,ds:[62A528h]"
 "	      0051c6c9    mov al,[eax+ecx]"
-"	      0051c6cc    mov [ebp-1Ch],al"
+"	      0051c6cc    mov color,al"
 "	      0051c6cf    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2724:
 	asm( 
-"	      0051c6d5    mov al,[ebp-1Ch]"
-"	      0051c6d8    mov ecx,[ebp-8]"
+"	      0051c6d5    mov al,color"
+"	      0051c6d8    mov ecx,ptr"
 "	      0051c6db    mov [ecx],al"
 );
 // LINE 2725:
 	asm( 
-"	      0051c6dd    add dword ptr [ebp-8],2"
+"	      0051c6dd    add ptr,2"
 );
 // LINE 2727:
 	asm( 
-"	      0051c6e1    mov al,[ebp-1Ch]"
-"	      0051c6e4    mov ecx,[ebp-8]"
+"	      0051c6e1    mov al,color"
+"	      0051c6e4    mov ecx,ptr"
 "	      0051c6e7    mov [ecx],al"
 );
 // LINE 2728:
 	asm( 
-"	      0051c6e9    add dword ptr [ebp-8],2"
+"	      0051c6e9    add ptr,2"
 );
 // LINE 2730:
 	asm( 
-"	      0051c6ed    mov al,[ebp-1Ch]"
-"	      0051c6f0    mov ecx,[ebp-8]"
+"	      0051c6ed    mov al,color"
+"	      0051c6f0    mov ecx,ptr"
 "	      0051c6f3    mov [ecx],al"
 );
 // LINE 2731:
 	asm( 
-"	      0051c6f5    add dword ptr [ebp-8],2"
+"	      0051c6f5    add ptr,2"
 );
 // LINE 2733:
 	asm( 
-"	      0051c6f9    mov al,[ebp-1Ch]"
-"	      0051c6fc    mov ecx,[ebp-8]"
+"	      0051c6f9    mov al,color"
+"	      0051c6fc    mov ecx,ptr"
 "	      0051c6ff    mov [ecx],al"
 );
 // LINE 2734:
 	asm( 
-"	      0051c701    add dword ptr [ebp-8],2"
+"	      0051c701    add ptr,2"
 );
 // LINE 2736:
 	asm( 
-"	      0051c705    mov al,[ebp-1Ch]"
-"	      0051c708    mov ecx,[ebp-8]"
+"	      0051c705    mov al,color"
+"	      0051c708    mov ecx,ptr"
 "	      0051c70b    mov [ecx],al"
 );
 // LINE 2737:
 	asm( 
-"	      0051c70d    add dword ptr [ebp-8],2"
+"	      0051c70d    add ptr,2"
 );
 // LINE 2739:
 	asm( 
-"	      0051c711    mov al,[ebp-1Ch]"
-"	      0051c714    mov ecx,[ebp-8]"
+"	      0051c711    mov al,color"
+"	      0051c714    mov ecx,ptr"
 "	      0051c717    mov [ecx],al"
 );
 // LINE 2740:
@@ -9070,58 +9070,58 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c723    and eax,7"
 "	      0051c726    mov ecx,ds:[62A528h]"
 "	      0051c72c    mov al,[eax+ecx]"
-"	      0051c72f    mov [ebp-1Ch],al"
+"	      0051c72f    mov color,al"
 "	      0051c732    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2744:
 	asm( 
-"	      0051c738    mov al,[ebp-1Ch]"
-"	      0051c73b    mov ecx,[ebp-8]"
+"	      0051c738    mov al,color"
+"	      0051c73b    mov ecx,ptr"
 "	      0051c73e    mov [ecx],al"
 );
 // LINE 2745:
 	asm( 
-"	      0051c740    add dword ptr [ebp-8],2"
+"	      0051c740    add ptr,2"
 );
 // LINE 2747:
 	asm( 
-"	      0051c744    mov al,[ebp-1Ch]"
-"	      0051c747    mov ecx,[ebp-8]"
+"	      0051c744    mov al,color"
+"	      0051c747    mov ecx,ptr"
 "	      0051c74a    mov [ecx],al"
 );
 // LINE 2748:
 	asm( 
-"	      0051c74c    add dword ptr [ebp-8],2"
+"	      0051c74c    add ptr,2"
 );
 // LINE 2750:
 	asm( 
-"	      0051c750    mov al,[ebp-1Ch]"
-"	      0051c753    mov ecx,[ebp-8]"
+"	      0051c750    mov al,color"
+"	      0051c753    mov ecx,ptr"
 "	      0051c756    mov [ecx],al"
 );
 // LINE 2751:
 	asm( 
-"	      0051c758    add dword ptr [ebp-8],2"
+"	      0051c758    add ptr,2"
 );
 // LINE 2753:
 	asm( 
-"	      0051c75c    mov al,[ebp-1Ch]"
-"	      0051c75f    mov ecx,[ebp-8]"
+"	      0051c75c    mov al,color"
+"	      0051c75f    mov ecx,ptr"
 "	      0051c762    mov [ecx],al"
 );
 // LINE 2754:
 	asm( 
-"	      0051c764    add dword ptr [ebp-8],2"
+"	      0051c764    add ptr,2"
 );
 // LINE 2756:
 	asm( 
-"	      0051c768    mov al,[ebp-1Ch]"
-"	      0051c76b    mov ecx,[ebp-8]"
+"	      0051c768    mov al,color"
+"	      0051c76b    mov ecx,ptr"
 "	      0051c76e    mov [ecx],al"
 );
 // LINE 2757:
 	asm( 
-"	      0051c770    add dword ptr [ebp-8],2"
+"	      0051c770    add ptr,2"
 );
 // LINE 2759:
 	asm( 
@@ -9129,96 +9129,96 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c779    and eax,7"
 "	      0051c77c    mov ecx,ds:[62A528h]"
 "	      0051c782    mov al,[eax+ecx]"
-"	      0051c785    mov [ebp-1Ch],al"
+"	      0051c785    mov color,al"
 "	      0051c788    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2760:
 	asm( 
-"	      0051c78e    mov al,[ebp-1Ch]"
-"	      0051c791    mov ecx,[ebp-8]"
+"	      0051c78e    mov al,color"
+"	      0051c791    mov ecx,ptr"
 "	      0051c794    mov [ecx],al"
 );
 // LINE 2761:
 	asm( 
-"	      0051c796    add dword ptr [ebp-8],2"
+"	      0051c796    add ptr,2"
 );
 // LINE 2763:
 	asm( 
-"	      0051c79a    mov al,[ebp-1Ch]"
-"	      0051c79d    mov ecx,[ebp-8]"
+"	      0051c79a    mov al,color"
+"	      0051c79d    mov ecx,ptr"
 "	      0051c7a0    mov [ecx],al"
 );
 // LINE 2764:
 	asm( 
-"	      0051c7a2    mov eax,[ebp-18h]"
+"	      0051c7a2    mov eax,bufwidth"
 "	      0051c7a5    add eax,eax"
 "	      0051c7a7    sub eax,0Ch"
-"	      0051c7aa    add [ebp-8],eax"
+"	      0051c7aa    add ptr,eax"
 );
 // LINE 2766:
 	asm( 
-"	      0051c7ad    mov al,[ebp-1Ch]"
-"	      0051c7b0    mov ecx,[ebp-8]"
+"	      0051c7ad    mov al,color"
+"	      0051c7b0    mov ecx,ptr"
 "	      0051c7b3    mov [ecx],al"
 );
 // LINE 2767:
 	asm( 
-"	      0051c7b5    add dword ptr [ebp-8],2"
+"	      0051c7b5    add ptr,2"
 );
 // LINE 2769:
 	asm( 
-"	      0051c7b9    mov al,[ebp-1Ch]"
-"	      0051c7bc    mov ecx,[ebp-8]"
+"	      0051c7b9    mov al,color"
+"	      0051c7bc    mov ecx,ptr"
 "	      0051c7bf    mov [ecx],al"
 );
 // LINE 2770:
 	asm( 
-"	      0051c7c1    add dword ptr [ebp-8],2"
+"	      0051c7c1    add ptr,2"
 );
 // LINE 2772:
 	asm( 
-"	      0051c7c5    mov al,[ebp-1Ch]"
-"	      0051c7c8    mov ecx,[ebp-8]"
+"	      0051c7c5    mov al,color"
+"	      0051c7c8    mov ecx,ptr"
 "	      0051c7cb    mov [ecx],al"
 );
 // LINE 2773:
 	asm( 
-"	      0051c7cd    add dword ptr [ebp-8],2"
+"	      0051c7cd    add ptr,2"
 );
 // LINE 2775:
 	asm( 
-"	      0051c7d1    mov al,[ebp-1Ch]"
-"	      0051c7d4    mov ecx,[ebp-8]"
+"	      0051c7d1    mov al,color"
+"	      0051c7d4    mov ecx,ptr"
 "	      0051c7d7    mov [ecx],al"
 );
 // LINE 2776:
 	asm( 
-"	      0051c7d9    add dword ptr [ebp-8],2"
+"	      0051c7d9    add ptr,2"
 );
 // LINE 2778:
 	asm( 
-"	      0051c7dd    mov al,[ebp-1Ch]"
-"	      0051c7e0    mov ecx,[ebp-8]"
+"	      0051c7dd    mov al,color"
+"	      0051c7e0    mov ecx,ptr"
 "	      0051c7e3    mov [ecx],al"
 );
 // LINE 2779:
 	asm( 
-"	      0051c7e5    add dword ptr [ebp-8],2"
+"	      0051c7e5    add ptr,2"
 );
 // LINE 2781:
 	asm( 
-"	      0051c7e9    mov al,[ebp-1Ch]"
-"	      0051c7ec    mov ecx,[ebp-8]"
+"	      0051c7e9    mov al,color"
+"	      0051c7ec    mov ecx,ptr"
 "	      0051c7ef    mov [ecx],al"
 );
 // LINE 2782:
 	asm( 
-"	      0051c7f1    add dword ptr [ebp-8],2"
+"	      0051c7f1    add ptr,2"
 );
 // LINE 2784:
 	asm( 
-"	      0051c7f5    mov al,[ebp-1Ch]"
-"	      0051c7f8    mov ecx,[ebp-8]"
+"	      0051c7f5    mov al,color"
+"	      0051c7f8    mov ecx,ptr"
 "	      0051c7fb    mov [ecx],al"
 );
 // LINE 2785:
@@ -9227,55 +9227,55 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c802    and eax,7"
 "	      0051c805    mov ecx,ds:[62A528h]"
 "	      0051c80b    mov al,[eax+ecx]"
-"	      0051c80e    mov [ebp-1Ch],al"
+"	      0051c80e    mov color,al"
 "	      0051c811    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2786:
 	asm( 
-"	      0051c817    mov eax,[ebp-18h]"
+"	      0051c817    mov eax,bufwidth"
 "	      0051c81a    add eax,eax"
 "	      0051c81c    sub eax,0Ch"
-"	      0051c81f    add [ebp-8],eax"
+"	      0051c81f    add ptr,eax"
 );
 // LINE 2788:
 	asm( 
-"	      0051c822    mov al,[ebp-1Ch]"
-"	      0051c825    mov ecx,[ebp-8]"
+"	      0051c822    mov al,color"
+"	      0051c825    mov ecx,ptr"
 "	      0051c828    mov [ecx],al"
 );
 // LINE 2789:
 	asm( 
-"	      0051c82a    add dword ptr [ebp-8],2"
+"	      0051c82a    add ptr,2"
 );
 // LINE 2791:
 	asm( 
-"	      0051c82e    mov al,[ebp-1Ch]"
-"	      0051c831    mov ecx,[ebp-8]"
+"	      0051c82e    mov al,color"
+"	      0051c831    mov ecx,ptr"
 "	      0051c834    mov [ecx],al"
 );
 // LINE 2792:
 	asm( 
-"	      0051c836    add dword ptr [ebp-8],2"
+"	      0051c836    add ptr,2"
 );
 // LINE 2794:
 	asm( 
-"	      0051c83a    mov al,[ebp-1Ch]"
-"	      0051c83d    mov ecx,[ebp-8]"
+"	      0051c83a    mov al,color"
+"	      0051c83d    mov ecx,ptr"
 "	      0051c840    mov [ecx],al"
 );
 // LINE 2795:
 	asm( 
-"	      0051c842    add dword ptr [ebp-8],2"
+"	      0051c842    add ptr,2"
 );
 // LINE 2797:
 	asm( 
-"	      0051c846    mov al,[ebp-1Ch]"
-"	      0051c849    mov ecx,[ebp-8]"
+"	      0051c846    mov al,color"
+"	      0051c849    mov ecx,ptr"
 "	      0051c84c    mov [ecx],al"
 );
 // LINE 2798:
 	asm( 
-"	      0051c84e    add dword ptr [ebp-8],2"
+"	      0051c84e    add ptr,2"
 );
 // LINE 2800:
 	asm( 
@@ -9283,101 +9283,101 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c857    and eax,7"
 "	      0051c85a    mov ecx,ds:[62A528h]"
 "	      0051c860    mov al,[eax+ecx]"
-"	      0051c863    mov [ebp-1Ch],al"
+"	      0051c863    mov color,al"
 "	      0051c866    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2801:
 	asm( 
-"	      0051c86c    mov al,[ebp-1Ch]"
-"	      0051c86f    mov ecx,[ebp-8]"
+"	      0051c86c    mov al,color"
+"	      0051c86f    mov ecx,ptr"
 "	      0051c872    mov [ecx],al"
 );
 // LINE 2802:
 	asm( 
-"	      0051c874    add dword ptr [ebp-8],2"
+"	      0051c874    add ptr,2"
 );
 // LINE 2804:
 	asm( 
-"	      0051c878    mov al,[ebp-1Ch]"
-"	      0051c87b    mov ecx,[ebp-8]"
+"	      0051c878    mov al,color"
+"	      0051c87b    mov ecx,ptr"
 "	      0051c87e    mov [ecx],al"
 );
 // LINE 2805:
 	asm( 
-"	      0051c880    add dword ptr [ebp-8],2"
+"	      0051c880    add ptr,2"
 );
 // LINE 2807:
 	asm( 
-"	      0051c884    mov al,[ebp-1Ch]"
-"	      0051c887    mov ecx,[ebp-8]"
+"	      0051c884    mov al,color"
+"	      0051c887    mov ecx,ptr"
 "	      0051c88a    mov [ecx],al"
 );
 // LINE 2808:
 	asm( 
-"	      0051c88c    mov eax,[ebp-18h]"
+"	      0051c88c    mov eax,bufwidth"
 "	      0051c88f    add eax,eax"
 "	      0051c891    sub eax,0Ch"
-"	      0051c894    add [ebp-8],eax"
+"	      0051c894    add ptr,eax"
 );
 // LINE 2810:
 	asm( 
-"	      0051c897    mov al,[ebp-1Ch]"
-"	      0051c89a    mov ecx,[ebp-8]"
+"	      0051c897    mov al,color"
+"	      0051c89a    mov ecx,ptr"
 "	      0051c89d    mov [ecx],al"
 );
 // LINE 2811:
 	asm( 
-"	      0051c89f    add dword ptr [ebp-8],2"
+"	      0051c89f    add ptr,2"
 );
 // LINE 2813:
 	asm( 
-"	      0051c8a3    mov al,[ebp-1Ch]"
-"	      0051c8a6    mov ecx,[ebp-8]"
+"	      0051c8a3    mov al,color"
+"	      0051c8a6    mov ecx,ptr"
 "	      0051c8a9    mov [ecx],al"
 );
 // LINE 2814:
 	asm( 
-"	      0051c8ab    add dword ptr [ebp-8],2"
+"	      0051c8ab    add ptr,2"
 );
 // LINE 2816:
 	asm( 
-"	      0051c8af    mov al,[ebp-1Ch]"
-"	      0051c8b2    mov ecx,[ebp-8]"
+"	      0051c8af    mov al,color"
+"	      0051c8b2    mov ecx,ptr"
 "	      0051c8b5    mov [ecx],al"
 );
 // LINE 2817:
 	asm( 
-"	      0051c8b7    add dword ptr [ebp-8],2"
+"	      0051c8b7    add ptr,2"
 );
 // LINE 2819:
 	asm( 
-"	      0051c8bb    mov al,[ebp-1Ch]"
-"	      0051c8be    mov ecx,[ebp-8]"
+"	      0051c8bb    mov al,color"
+"	      0051c8be    mov ecx,ptr"
 "	      0051c8c1    mov [ecx],al"
 );
 // LINE 2820:
 	asm( 
-"	      0051c8c3    add dword ptr [ebp-8],2"
+"	      0051c8c3    add ptr,2"
 );
 // LINE 2822:
 	asm( 
-"	      0051c8c7    mov al,[ebp-1Ch]"
-"	      0051c8ca    mov ecx,[ebp-8]"
+"	      0051c8c7    mov al,color"
+"	      0051c8ca    mov ecx,ptr"
 "	      0051c8cd    mov [ecx],al"
 );
 // LINE 2823:
 	asm( 
-"	      0051c8cf    add dword ptr [ebp-8],2"
+"	      0051c8cf    add ptr,2"
 );
 // LINE 2825:
 	asm( 
-"	      0051c8d3    mov al,[ebp-1Ch]"
-"	      0051c8d6    mov ecx,[ebp-8]"
+"	      0051c8d3    mov al,color"
+"	      0051c8d6    mov ecx,ptr"
 "	      0051c8d9    mov [ecx],al"
 );
 // LINE 2826:
 	asm( 
-"	      0051c8db    add dword ptr [ebp-8],2"
+"	      0051c8db    add ptr,2"
 );
 // LINE 2828:
 	asm( 
@@ -9385,36 +9385,36 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c8e4    and eax,7"
 "	      0051c8e7    mov ecx,ds:[62A528h]"
 "	      0051c8ed    mov al,[eax+ecx]"
-"	      0051c8f0    mov [ebp-1Ch],al"
+"	      0051c8f0    mov color,al"
 "	      0051c8f3    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2829:
 	asm( 
-"	      0051c8f9    mov al,[ebp-1Ch]"
-"	      0051c8fc    mov ecx,[ebp-8]"
+"	      0051c8f9    mov al,color"
+"	      0051c8fc    mov ecx,ptr"
 "	      0051c8ff    mov [ecx],al"
 );
 // LINE 2830:
 	asm( 
-"	      0051c901    mov eax,[ebp-18h]"
+"	      0051c901    mov eax,bufwidth"
 "	      0051c904    add eax,eax"
 "	      0051c906    sub eax,0Ch"
-"	      0051c909    add [ebp-8],eax"
+"	      0051c909    add ptr,eax"
 );
 // LINE 2832:
 	asm( 
-"	      0051c90c    mov al,[ebp-1Ch]"
-"	      0051c90f    mov ecx,[ebp-8]"
+"	      0051c90c    mov al,color"
+"	      0051c90f    mov ecx,ptr"
 "	      0051c912    mov [ecx],al"
 );
 // LINE 2833:
 	asm( 
-"	      0051c914    add dword ptr [ebp-8],2"
+"	      0051c914    add ptr,2"
 );
 // LINE 2835:
 	asm( 
-"	      0051c918    mov al,[ebp-1Ch]"
-"	      0051c91b    mov ecx,[ebp-8]"
+"	      0051c918    mov al,color"
+"	      0051c91b    mov ecx,ptr"
 "	      0051c91e    mov [ecx],al"
 );
 // LINE 2836:
@@ -9423,85 +9423,85 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c925    and eax,7"
 "	      0051c928    mov ecx,ds:[62A528h]"
 "	      0051c92e    mov al,[eax+ecx]"
-"	      0051c931    mov [ebp-1Ch],al"
+"	      0051c931    mov color,al"
 "	      0051c934    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2837:
 	asm( 
-"	      0051c93a    add dword ptr [ebp-8],2"
+"	      0051c93a    add ptr,2"
 );
 // LINE 2839:
 	asm( 
-"	      0051c93e    mov al,[ebp-1Ch]"
-"	      0051c941    mov ecx,[ebp-8]"
+"	      0051c93e    mov al,color"
+"	      0051c941    mov ecx,ptr"
 "	      0051c944    mov [ecx],al"
 );
 // LINE 2840:
 	asm( 
-"	      0051c946    add dword ptr [ebp-8],2"
+"	      0051c946    add ptr,2"
 );
 // LINE 2842:
 	asm( 
-"	      0051c94a    mov al,[ebp-1Ch]"
-"	      0051c94d    mov ecx,[ebp-8]"
+"	      0051c94a    mov al,color"
+"	      0051c94d    mov ecx,ptr"
 "	      0051c950    mov [ecx],al"
 );
 // LINE 2843:
 	asm( 
-"	      0051c952    add dword ptr [ebp-8],2"
+"	      0051c952    add ptr,2"
 );
 // LINE 2845:
 	asm( 
-"	      0051c956    mov al,[ebp-1Ch]"
-"	      0051c959    mov ecx,[ebp-8]"
+"	      0051c956    mov al,color"
+"	      0051c959    mov ecx,ptr"
 "	      0051c95c    mov [ecx],al"
 );
 // LINE 2846:
 	asm( 
-"	      0051c95e    add dword ptr [ebp-8],2"
+"	      0051c95e    add ptr,2"
 );
 // LINE 2848:
 	asm( 
-"	      0051c962    mov al,[ebp-1Ch]"
-"	      0051c965    mov ecx,[ebp-8]"
+"	      0051c962    mov al,color"
+"	      0051c965    mov ecx,ptr"
 "	      0051c968    mov [ecx],al"
 );
 // LINE 2849:
 	asm( 
-"	      0051c96a    add dword ptr [ebp-8],2"
+"	      0051c96a    add ptr,2"
 );
 // LINE 2851:
 	asm( 
-"	      0051c96e    mov al,[ebp-1Ch]"
-"	      0051c971    mov ecx,[ebp-8]"
+"	      0051c96e    mov al,color"
+"	      0051c971    mov ecx,ptr"
 "	      0051c974    mov [ecx],al"
 );
 // LINE 2852:
 	asm( 
-"	      0051c976    mov eax,[ebp-18h]"
+"	      0051c976    mov eax,bufwidth"
 "	      0051c979    add eax,eax"
 "	      0051c97b    sub eax,0Ch"
-"	      0051c97e    add [ebp-8],eax"
+"	      0051c97e    add ptr,eax"
 );
 // LINE 2854:
 	asm( 
-"	      0051c981    mov al,[ebp-1Ch]"
-"	      0051c984    mov ecx,[ebp-8]"
+"	      0051c981    mov al,color"
+"	      0051c984    mov ecx,ptr"
 "	      0051c987    mov [ecx],al"
 );
 // LINE 2855:
 	asm( 
-"	      0051c989    add dword ptr [ebp-8],2"
+"	      0051c989    add ptr,2"
 );
 // LINE 2857:
 	asm( 
-"	      0051c98d    mov al,[ebp-1Ch]"
-"	      0051c990    mov ecx,[ebp-8]"
+"	      0051c98d    mov al,color"
+"	      0051c990    mov ecx,ptr"
 "	      0051c993    mov [ecx],al"
 );
 // LINE 2858:
 	asm( 
-"	      0051c995    add dword ptr [ebp-8],2"
+"	      0051c995    add ptr,2"
 );
 // LINE 2859:
 	asm( 
@@ -9509,76 +9509,76 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051c99e    and eax,7"
 "	      0051c9a1    mov ecx,ds:[62A528h]"
 "	      0051c9a7    mov al,[eax+ecx]"
-"	      0051c9aa    mov [ebp-1Ch],al"
+"	      0051c9aa    mov color,al"
 "	      0051c9ad    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2861:
 	asm( 
-"	      0051c9b3    mov al,[ebp-1Ch]"
-"	      0051c9b6    mov ecx,[ebp-8]"
+"	      0051c9b3    mov al,color"
+"	      0051c9b6    mov ecx,ptr"
 "	      0051c9b9    mov [ecx],al"
 );
 // LINE 2862:
 	asm( 
-"	      0051c9bb    add dword ptr [ebp-8],2"
+"	      0051c9bb    add ptr,2"
 );
 // LINE 2864:
 	asm( 
-"	      0051c9bf    mov al,[ebp-1Ch]"
-"	      0051c9c2    mov ecx,[ebp-8]"
+"	      0051c9bf    mov al,color"
+"	      0051c9c2    mov ecx,ptr"
 "	      0051c9c5    mov [ecx],al"
 );
 // LINE 2865:
 	asm( 
-"	      0051c9c7    add dword ptr [ebp-8],2"
+"	      0051c9c7    add ptr,2"
 );
 // LINE 2867:
 	asm( 
-"	      0051c9cb    mov al,[ebp-1Ch]"
-"	      0051c9ce    mov ecx,[ebp-8]"
+"	      0051c9cb    mov al,color"
+"	      0051c9ce    mov ecx,ptr"
 "	      0051c9d1    mov [ecx],al"
 );
 // LINE 2868:
 	asm( 
-"	      0051c9d3    add dword ptr [ebp-8],2"
+"	      0051c9d3    add ptr,2"
 );
 // LINE 2870:
 	asm( 
-"	      0051c9d7    mov al,[ebp-1Ch]"
-"	      0051c9da    mov ecx,[ebp-8]"
+"	      0051c9d7    mov al,color"
+"	      0051c9da    mov ecx,ptr"
 "	      0051c9dd    mov [ecx],al"
 );
 // LINE 2871:
 	asm( 
-"	      0051c9df    add dword ptr [ebp-8],2"
+"	      0051c9df    add ptr,2"
 );
 // LINE 2873:
 	asm( 
-"	      0051c9e3    mov al,[ebp-1Ch]"
-"	      0051c9e6    mov ecx,[ebp-8]"
+"	      0051c9e3    mov al,color"
+"	      0051c9e6    mov ecx,ptr"
 "	      0051c9e9    mov [ecx],al"
 );
 // LINE 2874:
 	asm( 
-"	      0051c9eb    mov eax,[ebp-18h]"
+"	      0051c9eb    mov eax,bufwidth"
 "	      0051c9ee    add eax,eax"
 "	      0051c9f0    sub eax,0Ch"
-"	      0051c9f3    add [ebp-8],eax"
+"	      0051c9f3    add ptr,eax"
 );
 // LINE 2876:
 	asm( 
-"	      0051c9f6    mov al,[ebp-1Ch]"
-"	      0051c9f9    mov ecx,[ebp-8]"
+"	      0051c9f6    mov al,color"
+"	      0051c9f9    mov ecx,ptr"
 "	      0051c9fc    mov [ecx],al"
 );
 // LINE 2877:
 	asm( 
-"	      0051c9fe    add dword ptr [ebp-8],2"
+"	      0051c9fe    add ptr,2"
 );
 // LINE 2879:
 	asm( 
-"	      0051ca02    mov al,[ebp-1Ch]"
-"	      0051ca05    mov ecx,[ebp-8]"
+"	      0051ca02    mov al,color"
+"	      0051ca05    mov ecx,ptr"
 "	      0051ca08    mov [ecx],al"
 );
 // LINE 2880:
@@ -9587,57 +9587,57 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051ca0f    and eax,7"
 "	      0051ca12    mov ecx,ds:[62A528h]"
 "	      0051ca18    mov al,[eax+ecx]"
-"	      0051ca1b    mov [ebp-1Ch],al"
+"	      0051ca1b    mov color,al"
 "	      0051ca1e    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2881:
 	asm( 
-"	      0051ca24    add dword ptr [ebp-8],2"
+"	      0051ca24    add ptr,2"
 );
 // LINE 2883:
 	asm( 
-"	      0051ca28    mov al,[ebp-1Ch]"
-"	      0051ca2b    mov ecx,[ebp-8]"
+"	      0051ca28    mov al,color"
+"	      0051ca2b    mov ecx,ptr"
 "	      0051ca2e    mov [ecx],al"
 );
 // LINE 2884:
 	asm( 
-"	      0051ca30    add dword ptr [ebp-8],2"
+"	      0051ca30    add ptr,2"
 );
 // LINE 2886:
 	asm( 
-"	      0051ca34    mov al,[ebp-1Ch]"
-"	      0051ca37    mov ecx,[ebp-8]"
+"	      0051ca34    mov al,color"
+"	      0051ca37    mov ecx,ptr"
 "	      0051ca3a    mov [ecx],al"
 );
 // LINE 2887:
 	asm( 
-"	      0051ca3c    add dword ptr [ebp-8],2"
+"	      0051ca3c    add ptr,2"
 );
 // LINE 2889:
 	asm( 
-"	      0051ca40    mov al,[ebp-1Ch]"
-"	      0051ca43    mov ecx,[ebp-8]"
+"	      0051ca40    mov al,color"
+"	      0051ca43    mov ecx,ptr"
 "	      0051ca46    mov [ecx],al"
 );
 // LINE 2890:
 	asm( 
-"	      0051ca48    add dword ptr [ebp-8],2"
+"	      0051ca48    add ptr,2"
 );
 // LINE 2892:
 	asm( 
-"	      0051ca4c    mov al,[ebp-1Ch]"
-"	      0051ca4f    mov ecx,[ebp-8]"
+"	      0051ca4c    mov al,color"
+"	      0051ca4f    mov ecx,ptr"
 "	      0051ca52    mov [ecx],al"
 );
 // LINE 2893:
 	asm( 
-"	      0051ca54    add dword ptr [ebp-8],2"
+"	      0051ca54    add ptr,2"
 );
 // LINE 2895:
 	asm( 
-"	      0051ca58    mov al,[ebp-1Ch]"
-"	      0051ca5b    mov ecx,[ebp-8]"
+"	      0051ca58    mov al,color"
+"	      0051ca5b    mov ecx,ptr"
 "	      0051ca5e    mov [ecx],al"
 );
 // LINE 2896:
@@ -9650,23 +9650,23 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051ca6a    and eax,7"
 "	      0051ca6d    mov ecx,ds:[62A528h]"
 "	      0051ca73    mov al,[eax+ecx]"
-"	      0051ca76    mov [ebp-1Ch],al"
+"	      0051ca76    mov color,al"
 "	      0051ca79    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2900:
 	asm( 
-"	      0051ca7f    mov al,[ebp-1Ch]"
-"	      0051ca82    mov ecx,[ebp-8]"
+"	      0051ca7f    mov al,color"
+"	      0051ca82    mov ecx,ptr"
 "	      0051ca85    mov [ecx],al"
 );
 // LINE 2901:
 	asm( 
-"	      0051ca87    add dword ptr [ebp-8],2"
+"	      0051ca87    add ptr,2"
 );
 // LINE 2903:
 	asm( 
-"	      0051ca8b    mov al,[ebp-1Ch]"
-"	      0051ca8e    mov ecx,[ebp-8]"
+"	      0051ca8b    mov al,color"
+"	      0051ca8e    mov ecx,ptr"
 "	      0051ca91    mov [ecx],al"
 );
 // LINE 2904:
@@ -9675,80 +9675,80 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051ca98    and eax,7"
 "	      0051ca9b    mov ecx,ds:[62A528h]"
 "	      0051caa1    mov al,[eax+ecx]"
-"	      0051caa4    mov [ebp-1Ch],al"
+"	      0051caa4    mov color,al"
 "	      0051caa7    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2905:
 	asm( 
-"	      0051caad    add dword ptr [ebp-8],2"
+"	      0051caad    add ptr,2"
 );
 // LINE 2907:
 	asm( 
-"	      0051cab1    mov al,[ebp-1Ch]"
-"	      0051cab4    mov ecx,[ebp-8]"
+"	      0051cab1    mov al,color"
+"	      0051cab4    mov ecx,ptr"
 "	      0051cab7    mov [ecx],al"
 );
 // LINE 2908:
 	asm( 
-"	      0051cab9    add dword ptr [ebp-8],2"
+"	      0051cab9    add ptr,2"
 );
 // LINE 2910:
 	asm( 
-"	      0051cabd    mov al,[ebp-1Ch]"
-"	      0051cac0    mov ecx,[ebp-8]"
+"	      0051cabd    mov al,color"
+"	      0051cac0    mov ecx,ptr"
 "	      0051cac3    mov [ecx],al"
 );
 // LINE 2911:
 	asm( 
-"	      0051cac5    add dword ptr [ebp-8],2"
+"	      0051cac5    add ptr,2"
 );
 // LINE 2913:
 	asm( 
-"	      0051cac9    mov al,[ebp-1Ch]"
-"	      0051cacc    mov ecx,[ebp-8]"
+"	      0051cac9    mov al,color"
+"	      0051cacc    mov ecx,ptr"
 "	      0051cacf    mov [ecx],al"
 );
 // LINE 2914:
 	asm( 
-"	      0051cad1    add dword ptr [ebp-8],2"
+"	      0051cad1    add ptr,2"
 );
 // LINE 2916:
 	asm( 
-"	      0051cad5    mov al,[ebp-1Ch]"
-"	      0051cad8    mov ecx,[ebp-8]"
+"	      0051cad5    mov al,color"
+"	      0051cad8    mov ecx,ptr"
 "	      0051cadb    mov [ecx],al"
 );
 // LINE 2917:
 	asm( 
-"	      0051cadd    add dword ptr [ebp-8],2"
+"	      0051cadd    add ptr,2"
 );
 // LINE 2919:
 	asm( 
-"	      0051cae1    mov al,[ebp-1Ch]"
-"	      0051cae4    mov ecx,[ebp-8]"
+"	      0051cae1    mov al,color"
+"	      0051cae4    mov ecx,ptr"
 "	      0051cae7    mov [ecx],al"
 );
 // LINE 2920:
 	asm( 
-"	      0051cae9    add dword ptr [ebp-8],2"
+"	      0051cae9    add ptr,2"
 );
 // LINE 2922:
 	asm( 
-"	      0051caed    mov al,[ebp-1Ch]"
-"	      0051caf0    mov ecx,[ebp-8]"
+"	      0051caed    mov al,color"
+"	      0051caf0    mov ecx,ptr"
 "	      0051caf3    mov [ecx],al"
 );
 // LINE 2923:
 	asm( 
-"	      0051caf5    mov eax,[ebp-18h]"
+"	      0051caf5    mov eax,bufwidth"
 "	      0051caf8    add eax,eax"
 "	      0051cafa    sub eax,0Eh"
-"	      0051cafd    add [ebp-8],eax"
+"	      0051cafd    add ptr,eax"
 );
 // LINE 2925:
 	asm( 
-"	      0051cb00    mov al,[ebp-1Ch]"
-"	      0051cb03    mov ecx,[ebp-8]"
+"	      0051cb00    mov al,color"
+"	      0051cb03    mov ecx,ptr"
 "	      0051cb06    mov [ecx],al"
 );
 // LINE 2926:
@@ -9757,32 +9757,32 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cb0d    and eax,7"
 "	      0051cb10    mov ecx,ds:[62A528h]"
 "	      0051cb16    mov al,[eax+ecx]"
-"	      0051cb19    mov [ebp-1Ch],al"
+"	      0051cb19    mov color,al"
 "	      0051cb1c    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2927:
 	asm( 
-"	      0051cb22    add dword ptr [ebp-8],2"
+"	      0051cb22    add ptr,2"
 );
 // LINE 2929:
 	asm( 
-"	      0051cb26    mov al,[ebp-1Ch]"
-"	      0051cb29    mov ecx,[ebp-8]"
+"	      0051cb26    mov al,color"
+"	      0051cb29    mov ecx,ptr"
 "	      0051cb2c    mov [ecx],al"
 );
 // LINE 2930:
 	asm( 
-"	      0051cb2e    add dword ptr [ebp-8],2"
+"	      0051cb2e    add ptr,2"
 );
 // LINE 2932:
 	asm( 
-"	      0051cb32    mov al,[ebp-1Ch]"
-"	      0051cb35    mov ecx,[ebp-8]"
+"	      0051cb32    mov al,color"
+"	      0051cb35    mov ecx,ptr"
 "	      0051cb38    mov [ecx],al"
 );
 // LINE 2933:
 	asm( 
-"	      0051cb3a    add dword ptr [ebp-8],2"
+"	      0051cb3a    add ptr,2"
 );
 // LINE 2935:
 	asm( 
@@ -9790,48 +9790,48 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cb43    and eax,7"
 "	      0051cb46    mov ecx,ds:[62A528h]"
 "	      0051cb4c    mov al,[eax+ecx]"
-"	      0051cb4f    mov [ebp-1Ch],al"
+"	      0051cb4f    mov color,al"
 "	      0051cb52    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2936:
 	asm( 
-"	      0051cb58    mov al,[ebp-1Ch]"
-"	      0051cb5b    mov ecx,[ebp-8]"
+"	      0051cb58    mov al,color"
+"	      0051cb5b    mov ecx,ptr"
 "	      0051cb5e    mov [ecx],al"
 );
 // LINE 2937:
 	asm( 
-"	      0051cb60    add dword ptr [ebp-8],2"
+"	      0051cb60    add ptr,2"
 );
 // LINE 2939:
 	asm( 
-"	      0051cb64    mov al,[ebp-1Ch]"
-"	      0051cb67    mov ecx,[ebp-8]"
+"	      0051cb64    mov al,color"
+"	      0051cb67    mov ecx,ptr"
 "	      0051cb6a    mov [ecx],al"
 );
 // LINE 2940:
 	asm( 
-"	      0051cb6c    add dword ptr [ebp-8],2"
+"	      0051cb6c    add ptr,2"
 );
 // LINE 2942:
 	asm( 
-"	      0051cb70    mov al,[ebp-1Ch]"
-"	      0051cb73    mov ecx,[ebp-8]"
+"	      0051cb70    mov al,color"
+"	      0051cb73    mov ecx,ptr"
 "	      0051cb76    mov [ecx],al"
 );
 // LINE 2943:
 	asm( 
-"	      0051cb78    add dword ptr [ebp-8],2"
+"	      0051cb78    add ptr,2"
 );
 // LINE 2945:
 	asm( 
-"	      0051cb7c    mov al,[ebp-1Ch]"
-"	      0051cb7f    mov ecx,[ebp-8]"
+"	      0051cb7c    mov al,color"
+"	      0051cb7f    mov ecx,ptr"
 "	      0051cb82    mov [ecx],al"
 );
 // LINE 2946:
 	asm( 
-"	      0051cb84    add dword ptr [ebp-8],2"
+"	      0051cb84    add ptr,2"
 );
 // LINE 2948:
 	asm( 
@@ -9839,96 +9839,96 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cb8d    and eax,7"
 "	      0051cb90    mov ecx,ds:[62A528h]"
 "	      0051cb96    mov al,[eax+ecx]"
-"	      0051cb99    mov [ebp-1Ch],al"
+"	      0051cb99    mov color,al"
 "	      0051cb9c    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2949:
 	asm( 
-"	      0051cba2    mov al,[ebp-1Ch]"
-"	      0051cba5    mov ecx,[ebp-8]"
+"	      0051cba2    mov al,color"
+"	      0051cba5    mov ecx,ptr"
 "	      0051cba8    mov [ecx],al"
 );
 // LINE 2950:
 	asm( 
-"	      0051cbaa    mov eax,[ebp-18h]"
+"	      0051cbaa    mov eax,bufwidth"
 "	      0051cbad    add eax,eax"
 "	      0051cbaf    sub eax,0Eh"
-"	      0051cbb2    add [ebp-8],eax"
+"	      0051cbb2    add ptr,eax"
 );
 // LINE 2952:
 	asm( 
-"	      0051cbb5    mov al,[ebp-1Ch]"
-"	      0051cbb8    mov ecx,[ebp-8]"
+"	      0051cbb5    mov al,color"
+"	      0051cbb8    mov ecx,ptr"
 "	      0051cbbb    mov [ecx],al"
 );
 // LINE 2953:
 	asm( 
-"	      0051cbbd    add dword ptr [ebp-8],2"
+"	      0051cbbd    add ptr,2"
 );
 // LINE 2955:
 	asm( 
-"	      0051cbc1    mov al,[ebp-1Ch]"
-"	      0051cbc4    mov ecx,[ebp-8]"
+"	      0051cbc1    mov al,color"
+"	      0051cbc4    mov ecx,ptr"
 "	      0051cbc7    mov [ecx],al"
 );
 // LINE 2956:
 	asm( 
-"	      0051cbc9    add dword ptr [ebp-8],2"
+"	      0051cbc9    add ptr,2"
 );
 // LINE 2958:
 	asm( 
-"	      0051cbcd    mov al,[ebp-1Ch]"
-"	      0051cbd0    mov ecx,[ebp-8]"
+"	      0051cbcd    mov al,color"
+"	      0051cbd0    mov ecx,ptr"
 "	      0051cbd3    mov [ecx],al"
 );
 // LINE 2959:
 	asm( 
-"	      0051cbd5    add dword ptr [ebp-8],2"
+"	      0051cbd5    add ptr,2"
 );
 // LINE 2961:
 	asm( 
-"	      0051cbd9    mov al,[ebp-1Ch]"
-"	      0051cbdc    mov ecx,[ebp-8]"
+"	      0051cbd9    mov al,color"
+"	      0051cbdc    mov ecx,ptr"
 "	      0051cbdf    mov [ecx],al"
 );
 // LINE 2962:
 	asm( 
-"	      0051cbe1    add dword ptr [ebp-8],2"
+"	      0051cbe1    add ptr,2"
 );
 // LINE 2964:
 	asm( 
-"	      0051cbe5    mov al,[ebp-1Ch]"
-"	      0051cbe8    mov ecx,[ebp-8]"
+"	      0051cbe5    mov al,color"
+"	      0051cbe8    mov ecx,ptr"
 "	      0051cbeb    mov [ecx],al"
 );
 // LINE 2965:
 	asm( 
-"	      0051cbed    add dword ptr [ebp-8],2"
+"	      0051cbed    add ptr,2"
 );
 // LINE 2967:
 	asm( 
-"	      0051cbf1    mov al,[ebp-1Ch]"
-"	      0051cbf4    mov ecx,[ebp-8]"
+"	      0051cbf1    mov al,color"
+"	      0051cbf4    mov ecx,ptr"
 "	      0051cbf7    mov [ecx],al"
 );
 // LINE 2968:
 	asm( 
-"	      0051cbf9    add dword ptr [ebp-8],2"
+"	      0051cbf9    add ptr,2"
 );
 // LINE 2970:
 	asm( 
-"	      0051cbfd    mov al,[ebp-1Ch]"
-"	      0051cc00    mov ecx,[ebp-8]"
+"	      0051cbfd    mov al,color"
+"	      0051cc00    mov ecx,ptr"
 "	      0051cc03    mov [ecx],al"
 );
 // LINE 2971:
 	asm( 
-"	      0051cc05    add dword ptr [ebp-8],2"
+"	      0051cc05    add ptr,2"
 );
 // LINE 2973:
 	asm( 
-"	      0051cc09    mov al,[ebp-1Ch]"
-"	      0051cc0c    mov ecx,[ebp-8]"
+"	      0051cc09    mov al,color"
+"	      0051cc0c    mov ecx,ptr"
 "	      0051cc0f    mov [ecx],al"
 );
 // LINE 2974:
@@ -9937,75 +9937,75 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cc16    and eax,7"
 "	      0051cc19    mov ecx,ds:[62A528h]"
 "	      0051cc1f    mov al,[eax+ecx]"
-"	      0051cc22    mov [ebp-1Ch],al"
+"	      0051cc22    mov color,al"
 "	      0051cc25    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2975:
 	asm( 
-"	      0051cc2b    mov eax,[ebp-18h]"
+"	      0051cc2b    mov eax,bufwidth"
 "	      0051cc2e    add eax,eax"
 "	      0051cc30    sub eax,0Eh"
-"	      0051cc33    add [ebp-8],eax"
+"	      0051cc33    add ptr,eax"
 );
 // LINE 2977:
 	asm( 
-"	      0051cc36    mov al,[ebp-1Ch]"
-"	      0051cc39    mov ecx,[ebp-8]"
+"	      0051cc36    mov al,color"
+"	      0051cc39    mov ecx,ptr"
 "	      0051cc3c    mov [ecx],al"
 );
 // LINE 2978:
 	asm( 
-"	      0051cc3e    add dword ptr [ebp-8],2"
+"	      0051cc3e    add ptr,2"
 );
 // LINE 2980:
 	asm( 
-"	      0051cc42    mov al,[ebp-1Ch]"
-"	      0051cc45    mov ecx,[ebp-8]"
+"	      0051cc42    mov al,color"
+"	      0051cc45    mov ecx,ptr"
 "	      0051cc48    mov [ecx],al"
 );
 // LINE 2981:
 	asm( 
-"	      0051cc4a    add dword ptr [ebp-8],2"
+"	      0051cc4a    add ptr,2"
 );
 // LINE 2983:
 	asm( 
-"	      0051cc4e    mov al,[ebp-1Ch]"
-"	      0051cc51    mov ecx,[ebp-8]"
+"	      0051cc4e    mov al,color"
+"	      0051cc51    mov ecx,ptr"
 "	      0051cc54    mov [ecx],al"
 );
 // LINE 2984:
 	asm( 
-"	      0051cc56    add dword ptr [ebp-8],2"
+"	      0051cc56    add ptr,2"
 );
 // LINE 2986:
 	asm( 
-"	      0051cc5a    mov al,[ebp-1Ch]"
-"	      0051cc5d    mov ecx,[ebp-8]"
+"	      0051cc5a    mov al,color"
+"	      0051cc5d    mov ecx,ptr"
 "	      0051cc60    mov [ecx],al"
 );
 // LINE 2987:
 	asm( 
-"	      0051cc62    add dword ptr [ebp-8],2"
+"	      0051cc62    add ptr,2"
 );
 // LINE 2989:
 	asm( 
-"	      0051cc66    mov al,[ebp-1Ch]"
-"	      0051cc69    mov ecx,[ebp-8]"
+"	      0051cc66    mov al,color"
+"	      0051cc69    mov ecx,ptr"
 "	      0051cc6c    mov [ecx],al"
 );
 // LINE 2990:
 	asm( 
-"	      0051cc6e    add dword ptr [ebp-8],2"
+"	      0051cc6e    add ptr,2"
 );
 // LINE 2992:
 	asm( 
-"	      0051cc72    mov al,[ebp-1Ch]"
-"	      0051cc75    mov ecx,[ebp-8]"
+"	      0051cc72    mov al,color"
+"	      0051cc75    mov ecx,ptr"
 "	      0051cc78    mov [ecx],al"
 );
 // LINE 2993:
 	asm( 
-"	      0051cc7a    add dword ptr [ebp-8],2"
+"	      0051cc7a    add ptr,2"
 );
 // LINE 2994:
 	asm( 
@@ -10013,81 +10013,81 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cc83    and eax,7"
 "	      0051cc86    mov ecx,ds:[62A528h]"
 "	      0051cc8c    mov al,[eax+ecx]"
-"	      0051cc8f    mov [ebp-1Ch],al"
+"	      0051cc8f    mov color,al"
 "	      0051cc92    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 2996:
 	asm( 
-"	      0051cc98    mov al,[ebp-1Ch]"
-"	      0051cc9b    mov ecx,[ebp-8]"
+"	      0051cc98    mov al,color"
+"	      0051cc9b    mov ecx,ptr"
 "	      0051cc9e    mov [ecx],al"
 );
 // LINE 2997:
 	asm( 
-"	      0051cca0    add dword ptr [ebp-8],2"
+"	      0051cca0    add ptr,2"
 );
 // LINE 2999:
 	asm( 
-"	      0051cca4    mov al,[ebp-1Ch]"
-"	      0051cca7    mov ecx,[ebp-8]"
+"	      0051cca4    mov al,color"
+"	      0051cca7    mov ecx,ptr"
 "	      0051ccaa    mov [ecx],al"
 );
 // LINE 3000:
 	asm( 
-"	      0051ccac    mov eax,[ebp-18h]"
+"	      0051ccac    mov eax,bufwidth"
 "	      0051ccaf    add eax,eax"
 "	      0051ccb1    sub eax,0Eh"
-"	      0051ccb4    add [ebp-8],eax"
+"	      0051ccb4    add ptr,eax"
 );
 // LINE 3002:
 	asm( 
-"	      0051ccb7    mov al,[ebp-1Ch]"
-"	      0051ccba    mov ecx,[ebp-8]"
+"	      0051ccb7    mov al,color"
+"	      0051ccba    mov ecx,ptr"
 "	      0051ccbd    mov [ecx],al"
 );
 // LINE 3003:
 	asm( 
-"	      0051ccbf    add dword ptr [ebp-8],2"
+"	      0051ccbf    add ptr,2"
 );
 // LINE 3005:
 	asm( 
-"	      0051ccc3    mov al,[ebp-1Ch]"
-"	      0051ccc6    mov ecx,[ebp-8]"
+"	      0051ccc3    mov al,color"
+"	      0051ccc6    mov ecx,ptr"
 "	      0051ccc9    mov [ecx],al"
 );
 // LINE 3006:
 	asm( 
-"	      0051cccb    add dword ptr [ebp-8],2"
+"	      0051cccb    add ptr,2"
 );
 // LINE 3008:
 	asm( 
-"	      0051cccf    mov al,[ebp-1Ch]"
-"	      0051ccd2    mov ecx,[ebp-8]"
+"	      0051cccf    mov al,color"
+"	      0051ccd2    mov ecx,ptr"
 "	      0051ccd5    mov [ecx],al"
 );
 // LINE 3009:
 	asm( 
-"	      0051ccd7    add dword ptr [ebp-8],2"
+"	      0051ccd7    add ptr,2"
 );
 // LINE 3011:
 	asm( 
-"	      0051ccdb    mov al,[ebp-1Ch]"
-"	      0051ccde    mov ecx,[ebp-8]"
+"	      0051ccdb    mov al,color"
+"	      0051ccde    mov ecx,ptr"
 "	      0051cce1    mov [ecx],al"
 );
 // LINE 3012:
 	asm( 
-"	      0051cce3    add dword ptr [ebp-8],2"
+"	      0051cce3    add ptr,2"
 );
 // LINE 3014:
 	asm( 
-"	      0051cce7    mov al,[ebp-1Ch]"
-"	      0051ccea    mov ecx,[ebp-8]"
+"	      0051cce7    mov al,color"
+"	      0051ccea    mov ecx,ptr"
 "	      0051cced    mov [ecx],al"
 );
 // LINE 3015:
 	asm( 
-"	      0051ccef    add dword ptr [ebp-8],2"
+"	      0051ccef    add ptr,2"
 );
 // LINE 3017:
 	asm( 
@@ -10095,71 +10095,71 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051ccf8    and eax,7"
 "	      0051ccfb    mov ecx,ds:[62A528h]"
 "	      0051cd01    mov al,[eax+ecx]"
-"	      0051cd04    mov [ebp-1Ch],al"
+"	      0051cd04    mov color,al"
 "	      0051cd07    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3018:
 	asm( 
-"	      0051cd0d    mov al,[ebp-1Ch]"
-"	      0051cd10    mov ecx,[ebp-8]"
+"	      0051cd0d    mov al,color"
+"	      0051cd10    mov ecx,ptr"
 "	      0051cd13    mov [ecx],al"
 );
 // LINE 3019:
 	asm( 
-"	      0051cd15    add dword ptr [ebp-8],2"
+"	      0051cd15    add ptr,2"
 );
 // LINE 3021:
 	asm( 
-"	      0051cd19    mov al,[ebp-1Ch]"
-"	      0051cd1c    mov ecx,[ebp-8]"
+"	      0051cd19    mov al,color"
+"	      0051cd1c    mov ecx,ptr"
 "	      0051cd1f    mov [ecx],al"
 );
 // LINE 3022:
 	asm( 
-"	      0051cd21    add dword ptr [ebp-8],2"
+"	      0051cd21    add ptr,2"
 );
 // LINE 3024:
 	asm( 
-"	      0051cd25    mov al,[ebp-1Ch]"
-"	      0051cd28    mov ecx,[ebp-8]"
+"	      0051cd25    mov al,color"
+"	      0051cd28    mov ecx,ptr"
 "	      0051cd2b    mov [ecx],al"
 );
 // LINE 3025:
 	asm( 
-"	      0051cd2d    mov eax,[ebp-18h]"
+"	      0051cd2d    mov eax,bufwidth"
 "	      0051cd30    add eax,eax"
 "	      0051cd32    sub eax,0Eh"
-"	      0051cd35    add [ebp-8],eax"
+"	      0051cd35    add ptr,eax"
 );
 // LINE 3027:
 	asm( 
-"	      0051cd38    mov al,[ebp-1Ch]"
-"	      0051cd3b    mov ecx,[ebp-8]"
+"	      0051cd38    mov al,color"
+"	      0051cd3b    mov ecx,ptr"
 "	      0051cd3e    mov [ecx],al"
 );
 // LINE 3028:
 	asm( 
-"	      0051cd40    add dword ptr [ebp-8],2"
+"	      0051cd40    add ptr,2"
 );
 // LINE 3030:
 	asm( 
-"	      0051cd44    mov al,[ebp-1Ch]"
-"	      0051cd47    mov ecx,[ebp-8]"
+"	      0051cd44    mov al,color"
+"	      0051cd47    mov ecx,ptr"
 "	      0051cd4a    mov [ecx],al"
 );
 // LINE 3031:
 	asm( 
-"	      0051cd4c    add dword ptr [ebp-8],2"
+"	      0051cd4c    add ptr,2"
 );
 // LINE 3033:
 	asm( 
-"	      0051cd50    mov al,[ebp-1Ch]"
-"	      0051cd53    mov ecx,[ebp-8]"
+"	      0051cd50    mov al,color"
+"	      0051cd53    mov ecx,ptr"
 "	      0051cd56    mov [ecx],al"
 );
 // LINE 3034:
 	asm( 
-"	      0051cd58    add dword ptr [ebp-8],2"
+"	      0051cd58    add ptr,2"
 );
 // LINE 3035:
 	asm( 
@@ -10167,66 +10167,66 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cd61    and eax,7"
 "	      0051cd64    mov ecx,ds:[62A528h]"
 "	      0051cd6a    mov al,[eax+ecx]"
-"	      0051cd6d    mov [ebp-1Ch],al"
+"	      0051cd6d    mov color,al"
 "	      0051cd70    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3037:
 	asm( 
-"	      0051cd76    mov al,[ebp-1Ch]"
-"	      0051cd79    mov ecx,[ebp-8]"
+"	      0051cd76    mov al,color"
+"	      0051cd79    mov ecx,ptr"
 "	      0051cd7c    mov [ecx],al"
 );
 // LINE 3038:
 	asm( 
-"	      0051cd7e    add dword ptr [ebp-8],2"
+"	      0051cd7e    add ptr,2"
 );
 // LINE 3040:
 	asm( 
-"	      0051cd82    mov al,[ebp-1Ch]"
-"	      0051cd85    mov ecx,[ebp-8]"
+"	      0051cd82    mov al,color"
+"	      0051cd85    mov ecx,ptr"
 "	      0051cd88    mov [ecx],al"
 );
 // LINE 3041:
 	asm( 
-"	      0051cd8a    add dword ptr [ebp-8],2"
+"	      0051cd8a    add ptr,2"
 );
 // LINE 3043:
 	asm( 
-"	      0051cd8e    mov al,[ebp-1Ch]"
-"	      0051cd91    mov ecx,[ebp-8]"
+"	      0051cd8e    mov al,color"
+"	      0051cd91    mov ecx,ptr"
 "	      0051cd94    mov [ecx],al"
 );
 // LINE 3044:
 	asm( 
-"	      0051cd96    add dword ptr [ebp-8],2"
+"	      0051cd96    add ptr,2"
 );
 // LINE 3046:
 	asm( 
-"	      0051cd9a    mov al,[ebp-1Ch]"
-"	      0051cd9d    mov ecx,[ebp-8]"
+"	      0051cd9a    mov al,color"
+"	      0051cd9d    mov ecx,ptr"
 "	      0051cda0    mov [ecx],al"
 );
 // LINE 3047:
 	asm( 
-"	      0051cda2    add dword ptr [ebp-8],2"
+"	      0051cda2    add ptr,2"
 );
 // LINE 3049:
 	asm( 
-"	      0051cda6    mov al,[ebp-1Ch]"
-"	      0051cda9    mov ecx,[ebp-8]"
+"	      0051cda6    mov al,color"
+"	      0051cda9    mov ecx,ptr"
 "	      0051cdac    mov [ecx],al"
 );
 // LINE 3050:
 	asm( 
-"	      0051cdae    mov eax,[ebp-18h]"
+"	      0051cdae    mov eax,bufwidth"
 "	      0051cdb1    add eax,eax"
 "	      0051cdb3    sub eax,0Eh"
-"	      0051cdb6    add [ebp-8],eax"
+"	      0051cdb6    add ptr,eax"
 );
 // LINE 3052:
 	asm( 
-"	      0051cdb9    mov al,[ebp-1Ch]"
-"	      0051cdbc    mov ecx,[ebp-8]"
+"	      0051cdb9    mov al,color"
+"	      0051cdbc    mov ecx,ptr"
 "	      0051cdbf    mov [ecx],al"
 );
 // LINE 3053:
@@ -10235,32 +10235,32 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cdc6    and eax,7"
 "	      0051cdc9    mov ecx,ds:[62A528h]"
 "	      0051cdcf    mov al,[eax+ecx]"
-"	      0051cdd2    mov [ebp-1Ch],al"
+"	      0051cdd2    mov color,al"
 "	      0051cdd5    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3054:
 	asm( 
-"	      0051cddb    add dword ptr [ebp-8],2"
+"	      0051cddb    add ptr,2"
 );
 // LINE 3056:
 	asm( 
-"	      0051cddf    mov al,[ebp-1Ch]"
-"	      0051cde2    mov ecx,[ebp-8]"
+"	      0051cddf    mov al,color"
+"	      0051cde2    mov ecx,ptr"
 "	      0051cde5    mov [ecx],al"
 );
 // LINE 3057:
 	asm( 
-"	      0051cde7    add dword ptr [ebp-8],2"
+"	      0051cde7    add ptr,2"
 );
 // LINE 3059:
 	asm( 
-"	      0051cdeb    mov al,[ebp-1Ch]"
-"	      0051cdee    mov ecx,[ebp-8]"
+"	      0051cdeb    mov al,color"
+"	      0051cdee    mov ecx,ptr"
 "	      0051cdf1    mov [ecx],al"
 );
 // LINE 3060:
 	asm( 
-"	      0051cdf3    add dword ptr [ebp-8],2"
+"	      0051cdf3    add ptr,2"
 );
 // LINE 3062:
 	asm( 
@@ -10268,136 +10268,136 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cdfc    and eax,7"
 "	      0051cdff    mov ecx,ds:[62A528h]"
 "	      0051ce05    mov al,[eax+ecx]"
-"	      0051ce08    mov [ebp-1Ch],al"
+"	      0051ce08    mov color,al"
 "	      0051ce0b    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3063:
 	asm( 
-"	      0051ce11    mov al,[ebp-1Ch]"
-"	      0051ce14    mov ecx,[ebp-8]"
+"	      0051ce11    mov al,color"
+"	      0051ce14    mov ecx,ptr"
 "	      0051ce17    mov [ecx],al"
 );
 // LINE 3064:
 	asm( 
-"	      0051ce19    add dword ptr [ebp-8],2"
+"	      0051ce19    add ptr,2"
 );
 // LINE 3066:
 	asm( 
-"	      0051ce1d    mov al,[ebp-1Ch]"
-"	      0051ce20    mov ecx,[ebp-8]"
+"	      0051ce1d    mov al,color"
+"	      0051ce20    mov ecx,ptr"
 "	      0051ce23    mov [ecx],al"
 );
 // LINE 3067:
 	asm( 
-"	      0051ce25    add dword ptr [ebp-8],2"
+"	      0051ce25    add ptr,2"
 );
 // LINE 3069:
 	asm( 
-"	      0051ce29    mov al,[ebp-1Ch]"
-"	      0051ce2c    mov ecx,[ebp-8]"
+"	      0051ce29    mov al,color"
+"	      0051ce2c    mov ecx,ptr"
 "	      0051ce2f    mov [ecx],al"
 );
 // LINE 3070:
 	asm( 
-"	      0051ce31    add dword ptr [ebp-8],2"
+"	      0051ce31    add ptr,2"
 );
 // LINE 3072:
 	asm( 
-"	      0051ce35    mov al,[ebp-1Ch]"
-"	      0051ce38    mov ecx,[ebp-8]"
+"	      0051ce35    mov al,color"
+"	      0051ce38    mov ecx,ptr"
 "	      0051ce3b    mov [ecx],al"
 );
 // LINE 3073:
 	asm( 
-"	      0051ce3d    add dword ptr [ebp-8],2"
+"	      0051ce3d    add ptr,2"
 );
 // LINE 3075:
 	asm( 
-"	      0051ce41    mov al,[ebp-1Ch]"
-"	      0051ce44    mov ecx,[ebp-8]"
+"	      0051ce41    mov al,color"
+"	      0051ce44    mov ecx,ptr"
 "	      0051ce47    mov [ecx],al"
 );
 // LINE 3076:
 	asm( 
-"	      0051ce49    mov eax,[ebp-18h]"
+"	      0051ce49    mov eax,bufwidth"
 "	      0051ce4c    add eax,eax"
 "	      0051ce4e    sub eax,0Eh"
-"	      0051ce51    add [ebp-8],eax"
+"	      0051ce51    add ptr,eax"
 );
 // LINE 3078:
 	asm( 
-"	      0051ce54    mov al,[ebp-1Ch]"
-"	      0051ce57    mov ecx,[ebp-8]"
+"	      0051ce54    mov al,color"
+"	      0051ce57    mov ecx,ptr"
 "	      0051ce5a    mov [ecx],al"
 );
 // LINE 3079:
 	asm( 
-"	      0051ce5c    add dword ptr [ebp-8],2"
+"	      0051ce5c    add ptr,2"
 );
 // LINE 3081:
 	asm( 
-"	      0051ce60    mov al,[ebp-1Ch]"
-"	      0051ce63    mov ecx,[ebp-8]"
+"	      0051ce60    mov al,color"
+"	      0051ce63    mov ecx,ptr"
 "	      0051ce66    mov [ecx],al"
 );
 // LINE 3082:
 	asm( 
-"	      0051ce68    add dword ptr [ebp-8],2"
+"	      0051ce68    add ptr,2"
 );
 // LINE 3084:
 	asm( 
-"	      0051ce6c    mov al,[ebp-1Ch]"
-"	      0051ce6f    mov ecx,[ebp-8]"
+"	      0051ce6c    mov al,color"
+"	      0051ce6f    mov ecx,ptr"
 "	      0051ce72    mov [ecx],al"
 );
 // LINE 3085:
 	asm( 
-"	      0051ce74    add dword ptr [ebp-8],2"
+"	      0051ce74    add ptr,2"
 );
 // LINE 3087:
 	asm( 
-"	      0051ce78    mov al,[ebp-1Ch]"
-"	      0051ce7b    mov ecx,[ebp-8]"
+"	      0051ce78    mov al,color"
+"	      0051ce7b    mov ecx,ptr"
 "	      0051ce7e    mov [ecx],al"
 );
 // LINE 3088:
 	asm( 
-"	      0051ce80    add dword ptr [ebp-8],2"
+"	      0051ce80    add ptr,2"
 );
 // LINE 3090:
 	asm( 
-"	      0051ce84    mov al,[ebp-1Ch]"
-"	      0051ce87    mov ecx,[ebp-8]"
+"	      0051ce84    mov al,color"
+"	      0051ce87    mov ecx,ptr"
 "	      0051ce8a    mov [ecx],al"
 );
 // LINE 3091:
 	asm( 
-"	      0051ce8c    add dword ptr [ebp-8],2"
+"	      0051ce8c    add ptr,2"
 );
 // LINE 3093:
 	asm( 
-"	      0051ce90    mov al,[ebp-1Ch]"
-"	      0051ce93    mov ecx,[ebp-8]"
+"	      0051ce90    mov al,color"
+"	      0051ce93    mov ecx,ptr"
 "	      0051ce96    mov [ecx],al"
 );
 // LINE 3094:
 	asm( 
-"	      0051ce98    add dword ptr [ebp-8],2"
+"	      0051ce98    add ptr,2"
 );
 // LINE 3096:
 	asm( 
-"	      0051ce9c    mov al,[ebp-1Ch]"
-"	      0051ce9f    mov ecx,[ebp-8]"
+"	      0051ce9c    mov al,color"
+"	      0051ce9f    mov ecx,ptr"
 "	      0051cea2    mov [ecx],al"
 );
 // LINE 3097:
 	asm( 
-"	      0051cea4    add dword ptr [ebp-8],2"
+"	      0051cea4    add ptr,2"
 );
 // LINE 3099:
 	asm( 
-"	      0051cea8    mov al,[ebp-1Ch]"
-"	      0051ceab    mov ecx,[ebp-8]"
+"	      0051cea8    mov al,color"
+"	      0051ceab    mov ecx,ptr"
 "	      0051ceae    mov [ecx],al"
 );
 // LINE 3100:
@@ -10410,68 +10410,68 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051ceba    and eax,7"
 "	      0051cebd    mov ecx,ds:[62A528h]"
 "	      0051cec3    mov al,[eax+ecx]"
-"	      0051cec6    mov [ebp-1Ch],al"
+"	      0051cec6    mov color,al"
 "	      0051cec9    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3104:
 	asm( 
-"	      0051cecf    mov al,[ebp-1Ch]"
-"	      0051ced2    mov ecx,[ebp-8]"
+"	      0051cecf    mov al,color"
+"	      0051ced2    mov ecx,ptr"
 "	      0051ced5    mov [ecx],al"
 );
 // LINE 3105:
 	asm( 
-"	      0051ced7    add dword ptr [ebp-8],2"
+"	      0051ced7    add ptr,2"
 );
 // LINE 3107:
 	asm( 
-"	      0051cedb    mov al,[ebp-1Ch]"
-"	      0051cede    mov ecx,[ebp-8]"
+"	      0051cedb    mov al,color"
+"	      0051cede    mov ecx,ptr"
 "	      0051cee1    mov [ecx],al"
 );
 // LINE 3108:
 	asm( 
-"	      0051cee3    add dword ptr [ebp-8],2"
+"	      0051cee3    add ptr,2"
 );
 // LINE 3110:
 	asm( 
-"	      0051cee7    mov al,[ebp-1Ch]"
-"	      0051ceea    mov ecx,[ebp-8]"
+"	      0051cee7    mov al,color"
+"	      0051ceea    mov ecx,ptr"
 "	      0051ceed    mov [ecx],al"
 );
 // LINE 3111:
 	asm( 
-"	      0051ceef    add dword ptr [ebp-8],2"
+"	      0051ceef    add ptr,2"
 );
 // LINE 3113:
 	asm( 
-"	      0051cef3    mov al,[ebp-1Ch]"
-"	      0051cef6    mov ecx,[ebp-8]"
+"	      0051cef3    mov al,color"
+"	      0051cef6    mov ecx,ptr"
 "	      0051cef9    mov [ecx],al"
 );
 // LINE 3114:
 	asm( 
-"	      0051cefb    add dword ptr [ebp-8],2"
+"	      0051cefb    add ptr,2"
 );
 // LINE 3116:
 	asm( 
-"	      0051ceff    mov al,[ebp-1Ch]"
-"	      0051cf02    mov ecx,[ebp-8]"
+"	      0051ceff    mov al,color"
+"	      0051cf02    mov ecx,ptr"
 "	      0051cf05    mov [ecx],al"
 );
 // LINE 3117:
 	asm( 
-"	      0051cf07    add dword ptr [ebp-8],2"
+"	      0051cf07    add ptr,2"
 );
 // LINE 3119:
 	asm( 
-"	      0051cf0b    mov al,[ebp-1Ch]"
-"	      0051cf0e    mov ecx,[ebp-8]"
+"	      0051cf0b    mov al,color"
+"	      0051cf0e    mov ecx,ptr"
 "	      0051cf11    mov [ecx],al"
 );
 // LINE 3120:
 	asm( 
-"	      0051cf13    add dword ptr [ebp-8],2"
+"	      0051cf13    add ptr,2"
 );
 // LINE 3121:
 	asm( 
@@ -10479,76 +10479,76 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cf1c    and eax,7"
 "	      0051cf1f    mov ecx,ds:[62A528h]"
 "	      0051cf25    mov al,[eax+ecx]"
-"	      0051cf28    mov [ebp-1Ch],al"
+"	      0051cf28    mov color,al"
 "	      0051cf2b    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3123:
 	asm( 
-"	      0051cf31    mov al,[ebp-1Ch]"
-"	      0051cf34    mov ecx,[ebp-8]"
+"	      0051cf31    mov al,color"
+"	      0051cf34    mov ecx,ptr"
 "	      0051cf37    mov [ecx],al"
 );
 // LINE 3124:
 	asm( 
-"	      0051cf39    add dword ptr [ebp-8],2"
+"	      0051cf39    add ptr,2"
 );
 // LINE 3126:
 	asm( 
-"	      0051cf3d    mov al,[ebp-1Ch]"
-"	      0051cf40    mov ecx,[ebp-8]"
+"	      0051cf3d    mov al,color"
+"	      0051cf40    mov ecx,ptr"
 "	      0051cf43    mov [ecx],al"
 );
 // LINE 3127:
 	asm( 
-"	      0051cf45    add dword ptr [ebp-8],2"
+"	      0051cf45    add ptr,2"
 );
 // LINE 3129:
 	asm( 
-"	      0051cf49    mov al,[ebp-1Ch]"
-"	      0051cf4c    mov ecx,[ebp-8]"
+"	      0051cf49    mov al,color"
+"	      0051cf4c    mov ecx,ptr"
 "	      0051cf4f    mov [ecx],al"
 );
 // LINE 3130:
 	asm( 
-"	      0051cf51    mov eax,[ebp-18h]"
+"	      0051cf51    mov eax,bufwidth"
 "	      0051cf54    add eax,eax"
 "	      0051cf56    sub eax,10h"
-"	      0051cf59    add [ebp-8],eax"
+"	      0051cf59    add ptr,eax"
 );
 // LINE 3132:
 	asm( 
-"	      0051cf5c    mov al,[ebp-1Ch]"
-"	      0051cf5f    mov ecx,[ebp-8]"
+"	      0051cf5c    mov al,color"
+"	      0051cf5f    mov ecx,ptr"
 "	      0051cf62    mov [ecx],al"
 );
 // LINE 3133:
 	asm( 
-"	      0051cf64    add dword ptr [ebp-8],2"
+"	      0051cf64    add ptr,2"
 );
 // LINE 3135:
 	asm( 
-"	      0051cf68    mov al,[ebp-1Ch]"
-"	      0051cf6b    mov ecx,[ebp-8]"
+"	      0051cf68    mov al,color"
+"	      0051cf6b    mov ecx,ptr"
 "	      0051cf6e    mov [ecx],al"
 );
 // LINE 3136:
 	asm( 
-"	      0051cf70    add dword ptr [ebp-8],2"
+"	      0051cf70    add ptr,2"
 );
 // LINE 3138:
 	asm( 
-"	      0051cf74    mov al,[ebp-1Ch]"
-"	      0051cf77    mov ecx,[ebp-8]"
+"	      0051cf74    mov al,color"
+"	      0051cf77    mov ecx,ptr"
 "	      0051cf7a    mov [ecx],al"
 );
 // LINE 3139:
 	asm( 
-"	      0051cf7c    add dword ptr [ebp-8],2"
+"	      0051cf7c    add ptr,2"
 );
 // LINE 3141:
 	asm( 
-"	      0051cf80    mov al,[ebp-1Ch]"
-"	      0051cf83    mov ecx,[ebp-8]"
+"	      0051cf80    mov al,color"
+"	      0051cf83    mov ecx,ptr"
 "	      0051cf86    mov [ecx],al"
 );
 // LINE 3142:
@@ -10557,22 +10557,22 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cf8d    and eax,7"
 "	      0051cf90    mov ecx,ds:[62A528h]"
 "	      0051cf96    mov al,[eax+ecx]"
-"	      0051cf99    mov [ebp-1Ch],al"
+"	      0051cf99    mov color,al"
 "	      0051cf9c    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3143:
 	asm( 
-"	      0051cfa2    add dword ptr [ebp-8],2"
+"	      0051cfa2    add ptr,2"
 );
 // LINE 3145:
 	asm( 
-"	      0051cfa6    mov al,[ebp-1Ch]"
-"	      0051cfa9    mov ecx,[ebp-8]"
+"	      0051cfa6    mov al,color"
+"	      0051cfa9    mov ecx,ptr"
 "	      0051cfac    mov [ecx],al"
 );
 // LINE 3146:
 	asm( 
-"	      0051cfae    add dword ptr [ebp-8],2"
+"	      0051cfae    add ptr,2"
 );
 // LINE 3147:
 	asm( 
@@ -10580,111 +10580,111 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051cfb7    and eax,7"
 "	      0051cfba    mov ecx,ds:[62A528h]"
 "	      0051cfc0    mov al,[eax+ecx]"
-"	      0051cfc3    mov [ebp-1Ch],al"
+"	      0051cfc3    mov color,al"
 "	      0051cfc6    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3149:
 	asm( 
-"	      0051cfcc    mov al,[ebp-1Ch]"
-"	      0051cfcf    mov ecx,[ebp-8]"
+"	      0051cfcc    mov al,color"
+"	      0051cfcf    mov ecx,ptr"
 "	      0051cfd2    mov [ecx],al"
 );
 // LINE 3150:
 	asm( 
-"	      0051cfd4    add dword ptr [ebp-8],2"
+"	      0051cfd4    add ptr,2"
 );
 // LINE 3152:
 	asm( 
-"	      0051cfd8    mov al,[ebp-1Ch]"
-"	      0051cfdb    mov ecx,[ebp-8]"
+"	      0051cfd8    mov al,color"
+"	      0051cfdb    mov ecx,ptr"
 "	      0051cfde    mov [ecx],al"
 );
 // LINE 3153:
 	asm( 
-"	      0051cfe0    add dword ptr [ebp-8],2"
+"	      0051cfe0    add ptr,2"
 );
 // LINE 3155:
 	asm( 
-"	      0051cfe4    mov al,[ebp-1Ch]"
-"	      0051cfe7    mov ecx,[ebp-8]"
+"	      0051cfe4    mov al,color"
+"	      0051cfe7    mov ecx,ptr"
 "	      0051cfea    mov [ecx],al"
 );
 // LINE 3156:
 	asm( 
-"	      0051cfec    add dword ptr [ebp-8],2"
+"	      0051cfec    add ptr,2"
 );
 // LINE 3158:
 	asm( 
-"	      0051cff0    mov al,[ebp-1Ch]"
-"	      0051cff3    mov ecx,[ebp-8]"
+"	      0051cff0    mov al,color"
+"	      0051cff3    mov ecx,ptr"
 "	      0051cff6    mov [ecx],al"
 );
 // LINE 3159:
 	asm( 
-"	      0051cff8    mov eax,[ebp-18h]"
+"	      0051cff8    mov eax,bufwidth"
 "	      0051cffb    add eax,eax"
 "	      0051cffd    sub eax,10h"
-"	      0051d000    add [ebp-8],eax"
+"	      0051d000    add ptr,eax"
 );
 // LINE 3161:
 	asm( 
-"	      0051d003    mov al,[ebp-1Ch]"
-"	      0051d006    mov ecx,[ebp-8]"
+"	      0051d003    mov al,color"
+"	      0051d006    mov ecx,ptr"
 "	      0051d009    mov [ecx],al"
 );
 // LINE 3162:
 	asm( 
-"	      0051d00b    add dword ptr [ebp-8],2"
+"	      0051d00b    add ptr,2"
 );
 // LINE 3164:
 	asm( 
-"	      0051d00f    mov al,[ebp-1Ch]"
-"	      0051d012    mov ecx,[ebp-8]"
+"	      0051d00f    mov al,color"
+"	      0051d012    mov ecx,ptr"
 "	      0051d015    mov [ecx],al"
 );
 // LINE 3165:
 	asm( 
-"	      0051d017    add dword ptr [ebp-8],2"
+"	      0051d017    add ptr,2"
 );
 // LINE 3167:
 	asm( 
-"	      0051d01b    mov al,[ebp-1Ch]"
-"	      0051d01e    mov ecx,[ebp-8]"
+"	      0051d01b    mov al,color"
+"	      0051d01e    mov ecx,ptr"
 "	      0051d021    mov [ecx],al"
 );
 // LINE 3168:
 	asm( 
-"	      0051d023    add dword ptr [ebp-8],2"
+"	      0051d023    add ptr,2"
 );
 // LINE 3170:
 	asm( 
-"	      0051d027    mov al,[ebp-1Ch]"
-"	      0051d02a    mov ecx,[ebp-8]"
+"	      0051d027    mov al,color"
+"	      0051d02a    mov ecx,ptr"
 "	      0051d02d    mov [ecx],al"
 );
 // LINE 3171:
 	asm( 
-"	      0051d02f    add dword ptr [ebp-8],2"
+"	      0051d02f    add ptr,2"
 );
 // LINE 3173:
 	asm( 
-"	      0051d033    mov al,[ebp-1Ch]"
-"	      0051d036    mov ecx,[ebp-8]"
+"	      0051d033    mov al,color"
+"	      0051d036    mov ecx,ptr"
 "	      0051d039    mov [ecx],al"
 );
 // LINE 3174:
 	asm( 
-"	      0051d03b    add dword ptr [ebp-8],2"
+"	      0051d03b    add ptr,2"
 );
 // LINE 3176:
 	asm( 
-"	      0051d03f    mov al,[ebp-1Ch]"
-"	      0051d042    mov ecx,[ebp-8]"
+"	      0051d03f    mov al,color"
+"	      0051d042    mov ecx,ptr"
 "	      0051d045    mov [ecx],al"
 );
 // LINE 3177:
 	asm( 
-"	      0051d047    add dword ptr [ebp-8],2"
+"	      0051d047    add ptr,2"
 );
 // LINE 3178:
 	asm( 
@@ -10692,101 +10692,101 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d050    and eax,7"
 "	      0051d053    mov ecx,ds:[62A528h]"
 "	      0051d059    mov al,[eax+ecx]"
-"	      0051d05c    mov [ebp-1Ch],al"
+"	      0051d05c    mov color,al"
 "	      0051d05f    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3180:
 	asm( 
-"	      0051d065    mov al,[ebp-1Ch]"
-"	      0051d068    mov ecx,[ebp-8]"
+"	      0051d065    mov al,color"
+"	      0051d068    mov ecx,ptr"
 "	      0051d06b    mov [ecx],al"
 );
 // LINE 3181:
 	asm( 
-"	      0051d06d    add dword ptr [ebp-8],2"
+"	      0051d06d    add ptr,2"
 );
 // LINE 3183:
 	asm( 
-"	      0051d071    mov al,[ebp-1Ch]"
-"	      0051d074    mov ecx,[ebp-8]"
+"	      0051d071    mov al,color"
+"	      0051d074    mov ecx,ptr"
 "	      0051d077    mov [ecx],al"
 );
 // LINE 3184:
 	asm( 
-"	      0051d079    add dword ptr [ebp-8],2"
+"	      0051d079    add ptr,2"
 );
 // LINE 3186:
 	asm( 
-"	      0051d07d    mov al,[ebp-1Ch]"
-"	      0051d080    mov ecx,[ebp-8]"
+"	      0051d07d    mov al,color"
+"	      0051d080    mov ecx,ptr"
 "	      0051d083    mov [ecx],al"
 );
 // LINE 3187:
 	asm( 
-"	      0051d085    mov eax,[ebp-18h]"
+"	      0051d085    mov eax,bufwidth"
 "	      0051d088    add eax,eax"
 "	      0051d08a    sub eax,10h"
-"	      0051d08d    add [ebp-8],eax"
+"	      0051d08d    add ptr,eax"
 );
 // LINE 3189:
 	asm( 
-"	      0051d090    mov al,[ebp-1Ch]"
-"	      0051d093    mov ecx,[ebp-8]"
+"	      0051d090    mov al,color"
+"	      0051d093    mov ecx,ptr"
 "	      0051d096    mov [ecx],al"
 );
 // LINE 3190:
 	asm( 
-"	      0051d098    add dword ptr [ebp-8],2"
+"	      0051d098    add ptr,2"
 );
 // LINE 3192:
 	asm( 
-"	      0051d09c    mov al,[ebp-1Ch]"
-"	      0051d09f    mov ecx,[ebp-8]"
+"	      0051d09c    mov al,color"
+"	      0051d09f    mov ecx,ptr"
 "	      0051d0a2    mov [ecx],al"
 );
 // LINE 3193:
 	asm( 
-"	      0051d0a4    add dword ptr [ebp-8],2"
+"	      0051d0a4    add ptr,2"
 );
 // LINE 3195:
 	asm( 
-"	      0051d0a8    mov al,[ebp-1Ch]"
-"	      0051d0ab    mov ecx,[ebp-8]"
+"	      0051d0a8    mov al,color"
+"	      0051d0ab    mov ecx,ptr"
 "	      0051d0ae    mov [ecx],al"
 );
 // LINE 3196:
 	asm( 
-"	      0051d0b0    add dword ptr [ebp-8],2"
+"	      0051d0b0    add ptr,2"
 );
 // LINE 3198:
 	asm( 
-"	      0051d0b4    mov al,[ebp-1Ch]"
-"	      0051d0b7    mov ecx,[ebp-8]"
+"	      0051d0b4    mov al,color"
+"	      0051d0b7    mov ecx,ptr"
 "	      0051d0ba    mov [ecx],al"
 );
 // LINE 3199:
 	asm( 
-"	      0051d0bc    add dword ptr [ebp-8],2"
+"	      0051d0bc    add ptr,2"
 );
 // LINE 3201:
 	asm( 
-"	      0051d0c0    mov al,[ebp-1Ch]"
-"	      0051d0c3    mov ecx,[ebp-8]"
+"	      0051d0c0    mov al,color"
+"	      0051d0c3    mov ecx,ptr"
 "	      0051d0c6    mov [ecx],al"
 );
 // LINE 3202:
 	asm( 
-"	      0051d0c8    add dword ptr [ebp-8],2"
+"	      0051d0c8    add ptr,2"
 );
 // LINE 3204:
 	asm( 
-"	      0051d0cc    mov al,[ebp-1Ch]"
-"	      0051d0cf    mov ecx,[ebp-8]"
+"	      0051d0cc    mov al,color"
+"	      0051d0cf    mov ecx,ptr"
 "	      0051d0d2    mov [ecx],al"
 );
 // LINE 3205:
 	asm( 
-"	      0051d0d4    add dword ptr [ebp-8],2"
+"	      0051d0d4    add ptr,2"
 );
 // LINE 3206:
 	asm( 
@@ -10794,139 +10794,139 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d0dd    and eax,7"
 "	      0051d0e0    mov ecx,ds:[62A528h]"
 "	      0051d0e6    mov al,[eax+ecx]"
-"	      0051d0e9    mov [ebp-1Ch],al"
+"	      0051d0e9    mov color,al"
 "	      0051d0ec    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3208:
 	asm( 
-"	      0051d0f2    mov al,[ebp-1Ch]"
-"	      0051d0f5    mov ecx,[ebp-8]"
+"	      0051d0f2    mov al,color"
+"	      0051d0f5    mov ecx,ptr"
 "	      0051d0f8    mov [ecx],al"
 );
 // LINE 3209:
 	asm( 
-"	      0051d0fa    add dword ptr [ebp-8],2"
+"	      0051d0fa    add ptr,2"
 );
 // LINE 3211:
 	asm( 
-"	      0051d0fe    mov al,[ebp-1Ch]"
-"	      0051d101    mov ecx,[ebp-8]"
+"	      0051d0fe    mov al,color"
+"	      0051d101    mov ecx,ptr"
 "	      0051d104    mov [ecx],al"
 );
 // LINE 3212:
 	asm( 
-"	      0051d106    add dword ptr [ebp-8],2"
+"	      0051d106    add ptr,2"
 );
 // LINE 3214:
 	asm( 
-"	      0051d10a    mov al,[ebp-1Ch]"
-"	      0051d10d    mov ecx,[ebp-8]"
+"	      0051d10a    mov al,color"
+"	      0051d10d    mov ecx,ptr"
 "	      0051d110    mov [ecx],al"
 );
 // LINE 3215:
 	asm( 
-"	      0051d112    mov eax,[ebp-18h]"
+"	      0051d112    mov eax,bufwidth"
 "	      0051d115    add eax,eax"
 "	      0051d117    sub eax,10h"
-"	      0051d11a    add [ebp-8],eax"
+"	      0051d11a    add ptr,eax"
 );
 // LINE 3217:
 	asm( 
-"	      0051d11d    mov al,[ebp-1Ch]"
-"	      0051d120    mov ecx,[ebp-8]"
+"	      0051d11d    mov al,color"
+"	      0051d120    mov ecx,ptr"
 "	      0051d123    mov [ecx],al"
 );
 // LINE 3218:
 	asm( 
-"	      0051d125    add dword ptr [ebp-8],2"
+"	      0051d125    add ptr,2"
 );
 // LINE 3220:
 	asm( 
-"	      0051d129    mov al,[ebp-1Ch]"
-"	      0051d12c    mov ecx,[ebp-8]"
+"	      0051d129    mov al,color"
+"	      0051d12c    mov ecx,ptr"
 "	      0051d12f    mov [ecx],al"
 );
 // LINE 3221:
 	asm( 
-"	      0051d131    add dword ptr [ebp-8],2"
+"	      0051d131    add ptr,2"
 );
 // LINE 3223:
 	asm( 
-"	      0051d135    mov al,[ebp-1Ch]"
-"	      0051d138    mov ecx,[ebp-8]"
+"	      0051d135    mov al,color"
+"	      0051d138    mov ecx,ptr"
 "	      0051d13b    mov [ecx],al"
 );
 // LINE 3224:
 	asm( 
-"	      0051d13d    add dword ptr [ebp-8],2"
+"	      0051d13d    add ptr,2"
 );
 // LINE 3226:
 	asm( 
-"	      0051d141    mov al,[ebp-1Ch]"
-"	      0051d144    mov ecx,[ebp-8]"
+"	      0051d141    mov al,color"
+"	      0051d144    mov ecx,ptr"
 "	      0051d147    mov [ecx],al"
 );
 // LINE 3227:
 	asm( 
-"	      0051d149    add dword ptr [ebp-8],2"
+"	      0051d149    add ptr,2"
 );
 // LINE 3229:
 	asm( 
-"	      0051d14d    mov al,[ebp-1Ch]"
-"	      0051d150    mov ecx,[ebp-8]"
+"	      0051d14d    mov al,color"
+"	      0051d150    mov ecx,ptr"
 "	      0051d153    mov [ecx],al"
 );
 // LINE 3230:
 	asm( 
-"	      0051d155    add dword ptr [ebp-8],2"
+"	      0051d155    add ptr,2"
 );
 // LINE 3232:
 	asm( 
-"	      0051d159    mov al,[ebp-1Ch]"
-"	      0051d15c    mov ecx,[ebp-8]"
+"	      0051d159    mov al,color"
+"	      0051d15c    mov ecx,ptr"
 "	      0051d15f    mov [ecx],al"
 );
 // LINE 3233:
 	asm( 
-"	      0051d161    add dword ptr [ebp-8],2"
+"	      0051d161    add ptr,2"
 );
 // LINE 3235:
 	asm( 
-"	      0051d165    mov al,[ebp-1Ch]"
-"	      0051d168    mov ecx,[ebp-8]"
+"	      0051d165    mov al,color"
+"	      0051d168    mov ecx,ptr"
 "	      0051d16b    mov [ecx],al"
 );
 // LINE 3236:
 	asm( 
-"	      0051d16d    add dword ptr [ebp-8],2"
+"	      0051d16d    add ptr,2"
 );
 // LINE 3238:
 	asm( 
-"	      0051d171    mov al,[ebp-1Ch]"
-"	      0051d174    mov ecx,[ebp-8]"
+"	      0051d171    mov al,color"
+"	      0051d174    mov ecx,ptr"
 "	      0051d177    mov [ecx],al"
 );
 // LINE 3239:
 	asm( 
-"	      0051d179    add dword ptr [ebp-8],2"
+"	      0051d179    add ptr,2"
 );
 // LINE 3241:
 	asm( 
-"	      0051d17d    mov al,[ebp-1Ch]"
-"	      0051d180    mov ecx,[ebp-8]"
+"	      0051d17d    mov al,color"
+"	      0051d180    mov ecx,ptr"
 "	      0051d183    mov [ecx],al"
 );
 // LINE 3242:
 	asm( 
-"	      0051d185    mov eax,[ebp-18h]"
+"	      0051d185    mov eax,bufwidth"
 "	      0051d188    add eax,eax"
 "	      0051d18a    sub eax,10h"
-"	      0051d18d    add [ebp-8],eax"
+"	      0051d18d    add ptr,eax"
 );
 // LINE 3244:
 	asm( 
-"	      0051d190    mov al,[ebp-1Ch]"
-"	      0051d193    mov ecx,[ebp-8]"
+"	      0051d190    mov al,color"
+"	      0051d193    mov ecx,ptr"
 "	      0051d196    mov [ecx],al"
 );
 // LINE 3245:
@@ -10935,72 +10935,72 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d19d    and eax,7"
 "	      0051d1a0    mov ecx,ds:[62A528h]"
 "	      0051d1a6    mov al,[eax+ecx]"
-"	      0051d1a9    mov [ebp-1Ch],al"
+"	      0051d1a9    mov color,al"
 "	      0051d1ac    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3246:
 	asm( 
-"	      0051d1b2    add dword ptr [ebp-8],2"
+"	      0051d1b2    add ptr,2"
 );
 // LINE 3248:
 	asm( 
-"	      0051d1b6    mov al,[ebp-1Ch]"
-"	      0051d1b9    mov ecx,[ebp-8]"
+"	      0051d1b6    mov al,color"
+"	      0051d1b9    mov ecx,ptr"
 "	      0051d1bc    mov [ecx],al"
 );
 // LINE 3249:
 	asm( 
-"	      0051d1be    add dword ptr [ebp-8],2"
+"	      0051d1be    add ptr,2"
 );
 // LINE 3251:
 	asm( 
-"	      0051d1c2    mov al,[ebp-1Ch]"
-"	      0051d1c5    mov ecx,[ebp-8]"
+"	      0051d1c2    mov al,color"
+"	      0051d1c5    mov ecx,ptr"
 "	      0051d1c8    mov [ecx],al"
 );
 // LINE 3252:
 	asm( 
-"	      0051d1ca    add dword ptr [ebp-8],2"
+"	      0051d1ca    add ptr,2"
 );
 // LINE 3254:
 	asm( 
-"	      0051d1ce    mov al,[ebp-1Ch]"
-"	      0051d1d1    mov ecx,[ebp-8]"
+"	      0051d1ce    mov al,color"
+"	      0051d1d1    mov ecx,ptr"
 "	      0051d1d4    mov [ecx],al"
 );
 // LINE 3255:
 	asm( 
-"	      0051d1d6    add dword ptr [ebp-8],2"
+"	      0051d1d6    add ptr,2"
 );
 // LINE 3257:
 	asm( 
-"	      0051d1da    mov al,[ebp-1Ch]"
-"	      0051d1dd    mov ecx,[ebp-8]"
+"	      0051d1da    mov al,color"
+"	      0051d1dd    mov ecx,ptr"
 "	      0051d1e0    mov [ecx],al"
 );
 // LINE 3258:
 	asm( 
-"	      0051d1e2    add dword ptr [ebp-8],2"
+"	      0051d1e2    add ptr,2"
 );
 // LINE 3260:
 	asm( 
-"	      0051d1e6    mov al,[ebp-1Ch]"
-"	      0051d1e9    mov ecx,[ebp-8]"
+"	      0051d1e6    mov al,color"
+"	      0051d1e9    mov ecx,ptr"
 "	      0051d1ec    mov [ecx],al"
 );
 // LINE 3261:
 	asm( 
-"	      0051d1ee    add dword ptr [ebp-8],2"
+"	      0051d1ee    add ptr,2"
 );
 // LINE 3263:
 	asm( 
-"	      0051d1f2    mov al,[ebp-1Ch]"
-"	      0051d1f5    mov ecx,[ebp-8]"
+"	      0051d1f2    mov al,color"
+"	      0051d1f5    mov ecx,ptr"
 "	      0051d1f8    mov [ecx],al"
 );
 // LINE 3264:
 	asm( 
-"	      0051d1fa    add dword ptr [ebp-8],2"
+"	      0051d1fa    add ptr,2"
 );
 // LINE 3266:
 	asm( 
@@ -11008,81 +11008,81 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d203    and eax,7"
 "	      0051d206    mov ecx,ds:[62A528h]"
 "	      0051d20c    mov al,[eax+ecx]"
-"	      0051d20f    mov [ebp-1Ch],al"
+"	      0051d20f    mov color,al"
 "	      0051d212    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3267:
 	asm( 
-"	      0051d218    mov al,[ebp-1Ch]"
-"	      0051d21b    mov ecx,[ebp-8]"
+"	      0051d218    mov al,color"
+"	      0051d21b    mov ecx,ptr"
 "	      0051d21e    mov [ecx],al"
 );
 // LINE 3268:
 	asm( 
-"	      0051d220    add dword ptr [ebp-8],2"
+"	      0051d220    add ptr,2"
 );
 // LINE 3270:
 	asm( 
-"	      0051d224    mov al,[ebp-1Ch]"
-"	      0051d227    mov ecx,[ebp-8]"
+"	      0051d224    mov al,color"
+"	      0051d227    mov ecx,ptr"
 "	      0051d22a    mov [ecx],al"
 );
 // LINE 3271:
 	asm( 
-"	      0051d22c    mov eax,[ebp-18h]"
+"	      0051d22c    mov eax,bufwidth"
 "	      0051d22f    add eax,eax"
 "	      0051d231    sub eax,10h"
-"	      0051d234    add [ebp-8],eax"
+"	      0051d234    add ptr,eax"
 );
 // LINE 3273:
 	asm( 
-"	      0051d237    mov al,[ebp-1Ch]"
-"	      0051d23a    mov ecx,[ebp-8]"
+"	      0051d237    mov al,color"
+"	      0051d23a    mov ecx,ptr"
 "	      0051d23d    mov [ecx],al"
 );
 // LINE 3274:
 	asm( 
-"	      0051d23f    add dword ptr [ebp-8],2"
+"	      0051d23f    add ptr,2"
 );
 // LINE 3276:
 	asm( 
-"	      0051d243    mov al,[ebp-1Ch]"
-"	      0051d246    mov ecx,[ebp-8]"
+"	      0051d243    mov al,color"
+"	      0051d246    mov ecx,ptr"
 "	      0051d249    mov [ecx],al"
 );
 // LINE 3277:
 	asm( 
-"	      0051d24b    add dword ptr [ebp-8],2"
+"	      0051d24b    add ptr,2"
 );
 // LINE 3279:
 	asm( 
-"	      0051d24f    mov al,[ebp-1Ch]"
-"	      0051d252    mov ecx,[ebp-8]"
+"	      0051d24f    mov al,color"
+"	      0051d252    mov ecx,ptr"
 "	      0051d255    mov [ecx],al"
 );
 // LINE 3280:
 	asm( 
-"	      0051d257    add dword ptr [ebp-8],2"
+"	      0051d257    add ptr,2"
 );
 // LINE 3282:
 	asm( 
-"	      0051d25b    mov al,[ebp-1Ch]"
-"	      0051d25e    mov ecx,[ebp-8]"
+"	      0051d25b    mov al,color"
+"	      0051d25e    mov ecx,ptr"
 "	      0051d261    mov [ecx],al"
 );
 // LINE 3283:
 	asm( 
-"	      0051d263    add dword ptr [ebp-8],2"
+"	      0051d263    add ptr,2"
 );
 // LINE 3285:
 	asm( 
-"	      0051d267    mov al,[ebp-1Ch]"
-"	      0051d26a    mov ecx,[ebp-8]"
+"	      0051d267    mov al,color"
+"	      0051d26a    mov ecx,ptr"
 "	      0051d26d    mov [ecx],al"
 );
 // LINE 3286:
 	asm( 
-"	      0051d26f    add dword ptr [ebp-8],2"
+"	      0051d26f    add ptr,2"
 );
 // LINE 3287:
 	asm( 
@@ -11090,111 +11090,111 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d278    and eax,7"
 "	      0051d27b    mov ecx,ds:[62A528h]"
 "	      0051d281    mov al,[eax+ecx]"
-"	      0051d284    mov [ebp-1Ch],al"
+"	      0051d284    mov color,al"
 "	      0051d287    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3289:
 	asm( 
-"	      0051d28d    mov al,[ebp-1Ch]"
-"	      0051d290    mov ecx,[ebp-8]"
+"	      0051d28d    mov al,color"
+"	      0051d290    mov ecx,ptr"
 "	      0051d293    mov [ecx],al"
 );
 // LINE 3290:
 	asm( 
-"	      0051d295    add dword ptr [ebp-8],2"
+"	      0051d295    add ptr,2"
 );
 // LINE 3292:
 	asm( 
-"	      0051d299    mov al,[ebp-1Ch]"
-"	      0051d29c    mov ecx,[ebp-8]"
+"	      0051d299    mov al,color"
+"	      0051d29c    mov ecx,ptr"
 "	      0051d29f    mov [ecx],al"
 );
 // LINE 3293:
 	asm( 
-"	      0051d2a1    add dword ptr [ebp-8],2"
+"	      0051d2a1    add ptr,2"
 );
 // LINE 3295:
 	asm( 
-"	      0051d2a5    mov al,[ebp-1Ch]"
-"	      0051d2a8    mov ecx,[ebp-8]"
+"	      0051d2a5    mov al,color"
+"	      0051d2a8    mov ecx,ptr"
 "	      0051d2ab    mov [ecx],al"
 );
 // LINE 3296:
 	asm( 
-"	      0051d2ad    add dword ptr [ebp-8],2"
+"	      0051d2ad    add ptr,2"
 );
 // LINE 3298:
 	asm( 
-"	      0051d2b1    mov al,[ebp-1Ch]"
-"	      0051d2b4    mov ecx,[ebp-8]"
+"	      0051d2b1    mov al,color"
+"	      0051d2b4    mov ecx,ptr"
 "	      0051d2b7    mov [ecx],al"
 );
 // LINE 3299:
 	asm( 
-"	      0051d2b9    mov eax,[ebp-18h]"
+"	      0051d2b9    mov eax,bufwidth"
 "	      0051d2bc    add eax,eax"
 "	      0051d2be    sub eax,10h"
-"	      0051d2c1    add [ebp-8],eax"
+"	      0051d2c1    add ptr,eax"
 );
 // LINE 3301:
 	asm( 
-"	      0051d2c4    mov al,[ebp-1Ch]"
-"	      0051d2c7    mov ecx,[ebp-8]"
+"	      0051d2c4    mov al,color"
+"	      0051d2c7    mov ecx,ptr"
 "	      0051d2ca    mov [ecx],al"
 );
 // LINE 3302:
 	asm( 
-"	      0051d2cc    add dword ptr [ebp-8],2"
+"	      0051d2cc    add ptr,2"
 );
 // LINE 3304:
 	asm( 
-"	      0051d2d0    mov al,[ebp-1Ch]"
-"	      0051d2d3    mov ecx,[ebp-8]"
+"	      0051d2d0    mov al,color"
+"	      0051d2d3    mov ecx,ptr"
 "	      0051d2d6    mov [ecx],al"
 );
 // LINE 3305:
 	asm( 
-"	      0051d2d8    add dword ptr [ebp-8],2"
+"	      0051d2d8    add ptr,2"
 );
 // LINE 3307:
 	asm( 
-"	      0051d2dc    mov al,[ebp-1Ch]"
-"	      0051d2df    mov ecx,[ebp-8]"
+"	      0051d2dc    mov al,color"
+"	      0051d2df    mov ecx,ptr"
 "	      0051d2e2    mov [ecx],al"
 );
 // LINE 3308:
 	asm( 
-"	      0051d2e4    add dword ptr [ebp-8],2"
+"	      0051d2e4    add ptr,2"
 );
 // LINE 3310:
 	asm( 
-"	      0051d2e8    mov al,[ebp-1Ch]"
-"	      0051d2eb    mov ecx,[ebp-8]"
+"	      0051d2e8    mov al,color"
+"	      0051d2eb    mov ecx,ptr"
 "	      0051d2ee    mov [ecx],al"
 );
 // LINE 3311:
 	asm( 
-"	      0051d2f0    add dword ptr [ebp-8],2"
+"	      0051d2f0    add ptr,2"
 );
 // LINE 3313:
 	asm( 
-"	      0051d2f4    mov al,[ebp-1Ch]"
-"	      0051d2f7    mov ecx,[ebp-8]"
+"	      0051d2f4    mov al,color"
+"	      0051d2f7    mov ecx,ptr"
 "	      0051d2fa    mov [ecx],al"
 );
 // LINE 3314:
 	asm( 
-"	      0051d2fc    add dword ptr [ebp-8],2"
+"	      0051d2fc    add ptr,2"
 );
 // LINE 3316:
 	asm( 
-"	      0051d300    mov al,[ebp-1Ch]"
-"	      0051d303    mov ecx,[ebp-8]"
+"	      0051d300    mov al,color"
+"	      0051d303    mov ecx,ptr"
 "	      0051d306    mov [ecx],al"
 );
 // LINE 3317:
 	asm( 
-"	      0051d308    add dword ptr [ebp-8],2"
+"	      0051d308    add ptr,2"
 );
 // LINE 3318:
 	asm( 
@@ -11202,76 +11202,76 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d311    and eax,7"
 "	      0051d314    mov ecx,ds:[62A528h]"
 "	      0051d31a    mov al,[eax+ecx]"
-"	      0051d31d    mov [ebp-1Ch],al"
+"	      0051d31d    mov color,al"
 "	      0051d320    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3320:
 	asm( 
-"	      0051d326    mov al,[ebp-1Ch]"
-"	      0051d329    mov ecx,[ebp-8]"
+"	      0051d326    mov al,color"
+"	      0051d329    mov ecx,ptr"
 "	      0051d32c    mov [ecx],al"
 );
 // LINE 3321:
 	asm( 
-"	      0051d32e    add dword ptr [ebp-8],2"
+"	      0051d32e    add ptr,2"
 );
 // LINE 3323:
 	asm( 
-"	      0051d332    mov al,[ebp-1Ch]"
-"	      0051d335    mov ecx,[ebp-8]"
+"	      0051d332    mov al,color"
+"	      0051d335    mov ecx,ptr"
 "	      0051d338    mov [ecx],al"
 );
 // LINE 3324:
 	asm( 
-"	      0051d33a    add dword ptr [ebp-8],2"
+"	      0051d33a    add ptr,2"
 );
 // LINE 3326:
 	asm( 
-"	      0051d33e    mov al,[ebp-1Ch]"
-"	      0051d341    mov ecx,[ebp-8]"
+"	      0051d33e    mov al,color"
+"	      0051d341    mov ecx,ptr"
 "	      0051d344    mov [ecx],al"
 );
 // LINE 3327:
 	asm( 
-"	      0051d346    mov eax,[ebp-18h]"
+"	      0051d346    mov eax,bufwidth"
 "	      0051d349    add eax,eax"
 "	      0051d34b    sub eax,10h"
-"	      0051d34e    add [ebp-8],eax"
+"	      0051d34e    add ptr,eax"
 );
 // LINE 3329:
 	asm( 
-"	      0051d351    mov al,[ebp-1Ch]"
-"	      0051d354    mov ecx,[ebp-8]"
+"	      0051d351    mov al,color"
+"	      0051d354    mov ecx,ptr"
 "	      0051d357    mov [ecx],al"
 );
 // LINE 3330:
 	asm( 
-"	      0051d359    add dword ptr [ebp-8],2"
+"	      0051d359    add ptr,2"
 );
 // LINE 3332:
 	asm( 
-"	      0051d35d    mov al,[ebp-1Ch]"
-"	      0051d360    mov ecx,[ebp-8]"
+"	      0051d35d    mov al,color"
+"	      0051d360    mov ecx,ptr"
 "	      0051d363    mov [ecx],al"
 );
 // LINE 3333:
 	asm( 
-"	      0051d365    add dword ptr [ebp-8],2"
+"	      0051d365    add ptr,2"
 );
 // LINE 3335:
 	asm( 
-"	      0051d369    mov al,[ebp-1Ch]"
-"	      0051d36c    mov ecx,[ebp-8]"
+"	      0051d369    mov al,color"
+"	      0051d36c    mov ecx,ptr"
 "	      0051d36f    mov [ecx],al"
 );
 // LINE 3336:
 	asm( 
-"	      0051d371    add dword ptr [ebp-8],2"
+"	      0051d371    add ptr,2"
 );
 // LINE 3338:
 	asm( 
-"	      0051d375    mov al,[ebp-1Ch]"
-"	      0051d378    mov ecx,[ebp-8]"
+"	      0051d375    mov al,color"
+"	      0051d378    mov ecx,ptr"
 "	      0051d37b    mov [ecx],al"
 );
 // LINE 3339:
@@ -11280,57 +11280,57 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d382    and eax,7"
 "	      0051d385    mov ecx,ds:[62A528h]"
 "	      0051d38b    mov al,[eax+ecx]"
-"	      0051d38e    mov [ebp-1Ch],al"
+"	      0051d38e    mov color,al"
 "	      0051d391    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3340:
 	asm( 
-"	      0051d397    add dword ptr [ebp-8],2"
+"	      0051d397    add ptr,2"
 );
 // LINE 3342:
 	asm( 
-"	      0051d39b    mov al,[ebp-1Ch]"
-"	      0051d39e    mov ecx,[ebp-8]"
+"	      0051d39b    mov al,color"
+"	      0051d39e    mov ecx,ptr"
 "	      0051d3a1    mov [ecx],al"
 );
 // LINE 3343:
 	asm( 
-"	      0051d3a3    add dword ptr [ebp-8],2"
+"	      0051d3a3    add ptr,2"
 );
 // LINE 3345:
 	asm( 
-"	      0051d3a7    mov al,[ebp-1Ch]"
-"	      0051d3aa    mov ecx,[ebp-8]"
+"	      0051d3a7    mov al,color"
+"	      0051d3aa    mov ecx,ptr"
 "	      0051d3ad    mov [ecx],al"
 );
 // LINE 3346:
 	asm( 
-"	      0051d3af    add dword ptr [ebp-8],2"
+"	      0051d3af    add ptr,2"
 );
 // LINE 3348:
 	asm( 
-"	      0051d3b3    mov al,[ebp-1Ch]"
-"	      0051d3b6    mov ecx,[ebp-8]"
+"	      0051d3b3    mov al,color"
+"	      0051d3b6    mov ecx,ptr"
 "	      0051d3b9    mov [ecx],al"
 );
 // LINE 3349:
 	asm( 
-"	      0051d3bb    add dword ptr [ebp-8],2"
+"	      0051d3bb    add ptr,2"
 );
 // LINE 3351:
 	asm( 
-"	      0051d3bf    mov al,[ebp-1Ch]"
-"	      0051d3c2    mov ecx,[ebp-8]"
+"	      0051d3bf    mov al,color"
+"	      0051d3c2    mov ecx,ptr"
 "	      0051d3c5    mov [ecx],al"
 );
 // LINE 3352:
 	asm( 
-"	      0051d3c7    add dword ptr [ebp-8],2"
+"	      0051d3c7    add ptr,2"
 );
 // LINE 3354:
 	asm( 
-"	      0051d3cb    mov al,[ebp-1Ch]"
-"	      0051d3ce    mov ecx,[ebp-8]"
+"	      0051d3cb    mov al,color"
+"	      0051d3ce    mov ecx,ptr"
 "	      0051d3d1    mov [ecx],al"
 );
 // LINE 3357:
@@ -11339,98 +11339,98 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d3d8    and eax,7"
 "	      0051d3db    mov ecx,ds:[62A528h]"
 "	      0051d3e1    mov al,[eax+ecx]"
-"	      0051d3e4    mov [ebp-1Ch],al"
+"	      0051d3e4    mov color,al"
 "	      0051d3e7    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3358:
 	asm( 
-"	      0051d3ed    mov al,[ebp-1Ch]"
-"	      0051d3f0    mov ecx,[ebp-8]"
+"	      0051d3ed    mov al,color"
+"	      0051d3f0    mov ecx,ptr"
 "	      0051d3f3    mov [ecx],al"
 );
 // LINE 3359:
 	asm( 
-"	      0051d3f5    add dword ptr [ebp-8],2"
+"	      0051d3f5    add ptr,2"
 );
 // LINE 3361:
 	asm( 
-"	      0051d3f9    mov al,[ebp-1Ch]"
-"	      0051d3fc    mov ecx,[ebp-8]"
+"	      0051d3f9    mov al,color"
+"	      0051d3fc    mov ecx,ptr"
 "	      0051d3ff    mov [ecx],al"
 );
 // LINE 3362:
 	asm( 
-"	      0051d401    add dword ptr [ebp-8],2"
+"	      0051d401    add ptr,2"
 );
 // LINE 3364:
 	asm( 
-"	      0051d405    mov al,[ebp-1Ch]"
-"	      0051d408    mov ecx,[ebp-8]"
+"	      0051d405    mov al,color"
+"	      0051d408    mov ecx,ptr"
 "	      0051d40b    mov [ecx],al"
 );
 // LINE 3365:
 	asm( 
-"	      0051d40d    add dword ptr [ebp-8],2"
+"	      0051d40d    add ptr,2"
 );
 // LINE 3367:
 	asm( 
-"	      0051d411    mov al,[ebp-1Ch]"
-"	      0051d414    mov ecx,[ebp-8]"
+"	      0051d411    mov al,color"
+"	      0051d414    mov ecx,ptr"
 "	      0051d417    mov [ecx],al"
 );
 // LINE 3368:
 	asm( 
-"	      0051d419    add dword ptr [ebp-8],2"
+"	      0051d419    add ptr,2"
 );
 // LINE 3370:
 	asm( 
-"	      0051d41d    mov al,[ebp-1Ch]"
-"	      0051d420    mov ecx,[ebp-8]"
+"	      0051d41d    mov al,color"
+"	      0051d420    mov ecx,ptr"
 "	      0051d423    mov [ecx],al"
 );
 // LINE 3371:
 	asm( 
-"	      0051d425    add dword ptr [ebp-8],2"
+"	      0051d425    add ptr,2"
 );
 // LINE 3373:
 	asm( 
-"	      0051d429    mov al,[ebp-1Ch]"
-"	      0051d42c    mov ecx,[ebp-8]"
+"	      0051d429    mov al,color"
+"	      0051d42c    mov ecx,ptr"
 "	      0051d42f    mov [ecx],al"
 );
 // LINE 3374:
 	asm( 
-"	      0051d431    add dword ptr [ebp-8],2"
+"	      0051d431    add ptr,2"
 );
 // LINE 3376:
 	asm( 
-"	      0051d435    mov al,[ebp-1Ch]"
-"	      0051d438    mov ecx,[ebp-8]"
+"	      0051d435    mov al,color"
+"	      0051d438    mov ecx,ptr"
 "	      0051d43b    mov [ecx],al"
 );
 // LINE 3377:
 	asm( 
-"	      0051d43d    add dword ptr [ebp-8],2"
+"	      0051d43d    add ptr,2"
 );
 // LINE 3379:
 	asm( 
-"	      0051d441    mov al,[ebp-1Ch]"
-"	      0051d444    mov ecx,[ebp-8]"
+"	      0051d441    mov al,color"
+"	      0051d444    mov ecx,ptr"
 "	      0051d447    mov [ecx],al"
 );
 // LINE 3380:
 	asm( 
-"	      0051d449    add dword ptr [ebp-8],2"
+"	      0051d449    add ptr,2"
 );
 // LINE 3382:
 	asm( 
-"	      0051d44d    mov al,[ebp-1Ch]"
-"	      0051d450    mov ecx,[ebp-8]"
+"	      0051d44d    mov al,color"
+"	      0051d450    mov ecx,ptr"
 "	      0051d453    mov [ecx],al"
 );
 // LINE 3383:
 	asm( 
-"	      0051d455    add dword ptr [ebp-8],2"
+"	      0051d455    add ptr,2"
 );
 // LINE 3384:
 	asm( 
@@ -11438,61 +11438,61 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d45e    and eax,7"
 "	      0051d461    mov ecx,ds:[62A528h]"
 "	      0051d467    mov al,[eax+ecx]"
-"	      0051d46a    mov [ebp-1Ch],al"
+"	      0051d46a    mov color,al"
 "	      0051d46d    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3386:
 	asm( 
-"	      0051d473    mov al,[ebp-1Ch]"
-"	      0051d476    mov ecx,[ebp-8]"
+"	      0051d473    mov al,color"
+"	      0051d476    mov ecx,ptr"
 "	      0051d479    mov [ecx],al"
 );
 // LINE 3387:
 	asm( 
-"	      0051d47b    mov eax,[ebp-18h]"
+"	      0051d47b    mov eax,bufwidth"
 "	      0051d47e    add eax,eax"
 "	      0051d480    sub eax,12h"
-"	      0051d483    add [ebp-8],eax"
+"	      0051d483    add ptr,eax"
 );
 // LINE 3389:
 	asm( 
-"	      0051d486    mov al,[ebp-1Ch]"
-"	      0051d489    mov ecx,[ebp-8]"
+"	      0051d486    mov al,color"
+"	      0051d489    mov ecx,ptr"
 "	      0051d48c    mov [ecx],al"
 );
 // LINE 3390:
 	asm( 
-"	      0051d48e    add dword ptr [ebp-8],2"
+"	      0051d48e    add ptr,2"
 );
 // LINE 3392:
 	asm( 
-"	      0051d492    mov al,[ebp-1Ch]"
-"	      0051d495    mov ecx,[ebp-8]"
+"	      0051d492    mov al,color"
+"	      0051d495    mov ecx,ptr"
 "	      0051d498    mov [ecx],al"
 );
 // LINE 3393:
 	asm( 
-"	      0051d49a    add dword ptr [ebp-8],2"
+"	      0051d49a    add ptr,2"
 );
 // LINE 3395:
 	asm( 
-"	      0051d49e    mov al,[ebp-1Ch]"
-"	      0051d4a1    mov ecx,[ebp-8]"
+"	      0051d49e    mov al,color"
+"	      0051d4a1    mov ecx,ptr"
 "	      0051d4a4    mov [ecx],al"
 );
 // LINE 3396:
 	asm( 
-"	      0051d4a6    add dword ptr [ebp-8],2"
+"	      0051d4a6    add ptr,2"
 );
 // LINE 3398:
 	asm( 
-"	      0051d4aa    mov al,[ebp-1Ch]"
-"	      0051d4ad    mov ecx,[ebp-8]"
+"	      0051d4aa    mov al,color"
+"	      0051d4ad    mov ecx,ptr"
 "	      0051d4b0    mov [ecx],al"
 );
 // LINE 3399:
 	asm( 
-"	      0051d4b2    add dword ptr [ebp-8],2"
+"	      0051d4b2    add ptr,2"
 );
 // LINE 3400:
 	asm( 
@@ -11500,71 +11500,71 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d4bb    and eax,7"
 "	      0051d4be    mov ecx,ds:[62A528h]"
 "	      0051d4c4    mov al,[eax+ecx]"
-"	      0051d4c7    mov [ebp-1Ch],al"
+"	      0051d4c7    mov color,al"
 "	      0051d4ca    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3402:
 	asm( 
-"	      0051d4d0    mov al,[ebp-1Ch]"
-"	      0051d4d3    mov ecx,[ebp-8]"
+"	      0051d4d0    mov al,color"
+"	      0051d4d3    mov ecx,ptr"
 "	      0051d4d6    mov [ecx],al"
 );
 // LINE 3403:
 	asm( 
-"	      0051d4d8    add dword ptr [ebp-8],2"
+"	      0051d4d8    add ptr,2"
 );
 // LINE 3405:
 	asm( 
-"	      0051d4dc    mov al,[ebp-1Ch]"
-"	      0051d4df    mov ecx,[ebp-8]"
+"	      0051d4dc    mov al,color"
+"	      0051d4df    mov ecx,ptr"
 "	      0051d4e2    mov [ecx],al"
 );
 // LINE 3406:
 	asm( 
-"	      0051d4e4    add dword ptr [ebp-8],2"
+"	      0051d4e4    add ptr,2"
 );
 // LINE 3408:
 	asm( 
-"	      0051d4e8    mov al,[ebp-1Ch]"
-"	      0051d4eb    mov ecx,[ebp-8]"
+"	      0051d4e8    mov al,color"
+"	      0051d4eb    mov ecx,ptr"
 "	      0051d4ee    mov [ecx],al"
 );
 // LINE 3409:
 	asm( 
-"	      0051d4f0    add dword ptr [ebp-8],2"
+"	      0051d4f0    add ptr,2"
 );
 // LINE 3411:
 	asm( 
-"	      0051d4f4    mov al,[ebp-1Ch]"
-"	      0051d4f7    mov ecx,[ebp-8]"
+"	      0051d4f4    mov al,color"
+"	      0051d4f7    mov ecx,ptr"
 "	      0051d4fa    mov [ecx],al"
 );
 // LINE 3412:
 	asm( 
-"	      0051d4fc    add dword ptr [ebp-8],2"
+"	      0051d4fc    add ptr,2"
 );
 // LINE 3414:
 	asm( 
-"	      0051d500    mov al,[ebp-1Ch]"
-"	      0051d503    mov ecx,[ebp-8]"
+"	      0051d500    mov al,color"
+"	      0051d503    mov ecx,ptr"
 "	      0051d506    mov [ecx],al"
 );
 // LINE 3415:
 	asm( 
-"	      0051d508    add dword ptr [ebp-8],2"
+"	      0051d508    add ptr,2"
 );
 // LINE 3417:
 	asm( 
-"	      0051d50c    mov al,[ebp-1Ch]"
-"	      0051d50f    mov ecx,[ebp-8]"
+"	      0051d50c    mov al,color"
+"	      0051d50f    mov ecx,ptr"
 "	      0051d512    mov [ecx],al"
 );
 // LINE 3418:
 	asm( 
-"	      0051d514    mov eax,[ebp-18h]"
+"	      0051d514    mov eax,bufwidth"
 "	      0051d517    add eax,eax"
 "	      0051d519    sub eax,12h"
-"	      0051d51c    add [ebp-8],eax"
+"	      0051d51c    add ptr,eax"
 );
 // LINE 3419:
 	asm( 
@@ -11572,68 +11572,68 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d524    and eax,7"
 "	      0051d527    mov ecx,ds:[62A528h]"
 "	      0051d52d    mov al,[eax+ecx]"
-"	      0051d530    mov [ebp-1Ch],al"
+"	      0051d530    mov color,al"
 "	      0051d533    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3421:
 	asm( 
-"	      0051d539    mov al,[ebp-1Ch]"
-"	      0051d53c    mov ecx,[ebp-8]"
+"	      0051d539    mov al,color"
+"	      0051d53c    mov ecx,ptr"
 "	      0051d53f    mov [ecx],al"
 );
 // LINE 3422:
 	asm( 
-"	      0051d541    add dword ptr [ebp-8],2"
+"	      0051d541    add ptr,2"
 );
 // LINE 3424:
 	asm( 
-"	      0051d545    mov al,[ebp-1Ch]"
-"	      0051d548    mov ecx,[ebp-8]"
+"	      0051d545    mov al,color"
+"	      0051d548    mov ecx,ptr"
 "	      0051d54b    mov [ecx],al"
 );
 // LINE 3425:
 	asm( 
-"	      0051d54d    add dword ptr [ebp-8],2"
+"	      0051d54d    add ptr,2"
 );
 // LINE 3427:
 	asm( 
-"	      0051d551    mov al,[ebp-1Ch]"
-"	      0051d554    mov ecx,[ebp-8]"
+"	      0051d551    mov al,color"
+"	      0051d554    mov ecx,ptr"
 "	      0051d557    mov [ecx],al"
 );
 // LINE 3428:
 	asm( 
-"	      0051d559    add dword ptr [ebp-8],2"
+"	      0051d559    add ptr,2"
 );
 // LINE 3430:
 	asm( 
-"	      0051d55d    mov al,[ebp-1Ch]"
-"	      0051d560    mov ecx,[ebp-8]"
+"	      0051d55d    mov al,color"
+"	      0051d560    mov ecx,ptr"
 "	      0051d563    mov [ecx],al"
 );
 // LINE 3431:
 	asm( 
-"	      0051d565    add dword ptr [ebp-8],2"
+"	      0051d565    add ptr,2"
 );
 // LINE 3433:
 	asm( 
-"	      0051d569    mov al,[ebp-1Ch]"
-"	      0051d56c    mov ecx,[ebp-8]"
+"	      0051d569    mov al,color"
+"	      0051d56c    mov ecx,ptr"
 "	      0051d56f    mov [ecx],al"
 );
 // LINE 3434:
 	asm( 
-"	      0051d571    add dword ptr [ebp-8],2"
+"	      0051d571    add ptr,2"
 );
 // LINE 3436:
 	asm( 
-"	      0051d575    mov al,[ebp-1Ch]"
-"	      0051d578    mov ecx,[ebp-8]"
+"	      0051d575    mov al,color"
+"	      0051d578    mov ecx,ptr"
 "	      0051d57b    mov [ecx],al"
 );
 // LINE 3437:
 	asm( 
-"	      0051d57d    add dword ptr [ebp-8],2"
+"	      0051d57d    add ptr,2"
 );
 // LINE 3438:
 	asm( 
@@ -11641,91 +11641,91 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d586    and eax,7"
 "	      0051d589    mov ecx,ds:[62A528h]"
 "	      0051d58f    mov al,[eax+ecx]"
-"	      0051d592    mov [ebp-1Ch],al"
+"	      0051d592    mov color,al"
 "	      0051d595    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3440:
 	asm( 
-"	      0051d59b    mov al,[ebp-1Ch]"
-"	      0051d59e    mov ecx,[ebp-8]"
+"	      0051d59b    mov al,color"
+"	      0051d59e    mov ecx,ptr"
 "	      0051d5a1    mov [ecx],al"
 );
 // LINE 3441:
 	asm( 
-"	      0051d5a3    add dword ptr [ebp-8],2"
+"	      0051d5a3    add ptr,2"
 );
 // LINE 3443:
 	asm( 
-"	      0051d5a7    mov al,[ebp-1Ch]"
-"	      0051d5aa    mov ecx,[ebp-8]"
+"	      0051d5a7    mov al,color"
+"	      0051d5aa    mov ecx,ptr"
 "	      0051d5ad    mov [ecx],al"
 );
 // LINE 3444:
 	asm( 
-"	      0051d5af    add dword ptr [ebp-8],2"
+"	      0051d5af    add ptr,2"
 );
 // LINE 3446:
 	asm( 
-"	      0051d5b3    mov al,[ebp-1Ch]"
-"	      0051d5b6    mov ecx,[ebp-8]"
+"	      0051d5b3    mov al,color"
+"	      0051d5b6    mov ecx,ptr"
 "	      0051d5b9    mov [ecx],al"
 );
 // LINE 3447:
 	asm( 
-"	      0051d5bb    add dword ptr [ebp-8],2"
+"	      0051d5bb    add ptr,2"
 );
 // LINE 3449:
 	asm( 
-"	      0051d5bf    mov al,[ebp-1Ch]"
-"	      0051d5c2    mov ecx,[ebp-8]"
+"	      0051d5bf    mov al,color"
+"	      0051d5c2    mov ecx,ptr"
 "	      0051d5c5    mov [ecx],al"
 );
 // LINE 3450:
 	asm( 
-"	      0051d5c7    mov eax,[ebp-18h]"
+"	      0051d5c7    mov eax,bufwidth"
 "	      0051d5ca    add eax,eax"
 "	      0051d5cc    sub eax,12h"
-"	      0051d5cf    add [ebp-8],eax"
+"	      0051d5cf    add ptr,eax"
 );
 // LINE 3452:
 	asm( 
-"	      0051d5d2    mov al,[ebp-1Ch]"
-"	      0051d5d5    mov ecx,[ebp-8]"
+"	      0051d5d2    mov al,color"
+"	      0051d5d5    mov ecx,ptr"
 "	      0051d5d8    mov [ecx],al"
 );
 // LINE 3453:
 	asm( 
-"	      0051d5da    add dword ptr [ebp-8],2"
+"	      0051d5da    add ptr,2"
 );
 // LINE 3455:
 	asm( 
-"	      0051d5de    mov al,[ebp-1Ch]"
-"	      0051d5e1    mov ecx,[ebp-8]"
+"	      0051d5de    mov al,color"
+"	      0051d5e1    mov ecx,ptr"
 "	      0051d5e4    mov [ecx],al"
 );
 // LINE 3456:
 	asm( 
-"	      0051d5e6    add dword ptr [ebp-8],2"
+"	      0051d5e6    add ptr,2"
 );
 // LINE 3458:
 	asm( 
-"	      0051d5ea    mov al,[ebp-1Ch]"
-"	      0051d5ed    mov ecx,[ebp-8]"
+"	      0051d5ea    mov al,color"
+"	      0051d5ed    mov ecx,ptr"
 "	      0051d5f0    mov [ecx],al"
 );
 // LINE 3459:
 	asm( 
-"	      0051d5f2    add dword ptr [ebp-8],2"
+"	      0051d5f2    add ptr,2"
 );
 // LINE 3461:
 	asm( 
-"	      0051d5f6    mov al,[ebp-1Ch]"
-"	      0051d5f9    mov ecx,[ebp-8]"
+"	      0051d5f6    mov al,color"
+"	      0051d5f9    mov ecx,ptr"
 "	      0051d5fc    mov [ecx],al"
 );
 // LINE 3462:
 	asm( 
-"	      0051d5fe    add dword ptr [ebp-8],2"
+"	      0051d5fe    add ptr,2"
 );
 // LINE 3464:
 	asm( 
@@ -11733,161 +11733,161 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d607    and eax,7"
 "	      0051d60a    mov ecx,ds:[62A528h]"
 "	      0051d610    mov al,[eax+ecx]"
-"	      0051d613    mov [ebp-1Ch],al"
+"	      0051d613    mov color,al"
 "	      0051d616    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3465:
 	asm( 
-"	      0051d61c    mov al,[ebp-1Ch]"
-"	      0051d61f    mov ecx,[ebp-8]"
+"	      0051d61c    mov al,color"
+"	      0051d61f    mov ecx,ptr"
 "	      0051d622    mov [ecx],al"
 );
 // LINE 3466:
 	asm( 
-"	      0051d624    add dword ptr [ebp-8],2"
+"	      0051d624    add ptr,2"
 );
 // LINE 3468:
 	asm( 
-"	      0051d628    mov al,[ebp-1Ch]"
-"	      0051d62b    mov ecx,[ebp-8]"
+"	      0051d628    mov al,color"
+"	      0051d62b    mov ecx,ptr"
 "	      0051d62e    mov [ecx],al"
 );
 // LINE 3469:
 	asm( 
-"	      0051d630    add dword ptr [ebp-8],2"
+"	      0051d630    add ptr,2"
 );
 // LINE 3471:
 	asm( 
-"	      0051d634    mov al,[ebp-1Ch]"
-"	      0051d637    mov ecx,[ebp-8]"
+"	      0051d634    mov al,color"
+"	      0051d637    mov ecx,ptr"
 "	      0051d63a    mov [ecx],al"
 );
 // LINE 3472:
 	asm( 
-"	      0051d63c    add dword ptr [ebp-8],2"
+"	      0051d63c    add ptr,2"
 );
 // LINE 3474:
 	asm( 
-"	      0051d640    mov al,[ebp-1Ch]"
-"	      0051d643    mov ecx,[ebp-8]"
+"	      0051d640    mov al,color"
+"	      0051d643    mov ecx,ptr"
 "	      0051d646    mov [ecx],al"
 );
 // LINE 3475:
 	asm( 
-"	      0051d648    add dword ptr [ebp-8],2"
+"	      0051d648    add ptr,2"
 );
 // LINE 3477:
 	asm( 
-"	      0051d64c    mov al,[ebp-1Ch]"
-"	      0051d64f    mov ecx,[ebp-8]"
+"	      0051d64c    mov al,color"
+"	      0051d64f    mov ecx,ptr"
 "	      0051d652    mov [ecx],al"
 );
 // LINE 3478:
 	asm( 
-"	      0051d654    add dword ptr [ebp-8],2"
+"	      0051d654    add ptr,2"
 );
 // LINE 3480:
 	asm( 
-"	      0051d658    mov al,[ebp-1Ch]"
-"	      0051d65b    mov ecx,[ebp-8]"
+"	      0051d658    mov al,color"
+"	      0051d65b    mov ecx,ptr"
 "	      0051d65e    mov [ecx],al"
 );
 // LINE 3481:
 	asm( 
-"	      0051d660    mov eax,[ebp-18h]"
+"	      0051d660    mov eax,bufwidth"
 "	      0051d663    add eax,eax"
 "	      0051d665    sub eax,12h"
-"	      0051d668    add [ebp-8],eax"
+"	      0051d668    add ptr,eax"
 );
 // LINE 3483:
 	asm( 
-"	      0051d66b    mov al,[ebp-1Ch]"
-"	      0051d66e    mov ecx,[ebp-8]"
+"	      0051d66b    mov al,color"
+"	      0051d66e    mov ecx,ptr"
 "	      0051d671    mov [ecx],al"
 );
 // LINE 3484:
 	asm( 
-"	      0051d673    add dword ptr [ebp-8],2"
+"	      0051d673    add ptr,2"
 );
 // LINE 3486:
 	asm( 
-"	      0051d677    mov al,[ebp-1Ch]"
-"	      0051d67a    mov ecx,[ebp-8]"
+"	      0051d677    mov al,color"
+"	      0051d67a    mov ecx,ptr"
 "	      0051d67d    mov [ecx],al"
 );
 // LINE 3487:
 	asm( 
-"	      0051d67f    add dword ptr [ebp-8],2"
+"	      0051d67f    add ptr,2"
 );
 // LINE 3489:
 	asm( 
-"	      0051d683    mov al,[ebp-1Ch]"
-"	      0051d686    mov ecx,[ebp-8]"
+"	      0051d683    mov al,color"
+"	      0051d686    mov ecx,ptr"
 "	      0051d689    mov [ecx],al"
 );
 // LINE 3490:
 	asm( 
-"	      0051d68b    add dword ptr [ebp-8],2"
+"	      0051d68b    add ptr,2"
 );
 // LINE 3492:
 	asm( 
-"	      0051d68f    mov al,[ebp-1Ch]"
-"	      0051d692    mov ecx,[ebp-8]"
+"	      0051d68f    mov al,color"
+"	      0051d692    mov ecx,ptr"
 "	      0051d695    mov [ecx],al"
 );
 // LINE 3493:
 	asm( 
-"	      0051d697    add dword ptr [ebp-8],2"
+"	      0051d697    add ptr,2"
 );
 // LINE 3495:
 	asm( 
-"	      0051d69b    mov al,[ebp-1Ch]"
-"	      0051d69e    mov ecx,[ebp-8]"
+"	      0051d69b    mov al,color"
+"	      0051d69e    mov ecx,ptr"
 "	      0051d6a1    mov [ecx],al"
 );
 // LINE 3496:
 	asm( 
-"	      0051d6a3    add dword ptr [ebp-8],2"
+"	      0051d6a3    add ptr,2"
 );
 // LINE 3498:
 	asm( 
-"	      0051d6a7    mov al,[ebp-1Ch]"
-"	      0051d6aa    mov ecx,[ebp-8]"
+"	      0051d6a7    mov al,color"
+"	      0051d6aa    mov ecx,ptr"
 "	      0051d6ad    mov [ecx],al"
 );
 // LINE 3499:
 	asm( 
-"	      0051d6af    add dword ptr [ebp-8],2"
+"	      0051d6af    add ptr,2"
 );
 // LINE 3501:
 	asm( 
-"	      0051d6b3    mov al,[ebp-1Ch]"
-"	      0051d6b6    mov ecx,[ebp-8]"
+"	      0051d6b3    mov al,color"
+"	      0051d6b6    mov ecx,ptr"
 "	      0051d6b9    mov [ecx],al"
 );
 // LINE 3502:
 	asm( 
-"	      0051d6bb    add dword ptr [ebp-8],2"
+"	      0051d6bb    add ptr,2"
 );
 // LINE 3504:
 	asm( 
-"	      0051d6bf    mov al,[ebp-1Ch]"
-"	      0051d6c2    mov ecx,[ebp-8]"
+"	      0051d6bf    mov al,color"
+"	      0051d6c2    mov ecx,ptr"
 "	      0051d6c5    mov [ecx],al"
 );
 // LINE 3505:
 	asm( 
-"	      0051d6c7    add dword ptr [ebp-8],2"
+"	      0051d6c7    add ptr,2"
 );
 // LINE 3507:
 	asm( 
-"	      0051d6cb    mov al,[ebp-1Ch]"
-"	      0051d6ce    mov ecx,[ebp-8]"
+"	      0051d6cb    mov al,color"
+"	      0051d6ce    mov ecx,ptr"
 "	      0051d6d1    mov [ecx],al"
 );
 // LINE 3508:
 	asm( 
-"	      0051d6d3    add dword ptr [ebp-8],2"
+"	      0051d6d3    add ptr,2"
 );
 // LINE 3510:
 	asm( 
@@ -11895,91 +11895,91 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d6dc    and eax,7"
 "	      0051d6df    mov ecx,ds:[62A528h]"
 "	      0051d6e5    mov al,[eax+ecx]"
-"	      0051d6e8    mov [ebp-1Ch],al"
+"	      0051d6e8    mov color,al"
 "	      0051d6eb    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3511:
 	asm( 
-"	      0051d6f1    mov al,[ebp-1Ch]"
-"	      0051d6f4    mov ecx,[ebp-8]"
+"	      0051d6f1    mov al,color"
+"	      0051d6f4    mov ecx,ptr"
 "	      0051d6f7    mov [ecx],al"
 );
 // LINE 3512:
 	asm( 
-"	      0051d6f9    mov eax,[ebp-18h]"
+"	      0051d6f9    mov eax,bufwidth"
 "	      0051d6fc    add eax,eax"
 "	      0051d6fe    sub eax,12h"
-"	      0051d701    add [ebp-8],eax"
+"	      0051d701    add ptr,eax"
 );
 // LINE 3514:
 	asm( 
-"	      0051d704    mov al,[ebp-1Ch]"
-"	      0051d707    mov ecx,[ebp-8]"
+"	      0051d704    mov al,color"
+"	      0051d707    mov ecx,ptr"
 "	      0051d70a    mov [ecx],al"
 );
 // LINE 3515:
 	asm( 
-"	      0051d70c    add dword ptr [ebp-8],2"
+"	      0051d70c    add ptr,2"
 );
 // LINE 3517:
 	asm( 
-"	      0051d710    mov al,[ebp-1Ch]"
-"	      0051d713    mov ecx,[ebp-8]"
+"	      0051d710    mov al,color"
+"	      0051d713    mov ecx,ptr"
 "	      0051d716    mov [ecx],al"
 );
 // LINE 3518:
 	asm( 
-"	      0051d718    add dword ptr [ebp-8],2"
+"	      0051d718    add ptr,2"
 );
 // LINE 3520:
 	asm( 
-"	      0051d71c    mov al,[ebp-1Ch]"
-"	      0051d71f    mov ecx,[ebp-8]"
+"	      0051d71c    mov al,color"
+"	      0051d71f    mov ecx,ptr"
 "	      0051d722    mov [ecx],al"
 );
 // LINE 3521:
 	asm( 
-"	      0051d724    add dword ptr [ebp-8],2"
+"	      0051d724    add ptr,2"
 );
 // LINE 3523:
 	asm( 
-"	      0051d728    mov al,[ebp-1Ch]"
-"	      0051d72b    mov ecx,[ebp-8]"
+"	      0051d728    mov al,color"
+"	      0051d72b    mov ecx,ptr"
 "	      0051d72e    mov [ecx],al"
 );
 // LINE 3524:
 	asm( 
-"	      0051d730    add dword ptr [ebp-8],2"
+"	      0051d730    add ptr,2"
 );
 // LINE 3526:
 	asm( 
-"	      0051d734    mov al,[ebp-1Ch]"
-"	      0051d737    mov ecx,[ebp-8]"
+"	      0051d734    mov al,color"
+"	      0051d737    mov ecx,ptr"
 "	      0051d73a    mov [ecx],al"
 );
 // LINE 3527:
 	asm( 
-"	      0051d73c    add dword ptr [ebp-8],2"
+"	      0051d73c    add ptr,2"
 );
 // LINE 3529:
 	asm( 
-"	      0051d740    mov al,[ebp-1Ch]"
-"	      0051d743    mov ecx,[ebp-8]"
+"	      0051d740    mov al,color"
+"	      0051d743    mov ecx,ptr"
 "	      0051d746    mov [ecx],al"
 );
 // LINE 3530:
 	asm( 
-"	      0051d748    add dword ptr [ebp-8],2"
+"	      0051d748    add ptr,2"
 );
 // LINE 3532:
 	asm( 
-"	      0051d74c    mov al,[ebp-1Ch]"
-"	      0051d74f    mov ecx,[ebp-8]"
+"	      0051d74c    mov al,color"
+"	      0051d74f    mov ecx,ptr"
 "	      0051d752    mov [ecx],al"
 );
 // LINE 3533:
 	asm( 
-"	      0051d754    add dword ptr [ebp-8],2"
+"	      0051d754    add ptr,2"
 );
 // LINE 3534:
 	asm( 
@@ -11987,56 +11987,56 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d75d    and eax,7"
 "	      0051d760    mov ecx,ds:[62A528h]"
 "	      0051d766    mov al,[eax+ecx]"
-"	      0051d769    mov [ebp-1Ch],al"
+"	      0051d769    mov color,al"
 "	      0051d76c    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3536:
 	asm( 
-"	      0051d772    mov al,[ebp-1Ch]"
-"	      0051d775    mov ecx,[ebp-8]"
+"	      0051d772    mov al,color"
+"	      0051d775    mov ecx,ptr"
 "	      0051d778    mov [ecx],al"
 );
 // LINE 3537:
 	asm( 
-"	      0051d77a    add dword ptr [ebp-8],2"
+"	      0051d77a    add ptr,2"
 );
 // LINE 3539:
 	asm( 
-"	      0051d77e    mov al,[ebp-1Ch]"
-"	      0051d781    mov ecx,[ebp-8]"
+"	      0051d77e    mov al,color"
+"	      0051d781    mov ecx,ptr"
 "	      0051d784    mov [ecx],al"
 );
 // LINE 3540:
 	asm( 
-"	      0051d786    add dword ptr [ebp-8],2"
+"	      0051d786    add ptr,2"
 );
 // LINE 3542:
 	asm( 
-"	      0051d78a    mov al,[ebp-1Ch]"
-"	      0051d78d    mov ecx,[ebp-8]"
+"	      0051d78a    mov al,color"
+"	      0051d78d    mov ecx,ptr"
 "	      0051d790    mov [ecx],al"
 );
 // LINE 3543:
 	asm( 
-"	      0051d792    mov eax,[ebp-18h]"
+"	      0051d792    mov eax,bufwidth"
 "	      0051d795    add eax,eax"
 "	      0051d797    sub eax,12h"
-"	      0051d79a    add [ebp-8],eax"
+"	      0051d79a    add ptr,eax"
 );
 // LINE 3545:
 	asm( 
-"	      0051d79d    mov al,[ebp-1Ch]"
-"	      0051d7a0    mov ecx,[ebp-8]"
+"	      0051d79d    mov al,color"
+"	      0051d7a0    mov ecx,ptr"
 "	      0051d7a3    mov [ecx],al"
 );
 // LINE 3546:
 	asm( 
-"	      0051d7a5    add dword ptr [ebp-8],2"
+"	      0051d7a5    add ptr,2"
 );
 // LINE 3548:
 	asm( 
-"	      0051d7a9    mov al,[ebp-1Ch]"
-"	      0051d7ac    mov ecx,[ebp-8]"
+"	      0051d7a9    mov al,color"
+"	      0051d7ac    mov ecx,ptr"
 "	      0051d7af    mov [ecx],al"
 );
 // LINE 3549:
@@ -12045,42 +12045,42 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d7b6    and eax,7"
 "	      0051d7b9    mov ecx,ds:[62A528h]"
 "	      0051d7bf    mov al,[eax+ecx]"
-"	      0051d7c2    mov [ebp-1Ch],al"
+"	      0051d7c2    mov color,al"
 "	      0051d7c5    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3550:
 	asm( 
-"	      0051d7cb    add dword ptr [ebp-8],2"
+"	      0051d7cb    add ptr,2"
 );
 // LINE 3552:
 	asm( 
-"	      0051d7cf    mov al,[ebp-1Ch]"
-"	      0051d7d2    mov ecx,[ebp-8]"
+"	      0051d7cf    mov al,color"
+"	      0051d7d2    mov ecx,ptr"
 "	      0051d7d5    mov [ecx],al"
 );
 // LINE 3553:
 	asm( 
-"	      0051d7d7    add dword ptr [ebp-8],2"
+"	      0051d7d7    add ptr,2"
 );
 // LINE 3555:
 	asm( 
-"	      0051d7db    mov al,[ebp-1Ch]"
-"	      0051d7de    mov ecx,[ebp-8]"
+"	      0051d7db    mov al,color"
+"	      0051d7de    mov ecx,ptr"
 "	      0051d7e1    mov [ecx],al"
 );
 // LINE 3556:
 	asm( 
-"	      0051d7e3    add dword ptr [ebp-8],2"
+"	      0051d7e3    add ptr,2"
 );
 // LINE 3558:
 	asm( 
-"	      0051d7e7    mov al,[ebp-1Ch]"
-"	      0051d7ea    mov ecx,[ebp-8]"
+"	      0051d7e7    mov al,color"
+"	      0051d7ea    mov ecx,ptr"
 "	      0051d7ed    mov [ecx],al"
 );
 // LINE 3559:
 	asm( 
-"	      0051d7ef    add dword ptr [ebp-8],2"
+"	      0051d7ef    add ptr,2"
 );
 // LINE 3561:
 	asm( 
@@ -12088,86 +12088,86 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d7f8    and eax,7"
 "	      0051d7fb    mov ecx,ds:[62A528h]"
 "	      0051d801    mov al,[eax+ecx]"
-"	      0051d804    mov [ebp-1Ch],al"
+"	      0051d804    mov color,al"
 "	      0051d807    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3562:
 	asm( 
-"	      0051d80d    mov al,[ebp-1Ch]"
-"	      0051d810    mov ecx,[ebp-8]"
+"	      0051d80d    mov al,color"
+"	      0051d810    mov ecx,ptr"
 "	      0051d813    mov [ecx],al"
 );
 // LINE 3563:
 	asm( 
-"	      0051d815    add dword ptr [ebp-8],2"
+"	      0051d815    add ptr,2"
 );
 // LINE 3565:
 	asm( 
-"	      0051d819    mov al,[ebp-1Ch]"
-"	      0051d81c    mov ecx,[ebp-8]"
+"	      0051d819    mov al,color"
+"	      0051d81c    mov ecx,ptr"
 "	      0051d81f    mov [ecx],al"
 );
 // LINE 3566:
 	asm( 
-"	      0051d821    add dword ptr [ebp-8],2"
+"	      0051d821    add ptr,2"
 );
 // LINE 3568:
 	asm( 
-"	      0051d825    mov al,[ebp-1Ch]"
-"	      0051d828    mov ecx,[ebp-8]"
+"	      0051d825    mov al,color"
+"	      0051d828    mov ecx,ptr"
 "	      0051d82b    mov [ecx],al"
 );
 // LINE 3569:
 	asm( 
-"	      0051d82d    add dword ptr [ebp-8],2"
+"	      0051d82d    add ptr,2"
 );
 // LINE 3571:
 	asm( 
-"	      0051d831    mov al,[ebp-1Ch]"
-"	      0051d834    mov ecx,[ebp-8]"
+"	      0051d831    mov al,color"
+"	      0051d834    mov ecx,ptr"
 "	      0051d837    mov [ecx],al"
 );
 // LINE 3572:
 	asm( 
-"	      0051d839    add dword ptr [ebp-8],2"
+"	      0051d839    add ptr,2"
 );
 // LINE 3574:
 	asm( 
-"	      0051d83d    mov al,[ebp-1Ch]"
-"	      0051d840    mov ecx,[ebp-8]"
+"	      0051d83d    mov al,color"
+"	      0051d840    mov ecx,ptr"
 "	      0051d843    mov [ecx],al"
 );
 // LINE 3575:
 	asm( 
-"	      0051d845    mov eax,[ebp-18h]"
+"	      0051d845    mov eax,bufwidth"
 "	      0051d848    add eax,eax"
 "	      0051d84a    sub eax,12h"
-"	      0051d84d    add [ebp-8],eax"
+"	      0051d84d    add ptr,eax"
 );
 // LINE 3577:
 	asm( 
-"	      0051d850    mov al,[ebp-1Ch]"
-"	      0051d853    mov ecx,[ebp-8]"
+"	      0051d850    mov al,color"
+"	      0051d853    mov ecx,ptr"
 "	      0051d856    mov [ecx],al"
 );
 // LINE 3578:
 	asm( 
-"	      0051d858    add dword ptr [ebp-8],2"
+"	      0051d858    add ptr,2"
 );
 // LINE 3580:
 	asm( 
-"	      0051d85c    mov al,[ebp-1Ch]"
-"	      0051d85f    mov ecx,[ebp-8]"
+"	      0051d85c    mov al,color"
+"	      0051d85f    mov ecx,ptr"
 "	      0051d862    mov [ecx],al"
 );
 // LINE 3581:
 	asm( 
-"	      0051d864    add dword ptr [ebp-8],2"
+"	      0051d864    add ptr,2"
 );
 // LINE 3583:
 	asm( 
-"	      0051d868    mov al,[ebp-1Ch]"
-"	      0051d86b    mov ecx,[ebp-8]"
+"	      0051d868    mov al,color"
+"	      0051d86b    mov ecx,ptr"
 "	      0051d86e    mov [ecx],al"
 );
 // LINE 3584:
@@ -12176,125 +12176,125 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d875    and eax,7"
 "	      0051d878    mov ecx,ds:[62A528h]"
 "	      0051d87e    mov al,[eax+ecx]"
-"	      0051d881    mov [ebp-1Ch],al"
+"	      0051d881    mov color,al"
 "	      0051d884    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3585:
 	asm( 
-"	      0051d88a    add dword ptr [ebp-8],2"
+"	      0051d88a    add ptr,2"
 );
 // LINE 3587:
 	asm( 
-"	      0051d88e    mov al,[ebp-1Ch]"
-"	      0051d891    mov ecx,[ebp-8]"
+"	      0051d88e    mov al,color"
+"	      0051d891    mov ecx,ptr"
 "	      0051d894    mov [ecx],al"
 );
 // LINE 3588:
 	asm( 
-"	      0051d896    add dword ptr [ebp-8],2"
+"	      0051d896    add ptr,2"
 );
 // LINE 3590:
 	asm( 
-"	      0051d89a    mov al,[ebp-1Ch]"
-"	      0051d89d    mov ecx,[ebp-8]"
+"	      0051d89a    mov al,color"
+"	      0051d89d    mov ecx,ptr"
 "	      0051d8a0    mov [ecx],al"
 );
 // LINE 3591:
 	asm( 
-"	      0051d8a2    add dword ptr [ebp-8],2"
+"	      0051d8a2    add ptr,2"
 );
 // LINE 3593:
 	asm( 
-"	      0051d8a6    mov al,[ebp-1Ch]"
-"	      0051d8a9    mov ecx,[ebp-8]"
+"	      0051d8a6    mov al,color"
+"	      0051d8a9    mov ecx,ptr"
 "	      0051d8ac    mov [ecx],al"
 );
 // LINE 3594:
 	asm( 
-"	      0051d8ae    add dword ptr [ebp-8],2"
+"	      0051d8ae    add ptr,2"
 );
 // LINE 3596:
 	asm( 
-"	      0051d8b2    mov al,[ebp-1Ch]"
-"	      0051d8b5    mov ecx,[ebp-8]"
+"	      0051d8b2    mov al,color"
+"	      0051d8b5    mov ecx,ptr"
 "	      0051d8b8    mov [ecx],al"
 );
 // LINE 3597:
 	asm( 
-"	      0051d8ba    add dword ptr [ebp-8],2"
+"	      0051d8ba    add ptr,2"
 );
 // LINE 3599:
 	asm( 
-"	      0051d8be    mov al,[ebp-1Ch]"
-"	      0051d8c1    mov ecx,[ebp-8]"
+"	      0051d8be    mov al,color"
+"	      0051d8c1    mov ecx,ptr"
 "	      0051d8c4    mov [ecx],al"
 );
 // LINE 3600:
 	asm( 
-"	      0051d8c6    add dword ptr [ebp-8],2"
+"	      0051d8c6    add ptr,2"
 );
 // LINE 3602:
 	asm( 
-"	      0051d8ca    mov al,[ebp-1Ch]"
-"	      0051d8cd    mov ecx,[ebp-8]"
+"	      0051d8ca    mov al,color"
+"	      0051d8cd    mov ecx,ptr"
 "	      0051d8d0    mov [ecx],al"
 );
 // LINE 3603:
 	asm( 
-"	      0051d8d2    add dword ptr [ebp-8],2"
+"	      0051d8d2    add ptr,2"
 );
 // LINE 3605:
 	asm( 
-"	      0051d8d6    mov al,[ebp-1Ch]"
-"	      0051d8d9    mov ecx,[ebp-8]"
+"	      0051d8d6    mov al,color"
+"	      0051d8d9    mov ecx,ptr"
 "	      0051d8dc    mov [ecx],al"
 );
 // LINE 3606:
 	asm( 
-"	      0051d8de    mov eax,[ebp-18h]"
+"	      0051d8de    mov eax,bufwidth"
 "	      0051d8e1    add eax,eax"
 "	      0051d8e3    sub eax,12h"
-"	      0051d8e6    add [ebp-8],eax"
+"	      0051d8e6    add ptr,eax"
 );
 // LINE 3608:
 	asm( 
-"	      0051d8e9    mov al,[ebp-1Ch]"
-"	      0051d8ec    mov ecx,[ebp-8]"
+"	      0051d8e9    mov al,color"
+"	      0051d8ec    mov ecx,ptr"
 "	      0051d8ef    mov [ecx],al"
 );
 // LINE 3609:
 	asm( 
-"	      0051d8f1    add dword ptr [ebp-8],2"
+"	      0051d8f1    add ptr,2"
 );
 // LINE 3611:
 	asm( 
-"	      0051d8f5    mov al,[ebp-1Ch]"
-"	      0051d8f8    mov ecx,[ebp-8]"
+"	      0051d8f5    mov al,color"
+"	      0051d8f8    mov ecx,ptr"
 "	      0051d8fb    mov [ecx],al"
 );
 // LINE 3612:
 	asm( 
-"	      0051d8fd    add dword ptr [ebp-8],2"
+"	      0051d8fd    add ptr,2"
 );
 // LINE 3614:
 	asm( 
-"	      0051d901    mov al,[ebp-1Ch]"
-"	      0051d904    mov ecx,[ebp-8]"
+"	      0051d901    mov al,color"
+"	      0051d904    mov ecx,ptr"
 "	      0051d907    mov [ecx],al"
 );
 // LINE 3615:
 	asm( 
-"	      0051d909    add dword ptr [ebp-8],2"
+"	      0051d909    add ptr,2"
 );
 // LINE 3617:
 	asm( 
-"	      0051d90d    mov al,[ebp-1Ch]"
-"	      0051d910    mov ecx,[ebp-8]"
+"	      0051d90d    mov al,color"
+"	      0051d910    mov ecx,ptr"
 "	      0051d913    mov [ecx],al"
 );
 // LINE 3618:
 	asm( 
-"	      0051d915    add dword ptr [ebp-8],2"
+"	      0051d915    add ptr,2"
 );
 // LINE 3619:
 	asm( 
@@ -12302,81 +12302,81 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d91e    and eax,7"
 "	      0051d921    mov ecx,ds:[62A528h]"
 "	      0051d927    mov al,[eax+ecx]"
-"	      0051d92a    mov [ebp-1Ch],al"
+"	      0051d92a    mov color,al"
 "	      0051d92d    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3621:
 	asm( 
-"	      0051d933    mov al,[ebp-1Ch]"
-"	      0051d936    mov ecx,[ebp-8]"
+"	      0051d933    mov al,color"
+"	      0051d936    mov ecx,ptr"
 "	      0051d939    mov [ecx],al"
 );
 // LINE 3622:
 	asm( 
-"	      0051d93b    add dword ptr [ebp-8],2"
+"	      0051d93b    add ptr,2"
 );
 // LINE 3624:
 	asm( 
-"	      0051d93f    mov al,[ebp-1Ch]"
-"	      0051d942    mov ecx,[ebp-8]"
+"	      0051d93f    mov al,color"
+"	      0051d942    mov ecx,ptr"
 "	      0051d945    mov [ecx],al"
 );
 // LINE 3625:
 	asm( 
-"	      0051d947    add dword ptr [ebp-8],2"
+"	      0051d947    add ptr,2"
 );
 // LINE 3627:
 	asm( 
-"	      0051d94b    mov al,[ebp-1Ch]"
-"	      0051d94e    mov ecx,[ebp-8]"
+"	      0051d94b    mov al,color"
+"	      0051d94e    mov ecx,ptr"
 "	      0051d951    mov [ecx],al"
 );
 // LINE 3628:
 	asm( 
-"	      0051d953    add dword ptr [ebp-8],2"
+"	      0051d953    add ptr,2"
 );
 // LINE 3630:
 	asm( 
-"	      0051d957    mov al,[ebp-1Ch]"
-"	      0051d95a    mov ecx,[ebp-8]"
+"	      0051d957    mov al,color"
+"	      0051d95a    mov ecx,ptr"
 "	      0051d95d    mov [ecx],al"
 );
 // LINE 3631:
 	asm( 
-"	      0051d95f    add dword ptr [ebp-8],2"
+"	      0051d95f    add ptr,2"
 );
 // LINE 3633:
 	asm( 
-"	      0051d963    mov al,[ebp-1Ch]"
-"	      0051d966    mov ecx,[ebp-8]"
+"	      0051d963    mov al,color"
+"	      0051d966    mov ecx,ptr"
 "	      0051d969    mov [ecx],al"
 );
 // LINE 3634:
 	asm( 
-"	      0051d96b    add dword ptr [ebp-8],2"
+"	      0051d96b    add ptr,2"
 );
 // LINE 3636:
 	asm( 
-"	      0051d96f    mov al,[ebp-1Ch]"
-"	      0051d972    mov ecx,[ebp-8]"
+"	      0051d96f    mov al,color"
+"	      0051d972    mov ecx,ptr"
 "	      0051d975    mov [ecx],al"
 );
 // LINE 3637:
 	asm( 
-"	      0051d977    mov eax,[ebp-18h]"
+"	      0051d977    mov eax,bufwidth"
 "	      0051d97a    add eax,eax"
 "	      0051d97c    sub eax,12h"
-"	      0051d97f    add [ebp-8],eax"
+"	      0051d97f    add ptr,eax"
 );
 // LINE 3639:
 	asm( 
-"	      0051d982    mov al,[ebp-1Ch]"
-"	      0051d985    mov ecx,[ebp-8]"
+"	      0051d982    mov al,color"
+"	      0051d985    mov ecx,ptr"
 "	      0051d988    mov [ecx],al"
 );
 // LINE 3640:
 	asm( 
-"	      0051d98a    add dword ptr [ebp-8],2"
+"	      0051d98a    add ptr,2"
 );
 // LINE 3641:
 	asm( 
@@ -12384,93 +12384,93 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051d993    and eax,7"
 "	      0051d996    mov ecx,ds:[62A528h]"
 "	      0051d99c    mov al,[eax+ecx]"
-"	      0051d99f    mov [ebp-1Ch],al"
+"	      0051d99f    mov color,al"
 "	      0051d9a2    inc dword ptr ds:[5B72A0h]"
 );
 // LINE 3643:
 	asm( 
-"	      0051d9a8    mov al,[ebp-1Ch]"
-"	      0051d9ab    mov ecx,[ebp-8]"
+"	      0051d9a8    mov al,color"
+"	      0051d9ab    mov ecx,ptr"
 "	      0051d9ae    mov [ecx],al"
 );
 // LINE 3644:
 	asm( 
-"	      0051d9b0    add dword ptr [ebp-8],2"
+"	      0051d9b0    add ptr,2"
 );
 // LINE 3646:
 	asm( 
-"	      0051d9b4    mov al,[ebp-1Ch]"
-"	      0051d9b7    mov ecx,[ebp-8]"
+"	      0051d9b4    mov al,color"
+"	      0051d9b7    mov ecx,ptr"
 "	      0051d9ba    mov [ecx],al"
 );
 // LINE 3647:
 	asm( 
-"	      0051d9bc    add dword ptr [ebp-8],2"
+"	      0051d9bc    add ptr,2"
 );
 // LINE 3649:
 	asm( 
-"	      0051d9c0    mov al,[ebp-1Ch]"
-"	      0051d9c3    mov ecx,[ebp-8]"
+"	      0051d9c0    mov al,color"
+"	      0051d9c3    mov ecx,ptr"
 "	      0051d9c6    mov [ecx],al"
 );
 // LINE 3650:
 	asm( 
-"	      0051d9c8    add dword ptr [ebp-8],2"
+"	      0051d9c8    add ptr,2"
 );
 // LINE 3652:
 	asm( 
-"	      0051d9cc    mov al,[ebp-1Ch]"
-"	      0051d9cf    mov ecx,[ebp-8]"
+"	      0051d9cc    mov al,color"
+"	      0051d9cf    mov ecx,ptr"
 "	      0051d9d2    mov [ecx],al"
 );
 // LINE 3653:
 	asm( 
-"	      0051d9d4    add dword ptr [ebp-8],2"
+"	      0051d9d4    add ptr,2"
 );
 // LINE 3655:
 	asm( 
-"	      0051d9d8    mov al,[ebp-1Ch]"
-"	      0051d9db    mov ecx,[ebp-8]"
+"	      0051d9d8    mov al,color"
+"	      0051d9db    mov ecx,ptr"
 "	      0051d9de    mov [ecx],al"
 );
 // LINE 3656:
 	asm( 
-"	      0051d9e0    add dword ptr [ebp-8],2"
+"	      0051d9e0    add ptr,2"
 );
 // LINE 3658:
 	asm( 
-"	      0051d9e4    mov al,[ebp-1Ch]"
-"	      0051d9e7    mov ecx,[ebp-8]"
+"	      0051d9e4    mov al,color"
+"	      0051d9e7    mov ecx,ptr"
 "	      0051d9ea    mov [ecx],al"
 );
 // LINE 3659:
 	asm( 
-"	      0051d9ec    add dword ptr [ebp-8],2"
+"	      0051d9ec    add ptr,2"
 );
 // LINE 3661:
 	asm( 
-"	      0051d9f0    mov al,[ebp-1Ch]"
-"	      0051d9f3    mov ecx,[ebp-8]"
+"	      0051d9f0    mov al,color"
+"	      0051d9f3    mov ecx,ptr"
 "	      0051d9f6    mov [ecx],al"
 );
 // LINE 3662:
 	asm( 
-"	      0051d9f8    add dword ptr [ebp-8],2"
+"	      0051d9f8    add ptr,2"
 );
 // LINE 3664:
 	asm( 
-"	      0051d9fc    mov al,[ebp-1Ch]"
-"	      0051d9ff    mov ecx,[ebp-8]"
+"	      0051d9fc    mov al,color"
+"	      0051d9ff    mov ecx,ptr"
 "	      0051da02    mov [ecx],al"
 );
 // LINE 3665:
 	asm( 
-"	      0051da04    add dword ptr [ebp-8],2"
+"	      0051da04    add ptr,2"
 );
 // LINE 3667:
 	asm( 
-"	      0051da08    mov al,[ebp-1Ch]"
-"	      0051da0b    mov ecx,[ebp-8]"
+"	      0051da08    mov al,color"
+"	      0051da0b    mov ecx,ptr"
 "	      0051da0e    mov [ecx],al"
 );
 // LINE 3668:
@@ -12521,9 +12521,9 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 );
 // LINE 3685:
 	asm( 
-"	      0051da61    cmp dword ptr [ebp+8],0"
+"	      0051da61    cmp tile,0"
 "	      0051da65    jl near ptr 0051DA78h"
-"	      0051da6b    cmp dword ptr [ebp+8],0FFh"
+"	      0051da6b    cmp tile,0FFh"
 "	      0051da72    jle near ptr 0051DA7Fh"
 );
 // LINE 3686:
@@ -12533,7 +12533,7 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 );
 // LINE 3688:
 	asm( 
-"	      0051da7f    mov eax,[ebp+8]"
+"	      0051da7f    mov eax,tile"
 "	      0051da82    shl eax,2"
 "	      0051da85    lea eax,[eax+eax*4+5B5EA0h]"
 "	      0051da8c    jmp near ptr 0051DA91h"
@@ -12579,7 +12579,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3707:
 	asm( 
-"	      0051da9f    mov eax,[ebp+10h]"
+"	      0051da9f    mov eax,dyhittee"
 "	      0051daa2    movsx eax,word ptr [eax+0Ch]"
 "	      0051daa6    test al,20h"
 "	      0051daa8    je near ptr 0051DAB3h"
@@ -12590,22 +12590,22 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3711:
 	asm( 
-"	      0051dab3    mov eax,[ebp+10h]"
+"	      0051dab3    mov eax,dyhittee"
 "	      0051dab6    movsx eax,word ptr [eax+0Ch]"
 "	      0051daba    test al,4"
 "	      0051dabc    je near ptr 0051DAE8h"
 );
 // LINE 3713:
 	asm( 
-"	      0051dac2    mov eax,[ebp+18h]"
+"	      0051dac2    mov eax,xtra_msg"
 "	      0051dac5    push eax"
-"	      0051dac6    mov eax,[ebp+14h]"
+"	      0051dac6    mov eax,mission_id"
 "	      0051dac9    push eax"
-"	      0051daca    mov eax,[ebp+10h]"
+"	      0051daca    mov eax,dyhittee"
 "	      0051dacd    push eax"
-"	      0051dace    mov eax,[ebp+0Ch]"
+"	      0051dace    mov eax,dyhitter"
 "	      0051dad1    push eax"
-"	      0051dad2    mov eax,[ebp+8]"
+"	      0051dad2    mov eax,hitter_type"
 "	      0051dad5    push eax"
 "	      0051dad6    call 004F8653h"
 "	      0051dadb    add esp,14h"
@@ -12617,22 +12617,22 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 // LINE 3716:
 	asm( 
 "	      0051dae3    jmp near ptr 0051DBE0h"
-"	      0051dae8    mov eax,[ebp+10h]"
+"	      0051dae8    mov eax,dyhittee"
 "	      0051daeb    movsx eax,word ptr [eax+0Ch]"
 "	      0051daef    test al,8"
 "	      0051daf1    je near ptr 0051DB1Dh"
 );
 // LINE 3718:
 	asm( 
-"	      0051daf7    mov eax,[ebp+18h]"
+"	      0051daf7    mov eax,xtra_msg"
 "	      0051dafa    push eax"
-"	      0051dafb    mov eax,[ebp+14h]"
+"	      0051dafb    mov eax,mission_id"
 "	      0051dafe    push eax"
-"	      0051daff    mov eax,[ebp+10h]"
+"	      0051daff    mov eax,dyhittee"
 "	      0051db02    push eax"
-"	      0051db03    mov eax,[ebp+0Ch]"
+"	      0051db03    mov eax,dyhitter"
 "	      0051db06    push eax"
-"	      0051db07    mov eax,[ebp+8]"
+"	      0051db07    mov eax,hitter_type"
 "	      0051db0a    push eax"
 "	      0051db0b    call 005550ACh"
 "	      0051db10    add esp,14h"
@@ -12644,22 +12644,22 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 // LINE 3721:
 	asm( 
 "	      0051db18    jmp near ptr 0051DBE0h"
-"	      0051db1d    mov eax,[ebp+10h]"
+"	      0051db1d    mov eax,dyhittee"
 "	      0051db20    movsx eax,word ptr [eax+0Ch]"
 "	      0051db24    test al,10h"
 "	      0051db26    je near ptr 0051DB52h"
 );
 // LINE 3723:
 	asm( 
-"	      0051db2c    mov eax,[ebp+18h]"
+"	      0051db2c    mov eax,xtra_msg"
 "	      0051db2f    push eax"
-"	      0051db30    mov eax,[ebp+14h]"
+"	      0051db30    mov eax,mission_id"
 "	      0051db33    push eax"
-"	      0051db34    mov eax,[ebp+10h]"
+"	      0051db34    mov eax,dyhittee"
 "	      0051db37    push eax"
-"	      0051db38    mov eax,[ebp+0Ch]"
+"	      0051db38    mov eax,dyhitter"
 "	      0051db3b    push eax"
-"	      0051db3c    mov eax,[ebp+8]"
+"	      0051db3c    mov eax,hitter_type"
 "	      0051db3f    push eax"
 "	      0051db40    call 0050654Ch"
 "	      0051db45    add esp,14h"
@@ -12671,34 +12671,34 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 // LINE 3726:
 	asm( 
 "	      0051db4d    jmp near ptr 0051DBE0h"
-"	      0051db52    mov eax,[ebp+10h]"
+"	      0051db52    mov eax,dyhittee"
 "	      0051db55    movsx eax,word ptr [eax+0Ch]"
 "	      0051db59    test al,80h"
 "	      0051db5b    je near ptr 0051DB6Dh"
 );
 // LINE 3727:
 	asm( 
-"	      0051db61    mov dword ptr [ebp-4],0Ah"
+"	      0051db61    mov hittee_type,0Ah"
 );
 // LINE 3728:
 	asm( 
 "	      0051db68    jmp near ptr 0051DBE0h"
-"	      0051db6d    mov eax,[ebp+10h]"
+"	      0051db6d    mov eax,dyhittee"
 "	      0051db70    movsx eax,word ptr [eax+0Ch]"
 "	      0051db74    test ah,1"
 "	      0051db77    je near ptr 0051DBA3h"
 );
 // LINE 3730:
 	asm( 
-"	      0051db7d    mov eax,[ebp+18h]"
+"	      0051db7d    mov eax,xtra_msg"
 "	      0051db80    push eax"
-"	      0051db81    mov eax,[ebp+14h]"
+"	      0051db81    mov eax,mission_id"
 "	      0051db84    push eax"
-"	      0051db85    mov eax,[ebp+10h]"
+"	      0051db85    mov eax,dyhittee"
 "	      0051db88    push eax"
-"	      0051db89    mov eax,[ebp+0Ch]"
+"	      0051db89    mov eax,dyhitter"
 "	      0051db8c    push eax"
-"	      0051db8d    mov eax,[ebp+8]"
+"	      0051db8d    mov eax,hitter_type"
 "	      0051db90    push eax"
 "	      0051db91    call 0052D975h"
 "	      0051db96    add esp,14h"
@@ -12710,26 +12710,26 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 // LINE 3733:
 	asm( 
 "	      0051db9e    jmp near ptr 0051DBE0h"
-"	      0051dba3    mov eax,[ebp+10h]"
+"	      0051dba3    mov eax,dyhittee"
 "	      0051dba6    movsx eax,word ptr [eax+0Ch]"
 "	      0051dbaa    test ah,2"
 "	      0051dbad    je near ptr 0051DBBFh"
 );
 // LINE 3734:
 	asm( 
-"	      0051dbb3    mov dword ptr [ebp-4],8"
+"	      0051dbb3    mov hittee_type,8"
 );
 // LINE 3735:
 	asm( 
 "	      0051dbba    jmp near ptr 0051DBE0h"
-"	      0051dbbf    mov eax,[ebp+10h]"
+"	      0051dbbf    mov eax,dyhittee"
 "	      0051dbc2    movsx eax,word ptr [eax+0Ch]"
 "	      0051dbc6    test ah,4"
 "	      0051dbc9    je near ptr 0051DBDBh"
 );
 // LINE 3736:
 	asm( 
-"	      0051dbcf    mov dword ptr [ebp-4],0"
+"	      0051dbcf    mov hittee_type,0"
 );
 // LINE 3737:
 	asm( 
@@ -12741,13 +12741,13 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3741:
 	asm( 
-"	      0051dbe0    mov eax,[ebp+8]"
+"	      0051dbe0    mov eax,hitter_type"
 "	      0051dbe3    mov [ebp-8],eax"
 "	      0051dbe6    jmp near ptr 0051E641h"
 );
 // LINE 3745:
 	asm( 
-"	      0051dbeb    mov eax,[ebp-4]"
+"	      0051dbeb    mov eax,hittee_type"
 "	      0051dbee    mov [ebp-0Ch],eax"
 "	      0051dbf1    jmp near ptr 0051DC3Fh"
 );
@@ -12769,15 +12769,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3756:
 	asm( 
-"	      0051dc0a    mov eax,[ebp+18h]"
+"	      0051dc0a    mov eax,xtra_msg"
 "	      0051dc0d    push eax"
-"	      0051dc0e    mov eax,[ebp+14h]"
+"	      0051dc0e    mov eax,mission_id"
 "	      0051dc11    push eax"
-"	      0051dc12    mov eax,[ebp+10h]"
+"	      0051dc12    mov eax,dyhittee"
 "	      0051dc15    push eax"
-"	      0051dc16    mov eax,[ebp+0Ch]"
+"	      0051dc16    mov eax,dyhitter"
 "	      0051dc19    push eax"
-"	      0051dc1a    mov eax,[ebp+8]"
+"	      0051dc1a    mov eax,hitter_type"
 "	      0051dc1d    push eax"
 "	      0051dc1e    call 0050654Ch"
 "	      0051dc23    add esp,14h"
@@ -12836,7 +12836,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3768:
 	asm( 
-"	      0051dc8e    mov eax,[ebp-4]"
+"	      0051dc8e    mov eax,hittee_type"
 "	      0051dc91    mov [ebp-10h],eax"
 "	      0051dc94    jmp near ptr 0051DCE2h"
 );
@@ -12858,15 +12858,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3779:
 	asm( 
-"	      0051dcad    mov eax,[ebp+18h]"
+"	      0051dcad    mov eax,xtra_msg"
 "	      0051dcb0    push eax"
-"	      0051dcb1    mov eax,[ebp+14h]"
+"	      0051dcb1    mov eax,mission_id"
 "	      0051dcb4    push eax"
-"	      0051dcb5    mov eax,[ebp+10h]"
+"	      0051dcb5    mov eax,dyhittee"
 "	      0051dcb8    push eax"
-"	      0051dcb9    mov eax,[ebp+0Ch]"
+"	      0051dcb9    mov eax,dyhitter"
 "	      0051dcbc    push eax"
-"	      0051dcbd    mov eax,[ebp+8]"
+"	      0051dcbd    mov eax,hitter_type"
 "	      0051dcc0    push eax"
 "	      0051dcc1    call 0050654Ch"
 "	      0051dcc6    add esp,14h"
@@ -12926,7 +12926,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3791:
 	asm( 
-"	      0051dd31    mov eax,[ebp-4]"
+"	      0051dd31    mov eax,hittee_type"
 "	      0051dd34    mov [ebp-14h],eax"
 "	      0051dd37    jmp near ptr 0051DD85h"
 );
@@ -12948,15 +12948,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3802:
 	asm( 
-"	      0051dd50    mov eax,[ebp+18h]"
+"	      0051dd50    mov eax,xtra_msg"
 "	      0051dd53    push eax"
-"	      0051dd54    mov eax,[ebp+14h]"
+"	      0051dd54    mov eax,mission_id"
 "	      0051dd57    push eax"
-"	      0051dd58    mov eax,[ebp+10h]"
+"	      0051dd58    mov eax,dyhittee"
 "	      0051dd5b    push eax"
-"	      0051dd5c    mov eax,[ebp+0Ch]"
+"	      0051dd5c    mov eax,dyhitter"
 "	      0051dd5f    push eax"
-"	      0051dd60    mov eax,[ebp+8]"
+"	      0051dd60    mov eax,hitter_type"
 "	      0051dd63    push eax"
 "	      0051dd64    call 0050654Ch"
 "	      0051dd69    add esp,14h"
@@ -13019,7 +13019,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3814:
 	asm( 
-"	      0051ddd4    mov eax,[ebp-4]"
+"	      0051ddd4    mov eax,hittee_type"
 "	      0051ddd7    mov [ebp-18h],eax"
 "	      0051ddda    jmp near ptr 0051DE28h"
 );
@@ -13041,15 +13041,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3825:
 	asm( 
-"	      0051ddf3    mov eax,[ebp+18h]"
+"	      0051ddf3    mov eax,xtra_msg"
 "	      0051ddf6    push eax"
-"	      0051ddf7    mov eax,[ebp+14h]"
+"	      0051ddf7    mov eax,mission_id"
 "	      0051ddfa    push eax"
-"	      0051ddfb    mov eax,[ebp+10h]"
+"	      0051ddfb    mov eax,dyhittee"
 "	      0051ddfe    push eax"
-"	      0051ddff    mov eax,[ebp+0Ch]"
+"	      0051ddff    mov eax,dyhitter"
 "	      0051de02    push eax"
-"	      0051de03    mov eax,[ebp+8]"
+"	      0051de03    mov eax,hitter_type"
 "	      0051de06    push eax"
 "	      0051de07    call 0050654Ch"
 "	      0051de0c    add esp,14h"
@@ -13108,20 +13108,20 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3837:
 	asm( 
-"	      0051de77    mov eax,[ebp-4]"
+"	      0051de77    mov eax,hittee_type"
 "	      0051de7a    mov [ebp-1Ch],eax"
 "	      0051de7d    jmp near ptr 0051DEE7h"
 );
 // LINE 3840:
 	asm( 
-"	      0051de82    mov eax,[ebp+10h]"
+"	      0051de82    mov eax,dyhittee"
 "	      0051de85    movsx eax,word ptr [eax+0Ch]"
 "	      0051de89    test ah,10h"
 "	      0051de8c    je near ptr 0051DE9Eh"
 );
 // LINE 3841:
 	asm( 
-"	      0051de92    mov eax,[ebp+10h]"
+"	      0051de92    mov eax,dyhittee"
 "	      0051de95    push eax"
 "	      0051de96    call 005232D1h"
 "	      0051de9b    add esp,4"
@@ -13144,15 +13144,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3850:
 	asm( 
-"	      0051deb2    mov eax,[ebp+18h]"
+"	      0051deb2    mov eax,xtra_msg"
 "	      0051deb5    push eax"
-"	      0051deb6    mov eax,[ebp+14h]"
+"	      0051deb6    mov eax,mission_id"
 "	      0051deb9    push eax"
-"	      0051deba    mov eax,[ebp+10h]"
+"	      0051deba    mov eax,dyhittee"
 "	      0051debd    push eax"
-"	      0051debe    mov eax,[ebp+0Ch]"
+"	      0051debe    mov eax,dyhitter"
 "	      0051dec1    push eax"
-"	      0051dec2    mov eax,[ebp+8]"
+"	      0051dec2    mov eax,hitter_type"
 "	      0051dec5    push eax"
 "	      0051dec6    call 0050654Ch"
 "	      0051decb    add esp,14h"
@@ -13211,7 +13211,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3862:
 	asm( 
-"	      0051df36    mov eax,[ebp-4]"
+"	      0051df36    mov eax,hittee_type"
 "	      0051df39    mov [ebp-20h],eax"
 "	      0051df3c    jmp near ptr 0051DF8Ah"
 );
@@ -13233,15 +13233,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3873:
 	asm( 
-"	      0051df55    mov eax,[ebp+18h]"
+"	      0051df55    mov eax,xtra_msg"
 "	      0051df58    push eax"
-"	      0051df59    mov eax,[ebp+14h]"
+"	      0051df59    mov eax,mission_id"
 "	      0051df5c    push eax"
-"	      0051df5d    mov eax,[ebp+10h]"
+"	      0051df5d    mov eax,dyhittee"
 "	      0051df60    push eax"
-"	      0051df61    mov eax,[ebp+0Ch]"
+"	      0051df61    mov eax,dyhitter"
 "	      0051df64    push eax"
-"	      0051df65    mov eax,[ebp+8]"
+"	      0051df65    mov eax,hitter_type"
 "	      0051df68    push eax"
 "	      0051df69    call 0050654Ch"
 "	      0051df6e    add esp,14h"
@@ -13302,7 +13302,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3885:
 	asm( 
-"	      0051dfd9    mov eax,[ebp-4]"
+"	      0051dfd9    mov eax,hittee_type"
 "	      0051dfdc    mov [ebp-24h],eax"
 "	      0051dfdf    jmp near ptr 0051E02Dh"
 );
@@ -13324,15 +13324,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3896:
 	asm( 
-"	      0051dff8    mov eax,[ebp+18h]"
+"	      0051dff8    mov eax,xtra_msg"
 "	      0051dffb    push eax"
-"	      0051dffc    mov eax,[ebp+14h]"
+"	      0051dffc    mov eax,mission_id"
 "	      0051dfff    push eax"
-"	      0051e000    mov eax,[ebp+10h]"
+"	      0051e000    mov eax,dyhittee"
 "	      0051e003    push eax"
-"	      0051e004    mov eax,[ebp+0Ch]"
+"	      0051e004    mov eax,dyhitter"
 "	      0051e007    push eax"
-"	      0051e008    mov eax,[ebp+8]"
+"	      0051e008    mov eax,hitter_type"
 "	      0051e00b    push eax"
 "	      0051e00c    call 0050654Ch"
 "	      0051e011    add esp,14h"
@@ -13394,7 +13394,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3908:
 	asm( 
-"	      0051e07c    mov eax,[ebp-4]"
+"	      0051e07c    mov eax,hittee_type"
 "	      0051e07f    mov [ebp-28h],eax"
 "	      0051e082    jmp near ptr 0051E0D0h"
 );
@@ -13416,15 +13416,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3919:
 	asm( 
-"	      0051e09b    mov eax,[ebp+18h]"
+"	      0051e09b    mov eax,xtra_msg"
 "	      0051e09e    push eax"
-"	      0051e09f    mov eax,[ebp+14h]"
+"	      0051e09f    mov eax,mission_id"
 "	      0051e0a2    push eax"
-"	      0051e0a3    mov eax,[ebp+10h]"
+"	      0051e0a3    mov eax,dyhittee"
 "	      0051e0a6    push eax"
-"	      0051e0a7    mov eax,[ebp+0Ch]"
+"	      0051e0a7    mov eax,dyhitter"
 "	      0051e0aa    push eax"
-"	      0051e0ab    mov eax,[ebp+8]"
+"	      0051e0ab    mov eax,hitter_type"
 "	      0051e0ae    push eax"
 "	      0051e0af    call 0050654Ch"
 "	      0051e0b4    add esp,14h"
@@ -13481,7 +13481,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3931:
 	asm( 
-"	      0051e11f    mov eax,[ebp-4]"
+"	      0051e11f    mov eax,hittee_type"
 "	      0051e122    mov [ebp-2Ch],eax"
 "	      0051e125    jmp near ptr 0051E173h"
 );
@@ -13503,15 +13503,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3942:
 	asm( 
-"	      0051e13e    mov eax,[ebp+18h]"
+"	      0051e13e    mov eax,xtra_msg"
 "	      0051e141    push eax"
-"	      0051e142    mov eax,[ebp+14h]"
+"	      0051e142    mov eax,mission_id"
 "	      0051e145    push eax"
-"	      0051e146    mov eax,[ebp+10h]"
+"	      0051e146    mov eax,dyhittee"
 "	      0051e149    push eax"
-"	      0051e14a    mov eax,[ebp+0Ch]"
+"	      0051e14a    mov eax,dyhitter"
 "	      0051e14d    push eax"
-"	      0051e14e    mov eax,[ebp+8]"
+"	      0051e14e    mov eax,hitter_type"
 "	      0051e151    push eax"
 "	      0051e152    call 0050654Ch"
 "	      0051e157    add esp,14h"
@@ -13573,7 +13573,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3954:
 	asm( 
-"	      0051e1c2    mov eax,[ebp-4]"
+"	      0051e1c2    mov eax,hittee_type"
 "	      0051e1c5    mov [ebp-30h],eax"
 "	      0051e1c8    jmp near ptr 0051E216h"
 );
@@ -13595,15 +13595,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3965:
 	asm( 
-"	      0051e1e1    mov eax,[ebp+18h]"
+"	      0051e1e1    mov eax,xtra_msg"
 "	      0051e1e4    push eax"
-"	      0051e1e5    mov eax,[ebp+14h]"
+"	      0051e1e5    mov eax,mission_id"
 "	      0051e1e8    push eax"
-"	      0051e1e9    mov eax,[ebp+10h]"
+"	      0051e1e9    mov eax,dyhittee"
 "	      0051e1ec    push eax"
-"	      0051e1ed    mov eax,[ebp+0Ch]"
+"	      0051e1ed    mov eax,dyhitter"
 "	      0051e1f0    push eax"
-"	      0051e1f1    mov eax,[ebp+8]"
+"	      0051e1f1    mov eax,hitter_type"
 "	      0051e1f4    push eax"
 "	      0051e1f5    call 0050654Ch"
 "	      0051e1fa    add esp,14h"
@@ -13666,7 +13666,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3977:
 	asm( 
-"	      0051e265    mov eax,[ebp-4]"
+"	      0051e265    mov eax,hittee_type"
 "	      0051e268    mov [ebp-34h],eax"
 "	      0051e26b    jmp near ptr 0051E2B9h"
 );
@@ -13688,15 +13688,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 3988:
 	asm( 
-"	      0051e284    mov eax,[ebp+18h]"
+"	      0051e284    mov eax,xtra_msg"
 "	      0051e287    push eax"
-"	      0051e288    mov eax,[ebp+14h]"
+"	      0051e288    mov eax,mission_id"
 "	      0051e28b    push eax"
-"	      0051e28c    mov eax,[ebp+10h]"
+"	      0051e28c    mov eax,dyhittee"
 "	      0051e28f    push eax"
-"	      0051e290    mov eax,[ebp+0Ch]"
+"	      0051e290    mov eax,dyhitter"
 "	      0051e293    push eax"
-"	      0051e294    mov eax,[ebp+8]"
+"	      0051e294    mov eax,hitter_type"
 "	      0051e297    push eax"
 "	      0051e298    call 0050654Ch"
 "	      0051e29d    add esp,14h"
@@ -13755,7 +13755,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4000:
 	asm( 
-"	      0051e308    mov eax,[ebp-4]"
+"	      0051e308    mov eax,hittee_type"
 "	      0051e30b    mov [ebp-38h],eax"
 "	      0051e30e    jmp near ptr 0051E35Ch"
 );
@@ -13777,15 +13777,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4011:
 	asm( 
-"	      0051e327    mov eax,[ebp+18h]"
+"	      0051e327    mov eax,xtra_msg"
 "	      0051e32a    push eax"
-"	      0051e32b    mov eax,[ebp+14h]"
+"	      0051e32b    mov eax,mission_id"
 "	      0051e32e    push eax"
-"	      0051e32f    mov eax,[ebp+10h]"
+"	      0051e32f    mov eax,dyhittee"
 "	      0051e332    push eax"
-"	      0051e333    mov eax,[ebp+0Ch]"
+"	      0051e333    mov eax,dyhitter"
 "	      0051e336    push eax"
-"	      0051e337    mov eax,[ebp+8]"
+"	      0051e337    mov eax,hitter_type"
 "	      0051e33a    push eax"
 "	      0051e33b    call 0050654Ch"
 "	      0051e340    add esp,14h"
@@ -13846,7 +13846,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4023:
 	asm( 
-"	      0051e3ab    mov eax,[ebp-4]"
+"	      0051e3ab    mov eax,hittee_type"
 "	      0051e3ae    mov [ebp-3Ch],eax"
 "	      0051e3b1    jmp near ptr 0051E3FFh"
 );
@@ -13868,15 +13868,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4034:
 	asm( 
-"	      0051e3ca    mov eax,[ebp+18h]"
+"	      0051e3ca    mov eax,xtra_msg"
 "	      0051e3cd    push eax"
-"	      0051e3ce    mov eax,[ebp+14h]"
+"	      0051e3ce    mov eax,mission_id"
 "	      0051e3d1    push eax"
-"	      0051e3d2    mov eax,[ebp+10h]"
+"	      0051e3d2    mov eax,dyhittee"
 "	      0051e3d5    push eax"
-"	      0051e3d6    mov eax,[ebp+0Ch]"
+"	      0051e3d6    mov eax,dyhitter"
 "	      0051e3d9    push eax"
-"	      0051e3da    mov eax,[ebp+8]"
+"	      0051e3da    mov eax,hitter_type"
 "	      0051e3dd    push eax"
 "	      0051e3de    call 0050654Ch"
 "	      0051e3e3    add esp,14h"
@@ -13937,7 +13937,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4046:
 	asm( 
-"	      0051e44e    mov eax,[ebp-4]"
+"	      0051e44e    mov eax,hittee_type"
 "	      0051e451    mov [ebp-40h],eax"
 "	      0051e454    jmp near ptr 0051E4A2h"
 );
@@ -13959,15 +13959,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4057:
 	asm( 
-"	      0051e46d    mov eax,[ebp+18h]"
+"	      0051e46d    mov eax,xtra_msg"
 "	      0051e470    push eax"
-"	      0051e471    mov eax,[ebp+14h]"
+"	      0051e471    mov eax,mission_id"
 "	      0051e474    push eax"
-"	      0051e475    mov eax,[ebp+10h]"
+"	      0051e475    mov eax,dyhittee"
 "	      0051e478    push eax"
-"	      0051e479    mov eax,[ebp+0Ch]"
+"	      0051e479    mov eax,dyhitter"
 "	      0051e47c    push eax"
-"	      0051e47d    mov eax,[ebp+8]"
+"	      0051e47d    mov eax,hitter_type"
 "	      0051e480    push eax"
 "	      0051e481    call 0050654Ch"
 "	      0051e486    add esp,14h"
@@ -14026,7 +14026,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4069:
 	asm( 
-"	      0051e4f1    mov eax,[ebp-4]"
+"	      0051e4f1    mov eax,hittee_type"
 "	      0051e4f4    mov [ebp-44h],eax"
 "	      0051e4f7    jmp near ptr 0051E545h"
 );
@@ -14048,15 +14048,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4080:
 	asm( 
-"	      0051e510    mov eax,[ebp+18h]"
+"	      0051e510    mov eax,xtra_msg"
 "	      0051e513    push eax"
-"	      0051e514    mov eax,[ebp+14h]"
+"	      0051e514    mov eax,mission_id"
 "	      0051e517    push eax"
-"	      0051e518    mov eax,[ebp+10h]"
+"	      0051e518    mov eax,dyhittee"
 "	      0051e51b    push eax"
-"	      0051e51c    mov eax,[ebp+0Ch]"
+"	      0051e51c    mov eax,dyhitter"
 "	      0051e51f    push eax"
-"	      0051e520    mov eax,[ebp+8]"
+"	      0051e520    mov eax,hitter_type"
 "	      0051e523    push eax"
 "	      0051e524    call 0050654Ch"
 "	      0051e529    add esp,14h"
@@ -14119,7 +14119,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4092:
 	asm( 
-"	      0051e594    mov eax,[ebp-4]"
+"	      0051e594    mov eax,hittee_type"
 "	      0051e597    mov [ebp-48h],eax"
 "	      0051e59a    jmp near ptr 0051E5E8h"
 );
@@ -14141,15 +14141,15 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 4103:
 	asm( 
-"	      0051e5b3    mov eax,[ebp+18h]"
+"	      0051e5b3    mov eax,xtra_msg"
 "	      0051e5b6    push eax"
-"	      0051e5b7    mov eax,[ebp+14h]"
+"	      0051e5b7    mov eax,mission_id"
 "	      0051e5ba    push eax"
-"	      0051e5bb    mov eax,[ebp+10h]"
+"	      0051e5bb    mov eax,dyhittee"
 "	      0051e5be    push eax"
-"	      0051e5bf    mov eax,[ebp+0Ch]"
+"	      0051e5bf    mov eax,dyhitter"
 "	      0051e5c2    push eax"
-"	      0051e5c3    mov eax,[ebp+8]"
+"	      0051e5c3    mov eax,hitter_type"
 "	      0051e5c6    push eax"
 "	      0051e5c7    call 0050654Ch"
 "	      0051e5cc    add esp,14h"
@@ -14302,7 +14302,7 @@ void S3ObjSetFlatShading() {
 "	      0051e6f2    push eax"
 "	      0051e6f3    call 004D23C7h"
 "	      0051e6f8    add esp,4"
-"	      0051e6fb    mov [ebp-4],eax"
+"	      0051e6fb    mov objcount,eax"
 );
 // LINE 4161:
 	asm( 
@@ -14310,7 +14310,7 @@ void S3ObjSetFlatShading() {
 "	      0051e703    push eax"
 "	      0051e704    call 004D23C7h"
 "	      0051e709    add esp,4"
-"	      0051e70c    add [ebp-4],eax"
+"	      0051e70c    add objcount,eax"
 );
 // LINE 4162:
 	asm( 
@@ -14318,33 +14318,33 @@ void S3ObjSetFlatShading() {
 "	      0051e714    push eax"
 "	      0051e715    call 004D23C7h"
 "	      0051e71a    add esp,4"
-"	      0051e71d    add [ebp-4],eax"
+"	      0051e71d    add objcount,eax"
 );
 // LINE 4167:
 	asm( 
-"	      0051e720    mov dword ptr [ebp-8],0"
+"	      0051e720    mov i,0"
 "	      0051e727    jmp near ptr 0051E72Fh"
-"	      0051e72c    inc dword ptr [ebp-8]"
-"	      0051e72f    mov eax,[ebp-4]"
-"	      0051e732    cmp [ebp-8],eax"
+"	      0051e72c    inc i"
+"	      0051e72f    mov eax,objcount"
+"	      0051e732    cmp i,eax"
 "	      0051e735    jge near ptr 0051E765h"
 );
 // LINE 4169:
 	asm( 
-"	      0051e73b    mov eax,[ebp-8]"
+"	      0051e73b    mov eax,i"
 "	      0051e73e    push eax"
 "	      0051e73f    call 004D8821h"
 "	      0051e744    add esp,4"
-"	      0051e747    mov [ebp-0Ch],eax"
+"	      0051e747    mov obj,eax"
 );
 // LINE 4170:
 	asm( 
-"	      0051e74a    cmp dword ptr [ebp-0Ch],0"
+"	      0051e74a    cmp obj,0"
 "	      0051e74e    jne near ptr 0051E754h"
 );
 // LINE 4177:
 	asm( 
-"	      0051e754    mov eax,[ebp-0Ch]"
+"	      0051e754    mov eax,obj"
 "	      0051e757    push eax"
 "	      0051e758    call 004D918Bh"
 "	      0051e75d    add esp,4"

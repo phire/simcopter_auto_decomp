@@ -17,7 +17,7 @@ int32_t CreatePoliceCarInstance(int32_t instanceID) {
 );
 // LINE 90:
 	asm( 
-"	      00536e06    mov eax,[ebp+8]"
+"	      00536e06    mov eax,instanceID"
 "	      00536e09    push eax"
 "	      00536e0a    call 00536E98h"
 "	      00536e0f    add esp,4"
@@ -48,26 +48,26 @@ void PoliceCarClass::PoliceCarClass() {
 "	      00536e36    push ebx"
 "	      00536e37    push esi"
 "	      00536e38    push edi"
-"	      00536e39    mov [ebp-4],ecx"
-"	      00536e3c    mov ecx,[ebp-4]"
+"	      00536e39    mov this,ecx"
+"	      00536e3c    mov ecx,this"
 "	      00536e3f    call 005415D5h"
-"	      00536e44    mov eax,[ebp-4]"
+"	      00536e44    mov eax,this"
 "	      00536e47    mov dword ptr [eax],593310h"
 );
 // LINE 96:
 	asm( 
-"	      00536e4d    mov eax,[ebp-4]"
+"	      00536e4d    mov eax,this"
 "	      00536e50    mov dword ptr [eax+4],11Dh"
 );
 // LINE 97:
 	asm( 
-"	      00536e57    mov eax,[ebp-4]"
+"	      00536e57    mov eax,this"
 "	      00536e5a    mov dword ptr [eax+31Eh],0"
 );
 // LINE 98:
 	asm( 
 "	      00536e64    jmp near ptr 00536E69h"
-"	      00536e69    mov eax,[ebp-4]"
+"	      00536e69    mov eax,this"
 "	      00536e6c    pop edi"
 "	      00536e6d    pop esi"
 "	      00536e6e    pop ebx"
@@ -86,11 +86,11 @@ void PoliceCarClass::~PoliceCarClass() {
 "	      00536e77    push ebx"
 "	      00536e78    push esi"
 "	      00536e79    push edi"
-"	      00536e7a    mov [ebp-4],ecx"
-"	      00536e7d    mov eax,[ebp-4]"
+"	      00536e7a    mov this,ecx"
+"	      00536e7d    mov eax,this"
 "	      00536e80    mov dword ptr [eax],593310h"
 "	      00536e86    jmp near ptr 00536E8Bh"
-"	      00536e8b    mov ecx,[ebp-4]"
+"	      00536e8b    mov ecx,this"
 "	      00536e8e    call 0054163Ah"
 "	      00536e93    pop edi"
 "	      00536e94    pop esi"
@@ -125,20 +125,20 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 "	      00536eb5    je near ptr 00536ECBh"
 "	      00536ebb    mov ecx,[ebp-34h]"
 "	      00536ebe    call 00536E30h"
-"	      00536ec3    mov [ebp-8],eax"
+"	      00536ec3    mov youveWonABrandNewCar,eax"
 "	      00536ec6    jmp near ptr 00536ED2h"
-"	      00536ecb    mov dword ptr [ebp-8],0"
+"	      00536ecb    mov youveWonABrandNewCar,0"
 );
 // LINE 128:
 	asm( 
-"	      00536ed2    cmp dword ptr [ebp-8],0"
+"	      00536ed2    cmp youveWonABrandNewCar,0"
 "	      00536ed6    je near ptr 00537075h"
 );
 // LINE 131:
 	asm( 
-"	      00536edc    mov eax,[ebp+8]"
+"	      00536edc    mov eax,instanceID"
 "	      00536edf    push eax"
-"	      00536ee0    mov ecx,[ebp-8]"
+"	      00536ee0    mov ecx,youveWonABrandNewCar"
 "	      00536ee3    call 00504554h"
 "	      00536ee8    test eax,eax"
 "	      00536eea    je near ptr 0053704Eh"
@@ -150,11 +150,11 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 "	      00536ef0    push 122h"
 "	      00536ef5    call 004D8821h"
 "	      00536efa    add esp,4"
-"	      00536efd    mov [ebp-0Ch],eax"
+"	      00536efd    mov object,eax"
 );
 // LINE 136:
 	asm( 
-"	      00536f00    mov eax,[ebp-0Ch]"
+"	      00536f00    mov eax,object"
 "	      00536f03    push eax"
 "	      00536f04    call 004D8520h"
 "	      00536f09    add esp,4"
@@ -163,27 +163,27 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 "	      00536f12    push eax"
 "	      00536f13    call 004CB4ACh"
 "	      00536f18    add esp,8"
-"	      00536f1b    mov [ebp-4],eax"
+"	      00536f1b    mov objectMemory,eax"
 );
 // LINE 138:
 	asm( 
-"	      00536f1e    cmp dword ptr [ebp-4],0"
+"	      00536f1e    cmp objectMemory,0"
 "	      00536f22    je near ptr 00536FABh"
 );
 // LINE 143:
 	asm( 
-"	      00536f28    mov eax,[ebp-4]"
+"	      00536f28    mov eax,objectMemory"
 "	      00536f2b    push eax"
-"	      00536f2c    mov eax,[ebp-0Ch]"
+"	      00536f2c    mov eax,object"
 "	      00536f2f    push eax"
 "	      00536f30    call 004D8570h"
 "	      00536f35    add esp,8"
-"	      00536f38    mov ecx,[ebp-8]"
+"	      00536f38    mov ecx,youveWonABrandNewCar"
 "	      00536f3b    mov [ecx+12Eh],eax"
 );
 // LINE 145:
 	asm( 
-"	      00536f41    mov eax,[ebp-8]"
+"	      00536f41    mov eax,youveWonABrandNewCar"
 "	      00536f44    cmp dword ptr [eax+12Eh],0"
 "	      00536f4b    je near ptr 00536F6Eh"
 );
@@ -191,7 +191,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	asm( 
 "	      00536f51    mov eax,ds:[5B4780h]"
 "	      00536f56    push eax"
-"	      00536f57    mov eax,[ebp-8]"
+"	      00536f57    mov eax,youveWonABrandNewCar"
 "	      00536f5a    mov eax,[eax+12Eh]"
 "	      00536f60    push eax"
 "	      00536f61    call 004D84DBh"
@@ -203,7 +203,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 153:
 	asm( 
-"	      00536f6e    mov eax,[ebp-8]"
+"	      00536f6e    mov eax,youveWonABrandNewCar"
 "	      00536f71    cmp dword ptr [eax+12Eh],0"
 "	      00536f78    jne near ptr 00536F9Ah"
 "	      00536f7e    push 99h"
@@ -225,7 +225,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 161:
 	asm( 
-"	      00536fab    cmp dword ptr [ebp-4],0"
+"	      00536fab    cmp objectMemory,0"
 "	      00536faf    jne near ptr 00536FD1h"
 "	      00536fb5    push 0A1h"
 "	      00536fba    push 5B7F00h"
@@ -242,19 +242,19 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 169:
 	asm( 
-"	      00536fdd    mov eax,[ebp-8]"
+"	      00536fdd    mov eax,youveWonABrandNewCar"
 "	      00536fe0    mov word ptr [eax+134h],0"
 );
 // LINE 170:
 	asm( 
-"	      00536fe9    mov eax,[ebp-8]"
+"	      00536fe9    mov eax,youveWonABrandNewCar"
 "	      00536fec    mov word ptr [eax+132h],21h"
 );
 // LINE 171:
 	asm( 
-"	      00536ff5    lea eax,[ebp-30h]"
+"	      00536ff5    lea eax,oinfo.Faces"
 "	      00536ff8    push eax"
-"	      00536ff9    mov eax,[ebp-8]"
+"	      00536ff9    mov eax,youveWonABrandNewCar"
 "	      00536ffc    mov eax,[eax+12Eh]"
 "	      00537002    push eax"
 "	      00537003    call 004D8859h"
@@ -262,14 +262,14 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 172:
 	asm( 
-"	      0053700b    mov eax,[ebp-24h]"
-"	      0053700e    mov ecx,[ebp-8]"
+"	      0053700b    mov eax,oinfo.Radius"
+"	      0053700e    mov ecx,youveWonABrandNewCar"
 "	      00537011    mov [ecx+136h],eax"
 );
 // LINE 173:
 	asm( 
 "	      00537017    push 0"
-"	      00537019    mov eax,[ebp-8]"
+"	      00537019    mov eax,youveWonABrandNewCar"
 "	      0053701c    mov eax,[eax+12Eh]"
 "	      00537022    push eax"
 "	      00537023    call 004D6970h"
@@ -277,14 +277,14 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 175:
 	asm( 
-"	      0053702b    mov eax,[ebp-8]"
+"	      0053702b    mov eax,youveWonABrandNewCar"
 "	      0053702e    mov ecx,ds:[5B7EB0h]"
 "	      00537034    mov [ecx*4+62B9E8h],eax"
 "	      0053703b    inc dword ptr ds:[5B7EB0h]"
 );
 // LINE 177:
 	asm( 
-"	      00537041    mov eax,[ebp-8]"
+"	      00537041    mov eax,youveWonABrandNewCar"
 "	      00537044    jmp near ptr 0053707Ch"
 );
 // LINE 179:
@@ -294,7 +294,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 182:
 	asm( 
-"	      0053704e    mov eax,[ebp-8]"
+"	      0053704e    mov eax,youveWonABrandNewCar"
 "	      00537051    mov [ebp-3Ch],eax"
 "	      00537054    mov eax,[ebp-3Ch]"
 "	      00537057    mov [ebp-38h],eax"
@@ -336,13 +336,13 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 	asm( 
 "	      00537087    push 5"
 "	      00537089    push 62B9E8h"
-"	      0053708e    mov eax,[ebp+0Ch]"
+"	      0053708e    mov eax,responseLevel"
 "	      00537091    push eax"
-"	      00537092    mov eax,[ebp+8]"
+"	      00537092    mov eax,responseType"
 "	      00537095    push eax"
-"	      00537096    mov eax,[ebp+14h]"
+"	      00537096    mov eax,mapy"
 "	      00537099    push eax"
-"	      0053709a    mov eax,[ebp+10h]"
+"	      0053709a    mov eax,mapx"
 "	      0053709d    push eax"
 "	      0053709e    mov ecx,ds:[5C3800h]"
 "	      005370a4    call 0053AB93h"
@@ -375,23 +375,23 @@ void PoliceCarClass::ItterateFSM() {
 "	      005370b9    push ebx"
 "	      005370ba    push esi"
 "	      005370bb    push edi"
-"	      005370bc    mov [ebp-44h],ecx"
+"	      005370bc    mov this,ecx"
 );
 // LINE 248:
 	asm( 
-"	      005370bf    mov eax,[ebp-44h]"
+"	      005370bf    mov eax,this"
 "	      005370c2    mov dword ptr [eax+31Eh],0"
 );
 // LINE 250:
 	asm( 
-"	      005370cc    mov eax,[ebp-44h]"
+"	      005370cc    mov eax,this"
 "	      005370cf    mov eax,[eax+294h]"
 "	      005370d5    mov [ebp-48h],eax"
 "	      005370d8    jmp near ptr 005379F3h"
 );
 // LINE 253:
 	asm( 
-"	      005370dd    mov eax,[ebp-44h]"
+"	      005370dd    mov eax,this"
 "	      005370e0    cmp dword ptr [eax+0FEh],0"
 "	      005370e7    jle near ptr 00537100h"
 );
@@ -400,27 +400,27 @@ void PoliceCarClass::ItterateFSM() {
 "	      005370ed    xor eax,eax"
 "	      005370ef    sub eax,ds:[5B4760h]"
 "	      005370f5    neg eax"
-"	      005370f7    mov ecx,[ebp-44h]"
+"	      005370f7    mov ecx,this"
 "	      005370fa    sub [ecx+0FEh],eax"
 );
 // LINE 256:
 	asm( 
-"	      00537100    mov eax,[ebp-44h]"
+"	      00537100    mov eax,this"
 "	      00537103    cmp dword ptr [eax+0FEh],0"
 "	      0053710a    jg near ptr 00537187h"
-"	      00537110    mov ecx,[ebp-44h]"
+"	      00537110    mov ecx,this"
 "	      00537113    call 005049FEh"
 "	      00537118    test eax,eax"
 "	      0053711a    je near ptr 00537187h"
 );
 // LINE 261:
 	asm( 
-"	      00537120    mov ecx,[ebp-44h]"
+"	      00537120    mov ecx,this"
 "	      00537123    call 00503E6Eh"
 );
 // LINE 262:
 	asm( 
-"	      00537128    mov eax,[ebp-44h]"
+"	      00537128    mov eax,this"
 "	      0053712b    movsx eax,word ptr [eax+1Ah]"
 "	      0053712f    push eax"
 "	      00537130    call 00500FC3h"
@@ -428,7 +428,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 263:
 	asm( 
-"	      00537138    mov eax,[ebp-44h]"
+"	      00537138    mov eax,this"
 "	      0053713b    mov eax,[eax+298h]"
 "	      00537141    push eax"
 "	      00537142    mov ecx,ds:[5C3800h]"
@@ -436,29 +436,29 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 267:
 	asm( 
-"	      0053714d    mov ecx,[ebp-44h]"
+"	      0053714d    mov ecx,this"
 "	      00537150    call 00504B0Ah"
 );
 // LINE 268:
 	asm( 
-"	      00537155    mov eax,[ebp-44h]"
+"	      00537155    mov eax,this"
 "	      00537158    mov eax,[eax]"
-"	      0053715a    mov ecx,[ebp-44h]"
+"	      0053715a    mov ecx,this"
 "	      0053715d    call dword ptr [eax+8]"
 );
 // LINE 269:
 	asm( 
-"	      00537160    mov eax,[ebp-44h]"
+"	      00537160    mov eax,this"
 "	      00537163    mov dword ptr [eax+294h],2"
 );
 // LINE 270:
 	asm( 
-"	      0053716d    mov eax,[ebp-44h]"
+"	      0053716d    mov eax,this"
 "	      00537170    mov dword ptr [eax+11Eh],3"
 );
 // LINE 271:
 	asm( 
-"	      0053717a    mov ecx,[ebp-44h]"
+"	      0053717a    mov ecx,this"
 "	      0053717d    call 005022B0h"
 );
 // LINE 273:
@@ -467,25 +467,25 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 276:
 	asm( 
-"	      00537187    mov eax,[ebp-44h]"
+"	      00537187    mov eax,this"
 "	      0053718a    mov ax,[eax+7Ch]"
 "	      0053718e    mov [ebp-4],ax"
 );
 // LINE 277:
 	asm( 
-"	      00537192    lea eax,[ebp-4]"
+"	      00537192    lea eax,badGuyLoc.x"
 "	      00537195    push eax"
-"	      00537196    mov ecx,[ebp-44h]"
+"	      00537196    mov ecx,this"
 "	      00537199    call 00537FD9h"
-"	      0053719e    mov ecx,[ebp-44h]"
+"	      0053719e    mov ecx,this"
 "	      005371a1    mov [ecx+322h],eax"
 );
 // LINE 278:
 	asm( 
-"	      005371a7    mov eax,[ebp-44h]"
+"	      005371a7    mov eax,this"
 "	      005371aa    cmp dword ptr [eax+322h],0"
 "	      005371b1    je near ptr 00537242h"
-"	      005371b7    mov eax,[ebp-44h]"
+"	      005371b7    mov eax,this"
 "	      005371ba    mov eax,[eax+322h]"
 "	      005371c0    movsx eax,word ptr [eax+0Ch]"
 "	      005371c4    test al,10h"
@@ -493,52 +493,52 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 281:
 	asm( 
-"	      005371cc    mov ecx,[ebp-44h]"
+"	      005371cc    mov ecx,this"
 "	      005371cf    call 0054293Bh"
 );
 // LINE 282:
 	asm( 
-"	      005371d4    mov eax,[ebp-44h]"
+"	      005371d4    mov eax,this"
 "	      005371d7    mov dword ptr [eax+294h],6"
 );
 // LINE 283:
 	asm( 
-"	      005371e1    mov eax,[ebp-44h]"
+"	      005371e1    mov eax,this"
 "	      005371e4    mov byte ptr [eax+292h],0"
 );
 // LINE 286:
 	asm( 
-"	      005371eb    mov dword ptr [ebp-2Ch],0Ah"
+"	      005371eb    mov mp.op,0Ah"
 );
 // LINE 287:
 	asm( 
-"	      005371f2    mov eax,[ebp-44h]"
+"	      005371f2    mov eax,this"
 "	      005371f5    mov eax,[eax+10Eh]"
-"	      005371fb    mov [ebp-28h],eax"
+"	      005371fb    mov mp.id,eax"
 );
 // LINE 288:
 	asm( 
-"	      005371fe    mov eax,[ebp-44h]"
+"	      005371fe    mov eax,this"
 "	      00537201    mov eax,[eax+322h]"
 "	      00537207    movsx eax,word ptr [eax+0Eh]"
 "	      0053720b    mov eax,[eax*4+608F80h]"
 "	      00537212    xor ecx,ecx"
 "	      00537214    mov cl,[eax+7Ch]"
-"	      00537217    mov [ebp-24h],ecx"
+"	      00537217    mov mp.maploc.x,ecx"
 );
 // LINE 289:
 	asm( 
-"	      0053721a    mov eax,[ebp-44h]"
+"	      0053721a    mov eax,this"
 "	      0053721d    mov eax,[eax+322h]"
 "	      00537223    movsx eax,word ptr [eax+0Eh]"
 "	      00537227    mov eax,[eax*4+608F80h]"
 "	      0053722e    xor ecx,ecx"
 "	      00537230    mov cl,[eax+7Dh]"
-"	      00537233    mov [ebp-20h],ecx"
+"	      00537233    mov mp.maploc.y,ecx"
 );
 // LINE 290:
 	asm( 
-"	      00537236    lea eax,[ebp-2Ch]"
+"	      00537236    lea eax,mp.op"
 "	      00537239    push eax"
 "	      0053723a    call 004FBD4Ah"
 "	      0053723f    add esp,4"
@@ -549,23 +549,23 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 295:
 	asm( 
-"	      00537247    mov ecx,[ebp-44h]"
+"	      00537247    mov ecx,this"
 "	      0053724a    call 005429D6h"
 );
 // LINE 298:
 	asm( 
-"	      0053724f    mov eax,[ebp-44h]"
+"	      0053724f    mov eax,this"
 "	      00537252    xor ecx,ecx"
 "	      00537254    mov cl,[eax+7Ch]"
-"	      00537257    mov eax,[ebp-44h]"
+"	      00537257    mov eax,this"
 "	      0053725a    xor edx,edx"
 "	      0053725c    mov dl,[eax+11Ah]"
 "	      00537262    cmp ecx,edx"
 "	      00537264    jne near ptr 005372B7h"
-"	      0053726a    mov eax,[ebp-44h]"
+"	      0053726a    mov eax,this"
 "	      0053726d    xor ecx,ecx"
 "	      0053726f    mov cl,[eax+7Dh]"
-"	      00537272    mov eax,[ebp-44h]"
+"	      00537272    mov eax,this"
 "	      00537275    xor edx,edx"
 "	      00537277    mov dl,[eax+11Bh]"
 "	      0053727d    cmp ecx,edx"
@@ -573,7 +573,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 301:
 	asm( 
-"	      00537285    mov eax,[ebp-44h]"
+"	      00537285    mov eax,this"
 "	      00537288    mov eax,[eax+298h]"
 "	      0053728e    push eax"
 "	      0053728f    mov ecx,ds:[5C3800h]"
@@ -581,12 +581,12 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 302:
 	asm( 
-"	      0053729a    mov ecx,[ebp-44h]"
+"	      0053729a    mov ecx,this"
 "	      0053729d    call 00503E6Eh"
 );
 // LINE 303:
 	asm( 
-"	      005372a2    mov eax,[ebp-44h]"
+"	      005372a2    mov eax,this"
 "	      005372a5    movsx eax,word ptr [eax+1Ah]"
 "	      005372a9    push eax"
 "	      005372aa    call 00500FC3h"
@@ -598,7 +598,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 308:
 	asm( 
-"	      005372b7    mov ecx,[ebp-44h]"
+"	      005372b7    mov ecx,this"
 "	      005372ba    call 005022B0h"
 );
 // LINE 309:
@@ -607,13 +607,13 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 312:
 	asm( 
-"	      005372c4    mov eax,[ebp-44h]"
+"	      005372c4    mov eax,this"
 "	      005372c7    test byte ptr [eax+8],10h"
 "	      005372cb    je near ptr 005372DEh"
 );
 // LINE 314:
 	asm( 
-"	      005372d1    mov ecx,[ebp-44h]"
+"	      005372d1    mov ecx,this"
 "	      005372d4    call 005022B0h"
 );
 // LINE 315:
@@ -622,30 +622,30 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 318:
 	asm( 
-"	      005372de    mov ecx,[ebp-44h]"
+"	      005372de    mov ecx,this"
 "	      005372e1    call 005422EEh"
 );
 // LINE 320:
 	asm( 
-"	      005372e6    mov eax,[ebp-44h]"
+"	      005372e6    mov eax,this"
 "	      005372e9    mov ax,[eax+7Ch]"
 "	      005372ed    mov [ebp-4],ax"
 );
 // LINE 321:
 	asm( 
-"	      005372f1    lea eax,[ebp-4]"
+"	      005372f1    lea eax,badGuyLoc.x"
 "	      005372f4    push eax"
-"	      005372f5    mov ecx,[ebp-44h]"
+"	      005372f5    mov ecx,this"
 "	      005372f8    call 00537FD9h"
-"	      005372fd    mov ecx,[ebp-44h]"
+"	      005372fd    mov ecx,this"
 "	      00537300    mov [ecx+322h],eax"
 );
 // LINE 322:
 	asm( 
-"	      00537306    mov eax,[ebp-44h]"
+"	      00537306    mov eax,this"
 "	      00537309    cmp dword ptr [eax+322h],0"
 "	      00537310    je near ptr 00537353h"
-"	      00537316    mov eax,[ebp-44h]"
+"	      00537316    mov eax,this"
 "	      00537319    mov eax,[eax+322h]"
 "	      0053731f    movsx eax,word ptr [eax+0Eh]"
 "	      00537323    mov eax,[eax*4+608F80h]"
@@ -654,69 +654,69 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 326:
 	asm( 
-"	      00537334    mov eax,[ebp-44h]"
+"	      00537334    mov eax,this"
 "	      00537337    test byte ptr [eax+8],10h"
 "	      0053733b    jne near ptr 0053734Eh"
 );
 // LINE 327:
 	asm( 
 "	      00537341    push 0FFFFFFFFh"
-"	      00537343    mov eax,[ebp-44h]"
+"	      00537343    mov eax,this"
 "	      00537346    mov eax,[eax]"
-"	      00537348    mov ecx,[ebp-44h]"
+"	      00537348    mov ecx,this"
 "	      0053734b    call dword ptr [eax+4]"
 );
 // LINE 329:
 	asm( 
 "	      0053734e    jmp near ptr 005375EBh"
-"	      00537353    mov eax,[ebp-44h]"
+"	      00537353    mov eax,this"
 "	      00537356    cmp dword ptr [eax+322h],0"
 "	      0053735d    je near ptr 00537431h"
-"	      00537363    mov eax,[ebp-44h]"
+"	      00537363    mov eax,this"
 "	      00537366    mov eax,[eax+322h]"
 "	      0053736c    movsx eax,word ptr [eax+0Eh]"
 "	      00537370    mov eax,[eax*4+608F80h]"
 "	      00537377    test byte ptr [eax+8],20h"
 "	      0053737b    je near ptr 00537431h"
-"	      00537381    mov eax,[ebp-44h]"
+"	      00537381    mov eax,this"
 "	      00537384    test byte ptr [eax+8],20h"
 "	      00537388    je near ptr 00537431h"
 );
 // LINE 332:
 	asm( 
-"	      0053738e    mov eax,[ebp-44h]"
+"	      0053738e    mov eax,this"
 "	      00537391    mov ax,[eax+11Ch]"
 "	      00537398    push eax"
-"	      00537399    mov ecx,[ebp-44h]"
+"	      00537399    mov ecx,this"
 "	      0053739c    call 00542461h"
 );
 // LINE 333:
 	asm( 
-"	      005373a1    mov ecx,[ebp-44h]"
+"	      005373a1    mov ecx,this"
 "	      005373a4    call 005429D6h"
 );
 // LINE 336:
 	asm( 
 "	      005373a9    push 8"
 "	      005373ab    push 0Eh"
-"	      005373ad    mov ecx,[ebp-44h]"
+"	      005373ad    mov ecx,this"
 "	      005373b0    call 0050217Ch"
 "	      005373b5    test eax,eax"
 "	      005373b7    je near ptr 005373EEh"
 );
 // LINE 338:
 	asm( 
-"	      005373bd    mov eax,[ebp-44h]"
+"	      005373bd    mov eax,this"
 "	      005373c0    mov dword ptr [eax+294h],5"
 );
 // LINE 339:
 	asm( 
-"	      005373ca    mov eax,[ebp-44h]"
+"	      005373ca    mov eax,this"
 "	      005373cd    mov dword ptr [eax+0F6h],0"
 );
 // LINE 340:
 	asm( 
-"	      005373d7    mov eax,[ebp-44h]"
+"	      005373d7    mov eax,this"
 "	      005373da    mov dword ptr [eax+0FEh],0F00000h"
 );
 // LINE 341:
@@ -739,12 +739,12 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 348:
 	asm( 
-"	      0053740f    mov ecx,[ebp-44h]"
+"	      0053740f    mov ecx,this"
 "	      00537412    call 00503E6Eh"
 );
 // LINE 349:
 	asm( 
-"	      00537417    mov eax,[ebp-44h]"
+"	      00537417    mov eax,this"
 "	      0053741a    movsx eax,word ptr [eax+1Ah]"
 "	      0053741e    push eax"
 "	      0053741f    call 00500FC3h"
@@ -760,25 +760,25 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 356:
 	asm( 
-"	      00537431    mov eax,[ebp-44h]"
+"	      00537431    mov eax,this"
 "	      00537434    mov ax,[eax+11Ch]"
 "	      0053743b    mov [ebp-34h],ax"
 );
 // LINE 358:
 	asm( 
-"	      0053743f    mov eax,[ebp-44h]"
+"	      0053743f    mov eax,this"
 "	      00537442    cmp dword ptr [eax+322h],0"
 "	      00537449    je near ptr 0053746Fh"
 );
 // LINE 360:
 	asm( 
 "	      0053744f    mov ax,[ebp-4]"
-"	      00537453    mov ecx,[ebp-44h]"
+"	      00537453    mov ecx,this"
 "	      00537456    mov [ecx+11Ch],ax"
 );
 // LINE 361:
 	asm( 
-"	      0053745d    mov eax,[ebp-44h]"
+"	      0053745d    mov eax,this"
 "	      00537460    mov dword ptr [eax+31Eh],1"
 );
 // LINE 363:
@@ -787,67 +787,67 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 365:
 	asm( 
-"	      0053746f    mov ecx,[ebp-44h]"
+"	      0053746f    mov ecx,this"
 "	      00537472    call 00537E2Fh"
-"	      00537477    mov ecx,[ebp-44h]"
+"	      00537477    mov ecx,this"
 "	      0053747a    mov [ecx+31Eh],eax"
 );
 // LINE 369:
 	asm( 
 "	      00537480    mov eax,ds:[6C126Ch]"
-"	      00537485    mov ecx,[ebp-44h]"
+"	      00537485    mov ecx,this"
 "	      00537488    sub eax,[ecx+24h]"
-"	      0053748b    mov [ebp-14h],eax"
+"	      0053748b    mov vec.x,eax"
 );
 // LINE 370:
 	asm( 
 "	      0053748e    mov eax,ds:[6C1270h]"
-"	      00537493    mov ecx,[ebp-44h]"
+"	      00537493    mov ecx,this"
 "	      00537496    sub eax,[ecx+28h]"
-"	      00537499    mov [ebp-10h],eax"
+"	      00537499    mov vec.y,eax"
 );
 // LINE 371:
 	asm( 
 "	      0053749c    mov eax,ds:[6C1274h]"
-"	      005374a1    mov ecx,[ebp-44h]"
+"	      005374a1    mov ecx,this"
 "	      005374a4    sub eax,[ecx+2Ch]"
-"	      005374a7    mov [ebp-0Ch],eax"
+"	      005374a7    mov vec.z,eax"
 );
 // LINE 372:
 	asm( 
-"	      005374aa    lea eax,[ebp-14h]"
+"	      005374aa    lea eax,vec.x"
 "	      005374ad    push eax"
 "	      005374ae    call 004CA1E3h"
 "	      005374b3    add esp,4"
-"	      005374b6    mov [ebp-8],eax"
+"	      005374b6    mov dist,eax"
 );
 // LINE 373:
 	asm( 
-"	      005374b9    mov eax,[ebp-8]"
+"	      005374b9    mov eax,dist"
 "	      005374bc    cmp ds:[608F74h],eax"
 "	      005374c2    jle near ptr 005374D0h"
 );
 // LINE 374:
 	asm( 
-"	      005374c8    mov eax,[ebp-8]"
+"	      005374c8    mov eax,dist"
 "	      005374cb    mov ds:[608F74h],eax"
 );
 // LINE 376:
 	asm( 
-"	      005374d0    mov ecx,[ebp-44h]"
+"	      005374d0    mov ecx,this"
 "	      005374d3    call 0050417Dh"
 );
 // LINE 380:
 	asm( 
 "	      005374d8    mov eax,[ebp-34h]"
 "	      005374db    push eax"
-"	      005374dc    mov ecx,[ebp-44h]"
+"	      005374dc    mov ecx,this"
 "	      005374df    call 00542461h"
-"	      005374e4    mov eax,[ebp-44h]"
+"	      005374e4    mov eax,this"
 "	      005374e7    xor ecx,ecx"
 "	      005374e9    mov cl,[eax+11Dh]"
 "	      005374ef    mov [ebp-3Ch],ecx"
-"	      005374f2    mov eax,[ebp-44h]"
+"	      005374f2    mov eax,this"
 "	      005374f5    xor ecx,ecx"
 "	      005374f7    mov cl,[eax+11Ch]"
 "	      005374fd    mov [ebp-40h],ecx"
@@ -872,59 +872,59 @@ void PoliceCarClass::ItterateFSM() {
 "	      00537544    jmp near ptr 00537549h"
 "	      00537549    jmp near ptr 0053754Eh"
 "	      0053754e    mov eax,[ebp-38h]"
-"	      00537551    mov [ebp-30h],eax"
+"	      00537551    mov cptr,eax"
 );
 // LINE 382:
 	asm( 
-"	      00537554    mov eax,[ebp-30h]"
+"	      00537554    mov eax,cptr"
 "	      00537557    movsx eax,word ptr [eax+2]"
 "	      0053755b    shl eax,10h"
-"	      0053755e    mov ecx,[ebp-44h]"
+"	      0053755e    mov ecx,this"
 "	      00537561    mov [ecx+13Eh],eax"
 );
 // LINE 383:
 	asm( 
-"	      00537567    mov eax,[ebp-30h]"
+"	      00537567    mov eax,cptr"
 "	      0053756a    movsx eax,word ptr [eax+4]"
 "	      0053756e    shl eax,10h"
-"	      00537571    mov ecx,[ebp-44h]"
+"	      00537571    mov ecx,this"
 "	      00537574    mov [ecx+142h],eax"
 );
 // LINE 384:
 	asm( 
-"	      0053757a    mov eax,[ebp-30h]"
+"	      0053757a    mov eax,cptr"
 "	      0053757d    movsx eax,word ptr [eax+6]"
 "	      00537581    shl eax,10h"
-"	      00537584    mov ecx,[ebp-44h]"
+"	      00537584    mov ecx,this"
 "	      00537587    mov [ecx+146h],eax"
 );
 // LINE 385:
 	asm( 
-"	      0053758d    mov eax,[ebp-44h]"
+"	      0053758d    mov eax,this"
 "	      00537590    add dword ptr [eax+142h],0A0000h"
 );
 // LINE 386:
 	asm( 
-"	      0053759a    mov eax,[ebp-44h]"
+"	      0053759a    mov eax,this"
 "	      0053759d    mov ax,[eax+11Ch]"
 "	      005375a4    push eax"
-"	      005375a5    mov ecx,[ebp-44h]"
+"	      005375a5    mov ecx,this"
 "	      005375a8    call 00542570h"
 );
 // LINE 388:
 	asm( 
-"	      005375ad    mov eax,[ebp-44h]"
+"	      005375ad    mov eax,this"
 "	      005375b0    xor ecx,ecx"
 "	      005375b2    mov cl,[eax+7Ch]"
-"	      005375b5    mov eax,[ebp-44h]"
+"	      005375b5    mov eax,this"
 "	      005375b8    xor edx,edx"
 "	      005375ba    mov dl,[eax+11Ch]"
 "	      005375c0    cmp ecx,edx"
 "	      005375c2    jne near ptr 005375E3h"
-"	      005375c8    mov eax,[ebp-44h]"
+"	      005375c8    mov eax,this"
 "	      005375cb    xor ecx,ecx"
 "	      005375cd    mov cl,[eax+7Dh]"
-"	      005375d0    mov eax,[ebp-44h]"
+"	      005375d0    mov eax,this"
 "	      005375d3    xor edx,edx"
 "	      005375d5    mov dl,[eax+11Dh]"
 "	      005375db    cmp ecx,edx"
@@ -932,7 +932,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 389:
 	asm( 
-"	      005375e3    mov ecx,[ebp-44h]"
+"	      005375e3    mov ecx,this"
 "	      005375e6    call 005022B0h"
 );
 // LINE 392:
@@ -941,48 +941,48 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 396:
 	asm( 
-"	      005375f0    mov ecx,[ebp-44h]"
+"	      005375f0    mov ecx,this"
 "	      005375f3    call 005422EEh"
 );
 // LINE 399:
 	asm( 
-"	      005375f8    mov eax,[ebp-44h]"
+"	      005375f8    mov eax,this"
 "	      005375fb    xor ecx,ecx"
 "	      005375fd    mov cl,[eax+7Ch]"
-"	      00537600    mov eax,[ebp-44h]"
+"	      00537600    mov eax,this"
 "	      00537603    xor edx,edx"
 "	      00537605    mov dl,[eax+11Ch]"
 "	      0053760b    cmp ecx,edx"
 "	      0053760d    jne near ptr 00537642h"
-"	      00537613    mov eax,[ebp-44h]"
+"	      00537613    mov eax,this"
 "	      00537616    xor ecx,ecx"
 "	      00537618    mov cl,[eax+7Dh]"
-"	      0053761b    mov eax,[ebp-44h]"
+"	      0053761b    mov eax,this"
 "	      0053761e    xor edx,edx"
 "	      00537620    mov dl,[eax+11Dh]"
 "	      00537626    cmp ecx,edx"
 "	      00537628    jne near ptr 00537642h"
-"	      0053762e    mov eax,[ebp-44h]"
+"	      0053762e    mov eax,this"
 "	      00537631    test byte ptr [eax+8],70h"
 "	      00537635    jne near ptr 00537642h"
 );
 // LINE 401:
 	asm( 
-"	      0053763b    mov eax,[ebp-44h]"
+"	      0053763b    mov eax,this"
 "	      0053763e    or dword ptr [eax+8],4"
 );
 // LINE 404:
 	asm( 
-"	      00537642    mov eax,[ebp-44h]"
+"	      00537642    mov eax,this"
 "	      00537645    test byte ptr [eax+8],4"
 "	      00537649    je near ptr 0053777Dh"
 );
 // LINE 406:
 	asm( 
-"	      0053764f    mov eax,[ebp-44h]"
+"	      0053764f    mov eax,this"
 "	      00537652    test byte ptr [eax+8],30h"
 "	      00537656    jne near ptr 0053767Eh"
-"	      0053765c    mov ecx,[ebp-44h]"
+"	      0053765c    mov ecx,this"
 "	      0053765f    call 005045B6h"
 "	      00537664    test eax,eax"
 "	      00537666    je near ptr 0053767Eh"
@@ -990,54 +990,54 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 408:
 	asm( 
 "	      0053766c    push 0FFFFFFFFh"
-"	      0053766e    mov eax,[ebp-44h]"
+"	      0053766e    mov eax,this"
 "	      00537671    mov eax,[eax]"
-"	      00537673    mov ecx,[ebp-44h]"
+"	      00537673    mov ecx,this"
 "	      00537676    call dword ptr [eax+4]"
 );
 // LINE 410:
 	asm( 
 "	      00537679    jmp near ptr 00537770h"
-"	      0053767e    mov eax,[ebp-44h]"
+"	      0053767e    mov eax,this"
 "	      00537681    test byte ptr [eax+8],20h"
 "	      00537685    je near ptr 00537770h"
 );
 // LINE 412:
 	asm( 
-"	      0053768b    mov eax,[ebp-44h]"
+"	      0053768b    mov eax,this"
 "	      0053768e    mov ax,[eax+11Ch]"
 "	      00537695    push eax"
-"	      00537696    mov ecx,[ebp-44h]"
+"	      00537696    mov ecx,this"
 "	      00537699    call 00542461h"
 );
 // LINE 413:
 	asm( 
-"	      0053769e    mov ecx,[ebp-44h]"
+"	      0053769e    mov ecx,this"
 "	      005376a1    call 005429D6h"
 );
 // LINE 414:
 	asm( 
-"	      005376a6    mov eax,[ebp-44h]"
+"	      005376a6    mov eax,this"
 "	      005376a9    and dword ptr [eax+8],0FFFFFFFBh"
 );
 // LINE 417:
 	asm( 
-"	      005376ad    mov eax,[ebp-44h]"
+"	      005376ad    mov eax,this"
 "	      005376b0    mov ax,[eax+7Ch]"
 "	      005376b4    mov [ebp-4],ax"
 );
 // LINE 418:
 	asm( 
-"	      005376b8    lea eax,[ebp-4]"
+"	      005376b8    lea eax,badGuyLoc.x"
 "	      005376bb    push eax"
-"	      005376bc    mov ecx,[ebp-44h]"
+"	      005376bc    mov ecx,this"
 "	      005376bf    call 00537FD9h"
-"	      005376c4    mov ecx,[ebp-44h]"
+"	      005376c4    mov ecx,this"
 "	      005376c7    mov [ecx+322h],eax"
 );
 // LINE 419:
 	asm( 
-"	      005376cd    mov eax,[ebp-44h]"
+"	      005376cd    mov eax,this"
 "	      005376d0    cmp dword ptr [eax+322h],0"
 "	      005376d7    je near ptr 0053773Ch"
 );
@@ -1045,24 +1045,24 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      005376dd    push 8"
 "	      005376df    push 0Eh"
-"	      005376e1    mov ecx,[ebp-44h]"
+"	      005376e1    mov ecx,this"
 "	      005376e4    call 0050217Ch"
 "	      005376e9    test eax,eax"
 "	      005376eb    je near ptr 0053771Dh"
 );
 // LINE 424:
 	asm( 
-"	      005376f1    mov eax,[ebp-44h]"
+"	      005376f1    mov eax,this"
 "	      005376f4    mov dword ptr [eax+294h],5"
 );
 // LINE 425:
 	asm( 
-"	      005376fe    mov eax,[ebp-44h]"
+"	      005376fe    mov eax,this"
 "	      00537701    mov dword ptr [eax+0F6h],0"
 );
 // LINE 426:
 	asm( 
-"	      0053770b    mov eax,[ebp-44h]"
+"	      0053770b    mov eax,this"
 "	      0053770e    mov dword ptr [eax+0FEh],0F00000h"
 );
 // LINE 428:
@@ -1071,12 +1071,12 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 432:
 	asm( 
-"	      0053771d    mov eax,[ebp-44h]"
+"	      0053771d    mov eax,this"
 "	      00537720    mov dword ptr [eax+0FEh],0"
 );
 // LINE 433:
 	asm( 
-"	      0053772a    mov eax,[ebp-44h]"
+"	      0053772a    mov eax,this"
 "	      0053772d    mov dword ptr [eax+294h],1"
 );
 // LINE 436:
@@ -1085,22 +1085,22 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 439:
 	asm( 
-"	      0053773c    mov ecx,[ebp-44h]"
+"	      0053773c    mov ecx,this"
 "	      0053773f    call 005429D6h"
 );
 // LINE 440:
 	asm( 
-"	      00537744    mov eax,[ebp-44h]"
+"	      00537744    mov eax,this"
 "	      00537747    mov dword ptr [eax+294h],1"
 );
 // LINE 441:
 	asm( 
-"	      00537751    mov eax,[ebp-44h]"
+"	      00537751    mov eax,this"
 "	      00537754    mov dword ptr [eax+0F6h],0"
 );
 // LINE 442:
 	asm( 
-"	      0053775e    mov eax,[ebp-44h]"
+"	      0053775e    mov eax,this"
 "	      00537761    mov dword ptr [eax+0FEh],12C0000h"
 );
 // LINE 445:
@@ -1109,7 +1109,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 448:
 	asm( 
-"	      00537770    mov ecx,[ebp-44h]"
+"	      00537770    mov ecx,this"
 "	      00537773    call 005022B0h"
 );
 // LINE 450:
@@ -1119,51 +1119,51 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 453:
 	asm( 
 "	      0053777d    mov eax,ds:[6C126Ch]"
-"	      00537782    mov ecx,[ebp-44h]"
+"	      00537782    mov ecx,this"
 "	      00537785    sub eax,[ecx+24h]"
-"	      00537788    mov [ebp-14h],eax"
+"	      00537788    mov vec.x,eax"
 );
 // LINE 454:
 	asm( 
 "	      0053778b    mov eax,ds:[6C1270h]"
-"	      00537790    mov ecx,[ebp-44h]"
+"	      00537790    mov ecx,this"
 "	      00537793    sub eax,[ecx+28h]"
-"	      00537796    mov [ebp-10h],eax"
+"	      00537796    mov vec.y,eax"
 );
 // LINE 455:
 	asm( 
 "	      00537799    mov eax,ds:[6C1274h]"
-"	      0053779e    mov ecx,[ebp-44h]"
+"	      0053779e    mov ecx,this"
 "	      005377a1    sub eax,[ecx+2Ch]"
-"	      005377a4    mov [ebp-0Ch],eax"
+"	      005377a4    mov vec.z,eax"
 );
 // LINE 456:
 	asm( 
-"	      005377a7    lea eax,[ebp-14h]"
+"	      005377a7    lea eax,vec.x"
 "	      005377aa    push eax"
 "	      005377ab    call 004CA1E3h"
 "	      005377b0    add esp,4"
-"	      005377b3    mov [ebp-8],eax"
+"	      005377b3    mov dist,eax"
 );
 // LINE 457:
 	asm( 
-"	      005377b6    mov eax,[ebp-8]"
+"	      005377b6    mov eax,dist"
 "	      005377b9    cmp ds:[608F74h],eax"
 "	      005377bf    jle near ptr 005377CDh"
 );
 // LINE 458:
 	asm( 
-"	      005377c5    mov eax,[ebp-8]"
+"	      005377c5    mov eax,dist"
 "	      005377c8    mov ds:[608F74h],eax"
 );
 // LINE 460:
 	asm( 
-"	      005377cd    mov ecx,[ebp-44h]"
+"	      005377cd    mov ecx,this"
 "	      005377d0    call 0050417Dh"
 );
 // LINE 461:
 	asm( 
-"	      005377d5    mov ecx,[ebp-44h]"
+"	      005377d5    mov ecx,this"
 "	      005377d8    call 005022B0h"
 );
 // LINE 463:
@@ -1172,13 +1172,13 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 466:
 	asm( 
-"	      005377e2    mov eax,[ebp-44h]"
+"	      005377e2    mov eax,this"
 "	      005377e5    test byte ptr [eax+8],20h"
 "	      005377e9    jne near ptr 005377FCh"
 );
 // LINE 469:
 	asm( 
-"	      005377ef    mov ecx,[ebp-44h]"
+"	      005377ef    mov ecx,this"
 "	      005377f2    call 005022B0h"
 );
 // LINE 470:
@@ -1187,7 +1187,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 473:
 	asm( 
-"	      005377fc    mov eax,[ebp-44h]"
+"	      005377fc    mov eax,this"
 "	      005377ff    cmp dword ptr [eax+0FEh],0"
 "	      00537806    jle near ptr 0053781Fh"
 );
@@ -1196,40 +1196,40 @@ void PoliceCarClass::ItterateFSM() {
 "	      0053780c    xor eax,eax"
 "	      0053780e    sub eax,ds:[5B4760h]"
 "	      00537814    neg eax"
-"	      00537816    mov ecx,[ebp-44h]"
+"	      00537816    mov ecx,this"
 "	      00537819    sub [ecx+0FEh],eax"
 );
 // LINE 477:
 	asm( 
-"	      0053781f    mov eax,[ebp-44h]"
+"	      0053781f    mov eax,this"
 "	      00537822    cmp dword ptr [eax+0F6h],0"
 "	      00537829    jne near ptr 0053783Fh"
-"	      0053782f    mov eax,[ebp-44h]"
+"	      0053782f    mov eax,this"
 "	      00537832    cmp dword ptr [eax+0FEh],0"
 "	      00537839    jg near ptr 00537907h"
 );
 // LINE 479:
 	asm( 
-"	      0053783f    mov eax,[ebp-44h]"
+"	      0053783f    mov eax,this"
 "	      00537842    cmp dword ptr [eax+0FAh],0"
 "	      00537849    jne near ptr 0053785Fh"
-"	      0053784f    mov eax,[ebp-44h]"
+"	      0053784f    mov eax,this"
 "	      00537852    cmp dword ptr [eax+0FEh],0"
 "	      00537859    jg near ptr 005378FAh"
 );
 // LINE 481:
 	asm( 
-"	      0053785f    mov ecx,[ebp-44h]"
+"	      0053785f    mov ecx,this"
 "	      00537862    call 00504B0Ah"
 );
 // LINE 485:
 	asm( 
-"	      00537867    mov ecx,[ebp-44h]"
+"	      00537867    mov ecx,this"
 "	      0053786a    call 00503E6Eh"
 );
 // LINE 486:
 	asm( 
-"	      0053786f    mov eax,[ebp-44h]"
+"	      0053786f    mov eax,this"
 "	      00537872    movsx eax,word ptr [eax+1Ah]"
 "	      00537876    push eax"
 "	      00537877    call 00500FC3h"
@@ -1237,7 +1237,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 487:
 	asm( 
-"	      0053787f    mov eax,[ebp-44h]"
+"	      0053787f    mov eax,this"
 "	      00537882    mov eax,[eax+298h]"
 "	      00537888    push eax"
 "	      00537889    mov ecx,ds:[5C3820h]"
@@ -1245,25 +1245,25 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 491:
 	asm( 
-"	      00537894    mov eax,[ebp-44h]"
+"	      00537894    mov eax,this"
 "	      00537897    mov dword ptr [eax+294h],2"
 );
 // LINE 492:
 	asm( 
-"	      005378a1    mov eax,[ebp-44h]"
+"	      005378a1    mov eax,this"
 "	      005378a4    mov eax,[eax]"
-"	      005378a6    mov ecx,[ebp-44h]"
+"	      005378a6    mov ecx,this"
 "	      005378a9    call dword ptr [eax+8]"
 );
 // LINE 495:
 	asm( 
-"	      005378ac    mov eax,[ebp-44h]"
+"	      005378ac    mov eax,this"
 "	      005378af    cmp dword ptr [eax+322h],0"
 "	      005378b6    je near ptr 005378F5h"
 );
 // LINE 497:
 	asm( 
-"	      005378bc    mov eax,[ebp-44h]"
+"	      005378bc    mov eax,this"
 "	      005378bf    mov eax,[eax+322h]"
 "	      005378c5    movsx eax,word ptr [eax+0Eh]"
 "	      005378c9    mov eax,[eax*4+608F80h]"
@@ -1272,7 +1272,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 498:
 	asm( 
-"	      005378da    mov eax,[ebp-44h]"
+"	      005378da    mov eax,this"
 "	      005378dd    mov eax,[eax+322h]"
 "	      005378e3    movsx eax,word ptr [eax+0Eh]"
 "	      005378e7    mov eax,[eax*4+608F80h]"
@@ -1284,7 +1284,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 503:
 	asm( 
-"	      005378fa    mov eax,[ebp-44h]"
+"	      005378fa    mov eax,this"
 "	      005378fd    mov dword ptr [eax+294h],1"
 );
 // LINE 506:
@@ -1293,25 +1293,25 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 509:
 	asm( 
-"	      0053790c    mov eax,[ebp-44h]"
+"	      0053790c    mov eax,this"
 "	      0053790f    mov ax,[eax+7Ch]"
 "	      00537913    mov [ebp-4],ax"
 );
 // LINE 510:
 	asm( 
-"	      00537917    lea eax,[ebp-4]"
+"	      00537917    lea eax,badGuyLoc.x"
 "	      0053791a    push eax"
-"	      0053791b    mov ecx,[ebp-44h]"
+"	      0053791b    mov ecx,this"
 "	      0053791e    call 00537FD9h"
-"	      00537923    mov ecx,[ebp-44h]"
+"	      00537923    mov ecx,this"
 "	      00537926    mov [ecx+322h],eax"
 );
 // LINE 511:
 	asm( 
-"	      0053792c    mov eax,[ebp-44h]"
+"	      0053792c    mov eax,this"
 "	      0053792f    cmp dword ptr [eax+322h],0"
 "	      00537936    je near ptr 005379B6h"
-"	      0053793c    mov eax,[ebp-44h]"
+"	      0053793c    mov eax,this"
 "	      0053793f    mov eax,[eax+322h]"
 "	      00537945    movsx eax,word ptr [eax+0Ch]"
 "	      00537949    test al,10h"
@@ -1320,51 +1320,51 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 514:
 	asm( 
 "	      00537951    mov eax,ds:[6C126Ch]"
-"	      00537956    mov ecx,[ebp-44h]"
+"	      00537956    mov ecx,this"
 "	      00537959    sub eax,[ecx+24h]"
-"	      0053795c    mov [ebp-14h],eax"
+"	      0053795c    mov vec.x,eax"
 );
 // LINE 515:
 	asm( 
 "	      0053795f    mov eax,ds:[6C1270h]"
-"	      00537964    mov ecx,[ebp-44h]"
+"	      00537964    mov ecx,this"
 "	      00537967    sub eax,[ecx+28h]"
-"	      0053796a    mov [ebp-10h],eax"
+"	      0053796a    mov vec.y,eax"
 );
 // LINE 516:
 	asm( 
 "	      0053796d    mov eax,ds:[6C1274h]"
-"	      00537972    mov ecx,[ebp-44h]"
+"	      00537972    mov ecx,this"
 "	      00537975    sub eax,[ecx+2Ch]"
-"	      00537978    mov [ebp-0Ch],eax"
+"	      00537978    mov vec.z,eax"
 );
 // LINE 517:
 	asm( 
-"	      0053797b    lea eax,[ebp-14h]"
+"	      0053797b    lea eax,vec.x"
 "	      0053797e    push eax"
 "	      0053797f    call 004CA1E3h"
 "	      00537984    add esp,4"
-"	      00537987    mov [ebp-8],eax"
+"	      00537987    mov dist,eax"
 );
 // LINE 518:
 	asm( 
-"	      0053798a    mov eax,[ebp-8]"
+"	      0053798a    mov eax,dist"
 "	      0053798d    cmp ds:[608F74h],eax"
 "	      00537993    jle near ptr 005379A1h"
 );
 // LINE 519:
 	asm( 
-"	      00537999    mov eax,[ebp-8]"
+"	      00537999    mov eax,dist"
 "	      0053799c    mov ds:[608F74h],eax"
 );
 // LINE 521:
 	asm( 
-"	      005379a1    mov ecx,[ebp-44h]"
+"	      005379a1    mov ecx,this"
 "	      005379a4    call 0050417Dh"
 );
 // LINE 522:
 	asm( 
-"	      005379a9    mov ecx,[ebp-44h]"
+"	      005379a9    mov ecx,this"
 "	      005379ac    call 005022B0h"
 );
 // LINE 524:
@@ -1373,7 +1373,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 527:
 	asm( 
-"	      005379b6    mov eax,[ebp-44h]"
+"	      005379b6    mov eax,this"
 "	      005379b9    mov dword ptr [eax+294h],2"
 );
 // LINE 529:
@@ -1438,17 +1438,17 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 "	      00537a32    push ebx"
 "	      00537a33    push esi"
 "	      00537a34    push edi"
-"	      00537a35    mov [ebp-3Ch],ecx"
+"	      00537a35    mov this,ecx"
 );
 // LINE 545:
 	asm( 
-"	      00537a38    mov eax,[ebp-3Ch]"
+"	      00537a38    mov eax,this"
 "	      00537a3b    cmp dword ptr [eax+11Eh],3"
 "	      00537a42    jne near ptr 00537E06h"
 );
 // LINE 547:
 	asm( 
-"	      00537a48    mov eax,[ebp-3Ch]"
+"	      00537a48    mov eax,this"
 "	      00537a4b    cmp dword ptr [eax+31Eh],0"
 "	      00537a52    je near ptr 00537DAAh"
 );
@@ -1457,39 +1457,39 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	struct _RGIndex destVertex;
 	struct _RGIndex startVertex;
 	asm( 
-"	      00537a58    mov eax,[ebp-3Ch]"
+"	      00537a58    mov eax,this"
 "	      00537a5b    mov ax,[eax+7Ch]"
 "	      00537a5f    mov [ebp-4],ax"
 );
 // LINE 555:
 	asm( 
-"	      00537a63    mov al,[ebp-4]"
-"	      00537a66    mov [ebp-8],al"
+"	      00537a63    mov al,startLoc.x"
+"	      00537a66    mov startVertex.x,al"
 );
 // LINE 556:
 	asm( 
 "	      00537a69    xor eax,eax"
-"	      00537a6b    mov al,[ebp-3]"
+"	      00537a6b    mov al,startLoc.y"
 "	      00537a6e    push eax"
 "	      00537a6f    xor eax,eax"
-"	      00537a71    mov al,[ebp-4]"
+"	      00537a71    mov al,startLoc.x"
 "	      00537a74    push eax"
 "	      00537a75    mov ecx,5C3828h"
 "	      00537a7a    call 0053D167h"
-"	      00537a7f    mov [ebp-7],al"
+"	      00537a7f    mov startVertex.yindex,al"
 );
 // LINE 558:
 	asm( 
-"	      00537a82    mov eax,[ebp-3Ch]"
+"	      00537a82    mov eax,this"
 "	      00537a85    add eax,2F4h"
 "	      00537a8a    push eax"
-"	      00537a8b    mov eax,[ebp-3Ch]"
+"	      00537a8b    mov eax,this"
 "	      00537a8e    add eax,2CAh"
 "	      00537a93    push eax"
-"	      00537a94    mov eax,[ebp-3Ch]"
+"	      00537a94    mov eax,this"
 "	      00537a97    mov ax,[eax+11Ch]"
 "	      00537a9e    push eax"
-"	      00537a9f    mov eax,[ebp-3Ch]"
+"	      00537a9f    mov eax,this"
 "	      00537aa2    mov ax,[eax+11Ch]"
 "	      00537aa9    push eax"
 "	      00537aaa    lea eax,[ebp-38h]"
@@ -1499,13 +1499,13 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 562:
 	asm( 
-"	      00537ab8    mov eax,[ebp-3Ch]"
+"	      00537ab8    mov eax,this"
 "	      00537abb    cmp dword ptr [eax+2F4h],0"
 "	      00537ac2    jne near ptr 00537B19h"
 );
 // LINE 564:
 	asm( 
-"	      00537ac8    mov eax,[ebp-3Ch]"
+"	      00537ac8    mov eax,this"
 "	      00537acb    cmp dword ptr [eax+2CAh],0"
 "	      00537ad2    jne near ptr 00537AF4h"
 "	      00537ad8    push 234h"
@@ -1518,8 +1518,8 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 565:
 	asm( 
-"	      00537af9    mov esi,[ebp-3Ch]"
-"	      00537afc    mov edi,[ebp-3Ch]"
+"	      00537af9    mov esi,this"
+"	      00537afc    mov edi,this"
 "	      00537aff    add edi,2A0h"
 "	      00537b05    add esi,2CAh"
 "	      00537b0b    mov ecx,0Ah"
@@ -1529,13 +1529,13 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 567:
 	asm( 
 "	      00537b14    jmp near ptr 00537CB9h"
-"	      00537b19    mov eax,[ebp-3Ch]"
+"	      00537b19    mov eax,this"
 "	      00537b1c    cmp dword ptr [eax+2CAh],0"
 "	      00537b23    jne near ptr 00537B7Ah"
 );
 // LINE 569:
 	asm( 
-"	      00537b29    mov eax,[ebp-3Ch]"
+"	      00537b29    mov eax,this"
 "	      00537b2c    cmp dword ptr [eax+2F4h],0"
 "	      00537b33    jne near ptr 00537B55h"
 "	      00537b39    push 239h"
@@ -1548,8 +1548,8 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 570:
 	asm( 
-"	      00537b5a    mov esi,[ebp-3Ch]"
-"	      00537b5d    mov edi,[ebp-3Ch]"
+"	      00537b5a    mov esi,this"
+"	      00537b5d    mov edi,this"
 "	      00537b60    add edi,2A0h"
 "	      00537b66    add esi,2F4h"
 "	      00537b6c    mov ecx,0Ah"
@@ -1559,27 +1559,27 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 574:
 	asm( 
 "	      00537b75    jmp near ptr 00537CB9h"
-"	      00537b7a    mov eax,[ebp-3Ch]"
+"	      00537b7a    mov eax,this"
 "	      00537b7d    mov eax,[eax+2CAh]"
 "	      00537b83    xor ecx,ecx"
 "	      00537b85    mov cl,[eax]"
 "	      00537b87    xor eax,eax"
-"	      00537b89    mov al,[ebp-4]"
+"	      00537b89    mov al,startLoc.x"
 "	      00537b8c    cmp ecx,eax"
 "	      00537b8e    jne near ptr 00537BF0h"
-"	      00537b94    mov eax,[ebp-3Ch]"
+"	      00537b94    mov eax,this"
 "	      00537b97    mov eax,[eax+2CAh]"
 "	      00537b9d    xor ecx,ecx"
 "	      00537b9f    mov cl,[eax+1]"
 "	      00537ba2    xor eax,eax"
-"	      00537ba4    mov al,[ebp-3]"
+"	      00537ba4    mov al,startLoc.y"
 "	      00537ba7    cmp ecx,eax"
 "	      00537ba9    jne near ptr 00537BF0h"
 );
 // LINE 576:
 	asm( 
-"	      00537baf    mov esi,[ebp-3Ch]"
-"	      00537bb2    mov edi,[ebp-3Ch]"
+"	      00537baf    mov esi,this"
+"	      00537bb2    mov edi,this"
 "	      00537bb5    add edi,2A0h"
 "	      00537bbb    add esi,2CAh"
 "	      00537bc1    mov ecx,0Ah"
@@ -1588,9 +1588,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 577:
 	asm( 
-"	      00537bca    mov eax,[ebp-3Ch]"
+"	      00537bca    mov eax,this"
 "	      00537bcd    mov eax,[eax+2D8h]"
-"	      00537bd3    mov ecx,[ebp-3Ch]"
+"	      00537bd3    mov ecx,this"
 "	      00537bd6    mov ecx,[ecx+0E2h]"
 "	      00537bdc    shl ecx,4"
 "	      00537bdf    mov eax,[ecx+eax*4+5932D0h]"
@@ -1599,27 +1599,27 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 579:
 	asm( 
 "	      00537beb    jmp near ptr 00537CB9h"
-"	      00537bf0    mov eax,[ebp-3Ch]"
+"	      00537bf0    mov eax,this"
 "	      00537bf3    mov eax,[eax+2F4h]"
 "	      00537bf9    xor ecx,ecx"
 "	      00537bfb    mov cl,[eax]"
 "	      00537bfd    xor eax,eax"
-"	      00537bff    mov al,[ebp-4]"
+"	      00537bff    mov al,startLoc.x"
 "	      00537c02    cmp ecx,eax"
 "	      00537c04    jne near ptr 00537C66h"
-"	      00537c0a    mov eax,[ebp-3Ch]"
+"	      00537c0a    mov eax,this"
 "	      00537c0d    mov eax,[eax+2F4h]"
 "	      00537c13    xor ecx,ecx"
 "	      00537c15    mov cl,[eax+1]"
 "	      00537c18    xor eax,eax"
-"	      00537c1a    mov al,[ebp-3]"
+"	      00537c1a    mov al,startLoc.y"
 "	      00537c1d    cmp ecx,eax"
 "	      00537c1f    jne near ptr 00537C66h"
 );
 // LINE 581:
 	asm( 
-"	      00537c25    mov esi,[ebp-3Ch]"
-"	      00537c28    mov edi,[ebp-3Ch]"
+"	      00537c25    mov esi,this"
+"	      00537c28    mov edi,this"
 "	      00537c2b    add edi,2A0h"
 "	      00537c31    add esi,2F4h"
 "	      00537c37    mov ecx,0Ah"
@@ -1628,9 +1628,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 582:
 	asm( 
-"	      00537c40    mov eax,[ebp-3Ch]"
+"	      00537c40    mov eax,this"
 "	      00537c43    mov eax,[eax+302h]"
-"	      00537c49    mov ecx,[ebp-3Ch]"
+"	      00537c49    mov ecx,this"
 "	      00537c4c    mov ecx,[ecx+0E2h]"
 "	      00537c52    shl ecx,4"
 "	      00537c55    mov eax,[ecx+eax*4+5932D0h]"
@@ -1639,16 +1639,16 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 584:
 	asm( 
 "	      00537c61    jmp near ptr 00537CB9h"
-"	      00537c66    mov eax,[ebp-3Ch]"
-"	      00537c69    mov ecx,[ebp-3Ch]"
+"	      00537c66    mov eax,this"
+"	      00537c69    mov ecx,this"
 "	      00537c6c    mov ecx,[ecx+2CAh]"
 "	      00537c72    cmp [eax+2A0h],ecx"
 "	      00537c78    jne near ptr 00537C9Eh"
 );
 // LINE 586:
 	asm( 
-"	      00537c7e    mov esi,[ebp-3Ch]"
-"	      00537c81    mov edi,[ebp-3Ch]"
+"	      00537c7e    mov esi,this"
+"	      00537c81    mov edi,this"
 "	      00537c84    add edi,2A0h"
 "	      00537c8a    add esi,2F4h"
 "	      00537c90    mov ecx,0Ah"
@@ -1661,8 +1661,8 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 590:
 	asm( 
-"	      00537c9e    mov esi,[ebp-3Ch]"
-"	      00537ca1    mov edi,[ebp-3Ch]"
+"	      00537c9e    mov esi,this"
+"	      00537ca1    mov edi,this"
 "	      00537ca4    add edi,2A0h"
 "	      00537caa    add esi,2CAh"
 "	      00537cb0    mov ecx,0Ah"
@@ -1671,10 +1671,10 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 593:
 	asm( 
-"	      00537cb9    mov eax,[ebp-3Ch]"
+"	      00537cb9    mov eax,this"
 "	      00537cbc    cmp dword ptr [eax+2CAh],0"
 "	      00537cc3    jne near ptr 00537CFAh"
-"	      00537cc9    mov eax,[ebp-3Ch]"
+"	      00537cc9    mov eax,this"
 "	      00537ccc    cmp dword ptr [eax+2F4h],0"
 "	      00537cd3    jne near ptr 00537CFAh"
 "	      00537cd9    push 251h"
@@ -1687,52 +1687,52 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 595:
 	asm( 
-"	      00537cfa    mov eax,[ebp-3Ch]"
+"	      00537cfa    mov eax,this"
 "	      00537cfd    mov eax,[eax+2A0h]"
 "	      00537d03    mov al,[eax]"
-"	      00537d05    mov [ebp-0Ch],al"
+"	      00537d05    mov destVertex.x,al"
 );
 // LINE 596:
 	asm( 
-"	      00537d08    mov eax,[ebp-3Ch]"
+"	      00537d08    mov eax,this"
 "	      00537d0b    mov eax,[eax+2A0h]"
 "	      00537d11    xor ecx,ecx"
 "	      00537d13    mov cl,[eax+1]"
 "	      00537d16    push ecx"
-"	      00537d17    mov eax,[ebp-3Ch]"
+"	      00537d17    mov eax,this"
 "	      00537d1a    mov eax,[eax+2A0h]"
 "	      00537d20    xor ecx,ecx"
 "	      00537d22    mov cl,[eax]"
 "	      00537d24    push ecx"
 "	      00537d25    mov ecx,5C3828h"
 "	      00537d2a    call 0053D167h"
-"	      00537d2f    mov [ebp-0Bh],al"
+"	      00537d2f    mov destVertex.yindex,al"
 );
 // LINE 599:
 	asm( 
 "	      00537d32    xor eax,eax"
-"	      00537d34    mov al,[ebp-0Ch]"
+"	      00537d34    mov al,destVertex.x"
 "	      00537d37    xor ecx,ecx"
-"	      00537d39    mov cl,[ebp-8]"
+"	      00537d39    mov cl,startVertex.x"
 "	      00537d3c    cmp eax,ecx"
 "	      00537d3e    jne near ptr 00537D79h"
 "	      00537d44    xor eax,eax"
-"	      00537d46    mov al,[ebp-0Bh]"
+"	      00537d46    mov al,destVertex.yindex"
 "	      00537d49    xor ecx,ecx"
-"	      00537d4b    mov cl,[ebp-7]"
+"	      00537d4b    mov cl,startVertex.yindex"
 "	      00537d4e    cmp eax,ecx"
 "	      00537d50    jne near ptr 00537D79h"
 );
 // LINE 602:
 	asm( 
-"	      00537d56    mov eax,[ebp-3Ch]"
+"	      00537d56    mov eax,this"
 "	      00537d59    mov dword ptr [eax+0DEh],0"
 );
 // LINE 603:
 	asm( 
-"	      00537d63    mov eax,[ebp+8]"
+"	      00537d63    mov eax,pGoal"
 "	      00537d66    push eax"
-"	      00537d67    mov ecx,[ebp-3Ch]"
+"	      00537d67    mov ecx,this"
 "	      00537d6a    call 00502C92h"
 "	      00537d6f    jmp near ptr 00537E28h"
 );
@@ -1755,12 +1755,12 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 "	      00537d8e    push eax"
 "	      00537d8f    mov eax,[ebp-8]"
 "	      00537d92    push eax"
-"	      00537d93    mov ecx,[ebp-3Ch]"
+"	      00537d93    mov ecx,this"
 "	      00537d96    call 005427F5h"
 );
 // LINE 613:
 	asm( 
-"	      00537d9b    mov eax,[ebp-3Ch]"
+"	      00537d9b    mov eax,this"
 "	      00537d9e    mov byte ptr [eax+292h],0"
 );
 // LINE 615:
@@ -1770,11 +1770,11 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 621:
 	asm( 
-"	      00537daa    mov eax,[ebp-3Ch]"
+"	      00537daa    mov eax,this"
 "	      00537dad    xor ecx,ecx"
 "	      00537daf    mov cl,[eax+293h]"
 "	      00537db5    dec ecx"
-"	      00537db6    mov eax,[ebp-3Ch]"
+"	      00537db6    mov eax,this"
 "	      00537db9    xor edx,edx"
 "	      00537dbb    mov dl,[eax+292h]"
 "	      00537dc1    cmp ecx,edx"
@@ -1782,18 +1782,18 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 622:
 	asm( 
-"	      00537dc9    mov eax,[ebp-3Ch]"
+"	      00537dc9    mov eax,this"
 "	      00537dcc    inc byte ptr [eax+292h]"
 );
 // LINE 628:
 	asm( 
-"	      00537dd2    mov eax,[ebp-3Ch]"
+"	      00537dd2    mov eax,this"
 "	      00537dd5    xor ecx,ecx"
 "	      00537dd7    mov cl,[eax+292h]"
-"	      00537ddd    mov eax,[ebp-3Ch]"
+"	      00537ddd    mov eax,this"
 "	      00537de0    xor edx,edx"
 "	      00537de2    mov dl,[ecx+eax+192h]"
-"	      00537de9    mov eax,[ebp-3Ch]"
+"	      00537de9    mov eax,this"
 "	      00537dec    mov eax,[eax+0E2h]"
 "	      00537df2    shl eax,4"
 "	      00537df5    mov eax,[eax+edx*4+5932D0h]"
@@ -1805,17 +1805,17 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 633:
 	asm( 
-"	      00537e06    mov eax,[ebp+8]"
+"	      00537e06    mov eax,pGoal"
 "	      00537e09    push eax"
-"	      00537e0a    mov ecx,[ebp-3Ch]"
+"	      00537e0a    mov ecx,this"
 "	      00537e0d    call 00542373h"
 "	      00537e12    jmp near ptr 00537E28h"
 );
 // LINE 636:
 	asm( 
-"	      00537e17    mov eax,[ebp+8]"
+"	      00537e17    mov eax,pGoal"
 "	      00537e1a    push eax"
-"	      00537e1b    mov ecx,[ebp-3Ch]"
+"	      00537e1b    mov ecx,this"
 "	      00537e1e    call 00542373h"
 "	      00537e23    jmp near ptr 00537E28h"
 );
@@ -1842,12 +1842,12 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 "	      00537e35    push ebx"
 "	      00537e36    push esi"
 "	      00537e37    push edi"
-"	      00537e38    mov [ebp-28h],ecx"
+"	      00537e38    mov this,ecx"
 );
 // LINE 643:
 	asm( 
 "	      00537e3b    push 4"
-"	      00537e3d    lea ecx,[ebp-10h]"
+"	      00537e3d    lea ecx,scan.currDist"
 "	      00537e40    call 00542DC0h"
 );
 // LINE 647:
@@ -1857,7 +1857,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 "	      00537e50    mov eax,[eax+18h]"
 "	      00537e53    add eax,20000000h"
 "	      00537e58    sar eax,16h"
-"	      00537e5b    mov [ebp-14h],al"
+"	      00537e5b    mov loc.x,al"
 );
 // LINE 648:
 	asm( 
@@ -1866,33 +1866,33 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 "	      00537e69    mov ecx,[ecx+0C0h]"
 "	      00537e6f    sub eax,[ecx+20h]"
 "	      00537e72    sar eax,16h"
-"	      00537e75    mov [ebp-13h],al"
+"	      00537e75    mov loc.y,al"
 );
 // LINE 653:
 	asm( 
 "	      00537e78    xor eax,eax"
-"	      00537e7a    mov al,[ebp-14h]"
+"	      00537e7a    mov al,loc.x"
 "	      00537e7d    test eax,eax"
 "	      00537e7f    jl near ptr 00537EAEh"
 "	      00537e85    xor eax,eax"
-"	      00537e87    mov al,[ebp-14h]"
+"	      00537e87    mov al,loc.x"
 "	      00537e8a    cmp eax,7Fh"
 "	      00537e8d    jg near ptr 00537EAEh"
 "	      00537e93    xor eax,eax"
-"	      00537e95    mov al,[ebp-13h]"
+"	      00537e95    mov al,loc.y"
 "	      00537e98    test eax,eax"
 "	      00537e9a    jl near ptr 00537EAEh"
 "	      00537ea0    xor eax,eax"
-"	      00537ea2    mov al,[ebp-13h]"
+"	      00537ea2    mov al,loc.y"
 "	      00537ea5    cmp eax,7Fh"
 "	      00537ea8    jle near ptr 00537EBAh"
 "	      00537eae    mov dword ptr [ebp-24h],0"
 "	      00537eb5    jmp near ptr 00537F13h"
 "	      00537eba    xor eax,eax"
-"	      00537ebc    mov al,[ebp-14h]"
+"	      00537ebc    mov al,loc.x"
 "	      00537ebf    mov eax,[eax*4+639850h]"
 "	      00537ec6    xor ecx,ecx"
-"	      00537ec8    mov cl,[ebp-13h]"
+"	      00537ec8    mov cl,loc.y"
 "	      00537ecb    movzx ax,byte ptr [eax+ecx]"
 "	      00537ed0    mov [ebp-20h],ax"
 "	      00537ed4    mov eax,[ebp-20h]"
@@ -1914,7 +1914,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 // LINE 655:
 	asm( 
 "	      00537f1d    mov ax,[ebp-14h]"
-"	      00537f21    mov ecx,[ebp-28h]"
+"	      00537f21    mov ecx,this"
 "	      00537f24    mov [ecx+11Ch],ax"
 );
 // LINE 656:
@@ -1926,9 +1926,9 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 );
 // LINE 659:
 	asm( 
-"	      00537f3f    lea eax,[ebp-14h]"
+"	      00537f3f    lea eax,loc.x"
 "	      00537f42    push eax"
-"	      00537f43    lea ecx,[ebp-10h]"
+"	      00537f43    lea ecx,scan.currDist"
 "	      00537f46    call 00542E03h"
 "	      00537f4b    test eax,eax"
 "	      00537f4d    jne near ptr 00537E78h"
@@ -1960,11 +1960,11 @@ int32_t PoliceCarClass::AtScene() {
 "	      00537f72    push ebx"
 "	      00537f73    push esi"
 "	      00537f74    push edi"
-"	      00537f75    mov [ebp-4],ecx"
+"	      00537f75    mov this,ecx"
 );
 // LINE 669:
 	asm( 
-"	      00537f78    mov eax,[ebp-4]"
+"	      00537f78    mov eax,this"
 "	      00537f7b    mov eax,[eax+11Eh]"
 "	      00537f81    mov [ebp-8],eax"
 "	      00537f84    jmp near ptr 00537FB4h"
@@ -2021,21 +2021,21 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 "	      00537fdf    push ebx"
 "	      00537fe0    push esi"
 "	      00537fe1    push edi"
-"	      00537fe2    mov [ebp-34h],ecx"
+"	      00537fe2    mov this,ecx"
 );
 // LINE 690:
 	asm( 
 "	      00537fe5    push 3"
-"	      00537fe7    lea ecx,[ebp-10h]"
+"	      00537fe7    lea ecx,spiral.currDist"
 "	      00537fea    call 00542DC0h"
 );
 // LINE 694:
 	asm( 
-"	      00537fef    mov eax,[ebp+8]"
+"	      00537fef    mov eax,scanLoc"
 "	      00537ff2    xor ecx,ecx"
 "	      00537ff4    mov cl,[eax+1]"
 "	      00537ff7    mov [ebp-2Ch],ecx"
-"	      00537ffa    mov eax,[ebp+8]"
+"	      00537ffa    mov eax,scanLoc"
 "	      00537ffd    xor ecx,ecx"
 "	      00537fff    mov cl,[eax]"
 "	      00538001    mov [ebp-30h],ecx"
@@ -2060,26 +2060,26 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 "	      00538048    jmp near ptr 0053804Dh"
 "	      0053804d    jmp near ptr 00538052h"
 "	      00538052    mov eax,[ebp-28h]"
-"	      00538055    mov [ebp-18h],eax"
+"	      00538055    mov cptr,eax"
 );
 // LINE 697:
 	asm( 
-"	      00538058    mov eax,[ebp-18h]"
+"	      00538058    mov eax,cptr"
 "	      0053805b    mov eax,[eax+10h]"
-"	      0053805e    mov [ebp-14h],eax"
+"	      0053805e    mov dyptr,eax"
 );
 // LINE 701:
 	asm( 
-"	      00538061    cmp dword ptr [ebp-14h],0"
+"	      00538061    cmp dyptr,0"
 "	      00538065    je near ptr 005380F0h"
 );
 // LINE 703:
 	asm( 
-"	      0053806b    mov eax,[ebp-14h]"
+"	      0053806b    mov eax,dyptr"
 "	      0053806e    movsx eax,word ptr [eax+0Ch]"
 "	      00538072    test al,8"
 "	      00538074    je near ptr 005380A6h"
-"	      0053807a    mov eax,[ebp-14h]"
+"	      0053807a    mov eax,dyptr"
 "	      0053807d    push eax"
 "	      0053807e    call 0054642Eh"
 "	      00538083    add esp,4"
@@ -2088,7 +2088,7 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 );
 // LINE 705:
 	asm( 
-"	      0053808e    mov eax,[ebp-14h]"
+"	      0053808e    mov eax,dyptr"
 "	      00538091    mov [ebp-1Ch],eax"
 "	      00538094    jmp near ptr 00538099h"
 "	      00538099    mov eax,[ebp-1Ch]"
@@ -2097,11 +2097,11 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 // LINE 707:
 	asm( 
 "	      005380a1    jmp near ptr 005380E3h"
-"	      005380a6    mov eax,[ebp-14h]"
+"	      005380a6    mov eax,dyptr"
 "	      005380a9    movsx eax,word ptr [eax+0Ch]"
 "	      005380ad    test al,10h"
 "	      005380af    je near ptr 005380E3h"
-"	      005380b5    mov eax,[ebp-14h]"
+"	      005380b5    mov eax,dyptr"
 "	      005380b8    movsx eax,word ptr [eax+0Eh]"
 "	      005380bc    mov ecx,[eax*4+608F80h]"
 "	      005380c3    call 0050413Eh"
@@ -2110,7 +2110,7 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 );
 // LINE 709:
 	asm( 
-"	      005380d0    mov eax,[ebp-14h]"
+"	      005380d0    mov eax,dyptr"
 "	      005380d3    mov [ebp-20h],eax"
 "	      005380d6    jmp near ptr 005380DBh"
 "	      005380db    mov eax,[ebp-20h]"
@@ -2118,9 +2118,9 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 );
 // LINE 712:
 	asm( 
-"	      005380e3    mov eax,[ebp-14h]"
+"	      005380e3    mov eax,dyptr"
 "	      005380e6    mov eax,[eax]"
-"	      005380e8    mov [ebp-14h],eax"
+"	      005380e8    mov dyptr,eax"
 );
 // LINE 713:
 	asm( 
@@ -2128,9 +2128,9 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 );
 // LINE 715:
 	asm( 
-"	      005380f0    mov eax,[ebp+8]"
+"	      005380f0    mov eax,scanLoc"
 "	      005380f3    push eax"
-"	      005380f4    lea ecx,[ebp-10h]"
+"	      005380f4    lea ecx,spiral.currDist"
 "	      005380f7    call 00542E03h"
 "	      005380fc    test eax,eax"
 "	      005380fe    jne near ptr 00537FEFh"
@@ -2162,12 +2162,12 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00538125    push ebx"
 "	      00538126    push esi"
 "	      00538127    push edi"
-"	      00538128    mov [ebp-4],ecx"
+"	      00538128    mov this,ecx"
 );
 // LINE 730:
 	asm( 
-"	      0053812b    mov esi,[ebp-4]"
-"	      0053812e    mov edi,[ebp+8]"
+"	      0053812b    mov esi,this"
+"	      0053812e    mov edi,sd"
 "	      00538131    add edi,2BCh"
 "	      00538137    add esi,2A0h"
 "	      0053813d    mov ecx,0Ah"
@@ -2176,8 +2176,8 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 731:
 	asm( 
-"	      00538146    mov esi,[ebp-4]"
-"	      00538149    mov edi,[ebp+8]"
+"	      00538146    mov esi,this"
+"	      00538149    mov edi,sd"
 "	      0053814c    add edi,2E8h"
 "	      00538152    add esi,2CAh"
 "	      00538158    mov ecx,0Ah"
@@ -2186,8 +2186,8 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 732:
 	asm( 
-"	      00538161    mov esi,[ebp-4]"
-"	      00538164    mov edi,[ebp+8]"
+"	      00538161    mov esi,this"
+"	      00538164    mov edi,sd"
 "	      00538167    add edi,314h"
 "	      0053816d    add esi,2F4h"
 "	      00538173    mov ecx,0Ah"
@@ -2196,70 +2196,70 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 733:
 	asm( 
-"	      0053817c    mov eax,[ebp-4]"
+"	      0053817c    mov eax,this"
 "	      0053817f    mov eax,[eax+31Eh]"
-"	      00538185    mov ecx,[ebp+8]"
+"	      00538185    mov ecx,sd"
 "	      00538188    mov [ecx+340h],eax"
 );
 // LINE 735:
 	asm( 
-"	      0053818e    mov eax,[ebp-4]"
+"	      0053818e    mov eax,this"
 "	      00538191    test byte ptr [eax+8],2"
 "	      00538195    je near ptr 00538216h"
 );
 // LINE 739:
 	asm( 
-"	      0053819b    mov eax,[ebp-4]"
+"	      0053819b    mov eax,this"
 "	      0053819e    mov eax,[eax+2A0h]"
 "	      005381a4    mov al,[eax]"
-"	      005381a6    mov ecx,[ebp+8]"
+"	      005381a6    mov ecx,sd"
 "	      005381a9    mov [ecx+2E6h],al"
 );
 // LINE 740:
 	asm( 
-"	      005381af    mov eax,[ebp-4]"
+"	      005381af    mov eax,this"
 "	      005381b2    mov eax,[eax+2A0h]"
 "	      005381b8    mov al,[eax+1]"
-"	      005381bb    mov ecx,[ebp+8]"
+"	      005381bb    mov ecx,sd"
 "	      005381be    mov [ecx+2E7h],al"
 );
 // LINE 741:
 	asm( 
-"	      005381c4    mov eax,[ebp-4]"
+"	      005381c4    mov eax,this"
 "	      005381c7    mov eax,[eax+2CAh]"
 "	      005381cd    mov al,[eax]"
-"	      005381cf    mov ecx,[ebp+8]"
+"	      005381cf    mov ecx,sd"
 "	      005381d2    mov [ecx+312h],al"
 );
 // LINE 742:
 	asm( 
-"	      005381d8    mov eax,[ebp-4]"
+"	      005381d8    mov eax,this"
 "	      005381db    mov eax,[eax+2CAh]"
 "	      005381e1    mov al,[eax+1]"
-"	      005381e4    mov ecx,[ebp+8]"
+"	      005381e4    mov ecx,sd"
 "	      005381e7    mov [ecx+313h],al"
 );
 // LINE 743:
 	asm( 
-"	      005381ed    mov eax,[ebp-4]"
+"	      005381ed    mov eax,this"
 "	      005381f0    mov eax,[eax+2F4h]"
 "	      005381f6    mov al,[eax]"
-"	      005381f8    mov ecx,[ebp+8]"
+"	      005381f8    mov ecx,sd"
 "	      005381fb    mov [ecx+33Eh],al"
 );
 // LINE 744:
 	asm( 
-"	      00538201    mov eax,[ebp-4]"
+"	      00538201    mov eax,this"
 "	      00538204    mov eax,[eax+2F4h]"
 "	      0053820a    mov al,[eax+1]"
-"	      0053820d    mov ecx,[ebp+8]"
+"	      0053820d    mov ecx,sd"
 "	      00538210    mov [ecx+33Fh],al"
 );
 // LINE 748:
 	asm( 
-"	      00538216    mov eax,[ebp+8]"
+"	      00538216    mov eax,sd"
 "	      00538219    push eax"
-"	      0053821a    mov ecx,[ebp-4]"
+"	      0053821a    mov ecx,this"
 "	      0053821d    call 00542A75h"
 );
 // LINE 749:
@@ -2286,11 +2286,11 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00538234    push ebx"
 "	      00538235    push esi"
 "	      00538236    push edi"
-"	      00538237    mov [ebp-0Ch],ecx"
+"	      00538237    mov this,ecx"
 );
 // LINE 764:
 	asm( 
-"	      0053823a    mov eax,[ebp+8]"
+"	      0053823a    mov eax,sd"
 "	      0053823d    test byte ptr [eax],2"
 "	      00538240    jne near ptr 0053824Bh"
 );
@@ -2300,15 +2300,15 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 770:
 	asm( 
-"	      0053824b    mov eax,[ebp+8]"
+"	      0053824b    mov eax,sd"
 "	      0053824e    push eax"
-"	      0053824f    mov ecx,[ebp-0Ch]"
+"	      0053824f    mov ecx,this"
 "	      00538252    call 00542B90h"
 );
 // LINE 773:
 	asm( 
-"	      00538257    mov esi,[ebp+8]"
-"	      0053825a    mov edi,[ebp-0Ch]"
+"	      00538257    mov esi,sd"
+"	      0053825a    mov edi,this"
 "	      0053825d    add edi,2A0h"
 "	      00538263    add esi,2BCh"
 "	      00538269    mov ecx,0Ah"
@@ -2317,8 +2317,8 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 774:
 	asm( 
-"	      00538272    mov esi,[ebp+8]"
-"	      00538275    mov edi,[ebp-0Ch]"
+"	      00538272    mov esi,sd"
+"	      00538275    mov edi,this"
 "	      00538278    add edi,2CAh"
 "	      0053827e    add esi,2E8h"
 "	      00538284    mov ecx,0Ah"
@@ -2327,8 +2327,8 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 775:
 	asm( 
-"	      0053828d    mov esi,[ebp+8]"
-"	      00538290    mov edi,[ebp-0Ch]"
+"	      0053828d    mov esi,sd"
+"	      00538290    mov edi,this"
 "	      00538293    add edi,2F4h"
 "	      00538299    add esi,314h"
 "	      0053829f    mov ecx,0Ah"
@@ -2337,24 +2337,24 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 776:
 	asm( 
-"	      005382a8    mov eax,[ebp+8]"
+"	      005382a8    mov eax,sd"
 "	      005382ab    mov eax,[eax+340h]"
-"	      005382b1    mov ecx,[ebp-0Ch]"
+"	      005382b1    mov ecx,this"
 "	      005382b4    mov [ecx+31Eh],eax"
 );
 // LINE 778:
 	asm( 
-"	      005382ba    mov eax,[ebp-0Ch]"
+"	      005382ba    mov eax,this"
 "	      005382bd    mov eax,[eax+294h]"
 "	      005382c3    mov [ebp-10h],eax"
 "	      005382c6    jmp near ptr 005382EDh"
 );
 // LINE 784:
 	asm( 
-"	      005382cb    mov eax,[ebp-0Ch]"
+"	      005382cb    mov eax,this"
 "	      005382ce    mov ax,[eax+11Ch]"
 "	      005382d5    push eax"
-"	      005382d6    mov ecx,[ebp-0Ch]"
+"	      005382d6    mov ecx,this"
 "	      005382d9    call 00542570h"
 );
 // LINE 785:
@@ -2376,107 +2376,107 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 794:
 	asm( 
-"	      00538306    mov eax,[ebp+8]"
+"	      00538306    mov eax,sd"
 "	      00538309    xor ecx,ecx"
 "	      0053830b    mov cl,[eax+2E7h]"
 "	      00538311    push ecx"
-"	      00538312    mov eax,[ebp+8]"
+"	      00538312    mov eax,sd"
 "	      00538315    xor ecx,ecx"
 "	      00538317    mov cl,[eax+2E6h]"
 "	      0053831d    push ecx"
 "	      0053831e    mov ecx,5C3828h"
 "	      00538323    call 0053D167h"
-"	      00538328    mov [ebp-8],al"
+"	      00538328    mov yindex,al"
 );
 // LINE 795:
 	asm( 
-"	      0053832b    mov eax,[ebp+8]"
+"	      0053832b    mov eax,sd"
 "	      0053832e    xor ecx,ecx"
 "	      00538330    mov cl,[eax+2E6h]"
 "	      00538336    mov eax,[ecx*4+5C3828h]"
 "	      0053833d    xor ecx,ecx"
-"	      0053833f    mov cl,[ebp-8]"
+"	      0053833f    mov cl,yindex"
 "	      00538342    mov edx,ecx"
 "	      00538344    lea ecx,[ecx+ecx*4]"
 "	      00538347    lea ecx,[ecx+ecx*4]"
 "	      0053834a    lea ecx,[edx+ecx*2]"
 "	      0053834d    add eax,ecx"
-"	      0053834f    mov ecx,[ebp-0Ch]"
+"	      0053834f    mov ecx,this"
 "	      00538352    mov [ecx+2A0h],eax"
 );
 // LINE 798:
 	asm( 
-"	      00538358    mov eax,[ebp+8]"
+"	      00538358    mov eax,sd"
 "	      0053835b    xor ecx,ecx"
 "	      0053835d    mov cl,[eax+313h]"
 "	      00538363    push ecx"
-"	      00538364    mov eax,[ebp+8]"
+"	      00538364    mov eax,sd"
 "	      00538367    xor ecx,ecx"
 "	      00538369    mov cl,[eax+312h]"
 "	      0053836f    push ecx"
 "	      00538370    mov ecx,5C3828h"
 "	      00538375    call 0053D167h"
-"	      0053837a    mov [ebp-8],al"
+"	      0053837a    mov yindex,al"
 );
 // LINE 799:
 	asm( 
-"	      0053837d    mov eax,[ebp+8]"
+"	      0053837d    mov eax,sd"
 "	      00538380    xor ecx,ecx"
 "	      00538382    mov cl,[eax+312h]"
 "	      00538388    mov eax,[ecx*4+5C3828h]"
 "	      0053838f    xor ecx,ecx"
-"	      00538391    mov cl,[ebp-8]"
+"	      00538391    mov cl,yindex"
 "	      00538394    mov edx,ecx"
 "	      00538396    lea ecx,[ecx+ecx*4]"
 "	      00538399    lea ecx,[ecx+ecx*4]"
 "	      0053839c    lea ecx,[edx+ecx*2]"
 "	      0053839f    add eax,ecx"
-"	      005383a1    mov ecx,[ebp-0Ch]"
+"	      005383a1    mov ecx,this"
 "	      005383a4    mov [ecx+2CAh],eax"
 );
 // LINE 802:
 	asm( 
-"	      005383aa    mov eax,[ebp+8]"
+"	      005383aa    mov eax,sd"
 "	      005383ad    xor ecx,ecx"
 "	      005383af    mov cl,[eax+33Fh]"
 "	      005383b5    push ecx"
-"	      005383b6    mov eax,[ebp+8]"
+"	      005383b6    mov eax,sd"
 "	      005383b9    xor ecx,ecx"
 "	      005383bb    mov cl,[eax+33Eh]"
 "	      005383c1    push ecx"
 "	      005383c2    mov ecx,5C3828h"
 "	      005383c7    call 0053D167h"
-"	      005383cc    mov [ebp-8],al"
+"	      005383cc    mov yindex,al"
 );
 // LINE 803:
 	asm( 
-"	      005383cf    mov eax,[ebp+8]"
+"	      005383cf    mov eax,sd"
 "	      005383d2    xor ecx,ecx"
 "	      005383d4    mov cl,[eax+33Eh]"
 "	      005383da    mov eax,[ecx*4+5C3828h]"
 "	      005383e1    xor ecx,ecx"
-"	      005383e3    mov cl,[ebp-8]"
+"	      005383e3    mov cl,yindex"
 "	      005383e6    mov edx,ecx"
 "	      005383e8    lea ecx,[ecx+ecx*4]"
 "	      005383eb    lea ecx,[ecx+ecx*4]"
 "	      005383ee    lea ecx,[edx+ecx*2]"
 "	      005383f1    add eax,ecx"
-"	      005383f3    mov ecx,[ebp-0Ch]"
+"	      005383f3    mov ecx,this"
 "	      005383f6    mov [ecx+2F4h],eax"
 );
 // LINE 805:
 	asm( 
-"	      005383fc    mov eax,[ebp-0Ch]"
+"	      005383fc    mov eax,this"
 "	      005383ff    mov ax,[eax+7Ch]"
 "	      00538403    mov [ebp-4],ax"
 );
 // LINE 806:
 	asm( 
-"	      00538407    lea eax,[ebp-4]"
+"	      00538407    lea eax,badGuyLoc.x"
 "	      0053840a    push eax"
-"	      0053840b    mov ecx,[ebp-0Ch]"
+"	      0053840b    mov ecx,this"
 "	      0053840e    call 00537FD9h"
-"	      00538413    mov ecx,[ebp-0Ch]"
+"	      00538413    mov ecx,this"
 "	      00538416    mov [ecx+322h],eax"
 );
 // LINE 807:

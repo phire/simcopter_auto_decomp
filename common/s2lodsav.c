@@ -27,12 +27,12 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 115:
 	asm( 
 "	      004c4699    push 59AFF0h"
-"	      004c469e    mov eax,[ebp+8]"
+"	      004c469e    mov eax,filepath"
 "	      004c46a1    push eax"
 "	      004c46a2    call 0056D910h"
 "	      004c46a7    add esp,8"
-"	      004c46aa    mov [ebp-0Ch],eax"
-"	      004c46ad    cmp dword ptr [ebp-0Ch],0"
+"	      004c46aa    mov filNum,eax"
+"	      004c46ad    cmp filNum,0"
 "	      004c46b1    jne near ptr 004C46BEh"
 );
 // LINE 116:
@@ -44,33 +44,33 @@ int32_t S2CityValidate(char * filepath) {
 	asm( 
 "	      004c46be    push 2"
 "	      004c46c0    push 0"
-"	      004c46c2    mov eax,[ebp-0Ch]"
+"	      004c46c2    mov eax,filNum"
 "	      004c46c5    push eax"
 "	      004c46c6    call 00572470h"
 "	      004c46cb    add esp,0Ch"
 );
 // LINE 120:
 	asm( 
-"	      004c46ce    mov eax,[ebp-0Ch]"
+"	      004c46ce    mov eax,filNum"
 "	      004c46d1    push eax"
 "	      004c46d2    call 00572630h"
 "	      004c46d7    add esp,4"
-"	      004c46da    mov [ebp-10h],eax"
+"	      004c46da    mov lFileLength,eax"
 );
 // LINE 121:
 	asm( 
 "	      004c46dd    push 0"
 "	      004c46df    push 0"
-"	      004c46e1    mov eax,[ebp-0Ch]"
+"	      004c46e1    mov eax,filNum"
 "	      004c46e4    push eax"
 "	      004c46e5    call 00572470h"
 "	      004c46ea    add esp,0Ch"
 );
 // LINE 123:
 	asm( 
-"	      004c46ed    lea eax,[ebp-14h]"
+"	      004c46ed    lea eax,lCityDataChunkLength"
 "	      004c46f0    push eax"
-"	      004c46f1    mov eax,[ebp-0Ch]"
+"	      004c46f1    mov eax,filNum"
 "	      004c46f4    push eax"
 "	      004c46f5    call 004C55F2h"
 "	      004c46fa    add esp,8"
@@ -80,7 +80,7 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 124:
 	asm( 
-"	      004c4708    mov dword ptr [ebp-18h],0"
+"	      004c4708    mov bOK,0"
 );
 // LINE 125:
 	asm( 
@@ -88,19 +88,19 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 128:
 	asm( 
-"	      004c4714    mov dword ptr [ebp-18h],1"
+"	      004c4714    mov bOK,1"
 );
 // LINE 129:
 	asm( 
-"	      004c471b    mov dword ptr [ebp-1Ch],4"
+"	      004c471b    mov lBytesReadSoFar,4"
 );
 // LINE 132:
 	asm( 
-"	      004c4722    mov eax,[ebp-0Ch]"
+"	      004c4722    mov eax,filNum"
 "	      004c4725    push eax"
 "	      004c4726    push 1"
 "	      004c4728    push 4"
-"	      004c472a    lea eax,[ebp-4]"
+"	      004c472a    lea eax,lChunkType"
 "	      004c472d    push eax"
 "	      004c472e    call 00572960h"
 "	      004c4733    add esp,10h"
@@ -109,7 +109,7 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 133:
 	asm( 
-"	      004c473e    mov dword ptr [ebp-18h],0"
+"	      004c473e    mov bOK,0"
 );
 // LINE 134:
 	asm( 
@@ -117,19 +117,19 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 136:
 	asm( 
-"	      004c474a    mov eax,[ebp-4]"
+"	      004c474a    mov eax,lChunkType"
 "	      004c474d    push eax"
 "	      004c474e    call 004C838Eh"
 "	      004c4753    add esp,4"
-"	      004c4756    mov [ebp-4],eax"
+"	      004c4756    mov lChunkType,eax"
 );
 // LINE 138:
 	asm( 
-"	      004c4759    mov eax,[ebp-0Ch]"
+"	      004c4759    mov eax,filNum"
 "	      004c475c    push eax"
 "	      004c475d    push 1"
 "	      004c475f    push 4"
-"	      004c4761    lea eax,[ebp-8]"
+"	      004c4761    lea eax,lChunkDataSize"
 "	      004c4764    push eax"
 "	      004c4765    call 00572960h"
 "	      004c476a    add esp,10h"
@@ -138,7 +138,7 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 139:
 	asm( 
-"	      004c4775    mov dword ptr [ebp-18h],0"
+"	      004c4775    mov bOK,0"
 );
 // LINE 140:
 	asm( 
@@ -146,28 +146,28 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 142:
 	asm( 
-"	      004c4781    mov eax,[ebp-8]"
+"	      004c4781    mov eax,lChunkDataSize"
 "	      004c4784    push eax"
 "	      004c4785    call 004C838Eh"
 "	      004c478a    add esp,4"
-"	      004c478d    mov [ebp-8],eax"
+"	      004c478d    mov lChunkDataSize,eax"
 );
 // LINE 143:
 	asm( 
-"	      004c4790    cmp dword ptr [ebp-8],0"
+"	      004c4790    cmp lChunkDataSize,0"
 "	      004c4794    jl near ptr 004C47B4h"
-"	      004c479a    mov eax,[ebp-0Ch]"
+"	      004c479a    mov eax,filNum"
 "	      004c479d    push eax"
 "	      004c479e    call 00572630h"
 "	      004c47a3    add esp,4"
-"	      004c47a6    mov ecx,[ebp-8]"
+"	      004c47a6    mov ecx,lChunkDataSize"
 "	      004c47a9    add ecx,eax"
-"	      004c47ab    cmp ecx,[ebp-10h]"
+"	      004c47ab    cmp ecx,lFileLength"
 "	      004c47ae    jle near ptr 004C47C0h"
 );
 // LINE 144:
 	asm( 
-"	      004c47b4    mov dword ptr [ebp-18h],0"
+"	      004c47b4    mov bOK,0"
 );
 // LINE 145:
 	asm( 
@@ -176,9 +176,9 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 147:
 	asm( 
 "	      004c47c0    push 1"
-"	      004c47c2    mov eax,[ebp-8]"
+"	      004c47c2    mov eax,lChunkDataSize"
 "	      004c47c5    push eax"
-"	      004c47c6    mov eax,[ebp-0Ch]"
+"	      004c47c6    mov eax,filNum"
 "	      004c47c9    push eax"
 "	      004c47ca    call 00572470h"
 "	      004c47cf    add esp,0Ch"
@@ -187,7 +187,7 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 148:
 	asm( 
-"	      004c47da    mov dword ptr [ebp-18h],0"
+"	      004c47da    mov bOK,0"
 );
 // LINE 149:
 	asm( 
@@ -195,14 +195,14 @@ int32_t S2CityValidate(char * filepath) {
 );
 // LINE 152:
 	asm( 
-"	      004c47e6    mov eax,[ebp-8]"
+"	      004c47e6    mov eax,lChunkDataSize"
 "	      004c47e9    add eax,8"
-"	      004c47ec    add [ebp-1Ch],eax"
+"	      004c47ec    add lBytesReadSoFar,eax"
 );
 // LINE 153:
 	asm( 
-"	      004c47ef    mov eax,[ebp-1Ch]"
-"	      004c47f2    cmp [ebp-14h],eax"
+"	      004c47ef    mov eax,lBytesReadSoFar"
+"	      004c47f2    cmp lCityDataChunkLength,eax"
 "	      004c47f5    jg near ptr 004C4800h"
 );
 // LINE 154:
@@ -216,14 +216,14 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 158:
 exit:
 	asm( 
-"	      004c4805    mov eax,[ebp-0Ch]"
+"	      004c4805    mov eax,filNum"
 "	      004c4808    push eax"
 "	      004c4809    call 0056D120h"
 "	      004c480e    add esp,4"
 );
 // LINE 159:
 	asm( 
-"	      004c4811    mov eax,[ebp-18h]"
+"	      004c4811    mov eax,bOK"
 "	      004c4814    jmp near ptr 004C4819h"
 );
 // LINE 160:
@@ -257,18 +257,18 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 185:
 	asm( 
-"	      004c4827    mov eax,[ebp+0Ch]"
+"	      004c4827    mov eax,cityName"
 "	      004c482a    mov byte ptr [eax],0"
 );
 // LINE 187:
 	asm( 
 "	      004c482d    push 59AFF4h"
-"	      004c4832    mov eax,[ebp+8]"
+"	      004c4832    mov eax,filePath"
 "	      004c4835    push eax"
 "	      004c4836    call 0056D910h"
 "	      004c483b    add esp,8"
-"	      004c483e    mov [ebp-18h],eax"
-"	      004c4841    cmp dword ptr [ebp-18h],0"
+"	      004c483e    mov filNum,eax"
+"	      004c4841    cmp filNum,0"
 "	      004c4845    jne near ptr 004C4853h"
 );
 // LINE 188:
@@ -278,9 +278,9 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 190:
 	asm( 
-"	      004c4853    lea eax,[ebp-10h]"
+"	      004c4853    lea eax,length"
 "	      004c4856    push eax"
-"	      004c4857    mov eax,[ebp-18h]"
+"	      004c4857    mov eax,filNum"
 "	      004c485a    push eax"
 "	      004c485b    call 004C55F2h"
 "	      004c4860    add esp,8"
@@ -290,7 +290,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 191:
 	asm( 
-"	      004c486e    mov eax,[ebp-18h]"
+"	      004c486e    mov eax,filNum"
 "	      004c4871    push eax"
 "	      004c4872    call 0056D120h"
 "	      004c4877    add esp,4"
@@ -302,11 +302,11 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 195:
 	asm( 
-"	      004c4882    mov word ptr [ebp-14h],0"
+"	      004c4882    mov done,0"
 );
 // LINE 196:
 	asm( 
-"	      004c4888    mov dword ptr [ebp-1Ch],4"
+"	      004c4888    mov sofar,4"
 );
 // LINE 198:
 	asm( 
@@ -315,16 +315,16 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 199:
 	asm( 
-"	      004c489c    mov dword ptr [ebp-8],4"
+"	      004c489c    mov count,4"
 );
 // LINE 200:
 	asm( 
-"	      004c48a3    mov eax,[ebp-18h]"
+"	      004c48a3    mov eax,filNum"
 "	      004c48a6    push eax"
 "	      004c48a7    push 1"
-"	      004c48a9    mov eax,[ebp-8]"
+"	      004c48a9    mov eax,count"
 "	      004c48ac    push eax"
-"	      004c48ad    lea eax,[ebp-0Ch]"
+"	      004c48ad    lea eax,dp"
 "	      004c48b0    push eax"
 "	      004c48b1    call 00572960h"
 "	      004c48b6    add esp,10h"
@@ -337,24 +337,24 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 203:
 	asm( 
-"	      004c48c6    mov eax,[ebp-0Ch]"
+"	      004c48c6    mov eax,dp"
 "	      004c48c9    push eax"
 "	      004c48ca    call 004C838Eh"
 "	      004c48cf    add esp,4"
-"	      004c48d2    mov [ebp-0Ch],eax"
+"	      004c48d2    mov dp,eax"
 );
 // LINE 206:
 	asm( 
-"	      004c48d5    mov dword ptr [ebp-8],4"
+"	      004c48d5    mov count,4"
 );
 // LINE 207:
 	asm( 
-"	      004c48dc    mov eax,[ebp-18h]"
+"	      004c48dc    mov eax,filNum"
 "	      004c48df    push eax"
 "	      004c48e0    push 1"
-"	      004c48e2    mov eax,[ebp-8]"
+"	      004c48e2    mov eax,count"
 "	      004c48e5    push eax"
-"	      004c48e6    lea eax,[ebp-4]"
+"	      004c48e6    lea eax,size"
 "	      004c48e9    push eax"
 "	      004c48ea    call 00572960h"
 "	      004c48ef    add esp,10h"
@@ -367,27 +367,27 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 210:
 	asm( 
-"	      004c48ff    mov eax,[ebp-4]"
+"	      004c48ff    mov eax,size"
 "	      004c4902    push eax"
 "	      004c4903    call 004C838Eh"
 "	      004c4908    add esp,4"
-"	      004c490b    mov [ebp-4],eax"
+"	      004c490b    mov size,eax"
 );
 // LINE 212:
 	asm( 
 "	      004c490e    push 59AFF8h"
 "	      004c4913    call 004C49D8h"
 "	      004c4918    add esp,4"
-"	      004c491b    cmp eax,[ebp-0Ch]"
+"	      004c491b    cmp eax,dp"
 "	      004c491e    jne near ptr 004C4950h"
 );
 // LINE 213:
 	asm( 
-"	      004c4924    mov eax,[ebp-18h]"
+"	      004c4924    mov eax,filNum"
 "	      004c4927    push eax"
 "	      004c4928    push 1"
 "	      004c492a    push 20h"
-"	      004c492c    mov eax,[ebp+0Ch]"
+"	      004c492c    mov eax,cityName"
 "	      004c492f    push eax"
 "	      004c4930    call 00572960h"
 "	      004c4935    add esp,10h"
@@ -400,7 +400,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 215:
 	asm( 
-"	      004c4945    mov word ptr [ebp-14h],1"
+"	      004c4945    mov done,1"
 );
 // LINE 217:
 	asm( 
@@ -409,9 +409,9 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 218:
 	asm( 
 "	      004c4950    push 1"
-"	      004c4952    mov eax,[ebp-4]"
+"	      004c4952    mov eax,size"
 "	      004c4955    push eax"
-"	      004c4956    mov eax,[ebp-18h]"
+"	      004c4956    mov eax,filNum"
 "	      004c4959    push eax"
 "	      004c495a    call 00572470h"
 "	      004c495f    add esp,0Ch"
@@ -424,19 +424,19 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 221:
 	asm( 
-"	      004c496f    mov eax,[ebp-4]"
+"	      004c496f    mov eax,size"
 "	      004c4972    add eax,8"
-"	      004c4975    add [ebp-1Ch],eax"
+"	      004c4975    add sofar,eax"
 );
 // LINE 222:
 	asm( 
-"	      004c4978    mov eax,[ebp-1Ch]"
-"	      004c497b    cmp [ebp-10h],eax"
+"	      004c4978    mov eax,sofar"
+"	      004c497b    cmp length,eax"
 "	      004c497e    jg near ptr 004C498Ah"
 );
 // LINE 223:
 	asm( 
-"	      004c4984    mov word ptr [ebp-14h],1"
+"	      004c4984    mov done,1"
 );
 // LINE 224:
 	asm( 
@@ -444,7 +444,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 226:
 	asm( 
-"	      004c498f    mov eax,[ebp-18h]"
+"	      004c498f    mov eax,filNum"
 "	      004c4992    push eax"
 "	      004c4993    call 0056D120h"
 "	      004c4998    add esp,4"
@@ -453,7 +453,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	asm( 
 "	      004c499b    test dword ptr [ebp-14h],0FFFFh"
 "	      004c49a2    je near ptr 004C49B6h"
-"	      004c49a8    mov eax,[ebp+0Ch]"
+"	      004c49a8    mov eax,cityName"
 "	      004c49ab    movsx eax,byte ptr [eax]"
 "	      004c49ae    test eax,eax"
 "	      004c49b0    jne near ptr 004C49BEh"
@@ -465,7 +465,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 229:
 	asm( 
-"	      004c49be    mov eax,[ebp+0Ch]"
+"	      004c49be    mov eax,cityName"
 "	      004c49c1    push eax"
 "	      004c49c2    call 004C9227h"
 "	      004c49c7    add esp,4"
@@ -501,40 +501,40 @@ long stol(char * tag) {
 );
 // LINE 249:
 	asm( 
-"	      004c49e1    lea eax,[ebp-8]"
-"	      004c49e4    mov [ebp-4],eax"
+"	      004c49e1    lea eax,buildval"
+"	      004c49e4    mov s,eax"
 );
 // LINE 251:
 	asm( 
-"	      004c49e7    mov eax,[ebp+8]"
+"	      004c49e7    mov eax,tag"
 "	      004c49ea    mov al,[eax]"
-"	      004c49ec    mov ecx,[ebp-4]"
+"	      004c49ec    mov ecx,s"
 "	      004c49ef    mov [ecx],al"
 );
 // LINE 252:
 	asm( 
-"	      004c49f1    mov eax,[ebp+8]"
+"	      004c49f1    mov eax,tag"
 "	      004c49f4    mov al,[eax+1]"
-"	      004c49f7    mov ecx,[ebp-4]"
+"	      004c49f7    mov ecx,s"
 "	      004c49fa    mov [ecx+1],al"
 );
 // LINE 253:
 	asm( 
-"	      004c49fd    mov eax,[ebp+8]"
+"	      004c49fd    mov eax,tag"
 "	      004c4a00    mov al,[eax+2]"
-"	      004c4a03    mov ecx,[ebp-4]"
+"	      004c4a03    mov ecx,s"
 "	      004c4a06    mov [ecx+2],al"
 );
 // LINE 254:
 	asm( 
-"	      004c4a09    mov eax,[ebp+8]"
+"	      004c4a09    mov eax,tag"
 "	      004c4a0c    mov al,[eax+3]"
-"	      004c4a0f    mov ecx,[ebp-4]"
+"	      004c4a0f    mov ecx,s"
 "	      004c4a12    mov [ecx+3],al"
 );
 // LINE 256:
 	asm( 
-"	      004c4a15    mov eax,[ebp-8]"
+"	      004c4a15    mov eax,buildval"
 "	      004c4a18    push eax"
 "	      004c4a19    call 004C838Eh"
 "	      004c4a1e    add esp,4"
@@ -567,51 +567,51 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 // LINE 273:
 	asm( 
 "	      004c4a34    push 59B000h"
-"	      004c4a39    mov eax,[ebp+8]"
+"	      004c4a39    mov eax,szFilePath"
 "	      004c4a3c    push eax"
 "	      004c4a3d    call 0056D910h"
 "	      004c4a42    add esp,8"
-"	      004c4a45    mov [ebp-0Ch],eax"
+"	      004c4a45    mov fp,eax"
 );
 // LINE 275:
 	asm( 
 "	      004c4a48    push 59B004h"
-"	      004c4a4d    lea eax,[ebp-8]"
+"	      004c4a4d    lea eax,buf[0]"
 "	      004c4a50    push eax"
 "	      004c4a51    call 0056CEB0h"
 "	      004c4a56    add esp,8"
 );
 // LINE 276:
 	asm( 
-"	      004c4a59    cmp dword ptr [ebp-0Ch],0"
+"	      004c4a59    cmp fp,0"
 "	      004c4a5d    je near ptr 004C4A87h"
 );
 // LINE 277:
 	asm( 
-"	      004c4a63    mov eax,[ebp-0Ch]"
+"	      004c4a63    mov eax,fp"
 "	      004c4a66    push eax"
 "	      004c4a67    push 4"
 "	      004c4a69    push 1"
-"	      004c4a6b    lea eax,[ebp-8]"
+"	      004c4a6b    lea eax,buf[0]"
 "	      004c4a6e    push eax"
 "	      004c4a6f    call 00572960h"
 "	      004c4a74    add esp,10h"
 );
 // LINE 278:
 	asm( 
-"	      004c4a77    mov eax,[ebp-0Ch]"
+"	      004c4a77    mov eax,fp"
 "	      004c4a7a    push eax"
 "	      004c4a7b    call 0056D120h"
 "	      004c4a80    add esp,4"
 );
 // LINE 279:
 	asm( 
-"	      004c4a83    mov byte ptr [ebp-4],0"
+"	      004c4a83    mov buf[4],0"
 );
 // LINE 281:
 	asm( 
 "	      004c4a87    push 59B008h"
-"	      004c4a8c    lea eax,[ebp-8]"
+"	      004c4a8c    lea eax,buf[0]"
 "	      004c4a8f    push eax"
 "	      004c4a90    call 0056CE20h"
 "	      004c4a95    add esp,8"
@@ -661,7 +661,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 305:
 	asm( 
-"	      004c4ac2    mov eax,[ebp+8]"
+"	      004c4ac2    mov eax,filePath"
 "	      004c4ac5    push eax"
 "	      004c4ac6    call 004C4A2Bh"
 "	      004c4acb    add esp,4"
@@ -670,7 +670,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 306:
 	asm( 
-"	      004c4ad6    mov eax,[ebp+8]"
+"	      004c4ad6    mov eax,filePath"
 "	      004c4ad9    push eax"
 "	      004c4ada    call 004CC003h"
 "	      004c4adf    add esp,4"
@@ -686,12 +686,12 @@ short S2CityLoad(char * filePath) {
 // LINE 310:
 	asm( 
 "	      004c4af5    push 59B010h"
-"	      004c4afa    mov eax,[ebp+8]"
+"	      004c4afa    mov eax,filePath"
 "	      004c4afd    push eax"
 "	      004c4afe    call 0056D910h"
 "	      004c4b03    add esp,8"
-"	      004c4b06    mov [ebp-118h],eax"
-"	      004c4b0c    cmp dword ptr [ebp-118h],0"
+"	      004c4b06    mov filNum,eax"
+"	      004c4b0c    cmp filNum,0"
 "	      004c4b13    jne near ptr 004C4B21h"
 );
 // LINE 311:
@@ -701,9 +701,9 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 313:
 	asm( 
-"	      004c4b21    lea eax,[ebp-110h]"
+"	      004c4b21    lea eax,length"
 "	      004c4b27    push eax"
-"	      004c4b28    mov eax,[ebp-118h]"
+"	      004c4b28    mov eax,filNum"
 "	      004c4b2e    push eax"
 "	      004c4b2f    call 004C55F2h"
 "	      004c4b34    add esp,8"
@@ -717,19 +717,19 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 316:
 	asm( 
-"	      004c4b47    mov word ptr [ebp-108h],0"
+"	      004c4b47    mov bDone,0"
 );
 // LINE 317:
 	asm( 
-"	      004c4b50    mov dword ptr [ebp-120h],4"
+"	      004c4b50    mov sofar,4"
 );
 // LINE 318:
 	asm( 
-"	      004c4b5a    mov word ptr [ebp-114h],0"
+"	      004c4b5a    mov bFoundName,0"
 );
 // LINE 319:
 	asm( 
-"	      004c4b63    mov word ptr [ebp-11Ch],0"
+"	      004c4b63    mov got_label,0"
 );
 // LINE 321:
 	asm( 
@@ -738,11 +738,11 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 322:
 	asm( 
-"	      004c4b7c    mov eax,[ebp-118h]"
+"	      004c4b7c    mov eax,filNum"
 "	      004c4b82    push eax"
 "	      004c4b83    push 1"
 "	      004c4b85    push 4"
-"	      004c4b87    lea eax,[ebp-10Ch]"
+"	      004c4b87    lea eax,dp"
 "	      004c4b8d    push eax"
 "	      004c4b8e    call 00572960h"
 "	      004c4b93    add esp,10h"
@@ -755,19 +755,19 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 324:
 	asm( 
-"	      004c4ba3    mov eax,[ebp-10Ch]"
+"	      004c4ba3    mov eax,dp"
 "	      004c4ba9    push eax"
 "	      004c4baa    call 004C838Eh"
 "	      004c4baf    add esp,4"
-"	      004c4bb2    mov [ebp-10Ch],eax"
+"	      004c4bb2    mov dp,eax"
 );
 // LINE 327:
 	asm( 
-"	      004c4bb8    mov eax,[ebp-118h]"
+"	      004c4bb8    mov eax,filNum"
 "	      004c4bbe    push eax"
 "	      004c4bbf    push 1"
 "	      004c4bc1    push 4"
-"	      004c4bc3    lea eax,[ebp-4]"
+"	      004c4bc3    lea eax,size"
 "	      004c4bc6    push eax"
 "	      004c4bc7    call 00572960h"
 "	      004c4bcc    add esp,10h"
@@ -780,25 +780,25 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 329:
 	asm( 
-"	      004c4bdc    mov eax,[ebp-4]"
+"	      004c4bdc    mov eax,size"
 "	      004c4bdf    push eax"
 "	      004c4be0    call 004C838Eh"
 "	      004c4be5    add esp,4"
-"	      004c4be8    mov [ebp-4],eax"
+"	      004c4be8    mov size,eax"
 );
 // LINE 331:
 	asm( 
 "	      004c4beb    push 59B014h"
 "	      004c4bf0    call 004C49D8h"
 "	      004c4bf5    add esp,4"
-"	      004c4bf8    cmp eax,[ebp-10Ch]"
+"	      004c4bf8    cmp eax,dp"
 "	      004c4bfe    jne near ptr 004C4C2Ch"
 );
 // LINE 332:
 	asm( 
-"	      004c4c04    mov eax,[ebp-4]"
+"	      004c4c04    mov eax,size"
 "	      004c4c07    push eax"
-"	      004c4c08    mov eax,[ebp-118h]"
+"	      004c4c08    mov eax,filNum"
 "	      004c4c0e    push eax"
 "	      004c4c0f    call 004C56E2h"
 "	      004c4c14    add esp,8"
@@ -816,16 +816,16 @@ short S2CityLoad(char * filePath) {
 "	      004c4c2c    push 59B01Ch"
 "	      004c4c31    call 004C49D8h"
 "	      004c4c36    add esp,4"
-"	      004c4c39    cmp eax,[ebp-10Ch]"
+"	      004c4c39    cmp eax,dp"
 "	      004c4c3f    jne near ptr 004C4C85h"
 );
 // LINE 336:
 	asm( 
 "	      004c4c45    mov eax,ds:[639510h]"
 "	      004c4c4a    push eax"
-"	      004c4c4b    mov eax,[ebp-4]"
+"	      004c4c4b    mov eax,size"
 "	      004c4c4e    push eax"
-"	      004c4c4f    mov eax,[ebp-118h]"
+"	      004c4c4f    mov eax,filNum"
 "	      004c4c55    push eax"
 "	      004c4c56    call 004C65DFh"
 "	      004c4c5b    add esp,0Ch"
@@ -839,7 +839,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 338:
 	asm( 
-"	      004c4c6e    mov eax,[ebp-4]"
+"	      004c4c6e    mov eax,size"
 "	      004c4c71    push eax"
 "	      004c4c72    mov eax,ds:[639510h]"
 "	      004c4c77    push eax"
@@ -852,7 +852,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4c85    push 59B024h"
 "	      004c4c8a    call 004C49D8h"
 "	      004c4c8f    add esp,4"
-"	      004c4c92    cmp eax,[ebp-10Ch]"
+"	      004c4c92    cmp eax,dp"
 "	      004c4c98    jne near ptr 004C4CD1h"
 );
 // LINE 341:
@@ -860,9 +860,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4c9e    push 4000h"
 "	      004c4ca3    mov eax,ds:[63A270h]"
 "	      004c4ca8    push eax"
-"	      004c4ca9    mov eax,[ebp-4]"
+"	      004c4ca9    mov eax,size"
 "	      004c4cac    push eax"
-"	      004c4cad    mov eax,[ebp-118h]"
+"	      004c4cad    mov eax,filNum"
 "	      004c4cb3    push eax"
 "	      004c4cb4    call 004C66A4h"
 "	      004c4cb9    add esp,10h"
@@ -880,7 +880,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4cd1    push 59B02Ch"
 "	      004c4cd6    call 004C49D8h"
 "	      004c4cdb    add esp,4"
-"	      004c4cde    cmp eax,[ebp-10Ch]"
+"	      004c4cde    cmp eax,dp"
 "	      004c4ce4    jne near ptr 004C4D1Dh"
 );
 // LINE 345:
@@ -888,9 +888,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4cea    push 4000h"
 "	      004c4cef    mov eax,ds:[639850h]"
 "	      004c4cf4    push eax"
-"	      004c4cf5    mov eax,[ebp-4]"
+"	      004c4cf5    mov eax,size"
 "	      004c4cf8    push eax"
-"	      004c4cf9    mov eax,[ebp-118h]"
+"	      004c4cf9    mov eax,filNum"
 "	      004c4cff    push eax"
 "	      004c4d00    call 004C66A4h"
 "	      004c4d05    add esp,10h"
@@ -908,7 +908,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4d1d    push 59B034h"
 "	      004c4d22    call 004C49D8h"
 "	      004c4d27    add esp,4"
-"	      004c4d2a    cmp eax,[ebp-10Ch]"
+"	      004c4d2a    cmp eax,dp"
 "	      004c4d30    jne near ptr 004C4D69h"
 );
 // LINE 349:
@@ -916,9 +916,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4d36    push 4000h"
 "	      004c4d3b    mov eax,ds:[639DE0h]"
 "	      004c4d40    push eax"
-"	      004c4d41    mov eax,[ebp-4]"
+"	      004c4d41    mov eax,size"
 "	      004c4d44    push eax"
-"	      004c4d45    mov eax,[ebp-118h]"
+"	      004c4d45    mov eax,filNum"
 "	      004c4d4b    push eax"
 "	      004c4d4c    call 004C66A4h"
 "	      004c4d51    add esp,10h"
@@ -936,7 +936,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4d69    push 59B03Ch"
 "	      004c4d6e    call 004C49D8h"
 "	      004c4d73    add esp,4"
-"	      004c4d76    cmp eax,[ebp-10Ch]"
+"	      004c4d76    cmp eax,dp"
 "	      004c4d7c    jne near ptr 004C4DB5h"
 );
 // LINE 353:
@@ -944,9 +944,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4d82    push 4000h"
 "	      004c4d87    mov eax,ds:[63A030h]"
 "	      004c4d8c    push eax"
-"	      004c4d8d    mov eax,[ebp-4]"
+"	      004c4d8d    mov eax,size"
 "	      004c4d90    push eax"
-"	      004c4d91    mov eax,[ebp-118h]"
+"	      004c4d91    mov eax,filNum"
 "	      004c4d97    push eax"
 "	      004c4d98    call 004C66A4h"
 "	      004c4d9d    add esp,10h"
@@ -964,7 +964,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4db5    push 59B044h"
 "	      004c4dba    call 004C49D8h"
 "	      004c4dbf    add esp,4"
-"	      004c4dc2    cmp eax,[ebp-10Ch]"
+"	      004c4dc2    cmp eax,dp"
 "	      004c4dc8    jne near ptr 004C4E01h"
 );
 // LINE 357:
@@ -972,9 +972,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4dce    push 4000h"
 "	      004c4dd3    mov eax,ds:[639AD0h]"
 "	      004c4dd8    push eax"
-"	      004c4dd9    mov eax,[ebp-4]"
+"	      004c4dd9    mov eax,size"
 "	      004c4ddc    push eax"
-"	      004c4ddd    mov eax,[ebp-118h]"
+"	      004c4ddd    mov eax,filNum"
 "	      004c4de3    push eax"
 "	      004c4de4    call 004C66A4h"
 "	      004c4de9    add esp,10h"
@@ -992,21 +992,21 @@ short S2CityLoad(char * filePath) {
 "	      004c4e01    push 59B04Ch"
 "	      004c4e06    call 004C49D8h"
 "	      004c4e0b    add esp,4"
-"	      004c4e0e    cmp eax,[ebp-10Ch]"
+"	      004c4e0e    cmp eax,dp"
 "	      004c4e14    jne near ptr 004C4E56h"
 );
 // LINE 361:
 	asm( 
-"	      004c4e1a    mov word ptr [ebp-11Ch],1"
+"	      004c4e1a    mov got_label,1"
 );
 // LINE 363:
 	asm( 
 "	      004c4e23    push 1900h"
 "	      004c4e28    mov eax,ds:[639834h]"
 "	      004c4e2d    push eax"
-"	      004c4e2e    mov eax,[ebp-4]"
+"	      004c4e2e    mov eax,size"
 "	      004c4e31    push eax"
-"	      004c4e32    mov eax,[ebp-118h]"
+"	      004c4e32    mov eax,filNum"
 "	      004c4e38    push eax"
 "	      004c4e39    call 004C66A4h"
 "	      004c4e3e    add esp,10h"
@@ -1024,7 +1024,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4e56    push 59B054h"
 "	      004c4e5b    call 004C49D8h"
 "	      004c4e60    add esp,4"
-"	      004c4e63    cmp eax,[ebp-10Ch]"
+"	      004c4e63    cmp eax,dp"
 "	      004c4e69    jne near ptr 004C4EB5h"
 );
 // LINE 368:
@@ -1032,9 +1032,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4e6f    push 4B0h"
 "	      004c4e74    mov eax,ds:[63A744h]"
 "	      004c4e79    push eax"
-"	      004c4e7a    mov eax,[ebp-4]"
+"	      004c4e7a    mov eax,size"
 "	      004c4e7d    push eax"
-"	      004c4e7e    mov eax,[ebp-118h]"
+"	      004c4e7e    mov eax,filNum"
 "	      004c4e84    push eax"
 "	      004c4e85    call 004C66A4h"
 "	      004c4e8a    add esp,10h"
@@ -1060,7 +1060,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4eb5    push 59B05Ch"
 "	      004c4eba    call 004C49D8h"
 "	      004c4ebf    add esp,4"
-"	      004c4ec2    cmp eax,[ebp-10Ch]"
+"	      004c4ec2    cmp eax,dp"
 "	      004c4ec8    jne near ptr 004C4F01h"
 );
 // LINE 374:
@@ -1068,9 +1068,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4ece    push 1E0h"
 "	      004c4ed3    mov eax,ds:[639720h]"
 "	      004c4ed8    push eax"
-"	      004c4ed9    mov eax,[ebp-4]"
+"	      004c4ed9    mov eax,size"
 "	      004c4edc    push eax"
-"	      004c4edd    mov eax,[ebp-118h]"
+"	      004c4edd    mov eax,filNum"
 "	      004c4ee3    push eax"
 "	      004c4ee4    call 004C66A4h"
 "	      004c4ee9    add esp,10h"
@@ -1088,7 +1088,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4f01    push 59B064h"
 "	      004c4f06    call 004C49D8h"
 "	      004c4f0b    add esp,4"
-"	      004c4f0e    cmp eax,[ebp-10Ch]"
+"	      004c4f0e    cmp eax,dp"
 "	      004c4f14    jne near ptr 004C4F4Dh"
 );
 // LINE 379:
@@ -1096,9 +1096,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4f1a    push 4000h"
 "	      004c4f1f    mov eax,ds:[638F70h]"
 "	      004c4f24    push eax"
-"	      004c4f25    mov eax,[ebp-4]"
+"	      004c4f25    mov eax,size"
 "	      004c4f28    push eax"
-"	      004c4f29    mov eax,[ebp-118h]"
+"	      004c4f29    mov eax,filNum"
 "	      004c4f2f    push eax"
 "	      004c4f30    call 004C66A4h"
 "	      004c4f35    add esp,10h"
@@ -1116,7 +1116,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4f4d    push 59B06Ch"
 "	      004c4f52    call 004C49D8h"
 "	      004c4f57    add esp,4"
-"	      004c4f5a    cmp eax,[ebp-10Ch]"
+"	      004c4f5a    cmp eax,dp"
 "	      004c4f60    jne near ptr 004C4F99h"
 );
 // LINE 383:
@@ -1124,9 +1124,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4f66    push 1000h"
 "	      004c4f6b    mov eax,ds:[639730h]"
 "	      004c4f70    push eax"
-"	      004c4f71    mov eax,[ebp-4]"
+"	      004c4f71    mov eax,size"
 "	      004c4f74    push eax"
-"	      004c4f75    mov eax,[ebp-118h]"
+"	      004c4f75    mov eax,filNum"
 "	      004c4f7b    push eax"
 "	      004c4f7c    call 004C66A4h"
 "	      004c4f81    add esp,10h"
@@ -1144,7 +1144,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4f99    push 59B074h"
 "	      004c4f9e    call 004C49D8h"
 "	      004c4fa3    add esp,4"
-"	      004c4fa6    cmp eax,[ebp-10Ch]"
+"	      004c4fa6    cmp eax,dp"
 "	      004c4fac    jne near ptr 004C4FE5h"
 );
 // LINE 387:
@@ -1152,9 +1152,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4fb2    push 1000h"
 "	      004c4fb7    mov eax,ds:[639CD0h]"
 "	      004c4fbc    push eax"
-"	      004c4fbd    mov eax,[ebp-4]"
+"	      004c4fbd    mov eax,size"
 "	      004c4fc0    push eax"
-"	      004c4fc1    mov eax,[ebp-118h]"
+"	      004c4fc1    mov eax,filNum"
 "	      004c4fc7    push eax"
 "	      004c4fc8    call 004C66A4h"
 "	      004c4fcd    add esp,10h"
@@ -1172,7 +1172,7 @@ short S2CityLoad(char * filePath) {
 "	      004c4fe5    push 59B07Ch"
 "	      004c4fea    call 004C49D8h"
 "	      004c4fef    add esp,4"
-"	      004c4ff2    cmp eax,[ebp-10Ch]"
+"	      004c4ff2    cmp eax,dp"
 "	      004c4ff8    jne near ptr 004C5031h"
 );
 // LINE 391:
@@ -1180,9 +1180,9 @@ short S2CityLoad(char * filePath) {
 "	      004c4ffe    push 1000h"
 "	      004c5003    mov eax,ds:[63A470h]"
 "	      004c5008    push eax"
-"	      004c5009    mov eax,[ebp-4]"
+"	      004c5009    mov eax,size"
 "	      004c500c    push eax"
-"	      004c500d    mov eax,[ebp-118h]"
+"	      004c500d    mov eax,filNum"
 "	      004c5013    push eax"
 "	      004c5014    call 004C66A4h"
 "	      004c5019    add esp,10h"
@@ -1200,7 +1200,7 @@ short S2CityLoad(char * filePath) {
 "	      004c5031    push 59B084h"
 "	      004c5036    call 004C49D8h"
 "	      004c503b    add esp,4"
-"	      004c503e    cmp eax,[ebp-10Ch]"
+"	      004c503e    cmp eax,dp"
 "	      004c5044    jne near ptr 004C507Dh"
 );
 // LINE 395:
@@ -1208,9 +1208,9 @@ short S2CityLoad(char * filePath) {
 "	      004c504a    push 1000h"
 "	      004c504f    mov eax,ds:[63A750h]"
 "	      004c5054    push eax"
-"	      004c5055    mov eax,[ebp-4]"
+"	      004c5055    mov eax,size"
 "	      004c5058    push eax"
-"	      004c5059    mov eax,[ebp-118h]"
+"	      004c5059    mov eax,filNum"
 "	      004c505f    push eax"
 "	      004c5060    call 004C66A4h"
 "	      004c5065    add esp,10h"
@@ -1228,7 +1228,7 @@ short S2CityLoad(char * filePath) {
 "	      004c507d    push 59B08Ch"
 "	      004c5082    call 004C49D8h"
 "	      004c5087    add esp,4"
-"	      004c508a    cmp eax,[ebp-10Ch]"
+"	      004c508a    cmp eax,dp"
 "	      004c5090    jne near ptr 004C50C9h"
 );
 // LINE 399:
@@ -1236,9 +1236,9 @@ short S2CityLoad(char * filePath) {
 "	      004c5096    push 400h"
 "	      004c509b    mov eax,ds:[639170h]"
 "	      004c50a0    push eax"
-"	      004c50a1    mov eax,[ebp-4]"
+"	      004c50a1    mov eax,size"
 "	      004c50a4    push eax"
-"	      004c50a5    mov eax,[ebp-118h]"
+"	      004c50a5    mov eax,filNum"
 "	      004c50ab    push eax"
 "	      004c50ac    call 004C66A4h"
 "	      004c50b1    add esp,10h"
@@ -1256,7 +1256,7 @@ short S2CityLoad(char * filePath) {
 "	      004c50c9    push 59B094h"
 "	      004c50ce    call 004C49D8h"
 "	      004c50d3    add esp,4"
-"	      004c50d6    cmp eax,[ebp-10Ch]"
+"	      004c50d6    cmp eax,dp"
 "	      004c50dc    jne near ptr 004C5115h"
 );
 // LINE 403:
@@ -1264,9 +1264,9 @@ short S2CityLoad(char * filePath) {
 "	      004c50e2    push 400h"
 "	      004c50e7    mov eax,ds:[63A5B0h]"
 "	      004c50ec    push eax"
-"	      004c50ed    mov eax,[ebp-4]"
+"	      004c50ed    mov eax,size"
 "	      004c50f0    push eax"
-"	      004c50f1    mov eax,[ebp-118h]"
+"	      004c50f1    mov eax,filNum"
 "	      004c50f7    push eax"
 "	      004c50f8    call 004C66A4h"
 "	      004c50fd    add esp,10h"
@@ -1284,7 +1284,7 @@ short S2CityLoad(char * filePath) {
 "	      004c5115    push 59B09Ch"
 "	      004c511a    call 004C49D8h"
 "	      004c511f    add esp,4"
-"	      004c5122    cmp eax,[ebp-10Ch]"
+"	      004c5122    cmp eax,dp"
 "	      004c5128    jne near ptr 004C5161h"
 );
 // LINE 407:
@@ -1292,9 +1292,9 @@ short S2CityLoad(char * filePath) {
 "	      004c512e    push 400h"
 "	      004c5133    mov eax,ds:[638EE0h]"
 "	      004c5138    push eax"
-"	      004c5139    mov eax,[ebp-4]"
+"	      004c5139    mov eax,size"
 "	      004c513c    push eax"
-"	      004c513d    mov eax,[ebp-118h]"
+"	      004c513d    mov eax,filNum"
 "	      004c5143    push eax"
 "	      004c5144    call 004C66A4h"
 "	      004c5149    add esp,10h"
@@ -1312,7 +1312,7 @@ short S2CityLoad(char * filePath) {
 "	      004c5161    push 59B0A4h"
 "	      004c5166    call 004C49D8h"
 "	      004c516b    add esp,4"
-"	      004c516e    cmp eax,[ebp-10Ch]"
+"	      004c516e    cmp eax,dp"
 "	      004c5174    jne near ptr 004C51ADh"
 );
 // LINE 411:
@@ -1320,9 +1320,9 @@ short S2CityLoad(char * filePath) {
 "	      004c517a    push 400h"
 "	      004c517f    mov eax,ds:[63A640h]"
 "	      004c5184    push eax"
-"	      004c5185    mov eax,[ebp-4]"
+"	      004c5185    mov eax,size"
 "	      004c5188    push eax"
-"	      004c5189    mov eax,[ebp-118h]"
+"	      004c5189    mov eax,filNum"
 "	      004c518f    push eax"
 "	      004c5190    call 004C66A4h"
 "	      004c5195    add esp,10h"
@@ -1340,7 +1340,7 @@ short S2CityLoad(char * filePath) {
 "	      004c51ad    push 59B0ACh"
 "	      004c51b2    call 004C49D8h"
 "	      004c51b7    add esp,4"
-"	      004c51ba    cmp eax,[ebp-10Ch]"
+"	      004c51ba    cmp eax,dp"
 "	      004c51c0    jne near ptr 004C520Ch"
 );
 // LINE 415:
@@ -1348,9 +1348,9 @@ short S2CityLoad(char * filePath) {
 "	      004c51c6    push 0D00h"
 "	      004c51cb    mov eax,ds:[639FE0h]"
 "	      004c51d0    push eax"
-"	      004c51d1    mov eax,[ebp-4]"
+"	      004c51d1    mov eax,size"
 "	      004c51d4    push eax"
-"	      004c51d5    mov eax,[ebp-118h]"
+"	      004c51d5    mov eax,filNum"
 "	      004c51db    push eax"
 "	      004c51dc    call 004C66A4h"
 "	      004c51e1    add esp,10h"
@@ -1376,16 +1376,16 @@ short S2CityLoad(char * filePath) {
 "	      004c520c    push 59B0B4h"
 "	      004c5211    call 004C49D8h"
 "	      004c5216    add esp,4"
-"	      004c5219    cmp eax,[ebp-10Ch]"
+"	      004c5219    cmp eax,dp"
 "	      004c521f    jne near ptr 004C525Dh"
 );
 // LINE 420:
 	asm( 
-"	      004c5225    lea eax,[ebp-104h]"
+"	      004c5225    lea eax,tempCityName[0]"
 "	      004c522b    push eax"
-"	      004c522c    mov eax,[ebp-4]"
+"	      004c522c    mov eax,size"
 "	      004c522f    push eax"
-"	      004c5230    mov eax,[ebp-118h]"
+"	      004c5230    mov eax,filNum"
 "	      004c5236    push eax"
 "	      004c5237    call 004C65DFh"
 "	      004c523c    add esp,0Ch"
@@ -1399,14 +1399,14 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 422:
 	asm( 
-"	      004c524f    mov word ptr [ebp-114h],1"
+"	      004c524f    mov bFoundName,1"
 );
 // LINE 424:
 	asm( 
 "	      004c5258    jmp near ptr 004C5280h"
-"	      004c525d    mov eax,[ebp-4]"
+"	      004c525d    mov eax,size"
 "	      004c5260    push eax"
-"	      004c5261    mov eax,[ebp-118h]"
+"	      004c5261    mov eax,filNum"
 "	      004c5267    push eax"
 "	      004c5268    call 004C6619h"
 "	      004c526d    add esp,8"
@@ -1420,19 +1420,19 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 428:
 	asm( 
-"	      004c5280    mov eax,[ebp-4]"
+"	      004c5280    mov eax,size"
 "	      004c5283    add eax,8"
-"	      004c5286    add [ebp-120h],eax"
+"	      004c5286    add sofar,eax"
 );
 // LINE 429:
 	asm( 
-"	      004c528c    mov eax,[ebp-110h]"
-"	      004c5292    cmp [ebp-120h],eax"
+"	      004c528c    mov eax,length"
+"	      004c5292    cmp sofar,eax"
 "	      004c5298    jl near ptr 004C52A7h"
 );
 // LINE 430:
 	asm( 
-"	      004c529e    mov word ptr [ebp-108h],1"
+"	      004c529e    mov bDone,1"
 );
 // LINE 431:
 	asm( 
@@ -1445,7 +1445,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 435:
 	asm( 
-"	      004c52bc    movsx eax,byte ptr [ebp-104h]"
+"	      004c52bc    movsx eax,tempCityName[0]"
 "	      004c52c3    test eax,eax"
 "	      004c52c5    jne near ptr 004C52E2h"
 );
@@ -1453,7 +1453,7 @@ short S2CityLoad(char * filePath) {
 	asm( 
 "	      004c52cb    mov eax,ds:[63A570h]"
 "	      004c52d0    push eax"
-"	      004c52d1    mov eax,[ebp+8]"
+"	      004c52d1    mov eax,filePath"
 "	      004c52d4    push eax"
 "	      004c52d5    call 004C555Fh"
 "	      004c52da    add esp,8"
@@ -1464,7 +1464,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 438:
 	asm( 
-"	      004c52e2    lea eax,[ebp-104h]"
+"	      004c52e2    lea eax,tempCityName[0]"
 "	      004c52e8    push eax"
 "	      004c52e9    mov eax,ds:[63A570h]"
 "	      004c52ee    push eax"
@@ -1486,7 +1486,7 @@ short S2CityLoad(char * filePath) {
 	asm( 
 "	      004c530a    mov eax,ds:[63A570h]"
 "	      004c530f    push eax"
-"	      004c5310    mov eax,[ebp+8]"
+"	      004c5310    mov eax,filePath"
 "	      004c5313    push eax"
 "	      004c5314    call 004C555Fh"
 "	      004c5319    add esp,8"
@@ -1497,7 +1497,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 447:
 	asm( 
-"	      004c5321    movsx eax,word ptr [ebp-11Ch]"
+"	      004c5321    movsx eax,got_label"
 "	      004c5328    test eax,eax"
 "	      004c532a    je near ptr 004C533Ah"
 );
@@ -1515,7 +1515,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 453:
 	asm( 
-"	      004c533f    mov eax,[ebp-118h]"
+"	      004c533f    mov eax,filNum"
 "	      004c5345    push eax"
 "	      004c5346    call 0056D120h"
 "	      004c534b    add esp,4"
@@ -1528,7 +1528,7 @@ short S2CityLoad(char * filePath) {
 // LINE 457:
 badread:
 	asm( 
-"	      004c5357    mov eax,[ebp-118h]"
+"	      004c5357    mov eax,filNum"
 "	      004c535d    push eax"
 "	      004c535e    call 0056D120h"
 "	      004c5363    add esp,4"
@@ -1564,47 +1564,47 @@ void label_kludge() {
 );
 // LINE 476:
 	asm( 
-"	      004c537c    mov word ptr [ebp-4],0"
+"	      004c537c    mov i,0"
 "	      004c5382    jmp near ptr 004C538Bh"
-"	      004c5387    inc word ptr [ebp-4]"
-"	      004c538b    movsx eax,word ptr [ebp-4]"
+"	      004c5387    inc i"
+"	      004c538b    movsx eax,i"
 "	      004c538f    cmp eax,100h"
 "	      004c5394    jge near ptr 004C540Dh"
 );
 // LINE 477:
 	asm( 
-"	      004c539a    movsx eax,word ptr [ebp-4]"
+"	      004c539a    movsx eax,i"
 "	      004c539e    lea eax,[eax+eax*4]"
 "	      004c53a1    lea eax,[eax+eax*4]"
 "	      004c53a4    mov ecx,ds:[639834h]"
 "	      004c53aa    movzx ax,byte ptr [eax+ecx]"
-"	      004c53af    mov [ebp-8],ax"
+"	      004c53af    mov len,ax"
 );
 // LINE 478:
 	asm( 
-"	      004c53b3    movsx eax,word ptr [ebp-8]"
+"	      004c53b3    movsx eax,len"
 "	      004c53b7    cmp eax,17h"
 "	      004c53ba    jle near ptr 004C53EDh"
 );
 // LINE 479:
 	asm( 
-"	      004c53c0    movsx eax,word ptr [ebp-4]"
+"	      004c53c0    movsx eax,i"
 "	      004c53c4    lea eax,[eax+eax*4]"
 "	      004c53c7    lea eax,[eax+eax*4]"
 "	      004c53ca    mov ecx,ds:[639834h]"
 "	      004c53d0    mov byte ptr [eax+ecx],17h"
-"	      004c53d4    movsx eax,word ptr [ebp-4]"
+"	      004c53d4    movsx eax,i"
 "	      004c53d8    lea eax,[eax+eax*4]"
 "	      004c53db    lea eax,[eax+eax*4]"
 "	      004c53de    mov ecx,ds:[639834h]"
 "	      004c53e4    movzx ax,byte ptr [eax+ecx]"
-"	      004c53e9    mov [ebp-8],ax"
+"	      004c53e9    mov len,ax"
 );
 // LINE 480:
 	asm( 
-"	      004c53ed    movsx eax,word ptr [ebp-8]"
+"	      004c53ed    movsx eax,len"
 "	      004c53f1    inc eax"
-"	      004c53f2    movsx ecx,word ptr [ebp-4]"
+"	      004c53f2    movsx ecx,i"
 "	      004c53f6    lea ecx,[ecx+ecx*4]"
 "	      004c53f9    lea ecx,[ecx+ecx*4]"
 "	      004c53fc    add eax,ecx"
@@ -1641,26 +1641,26 @@ void clear_label() {
 );
 // LINE 499:
 	asm( 
-"	      004c541b    mov word ptr [ebp-4],0"
+"	      004c541b    mov i,0"
 "	      004c5421    jmp near ptr 004C542Ah"
-"	      004c5426    inc word ptr [ebp-4]"
-"	      004c542a    movsx eax,word ptr [ebp-4]"
+"	      004c5426    inc i"
+"	      004c542a    movsx eax,i"
 "	      004c542e    cmp eax,100h"
 "	      004c5433    jge near ptr 004C5479h"
 );
 // LINE 500:
 	asm( 
-"	      004c5439    mov word ptr [ebp-8],0"
+"	      004c5439    mov j,0"
 "	      004c543f    jmp near ptr 004C5448h"
-"	      004c5444    inc word ptr [ebp-8]"
-"	      004c5448    movsx eax,word ptr [ebp-8]"
+"	      004c5444    inc j"
+"	      004c5448    movsx eax,j"
 "	      004c544c    cmp eax,19h"
 "	      004c544f    jge near ptr 004C5474h"
 );
 // LINE 501:
 	asm( 
-"	      004c5455    movsx eax,word ptr [ebp-8]"
-"	      004c5459    movsx ecx,word ptr [ebp-4]"
+"	      004c5455    movsx eax,j"
+"	      004c5459    movsx ecx,i"
 "	      004c545d    lea ecx,[ecx+ecx*4]"
 "	      004c5460    lea ecx,[ecx+ecx*4]"
 "	      004c5463    add eax,ecx"
@@ -1698,36 +1698,36 @@ void graph_kludge() {
 );
 // LINE 519:
 	asm( 
-"	      004c5487    mov word ptr [ebp-4],0"
+"	      004c5487    mov i,0"
 "	      004c548d    jmp near ptr 004C5496h"
-"	      004c5492    inc word ptr [ebp-4]"
-"	      004c5496    movsx eax,word ptr [ebp-4]"
+"	      004c5492    inc i"
+"	      004c5496    movsx eax,i"
 "	      004c549a    cmp eax,10h"
 "	      004c549d    jge near ptr 004C5525h"
 );
 // LINE 520:
 	asm( 
-"	      004c54a3    movsx eax,word ptr [ebp-4]"
+"	      004c54a3    movsx eax,i"
 "	      004c54a7    mov eax,[eax*4+59AFB0h]"
-"	      004c54ae    movsx ecx,word ptr [ebp-4]"
+"	      004c54ae    movsx ecx,i"
 "	      004c54b2    mov edx,ds:[63A020h]"
 "	      004c54b8    mov [edx+ecx*4],eax"
 );
 // LINE 521:
 	asm( 
-"	      004c54bb    mov word ptr [ebp-8],0"
+"	      004c54bb    mov j,0"
 "	      004c54c1    jmp near ptr 004C54CAh"
-"	      004c54c6    inc word ptr [ebp-8]"
-"	      004c54ca    movsx eax,word ptr [ebp-8]"
+"	      004c54c6    inc j"
+"	      004c54ca    movsx eax,j"
 "	      004c54ce    cmp eax,34h"
 "	      004c54d1    jge near ptr 004C5520h"
 );
 // LINE 522:
 	asm( 
-"	      004c54d7    movsx eax,word ptr [ebp-4]"
+"	      004c54d7    movsx eax,i"
 "	      004c54db    mov eax,[eax*4+639FE0h]"
-"	      004c54e2    movsx ecx,word ptr [ebp-8]"
-"	      004c54e6    movsx edx,word ptr [ebp-4]"
+"	      004c54e2    movsx ecx,j"
+"	      004c54e6    movsx edx,i"
 "	      004c54ea    mov ebx,ds:[63A020h]"
 "	      004c54f0    mov edx,[ebx+edx*4]"
 "	      004c54f3    cmp [eax+ecx*4],edx"
@@ -1735,11 +1735,11 @@ void graph_kludge() {
 );
 // LINE 523:
 	asm( 
-"	      004c54fc    movsx eax,word ptr [ebp-4]"
+"	      004c54fc    movsx eax,i"
 "	      004c5500    mov eax,[eax*4+639FE0h]"
-"	      004c5507    movsx ecx,word ptr [ebp-8]"
+"	      004c5507    movsx ecx,j"
 "	      004c550b    mov eax,[eax+ecx*4]"
-"	      004c550e    movsx ecx,word ptr [ebp-4]"
+"	      004c550e    movsx ecx,i"
 "	      004c5512    mov edx,ds:[63A020h]"
 "	      004c5518    mov [edx+ecx*4],eax"
 );
@@ -1753,10 +1753,10 @@ void graph_kludge() {
 );
 // LINE 526:
 	asm( 
-"	      004c5525    mov word ptr [ebp-4],1"
+"	      004c5525    mov i,1"
 "	      004c552b    jmp near ptr 004C5534h"
-"	      004c5530    inc word ptr [ebp-4]"
-"	      004c5534    movsx eax,word ptr [ebp-4]"
+"	      004c5530    inc i"
+"	      004c5534    movsx eax,i"
 "	      004c5538    cmp eax,3"
 "	      004c553b    jg near ptr 004C555Ah"
 );
@@ -1764,7 +1764,7 @@ void graph_kludge() {
 	asm( 
 "	      004c5541    mov eax,ds:[63A020h]"
 "	      004c5546    mov eax,[eax]"
-"	      004c5548    movsx ecx,word ptr [ebp-4]"
+"	      004c5548    movsx ecx,i"
 "	      004c554c    mov edx,ds:[63A020h]"
 "	      004c5552    mov [edx+ecx*4],eax"
 "	      004c5555    jmp near ptr 004C5530h"
@@ -1798,41 +1798,41 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 );
 // LINE 549:
 	asm( 
-"	      004c556b    lea eax,[ebp-100h]"
+"	      004c556b    lea eax,szSplitPathExtension[0]"
 "	      004c5571    push eax"
-"	      004c5572    lea eax,[ebp-308h]"
+"	      004c5572    lea eax,szSplitPathFilename[0]"
 "	      004c5578    push eax"
-"	      004c5579    lea eax,[ebp-204h]"
+"	      004c5579    lea eax,szSplitPathDirectory[0]"
 "	      004c557f    push eax"
-"	      004c5580    lea eax,[ebp-104h]"
+"	      004c5580    lea eax,szSplitPathDrive[0]"
 "	      004c5586    push eax"
-"	      004c5587    mov eax,[ebp+8]"
+"	      004c5587    mov eax,filePath"
 "	      004c558a    push eax"
 "	      004c558b    call 0056DDF0h"
 "	      004c5590    add esp,14h"
 );
 // LINE 551:
 	asm( 
-"	      004c5593    lea eax,[ebp-308h]"
+"	      004c5593    lea eax,szSplitPathFilename[0]"
 "	      004c5599    push eax"
 "	      004c559a    call 0056ABE0h"
 "	      004c559f    add esp,4"
-"	      004c55a2    mov [ebp-208h],eax"
+"	      004c55a2    mov stringLength,eax"
 );
 // LINE 552:
 	asm( 
-"	      004c55a8    cmp dword ptr [ebp-208h],1Fh"
+"	      004c55a8    cmp stringLength,1Fh"
 "	      004c55af    jbe near ptr 004C55BFh"
 );
 // LINE 553:
 	asm( 
-"	      004c55b5    mov dword ptr [ebp-208h],1Fh"
+"	      004c55b5    mov stringLength,1Fh"
 );
 // LINE 554:
 	asm( 
-"	      004c55bf    lea eax,[ebp-308h]"
+"	      004c55bf    lea eax,szSplitPathFilename[0]"
 "	      004c55c5    push eax"
-"	      004c55c6    mov eax,[ebp+0Ch]"
+"	      004c55c6    mov eax,cityName"
 "	      004c55c9    push eax"
 "	      004c55ca    call 0056CEB0h"
 "	      004c55cf    add esp,8"
@@ -1859,9 +1859,9 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 );
 // LINE 569:
 	asm( 
-"	      004c55dd    mov eax,[ebp+8]"
+"	      004c55dd    mov eax,cityName"
 "	      004c55e0    push eax"
-"	      004c55e1    mov eax,[ebp+0Ch]"
+"	      004c55e1    mov eax,fileName"
 "	      004c55e4    push eax"
 "	      004c55e5    call 0056CEB0h"
 "	      004c55ea    add esp,8"
@@ -1891,11 +1891,11 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 );
 // LINE 591:
 	asm( 
-"	      004c55fb    mov eax,[ebp+8]"
+"	      004c55fb    mov eax,filNum"
 "	      004c55fe    push eax"
 "	      004c55ff    push 1"
 "	      004c5601    push 4"
-"	      004c5603    lea eax,[ebp-4]"
+"	      004c5603    lea eax,data"
 "	      004c5606    push eax"
 "	      004c5607    call 00572960h"
 "	      004c560c    add esp,10h"
@@ -1909,18 +1909,18 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 );
 // LINE 593:
 	asm( 
-"	      004c561f    mov eax,[ebp-4]"
+"	      004c561f    mov eax,data"
 "	      004c5622    push eax"
 "	      004c5623    call 004C838Eh"
 "	      004c5628    add esp,4"
-"	      004c562b    mov [ebp-4],eax"
+"	      004c562b    mov data,eax"
 );
 // LINE 596:
 	asm( 
 "	      004c562e    push 59B0BCh"
 "	      004c5633    call 004C49D8h"
 "	      004c5638    add esp,4"
-"	      004c563b    cmp eax,[ebp-4]"
+"	      004c563b    cmp eax,data"
 "	      004c563e    je near ptr 004C564Ch"
 );
 // LINE 597:
@@ -1930,11 +1930,11 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 );
 // LINE 602:
 	asm( 
-"	      004c564c    mov eax,[ebp+8]"
+"	      004c564c    mov eax,filNum"
 "	      004c564f    push eax"
 "	      004c5650    push 1"
 "	      004c5652    push 4"
-"	      004c5654    mov eax,[ebp+0Ch]"
+"	      004c5654    mov eax,length"
 "	      004c5657    push eax"
 "	      004c5658    call 00572960h"
 "	      004c565d    add esp,10h"
@@ -1948,21 +1948,21 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 );
 // LINE 604:
 	asm( 
-"	      004c5670    mov eax,[ebp+0Ch]"
+"	      004c5670    mov eax,length"
 "	      004c5673    mov eax,[eax]"
 "	      004c5675    push eax"
 "	      004c5676    call 004C838Eh"
 "	      004c567b    add esp,4"
-"	      004c567e    mov ecx,[ebp+0Ch]"
+"	      004c567e    mov ecx,length"
 "	      004c5681    mov [ecx],eax"
 );
 // LINE 607:
 	asm( 
-"	      004c5683    mov eax,[ebp+8]"
+"	      004c5683    mov eax,filNum"
 "	      004c5686    push eax"
 "	      004c5687    push 1"
 "	      004c5689    push 4"
-"	      004c568b    lea eax,[ebp-4]"
+"	      004c568b    lea eax,data"
 "	      004c568e    push eax"
 "	      004c568f    call 00572960h"
 "	      004c5694    add esp,10h"
@@ -1976,18 +1976,18 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 );
 // LINE 609:
 	asm( 
-"	      004c56a7    mov eax,[ebp-4]"
+"	      004c56a7    mov eax,data"
 "	      004c56aa    push eax"
 "	      004c56ab    call 004C838Eh"
 "	      004c56b0    add esp,4"
-"	      004c56b3    mov [ebp-4],eax"
+"	      004c56b3    mov data,eax"
 );
 // LINE 611:
 	asm( 
 "	      004c56b6    push 59B0C4h"
 "	      004c56bb    call 004C49D8h"
 "	      004c56c0    add esp,4"
-"	      004c56c3    cmp eax,[ebp-4]"
+"	      004c56c3    cmp eax,data"
 "	      004c56c6    je near ptr 004C56D4h"
 );
 // LINE 612:
@@ -2031,9 +2031,9 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 "	      004c56eb    push 12C0h"
 "	      004c56f0    mov eax,ds:[63923Ch]"
 "	      004c56f5    push eax"
-"	      004c56f6    mov eax,[ebp+0Ch]"
+"	      004c56f6    mov eax,size"
 "	      004c56f9    push eax"
-"	      004c56fa    mov eax,[ebp+8]"
+"	      004c56fa    mov eax,filNum"
 "	      004c56fd    push eax"
 "	      004c56fe    call 004C66A4h"
 "	      004c5703    add esp,10h"
@@ -2048,7 +2048,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 637:
 	asm( 
-"	      004c5719    mov eax,[ebp+0Ch]"
+"	      004c5719    mov eax,size"
 "	      004c571c    push eax"
 "	      004c571d    mov eax,ds:[63923Ch]"
 "	      004c5722    push eax"
@@ -2068,291 +2068,291 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 644:
 	asm( 
-"	      004c5745    mov word ptr [ebp-4],1"
+"	      004c5745    mov ix,1"
 );
 // LINE 645:
 	asm( 
-"	      004c574b    movsx eax,word ptr [ebp-4]"
+"	      004c574b    movsx eax,ix"
 "	      004c574f    mov ecx,ds:[63923Ch]"
 "	      004c5755    mov eax,[ecx+eax*4]"
 "	      004c5758    mov ds:[59BC14h],ax"
-"	      004c575e    inc word ptr [ebp-4]"
+"	      004c575e    inc ix"
 );
 // LINE 646:
 	asm( 
-"	      004c5762    movsx eax,word ptr [ebp-4]"
+"	      004c5762    movsx eax,ix"
 "	      004c5766    mov ecx,ds:[63923Ch]"
 "	      004c576c    mov eax,[ecx+eax*4]"
 "	      004c576f    mov ds:[59BC18h],ax"
-"	      004c5775    inc word ptr [ebp-4]"
+"	      004c5775    inc ix"
 );
 // LINE 647:
 	asm( 
-"	      004c5779    movsx eax,word ptr [ebp-4]"
+"	      004c5779    movsx eax,ix"
 "	      004c577d    mov ecx,ds:[63923Ch]"
 "	      004c5783    mov eax,[ecx+eax*4]"
 "	      004c5786    mov ds:[59B584h],ax"
-"	      004c578c    inc word ptr [ebp-4]"
+"	      004c578c    inc ix"
 );
 // LINE 648:
 	asm( 
-"	      004c5790    movsx eax,word ptr [ebp-4]"
+"	      004c5790    movsx eax,ix"
 "	      004c5794    mov ecx,ds:[63923Ch]"
 "	      004c579a    mov eax,[ecx+eax*4]"
 "	      004c579d    mov ds:[59B580h],eax"
-"	      004c57a2    inc word ptr [ebp-4]"
+"	      004c57a2    inc ix"
 );
 // LINE 649:
 	asm( 
-"	      004c57a6    movsx eax,word ptr [ebp-4]"
+"	      004c57a6    movsx eax,ix"
 "	      004c57aa    mov ecx,ds:[63923Ch]"
 "	      004c57b0    mov eax,[ecx+eax*4]"
 "	      004c57b3    mov ds:[63A850h],eax"
-"	      004c57b8    inc word ptr [ebp-4]"
+"	      004c57b8    inc ix"
 );
 // LINE 650:
 	asm( 
-"	      004c57bc    movsx eax,word ptr [ebp-4]"
+"	      004c57bc    movsx eax,ix"
 "	      004c57c0    mov ecx,ds:[63923Ch]"
 "	      004c57c6    mov eax,[ecx+eax*4]"
 "	      004c57c9    mov ds:[639AB4h],eax"
-"	      004c57ce    inc word ptr [ebp-4]"
+"	      004c57ce    inc ix"
 );
 // LINE 651:
 	asm( 
-"	      004c57d2    movsx eax,word ptr [ebp-4]"
+"	      004c57d2    movsx eax,ix"
 "	      004c57d6    mov ecx,ds:[63923Ch]"
 "	      004c57dc    mov eax,[ecx+eax*4]"
 "	      004c57df    mov ds:[6391FAh],ax"
-"	      004c57e5    inc word ptr [ebp-4]"
+"	      004c57e5    inc ix"
 );
 // LINE 652:
 	asm( 
-"	      004c57e9    movsx eax,word ptr [ebp-4]"
+"	      004c57e9    movsx eax,ix"
 "	      004c57ed    mov ecx,ds:[63923Ch]"
 "	      004c57f3    mov eax,[ecx+eax*4]"
 "	      004c57f6    mov ds:[639238h],ax"
-"	      004c57fc    inc word ptr [ebp-4]"
+"	      004c57fc    inc ix"
 );
 // LINE 653:
 	asm( 
-"	      004c5800    movsx eax,word ptr [ebp-4]"
+"	      004c5800    movsx eax,ix"
 "	      004c5804    mov ecx,ds:[63923Ch]"
 "	      004c580a    mov eax,[ecx+eax*4]"
 "	      004c580d    mov ds:[639724h],eax"
-"	      004c5812    inc word ptr [ebp-4]"
+"	      004c5812    inc ix"
 );
 // LINE 654:
 	asm( 
-"	      004c5816    movsx eax,word ptr [ebp-4]"
+"	      004c5816    movsx eax,ix"
 "	      004c581a    mov ecx,ds:[63923Ch]"
 "	      004c5820    mov eax,[ecx+eax*4]"
 "	      004c5823    mov ds:[63A6C4h],eax"
-"	      004c5828    inc word ptr [ebp-4]"
+"	      004c5828    inc ix"
 );
 // LINE 655:
 	asm( 
-"	      004c582c    movsx eax,word ptr [ebp-4]"
+"	      004c582c    movsx eax,ix"
 "	      004c5830    mov ecx,ds:[63923Ch]"
 "	      004c5836    mov eax,[ecx+eax*4]"
 "	      004c5839    mov ds:[63A634h],eax"
-"	      004c583e    inc word ptr [ebp-4]"
+"	      004c583e    inc ix"
 );
 // LINE 656:
 	asm( 
-"	      004c5842    movsx eax,word ptr [ebp-4]"
+"	      004c5842    movsx eax,ix"
 "	      004c5846    mov ecx,ds:[63923Ch]"
 "	      004c584c    mov eax,[ecx+eax*4]"
 "	      004c584f    mov ds:[639838h],eax"
-"	      004c5854    inc word ptr [ebp-4]"
+"	      004c5854    inc ix"
 );
 // LINE 657:
 	asm( 
-"	      004c5858    movsx eax,word ptr [ebp-4]"
+"	      004c5858    movsx eax,ix"
 "	      004c585c    mov ecx,ds:[63923Ch]"
 "	      004c5862    mov eax,[ecx+eax*4]"
 "	      004c5865    mov ds:[639AA8h],eax"
-"	      004c586a    inc word ptr [ebp-4]"
+"	      004c586a    inc ix"
 );
 // LINE 658:
 	asm( 
-"	      004c586e    movsx eax,word ptr [ebp-4]"
+"	      004c586e    movsx eax,ix"
 "	      004c5872    mov ecx,ds:[63923Ch]"
 "	      004c5878    mov eax,[ecx+eax*4]"
 "	      004c587b    mov ds:[63983Ch],eax"
-"	      004c5880    inc word ptr [ebp-4]"
+"	      004c5880    inc ix"
 );
 // LINE 659:
 	asm( 
-"	      004c5884    movsx eax,word ptr [ebp-4]"
+"	      004c5884    movsx eax,ix"
 "	      004c5888    mov ecx,ds:[63923Ch]"
 "	      004c588e    mov eax,[ecx+eax*4]"
 "	      004c5891    mov ds:[639A50h],eax"
-"	      004c5896    inc word ptr [ebp-4]"
+"	      004c5896    inc ix"
 );
 // LINE 660:
 	asm( 
-"	      004c589a    movsx eax,word ptr [ebp-4]"
+"	      004c589a    movsx eax,ix"
 "	      004c589e    mov ecx,ds:[63923Ch]"
 "	      004c58a4    mov eax,[ecx+eax*4]"
 "	      004c58a7    mov ds:[63A028h],eax"
-"	      004c58ac    inc word ptr [ebp-4]"
+"	      004c58ac    inc ix"
 );
 // LINE 661:
 	asm( 
-"	      004c58b0    movsx eax,word ptr [ebp-4]"
+"	      004c58b0    movsx eax,ix"
 "	      004c58b4    mov ecx,ds:[63923Ch]"
 "	      004c58ba    mov eax,[ecx+eax*4]"
 "	      004c58bd    mov ds:[639AC0h],eax"
-"	      004c58c2    inc word ptr [ebp-4]"
+"	      004c58c2    inc ix"
 );
 // LINE 662:
 	asm( 
-"	      004c58c6    movsx eax,word ptr [ebp-4]"
+"	      004c58c6    movsx eax,ix"
 "	      004c58ca    mov ecx,ds:[63923Ch]"
 "	      004c58d0    mov eax,[ecx+eax*4]"
 "	      004c58d3    mov ds:[63A260h],eax"
-"	      004c58d8    inc word ptr [ebp-4]"
+"	      004c58d8    inc ix"
 );
 // LINE 663:
 	asm( 
-"	      004c58dc    movsx eax,word ptr [ebp-4]"
+"	      004c58dc    movsx eax,ix"
 "	      004c58e0    mov ecx,ds:[63923Ch]"
 "	      004c58e6    mov eax,[ecx+eax*4]"
 "	      004c58e9    mov ds:[639A5Ch],eax"
-"	      004c58ee    inc word ptr [ebp-4]"
+"	      004c58ee    inc ix"
 );
 // LINE 664:
 	asm( 
-"	      004c58f2    movsx eax,word ptr [ebp-4]"
+"	      004c58f2    movsx eax,ix"
 "	      004c58f6    mov ecx,ds:[63923Ch]"
 "	      004c58fc    mov eax,[ecx+eax*4]"
 "	      004c58ff    mov ds:[638F60h],eax"
-"	      004c5904    inc word ptr [ebp-4]"
+"	      004c5904    inc ix"
 );
 // LINE 665:
 	asm( 
-"	      004c5908    movsx eax,word ptr [ebp-4]"
+"	      004c5908    movsx eax,ix"
 "	      004c590c    mov ecx,ds:[63923Ch]"
 "	      004c5912    mov eax,[ecx+eax*4]"
 "	      004c5915    mov ds:[63930Ch],eax"
-"	      004c591a    inc word ptr [ebp-4]"
+"	      004c591a    inc ix"
 );
 // LINE 666:
 	asm( 
-"	      004c591e    movsx eax,word ptr [ebp-4]"
+"	      004c591e    movsx eax,ix"
 "	      004c5922    mov ecx,ds:[63923Ch]"
 "	      004c5928    mov eax,[ecx+eax*4]"
 "	      004c592b    mov ds:[638ED8h],ax"
-"	      004c5931    inc word ptr [ebp-4]"
+"	      004c5931    inc ix"
 );
 // LINE 667:
 	asm( 
-"	      004c5935    movsx eax,word ptr [ebp-4]"
+"	      004c5935    movsx eax,ix"
 "	      004c5939    mov ecx,ds:[63923Ch]"
 "	      004c593f    mov eax,[ecx+eax*4]"
 "	      004c5942    mov ds:[639AB8h],ax"
-"	      004c5948    inc word ptr [ebp-4]"
+"	      004c5948    inc ix"
 );
 // LINE 668:
 	asm( 
-"	      004c594c    movsx eax,word ptr [ebp-4]"
+"	      004c594c    movsx eax,ix"
 "	      004c5950    mov ecx,ds:[63923Ch]"
 "	      004c5956    mov al,[ecx+eax*4]"
 "	      004c5959    mov ds:[63A6C0h],al"
-"	      004c595e    inc word ptr [ebp-4]"
+"	      004c595e    inc ix"
 );
 // LINE 669:
 	asm( 
-"	      004c5962    movsx eax,word ptr [ebp-4]"
+"	      004c5962    movsx eax,ix"
 "	      004c5966    mov ecx,ds:[63923Ch]"
 "	      004c596c    mov al,[ecx+eax*4]"
 "	      004c596f    mov ds:[638EDAh],al"
-"	      004c5974    inc word ptr [ebp-4]"
+"	      004c5974    inc ix"
 );
 // LINE 670:
 	asm( 
-"	      004c5978    movsx eax,word ptr [ebp-4]"
+"	      004c5978    movsx eax,ix"
 "	      004c597c    mov ecx,ds:[63923Ch]"
 "	      004c5982    mov al,[ecx+eax*4]"
 "	      004c5985    mov ds:[639AB2h],al"
-"	      004c598a    inc word ptr [ebp-4]"
+"	      004c598a    inc ix"
 );
 // LINE 671:
 	asm( 
-"	      004c598e    movsx eax,word ptr [ebp-4]"
+"	      004c598e    movsx eax,ix"
 "	      004c5992    mov ecx,ds:[63923Ch]"
 "	      004c5998    mov al,[ecx+eax*4]"
 "	      004c599b    mov ds:[63924Ah],al"
-"	      004c59a0    inc word ptr [ebp-4]"
+"	      004c59a0    inc ix"
 );
 // LINE 672:
 	asm( 
-"	      004c59a4    movsx eax,word ptr [ebp-4]"
+"	      004c59a4    movsx eax,ix"
 "	      004c59a8    mov ecx,ds:[63923Ch]"
 "	      004c59ae    mov eax,[ecx+eax*4]"
 "	      004c59b1    mov ds:[59B554h],ax"
-"	      004c59b7    inc word ptr [ebp-4]"
+"	      004c59b7    inc ix"
 );
 // LINE 673:
 	asm( 
-"	      004c59bb    movsx eax,word ptr [ebp-4]"
+"	      004c59bb    movsx eax,ix"
 "	      004c59bf    mov ecx,ds:[63923Ch]"
 "	      004c59c5    mov eax,[ecx+eax*4]"
 "	      004c59c8    mov ds:[59C018h],eax"
-"	      004c59cd    inc word ptr [ebp-4]"
+"	      004c59cd    inc ix"
 );
 // LINE 677:
 	asm( 
-"	      004c59d1    movsx eax,word ptr [ebp-4]"
+"	      004c59d1    movsx eax,ix"
 "	      004c59d5    mov ecx,ds:[63923Ch]"
 "	      004c59db    mov eax,[ecx+eax*4]"
-"	      004c59de    mov [ebp-10h],eax"
-"	      004c59e1    inc word ptr [ebp-4]"
+"	      004c59de    mov lval,eax"
+"	      004c59e1    inc ix"
 );
 // LINE 679:
 	asm( 
-"	      004c59e5    mov eax,[ebp-10h]"
+"	      004c59e5    mov eax,lval"
 "	      004c59e8    mov ds:[59BB84h],eax"
 );
 // LINE 685:
 	asm( 
-"	      004c59ed    mov word ptr [ebp-8],0"
+"	      004c59ed    mov i,0"
 "	      004c59f3    jmp near ptr 004C59FCh"
-"	      004c59f8    inc word ptr [ebp-8]"
-"	      004c59fc    movsx eax,word ptr [ebp-8]"
+"	      004c59f8    inc i"
+"	      004c59fc    movsx eax,i"
 "	      004c5a00    cmp eax,14h"
 "	      004c5a03    jge near ptr 004C5A68h"
 );
 // LINE 686:
 	asm( 
-"	      004c5a09    movsx eax,word ptr [ebp-4]"
+"	      004c5a09    movsx eax,ix"
 "	      004c5a0d    mov ecx,ds:[63923Ch]"
 "	      004c5a13    mov eax,[ecx+eax*4]"
-"	      004c5a16    movsx ecx,word ptr [ebp-8]"
+"	      004c5a16    movsx ecx,i"
 "	      004c5a1a    mov edx,ds:[639244h]"
 "	      004c5a20    mov [edx+ecx*4],eax"
-"	      004c5a23    inc word ptr [ebp-4]"
+"	      004c5a23    inc ix"
 );
 // LINE 687:
 	asm( 
-"	      004c5a27    movsx eax,word ptr [ebp-4]"
+"	      004c5a27    movsx eax,ix"
 "	      004c5a2b    mov ecx,ds:[63923Ch]"
 "	      004c5a31    mov eax,[ecx+eax*4]"
-"	      004c5a34    movsx ecx,word ptr [ebp-8]"
+"	      004c5a34    movsx ecx,i"
 "	      004c5a38    mov edx,ds:[639DDCh]"
 "	      004c5a3e    mov [edx+ecx*4],eax"
-"	      004c5a41    inc word ptr [ebp-4]"
+"	      004c5a41    inc ix"
 );
 // LINE 688:
 	asm( 
-"	      004c5a45    movsx eax,word ptr [ebp-4]"
+"	      004c5a45    movsx eax,ix"
 "	      004c5a49    mov ecx,ds:[63923Ch]"
 "	      004c5a4f    mov eax,[ecx+eax*4]"
-"	      004c5a52    movsx ecx,word ptr [ebp-8]"
+"	      004c5a52    movsx ecx,i"
 "	      004c5a56    mov edx,ds:[639844h]"
 "	      004c5a5c    mov [edx+ecx*4],eax"
-"	      004c5a5f    inc word ptr [ebp-4]"
+"	      004c5a5f    inc ix"
 );
 // LINE 689:
 	asm( 
@@ -2360,42 +2360,42 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 691:
 	asm( 
-"	      004c5a68    mov word ptr [ebp-8],0"
+"	      004c5a68    mov i,0"
 "	      004c5a6e    jmp near ptr 004C5A77h"
-"	      004c5a73    inc word ptr [ebp-8]"
-"	      004c5a77    movsx eax,word ptr [ebp-8]"
+"	      004c5a73    inc i"
+"	      004c5a77    movsx eax,i"
 "	      004c5a7b    cmp eax,0Bh"
 "	      004c5a7e    jge near ptr 004C5AE5h"
 );
 // LINE 692:
 	asm( 
-"	      004c5a84    movsx eax,word ptr [ebp-4]"
+"	      004c5a84    movsx eax,ix"
 "	      004c5a88    mov ecx,ds:[63923Ch]"
 "	      004c5a8e    mov eax,[ecx+eax*4]"
-"	      004c5a91    movsx ecx,word ptr [ebp-8]"
+"	      004c5a91    movsx ecx,i"
 "	      004c5a95    mov edx,ds:[639308h]"
 "	      004c5a9b    mov [edx+ecx*2],ax"
-"	      004c5a9f    inc word ptr [ebp-4]"
+"	      004c5a9f    inc ix"
 );
 // LINE 693:
 	asm( 
-"	      004c5aa3    movsx eax,word ptr [ebp-4]"
+"	      004c5aa3    movsx eax,ix"
 "	      004c5aa7    mov ecx,ds:[63923Ch]"
 "	      004c5aad    mov eax,[ecx+eax*4]"
-"	      004c5ab0    movsx ecx,word ptr [ebp-8]"
+"	      004c5ab0    movsx ecx,i"
 "	      004c5ab4    mov edx,ds:[639A58h]"
 "	      004c5aba    mov [edx+ecx*2],ax"
-"	      004c5abe    inc word ptr [ebp-4]"
+"	      004c5abe    inc ix"
 );
 // LINE 694:
 	asm( 
-"	      004c5ac2    movsx eax,word ptr [ebp-4]"
+"	      004c5ac2    movsx eax,ix"
 "	      004c5ac6    mov ecx,ds:[63923Ch]"
 "	      004c5acc    mov eax,[ecx+eax*4]"
-"	      004c5acf    movsx ecx,word ptr [ebp-8]"
+"	      004c5acf    movsx ecx,i"
 "	      004c5ad3    mov edx,ds:[639A54h]"
 "	      004c5ad9    mov [edx+ecx*4],eax"
-"	      004c5adc    inc word ptr [ebp-4]"
+"	      004c5adc    inc ix"
 );
 // LINE 695:
 	asm( 
@@ -2403,42 +2403,42 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 697:
 	asm( 
-"	      004c5ae5    mov word ptr [ebp-8],0"
+"	      004c5ae5    mov i,0"
 "	      004c5aeb    jmp near ptr 004C5AF4h"
-"	      004c5af0    inc word ptr [ebp-8]"
-"	      004c5af4    movsx eax,word ptr [ebp-8]"
+"	      004c5af0    inc i"
+"	      004c5af4    movsx eax,i"
 "	      004c5af8    cmp eax,100h"
 "	      004c5afd    jge near ptr 004C5B27h"
 );
 // LINE 698:
 	asm( 
-"	      004c5b03    movsx eax,word ptr [ebp-4]"
+"	      004c5b03    movsx eax,ix"
 "	      004c5b07    mov ecx,ds:[63923Ch]"
 "	      004c5b0d    mov eax,[ecx+eax*4]"
-"	      004c5b10    movsx ecx,word ptr [ebp-8]"
+"	      004c5b10    movsx ecx,i"
 "	      004c5b14    mov edx,ds:[639AC8h]"
 "	      004c5b1a    mov [edx+ecx*2],ax"
-"	      004c5b1e    inc word ptr [ebp-4]"
+"	      004c5b1e    inc ix"
 "	      004c5b22    jmp near ptr 004C5AF0h"
 );
 // LINE 700:
 	asm( 
-"	      004c5b27    mov word ptr [ebp-8],0"
+"	      004c5b27    mov i,0"
 "	      004c5b2d    jmp near ptr 004C5B36h"
-"	      004c5b32    inc word ptr [ebp-8]"
-"	      004c5b36    movsx eax,word ptr [ebp-8]"
+"	      004c5b32    inc i"
+"	      004c5b36    movsx eax,i"
 "	      004c5b3a    cmp eax,8"
 "	      004c5b3d    jge near ptr 004C5B66h"
 );
 // LINE 701:
 	asm( 
-"	      004c5b43    movsx eax,word ptr [ebp-4]"
+"	      004c5b43    movsx eax,ix"
 "	      004c5b47    mov ecx,ds:[63923Ch]"
 "	      004c5b4d    mov eax,[ecx+eax*4]"
-"	      004c5b50    movsx ecx,word ptr [ebp-8]"
+"	      004c5b50    movsx ecx,i"
 "	      004c5b54    mov edx,ds:[63A574h]"
 "	      004c5b5a    mov [edx+ecx*4],eax"
-"	      004c5b5d    inc word ptr [ebp-4]"
+"	      004c5b5d    inc ix"
 );
 // LINE 702:
 	asm( 
@@ -2446,21 +2446,21 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 704:
 	asm( 
-"	      004c5b66    mov word ptr [ebp-8],0"
+"	      004c5b66    mov i,0"
 "	      004c5b6c    jmp near ptr 004C5B75h"
-"	      004c5b71    inc word ptr [ebp-8]"
-"	      004c5b75    movsx eax,word ptr [ebp-8]"
+"	      004c5b71    inc i"
+"	      004c5b75    movsx eax,i"
 "	      004c5b79    cmp eax,32h"
 "	      004c5b7c    jge near ptr 004C5BA4h"
 );
 // LINE 705:
 	asm( 
-"	      004c5b82    movsx eax,word ptr [ebp-4]"
+"	      004c5b82    movsx eax,ix"
 "	      004c5b86    mov ecx,ds:[63923Ch]"
 "	      004c5b8c    mov eax,[ecx+eax*4]"
-"	      004c5b8f    movsx ecx,word ptr [ebp-8]"
+"	      004c5b8f    movsx ecx,i"
 "	      004c5b93    mov [ecx*2+63A6D0h],ax"
-"	      004c5b9b    inc word ptr [ebp-4]"
+"	      004c5b9b    inc ix"
 );
 // LINE 706:
 	asm( 
@@ -2468,26 +2468,26 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 708:
 	asm( 
-"	      004c5ba4    mov word ptr [ebp-8],0"
+"	      004c5ba4    mov i,0"
 "	      004c5baa    jmp near ptr 004C5BB3h"
-"	      004c5baf    inc word ptr [ebp-8]"
-"	      004c5bb3    movsx eax,word ptr [ebp-8]"
+"	      004c5baf    inc i"
+"	      004c5bb3    movsx eax,i"
 "	      004c5bb7    cmp eax,4"
 "	      004c5bba    jge near ptr 004C5CCFh"
 );
 // LINE 709:
 	asm( 
-"	      004c5bc0    movsx eax,word ptr [ebp-4]"
+"	      004c5bc0    movsx eax,ix"
 "	      004c5bc4    mov ecx,ds:[63923Ch]"
 "	      004c5bca    mov eax,[ecx+eax*4]"
-"	      004c5bcd    movsx ecx,word ptr [ebp-8]"
+"	      004c5bcd    movsx ecx,i"
 "	      004c5bd1    mov edx,ds:[63A578h]"
 "	      004c5bd7    mov [edx+ecx*2],ax"
-"	      004c5bdb    inc word ptr [ebp-4]"
+"	      004c5bdb    inc ix"
 );
 // LINE 711:
 	asm( 
-"	      004c5bdf    movsx eax,word ptr [ebp-8]"
+"	      004c5bdf    movsx eax,i"
 "	      004c5be3    mov ecx,ds:[63A578h]"
 "	      004c5be9    movsx eax,word ptr [ecx+eax*2]"
 "	      004c5bed    test eax,eax"
@@ -2496,7 +2496,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 712:
 	asm( 
 "	      004c5bf5    push 59B0CCh"
-"	      004c5bfa    movsx eax,word ptr [ebp-8]"
+"	      004c5bfa    movsx eax,i"
 "	      004c5bfe    shl eax,5"
 "	      004c5c01    add eax,639250h"
 "	      004c5c06    inc eax"
@@ -2506,7 +2506,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 713:
 	asm( 
-"	      004c5c10    movsx eax,word ptr [ebp-8]"
+"	      004c5c10    movsx eax,i"
 "	      004c5c14    shl eax,5"
 "	      004c5c17    mov byte ptr [eax+639250h],5"
 );
@@ -2516,12 +2516,12 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 716:
 	asm( 
-"	      004c5c23    movsx eax,word ptr [ebp-8]"
+"	      004c5c23    movsx eax,i"
 "	      004c5c27    mov ecx,ds:[63A578h]"
 "	      004c5c2d    mov ax,[ecx+eax*2]"
 "	      004c5c31    push eax"
 "	      004c5c32    push 3E8h"
-"	      004c5c37    movsx eax,word ptr [ebp-8]"
+"	      004c5c37    movsx eax,i"
 "	      004c5c3b    shl eax,5"
 "	      004c5c3e    add eax,639250h"
 "	      004c5c43    inc eax"
@@ -2531,46 +2531,46 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 717:
 	asm( 
-"	      004c5c4d    movsx eax,word ptr [ebp-8]"
+"	      004c5c4d    movsx eax,i"
 "	      004c5c51    shl eax,5"
 "	      004c5c54    add eax,639250h"
 "	      004c5c59    inc eax"
 "	      004c5c5a    push eax"
 "	      004c5c5b    call 0056ABE0h"
 "	      004c5c60    add esp,4"
-"	      004c5c63    movsx ecx,word ptr [ebp-8]"
+"	      004c5c63    movsx ecx,i"
 "	      004c5c67    shl ecx,5"
 "	      004c5c6a    mov [ecx+639250h],al"
 );
 // LINE 720:
 	asm( 
-"	      004c5c70    movsx eax,word ptr [ebp-4]"
+"	      004c5c70    movsx eax,ix"
 "	      004c5c74    mov ecx,ds:[63923Ch]"
 "	      004c5c7a    mov eax,[ecx+eax*4]"
-"	      004c5c7d    movsx ecx,word ptr [ebp-8]"
+"	      004c5c7d    movsx ecx,i"
 "	      004c5c81    mov edx,ds:[639710h]"
 "	      004c5c87    mov [edx+ecx*4],eax"
-"	      004c5c8a    inc word ptr [ebp-4]"
+"	      004c5c8a    inc ix"
 );
 // LINE 721:
 	asm( 
-"	      004c5c8e    movsx eax,word ptr [ebp-4]"
+"	      004c5c8e    movsx eax,ix"
 "	      004c5c92    mov ecx,ds:[63923Ch]"
 "	      004c5c98    mov eax,[ecx+eax*4]"
-"	      004c5c9b    movsx ecx,word ptr [ebp-8]"
+"	      004c5c9b    movsx ecx,i"
 "	      004c5c9f    mov edx,ds:[63A264h]"
 "	      004c5ca5    mov [edx+ecx*4],eax"
-"	      004c5ca8    inc word ptr [ebp-4]"
+"	      004c5ca8    inc ix"
 );
 // LINE 722:
 	asm( 
-"	      004c5cac    movsx eax,word ptr [ebp-4]"
+"	      004c5cac    movsx eax,ix"
 "	      004c5cb0    mov ecx,ds:[63923Ch]"
 "	      004c5cb6    mov eax,[ecx+eax*4]"
-"	      004c5cb9    movsx ecx,word ptr [ebp-8]"
+"	      004c5cb9    movsx ecx,i"
 "	      004c5cbd    mov edx,ds:[63984Ch]"
 "	      004c5cc3    mov [edx+ecx*4],eax"
-"	      004c5cc6    inc word ptr [ebp-4]"
+"	      004c5cc6    inc ix"
 );
 // LINE 723:
 	asm( 
@@ -2578,109 +2578,109 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 725:
 	asm( 
-"	      004c5ccf    mov word ptr [ebp-8],0"
+"	      004c5ccf    mov i,0"
 "	      004c5cd5    jmp near ptr 004C5CDEh"
-"	      004c5cda    inc word ptr [ebp-8]"
-"	      004c5cde    movsx eax,word ptr [ebp-8]"
+"	      004c5cda    inc i"
+"	      004c5cde    movsx eax,i"
 "	      004c5ce2    cmp eax,8"
 "	      004c5ce5    jge near ptr 004C5D0Dh"
 );
 // LINE 726:
 	asm( 
-"	      004c5ceb    movsx eax,word ptr [ebp-4]"
+"	      004c5ceb    movsx eax,ix"
 "	      004c5cef    mov ecx,ds:[63923Ch]"
 "	      004c5cf5    mov eax,[ecx+eax*4]"
-"	      004c5cf8    movsx ecx,word ptr [ebp-8]"
+"	      004c5cf8    movsx ecx,i"
 "	      004c5cfc    mov [ecx*2+639A90h],ax"
-"	      004c5d04    inc word ptr [ebp-4]"
+"	      004c5d04    inc ix"
 "	      004c5d08    jmp near ptr 004C5CDAh"
 );
 // LINE 728:
 	asm( 
-"	      004c5d0d    mov word ptr [ebp-8],0"
+"	      004c5d0d    mov i,0"
 "	      004c5d13    jmp near ptr 004C5D1Ch"
-"	      004c5d18    inc word ptr [ebp-8]"
-"	      004c5d1c    movsx eax,word ptr [ebp-8]"
+"	      004c5d18    inc i"
+"	      004c5d1c    movsx eax,i"
 "	      004c5d20    cmp eax,11h"
 "	      004c5d23    jge near ptr 004C5D4Bh"
 );
 // LINE 729:
 	asm( 
-"	      004c5d29    movsx eax,word ptr [ebp-4]"
+"	      004c5d29    movsx eax,ix"
 "	      004c5d2d    mov ecx,ds:[63923Ch]"
 "	      004c5d33    mov eax,[ecx+eax*4]"
-"	      004c5d36    movsx ecx,word ptr [ebp-8]"
+"	      004c5d36    movsx ecx,i"
 "	      004c5d3a    mov [ecx*2+63A580h],ax"
-"	      004c5d42    inc word ptr [ebp-4]"
+"	      004c5d42    inc ix"
 "	      004c5d46    jmp near ptr 004C5D18h"
 );
 // LINE 731:
 	asm( 
-"	      004c5d4b    mov word ptr [ebp-8],0"
+"	      004c5d4b    mov i,0"
 "	      004c5d51    jmp near ptr 004C5D5Ah"
-"	      004c5d56    inc word ptr [ebp-8]"
-"	      004c5d5a    movsx eax,word ptr [ebp-8]"
+"	      004c5d56    inc i"
+"	      004c5d5a    movsx eax,i"
 "	      004c5d5e    cmp eax,10h"
 "	      004c5d61    jge near ptr 004C5E67h"
 );
 // LINE 732:
 	asm( 
-"	      004c5d67    movsx eax,word ptr [ebp-4]"
+"	      004c5d67    movsx eax,ix"
 "	      004c5d6b    mov ecx,ds:[63923Ch]"
 "	      004c5d71    mov eax,[ecx+eax*4]"
-"	      004c5d74    movsx ecx,word ptr [ebp-8]"
+"	      004c5d74    movsx ecx,i"
 "	      004c5d78    mov edx,ecx"
 "	      004c5d7a    shl ecx,3"
 "	      004c5d7d    sub ecx,edx"
 "	      004c5d7f    shl ecx,4"
 "	      004c5d82    mov edx,ds:[639830h]"
 "	      004c5d88    mov [ecx+edx+60h],eax"
-"	      004c5d8c    inc word ptr [ebp-4]"
+"	      004c5d8c    inc ix"
 );
 // LINE 733:
 	asm( 
-"	      004c5d90    movsx eax,word ptr [ebp-4]"
+"	      004c5d90    movsx eax,ix"
 "	      004c5d94    mov ecx,ds:[63923Ch]"
 "	      004c5d9a    mov eax,[ecx+eax*4]"
-"	      004c5d9d    movsx ecx,word ptr [ebp-8]"
+"	      004c5d9d    movsx ecx,i"
 "	      004c5da1    mov edx,ecx"
 "	      004c5da3    shl ecx,3"
 "	      004c5da6    sub ecx,edx"
 "	      004c5da8    shl ecx,4"
 "	      004c5dab    mov edx,ds:[639830h]"
 "	      004c5db1    mov [ecx+edx+64h],eax"
-"	      004c5db5    inc word ptr [ebp-4]"
+"	      004c5db5    inc ix"
 );
 // LINE 734:
 	asm( 
-"	      004c5db9    movsx eax,word ptr [ebp-4]"
+"	      004c5db9    movsx eax,ix"
 "	      004c5dbd    mov ecx,ds:[63923Ch]"
 "	      004c5dc3    mov eax,[ecx+eax*4]"
-"	      004c5dc6    movsx ecx,word ptr [ebp-8]"
+"	      004c5dc6    movsx ecx,i"
 "	      004c5dca    mov edx,ecx"
 "	      004c5dcc    shl ecx,3"
 "	      004c5dcf    sub ecx,edx"
 "	      004c5dd1    shl ecx,4"
 "	      004c5dd4    mov edx,ds:[639830h]"
 "	      004c5dda    mov [ecx+edx+68h],eax"
-"	      004c5dde    inc word ptr [ebp-4]"
+"	      004c5dde    inc ix"
 );
 // LINE 736:
 	asm( 
-"	      004c5de2    mov word ptr [ebp-0Ch],0"
+"	      004c5de2    mov j,0"
 "	      004c5de8    jmp near ptr 004C5DF1h"
-"	      004c5ded    inc word ptr [ebp-0Ch]"
-"	      004c5df1    movsx eax,word ptr [ebp-0Ch]"
+"	      004c5ded    inc j"
+"	      004c5df1    movsx eax,j"
 "	      004c5df5    cmp eax,0Ch"
 "	      004c5df8    jge near ptr 004C5E62h"
 );
 // LINE 737:
 	asm( 
-"	      004c5dfe    movsx eax,word ptr [ebp-4]"
+"	      004c5dfe    movsx eax,ix"
 "	      004c5e02    mov ecx,ds:[63923Ch]"
 "	      004c5e08    mov eax,[ecx+eax*4]"
-"	      004c5e0b    movsx ecx,word ptr [ebp-0Ch]"
-"	      004c5e0f    movsx edx,word ptr [ebp-8]"
+"	      004c5e0b    movsx ecx,j"
+"	      004c5e0f    movsx edx,i"
 "	      004c5e13    mov ebx,edx"
 "	      004c5e15    shl edx,3"
 "	      004c5e18    sub edx,ebx"
@@ -2688,15 +2688,15 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 "	      004c5e1d    lea ecx,[edx+ecx*4]"
 "	      004c5e20    mov edx,ds:[639830h]"
 "	      004c5e26    mov [ecx+edx],eax"
-"	      004c5e29    inc word ptr [ebp-4]"
+"	      004c5e29    inc ix"
 );
 // LINE 738:
 	asm( 
-"	      004c5e2d    movsx eax,word ptr [ebp-4]"
+"	      004c5e2d    movsx eax,ix"
 "	      004c5e31    mov ecx,ds:[63923Ch]"
 "	      004c5e37    mov eax,[ecx+eax*4]"
-"	      004c5e3a    movsx ecx,word ptr [ebp-0Ch]"
-"	      004c5e3e    movsx edx,word ptr [ebp-8]"
+"	      004c5e3a    movsx ecx,j"
+"	      004c5e3e    movsx edx,i"
 "	      004c5e42    mov ebx,edx"
 "	      004c5e44    shl edx,3"
 "	      004c5e47    sub edx,ebx"
@@ -2704,7 +2704,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 "	      004c5e4c    lea ecx,[edx+ecx*4]"
 "	      004c5e4f    mov edx,ds:[639830h]"
 "	      004c5e55    mov [ecx+edx+30h],eax"
-"	      004c5e59    inc word ptr [ebp-4]"
+"	      004c5e59    inc ix"
 );
 // LINE 739:
 	asm( 
@@ -2716,107 +2716,107 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 743:
 	asm( 
-"	      004c5e67    movsx eax,word ptr [ebp-4]"
+"	      004c5e67    movsx eax,ix"
 "	      004c5e6b    mov ecx,ds:[63923Ch]"
 "	      004c5e71    mov eax,[ecx+eax*4]"
 "	      004c5e74    mov ds:[59C014h],ax"
-"	      004c5e7a    inc word ptr [ebp-4]"
+"	      004c5e7a    inc ix"
 );
 // LINE 744:
 	asm( 
-"	      004c5e7e    movsx eax,word ptr [ebp-4]"
+"	      004c5e7e    movsx eax,ix"
 "	      004c5e82    mov ecx,ds:[63923Ch]"
 "	      004c5e88    mov eax,[ecx+eax*4]"
 "	      004c5e8b    mov ds:[639840h],ax"
-"	      004c5e91    inc word ptr [ebp-4]"
+"	      004c5e91    inc ix"
 );
 // LINE 745:
 	asm( 
-"	      004c5e95    movsx eax,word ptr [ebp-4]"
+"	      004c5e95    movsx eax,ix"
 "	      004c5e99    mov ecx,ds:[63923Ch]"
 "	      004c5e9f    mov eax,[ecx+eax*4]"
 "	      004c5ea2    mov ds:[59BBF0h],ax"
-"	      004c5ea8    inc word ptr [ebp-4]"
+"	      004c5ea8    inc ix"
 );
 // LINE 746:
 	asm( 
-"	      004c5eac    movsx eax,word ptr [ebp-4]"
+"	      004c5eac    movsx eax,ix"
 "	      004c5eb0    mov ecx,ds:[63923Ch]"
 "	      004c5eb6    mov eax,[ecx+eax*4]"
 "	      004c5eb9    mov ds:[59BBF4h],ax"
-"	      004c5ebf    inc word ptr [ebp-4]"
+"	      004c5ebf    inc ix"
 );
 // LINE 747:
 	asm( 
-"	      004c5ec3    movsx eax,word ptr [ebp-4]"
+"	      004c5ec3    movsx eax,ix"
 "	      004c5ec7    mov ecx,ds:[63923Ch]"
 "	      004c5ecd    mov al,[ecx+eax*4]"
 "	      004c5ed0    mov ds:[59BBECh],al"
-"	      004c5ed5    inc word ptr [ebp-4]"
+"	      004c5ed5    inc ix"
 );
 // LINE 749:
 	asm( 
-"	      004c5ed9    mov word ptr [ebp-8],0"
+"	      004c5ed9    mov i,0"
 "	      004c5edf    jmp near ptr 004C5EE8h"
-"	      004c5ee4    inc word ptr [ebp-8]"
-"	      004c5ee8    movsx eax,word ptr [ebp-8]"
+"	      004c5ee4    inc i"
+"	      004c5ee8    movsx eax,i"
 "	      004c5eec    cmp eax,6"
 "	      004c5eef    jge near ptr 004C5FA3h"
 );
 // LINE 750:
 	asm( 
-"	      004c5ef5    movsx eax,word ptr [ebp-4]"
+"	      004c5ef5    movsx eax,ix"
 "	      004c5ef9    mov ecx,ds:[63923Ch]"
 "	      004c5eff    mov al,[ecx+eax*4]"
-"	      004c5f02    movsx ecx,word ptr [ebp-8]"
+"	      004c5f02    movsx ecx,i"
 "	      004c5f06    lea ecx,[ecx+ecx*4]"
 "	      004c5f09    mov edx,ds:[639714h]"
 "	      004c5f0f    mov [ecx+edx],al"
-"	      004c5f12    inc word ptr [ebp-4]"
+"	      004c5f12    inc ix"
 );
 // LINE 751:
 	asm( 
-"	      004c5f16    movsx eax,word ptr [ebp-4]"
+"	      004c5f16    movsx eax,ix"
 "	      004c5f1a    mov ecx,ds:[63923Ch]"
 "	      004c5f20    mov al,[ecx+eax*4]"
-"	      004c5f23    movsx ecx,word ptr [ebp-8]"
+"	      004c5f23    movsx ecx,i"
 "	      004c5f27    lea ecx,[ecx+ecx*4]"
 "	      004c5f2a    mov edx,ds:[639714h]"
 "	      004c5f30    mov [ecx+edx+1],al"
-"	      004c5f34    inc word ptr [ebp-4]"
+"	      004c5f34    inc ix"
 );
 // LINE 752:
 	asm( 
-"	      004c5f38    movsx eax,word ptr [ebp-4]"
+"	      004c5f38    movsx eax,ix"
 "	      004c5f3c    mov ecx,ds:[63923Ch]"
 "	      004c5f42    mov al,[ecx+eax*4]"
-"	      004c5f45    movsx ecx,word ptr [ebp-8]"
+"	      004c5f45    movsx ecx,i"
 "	      004c5f49    lea ecx,[ecx+ecx*4]"
 "	      004c5f4c    mov edx,ds:[639714h]"
 "	      004c5f52    mov [ecx+edx+2],al"
-"	      004c5f56    inc word ptr [ebp-4]"
+"	      004c5f56    inc ix"
 );
 // LINE 753:
 	asm( 
-"	      004c5f5a    movsx eax,word ptr [ebp-4]"
+"	      004c5f5a    movsx eax,ix"
 "	      004c5f5e    mov ecx,ds:[63923Ch]"
 "	      004c5f64    mov al,[ecx+eax*4]"
-"	      004c5f67    movsx ecx,word ptr [ebp-8]"
+"	      004c5f67    movsx ecx,i"
 "	      004c5f6b    lea ecx,[ecx+ecx*4]"
 "	      004c5f6e    mov edx,ds:[639714h]"
 "	      004c5f74    mov [ecx+edx+3],al"
-"	      004c5f78    inc word ptr [ebp-4]"
+"	      004c5f78    inc ix"
 );
 // LINE 754:
 	asm( 
-"	      004c5f7c    movsx eax,word ptr [ebp-4]"
+"	      004c5f7c    movsx eax,ix"
 "	      004c5f80    mov ecx,ds:[63923Ch]"
 "	      004c5f86    mov al,[ecx+eax*4]"
-"	      004c5f89    movsx ecx,word ptr [ebp-8]"
+"	      004c5f89    movsx ecx,i"
 "	      004c5f8d    lea ecx,[ecx+ecx*4]"
 "	      004c5f90    mov edx,ds:[639714h]"
 "	      004c5f96    mov [ecx+edx+4],al"
-"	      004c5f9a    inc word ptr [ebp-4]"
+"	      004c5f9a    inc ix"
 );
 // LINE 755:
 	asm( 
@@ -2824,72 +2824,72 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 757:
 	asm( 
-"	      004c5fa3    mov word ptr [ebp-8],0"
+"	      004c5fa3    mov i,0"
 "	      004c5fa9    jmp near ptr 004C5FB2h"
-"	      004c5fae    inc word ptr [ebp-8]"
-"	      004c5fb2    movsx eax,word ptr [ebp-8]"
+"	      004c5fae    inc i"
+"	      004c5fb2    movsx eax,i"
 "	      004c5fb6    cmp eax,9"
 "	      004c5fb9    jge near ptr 004C607Fh"
 );
 // LINE 758:
 	asm( 
-"	      004c5fbf    movsx eax,word ptr [ebp-4]"
+"	      004c5fbf    movsx eax,ix"
 "	      004c5fc3    mov ecx,ds:[63923Ch]"
 "	      004c5fc9    mov eax,[ecx+eax*4]"
-"	      004c5fcc    movsx ecx,word ptr [ebp-8]"
+"	      004c5fcc    movsx ecx,i"
 "	      004c5fd0    mov edx,ds:[63A25Ch]"
 "	      004c5fd6    mov [edx+ecx*8],ax"
-"	      004c5fda    inc word ptr [ebp-4]"
+"	      004c5fda    inc ix"
 );
 // LINE 759:
 	asm( 
-"	      004c5fde    movsx eax,word ptr [ebp-4]"
+"	      004c5fde    movsx eax,ix"
 "	      004c5fe2    mov ecx,ds:[63923Ch]"
 "	      004c5fe8    mov eax,[ecx+eax*4]"
-"	      004c5feb    movsx ecx,word ptr [ebp-8]"
+"	      004c5feb    movsx ecx,i"
 "	      004c5fef    mov edx,ds:[63A25Ch]"
 "	      004c5ff5    mov [edx+ecx*8+2],ax"
-"	      004c5ffa    inc word ptr [ebp-4]"
+"	      004c5ffa    inc ix"
 );
 // LINE 760:
 	asm( 
-"	      004c5ffe    movsx eax,word ptr [ebp-4]"
+"	      004c5ffe    movsx eax,ix"
 "	      004c6002    mov ecx,ds:[63923Ch]"
 "	      004c6008    mov al,[ecx+eax*4]"
-"	      004c600b    movsx ecx,word ptr [ebp-8]"
+"	      004c600b    movsx ecx,i"
 "	      004c600f    mov edx,ds:[63A25Ch]"
 "	      004c6015    mov [edx+ecx*8+4],al"
-"	      004c6019    inc word ptr [ebp-4]"
+"	      004c6019    inc ix"
 );
 // LINE 761:
 	asm( 
-"	      004c601d    movsx eax,word ptr [ebp-4]"
+"	      004c601d    movsx eax,ix"
 "	      004c6021    mov ecx,ds:[63923Ch]"
 "	      004c6027    mov al,[ecx+eax*4]"
-"	      004c602a    movsx ecx,word ptr [ebp-8]"
+"	      004c602a    movsx ecx,i"
 "	      004c602e    mov edx,ds:[63A25Ch]"
 "	      004c6034    mov [edx+ecx*8+5],al"
-"	      004c6038    inc word ptr [ebp-4]"
+"	      004c6038    inc ix"
 );
 // LINE 762:
 	asm( 
-"	      004c603c    movsx eax,word ptr [ebp-4]"
+"	      004c603c    movsx eax,ix"
 "	      004c6040    mov ecx,ds:[63923Ch]"
 "	      004c6046    mov al,[ecx+eax*4]"
-"	      004c6049    movsx ecx,word ptr [ebp-8]"
+"	      004c6049    movsx ecx,i"
 "	      004c604d    mov edx,ds:[63A25Ch]"
 "	      004c6053    mov [edx+ecx*8+6],al"
-"	      004c6057    inc word ptr [ebp-4]"
+"	      004c6057    inc ix"
 );
 // LINE 763:
 	asm( 
-"	      004c605b    movsx eax,word ptr [ebp-4]"
+"	      004c605b    movsx eax,ix"
 "	      004c605f    mov ecx,ds:[63923Ch]"
 "	      004c6065    mov al,[ecx+eax*4]"
-"	      004c6068    movsx ecx,word ptr [ebp-8]"
+"	      004c6068    movsx ecx,i"
 "	      004c606c    mov edx,ds:[63A25Ch]"
 "	      004c6072    mov [edx+ecx*8+7],al"
-"	      004c6076    inc word ptr [ebp-4]"
+"	      004c6076    inc ix"
 );
 // LINE 764:
 	asm( 
@@ -2897,131 +2897,131 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 766:
 	asm( 
-"	      004c607f    movsx eax,word ptr [ebp-4]"
+"	      004c607f    movsx eax,ix"
 "	      004c6083    mov ecx,ds:[63923Ch]"
 "	      004c6089    mov eax,[ecx+eax*4]"
 "	      004c608c    mov ds:[63A748h],eax"
-"	      004c6091    inc word ptr [ebp-4]"
+"	      004c6091    inc ix"
 );
 // LINE 767:
 	asm( 
-"	      004c6095    movsx eax,word ptr [ebp-4]"
+"	      004c6095    movsx eax,ix"
 "	      004c6099    mov ecx,ds:[63923Ch]"
 "	      004c609f    mov eax,[ecx+eax*4]"
 "	      004c60a2    mov ds:[639A64h],eax"
-"	      004c60a7    inc word ptr [ebp-4]"
+"	      004c60a7    inc ix"
 );
 // LINE 769:
 	asm( 
-"	      004c60ab    mov word ptr [ebp-8],0"
+"	      004c60ab    mov i,0"
 "	      004c60b1    jmp near ptr 004C60BAh"
-"	      004c60b6    inc word ptr [ebp-8]"
-"	      004c60ba    movsx eax,word ptr [ebp-8]"
+"	      004c60b6    inc i"
+"	      004c60ba    movsx eax,i"
 "	      004c60be    cmp eax,10h"
 "	      004c60c1    jge near ptr 004C60EBh"
 );
 // LINE 770:
 	asm( 
-"	      004c60c7    movsx eax,word ptr [ebp-4]"
+"	      004c60c7    movsx eax,ix"
 "	      004c60cb    mov ecx,ds:[63923Ch]"
 "	      004c60d1    mov eax,[ecx+eax*4]"
-"	      004c60d4    movsx ecx,word ptr [ebp-8]"
+"	      004c60d4    movsx ecx,i"
 "	      004c60d8    mov edx,ds:[639AC4h]"
 "	      004c60de    mov [edx+ecx*2],ax"
-"	      004c60e2    inc word ptr [ebp-4]"
+"	      004c60e2    inc ix"
 "	      004c60e6    jmp near ptr 004C60B6h"
 );
 // LINE 772:
 	asm( 
-"	      004c60eb    movsx eax,word ptr [ebp-4]"
+"	      004c60eb    movsx eax,ix"
 "	      004c60ef    mov ecx,ds:[63923Ch]"
 "	      004c60f5    mov eax,[ecx+eax*4]"
 "	      004c60f8    mov ds:[639AB0h],ax"
-"	      004c60fe    inc word ptr [ebp-4]"
+"	      004c60fe    inc ix"
 );
 // LINE 776:
 	asm( 
-"	      004c6102    movsx eax,word ptr [ebp-4]"
+"	      004c6102    movsx eax,ix"
 "	      004c6106    mov ecx,ds:[63923Ch]"
 "	      004c610c    mov eax,[ecx+eax*4]"
 "	      004c610f    mov ds:[59B550h],ax"
-"	      004c6115    inc word ptr [ebp-4]"
+"	      004c6115    inc ix"
 );
 // LINE 777:
 	asm( 
-"	      004c6119    movsx eax,word ptr [ebp-4]"
+"	      004c6119    movsx eax,ix"
 "	      004c611d    mov ecx,ds:[63923Ch]"
 "	      004c6123    mov eax,[ecx+eax*4]"
 "	      004c6126    mov ds:[59B55Ch],ax"
-"	      004c612c    inc word ptr [ebp-4]"
+"	      004c612c    inc ix"
 );
 // LINE 778:
 	asm( 
-"	      004c6130    movsx eax,word ptr [ebp-4]"
+"	      004c6130    movsx eax,ix"
 "	      004c6134    mov ecx,ds:[63923Ch]"
 "	      004c613a    mov eax,[ecx+eax*4]"
 "	      004c613d    mov ds:[59B560h],ax"
-"	      004c6143    inc word ptr [ebp-4]"
+"	      004c6143    inc ix"
 );
 // LINE 779:
 	asm( 
-"	      004c6147    movsx eax,word ptr [ebp-4]"
+"	      004c6147    movsx eax,ix"
 "	      004c614b    mov ecx,ds:[63923Ch]"
 "	      004c6151    mov eax,[ecx+eax*4]"
 "	      004c6154    mov ds:[59B564h],ax"
-"	      004c615a    inc word ptr [ebp-4]"
+"	      004c615a    inc ix"
 );
 // LINE 780:
 	asm( 
-"	      004c615e    movsx eax,word ptr [ebp-4]"
+"	      004c615e    movsx eax,ix"
 "	      004c6162    mov ecx,ds:[63923Ch]"
 "	      004c6168    mov eax,[ecx+eax*4]"
 "	      004c616b    mov ds:[59B568h],ax"
-"	      004c6171    inc word ptr [ebp-4]"
+"	      004c6171    inc ix"
 );
 // LINE 781:
 	asm( 
-"	      004c6175    movsx eax,word ptr [ebp-4]"
+"	      004c6175    movsx eax,ix"
 "	      004c6179    mov ecx,ds:[63923Ch]"
 "	      004c617f    mov eax,[ecx+eax*4]"
 "	      004c6182    mov ds:[59B56Ch],ax"
-"	      004c6188    inc word ptr [ebp-4]"
+"	      004c6188    inc ix"
 );
 // LINE 782:
 	asm( 
-"	      004c618c    movsx eax,word ptr [ebp-4]"
+"	      004c618c    movsx eax,ix"
 "	      004c6190    mov ecx,ds:[63923Ch]"
 "	      004c6196    mov eax,[ecx+eax*4]"
 "	      004c6199    mov ds:[59C03Ch],ax"
-"	      004c619f    inc word ptr [ebp-4]"
+"	      004c619f    inc ix"
 );
 // LINE 783:
 	asm( 
-"	      004c61a3    movsx eax,word ptr [ebp-4]"
+"	      004c61a3    movsx eax,ix"
 "	      004c61a7    mov ecx,ds:[63923Ch]"
 "	      004c61ad    mov eax,[ecx+eax*4]"
 "	      004c61b0    mov ds:[59C038h],ax"
-"	      004c61b6    inc word ptr [ebp-4]"
+"	      004c61b6    inc ix"
 );
 // LINE 784:
 	asm( 
-"	      004c61ba    movsx eax,word ptr [ebp-4]"
+"	      004c61ba    movsx eax,ix"
 "	      004c61be    mov ecx,ds:[63923Ch]"
 "	      004c61c4    mov eax,[ecx+eax*4]"
 "	      004c61c7    mov ds:[63A024h],ax"
-"	      004c61cd    inc word ptr [ebp-4]"
+"	      004c61cd    inc ix"
 );
 // LINE 787:
 	asm( 
-"	      004c61d1    movsx eax,word ptr [ebp-4]"
+"	      004c61d1    movsx eax,ix"
 "	      004c61d5    mov ecx,ds:[63923Ch]"
 "	      004c61db    mov eax,[ecx+eax*4]"
-"	      004c61de    mov [ebp-10h],eax"
-"	      004c61e1    inc word ptr [ebp-4]"
+"	      004c61de    mov lval,eax"
+"	      004c61e1    inc ix"
 );
 // LINE 789:
 	asm( 
-"	      004c61e5    cmp dword ptr [ebp-10h],0FFFFFFFFh"
+"	      004c61e5    cmp lval,0FFFFFFFFh"
 "	      004c61e9    jne near ptr 004C6206h"
 );
 // LINE 790:
@@ -3038,351 +3038,351 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 );
 // LINE 794:
 	asm( 
-"	      004c6206    mov eax,[ebp-10h]"
+"	      004c6206    mov eax,lval"
 "	      004c6209    and eax,7Fh"
 "	      004c620c    mov ds:[6069B4h],ax"
 );
 // LINE 795:
 	asm( 
-"	      004c6212    mov eax,[ebp-10h]"
+"	      004c6212    mov eax,lval"
 "	      004c6215    sar eax,8"
 "	      004c6218    mov ds:[6069B8h],ax"
 );
 // LINE 798:
 	asm( 
-"	      004c621e    movsx eax,word ptr [ebp-4]"
+"	      004c621e    movsx eax,ix"
 "	      004c6222    mov ecx,ds:[63923Ch]"
 "	      004c6228    mov eax,[ecx+eax*4]"
 "	      004c622b    mov ds:[6069BCh],ax"
-"	      004c6231    inc word ptr [ebp-4]"
+"	      004c6231    inc ix"
 );
 // LINE 799:
 	asm( 
-"	      004c6235    movsx eax,word ptr [ebp-4]"
+"	      004c6235    movsx eax,ix"
 "	      004c6239    mov ecx,ds:[63923Ch]"
 "	      004c623f    mov eax,[ecx+eax*4]"
 "	      004c6242    mov ds:[59C01Ch],ax"
-"	      004c6248    inc word ptr [ebp-4]"
+"	      004c6248    inc ix"
 );
 // LINE 800:
 	asm( 
-"	      004c624c    movsx eax,word ptr [ebp-4]"
+"	      004c624c    movsx eax,ix"
 "	      004c6250    mov ecx,ds:[63923Ch]"
 "	      004c6256    mov eax,[ecx+eax*4]"
 "	      004c6259    mov ds:[59C020h],ax"
-"	      004c625f    inc word ptr [ebp-4]"
+"	      004c625f    inc ix"
 );
 // LINE 801:
 	asm( 
-"	      004c6263    movsx eax,word ptr [ebp-4]"
+"	      004c6263    movsx eax,ix"
 "	      004c6267    mov ecx,ds:[63923Ch]"
 "	      004c626d    mov eax,[ecx+eax*4]"
 "	      004c6270    mov ds:[63A738h],eax"
-"	      004c6275    inc word ptr [ebp-4]"
+"	      004c6275    inc ix"
 );
 // LINE 802:
 	asm( 
-"	      004c6279    movsx eax,word ptr [ebp-4]"
+"	      004c6279    movsx eax,ix"
 "	      004c627d    mov ecx,ds:[63923Ch]"
 "	      004c6283    mov eax,[ecx+eax*4]"
 "	      004c6286    mov ds:[639304h],ax"
-"	      004c628c    inc word ptr [ebp-4]"
+"	      004c628c    inc ix"
 );
 // LINE 803:
 	asm( 
-"	      004c6290    movsx eax,word ptr [ebp-4]"
+"	      004c6290    movsx eax,ix"
 "	      004c6294    mov ecx,ds:[63923Ch]"
 "	      004c629a    mov eax,[ecx+eax*4]"
 "	      004c629d    mov ds:[63971Ch],ax"
-"	      004c62a3    inc word ptr [ebp-4]"
+"	      004c62a3    inc ix"
 );
 // LINE 804:
 	asm( 
-"	      004c62a7    movsx eax,word ptr [ebp-4]"
+"	      004c62a7    movsx eax,ix"
 "	      004c62ab    mov ecx,ds:[63923Ch]"
 "	      004c62b1    mov eax,[ecx+eax*4]"
 "	      004c62b4    mov ds:[63A740h],eax"
-"	      004c62b9    inc word ptr [ebp-4]"
+"	      004c62b9    inc ix"
 );
 // LINE 805:
 	asm( 
-"	      004c62bd    movsx eax,word ptr [ebp-4]"
+"	      004c62bd    movsx eax,ix"
 "	      004c62c1    mov ecx,ds:[63923Ch]"
 "	      004c62c7    mov eax,[ecx+eax*4]"
 "	      004c62ca    mov ds:[639A62h],ax"
-"	      004c62d0    inc word ptr [ebp-4]"
+"	      004c62d0    inc ix"
 );
 // LINE 806:
 	asm( 
-"	      004c62d4    movsx eax,word ptr [ebp-4]"
+"	      004c62d4    movsx eax,ix"
 "	      004c62d8    mov ecx,ds:[63923Ch]"
 "	      004c62de    mov eax,[ecx+eax*4]"
 "	      004c62e1    mov ds:[639DD0h],ax"
-"	      004c62e7    inc word ptr [ebp-4]"
+"	      004c62e7    inc ix"
 );
 // LINE 807:
 	asm( 
-"	      004c62eb    movsx eax,word ptr [ebp-4]"
+"	      004c62eb    movsx eax,ix"
 "	      004c62ef    mov ecx,ds:[63923Ch]"
 "	      004c62f5    mov eax,[ecx+eax*4]"
 "	      004c62f8    mov ds:[639ABAh],ax"
-"	      004c62fe    inc word ptr [ebp-4]"
+"	      004c62fe    inc ix"
 );
 // LINE 808:
 	asm( 
-"	      004c6302    movsx eax,word ptr [ebp-4]"
+"	      004c6302    movsx eax,ix"
 "	      004c6306    mov ecx,ds:[63923Ch]"
 "	      004c630c    mov eax,[ecx+eax*4]"
 "	      004c630f    mov ds:[63A632h],ax"
-"	      004c6315    inc word ptr [ebp-4]"
+"	      004c6315    inc ix"
 );
 // LINE 809:
 	asm( 
-"	      004c6319    movsx eax,word ptr [ebp-4]"
+"	      004c6319    movsx eax,ix"
 "	      004c631d    mov ecx,ds:[63923Ch]"
 "	      004c6323    mov eax,[ecx+eax*4]"
 "	      004c6326    mov ds:[59B558h],ax"
-"	      004c632c    inc word ptr [ebp-4]"
+"	      004c632c    inc ix"
 );
 // LINE 810:
 	asm( 
-"	      004c6330    movsx eax,word ptr [ebp-4]"
+"	      004c6330    movsx eax,ix"
 "	      004c6334    mov ecx,ds:[63923Ch]"
 "	      004c633a    mov eax,[ecx+eax*4]"
 "	      004c633d    mov ds:[59C024h],ax"
-"	      004c6343    inc word ptr [ebp-4]"
+"	      004c6343    inc ix"
 );
 // LINE 811:
 	asm( 
-"	      004c6347    movsx eax,word ptr [ebp-4]"
+"	      004c6347    movsx eax,ix"
 "	      004c634b    mov ecx,ds:[63923Ch]"
 "	      004c6351    mov eax,[ecx+eax*4]"
 "	      004c6354    mov ds:[6391F8h],ax"
-"	      004c635a    inc word ptr [ebp-4]"
+"	      004c635a    inc ix"
 );
 // LINE 812:
 	asm( 
-"	      004c635e    movsx eax,word ptr [ebp-4]"
+"	      004c635e    movsx eax,ix"
 "	      004c6362    mov ecx,ds:[63923Ch]"
 "	      004c6368    mov eax,[ecx+eax*4]"
 "	      004c636b    mov ds:[639AACh],ax"
-"	      004c6371    inc word ptr [ebp-4]"
+"	      004c6371    inc ix"
 );
 // LINE 813:
 	asm( 
-"	      004c6375    movsx eax,word ptr [ebp-4]"
+"	      004c6375    movsx eax,ix"
 "	      004c6379    mov ecx,ds:[63923Ch]"
 "	      004c637f    mov eax,[ecx+eax*4]"
 "	      004c6382    mov ds:[639A60h],ax"
-"	      004c6388    inc word ptr [ebp-4]"
+"	      004c6388    inc ix"
 );
 // LINE 814:
 	asm( 
-"	      004c638c    movsx eax,word ptr [ebp-4]"
+"	      004c638c    movsx eax,ix"
 "	      004c6390    mov ecx,ds:[63923Ch]"
 "	      004c6396    mov eax,[ecx+eax*4]"
 "	      004c6399    mov ds:[639234h],eax"
-"	      004c639e    inc word ptr [ebp-4]"
+"	      004c639e    inc ix"
 );
 // LINE 815:
 	asm( 
-"	      004c63a2    movsx eax,word ptr [ebp-4]"
+"	      004c63a2    movsx eax,ix"
 "	      004c63a6    mov ecx,ds:[63923Ch]"
 "	      004c63ac    mov eax,[ecx+eax*4]"
 "	      004c63af    mov ds:[639DD8h],eax"
-"	      004c63b4    inc word ptr [ebp-4]"
+"	      004c63b4    inc ix"
 );
 // LINE 816:
 	asm( 
-"	      004c63b8    movsx eax,word ptr [ebp-4]"
+"	      004c63b8    movsx eax,ix"
 "	      004c63bc    mov ecx,ds:[63923Ch]"
 "	      004c63c2    mov eax,[ecx+eax*4]"
 "	      004c63c5    mov ds:[639AA0h],eax"
-"	      004c63ca    inc word ptr [ebp-4]"
+"	      004c63ca    inc ix"
 );
 // LINE 817:
 	asm( 
-"	      004c63ce    movsx eax,word ptr [ebp-4]"
+"	      004c63ce    movsx eax,ix"
 "	      004c63d2    mov ecx,ds:[63923Ch]"
 "	      004c63d8    mov eax,[ecx+eax*4]"
 "	      004c63db    mov ds:[639AA4h],eax"
-"	      004c63e0    inc word ptr [ebp-4]"
+"	      004c63e0    inc ix"
 );
 // LINE 818:
 	asm( 
-"	      004c63e4    movsx eax,word ptr [ebp-4]"
+"	      004c63e4    movsx eax,ix"
 "	      004c63e8    mov ecx,ds:[63923Ch]"
 "	      004c63ee    mov eax,[ecx+eax*4]"
 "	      004c63f1    mov ds:[639DD4h],eax"
-"	      004c63f6    inc word ptr [ebp-4]"
+"	      004c63f6    inc ix"
 );
 // LINE 821:
 	asm( 
-"	      004c63fa    movsx eax,word ptr [ebp-4]"
+"	      004c63fa    movsx eax,ix"
 "	      004c63fe    mov ecx,ds:[63923Ch]"
 "	      004c6404    mov eax,[ecx+eax*4]"
 "	      004c6407    mov ds:[63A5A8h],ax"
-"	      004c640d    inc word ptr [ebp-4]"
+"	      004c640d    inc ix"
 );
 // LINE 822:
 	asm( 
-"	      004c6411    movsx eax,word ptr [ebp-4]"
+"	      004c6411    movsx eax,ix"
 "	      004c6415    mov ecx,ds:[63923Ch]"
 "	      004c641b    mov eax,[ecx+eax*4]"
 "	      004c641e    mov ds:[639204h],ax"
-"	      004c6424    inc word ptr [ebp-4]"
+"	      004c6424    inc ix"
 );
 // LINE 823:
 	asm( 
-"	      004c6428    movsx eax,word ptr [ebp-4]"
+"	      004c6428    movsx eax,ix"
 "	      004c642c    mov ecx,ds:[63923Ch]"
 "	      004c6432    mov eax,[ecx+eax*4]"
 "	      004c6435    mov ds:[639206h],eax"
-"	      004c643a    inc word ptr [ebp-4]"
+"	      004c643a    inc ix"
 );
 // LINE 824:
 	asm( 
-"	      004c643e    movsx eax,word ptr [ebp-4]"
+"	      004c643e    movsx eax,ix"
 "	      004c6442    mov ecx,ds:[63923Ch]"
 "	      004c6448    mov eax,[ecx+eax*4]"
 "	      004c644b    mov ds:[63920Ah],eax"
-"	      004c6450    inc word ptr [ebp-4]"
+"	      004c6450    inc ix"
 );
 // LINE 825:
 	asm( 
-"	      004c6454    movsx eax,word ptr [ebp-4]"
+"	      004c6454    movsx eax,ix"
 "	      004c6458    mov ecx,ds:[63923Ch]"
 "	      004c645e    mov eax,[ecx+eax*4]"
 "	      004c6461    mov ds:[63920Eh],eax"
-"	      004c6466    inc word ptr [ebp-4]"
+"	      004c6466    inc ix"
 );
 // LINE 826:
 	asm( 
-"	      004c646a    movsx eax,word ptr [ebp-4]"
+"	      004c646a    movsx eax,ix"
 "	      004c646e    mov ecx,ds:[63923Ch]"
 "	      004c6474    mov eax,[ecx+eax*4]"
 "	      004c6477    mov ds:[639212h],eax"
-"	      004c647c    inc word ptr [ebp-4]"
+"	      004c647c    inc ix"
 );
 // LINE 827:
 	asm( 
-"	      004c6480    movsx eax,word ptr [ebp-4]"
+"	      004c6480    movsx eax,ix"
 "	      004c6484    mov ecx,ds:[63923Ch]"
 "	      004c648a    mov eax,[ecx+eax*4]"
 "	      004c648d    mov ds:[639216h],eax"
-"	      004c6492    inc word ptr [ebp-4]"
+"	      004c6492    inc ix"
 );
 // LINE 828:
 	asm( 
-"	      004c6496    movsx eax,word ptr [ebp-4]"
+"	      004c6496    movsx eax,ix"
 "	      004c649a    mov ecx,ds:[63923Ch]"
 "	      004c64a0    mov eax,[ecx+eax*4]"
 "	      004c64a3    mov ds:[63921Ah],eax"
-"	      004c64a8    inc word ptr [ebp-4]"
+"	      004c64a8    inc ix"
 );
 // LINE 829:
 	asm( 
-"	      004c64ac    movsx eax,word ptr [ebp-4]"
+"	      004c64ac    movsx eax,ix"
 "	      004c64b0    mov ecx,ds:[63923Ch]"
 "	      004c64b6    mov eax,[ecx+eax*4]"
 "	      004c64b9    mov ds:[63921Eh],ax"
-"	      004c64bf    inc word ptr [ebp-4]"
+"	      004c64bf    inc ix"
 );
 // LINE 830:
 	asm( 
-"	      004c64c3    movsx eax,word ptr [ebp-4]"
+"	      004c64c3    movsx eax,ix"
 "	      004c64c7    mov ecx,ds:[63923Ch]"
 "	      004c64cd    mov eax,[ecx+eax*4]"
 "	      004c64d0    mov ds:[639220h],ax"
-"	      004c64d6    inc word ptr [ebp-4]"
+"	      004c64d6    inc ix"
 );
 // LINE 831:
 	asm( 
-"	      004c64da    movsx eax,word ptr [ebp-4]"
+"	      004c64da    movsx eax,ix"
 "	      004c64de    mov ecx,ds:[63923Ch]"
 "	      004c64e4    mov eax,[ecx+eax*4]"
 "	      004c64e7    mov ds:[639222h],eax"
-"	      004c64ec    inc word ptr [ebp-4]"
+"	      004c64ec    inc ix"
 );
 // LINE 832:
 	asm( 
-"	      004c64f0    movsx eax,word ptr [ebp-4]"
+"	      004c64f0    movsx eax,ix"
 "	      004c64f4    mov ecx,ds:[63923Ch]"
 "	      004c64fa    mov eax,[ecx+eax*4]"
 "	      004c64fd    mov ds:[639226h],eax"
-"	      004c6502    inc word ptr [ebp-4]"
+"	      004c6502    inc ix"
 );
 // LINE 833:
 	asm( 
-"	      004c6506    movsx eax,word ptr [ebp-4]"
+"	      004c6506    movsx eax,ix"
 "	      004c650a    mov ecx,ds:[63923Ch]"
 "	      004c6510    mov eax,[ecx+eax*4]"
 "	      004c6513    mov ds:[63922Ah],eax"
-"	      004c6518    inc word ptr [ebp-4]"
+"	      004c6518    inc ix"
 );
 // LINE 834:
 	asm( 
-"	      004c651c    movsx eax,word ptr [ebp-4]"
+"	      004c651c    movsx eax,ix"
 "	      004c6520    mov ecx,ds:[63923Ch]"
 "	      004c6526    mov al,[ecx+eax*4]"
 "	      004c6529    mov ds:[63922Eh],al"
-"	      004c652e    inc word ptr [ebp-4]"
+"	      004c652e    inc ix"
 );
 // LINE 835:
 	asm( 
-"	      004c6532    movsx eax,word ptr [ebp-4]"
+"	      004c6532    movsx eax,ix"
 "	      004c6536    mov ecx,ds:[63923Ch]"
 "	      004c653c    mov al,[ecx+eax*4]"
 "	      004c653f    mov ds:[63922Fh],al"
-"	      004c6544    inc word ptr [ebp-4]"
+"	      004c6544    inc ix"
 );
 // LINE 836:
 	asm( 
-"	      004c6548    movsx eax,word ptr [ebp-4]"
+"	      004c6548    movsx eax,ix"
 "	      004c654c    mov ecx,ds:[63923Ch]"
 "	      004c6552    mov eax,[ecx+eax*4]"
 "	      004c6555    mov ds:[639230h],ax"
-"	      004c655b    inc word ptr [ebp-4]"
+"	      004c655b    inc ix"
 );
 // LINE 837:
 	asm( 
-"	      004c655f    movsx eax,word ptr [ebp-4]"
+"	      004c655f    movsx eax,ix"
 "	      004c6563    mov ecx,ds:[63923Ch]"
 "	      004c6569    mov eax,[ecx+eax*4]"
 "	      004c656c    mov ds:[639232h],ax"
-"	      004c6572    inc word ptr [ebp-4]"
+"	      004c6572    inc ix"
 );
 // LINE 838:
 	asm( 
-"	      004c6576    movsx eax,word ptr [ebp-4]"
+"	      004c6576    movsx eax,ix"
 "	      004c657a    mov ecx,ds:[63923Ch]"
 "	      004c6580    mov eax,[ecx+eax*4]"
 "	      004c6583    mov ds:[63A73Ch],ax"
-"	      004c6589    inc word ptr [ebp-4]"
+"	      004c6589    inc ix"
 );
 // LINE 839:
 	asm( 
-"	      004c658d    movsx eax,word ptr [ebp-4]"
+"	      004c658d    movsx eax,ix"
 "	      004c6591    mov ecx,ds:[63923Ch]"
 "	      004c6597    mov eax,[ecx+eax*4]"
 "	      004c659a    mov ds:[59C040h],ax"
-"	      004c65a0    inc word ptr [ebp-4]"
+"	      004c65a0    inc ix"
 );
 // LINE 840:
 	asm( 
-"	      004c65a4    movsx eax,word ptr [ebp-4]"
+"	      004c65a4    movsx eax,ix"
 "	      004c65a8    mov ecx,ds:[63923Ch]"
 "	      004c65ae    mov eax,[ecx+eax*4]"
 "	      004c65b1    mov ds:[6392D0h],ax"
-"	      004c65b7    inc word ptr [ebp-4]"
+"	      004c65b7    inc ix"
 );
 // LINE 841:
 	asm( 
-"	      004c65bb    movsx eax,word ptr [ebp-4]"
+"	      004c65bb    movsx eax,ix"
 "	      004c65bf    mov ecx,ds:[63923Ch]"
 "	      004c65c5    mov eax,[ecx+eax*4]"
 "	      004c65c8    mov ds:[63A5A4h],eax"
-"	      004c65cd    inc word ptr [ebp-4]"
+"	      004c65cd    inc ix"
 );
 // LINE 845:
 	asm( 
@@ -3411,12 +3411,12 @@ unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char
 );
 // LINE 863:
 	asm( 
-"	      004c65e5    mov eax,[ebp+8]"
+"	      004c65e5    mov eax,filNum"
 "	      004c65e8    push eax"
 "	      004c65e9    push 1"
-"	      004c65eb    mov eax,[ebp+0Ch]"
+"	      004c65eb    mov eax,size"
 "	      004c65ee    push eax"
-"	      004c65ef    mov eax,[ebp+10h]"
+"	      004c65ef    mov eax,data"
 "	      004c65f2    push eax"
 "	      004c65f3    call 00572960h"
 "	      004c65f8    add esp,10h"
@@ -3459,15 +3459,15 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 );
 // LINE 887:
 	asm( 
-"	      004c6622    mov eax,[ebp+0Ch]"
+"	      004c6622    mov eax,size"
 "	      004c6625    push eax"
 "	      004c6626    push 59B0D4h"
 "	      004c662b    mov eax,ds:[63A854h]"
 "	      004c6630    push eax"
 "	      004c6631    call 004CB5CFh"
 "	      004c6636    add esp,0Ch"
-"	      004c6639    mov [ebp-8],eax"
-"	      004c663c    cmp dword ptr [ebp-8],0"
+"	      004c6639    mov temp,eax"
+"	      004c663c    cmp temp,0"
 "	      004c6640    jne near ptr 004C664Eh"
 );
 // LINE 888:
@@ -3477,17 +3477,17 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 );
 // LINE 890:
 	asm( 
-"	      004c664e    mov eax,[ebp+0Ch]"
-"	      004c6651    mov [ebp-4],eax"
+"	      004c664e    mov eax,size"
+"	      004c6651    mov count,eax"
 );
 // LINE 891:
 	asm( 
-"	      004c6654    mov eax,[ebp+8]"
+"	      004c6654    mov eax,filNum"
 "	      004c6657    push eax"
 "	      004c6658    push 1"
-"	      004c665a    mov eax,[ebp-4]"
+"	      004c665a    mov eax,count"
 "	      004c665d    push eax"
-"	      004c665e    mov eax,[ebp-8]"
+"	      004c665e    mov eax,temp"
 "	      004c6661    push eax"
 "	      004c6662    call 00572960h"
 "	      004c6667    add esp,10h"
@@ -3548,15 +3548,15 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 );
 // LINE 920:
 	asm( 
-"	      004c66ad    mov eax,[ebp+0Ch]"
+"	      004c66ad    mov eax,size"
 "	      004c66b0    push eax"
 "	      004c66b1    push 59B0E8h"
 "	      004c66b6    mov eax,ds:[63A854h]"
 "	      004c66bb    push eax"
 "	      004c66bc    call 004CB5CFh"
 "	      004c66c1    add esp,0Ch"
-"	      004c66c4    mov [ebp-18h],eax"
-"	      004c66c7    cmp dword ptr [ebp-18h],0"
+"	      004c66c4    mov temp,eax"
+"	      004c66c7    cmp temp,0"
 "	      004c66cb    jne near ptr 004C66D9h"
 );
 // LINE 921:
@@ -3566,17 +3566,17 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 );
 // LINE 923:
 	asm( 
-"	      004c66d9    mov eax,[ebp+0Ch]"
-"	      004c66dc    mov [ebp-0Ch],eax"
+"	      004c66d9    mov eax,size"
+"	      004c66dc    mov count,eax"
 );
 // LINE 924:
 	asm( 
-"	      004c66df    mov eax,[ebp+8]"
+"	      004c66df    mov eax,filNum"
 "	      004c66e2    push eax"
 "	      004c66e3    push 1"
-"	      004c66e5    mov eax,[ebp-0Ch]"
+"	      004c66e5    mov eax,count"
 "	      004c66e8    push eax"
-"	      004c66e9    mov eax,[ebp-18h]"
+"	      004c66e9    mov eax,temp"
 "	      004c66ec    push eax"
 "	      004c66ed    call 00572960h"
 "	      004c66f2    add esp,10h"
@@ -3597,68 +3597,68 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 );
 // LINE 930:
 	asm( 
-"	      004c6713    mov dword ptr [ebp-14h],0"
-"	      004c671a    mov eax,[ebp-14h]"
-"	      004c671d    mov [ebp-10h],eax"
-"	      004c6720    mov eax,[ebp-10h]"
-"	      004c6723    mov [ebp-8],eax"
+"	      004c6713    mov tp,0"
+"	      004c671a    mov eax,tp"
+"	      004c671d    mov dp,eax"
+"	      004c6720    mov eax,dp"
+"	      004c6723    mov ix,eax"
 );
 // LINE 932:
 	asm( 
-"	      004c6726    mov eax,[ebp+14h]"
-"	      004c6729    mov [ebp-0Ch],eax"
+"	      004c6726    mov eax,dataSize"
+"	      004c6729    mov count,eax"
 );
 // LINE 933:
 	asm( 
-"	      004c672c    mov eax,[ebp-14h]"
-"	      004c672f    cmp [ebp+0Ch],eax"
+"	      004c672c    mov eax,tp"
+"	      004c672f    cmp size,eax"
 "	      004c6732    jle near ptr 004C67DEh"
-"	      004c6738    mov eax,[ebp-10h]"
-"	      004c673b    cmp [ebp-0Ch],eax"
+"	      004c6738    mov eax,dp"
+"	      004c673b    cmp count,eax"
 "	      004c673e    jle near ptr 004C67DEh"
 );
 // LINE 934:
 	asm( 
-"	      004c6744    mov eax,[ebp-14h]"
-"	      004c6747    mov ecx,[ebp-18h]"
+"	      004c6744    mov eax,tp"
+"	      004c6747    mov ecx,temp"
 "	      004c674a    mov al,[eax+ecx]"
-"	      004c674d    mov [ebp-4],al"
-"	      004c6750    inc dword ptr [ebp-14h]"
+"	      004c674d    mov b,al"
+"	      004c6750    inc tp"
 );
 // LINE 935:
 	asm( 
-"	      004c6753    movsx eax,byte ptr [ebp-4]"
+"	      004c6753    movsx eax,b"
 "	      004c6757    test al,80h"
 "	      004c6759    je near ptr 004C67A3h"
 );
 // LINE 936:
 	asm( 
-"	      004c675f    movsx eax,byte ptr [ebp-4]"
+"	      004c675f    movsx eax,b"
 "	      004c6763    and eax,7Fh"
-"	      004c6766    mov [ebp-8],eax"
+"	      004c6766    mov ix,eax"
 );
 // LINE 937:
 	asm( 
-"	      004c6769    mov eax,[ebp-14h]"
-"	      004c676c    mov ecx,[ebp-18h]"
+"	      004c6769    mov eax,tp"
+"	      004c676c    mov ecx,temp"
 "	      004c676f    mov al,[eax+ecx]"
-"	      004c6772    mov [ebp-4],al"
-"	      004c6775    inc dword ptr [ebp-14h]"
+"	      004c6772    mov b,al"
+"	      004c6775    inc tp"
 );
 // LINE 938:
 	asm( 
 "	      004c6778    jmp near ptr 004C6780h"
-"	      004c677d    dec dword ptr [ebp-8]"
-"	      004c6780    cmp dword ptr [ebp-8],0"
+"	      004c677d    dec ix"
+"	      004c6780    cmp ix,0"
 "	      004c6784    jl near ptr 004C679Eh"
 );
 // LINE 939:
 	asm( 
-"	      004c678a    mov al,[ebp-4]"
-"	      004c678d    mov ecx,[ebp-10h]"
-"	      004c6790    mov edx,[ebp+10h]"
+"	      004c678a    mov al,b"
+"	      004c678d    mov ecx,dp"
+"	      004c6790    mov edx,data"
 "	      004c6793    mov [ecx+edx],al"
-"	      004c6796    inc dword ptr [ebp-10h]"
+"	      004c6796    inc dp"
 "	      004c6799    jmp near ptr 004C677Dh"
 );
 // LINE 940:
@@ -3667,26 +3667,26 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 );
 // LINE 941:
 	asm( 
-"	      004c67a3    movsx eax,byte ptr [ebp-4]"
-"	      004c67a7    mov [ebp-8],eax"
+"	      004c67a3    movsx eax,b"
+"	      004c67a7    mov ix,eax"
 );
 // LINE 942:
 	asm( 
 "	      004c67aa    jmp near ptr 004C67B2h"
-"	      004c67af    dec dword ptr [ebp-8]"
-"	      004c67b2    cmp dword ptr [ebp-8],0"
+"	      004c67af    dec ix"
+"	      004c67b2    cmp ix,0"
 "	      004c67b6    jle near ptr 004C67D9h"
 );
 // LINE 943:
 	asm( 
-"	      004c67bc    mov eax,[ebp-14h]"
-"	      004c67bf    mov ecx,[ebp-18h]"
+"	      004c67bc    mov eax,tp"
+"	      004c67bf    mov ecx,temp"
 "	      004c67c2    mov al,[eax+ecx]"
-"	      004c67c5    mov ecx,[ebp-10h]"
-"	      004c67c8    mov edx,[ebp+10h]"
+"	      004c67c5    mov ecx,dp"
+"	      004c67c8    mov edx,data"
 "	      004c67cb    mov [ecx+edx],al"
-"	      004c67ce    inc dword ptr [ebp-14h]"
-"	      004c67d1    inc dword ptr [ebp-10h]"
+"	      004c67ce    inc tp"
+"	      004c67d1    inc dp"
 "	      004c67d4    jmp near ptr 004C67AFh"
 );
 // LINE 945:
@@ -3702,8 +3702,8 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 );
 // LINE 949:
 	asm( 
-"	      004c67ec    mov ecx,[ebp-14h]"
-"	      004c67ef    cmp [ebp+0Ch],ecx"
+"	      004c67ec    mov ecx,tp"
+"	      004c67ef    cmp size,ecx"
 "	      004c67f2    je near ptr 004C6800h"
 );
 // LINE 950:
@@ -3743,12 +3743,12 @@ short S2CitySave(char * filePath) {
 // LINE 980:
 	asm( 
 "	      004c6817    push 59B0FCh"
-"	      004c681c    mov eax,[ebp+8]"
+"	      004c681c    mov eax,filePath"
 "	      004c681f    push eax"
 "	      004c6820    call 0056D910h"
 "	      004c6825    add esp,8"
-"	      004c6828    mov [ebp-4],eax"
-"	      004c682b    cmp dword ptr [ebp-4],0"
+"	      004c6828    mov filNum,eax"
+"	      004c682b    cmp filNum,0"
 "	      004c682f    jne near ptr 004C683Dh"
 );
 // LINE 981:
@@ -3759,7 +3759,7 @@ short S2CitySave(char * filePath) {
 // LINE 983:
 	asm( 
 "	      004c683d    push 0"
-"	      004c683f    mov eax,[ebp-4]"
+"	      004c683f    mov eax,filNum"
 "	      004c6842    push eax"
 "	      004c6843    call 004C6EDBh"
 "	      004c6848    add esp,8"
@@ -3780,27 +3780,27 @@ short S2CitySave(char * filePath) {
 "	      004c6865    push 20h"
 "	      004c6867    mov eax,ds:[63A570h]"
 "	      004c686c    push eax"
-"	      004c686d    lea eax,[ebp-28h]"
+"	      004c686d    lea eax,tempCityNameString[0]"
 "	      004c6870    push eax"
 "	      004c6871    call 0056AD40h"
 "	      004c6876    add esp,0Ch"
 );
 // LINE 990:
 	asm( 
-"	      004c6879    lea eax,[ebp-28h]"
+"	      004c6879    lea eax,tempCityNameString[0]"
 "	      004c687c    push eax"
 "	      004c687d    call 004C927Bh"
 "	      004c6882    add esp,4"
 );
 // LINE 991:
 	asm( 
-"	      004c6885    lea eax,[ebp-28h]"
+"	      004c6885    lea eax,tempCityNameString[0]"
 "	      004c6888    push eax"
 "	      004c6889    push 59B100h"
 "	      004c688e    call 004C49D8h"
 "	      004c6893    add esp,4"
 "	      004c6896    push eax"
-"	      004c6897    mov eax,[ebp-4]"
+"	      004c6897    mov eax,filNum"
 "	      004c689a    push eax"
 "	      004c689b    call 004C6CFEh"
 "	      004c68a0    add esp,0Ch"
@@ -3814,7 +3814,7 @@ short S2CitySave(char * filePath) {
 );
 // LINE 993:
 	asm( 
-"	      004c68b3    mov eax,[ebp-4]"
+"	      004c68b3    mov eax,filNum"
 "	      004c68b6    push eax"
 "	      004c68b7    call 004C732Eh"
 "	      004c68bc    add esp,4"
@@ -3835,7 +3835,7 @@ short S2CitySave(char * filePath) {
 "	      004c68df    call 004C49D8h"
 "	      004c68e4    add esp,4"
 "	      004c68e7    push eax"
-"	      004c68e8    mov eax,[ebp-4]"
+"	      004c68e8    mov eax,filNum"
 "	      004c68eb    push eax"
 "	      004c68ec    call 004C6DD5h"
 "	      004c68f1    add esp,10h"
@@ -3856,7 +3856,7 @@ short S2CitySave(char * filePath) {
 "	      004c6914    call 004C49D8h"
 "	      004c6919    add esp,4"
 "	      004c691c    push eax"
-"	      004c691d    mov eax,[ebp-4]"
+"	      004c691d    mov eax,filNum"
 "	      004c6920    push eax"
 "	      004c6921    call 004C6FE6h"
 "	      004c6926    add esp,10h"
@@ -3877,7 +3877,7 @@ short S2CitySave(char * filePath) {
 "	      004c6949    call 004C49D8h"
 "	      004c694e    add esp,4"
 "	      004c6951    push eax"
-"	      004c6952    mov eax,[ebp-4]"
+"	      004c6952    mov eax,filNum"
 "	      004c6955    push eax"
 "	      004c6956    call 004C6FE6h"
 "	      004c695b    add esp,10h"
@@ -3898,7 +3898,7 @@ short S2CitySave(char * filePath) {
 "	      004c697e    call 004C49D8h"
 "	      004c6983    add esp,4"
 "	      004c6986    push eax"
-"	      004c6987    mov eax,[ebp-4]"
+"	      004c6987    mov eax,filNum"
 "	      004c698a    push eax"
 "	      004c698b    call 004C6FE6h"
 "	      004c6990    add esp,10h"
@@ -3919,7 +3919,7 @@ short S2CitySave(char * filePath) {
 "	      004c69b3    call 004C49D8h"
 "	      004c69b8    add esp,4"
 "	      004c69bb    push eax"
-"	      004c69bc    mov eax,[ebp-4]"
+"	      004c69bc    mov eax,filNum"
 "	      004c69bf    push eax"
 "	      004c69c0    call 004C6FE6h"
 "	      004c69c5    add esp,10h"
@@ -3940,7 +3940,7 @@ short S2CitySave(char * filePath) {
 "	      004c69e8    call 004C49D8h"
 "	      004c69ed    add esp,4"
 "	      004c69f0    push eax"
-"	      004c69f1    mov eax,[ebp-4]"
+"	      004c69f1    mov eax,filNum"
 "	      004c69f4    push eax"
 "	      004c69f5    call 004C6FE6h"
 "	      004c69fa    add esp,10h"
@@ -3961,7 +3961,7 @@ short S2CitySave(char * filePath) {
 "	      004c6a1d    call 004C49D8h"
 "	      004c6a22    add esp,4"
 "	      004c6a25    push eax"
-"	      004c6a26    mov eax,[ebp-4]"
+"	      004c6a26    mov eax,filNum"
 "	      004c6a29    push eax"
 "	      004c6a2a    call 004C6FE6h"
 "	      004c6a2f    add esp,10h"
@@ -3982,7 +3982,7 @@ short S2CitySave(char * filePath) {
 "	      004c6a52    call 004C49D8h"
 "	      004c6a57    add esp,4"
 "	      004c6a5a    push eax"
-"	      004c6a5b    mov eax,[ebp-4]"
+"	      004c6a5b    mov eax,filNum"
 "	      004c6a5e    push eax"
 "	      004c6a5f    call 004C6FE6h"
 "	      004c6a64    add esp,10h"
@@ -4003,7 +4003,7 @@ short S2CitySave(char * filePath) {
 "	      004c6a87    call 004C49D8h"
 "	      004c6a8c    add esp,4"
 "	      004c6a8f    push eax"
-"	      004c6a90    mov eax,[ebp-4]"
+"	      004c6a90    mov eax,filNum"
 "	      004c6a93    push eax"
 "	      004c6a94    call 004C6FE6h"
 "	      004c6a99    add esp,10h"
@@ -4024,7 +4024,7 @@ short S2CitySave(char * filePath) {
 "	      004c6abc    call 004C49D8h"
 "	      004c6ac1    add esp,4"
 "	      004c6ac4    push eax"
-"	      004c6ac5    mov eax,[ebp-4]"
+"	      004c6ac5    mov eax,filNum"
 "	      004c6ac8    push eax"
 "	      004c6ac9    call 004C6FE6h"
 "	      004c6ace    add esp,10h"
@@ -4045,7 +4045,7 @@ short S2CitySave(char * filePath) {
 "	      004c6af1    call 004C49D8h"
 "	      004c6af6    add esp,4"
 "	      004c6af9    push eax"
-"	      004c6afa    mov eax,[ebp-4]"
+"	      004c6afa    mov eax,filNum"
 "	      004c6afd    push eax"
 "	      004c6afe    call 004C6FE6h"
 "	      004c6b03    add esp,10h"
@@ -4066,7 +4066,7 @@ short S2CitySave(char * filePath) {
 "	      004c6b26    call 004C49D8h"
 "	      004c6b2b    add esp,4"
 "	      004c6b2e    push eax"
-"	      004c6b2f    mov eax,[ebp-4]"
+"	      004c6b2f    mov eax,filNum"
 "	      004c6b32    push eax"
 "	      004c6b33    call 004C6FE6h"
 "	      004c6b38    add esp,10h"
@@ -4087,7 +4087,7 @@ short S2CitySave(char * filePath) {
 "	      004c6b5b    call 004C49D8h"
 "	      004c6b60    add esp,4"
 "	      004c6b63    push eax"
-"	      004c6b64    mov eax,[ebp-4]"
+"	      004c6b64    mov eax,filNum"
 "	      004c6b67    push eax"
 "	      004c6b68    call 004C6FE6h"
 "	      004c6b6d    add esp,10h"
@@ -4108,7 +4108,7 @@ short S2CitySave(char * filePath) {
 "	      004c6b90    call 004C49D8h"
 "	      004c6b95    add esp,4"
 "	      004c6b98    push eax"
-"	      004c6b99    mov eax,[ebp-4]"
+"	      004c6b99    mov eax,filNum"
 "	      004c6b9c    push eax"
 "	      004c6b9d    call 004C6FE6h"
 "	      004c6ba2    add esp,10h"
@@ -4129,7 +4129,7 @@ short S2CitySave(char * filePath) {
 "	      004c6bc5    call 004C49D8h"
 "	      004c6bca    add esp,4"
 "	      004c6bcd    push eax"
-"	      004c6bce    mov eax,[ebp-4]"
+"	      004c6bce    mov eax,filNum"
 "	      004c6bd1    push eax"
 "	      004c6bd2    call 004C6FE6h"
 "	      004c6bd7    add esp,10h"
@@ -4150,7 +4150,7 @@ short S2CitySave(char * filePath) {
 "	      004c6bfa    call 004C49D8h"
 "	      004c6bff    add esp,4"
 "	      004c6c02    push eax"
-"	      004c6c03    mov eax,[ebp-4]"
+"	      004c6c03    mov eax,filNum"
 "	      004c6c06    push eax"
 "	      004c6c07    call 004C6FE6h"
 "	      004c6c0c    add esp,10h"
@@ -4171,7 +4171,7 @@ short S2CitySave(char * filePath) {
 "	      004c6c2f    call 004C49D8h"
 "	      004c6c34    add esp,4"
 "	      004c6c37    push eax"
-"	      004c6c38    mov eax,[ebp-4]"
+"	      004c6c38    mov eax,filNum"
 "	      004c6c3b    push eax"
 "	      004c6c3c    call 004C6FE6h"
 "	      004c6c41    add esp,10h"
@@ -4192,7 +4192,7 @@ short S2CitySave(char * filePath) {
 "	      004c6c64    call 004C49D8h"
 "	      004c6c69    add esp,4"
 "	      004c6c6c    push eax"
-"	      004c6c6d    mov eax,[ebp-4]"
+"	      004c6c6d    mov eax,filNum"
 "	      004c6c70    push eax"
 "	      004c6c71    call 004C6FE6h"
 "	      004c6c76    add esp,10h"
@@ -4213,7 +4213,7 @@ short S2CitySave(char * filePath) {
 "	      004c6c99    call 004C49D8h"
 "	      004c6c9e    add esp,4"
 "	      004c6ca1    push eax"
-"	      004c6ca2    mov eax,[ebp-4]"
+"	      004c6ca2    mov eax,filNum"
 "	      004c6ca5    push eax"
 "	      004c6ca6    call 004C6FE6h"
 "	      004c6cab    add esp,10h"
@@ -4229,14 +4229,14 @@ short S2CitySave(char * filePath) {
 	asm( 
 "	      004c6cbe    mov eax,ds:[6069C0h]"
 "	      004c6cc3    push eax"
-"	      004c6cc4    mov eax,[ebp-4]"
+"	      004c6cc4    mov eax,filNum"
 "	      004c6cc7    push eax"
 "	      004c6cc8    call 004C6EDBh"
 "	      004c6ccd    add esp,8"
 );
 // LINE 1046:
 	asm( 
-"	      004c6cd0    mov eax,[ebp-4]"
+"	      004c6cd0    mov eax,filNum"
 "	      004c6cd3    push eax"
 "	      004c6cd4    call 0056D120h"
 "	      004c6cd9    add esp,4"
@@ -4249,7 +4249,7 @@ short S2CitySave(char * filePath) {
 // LINE 1051:
 badwrite:
 	asm( 
-"	      004c6ce5    mov eax,[ebp-4]"
+"	      004c6ce5    mov eax,filNum"
 "	      004c6ce8    push eax"
 "	      004c6ce9    call 0056D120h"
 "	      004c6cee    add esp,4"
@@ -4285,24 +4285,24 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 );
 // LINE 1075:
 	asm( 
-"	      004c6d07    mov dword ptr [ebp-8],4"
+"	      004c6d07    mov count,4"
 );
 // LINE 1076:
 	asm( 
-"	      004c6d0e    mov eax,[ebp+0Ch]"
+"	      004c6d0e    mov eax,head"
 "	      004c6d11    push eax"
 "	      004c6d12    call 004C838Eh"
 "	      004c6d17    add esp,4"
-"	      004c6d1a    mov [ebp+0Ch],eax"
+"	      004c6d1a    mov head,eax"
 );
 // LINE 1077:
 	asm( 
-"	      004c6d1d    mov eax,[ebp+8]"
+"	      004c6d1d    mov eax,filNum"
 "	      004c6d20    push eax"
 "	      004c6d21    push 1"
-"	      004c6d23    mov eax,[ebp-8]"
+"	      004c6d23    mov eax,count"
 "	      004c6d26    push eax"
-"	      004c6d27    lea eax,[ebp+0Ch]"
+"	      004c6d27    lea eax,head"
 "	      004c6d2a    push eax"
 "	      004c6d2b    call 0056D590h"
 "	      004c6d30    add esp,10h"
@@ -4316,28 +4316,28 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 );
 // LINE 1080:
 	asm( 
-"	      004c6d43    mov dword ptr [ebp-8],4"
+"	      004c6d43    mov count,4"
 );
 // LINE 1081:
 	asm( 
-"	      004c6d4a    mov dword ptr [ebp-4],20h"
+"	      004c6d4a    mov size,20h"
 );
 // LINE 1082:
 	asm( 
-"	      004c6d51    mov eax,[ebp-4]"
+"	      004c6d51    mov eax,size"
 "	      004c6d54    push eax"
 "	      004c6d55    call 004C838Eh"
 "	      004c6d5a    add esp,4"
-"	      004c6d5d    mov [ebp-4],eax"
+"	      004c6d5d    mov size,eax"
 );
 // LINE 1083:
 	asm( 
-"	      004c6d60    mov eax,[ebp+8]"
+"	      004c6d60    mov eax,filNum"
 "	      004c6d63    push eax"
 "	      004c6d64    push 1"
-"	      004c6d66    mov eax,[ebp-8]"
+"	      004c6d66    mov eax,count"
 "	      004c6d69    push eax"
-"	      004c6d6a    lea eax,[ebp-4]"
+"	      004c6d6a    lea eax,size"
 "	      004c6d6d    push eax"
 "	      004c6d6e    call 0056D590h"
 "	      004c6d73    add esp,10h"
@@ -4351,20 +4351,20 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 );
 // LINE 1086:
 	asm( 
-"	      004c6d86    mov eax,[ebp-4]"
+"	      004c6d86    mov eax,size"
 "	      004c6d89    push eax"
 "	      004c6d8a    call 004C838Eh"
 "	      004c6d8f    add esp,4"
-"	      004c6d92    mov [ebp-4],eax"
+"	      004c6d92    mov size,eax"
 );
 // LINE 1089:
 	asm( 
-"	      004c6d95    mov eax,[ebp+8]"
+"	      004c6d95    mov eax,filNum"
 "	      004c6d98    push eax"
 "	      004c6d99    push 1"
-"	      004c6d9b    mov eax,[ebp-4]"
+"	      004c6d9b    mov eax,size"
 "	      004c6d9e    push eax"
-"	      004c6d9f    mov eax,[ebp+10h]"
+"	      004c6d9f    mov eax,data"
 "	      004c6da2    push eax"
 "	      004c6da3    call 0056D590h"
 "	      004c6da8    add esp,10h"
@@ -4378,7 +4378,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 );
 // LINE 1092:
 	asm( 
-"	      004c6dbb    mov eax,[ebp-4]"
+"	      004c6dbb    mov eax,size"
 "	      004c6dbe    add eax,8"
 "	      004c6dc1    add ds:[6069C0h],eax"
 );
@@ -4413,24 +4413,24 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 );
 // LINE 1114:
 	asm( 
-"	      004c6dde    mov dword ptr [ebp-8],4"
+"	      004c6dde    mov count,4"
 );
 // LINE 1115:
 	asm( 
-"	      004c6de5    mov eax,[ebp+0Ch]"
+"	      004c6de5    mov eax,head"
 "	      004c6de8    push eax"
 "	      004c6de9    call 004C838Eh"
 "	      004c6dee    add esp,4"
-"	      004c6df1    mov [ebp+0Ch],eax"
+"	      004c6df1    mov head,eax"
 );
 // LINE 1116:
 	asm( 
-"	      004c6df4    mov eax,[ebp+8]"
+"	      004c6df4    mov eax,filNum"
 "	      004c6df7    push eax"
 "	      004c6df8    push 1"
-"	      004c6dfa    mov eax,[ebp-8]"
+"	      004c6dfa    mov eax,count"
 "	      004c6dfd    push eax"
-"	      004c6dfe    lea eax,[ebp+0Ch]"
+"	      004c6dfe    lea eax,head"
 "	      004c6e01    push eax"
 "	      004c6e02    call 0056D590h"
 "	      004c6e07    add esp,10h"
@@ -4444,29 +4444,29 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 );
 // LINE 1119:
 	asm( 
-"	      004c6e1a    mov dword ptr [ebp-8],4"
+"	      004c6e1a    mov count,4"
 );
 // LINE 1120:
 	asm( 
-"	      004c6e21    mov eax,[ebp+14h]"
-"	      004c6e24    mov [ebp-4],eax"
+"	      004c6e21    mov eax,dataSize"
+"	      004c6e24    mov size,eax"
 );
 // LINE 1121:
 	asm( 
-"	      004c6e27    mov eax,[ebp-4]"
+"	      004c6e27    mov eax,size"
 "	      004c6e2a    push eax"
 "	      004c6e2b    call 004C838Eh"
 "	      004c6e30    add esp,4"
-"	      004c6e33    mov [ebp-4],eax"
+"	      004c6e33    mov size,eax"
 );
 // LINE 1122:
 	asm( 
-"	      004c6e36    mov eax,[ebp+8]"
+"	      004c6e36    mov eax,filNum"
 "	      004c6e39    push eax"
 "	      004c6e3a    push 1"
-"	      004c6e3c    mov eax,[ebp-8]"
+"	      004c6e3c    mov eax,count"
 "	      004c6e3f    push eax"
-"	      004c6e40    lea eax,[ebp-4]"
+"	      004c6e40    lea eax,size"
 "	      004c6e43    push eax"
 "	      004c6e44    call 0056D590h"
 "	      004c6e49    add esp,10h"
@@ -4480,29 +4480,29 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 );
 // LINE 1125:
 	asm( 
-"	      004c6e5c    mov eax,[ebp-4]"
+"	      004c6e5c    mov eax,size"
 "	      004c6e5f    push eax"
 "	      004c6e60    call 004C838Eh"
 "	      004c6e65    add esp,4"
-"	      004c6e68    mov [ebp-4],eax"
+"	      004c6e68    mov size,eax"
 );
 // LINE 1126:
 	asm( 
-"	      004c6e6b    mov eax,[ebp-4]"
+"	      004c6e6b    mov eax,size"
 "	      004c6e6e    push eax"
-"	      004c6e6f    mov eax,[ebp+10h]"
+"	      004c6e6f    mov eax,data"
 "	      004c6e72    push eax"
 "	      004c6e73    call 004C82B3h"
 "	      004c6e78    add esp,8"
 );
 // LINE 1129:
 	asm( 
-"	      004c6e7b    mov eax,[ebp+8]"
+"	      004c6e7b    mov eax,filNum"
 "	      004c6e7e    push eax"
 "	      004c6e7f    push 1"
-"	      004c6e81    mov eax,[ebp-4]"
+"	      004c6e81    mov eax,size"
 "	      004c6e84    push eax"
-"	      004c6e85    mov eax,[ebp+10h]"
+"	      004c6e85    mov eax,data"
 "	      004c6e88    push eax"
 "	      004c6e89    call 0056D590h"
 "	      004c6e8e    add esp,10h"
@@ -4511,9 +4511,9 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 );
 // LINE 1130:
 	asm( 
-"	      004c6e99    mov eax,[ebp-4]"
+"	      004c6e99    mov eax,size"
 "	      004c6e9c    push eax"
-"	      004c6e9d    mov eax,[ebp+10h]"
+"	      004c6e9d    mov eax,data"
 "	      004c6ea0    push eax"
 "	      004c6ea1    call 004C82B3h"
 "	      004c6ea6    add esp,8"
@@ -4525,16 +4525,16 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 );
 // LINE 1134:
 	asm( 
-"	      004c6eb1    mov eax,[ebp-4]"
+"	      004c6eb1    mov eax,size"
 "	      004c6eb4    push eax"
-"	      004c6eb5    mov eax,[ebp+10h]"
+"	      004c6eb5    mov eax,data"
 "	      004c6eb8    push eax"
 "	      004c6eb9    call 004C82B3h"
 "	      004c6ebe    add esp,8"
 );
 // LINE 1136:
 	asm( 
-"	      004c6ec1    mov ecx,[ebp-4]"
+"	      004c6ec1    mov ecx,size"
 "	      004c6ec4    add ecx,8"
 "	      004c6ec7    add ds:[6069C0h],ecx"
 );
@@ -4571,7 +4571,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	asm( 
 "	      004c6ee4    push 0"
 "	      004c6ee6    push 0"
-"	      004c6ee8    mov eax,[ebp+8]"
+"	      004c6ee8    mov eax,filNum"
 "	      004c6eeb    push eax"
 "	      004c6eec    call 00572470h"
 "	      004c6ef1    add esp,0Ch"
@@ -4585,31 +4585,31 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 );
 // LINE 1162:
 	asm( 
-"	      004c6f04    mov dword ptr [ebp-8],4"
+"	      004c6f04    mov count,4"
 );
 // LINE 1163:
 	asm( 
 "	      004c6f0b    push 59B1A0h"
 "	      004c6f10    call 004C49D8h"
 "	      004c6f15    add esp,4"
-"	      004c6f18    mov [ebp-4],eax"
+"	      004c6f18    mov data,eax"
 );
 // LINE 1164:
 	asm( 
-"	      004c6f1b    mov eax,[ebp-4]"
+"	      004c6f1b    mov eax,data"
 "	      004c6f1e    push eax"
 "	      004c6f1f    call 004C838Eh"
 "	      004c6f24    add esp,4"
-"	      004c6f27    mov [ebp-4],eax"
+"	      004c6f27    mov data,eax"
 );
 // LINE 1166:
 	asm( 
-"	      004c6f2a    mov eax,[ebp+8]"
+"	      004c6f2a    mov eax,filNum"
 "	      004c6f2d    push eax"
 "	      004c6f2e    push 1"
-"	      004c6f30    mov eax,[ebp-8]"
+"	      004c6f30    mov eax,count"
 "	      004c6f33    push eax"
-"	      004c6f34    lea eax,[ebp-4]"
+"	      004c6f34    lea eax,data"
 "	      004c6f37    push eax"
 "	      004c6f38    call 0056D590h"
 "	      004c6f3d    add esp,10h"
@@ -4623,24 +4623,24 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 );
 // LINE 1169:
 	asm( 
-"	      004c6f50    mov dword ptr [ebp-8],4"
+"	      004c6f50    mov count,4"
 );
 // LINE 1170:
 	asm( 
-"	      004c6f57    mov eax,[ebp+0Ch]"
+"	      004c6f57    mov eax,length"
 "	      004c6f5a    push eax"
 "	      004c6f5b    call 004C838Eh"
 "	      004c6f60    add esp,4"
-"	      004c6f63    mov [ebp+0Ch],eax"
+"	      004c6f63    mov length,eax"
 );
 // LINE 1171:
 	asm( 
-"	      004c6f66    mov eax,[ebp+8]"
+"	      004c6f66    mov eax,filNum"
 "	      004c6f69    push eax"
 "	      004c6f6a    push 1"
-"	      004c6f6c    mov eax,[ebp-8]"
+"	      004c6f6c    mov eax,count"
 "	      004c6f6f    push eax"
-"	      004c6f70    lea eax,[ebp+0Ch]"
+"	      004c6f70    lea eax,length"
 "	      004c6f73    push eax"
 "	      004c6f74    call 0056D590h"
 "	      004c6f79    add esp,10h"
@@ -4654,31 +4654,31 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 );
 // LINE 1174:
 	asm( 
-"	      004c6f8c    mov dword ptr [ebp-8],4"
+"	      004c6f8c    mov count,4"
 );
 // LINE 1175:
 	asm( 
 "	      004c6f93    push 59B1A8h"
 "	      004c6f98    call 004C49D8h"
 "	      004c6f9d    add esp,4"
-"	      004c6fa0    mov [ebp-4],eax"
+"	      004c6fa0    mov data,eax"
 );
 // LINE 1176:
 	asm( 
-"	      004c6fa3    mov eax,[ebp-4]"
+"	      004c6fa3    mov eax,data"
 "	      004c6fa6    push eax"
 "	      004c6fa7    call 004C838Eh"
 "	      004c6fac    add esp,4"
-"	      004c6faf    mov [ebp-4],eax"
+"	      004c6faf    mov data,eax"
 );
 // LINE 1177:
 	asm( 
-"	      004c6fb2    mov eax,[ebp+8]"
+"	      004c6fb2    mov eax,filNum"
 "	      004c6fb5    push eax"
 "	      004c6fb6    push 1"
-"	      004c6fb8    mov eax,[ebp-8]"
+"	      004c6fb8    mov eax,count"
 "	      004c6fbb    push eax"
-"	      004c6fbc    lea eax,[ebp-4]"
+"	      004c6fbc    lea eax,data"
 "	      004c6fbf    push eax"
 "	      004c6fc0    call 0056D590h"
 "	      004c6fc5    add esp,10h"
@@ -4724,7 +4724,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1202:
 	asm( 
-"	      004c6fef    mov eax,[ebp+14h]"
+"	      004c6fef    mov eax,count"
 "	      004c6ff2    lea eax,[eax+eax*2]"
 "	      004c6ff5    cdq"
 "	      004c6ff6    sub eax,edx"
@@ -4735,8 +4735,8 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 "	      004c7006    push eax"
 "	      004c7007    call 004CB5CFh"
 "	      004c700c    add esp,0Ch"
-"	      004c700f    mov [ebp-14h],eax"
-"	      004c7012    cmp dword ptr [ebp-14h],0"
+"	      004c700f    mov temp,eax"
+"	      004c7012    cmp temp,0"
 "	      004c7016    jne near ptr 004C7024h"
 );
 // LINE 1203:
@@ -4749,19 +4749,19 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 "	      004c7024    push 59B1BCh"
 "	      004c7029    call 004C49D8h"
 "	      004c702e    add esp,4"
-"	      004c7031    cmp eax,[ebp+0Ch]"
+"	      004c7031    cmp eax,head"
 "	      004c7034    je near ptr 004C7050h"
 "	      004c703a    push 59B1C4h"
 "	      004c703f    call 004C49D8h"
 "	      004c7044    add esp,4"
-"	      004c7047    cmp eax,[ebp+0Ch]"
+"	      004c7047    cmp eax,head"
 "	      004c704a    jne near ptr 004C7065h"
 );
 // LINE 1207:
 	asm( 
-"	      004c7050    mov eax,[ebp+14h]"
+"	      004c7050    mov eax,count"
 "	      004c7053    push eax"
-"	      004c7054    mov eax,[ebp+10h]"
+"	      004c7054    mov eax,data"
 "	      004c7057    push eax"
 "	      004c7058    call 004C81C9h"
 "	      004c705d    add esp,8"
@@ -4772,96 +4772,96 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 "	      004c7065    push 59B1CCh"
 "	      004c706a    call 004C49D8h"
 "	      004c706f    add esp,4"
-"	      004c7072    cmp eax,[ebp+0Ch]"
+"	      004c7072    cmp eax,head"
 "	      004c7075    jne near ptr 004C708Bh"
 );
 // LINE 1210:
 	asm( 
-"	      004c707b    mov eax,[ebp+14h]"
+"	      004c707b    mov eax,count"
 "	      004c707e    push eax"
-"	      004c707f    mov eax,[ebp+10h]"
+"	      004c707f    mov eax,data"
 "	      004c7082    push eax"
 "	      004c7083    call 004C822Dh"
 "	      004c7088    add esp,8"
 );
 // LINE 1214:
 	asm( 
-"	      004c708b    mov dword ptr [ebp-0Ch],0"
-"	      004c7092    mov eax,[ebp-0Ch]"
-"	      004c7095    mov [ebp-10h],eax"
+"	      004c708b    mov dp,0"
+"	      004c7092    mov eax,dp"
+"	      004c7095    mov tp,eax"
 );
 // LINE 1216:
 	asm( 
-"	      004c7098    mov eax,[ebp+14h]"
+"	      004c7098    mov eax,count"
 "	      004c709b    dec eax"
-"	      004c709c    cmp eax,[ebp-0Ch]"
+"	      004c709c    cmp eax,dp"
 "	      004c709f    jle near ptr 004C71C9h"
 );
 // LINE 1218:
 	asm( 
-"	      004c70a5    mov eax,[ebp-0Ch]"
-"	      004c70a8    mov ecx,[ebp+10h]"
+"	      004c70a5    mov eax,dp"
+"	      004c70a8    mov ecx,data"
 "	      004c70ab    mov al,[eax+ecx]"
-"	      004c70ae    mov [ebp-4],al"
+"	      004c70ae    mov b,al"
 );
 // LINE 1220:
 	asm( 
-"	      004c70b1    mov eax,[ebp-0Ch]"
-"	      004c70b4    mov ecx,[ebp+10h]"
+"	      004c70b1    mov eax,dp"
+"	      004c70b4    mov ecx,data"
 "	      004c70b7    movsx eax,byte ptr [eax+ecx+1]"
 "	      004c70bc    xor ecx,ecx"
-"	      004c70be    mov cl,[ebp-4]"
+"	      004c70be    mov cl,b"
 "	      004c70c1    cmp eax,ecx"
 "	      004c70c3    jne near ptr 004C713Ah"
 );
 // LINE 1221:
 	asm( 
-"	      004c70c9    mov dword ptr [ebp-8],2"
+"	      004c70c9    mov ix,2"
 );
 // LINE 1222:
 	asm( 
-"	      004c70d0    mov eax,[ebp-8]"
-"	      004c70d3    add eax,[ebp-0Ch]"
-"	      004c70d6    mov ecx,[ebp+10h]"
+"	      004c70d0    mov eax,ix"
+"	      004c70d3    add eax,dp"
+"	      004c70d6    mov ecx,data"
 "	      004c70d9    movsx eax,byte ptr [eax+ecx]"
 "	      004c70dd    xor ecx,ecx"
-"	      004c70df    mov cl,[ebp-4]"
+"	      004c70df    mov cl,b"
 "	      004c70e2    cmp eax,ecx"
 "	      004c70e4    jne near ptr 004C710Eh"
-"	      004c70ea    cmp dword ptr [ebp-8],80h"
+"	      004c70ea    cmp ix,80h"
 "	      004c70f1    jge near ptr 004C710Eh"
-"	      004c70f7    mov eax,[ebp-8]"
-"	      004c70fa    add eax,[ebp-0Ch]"
-"	      004c70fd    cmp eax,[ebp+14h]"
+"	      004c70f7    mov eax,ix"
+"	      004c70fa    add eax,dp"
+"	      004c70fd    cmp eax,count"
 "	      004c7100    jge near ptr 004C710Eh"
 );
 // LINE 1223:
 	asm( 
-"	      004c7106    inc dword ptr [ebp-8]"
+"	      004c7106    inc ix"
 "	      004c7109    jmp near ptr 004C70D0h"
 );
 // LINE 1224:
 	asm( 
-"	      004c710e    mov eax,[ebp-8]"
+"	      004c710e    mov eax,ix"
 "	      004c7111    dec eax"
 "	      004c7112    or al,80h"
-"	      004c7114    mov ecx,[ebp-10h]"
-"	      004c7117    mov edx,[ebp-14h]"
+"	      004c7114    mov ecx,tp"
+"	      004c7117    mov edx,temp"
 "	      004c711a    mov [ecx+edx],al"
-"	      004c711d    inc dword ptr [ebp-10h]"
+"	      004c711d    inc tp"
 );
 // LINE 1225:
 	asm( 
-"	      004c7120    mov al,[ebp-4]"
-"	      004c7123    mov ecx,[ebp-10h]"
-"	      004c7126    mov edx,[ebp-14h]"
+"	      004c7120    mov al,b"
+"	      004c7123    mov ecx,tp"
+"	      004c7126    mov edx,temp"
 "	      004c7129    mov [ecx+edx],al"
-"	      004c712c    inc dword ptr [ebp-10h]"
+"	      004c712c    inc tp"
 );
 // LINE 1226:
 	asm( 
-"	      004c712f    mov eax,[ebp-8]"
-"	      004c7132    add [ebp-0Ch],eax"
+"	      004c712f    mov eax,ix"
+"	      004c7132    add dp,eax"
 );
 // LINE 1228:
 	asm( 
@@ -4869,47 +4869,47 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1229:
 	asm( 
-"	      004c713a    mov dword ptr [ebp-8],1"
+"	      004c713a    mov ix,1"
 );
 // LINE 1230:
 	asm( 
-"	      004c7141    mov al,[ebp-4]"
-"	      004c7144    mov ecx,[ebp-10h]"
-"	      004c7147    mov edx,[ebp-14h]"
+"	      004c7141    mov al,b"
+"	      004c7144    mov ecx,tp"
+"	      004c7147    mov edx,temp"
 "	      004c714a    mov [ecx+edx+1],al"
 );
 // LINE 1232:
 	asm( 
-"	      004c714e    mov eax,[ebp-8]"
-"	      004c7151    add eax,[ebp-0Ch]"
-"	      004c7154    mov ecx,[ebp+10h]"
+"	      004c714e    mov eax,ix"
+"	      004c7151    add eax,dp"
+"	      004c7154    mov ecx,data"
 "	      004c7157    movsx eax,byte ptr [eax+ecx]"
 "	      004c715b    xor ecx,ecx"
-"	      004c715d    mov cl,[ebp-4]"
+"	      004c715d    mov cl,b"
 "	      004c7160    cmp eax,ecx"
 "	      004c7162    je near ptr 004C71AAh"
-"	      004c7168    cmp dword ptr [ebp-8],80h"
+"	      004c7168    cmp ix,80h"
 "	      004c716f    jge near ptr 004C71AAh"
-"	      004c7175    mov eax,[ebp-8]"
-"	      004c7178    add eax,[ebp-0Ch]"
-"	      004c717b    cmp eax,[ebp+14h]"
+"	      004c7175    mov eax,ix"
+"	      004c7178    add eax,dp"
+"	      004c717b    cmp eax,count"
 "	      004c717e    jge near ptr 004C71AAh"
 );
 // LINE 1233:
 	asm( 
-"	      004c7184    mov eax,[ebp-8]"
-"	      004c7187    add eax,[ebp-0Ch]"
-"	      004c718a    mov ecx,[ebp+10h]"
+"	      004c7184    mov eax,ix"
+"	      004c7187    add eax,dp"
+"	      004c718a    mov ecx,data"
 "	      004c718d    mov al,[eax+ecx]"
-"	      004c7190    mov [ebp-4],al"
-"	      004c7193    inc dword ptr [ebp-8]"
+"	      004c7190    mov b,al"
+"	      004c7193    inc ix"
 );
 // LINE 1234:
 	asm( 
-"	      004c7196    mov al,[ebp-4]"
-"	      004c7199    mov ecx,[ebp-8]"
-"	      004c719c    add ecx,[ebp-10h]"
-"	      004c719f    mov edx,[ebp-14h]"
+"	      004c7196    mov al,b"
+"	      004c7199    mov ecx,ix"
+"	      004c719c    add ecx,tp"
+"	      004c719f    mov edx,temp"
 "	      004c71a2    mov [ecx+edx],al"
 );
 // LINE 1235:
@@ -4918,22 +4918,22 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1237:
 	asm( 
-"	      004c71aa    mov eax,[ebp-8]"
+"	      004c71aa    mov eax,ix"
 "	      004c71ad    dec eax"
-"	      004c71ae    mov ecx,[ebp-10h]"
-"	      004c71b1    mov edx,[ebp-14h]"
+"	      004c71ae    mov ecx,tp"
+"	      004c71b1    mov edx,temp"
 "	      004c71b4    mov [ecx+edx],al"
 );
 // LINE 1238:
 	asm( 
-"	      004c71b7    mov eax,[ebp-8]"
+"	      004c71b7    mov eax,ix"
 "	      004c71ba    dec eax"
-"	      004c71bb    add [ebp-0Ch],eax"
+"	      004c71bb    add dp,eax"
 );
 // LINE 1239:
 	asm( 
-"	      004c71be    mov eax,[ebp-8]"
-"	      004c71c1    add [ebp-10h],eax"
+"	      004c71be    mov eax,ix"
+"	      004c71c1    add tp,eax"
 );
 // LINE 1241:
 	asm( 
@@ -4941,42 +4941,42 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1243:
 	asm( 
-"	      004c71c9    mov eax,[ebp+14h]"
+"	      004c71c9    mov eax,count"
 "	      004c71cc    dec eax"
-"	      004c71cd    cmp eax,[ebp-0Ch]"
+"	      004c71cd    cmp eax,dp"
 "	      004c71d0    jne near ptr 004C71FBh"
 );
 // LINE 1244:
 	asm( 
-"	      004c71d6    mov eax,[ebp-10h]"
-"	      004c71d9    mov ecx,[ebp-14h]"
+"	      004c71d6    mov eax,tp"
+"	      004c71d9    mov ecx,temp"
 "	      004c71dc    mov byte ptr [eax+ecx],1"
-"	      004c71e0    inc dword ptr [ebp-10h]"
+"	      004c71e0    inc tp"
 );
 // LINE 1245:
 	asm( 
-"	      004c71e3    mov eax,[ebp-0Ch]"
-"	      004c71e6    mov ecx,[ebp+10h]"
+"	      004c71e3    mov eax,dp"
+"	      004c71e6    mov ecx,data"
 "	      004c71e9    mov al,[eax+ecx]"
-"	      004c71ec    mov ecx,[ebp-10h]"
-"	      004c71ef    mov edx,[ebp-14h]"
+"	      004c71ec    mov ecx,tp"
+"	      004c71ef    mov edx,temp"
 "	      004c71f2    mov [ecx+edx],al"
-"	      004c71f5    inc dword ptr [ebp-0Ch]"
-"	      004c71f8    inc dword ptr [ebp-10h]"
+"	      004c71f5    inc dp"
+"	      004c71f8    inc tp"
 );
 // LINE 1249:
 	asm( 
 "	      004c71fb    push 59B1D4h"
 "	      004c7200    call 004C49D8h"
 "	      004c7205    add esp,4"
-"	      004c7208    cmp eax,[ebp+0Ch]"
+"	      004c7208    cmp eax,head"
 "	      004c720b    jne near ptr 004C7226h"
 );
 // LINE 1250:
 	asm( 
-"	      004c7211    mov eax,[ebp+14h]"
+"	      004c7211    mov eax,count"
 "	      004c7214    push eax"
-"	      004c7215    mov eax,[ebp+10h]"
+"	      004c7215    mov eax,data"
 "	      004c7218    push eax"
 "	      004c7219    call 004C822Dh"
 "	      004c721e    add esp,8"
@@ -4987,44 +4987,44 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 "	      004c7226    push 59B1DCh"
 "	      004c722b    call 004C49D8h"
 "	      004c7230    add esp,4"
-"	      004c7233    cmp eax,[ebp+0Ch]"
+"	      004c7233    cmp eax,head"
 "	      004c7236    jne near ptr 004C724Ch"
 );
 // LINE 1253:
 	asm( 
-"	      004c723c    mov eax,[ebp+14h]"
+"	      004c723c    mov eax,count"
 "	      004c723f    push eax"
-"	      004c7240    mov eax,[ebp+10h]"
+"	      004c7240    mov eax,data"
 "	      004c7243    push eax"
 "	      004c7244    call 004C81C9h"
 "	      004c7249    add esp,8"
 );
 // LINE 1257:
 	asm( 
-"	      004c724c    mov eax,[ebp-10h]"
+"	      004c724c    mov eax,tp"
 "	      004c724f    add eax,8"
 "	      004c7252    add ds:[6069C0h],eax"
 );
 // LINE 1259:
 	asm( 
-"	      004c7258    mov dword ptr [ebp+14h],4"
+"	      004c7258    mov count,4"
 );
 // LINE 1260:
 	asm( 
-"	      004c725f    mov eax,[ebp+0Ch]"
+"	      004c725f    mov eax,head"
 "	      004c7262    push eax"
 "	      004c7263    call 004C838Eh"
 "	      004c7268    add esp,4"
-"	      004c726b    mov [ebp+0Ch],eax"
+"	      004c726b    mov head,eax"
 );
 // LINE 1262:
 	asm( 
-"	      004c726e    mov eax,[ebp+8]"
+"	      004c726e    mov eax,filNum"
 "	      004c7271    push eax"
 "	      004c7272    push 1"
-"	      004c7274    mov eax,[ebp+14h]"
+"	      004c7274    mov eax,count"
 "	      004c7277    push eax"
-"	      004c7278    lea eax,[ebp+0Ch]"
+"	      004c7278    lea eax,head"
 "	      004c727b    push eax"
 "	      004c727c    call 0056D590h"
 "	      004c7281    add esp,10h"
@@ -5037,24 +5037,24 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1266:
 	asm( 
-"	      004c7291    mov dword ptr [ebp+14h],4"
+"	      004c7291    mov count,4"
 );
 // LINE 1267:
 	asm( 
-"	      004c7298    mov eax,[ebp-10h]"
+"	      004c7298    mov eax,tp"
 "	      004c729b    push eax"
 "	      004c729c    call 004C838Eh"
 "	      004c72a1    add esp,4"
-"	      004c72a4    mov [ebp-10h],eax"
+"	      004c72a4    mov tp,eax"
 );
 // LINE 1268:
 	asm( 
-"	      004c72a7    mov eax,[ebp+8]"
+"	      004c72a7    mov eax,filNum"
 "	      004c72aa    push eax"
 "	      004c72ab    push 1"
-"	      004c72ad    mov eax,[ebp+14h]"
+"	      004c72ad    mov eax,count"
 "	      004c72b0    push eax"
-"	      004c72b1    lea eax,[ebp-10h]"
+"	      004c72b1    lea eax,tp"
 "	      004c72b4    push eax"
 "	      004c72b5    call 0056D590h"
 "	      004c72ba    add esp,10h"
@@ -5067,20 +5067,20 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 );
 // LINE 1272:
 	asm( 
-"	      004c72ca    mov eax,[ebp-10h]"
+"	      004c72ca    mov eax,tp"
 "	      004c72cd    push eax"
 "	      004c72ce    call 004C838Eh"
 "	      004c72d3    add esp,4"
-"	      004c72d6    mov [ebp-10h],eax"
+"	      004c72d6    mov tp,eax"
 );
 // LINE 1274:
 	asm( 
-"	      004c72d9    mov eax,[ebp+8]"
+"	      004c72d9    mov eax,filNum"
 "	      004c72dc    push eax"
 "	      004c72dd    push 1"
-"	      004c72df    mov eax,[ebp-10h]"
+"	      004c72df    mov eax,tp"
 "	      004c72e2    push eax"
-"	      004c72e3    mov eax,[ebp-14h]"
+"	      004c72e3    mov eax,temp"
 "	      004c72e6    push eax"
 "	      004c72e7    call 0056D590h"
 "	      004c72ec    add esp,10h"
@@ -5143,298 +5143,298 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 );
 // LINE 1303:
 	asm( 
-"	      004c7337    mov word ptr [ebp-4],0"
+"	      004c7337    mov ix,0"
 );
 // LINE 1304:
 	asm( 
-"	      004c733d    movsx eax,word ptr [ebp-4]"
+"	      004c733d    movsx eax,ix"
 "	      004c7341    mov ecx,ds:[63923Ch]"
 "	      004c7347    mov dword ptr [ecx+eax*4],122h"
-"	      004c734e    inc word ptr [ebp-4]"
+"	      004c734e    inc ix"
 );
 // LINE 1307:
 	asm( 
 "	      004c7352    movsx eax,word ptr ds:[59BC14h]"
-"	      004c7359    movsx ecx,word ptr [ebp-4]"
+"	      004c7359    movsx ecx,ix"
 "	      004c735d    mov edx,ds:[63923Ch]"
 "	      004c7363    mov [edx+ecx*4],eax"
-"	      004c7366    inc word ptr [ebp-4]"
+"	      004c7366    inc ix"
 );
 // LINE 1308:
 	asm( 
 "	      004c736a    movsx eax,word ptr ds:[59BC18h]"
-"	      004c7371    movsx ecx,word ptr [ebp-4]"
+"	      004c7371    movsx ecx,ix"
 "	      004c7375    mov edx,ds:[63923Ch]"
 "	      004c737b    mov [edx+ecx*4],eax"
-"	      004c737e    inc word ptr [ebp-4]"
+"	      004c737e    inc ix"
 );
 // LINE 1309:
 	asm( 
 "	      004c7382    movsx eax,word ptr ds:[59B584h]"
-"	      004c7389    movsx ecx,word ptr [ebp-4]"
+"	      004c7389    movsx ecx,ix"
 "	      004c738d    mov edx,ds:[63923Ch]"
 "	      004c7393    mov [edx+ecx*4],eax"
-"	      004c7396    inc word ptr [ebp-4]"
+"	      004c7396    inc ix"
 );
 // LINE 1310:
 	asm( 
 "	      004c739a    mov eax,ds:[59B580h]"
-"	      004c739f    movsx ecx,word ptr [ebp-4]"
+"	      004c739f    movsx ecx,ix"
 "	      004c73a3    mov edx,ds:[63923Ch]"
 "	      004c73a9    mov [edx+ecx*4],eax"
-"	      004c73ac    inc word ptr [ebp-4]"
+"	      004c73ac    inc ix"
 );
 // LINE 1311:
 	asm( 
 "	      004c73b0    mov eax,ds:[63A850h]"
-"	      004c73b5    movsx ecx,word ptr [ebp-4]"
+"	      004c73b5    movsx ecx,ix"
 "	      004c73b9    mov edx,ds:[63923Ch]"
 "	      004c73bf    mov [edx+ecx*4],eax"
-"	      004c73c2    inc word ptr [ebp-4]"
+"	      004c73c2    inc ix"
 );
 // LINE 1312:
 	asm( 
 "	      004c73c6    mov eax,ds:[639AB4h]"
-"	      004c73cb    movsx ecx,word ptr [ebp-4]"
+"	      004c73cb    movsx ecx,ix"
 "	      004c73cf    mov edx,ds:[63923Ch]"
 "	      004c73d5    mov [edx+ecx*4],eax"
-"	      004c73d8    inc word ptr [ebp-4]"
+"	      004c73d8    inc ix"
 );
 // LINE 1313:
 	asm( 
 "	      004c73dc    movsx eax,word ptr ds:[6391FAh]"
-"	      004c73e3    movsx ecx,word ptr [ebp-4]"
+"	      004c73e3    movsx ecx,ix"
 "	      004c73e7    mov edx,ds:[63923Ch]"
 "	      004c73ed    mov [edx+ecx*4],eax"
-"	      004c73f0    inc word ptr [ebp-4]"
+"	      004c73f0    inc ix"
 );
 // LINE 1314:
 	asm( 
 "	      004c73f4    movsx eax,word ptr ds:[639238h]"
-"	      004c73fb    movsx ecx,word ptr [ebp-4]"
+"	      004c73fb    movsx ecx,ix"
 "	      004c73ff    mov edx,ds:[63923Ch]"
 "	      004c7405    mov [edx+ecx*4],eax"
-"	      004c7408    inc word ptr [ebp-4]"
+"	      004c7408    inc ix"
 );
 // LINE 1315:
 	asm( 
 "	      004c740c    mov eax,ds:[639724h]"
-"	      004c7411    movsx ecx,word ptr [ebp-4]"
+"	      004c7411    movsx ecx,ix"
 "	      004c7415    mov edx,ds:[63923Ch]"
 "	      004c741b    mov [edx+ecx*4],eax"
-"	      004c741e    inc word ptr [ebp-4]"
+"	      004c741e    inc ix"
 );
 // LINE 1316:
 	asm( 
 "	      004c7422    mov eax,ds:[63A6C4h]"
-"	      004c7427    movsx ecx,word ptr [ebp-4]"
+"	      004c7427    movsx ecx,ix"
 "	      004c742b    mov edx,ds:[63923Ch]"
 "	      004c7431    mov [edx+ecx*4],eax"
-"	      004c7434    inc word ptr [ebp-4]"
+"	      004c7434    inc ix"
 );
 // LINE 1317:
 	asm( 
 "	      004c7438    mov eax,ds:[63A634h]"
-"	      004c743d    movsx ecx,word ptr [ebp-4]"
+"	      004c743d    movsx ecx,ix"
 "	      004c7441    mov edx,ds:[63923Ch]"
 "	      004c7447    mov [edx+ecx*4],eax"
-"	      004c744a    inc word ptr [ebp-4]"
+"	      004c744a    inc ix"
 );
 // LINE 1318:
 	asm( 
 "	      004c744e    mov eax,ds:[639838h]"
-"	      004c7453    movsx ecx,word ptr [ebp-4]"
+"	      004c7453    movsx ecx,ix"
 "	      004c7457    mov edx,ds:[63923Ch]"
 "	      004c745d    mov [edx+ecx*4],eax"
-"	      004c7460    inc word ptr [ebp-4]"
+"	      004c7460    inc ix"
 );
 // LINE 1319:
 	asm( 
 "	      004c7464    mov eax,ds:[639AA8h]"
-"	      004c7469    movsx ecx,word ptr [ebp-4]"
+"	      004c7469    movsx ecx,ix"
 "	      004c746d    mov edx,ds:[63923Ch]"
 "	      004c7473    mov [edx+ecx*4],eax"
-"	      004c7476    inc word ptr [ebp-4]"
+"	      004c7476    inc ix"
 );
 // LINE 1320:
 	asm( 
 "	      004c747a    mov eax,ds:[63983Ch]"
-"	      004c747f    movsx ecx,word ptr [ebp-4]"
+"	      004c747f    movsx ecx,ix"
 "	      004c7483    mov edx,ds:[63923Ch]"
 "	      004c7489    mov [edx+ecx*4],eax"
-"	      004c748c    inc word ptr [ebp-4]"
+"	      004c748c    inc ix"
 );
 // LINE 1321:
 	asm( 
 "	      004c7490    mov eax,ds:[639A50h]"
-"	      004c7495    movsx ecx,word ptr [ebp-4]"
+"	      004c7495    movsx ecx,ix"
 "	      004c7499    mov edx,ds:[63923Ch]"
 "	      004c749f    mov [edx+ecx*4],eax"
-"	      004c74a2    inc word ptr [ebp-4]"
+"	      004c74a2    inc ix"
 );
 // LINE 1322:
 	asm( 
 "	      004c74a6    mov eax,ds:[63A028h]"
-"	      004c74ab    movsx ecx,word ptr [ebp-4]"
+"	      004c74ab    movsx ecx,ix"
 "	      004c74af    mov edx,ds:[63923Ch]"
 "	      004c74b5    mov [edx+ecx*4],eax"
-"	      004c74b8    inc word ptr [ebp-4]"
+"	      004c74b8    inc ix"
 );
 // LINE 1323:
 	asm( 
 "	      004c74bc    mov eax,ds:[639AC0h]"
-"	      004c74c1    movsx ecx,word ptr [ebp-4]"
+"	      004c74c1    movsx ecx,ix"
 "	      004c74c5    mov edx,ds:[63923Ch]"
 "	      004c74cb    mov [edx+ecx*4],eax"
-"	      004c74ce    inc word ptr [ebp-4]"
+"	      004c74ce    inc ix"
 );
 // LINE 1324:
 	asm( 
 "	      004c74d2    mov eax,ds:[63A260h]"
-"	      004c74d7    movsx ecx,word ptr [ebp-4]"
+"	      004c74d7    movsx ecx,ix"
 "	      004c74db    mov edx,ds:[63923Ch]"
 "	      004c74e1    mov [edx+ecx*4],eax"
-"	      004c74e4    inc word ptr [ebp-4]"
+"	      004c74e4    inc ix"
 );
 // LINE 1325:
 	asm( 
 "	      004c74e8    mov eax,ds:[639A5Ch]"
-"	      004c74ed    movsx ecx,word ptr [ebp-4]"
+"	      004c74ed    movsx ecx,ix"
 "	      004c74f1    mov edx,ds:[63923Ch]"
 "	      004c74f7    mov [edx+ecx*4],eax"
-"	      004c74fa    inc word ptr [ebp-4]"
+"	      004c74fa    inc ix"
 );
 // LINE 1326:
 	asm( 
 "	      004c74fe    mov eax,ds:[638F60h]"
-"	      004c7503    movsx ecx,word ptr [ebp-4]"
+"	      004c7503    movsx ecx,ix"
 "	      004c7507    mov edx,ds:[63923Ch]"
 "	      004c750d    mov [edx+ecx*4],eax"
-"	      004c7510    inc word ptr [ebp-4]"
+"	      004c7510    inc ix"
 );
 // LINE 1327:
 	asm( 
 "	      004c7514    mov eax,ds:[63930Ch]"
-"	      004c7519    movsx ecx,word ptr [ebp-4]"
+"	      004c7519    movsx ecx,ix"
 "	      004c751d    mov edx,ds:[63923Ch]"
 "	      004c7523    mov [edx+ecx*4],eax"
-"	      004c7526    inc word ptr [ebp-4]"
+"	      004c7526    inc ix"
 );
 // LINE 1328:
 	asm( 
 "	      004c752a    movsx eax,word ptr ds:[638ED8h]"
-"	      004c7531    movsx ecx,word ptr [ebp-4]"
+"	      004c7531    movsx ecx,ix"
 "	      004c7535    mov edx,ds:[63923Ch]"
 "	      004c753b    mov [edx+ecx*4],eax"
-"	      004c753e    inc word ptr [ebp-4]"
+"	      004c753e    inc ix"
 );
 // LINE 1329:
 	asm( 
 "	      004c7542    movsx eax,word ptr ds:[639AB8h]"
-"	      004c7549    movsx ecx,word ptr [ebp-4]"
+"	      004c7549    movsx ecx,ix"
 "	      004c754d    mov edx,ds:[63923Ch]"
 "	      004c7553    mov [edx+ecx*4],eax"
-"	      004c7556    inc word ptr [ebp-4]"
+"	      004c7556    inc ix"
 );
 // LINE 1330:
 	asm( 
 "	      004c755a    xor eax,eax"
 "	      004c755c    mov al,ds:[63A6C0h]"
-"	      004c7561    movsx ecx,word ptr [ebp-4]"
+"	      004c7561    movsx ecx,ix"
 "	      004c7565    mov edx,ds:[63923Ch]"
 "	      004c756b    mov [edx+ecx*4],eax"
-"	      004c756e    inc word ptr [ebp-4]"
+"	      004c756e    inc ix"
 );
 // LINE 1331:
 	asm( 
 "	      004c7572    xor eax,eax"
 "	      004c7574    mov al,ds:[638EDAh]"
-"	      004c7579    movsx ecx,word ptr [ebp-4]"
+"	      004c7579    movsx ecx,ix"
 "	      004c757d    mov edx,ds:[63923Ch]"
 "	      004c7583    mov [edx+ecx*4],eax"
-"	      004c7586    inc word ptr [ebp-4]"
+"	      004c7586    inc ix"
 );
 // LINE 1332:
 	asm( 
 "	      004c758a    xor eax,eax"
 "	      004c758c    mov al,ds:[639AB2h]"
-"	      004c7591    movsx ecx,word ptr [ebp-4]"
+"	      004c7591    movsx ecx,ix"
 "	      004c7595    mov edx,ds:[63923Ch]"
 "	      004c759b    mov [edx+ecx*4],eax"
-"	      004c759e    inc word ptr [ebp-4]"
+"	      004c759e    inc ix"
 );
 // LINE 1333:
 	asm( 
 "	      004c75a2    xor eax,eax"
 "	      004c75a4    mov al,ds:[63924Ah]"
-"	      004c75a9    movsx ecx,word ptr [ebp-4]"
+"	      004c75a9    movsx ecx,ix"
 "	      004c75ad    mov edx,ds:[63923Ch]"
 "	      004c75b3    mov [edx+ecx*4],eax"
-"	      004c75b6    inc word ptr [ebp-4]"
+"	      004c75b6    inc ix"
 );
 // LINE 1334:
 	asm( 
 "	      004c75ba    movsx eax,word ptr ds:[59B554h]"
-"	      004c75c1    movsx ecx,word ptr [ebp-4]"
+"	      004c75c1    movsx ecx,ix"
 "	      004c75c5    mov edx,ds:[63923Ch]"
 "	      004c75cb    mov [edx+ecx*4],eax"
-"	      004c75ce    inc word ptr [ebp-4]"
+"	      004c75ce    inc ix"
 );
 // LINE 1335:
 	asm( 
 "	      004c75d2    mov eax,ds:[639FE4h]"
 "	      004c75d7    mov eax,[eax+4]"
-"	      004c75da    movsx ecx,word ptr [ebp-4]"
+"	      004c75da    movsx ecx,ix"
 "	      004c75de    mov edx,ds:[63923Ch]"
 "	      004c75e4    mov [edx+ecx*4],eax"
-"	      004c75e7    inc word ptr [ebp-4]"
+"	      004c75e7    inc ix"
 );
 // LINE 1336:
 	asm( 
 "	      004c75eb    mov eax,ds:[59BB84h]"
-"	      004c75f0    movsx ecx,word ptr [ebp-4]"
+"	      004c75f0    movsx ecx,ix"
 "	      004c75f4    mov edx,ds:[63923Ch]"
 "	      004c75fa    mov [edx+ecx*4],eax"
-"	      004c75fd    inc word ptr [ebp-4]"
+"	      004c75fd    inc ix"
 );
 // LINE 1339:
 	asm( 
-"	      004c7601    mov word ptr [ebp-8],0"
+"	      004c7601    mov i,0"
 "	      004c7607    jmp near ptr 004C7610h"
-"	      004c760c    inc word ptr [ebp-8]"
-"	      004c7610    movsx eax,word ptr [ebp-8]"
+"	      004c760c    inc i"
+"	      004c7610    movsx eax,i"
 "	      004c7614    cmp eax,14h"
 "	      004c7617    jge near ptr 004C767Ch"
 );
 // LINE 1340:
 	asm( 
-"	      004c761d    movsx eax,word ptr [ebp-8]"
+"	      004c761d    movsx eax,i"
 "	      004c7621    mov ecx,ds:[639244h]"
 "	      004c7627    mov eax,[ecx+eax*4]"
-"	      004c762a    movsx ecx,word ptr [ebp-4]"
+"	      004c762a    movsx ecx,ix"
 "	      004c762e    mov edx,ds:[63923Ch]"
 "	      004c7634    mov [edx+ecx*4],eax"
-"	      004c7637    inc word ptr [ebp-4]"
+"	      004c7637    inc ix"
 );
 // LINE 1341:
 	asm( 
-"	      004c763b    movsx eax,word ptr [ebp-8]"
+"	      004c763b    movsx eax,i"
 "	      004c763f    mov ecx,ds:[639DDCh]"
 "	      004c7645    mov eax,[ecx+eax*4]"
-"	      004c7648    movsx ecx,word ptr [ebp-4]"
+"	      004c7648    movsx ecx,ix"
 "	      004c764c    mov edx,ds:[63923Ch]"
 "	      004c7652    mov [edx+ecx*4],eax"
-"	      004c7655    inc word ptr [ebp-4]"
+"	      004c7655    inc ix"
 );
 // LINE 1342:
 	asm( 
-"	      004c7659    movsx eax,word ptr [ebp-8]"
+"	      004c7659    movsx eax,i"
 "	      004c765d    mov ecx,ds:[639844h]"
 "	      004c7663    mov eax,[ecx+eax*4]"
-"	      004c7666    movsx ecx,word ptr [ebp-4]"
+"	      004c7666    movsx ecx,ix"
 "	      004c766a    mov edx,ds:[63923Ch]"
 "	      004c7670    mov [edx+ecx*4],eax"
-"	      004c7673    inc word ptr [ebp-4]"
+"	      004c7673    inc ix"
 );
 // LINE 1343:
 	asm( 
@@ -5442,42 +5442,42 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 );
 // LINE 1344:
 	asm( 
-"	      004c767c    mov word ptr [ebp-8],0"
+"	      004c767c    mov i,0"
 "	      004c7682    jmp near ptr 004C768Bh"
-"	      004c7687    inc word ptr [ebp-8]"
-"	      004c768b    movsx eax,word ptr [ebp-8]"
+"	      004c7687    inc i"
+"	      004c768b    movsx eax,i"
 "	      004c768f    cmp eax,0Bh"
 "	      004c7692    jge near ptr 004C76F9h"
 );
 // LINE 1345:
 	asm( 
-"	      004c7698    movsx eax,word ptr [ebp-8]"
+"	      004c7698    movsx eax,i"
 "	      004c769c    mov ecx,ds:[639308h]"
 "	      004c76a2    movsx eax,word ptr [ecx+eax*2]"
-"	      004c76a6    movsx ecx,word ptr [ebp-4]"
+"	      004c76a6    movsx ecx,ix"
 "	      004c76aa    mov edx,ds:[63923Ch]"
 "	      004c76b0    mov [edx+ecx*4],eax"
-"	      004c76b3    inc word ptr [ebp-4]"
+"	      004c76b3    inc ix"
 );
 // LINE 1346:
 	asm( 
-"	      004c76b7    movsx eax,word ptr [ebp-8]"
+"	      004c76b7    movsx eax,i"
 "	      004c76bb    mov ecx,ds:[639A58h]"
 "	      004c76c1    movsx eax,word ptr [ecx+eax*2]"
-"	      004c76c5    movsx ecx,word ptr [ebp-4]"
+"	      004c76c5    movsx ecx,ix"
 "	      004c76c9    mov edx,ds:[63923Ch]"
 "	      004c76cf    mov [edx+ecx*4],eax"
-"	      004c76d2    inc word ptr [ebp-4]"
+"	      004c76d2    inc ix"
 );
 // LINE 1347:
 	asm( 
-"	      004c76d6    movsx eax,word ptr [ebp-8]"
+"	      004c76d6    movsx eax,i"
 "	      004c76da    mov ecx,ds:[639A54h]"
 "	      004c76e0    mov eax,[ecx+eax*4]"
-"	      004c76e3    movsx ecx,word ptr [ebp-4]"
+"	      004c76e3    movsx ecx,ix"
 "	      004c76e7    mov edx,ds:[63923Ch]"
 "	      004c76ed    mov [edx+ecx*4],eax"
-"	      004c76f0    inc word ptr [ebp-4]"
+"	      004c76f0    inc ix"
 );
 // LINE 1348:
 	asm( 
@@ -5485,112 +5485,112 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 );
 // LINE 1349:
 	asm( 
-"	      004c76f9    mov word ptr [ebp-8],0"
+"	      004c76f9    mov i,0"
 "	      004c76ff    jmp near ptr 004C7708h"
-"	      004c7704    inc word ptr [ebp-8]"
-"	      004c7708    movsx eax,word ptr [ebp-8]"
+"	      004c7704    inc i"
+"	      004c7708    movsx eax,i"
 "	      004c770c    cmp eax,100h"
 "	      004c7711    jge near ptr 004C773Dh"
 );
 // LINE 1350:
 	asm( 
-"	      004c7717    movsx eax,word ptr [ebp-8]"
+"	      004c7717    movsx eax,i"
 "	      004c771b    mov ecx,ds:[639AC8h]"
 "	      004c7721    xor edx,edx"
 "	      004c7723    mov dx,[ecx+eax*2]"
-"	      004c7727    movsx eax,word ptr [ebp-4]"
+"	      004c7727    movsx eax,ix"
 "	      004c772b    mov ecx,ds:[63923Ch]"
 "	      004c7731    mov [ecx+eax*4],edx"
-"	      004c7734    inc word ptr [ebp-4]"
+"	      004c7734    inc ix"
 "	      004c7738    jmp near ptr 004C7704h"
 );
 // LINE 1351:
 	asm( 
-"	      004c773d    mov word ptr [ebp-8],0"
+"	      004c773d    mov i,0"
 "	      004c7743    jmp near ptr 004C774Ch"
-"	      004c7748    inc word ptr [ebp-8]"
-"	      004c774c    movsx eax,word ptr [ebp-8]"
+"	      004c7748    inc i"
+"	      004c774c    movsx eax,i"
 "	      004c7750    cmp eax,8"
 "	      004c7753    jge near ptr 004C777Ch"
 );
 // LINE 1352:
 	asm( 
-"	      004c7759    movsx eax,word ptr [ebp-8]"
+"	      004c7759    movsx eax,i"
 "	      004c775d    mov ecx,ds:[63A574h]"
 "	      004c7763    mov eax,[ecx+eax*4]"
-"	      004c7766    movsx ecx,word ptr [ebp-4]"
+"	      004c7766    movsx ecx,ix"
 "	      004c776a    mov edx,ds:[63923Ch]"
 "	      004c7770    mov [edx+ecx*4],eax"
-"	      004c7773    inc word ptr [ebp-4]"
+"	      004c7773    inc ix"
 "	      004c7777    jmp near ptr 004C7748h"
 );
 // LINE 1353:
 	asm( 
-"	      004c777c    mov word ptr [ebp-8],0"
+"	      004c777c    mov i,0"
 "	      004c7782    jmp near ptr 004C778Bh"
-"	      004c7787    inc word ptr [ebp-8]"
-"	      004c778b    movsx eax,word ptr [ebp-8]"
+"	      004c7787    inc i"
+"	      004c778b    movsx eax,i"
 "	      004c778f    cmp eax,32h"
 "	      004c7792    jge near ptr 004C77BAh"
 );
 // LINE 1354:
 	asm( 
-"	      004c7798    movsx eax,word ptr [ebp-8]"
+"	      004c7798    movsx eax,i"
 "	      004c779c    movsx eax,word ptr [eax*2+63A6D0h]"
-"	      004c77a4    movsx ecx,word ptr [ebp-4]"
+"	      004c77a4    movsx ecx,ix"
 "	      004c77a8    mov edx,ds:[63923Ch]"
 "	      004c77ae    mov [edx+ecx*4],eax"
-"	      004c77b1    inc word ptr [ebp-4]"
+"	      004c77b1    inc ix"
 "	      004c77b5    jmp near ptr 004C7787h"
 );
 // LINE 1355:
 	asm( 
-"	      004c77ba    mov word ptr [ebp-8],0"
+"	      004c77ba    mov i,0"
 "	      004c77c0    jmp near ptr 004C77C9h"
-"	      004c77c5    inc word ptr [ebp-8]"
-"	      004c77c9    movsx eax,word ptr [ebp-8]"
+"	      004c77c5    inc i"
+"	      004c77c9    movsx eax,i"
 "	      004c77cd    cmp eax,4"
 "	      004c77d0    jge near ptr 004C7854h"
 );
 // LINE 1356:
 	asm( 
-"	      004c77d6    movsx eax,word ptr [ebp-8]"
+"	      004c77d6    movsx eax,i"
 "	      004c77da    mov ecx,ds:[63A578h]"
 "	      004c77e0    movsx eax,word ptr [ecx+eax*2]"
-"	      004c77e4    movsx ecx,word ptr [ebp-4]"
+"	      004c77e4    movsx ecx,ix"
 "	      004c77e8    mov edx,ds:[63923Ch]"
 "	      004c77ee    mov [edx+ecx*4],eax"
-"	      004c77f1    inc word ptr [ebp-4]"
+"	      004c77f1    inc ix"
 );
 // LINE 1357:
 	asm( 
-"	      004c77f5    movsx eax,word ptr [ebp-8]"
+"	      004c77f5    movsx eax,i"
 "	      004c77f9    mov ecx,ds:[639710h]"
 "	      004c77ff    mov eax,[ecx+eax*4]"
-"	      004c7802    movsx ecx,word ptr [ebp-4]"
+"	      004c7802    movsx ecx,ix"
 "	      004c7806    mov edx,ds:[63923Ch]"
 "	      004c780c    mov [edx+ecx*4],eax"
-"	      004c780f    inc word ptr [ebp-4]"
+"	      004c780f    inc ix"
 );
 // LINE 1358:
 	asm( 
-"	      004c7813    movsx eax,word ptr [ebp-8]"
+"	      004c7813    movsx eax,i"
 "	      004c7817    mov ecx,ds:[63A264h]"
 "	      004c781d    mov eax,[ecx+eax*4]"
-"	      004c7820    movsx ecx,word ptr [ebp-4]"
+"	      004c7820    movsx ecx,ix"
 "	      004c7824    mov edx,ds:[63923Ch]"
 "	      004c782a    mov [edx+ecx*4],eax"
-"	      004c782d    inc word ptr [ebp-4]"
+"	      004c782d    inc ix"
 );
 // LINE 1359:
 	asm( 
-"	      004c7831    movsx eax,word ptr [ebp-8]"
+"	      004c7831    movsx eax,i"
 "	      004c7835    mov ecx,ds:[63984Ch]"
 "	      004c783b    mov eax,[ecx+eax*4]"
-"	      004c783e    movsx ecx,word ptr [ebp-4]"
+"	      004c783e    movsx ecx,ix"
 "	      004c7842    mov edx,ds:[63923Ch]"
 "	      004c7848    mov [edx+ecx*4],eax"
-"	      004c784b    inc word ptr [ebp-4]"
+"	      004c784b    inc ix"
 );
 // LINE 1360:
 	asm( 
@@ -5598,106 +5598,106 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 );
 // LINE 1361:
 	asm( 
-"	      004c7854    mov word ptr [ebp-8],0"
+"	      004c7854    mov i,0"
 "	      004c785a    jmp near ptr 004C7863h"
-"	      004c785f    inc word ptr [ebp-8]"
-"	      004c7863    movsx eax,word ptr [ebp-8]"
+"	      004c785f    inc i"
+"	      004c7863    movsx eax,i"
 "	      004c7867    cmp eax,8"
 "	      004c786a    jge near ptr 004C7892h"
 );
 // LINE 1362:
 	asm( 
-"	      004c7870    movsx eax,word ptr [ebp-8]"
+"	      004c7870    movsx eax,i"
 "	      004c7874    movsx eax,word ptr [eax*2+639A90h]"
-"	      004c787c    movsx ecx,word ptr [ebp-4]"
+"	      004c787c    movsx ecx,ix"
 "	      004c7880    mov edx,ds:[63923Ch]"
 "	      004c7886    mov [edx+ecx*4],eax"
-"	      004c7889    inc word ptr [ebp-4]"
+"	      004c7889    inc ix"
 "	      004c788d    jmp near ptr 004C785Fh"
 );
 // LINE 1363:
 	asm( 
-"	      004c7892    mov word ptr [ebp-8],0"
+"	      004c7892    mov i,0"
 "	      004c7898    jmp near ptr 004C78A1h"
-"	      004c789d    inc word ptr [ebp-8]"
-"	      004c78a1    movsx eax,word ptr [ebp-8]"
+"	      004c789d    inc i"
+"	      004c78a1    movsx eax,i"
 "	      004c78a5    cmp eax,11h"
 "	      004c78a8    jge near ptr 004C78D0h"
 );
 // LINE 1364:
 	asm( 
-"	      004c78ae    movsx eax,word ptr [ebp-8]"
+"	      004c78ae    movsx eax,i"
 "	      004c78b2    movsx eax,word ptr [eax*2+63A580h]"
-"	      004c78ba    movsx ecx,word ptr [ebp-4]"
+"	      004c78ba    movsx ecx,ix"
 "	      004c78be    mov edx,ds:[63923Ch]"
 "	      004c78c4    mov [edx+ecx*4],eax"
-"	      004c78c7    inc word ptr [ebp-4]"
+"	      004c78c7    inc ix"
 "	      004c78cb    jmp near ptr 004C789Dh"
 );
 // LINE 1365:
 	asm( 
-"	      004c78d0    mov word ptr [ebp-8],0"
+"	      004c78d0    mov i,0"
 "	      004c78d6    jmp near ptr 004C78DFh"
-"	      004c78db    inc word ptr [ebp-8]"
-"	      004c78df    movsx eax,word ptr [ebp-8]"
+"	      004c78db    inc i"
+"	      004c78df    movsx eax,i"
 "	      004c78e3    cmp eax,10h"
 "	      004c78e6    jge near ptr 004C79ECh"
 );
 // LINE 1366:
 	asm( 
-"	      004c78ec    movsx eax,word ptr [ebp-8]"
+"	      004c78ec    movsx eax,i"
 "	      004c78f0    mov ecx,eax"
 "	      004c78f2    shl eax,3"
 "	      004c78f5    sub eax,ecx"
 "	      004c78f7    shl eax,4"
 "	      004c78fa    mov ecx,ds:[639830h]"
 "	      004c7900    mov eax,[eax+ecx+60h]"
-"	      004c7904    movsx ecx,word ptr [ebp-4]"
+"	      004c7904    movsx ecx,ix"
 "	      004c7908    mov edx,ds:[63923Ch]"
 "	      004c790e    mov [edx+ecx*4],eax"
-"	      004c7911    inc word ptr [ebp-4]"
+"	      004c7911    inc ix"
 );
 // LINE 1367:
 	asm( 
-"	      004c7915    movsx eax,word ptr [ebp-8]"
+"	      004c7915    movsx eax,i"
 "	      004c7919    mov ecx,eax"
 "	      004c791b    shl eax,3"
 "	      004c791e    sub eax,ecx"
 "	      004c7920    shl eax,4"
 "	      004c7923    mov ecx,ds:[639830h]"
 "	      004c7929    mov eax,[eax+ecx+64h]"
-"	      004c792d    movsx ecx,word ptr [ebp-4]"
+"	      004c792d    movsx ecx,ix"
 "	      004c7931    mov edx,ds:[63923Ch]"
 "	      004c7937    mov [edx+ecx*4],eax"
-"	      004c793a    inc word ptr [ebp-4]"
+"	      004c793a    inc ix"
 );
 // LINE 1368:
 	asm( 
-"	      004c793e    movsx eax,word ptr [ebp-8]"
+"	      004c793e    movsx eax,i"
 "	      004c7942    mov ecx,eax"
 "	      004c7944    shl eax,3"
 "	      004c7947    sub eax,ecx"
 "	      004c7949    shl eax,4"
 "	      004c794c    mov ecx,ds:[639830h]"
 "	      004c7952    mov eax,[eax+ecx+68h]"
-"	      004c7956    movsx ecx,word ptr [ebp-4]"
+"	      004c7956    movsx ecx,ix"
 "	      004c795a    mov edx,ds:[63923Ch]"
 "	      004c7960    mov [edx+ecx*4],eax"
-"	      004c7963    inc word ptr [ebp-4]"
+"	      004c7963    inc ix"
 );
 // LINE 1369:
 	asm( 
-"	      004c7967    mov word ptr [ebp-0Ch],0"
+"	      004c7967    mov j,0"
 "	      004c796d    jmp near ptr 004C7976h"
-"	      004c7972    inc word ptr [ebp-0Ch]"
-"	      004c7976    movsx eax,word ptr [ebp-0Ch]"
+"	      004c7972    inc j"
+"	      004c7976    movsx eax,j"
 "	      004c797a    cmp eax,0Ch"
 "	      004c797d    jge near ptr 004C79E7h"
 );
 // LINE 1370:
 	asm( 
-"	      004c7983    movsx eax,word ptr [ebp-0Ch]"
-"	      004c7987    movsx ecx,word ptr [ebp-8]"
+"	      004c7983    movsx eax,j"
+"	      004c7987    movsx ecx,i"
 "	      004c798b    mov edx,ecx"
 "	      004c798d    shl ecx,3"
 "	      004c7990    sub ecx,edx"
@@ -5705,15 +5705,15 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 "	      004c7995    lea eax,[ecx+eax*4]"
 "	      004c7998    mov ecx,ds:[639830h]"
 "	      004c799e    mov eax,[eax+ecx]"
-"	      004c79a1    movsx ecx,word ptr [ebp-4]"
+"	      004c79a1    movsx ecx,ix"
 "	      004c79a5    mov edx,ds:[63923Ch]"
 "	      004c79ab    mov [edx+ecx*4],eax"
-"	      004c79ae    inc word ptr [ebp-4]"
+"	      004c79ae    inc ix"
 );
 // LINE 1371:
 	asm( 
-"	      004c79b2    movsx eax,word ptr [ebp-0Ch]"
-"	      004c79b6    movsx ecx,word ptr [ebp-8]"
+"	      004c79b2    movsx eax,j"
+"	      004c79b6    movsx ecx,i"
 "	      004c79ba    mov edx,ecx"
 "	      004c79bc    shl ecx,3"
 "	      004c79bf    sub ecx,edx"
@@ -5721,10 +5721,10 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 "	      004c79c4    lea eax,[ecx+eax*4]"
 "	      004c79c7    mov ecx,ds:[639830h]"
 "	      004c79cd    mov eax,[eax+ecx+30h]"
-"	      004c79d1    movsx ecx,word ptr [ebp-4]"
+"	      004c79d1    movsx ecx,ix"
 "	      004c79d5    mov edx,ds:[63923Ch]"
 "	      004c79db    mov [edx+ecx*4],eax"
-"	      004c79de    inc word ptr [ebp-4]"
+"	      004c79de    inc ix"
 );
 // LINE 1372:
 	asm( 
@@ -5738,114 +5738,114 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	asm( 
 "	      004c79ec    xor eax,eax"
 "	      004c79ee    mov ax,ds:[59C014h]"
-"	      004c79f4    movsx ecx,word ptr [ebp-4]"
+"	      004c79f4    movsx ecx,ix"
 "	      004c79f8    mov edx,ds:[63923Ch]"
 "	      004c79fe    mov [edx+ecx*4],eax"
-"	      004c7a01    inc word ptr [ebp-4]"
+"	      004c7a01    inc ix"
 );
 // LINE 1377:
 	asm( 
 "	      004c7a05    movsx eax,word ptr ds:[639840h]"
-"	      004c7a0c    movsx ecx,word ptr [ebp-4]"
+"	      004c7a0c    movsx ecx,ix"
 "	      004c7a10    mov edx,ds:[63923Ch]"
 "	      004c7a16    mov [edx+ecx*4],eax"
-"	      004c7a19    inc word ptr [ebp-4]"
+"	      004c7a19    inc ix"
 );
 // LINE 1378:
 	asm( 
 "	      004c7a1d    xor eax,eax"
 "	      004c7a1f    mov ax,ds:[59BBF0h]"
-"	      004c7a25    movsx ecx,word ptr [ebp-4]"
+"	      004c7a25    movsx ecx,ix"
 "	      004c7a29    mov edx,ds:[63923Ch]"
 "	      004c7a2f    mov [edx+ecx*4],eax"
-"	      004c7a32    inc word ptr [ebp-4]"
+"	      004c7a32    inc ix"
 );
 // LINE 1379:
 	asm( 
 "	      004c7a36    xor eax,eax"
 "	      004c7a38    mov ax,ds:[59BBF4h]"
-"	      004c7a3e    movsx ecx,word ptr [ebp-4]"
+"	      004c7a3e    movsx ecx,ix"
 "	      004c7a42    mov edx,ds:[63923Ch]"
 "	      004c7a48    mov [edx+ecx*4],eax"
-"	      004c7a4b    inc word ptr [ebp-4]"
+"	      004c7a4b    inc ix"
 );
 // LINE 1380:
 	asm( 
 "	      004c7a4f    xor eax,eax"
 "	      004c7a51    mov al,ds:[59BBECh]"
-"	      004c7a56    movsx ecx,word ptr [ebp-4]"
+"	      004c7a56    movsx ecx,ix"
 "	      004c7a5a    mov edx,ds:[63923Ch]"
 "	      004c7a60    mov [edx+ecx*4],eax"
-"	      004c7a63    inc word ptr [ebp-4]"
+"	      004c7a63    inc ix"
 );
 // LINE 1382:
 	asm( 
-"	      004c7a67    mov word ptr [ebp-8],0"
+"	      004c7a67    mov i,0"
 "	      004c7a6d    jmp near ptr 004C7A76h"
-"	      004c7a72    inc word ptr [ebp-8]"
-"	      004c7a76    movsx eax,word ptr [ebp-8]"
+"	      004c7a72    inc i"
+"	      004c7a76    movsx eax,i"
 "	      004c7a7a    cmp eax,6"
 "	      004c7a7d    jge near ptr 004C7B3Bh"
 );
 // LINE 1383:
 	asm( 
-"	      004c7a83    movsx eax,word ptr [ebp-8]"
+"	      004c7a83    movsx eax,i"
 "	      004c7a87    lea eax,[eax+eax*4]"
 "	      004c7a8a    mov ecx,ds:[639714h]"
 "	      004c7a90    xor edx,edx"
 "	      004c7a92    mov dl,[eax+ecx]"
-"	      004c7a95    movsx eax,word ptr [ebp-4]"
+"	      004c7a95    movsx eax,ix"
 "	      004c7a99    mov ecx,ds:[63923Ch]"
 "	      004c7a9f    mov [ecx+eax*4],edx"
-"	      004c7aa2    inc word ptr [ebp-4]"
+"	      004c7aa2    inc ix"
 );
 // LINE 1384:
 	asm( 
-"	      004c7aa6    movsx eax,word ptr [ebp-8]"
+"	      004c7aa6    movsx eax,i"
 "	      004c7aaa    lea eax,[eax+eax*4]"
 "	      004c7aad    mov ecx,ds:[639714h]"
 "	      004c7ab3    xor edx,edx"
 "	      004c7ab5    mov dl,[eax+ecx+1]"
-"	      004c7ab9    movsx eax,word ptr [ebp-4]"
+"	      004c7ab9    movsx eax,ix"
 "	      004c7abd    mov ecx,ds:[63923Ch]"
 "	      004c7ac3    mov [ecx+eax*4],edx"
-"	      004c7ac6    inc word ptr [ebp-4]"
+"	      004c7ac6    inc ix"
 );
 // LINE 1385:
 	asm( 
-"	      004c7aca    movsx eax,word ptr [ebp-8]"
+"	      004c7aca    movsx eax,i"
 "	      004c7ace    lea eax,[eax+eax*4]"
 "	      004c7ad1    mov ecx,ds:[639714h]"
 "	      004c7ad7    xor edx,edx"
 "	      004c7ad9    mov dl,[eax+ecx+2]"
-"	      004c7add    movsx eax,word ptr [ebp-4]"
+"	      004c7add    movsx eax,ix"
 "	      004c7ae1    mov ecx,ds:[63923Ch]"
 "	      004c7ae7    mov [ecx+eax*4],edx"
-"	      004c7aea    inc word ptr [ebp-4]"
+"	      004c7aea    inc ix"
 );
 // LINE 1386:
 	asm( 
-"	      004c7aee    movsx eax,word ptr [ebp-8]"
+"	      004c7aee    movsx eax,i"
 "	      004c7af2    lea eax,[eax+eax*4]"
 "	      004c7af5    mov ecx,ds:[639714h]"
 "	      004c7afb    xor edx,edx"
 "	      004c7afd    mov dl,[eax+ecx+3]"
-"	      004c7b01    movsx eax,word ptr [ebp-4]"
+"	      004c7b01    movsx eax,ix"
 "	      004c7b05    mov ecx,ds:[63923Ch]"
 "	      004c7b0b    mov [ecx+eax*4],edx"
-"	      004c7b0e    inc word ptr [ebp-4]"
+"	      004c7b0e    inc ix"
 );
 // LINE 1387:
 	asm( 
-"	      004c7b12    movsx eax,word ptr [ebp-8]"
+"	      004c7b12    movsx eax,i"
 "	      004c7b16    lea eax,[eax+eax*4]"
 "	      004c7b19    mov ecx,ds:[639714h]"
 "	      004c7b1f    xor edx,edx"
 "	      004c7b21    mov dl,[eax+ecx+4]"
-"	      004c7b25    movsx eax,word ptr [ebp-4]"
+"	      004c7b25    movsx eax,ix"
 "	      004c7b29    mov ecx,ds:[63923Ch]"
 "	      004c7b2f    mov [ecx+eax*4],edx"
-"	      004c7b32    inc word ptr [ebp-4]"
+"	      004c7b32    inc ix"
 );
 // LINE 1388:
 	asm( 
@@ -5853,76 +5853,76 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 );
 // LINE 1390:
 	asm( 
-"	      004c7b3b    mov word ptr [ebp-8],0"
+"	      004c7b3b    mov i,0"
 "	      004c7b41    jmp near ptr 004C7B4Ah"
-"	      004c7b46    inc word ptr [ebp-8]"
-"	      004c7b4a    movsx eax,word ptr [ebp-8]"
+"	      004c7b46    inc i"
+"	      004c7b4a    movsx eax,i"
 "	      004c7b4e    cmp eax,9"
 "	      004c7b51    jge near ptr 004C7C1Fh"
 );
 // LINE 1391:
 	asm( 
-"	      004c7b57    movsx eax,word ptr [ebp-8]"
+"	      004c7b57    movsx eax,i"
 "	      004c7b5b    mov ecx,ds:[63A25Ch]"
 "	      004c7b61    movsx eax,word ptr [ecx+eax*8]"
-"	      004c7b65    movsx ecx,word ptr [ebp-4]"
+"	      004c7b65    movsx ecx,ix"
 "	      004c7b69    mov edx,ds:[63923Ch]"
 "	      004c7b6f    mov [edx+ecx*4],eax"
-"	      004c7b72    inc word ptr [ebp-4]"
+"	      004c7b72    inc ix"
 );
 // LINE 1392:
 	asm( 
-"	      004c7b76    movsx eax,word ptr [ebp-8]"
+"	      004c7b76    movsx eax,i"
 "	      004c7b7a    mov ecx,ds:[63A25Ch]"
 "	      004c7b80    movsx eax,word ptr [ecx+eax*8+2]"
-"	      004c7b85    movsx ecx,word ptr [ebp-4]"
+"	      004c7b85    movsx ecx,ix"
 "	      004c7b89    mov edx,ds:[63923Ch]"
 "	      004c7b8f    mov [edx+ecx*4],eax"
-"	      004c7b92    inc word ptr [ebp-4]"
+"	      004c7b92    inc ix"
 );
 // LINE 1393:
 	asm( 
-"	      004c7b96    movsx eax,word ptr [ebp-8]"
+"	      004c7b96    movsx eax,i"
 "	      004c7b9a    mov ecx,ds:[63A25Ch]"
 "	      004c7ba0    xor edx,edx"
 "	      004c7ba2    mov dl,[ecx+eax*8+4]"
-"	      004c7ba6    movsx eax,word ptr [ebp-4]"
+"	      004c7ba6    movsx eax,ix"
 "	      004c7baa    mov ecx,ds:[63923Ch]"
 "	      004c7bb0    mov [ecx+eax*4],edx"
-"	      004c7bb3    inc word ptr [ebp-4]"
+"	      004c7bb3    inc ix"
 );
 // LINE 1394:
 	asm( 
-"	      004c7bb7    movsx eax,word ptr [ebp-8]"
+"	      004c7bb7    movsx eax,i"
 "	      004c7bbb    mov ecx,ds:[63A25Ch]"
 "	      004c7bc1    xor edx,edx"
 "	      004c7bc3    mov dl,[ecx+eax*8+5]"
-"	      004c7bc7    movsx eax,word ptr [ebp-4]"
+"	      004c7bc7    movsx eax,ix"
 "	      004c7bcb    mov ecx,ds:[63923Ch]"
 "	      004c7bd1    mov [ecx+eax*4],edx"
-"	      004c7bd4    inc word ptr [ebp-4]"
+"	      004c7bd4    inc ix"
 );
 // LINE 1395:
 	asm( 
-"	      004c7bd8    movsx eax,word ptr [ebp-8]"
+"	      004c7bd8    movsx eax,i"
 "	      004c7bdc    mov ecx,ds:[63A25Ch]"
 "	      004c7be2    xor edx,edx"
 "	      004c7be4    mov dl,[ecx+eax*8+6]"
-"	      004c7be8    movsx eax,word ptr [ebp-4]"
+"	      004c7be8    movsx eax,ix"
 "	      004c7bec    mov ecx,ds:[63923Ch]"
 "	      004c7bf2    mov [ecx+eax*4],edx"
-"	      004c7bf5    inc word ptr [ebp-4]"
+"	      004c7bf5    inc ix"
 );
 // LINE 1396:
 	asm( 
-"	      004c7bf9    movsx eax,word ptr [ebp-8]"
+"	      004c7bf9    movsx eax,i"
 "	      004c7bfd    mov ecx,ds:[63A25Ch]"
 "	      004c7c03    xor edx,edx"
 "	      004c7c05    mov dl,[ecx+eax*8+7]"
-"	      004c7c09    movsx eax,word ptr [ebp-4]"
+"	      004c7c09    movsx eax,ix"
 "	      004c7c0d    mov ecx,ds:[63923Ch]"
 "	      004c7c13    mov [ecx+eax*4],edx"
-"	      004c7c16    inc word ptr [ebp-4]"
+"	      004c7c16    inc ix"
 );
 // LINE 1397:
 	asm( 
@@ -5931,488 +5931,488 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1400:
 	asm( 
 "	      004c7c1f    mov eax,ds:[63A748h]"
-"	      004c7c24    movsx ecx,word ptr [ebp-4]"
+"	      004c7c24    movsx ecx,ix"
 "	      004c7c28    mov edx,ds:[63923Ch]"
 "	      004c7c2e    mov [edx+ecx*4],eax"
-"	      004c7c31    inc word ptr [ebp-4]"
+"	      004c7c31    inc ix"
 );
 // LINE 1401:
 	asm( 
 "	      004c7c35    mov eax,ds:[639A64h]"
-"	      004c7c3a    movsx ecx,word ptr [ebp-4]"
+"	      004c7c3a    movsx ecx,ix"
 "	      004c7c3e    mov edx,ds:[63923Ch]"
 "	      004c7c44    mov [edx+ecx*4],eax"
-"	      004c7c47    inc word ptr [ebp-4]"
+"	      004c7c47    inc ix"
 );
 // LINE 1403:
 	asm( 
-"	      004c7c4b    mov word ptr [ebp-8],0"
+"	      004c7c4b    mov i,0"
 "	      004c7c51    jmp near ptr 004C7C5Ah"
-"	      004c7c56    inc word ptr [ebp-8]"
-"	      004c7c5a    movsx eax,word ptr [ebp-8]"
+"	      004c7c56    inc i"
+"	      004c7c5a    movsx eax,i"
 "	      004c7c5e    cmp eax,10h"
 "	      004c7c61    jge near ptr 004C7C8Dh"
 );
 // LINE 1404:
 	asm( 
-"	      004c7c67    movsx eax,word ptr [ebp-8]"
+"	      004c7c67    movsx eax,i"
 "	      004c7c6b    mov ecx,ds:[639AC4h]"
 "	      004c7c71    xor edx,edx"
 "	      004c7c73    mov dx,[ecx+eax*2]"
-"	      004c7c77    movsx eax,word ptr [ebp-4]"
+"	      004c7c77    movsx eax,ix"
 "	      004c7c7b    mov ecx,ds:[63923Ch]"
 "	      004c7c81    mov [ecx+eax*4],edx"
-"	      004c7c84    inc word ptr [ebp-4]"
+"	      004c7c84    inc ix"
 "	      004c7c88    jmp near ptr 004C7C56h"
 );
 // LINE 1406:
 	asm( 
 "	      004c7c8d    xor eax,eax"
 "	      004c7c8f    mov ax,ds:[639AB0h]"
-"	      004c7c95    movsx ecx,word ptr [ebp-4]"
+"	      004c7c95    movsx ecx,ix"
 "	      004c7c99    mov edx,ds:[63923Ch]"
 "	      004c7c9f    mov [edx+ecx*4],eax"
-"	      004c7ca2    inc word ptr [ebp-4]"
+"	      004c7ca2    inc ix"
 );
 // LINE 1409:
 	asm( 
 "	      004c7ca6    movsx eax,word ptr ds:[59B550h]"
-"	      004c7cad    movsx ecx,word ptr [ebp-4]"
+"	      004c7cad    movsx ecx,ix"
 "	      004c7cb1    mov edx,ds:[63923Ch]"
 "	      004c7cb7    mov [edx+ecx*4],eax"
-"	      004c7cba    inc word ptr [ebp-4]"
+"	      004c7cba    inc ix"
 );
 // LINE 1410:
 	asm( 
 "	      004c7cbe    xor eax,eax"
 "	      004c7cc0    mov ax,ds:[59B55Ch]"
-"	      004c7cc6    movsx ecx,word ptr [ebp-4]"
+"	      004c7cc6    movsx ecx,ix"
 "	      004c7cca    mov edx,ds:[63923Ch]"
 "	      004c7cd0    mov [edx+ecx*4],eax"
-"	      004c7cd3    inc word ptr [ebp-4]"
+"	      004c7cd3    inc ix"
 );
 // LINE 1411:
 	asm( 
 "	      004c7cd7    xor eax,eax"
 "	      004c7cd9    mov ax,ds:[59B560h]"
-"	      004c7cdf    movsx ecx,word ptr [ebp-4]"
+"	      004c7cdf    movsx ecx,ix"
 "	      004c7ce3    mov edx,ds:[63923Ch]"
 "	      004c7ce9    mov [edx+ecx*4],eax"
-"	      004c7cec    inc word ptr [ebp-4]"
+"	      004c7cec    inc ix"
 );
 // LINE 1412:
 	asm( 
 "	      004c7cf0    xor eax,eax"
 "	      004c7cf2    mov ax,ds:[59B564h]"
-"	      004c7cf8    movsx ecx,word ptr [ebp-4]"
+"	      004c7cf8    movsx ecx,ix"
 "	      004c7cfc    mov edx,ds:[63923Ch]"
 "	      004c7d02    mov [edx+ecx*4],eax"
-"	      004c7d05    inc word ptr [ebp-4]"
+"	      004c7d05    inc ix"
 );
 // LINE 1413:
 	asm( 
 "	      004c7d09    xor eax,eax"
 "	      004c7d0b    mov ax,ds:[59B568h]"
-"	      004c7d11    movsx ecx,word ptr [ebp-4]"
+"	      004c7d11    movsx ecx,ix"
 "	      004c7d15    mov edx,ds:[63923Ch]"
 "	      004c7d1b    mov [edx+ecx*4],eax"
-"	      004c7d1e    inc word ptr [ebp-4]"
+"	      004c7d1e    inc ix"
 );
 // LINE 1414:
 	asm( 
 "	      004c7d22    xor eax,eax"
 "	      004c7d24    mov ax,ds:[59B56Ch]"
-"	      004c7d2a    movsx ecx,word ptr [ebp-4]"
+"	      004c7d2a    movsx ecx,ix"
 "	      004c7d2e    mov edx,ds:[63923Ch]"
 "	      004c7d34    mov [edx+ecx*4],eax"
-"	      004c7d37    inc word ptr [ebp-4]"
+"	      004c7d37    inc ix"
 );
 // LINE 1415:
 	asm( 
 "	      004c7d3b    xor eax,eax"
 "	      004c7d3d    mov ax,ds:[59C03Ch]"
-"	      004c7d43    movsx ecx,word ptr [ebp-4]"
+"	      004c7d43    movsx ecx,ix"
 "	      004c7d47    mov edx,ds:[63923Ch]"
 "	      004c7d4d    mov [edx+ecx*4],eax"
-"	      004c7d50    inc word ptr [ebp-4]"
+"	      004c7d50    inc ix"
 );
 // LINE 1416:
 	asm( 
 "	      004c7d54    xor eax,eax"
 "	      004c7d56    mov ax,ds:[59C038h]"
-"	      004c7d5c    movsx ecx,word ptr [ebp-4]"
+"	      004c7d5c    movsx ecx,ix"
 "	      004c7d60    mov edx,ds:[63923Ch]"
 "	      004c7d66    mov [edx+ecx*4],eax"
-"	      004c7d69    inc word ptr [ebp-4]"
+"	      004c7d69    inc ix"
 );
 // LINE 1417:
 	asm( 
 "	      004c7d6d    movsx eax,word ptr ds:[63A024h]"
-"	      004c7d74    movsx ecx,word ptr [ebp-4]"
+"	      004c7d74    movsx ecx,ix"
 "	      004c7d78    mov edx,ds:[63923Ch]"
 "	      004c7d7e    mov [edx+ecx*4],eax"
-"	      004c7d81    inc word ptr [ebp-4]"
+"	      004c7d81    inc ix"
 );
 // LINE 1425:
 	asm( 
-"	      004c7d85    movsx eax,word ptr [ebp-4]"
+"	      004c7d85    movsx eax,ix"
 "	      004c7d89    mov ecx,ds:[63923Ch]"
 "	      004c7d8f    mov dword ptr [ecx+eax*4],0"
-"	      004c7d96    inc word ptr [ebp-4]"
+"	      004c7d96    inc ix"
 );
 // LINE 1426:
 	asm( 
 "	      004c7d9a    movsx eax,word ptr ds:[59BC1Ch]"
-"	      004c7da1    movsx ecx,word ptr [ebp-4]"
+"	      004c7da1    movsx ecx,ix"
 "	      004c7da5    mov edx,ds:[63923Ch]"
 "	      004c7dab    mov [edx+ecx*4],eax"
-"	      004c7dae    inc word ptr [ebp-4]"
+"	      004c7dae    inc ix"
 );
 // LINE 1427:
 	asm( 
 "	      004c7db2    movsx eax,word ptr ds:[59C01Ch]"
-"	      004c7db9    movsx ecx,word ptr [ebp-4]"
+"	      004c7db9    movsx ecx,ix"
 "	      004c7dbd    mov edx,ds:[63923Ch]"
 "	      004c7dc3    mov [edx+ecx*4],eax"
-"	      004c7dc6    inc word ptr [ebp-4]"
+"	      004c7dc6    inc ix"
 );
 // LINE 1428:
 	asm( 
 "	      004c7dca    movsx eax,word ptr ds:[59C020h]"
-"	      004c7dd1    movsx ecx,word ptr [ebp-4]"
+"	      004c7dd1    movsx ecx,ix"
 "	      004c7dd5    mov edx,ds:[63923Ch]"
 "	      004c7ddb    mov [edx+ecx*4],eax"
-"	      004c7dde    inc word ptr [ebp-4]"
+"	      004c7dde    inc ix"
 );
 // LINE 1429:
 	asm( 
 "	      004c7de2    mov eax,ds:[63A738h]"
-"	      004c7de7    movsx ecx,word ptr [ebp-4]"
+"	      004c7de7    movsx ecx,ix"
 "	      004c7deb    mov edx,ds:[63923Ch]"
 "	      004c7df1    mov [edx+ecx*4],eax"
-"	      004c7df4    inc word ptr [ebp-4]"
+"	      004c7df4    inc ix"
 );
 // LINE 1430:
 	asm( 
 "	      004c7df8    movsx eax,word ptr ds:[639304h]"
-"	      004c7dff    movsx ecx,word ptr [ebp-4]"
+"	      004c7dff    movsx ecx,ix"
 "	      004c7e03    mov edx,ds:[63923Ch]"
 "	      004c7e09    mov [edx+ecx*4],eax"
-"	      004c7e0c    inc word ptr [ebp-4]"
+"	      004c7e0c    inc ix"
 );
 // LINE 1431:
 	asm( 
 "	      004c7e10    movsx eax,word ptr ds:[63971Ch]"
-"	      004c7e17    movsx ecx,word ptr [ebp-4]"
+"	      004c7e17    movsx ecx,ix"
 "	      004c7e1b    mov edx,ds:[63923Ch]"
 "	      004c7e21    mov [edx+ecx*4],eax"
-"	      004c7e24    inc word ptr [ebp-4]"
+"	      004c7e24    inc ix"
 );
 // LINE 1432:
 	asm( 
 "	      004c7e28    mov eax,ds:[63A740h]"
-"	      004c7e2d    movsx ecx,word ptr [ebp-4]"
+"	      004c7e2d    movsx ecx,ix"
 "	      004c7e31    mov edx,ds:[63923Ch]"
 "	      004c7e37    mov [edx+ecx*4],eax"
-"	      004c7e3a    inc word ptr [ebp-4]"
+"	      004c7e3a    inc ix"
 );
 // LINE 1433:
 	asm( 
 "	      004c7e3e    movsx eax,word ptr ds:[639A62h]"
-"	      004c7e45    movsx ecx,word ptr [ebp-4]"
+"	      004c7e45    movsx ecx,ix"
 "	      004c7e49    mov edx,ds:[63923Ch]"
 "	      004c7e4f    mov [edx+ecx*4],eax"
-"	      004c7e52    inc word ptr [ebp-4]"
+"	      004c7e52    inc ix"
 );
 // LINE 1434:
 	asm( 
 "	      004c7e56    movsx eax,word ptr ds:[639DD0h]"
-"	      004c7e5d    movsx ecx,word ptr [ebp-4]"
+"	      004c7e5d    movsx ecx,ix"
 "	      004c7e61    mov edx,ds:[63923Ch]"
 "	      004c7e67    mov [edx+ecx*4],eax"
-"	      004c7e6a    inc word ptr [ebp-4]"
+"	      004c7e6a    inc ix"
 );
 // LINE 1435:
 	asm( 
 "	      004c7e6e    xor eax,eax"
 "	      004c7e70    mov ax,ds:[639ABAh]"
-"	      004c7e76    movsx ecx,word ptr [ebp-4]"
+"	      004c7e76    movsx ecx,ix"
 "	      004c7e7a    mov edx,ds:[63923Ch]"
 "	      004c7e80    mov [edx+ecx*4],eax"
-"	      004c7e83    inc word ptr [ebp-4]"
+"	      004c7e83    inc ix"
 );
 // LINE 1436:
 	asm( 
 "	      004c7e87    movsx eax,word ptr ds:[63A632h]"
-"	      004c7e8e    movsx ecx,word ptr [ebp-4]"
+"	      004c7e8e    movsx ecx,ix"
 "	      004c7e92    mov edx,ds:[63923Ch]"
 "	      004c7e98    mov [edx+ecx*4],eax"
-"	      004c7e9b    inc word ptr [ebp-4]"
+"	      004c7e9b    inc ix"
 );
 // LINE 1437:
 	asm( 
 "	      004c7e9f    movsx eax,word ptr ds:[59B558h]"
-"	      004c7ea6    movsx ecx,word ptr [ebp-4]"
+"	      004c7ea6    movsx ecx,ix"
 "	      004c7eaa    mov edx,ds:[63923Ch]"
 "	      004c7eb0    mov [edx+ecx*4],eax"
-"	      004c7eb3    inc word ptr [ebp-4]"
+"	      004c7eb3    inc ix"
 );
 // LINE 1438:
 	asm( 
 "	      004c7eb7    movsx eax,word ptr ds:[59C024h]"
-"	      004c7ebe    movsx ecx,word ptr [ebp-4]"
+"	      004c7ebe    movsx ecx,ix"
 "	      004c7ec2    mov edx,ds:[63923Ch]"
 "	      004c7ec8    mov [edx+ecx*4],eax"
-"	      004c7ecb    inc word ptr [ebp-4]"
+"	      004c7ecb    inc ix"
 );
 // LINE 1439:
 	asm( 
 "	      004c7ecf    xor eax,eax"
 "	      004c7ed1    mov ax,ds:[6391F8h]"
-"	      004c7ed7    movsx ecx,word ptr [ebp-4]"
+"	      004c7ed7    movsx ecx,ix"
 "	      004c7edb    mov edx,ds:[63923Ch]"
 "	      004c7ee1    mov [edx+ecx*4],eax"
-"	      004c7ee4    inc word ptr [ebp-4]"
+"	      004c7ee4    inc ix"
 );
 // LINE 1440:
 	asm( 
 "	      004c7ee8    movsx eax,word ptr ds:[639AACh]"
-"	      004c7eef    movsx ecx,word ptr [ebp-4]"
+"	      004c7eef    movsx ecx,ix"
 "	      004c7ef3    mov edx,ds:[63923Ch]"
 "	      004c7ef9    mov [edx+ecx*4],eax"
-"	      004c7efc    inc word ptr [ebp-4]"
+"	      004c7efc    inc ix"
 );
 // LINE 1443:
 	asm( 
 "	      004c7f00    xor eax,eax"
 "	      004c7f02    mov ax,ds:[639A60h]"
-"	      004c7f08    movsx ecx,word ptr [ebp-4]"
+"	      004c7f08    movsx ecx,ix"
 "	      004c7f0c    mov edx,ds:[63923Ch]"
 "	      004c7f12    mov [edx+ecx*4],eax"
-"	      004c7f15    inc word ptr [ebp-4]"
+"	      004c7f15    inc ix"
 );
 // LINE 1444:
 	asm( 
 "	      004c7f19    mov eax,ds:[639234h]"
-"	      004c7f1e    movsx ecx,word ptr [ebp-4]"
+"	      004c7f1e    movsx ecx,ix"
 "	      004c7f22    mov edx,ds:[63923Ch]"
 "	      004c7f28    mov [edx+ecx*4],eax"
-"	      004c7f2b    inc word ptr [ebp-4]"
+"	      004c7f2b    inc ix"
 );
 // LINE 1445:
 	asm( 
 "	      004c7f2f    mov eax,ds:[639DD8h]"
-"	      004c7f34    movsx ecx,word ptr [ebp-4]"
+"	      004c7f34    movsx ecx,ix"
 "	      004c7f38    mov edx,ds:[63923Ch]"
 "	      004c7f3e    mov [edx+ecx*4],eax"
-"	      004c7f41    inc word ptr [ebp-4]"
+"	      004c7f41    inc ix"
 );
 // LINE 1446:
 	asm( 
 "	      004c7f45    mov eax,ds:[639AA0h]"
-"	      004c7f4a    movsx ecx,word ptr [ebp-4]"
+"	      004c7f4a    movsx ecx,ix"
 "	      004c7f4e    mov edx,ds:[63923Ch]"
 "	      004c7f54    mov [edx+ecx*4],eax"
-"	      004c7f57    inc word ptr [ebp-4]"
+"	      004c7f57    inc ix"
 );
 // LINE 1447:
 	asm( 
 "	      004c7f5b    mov eax,ds:[639AA4h]"
-"	      004c7f60    movsx ecx,word ptr [ebp-4]"
+"	      004c7f60    movsx ecx,ix"
 "	      004c7f64    mov edx,ds:[63923Ch]"
 "	      004c7f6a    mov [edx+ecx*4],eax"
-"	      004c7f6d    inc word ptr [ebp-4]"
+"	      004c7f6d    inc ix"
 );
 // LINE 1448:
 	asm( 
 "	      004c7f71    mov eax,ds:[639DD4h]"
-"	      004c7f76    movsx ecx,word ptr [ebp-4]"
+"	      004c7f76    movsx ecx,ix"
 "	      004c7f7a    mov edx,ds:[63923Ch]"
 "	      004c7f80    mov [edx+ecx*4],eax"
-"	      004c7f83    inc word ptr [ebp-4]"
+"	      004c7f83    inc ix"
 );
 // LINE 1451:
 	asm( 
 "	      004c7f87    xor eax,eax"
 "	      004c7f89    mov ax,ds:[63A5A8h]"
-"	      004c7f8f    movsx ecx,word ptr [ebp-4]"
+"	      004c7f8f    movsx ecx,ix"
 "	      004c7f93    mov edx,ds:[63923Ch]"
 "	      004c7f99    mov [edx+ecx*4],eax"
-"	      004c7f9c    inc word ptr [ebp-4]"
+"	      004c7f9c    inc ix"
 );
 // LINE 1452:
 	asm( 
 "	      004c7fa0    movsx eax,word ptr ds:[639204h]"
-"	      004c7fa7    movsx ecx,word ptr [ebp-4]"
+"	      004c7fa7    movsx ecx,ix"
 "	      004c7fab    mov edx,ds:[63923Ch]"
 "	      004c7fb1    mov [edx+ecx*4],eax"
-"	      004c7fb4    inc word ptr [ebp-4]"
+"	      004c7fb4    inc ix"
 );
 // LINE 1453:
 	asm( 
 "	      004c7fb8    mov eax,ds:[639206h]"
-"	      004c7fbd    movsx ecx,word ptr [ebp-4]"
+"	      004c7fbd    movsx ecx,ix"
 "	      004c7fc1    mov edx,ds:[63923Ch]"
 "	      004c7fc7    mov [edx+ecx*4],eax"
-"	      004c7fca    inc word ptr [ebp-4]"
+"	      004c7fca    inc ix"
 );
 // LINE 1454:
 	asm( 
 "	      004c7fce    mov eax,ds:[63920Ah]"
-"	      004c7fd3    movsx ecx,word ptr [ebp-4]"
+"	      004c7fd3    movsx ecx,ix"
 "	      004c7fd7    mov edx,ds:[63923Ch]"
 "	      004c7fdd    mov [edx+ecx*4],eax"
-"	      004c7fe0    inc word ptr [ebp-4]"
+"	      004c7fe0    inc ix"
 );
 // LINE 1455:
 	asm( 
 "	      004c7fe4    mov eax,ds:[63920Eh]"
-"	      004c7fe9    movsx ecx,word ptr [ebp-4]"
+"	      004c7fe9    movsx ecx,ix"
 "	      004c7fed    mov edx,ds:[63923Ch]"
 "	      004c7ff3    mov [edx+ecx*4],eax"
-"	      004c7ff6    inc word ptr [ebp-4]"
+"	      004c7ff6    inc ix"
 );
 // LINE 1456:
 	asm( 
 "	      004c7ffa    mov eax,ds:[639212h]"
-"	      004c7fff    movsx ecx,word ptr [ebp-4]"
+"	      004c7fff    movsx ecx,ix"
 "	      004c8003    mov edx,ds:[63923Ch]"
 "	      004c8009    mov [edx+ecx*4],eax"
-"	      004c800c    inc word ptr [ebp-4]"
+"	      004c800c    inc ix"
 );
 // LINE 1457:
 	asm( 
 "	      004c8010    mov eax,ds:[639216h]"
-"	      004c8015    movsx ecx,word ptr [ebp-4]"
+"	      004c8015    movsx ecx,ix"
 "	      004c8019    mov edx,ds:[63923Ch]"
 "	      004c801f    mov [edx+ecx*4],eax"
-"	      004c8022    inc word ptr [ebp-4]"
+"	      004c8022    inc ix"
 );
 // LINE 1458:
 	asm( 
 "	      004c8026    mov eax,ds:[63921Ah]"
-"	      004c802b    movsx ecx,word ptr [ebp-4]"
+"	      004c802b    movsx ecx,ix"
 "	      004c802f    mov edx,ds:[63923Ch]"
 "	      004c8035    mov [edx+ecx*4],eax"
-"	      004c8038    inc word ptr [ebp-4]"
+"	      004c8038    inc ix"
 );
 // LINE 1459:
 	asm( 
 "	      004c803c    movsx eax,word ptr ds:[63921Eh]"
-"	      004c8043    movsx ecx,word ptr [ebp-4]"
+"	      004c8043    movsx ecx,ix"
 "	      004c8047    mov edx,ds:[63923Ch]"
 "	      004c804d    mov [edx+ecx*4],eax"
-"	      004c8050    inc word ptr [ebp-4]"
+"	      004c8050    inc ix"
 );
 // LINE 1460:
 	asm( 
 "	      004c8054    movsx eax,word ptr ds:[639220h]"
-"	      004c805b    movsx ecx,word ptr [ebp-4]"
+"	      004c805b    movsx ecx,ix"
 "	      004c805f    mov edx,ds:[63923Ch]"
 "	      004c8065    mov [edx+ecx*4],eax"
-"	      004c8068    inc word ptr [ebp-4]"
+"	      004c8068    inc ix"
 );
 // LINE 1461:
 	asm( 
 "	      004c806c    mov eax,ds:[639222h]"
-"	      004c8071    movsx ecx,word ptr [ebp-4]"
+"	      004c8071    movsx ecx,ix"
 "	      004c8075    mov edx,ds:[63923Ch]"
 "	      004c807b    mov [edx+ecx*4],eax"
-"	      004c807e    inc word ptr [ebp-4]"
+"	      004c807e    inc ix"
 );
 // LINE 1462:
 	asm( 
 "	      004c8082    mov eax,ds:[639226h]"
-"	      004c8087    movsx ecx,word ptr [ebp-4]"
+"	      004c8087    movsx ecx,ix"
 "	      004c808b    mov edx,ds:[63923Ch]"
 "	      004c8091    mov [edx+ecx*4],eax"
-"	      004c8094    inc word ptr [ebp-4]"
+"	      004c8094    inc ix"
 );
 // LINE 1463:
 	asm( 
 "	      004c8098    mov eax,ds:[63922Ah]"
-"	      004c809d    movsx ecx,word ptr [ebp-4]"
+"	      004c809d    movsx ecx,ix"
 "	      004c80a1    mov edx,ds:[63923Ch]"
 "	      004c80a7    mov [edx+ecx*4],eax"
-"	      004c80aa    inc word ptr [ebp-4]"
+"	      004c80aa    inc ix"
 );
 // LINE 1464:
 	asm( 
 "	      004c80ae    xor eax,eax"
 "	      004c80b0    mov al,ds:[63922Eh]"
-"	      004c80b5    movsx ecx,word ptr [ebp-4]"
+"	      004c80b5    movsx ecx,ix"
 "	      004c80b9    mov edx,ds:[63923Ch]"
 "	      004c80bf    mov [edx+ecx*4],eax"
-"	      004c80c2    inc word ptr [ebp-4]"
+"	      004c80c2    inc ix"
 );
 // LINE 1465:
 	asm( 
 "	      004c80c6    xor eax,eax"
 "	      004c80c8    mov al,ds:[63922Fh]"
-"	      004c80cd    movsx ecx,word ptr [ebp-4]"
+"	      004c80cd    movsx ecx,ix"
 "	      004c80d1    mov edx,ds:[63923Ch]"
 "	      004c80d7    mov [edx+ecx*4],eax"
-"	      004c80da    inc word ptr [ebp-4]"
+"	      004c80da    inc ix"
 );
 // LINE 1466:
 	asm( 
 "	      004c80de    movsx eax,word ptr ds:[639230h]"
-"	      004c80e5    movsx ecx,word ptr [ebp-4]"
+"	      004c80e5    movsx ecx,ix"
 "	      004c80e9    mov edx,ds:[63923Ch]"
 "	      004c80ef    mov [edx+ecx*4],eax"
-"	      004c80f2    inc word ptr [ebp-4]"
+"	      004c80f2    inc ix"
 );
 // LINE 1467:
 	asm( 
 "	      004c80f6    movsx eax,word ptr ds:[639232h]"
-"	      004c80fd    movsx ecx,word ptr [ebp-4]"
+"	      004c80fd    movsx ecx,ix"
 "	      004c8101    mov edx,ds:[63923Ch]"
 "	      004c8107    mov [edx+ecx*4],eax"
-"	      004c810a    inc word ptr [ebp-4]"
+"	      004c810a    inc ix"
 );
 // LINE 1469:
 	asm( 
 "	      004c810e    movsx eax,word ptr ds:[63A73Ch]"
-"	      004c8115    movsx ecx,word ptr [ebp-4]"
+"	      004c8115    movsx ecx,ix"
 "	      004c8119    mov edx,ds:[63923Ch]"
 "	      004c811f    mov [edx+ecx*4],eax"
-"	      004c8122    inc word ptr [ebp-4]"
+"	      004c8122    inc ix"
 );
 // LINE 1470:
 	asm( 
 "	      004c8126    movsx eax,word ptr ds:[59C040h]"
-"	      004c812d    movsx ecx,word ptr [ebp-4]"
+"	      004c812d    movsx ecx,ix"
 "	      004c8131    mov edx,ds:[63923Ch]"
 "	      004c8137    mov [edx+ecx*4],eax"
-"	      004c813a    inc word ptr [ebp-4]"
+"	      004c813a    inc ix"
 );
 // LINE 1471:
 	asm( 
 "	      004c813e    movsx eax,word ptr ds:[6392D0h]"
-"	      004c8145    movsx ecx,word ptr [ebp-4]"
+"	      004c8145    movsx ecx,ix"
 "	      004c8149    mov edx,ds:[63923Ch]"
 "	      004c814f    mov [edx+ecx*4],eax"
-"	      004c8152    inc word ptr [ebp-4]"
+"	      004c8152    inc ix"
 );
 // LINE 1473:
 	asm( 
 "	      004c8156    mov eax,ds:[63A5A4h]"
-"	      004c815b    movsx ecx,word ptr [ebp-4]"
+"	      004c815b    movsx ecx,ix"
 "	      004c815f    mov edx,ds:[63923Ch]"
 "	      004c8165    mov [edx+ecx*4],eax"
-"	      004c8168    inc word ptr [ebp-4]"
+"	      004c8168    inc ix"
 );
 // LINE 1476:
 	asm( 
 "	      004c816c    jmp near ptr 004C8175h"
-"	      004c8171    inc word ptr [ebp-4]"
-"	      004c8175    movsx eax,word ptr [ebp-4]"
+"	      004c8171    inc ix"
+"	      004c8175    movsx eax,ix"
 "	      004c8179    cmp eax,4B0h"
 "	      004c817e    jge near ptr 004C819Ah"
 );
 // LINE 1477:
 	asm( 
-"	      004c8184    movsx eax,word ptr [ebp-4]"
+"	      004c8184    movsx eax,ix"
 "	      004c8188    mov ecx,ds:[63923Ch]"
 "	      004c818e    mov dword ptr [ecx+eax*4],0"
 "	      004c8195    jmp near ptr 004C8171h"
@@ -6426,7 +6426,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 "	      004c81aa    call 004C49D8h"
 "	      004c81af    add esp,4"
 "	      004c81b2    push eax"
-"	      004c81b3    mov eax,[ebp+8]"
+"	      004c81b3    mov eax,filNum"
 "	      004c81b6    push eax"
 "	      004c81b7    call 004C6FE6h"
 "	      004c81bc    add esp,10h"
@@ -6459,42 +6459,42 @@ void swizzle_buffer(char * data, long count) {
 );
 // LINE 1501:
 	asm( 
-"	      004c81d2    mov eax,[ebp+0Ch]"
+"	      004c81d2    mov eax,count"
 "	      004c81d5    cdq"
 "	      004c81d6    and edx,3"
 "	      004c81d9    add eax,edx"
 "	      004c81db    sar eax,2"
-"	      004c81de    mov [ebp+0Ch],eax"
+"	      004c81de    mov count,eax"
 );
 // LINE 1502:
 	asm( 
-"	      004c81e1    mov eax,[ebp+8]"
-"	      004c81e4    mov [ebp-0Ch],eax"
+"	      004c81e1    mov eax,data"
+"	      004c81e4    mov lptr,eax"
 );
 // LINE 1504:
 	asm( 
-"	      004c81e7    mov dword ptr [ebp-4],0"
+"	      004c81e7    mov i,0"
 "	      004c81ee    jmp near ptr 004C81F6h"
-"	      004c81f3    inc dword ptr [ebp-4]"
-"	      004c81f6    mov eax,[ebp-4]"
-"	      004c81f9    cmp [ebp+0Ch],eax"
+"	      004c81f3    inc i"
+"	      004c81f6    mov eax,i"
+"	      004c81f9    cmp count,eax"
 "	      004c81fc    jle near ptr 004C8228h"
 );
 // LINE 1505:
 	asm( 
-"	      004c8202    mov eax,[ebp-4]"
-"	      004c8205    mov ecx,[ebp-0Ch]"
+"	      004c8202    mov eax,i"
+"	      004c8205    mov ecx,lptr"
 "	      004c8208    mov eax,[ecx+eax*4]"
-"	      004c820b    mov [ebp-8],eax"
+"	      004c820b    mov lval,eax"
 );
 // LINE 1506:
 	asm( 
-"	      004c820e    mov eax,[ebp-8]"
+"	      004c820e    mov eax,lval"
 "	      004c8211    push eax"
 "	      004c8212    call 004C838Eh"
 "	      004c8217    add esp,4"
-"	      004c821a    mov ecx,[ebp-4]"
-"	      004c821d    mov edx,[ebp-0Ch]"
+"	      004c821a    mov ecx,i"
+"	      004c821d    mov edx,lptr"
 "	      004c8220    mov [edx+ecx*4],eax"
 );
 // LINE 1507:
@@ -6527,57 +6527,57 @@ void swizzle_Micro(char * data, long count) {
 );
 // LINE 1529:
 	asm( 
-"	      004c8236    mov eax,[ebp+0Ch]"
+"	      004c8236    mov eax,count"
 "	      004c8239    shr eax,3"
-"	      004c823c    mov [ebp+0Ch],eax"
+"	      004c823c    mov count,eax"
 );
 // LINE 1530:
 	asm( 
-"	      004c823f    mov eax,[ebp+8]"
-"	      004c8242    mov [ebp-8],eax"
+"	      004c823f    mov eax,data"
+"	      004c8242    mov mptr,eax"
 );
 // LINE 1532:
 	asm( 
-"	      004c8245    mov dword ptr [ebp-4],0"
+"	      004c8245    mov i,0"
 "	      004c824c    jmp near ptr 004C8254h"
-"	      004c8251    inc dword ptr [ebp-4]"
-"	      004c8254    mov eax,[ebp+0Ch]"
-"	      004c8257    cmp [ebp-4],eax"
+"	      004c8251    inc i"
+"	      004c8254    mov eax,count"
+"	      004c8257    cmp i,eax"
 "	      004c825a    jge near ptr 004C82AEh"
 );
 // LINE 1533:
 	asm( 
-"	      004c8260    mov eax,[ebp-8]"
+"	      004c8260    mov eax,mptr"
 "	      004c8263    mov ax,[eax+2]"
 "	      004c8267    push eax"
 "	      004c8268    call 004C8317h"
 "	      004c826d    add esp,4"
-"	      004c8270    mov ecx,[ebp-8]"
+"	      004c8270    mov ecx,mptr"
 "	      004c8273    mov [ecx+2],ax"
 );
 // LINE 1534:
 	asm( 
-"	      004c8277    mov eax,[ebp-8]"
+"	      004c8277    mov eax,mptr"
 "	      004c827a    mov ax,[eax+4]"
 "	      004c827e    push eax"
 "	      004c827f    call 004C8317h"
 "	      004c8284    add esp,4"
-"	      004c8287    mov ecx,[ebp-8]"
+"	      004c8287    mov ecx,mptr"
 "	      004c828a    mov [ecx+4],ax"
 );
 // LINE 1535:
 	asm( 
-"	      004c828e    mov eax,[ebp-8]"
+"	      004c828e    mov eax,mptr"
 "	      004c8291    mov ax,[eax+6]"
 "	      004c8295    push eax"
 "	      004c8296    call 004C8317h"
 "	      004c829b    add esp,4"
-"	      004c829e    mov ecx,[ebp-8]"
+"	      004c829e    mov ecx,mptr"
 "	      004c82a1    mov [ecx+6],ax"
 );
 // LINE 1536:
 	asm( 
-"	      004c82a5    add dword ptr [ebp-8],8"
+"	      004c82a5    add mptr,8"
 );
 // LINE 1537:
 	asm( 
@@ -6610,32 +6610,32 @@ void swizzle_shorts(char * data, long count) {
 );
 // LINE 1559:
 	asm( 
-"	      004c82bc    mov eax,[ebp+0Ch]"
+"	      004c82bc    mov eax,count"
 "	      004c82bf    cdq"
 "	      004c82c0    sub eax,edx"
 "	      004c82c2    sar eax,1"
-"	      004c82c5    mov [ebp+0Ch],eax"
+"	      004c82c5    mov count,eax"
 );
 // LINE 1560:
 	asm( 
-"	      004c82c8    mov eax,[ebp+8]"
-"	      004c82cb    mov [ebp-0Ch],eax"
+"	      004c82c8    mov eax,data"
+"	      004c82cb    mov sptr,eax"
 );
 // LINE 1562:
 	asm( 
-"	      004c82ce    mov dword ptr [ebp-4],0"
+"	      004c82ce    mov i,0"
 "	      004c82d5    jmp near ptr 004C82DDh"
-"	      004c82da    inc dword ptr [ebp-4]"
-"	      004c82dd    mov eax,[ebp-4]"
-"	      004c82e0    cmp [ebp+0Ch],eax"
+"	      004c82da    inc i"
+"	      004c82dd    mov eax,i"
+"	      004c82e0    cmp count,eax"
 "	      004c82e3    jle near ptr 004C8312h"
 );
 // LINE 1563:
 	asm( 
-"	      004c82e9    mov eax,[ebp-4]"
-"	      004c82ec    mov ecx,[ebp-0Ch]"
+"	      004c82e9    mov eax,i"
+"	      004c82ec    mov ecx,sptr"
 "	      004c82ef    mov ax,[ecx+eax*2]"
-"	      004c82f3    mov [ebp-8],ax"
+"	      004c82f3    mov sval,ax"
 );
 // LINE 1564:
 	asm( 
@@ -6643,8 +6643,8 @@ void swizzle_shorts(char * data, long count) {
 "	      004c82fa    push eax"
 "	      004c82fb    call 004C8317h"
 "	      004c8300    add esp,4"
-"	      004c8303    mov ecx,[ebp-4]"
-"	      004c8306    mov edx,[ebp-0Ch]"
+"	      004c8303    mov ecx,i"
+"	      004c8306    mov edx,sptr"
 "	      004c8309    mov [edx+ecx*2],ax"
 );
 // LINE 1565:
@@ -6677,31 +6677,31 @@ short swizzle_short(short svalue) {
 );
 // LINE 1585:
 	asm( 
-"	      004c8320    lea eax,[ebp+8]"
-"	      004c8323    mov [ebp-4],eax"
+"	      004c8320    lea eax,svalue"
+"	      004c8323    mov byteptr,eax"
 );
 // LINE 1587:
 	asm( 
-"	      004c8326    mov eax,[ebp-4]"
+"	      004c8326    mov eax,byteptr"
 "	      004c8329    mov al,[eax+1]"
-"	      004c832c    mov [ebp-8],al"
+"	      004c832c    mov cval,al"
 );
 // LINE 1588:
 	asm( 
-"	      004c832f    mov eax,[ebp-4]"
+"	      004c832f    mov eax,byteptr"
 "	      004c8332    mov al,[eax]"
-"	      004c8334    mov ecx,[ebp-4]"
+"	      004c8334    mov ecx,byteptr"
 "	      004c8337    mov [ecx+1],al"
 );
 // LINE 1589:
 	asm( 
-"	      004c833a    mov al,[ebp-8]"
-"	      004c833d    mov ecx,[ebp-4]"
+"	      004c833a    mov al,cval"
+"	      004c833d    mov ecx,byteptr"
 "	      004c8340    mov [ecx],al"
 );
 // LINE 1591:
 	asm( 
-"	      004c8342    mov ax,[ebp+8]"
+"	      004c8342    mov ax,svalue"
 "	      004c8346    jmp near ptr 004C834Bh"
 );
 // LINE 1592:
@@ -6730,31 +6730,31 @@ long swap_long(long lvalue) {
 );
 // LINE 1610:
 	asm( 
-"	      004c8359    lea eax,[ebp+8]"
-"	      004c835c    mov [ebp-4],eax"
+"	      004c8359    lea eax,lvalue"
+"	      004c835c    mov shortptr,eax"
 );
 // LINE 1612:
 	asm( 
-"	      004c835f    mov eax,[ebp-4]"
+"	      004c835f    mov eax,shortptr"
 "	      004c8362    mov ax,[eax+2]"
-"	      004c8366    mov [ebp-8],ax"
+"	      004c8366    mov sval,ax"
 );
 // LINE 1613:
 	asm( 
-"	      004c836a    mov eax,[ebp-4]"
+"	      004c836a    mov eax,shortptr"
 "	      004c836d    mov ax,[eax]"
-"	      004c8370    mov ecx,[ebp-4]"
+"	      004c8370    mov ecx,shortptr"
 "	      004c8373    mov [ecx+2],ax"
 );
 // LINE 1614:
 	asm( 
-"	      004c8377    mov ax,[ebp-8]"
-"	      004c837b    mov ecx,[ebp-4]"
+"	      004c8377    mov ax,sval"
+"	      004c837b    mov ecx,shortptr"
 "	      004c837e    mov [ecx],ax"
 );
 // LINE 1617:
 	asm( 
-"	      004c8381    mov eax,[ebp+8]"
+"	      004c8381    mov eax,lvalue"
 "	      004c8384    jmp near ptr 004C8389h"
 );
 // LINE 1618:
@@ -6783,50 +6783,50 @@ long swizzle_long(long lvalue) {
 );
 // LINE 1636:
 	asm( 
-"	      004c8397    lea eax,[ebp+8]"
-"	      004c839a    mov [ebp-4],eax"
+"	      004c8397    lea eax,lvalue"
+"	      004c839a    mov byteptr,eax"
 );
 // LINE 1638:
 	asm( 
-"	      004c839d    mov eax,[ebp-4]"
+"	      004c839d    mov eax,byteptr"
 "	      004c83a0    mov al,[eax+3]"
-"	      004c83a3    mov [ebp-8],al"
+"	      004c83a3    mov cval,al"
 );
 // LINE 1639:
 	asm( 
-"	      004c83a6    mov eax,[ebp-4]"
+"	      004c83a6    mov eax,byteptr"
 "	      004c83a9    mov al,[eax]"
-"	      004c83ab    mov ecx,[ebp-4]"
+"	      004c83ab    mov ecx,byteptr"
 "	      004c83ae    mov [ecx+3],al"
 );
 // LINE 1640:
 	asm( 
-"	      004c83b1    mov al,[ebp-8]"
-"	      004c83b4    mov ecx,[ebp-4]"
+"	      004c83b1    mov al,cval"
+"	      004c83b4    mov ecx,byteptr"
 "	      004c83b7    mov [ecx],al"
 );
 // LINE 1642:
 	asm( 
-"	      004c83b9    mov eax,[ebp-4]"
+"	      004c83b9    mov eax,byteptr"
 "	      004c83bc    mov al,[eax+2]"
-"	      004c83bf    mov [ebp-8],al"
+"	      004c83bf    mov cval,al"
 );
 // LINE 1643:
 	asm( 
-"	      004c83c2    mov eax,[ebp-4]"
+"	      004c83c2    mov eax,byteptr"
 "	      004c83c5    mov al,[eax+1]"
-"	      004c83c8    mov ecx,[ebp-4]"
+"	      004c83c8    mov ecx,byteptr"
 "	      004c83cb    mov [ecx+2],al"
 );
 // LINE 1644:
 	asm( 
-"	      004c83ce    mov al,[ebp-8]"
-"	      004c83d1    mov ecx,[ebp-4]"
+"	      004c83ce    mov al,cval"
+"	      004c83d1    mov ecx,byteptr"
 "	      004c83d4    mov [ecx+1],al"
 );
 // LINE 1647:
 	asm( 
-"	      004c83d7    mov eax,[ebp+8]"
+"	      004c83d7    mov eax,lvalue"
 "	      004c83da    jmp near ptr 004C83DFh"
 );
 // LINE 1648:
@@ -6851,7 +6851,7 @@ void GetStringResource(unsigned char * theString, short resourceID, short index)
 );
 // LINE 1671:
 	asm( 
-"	      004c83ea    mov eax,[ebp+8]"
+"	      004c83ea    mov eax,theString"
 "	      004c83ed    mov byte ptr [eax],0"
 );
 // LINE 1674:
@@ -7049,175 +7049,175 @@ short S2CityAlloc() {
 );
 // LINE 1760:
 	asm( 
-"	      004c8598    mov dword ptr [ebp-8],0D00h"
+"	      004c8598    mov poolsize,0D00h"
 );
 // LINE 1761:
 	asm( 
-"	      004c859f    add dword ptr [ebp-8],40h"
+"	      004c859f    add poolsize,40h"
 );
 // LINE 1762:
 	asm( 
-"	      004c85a3    add dword ptr [ebp-8],8000h"
+"	      004c85a3    add poolsize,8000h"
 );
 // LINE 1763:
 	asm( 
-"	      004c85aa    add dword ptr [ebp-8],4000h"
+"	      004c85aa    add poolsize,4000h"
 );
 // LINE 1764:
 	asm( 
-"	      004c85b1    add dword ptr [ebp-8],4000h"
+"	      004c85b1    add poolsize,4000h"
 );
 // LINE 1765:
 	asm( 
-"	      004c85b8    add dword ptr [ebp-8],4000h"
+"	      004c85b8    add poolsize,4000h"
 );
 // LINE 1766:
 	asm( 
-"	      004c85bf    add dword ptr [ebp-8],4000h"
+"	      004c85bf    add poolsize,4000h"
 );
 // LINE 1767:
 	asm( 
-"	      004c85c6    add dword ptr [ebp-8],4000h"
+"	      004c85c6    add poolsize,4000h"
 );
 // LINE 1768:
 	asm( 
-"	      004c85cd    add dword ptr [ebp-8],1900h"
+"	      004c85cd    add poolsize,1900h"
 );
 // LINE 1769:
 	asm( 
-"	      004c85d4    add dword ptr [ebp-8],4B0h"
+"	      004c85d4    add poolsize,4B0h"
 );
 // LINE 1770:
 	asm( 
-"	      004c85db    add dword ptr [ebp-8],1E0h"
+"	      004c85db    add poolsize,1E0h"
 );
 // LINE 1771:
 	asm( 
-"	      004c85e2    add dword ptr [ebp-8],8000h"
+"	      004c85e2    add poolsize,8000h"
 );
 // LINE 1772:
 	asm( 
-"	      004c85e9    add dword ptr [ebp-8],4000h"
+"	      004c85e9    add poolsize,4000h"
 );
 // LINE 1773:
 	asm( 
-"	      004c85f0    add dword ptr [ebp-8],1000h"
+"	      004c85f0    add poolsize,1000h"
 );
 // LINE 1774:
 	asm( 
-"	      004c85f7    add dword ptr [ebp-8],1000h"
+"	      004c85f7    add poolsize,1000h"
 );
 // LINE 1775:
 	asm( 
-"	      004c85fe    add dword ptr [ebp-8],1000h"
+"	      004c85fe    add poolsize,1000h"
 );
 // LINE 1776:
 	asm( 
-"	      004c8605    add dword ptr [ebp-8],1000h"
+"	      004c8605    add poolsize,1000h"
 );
 // LINE 1777:
 	asm( 
-"	      004c860c    add dword ptr [ebp-8],400h"
+"	      004c860c    add poolsize,400h"
 );
 // LINE 1778:
 	asm( 
-"	      004c8613    add dword ptr [ebp-8],400h"
+"	      004c8613    add poolsize,400h"
 );
 // LINE 1779:
 	asm( 
-"	      004c861a    add dword ptr [ebp-8],400h"
+"	      004c861a    add poolsize,400h"
 );
 // LINE 1780:
 	asm( 
-"	      004c8621    add dword ptr [ebp-8],400h"
+"	      004c8621    add poolsize,400h"
 );
 // LINE 1781:
 	asm( 
-"	      004c8628    add dword ptr [ebp-8],700h"
+"	      004c8628    add poolsize,700h"
 );
 // LINE 1782:
 	asm( 
-"	      004c862f    add dword ptr [ebp-8],20h"
+"	      004c862f    add poolsize,20h"
 );
 // LINE 1783:
 	asm( 
-"	      004c8633    add dword ptr [ebp-8],0Ch"
+"	      004c8633    add poolsize,0Ch"
 );
 // LINE 1784:
 	asm( 
-"	      004c8637    add dword ptr [ebp-8],8"
+"	      004c8637    add poolsize,8"
 );
 // LINE 1785:
 	asm( 
-"	      004c863b    add dword ptr [ebp-8],10h"
+"	      004c863b    add poolsize,10h"
 );
 // LINE 1786:
 	asm( 
-"	      004c863f    add dword ptr [ebp-8],10h"
+"	      004c863f    add poolsize,10h"
 );
 // LINE 1787:
 	asm( 
-"	      004c8643    add dword ptr [ebp-8],10h"
+"	      004c8643    add poolsize,10h"
 );
 // LINE 1788:
 	asm( 
-"	      004c8647    add dword ptr [ebp-8],50h"
+"	      004c8647    add poolsize,50h"
 );
 // LINE 1789:
 	asm( 
-"	      004c864b    add dword ptr [ebp-8],50h"
+"	      004c864b    add poolsize,50h"
 );
 // LINE 1790:
 	asm( 
-"	      004c864f    add dword ptr [ebp-8],50h"
+"	      004c864f    add poolsize,50h"
 );
 // LINE 1791:
 	asm( 
-"	      004c8653    add dword ptr [ebp-8],16h"
+"	      004c8653    add poolsize,16h"
 );
 // LINE 1792:
 	asm( 
-"	      004c8657    add dword ptr [ebp-8],16h"
+"	      004c8657    add poolsize,16h"
 );
 // LINE 1793:
 	asm( 
-"	      004c865b    add dword ptr [ebp-8],2Ch"
+"	      004c865b    add poolsize,2Ch"
 );
 // LINE 1794:
 	asm( 
-"	      004c865f    add dword ptr [ebp-8],200h"
+"	      004c865f    add poolsize,200h"
 );
 // LINE 1795:
 	asm( 
-"	      004c8666    add dword ptr [ebp-8],20h"
+"	      004c8666    add poolsize,20h"
 );
 // LINE 1796:
 	asm( 
-"	      004c866a    add dword ptr [ebp-8],800h"
+"	      004c866a    add poolsize,800h"
 );
 // LINE 1797:
 	asm( 
-"	      004c8671    add dword ptr [ebp-8],40h"
+"	      004c8671    add poolsize,40h"
 );
 // LINE 1798:
 	asm( 
-"	      004c8675    add dword ptr [ebp-8],1Eh"
+"	      004c8675    add poolsize,1Eh"
 );
 // LINE 1799:
 	asm( 
-"	      004c8679    add dword ptr [ebp-8],48h"
+"	      004c8679    add poolsize,48h"
 );
 // LINE 1800:
 	asm( 
-"	      004c867d    add dword ptr [ebp-8],12C0h"
+"	      004c867d    add poolsize,12C0h"
 );
 // LINE 1801:
 	asm( 
-"	      004c8684    add dword ptr [ebp-8],40h"
+"	      004c8684    add poolsize,40h"
 );
 // LINE 1805:
 	asm( 
-"	      004c8688    mov eax,[ebp-8]"
+"	      004c8688    mov eax,poolsize"
 "	      004c868b    push eax"
 "	      004c868c    call 004CB401h"
 "	      004c8691    add esp,4"
@@ -7257,42 +7257,42 @@ short S2CityAlloc() {
 );
 // LINE 1815:
 	asm( 
-"	      004c86f4    mov dword ptr [ebp-14h],0"
+"	      004c86f4    mov i,0"
 "	      004c86fb    jmp near ptr 004C8703h"
-"	      004c8700    inc dword ptr [ebp-14h]"
-"	      004c8703    cmp dword ptr [ebp-14h],10h"
+"	      004c8700    inc i"
+"	      004c8703    cmp i,10h"
 "	      004c8707    jge near ptr 004C8772h"
 );
 // LINE 1816:
 	asm( 
-"	      004c870d    mov eax,[ebp-14h]"
+"	      004c870d    mov eax,i"
 "	      004c8710    mov ecx,eax"
 "	      004c8712    lea eax,[eax+eax*2]"
 "	      004c8715    lea eax,[ecx+eax*4]"
 "	      004c8718    shl eax,4"
 "	      004c871b    add eax,ds:[639FE0h]"
-"	      004c8721    mov ecx,[ebp-14h]"
+"	      004c8721    mov ecx,i"
 "	      004c8724    mov [ecx*4+639FE0h],eax"
 );
 // LINE 1817:
 	asm( 
-"	      004c872b    mov dword ptr [ebp-1Ch],0"
+"	      004c872b    mov j,0"
 "	      004c8732    jmp near ptr 004C873Ah"
-"	      004c8737    inc dword ptr [ebp-1Ch]"
-"	      004c873a    cmp dword ptr [ebp-1Ch],34h"
+"	      004c8737    inc j"
+"	      004c873a    cmp j,34h"
 "	      004c873e    jge near ptr 004C875Dh"
 );
 // LINE 1818:
 	asm( 
-"	      004c8744    mov eax,[ebp-14h]"
+"	      004c8744    mov eax,i"
 "	      004c8747    mov eax,[eax*4+639FE0h]"
-"	      004c874e    mov ecx,[ebp-1Ch]"
+"	      004c874e    mov ecx,j"
 "	      004c8751    mov dword ptr [eax+ecx*4],0"
 "	      004c8758    jmp near ptr 004C8737h"
 );
 // LINE 1819:
 	asm( 
-"	      004c875d    mov eax,[ebp-14h]"
+"	      004c875d    mov eax,i"
 "	      004c8760    mov ecx,ds:[63A020h]"
 "	      004c8766    mov dword ptr [ecx+eax*4],1"
 );
@@ -7338,18 +7338,18 @@ short S2CityAlloc() {
 );
 // LINE 1828:
 	asm( 
-"	      004c87d1    mov dword ptr [ebp-4],1"
+"	      004c87d1    mov cnt,1"
 "	      004c87d8    jmp near ptr 004C87E0h"
-"	      004c87dd    inc dword ptr [ebp-4]"
-"	      004c87e0    cmp dword ptr [ebp-4],80h"
+"	      004c87dd    inc cnt"
+"	      004c87e0    cmp cnt,80h"
 "	      004c87e7    jge near ptr 004C8808h"
 );
 // LINE 1829:
 	asm( 
-"	      004c87ed    mov eax,[ebp-4]"
+"	      004c87ed    mov eax,cnt"
 "	      004c87f0    shl eax,8"
 "	      004c87f3    add eax,ds:[639510h]"
-"	      004c87f9    mov ecx,[ebp-4]"
+"	      004c87f9    mov ecx,cnt"
 "	      004c87fc    mov [ecx*4+639510h],eax"
 "	      004c8803    jmp near ptr 004C87DDh"
 );
@@ -7371,18 +7371,18 @@ short S2CityAlloc() {
 );
 // LINE 1832:
 	asm( 
-"	      004c8837    mov dword ptr [ebp-4],0"
+"	      004c8837    mov cnt,0"
 "	      004c883e    jmp near ptr 004C8846h"
-"	      004c8843    inc dword ptr [ebp-4]"
-"	      004c8846    cmp dword ptr [ebp-4],80h"
+"	      004c8843    inc cnt"
+"	      004c8846    cmp cnt,80h"
 "	      004c884d    jge near ptr 004C886Eh"
 );
 // LINE 1833:
 	asm( 
-"	      004c8853    mov eax,[ebp-4]"
+"	      004c8853    mov eax,cnt"
 "	      004c8856    shl eax,7"
 "	      004c8859    add eax,ds:[6069C4h]"
-"	      004c885f    mov ecx,[ebp-4]"
+"	      004c885f    mov ecx,cnt"
 "	      004c8862    mov [ecx*4+639850h],eax"
 "	      004c8869    jmp near ptr 004C8843h"
 );
@@ -7404,18 +7404,18 @@ short S2CityAlloc() {
 );
 // LINE 1836:
 	asm( 
-"	      004c889d    mov dword ptr [ebp-4],0"
+"	      004c889d    mov cnt,0"
 "	      004c88a4    jmp near ptr 004C88ACh"
-"	      004c88a9    inc dword ptr [ebp-4]"
-"	      004c88ac    cmp dword ptr [ebp-4],80h"
+"	      004c88a9    inc cnt"
+"	      004c88ac    cmp cnt,80h"
 "	      004c88b3    jge near ptr 004C88D4h"
 );
 // LINE 1837:
 	asm( 
-"	      004c88b9    mov eax,[ebp-4]"
+"	      004c88b9    mov eax,cnt"
 "	      004c88bc    shl eax,7"
 "	      004c88bf    add eax,ds:[6069CCh]"
-"	      004c88c5    mov ecx,[ebp-4]"
+"	      004c88c5    mov ecx,cnt"
 "	      004c88c8    mov [ecx*4+639DE0h],eax"
 "	      004c88cf    jmp near ptr 004C88A9h"
 );
@@ -7437,18 +7437,18 @@ short S2CityAlloc() {
 );
 // LINE 1840:
 	asm( 
-"	      004c8903    mov dword ptr [ebp-4],0"
+"	      004c8903    mov cnt,0"
 "	      004c890a    jmp near ptr 004C8912h"
-"	      004c890f    inc dword ptr [ebp-4]"
-"	      004c8912    cmp dword ptr [ebp-4],80h"
+"	      004c890f    inc cnt"
+"	      004c8912    cmp cnt,80h"
 "	      004c8919    jge near ptr 004C893Ah"
 );
 // LINE 1841:
 	asm( 
-"	      004c891f    mov eax,[ebp-4]"
+"	      004c891f    mov eax,cnt"
 "	      004c8922    shl eax,7"
 "	      004c8925    add eax,ds:[6069C8h]"
-"	      004c892b    mov ecx,[ebp-4]"
+"	      004c892b    mov ecx,cnt"
 "	      004c892e    mov [ecx*4+63A270h],eax"
 "	      004c8935    jmp near ptr 004C890Fh"
 );
@@ -7470,18 +7470,18 @@ short S2CityAlloc() {
 );
 // LINE 1844:
 	asm( 
-"	      004c8969    mov dword ptr [ebp-4],0"
+"	      004c8969    mov cnt,0"
 "	      004c8970    jmp near ptr 004C8978h"
-"	      004c8975    inc dword ptr [ebp-4]"
-"	      004c8978    cmp dword ptr [ebp-4],80h"
+"	      004c8975    inc cnt"
+"	      004c8978    cmp cnt,80h"
 "	      004c897f    jge near ptr 004C89A0h"
 );
 // LINE 1845:
 	asm( 
-"	      004c8985    mov eax,[ebp-4]"
+"	      004c8985    mov eax,cnt"
 "	      004c8988    shl eax,7"
 "	      004c898b    add eax,ds:[6069D4h]"
-"	      004c8991    mov ecx,[ebp-4]"
+"	      004c8991    mov ecx,cnt"
 "	      004c8994    mov [ecx*4+63A030h],eax"
 "	      004c899b    jmp near ptr 004C8975h"
 );
@@ -7503,18 +7503,18 @@ short S2CityAlloc() {
 );
 // LINE 1848:
 	asm( 
-"	      004c89cf    mov dword ptr [ebp-4],0"
+"	      004c89cf    mov cnt,0"
 "	      004c89d6    jmp near ptr 004C89DEh"
-"	      004c89db    inc dword ptr [ebp-4]"
-"	      004c89de    cmp dword ptr [ebp-4],80h"
+"	      004c89db    inc cnt"
+"	      004c89de    cmp cnt,80h"
 "	      004c89e5    jge near ptr 004C8A06h"
 );
 // LINE 1849:
 	asm( 
-"	      004c89eb    mov eax,[ebp-4]"
+"	      004c89eb    mov eax,cnt"
 "	      004c89ee    shl eax,7"
 "	      004c89f1    add eax,ds:[6069D0h]"
-"	      004c89f7    mov ecx,[ebp-4]"
+"	      004c89f7    mov ecx,cnt"
 "	      004c89fa    mov [ecx*4+639AD0h],eax"
 "	      004c8a01    jmp near ptr 004C89DBh"
 );
@@ -7568,72 +7568,72 @@ short S2CityAlloc() {
 );
 // LINE 1857:
 	asm( 
-"	      004c8a93    mov word ptr [ebp-18h],0"
+"	      004c8a93    mov z,0"
 );
 // LINE 1858:
 	asm( 
-"	      004c8a99    mov word ptr [ebp-0Ch],0"
+"	      004c8a99    mov x,0"
 "	      004c8a9f    jmp near ptr 004C8AA8h"
-"	      004c8aa4    inc word ptr [ebp-0Ch]"
-"	      004c8aa8    movsx eax,word ptr [ebp-0Ch]"
+"	      004c8aa4    inc x"
+"	      004c8aa8    movsx eax,x"
 "	      004c8aac    cmp eax,80h"
 "	      004c8ab1    jge near ptr 004C8B5Fh"
 );
 // LINE 1859:
 	asm( 
-"	      004c8ab7    mov word ptr [ebp-10h],0"
+"	      004c8ab7    mov y,0"
 "	      004c8abd    jmp near ptr 004C8AC6h"
-"	      004c8ac2    inc word ptr [ebp-10h]"
-"	      004c8ac6    movsx eax,word ptr [ebp-10h]"
+"	      004c8ac2    inc y"
+"	      004c8ac6    movsx eax,y"
 "	      004c8aca    cmp eax,80h"
 "	      004c8acf    jge near ptr 004C8B5Ah"
 );
 // LINE 1860:
 	asm( 
-"	      004c8ad5    mov ax,[ebp-18h]"
-"	      004c8ad9    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8ad5    mov ax,z"
+"	      004c8ad9    movsx ecx,x"
 "	      004c8add    mov ecx,[ecx*4+639510h]"
-"	      004c8ae4    movsx edx,word ptr [ebp-10h]"
+"	      004c8ae4    movsx edx,y"
 "	      004c8ae8    mov [ecx+edx*2],ax"
 );
 // LINE 1861:
 	asm( 
 "	      004c8aec    mov al,[ebp-18h]"
-"	      004c8aef    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8aef    movsx ecx,x"
 "	      004c8af3    mov ecx,[ecx*4+63A270h]"
-"	      004c8afa    movsx edx,word ptr [ebp-10h]"
+"	      004c8afa    movsx edx,y"
 "	      004c8afe    mov [ecx+edx],al"
 );
 // LINE 1862:
 	asm( 
 "	      004c8b01    mov al,[ebp-18h]"
-"	      004c8b04    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8b04    movsx ecx,x"
 "	      004c8b08    mov ecx,[ecx*4+639850h]"
-"	      004c8b0f    movsx edx,word ptr [ebp-10h]"
+"	      004c8b0f    movsx edx,y"
 "	      004c8b13    mov [ecx+edx],al"
 );
 // LINE 1863:
 	asm( 
 "	      004c8b16    mov al,[ebp-18h]"
-"	      004c8b19    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8b19    movsx ecx,x"
 "	      004c8b1d    mov ecx,[ecx*4+639DE0h]"
-"	      004c8b24    movsx edx,word ptr [ebp-10h]"
+"	      004c8b24    movsx edx,y"
 "	      004c8b28    mov [ecx+edx],al"
 );
 // LINE 1864:
 	asm( 
 "	      004c8b2b    mov al,[ebp-18h]"
-"	      004c8b2e    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8b2e    movsx ecx,x"
 "	      004c8b32    mov ecx,[ecx*4+63A030h]"
-"	      004c8b39    movsx edx,word ptr [ebp-10h]"
+"	      004c8b39    movsx edx,y"
 "	      004c8b3d    mov [ecx+edx],al"
 );
 // LINE 1865:
 	asm( 
 "	      004c8b40    mov al,[ebp-18h]"
-"	      004c8b43    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c8b43    movsx ecx,x"
 "	      004c8b47    mov ecx,[ecx*4+639AD0h]"
-"	      004c8b4e    movsx edx,word ptr [ebp-10h]"
+"	      004c8b4e    movsx edx,y"
 "	      004c8b52    mov [ecx+edx],al"
 );
 // LINE 1866:
@@ -7806,26 +7806,26 @@ short S2CityAlloc() {
 );
 // LINE 1890:
 	asm( 
-"	      004c8d35    mov dword ptr [ebp-14h],0"
+"	      004c8d35    mov i,0"
 "	      004c8d3c    jmp near ptr 004C8D44h"
-"	      004c8d41    inc dword ptr [ebp-14h]"
-"	      004c8d44    cmp dword ptr [ebp-14h],80h"
+"	      004c8d41    inc i"
+"	      004c8d44    cmp i,80h"
 "	      004c8d4b    jge near ptr 004C8D82h"
 );
 // LINE 1891:
 	asm( 
-"	      004c8d51    mov eax,[ebp-14h]"
+"	      004c8d51    mov eax,i"
 "	      004c8d54    shl eax,8"
 "	      004c8d57    add eax,ds:[639310h]"
-"	      004c8d5d    mov ecx,[ebp-14h]"
+"	      004c8d5d    mov ecx,i"
 "	      004c8d60    mov [ecx*4+639310h],eax"
 );
 // LINE 1892:
 	asm( 
-"	      004c8d67    mov eax,[ebp-14h]"
+"	      004c8d67    mov eax,i"
 "	      004c8d6a    shl eax,7"
 "	      004c8d6d    add eax,ds:[638F70h]"
-"	      004c8d73    mov ecx,[ebp-14h]"
+"	      004c8d73    mov ecx,i"
 "	      004c8d76    mov [ecx*4+638F70h],eax"
 );
 // LINE 1893:
@@ -7834,42 +7834,42 @@ short S2CityAlloc() {
 );
 // LINE 1894:
 	asm( 
-"	      004c8d82    mov dword ptr [ebp-14h],0"
+"	      004c8d82    mov i,0"
 "	      004c8d89    jmp near ptr 004C8D91h"
-"	      004c8d8e    inc dword ptr [ebp-14h]"
-"	      004c8d91    cmp dword ptr [ebp-14h],40h"
+"	      004c8d8e    inc i"
+"	      004c8d91    cmp i,40h"
 "	      004c8d95    jge near ptr 004C8DF8h"
 );
 // LINE 1895:
 	asm( 
-"	      004c8d9b    mov eax,[ebp-14h]"
+"	      004c8d9b    mov eax,i"
 "	      004c8d9e    shl eax,6"
 "	      004c8da1    add eax,ds:[639730h]"
-"	      004c8da7    mov ecx,[ebp-14h]"
+"	      004c8da7    mov ecx,i"
 "	      004c8daa    mov [ecx*4+639730h],eax"
 );
 // LINE 1896:
 	asm( 
-"	      004c8db1    mov eax,[ebp-14h]"
+"	      004c8db1    mov eax,i"
 "	      004c8db4    shl eax,6"
 "	      004c8db7    add eax,ds:[639CD0h]"
-"	      004c8dbd    mov ecx,[ebp-14h]"
+"	      004c8dbd    mov ecx,i"
 "	      004c8dc0    mov [ecx*4+639CD0h],eax"
 );
 // LINE 1897:
 	asm( 
-"	      004c8dc7    mov eax,[ebp-14h]"
+"	      004c8dc7    mov eax,i"
 "	      004c8dca    shl eax,6"
 "	      004c8dcd    add eax,ds:[63A470h]"
-"	      004c8dd3    mov ecx,[ebp-14h]"
+"	      004c8dd3    mov ecx,i"
 "	      004c8dd6    mov [ecx*4+63A470h],eax"
 );
 // LINE 1898:
 	asm( 
-"	      004c8ddd    mov eax,[ebp-14h]"
+"	      004c8ddd    mov eax,i"
 "	      004c8de0    shl eax,6"
 "	      004c8de3    add eax,ds:[63A750h]"
-"	      004c8de9    mov ecx,[ebp-14h]"
+"	      004c8de9    mov ecx,i"
 "	      004c8dec    mov [ecx*4+63A750h],eax"
 );
 // LINE 1899:
@@ -7878,42 +7878,42 @@ short S2CityAlloc() {
 );
 // LINE 1900:
 	asm( 
-"	      004c8df8    mov dword ptr [ebp-14h],0"
+"	      004c8df8    mov i,0"
 "	      004c8dff    jmp near ptr 004C8E07h"
-"	      004c8e04    inc dword ptr [ebp-14h]"
-"	      004c8e07    cmp dword ptr [ebp-14h],20h"
+"	      004c8e04    inc i"
+"	      004c8e07    cmp i,20h"
 "	      004c8e0b    jge near ptr 004C8E6Eh"
 );
 // LINE 1901:
 	asm( 
-"	      004c8e11    mov eax,[ebp-14h]"
+"	      004c8e11    mov eax,i"
 "	      004c8e14    shl eax,5"
 "	      004c8e17    add eax,ds:[639170h]"
-"	      004c8e1d    mov ecx,[ebp-14h]"
+"	      004c8e1d    mov ecx,i"
 "	      004c8e20    mov [ecx*4+639170h],eax"
 );
 // LINE 1902:
 	asm( 
-"	      004c8e27    mov eax,[ebp-14h]"
+"	      004c8e27    mov eax,i"
 "	      004c8e2a    shl eax,5"
 "	      004c8e2d    add eax,ds:[63A5B0h]"
-"	      004c8e33    mov ecx,[ebp-14h]"
+"	      004c8e33    mov ecx,i"
 "	      004c8e36    mov [ecx*4+63A5B0h],eax"
 );
 // LINE 1903:
 	asm( 
-"	      004c8e3d    mov eax,[ebp-14h]"
+"	      004c8e3d    mov eax,i"
 "	      004c8e40    shl eax,5"
 "	      004c8e43    add eax,ds:[638EE0h]"
-"	      004c8e49    mov ecx,[ebp-14h]"
+"	      004c8e49    mov ecx,i"
 "	      004c8e4c    mov [ecx*4+638EE0h],eax"
 );
 // LINE 1904:
 	asm( 
-"	      004c8e53    mov eax,[ebp-14h]"
+"	      004c8e53    mov eax,i"
 "	      004c8e56    shl eax,5"
 "	      004c8e59    add eax,ds:[63A640h]"
-"	      004c8e5f    mov ecx,[ebp-14h]"
+"	      004c8e5f    mov ecx,i"
 "	      004c8e62    mov [ecx*4+63A640h],eax"
 );
 // LINE 1905:
@@ -8311,33 +8311,33 @@ void PStringToCString(char * string) {
 );
 // LINE 1980:
 	asm( 
-"	      004c9230    mov eax,[ebp+8]"
+"	      004c9230    mov eax,string"
 "	      004c9233    mov al,[eax]"
-"	      004c9235    mov [ebp-4],al"
+"	      004c9235    mov sizePString,al"
 );
 // LINE 1983:
 	asm( 
-"	      004c9238    mov dword ptr [ebp-8],0"
+"	      004c9238    mov i,0"
 "	      004c923f    jmp near ptr 004C9247h"
-"	      004c9244    inc dword ptr [ebp-8]"
-"	      004c9247    movsx eax,byte ptr [ebp-4]"
-"	      004c924b    cmp eax,[ebp-8]"
+"	      004c9244    inc i"
+"	      004c9247    movsx eax,sizePString"
+"	      004c924b    cmp eax,i"
 "	      004c924e    jle near ptr 004C926Ch"
 );
 // LINE 1984:
 	asm( 
-"	      004c9254    mov eax,[ebp-8]"
-"	      004c9257    mov ecx,[ebp+8]"
+"	      004c9254    mov eax,i"
+"	      004c9257    mov ecx,string"
 "	      004c925a    mov al,[eax+ecx+1]"
-"	      004c925e    mov ecx,[ebp-8]"
-"	      004c9261    mov edx,[ebp+8]"
+"	      004c925e    mov ecx,i"
+"	      004c9261    mov edx,string"
 "	      004c9264    mov [ecx+edx],al"
 "	      004c9267    jmp near ptr 004C9244h"
 );
 // LINE 1985:
 	asm( 
-"	      004c926c    mov eax,[ebp-8]"
-"	      004c926f    mov ecx,[ebp+8]"
+"	      004c926c    mov eax,i"
+"	      004c926f    mov ecx,string"
 "	      004c9272    mov byte ptr [eax+ecx],0"
 );
 // LINE 1986:
@@ -8366,45 +8366,45 @@ void CStringToPString(char * string) {
 );
 // LINE 1994:
 	asm( 
-"	      004c9284    mov eax,[ebp+8]"
+"	      004c9284    mov eax,string"
 "	      004c9287    push eax"
 "	      004c9288    call 0056ABE0h"
 "	      004c928d    add esp,4"
-"	      004c9290    mov [ebp-4],eax"
+"	      004c9290    mov sizeCString,eax"
 );
 // LINE 1997:
 	asm( 
-"	      004c9293    cmp dword ptr [ebp-4],0FFh"
+"	      004c9293    cmp sizeCString,0FFh"
 "	      004c929a    jle near ptr 004C92A7h"
 );
 // LINE 1998:
 	asm( 
-"	      004c92a0    mov dword ptr [ebp-4],0FFh"
+"	      004c92a0    mov sizeCString,0FFh"
 );
 // LINE 2000:
 	asm( 
-"	      004c92a7    mov eax,[ebp-4]"
+"	      004c92a7    mov eax,sizeCString"
 "	      004c92aa    dec eax"
-"	      004c92ab    mov [ebp-8],eax"
+"	      004c92ab    mov i,eax"
 "	      004c92ae    jmp near ptr 004C92B6h"
-"	      004c92b3    dec dword ptr [ebp-8]"
-"	      004c92b6    cmp dword ptr [ebp-8],0"
+"	      004c92b3    dec i"
+"	      004c92b6    cmp i,0"
 "	      004c92ba    jl near ptr 004C92D8h"
 );
 // LINE 2001:
 	asm( 
-"	      004c92c0    mov eax,[ebp-8]"
-"	      004c92c3    mov ecx,[ebp+8]"
+"	      004c92c0    mov eax,i"
+"	      004c92c3    mov ecx,string"
 "	      004c92c6    mov al,[eax+ecx]"
-"	      004c92c9    mov ecx,[ebp-8]"
-"	      004c92cc    mov edx,[ebp+8]"
+"	      004c92c9    mov ecx,i"
+"	      004c92cc    mov edx,string"
 "	      004c92cf    mov [ecx+edx+1],al"
 "	      004c92d3    jmp near ptr 004C92B3h"
 );
 // LINE 2002:
 	asm( 
 "	      004c92d8    mov al,[ebp-4]"
-"	      004c92db    mov ecx,[ebp+8]"
+"	      004c92db    mov ecx,string"
 "	      004c92de    mov [ecx],al"
 );
 // LINE 2003:
@@ -8433,34 +8433,34 @@ void CopyPString(char * stringDestination, char * stringSource) {
 );
 // LINE 2013:
 	asm( 
-"	      004c92ee    mov eax,[ebp+0Ch]"
+"	      004c92ee    mov eax,stringSource"
 "	      004c92f1    movsx eax,byte ptr [eax]"
 "	      004c92f4    inc eax"
-"	      004c92f5    mov [ebp-4],eax"
+"	      004c92f5    mov iEnd,eax"
 );
 // LINE 2014:
 	asm( 
-"	      004c92f8    mov eax,[ebp+0Ch]"
+"	      004c92f8    mov eax,stringSource"
 "	      004c92fb    mov al,[eax]"
-"	      004c92fd    mov ecx,[ebp+8]"
+"	      004c92fd    mov ecx,stringDestination"
 "	      004c9300    mov [ecx],al"
 );
 // LINE 2015:
 	asm( 
-"	      004c9302    mov dword ptr [ebp-8],1"
+"	      004c9302    mov i,1"
 "	      004c9309    jmp near ptr 004C9311h"
-"	      004c930e    inc dword ptr [ebp-8]"
-"	      004c9311    mov eax,[ebp-8]"
-"	      004c9314    cmp [ebp-4],eax"
+"	      004c930e    inc i"
+"	      004c9311    mov eax,i"
+"	      004c9314    cmp iEnd,eax"
 "	      004c9317    jle near ptr 004C9334h"
 );
 // LINE 2016:
 	asm( 
-"	      004c931d    mov eax,[ebp-8]"
-"	      004c9320    mov ecx,[ebp+0Ch]"
+"	      004c931d    mov eax,i"
+"	      004c9320    mov ecx,stringSource"
 "	      004c9323    mov al,[eax+ecx]"
-"	      004c9326    mov ecx,[ebp-8]"
-"	      004c9329    mov edx,[ebp+8]"
+"	      004c9326    mov ecx,i"
+"	      004c9329    mov edx,stringDestination"
 "	      004c932c    mov [ecx+edx],al"
 "	      004c932f    jmp near ptr 004C930Eh"
 );
@@ -8490,38 +8490,38 @@ void check_backslash_terminate(char * path) {
 );
 // LINE 2043:
 	asm( 
-"	      004c9342    mov eax,[ebp+8]"
+"	      004c9342    mov eax,path"
 "	      004c9345    push eax"
 "	      004c9346    call 0056ABE0h"
 "	      004c934b    add esp,4"
-"	      004c934e    mov [ebp-8],ax"
+"	      004c934e    mov len,ax"
 );
 // LINE 2044:
 	asm( 
-"	      004c9352    movsx eax,word ptr [ebp-8]"
-"	      004c9356    add eax,[ebp+8]"
+"	      004c9352    movsx eax,len"
+"	      004c9356    add eax,path"
 "	      004c9359    dec eax"
-"	      004c935a    mov [ebp-4],eax"
+"	      004c935a    mov s,eax"
 );
 // LINE 2046:
 	asm( 
-"	      004c935d    mov eax,[ebp-4]"
+"	      004c935d    mov eax,s"
 "	      004c9360    movsx eax,byte ptr [eax]"
 "	      004c9363    cmp eax,5Ch"
 "	      004c9366    je near ptr 004C937Ch"
 );
 // LINE 2047:
 	asm( 
-"	      004c936c    inc dword ptr [ebp-4]"
+"	      004c936c    inc s"
 );
 // LINE 2048:
 	asm( 
-"	      004c936f    mov eax,[ebp-4]"
+"	      004c936f    mov eax,s"
 "	      004c9372    mov byte ptr [eax],5Ch"
 );
 // LINE 2049:
 	asm( 
-"	      004c9375    mov eax,[ebp-4]"
+"	      004c9375    mov eax,s"
 "	      004c9378    mov byte ptr [eax+1],0"
 );
 // LINE 2051:
@@ -8553,15 +8553,15 @@ short check_root(char * pathname) {
 );
 // LINE 2071:
 	asm( 
-"	      004c938d    mov eax,[ebp+8]"
+"	      004c938d    mov eax,pathname"
 "	      004c9390    push eax"
 "	      004c9391    call 0056ABE0h"
 "	      004c9396    add esp,4"
-"	      004c9399    mov [ebp-10h],ax"
+"	      004c9399    mov len,ax"
 );
 // LINE 2072:
 	asm( 
-"	      004c939d    movsx ecx,word ptr [ebp-10h]"
+"	      004c939d    movsx ecx,len"
 "	      004c93a1    test ecx,ecx"
 "	      004c93a3    jne near ptr 004C93B2h"
 );
@@ -8572,16 +8572,16 @@ short check_root(char * pathname) {
 );
 // LINE 2075:
 	asm( 
-"	      004c93b2    lea eax,[ebp-114h]"
+"	      004c93b2    lea eax,pathonly[0]"
 "	      004c93b8    push eax"
-"	      004c93b9    mov eax,[ebp+8]"
+"	      004c93b9    mov eax,pathname"
 "	      004c93bc    push eax"
 "	      004c93bd    call 004C9495h"
 "	      004c93c2    add esp,8"
 );
 // LINE 2078:
 	asm( 
-"	      004c93c5    lea eax,[ebp-114h]"
+"	      004c93c5    lea eax,pathonly[0]"
 "	      004c93cb    push eax"
 "	      004c93cc    call 0056ABE0h"
 "	      004c93d1    add esp,4"
@@ -8595,75 +8595,75 @@ short check_root(char * pathname) {
 );
 // LINE 2081:
 	asm( 
-"	      004c93e5    movsx eax,word ptr [ebp-10h]"
+"	      004c93e5    movsx eax,len"
 "	      004c93e9    lea eax,[ebp+eax-114h]"
 "	      004c93f0    dec eax"
-"	      004c93f1    mov [ebp-4],eax"
+"	      004c93f1    mov s,eax"
 );
 // LINE 2082:
 	asm( 
-"	      004c93f4    mov word ptr [ebp-0Ch],0"
+"	      004c93f4    mov count,0"
 );
 // LINE 2084:
 	asm( 
-"	      004c93fa    lea eax,[ebp-114h]"
-"	      004c9400    cmp [ebp-4],eax"
+"	      004c93fa    lea eax,pathonly[0]"
+"	      004c9400    cmp s,eax"
 "	      004c9403    jb near ptr 004C9473h"
 );
 // LINE 2085:
 	asm( 
-"	      004c9409    mov eax,[ebp-4]"
-"	      004c940c    mov [ebp-8],eax"
+"	      004c9409    mov eax,s"
+"	      004c940c    mov t,eax"
 );
 // LINE 2087:
 	asm( 
-"	      004c940f    mov eax,[ebp-4]"
+"	      004c940f    mov eax,s"
 "	      004c9412    movsx eax,byte ptr [eax]"
 "	      004c9415    cmp eax,5Ch"
 "	      004c9418    jne near ptr 004C9422h"
 );
 // LINE 2088:
 	asm( 
-"	      004c941e    inc word ptr [ebp-0Ch]"
+"	      004c941e    inc count"
 );
 // LINE 2089:
 	asm( 
-"	      004c9422    dec dword ptr [ebp-4]"
+"	      004c9422    dec s"
 );
 // LINE 2090:
 	asm( 
-"	      004c9425    mov eax,[ebp-8]"
+"	      004c9425    mov eax,t"
 "	      004c9428    movsx eax,byte ptr [eax]"
 "	      004c942b    cmp eax,5Ch"
 "	      004c942e    jne near ptr 004C946Eh"
 );
 // LINE 2091:
 	asm( 
-"	      004c9434    lea eax,[ebp-114h]"
-"	      004c943a    cmp [ebp-4],eax"
+"	      004c9434    lea eax,pathonly[0]"
+"	      004c943a    cmp s,eax"
 "	      004c943d    jae near ptr 004C944Ch"
 );
 // LINE 2092:
 	asm( 
-"	      004c9443    dec word ptr [ebp-0Ch]"
+"	      004c9443    dec count"
 );
 // LINE 2094:
 	asm( 
 "	      004c9447    jmp near ptr 004C946Eh"
-"	      004c944c    lea eax,[ebp-114h]"
-"	      004c9452    cmp [ebp-4],eax"
+"	      004c944c    lea eax,pathonly[0]"
+"	      004c9452    cmp s,eax"
 "	      004c9455    jbe near ptr 004C946Eh"
 );
 // LINE 2095:
 	asm( 
-"	      004c945b    mov eax,[ebp-4]"
+"	      004c945b    mov eax,s"
 "	      004c945e    movsx eax,byte ptr [eax]"
 "	      004c9461    cmp eax,3Ah"
 "	      004c9464    jne near ptr 004C946Eh"
 );
 // LINE 2096:
 	asm( 
-"	      004c946a    dec word ptr [ebp-0Ch]"
+"	      004c946a    dec count"
 );
 // LINE 2099:
 	asm( 
@@ -8671,7 +8671,7 @@ short check_root(char * pathname) {
 );
 // LINE 2100:
 	asm( 
-"	      004c9473    movsx eax,word ptr [ebp-0Ch]"
+"	      004c9473    movsx eax,count"
 "	      004c9477    test eax,eax"
 "	      004c9479    je near ptr 004C9487h"
 );
@@ -8712,20 +8712,20 @@ void get_path_at_start(char * ref, char * ret) {
 );
 // LINE 2125:
 	asm( 
-"	      004c949e    mov eax,[ebp+0Ch]"
+"	      004c949e    mov eax,ret"
 "	      004c94a1    mov byte ptr [eax],0"
 );
 // LINE 2127:
 	asm( 
-"	      004c94a4    mov eax,[ebp+8]"
+"	      004c94a4    mov eax,ref"
 "	      004c94a7    push eax"
 "	      004c94a8    call 0056ABE0h"
 "	      004c94ad    add esp,4"
-"	      004c94b0    mov [ebp-0Ch],ax"
+"	      004c94b0    mov len,ax"
 );
 // LINE 2128:
 	asm( 
-"	      004c94b4    movsx eax,word ptr [ebp-0Ch]"
+"	      004c94b4    movsx eax,len"
 "	      004c94b8    test eax,eax"
 "	      004c94ba    jne near ptr 004C94C5h"
 );
@@ -8735,31 +8735,31 @@ void get_path_at_start(char * ref, char * ret) {
 );
 // LINE 2131:
 	asm( 
-"	      004c94c5    movsx eax,word ptr [ebp-0Ch]"
-"	      004c94c9    add eax,[ebp+8]"
+"	      004c94c5    movsx eax,len"
+"	      004c94c9    add eax,ref"
 "	      004c94cc    dec eax"
-"	      004c94cd    mov [ebp-4],eax"
+"	      004c94cd    mov s,eax"
 );
 // LINE 2132:
 	asm( 
-"	      004c94d0    mov eax,[ebp+8]"
-"	      004c94d3    cmp [ebp-4],eax"
+"	      004c94d0    mov eax,ref"
+"	      004c94d3    cmp s,eax"
 "	      004c94d6    jb near ptr 004C950Ah"
 );
 // LINE 2133:
 	asm( 
-"	      004c94dc    mov eax,[ebp-4]"
+"	      004c94dc    mov eax,s"
 "	      004c94df    movsx eax,byte ptr [eax]"
 "	      004c94e2    cmp eax,5Ch"
 "	      004c94e5    je near ptr 004C94FAh"
-"	      004c94eb    mov eax,[ebp-4]"
+"	      004c94eb    mov eax,s"
 "	      004c94ee    movsx eax,byte ptr [eax]"
 "	      004c94f1    cmp eax,3Ah"
 "	      004c94f4    jne near ptr 004C9502h"
 );
 // LINE 2134:
 	asm( 
-"	      004c94fa    inc dword ptr [ebp-4]"
+"	      004c94fa    inc s"
 );
 // LINE 2135:
 	asm( 
@@ -8767,7 +8767,7 @@ void get_path_at_start(char * ref, char * ret) {
 );
 // LINE 2137:
 	asm( 
-"	      004c9502    dec dword ptr [ebp-4]"
+"	      004c9502    dec s"
 );
 // LINE 2138:
 	asm( 
@@ -8775,8 +8775,8 @@ void get_path_at_start(char * ref, char * ret) {
 );
 // LINE 2139:
 	asm( 
-"	      004c950a    mov eax,[ebp+8]"
-"	      004c950d    cmp [ebp-4],eax"
+"	      004c950a    mov eax,ref"
+"	      004c950d    cmp s,eax"
 "	      004c9510    jae near ptr 004C951Bh"
 );
 // LINE 2140:
@@ -8785,23 +8785,23 @@ void get_path_at_start(char * ref, char * ret) {
 );
 // LINE 2142:
 	asm( 
-"	      004c951b    mov eax,[ebp-4]"
-"	      004c951e    sub eax,[ebp+8]"
-"	      004c9521    mov [ebp-8],ax"
+"	      004c951b    mov eax,s"
+"	      004c951e    sub eax,ref"
+"	      004c9521    mov off,ax"
 );
 // LINE 2143:
 	asm( 
-"	      004c9525    mov eax,[ebp+8]"
+"	      004c9525    mov eax,ref"
 "	      004c9528    push eax"
-"	      004c9529    mov eax,[ebp+0Ch]"
+"	      004c9529    mov eax,ret"
 "	      004c952c    push eax"
 "	      004c952d    call 0056CEB0h"
 "	      004c9532    add esp,8"
 );
 // LINE 2144:
 	asm( 
-"	      004c9535    movsx eax,word ptr [ebp-8]"
-"	      004c9539    mov ecx,[ebp+0Ch]"
+"	      004c9535    movsx eax,off"
+"	      004c9539    mov ecx,ret"
 "	      004c953c    mov byte ptr [eax+ecx],0"
 );
 // LINE 2145:
@@ -8831,17 +8831,17 @@ void do_uppercase(char * ref, char * res) {
 );
 // LINE 2165:
 	asm( 
-"	      004c954e    mov eax,[ebp+0Ch]"
+"	      004c954e    mov eax,res"
 "	      004c9551    mov byte ptr [eax],0"
 );
 // LINE 2167:
 	asm( 
-"	      004c9554    mov eax,[ebp+8]"
+"	      004c9554    mov eax,ref"
 "	      004c9557    push eax"
 "	      004c9558    call 0056ABE0h"
 "	      004c955d    add esp,4"
-"	      004c9560    mov [ebp-0Ch],ax"
-"	      004c9564    movsx eax,word ptr [ebp-0Ch]"
+"	      004c9560    mov len,ax"
+"	      004c9564    movsx eax,len"
 "	      004c9568    test eax,eax"
 "	      004c956a    jne near ptr 004C9575h"
 );
@@ -8851,50 +8851,50 @@ void do_uppercase(char * ref, char * res) {
 );
 // LINE 2170:
 	asm( 
-"	      004c9575    mov eax,[ebp+8]"
+"	      004c9575    mov eax,ref"
 "	      004c9578    push eax"
-"	      004c9579    mov eax,[ebp+0Ch]"
+"	      004c9579    mov eax,res"
 "	      004c957c    push eax"
 "	      004c957d    call 0056CEB0h"
 "	      004c9582    add esp,8"
 );
 // LINE 2171:
 	asm( 
-"	      004c9585    mov eax,[ebp+0Ch]"
-"	      004c9588    mov [ebp-4],eax"
+"	      004c9585    mov eax,res"
+"	      004c9588    mov s,eax"
 );
 // LINE 2173:
 	asm( 
-"	      004c958b    mov word ptr [ebp-8],0"
+"	      004c958b    mov i,0"
 "	      004c9591    jmp near ptr 004C959Ah"
-"	      004c9596    inc word ptr [ebp-8]"
-"	      004c959a    movsx eax,word ptr [ebp-8]"
-"	      004c959e    movsx ecx,word ptr [ebp-0Ch]"
+"	      004c9596    inc i"
+"	      004c959a    movsx eax,i"
+"	      004c959e    movsx ecx,len"
 "	      004c95a2    cmp eax,ecx"
 "	      004c95a4    jge near ptr 004C95DEh"
 );
 // LINE 2174:
 	asm( 
-"	      004c95aa    mov eax,[ebp-4]"
+"	      004c95aa    mov eax,s"
 "	      004c95ad    movsx eax,byte ptr [eax]"
 "	      004c95b0    cmp eax,61h"
 "	      004c95b3    jl near ptr 004C95D6h"
-"	      004c95b9    mov eax,[ebp-4]"
+"	      004c95b9    mov eax,s"
 "	      004c95bc    movsx eax,byte ptr [eax]"
 "	      004c95bf    cmp eax,7Ah"
 "	      004c95c2    jg near ptr 004C95D6h"
 );
 // LINE 2175:
 	asm( 
-"	      004c95c8    mov eax,[ebp-4]"
+"	      004c95c8    mov eax,s"
 "	      004c95cb    movsx eax,byte ptr [eax]"
 "	      004c95ce    sub eax,20h"
-"	      004c95d1    mov ecx,[ebp-4]"
+"	      004c95d1    mov ecx,s"
 "	      004c95d4    mov [ecx],al"
 );
 // LINE 2176:
 	asm( 
-"	      004c95d6    inc dword ptr [ebp-4]"
+"	      004c95d6    inc s"
 );
 // LINE 2177:
 	asm( 
@@ -8926,20 +8926,20 @@ void get_name_at_end(char * ref, char * ret) {
 );
 // LINE 2197:
 	asm( 
-"	      004c95ec    mov eax,[ebp+0Ch]"
+"	      004c95ec    mov eax,ret"
 "	      004c95ef    mov byte ptr [eax],0"
 );
 // LINE 2199:
 	asm( 
-"	      004c95f2    mov eax,[ebp+8]"
+"	      004c95f2    mov eax,ref"
 "	      004c95f5    push eax"
 "	      004c95f6    call 0056ABE0h"
 "	      004c95fb    add esp,4"
-"	      004c95fe    mov [ebp-8],ax"
+"	      004c95fe    mov len,ax"
 );
 // LINE 2200:
 	asm( 
-"	      004c9602    movsx eax,word ptr [ebp-8]"
+"	      004c9602    movsx eax,len"
 "	      004c9606    test eax,eax"
 "	      004c9608    jne near ptr 004C9613h"
 );
@@ -8949,31 +8949,31 @@ void get_name_at_end(char * ref, char * ret) {
 );
 // LINE 2203:
 	asm( 
-"	      004c9613    movsx eax,word ptr [ebp-8]"
-"	      004c9617    add eax,[ebp+8]"
+"	      004c9613    movsx eax,len"
+"	      004c9617    add eax,ref"
 "	      004c961a    dec eax"
-"	      004c961b    mov [ebp-4],eax"
+"	      004c961b    mov s,eax"
 );
 // LINE 2205:
 	asm( 
-"	      004c961e    mov eax,[ebp+8]"
-"	      004c9621    cmp [ebp-4],eax"
+"	      004c961e    mov eax,ref"
+"	      004c9621    cmp s,eax"
 "	      004c9624    jb near ptr 004C9658h"
 );
 // LINE 2206:
 	asm( 
-"	      004c962a    mov eax,[ebp-4]"
+"	      004c962a    mov eax,s"
 "	      004c962d    movsx eax,byte ptr [eax]"
 "	      004c9630    cmp eax,5Ch"
 "	      004c9633    je near ptr 004C9648h"
-"	      004c9639    mov eax,[ebp-4]"
+"	      004c9639    mov eax,s"
 "	      004c963c    movsx eax,byte ptr [eax]"
 "	      004c963f    cmp eax,3Ah"
 "	      004c9642    jne near ptr 004C9650h"
 );
 // LINE 2207:
 	asm( 
-"	      004c9648    inc dword ptr [ebp-4]"
+"	      004c9648    inc s"
 );
 // LINE 2208:
 	asm( 
@@ -8981,7 +8981,7 @@ void get_name_at_end(char * ref, char * ret) {
 );
 // LINE 2210:
 	asm( 
-"	      004c9650    dec dword ptr [ebp-4]"
+"	      004c9650    dec s"
 );
 // LINE 2211:
 	asm( 
@@ -8989,18 +8989,18 @@ void get_name_at_end(char * ref, char * ret) {
 );
 // LINE 2212:
 	asm( 
-"	      004c9658    mov eax,[ebp+8]"
-"	      004c965b    cmp [ebp-4],eax"
+"	      004c9658    mov eax,ref"
+"	      004c965b    cmp s,eax"
 "	      004c965e    jae near ptr 004C966Ch"
 );
 // LINE 2213:
 	asm( 
-"	      004c9664    inc dword ptr [ebp-4]"
+"	      004c9664    inc s"
 );
 // LINE 2214:
 	asm( 
 "	      004c9667    jmp near ptr 004C967Fh"
-"	      004c966c    mov eax,[ebp-4]"
+"	      004c966c    mov eax,s"
 "	      004c966f    movsx eax,byte ptr [eax]"
 "	      004c9672    test eax,eax"
 "	      004c9674    jne near ptr 004C967Fh"
@@ -9011,9 +9011,9 @@ void get_name_at_end(char * ref, char * ret) {
 );
 // LINE 2217:
 	asm( 
-"	      004c967f    mov eax,[ebp-4]"
+"	      004c967f    mov eax,s"
 "	      004c9682    push eax"
-"	      004c9683    mov eax,[ebp+0Ch]"
+"	      004c9683    mov eax,ret"
 "	      004c9686    push eax"
 "	      004c9687    call 0056CEB0h"
 "	      004c968c    add esp,8"
@@ -9044,15 +9044,15 @@ void strip_extension(char * ref) {
 );
 // LINE 2237:
 	asm( 
-"	      004c969d    mov eax,[ebp+8]"
+"	      004c969d    mov eax,ref"
 "	      004c96a0    push eax"
 "	      004c96a1    call 0056ABE0h"
 "	      004c96a6    add esp,4"
-"	      004c96a9    mov [ebp-8],ax"
+"	      004c96a9    mov len,ax"
 );
 // LINE 2238:
 	asm( 
-"	      004c96ad    movsx eax,word ptr [ebp-8]"
+"	      004c96ad    movsx eax,len"
 "	      004c96b1    test eax,eax"
 "	      004c96b3    jne near ptr 004C96BEh"
 );
@@ -9062,27 +9062,27 @@ void strip_extension(char * ref) {
 );
 // LINE 2241:
 	asm( 
-"	      004c96be    movsx eax,word ptr [ebp-8]"
-"	      004c96c2    add eax,[ebp+8]"
+"	      004c96be    movsx eax,len"
+"	      004c96c2    add eax,ref"
 "	      004c96c5    dec eax"
-"	      004c96c6    mov [ebp-4],eax"
+"	      004c96c6    mov s,eax"
 );
 // LINE 2242:
 	asm( 
-"	      004c96c9    mov eax,[ebp+8]"
-"	      004c96cc    cmp [ebp-4],eax"
+"	      004c96c9    mov eax,ref"
+"	      004c96cc    cmp s,eax"
 "	      004c96cf    je near ptr 004C96F7h"
 );
 // LINE 2243:
 	asm( 
-"	      004c96d5    mov eax,[ebp-4]"
+"	      004c96d5    mov eax,s"
 "	      004c96d8    movsx eax,byte ptr [eax]"
 "	      004c96db    cmp eax,2Eh"
 "	      004c96de    jne near ptr 004C96EFh"
 );
 // LINE 2244:
 	asm( 
-"	      004c96e4    mov eax,[ebp-4]"
+"	      004c96e4    mov eax,s"
 "	      004c96e7    mov byte ptr [eax],0"
 );
 // LINE 2245:
@@ -9091,7 +9091,7 @@ void strip_extension(char * ref) {
 );
 // LINE 2247:
 	asm( 
-"	      004c96ef    dec dword ptr [ebp-4]"
+"	      004c96ef    dec s"
 );
 // LINE 2248:
 	asm( 
@@ -9124,41 +9124,41 @@ void check_extension(char * pathname, char * ext) {
 );
 // LINE 2271:
 	asm( 
-"	      004c9705    mov byte ptr [ebp-44h],0"
+"	      004c9705    mov nameonly[0],0"
 );
 // LINE 2272:
 	asm( 
-"	      004c9709    lea eax,[ebp-44h]"
+"	      004c9709    lea eax,nameonly[0]"
 "	      004c970c    push eax"
-"	      004c970d    mov eax,[ebp+8]"
+"	      004c970d    mov eax,pathname"
 "	      004c9710    push eax"
 "	      004c9711    call 004C95E3h"
 "	      004c9716    add esp,8"
 );
 // LINE 2274:
 	asm( 
-"	      004c9719    lea eax,[ebp-44h]"
+"	      004c9719    lea eax,nameonly[0]"
 "	      004c971c    push eax"
 "	      004c971d    call 0056ABE0h"
 "	      004c9722    add esp,4"
-"	      004c9725    mov [ebp-48h],ax"
-"	      004c9729    movsx eax,word ptr [ebp-48h]"
+"	      004c9725    mov len,ax"
+"	      004c9729    movsx eax,len"
 "	      004c972d    test eax,eax"
 "	      004c972f    jne near ptr 004C975Bh"
 );
 // LINE 2275:
 	asm( 
 "	      004c9735    push 59B394h"
-"	      004c973a    mov eax,[ebp+8]"
+"	      004c973a    mov eax,pathname"
 "	      004c973d    push eax"
 "	      004c973e    call 0056CEC0h"
 "	      004c9743    add esp,8"
 );
 // LINE 2276:
 	asm( 
-"	      004c9746    mov eax,[ebp+0Ch]"
+"	      004c9746    mov eax,ext"
 "	      004c9749    push eax"
-"	      004c974a    mov eax,[ebp+8]"
+"	      004c974a    mov eax,pathname"
 "	      004c974d    push eax"
 "	      004c974e    call 0056CEC0h"
 "	      004c9753    add esp,8"
@@ -9169,20 +9169,20 @@ void check_extension(char * pathname, char * ext) {
 );
 // LINE 2280:
 	asm( 
-"	      004c975b    movsx eax,word ptr [ebp-48h]"
+"	      004c975b    movsx eax,len"
 "	      004c975f    lea eax,[ebp+eax-44h]"
 "	      004c9763    dec eax"
-"	      004c9764    mov [ebp-4],eax"
+"	      004c9764    mov s,eax"
 );
 // LINE 2282:
 	asm( 
-"	      004c9767    movsx eax,word ptr [ebp-48h]"
+"	      004c9767    movsx eax,len"
 "	      004c976b    test eax,eax"
 "	      004c976d    je near ptr 004C9793h"
 );
 // LINE 2283:
 	asm( 
-"	      004c9773    mov eax,[ebp-4]"
+"	      004c9773    mov eax,s"
 "	      004c9776    movsx eax,byte ptr [eax]"
 "	      004c9779    cmp eax,2Eh"
 "	      004c977c    jne near ptr 004C9787h"
@@ -9193,11 +9193,11 @@ void check_extension(char * pathname, char * ext) {
 );
 // LINE 2285:
 	asm( 
-"	      004c9787    dec dword ptr [ebp-4]"
+"	      004c9787    dec s"
 );
 // LINE 2286:
 	asm( 
-"	      004c978a    dec word ptr [ebp-48h]"
+"	      004c978a    dec len"
 );
 // LINE 2287:
 	asm( 
@@ -9205,20 +9205,20 @@ void check_extension(char * pathname, char * ext) {
 );
 // LINE 2288:
 	asm( 
-"	      004c9793    mov eax,[ebp-4]"
+"	      004c9793    mov eax,s"
 "	      004c9796    movsx eax,byte ptr [eax]"
 "	      004c9799    cmp eax,2Eh"
 "	      004c979c    jne near ptr 004C980Fh"
 );
 // LINE 2289:
 	asm( 
-"	      004c97a2    inc dword ptr [ebp-4]"
+"	      004c97a2    inc s"
 );
 // LINE 2290:
 	asm( 
-"	      004c97a5    mov eax,[ebp+0Ch]"
+"	      004c97a5    mov eax,ext"
 "	      004c97a8    push eax"
-"	      004c97a9    mov eax,[ebp-4]"
+"	      004c97a9    mov eax,s"
 "	      004c97ac    push eax"
 "	      004c97ad    call 0056CE20h"
 "	      004c97b2    add esp,8"
@@ -9231,37 +9231,37 @@ void check_extension(char * pathname, char * ext) {
 );
 // LINE 2292:
 	asm( 
-"	      004c97c2    mov eax,[ebp+8]"
+"	      004c97c2    mov eax,pathname"
 "	      004c97c5    push eax"
 "	      004c97c6    call 0056ABE0h"
 "	      004c97cb    add esp,4"
-"	      004c97ce    mov ecx,[ebp+8]"
+"	      004c97ce    mov ecx,pathname"
 "	      004c97d1    add ecx,eax"
 "	      004c97d3    dec ecx"
-"	      004c97d4    mov [ebp-4],ecx"
+"	      004c97d4    mov s,ecx"
 );
 // LINE 2293:
 	asm( 
-"	      004c97d7    mov eax,[ebp-4]"
+"	      004c97d7    mov eax,s"
 "	      004c97da    movsx eax,byte ptr [eax]"
 "	      004c97dd    cmp eax,2Eh"
 "	      004c97e0    je near ptr 004C97EEh"
 );
 // LINE 2294:
 	asm( 
-"	      004c97e6    dec dword ptr [ebp-4]"
+"	      004c97e6    dec s"
 "	      004c97e9    jmp near ptr 004C97D7h"
 );
 // LINE 2295:
 	asm( 
-"	      004c97ee    mov eax,[ebp-4]"
+"	      004c97ee    mov eax,s"
 "	      004c97f1    mov byte ptr [eax+1],0"
 );
 // LINE 2296:
 	asm( 
-"	      004c97f5    mov eax,[ebp+0Ch]"
+"	      004c97f5    mov eax,ext"
 "	      004c97f8    push eax"
-"	      004c97f9    mov eax,[ebp+8]"
+"	      004c97f9    mov eax,pathname"
 "	      004c97fc    push eax"
 "	      004c97fd    call 0056CEC0h"
 "	      004c9802    add esp,8"
@@ -9277,16 +9277,16 @@ void check_extension(char * pathname, char * ext) {
 // LINE 2300:
 	asm( 
 "	      004c980f    push 59B3A0h"
-"	      004c9814    mov eax,[ebp+8]"
+"	      004c9814    mov eax,pathname"
 "	      004c9817    push eax"
 "	      004c9818    call 0056CEC0h"
 "	      004c981d    add esp,8"
 );
 // LINE 2301:
 	asm( 
-"	      004c9820    mov eax,[ebp+0Ch]"
+"	      004c9820    mov eax,ext"
 "	      004c9823    push eax"
-"	      004c9824    mov eax,[ebp+8]"
+"	      004c9824    mov eax,pathname"
 "	      004c9827    push eax"
 "	      004c9828    call 0056CEC0h"
 "	      004c982d    add esp,8"
@@ -9317,15 +9317,15 @@ short check_file_exist(char * filename) {
 // LINE 2321:
 	asm( 
 "	      004c983e    push 59B3A4h"
-"	      004c9843    mov eax,[ebp+8]"
+"	      004c9843    mov eax,filename"
 "	      004c9846    push eax"
 "	      004c9847    call 0056D910h"
 "	      004c984c    add esp,8"
-"	      004c984f    mov [ebp-4],eax"
+"	      004c984f    mov fileNum,eax"
 );
 // LINE 2322:
 	asm( 
-"	      004c9852    cmp dword ptr [ebp-4],0"
+"	      004c9852    cmp fileNum,0"
 "	      004c9856    jne near ptr 004C9864h"
 );
 // LINE 2323:
@@ -9335,7 +9335,7 @@ short check_file_exist(char * filename) {
 );
 // LINE 2324:
 	asm( 
-"	      004c9864    mov eax,[ebp-4]"
+"	      004c9864    mov eax,fileNum"
 "	      004c9867    push eax"
 "	      004c9868    call 0056D120h"
 "	      004c986d    add esp,4"
@@ -9373,12 +9373,12 @@ void remove_illegals(char * ref) {
 );
 // LINE 2349:
 	asm( 
-"	      004c988a    mov eax,[ebp+8]"
+"	      004c988a    mov eax,ref"
 "	      004c988d    push eax"
 "	      004c988e    call 0056ABE0h"
 "	      004c9893    add esp,4"
-"	      004c9896    mov [ebp-110h],ax"
-"	      004c989d    movsx eax,word ptr [ebp-110h]"
+"	      004c9896    mov len,ax"
+"	      004c989d    movsx eax,len"
 "	      004c98a4    test eax,eax"
 "	      004c98a6    jne near ptr 004C98B1h"
 );
@@ -9388,107 +9388,107 @@ void remove_illegals(char * ref) {
 );
 // LINE 2352:
 	asm( 
-"	      004c98b1    lea eax,[ebp-10Ch]"
-"	      004c98b7    mov [ebp-4],eax"
+"	      004c98b1    lea eax,temp[0]"
+"	      004c98b7    mov r,eax"
 );
 // LINE 2353:
 	asm( 
-"	      004c98ba    mov eax,[ebp+8]"
-"	      004c98bd    mov [ebp-8],eax"
+"	      004c98ba    mov eax,ref"
+"	      004c98bd    mov s,eax"
 );
 // LINE 2355:
 	asm( 
-"	      004c98c0    movsx eax,word ptr [ebp-110h]"
+"	      004c98c0    movsx eax,len"
 "	      004c98c7    test eax,eax"
 "	      004c98c9    je near ptr 004C9A10h"
 );
 // LINE 2362:
 	asm( 
-"	      004c98cf    mov eax,[ebp-8]"
+"	      004c98cf    mov eax,s"
 "	      004c98d2    movsx eax,byte ptr [eax]"
 "	      004c98d5    cmp eax,5Ch"
 "	      004c98d8    je near ptr 004C9A01h"
-"	      004c98de    mov eax,[ebp-8]"
+"	      004c98de    mov eax,s"
 "	      004c98e1    movsx eax,byte ptr [eax]"
 "	      004c98e4    cmp eax,2Fh"
 "	      004c98e7    je near ptr 004C9A01h"
-"	      004c98ed    mov eax,[ebp-8]"
+"	      004c98ed    mov eax,s"
 "	      004c98f0    movsx eax,byte ptr [eax]"
 "	      004c98f3    cmp eax,28h"
 "	      004c98f6    je near ptr 004C9A01h"
-"	      004c98fc    mov eax,[ebp-8]"
+"	      004c98fc    mov eax,s"
 "	      004c98ff    movsx eax,byte ptr [eax]"
 "	      004c9902    cmp eax,29h"
 "	      004c9905    je near ptr 004C9A01h"
-"	      004c990b    mov eax,[ebp-8]"
+"	      004c990b    mov eax,s"
 "	      004c990e    movsx eax,byte ptr [eax]"
 "	      004c9911    cmp eax,7Bh"
 "	      004c9914    je near ptr 004C9A01h"
-"	      004c991a    mov eax,[ebp-8]"
+"	      004c991a    mov eax,s"
 "	      004c991d    movsx eax,byte ptr [eax]"
 "	      004c9920    cmp eax,7Dh"
 "	      004c9923    je near ptr 004C9A01h"
-"	      004c9929    mov eax,[ebp-8]"
+"	      004c9929    mov eax,s"
 "	      004c992c    movsx eax,byte ptr [eax]"
 "	      004c992f    cmp eax,2Eh"
 "	      004c9932    je near ptr 004C9A01h"
-"	      004c9938    mov eax,[ebp-8]"
+"	      004c9938    mov eax,s"
 "	      004c993b    movsx eax,byte ptr [eax]"
 "	      004c993e    cmp eax,3Ah"
 "	      004c9941    je near ptr 004C9A01h"
-"	      004c9947    mov eax,[ebp-8]"
+"	      004c9947    mov eax,s"
 "	      004c994a    movsx eax,byte ptr [eax]"
 "	      004c994d    cmp eax,3Bh"
 "	      004c9950    je near ptr 004C9A01h"
-"	      004c9956    mov eax,[ebp-8]"
+"	      004c9956    mov eax,s"
 "	      004c9959    movsx eax,byte ptr [eax]"
 "	      004c995c    cmp eax,2Ah"
 "	      004c995f    je near ptr 004C9A01h"
-"	      004c9965    mov eax,[ebp-8]"
+"	      004c9965    mov eax,s"
 "	      004c9968    movsx eax,byte ptr [eax]"
 "	      004c996b    cmp eax,3Fh"
 "	      004c996e    je near ptr 004C9A01h"
-"	      004c9974    mov eax,[ebp-8]"
+"	      004c9974    mov eax,s"
 "	      004c9977    movsx eax,byte ptr [eax]"
 "	      004c997a    cmp eax,27h"
 "	      004c997d    je near ptr 004C9A01h"
-"	      004c9983    mov eax,[ebp-8]"
+"	      004c9983    mov eax,s"
 "	      004c9986    movsx eax,byte ptr [eax]"
 "	      004c9989    cmp eax,22h"
 "	      004c998c    je near ptr 004C9A01h"
-"	      004c9992    mov eax,[ebp-8]"
+"	      004c9992    mov eax,s"
 "	      004c9995    movsx eax,byte ptr [eax]"
 "	      004c9998    cmp eax,2Ch"
 "	      004c999b    je near ptr 004C9A01h"
-"	      004c99a1    mov eax,[ebp-8]"
+"	      004c99a1    mov eax,s"
 "	      004c99a4    movsx eax,byte ptr [eax]"
 "	      004c99a7    cmp eax,21h"
 "	      004c99aa    je near ptr 004C9A01h"
-"	      004c99b0    mov eax,[ebp-8]"
+"	      004c99b0    mov eax,s"
 "	      004c99b3    movsx eax,byte ptr [eax]"
 "	      004c99b6    cmp eax,60h"
 "	      004c99b9    je near ptr 004C9A01h"
-"	      004c99bf    mov eax,[ebp-8]"
+"	      004c99bf    mov eax,s"
 "	      004c99c2    movsx eax,byte ptr [eax]"
 "	      004c99c5    cmp eax,5Bh"
 "	      004c99c8    je near ptr 004C9A01h"
-"	      004c99ce    mov eax,[ebp-8]"
+"	      004c99ce    mov eax,s"
 "	      004c99d1    movsx eax,byte ptr [eax]"
 "	      004c99d4    cmp eax,5Dh"
 "	      004c99d7    je near ptr 004C9A01h"
-"	      004c99dd    mov eax,[ebp-8]"
+"	      004c99dd    mov eax,s"
 "	      004c99e0    movsx eax,byte ptr [eax]"
 "	      004c99e3    cmp eax,5Fh"
 "	      004c99e6    je near ptr 004C9A01h"
 );
 // LINE 2364:
 	asm( 
-"	      004c99ec    mov eax,[ebp-8]"
+"	      004c99ec    mov eax,s"
 "	      004c99ef    mov al,[eax]"
-"	      004c99f1    mov ecx,[ebp-4]"
+"	      004c99f1    mov ecx,r"
 "	      004c99f4    mov [ecx],al"
-"	      004c99f6    inc dword ptr [ebp-8]"
-"	      004c99f9    inc dword ptr [ebp-4]"
+"	      004c99f6    inc s"
+"	      004c99f9    inc r"
 );
 // LINE 2365:
 	asm( 
@@ -9496,11 +9496,11 @@ void remove_illegals(char * ref) {
 );
 // LINE 2366:
 	asm( 
-"	      004c9a01    inc dword ptr [ebp-8]"
+"	      004c9a01    inc s"
 );
 // LINE 2367:
 	asm( 
-"	      004c9a04    dec word ptr [ebp-110h]"
+"	      004c9a04    dec len"
 );
 // LINE 2368:
 	asm( 
@@ -9508,14 +9508,14 @@ void remove_illegals(char * ref) {
 );
 // LINE 2369:
 	asm( 
-"	      004c9a10    mov eax,[ebp-4]"
+"	      004c9a10    mov eax,r"
 "	      004c9a13    mov byte ptr [eax],0"
 );
 // LINE 2370:
 	asm( 
-"	      004c9a16    lea eax,[ebp-10Ch]"
+"	      004c9a16    lea eax,temp[0]"
 "	      004c9a1c    push eax"
-"	      004c9a1d    mov eax,[ebp+8]"
+"	      004c9a1d    mov eax,ref"
 "	      004c9a20    push eax"
 "	      004c9a21    call 0056CEB0h"
 "	      004c9a26    add esp,8"
@@ -9548,12 +9548,12 @@ void compress_spaces(char * ref) {
 );
 // LINE 2390:
 	asm( 
-"	      004c9a3a    mov eax,[ebp+8]"
+"	      004c9a3a    mov eax,ref"
 "	      004c9a3d    push eax"
 "	      004c9a3e    call 0056ABE0h"
 "	      004c9a43    add esp,4"
-"	      004c9a46    mov [ebp-110h],ax"
-"	      004c9a4d    movsx eax,word ptr [ebp-110h]"
+"	      004c9a46    mov len,ax"
+"	      004c9a4d    movsx eax,len"
 "	      004c9a54    test eax,eax"
 "	      004c9a56    jne near ptr 004C9A61h"
 );
@@ -9563,35 +9563,35 @@ void compress_spaces(char * ref) {
 );
 // LINE 2393:
 	asm( 
-"	      004c9a61    lea eax,[ebp-10Ch]"
-"	      004c9a67    mov [ebp-4],eax"
+"	      004c9a61    lea eax,temp[0]"
+"	      004c9a67    mov r,eax"
 );
 // LINE 2394:
 	asm( 
-"	      004c9a6a    mov eax,[ebp+8]"
-"	      004c9a6d    mov [ebp-8],eax"
+"	      004c9a6a    mov eax,ref"
+"	      004c9a6d    mov s,eax"
 );
 // LINE 2396:
 	asm( 
-"	      004c9a70    movsx eax,word ptr [ebp-110h]"
+"	      004c9a70    movsx eax,len"
 "	      004c9a77    test eax,eax"
 "	      004c9a79    je near ptr 004C9AB2h"
 );
 // LINE 2397:
 	asm( 
-"	      004c9a7f    mov eax,[ebp-8]"
+"	      004c9a7f    mov eax,s"
 "	      004c9a82    movsx eax,byte ptr [eax]"
 "	      004c9a85    cmp eax,20h"
 "	      004c9a88    je near ptr 004C9AA3h"
 );
 // LINE 2398:
 	asm( 
-"	      004c9a8e    mov eax,[ebp-8]"
+"	      004c9a8e    mov eax,s"
 "	      004c9a91    mov al,[eax]"
-"	      004c9a93    mov ecx,[ebp-4]"
+"	      004c9a93    mov ecx,r"
 "	      004c9a96    mov [ecx],al"
-"	      004c9a98    inc dword ptr [ebp-8]"
-"	      004c9a9b    inc dword ptr [ebp-4]"
+"	      004c9a98    inc s"
+"	      004c9a9b    inc r"
 );
 // LINE 2399:
 	asm( 
@@ -9599,11 +9599,11 @@ void compress_spaces(char * ref) {
 );
 // LINE 2400:
 	asm( 
-"	      004c9aa3    inc dword ptr [ebp-8]"
+"	      004c9aa3    inc s"
 );
 // LINE 2401:
 	asm( 
-"	      004c9aa6    dec word ptr [ebp-110h]"
+"	      004c9aa6    dec len"
 );
 // LINE 2402:
 	asm( 
@@ -9611,14 +9611,14 @@ void compress_spaces(char * ref) {
 );
 // LINE 2403:
 	asm( 
-"	      004c9ab2    mov eax,[ebp-4]"
+"	      004c9ab2    mov eax,r"
 "	      004c9ab5    mov byte ptr [eax],0"
 );
 // LINE 2404:
 	asm( 
-"	      004c9ab8    lea eax,[ebp-10Ch]"
+"	      004c9ab8    lea eax,temp[0]"
 "	      004c9abe    push eax"
-"	      004c9abf    mov eax,[ebp+8]"
+"	      004c9abf    mov eax,ref"
 "	      004c9ac2    push eax"
 "	      004c9ac3    call 0056CEB0h"
 "	      004c9ac8    add esp,8"

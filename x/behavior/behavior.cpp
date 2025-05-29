@@ -15,69 +15,69 @@ void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NR
 "	      00560296    push ebx"
 "	      00560297    push esi"
 "	      00560298    push edi"
-"	      00560299    mov [ebp-4],ecx"
-"	      0056029c    mov eax,[ebp-4]"
+"	      00560299    mov this,ecx"
+"	      0056029c    mov eax,this"
 "	      0056029f    mov dword ptr [eax+0Ch],0"
-"	      005602a6    mov eax,[ebp-4]"
+"	      005602a6    mov eax,this"
 "	      005602a9    mov dword ptr [eax+10h],0"
-"	      005602b0    mov eax,[ebp-4]"
+"	      005602b0    mov eax,this"
 "	      005602b3    mov dword ptr [eax],5936D8h"
 );
 // LINE 17:
 	asm( 
-"	      005602b9    mov eax,[ebp+8]"
-"	      005602bc    mov ecx,[ebp-4]"
+"	      005602b9    mov eax,lang"
+"	      005602bc    mov ecx,this"
 "	      005602bf    mov [ecx+14h],eax"
 );
 // LINE 18:
 	asm( 
-"	      005602c2    mov eax,[ebp+0Ch]"
-"	      005602c5    mov ecx,[ebp-4]"
+"	      005602c2    mov eax,globFile"
+"	      005602c5    mov ecx,this"
 "	      005602c8    mov [ecx+4],eax"
 );
 // LINE 19:
 	asm( 
-"	      005602cb    mov eax,[ebp+10h]"
-"	      005602ce    mov ecx,[ebp-4]"
+"	      005602cb    mov eax,privFile"
+"	      005602ce    mov ecx,this"
 "	      005602d1    mov [ecx+8],eax"
 );
 // LINE 20:
 	asm( 
-"	      005602d4    mov eax,[ebp-4]"
-"	      005602d7    mov ecx,[ebp-4]"
+"	      005602d4    mov eax,this"
+"	      005602d7    mov ecx,this"
 "	      005602da    mov ecx,[ecx+14h]"
 "	      005602dd    mov edx,[ecx]"
 "	      005602df    mov ecx,[eax+14h]"
 "	      005602e2    call dword ptr [edx+10h]"
-"	      005602e5    mov ecx,[ebp-4]"
+"	      005602e5    mov ecx,this"
 "	      005602e8    mov [ecx+18h],eax"
 );
 // LINE 23:
 	asm( 
-"	      005602eb    mov eax,[ebp-4]"
+"	      005602eb    mov eax,this"
 "	      005602ee    mov eax,[eax+18h]"
 "	      005602f1    push eax"
 "	      005602f2    push 42484156h"
-"	      005602f7    mov ecx,[ebp+0Ch]"
+"	      005602f7    mov ecx,globFile"
 "	      005602fa    call 00499EF0h"
-"	      005602ff    mov ecx,[ebp-4]"
+"	      005602ff    mov ecx,this"
 "	      00560302    mov [ecx+0Ch],eax"
 );
 // LINE 24:
 	asm( 
-"	      00560305    mov eax,[ebp-4]"
+"	      00560305    mov eax,this"
 "	      00560308    mov eax,[eax+18h]"
 "	      0056030b    push eax"
 "	      0056030c    push 42484156h"
-"	      00560311    mov ecx,[ebp+10h]"
+"	      00560311    mov ecx,privFile"
 "	      00560314    call 00499EF0h"
-"	      00560319    mov ecx,[ebp-4]"
+"	      00560319    mov ecx,this"
 "	      0056031c    mov [ecx+10h],eax"
 );
 // LINE 30:
 	asm( 
 "	      0056031f    jmp near ptr 00560324h"
-"	      00560324    mov eax,[ebp-4]"
+"	      00560324    mov eax,this"
 "	      00560327    pop edi"
 "	      00560328    pop esi"
 "	      00560329    pop ebx"
@@ -96,8 +96,8 @@ void Behavior::~Behavior() {
 "	      00560334    push ebx"
 "	      00560335    push esi"
 "	      00560336    push edi"
-"	      00560337    mov [ebp-4],ecx"
-"	      0056033a    mov eax,[ebp-4]"
+"	      00560337    mov this,ecx"
+"	      0056033a    mov eax,this"
 "	      0056033d    mov dword ptr [eax],5936D8h"
 );
 // LINE 34:
@@ -121,11 +121,11 @@ class ResFile* Behavior::GetPrivFile() {
 "	      00560353    push ebx"
 "	      00560354    push esi"
 "	      00560355    push edi"
-"	      00560356    mov [ebp-4],ecx"
+"	      00560356    mov this,ecx"
 );
 // LINE 39:
 	asm( 
-"	      00560359    mov eax,[ebp-4]"
+"	      00560359    mov eax,this"
 "	      0056035c    mov eax,[eax+8]"
 "	      0056035f    jmp near ptr 00560364h"
 );
@@ -149,11 +149,11 @@ class ResFile* Behavior::GetGlobFile() {
 "	      0056036f    push ebx"
 "	      00560370    push esi"
 "	      00560371    push edi"
-"	      00560372    mov [ebp-4],ecx"
+"	      00560372    mov this,ecx"
 );
 // LINE 44:
 	asm( 
-"	      00560375    mov eax,[ebp-4]"
+"	      00560375    mov eax,this"
 "	      00560378    mov eax,[eax+4]"
 "	      0056037b    jmp near ptr 00560380h"
 );
@@ -182,28 +182,28 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(s
 );
 // LINE 49:
 	asm( 
-"	      0056038e    mov eax,[ebp+8]"
+"	      0056038e    mov eax,tree"
 "	      00560391    push eax"
 "	      00560392    call 0056695Bh"
 "	      00560397    add esp,4"
 );
 // LINE 50:
 	asm( 
-"	      0056039a    mov word ptr [ebp-4],0"
+"	      0056039a    mov count,0"
 "	      005603a0    jmp near ptr 005603A9h"
-"	      005603a5    inc word ptr [ebp-4]"
-"	      005603a9    mov eax,[ebp+8]"
+"	      005603a5    inc count"
+"	      005603a9    mov eax,tree"
 "	      005603ac    movsx eax,word ptr [eax]"
-"	      005603af    movsx ecx,word ptr [ebp-4]"
+"	      005603af    movsx ecx,count"
 "	      005603b3    cmp eax,ecx"
 "	      005603b5    jle near ptr 00560400h"
 );
 // LINE 51:
 	asm( 
-"	      005603bb    movsx eax,word ptr [ebp-4]"
+"	      005603bb    movsx eax,count"
 "	      005603bf    lea eax,[eax+eax*2]"
 "	      005603c2    shl eax,2"
-"	      005603c5    add eax,[ebp+8]"
+"	      005603c5    add eax,tree"
 "	      005603c8    add eax,2"
 "	      005603cb    push eax"
 "	      005603cc    call 0056695Bh"
@@ -211,18 +211,18 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(s
 );
 // LINE 52:
 	asm( 
-"	      005603d4    movsx eax,word ptr [ebp-4]"
+"	      005603d4    movsx eax,count"
 "	      005603d8    lea eax,[eax+eax*2]"
 "	      005603db    shl eax,2"
-"	      005603de    add eax,[ebp+8]"
+"	      005603de    add eax,tree"
 "	      005603e1    add eax,6"
 "	      005603e4    push eax"
-"	      005603e5    movsx eax,word ptr [ebp-4]"
+"	      005603e5    movsx eax,count"
 "	      005603e9    lea eax,[eax+eax*2]"
-"	      005603ec    mov ecx,[ebp+8]"
+"	      005603ec    mov ecx,tree"
 "	      005603ef    mov ax,[ecx+eax*4+2]"
 "	      005603f4    push eax"
-"	      005603f5    call dword ptr [ebp+10h]"
+"	      005603f5    call paramswizzler"
 "	      005603f8    add esp,8"
 );
 // LINE 53:
@@ -252,21 +252,21 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 "	      00560410    push ebx"
 "	      00560411    push esi"
 "	      00560412    push edi"
-"	      00560413    mov [ebp-30h],ecx"
+"	      00560413    mov this,ecx"
 );
 // LINE 74:
 	asm( 
-"	      00560416    movsx eax,word ptr [ebp+8]"
+"	      00560416    movsx eax,treeID"
 "	      0056041a    cmp eax,0FFFh"
 "	      0056041f    jge near ptr 005604B7h"
 );
 // LINE 75:
 	asm( 
-"	      00560425    mov eax,[ebp-30h]"
+"	      00560425    mov eax,this"
 "	      00560428    mov eax,[eax+0Ch]"
 "	      0056042b    mov eax,[eax]"
 "	      0056042d    mov [ebp-0Ch],eax"
-"	      00560430    mov eax,[ebp-30h]"
+"	      00560430    mov eax,this"
 "	      00560433    mov eax,[eax+0Ch]"
 "	      00560436    mov eax,[eax+4]"
 "	      00560439    mov [ebp-10h],eax"
@@ -276,7 +276,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 "	      00560448    cmp dword ptr [ebp-0Ch],0"
 "	      0056044c    jle near ptr 00560471h"
 "	      00560452    mov eax,[ebp-10h]"
-"	      00560455    movsx ecx,word ptr [ebp+8]"
+"	      00560455    movsx ecx,treeID"
 "	      00560459    cmp [eax],ecx"
 "	      0056045b    jne near ptr 0056046Ch"
 "	      00560461    mov eax,[ebp-10h]"
@@ -291,13 +291,13 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 "	      00560487    je near ptr 005604A0h"
 "	      0056048d    mov eax,[ebp-8]"
 "	      00560490    mov eax,[eax+8]"
-"	      00560493    mov [ebp-4],eax"
+"	      00560493    mov tree,eax"
 "	      00560496    jmp near ptr 005604B2h"
 "	      0056049b    jmp near ptr 005604ACh"
-"	      005604a0    mov dword ptr [ebp-4],0"
+"	      005604a0    mov tree,0"
 "	      005604a7    jmp near ptr 005604B2h"
 "	      005604ac    mov eax,[ebp-18h]"
-"	      005604af    mov [ebp-4],eax"
+"	      005604af    mov tree,eax"
 );
 // LINE 77:
 	asm( 
@@ -305,11 +305,11 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 );
 // LINE 78:
 	asm( 
-"	      005604b7    mov eax,[ebp-30h]"
+"	      005604b7    mov eax,this"
 "	      005604ba    mov eax,[eax+10h]"
 "	      005604bd    mov eax,[eax]"
 "	      005604bf    mov [ebp-20h],eax"
-"	      005604c2    mov eax,[ebp-30h]"
+"	      005604c2    mov eax,this"
 "	      005604c5    mov eax,[eax+10h]"
 "	      005604c8    mov eax,[eax+4]"
 "	      005604cb    mov [ebp-24h],eax"
@@ -319,7 +319,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 "	      005604da    cmp dword ptr [ebp-20h],0"
 "	      005604de    jle near ptr 00560503h"
 "	      005604e4    mov eax,[ebp-24h]"
-"	      005604e7    movsx ecx,word ptr [ebp+8]"
+"	      005604e7    movsx ecx,treeID"
 "	      005604eb    cmp [eax],ecx"
 "	      005604ed    jne near ptr 005604FEh"
 "	      005604f3    mov eax,[ebp-24h]"
@@ -334,17 +334,17 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 "	      00560519    je near ptr 00560532h"
 "	      0056051f    mov eax,[ebp-1Ch]"
 "	      00560522    mov eax,[eax+8]"
-"	      00560525    mov [ebp-4],eax"
+"	      00560525    mov tree,eax"
 "	      00560528    jmp near ptr 00560544h"
 "	      0056052d    jmp near ptr 0056053Eh"
-"	      00560532    mov dword ptr [ebp-4],0"
+"	      00560532    mov tree,0"
 "	      00560539    jmp near ptr 00560544h"
 "	      0056053e    mov eax,[ebp-2Ch]"
-"	      00560541    mov [ebp-4],eax"
+"	      00560541    mov tree,eax"
 );
 // LINE 81:
 	asm( 
-"	      00560544    cmp dword ptr [ebp-4],0"
+"	      00560544    cmp tree,0"
 "	      00560548    jne near ptr 00560567h"
 "	      0056054e    push 8C085h"
 "	      00560553    push 5BE510h"
@@ -355,9 +355,9 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 );
 // LINE 82:
 	asm( 
-"	      00560567    mov eax,[ebp-4]"
+"	      00560567    mov eax,tree"
 "	      0056056a    movsx eax,word ptr [eax]"
-"	      0056056d    movsx ecx,word ptr [ebp+0Ch]"
+"	      0056056d    movsx ecx,nodeNum"
 "	      00560571    cmp eax,ecx"
 "	      00560573    jg near ptr 00560592h"
 "	      00560579    push 8C085h"
@@ -369,9 +369,9 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 );
 // LINE 84:
 	asm( 
-"	      00560592    movsx eax,word ptr [ebp+0Ch]"
+"	      00560592    movsx eax,nodeNum"
 "	      00560596    lea eax,[eax+eax*2]"
-"	      00560599    mov ecx,[ebp-4]"
+"	      00560599    mov ecx,tree"
 "	      0056059c    lea eax,[ecx+eax*4+2]"
 "	      005605a0    jmp near ptr 005605A5h"
 );
@@ -395,7 +395,7 @@ void Behavior::GetNodeText(struct Behavior::Node* node, unsigned char * str) {
 "	      005605b2    push ebx"
 "	      005605b3    push esi"
 "	      005605b4    push edi"
-"	      005605b5    mov [ebp-4],ecx"
+"	      005605b5    mov this,ecx"
 );
 // LINE 128:
 	asm( 
@@ -420,7 +420,7 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 "	      005605ca    push ebx"
 "	      005605cb    push esi"
 "	      005605cc    push edi"
-"	      005605cd    mov [ebp-10h],ecx"
+"	      005605cd    mov this,ecx"
 );
 // LINE 134:
 	asm( 
@@ -428,11 +428,11 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 "	      005605d3    push eax"
 "	      005605d4    mov eax,[ebp+8]"
 "	      005605d7    push eax"
-"	      005605d8    mov eax,[ebp-10h]"
+"	      005605d8    mov eax,this"
 "	      005605db    mov eax,[eax]"
-"	      005605dd    mov ecx,[ebp-10h]"
+"	      005605dd    mov ecx,this"
 "	      005605e0    call dword ptr [eax]"
-"	      005605e2    lea ecx,[ebp-0Ch]"
+"	      005605e2    lea ecx,node.treeID"
 "	      005605e5    mov edx,[eax]"
 "	      005605e7    mov [ecx],edx"
 "	      005605e9    mov edx,[eax+4]"
@@ -443,11 +443,11 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 );
 // LINE 135:
 	asm( 
-"	      005605fa    mov eax,[ebp+10h]"
+"	      005605fa    mov eax,TheStr"
 "	      005605fd    push eax"
-"	      005605fe    lea eax,[ebp-0Ch]"
+"	      005605fe    lea eax,node.treeID"
 "	      00560601    push eax"
-"	      00560602    mov ecx,[ebp-10h]"
+"	      00560602    mov ecx,this"
 "	      00560605    call 005605ACh"
 );
 // LINE 136:
@@ -471,12 +471,12 @@ short Behavior::CountPrimitives() {
 "	      0056061c    push ebx"
 "	      0056061d    push esi"
 "	      0056061e    push edi"
-"	      0056061f    mov [ebp-4],ecx"
+"	      0056061f    mov this,ecx"
 );
 // LINE 140:
 	asm( 
-"	      00560622    mov eax,[ebp-4]"
-"	      00560625    mov ecx,[ebp-4]"
+"	      00560622    mov eax,this"
+"	      00560625    mov ecx,this"
 "	      00560628    mov ecx,[ecx+14h]"
 "	      0056062b    mov edx,[ecx]"
 "	      0056062d    mov ecx,[eax+14h]"
@@ -506,22 +506,22 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 "	      00560646    push ebx"
 "	      00560647    push esi"
 "	      00560648    push edi"
-"	      00560649    mov [ebp-10Ch],ecx"
+"	      00560649    mov this,ecx"
 );
 // LINE 149:
 	asm( 
-"	      0056064f    movsx eax,word ptr [ebp+8]"
+"	      0056064f    movsx eax,treeID"
 "	      00560653    cmp eax,100h"
 "	      00560658    jge near ptr 00560682h"
 );
 // LINE 151:
 	asm( 
-"	      0056065e    mov eax,[ebp+0Ch]"
+"	      0056065e    mov eax,name"
 "	      00560661    push eax"
 "	      00560662    mov eax,[ebp+8]"
 "	      00560665    push eax"
-"	      00560666    mov eax,[ebp-10Ch]"
-"	      0056066c    mov ecx,[ebp-10Ch]"
+"	      00560666    mov eax,this"
+"	      0056066c    mov ecx,this"
 "	      00560672    mov ecx,[ecx+14h]"
 "	      00560675    mov edx,[ecx]"
 "	      00560677    mov ecx,[eax+14h]"
@@ -533,15 +533,15 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 );
 // LINE 154:
 	asm( 
-"	      00560682    movsx eax,word ptr [ebp+8]"
+"	      00560682    movsx eax,treeID"
 "	      00560686    cmp eax,0FFFh"
 "	      0056068b    jge near ptr 005606A2h"
 );
 // LINE 156:
 	asm( 
-"	      00560691    mov eax,[ebp-10Ch]"
+"	      00560691    mov eax,this"
 "	      00560697    mov eax,[eax+4]"
-"	      0056069a    mov [ebp-8],eax"
+"	      0056069a    mov pFile,eax"
 );
 // LINE 158:
 	asm( 
@@ -549,25 +549,25 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 );
 // LINE 160:
 	asm( 
-"	      005606a2    mov eax,[ebp-10Ch]"
+"	      005606a2    mov eax,this"
 "	      005606a8    mov eax,[eax+8]"
-"	      005606ab    mov [ebp-8],eax"
+"	      005606ab    mov pFile,eax"
 );
 // LINE 163:
 	asm( 
-"	      005606ae    mov eax,[ebp-10Ch]"
+"	      005606ae    mov eax,this"
 "	      005606b4    mov eax,[eax+18h]"
 "	      005606b7    push eax"
 "	      005606b8    mov eax,[ebp+8]"
 "	      005606bb    push eax"
 "	      005606bc    push 42484156h"
-"	      005606c1    mov ecx,[ebp-8]"
+"	      005606c1    mov ecx,pFile"
 "	      005606c4    call 0055320Bh"
-"	      005606c9    mov [ebp-4],eax"
+"	      005606c9    mov tree,eax"
 );
 // LINE 164:
 	asm( 
-"	      005606cc    cmp dword ptr [ebp-4],0"
+"	      005606cc    cmp tree,0"
 "	      005606d0    jne near ptr 005606F2h"
 "	      005606d6    push 8C085h"
 "	      005606db    push 5BE5A0h"
@@ -580,24 +580,24 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 // Block start:
 	unsigned char[256] resName;
 	asm( 
-"	      005606f2    lea eax,[ebp-108h]"
+"	      005606f2    lea eax,resName[0]"
 "	      005606f8    push eax"
-"	      005606f9    mov eax,[ebp-4]"
+"	      005606f9    mov eax,tree"
 "	      005606fc    push eax"
-"	      005606fd    mov ecx,[ebp-8]"
+"	      005606fd    mov ecx,pFile"
 "	      00560700    call 00553564h"
 );
 // LINE 169:
 	asm( 
-"	      00560705    mov eax,[ebp+0Ch]"
+"	      00560705    mov eax,name"
 "	      00560708    mov byte ptr [eax],0"
 );
 // LINE 172:
 	asm( 
 "	      0056070b    push 100h"
-"	      00560710    mov eax,[ebp+0Ch]"
+"	      00560710    mov eax,name"
 "	      00560713    push eax"
-"	      00560714    lea eax,[ebp-108h]"
+"	      00560714    lea eax,resName[0]"
 "	      0056071a    push eax"
 "	      0056071b    call 0056639Ch"
 "	      00560720    add esp,0Ch"
@@ -624,11 +624,11 @@ class ResFile* Behavior::GetResFile(short treeID) {
 "	      00560735    push ebx"
 "	      00560736    push esi"
 "	      00560737    push edi"
-"	      00560738    mov [ebp-4],ecx"
+"	      00560738    mov this,ecx"
 );
 // LINE 178:
 	asm( 
-"	      0056073b    movsx eax,word ptr [ebp+8]"
+"	      0056073b    movsx eax,treeID"
 "	      0056073f    cmp eax,100h"
 "	      00560744    jge near ptr 00560751h"
 );
@@ -639,19 +639,19 @@ class ResFile* Behavior::GetResFile(short treeID) {
 );
 // LINE 182:
 	asm( 
-"	      00560751    movsx eax,word ptr [ebp+8]"
+"	      00560751    movsx eax,treeID"
 "	      00560755    cmp eax,0FFFh"
 "	      0056075a    jge near ptr 0056076Bh"
 );
 // LINE 184:
 	asm( 
-"	      00560760    mov eax,[ebp-4]"
+"	      00560760    mov eax,this"
 "	      00560763    mov eax,[eax+4]"
 "	      00560766    jmp near ptr 00560776h"
 );
 // LINE 186:
 	asm( 
-"	      0056076b    mov eax,[ebp-4]"
+"	      0056076b    mov eax,this"
 "	      0056076e    mov eax,[eax+8]"
 "	      00560771    jmp near ptr 00560776h"
 );
@@ -680,17 +680,17 @@ short Behavior::GetBaseID(short treeclass) {
 );
 // LINE 190:
 	asm( 
-"	      00560786    mov word ptr [ebp-4],0"
+"	      00560786    mov baseID,0"
 );
 // LINE 191:
 	asm( 
-"	      0056078c    movsx eax,word ptr [ebp+8]"
+"	      0056078c    movsx eax,treeclass"
 "	      00560790    mov [ebp-8],eax"
 "	      00560793    jmp near ptr 005607C9h"
 );
 // LINE 193:
 	asm( 
-"	      00560798    mov word ptr [ebp-4],0"
+"	      00560798    mov baseID,0"
 );
 // LINE 194:
 	asm( 
@@ -698,7 +698,7 @@ short Behavior::GetBaseID(short treeclass) {
 );
 // LINE 196:
 	asm( 
-"	      005607a3    mov word ptr [ebp-4],100h"
+"	      005607a3    mov baseID,100h"
 );
 // LINE 197:
 	asm( 
@@ -706,7 +706,7 @@ short Behavior::GetBaseID(short treeclass) {
 );
 // LINE 199:
 	asm( 
-"	      005607ae    mov word ptr [ebp-4],1000h"
+"	      005607ae    mov baseID,1000h"
 );
 // LINE 200:
 	asm( 
@@ -714,7 +714,7 @@ short Behavior::GetBaseID(short treeclass) {
 );
 // LINE 202:
 	asm( 
-"	      005607b9    mov word ptr [ebp-4],2000h"
+"	      005607b9    mov baseID,2000h"
 );
 // LINE 203:
 	asm( 
@@ -737,7 +737,7 @@ short Behavior::GetBaseID(short treeclass) {
 );
 // LINE 205:
 	asm( 
-"	      005607ed    mov ax,[ebp-4]"
+"	      005607ed    mov ax,baseID"
 "	      005607f1    jmp near ptr 005607F6h"
 );
 // LINE 206:
@@ -765,17 +765,17 @@ short Behavior::GetMaxID(short treeclass) {
 );
 // LINE 209:
 	asm( 
-"	      00560804    mov word ptr [ebp-4],0"
+"	      00560804    mov maxID,0"
 );
 // LINE 210:
 	asm( 
-"	      0056080a    movsx eax,word ptr [ebp+8]"
+"	      0056080a    movsx eax,treeclass"
 "	      0056080e    mov [ebp-8],eax"
 "	      00560811    jmp near ptr 00560847h"
 );
 // LINE 212:
 	asm( 
-"	      00560816    mov word ptr [ebp-4],0"
+"	      00560816    mov maxID,0"
 );
 // LINE 213:
 	asm( 
@@ -783,7 +783,7 @@ short Behavior::GetMaxID(short treeclass) {
 );
 // LINE 215:
 	asm( 
-"	      00560821    mov word ptr [ebp-4],0FFFh"
+"	      00560821    mov maxID,0FFFh"
 );
 // LINE 216:
 	asm( 
@@ -791,7 +791,7 @@ short Behavior::GetMaxID(short treeclass) {
 );
 // LINE 218:
 	asm( 
-"	      0056082c    mov word ptr [ebp-4],1FFFh"
+"	      0056082c    mov maxID,1FFFh"
 );
 // LINE 219:
 	asm( 
@@ -799,7 +799,7 @@ short Behavior::GetMaxID(short treeclass) {
 );
 // LINE 221:
 	asm( 
-"	      00560837    mov word ptr [ebp-4],7530h"
+"	      00560837    mov maxID,7530h"
 );
 // LINE 222:
 	asm( 
@@ -823,7 +823,7 @@ short Behavior::GetMaxID(short treeclass) {
 );
 // LINE 224:
 	asm( 
-"	      0056086b    mov ax,[ebp-4]"
+"	      0056086b    mov ax,maxID"
 "	      0056086f    jmp near ptr 00560874h"
 );
 // LINE 225:
@@ -848,10 +848,10 @@ short Behavior::GetTreeClass(short treeID) {
 );
 // LINE 228:
 	asm( 
-"	      0056087f    movsx eax,word ptr [ebp+8]"
+"	      0056087f    movsx eax,treeID"
 "	      00560883    test eax,eax"
 "	      00560885    jl near ptr 005608A2h"
-"	      0056088b    movsx eax,word ptr [ebp+8]"
+"	      0056088b    movsx eax,treeID"
 "	      0056088f    cmp eax,0FFh"
 "	      00560894    jg near ptr 005608A2h"
 );
@@ -862,10 +862,10 @@ short Behavior::GetTreeClass(short treeID) {
 );
 // LINE 230:
 	asm( 
-"	      005608a2    movsx eax,word ptr [ebp+8]"
+"	      005608a2    movsx eax,treeID"
 "	      005608a6    cmp eax,100h"
 "	      005608ab    jl near ptr 005608C9h"
-"	      005608b1    movsx eax,word ptr [ebp+8]"
+"	      005608b1    movsx eax,treeID"
 "	      005608b5    cmp eax,0FFFh"
 "	      005608ba    jg near ptr 005608C9h"
 );
@@ -876,10 +876,10 @@ short Behavior::GetTreeClass(short treeID) {
 );
 // LINE 232:
 	asm( 
-"	      005608c9    movsx eax,word ptr [ebp+8]"
+"	      005608c9    movsx eax,treeID"
 "	      005608cd    cmp eax,2000h"
 "	      005608d2    jl near ptr 005608F0h"
-"	      005608d8    movsx eax,word ptr [ebp+8]"
+"	      005608d8    movsx eax,treeID"
 "	      005608dc    cmp eax,7530h"
 "	      005608e1    jg near ptr 005608F0h"
 );
@@ -890,10 +890,10 @@ short Behavior::GetTreeClass(short treeID) {
 );
 // LINE 234:
 	asm( 
-"	      005608f0    movsx eax,word ptr [ebp+8]"
+"	      005608f0    movsx eax,treeID"
 "	      005608f4    cmp eax,1000h"
 "	      005608f9    jl near ptr 00560917h"
-"	      005608ff    movsx eax,word ptr [ebp+8]"
+"	      005608ff    movsx eax,treeID"
 "	      00560903    cmp eax,1FFFh"
 "	      00560908    jg near ptr 00560917h"
 );
@@ -932,13 +932,13 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 241:
 	asm( 
-"	      0056092d    movsx eax,word ptr [ebp+8]"
+"	      0056092d    movsx eax,cl"
 "	      00560931    mov [ebp-8],eax"
 "	      00560934    jmp near ptr 0056097Ah"
 );
 // LINE 243:
 	asm( 
-"	      00560939    mov dword ptr [ebp-4],5BE5F8h"
+"	      00560939    mov str,5BE5F8h"
 );
 // LINE 244:
 	asm( 
@@ -946,7 +946,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 246:
 	asm( 
-"	      00560945    mov dword ptr [ebp-4],5BE604h"
+"	      00560945    mov str,5BE604h"
 );
 // LINE 247:
 	asm( 
@@ -954,7 +954,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 249:
 	asm( 
-"	      00560951    mov dword ptr [ebp-4],5BE60Ch"
+"	      00560951    mov str,5BE60Ch"
 );
 // LINE 250:
 	asm( 
@@ -962,7 +962,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 252:
 	asm( 
-"	      0056095d    mov dword ptr [ebp-4],5BE614h"
+"	      0056095d    mov str,5BE614h"
 );
 // LINE 253:
 	asm( 
@@ -970,7 +970,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 255:
 	asm( 
-"	      00560969    mov dword ptr [ebp-4],5BE620h"
+"	      00560969    mov str,5BE620h"
 );
 // LINE 256:
 	asm( 
@@ -995,7 +995,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 );
 // LINE 258:
 	asm( 
-"	      0056099e    mov eax,[ebp+0Ch]"
+"	      0056099e    mov eax,name"
 "	      005609a1    push eax"
 "	      005609a2    call 00565CA0h"
 "	      005609a7    add esp,4"
@@ -1003,9 +1003,9 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 // LINE 259:
 	asm( 
 "	      005609aa    push 100h"
-"	      005609af    mov eax,[ebp+0Ch]"
+"	      005609af    mov eax,name"
 "	      005609b2    push eax"
-"	      005609b3    mov eax,[ebp-4]"
+"	      005609b3    mov eax,str"
 "	      005609b6    push eax"
 "	      005609b7    call 00566425h"
 "	      005609bc    add esp,0Ch"

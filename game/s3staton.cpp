@@ -154,11 +154,11 @@ short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, st
 );
 // LINE 49:
 	asm( 
-"	      00539d6d    mov eax,[ebp+10h]"
+"	      00539d6d    mov eax,result"
 "	      00539d70    push eax"
 "	      00539d71    mov eax,[ebp+0Ch]"
 "	      00539d74    push eax"
-"	      00539d75    mov ecx,[ebp+8]"
+"	      00539d75    mov ecx,station"
 "	      00539d78    call 0053AA5Fh"
 "	      00539d7d    jmp near ptr 00539D82h"
 );
@@ -184,9 +184,9 @@ short S3GetNextNearest(class Station* station, struct _GridCoordinates* result) 
 );
 // LINE 57:
 	asm( 
-"	      00539d8d    mov eax,[ebp+0Ch]"
+"	      00539d8d    mov eax,result"
 "	      00539d90    push eax"
-"	      00539d91    mov ecx,[ebp+8]"
+"	      00539d91    mov ecx,station"
 "	      00539d94    call 0053AACDh"
 "	      00539d99    jmp near ptr 00539D9Eh"
 );
@@ -214,55 +214,55 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 "	      00539da9    push ebx"
 "	      00539daa    push esi"
 "	      00539dab    push edi"
-"	      00539dac    mov [ebp-20h],ecx"
+"	      00539dac    mov this,ecx"
 );
 // LINE 80:
 	asm( 
-"	      00539daf    mov eax,[ebp+8]"
+"	      00539daf    mov eax,loc"
 "	      00539db2    xor ecx,ecx"
 "	      00539db4    mov cl,[eax]"
-"	      00539db6    mov eax,[ebp+8]"
+"	      00539db6    mov eax,loc"
 "	      00539db9    xor edx,edx"
 "	      00539dbb    mov dl,[eax+1]"
 "	      00539dbe    add ecx,edx"
 "	      00539dc0    and ecx,3"
-"	      00539dc3    mov [ebp-4],ecx"
+"	      00539dc3    mov direction,ecx"
 );
 // LINE 82:
 	asm( 
-"	      00539dc6    mov eax,[ebp+8]"
+"	      00539dc6    mov eax,loc"
 "	      00539dc9    mov ax,[eax]"
 "	      00539dcc    mov [ebp-8],ax"
 );
 // LINE 85:
 	asm( 
-"	      00539dd0    mov eax,[ebp+8]"
+"	      00539dd0    mov eax,loc"
 "	      00539dd3    xor ecx,ecx"
 "	      00539dd5    mov cl,[eax]"
 "	      00539dd7    test ecx,ecx"
 "	      00539dd9    jl near ptr 00539E10h"
-"	      00539ddf    mov eax,[ebp+8]"
+"	      00539ddf    mov eax,loc"
 "	      00539de2    xor ecx,ecx"
 "	      00539de4    mov cl,[eax]"
 "	      00539de6    cmp ecx,7Fh"
 "	      00539de9    jg near ptr 00539E10h"
-"	      00539def    mov eax,[ebp+8]"
+"	      00539def    mov eax,loc"
 "	      00539df2    xor ecx,ecx"
 "	      00539df4    mov cl,[eax+1]"
 "	      00539df7    test ecx,ecx"
 "	      00539df9    jl near ptr 00539E10h"
-"	      00539dff    mov eax,[ebp+8]"
+"	      00539dff    mov eax,loc"
 "	      00539e02    xor ecx,ecx"
 "	      00539e04    mov cl,[eax+1]"
 "	      00539e07    cmp ecx,7Fh"
 "	      00539e0a    jle near ptr 00539E1Ch"
 "	      00539e10    mov dword ptr [ebp-14h],0"
 "	      00539e17    jmp near ptr 00539E7Ah"
-"	      00539e1c    mov eax,[ebp+8]"
+"	      00539e1c    mov eax,loc"
 "	      00539e1f    xor ecx,ecx"
 "	      00539e21    mov cl,[eax]"
 "	      00539e23    mov eax,[ecx*4+639850h]"
-"	      00539e2a    mov ecx,[ebp+8]"
+"	      00539e2a    mov ecx,loc"
 "	      00539e2d    xor edx,edx"
 "	      00539e2f    mov dl,[ecx+1]"
 "	      00539e32    movzx ax,byte ptr [eax+edx]"
@@ -282,68 +282,68 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 "	      00539e75    jmp near ptr 00539E7Ah"
 "	      00539e7a    cmp dword ptr [ebp-14h],0"
 "	      00539e7e    je near ptr 00539E8Ch"
-"	      00539e84    mov eax,[ebp-4]"
+"	      00539e84    mov eax,direction"
 "	      00539e87    jmp near ptr 0053A017h"
 );
 // LINE 87:
 	asm( 
-"	      00539e8c    mov dword ptr [ebp-0Ch],0"
+"	      00539e8c    mov i,0"
 "	      00539e93    jmp near ptr 00539E9Bh"
-"	      00539e98    inc dword ptr [ebp-0Ch]"
-"	      00539e9b    cmp dword ptr [ebp-0Ch],4"
+"	      00539e98    inc i"
+"	      00539e9b    cmp i,4"
 "	      00539e9f    jge near ptr 0053A00Dh"
 );
 // LINE 89:
 	asm( 
-"	      00539ea5    mov eax,[ebp-4]"
+"	      00539ea5    mov eax,direction"
 "	      00539ea8    mov [ebp-24h],eax"
 "	      00539eab    jmp near ptr 00539F21h"
 );
 // LINE 91:
 	asm( 
 "	      00539eb0    xor eax,eax"
-"	      00539eb2    mov al,[ebp-7]"
+"	      00539eb2    mov al,center.y"
 "	      00539eb5    sub eax,2"
-"	      00539eb8    mov ecx,[ebp+8]"
+"	      00539eb8    mov ecx,loc"
 "	      00539ebb    mov [ecx+1],al"
-"	      00539ebe    mov al,[ebp-8]"
-"	      00539ec1    mov ecx,[ebp+8]"
+"	      00539ebe    mov al,center.x"
+"	      00539ec1    mov ecx,loc"
 "	      00539ec4    mov [ecx],al"
 "	      00539ec6    jmp near ptr 00539F45h"
 );
 // LINE 92:
 	asm( 
 "	      00539ecb    xor eax,eax"
-"	      00539ecd    mov al,[ebp-8]"
+"	      00539ecd    mov al,center.x"
 "	      00539ed0    add eax,2"
-"	      00539ed3    mov ecx,[ebp+8]"
+"	      00539ed3    mov ecx,loc"
 "	      00539ed6    mov [ecx],al"
-"	      00539ed8    mov al,[ebp-7]"
-"	      00539edb    mov ecx,[ebp+8]"
+"	      00539ed8    mov al,center.y"
+"	      00539edb    mov ecx,loc"
 "	      00539ede    mov [ecx+1],al"
 "	      00539ee1    jmp near ptr 00539F45h"
 );
 // LINE 93:
 	asm( 
 "	      00539ee6    xor eax,eax"
-"	      00539ee8    mov al,[ebp-7]"
+"	      00539ee8    mov al,center.y"
 "	      00539eeb    add eax,2"
-"	      00539eee    mov ecx,[ebp+8]"
+"	      00539eee    mov ecx,loc"
 "	      00539ef1    mov [ecx+1],al"
-"	      00539ef4    mov al,[ebp-8]"
-"	      00539ef7    mov ecx,[ebp+8]"
+"	      00539ef4    mov al,center.x"
+"	      00539ef7    mov ecx,loc"
 "	      00539efa    mov [ecx],al"
 "	      00539efc    jmp near ptr 00539F45h"
 );
 // LINE 94:
 	asm( 
 "	      00539f01    xor eax,eax"
-"	      00539f03    mov al,[ebp-8]"
+"	      00539f03    mov al,center.x"
 "	      00539f06    sub eax,2"
-"	      00539f09    mov ecx,[ebp+8]"
+"	      00539f09    mov ecx,loc"
 "	      00539f0c    mov [ecx],al"
-"	      00539f0e    mov al,[ebp-7]"
-"	      00539f11    mov ecx,[ebp+8]"
+"	      00539f0e    mov al,center.y"
+"	      00539f11    mov ecx,loc"
 "	      00539f14    mov [ecx+1],al"
 "	      00539f17    jmp near ptr 00539F45h"
 );
@@ -369,33 +369,33 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 );
 // LINE 97:
 	asm( 
-"	      00539f45    mov eax,[ebp+8]"
+"	      00539f45    mov eax,loc"
 "	      00539f48    xor ecx,ecx"
 "	      00539f4a    mov cl,[eax]"
 "	      00539f4c    test ecx,ecx"
 "	      00539f4e    jl near ptr 00539F85h"
-"	      00539f54    mov eax,[ebp+8]"
+"	      00539f54    mov eax,loc"
 "	      00539f57    xor ecx,ecx"
 "	      00539f59    mov cl,[eax]"
 "	      00539f5b    cmp ecx,7Fh"
 "	      00539f5e    jg near ptr 00539F85h"
-"	      00539f64    mov eax,[ebp+8]"
+"	      00539f64    mov eax,loc"
 "	      00539f67    xor ecx,ecx"
 "	      00539f69    mov cl,[eax+1]"
 "	      00539f6c    test ecx,ecx"
 "	      00539f6e    jl near ptr 00539F85h"
-"	      00539f74    mov eax,[ebp+8]"
+"	      00539f74    mov eax,loc"
 "	      00539f77    xor ecx,ecx"
 "	      00539f79    mov cl,[eax+1]"
 "	      00539f7c    cmp ecx,7Fh"
 "	      00539f7f    jle near ptr 00539F91h"
 "	      00539f85    mov dword ptr [ebp-1Ch],0"
 "	      00539f8c    jmp near ptr 00539FEFh"
-"	      00539f91    mov eax,[ebp+8]"
+"	      00539f91    mov eax,loc"
 "	      00539f94    xor ecx,ecx"
 "	      00539f96    mov cl,[eax]"
 "	      00539f98    mov eax,[ecx*4+639850h]"
-"	      00539f9f    mov ecx,[ebp+8]"
+"	      00539f9f    mov ecx,loc"
 "	      00539fa2    xor edx,edx"
 "	      00539fa4    mov dl,[ecx+1]"
 "	      00539fa7    movzx ax,byte ptr [eax+edx]"
@@ -415,13 +415,13 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 "	      00539fea    jmp near ptr 00539FEFh"
 "	      00539fef    cmp dword ptr [ebp-1Ch],0"
 "	      00539ff3    je near ptr 0053A001h"
-"	      00539ff9    mov eax,[ebp-4]"
+"	      00539ff9    mov eax,direction"
 "	      00539ffc    jmp near ptr 0053A017h"
 );
 // LINE 99:
 	asm( 
-"	      0053a001    inc dword ptr [ebp-4]"
-"	      0053a004    and dword ptr [ebp-4],3"
+"	      0053a001    inc direction"
+"	      0053a004    and direction,3"
 );
 // LINE 100:
 	asm( 
@@ -454,43 +454,43 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 "	      0053a024    push ebx"
 "	      0053a025    push esi"
 "	      0053a026    push edi"
-"	      0053a027    mov [ebp-30h],ecx"
+"	      0053a027    mov this,ecx"
 );
 // LINE 110:
 	asm( 
 "	      0053a02a    push 80h"
-"	      0053a02f    lea ecx,[ebp-10h]"
+"	      0053a02f    lea ecx,spiral.currDist"
 "	      0053a032    call 00542DC0h"
 );
 // LINE 113:
 	asm( 
-"	      0053a037    mov eax,[ebp+8]"
+"	      0053a037    mov eax,loc"
 "	      0053a03a    xor ecx,ecx"
 "	      0053a03c    mov cl,[eax]"
 "	      0053a03e    test ecx,ecx"
 "	      0053a040    jl near ptr 0053A077h"
-"	      0053a046    mov eax,[ebp+8]"
+"	      0053a046    mov eax,loc"
 "	      0053a049    xor ecx,ecx"
 "	      0053a04b    mov cl,[eax]"
 "	      0053a04d    cmp ecx,7Fh"
 "	      0053a050    jg near ptr 0053A077h"
-"	      0053a056    mov eax,[ebp+8]"
+"	      0053a056    mov eax,loc"
 "	      0053a059    xor ecx,ecx"
 "	      0053a05b    mov cl,[eax+1]"
 "	      0053a05e    test ecx,ecx"
 "	      0053a060    jl near ptr 0053A077h"
-"	      0053a066    mov eax,[ebp+8]"
+"	      0053a066    mov eax,loc"
 "	      0053a069    xor ecx,ecx"
 "	      0053a06b    mov cl,[eax+1]"
 "	      0053a06e    cmp ecx,7Fh"
 "	      0053a071    jle near ptr 0053A083h"
 "	      0053a077    mov dword ptr [ebp-24h],0"
 "	      0053a07e    jmp near ptr 0053A0E1h"
-"	      0053a083    mov eax,[ebp+8]"
+"	      0053a083    mov eax,loc"
 "	      0053a086    xor ecx,ecx"
 "	      0053a088    mov cl,[eax]"
 "	      0053a08a    mov eax,[ecx*4+639850h]"
-"	      0053a091    mov ecx,[ebp+8]"
+"	      0053a091    mov ecx,loc"
 "	      0053a094    xor edx,edx"
 "	      0053a096    mov dl,[ecx+1]"
 "	      0053a099    movzx ax,byte ptr [eax+edx]"
@@ -520,42 +520,42 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 );
 // LINE 116:
 	asm( 
-"	      0053a0ff    mov eax,[ebp+8]"
+"	      0053a0ff    mov eax,loc"
 "	      0053a102    push eax"
-"	      0053a103    lea ecx,[ebp-10h]"
+"	      0053a103    lea ecx,spiral.currDist"
 "	      0053a106    call 00542E03h"
 "	      0053a10b    test eax,eax"
 "	      0053a10d    je near ptr 0053A1E0h"
 );
 // LINE 118:
 	asm( 
-"	      0053a113    mov eax,[ebp+8]"
+"	      0053a113    mov eax,loc"
 "	      0053a116    xor ecx,ecx"
 "	      0053a118    mov cl,[eax]"
 "	      0053a11a    test ecx,ecx"
 "	      0053a11c    jl near ptr 0053A153h"
-"	      0053a122    mov eax,[ebp+8]"
+"	      0053a122    mov eax,loc"
 "	      0053a125    xor ecx,ecx"
 "	      0053a127    mov cl,[eax]"
 "	      0053a129    cmp ecx,7Fh"
 "	      0053a12c    jg near ptr 0053A153h"
-"	      0053a132    mov eax,[ebp+8]"
+"	      0053a132    mov eax,loc"
 "	      0053a135    xor ecx,ecx"
 "	      0053a137    mov cl,[eax+1]"
 "	      0053a13a    test ecx,ecx"
 "	      0053a13c    jl near ptr 0053A153h"
-"	      0053a142    mov eax,[ebp+8]"
+"	      0053a142    mov eax,loc"
 "	      0053a145    xor ecx,ecx"
 "	      0053a147    mov cl,[eax+1]"
 "	      0053a14a    cmp ecx,7Fh"
 "	      0053a14d    jle near ptr 0053A15Fh"
 "	      0053a153    mov dword ptr [ebp-2Ch],0"
 "	      0053a15a    jmp near ptr 0053A1BDh"
-"	      0053a15f    mov eax,[ebp+8]"
+"	      0053a15f    mov eax,loc"
 "	      0053a162    xor ecx,ecx"
 "	      0053a164    mov cl,[eax]"
 "	      0053a166    mov eax,[ecx*4+639850h]"
-"	      0053a16d    mov ecx,[ebp+8]"
+"	      0053a16d    mov ecx,loc"
 "	      0053a170    xor edx,edx"
 "	      0053a172    mov dl,[ecx+1]"
 "	      0053a175    movzx ax,byte ptr [eax+edx]"
@@ -619,50 +619,50 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 "	      0053a201    push ebx"
 "	      0053a202    push esi"
 "	      0053a203    push edi"
-"	      0053a204    mov [ebp-18h],ecx"
+"	      0053a204    mov this,ecx"
 );
 // LINE 132:
 	asm( 
-"	      0053a207    mov eax,[ebp-18h]"
+"	      0053a207    mov eax,this"
 "	      0053a20a    mov dword ptr [eax+0Ch],0"
 );
 // LINE 134:
 	asm( 
-"	      0053a211    mov dword ptr [ebp-4],0"
+"	      0053a211    mov i,0"
 "	      0053a218    jmp near ptr 0053A220h"
-"	      0053a21d    inc dword ptr [ebp-4]"
-"	      0053a220    mov eax,[ebp-18h]"
-"	      0053a223    mov ecx,[ebp-4]"
+"	      0053a21d    inc i"
+"	      0053a220    mov eax,this"
+"	      0053a223    mov ecx,i"
 "	      0053a226    cmp [eax+4],ecx"
 "	      0053a229    jle near ptr 0053A34Ch"
 );
 // LINE 138:
 	asm( 
-"	      0053a22f    mov eax,[ebp-4]"
+"	      0053a22f    mov eax,i"
 "	      0053a232    shl eax,5"
 "	      0053a235    lea eax,[eax+eax*2]"
-"	      0053a238    mov ecx,[ebp-18h]"
+"	      0053a238    mov ecx,this"
 "	      0053a23b    mov ecx,[ecx]"
 "	      0053a23d    xor edx,edx"
 "	      0053a23f    mov dl,[eax+ecx+58h]"
 "	      0053a243    xor eax,eax"
-"	      0053a245    mov al,[ebp+8]"
+"	      0053a245    mov al,loc.x"
 "	      0053a248    cmp edx,eax"
 "	      0053a24a    jle near ptr 0053A273h"
 );
 // LINE 139:
 	asm( 
-"	      0053a250    mov eax,[ebp-4]"
+"	      0053a250    mov eax,i"
 "	      0053a253    shl eax,5"
 "	      0053a256    lea eax,[eax+eax*2]"
-"	      0053a259    mov ecx,[ebp-18h]"
+"	      0053a259    mov ecx,this"
 "	      0053a25c    mov ecx,[ecx]"
 "	      0053a25e    xor edx,edx"
 "	      0053a260    mov dl,[eax+ecx+58h]"
 "	      0053a264    xor eax,eax"
-"	      0053a266    mov al,[ebp+8]"
+"	      0053a266    mov al,loc.x"
 "	      0053a269    sub edx,eax"
-"	      0053a26b    mov [ebp-8],edx"
+"	      0053a26b    mov deltax,edx"
 );
 // LINE 140:
 	asm( 
@@ -671,44 +671,44 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 // LINE 141:
 	asm( 
 "	      0053a273    xor eax,eax"
-"	      0053a275    mov al,[ebp+8]"
-"	      0053a278    mov ecx,[ebp-4]"
+"	      0053a275    mov al,loc.x"
+"	      0053a278    mov ecx,i"
 "	      0053a27b    shl ecx,5"
 "	      0053a27e    lea ecx,[ecx+ecx*2]"
-"	      0053a281    mov edx,[ebp-18h]"
+"	      0053a281    mov edx,this"
 "	      0053a284    mov edx,[edx]"
 "	      0053a286    xor ebx,ebx"
 "	      0053a288    mov bl,[ecx+edx+58h]"
 "	      0053a28c    sub eax,ebx"
-"	      0053a28e    mov [ebp-8],eax"
+"	      0053a28e    mov deltax,eax"
 );
 // LINE 145:
 	asm( 
-"	      0053a291    mov eax,[ebp-4]"
+"	      0053a291    mov eax,i"
 "	      0053a294    shl eax,5"
 "	      0053a297    lea eax,[eax+eax*2]"
-"	      0053a29a    mov ecx,[ebp-18h]"
+"	      0053a29a    mov ecx,this"
 "	      0053a29d    mov ecx,[ecx]"
 "	      0053a29f    xor edx,edx"
 "	      0053a2a1    mov dl,[eax+ecx+59h]"
 "	      0053a2a5    xor eax,eax"
-"	      0053a2a7    mov al,[ebp+9]"
+"	      0053a2a7    mov al,loc.y"
 "	      0053a2aa    cmp edx,eax"
 "	      0053a2ac    jle near ptr 0053A2D5h"
 );
 // LINE 146:
 	asm( 
-"	      0053a2b2    mov eax,[ebp-4]"
+"	      0053a2b2    mov eax,i"
 "	      0053a2b5    shl eax,5"
 "	      0053a2b8    lea eax,[eax+eax*2]"
-"	      0053a2bb    mov ecx,[ebp-18h]"
+"	      0053a2bb    mov ecx,this"
 "	      0053a2be    mov ecx,[ecx]"
 "	      0053a2c0    xor edx,edx"
 "	      0053a2c2    mov dl,[eax+ecx+59h]"
 "	      0053a2c6    xor eax,eax"
-"	      0053a2c8    mov al,[ebp+9]"
+"	      0053a2c8    mov al,loc.y"
 "	      0053a2cb    sub edx,eax"
-"	      0053a2cd    mov [ebp-0Ch],edx"
+"	      0053a2cd    mov deltay,edx"
 );
 // LINE 147:
 	asm( 
@@ -717,39 +717,39 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 // LINE 148:
 	asm( 
 "	      0053a2d5    xor eax,eax"
-"	      0053a2d7    mov al,[ebp+9]"
-"	      0053a2da    mov ecx,[ebp-4]"
+"	      0053a2d7    mov al,loc.y"
+"	      0053a2da    mov ecx,i"
 "	      0053a2dd    shl ecx,5"
 "	      0053a2e0    lea ecx,[ecx+ecx*2]"
-"	      0053a2e3    mov edx,[ebp-18h]"
+"	      0053a2e3    mov edx,this"
 "	      0053a2e6    mov edx,[edx]"
 "	      0053a2e8    xor ebx,ebx"
 "	      0053a2ea    mov bl,[ecx+edx+59h]"
 "	      0053a2ee    sub eax,ebx"
-"	      0053a2f0    mov [ebp-0Ch],eax"
+"	      0053a2f0    mov deltay,eax"
 );
 // LINE 151:
 	asm( 
-"	      0053a2f3    mov eax,[ebp-4]"
+"	      0053a2f3    mov eax,i"
 "	      0053a2f6    shl eax,5"
 "	      0053a2f9    lea eax,[eax+eax*2]"
-"	      0053a2fc    mov ecx,[ebp-18h]"
+"	      0053a2fc    mov ecx,this"
 "	      0053a2ff    mov ecx,[ecx]"
 "	      0053a301    cmp dword ptr [eax+ecx+5Ch],1"
 "	      0053a306    jge near ptr 0053A347h"
 );
 // LINE 153:
 	asm( 
-"	      0053a30c    mov eax,[ebp-8]"
-"	      0053a30f    cmp [ebp-0Ch],eax"
+"	      0053a30c    mov eax,deltax"
+"	      0053a30f    cmp deltay,eax"
 "	      0053a312    jge near ptr 0053A329h"
 );
 // LINE 155:
 	asm( 
-"	      0053a318    mov eax,[ebp-0Ch]"
+"	      0053a318    mov eax,deltay"
 "	      0053a31b    sar eax,1"
-"	      0053a31e    add eax,[ebp-8]"
-"	      0053a321    mov [ebp-14h],eax"
+"	      0053a31e    add eax,deltax"
+"	      0053a321    mov station.cost,eax"
 );
 // LINE 157:
 	asm( 
@@ -757,21 +757,21 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 );
 // LINE 159:
 	asm( 
-"	      0053a329    mov eax,[ebp-8]"
+"	      0053a329    mov eax,deltax"
 "	      0053a32c    sar eax,1"
-"	      0053a32f    add eax,[ebp-0Ch]"
-"	      0053a332    mov [ebp-14h],eax"
+"	      0053a32f    add eax,deltay"
+"	      0053a332    mov station.cost,eax"
 );
 // LINE 162:
 	asm( 
-"	      0053a335    mov eax,[ebp-4]"
-"	      0053a338    mov [ebp-10h],eax"
+"	      0053a335    mov eax,i"
+"	      0053a338    mov station.stationID,eax"
 );
 // LINE 163:
 	asm( 
-"	      0053a33b    lea eax,[ebp-14h]"
+"	      0053a33b    lea eax,station.cost"
 "	      0053a33e    push eax"
-"	      0053a33f    mov ecx,[ebp-18h]"
+"	      0053a33f    mov ecx,this"
 "	      0053a342    call 0053A566h"
 );
 // LINE 165:
@@ -804,20 +804,20 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 "	      0053a35e    push ebx"
 "	      0053a35f    push esi"
 "	      0053a360    push edi"
-"	      0053a361    mov [ebp-28h],ecx"
+"	      0053a361    mov this,ecx"
 );
 // LINE 178:
 	asm( 
-"	      0053a364    mov eax,[ebp-28h]"
+"	      0053a364    mov eax,this"
 "	      0053a367    mov dword ptr [eax+14h],0"
 );
 // LINE 181:
 	asm( 
-"	      0053a36e    mov dword ptr [ebp-10h],0"
+"	      0053a36e    mov i,0"
 "	      0053a375    jmp near ptr 0053A37Dh"
-"	      0053a37a    inc dword ptr [ebp-10h]"
-"	      0053a37d    mov eax,[ebp+10h]"
-"	      0053a380    cmp [ebp-10h],eax"
+"	      0053a37a    inc i"
+"	      0053a37d    mov eax,vehicleListLength"
+"	      0053a380    cmp i,eax"
 "	      0053a383    jge near ptr 0053A494h"
 );
 // LINE 184:
@@ -825,8 +825,8 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 	struct Point3d DyObjLoc;
 	asm( 
 "	      0053a389    jmp near ptr 0053A38Eh"
-"	      0053a38e    mov eax,[ebp-10h]"
-"	      0053a391    mov ecx,[ebp+0Ch]"
+"	      0053a38e    mov eax,i"
+"	      0053a391    mov ecx,vehicleList"
 "	      0053a394    mov eax,[ecx+eax*4]"
 "	      0053a397    cmp dword ptr [eax+294h],3"
 "	      0053a39e    jle near ptr 0053A3A9h"
@@ -837,11 +837,11 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 );
 // LINE 187:
 	asm( 
-"	      0053a3a9    mov eax,[ebp-10h]"
-"	      0053a3ac    mov ecx,[ebp+0Ch]"
+"	      0053a3a9    mov eax,i"
+"	      0053a3ac    mov ecx,vehicleList"
 "	      0053a3af    mov eax,[ecx+eax*4]"
 "	      0053a3b2    add eax,24h"
-"	      0053a3b5    lea ecx,[ebp-24h]"
+"	      0053a3b5    lea ecx,DyObjLoc.x"
 "	      0053a3b8    mov edx,[eax]"
 "	      0053a3ba    mov [ecx],edx"
 "	      0053a3bc    mov edx,[eax+4]"
@@ -851,35 +851,35 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 );
 // LINE 188:
 	asm( 
-"	      0053a3c8    mov eax,[ebp-24h]"
+"	      0053a3c8    mov eax,DyObjLoc.x"
 "	      0053a3cb    add eax,20000000h"
 "	      0053a3d0    sar eax,16h"
-"	      0053a3d3    mov [ebp-4],al"
+"	      0053a3d3    mov vehicle.loc.x,al"
 );
 // LINE 189:
 	asm( 
 "	      0053a3d6    mov eax,20000000h"
-"	      0053a3db    sub eax,[ebp-1Ch]"
+"	      0053a3db    sub eax,DyObjLoc.z"
 "	      0053a3de    sar eax,16h"
-"	      0053a3e1    mov [ebp-3],al"
+"	      0053a3e1    mov vehicle.loc.y,al"
 );
 // LINE 193:
 	asm( 
 "	      0053a3e4    xor eax,eax"
-"	      0053a3e6    mov al,[ebp-4]"
+"	      0053a3e6    mov al,vehicle.loc.x"
 "	      0053a3e9    xor ecx,ecx"
-"	      0053a3eb    mov cl,[ebp+8]"
+"	      0053a3eb    mov cl,destLoc.x"
 "	      0053a3ee    cmp eax,ecx"
 "	      0053a3f0    jle near ptr 0053A40Ah"
 );
 // LINE 194:
 	asm( 
 "	      0053a3f6    xor eax,eax"
-"	      0053a3f8    mov al,[ebp-4]"
+"	      0053a3f8    mov al,vehicle.loc.x"
 "	      0053a3fb    xor ecx,ecx"
-"	      0053a3fd    mov cl,[ebp+8]"
+"	      0053a3fd    mov cl,destLoc.x"
 "	      0053a400    sub eax,ecx"
-"	      0053a402    mov [ebp-14h],eax"
+"	      0053a402    mov deltax,eax"
 );
 // LINE 195:
 	asm( 
@@ -888,29 +888,29 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 // LINE 196:
 	asm( 
 "	      0053a40a    xor eax,eax"
-"	      0053a40c    mov al,[ebp+8]"
+"	      0053a40c    mov al,destLoc.x"
 "	      0053a40f    xor ecx,ecx"
-"	      0053a411    mov cl,[ebp-4]"
+"	      0053a411    mov cl,vehicle.loc.x"
 "	      0053a414    sub eax,ecx"
-"	      0053a416    mov [ebp-14h],eax"
+"	      0053a416    mov deltax,eax"
 );
 // LINE 200:
 	asm( 
 "	      0053a419    xor eax,eax"
-"	      0053a41b    mov al,[ebp-3]"
+"	      0053a41b    mov al,vehicle.loc.y"
 "	      0053a41e    xor ecx,ecx"
-"	      0053a420    mov cl,[ebp+9]"
+"	      0053a420    mov cl,destLoc.y"
 "	      0053a423    cmp eax,ecx"
 "	      0053a425    jle near ptr 0053A43Fh"
 );
 // LINE 201:
 	asm( 
 "	      0053a42b    xor eax,eax"
-"	      0053a42d    mov al,[ebp-3]"
+"	      0053a42d    mov al,vehicle.loc.y"
 "	      0053a430    xor ecx,ecx"
-"	      0053a432    mov cl,[ebp+9]"
+"	      0053a432    mov cl,destLoc.y"
 "	      0053a435    sub eax,ecx"
-"	      0053a437    mov [ebp-18h],eax"
+"	      0053a437    mov deltay,eax"
 );
 // LINE 202:
 	asm( 
@@ -919,24 +919,24 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 // LINE 203:
 	asm( 
 "	      0053a43f    xor eax,eax"
-"	      0053a441    mov al,[ebp+9]"
+"	      0053a441    mov al,destLoc.y"
 "	      0053a444    xor ecx,ecx"
-"	      0053a446    mov cl,[ebp-3]"
+"	      0053a446    mov cl,vehicle.loc.y"
 "	      0053a449    sub eax,ecx"
-"	      0053a44b    mov [ebp-18h],eax"
+"	      0053a44b    mov deltay,eax"
 );
 // LINE 206:
 	asm( 
-"	      0053a44e    mov eax,[ebp-14h]"
-"	      0053a451    cmp [ebp-18h],eax"
+"	      0053a44e    mov eax,deltax"
+"	      0053a451    cmp deltay,eax"
 "	      0053a454    jge near ptr 0053A46Bh"
 );
 // LINE 208:
 	asm( 
-"	      0053a45a    mov eax,[ebp-18h]"
+"	      0053a45a    mov eax,deltay"
 "	      0053a45d    sar eax,1"
-"	      0053a460    add eax,[ebp-14h]"
-"	      0053a463    mov [ebp-0Ch],eax"
+"	      0053a460    add eax,deltax"
+"	      0053a463    mov vehicle.cost,eax"
 );
 // LINE 210:
 	asm( 
@@ -944,23 +944,23 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 );
 // LINE 212:
 	asm( 
-"	      0053a46b    mov eax,[ebp-14h]"
+"	      0053a46b    mov eax,deltax"
 "	      0053a46e    sar eax,1"
-"	      0053a471    add eax,[ebp-18h]"
-"	      0053a474    mov [ebp-0Ch],eax"
+"	      0053a471    add eax,deltay"
+"	      0053a474    mov vehicle.cost,eax"
 );
 // LINE 215:
 	asm( 
-"	      0053a477    mov eax,[ebp-10h]"
-"	      0053a47a    mov ecx,[ebp+0Ch]"
+"	      0053a477    mov eax,i"
+"	      0053a47a    mov ecx,vehicleList"
 "	      0053a47d    mov eax,[ecx+eax*4]"
-"	      0053a480    mov [ebp-8],eax"
+"	      0053a480    mov vehicle.pVehicle,eax"
 );
 // LINE 216:
 	asm( 
-"	      0053a483    lea eax,[ebp-0Ch]"
+"	      0053a483    lea eax,vehicle.cost"
 "	      0053a486    push eax"
-"	      0053a487    mov ecx,[ebp-28h]"
+"	      0053a487    mov ecx,this"
 "	      0053a48a    call 0053A798h"
 );
 // LINE 217:
@@ -992,29 +992,29 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 "	      0053a4a6    push ebx"
 "	      0053a4a7    push esi"
 "	      0053a4a8    push edi"
-"	      0053a4a9    mov [ebp-0Ch],ecx"
+"	      0053a4a9    mov this,ecx"
 );
 // LINE 227:
 	asm( 
-"	      0053a4ac    mov dword ptr [ebp-4],0"
+"	      0053a4ac    mov i,0"
 "	      0053a4b3    jmp near ptr 0053A4BBh"
-"	      0053a4b8    inc dword ptr [ebp-4]"
-"	      0053a4bb    mov eax,[ebp+10h]"
-"	      0053a4be    cmp [ebp-4],eax"
+"	      0053a4b8    inc i"
+"	      0053a4bb    mov eax,vehicleListLength"
+"	      0053a4be    cmp i,eax"
 "	      0053a4c1    jge near ptr 0053A4EDh"
 );
 // LINE 229:
 	asm( 
-"	      0053a4c7    mov eax,[ebp-4]"
-"	      0053a4ca    mov ecx,[ebp+0Ch]"
+"	      0053a4c7    mov eax,i"
+"	      0053a4ca    mov ecx,vehicleList"
 "	      0053a4cd    mov eax,[ecx+eax*4]"
 "	      0053a4d0    test byte ptr [eax+8],2"
 "	      0053a4d4    jne near ptr 0053A4E8h"
 );
 // LINE 230:
 	asm( 
-"	      0053a4da    mov eax,[ebp-4]"
-"	      0053a4dd    mov ecx,[ebp+0Ch]"
+"	      0053a4da    mov eax,i"
+"	      0053a4dd    mov ecx,vehicleList"
 "	      0053a4e0    mov eax,[ecx+eax*4]"
 "	      0053a4e3    jmp near ptr 0053A55Fh"
 );
@@ -1024,36 +1024,36 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 );
 // LINE 235:
 	asm( 
-"	      0053a4ed    mov dword ptr [ebp-8],2"
+"	      0053a4ed    mov code,2"
 "	      0053a4f4    jmp near ptr 0053A4FCh"
-"	      0053a4f9    inc dword ptr [ebp-8]"
-"	      0053a4fc    mov eax,[ebp-8]"
-"	      0053a4ff    cmp [ebp+8],eax"
+"	      0053a4f9    inc code"
+"	      0053a4fc    mov eax,code"
+"	      0053a4ff    cmp responseLevel,eax"
 "	      0053a502    jle near ptr 0053A558h"
 );
 // LINE 237:
 	asm( 
-"	      0053a508    mov dword ptr [ebp-4],0"
+"	      0053a508    mov i,0"
 "	      0053a50f    jmp near ptr 0053A517h"
-"	      0053a514    inc dword ptr [ebp-4]"
-"	      0053a517    mov eax,[ebp+10h]"
-"	      0053a51a    cmp [ebp-4],eax"
+"	      0053a514    inc i"
+"	      0053a517    mov eax,vehicleListLength"
+"	      0053a51a    cmp i,eax"
 "	      0053a51d    jge near ptr 0053A553h"
 );
 // LINE 239:
 	asm( 
 "	      0053a523    jmp near ptr 0053A528h"
-"	      0053a528    mov eax,[ebp-4]"
-"	      0053a52b    mov ecx,[ebp+0Ch]"
+"	      0053a528    mov eax,i"
+"	      0053a52b    mov ecx,vehicleList"
 "	      0053a52e    mov eax,[ecx+eax*4]"
-"	      0053a531    mov ecx,[ebp-8]"
+"	      0053a531    mov ecx,code"
 "	      0053a534    cmp [eax+294h],ecx"
 "	      0053a53a    jge near ptr 0053A54Eh"
 );
 // LINE 240:
 	asm( 
-"	      0053a540    mov eax,[ebp-4]"
-"	      0053a543    mov ecx,[ebp+0Ch]"
+"	      0053a540    mov eax,i"
+"	      0053a543    mov ecx,vehicleList"
 "	      0053a546    mov eax,[ecx+eax*4]"
 "	      0053a549    jmp near ptr 0053A55Fh"
 );
@@ -1093,93 +1093,93 @@ void Station::StationHeapInsert(const struct _StationHeapStruct* pInsertStruct) 
 "	      0053a56c    push ebx"
 "	      0053a56d    push esi"
 "	      0053a56e    push edi"
-"	      0053a56f    mov [ebp-10h],ecx"
+"	      0053a56f    mov this,ecx"
 );
 // LINE 252:
 	asm( 
-"	      0053a572    mov eax,[ebp-10h]"
+"	      0053a572    mov eax,this"
 "	      0053a575    inc dword ptr [eax+0Ch]"
-"	      0053a578    mov eax,[ebp-10h]"
+"	      0053a578    mov eax,this"
 "	      0053a57b    mov eax,[eax+0Ch]"
-"	      0053a57e    mov [ebp-0Ch],eax"
+"	      0053a57e    mov index,eax"
 );
 // LINE 255:
 	asm( 
-"	      0053a581    mov eax,[ebp+8]"
+"	      0053a581    mov eax,pInsertStruct"
 "	      0053a584    mov ecx,[eax]"
 "	      0053a586    mov eax,[eax+4]"
-"	      0053a589    mov edx,[ebp-10h]"
+"	      0053a589    mov edx,this"
 "	      0053a58c    mov edx,[edx+8]"
-"	      0053a58f    mov ebx,[ebp-0Ch]"
+"	      0053a58f    mov ebx,index"
 "	      0053a592    lea edx,[edx+ebx*8]"
 "	      0053a595    mov [edx],ecx"
 "	      0053a597    mov [edx+4],eax"
 );
 // LINE 261:
 	asm( 
-"	      0053a59a    mov eax,[ebp-0Ch]"
+"	      0053a59a    mov eax,index"
 "	      0053a59d    cdq"
 "	      0053a59e    sub eax,edx"
 "	      0053a5a0    sar eax,1"
-"	      0053a5a3    mov ecx,[ebp-10h]"
+"	      0053a5a3    mov ecx,this"
 "	      0053a5a6    mov ecx,[ecx+8]"
-"	      0053a5a9    mov edx,[ebp-10h]"
+"	      0053a5a9    mov edx,this"
 "	      0053a5ac    mov edx,[edx+8]"
-"	      0053a5af    mov ebx,[ebp-0Ch]"
+"	      0053a5af    mov ebx,index"
 "	      0053a5b2    mov edx,[edx+ebx*8]"
 "	      0053a5b5    cmp [ecx+eax*8],edx"
 "	      0053a5b8    jle near ptr 0053A62Bh"
 );
 // LINE 263:
 	asm( 
-"	      0053a5be    mov eax,[ebp-10h]"
+"	      0053a5be    mov eax,this"
 "	      0053a5c1    mov eax,[eax+8]"
-"	      0053a5c4    mov ecx,[ebp-0Ch]"
+"	      0053a5c4    mov ecx,index"
 "	      0053a5c7    lea eax,[eax+ecx*8]"
 "	      0053a5ca    mov ecx,[eax]"
 "	      0053a5cc    mov eax,[eax+4]"
-"	      0053a5cf    mov [ebp-8],ecx"
-"	      0053a5d2    mov [ebp-4],eax"
+"	      0053a5cf    mov tempStruct.cost,ecx"
+"	      0053a5d2    mov tempStruct.stationID,eax"
 );
 // LINE 264:
 	asm( 
-"	      0053a5d5    mov eax,[ebp-0Ch]"
+"	      0053a5d5    mov eax,index"
 "	      0053a5d8    cdq"
 "	      0053a5d9    sub eax,edx"
 "	      0053a5db    sar eax,1"
 "	      0053a5de    shl eax,3"
-"	      0053a5e1    mov ecx,[ebp-10h]"
+"	      0053a5e1    mov ecx,this"
 "	      0053a5e4    add eax,[ecx+8]"
 "	      0053a5e7    mov ecx,[eax]"
 "	      0053a5e9    mov eax,[eax+4]"
-"	      0053a5ec    mov edx,[ebp-10h]"
+"	      0053a5ec    mov edx,this"
 "	      0053a5ef    mov edx,[edx+8]"
-"	      0053a5f2    mov ebx,[ebp-0Ch]"
+"	      0053a5f2    mov ebx,index"
 "	      0053a5f5    lea edx,[edx+ebx*8]"
 "	      0053a5f8    mov [edx],ecx"
 "	      0053a5fa    mov [edx+4],eax"
 );
 // LINE 265:
 	asm( 
-"	      0053a5fd    mov ecx,[ebp-8]"
-"	      0053a600    mov ebx,[ebp-4]"
-"	      0053a603    mov eax,[ebp-0Ch]"
+"	      0053a5fd    mov ecx,tempStruct.cost"
+"	      0053a600    mov ebx,tempStruct.stationID"
+"	      0053a603    mov eax,index"
 "	      0053a606    cdq"
 "	      0053a607    sub eax,edx"
 "	      0053a609    sar eax,1"
 "	      0053a60c    shl eax,3"
-"	      0053a60f    mov edx,[ebp-10h]"
+"	      0053a60f    mov edx,this"
 "	      0053a612    add eax,[edx+8]"
 "	      0053a615    mov [eax],ecx"
 "	      0053a617    mov [eax+4],ebx"
 );
 // LINE 266:
 	asm( 
-"	      0053a61a    mov eax,[ebp-0Ch]"
+"	      0053a61a    mov eax,index"
 "	      0053a61d    cdq"
 "	      0053a61e    sub eax,edx"
 "	      0053a620    sar eax,1"
-"	      0053a623    mov [ebp-0Ch],eax"
+"	      0053a623    mov index,eax"
 );
 // LINE 267:
 	asm( 
@@ -1211,98 +1211,98 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 "	      0053a63d    push ebx"
 "	      0053a63e    push esi"
 "	      0053a63f    push edi"
-"	      0053a640    mov [ebp-1Ch],ecx"
+"	      0053a640    mov this,ecx"
 );
 // LINE 278:
 	asm( 
-"	      0053a643    mov eax,[ebp-1Ch]"
+"	      0053a643    mov eax,this"
 "	      0053a646    mov eax,[eax+0Ch]"
-"	      0053a649    mov [ebp-14h],eax"
-"	      0053a64c    mov eax,[ebp-1Ch]"
+"	      0053a649    mov index,eax"
+"	      0053a64c    mov eax,this"
 "	      0053a64f    dec dword ptr [eax+0Ch]"
 );
 // LINE 279:
 	asm( 
-"	      0053a652    mov eax,[ebp-1Ch]"
+"	      0053a652    mov eax,this"
 "	      0053a655    mov eax,[eax+8]"
 "	      0053a658    add eax,8"
 "	      0053a65b    mov ecx,[eax]"
 "	      0053a65d    mov eax,[eax+4]"
-"	      0053a660    mov edx,[ebp+8]"
+"	      0053a660    mov edx,pRemovedStruct"
 "	      0053a663    mov [edx],ecx"
 "	      0053a665    mov [edx+4],eax"
 );
 // LINE 280:
 	asm( 
-"	      0053a668    mov eax,[ebp-1Ch]"
+"	      0053a668    mov eax,this"
 "	      0053a66b    mov eax,[eax+8]"
-"	      0053a66e    mov ecx,[ebp-14h]"
+"	      0053a66e    mov ecx,index"
 "	      0053a671    lea eax,[eax+ecx*8]"
 "	      0053a674    mov ecx,[eax]"
 "	      0053a676    mov eax,[eax+4]"
-"	      0053a679    mov edx,[ebp-1Ch]"
+"	      0053a679    mov edx,this"
 "	      0053a67c    mov edx,[edx+8]"
 "	      0053a67f    add edx,8"
 "	      0053a682    mov [edx],ecx"
 "	      0053a684    mov [edx+4],eax"
-"	      0053a687    mov eax,[ebp-1Ch]"
+"	      0053a687    mov eax,this"
 "	      0053a68a    mov eax,[eax+8]"
 "	      0053a68d    add eax,8"
 "	      0053a690    mov [ebp-18h],eax"
 "	      0053a693    mov eax,[ebp-18h]"
 "	      0053a696    mov ecx,[eax]"
 "	      0053a698    mov eax,[eax+4]"
-"	      0053a69b    mov [ebp-8],ecx"
-"	      0053a69e    mov [ebp-4],eax"
+"	      0053a69b    mov tempStruct.cost,ecx"
+"	      0053a69e    mov tempStruct.stationID,eax"
 );
 // LINE 284:
 	asm( 
-"	      0053a6a1    mov dword ptr [ebp-0Ch],1"
+"	      0053a6a1    mov parent,1"
 );
 // LINE 287:
 	asm( 
-"	      0053a6a8    mov eax,[ebp-1Ch]"
+"	      0053a6a8    mov eax,this"
 "	      0053a6ab    mov eax,[eax+0Ch]"
 "	      0053a6ae    cdq"
 "	      0053a6af    sub eax,edx"
 "	      0053a6b1    sar eax,1"
-"	      0053a6b4    cmp eax,[ebp-0Ch]"
+"	      0053a6b4    cmp eax,parent"
 "	      0053a6b7    jl near ptr 0053A775h"
 );
 // LINE 290:
 	asm( 
-"	      0053a6bd    mov eax,[ebp-0Ch]"
-"	      0053a6c0    add eax,[ebp-0Ch]"
-"	      0053a6c3    mov [ebp-10h],eax"
+"	      0053a6bd    mov eax,parent"
+"	      0053a6c0    add eax,parent"
+"	      0053a6c3    mov child,eax"
 );
 // LINE 293:
 	asm( 
-"	      0053a6c6    mov eax,[ebp-1Ch]"
-"	      0053a6c9    mov ecx,[ebp-10h]"
+"	      0053a6c6    mov eax,this"
+"	      0053a6c9    mov ecx,child"
 "	      0053a6cc    cmp [eax+0Ch],ecx"
 "	      0053a6cf    jle near ptr 0053A6F7h"
-"	      0053a6d5    mov eax,[ebp-10h]"
-"	      0053a6d8    mov ecx,[ebp-1Ch]"
+"	      0053a6d5    mov eax,child"
+"	      0053a6d8    mov ecx,this"
 "	      0053a6db    mov ecx,[ecx+8]"
-"	      0053a6de    mov edx,[ebp-1Ch]"
+"	      0053a6de    mov edx,this"
 "	      0053a6e1    mov edx,[edx+8]"
-"	      0053a6e4    mov ebx,[ebp-10h]"
+"	      0053a6e4    mov ebx,child"
 "	      0053a6e7    mov edx,[edx+ebx*8]"
 "	      0053a6ea    cmp [ecx+eax*8+8],edx"
 "	      0053a6ee    jge near ptr 0053A6F7h"
 );
 // LINE 294:
 	asm( 
-"	      0053a6f4    inc dword ptr [ebp-10h]"
+"	      0053a6f4    inc child"
 );
 // LINE 297:
 	asm( 
-"	      0053a6f7    mov eax,[ebp-1Ch]"
+"	      0053a6f7    mov eax,this"
 "	      0053a6fa    mov eax,[eax+8]"
-"	      0053a6fd    mov ecx,[ebp-0Ch]"
-"	      0053a700    mov edx,[ebp-1Ch]"
+"	      0053a6fd    mov ecx,parent"
+"	      0053a700    mov edx,this"
 "	      0053a703    mov edx,[edx+8]"
-"	      0053a706    mov ebx,[ebp-10h]"
+"	      0053a706    mov ebx,child"
 "	      0053a709    mov edx,[edx+ebx*8]"
 "	      0053a70c    cmp [eax+ecx*8],edx"
 "	      0053a70f    jg near ptr 0053A71Ah"
@@ -1313,45 +1313,45 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 );
 // LINE 301:
 	asm( 
-"	      0053a71a    mov eax,[ebp-1Ch]"
+"	      0053a71a    mov eax,this"
 "	      0053a71d    mov eax,[eax+8]"
-"	      0053a720    mov ecx,[ebp-0Ch]"
+"	      0053a720    mov ecx,parent"
 "	      0053a723    lea eax,[eax+ecx*8]"
 "	      0053a726    mov ecx,[eax]"
 "	      0053a728    mov eax,[eax+4]"
-"	      0053a72b    mov [ebp-8],ecx"
-"	      0053a72e    mov [ebp-4],eax"
+"	      0053a72b    mov tempStruct.cost,ecx"
+"	      0053a72e    mov tempStruct.stationID,eax"
 );
 // LINE 302:
 	asm( 
-"	      0053a731    mov eax,[ebp-1Ch]"
+"	      0053a731    mov eax,this"
 "	      0053a734    mov eax,[eax+8]"
-"	      0053a737    mov ecx,[ebp-10h]"
+"	      0053a737    mov ecx,child"
 "	      0053a73a    lea eax,[eax+ecx*8]"
 "	      0053a73d    mov ecx,[eax]"
 "	      0053a73f    mov eax,[eax+4]"
-"	      0053a742    mov edx,[ebp-1Ch]"
+"	      0053a742    mov edx,this"
 "	      0053a745    mov edx,[edx+8]"
-"	      0053a748    mov ebx,[ebp-0Ch]"
+"	      0053a748    mov ebx,parent"
 "	      0053a74b    lea edx,[edx+ebx*8]"
 "	      0053a74e    mov [edx],ecx"
 "	      0053a750    mov [edx+4],eax"
 );
 // LINE 303:
 	asm( 
-"	      0053a753    mov eax,[ebp-8]"
-"	      0053a756    mov ecx,[ebp-4]"
-"	      0053a759    mov edx,[ebp-1Ch]"
+"	      0053a753    mov eax,tempStruct.cost"
+"	      0053a756    mov ecx,tempStruct.stationID"
+"	      0053a759    mov edx,this"
 "	      0053a75c    mov edx,[edx+8]"
-"	      0053a75f    mov ebx,[ebp-10h]"
+"	      0053a75f    mov ebx,child"
 "	      0053a762    lea edx,[edx+ebx*8]"
 "	      0053a765    mov [edx],eax"
 "	      0053a767    mov [edx+4],ecx"
 );
 // LINE 306:
 	asm( 
-"	      0053a76a    mov eax,[ebp-10h]"
-"	      0053a76d    mov [ebp-0Ch],eax"
+"	      0053a76a    mov eax,child"
+"	      0053a76d    mov parent,eax"
 );
 // LINE 307:
 	asm( 
@@ -1359,11 +1359,11 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 );
 // LINE 310:
 	asm( 
-"	      0053a775    mov eax,[ebp-8]"
-"	      0053a778    mov ecx,[ebp-4]"
-"	      0053a77b    mov edx,[ebp-1Ch]"
+"	      0053a775    mov eax,tempStruct.cost"
+"	      0053a778    mov ecx,tempStruct.stationID"
+"	      0053a77b    mov edx,this"
 "	      0053a77e    mov edx,[edx+8]"
-"	      0053a781    mov ebx,[ebp-0Ch]"
+"	      0053a781    mov ebx,parent"
 "	      0053a784    lea edx,[edx+ebx*8]"
 "	      0053a787    mov [edx],eax"
 "	      0053a789    mov [edx+4],ecx"
@@ -1392,22 +1392,22 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 "	      0053a79e    push ebx"
 "	      0053a79f    push esi"
 "	      0053a7a0    push edi"
-"	      0053a7a1    mov [ebp-14h],ecx"
+"	      0053a7a1    mov this,ecx"
 );
 // LINE 318:
 	asm( 
-"	      0053a7a4    mov eax,[ebp-14h]"
+"	      0053a7a4    mov eax,this"
 "	      0053a7a7    inc dword ptr [eax+14h]"
-"	      0053a7aa    mov eax,[ebp-14h]"
+"	      0053a7aa    mov eax,this"
 "	      0053a7ad    mov eax,[eax+14h]"
-"	      0053a7b0    mov [ebp-10h],eax"
+"	      0053a7b0    mov index,eax"
 );
 // LINE 321:
 	asm( 
-"	      0053a7b3    mov eax,[ebp+8]"
-"	      0053a7b6    mov ecx,[ebp-14h]"
+"	      0053a7b3    mov eax,pInsertStruct"
+"	      0053a7b6    mov ecx,this"
 "	      0053a7b9    mov ecx,[ecx+10h]"
-"	      0053a7bc    mov edx,[ebp-10h]"
+"	      0053a7bc    mov edx,index"
 "	      0053a7bf    lea edx,[edx+edx*4]"
 "	      0053a7c2    lea ecx,[ecx+edx*2]"
 "	      0053a7c5    mov edx,[eax]"
@@ -1419,16 +1419,16 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 );
 // LINE 327:
 	asm( 
-"	      0053a7d7    mov eax,[ebp-10h]"
+"	      0053a7d7    mov eax,index"
 "	      0053a7da    cdq"
 "	      0053a7db    sub eax,edx"
 "	      0053a7dd    sar eax,1"
 "	      0053a7e0    lea eax,[eax+eax*4]"
-"	      0053a7e3    mov ecx,[ebp-14h]"
+"	      0053a7e3    mov ecx,this"
 "	      0053a7e6    mov ecx,[ecx+10h]"
-"	      0053a7e9    mov edx,[ebp-14h]"
+"	      0053a7e9    mov edx,this"
 "	      0053a7ec    mov edx,[edx+10h]"
-"	      0053a7ef    mov ebx,[ebp-10h]"
+"	      0053a7ef    mov ebx,index"
 "	      0053a7f2    lea ebx,[ebx+ebx*4]"
 "	      0053a7f5    mov edx,[edx+ebx*2]"
 "	      0053a7f8    cmp [ecx+eax*2],edx"
@@ -1436,12 +1436,12 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 );
 // LINE 329:
 	asm( 
-"	      0053a801    mov eax,[ebp-14h]"
+"	      0053a801    mov eax,this"
 "	      0053a804    mov eax,[eax+10h]"
-"	      0053a807    mov ecx,[ebp-10h]"
+"	      0053a807    mov ecx,index"
 "	      0053a80a    lea ecx,[ecx+ecx*4]"
 "	      0053a80d    lea eax,[eax+ecx*2]"
-"	      0053a810    lea ecx,[ebp-0Ch]"
+"	      0053a810    lea ecx,tempStruct.cost"
 "	      0053a813    mov edx,[eax]"
 "	      0053a815    mov [ecx],edx"
 "	      0053a817    mov edx,[eax+4]"
@@ -1451,17 +1451,17 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 );
 // LINE 330:
 	asm( 
-"	      0053a825    mov eax,[ebp-10h]"
+"	      0053a825    mov eax,index"
 "	      0053a828    cdq"
 "	      0053a829    sub eax,edx"
 "	      0053a82b    sar eax,1"
 "	      0053a82e    lea eax,[eax+eax*4]"
 "	      0053a831    add eax,eax"
-"	      0053a833    mov ecx,[ebp-14h]"
+"	      0053a833    mov ecx,this"
 "	      0053a836    add eax,[ecx+10h]"
-"	      0053a839    mov ecx,[ebp-14h]"
+"	      0053a839    mov ecx,this"
 "	      0053a83c    mov ecx,[ecx+10h]"
-"	      0053a83f    mov edx,[ebp-10h]"
+"	      0053a83f    mov edx,index"
 "	      0053a842    lea edx,[edx+edx*4]"
 "	      0053a845    lea ecx,[ecx+edx*2]"
 "	      0053a848    mov edx,[eax]"
@@ -1473,14 +1473,14 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 );
 // LINE 331:
 	asm( 
-"	      0053a85a    lea ecx,[ebp-0Ch]"
-"	      0053a85d    mov eax,[ebp-10h]"
+"	      0053a85a    lea ecx,tempStruct.cost"
+"	      0053a85d    mov eax,index"
 "	      0053a860    cdq"
 "	      0053a861    sub eax,edx"
 "	      0053a863    sar eax,1"
 "	      0053a866    lea eax,[eax+eax*4]"
 "	      0053a869    add eax,eax"
-"	      0053a86b    mov edx,[ebp-14h]"
+"	      0053a86b    mov edx,this"
 "	      0053a86e    add eax,[edx+10h]"
 "	      0053a871    mov edx,[ecx]"
 "	      0053a873    mov [eax],edx"
@@ -1491,11 +1491,11 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 );
 // LINE 332:
 	asm( 
-"	      0053a883    mov eax,[ebp-10h]"
+"	      0053a883    mov eax,index"
 "	      0053a886    cdq"
 "	      0053a887    sub eax,edx"
 "	      0053a889    sar eax,1"
-"	      0053a88c    mov [ebp-10h],eax"
+"	      0053a88c    mov index,eax"
 );
 // LINE 333:
 	asm( 
@@ -1527,22 +1527,22 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 "	      0053a8a6    push ebx"
 "	      0053a8a7    push esi"
 "	      0053a8a8    push edi"
-"	      0053a8a9    mov [ebp-20h],ecx"
+"	      0053a8a9    mov this,ecx"
 );
 // LINE 344:
 	asm( 
-"	      0053a8ac    mov eax,[ebp-20h]"
+"	      0053a8ac    mov eax,this"
 "	      0053a8af    mov eax,[eax+14h]"
-"	      0053a8b2    mov [ebp-18h],eax"
-"	      0053a8b5    mov eax,[ebp-20h]"
+"	      0053a8b2    mov index,eax"
+"	      0053a8b5    mov eax,this"
 "	      0053a8b8    dec dword ptr [eax+14h]"
 );
 // LINE 345:
 	asm( 
-"	      0053a8bb    mov eax,[ebp-20h]"
+"	      0053a8bb    mov eax,this"
 "	      0053a8be    mov eax,[eax+10h]"
 "	      0053a8c1    add eax,0Ah"
-"	      0053a8c4    mov ecx,[ebp+8]"
+"	      0053a8c4    mov ecx,pRemovedStruct"
 "	      0053a8c7    mov edx,[eax]"
 "	      0053a8c9    mov [ecx],edx"
 "	      0053a8cb    mov edx,[eax+4]"
@@ -1552,12 +1552,12 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 346:
 	asm( 
-"	      0053a8d9    mov eax,[ebp-20h]"
+"	      0053a8d9    mov eax,this"
 "	      0053a8dc    mov eax,[eax+10h]"
-"	      0053a8df    mov ecx,[ebp-18h]"
+"	      0053a8df    mov ecx,index"
 "	      0053a8e2    lea ecx,[ecx+ecx*4]"
 "	      0053a8e5    lea eax,[eax+ecx*2]"
-"	      0053a8e8    mov ecx,[ebp-20h]"
+"	      0053a8e8    mov ecx,this"
 "	      0053a8eb    mov ecx,[ecx+10h]"
 "	      0053a8ee    add ecx,0Ah"
 "	      0053a8f1    mov edx,[eax]"
@@ -1566,12 +1566,12 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 "	      0053a8f8    mov [ecx+4],edx"
 "	      0053a8fb    mov ax,[eax+8]"
 "	      0053a8ff    mov [ecx+8],ax"
-"	      0053a903    mov eax,[ebp-20h]"
+"	      0053a903    mov eax,this"
 "	      0053a906    mov eax,[eax+10h]"
 "	      0053a909    add eax,0Ah"
 "	      0053a90c    mov [ebp-1Ch],eax"
 "	      0053a90f    mov eax,[ebp-1Ch]"
-"	      0053a912    lea ecx,[ebp-0Ch]"
+"	      0053a912    lea ecx,tempStruct.cost"
 "	      0053a915    mov edx,[eax]"
 "	      0053a917    mov [ecx],edx"
 "	      0053a919    mov edx,[eax+4]"
@@ -1581,37 +1581,37 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 350:
 	asm( 
-"	      0053a927    mov dword ptr [ebp-10h],1"
+"	      0053a927    mov parent,1"
 );
 // LINE 353:
 	asm( 
-"	      0053a92e    mov eax,[ebp-20h]"
+"	      0053a92e    mov eax,this"
 "	      0053a931    mov eax,[eax+14h]"
 "	      0053a934    cdq"
 "	      0053a935    sub eax,edx"
 "	      0053a937    sar eax,1"
-"	      0053a93a    cmp eax,[ebp-10h]"
+"	      0053a93a    cmp eax,parent"
 "	      0053a93d    jl near ptr 0053AA2Fh"
 );
 // LINE 356:
 	asm( 
-"	      0053a943    mov eax,[ebp-10h]"
-"	      0053a946    add eax,[ebp-10h]"
-"	      0053a949    mov [ebp-14h],eax"
+"	      0053a943    mov eax,parent"
+"	      0053a946    add eax,parent"
+"	      0053a949    mov child,eax"
 );
 // LINE 359:
 	asm( 
-"	      0053a94c    mov eax,[ebp-20h]"
-"	      0053a94f    mov ecx,[ebp-14h]"
+"	      0053a94c    mov eax,this"
+"	      0053a94f    mov ecx,child"
 "	      0053a952    cmp [eax+14h],ecx"
 "	      0053a955    jle near ptr 0053A983h"
-"	      0053a95b    mov eax,[ebp-14h]"
+"	      0053a95b    mov eax,child"
 "	      0053a95e    lea eax,[eax+eax*4+5]"
-"	      0053a962    mov ecx,[ebp-20h]"
+"	      0053a962    mov ecx,this"
 "	      0053a965    mov ecx,[ecx+10h]"
-"	      0053a968    mov edx,[ebp-20h]"
+"	      0053a968    mov edx,this"
 "	      0053a96b    mov edx,[edx+10h]"
-"	      0053a96e    mov ebx,[ebp-14h]"
+"	      0053a96e    mov ebx,child"
 "	      0053a971    lea ebx,[ebx+ebx*4]"
 "	      0053a974    mov edx,[edx+ebx*2]"
 "	      0053a977    cmp [ecx+eax*2],edx"
@@ -1619,17 +1619,17 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 360:
 	asm( 
-"	      0053a980    inc dword ptr [ebp-14h]"
+"	      0053a980    inc child"
 );
 // LINE 363:
 	asm( 
-"	      0053a983    mov eax,[ebp-20h]"
+"	      0053a983    mov eax,this"
 "	      0053a986    mov eax,[eax+10h]"
-"	      0053a989    mov ecx,[ebp-14h]"
+"	      0053a989    mov ecx,child"
 "	      0053a98c    lea ecx,[ecx+ecx*4]"
-"	      0053a98f    mov edx,[ebp-20h]"
+"	      0053a98f    mov edx,this"
 "	      0053a992    mov edx,[edx+10h]"
-"	      0053a995    mov ebx,[ebp-10h]"
+"	      0053a995    mov ebx,parent"
 "	      0053a998    lea ebx,[ebx+ebx*4]"
 "	      0053a99b    mov edx,[edx+ebx*2]"
 "	      0053a99e    cmp [eax+ecx*2],edx"
@@ -1641,12 +1641,12 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 367:
 	asm( 
-"	      0053a9ac    mov eax,[ebp-20h]"
+"	      0053a9ac    mov eax,this"
 "	      0053a9af    mov eax,[eax+10h]"
-"	      0053a9b2    mov ecx,[ebp-10h]"
+"	      0053a9b2    mov ecx,parent"
 "	      0053a9b5    lea ecx,[ecx+ecx*4]"
 "	      0053a9b8    lea eax,[eax+ecx*2]"
-"	      0053a9bb    lea ecx,[ebp-0Ch]"
+"	      0053a9bb    lea ecx,tempStruct.cost"
 "	      0053a9be    mov edx,[eax]"
 "	      0053a9c0    mov [ecx],edx"
 "	      0053a9c2    mov edx,[eax+4]"
@@ -1656,14 +1656,14 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 368:
 	asm( 
-"	      0053a9d0    mov eax,[ebp-20h]"
+"	      0053a9d0    mov eax,this"
 "	      0053a9d3    mov eax,[eax+10h]"
-"	      0053a9d6    mov ecx,[ebp-14h]"
+"	      0053a9d6    mov ecx,child"
 "	      0053a9d9    lea ecx,[ecx+ecx*4]"
 "	      0053a9dc    lea eax,[eax+ecx*2]"
-"	      0053a9df    mov ecx,[ebp-20h]"
+"	      0053a9df    mov ecx,this"
 "	      0053a9e2    mov ecx,[ecx+10h]"
-"	      0053a9e5    mov edx,[ebp-10h]"
+"	      0053a9e5    mov edx,parent"
 "	      0053a9e8    lea edx,[edx+edx*4]"
 "	      0053a9eb    lea ecx,[ecx+edx*2]"
 "	      0053a9ee    mov edx,[eax]"
@@ -1675,10 +1675,10 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 369:
 	asm( 
-"	      0053aa00    lea eax,[ebp-0Ch]"
-"	      0053aa03    mov ecx,[ebp-20h]"
+"	      0053aa00    lea eax,tempStruct.cost"
+"	      0053aa03    mov ecx,this"
 "	      0053aa06    mov ecx,[ecx+10h]"
-"	      0053aa09    mov edx,[ebp-14h]"
+"	      0053aa09    mov edx,child"
 "	      0053aa0c    lea edx,[edx+edx*4]"
 "	      0053aa0f    lea ecx,[ecx+edx*2]"
 "	      0053aa12    mov edx,[eax]"
@@ -1690,8 +1690,8 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 372:
 	asm( 
-"	      0053aa24    mov eax,[ebp-14h]"
-"	      0053aa27    mov [ebp-10h],eax"
+"	      0053aa24    mov eax,child"
+"	      0053aa27    mov parent,eax"
 );
 // LINE 373:
 	asm( 
@@ -1699,10 +1699,10 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 );
 // LINE 376:
 	asm( 
-"	      0053aa2f    lea eax,[ebp-0Ch]"
-"	      0053aa32    mov ecx,[ebp-20h]"
+"	      0053aa2f    lea eax,tempStruct.cost"
+"	      0053aa32    mov ecx,this"
 "	      0053aa35    mov ecx,[ecx+10h]"
-"	      0053aa38    mov edx,[ebp-10h]"
+"	      0053aa38    mov edx,parent"
 "	      0053aa3b    lea edx,[edx+edx*4]"
 "	      0053aa3e    lea ecx,[ecx+edx*2]"
 "	      0053aa41    mov edx,[eax]"
@@ -1733,18 +1733,18 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 "	      0053aa65    push ebx"
 "	      0053aa66    push esi"
 "	      0053aa67    push edi"
-"	      0053aa68    mov [ebp-0Ch],ecx"
+"	      0053aa68    mov this,ecx"
 );
 // LINE 385:
 	asm( 
 "	      0053aa6b    mov eax,[ebp+8]"
 "	      0053aa6e    push eax"
-"	      0053aa6f    mov ecx,[ebp-0Ch]"
+"	      0053aa6f    mov ecx,this"
 "	      0053aa72    call 0053A1FBh"
 );
 // LINE 386:
 	asm( 
-"	      0053aa77    mov eax,[ebp-0Ch]"
+"	      0053aa77    mov eax,this"
 "	      0053aa7a    cmp dword ptr [eax+0Ch],0"
 "	      0053aa7e    je near ptr 0053AAB7h"
 );
@@ -1752,20 +1752,20 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 // Block start:
 	struct _StationHeapStruct removedStruct;
 	asm( 
-"	      0053aa84    lea eax,[ebp-8]"
+"	      0053aa84    lea eax,removedStruct.cost"
 "	      0053aa87    push eax"
-"	      0053aa88    mov ecx,[ebp-0Ch]"
+"	      0053aa88    mov ecx,this"
 "	      0053aa8b    call 0053A637h"
 );
 // LINE 391:
 	asm( 
-"	      0053aa90    mov ecx,[ebp-4]"
+"	      0053aa90    mov ecx,removedStruct.stationID"
 "	      0053aa93    shl ecx,5"
 "	      0053aa96    lea ecx,[ecx+ecx*2]"
-"	      0053aa99    mov edx,[ebp-0Ch]"
+"	      0053aa99    mov edx,this"
 "	      0053aa9c    mov edx,[edx]"
 "	      0053aa9e    mov cx,[ecx+edx+58h]"
-"	      0053aaa3    mov edx,[ebp+0Ch]"
+"	      0053aaa3    mov edx,result"
 "	      0053aaa6    mov [edx],cx"
 );
 // LINE 392:
@@ -1780,7 +1780,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 );
 // LINE 396:
 	asm( 
-"	      0053aab7    mov dword ptr [ebp+0Ch],0"
+"	      0053aab7    mov result,0"
 );
 // LINE 397:
 	asm( 
@@ -1807,11 +1807,11 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 "	      0053aad3    push ebx"
 "	      0053aad4    push esi"
 "	      0053aad5    push edi"
-"	      0053aad6    mov [ebp-0Ch],ecx"
+"	      0053aad6    mov this,ecx"
 );
 // LINE 404:
 	asm( 
-"	      0053aad9    mov eax,[ebp-0Ch]"
+"	      0053aad9    mov eax,this"
 "	      0053aadc    cmp dword ptr [eax+0Ch],0"
 "	      0053aae0    je near ptr 0053AB19h"
 );
@@ -1819,20 +1819,20 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 // Block start:
 	struct _StationHeapStruct removedStruct;
 	asm( 
-"	      0053aae6    lea eax,[ebp-8]"
+"	      0053aae6    lea eax,removedStruct.cost"
 "	      0053aae9    push eax"
-"	      0053aaea    mov ecx,[ebp-0Ch]"
+"	      0053aaea    mov ecx,this"
 "	      0053aaed    call 0053A637h"
 );
 // LINE 409:
 	asm( 
-"	      0053aaf2    mov ecx,[ebp-4]"
+"	      0053aaf2    mov ecx,removedStruct.stationID"
 "	      0053aaf5    shl ecx,5"
 "	      0053aaf8    lea ecx,[ecx+ecx*2]"
-"	      0053aafb    mov edx,[ebp-0Ch]"
+"	      0053aafb    mov edx,this"
 "	      0053aafe    mov edx,[edx]"
 "	      0053ab00    mov cx,[ecx+edx+58h]"
-"	      0053ab05    mov edx,[ebp+8]"
+"	      0053ab05    mov edx,result"
 "	      0053ab08    mov [edx],cx"
 );
 // LINE 410:
@@ -1847,7 +1847,7 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 );
 // LINE 414:
 	asm( 
-"	      0053ab19    mov dword ptr [ebp+8],0"
+"	      0053ab19    mov result,0"
 );
 // LINE 415:
 	asm( 
@@ -1874,13 +1874,13 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 "	      0053ab35    push ebx"
 "	      0053ab36    push esi"
 "	      0053ab37    push edi"
-"	      0053ab38    mov [ebp-4],ecx"
+"	      0053ab38    mov this,ecx"
 );
 // LINE 423:
 	asm( 
-"	      0053ab3b    mov eax,[ebp-4]"
+"	      0053ab3b    mov eax,this"
 "	      0053ab3e    mov eax,[eax]"
-"	      0053ab40    mov ecx,[ebp+8]"
+"	      0053ab40    mov ecx,stationID"
 "	      0053ab43    shl ecx,5"
 "	      0053ab46    lea ecx,[ecx+ecx*2]"
 "	      0053ab49    cmp dword ptr [eax+ecx+5Ch],0"
@@ -1895,10 +1895,10 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 );
 // LINE 425:
 	asm( 
-"	      0053ab75    mov eax,[ebp+8]"
+"	      0053ab75    mov eax,stationID"
 "	      0053ab78    shl eax,5"
 "	      0053ab7b    lea eax,[eax+eax*2]"
-"	      0053ab7e    mov ecx,[ebp-4]"
+"	      0053ab7e    mov ecx,this"
 "	      0053ab81    mov ecx,[ecx]"
 "	      0053ab83    dec dword ptr [eax+ecx+5Ch]"
 );
@@ -1938,7 +1938,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053ab9c    push ebx"
 "	      0053ab9d    push esi"
 "	      0053ab9e    push edi"
-"	      0053ab9f    mov [ebp-288h],ecx"
+"	      0053ab9f    mov this,ecx"
 );
 // LINE 433:
 	asm( 
@@ -1960,10 +1960,10 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053abf3    mov dword ptr [eax+0Ch],1"
 "	      0053abfa    jmp near ptr 0053ABFFh"
 "	      0053abff    mov eax,[ebp-284h]"
-"	      0053ac05    mov [ebp-9Ch],eax"
+"	      0053ac05    mov errorMsgSoundFullPath.reference,eax"
 "	      0053ac0b    jmp near ptr 0053AC1Ah"
-"	      0053ac10    mov dword ptr [ebp-9Ch],0"
-"	      0053ac1a    mov dword ptr [ebp-0A0h],0"
+"	      0053ac10    mov errorMsgSoundFullPath.reference,0"
+"	      0053ac1a    mov errorMsgSoundFullPath.c_str_ptr,0"
 "	      0053ac24    jmp near ptr 0053AC29h"
 );
 // LINE 434:
@@ -1985,28 +1985,28 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 450:
 	asm( 
 "	      0053ac5d    mov al,[ebp+8]"
-"	      0053ac60    mov [ebp-0A4h],al"
+"	      0053ac60    mov destLoc.x,al"
 );
 // LINE 451:
 	asm( 
 "	      0053ac66    mov al,[ebp+0Ch]"
-"	      0053ac69    mov [ebp-0A3h],al"
+"	      0053ac69    mov destLoc.y,al"
 );
 // LINE 454:
 	asm( 
-"	      0053ac6f    mov eax,[ebp+1Ch]"
+"	      0053ac6f    mov eax,vehicleListLength"
 "	      0053ac72    push eax"
-"	      0053ac73    mov eax,[ebp+18h]"
+"	      0053ac73    mov eax,vehicleList"
 "	      0053ac76    push eax"
-"	      0053ac77    mov eax,[ebp+14h]"
+"	      0053ac77    mov eax,responseLevel"
 "	      0053ac7a    push eax"
-"	      0053ac7b    mov ecx,[ebp-288h]"
+"	      0053ac7b    mov ecx,this"
 "	      0053ac81    call 0053A4A0h"
-"	      0053ac86    mov [ebp-3Ch],eax"
+"	      0053ac86    mov availableVehicle,eax"
 );
 // LINE 457:
 	asm( 
-"	      0053ac89    cmp dword ptr [ebp-3Ch],0"
+"	      0053ac89    cmp availableVehicle,0"
 "	      0053ac8d    jne near ptr 0053AF4Ch"
 );
 // LINE 459:
@@ -2068,7 +2068,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053ad82    mov dword ptr [ebp-118h],0"
 "	      0053ad8c    mov dword ptr [ebp-11Ch],0"
 "	      0053ad96    jmp near ptr 0053AD9Bh"
-"	      0053ad9b    lea eax,[ebp-0A0h]"
+"	      0053ad9b    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053ada1    push eax"
 "	      0053ada2    lea eax,[ebp-11Ch]"
 "	      0053ada8    push eax"
@@ -2113,7 +2113,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 460:
 	asm( 
 "	      0053ae61    push 2"
-"	      0053ae63    lea eax,[ebp-0A0h]"
+"	      0053ae63    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053ae69    push eax"
 "	      0053ae6a    mov ecx,6351D0h"
 "	      0053ae6f    call 0042F318h"
@@ -2135,12 +2135,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 464:
 	asm( 
 "	      0053ae92    mov dword ptr [ebp-120h],101h"
-"	      0053ae9c    mov eax,[ebp-9Ch]"
+"	      0053ae9c    mov eax,errorMsgSoundFullPath.reference"
 "	      0053aea2    dec dword ptr [eax+0Ch]"
-"	      0053aea5    mov eax,[ebp-9Ch]"
+"	      0053aea5    mov eax,errorMsgSoundFullPath.reference"
 "	      0053aeab    cmp dword ptr [eax+0Ch],0"
 "	      0053aeaf    jne near ptr 0053AF03h"
-"	      0053aeb5    mov eax,[ebp-9Ch]"
+"	      0053aeb5    mov eax,errorMsgSoundFullPath.reference"
 "	      0053aebb    mov [ebp-274h],eax"
 "	      0053aec1    mov eax,[ebp-274h]"
 "	      0053aec7    mov [ebp-270h],eax"
@@ -2156,9 +2156,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053aef9    jmp near ptr 0053AEFEh"
 "	      0053aefe    jmp near ptr 0053AF03h"
 "	      0053af03    jmp near ptr 0053AF08h"
-"	      0053af08    cmp dword ptr [ebp-0A0h],0"
+"	      0053af08    cmp errorMsgSoundFullPath.c_str_ptr,0"
 "	      0053af0f    je near ptr 0053AF3Ch"
-"	      0053af15    mov eax,[ebp-0A0h]"
+"	      0053af15    mov eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053af1b    mov [ebp-268h],eax"
 "	      0053af21    mov eax,[ebp-268h]"
 "	      0053af27    mov [ebp-26Ch],eax"
@@ -2172,9 +2172,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 467:
 	asm( 
-"	      0053af4c    lea eax,[ebp-0A4h]"
+"	      0053af4c    lea eax,destLoc.x"
 "	      0053af52    push eax"
-"	      0053af53    mov ecx,[ebp-288h]"
+"	      0053af53    mov ecx,this"
 "	      0053af59    call 0053A01Eh"
 "	      0053af5e    test eax,eax"
 "	      0053af60    jne near ptr 0053B21Fh"
@@ -2238,7 +2238,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b055    mov dword ptr [ebp-124h],0"
 "	      0053b05f    mov dword ptr [ebp-128h],0"
 "	      0053b069    jmp near ptr 0053B06Eh"
-"	      0053b06e    lea eax,[ebp-0A0h]"
+"	      0053b06e    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b074    push eax"
 "	      0053b075    lea eax,[ebp-128h]"
 "	      0053b07b    push eax"
@@ -2283,7 +2283,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 470:
 	asm( 
 "	      0053b134    push 2"
-"	      0053b136    lea eax,[ebp-0A0h]"
+"	      0053b136    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b13c    push eax"
 "	      0053b13d    mov ecx,6351D0h"
 "	      0053b142    call 0042F318h"
@@ -2305,12 +2305,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 474:
 	asm( 
 "	      0053b165    mov dword ptr [ebp-12Ch],103h"
-"	      0053b16f    mov eax,[ebp-9Ch]"
+"	      0053b16f    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b175    dec dword ptr [eax+0Ch]"
-"	      0053b178    mov eax,[ebp-9Ch]"
+"	      0053b178    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b17e    cmp dword ptr [eax+0Ch],0"
 "	      0053b182    jne near ptr 0053B1D6h"
-"	      0053b188    mov eax,[ebp-9Ch]"
+"	      0053b188    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b18e    mov [ebp-248h],eax"
 "	      0053b194    mov eax,[ebp-248h]"
 "	      0053b19a    mov [ebp-244h],eax"
@@ -2326,9 +2326,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b1cc    jmp near ptr 0053B1D1h"
 "	      0053b1d1    jmp near ptr 0053B1D6h"
 "	      0053b1d6    jmp near ptr 0053B1DBh"
-"	      0053b1db    cmp dword ptr [ebp-0A0h],0"
+"	      0053b1db    cmp errorMsgSoundFullPath.c_str_ptr,0"
 "	      0053b1e2    je near ptr 0053B20Fh"
-"	      0053b1e8    mov eax,[ebp-0A0h]"
+"	      0053b1e8    mov eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b1ee    mov [ebp-23Ch],eax"
 "	      0053b1f4    mov eax,[ebp-23Ch]"
 "	      0053b1fa    mov [ebp-240h],eax"
@@ -2342,50 +2342,50 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 479:
 	asm( 
-"	      0053b21f    mov eax,[ebp-3Ch]"
+"	      0053b21f    mov eax,availableVehicle"
 "	      0053b222    test byte ptr [eax+8],2"
 "	      0053b226    je near ptr 0053B3F4h"
 );
 // LINE 483:
 	asm( 
-"	      0053b22c    mov eax,[ebp+1Ch]"
+"	      0053b22c    mov eax,vehicleListLength"
 "	      0053b22f    push eax"
-"	      0053b230    mov eax,[ebp+18h]"
+"	      0053b230    mov eax,vehicleList"
 "	      0053b233    push eax"
 "	      0053b234    mov eax,[ebp-0A4h]"
 "	      0053b23a    push eax"
-"	      0053b23b    mov ecx,[ebp-288h]"
+"	      0053b23b    mov ecx,this"
 "	      0053b241    call 0053A358h"
 );
 // LINE 487:
 	asm( 
-"	      0053b246    mov eax,[ebp-288h]"
+"	      0053b246    mov eax,this"
 "	      0053b24c    cmp dword ptr [eax+14h],0"
 "	      0053b250    je near ptr 0053B3EFh"
 );
 // LINE 489:
 	asm( 
-"	      0053b256    lea eax,[ebp-0B0h]"
+"	      0053b256    lea eax,vehicleHeapStruct.cost"
 "	      0053b25c    push eax"
-"	      0053b25d    mov ecx,[ebp-288h]"
+"	      0053b25d    mov ecx,this"
 "	      0053b263    call 0053A8A0h"
 );
 // LINE 493:
 	asm( 
-"	      0053b268    lea eax,[ebp-0E0h]"
+"	      0053b268    lea eax,startGoal2.pRGV"
 "	      0053b26e    push eax"
-"	      0053b26f    lea eax,[ebp-10Ch]"
+"	      0053b26f    lea eax,startGoal1.pRGV"
 "	      0053b275    push eax"
 "	      0053b276    mov eax,[ebp-0A4h]"
 "	      0053b27c    push eax"
-"	      0053b27d    mov eax,[ebp-0ACh]"
+"	      0053b27d    mov eax,vehicleHeapStruct.pVehicle"
 "	      0053b283    mov ax,[eax+7Ch]"
 "	      0053b287    push eax"
 "	      0053b288    lea eax,[ebp-158h]"
 "	      0053b28e    push eax"
 "	      0053b28f    mov ecx,5C3828h"
 "	      0053b294    call 0053C998h"
-"	      0053b299    lea edi,[ebp-30h]"
+"	      0053b299    lea edi,result.pRGV"
 "	      0053b29c    mov esi,eax"
 "	      0053b29e    mov ecx,0Ah"
 "	      0053b2a3    rep movsd"
@@ -2393,14 +2393,14 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 495:
 	asm( 
-"	      0053b2a7    cmp dword ptr [ebp-30h],0"
+"	      0053b2a7    cmp result.pRGV,0"
 "	      0053b2ab    jne near ptr 0053B35Ch"
 );
 // LINE 497:
 	asm( 
-"	      0053b2b1    lea eax,[ebp-68h]"
+"	      0053b2b1    lea eax,destGoal2.pRGV"
 "	      0053b2b4    push eax"
-"	      0053b2b5    lea eax,[ebp-98h]"
+"	      0053b2b5    lea eax,destGoal1.pRGV"
 "	      0053b2bb    push eax"
 "	      0053b2bc    mov eax,[ebp-0A4h]"
 "	      0053b2c2    push eax"
@@ -2413,43 +2413,43 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 501:
 	asm( 
-"	      0053b2db    mov eax,[ebp-10Ch]"
+"	      0053b2db    mov eax,startGoal1.pRGV"
 "	      0053b2e1    mov al,[eax]"
-"	      0053b2e3    mov [ebp-4],al"
+"	      0053b2e3    mov startVertex.x,al"
 );
 // LINE 502:
 	asm( 
-"	      0053b2e6    mov eax,[ebp-10Ch]"
+"	      0053b2e6    mov eax,startGoal1.pRGV"
 "	      0053b2ec    xor ecx,ecx"
 "	      0053b2ee    mov cl,[eax+1]"
 "	      0053b2f1    push ecx"
-"	      0053b2f2    mov eax,[ebp-10Ch]"
+"	      0053b2f2    mov eax,startGoal1.pRGV"
 "	      0053b2f8    xor ecx,ecx"
 "	      0053b2fa    mov cl,[eax]"
 "	      0053b2fc    push ecx"
 "	      0053b2fd    mov ecx,5C3828h"
 "	      0053b302    call 0053D167h"
-"	      0053b307    mov [ebp-3],al"
+"	      0053b307    mov startVertex.yindex,al"
 );
 // LINE 504:
 	asm( 
-"	      0053b30a    mov eax,[ebp-98h]"
+"	      0053b30a    mov eax,destGoal1.pRGV"
 "	      0053b310    mov al,[eax]"
-"	      0053b312    mov [ebp-0B4h],al"
+"	      0053b312    mov destVert.x,al"
 );
 // LINE 505:
 	asm( 
-"	      0053b318    mov eax,[ebp-98h]"
+"	      0053b318    mov eax,destGoal1.pRGV"
 "	      0053b31e    xor ecx,ecx"
 "	      0053b320    mov cl,[eax+1]"
 "	      0053b323    push ecx"
-"	      0053b324    mov eax,[ebp-98h]"
+"	      0053b324    mov eax,destGoal1.pRGV"
 "	      0053b32a    xor ecx,ecx"
 "	      0053b32c    mov cl,[eax]"
 "	      0053b32e    push ecx"
 "	      0053b32f    mov ecx,5C3828h"
 "	      0053b334    call 0053D167h"
-"	      0053b339    mov [ebp-0B3h],al"
+"	      0053b339    mov destVert.yindex,al"
 );
 // LINE 507:
 	asm( 
@@ -2459,7 +2459,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b349    push eax"
 "	      0053b34a    mov ecx,5C37F8h"
 "	      0053b34f    call 00543704h"
-"	      0053b354    mov [ebp-6Ch],eax"
+"	      0053b354    mov pathFound,eax"
 );
 // LINE 509:
 	asm( 
@@ -2467,21 +2467,21 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 511:
 	asm( 
-"	      0053b35c    mov dword ptr [ebp-6Ch],1"
+"	      0053b35c    mov pathFound,1"
 );
 // LINE 516:
 	asm( 
-"	      0053b363    cmp dword ptr [ebp-6Ch],0"
+"	      0053b363    cmp pathFound,0"
 "	      0053b367    je near ptr 0053B3EAh"
 );
 // LINE 519:
 	asm( 
-"	      0053b36d    mov eax,[ebp+14h]"
+"	      0053b36d    mov eax,responseLevel"
 "	      0053b370    push eax"
-"	      0053b371    mov eax,[ebp+10h]"
+"	      0053b371    mov eax,responseType"
 "	      0053b374    push eax"
 "	      0053b375    sub esp,2Ch"
-"	      0053b378    lea esi,[ebp-30h]"
+"	      0053b378    lea esi,result.pRGV"
 "	      0053b37b    mov edi,esp"
 "	      0053b37d    mov ecx,0Ah"
 "	      0053b382    rep movsd"
@@ -2489,30 +2489,30 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b386    mov eax,[ebp-0A4h]"
 "	      0053b38c    push eax"
 "	      0053b38d    sub esp,2Ch"
-"	      0053b390    lea esi,[ebp-68h]"
+"	      0053b390    lea esi,destGoal2.pRGV"
 "	      0053b393    mov edi,esp"
 "	      0053b395    mov ecx,0Ah"
 "	      0053b39a    rep movsd"
 "	      0053b39c    movsw"
 "	      0053b39e    sub esp,2Ch"
-"	      0053b3a1    lea esi,[ebp-98h]"
+"	      0053b3a1    lea esi,destGoal1.pRGV"
 "	      0053b3a7    mov edi,esp"
 "	      0053b3a9    mov ecx,0Ah"
 "	      0053b3ae    rep movsd"
 "	      0053b3b0    movsw"
 "	      0053b3b2    sub esp,2Ch"
-"	      0053b3b5    lea esi,[ebp-0E0h]"
+"	      0053b3b5    lea esi,startGoal2.pRGV"
 "	      0053b3bb    mov edi,esp"
 "	      0053b3bd    mov ecx,0Ah"
 "	      0053b3c2    rep movsd"
 "	      0053b3c4    movsw"
 "	      0053b3c6    sub esp,2Ch"
-"	      0053b3c9    lea esi,[ebp-10Ch]"
+"	      0053b3c9    lea esi,startGoal1.pRGV"
 "	      0053b3cf    mov edi,esp"
 "	      0053b3d1    mov ecx,0Ah"
 "	      0053b3d6    rep movsd"
 "	      0053b3d8    movsw"
-"	      0053b3da    mov ecx,[ebp-0ACh]"
+"	      0053b3da    mov ecx,vehicleHeapStruct.pVehicle"
 "	      0053b3e0    call 00541661h"
 );
 // LINE 520:
@@ -2531,12 +2531,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	asm( 
 "	      0053b3f4    mov eax,[ebp-0A4h]"
 "	      0053b3fa    push eax"
-"	      0053b3fb    mov ecx,[ebp-288h]"
+"	      0053b3fb    mov ecx,this"
 "	      0053b401    call 0053A1FBh"
 );
 // LINE 530:
 	asm( 
-"	      0053b406    mov eax,[ebp-288h]"
+"	      0053b406    mov eax,this"
 "	      0053b40c    cmp dword ptr [eax+0Ch],0"
 "	      0053b410    je near ptr 0053B617h"
 );
@@ -2544,23 +2544,23 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // Block start:
 	struct _StructStation* sS;
 	asm( 
-"	      0053b416    lea eax,[ebp-38h]"
+"	      0053b416    lea eax,stationHeapStruct.cost"
 "	      0053b419    push eax"
-"	      0053b41a    mov ecx,[ebp-288h]"
+"	      0053b41a    mov ecx,this"
 "	      0053b420    call 0053A637h"
 );
 // LINE 537:
 	asm( 
-"	      0053b425    lea eax,[ebp-98h]"
+"	      0053b425    lea eax,destGoal1.pRGV"
 "	      0053b42b    push eax"
-"	      0053b42c    lea eax,[ebp-98h]"
+"	      0053b42c    lea eax,destGoal1.pRGV"
 "	      0053b432    push eax"
 "	      0053b433    mov eax,[ebp-0A4h]"
 "	      0053b439    push eax"
-"	      0053b43a    mov eax,[ebp-34h]"
+"	      0053b43a    mov eax,stationHeapStruct.stationID"
 "	      0053b43d    shl eax,5"
 "	      0053b440    lea eax,[eax+eax*2]"
-"	      0053b443    mov ecx,[ebp-288h]"
+"	      0053b443    mov ecx,this"
 "	      0053b449    mov ecx,[ecx]"
 "	      0053b44b    mov ax,[eax+ecx+5Ah]"
 "	      0053b450    push eax"
@@ -2568,7 +2568,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b457    push eax"
 "	      0053b458    mov ecx,5C3828h"
 "	      0053b45d    call 0053C998h"
-"	      0053b462    lea edi,[ebp-30h]"
+"	      0053b462    lea edi,result.pRGV"
 "	      0053b465    mov esi,eax"
 "	      0053b467    mov ecx,0Ah"
 "	      0053b46c    rep movsd"
@@ -2576,16 +2576,16 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 539:
 	asm( 
-"	      0053b470    cmp dword ptr [ebp-30h],0"
+"	      0053b470    cmp result.pRGV,0"
 "	      0053b474    jne near ptr 0053B53Fh"
 );
 // LINE 541:
 // Block start:
 	struct RGVertex* pRGV;
 	asm( 
-"	      0053b47a    lea eax,[ebp-68h]"
+"	      0053b47a    lea eax,destGoal2.pRGV"
 "	      0053b47d    push eax"
-"	      0053b47e    lea eax,[ebp-98h]"
+"	      0053b47e    lea eax,destGoal1.pRGV"
 "	      0053b484    push eax"
 "	      0053b485    mov eax,[ebp-0A4h]"
 "	      0053b48b    push eax"
@@ -2598,53 +2598,53 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 545:
 	asm( 
-"	      0053b4a4    mov eax,[ebp-34h]"
+"	      0053b4a4    mov eax,stationHeapStruct.stationID"
 "	      0053b4a7    shl eax,5"
 "	      0053b4aa    lea eax,[eax+eax*2]"
-"	      0053b4ad    mov ecx,[ebp-288h]"
+"	      0053b4ad    mov ecx,this"
 "	      0053b4b3    mov ecx,[ecx]"
 "	      0053b4b5    mov eax,[eax+ecx]"
-"	      0053b4b8    mov [ebp-114h],eax"
+"	      0053b4b8    mov pRGV,eax"
 );
 // LINE 546:
 	asm( 
-"	      0053b4be    mov eax,[ebp-114h]"
+"	      0053b4be    mov eax,pRGV"
 "	      0053b4c4    mov al,[eax]"
-"	      0053b4c6    mov [ebp-4],al"
+"	      0053b4c6    mov startVertex.x,al"
 );
 // LINE 547:
 	asm( 
-"	      0053b4c9    mov eax,[ebp-114h]"
+"	      0053b4c9    mov eax,pRGV"
 "	      0053b4cf    xor ecx,ecx"
 "	      0053b4d1    mov cl,[eax+1]"
 "	      0053b4d4    push ecx"
-"	      0053b4d5    mov eax,[ebp-114h]"
+"	      0053b4d5    mov eax,pRGV"
 "	      0053b4db    xor ecx,ecx"
 "	      0053b4dd    mov cl,[eax]"
 "	      0053b4df    push ecx"
 "	      0053b4e0    mov ecx,5C3828h"
 "	      0053b4e5    call 0053D167h"
-"	      0053b4ea    mov [ebp-3],al"
+"	      0053b4ea    mov startVertex.yindex,al"
 );
 // LINE 549:
 	asm( 
-"	      0053b4ed    mov eax,[ebp-98h]"
+"	      0053b4ed    mov eax,destGoal1.pRGV"
 "	      0053b4f3    mov al,[eax]"
-"	      0053b4f5    mov [ebp-0B4h],al"
+"	      0053b4f5    mov destVert.x,al"
 );
 // LINE 550:
 	asm( 
-"	      0053b4fb    mov eax,[ebp-98h]"
+"	      0053b4fb    mov eax,destGoal1.pRGV"
 "	      0053b501    xor ecx,ecx"
 "	      0053b503    mov cl,[eax+1]"
 "	      0053b506    push ecx"
-"	      0053b507    mov eax,[ebp-98h]"
+"	      0053b507    mov eax,destGoal1.pRGV"
 "	      0053b50d    xor ecx,ecx"
 "	      0053b50f    mov cl,[eax]"
 "	      0053b511    push ecx"
 "	      0053b512    mov ecx,5C3828h"
 "	      0053b517    call 0053D167h"
-"	      0053b51c    mov [ebp-0B3h],al"
+"	      0053b51c    mov destVert.yindex,al"
 );
 // LINE 552:
 	asm( 
@@ -2654,7 +2654,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b52c    push eax"
 "	      0053b52d    mov ecx,5C37F8h"
 "	      0053b532    call 00543704h"
-"	      0053b537    mov [ebp-6Ch],eax"
+"	      0053b537    mov pathFound,eax"
 );
 // LINE 554:
 // Block end:
@@ -2663,79 +2663,79 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 556:
 	asm( 
-"	      0053b53f    mov dword ptr [ebp-6Ch],1"
+"	      0053b53f    mov pathFound,1"
 );
 // LINE 561:
 	asm( 
-"	      0053b546    mov eax,[ebp-34h]"
+"	      0053b546    mov eax,stationHeapStruct.stationID"
 "	      0053b549    shl eax,5"
 "	      0053b54c    lea eax,[eax+eax*2]"
-"	      0053b54f    mov ecx,[ebp-288h]"
+"	      0053b54f    mov ecx,this"
 "	      0053b555    add eax,[ecx]"
-"	      0053b557    mov [ebp-110h],eax"
+"	      0053b557    mov sS,eax"
 );
 // LINE 562:
 	asm( 
-"	      0053b55d    cmp dword ptr [ebp-6Ch],0"
+"	      0053b55d    cmp pathFound,0"
 "	      0053b561    je near ptr 0053B612h"
 );
 // LINE 564:
 	asm( 
-"	      0053b567    mov eax,[ebp-110h]"
+"	      0053b567    mov eax,sS"
 "	      0053b56d    inc dword ptr [eax+5Ch]"
 );
 // LINE 567:
 	asm( 
-"	      0053b570    mov eax,[ebp+14h]"
+"	      0053b570    mov eax,responseLevel"
 "	      0053b573    push eax"
-"	      0053b574    mov eax,[ebp+10h]"
+"	      0053b574    mov eax,responseType"
 "	      0053b577    push eax"
 "	      0053b578    sub esp,2Ch"
-"	      0053b57b    lea esi,[ebp-30h]"
+"	      0053b57b    lea esi,result.pRGV"
 "	      0053b57e    mov edi,esp"
 "	      0053b580    mov ecx,0Ah"
 "	      0053b585    rep movsd"
 "	      0053b587    movsw"
-"	      0053b589    mov eax,[ebp-34h]"
+"	      0053b589    mov eax,stationHeapStruct.stationID"
 "	      0053b58c    shl eax,5"
 "	      0053b58f    lea eax,[eax+eax*2]"
-"	      0053b592    mov ecx,[ebp-288h]"
+"	      0053b592    mov ecx,this"
 "	      0053b598    mov ecx,[ecx]"
 "	      0053b59a    mov eax,[eax+ecx+54h]"
 "	      0053b59e    push eax"
 "	      0053b59f    mov eax,[ebp-0A4h]"
 "	      0053b5a5    push eax"
 "	      0053b5a6    sub esp,2Ch"
-"	      0053b5a9    lea esi,[ebp-68h]"
+"	      0053b5a9    lea esi,destGoal2.pRGV"
 "	      0053b5ac    mov edi,esp"
 "	      0053b5ae    mov ecx,0Ah"
 "	      0053b5b3    rep movsd"
 "	      0053b5b5    movsw"
 "	      0053b5b7    sub esp,2Ch"
-"	      0053b5ba    lea esi,[ebp-98h]"
+"	      0053b5ba    lea esi,destGoal1.pRGV"
 "	      0053b5c0    mov edi,esp"
 "	      0053b5c2    mov ecx,0Ah"
 "	      0053b5c7    rep movsd"
 "	      0053b5c9    movsw"
-"	      0053b5cb    mov eax,[ebp-110h]"
+"	      0053b5cb    mov eax,sS"
 "	      0053b5d1    mov ax,[eax+5Ah]"
 "	      0053b5d5    push eax"
 "	      0053b5d6    sub esp,2Ch"
-"	      0053b5d9    mov esi,[ebp-110h]"
+"	      0053b5d9    mov esi,sS"
 "	      0053b5df    add esi,2Ah"
 "	      0053b5e2    mov edi,esp"
 "	      0053b5e4    mov ecx,0Ah"
 "	      0053b5e9    rep movsd"
 "	      0053b5eb    movsw"
 "	      0053b5ed    sub esp,2Ch"
-"	      0053b5f0    mov esi,[ebp-110h]"
+"	      0053b5f0    mov esi,sS"
 "	      0053b5f6    mov edi,esp"
 "	      0053b5f8    mov ecx,0Ah"
 "	      0053b5fd    rep movsd"
 "	      0053b5ff    movsw"
-"	      0053b601    mov eax,[ebp-34h]"
+"	      0053b601    mov eax,stationHeapStruct.stationID"
 "	      0053b604    push eax"
-"	      0053b605    mov ecx,[ebp-3Ch]"
+"	      0053b605    mov ecx,availableVehicle"
 "	      0053b608    call 005419BAh"
 );
 // LINE 568:
@@ -2749,7 +2749,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 573:
 	asm( 
-"	      0053b617    cmp dword ptr [ebp-6Ch],0"
+"	      0053b617    cmp pathFound,0"
 "	      0053b61b    jne near ptr 0053B8DAh"
 );
 // LINE 576:
@@ -2811,7 +2811,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b710    mov dword ptr [ebp-1E0h],0"
 "	      0053b71a    mov dword ptr [ebp-1E4h],0"
 "	      0053b724    jmp near ptr 0053B729h"
-"	      0053b729    lea eax,[ebp-0A0h]"
+"	      0053b729    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b72f    push eax"
 "	      0053b730    lea eax,[ebp-1E4h]"
 "	      0053b736    push eax"
@@ -2856,7 +2856,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 577:
 	asm( 
 "	      0053b7ef    push 2"
-"	      0053b7f1    lea eax,[ebp-0A0h]"
+"	      0053b7f1    lea eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b7f7    push eax"
 "	      0053b7f8    mov ecx,6351D0h"
 "	      0053b7fd    call 0042F318h"
@@ -2878,12 +2878,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 581:
 	asm( 
 "	      0053b820    mov dword ptr [ebp-1E8h],105h"
-"	      0053b82a    mov eax,[ebp-9Ch]"
+"	      0053b82a    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b830    dec dword ptr [eax+0Ch]"
-"	      0053b833    mov eax,[ebp-9Ch]"
+"	      0053b833    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b839    cmp dword ptr [eax+0Ch],0"
 "	      0053b83d    jne near ptr 0053B891h"
-"	      0053b843    mov eax,[ebp-9Ch]"
+"	      0053b843    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b849    mov [ebp-20Ch],eax"
 "	      0053b84f    mov eax,[ebp-20Ch]"
 "	      0053b855    mov [ebp-208h],eax"
@@ -2899,9 +2899,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b887    jmp near ptr 0053B88Ch"
 "	      0053b88c    jmp near ptr 0053B891h"
 "	      0053b891    jmp near ptr 0053B896h"
-"	      0053b896    cmp dword ptr [ebp-0A0h],0"
+"	      0053b896    cmp errorMsgSoundFullPath.c_str_ptr,0"
 "	      0053b89d    je near ptr 0053B8CAh"
-"	      0053b8a3    mov eax,[ebp-0A0h]"
+"	      0053b8a3    mov eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b8a9    mov [ebp-200h],eax"
 "	      0053b8af    mov eax,[ebp-200h]"
 "	      0053b8b5    mov [ebp-204h],eax"
@@ -2916,12 +2916,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // LINE 584:
 	asm( 
 "	      0053b8da    mov dword ptr [ebp-1ECh],1"
-"	      0053b8e4    mov eax,[ebp-9Ch]"
+"	      0053b8e4    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b8ea    dec dword ptr [eax+0Ch]"
-"	      0053b8ed    mov eax,[ebp-9Ch]"
+"	      0053b8ed    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b8f3    cmp dword ptr [eax+0Ch],0"
 "	      0053b8f7    jne near ptr 0053B94Bh"
-"	      0053b8fd    mov eax,[ebp-9Ch]"
+"	      0053b8fd    mov eax,errorMsgSoundFullPath.reference"
 "	      0053b903    mov [ebp-21Ch],eax"
 "	      0053b909    mov eax,[ebp-21Ch]"
 "	      0053b90f    mov [ebp-218h],eax"
@@ -2937,9 +2937,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b941    jmp near ptr 0053B946h"
 "	      0053b946    jmp near ptr 0053B94Bh"
 "	      0053b94b    jmp near ptr 0053B950h"
-"	      0053b950    cmp dword ptr [ebp-0A0h],0"
+"	      0053b950    cmp errorMsgSoundFullPath.c_str_ptr,0"
 "	      0053b957    je near ptr 0053B984h"
-"	      0053b95d    mov eax,[ebp-0A0h]"
+"	      0053b95d    mov eax,errorMsgSoundFullPath.c_str_ptr"
 "	      0053b963    mov [ebp-210h],eax"
 "	      0053b969    mov eax,[ebp-210h]"
 "	      0053b96f    mov [ebp-214h],eax"
@@ -2980,43 +2980,43 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053b9bb    push ebx"
 "	      0053b9bc    push esi"
 "	      0053b9bd    push edi"
-"	      0053b9be    mov [ebp-50h],ecx"
+"	      0053b9be    mov this,ecx"
 );
 // LINE 594:
 	asm( 
-"	      0053b9c1    mov dword ptr [ebp-8],5C3AB0h"
+"	      0053b9c1    mov tempBuildMap,5C3AB0h"
 );
 // LINE 596:
 	asm( 
-"	      0053b9c8    mov eax,[ebp-50h]"
+"	      0053b9c8    mov eax,this"
 "	      0053b9cb    mov dword ptr [eax+4],0"
 );
 // LINE 599:
 	asm( 
-"	      0053b9d2    mov dword ptr [ebp-10h],0"
+"	      0053b9d2    mov y,0"
 "	      0053b9d9    jmp near ptr 0053B9E1h"
-"	      0053b9de    inc dword ptr [ebp-10h]"
-"	      0053b9e1    cmp dword ptr [ebp-10h],80h"
+"	      0053b9de    inc y"
+"	      0053b9e1    cmp y,80h"
 "	      0053b9e8    jge near ptr 0053BA33h"
 );
 // LINE 601:
 	asm( 
-"	      0053b9ee    mov dword ptr [ebp-0Ch],0"
+"	      0053b9ee    mov x,0"
 "	      0053b9f5    jmp near ptr 0053B9FDh"
-"	      0053b9fa    inc dword ptr [ebp-0Ch]"
-"	      0053b9fd    cmp dword ptr [ebp-0Ch],80h"
+"	      0053b9fa    inc x"
+"	      0053b9fd    cmp x,80h"
 "	      0053ba04    jge near ptr 0053BA2Eh"
 );
 // LINE 603:
 	asm( 
-"	      0053ba0a    mov eax,[ebp-0Ch]"
+"	      0053ba0a    mov eax,x"
 "	      0053ba0d    mov eax,[eax*4+639850h]"
-"	      0053ba14    mov ecx,[ebp-10h]"
+"	      0053ba14    mov ecx,y"
 "	      0053ba17    mov al,[eax+ecx]"
-"	      0053ba1a    mov ecx,[ebp-10h]"
+"	      0053ba1a    mov ecx,y"
 "	      0053ba1d    shl ecx,7"
-"	      0053ba20    add ecx,[ebp-0Ch]"
-"	      0053ba23    mov edx,[ebp-8]"
+"	      0053ba20    add ecx,x"
+"	      0053ba23    mov edx,tempBuildMap"
 "	      0053ba26    mov [ecx+edx],al"
 );
 // LINE 604:
@@ -3029,30 +3029,30 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 610:
 	asm( 
-"	      0053ba33    mov dword ptr [ebp-0Ch],0"
+"	      0053ba33    mov x,0"
 "	      0053ba3a    jmp near ptr 0053BA42h"
-"	      0053ba3f    inc dword ptr [ebp-0Ch]"
-"	      0053ba42    cmp dword ptr [ebp-0Ch],80h"
+"	      0053ba3f    inc x"
+"	      0053ba42    cmp x,80h"
 "	      0053ba49    jge near ptr 0053BB5Dh"
 );
 // LINE 612:
 	asm( 
-"	      0053ba4f    mov dword ptr [ebp-10h],0"
+"	      0053ba4f    mov y,0"
 "	      0053ba56    jmp near ptr 0053BA5Eh"
-"	      0053ba5b    inc dword ptr [ebp-10h]"
-"	      0053ba5e    cmp dword ptr [ebp-10h],80h"
+"	      0053ba5b    inc y"
+"	      0053ba5e    cmp y,80h"
 "	      0053ba65    jge near ptr 0053BB58h"
 );
 // LINE 614:
 	asm( 
-"	      0053ba6b    mov eax,[ebp-10h]"
+"	      0053ba6b    mov eax,y"
 "	      0053ba6e    shl eax,7"
-"	      0053ba71    add eax,[ebp-0Ch]"
-"	      0053ba74    mov ecx,[ebp-8]"
+"	      0053ba71    add eax,x"
+"	      0053ba74    mov ecx,tempBuildMap"
 "	      0053ba77    xor edx,edx"
 "	      0053ba79    mov dl,[eax+ecx]"
 "	      0053ba7c    xor eax,eax"
-"	      0053ba7e    mov al,[ebp+8]"
+"	      0053ba7e    mov al,stationScurkID"
 "	      0053ba81    cmp edx,eax"
 "	      0053ba83    jne near ptr 0053BB53h"
 );
@@ -3060,96 +3060,96 @@ void Station::Station(unsigned char stationScurkID) {
 // Block start:
 	int32_t result;
 	asm( 
-"	      0053ba89    mov eax,[ebp-10h]"
+"	      0053ba89    mov eax,y"
 "	      0053ba8c    shl eax,7"
-"	      0053ba8f    add eax,[ebp-0Ch]"
-"	      0053ba92    mov ecx,[ebp-8]"
+"	      0053ba8f    add eax,x"
+"	      0053ba92    mov ecx,tempBuildMap"
 "	      0053ba95    mov byte ptr [eax+ecx+1],0"
 );
 // LINE 619:
 	asm( 
-"	      0053ba9a    mov eax,[ebp-10h]"
+"	      0053ba9a    mov eax,y"
 "	      0053ba9d    shl eax,7"
-"	      0053baa0    add eax,[ebp-0Ch]"
-"	      0053baa3    mov ecx,[ebp-8]"
+"	      0053baa0    add eax,x"
+"	      0053baa3    mov ecx,tempBuildMap"
 "	      0053baa6    mov byte ptr [eax+ecx+2],0"
 );
 // LINE 621:
 	asm( 
-"	      0053baab    mov eax,[ebp-10h]"
+"	      0053baab    mov eax,y"
 "	      0053baae    shl eax,7"
-"	      0053bab1    add eax,[ebp-0Ch]"
-"	      0053bab4    mov ecx,[ebp-8]"
+"	      0053bab1    add eax,x"
+"	      0053bab4    mov ecx,tempBuildMap"
 "	      0053bab7    mov byte ptr [eax+ecx+80h],0"
 );
 // LINE 622:
 	asm( 
-"	      0053babf    mov eax,[ebp-10h]"
+"	      0053babf    mov eax,y"
 "	      0053bac2    shl eax,7"
-"	      0053bac5    add eax,[ebp-0Ch]"
-"	      0053bac8    mov ecx,[ebp-8]"
+"	      0053bac5    add eax,x"
+"	      0053bac8    mov ecx,tempBuildMap"
 "	      0053bacb    mov byte ptr [eax+ecx+81h],0"
 );
 // LINE 623:
 	asm( 
-"	      0053bad3    mov eax,[ebp-10h]"
+"	      0053bad3    mov eax,y"
 "	      0053bad6    shl eax,7"
-"	      0053bad9    add eax,[ebp-0Ch]"
-"	      0053badc    mov ecx,[ebp-8]"
+"	      0053bad9    add eax,x"
+"	      0053badc    mov ecx,tempBuildMap"
 "	      0053badf    mov byte ptr [eax+ecx+82h],0"
 );
 // LINE 625:
 	asm( 
-"	      0053bae7    mov eax,[ebp-10h]"
+"	      0053bae7    mov eax,y"
 "	      0053baea    shl eax,7"
-"	      0053baed    add eax,[ebp-0Ch]"
-"	      0053baf0    mov ecx,[ebp-8]"
+"	      0053baed    add eax,x"
+"	      0053baf0    mov ecx,tempBuildMap"
 "	      0053baf3    mov byte ptr [eax+ecx+100h],0"
 );
 // LINE 626:
 	asm( 
-"	      0053bafb    mov eax,[ebp-10h]"
+"	      0053bafb    mov eax,y"
 "	      0053bafe    shl eax,7"
-"	      0053bb01    add eax,[ebp-0Ch]"
-"	      0053bb04    mov ecx,[ebp-8]"
+"	      0053bb01    add eax,x"
+"	      0053bb04    mov ecx,tempBuildMap"
 "	      0053bb07    mov byte ptr [eax+ecx+101h],0"
 );
 // LINE 627:
 	asm( 
-"	      0053bb0f    mov eax,[ebp-10h]"
+"	      0053bb0f    mov eax,y"
 "	      0053bb12    shl eax,7"
-"	      0053bb15    add eax,[ebp-0Ch]"
-"	      0053bb18    mov ecx,[ebp-8]"
+"	      0053bb15    add eax,x"
+"	      0053bb18    mov ecx,tempBuildMap"
 "	      0053bb1b    mov byte ptr [eax+ecx+102h],0"
 );
 // LINE 631:
 	asm( 
-"	      0053bb23    mov eax,[ebp-0Ch]"
+"	      0053bb23    mov eax,x"
 "	      0053bb26    inc eax"
-"	      0053bb27    mov [ebp-4],al"
+"	      0053bb27    mov workingLoc.x,al"
 );
 // LINE 632:
 	asm( 
-"	      0053bb2a    mov eax,[ebp-10h]"
+"	      0053bb2a    mov eax,y"
 "	      0053bb2d    inc eax"
-"	      0053bb2e    mov [ebp-3],al"
+"	      0053bb2e    mov workingLoc.y,al"
 );
 // LINE 633:
 	asm( 
-"	      0053bb31    lea eax,[ebp-4]"
+"	      0053bb31    lea eax,workingLoc.x"
 "	      0053bb34    push eax"
-"	      0053bb35    mov ecx,[ebp-50h]"
+"	      0053bb35    mov ecx,this"
 "	      0053bb38    call 00539DA3h"
-"	      0053bb3d    mov [ebp-18h],eax"
+"	      0053bb3d    mov result,eax"
 );
 // LINE 634:
 	asm( 
-"	      0053bb40    cmp dword ptr [ebp-18h],0FFh"
+"	      0053bb40    cmp result,0FFh"
 "	      0053bb47    je near ptr 0053BB53h"
 );
 // LINE 635:
 	asm( 
-"	      0053bb4d    mov eax,[ebp-50h]"
+"	      0053bb4d    mov eax,this"
 "	      0053bb50    inc dword ptr [eax+4]"
 );
 // LINE 637:
@@ -3163,7 +3163,7 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 641:
 	asm( 
-"	      0053bb5d    mov eax,[ebp-50h]"
+"	      0053bb5d    mov eax,this"
 "	      0053bb60    mov eax,[eax+4]"
 "	      0053bb63    shl eax,5"
 "	      0053bb66    lea eax,[eax+eax*2]"
@@ -3172,39 +3172,39 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bb6f    push eax"
 "	      0053bb70    call 004CB4ACh"
 "	      0053bb75    add esp,8"
-"	      0053bb78    mov ecx,[ebp-50h]"
+"	      0053bb78    mov ecx,this"
 "	      0053bb7b    mov [ecx],eax"
 );
 // LINE 644:
 	asm( 
-"	      0053bb7d    mov dword ptr [ebp-14h],0"
+"	      0053bb7d    mov stationIndex,0"
 );
 // LINE 645:
 	asm( 
-"	      0053bb84    mov dword ptr [ebp-10h],0"
+"	      0053bb84    mov y,0"
 "	      0053bb8b    jmp near ptr 0053BB93h"
-"	      0053bb90    inc dword ptr [ebp-10h]"
-"	      0053bb93    cmp dword ptr [ebp-10h],80h"
+"	      0053bb90    inc y"
+"	      0053bb93    cmp y,80h"
 "	      0053bb9a    jge near ptr 0053BC81h"
 );
 // LINE 647:
 	asm( 
-"	      0053bba0    mov dword ptr [ebp-0Ch],0"
+"	      0053bba0    mov x,0"
 "	      0053bba7    jmp near ptr 0053BBAFh"
-"	      0053bbac    inc dword ptr [ebp-0Ch]"
-"	      0053bbaf    cmp dword ptr [ebp-0Ch],80h"
+"	      0053bbac    inc x"
+"	      0053bbaf    cmp x,80h"
 "	      0053bbb6    jge near ptr 0053BC7Ch"
 );
 // LINE 649:
 	asm( 
-"	      0053bbbc    mov eax,[ebp-10h]"
+"	      0053bbbc    mov eax,y"
 "	      0053bbbf    shl eax,7"
-"	      0053bbc2    add eax,[ebp-0Ch]"
-"	      0053bbc5    mov ecx,[ebp-8]"
+"	      0053bbc2    add eax,x"
+"	      0053bbc5    mov ecx,tempBuildMap"
 "	      0053bbc8    xor edx,edx"
 "	      0053bbca    mov dl,[eax+ecx]"
 "	      0053bbcd    xor eax,eax"
-"	      0053bbcf    mov al,[ebp+8]"
+"	      0053bbcf    mov al,stationScurkID"
 "	      0053bbd2    cmp edx,eax"
 "	      0053bbd4    jne near ptr 0053BC77h"
 );
@@ -3213,27 +3213,27 @@ void Station::Station(unsigned char stationScurkID) {
 	struct _StructStation* pStation;
 	int32_t direction;
 	asm( 
-"	      0053bbda    mov eax,[ebp-0Ch]"
+"	      0053bbda    mov eax,x"
 "	      0053bbdd    inc eax"
-"	      0053bbde    mov [ebp-4],al"
+"	      0053bbde    mov workingLoc.x,al"
 );
 // LINE 655:
 	asm( 
-"	      0053bbe1    mov eax,[ebp-10h]"
+"	      0053bbe1    mov eax,y"
 "	      0053bbe4    inc eax"
-"	      0053bbe5    mov [ebp-3],al"
+"	      0053bbe5    mov workingLoc.y,al"
 );
 // LINE 658:
 	asm( 
-"	      0053bbe8    lea eax,[ebp-4]"
+"	      0053bbe8    lea eax,workingLoc.x"
 "	      0053bbeb    push eax"
-"	      0053bbec    mov ecx,[ebp-50h]"
+"	      0053bbec    mov ecx,this"
 "	      0053bbef    call 00539DA3h"
-"	      0053bbf4    mov [ebp-1Ch],eax"
+"	      0053bbf4    mov direction,eax"
 );
 // LINE 661:
 	asm( 
-"	      0053bbf7    cmp dword ptr [ebp-1Ch],0FFh"
+"	      0053bbf7    cmp direction,0FFh"
 "	      0053bbfe    jne near ptr 0053BC09h"
 );
 // LINE 662:
@@ -3242,20 +3242,20 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 665:
 	asm( 
-"	      0053bc09    mov eax,[ebp-14h]"
+"	      0053bc09    mov eax,stationIndex"
 "	      0053bc0c    shl eax,5"
 "	      0053bc0f    lea eax,[eax+eax*2]"
-"	      0053bc12    mov ecx,[ebp-50h]"
+"	      0053bc12    mov ecx,this"
 "	      0053bc15    add eax,[ecx]"
-"	      0053bc17    mov [ebp-20h],eax"
-"	      0053bc1a    inc dword ptr [ebp-14h]"
+"	      0053bc17    mov pStation,eax"
+"	      0053bc1a    inc stationIndex"
 );
 // LINE 668:
 	asm( 
-"	      0053bc1d    mov eax,[ebp-20h]"
+"	      0053bc1d    mov eax,pStation"
 "	      0053bc20    add eax,2Ah"
 "	      0053bc23    push eax"
-"	      0053bc24    mov eax,[ebp-20h]"
+"	      0053bc24    mov eax,pStation"
 "	      0053bc27    push eax"
 "	      0053bc28    mov eax,[ebp-4]"
 "	      0053bc2b    push eax"
@@ -3268,39 +3268,39 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 673:
 	asm( 
-"	      0053bc3e    mov eax,[ebp-0Ch]"
+"	      0053bc3e    mov eax,x"
 "	      0053bc41    inc eax"
-"	      0053bc42    mov ecx,[ebp-20h]"
+"	      0053bc42    mov ecx,pStation"
 "	      0053bc45    mov [ecx+58h],al"
 );
 // LINE 674:
 	asm( 
-"	      0053bc48    mov eax,[ebp-10h]"
+"	      0053bc48    mov eax,y"
 "	      0053bc4b    inc eax"
-"	      0053bc4c    mov ecx,[ebp-20h]"
+"	      0053bc4c    mov ecx,pStation"
 "	      0053bc4f    mov [ecx+59h],al"
 );
 // LINE 675:
 	asm( 
-"	      0053bc52    mov al,[ebp-4]"
-"	      0053bc55    mov ecx,[ebp-20h]"
+"	      0053bc52    mov al,workingLoc.x"
+"	      0053bc55    mov ecx,pStation"
 "	      0053bc58    mov [ecx+5Ah],al"
 );
 // LINE 676:
 	asm( 
-"	      0053bc5b    mov al,[ebp-3]"
-"	      0053bc5e    mov ecx,[ebp-20h]"
+"	      0053bc5b    mov al,workingLoc.y"
+"	      0053bc5e    mov ecx,pStation"
 "	      0053bc61    mov [ecx+5Bh],al"
 );
 // LINE 677:
 	asm( 
-"	      0053bc64    mov eax,[ebp-20h]"
+"	      0053bc64    mov eax,pStation"
 "	      0053bc67    mov dword ptr [eax+5Ch],0"
 );
 // LINE 678:
 	asm( 
-"	      0053bc6e    mov eax,[ebp-1Ch]"
-"	      0053bc71    mov ecx,[ebp-20h]"
+"	      0053bc6e    mov eax,direction"
+"	      0053bc71    mov ecx,pStation"
 "	      0053bc74    mov [ecx+54h],eax"
 );
 // LINE 680:
@@ -3314,7 +3314,7 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 683:
 	asm( 
-"	      0053bc81    mov eax,[ebp-50h]"
+"	      0053bc81    mov eax,this"
 "	      0053bc84    mov eax,[eax+4]"
 "	      0053bc87    shl eax,3"
 "	      0053bc8a    push eax"
@@ -3322,31 +3322,31 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bc90    push eax"
 "	      0053bc91    call 004CB4ACh"
 "	      0053bc96    add esp,8"
-"	      0053bc99    mov ecx,[ebp-50h]"
+"	      0053bc99    mov ecx,this"
 "	      0053bc9c    mov [ecx+8],eax"
 );
 // LINE 686:
 	asm( 
 "	      0053bc9f    xor eax,eax"
-"	      0053bca1    mov al,[ebp+8]"
+"	      0053bca1    mov al,stationScurkID"
 "	      0053bca4    mov [ebp-54h],eax"
 "	      0053bca7    jmp near ptr 0053BCDEh"
 );
 // LINE 688:
 	asm( 
-"	      0053bcac    mov eax,[ebp-50h]"
+"	      0053bcac    mov eax,this"
 "	      0053bcaf    mov dword ptr [eax+18h],5"
 "	      0053bcb6    jmp near ptr 0053BD0Ah"
 );
 // LINE 689:
 	asm( 
-"	      0053bcbb    mov eax,[ebp-50h]"
+"	      0053bcbb    mov eax,this"
 "	      0053bcbe    mov dword ptr [eax+18h],5"
 "	      0053bcc5    jmp near ptr 0053BD0Ah"
 );
 // LINE 690:
 	asm( 
-"	      0053bcca    mov eax,[ebp-50h]"
+"	      0053bcca    mov eax,this"
 "	      0053bccd    mov dword ptr [eax+18h],5"
 "	      0053bcd4    jmp near ptr 0053BD0Ah"
 );
@@ -3363,7 +3363,7 @@ void Station::Station(unsigned char stationScurkID) {
 );
 // LINE 693:
 	asm( 
-"	      0053bd0a    mov eax,[ebp-50h]"
+"	      0053bd0a    mov eax,this"
 "	      0053bd0d    mov eax,[eax+18h]"
 "	      0053bd10    lea eax,[eax+eax*4]"
 "	      0053bd13    add eax,eax"
@@ -3372,13 +3372,13 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bd1b    push eax"
 "	      0053bd1c    call 004CB4ACh"
 "	      0053bd21    add esp,8"
-"	      0053bd24    mov ecx,[ebp-50h]"
+"	      0053bd24    mov ecx,this"
 "	      0053bd27    mov [ecx+10h],eax"
 );
 // LINE 694:
 	asm( 
 "	      0053bd2a    jmp near ptr 0053BD2Fh"
-"	      0053bd2f    mov eax,[ebp-50h]"
+"	      0053bd2f    mov eax,this"
 "	      0053bd32    pop edi"
 "	      0053bd33    pop esi"
 "	      0053bd34    pop ebx"

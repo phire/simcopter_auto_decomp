@@ -26,11 +26,11 @@ void ERexit(char * p) {
 "	      0058e335    call dword ptr ds:[6C37DCh]"
 "	      0058e33b    push eax"
 "	      0058e33c    call dword ptr ds:[6C3870h]"
-"	      0058e342    mov [ebp-4],eax"
+"	      0058e342    mov answer,eax"
 );
 // LINE 57:
 	asm( 
-"	      0058e345    cmp dword ptr [ebp-4],3"
+"	      0058e345    cmp answer,3"
 "	      0058e349    jne near ptr 0058E359h"
 );
 // LINE 58:
@@ -40,7 +40,7 @@ void ERexit(char * p) {
 // LINE 59:
 	asm( 
 "	      0058e354    jmp near ptr 0058E369h"
-"	      0058e359    cmp dword ptr [ebp-4],4"
+"	      0058e359    cmp answer,4"
 "	      0058e35d    jne near ptr 0058E369h"
 );
 // LINE 60:

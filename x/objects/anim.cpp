@@ -22,7 +22,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 "	      0056721b    push ebx"
 "	      0056721c    push esi"
 "	      0056721d    push edi"
-"	      0056721e    mov [ebp-5Ch],ecx"
+"	      0056721e    mov this,ecx"
 );
 // LINE 38:
 	asm( 
@@ -37,7 +37,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 );
 // LINE 39:
 	asm( 
-"	      00567247    mov eax,[ebp-5Ch]"
+"	      00567247    mov eax,this"
 "	      0056724a    cmp dword ptr [eax+1Ch],0"
 "	      0056724e    jne near ptr 0056726Dh"
 "	      00567254    push 8C085h"
@@ -50,9 +50,9 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 43:
 	asm( 
 "	      0056726d    push 10h"
-"	      0056726f    lea eax,[ebp-1Ch]"
+"	      0056726f    lea eax,tmp[0]"
 "	      00567272    push eax"
-"	      00567273    mov eax,[ebp-5Ch]"
+"	      00567273    mov eax,this"
 "	      00567276    add eax,0Ch"
 "	      00567279    push eax"
 "	      0056727a    call 00554B76h"
@@ -60,8 +60,8 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 );
 // LINE 44:
 	asm( 
-"	      00567282    mov byte ptr [ebp-18h],69h"
-"	      00567286    mov ax,[ebp+8]"
+"	      00567282    mov tmp[4],69h"
+"	      00567286    mov ax,expectondisk"
 "	      0056728a    mov [ebp-50h],ax"
 "	      0056728e    mov eax,ds:[5BF6D4h]"
 "	      00567293    mov eax,[eax+0Ch]"
@@ -69,7 +69,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 );
 // LINE 45:
 	asm( 
-"	      00567299    lea eax,[ebp-1Ch]"
+"	      00567299    lea eax,tmp[0]"
 "	      0056729c    push eax"
 "	      0056729d    call 005661F4h"
 "	      005672a2    add esp,4"
@@ -139,7 +139,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 "	      005673c7    mov dword ptr [ebp-38h],41525050h"
 "	      005673ce    mov eax,[ebp-54h]"
 "	      005673d1    mov [ebp-3Ch],eax"
-"	      005673d4    lea eax,[ebp-1Ch]"
+"	      005673d4    lea eax,tmp[0]"
 "	      005673d7    mov [ebp-40h],eax"
 "	      005673da    mov dword ptr [ebp-44h],0"
 "	      005673e1    mov dword ptr [ebp-48h],0"
@@ -192,11 +192,11 @@ _L31083:
 "	      0056748a    call 00554F30h"
 "	      0056748f    add esp,10h"
 "	      00567492    mov eax,[ebp-20h]"
-"	      00567495    mov ecx,[ebp-5Ch]"
+"	      00567495    mov ecx,this"
 "	      00567498    mov [ecx+28h],eax"
 "	      0056749b    jmp near ptr 005674B6h"
 "	      005674a0    mov eax,[ebp-58h]"
-"	      005674a3    mov ecx,[ebp-5Ch]"
+"	      005674a3    mov ecx,this"
 "	      005674a6    mov [ecx+28h],eax"
 	);
 _L31071:

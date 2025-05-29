@@ -17,9 +17,9 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 );
 // LINE 71:
 	asm( 
-"	      00541536    mov eax,[ebp+0Ch]"
+"	      00541536    mov eax,status"
 "	      00541539    push eax"
-"	      0054153a    mov eax,[ebp+8]"
+"	      0054153a    mov eax,id"
 "	      0054153d    mov ecx,[eax*4+608F80h]"
 "	      00541544    call 00541553h"
 "	      00541549    jmp near ptr 0054154Eh"
@@ -44,23 +44,23 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 "	      00541559    push ebx"
 "	      0054155a    push esi"
 "	      0054155b    push edi"
-"	      0054155c    mov [ebp-4],ecx"
+"	      0054155c    mov this,ecx"
 );
 // LINE 77:
 	asm( 
-"	      0054155f    mov eax,[ebp-4]"
+"	      0054155f    mov eax,this"
 "	      00541562    test byte ptr [eax+8],2"
 "	      00541566    je near ptr 0054158Fh"
 );
 // LINE 79:
 	asm( 
-"	      0054156c    mov eax,[ebp-4]"
+"	      0054156c    mov eax,this"
 "	      0054156f    mov dword ptr [eax+0F6h],1"
 );
 // LINE 80:
 	asm( 
-"	      00541579    mov eax,[ebp+8]"
-"	      0054157c    mov ecx,[ebp-4]"
+"	      00541579    mov eax,status"
+"	      0054157c    mov ecx,this"
 "	      0054157f    mov [ecx+0FAh],eax"
 );
 // LINE 81:
@@ -95,14 +95,14 @@ struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t id) {
 );
 // LINE 90:
 	asm( 
-"	      005415a3    mov eax,[ebp+8]"
+"	      005415a3    mov eax,id"
 "	      005415a6    mov eax,[eax*4+608F80h]"
 "	      005415ad    test byte ptr [eax+8],2"
 "	      005415b1    je near ptr 005415C9h"
 );
 // LINE 92:
 	asm( 
-"	      005415b7    mov eax,[ebp+8]"
+"	      005415b7    mov eax,id"
 "	      005415ba    mov eax,[eax*4+608F80h]"
 "	      005415c1    add eax,0Ch"
 "	      005415c4    jmp near ptr 005415D0h"
@@ -132,32 +132,32 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 "	      005415db    push ebx"
 "	      005415dc    push esi"
 "	      005415dd    push edi"
-"	      005415de    mov [ebp-4],ecx"
-"	      005415e1    mov ecx,[ebp-4]"
+"	      005415de    mov this,ecx"
+"	      005415e1    mov ecx,this"
 "	      005415e4    call 00501B6Ch"
-"	      005415e9    mov eax,[ebp-4]"
+"	      005415e9    mov eax,this"
 "	      005415ec    mov dword ptr [eax+11Eh],0"
-"	      005415f6    mov eax,[ebp-4]"
+"	      005415f6    mov eax,this"
 "	      005415f9    mov dword ptr [eax+122h],0"
-"	      00541603    mov eax,[ebp-4]"
+"	      00541603    mov eax,this"
 "	      00541606    mov dword ptr [eax+294h],1"
-"	      00541610    mov eax,[ebp-4]"
+"	      00541610    mov eax,this"
 "	      00541613    mov dword ptr [eax],5934C0h"
 );
 // LINE 103:
 	asm( 
-"	      00541619    mov eax,[ebp-4]"
+"	      00541619    mov eax,this"
 "	      0054161c    mov byte ptr [eax+11Ch],0"
 );
 // LINE 104:
 	asm( 
-"	      00541623    mov eax,[ebp-4]"
+"	      00541623    mov eax,this"
 "	      00541626    mov byte ptr [eax+11Dh],0"
 );
 // LINE 105:
 	asm( 
 "	      0054162d    jmp near ptr 00541632h"
-"	      00541632    mov eax,[ebp-4]"
+"	      00541632    mov eax,this"
 "	      00541635    pop edi"
 "	      00541636    pop esi"
 "	      00541637    pop ebx"
@@ -176,11 +176,11 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 "	      00541640    push ebx"
 "	      00541641    push esi"
 "	      00541642    push edi"
-"	      00541643    mov [ebp-4],ecx"
-"	      00541646    mov eax,[ebp-4]"
+"	      00541643    mov this,ecx"
+"	      00541646    mov eax,this"
 "	      00541649    mov dword ptr [eax],5934C0h"
 "	      0054164f    jmp near ptr 00541654h"
-"	      00541654    mov ecx,[ebp-4]"
+"	      00541654    mov ecx,this"
 "	      00541657    call 00501D09h"
 "	      0054165c    pop edi"
 "	      0054165d    pop esi"
@@ -203,69 +203,69 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      00541667    push ebx"
 "	      00541668    push esi"
 "	      00541669    push edi"
-"	      0054166a    mov [ebp-18h],ecx"
+"	      0054166a    mov this,ecx"
 );
 // LINE 261:
 	asm( 
-"	      0054166d    cmp dword ptr [ebp+0E8h],0FFFFFFFFh"
+"	      0054166d    cmp responceType,0FFFFFFFFh"
 "	      00541674    je near ptr 00541689h"
 );
 // LINE 262:
 	asm( 
-"	      0054167a    mov eax,[ebp+0E8h]"
-"	      00541680    mov ecx,[ebp-18h]"
+"	      0054167a    mov eax,responceType"
+"	      00541680    mov ecx,this"
 "	      00541683    mov [ecx+11Eh],eax"
 );
 // LINE 264:
 	asm( 
-"	      00541689    mov eax,[ebp+0ECh]"
-"	      0054168f    mov ecx,[ebp-18h]"
+"	      00541689    mov eax,eState"
+"	      0054168f    mov ecx,this"
 "	      00541692    mov [ecx+294h],eax"
 );
 // LINE 266:
 	asm( 
-"	      00541698    cmp dword ptr [ebp+0BCh],0"
+"	      00541698    cmp result.pRGV,0"
 "	      0054169f    jne near ptr 0054186Fh"
 );
 // LINE 271:
 // Block start:
 	struct Edge* pEdge;
 	asm( 
-"	      005416a5    mov eax,[ebp+8]"
+"	      005416a5    mov eax,startGoal1.pRGV"
 "	      005416a8    mov al,[eax]"
-"	      005416aa    mov [ebp-4],al"
+"	      005416aa    mov startIndex.x,al"
 );
 // LINE 272:
 	asm( 
-"	      005416ad    mov eax,[ebp+8]"
+"	      005416ad    mov eax,startGoal1.pRGV"
 "	      005416b0    xor ecx,ecx"
 "	      005416b2    mov cl,[eax+1]"
 "	      005416b5    push ecx"
 "	      005416b6    xor eax,eax"
-"	      005416b8    mov al,[ebp-4]"
+"	      005416b8    mov al,startIndex.x"
 "	      005416bb    push eax"
 "	      005416bc    mov ecx,5C3828h"
 "	      005416c1    call 0053D167h"
-"	      005416c6    mov [ebp-3],al"
+"	      005416c6    mov startIndex.yindex,al"
 );
 // LINE 273:
 	asm( 
-"	      005416c9    mov eax,[ebp+60h]"
+"	      005416c9    mov eax,destGoal1.pRGV"
 "	      005416cc    mov al,[eax]"
-"	      005416ce    mov [ebp-8],al"
+"	      005416ce    mov destIndex.x,al"
 );
 // LINE 274:
 	asm( 
-"	      005416d1    mov eax,[ebp+60h]"
+"	      005416d1    mov eax,destGoal1.pRGV"
 "	      005416d4    xor ecx,ecx"
 "	      005416d6    mov cl,[eax+1]"
 "	      005416d9    push ecx"
 "	      005416da    xor eax,eax"
-"	      005416dc    mov al,[ebp-8]"
+"	      005416dc    mov al,destIndex.x"
 "	      005416df    push eax"
 "	      005416e0    mov ecx,5C3828h"
 "	      005416e5    call 0053D167h"
-"	      005416ea    mov [ebp-7],al"
+"	      005416ea    mov destIndex.yindex,al"
 );
 // LINE 275:
 	asm( 
@@ -273,68 +273,68 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      005416f0    push eax"
 "	      005416f1    mov eax,[ebp-4]"
 "	      005416f4    push eax"
-"	      005416f5    mov ecx,[ebp-18h]"
+"	      005416f5    mov ecx,this"
 "	      005416f8    call 005427F5h"
 );
 // LINE 282:
 	asm( 
-"	      005416fd    mov eax,[ebp-18h]"
+"	      005416fd    mov eax,this"
 "	      00541700    xor ecx,ecx"
 "	      00541702    mov cl,[eax+192h]"
 "	      00541708    lea eax,[ecx+ecx*4]"
 "	      0054170b    add eax,eax"
-"	      0054170d    add eax,[ebp+8]"
+"	      0054170d    add eax,startGoal1.pRGV"
 "	      00541710    add eax,4"
-"	      00541713    mov [ebp-0Ch],eax"
+"	      00541713    mov pEdge,eax"
 );
 // LINE 283:
 	asm( 
-"	      00541716    cmp dword ptr [ebp+34h],0"
+"	      00541716    cmp startGoal2.pRGV,0"
 "	      0054171a    je near ptr 005417ABh"
 );
 // LINE 285:
 // Block start:
 	unsigned char yindex;
 	asm( 
-"	      00541720    mov eax,[ebp+34h]"
+"	      00541720    mov eax,startGoal2.pRGV"
 "	      00541723    xor ecx,ecx"
 "	      00541725    mov cl,[eax+1]"
 "	      00541728    push ecx"
-"	      00541729    mov eax,[ebp+34h]"
+"	      00541729    mov eax,startGoal2.pRGV"
 "	      0054172c    xor ecx,ecx"
 "	      0054172e    mov cl,[eax]"
 "	      00541730    push ecx"
 "	      00541731    mov ecx,5C3828h"
 "	      00541736    call 0053D167h"
-"	      0054173b    mov [ebp-10h],al"
+"	      0054173b    mov yindex,al"
 );
 // LINE 286:
 	asm( 
-"	      0054173e    mov eax,[ebp+34h]"
+"	      0054173e    mov eax,startGoal2.pRGV"
 "	      00541741    xor ecx,ecx"
 "	      00541743    mov cl,[eax]"
-"	      00541745    mov eax,[ebp-0Ch]"
+"	      00541745    mov eax,pEdge"
 "	      00541748    xor edx,edx"
 "	      0054174a    mov dl,[eax+1]"
 "	      0054174d    cmp ecx,edx"
 "	      0054174f    jne near ptr 0054178Ah"
-"	      00541755    mov eax,[ebp-0Ch]"
+"	      00541755    mov eax,pEdge"
 "	      00541758    xor ecx,ecx"
 "	      0054175a    mov cl,[eax]"
 "	      0054175c    xor eax,eax"
-"	      0054175e    mov al,[ebp-10h]"
+"	      0054175e    mov al,yindex"
 "	      00541761    cmp ecx,eax"
 "	      00541763    jne near ptr 0054178Ah"
 );
 // LINE 288:
 	asm( 
-"	      00541769    mov eax,[ebp-18h]"
+"	      00541769    mov eax,this"
 "	      0054176c    mov byte ptr [eax+292h],1"
 );
 // LINE 289:
 	asm( 
-"	      00541773    lea esi,[ebp+8]"
-"	      00541776    mov edi,[ebp-18h]"
+"	      00541773    lea esi,startGoal1.pRGV"
+"	      00541776    mov edi,this"
 "	      00541779    add edi,70h"
 "	      0054177c    mov ecx,0Ah"
 "	      00541781    rep movsd"
@@ -346,13 +346,13 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 293:
 	asm( 
-"	      0054178a    mov eax,[ebp-18h]"
+"	      0054178a    mov eax,this"
 "	      0054178d    mov byte ptr [eax+292h],0"
 );
 // LINE 294:
 	asm( 
-"	      00541794    lea esi,[ebp+34h]"
-"	      00541797    mov edi,[ebp-18h]"
+"	      00541794    lea esi,startGoal2.pRGV"
+"	      00541797    mov edi,this"
 "	      0054179a    add edi,70h"
 "	      0054179d    mov ecx,0Ah"
 "	      005417a2    rep movsd"
@@ -365,13 +365,13 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 299:
 	asm( 
-"	      005417ab    mov eax,[ebp-18h]"
+"	      005417ab    mov eax,this"
 "	      005417ae    mov byte ptr [eax+292h],1"
 );
 // LINE 300:
 	asm( 
-"	      005417b5    lea esi,[ebp+8]"
-"	      005417b8    mov edi,[ebp-18h]"
+"	      005417b5    lea esi,startGoal1.pRGV"
+"	      005417b8    mov edi,this"
 "	      005417bb    add edi,70h"
 "	      005417be    mov ecx,0Ah"
 "	      005417c3    rep movsd"
@@ -379,18 +379,18 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 305:
 	asm( 
-"	      005417c7    cmp dword ptr [ebp+8Ch],0"
+"	      005417c7    cmp destGoal2.pRGV,0"
 "	      005417ce    je near ptr 00541852h"
 );
 // LINE 307:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      005417d4    mov eax,[ebp+8Ch]"
+"	      005417d4    mov eax,destGoal2.pRGV"
 "	      005417da    xor ecx,ecx"
 "	      005417dc    mov cl,[eax+1]"
 "	      005417df    push ecx"
-"	      005417e0    mov eax,[ebp+8Ch]"
+"	      005417e0    mov eax,destGoal2.pRGV"
 "	      005417e6    xor ecx,ecx"
 "	      005417e8    mov cl,[eax]"
 "	      005417ea    push ecx"
@@ -398,27 +398,27 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      005417f0    call 0053D167h"
 "	      005417f5    xor ecx,ecx"
 "	      005417f7    mov cl,al"
-"	      005417f9    mov [ebp-14h],ecx"
+"	      005417f9    mov yindex,ecx"
 );
 // LINE 308:
 	asm( 
-"	      005417fc    mov eax,[ebp+60h]"
+"	      005417fc    mov eax,destGoal1.pRGV"
 "	      005417ff    xor ecx,ecx"
 "	      00541801    mov cl,[eax+2Dh]"
-"	      00541804    mov eax,[ebp+8Ch]"
+"	      00541804    mov eax,destGoal2.pRGV"
 "	      0054180a    xor edx,edx"
 "	      0054180c    mov dl,[eax]"
 "	      0054180e    cmp ecx,edx"
 "	      00541810    jne near ptr 00541835h"
-"	      00541816    mov eax,[ebp+60h]"
+"	      00541816    mov eax,destGoal1.pRGV"
 "	      00541819    xor ecx,ecx"
 "	      0054181b    mov cl,[eax+2Ch]"
-"	      0054181e    cmp ecx,[ebp-14h]"
+"	      0054181e    cmp ecx,yindex"
 "	      00541821    jne near ptr 00541835h"
 );
 // LINE 310:
 	asm( 
-"	      00541827    mov eax,[ebp-18h]"
+"	      00541827    mov eax,this"
 "	      0054182a    dec byte ptr [eax+293h]"
 );
 // LINE 312:
@@ -427,11 +427,11 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 314:
 	asm( 
-"	      00541835    mov al,[ebp+6Eh]"
-"	      00541838    mov ecx,[ebp-18h]"
+"	      00541835    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541838    mov ecx,this"
 "	      0054183b    xor edx,edx"
 "	      0054183d    mov dl,[ecx+293h]"
-"	      00541843    mov ecx,[ebp-18h]"
+"	      00541843    mov ecx,this"
 "	      00541846    mov [edx+ecx+191h],al"
 );
 // LINE 317:
@@ -441,11 +441,11 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 319:
 	asm( 
-"	      00541852    mov al,[ebp+6Eh]"
-"	      00541855    mov ecx,[ebp-18h]"
+"	      00541852    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541855    mov ecx,this"
 "	      00541858    xor edx,edx"
 "	      0054185a    mov dl,[ecx+293h]"
-"	      00541860    mov ecx,[ebp-18h]"
+"	      00541860    mov ecx,this"
 "	      00541863    mov [edx+ecx+191h],al"
 );
 // LINE 322:
@@ -455,9 +455,9 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 325:
 	asm( 
-"	      0054186f    cmp dword ptr [ebp+8],0"
+"	      0054186f    cmp startGoal1.pRGV,0"
 "	      00541873    jne near ptr 0054189Fh"
-"	      00541879    cmp dword ptr [ebp+34h],0"
+"	      00541879    cmp startGoal2.pRGV,0"
 "	      0054187d    jne near ptr 0054189Fh"
 "	      00541883    push 145h"
 "	      00541888    push 5B8268h"
@@ -469,14 +469,14 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 326:
 	asm( 
-"	      005418a4    mov eax,[ebp+0BCh]"
-"	      005418aa    cmp [ebp+8],eax"
+"	      005418a4    mov eax,result.pRGV"
+"	      005418aa    cmp startGoal1.pRGV,eax"
 "	      005418ad    jne near ptr 005418CAh"
 );
 // LINE 328:
 	asm( 
-"	      005418b3    lea esi,[ebp+34h]"
-"	      005418b6    mov edi,[ebp-18h]"
+"	      005418b3    lea esi,startGoal2.pRGV"
+"	      005418b6    mov edi,this"
 "	      005418b9    add edi,70h"
 "	      005418bc    mov ecx,0Ah"
 "	      005418c1    rep movsd"
@@ -485,14 +485,14 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 // LINE 330:
 	asm( 
 "	      005418c5    jmp near ptr 00541911h"
-"	      005418ca    mov eax,[ebp+0BCh]"
-"	      005418d0    cmp [ebp+34h],eax"
+"	      005418ca    mov eax,result.pRGV"
+"	      005418d0    cmp startGoal2.pRGV,eax"
 "	      005418d3    jne near ptr 005418F0h"
 );
 // LINE 332:
 	asm( 
-"	      005418d9    lea esi,[ebp+8]"
-"	      005418dc    mov edi,[ebp-18h]"
+"	      005418d9    lea esi,startGoal1.pRGV"
+"	      005418dc    mov edi,this"
 "	      005418df    add edi,70h"
 "	      005418e2    mov ecx,0Ah"
 "	      005418e7    rep movsd"
@@ -515,60 +515,60 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 // LINE 343:
 	asm( 
 "	      00541911    mov ax,[ebp+0B8h]"
-"	      00541918    mov ecx,[ebp-18h]"
+"	      00541918    mov ecx,this"
 "	      0054191b    mov [ecx+11Ch],ax"
 );
 // LINE 345:
 	asm( 
-"	      00541922    mov eax,[ebp-18h]"
+"	      00541922    mov eax,this"
 "	      00541925    mov dword ptr [eax+0EAh],0"
 );
 // LINE 346:
 	asm( 
-"	      0054192f    mov eax,[ebp-18h]"
+"	      0054192f    mov eax,this"
 "	      00541932    mov dword ptr [eax+0EEh],0"
 );
 // LINE 347:
 	asm( 
-"	      0054193c    mov eax,[ebp-18h]"
+"	      0054193c    mov eax,this"
 "	      0054193f    mov eax,[eax+82h]"
-"	      00541945    mov ecx,[ebp-18h]"
+"	      00541945    mov ecx,this"
 "	      00541948    mov ecx,[ecx+0E2h]"
 "	      0054194e    shl ecx,4"
 "	      00541951    mov eax,[ecx+eax*4+593480h]"
-"	      00541958    mov ecx,[ebp-18h]"
+"	      00541958    mov ecx,this"
 "	      0054195b    mov [ecx+0E6h],eax"
 );
 // LINE 348:
 	asm( 
-"	      00541961    mov eax,[ebp-18h]"
+"	      00541961    mov eax,this"
 "	      00541964    mov eax,[eax+0E6h]"
 "	      0054196a    shl eax,3"
 "	      0054196d    lea eax,[eax+eax*2]"
 "	      00541970    lea eax,[eax+eax*4]"
-"	      00541973    mov ecx,[ebp-18h]"
+"	      00541973    mov ecx,this"
 "	      00541976    mov ecx,[ecx+0EEh]"
 "	      0054197c    lea ecx,[ecx+ecx*2]"
 "	      0054197f    mov eax,[eax+ecx*4+62BB34h]"
-"	      00541986    mov ecx,[ebp-18h]"
+"	      00541986    mov ecx,this"
 "	      00541989    mov [ecx+86h],eax"
 );
 // LINE 349:
 	asm( 
-"	      0054198f    mov eax,[ebp-18h]"
+"	      0054198f    mov eax,this"
 "	      00541992    mov eax,[eax]"
-"	      00541994    mov ecx,[ebp-18h]"
+"	      00541994    mov ecx,this"
 "	      00541997    call dword ptr [eax+8]"
 );
 // LINE 350:
 	asm( 
 "	      0054199a    push 1"
-"	      0054199c    mov ecx,[ebp-18h]"
+"	      0054199c    mov ecx,this"
 "	      0054199f    call 00505234h"
 );
 // LINE 351:
 	asm( 
-"	      005419a4    mov eax,[ebp-18h]"
+"	      005419a4    mov eax,this"
 "	      005419a7    mov byte ptr [eax+292h],0"
 );
 // LINE 352:
@@ -596,73 +596,73 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      005419c0    push ebx"
 "	      005419c1    push esi"
 "	      005419c2    push edi"
-"	      005419c3    mov [ebp-28h],ecx"
+"	      005419c3    mov this,ecx"
 );
 // LINE 365:
 	asm( 
-"	      005419c6    mov eax,[ebp+8]"
-"	      005419c9    mov ecx,[ebp-28h]"
+"	      005419c6    mov eax,sID"
+"	      005419c9    mov ecx,this"
 "	      005419cc    mov [ecx+298h],eax"
 );
 // LINE 368:
 	asm( 
-"	      005419d2    cmp dword ptr [ebp+0F4h],0FFFFFFFFh"
+"	      005419d2    cmp responceType,0FFFFFFFFh"
 "	      005419d9    je near ptr 005419EEh"
 );
 // LINE 369:
 	asm( 
-"	      005419df    mov eax,[ebp+0F4h]"
-"	      005419e5    mov ecx,[ebp-28h]"
+"	      005419df    mov eax,responceType"
+"	      005419e5    mov ecx,this"
 "	      005419e8    mov [ecx+11Eh],eax"
 );
 // LINE 371:
 	asm( 
-"	      005419ee    mov eax,[ebp+0F8h]"
-"	      005419f4    mov ecx,[ebp-28h]"
+"	      005419ee    mov eax,eState"
+"	      005419f4    mov ecx,this"
 "	      005419f7    mov [ecx+294h],eax"
 );
 // LINE 374:
 	asm( 
-"	      005419fd    cmp dword ptr [ebp+0C8h],0"
+"	      005419fd    cmp result.pRGV,0"
 "	      00541a04    jne near ptr 00541A62h"
 );
 // LINE 379:
 	asm( 
-"	      00541a0a    mov eax,[ebp+0Ch]"
+"	      00541a0a    mov eax,stationGoal1.pRGV"
 "	      00541a0d    mov al,[eax]"
-"	      00541a0f    mov [ebp-8],al"
+"	      00541a0f    mov stationIndex.x,al"
 );
 // LINE 380:
 	asm( 
-"	      00541a12    mov eax,[ebp+0Ch]"
+"	      00541a12    mov eax,stationGoal1.pRGV"
 "	      00541a15    xor ecx,ecx"
 "	      00541a17    mov cl,[eax+1]"
 "	      00541a1a    push ecx"
 "	      00541a1b    xor eax,eax"
-"	      00541a1d    mov al,[ebp-8]"
+"	      00541a1d    mov al,stationIndex.x"
 "	      00541a20    push eax"
 "	      00541a21    mov ecx,5C3828h"
 "	      00541a26    call 0053D167h"
-"	      00541a2b    mov [ebp-7],al"
+"	      00541a2b    mov stationIndex.yindex,al"
 );
 // LINE 381:
 	asm( 
-"	      00541a2e    mov eax,[ebp+68h]"
+"	      00541a2e    mov eax,destGoal1.pRGV"
 "	      00541a31    mov al,[eax]"
-"	      00541a33    mov [ebp-0Ch],al"
+"	      00541a33    mov destIndex.x,al"
 );
 // LINE 382:
 	asm( 
-"	      00541a36    mov eax,[ebp+68h]"
+"	      00541a36    mov eax,destGoal1.pRGV"
 "	      00541a39    xor ecx,ecx"
 "	      00541a3b    mov cl,[eax+1]"
 "	      00541a3e    push ecx"
 "	      00541a3f    xor eax,eax"
-"	      00541a41    mov al,[ebp-0Ch]"
+"	      00541a41    mov al,destIndex.x"
 "	      00541a44    push eax"
 "	      00541a45    mov ecx,5C3828h"
 "	      00541a4a    call 0053D167h"
-"	      00541a4f    mov [ebp-0Bh],al"
+"	      00541a4f    mov destIndex.yindex,al"
 );
 // LINE 383:
 	asm( 
@@ -670,24 +670,24 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541a55    push eax"
 "	      00541a56    mov eax,[ebp-8]"
 "	      00541a59    push eax"
-"	      00541a5a    mov ecx,[ebp-28h]"
+"	      00541a5a    mov ecx,this"
 "	      00541a5d    call 005427F5h"
 );
 // LINE 388:
 	asm( 
 "	      00541a62    mov ax,[ebp+0C0h]"
-"	      00541a69    mov ecx,[ebp-28h]"
+"	      00541a69    mov ecx,this"
 "	      00541a6c    mov [ecx+11Ch],ax"
 );
 // LINE 389:
 	asm( 
 "	      00541a73    mov ax,[ebp+64h]"
-"	      00541a77    mov ecx,[ebp-28h]"
+"	      00541a77    mov ecx,this"
 "	      00541a7a    mov [ecx+11Ah],ax"
 );
 // LINE 393:
 	asm( 
-"	      00541a81    mov eax,[ebp-28h]"
+"	      00541a81    mov eax,this"
 "	      00541a84    test byte ptr [eax+8],2"
 "	      00541a88    je near ptr 00541AAAh"
 "	      00541a8e    push 189h"
@@ -700,7 +700,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 394:
 	asm( 
-"	      00541aaf    mov eax,[ebp-28h]"
+"	      00541aaf    mov eax,this"
 "	      00541ab2    test byte ptr [eax+8],1"
 "	      00541ab6    jne near ptr 00541AD8h"
 "	      00541abc    push 18Ah"
@@ -713,7 +713,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 395:
 	asm( 
-"	      00541add    cmp dword ptr [ebp+68h],0"
+"	      00541add    cmp destGoal1.pRGV,0"
 "	      00541ae1    jne near ptr 00541B03h"
 "	      00541ae7    push 18Bh"
 "	      00541aec    push 5B8358h"
@@ -725,7 +725,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 396:
 	asm( 
-"	      00541b08    cmp dword ptr [ebp+0Ch],0"
+"	      00541b08    cmp stationGoal1.pRGV,0"
 "	      00541b0c    jne near ptr 00541B2Eh"
 "	      00541b12    push 18Ch"
 "	      00541b17    push 5B838Ch"
@@ -737,75 +737,75 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 397:
 	asm( 
-"	      00541b33    mov eax,[ebp-28h]"
+"	      00541b33    mov eax,this"
 "	      00541b36    or dword ptr [eax+8],2"
 );
 // LINE 399:
 	asm( 
-"	      00541b3a    cmp dword ptr [ebp+0C8h],0"
+"	      00541b3a    cmp result.pRGV,0"
 "	      00541b41    jne near ptr 00541CB9h"
 );
 // LINE 406:
 // Block start:
 	struct Edge* pEdge;
 	asm( 
-"	      00541b47    mov eax,[ebp-28h]"
+"	      00541b47    mov eax,this"
 "	      00541b4a    xor ecx,ecx"
 "	      00541b4c    mov cl,[eax+192h]"
 "	      00541b52    lea eax,[ecx+ecx*4]"
 "	      00541b55    add eax,eax"
-"	      00541b57    add eax,[ebp+0Ch]"
+"	      00541b57    add eax,stationGoal1.pRGV"
 "	      00541b5a    add eax,4"
-"	      00541b5d    mov [ebp-10h],eax"
+"	      00541b5d    mov pEdge,eax"
 );
 // LINE 407:
 	asm( 
-"	      00541b60    cmp dword ptr [ebp+38h],0"
+"	      00541b60    cmp stationGoal2.pRGV,0"
 "	      00541b64    je near ptr 00541BF5h"
 );
 // LINE 409:
 // Block start:
 	unsigned char yindex;
 	asm( 
-"	      00541b6a    mov eax,[ebp+38h]"
+"	      00541b6a    mov eax,stationGoal2.pRGV"
 "	      00541b6d    xor ecx,ecx"
 "	      00541b6f    mov cl,[eax+1]"
 "	      00541b72    push ecx"
-"	      00541b73    mov eax,[ebp+38h]"
+"	      00541b73    mov eax,stationGoal2.pRGV"
 "	      00541b76    xor ecx,ecx"
 "	      00541b78    mov cl,[eax]"
 "	      00541b7a    push ecx"
 "	      00541b7b    mov ecx,5C3828h"
 "	      00541b80    call 0053D167h"
-"	      00541b85    mov [ebp-14h],al"
+"	      00541b85    mov yindex,al"
 );
 // LINE 410:
 	asm( 
-"	      00541b88    mov eax,[ebp+38h]"
+"	      00541b88    mov eax,stationGoal2.pRGV"
 "	      00541b8b    xor ecx,ecx"
 "	      00541b8d    mov cl,[eax]"
-"	      00541b8f    mov eax,[ebp-10h]"
+"	      00541b8f    mov eax,pEdge"
 "	      00541b92    xor edx,edx"
 "	      00541b94    mov dl,[eax+1]"
 "	      00541b97    cmp ecx,edx"
 "	      00541b99    jne near ptr 00541BD4h"
-"	      00541b9f    mov eax,[ebp-10h]"
+"	      00541b9f    mov eax,pEdge"
 "	      00541ba2    xor ecx,ecx"
 "	      00541ba4    mov cl,[eax]"
 "	      00541ba6    xor eax,eax"
-"	      00541ba8    mov al,[ebp-14h]"
+"	      00541ba8    mov al,yindex"
 "	      00541bab    cmp ecx,eax"
 "	      00541bad    jne near ptr 00541BD4h"
 );
 // LINE 412:
 	asm( 
-"	      00541bb3    mov eax,[ebp-28h]"
+"	      00541bb3    mov eax,this"
 "	      00541bb6    mov byte ptr [eax+292h],1"
 );
 // LINE 413:
 	asm( 
-"	      00541bbd    lea esi,[ebp+0Ch]"
-"	      00541bc0    mov edi,[ebp-28h]"
+"	      00541bbd    lea esi,stationGoal1.pRGV"
+"	      00541bc0    mov edi,this"
 "	      00541bc3    add edi,70h"
 "	      00541bc6    mov ecx,0Ah"
 "	      00541bcb    rep movsd"
@@ -817,13 +817,13 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 417:
 	asm( 
-"	      00541bd4    mov eax,[ebp-28h]"
+"	      00541bd4    mov eax,this"
 "	      00541bd7    mov byte ptr [eax+292h],0"
 );
 // LINE 418:
 	asm( 
-"	      00541bde    lea esi,[ebp+38h]"
-"	      00541be1    mov edi,[ebp-28h]"
+"	      00541bde    lea esi,stationGoal2.pRGV"
+"	      00541be1    mov edi,this"
 "	      00541be4    add edi,70h"
 "	      00541be7    mov ecx,0Ah"
 "	      00541bec    rep movsd"
@@ -836,13 +836,13 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 423:
 	asm( 
-"	      00541bf5    mov eax,[ebp-28h]"
+"	      00541bf5    mov eax,this"
 "	      00541bf8    mov byte ptr [eax+292h],1"
 );
 // LINE 424:
 	asm( 
-"	      00541bff    lea esi,[ebp+0Ch]"
-"	      00541c02    mov edi,[ebp-28h]"
+"	      00541bff    lea esi,stationGoal1.pRGV"
+"	      00541c02    mov edi,this"
 "	      00541c05    add edi,70h"
 "	      00541c08    mov ecx,0Ah"
 "	      00541c0d    rep movsd"
@@ -850,18 +850,18 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 429:
 	asm( 
-"	      00541c11    cmp dword ptr [ebp+94h],0"
+"	      00541c11    cmp destGoal2.pRGV,0"
 "	      00541c18    je near ptr 00541C9Ch"
 );
 // LINE 431:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      00541c1e    mov eax,[ebp+94h]"
+"	      00541c1e    mov eax,destGoal2.pRGV"
 "	      00541c24    xor ecx,ecx"
 "	      00541c26    mov cl,[eax+1]"
 "	      00541c29    push ecx"
-"	      00541c2a    mov eax,[ebp+94h]"
+"	      00541c2a    mov eax,destGoal2.pRGV"
 "	      00541c30    xor ecx,ecx"
 "	      00541c32    mov cl,[eax]"
 "	      00541c34    push ecx"
@@ -869,27 +869,27 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541c3a    call 0053D167h"
 "	      00541c3f    xor ecx,ecx"
 "	      00541c41    mov cl,al"
-"	      00541c43    mov [ebp-18h],ecx"
+"	      00541c43    mov yindex,ecx"
 );
 // LINE 432:
 	asm( 
-"	      00541c46    mov eax,[ebp+68h]"
+"	      00541c46    mov eax,destGoal1.pRGV"
 "	      00541c49    xor ecx,ecx"
 "	      00541c4b    mov cl,[eax+2Dh]"
-"	      00541c4e    mov eax,[ebp+94h]"
+"	      00541c4e    mov eax,destGoal2.pRGV"
 "	      00541c54    xor edx,edx"
 "	      00541c56    mov dl,[eax]"
 "	      00541c58    cmp ecx,edx"
 "	      00541c5a    jne near ptr 00541C7Fh"
-"	      00541c60    mov eax,[ebp+68h]"
+"	      00541c60    mov eax,destGoal1.pRGV"
 "	      00541c63    xor ecx,ecx"
 "	      00541c65    mov cl,[eax+2Ch]"
-"	      00541c68    cmp ecx,[ebp-18h]"
+"	      00541c68    cmp ecx,yindex"
 "	      00541c6b    jne near ptr 00541C7Fh"
 );
 // LINE 434:
 	asm( 
-"	      00541c71    mov eax,[ebp-28h]"
+"	      00541c71    mov eax,this"
 "	      00541c74    dec byte ptr [eax+293h]"
 );
 // LINE 436:
@@ -898,11 +898,11 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 438:
 	asm( 
-"	      00541c7f    mov al,[ebp+76h]"
-"	      00541c82    mov ecx,[ebp-28h]"
+"	      00541c7f    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541c82    mov ecx,this"
 "	      00541c85    xor edx,edx"
 "	      00541c87    mov dl,[ecx+293h]"
-"	      00541c8d    mov ecx,[ebp-28h]"
+"	      00541c8d    mov ecx,this"
 "	      00541c90    mov [edx+ecx+191h],al"
 );
 // LINE 441:
@@ -912,11 +912,11 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 443:
 	asm( 
-"	      00541c9c    mov al,[ebp+76h]"
-"	      00541c9f    mov ecx,[ebp-28h]"
+"	      00541c9c    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541c9f    mov ecx,this"
 "	      00541ca2    xor edx,edx"
 "	      00541ca4    mov dl,[ecx+293h]"
-"	      00541caa    mov ecx,[ebp-28h]"
+"	      00541caa    mov ecx,this"
 "	      00541cad    mov [edx+ecx+191h],al"
 );
 // LINE 446:
@@ -926,9 +926,9 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 451:
 	asm( 
-"	      00541cb9    cmp dword ptr [ebp+0Ch],0"
+"	      00541cb9    cmp stationGoal1.pRGV,0"
 "	      00541cbd    jne near ptr 00541CE9h"
-"	      00541cc3    cmp dword ptr [ebp+38h],0"
+"	      00541cc3    cmp stationGoal2.pRGV,0"
 "	      00541cc7    jne near ptr 00541CE9h"
 "	      00541ccd    push 1C3h"
 "	      00541cd2    push 5B83C4h"
@@ -940,13 +940,13 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 452:
 	asm( 
-"	      00541cee    cmp dword ptr [ebp+0Ch],0"
+"	      00541cee    cmp stationGoal1.pRGV,0"
 "	      00541cf2    jne near ptr 00541D0Fh"
 );
 // LINE 454:
 	asm( 
-"	      00541cf8    lea esi,[ebp+38h]"
-"	      00541cfb    mov edi,[ebp-28h]"
+"	      00541cf8    lea esi,stationGoal2.pRGV"
+"	      00541cfb    mov edi,this"
 "	      00541cfe    add edi,70h"
 "	      00541d01    mov ecx,0Ah"
 "	      00541d06    rep movsd"
@@ -955,13 +955,13 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 // LINE 456:
 	asm( 
 "	      00541d0a    jmp near ptr 00541D9Dh"
-"	      00541d0f    cmp dword ptr [ebp+38h],0"
+"	      00541d0f    cmp stationGoal2.pRGV,0"
 "	      00541d13    jne near ptr 00541D30h"
 );
 // LINE 458:
 	asm( 
-"	      00541d19    lea esi,[ebp+0Ch]"
-"	      00541d1c    mov edi,[ebp-28h]"
+"	      00541d19    lea esi,stationGoal1.pRGV"
+"	      00541d1c    mov edi,this"
 "	      00541d1f    add edi,70h"
 "	      00541d22    mov ecx,0Ah"
 "	      00541d27    rep movsd"
@@ -970,14 +970,14 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 // LINE 461:
 	asm( 
 "	      00541d2b    jmp near ptr 00541D9Dh"
-"	      00541d30    mov eax,[ebp+0C8h]"
-"	      00541d36    cmp [ebp+0Ch],eax"
+"	      00541d30    mov eax,result.pRGV"
+"	      00541d36    cmp stationGoal1.pRGV,eax"
 "	      00541d39    jne near ptr 00541D56h"
 );
 // LINE 463:
 	asm( 
-"	      00541d3f    lea esi,[ebp+38h]"
-"	      00541d42    mov edi,[ebp-28h]"
+"	      00541d3f    lea esi,stationGoal2.pRGV"
+"	      00541d42    mov edi,this"
 "	      00541d45    add edi,70h"
 "	      00541d48    mov ecx,0Ah"
 "	      00541d4d    rep movsd"
@@ -986,14 +986,14 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 // LINE 465:
 	asm( 
 "	      00541d51    jmp near ptr 00541D9Dh"
-"	      00541d56    mov eax,[ebp+0C8h]"
-"	      00541d5c    cmp [ebp+38h],eax"
+"	      00541d56    mov eax,result.pRGV"
+"	      00541d5c    cmp stationGoal2.pRGV,eax"
 "	      00541d5f    jne near ptr 00541D7Ch"
 );
 // LINE 467:
 	asm( 
-"	      00541d65    lea esi,[ebp+0Ch]"
-"	      00541d68    mov edi,[ebp-28h]"
+"	      00541d65    lea esi,stationGoal1.pRGV"
+"	      00541d68    mov edi,this"
 "	      00541d6b    add edi,70h"
 "	      00541d6e    mov ecx,0Ah"
 "	      00541d73    rep movsd"
@@ -1015,80 +1015,80 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 475:
 	asm( 
-"	      00541d9d    mov eax,[ebp+0C4h]"
-"	      00541da3    mov ecx,[ebp-28h]"
+"	      00541d9d    mov eax,startDir"
+"	      00541da3    mov ecx,this"
 "	      00541da6    mov [ecx+0E2h],eax"
 );
 // LINE 477:
 	asm( 
-"	      00541dac    lea eax,[ebp+64h]"
+"	      00541dac    lea eax,stationLoc.x"
 "	      00541daf    push eax"
-"	      00541db0    mov ecx,[ebp-28h]"
+"	      00541db0    mov ecx,this"
 "	      00541db3    call 00502B74h"
 );
 // LINE 478:
 	asm( 
-"	      00541db8    mov eax,[ebp-28h]"
+"	      00541db8    mov eax,this"
 "	      00541dbb    mov dword ptr [eax+0EAh],0"
 );
 // LINE 479:
 	asm( 
-"	      00541dc5    mov eax,[ebp-28h]"
+"	      00541dc5    mov eax,this"
 "	      00541dc8    mov dword ptr [eax+0EEh],0"
 );
 // LINE 480:
 	asm( 
-"	      00541dd2    mov eax,[ebp-28h]"
+"	      00541dd2    mov eax,this"
 "	      00541dd5    mov eax,[eax+82h]"
-"	      00541ddb    mov ecx,[ebp-28h]"
+"	      00541ddb    mov ecx,this"
 "	      00541dde    mov ecx,[ecx+0E2h]"
 "	      00541de4    shl ecx,4"
 "	      00541de7    mov eax,[ecx+eax*4+593480h]"
-"	      00541dee    mov ecx,[ebp-28h]"
+"	      00541dee    mov ecx,this"
 "	      00541df1    mov [ecx+0E6h],eax"
 );
 // LINE 481:
 	asm( 
-"	      00541df7    mov eax,[ebp-28h]"
+"	      00541df7    mov eax,this"
 "	      00541dfa    mov eax,[eax+0E6h]"
 "	      00541e00    shl eax,3"
 "	      00541e03    lea eax,[eax+eax*2]"
 "	      00541e06    lea eax,[eax+eax*4]"
-"	      00541e09    mov ecx,[ebp-28h]"
+"	      00541e09    mov ecx,this"
 "	      00541e0c    mov ecx,[ecx+0EEh]"
 "	      00541e12    lea ecx,[ecx+ecx*2]"
 "	      00541e15    mov eax,[eax+ecx*4+62BB34h]"
-"	      00541e1c    mov ecx,[ebp-28h]"
+"	      00541e1c    mov ecx,this"
 "	      00541e1f    mov [ecx+86h],eax"
 );
 // LINE 482:
 	asm( 
-"	      00541e25    mov eax,[ebp-28h]"
+"	      00541e25    mov eax,this"
 "	      00541e28    mov eax,[eax]"
-"	      00541e2a    mov ecx,[ebp-28h]"
+"	      00541e2a    mov ecx,this"
 "	      00541e2d    call dword ptr [eax+8]"
 );
 // LINE 483:
 	asm( 
 "	      00541e30    push 1"
-"	      00541e32    mov ecx,[ebp-28h]"
+"	      00541e32    mov ecx,this"
 "	      00541e35    call 00505234h"
 );
 // LINE 484:
 	asm( 
-"	      00541e3a    mov eax,[ebp-28h]"
+"	      00541e3a    mov eax,this"
 "	      00541e3d    mov byte ptr [eax+292h],0"
 );
 // LINE 489:
 	asm( 
-"	      00541e44    mov eax,[ebp-28h]"
+"	      00541e44    mov eax,this"
 "	      00541e47    mov eax,[eax+4]"
 "	      00541e4a    mov [ebp-2Ch],eax"
 "	      00541e4d    jmp near ptr 00541E9Ch"
 );
 // LINE 492:
 	asm( 
-"	      00541e52    mov dword ptr [ebp-4],0"
+"	      00541e52    mov car_type,0"
 );
 // LINE 493:
 	asm( 
@@ -1096,7 +1096,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 495:
 	asm( 
-"	      00541e5e    mov dword ptr [ebp-4],1"
+"	      00541e5e    mov car_type,1"
 );
 // LINE 496:
 	asm( 
@@ -1104,7 +1104,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 498:
 	asm( 
-"	      00541e6a    mov dword ptr [ebp-4],2"
+"	      00541e6a    mov car_type,2"
 );
 // LINE 499:
 	asm( 
@@ -1133,16 +1133,16 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 503:
 	asm( 
-"	      00541ec8    mov eax,[ebp-28h]"
+"	      00541ec8    mov eax,this"
 "	      00541ecb    add eax,11Ch"
 "	      00541ed0    push eax"
-"	      00541ed1    mov eax,[ebp-28h]"
+"	      00541ed1    mov eax,this"
 "	      00541ed4    add eax,7Ch"
 "	      00541ed7    push eax"
 "	      00541ed8    push 0FFFFFFFFh"
-"	      00541eda    mov eax,[ebp-4]"
+"	      00541eda    mov eax,car_type"
 "	      00541edd    push eax"
-"	      00541ede    mov eax,[ebp-28h]"
+"	      00541ede    mov eax,this"
 "	      00541ee1    movsx eax,word ptr [eax+1Ah]"
 "	      00541ee5    push eax"
 "	      00541ee6    call 00500F34h"
@@ -1150,11 +1150,11 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 508:
 	asm( 
-"	      00541eee    mov eax,[ebp-28h]"
+"	      00541eee    mov eax,this"
 "	      00541ef1    xor ecx,ecx"
 "	      00541ef3    mov cl,[eax+11Dh]"
 "	      00541ef9    mov [ebp-20h],ecx"
-"	      00541efc    mov eax,[ebp-28h]"
+"	      00541efc    mov eax,this"
 "	      00541eff    xor ecx,ecx"
 "	      00541f01    mov cl,[eax+11Ch]"
 "	      00541f07    mov [ebp-24h],ecx"
@@ -1179,44 +1179,44 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541f4e    jmp near ptr 00541F53h"
 "	      00541f53    jmp near ptr 00541F58h"
 "	      00541f58    mov eax,[ebp-1Ch]"
-"	      00541f5b    mov ecx,[ebp-28h]"
+"	      00541f5b    mov ecx,this"
 "	      00541f5e    mov [ecx+112h],eax"
 );
 // LINE 510:
 	asm( 
-"	      00541f64    mov eax,[ebp-28h]"
+"	      00541f64    mov eax,this"
 "	      00541f67    mov eax,[eax+112h]"
 "	      00541f6d    movsx eax,word ptr [eax+2]"
 "	      00541f71    shl eax,10h"
-"	      00541f74    mov ecx,[ebp-28h]"
+"	      00541f74    mov ecx,this"
 "	      00541f77    mov [ecx+13Eh],eax"
 );
 // LINE 511:
 	asm( 
-"	      00541f7d    mov eax,[ebp-28h]"
+"	      00541f7d    mov eax,this"
 "	      00541f80    mov eax,[eax+112h]"
 "	      00541f86    movsx eax,word ptr [eax+4]"
 "	      00541f8a    shl eax,10h"
-"	      00541f8d    mov ecx,[ebp-28h]"
+"	      00541f8d    mov ecx,this"
 "	      00541f90    mov [ecx+142h],eax"
 );
 // LINE 512:
 	asm( 
-"	      00541f96    mov eax,[ebp-28h]"
+"	      00541f96    mov eax,this"
 "	      00541f99    mov eax,[eax+112h]"
 "	      00541f9f    movsx eax,word ptr [eax+6]"
 "	      00541fa3    shl eax,10h"
-"	      00541fa6    mov ecx,[ebp-28h]"
+"	      00541fa6    mov ecx,this"
 "	      00541fa9    mov [ecx+146h],eax"
 );
 // LINE 513:
 	asm( 
-"	      00541faf    mov eax,[ebp-28h]"
+"	      00541faf    mov eax,this"
 "	      00541fb2    add dword ptr [eax+142h],0A0000h"
 );
 // LINE 514:
 	asm( 
-"	      00541fbc    mov eax,[ebp-28h]"
+"	      00541fbc    mov eax,this"
 "	      00541fbf    add eax,14Ah"
 "	      00541fc4    push eax"
 "	      00541fc5    call 004D1FF1h"
@@ -1224,15 +1224,15 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 515:
 	asm( 
-"	      00541fcd    mov eax,[ebp-28h]"
+"	      00541fcd    mov eax,this"
 "	      00541fd0    mov ax,[eax+11Ch]"
 "	      00541fd7    push eax"
-"	      00541fd8    mov ecx,[ebp-28h]"
+"	      00541fd8    mov ecx,this"
 "	      00541fdb    call 00542570h"
 );
 // LINE 516:
 	asm( 
-"	      00541fe0    mov ecx,[ebp-28h]"
+"	      00541fe0    mov ecx,this"
 "	      00541fe3    call 0054293Bh"
 );
 // LINE 518:
@@ -1265,25 +1265,25 @@ void EmergencyVehicleClass::GoBackToStation() {
 "	      00541ffd    push ebx"
 "	      00541ffe    push esi"
 "	      00541fff    push edi"
-"	      00542000    mov [ebp-144h],ecx"
+"	      00542000    mov this,ecx"
 );
 // LINE 535:
 	asm( 
-"	      00542006    lea eax,[ebp-0BCh]"
+"	      00542006    lea eax,startGoal2.pRGV"
 "	      0054200c    push eax"
-"	      0054200d    lea eax,[ebp-0E8h]"
+"	      0054200d    lea eax,startGoal1.pRGV"
 "	      00542013    push eax"
-"	      00542014    mov eax,[ebp-144h]"
+"	      00542014    mov eax,this"
 "	      0054201a    mov ax,[eax+11Ah]"
 "	      00542021    push eax"
-"	      00542022    mov eax,[ebp-144h]"
+"	      00542022    mov eax,this"
 "	      00542028    mov ax,[eax+7Ch]"
 "	      0054202c    push eax"
 "	      0054202d    lea eax,[ebp-114h]"
 "	      00542033    push eax"
 "	      00542034    mov ecx,5C3828h"
 "	      00542039    call 0053C998h"
-"	      0054203e    lea edi,[ebp-2Ch]"
+"	      0054203e    lea edi,result.pRGV"
 "	      00542041    mov esi,eax"
 "	      00542043    mov ecx,0Ah"
 "	      00542048    rep movsd"
@@ -1291,19 +1291,19 @@ void EmergencyVehicleClass::GoBackToStation() {
 );
 // LINE 538:
 	asm( 
-"	      0054204c    cmp dword ptr [ebp-2Ch],0"
+"	      0054204c    cmp result.pRGV,0"
 "	      00542050    jne near ptr 0054212Ch"
 );
 // LINE 540:
 	asm( 
-"	      00542056    lea eax,[ebp-60h]"
+"	      00542056    lea eax,destGoal2.pRGV"
 "	      00542059    push eax"
-"	      0054205a    lea eax,[ebp-90h]"
+"	      0054205a    lea eax,destGoal1.pRGV"
 "	      00542060    push eax"
-"	      00542061    mov eax,[ebp-144h]"
+"	      00542061    mov eax,this"
 "	      00542067    mov ax,[eax+11Ah]"
 "	      0054206e    push eax"
-"	      0054206f    mov eax,[ebp-144h]"
+"	      0054206f    mov eax,this"
 "	      00542075    mov ax,[eax+11Ah]"
 "	      0054207c    push eax"
 "	      0054207d    lea eax,[ebp-140h]"
@@ -1313,43 +1313,43 @@ void EmergencyVehicleClass::GoBackToStation() {
 );
 // LINE 544:
 	asm( 
-"	      0054208e    mov eax,[ebp-0E8h]"
+"	      0054208e    mov eax,startGoal1.pRGV"
 "	      00542094    mov al,[eax]"
-"	      00542096    mov [ebp-30h],al"
+"	      00542096    mov startVertex.x,al"
 );
 // LINE 545:
 	asm( 
-"	      00542099    mov eax,[ebp-0E8h]"
+"	      00542099    mov eax,startGoal1.pRGV"
 "	      0054209f    xor ecx,ecx"
 "	      005420a1    mov cl,[eax+1]"
 "	      005420a4    push ecx"
-"	      005420a5    mov eax,[ebp-0E8h]"
+"	      005420a5    mov eax,startGoal1.pRGV"
 "	      005420ab    xor ecx,ecx"
 "	      005420ad    mov cl,[eax]"
 "	      005420af    push ecx"
 "	      005420b0    mov ecx,5C3828h"
 "	      005420b5    call 0053D167h"
-"	      005420ba    mov [ebp-2Fh],al"
+"	      005420ba    mov startVertex.yindex,al"
 );
 // LINE 546:
 	asm( 
-"	      005420bd    mov eax,[ebp-90h]"
+"	      005420bd    mov eax,destGoal1.pRGV"
 "	      005420c3    mov al,[eax]"
-"	      005420c5    mov [ebp-34h],al"
+"	      005420c5    mov destVertex.x,al"
 );
 // LINE 547:
 	asm( 
-"	      005420c8    mov eax,[ebp-90h]"
+"	      005420c8    mov eax,destGoal1.pRGV"
 "	      005420ce    xor ecx,ecx"
 "	      005420d0    mov cl,[eax+1]"
 "	      005420d3    push ecx"
-"	      005420d4    mov eax,[ebp-90h]"
+"	      005420d4    mov eax,destGoal1.pRGV"
 "	      005420da    xor ecx,ecx"
 "	      005420dc    mov cl,[eax]"
 "	      005420de    push ecx"
 "	      005420df    mov ecx,5C3828h"
 "	      005420e4    call 0053D167h"
-"	      005420e9    mov [ebp-33h],al"
+"	      005420e9    mov destVertex.yindex,al"
 );
 // LINE 549:
 	asm( 
@@ -1359,11 +1359,11 @@ void EmergencyVehicleClass::GoBackToStation() {
 "	      005420f3    push eax"
 "	      005420f4    mov ecx,5C37F8h"
 "	      005420f9    call 00543704h"
-"	      005420fe    mov [ebp-64h],eax"
+"	      005420fe    mov pathFound,eax"
 );
 // LINE 550:
 	asm( 
-"	      00542101    cmp dword ptr [ebp-64h],0"
+"	      00542101    cmp pathFound,0"
 "	      00542105    jne near ptr 00542127h"
 "	      0054210b    push 226h"
 "	      00542110    push 5B8468h"
@@ -1375,44 +1375,44 @@ void EmergencyVehicleClass::GoBackToStation() {
 );
 // LINE 553:
 	asm( 
-"	      0054212c    mov eax,[ebp-144h]"
+"	      0054212c    mov eax,this"
 "	      00542132    mov eax,[eax+294h]"
 "	      00542138    push eax"
 "	      00542139    push 0FFFFFFFFh"
 "	      0054213b    sub esp,2Ch"
-"	      0054213e    lea esi,[ebp-2Ch]"
+"	      0054213e    lea esi,result.pRGV"
 "	      00542141    mov edi,esp"
 "	      00542143    mov ecx,0Ah"
 "	      00542148    rep movsd"
 "	      0054214a    movsw"
-"	      0054214c    mov eax,[ebp-144h]"
+"	      0054214c    mov eax,this"
 "	      00542152    mov ax,[eax+11Ah]"
 "	      00542159    push eax"
 "	      0054215a    sub esp,2Ch"
-"	      0054215d    lea esi,[ebp-60h]"
+"	      0054215d    lea esi,destGoal2.pRGV"
 "	      00542160    mov edi,esp"
 "	      00542162    mov ecx,0Ah"
 "	      00542167    rep movsd"
 "	      00542169    movsw"
 "	      0054216b    sub esp,2Ch"
-"	      0054216e    lea esi,[ebp-90h]"
+"	      0054216e    lea esi,destGoal1.pRGV"
 "	      00542174    mov edi,esp"
 "	      00542176    mov ecx,0Ah"
 "	      0054217b    rep movsd"
 "	      0054217d    movsw"
 "	      0054217f    sub esp,2Ch"
-"	      00542182    lea esi,[ebp-0BCh]"
+"	      00542182    lea esi,startGoal2.pRGV"
 "	      00542188    mov edi,esp"
 "	      0054218a    mov ecx,0Ah"
 "	      0054218f    rep movsd"
 "	      00542191    movsw"
 "	      00542193    sub esp,2Ch"
-"	      00542196    lea esi,[ebp-0E8h]"
+"	      00542196    lea esi,startGoal1.pRGV"
 "	      0054219c    mov edi,esp"
 "	      0054219e    mov ecx,0Ah"
 "	      005421a3    rep movsd"
 "	      005421a5    movsw"
-"	      005421a7    mov ecx,[ebp-144h]"
+"	      005421a7    mov ecx,this"
 "	      005421ad    call 00541661h"
 );
 // LINE 554:
@@ -1436,11 +1436,11 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 "	      005421c2    push ebx"
 "	      005421c3    push esi"
 "	      005421c4    push edi"
-"	      005421c5    mov [ebp-4],ecx"
+"	      005421c5    mov this,ecx"
 );
 // LINE 561:
 	asm( 
-"	      005421c8    mov eax,[ebp-4]"
+"	      005421c8    mov eax,this"
 "	      005421cb    mov dword ptr [eax+294h],2"
 );
 // LINE 562:
@@ -1466,7 +1466,7 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST* carInst) {
 );
 // LINE 568:
 	asm( 
-"	      005421e5    mov eax,[ebp+8]"
+"	      005421e5    mov eax,carInst"
 "	      005421e8    movsx eax,word ptr [eax+0Eh]"
 "	      005421ec    mov eax,[eax*4+608F80h]"
 "	      005421f3    mov eax,[eax+29Ch]"
@@ -1494,7 +1494,7 @@ void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST* carInst) {
 );
 // LINE 574:
 	asm( 
-"	      00542209    mov eax,[ebp+8]"
+"	      00542209    mov eax,carInst"
 "	      0054220c    movsx eax,word ptr [eax+0Eh]"
 "	      00542210    mov eax,[eax*4+608F80h]"
 "	      00542217    cmp dword ptr [eax+29Ch],2"
@@ -1521,16 +1521,16 @@ void EmergencyVehicleClass::AdjustSpeed() {
 "	      00542234    push ebx"
 "	      00542235    push esi"
 "	      00542236    push edi"
-"	      00542237    mov [ebp-4],ecx"
+"	      00542237    mov this,ecx"
 );
 // LINE 624:
 	asm( 
-"	      0054223a    mov ecx,[ebp-4]"
+"	      0054223a    mov ecx,this"
 "	      0054223d    call 0050409Ah"
 );
 // LINE 626:
 	asm( 
-"	      00542242    mov eax,[ebp-4]"
+"	      00542242    mov eax,this"
 "	      00542245    mov eax,[eax+294h]"
 "	      0054224b    mov [ebp-8],eax"
 "	      0054224e    jmp near ptr 005422B9h"
@@ -1542,12 +1542,12 @@ void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 632:
 	asm( 
 "	      00542258    push 1CCCCh"
-"	      0054225d    mov eax,[ebp-4]"
+"	      0054225d    mov eax,this"
 "	      00542260    mov eax,[eax+0DEh]"
 "	      00542266    push eax"
 "	      00542267    call 004D19BDh"
 "	      0054226c    add esp,8"
-"	      0054226f    mov ecx,[ebp-4]"
+"	      0054226f    mov ecx,this"
 "	      00542272    mov [ecx+0DEh],eax"
 );
 // LINE 633:
@@ -1557,12 +1557,12 @@ void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 635:
 	asm( 
 "	      0054227d    push 14000h"
-"	      00542282    mov eax,[ebp-4]"
+"	      00542282    mov eax,this"
 "	      00542285    mov eax,[eax+0DEh]"
 "	      0054228b    push eax"
 "	      0054228c    call 004D19BDh"
 "	      00542291    add esp,8"
-"	      00542294    mov ecx,[ebp-4]"
+"	      00542294    mov ecx,this"
 "	      00542297    mov [ecx+0DEh],eax"
 );
 // LINE 636:
@@ -1571,7 +1571,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 );
 // LINE 638:
 	asm( 
-"	      005422a2    mov eax,[ebp-4]"
+"	      005422a2    mov eax,this"
 "	      005422a5    mov dword ptr [eax+0DEh],0"
 );
 // LINE 639:
@@ -1616,11 +1616,11 @@ void EmergencyVehicleClass::PositionIcon() {
 "	      005422f4    push ebx"
 "	      005422f5    push esi"
 "	      005422f6    push edi"
-"	      005422f7    mov [ebp-5Ch],ecx"
+"	      005422f7    mov this,ecx"
 );
 // LINE 666:
 	asm( 
-"	      005422fa    mov eax,[ebp-5Ch]"
+"	      005422fa    mov eax,this"
 "	      005422fd    add eax,14Ah"
 "	      00542302    push eax"
 "	      00542303    call 0056EC50h"
@@ -1636,9 +1636,9 @@ void EmergencyVehicleClass::PositionIcon() {
 );
 // LINE 667:
 	asm( 
-"	      00542323    mov eax,[ebp-5Ch]"
+"	      00542323    mov eax,this"
 "	      00542326    add eax,13Eh"
-"	      0054232b    lea ecx,[ebp-58h]"
+"	      0054232b    lea ecx,pos.loc.x"
 "	      0054232e    mov edx,[eax]"
 "	      00542330    mov [ecx],edx"
 "	      00542332    mov edx,[eax+4]"
@@ -1648,8 +1648,8 @@ void EmergencyVehicleClass::PositionIcon() {
 );
 // LINE 668:
 	asm( 
-"	      0054233e    mov esi,[ebp-5Ch]"
-"	      00542341    lea edi,[ebp-40h]"
+"	      0054233e    mov esi,this"
+"	      00542341    lea edi,pos.matrix[0][0]"
 "	      00542344    add esi,14Ah"
 "	      0054234a    mov ecx,10h"
 "	      0054234f    rep movsd"
@@ -1657,9 +1657,9 @@ void EmergencyVehicleClass::PositionIcon() {
 // LINE 669:
 	asm( 
 "	      00542351    push 3"
-"	      00542353    lea eax,[ebp-58h]"
+"	      00542353    lea eax,pos.loc.x"
 "	      00542356    push eax"
-"	      00542357    mov eax,[ebp-5Ch]"
+"	      00542357    mov eax,this"
 "	      0054235a    mov eax,[eax+12Eh]"
 "	      00542360    push eax"
 "	      00542361    call 004D8781h"
@@ -1686,25 +1686,25 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 "	      00542379    push ebx"
 "	      0054237a    push esi"
 "	      0054237b    push edi"
-"	      0054237c    mov [ebp-8],ecx"
+"	      0054237c    mov this,ecx"
 );
 // LINE 676:
 	asm( 
-"	      0054237f    mov eax,[ebp-8]"
+"	      0054237f    mov eax,this"
 "	      00542382    cmp dword ptr [eax+294h],1"
 "	      00542389    jne near ptr 005423A0h"
 );
 // LINE 677:
 	asm( 
-"	      0054238f    mov eax,[ebp+8]"
+"	      0054238f    mov eax,pGoal"
 "	      00542392    push eax"
-"	      00542393    mov ecx,[ebp-8]"
+"	      00542393    mov ecx,this"
 "	      00542396    call 00502C92h"
 "	      0054239b    jmp near ptr 00542416h"
 );
 // LINE 680:
 	asm( 
-"	      005423a0    mov eax,[ebp-8]"
+"	      005423a0    mov eax,this"
 "	      005423a3    xor ecx,ecx"
 "	      005423a5    mov cl,[eax+292h]"
 "	      005423ab    cmp ecx,100h"
@@ -1719,17 +1719,17 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 683:
 	asm( 
-"	      005423d8    mov eax,[ebp-8]"
+"	      005423d8    mov eax,this"
 "	      005423db    mov al,[eax+292h]"
 "	      005423e1    mov [ebp-4],al"
-"	      005423e4    mov eax,[ebp-8]"
+"	      005423e4    mov eax,this"
 "	      005423e7    inc byte ptr [eax+292h]"
 "	      005423ed    xor eax,eax"
 "	      005423ef    mov al,[ebp-4]"
-"	      005423f2    mov ecx,[ebp-8]"
+"	      005423f2    mov ecx,this"
 "	      005423f5    xor edx,edx"
 "	      005423f7    mov dl,[eax+ecx+192h]"
-"	      005423fe    mov eax,[ebp-8]"
+"	      005423fe    mov eax,this"
 "	      00542401    mov eax,[eax+0E2h]"
 "	      00542407    shl eax,4"
 "	      0054240a    mov eax,[eax+edx*4+593480h]"
@@ -1755,25 +1755,25 @@ void EmergencyVehicleClass::ArriveOnScene() {
 "	      00542423    push ebx"
 "	      00542424    push esi"
 "	      00542425    push edi"
-"	      00542426    mov [ebp-4],ecx"
+"	      00542426    mov this,ecx"
 );
 // LINE 921:
 	asm( 
 "	      00542429    call 0056F980h"
-"	      0054242e    mov ecx,[ebp-4]"
+"	      0054242e    mov ecx,this"
 "	      00542431    mov [ecx+122h],eax"
 );
 // LINE 922:
 	asm( 
-"	      00542437    mov eax,[ebp-4]"
+"	      00542437    mov eax,this"
 "	      0054243a    mov ax,[eax+11Ch]"
 "	      00542441    push eax"
-"	      00542442    mov ecx,[ebp-4]"
+"	      00542442    mov ecx,this"
 "	      00542445    call 00542461h"
 );
 // LINE 923:
 	asm( 
-"	      0054244a    mov eax,[ebp-4]"
+"	      0054244a    mov eax,this"
 "	      0054244d    mov dword ptr [eax+11Eh],0"
 );
 // LINE 924:
@@ -1799,15 +1799,15 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 "	      00542467    push ebx"
 "	      00542468    push esi"
 "	      00542469    push edi"
-"	      0054246a    mov [ebp-10h],ecx"
+"	      0054246a    mov this,ecx"
 );
 // LINE 945:
 	asm( 
 "	      0054246d    xor eax,eax"
-"	      0054246f    mov al,[ebp+8]"
+"	      0054246f    mov al,point.x"
 "	      00542472    shl eax,0Ah"
 "	      00542475    xor ecx,ecx"
-"	      00542477    mov cl,[ebp+9]"
+"	      00542477    mov cl,point.y"
 "	      0054247a    mov eax,[eax+ecx*4+67ED30h]"
 "	      00542481    mov [ebp-0Ch],eax"
 "	      00542484    cmp dword ptr [ebp-0Ch],0"
@@ -1821,11 +1821,11 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 "	      005424aa    jmp near ptr 005424AFh"
 "	      005424af    jmp near ptr 005424B4h"
 "	      005424b4    mov eax,[ebp-0Ch]"
-"	      005424b7    mov [ebp-4],eax"
+"	      005424b7    mov cellPointer,eax"
 );
 // LINE 946:
 	asm( 
-"	      005424ba    cmp dword ptr [ebp-4],0"
+"	      005424ba    cmp cellPointer,0"
 "	      005424be    jne near ptr 005424E0h"
 "	      005424c4    push 3B2h"
 "	      005424c9    push 5B84E0h"
@@ -1837,36 +1837,36 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 );
 // LINE 948:
 	asm( 
-"	      005424e5    cmp dword ptr [ebp-4],0"
+"	      005424e5    cmp cellPointer,0"
 "	      005424e9    je near ptr 00542564h"
 );
 // LINE 950:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
 	asm( 
-"	      005424ef    mov eax,[ebp-4]"
+"	      005424ef    mov eax,cellPointer"
 "	      005424f2    add eax,10h"
-"	      005424f5    mov [ebp-8],eax"
+"	      005424f5    mov dyptrptr,eax"
 );
 // LINE 952:
 	asm( 
-"	      005424f8    mov eax,[ebp-8]"
+"	      005424f8    mov eax,dyptrptr"
 "	      005424fb    cmp dword ptr [eax],0"
 "	      005424fe    je near ptr 00542537h"
 );
 // LINE 955:
 	asm( 
-"	      00542504    mov eax,[ebp-10h]"
+"	      00542504    mov eax,this"
 "	      00542507    add eax,126h"
-"	      0054250c    mov ecx,[ebp-8]"
+"	      0054250c    mov ecx,dyptrptr"
 "	      0054250f    cmp eax,[ecx]"
 "	      00542511    jne near ptr 0054252Ah"
 );
 // LINE 958:
 	asm( 
-"	      00542517    mov eax,[ebp-10h]"
+"	      00542517    mov eax,this"
 "	      0054251a    mov eax,[eax+126h]"
-"	      00542520    mov ecx,[ebp-8]"
+"	      00542520    mov ecx,dyptrptr"
 "	      00542523    mov [ecx],eax"
 );
 // LINE 959:
@@ -1875,9 +1875,9 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 );
 // LINE 961:
 	asm( 
-"	      0054252a    mov eax,[ebp-8]"
+"	      0054252a    mov eax,dyptrptr"
 "	      0054252d    mov eax,[eax]"
-"	      0054252f    mov [ebp-8],eax"
+"	      0054252f    mov dyptrptr,eax"
 );
 // LINE 962:
 	asm( 
@@ -1885,7 +1885,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 );
 // LINE 963:
 	asm( 
-"	      00542537    mov eax,[ebp-8]"
+"	      00542537    mov eax,dyptrptr"
 "	      0054253a    cmp dword ptr [eax],0"
 "	      0054253d    jne near ptr 0054255Fh"
 "	      00542543    push 3C3h"
@@ -1920,14 +1920,14 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 "	      00542576    push ebx"
 "	      00542577    push esi"
 "	      00542578    push edi"
-"	      00542579    mov [ebp-0Ch],ecx"
+"	      00542579    mov this,ecx"
 );
 // LINE 986:
 	asm( 
 "	      0054257c    xor eax,eax"
-"	      0054257e    mov al,[ebp+9]"
+"	      0054257e    mov al,point.y"
 "	      00542581    xor ecx,ecx"
-"	      00542583    mov cl,[ebp+8]"
+"	      00542583    mov cl,point.x"
 "	      00542586    shl ecx,0Ah"
 "	      00542589    mov eax,[ecx+eax*4+67ED30h]"
 "	      00542590    mov [ebp-8],eax"
@@ -1942,11 +1942,11 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 "	      005425b9    jmp near ptr 005425BEh"
 "	      005425be    jmp near ptr 005425C3h"
 "	      005425c3    mov eax,[ebp-8]"
-"	      005425c6    mov [ebp-4],eax"
+"	      005425c6    mov cellPointer,eax"
 );
 // LINE 987:
 	asm( 
-"	      005425c9    cmp dword ptr [ebp-4],0"
+"	      005425c9    cmp cellPointer,0"
 "	      005425cd    jne near ptr 005425EFh"
 "	      005425d3    push 3DBh"
 "	      005425d8    push 5B8540h"
@@ -1958,21 +1958,21 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 );
 // LINE 989:
 	asm( 
-"	      005425f4    cmp dword ptr [ebp-4],0"
+"	      005425f4    cmp cellPointer,0"
 "	      005425f8    je near ptr 00542620h"
 );
 // LINE 991:
 	asm( 
-"	      005425fe    mov eax,[ebp-4]"
+"	      005425fe    mov eax,cellPointer"
 "	      00542601    mov eax,[eax+10h]"
-"	      00542604    mov ecx,[ebp-0Ch]"
+"	      00542604    mov ecx,this"
 "	      00542607    mov [ecx+126h],eax"
 );
 // LINE 992:
 	asm( 
-"	      0054260d    mov eax,[ebp-0Ch]"
+"	      0054260d    mov eax,this"
 "	      00542610    add eax,126h"
-"	      00542615    mov ecx,[ebp-4]"
+"	      00542615    mov ecx,cellPointer"
 "	      00542618    mov [ecx+10h],eax"
 );
 // LINE 994:
@@ -2004,51 +2004,51 @@ void EmergencyVehicleClass::Reset() {
 "	      00542637    push ebx"
 "	      00542638    push esi"
 "	      00542639    push edi"
-"	      0054263a    mov [ebp-4],ecx"
+"	      0054263a    mov this,ecx"
 );
 // LINE 1317:
 	asm( 
-"	      0054263d    mov eax,[ebp-4]"
+"	      0054263d    mov eax,this"
 "	      00542640    mov byte ptr [eax+11Ah],0FFh"
 );
 // LINE 1318:
 	asm( 
-"	      00542647    mov eax,[ebp-4]"
+"	      00542647    mov eax,this"
 "	      0054264a    mov byte ptr [eax+11Bh],0FFh"
 );
 // LINE 1319:
 	asm( 
-"	      00542651    mov eax,[ebp-4]"
+"	      00542651    mov eax,this"
 "	      00542654    mov byte ptr [eax+11Ch],0FFh"
 );
 // LINE 1320:
 	asm( 
-"	      0054265b    mov eax,[ebp-4]"
+"	      0054265b    mov eax,this"
 "	      0054265e    mov byte ptr [eax+11Dh],0FFh"
 );
 // LINE 1321:
 	asm( 
-"	      00542665    mov eax,[ebp-4]"
+"	      00542665    mov eax,this"
 "	      00542668    mov dword ptr [eax+11Eh],0"
 );
 // LINE 1322:
 	asm( 
-"	      00542672    mov eax,[ebp-4]"
+"	      00542672    mov eax,this"
 "	      00542675    mov dword ptr [eax+294h],1"
 );
 // LINE 1323:
 	asm( 
-"	      0054267f    mov eax,[ebp-4]"
+"	      0054267f    mov eax,this"
 "	      00542682    mov dword ptr [eax+122h],0"
 );
 // LINE 1324:
 	asm( 
-"	      0054268c    mov eax,[ebp-4]"
+"	      0054268c    mov eax,this"
 "	      0054268f    mov dword ptr [eax+18Ah],0"
 );
 // LINE 1327:
 	asm( 
-"	      00542699    mov ecx,[ebp-4]"
+"	      00542699    mov ecx,this"
 "	      0054269c    call 00504116h"
 );
 // LINE 1330:
@@ -2078,13 +2078,13 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1353:
 	asm( 
-"	      005426b4    cmp dword ptr [ebp+10h],80h"
+"	      005426b4    cmp mapx,80h"
 "	      005426bb    jge near ptr 005426E2h"
-"	      005426c1    cmp dword ptr [ebp+10h],0"
+"	      005426c1    cmp mapx,0"
 "	      005426c5    jl near ptr 005426E2h"
-"	      005426cb    cmp dword ptr [ebp+14h],80h"
+"	      005426cb    cmp mapy,80h"
 "	      005426d2    jge near ptr 005426E2h"
-"	      005426d8    cmp dword ptr [ebp+14h],0"
+"	      005426d8    cmp mapy,0"
 "	      005426dc    jge near ptr 005426E7h"
 );
 // LINE 1354:
@@ -2093,17 +2093,17 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1356:
 	asm( 
-"	      005426e7    mov eax,[ebp+8]"
-"	      005426ea    mov [ebp-4],eax"
+"	      005426e7    mov eax,responseType"
+"	      005426ea    mov emergencyType,eax"
 );
 // LINE 1357:
 	asm( 
-"	      005426ed    mov eax,[ebp+0Ch]"
-"	      005426f0    mov [ebp-8],eax"
+"	      005426ed    mov eax,responseLevel"
+"	      005426f0    mov emergencyLevel,eax"
 );
 // LINE 1359:
 	asm( 
-"	      005426f3    mov eax,[ebp+8]"
+"	      005426f3    mov eax,responseType"
 "	      005426f6    mov [ebp-0Ch],eax"
 "	      005426f9    jmp near ptr 005427C3h"
 );
@@ -2123,13 +2123,13 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1370:
 	asm( 
-"	      00542724    mov eax,[ebp+14h]"
+"	      00542724    mov eax,mapy"
 "	      00542727    push eax"
-"	      00542728    mov eax,[ebp+10h]"
+"	      00542728    mov eax,mapx"
 "	      0054272b    push eax"
-"	      0054272c    mov eax,[ebp-8]"
+"	      0054272c    mov eax,emergencyLevel"
 "	      0054272f    push eax"
-"	      00542730    mov eax,[ebp-4]"
+"	      00542730    mov eax,emergencyType"
 "	      00542733    push eax"
 "	      00542734    call 00536381h"
 "	      00542739    add esp,10h"
@@ -2140,13 +2140,13 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1375:
 	asm( 
-"	      00542741    mov eax,[ebp+14h]"
+"	      00542741    mov eax,mapy"
 "	      00542744    push eax"
-"	      00542745    mov eax,[ebp+10h]"
+"	      00542745    mov eax,mapx"
 "	      00542748    push eax"
-"	      00542749    mov eax,[ebp-8]"
+"	      00542749    mov eax,emergencyLevel"
 "	      0054274c    push eax"
-"	      0054274d    mov eax,[ebp-4]"
+"	      0054274d    mov eax,emergencyType"
 "	      00542750    push eax"
 "	      00542751    call 00535B14h"
 "	      00542756    add esp,10h"
@@ -2157,13 +2157,13 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1381:
 	asm( 
-"	      0054275e    mov eax,[ebp+14h]"
+"	      0054275e    mov eax,mapy"
 "	      00542761    push eax"
-"	      00542762    mov eax,[ebp+10h]"
+"	      00542762    mov eax,mapx"
 "	      00542765    push eax"
-"	      00542766    mov eax,[ebp-8]"
+"	      00542766    mov eax,emergencyLevel"
 "	      00542769    push eax"
-"	      0054276a    mov eax,[ebp-4]"
+"	      0054276a    mov eax,emergencyType"
 "	      0054276d    push eax"
 "	      0054276e    call 00537081h"
 "	      00542773    add esp,10h"
@@ -2174,13 +2174,13 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 );
 // LINE 1386:
 	asm( 
-"	      0054277b    mov eax,[ebp+14h]"
+"	      0054277b    mov eax,mapy"
 "	      0054277e    push eax"
-"	      0054277f    mov eax,[ebp+10h]"
+"	      0054277f    mov eax,mapx"
 "	      00542782    push eax"
-"	      00542783    mov eax,[ebp-8]"
+"	      00542783    mov eax,emergencyLevel"
 "	      00542786    push eax"
-"	      00542787    mov eax,[ebp-4]"
+"	      00542787    mov eax,emergencyType"
 "	      0054278a    push eax"
 "	      0054278b    call 00537081h"
 "	      00542790    add esp,10h"
@@ -2247,11 +2247,11 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 "	      005427fb    push ebx"
 "	      005427fc    push esi"
 "	      005427fd    push edi"
-"	      005427fe    mov [ebp-10h],ecx"
+"	      005427fe    mov this,ecx"
 );
 // LINE 1409:
 	asm( 
-"	      00542801    mov eax,[ebp-10h]"
+"	      00542801    mov eax,this"
 "	      00542804    mov byte ptr [eax+293h],1"
 );
 // LINE 1411:
@@ -2262,52 +2262,52 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 // LINE 1412:
 	asm( 
 "	      00542813    xor eax,eax"
-"	      00542815    mov al,[ebp-0Ch]"
+"	      00542815    mov al,index.x"
 "	      00542818    xor ecx,ecx"
-"	      0054281a    mov cl,[ebp+8]"
+"	      0054281a    mov cl,startVertex.x"
 "	      0054281d    cmp eax,ecx"
 "	      0054281f    jne near ptr 00542837h"
 "	      00542825    xor eax,eax"
-"	      00542827    mov al,[ebp-0Bh]"
+"	      00542827    mov al,index.yindex"
 "	      0054282a    xor ecx,ecx"
-"	      0054282c    mov cl,[ebp+9]"
+"	      0054282c    mov cl,startVertex.yindex"
 "	      0054282f    cmp eax,ecx"
 "	      00542831    je near ptr 005428B9h"
 );
 // LINE 1414:
 	asm( 
 "	      00542837    xor eax,eax"
-"	      00542839    mov al,[ebp-0Ch]"
+"	      00542839    mov al,index.x"
 "	      0054283c    mov eax,[eax*4+5C3828h]"
 "	      00542843    xor ecx,ecx"
-"	      00542845    mov cl,[ebp-0Bh]"
+"	      00542845    mov cl,index.yindex"
 "	      00542848    mov edx,ecx"
 "	      0054284a    lea ecx,[ecx+ecx*4]"
 "	      0054284d    lea ecx,[ecx+ecx*4]"
 "	      00542850    lea ecx,[edx+ecx*2]"
 "	      00542853    add eax,ecx"
-"	      00542855    mov [ebp-4],eax"
+"	      00542855    mov pRGV,eax"
 );
 // LINE 1415:
 	asm( 
-"	      00542858    mov eax,[ebp-4]"
+"	      00542858    mov eax,pRGV"
 "	      0054285b    mov al,[eax+2Dh]"
-"	      0054285e    mov [ebp-0Ch],al"
+"	      0054285e    mov index.x,al"
 );
 // LINE 1416:
 	asm( 
-"	      00542861    mov eax,[ebp-4]"
+"	      00542861    mov eax,pRGV"
 "	      00542864    mov al,[eax+2Ch]"
-"	      00542867    mov [ebp-0Bh],al"
+"	      00542867    mov index.yindex,al"
 );
 // LINE 1417:
 	asm( 
 "	      0054286a    xor eax,eax"
-"	      0054286c    mov al,[ebp-0Ch]"
+"	      0054286c    mov al,index.x"
 "	      0054286f    cmp eax,0FFh"
 "	      00542874    je near ptr 0054288Ah"
 "	      0054287a    xor eax,eax"
-"	      0054287c    mov al,[ebp-0Bh]"
+"	      0054287c    mov al,index.yindex"
 "	      0054287f    cmp eax,0FFh"
 "	      00542884    jne near ptr 005428A6h"
 "	      0054288a    push 589h"
@@ -2320,7 +2320,7 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 );
 // LINE 1418:
 	asm( 
-"	      005428ab    mov eax,[ebp-10h]"
+"	      005428ab    mov eax,this"
 "	      005428ae    inc byte ptr [eax+293h]"
 );
 // LINE 1424:
@@ -2334,48 +2334,48 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 );
 // LINE 1433:
 	asm( 
-"	      005428c1    mov eax,[ebp-10h]"
+"	      005428c1    mov eax,this"
 "	      005428c4    xor ecx,ecx"
 "	      005428c6    mov cl,[eax+293h]"
 "	      005428cc    sub ecx,2"
-"	      005428cf    mov [ebp-8],ecx"
+"	      005428cf    mov i,ecx"
 "	      005428d2    jmp near ptr 005428DAh"
-"	      005428d7    dec dword ptr [ebp-8]"
-"	      005428da    cmp dword ptr [ebp-8],0"
+"	      005428d7    dec i"
+"	      005428da    cmp i,0"
 "	      005428de    jl near ptr 0054292Fh"
 );
 // LINE 1436:
 	asm( 
 "	      005428e4    xor eax,eax"
-"	      005428e6    mov al,[ebp-0Ch]"
+"	      005428e6    mov al,index.x"
 "	      005428e9    mov eax,[eax*4+5C3828h]"
 "	      005428f0    xor ecx,ecx"
-"	      005428f2    mov cl,[ebp-0Bh]"
+"	      005428f2    mov cl,index.yindex"
 "	      005428f5    mov edx,ecx"
 "	      005428f7    lea ecx,[ecx+ecx*4]"
 "	      005428fa    lea ecx,[ecx+ecx*4]"
 "	      005428fd    lea ecx,[edx+ecx*2]"
 "	      00542900    add eax,ecx"
-"	      00542902    mov [ebp-4],eax"
+"	      00542902    mov pRGV,eax"
 );
 // LINE 1437:
 	asm( 
-"	      00542905    mov eax,[ebp-4]"
+"	      00542905    mov eax,pRGV"
 "	      00542908    mov al,[eax+2Dh]"
-"	      0054290b    mov [ebp-0Ch],al"
+"	      0054290b    mov index.x,al"
 );
 // LINE 1438:
 	asm( 
-"	      0054290e    mov eax,[ebp-4]"
+"	      0054290e    mov eax,pRGV"
 "	      00542911    mov al,[eax+2Ch]"
-"	      00542914    mov [ebp-0Bh],al"
+"	      00542914    mov index.yindex,al"
 );
 // LINE 1439:
 	asm( 
-"	      00542917    mov eax,[ebp-4]"
+"	      00542917    mov eax,pRGV"
 "	      0054291a    mov al,[eax+2Eh]"
-"	      0054291d    mov ecx,[ebp-8]"
-"	      00542920    mov edx,[ebp-10h]"
+"	      0054291d    mov ecx,i"
+"	      00542920    mov edx,this"
 "	      00542923    mov [ecx+edx+192h],al"
 );
 // LINE 1440:
@@ -2408,13 +2408,13 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 "	      00542941    push ebx"
 "	      00542942    push esi"
 "	      00542943    push edi"
-"	      00542944    mov [ebp-50h],ecx"
+"	      00542944    mov this,ecx"
 );
 // LINE 1461:
 	asm( 
-"	      00542947    lea eax,[ebp-24h]"
+"	      00542947    lea eax,oinfo.Faces"
 "	      0054294a    push eax"
-"	      0054294b    mov eax,[ebp-50h]"
+"	      0054294b    mov eax,this"
 "	      0054294e    mov eax,[eax+14h]"
 "	      00542951    push eax"
 "	      00542952    call 004D8859h"
@@ -2422,56 +2422,56 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 );
 // LINE 1462:
 	asm( 
-"	      0054295a    mov eax,[ebp-50h]"
+"	      0054295a    mov eax,this"
 "	      0054295d    mov eax,[eax+14h]"
 "	      00542960    push eax"
 "	      00542961    call 004D85CDh"
 "	      00542966    add esp,4"
-"	      00542969    mov [ebp-28h],eax"
+"	      00542969    mov face,eax"
 );
 // LINE 1463:
 	asm( 
-"	      0054296c    mov dword ptr [ebp-2Ch],0"
+"	      0054296c    mov count,0"
 "	      00542973    jmp near ptr 0054297Bh"
-"	      00542978    inc dword ptr [ebp-2Ch]"
-"	      0054297b    mov eax,[ebp-2Ch]"
-"	      0054297e    cmp [ebp-24h],eax"
+"	      00542978    inc count"
+"	      0054297b    mov eax,count"
+"	      0054297e    cmp oinfo.Faces,eax"
 "	      00542981    jle near ptr 005429CCh"
 );
 // LINE 1465:
 	asm( 
-"	      00542987    lea eax,[ebp-4Ch]"
+"	      00542987    lea eax,finfo.Face"
 "	      0054298a    push eax"
-"	      0054298b    mov eax,[ebp-28h]"
+"	      0054298b    mov eax,face"
 "	      0054298e    push eax"
 "	      0054298f    call 004D6905h"
 "	      00542994    add esp,8"
 );
 // LINE 1466:
 	asm( 
-"	      00542997    cmp dword ptr [ebp-40h],19h"
+"	      00542997    cmp finfo.Plotter,19h"
 "	      0054299b    jne near ptr 005429B8h"
 );
 // LINE 1468:
 	asm( 
-"	      005429a1    and dword ptr [ebp-44h],7FFFFFFFh"
+"	      005429a1    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 1469:
 	asm( 
-"	      005429a8    lea eax,[ebp-4Ch]"
+"	      005429a8    lea eax,finfo.Face"
 "	      005429ab    push eax"
-"	      005429ac    mov eax,[ebp-28h]"
+"	      005429ac    mov eax,face"
 "	      005429af    push eax"
 "	      005429b0    call 004D6941h"
 "	      005429b5    add esp,8"
 );
 // LINE 1471:
 	asm( 
-"	      005429b8    mov eax,[ebp-28h]"
+"	      005429b8    mov eax,face"
 "	      005429bb    push eax"
 "	      005429bc    call 004D85F8h"
 "	      005429c1    add esp,4"
-"	      005429c4    mov [ebp-28h],eax"
+"	      005429c4    mov face,eax"
 );
 // LINE 1472:
 	asm( 
@@ -2503,13 +2503,13 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 "	      005429dc    push ebx"
 "	      005429dd    push esi"
 "	      005429de    push edi"
-"	      005429df    mov [ebp-50h],ecx"
+"	      005429df    mov this,ecx"
 );
 // LINE 1484:
 	asm( 
-"	      005429e2    lea eax,[ebp-24h]"
+"	      005429e2    lea eax,oinfo.Faces"
 "	      005429e5    push eax"
-"	      005429e6    mov eax,[ebp-50h]"
+"	      005429e6    mov eax,this"
 "	      005429e9    mov eax,[eax+14h]"
 "	      005429ec    push eax"
 "	      005429ed    call 004D8859h"
@@ -2517,58 +2517,58 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 );
 // LINE 1485:
 	asm( 
-"	      005429f5    mov eax,[ebp-50h]"
+"	      005429f5    mov eax,this"
 "	      005429f8    mov eax,[eax+14h]"
 "	      005429fb    push eax"
 "	      005429fc    call 004D85CDh"
 "	      00542a01    add esp,4"
-"	      00542a04    mov [ebp-28h],eax"
+"	      00542a04    mov face,eax"
 );
 // LINE 1486:
 	asm( 
-"	      00542a07    mov dword ptr [ebp-2Ch],0"
+"	      00542a07    mov count,0"
 "	      00542a0e    jmp near ptr 00542A16h"
-"	      00542a13    inc dword ptr [ebp-2Ch]"
-"	      00542a16    mov eax,[ebp-2Ch]"
-"	      00542a19    cmp [ebp-24h],eax"
+"	      00542a13    inc count"
+"	      00542a16    mov eax,count"
+"	      00542a19    cmp oinfo.Faces,eax"
 "	      00542a1c    jle near ptr 00542A6Bh"
 );
 // LINE 1488:
 	asm( 
-"	      00542a22    lea eax,[ebp-4Ch]"
+"	      00542a22    lea eax,finfo.Face"
 "	      00542a25    push eax"
-"	      00542a26    mov eax,[ebp-28h]"
+"	      00542a26    mov eax,face"
 "	      00542a29    push eax"
 "	      00542a2a    call 004D6905h"
 "	      00542a2f    add esp,8"
 );
 // LINE 1489:
 	asm( 
-"	      00542a32    cmp dword ptr [ebp-40h],19h"
+"	      00542a32    cmp finfo.Plotter,19h"
 "	      00542a36    jne near ptr 00542A57h"
 );
 // LINE 1491:
 	asm( 
-"	      00542a3c    mov eax,[ebp-44h]"
+"	      00542a3c    mov eax,finfo.Attribute"
 "	      00542a3f    or eax,80000000h"
-"	      00542a44    mov [ebp-44h],eax"
+"	      00542a44    mov finfo.Attribute,eax"
 );
 // LINE 1492:
 	asm( 
-"	      00542a47    lea eax,[ebp-4Ch]"
+"	      00542a47    lea eax,finfo.Face"
 "	      00542a4a    push eax"
-"	      00542a4b    mov eax,[ebp-28h]"
+"	      00542a4b    mov eax,face"
 "	      00542a4e    push eax"
 "	      00542a4f    call 004D6941h"
 "	      00542a54    add esp,8"
 );
 // LINE 1494:
 	asm( 
-"	      00542a57    mov eax,[ebp-28h]"
+"	      00542a57    mov eax,face"
 "	      00542a5a    push eax"
 "	      00542a5b    call 004D85F8h"
 "	      00542a60    add esp,4"
-"	      00542a63    mov [ebp-28h],eax"
+"	      00542a63    mov face,eax"
 );
 // LINE 1495:
 	asm( 
@@ -2595,40 +2595,40 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00542a7b    push ebx"
 "	      00542a7c    push esi"
 "	      00542a7d    push edi"
-"	      00542a7e    mov [ebp-4],ecx"
+"	      00542a7e    mov this,ecx"
 );
 // LINE 1508:
 	asm( 
-"	      00542a81    mov eax,[ebp-4]"
+"	      00542a81    mov eax,this"
 "	      00542a84    mov ax,[eax+11Ah]"
-"	      00542a8b    mov ecx,[ebp+8]"
+"	      00542a8b    mov ecx,sd"
 "	      00542a8e    mov [ecx+11Eh],ax"
 );
 // LINE 1509:
 	asm( 
-"	      00542a95    mov eax,[ebp-4]"
+"	      00542a95    mov eax,this"
 "	      00542a98    mov ax,[eax+11Ch]"
-"	      00542a9f    mov ecx,[ebp+8]"
+"	      00542a9f    mov ecx,sd"
 "	      00542aa2    mov [ecx+120h],ax"
 );
 // LINE 1510:
 	asm( 
-"	      00542aa9    mov eax,[ebp-4]"
+"	      00542aa9    mov eax,this"
 "	      00542aac    mov eax,[eax+11Eh]"
-"	      00542ab2    mov ecx,[ebp+8]"
+"	      00542ab2    mov ecx,sd"
 "	      00542ab5    mov [ecx+122h],eax"
 );
 // LINE 1511:
 	asm( 
-"	      00542abb    mov eax,[ebp-4]"
+"	      00542abb    mov eax,this"
 "	      00542abe    mov eax,[eax+122h]"
-"	      00542ac4    mov ecx,[ebp+8]"
+"	      00542ac4    mov ecx,sd"
 "	      00542ac7    mov [ecx+126h],eax"
 );
 // LINE 1512:
 	asm( 
-"	      00542acd    mov esi,[ebp-4]"
-"	      00542ad0    mov edi,[ebp+8]"
+"	      00542acd    mov esi,this"
+"	      00542ad0    mov edi,sd"
 "	      00542ad3    add edi,12Ah"
 "	      00542ad9    add esi,126h"
 "	      00542adf    mov ecx,19h"
@@ -2636,15 +2636,15 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1513:
 	asm( 
-"	      00542ae6    mov eax,[ebp-4]"
+"	      00542ae6    mov eax,this"
 "	      00542ae9    mov eax,[eax+18Ah]"
-"	      00542aef    mov ecx,[ebp+8]"
+"	      00542aef    mov ecx,sd"
 "	      00542af2    mov [ecx+18Eh],eax"
 );
 // LINE 1514:
 	asm( 
-"	      00542af8    mov esi,[ebp-4]"
-"	      00542afb    mov edi,[ebp+8]"
+"	      00542af8    mov esi,this"
+"	      00542afb    mov edi,sd"
 "	      00542afe    add edi,196h"
 "	      00542b04    add esi,192h"
 "	      00542b0a    mov ecx,40h"
@@ -2652,50 +2652,50 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1515:
 	asm( 
-"	      00542b11    mov eax,[ebp-4]"
+"	      00542b11    mov eax,this"
 "	      00542b14    mov al,[eax+292h]"
-"	      00542b1a    mov ecx,[ebp+8]"
+"	      00542b1a    mov ecx,sd"
 "	      00542b1d    mov [ecx+296h],al"
 );
 // LINE 1516:
 	asm( 
-"	      00542b23    mov eax,[ebp-4]"
+"	      00542b23    mov eax,this"
 "	      00542b26    mov al,[eax+293h]"
-"	      00542b2c    mov ecx,[ebp+8]"
+"	      00542b2c    mov ecx,sd"
 "	      00542b2f    mov [ecx+297h],al"
 );
 // LINE 1517:
 	asm( 
-"	      00542b35    mov eax,[ebp-4]"
+"	      00542b35    mov eax,this"
 "	      00542b38    mov eax,[eax+294h]"
-"	      00542b3e    mov ecx,[ebp+8]"
+"	      00542b3e    mov ecx,sd"
 "	      00542b41    mov [ecx+298h],eax"
 );
 // LINE 1518:
 	asm( 
-"	      00542b47    mov eax,[ebp-4]"
+"	      00542b47    mov eax,this"
 "	      00542b4a    mov eax,[eax+298h]"
-"	      00542b50    mov ecx,[ebp+8]"
+"	      00542b50    mov ecx,sd"
 "	      00542b53    mov [ecx+29Ch],eax"
 );
 // LINE 1519:
 	asm( 
-"	      00542b59    mov eax,[ebp-4]"
+"	      00542b59    mov eax,this"
 "	      00542b5c    mov eax,[eax+29Ch]"
-"	      00542b62    mov ecx,[ebp+8]"
+"	      00542b62    mov ecx,sd"
 "	      00542b65    mov [ecx+2A0h],eax"
 );
 // LINE 1520:
 	asm( 
-"	      00542b6b    mov eax,[ebp-4]"
+"	      00542b6b    mov eax,this"
 "	      00542b6e    test byte ptr [eax+8],2"
 "	      00542b72    je near ptr 00542B78h"
 );
 // LINE 1534:
 	asm( 
-"	      00542b78    mov eax,[ebp+8]"
+"	      00542b78    mov eax,sd"
 "	      00542b7b    push eax"
-"	      00542b7c    mov ecx,[ebp-4]"
+"	      00542b7c    mov ecx,this"
 "	      00542b7f    call 0050917Eh"
 );
 // LINE 1535:
@@ -2721,11 +2721,11 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00542b96    push ebx"
 "	      00542b97    push esi"
 "	      00542b98    push edi"
-"	      00542b99    mov [ebp-8],ecx"
+"	      00542b99    mov this,ecx"
 );
 // LINE 1548:
 	asm( 
-"	      00542b9c    mov eax,[ebp+8]"
+"	      00542b9c    mov eax,sd"
 "	      00542b9f    test byte ptr [eax],2"
 "	      00542ba2    jne near ptr 00542BADh"
 );
@@ -2735,50 +2735,50 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1554:
 	asm( 
-"	      00542bad    mov eax,[ebp+8]"
+"	      00542bad    mov eax,sd"
 "	      00542bb0    push eax"
-"	      00542bb1    mov ecx,[ebp-8]"
+"	      00542bb1    mov ecx,this"
 "	      00542bb4    call 00509489h"
 );
 // LINE 1556:
 	asm( 
-"	      00542bb9    mov eax,[ebp+8]"
+"	      00542bb9    mov eax,sd"
 "	      00542bbc    mov ax,[eax+11Eh]"
-"	      00542bc3    mov ecx,[ebp-8]"
+"	      00542bc3    mov ecx,this"
 "	      00542bc6    mov [ecx+11Ah],ax"
 );
 // LINE 1557:
 	asm( 
-"	      00542bcd    mov eax,[ebp+8]"
+"	      00542bcd    mov eax,sd"
 "	      00542bd0    mov ax,[eax+120h]"
-"	      00542bd7    mov ecx,[ebp-8]"
+"	      00542bd7    mov ecx,this"
 "	      00542bda    mov [ecx+11Ch],ax"
 );
 // LINE 1558:
 	asm( 
-"	      00542be1    mov eax,[ebp+8]"
+"	      00542be1    mov eax,sd"
 "	      00542be4    mov eax,[eax+122h]"
-"	      00542bea    mov ecx,[ebp-8]"
+"	      00542bea    mov ecx,this"
 "	      00542bed    mov [ecx+11Eh],eax"
 );
 // LINE 1559:
 	asm( 
-"	      00542bf3    mov eax,[ebp+8]"
+"	      00542bf3    mov eax,sd"
 "	      00542bf6    mov eax,[eax+126h]"
-"	      00542bfc    mov ecx,[ebp-8]"
+"	      00542bfc    mov ecx,this"
 "	      00542bff    mov [ecx+122h],eax"
 );
 // LINE 1560:
 	asm( 
-"	      00542c05    mov eax,[ebp+8]"
+"	      00542c05    mov eax,sd"
 "	      00542c08    mov eax,[eax+18Eh]"
-"	      00542c0e    mov ecx,[ebp-8]"
+"	      00542c0e    mov ecx,this"
 "	      00542c11    mov [ecx+18Ah],eax"
 );
 // LINE 1561:
 	asm( 
-"	      00542c17    mov esi,[ebp+8]"
-"	      00542c1a    mov edi,[ebp-8]"
+"	      00542c17    mov esi,sd"
+"	      00542c1a    mov edi,this"
 "	      00542c1d    add edi,192h"
 "	      00542c23    add esi,196h"
 "	      00542c29    mov ecx,40h"
@@ -2786,44 +2786,44 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1562:
 	asm( 
-"	      00542c30    mov eax,[ebp+8]"
+"	      00542c30    mov eax,sd"
 "	      00542c33    mov al,[eax+296h]"
-"	      00542c39    mov ecx,[ebp-8]"
+"	      00542c39    mov ecx,this"
 "	      00542c3c    mov [ecx+292h],al"
 );
 // LINE 1563:
 	asm( 
-"	      00542c42    mov eax,[ebp+8]"
+"	      00542c42    mov eax,sd"
 "	      00542c45    mov al,[eax+297h]"
-"	      00542c4b    mov ecx,[ebp-8]"
+"	      00542c4b    mov ecx,this"
 "	      00542c4e    mov [ecx+293h],al"
 );
 // LINE 1564:
 	asm( 
-"	      00542c54    mov eax,[ebp+8]"
+"	      00542c54    mov eax,sd"
 "	      00542c57    mov eax,[eax+298h]"
-"	      00542c5d    mov ecx,[ebp-8]"
+"	      00542c5d    mov ecx,this"
 "	      00542c60    mov [ecx+294h],eax"
 );
 // LINE 1565:
 	asm( 
-"	      00542c66    mov eax,[ebp+8]"
+"	      00542c66    mov eax,sd"
 "	      00542c69    mov eax,[eax+29Ch]"
-"	      00542c6f    mov ecx,[ebp-8]"
+"	      00542c6f    mov ecx,this"
 "	      00542c72    mov [ecx+298h],eax"
 );
 // LINE 1566:
 	asm( 
-"	      00542c78    mov eax,[ebp+8]"
+"	      00542c78    mov eax,sd"
 "	      00542c7b    mov eax,[eax+2A0h]"
-"	      00542c81    mov ecx,[ebp-8]"
+"	      00542c81    mov ecx,this"
 "	      00542c84    mov [ecx+29Ch],eax"
 );
 // LINE 1568:
 	asm( 
-"	      00542c8a    mov eax,[ebp+8]"
+"	      00542c8a    mov eax,sd"
 "	      00542c8d    add eax,142h"
-"	      00542c92    mov ecx,[ebp-8]"
+"	      00542c92    mov ecx,this"
 "	      00542c95    add ecx,13Eh"
 "	      00542c9b    mov edx,[eax]"
 "	      00542c9d    mov [ecx],edx"
@@ -2834,8 +2834,8 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1569:
 	asm( 
-"	      00542cab    mov esi,[ebp+8]"
-"	      00542cae    mov edi,[ebp-8]"
+"	      00542cab    mov esi,sd"
+"	      00542cae    mov edi,this"
 "	      00542cb1    add edi,14Ah"
 "	      00542cb7    add esi,14Eh"
 "	      00542cbd    mov ecx,10h"
@@ -2843,14 +2843,14 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1572:
 	asm( 
-"	      00542cc4    mov eax,[ebp-8]"
+"	      00542cc4    mov eax,this"
 "	      00542cc7    mov eax,[eax+4]"
 "	      00542cca    mov [ebp-0Ch],eax"
 "	      00542ccd    jmp near ptr 00542D1Ch"
 );
 // LINE 1575:
 	asm( 
-"	      00542cd2    mov dword ptr [ebp-4],0"
+"	      00542cd2    mov car_type,0"
 );
 // LINE 1576:
 	asm( 
@@ -2858,7 +2858,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1578:
 	asm( 
-"	      00542cde    mov dword ptr [ebp-4],1"
+"	      00542cde    mov car_type,1"
 );
 // LINE 1579:
 	asm( 
@@ -2866,7 +2866,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1581:
 	asm( 
-"	      00542cea    mov dword ptr [ebp-4],2"
+"	      00542cea    mov car_type,2"
 );
 // LINE 1582:
 	asm( 
@@ -2895,16 +2895,16 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 1586:
 	asm( 
-"	      00542d48    mov eax,[ebp-8]"
+"	      00542d48    mov eax,this"
 "	      00542d4b    add eax,11Ch"
 "	      00542d50    push eax"
-"	      00542d51    mov eax,[ebp-8]"
+"	      00542d51    mov eax,this"
 "	      00542d54    add eax,7Ch"
 "	      00542d57    push eax"
 "	      00542d58    push 0FFFFFFFFh"
-"	      00542d5a    mov eax,[ebp-4]"
+"	      00542d5a    mov eax,car_type"
 "	      00542d5d    push eax"
-"	      00542d5e    mov eax,[ebp-8]"
+"	      00542d5e    mov eax,this"
 "	      00542d61    movsx eax,word ptr [eax+1Ah]"
 "	      00542d65    push eax"
 "	      00542d66    call 00500F34h"

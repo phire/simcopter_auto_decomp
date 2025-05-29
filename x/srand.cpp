@@ -14,7 +14,7 @@ void SetRRandSeed(unsigned long n) {
 "	      0055d503    push ebx"
 "	      0055d504    push esi"
 "	      0055d505    push edi"
-"	      0055d506    mov eax,[ebp+8]"
+"	      0055d506    mov eax,n"
 "	      0055d509    mov ds:[5BDFDCh],eax"
 "	      0055d50e    jmp near ptr 0055D513h"
 "	      0055d513    pop edi"
@@ -53,7 +53,7 @@ void SetSRandSeed(unsigned long theSeed) {
 "	      0055d530    push ebx"
 "	      0055d531    push esi"
 "	      0055d532    push edi"
-"	      0055d533    mov eax,[ebp+8]"
+"	      0055d533    mov eax,theSeed"
 "	      0055d536    mov ds:[6376A8h],eax"
 "	      0055d53b    jmp near ptr 0055D540h"
 "	      0055d540    pop edi"
@@ -84,150 +84,150 @@ unsigned short RRand(unsigned short lim) {
 );
 // LINE 59:
 	asm( 
-"	      0055d54e    mov dword ptr [ebp-4],41C64E6Dh"
+"	      0055d54e    mov myRandom0,41C64E6Dh"
 );
 // LINE 60:
 	asm( 
 "	      0055d555    mov eax,ds:[5BDFDCh]"
-"	      0055d55a    mov [ebp-0Ch],eax"
+"	      0055d55a    mov myRandom1,eax"
 );
 // LINE 61:
 	asm( 
-"	      0055d55d    mov eax,[ebp-4]"
-"	      0055d560    mov [ebp-10h],eax"
+"	      0055d55d    mov eax,myRandom0"
+"	      0055d560    mov myRandom2,eax"
 );
 // LINE 62:
 	asm( 
-"	      0055d563    mov eax,[ebp-0Ch]"
-"	      0055d566    mov [ebp-14h],eax"
+"	      0055d563    mov eax,myRandom1"
+"	      0055d566    mov myRandom3,eax"
 );
 // LINE 66:
 	asm( 
-"	      0055d569    mov eax,[ebp-10h]"
+"	      0055d569    mov eax,myRandom2"
 "	      0055d56c    and eax,0FFFFh"
 "	      0055d571    shl eax,10h"
 "	      0055d574    movzx eax,ax"
-"	      0055d577    mov ecx,[ebp-10h]"
+"	      0055d577    mov ecx,myRandom2"
 "	      0055d57a    and ecx,0FFFFh"
 "	      0055d580    shr ecx,10h"
 "	      0055d583    movzx ecx,cx"
 "	      0055d586    or eax,ecx"
-"	      0055d588    mov [ebp-10h],eax"
+"	      0055d588    mov myRandom2,eax"
 );
 // LINE 68:
 	asm( 
-"	      0055d58b    mov eax,[ebp-14h]"
+"	      0055d58b    mov eax,myRandom3"
 "	      0055d58e    and eax,0FFFFh"
 "	      0055d593    movzx eax,ax"
-"	      0055d596    mov ecx,[ebp-10h]"
+"	      0055d596    mov ecx,myRandom2"
 "	      0055d599    and ecx,0FFFFh"
 "	      0055d59f    movzx ecx,cx"
 "	      0055d5a2    imul eax,ecx"
-"	      0055d5a5    mov [ebp-10h],eax"
+"	      0055d5a5    mov myRandom2,eax"
 );
 // LINE 70:
 	asm( 
-"	      0055d5a8    mov eax,[ebp-4]"
-"	      0055d5ab    mov [ebp-18h],eax"
+"	      0055d5a8    mov eax,myRandom0"
+"	      0055d5ab    mov myRandom4,eax"
 );
 // LINE 71:
 	asm( 
-"	      0055d5ae    mov eax,[ebp-0Ch]"
-"	      0055d5b1    mov [ebp-8],eax"
+"	      0055d5ae    mov eax,myRandom1"
+"	      0055d5b1    mov myRandom5,eax"
 );
 // LINE 73:
 	asm( 
-"	      0055d5b4    mov eax,[ebp-8]"
+"	      0055d5b4    mov eax,myRandom5"
 "	      0055d5b7    and eax,0FFFFh"
 "	      0055d5bc    shl eax,10h"
 "	      0055d5bf    movzx eax,ax"
-"	      0055d5c2    mov ecx,[ebp-8]"
+"	      0055d5c2    mov ecx,myRandom5"
 "	      0055d5c5    and ecx,0FFFFh"
 "	      0055d5cb    shr ecx,10h"
 "	      0055d5ce    movzx ecx,cx"
 "	      0055d5d1    or eax,ecx"
-"	      0055d5d3    mov [ebp-8],eax"
+"	      0055d5d3    mov myRandom5,eax"
 );
 // LINE 75:
 	asm( 
-"	      0055d5d6    mov eax,[ebp-8]"
+"	      0055d5d6    mov eax,myRandom5"
 "	      0055d5d9    and eax,0FFFFh"
 "	      0055d5de    movzx eax,ax"
-"	      0055d5e1    mov ecx,[ebp-18h]"
+"	      0055d5e1    mov ecx,myRandom4"
 "	      0055d5e4    and ecx,0FFFFh"
 "	      0055d5ea    movzx ecx,cx"
 "	      0055d5ed    imul eax,ecx"
-"	      0055d5f0    mov [ebp-18h],eax"
+"	      0055d5f0    mov myRandom4,eax"
 );
 // LINE 77:
 	asm( 
-"	      0055d5f3    mov eax,[ebp-18h]"
+"	      0055d5f3    mov eax,myRandom4"
 "	      0055d5f6    and eax,0FFFFh"
-"	      0055d5fb    mov ecx,[ebp-10h]"
+"	      0055d5fb    mov ecx,myRandom2"
 "	      0055d5fe    and ecx,0FFFFh"
 "	      0055d604    add eax,ecx"
 "	      0055d606    and eax,0FFFFh"
-"	      0055d60b    mov [ebp-10h],eax"
+"	      0055d60b    mov myRandom2,eax"
 );
 // LINE 79:
 	asm( 
-"	      0055d60e    mov eax,[ebp-10h]"
+"	      0055d60e    mov eax,myRandom2"
 "	      0055d611    and eax,0FFFFh"
 "	      0055d616    shl eax,10h"
 "	      0055d619    movzx eax,ax"
-"	      0055d61c    mov ecx,[ebp-10h]"
+"	      0055d61c    mov ecx,myRandom2"
 "	      0055d61f    and ecx,0FFFFh"
 "	      0055d625    shr ecx,10h"
 "	      0055d628    movzx ecx,cx"
 "	      0055d62b    or eax,ecx"
-"	      0055d62d    mov [ebp-10h],eax"
+"	      0055d62d    mov myRandom2,eax"
 );
 // LINE 81:
 	asm( 
-"	      0055d630    and dword ptr [ebp-10h],0FFFF0000h"
+"	      0055d630    and myRandom2,0FFFF0000h"
 );
 // LINE 83:
 	asm( 
-"	      0055d637    mov eax,[ebp-0Ch]"
+"	      0055d637    mov eax,myRandom1"
 "	      0055d63a    and eax,0FFFFh"
 "	      0055d63f    movzx eax,ax"
-"	      0055d642    mov ecx,[ebp-4]"
+"	      0055d642    mov ecx,myRandom0"
 "	      0055d645    and ecx,0FFFFh"
 "	      0055d64b    movzx ecx,cx"
 "	      0055d64e    imul eax,ecx"
-"	      0055d651    mov [ebp-4],eax"
+"	      0055d651    mov myRandom0,eax"
 );
 // LINE 85:
 	asm( 
-"	      0055d654    mov eax,[ebp-10h]"
-"	      0055d657    add [ebp-4],eax"
+"	      0055d654    mov eax,myRandom2"
+"	      0055d657    add myRandom0,eax"
 );
 // LINE 87:
 	asm( 
-"	      0055d65a    add dword ptr [ebp-4],3039h"
+"	      0055d65a    add myRandom0,3039h"
 );
 // LINE 89:
 	asm( 
-"	      0055d661    mov eax,[ebp-4]"
+"	      0055d661    mov eax,myRandom0"
 "	      0055d664    mov ds:[5BDFDCh],eax"
 );
 // LINE 91:
 	asm( 
-"	      0055d669    mov dword ptr [ebp-4],0"
+"	      0055d669    mov myRandom0,0"
 );
 // LINE 92:
 	asm( 
 "	      0055d670    mov eax,ds:[5BDFDCh]"
 "	      0055d675    shr eax,10h"
-"	      0055d678    mov [ebp-4],eax"
+"	      0055d678    mov myRandom0,eax"
 );
 // LINE 94:
 	asm( 
-"	      0055d67b    and dword ptr [ebp-4],7FFFh"
+"	      0055d67b    and myRandom0,7FFFh"
 );
 // LINE 96:
 	asm( 
-"	      0055d682    mov eax,[ebp-4]"
+"	      0055d682    mov eax,myRandom0"
 "	      0055d685    and eax,0FFFFh"
 "	      0055d68a    mov ecx,[ebp+8]"
 "	      0055d68d    and ecx,0FFFFh"
@@ -262,7 +262,7 @@ unsigned short GetNextRandomNumber() {
 // LINE 107:
 	asm( 
 "	      0055d6ac    mov eax,ds:[6376A8h]"
-"	      0055d6b1    mov [ebp-4],ax"
+"	      0055d6b1    mov temp,ax"
 );
 // LINE 109:
 	asm( 
@@ -275,12 +275,12 @@ unsigned short GetNextRandomNumber() {
 "	      0055d6c2    and eax,0FFFFh"
 "	      0055d6c7    add eax,eax"
 "	      0055d6c9    xor eax,1BF5h"
-"	      0055d6ce    mov [ebp-4],ax"
+"	      0055d6ce    mov temp,ax"
 );
 // LINE 111:
 	asm( 
 "	      0055d6d2    jmp near ptr 0055D6DCh"
-"	      0055d6d7    shl word ptr [ebp-4],1"
+"	      0055d6d7    shl temp,1"
 );
 // LINE 113:
 	asm( 
@@ -300,7 +300,7 @@ unsigned short GetNextRandomNumber() {
 );
 // LINE 115:
 	asm( 
-"	      0055d709    mov ax,[ebp-4]"
+"	      0055d709    mov ax,temp"
 "	      0055d70d    jmp near ptr 0055D712h"
 );
 // LINE 116:
@@ -326,7 +326,7 @@ unsigned short SRand(unsigned short lim) {
 "	      0055d71e    push esi"
 "	      0055d71f    push edi"
 "	      0055d720    call 0055D6A3h"
-"	      0055d725    mov [ebp-4],ax"
+"	      0055d725    mov next,ax"
 "	      0055d729    mov eax,[ebp-4]"
 "	      0055d72c    and eax,0FFFFh"
 "	      0055d731    mov ecx,[ebp+8]"
@@ -531,7 +531,7 @@ unsigned short SGIRand(unsigned short limit) {
 "	      0055d830    push eax"
 "	      0055d831    call 0055D717h"
 "	      0055d836    add esp,4"
-"	      0055d839    mov [ebp-8],ax"
+"	      0055d839    mov z,ax"
 );
 // LINE 136:
 	asm( 
@@ -539,7 +539,7 @@ unsigned short SGIRand(unsigned short limit) {
 "	      0055d840    push eax"
 "	      0055d841    call 0055D717h"
 "	      0055d846    add esp,4"
-"	      0055d849    mov [ebp-4],ax"
+"	      0055d849    mov x,ax"
 );
 // LINE 137:
 	asm( 
@@ -552,7 +552,7 @@ unsigned short SGIRand(unsigned short limit) {
 );
 // LINE 138:
 	asm( 
-"	      0055d866    mov ax,[ebp-8]"
+"	      0055d866    mov ax,z"
 "	      0055d86a    jmp near ptr 0055D87Dh"
 );
 // LINE 139:
@@ -561,7 +561,7 @@ unsigned short SGIRand(unsigned short limit) {
 );
 // LINE 140:
 	asm( 
-"	      0055d874    mov ax,[ebp-4]"
+"	      0055d874    mov ax,x"
 "	      0055d878    jmp near ptr 0055D87Dh"
 );
 // LINE 141:
@@ -594,7 +594,7 @@ unsigned short SGRand(unsigned short limit) {
 "	      0055d88e    push eax"
 "	      0055d88f    call 0055D717h"
 "	      0055d894    add esp,4"
-"	      0055d897    mov [ebp-8],ax"
+"	      0055d897    mov z,ax"
 );
 // LINE 151:
 	asm( 
@@ -602,7 +602,7 @@ unsigned short SGRand(unsigned short limit) {
 "	      0055d89e    push eax"
 "	      0055d89f    call 0055D717h"
 "	      0055d8a4    add esp,4"
-"	      0055d8a7    mov [ebp-4],ax"
+"	      0055d8a7    mov x,ax"
 );
 // LINE 152:
 	asm( 
@@ -615,7 +615,7 @@ unsigned short SGRand(unsigned short limit) {
 );
 // LINE 153:
 	asm( 
-"	      0055d8c4    mov ax,[ebp-8]"
+"	      0055d8c4    mov ax,z"
 "	      0055d8c8    jmp near ptr 0055D8DBh"
 );
 // LINE 154:
@@ -624,7 +624,7 @@ unsigned short SGRand(unsigned short limit) {
 );
 // LINE 155:
 	asm( 
-"	      0055d8d2    mov ax,[ebp-4]"
+"	      0055d8d2    mov ax,x"
 "	      0055d8d6    jmp near ptr 0055D8DBh"
 );
 // LINE 156:
@@ -657,7 +657,7 @@ short SGSRand(unsigned short limit) {
 "	      0055d8ec    push eax"
 "	      0055d8ed    call 0055D717h"
 "	      0055d8f2    add esp,4"
-"	      0055d8f5    mov [ebp-8],ax"
+"	      0055d8f5    mov z,ax"
 );
 // LINE 166:
 	asm( 
@@ -665,19 +665,19 @@ short SGSRand(unsigned short limit) {
 "	      0055d8fc    push eax"
 "	      0055d8fd    call 0055D717h"
 "	      0055d902    add esp,4"
-"	      0055d905    mov [ebp-4],ax"
+"	      0055d905    mov x,ax"
 );
 // LINE 167:
 	asm( 
-"	      0055d909    movsx eax,word ptr [ebp-8]"
-"	      0055d90d    movsx ecx,word ptr [ebp-4]"
+"	      0055d909    movsx eax,z"
+"	      0055d90d    movsx ecx,x"
 "	      0055d911    cmp eax,ecx"
 "	      0055d913    jge near ptr 0055D921h"
 );
 // LINE 168:
 	asm( 
-"	      0055d919    mov ax,[ebp-8]"
-"	      0055d91d    mov [ebp-4],ax"
+"	      0055d919    mov ax,z"
+"	      0055d91d    mov x,ax"
 );
 // LINE 169:
 	asm( 
@@ -688,13 +688,13 @@ short SGSRand(unsigned short limit) {
 );
 // LINE 170:
 	asm( 
-"	      0055d931    movsx eax,word ptr [ebp-4]"
+"	      0055d931    movsx eax,x"
 "	      0055d935    neg eax"
-"	      0055d937    mov [ebp-4],ax"
+"	      0055d937    mov x,ax"
 );
 // LINE 171:
 	asm( 
-"	      0055d93b    mov ax,[ebp-4]"
+"	      0055d93b    mov ax,x"
 "	      0055d93f    jmp near ptr 0055D944h"
 );
 // LINE 172:

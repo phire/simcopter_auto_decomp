@@ -17,7 +17,7 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 );
 // LINE 77:
 	asm( 
-"	      005358a6    mov eax,[ebp+8]"
+"	      005358a6    mov eax,instanceID"
 "	      005358a9    push eax"
 "	      005358aa    call 0053592Bh"
 "	      005358af    add esp,4"
@@ -48,21 +48,21 @@ void AmbulanceClass::AmbulanceClass() {
 "	      005358d6    push ebx"
 "	      005358d7    push esi"
 "	      005358d8    push edi"
-"	      005358d9    mov [ebp-4],ecx"
-"	      005358dc    mov ecx,[ebp-4]"
+"	      005358d9    mov this,ecx"
+"	      005358dc    mov ecx,this"
 "	      005358df    call 005415D5h"
-"	      005358e4    mov eax,[ebp-4]"
+"	      005358e4    mov eax,this"
 "	      005358e7    mov dword ptr [eax],593280h"
 );
 // LINE 84:
 	asm( 
-"	      005358ed    mov eax,[ebp-4]"
+"	      005358ed    mov eax,this"
 "	      005358f0    mov dword ptr [eax+4],11Fh"
 );
 // LINE 85:
 	asm( 
 "	      005358f7    jmp near ptr 005358FCh"
-"	      005358fc    mov eax,[ebp-4]"
+"	      005358fc    mov eax,this"
 "	      005358ff    pop edi"
 "	      00535900    pop esi"
 "	      00535901    pop ebx"
@@ -81,11 +81,11 @@ void AmbulanceClass::~AmbulanceClass() {
 "	      0053590a    push ebx"
 "	      0053590b    push esi"
 "	      0053590c    push edi"
-"	      0053590d    mov [ebp-4],ecx"
-"	      00535910    mov eax,[ebp-4]"
+"	      0053590d    mov this,ecx"
+"	      00535910    mov eax,this"
 "	      00535913    mov dword ptr [eax],593280h"
 "	      00535919    jmp near ptr 0053591Eh"
-"	      0053591e    mov ecx,[ebp-4]"
+"	      0053591e    mov ecx,this"
 "	      00535921    call 0054163Ah"
 "	      00535926    pop edi"
 "	      00535927    pop esi"
@@ -120,20 +120,20 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 "	      00535948    je near ptr 0053595Eh"
 "	      0053594e    mov ecx,[ebp-34h]"
 "	      00535951    call 005358D0h"
-"	      00535956    mov [ebp-8],eax"
+"	      00535956    mov youveWonABrandNewCar,eax"
 "	      00535959    jmp near ptr 00535965h"
-"	      0053595e    mov dword ptr [ebp-8],0"
+"	      0053595e    mov youveWonABrandNewCar,0"
 );
 // LINE 116:
 	asm( 
-"	      00535965    cmp dword ptr [ebp-8],0"
+"	      00535965    cmp youveWonABrandNewCar,0"
 "	      00535969    je near ptr 00535B08h"
 );
 // LINE 119:
 	asm( 
-"	      0053596f    mov eax,[ebp+8]"
+"	      0053596f    mov eax,instanceID"
 "	      00535972    push eax"
-"	      00535973    mov ecx,[ebp-8]"
+"	      00535973    mov ecx,youveWonABrandNewCar"
 "	      00535976    call 00504337h"
 "	      0053597b    test eax,eax"
 "	      0053597d    je near ptr 00535AE1h"
@@ -145,11 +145,11 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 "	      00535983    push 121h"
 "	      00535988    call 004D8821h"
 "	      0053598d    add esp,4"
-"	      00535990    mov [ebp-0Ch],eax"
+"	      00535990    mov object,eax"
 );
 // LINE 124:
 	asm( 
-"	      00535993    mov eax,[ebp-0Ch]"
+"	      00535993    mov eax,object"
 "	      00535996    push eax"
 "	      00535997    call 004D8520h"
 "	      0053599c    add esp,4"
@@ -158,27 +158,27 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 "	      005359a5    push eax"
 "	      005359a6    call 004CB4ACh"
 "	      005359ab    add esp,8"
-"	      005359ae    mov [ebp-4],eax"
+"	      005359ae    mov objectMemory,eax"
 );
 // LINE 126:
 	asm( 
-"	      005359b1    cmp dword ptr [ebp-4],0"
+"	      005359b1    cmp objectMemory,0"
 "	      005359b5    je near ptr 00535A3Eh"
 );
 // LINE 131:
 	asm( 
-"	      005359bb    mov eax,[ebp-4]"
+"	      005359bb    mov eax,objectMemory"
 "	      005359be    push eax"
-"	      005359bf    mov eax,[ebp-0Ch]"
+"	      005359bf    mov eax,object"
 "	      005359c2    push eax"
 "	      005359c3    call 004D8570h"
 "	      005359c8    add esp,8"
-"	      005359cb    mov ecx,[ebp-8]"
+"	      005359cb    mov ecx,youveWonABrandNewCar"
 "	      005359ce    mov [ecx+12Eh],eax"
 );
 // LINE 133:
 	asm( 
-"	      005359d4    mov eax,[ebp-8]"
+"	      005359d4    mov eax,youveWonABrandNewCar"
 "	      005359d7    cmp dword ptr [eax+12Eh],0"
 "	      005359de    je near ptr 00535A01h"
 );
@@ -186,7 +186,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	asm( 
 "	      005359e4    mov eax,ds:[5B4780h]"
 "	      005359e9    push eax"
-"	      005359ea    mov eax,[ebp-8]"
+"	      005359ea    mov eax,youveWonABrandNewCar"
 "	      005359ed    mov eax,[eax+12Eh]"
 "	      005359f3    push eax"
 "	      005359f4    call 004D84DBh"
@@ -198,7 +198,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 141:
 	asm( 
-"	      00535a01    mov eax,[ebp-8]"
+"	      00535a01    mov eax,youveWonABrandNewCar"
 "	      00535a04    cmp dword ptr [eax+12Eh],0"
 "	      00535a0b    jne near ptr 00535A2Dh"
 "	      00535a11    push 8Dh"
@@ -220,7 +220,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 149:
 	asm( 
-"	      00535a3e    cmp dword ptr [ebp-4],0"
+"	      00535a3e    cmp objectMemory,0"
 "	      00535a42    jne near ptr 00535A64h"
 "	      00535a48    push 95h"
 "	      00535a4d    push 5B7D68h"
@@ -237,19 +237,19 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 157:
 	asm( 
-"	      00535a70    mov eax,[ebp-8]"
+"	      00535a70    mov eax,youveWonABrandNewCar"
 "	      00535a73    mov word ptr [eax+134h],0"
 );
 // LINE 158:
 	asm( 
-"	      00535a7c    mov eax,[ebp-8]"
+"	      00535a7c    mov eax,youveWonABrandNewCar"
 "	      00535a7f    mov word ptr [eax+132h],21h"
 );
 // LINE 159:
 	asm( 
-"	      00535a88    lea eax,[ebp-30h]"
+"	      00535a88    lea eax,oinfo.Faces"
 "	      00535a8b    push eax"
-"	      00535a8c    mov eax,[ebp-8]"
+"	      00535a8c    mov eax,youveWonABrandNewCar"
 "	      00535a8f    mov eax,[eax+12Eh]"
 "	      00535a95    push eax"
 "	      00535a96    call 004D8859h"
@@ -257,14 +257,14 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 160:
 	asm( 
-"	      00535a9e    mov eax,[ebp-24h]"
-"	      00535aa1    mov ecx,[ebp-8]"
+"	      00535a9e    mov eax,oinfo.Radius"
+"	      00535aa1    mov ecx,youveWonABrandNewCar"
 "	      00535aa4    mov [ecx+136h],eax"
 );
 // LINE 161:
 	asm( 
 "	      00535aaa    push 0"
-"	      00535aac    mov eax,[ebp-8]"
+"	      00535aac    mov eax,youveWonABrandNewCar"
 "	      00535aaf    mov eax,[eax+12Eh]"
 "	      00535ab5    push eax"
 "	      00535ab6    call 004D6970h"
@@ -272,14 +272,14 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 163:
 	asm( 
-"	      00535abe    mov eax,[ebp-8]"
+"	      00535abe    mov eax,youveWonABrandNewCar"
 "	      00535ac1    mov ecx,ds:[5B7D18h]"
 "	      00535ac7    mov [ecx*4+62B9B8h],eax"
 "	      00535ace    inc dword ptr ds:[5B7D18h]"
 );
 // LINE 165:
 	asm( 
-"	      00535ad4    mov eax,[ebp-8]"
+"	      00535ad4    mov eax,youveWonABrandNewCar"
 "	      00535ad7    jmp near ptr 00535B0Fh"
 );
 // LINE 167:
@@ -289,7 +289,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 170:
 	asm( 
-"	      00535ae1    mov eax,[ebp-8]"
+"	      00535ae1    mov eax,youveWonABrandNewCar"
 "	      00535ae4    mov [ebp-3Ch],eax"
 "	      00535ae7    mov eax,[ebp-3Ch]"
 "	      00535aea    mov [ebp-38h],eax"
@@ -331,13 +331,13 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	asm( 
 "	      00535b1a    push 5"
 "	      00535b1c    push 62B9B8h"
-"	      00535b21    mov eax,[ebp+0Ch]"
+"	      00535b21    mov eax,responseLevel"
 "	      00535b24    push eax"
-"	      00535b25    mov eax,[ebp+8]"
+"	      00535b25    mov eax,responseType"
 "	      00535b28    push eax"
-"	      00535b29    mov eax,[ebp+14h]"
+"	      00535b29    mov eax,mapy"
 "	      00535b2c    push eax"
-"	      00535b2d    mov eax,[ebp+10h]"
+"	      00535b2d    mov eax,mapx"
 "	      00535b30    push eax"
 "	      00535b31    mov ecx,ds:[5C3820h]"
 "	      00535b37    call 0053AB93h"
@@ -397,27 +397,27 @@ int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
 );
 // LINE 265:
 	asm( 
-"	      00535b7e    cmp dword ptr [ebp+8],0"
+"	      00535b7e    cmp mapX,0"
 "	      00535b82    jl near ptr 00535BACh"
-"	      00535b88    cmp dword ptr [ebp+0Ch],0"
+"	      00535b88    cmp mapY,0"
 "	      00535b8c    jl near ptr 00535BACh"
-"	      00535b92    cmp dword ptr [ebp+8],80h"
+"	      00535b92    cmp mapX,80h"
 "	      00535b99    jge near ptr 00535BACh"
-"	      00535b9f    cmp dword ptr [ebp+0Ch],80h"
+"	      00535b9f    cmp mapY,80h"
 "	      00535ba6    jl near ptr 00535BB6h"
 "	      00535bac    jmp near ptr 00535C15h"
 "	      00535bb1    jmp near ptr 00535C0Bh"
-"	      00535bb6    mov eax,[ebp+8]"
+"	      00535bb6    mov eax,mapX"
 "	      00535bb9    mov eax,[eax*4+638F70h]"
-"	      00535bc0    mov ecx,[ebp+0Ch]"
+"	      00535bc0    mov ecx,mapY"
 "	      00535bc3    xor edx,edx"
 "	      00535bc5    mov dl,[eax+ecx]"
 "	      00535bc8    and edx,2"
 "	      00535bcb    movsx eax,dx"
 "	      00535bce    shl eax,0Eh"
-"	      00535bd1    mov ecx,[ebp+8]"
+"	      00535bd1    mov ecx,mapX"
 "	      00535bd4    mov ecx,[ecx*4+639850h]"
-"	      00535bdb    mov edx,[ebp+0Ch]"
+"	      00535bdb    mov edx,mapY"
 "	      00535bde    xor ebx,ebx"
 "	      00535be0    mov bl,[ecx+edx]"
 "	      00535be3    or eax,ebx"
@@ -457,18 +457,18 @@ void AmbulanceClass::ItterateFSM() {
 "	      00535c27    push ebx"
 "	      00535c28    push esi"
 "	      00535c29    push edi"
-"	      00535c2a    mov [ebp-14h],ecx"
+"	      00535c2a    mov this,ecx"
 );
 // LINE 292:
 	asm( 
-"	      00535c2d    mov eax,[ebp-14h]"
+"	      00535c2d    mov eax,this"
 "	      00535c30    mov eax,[eax+294h]"
 "	      00535c36    mov [ebp-18h],eax"
 "	      00535c39    jmp near ptr 00535FA5h"
 );
 // LINE 296:
 	asm( 
-"	      00535c3e    mov eax,[ebp-14h]"
+"	      00535c3e    mov eax,this"
 "	      00535c41    cmp dword ptr [eax+0FEh],0"
 "	      00535c48    jle near ptr 00535C61h"
 );
@@ -477,32 +477,32 @@ void AmbulanceClass::ItterateFSM() {
 "	      00535c4e    xor eax,eax"
 "	      00535c50    sub eax,ds:[5B4760h]"
 "	      00535c56    neg eax"
-"	      00535c58    mov ecx,[ebp-14h]"
+"	      00535c58    mov ecx,this"
 "	      00535c5b    sub [ecx+0FEh],eax"
 );
 // LINE 299:
 	asm( 
-"	      00535c61    mov eax,[ebp-14h]"
+"	      00535c61    mov eax,this"
 "	      00535c64    cmp dword ptr [eax+0FEh],0"
 "	      00535c6b    jg near ptr 00535CCEh"
-"	      00535c71    mov ecx,[ebp-14h]"
+"	      00535c71    mov ecx,this"
 "	      00535c74    call 005049FEh"
 "	      00535c79    test eax,eax"
 "	      00535c7b    je near ptr 00535CCEh"
 );
 // LINE 301:
 	asm( 
-"	      00535c81    mov ecx,[ebp-14h]"
+"	      00535c81    mov ecx,this"
 "	      00535c84    call 00504B0Ah"
 );
 // LINE 305:
 	asm( 
-"	      00535c89    mov ecx,[ebp-14h]"
+"	      00535c89    mov ecx,this"
 "	      00535c8c    call 00503E6Eh"
 );
 // LINE 306:
 	asm( 
-"	      00535c91    mov eax,[ebp-14h]"
+"	      00535c91    mov eax,this"
 "	      00535c94    movsx eax,word ptr [eax+1Ah]"
 "	      00535c98    push eax"
 "	      00535c99    call 00500FC3h"
@@ -510,7 +510,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 307:
 	asm( 
-"	      00535ca1    mov eax,[ebp-14h]"
+"	      00535ca1    mov eax,this"
 "	      00535ca4    mov eax,[eax+298h]"
 "	      00535caa    push eax"
 "	      00535cab    mov ecx,ds:[5C3820h]"
@@ -518,14 +518,14 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 311:
 	asm( 
-"	      00535cb6    mov eax,[ebp-14h]"
+"	      00535cb6    mov eax,this"
 "	      00535cb9    mov eax,[eax]"
-"	      00535cbb    mov ecx,[ebp-14h]"
+"	      00535cbb    mov ecx,this"
 "	      00535cbe    call dword ptr [eax+8]"
 );
 // LINE 312:
 	asm( 
-"	      00535cc1    mov eax,[ebp-14h]"
+"	      00535cc1    mov eax,this"
 "	      00535cc4    mov dword ptr [eax+294h],2"
 );
 // LINE 314:
@@ -534,23 +534,23 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 317:
 	asm( 
-"	      00535cd3    mov ecx,[ebp-14h]"
+"	      00535cd3    mov ecx,this"
 "	      00535cd6    call 005422EEh"
 );
 // LINE 319:
 	asm( 
-"	      00535cdb    mov eax,[ebp-14h]"
+"	      00535cdb    mov eax,this"
 "	      00535cde    xor ecx,ecx"
 "	      00535ce0    mov cl,[eax+7Ch]"
-"	      00535ce3    mov eax,[ebp-14h]"
+"	      00535ce3    mov eax,this"
 "	      00535ce6    xor edx,edx"
 "	      00535ce8    mov dl,[eax+11Ah]"
 "	      00535cee    cmp ecx,edx"
 "	      00535cf0    jne near ptr 00535D43h"
-"	      00535cf6    mov eax,[ebp-14h]"
+"	      00535cf6    mov eax,this"
 "	      00535cf9    xor ecx,ecx"
 "	      00535cfb    mov cl,[eax+7Dh]"
-"	      00535cfe    mov eax,[ebp-14h]"
+"	      00535cfe    mov eax,this"
 "	      00535d01    xor edx,edx"
 "	      00535d03    mov dl,[eax+11Bh]"
 "	      00535d09    cmp ecx,edx"
@@ -558,7 +558,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 322:
 	asm( 
-"	      00535d11    mov eax,[ebp-14h]"
+"	      00535d11    mov eax,this"
 "	      00535d14    mov eax,[eax+298h]"
 "	      00535d1a    push eax"
 "	      00535d1b    mov ecx,ds:[5C3820h]"
@@ -566,12 +566,12 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 323:
 	asm( 
-"	      00535d26    mov ecx,[ebp-14h]"
+"	      00535d26    mov ecx,this"
 "	      00535d29    call 00503E6Eh"
 );
 // LINE 324:
 	asm( 
-"	      00535d2e    mov eax,[ebp-14h]"
+"	      00535d2e    mov eax,this"
 "	      00535d31    movsx eax,word ptr [eax+1Ah]"
 "	      00535d35    push eax"
 "	      00535d36    call 00500FC3h"
@@ -583,7 +583,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 328:
 	asm( 
-"	      00535d43    mov ecx,[ebp-14h]"
+"	      00535d43    mov ecx,this"
 "	      00535d46    call 005022B0h"
 );
 // LINE 329:
@@ -592,28 +592,28 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 333:
 	asm( 
-"	      00535d50    mov ecx,[ebp-14h]"
+"	      00535d50    mov ecx,this"
 "	      00535d53    call 005422EEh"
 );
 // LINE 334:
 	asm( 
-"	      00535d58    mov eax,[ebp-14h]"
+"	      00535d58    mov eax,this"
 "	      00535d5b    xor ecx,ecx"
 "	      00535d5d    mov cl,[eax+7Ch]"
-"	      00535d60    mov eax,[ebp-14h]"
+"	      00535d60    mov eax,this"
 "	      00535d63    xor edx,edx"
 "	      00535d65    mov dl,[eax+11Ch]"
 "	      00535d6b    cmp ecx,edx"
 "	      00535d6d    jne near ptr 00535E25h"
-"	      00535d73    mov eax,[ebp-14h]"
+"	      00535d73    mov eax,this"
 "	      00535d76    xor ecx,ecx"
 "	      00535d78    mov cl,[eax+7Dh]"
-"	      00535d7b    mov eax,[ebp-14h]"
+"	      00535d7b    mov eax,this"
 "	      00535d7e    xor edx,edx"
 "	      00535d80    mov dl,[eax+11Dh]"
 "	      00535d86    cmp ecx,edx"
 "	      00535d88    jne near ptr 00535E25h"
-"	      00535d8e    mov ecx,[ebp-14h]"
+"	      00535d8e    mov ecx,this"
 "	      00535d91    call 005045B6h"
 "	      00535d96    test eax,eax"
 "	      00535d98    je near ptr 00535E25h"
@@ -621,46 +621,46 @@ void AmbulanceClass::ItterateFSM() {
 // LINE 336:
 	asm( 
 "	      00535d9e    push 0FFFFFFFFh"
-"	      00535da0    mov eax,[ebp-14h]"
+"	      00535da0    mov eax,this"
 "	      00535da3    mov eax,[eax]"
-"	      00535da5    mov ecx,[ebp-14h]"
+"	      00535da5    mov ecx,this"
 "	      00535da8    call dword ptr [eax+4]"
 );
 // LINE 337:
 	asm( 
-"	      00535dab    mov ecx,[ebp-14h]"
+"	      00535dab    mov ecx,this"
 "	      00535dae    call 005429D6h"
 );
 // LINE 338:
 	asm( 
-"	      00535db3    mov eax,[ebp-14h]"
+"	      00535db3    mov eax,this"
 "	      00535db6    mov ax,[eax+11Ch]"
 "	      00535dbd    push eax"
-"	      00535dbe    mov ecx,[ebp-14h]"
+"	      00535dbe    mov ecx,this"
 "	      00535dc1    call 00542461h"
 );
 // LINE 339:
 	asm( 
 "	      00535dc6    push 5"
 "	      00535dc8    push 0Ch"
-"	      00535dca    mov ecx,[ebp-14h]"
+"	      00535dca    mov ecx,this"
 "	      00535dcd    call 0050217Ch"
 "	      00535dd2    test eax,eax"
 "	      00535dd4    je near ptr 00535E06h"
 );
 // LINE 341:
 	asm( 
-"	      00535dda    mov eax,[ebp-14h]"
+"	      00535dda    mov eax,this"
 "	      00535ddd    mov dword ptr [eax+0F6h],0"
 );
 // LINE 342:
 	asm( 
-"	      00535de7    mov eax,[ebp-14h]"
+"	      00535de7    mov eax,this"
 "	      00535dea    mov dword ptr [eax+0FEh],0F00000h"
 );
 // LINE 343:
 	asm( 
-"	      00535df4    mov eax,[ebp-14h]"
+"	      00535df4    mov eax,this"
 "	      00535df7    mov dword ptr [eax+294h],5"
 );
 // LINE 345:
@@ -669,12 +669,12 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 348:
 	asm( 
-"	      00535e06    mov eax,[ebp-14h]"
+"	      00535e06    mov eax,this"
 "	      00535e09    mov dword ptr [eax+0FEh],0"
 );
 // LINE 349:
 	asm( 
-"	      00535e13    mov eax,[ebp-14h]"
+"	      00535e13    mov eax,this"
 "	      00535e16    mov dword ptr [eax+294h],1"
 );
 // LINE 352:
@@ -684,51 +684,51 @@ void AmbulanceClass::ItterateFSM() {
 // LINE 355:
 	asm( 
 "	      00535e25    mov eax,ds:[6C126Ch]"
-"	      00535e2a    mov ecx,[ebp-14h]"
+"	      00535e2a    mov ecx,this"
 "	      00535e2d    sub eax,[ecx+24h]"
-"	      00535e30    mov [ebp-10h],eax"
+"	      00535e30    mov vec.x,eax"
 );
 // LINE 356:
 	asm( 
 "	      00535e33    mov eax,ds:[6C1270h]"
-"	      00535e38    mov ecx,[ebp-14h]"
+"	      00535e38    mov ecx,this"
 "	      00535e3b    sub eax,[ecx+28h]"
-"	      00535e3e    mov [ebp-0Ch],eax"
+"	      00535e3e    mov vec.y,eax"
 );
 // LINE 357:
 	asm( 
 "	      00535e41    mov eax,ds:[6C1274h]"
-"	      00535e46    mov ecx,[ebp-14h]"
+"	      00535e46    mov ecx,this"
 "	      00535e49    sub eax,[ecx+2Ch]"
-"	      00535e4c    mov [ebp-8],eax"
+"	      00535e4c    mov vec.z,eax"
 );
 // LINE 358:
 	asm( 
-"	      00535e4f    lea eax,[ebp-10h]"
+"	      00535e4f    lea eax,vec.x"
 "	      00535e52    push eax"
 "	      00535e53    call 004CA1E3h"
 "	      00535e58    add esp,4"
-"	      00535e5b    mov [ebp-4],eax"
+"	      00535e5b    mov dist,eax"
 );
 // LINE 359:
 	asm( 
 "	      00535e5e    mov eax,ds:[608F70h]"
-"	      00535e63    cmp [ebp-4],eax"
+"	      00535e63    cmp dist,eax"
 "	      00535e66    jge near ptr 00535E74h"
 );
 // LINE 360:
 	asm( 
-"	      00535e6c    mov eax,[ebp-4]"
+"	      00535e6c    mov eax,dist"
 "	      00535e6f    mov ds:[608F70h],eax"
 );
 // LINE 362:
 	asm( 
-"	      00535e74    mov ecx,[ebp-14h]"
+"	      00535e74    mov ecx,this"
 "	      00535e77    call 0050417Dh"
 );
 // LINE 363:
 	asm( 
-"	      00535e7c    mov ecx,[ebp-14h]"
+"	      00535e7c    mov ecx,this"
 "	      00535e7f    call 005022B0h"
 );
 // LINE 365:
@@ -737,13 +737,13 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 368:
 	asm( 
-"	      00535e89    mov eax,[ebp-14h]"
+"	      00535e89    mov eax,this"
 "	      00535e8c    test byte ptr [eax+8],20h"
 "	      00535e90    jne near ptr 00535EA3h"
 );
 // LINE 371:
 	asm( 
-"	      00535e96    mov ecx,[ebp-14h]"
+"	      00535e96    mov ecx,this"
 "	      00535e99    call 005022B0h"
 );
 // LINE 372:
@@ -752,7 +752,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 375:
 	asm( 
-"	      00535ea3    mov eax,[ebp-14h]"
+"	      00535ea3    mov eax,this"
 "	      00535ea6    cmp dword ptr [eax+0FEh],0"
 "	      00535ead    jle near ptr 00535EC6h"
 );
@@ -761,39 +761,39 @@ void AmbulanceClass::ItterateFSM() {
 "	      00535eb3    xor eax,eax"
 "	      00535eb5    sub eax,ds:[5B4760h]"
 "	      00535ebb    neg eax"
-"	      00535ebd    mov ecx,[ebp-14h]"
+"	      00535ebd    mov ecx,this"
 "	      00535ec0    sub [ecx+0FEh],eax"
 );
 // LINE 379:
 	asm( 
-"	      00535ec6    mov ecx,[ebp-14h]"
+"	      00535ec6    mov ecx,this"
 "	      00535ec9    call 00535FDAh"
 "	      00535ece    test eax,eax"
 "	      00535ed0    jne near ptr 00535EE6h"
-"	      00535ed6    mov eax,[ebp-14h]"
+"	      00535ed6    mov eax,this"
 "	      00535ed9    cmp dword ptr [eax+0FAh],0"
 "	      00535ee0    jne near ptr 00535EF6h"
-"	      00535ee6    mov eax,[ebp-14h]"
+"	      00535ee6    mov eax,this"
 "	      00535ee9    cmp dword ptr [eax+0FEh],0"
 "	      00535ef0    jg near ptr 00535F58h"
-"	      00535ef6    mov ecx,[ebp-14h]"
+"	      00535ef6    mov ecx,this"
 "	      00535ef9    call 005049FEh"
 "	      00535efe    test eax,eax"
 "	      00535f00    je near ptr 00535F58h"
 );
 // LINE 381:
 	asm( 
-"	      00535f06    mov ecx,[ebp-14h]"
+"	      00535f06    mov ecx,this"
 "	      00535f09    call 00504B0Ah"
 );
 // LINE 385:
 	asm( 
-"	      00535f0e    mov ecx,[ebp-14h]"
+"	      00535f0e    mov ecx,this"
 "	      00535f11    call 00503E6Eh"
 );
 // LINE 386:
 	asm( 
-"	      00535f16    mov eax,[ebp-14h]"
+"	      00535f16    mov eax,this"
 "	      00535f19    movsx eax,word ptr [eax+1Ah]"
 "	      00535f1d    push eax"
 "	      00535f1e    call 00500FC3h"
@@ -801,7 +801,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 387:
 	asm( 
-"	      00535f26    mov eax,[ebp-14h]"
+"	      00535f26    mov eax,this"
 "	      00535f29    mov eax,[eax+298h]"
 "	      00535f2f    push eax"
 "	      00535f30    mov ecx,ds:[5C3820h]"
@@ -809,26 +809,26 @@ void AmbulanceClass::ItterateFSM() {
 );
 // LINE 391:
 	asm( 
-"	      00535f3b    mov eax,[ebp-14h]"
+"	      00535f3b    mov eax,this"
 "	      00535f3e    mov dword ptr [eax+294h],2"
 );
 // LINE 392:
 	asm( 
-"	      00535f48    mov eax,[ebp-14h]"
+"	      00535f48    mov eax,this"
 "	      00535f4b    mov eax,[eax]"
-"	      00535f4d    mov ecx,[ebp-14h]"
+"	      00535f4d    mov ecx,this"
 "	      00535f50    call dword ptr [eax+8]"
 );
 // LINE 394:
 	asm( 
 "	      00535f53    jmp near ptr 00535F75h"
-"	      00535f58    mov eax,[ebp-14h]"
+"	      00535f58    mov eax,this"
 "	      00535f5b    cmp dword ptr [eax+0FAh],0"
 "	      00535f62    jne near ptr 00535F75h"
 );
 // LINE 396:
 	asm( 
-"	      00535f68    mov eax,[ebp-14h]"
+"	      00535f68    mov eax,this"
 "	      00535f6b    mov dword ptr [eax+294h],1"
 );
 // LINE 398:
@@ -889,11 +889,11 @@ int32_t AmbulanceClass::AtScene() {
 "	      00535fe0    push ebx"
 "	      00535fe1    push esi"
 "	      00535fe2    push edi"
-"	      00535fe3    mov [ebp-4],ecx"
+"	      00535fe3    mov this,ecx"
 );
 // LINE 410:
 	asm( 
-"	      00535fe6    mov eax,[ebp-4]"
+"	      00535fe6    mov eax,this"
 "	      00535fe9    mov eax,[eax+0F6h]"
 "	      00535fef    jmp near ptr 00535FF4h"
 );
@@ -917,13 +917,13 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00535fff    push ebx"
 "	      00536000    push esi"
 "	      00536001    push edi"
-"	      00536002    mov [ebp-4],ecx"
+"	      00536002    mov this,ecx"
 );
 // LINE 424:
 	asm( 
-"	      00536005    mov eax,[ebp+8]"
+"	      00536005    mov eax,sd"
 "	      00536008    push eax"
-"	      00536009    mov ecx,[ebp-4]"
+"	      00536009    mov ecx,this"
 "	      0053600c    call 00542A75h"
 );
 // LINE 425:
@@ -947,11 +947,11 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00536023    push ebx"
 "	      00536024    push esi"
 "	      00536025    push edi"
-"	      00536026    mov [ebp-4],ecx"
+"	      00536026    mov this,ecx"
 );
 // LINE 439:
 	asm( 
-"	      00536029    mov eax,[ebp+8]"
+"	      00536029    mov eax,sd"
 "	      0053602c    test byte ptr [eax],2"
 "	      0053602f    jne near ptr 0053603Ah"
 );
@@ -961,24 +961,24 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 445:
 	asm( 
-"	      0053603a    mov eax,[ebp+8]"
+"	      0053603a    mov eax,sd"
 "	      0053603d    push eax"
-"	      0053603e    mov ecx,[ebp-4]"
+"	      0053603e    mov ecx,this"
 "	      00536041    call 00542B90h"
 );
 // LINE 447:
 	asm( 
-"	      00536046    mov eax,[ebp-4]"
+"	      00536046    mov eax,this"
 "	      00536049    mov eax,[eax+294h]"
 "	      0053604f    mov [ebp-8],eax"
 "	      00536052    jmp near ptr 00536079h"
 );
 // LINE 453:
 	asm( 
-"	      00536057    mov eax,[ebp-4]"
+"	      00536057    mov eax,this"
 "	      0053605a    mov ax,[eax+11Ch]"
 "	      00536061    push eax"
-"	      00536062    mov ecx,[ebp-4]"
+"	      00536062    mov ecx,this"
 "	      00536065    call 00542570h"
 );
 // LINE 454:

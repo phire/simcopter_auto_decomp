@@ -21,7 +21,7 @@ float GetMillisecondTime() {
 );
 // LINE 34:
 	asm( 
-"	      0043d859    lea eax,[ebp-8]"
+"	      0043d859    lea eax,Counter<_LARGE_INTEGER+0x00:None>"
 "	      0043d85c    push eax"
 "	      0043d85d    call dword ptr ds:[6C365Ch]"
 "	      0043d863    test eax,eax"
@@ -29,22 +29,22 @@ float GetMillisecondTime() {
 );
 // LINE 36:
 	asm( 
-"	      0043d86b    mov eax,[ebp-4]"
+"	      0043d86b    mov eax,Counter<_LARGE_INTEGER+0x04:4>"
 "	      0043d86e    mov [ebp-10h],eax"
 "	      0043d871    fild dword ptr [ebp-10h]"
 "	      0043d874    fmul dword ptr ds:[58F5B0h]"
-"	      0043d87a    mov eax,[ebp-8]"
+"	      0043d87a    mov eax,Counter<_LARGE_INTEGER+0x00:4>"
 "	      0043d87d    mov [ebp-18h],eax"
 "	      0043d880    mov dword ptr [ebp-14h],0"
 "	      0043d887    fild qword ptr [ebp-18h]"
 "	      0043d88a    faddp"
-"	      0043d88c    fst dword ptr [ebp-0Ch]"
+"	      0043d88c    fst Time"
 );
 // LINE 37:
 	asm( 
 "	      0043d88f    fmul dword ptr ds:[58F5B4h]"
 "	      0043d895    fdiv dword ptr ds:[5C28CCh]"
-"	      0043d89b    fstp dword ptr [ebp-0Ch]"
+"	      0043d89b    fstp Time"
 );
 // LINE 39:
 	asm( 
@@ -56,11 +56,11 @@ float GetMillisecondTime() {
 "	      0043d8a9    mov [ebp-20h],eax"
 "	      0043d8ac    mov dword ptr [ebp-1Ch],0"
 "	      0043d8b3    fild qword ptr [ebp-20h]"
-"	      0043d8b6    fstp dword ptr [ebp-0Ch]"
+"	      0043d8b6    fstp Time"
 );
 // LINE 46:
 	asm( 
-"	      0043d8b9    fld dword ptr [ebp-0Ch]"
+"	      0043d8b9    fld Time"
 "	      0043d8bc    jmp near ptr 0043D8C1h"
 );
 // LINE 47:
@@ -111,36 +111,36 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 // LINE 74:
 	asm( 
 "	      0043d8e2    xor eax,eax"
-"	      0043d8e4    sub eax,[ebp+0Ch]"
+"	      0043d8e4    sub eax,lMinSource"
 "	      0043d8e7    neg eax"
-"	      0043d8e9    sub [ebp+8],eax"
+"	      0043d8e9    sub lPositionSource,eax"
 );
 // LINE 75:
 	asm( 
-"	      0043d8ec    mov eax,[ebp+18h]"
-"	      0043d8ef    sub eax,[ebp+14h]"
-"	      0043d8f2    imul eax,[ebp+8]"
-"	      0043d8f6    mov [ebp+8],eax"
+"	      0043d8ec    mov eax,lMaxDestination"
+"	      0043d8ef    sub eax,lMinDestination"
+"	      0043d8f2    imul eax,lPositionSource"
+"	      0043d8f6    mov lPositionSource,eax"
 );
 // LINE 76:
 	asm( 
-"	      0043d8f9    mov ecx,[ebp+10h]"
-"	      0043d8fc    sub ecx,[ebp+0Ch]"
-"	      0043d8ff    mov eax,[ebp+8]"
+"	      0043d8f9    mov ecx,lMaxSource"
+"	      0043d8fc    sub ecx,lMinSource"
+"	      0043d8ff    mov eax,lPositionSource"
 "	      0043d902    cdq"
 "	      0043d903    idiv ecx"
-"	      0043d905    mov [ebp+8],eax"
+"	      0043d905    mov lPositionSource,eax"
 );
 // LINE 77:
 	asm( 
 "	      0043d908    xor eax,eax"
-"	      0043d90a    sub eax,[ebp+14h]"
+"	      0043d90a    sub eax,lMinDestination"
 "	      0043d90d    neg eax"
-"	      0043d90f    sub [ebp+8],eax"
+"	      0043d90f    sub lPositionSource,eax"
 );
 // LINE 78:
 	asm( 
-"	      0043d912    mov eax,[ebp+8]"
+"	      0043d912    mov eax,lPositionSource"
 "	      0043d915    jmp near ptr 0043D91Ah"
 );
 // LINE 79:
@@ -168,11 +168,11 @@ void SparkalDelay(unsigned long lMilliseconds) {
 );
 // LINE 102:
 	asm( 
-"	      0043d928    mov dword ptr [ebp-10h],1"
-"	      0043d92f    mov dword ptr [ebp-0Ch],0"
-"	      0043d936    mov dword ptr [ebp-8],0"
-"	      0043d93d    mov dword ptr [ebp-4],0"
-"	      0043d944    cmp dword ptr [ebp-10h],0"
+"	      0043d928    mov tempTimer.nTimerResolution,1"
+"	      0043d92f    mov tempTimer.lStartTime,0"
+"	      0043d936    mov tempTimer.lTotalElapsedTime,0"
+"	      0043d93d    mov tempTimer.lFrequency,0"
+"	      0043d944    cmp tempTimer.nTimerResolution,0"
 "	      0043d948    jne near ptr 0043D969h"
 "	      0043d94e    lea eax,[ebp-28h]"
 "	      0043d951    push eax"
@@ -180,23 +180,23 @@ void SparkalDelay(unsigned long lMilliseconds) {
 "	      0043d958    mov eax,[ebp-28h]"
 "	      0043d95b    mov [ebp-20h],eax"
 "	      0043d95e    mov eax,[ebp-20h]"
-"	      0043d961    mov [ebp-4],eax"
+"	      0043d961    mov tempTimer.lFrequency,eax"
 "	      0043d964    jmp near ptr 0043D969h"
 "	      0043d969    jmp near ptr 0043D96Eh"
 );
 // LINE 104:
 	asm( 
 "	      0043d96e    jmp near ptr 0043D973h"
-"	      0043d973    cmp dword ptr [ebp-0Ch],0"
+"	      0043d973    cmp tempTimer.lStartTime,0"
 "	      0043d977    je near ptr 0043D982h"
 "	      0043d97d    jmp near ptr 0043D9E5h"
-"	      0043d982    cmp dword ptr [ebp-10h],1"
+"	      0043d982    cmp tempTimer.nTimerResolution,1"
 "	      0043d986    jne near ptr 0043D99Fh"
 "	      0043d98c    call dword ptr ds:[6C3908h]"
-"	      0043d992    mov [ebp-0Ch],eax"
+"	      0043d992    mov tempTimer.lStartTime,eax"
 "	      0043d995    jmp near ptr 0043D9E0h"
 "	      0043d99a    jmp near ptr 0043D9E0h"
-"	      0043d99f    cmp dword ptr [ebp-10h],0"
+"	      0043d99f    cmp tempTimer.nTimerResolution,0"
 "	      0043d9a3    jne near ptr 0043D9C9h"
 "	      0043d9a9    lea eax,[ebp-1Ch]"
 "	      0043d9ac    push eax"
@@ -204,31 +204,31 @@ void SparkalDelay(unsigned long lMilliseconds) {
 "	      0043d9b3    mov eax,[ebp-1Ch]"
 "	      0043d9b6    mov [ebp-14h],eax"
 "	      0043d9b9    mov eax,[ebp-14h]"
-"	      0043d9bc    mov [ebp-0Ch],eax"
+"	      0043d9bc    mov tempTimer.lStartTime,eax"
 "	      0043d9bf    jmp near ptr 0043D9E0h"
 "	      0043d9c4    jmp near ptr 0043D9E0h"
 "	      0043d9c9    call dword ptr ds:[6C3908h]"
 "	      0043d9cf    mov ecx,3E8h"
 "	      0043d9d4    sub edx,edx"
 "	      0043d9d6    div ecx"
-"	      0043d9d8    mov [ebp-0Ch],eax"
+"	      0043d9d8    mov tempTimer.lStartTime,eax"
 "	      0043d9db    jmp near ptr 0043D9E0h"
 "	      0043d9e0    jmp near ptr 0043D9E5h"
 );
 // LINE 105:
 	asm( 
-"	      0043d9e5    mov eax,[ebp-8]"
+"	      0043d9e5    mov eax,tempTimer.lTotalElapsedTime"
 "	      0043d9e8    mov [ebp-30h],eax"
 "	      0043d9eb    jmp near ptr 0043D9F0h"
-"	      0043d9f0    cmp dword ptr [ebp-0Ch],0"
+"	      0043d9f0    cmp tempTimer.lStartTime,0"
 "	      0043d9f4    je near ptr 0043DA67h"
-"	      0043d9fa    cmp dword ptr [ebp-10h],1"
+"	      0043d9fa    cmp tempTimer.nTimerResolution,1"
 "	      0043d9fe    jne near ptr 0043DA17h"
 "	      0043da04    call dword ptr ds:[6C3908h]"
 "	      0043da0a    mov [ebp-40h],eax"
 "	      0043da0d    jmp near ptr 0043DA58h"
 "	      0043da12    jmp near ptr 0043DA58h"
-"	      0043da17    cmp dword ptr [ebp-10h],0"
+"	      0043da17    cmp tempTimer.nTimerResolution,0"
 "	      0043da1b    jne near ptr 0043DA41h"
 "	      0043da21    lea eax,[ebp-3Ch]"
 "	      0043da24    push eax"
@@ -246,30 +246,30 @@ void SparkalDelay(unsigned long lMilliseconds) {
 "	      0043da50    mov [ebp-40h],eax"
 "	      0043da53    jmp near ptr 0043DA58h"
 "	      0043da58    mov eax,[ebp-40h]"
-"	      0043da5b    sub eax,[ebp-0Ch]"
+"	      0043da5b    sub eax,tempTimer.lStartTime"
 "	      0043da5e    mov [ebp-2Ch],eax"
 "	      0043da61    mov eax,[ebp-2Ch]"
 "	      0043da64    add [ebp-30h],eax"
-"	      0043da67    cmp dword ptr [ebp-10h],0"
+"	      0043da67    cmp tempTimer.nTimerResolution,0"
 "	      0043da6b    jne near ptr 0043DAA2h"
-"	      0043da71    cmp dword ptr [ebp-4],0"
+"	      0043da71    cmp tempTimer.lFrequency,0"
 "	      0043da75    je near ptr 0043DAA2h"
-"	      0043da7b    mov eax,[ebp-4]"
+"	      0043da7b    mov eax,tempTimer.lFrequency"
 "	      0043da7e    push eax"
 "	      0043da7f    push 0F4240h"
 "	      0043da84    mov eax,[ebp-30h]"
 "	      0043da87    push eax"
 "	      0043da88    call dword ptr ds:[6C372Ch]"
 "	      0043da8e    mov [ebp-30h],eax"
-"	      0043da91    mov eax,[ebp+8]"
+"	      0043da91    mov eax,lMilliseconds"
 "	      0043da94    cmp [ebp-30h],eax"
 "	      0043da97    jae near ptr 0043DAC4h"
 "	      0043da9d    jmp near ptr 0043DABFh"
-"	      0043daa2    mov eax,[ebp+8]"
+"	      0043daa2    mov eax,lMilliseconds"
 "	      0043daa5    cmp [ebp-30h],eax"
 "	      0043daa8    jae near ptr 0043DAC4h"
 "	      0043daae    jmp near ptr 0043DABFh"
-"	      0043dab3    mov eax,[ebp+8]"
+"	      0043dab3    mov eax,lMilliseconds"
 "	      0043dab6    cmp [ebp-44h],eax"
 "	      0043dab9    jae near ptr 0043DAC4h"
 );

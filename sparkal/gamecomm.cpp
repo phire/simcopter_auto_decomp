@@ -15,11 +15,11 @@ void CommandSystem::CommandSystem() {
 "	      0048b2b6    push ebx"
 "	      0048b2b7    push esi"
 "	      0048b2b8    push edi"
-"	      0048b2b9    mov [ebp-54h],ecx"
-"	      0048b2bc    mov ecx,[ebp-54h]"
+"	      0048b2b9    mov this,ecx"
+"	      0048b2bc    mov ecx,this"
 "	      0048b2bf    add ecx,0C8h"
 "	      0048b2c5    call 0043D432h"
-"	      0048b2ca    mov eax,[ebp-54h]"
+"	      0048b2ca    mov eax,this"
 "	      0048b2cd    mov dword ptr [eax+0DCh],0"
 "	      0048b2d7    inc dword ptr ds:[597218h]"
 "	      0048b2dd    mov eax,ds:[597224h]"
@@ -156,29 +156,29 @@ void CommandSystem::CommandSystem() {
 "	      0048b4dd    mov [ebp-50h],eax"
 "	      0048b4e0    jmp near ptr 0048B4E5h"
 "	      0048b4e5    mov eax,[ebp-50h]"
-"	      0048b4e8    mov ecx,[ebp-54h]"
+"	      0048b4e8    mov ecx,this"
 "	      0048b4eb    mov [ecx+0D8h],eax"
-"	      0048b4f1    mov eax,[ebp-54h]"
+"	      0048b4f1    mov eax,this"
 "	      0048b4f4    mov eax,[eax+0D8h]"
-"	      0048b4fa    mov ecx,[ebp-54h]"
+"	      0048b4fa    mov ecx,this"
 "	      0048b4fd    mov ecx,[ecx+0D8h]"
 "	      0048b503    mov [ecx],eax"
-"	      0048b505    mov eax,[ebp-54h]"
+"	      0048b505    mov eax,this"
 "	      0048b508    mov eax,[eax+0D8h]"
-"	      0048b50e    mov ecx,[ebp-54h]"
+"	      0048b50e    mov ecx,this"
 "	      0048b511    mov ecx,[ecx+0D8h]"
 "	      0048b517    mov [ecx+4],eax"
 "	      0048b51a    jmp near ptr 0048B51Fh"
 );
 // LINE 32:
 	asm( 
-"	      0048b51f    mov ecx,[ebp-54h]"
+"	      0048b51f    mov ecx,this"
 "	      0048b522    call 0048B534h"
 );
 // LINE 33:
 	asm( 
 "	      0048b527    jmp near ptr 0048B52Ch"
-"	      0048b52c    mov eax,[ebp-54h]"
+"	      0048b52c    mov eax,this"
 "	      0048b52f    pop edi"
 "	      0048b530    pop esi"
 "	      0048b531    pop ebx"
@@ -200,26 +200,26 @@ void CommandSystem::Initialize() {
 "	      0048b53a    push ebx"
 "	      0048b53b    push esi"
 "	      0048b53c    push edi"
-"	      0048b53d    mov [ebp-0Ch],ecx"
+"	      0048b53d    mov this,ecx"
 );
 // LINE 46:
 	asm( 
-"	      0048b540    mov dword ptr [ebp-4],0"
+"	      0048b540    mov i,0"
 "	      0048b547    jmp near ptr 0048B54Fh"
-"	      0048b54c    inc dword ptr [ebp-4]"
-"	      0048b54f    cmp dword ptr [ebp-4],64h"
+"	      0048b54c    inc i"
+"	      0048b54f    cmp i,64h"
 "	      0048b553    jge near ptr 0048B573h"
 );
 // LINE 47:
 	asm( 
-"	      0048b559    mov eax,[ebp-4]"
-"	      0048b55c    mov ecx,[ebp-0Ch]"
+"	      0048b559    mov eax,i"
+"	      0048b55c    mov ecx,this"
 "	      0048b55f    mov byte ptr [ecx+eax*2],0"
 );
 // LINE 48:
 	asm( 
-"	      0048b563    mov eax,[ebp-4]"
-"	      0048b566    mov ecx,[ebp-0Ch]"
+"	      0048b563    mov eax,i"
+"	      0048b566    mov ecx,this"
 "	      0048b569    mov byte ptr [ecx+eax*2+1],0"
 );
 // LINE 49:
@@ -228,44 +228,44 @@ void CommandSystem::Initialize() {
 );
 // LINE 50:
 	asm( 
-"	      0048b573    mov dword ptr [ebp-4],0"
+"	      0048b573    mov i,0"
 "	      0048b57a    jmp near ptr 0048B582h"
-"	      0048b57f    inc dword ptr [ebp-4]"
-"	      0048b582    cmp dword ptr [ebp-4],800h"
+"	      0048b57f    inc i"
+"	      0048b582    cmp i,800h"
 "	      0048b589    jge near ptr 0048B5A2h"
 );
 // LINE 51:
 	asm( 
-"	      0048b58f    mov eax,[ebp-4]"
-"	      0048b592    mov ecx,[ebp-0Ch]"
+"	      0048b58f    mov eax,i"
+"	      0048b592    mov ecx,this"
 "	      0048b595    mov byte ptr [eax+ecx+0E0h],0"
 "	      0048b59d    jmp near ptr 0048B57Fh"
 );
 // LINE 54:
 	asm( 
-"	      0048b5a2    mov dword ptr [ebp-4],0"
+"	      0048b5a2    mov i,0"
 "	      0048b5a9    jmp near ptr 0048B5B1h"
-"	      0048b5ae    inc dword ptr [ebp-4]"
-"	      0048b5b1    cmp dword ptr [ebp-4],4"
+"	      0048b5ae    inc i"
+"	      0048b5b1    cmp i,4"
 "	      0048b5b5    jge near ptr 0048B5F8h"
 );
 // LINE 55:
 	asm( 
-"	      0048b5bb    mov dword ptr [ebp-8],0"
+"	      0048b5bb    mov j,0"
 "	      0048b5c2    jmp near ptr 0048B5CAh"
-"	      0048b5c7    inc dword ptr [ebp-8]"
-"	      0048b5ca    cmp dword ptr [ebp-8],0Eh"
+"	      0048b5c7    inc j"
+"	      0048b5ca    cmp j,0Eh"
 "	      0048b5ce    jge near ptr 0048B5F3h"
 );
 // LINE 56:
 	asm( 
-"	      0048b5d4    mov eax,[ebp-4]"
+"	      0048b5d4    mov eax,i"
 "	      0048b5d7    mov ecx,eax"
 "	      0048b5d9    shl eax,3"
 "	      0048b5dc    sub eax,ecx"
 "	      0048b5de    add eax,eax"
-"	      0048b5e0    add eax,[ebp-8]"
-"	      0048b5e3    mov ecx,[ebp-0Ch]"
+"	      0048b5e0    add eax,j"
+"	      0048b5e3    mov ecx,this"
 "	      0048b5e6    mov byte ptr [eax+ecx+8E0h],0"
 "	      0048b5ee    jmp near ptr 0048B5C7h"
 );
@@ -275,16 +275,16 @@ void CommandSystem::Initialize() {
 );
 // LINE 58:
 	asm( 
-"	      0048b5f8    mov dword ptr [ebp-4],0"
+"	      0048b5f8    mov i,0"
 "	      0048b5ff    jmp near ptr 0048B607h"
-"	      0048b604    inc dword ptr [ebp-4]"
-"	      0048b607    cmp dword ptr [ebp-4],64h"
+"	      0048b604    inc i"
+"	      0048b607    cmp i,64h"
 "	      0048b60b    jge near ptr 0048B627h"
 );
 // LINE 59:
 	asm( 
-"	      0048b611    mov eax,[ebp-4]"
-"	      0048b614    mov ecx,[ebp-0Ch]"
+"	      0048b611    mov eax,i"
+"	      0048b614    mov ecx,this"
 "	      0048b617    mov dword ptr [ecx+eax*4+918h],0"
 "	      0048b622    jmp near ptr 0048B604h"
 );
@@ -311,27 +311,27 @@ void CommandSystem::ClearAllCommands() {
 "	      0048b637    push ebx"
 "	      0048b638    push esi"
 "	      0048b639    push edi"
-"	      0048b63a    mov [ebp-8],ecx"
+"	      0048b63a    mov this,ecx"
 );
 // LINE 74:
 	asm( 
-"	      0048b63d    mov dword ptr [ebp-4],0"
+"	      0048b63d    mov i,0"
 "	      0048b644    jmp near ptr 0048B64Ch"
-"	      0048b649    inc dword ptr [ebp-4]"
-"	      0048b64c    cmp dword ptr [ebp-4],64h"
+"	      0048b649    inc i"
+"	      0048b64c    cmp i,64h"
 "	      0048b650    jge near ptr 0048B66Ah"
 );
 // LINE 75:
 	asm( 
-"	      0048b656    mov eax,[ebp-4]"
-"	      0048b659    mov ecx,[ebp-8]"
+"	      0048b656    mov eax,i"
+"	      0048b659    mov ecx,this"
 "	      0048b65c    mov byte ptr [ecx+eax*2],0"
 "	      0048b660    jmp near ptr 0048B665h"
 "	      0048b665    jmp near ptr 0048B649h"
 );
 // LINE 76:
 	asm( 
-"	      0048b66a    mov ecx,[ebp-8]"
+"	      0048b66a    mov ecx,this"
 "	      0048b66d    add ecx,0C8h"
 "	      0048b673    call 0043D703h"
 );
@@ -358,20 +358,20 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 "	      0048b688    push ebx"
 "	      0048b689    push esi"
 "	      0048b68a    push edi"
-"	      0048b68b    mov [ebp-8],ecx"
+"	      0048b68b    mov this,ecx"
 );
 // LINE 89:
 	asm( 
-"	      0048b68e    mov dword ptr [ebp-4],0"
+"	      0048b68e    mov i,0"
 "	      0048b695    jmp near ptr 0048B69Dh"
-"	      0048b69a    inc dword ptr [ebp-4]"
-"	      0048b69d    cmp dword ptr [ebp-4],64h"
+"	      0048b69a    inc i"
+"	      0048b69d    cmp i,64h"
 "	      0048b6a1    jge near ptr 0048B6D3h"
 );
 // LINE 90:
 	asm( 
-"	      0048b6a7    mov eax,[ebp-4]"
-"	      0048b6aa    mov ecx,[ebp-8]"
+"	      0048b6a7    mov eax,i"
+"	      0048b6aa    mov ecx,this"
 "	      0048b6ad    xor edx,edx"
 "	      0048b6af    mov dl,[ecx+eax*2]"
 "	      0048b6b2    mov eax,1"
@@ -379,15 +379,15 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 "	      0048b6ba    shl eax,cl"
 "	      0048b6bc    not eax"
 "	      0048b6be    and edx,eax"
-"	      0048b6c0    mov eax,[ebp-4]"
-"	      0048b6c3    mov ecx,[ebp-8]"
+"	      0048b6c0    mov eax,i"
+"	      0048b6c3    mov ecx,this"
 "	      0048b6c6    mov [ecx+eax*2],dl"
 "	      0048b6c9    jmp near ptr 0048B6CEh"
 "	      0048b6ce    jmp near ptr 0048B69Ah"
 );
 // LINE 91:
 	asm( 
-"	      0048b6d3    mov ecx,[ebp-8]"
+"	      0048b6d3    mov ecx,this"
 "	      0048b6d6    add ecx,0C8h"
 "	      0048b6dc    call 0043D703h"
 );
@@ -419,33 +419,33 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 "	      0048b6f3    push ebx"
 "	      0048b6f4    push esi"
 "	      0048b6f5    push edi"
-"	      0048b6f6    mov [ebp-40h],ecx"
+"	      0048b6f6    mov this,ecx"
 );
 // LINE 130:
 	asm( 
-"	      0048b6f9    mov eax,[ebp-40h]"
+"	      0048b6f9    mov eax,this"
 "	      0048b6fc    mov eax,[eax+0D8h]"
 "	      0048b702    mov eax,[eax]"
 "	      0048b704    mov [ebp-38h],eax"
 "	      0048b707    mov eax,[ebp-38h]"
-"	      0048b70a    mov [ebp-0Ch],eax"
+"	      0048b70a    mov tempShortcutListIterator.node,eax"
 "	      0048b70d    jmp near ptr 0048B712h"
 "	      0048b712    jmp near ptr 0048B717h"
 );
 // LINE 133:
 	asm( 
-"	      0048b717    mov ecx,[ebp-40h]"
+"	      0048b717    mov ecx,this"
 "	      0048b71a    call 0048B534h"
 );
 // LINE 134:
 	asm( 
 "	      0048b71f    push 0"
-"	      0048b721    mov ecx,[ebp-40h]"
+"	      0048b721    mov ecx,this"
 "	      0048b724    call 0048B682h"
 );
 // LINE 137:
 	asm( 
-"	      0048b729    mov eax,[ebp-40h]"
+"	      0048b729    mov eax,this"
 "	      0048b72c    mov eax,[eax+0D8h]"
 "	      0048b732    mov [ebp-2Ch],eax"
 "	      0048b735    mov eax,[ebp-2Ch]"
@@ -453,7 +453,7 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 "	      0048b73b    jmp near ptr 0048B740h"
 "	      0048b740    jmp near ptr 0048B745h"
 "	      0048b745    mov eax,[ebp-1Ch]"
-"	      0048b748    cmp [ebp-0Ch],eax"
+"	      0048b748    cmp tempShortcutListIterator.node,eax"
 "	      0048b74b    jne near ptr 0048B75Bh"
 "	      0048b751    jmp near ptr 0048B76Fh"
 "	      0048b756    jmp near ptr 0048B75Bh"
@@ -469,66 +469,66 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 // LINE 138:
 	asm( 
 "	      0048b783    jmp near ptr 0048B788h"
-"	      0048b788    mov eax,[ebp-0Ch]"
+"	      0048b788    mov eax,tempShortcutListIterator.node"
 "	      0048b78b    cmp dword ptr [eax+8],0"
 "	      0048b78f    jne near ptr 0048B912h"
 );
 // LINE 139:
 	asm( 
 "	      0048b795    jmp near ptr 0048B79Ah"
-"	      0048b79a    mov eax,[ebp-0Ch]"
+"	      0048b79a    mov eax,tempShortcutListIterator.node"
 "	      0048b79d    mov al,[eax+10h]"
-"	      0048b7a0    mov [ebp-8],al"
+"	      0048b7a0    mov chCurrentChar,al"
 );
 // LINE 140:
 	asm( 
 "	      0048b7a3    jmp near ptr 0048B7A8h"
-"	      0048b7a8    mov eax,[ebp-0Ch]"
+"	      0048b7a8    mov eax,tempShortcutListIterator.node"
 "	      0048b7ab    mov al,[eax+0Ch]"
-"	      0048b7ae    mov [ebp-18h],al"
+"	      0048b7ae    mov chCurrentCommand,al"
 );
 // LINE 141:
 	asm( 
 "	      0048b7b1    jmp near ptr 0048B7B6h"
-"	      0048b7b6    mov eax,[ebp-0Ch]"
+"	      0048b7b6    mov eax,tempShortcutListIterator.node"
 "	      0048b7b9    mov al,[eax+14h]"
-"	      0048b7bc    mov [ebp-14h],al"
+"	      0048b7bc    mov chCurrentModifiers,al"
 );
 // LINE 143:
 	asm( 
 "	      0048b7bf    xor eax,eax"
-"	      0048b7c1    mov al,[ebp-18h]"
-"	      0048b7c4    mov ecx,[ebp-40h]"
+"	      0048b7c1    mov al,chCurrentCommand"
+"	      0048b7c4    mov ecx,this"
 "	      0048b7c7    mov byte ptr [ecx+eax*2],0"
 );
 // LINE 144:
 	asm( 
 "	      0048b7cb    jmp near ptr 0048B7D0h"
-"	      0048b7d0    mov eax,[ebp-0Ch]"
+"	      0048b7d0    mov eax,tempShortcutListIterator.node"
 "	      0048b7d3    mov al,[eax+18h]"
 "	      0048b7d6    xor ecx,ecx"
-"	      0048b7d8    mov cl,[ebp-18h]"
-"	      0048b7db    mov edx,[ebp-40h]"
+"	      0048b7d8    mov cl,chCurrentCommand"
+"	      0048b7db    mov edx,this"
 "	      0048b7de    mov [edx+ecx*2+1],al"
 );
 // LINE 146:
 	asm( 
 "	      0048b7e2    jmp near ptr 0048B7E7h"
-"	      0048b7e7    mov eax,[ebp-0Ch]"
+"	      0048b7e7    mov eax,tempShortcutListIterator.node"
 "	      0048b7ea    mov eax,[eax+1Ch]"
-"	      0048b7ed    mov [ebp-4],eax"
+"	      0048b7ed    mov lCurrentIgnoreModifiers,eax"
 );
 // LINE 147:
 	asm( 
-"	      0048b7f0    cmp dword ptr [ebp-4],0"
+"	      0048b7f0    cmp lCurrentIgnoreModifiers,0"
 "	      0048b7f4    je near ptr 0048B8E4h"
 );
 // LINE 150:
 	asm( 
-"	      0048b7fa    mov al,[ebp-18h]"
+"	      0048b7fa    mov al,chCurrentCommand"
 "	      0048b7fd    xor ecx,ecx"
-"	      0048b7ff    mov cl,[ebp-8]"
-"	      0048b802    mov edx,[ebp-40h]"
+"	      0048b7ff    mov cl,chCurrentChar"
+"	      0048b802    mov edx,this"
 "	      0048b805    mov [ecx+edx+0E0h],al"
 );
 // LINE 151:
@@ -538,10 +538,10 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 152:
 	asm( 
-"	      0048b816    mov al,[ebp-18h]"
+"	      0048b816    mov al,chCurrentCommand"
 "	      0048b819    xor ecx,ecx"
-"	      0048b81b    mov cl,[ebp-8]"
-"	      0048b81e    mov edx,[ebp-40h]"
+"	      0048b81b    mov cl,chCurrentChar"
+"	      0048b81e    mov edx,this"
 "	      0048b821    mov [ecx+edx+1E0h],al"
 );
 // LINE 153:
@@ -551,25 +551,25 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 154:
 	asm( 
-"	      0048b832    mov al,[ebp-18h]"
+"	      0048b832    mov al,chCurrentCommand"
 "	      0048b835    xor ecx,ecx"
-"	      0048b837    mov cl,[ebp-8]"
-"	      0048b83a    mov edx,[ebp-40h]"
+"	      0048b837    mov cl,chCurrentChar"
+"	      0048b83a    mov edx,this"
 "	      0048b83d    mov [ecx+edx+2E0h],al"
 );
 // LINE 155:
 	asm( 
-"	      0048b844    mov eax,[ebp-4]"
+"	      0048b844    mov eax,lCurrentIgnoreModifiers"
 "	      0048b847    and al,3"
 "	      0048b849    cmp al,3"
 "	      0048b84b    jne near ptr 0048B863h"
 );
 // LINE 156:
 	asm( 
-"	      0048b851    mov al,[ebp-18h]"
+"	      0048b851    mov al,chCurrentCommand"
 "	      0048b854    xor ecx,ecx"
-"	      0048b856    mov cl,[ebp-8]"
-"	      0048b859    mov edx,[ebp-40h]"
+"	      0048b856    mov cl,chCurrentChar"
+"	      0048b859    mov edx,this"
 "	      0048b85c    mov [ecx+edx+3E0h],al"
 );
 // LINE 157:
@@ -579,55 +579,55 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 158:
 	asm( 
-"	      0048b86d    mov al,[ebp-18h]"
+"	      0048b86d    mov al,chCurrentCommand"
 "	      0048b870    xor ecx,ecx"
-"	      0048b872    mov cl,[ebp-8]"
-"	      0048b875    mov edx,[ebp-40h]"
+"	      0048b872    mov cl,chCurrentChar"
+"	      0048b875    mov edx,this"
 "	      0048b878    mov [ecx+edx+4E0h],al"
 );
 // LINE 159:
 	asm( 
-"	      0048b87f    mov eax,[ebp-4]"
+"	      0048b87f    mov eax,lCurrentIgnoreModifiers"
 "	      0048b882    and al,5"
 "	      0048b884    cmp al,5"
 "	      0048b886    jne near ptr 0048B89Eh"
 );
 // LINE 160:
 	asm( 
-"	      0048b88c    mov al,[ebp-18h]"
+"	      0048b88c    mov al,chCurrentCommand"
 "	      0048b88f    xor ecx,ecx"
-"	      0048b891    mov cl,[ebp-8]"
-"	      0048b894    mov edx,[ebp-40h]"
+"	      0048b891    mov cl,chCurrentChar"
+"	      0048b894    mov edx,this"
 "	      0048b897    mov [ecx+edx+5E0h],al"
 );
 // LINE 161:
 	asm( 
-"	      0048b89e    mov eax,[ebp-4]"
+"	      0048b89e    mov eax,lCurrentIgnoreModifiers"
 "	      0048b8a1    and al,6"
 "	      0048b8a3    cmp al,6"
 "	      0048b8a5    jne near ptr 0048B8BDh"
 );
 // LINE 162:
 	asm( 
-"	      0048b8ab    mov al,[ebp-18h]"
+"	      0048b8ab    mov al,chCurrentCommand"
 "	      0048b8ae    xor ecx,ecx"
-"	      0048b8b0    mov cl,[ebp-8]"
-"	      0048b8b3    mov edx,[ebp-40h]"
+"	      0048b8b0    mov cl,chCurrentChar"
+"	      0048b8b3    mov edx,this"
 "	      0048b8b6    mov [ecx+edx+6E0h],al"
 );
 // LINE 163:
 	asm( 
-"	      0048b8bd    mov eax,[ebp-4]"
+"	      0048b8bd    mov eax,lCurrentIgnoreModifiers"
 "	      0048b8c0    and al,7"
 "	      0048b8c2    cmp al,7"
 "	      0048b8c4    jne near ptr 0048B8DFh"
 );
 // LINE 164:
 	asm( 
-"	      0048b8ca    mov al,[ebp-18h]"
+"	      0048b8ca    mov al,chCurrentCommand"
 "	      0048b8cd    mov ecx,0"
-"	      0048b8d2    mov cl,[ebp-8]"
-"	      0048b8d5    mov edx,[ebp-40h]"
+"	      0048b8d2    mov cl,chCurrentChar"
+"	      0048b8d5    mov edx,this"
 "	      0048b8d8    mov [ecx+edx+7E0h],al"
 );
 // LINE 166:
@@ -636,20 +636,20 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 167:
 	asm( 
-"	      0048b8e4    movsx eax,byte ptr [ebp-14h]"
+"	      0048b8e4    movsx eax,chCurrentModifiers"
 "	      0048b8e8    and eax,7"
 "	      0048b8eb    shl eax,8"
 "	      0048b8ee    xor ecx,ecx"
-"	      0048b8f0    mov cl,[ebp-8]"
+"	      0048b8f0    mov cl,chCurrentChar"
 "	      0048b8f3    add eax,ecx"
-"	      0048b8f5    mov [ebp-10h],eax"
+"	      0048b8f5    mov nTempIndex,eax"
 "	      0048b8f8    jmp near ptr 0048B8FDh"
 );
 // LINE 168:
 	asm( 
-"	      0048b8fd    mov al,[ebp-18h]"
-"	      0048b900    mov ecx,[ebp-10h]"
-"	      0048b903    mov edx,[ebp-40h]"
+"	      0048b8fd    mov al,chCurrentCommand"
+"	      0048b900    mov ecx,nTempIndex"
+"	      0048b903    mov edx,this"
 "	      0048b906    mov [ecx+edx+0E0h],al"
 );
 // LINE 171:
@@ -659,26 +659,26 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 // LINE 172:
 	asm( 
 "	      0048b912    jmp near ptr 0048B917h"
-"	      0048b917    mov eax,[ebp-0Ch]"
+"	      0048b917    mov eax,tempShortcutListIterator.node"
 "	      0048b91a    cmp dword ptr [eax+8],1"
 "	      0048b91e    jl near ptr 0048B97Ch"
 "	      0048b924    jmp near ptr 0048B929h"
-"	      0048b929    mov eax,[ebp-0Ch]"
+"	      0048b929    mov eax,tempShortcutListIterator.node"
 "	      0048b92c    cmp dword ptr [eax+8],4"
 "	      0048b930    jg near ptr 0048B97Ch"
 );
 // LINE 177:
 	asm( 
-"	      0048b936    mov eax,[ebp-0Ch]"
+"	      0048b936    mov eax,tempShortcutListIterator.node"
 "	      0048b939    add eax,8"
 "	      0048b93c    mov [ebp-24h],eax"
 "	      0048b93f    jmp near ptr 0048B944h"
-"	      0048b944    mov eax,[ebp-0Ch]"
+"	      0048b944    mov eax,tempShortcutListIterator.node"
 "	      0048b947    add eax,8"
 "	      0048b94a    mov [ebp-28h],eax"
 "	      0048b94d    jmp near ptr 0048B952h"
 "	      0048b952    jmp near ptr 0048B957h"
-"	      0048b957    mov eax,[ebp-0Ch]"
+"	      0048b957    mov eax,tempShortcutListIterator.node"
 "	      0048b95a    mov al,[eax+0Ch]"
 "	      0048b95d    mov ecx,[ebp-24h]"
 "	      0048b960    mov ecx,[ecx]"
@@ -689,16 +689,16 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 "	      0048b96a    add ecx,ecx"
 "	      0048b96c    mov edx,[ebp-28h]"
 "	      0048b96f    add ecx,[edx+8]"
-"	      0048b972    mov edx,[ebp-40h]"
+"	      0048b972    mov edx,this"
 "	      0048b975    mov [ecx+edx+8E0h],al"
 );
 // LINE 180:
 	asm( 
-"	      0048b97c    mov eax,[ebp-0Ch]"
+"	      0048b97c    mov eax,tempShortcutListIterator.node"
 "	      0048b97f    mov [ebp-3Ch],eax"
-"	      0048b982    mov eax,[ebp-0Ch]"
+"	      0048b982    mov eax,tempShortcutListIterator.node"
 "	      0048b985    mov eax,[eax]"
-"	      0048b987    mov [ebp-0Ch],eax"
+"	      0048b987    mov tempShortcutListIterator.node,eax"
 "	      0048b98a    jmp near ptr 0048B98Fh"
 "	      0048b98f    mov eax,[ebp-3Ch]"
 "	      0048b992    mov [ebp-20h],eax"
@@ -735,52 +735,52 @@ void CommandSystem::PollJoysticksForCommands() {
 "	      0048b9af    push ebx"
 "	      0048b9b0    push esi"
 "	      0048b9b1    push edi"
-"	      0048b9b2    mov [ebp-18h],ecx"
+"	      0048b9b2    mov this,ecx"
 );
 // LINE 199:
 	asm( 
 "	      0048b9b5    mov eax,ds:[604C78h]"
-"	      0048b9ba    mov [ebp-8],eax"
+"	      0048b9ba    mov iEnd,eax"
 "	      0048b9bd    jmp near ptr 0048B9C2h"
 );
 // LINE 200:
 	asm( 
-"	      0048b9c2    cmp dword ptr [ebp-8],4"
+"	      0048b9c2    cmp iEnd,4"
 "	      0048b9c6    jle near ptr 0048B9D3h"
 );
 // LINE 201:
 	asm( 
-"	      0048b9cc    mov dword ptr [ebp-8],4"
+"	      0048b9cc    mov iEnd,4"
 );
 // LINE 205:
 	asm( 
-"	      0048b9d3    mov dword ptr [ebp-0Ch],0"
+"	      0048b9d3    mov i,0"
 "	      0048b9da    jmp near ptr 0048B9E2h"
-"	      0048b9df    inc dword ptr [ebp-0Ch]"
-"	      0048b9e2    mov eax,[ebp-0Ch]"
-"	      0048b9e5    cmp [ebp-8],eax"
+"	      0048b9df    inc i"
+"	      0048b9e2    mov eax,i"
+"	      0048b9e5    cmp iEnd,eax"
 "	      0048b9e8    jle near ptr 0048BA3Ah"
 );
 // LINE 206:
 	asm( 
-"	      0048b9ee    mov dword ptr [ebp-10h],0"
+"	      0048b9ee    mov j,0"
 "	      0048b9f5    jmp near ptr 0048B9FDh"
-"	      0048b9fa    inc dword ptr [ebp-10h]"
-"	      0048b9fd    cmp dword ptr [ebp-10h],0Eh"
+"	      0048b9fa    inc j"
+"	      0048b9fd    cmp j,0Eh"
 "	      0048ba01    jge near ptr 0048BA35h"
 );
 // LINE 207:
 	asm( 
-"	      0048ba07    mov eax,[ebp-0Ch]"
+"	      0048ba07    mov eax,i"
 "	      0048ba0a    mov ecx,eax"
 "	      0048ba0c    shl eax,3"
 "	      0048ba0f    sub eax,ecx"
 "	      0048ba11    add eax,eax"
-"	      0048ba13    add eax,[ebp-10h]"
-"	      0048ba16    mov ecx,[ebp-18h]"
+"	      0048ba13    add eax,j"
+"	      0048ba16    mov ecx,this"
 "	      0048ba19    xor edx,edx"
 "	      0048ba1b    mov dl,[eax+ecx+8E0h]"
-"	      0048ba22    mov eax,[ebp-18h]"
+"	      0048ba22    mov eax,this"
 "	      0048ba25    mov dword ptr [eax+edx*4+918h],0"
 "	      0048ba30    jmp near ptr 0048B9FAh"
 );
@@ -790,62 +790,62 @@ void CommandSystem::PollJoysticksForCommands() {
 );
 // LINE 211:
 	asm( 
-"	      0048ba3a    mov dword ptr [ebp-0Ch],0"
+"	      0048ba3a    mov i,0"
 "	      0048ba41    jmp near ptr 0048BA49h"
-"	      0048ba46    inc dword ptr [ebp-0Ch]"
-"	      0048ba49    mov eax,[ebp-0Ch]"
-"	      0048ba4c    cmp [ebp-8],eax"
+"	      0048ba46    inc i"
+"	      0048ba49    mov eax,i"
+"	      0048ba4c    cmp iEnd,eax"
 "	      0048ba4f    jle near ptr 0048BB7Eh"
 );
 // LINE 212:
 	asm( 
-"	      0048ba55    mov dword ptr [ebp-10h],0"
+"	      0048ba55    mov j,0"
 "	      0048ba5c    jmp near ptr 0048BA64h"
-"	      0048ba61    inc dword ptr [ebp-10h]"
-"	      0048ba64    cmp dword ptr [ebp-10h],5"
+"	      0048ba61    inc j"
+"	      0048ba64    cmp j,5"
 "	      0048ba68    jg near ptr 0048BAF8h"
 );
 // LINE 213:
 	asm( 
-"	      0048ba6e    mov eax,[ebp-0Ch]"
+"	      0048ba6e    mov eax,i"
 "	      0048ba71    mov ecx,eax"
 "	      0048ba73    shl eax,3"
 "	      0048ba76    sub eax,ecx"
 "	      0048ba78    add eax,eax"
-"	      0048ba7a    add eax,[ebp-10h]"
-"	      0048ba7d    mov ecx,[ebp-18h]"
+"	      0048ba7a    add eax,j"
+"	      0048ba7d    mov ecx,this"
 "	      0048ba80    xor edx,edx"
 "	      0048ba82    mov dl,[eax+ecx+8E0h]"
-"	      0048ba89    mov [ebp-4],edx"
+"	      0048ba89    mov nCommand,edx"
 );
 // LINE 214:
 	asm( 
-"	      0048ba8c    cmp dword ptr [ebp-4],0"
+"	      0048ba8c    cmp nCommand,0"
 "	      0048ba90    je near ptr 0048BAF3h"
 );
 // LINE 215:
 	asm( 
 "	      0048ba96    push 1"
-"	      0048ba98    mov eax,[ebp-10h]"
+"	      0048ba98    mov eax,j"
 "	      0048ba9b    push eax"
-"	      0048ba9c    mov eax,[ebp-0Ch]"
+"	      0048ba9c    mov eax,i"
 "	      0048ba9f    push eax"
 "	      0048baa0    mov ecx,604C78h"
 "	      0048baa5    call 0049A836h"
-"	      0048baaa    mov [ebp-14h],eax"
+"	      0048baaa    mov lValue,eax"
 );
 // LINE 216:
 	asm( 
-"	      0048baad    cmp dword ptr [ebp-14h],0"
+"	      0048baad    cmp lValue,0"
 "	      0048bab1    je near ptr 0048BAF3h"
-"	      0048bab7    mov eax,[ebp-4]"
-"	      0048baba    mov ecx,[ebp-18h]"
+"	      0048bab7    mov eax,nCommand"
+"	      0048baba    mov ecx,this"
 "	      0048babd    mov eax,[ecx+eax*4+918h]"
 "	      0048bac4    push eax"
 "	      0048bac5    call 0056F300h"
 "	      0048baca    add esp,4"
 "	      0048bacd    mov ebx,eax"
-"	      0048bacf    mov eax,[ebp-14h]"
+"	      0048bacf    mov eax,lValue"
 "	      0048bad2    push eax"
 "	      0048bad3    call 0056F300h"
 "	      0048bad8    add esp,4"
@@ -854,9 +854,9 @@ void CommandSystem::PollJoysticksForCommands() {
 );
 // LINE 217:
 	asm( 
-"	      0048bae3    mov eax,[ebp-14h]"
-"	      0048bae6    mov ecx,[ebp-4]"
-"	      0048bae9    mov edx,[ebp-18h]"
+"	      0048bae3    mov eax,lValue"
+"	      0048bae6    mov ecx,nCommand"
+"	      0048bae9    mov edx,this"
 "	      0048baec    mov [edx+ecx*4+918h],eax"
 );
 // LINE 219:
@@ -865,52 +865,52 @@ void CommandSystem::PollJoysticksForCommands() {
 );
 // LINE 220:
 	asm( 
-"	      0048baf8    mov dword ptr [ebp-10h],6"
+"	      0048baf8    mov j,6"
 "	      0048baff    jmp near ptr 0048BB07h"
-"	      0048bb04    inc dword ptr [ebp-10h]"
-"	      0048bb07    cmp dword ptr [ebp-10h],0Dh"
+"	      0048bb04    inc j"
+"	      0048bb07    cmp j,0Dh"
 "	      0048bb0b    jg near ptr 0048BB79h"
 );
 // LINE 221:
 	asm( 
-"	      0048bb11    mov eax,[ebp-0Ch]"
+"	      0048bb11    mov eax,i"
 "	      0048bb14    mov ecx,eax"
 "	      0048bb16    shl eax,3"
 "	      0048bb19    sub eax,ecx"
 "	      0048bb1b    add eax,eax"
-"	      0048bb1d    add eax,[ebp-10h]"
-"	      0048bb20    mov ecx,[ebp-18h]"
+"	      0048bb1d    add eax,j"
+"	      0048bb20    mov ecx,this"
 "	      0048bb23    xor edx,edx"
 "	      0048bb25    mov dl,[eax+ecx+8E0h]"
-"	      0048bb2c    mov [ebp-4],edx"
+"	      0048bb2c    mov nCommand,edx"
 );
 // LINE 222:
 	asm( 
-"	      0048bb2f    cmp dword ptr [ebp-4],0"
+"	      0048bb2f    cmp nCommand,0"
 "	      0048bb33    je near ptr 0048BB74h"
 );
 // LINE 223:
 	asm( 
 "	      0048bb39    push 1"
-"	      0048bb3b    mov eax,[ebp-10h]"
+"	      0048bb3b    mov eax,j"
 "	      0048bb3e    sub eax,6"
 "	      0048bb41    push eax"
-"	      0048bb42    mov eax,[ebp-0Ch]"
+"	      0048bb42    mov eax,i"
 "	      0048bb45    push eax"
 "	      0048bb46    mov ecx,604C78h"
 "	      0048bb4b    call 0049A9DDh"
-"	      0048bb50    mov [ebp-14h],eax"
+"	      0048bb50    mov lValue,eax"
 );
 // LINE 224:
 	asm( 
-"	      0048bb53    cmp dword ptr [ebp-14h],0"
+"	      0048bb53    cmp lValue,0"
 "	      0048bb57    je near ptr 0048BB74h"
 );
 // LINE 225:
 	asm( 
 "	      0048bb5d    mov eax,ds:[604CD0h]"
-"	      0048bb62    mov ecx,[ebp-4]"
-"	      0048bb65    mov edx,[ebp-18h]"
+"	      0048bb62    mov ecx,nCommand"
+"	      0048bb65    mov edx,this"
 "	      0048bb68    mov [edx+ecx*4+918h],eax"
 "	      0048bb6f    jmp near ptr 0048BB74h"
 );
@@ -943,21 +943,21 @@ void CGameCommander::CGameCommander() {
 "	      0048bb8e    push ebx"
 "	      0048bb8f    push esi"
 "	      0048bb90    push edi"
-"	      0048bb91    mov [ebp-4],ecx"
-"	      0048bb94    mov ecx,[ebp-4]"
+"	      0048bb91    mov this,ecx"
+"	      0048bb94    mov ecx,this"
 "	      0048bb97    call 0049ADC3h"
-"	      0048bb9c    mov eax,[ebp-4]"
+"	      0048bb9c    mov eax,this"
 "	      0048bb9f    mov dword ptr [eax],590FF8h"
 );
 // LINE 249:
 	asm( 
-"	      0048bba5    mov eax,[ebp-4]"
+"	      0048bba5    mov eax,this"
 "	      0048bba8    mov dword ptr [eax+8],0"
 );
 // LINE 252:
 	asm( 
 "	      0048bbaf    jmp near ptr 0048BBB4h"
-"	      0048bbb4    mov eax,[ebp-4]"
+"	      0048bbb4    mov eax,this"
 "	      0048bbb7    pop edi"
 "	      0048bbb8    pop esi"
 "	      0048bbb9    pop ebx"
@@ -976,14 +976,14 @@ void CGameCommander::~CGameCommander() {
 "	      0048bbc2    push ebx"
 "	      0048bbc3    push esi"
 "	      0048bbc4    push edi"
-"	      0048bbc5    mov [ebp-4],ecx"
-"	      0048bbc8    mov eax,[ebp-4]"
+"	      0048bbc5    mov this,ecx"
+"	      0048bbc8    mov eax,this"
 "	      0048bbcb    mov dword ptr [eax],590FF8h"
 );
 // LINE 256:
 	asm( 
 "	      0048bbd1    jmp near ptr 0048BBD6h"
-"	      0048bbd6    mov ecx,[ebp-4]"
+"	      0048bbd6    mov ecx,this"
 "	      0048bbd9    call 0049ADEDh"
 "	      0048bbde    pop edi"
 "	      0048bbdf    pop esi"
@@ -1003,7 +1003,7 @@ unsigned long CGameCommander::Idle() {
 "	      0048bbe9    push ebx"
 "	      0048bbea    push esi"
 "	      0048bbeb    push edi"
-"	      0048bbec    mov [ebp-4],ecx"
+"	      0048bbec    mov this,ecx"
 );
 // LINE 264:
 	asm( 
@@ -1030,17 +1030,17 @@ unsigned long CGameCommander::OnLMouseDown(int32_t x, int32_t y) {
 "	      0048bc01    push ebx"
 "	      0048bc02    push esi"
 "	      0048bc03    push edi"
-"	      0048bc04    mov [ebp-4],ecx"
+"	      0048bc04    mov this,ecx"
 );
 // LINE 274:
 	asm( 
 "	      0048bc07    push 1"
-"	      0048bc09    mov eax,[ebp+0Ch]"
+"	      0048bc09    mov eax,y"
 "	      0048bc0c    push eax"
-"	      0048bc0d    mov eax,[ebp+8]"
+"	      0048bc0d    mov eax,x"
 "	      0048bc10    push eax"
-"	      0048bc11    mov eax,[ebp-4]"
-"	      0048bc14    mov ecx,[ebp-4]"
+"	      0048bc11    mov eax,this"
+"	      0048bc14    mov ecx,this"
 "	      0048bc17    mov ecx,[ecx+8]"
 "	      0048bc1a    mov edx,[ecx]"
 "	      0048bc1c    mov ecx,[eax+8]"
@@ -1071,17 +1071,17 @@ unsigned long CGameCommander::OnLMouseUp(int32_t x, int32_t y) {
 "	      0048bc39    push ebx"
 "	      0048bc3a    push esi"
 "	      0048bc3b    push edi"
-"	      0048bc3c    mov [ebp-4],ecx"
+"	      0048bc3c    mov this,ecx"
 );
 // LINE 284:
 	asm( 
 "	      0048bc3f    push 1"
-"	      0048bc41    mov eax,[ebp+0Ch]"
+"	      0048bc41    mov eax,y"
 "	      0048bc44    push eax"
-"	      0048bc45    mov eax,[ebp+8]"
+"	      0048bc45    mov eax,x"
 "	      0048bc48    push eax"
-"	      0048bc49    mov eax,[ebp-4]"
-"	      0048bc4c    mov ecx,[ebp-4]"
+"	      0048bc49    mov eax,this"
+"	      0048bc4c    mov ecx,this"
 "	      0048bc4f    mov ecx,[ecx+8]"
 "	      0048bc52    mov edx,[ecx]"
 "	      0048bc54    mov ecx,[eax+8]"
@@ -1112,17 +1112,17 @@ unsigned long CGameCommander::OnRMouseDown(int32_t x, int32_t y) {
 "	      0048bc71    push ebx"
 "	      0048bc72    push esi"
 "	      0048bc73    push edi"
-"	      0048bc74    mov [ebp-4],ecx"
+"	      0048bc74    mov this,ecx"
 );
 // LINE 293:
 	asm( 
 "	      0048bc77    push 2"
-"	      0048bc79    mov eax,[ebp+0Ch]"
+"	      0048bc79    mov eax,y"
 "	      0048bc7c    push eax"
-"	      0048bc7d    mov eax,[ebp+8]"
+"	      0048bc7d    mov eax,x"
 "	      0048bc80    push eax"
-"	      0048bc81    mov eax,[ebp-4]"
-"	      0048bc84    mov ecx,[ebp-4]"
+"	      0048bc81    mov eax,this"
+"	      0048bc84    mov ecx,this"
 "	      0048bc87    mov ecx,[ecx+8]"
 "	      0048bc8a    mov edx,[ecx]"
 "	      0048bc8c    mov ecx,[eax+8]"
@@ -1153,17 +1153,17 @@ unsigned long CGameCommander::OnRMouseUp(int32_t x, int32_t y) {
 "	      0048bca9    push ebx"
 "	      0048bcaa    push esi"
 "	      0048bcab    push edi"
-"	      0048bcac    mov [ebp-4],ecx"
+"	      0048bcac    mov this,ecx"
 );
 // LINE 303:
 	asm( 
 "	      0048bcaf    push 2"
-"	      0048bcb1    mov eax,[ebp+0Ch]"
+"	      0048bcb1    mov eax,y"
 "	      0048bcb4    push eax"
-"	      0048bcb5    mov eax,[ebp+8]"
+"	      0048bcb5    mov eax,x"
 "	      0048bcb8    push eax"
-"	      0048bcb9    mov eax,[ebp-4]"
-"	      0048bcbc    mov ecx,[ebp-4]"
+"	      0048bcb9    mov eax,this"
+"	      0048bcbc    mov ecx,this"
 "	      0048bcbf    mov ecx,[ecx+8]"
 "	      0048bcc2    mov edx,[ecx]"
 "	      0048bcc4    mov ecx,[eax+8]"
@@ -1194,16 +1194,16 @@ unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 "	      0048bce1    push ebx"
 "	      0048bce2    push esi"
 "	      0048bce3    push edi"
-"	      0048bce4    mov [ebp-4],ecx"
+"	      0048bce4    mov this,ecx"
 );
 // LINE 313:
 	asm( 
-"	      0048bce7    mov eax,[ebp+0Ch]"
+"	      0048bce7    mov eax,y"
 "	      0048bcea    push eax"
-"	      0048bceb    mov eax,[ebp+8]"
+"	      0048bceb    mov eax,x"
 "	      0048bcee    push eax"
-"	      0048bcef    mov eax,[ebp-4]"
-"	      0048bcf2    mov ecx,[ebp-4]"
+"	      0048bcef    mov eax,this"
+"	      0048bcf2    mov ecx,this"
 "	      0048bcf5    mov ecx,[ecx+8]"
 "	      0048bcf8    mov edx,[ecx]"
 "	      0048bcfa    mov ecx,[eax+8]"
@@ -1234,8 +1234,8 @@ unsigned long CGameCommander::OnWindowActivate() {
 "	      0048bd17    push ebx"
 "	      0048bd18    push esi"
 "	      0048bd19    push edi"
-"	      0048bd1a    mov [ebp-8],ecx"
-"	      0048bd1d    mov eax,[ebp-8]"
+"	      0048bd1a    mov this,ecx"
+"	      0048bd1d    mov eax,this"
 "	      0048bd20    mov eax,[eax+8]"
 "	      0048bd23    mov [ebp-4],eax"
 );
@@ -1270,8 +1270,8 @@ unsigned long CGameCommander::OnWindowDeactivate() {
 "	      0048bd4a    push ebx"
 "	      0048bd4b    push esi"
 "	      0048bd4c    push edi"
-"	      0048bd4d    mov [ebp-8],ecx"
-"	      0048bd50    mov eax,[ebp-8]"
+"	      0048bd4d    mov this,ecx"
+"	      0048bd50    mov eax,this"
 "	      0048bd53    mov eax,[eax+8]"
 "	      0048bd56    mov [ebp-4],eax"
 );
@@ -1306,7 +1306,7 @@ void CGameCommander::ProcessSetFocus() {
 "	      0048bd7d    push ebx"
 "	      0048bd7e    push esi"
 "	      0048bd7f    push edi"
-"	      0048bd80    mov [ebp-4],ecx"
+"	      0048bd80    mov this,ecx"
 );
 // LINE 354:
 	asm( 
@@ -1315,8 +1315,8 @@ void CGameCommander::ProcessSetFocus() {
 );
 // LINE 355:
 	asm( 
-"	      0048bd8d    mov eax,[ebp-4]"
-"	      0048bd90    mov ecx,[ebp-4]"
+"	      0048bd8d    mov eax,this"
+"	      0048bd90    mov ecx,this"
 "	      0048bd93    mov ecx,[ecx+8]"
 "	      0048bd96    mov edx,[ecx]"
 "	      0048bd98    mov ecx,[eax+8]"
@@ -1343,14 +1343,14 @@ unsigned long CGameCommander::OnCharacter(long lCharacter) {
 "	      0048bdb1    push ebx"
 "	      0048bdb2    push esi"
 "	      0048bdb3    push edi"
-"	      0048bdb4    mov [ebp-4],ecx"
+"	      0048bdb4    mov this,ecx"
 );
 // LINE 364:
 	asm( 
-"	      0048bdb7    mov eax,[ebp+8]"
+"	      0048bdb7    mov eax,lCharacter"
 "	      0048bdba    push eax"
-"	      0048bdbb    mov eax,[ebp-4]"
-"	      0048bdbe    mov ecx,[ebp-4]"
+"	      0048bdbb    mov eax,this"
+"	      0048bdbe    mov ecx,this"
 "	      0048bdc1    mov ecx,[ecx+8]"
 "	      0048bdc4    mov edx,[ecx]"
 "	      0048bdc6    mov ecx,[eax+8]"
@@ -1381,11 +1381,11 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 "	      0048bde3    push ebx"
 "	      0048bde4    push esi"
 "	      0048bde5    push edi"
-"	      0048bde6    mov [ebp-4],ecx"
+"	      0048bde6    mov this,ecx"
 );
 // LINE 374:
 	asm( 
-"	      0048bde9    mov eax,[ebp+8]"
+"	      0048bde9    mov eax,lKey"
 "	      0048bdec    push eax"
 "	      0048bded    mov ecx,5C34F0h"
 "	      0048bdf2    call 00431D8Dh"
@@ -1395,10 +1395,10 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 "	      0048bdf7    mov ecx,5C34F0h"
 "	      0048bdfc    call 00431EB1h"
 "	      0048be01    push eax"
-"	      0048be02    mov eax,[ebp+8]"
+"	      0048be02    mov eax,lKey"
 "	      0048be05    push eax"
-"	      0048be06    mov eax,[ebp-4]"
-"	      0048be09    mov ecx,[ebp-4]"
+"	      0048be06    mov eax,this"
+"	      0048be09    mov ecx,this"
 "	      0048be0c    mov ecx,[ecx+8]"
 "	      0048be0f    mov edx,[ecx]"
 "	      0048be11    mov ecx,[eax+8]"
@@ -1425,11 +1425,11 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 "	      0048be2c    push ebx"
 "	      0048be2d    push esi"
 "	      0048be2e    push edi"
-"	      0048be2f    mov [ebp-4],ecx"
+"	      0048be2f    mov this,ecx"
 );
 // LINE 386:
 	asm( 
-"	      0048be32    mov eax,[ebp+8]"
+"	      0048be32    mov eax,lKey"
 "	      0048be35    push eax"
 "	      0048be36    mov ecx,5C34F0h"
 "	      0048be3b    call 00431DD3h"
@@ -1439,10 +1439,10 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 "	      0048be40    mov ecx,5C34F0h"
 "	      0048be45    call 00431EB1h"
 "	      0048be4a    push eax"
-"	      0048be4b    mov eax,[ebp+8]"
+"	      0048be4b    mov eax,lKey"
 "	      0048be4e    push eax"
-"	      0048be4f    mov eax,[ebp-4]"
-"	      0048be52    mov ecx,[ebp-4]"
+"	      0048be4f    mov eax,this"
+"	      0048be52    mov ecx,this"
 "	      0048be55    mov ecx,[ecx+8]"
 "	      0048be58    mov edx,[ecx]"
 "	      0048be5a    mov ecx,[eax+8]"
@@ -1473,21 +1473,21 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 "	      0048be75    push ebx"
 "	      0048be76    push esi"
 "	      0048be77    push edi"
-"	      0048be78    mov [ebp-18h],ecx"
+"	      0048be78    mov this,ecx"
 );
 // LINE 408:
 	asm( 
-"	      0048be7b    mov eax,[ebp+10h]"
+"	      0048be7b    mov eax,nCommand"
 "	      0048be7e    mov dword ptr [eax],0"
 );
 // LINE 409:
 	asm( 
-"	      0048be84    mov eax,[ebp+14h]"
+"	      0048be84    mov eax,bPushCommand"
 "	      0048be87    mov dword ptr [eax],0"
 );
 // LINE 421:
 	asm( 
-"	      0048be8d    mov eax,[ebp+8]"
+"	      0048be8d    mov eax,lKey"
 "	      0048be90    push eax"
 "	      0048be91    mov ecx,5C34F0h"
 "	      0048be96    call 00431E63h"
@@ -1498,15 +1498,15 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 // Block start:
 	class CharData* currentCharData;
 	asm( 
-"	      0048bea3    mov eax,[ebp+0Ch]"
+"	      0048bea3    mov eax,commandSystem"
 "	      0048bea6    mov eax,[eax+0CCh]"
-"	      0048beac    mov [ebp-10h],eax"
+"	      0048beac    mov currentCharData,eax"
 );
 // LINE 428:
 	asm( 
-"	      0048beaf    cmp dword ptr [ebp-10h],0"
+"	      0048beaf    cmp currentCharData,0"
 "	      0048beb3    je near ptr 0048BEEDh"
-"	      0048beb9    mov eax,[ebp-10h]"
+"	      0048beb9    mov eax,currentCharData"
 "	      0048bebc    xor ecx,ecx"
 "	      0048bebe    mov cl,[eax]"
 "	      0048bec0    mov [ebp-14h],ecx"
@@ -1514,20 +1514,20 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 // LINE 429:
 	asm( 
 "	      0048bec3    mov eax,[ebp-14h]"
-"	      0048bec6    mov ecx,[ebp+0Ch]"
+"	      0048bec6    mov ecx,commandSystem"
 "	      0048bec9    xor edx,edx"
 "	      0048becb    mov dl,[ecx+eax*2]"
 "	      0048bece    and dl,0FEh"
 "	      0048bed1    mov eax,[ebp-14h]"
-"	      0048bed4    mov ecx,[ebp+0Ch]"
+"	      0048bed4    mov ecx,commandSystem"
 "	      0048bed7    mov [ecx+eax*2],dl"
 "	      0048beda    jmp near ptr 0048BEDFh"
 );
 // LINE 430:
 	asm( 
-"	      0048bedf    mov eax,[ebp-10h]"
+"	      0048bedf    mov eax,currentCharData"
 "	      0048bee2    mov eax,[eax+5]"
-"	      0048bee5    mov [ebp-10h],eax"
+"	      0048bee5    mov currentCharData,eax"
 );
 // LINE 431:
 	asm( 
@@ -1535,53 +1535,53 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 );
 // LINE 432:
 	asm( 
-"	      0048beed    mov ecx,[ebp+0Ch]"
+"	      0048beed    mov ecx,commandSystem"
 "	      0048bef0    add ecx,0C8h"
 "	      0048bef6    call 0043D703h"
 );
 // LINE 434:
 	asm( 
 "	      0048befb    mov eax,ds:[5C34F4h]"
-"	      0048bf00    mov [ebp-10h],eax"
+"	      0048bf00    mov currentCharData,eax"
 );
 // LINE 435:
 	asm( 
-"	      0048bf03    cmp dword ptr [ebp-10h],0"
+"	      0048bf03    cmp currentCharData,0"
 "	      0048bf07    je near ptr 0048BFA5h"
 );
 // LINE 436:
 	asm( 
 "	      0048bf0d    mov ecx,5C34F0h"
 "	      0048bf12    call 00431EB1h"
-"	      0048bf17    mov [ebp-4],al"
+"	      0048bf17    mov chTempModifierState,al"
 );
 // LINE 438:
 	asm( 
-"	      0048bf1a    movsx eax,byte ptr [ebp-4]"
+"	      0048bf1a    movsx eax,chTempModifierState"
 "	      0048bf1e    and eax,7"
 "	      0048bf21    shl eax,8"
-"	      0048bf24    mov ecx,[ebp-10h]"
+"	      0048bf24    mov ecx,currentCharData"
 "	      0048bf27    xor edx,edx"
 "	      0048bf29    mov dl,[ecx]"
 "	      0048bf2b    add eax,edx"
-"	      0048bf2d    mov [ebp-8],eax"
+"	      0048bf2d    mov nTempIndex,eax"
 "	      0048bf30    jmp near ptr 0048BF35h"
 );
 // LINE 439:
 	asm( 
-"	      0048bf35    mov eax,[ebp-8]"
-"	      0048bf38    mov ecx,[ebp+0Ch]"
+"	      0048bf35    mov eax,nTempIndex"
+"	      0048bf38    mov ecx,commandSystem"
 "	      0048bf3b    xor edx,edx"
 "	      0048bf3d    mov dl,[eax+ecx+0E0h]"
-"	      0048bf44    mov [ebp-0Ch],edx"
+"	      0048bf44    mov nTempCommand,edx"
 );
 // LINE 440:
 	asm( 
-"	      0048bf47    cmp dword ptr [ebp-0Ch],0"
+"	      0048bf47    cmp nTempCommand,0"
 "	      0048bf4b    je near ptr 0048BF97h"
 "	      0048bf51    jmp near ptr 0048BF56h"
-"	      0048bf56    mov eax,[ebp-0Ch]"
-"	      0048bf59    mov ecx,[ebp+0Ch]"
+"	      0048bf56    mov eax,nTempCommand"
+"	      0048bf59    mov ecx,commandSystem"
 "	      0048bf5c    xor edx,edx"
 "	      0048bf5e    mov dl,[ecx+eax*2]"
 "	      0048bf61    test edx,edx"
@@ -1589,29 +1589,29 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 );
 // LINE 441:
 	asm( 
-"	      0048bf69    mov eax,[ebp-0Ch]"
-"	      0048bf6c    mov ecx,[ebp+0Ch]"
+"	      0048bf69    mov eax,nTempCommand"
+"	      0048bf6c    mov ecx,commandSystem"
 "	      0048bf6f    xor edx,edx"
 "	      0048bf71    mov dl,[ecx+eax*2]"
 "	      0048bf74    or dl,1"
-"	      0048bf77    mov eax,[ebp-0Ch]"
-"	      0048bf7a    mov ecx,[ebp+0Ch]"
+"	      0048bf77    mov eax,nTempCommand"
+"	      0048bf7a    mov ecx,commandSystem"
 "	      0048bf7d    mov [ecx+eax*2],dl"
 "	      0048bf80    jmp near ptr 0048BF85h"
 );
 // LINE 442:
 	asm( 
-"	      0048bf85    mov eax,[ebp-0Ch]"
+"	      0048bf85    mov eax,nTempCommand"
 "	      0048bf88    push eax"
-"	      0048bf89    mov ecx,[ebp+0Ch]"
+"	      0048bf89    mov ecx,commandSystem"
 "	      0048bf8c    add ecx,0C8h"
 "	      0048bf92    call 0043D4EBh"
 );
 // LINE 444:
 	asm( 
-"	      0048bf97    mov eax,[ebp-10h]"
+"	      0048bf97    mov eax,currentCharData"
 "	      0048bf9a    mov eax,[eax+5]"
-"	      0048bf9d    mov [ebp-10h],eax"
+"	      0048bf9d    mov currentCharData,eax"
 );
 // LINE 445:
 	asm( 
@@ -1626,41 +1626,41 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 	asm( 
 "	      0048bfaa    mov ecx,5C34F0h"
 "	      0048bfaf    call 00431EB1h"
-"	      0048bfb4    mov [ebp-4],al"
+"	      0048bfb4    mov chTempModifierState,al"
 );
 // LINE 449:
 	asm( 
-"	      0048bfb7    movsx eax,byte ptr [ebp-4]"
+"	      0048bfb7    movsx eax,chTempModifierState"
 "	      0048bfbb    and eax,7"
 "	      0048bfbe    shl eax,8"
-"	      0048bfc1    add eax,[ebp+8]"
-"	      0048bfc4    mov [ebp-8],eax"
+"	      0048bfc1    add eax,lKey"
+"	      0048bfc4    mov nTempIndex,eax"
 "	      0048bfc7    jmp near ptr 0048BFCCh"
 );
 // LINE 450:
 	asm( 
-"	      0048bfcc    mov eax,[ebp-8]"
-"	      0048bfcf    mov ecx,[ebp+0Ch]"
+"	      0048bfcc    mov eax,nTempIndex"
+"	      0048bfcf    mov ecx,commandSystem"
 "	      0048bfd2    xor edx,edx"
 "	      0048bfd4    mov dl,[eax+ecx+0E0h]"
-"	      0048bfdb    mov [ebp-0Ch],edx"
+"	      0048bfdb    mov nTempCommand,edx"
 );
 // LINE 451:
 	asm( 
-"	      0048bfde    cmp dword ptr [ebp-0Ch],0"
+"	      0048bfde    cmp nTempCommand,0"
 "	      0048bfe2    je near ptr 0048C058h"
 );
 // LINE 452:
 	asm( 
-"	      0048bfe8    mov eax,[ebp-0Ch]"
-"	      0048bfeb    mov ecx,[ebp+10h]"
+"	      0048bfe8    mov eax,nTempCommand"
+"	      0048bfeb    mov ecx,nCommand"
 "	      0048bfee    mov [ecx],eax"
 );
 // LINE 453:
 	asm( 
 "	      0048bff0    jmp near ptr 0048BFF5h"
-"	      0048bff5    mov eax,[ebp-0Ch]"
-"	      0048bff8    mov ecx,[ebp+0Ch]"
+"	      0048bff5    mov eax,nTempCommand"
+"	      0048bff8    mov ecx,commandSystem"
 "	      0048bffb    xor edx,edx"
 "	      0048bffd    mov dl,[ecx+eax*2+1]"
 "	      0048c001    test edx,edx"
@@ -1668,14 +1668,14 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 );
 // LINE 456:
 	asm( 
-"	      0048c009    mov eax,[ebp+14h]"
+"	      0048c009    mov eax,bPushCommand"
 "	      0048c00c    mov dword ptr [eax],1"
 );
 // LINE 458:
 	asm( 
 "	      0048c012    jmp near ptr 0048C017h"
-"	      0048c017    mov eax,[ebp-0Ch]"
-"	      0048c01a    mov ecx,[ebp+0Ch]"
+"	      0048c017    mov eax,nTempCommand"
+"	      0048c01a    mov ecx,commandSystem"
 "	      0048c01d    xor edx,edx"
 "	      0048c01f    mov dl,[ecx+eax*2]"
 "	      0048c022    test edx,edx"
@@ -1683,21 +1683,21 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 );
 // LINE 461:
 	asm( 
-"	      0048c02a    mov eax,[ebp-0Ch]"
-"	      0048c02d    mov ecx,[ebp+0Ch]"
+"	      0048c02a    mov eax,nTempCommand"
+"	      0048c02d    mov ecx,commandSystem"
 "	      0048c030    xor edx,edx"
 "	      0048c032    mov dl,[ecx+eax*2]"
 "	      0048c035    or dl,1"
-"	      0048c038    mov eax,[ebp-0Ch]"
-"	      0048c03b    mov ecx,[ebp+0Ch]"
+"	      0048c038    mov eax,nTempCommand"
+"	      0048c03b    mov ecx,commandSystem"
 "	      0048c03e    mov [ecx+eax*2],dl"
 "	      0048c041    jmp near ptr 0048C046h"
 );
 // LINE 462:
 	asm( 
-"	      0048c046    mov eax,[ebp-0Ch]"
+"	      0048c046    mov eax,nTempCommand"
 "	      0048c049    push eax"
-"	      0048c04a    mov ecx,[ebp+0Ch]"
+"	      0048c04a    mov ecx,commandSystem"
 "	      0048c04d    add ecx,0C8h"
 "	      0048c053    call 0043D4EBh"
 );
@@ -1726,11 +1726,11 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 "	      0048c06a    push ebx"
 "	      0048c06b    push esi"
 "	      0048c06c    push edi"
-"	      0048c06d    mov [ebp-18h],ecx"
+"	      0048c06d    mov this,ecx"
 );
 // LINE 483:
 	asm( 
-"	      0048c070    mov eax,[ebp+8]"
+"	      0048c070    mov eax,lKey"
 "	      0048c073    push eax"
 "	      0048c074    mov ecx,5C34F0h"
 "	      0048c079    call 00431E63h"
@@ -1741,15 +1741,15 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 // Block start:
 	class CharData* currentCharData;
 	asm( 
-"	      0048c086    mov eax,[ebp+0Ch]"
+"	      0048c086    mov eax,commandSystem"
 "	      0048c089    mov eax,[eax+0CCh]"
-"	      0048c08f    mov [ebp-10h],eax"
+"	      0048c08f    mov currentCharData,eax"
 );
 // LINE 490:
 	asm( 
-"	      0048c092    cmp dword ptr [ebp-10h],0"
+"	      0048c092    cmp currentCharData,0"
 "	      0048c096    je near ptr 0048C0D0h"
-"	      0048c09c    mov eax,[ebp-10h]"
+"	      0048c09c    mov eax,currentCharData"
 "	      0048c09f    xor ecx,ecx"
 "	      0048c0a1    mov cl,[eax]"
 "	      0048c0a3    mov [ebp-14h],ecx"
@@ -1757,20 +1757,20 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 // LINE 491:
 	asm( 
 "	      0048c0a6    mov eax,[ebp-14h]"
-"	      0048c0a9    mov ecx,[ebp+0Ch]"
+"	      0048c0a9    mov ecx,commandSystem"
 "	      0048c0ac    xor edx,edx"
 "	      0048c0ae    mov dl,[ecx+eax*2]"
 "	      0048c0b1    and dl,0FEh"
 "	      0048c0b4    mov eax,[ebp-14h]"
-"	      0048c0b7    mov ecx,[ebp+0Ch]"
+"	      0048c0b7    mov ecx,commandSystem"
 "	      0048c0ba    mov [ecx+eax*2],dl"
 "	      0048c0bd    jmp near ptr 0048C0C2h"
 );
 // LINE 492:
 	asm( 
-"	      0048c0c2    mov eax,[ebp-10h]"
+"	      0048c0c2    mov eax,currentCharData"
 "	      0048c0c5    mov eax,[eax+5]"
-"	      0048c0c8    mov [ebp-10h],eax"
+"	      0048c0c8    mov currentCharData,eax"
 );
 // LINE 493:
 	asm( 
@@ -1778,53 +1778,53 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 );
 // LINE 494:
 	asm( 
-"	      0048c0d0    mov ecx,[ebp+0Ch]"
+"	      0048c0d0    mov ecx,commandSystem"
 "	      0048c0d3    add ecx,0C8h"
 "	      0048c0d9    call 0043D703h"
 );
 // LINE 496:
 	asm( 
 "	      0048c0de    mov eax,ds:[5C34F4h]"
-"	      0048c0e3    mov [ebp-10h],eax"
+"	      0048c0e3    mov currentCharData,eax"
 );
 // LINE 497:
 	asm( 
-"	      0048c0e6    cmp dword ptr [ebp-10h],0"
+"	      0048c0e6    cmp currentCharData,0"
 "	      0048c0ea    je near ptr 0048C188h"
 );
 // LINE 498:
 	asm( 
 "	      0048c0f0    mov ecx,5C34F0h"
 "	      0048c0f5    call 00431EB1h"
-"	      0048c0fa    mov [ebp-4],al"
+"	      0048c0fa    mov chTempModifierState,al"
 );
 // LINE 500:
 	asm( 
-"	      0048c0fd    movsx eax,byte ptr [ebp-4]"
+"	      0048c0fd    movsx eax,chTempModifierState"
 "	      0048c101    and eax,7"
 "	      0048c104    shl eax,8"
-"	      0048c107    mov ecx,[ebp-10h]"
+"	      0048c107    mov ecx,currentCharData"
 "	      0048c10a    xor edx,edx"
 "	      0048c10c    mov dl,[ecx]"
 "	      0048c10e    add eax,edx"
-"	      0048c110    mov [ebp-8],eax"
+"	      0048c110    mov nTempIndex,eax"
 "	      0048c113    jmp near ptr 0048C118h"
 );
 // LINE 501:
 	asm( 
-"	      0048c118    mov eax,[ebp-8]"
-"	      0048c11b    mov ecx,[ebp+0Ch]"
+"	      0048c118    mov eax,nTempIndex"
+"	      0048c11b    mov ecx,commandSystem"
 "	      0048c11e    xor edx,edx"
 "	      0048c120    mov dl,[eax+ecx+0E0h]"
-"	      0048c127    mov [ebp-0Ch],edx"
+"	      0048c127    mov nTempCommand,edx"
 );
 // LINE 504:
 	asm( 
-"	      0048c12a    cmp dword ptr [ebp-0Ch],0"
+"	      0048c12a    cmp nTempCommand,0"
 "	      0048c12e    je near ptr 0048C17Ah"
 "	      0048c134    jmp near ptr 0048C139h"
-"	      0048c139    mov eax,[ebp-0Ch]"
-"	      0048c13c    mov ecx,[ebp+0Ch]"
+"	      0048c139    mov eax,nTempCommand"
+"	      0048c13c    mov ecx,commandSystem"
 "	      0048c13f    xor edx,edx"
 "	      0048c141    mov dl,[ecx+eax*2]"
 "	      0048c144    test edx,edx"
@@ -1832,29 +1832,29 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 );
 // LINE 505:
 	asm( 
-"	      0048c14c    mov eax,[ebp-0Ch]"
-"	      0048c14f    mov ecx,[ebp+0Ch]"
+"	      0048c14c    mov eax,nTempCommand"
+"	      0048c14f    mov ecx,commandSystem"
 "	      0048c152    xor edx,edx"
 "	      0048c154    mov dl,[ecx+eax*2]"
 "	      0048c157    or dl,1"
-"	      0048c15a    mov eax,[ebp-0Ch]"
-"	      0048c15d    mov ecx,[ebp+0Ch]"
+"	      0048c15a    mov eax,nTempCommand"
+"	      0048c15d    mov ecx,commandSystem"
 "	      0048c160    mov [ecx+eax*2],dl"
 "	      0048c163    jmp near ptr 0048C168h"
 );
 // LINE 506:
 	asm( 
-"	      0048c168    mov eax,[ebp-0Ch]"
+"	      0048c168    mov eax,nTempCommand"
 "	      0048c16b    push eax"
-"	      0048c16c    mov ecx,[ebp+0Ch]"
+"	      0048c16c    mov ecx,commandSystem"
 "	      0048c16f    add ecx,0C8h"
 "	      0048c175    call 0043D4EBh"
 );
 // LINE 508:
 	asm( 
-"	      0048c17a    mov eax,[ebp-10h]"
+"	      0048c17a    mov eax,currentCharData"
 "	      0048c17d    mov eax,[eax+5]"
-"	      0048c180    mov [ebp-10h],eax"
+"	      0048c180    mov currentCharData,eax"
 );
 // LINE 509:
 	asm( 
@@ -1869,30 +1869,30 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 	asm( 
 "	      0048c18d    mov ecx,5C34F0h"
 "	      0048c192    call 00431EB1h"
-"	      0048c197    mov [ebp-4],al"
+"	      0048c197    mov chTempModifierState,al"
 );
 // LINE 513:
 	asm( 
-"	      0048c19a    movsx eax,byte ptr [ebp-4]"
+"	      0048c19a    movsx eax,chTempModifierState"
 "	      0048c19e    and eax,7"
 "	      0048c1a1    shl eax,8"
-"	      0048c1a4    add eax,[ebp+8]"
-"	      0048c1a7    mov [ebp-8],eax"
+"	      0048c1a4    add eax,lKey"
+"	      0048c1a7    mov nTempIndex,eax"
 "	      0048c1aa    jmp near ptr 0048C1AFh"
 );
 // LINE 514:
 	asm( 
-"	      0048c1af    mov eax,[ebp-8]"
-"	      0048c1b2    mov ecx,[ebp+0Ch]"
+"	      0048c1af    mov eax,nTempIndex"
+"	      0048c1b2    mov ecx,commandSystem"
 "	      0048c1b5    xor edx,edx"
 "	      0048c1b7    mov dl,[eax+ecx+0E0h]"
-"	      0048c1be    mov [ebp-0Ch],edx"
+"	      0048c1be    mov nTempCommand,edx"
 );
 // LINE 515:
 	asm( 
 "	      0048c1c1    jmp near ptr 0048C1C6h"
-"	      0048c1c6    mov eax,[ebp-0Ch]"
-"	      0048c1c9    mov ecx,[ebp+0Ch]"
+"	      0048c1c6    mov eax,nTempCommand"
+"	      0048c1c9    mov ecx,commandSystem"
 "	      0048c1cc    xor edx,edx"
 "	      0048c1ce    mov dl,[ecx+eax*2]"
 "	      0048c1d1    test edx,edx"
@@ -1900,21 +1900,21 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 );
 // LINE 516:
 	asm( 
-"	      0048c1d9    mov eax,[ebp-0Ch]"
-"	      0048c1dc    mov ecx,[ebp+0Ch]"
+"	      0048c1d9    mov eax,nTempCommand"
+"	      0048c1dc    mov ecx,commandSystem"
 "	      0048c1df    xor edx,edx"
 "	      0048c1e1    mov dl,[ecx+eax*2]"
 "	      0048c1e4    and dl,0FEh"
-"	      0048c1e7    mov eax,[ebp-0Ch]"
-"	      0048c1ea    mov ecx,[ebp+0Ch]"
+"	      0048c1e7    mov eax,nTempCommand"
+"	      0048c1ea    mov ecx,commandSystem"
 "	      0048c1ed    mov [ecx+eax*2],dl"
 "	      0048c1f0    jmp near ptr 0048C1F5h"
 );
 // LINE 517:
 	asm( 
-"	      0048c1f5    mov eax,[ebp-0Ch]"
+"	      0048c1f5    mov eax,nTempCommand"
 "	      0048c1f8    push eax"
-"	      0048c1f9    mov ecx,[ebp+0Ch]"
+"	      0048c1f9    mov ecx,commandSystem"
 "	      0048c1fc    add ecx,0C8h"
 "	      0048c202    call 0043D67Fh"
 );
@@ -1939,11 +1939,11 @@ void CGameCommander::ProcessSystemCloseRequest() {
 "	      0048c219    push ebx"
 "	      0048c21a    push esi"
 "	      0048c21b    push edi"
-"	      0048c21c    mov [ebp-4],ecx"
+"	      0048c21c    mov this,ecx"
 );
 // LINE 528:
 	asm( 
-"	      0048c21f    mov eax,[ebp-4]"
+"	      0048c21f    mov eax,this"
 "	      0048c222    mov ecx,[eax+8]"
 "	      0048c225    call 00464D1Ah"
 );
@@ -1976,8 +1976,8 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 553:
 	asm( 
 "	      0048c240    mov al,ds:[599D94h]"
-"	      0048c245    mov [ebp-104h],al"
-"	      0048c24b    lea edi,[ebp-103h]"
+"	      0048c245    mov szFilePath[0],al"
+"	      0048c24b    lea edi,szFilePath[1]"
 "	      0048c251    xor eax,eax"
 "	      0048c253    mov ecx,40h"
 "	      0048c258    rep stosd"
@@ -1986,7 +1986,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 556:
 	asm( 
-"	      0048c25d    lea eax,[ebp-104h]"
+"	      0048c25d    lea eax,szFilePath[0]"
 "	      0048c263    push eax"
 "	      0048c264    mov eax,ds:[599D84h]"
 "	      0048c269    push eax"
@@ -1997,49 +1997,49 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 557:
 	asm( 
-"	      0048c276    lea eax,[ebp-104h]"
+"	      0048c276    lea eax,szFilePath[0]"
 "	      0048c27c    push eax"
-"	      0048c27d    lea ecx,[ebp-264h]"
+"	      0048c27d    lea ecx,myMIFF.<vftable>"
 "	      0048c283    call 004AB6F5h"
 );
 // LINE 558:
 	asm( 
-"	      0048c288    lea ecx,[ebp-264h]"
+"	      0048c288    lea ecx,myMIFF.<vftable>"
 "	      0048c28e    call 004AB878h"
 "	      0048c293    test eax,eax"
 "	      0048c295    je near ptr 0048C6CCh"
 );
 // LINE 561:
 	asm( 
-"	      0048c29b    lea ecx,[ebp-264h]"
+"	      0048c29b    lea ecx,myMIFF.<vftable>"
 "	      0048c2a1    call 004ABB95h"
 "	      0048c2a6    test eax,eax"
 "	      0048c2a8    je near ptr 0048C6A1h"
-"	      0048c2ae    lea ecx,[ebp-264h]"
+"	      0048c2ae    lea ecx,myMIFF.<vftable>"
 "	      0048c2b4    call 004ABCBAh"
 "	      0048c2b9    cmp eax,53435554h"
 "	      0048c2be    jne near ptr 0048C6A1h"
-"	      0048c2c4    lea ecx,[ebp-264h]"
+"	      0048c2c4    lea ecx,myMIFF.<vftable>"
 "	      0048c2ca    call 004ABD6Eh"
 "	      0048c2cf    cmp eax,53435554h"
 "	      0048c2d4    jne near ptr 0048C6A1h"
 );
 // LINE 563:
 	asm( 
-"	      0048c2da    lea ecx,[ebp-264h]"
+"	      0048c2da    lea ecx,myMIFF.<vftable>"
 "	      0048c2e0    call 004AC0B4h"
 );
 // LINE 565:
 	asm( 
 "	      0048c2e5    push 18h"
-"	      0048c2e7    lea eax,[ebp-11Ch]"
+"	      0048c2e7    lea eax,tempShortcut.lDeviceID"
 "	      0048c2ed    push eax"
-"	      0048c2ee    lea ecx,[ebp-264h]"
+"	      0048c2ee    lea ecx,myMIFF.<vftable>"
 "	      0048c2f4    call 004AC544h"
 );
 // LINE 566:
 	asm( 
-"	      0048c2f9    lea eax,[ebp-11Ch]"
+"	      0048c2f9    lea eax,tempShortcut.lDeviceID"
 "	      0048c2ff    push eax"
 "	      0048c300    call 0048E515h"
 "	      0048c305    add esp,4"
@@ -2048,7 +2048,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 567:
 	asm( 
-"	      0048c310    mov eax,[ebp+8]"
+"	      0048c310    mov eax,shortcutList"
 "	      0048c313    mov eax,[eax]"
 "	      0048c315    mov [ebp-278h],eax"
 "	      0048c31b    mov eax,[ebp-278h]"
@@ -2199,7 +2199,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c5fe    jmp near ptr 0048C603h"
 "	      0048c603    cmp dword ptr [ebp-280h],0"
 "	      0048c60a    je near ptr 0048C628h"
-"	      0048c610    lea esi,[ebp-11Ch]"
+"	      0048c610    lea esi,tempShortcut.lDeviceID"
 "	      0048c616    mov edi,[ebp-280h]"
 "	      0048c61c    mov ecx,6"
 "	      0048c621    rep movsd"
@@ -2219,7 +2219,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c65e    mov eax,[ebp-27Ch]"
 "	      0048c664    mov ecx,[ebp-2D4h]"
 "	      0048c66a    mov [ecx+4],eax"
-"	      0048c66d    mov eax,[ebp+8]"
+"	      0048c66d    mov eax,shortcutList"
 "	      0048c670    inc dword ptr [eax+4]"
 "	      0048c673    mov eax,[ebp-27Ch]"
 "	      0048c679    mov [ebp-274h],eax"
@@ -2229,20 +2229,20 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 573:
 	asm( 
-"	      0048c68e    lea ecx,[ebp-264h]"
+"	      0048c68e    lea ecx,myMIFF.<vftable>"
 "	      0048c694    call 004AC14Fh"
 "	      0048c699    test eax,eax"
 "	      0048c69b    jne near ptr 0048C2E5h"
 );
 // LINE 575:
 	asm( 
-"	      0048c6a1    lea ecx,[ebp-264h]"
+"	      0048c6a1    lea ecx,myMIFF.<vftable>"
 "	      0048c6a7    call 004ABB47h"
 );
 // LINE 576:
 	asm( 
 "	      0048c6ac    mov dword ptr [ebp-268h],1"
-"	      0048c6b6    lea ecx,[ebp-264h]"
+"	      0048c6b6    lea ecx,myMIFF.<vftable>"
 "	      0048c6bc    call 004AB7CFh"
 "	      0048c6c1    mov eax,[ebp-268h]"
 "	      0048c6c7    jmp near ptr 0048C6ECh"
@@ -2250,7 +2250,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 578:
 	asm( 
 "	      0048c6cc    mov dword ptr [ebp-26Ch],0"
-"	      0048c6d6    lea ecx,[ebp-264h]"
+"	      0048c6d6    lea ecx,myMIFF.<vftable>"
 "	      0048c6dc    call 004AB7CFh"
 "	      0048c6e1    mov eax,[ebp-26Ch]"
 "	      0048c6e7    jmp near ptr 0048C6ECh"
@@ -2284,8 +2284,8 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 587:
 	asm( 
 "	      0048c6fd    mov al,ds:[599D98h]"
-"	      0048c702    mov [ebp-104h],al"
-"	      0048c708    lea edi,[ebp-103h]"
+"	      0048c702    mov szFilePath[0],al"
+"	      0048c708    lea edi,szFilePath[1]"
 "	      0048c70e    xor eax,eax"
 "	      0048c710    mov ecx,40h"
 "	      0048c715    rep stosd"
@@ -2294,11 +2294,11 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 589:
 	asm( 
-"	      0048c71a    mov dword ptr [ebp-268h],0"
+"	      0048c71a    mov nReturnValue,0"
 );
 // LINE 591:
 	asm( 
-"	      0048c724    lea eax,[ebp-104h]"
+"	      0048c724    lea eax,szFilePath[0]"
 "	      0048c72a    push eax"
 "	      0048c72b    mov eax,ds:[599D84h]"
 "	      0048c730    push eax"
@@ -2309,9 +2309,9 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 592:
 	asm( 
-"	      0048c73d    lea eax,[ebp-104h]"
+"	      0048c73d    lea eax,szFilePath[0]"
 "	      0048c743    push eax"
-"	      0048c744    lea ecx,[ebp-264h]"
+"	      0048c744    lea ecx,myMIFF.<vftable>"
 "	      0048c74a    call 004AB6F5h"
 );
 // LINE 593:
@@ -2319,7 +2319,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c74f    push 1"
 "	      0048c751    push 53435554h"
 "	      0048c756    push 53435554h"
-"	      0048c75b    lea ecx,[ebp-264h]"
+"	      0048c75b    lea ecx,myMIFF.<vftable>"
 "	      0048c761    call 004AB937h"
 "	      0048c766    test eax,eax"
 "	      0048c768    je near ptr 0048C898h"
@@ -2328,18 +2328,18 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // Block start:
 	class list<Shortcut>::iterator tempShortcutListIterator;
 	asm( 
-"	      0048c76e    mov eax,[ebp+8]"
+"	      0048c76e    mov eax,shortcutList"
 "	      0048c771    mov eax,[eax]"
 "	      0048c773    mov eax,[eax]"
 "	      0048c775    mov [ebp-28Ch],eax"
 "	      0048c77b    mov eax,[ebp-28Ch]"
-"	      0048c781    mov [ebp-26Ch],eax"
+"	      0048c781    mov tempShortcutListIterator.node,eax"
 "	      0048c787    jmp near ptr 0048C78Ch"
 "	      0048c78c    jmp near ptr 0048C791h"
 );
 // LINE 595:
 	asm( 
-"	      0048c791    mov eax,[ebp+8]"
+"	      0048c791    mov eax,shortcutList"
 "	      0048c794    mov eax,[eax]"
 "	      0048c796    mov [ebp-280h],eax"
 "	      0048c79c    mov eax,[ebp-280h]"
@@ -2347,7 +2347,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c7a8    jmp near ptr 0048C7ADh"
 "	      0048c7ad    jmp near ptr 0048C7B2h"
 "	      0048c7b2    mov eax,[ebp-270h]"
-"	      0048c7b8    cmp [ebp-26Ch],eax"
+"	      0048c7b8    cmp tempShortcutListIterator.node,eax"
 "	      0048c7be    jne near ptr 0048C7CEh"
 "	      0048c7c4    jmp near ptr 0048C7E5h"
 "	      0048c7c9    jmp near ptr 0048C7CEh"
@@ -2363,8 +2363,8 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 596:
 	asm( 
 "	      0048c7fc    jmp near ptr 0048C801h"
-"	      0048c801    mov esi,[ebp-26Ch]"
-"	      0048c807    lea edi,[ebp-11Ch]"
+"	      0048c801    mov esi,tempShortcutListIterator.node"
+"	      0048c807    lea edi,tempShortcut.lDeviceID"
 "	      0048c80d    add esi,8"
 "	      0048c810    mov ecx,6"
 "	      0048c815    rep movsd"
@@ -2372,19 +2372,19 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 597:
 	asm( 
 "	      0048c817    push 18h"
-"	      0048c819    lea eax,[ebp-11Ch]"
+"	      0048c819    lea eax,tempShortcut.lDeviceID"
 "	      0048c81f    push eax"
 "	      0048c820    push 0"
-"	      0048c822    lea ecx,[ebp-264h]"
+"	      0048c822    lea ecx,myMIFF.<vftable>"
 "	      0048c828    call 004AC811h"
 );
 // LINE 598:
 	asm( 
-"	      0048c82d    mov eax,[ebp-26Ch]"
+"	      0048c82d    mov eax,tempShortcutListIterator.node"
 "	      0048c833    mov [ebp-290h],eax"
-"	      0048c839    mov eax,[ebp-26Ch]"
+"	      0048c839    mov eax,tempShortcutListIterator.node"
 "	      0048c83f    mov eax,[eax]"
-"	      0048c841    mov [ebp-26Ch],eax"
+"	      0048c841    mov tempShortcutListIterator.node,eax"
 "	      0048c847    jmp near ptr 0048C84Ch"
 "	      0048c84c    mov eax,[ebp-290h]"
 "	      0048c852    mov [ebp-274h],eax"
@@ -2396,18 +2396,18 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 );
 // LINE 600:
 	asm( 
-"	      0048c862    lea ecx,[ebp-264h]"
+"	      0048c862    lea ecx,myMIFF.<vftable>"
 "	      0048c868    call 004AC8FBh"
 );
 // LINE 601:
 	asm( 
-"	      0048c86d    lea ecx,[ebp-264h]"
+"	      0048c86d    lea ecx,myMIFF.<vftable>"
 "	      0048c873    call 004ABB47h"
 );
 // LINE 602:
 	asm( 
 "	      0048c878    mov dword ptr [ebp-278h],1"
-"	      0048c882    lea ecx,[ebp-264h]"
+"	      0048c882    lea ecx,myMIFF.<vftable>"
 "	      0048c888    call 004AB7CFh"
 "	      0048c88d    mov eax,[ebp-278h]"
 "	      0048c893    jmp near ptr 0048C8B8h"
@@ -2416,7 +2416,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // Block end:
 	asm( 
 "	      0048c898    mov dword ptr [ebp-27Ch],0"
-"	      0048c8a2    lea ecx,[ebp-264h]"
+"	      0048c8a2    lea ecx,myMIFF.<vftable>"
 "	      0048c8a8    call 004AB7CFh"
 "	      0048c8ad    mov eax,[ebp-27Ch]"
 "	      0048c8b3    jmp near ptr 0048C8B8h"
@@ -2447,832 +2447,832 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 616:
 	asm( 
-"	      0048c8c9    mov dword ptr [ebp-18h],0"
+"	      0048c8c9    mov tempShortcut.lDeviceID,0"
 );
 // LINE 618:
 	asm( 
-"	      0048c8d0    mov dword ptr [ebp-14h],2"
+"	      0048c8d0    mov tempShortcut.lCommand,2"
 );
 // LINE 619:
 	asm( 
-"	      0048c8d7    mov dword ptr [ebp-10h],4Dh"
+"	      0048c8d7    mov tempShortcut.lKey,4Dh"
 );
 // LINE 620:
 	asm( 
-"	      0048c8de    mov dword ptr [ebp-0Ch],0"
+"	      0048c8de    mov tempShortcut.lModifiers,0"
 );
 // LINE 622:
 	asm( 
-"	      0048c8e5    lea eax,[ebp-4]"
+"	      0048c8e5    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048c8e8    push eax"
-"	      0048c8e9    lea eax,[ebp-8]"
+"	      0048c8e9    lea eax,tempShortcut.lPush"
 "	      0048c8ec    push eax"
-"	      0048c8ed    mov eax,[ebp-14h]"
+"	      0048c8ed    mov eax,tempShortcut.lCommand"
 "	      0048c8f0    push eax"
 "	      0048c8f1    call 0048E3B4h"
 "	      0048c8f6    add esp,0Ch"
 );
 // LINE 623:
 	asm( 
-"	      0048c8f9    mov eax,[ebp+8]"
+"	      0048c8f9    mov eax,shortcutList"
 "	      0048c8fc    mov eax,[eax]"
 "	      0048c8fe    mov [ebp-28h],eax"
 "	      0048c901    mov eax,[ebp-28h]"
 "	      0048c904    mov [ebp-20h],eax"
 "	      0048c907    jmp near ptr 0048C90Ch"
 "	      0048c90c    jmp near ptr 0048C911h"
-"	      0048c911    lea eax,[ebp-18h]"
+"	      0048c911    lea eax,tempShortcut.lDeviceID"
 "	      0048c914    push eax"
 "	      0048c915    mov eax,[ebp-20h]"
 "	      0048c918    push eax"
 "	      0048c919    lea eax,[ebp-24h]"
 "	      0048c91c    push eax"
-"	      0048c91d    mov ecx,[ebp+8]"
+"	      0048c91d    mov ecx,shortcutList"
 "	      0048c920    call 0048E910h"
 "	      0048c925    jmp near ptr 0048C92Ah"
 );
 // LINE 625:
 	asm( 
-"	      0048c92a    mov dword ptr [ebp-14h],3"
+"	      0048c92a    mov tempShortcut.lCommand,3"
 );
 // LINE 626:
 	asm( 
-"	      0048c931    mov dword ptr [ebp-10h],45h"
+"	      0048c931    mov tempShortcut.lKey,45h"
 );
 // LINE 627:
 	asm( 
-"	      0048c938    mov dword ptr [ebp-0Ch],0"
+"	      0048c938    mov tempShortcut.lModifiers,0"
 );
 // LINE 629:
 	asm( 
-"	      0048c93f    lea eax,[ebp-4]"
+"	      0048c93f    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048c942    push eax"
-"	      0048c943    lea eax,[ebp-8]"
+"	      0048c943    lea eax,tempShortcut.lPush"
 "	      0048c946    push eax"
-"	      0048c947    mov eax,[ebp-14h]"
+"	      0048c947    mov eax,tempShortcut.lCommand"
 "	      0048c94a    push eax"
 "	      0048c94b    call 0048E3B4h"
 "	      0048c950    add esp,0Ch"
 );
 // LINE 630:
 	asm( 
-"	      0048c953    mov eax,[ebp+8]"
+"	      0048c953    mov eax,shortcutList"
 "	      0048c956    mov eax,[eax]"
 "	      0048c958    mov [ebp-34h],eax"
 "	      0048c95b    mov eax,[ebp-34h]"
 "	      0048c95e    mov [ebp-2Ch],eax"
 "	      0048c961    jmp near ptr 0048C966h"
 "	      0048c966    jmp near ptr 0048C96Bh"
-"	      0048c96b    lea eax,[ebp-18h]"
+"	      0048c96b    lea eax,tempShortcut.lDeviceID"
 "	      0048c96e    push eax"
 "	      0048c96f    mov eax,[ebp-2Ch]"
 "	      0048c972    push eax"
 "	      0048c973    lea eax,[ebp-30h]"
 "	      0048c976    push eax"
-"	      0048c977    mov ecx,[ebp+8]"
+"	      0048c977    mov ecx,shortcutList"
 "	      0048c97a    call 0048E910h"
 "	      0048c97f    jmp near ptr 0048C984h"
 );
 // LINE 632:
 	asm( 
-"	      0048c984    mov dword ptr [ebp-14h],1Bh"
+"	      0048c984    mov tempShortcut.lCommand,1Bh"
 );
 // LINE 633:
 	asm( 
-"	      0048c98b    mov dword ptr [ebp-10h],49h"
+"	      0048c98b    mov tempShortcut.lKey,49h"
 );
 // LINE 634:
 	asm( 
-"	      0048c992    mov dword ptr [ebp-0Ch],0"
+"	      0048c992    mov tempShortcut.lModifiers,0"
 );
 // LINE 636:
 	asm( 
-"	      0048c999    lea eax,[ebp-4]"
+"	      0048c999    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048c99c    push eax"
-"	      0048c99d    lea eax,[ebp-8]"
+"	      0048c99d    lea eax,tempShortcut.lPush"
 "	      0048c9a0    push eax"
-"	      0048c9a1    mov eax,[ebp-14h]"
+"	      0048c9a1    mov eax,tempShortcut.lCommand"
 "	      0048c9a4    push eax"
 "	      0048c9a5    call 0048E3B4h"
 "	      0048c9aa    add esp,0Ch"
 );
 // LINE 637:
 	asm( 
-"	      0048c9ad    mov eax,[ebp+8]"
+"	      0048c9ad    mov eax,shortcutList"
 "	      0048c9b0    mov eax,[eax]"
 "	      0048c9b2    mov [ebp-40h],eax"
 "	      0048c9b5    mov eax,[ebp-40h]"
 "	      0048c9b8    mov [ebp-38h],eax"
 "	      0048c9bb    jmp near ptr 0048C9C0h"
 "	      0048c9c0    jmp near ptr 0048C9C5h"
-"	      0048c9c5    lea eax,[ebp-18h]"
+"	      0048c9c5    lea eax,tempShortcut.lDeviceID"
 "	      0048c9c8    push eax"
 "	      0048c9c9    mov eax,[ebp-38h]"
 "	      0048c9cc    push eax"
 "	      0048c9cd    lea eax,[ebp-3Ch]"
 "	      0048c9d0    push eax"
-"	      0048c9d1    mov ecx,[ebp+8]"
+"	      0048c9d1    mov ecx,shortcutList"
 "	      0048c9d4    call 0048E910h"
 "	      0048c9d9    jmp near ptr 0048C9DEh"
 );
 // LINE 639:
 	asm( 
-"	      0048c9de    mov dword ptr [ebp-14h],1Ch"
+"	      0048c9de    mov tempShortcut.lCommand,1Ch"
 );
 // LINE 640:
 	asm( 
-"	      0048c9e5    mov dword ptr [ebp-10h],4Bh"
+"	      0048c9e5    mov tempShortcut.lKey,4Bh"
 );
 // LINE 641:
 	asm( 
-"	      0048c9ec    mov dword ptr [ebp-0Ch],0"
+"	      0048c9ec    mov tempShortcut.lModifiers,0"
 );
 // LINE 643:
 	asm( 
-"	      0048c9f3    lea eax,[ebp-4]"
+"	      0048c9f3    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048c9f6    push eax"
-"	      0048c9f7    lea eax,[ebp-8]"
+"	      0048c9f7    lea eax,tempShortcut.lPush"
 "	      0048c9fa    push eax"
-"	      0048c9fb    mov eax,[ebp-14h]"
+"	      0048c9fb    mov eax,tempShortcut.lCommand"
 "	      0048c9fe    push eax"
 "	      0048c9ff    call 0048E3B4h"
 "	      0048ca04    add esp,0Ch"
 );
 // LINE 644:
 	asm( 
-"	      0048ca07    mov eax,[ebp+8]"
+"	      0048ca07    mov eax,shortcutList"
 "	      0048ca0a    mov eax,[eax]"
 "	      0048ca0c    mov [ebp-4Ch],eax"
 "	      0048ca0f    mov eax,[ebp-4Ch]"
 "	      0048ca12    mov [ebp-44h],eax"
 "	      0048ca15    jmp near ptr 0048CA1Ah"
 "	      0048ca1a    jmp near ptr 0048CA1Fh"
-"	      0048ca1f    lea eax,[ebp-18h]"
+"	      0048ca1f    lea eax,tempShortcut.lDeviceID"
 "	      0048ca22    push eax"
 "	      0048ca23    mov eax,[ebp-44h]"
 "	      0048ca26    push eax"
 "	      0048ca27    lea eax,[ebp-48h]"
 "	      0048ca2a    push eax"
-"	      0048ca2b    mov ecx,[ebp+8]"
+"	      0048ca2b    mov ecx,shortcutList"
 "	      0048ca2e    call 0048E910h"
 "	      0048ca33    jmp near ptr 0048CA38h"
 );
 // LINE 646:
 	asm( 
-"	      0048ca38    mov dword ptr [ebp-14h],1Dh"
+"	      0048ca38    mov tempShortcut.lCommand,1Dh"
 );
 // LINE 647:
 	asm( 
-"	      0048ca3f    mov dword ptr [ebp-10h],4Ah"
+"	      0048ca3f    mov tempShortcut.lKey,4Ah"
 );
 // LINE 648:
 	asm( 
-"	      0048ca46    mov dword ptr [ebp-0Ch],0"
+"	      0048ca46    mov tempShortcut.lModifiers,0"
 );
 // LINE 650:
 	asm( 
-"	      0048ca4d    lea eax,[ebp-4]"
+"	      0048ca4d    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048ca50    push eax"
-"	      0048ca51    lea eax,[ebp-8]"
+"	      0048ca51    lea eax,tempShortcut.lPush"
 "	      0048ca54    push eax"
-"	      0048ca55    mov eax,[ebp-14h]"
+"	      0048ca55    mov eax,tempShortcut.lCommand"
 "	      0048ca58    push eax"
 "	      0048ca59    call 0048E3B4h"
 "	      0048ca5e    add esp,0Ch"
 );
 // LINE 651:
 	asm( 
-"	      0048ca61    mov eax,[ebp+8]"
+"	      0048ca61    mov eax,shortcutList"
 "	      0048ca64    mov eax,[eax]"
 "	      0048ca66    mov [ebp-58h],eax"
 "	      0048ca69    mov eax,[ebp-58h]"
 "	      0048ca6c    mov [ebp-50h],eax"
 "	      0048ca6f    jmp near ptr 0048CA74h"
 "	      0048ca74    jmp near ptr 0048CA79h"
-"	      0048ca79    lea eax,[ebp-18h]"
+"	      0048ca79    lea eax,tempShortcut.lDeviceID"
 "	      0048ca7c    push eax"
 "	      0048ca7d    mov eax,[ebp-50h]"
 "	      0048ca80    push eax"
 "	      0048ca81    lea eax,[ebp-54h]"
 "	      0048ca84    push eax"
-"	      0048ca85    mov ecx,[ebp+8]"
+"	      0048ca85    mov ecx,shortcutList"
 "	      0048ca88    call 0048E910h"
 "	      0048ca8d    jmp near ptr 0048CA92h"
 );
 // LINE 653:
 	asm( 
-"	      0048ca92    mov dword ptr [ebp-14h],1Eh"
+"	      0048ca92    mov tempShortcut.lCommand,1Eh"
 );
 // LINE 654:
 	asm( 
-"	      0048ca99    mov dword ptr [ebp-10h],4Ch"
+"	      0048ca99    mov tempShortcut.lKey,4Ch"
 );
 // LINE 655:
 	asm( 
-"	      0048caa0    mov dword ptr [ebp-0Ch],0"
+"	      0048caa0    mov tempShortcut.lModifiers,0"
 );
 // LINE 657:
 	asm( 
-"	      0048caa7    lea eax,[ebp-4]"
+"	      0048caa7    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048caaa    push eax"
-"	      0048caab    lea eax,[ebp-8]"
+"	      0048caab    lea eax,tempShortcut.lPush"
 "	      0048caae    push eax"
-"	      0048caaf    mov eax,[ebp-14h]"
+"	      0048caaf    mov eax,tempShortcut.lCommand"
 "	      0048cab2    push eax"
 "	      0048cab3    call 0048E3B4h"
 "	      0048cab8    add esp,0Ch"
 );
 // LINE 658:
 	asm( 
-"	      0048cabb    mov eax,[ebp+8]"
+"	      0048cabb    mov eax,shortcutList"
 "	      0048cabe    mov eax,[eax]"
 "	      0048cac0    mov [ebp-64h],eax"
 "	      0048cac3    mov eax,[ebp-64h]"
 "	      0048cac6    mov [ebp-5Ch],eax"
 "	      0048cac9    jmp near ptr 0048CACEh"
 "	      0048cace    jmp near ptr 0048CAD3h"
-"	      0048cad3    lea eax,[ebp-18h]"
+"	      0048cad3    lea eax,tempShortcut.lDeviceID"
 "	      0048cad6    push eax"
 "	      0048cad7    mov eax,[ebp-5Ch]"
 "	      0048cada    push eax"
 "	      0048cadb    lea eax,[ebp-60h]"
 "	      0048cade    push eax"
-"	      0048cadf    mov ecx,[ebp+8]"
+"	      0048cadf    mov ecx,shortcutList"
 "	      0048cae2    call 0048E910h"
 "	      0048cae7    jmp near ptr 0048CAECh"
 );
 // LINE 660:
 	asm( 
-"	      0048caec    mov dword ptr [ebp-14h],1Fh"
+"	      0048caec    mov tempShortcut.lCommand,1Fh"
 );
 // LINE 661:
 	asm( 
-"	      0048caf3    mov dword ptr [ebp-10h],4Fh"
+"	      0048caf3    mov tempShortcut.lKey,4Fh"
 );
 // LINE 662:
 	asm( 
-"	      0048cafa    mov dword ptr [ebp-0Ch],0"
+"	      0048cafa    mov tempShortcut.lModifiers,0"
 );
 // LINE 664:
 	asm( 
-"	      0048cb01    lea eax,[ebp-4]"
+"	      0048cb01    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cb04    push eax"
-"	      0048cb05    lea eax,[ebp-8]"
+"	      0048cb05    lea eax,tempShortcut.lPush"
 "	      0048cb08    push eax"
-"	      0048cb09    mov eax,[ebp-14h]"
+"	      0048cb09    mov eax,tempShortcut.lCommand"
 "	      0048cb0c    push eax"
 "	      0048cb0d    call 0048E3B4h"
 "	      0048cb12    add esp,0Ch"
 );
 // LINE 665:
 	asm( 
-"	      0048cb15    mov eax,[ebp+8]"
+"	      0048cb15    mov eax,shortcutList"
 "	      0048cb18    mov eax,[eax]"
 "	      0048cb1a    mov [ebp-70h],eax"
 "	      0048cb1d    mov eax,[ebp-70h]"
 "	      0048cb20    mov [ebp-68h],eax"
 "	      0048cb23    jmp near ptr 0048CB28h"
 "	      0048cb28    jmp near ptr 0048CB2Dh"
-"	      0048cb2d    lea eax,[ebp-18h]"
+"	      0048cb2d    lea eax,tempShortcut.lDeviceID"
 "	      0048cb30    push eax"
 "	      0048cb31    mov eax,[ebp-68h]"
 "	      0048cb34    push eax"
 "	      0048cb35    lea eax,[ebp-6Ch]"
 "	      0048cb38    push eax"
-"	      0048cb39    mov ecx,[ebp+8]"
+"	      0048cb39    mov ecx,shortcutList"
 "	      0048cb3c    call 0048E910h"
 "	      0048cb41    jmp near ptr 0048CB46h"
 );
 // LINE 667:
 	asm( 
-"	      0048cb46    mov dword ptr [ebp-14h],20h"
+"	      0048cb46    mov tempShortcut.lCommand,20h"
 );
 // LINE 668:
 	asm( 
-"	      0048cb4d    mov dword ptr [ebp-10h],50h"
+"	      0048cb4d    mov tempShortcut.lKey,50h"
 );
 // LINE 669:
 	asm( 
-"	      0048cb54    mov dword ptr [ebp-0Ch],0"
+"	      0048cb54    mov tempShortcut.lModifiers,0"
 );
 // LINE 671:
 	asm( 
-"	      0048cb5b    lea eax,[ebp-4]"
+"	      0048cb5b    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cb5e    push eax"
-"	      0048cb5f    lea eax,[ebp-8]"
+"	      0048cb5f    lea eax,tempShortcut.lPush"
 "	      0048cb62    push eax"
-"	      0048cb63    mov eax,[ebp-14h]"
+"	      0048cb63    mov eax,tempShortcut.lCommand"
 "	      0048cb66    push eax"
 "	      0048cb67    call 0048E3B4h"
 "	      0048cb6c    add esp,0Ch"
 );
 // LINE 672:
 	asm( 
-"	      0048cb6f    mov eax,[ebp+8]"
+"	      0048cb6f    mov eax,shortcutList"
 "	      0048cb72    mov eax,[eax]"
 "	      0048cb74    mov [ebp-7Ch],eax"
 "	      0048cb77    mov eax,[ebp-7Ch]"
 "	      0048cb7a    mov [ebp-74h],eax"
 "	      0048cb7d    jmp near ptr 0048CB82h"
 "	      0048cb82    jmp near ptr 0048CB87h"
-"	      0048cb87    lea eax,[ebp-18h]"
+"	      0048cb87    lea eax,tempShortcut.lDeviceID"
 "	      0048cb8a    push eax"
 "	      0048cb8b    mov eax,[ebp-74h]"
 "	      0048cb8e    push eax"
 "	      0048cb8f    lea eax,[ebp-78h]"
 "	      0048cb92    push eax"
-"	      0048cb93    mov ecx,[ebp+8]"
+"	      0048cb93    mov ecx,shortcutList"
 "	      0048cb96    call 0048E910h"
 "	      0048cb9b    jmp near ptr 0048CBA0h"
 );
 // LINE 674:
 	asm( 
-"	      0048cba0    mov dword ptr [ebp-14h],4"
+"	      0048cba0    mov tempShortcut.lCommand,4"
 );
 // LINE 675:
 	asm( 
-"	      0048cba7    mov dword ptr [ebp-10h],4Eh"
+"	      0048cba7    mov tempShortcut.lKey,4Eh"
 );
 // LINE 676:
 	asm( 
-"	      0048cbae    mov dword ptr [ebp-0Ch],0"
+"	      0048cbae    mov tempShortcut.lModifiers,0"
 );
 // LINE 678:
 	asm( 
-"	      0048cbb5    lea eax,[ebp-4]"
+"	      0048cbb5    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cbb8    push eax"
-"	      0048cbb9    lea eax,[ebp-8]"
+"	      0048cbb9    lea eax,tempShortcut.lPush"
 "	      0048cbbc    push eax"
-"	      0048cbbd    mov eax,[ebp-14h]"
+"	      0048cbbd    mov eax,tempShortcut.lCommand"
 "	      0048cbc0    push eax"
 "	      0048cbc1    call 0048E3B4h"
 "	      0048cbc6    add esp,0Ch"
 );
 // LINE 679:
 	asm( 
-"	      0048cbc9    mov eax,[ebp+8]"
+"	      0048cbc9    mov eax,shortcutList"
 "	      0048cbcc    mov eax,[eax]"
 "	      0048cbce    mov [ebp-88h],eax"
 "	      0048cbd4    mov eax,[ebp-88h]"
 "	      0048cbda    mov [ebp-80h],eax"
 "	      0048cbdd    jmp near ptr 0048CBE2h"
 "	      0048cbe2    jmp near ptr 0048CBE7h"
-"	      0048cbe7    lea eax,[ebp-18h]"
+"	      0048cbe7    lea eax,tempShortcut.lDeviceID"
 "	      0048cbea    push eax"
 "	      0048cbeb    mov eax,[ebp-80h]"
 "	      0048cbee    push eax"
 "	      0048cbef    lea eax,[ebp-84h]"
 "	      0048cbf5    push eax"
-"	      0048cbf6    mov ecx,[ebp+8]"
+"	      0048cbf6    mov ecx,shortcutList"
 "	      0048cbf9    call 0048E910h"
 "	      0048cbfe    jmp near ptr 0048CC03h"
 );
 // LINE 681:
 	asm( 
-"	      0048cc03    mov dword ptr [ebp-14h],5"
+"	      0048cc03    mov tempShortcut.lCommand,5"
 );
 // LINE 682:
 	asm( 
-"	      0048cc0a    mov dword ptr [ebp-10h],52h"
+"	      0048cc0a    mov tempShortcut.lKey,52h"
 );
 // LINE 683:
 	asm( 
-"	      0048cc11    mov dword ptr [ebp-0Ch],0"
+"	      0048cc11    mov tempShortcut.lModifiers,0"
 );
 // LINE 685:
 	asm( 
-"	      0048cc18    lea eax,[ebp-4]"
+"	      0048cc18    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cc1b    push eax"
-"	      0048cc1c    lea eax,[ebp-8]"
+"	      0048cc1c    lea eax,tempShortcut.lPush"
 "	      0048cc1f    push eax"
-"	      0048cc20    mov eax,[ebp-14h]"
+"	      0048cc20    mov eax,tempShortcut.lCommand"
 "	      0048cc23    push eax"
 "	      0048cc24    call 0048E3B4h"
 "	      0048cc29    add esp,0Ch"
 );
 // LINE 686:
 	asm( 
-"	      0048cc2c    mov eax,[ebp+8]"
+"	      0048cc2c    mov eax,shortcutList"
 "	      0048cc2f    mov eax,[eax]"
 "	      0048cc31    mov [ebp-94h],eax"
 "	      0048cc37    mov eax,[ebp-94h]"
 "	      0048cc3d    mov [ebp-8Ch],eax"
 "	      0048cc43    jmp near ptr 0048CC48h"
 "	      0048cc48    jmp near ptr 0048CC4Dh"
-"	      0048cc4d    lea eax,[ebp-18h]"
+"	      0048cc4d    lea eax,tempShortcut.lDeviceID"
 "	      0048cc50    push eax"
 "	      0048cc51    mov eax,[ebp-8Ch]"
 "	      0048cc57    push eax"
 "	      0048cc58    lea eax,[ebp-90h]"
 "	      0048cc5e    push eax"
-"	      0048cc5f    mov ecx,[ebp+8]"
+"	      0048cc5f    mov ecx,shortcutList"
 "	      0048cc62    call 0048E910h"
 "	      0048cc67    jmp near ptr 0048CC6Ch"
 );
 // LINE 688:
 	asm( 
-"	      0048cc6c    mov dword ptr [ebp-14h],8"
+"	      0048cc6c    mov tempShortcut.lCommand,8"
 );
 // LINE 689:
 	asm( 
-"	      0048cc73    mov dword ptr [ebp-10h],26h"
+"	      0048cc73    mov tempShortcut.lKey,26h"
 );
 // LINE 690:
 	asm( 
-"	      0048cc7a    mov dword ptr [ebp-0Ch],0"
+"	      0048cc7a    mov tempShortcut.lModifiers,0"
 );
 // LINE 692:
 	asm( 
-"	      0048cc81    lea eax,[ebp-4]"
+"	      0048cc81    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cc84    push eax"
-"	      0048cc85    lea eax,[ebp-8]"
+"	      0048cc85    lea eax,tempShortcut.lPush"
 "	      0048cc88    push eax"
-"	      0048cc89    mov eax,[ebp-14h]"
+"	      0048cc89    mov eax,tempShortcut.lCommand"
 "	      0048cc8c    push eax"
 "	      0048cc8d    call 0048E3B4h"
 "	      0048cc92    add esp,0Ch"
 );
 // LINE 693:
 	asm( 
-"	      0048cc95    mov eax,[ebp+8]"
+"	      0048cc95    mov eax,shortcutList"
 "	      0048cc98    mov eax,[eax]"
 "	      0048cc9a    mov [ebp-0A0h],eax"
 "	      0048cca0    mov eax,[ebp-0A0h]"
 "	      0048cca6    mov [ebp-98h],eax"
 "	      0048ccac    jmp near ptr 0048CCB1h"
 "	      0048ccb1    jmp near ptr 0048CCB6h"
-"	      0048ccb6    lea eax,[ebp-18h]"
+"	      0048ccb6    lea eax,tempShortcut.lDeviceID"
 "	      0048ccb9    push eax"
 "	      0048ccba    mov eax,[ebp-98h]"
 "	      0048ccc0    push eax"
 "	      0048ccc1    lea eax,[ebp-9Ch]"
 "	      0048ccc7    push eax"
-"	      0048ccc8    mov ecx,[ebp+8]"
+"	      0048ccc8    mov ecx,shortcutList"
 "	      0048cccb    call 0048E910h"
 "	      0048ccd0    jmp near ptr 0048CCD5h"
 );
 // LINE 695:
 	asm( 
-"	      0048ccd5    mov dword ptr [ebp-14h],9"
+"	      0048ccd5    mov tempShortcut.lCommand,9"
 );
 // LINE 696:
 	asm( 
-"	      0048ccdc    mov dword ptr [ebp-10h],28h"
+"	      0048ccdc    mov tempShortcut.lKey,28h"
 );
 // LINE 697:
 	asm( 
-"	      0048cce3    mov dword ptr [ebp-0Ch],0"
+"	      0048cce3    mov tempShortcut.lModifiers,0"
 );
 // LINE 699:
 	asm( 
-"	      0048ccea    lea eax,[ebp-4]"
+"	      0048ccea    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cced    push eax"
-"	      0048ccee    lea eax,[ebp-8]"
+"	      0048ccee    lea eax,tempShortcut.lPush"
 "	      0048ccf1    push eax"
-"	      0048ccf2    mov eax,[ebp-14h]"
+"	      0048ccf2    mov eax,tempShortcut.lCommand"
 "	      0048ccf5    push eax"
 "	      0048ccf6    call 0048E3B4h"
 "	      0048ccfb    add esp,0Ch"
 );
 // LINE 700:
 	asm( 
-"	      0048ccfe    mov eax,[ebp+8]"
+"	      0048ccfe    mov eax,shortcutList"
 "	      0048cd01    mov eax,[eax]"
 "	      0048cd03    mov [ebp-0ACh],eax"
 "	      0048cd09    mov eax,[ebp-0ACh]"
 "	      0048cd0f    mov [ebp-0A4h],eax"
 "	      0048cd15    jmp near ptr 0048CD1Ah"
 "	      0048cd1a    jmp near ptr 0048CD1Fh"
-"	      0048cd1f    lea eax,[ebp-18h]"
+"	      0048cd1f    lea eax,tempShortcut.lDeviceID"
 "	      0048cd22    push eax"
 "	      0048cd23    mov eax,[ebp-0A4h]"
 "	      0048cd29    push eax"
 "	      0048cd2a    lea eax,[ebp-0A8h]"
 "	      0048cd30    push eax"
-"	      0048cd31    mov ecx,[ebp+8]"
+"	      0048cd31    mov ecx,shortcutList"
 "	      0048cd34    call 0048E910h"
 "	      0048cd39    jmp near ptr 0048CD3Eh"
 );
 // LINE 702:
 	asm( 
-"	      0048cd3e    mov dword ptr [ebp-14h],8"
+"	      0048cd3e    mov tempShortcut.lCommand,8"
 );
 // LINE 703:
 	asm( 
-"	      0048cd45    mov dword ptr [ebp-10h],58h"
+"	      0048cd45    mov tempShortcut.lKey,58h"
 );
 // LINE 704:
 	asm( 
-"	      0048cd4c    mov dword ptr [ebp-0Ch],0"
+"	      0048cd4c    mov tempShortcut.lModifiers,0"
 );
 // LINE 706:
 	asm( 
-"	      0048cd53    lea eax,[ebp-4]"
+"	      0048cd53    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cd56    push eax"
-"	      0048cd57    lea eax,[ebp-8]"
+"	      0048cd57    lea eax,tempShortcut.lPush"
 "	      0048cd5a    push eax"
-"	      0048cd5b    mov eax,[ebp-14h]"
+"	      0048cd5b    mov eax,tempShortcut.lCommand"
 "	      0048cd5e    push eax"
 "	      0048cd5f    call 0048E3B4h"
 "	      0048cd64    add esp,0Ch"
 );
 // LINE 707:
 	asm( 
-"	      0048cd67    mov eax,[ebp+8]"
+"	      0048cd67    mov eax,shortcutList"
 "	      0048cd6a    mov eax,[eax]"
 "	      0048cd6c    mov [ebp-0B8h],eax"
 "	      0048cd72    mov eax,[ebp-0B8h]"
 "	      0048cd78    mov [ebp-0B0h],eax"
 "	      0048cd7e    jmp near ptr 0048CD83h"
 "	      0048cd83    jmp near ptr 0048CD88h"
-"	      0048cd88    lea eax,[ebp-18h]"
+"	      0048cd88    lea eax,tempShortcut.lDeviceID"
 "	      0048cd8b    push eax"
 "	      0048cd8c    mov eax,[ebp-0B0h]"
 "	      0048cd92    push eax"
 "	      0048cd93    lea eax,[ebp-0B4h]"
 "	      0048cd99    push eax"
-"	      0048cd9a    mov ecx,[ebp+8]"
+"	      0048cd9a    mov ecx,shortcutList"
 "	      0048cd9d    call 0048E910h"
 "	      0048cda2    jmp near ptr 0048CDA7h"
 );
 // LINE 709:
 	asm( 
-"	      0048cda7    mov dword ptr [ebp-14h],9"
+"	      0048cda7    mov tempShortcut.lCommand,9"
 );
 // LINE 710:
 	asm( 
-"	      0048cdae    mov dword ptr [ebp-10h],5Ah"
+"	      0048cdae    mov tempShortcut.lKey,5Ah"
 );
 // LINE 711:
 	asm( 
-"	      0048cdb5    mov dword ptr [ebp-0Ch],0"
+"	      0048cdb5    mov tempShortcut.lModifiers,0"
 );
 // LINE 713:
 	asm( 
-"	      0048cdbc    lea eax,[ebp-4]"
+"	      0048cdbc    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cdbf    push eax"
-"	      0048cdc0    lea eax,[ebp-8]"
+"	      0048cdc0    lea eax,tempShortcut.lPush"
 "	      0048cdc3    push eax"
-"	      0048cdc4    mov eax,[ebp-14h]"
+"	      0048cdc4    mov eax,tempShortcut.lCommand"
 "	      0048cdc7    push eax"
 "	      0048cdc8    call 0048E3B4h"
 "	      0048cdcd    add esp,0Ch"
 );
 // LINE 714:
 	asm( 
-"	      0048cdd0    mov eax,[ebp+8]"
+"	      0048cdd0    mov eax,shortcutList"
 "	      0048cdd3    mov eax,[eax]"
 "	      0048cdd5    mov [ebp-0C4h],eax"
 "	      0048cddb    mov eax,[ebp-0C4h]"
 "	      0048cde1    mov [ebp-0BCh],eax"
 "	      0048cde7    jmp near ptr 0048CDECh"
 "	      0048cdec    jmp near ptr 0048CDF1h"
-"	      0048cdf1    lea eax,[ebp-18h]"
+"	      0048cdf1    lea eax,tempShortcut.lDeviceID"
 "	      0048cdf4    push eax"
 "	      0048cdf5    mov eax,[ebp-0BCh]"
 "	      0048cdfb    push eax"
 "	      0048cdfc    lea eax,[ebp-0C0h]"
 "	      0048ce02    push eax"
-"	      0048ce03    mov ecx,[ebp+8]"
+"	      0048ce03    mov ecx,shortcutList"
 "	      0048ce06    call 0048E910h"
 "	      0048ce0b    jmp near ptr 0048CE10h"
 );
 // LINE 716:
 	asm( 
-"	      0048ce10    mov dword ptr [ebp-14h],7"
+"	      0048ce10    mov tempShortcut.lCommand,7"
 );
 // LINE 717:
 	asm( 
-"	      0048ce17    mov dword ptr [ebp-10h],27h"
+"	      0048ce17    mov tempShortcut.lKey,27h"
 );
 // LINE 718:
 	asm( 
-"	      0048ce1e    mov dword ptr [ebp-0Ch],0"
+"	      0048ce1e    mov tempShortcut.lModifiers,0"
 );
 // LINE 720:
 	asm( 
-"	      0048ce25    lea eax,[ebp-4]"
+"	      0048ce25    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048ce28    push eax"
-"	      0048ce29    lea eax,[ebp-8]"
+"	      0048ce29    lea eax,tempShortcut.lPush"
 "	      0048ce2c    push eax"
-"	      0048ce2d    mov eax,[ebp-14h]"
+"	      0048ce2d    mov eax,tempShortcut.lCommand"
 "	      0048ce30    push eax"
 "	      0048ce31    call 0048E3B4h"
 "	      0048ce36    add esp,0Ch"
 );
 // LINE 721:
 	asm( 
-"	      0048ce39    mov eax,[ebp+8]"
+"	      0048ce39    mov eax,shortcutList"
 "	      0048ce3c    mov eax,[eax]"
 "	      0048ce3e    mov [ebp-0D0h],eax"
 "	      0048ce44    mov eax,[ebp-0D0h]"
 "	      0048ce4a    mov [ebp-0C8h],eax"
 "	      0048ce50    jmp near ptr 0048CE55h"
 "	      0048ce55    jmp near ptr 0048CE5Ah"
-"	      0048ce5a    lea eax,[ebp-18h]"
+"	      0048ce5a    lea eax,tempShortcut.lDeviceID"
 "	      0048ce5d    push eax"
 "	      0048ce5e    mov eax,[ebp-0C8h]"
 "	      0048ce64    push eax"
 "	      0048ce65    lea eax,[ebp-0CCh]"
 "	      0048ce6b    push eax"
-"	      0048ce6c    mov ecx,[ebp+8]"
+"	      0048ce6c    mov ecx,shortcutList"
 "	      0048ce6f    call 0048E910h"
 "	      0048ce74    jmp near ptr 0048CE79h"
 );
 // LINE 723:
 	asm( 
-"	      0048ce79    mov dword ptr [ebp-14h],6"
+"	      0048ce79    mov tempShortcut.lCommand,6"
 );
 // LINE 724:
 	asm( 
-"	      0048ce80    mov dword ptr [ebp-10h],25h"
+"	      0048ce80    mov tempShortcut.lKey,25h"
 );
 // LINE 725:
 	asm( 
-"	      0048ce87    mov dword ptr [ebp-0Ch],0"
+"	      0048ce87    mov tempShortcut.lModifiers,0"
 );
 // LINE 727:
 	asm( 
-"	      0048ce8e    lea eax,[ebp-4]"
+"	      0048ce8e    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048ce91    push eax"
-"	      0048ce92    lea eax,[ebp-8]"
+"	      0048ce92    lea eax,tempShortcut.lPush"
 "	      0048ce95    push eax"
-"	      0048ce96    mov eax,[ebp-14h]"
+"	      0048ce96    mov eax,tempShortcut.lCommand"
 "	      0048ce99    push eax"
 "	      0048ce9a    call 0048E3B4h"
 "	      0048ce9f    add esp,0Ch"
 );
 // LINE 728:
 	asm( 
-"	      0048cea2    mov eax,[ebp+8]"
+"	      0048cea2    mov eax,shortcutList"
 "	      0048cea5    mov eax,[eax]"
 "	      0048cea7    mov [ebp-0DCh],eax"
 "	      0048cead    mov eax,[ebp-0DCh]"
 "	      0048ceb3    mov [ebp-0D4h],eax"
 "	      0048ceb9    jmp near ptr 0048CEBEh"
 "	      0048cebe    jmp near ptr 0048CEC3h"
-"	      0048cec3    lea eax,[ebp-18h]"
+"	      0048cec3    lea eax,tempShortcut.lDeviceID"
 "	      0048cec6    push eax"
 "	      0048cec7    mov eax,[ebp-0D4h]"
 "	      0048cecd    push eax"
 "	      0048cece    lea eax,[ebp-0D8h]"
 "	      0048ced4    push eax"
-"	      0048ced5    mov ecx,[ebp+8]"
+"	      0048ced5    mov ecx,shortcutList"
 "	      0048ced8    call 0048E910h"
 "	      0048cedd    jmp near ptr 0048CEE2h"
 );
 // LINE 730:
 	asm( 
-"	      0048cee2    mov dword ptr [ebp-14h],0Ch"
+"	      0048cee2    mov tempShortcut.lCommand,0Ch"
 );
 // LINE 731:
 	asm( 
-"	      0048cee9    mov dword ptr [ebp-10h],6Bh"
+"	      0048cee9    mov tempShortcut.lKey,6Bh"
 );
 // LINE 732:
 	asm( 
-"	      0048cef0    mov dword ptr [ebp-0Ch],0"
+"	      0048cef0    mov tempShortcut.lModifiers,0"
 );
 // LINE 734:
 	asm( 
-"	      0048cef7    lea eax,[ebp-4]"
+"	      0048cef7    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cefa    push eax"
-"	      0048cefb    lea eax,[ebp-8]"
+"	      0048cefb    lea eax,tempShortcut.lPush"
 "	      0048cefe    push eax"
-"	      0048ceff    mov eax,[ebp-14h]"
+"	      0048ceff    mov eax,tempShortcut.lCommand"
 "	      0048cf02    push eax"
 "	      0048cf03    call 0048E3B4h"
 "	      0048cf08    add esp,0Ch"
 );
 // LINE 735:
 	asm( 
-"	      0048cf0b    mov eax,[ebp+8]"
+"	      0048cf0b    mov eax,shortcutList"
 "	      0048cf0e    mov eax,[eax]"
 "	      0048cf10    mov [ebp-0E8h],eax"
 "	      0048cf16    mov eax,[ebp-0E8h]"
 "	      0048cf1c    mov [ebp-0E0h],eax"
 "	      0048cf22    jmp near ptr 0048CF27h"
 "	      0048cf27    jmp near ptr 0048CF2Ch"
-"	      0048cf2c    lea eax,[ebp-18h]"
+"	      0048cf2c    lea eax,tempShortcut.lDeviceID"
 "	      0048cf2f    push eax"
 "	      0048cf30    mov eax,[ebp-0E0h]"
 "	      0048cf36    push eax"
 "	      0048cf37    lea eax,[ebp-0E4h]"
 "	      0048cf3d    push eax"
-"	      0048cf3e    mov ecx,[ebp+8]"
+"	      0048cf3e    mov ecx,shortcutList"
 "	      0048cf41    call 0048E910h"
 "	      0048cf46    jmp near ptr 0048CF4Bh"
 );
 // LINE 737:
 	asm( 
-"	      0048cf4b    mov dword ptr [ebp-14h],0Dh"
+"	      0048cf4b    mov tempShortcut.lCommand,0Dh"
 );
 // LINE 738:
 	asm( 
-"	      0048cf52    mov dword ptr [ebp-10h],6Dh"
+"	      0048cf52    mov tempShortcut.lKey,6Dh"
 );
 // LINE 739:
 	asm( 
-"	      0048cf59    mov dword ptr [ebp-0Ch],0"
+"	      0048cf59    mov tempShortcut.lModifiers,0"
 );
 // LINE 741:
 	asm( 
-"	      0048cf60    lea eax,[ebp-4]"
+"	      0048cf60    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cf63    push eax"
-"	      0048cf64    lea eax,[ebp-8]"
+"	      0048cf64    lea eax,tempShortcut.lPush"
 "	      0048cf67    push eax"
-"	      0048cf68    mov eax,[ebp-14h]"
+"	      0048cf68    mov eax,tempShortcut.lCommand"
 "	      0048cf6b    push eax"
 "	      0048cf6c    call 0048E3B4h"
 "	      0048cf71    add esp,0Ch"
 );
 // LINE 742:
 	asm( 
-"	      0048cf74    mov eax,[ebp+8]"
+"	      0048cf74    mov eax,shortcutList"
 "	      0048cf77    mov eax,[eax]"
 "	      0048cf79    mov [ebp-0F4h],eax"
 "	      0048cf7f    mov eax,[ebp-0F4h]"
 "	      0048cf85    mov [ebp-0ECh],eax"
 "	      0048cf8b    jmp near ptr 0048CF90h"
 "	      0048cf90    jmp near ptr 0048CF95h"
-"	      0048cf95    lea eax,[ebp-18h]"
+"	      0048cf95    lea eax,tempShortcut.lDeviceID"
 "	      0048cf98    push eax"
 "	      0048cf99    mov eax,[ebp-0ECh]"
 "	      0048cf9f    push eax"
 "	      0048cfa0    lea eax,[ebp-0F0h]"
 "	      0048cfa6    push eax"
-"	      0048cfa7    mov ecx,[ebp+8]"
+"	      0048cfa7    mov ecx,shortcutList"
 "	      0048cfaa    call 0048E910h"
 "	      0048cfaf    jmp near ptr 0048CFB4h"
 );
 // LINE 744:
 	asm( 
-"	      0048cfb4    mov dword ptr [ebp-14h],0Ch"
+"	      0048cfb4    mov tempShortcut.lCommand,0Ch"
 );
 // LINE 745:
 	asm( 
-"	      0048cfbb    mov dword ptr [ebp-10h],51h"
+"	      0048cfbb    mov tempShortcut.lKey,51h"
 );
 // LINE 746:
 	asm( 
-"	      0048cfc2    mov dword ptr [ebp-0Ch],0"
+"	      0048cfc2    mov tempShortcut.lModifiers,0"
 );
 // LINE 748:
 	asm( 
-"	      0048cfc9    lea eax,[ebp-4]"
+"	      0048cfc9    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048cfcc    push eax"
-"	      0048cfcd    lea eax,[ebp-8]"
+"	      0048cfcd    lea eax,tempShortcut.lPush"
 "	      0048cfd0    push eax"
-"	      0048cfd1    mov eax,[ebp-14h]"
+"	      0048cfd1    mov eax,tempShortcut.lCommand"
 "	      0048cfd4    push eax"
 "	      0048cfd5    call 0048E3B4h"
 "	      0048cfda    add esp,0Ch"
 );
 // LINE 749:
 	asm( 
-"	      0048cfdd    mov eax,[ebp+8]"
+"	      0048cfdd    mov eax,shortcutList"
 "	      0048cfe0    mov eax,[eax]"
 "	      0048cfe2    mov [ebp-100h],eax"
 "	      0048cfe8    mov eax,[ebp-100h]"
 "	      0048cfee    mov [ebp-0F8h],eax"
 "	      0048cff4    jmp near ptr 0048CFF9h"
 "	      0048cff9    jmp near ptr 0048CFFEh"
-"	      0048cffe    lea eax,[ebp-18h]"
+"	      0048cffe    lea eax,tempShortcut.lDeviceID"
 "	      0048d001    push eax"
 "	      0048d002    mov eax,[ebp-0F8h]"
 "	      0048d008    push eax"
 "	      0048d009    lea eax,[ebp-0FCh]"
 "	      0048d00f    push eax"
-"	      0048d010    mov ecx,[ebp+8]"
+"	      0048d010    mov ecx,shortcutList"
 "	      0048d013    call 0048E910h"
 "	      0048d018    jmp near ptr 0048D01Dh"
 );
 // LINE 751:
 	asm( 
-"	      0048d01d    mov dword ptr [ebp-14h],0Dh"
+"	      0048d01d    mov tempShortcut.lCommand,0Dh"
 );
 // LINE 752:
 	asm( 
-"	      0048d024    mov dword ptr [ebp-10h],57h"
+"	      0048d024    mov tempShortcut.lKey,57h"
 );
 // LINE 753:
 	asm( 
-"	      0048d02b    mov dword ptr [ebp-0Ch],0"
+"	      0048d02b    mov tempShortcut.lModifiers,0"
 );
 // LINE 755:
 	asm( 
-"	      0048d032    lea eax,[ebp-4]"
+"	      0048d032    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d035    push eax"
-"	      0048d036    lea eax,[ebp-8]"
+"	      0048d036    lea eax,tempShortcut.lPush"
 "	      0048d039    push eax"
-"	      0048d03a    mov eax,[ebp-14h]"
+"	      0048d03a    mov eax,tempShortcut.lCommand"
 "	      0048d03d    push eax"
 "	      0048d03e    call 0048E3B4h"
 "	      0048d043    add esp,0Ch"
 );
 // LINE 756:
 	asm( 
-"	      0048d046    mov eax,[ebp+8]"
+"	      0048d046    mov eax,shortcutList"
 "	      0048d049    mov eax,[eax]"
 "	      0048d04b    mov [ebp-10Ch],eax"
 "	      0048d051    mov eax,[ebp-10Ch]"
@@ -3281,7 +3281,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d062    jmp near ptr 0048D067h"
 "	      0048d067    mov eax,[ebp-104h]"
 "	      0048d06d    mov [ebp-118h],eax"
-"	      0048d073    mov ecx,[ebp+8]"
+"	      0048d073    mov ecx,shortcutList"
 "	      0048d076    call 0048ACD0h"
 "	      0048d07b    mov [ebp-110h],eax"
 "	      0048d081    jmp near ptr 0048D086h"
@@ -3291,7 +3291,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d095    jmp near ptr 0048D09Ah"
 "	      0048d09a    cmp dword ptr [ebp-114h],0"
 "	      0048d0a1    je near ptr 0048D0BCh"
-"	      0048d0a7    lea esi,[ebp-18h]"
+"	      0048d0a7    lea esi,tempShortcut.lDeviceID"
 "	      0048d0aa    mov edi,[ebp-114h]"
 "	      0048d0b0    mov ecx,6"
 "	      0048d0b5    rep movsd"
@@ -3311,7 +3311,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d0f2    mov eax,[ebp-110h]"
 "	      0048d0f8    mov ecx,[ebp-118h]"
 "	      0048d0fe    mov [ecx+4],eax"
-"	      0048d101    mov eax,[ebp+8]"
+"	      0048d101    mov eax,shortcutList"
 "	      0048d104    inc dword ptr [eax+4]"
 "	      0048d107    mov eax,[ebp-110h]"
 "	      0048d10d    mov [ebp-108h],eax"
@@ -3321,72 +3321,72 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 758:
 	asm( 
-"	      0048d122    mov dword ptr [ebp-14h],0Fh"
+"	      0048d122    mov tempShortcut.lCommand,0Fh"
 );
 // LINE 759:
 	asm( 
-"	      0048d129    mov dword ptr [ebp-10h],43h"
+"	      0048d129    mov tempShortcut.lKey,43h"
 );
 // LINE 760:
 	asm( 
-"	      0048d130    mov dword ptr [ebp-0Ch],0"
+"	      0048d130    mov tempShortcut.lModifiers,0"
 );
 // LINE 762:
 	asm( 
-"	      0048d137    lea eax,[ebp-4]"
+"	      0048d137    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d13a    push eax"
-"	      0048d13b    lea eax,[ebp-8]"
+"	      0048d13b    lea eax,tempShortcut.lPush"
 "	      0048d13e    push eax"
-"	      0048d13f    mov eax,[ebp-14h]"
+"	      0048d13f    mov eax,tempShortcut.lCommand"
 "	      0048d142    push eax"
 "	      0048d143    call 0048E3B4h"
 "	      0048d148    add esp,0Ch"
 );
 // LINE 763:
 	asm( 
-"	      0048d14b    mov eax,[ebp+8]"
+"	      0048d14b    mov eax,shortcutList"
 "	      0048d14e    mov eax,[eax]"
 "	      0048d150    mov [ebp-124h],eax"
 "	      0048d156    mov eax,[ebp-124h]"
 "	      0048d15c    mov [ebp-11Ch],eax"
 "	      0048d162    jmp near ptr 0048D167h"
 "	      0048d167    jmp near ptr 0048D16Ch"
-"	      0048d16c    lea eax,[ebp-18h]"
+"	      0048d16c    lea eax,tempShortcut.lDeviceID"
 "	      0048d16f    push eax"
 "	      0048d170    mov eax,[ebp-11Ch]"
 "	      0048d176    push eax"
 "	      0048d177    lea eax,[ebp-120h]"
 "	      0048d17d    push eax"
-"	      0048d17e    mov ecx,[ebp+8]"
+"	      0048d17e    mov ecx,shortcutList"
 "	      0048d181    call 0048E910h"
 "	      0048d186    jmp near ptr 0048D18Bh"
 );
 // LINE 765:
 	asm( 
-"	      0048d18b    mov dword ptr [ebp-14h],0Eh"
+"	      0048d18b    mov tempShortcut.lCommand,0Eh"
 );
 // LINE 766:
 	asm( 
-"	      0048d192    mov dword ptr [ebp-10h],56h"
+"	      0048d192    mov tempShortcut.lKey,56h"
 );
 // LINE 767:
 	asm( 
-"	      0048d199    mov dword ptr [ebp-0Ch],0"
+"	      0048d199    mov tempShortcut.lModifiers,0"
 );
 // LINE 769:
 	asm( 
-"	      0048d1a0    lea eax,[ebp-4]"
+"	      0048d1a0    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d1a3    push eax"
-"	      0048d1a4    lea eax,[ebp-8]"
+"	      0048d1a4    lea eax,tempShortcut.lPush"
 "	      0048d1a7    push eax"
-"	      0048d1a8    mov eax,[ebp-14h]"
+"	      0048d1a8    mov eax,tempShortcut.lCommand"
 "	      0048d1ab    push eax"
 "	      0048d1ac    call 0048E3B4h"
 "	      0048d1b1    add esp,0Ch"
 );
 // LINE 770:
 	asm( 
-"	      0048d1b4    mov eax,[ebp+8]"
+"	      0048d1b4    mov eax,shortcutList"
 "	      0048d1b7    mov eax,[eax]"
 "	      0048d1b9    mov [ebp-130h],eax"
 "	      0048d1bf    mov eax,[ebp-130h]"
@@ -3395,7 +3395,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d1d0    jmp near ptr 0048D1D5h"
 "	      0048d1d5    mov eax,[ebp-128h]"
 "	      0048d1db    mov [ebp-13Ch],eax"
-"	      0048d1e1    mov ecx,[ebp+8]"
+"	      0048d1e1    mov ecx,shortcutList"
 "	      0048d1e4    call 0048ACD0h"
 "	      0048d1e9    mov [ebp-134h],eax"
 "	      0048d1ef    jmp near ptr 0048D1F4h"
@@ -3405,7 +3405,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d203    jmp near ptr 0048D208h"
 "	      0048d208    cmp dword ptr [ebp-138h],0"
 "	      0048d20f    je near ptr 0048D22Ah"
-"	      0048d215    lea esi,[ebp-18h]"
+"	      0048d215    lea esi,tempShortcut.lDeviceID"
 "	      0048d218    mov edi,[ebp-138h]"
 "	      0048d21e    mov ecx,6"
 "	      0048d223    rep movsd"
@@ -3425,7 +3425,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d260    mov eax,[ebp-134h]"
 "	      0048d266    mov ecx,[ebp-13Ch]"
 "	      0048d26c    mov [ecx+4],eax"
-"	      0048d26f    mov eax,[ebp+8]"
+"	      0048d26f    mov eax,shortcutList"
 "	      0048d272    inc dword ptr [eax+4]"
 "	      0048d275    mov eax,[ebp-134h]"
 "	      0048d27b    mov [ebp-12Ch],eax"
@@ -3435,30 +3435,30 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 772:
 	asm( 
-"	      0048d290    mov dword ptr [ebp-14h],10h"
+"	      0048d290    mov tempShortcut.lCommand,10h"
 );
 // LINE 773:
 	asm( 
-"	      0048d297    mov dword ptr [ebp-10h],42h"
+"	      0048d297    mov tempShortcut.lKey,42h"
 );
 // LINE 774:
 	asm( 
-"	      0048d29e    mov dword ptr [ebp-0Ch],0"
+"	      0048d29e    mov tempShortcut.lModifiers,0"
 );
 // LINE 776:
 	asm( 
-"	      0048d2a5    lea eax,[ebp-4]"
+"	      0048d2a5    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d2a8    push eax"
-"	      0048d2a9    lea eax,[ebp-8]"
+"	      0048d2a9    lea eax,tempShortcut.lPush"
 "	      0048d2ac    push eax"
-"	      0048d2ad    mov eax,[ebp-14h]"
+"	      0048d2ad    mov eax,tempShortcut.lCommand"
 "	      0048d2b0    push eax"
 "	      0048d2b1    call 0048E3B4h"
 "	      0048d2b6    add esp,0Ch"
 );
 // LINE 777:
 	asm( 
-"	      0048d2b9    mov eax,[ebp+8]"
+"	      0048d2b9    mov eax,shortcutList"
 "	      0048d2bc    mov eax,[eax]"
 "	      0048d2be    mov [ebp-148h],eax"
 "	      0048d2c4    mov eax,[ebp-148h]"
@@ -3467,7 +3467,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d2d5    jmp near ptr 0048D2DAh"
 "	      0048d2da    mov eax,[ebp-140h]"
 "	      0048d2e0    mov [ebp-154h],eax"
-"	      0048d2e6    mov ecx,[ebp+8]"
+"	      0048d2e6    mov ecx,shortcutList"
 "	      0048d2e9    call 0048ACD0h"
 "	      0048d2ee    mov [ebp-14Ch],eax"
 "	      0048d2f4    jmp near ptr 0048D2F9h"
@@ -3477,7 +3477,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d308    jmp near ptr 0048D30Dh"
 "	      0048d30d    cmp dword ptr [ebp-150h],0"
 "	      0048d314    je near ptr 0048D32Fh"
-"	      0048d31a    lea esi,[ebp-18h]"
+"	      0048d31a    lea esi,tempShortcut.lDeviceID"
 "	      0048d31d    mov edi,[ebp-150h]"
 "	      0048d323    mov ecx,6"
 "	      0048d328    rep movsd"
@@ -3497,7 +3497,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d365    mov eax,[ebp-14Ch]"
 "	      0048d36b    mov ecx,[ebp-154h]"
 "	      0048d371    mov [ecx+4],eax"
-"	      0048d374    mov eax,[ebp+8]"
+"	      0048d374    mov eax,shortcutList"
 "	      0048d377    inc dword ptr [eax+4]"
 "	      0048d37a    mov eax,[ebp-14Ch]"
 "	      0048d380    mov [ebp-144h],eax"
@@ -3507,72 +3507,72 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 779:
 	asm( 
-"	      0048d395    mov dword ptr [ebp-14h],11h"
+"	      0048d395    mov tempShortcut.lCommand,11h"
 );
 // LINE 780:
 	asm( 
-"	      0048d39c    mov dword ptr [ebp-10h],47h"
+"	      0048d39c    mov tempShortcut.lKey,47h"
 );
 // LINE 781:
 	asm( 
-"	      0048d3a3    mov dword ptr [ebp-0Ch],0"
+"	      0048d3a3    mov tempShortcut.lModifiers,0"
 );
 // LINE 783:
 	asm( 
-"	      0048d3aa    lea eax,[ebp-4]"
+"	      0048d3aa    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d3ad    push eax"
-"	      0048d3ae    lea eax,[ebp-8]"
+"	      0048d3ae    lea eax,tempShortcut.lPush"
 "	      0048d3b1    push eax"
-"	      0048d3b2    mov eax,[ebp-14h]"
+"	      0048d3b2    mov eax,tempShortcut.lCommand"
 "	      0048d3b5    push eax"
 "	      0048d3b6    call 0048E3B4h"
 "	      0048d3bb    add esp,0Ch"
 );
 // LINE 784:
 	asm( 
-"	      0048d3be    mov eax,[ebp+8]"
+"	      0048d3be    mov eax,shortcutList"
 "	      0048d3c1    mov eax,[eax]"
 "	      0048d3c3    mov [ebp-160h],eax"
 "	      0048d3c9    mov eax,[ebp-160h]"
 "	      0048d3cf    mov [ebp-158h],eax"
 "	      0048d3d5    jmp near ptr 0048D3DAh"
 "	      0048d3da    jmp near ptr 0048D3DFh"
-"	      0048d3df    lea eax,[ebp-18h]"
+"	      0048d3df    lea eax,tempShortcut.lDeviceID"
 "	      0048d3e2    push eax"
 "	      0048d3e3    mov eax,[ebp-158h]"
 "	      0048d3e9    push eax"
 "	      0048d3ea    lea eax,[ebp-15Ch]"
 "	      0048d3f0    push eax"
-"	      0048d3f1    mov ecx,[ebp+8]"
+"	      0048d3f1    mov ecx,shortcutList"
 "	      0048d3f4    call 0048E910h"
 "	      0048d3f9    jmp near ptr 0048D3FEh"
 );
 // LINE 786:
 	asm( 
-"	      0048d3fe    mov dword ptr [ebp-14h],12h"
+"	      0048d3fe    mov tempShortcut.lCommand,12h"
 );
 // LINE 787:
 	asm( 
-"	      0048d405    mov dword ptr [ebp-10h],46h"
+"	      0048d405    mov tempShortcut.lKey,46h"
 );
 // LINE 788:
 	asm( 
-"	      0048d40c    mov dword ptr [ebp-0Ch],0"
+"	      0048d40c    mov tempShortcut.lModifiers,0"
 );
 // LINE 790:
 	asm( 
-"	      0048d413    lea eax,[ebp-4]"
+"	      0048d413    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d416    push eax"
-"	      0048d417    lea eax,[ebp-8]"
+"	      0048d417    lea eax,tempShortcut.lPush"
 "	      0048d41a    push eax"
-"	      0048d41b    mov eax,[ebp-14h]"
+"	      0048d41b    mov eax,tempShortcut.lCommand"
 "	      0048d41e    push eax"
 "	      0048d41f    call 0048E3B4h"
 "	      0048d424    add esp,0Ch"
 );
 // LINE 791:
 	asm( 
-"	      0048d427    mov eax,[ebp+8]"
+"	      0048d427    mov eax,shortcutList"
 "	      0048d42a    mov eax,[eax]"
 "	      0048d42c    mov [ebp-16Ch],eax"
 "	      0048d432    mov eax,[ebp-16Ch]"
@@ -3581,7 +3581,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d443    jmp near ptr 0048D448h"
 "	      0048d448    mov eax,[ebp-164h]"
 "	      0048d44e    mov [ebp-178h],eax"
-"	      0048d454    mov ecx,[ebp+8]"
+"	      0048d454    mov ecx,shortcutList"
 "	      0048d457    call 0048ACD0h"
 "	      0048d45c    mov [ebp-170h],eax"
 "	      0048d462    jmp near ptr 0048D467h"
@@ -3591,7 +3591,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d476    jmp near ptr 0048D47Bh"
 "	      0048d47b    cmp dword ptr [ebp-174h],0"
 "	      0048d482    je near ptr 0048D49Dh"
-"	      0048d488    lea esi,[ebp-18h]"
+"	      0048d488    lea esi,tempShortcut.lDeviceID"
 "	      0048d48b    mov edi,[ebp-174h]"
 "	      0048d491    mov ecx,6"
 "	      0048d496    rep movsd"
@@ -3611,7 +3611,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d4d3    mov eax,[ebp-170h]"
 "	      0048d4d9    mov ecx,[ebp-178h]"
 "	      0048d4df    mov [ecx+4],eax"
-"	      0048d4e2    mov eax,[ebp+8]"
+"	      0048d4e2    mov eax,shortcutList"
 "	      0048d4e5    inc dword ptr [eax+4]"
 "	      0048d4e8    mov eax,[ebp-170h]"
 "	      0048d4ee    mov [ebp-168h],eax"
@@ -3621,30 +3621,30 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 793:
 	asm( 
-"	      0048d503    mov dword ptr [ebp-14h],13h"
+"	      0048d503    mov tempShortcut.lCommand,13h"
 );
 // LINE 794:
 	asm( 
-"	      0048d50a    mov dword ptr [ebp-10h],20h"
+"	      0048d50a    mov tempShortcut.lKey,20h"
 );
 // LINE 795:
 	asm( 
-"	      0048d511    mov dword ptr [ebp-0Ch],0"
+"	      0048d511    mov tempShortcut.lModifiers,0"
 );
 // LINE 797:
 	asm( 
-"	      0048d518    lea eax,[ebp-4]"
+"	      0048d518    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d51b    push eax"
-"	      0048d51c    lea eax,[ebp-8]"
+"	      0048d51c    lea eax,tempShortcut.lPush"
 "	      0048d51f    push eax"
-"	      0048d520    mov eax,[ebp-14h]"
+"	      0048d520    mov eax,tempShortcut.lCommand"
 "	      0048d523    push eax"
 "	      0048d524    call 0048E3B4h"
 "	      0048d529    add esp,0Ch"
 );
 // LINE 798:
 	asm( 
-"	      0048d52c    mov eax,[ebp+8]"
+"	      0048d52c    mov eax,shortcutList"
 "	      0048d52f    mov eax,[eax]"
 "	      0048d531    mov [ebp-184h],eax"
 "	      0048d537    mov eax,[ebp-184h]"
@@ -3653,7 +3653,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d548    jmp near ptr 0048D54Dh"
 "	      0048d54d    mov eax,[ebp-17Ch]"
 "	      0048d553    mov [ebp-190h],eax"
-"	      0048d559    mov ecx,[ebp+8]"
+"	      0048d559    mov ecx,shortcutList"
 "	      0048d55c    call 0048ACD0h"
 "	      0048d561    mov [ebp-188h],eax"
 "	      0048d567    jmp near ptr 0048D56Ch"
@@ -3663,7 +3663,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d57b    jmp near ptr 0048D580h"
 "	      0048d580    cmp dword ptr [ebp-18Ch],0"
 "	      0048d587    je near ptr 0048D5A2h"
-"	      0048d58d    lea esi,[ebp-18h]"
+"	      0048d58d    lea esi,tempShortcut.lDeviceID"
 "	      0048d590    mov edi,[ebp-18Ch]"
 "	      0048d596    mov ecx,6"
 "	      0048d59b    rep movsd"
@@ -3683,7 +3683,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d5d8    mov eax,[ebp-188h]"
 "	      0048d5de    mov ecx,[ebp-190h]"
 "	      0048d5e4    mov [ecx+4],eax"
-"	      0048d5e7    mov eax,[ebp+8]"
+"	      0048d5e7    mov eax,shortcutList"
 "	      0048d5ea    inc dword ptr [eax+4]"
 "	      0048d5ed    mov eax,[ebp-188h]"
 "	      0048d5f3    mov [ebp-180h],eax"
@@ -3693,72 +3693,72 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 800:
 	asm( 
-"	      0048d608    mov dword ptr [ebp-14h],14h"
+"	      0048d608    mov tempShortcut.lCommand,14h"
 );
 // LINE 801:
 	asm( 
-"	      0048d60f    mov dword ptr [ebp-10h],54h"
+"	      0048d60f    mov tempShortcut.lKey,54h"
 );
 // LINE 802:
 	asm( 
-"	      0048d616    mov dword ptr [ebp-0Ch],0"
+"	      0048d616    mov tempShortcut.lModifiers,0"
 );
 // LINE 804:
 	asm( 
-"	      0048d61d    lea eax,[ebp-4]"
+"	      0048d61d    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d620    push eax"
-"	      0048d621    lea eax,[ebp-8]"
+"	      0048d621    lea eax,tempShortcut.lPush"
 "	      0048d624    push eax"
-"	      0048d625    mov eax,[ebp-14h]"
+"	      0048d625    mov eax,tempShortcut.lCommand"
 "	      0048d628    push eax"
 "	      0048d629    call 0048E3B4h"
 "	      0048d62e    add esp,0Ch"
 );
 // LINE 805:
 	asm( 
-"	      0048d631    mov eax,[ebp+8]"
+"	      0048d631    mov eax,shortcutList"
 "	      0048d634    mov eax,[eax]"
 "	      0048d636    mov [ebp-19Ch],eax"
 "	      0048d63c    mov eax,[ebp-19Ch]"
 "	      0048d642    mov [ebp-194h],eax"
 "	      0048d648    jmp near ptr 0048D64Dh"
 "	      0048d64d    jmp near ptr 0048D652h"
-"	      0048d652    lea eax,[ebp-18h]"
+"	      0048d652    lea eax,tempShortcut.lDeviceID"
 "	      0048d655    push eax"
 "	      0048d656    mov eax,[ebp-194h]"
 "	      0048d65c    push eax"
 "	      0048d65d    lea eax,[ebp-198h]"
 "	      0048d663    push eax"
-"	      0048d664    mov ecx,[ebp+8]"
+"	      0048d664    mov ecx,shortcutList"
 "	      0048d667    call 0048E910h"
 "	      0048d66c    jmp near ptr 0048D671h"
 );
 // LINE 807:
 	asm( 
-"	      0048d671    mov dword ptr [ebp-14h],15h"
+"	      0048d671    mov tempShortcut.lCommand,15h"
 );
 // LINE 808:
 	asm( 
-"	      0048d678    mov dword ptr [ebp-10h],70h"
+"	      0048d678    mov tempShortcut.lKey,70h"
 );
 // LINE 809:
 	asm( 
-"	      0048d67f    mov dword ptr [ebp-0Ch],0"
+"	      0048d67f    mov tempShortcut.lModifiers,0"
 );
 // LINE 811:
 	asm( 
-"	      0048d686    lea eax,[ebp-4]"
+"	      0048d686    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d689    push eax"
-"	      0048d68a    lea eax,[ebp-8]"
+"	      0048d68a    lea eax,tempShortcut.lPush"
 "	      0048d68d    push eax"
-"	      0048d68e    mov eax,[ebp-14h]"
+"	      0048d68e    mov eax,tempShortcut.lCommand"
 "	      0048d691    push eax"
 "	      0048d692    call 0048E3B4h"
 "	      0048d697    add esp,0Ch"
 );
 // LINE 812:
 	asm( 
-"	      0048d69a    mov eax,[ebp+8]"
+"	      0048d69a    mov eax,shortcutList"
 "	      0048d69d    mov eax,[eax]"
 "	      0048d69f    mov [ebp-1A8h],eax"
 "	      0048d6a5    mov eax,[ebp-1A8h]"
@@ -3767,7 +3767,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d6b6    jmp near ptr 0048D6BBh"
 "	      0048d6bb    mov eax,[ebp-1A0h]"
 "	      0048d6c1    mov [ebp-1B4h],eax"
-"	      0048d6c7    mov ecx,[ebp+8]"
+"	      0048d6c7    mov ecx,shortcutList"
 "	      0048d6ca    call 0048ACD0h"
 "	      0048d6cf    mov [ebp-1ACh],eax"
 "	      0048d6d5    jmp near ptr 0048D6DAh"
@@ -3777,7 +3777,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d6e9    jmp near ptr 0048D6EEh"
 "	      0048d6ee    cmp dword ptr [ebp-1B0h],0"
 "	      0048d6f5    je near ptr 0048D710h"
-"	      0048d6fb    lea esi,[ebp-18h]"
+"	      0048d6fb    lea esi,tempShortcut.lDeviceID"
 "	      0048d6fe    mov edi,[ebp-1B0h]"
 "	      0048d704    mov ecx,6"
 "	      0048d709    rep movsd"
@@ -3797,7 +3797,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d746    mov eax,[ebp-1ACh]"
 "	      0048d74c    mov ecx,[ebp-1B4h]"
 "	      0048d752    mov [ecx+4],eax"
-"	      0048d755    mov eax,[ebp+8]"
+"	      0048d755    mov eax,shortcutList"
 "	      0048d758    inc dword ptr [eax+4]"
 "	      0048d75b    mov eax,[ebp-1ACh]"
 "	      0048d761    mov [ebp-1A4h],eax"
@@ -3807,72 +3807,72 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 814:
 	asm( 
-"	      0048d776    mov dword ptr [ebp-14h],16h"
+"	      0048d776    mov tempShortcut.lCommand,16h"
 );
 // LINE 815:
 	asm( 
-"	      0048d77d    mov dword ptr [ebp-10h],71h"
+"	      0048d77d    mov tempShortcut.lKey,71h"
 );
 // LINE 816:
 	asm( 
-"	      0048d784    mov dword ptr [ebp-0Ch],0"
+"	      0048d784    mov tempShortcut.lModifiers,0"
 );
 // LINE 818:
 	asm( 
-"	      0048d78b    lea eax,[ebp-4]"
+"	      0048d78b    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d78e    push eax"
-"	      0048d78f    lea eax,[ebp-8]"
+"	      0048d78f    lea eax,tempShortcut.lPush"
 "	      0048d792    push eax"
-"	      0048d793    mov eax,[ebp-14h]"
+"	      0048d793    mov eax,tempShortcut.lCommand"
 "	      0048d796    push eax"
 "	      0048d797    call 0048E3B4h"
 "	      0048d79c    add esp,0Ch"
 );
 // LINE 819:
 	asm( 
-"	      0048d79f    mov eax,[ebp+8]"
+"	      0048d79f    mov eax,shortcutList"
 "	      0048d7a2    mov eax,[eax]"
 "	      0048d7a4    mov [ebp-1C0h],eax"
 "	      0048d7aa    mov eax,[ebp-1C0h]"
 "	      0048d7b0    mov [ebp-1B8h],eax"
 "	      0048d7b6    jmp near ptr 0048D7BBh"
 "	      0048d7bb    jmp near ptr 0048D7C0h"
-"	      0048d7c0    lea eax,[ebp-18h]"
+"	      0048d7c0    lea eax,tempShortcut.lDeviceID"
 "	      0048d7c3    push eax"
 "	      0048d7c4    mov eax,[ebp-1B8h]"
 "	      0048d7ca    push eax"
 "	      0048d7cb    lea eax,[ebp-1BCh]"
 "	      0048d7d1    push eax"
-"	      0048d7d2    mov ecx,[ebp+8]"
+"	      0048d7d2    mov ecx,shortcutList"
 "	      0048d7d5    call 0048E910h"
 "	      0048d7da    jmp near ptr 0048D7DFh"
 );
 // LINE 821:
 	asm( 
-"	      0048d7df    mov dword ptr [ebp-14h],17h"
+"	      0048d7df    mov tempShortcut.lCommand,17h"
 );
 // LINE 822:
 	asm( 
-"	      0048d7e6    mov dword ptr [ebp-10h],72h"
+"	      0048d7e6    mov tempShortcut.lKey,72h"
 );
 // LINE 823:
 	asm( 
-"	      0048d7ed    mov dword ptr [ebp-0Ch],0"
+"	      0048d7ed    mov tempShortcut.lModifiers,0"
 );
 // LINE 825:
 	asm( 
-"	      0048d7f4    lea eax,[ebp-4]"
+"	      0048d7f4    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d7f7    push eax"
-"	      0048d7f8    lea eax,[ebp-8]"
+"	      0048d7f8    lea eax,tempShortcut.lPush"
 "	      0048d7fb    push eax"
-"	      0048d7fc    mov eax,[ebp-14h]"
+"	      0048d7fc    mov eax,tempShortcut.lCommand"
 "	      0048d7ff    push eax"
 "	      0048d800    call 0048E3B4h"
 "	      0048d805    add esp,0Ch"
 );
 // LINE 826:
 	asm( 
-"	      0048d808    mov eax,[ebp+8]"
+"	      0048d808    mov eax,shortcutList"
 "	      0048d80b    mov eax,[eax]"
 "	      0048d80d    mov [ebp-1CCh],eax"
 "	      0048d813    mov eax,[ebp-1CCh]"
@@ -3881,7 +3881,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d824    jmp near ptr 0048D829h"
 "	      0048d829    mov eax,[ebp-1C4h]"
 "	      0048d82f    mov [ebp-1D8h],eax"
-"	      0048d835    mov ecx,[ebp+8]"
+"	      0048d835    mov ecx,shortcutList"
 "	      0048d838    call 0048ACD0h"
 "	      0048d83d    mov [ebp-1D0h],eax"
 "	      0048d843    jmp near ptr 0048D848h"
@@ -3891,7 +3891,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d857    jmp near ptr 0048D85Ch"
 "	      0048d85c    cmp dword ptr [ebp-1D4h],0"
 "	      0048d863    je near ptr 0048D87Eh"
-"	      0048d869    lea esi,[ebp-18h]"
+"	      0048d869    lea esi,tempShortcut.lDeviceID"
 "	      0048d86c    mov edi,[ebp-1D4h]"
 "	      0048d872    mov ecx,6"
 "	      0048d877    rep movsd"
@@ -3911,7 +3911,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d8b4    mov eax,[ebp-1D0h]"
 "	      0048d8ba    mov ecx,[ebp-1D8h]"
 "	      0048d8c0    mov [ecx+4],eax"
-"	      0048d8c3    mov eax,[ebp+8]"
+"	      0048d8c3    mov eax,shortcutList"
 "	      0048d8c6    inc dword ptr [eax+4]"
 "	      0048d8c9    mov eax,[ebp-1D0h]"
 "	      0048d8cf    mov [ebp-1C8h],eax"
@@ -3921,30 +3921,30 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 828:
 	asm( 
-"	      0048d8e4    mov dword ptr [ebp-14h],18h"
+"	      0048d8e4    mov tempShortcut.lCommand,18h"
 );
 // LINE 829:
 	asm( 
-"	      0048d8eb    mov dword ptr [ebp-10h],73h"
+"	      0048d8eb    mov tempShortcut.lKey,73h"
 );
 // LINE 830:
 	asm( 
-"	      0048d8f2    mov dword ptr [ebp-0Ch],0"
+"	      0048d8f2    mov tempShortcut.lModifiers,0"
 );
 // LINE 832:
 	asm( 
-"	      0048d8f9    lea eax,[ebp-4]"
+"	      0048d8f9    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048d8fc    push eax"
-"	      0048d8fd    lea eax,[ebp-8]"
+"	      0048d8fd    lea eax,tempShortcut.lPush"
 "	      0048d900    push eax"
-"	      0048d901    mov eax,[ebp-14h]"
+"	      0048d901    mov eax,tempShortcut.lCommand"
 "	      0048d904    push eax"
 "	      0048d905    call 0048E3B4h"
 "	      0048d90a    add esp,0Ch"
 );
 // LINE 833:
 	asm( 
-"	      0048d90d    mov eax,[ebp+8]"
+"	      0048d90d    mov eax,shortcutList"
 "	      0048d910    mov eax,[eax]"
 "	      0048d912    mov [ebp-1E4h],eax"
 "	      0048d918    mov eax,[ebp-1E4h]"
@@ -3953,7 +3953,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d929    jmp near ptr 0048D92Eh"
 "	      0048d92e    mov eax,[ebp-1DCh]"
 "	      0048d934    mov [ebp-1F0h],eax"
-"	      0048d93a    mov ecx,[ebp+8]"
+"	      0048d93a    mov ecx,shortcutList"
 "	      0048d93d    call 0048ACD0h"
 "	      0048d942    mov [ebp-1E8h],eax"
 "	      0048d948    jmp near ptr 0048D94Dh"
@@ -3963,7 +3963,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d95c    jmp near ptr 0048D961h"
 "	      0048d961    cmp dword ptr [ebp-1ECh],0"
 "	      0048d968    je near ptr 0048D983h"
-"	      0048d96e    lea esi,[ebp-18h]"
+"	      0048d96e    lea esi,tempShortcut.lDeviceID"
 "	      0048d971    mov edi,[ebp-1ECh]"
 "	      0048d977    mov ecx,6"
 "	      0048d97c    rep movsd"
@@ -3983,7 +3983,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048d9b9    mov eax,[ebp-1E8h]"
 "	      0048d9bf    mov ecx,[ebp-1F0h]"
 "	      0048d9c5    mov [ecx+4],eax"
-"	      0048d9c8    mov eax,[ebp+8]"
+"	      0048d9c8    mov eax,shortcutList"
 "	      0048d9cb    inc dword ptr [eax+4]"
 "	      0048d9ce    mov eax,[ebp-1E8h]"
 "	      0048d9d4    mov [ebp-1E0h],eax"
@@ -3993,72 +3993,72 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 835:
 	asm( 
-"	      0048d9e9    mov dword ptr [ebp-14h],19h"
+"	      0048d9e9    mov tempShortcut.lCommand,19h"
 );
 // LINE 836:
 	asm( 
-"	      0048d9f0    mov dword ptr [ebp-10h],74h"
+"	      0048d9f0    mov tempShortcut.lKey,74h"
 );
 // LINE 837:
 	asm( 
-"	      0048d9f7    mov dword ptr [ebp-0Ch],0"
+"	      0048d9f7    mov tempShortcut.lModifiers,0"
 );
 // LINE 839:
 	asm( 
-"	      0048d9fe    lea eax,[ebp-4]"
+"	      0048d9fe    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048da01    push eax"
-"	      0048da02    lea eax,[ebp-8]"
+"	      0048da02    lea eax,tempShortcut.lPush"
 "	      0048da05    push eax"
-"	      0048da06    mov eax,[ebp-14h]"
+"	      0048da06    mov eax,tempShortcut.lCommand"
 "	      0048da09    push eax"
 "	      0048da0a    call 0048E3B4h"
 "	      0048da0f    add esp,0Ch"
 );
 // LINE 840:
 	asm( 
-"	      0048da12    mov eax,[ebp+8]"
+"	      0048da12    mov eax,shortcutList"
 "	      0048da15    mov eax,[eax]"
 "	      0048da17    mov [ebp-1FCh],eax"
 "	      0048da1d    mov eax,[ebp-1FCh]"
 "	      0048da23    mov [ebp-1F4h],eax"
 "	      0048da29    jmp near ptr 0048DA2Eh"
 "	      0048da2e    jmp near ptr 0048DA33h"
-"	      0048da33    lea eax,[ebp-18h]"
+"	      0048da33    lea eax,tempShortcut.lDeviceID"
 "	      0048da36    push eax"
 "	      0048da37    mov eax,[ebp-1F4h]"
 "	      0048da3d    push eax"
 "	      0048da3e    lea eax,[ebp-1F8h]"
 "	      0048da44    push eax"
-"	      0048da45    mov ecx,[ebp+8]"
+"	      0048da45    mov ecx,shortcutList"
 "	      0048da48    call 0048E910h"
 "	      0048da4d    jmp near ptr 0048DA52h"
 );
 // LINE 842:
 	asm( 
-"	      0048da52    mov dword ptr [ebp-14h],0Bh"
+"	      0048da52    mov tempShortcut.lCommand,0Bh"
 );
 // LINE 843:
 	asm( 
-"	      0048da59    mov dword ptr [ebp-10h],41h"
+"	      0048da59    mov tempShortcut.lKey,41h"
 );
 // LINE 844:
 	asm( 
-"	      0048da60    mov dword ptr [ebp-0Ch],0"
+"	      0048da60    mov tempShortcut.lModifiers,0"
 );
 // LINE 846:
 	asm( 
-"	      0048da67    lea eax,[ebp-4]"
+"	      0048da67    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048da6a    push eax"
-"	      0048da6b    lea eax,[ebp-8]"
+"	      0048da6b    lea eax,tempShortcut.lPush"
 "	      0048da6e    push eax"
-"	      0048da6f    mov eax,[ebp-14h]"
+"	      0048da6f    mov eax,tempShortcut.lCommand"
 "	      0048da72    push eax"
 "	      0048da73    call 0048E3B4h"
 "	      0048da78    add esp,0Ch"
 );
 // LINE 847:
 	asm( 
-"	      0048da7b    mov eax,[ebp+8]"
+"	      0048da7b    mov eax,shortcutList"
 "	      0048da7e    mov eax,[eax]"
 "	      0048da80    mov [ebp-208h],eax"
 "	      0048da86    mov eax,[ebp-208h]"
@@ -4067,7 +4067,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048da97    jmp near ptr 0048DA9Ch"
 "	      0048da9c    mov eax,[ebp-200h]"
 "	      0048daa2    mov [ebp-214h],eax"
-"	      0048daa8    mov ecx,[ebp+8]"
+"	      0048daa8    mov ecx,shortcutList"
 "	      0048daab    call 0048ACD0h"
 "	      0048dab0    mov [ebp-20Ch],eax"
 "	      0048dab6    jmp near ptr 0048DABBh"
@@ -4077,7 +4077,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048daca    jmp near ptr 0048DACFh"
 "	      0048dacf    cmp dword ptr [ebp-210h],0"
 "	      0048dad6    je near ptr 0048DAF1h"
-"	      0048dadc    lea esi,[ebp-18h]"
+"	      0048dadc    lea esi,tempShortcut.lDeviceID"
 "	      0048dadf    mov edi,[ebp-210h]"
 "	      0048dae5    mov ecx,6"
 "	      0048daea    rep movsd"
@@ -4097,7 +4097,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048db27    mov eax,[ebp-20Ch]"
 "	      0048db2d    mov ecx,[ebp-214h]"
 "	      0048db33    mov [ecx+4],eax"
-"	      0048db36    mov eax,[ebp+8]"
+"	      0048db36    mov eax,shortcutList"
 "	      0048db39    inc dword ptr [eax+4]"
 "	      0048db3c    mov eax,[ebp-20Ch]"
 "	      0048db42    mov [ebp-204h],eax"
@@ -4107,30 +4107,30 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 849:
 	asm( 
-"	      0048db57    mov dword ptr [ebp-14h],0Ah"
+"	      0048db57    mov tempShortcut.lCommand,0Ah"
 );
 // LINE 850:
 	asm( 
-"	      0048db5e    mov dword ptr [ebp-10h],53h"
+"	      0048db5e    mov tempShortcut.lKey,53h"
 );
 // LINE 851:
 	asm( 
-"	      0048db65    mov dword ptr [ebp-0Ch],0"
+"	      0048db65    mov tempShortcut.lModifiers,0"
 );
 // LINE 853:
 	asm( 
-"	      0048db6c    lea eax,[ebp-4]"
+"	      0048db6c    lea eax,tempShortcut.lIgnoreModifiers"
 "	      0048db6f    push eax"
-"	      0048db70    lea eax,[ebp-8]"
+"	      0048db70    lea eax,tempShortcut.lPush"
 "	      0048db73    push eax"
-"	      0048db74    mov eax,[ebp-14h]"
+"	      0048db74    mov eax,tempShortcut.lCommand"
 "	      0048db77    push eax"
 "	      0048db78    call 0048E3B4h"
 "	      0048db7d    add esp,0Ch"
 );
 // LINE 854:
 	asm( 
-"	      0048db80    mov eax,[ebp+8]"
+"	      0048db80    mov eax,shortcutList"
 "	      0048db83    mov eax,[eax]"
 "	      0048db85    mov [ebp-220h],eax"
 "	      0048db8b    mov eax,[ebp-220h]"
@@ -4139,7 +4139,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048db9c    jmp near ptr 0048DBA1h"
 "	      0048dba1    mov eax,[ebp-218h]"
 "	      0048dba7    mov [ebp-22Ch],eax"
-"	      0048dbad    mov ecx,[ebp+8]"
+"	      0048dbad    mov ecx,shortcutList"
 "	      0048dbb0    call 0048ACD0h"
 "	      0048dbb5    mov [ebp-224h],eax"
 "	      0048dbbb    jmp near ptr 0048DBC0h"
@@ -4149,7 +4149,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048dbcf    jmp near ptr 0048DBD4h"
 "	      0048dbd4    cmp dword ptr [ebp-228h],0"
 "	      0048dbdb    je near ptr 0048DBF6h"
-"	      0048dbe1    lea esi,[ebp-18h]"
+"	      0048dbe1    lea esi,tempShortcut.lDeviceID"
 "	      0048dbe4    mov edi,[ebp-228h]"
 "	      0048dbea    mov ecx,6"
 "	      0048dbef    rep movsd"
@@ -4169,7 +4169,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048dc2c    mov eax,[ebp-224h]"
 "	      0048dc32    mov ecx,[ebp-22Ch]"
 "	      0048dc38    mov [ecx+4],eax"
-"	      0048dc3b    mov eax,[ebp+8]"
+"	      0048dc3b    mov eax,shortcutList"
 "	      0048dc3e    add dword ptr [eax+4],1"
 "	      0048dc42    mov eax,[ebp-224h]"
 "	      0048dc48    mov [ebp-21Ch],eax"
@@ -4179,79 +4179,79 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 858:
 	asm( 
-"	      0048dc5d    mov dword ptr [ebp-1Ch],1"
+"	      0048dc5d    mov i,1"
 "	      0048dc64    jmp near ptr 0048DC6Ch"
-"	      0048dc69    inc dword ptr [ebp-1Ch]"
-"	      0048dc6c    cmp dword ptr [ebp-1Ch],4"
+"	      0048dc69    inc i"
+"	      0048dc6c    cmp i,4"
 "	      0048dc70    jg near ptr 0048E3AAh"
 );
 // LINE 859:
 	asm( 
-"	      0048dc76    mov eax,[ebp-1Ch]"
-"	      0048dc79    mov [ebp-18h],eax"
+"	      0048dc76    mov eax,i"
+"	      0048dc79    mov tempShortcut.lDeviceID,eax"
 );
 // LINE 861:
 	asm( 
-"	      0048dc7c    mov dword ptr [ebp-14h],6"
+"	      0048dc7c    mov tempShortcut.lCommand,6"
 );
 // LINE 862:
 	asm( 
-"	      0048dc83    mov dword ptr [ebp-10h],0"
+"	      0048dc83    mov tempShortcut.lKey,0"
 );
 // LINE 863:
 	asm( 
-"	      0048dc8a    mov dword ptr [ebp-0Ch],0"
+"	      0048dc8a    mov tempShortcut.lModifiers,0"
 );
 // LINE 864:
 	asm( 
-"	      0048dc91    mov dword ptr [ebp-8],0"
+"	      0048dc91    mov tempShortcut.lPush,0"
 );
 // LINE 865:
 	asm( 
-"	      0048dc98    mov dword ptr [ebp-4],0"
+"	      0048dc98    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 866:
 	asm( 
-"	      0048dc9f    mov eax,[ebp+8]"
+"	      0048dc9f    mov eax,shortcutList"
 "	      0048dca2    mov eax,[eax]"
 "	      0048dca4    mov [ebp-238h],eax"
 "	      0048dcaa    mov eax,[ebp-238h]"
 "	      0048dcb0    mov [ebp-230h],eax"
 "	      0048dcb6    jmp near ptr 0048DCBBh"
 "	      0048dcbb    jmp near ptr 0048DCC0h"
-"	      0048dcc0    lea eax,[ebp-18h]"
+"	      0048dcc0    lea eax,tempShortcut.lDeviceID"
 "	      0048dcc3    push eax"
 "	      0048dcc4    mov eax,[ebp-230h]"
 "	      0048dcca    push eax"
 "	      0048dccb    lea eax,[ebp-234h]"
 "	      0048dcd1    push eax"
-"	      0048dcd2    mov ecx,[ebp+8]"
+"	      0048dcd2    mov ecx,shortcutList"
 "	      0048dcd5    call 0048E910h"
 "	      0048dcda    jmp near ptr 0048DCDFh"
 );
 // LINE 867:
 	asm( 
-"	      0048dcdf    mov dword ptr [ebp-14h],7"
+"	      0048dcdf    mov tempShortcut.lCommand,7"
 );
 // LINE 868:
 	asm( 
-"	      0048dce6    mov dword ptr [ebp-10h],0"
+"	      0048dce6    mov tempShortcut.lKey,0"
 );
 // LINE 869:
 	asm( 
-"	      0048dced    mov dword ptr [ebp-0Ch],0"
+"	      0048dced    mov tempShortcut.lModifiers,0"
 );
 // LINE 870:
 	asm( 
-"	      0048dcf4    mov dword ptr [ebp-8],0"
+"	      0048dcf4    mov tempShortcut.lPush,0"
 );
 // LINE 871:
 	asm( 
-"	      0048dcfb    mov dword ptr [ebp-4],0"
+"	      0048dcfb    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 872:
 	asm( 
-"	      0048dd02    mov eax,[ebp+8]"
+"	      0048dd02    mov eax,shortcutList"
 "	      0048dd05    mov eax,[eax]"
 "	      0048dd07    mov [ebp-244h],eax"
 "	      0048dd0d    mov eax,[ebp-244h]"
@@ -4260,7 +4260,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048dd1e    jmp near ptr 0048DD23h"
 "	      0048dd23    mov eax,[ebp-23Ch]"
 "	      0048dd29    mov [ebp-250h],eax"
-"	      0048dd2f    mov ecx,[ebp+8]"
+"	      0048dd2f    mov ecx,shortcutList"
 "	      0048dd32    call 0048ACD0h"
 "	      0048dd37    mov [ebp-248h],eax"
 "	      0048dd3d    jmp near ptr 0048DD42h"
@@ -4270,7 +4270,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048dd51    jmp near ptr 0048DD56h"
 "	      0048dd56    cmp dword ptr [ebp-24Ch],0"
 "	      0048dd5d    je near ptr 0048DD78h"
-"	      0048dd63    lea esi,[ebp-18h]"
+"	      0048dd63    lea esi,tempShortcut.lDeviceID"
 "	      0048dd66    mov edi,[ebp-24Ch]"
 "	      0048dd6c    mov ecx,6"
 "	      0048dd71    rep movsd"
@@ -4290,7 +4290,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048ddae    mov eax,[ebp-248h]"
 "	      0048ddb4    mov ecx,[ebp-250h]"
 "	      0048ddba    mov [ecx+4],eax"
-"	      0048ddbd    mov eax,[ebp+8]"
+"	      0048ddbd    mov eax,shortcutList"
 "	      0048ddc0    add dword ptr [eax+4],1"
 "	      0048ddc4    mov eax,[ebp-248h]"
 "	      0048ddca    mov [ebp-240h],eax"
@@ -4300,27 +4300,27 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 874:
 	asm( 
-"	      0048dddf    mov dword ptr [ebp-14h],8"
+"	      0048dddf    mov tempShortcut.lCommand,8"
 );
 // LINE 875:
 	asm( 
-"	      0048dde6    mov dword ptr [ebp-10h],1"
+"	      0048dde6    mov tempShortcut.lKey,1"
 );
 // LINE 876:
 	asm( 
-"	      0048dded    mov dword ptr [ebp-0Ch],0"
+"	      0048dded    mov tempShortcut.lModifiers,0"
 );
 // LINE 877:
 	asm( 
-"	      0048ddf4    mov dword ptr [ebp-8],0"
+"	      0048ddf4    mov tempShortcut.lPush,0"
 );
 // LINE 878:
 	asm( 
-"	      0048ddfb    mov dword ptr [ebp-4],0"
+"	      0048ddfb    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 879:
 	asm( 
-"	      0048de02    mov eax,[ebp+8]"
+"	      0048de02    mov eax,shortcutList"
 "	      0048de05    mov eax,[eax]"
 "	      0048de07    mov [ebp-25Ch],eax"
 "	      0048de0d    mov eax,[ebp-25Ch]"
@@ -4329,7 +4329,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048de1e    jmp near ptr 0048DE23h"
 "	      0048de23    mov eax,[ebp-254h]"
 "	      0048de29    mov [ebp-268h],eax"
-"	      0048de2f    mov ecx,[ebp+8]"
+"	      0048de2f    mov ecx,shortcutList"
 "	      0048de32    call 0048ACD0h"
 "	      0048de37    mov [ebp-260h],eax"
 "	      0048de3d    jmp near ptr 0048DE42h"
@@ -4339,7 +4339,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048de51    jmp near ptr 0048DE56h"
 "	      0048de56    cmp dword ptr [ebp-264h],0"
 "	      0048de5d    je near ptr 0048DE78h"
-"	      0048de63    lea esi,[ebp-18h]"
+"	      0048de63    lea esi,tempShortcut.lDeviceID"
 "	      0048de66    mov edi,[ebp-264h]"
 "	      0048de6c    mov ecx,6"
 "	      0048de71    rep movsd"
@@ -4359,7 +4359,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048deae    mov eax,[ebp-260h]"
 "	      0048deb4    mov ecx,[ebp-268h]"
 "	      0048deba    mov [ecx+4],eax"
-"	      0048debd    mov eax,[ebp+8]"
+"	      0048debd    mov eax,shortcutList"
 "	      0048dec0    add dword ptr [eax+4],1"
 "	      0048dec4    mov eax,[ebp-260h]"
 "	      0048deca    mov [ebp-258h],eax"
@@ -4369,66 +4369,66 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 880:
 	asm( 
-"	      0048dedf    mov dword ptr [ebp-14h],9"
+"	      0048dedf    mov tempShortcut.lCommand,9"
 );
 // LINE 881:
 	asm( 
-"	      0048dee6    mov dword ptr [ebp-10h],1"
+"	      0048dee6    mov tempShortcut.lKey,1"
 );
 // LINE 882:
 	asm( 
-"	      0048deed    mov dword ptr [ebp-0Ch],0"
+"	      0048deed    mov tempShortcut.lModifiers,0"
 );
 // LINE 883:
 	asm( 
-"	      0048def4    mov dword ptr [ebp-8],0"
+"	      0048def4    mov tempShortcut.lPush,0"
 );
 // LINE 884:
 	asm( 
-"	      0048defb    mov dword ptr [ebp-4],0"
+"	      0048defb    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 885:
 	asm( 
-"	      0048df02    mov eax,[ebp+8]"
+"	      0048df02    mov eax,shortcutList"
 "	      0048df05    mov eax,[eax]"
 "	      0048df07    mov [ebp-274h],eax"
 "	      0048df0d    mov eax,[ebp-274h]"
 "	      0048df13    mov [ebp-26Ch],eax"
 "	      0048df19    jmp near ptr 0048DF1Eh"
 "	      0048df1e    jmp near ptr 0048DF23h"
-"	      0048df23    lea eax,[ebp-18h]"
+"	      0048df23    lea eax,tempShortcut.lDeviceID"
 "	      0048df26    push eax"
 "	      0048df27    mov eax,[ebp-26Ch]"
 "	      0048df2d    push eax"
 "	      0048df2e    lea eax,[ebp-270h]"
 "	      0048df34    push eax"
-"	      0048df35    mov ecx,[ebp+8]"
+"	      0048df35    mov ecx,shortcutList"
 "	      0048df38    call 0048E910h"
 "	      0048df3d    jmp near ptr 0048DF42h"
 );
 // LINE 888:
 	asm( 
-"	      0048df42    mov dword ptr [ebp-14h],13h"
+"	      0048df42    mov tempShortcut.lCommand,13h"
 );
 // LINE 889:
 	asm( 
-"	      0048df49    mov dword ptr [ebp-10h],6"
+"	      0048df49    mov tempShortcut.lKey,6"
 );
 // LINE 890:
 	asm( 
-"	      0048df50    mov dword ptr [ebp-0Ch],0"
+"	      0048df50    mov tempShortcut.lModifiers,0"
 );
 // LINE 891:
 	asm( 
-"	      0048df57    mov dword ptr [ebp-8],0"
+"	      0048df57    mov tempShortcut.lPush,0"
 );
 // LINE 892:
 	asm( 
-"	      0048df5e    mov dword ptr [ebp-4],0"
+"	      0048df5e    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 893:
 	asm( 
-"	      0048df65    mov eax,[ebp+8]"
+"	      0048df65    mov eax,shortcutList"
 "	      0048df68    mov eax,[eax]"
 "	      0048df6a    mov [ebp-280h],eax"
 "	      0048df70    mov eax,[ebp-280h]"
@@ -4437,7 +4437,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048df81    jmp near ptr 0048DF86h"
 "	      0048df86    mov eax,[ebp-278h]"
 "	      0048df8c    mov [ebp-28Ch],eax"
-"	      0048df92    mov ecx,[ebp+8]"
+"	      0048df92    mov ecx,shortcutList"
 "	      0048df95    call 0048ACD0h"
 "	      0048df9a    mov [ebp-284h],eax"
 "	      0048dfa0    jmp near ptr 0048DFA5h"
@@ -4447,7 +4447,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048dfb4    jmp near ptr 0048DFB9h"
 "	      0048dfb9    cmp dword ptr [ebp-288h],0"
 "	      0048dfc0    je near ptr 0048DFDBh"
-"	      0048dfc6    lea esi,[ebp-18h]"
+"	      0048dfc6    lea esi,tempShortcut.lDeviceID"
 "	      0048dfc9    mov edi,[ebp-288h]"
 "	      0048dfcf    mov ecx,6"
 "	      0048dfd4    rep movsd"
@@ -4467,7 +4467,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e011    mov eax,[ebp-284h]"
 "	      0048e017    mov ecx,[ebp-28Ch]"
 "	      0048e01d    mov [ecx+4],eax"
-"	      0048e020    mov eax,[ebp+8]"
+"	      0048e020    mov eax,shortcutList"
 "	      0048e023    add dword ptr [eax+4],1"
 "	      0048e027    mov eax,[ebp-284h]"
 "	      0048e02d    mov [ebp-27Ch],eax"
@@ -4477,27 +4477,27 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 895:
 	asm( 
-"	      0048e042    mov dword ptr [ebp-14h],2"
+"	      0048e042    mov tempShortcut.lCommand,2"
 );
 // LINE 896:
 	asm( 
-"	      0048e049    mov dword ptr [ebp-10h],7"
+"	      0048e049    mov tempShortcut.lKey,7"
 );
 // LINE 897:
 	asm( 
-"	      0048e050    mov dword ptr [ebp-0Ch],0"
+"	      0048e050    mov tempShortcut.lModifiers,0"
 );
 // LINE 898:
 	asm( 
-"	      0048e057    mov dword ptr [ebp-8],0"
+"	      0048e057    mov tempShortcut.lPush,0"
 );
 // LINE 899:
 	asm( 
-"	      0048e05e    mov dword ptr [ebp-4],0"
+"	      0048e05e    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 900:
 	asm( 
-"	      0048e065    mov eax,[ebp+8]"
+"	      0048e065    mov eax,shortcutList"
 "	      0048e068    mov eax,[eax]"
 "	      0048e06a    mov [ebp-298h],eax"
 "	      0048e070    mov eax,[ebp-298h]"
@@ -4506,7 +4506,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e081    jmp near ptr 0048E086h"
 "	      0048e086    mov eax,[ebp-290h]"
 "	      0048e08c    mov [ebp-2A4h],eax"
-"	      0048e092    mov ecx,[ebp+8]"
+"	      0048e092    mov ecx,shortcutList"
 "	      0048e095    call 0048ACD0h"
 "	      0048e09a    mov [ebp-29Ch],eax"
 "	      0048e0a0    jmp near ptr 0048E0A5h"
@@ -4516,7 +4516,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e0b4    jmp near ptr 0048E0B9h"
 "	      0048e0b9    cmp dword ptr [ebp-2A0h],0"
 "	      0048e0c0    je near ptr 0048E0DBh"
-"	      0048e0c6    lea esi,[ebp-18h]"
+"	      0048e0c6    lea esi,tempShortcut.lDeviceID"
 "	      0048e0c9    mov edi,[ebp-2A0h]"
 "	      0048e0cf    mov ecx,6"
 "	      0048e0d4    rep movsd"
@@ -4536,7 +4536,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e111    mov eax,[ebp-29Ch]"
 "	      0048e117    mov ecx,[ebp-2A4h]"
 "	      0048e11d    mov [ecx+4],eax"
-"	      0048e120    mov eax,[ebp+8]"
+"	      0048e120    mov eax,shortcutList"
 "	      0048e123    add dword ptr [eax+4],1"
 "	      0048e127    mov eax,[ebp-29Ch]"
 "	      0048e12d    mov [ebp-294h],eax"
@@ -4546,66 +4546,66 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 902:
 	asm( 
-"	      0048e142    mov dword ptr [ebp-14h],0Ch"
+"	      0048e142    mov tempShortcut.lCommand,0Ch"
 );
 // LINE 903:
 	asm( 
-"	      0048e149    mov dword ptr [ebp-10h],8"
+"	      0048e149    mov tempShortcut.lKey,8"
 );
 // LINE 904:
 	asm( 
-"	      0048e150    mov dword ptr [ebp-0Ch],0"
+"	      0048e150    mov tempShortcut.lModifiers,0"
 );
 // LINE 905:
 	asm( 
-"	      0048e157    mov dword ptr [ebp-8],0"
+"	      0048e157    mov tempShortcut.lPush,0"
 );
 // LINE 906:
 	asm( 
-"	      0048e15e    mov dword ptr [ebp-4],0"
+"	      0048e15e    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 907:
 	asm( 
-"	      0048e165    mov eax,[ebp+8]"
+"	      0048e165    mov eax,shortcutList"
 "	      0048e168    mov eax,[eax]"
 "	      0048e16a    mov [ebp-2B0h],eax"
 "	      0048e170    mov eax,[ebp-2B0h]"
 "	      0048e176    mov [ebp-2A8h],eax"
 "	      0048e17c    jmp near ptr 0048E181h"
 "	      0048e181    jmp near ptr 0048E186h"
-"	      0048e186    lea eax,[ebp-18h]"
+"	      0048e186    lea eax,tempShortcut.lDeviceID"
 "	      0048e189    push eax"
 "	      0048e18a    mov eax,[ebp-2A8h]"
 "	      0048e190    push eax"
 "	      0048e191    lea eax,[ebp-2ACh]"
 "	      0048e197    push eax"
-"	      0048e198    mov ecx,[ebp+8]"
+"	      0048e198    mov ecx,shortcutList"
 "	      0048e19b    call 0048E910h"
 "	      0048e1a0    jmp near ptr 0048E1A5h"
 );
 // LINE 908:
 	asm( 
-"	      0048e1a5    mov dword ptr [ebp-14h],0Dh"
+"	      0048e1a5    mov tempShortcut.lCommand,0Dh"
 );
 // LINE 909:
 	asm( 
-"	      0048e1ac    mov dword ptr [ebp-10h],9"
+"	      0048e1ac    mov tempShortcut.lKey,9"
 );
 // LINE 910:
 	asm( 
-"	      0048e1b3    mov dword ptr [ebp-0Ch],0"
+"	      0048e1b3    mov tempShortcut.lModifiers,0"
 );
 // LINE 911:
 	asm( 
-"	      0048e1ba    mov dword ptr [ebp-8],0"
+"	      0048e1ba    mov tempShortcut.lPush,0"
 );
 // LINE 912:
 	asm( 
-"	      0048e1c1    mov dword ptr [ebp-4],0"
+"	      0048e1c1    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 913:
 	asm( 
-"	      0048e1c8    mov eax,[ebp+8]"
+"	      0048e1c8    mov eax,shortcutList"
 "	      0048e1cb    mov eax,[eax]"
 "	      0048e1cd    mov [ebp-2BCh],eax"
 "	      0048e1d3    mov eax,[ebp-2BCh]"
@@ -4614,7 +4614,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e1e4    jmp near ptr 0048E1E9h"
 "	      0048e1e9    mov eax,[ebp-2B4h]"
 "	      0048e1ef    mov [ebp-2C8h],eax"
-"	      0048e1f5    mov ecx,[ebp+8]"
+"	      0048e1f5    mov ecx,shortcutList"
 "	      0048e1f8    call 0048ACD0h"
 "	      0048e1fd    mov [ebp-2C0h],eax"
 "	      0048e203    jmp near ptr 0048E208h"
@@ -4624,7 +4624,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e217    jmp near ptr 0048E21Ch"
 "	      0048e21c    cmp dword ptr [ebp-2C4h],0"
 "	      0048e223    je near ptr 0048E23Eh"
-"	      0048e229    lea esi,[ebp-18h]"
+"	      0048e229    lea esi,tempShortcut.lDeviceID"
 "	      0048e22c    mov edi,[ebp-2C4h]"
 "	      0048e232    mov ecx,6"
 "	      0048e237    rep movsd"
@@ -4644,7 +4644,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e274    mov eax,[ebp-2C0h]"
 "	      0048e27a    mov ecx,[ebp-2C8h]"
 "	      0048e280    mov [ecx+4],eax"
-"	      0048e283    mov eax,[ebp+8]"
+"	      0048e283    mov eax,shortcutList"
 "	      0048e286    add dword ptr [eax+4],1"
 "	      0048e28a    mov eax,[ebp-2C0h]"
 "	      0048e290    mov [ebp-2B8h],eax"
@@ -4654,27 +4654,27 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 );
 // LINE 915:
 	asm( 
-"	      0048e2a5    mov dword ptr [ebp-14h],1Ah"
+"	      0048e2a5    mov tempShortcut.lCommand,1Ah"
 );
 // LINE 916:
 	asm( 
-"	      0048e2ac    mov dword ptr [ebp-10h],0Ah"
+"	      0048e2ac    mov tempShortcut.lKey,0Ah"
 );
 // LINE 917:
 	asm( 
-"	      0048e2b3    mov dword ptr [ebp-0Ch],0"
+"	      0048e2b3    mov tempShortcut.lModifiers,0"
 );
 // LINE 918:
 	asm( 
-"	      0048e2ba    mov dword ptr [ebp-8],0"
+"	      0048e2ba    mov tempShortcut.lPush,0"
 );
 // LINE 919:
 	asm( 
-"	      0048e2c1    mov dword ptr [ebp-4],0"
+"	      0048e2c1    mov tempShortcut.lIgnoreModifiers,0"
 );
 // LINE 920:
 	asm( 
-"	      0048e2c8    mov eax,[ebp+8]"
+"	      0048e2c8    mov eax,shortcutList"
 "	      0048e2cb    mov eax,[eax]"
 "	      0048e2cd    mov [ebp-2D4h],eax"
 "	      0048e2d3    mov eax,[ebp-2D4h]"
@@ -4683,7 +4683,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e2e4    jmp near ptr 0048E2E9h"
 "	      0048e2e9    mov eax,[ebp-2CCh]"
 "	      0048e2ef    mov [ebp-2E0h],eax"
-"	      0048e2f5    mov ecx,[ebp+8]"
+"	      0048e2f5    mov ecx,shortcutList"
 "	      0048e2f8    call 0048ACD0h"
 "	      0048e2fd    mov [ebp-2D8h],eax"
 "	      0048e303    jmp near ptr 0048E308h"
@@ -4693,7 +4693,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e317    jmp near ptr 0048E31Ch"
 "	      0048e31c    cmp dword ptr [ebp-2DCh],0"
 "	      0048e323    je near ptr 0048E33Eh"
-"	      0048e329    lea esi,[ebp-18h]"
+"	      0048e329    lea esi,tempShortcut.lDeviceID"
 "	      0048e32c    mov edi,[ebp-2DCh]"
 "	      0048e332    mov ecx,6"
 "	      0048e337    rep movsd"
@@ -4713,7 +4713,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 "	      0048e374    mov eax,[ebp-2D8h]"
 "	      0048e37a    mov ecx,[ebp-2E0h]"
 "	      0048e380    mov [ecx+4],eax"
-"	      0048e383    mov eax,[ebp+8]"
+"	      0048e383    mov eax,shortcutList"
 "	      0048e386    add dword ptr [eax+4],1"
 "	      0048e38a    mov eax,[ebp-2D8h]"
 "	      0048e390    mov [ebp-2D0h],eax"
@@ -4748,28 +4748,28 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 );
 // LINE 937:
 	asm( 
-"	      0048e3ba    cmp dword ptr [ebp+8],3"
+"	      0048e3ba    cmp lCommand,3"
 "	      0048e3be    je near ptr 0048E414h"
-"	      0048e3c4    cmp dword ptr [ebp+8],4"
+"	      0048e3c4    cmp lCommand,4"
 "	      0048e3c8    je near ptr 0048E414h"
-"	      0048e3ce    cmp dword ptr [ebp+8],5"
+"	      0048e3ce    cmp lCommand,5"
 "	      0048e3d2    je near ptr 0048E414h"
-"	      0048e3d8    cmp dword ptr [ebp+8],14h"
+"	      0048e3d8    cmp lCommand,14h"
 "	      0048e3dc    je near ptr 0048E414h"
-"	      0048e3e2    cmp dword ptr [ebp+8],15h"
+"	      0048e3e2    cmp lCommand,15h"
 "	      0048e3e6    je near ptr 0048E414h"
-"	      0048e3ec    cmp dword ptr [ebp+8],16h"
+"	      0048e3ec    cmp lCommand,16h"
 "	      0048e3f0    je near ptr 0048E414h"
-"	      0048e3f6    cmp dword ptr [ebp+8],17h"
+"	      0048e3f6    cmp lCommand,17h"
 "	      0048e3fa    je near ptr 0048E414h"
-"	      0048e400    cmp dword ptr [ebp+8],18h"
+"	      0048e400    cmp lCommand,18h"
 "	      0048e404    je near ptr 0048E414h"
-"	      0048e40a    cmp dword ptr [ebp+8],19h"
+"	      0048e40a    cmp lCommand,19h"
 "	      0048e40e    jne near ptr 0048E422h"
 );
 // LINE 939:
 	asm( 
-"	      0048e414    mov eax,[ebp+0Ch]"
+"	      0048e414    mov eax,lPush"
 "	      0048e417    mov dword ptr [eax],1"
 );
 // LINE 941:
@@ -4778,35 +4778,35 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 );
 // LINE 942:
 	asm( 
-"	      0048e422    mov eax,[ebp+0Ch]"
+"	      0048e422    mov eax,lPush"
 "	      0048e425    mov dword ptr [eax],0"
 );
 // LINE 954:
 	asm( 
-"	      0048e42b    cmp dword ptr [ebp+8],8"
+"	      0048e42b    cmp lCommand,8"
 "	      0048e42f    je near ptr 0048E48Fh"
-"	      0048e435    cmp dword ptr [ebp+8],9"
+"	      0048e435    cmp lCommand,9"
 "	      0048e439    je near ptr 0048E48Fh"
-"	      0048e43f    cmp dword ptr [ebp+8],7"
+"	      0048e43f    cmp lCommand,7"
 "	      0048e443    je near ptr 0048E48Fh"
-"	      0048e449    cmp dword ptr [ebp+8],6"
+"	      0048e449    cmp lCommand,6"
 "	      0048e44d    je near ptr 0048E48Fh"
-"	      0048e453    cmp dword ptr [ebp+8],0Bh"
+"	      0048e453    cmp lCommand,0Bh"
 "	      0048e457    je near ptr 0048E48Fh"
-"	      0048e45d    cmp dword ptr [ebp+8],0Ah"
+"	      0048e45d    cmp lCommand,0Ah"
 "	      0048e461    je near ptr 0048E48Fh"
-"	      0048e467    cmp dword ptr [ebp+8],0Ch"
+"	      0048e467    cmp lCommand,0Ch"
 "	      0048e46b    je near ptr 0048E48Fh"
-"	      0048e471    cmp dword ptr [ebp+8],0Dh"
+"	      0048e471    cmp lCommand,0Dh"
 "	      0048e475    je near ptr 0048E48Fh"
-"	      0048e47b    cmp dword ptr [ebp+8],13h"
+"	      0048e47b    cmp lCommand,13h"
 "	      0048e47f    je near ptr 0048E48Fh"
-"	      0048e485    cmp dword ptr [ebp+8],2"
+"	      0048e485    cmp lCommand,2"
 "	      0048e489    jne near ptr 0048E49Dh"
 );
 // LINE 956:
 	asm( 
-"	      0048e48f    mov eax,[ebp+10h]"
+"	      0048e48f    mov eax,lIgnoreModifiers"
 "	      0048e492    mov dword ptr [eax],1"
 );
 // LINE 958:
@@ -4815,7 +4815,7 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 );
 // LINE 959:
 	asm( 
-"	      0048e49d    mov eax,[ebp+10h]"
+"	      0048e49d    mov eax,lIgnoreModifiers"
 "	      0048e4a0    mov dword ptr [eax],0"
 );
 // LINE 961:
@@ -4849,8 +4849,8 @@ void DeleteShortcutPrefsFile() {
 // LINE 969:
 	asm( 
 "	      0048e4c1    mov al,ds:[599D9Ch]"
-"	      0048e4c6    mov [ebp-104h],al"
-"	      0048e4cc    lea edi,[ebp-103h]"
+"	      0048e4c6    mov szFilePath[0],al"
+"	      0048e4cc    lea edi,szFilePath[1]"
 "	      0048e4d2    xor eax,eax"
 "	      0048e4d4    mov ecx,40h"
 "	      0048e4d9    rep stosd"
@@ -4859,7 +4859,7 @@ void DeleteShortcutPrefsFile() {
 );
 // LINE 971:
 	asm( 
-"	      0048e4de    lea eax,[ebp-104h]"
+"	      0048e4de    lea eax,szFilePath[0]"
 "	      0048e4e4    push eax"
 "	      0048e4e5    mov eax,ds:[599D84h]"
 "	      0048e4ea    push eax"
@@ -4870,7 +4870,7 @@ void DeleteShortcutPrefsFile() {
 );
 // LINE 972:
 	asm( 
-"	      0048e4f7    lea eax,[ebp-104h]"
+"	      0048e4f7    lea eax,szFilePath[0]"
 "	      0048e4fd    push eax"
 "	      0048e4fe    call 0056FA70h"
 "	      0048e503    add esp,4"
@@ -4899,13 +4899,13 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 982:
 	asm( 
-"	      0048e51b    mov eax,[ebp+8]"
+"	      0048e51b    mov eax,shortcutToValidate"
 "	      0048e51e    cmp dword ptr [eax],0"
 "	      0048e521    je near ptr 0048E546h"
-"	      0048e527    mov eax,[ebp+8]"
+"	      0048e527    mov eax,shortcutToValidate"
 "	      0048e52a    cmp dword ptr [eax],1"
 "	      0048e52d    jl near ptr 0048E53Fh"
-"	      0048e533    mov eax,[ebp+8]"
+"	      0048e533    mov eax,shortcutToValidate"
 "	      0048e536    cmp dword ptr [eax],4"
 "	      0048e539    jle near ptr 0048E546h"
 );
@@ -4916,10 +4916,10 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 987:
 	asm( 
-"	      0048e546    mov eax,[ebp+8]"
+"	      0048e546    mov eax,shortcutToValidate"
 "	      0048e549    cmp dword ptr [eax],0"
 "	      0048e54c    jne near ptr 0048E570h"
-"	      0048e552    mov eax,[ebp+8]"
+"	      0048e552    mov eax,shortcutToValidate"
 "	      0048e555    mov eax,[eax+8]"
 "	      0048e558    push eax"
 "	      0048e559    call 0048E5FAh"
@@ -4934,13 +4934,13 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 993:
 	asm( 
-"	      0048e570    mov eax,[ebp+8]"
+"	      0048e570    mov eax,shortcutToValidate"
 "	      0048e573    cmp dword ptr [eax],1"
 "	      0048e576    jl near ptr 0048E59Ch"
-"	      0048e57c    mov eax,[ebp+8]"
+"	      0048e57c    mov eax,shortcutToValidate"
 "	      0048e57f    cmp dword ptr [eax],4"
 "	      0048e582    jg near ptr 0048E59Ch"
-"	      0048e588    mov eax,[ebp+8]"
+"	      0048e588    mov eax,shortcutToValidate"
 "	      0048e58b    cmp dword ptr [eax+8],0Eh"
 "	      0048e58f    jl near ptr 0048E59Ch"
 );
@@ -4951,7 +4951,7 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 997:
 	asm( 
-"	      0048e59c    mov eax,[ebp+8]"
+"	      0048e59c    mov eax,shortcutToValidate"
 "	      0048e59f    cmp dword ptr [eax+0Ch],0"
 "	      0048e5a3    je near ptr 0048E5B0h"
 );
@@ -4962,7 +4962,7 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 999:
 	asm( 
-"	      0048e5b0    mov eax,[ebp+8]"
+"	      0048e5b0    mov eax,shortcutToValidate"
 "	      0048e5b3    mov eax,[eax+4]"
 "	      0048e5b6    push eax"
 "	      0048e5b7    call 0048E696h"
@@ -4977,13 +4977,13 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 );
 // LINE 1005:
 	asm( 
-"	      0048e5ce    mov eax,[ebp+8]"
+"	      0048e5ce    mov eax,shortcutToValidate"
 "	      0048e5d1    add eax,14h"
 "	      0048e5d4    push eax"
-"	      0048e5d5    mov eax,[ebp+8]"
+"	      0048e5d5    mov eax,shortcutToValidate"
 "	      0048e5d8    add eax,10h"
 "	      0048e5db    push eax"
-"	      0048e5dc    mov eax,[ebp+8]"
+"	      0048e5dc    mov eax,shortcutToValidate"
 "	      0048e5df    mov eax,[eax+4]"
 "	      0048e5e2    push eax"
 "	      0048e5e3    call 0048E3B4h"
@@ -5016,15 +5016,15 @@ int32_t IsKeyReserved(long lKey) {
 );
 // LINE 1018:
 	asm( 
-"	      0048e600    cmp dword ptr [ebp+8],90h"
+"	      0048e600    cmp lKey,90h"
 "	      0048e607    je near ptr 0048E635h"
-"	      0048e60d    cmp dword ptr [ebp+8],2Ch"
+"	      0048e60d    cmp lKey,2Ch"
 "	      0048e611    je near ptr 0048E635h"
-"	      0048e617    cmp dword ptr [ebp+8],1Bh"
+"	      0048e617    cmp lKey,1Bh"
 "	      0048e61b    je near ptr 0048E635h"
-"	      0048e621    cmp dword ptr [ebp+8],11h"
+"	      0048e621    cmp lKey,11h"
 "	      0048e625    je near ptr 0048E635h"
-"	      0048e62b    cmp dword ptr [ebp+8],12h"
+"	      0048e62b    cmp lKey,12h"
 "	      0048e62f    jne near ptr 0048E63Fh"
 "	      0048e635    mov eax,1"
 "	      0048e63a    jmp near ptr 0048E641h"
@@ -5053,32 +5053,32 @@ void GetReservedKeyArray(long * lKeys) {
 );
 // LINE 1030:
 	asm( 
-"	      0048e651    mov eax,[ebp+8]"
+"	      0048e651    mov eax,lKeys"
 "	      0048e654    mov dword ptr [eax],90h"
 );
 // LINE 1031:
 	asm( 
-"	      0048e65a    mov eax,[ebp+8]"
+"	      0048e65a    mov eax,lKeys"
 "	      0048e65d    mov dword ptr [eax+4],2Ch"
 );
 // LINE 1032:
 	asm( 
-"	      0048e664    mov eax,[ebp+8]"
+"	      0048e664    mov eax,lKeys"
 "	      0048e667    mov dword ptr [eax+8],1Bh"
 );
 // LINE 1033:
 	asm( 
-"	      0048e66e    mov eax,[ebp+8]"
+"	      0048e66e    mov eax,lKeys"
 "	      0048e671    mov dword ptr [eax+0Ch],11h"
 );
 // LINE 1034:
 	asm( 
-"	      0048e678    mov eax,[ebp+8]"
+"	      0048e678    mov eax,lKeys"
 "	      0048e67b    mov dword ptr [eax+10h],12h"
 );
 // LINE 1035:
 	asm( 
-"	      0048e682    mov eax,[ebp+8]"
+"	      0048e682    mov eax,lKeys"
 "	      0048e685    mov dword ptr [eax+14h],0"
 );
 // LINE 1036:
@@ -5104,9 +5104,9 @@ int32_t IsCommandConfigurable(long lCommand) {
 );
 // LINE 1045:
 	asm( 
-"	      0048e69c    cmp dword ptr [ebp+8],2"
+"	      0048e69c    cmp lCommand,2"
 "	      0048e6a0    jl near ptr 0048E6BAh"
-"	      0048e6a6    cmp dword ptr [ebp+8],20h"
+"	      0048e6a6    cmp lCommand,20h"
 "	      0048e6aa    jg near ptr 0048E6BAh"
 "	      0048e6b0    mov eax,1"
 "	      0048e6b5    jmp near ptr 0048E6BCh"
@@ -5135,7 +5135,7 @@ long GetJoystickCommandTwin(long lCommand) {
 );
 // LINE 1057:
 	asm( 
-"	      0048e6cc    cmp dword ptr [ebp+8],6"
+"	      0048e6cc    cmp lCommand,6"
 "	      0048e6d0    jne near ptr 0048E6E5h"
 );
 // LINE 1058:
@@ -5146,7 +5146,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1059:
 	asm( 
 "	      0048e6e0    jmp near ptr 0048E889h"
-"	      0048e6e5    cmp dword ptr [ebp+8],7"
+"	      0048e6e5    cmp lCommand,7"
 "	      0048e6e9    jne near ptr 0048E6FEh"
 );
 // LINE 1060:
@@ -5157,7 +5157,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1061:
 	asm( 
 "	      0048e6f9    jmp near ptr 0048E889h"
-"	      0048e6fe    cmp dword ptr [ebp+8],8"
+"	      0048e6fe    cmp lCommand,8"
 "	      0048e702    jne near ptr 0048E717h"
 );
 // LINE 1062:
@@ -5168,7 +5168,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1063:
 	asm( 
 "	      0048e712    jmp near ptr 0048E889h"
-"	      0048e717    cmp dword ptr [ebp+8],9"
+"	      0048e717    cmp lCommand,9"
 "	      0048e71b    jne near ptr 0048E730h"
 );
 // LINE 1064:
@@ -5179,7 +5179,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1065:
 	asm( 
 "	      0048e72b    jmp near ptr 0048E889h"
-"	      0048e730    cmp dword ptr [ebp+8],0Ah"
+"	      0048e730    cmp lCommand,0Ah"
 "	      0048e734    jne near ptr 0048E749h"
 );
 // LINE 1066:
@@ -5190,7 +5190,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1067:
 	asm( 
 "	      0048e744    jmp near ptr 0048E889h"
-"	      0048e749    cmp dword ptr [ebp+8],0Bh"
+"	      0048e749    cmp lCommand,0Bh"
 "	      0048e74d    jne near ptr 0048E762h"
 );
 // LINE 1068:
@@ -5201,7 +5201,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1069:
 	asm( 
 "	      0048e75d    jmp near ptr 0048E889h"
-"	      0048e762    cmp dword ptr [ebp+8],0Ch"
+"	      0048e762    cmp lCommand,0Ch"
 "	      0048e766    jne near ptr 0048E77Bh"
 );
 // LINE 1070:
@@ -5212,7 +5212,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1071:
 	asm( 
 "	      0048e776    jmp near ptr 0048E889h"
-"	      0048e77b    cmp dword ptr [ebp+8],0Dh"
+"	      0048e77b    cmp lCommand,0Dh"
 "	      0048e77f    jne near ptr 0048E794h"
 );
 // LINE 1072:
@@ -5223,7 +5223,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1073:
 	asm( 
 "	      0048e78f    jmp near ptr 0048E889h"
-"	      0048e794    cmp dword ptr [ebp+8],0Eh"
+"	      0048e794    cmp lCommand,0Eh"
 "	      0048e798    jne near ptr 0048E7ADh"
 );
 // LINE 1074:
@@ -5234,7 +5234,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1075:
 	asm( 
 "	      0048e7a8    jmp near ptr 0048E889h"
-"	      0048e7ad    cmp dword ptr [ebp+8],0Fh"
+"	      0048e7ad    cmp lCommand,0Fh"
 "	      0048e7b1    jne near ptr 0048E7C6h"
 );
 // LINE 1076:
@@ -5245,7 +5245,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1077:
 	asm( 
 "	      0048e7c1    jmp near ptr 0048E889h"
-"	      0048e7c6    cmp dword ptr [ebp+8],11h"
+"	      0048e7c6    cmp lCommand,11h"
 "	      0048e7ca    jne near ptr 0048E7DFh"
 );
 // LINE 1078:
@@ -5256,7 +5256,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1079:
 	asm( 
 "	      0048e7da    jmp near ptr 0048E889h"
-"	      0048e7df    cmp dword ptr [ebp+8],12h"
+"	      0048e7df    cmp lCommand,12h"
 "	      0048e7e3    jne near ptr 0048E7F8h"
 );
 // LINE 1080:
@@ -5267,7 +5267,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1081:
 	asm( 
 "	      0048e7f3    jmp near ptr 0048E889h"
-"	      0048e7f8    cmp dword ptr [ebp+8],1Bh"
+"	      0048e7f8    cmp lCommand,1Bh"
 "	      0048e7fc    jne near ptr 0048E811h"
 );
 // LINE 1082:
@@ -5278,7 +5278,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1083:
 	asm( 
 "	      0048e80c    jmp near ptr 0048E889h"
-"	      0048e811    cmp dword ptr [ebp+8],1Ch"
+"	      0048e811    cmp lCommand,1Ch"
 "	      0048e815    jne near ptr 0048E82Ah"
 );
 // LINE 1084:
@@ -5289,7 +5289,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1085:
 	asm( 
 "	      0048e825    jmp near ptr 0048E889h"
-"	      0048e82a    cmp dword ptr [ebp+8],1Dh"
+"	      0048e82a    cmp lCommand,1Dh"
 "	      0048e82e    jne near ptr 0048E843h"
 );
 // LINE 1086:
@@ -5300,7 +5300,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1087:
 	asm( 
 "	      0048e83e    jmp near ptr 0048E889h"
-"	      0048e843    cmp dword ptr [ebp+8],1Eh"
+"	      0048e843    cmp lCommand,1Eh"
 "	      0048e847    jne near ptr 0048E85Ch"
 );
 // LINE 1088:
@@ -5311,7 +5311,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1089:
 	asm( 
 "	      0048e857    jmp near ptr 0048E889h"
-"	      0048e85c    cmp dword ptr [ebp+8],1Fh"
+"	      0048e85c    cmp lCommand,1Fh"
 "	      0048e860    jne near ptr 0048E875h"
 );
 // LINE 1090:
@@ -5322,7 +5322,7 @@ long GetJoystickCommandTwin(long lCommand) {
 // LINE 1091:
 	asm( 
 "	      0048e870    jmp near ptr 0048E889h"
-"	      0048e875    cmp dword ptr [ebp+8],20h"
+"	      0048e875    cmp lCommand,20h"
 "	      0048e879    jne near ptr 0048E889h"
 );
 // LINE 1092:

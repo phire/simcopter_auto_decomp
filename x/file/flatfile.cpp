@@ -15,34 +15,34 @@ void FlatFile::FlatFile() {
 "	      0055c276    push ebx"
 "	      0055c277    push esi"
 "	      0055c278    push edi"
-"	      0055c279    mov [ebp-4],ecx"
-"	      0055c27c    mov eax,[ebp-4]"
+"	      0055c279    mov this,ecx"
+"	      0055c27c    mov eax,this"
 "	      0055c27f    mov dword ptr [eax],593620h"
 );
 // LINE 14:
 	asm( 
-"	      0055c285    mov eax,[ebp-4]"
+"	      0055c285    mov eax,this"
 "	      0055c288    mov byte ptr [eax+8],0"
 );
 // LINE 19:
 	asm( 
-"	      0055c28c    mov eax,[ebp-4]"
+"	      0055c28c    mov eax,this"
 "	      0055c28f    mov dword ptr [eax+10Ch],0"
 );
 // LINE 21:
 	asm( 
-"	      0055c299    mov eax,[ebp-4]"
+"	      0055c299    mov eax,this"
 "	      0055c29c    mov dword ptr [eax+108h],0"
 );
 // LINE 22:
 	asm( 
-"	      0055c2a6    mov ecx,[ebp-4]"
+"	      0055c2a6    mov ecx,this"
 "	      0055c2a9    call 0055C945h"
 );
 // LINE 23:
 	asm( 
 "	      0055c2ae    jmp near ptr 0055C2B3h"
-"	      0055c2b3    mov eax,[ebp-4]"
+"	      0055c2b3    mov eax,this"
 "	      0055c2b6    pop edi"
 "	      0055c2b7    pop esi"
 "	      0055c2b8    pop ebx"
@@ -61,21 +61,21 @@ void FlatFile::~FlatFile() {
 "	      0055c2c1    push ebx"
 "	      0055c2c2    push esi"
 "	      0055c2c3    push edi"
-"	      0055c2c4    mov [ebp-4],ecx"
-"	      0055c2c7    mov eax,[ebp-4]"
+"	      0055c2c4    mov this,ecx"
+"	      0055c2c7    mov eax,this"
 "	      0055c2ca    mov dword ptr [eax],593620h"
 );
 // LINE 30:
 	asm( 
-"	      0055c2d0    mov eax,[ebp-4]"
+"	      0055c2d0    mov eax,this"
 "	      0055c2d3    cmp dword ptr [eax+10Ch],0"
 "	      0055c2da    je near ptr 0055C2E8h"
-"	      0055c2e0    mov ecx,[ebp-4]"
+"	      0055c2e0    mov ecx,this"
 "	      0055c2e3    call 0055C5CBh"
 );
 // LINE 32:
 	asm( 
-"	      0055c2e8    mov ecx,[ebp-4]"
+"	      0055c2e8    mov ecx,this"
 "	      0055c2eb    call 0055C96Eh"
 );
 // LINE 33:
@@ -105,31 +105,31 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 // LINE 44:
 	asm( 
 "	      0055c303    mov eax,ds:[5BDDD8h]"
-"	      0055c308    mov [ebp-4],eax"
+"	      0055c308    mov srch,eax"
 "	      0055c30b    jmp near ptr 0055C319h"
-"	      0055c310    mov eax,[ebp-4]"
+"	      0055c310    mov eax,srch"
 "	      0055c313    mov eax,[eax+4]"
-"	      0055c316    mov [ebp-4],eax"
-"	      0055c319    cmp dword ptr [ebp-4],0"
+"	      0055c316    mov srch,eax"
+"	      0055c319    cmp srch,0"
 "	      0055c31d    je near ptr 0055C35Eh"
 );
 // LINE 46:
 	asm( 
-"	      0055c323    mov ecx,[ebp-4]"
+"	      0055c323    mov ecx,srch"
 "	      0055c326    call 0055C7DDh"
 "	      0055c32b    movzx eax,ax"
 "	      0055c32e    test eax,eax"
 "	      0055c330    je near ptr 0055C359h"
-"	      0055c336    mov eax,[ebp-4]"
+"	      0055c336    mov eax,srch"
 "	      0055c339    add eax,8"
 "	      0055c33c    push eax"
-"	      0055c33d    mov eax,[ebp+8]"
+"	      0055c33d    mov eax,name"
 "	      0055c340    push eax"
 "	      0055c341    call 005665B7h"
 "	      0055c346    add esp,8"
 "	      0055c349    test eax,eax"
 "	      0055c34b    jne near ptr 0055C359h"
-"	      0055c351    mov eax,[ebp-4]"
+"	      0055c351    mov eax,srch"
 "	      0055c354    jmp near ptr 0055C365h"
 );
 // LINE 47:
@@ -163,32 +163,32 @@ long FlatFile::Open(char * name) {
 "	      0055c373    push ebx"
 "	      0055c374    push esi"
 "	      0055c375    push edi"
-"	      0055c376    mov [ebp-104h],ecx"
+"	      0055c376    mov this,ecx"
 );
 // LINE 54:
 	asm( 
 "	      0055c37c    push 100h"
-"	      0055c381    lea eax,[ebp-100h]"
+"	      0055c381    lea eax,pstrbuff[0]"
 "	      0055c387    push eax"
-"	      0055c388    mov eax,[ebp+8]"
+"	      0055c388    mov eax,name"
 "	      0055c38b    push eax"
 "	      0055c38c    call 00554B76h"
 "	      0055c391    add esp,0Ch"
 );
 // LINE 55:
 	asm( 
-"	      0055c394    lea eax,[ebp-100h]"
+"	      0055c394    lea eax,pstrbuff[0]"
 "	      0055c39a    push eax"
 "	      0055c39b    call 00566B52h"
 "	      0055c3a0    add esp,4"
 );
 // LINE 56:
 	asm( 
-"	      0055c3a3    lea eax,[ebp-100h]"
+"	      0055c3a3    lea eax,pstrbuff[0]"
 "	      0055c3a9    push eax"
-"	      0055c3aa    mov eax,[ebp-104h]"
+"	      0055c3aa    mov eax,this"
 "	      0055c3b0    mov eax,[eax]"
-"	      0055c3b2    mov ecx,[ebp-104h]"
+"	      0055c3b2    mov ecx,this"
 "	      0055c3b8    call dword ptr [eax+4]"
 "	      0055c3bb    jmp near ptr 0055C3C0h"
 );
@@ -215,11 +215,11 @@ long FlatFile::Open(unsigned char * name) {
 "	      0055c3d0    push ebx"
 "	      0055c3d1    push esi"
 "	      0055c3d2    push edi"
-"	      0055c3d3    mov [ebp-110h],ecx"
+"	      0055c3d3    mov this,ecx"
 );
 // LINE 61:
 	asm( 
-"	      0055c3d9    mov ecx,[ebp-110h]"
+"	      0055c3d9    mov ecx,this"
 "	      0055c3df    call 0055C7DDh"
 "	      0055c3e4    movzx eax,ax"
 "	      0055c3e7    test eax,eax"
@@ -229,19 +229,19 @@ long FlatFile::Open(unsigned char * name) {
 );
 // LINE 63:
 	asm( 
-"	      0055c3f9    mov dword ptr [ebp-4],0"
+"	      0055c3f9    mov err,0"
 );
 // LINE 65:
 	asm( 
-"	      0055c400    mov eax,[ebp+8]"
+"	      0055c400    mov eax,name"
 "	      0055c403    push eax"
 "	      0055c404    call 0055C2FAh"
 "	      0055c409    add esp,4"
-"	      0055c40c    mov [ebp-8],eax"
+"	      0055c40c    mov same,eax"
 );
 // LINE 67:
 	asm( 
-"	      0055c40f    cmp dword ptr [ebp-8],0"
+"	      0055c40f    cmp same,0"
 "	      0055c413    jne near ptr 0055C509h"
 );
 // LINE 73:
@@ -249,21 +249,21 @@ long FlatFile::Open(unsigned char * name) {
 	char[256] cstrbuff;
 	long test;
 	asm( 
-"	      0055c419    mov dword ptr [ebp-0Ch],1"
+"	      0055c419    mov test,1"
 "	      0055c420    jmp near ptr 0055C428h"
-"	      0055c425    inc dword ptr [ebp-0Ch]"
-"	      0055c428    mov eax,[ebp+8]"
+"	      0055c425    inc test"
+"	      0055c428    mov eax,name"
 "	      0055c42b    xor ecx,ecx"
 "	      0055c42d    mov cl,[eax]"
-"	      0055c42f    cmp ecx,[ebp-0Ch]"
+"	      0055c42f    cmp ecx,test"
 "	      0055c432    jl near ptr 0055C474h"
 );
 // LINE 74:
 	asm( 
-"	      0055c438    cmp dword ptr [ebp-0Ch],2"
+"	      0055c438    cmp test,2"
 "	      0055c43c    je near ptr 0055C46Fh"
-"	      0055c442    mov eax,[ebp-0Ch]"
-"	      0055c445    mov ecx,[ebp+8]"
+"	      0055c442    mov eax,test"
+"	      0055c445    mov ecx,name"
 "	      0055c448    xor edx,edx"
 "	      0055c44a    mov dl,[eax+ecx]"
 "	      0055c44d    cmp edx,3Ah"
@@ -285,16 +285,16 @@ long FlatFile::Open(unsigned char * name) {
 // LINE 80:
 	asm( 
 "	      0055c474    push 100h"
-"	      0055c479    lea eax,[ebp-10Ch]"
+"	      0055c479    lea eax,cstrbuff[0]"
 "	      0055c47f    push eax"
-"	      0055c480    mov eax,[ebp+8]"
+"	      0055c480    mov eax,name"
 "	      0055c483    push eax"
 "	      0055c484    call 00554B76h"
 "	      0055c489    add esp,0Ch"
 );
 // LINE 81:
 	asm( 
-"	      0055c48c    lea eax,[ebp-10Ch]"
+"	      0055c48c    lea eax,cstrbuff[0]"
 "	      0055c492    push eax"
 "	      0055c493    call 00566B13h"
 "	      0055c498    add esp,4"
@@ -302,28 +302,28 @@ long FlatFile::Open(unsigned char * name) {
 // LINE 82:
 	asm( 
 "	      0055c49b    push 5BDE14h"
-"	      0055c4a0    lea eax,[ebp-10Ch]"
+"	      0055c4a0    lea eax,cstrbuff[0]"
 "	      0055c4a6    push eax"
 "	      0055c4a7    call 0056D910h"
 "	      0055c4ac    add esp,8"
-"	      0055c4af    mov ecx,[ebp-110h]"
+"	      0055c4af    mov ecx,this"
 "	      0055c4b5    mov [ecx+10Ch],eax"
 );
 // LINE 83:
 	asm( 
-"	      0055c4bb    mov eax,[ebp-110h]"
+"	      0055c4bb    mov eax,this"
 "	      0055c4c1    cmp dword ptr [eax+10Ch],0"
 "	      0055c4c8    je near ptr 0055C4E1h"
-"	      0055c4ce    mov eax,[ebp-110h]"
+"	      0055c4ce    mov eax,this"
 "	      0055c4d4    cmp dword ptr [eax+10Ch],0FFFFFFFFh"
 "	      0055c4db    jne near ptr 0055C4E8h"
-"	      0055c4e1    mov dword ptr [ebp-4],0FFFFFFCEh"
+"	      0055c4e1    mov err,0FFFFFFCEh"
 );
 // LINE 85:
 	asm( 
 "	      0055c4e8    inc dword ptr ds:[5BDDDCh]"
 "	      0055c4ee    mov eax,ds:[5BDDDCh]"
-"	      0055c4f3    mov ecx,[ebp-110h]"
+"	      0055c4f3    mov ecx,this"
 "	      0055c4f9    mov [ecx+108h],eax"
 "	      0055c4ff    jmp near ptr 0055C504h"
 );
@@ -334,31 +334,31 @@ long FlatFile::Open(unsigned char * name) {
 );
 // LINE 92:
 	asm( 
-"	      0055c509    mov eax,[ebp-8]"
+"	      0055c509    mov eax,same"
 "	      0055c50c    mov eax,[eax+10Ch]"
-"	      0055c512    mov ecx,[ebp-110h]"
+"	      0055c512    mov ecx,this"
 "	      0055c518    mov [ecx+10Ch],eax"
 );
 // LINE 94:
 	asm( 
-"	      0055c51e    mov eax,[ebp-8]"
+"	      0055c51e    mov eax,same"
 "	      0055c521    mov eax,[eax+108h]"
-"	      0055c527    mov ecx,[ebp-110h]"
+"	      0055c527    mov ecx,this"
 "	      0055c52d    mov [ecx+108h],eax"
 );
 // LINE 97:
 	asm( 
-"	      0055c533    cmp dword ptr [ebp-4],0"
+"	      0055c533    cmp err,0"
 "	      0055c537    je near ptr 0055C55Ch"
 );
 // LINE 99:
 	asm( 
-"	      0055c53d    mov eax,[ebp-110h]"
+"	      0055c53d    mov eax,this"
 "	      0055c543    mov byte ptr [eax+8],0"
 );
 // LINE 100:
 	asm( 
-"	      0055c547    mov eax,[ebp-110h]"
+"	      0055c547    mov eax,this"
 "	      0055c54d    mov dword ptr [eax+108h],0"
 );
 // LINE 102:
@@ -368,17 +368,17 @@ long FlatFile::Open(unsigned char * name) {
 // LINE 104:
 	asm( 
 "	      0055c55c    push 100h"
-"	      0055c561    mov eax,[ebp-110h]"
+"	      0055c561    mov eax,this"
 "	      0055c567    add eax,8"
 "	      0055c56a    push eax"
-"	      0055c56b    mov eax,[ebp+8]"
+"	      0055c56b    mov eax,name"
 "	      0055c56e    push eax"
 "	      0055c56f    call 00554B76h"
 "	      0055c574    add esp,0Ch"
 );
 // LINE 107:
 	asm( 
-"	      0055c577    mov eax,[ebp-4]"
+"	      0055c577    mov eax,err"
 "	      0055c57a    jmp near ptr 0055C57Fh"
 );
 // LINE 108:
@@ -403,22 +403,22 @@ void FlatFile::OpenFromOtherFile(class FlatFile* other) {
 "	      0055c58f    push ebx"
 "	      0055c590    push esi"
 "	      0055c591    push edi"
-"	      0055c592    mov [ebp-104h],ecx"
+"	      0055c592    mov this,ecx"
 );
 // LINE 112:
 	asm( 
-"	      0055c598    lea eax,[ebp-100h]"
+"	      0055c598    lea eax,otherName[0]"
 "	      0055c59e    push eax"
-"	      0055c59f    mov ecx,[ebp+8]"
+"	      0055c59f    mov ecx,other"
 "	      0055c5a2    call 0055CA48h"
 );
 // LINE 113:
 	asm( 
-"	      0055c5a7    lea eax,[ebp-100h]"
+"	      0055c5a7    lea eax,otherName[0]"
 "	      0055c5ad    push eax"
-"	      0055c5ae    mov eax,[ebp-104h]"
+"	      0055c5ae    mov eax,this"
 "	      0055c5b4    mov eax,[eax]"
-"	      0055c5b6    mov ecx,[ebp-104h]"
+"	      0055c5b6    mov ecx,this"
 "	      0055c5bc    call dword ptr [eax+4]"
 );
 // LINE 114:
@@ -444,11 +444,11 @@ long FlatFile::Close() {
 "	      0055c5d1    push ebx"
 "	      0055c5d2    push esi"
 "	      0055c5d3    push edi"
-"	      0055c5d4    mov [ebp-8],ecx"
+"	      0055c5d4    mov this,ecx"
 );
 // LINE 118:
 	asm( 
-"	      0055c5d7    mov ecx,[ebp-8]"
+"	      0055c5d7    mov ecx,this"
 "	      0055c5da    call 0055C7DDh"
 "	      0055c5df    movzx eax,ax"
 "	      0055c5e2    test eax,eax"
@@ -462,18 +462,18 @@ long FlatFile::Close() {
 );
 // LINE 131:
 	asm( 
-"	      0055c603    mov eax,[ebp-8]"
+"	      0055c603    mov eax,this"
 "	      0055c606    cmp dword ptr [eax+10Ch],0"
 "	      0055c60d    jne near ptr 0055C61Fh"
 );
 // LINE 132:
 	asm( 
-"	      0055c613    mov dword ptr [ebp-4],0FFFFFFCFh"
+"	      0055c613    mov err,0FFFFFFCFh"
 );
 // LINE 133:
 	asm( 
 "	      0055c61a    jmp near ptr 0055C66Bh"
-"	      0055c61f    mov ecx,[ebp-8]"
+"	      0055c61f    mov ecx,this"
 "	      0055c622    call 0055C9E3h"
 "	      0055c627    movzx eax,ax"
 "	      0055c62a    test eax,eax"
@@ -481,19 +481,19 @@ long FlatFile::Close() {
 );
 // LINE 135:
 	asm( 
-"	      0055c632    mov eax,[ebp-8]"
+"	      0055c632    mov eax,this"
 "	      0055c635    mov eax,[eax+10Ch]"
 "	      0055c63b    push eax"
 "	      0055c63c    call 0056D120h"
 "	      0055c641    add esp,4"
 "	      0055c644    test eax,eax"
 "	      0055c646    je near ptr 0055C658h"
-"	      0055c64c    mov dword ptr [ebp-4],0FFFFFFCEh"
+"	      0055c64c    mov err,0FFFFFFCEh"
 );
 // LINE 136:
 	asm( 
 "	      0055c653    jmp near ptr 0055C65Fh"
-"	      0055c658    mov dword ptr [ebp-4],0"
+"	      0055c658    mov err,0"
 );
 // LINE 138:
 	asm( 
@@ -501,26 +501,26 @@ long FlatFile::Close() {
 );
 // LINE 139:
 	asm( 
-"	      0055c664    mov dword ptr [ebp-4],0"
+"	      0055c664    mov err,0"
 );
 // LINE 142:
 	asm( 
-"	      0055c66b    cmp dword ptr [ebp-4],0"
+"	      0055c66b    cmp err,0"
 "	      0055c66f    jne near ptr 0055C68Fh"
 );
 // LINE 147:
 	asm( 
-"	      0055c675    mov eax,[ebp-8]"
+"	      0055c675    mov eax,this"
 "	      0055c678    mov dword ptr [eax+10Ch],0"
 );
 // LINE 149:
 	asm( 
-"	      0055c682    mov eax,[ebp-8]"
+"	      0055c682    mov eax,this"
 "	      0055c685    mov dword ptr [eax+108h],0"
 );
 // LINE 151:
 	asm( 
-"	      0055c68f    mov eax,[ebp-4]"
+"	      0055c68f    mov eax,err"
 "	      0055c692    jmp near ptr 0055C697h"
 );
 // LINE 152:
@@ -545,11 +545,11 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 "	      0055c6a2    push ebx"
 "	      0055c6a3    push esi"
 "	      0055c6a4    push edi"
-"	      0055c6a5    mov [ebp-8],ecx"
+"	      0055c6a5    mov this,ecx"
 );
 // LINE 159:
 	asm( 
-"	      0055c6a8    mov ecx,[ebp-8]"
+"	      0055c6a8    mov ecx,this"
 "	      0055c6ab    call 0055C7DDh"
 "	      0055c6b0    movzx eax,ax"
 "	      0055c6b3    test eax,eax"
@@ -559,23 +559,23 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 );
 // LINE 172:
 	asm( 
-"	      0055c6c5    mov eax,[ebp-8]"
+"	      0055c6c5    mov eax,this"
 "	      0055c6c8    mov eax,[eax+10Ch]"
 "	      0055c6ce    push eax"
-"	      0055c6cf    mov eax,[ebp+0Ch]"
+"	      0055c6cf    mov eax,blockSize"
 "	      0055c6d2    mov eax,[eax]"
 "	      0055c6d4    push eax"
 "	      0055c6d5    push 1"
-"	      0055c6d7    mov eax,[ebp+8]"
+"	      0055c6d7    mov eax,buffer"
 "	      0055c6da    push eax"
 "	      0055c6db    call 00572960h"
 "	      0055c6e0    add esp,10h"
-"	      0055c6e3    mov [ebp-4],eax"
+"	      0055c6e3    mov actualSize,eax"
 );
 // LINE 173:
 	asm( 
-"	      0055c6e6    mov eax,[ebp+0Ch]"
-"	      0055c6e9    mov ecx,[ebp-4]"
+"	      0055c6e6    mov eax,blockSize"
+"	      0055c6e9    mov ecx,actualSize"
 "	      0055c6ec    cmp [eax],ecx"
 "	      0055c6ee    je near ptr 0055C703h"
 "	      0055c6f4    mov eax,0FFFFFFD0h"
@@ -607,11 +607,11 @@ long FlatFile::SetPos(long fromStart) {
 "	      0055c717    push ebx"
 "	      0055c718    push esi"
 "	      0055c719    push edi"
-"	      0055c71a    mov [ebp-4],ecx"
+"	      0055c71a    mov this,ecx"
 );
 // LINE 180:
 	asm( 
-"	      0055c71d    mov ecx,[ebp-4]"
+"	      0055c71d    mov ecx,this"
 "	      0055c720    call 0055C7DDh"
 "	      0055c725    movzx eax,ax"
 "	      0055c728    test eax,eax"
@@ -622,9 +622,9 @@ long FlatFile::SetPos(long fromStart) {
 // LINE 185:
 	asm( 
 "	      0055c73a    push 0"
-"	      0055c73c    mov eax,[ebp+8]"
+"	      0055c73c    mov eax,fromStart"
 "	      0055c73f    push eax"
-"	      0055c740    mov eax,[ebp-4]"
+"	      0055c740    mov eax,this"
 "	      0055c743    mov eax,[eax+10Ch]"
 "	      0055c749    push eax"
 "	      0055c74a    call 00572470h"
@@ -660,11 +660,11 @@ long FlatFile::Advance(long skipAmt) {
 "	      0055c77d    push ebx"
 "	      0055c77e    push esi"
 "	      0055c77f    push edi"
-"	      0055c780    mov [ebp-4],ecx"
+"	      0055c780    mov this,ecx"
 );
 // LINE 192:
 	asm( 
-"	      0055c783    mov ecx,[ebp-4]"
+"	      0055c783    mov ecx,this"
 "	      0055c786    call 0055C7DDh"
 "	      0055c78b    movzx eax,ax"
 "	      0055c78e    test eax,eax"
@@ -675,9 +675,9 @@ long FlatFile::Advance(long skipAmt) {
 // LINE 197:
 	asm( 
 "	      0055c7a0    push 1"
-"	      0055c7a2    mov eax,[ebp+8]"
+"	      0055c7a2    mov eax,skipAmt"
 "	      0055c7a5    push eax"
-"	      0055c7a6    mov eax,[ebp-4]"
+"	      0055c7a6    mov eax,this"
 "	      0055c7a9    mov eax,[eax+10Ch]"
 "	      0055c7af    push eax"
 "	      0055c7b0    call 00572470h"
@@ -713,11 +713,11 @@ unsigned short FlatFile::ValidFile() {
 "	      0055c7e3    push ebx"
 "	      0055c7e4    push esi"
 "	      0055c7e5    push edi"
-"	      0055c7e6    mov [ebp-4],ecx"
+"	      0055c7e6    mov this,ecx"
 );
 // LINE 221:
 	asm( 
-"	      0055c7e9    mov eax,[ebp-4]"
+"	      0055c7e9    mov eax,this"
 "	      0055c7ec    cmp dword ptr [eax+108h],0"
 "	      0055c7f3    jne near ptr 0055C806h"
 "	      0055c7f9    xor ax,ax"
@@ -749,19 +749,19 @@ unsigned short FlatFile::SameFile(class FlatFile* other) {
 "	      0055c81a    push ebx"
 "	      0055c81b    push esi"
 "	      0055c81c    push edi"
-"	      0055c81d    mov [ebp-4],ecx"
+"	      0055c81d    mov this,ecx"
 );
 // LINE 235:
 	asm( 
-"	      0055c820    mov eax,[ebp-4]"
+"	      0055c820    mov eax,this"
 "	      0055c823    cmp dword ptr [eax+108h],0"
 "	      0055c82a    je near ptr 0055C86Bh"
 "	      0055c830    jmp near ptr 0055C835h"
-"	      0055c835    mov eax,[ebp+8]"
+"	      0055c835    mov eax,other"
 "	      0055c838    cmp dword ptr [eax+108h],0"
 "	      0055c83f    je near ptr 0055C86Bh"
-"	      0055c845    mov eax,[ebp-4]"
-"	      0055c848    mov ecx,[ebp+8]"
+"	      0055c845    mov eax,this"
+"	      0055c848    mov ecx,other"
 "	      0055c84b    mov ecx,[ecx+108h]"
 "	      0055c851    cmp [eax+108h],ecx"
 "	      0055c857    jne near ptr 0055C86Bh"
@@ -803,34 +803,34 @@ long FlatFile::Read4(long * val) {
 "	      0055c880    push ebx"
 "	      0055c881    push esi"
 "	      0055c882    push edi"
-"	      0055c883    mov [ebp-0Ch],ecx"
+"	      0055c883    mov this,ecx"
 );
 // LINE 244:
 	asm( 
-"	      0055c886    mov dword ptr [ebp-4],4"
+"	      0055c886    mov size,4"
 );
 // LINE 245:
 	asm( 
-"	      0055c88d    lea eax,[ebp-4]"
+"	      0055c88d    lea eax,size"
 "	      0055c890    push eax"
-"	      0055c891    mov eax,[ebp+8]"
+"	      0055c891    mov eax,val"
 "	      0055c894    push eax"
-"	      0055c895    mov ecx,[ebp-0Ch]"
+"	      0055c895    mov ecx,this"
 "	      0055c898    call 0055C69Ch"
-"	      0055c89d    mov [ebp-8],eax"
+"	      0055c89d    mov err,eax"
 );
 // LINE 246:
 	asm( 
-"	      0055c8a0    cmp dword ptr [ebp-8],0"
+"	      0055c8a0    cmp err,0"
 "	      0055c8a4    jne near ptr 0055C8B6h"
-"	      0055c8aa    mov eax,[ebp+8]"
+"	      0055c8aa    mov eax,val"
 "	      0055c8ad    push eax"
 "	      0055c8ae    call 00566906h"
 "	      0055c8b3    add esp,4"
 );
 // LINE 247:
 	asm( 
-"	      0055c8b6    mov eax,[ebp-8]"
+"	      0055c8b6    mov eax,err"
 "	      0055c8b9    jmp near ptr 0055C8BEh"
 );
 // LINE 248:
@@ -856,34 +856,34 @@ long FlatFile::Read2(short * val) {
 "	      0055c8cb    push ebx"
 "	      0055c8cc    push esi"
 "	      0055c8cd    push edi"
-"	      0055c8ce    mov [ebp-0Ch],ecx"
+"	      0055c8ce    mov this,ecx"
 );
 // LINE 252:
 	asm( 
-"	      0055c8d1    mov dword ptr [ebp-4],2"
+"	      0055c8d1    mov size,2"
 );
 // LINE 253:
 	asm( 
-"	      0055c8d8    lea eax,[ebp-4]"
+"	      0055c8d8    lea eax,size"
 "	      0055c8db    push eax"
-"	      0055c8dc    mov eax,[ebp+8]"
+"	      0055c8dc    mov eax,val"
 "	      0055c8df    push eax"
-"	      0055c8e0    mov ecx,[ebp-0Ch]"
+"	      0055c8e0    mov ecx,this"
 "	      0055c8e3    call 0055C69Ch"
-"	      0055c8e8    mov [ebp-8],eax"
+"	      0055c8e8    mov err,eax"
 );
 // LINE 254:
 	asm( 
-"	      0055c8eb    cmp dword ptr [ebp-8],0"
+"	      0055c8eb    cmp err,0"
 "	      0055c8ef    jne near ptr 0055C901h"
-"	      0055c8f5    mov eax,[ebp+8]"
+"	      0055c8f5    mov eax,val"
 "	      0055c8f8    push eax"
 "	      0055c8f9    call 0056695Bh"
 "	      0055c8fe    add esp,4"
 );
 // LINE 255:
 	asm( 
-"	      0055c901    mov eax,[ebp-8]"
+"	      0055c901    mov eax,err"
 "	      0055c904    jmp near ptr 0055C909h"
 );
 // LINE 256:
@@ -909,25 +909,25 @@ long FlatFile::Read1(char * val) {
 "	      0055c916    push ebx"
 "	      0055c917    push esi"
 "	      0055c918    push edi"
-"	      0055c919    mov [ebp-0Ch],ecx"
+"	      0055c919    mov this,ecx"
 );
 // LINE 260:
 	asm( 
-"	      0055c91c    mov dword ptr [ebp-4],1"
+"	      0055c91c    mov size,1"
 );
 // LINE 261:
 	asm( 
-"	      0055c923    lea eax,[ebp-4]"
+"	      0055c923    lea eax,size"
 "	      0055c926    push eax"
-"	      0055c927    mov eax,[ebp+8]"
+"	      0055c927    mov eax,val"
 "	      0055c92a    push eax"
-"	      0055c92b    mov ecx,[ebp-0Ch]"
+"	      0055c92b    mov ecx,this"
 "	      0055c92e    call 0055C69Ch"
-"	      0055c933    mov [ebp-8],eax"
+"	      0055c933    mov err,eax"
 );
 // LINE 262:
 	asm( 
-"	      0055c936    mov eax,[ebp-8]"
+"	      0055c936    mov eax,err"
 "	      0055c939    jmp near ptr 0055C93Eh"
 );
 // LINE 263:
@@ -950,17 +950,17 @@ void FlatFile::Link() {
 "	      0055c94b    push ebx"
 "	      0055c94c    push esi"
 "	      0055c94d    push edi"
-"	      0055c94e    mov [ebp-4],ecx"
+"	      0055c94e    mov this,ecx"
 );
 // LINE 266:
 	asm( 
 "	      0055c951    mov eax,ds:[5BDDD8h]"
-"	      0055c956    mov ecx,[ebp-4]"
+"	      0055c956    mov ecx,this"
 "	      0055c959    mov [ecx+4],eax"
 );
 // LINE 267:
 	asm( 
-"	      0055c95c    mov eax,[ebp-4]"
+"	      0055c95c    mov eax,this"
 "	      0055c95f    mov ds:[5BDDD8h],eax"
 );
 // LINE 268:
@@ -986,31 +986,31 @@ void FlatFile::Unlink() {
 "	      0055c974    push ebx"
 "	      0055c975    push esi"
 "	      0055c976    push edi"
-"	      0055c977    mov [ebp-8],ecx"
+"	      0055c977    mov this,ecx"
 );
 // LINE 271:
 	asm( 
-"	      0055c97a    mov dword ptr [ebp-4],5BDDD8h"
+"	      0055c97a    mov srch,5BDDD8h"
 );
 // LINE 273:
 	asm( 
-"	      0055c981    mov eax,[ebp-4]"
+"	      0055c981    mov eax,srch"
 "	      0055c984    cmp dword ptr [eax],0"
 "	      0055c987    je near ptr 0055C9BDh"
 );
 // LINE 274:
 	asm( 
-"	      0055c98d    mov eax,[ebp-4]"
-"	      0055c990    mov ecx,[ebp-8]"
+"	      0055c98d    mov eax,srch"
+"	      0055c990    mov ecx,this"
 "	      0055c993    cmp [eax],ecx"
 "	      0055c995    jne near ptr 0055C9ADh"
 );
 // LINE 275:
 	asm( 
-"	      0055c99b    mov eax,[ebp-4]"
+"	      0055c99b    mov eax,srch"
 "	      0055c99e    mov eax,[eax]"
 "	      0055c9a0    mov eax,[eax+4]"
-"	      0055c9a3    mov ecx,[ebp-4]"
+"	      0055c9a3    mov ecx,srch"
 "	      0055c9a6    mov [ecx],eax"
 );
 // LINE 276:
@@ -1019,10 +1019,10 @@ void FlatFile::Unlink() {
 );
 // LINE 278:
 	asm( 
-"	      0055c9ad    mov eax,[ebp-4]"
+"	      0055c9ad    mov eax,srch"
 "	      0055c9b0    mov eax,[eax]"
 "	      0055c9b2    add eax,4"
-"	      0055c9b5    mov [ebp-4],eax"
+"	      0055c9b5    mov srch,eax"
 );
 // LINE 279:
 	asm( 
@@ -1060,26 +1060,26 @@ unsigned short FlatFile::Exclusive() {
 "	      0055c9e9    push ebx"
 "	      0055c9ea    push esi"
 "	      0055c9eb    push edi"
-"	      0055c9ec    mov [ebp-8],ecx"
+"	      0055c9ec    mov this,ecx"
 );
 // LINE 285:
 	asm( 
 "	      0055c9ef    mov eax,ds:[5BDDD8h]"
-"	      0055c9f4    mov [ebp-4],eax"
+"	      0055c9f4    mov srch,eax"
 );
 // LINE 286:
 	asm( 
-"	      0055c9f7    cmp dword ptr [ebp-4],0"
+"	      0055c9f7    cmp srch,0"
 "	      0055c9fb    je near ptr 0055CA3Ah"
 );
 // LINE 287:
 	asm( 
-"	      0055ca01    mov eax,[ebp-8]"
-"	      0055ca04    cmp [ebp-4],eax"
+"	      0055ca01    mov eax,this"
+"	      0055ca04    cmp srch,eax"
 "	      0055ca07    je near ptr 0055CA2Ch"
-"	      0055ca0d    mov eax,[ebp-4]"
+"	      0055ca0d    mov eax,srch"
 "	      0055ca10    push eax"
-"	      0055ca11    mov ecx,[ebp-8]"
+"	      0055ca11    mov ecx,this"
 "	      0055ca14    call 0055C814h"
 "	      0055ca19    movzx eax,ax"
 "	      0055ca1c    test eax,eax"
@@ -1092,9 +1092,9 @@ unsigned short FlatFile::Exclusive() {
 );
 // LINE 289:
 	asm( 
-"	      0055ca2c    mov eax,[ebp-4]"
+"	      0055ca2c    mov eax,srch"
 "	      0055ca2f    mov eax,[eax+4]"
-"	      0055ca32    mov [ebp-4],eax"
+"	      0055ca32    mov srch,eax"
 );
 // LINE 290:
 	asm( 
@@ -1125,18 +1125,18 @@ long FlatFile::GetFileName(unsigned char * name) {
 "	      0055ca4e    push ebx"
 "	      0055ca4f    push esi"
 "	      0055ca50    push edi"
-"	      0055ca51    mov [ebp-4],ecx"
+"	      0055ca51    mov this,ecx"
 );
 // LINE 296:
 	asm( 
-"	      0055ca54    mov eax,[ebp-4]"
+"	      0055ca54    mov eax,this"
 "	      0055ca57    xor ecx,ecx"
 "	      0055ca59    mov cl,[eax+8]"
 "	      0055ca5c    inc ecx"
 "	      0055ca5d    push ecx"
-"	      0055ca5e    mov eax,[ebp+8]"
+"	      0055ca5e    mov eax,name"
 "	      0055ca61    push eax"
-"	      0055ca62    mov eax,[ebp-4]"
+"	      0055ca62    mov eax,this"
 "	      0055ca65    add eax,8"
 "	      0055ca68    push eax"
 "	      0055ca69    call 00554B76h"
@@ -1173,22 +1173,22 @@ short FlatFile::CheckForLeaks() {
 );
 // LINE 302:
 	asm( 
-"	      0055ca88    mov word ptr [ebp-8],0"
+"	      0055ca88    mov total,0"
 );
 // LINE 304:
 	asm( 
 "	      0055ca8e    mov eax,ds:[5BDDD8h]"
-"	      0055ca93    mov [ebp-4],eax"
+"	      0055ca93    mov list,eax"
 "	      0055ca96    jmp near ptr 0055CAA4h"
-"	      0055ca9b    mov eax,[ebp-4]"
+"	      0055ca9b    mov eax,list"
 "	      0055ca9e    mov eax,[eax+4]"
-"	      0055caa1    mov [ebp-4],eax"
-"	      0055caa4    cmp dword ptr [ebp-4],0"
+"	      0055caa1    mov list,eax"
+"	      0055caa4    cmp list,0"
 "	      0055caa8    je near ptr 0055CAB7h"
 );
 // LINE 306:
 	asm( 
-"	      0055caae    inc word ptr [ebp-8]"
+"	      0055caae    inc total"
 );
 // LINE 307:
 	asm( 
@@ -1196,7 +1196,7 @@ short FlatFile::CheckForLeaks() {
 );
 // LINE 308:
 	asm( 
-"	      0055cab7    mov ax,[ebp-8]"
+"	      0055cab7    mov ax,total"
 "	      0055cabb    jmp near ptr 0055CAC0h"
 );
 // LINE 309:

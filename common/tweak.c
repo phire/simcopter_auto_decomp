@@ -30,7 +30,7 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 );
 // LINE 46:
 	asm( 
-"	      004c9af3    cmp dword ptr [ebp+0Ch],32h"
+"	      004c9af3    cmp nNumValues,32h"
 "	      004c9af7    jle near ptr 004C9B07h"
 );
 // LINE 47:
@@ -40,19 +40,19 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 );
 // LINE 49:
 	asm( 
-"	      004c9b07    mov dword ptr [ebp-4],0"
+"	      004c9b07    mov nCt,0"
 "	      004c9b0e    jmp near ptr 004C9B16h"
-"	      004c9b13    inc dword ptr [ebp-4]"
-"	      004c9b16    mov eax,[ebp-4]"
-"	      004c9b19    cmp [ebp+0Ch],eax"
+"	      004c9b13    inc nCt"
+"	      004c9b16    mov eax,nCt"
+"	      004c9b19    cmp nNumValues,eax"
 "	      004c9b1c    jle near ptr 004C9B49h"
 );
 // LINE 50:
 	asm( 
-"	      004c9b22    mov eax,[ebp-4]"
-"	      004c9b25    mov ecx,[ebp+8]"
+"	      004c9b22    mov eax,nCt"
+"	      004c9b25    mov ecx,pValues"
 "	      004c9b28    mov eax,[ecx+eax*4]"
-"	      004c9b2b    mov ecx,[ebp-4]"
+"	      004c9b2b    mov ecx,nCt"
 "	      004c9b2e    mov edx,ds:[59B3A8h]"
 "	      004c9b34    mov ebx,edx"
 "	      004c9b36    shl edx,8"
@@ -63,7 +63,7 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 );
 // LINE 52:
 	asm( 
-"	      004c9b49    mov eax,[ebp+10h]"
+"	      004c9b49    mov eax,pszSection"
 "	      004c9b4c    push eax"
 "	      004c9b4d    mov eax,ds:[59B3A8h]"
 "	      004c9b52    mov ecx,eax"
@@ -78,7 +78,7 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 );
 // LINE 53:
 	asm( 
-"	      004c9b6e    mov eax,[ebp+0Ch]"
+"	      004c9b6e    mov eax,nNumValues"
 "	      004c9b71    mov ecx,ds:[59B3A8h]"
 "	      004c9b77    mov edx,ecx"
 "	      004c9b79    shl ecx,8"
@@ -127,9 +127,9 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 78:
 	asm( 
-"	      004c9bb1    lea eax,[ebp-104h]"
+"	      004c9bb1    lea eax,szFullPath[0]"
 "	      004c9bb7    push eax"
-"	      004c9bb8    mov eax,[ebp+8]"
+"	      004c9bb8    mov eax,pszTWKFile"
 "	      004c9bbb    push eax"
 "	      004c9bbc    push 0"
 "	      004c9bbe    push 0Bh"
@@ -138,10 +138,10 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 80:
 	asm( 
-"	      004c9bc8    lea eax,[ebp-104h]"
+"	      004c9bc8    lea eax,szFullPath[0]"
 "	      004c9bce    push eax"
 "	      004c9bcf    push 12Ch"
-"	      004c9bd4    lea eax,[ebp-230h]"
+"	      004c9bd4    lea eax,szTemp[0]"
 "	      004c9bda    push eax"
 "	      004c9bdb    push 59B3B0h"
 "	      004c9be0    push 59B3B4h"
@@ -150,10 +150,10 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 81:
 	asm( 
-"	      004c9bf0    cmp dword ptr [ebp+0Ch],0"
+"	      004c9bf0    cmp bIsOnMessageRead,0"
 "	      004c9bf4    je near ptr 004C9D13h"
 "	      004c9bfa    push 59B3D8h"
-"	      004c9bff    lea eax,[ebp-230h]"
+"	      004c9bff    lea eax,szTemp[0]"
 "	      004c9c05    push eax"
 "	      004c9c06    call 0056CE20h"
 "	      004c9c0b    add esp,8"
@@ -162,10 +162,10 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 83:
 	asm( 
-"	      004c9c16    lea eax,[ebp-104h]"
+"	      004c9c16    lea eax,szFullPath[0]"
 "	      004c9c1c    push eax"
 "	      004c9c1d    push 32h"
-"	      004c9c1f    lea eax,[ebp-268h]"
+"	      004c9c1f    lea eax,szSection[0]"
 "	      004c9c25    push eax"
 "	      004c9c26    push 59B3DCh"
 "	      004c9c2b    push 59B3F0h"
@@ -175,7 +175,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 // LINE 85:
 	asm( 
 "	      004c9c3b    push 59B414h"
-"	      004c9c40    lea eax,[ebp-268h]"
+"	      004c9c40    lea eax,szSection[0]"
 "	      004c9c46    push eax"
 "	      004c9c47    call 0056CE20h"
 "	      004c9c4c    add esp,8"
@@ -189,18 +189,18 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 88:
 	asm( 
-"	      004c9c61    mov dword ptr [ebp-234h],0"
+"	      004c9c61    mov nCt,0"
 "	      004c9c6b    jmp near ptr 004C9C76h"
-"	      004c9c70    inc dword ptr [ebp-234h]"
-"	      004c9c76    mov eax,[ebp-234h]"
+"	      004c9c70    inc nCt"
+"	      004c9c76    mov eax,nCt"
 "	      004c9c7c    cmp ds:[59B3A8h],eax"
 "	      004c9c82    jle near ptr 004C9CC3h"
 );
 // LINE 89:
 	asm( 
-"	      004c9c88    lea eax,[ebp-268h]"
+"	      004c9c88    lea eax,szSection[0]"
 "	      004c9c8e    push eax"
-"	      004c9c8f    mov eax,[ebp-234h]"
+"	      004c9c8f    mov eax,nCt"
 "	      004c9c95    mov ecx,eax"
 "	      004c9c97    shl eax,8"
 "	      004c9c9a    sub eax,ecx"
@@ -220,24 +220,24 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 // LINE 92:
 	asm( 
 "	      004c9cbe    jmp near ptr 004C9C70h"
-"	      004c9cc3    mov eax,[ebp-234h]"
+"	      004c9cc3    mov eax,nCt"
 "	      004c9cc9    cmp ds:[59B3A8h],eax"
 "	      004c9ccf    je near ptr 004C9D0Eh"
 );
 // LINE 93:
 	asm( 
-"	      004c9cd5    mov eax,[ebp-234h]"
+"	      004c9cd5    mov eax,nCt"
 "	      004c9cdb    push eax"
-"	      004c9cdc    lea eax,[ebp-268h]"
+"	      004c9cdc    lea eax,szSection[0]"
 "	      004c9ce2    push eax"
-"	      004c9ce3    lea eax,[ebp-230h]"
+"	      004c9ce3    lea eax,szTemp[0]"
 "	      004c9ce9    push eax"
 "	      004c9cea    call 004C9E4Fh"
 "	      004c9cef    add esp,0Ch"
 );
 // LINE 95:
 	asm( 
-"	      004c9cf2    lea eax,[ebp-104h]"
+"	      004c9cf2    lea eax,szFullPath[0]"
 "	      004c9cf8    push eax"
 "	      004c9cf9    push 59B428h"
 "	      004c9cfe    push 59B42Ch"
@@ -250,7 +250,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 );
 // LINE 99:
 	asm( 
-"	      004c9d13    mov eax,[ebp+8]"
+"	      004c9d13    mov eax,pszTWKFile"
 "	      004c9d16    push eax"
 "	      004c9d17    call 004C9D68h"
 "	      004c9d1c    add esp,4"
@@ -343,9 +343,9 @@ void TWKReadAllFiles(char * pszTWKFile) {
 );
 // LINE 170:
 	asm( 
-"	      004c9d74    lea eax,[ebp-108h]"
+"	      004c9d74    lea eax,szFullPath[0]"
 "	      004c9d7a    push eax"
-"	      004c9d7b    mov eax,[ebp+8]"
+"	      004c9d7b    mov eax,pszTWKFile"
 "	      004c9d7e    push eax"
 "	      004c9d7f    push 0"
 "	      004c9d81    push 0Bh"
@@ -354,41 +354,41 @@ void TWKReadAllFiles(char * pszTWKFile) {
 );
 // LINE 171:
 	asm( 
-"	      004c9d8b    mov dword ptr [ebp-238h],0"
+"	      004c9d8b    mov nCt,0"
 "	      004c9d95    jmp near ptr 004C9DA0h"
-"	      004c9d9a    inc dword ptr [ebp-238h]"
-"	      004c9da0    mov eax,[ebp-238h]"
+"	      004c9d9a    inc nCt"
+"	      004c9da0    mov eax,nCt"
 "	      004c9da6    cmp ds:[59B3A8h],eax"
 "	      004c9dac    jle near ptr 004C9E4Ah"
 );
 // LINE 172:
 	asm( 
-"	      004c9db2    mov eax,[ebp-238h]"
+"	      004c9db2    mov eax,nCt"
 "	      004c9db8    mov ecx,eax"
 "	      004c9dba    shl eax,8"
 "	      004c9dbd    sub eax,ecx"
 "	      004c9dbf    sub eax,ecx"
 "	      004c9dc1    add eax,63A860h"
 "	      004c9dc6    add eax,0CCh"
-"	      004c9dcb    mov [ebp-23Ch],eax"
+"	      004c9dcb    mov pszSection,eax"
 );
 // LINE 175:
 	asm( 
-"	      004c9dd1    lea eax,[ebp-108h]"
+"	      004c9dd1    lea eax,szFullPath[0]"
 "	      004c9dd7    push eax"
 "	      004c9dd8    push 12Ch"
-"	      004c9ddd    lea eax,[ebp-234h]"
+"	      004c9ddd    lea eax,szTemp[0]"
 "	      004c9de3    push eax"
 "	      004c9de4    push 59B460h"
 "	      004c9de9    push 59B46Ch"
-"	      004c9dee    mov eax,[ebp-23Ch]"
+"	      004c9dee    mov eax,pszSection"
 "	      004c9df4    push eax"
 "	      004c9df5    call dword ptr ds:[6C3618h]"
 );
 // LINE 176:
 	asm( 
 "	      004c9dfb    push 59B478h"
-"	      004c9e00    lea eax,[ebp-234h]"
+"	      004c9e00    lea eax,szTemp[0]"
 "	      004c9e06    push eax"
 "	      004c9e07    call 0056CE20h"
 "	      004c9e0c    add esp,8"
@@ -397,8 +397,8 @@ void TWKReadAllFiles(char * pszTWKFile) {
 );
 // LINE 177:
 	asm( 
-"	      004c9e17    lea eax,[ebp-234h]"
-"	      004c9e1d    mov [ebp-4],eax"
+"	      004c9e17    lea eax,szTemp[0]"
+"	      004c9e1d    mov pszFile,eax"
 );
 // LINE 178:
 	asm( 
@@ -406,16 +406,16 @@ void TWKReadAllFiles(char * pszTWKFile) {
 );
 // LINE 179:
 	asm( 
-"	      004c9e25    mov eax,[ebp+8]"
-"	      004c9e28    mov [ebp-4],eax"
+"	      004c9e25    mov eax,pszTWKFile"
+"	      004c9e28    mov pszFile,eax"
 );
 // LINE 184:
 	asm( 
-"	      004c9e2b    mov eax,[ebp-238h]"
+"	      004c9e2b    mov eax,nCt"
 "	      004c9e31    push eax"
-"	      004c9e32    mov eax,[ebp-23Ch]"
+"	      004c9e32    mov eax,pszSection"
 "	      004c9e38    push eax"
-"	      004c9e39    mov eax,[ebp-4]"
+"	      004c9e39    mov eax,pszFile"
 "	      004c9e3c    push eax"
 "	      004c9e3d    call 004C9E4Fh"
 "	      004c9e42    add esp,0Ch"
@@ -456,16 +456,16 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	asm( 
 "	      004c9e5b    push 59B484h"
 "	      004c9e60    push 59B48Ch"
-"	      004c9e65    lea eax,[ebp-164h]"
+"	      004c9e65    lea eax,szKey[0]"
 "	      004c9e6b    push eax"
 "	      004c9e6c    call 0056CD30h"
 "	      004c9e71    add esp,0Ch"
 );
 // LINE 212:
 	asm( 
-"	      004c9e74    lea eax,[ebp-114h]"
+"	      004c9e74    lea eax,szFullPath[0]"
 "	      004c9e7a    push eax"
-"	      004c9e7b    mov eax,[ebp+8]"
+"	      004c9e7b    mov eax,pszFile"
 "	      004c9e7e    push eax"
 "	      004c9e7f    push 0"
 "	      004c9e81    push 0Bh"
@@ -474,86 +474,86 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 );
 // LINE 213:
 	asm( 
-"	      004c9e8b    lea eax,[ebp-114h]"
+"	      004c9e8b    lea eax,szFullPath[0]"
 "	      004c9e91    push eax"
 "	      004c9e92    push 0FFFFFF9Ah"
-"	      004c9e94    lea eax,[ebp-164h]"
+"	      004c9e94    lea eax,szKey[0]"
 "	      004c9e9a    push eax"
-"	      004c9e9b    mov eax,[ebp+0Ch]"
+"	      004c9e9b    mov eax,pszSection"
 "	      004c9e9e    push eax"
 "	      004c9e9f    call dword ptr ds:[6C361Ch]"
-"	      004c9ea5    mov [ebp-11Ch],eax"
+"	      004c9ea5    mov nNumCtrl,eax"
 );
 // LINE 214:
 	asm( 
-"	      004c9eab    cmp dword ptr [ebp-11Ch],0FFFFFF9Ah"
+"	      004c9eab    cmp nNumCtrl,0FFFFFF9Ah"
 "	      004c9eb2    je near ptr 004CA03Eh"
 );
 // LINE 216:
 	asm( 
-"	      004c9eb8    mov dword ptr [ebp-118h],0"
+"	      004c9eb8    mov nCt2,0"
 "	      004c9ec2    jmp near ptr 004C9ECDh"
-"	      004c9ec7    inc dword ptr [ebp-118h]"
-"	      004c9ecd    mov eax,[ebp-118h]"
-"	      004c9ed3    cmp [ebp-11Ch],eax"
+"	      004c9ec7    inc nCt2"
+"	      004c9ecd    mov eax,nCt2"
+"	      004c9ed3    cmp nNumCtrl,eax"
 "	      004c9ed9    jle near ptr 004CA039h"
 );
 // LINE 217:
 	asm( 
 "	      004c9edf    push 59B490h"
-"	      004c9ee4    mov eax,[ebp-118h]"
+"	      004c9ee4    mov eax,nCt2"
 "	      004c9eea    push eax"
 "	      004c9eeb    push 59B498h"
 "	      004c9ef0    push 59B4A0h"
-"	      004c9ef5    lea eax,[ebp-164h]"
+"	      004c9ef5    lea eax,szKey[0]"
 "	      004c9efb    push eax"
 "	      004c9efc    call 0056CD30h"
 "	      004c9f01    add esp,14h"
 );
 // LINE 219:
 	asm( 
-"	      004c9f04    lea eax,[ebp-114h]"
+"	      004c9f04    lea eax,szFullPath[0]"
 "	      004c9f0a    push eax"
 "	      004c9f0b    push 0Fh"
-"	      004c9f0d    lea eax,[ebp-10h]"
+"	      004c9f0d    lea eax,szValue[0]"
 "	      004c9f10    push eax"
 "	      004c9f11    push 59B4A8h"
-"	      004c9f16    lea eax,[ebp-164h]"
+"	      004c9f16    lea eax,szKey[0]"
 "	      004c9f1c    push eax"
-"	      004c9f1d    mov eax,[ebp+0Ch]"
+"	      004c9f1d    mov eax,pszSection"
 "	      004c9f20    push eax"
 "	      004c9f21    call dword ptr ds:[6C3618h]"
 );
 // LINE 220:
 	asm( 
 "	      004c9f27    push 59B4BCh"
-"	      004c9f2c    mov eax,[ebp-118h]"
+"	      004c9f2c    mov eax,nCt2"
 "	      004c9f32    push eax"
 "	      004c9f33    push 59B4C8h"
 "	      004c9f38    push 59B4D0h"
-"	      004c9f3d    lea eax,[ebp-164h]"
+"	      004c9f3d    lea eax,szKey[0]"
 "	      004c9f43    push eax"
 "	      004c9f44    call 0056CD30h"
 "	      004c9f49    add esp,14h"
 );
 // LINE 222:
 	asm( 
-"	      004c9f4c    lea eax,[ebp-114h]"
+"	      004c9f4c    lea eax,szFullPath[0]"
 "	      004c9f52    push eax"
 "	      004c9f53    push 14h"
-"	      004c9f55    lea eax,[ebp-130h]"
+"	      004c9f55    lea eax,szDataType[0]"
 "	      004c9f5b    push eax"
 "	      004c9f5c    push 59B4D8h"
-"	      004c9f61    lea eax,[ebp-164h]"
+"	      004c9f61    lea eax,szKey[0]"
 "	      004c9f67    push eax"
-"	      004c9f68    mov eax,[ebp+0Ch]"
+"	      004c9f68    mov eax,pszSection"
 "	      004c9f6b    push eax"
 "	      004c9f6c    call dword ptr ds:[6C3618h]"
 );
 // LINE 225:
 	asm( 
 "	      004c9f72    push 59B4E8h"
-"	      004c9f77    lea eax,[ebp-130h]"
+"	      004c9f77    lea eax,szDataType[0]"
 "	      004c9f7d    push eax"
 "	      004c9f7e    call 0056CE20h"
 "	      004c9f83    add esp,8"
@@ -562,14 +562,14 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 );
 // LINE 226:
 	asm( 
-"	      004c9f8e    lea eax,[ebp-10h]"
+"	      004c9f8e    lea eax,szValue[0]"
 "	      004c9f91    push eax"
 "	      004c9f92    call 00572B80h"
 "	      004c9f97    add esp,4"
 "	      004c9f9a    fmul qword ptr ds:[5923E0h]"
 "	      004c9fa0    call 0056EBE8h"
-"	      004c9fa5    mov ecx,[ebp-118h]"
-"	      004c9fab    mov edx,[ebp+10h]"
+"	      004c9fa5    mov ecx,nCt2"
+"	      004c9fab    mov edx,nTweakQueueSlotIdx"
 "	      004c9fae    mov ebx,edx"
 "	      004c9fb0    shl edx,8"
 "	      004c9fb3    sub edx,ebx"
@@ -584,7 +584,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 // LINE 228:
 	asm( 
 "	      004c9fc5    push 59B4F0h"
-"	      004c9fca    lea eax,[ebp-130h]"
+"	      004c9fca    lea eax,szDataType[0]"
 "	      004c9fd0    push eax"
 "	      004c9fd1    call 0056CE20h"
 "	      004c9fd6    add esp,8"
@@ -593,12 +593,12 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 );
 // LINE 229:
 	asm( 
-"	      004c9fe1    lea eax,[ebp-10h]"
+"	      004c9fe1    lea eax,szValue[0]"
 "	      004c9fe4    push eax"
 "	      004c9fe5    call 00572B80h"
 "	      004c9fea    add esp,4"
-"	      004c9fed    mov eax,[ebp-118h]"
-"	      004c9ff3    mov ecx,[ebp+10h]"
+"	      004c9fed    mov eax,nCt2"
+"	      004c9ff3    mov ecx,nTweakQueueSlotIdx"
 "	      004c9ff6    mov edx,ecx"
 "	      004c9ff8    shl ecx,8"
 "	      004c9ffb    sub ecx,edx"
@@ -612,12 +612,12 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 );
 // LINE 231:
 	asm( 
-"	      004ca00d    lea eax,[ebp-10h]"
+"	      004ca00d    lea eax,szValue[0]"
 "	      004ca010    push eax"
 "	      004ca011    call 0056F2E0h"
 "	      004ca016    add esp,4"
-"	      004ca019    mov ecx,[ebp-118h]"
-"	      004ca01f    mov edx,[ebp+10h]"
+"	      004ca019    mov ecx,nCt2"
+"	      004ca01f    mov edx,nTweakQueueSlotIdx"
 "	      004ca022    mov ebx,edx"
 "	      004ca024    shl edx,8"
 "	      004ca027    sub edx,ebx"
@@ -635,7 +635,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 );
 // LINE 245:
 	asm( 
-"	      004ca03e    mov eax,[ebp+10h]"
+"	      004ca03e    mov eax,nTweakQueueSlotIdx"
 "	      004ca041    mov ecx,ds:[59B3ACh]"
 "	      004ca047    mov [ecx*4+646EE0h],eax"
 );
@@ -693,30 +693,30 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 );
 // LINE 362:
 	asm( 
-"	      004ca077    mov dword ptr [ebp-4],0"
+"	      004ca077    mov nCt,0"
 );
 // LINE 363:
 	asm( 
-"	      004ca07e    mov eax,[ebp+0Ch]"
+"	      004ca07e    mov eax,pSource"
 "	      004ca081    movsx eax,byte ptr [eax]"
 "	      004ca084    cmp eax,0Dh"
 "	      004ca087    je near ptr 004CA0A6h"
 );
 // LINE 364:
 	asm( 
-"	      004ca08d    mov eax,[ebp+0Ch]"
+"	      004ca08d    mov eax,pSource"
 "	      004ca090    mov al,[eax]"
-"	      004ca092    mov ecx,[ebp-4]"
-"	      004ca095    mov edx,[ebp+8]"
+"	      004ca092    mov ecx,nCt"
+"	      004ca095    mov edx,pDest"
 "	      004ca098    mov [ecx+edx],al"
 );
 // LINE 365:
 	asm( 
-"	      004ca09b    inc dword ptr [ebp+0Ch]"
+"	      004ca09b    inc pSource"
 );
 // LINE 366:
 	asm( 
-"	      004ca09e    inc dword ptr [ebp-4]"
+"	      004ca09e    inc nCt"
 );
 // LINE 367:
 	asm( 
@@ -724,8 +724,8 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 );
 // LINE 368:
 	asm( 
-"	      004ca0a6    mov eax,[ebp-4]"
-"	      004ca0a9    mov ecx,[ebp+8]"
+"	      004ca0a6    mov eax,nCt"
+"	      004ca0a9    mov ecx,pDest"
 "	      004ca0ac    mov byte ptr [eax+ecx],0"
 );
 // LINE 369:

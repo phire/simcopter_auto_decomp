@@ -21,59 +21,59 @@ int32_t S3StartSpeederMission() {
 );
 // LINE 74:
 	asm( 
-"	      005015e9    mov dword ptr [ebp-8],1"
+"	      005015e9    mov i,1"
 "	      005015f0    jmp near ptr 005015F8h"
-"	      005015f5    inc dword ptr [ebp-8]"
-"	      005015f8    cmp dword ptr [ebp-8],46h"
+"	      005015f5    inc i"
+"	      005015f8    cmp i,46h"
 "	      005015fc    jge near ptr 005016BDh"
 );
 // LINE 76:
 	asm( 
-"	      00501602    mov eax,[ebp-8]"
+"	      00501602    mov eax,i"
 "	      00501605    mov eax,[eax*4+608F80h]"
-"	      0050160c    mov [ebp-4],eax"
+"	      0050160c    mov pCar,eax"
 );
 // LINE 87:
 	asm( 
-"	      0050160f    mov eax,[ebp-4]"
+"	      0050160f    mov eax,pCar"
 "	      00501612    cmp dword ptr [eax+4],7Ah"
 "	      00501616    je near ptr 00501666h"
-"	      0050161c    mov eax,[ebp-4]"
+"	      0050161c    mov eax,pCar"
 "	      0050161f    cmp dword ptr [eax+4],7Dh"
 "	      00501623    je near ptr 00501666h"
-"	      00501629    mov eax,[ebp-4]"
+"	      00501629    mov eax,pCar"
 "	      0050162c    cmp dword ptr [eax+4],7Eh"
 "	      00501630    je near ptr 00501666h"
-"	      00501636    mov eax,[ebp-4]"
+"	      00501636    mov eax,pCar"
 "	      00501639    cmp dword ptr [eax+4],12Ah"
 "	      00501640    je near ptr 00501666h"
-"	      00501646    mov eax,[ebp-4]"
+"	      00501646    mov eax,pCar"
 "	      00501649    cmp dword ptr [eax+4],12Bh"
 "	      00501650    je near ptr 00501666h"
-"	      00501656    mov eax,[ebp-4]"
+"	      00501656    mov eax,pCar"
 "	      00501659    cmp dword ptr [eax+4],12Ch"
 "	      00501660    jne near ptr 005016B8h"
-"	      00501666    mov eax,[ebp-4]"
+"	      00501666    mov eax,pCar"
 "	      00501669    test byte ptr [eax+9],1"
 "	      0050166d    jne near ptr 005016B8h"
-"	      00501673    mov eax,[ebp-4]"
+"	      00501673    mov eax,pCar"
 "	      00501676    test byte ptr [eax+8],2"
 "	      0050167a    je near ptr 005016B8h"
-"	      00501680    mov eax,[ebp-4]"
+"	      00501680    mov eax,pCar"
 "	      00501683    test byte ptr [eax+8],1"
 "	      00501687    je near ptr 005016B8h"
-"	      0050168d    mov eax,[ebp-8]"
+"	      0050168d    mov eax,i"
 "	      00501690    cmp ds:[5B52C4h],eax"
 "	      00501696    je near ptr 005016B8h"
 );
 // LINE 90:
 	asm( 
-"	      0050169c    mov eax,[ebp-4]"
+"	      0050169c    mov eax,pCar"
 "	      0050169f    or dword ptr [eax+8],1000h"
 );
 // LINE 93:
 	asm( 
-"	      005016a6    mov eax,[ebp-8]"
+"	      005016a6    mov eax,i"
 "	      005016a9    mov ds:[5B52C4h],eax"
 );
 // LINE 94:
@@ -117,20 +117,20 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 // LINE 109:
 	asm( 
 "	      005016d2    xor eax,eax"
-"	      005016d4    mov al,[ebp+0Ch]"
+"	      005016d4    mov al,loc2.x"
 "	      005016d7    xor ecx,ecx"
-"	      005016d9    mov cl,[ebp+8]"
+"	      005016d9    mov cl,loc1.x"
 "	      005016dc    cmp eax,ecx"
 "	      005016de    jge near ptr 005016F8h"
 );
 // LINE 110:
 	asm( 
 "	      005016e4    xor eax,eax"
-"	      005016e6    mov al,[ebp+8]"
+"	      005016e6    mov al,loc1.x"
 "	      005016e9    xor ecx,ecx"
-"	      005016eb    mov cl,[ebp+0Ch]"
+"	      005016eb    mov cl,loc2.x"
 "	      005016ee    sub eax,ecx"
-"	      005016f0    mov [ebp-4],eax"
+"	      005016f0    mov deltax,eax"
 );
 // LINE 111:
 	asm( 
@@ -139,29 +139,29 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 // LINE 112:
 	asm( 
 "	      005016f8    xor eax,eax"
-"	      005016fa    mov al,[ebp+0Ch]"
+"	      005016fa    mov al,loc2.x"
 "	      005016fd    xor ecx,ecx"
-"	      005016ff    mov cl,[ebp+8]"
+"	      005016ff    mov cl,loc1.x"
 "	      00501702    sub eax,ecx"
-"	      00501704    mov [ebp-4],eax"
+"	      00501704    mov deltax,eax"
 );
 // LINE 114:
 	asm( 
 "	      00501707    xor eax,eax"
-"	      00501709    mov al,[ebp+0Dh]"
+"	      00501709    mov al,loc2.y"
 "	      0050170c    xor ecx,ecx"
-"	      0050170e    mov cl,[ebp+9]"
+"	      0050170e    mov cl,loc1.y"
 "	      00501711    cmp eax,ecx"
 "	      00501713    jge near ptr 0050172Dh"
 );
 // LINE 115:
 	asm( 
 "	      00501719    xor eax,eax"
-"	      0050171b    mov al,[ebp+9]"
+"	      0050171b    mov al,loc1.y"
 "	      0050171e    xor ecx,ecx"
-"	      00501720    mov cl,[ebp+0Dh]"
+"	      00501720    mov cl,loc2.y"
 "	      00501723    sub eax,ecx"
-"	      00501725    mov [ebp-8],eax"
+"	      00501725    mov deltay,eax"
 );
 // LINE 116:
 	asm( 
@@ -170,23 +170,23 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 // LINE 117:
 	asm( 
 "	      0050172d    xor eax,eax"
-"	      0050172f    mov al,[ebp+0Dh]"
+"	      0050172f    mov al,loc2.y"
 "	      00501732    xor ecx,ecx"
-"	      00501734    mov cl,[ebp+9]"
+"	      00501734    mov cl,loc1.y"
 "	      00501737    sub eax,ecx"
-"	      00501739    mov [ebp-8],eax"
+"	      00501739    mov deltay,eax"
 );
 // LINE 119:
 	asm( 
-"	      0050173c    mov eax,[ebp-4]"
-"	      0050173f    cmp [ebp-8],eax"
+"	      0050173c    mov eax,deltax"
+"	      0050173f    cmp deltay,eax"
 "	      00501742    jge near ptr 0050175Bh"
 );
 // LINE 121:
 	asm( 
-"	      00501748    mov eax,[ebp-8]"
+"	      00501748    mov eax,deltay"
 "	      0050174b    sar eax,1"
-"	      0050174e    add eax,[ebp-4]"
+"	      0050174e    add eax,deltax"
 "	      00501751    jmp near ptr 00501769h"
 );
 // LINE 123:
@@ -195,9 +195,9 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 );
 // LINE 125:
 	asm( 
-"	      0050175b    mov eax,[ebp-4]"
+"	      0050175b    mov eax,deltax"
 "	      0050175e    sar eax,1"
-"	      00501761    add eax,[ebp-8]"
+"	      00501761    add eax,deltay"
 "	      00501764    jmp near ptr 00501769h"
 );
 // LINE 127:
@@ -230,46 +230,46 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 142:
 	asm( 
-"	      00501777    mov dword ptr [ebp-14h],7D00h"
+"	      00501777    mov minDist,7D00h"
 );
 // LINE 147:
 	asm( 
 "	      0050177e    mov al,[ebp+0Ch]"
-"	      00501781    mov [ebp-18h],al"
+"	      00501781    mov there.x,al"
 );
 // LINE 148:
 	asm( 
 "	      00501784    mov al,[ebp+10h]"
-"	      00501787    mov [ebp-17h],al"
+"	      00501787    mov there.y,al"
 );
 // LINE 150:
 	asm( 
-"	      0050178a    mov eax,[ebp+8]"
+"	      0050178a    mov eax,cartype"
 "	      0050178d    mov [ebp-1Ch],eax"
 "	      00501790    jmp near ptr 00501A59h"
 );
 // LINE 153:
 	asm( 
-"	      00501795    mov dword ptr [ebp-10h],0"
+"	      00501795    mov i,0"
 "	      0050179c    jmp near ptr 005017A4h"
-"	      005017a1    inc dword ptr [ebp-10h]"
-"	      005017a4    cmp dword ptr [ebp-10h],5"
+"	      005017a1    inc i"
+"	      005017a4    cmp i,5"
 "	      005017a8    jge near ptr 00501818h"
 );
 // LINE 156:
 	asm( 
-"	      005017ae    mov eax,[ebp-10h]"
+"	      005017ae    mov eax,i"
 "	      005017b1    mov eax,[eax*4+62B9B8h]"
 "	      005017b8    test byte ptr [eax+8],2"
 "	      005017bc    je near ptr 00501813h"
-"	      005017c2    mov eax,[ebp-10h]"
+"	      005017c2    mov eax,i"
 "	      005017c5    mov eax,[eax*4+62B9B8h]"
 "	      005017cc    test byte ptr [eax+8],20h"
 "	      005017d0    je near ptr 00501813h"
 );
 // LINE 158:
 	asm( 
-"	      005017d6    mov eax,[ebp-10h]"
+"	      005017d6    mov eax,i"
 "	      005017d9    mov eax,[eax*4+62B9B8h]"
 "	      005017e0    mov ax,[eax+7Ch]"
 "	      005017e4    mov [ebp-0Ch],ax"
@@ -282,23 +282,23 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      005017ef    push eax"
 "	      005017f0    call 005016C9h"
 "	      005017f5    add esp,8"
-"	      005017f8    mov [ebp-8],eax"
+"	      005017f8    mov dist,eax"
 );
 // LINE 160:
 	asm( 
-"	      005017fb    mov eax,[ebp-14h]"
-"	      005017fe    cmp [ebp-8],eax"
+"	      005017fb    mov eax,minDist"
+"	      005017fe    cmp dist,eax"
 "	      00501801    jge near ptr 00501813h"
 );
 // LINE 162:
 	asm( 
-"	      00501807    mov eax,[ebp-8]"
-"	      0050180a    mov [ebp-14h],eax"
+"	      00501807    mov eax,dist"
+"	      0050180a    mov minDist,eax"
 );
 // LINE 163:
 	asm( 
-"	      0050180d    mov eax,[ebp-10h]"
-"	      00501810    mov [ebp-4],eax"
+"	      0050180d    mov eax,i"
+"	      00501810    mov carID,eax"
 );
 // LINE 166:
 	asm( 
@@ -306,7 +306,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 168:
 	asm( 
-"	      00501818    cmp dword ptr [ebp-14h],7D00h"
+"	      00501818    cmp minDist,7D00h"
 "	      0050181f    jne near ptr 00501831h"
 );
 // LINE 169:
@@ -320,33 +320,33 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 171:
 	asm( 
-"	      00501831    mov eax,[ebp-4]"
+"	      00501831    mov eax,carID"
 "	      00501834    mov eax,[eax*4+62B9B8h]"
 "	      0050183b    add eax,0Ch"
 "	      0050183e    jmp near ptr 00501A84h"
 );
 // LINE 174:
 	asm( 
-"	      00501843    mov dword ptr [ebp-10h],0"
+"	      00501843    mov i,0"
 "	      0050184a    jmp near ptr 00501852h"
-"	      0050184f    inc dword ptr [ebp-10h]"
-"	      00501852    cmp dword ptr [ebp-10h],5"
+"	      0050184f    inc i"
+"	      00501852    cmp i,5"
 "	      00501856    jge near ptr 005018C6h"
 );
 // LINE 177:
 	asm( 
-"	      0050185c    mov eax,[ebp-10h]"
+"	      0050185c    mov eax,i"
 "	      0050185f    mov eax,[eax*4+62B9E8h]"
 "	      00501866    test byte ptr [eax+8],2"
 "	      0050186a    je near ptr 005018C1h"
-"	      00501870    mov eax,[ebp-10h]"
+"	      00501870    mov eax,i"
 "	      00501873    mov eax,[eax*4+62B9E8h]"
 "	      0050187a    test byte ptr [eax+8],20h"
 "	      0050187e    je near ptr 005018C1h"
 );
 // LINE 179:
 	asm( 
-"	      00501884    mov eax,[ebp-10h]"
+"	      00501884    mov eax,i"
 "	      00501887    mov eax,[eax*4+62B9E8h]"
 "	      0050188e    mov ax,[eax+7Ch]"
 "	      00501892    mov [ebp-0Ch],ax"
@@ -359,23 +359,23 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      0050189d    push eax"
 "	      0050189e    call 005016C9h"
 "	      005018a3    add esp,8"
-"	      005018a6    mov [ebp-8],eax"
+"	      005018a6    mov dist,eax"
 );
 // LINE 181:
 	asm( 
-"	      005018a9    mov eax,[ebp-14h]"
-"	      005018ac    cmp [ebp-8],eax"
+"	      005018a9    mov eax,minDist"
+"	      005018ac    cmp dist,eax"
 "	      005018af    jge near ptr 005018C1h"
 );
 // LINE 183:
 	asm( 
-"	      005018b5    mov eax,[ebp-8]"
-"	      005018b8    mov [ebp-14h],eax"
+"	      005018b5    mov eax,dist"
+"	      005018b8    mov minDist,eax"
 );
 // LINE 184:
 	asm( 
-"	      005018bb    mov eax,[ebp-10h]"
-"	      005018be    mov [ebp-4],eax"
+"	      005018bb    mov eax,i"
+"	      005018be    mov carID,eax"
 );
 // LINE 187:
 	asm( 
@@ -383,7 +383,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 189:
 	asm( 
-"	      005018c6    cmp dword ptr [ebp-14h],7D00h"
+"	      005018c6    cmp minDist,7D00h"
 "	      005018cd    jne near ptr 005018DFh"
 );
 // LINE 190:
@@ -397,33 +397,33 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 192:
 	asm( 
-"	      005018df    mov eax,[ebp-4]"
+"	      005018df    mov eax,carID"
 "	      005018e2    mov eax,[eax*4+62B9E8h]"
 "	      005018e9    add eax,0Ch"
 "	      005018ec    jmp near ptr 00501A84h"
 );
 // LINE 195:
 	asm( 
-"	      005018f1    mov dword ptr [ebp-10h],0"
+"	      005018f1    mov i,0"
 "	      005018f8    jmp near ptr 00501900h"
-"	      005018fd    inc dword ptr [ebp-10h]"
-"	      00501900    cmp dword ptr [ebp-10h],5"
+"	      005018fd    inc i"
+"	      00501900    cmp i,5"
 "	      00501904    jge near ptr 00501974h"
 );
 // LINE 198:
 	asm( 
-"	      0050190a    mov eax,[ebp-10h]"
+"	      0050190a    mov eax,i"
 "	      0050190d    mov eax,[eax*4+62B9D0h]"
 "	      00501914    test byte ptr [eax+8],2"
 "	      00501918    je near ptr 0050196Fh"
-"	      0050191e    mov eax,[ebp-10h]"
+"	      0050191e    mov eax,i"
 "	      00501921    mov eax,[eax*4+62B9D0h]"
 "	      00501928    test byte ptr [eax+8],20h"
 "	      0050192c    je near ptr 0050196Fh"
 );
 // LINE 200:
 	asm( 
-"	      00501932    mov eax,[ebp-10h]"
+"	      00501932    mov eax,i"
 "	      00501935    mov eax,[eax*4+62B9D0h]"
 "	      0050193c    mov ax,[eax+7Ch]"
 "	      00501940    mov [ebp-0Ch],ax"
@@ -436,23 +436,23 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      0050194b    push eax"
 "	      0050194c    call 005016C9h"
 "	      00501951    add esp,8"
-"	      00501954    mov [ebp-8],eax"
+"	      00501954    mov dist,eax"
 );
 // LINE 202:
 	asm( 
-"	      00501957    mov eax,[ebp-14h]"
-"	      0050195a    cmp [ebp-8],eax"
+"	      00501957    mov eax,minDist"
+"	      0050195a    cmp dist,eax"
 "	      0050195d    jge near ptr 0050196Fh"
 );
 // LINE 204:
 	asm( 
-"	      00501963    mov eax,[ebp-8]"
-"	      00501966    mov [ebp-14h],eax"
+"	      00501963    mov eax,dist"
+"	      00501966    mov minDist,eax"
 );
 // LINE 205:
 	asm( 
-"	      00501969    mov eax,[ebp-10h]"
-"	      0050196c    mov [ebp-4],eax"
+"	      00501969    mov eax,i"
+"	      0050196c    mov carID,eax"
 );
 // LINE 208:
 	asm( 
@@ -460,7 +460,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 210:
 	asm( 
-"	      00501974    cmp dword ptr [ebp-14h],7D00h"
+"	      00501974    cmp minDist,7D00h"
 "	      0050197b    jne near ptr 0050198Dh"
 );
 // LINE 211:
@@ -474,33 +474,33 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 213:
 	asm( 
-"	      0050198d    mov eax,[ebp-4]"
+"	      0050198d    mov eax,carID"
 "	      00501990    mov eax,[eax*4+62B9D0h]"
 "	      00501997    add eax,0Ch"
 "	      0050199a    jmp near ptr 00501A84h"
 );
 // LINE 216:
 	asm( 
-"	      0050199f    mov dword ptr [ebp-10h],0"
+"	      0050199f    mov i,0"
 "	      005019a6    jmp near ptr 005019AEh"
-"	      005019ab    inc dword ptr [ebp-10h]"
-"	      005019ae    cmp dword ptr [ebp-10h],5"
+"	      005019ab    inc i"
+"	      005019ae    cmp i,5"
 "	      005019b2    jge near ptr 00501A22h"
 );
 // LINE 219:
 	asm( 
-"	      005019b8    mov eax,[ebp-10h]"
+"	      005019b8    mov eax,i"
 "	      005019bb    mov eax,[eax*4+62B9A0h]"
 "	      005019c2    test byte ptr [eax+8],2"
 "	      005019c6    je near ptr 00501A1Dh"
-"	      005019cc    mov eax,[ebp-10h]"
+"	      005019cc    mov eax,i"
 "	      005019cf    mov eax,[eax*4+62B9A0h]"
 "	      005019d6    test byte ptr [eax+8],20h"
 "	      005019da    je near ptr 00501A1Dh"
 );
 // LINE 221:
 	asm( 
-"	      005019e0    mov eax,[ebp-10h]"
+"	      005019e0    mov eax,i"
 "	      005019e3    mov eax,[eax*4+62B9A0h]"
 "	      005019ea    mov ax,[eax+7Ch]"
 "	      005019ee    mov [ebp-0Ch],ax"
@@ -513,23 +513,23 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      005019f9    push eax"
 "	      005019fa    call 005016C9h"
 "	      005019ff    add esp,8"
-"	      00501a02    mov [ebp-8],eax"
+"	      00501a02    mov dist,eax"
 );
 // LINE 223:
 	asm( 
-"	      00501a05    mov eax,[ebp-14h]"
-"	      00501a08    cmp [ebp-8],eax"
+"	      00501a05    mov eax,minDist"
+"	      00501a08    cmp dist,eax"
 "	      00501a0b    jge near ptr 00501A1Dh"
 );
 // LINE 225:
 	asm( 
-"	      00501a11    mov eax,[ebp-8]"
-"	      00501a14    mov [ebp-14h],eax"
+"	      00501a11    mov eax,dist"
+"	      00501a14    mov minDist,eax"
 );
 // LINE 226:
 	asm( 
-"	      00501a17    mov eax,[ebp-10h]"
-"	      00501a1a    mov [ebp-4],eax"
+"	      00501a17    mov eax,i"
+"	      00501a1a    mov carID,eax"
 );
 // LINE 229:
 	asm( 
@@ -537,7 +537,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 231:
 	asm( 
-"	      00501a22    cmp dword ptr [ebp-14h],7D00h"
+"	      00501a22    cmp minDist,7D00h"
 "	      00501a29    jne near ptr 00501A3Bh"
 );
 // LINE 232:
@@ -551,7 +551,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 234:
 	asm( 
-"	      00501a3b    mov eax,[ebp-4]"
+"	      00501a3b    mov eax,carID"
 "	      00501a3e    mov eax,[eax*4+62B9A0h]"
 "	      00501a45    add eax,0Ch"
 "	      00501a48    jmp near ptr 00501A84h"
@@ -607,7 +607,7 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 	asm( 
 "	      00501a8f    mov eax,[ebp+0Ch]"
 "	      00501a92    push eax"
-"	      00501a93    movsx eax,word ptr [ebp+8]"
+"	      00501a93    movsx eax,vehicleID"
 "	      00501a97    mov ecx,[eax*4+608F80h]"
 "	      00501a9e    call 00501AADh"
 "	      00501aa3    jmp near ptr 00501AA8h"
@@ -632,11 +632,11 @@ int32_t AutomobileClass::AutoMessage(short messID) {
 "	      00501ab3    push ebx"
 "	      00501ab4    push esi"
 "	      00501ab5    push edi"
-"	      00501ab6    mov [ebp-4],ecx"
+"	      00501ab6    mov this,ecx"
 );
 // LINE 252:
 	asm( 
-"	      00501ab9    mov eax,[ebp-4]"
+"	      00501ab9    mov eax,this"
 "	      00501abc    test byte ptr [eax+8],2"
 "	      00501ac0    jne near ptr 00501ACDh"
 "	      00501ac6    xor eax,eax"
@@ -644,7 +644,7 @@ int32_t AutomobileClass::AutoMessage(short messID) {
 );
 // LINE 254:
 	asm( 
-"	      00501acd    movsx eax,word ptr [ebp+8]"
+"	      00501acd    movsx eax,messID"
 "	      00501ad1    mov [ebp-8],eax"
 "	      00501ad4    jmp near ptr 00501AE3h"
 );
@@ -709,12 +709,12 @@ int32_t SetTheCurrentNumberOfAutomobiles(int32_t num) {
 );
 // LINE 275:
 	asm( 
-"	      00501b14    cmp dword ptr [ebp+8],32h"
+"	      00501b14    cmp num,32h"
 "	      00501b18    jg near ptr 00501B30h"
 );
 // LINE 277:
 	asm( 
-"	      00501b1e    mov eax,[ebp+8]"
+"	      00501b1e    mov eax,num"
 "	      00501b21    mov ds:[5B52C8h],eax"
 );
 // LINE 278:
@@ -749,7 +749,7 @@ int32_t CreateAutomobileInstance(int32_t instanceID) {
 );
 // LINE 304:
 	asm( 
-"	      00501b42    mov eax,[ebp+8]"
+"	      00501b42    mov eax,instanceID"
 "	      00501b45    push eax"
 "	      00501b46    call 00501DB8h"
 "	      00501b4b    add esp,4"
@@ -782,28 +782,28 @@ void AutomobileClass::AutomobileClass() {
 "	      00501b72    push ebx"
 "	      00501b73    push esi"
 "	      00501b74    push edi"
-"	      00501b75    mov [ebp-8],ecx"
-"	      00501b78    mov eax,[ebp-8]"
+"	      00501b75    mov this,ecx"
+"	      00501b78    mov eax,this"
 "	      00501b7b    mov dword ptr [eax],592D98h"
 );
 // LINE 327:
 	asm( 
-"	      00501b81    mov eax,[ebp-8]"
+"	      00501b81    mov eax,this"
 "	      00501b84    mov dword ptr [eax+9Eh],0"
 );
 // LINE 328:
 	asm( 
-"	      00501b8e    mov eax,[ebp-8]"
+"	      00501b8e    mov eax,this"
 "	      00501b91    mov dword ptr [eax+0BEh],1E0000h"
 );
 // LINE 329:
 	asm( 
-"	      00501b9b    mov eax,[ebp-8]"
+"	      00501b9b    mov eax,this"
 "	      00501b9e    mov dword ptr [eax+9Ah],0"
 );
 // LINE 330:
 	asm( 
-"	      00501ba8    mov eax,[ebp-8]"
+"	      00501ba8    mov eax,this"
 "	      00501bab    mov dword ptr [eax+116h],0"
 );
 // LINE 333:
@@ -818,7 +818,7 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 336:
 	asm( 
-"	      00501bcd    mov eax,[ebp-8]"
+"	      00501bcd    mov eax,this"
 "	      00501bd0    mov dword ptr [eax+0CAh],2Dh"
 );
 // LINE 337:
@@ -827,7 +827,7 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 339:
 	asm( 
-"	      00501bdf    mov eax,[ebp-8]"
+"	      00501bdf    mov eax,this"
 "	      00501be2    mov dword ptr [eax+0CAh],2Eh"
 );
 // LINE 340:
@@ -836,7 +836,7 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 342:
 	asm( 
-"	      00501bf1    mov eax,[ebp-8]"
+"	      00501bf1    mov eax,this"
 "	      00501bf4    mov dword ptr [eax+0CAh],2Fh"
 );
 // LINE 343:
@@ -861,16 +861,16 @@ void AutomobileClass::AutomobileClass() {
 "	      00501c35    movsx eax,ax"
 "	      00501c38    cdq"
 "	      00501c39    idiv ecx"
-"	      00501c3b    mov [ebp-4],edx"
+"	      00501c3b    mov odds,edx"
 );
 // LINE 351:
 	asm( 
-"	      00501c3e    cmp dword ptr [ebp-4],0Ah"
+"	      00501c3e    cmp odds,0Ah"
 "	      00501c42    jge near ptr 00501C57h"
 );
 // LINE 353:
 	asm( 
-"	      00501c48    mov eax,[ebp-8]"
+"	      00501c48    mov eax,this"
 "	      00501c4b    mov dword ptr [eax+4],7Ah"
 );
 // LINE 361:
@@ -879,12 +879,12 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 363:
 	asm( 
-"	      00501c57    cmp dword ptr [ebp-4],32h"
+"	      00501c57    cmp odds,32h"
 "	      00501c5b    jge near ptr 00501C70h"
 );
 // LINE 365:
 	asm( 
-"	      00501c61    mov eax,[ebp-8]"
+"	      00501c61    mov eax,this"
 "	      00501c64    mov dword ptr [eax+4],7Dh"
 );
 // LINE 367:
@@ -893,12 +893,12 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 370:
 	asm( 
-"	      00501c70    cmp dword ptr [ebp-4],3Ch"
+"	      00501c70    cmp odds,3Ch"
 "	      00501c74    jge near ptr 00501C89h"
 );
 // LINE 372:
 	asm( 
-"	      00501c7a    mov eax,[ebp-8]"
+"	      00501c7a    mov eax,this"
 "	      00501c7d    mov dword ptr [eax+4],7Eh"
 );
 // LINE 374:
@@ -907,12 +907,12 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 378:
 	asm( 
-"	      00501c89    cmp dword ptr [ebp-4],46h"
+"	      00501c89    cmp odds,46h"
 "	      00501c8d    jge near ptr 00501CA2h"
 );
 // LINE 380:
 	asm( 
-"	      00501c93    mov eax,[ebp-8]"
+"	      00501c93    mov eax,this"
 "	      00501c96    mov dword ptr [eax+4],12Ah"
 );
 // LINE 382:
@@ -921,23 +921,23 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 387:
 	asm( 
-"	      00501ca2    cmp dword ptr [ebp-4],5Ah"
+"	      00501ca2    cmp odds,5Ah"
 "	      00501ca6    jge near ptr 00501CBBh"
 );
 // LINE 389:
 	asm( 
-"	      00501cac    mov eax,[ebp-8]"
+"	      00501cac    mov eax,this"
 "	      00501caf    mov dword ptr [eax+4],12Bh"
 );
 // LINE 391:
 	asm( 
 "	      00501cb6    jmp near ptr 00501CF5h"
-"	      00501cbb    cmp dword ptr [ebp-4],6Eh"
+"	      00501cbb    cmp odds,6Eh"
 "	      00501cbf    jge near ptr 00501CD4h"
 );
 // LINE 393:
 	asm( 
-"	      00501cc5    mov eax,[ebp-8]"
+"	      00501cc5    mov eax,this"
 "	      00501cc8    mov dword ptr [eax+4],12Ch"
 );
 // LINE 395:
@@ -956,13 +956,13 @@ void AutomobileClass::AutomobileClass() {
 );
 // LINE 400:
 	asm( 
-"	      00501cf5    mov eax,[ebp-8]"
+"	      00501cf5    mov eax,this"
 "	      00501cf8    and dword ptr [eax+8],0FFFFFF8Fh"
 );
 // LINE 402:
 	asm( 
 "	      00501cfc    jmp near ptr 00501D01h"
-"	      00501d01    mov eax,[ebp-8]"
+"	      00501d01    mov eax,this"
 "	      00501d04    pop edi"
 "	      00501d05    pop esi"
 "	      00501d06    pop ebx"
@@ -981,33 +981,33 @@ void AutomobileClass::~AutomobileClass() {
 "	      00501d0f    push ebx"
 "	      00501d10    push esi"
 "	      00501d11    push edi"
-"	      00501d12    mov [ebp-4],ecx"
-"	      00501d15    mov eax,[ebp-4]"
+"	      00501d12    mov this,ecx"
+"	      00501d15    mov eax,this"
 "	      00501d18    mov dword ptr [eax],592D98h"
 );
 // LINE 414:
 	asm( 
-"	      00501d1e    mov eax,[ebp-4]"
+"	      00501d1e    mov eax,this"
 "	      00501d21    test byte ptr [eax+8],1"
 "	      00501d25    je near ptr 00501D47h"
 );
 // LINE 416:
 	asm( 
-"	      00501d2b    mov eax,[ebp-4]"
+"	      00501d2b    mov eax,this"
 "	      00501d2e    test byte ptr [eax+8],2"
 "	      00501d32    je near ptr 00501D47h"
 );
 // LINE 418:
 	asm( 
-"	      00501d38    mov eax,[ebp-4]"
+"	      00501d38    mov eax,this"
 "	      00501d3b    add eax,7Ch"
 "	      00501d3e    push eax"
-"	      00501d3f    mov ecx,[ebp-4]"
+"	      00501d3f    mov ecx,this"
 "	      00501d42    call 00502A9Bh"
 );
 // LINE 430:
 	asm( 
-"	      00501d47    mov eax,[ebp-4]"
+"	      00501d47    mov eax,this"
 "	      00501d4a    and dword ptr [eax+8],0FFFFFFFEh"
 );
 // LINE 431:
@@ -1033,7 +1033,7 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 );
 // LINE 451:
 	asm( 
-"	      00501d5e    mov eax,[ebp+8]"
+"	      00501d5e    mov eax,index"
 "	      00501d61    cmp ds:[5B52C8h],eax"
 "	      00501d67    jg near ptr 00501D89h"
 "	      00501d6d    push 1C3h"
@@ -1046,7 +1046,7 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 );
 // LINE 453:
 	asm( 
-"	      00501d8e    mov eax,[ebp+8]"
+"	      00501d8e    mov eax,index"
 "	      00501d91    cmp ds:[5B52C8h],eax"
 "	      00501d97    jg near ptr 00501DA4h"
 );
@@ -1057,7 +1057,7 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 );
 // LINE 456:
 	asm( 
-"	      00501da4    mov eax,[ebp+8]"
+"	      00501da4    mov eax,index"
 "	      00501da7    mov eax,[eax*4+608F80h]"
 "	      00501dae    jmp near ptr 00501DB3h"
 );
@@ -1094,27 +1094,27 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 "	      00501dd5    je near ptr 00501DEBh"
 "	      00501ddb    mov ecx,[ebp-8]"
 "	      00501dde    call 00501B6Ch"
-"	      00501de3    mov [ebp-4],eax"
+"	      00501de3    mov youveWonABrandNewCar,eax"
 "	      00501de6    jmp near ptr 00501DF2h"
-"	      00501deb    mov dword ptr [ebp-4],0"
+"	      00501deb    mov youveWonABrandNewCar,0"
 );
 // LINE 483:
 	asm( 
-"	      00501df2    cmp dword ptr [ebp-4],0"
+"	      00501df2    cmp youveWonABrandNewCar,0"
 "	      00501df6    je near ptr 00501E65h"
 );
 // LINE 486:
 	asm( 
-"	      00501dfc    mov eax,[ebp+8]"
+"	      00501dfc    mov eax,instanceID"
 "	      00501dff    push eax"
-"	      00501e00    mov ecx,[ebp-4]"
+"	      00501e00    mov ecx,youveWonABrandNewCar"
 "	      00501e03    call 00504337h"
 "	      00501e08    test eax,eax"
 "	      00501e0a    je near ptr 00501E1Dh"
 );
 // LINE 488:
 	asm( 
-"	      00501e10    mov eax,[ebp-4]"
+"	      00501e10    mov eax,youveWonABrandNewCar"
 "	      00501e13    jmp near ptr 00501E6Ch"
 );
 // LINE 490:
@@ -1123,7 +1123,7 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 493:
 	asm( 
-"	      00501e1d    mov eax,[ebp-4]"
+"	      00501e1d    mov eax,youveWonABrandNewCar"
 "	      00501e20    mov [ebp-10h],eax"
 "	      00501e23    mov eax,[ebp-10h]"
 "	      00501e26    mov [ebp-0Ch],eax"
@@ -1176,15 +1176,15 @@ void AutomobileClass::ResetAll() {
 );
 // LINE 543:
 	asm( 
-"	      00501e7a    mov dword ptr [ebp-4],0"
+"	      00501e7a    mov currentCarIndex,0"
 "	      00501e81    jmp near ptr 00501E89h"
-"	      00501e86    inc dword ptr [ebp-4]"
-"	      00501e89    cmp dword ptr [ebp-4],46h"
+"	      00501e86    inc currentCarIndex"
+"	      00501e89    cmp currentCarIndex,46h"
 "	      00501e8d    jge near ptr 00501EA7h"
 );
 // LINE 545:
 	asm( 
-"	      00501e93    mov eax,[ebp-4]"
+"	      00501e93    mov eax,currentCarIndex"
 "	      00501e96    mov ecx,[eax*4+608F80h]"
 "	      00501e9d    call 00504116h"
 );
@@ -1218,15 +1218,15 @@ void AutomobileClass::ItterateAll() {
 );
 // LINE 574:
 	asm( 
-"	      00501eba    mov dword ptr [ebp-4],0"
+"	      00501eba    mov currentCarIndex,0"
 "	      00501ec1    jmp near ptr 00501EC9h"
-"	      00501ec6    inc dword ptr [ebp-4]"
-"	      00501ec9    cmp dword ptr [ebp-4],46h"
+"	      00501ec6    inc currentCarIndex"
+"	      00501ec9    cmp currentCarIndex,46h"
 "	      00501ecd    jge near ptr 00501EE7h"
 );
 // LINE 576:
 	asm( 
-"	      00501ed3    mov eax,[ebp-4]"
+"	      00501ed3    mov eax,currentCarIndex"
 "	      00501ed6    mov ecx,[eax*4+608F80h]"
 "	      00501edd    call 00501EF1h"
 );
@@ -1255,11 +1255,11 @@ void AutomobileClass::Itterate() {
 "	      00501ef7    push ebx"
 "	      00501ef8    push esi"
 "	      00501ef9    push edi"
-"	      00501efa    mov [ebp-64h],ecx"
+"	      00501efa    mov this,ecx"
 );
 // LINE 601:
 	asm( 
-"	      00501efd    mov eax,[ebp-64h]"
+"	      00501efd    mov eax,this"
 "	      00501f00    test byte ptr [eax+8],1"
 "	      00501f04    jne near ptr 00501F26h"
 "	      00501f0a    push 259h"
@@ -1273,12 +1273,12 @@ void AutomobileClass::Itterate() {
 // LINE 608:
 	asm( 
 "	      00501f2b    mov eax,ds:[5B4760h]"
-"	      00501f30    mov ecx,[ebp-64h]"
+"	      00501f30    mov ecx,this"
 "	      00501f33    add [ecx+0BEh],eax"
 );
 // LINE 613:
 	asm( 
-"	      00501f39    mov eax,[ebp-64h]"
+"	      00501f39    mov eax,this"
 "	      00501f3c    test byte ptr [eax+8],2"
 "	      00501f40    je near ptr 0050214Fh"
 );
@@ -1286,12 +1286,12 @@ void AutomobileClass::Itterate() {
 // Block start:
 	struct VRview position;
 	asm( 
-"	      00501f46    mov eax,[ebp-64h]"
+"	      00501f46    mov eax,this"
 "	      00501f49    test byte ptr [eax+9],13h"
 "	      00501f4d    je near ptr 00501F5Fh"
 "	      00501f53    mov dword ptr [ebp-5Ch],1"
 "	      00501f5a    jmp near ptr 00501FB6h"
-"	      00501f5f    mov eax,[ebp-64h]"
+"	      00501f5f    mov eax,this"
 "	      00501f62    mov eax,[eax+4]"
 "	      00501f65    mov [ebp-68h],eax"
 "	      00501f68    jmp near ptr 00501F7Eh"
@@ -1309,14 +1309,14 @@ void AutomobileClass::Itterate() {
 "	      00501fb1    jmp near ptr 00501FB6h"
 "	      00501fb6    cmp dword ptr [ebp-5Ch],0"
 "	      00501fba    jne near ptr 00501FDDh"
-"	      00501fc0    mov ecx,[ebp-64h]"
+"	      00501fc0    mov ecx,this"
 "	      00501fc3    call 00506333h"
 "	      00501fc8    test eax,eax"
 "	      00501fca    je near ptr 00501FDDh"
 );
 // LINE 619:
 	asm( 
-"	      00501fd0    mov ecx,[ebp-64h]"
+"	      00501fd0    mov ecx,this"
 "	      00501fd3    call 00503E6Eh"
 );
 // LINE 620:
@@ -1325,13 +1325,13 @@ void AutomobileClass::Itterate() {
 );
 // LINE 623:
 	asm( 
-"	      00501fdd    mov eax,[ebp-64h]"
+"	      00501fdd    mov eax,this"
 "	      00501fe0    test byte ptr [eax+8],20h"
 "	      00501fe4    je near ptr 005020F1h"
 );
 // LINE 625:
 	asm( 
-"	      00501fea    mov eax,[ebp-64h]"
+"	      00501fea    mov eax,this"
 "	      00501fed    cmp dword ptr [eax+0C6h],0"
 "	      00501ff4    jle near ptr 00502012h"
 );
@@ -1340,25 +1340,25 @@ void AutomobileClass::Itterate() {
 "	      00501ffa    xor eax,eax"
 "	      00501ffc    sub eax,ds:[5B4760h]"
 "	      00502002    neg eax"
-"	      00502004    mov ecx,[ebp-64h]"
+"	      00502004    mov ecx,this"
 "	      00502007    sub [ecx+0C6h],eax"
 );
 // LINE 629:
 	asm( 
 "	      0050200d    jmp near ptr 005020F1h"
-"	      00502012    mov ecx,[ebp-64h]"
+"	      00502012    mov ecx,this"
 "	      00502015    call 005049FEh"
 "	      0050201a    test eax,eax"
 "	      0050201c    je near ptr 005020C1h"
-"	      00502022    mov eax,[ebp-64h]"
+"	      00502022    mov eax,this"
 "	      00502025    test byte ptr [eax+8],40h"
 "	      00502029    jne near ptr 005020C1h"
-"	      0050202f    mov eax,[ebp-64h]"
+"	      0050202f    mov eax,this"
 "	      00502032    test byte ptr [eax+9],13h"
 "	      00502036    je near ptr 00502048h"
 "	      0050203c    mov dword ptr [ebp-60h],1"
 "	      00502043    jmp near ptr 0050209Fh"
-"	      00502048    mov eax,[ebp-64h]"
+"	      00502048    mov eax,this"
 "	      0050204b    mov eax,[eax+4]"
 "	      0050204e    mov [ebp-6Ch],eax"
 "	      00502051    jmp near ptr 00502067h"
@@ -1379,56 +1379,56 @@ void AutomobileClass::Itterate() {
 );
 // LINE 631:
 	asm( 
-"	      005020a9    mov ecx,[ebp-64h]"
+"	      005020a9    mov ecx,this"
 "	      005020ac    call 00504B0Ah"
 );
 // LINE 632:
 	asm( 
-"	      005020b1    mov eax,[ebp-64h]"
+"	      005020b1    mov eax,this"
 "	      005020b4    mov eax,[eax]"
-"	      005020b6    mov ecx,[ebp-64h]"
+"	      005020b6    mov ecx,this"
 "	      005020b9    call dword ptr [eax+8]"
 );
 // LINE 634:
 	asm( 
 "	      005020bc    jmp near ptr 005020F1h"
-"	      005020c1    mov eax,[ebp-64h]"
+"	      005020c1    mov eax,this"
 "	      005020c4    test byte ptr [eax+9],10h"
 "	      005020c8    je near ptr 005020F1h"
-"	      005020ce    mov eax,[ebp-64h]"
+"	      005020ce    mov eax,this"
 "	      005020d1    cmp dword ptr [eax+116h],0"
 "	      005020d8    jg near ptr 005020F1h"
 );
 // LINE 636:
 	asm( 
-"	      005020de    mov ecx,[ebp-64h]"
+"	      005020de    mov ecx,this"
 "	      005020e1    call 00504B0Ah"
 );
 // LINE 637:
 	asm( 
-"	      005020e6    mov eax,[ebp-64h]"
+"	      005020e6    mov eax,this"
 "	      005020e9    mov eax,[eax]"
-"	      005020eb    mov ecx,[ebp-64h]"
+"	      005020eb    mov ecx,this"
 "	      005020ee    call dword ptr [eax+8]"
 );
 // LINE 665:
 	asm( 
-"	      005020f1    mov eax,[ebp-64h]"
+"	      005020f1    mov eax,this"
 "	      005020f4    cmp dword ptr [eax+0DEh],0"
 "	      005020fb    jle near ptr 0050210Ch"
 );
 // LINE 667:
 	asm( 
-"	      00502101    mov eax,[ebp-64h]"
+"	      00502101    mov eax,this"
 "	      00502104    mov eax,[eax]"
-"	      00502106    mov ecx,[ebp-64h]"
+"	      00502106    mov ecx,this"
 "	      00502109    call dword ptr [eax+10h]"
 );
 // LINE 672:
 	asm( 
-"	      0050210c    mov eax,[ebp-64h]"
+"	      0050210c    mov eax,this"
 "	      0050210f    add eax,24h"
-"	      00502112    lea ecx,[ebp-58h]"
+"	      00502112    lea ecx,position.loc.x"
 "	      00502115    mov edx,[eax]"
 "	      00502117    mov [ecx],edx"
 "	      00502119    mov edx,[eax+4]"
@@ -1438,8 +1438,8 @@ void AutomobileClass::Itterate() {
 );
 // LINE 675:
 	asm( 
-"	      00502125    mov esi,[ebp-64h]"
-"	      00502128    lea edi,[ebp-40h]"
+"	      00502125    mov esi,this"
+"	      00502128    lea edi,position.matrix[0][0]"
 "	      0050212b    add esi,30h"
 "	      0050212e    mov ecx,10h"
 "	      00502133    rep movsd"
@@ -1447,9 +1447,9 @@ void AutomobileClass::Itterate() {
 // LINE 678:
 	asm( 
 "	      00502135    push 3"
-"	      00502137    lea eax,[ebp-58h]"
+"	      00502137    lea eax,position.loc.x"
 "	      0050213a    push eax"
-"	      0050213b    mov eax,[ebp-64h]"
+"	      0050213b    mov eax,this"
 "	      0050213e    mov eax,[eax+14h]"
 "	      00502141    push eax"
 "	      00502142    call 004D8781h"
@@ -1459,17 +1459,17 @@ void AutomobileClass::Itterate() {
 // Block end:
 	asm( 
 "	      0050214a    jmp near ptr 00502172h"
-"	      0050214f    mov eax,[ebp-64h]"
-"	      00502152    mov ecx,[ebp-64h]"
+"	      0050214f    mov eax,this"
+"	      00502152    mov ecx,this"
 "	      00502155    mov ecx,[ecx+0BEh]"
 "	      0050215b    cmp [eax+0BAh],ecx"
 "	      00502161    jge near ptr 00502172h"
 );
 // LINE 683:
 	asm( 
-"	      00502167    mov eax,[ebp-64h]"
+"	      00502167    mov eax,this"
 "	      0050216a    mov eax,[eax]"
-"	      0050216c    mov ecx,[ebp-64h]"
+"	      0050216c    mov ecx,this"
 "	      0050216f    call dword ptr [eax+1Ch]"
 );
 // LINE 685:
@@ -1501,13 +1501,13 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 "	      00502182    push ebx"
 "	      00502183    push esi"
 "	      00502184    push edi"
-"	      00502185    mov [ebp-30h],ecx"
+"	      00502185    mov this,ecx"
 );
 // LINE 749:
 	asm( 
-"	      00502188    mov eax,[ebp-30h]"
+"	      00502188    mov eax,this"
 "	      0050218b    add eax,24h"
-"	      0050218e    lea ecx,[ebp-10h]"
+"	      0050218e    lea ecx,vehicleLoc.x"
 "	      00502191    mov edx,[eax]"
 "	      00502193    mov [ecx],edx"
 "	      00502195    mov edx,[eax+4]"
@@ -1517,95 +1517,95 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 );
 // LINE 750:
 	asm( 
-"	      005021a1    mov eax,[ebp-30h]"
+"	      005021a1    mov eax,this"
 "	      005021a4    mov eax,[eax+1Ch]"
 "	      005021a7    add eax,400000h"
-"	      005021ac    mov [ebp-2Ch],eax"
+"	      005021ac    mov maxRadius,eax"
 );
 // LINE 756:
 	asm( 
-"	      005021af    mov eax,[ebp-30h]"
+"	      005021af    mov eax,this"
 "	      005021b2    mov eax,[eax+1Ch]"
 "	      005021b5    add eax,50000h"
-"	      005021ba    mov [ebp-28h],eax"
+"	      005021ba    mov radius,eax"
 "	      005021bd    jmp near ptr 005021C9h"
-"	      005021c2    add dword ptr [ebp-28h],0A0000h"
-"	      005021c9    mov eax,[ebp-2Ch]"
-"	      005021cc    cmp [ebp-28h],eax"
+"	      005021c2    add radius,0A0000h"
+"	      005021c9    mov eax,maxRadius"
+"	      005021cc    cmp radius,eax"
 "	      005021cf    jge near ptr 005022A2h"
 );
 // LINE 758:
 	asm( 
-"	      005021d5    mov dword ptr [ebp-14h],0"
+"	      005021d5    mov angle,0"
 "	      005021dc    jmp near ptr 005021E8h"
-"	      005021e1    add dword ptr [ebp-14h],640000h"
-"	      005021e8    cmp dword ptr [ebp-14h],0E100000h"
+"	      005021e1    add angle,640000h"
+"	      005021e8    cmp angle,0E100000h"
 "	      005021ef    jge near ptr 0050229Dh"
 );
 // LINE 760:
 	asm( 
-"	      005021f5    lea eax,[ebp-4]"
+"	      005021f5    lea eax,rcos"
 "	      005021f8    push eax"
-"	      005021f9    lea eax,[ebp-24h]"
+"	      005021f9    lea eax,rsin"
 "	      005021fc    push eax"
-"	      005021fd    mov eax,[ebp-14h]"
+"	      005021fd    mov eax,angle"
 "	      00502200    push eax"
 "	      00502201    call 004D19FCh"
 "	      00502206    add esp,0Ch"
 );
 // LINE 761:
 	asm( 
-"	      00502209    mov eax,[ebp-4]"
+"	      00502209    mov eax,rcos"
 "	      0050220c    push eax"
-"	      0050220d    mov eax,[ebp-28h]"
+"	      0050220d    mov eax,radius"
 "	      00502210    push eax"
 "	      00502211    call 004D19BDh"
 "	      00502216    add esp,8"
-"	      00502219    mov ecx,[ebp-10h]"
+"	      00502219    mov ecx,vehicleLoc.x"
 "	      0050221c    add ecx,eax"
-"	      0050221e    mov [ebp-20h],ecx"
+"	      0050221e    mov personLoc.x,ecx"
 );
 // LINE 762:
 	asm( 
-"	      00502221    mov eax,[ebp-24h]"
+"	      00502221    mov eax,rsin"
 "	      00502224    push eax"
-"	      00502225    mov eax,[ebp-28h]"
+"	      00502225    mov eax,radius"
 "	      00502228    push eax"
 "	      00502229    call 004D19BDh"
 "	      0050222e    add esp,8"
-"	      00502231    mov ecx,[ebp-8]"
+"	      00502231    mov ecx,vehicleLoc.z"
 "	      00502234    add ecx,eax"
-"	      00502236    mov [ebp-18h],ecx"
+"	      00502236    mov personLoc.z,ecx"
 );
 // LINE 763:
 	asm( 
-"	      00502239    mov eax,[ebp-18h]"
+"	      00502239    mov eax,personLoc.z"
 "	      0050223c    push eax"
-"	      0050223d    mov eax,[ebp-20h]"
+"	      0050223d    mov eax,personLoc.x"
 "	      00502240    push eax"
 "	      00502241    call 00518E76h"
 "	      00502246    add esp,8"
-"	      00502249    mov [ebp-1Ch],eax"
+"	      00502249    mov personLoc.y,eax"
 );
 // LINE 766:
 	asm( 
-"	      0050224c    lea eax,[ebp-20h]"
+"	      0050224c    lea eax,personLoc.x"
 "	      0050224f    push eax"
-"	      00502250    mov eax,[ebp-30h]"
+"	      00502250    mov eax,this"
 "	      00502253    add eax,0Ch"
 "	      00502256    push eax"
-"	      00502257    mov eax,[ebp-30h]"
+"	      00502257    mov eax,this"
 "	      0050225a    mov eax,[eax+10Eh]"
 "	      00502260    push eax"
-"	      00502261    mov eax,[ebp-30h]"
+"	      00502261    mov eax,this"
 "	      00502264    movzx ax,byte ptr [eax+7Dh]"
 "	      00502269    push eax"
-"	      0050226a    mov eax,[ebp-30h]"
+"	      0050226a    mov eax,this"
 "	      0050226d    movzx ax,byte ptr [eax+7Ch]"
 "	      00502272    push eax"
-"	      00502273    mov eax,[ebp+0Ch]"
+"	      00502273    mov eax,personAction"
 "	      00502276    push eax"
-"	      00502277    mov eax,[ebp+8]"
+"	      00502277    mov eax,personType"
 "	      0050227a    push eax"
 "	      0050227b    call 0054A1D3h"
 "	      00502280    add esp,1Ch"
@@ -1656,17 +1656,17 @@ void AutomobileClass::ItterateFSM() {
 "	      005022b6    push ebx"
 "	      005022b7    push esi"
 "	      005022b8    push edi"
-"	      005022b9    mov [ebp-54h],ecx"
+"	      005022b9    mov this,ecx"
 );
 // LINE 796:
 	asm( 
-"	      005022bc    mov eax,[ebp-54h]"
+"	      005022bc    mov eax,this"
 "	      005022bf    test byte ptr [eax+9],1"
 "	      005022c3    je near ptr 005022DBh"
 );
 // LINE 798:
 	asm( 
-"	      005022c9    mov ecx,[ebp-54h]"
+"	      005022c9    mov ecx,this"
 "	      005022cc    call 00506971h"
 );
 // LINE 799:
@@ -1676,13 +1676,13 @@ void AutomobileClass::ItterateFSM() {
 // LINE 801:
 	asm( 
 "	      005022d6    jmp near ptr 0050235Eh"
-"	      005022db    mov eax,[ebp-54h]"
+"	      005022db    mov eax,this"
 "	      005022de    test byte ptr [eax+9],2"
 "	      005022e2    je near ptr 005022FAh"
 );
 // LINE 803:
 	asm( 
-"	      005022e8    mov ecx,[ebp-54h]"
+"	      005022e8    mov ecx,this"
 "	      005022eb    call 00506BCFh"
 );
 // LINE 804:
@@ -1692,16 +1692,16 @@ void AutomobileClass::ItterateFSM() {
 // LINE 806:
 	asm( 
 "	      005022f5    jmp near ptr 0050235Eh"
-"	      005022fa    mov eax,[ebp-54h]"
+"	      005022fa    mov eax,this"
 "	      005022fd    test byte ptr [eax+9],10h"
 "	      00502301    je near ptr 0050235Eh"
 );
 // LINE 808:
 	asm( 
-"	      00502307    mov eax,[ebp-54h]"
+"	      00502307    mov eax,this"
 "	      0050230a    test byte ptr [eax+9],20h"
 "	      0050230e    je near ptr 0050235Eh"
-"	      00502314    mov ecx,[ebp-54h]"
+"	      00502314    mov ecx,this"
 "	      00502317    call 005049FEh"
 "	      0050231c    test eax,eax"
 "	      0050231e    je near ptr 0050235Eh"
@@ -1710,72 +1710,72 @@ void AutomobileClass::ItterateFSM() {
 // Block start:
 	struct _MISSION_PARMS mp;
 	asm( 
-"	      00502324    mov dword ptr [ebp-24h],0FFFFFFFFh"
+"	      00502324    mov mp.id,0FFFFFFFFh"
 );
 // LINE 814:
 	asm( 
-"	      0050232b    mov dword ptr [ebp-18h],1"
+"	      0050232b    mov mp.i2num,1"
 );
 // LINE 815:
 	asm( 
-"	      00502332    mov dword ptr [ebp-28h],26h"
+"	      00502332    mov mp.op,26h"
 );
 // LINE 816:
 	asm( 
-"	      00502339    mov dword ptr [ebp-14h],0"
+"	      00502339    mov mp.flags,0"
 );
 // LINE 818:
 	asm( 
-"	      00502340    lea eax,[ebp-28h]"
+"	      00502340    lea eax,mp.op"
 "	      00502343    push eax"
 "	      00502344    call 004FBD4Ah"
 "	      00502349    add esp,4"
 );
 // LINE 820:
 	asm( 
-"	      0050234c    mov eax,[ebp-54h]"
+"	      0050234c    mov eax,this"
 "	      0050234f    and dword ptr [eax+8],0FFFFCFFFh"
 );
 // LINE 821:
 	asm( 
-"	      00502356    mov ecx,[ebp-54h]"
+"	      00502356    mov ecx,this"
 "	      00502359    call 00504B0Ah"
 );
 // LINE 826:
 // Block end:
 	asm( 
-"	      0050235e    mov eax,[ebp-54h]"
+"	      0050235e    mov eax,this"
 "	      00502361    cmp dword ptr [eax+9Eh],50000h"
 "	      0050236b    jle near ptr 00502379h"
 );
 // LINE 828:
 	asm( 
-"	      00502371    mov ecx,[ebp-54h]"
+"	      00502371    mov ecx,this"
 "	      00502374    call 005098B0h"
 );
 // LINE 831:
 	asm( 
-"	      00502379    mov eax,[ebp-54h]"
+"	      00502379    mov eax,this"
 "	      0050237c    test byte ptr [eax+8],20h"
 "	      00502380    je near ptr 00502392h"
-"	      00502386    mov dword ptr [ebp-0Ch],0"
+"	      00502386    mov itterationDist,0"
 "	      0050238d    jmp near ptr 005023ADh"
 "	      00502392    mov eax,ds:[5B4760h]"
 "	      00502397    push eax"
-"	      00502398    mov eax,[ebp-54h]"
+"	      00502398    mov eax,this"
 "	      0050239b    mov eax,[eax+0DEh]"
 "	      005023a1    push eax"
 "	      005023a2    call 004D19BDh"
 "	      005023a7    add esp,8"
-"	      005023aa    mov [ebp-0Ch],eax"
+"	      005023aa    mov itterationDist,eax"
 );
 // LINE 838:
 	asm( 
-"	      005023ad    lea eax,[ebp-8]"
+"	      005023ad    lea eax,dyblock"
 "	      005023b0    push eax"
-"	      005023b1    mov eax,[ebp-0Ch]"
+"	      005023b1    mov eax,itterationDist"
 "	      005023b4    push eax"
-"	      005023b5    mov ecx,[ebp-54h]"
+"	      005023b5    mov ecx,this"
 "	      005023b8    call 0050598Ch"
 "	      005023bd    mov [ebp-58h],eax"
 "	      005023c0    jmp near ptr 00502823h"
@@ -1787,30 +1787,30 @@ void AutomobileClass::ItterateFSM() {
 // LINE 845:
 	asm( 
 "	      005023ca    mov eax,ds:[5B4760h]"
-"	      005023cf    mov ecx,[ebp-54h]"
+"	      005023cf    mov ecx,this"
 "	      005023d2    add [ecx+9Eh],eax"
 );
 // LINE 849:
 	asm( 
-"	      005023d8    mov eax,[ebp-8]"
+"	      005023d8    mov eax,dyblock"
 "	      005023db    movsx eax,word ptr [eax+0Eh]"
 "	      005023df    mov eax,[eax*4+608F80h]"
-"	      005023e6    mov [ebp-4],eax"
+"	      005023e6    mov carblock,eax"
 );
 // LINE 852:
 	asm( 
-"	      005023e9    mov eax,[ebp-4]"
+"	      005023e9    mov eax,carblock"
 "	      005023ec    test byte ptr [eax+9],2"
 "	      005023f0    je near ptr 005024C9h"
-"	      005023f6    mov eax,[ebp-54h]"
+"	      005023f6    mov eax,this"
 "	      005023f9    cmp dword ptr [eax+9Eh],140000h"
 "	      00502403    jle near ptr 005024C9h"
-"	      00502409    mov eax,[ebp-54h]"
+"	      00502409    mov eax,this"
 "	      0050240c    test byte ptr [eax+9],13h"
 "	      00502410    je near ptr 00502422h"
 "	      00502416    mov dword ptr [ebp-44h],1"
 "	      0050241d    jmp near ptr 00502479h"
-"	      00502422    mov eax,[ebp-54h]"
+"	      00502422    mov eax,this"
 "	      00502425    mov eax,[eax+4]"
 "	      00502428    mov [ebp-5Ch],eax"
 "	      0050242b    jmp near ptr 00502441h"
@@ -1831,27 +1831,27 @@ void AutomobileClass::ItterateFSM() {
 );
 // LINE 855:
 	asm( 
-"	      00502483    mov eax,[ebp-4]"
+"	      00502483    mov eax,carblock"
 "	      00502486    mov eax,[eax+10Eh]"
 "	      0050248c    push eax"
 "	      0050248d    call 004FC2DBh"
 "	      00502492    add esp,4"
-"	      00502495    mov [ebp-10h],eax"
+"	      00502495    mov md,eax"
 );
 // LINE 859:
 	asm( 
-"	      00502498    cmp dword ptr [ebp-10h],0"
+"	      00502498    cmp md,0"
 "	      0050249c    je near ptr 005024C4h"
-"	      005024a2    mov eax,[ebp-10h]"
+"	      005024a2    mov eax,md"
 "	      005024a5    cmp dword ptr [eax+0C4h],6"
 "	      005024ac    jge near ptr 005024C4h"
 );
 // LINE 860:
 	asm( 
-"	      005024b2    mov eax,[ebp-4]"
+"	      005024b2    mov eax,carblock"
 "	      005024b5    mov eax,[eax+10Eh]"
 "	      005024bb    push eax"
-"	      005024bc    mov ecx,[ebp-54h]"
+"	      005024bc    mov ecx,this"
 "	      005024bf    call 00506859h"
 );
 // LINE 864:
@@ -1860,15 +1860,15 @@ void AutomobileClass::ItterateFSM() {
 );
 // LINE 865:
 	asm( 
-"	      005024c9    mov eax,[ebp-54h]"
+"	      005024c9    mov eax,this"
 "	      005024cc    cmp dword ptr [eax+9Eh],460000h"
 "	      005024d6    jle near ptr 005025CAh"
-"	      005024dc    mov eax,[ebp-54h]"
+"	      005024dc    mov eax,this"
 "	      005024df    test byte ptr [eax+9],13h"
 "	      005024e3    je near ptr 005024F5h"
 "	      005024e9    mov dword ptr [ebp-48h],1"
 "	      005024f0    jmp near ptr 0050254Ch"
-"	      005024f5    mov eax,[ebp-54h]"
+"	      005024f5    mov eax,this"
 "	      005024f8    mov eax,[eax+4]"
 "	      005024fb    mov [ebp-60h],eax"
 "	      005024fe    jmp near ptr 00502514h"
@@ -1904,34 +1904,34 @@ void AutomobileClass::ItterateFSM() {
 "	      00502570    push 800h"
 "	      00502575    call 004FCCD0h"
 "	      0050257a    add esp,4"
-"	      0050257d    mov ecx,[ebp-54h]"
+"	      0050257d    mov ecx,this"
 "	      00502580    mov [ecx+10Eh],eax"
 );
 // LINE 873:
 	asm( 
-"	      00502586    mov eax,[ebp-54h]"
+"	      00502586    mov eax,this"
 "	      00502589    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      00502590    je near ptr 005025A8h"
 );
 // LINE 875:
 	asm( 
-"	      00502596    mov eax,[ebp-54h]"
+"	      00502596    mov eax,this"
 "	      00502599    mov eax,[eax+10Eh]"
 "	      0050259f    push eax"
-"	      005025a0    mov ecx,[ebp-54h]"
+"	      005025a0    mov ecx,this"
 "	      005025a3    call 00506859h"
 );
 // LINE 878:
 	asm( 
 "	      005025a8    jmp near ptr 005025CAh"
-"	      005025ad    mov ecx,[ebp-54h]"
+"	      005025ad    mov ecx,this"
 "	      005025b0    call 00505820h"
 "	      005025b5    test eax,eax"
 "	      005025b7    je near ptr 005025CAh"
 );
 // LINE 880:
 	asm( 
-"	      005025bd    mov ecx,[ebp-54h]"
+"	      005025bd    mov ecx,this"
 "	      005025c0    call 00505706h"
 );
 // LINE 881:
@@ -1949,20 +1949,20 @@ void AutomobileClass::ItterateFSM() {
 // LINE 889:
 	asm( 
 "	      005025d4    mov eax,ds:[5B4760h]"
-"	      005025d9    mov ecx,[ebp-54h]"
+"	      005025d9    mov ecx,this"
 "	      005025dc    add [ecx+9Eh],eax"
 );
 // LINE 891:
 	asm( 
-"	      005025e2    mov eax,[ebp-54h]"
+"	      005025e2    mov eax,this"
 "	      005025e5    cmp dword ptr [eax+9Eh],1E0000h"
 "	      005025ef    jle near ptr 005026E3h"
-"	      005025f5    mov eax,[ebp-54h]"
+"	      005025f5    mov eax,this"
 "	      005025f8    test byte ptr [eax+9],13h"
 "	      005025fc    je near ptr 0050260Eh"
 "	      00502602    mov dword ptr [ebp-4Ch],1"
 "	      00502609    jmp near ptr 00502665h"
-"	      0050260e    mov eax,[ebp-54h]"
+"	      0050260e    mov eax,this"
 "	      00502611    mov eax,[eax+4]"
 "	      00502614    mov [ebp-64h],eax"
 "	      00502617    jmp near ptr 0050262Dh"
@@ -1998,34 +1998,34 @@ void AutomobileClass::ItterateFSM() {
 "	      00502689    push 800h"
 "	      0050268e    call 004FCCD0h"
 "	      00502693    add esp,4"
-"	      00502696    mov ecx,[ebp-54h]"
+"	      00502696    mov ecx,this"
 "	      00502699    mov [ecx+10Eh],eax"
 );
 // LINE 899:
 	asm( 
-"	      0050269f    mov eax,[ebp-54h]"
+"	      0050269f    mov eax,this"
 "	      005026a2    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      005026a9    je near ptr 005026C1h"
 );
 // LINE 901:
 	asm( 
-"	      005026af    mov eax,[ebp-54h]"
+"	      005026af    mov eax,this"
 "	      005026b2    mov eax,[eax+10Eh]"
 "	      005026b8    push eax"
-"	      005026b9    mov ecx,[ebp-54h]"
+"	      005026b9    mov ecx,this"
 "	      005026bc    call 00506859h"
 );
 // LINE 904:
 	asm( 
 "	      005026c1    jmp near ptr 005026E3h"
-"	      005026c6    mov ecx,[ebp-54h]"
+"	      005026c6    mov ecx,this"
 "	      005026c9    call 00505820h"
 "	      005026ce    test eax,eax"
 "	      005026d0    je near ptr 005026E3h"
 );
 // LINE 906:
 	asm( 
-"	      005026d6    mov ecx,[ebp-54h]"
+"	      005026d6    mov ecx,this"
 "	      005026d9    call 00505706h"
 );
 // LINE 907:
@@ -2043,20 +2043,20 @@ void AutomobileClass::ItterateFSM() {
 // LINE 916:
 	asm( 
 "	      005026ed    mov eax,ds:[5B4760h]"
-"	      005026f2    mov ecx,[ebp-54h]"
+"	      005026f2    mov ecx,this"
 "	      005026f5    add [ecx+9Eh],eax"
 );
 // LINE 918:
 	asm( 
-"	      005026fb    mov eax,[ebp-54h]"
+"	      005026fb    mov eax,this"
 "	      005026fe    cmp dword ptr [eax+9Eh],3C0000h"
 "	      00502708    jle near ptr 005027FCh"
-"	      0050270e    mov eax,[ebp-54h]"
+"	      0050270e    mov eax,this"
 "	      00502711    test byte ptr [eax+9],13h"
 "	      00502715    je near ptr 00502727h"
 "	      0050271b    mov dword ptr [ebp-50h],1"
 "	      00502722    jmp near ptr 0050277Eh"
-"	      00502727    mov eax,[ebp-54h]"
+"	      00502727    mov eax,this"
 "	      0050272a    mov eax,[eax+4]"
 "	      0050272d    mov [ebp-68h],eax"
 "	      00502730    jmp near ptr 00502746h"
@@ -2092,34 +2092,34 @@ void AutomobileClass::ItterateFSM() {
 "	      005027a2    push 800h"
 "	      005027a7    call 004FCCD0h"
 "	      005027ac    add esp,4"
-"	      005027af    mov ecx,[ebp-54h]"
+"	      005027af    mov ecx,this"
 "	      005027b2    mov [ecx+10Eh],eax"
 );
 // LINE 926:
 	asm( 
-"	      005027b8    mov eax,[ebp-54h]"
+"	      005027b8    mov eax,this"
 "	      005027bb    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      005027c2    je near ptr 005027DAh"
 );
 // LINE 928:
 	asm( 
-"	      005027c8    mov eax,[ebp-54h]"
+"	      005027c8    mov eax,this"
 "	      005027cb    mov eax,[eax+10Eh]"
 "	      005027d1    push eax"
-"	      005027d2    mov ecx,[ebp-54h]"
+"	      005027d2    mov ecx,this"
 "	      005027d5    call 00506859h"
 );
 // LINE 931:
 	asm( 
 "	      005027da    jmp near ptr 005027FCh"
-"	      005027df    mov ecx,[ebp-54h]"
+"	      005027df    mov ecx,this"
 "	      005027e2    call 00505820h"
 "	      005027e7    test eax,eax"
 "	      005027e9    je near ptr 005027FCh"
 );
 // LINE 933:
 	asm( 
-"	      005027ef    mov ecx,[ebp-54h]"
+"	      005027ef    mov ecx,this"
 "	      005027f2    call 00505706h"
 );
 // LINE 934:
@@ -2137,7 +2137,7 @@ void AutomobileClass::ItterateFSM() {
 // LINE 942:
 	asm( 
 "	      00502806    mov eax,ds:[5B4760h]"
-"	      0050280b    mov ecx,[ebp-54h]"
+"	      0050280b    mov ecx,this"
 "	      0050280e    add [ecx+9Eh],eax"
 );
 // LINE 943:
@@ -2171,14 +2171,14 @@ void AutomobileClass::ItterateFSM() {
 );
 // LINE 949:
 	asm( 
-"	      0050284f    mov ecx,[ebp-54h]"
+"	      0050284f    mov ecx,this"
 "	      00502852    call 0050413Eh"
 "	      00502857    test eax,eax"
 "	      00502859    je near ptr 0050297Eh"
 );
 // LINE 951:
 	asm( 
-"	      0050285f    mov eax,[ebp-54h]"
+"	      0050285f    mov eax,this"
 "	      00502862    cmp dword ptr [eax+9Eh],0"
 "	      00502869    je near ptr 00502969h"
 "	      0050286f    push 30h"
@@ -2191,51 +2191,51 @@ void AutomobileClass::ItterateFSM() {
 // Block start:
 	struct Point3d loc;
 	asm( 
-"	      00502881    mov eax,[ebp-54h]"
+"	      00502881    mov eax,this"
 "	      00502884    mov eax,[eax+24h]"
-"	      00502887    mov ecx,[ebp-54h]"
+"	      00502887    mov ecx,this"
 "	      0050288a    mov ecx,[ecx+0F2h]"
 "	      00502890    mov ecx,[ecx]"
 "	      00502892    shl ecx,4"
 "	      00502895    sub eax,ecx"
-"	      00502897    mov [ebp-34h],eax"
+"	      00502897    mov loc.x,eax"
 );
 // LINE 956:
 	asm( 
-"	      0050289a    mov eax,[ebp-54h]"
+"	      0050289a    mov eax,this"
 "	      0050289d    mov eax,[eax+28h]"
-"	      005028a0    mov ecx,[ebp-54h]"
+"	      005028a0    mov ecx,this"
 "	      005028a3    mov ecx,[ecx+0F2h]"
 "	      005028a9    mov ecx,[ecx+4]"
 "	      005028ac    shl ecx,4"
 "	      005028af    sub eax,ecx"
-"	      005028b1    mov [ebp-30h],eax"
+"	      005028b1    mov loc.y,eax"
 );
 // LINE 957:
 	asm( 
-"	      005028b4    mov eax,[ebp-54h]"
+"	      005028b4    mov eax,this"
 "	      005028b7    mov eax,[eax+2Ch]"
-"	      005028ba    mov ecx,[ebp-54h]"
+"	      005028ba    mov ecx,this"
 "	      005028bd    mov ecx,[ecx+0F2h]"
 "	      005028c3    mov ecx,[ecx+8]"
 "	      005028c6    shl ecx,4"
 "	      005028c9    sub eax,ecx"
-"	      005028cb    mov [ebp-2Ch],eax"
+"	      005028cb    mov loc.z,eax"
 );
 // LINE 958:
 	asm( 
 "	      005028ce    push 0"
-"	      005028d0    mov eax,[ebp-54h]"
+"	      005028d0    mov eax,this"
 "	      005028d3    add eax,24h"
 "	      005028d6    push eax"
 "	      005028d7    push 30h"
 "	      005028d9    call 00446CC2h"
 "	      005028de    add esp,0Ch"
-"	      005028e1    mov eax,[ebp-54h]"
+"	      005028e1    mov eax,this"
 "	      005028e4    xor ecx,ecx"
 "	      005028e6    mov cl,[eax+7Dh]"
 "	      005028e9    mov [ebp-3Ch],ecx"
-"	      005028ec    mov eax,[ebp-54h]"
+"	      005028ec    mov eax,this"
 "	      005028ef    xor ecx,ecx"
 "	      005028f1    mov cl,[eax+7Ch]"
 "	      005028f4    mov [ebp-40h],ecx"
@@ -2260,15 +2260,15 @@ void AutomobileClass::ItterateFSM() {
 "	      0050293b    jmp near ptr 00502940h"
 "	      00502940    jmp near ptr 00502945h"
 "	      00502945    mov eax,[ebp-38h]"
-"	      00502948    mov ecx,[ebp-54h]"
+"	      00502948    mov ecx,this"
 "	      0050294b    mov [ecx+112h],eax"
 );
 // LINE 960:
 	asm( 
 "	      00502951    push 6"
-"	      00502953    lea eax,[ebp-34h]"
+"	      00502953    lea eax,loc.x"
 "	      00502956    push eax"
-"	      00502957    mov eax,[ebp-54h]"
+"	      00502957    mov eax,this"
 "	      0050295a    mov eax,[eax+112h]"
 "	      00502960    push eax"
 "	      00502961    call 005240DCh"
@@ -2277,74 +2277,74 @@ void AutomobileClass::ItterateFSM() {
 // LINE 963:
 // Block end:
 	asm( 
-"	      00502969    mov eax,[ebp-54h]"
+"	      00502969    mov eax,this"
 "	      0050296c    test byte ptr [eax+9],10h"
 "	      00502970    je near ptr 0050297Eh"
 );
 // LINE 964:
 	asm( 
-"	      00502976    mov ecx,[ebp-54h]"
+"	      00502976    mov ecx,this"
 "	      00502979    call 0050417Dh"
 );
 // LINE 968:
 	asm( 
-"	      0050297e    mov eax,[ebp-54h]"
+"	      0050297e    mov eax,this"
 "	      00502981    mov dword ptr [eax+9Eh],0"
 );
 // LINE 971:
 	asm( 
-"	      0050298b    mov eax,[ebp-54h]"
+"	      0050298b    mov eax,this"
 "	      0050298e    test byte ptr [eax+9],8"
 "	      00502992    je near ptr 00502A0Dh"
 );
 // LINE 973:
 	asm( 
-"	      00502998    mov ecx,[ebp-54h]"
+"	      00502998    mov ecx,this"
 "	      0050299b    call 00508F54h"
 );
 // LINE 976:
 	asm( 
-"	      005029a0    mov eax,[ebp-54h]"
+"	      005029a0    mov eax,this"
 "	      005029a3    cmp dword ptr [eax+0EAh],0"
 "	      005029aa    jg near ptr 00502A08h"
 );
 // LINE 979:
 	asm( 
-"	      005029b0    mov eax,[ebp-54h]"
+"	      005029b0    mov eax,this"
 "	      005029b3    add eax,0D2h"
 "	      005029b8    push eax"
-"	      005029b9    mov ecx,[ebp-54h]"
+"	      005029b9    mov ecx,this"
 "	      005029bc    call 00502A9Bh"
 );
 // LINE 980:
 	asm( 
-"	      005029c1    mov eax,[ebp-54h]"
+"	      005029c1    mov eax,this"
 "	      005029c4    add eax,0D4h"
 "	      005029c9    push eax"
-"	      005029ca    mov ecx,[ebp-54h]"
+"	      005029ca    mov ecx,this"
 "	      005029cd    call 00502B74h"
 );
 // LINE 981:
 	asm( 
-"	      005029d2    mov eax,[ebp-54h]"
+"	      005029d2    mov eax,this"
 "	      005029d5    mov ax,[eax+0D4h]"
-"	      005029dc    mov ecx,[ebp-54h]"
+"	      005029dc    mov ecx,this"
 "	      005029df    mov [ecx+0D2h],ax"
 );
 // LINE 983:
 	asm( 
-"	      005029e6    mov eax,[ebp-54h]"
+"	      005029e6    mov eax,this"
 "	      005029e9    add eax,0D2h"
 "	      005029ee    push eax"
-"	      005029ef    mov ecx,[ebp-54h]"
+"	      005029ef    mov ecx,this"
 "	      005029f2    call 00508180h"
 "	      005029f7    push eax"
-"	      005029f8    mov ecx,[ebp-54h]"
+"	      005029f8    mov ecx,this"
 "	      005029fb    call 00508AD4h"
 );
 // LINE 989:
 	asm( 
-"	      00502a00    mov ecx,[ebp-54h]"
+"	      00502a00    mov ecx,this"
 "	      00502a03    call 0050790Ch"
 );
 // LINE 991:
@@ -2353,40 +2353,40 @@ void AutomobileClass::ItterateFSM() {
 );
 // LINE 1003:
 	asm( 
-"	      00502a0d    mov eax,[ebp-54h]"
+"	      00502a0d    mov eax,this"
 "	      00502a10    cmp dword ptr [eax+116h],0"
 "	      00502a17    jle near ptr 00502A26h"
 );
 // LINE 1004:
 	asm( 
-"	      00502a1d    mov eax,[ebp-54h]"
+"	      00502a1d    mov eax,this"
 "	      00502a20    dec dword ptr [eax+116h]"
 );
 // LINE 1009:
 	asm( 
-"	      00502a26    mov eax,[ebp-54h]"
-"	      00502a29    mov ecx,[ebp-54h]"
+"	      00502a26    mov eax,this"
+"	      00502a29    mov ecx,this"
 "	      00502a2c    mov ecx,[ecx+0EAh]"
-"	      00502a32    add ecx,[ebp-0Ch]"
+"	      00502a32    add ecx,itterationDist"
 "	      00502a35    cmp [eax+86h],ecx"
 "	      00502a3b    jg near ptr 00502A70h"
 );
 // LINE 1011:
 	asm( 
-"	      00502a41    mov eax,[ebp-54h]"
+"	      00502a41    mov eax,this"
 "	      00502a44    mov eax,[eax+0EAh]"
-"	      00502a4a    mov ecx,[ebp-54h]"
+"	      00502a4a    mov ecx,this"
 "	      00502a4d    sub eax,[ecx+86h]"
-"	      00502a53    add [ebp-0Ch],eax"
+"	      00502a53    add itterationDist,eax"
 );
 // LINE 1012:
 	asm( 
-"	      00502a56    mov eax,[ebp-54h]"
+"	      00502a56    mov eax,this"
 "	      00502a59    mov dword ptr [eax+0EAh],0"
 );
 // LINE 1014:
 	asm( 
-"	      00502a63    mov ecx,[ebp-54h]"
+"	      00502a63    mov ecx,this"
 "	      00502a66    call 00504B48h"
 );
 // LINE 1020:
@@ -2395,17 +2395,17 @@ void AutomobileClass::ItterateFSM() {
 );
 // LINE 1032:
 	asm( 
-"	      00502a70    mov eax,[ebp-54h]"
+"	      00502a70    mov eax,this"
 "	      00502a73    mov eax,[eax+0EAh]"
-"	      00502a79    add eax,[ebp-0Ch]"
+"	      00502a79    add eax,itterationDist"
 "	      00502a7c    push eax"
-"	      00502a7d    mov ecx,[ebp-54h]"
+"	      00502a7d    mov ecx,this"
 "	      00502a80    call 00505234h"
 );
 // LINE 1034:
 	asm( 
-"	      00502a85    mov eax,[ebp-0Ch]"
-"	      00502a88    mov ecx,[ebp-54h]"
+"	      00502a85    mov eax,itterationDist"
+"	      00502a88    mov ecx,this"
 "	      00502a8b    add [ecx+0EAh],eax"
 );
 // LINE 1044:
@@ -2431,23 +2431,23 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 "	      00502aa1    push ebx"
 "	      00502aa2    push esi"
 "	      00502aa3    push edi"
-"	      00502aa4    mov [ebp-0Ch],ecx"
+"	      00502aa4    mov this,ecx"
 );
 // LINE 1054:
 	asm( 
-"	      00502aa7    mov eax,[ebp+8]"
+"	      00502aa7    mov eax,point"
 "	      00502aaa    xor ecx,ecx"
 "	      00502aac    mov cl,[eax+1]"
-"	      00502aaf    mov eax,[ebp+8]"
+"	      00502aaf    mov eax,point"
 "	      00502ab2    xor edx,edx"
 "	      00502ab4    mov dl,[eax]"
 "	      00502ab6    shl edx,0Ah"
 "	      00502ab9    mov eax,[edx+ecx*4+67ED30h]"
-"	      00502ac0    mov [ebp-4],eax"
+"	      00502ac0    mov pCell,eax"
 );
 // LINE 1055:
 	asm( 
-"	      00502ac3    cmp dword ptr [ebp-4],0"
+"	      00502ac3    cmp pCell,0"
 "	      00502ac7    jne near ptr 00502AE9h"
 "	      00502acd    push 41Fh"
 "	      00502ad2    push 5B539Ch"
@@ -2459,36 +2459,36 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 );
 // LINE 1057:
 	asm( 
-"	      00502aee    cmp dword ptr [ebp-4],0"
+"	      00502aee    cmp pCell,0"
 "	      00502af2    je near ptr 00502B68h"
 );
 // LINE 1059:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
 	asm( 
-"	      00502af8    mov eax,[ebp-4]"
+"	      00502af8    mov eax,pCell"
 "	      00502afb    add eax,10h"
-"	      00502afe    mov [ebp-8],eax"
+"	      00502afe    mov dyptrptr,eax"
 );
 // LINE 1061:
 	asm( 
-"	      00502b01    mov eax,[ebp-8]"
+"	      00502b01    mov eax,dyptrptr"
 "	      00502b04    cmp dword ptr [eax],0"
 "	      00502b07    je near ptr 00502B3Bh"
 );
 // LINE 1064:
 	asm( 
-"	      00502b0d    mov eax,[ebp-0Ch]"
+"	      00502b0d    mov eax,this"
 "	      00502b10    add eax,0Ch"
-"	      00502b13    mov ecx,[ebp-8]"
+"	      00502b13    mov ecx,dyptrptr"
 "	      00502b16    cmp eax,[ecx]"
 "	      00502b18    jne near ptr 00502B2Eh"
 );
 // LINE 1067:
 	asm( 
-"	      00502b1e    mov eax,[ebp-0Ch]"
+"	      00502b1e    mov eax,this"
 "	      00502b21    mov eax,[eax+0Ch]"
-"	      00502b24    mov ecx,[ebp-8]"
+"	      00502b24    mov ecx,dyptrptr"
 "	      00502b27    mov [ecx],eax"
 );
 // LINE 1068:
@@ -2497,9 +2497,9 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 );
 // LINE 1070:
 	asm( 
-"	      00502b2e    mov eax,[ebp-8]"
+"	      00502b2e    mov eax,dyptrptr"
 "	      00502b31    mov eax,[eax]"
-"	      00502b33    mov [ebp-8],eax"
+"	      00502b33    mov dyptrptr,eax"
 );
 // LINE 1071:
 	asm( 
@@ -2507,7 +2507,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 );
 // LINE 1073:
 	asm( 
-"	      00502b3b    mov eax,[ebp-8]"
+"	      00502b3b    mov eax,dyptrptr"
 "	      00502b3e    cmp dword ptr [eax],0"
 "	      00502b41    jne near ptr 00502B63h"
 "	      00502b47    push 431h"
@@ -2542,23 +2542,23 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 "	      00502b7a    push ebx"
 "	      00502b7b    push esi"
 "	      00502b7c    push edi"
-"	      00502b7d    mov [ebp-10h],ecx"
+"	      00502b7d    mov this,ecx"
 );
 // LINE 1086:
 	asm( 
-"	      00502b80    mov eax,[ebp+8]"
+"	      00502b80    mov eax,point"
 "	      00502b83    xor ecx,ecx"
 "	      00502b85    mov cl,[eax+1]"
-"	      00502b88    mov eax,[ebp+8]"
+"	      00502b88    mov eax,point"
 "	      00502b8b    xor edx,edx"
 "	      00502b8d    mov dl,[eax]"
 "	      00502b8f    shl edx,0Ah"
 "	      00502b92    mov eax,[edx+ecx*4+67ED30h]"
-"	      00502b99    mov [ebp-4],eax"
+"	      00502b99    mov pCell,eax"
 );
 // LINE 1087:
 	asm( 
-"	      00502b9c    cmp dword ptr [ebp-4],0"
+"	      00502b9c    cmp pCell,0"
 "	      00502ba0    jne near ptr 00502BC2h"
 "	      00502ba6    push 43Fh"
 "	      00502bab    push 5B53F8h"
@@ -2570,7 +2570,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 );
 // LINE 1089:
 	asm( 
-"	      00502bc7    cmp dword ptr [ebp-4],0"
+"	      00502bc7    cmp pCell,0"
 "	      00502bcb    je near ptr 00502C86h"
 );
 // LINE 1091:
@@ -2578,57 +2578,57 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	int32_t z;
 	int32_t x;
 	asm( 
-"	      00502bd1    mov eax,[ebp-4]"
+"	      00502bd1    mov eax,pCell"
 "	      00502bd4    mov eax,[eax+10h]"
-"	      00502bd7    mov ecx,[ebp-10h]"
+"	      00502bd7    mov ecx,this"
 "	      00502bda    mov [ecx+0Ch],eax"
 );
 // LINE 1092:
 	asm( 
-"	      00502bdd    mov eax,[ebp-10h]"
+"	      00502bdd    mov eax,this"
 "	      00502be0    add eax,0Ch"
-"	      00502be3    mov ecx,[ebp-4]"
+"	      00502be3    mov ecx,pCell"
 "	      00502be6    mov [ecx+10h],eax"
 );
 // LINE 1096:
 	asm( 
-"	      00502be9    mov eax,[ebp-4]"
+"	      00502be9    mov eax,pCell"
 "	      00502bec    movsx eax,word ptr [eax+2]"
 "	      00502bf0    shl eax,10h"
-"	      00502bf3    mov [ebp-8],eax"
+"	      00502bf3    mov x,eax"
 );
 // LINE 1097:
 	asm( 
-"	      00502bf6    mov eax,[ebp-4]"
+"	      00502bf6    mov eax,pCell"
 "	      00502bf9    movsx eax,word ptr [eax+6]"
 "	      00502bfd    shl eax,10h"
-"	      00502c00    mov [ebp-0Ch],eax"
+"	      00502c00    mov z,eax"
 );
 // LINE 1099:
 	asm( 
-"	      00502c03    mov eax,[ebp-10h]"
+"	      00502c03    mov eax,this"
 "	      00502c06    mov eax,[eax+82h]"
 "	      00502c0c    mov [ebp-14h],eax"
 "	      00502c0f    jmp near ptr 00502C49h"
 );
 // LINE 1101:
 	asm( 
-"	      00502c14    sub dword ptr [ebp-0Ch],200000h"
+"	      00502c14    sub z,200000h"
 "	      00502c1b    jmp near ptr 00502C6Dh"
 );
 // LINE 1102:
 	asm( 
-"	      00502c20    add dword ptr [ebp-0Ch],200000h"
+"	      00502c20    add z,200000h"
 "	      00502c27    jmp near ptr 00502C6Dh"
 );
 // LINE 1103:
 	asm( 
-"	      00502c2c    add dword ptr [ebp-8],200000h"
+"	      00502c2c    add x,200000h"
 "	      00502c33    jmp near ptr 00502C6Dh"
 );
 // LINE 1104:
 	asm( 
-"	      00502c38    sub dword ptr [ebp-8],200000h"
+"	      00502c38    sub x,200000h"
 "	      00502c3f    jmp near ptr 00502C6Dh"
 );
 // LINE 1105:
@@ -2650,13 +2650,13 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 );
 // LINE 1107:
 	asm( 
-"	      00502c6d    mov eax,[ebp-0Ch]"
+"	      00502c6d    mov eax,z"
 "	      00502c70    push eax"
-"	      00502c71    mov eax,[ebp-8]"
+"	      00502c71    mov eax,x"
 "	      00502c74    push eax"
 "	      00502c75    call 00518E76h"
 "	      00502c7a    add esp,8"
-"	      00502c7d    mov ecx,[ebp-10h]"
+"	      00502c7d    mov ecx,this"
 "	      00502c80    mov [ecx+0C2h],eax"
 );
 // LINE 1109:
@@ -2685,26 +2685,26 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 "	      00502c98    push ebx"
 "	      00502c99    push esi"
 "	      00502c9a    push edi"
-"	      00502c9b    mov [ebp-10h],ecx"
+"	      00502c9b    mov this,ecx"
 );
 // LINE 1152:
 	asm( 
-"	      00502c9e    mov eax,[ebp+8]"
+"	      00502c9e    mov eax,pGoal"
 "	      00502ca1    mov eax,[eax+12h]"
 "	      00502ca4    sub eax,2"
 "	      00502ca7    and eax,3"
 "	      00502caa    mov eax,[eax*4+592D00h]"
 "	      00502cb1    not eax"
-"	      00502cb3    mov ecx,[ebp+8]"
+"	      00502cb3    mov ecx,pGoal"
 "	      00502cb6    and eax,[ecx+1Ah]"
-"	      00502cb9    mov [ebp-0Ch],eax"
+"	      00502cb9    mov possibleTurnDir,eax"
 );
 // LINE 1157:
 	asm( 
-"	      00502cbc    mov eax,[ebp+8]"
+"	      00502cbc    mov eax,pGoal"
 "	      00502cbf    mov eax,[eax+1Eh]"
 "	      00502cc2    not eax"
-"	      00502cc4    test [ebp-0Ch],eax"
+"	      00502cc4    test possibleTurnDir,eax"
 "	      00502cc7    je near ptr 00502CF2h"
 );
 // LINE 1159:
@@ -2721,58 +2721,58 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 1160:
 	asm( 
-"	      00502ce7    mov eax,[ebp+8]"
+"	      00502ce7    mov eax,pGoal"
 "	      00502cea    mov eax,[eax+1Eh]"
 "	      00502ced    not eax"
-"	      00502cef    and [ebp-0Ch],eax"
+"	      00502cef    and possibleTurnDir,eax"
 );
 // LINE 1165:
 	asm( 
-"	      00502cf2    mov dword ptr [ebp-8],0"
+"	      00502cf2    mov rightleftorstraight,0"
 );
 // LINE 1166:
 	asm( 
-"	      00502cf9    mov eax,[ebp+8]"
+"	      00502cf9    mov eax,pGoal"
 "	      00502cfc    mov eax,[eax+12h]"
 "	      00502cff    mov eax,[eax*4+592D00h]"
-"	      00502d06    test [ebp-0Ch],eax"
+"	      00502d06    test possibleTurnDir,eax"
 "	      00502d09    je near ptr 00502D13h"
-"	      00502d0f    or dword ptr [ebp-8],4"
+"	      00502d0f    or rightleftorstraight,4"
 );
 // LINE 1167:
 	asm( 
-"	      00502d13    mov eax,[ebp+8]"
+"	      00502d13    mov eax,pGoal"
 "	      00502d16    mov eax,[eax+12h]"
 "	      00502d19    mov eax,[eax*4+592CD0h]"
 "	      00502d20    mov eax,[eax*4+592D00h]"
-"	      00502d27    test [ebp-0Ch],eax"
+"	      00502d27    test possibleTurnDir,eax"
 "	      00502d2a    je near ptr 00502D34h"
-"	      00502d30    or dword ptr [ebp-8],2"
+"	      00502d30    or rightleftorstraight,2"
 );
 // LINE 1168:
 	asm( 
-"	      00502d34    mov eax,[ebp+8]"
+"	      00502d34    mov eax,pGoal"
 "	      00502d37    mov eax,[eax+12h]"
 "	      00502d3a    mov eax,[eax*4+592CE0h]"
 "	      00502d41    mov eax,[eax*4+592D00h]"
-"	      00502d48    test [ebp-0Ch],eax"
+"	      00502d48    test possibleTurnDir,eax"
 "	      00502d4b    je near ptr 00502D55h"
-"	      00502d51    or dword ptr [ebp-8],1"
+"	      00502d51    or rightleftorstraight,1"
 );
 // LINE 1172:
 	asm( 
-"	      00502d55    mov eax,[ebp-8]"
+"	      00502d55    mov eax,rightleftorstraight"
 "	      00502d58    mov [ebp-14h],eax"
 "	      00502d5b    jmp near ptr 00502ECFh"
 );
 // LINE 1175:
 	asm( 
-"	      00502d60    mov dword ptr [ebp-4],2"
+"	      00502d60    mov turn,2"
 "	      00502d67    jmp near ptr 00502F02h"
 );
 // LINE 1177:
 	asm( 
-"	      00502d6c    mov dword ptr [ebp-4],1"
+"	      00502d6c    mov turn,1"
 "	      00502d73    jmp near ptr 00502F02h"
 );
 // LINE 1179:
@@ -2781,14 +2781,14 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 "	      00502d7d    movsx eax,ax"
 "	      00502d80    test al,1"
 "	      00502d82    je near ptr 00502D94h"
-"	      00502d88    mov dword ptr [ebp-4],1"
+"	      00502d88    mov turn,1"
 "	      00502d8f    jmp near ptr 00502D9Bh"
-"	      00502d94    mov dword ptr [ebp-4],2"
+"	      00502d94    mov turn,2"
 "	      00502d9b    jmp near ptr 00502F02h"
 );
 // LINE 1181:
 	asm( 
-"	      00502da0    mov dword ptr [ebp-4],0"
+"	      00502da0    mov turn,0"
 "	      00502da7    jmp near ptr 00502F02h"
 );
 // LINE 1183:
@@ -2803,9 +2803,9 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 "	      00502dbe    sub eax,edx"
 "	      00502dc0    mov [ebp-18h],eax"
 "	      00502dc3    jmp near ptr 00502DE5h"
-"	      00502dc8    mov dword ptr [ebp-4],2"
+"	      00502dc8    mov turn,2"
 "	      00502dcf    jmp near ptr 00502DF4h"
-"	      00502dd4    mov dword ptr [ebp-4],0"
+"	      00502dd4    mov turn,0"
 "	      00502ddb    jmp near ptr 00502DF4h"
 "	      00502de0    jmp near ptr 00502DF4h"
 "	      00502de5    cmp dword ptr [ebp-18h],0"
@@ -2825,9 +2825,9 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 "	      00502e0b    sub eax,edx"
 "	      00502e0d    mov [ebp-1Ch],eax"
 "	      00502e10    jmp near ptr 00502E32h"
-"	      00502e15    mov dword ptr [ebp-4],1"
+"	      00502e15    mov turn,1"
 "	      00502e1c    jmp near ptr 00502E41h"
-"	      00502e21    mov dword ptr [ebp-4],0"
+"	      00502e21    mov turn,0"
 "	      00502e28    jmp near ptr 00502E41h"
 "	      00502e2d    jmp near ptr 00502E41h"
 "	      00502e32    cmp dword ptr [ebp-1Ch],0"
@@ -2850,11 +2850,11 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 1188:
 	asm( 
-"	      00502e62    mov dword ptr [ebp-4],1"
+"	      00502e62    mov turn,1"
 "	      00502e69    jmp near ptr 00502EA4h"
-"	      00502e6e    mov dword ptr [ebp-4],2"
+"	      00502e6e    mov turn,2"
 "	      00502e75    jmp near ptr 00502EA4h"
-"	      00502e7a    mov dword ptr [ebp-4],0"
+"	      00502e7a    mov turn,0"
 "	      00502e81    jmp near ptr 00502EA4h"
 "	      00502e86    jmp near ptr 00502EA4h"
 "	      00502e8b    cmp dword ptr [ebp-20h],0"
@@ -2896,7 +2896,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 1193:
 	asm( 
-"	      00502f02    mov eax,[ebp-4]"
+"	      00502f02    mov eax,turn"
 "	      00502f05    jmp near ptr 00502F0Ah"
 );
 // LINE 1194:
@@ -2922,13 +2922,13 @@ void AutomobileClass::BeamToWithinCameraRange() {
 "	      00502f17    push ebx"
 "	      00502f18    push esi"
 "	      00502f19    push edi"
-"	      00502f1a    mov [ebp-14h],ecx"
+"	      00502f1a    mov this,ecx"
 );
 // LINE 1209:
 	asm( 
 "	      00502f1d    mov eax,6C1210h"
 "	      00502f22    add eax,14h"
-"	      00502f25    lea ecx,[ebp-10h]"
+"	      00502f25    lea ecx,vec.x"
 "	      00502f28    mov edx,[eax]"
 "	      00502f2a    mov [ecx],edx"
 "	      00502f2c    mov edx,[eax+4]"
@@ -2938,7 +2938,7 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 // LINE 1211:
 	asm( 
-"	      00502f38    mov eax,[ebp-14h]"
+"	      00502f38    mov eax,this"
 "	      00502f3b    mov dword ptr [eax+0BEh],0"
 );
 // LINE 1214:
@@ -2956,35 +2956,35 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 // LINE 1218:
 	asm( 
-"	      00502f61    mov eax,[ebp-8]"
-"	      00502f64    mov [ebp-0Ch],eax"
+"	      00502f61    mov eax,vec.z"
+"	      00502f64    mov vec.y,eax"
 );
 // LINE 1219:
 	asm( 
-"	      00502f67    mov eax,[ebp-10h]"
+"	      00502f67    mov eax,vec.x"
 "	      00502f6a    neg eax"
-"	      00502f6c    mov [ebp-8],eax"
+"	      00502f6c    mov vec.z,eax"
 );
 // LINE 1220:
 	asm( 
-"	      00502f6f    mov eax,[ebp-0Ch]"
-"	      00502f72    mov [ebp-10h],eax"
+"	      00502f6f    mov eax,vec.y"
+"	      00502f72    mov vec.x,eax"
 );
 // LINE 1222:
 	asm( 
-"	      00502f75    mov eax,[ebp-10h]"
+"	      00502f75    mov eax,vec.x"
 "	      00502f78    mov ecx,ds:[6663A0h]"
 "	      00502f7e    sar ecx,1"
 "	      00502f81    imul eax,ecx"
-"	      00502f84    mov [ebp-10h],eax"
+"	      00502f84    mov vec.x,eax"
 );
 // LINE 1223:
 	asm( 
-"	      00502f87    mov eax,[ebp-8]"
+"	      00502f87    mov eax,vec.z"
 "	      00502f8a    mov ecx,ds:[6663A0h]"
 "	      00502f90    sar ecx,1"
 "	      00502f93    imul eax,ecx"
-"	      00502f96    mov [ebp-8],eax"
+"	      00502f96    mov vec.z,eax"
 );
 // LINE 1224:
 	asm( 
@@ -2992,35 +2992,35 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 // LINE 1227:
 	asm( 
-"	      00502f9e    mov eax,[ebp-8]"
+"	      00502f9e    mov eax,vec.z"
 "	      00502fa1    neg eax"
-"	      00502fa3    mov [ebp-0Ch],eax"
+"	      00502fa3    mov vec.y,eax"
 );
 // LINE 1228:
 	asm( 
-"	      00502fa6    mov eax,[ebp-10h]"
-"	      00502fa9    mov [ebp-8],eax"
+"	      00502fa6    mov eax,vec.x"
+"	      00502fa9    mov vec.z,eax"
 );
 // LINE 1229:
 	asm( 
-"	      00502fac    mov eax,[ebp-0Ch]"
-"	      00502faf    mov [ebp-10h],eax"
+"	      00502fac    mov eax,vec.y"
+"	      00502faf    mov vec.x,eax"
 );
 // LINE 1231:
 	asm( 
-"	      00502fb2    mov eax,[ebp-10h]"
+"	      00502fb2    mov eax,vec.x"
 "	      00502fb5    mov ecx,ds:[6663A0h]"
 "	      00502fbb    sar ecx,1"
 "	      00502fbe    imul eax,ecx"
-"	      00502fc1    mov [ebp-10h],eax"
+"	      00502fc1    mov vec.x,eax"
 );
 // LINE 1232:
 	asm( 
-"	      00502fc4    mov eax,[ebp-8]"
+"	      00502fc4    mov eax,vec.z"
 "	      00502fc7    mov ecx,ds:[6663A0h]"
 "	      00502fcd    sar ecx,1"
 "	      00502fd0    imul eax,ecx"
-"	      00502fd3    mov [ebp-8],eax"
+"	      00502fd3    mov vec.z,eax"
 );
 // LINE 1233:
 	asm( 
@@ -3028,31 +3028,31 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 // LINE 1236:
 	asm( 
-"	      00502fdb    mov eax,[ebp-10h]"
+"	      00502fdb    mov eax,vec.x"
 "	      00502fde    neg eax"
-"	      00502fe0    mov [ebp-10h],eax"
+"	      00502fe0    mov vec.x,eax"
 );
 // LINE 1237:
 	asm( 
-"	      00502fe3    mov eax,[ebp-8]"
+"	      00502fe3    mov eax,vec.z"
 "	      00502fe6    neg eax"
-"	      00502fe8    mov [ebp-8],eax"
+"	      00502fe8    mov vec.z,eax"
 );
 // LINE 1239:
 	asm( 
-"	      00502feb    mov eax,[ebp-10h]"
+"	      00502feb    mov eax,vec.x"
 "	      00502fee    mov ecx,ds:[6663A0h]"
 "	      00502ff4    sar ecx,1"
 "	      00502ff7    imul eax,ecx"
-"	      00502ffa    mov [ebp-10h],eax"
+"	      00502ffa    mov vec.x,eax"
 );
 // LINE 1240:
 	asm( 
-"	      00502ffd    mov eax,[ebp-8]"
+"	      00502ffd    mov eax,vec.z"
 "	      00503000    mov ecx,ds:[6663A0h]"
 "	      00503006    sar ecx,1"
 "	      00503009    imul eax,ecx"
-"	      0050300c    mov [ebp-8],eax"
+"	      0050300c    mov vec.z,eax"
 );
 // LINE 1241:
 	asm( 
@@ -3063,16 +3063,16 @@ void AutomobileClass::BeamToWithinCameraRange() {
 "	      00503014    mov eax,ds:[6663A0h]"
 "	      00503019    sar eax,1"
 "	      0050301c    inc eax"
-"	      0050301d    imul eax,[ebp-10h]"
-"	      00503021    mov [ebp-10h],eax"
+"	      0050301d    imul eax,vec.x"
+"	      00503021    mov vec.x,eax"
 );
 // LINE 1246:
 	asm( 
 "	      00503024    mov eax,ds:[6663A0h]"
 "	      00503029    sar eax,1"
 "	      0050302c    inc eax"
-"	      0050302d    imul eax,[ebp-8]"
-"	      00503031    mov [ebp-8],eax"
+"	      0050302d    imul eax,vec.z"
+"	      00503031    mov vec.z,eax"
 );
 // LINE 1247:
 	asm( 
@@ -3091,30 +3091,30 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 // LINE 1256:
 	asm( 
-"	      00503061    mov eax,[ebp-10h]"
+"	      00503061    mov eax,vec.x"
 "	      00503064    shl eax,6"
 "	      00503067    add eax,ds:[6C126Ch]"
 "	      0050306d    add eax,20000000h"
 "	      00503072    sar eax,16h"
-"	      00503075    mov [ebp-4],al"
+"	      00503075    mov beamCell.x,al"
 );
 // LINE 1257:
 	asm( 
 "	      00503078    mov eax,20000000h"
 "	      0050307d    sub eax,ds:[6C1274h]"
-"	      00503083    mov ecx,[ebp-8]"
+"	      00503083    mov ecx,vec.z"
 "	      00503086    shl ecx,6"
 "	      00503089    add eax,ecx"
 "	      0050308b    sar eax,16h"
-"	      0050308e    mov [ebp-3],al"
+"	      0050308e    mov beamCell.y,al"
 );
 // LINE 1261:
 	asm( 
-"	      00503091    lea eax,[ebp-4]"
+"	      00503091    lea eax,beamCell.x"
 "	      00503094    push eax"
-"	      00503095    mov eax,[ebp-14h]"
+"	      00503095    mov eax,this"
 "	      00503098    mov eax,[eax]"
-"	      0050309a    mov ecx,[ebp-14h]"
+"	      0050309a    mov ecx,this"
 "	      0050309d    call dword ptr [eax+20h]"
 );
 // LINE 1262:
@@ -3147,73 +3147,73 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      005030b3    push ebx"
 "	      005030b4    push esi"
 "	      005030b5    push edi"
-"	      005030b6    mov [ebp-108h],ecx"
+"	      005030b6    mov this,ecx"
 );
 // LINE 1284:
 	asm( 
-"	      005030bc    mov eax,[ebp+8]"
+"	      005030bc    mov eax,cell"
 "	      005030bf    mov ax,[eax]"
 "	      005030c2    mov [ebp-70h],ax"
 );
 // LINE 1285:
 	asm( 
-"	      005030c6    mov eax,[ebp-108h]"
+"	      005030c6    mov eax,this"
 "	      005030cc    mov ax,[eax+7Ch]"
 "	      005030d0    mov [ebp-74h],ax"
 );
 // LINE 1289:
 	asm( 
 "	      005030d4    push 9"
-"	      005030d6    lea ecx,[ebp-3Ch]"
+"	      005030d6    lea ecx,scan.currDist"
 "	      005030d9    call 00542DC0h"
 );
 // LINE 1290:
 	asm( 
-"	      005030de    mov dword ptr [ebp-78h],0"
+"	      005030de    mov foundcell,0"
 );
 // LINE 1291:
 	asm( 
-"	      005030e5    mov dword ptr [ebp-6Ch],0"
+"	      005030e5    mov hiway,0"
 );
 // LINE 1298:
 	asm( 
 "	      005030ec    xor eax,eax"
-"	      005030ee    mov al,[ebp-70h]"
+"	      005030ee    mov al,scanLoc.x"
 "	      005030f1    test eax,eax"
 "	      005030f3    jl near ptr 00503126h"
 "	      005030f9    xor eax,eax"
-"	      005030fb    mov al,[ebp-6Fh]"
+"	      005030fb    mov al,scanLoc.y"
 "	      005030fe    test eax,eax"
 "	      00503100    jl near ptr 00503126h"
 "	      00503106    xor eax,eax"
-"	      00503108    mov al,[ebp-70h]"
+"	      00503108    mov al,scanLoc.x"
 "	      0050310b    cmp eax,80h"
 "	      00503110    jge near ptr 00503126h"
 "	      00503116    xor eax,eax"
-"	      00503118    mov al,[ebp-6Fh]"
+"	      00503118    mov al,scanLoc.y"
 "	      0050311b    cmp eax,80h"
 "	      00503120    jl near ptr 00503131h"
-"	      00503126    mov word ptr [ebp-7Ch],0"
+"	      00503126    mov tile,0"
 "	      0050312c    jmp near ptr 00503171h"
 "	      00503131    xor eax,eax"
-"	      00503133    mov al,[ebp-70h]"
+"	      00503133    mov al,scanLoc.x"
 "	      00503136    mov eax,[eax*4+638F70h]"
 "	      0050313d    xor ecx,ecx"
-"	      0050313f    mov cl,[ebp-6Fh]"
+"	      0050313f    mov cl,scanLoc.y"
 "	      00503142    xor edx,edx"
 "	      00503144    mov dl,[eax+ecx]"
 "	      00503147    and edx,2"
 "	      0050314a    movsx eax,dx"
 "	      0050314d    shl eax,0Eh"
 "	      00503150    xor ecx,ecx"
-"	      00503152    mov cl,[ebp-70h]"
+"	      00503152    mov cl,scanLoc.x"
 "	      00503155    mov ecx,[ecx*4+639850h]"
 "	      0050315c    xor edx,edx"
-"	      0050315e    mov dl,[ebp-6Fh]"
+"	      0050315e    mov dl,scanLoc.y"
 "	      00503161    xor ebx,ebx"
 "	      00503163    mov bl,[ecx+edx]"
 "	      00503166    or eax,ebx"
-"	      00503168    mov [ebp-7Ch],ax"
+"	      00503168    mov tile,ax"
 "	      0050316c    jmp near ptr 00503171h"
 );
 // LINE 1300:
@@ -3260,11 +3260,11 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      00503244    jmp near ptr 00503327h"
 "	      00503249    cmp dword ptr [ebp-0E0h],0"
 "	      00503250    je near ptr 00503327h"
-"	      00503256    mov ecx,[ebp-108h]"
+"	      00503256    mov ecx,this"
 "	      0050325c    call 00506F0Eh"
 "	      00503261    test eax,eax"
 "	      00503263    jne near ptr 00503327h"
-"	      00503269    mov ecx,[ebp-108h]"
+"	      00503269    mov ecx,this"
 "	      0050326f    call 0050413Eh"
 "	      00503274    test eax,eax"
 "	      00503276    jne near ptr 00503327h"
@@ -3272,10 +3272,10 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1305:
 	asm( 
 "	      0050327c    xor eax,eax"
-"	      0050327e    mov al,[ebp-6Fh]"
+"	      0050327e    mov al,scanLoc.y"
 "	      00503281    mov [ebp-0F0h],eax"
 "	      00503287    xor eax,eax"
-"	      00503289    mov al,[ebp-70h]"
+"	      00503289    mov al,scanLoc.x"
 "	      0050328c    mov [ebp-0F4h],eax"
 );
 // LINE 1306:
@@ -3298,23 +3298,23 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      005032e2    jmp near ptr 005032E7h"
 "	      005032e7    jmp near ptr 005032ECh"
 "	      005032ec    mov eax,[ebp-0ECh]"
-"	      005032f2    mov ecx,[ebp-108h]"
+"	      005032f2    mov ecx,this"
 "	      005032f8    mov [ecx+112h],eax"
 );
 // LINE 1310:
 	asm( 
-"	      005032fe    mov eax,[ebp-108h]"
+"	      005032fe    mov eax,this"
 "	      00503304    mov eax,[eax+112h]"
 "	      0050330a    cmp dword ptr [eax+10h],0"
 "	      0050330e    jne near ptr 00503327h"
 );
 // LINE 1312:
 	asm( 
-"	      00503314    mov dword ptr [ebp-78h],1"
+"	      00503314    mov foundcell,1"
 );
 // LINE 1313:
 	asm( 
-"	      0050331b    mov dword ptr [ebp-6Ch],1"
+"	      0050331b    mov hiway,1"
 );
 // LINE 1314:
 	asm( 
@@ -3324,38 +3324,38 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	asm( 
 "	      00503327    jmp near ptr 0050354Ah"
 "	      0050332c    xor eax,eax"
-"	      0050332e    mov al,[ebp-70h]"
+"	      0050332e    mov al,scanLoc.x"
 "	      00503331    test eax,eax"
 "	      00503333    jl near ptr 00503366h"
 "	      00503339    xor eax,eax"
-"	      0050333b    mov al,[ebp-6Fh]"
+"	      0050333b    mov al,scanLoc.y"
 "	      0050333e    test eax,eax"
 "	      00503340    jl near ptr 00503366h"
 "	      00503346    xor eax,eax"
-"	      00503348    mov al,[ebp-70h]"
+"	      00503348    mov al,scanLoc.x"
 "	      0050334b    cmp eax,80h"
 "	      00503350    jge near ptr 00503366h"
 "	      00503356    xor eax,eax"
-"	      00503358    mov al,[ebp-6Fh]"
+"	      00503358    mov al,scanLoc.y"
 "	      0050335b    cmp eax,80h"
 "	      00503360    jl near ptr 00503374h"
 "	      00503366    mov word ptr [ebp-0DCh],0"
 "	      0050336f    jmp near ptr 005033B7h"
 "	      00503374    xor eax,eax"
-"	      00503376    mov al,[ebp-70h]"
+"	      00503376    mov al,scanLoc.x"
 "	      00503379    mov eax,[eax*4+638F70h]"
 "	      00503380    xor ecx,ecx"
-"	      00503382    mov cl,[ebp-6Fh]"
+"	      00503382    mov cl,scanLoc.y"
 "	      00503385    xor edx,edx"
 "	      00503387    mov dl,[eax+ecx]"
 "	      0050338a    and edx,2"
 "	      0050338d    movsx eax,dx"
 "	      00503390    shl eax,0Eh"
 "	      00503393    xor ecx,ecx"
-"	      00503395    mov cl,[ebp-70h]"
+"	      00503395    mov cl,scanLoc.x"
 "	      00503398    mov ecx,[ecx*4+639850h]"
 "	      0050339f    xor edx,edx"
-"	      005033a1    mov dl,[ebp-6Fh]"
+"	      005033a1    mov dl,scanLoc.y"
 "	      005033a4    xor ebx,ebx"
 "	      005033a6    mov bl,[ecx+edx]"
 "	      005033a9    or eax,ebx"
@@ -3391,9 +3391,9 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1322:
 	asm( 
-"	      00503448    lea eax,[ebp-68h]"
+"	      00503448    lea eax,goal2.pRGV"
 "	      0050344b    push eax"
-"	      0050344c    lea eax,[ebp-2Ch]"
+"	      0050344c    lea eax,goal1.pRGV"
 "	      0050344f    push eax"
 "	      00503450    mov eax,[ebp-70h]"
 "	      00503453    push eax"
@@ -3406,13 +3406,13 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1325:
 	asm( 
-"	      00503469    cmp dword ptr [ebp-2Ch],0"
+"	      00503469    cmp goal1.pRGV,0"
 "	      0050346d    jne near ptr 0050348Dh"
 );
 // LINE 1326:
 	asm( 
-"	      00503473    lea esi,[ebp-68h]"
-"	      00503476    mov edi,[ebp-108h]"
+"	      00503473    lea esi,goal2.pRGV"
+"	      00503476    mov edi,this"
 "	      0050347c    add edi,70h"
 "	      0050347f    mov ecx,0Ah"
 "	      00503484    rep movsd"
@@ -3424,8 +3424,8 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1328:
 	asm( 
-"	      0050348d    lea esi,[ebp-2Ch]"
-"	      00503490    mov edi,[ebp-108h]"
+"	      0050348d    lea esi,goal1.pRGV"
+"	      00503490    mov edi,this"
 "	      00503496    add edi,70h"
 "	      00503499    mov ecx,0Ah"
 "	      0050349e    rep movsd"
@@ -3433,14 +3433,14 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1332:
 	asm( 
-"	      005034a2    mov eax,[ebp-108h]"
+"	      005034a2    mov eax,this"
 "	      005034a8    cmp dword ptr [eax+70h],0"
 "	      005034ac    je near ptr 0050354Ah"
-"	      005034b2    mov eax,[ebp-108h]"
+"	      005034b2    mov eax,this"
 "	      005034b8    xor ecx,ecx"
 "	      005034ba    mov cl,[eax+7Dh]"
 "	      005034bd    mov [ebp-0D0h],ecx"
-"	      005034c3    mov eax,[ebp-108h]"
+"	      005034c3    mov eax,this"
 "	      005034c9    xor ecx,ecx"
 "	      005034cb    mov cl,[eax+7Ch]"
 "	      005034ce    mov [ebp-0D4h],ecx"
@@ -3467,7 +3467,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1334:
 	asm( 
-"	      0050353e    mov dword ptr [ebp-78h],1"
+"	      0050353e    mov foundcell,1"
 );
 // LINE 1335:
 	asm( 
@@ -3475,23 +3475,23 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1339:
 	asm( 
-"	      0050354a    lea eax,[ebp-70h]"
+"	      0050354a    lea eax,scanLoc.x"
 "	      0050354d    push eax"
-"	      0050354e    lea ecx,[ebp-3Ch]"
+"	      0050354e    lea ecx,scan.currDist"
 "	      00503551    call 00542E03h"
 "	      00503556    test eax,eax"
 "	      00503558    je near ptr 00503568h"
-"	      0050355e    cmp dword ptr [ebp-78h],0"
+"	      0050355e    cmp foundcell,0"
 "	      00503562    je near ptr 005030ECh"
 );
 // LINE 1342:
 	asm( 
-"	      00503568    cmp dword ptr [ebp-78h],0"
+"	      00503568    cmp foundcell,0"
 "	      0050356c    jne near ptr 00503596h"
 );
 // LINE 1344:
 	asm( 
-"	      00503572    mov eax,[ebp-108h]"
+"	      00503572    mov eax,this"
 "	      00503578    and dword ptr [eax+8],0FFFFFFFDh"
 );
 // LINE 1345:
@@ -3503,20 +3503,20 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1477:
 	asm( 
-"	      00503596    mov eax,[ebp-108h]"
+"	      00503596    mov eax,this"
 "	      0050359c    test byte ptr [eax+8],2"
 "	      005035a0    je near ptr 005035B5h"
 );
 // LINE 1479:
 	asm( 
-"	      005035a6    lea eax,[ebp-74h]"
+"	      005035a6    lea eax,prevGridLoc.x"
 "	      005035a9    push eax"
-"	      005035aa    mov ecx,[ebp-108h]"
+"	      005035aa    mov ecx,this"
 "	      005035b0    call 00502A9Bh"
 );
 // LINE 1483:
 	asm( 
-"	      005035b5    mov eax,[ebp-108h]"
+"	      005035b5    mov eax,this"
 "	      005035bb    test byte ptr [eax+8],1"
 "	      005035bf    jne near ptr 005035E1h"
 "	      005035c5    push 5CBh"
@@ -3529,78 +3529,78 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1484:
 	asm( 
-"	      005035e6    mov eax,[ebp-108h]"
+"	      005035e6    mov eax,this"
 "	      005035ec    mov dword ptr [eax+8],3"
 );
 // LINE 1487:
 	asm( 
-"	      005035f3    cmp dword ptr [ebp-6Ch],0"
+"	      005035f3    cmp hiway,0"
 "	      005035f7    je near ptr 005037A3h"
 );
 // LINE 1491:
 	asm( 
-"	      005035fd    mov eax,[ebp-108h]"
+"	      005035fd    mov eax,this"
 "	      00503603    or dword ptr [eax+8],802h"
 );
 // LINE 1493:
 	asm( 
-"	      0050360a    mov eax,[ebp-108h]"
+"	      0050360a    mov eax,this"
 "	      00503610    mov dword ptr [eax+9Eh],0"
 );
 // LINE 1494:
 	asm( 
-"	      0050361a    mov eax,[ebp-108h]"
+"	      0050361a    mov eax,this"
 "	      00503620    mov dword ptr [eax+0CEh],0"
 );
 // LINE 1496:
 	asm( 
-"	      0050362a    mov al,[ebp-70h]"
-"	      0050362d    mov ecx,[ebp-108h]"
+"	      0050362a    mov al,scanLoc.x"
+"	      0050362d    mov ecx,this"
 "	      00503633    mov [ecx+0D2h],al"
 );
 // LINE 1497:
 	asm( 
-"	      00503639    mov al,[ebp-6Fh]"
-"	      0050363c    mov ecx,[ebp-108h]"
+"	      00503639    mov al,scanLoc.y"
+"	      0050363c    mov ecx,this"
 "	      00503642    mov [ecx+0D3h],al"
 );
 // LINE 1501:
 	asm( 
-"	      00503648    mov eax,[ebp-108h]"
+"	      00503648    mov eax,this"
 "	      0050364e    add eax,0D2h"
 "	      00503653    push eax"
-"	      00503654    mov ecx,[ebp-108h]"
+"	      00503654    mov ecx,this"
 "	      0050365a    call 00502B74h"
 );
 // LINE 1505:
 	asm( 
-"	      0050365f    mov eax,[ebp-108h]"
+"	      0050365f    mov eax,this"
 "	      00503665    xor ecx,ecx"
 "	      00503667    mov cl,[eax+0D2h]"
 "	      0050366d    test ecx,ecx"
 "	      0050366f    jl near ptr 005036BFh"
-"	      00503675    mov eax,[ebp-108h]"
+"	      00503675    mov eax,this"
 "	      0050367b    xor ecx,ecx"
 "	      0050367d    mov cl,[eax+0D3h]"
 "	      00503683    test ecx,ecx"
 "	      00503685    jl near ptr 005036BFh"
-"	      0050368b    mov eax,[ebp-108h]"
+"	      0050368b    mov eax,this"
 "	      00503691    xor ecx,ecx"
 "	      00503693    mov cl,[eax+0D2h]"
 "	      00503699    cmp ecx,80h"
 "	      0050369f    jge near ptr 005036BFh"
-"	      005036a5    mov eax,[ebp-108h]"
+"	      005036a5    mov eax,this"
 "	      005036ab    xor ecx,ecx"
 "	      005036ad    mov cl,[eax+0D3h]"
 "	      005036b3    cmp ecx,80h"
 "	      005036b9    jl near ptr 005036CDh"
 "	      005036bf    mov word ptr [ebp-0FCh],0"
 "	      005036c8    jmp near ptr 00503734h"
-"	      005036cd    mov eax,[ebp-108h]"
+"	      005036cd    mov eax,this"
 "	      005036d3    xor ecx,ecx"
 "	      005036d5    mov cl,[eax+0D2h]"
 "	      005036db    mov eax,[ecx*4+638F70h]"
-"	      005036e2    mov ecx,[ebp-108h]"
+"	      005036e2    mov ecx,this"
 "	      005036e8    xor edx,edx"
 "	      005036ea    mov dl,[ecx+0D3h]"
 "	      005036f0    xor ecx,ecx"
@@ -3608,11 +3608,11 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      005036f5    and ecx,2"
 "	      005036f8    movsx eax,cx"
 "	      005036fb    shl eax,0Eh"
-"	      005036fe    mov ecx,[ebp-108h]"
+"	      005036fe    mov ecx,this"
 "	      00503704    xor edx,edx"
 "	      00503706    mov dl,[ecx+0D2h]"
 "	      0050370c    mov ecx,[edx*4+639850h]"
-"	      00503713    mov edx,[ebp-108h]"
+"	      00503713    mov edx,this"
 "	      00503719    xor ebx,ebx"
 "	      0050371b    mov bl,[edx+0D3h]"
 "	      00503721    xor edx,edx"
@@ -3622,31 +3622,31 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      0050372f    jmp near ptr 00503734h"
 "	      00503734    mov eax,[ebp-0FCh]"
 "	      0050373a    push eax"
-"	      0050373b    mov ecx,[ebp-108h]"
+"	      0050373b    mov ecx,this"
 "	      00503741    call 00506F6Fh"
 );
 // LINE 1506:
 	asm( 
-"	      00503746    mov ecx,[ebp-108h]"
+"	      00503746    mov ecx,this"
 "	      0050374c    call 00507782h"
 );
 // LINE 1507:
 	asm( 
-"	      00503751    mov ecx,[ebp-108h]"
+"	      00503751    mov ecx,this"
 "	      00503757    call 0050790Ch"
 );
 // LINE 1508:
 	asm( 
-"	      0050375c    mov eax,[ebp-108h]"
+"	      0050375c    mov eax,this"
 "	      00503762    mov eax,[eax]"
-"	      00503764    mov ecx,[ebp-108h]"
+"	      00503764    mov ecx,this"
 "	      0050376a    call dword ptr [eax+8]"
 );
 // LINE 1509:
 	asm( 
-"	      0050376d    mov eax,[ebp-108h]"
+"	      0050376d    mov eax,this"
 "	      00503773    add eax,0A2h"
-"	      00503778    mov ecx,[ebp-108h]"
+"	      00503778    mov ecx,this"
 "	      0050377e    mov [ecx+0F2h],eax"
 );
 // LINE 1510:
@@ -3666,18 +3666,18 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	int32_t dirIndex;
 	struct _GridCoordinates nextLoc;
 	asm( 
-"	      005037a3    mov eax,[ebp-108h]"
+"	      005037a3    mov eax,this"
 "	      005037a9    xor ecx,ecx"
 "	      005037ab    mov cl,[eax+7Ch]"
 "	      005037ae    xor eax,eax"
-"	      005037b0    mov al,[ebp-70h]"
+"	      005037b0    mov al,scanLoc.x"
 "	      005037b3    cmp ecx,eax"
 "	      005037b5    jne near ptr 005037D3h"
-"	      005037bb    mov eax,[ebp-108h]"
+"	      005037bb    mov eax,this"
 "	      005037c1    xor ecx,ecx"
 "	      005037c3    mov cl,[eax+7Dh]"
 "	      005037c6    xor eax,eax"
-"	      005037c8    mov al,[ebp-6Fh]"
+"	      005037c8    mov al,scanLoc.y"
 "	      005037cb    cmp ecx,eax"
 "	      005037cd    je near ptr 005037EFh"
 "	      005037d3    push 5EBh"
@@ -3698,67 +3698,67 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      00503801    and eax,3"
 "	      00503804    xor eax,edx"
 "	      00503806    sub eax,edx"
-"	      00503808    mov [ebp-84h],eax"
+"	      00503808    mov dirIndex,eax"
 );
 // LINE 1525:
 	asm( 
-"	      0050380e    mov dword ptr [ebp-88h],0"
+"	      0050380e    mov i,0"
 "	      00503818    jmp near ptr 00503823h"
-"	      0050381d    inc dword ptr [ebp-88h]"
-"	      00503823    cmp dword ptr [ebp-88h],4"
+"	      0050381d    inc i"
+"	      00503823    cmp i,4"
 "	      0050382a    jge near ptr 00503A48h"
 );
 // LINE 1527:
 	asm( 
-"	      00503830    mov eax,[ebp-84h]"
+"	      00503830    mov eax,dirIndex"
 "	      00503836    inc eax"
 "	      00503837    and eax,3"
-"	      0050383a    mov [ebp-84h],eax"
+"	      0050383a    mov dirIndex,eax"
 );
 // LINE 1528:
 	asm( 
-"	      00503840    mov eax,[ebp-84h]"
+"	      00503840    mov eax,dirIndex"
 "	      00503846    mov [ebp-114h],eax"
 "	      0050384c    jmp near ptr 005038A6h"
 );
 // LINE 1530:
 	asm( 
-"	      00503851    mov al,[ebp-70h]"
-"	      00503854    mov [ebp-80h],al"
+"	      00503851    mov al,scanLoc.x"
+"	      00503854    mov nextLoc.x,al"
 "	      00503857    xor eax,eax"
-"	      00503859    mov al,[ebp-6Fh]"
+"	      00503859    mov al,scanLoc.y"
 "	      0050385c    dec eax"
-"	      0050385d    mov [ebp-7Fh],al"
+"	      0050385d    mov nextLoc.y,al"
 "	      00503860    jmp near ptr 005038D0h"
 );
 // LINE 1531:
 	asm( 
 "	      00503865    xor eax,eax"
-"	      00503867    mov al,[ebp-70h]"
+"	      00503867    mov al,scanLoc.x"
 "	      0050386a    inc eax"
-"	      0050386b    mov [ebp-80h],al"
-"	      0050386e    mov al,[ebp-6Fh]"
-"	      00503871    mov [ebp-7Fh],al"
+"	      0050386b    mov nextLoc.x,al"
+"	      0050386e    mov al,scanLoc.y"
+"	      00503871    mov nextLoc.y,al"
 "	      00503874    jmp near ptr 005038D0h"
 );
 // LINE 1532:
 	asm( 
-"	      00503879    mov al,[ebp-70h]"
-"	      0050387c    mov [ebp-80h],al"
+"	      00503879    mov al,scanLoc.x"
+"	      0050387c    mov nextLoc.x,al"
 "	      0050387f    xor eax,eax"
-"	      00503881    mov al,[ebp-6Fh]"
+"	      00503881    mov al,scanLoc.y"
 "	      00503884    inc eax"
-"	      00503885    mov [ebp-7Fh],al"
+"	      00503885    mov nextLoc.y,al"
 "	      00503888    jmp near ptr 005038D0h"
 );
 // LINE 1533:
 	asm( 
 "	      0050388d    xor eax,eax"
-"	      0050388f    mov al,[ebp-70h]"
+"	      0050388f    mov al,scanLoc.x"
 "	      00503892    dec eax"
-"	      00503893    mov [ebp-80h],al"
-"	      00503896    mov al,[ebp-6Fh]"
-"	      00503899    mov [ebp-7Fh],al"
+"	      00503893    mov nextLoc.x,al"
+"	      00503896    mov al,scanLoc.y"
+"	      00503899    mov nextLoc.y,al"
 "	      0050389c    jmp near ptr 005038D0h"
 );
 // LINE 1534:
@@ -3778,76 +3778,76 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1539:
 	asm( 
 "	      005038d0    xor eax,eax"
-"	      005038d2    mov al,[ebp-80h]"
+"	      005038d2    mov al,nextLoc.x"
 "	      005038d5    test eax,eax"
 "	      005038d7    jl near ptr 0050390Ah"
 "	      005038dd    xor eax,eax"
-"	      005038df    mov al,[ebp-7Fh]"
+"	      005038df    mov al,nextLoc.y"
 "	      005038e2    test eax,eax"
 "	      005038e4    jl near ptr 0050390Ah"
 "	      005038ea    xor eax,eax"
-"	      005038ec    mov al,[ebp-80h]"
+"	      005038ec    mov al,nextLoc.x"
 "	      005038ef    cmp eax,80h"
 "	      005038f4    jge near ptr 0050390Ah"
 "	      005038fa    xor eax,eax"
-"	      005038fc    mov al,[ebp-7Fh]"
+"	      005038fc    mov al,nextLoc.y"
 "	      005038ff    cmp eax,80h"
 "	      00503904    jl near ptr 00503918h"
 "	      0050390a    mov word ptr [ebp-100h],0"
 "	      00503913    jmp near ptr 0050395Bh"
 "	      00503918    xor eax,eax"
-"	      0050391a    mov al,[ebp-80h]"
+"	      0050391a    mov al,nextLoc.x"
 "	      0050391d    mov eax,[eax*4+638F70h]"
 "	      00503924    xor ecx,ecx"
-"	      00503926    mov cl,[ebp-7Fh]"
+"	      00503926    mov cl,nextLoc.y"
 "	      00503929    xor edx,edx"
 "	      0050392b    mov dl,[eax+ecx]"
 "	      0050392e    and edx,2"
 "	      00503931    movsx eax,dx"
 "	      00503934    shl eax,0Eh"
 "	      00503937    xor ecx,ecx"
-"	      00503939    mov cl,[ebp-80h]"
+"	      00503939    mov cl,nextLoc.x"
 "	      0050393c    mov ecx,[ecx*4+639850h]"
 "	      00503943    xor edx,edx"
-"	      00503945    mov dl,[ebp-7Fh]"
+"	      00503945    mov dl,nextLoc.y"
 "	      00503948    xor ebx,ebx"
 "	      0050394a    mov bl,[ecx+edx]"
 "	      0050394d    or eax,ebx"
 "	      0050394f    mov [ebp-100h],ax"
 "	      00503956    jmp near ptr 0050395Bh"
 "	      0050395b    xor eax,eax"
-"	      0050395d    mov al,[ebp-70h]"
+"	      0050395d    mov al,scanLoc.x"
 "	      00503960    test eax,eax"
 "	      00503962    jl near ptr 00503995h"
 "	      00503968    xor eax,eax"
-"	      0050396a    mov al,[ebp-6Fh]"
+"	      0050396a    mov al,scanLoc.y"
 "	      0050396d    test eax,eax"
 "	      0050396f    jl near ptr 00503995h"
 "	      00503975    xor eax,eax"
-"	      00503977    mov al,[ebp-70h]"
+"	      00503977    mov al,scanLoc.x"
 "	      0050397a    cmp eax,80h"
 "	      0050397f    jge near ptr 00503995h"
 "	      00503985    xor eax,eax"
-"	      00503987    mov al,[ebp-6Fh]"
+"	      00503987    mov al,scanLoc.y"
 "	      0050398a    cmp eax,80h"
 "	      0050398f    jl near ptr 005039A3h"
 "	      00503995    mov word ptr [ebp-104h],0"
 "	      0050399e    jmp near ptr 005039E6h"
 "	      005039a3    xor eax,eax"
-"	      005039a5    mov al,[ebp-70h]"
+"	      005039a5    mov al,scanLoc.x"
 "	      005039a8    mov eax,[eax*4+638F70h]"
 "	      005039af    xor ecx,ecx"
-"	      005039b1    mov cl,[ebp-6Fh]"
+"	      005039b1    mov cl,scanLoc.y"
 "	      005039b4    xor edx,edx"
 "	      005039b6    mov dl,[eax+ecx]"
 "	      005039b9    and edx,2"
 "	      005039bc    movsx eax,dx"
 "	      005039bf    shl eax,0Eh"
 "	      005039c2    xor ecx,ecx"
-"	      005039c4    mov cl,[ebp-70h]"
+"	      005039c4    mov cl,scanLoc.x"
 "	      005039c7    mov ecx,[ecx*4+639850h]"
 "	      005039ce    xor edx,edx"
-"	      005039d0    mov dl,[ebp-6Fh]"
+"	      005039d0    mov dl,scanLoc.y"
 "	      005039d3    xor ebx,ebx"
 "	      005039d5    mov bl,[ecx+edx]"
 "	      005039d8    or eax,ebx"
@@ -3872,11 +3872,11 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1546:
 	asm( 
-"	      00503a20    mov eax,[ebp-108h]"
+"	      00503a20    mov eax,this"
 "	      00503a26    mov eax,[eax+82h]"
 "	      00503a2c    sub eax,2"
 "	      00503a2f    and eax,3"
-"	      00503a32    cmp eax,[ebp-84h]"
+"	      00503a32    cmp eax,dirIndex"
 "	      00503a38    je near ptr 00503A43h"
 );
 // LINE 1553:
@@ -3889,7 +3889,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1558:
 	asm( 
-"	      00503a48    cmp dword ptr [ebp-88h],4"
+"	      00503a48    cmp i,4"
 "	      00503a4f    jl near ptr 00503A6Fh"
 );
 // LINE 1559:
@@ -3901,18 +3901,18 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1567:
 	asm( 
-"	      00503a6f    mov eax,[ebp-84h]"
-"	      00503a75    mov ecx,[ebp-108h]"
+"	      00503a6f    mov eax,dirIndex"
+"	      00503a75    mov ecx,this"
 "	      00503a7b    mov [ecx+0E2h],eax"
 );
 // LINE 1570:
 	asm( 
-"	      00503a81    mov eax,[ebp-108h]"
+"	      00503a81    mov eax,this"
 "	      00503a87    mov dword ptr [eax+0EEh],0"
 );
 // LINE 1572:
 	asm( 
-"	      00503a91    mov eax,[ebp-108h]"
+"	      00503a91    mov eax,this"
 "	      00503a97    cmp dword ptr [eax+7Eh],0FFFFFFFEh"
 "	      00503a9b    jne near ptr 00503BDFh"
 );
@@ -3926,26 +3926,26 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      00503aae    and eax,3"
 "	      00503ab1    xor eax,edx"
 "	      00503ab3    sub eax,edx"
-"	      00503ab5    mov [ebp-84h],eax"
+"	      00503ab5    mov dirIndex,eax"
 );
 // LINE 1575:
 	asm( 
-"	      00503abb    mov dword ptr [ebp-88h],0"
+"	      00503abb    mov i,0"
 "	      00503ac5    jmp near ptr 00503AD0h"
-"	      00503aca    inc dword ptr [ebp-88h]"
-"	      00503ad0    cmp dword ptr [ebp-88h],4"
+"	      00503aca    inc i"
+"	      00503ad0    cmp i,4"
 "	      00503ad7    jge near ptr 00503B16h"
 );
 // LINE 1577:
 	asm( 
-"	      00503add    mov eax,[ebp-84h]"
+"	      00503add    mov eax,dirIndex"
 "	      00503ae3    inc eax"
 "	      00503ae4    and eax,3"
-"	      00503ae7    mov [ebp-84h],eax"
+"	      00503ae7    mov dirIndex,eax"
 );
 // LINE 1578:
 	asm( 
-"	      00503aed    mov eax,[ebp-108h]"
+"	      00503aed    mov eax,this"
 "	      00503af3    mov edx,1"
 "	      00503af8    mov cl,[ebp-84h]"
 "	      00503afe    shl edx,cl"
@@ -3962,7 +3962,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1581:
 	asm( 
-"	      00503b16    cmp dword ptr [ebp-88h],4"
+"	      00503b16    cmp i,4"
 "	      00503b1d    jl near ptr 00503B3Fh"
 "	      00503b23    push 62Dh"
 "	      00503b28    push 5B54F0h"
@@ -3974,42 +3974,42 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1582:
 	asm( 
-"	      00503b44    mov eax,[ebp-84h]"
-"	      00503b4a    mov ecx,[ebp-108h]"
+"	      00503b44    mov eax,dirIndex"
+"	      00503b4a    mov ecx,this"
 "	      00503b50    mov [ecx+7Eh],eax"
-"	      00503b53    mov eax,[ebp-108h]"
+"	      00503b53    mov eax,this"
 "	      00503b59    mov eax,[eax+7Eh]"
-"	      00503b5c    mov ecx,[ebp-108h]"
+"	      00503b5c    mov ecx,this"
 "	      00503b62    mov [ecx+82h],eax"
 );
 // LINE 1583:
 	asm( 
-"	      00503b68    mov eax,[ebp-108h]"
+"	      00503b68    mov eax,this"
 "	      00503b6e    mov eax,[eax+7Eh]"
-"	      00503b71    mov ecx,[ebp-108h]"
+"	      00503b71    mov ecx,this"
 "	      00503b77    mov ecx,[ecx+0E2h]"
 "	      00503b7d    shl ecx,4"
 "	      00503b80    mov eax,[ecx+eax*4+592D10h]"
-"	      00503b87    mov ecx,[ebp-108h]"
+"	      00503b87    mov ecx,this"
 "	      00503b8d    mov [ecx+0E6h],eax"
 );
 // LINE 1584:
 	asm( 
-"	      00503b93    mov eax,[ebp-108h]"
+"	      00503b93    mov eax,this"
 "	      00503b99    mov dword ptr [eax+96h],1"
 );
 // LINE 1585:
 	asm( 
-"	      00503ba3    mov eax,[ebp-108h]"
+"	      00503ba3    mov eax,this"
 "	      00503ba9    mov eax,[eax+0EEh]"
 "	      00503baf    lea eax,[eax+eax*2]"
-"	      00503bb2    mov ecx,[ebp-108h]"
+"	      00503bb2    mov ecx,this"
 "	      00503bb8    mov ecx,[ecx+0E6h]"
 "	      00503bbe    shl ecx,3"
 "	      00503bc1    lea ecx,[ecx+ecx*2]"
 "	      00503bc4    lea ecx,[ecx+ecx*4]"
 "	      00503bc7    mov eax,[ecx+eax*4+62BB34h]"
-"	      00503bce    mov ecx,[ebp-108h]"
+"	      00503bce    mov ecx,this"
 "	      00503bd4    mov [ecx+86h],eax"
 );
 // LINE 1593:
@@ -4018,39 +4018,39 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1595:
 	asm( 
-"	      00503bdf    mov eax,[ebp-108h]"
+"	      00503bdf    mov eax,this"
 "	      00503be5    mov eax,[eax+82h]"
-"	      00503beb    mov ecx,[ebp-108h]"
+"	      00503beb    mov ecx,this"
 "	      00503bf1    mov ecx,[ecx+0E2h]"
 "	      00503bf7    shl ecx,4"
 "	      00503bfa    mov eax,[ecx+eax*4+592D10h]"
-"	      00503c01    mov ecx,[ebp-108h]"
+"	      00503c01    mov ecx,this"
 "	      00503c07    mov [ecx+0E6h],eax"
 );
 // LINE 1596:
 	asm( 
-"	      00503c0d    mov eax,[ebp-108h]"
+"	      00503c0d    mov eax,this"
 "	      00503c13    mov eax,[eax+96h]"
-"	      00503c19    mov ecx,[ebp-108h]"
+"	      00503c19    mov ecx,this"
 "	      00503c1f    mov ecx,[ecx+0EEh]"
 "	      00503c25    lea ecx,[ecx+ecx*2]"
 "	      00503c28    shl ecx,2"
 "	      00503c2b    lea eax,[ecx+eax*4]"
-"	      00503c2e    mov ecx,[ebp-108h]"
+"	      00503c2e    mov ecx,this"
 "	      00503c34    mov ecx,[ecx+0E6h]"
 "	      00503c3a    shl ecx,3"
 "	      00503c3d    lea ecx,[ecx+ecx*2]"
 "	      00503c40    lea ecx,[ecx+ecx*4]"
 "	      00503c43    mov eax,[eax+ecx+62BB30h]"
-"	      00503c4a    mov ecx,[ebp-108h]"
+"	      00503c4a    mov ecx,this"
 "	      00503c50    mov [ecx+86h],eax"
 );
 // LINE 1597:
 	asm( 
-"	      00503c56    mov eax,[ebp-108h]"
+"	      00503c56    mov eax,this"
 "	      00503c5c    cmp dword ptr [eax+96h],0"
 "	      00503c63    jl near ptr 00503C7Ch"
-"	      00503c69    mov eax,[ebp-108h]"
+"	      00503c69    mov eax,this"
 "	      00503c6f    cmp dword ptr [eax+96h],2"
 "	      00503c76    jle near ptr 00503C98h"
 "	      00503c7c    push 63Dh"
@@ -4063,7 +4063,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1607:
 	asm( 
-"	      00503c9d    mov eax,[ebp-108h]"
+"	      00503c9d    mov eax,this"
 "	      00503ca3    mov eax,[eax+0E2h]"
 "	      00503ca9    sub eax,2"
 "	      00503cac    and eax,3"
@@ -4072,42 +4072,42 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1609:
 	asm( 
-"	      00503cba    mov al,[ebp-70h]"
-"	      00503cbd    mov [ebp-80h],al"
+"	      00503cba    mov al,scanLoc.x"
+"	      00503cbd    mov nextLoc.x,al"
 "	      00503cc0    xor eax,eax"
-"	      00503cc2    mov al,[ebp-6Fh]"
+"	      00503cc2    mov al,scanLoc.y"
 "	      00503cc5    dec eax"
-"	      00503cc6    mov [ebp-7Fh],al"
+"	      00503cc6    mov nextLoc.y,al"
 "	      00503cc9    jmp near ptr 00503D39h"
 );
 // LINE 1610:
 	asm( 
 "	      00503cce    xor eax,eax"
-"	      00503cd0    mov al,[ebp-70h]"
+"	      00503cd0    mov al,scanLoc.x"
 "	      00503cd3    inc eax"
-"	      00503cd4    mov [ebp-80h],al"
-"	      00503cd7    mov al,[ebp-6Fh]"
-"	      00503cda    mov [ebp-7Fh],al"
+"	      00503cd4    mov nextLoc.x,al"
+"	      00503cd7    mov al,scanLoc.y"
+"	      00503cda    mov nextLoc.y,al"
 "	      00503cdd    jmp near ptr 00503D39h"
 );
 // LINE 1611:
 	asm( 
-"	      00503ce2    mov al,[ebp-70h]"
-"	      00503ce5    mov [ebp-80h],al"
+"	      00503ce2    mov al,scanLoc.x"
+"	      00503ce5    mov nextLoc.x,al"
 "	      00503ce8    xor eax,eax"
-"	      00503cea    mov al,[ebp-6Fh]"
+"	      00503cea    mov al,scanLoc.y"
 "	      00503ced    inc eax"
-"	      00503cee    mov [ebp-7Fh],al"
+"	      00503cee    mov nextLoc.y,al"
 "	      00503cf1    jmp near ptr 00503D39h"
 );
 // LINE 1612:
 	asm( 
 "	      00503cf6    xor eax,eax"
-"	      00503cf8    mov al,[ebp-70h]"
+"	      00503cf8    mov al,scanLoc.x"
 "	      00503cfb    dec eax"
-"	      00503cfc    mov [ebp-80h],al"
-"	      00503cff    mov al,[ebp-6Fh]"
-"	      00503d02    mov [ebp-7Fh],al"
+"	      00503cfc    mov nextLoc.x,al"
+"	      00503cff    mov al,scanLoc.y"
+"	      00503d02    mov nextLoc.y,al"
 "	      00503d05    jmp near ptr 00503D39h"
 );
 // LINE 1613:
@@ -4128,10 +4128,10 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1615:
 	asm( 
 "	      00503d39    xor eax,eax"
-"	      00503d3b    mov al,[ebp-80h]"
+"	      00503d3b    mov al,nextLoc.x"
 "	      00503d3e    shl eax,0Ah"
 "	      00503d41    xor ecx,ecx"
-"	      00503d43    mov cl,[ebp-7Fh]"
+"	      00503d43    mov cl,nextLoc.y"
 "	      00503d46    mov eax,[eax+ecx*4+67ED30h]"
 "	      00503d4d    mov [ebp-0D8h],eax"
 "	      00503d53    cmp dword ptr [ebp-0D8h],0"
@@ -4145,19 +4145,19 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      00503d7c    jmp near ptr 00503D81h"
 "	      00503d81    jmp near ptr 00503D86h"
 "	      00503d86    mov eax,[ebp-0D8h]"
-"	      00503d8c    mov ecx,[ebp-108h]"
+"	      00503d8c    mov ecx,this"
 "	      00503d92    mov [ecx+112h],eax"
 );
 // LINE 1618:
 	asm( 
-"	      00503d98    mov eax,[ebp-108h]"
+"	      00503d98    mov eax,this"
 "	      00503d9e    mov eax,[eax+112h]"
 "	      00503da4    cmp dword ptr [eax+10h],0"
 "	      00503da8    je near ptr 00503DD2h"
 );
 // LINE 1621:
 	asm( 
-"	      00503dae    mov eax,[ebp-108h]"
+"	      00503dae    mov eax,this"
 "	      00503db4    and dword ptr [eax+8],0FFFFFFFDh"
 );
 // LINE 1622:
@@ -4169,45 +4169,45 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1624:
 	asm( 
-"	      00503dd2    mov eax,[ebp-108h]"
+"	      00503dd2    mov eax,this"
 "	      00503dd8    add eax,7Ch"
 "	      00503ddb    push eax"
-"	      00503ddc    mov ecx,[ebp-108h]"
+"	      00503ddc    mov ecx,this"
 "	      00503de2    call 00502B74h"
 );
 // LINE 1632:
 	asm( 
 "	      00503de7    push 0"
-"	      00503de9    mov ecx,[ebp-108h]"
+"	      00503de9    mov ecx,this"
 "	      00503def    call 00505234h"
 );
 // LINE 1635:
 	asm( 
-"	      00503df4    mov ecx,[ebp-108h]"
+"	      00503df4    mov ecx,this"
 "	      00503dfa    call 0050503Fh"
 );
 // LINE 1638:
 	asm( 
-"	      00503dff    mov eax,[ebp-108h]"
+"	      00503dff    mov eax,this"
 "	      00503e05    mov eax,[eax]"
-"	      00503e07    mov ecx,[ebp-108h]"
+"	      00503e07    mov ecx,this"
 "	      00503e0d    call dword ptr [eax+8]"
 );
 // LINE 1640:
 	asm( 
-"	      00503e10    mov eax,[ebp-108h]"
+"	      00503e10    mov eax,this"
 "	      00503e16    mov dword ptr [eax+0EAh],0"
 );
 // LINE 1641:
 	asm( 
-"	      00503e20    mov eax,[ebp-108h]"
+"	      00503e20    mov eax,this"
 "	      00503e26    mov dword ptr [eax+9Eh],0"
 );
 // LINE 1642:
 	asm( 
-"	      00503e30    mov eax,[ebp-108h]"
+"	      00503e30    mov eax,this"
 "	      00503e36    mov eax,[eax+0BAh]"
-"	      00503e3c    mov ecx,[ebp-108h]"
+"	      00503e3c    mov ecx,this"
 "	      00503e42    mov [ecx+0BEh],eax"
 );
 // LINE 1644:
@@ -4239,36 +4239,36 @@ void AutomobileClass::UnPlaceCar() {
 "	      00503e74    push ebx"
 "	      00503e75    push esi"
 "	      00503e76    push edi"
-"	      00503e77    mov [ebp-4],ecx"
+"	      00503e77    mov this,ecx"
 );
 // LINE 1662:
 	asm( 
-"	      00503e7a    mov eax,[ebp-4]"
+"	      00503e7a    mov eax,this"
 "	      00503e7d    and dword ptr [eax+8],0FFFFFEFFh"
 );
 // LINE 1663:
 	asm( 
-"	      00503e84    mov eax,[ebp-4]"
+"	      00503e84    mov eax,this"
 "	      00503e87    and dword ptr [eax+8],0FFFFFDFFh"
 );
 // LINE 1666:
 	asm( 
-"	      00503e8e    mov eax,[ebp-4]"
+"	      00503e8e    mov eax,this"
 "	      00503e91    test byte ptr [eax+8],2"
 "	      00503e95    je near ptr 00503ED4h"
 );
 // LINE 1668:
 	asm( 
-"	      00503e9b    mov eax,[ebp-4]"
+"	      00503e9b    mov eax,this"
 "	      00503e9e    test byte ptr [eax+9],8"
 "	      00503ea2    je near ptr 00503EBEh"
 );
 // LINE 1669:
 	asm( 
-"	      00503ea8    mov eax,[ebp-4]"
+"	      00503ea8    mov eax,this"
 "	      00503eab    add eax,0D2h"
 "	      00503eb0    push eax"
-"	      00503eb1    mov ecx,[ebp-4]"
+"	      00503eb1    mov ecx,this"
 "	      00503eb4    call 00502A9Bh"
 );
 // LINE 1670:
@@ -4277,15 +4277,15 @@ void AutomobileClass::UnPlaceCar() {
 );
 // LINE 1671:
 	asm( 
-"	      00503ebe    mov eax,[ebp-4]"
+"	      00503ebe    mov eax,this"
 "	      00503ec1    add eax,7Ch"
 "	      00503ec4    push eax"
-"	      00503ec5    mov ecx,[ebp-4]"
+"	      00503ec5    mov ecx,this"
 "	      00503ec8    call 00502A9Bh"
 );
 // LINE 1672:
 	asm( 
-"	      00503ecd    mov eax,[ebp-4]"
+"	      00503ecd    mov eax,this"
 "	      00503ed0    and dword ptr [eax+8],0FFFFFFFDh"
 );
 // LINE 1674:
@@ -4311,11 +4311,11 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 "	      00503ee4    push ebx"
 "	      00503ee5    push esi"
 "	      00503ee6    push edi"
-"	      00503ee7    mov [ebp-1Ch],ecx"
+"	      00503ee7    mov this,ecx"
 );
 // LINE 1690:
 	asm( 
-"	      00503eea    mov eax,[ebp-1Ch]"
+"	      00503eea    mov eax,this"
 "	      00503eed    test byte ptr [eax+9],3"
 "	      00503ef1    jne near ptr 00503EFCh"
 );
@@ -4325,49 +4325,49 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 );
 // LINE 1693:
 	asm( 
-"	      00503efc    mov eax,[ebp-1Ch]"
+"	      00503efc    mov eax,this"
 "	      00503eff    test byte ptr [eax+9],1"
 "	      00503f03    je near ptr 00503F60h"
 );
 // LINE 1695:
 	asm( 
-"	      00503f09    mov ecx,[ebp-1Ch]"
+"	      00503f09    mov ecx,this"
 "	      00503f0c    call 00503E6Eh"
 );
 // LINE 1697:
 	asm( 
-"	      00503f11    mov eax,[ebp-1Ch]"
+"	      00503f11    mov eax,this"
 "	      00503f14    and dword ptr [eax+8],0FFFFFEFFh"
 );
 // LINE 1698:
 	asm( 
-"	      00503f1b    mov eax,[ebp-1Ch]"
+"	      00503f1b    mov eax,this"
 "	      00503f1e    movsx eax,word ptr [eax+18h]"
 "	      00503f22    and eax,0FFFFEFFFh"
-"	      00503f27    mov ecx,[ebp-1Ch]"
+"	      00503f27    mov ecx,this"
 "	      00503f2a    mov [ecx+18h],ax"
 );
 // LINE 1701:
 	asm( 
-"	      00503f2e    mov dword ptr [ebp-18h],1Ah"
+"	      00503f2e    mov mp.op,1Ah"
 );
 // LINE 1702:
 	asm( 
-"	      00503f35    mov eax,[ebp-1Ch]"
+"	      00503f35    mov eax,this"
 "	      00503f38    mov eax,[eax+10Eh]"
-"	      00503f3e    mov [ebp-14h],eax"
+"	      00503f3e    mov mp.id,eax"
 );
 // LINE 1703:
 	asm( 
-"	      00503f41    mov dword ptr [ebp-8],1"
+"	      00503f41    mov mp.i2num,1"
 );
 // LINE 1704:
 	asm( 
-"	      00503f48    mov dword ptr [ebp-4],0"
+"	      00503f48    mov mp.flags,0"
 );
 // LINE 1705:
 	asm( 
-"	      00503f4f    lea eax,[ebp-18h]"
+"	      00503f4f    lea eax,mp.op"
 "	      00503f52    push eax"
 "	      00503f53    call 004FBD4Ah"
 "	      00503f58    add esp,4"
@@ -4375,41 +4375,41 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 // LINE 1707:
 	asm( 
 "	      00503f5b    jmp near ptr 00503FB1h"
-"	      00503f60    mov eax,[ebp-1Ch]"
+"	      00503f60    mov eax,this"
 "	      00503f63    test byte ptr [eax+9],2"
 "	      00503f67    je near ptr 00503FB1h"
 );
 // LINE 1709:
 	asm( 
-"	      00503f6d    mov eax,[ebp-1Ch]"
+"	      00503f6d    mov eax,this"
 "	      00503f70    and dword ptr [eax+8],0FFFFFDFFh"
 );
 // LINE 1710:
 	asm( 
-"	      00503f77    mov eax,[ebp-1Ch]"
+"	      00503f77    mov eax,this"
 "	      00503f7a    mov dword ptr [eax+9Eh],0"
 );
 // LINE 1713:
 	asm( 
-"	      00503f84    mov dword ptr [ebp-18h],1Bh"
+"	      00503f84    mov mp.op,1Bh"
 );
 // LINE 1714:
 	asm( 
-"	      00503f8b    mov eax,[ebp-1Ch]"
+"	      00503f8b    mov eax,this"
 "	      00503f8e    mov eax,[eax+10Eh]"
-"	      00503f94    mov [ebp-14h],eax"
+"	      00503f94    mov mp.id,eax"
 );
 // LINE 1715:
 	asm( 
-"	      00503f97    mov dword ptr [ebp-8],1"
+"	      00503f97    mov mp.i2num,1"
 );
 // LINE 1716:
 	asm( 
-"	      00503f9e    mov dword ptr [ebp-4],0"
+"	      00503f9e    mov mp.flags,0"
 );
 // LINE 1717:
 	asm( 
-"	      00503fa5    lea eax,[ebp-18h]"
+"	      00503fa5    lea eax,mp.op"
 "	      00503fa8    push eax"
 "	      00503fa9    call 004FBD4Ah"
 "	      00503fae    add esp,4"
@@ -4417,7 +4417,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 // LINE 1722:
 	asm( 
 "	      00503fb1    push 0"
-"	      00503fb3    mov eax,[ebp-1Ch]"
+"	      00503fb3    mov eax,this"
 "	      00503fb6    add eax,24h"
 "	      00503fb9    push eax"
 "	      00503fba    push 0Fh"
@@ -4447,29 +4447,29 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 "	      00503fd6    push ebx"
 "	      00503fd7    push esi"
 "	      00503fd8    push edi"
-"	      00503fd9    mov [ebp-1Ch],ecx"
+"	      00503fd9    mov this,ecx"
 );
 // LINE 1735:
 	asm( 
-"	      00503fdc    mov eax,[ebp-1Ch]"
+"	      00503fdc    mov eax,this"
 "	      00503fdf    test byte ptr [eax+9],10h"
 "	      00503fe3    je near ptr 00504025h"
-"	      00503fe9    mov eax,[ebp-1Ch]"
+"	      00503fe9    mov eax,this"
 "	      00503fec    cmp dword ptr [eax+116h],0"
 "	      00503ff3    jle near ptr 00504025h"
-"	      00503ff9    mov ecx,[ebp-1Ch]"
+"	      00503ff9    mov ecx,this"
 "	      00503ffc    call 005045B6h"
 "	      00504001    test eax,eax"
 "	      00504003    je near ptr 00504025h"
-"	      00504009    cmp dword ptr [ebp+8],0"
+"	      00504009    cmp msg_id,0"
 "	      0050400d    jne near ptr 00504025h"
 );
 // LINE 1737:
 	asm( 
 "	      00504013    push 0FFFFFFFFh"
-"	      00504015    mov eax,[ebp-1Ch]"
+"	      00504015    mov eax,this"
 "	      00504018    mov eax,[eax]"
-"	      0050401a    mov ecx,[ebp-1Ch]"
+"	      0050401a    mov ecx,this"
 "	      0050401d    call dword ptr [eax+4]"
 );
 // LINE 1738:
@@ -4478,7 +4478,7 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 );
 // LINE 1743:
 	asm( 
-"	      00504025    mov eax,[ebp-1Ch]"
+"	      00504025    mov eax,this"
 "	      00504028    test byte ptr [eax+9],2"
 "	      0050402c    jne near ptr 00504037h"
 );
@@ -4488,35 +4488,35 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 );
 // LINE 1748:
 	asm( 
-"	      00504037    mov eax,[ebp-1Ch]"
+"	      00504037    mov eax,this"
 "	      0050403a    and dword ptr [eax+8],0FFFFFDFFh"
 );
 // LINE 1749:
 	asm( 
-"	      00504041    mov eax,[ebp-1Ch]"
+"	      00504041    mov eax,this"
 "	      00504044    mov dword ptr [eax+9Eh],0"
 );
 // LINE 1752:
 	asm( 
-"	      0050404e    mov dword ptr [ebp-18h],1Bh"
+"	      0050404e    mov mp.op,1Bh"
 );
 // LINE 1753:
 	asm( 
-"	      00504055    mov eax,[ebp-1Ch]"
+"	      00504055    mov eax,this"
 "	      00504058    mov eax,[eax+10Eh]"
-"	      0050405e    mov [ebp-14h],eax"
+"	      0050405e    mov mp.id,eax"
 );
 // LINE 1754:
 	asm( 
-"	      00504061    mov dword ptr [ebp-8],1"
+"	      00504061    mov mp.i2num,1"
 );
 // LINE 1755:
 	asm( 
-"	      00504068    mov dword ptr [ebp-4],0"
+"	      00504068    mov mp.flags,0"
 );
 // LINE 1756:
 	asm( 
-"	      0050406f    lea eax,[ebp-18h]"
+"	      0050406f    lea eax,mp.op"
 "	      00504072    push eax"
 "	      00504073    call 004FBD4Ah"
 "	      00504078    add esp,4"
@@ -4524,7 +4524,7 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 // LINE 1762:
 	asm( 
 "	      0050407b    push 0"
-"	      0050407d    mov eax,[ebp-1Ch]"
+"	      0050407d    mov eax,this"
 "	      00504080    add eax,24h"
 "	      00504083    push eax"
 "	      00504084    push 8"
@@ -4552,38 +4552,38 @@ void AutomobileClass::AdjustSpeed() {
 "	      005040a0    push ebx"
 "	      005040a1    push esi"
 "	      005040a2    push edi"
-"	      005040a3    mov [ebp-4],ecx"
+"	      005040a3    mov this,ecx"
 );
 // LINE 1773:
 	asm( 
-"	      005040a6    mov eax,[ebp-4]"
+"	      005040a6    mov eax,this"
 "	      005040a9    cmp dword ptr [eax+92h],0"
 "	      005040b0    je near ptr 005040CDh"
-"	      005040b6    mov eax,[ebp-4]"
+"	      005040b6    mov eax,this"
 "	      005040b9    mov eax,[eax+0B6h]"
-"	      005040bf    mov ecx,[ebp-4]"
+"	      005040bf    mov ecx,this"
 "	      005040c2    mov [ecx+0DEh],eax"
 "	      005040c8    jmp near ptr 005040DFh"
-"	      005040cd    mov eax,[ebp-4]"
+"	      005040cd    mov eax,this"
 "	      005040d0    mov eax,[eax+0B2h]"
-"	      005040d6    mov ecx,[ebp-4]"
+"	      005040d6    mov ecx,this"
 "	      005040d9    mov [ecx+0DEh],eax"
 );
 // LINE 1775:
 	asm( 
-"	      005040df    mov eax,[ebp-4]"
+"	      005040df    mov eax,this"
 "	      005040e2    test byte ptr [eax+9],10h"
 "	      005040e6    je near ptr 0050410Ch"
 );
 // LINE 1776:
 	asm( 
 "	      005040ec    push 1C000h"
-"	      005040f1    mov eax,[ebp-4]"
+"	      005040f1    mov eax,this"
 "	      005040f4    mov eax,[eax+0DEh]"
 "	      005040fa    push eax"
 "	      005040fb    call 004D19BDh"
 "	      00504100    add esp,8"
-"	      00504103    mov ecx,[ebp-4]"
+"	      00504103    mov ecx,this"
 "	      00504106    mov [ecx+0DEh],eax"
 );
 // LINE 1777:
@@ -4607,16 +4607,16 @@ void AutomobileClass::Reset() {
 "	      0050411c    push ebx"
 "	      0050411d    push esi"
 "	      0050411e    push edi"
-"	      0050411f    mov [ebp-4],ecx"
+"	      0050411f    mov this,ecx"
 );
 // LINE 1791:
 	asm( 
-"	      00504122    mov ecx,[ebp-4]"
+"	      00504122    mov ecx,this"
 "	      00504125    call 00503E6Eh"
 );
 // LINE 1792:
 	asm( 
-"	      0050412a    mov eax,[ebp-4]"
+"	      0050412a    mov eax,this"
 "	      0050412d    mov dword ptr [eax+8],1"
 );
 // LINE 1794:
@@ -4640,14 +4640,14 @@ int32_t AutomobileClass::AmIABadGuy() {
 "	      00504144    push ebx"
 "	      00504145    push esi"
 "	      00504146    push edi"
-"	      00504147    mov [ebp-4],ecx"
+"	      00504147    mov this,ecx"
 );
 // LINE 1799:
 	asm( 
-"	      0050414a    mov eax,[ebp-4]"
+"	      0050414a    mov eax,this"
 "	      0050414d    cmp dword ptr [eax+4],11Eh"
 "	      00504154    je near ptr 00504167h"
-"	      0050415a    mov eax,[ebp-4]"
+"	      0050415a    mov eax,this"
 "	      0050415d    test byte ptr [eax+9],10h"
 "	      00504161    je near ptr 00504171h"
 );
@@ -4685,27 +4685,27 @@ void AutomobileClass::PullOverCiviliansInWay() {
 "	      00504183    push ebx"
 "	      00504184    push esi"
 "	      00504185    push edi"
-"	      00504186    mov [ebp-30h],ecx"
+"	      00504186    mov this,ecx"
 );
 // LINE 1808:
 	asm( 
 "	      00504189    push 1"
-"	      0050418b    lea ecx,[ebp-14h]"
+"	      0050418b    lea ecx,spiral.currDist"
 "	      0050418e    call 00542DC0h"
 );
 // LINE 1810:
 	asm( 
-"	      00504193    mov eax,[ebp-30h]"
+"	      00504193    mov eax,this"
 "	      00504196    mov ax,[eax+7Ch]"
 "	      0050419a    mov [ebp-18h],ax"
 );
 // LINE 1815:
 	asm( 
 "	      0050419e    xor eax,eax"
-"	      005041a0    mov al,[ebp-17h]"
+"	      005041a0    mov al,scanLoc.y"
 "	      005041a3    mov [ebp-24h],eax"
 "	      005041a6    xor eax,eax"
-"	      005041a8    mov al,[ebp-18h]"
+"	      005041a8    mov al,scanLoc.x"
 "	      005041ab    mov [ebp-28h],eax"
 );
 // LINE 1816:
@@ -4729,27 +4729,27 @@ void AutomobileClass::PullOverCiviliansInWay() {
 "	      005041f7    jmp near ptr 005041FCh"
 "	      005041fc    mov eax,[ebp-20h]"
 "	      005041ff    mov eax,[eax+10h]"
-"	      00504202    mov [ebp-4],eax"
+"	      00504202    mov currentObject,eax"
 );
 // LINE 1819:
 	asm( 
-"	      00504205    cmp dword ptr [ebp-4],0"
+"	      00504205    cmp currentObject,0"
 "	      00504209    je near ptr 00504314h"
 );
 // LINE 1822:
 // Block start:
 	class AutomobileClass* pCar;
 	asm( 
-"	      0050420f    mov eax,[ebp-30h]"
+"	      0050420f    mov eax,this"
 "	      00504212    add eax,0Ch"
-"	      00504215    cmp eax,[ebp-4]"
+"	      00504215    cmp eax,currentObject"
 "	      00504218    jne near ptr 0050422Bh"
 );
 // LINE 1824:
 	asm( 
-"	      0050421e    mov eax,[ebp-4]"
+"	      0050421e    mov eax,currentObject"
 "	      00504221    mov eax,[eax]"
-"	      00504223    mov [ebp-4],eax"
+"	      00504223    mov currentObject,eax"
 );
 // LINE 1825:
 	asm( 
@@ -4757,30 +4757,30 @@ void AutomobileClass::PullOverCiviliansInWay() {
 );
 // LINE 1829:
 	asm( 
-"	      0050422b    mov eax,[ebp-4]"
+"	      0050422b    mov eax,currentObject"
 "	      0050422e    movsx eax,word ptr [eax+0Eh]"
 "	      00504232    mov eax,[eax*4+608F80h]"
-"	      00504239    mov [ebp-1Ch],eax"
+"	      00504239    mov pCar,eax"
 );
 // LINE 1831:
 	asm( 
-"	      0050423c    mov eax,[ebp-4]"
+"	      0050423c    mov eax,currentObject"
 "	      0050423f    movsx eax,word ptr [eax+0Ch]"
 "	      00504243    test al,10h"
 "	      00504245    je near ptr 00504307h"
-"	      0050424b    mov ecx,[ebp-1Ch]"
+"	      0050424b    mov ecx,pCar"
 "	      0050424e    call 005045B6h"
 "	      00504253    test eax,eax"
 "	      00504255    je near ptr 00504307h"
 );
 // LINE 1836:
 	asm( 
-"	      0050425b    mov eax,[ebp-1Ch]"
+"	      0050425b    mov eax,pCar"
 "	      0050425e    test byte ptr [eax+9],13h"
 "	      00504262    je near ptr 00504274h"
 "	      00504268    mov dword ptr [ebp-2Ch],1"
 "	      0050426f    jmp near ptr 005042CBh"
-"	      00504274    mov eax,[ebp-1Ch]"
+"	      00504274    mov eax,pCar"
 "	      00504277    mov eax,[eax+4]"
 "	      0050427a    mov [ebp-34h],eax"
 "	      0050427d    jmp near ptr 00504293h"
@@ -4798,28 +4798,28 @@ void AutomobileClass::PullOverCiviliansInWay() {
 "	      005042c6    jmp near ptr 005042CBh"
 "	      005042cb    cmp dword ptr [ebp-2Ch],0"
 "	      005042cf    je near ptr 005042F5h"
-"	      005042d5    mov eax,[ebp-1Ch]"
+"	      005042d5    mov eax,pCar"
 "	      005042d8    cmp dword ptr [eax+4],11Eh"
 "	      005042df    jne near ptr 00504307h"
-"	      005042e5    mov eax,[ebp-30h]"
+"	      005042e5    mov eax,this"
 "	      005042e8    cmp dword ptr [eax+4],11Dh"
 "	      005042ef    jne near ptr 00504307h"
 );
 // LINE 1837:
 	asm( 
-"	      005042f5    mov eax,[ebp-30h]"
+"	      005042f5    mov eax,this"
 "	      005042f8    mov eax,[eax+4]"
 "	      005042fb    push eax"
-"	      005042fc    mov eax,[ebp-1Ch]"
+"	      005042fc    mov eax,pCar"
 "	      005042ff    mov eax,[eax]"
-"	      00504301    mov ecx,[ebp-1Ch]"
+"	      00504301    mov ecx,pCar"
 "	      00504304    call dword ptr [eax+4]"
 );
 // LINE 1840:
 	asm( 
-"	      00504307    mov eax,[ebp-4]"
+"	      00504307    mov eax,currentObject"
 "	      0050430a    mov eax,[eax]"
-"	      0050430c    mov [ebp-4],eax"
+"	      0050430c    mov currentObject,eax"
 );
 // LINE 1841:
 // Block end:
@@ -4828,9 +4828,9 @@ void AutomobileClass::PullOverCiviliansInWay() {
 );
 // LINE 1843:
 	asm( 
-"	      00504314    lea eax,[ebp-18h]"
+"	      00504314    lea eax,scanLoc.x"
 "	      00504317    push eax"
-"	      00504318    lea ecx,[ebp-14h]"
+"	      00504318    lea ecx,spiral.currDist"
 "	      0050431b    call 00542E03h"
 "	      00504320    test eax,eax"
 "	      00504322    jne near ptr 0050419Eh"
@@ -4860,25 +4860,25 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      0050433d    push ebx"
 "	      0050433e    push esi"
 "	      0050433f    push edi"
-"	      00504340    mov [ebp-30h],ecx"
+"	      00504340    mov this,ecx"
 );
 // LINE 1878:
 	asm( 
-"	      00504343    mov eax,[ebp-30h]"
+"	      00504343    mov eax,this"
 "	      00504346    mov dword ptr [eax+14h],0"
 );
 // LINE 1881:
 	asm( 
-"	      0050434d    mov eax,[ebp-30h]"
+"	      0050434d    mov eax,this"
 "	      00504350    mov eax,[eax+4]"
 "	      00504353    push eax"
 "	      00504354    call 004D8821h"
 "	      00504359    add esp,4"
-"	      0050435c    mov [ebp-28h],eax"
+"	      0050435c    mov object,eax"
 );
 // LINE 1884:
 	asm( 
-"	      0050435f    cmp dword ptr [ebp-28h],0"
+"	      0050435f    cmp object,0"
 "	      00504363    jne near ptr 00504385h"
 "	      00504369    push 75Ch"
 "	      0050436e    push 5B5560h"
@@ -4890,13 +4890,13 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 );
 // LINE 1887:
 	asm( 
-"	      0050438a    cmp dword ptr [ebp+8],0"
+"	      0050438a    cmp instanceID,0"
 "	      0050438e    jne near ptr 005043A2h"
 );
 // LINE 1890:
 	asm( 
-"	      00504394    mov eax,[ebp-28h]"
-"	      00504397    mov ecx,[ebp-30h]"
+"	      00504394    mov eax,object"
+"	      00504397    mov ecx,this"
 "	      0050439a    mov [ecx+14h],eax"
 );
 // LINE 1899:
@@ -4907,7 +4907,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 // Block start:
 	char * objectMemory;
 	asm( 
-"	      005043a2    mov eax,[ebp-28h]"
+"	      005043a2    mov eax,object"
 "	      005043a5    push eax"
 "	      005043a6    call 004D8520h"
 "	      005043ab    add esp,4"
@@ -4916,11 +4916,11 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      005043b4    push eax"
 "	      005043b5    call 004CB4ACh"
 "	      005043ba    add esp,8"
-"	      005043bd    mov [ebp-2Ch],eax"
+"	      005043bd    mov objectMemory,eax"
 );
 // LINE 1905:
 	asm( 
-"	      005043c0    cmp dword ptr [ebp-2Ch],0"
+"	      005043c0    cmp objectMemory,0"
 "	      005043c4    jne near ptr 005043E6h"
 "	      005043ca    push 771h"
 "	      005043cf    push 5B558Ch"
@@ -4932,18 +4932,18 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 );
 // LINE 1908:
 	asm( 
-"	      005043eb    mov eax,[ebp-2Ch]"
+"	      005043eb    mov eax,objectMemory"
 "	      005043ee    push eax"
-"	      005043ef    mov eax,[ebp-28h]"
+"	      005043ef    mov eax,object"
 "	      005043f2    push eax"
 "	      005043f3    call 004D8570h"
 "	      005043f8    add esp,8"
-"	      005043fb    mov ecx,[ebp-30h]"
+"	      005043fb    mov ecx,this"
 "	      005043fe    mov [ecx+14h],eax"
 );
 // LINE 1909:
 	asm( 
-"	      00504401    mov eax,[ebp-30h]"
+"	      00504401    mov eax,this"
 "	      00504404    cmp dword ptr [eax+14h],0"
 "	      00504408    jne near ptr 0050442Ah"
 "	      0050440e    push 775h"
@@ -4958,7 +4958,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	asm( 
 "	      0050442f    mov eax,ds:[5B4780h]"
 "	      00504434    push eax"
-"	      00504435    mov eax,[ebp-30h]"
+"	      00504435    mov eax,this"
 "	      00504438    mov eax,[eax+14h]"
 "	      0050443b    push eax"
 "	      0050443c    call 004D84DBh"
@@ -4967,42 +4967,42 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 // LINE 1916:
 // Block end:
 	asm( 
-"	      00504444    mov eax,[ebp+8]"
-"	      00504447    mov ecx,[ebp-30h]"
+"	      00504444    mov eax,instanceID"
+"	      00504447    mov ecx,this"
 "	      0050444a    mov [ecx+1Ah],ax"
 );
 // LINE 1917:
 	asm( 
-"	      0050444e    mov eax,[ebp-30h]"
+"	      0050444e    mov eax,this"
 "	      00504451    mov word ptr [eax+18h],11h"
 );
 // LINE 1919:
 	asm( 
-"	      00504457    lea eax,[ebp-24h]"
+"	      00504457    lea eax,objectInfo.Faces"
 "	      0050445a    push eax"
-"	      0050445b    mov eax,[ebp-28h]"
+"	      0050445b    mov eax,object"
 "	      0050445e    push eax"
 "	      0050445f    call 004D8859h"
 "	      00504464    add esp,8"
 );
 // LINE 1921:
 	asm( 
-"	      00504467    mov eax,[ebp-18h]"
-"	      0050446a    mov ecx,[ebp-30h]"
+"	      00504467    mov eax,objectInfo.Radius"
+"	      0050446a    mov ecx,this"
 "	      0050446d    mov [ecx+1Ch],eax"
 );
 // LINE 1922:
 	asm( 
-"	      00504470    mov eax,[ebp-28h]"
+"	      00504470    mov eax,object"
 "	      00504473    push eax"
 "	      00504474    call 004D3E9Dh"
 "	      00504479    add esp,4"
-"	      0050447c    mov ecx,[ebp-30h]"
+"	      0050447c    mov ecx,this"
 "	      0050447f    mov [ecx+20h],eax"
 );
 // LINE 1925:
 	asm( 
-"	      00504482    mov eax,[ebp-30h]"
+"	      00504482    mov eax,this"
 "	      00504485    mov dword ptr [eax+8],0"
 );
 // LINE 1926:
@@ -5017,7 +5017,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      0050449e    sub eax,edx"
 "	      005044a0    shl eax,11h"
 "	      005044a3    add eax,240000h"
-"	      005044a8    mov ecx,[ebp-30h]"
+"	      005044a8    mov ecx,this"
 "	      005044ab    mov [ecx+0B2h],eax"
 );
 // LINE 1927:
@@ -5032,19 +5032,19 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      005044c3    sub eax,edx"
 "	      005044c5    shl eax,11h"
 "	      005044c8    add eax,280000h"
-"	      005044cd    mov ecx,[ebp-30h]"
+"	      005044cd    mov ecx,this"
 "	      005044d0    mov [ecx+0B6h],eax"
 );
 // LINE 1931:
 	asm( 
-"	      005044d6    mov eax,[ebp-30h]"
+"	      005044d6    mov eax,this"
 "	      005044d9    mov eax,[eax+4]"
 "	      005044dc    mov [ebp-34h],eax"
 "	      005044df    jmp near ptr 00504510h"
 );
 // LINE 1937:
 	asm( 
-"	      005044e4    mov eax,[ebp-30h]"
+"	      005044e4    mov eax,this"
 "	      005044e7    mov dword ptr [eax+0BAh],1E0000h"
 );
 // LINE 1938:
@@ -5053,12 +5053,12 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 );
 // LINE 1940:
 	asm( 
-"	      005044f6    mov ecx,[ebp-30h]"
+"	      005044f6    mov ecx,this"
 "	      005044f9    call 00509CF7h"
 );
 // LINE 1941:
 	asm( 
-"	      005044fe    mov eax,[ebp-30h]"
+"	      005044fe    mov eax,this"
 "	      00504501    mov dword ptr [eax+0BAh],0A0000h"
 );
 // LINE 1942:
@@ -5072,13 +5072,13 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 );
 // LINE 1949:
 	asm( 
-"	      0050452f    mov eax,[ebp-30h]"
-"	      00504532    mov ecx,[ebp+8]"
+"	      0050452f    mov eax,this"
+"	      00504532    mov ecx,instanceID"
 "	      00504535    mov [ecx*4+608F80h],eax"
 );
 // LINE 1950:
 	asm( 
-"	      0050453c    mov eax,[ebp-30h]"
+"	      0050453c    mov eax,this"
 "	      0050453f    or dword ptr [eax+8],1"
 );
 // LINE 1952:
@@ -5106,13 +5106,13 @@ int32_t AutomobileClass::Initialize(int32_t instanceID) {
 "	      0050455a    push ebx"
 "	      0050455b    push esi"
 "	      0050455c    push edi"
-"	      0050455d    mov [ebp-4],ecx"
+"	      0050455d    mov this,ecx"
 );
 // LINE 1979:
 	asm( 
-"	      00504560    mov eax,[ebp+8]"
+"	      00504560    mov eax,instanceID"
 "	      00504563    push eax"
-"	      00504564    mov ecx,[ebp-4]"
+"	      00504564    mov ecx,this"
 "	      00504567    call 00504337h"
 "	      0050456c    jmp near ptr 00504571h"
 );
@@ -5216,37 +5216,37 @@ int32_t AutomobileClass::CanIPullOver() {
 "	      005045bc    push ebx"
 "	      005045bd    push esi"
 "	      005045be    push edi"
-"	      005045bf    mov [ebp-3Ch],ecx"
+"	      005045bf    mov this,ecx"
 );
 // LINE 2099:
 	asm( 
-"	      005045c2    mov eax,[ebp-3Ch]"
+"	      005045c2    mov eax,this"
 "	      005045c5    xor ecx,ecx"
 "	      005045c7    mov cl,[eax+7Ch]"
 "	      005045ca    test ecx,ecx"
 "	      005045cc    jl near ptr 0050460Ah"
-"	      005045d2    mov eax,[ebp-3Ch]"
+"	      005045d2    mov eax,this"
 "	      005045d5    xor ecx,ecx"
 "	      005045d7    mov cl,[eax+7Dh]"
 "	      005045da    test ecx,ecx"
 "	      005045dc    jl near ptr 0050460Ah"
-"	      005045e2    mov eax,[ebp-3Ch]"
+"	      005045e2    mov eax,this"
 "	      005045e5    xor ecx,ecx"
 "	      005045e7    mov cl,[eax+7Ch]"
 "	      005045ea    cmp ecx,80h"
 "	      005045f0    jge near ptr 0050460Ah"
-"	      005045f6    mov eax,[ebp-3Ch]"
+"	      005045f6    mov eax,this"
 "	      005045f9    xor ecx,ecx"
 "	      005045fb    mov cl,[eax+7Dh]"
 "	      005045fe    cmp ecx,80h"
 "	      00504604    jl near ptr 00504615h"
 "	      0050460a    mov word ptr [ebp-34h],0"
 "	      00504610    jmp near ptr 00504661h"
-"	      00504615    mov eax,[ebp-3Ch]"
+"	      00504615    mov eax,this"
 "	      00504618    xor ecx,ecx"
 "	      0050461a    mov cl,[eax+7Ch]"
 "	      0050461d    mov eax,[ecx*4+638F70h]"
-"	      00504624    mov ecx,[ebp-3Ch]"
+"	      00504624    mov ecx,this"
 "	      00504627    xor edx,edx"
 "	      00504629    mov dl,[ecx+7Dh]"
 "	      0050462c    xor ecx,ecx"
@@ -5254,11 +5254,11 @@ int32_t AutomobileClass::CanIPullOver() {
 "	      00504631    and ecx,2"
 "	      00504634    movsx eax,cx"
 "	      00504637    shl eax,0Eh"
-"	      0050463a    mov ecx,[ebp-3Ch]"
+"	      0050463a    mov ecx,this"
 "	      0050463d    xor edx,edx"
 "	      0050463f    mov dl,[ecx+7Ch]"
 "	      00504642    mov ecx,[edx*4+639850h]"
-"	      00504649    mov edx,[ebp-3Ch]"
+"	      00504649    mov edx,this"
 "	      0050464c    xor ebx,ebx"
 "	      0050464e    mov bl,[edx+7Dh]"
 "	      00504651    xor edx,edx"
@@ -5288,7 +5288,7 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 // LINE 2103:
 	asm( 
-"	      005046a8    mov eax,[ebp-3Ch]"
+"	      005046a8    mov eax,this"
 "	      005046ab    test byte ptr [eax+8],80h"
 "	      005046af    je near ptr 005046BCh"
 );
@@ -5299,7 +5299,7 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 // LINE 2107:
 	asm( 
-"	      005046bc    mov eax,[ebp-3Ch]"
+"	      005046bc    mov eax,this"
 "	      005046bf    cmp dword ptr [eax+9Eh],0"
 "	      005046c6    jle near ptr 005046D3h"
 );
@@ -5310,73 +5310,73 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 // LINE 2112:
 	asm( 
-"	      005046d3    mov eax,[ebp-3Ch]"
+"	      005046d3    mov eax,this"
 "	      005046d6    mov eax,[eax+0F2h]"
 "	      005046dc    mov eax,[eax]"
 "	      005046de    shl eax,5"
-"	      005046e1    mov ecx,[ebp-3Ch]"
+"	      005046e1    mov ecx,this"
 "	      005046e4    add eax,[ecx+24h]"
-"	      005046e7    mov [ebp-18h],eax"
+"	      005046e7    mov nextpoint.x,eax"
 );
 // LINE 2113:
 	asm( 
-"	      005046ea    mov eax,[ebp-3Ch]"
+"	      005046ea    mov eax,this"
 "	      005046ed    mov eax,[eax+0F2h]"
 "	      005046f3    mov eax,[eax+8]"
 "	      005046f6    shl eax,5"
-"	      005046f9    mov ecx,[ebp-3Ch]"
+"	      005046f9    mov ecx,this"
 "	      005046fc    add eax,[ecx+2Ch]"
-"	      005046ff    mov [ebp-10h],eax"
+"	      005046ff    mov nextpoint.z,eax"
 );
 // LINE 2114:
 	asm( 
-"	      00504702    mov eax,[ebp-18h]"
+"	      00504702    mov eax,nextpoint.x"
 "	      00504705    add eax,20000000h"
 "	      0050470a    sar eax,16h"
-"	      0050470d    mov [ebp-8],al"
+"	      0050470d    mov x,al"
 );
 // LINE 2115:
 	asm( 
 "	      00504710    mov eax,20000000h"
-"	      00504715    sub eax,[ebp-10h]"
+"	      00504715    sub eax,nextpoint.z"
 "	      00504718    sar eax,16h"
-"	      0050471b    mov [ebp-0Ch],al"
+"	      0050471b    mov y,al"
 );
 // LINE 2116:
 	asm( 
 "	      0050471e    xor eax,eax"
-"	      00504720    mov al,[ebp-8]"
+"	      00504720    mov al,x"
 "	      00504723    test eax,eax"
 "	      00504725    jl near ptr 00504758h"
 "	      0050472b    xor eax,eax"
-"	      0050472d    mov al,[ebp-0Ch]"
+"	      0050472d    mov al,y"
 "	      00504730    test eax,eax"
 "	      00504732    jl near ptr 00504758h"
 "	      00504738    xor eax,eax"
-"	      0050473a    mov al,[ebp-8]"
+"	      0050473a    mov al,x"
 "	      0050473d    cmp eax,80h"
 "	      00504742    jge near ptr 00504758h"
 "	      00504748    xor eax,eax"
-"	      0050474a    mov al,[ebp-0Ch]"
+"	      0050474a    mov al,y"
 "	      0050474d    cmp eax,80h"
 "	      00504752    jl near ptr 00504763h"
 "	      00504758    mov word ptr [ebp-2Ch],0"
 "	      0050475e    jmp near ptr 005047A3h"
 "	      00504763    xor eax,eax"
-"	      00504765    mov al,[ebp-8]"
+"	      00504765    mov al,x"
 "	      00504768    mov eax,[eax*4+638F70h]"
 "	      0050476f    xor ecx,ecx"
-"	      00504771    mov cl,[ebp-0Ch]"
+"	      00504771    mov cl,y"
 "	      00504774    xor edx,edx"
 "	      00504776    mov dl,[eax+ecx]"
 "	      00504779    and edx,2"
 "	      0050477c    movsx eax,dx"
 "	      0050477f    shl eax,0Eh"
 "	      00504782    xor ecx,ecx"
-"	      00504784    mov cl,[ebp-8]"
+"	      00504784    mov cl,x"
 "	      00504787    mov ecx,[ecx*4+639850h]"
 "	      0050478e    xor edx,edx"
-"	      00504790    mov dl,[ebp-0Ch]"
+"	      00504790    mov dl,y"
 "	      00504793    xor ebx,ebx"
 "	      00504795    mov bl,[ecx+edx]"
 "	      00504798    or eax,ebx"
@@ -5404,11 +5404,11 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 // LINE 2119:
 	asm( 
-"	      005047ea    mov eax,[ebp-3Ch]"
+"	      005047ea    mov eax,this"
 "	      005047ed    xor ecx,ecx"
 "	      005047ef    mov cl,[eax+7Dh]"
 "	      005047f2    mov [ebp-24h],ecx"
-"	      005047f5    mov eax,[ebp-3Ch]"
+"	      005047f5    mov eax,this"
 "	      005047f8    xor ecx,ecx"
 "	      005047fa    mov cl,[eax+7Ch]"
 "	      005047fd    mov [ebp-28h],ecx"
@@ -5431,25 +5431,25 @@ int32_t AutomobileClass::CanIPullOver() {
 "	      00504849    jmp near ptr 0050484Eh"
 "	      0050484e    mov eax,[ebp-20h]"
 "	      00504851    mov eax,[eax+10h]"
-"	      00504854    mov [ebp-4],eax"
+"	      00504854    mov currentObject,eax"
 );
 // LINE 2122:
 	asm( 
-"	      00504857    cmp dword ptr [ebp-4],0"
+"	      00504857    cmp currentObject,0"
 "	      0050485b    je near ptr 005048BEh"
 );
 // LINE 2125:
 	asm( 
-"	      00504861    mov eax,[ebp-3Ch]"
+"	      00504861    mov eax,this"
 "	      00504864    add eax,0Ch"
-"	      00504867    cmp eax,[ebp-4]"
+"	      00504867    cmp eax,currentObject"
 "	      0050486a    jne near ptr 0050487Dh"
 );
 // LINE 2127:
 	asm( 
-"	      00504870    mov eax,[ebp-4]"
+"	      00504870    mov eax,currentObject"
 "	      00504873    mov eax,[eax]"
-"	      00504875    mov [ebp-4],eax"
+"	      00504875    mov currentObject,eax"
 );
 // LINE 2128:
 	asm( 
@@ -5457,7 +5457,7 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 // LINE 2133:
 	asm( 
-"	      0050487d    mov eax,[ebp-4]"
+"	      0050487d    mov eax,currentObject"
 "	      00504880    movsx eax,word ptr [eax+0Ch]"
 "	      00504884    test al,10h"
 "	      00504886    je near ptr 005048B1h"
@@ -5466,14 +5466,14 @@ int32_t AutomobileClass::CanIPullOver() {
 // Block start:
 	class AutomobileClass* car;
 	asm( 
-"	      0050488c    mov eax,[ebp-4]"
+"	      0050488c    mov eax,currentObject"
 "	      0050488f    movsx eax,word ptr [eax+0Eh]"
 "	      00504893    mov eax,[eax*4+608F80h]"
-"	      0050489a    mov [ebp-1Ch],eax"
+"	      0050489a    mov car,eax"
 );
 // LINE 2139:
 	asm( 
-"	      0050489d    mov eax,[ebp-1Ch]"
+"	      0050489d    mov eax,car"
 "	      005048a0    test byte ptr [eax+8],0F0h"
 "	      005048a4    je near ptr 005048B1h"
 );
@@ -5485,9 +5485,9 @@ int32_t AutomobileClass::CanIPullOver() {
 // LINE 2143:
 // Block end:
 	asm( 
-"	      005048b1    mov eax,[ebp-4]"
+"	      005048b1    mov eax,currentObject"
 "	      005048b4    mov eax,[eax]"
-"	      005048b6    mov [ebp-4],eax"
+"	      005048b6    mov currentObject,eax"
 );
 // LINE 2144:
 	asm( 
@@ -5518,16 +5518,16 @@ void AutomobileClass::PullOver(short __formal) {
 "	      005048d3    push ebx"
 "	      005048d4    push esi"
 "	      005048d5    push edi"
-"	      005048d6    mov [ebp-8],ecx"
+"	      005048d6    mov this,ecx"
 );
 // LINE 2153:
 	asm( 
-"	      005048d9    mov eax,[ebp-8]"
+"	      005048d9    mov eax,this"
 "	      005048dc    test byte ptr [eax+9],13h"
 "	      005048e0    je near ptr 005048F2h"
 "	      005048e6    mov dword ptr [ebp-4],1"
 "	      005048ed    jmp near ptr 00504949h"
-"	      005048f2    mov eax,[ebp-8]"
+"	      005048f2    mov eax,this"
 "	      005048f5    mov eax,[eax+4]"
 "	      005048f8    mov [ebp-0Ch],eax"
 "	      005048fb    jmp near ptr 00504911h"
@@ -5548,7 +5548,7 @@ void AutomobileClass::PullOver(short __formal) {
 );
 // LINE 2154:
 	asm( 
-"	      00504953    mov eax,[ebp-8]"
+"	      00504953    mov eax,this"
 "	      00504956    mov dword ptr [eax+0C6h],7D000000h"
 );
 // LINE 2155:
@@ -5557,39 +5557,39 @@ void AutomobileClass::PullOver(short __formal) {
 );
 // LINE 2156:
 	asm( 
-"	      00504965    mov eax,[ebp-8]"
+"	      00504965    mov eax,this"
 "	      00504968    mov dword ptr [eax+0C6h],40000h"
 );
 // LINE 2158:
 	asm( 
-"	      00504972    mov eax,[ebp-8]"
+"	      00504972    mov eax,this"
 "	      00504975    test byte ptr [eax+8],70h"
 "	      00504979    jne near ptr 0050499Ah"
 );
 // LINE 2160:
 	asm( 
-"	      0050497f    mov eax,[ebp-8]"
+"	      0050497f    mov eax,this"
 "	      00504982    or dword ptr [eax+8],10h"
 );
 // LINE 2161:
 	asm( 
-"	      00504986    mov eax,[ebp-8]"
+"	      00504986    mov eax,this"
 "	      00504989    and dword ptr [eax+8],0FFFFFF9Fh"
 );
 // LINE 2162:
 	asm( 
-"	      0050498d    mov eax,[ebp-8]"
+"	      0050498d    mov eax,this"
 "	      00504990    mov dword ptr [eax+9Ah],0"
 );
 // LINE 2165:
 	asm( 
-"	      0050499a    mov eax,[ebp-8]"
+"	      0050499a    mov eax,this"
 "	      0050499d    test byte ptr [eax+8],20h"
 "	      005049a1    je near ptr 005049F2h"
-"	      005049a7    mov eax,[ebp-8]"
+"	      005049a7    mov eax,this"
 "	      005049aa    test byte ptr [eax+9],10h"
 "	      005049ae    je near ptr 005049F2h"
-"	      005049b4    mov eax,[ebp-8]"
+"	      005049b4    mov eax,this"
 "	      005049b7    cmp dword ptr [eax+0F6h],0"
 "	      005049be    je near ptr 005049F2h"
 );
@@ -5597,19 +5597,19 @@ void AutomobileClass::PullOver(short __formal) {
 	asm( 
 "	      005049c4    push 7"
 "	      005049c6    push 0Eh"
-"	      005049c8    mov ecx,[ebp-8]"
+"	      005049c8    mov ecx,this"
 "	      005049cb    call 0050217Ch"
 "	      005049d0    test eax,eax"
 "	      005049d2    je near ptr 005049F2h"
 );
 // LINE 2169:
 	asm( 
-"	      005049d8    mov eax,[ebp-8]"
+"	      005049d8    mov eax,this"
 "	      005049db    mov dword ptr [eax+0F6h],0"
 );
 // LINE 2170:
 	asm( 
-"	      005049e5    mov eax,[ebp-8]"
+"	      005049e5    mov eax,this"
 "	      005049e8    mov dword ptr [eax+0FEh],780000h"
 );
 // LINE 2173:
@@ -5635,12 +5635,12 @@ int32_t AutomobileClass::CanIPullOut() {
 "	      00504a04    push ebx"
 "	      00504a05    push esi"
 "	      00504a06    push edi"
-"	      00504a07    mov [ebp-14h],ecx"
-"	      00504a0a    mov eax,[ebp-14h]"
+"	      00504a07    mov this,ecx"
+"	      00504a0a    mov eax,this"
 "	      00504a0d    xor ecx,ecx"
 "	      00504a0f    mov cl,[eax+7Dh]"
 "	      00504a12    mov [ebp-0Ch],ecx"
-"	      00504a15    mov eax,[ebp-14h]"
+"	      00504a15    mov eax,this"
 "	      00504a18    xor ecx,ecx"
 "	      00504a1a    mov cl,[eax+7Ch]"
 "	      00504a1d    mov [ebp-10h],ecx"
@@ -5666,25 +5666,25 @@ int32_t AutomobileClass::CanIPullOut() {
 "	      00504a69    jmp near ptr 00504A6Eh"
 "	      00504a6e    mov eax,[ebp-8]"
 "	      00504a71    mov eax,[eax+10h]"
-"	      00504a74    mov [ebp-4],eax"
+"	      00504a74    mov currentObject,eax"
 );
 // LINE 2181:
 	asm( 
-"	      00504a77    cmp dword ptr [ebp-4],0"
+"	      00504a77    cmp currentObject,0"
 "	      00504a7b    je near ptr 00504AFBh"
 );
 // LINE 2184:
 	asm( 
-"	      00504a81    mov eax,[ebp-14h]"
+"	      00504a81    mov eax,this"
 "	      00504a84    add eax,0Ch"
-"	      00504a87    cmp eax,[ebp-4]"
+"	      00504a87    cmp eax,currentObject"
 "	      00504a8a    jne near ptr 00504A9Dh"
 );
 // LINE 2186:
 	asm( 
-"	      00504a90    mov eax,[ebp-4]"
+"	      00504a90    mov eax,currentObject"
 "	      00504a93    mov eax,[eax]"
-"	      00504a95    mov [ebp-4],eax"
+"	      00504a95    mov currentObject,eax"
 );
 // LINE 2187:
 	asm( 
@@ -5692,21 +5692,21 @@ int32_t AutomobileClass::CanIPullOut() {
 );
 // LINE 2192:
 	asm( 
-"	      00504a9d    mov eax,[ebp-4]"
+"	      00504a9d    mov eax,currentObject"
 "	      00504aa0    movsx eax,word ptr [eax+0Ch]"
 "	      00504aa4    test al,10h"
 "	      00504aa6    je near ptr 00504AEEh"
 );
 // LINE 2195:
 	asm( 
-"	      00504aac    mov eax,[ebp-4]"
+"	      00504aac    mov eax,currentObject"
 "	      00504aaf    movsx eax,word ptr [eax+0Eh]"
 "	      00504ab3    mov eax,[eax*4+608F80h]"
-"	      00504aba    mov ecx,[ebp-14h]"
+"	      00504aba    mov ecx,this"
 "	      00504abd    mov ecx,[ecx+82h]"
 "	      00504ac3    cmp [eax+82h],ecx"
 "	      00504ac9    jne near ptr 00504AEEh"
-"	      00504acf    mov eax,[ebp-4]"
+"	      00504acf    mov eax,currentObject"
 "	      00504ad2    movsx eax,word ptr [eax+0Eh]"
 "	      00504ad6    mov eax,[eax*4+608F80h]"
 "	      00504add    test byte ptr [eax+8],20h"
@@ -5719,9 +5719,9 @@ int32_t AutomobileClass::CanIPullOut() {
 );
 // LINE 2199:
 	asm( 
-"	      00504aee    mov eax,[ebp-4]"
+"	      00504aee    mov eax,currentObject"
 "	      00504af1    mov eax,[eax]"
-"	      00504af3    mov [ebp-4],eax"
+"	      00504af3    mov currentObject,eax"
 );
 // LINE 2200:
 	asm( 
@@ -5752,27 +5752,27 @@ void AutomobileClass::PullOut() {
 "	      00504b10    push ebx"
 "	      00504b11    push esi"
 "	      00504b12    push edi"
-"	      00504b13    mov [ebp-4],ecx"
+"	      00504b13    mov this,ecx"
 );
 // LINE 2209:
 	asm( 
-"	      00504b16    mov eax,[ebp-4]"
+"	      00504b16    mov eax,this"
 "	      00504b19    test byte ptr [eax+8],20h"
 "	      00504b1d    je near ptr 00504B3Eh"
 );
 // LINE 2211:
 	asm( 
-"	      00504b23    mov eax,[ebp-4]"
+"	      00504b23    mov eax,this"
 "	      00504b26    or dword ptr [eax+8],40h"
 );
 // LINE 2212:
 	asm( 
-"	      00504b2a    mov eax,[ebp-4]"
+"	      00504b2a    mov eax,this"
 "	      00504b2d    and dword ptr [eax+8],0FFFFFFDFh"
 );
 // LINE 2213:
 	asm( 
-"	      00504b31    mov eax,[ebp-4]"
+"	      00504b31    mov eax,this"
 "	      00504b34    mov dword ptr [eax+9Ah],0D0000h"
 );
 // LINE 2215:
@@ -5796,34 +5796,34 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504b4e    push ebx"
 "	      00504b4f    push esi"
 "	      00504b50    push edi"
-"	      00504b51    mov [ebp-28h],ecx"
+"	      00504b51    mov this,ecx"
 );
 // LINE 2230:
 	asm( 
-"	      00504b54    mov eax,[ebp-28h]"
+"	      00504b54    mov eax,this"
 "	      00504b57    cmp dword ptr [eax+0EEh],9"
 "	      00504b5e    jge near ptr 00504BACh"
 );
 // LINE 2233:
 	asm( 
-"	      00504b64    mov eax,[ebp-28h]"
+"	      00504b64    mov eax,this"
 "	      00504b67    inc dword ptr [eax+0EEh]"
 );
 // LINE 2234:
 	asm( 
-"	      00504b6d    mov eax,[ebp-28h]"
+"	      00504b6d    mov eax,this"
 "	      00504b70    mov eax,[eax+96h]"
-"	      00504b76    mov ecx,[ebp-28h]"
+"	      00504b76    mov ecx,this"
 "	      00504b79    mov ecx,[ecx+0E6h]"
 "	      00504b7f    shl ecx,3"
 "	      00504b82    lea ecx,[ecx+ecx*2]"
 "	      00504b85    lea ecx,[ecx+ecx*4]"
 "	      00504b88    lea eax,[ecx+eax*4]"
-"	      00504b8b    mov ecx,[ebp-28h]"
+"	      00504b8b    mov ecx,this"
 "	      00504b8e    mov ecx,[ecx+0EEh]"
 "	      00504b94    lea ecx,[ecx+ecx*2]"
 "	      00504b97    mov eax,[eax+ecx*4+62BB30h]"
-"	      00504b9e    mov ecx,[ebp-28h]"
+"	      00504b9e    mov ecx,this"
 "	      00504ba1    mov [ecx+86h],eax"
 );
 // LINE 2235:
@@ -5832,56 +5832,56 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2239:
 	asm( 
-"	      00504bac    mov eax,[ebp-28h]"
+"	      00504bac    mov eax,this"
 "	      00504baf    add eax,7Ch"
 "	      00504bb2    push eax"
-"	      00504bb3    mov ecx,[ebp-28h]"
+"	      00504bb3    mov ecx,this"
 "	      00504bb6    call 00502A9Bh"
 );
 // LINE 2241:
 	asm( 
-"	      00504bbb    mov eax,[ebp-28h]"
+"	      00504bbb    mov eax,this"
 "	      00504bbe    mov eax,[eax+82h]"
 "	      00504bc4    mov [ebp-2Ch],eax"
 "	      00504bc7    jmp near ptr 00504C21h"
 );
 // LINE 2243:
 	asm( 
-"	      00504bcc    mov eax,[ebp-28h]"
+"	      00504bcc    mov eax,this"
 "	      00504bcf    xor ecx,ecx"
 "	      00504bd1    mov cl,[eax+7Dh]"
 "	      00504bd4    dec ecx"
-"	      00504bd5    mov eax,[ebp-28h]"
+"	      00504bd5    mov eax,this"
 "	      00504bd8    mov [eax+7Dh],cl"
 "	      00504bdb    jmp near ptr 00504C45h"
 );
 // LINE 2244:
 	asm( 
-"	      00504be0    mov eax,[ebp-28h]"
+"	      00504be0    mov eax,this"
 "	      00504be3    xor ecx,ecx"
 "	      00504be5    mov cl,[eax+7Ch]"
 "	      00504be8    inc ecx"
-"	      00504be9    mov eax,[ebp-28h]"
+"	      00504be9    mov eax,this"
 "	      00504bec    mov [eax+7Ch],cl"
 "	      00504bef    jmp near ptr 00504C45h"
 );
 // LINE 2245:
 	asm( 
-"	      00504bf4    mov eax,[ebp-28h]"
+"	      00504bf4    mov eax,this"
 "	      00504bf7    xor ecx,ecx"
 "	      00504bf9    mov cl,[eax+7Dh]"
 "	      00504bfc    inc ecx"
-"	      00504bfd    mov eax,[ebp-28h]"
+"	      00504bfd    mov eax,this"
 "	      00504c00    mov [eax+7Dh],cl"
 "	      00504c03    jmp near ptr 00504C45h"
 );
 // LINE 2246:
 	asm( 
-"	      00504c08    mov eax,[ebp-28h]"
+"	      00504c08    mov eax,this"
 "	      00504c0b    xor ecx,ecx"
 "	      00504c0d    mov cl,[eax+7Ch]"
 "	      00504c10    dec ecx"
-"	      00504c11    mov eax,[ebp-28h]"
+"	      00504c11    mov eax,this"
 "	      00504c14    mov [eax+7Ch],cl"
 "	      00504c17    jmp near ptr 00504C45h"
 );
@@ -5892,7 +5892,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504c25    ja near ptr 00504C45h"
 "	      00504c2b    mov eax,[ebp-2Ch]"
 "	      00504c2e    jmp dword ptr [eax*4+504C35h]"
-"	      00504c35    int 3"
+"	      00504c35    int"
 "	      00504c36    dec ebx"
 "	      00504c37    push eax"
 "	      00504c38    add al,ah"
@@ -5908,11 +5908,11 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2250:
 	asm( 
-"	      00504c45    mov eax,[ebp-28h]"
+"	      00504c45    mov eax,this"
 "	      00504c48    xor ecx,ecx"
 "	      00504c4a    mov cl,[eax+7Ch]"
 "	      00504c4d    mov eax,[ecx*4+639510h]"
-"	      00504c54    mov ecx,[ebp-28h]"
+"	      00504c54    mov ecx,this"
 "	      00504c57    xor edx,edx"
 "	      00504c59    mov dl,[ecx+7Dh]"
 "	      00504c5c    xor ecx,ecx"
@@ -5925,16 +5925,16 @@ void AutomobileClass::TransitionBetweenGoals() {
 // Block start:
 	unsigned short tile;
 	asm( 
-"	      00504c6e    mov eax,[ebp-28h]"
+"	      00504c6e    mov eax,this"
 "	      00504c71    xor ecx,ecx"
 "	      00504c73    mov cl,[eax+7Ch]"
 "	      00504c76    mov eax,[ecx*4+639850h]"
-"	      00504c7d    mov ecx,[ebp-28h]"
+"	      00504c7d    mov ecx,this"
 "	      00504c80    xor edx,edx"
 "	      00504c82    mov dl,[ecx+7Dh]"
 "	      00504c85    movzx ax,byte ptr [eax+edx]"
-"	      00504c8a    mov [ebp-4],ax"
-"	      00504c8e    mov ax,[ebp-4]"
+"	      00504c8a    mov tile,ax"
+"	      00504c8e    mov ax,tile"
 "	      00504c92    mov [ebp-20h],ax"
 );
 // LINE 2253:
@@ -5993,14 +5993,14 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2258:
 	asm( 
-"	      00504d69    mov eax,[ebp-28h]"
+"	      00504d69    mov eax,this"
 "	      00504d6c    and dword ptr [eax+8],0FFFFFFFDh"
 );
 // LINE 2259:
 	asm( 
-"	      00504d70    mov eax,[ebp-28h]"
+"	      00504d70    mov eax,this"
 "	      00504d73    mov eax,[eax]"
-"	      00504d75    mov ecx,[ebp-28h]"
+"	      00504d75    mov ecx,this"
 "	      00504d78    call dword ptr [eax+1Ch]"
 );
 // LINE 2260:
@@ -6010,27 +6010,27 @@ void AutomobileClass::TransitionBetweenGoals() {
 // LINE 2264:
 // Block end:
 	asm( 
-"	      00504d80    mov eax,[ebp-28h]"
+"	      00504d80    mov eax,this"
 "	      00504d83    add eax,7Ch"
 "	      00504d86    push eax"
-"	      00504d87    mov ecx,[ebp-28h]"
+"	      00504d87    mov ecx,this"
 "	      00504d8a    call 00502B74h"
 );
 // LINE 2268:
 	asm( 
-"	      00504d8f    mov eax,[ebp-28h]"
+"	      00504d8f    mov eax,this"
 "	      00504d92    mov dword ptr [eax+0EEh],0Ah"
 );
 // LINE 2272:
 	asm( 
-"	      00504d9c    mov eax,[ebp-28h]"
+"	      00504d9c    mov eax,this"
 "	      00504d9f    mov eax,[eax+82h]"
-"	      00504da5    mov ecx,[ebp-28h]"
+"	      00504da5    mov ecx,this"
 "	      00504da8    mov [ecx+0E2h],eax"
 );
 // LINE 2275:
 	asm( 
-"	      00504dae    mov eax,[ebp-28h]"
+"	      00504dae    mov eax,this"
 "	      00504db1    add eax,70h"
 "	      00504db4    push eax"
 "	      00504db5    mov ecx,5C3828h"
@@ -6038,54 +6038,54 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2283:
 	asm( 
-"	      00504dbf    mov eax,[ebp-28h]"
+"	      00504dbf    mov eax,this"
 "	      00504dc2    cmp dword ptr [eax+7Eh],0FFFFFFFEh"
 "	      00504dc6    jne near ptr 00504E58h"
 );
 // LINE 2285:
 	asm( 
-"	      00504dcc    mov eax,[ebp-28h]"
+"	      00504dcc    mov eax,this"
 "	      00504dcf    add eax,70h"
 "	      00504dd2    push eax"
-"	      00504dd3    mov eax,[ebp-28h]"
+"	      00504dd3    mov eax,this"
 "	      00504dd6    mov eax,[eax]"
-"	      00504dd8    mov ecx,[ebp-28h]"
+"	      00504dd8    mov ecx,this"
 "	      00504ddb    call dword ptr [eax+0Ch]"
-"	      00504dde    mov ecx,[ebp-28h]"
+"	      00504dde    mov ecx,this"
 "	      00504de1    mov [ecx+0E6h],eax"
 );
 // LINE 2286:
 	asm( 
-"	      00504de7    mov eax,[ebp-28h]"
+"	      00504de7    mov eax,this"
 "	      00504dea    mov eax,[eax+0E2h]"
-"	      00504df0    mov ecx,[ebp-28h]"
+"	      00504df0    mov ecx,this"
 "	      00504df3    mov ecx,[ecx+0E6h]"
 "	      00504df9    shl ecx,4"
 "	      00504dfc    mov eax,[ecx+eax*4+592CC0h]"
-"	      00504e03    mov ecx,[ebp-28h]"
+"	      00504e03    mov ecx,this"
 "	      00504e06    mov [ecx+7Eh],eax"
-"	      00504e09    mov eax,[ebp-28h]"
+"	      00504e09    mov eax,this"
 "	      00504e0c    mov eax,[eax+7Eh]"
-"	      00504e0f    mov ecx,[ebp-28h]"
+"	      00504e0f    mov ecx,this"
 "	      00504e12    mov [ecx+82h],eax"
 );
 // LINE 2287:
 	asm( 
-"	      00504e18    mov eax,[ebp-28h]"
+"	      00504e18    mov eax,this"
 "	      00504e1b    mov dword ptr [eax+0EEh],0"
 );
 // LINE 2288:
 	asm( 
-"	      00504e25    mov eax,[ebp-28h]"
+"	      00504e25    mov eax,this"
 "	      00504e28    mov eax,[eax+0E6h]"
 "	      00504e2e    shl eax,3"
 "	      00504e31    lea eax,[eax+eax*2]"
 "	      00504e34    lea eax,[eax+eax*4]"
-"	      00504e37    mov ecx,[ebp-28h]"
+"	      00504e37    mov ecx,this"
 "	      00504e3a    mov ecx,[ecx+0EEh]"
 "	      00504e40    lea ecx,[ecx+ecx*2]"
 "	      00504e43    mov eax,[eax+ecx*4+62BB34h]"
-"	      00504e4a    mov ecx,[ebp-28h]"
+"	      00504e4a    mov ecx,this"
 "	      00504e4d    mov [ecx+86h],eax"
 );
 // LINE 2290:
@@ -6094,20 +6094,20 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2292:
 	asm( 
-"	      00504e58    mov eax,[ebp-28h]"
-"	      00504e5b    mov ecx,[ebp-28h]"
+"	      00504e58    mov eax,this"
+"	      00504e5b    mov ecx,this"
 "	      00504e5e    mov ecx,[ecx+0E2h]"
 "	      00504e64    cmp [eax+82h],ecx"
 "	      00504e6a    jne near ptr 00504E8Fh"
 );
 // LINE 2296:
 	asm( 
-"	      00504e70    mov eax,[ebp-28h]"
+"	      00504e70    mov eax,this"
 "	      00504e73    mov dword ptr [eax+0E6h],0"
 );
 // LINE 2302:
 	asm( 
-"	      00504e7d    mov eax,[ebp-28h]"
+"	      00504e7d    mov eax,this"
 "	      00504e80    mov dword ptr [eax+86h],400000h"
 );
 // LINE 2304:
@@ -6116,46 +6116,46 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 // LINE 2312:
 	asm( 
-"	      00504e8f    mov eax,[ebp-28h]"
+"	      00504e8f    mov eax,this"
 "	      00504e92    mov dword ptr [eax+0EEh],0"
 );
 // LINE 2313:
 	asm( 
-"	      00504e9c    mov eax,[ebp-28h]"
+"	      00504e9c    mov eax,this"
 "	      00504e9f    mov eax,[eax+82h]"
-"	      00504ea5    mov ecx,[ebp-28h]"
+"	      00504ea5    mov ecx,this"
 "	      00504ea8    mov ecx,[ecx+0E2h]"
 "	      00504eae    shl ecx,4"
 "	      00504eb1    mov eax,[ecx+eax*4+592D10h]"
-"	      00504eb8    mov ecx,[ebp-28h]"
+"	      00504eb8    mov ecx,this"
 "	      00504ebb    mov [ecx+0E6h],eax"
 );
 // LINE 2314:
 	asm( 
-"	      00504ec1    mov eax,[ebp-28h]"
+"	      00504ec1    mov eax,this"
 "	      00504ec4    mov eax,[eax+96h]"
-"	      00504eca    mov ecx,[ebp-28h]"
+"	      00504eca    mov ecx,this"
 "	      00504ecd    mov ecx,[ecx+0E6h]"
 "	      00504ed3    shl ecx,3"
 "	      00504ed6    lea ecx,[ecx+ecx*2]"
 "	      00504ed9    lea ecx,[ecx+ecx*4]"
 "	      00504edc    lea eax,[ecx+eax*4]"
-"	      00504edf    mov ecx,[ebp-28h]"
+"	      00504edf    mov ecx,this"
 "	      00504ee2    mov ecx,[ecx+0EEh]"
 "	      00504ee8    lea ecx,[ecx+ecx*2]"
 "	      00504eeb    mov eax,[eax+ecx*4+62BB30h]"
-"	      00504ef2    mov ecx,[ebp-28h]"
+"	      00504ef2    mov ecx,this"
 "	      00504ef5    mov [ecx+86h],eax"
 );
 // LINE 2321:
 	asm( 
-"	      00504efb    mov eax,[ebp-28h]"
+"	      00504efb    mov eax,this"
 "	      00504efe    cmp dword ptr [eax+0E6h],0"
 "	      00504f05    je near ptr 00505022h"
-"	      00504f0b    mov eax,[ebp-28h]"
+"	      00504f0b    mov eax,this"
 "	      00504f0e    test byte ptr [eax+9],10h"
 "	      00504f12    jne near ptr 00504F28h"
-"	      00504f18    mov eax,[ebp-28h]"
+"	      00504f18    mov eax,this"
 "	      00504f1b    cmp dword ptr [eax+4],11Eh"
 "	      00504f22    jne near ptr 00505022h"
 );
@@ -6171,51 +6171,51 @@ void AutomobileClass::TransitionBetweenGoals() {
 // Block start:
 	struct Point3d loc;
 	asm( 
-"	      00504f3a    mov eax,[ebp-28h]"
+"	      00504f3a    mov eax,this"
 "	      00504f3d    mov eax,[eax+24h]"
-"	      00504f40    mov ecx,[ebp-28h]"
+"	      00504f40    mov ecx,this"
 "	      00504f43    mov ecx,[ecx+0F2h]"
 "	      00504f49    mov ecx,[ecx]"
 "	      00504f4b    shl ecx,4"
 "	      00504f4e    sub eax,ecx"
-"	      00504f50    mov [ebp-10h],eax"
+"	      00504f50    mov loc.x,eax"
 );
 // LINE 2328:
 	asm( 
-"	      00504f53    mov eax,[ebp-28h]"
+"	      00504f53    mov eax,this"
 "	      00504f56    mov eax,[eax+28h]"
-"	      00504f59    mov ecx,[ebp-28h]"
+"	      00504f59    mov ecx,this"
 "	      00504f5c    mov ecx,[ecx+0F2h]"
 "	      00504f62    mov ecx,[ecx+4]"
 "	      00504f65    shl ecx,4"
 "	      00504f68    sub eax,ecx"
-"	      00504f6a    mov [ebp-0Ch],eax"
+"	      00504f6a    mov loc.y,eax"
 );
 // LINE 2329:
 	asm( 
-"	      00504f6d    mov eax,[ebp-28h]"
+"	      00504f6d    mov eax,this"
 "	      00504f70    mov eax,[eax+2Ch]"
-"	      00504f73    mov ecx,[ebp-28h]"
+"	      00504f73    mov ecx,this"
 "	      00504f76    mov ecx,[ecx+0F2h]"
 "	      00504f7c    mov ecx,[ecx+8]"
 "	      00504f7f    shl ecx,4"
 "	      00504f82    sub eax,ecx"
-"	      00504f84    mov [ebp-8],eax"
+"	      00504f84    mov loc.z,eax"
 );
 // LINE 2330:
 	asm( 
 "	      00504f87    push 0"
-"	      00504f89    mov eax,[ebp-28h]"
+"	      00504f89    mov eax,this"
 "	      00504f8c    add eax,24h"
 "	      00504f8f    push eax"
 "	      00504f90    push 31h"
 "	      00504f92    call 00446CC2h"
 "	      00504f97    add esp,0Ch"
-"	      00504f9a    mov eax,[ebp-28h]"
+"	      00504f9a    mov eax,this"
 "	      00504f9d    xor ecx,ecx"
 "	      00504f9f    mov cl,[eax+7Dh]"
 "	      00504fa2    mov [ebp-18h],ecx"
-"	      00504fa5    mov eax,[ebp-28h]"
+"	      00504fa5    mov eax,this"
 "	      00504fa8    xor ecx,ecx"
 "	      00504faa    mov cl,[eax+7Ch]"
 "	      00504fad    mov [ebp-1Ch],ecx"
@@ -6240,15 +6240,15 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504ff4    jmp near ptr 00504FF9h"
 "	      00504ff9    jmp near ptr 00504FFEh"
 "	      00504ffe    mov eax,[ebp-14h]"
-"	      00505001    mov ecx,[ebp-28h]"
+"	      00505001    mov ecx,this"
 "	      00505004    mov [ecx+112h],eax"
 );
 // LINE 2332:
 	asm( 
 "	      0050500a    push 6"
-"	      0050500c    lea eax,[ebp-10h]"
+"	      0050500c    lea eax,loc.x"
 "	      0050500f    push eax"
-"	      00505010    mov eax,[ebp-28h]"
+"	      00505010    mov eax,this"
 "	      00505013    mov eax,[eax+112h]"
 "	      00505019    push eax"
 "	      0050501a    call 005240DCh"
@@ -6257,14 +6257,14 @@ void AutomobileClass::TransitionBetweenGoals() {
 // LINE 2338:
 // Block end:
 	asm( 
-"	      00505022    mov ecx,[ebp-28h]"
+"	      00505022    mov ecx,this"
 "	      00505025    call 0050503Fh"
 );
 // LINE 2344:
 	asm( 
-"	      0050502a    mov eax,[ebp-28h]"
+"	      0050502a    mov eax,this"
 "	      0050502d    mov eax,[eax]"
-"	      0050502f    mov ecx,[ebp-28h]"
+"	      0050502f    mov ecx,this"
 "	      00505032    call dword ptr [eax+8]"
 );
 // LINE 2345:
@@ -6291,53 +6291,53 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 "	      00505045    push ebx"
 "	      00505046    push esi"
 "	      00505047    push edi"
-"	      00505048    mov [ebp-0Ch],ecx"
+"	      00505048    mov this,ecx"
 );
 // LINE 2362:
 	asm( 
-"	      0050504b    mov eax,[ebp-0Ch]"
+"	      0050504b    mov eax,this"
 "	      0050504e    xor ecx,ecx"
 "	      00505050    mov cl,[eax+7Ch]"
 "	      00505053    mov eax,[ecx*4+639850h]"
-"	      0050505a    mov ecx,[ebp-0Ch]"
+"	      0050505a    mov ecx,this"
 "	      0050505d    xor edx,edx"
 "	      0050505f    mov dl,[ecx+7Dh]"
 "	      00505062    xor ecx,ecx"
 "	      00505064    mov cl,[eax+edx]"
 "	      00505067    sub ecx,23h"
-"	      0050506a    mov [ebp-8],ecx"
+"	      0050506a    mov roadTile,ecx"
 );
 // LINE 2378:
 	asm( 
-"	      0050506d    mov eax,[ebp-8]"
+"	      0050506d    mov eax,roadTile"
 "	      00505070    mov [ebp-10h],eax"
 "	      00505073    jmp near ptr 00505206h"
 );
 // LINE 2380:
 	asm( 
-"	      00505078    mov eax,[ebp-0Ch]"
+"	      00505078    mov eax,this"
 "	      0050507b    cmp dword ptr [eax+0E2h],2"
 "	      00505082    jne near ptr 00505094h"
-"	      00505088    mov dword ptr [ebp-4],0"
+"	      00505088    mov diagRoad,0"
 "	      0050508f    jmp near ptr 0050509Bh"
-"	      00505094    mov dword ptr [ebp-4],2"
+"	      00505094    mov diagRoad,2"
 );
 // LINE 2381:
 	asm( 
-"	      0050509b    mov eax,[ebp-0Ch]"
+"	      0050509b    mov eax,this"
 "	      0050509e    mov dword ptr [eax+0EEh],0Ah"
-"	      005050a8    mov eax,[ebp-0Ch]"
+"	      005050a8    mov eax,this"
 "	      005050ab    mov dword ptr [eax+0E6h],0"
 );
 // LINE 2382:
 	asm( 
-"	      005050b5    mov eax,[ebp-4]"
+"	      005050b5    mov eax,diagRoad"
 "	      005050b8    lea eax,[eax+eax*2]"
-"	      005050bb    mov ecx,[ebp-8]"
+"	      005050bb    mov ecx,roadTile"
 "	      005050be    shl ecx,4"
 "	      005050c1    lea ecx,[ecx+ecx*2]"
 "	      005050c4    mov eax,[ecx+eax*4+635114h]"
-"	      005050cb    mov ecx,[ebp-0Ch]"
+"	      005050cb    mov ecx,this"
 "	      005050ce    mov [ecx+86h],eax"
 );
 // LINE 2383:
@@ -6346,29 +6346,29 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 );
 // LINE 2385:
 	asm( 
-"	      005050d9    mov eax,[ebp-0Ch]"
+"	      005050d9    mov eax,this"
 "	      005050dc    cmp dword ptr [eax+0E2h],3"
 "	      005050e3    jne near ptr 005050F5h"
-"	      005050e9    mov dword ptr [ebp-4],1"
+"	      005050e9    mov diagRoad,1"
 "	      005050f0    jmp near ptr 005050FCh"
-"	      005050f5    mov dword ptr [ebp-4],3"
+"	      005050f5    mov diagRoad,3"
 );
 // LINE 2386:
 	asm( 
-"	      005050fc    mov eax,[ebp-0Ch]"
+"	      005050fc    mov eax,this"
 "	      005050ff    mov dword ptr [eax+0EEh],0Ah"
-"	      00505109    mov eax,[ebp-0Ch]"
+"	      00505109    mov eax,this"
 "	      0050510c    mov dword ptr [eax+0E6h],0"
 );
 // LINE 2387:
 	asm( 
-"	      00505116    mov eax,[ebp-4]"
+"	      00505116    mov eax,diagRoad"
 "	      00505119    lea eax,[eax+eax*2]"
-"	      0050511c    mov ecx,[ebp-8]"
+"	      0050511c    mov ecx,roadTile"
 "	      0050511f    shl ecx,4"
 "	      00505122    lea ecx,[ecx+ecx*2]"
 "	      00505125    mov eax,[ecx+eax*4+635114h]"
-"	      0050512c    mov ecx,[ebp-0Ch]"
+"	      0050512c    mov ecx,this"
 "	      0050512f    mov [ecx+86h],eax"
 );
 // LINE 2388:
@@ -6377,29 +6377,29 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 );
 // LINE 2390:
 	asm( 
-"	      0050513a    mov eax,[ebp-0Ch]"
+"	      0050513a    mov eax,this"
 "	      0050513d    cmp dword ptr [eax+0E2h],0"
 "	      00505144    jne near ptr 00505156h"
-"	      0050514a    mov dword ptr [ebp-4],2"
+"	      0050514a    mov diagRoad,2"
 "	      00505151    jmp near ptr 0050515Dh"
-"	      00505156    mov dword ptr [ebp-4],0"
+"	      00505156    mov diagRoad,0"
 );
 // LINE 2391:
 	asm( 
-"	      0050515d    mov eax,[ebp-0Ch]"
+"	      0050515d    mov eax,this"
 "	      00505160    mov dword ptr [eax+0EEh],0Ah"
-"	      0050516a    mov eax,[ebp-0Ch]"
+"	      0050516a    mov eax,this"
 "	      0050516d    mov dword ptr [eax+0E6h],0"
 );
 // LINE 2392:
 	asm( 
-"	      00505177    mov eax,[ebp-4]"
+"	      00505177    mov eax,diagRoad"
 "	      0050517a    lea eax,[eax+eax*2]"
-"	      0050517d    mov ecx,[ebp-8]"
+"	      0050517d    mov ecx,roadTile"
 "	      00505180    shl ecx,4"
 "	      00505183    lea ecx,[ecx+ecx*2]"
 "	      00505186    mov eax,[ecx+eax*4+635114h]"
-"	      0050518d    mov ecx,[ebp-0Ch]"
+"	      0050518d    mov ecx,this"
 "	      00505190    mov [ecx+86h],eax"
 );
 // LINE 2393:
@@ -6408,29 +6408,29 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 );
 // LINE 2395:
 	asm( 
-"	      0050519b    mov eax,[ebp-0Ch]"
+"	      0050519b    mov eax,this"
 "	      0050519e    cmp dword ptr [eax+0E2h],1"
 "	      005051a5    jne near ptr 005051B7h"
-"	      005051ab    mov dword ptr [ebp-4],3"
+"	      005051ab    mov diagRoad,3"
 "	      005051b2    jmp near ptr 005051BEh"
-"	      005051b7    mov dword ptr [ebp-4],1"
+"	      005051b7    mov diagRoad,1"
 );
 // LINE 2396:
 	asm( 
-"	      005051be    mov eax,[ebp-0Ch]"
+"	      005051be    mov eax,this"
 "	      005051c1    mov dword ptr [eax+0EEh],0Ah"
-"	      005051cb    mov eax,[ebp-0Ch]"
+"	      005051cb    mov eax,this"
 "	      005051ce    mov dword ptr [eax+0E6h],0"
 );
 // LINE 2397:
 	asm( 
-"	      005051d8    mov eax,[ebp-4]"
+"	      005051d8    mov eax,diagRoad"
 "	      005051db    lea eax,[eax+eax*2]"
-"	      005051de    mov ecx,[ebp-8]"
+"	      005051de    mov ecx,roadTile"
 "	      005051e1    shl ecx,4"
 "	      005051e4    lea ecx,[ecx+ecx*2]"
 "	      005051e7    mov eax,[ecx+eax*4+635114h]"
-"	      005051ee    mov ecx,[ebp-0Ch]"
+"	      005051ee    mov ecx,this"
 "	      005051f1    mov [ecx+86h],eax"
 );
 // LINE 2398:
@@ -6486,12 +6486,12 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 "	      0050523a    push ebx"
 "	      0050523b    push esi"
 "	      0050523c    push edi"
-"	      0050523d    mov [ebp-28h],ecx"
-"	      00505240    mov eax,[ebp-28h]"
+"	      0050523d    mov this,ecx"
+"	      00505240    mov eax,this"
 "	      00505243    xor ecx,ecx"
 "	      00505245    mov cl,[eax+7Dh]"
 "	      00505248    mov [ebp-20h],ecx"
-"	      0050524b    mov eax,[ebp-28h]"
+"	      0050524b    mov eax,this"
 "	      0050524e    xor ecx,ecx"
 "	      00505250    mov cl,[eax+7Ch]"
 "	      00505253    mov [ebp-24h],ecx"
@@ -6516,100 +6516,100 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 "	      0050529a    jmp near ptr 0050529Fh"
 "	      0050529f    jmp near ptr 005052A4h"
 "	      005052a4    mov eax,[ebp-1Ch]"
-"	      005052a7    mov [ebp-14h],eax"
+"	      005052a7    mov pCell,eax"
 );
 // LINE 2432:
 	asm( 
-"	      005052aa    mov eax,[ebp-28h]"
+"	      005052aa    mov eax,this"
 "	      005052ad    mov eax,[eax+0C2h]"
-"	      005052b3    mov ecx,[ebp-28h]"
+"	      005052b3    mov ecx,this"
 "	      005052b6    mov [ecx+28h],eax"
 );
 // LINE 2433:
 	asm( 
-"	      005052b9    mov eax,[ebp-14h]"
+"	      005052b9    mov eax,pCell"
 "	      005052bc    movsx eax,word ptr [eax+2]"
 "	      005052c0    shl eax,10h"
-"	      005052c3    mov ecx,[ebp-28h]"
+"	      005052c3    mov ecx,this"
 "	      005052c6    mov [ecx+24h],eax"
 );
 // LINE 2434:
 	asm( 
-"	      005052c9    mov eax,[ebp-14h]"
+"	      005052c9    mov eax,pCell"
 "	      005052cc    movsx eax,word ptr [eax+6]"
 "	      005052d0    shl eax,10h"
-"	      005052d3    mov ecx,[ebp-28h]"
+"	      005052d3    mov ecx,this"
 "	      005052d6    mov [ecx+2Ch],eax"
 );
 // LINE 2441:
 	asm( 
-"	      005052d9    mov eax,[ebp-28h]"
+"	      005052d9    mov eax,this"
 "	      005052dc    xor ecx,ecx"
 "	      005052de    mov cl,[eax+7Ch]"
 "	      005052e1    mov eax,[ecx*4+639850h]"
-"	      005052e8    mov ecx,[ebp-28h]"
+"	      005052e8    mov ecx,this"
 "	      005052eb    xor edx,edx"
 "	      005052ed    mov dl,[ecx+7Dh]"
 "	      005052f0    xor ecx,ecx"
 "	      005052f2    mov cl,[eax+edx]"
 "	      005052f5    sub ecx,23h"
-"	      005052f8    mov [ebp-10h],ecx"
+"	      005052f8    mov roadTile,ecx"
 );
 // LINE 2442:
 	asm( 
-"	      005052fb    mov dword ptr [ebp-4],0"
+"	      005052fb    mov diagRoad,0"
 );
 // LINE 2445:
 	asm( 
-"	      00505302    cmp dword ptr [ebp-10h],0"
+"	      00505302    cmp roadTile,0"
 "	      00505306    jl near ptr 0050544Ah"
-"	      0050530c    cmp dword ptr [ebp-10h],4"
+"	      0050530c    cmp roadTile,4"
 "	      00505310    jge near ptr 0050544Ah"
 );
 // LINE 2447:
 	asm( 
-"	      00505316    mov eax,[ebp-10h]"
+"	      00505316    mov eax,roadTile"
 "	      00505319    mov [ebp-2Ch],eax"
 "	      0050531c    jmp near ptr 005053CBh"
 );
 // LINE 2449:
 	asm( 
-"	      00505321    mov eax,[ebp-28h]"
+"	      00505321    mov eax,this"
 "	      00505324    cmp dword ptr [eax+0E2h],2"
 "	      0050532b    jne near ptr 0050533Dh"
-"	      00505331    mov dword ptr [ebp-4],0"
+"	      00505331    mov diagRoad,0"
 "	      00505338    jmp near ptr 00505344h"
-"	      0050533d    mov dword ptr [ebp-4],2"
+"	      0050533d    mov diagRoad,2"
 "	      00505344    jmp near ptr 005053EFh"
 );
 // LINE 2450:
 	asm( 
-"	      00505349    mov eax,[ebp-28h]"
+"	      00505349    mov eax,this"
 "	      0050534c    cmp dword ptr [eax+0E2h],3"
 "	      00505353    jne near ptr 00505365h"
-"	      00505359    mov dword ptr [ebp-4],1"
+"	      00505359    mov diagRoad,1"
 "	      00505360    jmp near ptr 0050536Ch"
-"	      00505365    mov dword ptr [ebp-4],3"
+"	      00505365    mov diagRoad,3"
 "	      0050536c    jmp near ptr 005053EFh"
 );
 // LINE 2451:
 	asm( 
-"	      00505371    mov eax,[ebp-28h]"
+"	      00505371    mov eax,this"
 "	      00505374    cmp dword ptr [eax+0E2h],0"
 "	      0050537b    jne near ptr 0050538Dh"
-"	      00505381    mov dword ptr [ebp-4],2"
+"	      00505381    mov diagRoad,2"
 "	      00505388    jmp near ptr 00505394h"
-"	      0050538d    mov dword ptr [ebp-4],0"
+"	      0050538d    mov diagRoad,0"
 "	      00505394    jmp near ptr 005053EFh"
 );
 // LINE 2452:
 	asm( 
-"	      00505399    mov eax,[ebp-28h]"
+"	      00505399    mov eax,this"
 "	      0050539c    cmp dword ptr [eax+0E2h],1"
 "	      005053a3    jne near ptr 005053B5h"
-"	      005053a9    mov dword ptr [ebp-4],3"
+"	      005053a9    mov diagRoad,3"
 "	      005053b0    jmp near ptr 005053BCh"
-"	      005053b5    mov dword ptr [ebp-4],1"
+"	      005053b5    mov diagRoad,1"
 "	      005053bc    jmp near ptr 005053EFh"
 );
 // LINE 2453:
@@ -6632,136 +6632,136 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 );
 // LINE 2456:
 	asm( 
-"	      005053ef    mov eax,[ebp-4]"
+"	      005053ef    mov eax,diagRoad"
 "	      005053f2    lea eax,[eax+eax*2]"
-"	      005053f5    mov ecx,[ebp-10h]"
+"	      005053f5    mov ecx,roadTile"
 "	      005053f8    shl ecx,4"
 "	      005053fb    lea ecx,[ecx+ecx*2]"
 "	      005053fe    mov eax,[ecx+eax*4+635110h]"
-"	      00505405    mov [ebp-18h],eax"
+"	      00505405    mov xOffset,eax"
 );
 // LINE 2457:
 	asm( 
-"	      00505408    mov eax,[ebp-4]"
+"	      00505408    mov eax,diagRoad"
 "	      0050540b    lea eax,[eax+eax*2]"
-"	      0050540e    mov ecx,[ebp-10h]"
+"	      0050540e    mov ecx,roadTile"
 "	      00505411    shl ecx,4"
 "	      00505414    lea ecx,[ecx+ecx*2]"
 "	      00505417    mov eax,[ecx+eax*4+635118h]"
-"	      0050541e    mov [ebp-8],eax"
+"	      0050541e    mov zOffset,eax"
 );
 // LINE 2458:
 	asm( 
-"	      00505421    mov eax,[ebp-4]"
+"	      00505421    mov eax,diagRoad"
 "	      00505424    lea eax,[eax+eax*2]"
 "	      00505427    lea eax,[eax*4+62BB00h]"
-"	      0050542e    mov ecx,[ebp-28h]"
+"	      0050542e    mov ecx,this"
 "	      00505431    mov [ecx+0F2h],eax"
 );
 // LINE 2459:
 	asm( 
-"	      00505437    mov eax,[ebp-4]"
+"	      00505437    mov eax,diagRoad"
 "	      0050543a    shl eax,6"
 "	      0050543d    add eax,62BA00h"
-"	      00505442    mov [ebp-0Ch],eax"
+"	      00505442    mov pRotMatrix,eax"
 );
 // LINE 2461:
 	asm( 
 "	      00505445    jmp near ptr 00505613h"
-"	      0050544a    mov eax,[ebp-28h]"
+"	      0050544a    mov eax,this"
 "	      0050544d    cmp dword ptr [eax+0EEh],0Ah"
 "	      00505454    jge near ptr 0050557Ch"
 );
 // LINE 2464:
 	asm( 
-"	      0050545a    mov eax,[ebp-28h]"
+"	      0050545a    mov eax,this"
 "	      0050545d    mov eax,[eax+0E2h]"
 "	      00505463    mov ecx,eax"
 "	      00505465    lea eax,[eax+eax*4]"
 "	      00505468    lea eax,[ecx+eax*2]"
-"	      0050546b    mov ecx,[ebp-28h]"
+"	      0050546b    mov ecx,this"
 "	      0050546e    mov ecx,[ecx+0EEh]"
 "	      00505474    shl ecx,3"
 "	      00505477    lea eax,[ecx+eax*8]"
-"	      0050547a    mov ecx,[ebp-28h]"
+"	      0050547a    mov ecx,this"
 "	      0050547d    mov ecx,[ecx+0E6h]"
 "	      00505483    mov edx,ecx"
 "	      00505485    lea ecx,[ecx+ecx*4]"
 "	      00505488    lea ecx,[edx+ecx*2]"
 "	      0050548b    shl ecx,5"
 "	      0050548e    mov eax,[eax+ecx+62D390h]"
-"	      00505495    mov [ebp-18h],eax"
+"	      00505495    mov xOffset,eax"
 );
 // LINE 2465:
 	asm( 
-"	      00505498    mov eax,[ebp-28h]"
+"	      00505498    mov eax,this"
 "	      0050549b    mov eax,[eax+0E2h]"
 "	      005054a1    mov ecx,eax"
 "	      005054a3    lea eax,[eax+eax*4]"
 "	      005054a6    lea eax,[ecx+eax*2]"
-"	      005054a9    mov ecx,[ebp-28h]"
+"	      005054a9    mov ecx,this"
 "	      005054ac    mov ecx,[ecx+0EEh]"
 "	      005054b2    shl ecx,3"
 "	      005054b5    lea eax,[ecx+eax*8]"
-"	      005054b8    mov ecx,[ebp-28h]"
+"	      005054b8    mov ecx,this"
 "	      005054bb    mov ecx,[ecx+0E6h]"
 "	      005054c1    mov edx,ecx"
 "	      005054c3    lea ecx,[ecx+ecx*4]"
 "	      005054c6    lea ecx,[edx+ecx*2]"
 "	      005054c9    shl ecx,5"
 "	      005054cc    mov eax,[eax+ecx+62D394h]"
-"	      005054d3    mov [ebp-8],eax"
+"	      005054d3    mov zOffset,eax"
 );
 // LINE 2466:
 	asm( 
-"	      005054d6    mov eax,[ebp-28h]"
+"	      005054d6    mov eax,this"
 "	      005054d9    mov eax,[eax+96h]"
 "	      005054df    lea eax,[eax+eax*2]"
-"	      005054e2    mov ecx,[ebp-28h]"
+"	      005054e2    mov ecx,this"
 "	      005054e5    mov ecx,[ecx+0E2h]"
 "	      005054eb    lea ecx,[ecx+ecx*4]"
 "	      005054ee    shl ecx,3"
 "	      005054f1    lea ecx,[ecx+ecx*8]"
 "	      005054f4    lea eax,[ecx+eax*4]"
-"	      005054f7    mov ecx,[ebp-28h]"
+"	      005054f7    mov ecx,this"
 "	      005054fa    mov ecx,[ecx+0E6h]"
 "	      00505500    lea ecx,[ecx+ecx*4]"
 "	      00505503    lea ecx,[ecx+ecx*8]"
 "	      00505506    shl ecx,5"
 "	      00505509    add eax,ecx"
-"	      0050550b    mov ecx,[ebp-28h]"
+"	      0050550b    mov ecx,this"
 "	      0050550e    mov ecx,[ecx+0EEh]"
 "	      00505514    shl ecx,2"
 "	      00505517    lea ecx,[ecx+ecx*8]"
 "	      0050551a    add eax,ecx"
 "	      0050551c    add eax,62BD10h"
-"	      00505521    mov ecx,[ebp-28h]"
+"	      00505521    mov ecx,this"
 "	      00505524    mov [ecx+0F2h],eax"
 );
 // LINE 2467:
 	asm( 
-"	      0050552a    mov eax,[ebp-28h]"
+"	      0050552a    mov eax,this"
 "	      0050552d    mov eax,[eax+96h]"
 "	      00505533    shl eax,6"
-"	      00505536    mov ecx,[ebp-28h]"
+"	      00505536    mov ecx,this"
 "	      00505539    mov ecx,[ecx+0E2h]"
 "	      0050553f    lea ecx,[ecx+ecx*2]"
 "	      00505542    lea ecx,[ecx+ecx*4]"
 "	      00505545    shl ecx,7"
 "	      00505548    add eax,ecx"
-"	      0050554a    mov ecx,[ebp-28h]"
+"	      0050554a    mov ecx,this"
 "	      0050554d    mov ecx,[ecx+0EEh]"
 "	      00505553    shl ecx,6"
 "	      00505556    lea ecx,[ecx+ecx*2]"
 "	      00505559    add eax,ecx"
-"	      0050555b    mov ecx,[ebp-28h]"
+"	      0050555b    mov ecx,this"
 "	      0050555e    mov ecx,[ecx+0E6h]"
 "	      00505564    lea ecx,[ecx+ecx*2]"
 "	      00505567    lea ecx,[ecx+ecx*4]"
 "	      0050556a    shl ecx,9"
 "	      0050556d    add eax,ecx"
 "	      0050556f    add eax,62D910h"
-"	      00505574    mov [ebp-0Ch],eax"
+"	      00505574    mov pRotMatrix,eax"
 );
 // LINE 2470:
 	asm( 
@@ -6769,124 +6769,124 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 );
 // LINE 2472:
 	asm( 
-"	      0050557c    mov eax,[ebp-28h]"
+"	      0050557c    mov eax,this"
 "	      0050557f    mov eax,[eax+82h]"
 "	      00505585    shl eax,4"
 "	      00505588    fld qword ptr [eax+592D50h]"
 "	      0050558e    fmul qword ptr ds:[592D90h]"
 "	      00505594    call 0056EBE8h"
-"	      00505599    mov [ebp-18h],eax"
+"	      00505599    mov xOffset,eax"
 );
 // LINE 2473:
 	asm( 
-"	      0050559c    mov eax,[ebp-28h]"
+"	      0050559c    mov eax,this"
 "	      0050559f    mov eax,[eax+82h]"
 "	      005055a5    shl eax,4"
 "	      005055a8    fld qword ptr [eax+592D58h]"
 "	      005055ae    fmul qword ptr ds:[592D90h]"
 "	      005055b4    call 0056EBE8h"
-"	      005055b9    mov [ebp-8],eax"
+"	      005055b9    mov zOffset,eax"
 );
 // LINE 2474:
 	asm( 
-"	      005055bc    mov eax,[ebp-28h]"
+"	      005055bc    mov eax,this"
 "	      005055bf    mov eax,[eax+96h]"
 "	      005055c5    lea eax,[eax+eax*2]"
-"	      005055c8    mov ecx,[ebp-28h]"
+"	      005055c8    mov ecx,this"
 "	      005055cb    mov ecx,[ecx+82h]"
 "	      005055d1    lea ecx,[ecx+ecx*4]"
 "	      005055d4    shl ecx,3"
 "	      005055d7    lea ecx,[ecx+ecx*8]"
 "	      005055da    lea eax,[ecx+eax*4]"
 "	      005055dd    add eax,62BD10h"
-"	      005055e2    mov ecx,[ebp-28h]"
+"	      005055e2    mov ecx,this"
 "	      005055e5    mov [ecx+0F2h],eax"
 );
 // LINE 2475:
 	asm( 
-"	      005055eb    mov eax,[ebp-28h]"
+"	      005055eb    mov eax,this"
 "	      005055ee    mov eax,[eax+96h]"
 "	      005055f4    shl eax,6"
-"	      005055f7    mov ecx,[ebp-28h]"
+"	      005055f7    mov ecx,this"
 "	      005055fa    mov ecx,[ecx+82h]"
 "	      00505600    lea ecx,[ecx+ecx*2]"
 "	      00505603    lea ecx,[ecx+ecx*4]"
 "	      00505606    shl ecx,7"
 "	      00505609    add eax,ecx"
 "	      0050560b    add eax,62D910h"
-"	      00505610    mov [ebp-0Ch],eax"
+"	      00505610    mov pRotMatrix,eax"
 );
 // LINE 2480:
 	asm( 
-"	      00505613    mov eax,[ebp-18h]"
-"	      00505616    mov ecx,[ebp-28h]"
+"	      00505613    mov eax,xOffset"
+"	      00505616    mov ecx,this"
 "	      00505619    add [ecx+24h],eax"
 );
 // LINE 2481:
 	asm( 
-"	      0050561c    mov eax,[ebp-8]"
-"	      0050561f    mov ecx,[ebp-28h]"
+"	      0050561c    mov eax,zOffset"
+"	      0050561f    mov ecx,this"
 "	      00505622    add [ecx+2Ch],eax"
 );
 // LINE 2485:
 	asm( 
-"	      00505625    mov eax,[ebp+8]"
+"	      00505625    mov eax,dist"
 "	      00505628    push eax"
-"	      00505629    mov eax,[ebp-28h]"
+"	      00505629    mov eax,this"
 "	      0050562c    mov eax,[eax+0F2h]"
 "	      00505632    mov eax,[eax]"
 "	      00505634    push eax"
 "	      00505635    call 004D19BDh"
 "	      0050563a    add esp,8"
-"	      0050563d    mov ecx,[ebp-28h]"
+"	      0050563d    mov ecx,this"
 "	      00505640    add [ecx+24h],eax"
 );
 // LINE 2487:
 	asm( 
-"	      00505643    mov eax,[ebp+8]"
+"	      00505643    mov eax,dist"
 "	      00505646    push eax"
-"	      00505647    mov eax,[ebp-28h]"
+"	      00505647    mov eax,this"
 "	      0050564a    mov eax,[eax+0F2h]"
 "	      00505650    mov eax,[eax+4]"
 "	      00505653    push eax"
 "	      00505654    call 004D19BDh"
 "	      00505659    add esp,8"
-"	      0050565c    mov ecx,[ebp-28h]"
+"	      0050565c    mov ecx,this"
 "	      0050565f    add [ecx+28h],eax"
 );
 // LINE 2488:
 	asm( 
-"	      00505662    mov eax,[ebp+8]"
+"	      00505662    mov eax,dist"
 "	      00505665    push eax"
-"	      00505666    mov eax,[ebp-28h]"
+"	      00505666    mov eax,this"
 "	      00505669    mov eax,[eax+0F2h]"
 "	      0050566f    mov eax,[eax+8]"
 "	      00505672    push eax"
 "	      00505673    call 004D19BDh"
 "	      00505678    add esp,8"
-"	      0050567b    mov ecx,[ebp-28h]"
+"	      0050567b    mov ecx,this"
 "	      0050567e    add [ecx+2Ch],eax"
 );
 // LINE 2491:
 	asm( 
-"	      00505681    mov eax,[ebp-28h]"
+"	      00505681    mov eax,this"
 "	      00505684    test byte ptr [eax+8],70h"
 "	      00505688    je near ptr 0050569Ah"
 );
 // LINE 2492:
 	asm( 
-"	      0050568e    mov eax,[ebp+8]"
+"	      0050568e    mov eax,dist"
 "	      00505691    push eax"
-"	      00505692    mov ecx,[ebp-28h]"
+"	      00505692    mov ecx,this"
 "	      00505695    call 0050583Bh"
 );
 // LINE 2495:
 	asm( 
-"	      0050569a    mov eax,[ebp-28h]"
+"	      0050569a    mov eax,this"
 "	      0050569d    xor ecx,ecx"
 "	      0050569f    mov cl,[eax+7Ch]"
 "	      005056a2    mov eax,[ecx*4+639510h]"
-"	      005056a9    mov ecx,[ebp-28h]"
+"	      005056a9    mov ecx,this"
 "	      005056ac    xor edx,edx"
 "	      005056ae    mov dl,[ecx+7Dh]"
 "	      005056b1    xor ecx,ecx"
@@ -6898,7 +6898,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 // LINE 2496:
 	asm( 
 "	      005056c3    push 1"
-"	      005056c5    mov eax,[ebp-28h]"
+"	      005056c5    mov eax,this"
 "	      005056c8    mov eax,[eax+14h]"
 "	      005056cb    push eax"
 "	      005056cc    call 004D6970h"
@@ -6911,7 +6911,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 // LINE 2498:
 	asm( 
 "	      005056d9    push 0"
-"	      005056db    mov eax,[ebp-28h]"
+"	      005056db    mov eax,this"
 "	      005056de    mov eax,[eax+14h]"
 "	      005056e1    push eax"
 "	      005056e2    call 004D6970h"
@@ -6919,9 +6919,9 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 );
 // LINE 2506:
 	asm( 
-"	      005056ea    mov edi,[ebp-28h]"
+"	      005056ea    mov edi,this"
 "	      005056ed    add edi,30h"
-"	      005056f0    mov esi,[ebp-0Ch]"
+"	      005056f0    mov esi,pRotMatrix"
 "	      005056f3    mov ecx,10h"
 "	      005056f8    rep movsd"
 );
@@ -6946,17 +6946,17 @@ void AutomobileClass::DoAUTurn() {
 "	      0050570c    push ebx"
 "	      0050570d    push esi"
 "	      0050570e    push edi"
-"	      0050570f    mov [ebp-4],ecx"
+"	      0050570f    mov this,ecx"
 );
 // LINE 2515:
 	asm( 
-"	      00505712    mov eax,[ebp-4]"
+"	      00505712    mov eax,this"
 "	      00505715    cmp dword ptr [eax+0EEh],0Ah"
 "	      0050571c    je near ptr 0050578Eh"
 );
 // LINE 2518:
 	asm( 
-"	      00505722    mov eax,[ebp-4]"
+"	      00505722    mov eax,this"
 "	      00505725    cmp dword ptr [eax+0E6h],3"
 "	      0050572c    jne near ptr 00505737h"
 );
@@ -6966,39 +6966,39 @@ void AutomobileClass::DoAUTurn() {
 );
 // LINE 2522:
 	asm( 
-"	      00505737    mov eax,[ebp-4]"
+"	      00505737    mov eax,this"
 "	      0050573a    cmp dword ptr [eax+0E6h],2"
 "	      00505741    jne near ptr 00505759h"
 );
 // LINE 2524:
 	asm( 
-"	      00505747    mov eax,[ebp-4]"
+"	      00505747    mov eax,this"
 "	      0050574a    mov dword ptr [eax+0E6h],1"
 );
 // LINE 2526:
 	asm( 
 "	      00505754    jmp near ptr 00505776h"
-"	      00505759    mov eax,[ebp-4]"
+"	      00505759    mov eax,this"
 "	      0050575c    cmp dword ptr [eax+0E6h],1"
 "	      00505763    jne near ptr 00505776h"
 );
 // LINE 2528:
 	asm( 
-"	      00505769    mov eax,[ebp-4]"
+"	      00505769    mov eax,this"
 "	      0050576c    mov dword ptr [eax+0E6h],2"
 );
 // LINE 2531:
 	asm( 
 "	      00505776    mov eax,0Ah"
-"	      0050577b    mov ecx,[ebp-4]"
+"	      0050577b    mov ecx,this"
 "	      0050577e    sub eax,[ecx+0EEh]"
 "	      00505784    dec eax"
-"	      00505785    mov ecx,[ebp-4]"
+"	      00505785    mov ecx,this"
 "	      00505788    mov [ecx+0EEh],eax"
 );
 // LINE 2535:
 	asm( 
-"	      0050578e    mov eax,[ebp-4]"
+"	      0050578e    mov eax,this"
 "	      00505791    add eax,70h"
 "	      00505794    push eax"
 "	      00505795    mov ecx,5C3828h"
@@ -7006,13 +7006,13 @@ void AutomobileClass::DoAUTurn() {
 );
 // LINE 2539:
 	asm( 
-"	      0050579f    mov eax,[ebp-4]"
+"	      0050579f    mov eax,this"
 "	      005057a2    cmp dword ptr [eax+0EEh],0Ah"
 "	      005057a9    jne near ptr 005057C1h"
 );
 // LINE 2540:
 	asm( 
-"	      005057af    mov eax,[ebp-4]"
+"	      005057af    mov eax,this"
 "	      005057b2    mov dword ptr [eax+86h],400000h"
 );
 // LINE 2541:
@@ -7021,28 +7021,28 @@ void AutomobileClass::DoAUTurn() {
 );
 // LINE 2542:
 	asm( 
-"	      005057c1    mov eax,[ebp-4]"
+"	      005057c1    mov eax,this"
 "	      005057c4    mov eax,[eax+96h]"
-"	      005057ca    mov ecx,[ebp-4]"
+"	      005057ca    mov ecx,this"
 "	      005057cd    mov ecx,[ecx+0E6h]"
 "	      005057d3    shl ecx,3"
 "	      005057d6    lea ecx,[ecx+ecx*2]"
 "	      005057d9    lea ecx,[ecx+ecx*4]"
 "	      005057dc    lea eax,[ecx+eax*4]"
-"	      005057df    mov ecx,[ebp-4]"
+"	      005057df    mov ecx,this"
 "	      005057e2    mov ecx,[ecx+0EEh]"
 "	      005057e8    lea ecx,[ecx+ecx*2]"
 "	      005057eb    mov eax,[eax+ecx*4+62BB30h]"
-"	      005057f2    mov ecx,[ebp-4]"
+"	      005057f2    mov ecx,this"
 "	      005057f5    mov [ecx+86h],eax"
 );
 // LINE 2544:
 	asm( 
-"	      005057fb    mov eax,[ebp-4]"
+"	      005057fb    mov eax,this"
 "	      005057fe    mov eax,[eax+86h]"
-"	      00505804    mov ecx,[ebp-4]"
+"	      00505804    mov ecx,this"
 "	      00505807    sub eax,[ecx+0EAh]"
-"	      0050580d    mov ecx,[ebp-4]"
+"	      0050580d    mov ecx,this"
 "	      00505810    mov [ecx+0EAh],eax"
 );
 // LINE 2545:
@@ -7066,7 +7066,7 @@ int32_t AutomobileClass::CanIDoAUTurn() {
 "	      00505826    push ebx"
 "	      00505827    push esi"
 "	      00505828    push edi"
-"	      00505829    mov [ebp-4],ecx"
+"	      00505829    mov this,ecx"
 );
 // LINE 2552:
 	asm( 
@@ -7096,149 +7096,149 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 "	      00505841    push ebx"
 "	      00505842    push esi"
 "	      00505843    push edi"
-"	      00505844    mov [ebp-14h],ecx"
+"	      00505844    mov this,ecx"
 );
 // LINE 2562:
 	asm( 
 "	      00505847    push 8000h"
-"	      0050584c    mov eax,[ebp+8]"
-"	      0050584f    mov ecx,[ebp-14h]"
+"	      0050584c    mov eax,dist"
+"	      0050584f    mov ecx,this"
 "	      00505852    sub eax,[ecx+0EAh]"
 "	      00505858    push eax"
 "	      00505859    call 004D19BDh"
 "	      0050585e    add esp,8"
-"	      00505861    mov [ebp-4],eax"
+"	      00505861    mov PulloverStepSize,eax"
 );
 // LINE 2564:
 	asm( 
-"	      00505864    mov dword ptr [ebp-0Ch],0"
+"	      00505864    mov pulloverVector.y,0"
 );
 // LINE 2565:
 	asm( 
 "	      0050586b    push 0FFFF0000h"
-"	      00505870    mov eax,[ebp-14h]"
+"	      00505870    mov eax,this"
 "	      00505873    mov eax,[eax+0F2h]"
 "	      00505879    mov eax,[eax]"
 "	      0050587b    push eax"
 "	      0050587c    call 004D19BDh"
 "	      00505881    add esp,8"
-"	      00505884    mov [ebp-8],eax"
+"	      00505884    mov pulloverVector.z,eax"
 );
 // LINE 2566:
 	asm( 
-"	      00505887    mov eax,[ebp-14h]"
+"	      00505887    mov eax,this"
 "	      0050588a    mov eax,[eax+0F2h]"
 "	      00505890    mov eax,[eax+8]"
-"	      00505893    mov [ebp-10h],eax"
+"	      00505893    mov pulloverVector.x,eax"
 );
 // LINE 2567:
 	asm( 
-"	      00505896    lea eax,[ebp-10h]"
+"	      00505896    lea eax,pulloverVector.x"
 "	      00505899    push eax"
 "	      0050589a    call 0054308Eh"
 "	      0050589f    add esp,4"
 );
 // LINE 2569:
 	asm( 
-"	      005058a2    mov eax,[ebp-14h]"
+"	      005058a2    mov eax,this"
 "	      005058a5    test byte ptr [eax+8],10h"
 "	      005058a9    je near ptr 005058FBh"
 );
 // LINE 2571:
 	asm( 
-"	      005058af    mov eax,[ebp-4]"
-"	      005058b2    mov ecx,[ebp-14h]"
+"	      005058af    mov eax,PulloverStepSize"
+"	      005058b2    mov ecx,this"
 "	      005058b5    add [ecx+9Ah],eax"
 );
 // LINE 2572:
 	asm( 
-"	      005058bb    mov eax,[ebp-14h]"
+"	      005058bb    mov eax,this"
 "	      005058be    cmp dword ptr [eax+9Ah],0D0000h"
 "	      005058c8    jle near ptr 005058F6h"
 );
 // LINE 2574:
 	asm( 
-"	      005058ce    mov eax,[ebp-14h]"
+"	      005058ce    mov eax,this"
 "	      005058d1    and dword ptr [eax+8],0FFFFFFEFh"
 );
 // LINE 2575:
 	asm( 
-"	      005058d5    mov eax,[ebp-14h]"
+"	      005058d5    mov eax,this"
 "	      005058d8    or dword ptr [eax+8],20h"
 );
 // LINE 2576:
 	asm( 
-"	      005058dc    mov eax,[ebp-14h]"
+"	      005058dc    mov eax,this"
 "	      005058df    mov dword ptr [eax+9Ah],0D0000h"
 );
 // LINE 2577:
 	asm( 
-"	      005058e9    mov eax,[ebp-14h]"
+"	      005058e9    mov eax,this"
 "	      005058ec    mov dword ptr [eax+0C6h],40000h"
 );
 // LINE 2580:
 	asm( 
 "	      005058f6    jmp near ptr 0050593Ch"
-"	      005058fb    mov eax,[ebp-14h]"
+"	      005058fb    mov eax,this"
 "	      005058fe    test byte ptr [eax+8],40h"
 "	      00505902    je near ptr 0050593Ch"
 );
 // LINE 2582:
 	asm( 
 "	      00505908    xor eax,eax"
-"	      0050590a    sub eax,[ebp-4]"
+"	      0050590a    sub eax,PulloverStepSize"
 "	      0050590d    neg eax"
-"	      0050590f    mov ecx,[ebp-14h]"
+"	      0050590f    mov ecx,this"
 "	      00505912    sub [ecx+9Ah],eax"
 );
 // LINE 2583:
 	asm( 
-"	      00505918    mov eax,[ebp-14h]"
+"	      00505918    mov eax,this"
 "	      0050591b    cmp dword ptr [eax+9Ah],0"
 "	      00505922    jg near ptr 0050593Ch"
 );
 // LINE 2585:
 	asm( 
-"	      00505928    mov eax,[ebp-14h]"
+"	      00505928    mov eax,this"
 "	      0050592b    and dword ptr [eax+8],0FFFFFF8Fh"
 );
 // LINE 2586:
 	asm( 
-"	      0050592f    mov eax,[ebp-14h]"
+"	      0050592f    mov eax,this"
 "	      00505932    mov dword ptr [eax+9Ah],0"
 );
 // LINE 2589:
 	asm( 
-"	      0050593c    mov eax,[ebp-14h]"
+"	      0050593c    mov eax,this"
 "	      0050593f    mov eax,[eax+9Ah]"
 "	      00505945    push eax"
-"	      00505946    mov eax,[ebp-10h]"
+"	      00505946    mov eax,pulloverVector.x"
 "	      00505949    push eax"
 "	      0050594a    call 004D19BDh"
 "	      0050594f    add esp,8"
-"	      00505952    mov [ebp-10h],eax"
+"	      00505952    mov pulloverVector.x,eax"
 );
 // LINE 2590:
 	asm( 
-"	      00505955    mov eax,[ebp-14h]"
+"	      00505955    mov eax,this"
 "	      00505958    mov eax,[eax+9Ah]"
 "	      0050595e    push eax"
-"	      0050595f    mov eax,[ebp-8]"
+"	      0050595f    mov eax,pulloverVector.z"
 "	      00505962    push eax"
 "	      00505963    call 004D19BDh"
 "	      00505968    add esp,8"
-"	      0050596b    mov [ebp-8],eax"
+"	      0050596b    mov pulloverVector.z,eax"
 );
 // LINE 2592:
 	asm( 
-"	      0050596e    mov eax,[ebp-10h]"
-"	      00505971    mov ecx,[ebp-14h]"
+"	      0050596e    mov eax,pulloverVector.x"
+"	      00505971    mov ecx,this"
 "	      00505974    add [ecx+24h],eax"
 );
 // LINE 2593:
 	asm( 
-"	      00505977    mov eax,[ebp-8]"
-"	      0050597a    mov ecx,[ebp-14h]"
+"	      00505977    mov eax,pulloverVector.z"
+"	      0050597a    mov ecx,this"
 "	      0050597d    add [ecx+2Ch],eax"
 );
 // LINE 2594:
@@ -7273,15 +7273,15 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      00505992    push ebx"
 "	      00505993    push esi"
 "	      00505994    push edi"
-"	      00505995    mov [ebp-58h],ecx"
+"	      00505995    mov this,ecx"
 );
 // LINE 2625:
 	asm( 
-"	      00505998    mov eax,[ebp-58h]"
+"	      00505998    mov eax,this"
 "	      0050599b    xor ecx,ecx"
 "	      0050599d    mov cl,[eax+7Ch]"
 "	      005059a0    mov eax,[ecx*4+639510h]"
-"	      005059a7    mov ecx,[ebp-58h]"
+"	      005059a7    mov ecx,this"
 "	      005059aa    xor edx,edx"
 "	      005059ac    mov dl,[ecx+7Dh]"
 "	      005059af    xor ecx,ecx"
@@ -7297,109 +7297,109 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2629:
 	asm( 
-"	      005059c8    mov eax,[ebp-58h]"
+"	      005059c8    mov eax,this"
 "	      005059cb    mov eax,[eax+1Ch]"
 "	      005059ce    add eax,50000h"
 "	      005059d3    push eax"
-"	      005059d4    mov eax,[ebp-58h]"
+"	      005059d4    mov eax,this"
 "	      005059d7    mov eax,[eax+0F2h]"
 "	      005059dd    mov eax,[eax]"
 "	      005059df    push eax"
 "	      005059e0    call 004D19BDh"
 "	      005059e5    add esp,8"
-"	      005059e8    mov ecx,[ebp-58h]"
+"	      005059e8    mov ecx,this"
 "	      005059eb    mov ecx,[ecx+24h]"
 "	      005059ee    add ecx,eax"
-"	      005059f0    mov [ebp-30h],ecx"
+"	      005059f0    mov collisionPoint.x,ecx"
 );
 // LINE 2630:
 	asm( 
-"	      005059f3    mov eax,[ebp-58h]"
+"	      005059f3    mov eax,this"
 "	      005059f6    mov eax,[eax+1Ch]"
 "	      005059f9    add eax,50000h"
 "	      005059fe    push eax"
-"	      005059ff    mov eax,[ebp-58h]"
+"	      005059ff    mov eax,this"
 "	      00505a02    mov eax,[eax+0F2h]"
 "	      00505a08    mov eax,[eax+4]"
 "	      00505a0b    push eax"
 "	      00505a0c    call 004D19BDh"
 "	      00505a11    add esp,8"
-"	      00505a14    mov ecx,[ebp-58h]"
+"	      00505a14    mov ecx,this"
 "	      00505a17    mov ecx,[ecx+28h]"
 "	      00505a1a    add ecx,eax"
-"	      00505a1c    mov [ebp-2Ch],ecx"
+"	      00505a1c    mov collisionPoint.y,ecx"
 );
 // LINE 2631:
 	asm( 
-"	      00505a1f    mov eax,[ebp-58h]"
+"	      00505a1f    mov eax,this"
 "	      00505a22    mov eax,[eax+1Ch]"
 "	      00505a25    add eax,50000h"
 "	      00505a2a    push eax"
-"	      00505a2b    mov eax,[ebp-58h]"
+"	      00505a2b    mov eax,this"
 "	      00505a2e    mov eax,[eax+0F2h]"
 "	      00505a34    mov eax,[eax+8]"
 "	      00505a37    push eax"
 "	      00505a38    call 004D19BDh"
 "	      00505a3d    add esp,8"
-"	      00505a40    mov ecx,[ebp-58h]"
+"	      00505a40    mov ecx,this"
 "	      00505a43    mov ecx,[ecx+2Ch]"
 "	      00505a46    add ecx,eax"
-"	      00505a48    mov [ebp-28h],ecx"
+"	      00505a48    mov collisionPoint.z,ecx"
 );
 // LINE 2636:
 	asm( 
-"	      00505a4b    mov eax,[ebp-58h]"
+"	      00505a4b    mov eax,this"
 "	      00505a4e    mov eax,[eax+24h]"
 "	      00505a51    add eax,20000000h"
 "	      00505a56    sar eax,16h"
-"	      00505a59    mov [ebp-8],al"
+"	      00505a59    mov currentLocation.x,al"
 );
 // LINE 2637:
 	asm( 
 "	      00505a5c    mov eax,20000000h"
-"	      00505a61    mov ecx,[ebp-58h]"
+"	      00505a61    mov ecx,this"
 "	      00505a64    sub eax,[ecx+2Ch]"
 "	      00505a67    sar eax,16h"
-"	      00505a6a    mov [ebp-7],al"
+"	      00505a6a    mov currentLocation.y,al"
 );
 // LINE 2640:
 	asm( 
-"	      00505a6d    mov eax,[ebp-58h]"
+"	      00505a6d    mov eax,this"
 "	      00505a70    mov eax,[eax+0F2h]"
 "	      00505a76    mov eax,[eax]"
 "	      00505a78    shl eax,3"
-"	      00505a7b    add eax,[ebp-30h]"
-"	      00505a7e    mov [ebp-1Ch],eax"
+"	      00505a7b    add eax,collisionPoint.x"
+"	      00505a7e    mov xdiff,eax"
 );
 // LINE 2641:
 	asm( 
-"	      00505a81    mov eax,[ebp-58h]"
+"	      00505a81    mov eax,this"
 "	      00505a84    mov eax,[eax+0F2h]"
 "	      00505a8a    mov eax,[eax+8]"
 "	      00505a8d    shl eax,3"
-"	      00505a90    add eax,[ebp-28h]"
-"	      00505a93    mov [ebp-18h],eax"
+"	      00505a90    add eax,collisionPoint.z"
+"	      00505a93    mov zdiff,eax"
 );
 // LINE 2643:
 	asm( 
-"	      00505a96    mov eax,[ebp-1Ch]"
+"	      00505a96    mov eax,xdiff"
 "	      00505a99    add eax,20000000h"
 "	      00505a9e    sar eax,16h"
-"	      00505aa1    mov [ebp-20h],al"
+"	      00505aa1    mov nextLocation.x,al"
 );
 // LINE 2644:
 	asm( 
 "	      00505aa4    mov eax,20000000h"
-"	      00505aa9    sub eax,[ebp-18h]"
+"	      00505aa9    sub eax,zdiff"
 "	      00505aac    sar eax,16h"
-"	      00505aaf    mov [ebp-1Fh],al"
+"	      00505aaf    mov nextLocation.y,al"
 );
 // LINE 2646:
 	asm( 
 "	      00505ab2    xor eax,eax"
-"	      00505ab4    mov al,[ebp-7]"
+"	      00505ab4    mov al,currentLocation.y"
 "	      00505ab7    xor ecx,ecx"
-"	      00505ab9    mov cl,[ebp-8]"
+"	      00505ab9    mov cl,currentLocation.x"
 "	      00505abc    shl ecx,0Ah"
 "	      00505abf    mov eax,[ecx+eax*4+67ED30h]"
 "	      00505ac6    mov [ebp-54h],eax"
@@ -7414,43 +7414,43 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      00505aef    jmp near ptr 00505AF4h"
 "	      00505af4    jmp near ptr 00505AF9h"
 "	      00505af9    mov eax,[ebp-54h]"
-"	      00505afc    mov [ebp-14h],eax"
+"	      00505afc    mov currentCell,eax"
 );
 // LINE 2650:
 	asm( 
 "	      00505aff    xor eax,eax"
-"	      00505b01    mov al,[ebp-8]"
+"	      00505b01    mov al,currentLocation.x"
 "	      00505b04    test eax,eax"
 "	      00505b06    jl near ptr 00505B39h"
 "	      00505b0c    xor eax,eax"
-"	      00505b0e    mov al,[ebp-7]"
+"	      00505b0e    mov al,currentLocation.y"
 "	      00505b11    test eax,eax"
 "	      00505b13    jl near ptr 00505B39h"
 "	      00505b19    xor eax,eax"
-"	      00505b1b    mov al,[ebp-8]"
+"	      00505b1b    mov al,currentLocation.x"
 "	      00505b1e    cmp eax,80h"
 "	      00505b23    jge near ptr 00505B39h"
 "	      00505b29    xor eax,eax"
-"	      00505b2b    mov al,[ebp-7]"
+"	      00505b2b    mov al,currentLocation.y"
 "	      00505b2e    cmp eax,80h"
 "	      00505b33    jl near ptr 00505B44h"
 "	      00505b39    mov word ptr [ebp-4Ch],0"
 "	      00505b3f    jmp near ptr 00505B84h"
 "	      00505b44    xor eax,eax"
-"	      00505b46    mov al,[ebp-8]"
+"	      00505b46    mov al,currentLocation.x"
 "	      00505b49    mov eax,[eax*4+638F70h]"
 "	      00505b50    xor ecx,ecx"
-"	      00505b52    mov cl,[ebp-7]"
+"	      00505b52    mov cl,currentLocation.y"
 "	      00505b55    xor edx,edx"
 "	      00505b57    mov dl,[eax+ecx]"
 "	      00505b5a    and edx,2"
 "	      00505b5d    movsx eax,dx"
 "	      00505b60    shl eax,0Eh"
 "	      00505b63    xor ecx,ecx"
-"	      00505b65    mov cl,[ebp-8]"
+"	      00505b65    mov cl,currentLocation.x"
 "	      00505b68    mov ecx,[ecx*4+639850h]"
 "	      00505b6f    xor edx,edx"
-"	      00505b71    mov dl,[ebp-7]"
+"	      00505b71    mov dl,currentLocation.y"
 "	      00505b74    xor ebx,ebx"
 "	      00505b76    mov bl,[ecx+edx]"
 "	      00505b79    or eax,ebx"
@@ -7473,7 +7473,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2652:
 	asm( 
-"	      00505bc4    mov eax,[ebp-58h]"
+"	      00505bc4    mov eax,this"
 "	      00505bc7    or dword ptr [eax+8],80h"
 );
 // LINE 2654:
@@ -7482,29 +7482,29 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2656:
 	asm( 
-"	      00505bd3    mov eax,[ebp-58h]"
+"	      00505bd3    mov eax,this"
 "	      00505bd6    and dword ptr [eax+8],0FFFFFF7Fh"
 );
 // LINE 2657:
 	asm( 
-"	      00505bdd    mov eax,[ebp-58h]"
+"	      00505bdd    mov eax,this"
 "	      00505be0    and dword ptr [eax+8],0FFFFFBFFh"
 );
 // LINE 2661:
 	asm( 
-"	      00505be7    mov ecx,[ebp-58h]"
+"	      00505be7    mov ecx,this"
 "	      00505bea    call 00506F0Eh"
 "	      00505bef    test eax,eax"
 "	      00505bf1    je near ptr 00505C01h"
 );
 // LINE 2662:
 	asm( 
-"	      00505bf7    mov eax,[ebp-58h]"
+"	      00505bf7    mov eax,this"
 "	      00505bfa    or dword ptr [eax+8],400h"
 );
 // LINE 2665:
 	asm( 
-"	      00505c01    cmp dword ptr [ebp-14h],0"
+"	      00505c01    cmp currentCell,0"
 "	      00505c05    jne near ptr 00505C2Ch"
 );
 // LINE 2667:
@@ -7519,19 +7519,19 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2675:
 	asm( 
-"	      00505c2c    mov eax,[ebp-58h]"
+"	      00505c2c    mov eax,this"
 "	      00505c2f    test byte ptr [eax+9],4"
 "	      00505c33    jne near ptr 00505EB8h"
 "	      00505c39    xor eax,eax"
-"	      00505c3b    mov al,[ebp-20h]"
+"	      00505c3b    mov al,nextLocation.x"
 "	      00505c3e    xor ecx,ecx"
-"	      00505c40    mov cl,[ebp-8]"
+"	      00505c40    mov cl,currentLocation.x"
 "	      00505c43    cmp eax,ecx"
 "	      00505c45    jne near ptr 00505C5Dh"
 "	      00505c4b    xor eax,eax"
-"	      00505c4d    mov al,[ebp-1Fh]"
+"	      00505c4d    mov al,nextLocation.y"
 "	      00505c50    xor ecx,ecx"
-"	      00505c52    mov cl,[ebp-7]"
+"	      00505c52    mov cl,currentLocation.y"
 "	      00505c55    cmp eax,ecx"
 "	      00505c57    je near ptr 00505EB8h"
 );
@@ -7541,38 +7541,38 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	struct _DYOBJ_INST* currentObject;
 	asm( 
 "	      00505c5d    xor eax,eax"
-"	      00505c5f    mov al,[ebp-20h]"
+"	      00505c5f    mov al,nextLocation.x"
 "	      00505c62    test eax,eax"
 "	      00505c64    jl near ptr 00505C97h"
 "	      00505c6a    xor eax,eax"
-"	      00505c6c    mov al,[ebp-1Fh]"
+"	      00505c6c    mov al,nextLocation.y"
 "	      00505c6f    test eax,eax"
 "	      00505c71    jl near ptr 00505C97h"
 "	      00505c77    xor eax,eax"
-"	      00505c79    mov al,[ebp-20h]"
+"	      00505c79    mov al,nextLocation.x"
 "	      00505c7c    cmp eax,80h"
 "	      00505c81    jge near ptr 00505C97h"
 "	      00505c87    xor eax,eax"
-"	      00505c89    mov al,[ebp-1Fh]"
+"	      00505c89    mov al,nextLocation.y"
 "	      00505c8c    cmp eax,80h"
 "	      00505c91    jl near ptr 00505CA2h"
 "	      00505c97    mov word ptr [ebp-44h],0"
 "	      00505c9d    jmp near ptr 00505CE2h"
 "	      00505ca2    xor eax,eax"
-"	      00505ca4    mov al,[ebp-20h]"
+"	      00505ca4    mov al,nextLocation.x"
 "	      00505ca7    mov eax,[eax*4+638F70h]"
 "	      00505cae    xor ecx,ecx"
-"	      00505cb0    mov cl,[ebp-1Fh]"
+"	      00505cb0    mov cl,nextLocation.y"
 "	      00505cb3    xor edx,edx"
 "	      00505cb5    mov dl,[eax+ecx]"
 "	      00505cb8    and edx,2"
 "	      00505cbb    movsx eax,dx"
 "	      00505cbe    shl eax,0Eh"
 "	      00505cc1    xor ecx,ecx"
-"	      00505cc3    mov cl,[ebp-20h]"
+"	      00505cc3    mov cl,nextLocation.x"
 "	      00505cc6    mov ecx,[ecx*4+639850h]"
 "	      00505ccd    xor edx,edx"
-"	      00505ccf    mov dl,[ebp-1Fh]"
+"	      00505ccf    mov dl,nextLocation.y"
 "	      00505cd2    xor ebx,ebx"
 "	      00505cd4    mov bl,[ecx+edx]"
 "	      00505cd7    or eax,ebx"
@@ -7596,9 +7596,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2682:
 	asm( 
 "	      00505d22    xor eax,eax"
-"	      00505d24    mov al,[ebp-1Fh]"
+"	      00505d24    mov al,nextLocation.y"
 "	      00505d27    xor ecx,ecx"
-"	      00505d29    mov cl,[ebp-20h]"
+"	      00505d29    mov cl,nextLocation.x"
 "	      00505d2c    shl ecx,0Ah"
 "	      00505d2f    mov eax,[ecx+eax*4+67ED30h]"
 "	      00505d36    mov [ebp-3Ch],eax"
@@ -7613,31 +7613,31 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      00505d5f    jmp near ptr 00505D64h"
 "	      00505d64    jmp near ptr 00505D69h"
 "	      00505d69    mov eax,[ebp-3Ch]"
-"	      00505d6c    mov [ebp-38h],eax"
+"	      00505d6c    mov cptr,eax"
 );
 // LINE 2683:
 	asm( 
-"	      00505d6f    mov eax,[ebp-38h]"
+"	      00505d6f    mov eax,cptr"
 "	      00505d72    mov eax,[eax+10h]"
-"	      00505d75    mov [ebp-34h],eax"
+"	      00505d75    mov currentObject,eax"
 );
 // LINE 2685:
 	asm( 
-"	      00505d78    cmp dword ptr [ebp-34h],0"
+"	      00505d78    cmp currentObject,0"
 "	      00505d7c    je near ptr 00505EB8h"
 );
 // LINE 2688:
 	asm( 
-"	      00505d82    mov eax,[ebp-58h]"
+"	      00505d82    mov eax,this"
 "	      00505d85    add eax,0Ch"
-"	      00505d88    cmp eax,[ebp-34h]"
+"	      00505d88    cmp eax,currentObject"
 "	      00505d8b    jne near ptr 00505D9Eh"
 );
 // LINE 2690:
 	asm( 
-"	      00505d91    mov eax,[ebp-34h]"
+"	      00505d91    mov eax,currentObject"
 "	      00505d94    mov eax,[eax]"
-"	      00505d96    mov [ebp-34h],eax"
+"	      00505d96    mov currentObject,eax"
 );
 // LINE 2691:
 	asm( 
@@ -7645,16 +7645,16 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2695:
 	asm( 
-"	      00505d9e    mov eax,[ebp-34h]"
+"	      00505d9e    mov eax,currentObject"
 "	      00505da1    movsx eax,word ptr [eax+0Ch]"
 "	      00505da5    test al,20h"
 "	      00505da7    je near ptr 00505DBAh"
 );
 // LINE 2697:
 	asm( 
-"	      00505dad    mov eax,[ebp-34h]"
+"	      00505dad    mov eax,currentObject"
 "	      00505db0    mov eax,[eax]"
-"	      00505db2    mov [ebp-34h],eax"
+"	      00505db2    mov currentObject,eax"
 );
 // LINE 2698:
 	asm( 
@@ -7662,43 +7662,43 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2701:
 	asm( 
-"	      00505dba    mov eax,[ebp-34h]"
-"	      00505dbd    mov ecx,[ebp+0Ch]"
+"	      00505dba    mov eax,currentObject"
+"	      00505dbd    mov ecx,dyblock"
 "	      00505dc0    mov [ecx],eax"
 );
 // LINE 2704:
 	asm( 
-"	      00505dc2    mov eax,[ebp-34h]"
+"	      00505dc2    mov eax,currentObject"
 "	      00505dc5    movsx eax,word ptr [eax+0Ch]"
 "	      00505dc9    test al,10h"
 "	      00505dcb    je near ptr 00505E46h"
 );
 // LINE 2707:
 	asm( 
-"	      00505dd1    mov eax,[ebp-34h]"
+"	      00505dd1    mov eax,currentObject"
 "	      00505dd4    movsx eax,word ptr [eax+0Eh]"
 "	      00505dd8    mov eax,[eax*4+608F80h]"
-"	      00505ddf    mov [ebp-0Ch],eax"
+"	      00505ddf    mov carblock,eax"
 );
 // LINE 2713:
 	asm( 
-"	      00505de2    mov eax,[ebp-58h]"
+"	      00505de2    mov eax,this"
 "	      00505de5    test byte ptr [eax+8],80h"
 "	      00505de9    je near ptr 00505E13h"
-"	      00505def    mov eax,[ebp-0Ch]"
+"	      00505def    mov eax,carblock"
 "	      00505df2    test byte ptr [eax+9],4"
 "	      00505df6    jne near ptr 00505E13h"
 );
 // LINE 2715:
 	asm( 
-"	      00505dfc    mov eax,[ebp-58h]"
+"	      00505dfc    mov eax,this"
 "	      00505dff    or dword ptr [eax+8],400h"
 );
 // LINE 2716:
 	asm( 
-"	      00505e06    mov eax,[ebp-34h]"
+"	      00505e06    mov eax,currentObject"
 "	      00505e09    mov eax,[eax]"
-"	      00505e0b    mov [ebp-34h],eax"
+"	      00505e0b    mov currentObject,eax"
 );
 // LINE 2717:
 	asm( 
@@ -7706,10 +7706,10 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2723:
 	asm( 
-"	      00505e13    mov eax,[ebp-0Ch]"
+"	      00505e13    mov eax,carblock"
 "	      00505e16    test byte ptr [eax+8],10h"
 "	      00505e1a    jne near ptr 00505E37h"
-"	      00505e20    mov eax,[ebp-0Ch]"
+"	      00505e20    mov eax,carblock"
 "	      00505e23    test byte ptr [eax+8],20h"
 "	      00505e27    jne near ptr 00505E37h"
 );
@@ -7726,7 +7726,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2730:
 	asm( 
 "	      00505e41    jmp near ptr 00505EABh"
-"	      00505e46    mov eax,[ebp-34h]"
+"	      00505e46    mov eax,currentObject"
 "	      00505e49    movsx eax,word ptr [eax+0Ch]"
 "	      00505e4d    test al,8"
 "	      00505e4f    je near ptr 00505E64h"
@@ -7739,7 +7739,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2734:
 	asm( 
 "	      00505e5f    jmp near ptr 00505EABh"
-"	      00505e64    mov eax,[ebp-34h]"
+"	      00505e64    mov eax,currentObject"
 "	      00505e67    movsx eax,word ptr [eax+0Ch]"
 "	      00505e6b    test al,4"
 "	      00505e6d    je near ptr 00505E82h"
@@ -7752,7 +7752,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2738:
 	asm( 
 "	      00505e7d    jmp near ptr 00505EABh"
-"	      00505e82    mov eax,[ebp-34h]"
+"	      00505e82    mov eax,currentObject"
 "	      00505e85    movsx eax,word ptr [eax+0Ch]"
 "	      00505e89    test ah,4"
 "	      00505e8c    je near ptr 00505EA1h"
@@ -7773,9 +7773,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2748:
 	asm( 
-"	      00505eab    mov eax,[ebp-34h]"
+"	      00505eab    mov eax,currentObject"
 "	      00505eae    mov eax,[eax]"
-"	      00505eb0    mov [ebp-34h],eax"
+"	      00505eb0    mov currentObject,eax"
 );
 // LINE 2749:
 	asm( 
@@ -7784,27 +7784,27 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2755:
 // Block end:
 	asm( 
-"	      00505eb8    mov eax,[ebp-14h]"
+"	      00505eb8    mov eax,currentCell"
 "	      00505ebb    mov eax,[eax+10h]"
-"	      00505ebe    mov [ebp-10h],eax"
+"	      00505ebe    mov currentObject,eax"
 );
 // LINE 2758:
 	asm( 
-"	      00505ec1    cmp dword ptr [ebp-10h],0"
+"	      00505ec1    cmp currentObject,0"
 "	      00505ec5    je near ptr 00506057h"
 );
 // LINE 2761:
 	asm( 
-"	      00505ecb    mov eax,[ebp-58h]"
+"	      00505ecb    mov eax,this"
 "	      00505ece    add eax,0Ch"
-"	      00505ed1    cmp eax,[ebp-10h]"
+"	      00505ed1    cmp eax,currentObject"
 "	      00505ed4    jne near ptr 00505EE7h"
 );
 // LINE 2763:
 	asm( 
-"	      00505eda    mov eax,[ebp-10h]"
+"	      00505eda    mov eax,currentObject"
 "	      00505edd    mov eax,[eax]"
-"	      00505edf    mov [ebp-10h],eax"
+"	      00505edf    mov currentObject,eax"
 );
 // LINE 2764:
 	asm( 
@@ -7812,16 +7812,16 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2768:
 	asm( 
-"	      00505ee7    mov eax,[ebp-10h]"
+"	      00505ee7    mov eax,currentObject"
 "	      00505eea    movsx eax,word ptr [eax+0Ch]"
 "	      00505eee    test al,20h"
 "	      00505ef0    je near ptr 00505F03h"
 );
 // LINE 2770:
 	asm( 
-"	      00505ef6    mov eax,[ebp-10h]"
+"	      00505ef6    mov eax,currentObject"
 "	      00505ef9    mov eax,[eax]"
-"	      00505efb    mov [ebp-10h],eax"
+"	      00505efb    mov currentObject,eax"
 );
 // LINE 2771:
 	asm( 
@@ -7829,77 +7829,77 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2776:
 	asm( 
-"	      00505f03    mov eax,[ebp-30h]"
-"	      00505f06    mov ecx,[ebp-10h]"
+"	      00505f03    mov eax,collisionPoint.x"
+"	      00505f06    mov ecx,currentObject"
 "	      00505f09    sub eax,[ecx+18h]"
 "	      00505f0c    cdq"
 "	      00505f0d    xor eax,edx"
 "	      00505f0f    sub eax,edx"
-"	      00505f11    mov [ebp-1Ch],eax"
+"	      00505f11    mov xdiff,eax"
 );
 // LINE 2777:
 	asm( 
-"	      00505f14    mov eax,[ebp-2Ch]"
-"	      00505f17    mov ecx,[ebp-10h]"
+"	      00505f14    mov eax,collisionPoint.y"
+"	      00505f17    mov ecx,currentObject"
 "	      00505f1a    sub eax,[ecx+1Ch]"
 "	      00505f1d    cdq"
 "	      00505f1e    xor eax,edx"
 "	      00505f20    sub eax,edx"
-"	      00505f22    mov [ebp-4],eax"
+"	      00505f22    mov ydiff,eax"
 );
 // LINE 2778:
 	asm( 
-"	      00505f25    mov eax,[ebp-28h]"
-"	      00505f28    mov ecx,[ebp-10h]"
+"	      00505f25    mov eax,collisionPoint.z"
+"	      00505f28    mov ecx,currentObject"
 "	      00505f2b    sub eax,[ecx+20h]"
 "	      00505f2e    cdq"
 "	      00505f2f    xor eax,edx"
 "	      00505f31    sub eax,edx"
-"	      00505f33    mov [ebp-18h],eax"
+"	      00505f33    mov zdiff,eax"
 );
 // LINE 2780:
 	asm( 
-"	      00505f36    mov eax,[ebp-10h]"
+"	      00505f36    mov eax,currentObject"
 "	      00505f39    mov eax,[eax+10h]"
-"	      00505f3c    mov [ebp-24h],eax"
+"	      00505f3c    mov combinedradius,eax"
 );
 // LINE 2781:
 	asm( 
-"	      00505f3f    add dword ptr [ebp-24h],50000h"
+"	      00505f3f    add combinedradius,50000h"
 );
 // LINE 2784:
 	asm( 
-"	      00505f46    mov eax,[ebp-1Ch]"
-"	      00505f49    cmp [ebp-24h],eax"
+"	      00505f46    mov eax,xdiff"
+"	      00505f49    cmp combinedradius,eax"
 "	      00505f4c    jl near ptr 0050604Ah"
-"	      00505f52    mov eax,[ebp-4]"
-"	      00505f55    cmp [ebp-24h],eax"
+"	      00505f52    mov eax,ydiff"
+"	      00505f55    cmp combinedradius,eax"
 "	      00505f58    jl near ptr 0050604Ah"
-"	      00505f5e    mov eax,[ebp-18h]"
-"	      00505f61    cmp [ebp-24h],eax"
+"	      00505f5e    mov eax,zdiff"
+"	      00505f61    cmp combinedradius,eax"
 "	      00505f64    jl near ptr 0050604Ah"
 );
 // LINE 2787:
 	asm( 
-"	      00505f6a    mov eax,[ebp-10h]"
-"	      00505f6d    mov ecx,[ebp+0Ch]"
+"	      00505f6a    mov eax,currentObject"
+"	      00505f6d    mov ecx,dyblock"
 "	      00505f70    mov [ecx],eax"
 );
 // LINE 2789:
 	asm( 
-"	      00505f72    mov eax,[ebp-10h]"
+"	      00505f72    mov eax,currentObject"
 "	      00505f75    movsx eax,word ptr [eax+0Ch]"
 "	      00505f79    test al,10h"
 "	      00505f7b    je near ptr 00505FE5h"
 );
 // LINE 2793:
 	asm( 
-"	      00505f81    mov eax,[ebp-10h]"
+"	      00505f81    mov eax,currentObject"
 "	      00505f84    movsx eax,word ptr [eax+0Eh]"
 "	      00505f88    mov eax,[eax*4+608F80h]"
 "	      00505f8f    test byte ptr [eax+8],10h"
 "	      00505f93    jne near ptr 00505FE0h"
-"	      00505f99    mov eax,[ebp-10h]"
+"	      00505f99    mov eax,currentObject"
 "	      00505f9c    movsx eax,word ptr [eax+0Eh]"
 "	      00505fa0    mov eax,[eax*4+608F80h]"
 "	      00505fa7    test byte ptr [eax+8],20h"
@@ -7907,12 +7907,12 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2804:
 	asm( 
-"	      00505fb1    mov eax,[ebp-10h]"
+"	      00505fb1    mov eax,currentObject"
 "	      00505fb4    movsx eax,word ptr [eax+0Eh]"
 "	      00505fb8    mov eax,[eax*4+608F80h]"
 "	      00505fbf    mov eax,[eax+0F2h]"
 "	      00505fc5    push eax"
-"	      00505fc6    mov ecx,[ebp-58h]"
+"	      00505fc6    mov ecx,this"
 "	      00505fc9    call 005062A7h"
 "	      00505fce    test eax,eax"
 "	      00505fd0    jne near ptr 00505FE0h"
@@ -7925,7 +7925,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2808:
 	asm( 
 "	      00505fe0    jmp near ptr 0050604Ah"
-"	      00505fe5    mov eax,[ebp-10h]"
+"	      00505fe5    mov eax,currentObject"
 "	      00505fe8    movsx eax,word ptr [eax+0Ch]"
 "	      00505fec    test al,8"
 "	      00505fee    je near ptr 00506003h"
@@ -7938,7 +7938,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2812:
 	asm( 
 "	      00505ffe    jmp near ptr 0050604Ah"
-"	      00506003    mov eax,[ebp-10h]"
+"	      00506003    mov eax,currentObject"
 "	      00506006    movsx eax,word ptr [eax+0Ch]"
 "	      0050600a    test al,4"
 "	      0050600c    je near ptr 00506021h"
@@ -7951,7 +7951,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2816:
 	asm( 
 "	      0050601c    jmp near ptr 0050604Ah"
-"	      00506021    mov eax,[ebp-10h]"
+"	      00506021    mov eax,currentObject"
 "	      00506024    movsx eax,word ptr [eax+0Ch]"
 "	      00506028    test ah,4"
 "	      0050602b    je near ptr 00506040h"
@@ -7972,9 +7972,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2827:
 	asm( 
-"	      0050604a    mov eax,[ebp-10h]"
+"	      0050604a    mov eax,currentObject"
 "	      0050604d    mov eax,[eax]"
-"	      0050604f    mov [ebp-10h],eax"
+"	      0050604f    mov currentObject,eax"
 );
 // LINE 2828:
 	asm( 
@@ -7983,15 +7983,15 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2831:
 	asm( 
 "	      00506057    xor eax,eax"
-"	      00506059    mov al,[ebp-20h]"
+"	      00506059    mov al,nextLocation.x"
 "	      0050605c    xor ecx,ecx"
-"	      0050605e    mov cl,[ebp-8]"
+"	      0050605e    mov cl,currentLocation.x"
 "	      00506061    cmp eax,ecx"
 "	      00506063    jne near ptr 00506082h"
 "	      00506069    xor eax,eax"
-"	      0050606b    mov al,[ebp-1Fh]"
+"	      0050606b    mov al,nextLocation.y"
 "	      0050606e    xor ecx,ecx"
-"	      00506070    mov cl,[ebp-7]"
+"	      00506070    mov cl,currentLocation.y"
 "	      00506073    cmp eax,ecx"
 "	      00506075    jne near ptr 00506082h"
 );
@@ -8003,9 +8003,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2837:
 	asm( 
 "	      00506082    xor eax,eax"
-"	      00506084    mov al,[ebp-1Fh]"
+"	      00506084    mov al,nextLocation.y"
 "	      00506087    xor ecx,ecx"
-"	      00506089    mov cl,[ebp-20h]"
+"	      00506089    mov cl,nextLocation.x"
 "	      0050608c    shl ecx,0Ah"
 "	      0050608f    mov eax,[ecx+eax*4+67ED30h]"
 "	      00506096    mov [ebp-40h],eax"
@@ -8020,11 +8020,11 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      005060bf    jmp near ptr 005060C4h"
 "	      005060c4    jmp near ptr 005060C9h"
 "	      005060c9    mov eax,[ebp-40h]"
-"	      005060cc    mov [ebp-14h],eax"
+"	      005060cc    mov currentCell,eax"
 );
 // LINE 2840:
 	asm( 
-"	      005060cf    cmp dword ptr [ebp-14h],0"
+"	      005060cf    cmp currentCell,0"
 "	      005060d3    jne near ptr 005060FAh"
 );
 // LINE 2842:
@@ -8039,27 +8039,27 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2846:
 	asm( 
-"	      005060fa    mov eax,[ebp-14h]"
+"	      005060fa    mov eax,currentCell"
 "	      005060fd    mov eax,[eax+10h]"
-"	      00506100    mov [ebp-10h],eax"
+"	      00506100    mov currentObject,eax"
 );
 // LINE 2849:
 	asm( 
-"	      00506103    cmp dword ptr [ebp-10h],0"
+"	      00506103    cmp currentObject,0"
 "	      00506107    je near ptr 00506299h"
 );
 // LINE 2852:
 	asm( 
-"	      0050610d    mov eax,[ebp-58h]"
+"	      0050610d    mov eax,this"
 "	      00506110    add eax,0Ch"
-"	      00506113    cmp eax,[ebp-10h]"
+"	      00506113    cmp eax,currentObject"
 "	      00506116    jne near ptr 00506129h"
 );
 // LINE 2854:
 	asm( 
-"	      0050611c    mov eax,[ebp-10h]"
+"	      0050611c    mov eax,currentObject"
 "	      0050611f    mov eax,[eax]"
-"	      00506121    mov [ebp-10h],eax"
+"	      00506121    mov currentObject,eax"
 );
 // LINE 2855:
 	asm( 
@@ -8067,16 +8067,16 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2859:
 	asm( 
-"	      00506129    mov eax,[ebp-10h]"
+"	      00506129    mov eax,currentObject"
 "	      0050612c    movsx eax,word ptr [eax+0Ch]"
 "	      00506130    test al,20h"
 "	      00506132    je near ptr 00506145h"
 );
 // LINE 2861:
 	asm( 
-"	      00506138    mov eax,[ebp-10h]"
+"	      00506138    mov eax,currentObject"
 "	      0050613b    mov eax,[eax]"
-"	      0050613d    mov [ebp-10h],eax"
+"	      0050613d    mov currentObject,eax"
 );
 // LINE 2862:
 	asm( 
@@ -8084,77 +8084,77 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2867:
 	asm( 
-"	      00506145    mov eax,[ebp-30h]"
-"	      00506148    mov ecx,[ebp-10h]"
+"	      00506145    mov eax,collisionPoint.x"
+"	      00506148    mov ecx,currentObject"
 "	      0050614b    sub eax,[ecx+18h]"
 "	      0050614e    cdq"
 "	      0050614f    xor eax,edx"
 "	      00506151    sub eax,edx"
-"	      00506153    mov [ebp-1Ch],eax"
+"	      00506153    mov xdiff,eax"
 );
 // LINE 2868:
 	asm( 
-"	      00506156    mov eax,[ebp-2Ch]"
-"	      00506159    mov ecx,[ebp-10h]"
+"	      00506156    mov eax,collisionPoint.y"
+"	      00506159    mov ecx,currentObject"
 "	      0050615c    sub eax,[ecx+1Ch]"
 "	      0050615f    cdq"
 "	      00506160    xor eax,edx"
 "	      00506162    sub eax,edx"
-"	      00506164    mov [ebp-4],eax"
+"	      00506164    mov ydiff,eax"
 );
 // LINE 2869:
 	asm( 
-"	      00506167    mov eax,[ebp-28h]"
-"	      0050616a    mov ecx,[ebp-10h]"
+"	      00506167    mov eax,collisionPoint.z"
+"	      0050616a    mov ecx,currentObject"
 "	      0050616d    sub eax,[ecx+20h]"
 "	      00506170    cdq"
 "	      00506171    xor eax,edx"
 "	      00506173    sub eax,edx"
-"	      00506175    mov [ebp-18h],eax"
+"	      00506175    mov zdiff,eax"
 );
 // LINE 2871:
 	asm( 
-"	      00506178    mov eax,[ebp-10h]"
+"	      00506178    mov eax,currentObject"
 "	      0050617b    mov eax,[eax+10h]"
-"	      0050617e    mov [ebp-24h],eax"
+"	      0050617e    mov combinedradius,eax"
 );
 // LINE 2872:
 	asm( 
-"	      00506181    add dword ptr [ebp-24h],50000h"
+"	      00506181    add combinedradius,50000h"
 );
 // LINE 2875:
 	asm( 
-"	      00506188    mov eax,[ebp-1Ch]"
-"	      0050618b    cmp [ebp-24h],eax"
+"	      00506188    mov eax,xdiff"
+"	      0050618b    cmp combinedradius,eax"
 "	      0050618e    jl near ptr 0050628Ch"
-"	      00506194    mov eax,[ebp-4]"
-"	      00506197    cmp [ebp-24h],eax"
+"	      00506194    mov eax,ydiff"
+"	      00506197    cmp combinedradius,eax"
 "	      0050619a    jl near ptr 0050628Ch"
-"	      005061a0    mov eax,[ebp-18h]"
-"	      005061a3    cmp [ebp-24h],eax"
+"	      005061a0    mov eax,zdiff"
+"	      005061a3    cmp combinedradius,eax"
 "	      005061a6    jl near ptr 0050628Ch"
 );
 // LINE 2878:
 	asm( 
-"	      005061ac    mov eax,[ebp-10h]"
-"	      005061af    mov ecx,[ebp+0Ch]"
+"	      005061ac    mov eax,currentObject"
+"	      005061af    mov ecx,dyblock"
 "	      005061b2    mov [ecx],eax"
 );
 // LINE 2880:
 	asm( 
-"	      005061b4    mov eax,[ebp-10h]"
+"	      005061b4    mov eax,currentObject"
 "	      005061b7    movsx eax,word ptr [eax+0Ch]"
 "	      005061bb    test al,10h"
 "	      005061bd    je near ptr 00506227h"
 );
 // LINE 2884:
 	asm( 
-"	      005061c3    mov eax,[ebp-10h]"
+"	      005061c3    mov eax,currentObject"
 "	      005061c6    movsx eax,word ptr [eax+0Eh]"
 "	      005061ca    mov eax,[eax*4+608F80h]"
 "	      005061d1    test byte ptr [eax+8],10h"
 "	      005061d5    jne near ptr 00506222h"
-"	      005061db    mov eax,[ebp-10h]"
+"	      005061db    mov eax,currentObject"
 "	      005061de    movsx eax,word ptr [eax+0Eh]"
 "	      005061e2    mov eax,[eax*4+608F80h]"
 "	      005061e9    test byte ptr [eax+8],20h"
@@ -8162,12 +8162,12 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2895:
 	asm( 
-"	      005061f3    mov eax,[ebp-10h]"
+"	      005061f3    mov eax,currentObject"
 "	      005061f6    movsx eax,word ptr [eax+0Eh]"
 "	      005061fa    mov eax,[eax*4+608F80h]"
 "	      00506201    mov eax,[eax+0F2h]"
 "	      00506207    push eax"
-"	      00506208    mov ecx,[ebp-58h]"
+"	      00506208    mov ecx,this"
 "	      0050620b    call 005062A7h"
 "	      00506210    test eax,eax"
 "	      00506212    jne near ptr 00506222h"
@@ -8180,7 +8180,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2899:
 	asm( 
 "	      00506222    jmp near ptr 0050628Ch"
-"	      00506227    mov eax,[ebp-10h]"
+"	      00506227    mov eax,currentObject"
 "	      0050622a    movsx eax,word ptr [eax+0Ch]"
 "	      0050622e    test al,8"
 "	      00506230    je near ptr 00506245h"
@@ -8193,7 +8193,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2903:
 	asm( 
 "	      00506240    jmp near ptr 0050628Ch"
-"	      00506245    mov eax,[ebp-10h]"
+"	      00506245    mov eax,currentObject"
 "	      00506248    movsx eax,word ptr [eax+0Ch]"
 "	      0050624c    test al,4"
 "	      0050624e    je near ptr 00506263h"
@@ -8206,7 +8206,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 // LINE 2907:
 	asm( 
 "	      0050625e    jmp near ptr 0050628Ch"
-"	      00506263    mov eax,[ebp-10h]"
+"	      00506263    mov eax,currentObject"
 "	      00506266    movsx eax,word ptr [eax+0Ch]"
 "	      0050626a    test ah,4"
 "	      0050626d    je near ptr 00506282h"
@@ -8227,9 +8227,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 );
 // LINE 2918:
 	asm( 
-"	      0050628c    mov eax,[ebp-10h]"
+"	      0050628c    mov eax,currentObject"
 "	      0050628f    mov eax,[eax]"
-"	      00506291    mov [ebp-10h],eax"
+"	      00506291    mov currentObject,eax"
 );
 // LINE 2919:
 	asm( 
@@ -8262,45 +8262,45 @@ int32_t AutomobileClass::AreCarsHeadOn(struct Point3d* dirvect) {
 "	      005062ad    push ebx"
 "	      005062ae    push esi"
 "	      005062af    push edi"
-"	      005062b0    mov [ebp-8],ecx"
+"	      005062b0    mov this,ecx"
 );
 // LINE 2952:
 	asm( 
-"	      005062b3    mov eax,[ebp+8]"
+"	      005062b3    mov eax,dirvect"
 "	      005062b6    mov eax,[eax+8]"
 "	      005062b9    push eax"
-"	      005062ba    mov eax,[ebp-8]"
+"	      005062ba    mov eax,this"
 "	      005062bd    mov eax,[eax+0F2h]"
 "	      005062c3    mov eax,[eax+8]"
 "	      005062c6    push eax"
 "	      005062c7    call 004D19BDh"
 "	      005062cc    add esp,8"
 "	      005062cf    mov ebx,eax"
-"	      005062d1    mov eax,[ebp+8]"
+"	      005062d1    mov eax,dirvect"
 "	      005062d4    mov eax,[eax+4]"
 "	      005062d7    push eax"
-"	      005062d8    mov eax,[ebp-8]"
+"	      005062d8    mov eax,this"
 "	      005062db    mov eax,[eax+0F2h]"
 "	      005062e1    mov eax,[eax+4]"
 "	      005062e4    push eax"
 "	      005062e5    call 004D19BDh"
 "	      005062ea    add esp,8"
 "	      005062ed    add ebx,eax"
-"	      005062ef    mov eax,[ebp+8]"
+"	      005062ef    mov eax,dirvect"
 "	      005062f2    mov eax,[eax]"
 "	      005062f4    push eax"
-"	      005062f5    mov eax,[ebp-8]"
+"	      005062f5    mov eax,this"
 "	      005062f8    mov eax,[eax+0F2h]"
 "	      005062fe    mov eax,[eax]"
 "	      00506300    push eax"
 "	      00506301    call 004D19BDh"
 "	      00506306    add esp,8"
 "	      00506309    add ebx,eax"
-"	      0050630b    mov [ebp-4],ebx"
+"	      0050630b    mov dotp,ebx"
 );
 // LINE 2954:
 	asm( 
-"	      0050630e    cmp dword ptr [ebp-4],3333h"
+"	      0050630e    cmp dotp,3333h"
 "	      00506315    jl near ptr 00506322h"
 );
 // LINE 2955:
@@ -8337,17 +8337,17 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      00506339    push ebx"
 "	      0050633a    push esi"
 "	      0050633b    push edi"
-"	      0050633c    mov [ebp-10h],ecx"
+"	      0050633c    mov this,ecx"
 );
 // LINE 2985:
 	asm( 
-"	      0050633f    mov eax,[ebp-10h]"
+"	      0050633f    mov eax,this"
 "	      00506342    test byte ptr [eax+9],8"
 "	      00506346    je near ptr 00506387h"
 );
 // LINE 2987:
 	asm( 
-"	      0050634c    mov eax,[ebp-10h]"
+"	      0050634c    mov eax,this"
 "	      0050634f    xor ecx,ecx"
 "	      00506351    mov cl,[eax+0D2h]"
 "	      00506357    sub ecx,ds:[6BF188h]"
@@ -8355,11 +8355,11 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      0050635f    cdq"
 "	      00506360    xor eax,edx"
 "	      00506362    sub eax,edx"
-"	      00506364    mov [ebp-0Ch],eax"
+"	      00506364    mov xdiff,eax"
 );
 // LINE 2988:
 	asm( 
-"	      00506367    mov eax,[ebp-10h]"
+"	      00506367    mov eax,this"
 "	      0050636a    xor ecx,ecx"
 "	      0050636c    mov cl,[eax+0D3h]"
 "	      00506372    sub ecx,ds:[6BF18Ch]"
@@ -8367,7 +8367,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      0050637a    cdq"
 "	      0050637b    xor eax,edx"
 "	      0050637d    sub eax,edx"
-"	      0050637f    mov [ebp-4],eax"
+"	      0050637f    mov ydiff,eax"
 );
 // LINE 2990:
 	asm( 
@@ -8375,7 +8375,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 );
 // LINE 2992:
 	asm( 
-"	      00506387    mov eax,[ebp-10h]"
+"	      00506387    mov eax,this"
 "	      0050638a    xor ecx,ecx"
 "	      0050638c    mov cl,[eax+7Ch]"
 "	      0050638f    sub ecx,ds:[6BF188h]"
@@ -8383,11 +8383,11 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      00506397    cdq"
 "	      00506398    xor eax,edx"
 "	      0050639a    sub eax,edx"
-"	      0050639c    mov [ebp-0Ch],eax"
+"	      0050639c    mov xdiff,eax"
 );
 // LINE 2993:
 	asm( 
-"	      0050639f    mov eax,[ebp-10h]"
+"	      0050639f    mov eax,this"
 "	      005063a2    xor ecx,ecx"
 "	      005063a4    mov cl,[eax+7Dh]"
 "	      005063a7    sub ecx,ds:[6BF18Ch]"
@@ -8395,20 +8395,20 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      005063af    cdq"
 "	      005063b0    xor eax,edx"
 "	      005063b2    sub eax,edx"
-"	      005063b4    mov [ebp-4],eax"
+"	      005063b4    mov ydiff,eax"
 );
 // LINE 2996:
 	asm( 
-"	      005063b7    mov eax,[ebp-0Ch]"
-"	      005063ba    cmp [ebp-4],eax"
+"	      005063b7    mov eax,xdiff"
+"	      005063ba    cmp ydiff,eax"
 "	      005063bd    jge near ptr 005063D3h"
 );
 // LINE 2998:
 	asm( 
-"	      005063c3    mov eax,[ebp-0Ch]"
+"	      005063c3    mov eax,xdiff"
 "	      005063c6    add eax,eax"
-"	      005063c8    add eax,[ebp-4]"
-"	      005063cb    mov [ebp-8],eax"
+"	      005063c8    add eax,ydiff"
+"	      005063cb    mov dist,eax"
 );
 // LINE 3000:
 	asm( 
@@ -8416,10 +8416,10 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 );
 // LINE 3002:
 	asm( 
-"	      005063d3    mov eax,[ebp-4]"
+"	      005063d3    mov eax,ydiff"
 "	      005063d6    add eax,eax"
-"	      005063d8    add eax,[ebp-0Ch]"
-"	      005063db    mov [ebp-8],eax"
+"	      005063d8    add eax,xdiff"
+"	      005063db    mov dist,eax"
 );
 // LINE 3006:
 	asm( 
@@ -8427,7 +8427,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 "	      005063e3    sar eax,1"
 "	      005063e6    add eax,ds:[6663A0h]"
 "	      005063ec    add eax,2"
-"	      005063ef    cmp eax,[ebp-8]"
+"	      005063ef    cmp eax,dist"
 "	      005063f2    jge near ptr 00506407h"
 );
 // LINE 3008:
@@ -8464,11 +8464,11 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 "	      00506419    push ebx"
 "	      0050641a    push esi"
 "	      0050641b    push edi"
-"	      0050641c    mov [ebp-4],ecx"
+"	      0050641c    mov this,ecx"
 );
 // LINE 3029:
 	asm( 
-"	      0050641f    mov eax,[ebp+8]"
+"	      0050641f    mov eax,hitter_type"
 "	      00506422    mov [ebp-8],eax"
 "	      00506425    jmp near ptr 005064ECh"
 );
@@ -8478,9 +8478,9 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3034:
 	asm( 
-"	      0050642f    mov eax,[ebp+0Ch]"
+"	      0050642f    mov eax,dyhitter"
 "	      00506432    push eax"
-"	      00506433    mov ecx,[ebp-4]"
+"	      00506433    mov ecx,this"
 "	      00506436    call 00506C7Dh"
 );
 // LINE 3035:
@@ -8489,9 +8489,9 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3037:
 	asm( 
-"	      00506440    mov eax,[ebp+14h]"
+"	      00506440    mov eax,xtra_msg"
 "	      00506443    push eax"
-"	      00506444    mov ecx,[ebp-4]"
+"	      00506444    mov ecx,this"
 "	      00506447    call 00503FD0h"
 );
 // LINE 3038:
@@ -8500,9 +8500,9 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3040:
 	asm( 
-"	      00506451    mov eax,[ebp+10h]"
+"	      00506451    mov eax,mission_id"
 "	      00506454    push eax"
-"	      00506455    mov ecx,[ebp-4]"
+"	      00506455    mov ecx,this"
 "	      00506458    call 0050670Bh"
 );
 // LINE 3041:
@@ -8511,9 +8511,9 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3043:
 	asm( 
-"	      00506462    mov eax,[ebp+0Ch]"
+"	      00506462    mov eax,dyhitter"
 "	      00506465    push eax"
-"	      00506466    mov ecx,[ebp-4]"
+"	      00506466    mov ecx,this"
 "	      00506469    call 00503EDEh"
 );
 // LINE 3044:
@@ -8530,16 +8530,16 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3050:
 	asm( 
-"	      0050647d    mov ecx,[ebp-4]"
+"	      0050647d    mov ecx,this"
 "	      00506480    call 00506F0Eh"
 "	      00506485    test eax,eax"
 "	      00506487    jne near ptr 00506499h"
 );
 // LINE 3051:
 	asm( 
-"	      0050648d    mov eax,[ebp+10h]"
+"	      0050648d    mov eax,mission_id"
 "	      00506490    push eax"
-"	      00506491    mov ecx,[ebp-4]"
+"	      00506491    mov ecx,this"
 "	      00506494    call 0050670Bh"
 );
 // LINE 3052:
@@ -8576,16 +8576,16 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 );
 // LINE 3068:
 	asm( 
-"	      005064c1    mov ecx,[ebp-4]"
+"	      005064c1    mov ecx,this"
 "	      005064c4    call 00506F0Eh"
 "	      005064c9    test eax,eax"
 "	      005064cb    jne near ptr 005064DDh"
 );
 // LINE 3069:
 	asm( 
-"	      005064d1    mov eax,[ebp+10h]"
+"	      005064d1    mov eax,mission_id"
 "	      005064d4    push eax"
-"	      005064d5    mov ecx,[ebp-4]"
+"	      005064d5    mov ecx,this"
 "	      005064d8    call 0050670Bh"
 );
 // LINE 3070:
@@ -8651,15 +8651,15 @@ void AutoHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYO
 );
 // LINE 3086:
 	asm( 
-"	      00506552    mov eax,[ebp+18h]"
+"	      00506552    mov eax,xtra_msg"
 "	      00506555    push eax"
-"	      00506556    mov eax,[ebp+14h]"
+"	      00506556    mov eax,mission_id"
 "	      00506559    push eax"
-"	      0050655a    mov eax,[ebp+0Ch]"
+"	      0050655a    mov eax,dyhitter"
 "	      0050655d    push eax"
-"	      0050655e    mov eax,[ebp+8]"
+"	      0050655e    mov eax,hitter_type"
 "	      00506561    push eax"
-"	      00506562    mov eax,[ebp+10h]"
+"	      00506562    mov eax,dyhittee"
 "	      00506565    movsx eax,word ptr [eax+0Eh]"
 "	      00506569    mov ecx,[eax*4+608F80h]"
 "	      00506570    call 00506413h"
@@ -8687,9 +8687,9 @@ int32_t AutoMissionStartFire(long mission_id, struct Point2d* celloc) {
 );
 // LINE 3098:
 	asm( 
-"	      00506585    mov eax,[ebp+0Ch]"
+"	      00506585    mov eax,celloc"
 "	      00506588    push eax"
-"	      00506589    mov eax,[ebp+8]"
+"	      00506589    mov eax,mission_id"
 "	      0050658c    push eax"
 "	      0050658d    call 005065BFh"
 "	      00506592    add esp,8"
@@ -8717,9 +8717,9 @@ int32_t AutoMissionStartJam(long mission_id, struct Point2d* celloc) {
 );
 // LINE 3111:
 	asm( 
-"	      005065a5    mov eax,[ebp+0Ch]"
+"	      005065a5    mov eax,celloc"
 "	      005065a8    push eax"
-"	      005065a9    mov eax,[ebp+8]"
+"	      005065a9    mov eax,mission_id"
 "	      005065ac    push eax"
 "	      005065ad    call 00506665h"
 "	      005065b2    add esp,8"
@@ -8751,24 +8751,24 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 );
 // LINE 3128:
 	asm( 
-"	      005065c8    mov dword ptr [ebp-4],0"
+"	      005065c8    mov currentCarIndex,0"
 "	      005065cf    jmp near ptr 005065D7h"
-"	      005065d4    inc dword ptr [ebp-4]"
-"	      005065d7    cmp dword ptr [ebp-4],46h"
+"	      005065d4    inc currentCarIndex"
+"	      005065d7    cmp currentCarIndex,46h"
 "	      005065db    jge near ptr 00506612h"
 );
 // LINE 3130:
 	asm( 
-"	      005065e1    mov eax,[ebp-4]"
+"	      005065e1    mov eax,currentCarIndex"
 "	      005065e4    mov eax,[eax*4+608F80h]"
-"	      005065eb    mov [ebp-8],eax"
+"	      005065eb    mov targcar,eax"
 );
 // LINE 3131:
 	asm( 
-"	      005065ee    mov eax,[ebp-8]"
+"	      005065ee    mov eax,targcar"
 "	      005065f1    test byte ptr [eax+8],2"
 "	      005065f5    je near ptr 0050660Dh"
-"	      005065fb    mov eax,[ebp-8]"
+"	      005065fb    mov eax,targcar"
 "	      005065fe    test byte ptr [eax+9],1"
 "	      00506602    jne near ptr 0050660Dh"
 );
@@ -8782,7 +8782,7 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 );
 // LINE 3135:
 	asm( 
-"	      00506612    cmp dword ptr [ebp-4],46h"
+"	      00506612    cmp currentCarIndex,46h"
 "	      00506616    jne near ptr 00506623h"
 );
 // LINE 3136:
@@ -8792,27 +8792,27 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 );
 // LINE 3138:
 	asm( 
-"	      00506623    mov eax,[ebp+8]"
+"	      00506623    mov eax,mission_id"
 "	      00506626    push eax"
-"	      00506627    mov ecx,[ebp-8]"
+"	      00506627    mov ecx,targcar"
 "	      0050662a    call 0050670Bh"
 );
 // LINE 3141:
 	asm( 
-"	      0050662f    mov eax,[ebp-8]"
+"	      0050662f    mov eax,targcar"
 "	      00506632    mov eax,[eax+24h]"
 "	      00506635    add eax,20000000h"
 "	      0050663a    sar eax,16h"
-"	      0050663d    mov ecx,[ebp+0Ch]"
+"	      0050663d    mov ecx,celloc"
 "	      00506640    mov [ecx],eax"
 );
 // LINE 3142:
 	asm( 
 "	      00506642    mov eax,20000000h"
-"	      00506647    mov ecx,[ebp-8]"
+"	      00506647    mov ecx,targcar"
 "	      0050664a    sub eax,[ecx+2Ch]"
 "	      0050664d    sar eax,16h"
-"	      00506650    mov ecx,[ebp+0Ch]"
+"	      00506650    mov ecx,celloc"
 "	      00506653    mov [ecx+4],eax"
 );
 // LINE 3144:
@@ -8846,24 +8846,24 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 );
 // LINE 3161:
 	asm( 
-"	      0050666e    mov dword ptr [ebp-4],0"
+"	      0050666e    mov currentCarIndex,0"
 "	      00506675    jmp near ptr 0050667Dh"
-"	      0050667a    inc dword ptr [ebp-4]"
-"	      0050667d    cmp dword ptr [ebp-4],46h"
+"	      0050667a    inc currentCarIndex"
+"	      0050667d    cmp currentCarIndex,46h"
 "	      00506681    jge near ptr 005066B8h"
 );
 // LINE 3163:
 	asm( 
-"	      00506687    mov eax,[ebp-4]"
+"	      00506687    mov eax,currentCarIndex"
 "	      0050668a    mov eax,[eax*4+608F80h]"
-"	      00506691    mov [ebp-8],eax"
+"	      00506691    mov targcar,eax"
 );
 // LINE 3164:
 	asm( 
-"	      00506694    mov eax,[ebp-8]"
+"	      00506694    mov eax,targcar"
 "	      00506697    test byte ptr [eax+8],2"
 "	      0050669b    je near ptr 005066B3h"
-"	      005066a1    mov eax,[ebp-8]"
+"	      005066a1    mov eax,targcar"
 "	      005066a4    test byte ptr [eax+9],3"
 "	      005066a8    jne near ptr 005066B3h"
 );
@@ -8877,7 +8877,7 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 );
 // LINE 3168:
 	asm( 
-"	      005066b8    cmp dword ptr [ebp-4],46h"
+"	      005066b8    cmp currentCarIndex,46h"
 "	      005066bc    jne near ptr 005066C9h"
 );
 // LINE 3169:
@@ -8887,27 +8887,27 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 );
 // LINE 3171:
 	asm( 
-"	      005066c9    mov eax,[ebp+8]"
+"	      005066c9    mov eax,mission_id"
 "	      005066cc    push eax"
-"	      005066cd    mov ecx,[ebp-8]"
+"	      005066cd    mov ecx,targcar"
 "	      005066d0    call 00506859h"
 );
 // LINE 3174:
 	asm( 
-"	      005066d5    mov eax,[ebp-8]"
+"	      005066d5    mov eax,targcar"
 "	      005066d8    mov eax,[eax+24h]"
 "	      005066db    add eax,20000000h"
 "	      005066e0    sar eax,16h"
-"	      005066e3    mov ecx,[ebp+0Ch]"
+"	      005066e3    mov ecx,celloc"
 "	      005066e6    mov [ecx],eax"
 );
 // LINE 3175:
 	asm( 
 "	      005066e8    mov eax,20000000h"
-"	      005066ed    mov ecx,[ebp-8]"
+"	      005066ed    mov ecx,targcar"
 "	      005066f0    sub eax,[ecx+2Ch]"
 "	      005066f3    sar eax,16h"
-"	      005066f6    mov ecx,[ebp+0Ch]"
+"	      005066f6    mov ecx,celloc"
 "	      005066f9    mov [ecx+4],eax"
 );
 // LINE 3177:
@@ -8938,11 +8938,11 @@ void AutomobileClass::StartFire(long mission_id) {
 "	      00506711    push ebx"
 "	      00506712    push esi"
 "	      00506713    push edi"
-"	      00506714    mov [ebp-24h],ecx"
+"	      00506714    mov this,ecx"
 );
 // LINE 3195:
 	asm( 
-"	      00506717    mov eax,[ebp-24h]"
+"	      00506717    mov eax,this"
 "	      0050671a    test byte ptr [eax+9],1"
 "	      0050671e    je near ptr 00506729h"
 );
@@ -8952,11 +8952,11 @@ void AutomobileClass::StartFire(long mission_id) {
 );
 // LINE 3199:
 	asm( 
-"	      00506729    mov eax,[ebp-24h]"
+"	      00506729    mov eax,this"
 "	      0050672c    xor ecx,ecx"
 "	      0050672e    mov cl,[eax+7Ch]"
 "	      00506731    mov eax,[ecx*4+639510h]"
-"	      00506738    mov ecx,[ebp-24h]"
+"	      00506738    mov ecx,this"
 "	      0050673b    xor edx,edx"
 "	      0050673d    mov dl,[ecx+7Dh]"
 "	      00506740    xor ecx,ecx"
@@ -8971,7 +8971,7 @@ void AutomobileClass::StartFire(long mission_id) {
 );
 // LINE 3204:
 	asm( 
-"	      00506757    mov eax,[ebp-24h]"
+"	      00506757    mov eax,this"
 "	      0050675a    add eax,30h"
 "	      0050675d    push eax"
 "	      0050675e    call 004D1FF1h"
@@ -8979,7 +8979,7 @@ void AutomobileClass::StartFire(long mission_id) {
 );
 // LINE 3205:
 	asm( 
-"	      00506766    mov eax,[ebp-24h]"
+"	      00506766    mov eax,this"
 "	      00506769    add eax,30h"
 "	      0050676c    push eax"
 "	      0050676d    push 3840000h"
@@ -8988,92 +8988,92 @@ void AutomobileClass::StartFire(long mission_id) {
 );
 // LINE 3208:
 	asm( 
-"	      0050677a    mov eax,[ebp-24h]"
+"	      0050677a    mov eax,this"
 "	      0050677d    or dword ptr [eax+8],100h"
 );
 // LINE 3209:
 	asm( 
-"	      00506784    mov eax,[ebp-24h]"
+"	      00506784    mov eax,this"
 "	      00506787    movsx eax,word ptr [eax+18h]"
 "	      0050678b    or eax,1000h"
-"	      00506790    mov ecx,[ebp-24h]"
+"	      00506790    mov ecx,this"
 "	      00506793    mov [ecx+18h],ax"
 );
 // LINE 3212:
 	asm( 
-"	      00506797    mov eax,[ebp-24h]"
+"	      00506797    mov eax,this"
 "	      0050679a    mov dword ptr [eax+102h],780000h"
 );
 // LINE 3213:
 	asm( 
-"	      005067a4    mov eax,[ebp-24h]"
+"	      005067a4    mov eax,this"
 "	      005067a7    mov dword ptr [eax+10Ah],0"
 );
 // LINE 3214:
 	asm( 
-"	      005067b1    mov eax,[ebp-24h]"
+"	      005067b1    mov eax,this"
 "	      005067b4    mov dword ptr [eax+106h],0"
 );
 // LINE 3215:
 	asm( 
-"	      005067be    mov eax,[ebp+8]"
-"	      005067c1    mov ecx,[ebp-24h]"
+"	      005067be    mov eax,mission_id"
+"	      005067c1    mov ecx,this"
 "	      005067c4    mov [ecx+10Eh],eax"
 );
 // LINE 3218:
 	asm( 
-"	      005067ca    mov eax,[ebp-24h]"
+"	      005067ca    mov eax,this"
 "	      005067cd    mov eax,[eax+24h]"
 "	      005067d0    add eax,20000000h"
 "	      005067d5    sar eax,16h"
-"	      005067d8    mov [ebp-8],eax"
+"	      005067d8    mov celloc.x,eax"
 );
 // LINE 3219:
 	asm( 
 "	      005067db    mov eax,20000000h"
-"	      005067e0    mov ecx,[ebp-24h]"
+"	      005067e0    mov ecx,this"
 "	      005067e3    sub eax,[ecx+2Ch]"
 "	      005067e6    sar eax,16h"
-"	      005067e9    mov [ebp-4],eax"
+"	      005067e9    mov celloc.y,eax"
 );
 // LINE 3220:
 	asm( 
-"	      005067ec    mov eax,[ebp-4]"
+"	      005067ec    mov eax,celloc.y"
 "	      005067ef    and eax,0FFh"
-"	      005067f4    mov ecx,[ebp-8]"
+"	      005067f4    mov ecx,celloc.x"
 "	      005067f7    and ecx,0FFh"
 "	      005067fd    shl ecx,0Ah"
 "	      00506800    mov eax,[ecx+eax*4+67ED30h]"
-"	      00506807    mov ecx,[ebp-24h]"
+"	      00506807    mov ecx,this"
 "	      0050680a    mov [ecx+112h],eax"
 );
 // LINE 3223:
 	asm( 
-"	      00506810    mov eax,[ebp-24h]"
+"	      00506810    mov eax,this"
 "	      00506813    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      0050681a    je near ptr 0050684Dh"
 );
 // LINE 3225:
 	asm( 
-"	      00506820    mov dword ptr [ebp-20h],18h"
+"	      00506820    mov mp.op,18h"
 );
 // LINE 3226:
 	asm( 
-"	      00506827    mov eax,[ebp-24h]"
+"	      00506827    mov eax,this"
 "	      0050682a    mov eax,[eax+10Eh]"
-"	      00506830    mov [ebp-1Ch],eax"
+"	      00506830    mov mp.id,eax"
 );
 // LINE 3227:
 	asm( 
-"	      00506833    mov dword ptr [ebp-10h],1"
+"	      00506833    mov mp.i2num,1"
 );
 // LINE 3228:
 	asm( 
-"	      0050683a    mov dword ptr [ebp-0Ch],0"
+"	      0050683a    mov mp.flags,0"
 );
 // LINE 3229:
 	asm( 
-"	      00506841    lea eax,[ebp-20h]"
+"	      00506841    lea eax,mp.op"
 "	      00506844    push eax"
 "	      00506845    call 004FBD4Ah"
 "	      0050684a    add esp,4"
@@ -9102,11 +9102,11 @@ void AutomobileClass::StartJam(long mission_id) {
 "	      0050685f    push ebx"
 "	      00506860    push esi"
 "	      00506861    push edi"
-"	      00506862    mov [ebp-24h],ecx"
+"	      00506862    mov this,ecx"
 );
 // LINE 3249:
 	asm( 
-"	      00506865    mov eax,[ebp-24h]"
+"	      00506865    mov eax,this"
 "	      00506868    test byte ptr [eax+9],3"
 "	      0050686c    je near ptr 00506877h"
 );
@@ -9116,11 +9116,11 @@ void AutomobileClass::StartJam(long mission_id) {
 );
 // LINE 3253:
 	asm( 
-"	      00506877    mov eax,[ebp-24h]"
+"	      00506877    mov eax,this"
 "	      0050687a    xor ecx,ecx"
 "	      0050687c    mov cl,[eax+7Ch]"
 "	      0050687f    mov eax,[ecx*4+639510h]"
-"	      00506886    mov ecx,[ebp-24h]"
+"	      00506886    mov ecx,this"
 "	      00506889    xor edx,edx"
 "	      0050688b    mov dl,[ecx+7Dh]"
 "	      0050688e    xor ecx,ecx"
@@ -9135,84 +9135,84 @@ void AutomobileClass::StartJam(long mission_id) {
 );
 // LINE 3257:
 	asm( 
-"	      005068a5    mov eax,[ebp-24h]"
+"	      005068a5    mov eax,this"
 "	      005068a8    or dword ptr [eax+8],200h"
 );
 // LINE 3260:
 	asm( 
-"	      005068af    mov eax,[ebp-24h]"
+"	      005068af    mov eax,this"
 "	      005068b2    mov dword ptr [eax+102h],780000h"
 );
 // LINE 3261:
 	asm( 
-"	      005068bc    mov eax,[ebp-24h]"
+"	      005068bc    mov eax,this"
 "	      005068bf    mov dword ptr [eax+10Ah],0"
 );
 // LINE 3262:
 	asm( 
-"	      005068c9    mov eax,[ebp-24h]"
+"	      005068c9    mov eax,this"
 "	      005068cc    mov dword ptr [eax+106h],0"
 );
 // LINE 3263:
 	asm( 
-"	      005068d6    mov eax,[ebp+8]"
-"	      005068d9    mov ecx,[ebp-24h]"
+"	      005068d6    mov eax,mission_id"
+"	      005068d9    mov ecx,this"
 "	      005068dc    mov [ecx+10Eh],eax"
 );
 // LINE 3266:
 	asm( 
-"	      005068e2    mov eax,[ebp-24h]"
+"	      005068e2    mov eax,this"
 "	      005068e5    mov eax,[eax+24h]"
 "	      005068e8    add eax,20000000h"
 "	      005068ed    sar eax,16h"
-"	      005068f0    mov [ebp-8],eax"
+"	      005068f0    mov celloc.x,eax"
 );
 // LINE 3267:
 	asm( 
 "	      005068f3    mov eax,20000000h"
-"	      005068f8    mov ecx,[ebp-24h]"
+"	      005068f8    mov ecx,this"
 "	      005068fb    sub eax,[ecx+2Ch]"
 "	      005068fe    sar eax,16h"
-"	      00506901    mov [ebp-4],eax"
+"	      00506901    mov celloc.y,eax"
 );
 // LINE 3268:
 	asm( 
-"	      00506904    mov eax,[ebp-4]"
+"	      00506904    mov eax,celloc.y"
 "	      00506907    and eax,0FFh"
-"	      0050690c    mov ecx,[ebp-8]"
+"	      0050690c    mov ecx,celloc.x"
 "	      0050690f    and ecx,0FFh"
 "	      00506915    shl ecx,0Ah"
 "	      00506918    mov eax,[ecx+eax*4+67ED30h]"
-"	      0050691f    mov ecx,[ebp-24h]"
+"	      0050691f    mov ecx,this"
 "	      00506922    mov [ecx+112h],eax"
 );
 // LINE 3271:
 	asm( 
-"	      00506928    mov eax,[ebp-24h]"
+"	      00506928    mov eax,this"
 "	      0050692b    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      00506932    je near ptr 00506965h"
 );
 // LINE 3273:
 	asm( 
-"	      00506938    mov dword ptr [ebp-20h],19h"
+"	      00506938    mov mp.op,19h"
 );
 // LINE 3274:
 	asm( 
-"	      0050693f    mov eax,[ebp-24h]"
+"	      0050693f    mov eax,this"
 "	      00506942    mov eax,[eax+10Eh]"
-"	      00506948    mov [ebp-1Ch],eax"
+"	      00506948    mov mp.id,eax"
 );
 // LINE 3275:
 	asm( 
-"	      0050694b    mov dword ptr [ebp-10h],1"
+"	      0050694b    mov mp.i2num,1"
 );
 // LINE 3276:
 	asm( 
-"	      00506952    mov dword ptr [ebp-0Ch],0"
+"	      00506952    mov mp.flags,0"
 );
 // LINE 3277:
 	asm( 
-"	      00506959    lea eax,[ebp-20h]"
+"	      00506959    lea eax,mp.op"
 "	      0050695c    push eax"
 "	      0050695d    call 004FBD4Ah"
 "	      00506962    add esp,4"
@@ -9243,14 +9243,14 @@ void AutomobileClass::RunFireState() {
 "	      00506977    push ebx"
 "	      00506978    push esi"
 "	      00506979    push edi"
-"	      0050697a    mov [ebp-70h],ecx"
+"	      0050697a    mov this,ecx"
 );
 // LINE 3298:
 	asm( 
 "	      0050697d    xor eax,eax"
 "	      0050697f    sub eax,ds:[5B4760h]"
 "	      00506985    neg eax"
-"	      00506987    mov ecx,[ebp-70h]"
+"	      00506987    mov ecx,this"
 "	      0050698a    sub [ecx+102h],eax"
 );
 // LINE 3299:
@@ -9258,29 +9258,29 @@ void AutomobileClass::RunFireState() {
 "	      00506990    xor eax,eax"
 "	      00506992    sub eax,ds:[5B4760h]"
 "	      00506998    neg eax"
-"	      0050699a    mov ecx,[ebp-70h]"
+"	      0050699a    mov ecx,this"
 "	      0050699d    sub [ecx+106h],eax"
 );
 // LINE 3302:
 	asm( 
-"	      005069a3    mov eax,[ebp-70h]"
+"	      005069a3    mov eax,this"
 "	      005069a6    cmp dword ptr [eax+106h],0"
 "	      005069ad    jg near ptr 005069E2h"
 );
 // LINE 3304:
 	asm( 
-"	      005069b3    mov eax,[ebp-70h]"
+"	      005069b3    mov eax,this"
 "	      005069b6    mov dword ptr [eax+106h],3333h"
 );
 // LINE 3305:
 	asm( 
-"	      005069c0    mov eax,[ebp-70h]"
+"	      005069c0    mov eax,this"
 "	      005069c3    add eax,10Ah"
 "	      005069c8    push eax"
-"	      005069c9    mov eax,[ebp-70h]"
+"	      005069c9    mov eax,this"
 "	      005069cc    add eax,24h"
 "	      005069cf    push eax"
-"	      005069d0    mov eax,[ebp-70h]"
+"	      005069d0    mov eax,this"
 "	      005069d3    mov eax,[eax+112h]"
 "	      005069d9    push eax"
 "	      005069da    call 005233FFh"
@@ -9288,36 +9288,36 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3309:
 	asm( 
-"	      005069e2    mov eax,[ebp-70h]"
+"	      005069e2    mov eax,this"
 "	      005069e5    cmp dword ptr [eax+102h],0"
 "	      005069ec    jge near ptr 00506B74h"
 );
 // LINE 3311:
 	asm( 
-"	      005069f2    mov eax,[ebp-70h]"
+"	      005069f2    mov eax,this"
 "	      005069f5    mov eax,[eax+24h]"
 "	      005069f8    add eax,20000000h"
 "	      005069fd    sar eax,16h"
-"	      00506a00    mov [ebp-6Ch],eax"
+"	      00506a00    mov currpos.x,eax"
 );
 // LINE 3312:
 	asm( 
 "	      00506a03    mov eax,20000000h"
-"	      00506a08    mov ecx,[ebp-70h]"
+"	      00506a08    mov ecx,this"
 "	      00506a0b    sub eax,[ecx+2Ch]"
 "	      00506a0e    sar eax,16h"
-"	      00506a11    mov [ebp-68h],eax"
+"	      00506a11    mov currpos.y,eax"
 );
 // LINE 3314:
 	asm( 
-"	      00506a14    lea eax,[ebp-40h]"
+"	      00506a14    lea eax,mat[0][0]"
 "	      00506a17    push eax"
 "	      00506a18    call 004D1FF1h"
 "	      00506a1d    add esp,4"
 );
 // LINE 3315:
 	asm( 
-"	      00506a20    lea eax,[ebp-40h]"
+"	      00506a20    lea eax,mat[0][0]"
 "	      00506a23    push eax"
 "	      00506a24    call 0056EC50h"
 "	      00506a29    mov ecx,0E10h"
@@ -9332,7 +9332,7 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3316:
 	asm( 
-"	      00506a42    lea eax,[ebp-40h]"
+"	      00506a42    lea eax,mat[0][0]"
 "	      00506a45    push eax"
 "	      00506a46    call 0056EC50h"
 "	      00506a4b    mov ecx,0C8h"
@@ -9347,9 +9347,9 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3317:
 	asm( 
-"	      00506a68    lea eax,[ebp-40h]"
+"	      00506a68    lea eax,mat[0][0]"
 "	      00506a6b    push eax"
-"	      00506a6c    lea eax,[ebp-4Ch]"
+"	      00506a6c    lea eax,vec.x"
 "	      00506a6f    push eax"
 "	      00506a70    push 59B518h"
 "	      00506a75    call 004D2094h"
@@ -9357,20 +9357,20 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3328:
 	asm( 
-"	      00506a7d    mov eax,[ebp-70h]"
+"	      00506a7d    mov eax,this"
 "	      00506a80    mov eax,[eax+10Eh]"
 "	      00506a86    push eax"
 "	      00506a87    push 320000h"
-"	      00506a8c    mov eax,[ebp-70h]"
+"	      00506a8c    mov eax,this"
 "	      00506a8f    add eax,0Ch"
 "	      00506a92    push eax"
 "	      00506a93    push 1"
-"	      00506a95    lea eax,[ebp-4Ch]"
+"	      00506a95    lea eax,vec.x"
 "	      00506a98    push eax"
-"	      00506a99    mov eax,[ebp-70h]"
+"	      00506a99    mov eax,this"
 "	      00506a9c    add eax,24h"
 "	      00506a9f    push eax"
-"	      00506aa0    lea eax,[ebp-6Ch]"
+"	      00506aa0    lea eax,currpos.x"
 "	      00506aa3    push eax"
 "	      00506aa4    push 4"
 "	      00506aa6    call 0051EEE5h"
@@ -9378,35 +9378,35 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3334:
 	asm( 
-"	      00506aae    mov eax,[ebp-70h]"
+"	      00506aae    mov eax,this"
 "	      00506ab1    mov eax,[eax+10Eh]"
 "	      00506ab7    push eax"
 "	      00506ab8    push 2"
-"	      00506aba    mov eax,[ebp-70h]"
+"	      00506aba    mov eax,this"
 "	      00506abd    mov eax,[eax+2Ch]"
-"	      00506ac0    mov ecx,[ebp-70h]"
+"	      00506ac0    mov ecx,this"
 "	      00506ac3    mov ecx,[ecx+112h]"
 "	      00506ac9    movsx ecx,word ptr [ecx+6]"
 "	      00506acd    shl ecx,10h"
 "	      00506ad0    sub eax,ecx"
 "	      00506ad2    push eax"
-"	      00506ad3    mov eax,[ebp-70h]"
+"	      00506ad3    mov eax,this"
 "	      00506ad6    mov eax,[eax+28h]"
-"	      00506ad9    mov ecx,[ebp-70h]"
+"	      00506ad9    mov ecx,this"
 "	      00506adc    mov ecx,[ecx+112h]"
 "	      00506ae2    movsx ecx,word ptr [ecx+4]"
 "	      00506ae6    shl ecx,10h"
 "	      00506ae9    sub eax,ecx"
 "	      00506aeb    push eax"
-"	      00506aec    mov eax,[ebp-70h]"
+"	      00506aec    mov eax,this"
 "	      00506aef    mov eax,[eax+24h]"
-"	      00506af2    mov ecx,[ebp-70h]"
+"	      00506af2    mov ecx,this"
 "	      00506af5    mov ecx,[ecx+112h]"
 "	      00506afb    movsx ecx,word ptr [ecx+2]"
 "	      00506aff    shl ecx,10h"
 "	      00506b02    sub eax,ecx"
 "	      00506b04    push eax"
-"	      00506b05    mov eax,[ebp-70h]"
+"	      00506b05    mov eax,this"
 "	      00506b08    mov eax,[eax+112h]"
 "	      00506b0e    push eax"
 "	      00506b0f    call 00523F50h"
@@ -9415,7 +9415,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3336:
 	asm( 
 "	      00506b17    push 0"
-"	      00506b19    mov eax,[ebp-70h]"
+"	      00506b19    mov eax,this"
 "	      00506b1c    add eax,24h"
 "	      00506b1f    push eax"
 "	      00506b20    push 4"
@@ -9424,38 +9424,38 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3339:
 	asm( 
-"	      00506b2a    mov eax,[ebp-70h]"
+"	      00506b2a    mov eax,this"
 "	      00506b2d    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      00506b34    je near ptr 00506B67h"
 );
 // LINE 3341:
 	asm( 
-"	      00506b3a    mov dword ptr [ebp-64h],1Ch"
+"	      00506b3a    mov mp.op,1Ch"
 );
 // LINE 3342:
 	asm( 
-"	      00506b41    mov eax,[ebp-70h]"
+"	      00506b41    mov eax,this"
 "	      00506b44    mov eax,[eax+10Eh]"
-"	      00506b4a    mov [ebp-60h],eax"
+"	      00506b4a    mov mp.id,eax"
 );
 // LINE 3343:
 	asm( 
-"	      00506b4d    mov dword ptr [ebp-54h],1"
+"	      00506b4d    mov mp.i2num,1"
 );
 // LINE 3344:
 	asm( 
-"	      00506b54    mov dword ptr [ebp-50h],0"
+"	      00506b54    mov mp.flags,0"
 );
 // LINE 3345:
 	asm( 
-"	      00506b5b    lea eax,[ebp-64h]"
+"	      00506b5b    lea eax,mp.op"
 "	      00506b5e    push eax"
 "	      00506b5f    call 004FBD4Ah"
 "	      00506b64    add esp,4"
 );
 // LINE 3348:
 	asm( 
-"	      00506b67    mov ecx,[ebp-70h]"
+"	      00506b67    mov ecx,this"
 "	      00506b6a    call 00503E6Eh"
 );
 // LINE 3349:
@@ -9464,39 +9464,39 @@ void AutomobileClass::RunFireState() {
 );
 // LINE 3354:
 	asm( 
-"	      00506b74    mov eax,[ebp-70h]"
+"	      00506b74    mov eax,this"
 "	      00506b77    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      00506b7e    je near ptr 00506BC5h"
 );
 // LINE 3356:
 	asm( 
-"	      00506b84    mov dword ptr [ebp-64h],0"
+"	      00506b84    mov mp.op,0"
 );
 // LINE 3357:
 	asm( 
-"	      00506b8b    mov eax,[ebp-70h]"
+"	      00506b8b    mov eax,this"
 "	      00506b8e    mov eax,[eax+10Eh]"
-"	      00506b94    mov [ebp-60h],eax"
+"	      00506b94    mov mp.id,eax"
 );
 // LINE 3358:
 	asm( 
-"	      00506b97    mov eax,[ebp-70h]"
+"	      00506b97    mov eax,this"
 "	      00506b9a    mov eax,[eax+24h]"
 "	      00506b9d    add eax,20000000h"
 "	      00506ba2    sar eax,16h"
-"	      00506ba5    mov [ebp-5Ch],eax"
+"	      00506ba5    mov mp.maploc.x,eax"
 );
 // LINE 3359:
 	asm( 
 "	      00506ba8    mov eax,20000000h"
-"	      00506bad    mov ecx,[ebp-70h]"
+"	      00506bad    mov ecx,this"
 "	      00506bb0    sub eax,[ecx+2Ch]"
 "	      00506bb3    sar eax,16h"
-"	      00506bb6    mov [ebp-58h],eax"
+"	      00506bb6    mov mp.maploc.y,eax"
 );
 // LINE 3360:
 	asm( 
-"	      00506bb9    lea eax,[ebp-64h]"
+"	      00506bb9    lea eax,mp.op"
 "	      00506bbc    push eax"
 "	      00506bbd    call 004FBD4Ah"
 "	      00506bc2    add esp,4"
@@ -9524,11 +9524,11 @@ void AutomobileClass::RunJamState() {
 "	      00506bd5    push ebx"
 "	      00506bd6    push esi"
 "	      00506bd7    push edi"
-"	      00506bd8    mov [ebp-1Ch],ecx"
+"	      00506bd8    mov this,ecx"
 );
 // LINE 3375:
 	asm( 
-"	      00506bdb    mov ecx,[ebp-1Ch]"
+"	      00506bdb    mov ecx,this"
 "	      00506bde    call 005098B0h"
 );
 // LINE 3378:
@@ -9536,50 +9536,50 @@ void AutomobileClass::RunJamState() {
 "	      00506be3    xor eax,eax"
 "	      00506be5    sub eax,ds:[5B4760h]"
 "	      00506beb    neg eax"
-"	      00506bed    mov ecx,[ebp-1Ch]"
+"	      00506bed    mov ecx,this"
 "	      00506bf0    sub [ecx+102h],eax"
 );
 // LINE 3381:
 	asm( 
-"	      00506bf6    mov eax,[ebp-1Ch]"
+"	      00506bf6    mov eax,this"
 "	      00506bf9    cmp dword ptr [eax+102h],0"
 "	      00506c00    jge near ptr 00506C06h"
 );
 // LINE 3389:
 	asm( 
-"	      00506c06    mov eax,[ebp-1Ch]"
+"	      00506c06    mov eax,this"
 "	      00506c09    cmp dword ptr [eax+10Eh],0FFFFFFFFh"
 "	      00506c10    je near ptr 00506C57h"
 );
 // LINE 3391:
 	asm( 
-"	      00506c16    mov dword ptr [ebp-18h],0"
+"	      00506c16    mov mp.op,0"
 );
 // LINE 3392:
 	asm( 
-"	      00506c1d    mov eax,[ebp-1Ch]"
+"	      00506c1d    mov eax,this"
 "	      00506c20    mov eax,[eax+10Eh]"
-"	      00506c26    mov [ebp-14h],eax"
+"	      00506c26    mov mp.id,eax"
 );
 // LINE 3393:
 	asm( 
-"	      00506c29    mov eax,[ebp-1Ch]"
+"	      00506c29    mov eax,this"
 "	      00506c2c    mov eax,[eax+24h]"
 "	      00506c2f    add eax,20000000h"
 "	      00506c34    sar eax,16h"
-"	      00506c37    mov [ebp-10h],eax"
+"	      00506c37    mov mp.maploc.x,eax"
 );
 // LINE 3394:
 	asm( 
 "	      00506c3a    mov eax,20000000h"
-"	      00506c3f    mov ecx,[ebp-1Ch]"
+"	      00506c3f    mov ecx,this"
 "	      00506c42    sub eax,[ecx+2Ch]"
 "	      00506c45    sar eax,16h"
-"	      00506c48    mov [ebp-0Ch],eax"
+"	      00506c48    mov mp.maploc.y,eax"
 );
 // LINE 3395:
 	asm( 
-"	      00506c4b    lea eax,[ebp-18h]"
+"	      00506c4b    lea eax,mp.op"
 "	      00506c4e    push eax"
 "	      00506c4f    call 004FBD4Ah"
 "	      00506c54    add esp,4"
@@ -9607,7 +9607,7 @@ void AutoMissionCancel(long mission_id) {
 );
 // LINE 3409:
 	asm( 
-"	      00506c67    mov eax,[ebp+8]"
+"	      00506c67    mov eax,mission_id"
 "	      00506c6a    push eax"
 "	      00506c6b    call 00506CCDh"
 "	      00506c70    add esp,4"
@@ -9635,11 +9635,11 @@ void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST* dyhitter) {
 "	      00506c83    push ebx"
 "	      00506c84    push esi"
 "	      00506c85    push edi"
-"	      00506c86    mov [ebp-10h],ecx"
+"	      00506c86    mov this,ecx"
 );
 // LINE 3433:
 	asm( 
-"	      00506c89    mov eax,[ebp-10h]"
+"	      00506c89    mov eax,this"
 "	      00506c8c    cmp dword ptr [eax+116h],0Ah"
 "	      00506c93    jl near ptr 00506C9Eh"
 );
@@ -9649,9 +9649,9 @@ void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST* dyhitter) {
 );
 // LINE 3442:
 	asm( 
-"	      00506c9e    mov eax,[ebp+8]"
+"	      00506c9e    mov eax,dyhitter"
 "	      00506ca1    add eax,18h"
-"	      00506ca4    lea ecx,[ebp-0Ch]"
+"	      00506ca4    lea ecx,spotLoc.x"
 "	      00506ca7    mov edx,[eax]"
 "	      00506ca9    mov [ecx],edx"
 "	      00506cab    mov edx,[eax+4]"
@@ -9661,7 +9661,7 @@ void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST* dyhitter) {
 );
 // LINE 3448:
 	asm( 
-"	      00506cb7    mov eax,[ebp-10h]"
+"	      00506cb7    mov eax,this"
 "	      00506cba    add dword ptr [eax+116h],2"
 );
 // LINE 3449:
@@ -9691,42 +9691,42 @@ void AutomobileClass::MissionCancel(long mission_id) {
 );
 // LINE 3464:
 	asm( 
-"	      00506cd6    mov dword ptr [ebp-4],0"
+"	      00506cd6    mov currentCarIndex,0"
 "	      00506cdd    jmp near ptr 00506CE5h"
-"	      00506ce2    inc dword ptr [ebp-4]"
-"	      00506ce5    cmp dword ptr [ebp-4],46h"
+"	      00506ce2    inc currentCarIndex"
+"	      00506ce5    cmp currentCarIndex,46h"
 "	      00506ce9    jge near ptr 00506D44h"
 );
 // LINE 3467:
 	asm( 
-"	      00506cef    mov eax,[ebp-4]"
+"	      00506cef    mov eax,currentCarIndex"
 "	      00506cf2    mov eax,[eax*4+608F80h]"
-"	      00506cf9    mov [ebp-8],eax"
+"	      00506cf9    mov targcar,eax"
 );
 // LINE 3470:
 	asm( 
-"	      00506cfc    mov eax,[ebp-8]"
+"	      00506cfc    mov eax,targcar"
 "	      00506cff    test byte ptr [eax+8],2"
 "	      00506d03    je near ptr 00506D3Fh"
-"	      00506d09    mov eax,[ebp-8]"
-"	      00506d0c    mov ecx,[ebp+8]"
+"	      00506d09    mov eax,targcar"
+"	      00506d0c    mov ecx,mission_id"
 "	      00506d0f    cmp [eax+10Eh],ecx"
 "	      00506d15    jne near ptr 00506D3Fh"
 );
 // LINE 3475:
 	asm( 
-"	      00506d1b    mov eax,[ebp-8]"
+"	      00506d1b    mov eax,targcar"
 "	      00506d1e    test byte ptr [eax+9],2"
 "	      00506d22    je near ptr 00506D3Fh"
 );
 // LINE 3477:
 	asm( 
-"	      00506d28    mov eax,[ebp-8]"
+"	      00506d28    mov eax,targcar"
 "	      00506d2b    and dword ptr [eax+8],0FFFFFDFFh"
 );
 // LINE 3478:
 	asm( 
-"	      00506d32    mov eax,[ebp-8]"
+"	      00506d32    mov eax,targcar"
 "	      00506d35    mov dword ptr [eax+10Eh],0FFFFFFFFh"
 );
 // LINE 3481:
@@ -9756,7 +9756,7 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 );
 // LINE 3494:
 	asm( 
-"	      00506d54    mov eax,[ebp+8]"
+"	      00506d54    mov eax,lights_on"
 "	      00506d57    push eax"
 "	      00506d58    call 00506D6Ah"
 "	      00506d5d    add esp,4"
@@ -9788,32 +9788,32 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 );
 // LINE 3511:
 	asm( 
-"	      00506d73    mov dword ptr [ebp-4],0"
+"	      00506d73    mov currentCarIndex,0"
 "	      00506d7a    jmp near ptr 00506D82h"
-"	      00506d7f    inc dword ptr [ebp-4]"
-"	      00506d82    cmp dword ptr [ebp-4],46h"
+"	      00506d7f    inc currentCarIndex"
+"	      00506d82    cmp currentCarIndex,46h"
 "	      00506d86    jge near ptr 00506DCAh"
 );
 // LINE 3513:
 	asm( 
-"	      00506d8c    mov eax,[ebp-4]"
+"	      00506d8c    mov eax,currentCarIndex"
 "	      00506d8f    mov eax,[eax*4+608F80h]"
-"	      00506d96    mov [ebp-8],eax"
+"	      00506d96    mov targcar,eax"
 );
 // LINE 3514:
 	asm( 
-"	      00506d99    mov eax,[ebp-8]"
+"	      00506d99    mov eax,targcar"
 "	      00506d9c    test byte ptr [eax+8],1"
 "	      00506da0    je near ptr 00506DC5h"
 );
 // LINE 3516:
 	asm( 
-"	      00506da6    cmp dword ptr [ebp+8],1"
+"	      00506da6    cmp lights_on,1"
 "	      00506daa    jne near ptr 00506DBDh"
 );
 // LINE 3517:
 	asm( 
-"	      00506db0    mov ecx,[ebp-8]"
+"	      00506db0    mov ecx,targcar"
 "	      00506db3    call 00506DD4h"
 );
 // LINE 3518:
@@ -9822,7 +9822,7 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 );
 // LINE 3519:
 	asm( 
-"	      00506dbd    mov ecx,[ebp-8]"
+"	      00506dbd    mov ecx,targcar"
 "	      00506dc0    call 00506E6Fh"
 );
 // LINE 3521:
@@ -9855,13 +9855,13 @@ void AutomobileClass::TurnOnHeadlight() {
 "	      00506dda    push ebx"
 "	      00506ddb    push esi"
 "	      00506ddc    push edi"
-"	      00506ddd    mov [ebp-50h],ecx"
+"	      00506ddd    mov this,ecx"
 );
 // LINE 3544:
 	asm( 
-"	      00506de0    lea eax,[ebp-24h]"
+"	      00506de0    lea eax,oinfo.Faces"
 "	      00506de3    push eax"
-"	      00506de4    mov eax,[ebp-50h]"
+"	      00506de4    mov eax,this"
 "	      00506de7    mov eax,[eax+14h]"
 "	      00506dea    push eax"
 "	      00506deb    call 004D8859h"
@@ -9869,56 +9869,56 @@ void AutomobileClass::TurnOnHeadlight() {
 );
 // LINE 3545:
 	asm( 
-"	      00506df3    mov eax,[ebp-50h]"
+"	      00506df3    mov eax,this"
 "	      00506df6    mov eax,[eax+14h]"
 "	      00506df9    push eax"
 "	      00506dfa    call 004D85CDh"
 "	      00506dff    add esp,4"
-"	      00506e02    mov [ebp-28h],eax"
+"	      00506e02    mov face,eax"
 );
 // LINE 3546:
 	asm( 
-"	      00506e05    mov dword ptr [ebp-2Ch],0"
+"	      00506e05    mov count,0"
 "	      00506e0c    jmp near ptr 00506E14h"
-"	      00506e11    inc dword ptr [ebp-2Ch]"
-"	      00506e14    mov eax,[ebp-2Ch]"
-"	      00506e17    cmp [ebp-24h],eax"
+"	      00506e11    inc count"
+"	      00506e14    mov eax,count"
+"	      00506e17    cmp oinfo.Faces,eax"
 "	      00506e1a    jle near ptr 00506E65h"
 );
 // LINE 3548:
 	asm( 
-"	      00506e20    lea eax,[ebp-4Ch]"
+"	      00506e20    lea eax,finfo.Face"
 "	      00506e23    push eax"
-"	      00506e24    mov eax,[ebp-28h]"
+"	      00506e24    mov eax,face"
 "	      00506e27    push eax"
 "	      00506e28    call 004D6905h"
 "	      00506e2d    add esp,8"
 );
 // LINE 3549:
 	asm( 
-"	      00506e30    cmp dword ptr [ebp-40h],0Bh"
+"	      00506e30    cmp finfo.Plotter,0Bh"
 "	      00506e34    jne near ptr 00506E51h"
 );
 // LINE 3551:
 	asm( 
-"	      00506e3a    and dword ptr [ebp-44h],7FFFFFFFh"
+"	      00506e3a    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 3552:
 	asm( 
-"	      00506e41    lea eax,[ebp-4Ch]"
+"	      00506e41    lea eax,finfo.Face"
 "	      00506e44    push eax"
-"	      00506e45    mov eax,[ebp-28h]"
+"	      00506e45    mov eax,face"
 "	      00506e48    push eax"
 "	      00506e49    call 004D6941h"
 "	      00506e4e    add esp,8"
 );
 // LINE 3554:
 	asm( 
-"	      00506e51    mov eax,[ebp-28h]"
+"	      00506e51    mov eax,face"
 "	      00506e54    push eax"
 "	      00506e55    call 004D85F8h"
 "	      00506e5a    add esp,4"
-"	      00506e5d    mov [ebp-28h],eax"
+"	      00506e5d    mov face,eax"
 );
 // LINE 3555:
 	asm( 
@@ -9950,13 +9950,13 @@ void AutomobileClass::TurnOffHeadlight() {
 "	      00506e75    push ebx"
 "	      00506e76    push esi"
 "	      00506e77    push edi"
-"	      00506e78    mov [ebp-50h],ecx"
+"	      00506e78    mov this,ecx"
 );
 // LINE 3567:
 	asm( 
-"	      00506e7b    lea eax,[ebp-24h]"
+"	      00506e7b    lea eax,oinfo.Faces"
 "	      00506e7e    push eax"
-"	      00506e7f    mov eax,[ebp-50h]"
+"	      00506e7f    mov eax,this"
 "	      00506e82    mov eax,[eax+14h]"
 "	      00506e85    push eax"
 "	      00506e86    call 004D8859h"
@@ -9964,58 +9964,58 @@ void AutomobileClass::TurnOffHeadlight() {
 );
 // LINE 3568:
 	asm( 
-"	      00506e8e    mov eax,[ebp-50h]"
+"	      00506e8e    mov eax,this"
 "	      00506e91    mov eax,[eax+14h]"
 "	      00506e94    push eax"
 "	      00506e95    call 004D85CDh"
 "	      00506e9a    add esp,4"
-"	      00506e9d    mov [ebp-28h],eax"
+"	      00506e9d    mov face,eax"
 );
 // LINE 3569:
 	asm( 
-"	      00506ea0    mov dword ptr [ebp-2Ch],0"
+"	      00506ea0    mov count,0"
 "	      00506ea7    jmp near ptr 00506EAFh"
-"	      00506eac    inc dword ptr [ebp-2Ch]"
-"	      00506eaf    mov eax,[ebp-2Ch]"
-"	      00506eb2    cmp [ebp-24h],eax"
+"	      00506eac    inc count"
+"	      00506eaf    mov eax,count"
+"	      00506eb2    cmp oinfo.Faces,eax"
 "	      00506eb5    jle near ptr 00506F04h"
 );
 // LINE 3571:
 	asm( 
-"	      00506ebb    lea eax,[ebp-4Ch]"
+"	      00506ebb    lea eax,finfo.Face"
 "	      00506ebe    push eax"
-"	      00506ebf    mov eax,[ebp-28h]"
+"	      00506ebf    mov eax,face"
 "	      00506ec2    push eax"
 "	      00506ec3    call 004D6905h"
 "	      00506ec8    add esp,8"
 );
 // LINE 3572:
 	asm( 
-"	      00506ecb    cmp dword ptr [ebp-40h],0Bh"
+"	      00506ecb    cmp finfo.Plotter,0Bh"
 "	      00506ecf    jne near ptr 00506EF0h"
 );
 // LINE 3574:
 	asm( 
-"	      00506ed5    mov eax,[ebp-44h]"
+"	      00506ed5    mov eax,finfo.Attribute"
 "	      00506ed8    or eax,80000000h"
-"	      00506edd    mov [ebp-44h],eax"
+"	      00506edd    mov finfo.Attribute,eax"
 );
 // LINE 3575:
 	asm( 
-"	      00506ee0    lea eax,[ebp-4Ch]"
+"	      00506ee0    lea eax,finfo.Face"
 "	      00506ee3    push eax"
-"	      00506ee4    mov eax,[ebp-28h]"
+"	      00506ee4    mov eax,face"
 "	      00506ee7    push eax"
 "	      00506ee8    call 004D6941h"
 "	      00506eed    add esp,8"
 );
 // LINE 3577:
 	asm( 
-"	      00506ef0    mov eax,[ebp-28h]"
+"	      00506ef0    mov eax,face"
 "	      00506ef3    push eax"
 "	      00506ef4    call 004D85F8h"
 "	      00506ef9    add esp,4"
-"	      00506efc    mov [ebp-28h],eax"
+"	      00506efc    mov face,eax"
 );
 // LINE 3578:
 	asm( 
@@ -10042,11 +10042,11 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 "	      00506f14    push ebx"
 "	      00506f15    push esi"
 "	      00506f16    push edi"
-"	      00506f17    mov [ebp-4],ecx"
+"	      00506f17    mov this,ecx"
 );
 // LINE 3586:
 	asm( 
-"	      00506f1a    mov eax,[ebp-4]"
+"	      00506f1a    mov eax,this"
 "	      00506f1d    mov eax,[eax+4]"
 "	      00506f20    mov [ebp-8],eax"
 "	      00506f23    jmp near ptr 00506F37h"
@@ -10097,86 +10097,86 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00506f75    push ebx"
 "	      00506f76    push esi"
 "	      00506f77    push edi"
-"	      00506f78    mov [ebp-2Ch],ecx"
+"	      00506f78    mov this,ecx"
 );
 // LINE 3616:
 	asm( 
-"	      00506f7b    mov dword ptr [ebp-24h],0"
+"	      00506f7b    mov validdirs[0],0"
 );
 // LINE 3617:
 	asm( 
-"	      00506f82    mov dword ptr [ebp-20h],0"
+"	      00506f82    mov validdirs[1],0"
 );
 // LINE 3618:
 	asm( 
-"	      00506f89    mov dword ptr [ebp-1Ch],0"
+"	      00506f89    mov validdirs[2],0"
 );
 // LINE 3619:
 	asm( 
-"	      00506f90    mov dword ptr [ebp-18h],0"
+"	      00506f90    mov validdirs[3],0"
 );
 // LINE 3620:
 	asm( 
-"	      00506f97    mov dword ptr [ebp-14h],0"
+"	      00506f97    mov validdirs[4],0"
 );
 // LINE 3621:
 	asm( 
-"	      00506f9e    mov dword ptr [ebp-10h],0"
+"	      00506f9e    mov validdirs[5],0"
 );
 // LINE 3622:
 	asm( 
-"	      00506fa5    mov dword ptr [ebp-0Ch],0"
+"	      00506fa5    mov validdirs[6],0"
 );
 // LINE 3623:
 	asm( 
-"	      00506fac    mov dword ptr [ebp-8],0"
+"	      00506fac    mov validdirs[7],0"
 );
 // LINE 3624:
 	asm( 
-"	      00506fb3    mov dword ptr [ebp-4],0"
+"	      00506fb3    mov i,0"
 );
 // LINE 3626:
 	asm( 
-"	      00506fba    mov eax,[ebp-2Ch]"
+"	      00506fba    mov eax,this"
 "	      00506fbd    mov ax,[eax+0D2h]"
-"	      00506fc4    mov ecx,[ebp-2Ch]"
+"	      00506fc4    mov ecx,this"
 "	      00506fc7    mov [ecx+0D4h],ax"
 );
 // LINE 3627:
 	asm( 
-"	      00506fce    mov eax,[ebp-2Ch]"
+"	      00506fce    mov eax,this"
 "	      00506fd1    mov dword ptr [eax+0CEh],0"
 );
 // LINE 3631:
 	asm( 
-"	      00506fdb    mov eax,[ebp-2Ch]"
+"	      00506fdb    mov eax,this"
 "	      00506fde    xor ecx,ecx"
 "	      00506fe0    mov cl,[eax+0D2h]"
 "	      00506fe6    test ecx,ecx"
 "	      00506fe8    jl near ptr 0050702Fh"
-"	      00506fee    mov eax,[ebp-2Ch]"
+"	      00506fee    mov eax,this"
 "	      00506ff1    xor ecx,ecx"
 "	      00506ff3    mov cl,[eax+0D3h]"
 "	      00506ff9    dec ecx"
 "	      00506ffa    js near ptr 0050702Fh"
-"	      00507000    mov eax,[ebp-2Ch]"
+"	      00507000    mov eax,this"
 "	      00507003    xor ecx,ecx"
 "	      00507005    mov cl,[eax+0D2h]"
 "	      0050700b    cmp ecx,80h"
 "	      00507011    jge near ptr 0050702Fh"
-"	      00507017    mov eax,[ebp-2Ch]"
+"	      00507017    mov eax,this"
 "	      0050701a    xor ecx,ecx"
 "	      0050701c    mov cl,[eax+0D3h]"
 "	      00507022    dec ecx"
 "	      00507023    cmp ecx,80h"
 "	      00507029    jl near ptr 0050703Ah"
-"	      0050702f    mov word ptr [ebp-28h],0"
+"	      0050702f    mov tile,0"
 "	      00507035    jmp near ptr 00507094h"
-"	      0050703a    mov eax,[ebp-2Ch]"
+"	      0050703a    mov eax,this"
 "	      0050703d    xor ecx,ecx"
 "	      0050703f    mov cl,[eax+0D2h]"
 "	      00507045    mov eax,[ecx*4+638F70h]"
-"	      0050704c    mov ecx,[ebp-2Ch]"
+"	      0050704c    mov ecx,this"
 "	      0050704f    xor edx,edx"
 "	      00507051    mov dl,[ecx+0D3h]"
 "	      00507057    xor ecx,ecx"
@@ -10184,17 +10184,17 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      0050705d    and ecx,2"
 "	      00507060    movsx eax,cx"
 "	      00507063    shl eax,0Eh"
-"	      00507066    mov ecx,[ebp-2Ch]"
+"	      00507066    mov ecx,this"
 "	      00507069    xor edx,edx"
 "	      0050706b    mov dl,[ecx+0D2h]"
 "	      00507071    mov ecx,[edx*4+639850h]"
-"	      00507078    mov edx,[ebp-2Ch]"
+"	      00507078    mov edx,this"
 "	      0050707b    xor ebx,ebx"
 "	      0050707d    mov bl,[edx+0D3h]"
 "	      00507083    xor edx,edx"
 "	      00507085    mov dl,[ecx+ebx-1]"
 "	      00507089    or eax,edx"
-"	      0050708b    mov [ebp-28h],ax"
+"	      0050708b    mov tile,ax"
 "	      0050708f    jmp near ptr 00507094h"
 );
 // LINE 3632:
@@ -10204,14 +10204,14 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507099    push eax"
 "	      0050709a    mov eax,[ebp+8]"
 "	      0050709d    push eax"
-"	      0050709e    mov ecx,[ebp-2Ch]"
+"	      0050709e    mov ecx,this"
 "	      005070a1    call 00507488h"
 "	      005070a6    test eax,eax"
 "	      005070a8    je near ptr 005070D0h"
 );
 // LINE 3634:
 	asm( 
-"	      005070ae    mov eax,[ebp-2Ch]"
+"	      005070ae    mov eax,this"
 "	      005070b1    xor ecx,ecx"
 "	      005070b3    mov cl,[eax+0D2h]"
 "	      005070b9    test cl,1"
@@ -10219,40 +10219,40 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3636:
 	asm( 
-"	      005070c2    mov eax,[ebp-4]"
+"	      005070c2    mov eax,i"
 "	      005070c5    mov dword ptr [ebp+eax*4-24h],1"
-"	      005070cd    inc dword ptr [ebp-4]"
+"	      005070cd    inc i"
 );
 // LINE 3650:
 	asm( 
-"	      005070d0    mov eax,[ebp-2Ch]"
+"	      005070d0    mov eax,this"
 "	      005070d3    xor ecx,ecx"
 "	      005070d5    mov cl,[eax+0D2h]"
 "	      005070db    test ecx,ecx"
 "	      005070dd    jl near ptr 00507124h"
-"	      005070e3    mov eax,[ebp-2Ch]"
+"	      005070e3    mov eax,this"
 "	      005070e6    xor ecx,ecx"
 "	      005070e8    mov cl,[eax+0D3h]"
 "	      005070ee    inc ecx"
 "	      005070ef    js near ptr 00507124h"
-"	      005070f5    mov eax,[ebp-2Ch]"
+"	      005070f5    mov eax,this"
 "	      005070f8    xor ecx,ecx"
 "	      005070fa    mov cl,[eax+0D2h]"
 "	      00507100    cmp ecx,80h"
 "	      00507106    jge near ptr 00507124h"
-"	      0050710c    mov eax,[ebp-2Ch]"
+"	      0050710c    mov eax,this"
 "	      0050710f    xor ecx,ecx"
 "	      00507111    mov cl,[eax+0D3h]"
 "	      00507117    inc ecx"
 "	      00507118    cmp ecx,80h"
 "	      0050711e    jl near ptr 0050712Fh"
-"	      00507124    mov word ptr [ebp-28h],0"
+"	      00507124    mov tile,0"
 "	      0050712a    jmp near ptr 00507189h"
-"	      0050712f    mov eax,[ebp-2Ch]"
+"	      0050712f    mov eax,this"
 "	      00507132    xor ecx,ecx"
 "	      00507134    mov cl,[eax+0D2h]"
 "	      0050713a    mov eax,[ecx*4+638F70h]"
-"	      00507141    mov ecx,[ebp-2Ch]"
+"	      00507141    mov ecx,this"
 "	      00507144    xor edx,edx"
 "	      00507146    mov dl,[ecx+0D3h]"
 "	      0050714c    xor ecx,ecx"
@@ -10260,17 +10260,17 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507152    and ecx,2"
 "	      00507155    movsx eax,cx"
 "	      00507158    shl eax,0Eh"
-"	      0050715b    mov ecx,[ebp-2Ch]"
+"	      0050715b    mov ecx,this"
 "	      0050715e    xor edx,edx"
 "	      00507160    mov dl,[ecx+0D2h]"
 "	      00507166    mov ecx,[edx*4+639850h]"
-"	      0050716d    mov edx,[ebp-2Ch]"
+"	      0050716d    mov edx,this"
 "	      00507170    xor ebx,ebx"
 "	      00507172    mov bl,[edx+0D3h]"
 "	      00507178    xor edx,edx"
 "	      0050717a    mov dl,[ecx+ebx+1]"
 "	      0050717e    or eax,edx"
-"	      00507180    mov [ebp-28h],ax"
+"	      00507180    mov tile,ax"
 "	      00507184    jmp near ptr 00507189h"
 );
 // LINE 3651:
@@ -10280,14 +10280,14 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      0050718e    push eax"
 "	      0050718f    mov eax,[ebp+8]"
 "	      00507192    push eax"
-"	      00507193    mov ecx,[ebp-2Ch]"
+"	      00507193    mov ecx,this"
 "	      00507196    call 00507488h"
 "	      0050719b    test eax,eax"
 "	      0050719d    je near ptr 005071C5h"
 );
 // LINE 3653:
 	asm( 
-"	      005071a3    mov eax,[ebp-2Ch]"
+"	      005071a3    mov eax,this"
 "	      005071a6    xor ecx,ecx"
 "	      005071a8    mov cl,[eax+0D2h]"
 "	      005071ae    test cl,1"
@@ -10295,40 +10295,40 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3655:
 	asm( 
-"	      005071b7    mov eax,[ebp-4]"
+"	      005071b7    mov eax,i"
 "	      005071ba    mov dword ptr [ebp+eax*4-24h],4"
-"	      005071c2    inc dword ptr [ebp-4]"
+"	      005071c2    inc i"
 );
 // LINE 3660:
 	asm( 
-"	      005071c5    mov eax,[ebp-2Ch]"
+"	      005071c5    mov eax,this"
 "	      005071c8    xor ecx,ecx"
 "	      005071ca    mov cl,[eax+0D2h]"
 "	      005071d0    inc ecx"
 "	      005071d1    js near ptr 00507219h"
-"	      005071d7    mov eax,[ebp-2Ch]"
+"	      005071d7    mov eax,this"
 "	      005071da    xor ecx,ecx"
 "	      005071dc    mov cl,[eax+0D3h]"
 "	      005071e2    test ecx,ecx"
 "	      005071e4    jl near ptr 00507219h"
-"	      005071ea    mov eax,[ebp-2Ch]"
+"	      005071ea    mov eax,this"
 "	      005071ed    xor ecx,ecx"
 "	      005071ef    mov cl,[eax+0D2h]"
 "	      005071f5    inc ecx"
 "	      005071f6    cmp ecx,80h"
 "	      005071fc    jge near ptr 00507219h"
-"	      00507202    mov eax,[ebp-2Ch]"
+"	      00507202    mov eax,this"
 "	      00507205    xor ecx,ecx"
 "	      00507207    mov cl,[eax+0D3h]"
 "	      0050720d    cmp ecx,80h"
 "	      00507213    jl near ptr 00507224h"
-"	      00507219    mov word ptr [ebp-28h],0"
+"	      00507219    mov tile,0"
 "	      0050721f    jmp near ptr 0050727Ch"
-"	      00507224    mov eax,[ebp-2Ch]"
+"	      00507224    mov eax,this"
 "	      00507227    xor ecx,ecx"
 "	      00507229    mov cl,[eax+0D2h]"
 "	      0050722f    mov eax,[ecx*4+638F74h]"
-"	      00507236    mov ecx,[ebp-2Ch]"
+"	      00507236    mov ecx,this"
 "	      00507239    xor edx,edx"
 "	      0050723b    mov dl,[ecx+0D3h]"
 "	      00507241    xor ecx,ecx"
@@ -10336,17 +10336,17 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507246    and ecx,2"
 "	      00507249    movsx eax,cx"
 "	      0050724c    shl eax,0Eh"
-"	      0050724f    mov ecx,[ebp-2Ch]"
+"	      0050724f    mov ecx,this"
 "	      00507252    xor edx,edx"
 "	      00507254    mov dl,[ecx+0D2h]"
 "	      0050725a    mov ecx,[edx*4+639854h]"
-"	      00507261    mov edx,[ebp-2Ch]"
+"	      00507261    mov edx,this"
 "	      00507264    xor ebx,ebx"
 "	      00507266    mov bl,[edx+0D3h]"
 "	      0050726c    xor edx,edx"
 "	      0050726e    mov dl,[ecx+ebx]"
 "	      00507271    or eax,edx"
-"	      00507273    mov [ebp-28h],ax"
+"	      00507273    mov tile,ax"
 "	      00507277    jmp near ptr 0050727Ch"
 );
 // LINE 3661:
@@ -10356,14 +10356,14 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507281    push eax"
 "	      00507282    mov eax,[ebp+8]"
 "	      00507285    push eax"
-"	      00507286    mov ecx,[ebp-2Ch]"
+"	      00507286    mov ecx,this"
 "	      00507289    call 00507488h"
 "	      0050728e    test eax,eax"
 "	      00507290    je near ptr 005072B8h"
 );
 // LINE 3663:
 	asm( 
-"	      00507296    mov eax,[ebp-2Ch]"
+"	      00507296    mov eax,this"
 "	      00507299    xor ecx,ecx"
 "	      0050729b    mov cl,[eax+0D3h]"
 "	      005072a1    test cl,1"
@@ -10371,40 +10371,40 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3665:
 	asm( 
-"	      005072aa    mov eax,[ebp-4]"
+"	      005072aa    mov eax,i"
 "	      005072ad    mov dword ptr [ebp+eax*4-24h],2"
-"	      005072b5    inc dword ptr [ebp-4]"
+"	      005072b5    inc i"
 );
 // LINE 3669:
 	asm( 
-"	      005072b8    mov eax,[ebp-2Ch]"
+"	      005072b8    mov eax,this"
 "	      005072bb    xor ecx,ecx"
 "	      005072bd    mov cl,[eax+0D2h]"
 "	      005072c3    dec ecx"
 "	      005072c4    js near ptr 0050730Ch"
-"	      005072ca    mov eax,[ebp-2Ch]"
+"	      005072ca    mov eax,this"
 "	      005072cd    xor ecx,ecx"
 "	      005072cf    mov cl,[eax+0D3h]"
 "	      005072d5    test ecx,ecx"
 "	      005072d7    jl near ptr 0050730Ch"
-"	      005072dd    mov eax,[ebp-2Ch]"
+"	      005072dd    mov eax,this"
 "	      005072e0    xor ecx,ecx"
 "	      005072e2    mov cl,[eax+0D2h]"
 "	      005072e8    dec ecx"
 "	      005072e9    cmp ecx,80h"
 "	      005072ef    jge near ptr 0050730Ch"
-"	      005072f5    mov eax,[ebp-2Ch]"
+"	      005072f5    mov eax,this"
 "	      005072f8    xor ecx,ecx"
 "	      005072fa    mov cl,[eax+0D3h]"
 "	      00507300    cmp ecx,80h"
 "	      00507306    jl near ptr 00507317h"
-"	      0050730c    mov word ptr [ebp-28h],0"
+"	      0050730c    mov tile,0"
 "	      00507312    jmp near ptr 0050736Fh"
-"	      00507317    mov eax,[ebp-2Ch]"
+"	      00507317    mov eax,this"
 "	      0050731a    xor ecx,ecx"
 "	      0050731c    mov cl,[eax+0D2h]"
 "	      00507322    mov eax,[ecx*4+638F6Ch]"
-"	      00507329    mov ecx,[ebp-2Ch]"
+"	      00507329    mov ecx,this"
 "	      0050732c    xor edx,edx"
 "	      0050732e    mov dl,[ecx+0D3h]"
 "	      00507334    xor ecx,ecx"
@@ -10412,17 +10412,17 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507339    and ecx,2"
 "	      0050733c    movsx eax,cx"
 "	      0050733f    shl eax,0Eh"
-"	      00507342    mov ecx,[ebp-2Ch]"
+"	      00507342    mov ecx,this"
 "	      00507345    xor edx,edx"
 "	      00507347    mov dl,[ecx+0D2h]"
 "	      0050734d    mov ecx,[edx*4+63984Ch]"
-"	      00507354    mov edx,[ebp-2Ch]"
+"	      00507354    mov edx,this"
 "	      00507357    xor ebx,ebx"
 "	      00507359    mov bl,[edx+0D3h]"
 "	      0050735f    xor edx,edx"
 "	      00507361    mov dl,[ecx+ebx]"
 "	      00507364    or eax,edx"
-"	      00507366    mov [ebp-28h],ax"
+"	      00507366    mov tile,ax"
 "	      0050736a    jmp near ptr 0050736Fh"
 );
 // LINE 3670:
@@ -10432,14 +10432,14 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      00507374    push eax"
 "	      00507375    mov eax,[ebp+8]"
 "	      00507378    push eax"
-"	      00507379    mov ecx,[ebp-2Ch]"
+"	      00507379    mov ecx,this"
 "	      0050737c    call 00507488h"
 "	      00507381    test eax,eax"
 "	      00507383    je near ptr 005073ABh"
 );
 // LINE 3672:
 	asm( 
-"	      00507389    mov eax,[ebp-2Ch]"
+"	      00507389    mov eax,this"
 "	      0050738c    xor ecx,ecx"
 "	      0050738e    mov cl,[eax+0D3h]"
 "	      00507394    test cl,1"
@@ -10447,13 +10447,13 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3674:
 	asm( 
-"	      0050739d    mov eax,[ebp-4]"
+"	      0050739d    mov eax,i"
 "	      005073a0    mov dword ptr [ebp+eax*4-24h],8"
-"	      005073a8    inc dword ptr [ebp-4]"
+"	      005073a8    inc i"
 );
 // LINE 3681:
 	asm( 
-"	      005073ab    cmp dword ptr [ebp-4],0"
+"	      005073ab    cmp i,0"
 "	      005073af    jne near ptr 005073BAh"
 );
 // LINE 3682:
@@ -10465,21 +10465,21 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 "	      005073ba    call 0056EC50h"
 "	      005073bf    movsx eax,ax"
 "	      005073c2    cdq"
-"	      005073c3    idiv dword ptr [ebp-4]"
+"	      005073c3    idiv i"
 "	      005073c6    mov eax,[ebp+edx*4-24h]"
-"	      005073ca    mov ecx,[ebp-2Ch]"
+"	      005073ca    mov ecx,this"
 "	      005073cd    mov [ecx+0CEh],eax"
 );
 // LINE 3686:
 	asm( 
-"	      005073d3    mov eax,[ebp-2Ch]"
+"	      005073d3    mov eax,this"
 "	      005073d6    mov eax,[eax+0CEh]"
 "	      005073dc    mov [ebp-30h],eax"
 "	      005073df    jmp near ptr 00507421h"
 );
 // LINE 3690:
 	asm( 
-"	      005073e4    mov eax,[ebp-2Ch]"
+"	      005073e4    mov eax,this"
 "	      005073e7    dec byte ptr [eax+0D5h]"
 );
 // LINE 3691:
@@ -10488,7 +10488,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3694:
 	asm( 
-"	      005073f2    mov eax,[ebp-2Ch]"
+"	      005073f2    mov eax,this"
 "	      005073f5    inc byte ptr [eax+0D5h]"
 );
 // LINE 3695:
@@ -10497,7 +10497,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3698:
 	asm( 
-"	      00507400    mov eax,[ebp-2Ch]"
+"	      00507400    mov eax,this"
 "	      00507403    inc byte ptr [eax+0D4h]"
 );
 // LINE 3699:
@@ -10506,7 +10506,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 );
 // LINE 3702:
 	asm( 
-"	      0050740e    mov eax,[ebp-2Ch]"
+"	      0050740e    mov eax,this"
 "	      00507411    dec byte ptr [eax+0D4h]"
 );
 // LINE 3703:
@@ -10572,7 +10572,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      0050748e    push ebx"
 "	      0050748f    push esi"
 "	      00507490    push edi"
-"	      00507491    mov [ebp-1Ch],ecx"
+"	      00507491    mov this,ecx"
 );
 // LINE 3731:
 	asm( 
@@ -10583,7 +10583,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3734:
 	asm( 
-"	      005074a4    mov word ptr [ebp+8],49h"
+"	      005074a4    mov fromTile,49h"
 );
 // LINE 3735:
 	asm( 
@@ -10591,7 +10591,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3737:
 	asm( 
-"	      005074af    mov word ptr [ebp+8],4Ah"
+"	      005074af    mov fromTile,4Ah"
 );
 // LINE 3738:
 	asm( 
@@ -10619,7 +10619,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3746:
 	asm( 
-"	      005074ed    mov word ptr [ebp+0Ch],49h"
+"	      005074ed    mov toTile,49h"
 );
 // LINE 3747:
 	asm( 
@@ -10627,7 +10627,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3749:
 	asm( 
-"	      005074f8    mov word ptr [ebp+0Ch],4Ah"
+"	      005074f8    mov toTile,4Ah"
 );
 // LINE 3750:
 	asm( 
@@ -10710,7 +10710,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      0050762f    jne near ptr 00507643h"
 "	      00507635    mov eax,[ebp-14h]"
 "	      00507638    mov eax,[eax+4]"
-"	      0050763b    mov [ebp-8],eax"
+"	      0050763b    mov fromConnections,eax"
 "	      0050763e    jmp near ptr 00507677h"
 "	      00507643    mov eax,[ebp-14h]"
 "	      00507646    cmp dword ptr [eax],0"
@@ -10719,7 +10719,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      00507654    add eax,0F40h"
 "	      00507659    cmp eax,[ebp-14h]"
 "	      0050765c    jae near ptr 0050766Eh"
-"	      00507662    mov dword ptr [ebp-8],0"
+"	      00507662    mov fromConnections,0"
 "	      00507669    jmp near ptr 00507677h"
 "	      0050766e    add dword ptr [ebp-14h],8"
 "	      00507672    jmp near ptr 00507621h"
@@ -10734,7 +10734,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      0050768c    jne near ptr 005076A0h"
 "	      00507692    mov eax,[ebp-18h]"
 "	      00507695    mov eax,[eax+4]"
-"	      00507698    mov [ebp-4],eax"
+"	      00507698    mov toConnections,eax"
 "	      0050769b    jmp near ptr 005076D4h"
 "	      005076a0    mov eax,[ebp-18h]"
 "	      005076a3    cmp dword ptr [eax],0"
@@ -10743,18 +10743,18 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      005076b1    add eax,0F40h"
 "	      005076b6    cmp eax,[ebp-18h]"
 "	      005076b9    jae near ptr 005076CBh"
-"	      005076bf    mov dword ptr [ebp-4],0"
+"	      005076bf    mov toConnections,0"
 "	      005076c6    jmp near ptr 005076D4h"
 "	      005076cb    add dword ptr [ebp-18h],8"
 "	      005076cf    jmp near ptr 0050767Eh"
 );
 // LINE 3765:
 	asm( 
-"	      005076d4    test byte ptr [ebp+10h],1"
+"	      005076d4    test reinterpret_cast<unit8_t>(direction),1"
 "	      005076d8    je near ptr 005076FCh"
-"	      005076de    test byte ptr [ebp-8],1"
+"	      005076de    test reinterpret_cast<unit8_t>(fromConnections),1"
 "	      005076e2    je near ptr 005076FCh"
-"	      005076e8    test byte ptr [ebp-4],4"
+"	      005076e8    test reinterpret_cast<unit8_t>(toConnections),4"
 "	      005076ec    je near ptr 005076FCh"
 );
 // LINE 3767:
@@ -10764,11 +10764,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3771:
 	asm( 
-"	      005076fc    test byte ptr [ebp+10h],4"
+"	      005076fc    test reinterpret_cast<unit8_t>(direction),4"
 "	      00507700    je near ptr 00507724h"
-"	      00507706    test byte ptr [ebp-8],4"
+"	      00507706    test reinterpret_cast<unit8_t>(fromConnections),4"
 "	      0050770a    je near ptr 00507724h"
-"	      00507710    test byte ptr [ebp-4],1"
+"	      00507710    test reinterpret_cast<unit8_t>(toConnections),1"
 "	      00507714    je near ptr 00507724h"
 );
 // LINE 3773:
@@ -10778,11 +10778,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3777:
 	asm( 
-"	      00507724    test byte ptr [ebp+10h],8"
+"	      00507724    test reinterpret_cast<unit8_t>(direction),8"
 "	      00507728    je near ptr 0050774Ch"
-"	      0050772e    test byte ptr [ebp-8],8"
+"	      0050772e    test reinterpret_cast<unit8_t>(fromConnections),8"
 "	      00507732    je near ptr 0050774Ch"
-"	      00507738    test byte ptr [ebp-4],2"
+"	      00507738    test reinterpret_cast<unit8_t>(toConnections),2"
 "	      0050773c    je near ptr 0050774Ch"
 );
 // LINE 3779:
@@ -10792,11 +10792,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3783:
 	asm( 
-"	      0050774c    test byte ptr [ebp+10h],2"
+"	      0050774c    test reinterpret_cast<unit8_t>(direction),2"
 "	      00507750    je near ptr 00507774h"
-"	      00507756    test byte ptr [ebp-8],2"
+"	      00507756    test reinterpret_cast<unit8_t>(fromConnections),2"
 "	      0050775a    je near ptr 00507774h"
-"	      00507760    test byte ptr [ebp-4],8"
+"	      00507760    test reinterpret_cast<unit8_t>(toConnections),8"
 "	      00507764    je near ptr 00507774h"
 );
 // LINE 3785:
@@ -10832,12 +10832,12 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 "	      00507788    push ebx"
 "	      00507789    push esi"
 "	      0050778a    push edi"
-"	      0050778b    mov [ebp-14h],ecx"
-"	      0050778e    mov eax,[ebp-14h]"
+"	      0050778b    mov this,ecx"
+"	      0050778e    mov eax,this"
 "	      00507791    xor ecx,ecx"
 "	      00507793    mov cl,[eax+0D3h]"
 "	      00507799    mov [ebp-0Ch],ecx"
-"	      0050779c    mov eax,[ebp-14h]"
+"	      0050779c    mov eax,this"
 "	      0050779f    xor ecx,ecx"
 "	      005077a1    mov cl,[eax+0D2h]"
 "	      005077a7    mov [ebp-10h],ecx"
@@ -10862,11 +10862,11 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 "	      005077ee    jmp near ptr 005077F3h"
 "	      005077f3    jmp near ptr 005077F8h"
 "	      005077f8    mov eax,[ebp-8]"
-"	      005077fb    mov [ebp-4],eax"
+"	      005077fb    mov cellPointer,eax"
 );
 // LINE 3815:
 	asm( 
-"	      005077fe    cmp dword ptr [ebp-4],0"
+"	      005077fe    cmp cellPointer,0"
 "	      00507802    jne near ptr 00507824h"
 "	      00507808    push 0EE7h"
 "	      0050780d    push 5B567Ch"
@@ -10878,98 +10878,98 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 );
 // LINE 3819:
 	asm( 
-"	      00507829    mov eax,[ebp-4]"
+"	      00507829    mov eax,cellPointer"
 "	      0050782c    movsx eax,word ptr [eax+2]"
 "	      00507830    shl eax,10h"
-"	      00507833    mov ecx,[ebp-14h]"
+"	      00507833    mov ecx,this"
 "	      00507836    mov [ecx+24h],eax"
 );
 // LINE 3820:
 	asm( 
-"	      00507839    mov eax,[ebp-4]"
+"	      00507839    mov eax,cellPointer"
 "	      0050783c    movsx eax,word ptr [eax+4]"
 "	      00507840    shl eax,10h"
-"	      00507843    mov ecx,[ebp-14h]"
+"	      00507843    mov ecx,this"
 "	      00507846    mov [ecx+28h],eax"
 );
 // LINE 3821:
 	asm( 
-"	      00507849    mov eax,[ebp-4]"
+"	      00507849    mov eax,cellPointer"
 "	      0050784c    movsx eax,word ptr [eax+6]"
 "	      00507850    shl eax,10h"
-"	      00507853    mov ecx,[ebp-14h]"
+"	      00507853    mov ecx,this"
 "	      00507856    mov [ecx+2Ch],eax"
 );
 // LINE 3825:
 	asm( 
-"	      00507859    mov eax,[ebp-14h]"
+"	      00507859    mov eax,this"
 "	      0050785c    test byte ptr [eax+0CEh],1"
 "	      00507863    je near ptr 00507882h"
 );
 // LINE 3827:
 	asm( 
-"	      00507869    mov eax,[ebp-14h]"
+"	      00507869    mov eax,this"
 "	      0050786c    add dword ptr [eax+24h],0D0000h"
 );
 // LINE 3828:
 	asm( 
-"	      00507873    mov eax,[ebp-14h]"
+"	      00507873    mov eax,this"
 "	      00507876    sub dword ptr [eax+2Ch],1E0000h"
 );
 // LINE 3830:
 	asm( 
 "	      0050787d    jmp near ptr 005078F8h"
-"	      00507882    mov eax,[ebp-14h]"
+"	      00507882    mov eax,this"
 "	      00507885    test byte ptr [eax+0CEh],4"
 "	      0050788c    je near ptr 005078ABh"
 );
 // LINE 3832:
 	asm( 
-"	      00507892    mov eax,[ebp-14h]"
+"	      00507892    mov eax,this"
 "	      00507895    sub dword ptr [eax+24h],0D0000h"
 );
 // LINE 3833:
 	asm( 
-"	      0050789c    mov eax,[ebp-14h]"
+"	      0050789c    mov eax,this"
 "	      0050789f    add dword ptr [eax+2Ch],1E0000h"
 );
 // LINE 3835:
 	asm( 
 "	      005078a6    jmp near ptr 005078F8h"
-"	      005078ab    mov eax,[ebp-14h]"
+"	      005078ab    mov eax,this"
 "	      005078ae    test byte ptr [eax+0CEh],2"
 "	      005078b5    je near ptr 005078D4h"
 );
 // LINE 3837:
 	asm( 
-"	      005078bb    mov eax,[ebp-14h]"
+"	      005078bb    mov eax,this"
 "	      005078be    sub dword ptr [eax+24h],1E0000h"
 );
 // LINE 3838:
 	asm( 
-"	      005078c5    mov eax,[ebp-14h]"
+"	      005078c5    mov eax,this"
 "	      005078c8    sub dword ptr [eax+2Ch],0D0000h"
 );
 // LINE 3840:
 	asm( 
 "	      005078cf    jmp near ptr 005078F8h"
-"	      005078d4    mov eax,[ebp-14h]"
+"	      005078d4    mov eax,this"
 "	      005078d7    test byte ptr [eax+0CEh],8"
 "	      005078de    je near ptr 005078F8h"
 );
 // LINE 3842:
 	asm( 
-"	      005078e4    mov eax,[ebp-14h]"
+"	      005078e4    mov eax,this"
 "	      005078e7    add dword ptr [eax+24h],1E0000h"
 );
 // LINE 3843:
 	asm( 
-"	      005078ee    mov eax,[ebp-14h]"
+"	      005078ee    mov eax,this"
 "	      005078f1    add dword ptr [eax+2Ch],0D0000h"
 );
 // LINE 3847:
 	asm( 
-"	      005078f8    mov eax,[ebp-14h]"
+"	      005078f8    mov eax,this"
 "	      005078fb    add dword ptr [eax+28h],1F0000h"
 );
 // LINE 3848:
@@ -11001,12 +11001,12 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507912    push ebx"
 "	      00507913    push esi"
 "	      00507914    push edi"
-"	      00507915    mov [ebp-4Ch],ecx"
-"	      00507918    mov eax,[ebp-4Ch]"
+"	      00507915    mov this,ecx"
+"	      00507918    mov eax,this"
 "	      0050791b    xor ecx,ecx"
 "	      0050791d    mov cl,[eax+0D5h]"
 "	      00507923    mov [ebp-2Ch],ecx"
-"	      00507926    mov eax,[ebp-4Ch]"
+"	      00507926    mov eax,this"
 "	      00507929    xor ecx,ecx"
 "	      0050792b    mov cl,[eax+0D4h]"
 "	      00507931    mov [ebp-30h],ecx"
@@ -11031,37 +11031,37 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507978    jmp near ptr 0050797Dh"
 "	      0050797d    jmp near ptr 00507982h"
 "	      00507982    mov eax,[ebp-28h]"
-"	      00507985    mov [ebp-24h],eax"
+"	      00507985    mov cellPointer,eax"
 );
 // LINE 3872:
 	asm( 
-"	      00507988    mov eax,[ebp-4Ch]"
+"	      00507988    mov eax,this"
 "	      0050798b    xor ecx,ecx"
 "	      0050798d    mov cl,[eax+0D2h]"
 "	      00507993    test ecx,ecx"
 "	      00507995    jl near ptr 005079DCh"
-"	      0050799b    mov eax,[ebp-4Ch]"
+"	      0050799b    mov eax,this"
 "	      0050799e    xor ecx,ecx"
 "	      005079a0    mov cl,[eax+0D3h]"
 "	      005079a6    test ecx,ecx"
 "	      005079a8    jl near ptr 005079DCh"
-"	      005079ae    mov eax,[ebp-4Ch]"
+"	      005079ae    mov eax,this"
 "	      005079b1    xor ecx,ecx"
 "	      005079b3    mov cl,[eax+0D2h]"
 "	      005079b9    cmp ecx,80h"
 "	      005079bf    jge near ptr 005079DCh"
-"	      005079c5    mov eax,[ebp-4Ch]"
+"	      005079c5    mov eax,this"
 "	      005079c8    xor ecx,ecx"
 "	      005079ca    mov cl,[eax+0D3h]"
 "	      005079d0    cmp ecx,80h"
 "	      005079d6    jl near ptr 005079E7h"
-"	      005079dc    mov word ptr [ebp-20h],0"
+"	      005079dc    mov tile,0"
 "	      005079e2    jmp near ptr 00507A3Fh"
-"	      005079e7    mov eax,[ebp-4Ch]"
+"	      005079e7    mov eax,this"
 "	      005079ea    xor ecx,ecx"
 "	      005079ec    mov cl,[eax+0D2h]"
 "	      005079f2    mov eax,[ecx*4+638F70h]"
-"	      005079f9    mov ecx,[ebp-4Ch]"
+"	      005079f9    mov ecx,this"
 "	      005079fc    xor edx,edx"
 "	      005079fe    mov dl,[ecx+0D3h]"
 "	      00507a04    xor ecx,ecx"
@@ -11069,48 +11069,48 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507a09    and ecx,2"
 "	      00507a0c    movsx eax,cx"
 "	      00507a0f    shl eax,0Eh"
-"	      00507a12    mov ecx,[ebp-4Ch]"
+"	      00507a12    mov ecx,this"
 "	      00507a15    xor edx,edx"
 "	      00507a17    mov dl,[ecx+0D2h]"
 "	      00507a1d    mov ecx,[edx*4+639850h]"
-"	      00507a24    mov edx,[ebp-4Ch]"
+"	      00507a24    mov edx,this"
 "	      00507a27    xor ebx,ebx"
 "	      00507a29    mov bl,[edx+0D3h]"
 "	      00507a2f    xor edx,edx"
 "	      00507a31    mov dl,[ecx+ebx]"
 "	      00507a34    or eax,edx"
-"	      00507a36    mov [ebp-20h],ax"
+"	      00507a36    mov tile,ax"
 "	      00507a3a    jmp near ptr 00507A3Fh"
 );
 // LINE 3873:
 	asm( 
-"	      00507a3f    mov eax,[ebp-4Ch]"
+"	      00507a3f    mov eax,this"
 "	      00507a42    xor ecx,ecx"
 "	      00507a44    mov cl,[eax+0D4h]"
 "	      00507a4a    test ecx,ecx"
 "	      00507a4c    jl near ptr 00507A93h"
-"	      00507a52    mov eax,[ebp-4Ch]"
+"	      00507a52    mov eax,this"
 "	      00507a55    xor ecx,ecx"
 "	      00507a57    mov cl,[eax+0D5h]"
 "	      00507a5d    test ecx,ecx"
 "	      00507a5f    jl near ptr 00507A93h"
-"	      00507a65    mov eax,[ebp-4Ch]"
+"	      00507a65    mov eax,this"
 "	      00507a68    xor ecx,ecx"
 "	      00507a6a    mov cl,[eax+0D4h]"
 "	      00507a70    cmp ecx,80h"
 "	      00507a76    jge near ptr 00507A93h"
-"	      00507a7c    mov eax,[ebp-4Ch]"
+"	      00507a7c    mov eax,this"
 "	      00507a7f    xor ecx,ecx"
 "	      00507a81    mov cl,[eax+0D5h]"
 "	      00507a87    cmp ecx,80h"
 "	      00507a8d    jl near ptr 00507A9Eh"
-"	      00507a93    mov word ptr [ebp-1Ch],0"
+"	      00507a93    mov ntile,0"
 "	      00507a99    jmp near ptr 00507AF6h"
-"	      00507a9e    mov eax,[ebp-4Ch]"
+"	      00507a9e    mov eax,this"
 "	      00507aa1    xor ecx,ecx"
 "	      00507aa3    mov cl,[eax+0D4h]"
 "	      00507aa9    mov eax,[ecx*4+638F70h]"
-"	      00507ab0    mov ecx,[ebp-4Ch]"
+"	      00507ab0    mov ecx,this"
 "	      00507ab3    xor edx,edx"
 "	      00507ab5    mov dl,[ecx+0D5h]"
 "	      00507abb    xor ecx,ecx"
@@ -11118,17 +11118,17 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507ac0    and ecx,2"
 "	      00507ac3    movsx eax,cx"
 "	      00507ac6    shl eax,0Eh"
-"	      00507ac9    mov ecx,[ebp-4Ch]"
+"	      00507ac9    mov ecx,this"
 "	      00507acc    xor edx,edx"
 "	      00507ace    mov dl,[ecx+0D4h]"
 "	      00507ad4    mov ecx,[edx*4+639850h]"
-"	      00507adb    mov edx,[ebp-4Ch]"
+"	      00507adb    mov edx,this"
 "	      00507ade    xor ebx,ebx"
 "	      00507ae0    mov bl,[edx+0D5h]"
 "	      00507ae6    xor edx,edx"
 "	      00507ae8    mov dl,[ecx+ebx]"
 "	      00507aeb    or eax,edx"
-"	      00507aed    mov [ebp-1Ch],ax"
+"	      00507aed    mov ntile,ax"
 "	      00507af1    jmp near ptr 00507AF6h"
 );
 // LINE 3877:
@@ -11156,36 +11156,36 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3879:
 	asm( 
-"	      00507b5c    mov eax,[ebp-4Ch]"
+"	      00507b5c    mov eax,this"
 "	      00507b5f    xor ecx,ecx"
 "	      00507b61    mov cl,[eax+0D4h]"
 "	      00507b67    test ecx,0FEh"
 "	      00507b6d    jl near ptr 00507BB8h"
-"	      00507b73    mov eax,[ebp-4Ch]"
+"	      00507b73    mov eax,this"
 "	      00507b76    xor ecx,ecx"
 "	      00507b78    mov cl,[eax+0D5h]"
 "	      00507b7e    test ecx,0FEh"
 "	      00507b84    jl near ptr 00507BB8h"
-"	      00507b8a    mov eax,[ebp-4Ch]"
+"	      00507b8a    mov eax,this"
 "	      00507b8d    xor ecx,ecx"
 "	      00507b8f    mov cl,[eax+0D4h]"
 "	      00507b95    and cl,0FEh"
 "	      00507b98    cmp cl,80h"
 "	      00507b9b    jae near ptr 00507BB8h"
-"	      00507ba1    mov eax,[ebp-4Ch]"
+"	      00507ba1    mov eax,this"
 "	      00507ba4    xor ecx,ecx"
 "	      00507ba6    mov cl,[eax+0D5h]"
 "	      00507bac    and cl,0FEh"
 "	      00507baf    cmp cl,80h"
 "	      00507bb2    jb near ptr 00507BC3h"
-"	      00507bb8    mov word ptr [ebp-1Ch],0"
+"	      00507bb8    mov ntile,0"
 "	      00507bbe    jmp near ptr 00507C33h"
-"	      00507bc3    mov eax,[ebp-4Ch]"
+"	      00507bc3    mov eax,this"
 "	      00507bc6    xor ecx,ecx"
 "	      00507bc8    mov cl,[eax+0D4h]"
 "	      00507bce    and ecx,0FEh"
 "	      00507bd4    mov eax,[ecx*4+638F70h]"
-"	      00507bdb    mov ecx,[ebp-4Ch]"
+"	      00507bdb    mov ecx,this"
 "	      00507bde    xor edx,edx"
 "	      00507be0    mov dl,[ecx+0D5h]"
 "	      00507be6    and edx,0FEh"
@@ -11194,24 +11194,24 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507bf1    and ecx,2"
 "	      00507bf4    movsx eax,cx"
 "	      00507bf7    shl eax,0Eh"
-"	      00507bfa    mov ecx,[ebp-4Ch]"
+"	      00507bfa    mov ecx,this"
 "	      00507bfd    xor edx,edx"
 "	      00507bff    mov dl,[ecx+0D4h]"
 "	      00507c05    and edx,0FEh"
 "	      00507c0b    mov ecx,[edx*4+639850h]"
-"	      00507c12    mov edx,[ebp-4Ch]"
+"	      00507c12    mov edx,this"
 "	      00507c15    xor ebx,ebx"
 "	      00507c17    mov bl,[edx+0D5h]"
 "	      00507c1d    and ebx,0FEh"
 "	      00507c23    xor edx,edx"
 "	      00507c25    mov dl,[ecx+ebx]"
 "	      00507c28    or eax,edx"
-"	      00507c2a    mov [ebp-1Ch],ax"
+"	      00507c2a    mov ntile,ax"
 "	      00507c2e    jmp near ptr 00507C33h"
 );
 // LINE 3882:
 	asm( 
-"	      00507c33    cmp dword ptr [ebp-24h],0"
+"	      00507c33    cmp cellPointer,0"
 "	      00507c37    jne near ptr 00507C59h"
 "	      00507c3d    push 0F2Ah"
 "	      00507c42    push 5B56ACh"
@@ -11223,57 +11223,57 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3885:
 	asm( 
-"	      00507c5e    mov eax,[ebp-24h]"
+"	      00507c5e    mov eax,cellPointer"
 "	      00507c61    movsx eax,word ptr [eax+2]"
 "	      00507c65    shl eax,10h"
-"	      00507c68    mov [ebp-18h],eax"
+"	      00507c68    mov nextFineLocation.x,eax"
 );
 // LINE 3886:
 	asm( 
-"	      00507c6b    mov eax,[ebp-24h]"
+"	      00507c6b    mov eax,cellPointer"
 "	      00507c6e    movsx eax,word ptr [eax+4]"
 "	      00507c72    shl eax,10h"
-"	      00507c75    mov [ebp-14h],eax"
+"	      00507c75    mov nextFineLocation.y,eax"
 );
 // LINE 3887:
 	asm( 
-"	      00507c78    mov eax,[ebp-24h]"
+"	      00507c78    mov eax,cellPointer"
 "	      00507c7b    movsx eax,word ptr [eax+6]"
 "	      00507c7f    shl eax,10h"
-"	      00507c82    mov [ebp-10h],eax"
+"	      00507c82    mov nextFineLocation.z,eax"
 );
 // LINE 3894:
 	asm( 
-"	      00507c85    mov eax,[ebp-4Ch]"
+"	      00507c85    mov eax,this"
 "	      00507c88    xor ecx,ecx"
 "	      00507c8a    mov cl,[eax+0D4h]"
-"	      00507c90    mov eax,[ebp-4Ch]"
+"	      00507c90    mov eax,this"
 "	      00507c93    xor edx,edx"
 "	      00507c95    mov dl,[eax+0D2h]"
 "	      00507c9b    sub ecx,edx"
-"	      00507c9d    mov [ebp-0Ch],ecx"
+"	      00507c9d    mov xdiff,ecx"
 );
 // LINE 3895:
 	asm( 
-"	      00507ca0    mov eax,[ebp-4Ch]"
+"	      00507ca0    mov eax,this"
 "	      00507ca3    xor ecx,ecx"
 "	      00507ca5    mov cl,[eax+0D5h]"
-"	      00507cab    mov eax,[ebp-4Ch]"
+"	      00507cab    mov eax,this"
 "	      00507cae    xor edx,edx"
 "	      00507cb0    mov dl,[eax+0D3h]"
 "	      00507cb6    sub ecx,edx"
-"	      00507cb8    mov [ebp-8],ecx"
+"	      00507cb8    mov ydiff,ecx"
 );
 // LINE 3897:
 	asm( 
-"	      00507cbb    cmp dword ptr [ebp-0Ch],0"
+"	      00507cbb    cmp xdiff,0"
 "	      00507cbf    jge near ptr 00507D78h"
-"	      00507cc5    mov eax,[ebp-8]"
+"	      00507cc5    mov eax,ydiff"
 "	      00507cc8    cdq"
 "	      00507cc9    xor eax,edx"
 "	      00507ccb    sub eax,edx"
 "	      00507ccd    mov ecx,eax"
-"	      00507ccf    mov eax,[ebp-0Ch]"
+"	      00507ccf    mov eax,xdiff"
 "	      00507cd2    cdq"
 "	      00507cd3    xor eax,edx"
 "	      00507cd5    sub eax,edx"
@@ -11305,11 +11305,11 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3901:
 	asm( 
-"	      00507d45    add dword ptr [ebp-18h],3E0000h"
+"	      00507d45    add nextFineLocation.x,3E0000h"
 );
 // LINE 3902:
 	asm( 
-"	      00507d4c    add dword ptr [ebp-10h],2D0000h"
+"	      00507d4c    add nextFineLocation.z,2D0000h"
 );
 // LINE 3904:
 	asm( 
@@ -11317,28 +11317,28 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3906:
 	asm( 
-"	      00507d58    add dword ptr [ebp-18h],1E0000h"
+"	      00507d58    add nextFineLocation.x,1E0000h"
 );
 // LINE 3907:
 	asm( 
-"	      00507d5f    add dword ptr [ebp-10h],0D0000h"
+"	      00507d5f    add nextFineLocation.z,0D0000h"
 );
 // LINE 3909:
 	asm( 
-"	      00507d66    mov eax,[ebp-4Ch]"
+"	      00507d66    mov eax,this"
 "	      00507d69    mov dword ptr [eax+0CEh],8"
 );
 // LINE 3912:
 	asm( 
 "	      00507d73    jmp near ptr 00507FAFh"
-"	      00507d78    cmp dword ptr [ebp-0Ch],0"
+"	      00507d78    cmp xdiff,0"
 "	      00507d7c    jle near ptr 00507E35h"
-"	      00507d82    mov eax,[ebp-8]"
+"	      00507d82    mov eax,ydiff"
 "	      00507d85    cdq"
 "	      00507d86    xor eax,edx"
 "	      00507d88    sub eax,edx"
 "	      00507d8a    mov ecx,eax"
-"	      00507d8c    mov eax,[ebp-0Ch]"
+"	      00507d8c    mov eax,xdiff"
 "	      00507d8f    cdq"
 "	      00507d90    xor eax,edx"
 "	      00507d92    sub eax,edx"
@@ -11370,11 +11370,11 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3917:
 	asm( 
-"	      00507e02    sub dword ptr [ebp-18h],3E0000h"
+"	      00507e02    sub nextFineLocation.x,3E0000h"
 );
 // LINE 3918:
 	asm( 
-"	      00507e09    sub dword ptr [ebp-10h],2D0000h"
+"	      00507e09    sub nextFineLocation.z,2D0000h"
 );
 // LINE 3920:
 	asm( 
@@ -11382,28 +11382,28 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3922:
 	asm( 
-"	      00507e15    sub dword ptr [ebp-18h],1E0000h"
+"	      00507e15    sub nextFineLocation.x,1E0000h"
 );
 // LINE 3923:
 	asm( 
-"	      00507e1c    sub dword ptr [ebp-10h],0D0000h"
+"	      00507e1c    sub nextFineLocation.z,0D0000h"
 );
 // LINE 3925:
 	asm( 
-"	      00507e23    mov eax,[ebp-4Ch]"
+"	      00507e23    mov eax,this"
 "	      00507e26    mov dword ptr [eax+0CEh],2"
 );
 // LINE 3927:
 	asm( 
 "	      00507e30    jmp near ptr 00507FAFh"
-"	      00507e35    cmp dword ptr [ebp-8],0"
+"	      00507e35    cmp ydiff,0"
 "	      00507e39    jle near ptr 00507EF2h"
-"	      00507e3f    mov eax,[ebp-8]"
+"	      00507e3f    mov eax,ydiff"
 "	      00507e42    cdq"
 "	      00507e43    xor eax,edx"
 "	      00507e45    sub eax,edx"
 "	      00507e47    mov ecx,eax"
-"	      00507e49    mov eax,[ebp-0Ch]"
+"	      00507e49    mov eax,xdiff"
 "	      00507e4c    cdq"
 "	      00507e4d    xor eax,edx"
 "	      00507e4f    sub eax,edx"
@@ -11435,11 +11435,11 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3931:
 	asm( 
-"	      00507ebf    add dword ptr [ebp-10h],3E0000h"
+"	      00507ebf    add nextFineLocation.z,3E0000h"
 );
 // LINE 3932:
 	asm( 
-"	      00507ec6    sub dword ptr [ebp-18h],2D0000h"
+"	      00507ec6    sub nextFineLocation.x,2D0000h"
 );
 // LINE 3934:
 	asm( 
@@ -11447,28 +11447,28 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3936:
 	asm( 
-"	      00507ed2    add dword ptr [ebp-10h],1E0000h"
+"	      00507ed2    add nextFineLocation.z,1E0000h"
 );
 // LINE 3937:
 	asm( 
-"	      00507ed9    sub dword ptr [ebp-18h],0D0000h"
+"	      00507ed9    sub nextFineLocation.x,0D0000h"
 );
 // LINE 3939:
 	asm( 
-"	      00507ee0    mov eax,[ebp-4Ch]"
+"	      00507ee0    mov eax,this"
 "	      00507ee3    mov dword ptr [eax+0CEh],4"
 );
 // LINE 3941:
 	asm( 
 "	      00507eed    jmp near ptr 00507FAFh"
-"	      00507ef2    cmp dword ptr [ebp-8],0"
+"	      00507ef2    cmp ydiff,0"
 "	      00507ef6    jge near ptr 00507FAFh"
-"	      00507efc    mov eax,[ebp-8]"
+"	      00507efc    mov eax,ydiff"
 "	      00507eff    cdq"
 "	      00507f00    xor eax,edx"
 "	      00507f02    sub eax,edx"
 "	      00507f04    mov ecx,eax"
-"	      00507f06    mov eax,[ebp-0Ch]"
+"	      00507f06    mov eax,xdiff"
 "	      00507f09    cdq"
 "	      00507f0a    xor eax,edx"
 "	      00507f0c    sub eax,edx"
@@ -11500,11 +11500,11 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3946:
 	asm( 
-"	      00507f7c    sub dword ptr [ebp-10h],3E0000h"
+"	      00507f7c    sub nextFineLocation.z,3E0000h"
 );
 // LINE 3947:
 	asm( 
-"	      00507f83    add dword ptr [ebp-18h],2D0000h"
+"	      00507f83    add nextFineLocation.x,2D0000h"
 );
 // LINE 3949:
 	asm( 
@@ -11512,15 +11512,15 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3951:
 	asm( 
-"	      00507f8f    sub dword ptr [ebp-10h],1E0000h"
+"	      00507f8f    sub nextFineLocation.z,1E0000h"
 );
 // LINE 3952:
 	asm( 
-"	      00507f96    add dword ptr [ebp-18h],0D0000h"
+"	      00507f96    add nextFineLocation.x,0D0000h"
 );
 // LINE 3954:
 	asm( 
-"	      00507f9d    mov eax,[ebp-4Ch]"
+"	      00507f9d    mov eax,this"
 "	      00507fa0    mov dword ptr [eax+0CEh],1"
 );
 // LINE 3956:
@@ -11537,7 +11537,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507fc4    jne near ptr 00507FD8h"
 "	      00507fca    mov eax,[ebp-48h]"
 "	      00507fcd    mov eax,[eax+4]"
-"	      00507fd0    mov [ebp-4],eax"
+"	      00507fd0    mov connectionType,eax"
 "	      00507fd3    jmp near ptr 0050800Ch"
 "	      00507fd8    mov eax,[ebp-48h]"
 "	      00507fdb    cmp dword ptr [eax],0"
@@ -11546,14 +11546,14 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 "	      00507fe9    add eax,0F40h"
 "	      00507fee    cmp eax,[ebp-48h]"
 "	      00507ff1    jae near ptr 00508003h"
-"	      00507ff7    mov dword ptr [ebp-4],0"
+"	      00507ff7    mov connectionType,0"
 "	      00507ffe    jmp near ptr 0050800Ch"
 "	      00508003    add dword ptr [ebp-48h],8"
 "	      00508007    jmp near ptr 00507FB6h"
 );
 // LINE 3966:
 	asm( 
-"	      0050800c    cmp dword ptr [ebp-4],0"
+"	      0050800c    cmp connectionType,0"
 "	      00508010    je near ptr 00508107h"
 );
 // LINE 3968:
@@ -11565,13 +11565,13 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3971:
 	asm( 
-"	      00508026    mov eax,[ebp-4Ch]"
+"	      00508026    mov eax,this"
 "	      00508029    test byte ptr [eax+0CEh],1"
 "	      00508030    je near ptr 0050803Dh"
 );
 // LINE 3972:
 	asm( 
-"	      00508036    add dword ptr [ebp-14h],1F0000h"
+"	      00508036    add nextFineLocation.y,1F0000h"
 );
 // LINE 3973:
 	asm( 
@@ -11579,13 +11579,13 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3975:
 	asm( 
-"	      00508042    mov eax,[ebp-4Ch]"
+"	      00508042    mov eax,this"
 "	      00508045    test byte ptr [eax+0CEh],4"
 "	      0050804c    je near ptr 00508059h"
 );
 // LINE 3976:
 	asm( 
-"	      00508052    add dword ptr [ebp-14h],1F0000h"
+"	      00508052    add nextFineLocation.y,1F0000h"
 );
 // LINE 3977:
 	asm( 
@@ -11593,13 +11593,13 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3979:
 	asm( 
-"	      0050805e    mov eax,[ebp-4Ch]"
+"	      0050805e    mov eax,this"
 "	      00508061    test byte ptr [eax+0CEh],2"
 "	      00508068    je near ptr 00508075h"
 );
 // LINE 3980:
 	asm( 
-"	      0050806e    add dword ptr [ebp-14h],1F0000h"
+"	      0050806e    add nextFineLocation.y,1F0000h"
 );
 // LINE 3981:
 	asm( 
@@ -11607,13 +11607,13 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3983:
 	asm( 
-"	      0050807a    mov eax,[ebp-4Ch]"
+"	      0050807a    mov eax,this"
 "	      0050807d    test byte ptr [eax+0CEh],8"
 "	      00508084    je near ptr 00508091h"
 );
 // LINE 3984:
 	asm( 
-"	      0050808a    add dword ptr [ebp-14h],1F0000h"
+"	      0050808a    add nextFineLocation.y,1F0000h"
 );
 // LINE 3985:
 	asm( 
@@ -11621,7 +11621,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3990:
 	asm( 
-"	      00508096    add dword ptr [ebp-14h],1F0000h"
+"	      00508096    add nextFineLocation.y,1F0000h"
 );
 // LINE 3991:
 	asm( 
@@ -11658,48 +11658,48 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3998:
 	asm( 
-"	      00508107    add dword ptr [ebp-14h],1F0000h"
+"	      00508107    add nextFineLocation.y,1F0000h"
 );
 // LINE 4002:
 	asm( 
-"	      0050810e    mov eax,[ebp-18h]"
-"	      00508111    mov ecx,[ebp-4Ch]"
+"	      0050810e    mov eax,nextFineLocation.x"
+"	      00508111    mov ecx,this"
 "	      00508114    sub eax,[ecx+24h]"
-"	      00508117    mov ecx,[ebp-4Ch]"
+"	      00508117    mov ecx,this"
 "	      0050811a    mov [ecx+0A2h],eax"
 );
 // LINE 4003:
 	asm( 
-"	      00508120    mov eax,[ebp-14h]"
-"	      00508123    mov ecx,[ebp-4Ch]"
+"	      00508120    mov eax,nextFineLocation.y"
+"	      00508123    mov ecx,this"
 "	      00508126    sub eax,[ecx+28h]"
-"	      00508129    mov ecx,[ebp-4Ch]"
+"	      00508129    mov ecx,this"
 "	      0050812c    mov [ecx+0A6h],eax"
 );
 // LINE 4004:
 	asm( 
-"	      00508132    mov eax,[ebp-10h]"
-"	      00508135    mov ecx,[ebp-4Ch]"
+"	      00508132    mov eax,nextFineLocation.z"
+"	      00508135    mov ecx,this"
 "	      00508138    sub eax,[ecx+2Ch]"
-"	      0050813b    mov ecx,[ebp-4Ch]"
+"	      0050813b    mov ecx,this"
 "	      0050813e    mov [ecx+0AAh],eax"
 );
 // LINE 4005:
 	asm( 
-"	      00508144    mov eax,[ebp-4Ch]"
+"	      00508144    mov eax,this"
 "	      00508147    add eax,0A2h"
 "	      0050814c    push eax"
 "	      0050814d    call 004CA1E3h"
 "	      00508152    add esp,4"
-"	      00508155    mov ecx,[ebp-4Ch]"
+"	      00508155    mov ecx,this"
 "	      00508158    mov [ecx+0EAh],eax"
 );
 // LINE 4010:
 	asm( 
-"	      0050815e    mov eax,[ebp-4Ch]"
+"	      0050815e    mov eax,this"
 "	      00508161    add eax,0A2h"
 "	      00508166    push eax"
-"	      00508167    mov eax,[ebp-4Ch]"
+"	      00508167    mov eax,this"
 "	      0050816a    add eax,30h"
 "	      0050816d    push eax"
 "	      0050816e    call 004CAEFBh"
@@ -11733,101 +11733,101 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508186    push ebx"
 "	      00508187    push esi"
 "	      00508188    push edi"
-"	      00508189    mov [ebp-20h],ecx"
+"	      00508189    mov this,ecx"
 );
 // LINE 4045:
 	asm( 
-"	      0050818c    mov eax,[ebp+8]"
+"	      0050818c    mov eax,point"
 "	      0050818f    mov al,[eax]"
-"	      00508191    mov ecx,[ebp-20h]"
+"	      00508191    mov ecx,this"
 "	      00508194    mov [ecx+0D6h],al"
 );
 // LINE 4046:
 	asm( 
-"	      0050819a    mov eax,[ebp+8]"
+"	      0050819a    mov eax,point"
 "	      0050819d    xor ecx,ecx"
 "	      0050819f    mov cl,[eax+1]"
 "	      005081a2    dec ecx"
-"	      005081a3    mov eax,[ebp-20h]"
+"	      005081a3    mov eax,this"
 "	      005081a6    mov [eax+0D7h],cl"
 );
 // LINE 4047:
 	asm( 
-"	      005081ac    mov eax,[ebp+8]"
+"	      005081ac    mov eax,point"
 "	      005081af    mov al,[eax]"
-"	      005081b1    mov ecx,[ebp-20h]"
+"	      005081b1    mov ecx,this"
 "	      005081b4    mov [ecx+0D8h],al"
 );
 // LINE 4048:
 	asm( 
-"	      005081ba    mov eax,[ebp+8]"
+"	      005081ba    mov eax,point"
 "	      005081bd    xor ecx,ecx"
 "	      005081bf    mov cl,[eax+1]"
 "	      005081c2    inc ecx"
-"	      005081c3    mov eax,[ebp-20h]"
+"	      005081c3    mov eax,this"
 "	      005081c6    mov [eax+0D9h],cl"
 );
 // LINE 4049:
 	asm( 
-"	      005081cc    mov eax,[ebp+8]"
+"	      005081cc    mov eax,point"
 "	      005081cf    xor ecx,ecx"
 "	      005081d1    mov cl,[eax]"
 "	      005081d3    inc ecx"
-"	      005081d4    mov eax,[ebp-20h]"
+"	      005081d4    mov eax,this"
 "	      005081d7    mov [eax+0DAh],cl"
 );
 // LINE 4050:
 	asm( 
-"	      005081dd    mov eax,[ebp+8]"
+"	      005081dd    mov eax,point"
 "	      005081e0    mov al,[eax+1]"
-"	      005081e3    mov ecx,[ebp-20h]"
+"	      005081e3    mov ecx,this"
 "	      005081e6    mov [ecx+0DBh],al"
 );
 // LINE 4051:
 	asm( 
-"	      005081ec    mov eax,[ebp+8]"
+"	      005081ec    mov eax,point"
 "	      005081ef    xor ecx,ecx"
 "	      005081f1    mov cl,[eax]"
 "	      005081f3    dec ecx"
-"	      005081f4    mov eax,[ebp-20h]"
+"	      005081f4    mov eax,this"
 "	      005081f7    mov [eax+0DCh],cl"
 );
 // LINE 4052:
 	asm( 
-"	      005081fd    mov eax,[ebp+8]"
+"	      005081fd    mov eax,point"
 "	      00508200    mov al,[eax+1]"
-"	      00508203    mov ecx,[ebp-20h]"
+"	      00508203    mov ecx,this"
 "	      00508206    mov [ecx+0DDh],al"
 );
 // LINE 4055:
 	asm( 
-"	      0050820c    mov eax,[ebp+8]"
+"	      0050820c    mov eax,point"
 "	      0050820f    xor ecx,ecx"
 "	      00508211    mov cl,[eax]"
 "	      00508213    test ecx,ecx"
 "	      00508215    jl near ptr 00508252h"
-"	      0050821b    mov eax,[ebp+8]"
+"	      0050821b    mov eax,point"
 "	      0050821e    xor ecx,ecx"
 "	      00508220    mov cl,[eax+1]"
 "	      00508223    test ecx,ecx"
 "	      00508225    jl near ptr 00508252h"
-"	      0050822b    mov eax,[ebp+8]"
+"	      0050822b    mov eax,point"
 "	      0050822e    xor ecx,ecx"
 "	      00508230    mov cl,[eax]"
 "	      00508232    cmp ecx,80h"
 "	      00508238    jge near ptr 00508252h"
-"	      0050823e    mov eax,[ebp+8]"
+"	      0050823e    mov eax,point"
 "	      00508241    xor ecx,ecx"
 "	      00508243    mov cl,[eax+1]"
 "	      00508246    cmp ecx,80h"
 "	      0050824c    jl near ptr 0050825Dh"
-"	      00508252    mov word ptr [ebp-10h],0"
+"	      00508252    mov currentTile,0"
 "	      00508258    jmp near ptr 005082A7h"
-"	      0050825d    mov eax,[ebp+8]"
+"	      0050825d    mov eax,point"
 "	      00508260    xor ecx,ecx"
 "	      00508262    mov cl,[eax]"
 "	      00508264    mov eax,[ecx*4+638F70h]"
-"	      0050826b    mov ecx,[ebp+8]"
+"	      0050826b    mov ecx,point"
 "	      0050826e    xor edx,edx"
 "	      00508270    mov dl,[ecx+1]"
 "	      00508273    xor ecx,ecx"
@@ -11835,17 +11835,17 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508278    and ecx,2"
 "	      0050827b    movsx eax,cx"
 "	      0050827e    shl eax,0Eh"
-"	      00508281    mov ecx,[ebp+8]"
+"	      00508281    mov ecx,point"
 "	      00508284    xor edx,edx"
 "	      00508286    mov dl,[ecx]"
 "	      00508288    mov ecx,[edx*4+639850h]"
-"	      0050828f    mov edx,[ebp+8]"
+"	      0050828f    mov edx,point"
 "	      00508292    xor ebx,ebx"
 "	      00508294    mov bl,[edx+1]"
 "	      00508297    xor edx,edx"
 "	      00508299    mov dl,[ecx+ebx]"
 "	      0050829c    or eax,edx"
-"	      0050829e    mov [ebp-10h],ax"
+"	      0050829e    mov currentTile,ax"
 "	      005082a2    jmp near ptr 005082A7h"
 );
 // LINE 4059:
@@ -11873,36 +11873,36 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4064:
 	asm( 
-"	      0050830d    mov eax,[ebp+8]"
+"	      0050830d    mov eax,point"
 "	      00508310    xor ecx,ecx"
 "	      00508312    mov cl,[eax]"
 "	      00508314    test ecx,0FEh"
 "	      0050831a    jl near ptr 0050835Bh"
-"	      00508320    mov eax,[ebp+8]"
+"	      00508320    mov eax,point"
 "	      00508323    xor ecx,ecx"
 "	      00508325    mov cl,[eax+1]"
 "	      00508328    test ecx,0FEh"
 "	      0050832e    jl near ptr 0050835Bh"
-"	      00508334    mov eax,[ebp+8]"
+"	      00508334    mov eax,point"
 "	      00508337    xor ecx,ecx"
 "	      00508339    mov cl,[eax]"
 "	      0050833b    and cl,0FEh"
 "	      0050833e    cmp cl,80h"
 "	      00508341    jae near ptr 0050835Bh"
-"	      00508347    mov eax,[ebp+8]"
+"	      00508347    mov eax,point"
 "	      0050834a    xor ecx,ecx"
 "	      0050834c    mov cl,[eax+1]"
 "	      0050834f    and cl,0FEh"
 "	      00508352    cmp cl,80h"
 "	      00508355    jb near ptr 00508366h"
-"	      0050835b    mov word ptr [ebp-10h],0"
+"	      0050835b    mov currentTile,0"
 "	      00508361    jmp near ptr 005083C8h"
-"	      00508366    mov eax,[ebp+8]"
+"	      00508366    mov eax,point"
 "	      00508369    xor ecx,ecx"
 "	      0050836b    mov cl,[eax]"
 "	      0050836d    and ecx,0FEh"
 "	      00508373    mov eax,[ecx*4+638F70h]"
-"	      0050837a    mov ecx,[ebp+8]"
+"	      0050837a    mov ecx,point"
 "	      0050837d    xor edx,edx"
 "	      0050837f    mov dl,[ecx+1]"
 "	      00508382    and edx,0FEh"
@@ -11911,24 +11911,24 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      0050838d    and ecx,2"
 "	      00508390    movsx eax,cx"
 "	      00508393    shl eax,0Eh"
-"	      00508396    mov ecx,[ebp+8]"
+"	      00508396    mov ecx,point"
 "	      00508399    xor edx,edx"
 "	      0050839b    mov dl,[ecx]"
 "	      0050839d    and edx,0FEh"
 "	      005083a3    mov ecx,[edx*4+639850h]"
-"	      005083aa    mov edx,[ebp+8]"
+"	      005083aa    mov edx,point"
 "	      005083ad    xor ebx,ebx"
 "	      005083af    mov bl,[edx+1]"
 "	      005083b2    and ebx,0FEh"
 "	      005083b8    xor edx,edx"
 "	      005083ba    mov dl,[ecx+ebx]"
 "	      005083bd    or eax,edx"
-"	      005083bf    mov [ebp-10h],ax"
+"	      005083bf    mov currentTile,ax"
 "	      005083c3    jmp near ptr 005083C8h"
 );
 // LINE 4067:
 	asm( 
-"	      005083c8    mov eax,[ebp+8]"
+"	      005083c8    mov eax,point"
 "	      005083cb    xor ecx,ecx"
 "	      005083cd    mov cl,[eax]"
 "	      005083cf    test cl,1"
@@ -11936,7 +11936,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4068:
 	asm( 
-"	      005083d8    mov eax,[ebp-20h]"
+"	      005083d8    mov eax,this"
 "	      005083db    dec byte ptr [eax+0DCh]"
 );
 // LINE 4069:
@@ -11945,12 +11945,12 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4070:
 	asm( 
-"	      005083e6    mov eax,[ebp-20h]"
+"	      005083e6    mov eax,this"
 "	      005083e9    inc byte ptr [eax+0DAh]"
 );
 // LINE 4071:
 	asm( 
-"	      005083ef    mov eax,[ebp+8]"
+"	      005083ef    mov eax,point"
 "	      005083f2    xor ecx,ecx"
 "	      005083f4    mov cl,[eax+1]"
 "	      005083f7    test cl,1"
@@ -11958,7 +11958,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4072:
 	asm( 
-"	      00508400    mov eax,[ebp-20h]"
+"	      00508400    mov eax,this"
 "	      00508403    dec byte ptr [eax+0D7h]"
 );
 // LINE 4073:
@@ -11967,7 +11967,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4074:
 	asm( 
-"	      0050840e    mov eax,[ebp-20h]"
+"	      0050840e    mov eax,this"
 "	      00508411    inc byte ptr [eax+0D9h]"
 );
 // LINE 4077:
@@ -11979,7 +11979,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4080:
 	asm( 
-"	      00508427    mov eax,[ebp+8]"
+"	      00508427    mov eax,point"
 "	      0050842a    xor ecx,ecx"
 "	      0050842c    mov cl,[eax]"
 "	      0050842e    test cl,1"
@@ -11987,7 +11987,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4081:
 	asm( 
-"	      00508437    mov eax,[ebp-20h]"
+"	      00508437    mov eax,this"
 "	      0050843a    inc byte ptr [eax+0DBh]"
 );
 // LINE 4082:
@@ -11996,7 +11996,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4084:
 	asm( 
-"	      00508445    mov eax,[ebp+8]"
+"	      00508445    mov eax,point"
 "	      00508448    xor ecx,ecx"
 "	      0050844a    mov cl,[eax]"
 "	      0050844c    test cl,1"
@@ -12004,7 +12004,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4085:
 	asm( 
-"	      00508455    mov eax,[ebp-20h]"
+"	      00508455    mov eax,this"
 "	      00508458    inc byte ptr [eax+0D6h]"
 );
 // LINE 4086:
@@ -12013,7 +12013,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4088:
 	asm( 
-"	      00508463    mov eax,[ebp+8]"
+"	      00508463    mov eax,point"
 "	      00508466    xor ecx,ecx"
 "	      00508468    mov cl,[eax]"
 "	      0050846a    test cl,1"
@@ -12021,7 +12021,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4089:
 	asm( 
-"	      00508473    mov eax,[ebp-20h]"
+"	      00508473    mov eax,this"
 "	      00508476    dec byte ptr [eax+0D8h]"
 );
 // LINE 4090:
@@ -12030,7 +12030,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4092:
 	asm( 
-"	      00508481    mov eax,[ebp+8]"
+"	      00508481    mov eax,point"
 "	      00508484    xor ecx,ecx"
 "	      00508486    mov cl,[eax]"
 "	      00508488    test cl,1"
@@ -12038,7 +12038,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4093:
 	asm( 
-"	      00508491    mov eax,[ebp-20h]"
+"	      00508491    mov eax,this"
 "	      00508494    dec byte ptr [eax+0DDh]"
 );
 // LINE 4094:
@@ -12047,7 +12047,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4097:
 	asm( 
-"	      0050849f    mov word ptr [ebp-14h],0"
+"	      0050849f    mov westTile,0"
 );
 // LINE 4098:
 	asm( 
@@ -12078,33 +12078,33 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4103:
 	asm( 
-"	      005084e7    mov eax,[ebp-20h]"
+"	      005084e7    mov eax,this"
 "	      005084ea    xor ecx,ecx"
 "	      005084ec    mov cl,[eax+0D6h]"
 "	      005084f2    test ecx,ecx"
 "	      005084f4    jl near ptr 0050853Bh"
-"	      005084fa    mov eax,[ebp-20h]"
+"	      005084fa    mov eax,this"
 "	      005084fd    xor ecx,ecx"
 "	      005084ff    mov cl,[eax+0D7h]"
 "	      00508505    test ecx,ecx"
 "	      00508507    jl near ptr 0050853Bh"
-"	      0050850d    mov eax,[ebp-20h]"
+"	      0050850d    mov eax,this"
 "	      00508510    xor ecx,ecx"
 "	      00508512    mov cl,[eax+0D6h]"
 "	      00508518    cmp ecx,80h"
 "	      0050851e    jge near ptr 0050853Bh"
-"	      00508524    mov eax,[ebp-20h]"
+"	      00508524    mov eax,this"
 "	      00508527    xor ecx,ecx"
 "	      00508529    mov cl,[eax+0D7h]"
 "	      0050852f    cmp ecx,80h"
 "	      00508535    jl near ptr 00508546h"
-"	      0050853b    mov word ptr [ebp-4],0"
+"	      0050853b    mov northTile,0"
 "	      00508541    jmp near ptr 0050859Eh"
-"	      00508546    mov eax,[ebp-20h]"
+"	      00508546    mov eax,this"
 "	      00508549    xor ecx,ecx"
 "	      0050854b    mov cl,[eax+0D6h]"
 "	      00508551    mov eax,[ecx*4+638F70h]"
-"	      00508558    mov ecx,[ebp-20h]"
+"	      00508558    mov ecx,this"
 "	      0050855b    xor edx,edx"
 "	      0050855d    mov dl,[ecx+0D7h]"
 "	      00508563    xor ecx,ecx"
@@ -12112,48 +12112,48 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508568    and ecx,2"
 "	      0050856b    movsx eax,cx"
 "	      0050856e    shl eax,0Eh"
-"	      00508571    mov ecx,[ebp-20h]"
+"	      00508571    mov ecx,this"
 "	      00508574    xor edx,edx"
 "	      00508576    mov dl,[ecx+0D6h]"
 "	      0050857c    mov ecx,[edx*4+639850h]"
-"	      00508583    mov edx,[ebp-20h]"
+"	      00508583    mov edx,this"
 "	      00508586    xor ebx,ebx"
 "	      00508588    mov bl,[edx+0D7h]"
 "	      0050858e    xor edx,edx"
 "	      00508590    mov dl,[ecx+ebx]"
 "	      00508593    or eax,edx"
-"	      00508595    mov [ebp-4],ax"
+"	      00508595    mov northTile,ax"
 "	      00508599    jmp near ptr 0050859Eh"
 );
 // LINE 4104:
 	asm( 
-"	      0050859e    mov eax,[ebp-20h]"
+"	      0050859e    mov eax,this"
 "	      005085a1    xor ecx,ecx"
 "	      005085a3    mov cl,[eax+0D8h]"
 "	      005085a9    test ecx,ecx"
 "	      005085ab    jl near ptr 005085F2h"
-"	      005085b1    mov eax,[ebp-20h]"
+"	      005085b1    mov eax,this"
 "	      005085b4    xor ecx,ecx"
 "	      005085b6    mov cl,[eax+0D9h]"
 "	      005085bc    test ecx,ecx"
 "	      005085be    jl near ptr 005085F2h"
-"	      005085c4    mov eax,[ebp-20h]"
+"	      005085c4    mov eax,this"
 "	      005085c7    xor ecx,ecx"
 "	      005085c9    mov cl,[eax+0D8h]"
 "	      005085cf    cmp ecx,80h"
 "	      005085d5    jge near ptr 005085F2h"
-"	      005085db    mov eax,[ebp-20h]"
+"	      005085db    mov eax,this"
 "	      005085de    xor ecx,ecx"
 "	      005085e0    mov cl,[eax+0D9h]"
 "	      005085e6    cmp ecx,80h"
 "	      005085ec    jl near ptr 005085FDh"
-"	      005085f2    mov word ptr [ebp-18h],0"
+"	      005085f2    mov southTile,0"
 "	      005085f8    jmp near ptr 00508655h"
-"	      005085fd    mov eax,[ebp-20h]"
+"	      005085fd    mov eax,this"
 "	      00508600    xor ecx,ecx"
 "	      00508602    mov cl,[eax+0D8h]"
 "	      00508608    mov eax,[ecx*4+638F70h]"
-"	      0050860f    mov ecx,[ebp-20h]"
+"	      0050860f    mov ecx,this"
 "	      00508612    xor edx,edx"
 "	      00508614    mov dl,[ecx+0D9h]"
 "	      0050861a    xor ecx,ecx"
@@ -12161,48 +12161,48 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      0050861f    and ecx,2"
 "	      00508622    movsx eax,cx"
 "	      00508625    shl eax,0Eh"
-"	      00508628    mov ecx,[ebp-20h]"
+"	      00508628    mov ecx,this"
 "	      0050862b    xor edx,edx"
 "	      0050862d    mov dl,[ecx+0D8h]"
 "	      00508633    mov ecx,[edx*4+639850h]"
-"	      0050863a    mov edx,[ebp-20h]"
+"	      0050863a    mov edx,this"
 "	      0050863d    xor ebx,ebx"
 "	      0050863f    mov bl,[edx+0D9h]"
 "	      00508645    xor edx,edx"
 "	      00508647    mov dl,[ecx+ebx]"
 "	      0050864a    or eax,edx"
-"	      0050864c    mov [ebp-18h],ax"
+"	      0050864c    mov southTile,ax"
 "	      00508650    jmp near ptr 00508655h"
 );
 // LINE 4105:
 	asm( 
-"	      00508655    mov eax,[ebp-20h]"
+"	      00508655    mov eax,this"
 "	      00508658    xor ecx,ecx"
 "	      0050865a    mov cl,[eax+0DAh]"
 "	      00508660    test ecx,ecx"
 "	      00508662    jl near ptr 005086A9h"
-"	      00508668    mov eax,[ebp-20h]"
+"	      00508668    mov eax,this"
 "	      0050866b    xor ecx,ecx"
 "	      0050866d    mov cl,[eax+0DBh]"
 "	      00508673    test ecx,ecx"
 "	      00508675    jl near ptr 005086A9h"
-"	      0050867b    mov eax,[ebp-20h]"
+"	      0050867b    mov eax,this"
 "	      0050867e    xor ecx,ecx"
 "	      00508680    mov cl,[eax+0DAh]"
 "	      00508686    cmp ecx,80h"
 "	      0050868c    jge near ptr 005086A9h"
-"	      00508692    mov eax,[ebp-20h]"
+"	      00508692    mov eax,this"
 "	      00508695    xor ecx,ecx"
 "	      00508697    mov cl,[eax+0DBh]"
 "	      0050869d    cmp ecx,80h"
 "	      005086a3    jl near ptr 005086B4h"
-"	      005086a9    mov word ptr [ebp-0Ch],0"
+"	      005086a9    mov eastTile,0"
 "	      005086af    jmp near ptr 0050870Ch"
-"	      005086b4    mov eax,[ebp-20h]"
+"	      005086b4    mov eax,this"
 "	      005086b7    xor ecx,ecx"
 "	      005086b9    mov cl,[eax+0DAh]"
 "	      005086bf    mov eax,[ecx*4+638F70h]"
-"	      005086c6    mov ecx,[ebp-20h]"
+"	      005086c6    mov ecx,this"
 "	      005086c9    xor edx,edx"
 "	      005086cb    mov dl,[ecx+0DBh]"
 "	      005086d1    xor ecx,ecx"
@@ -12210,48 +12210,48 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      005086d6    and ecx,2"
 "	      005086d9    movsx eax,cx"
 "	      005086dc    shl eax,0Eh"
-"	      005086df    mov ecx,[ebp-20h]"
+"	      005086df    mov ecx,this"
 "	      005086e2    xor edx,edx"
 "	      005086e4    mov dl,[ecx+0DAh]"
 "	      005086ea    mov ecx,[edx*4+639850h]"
-"	      005086f1    mov edx,[ebp-20h]"
+"	      005086f1    mov edx,this"
 "	      005086f4    xor ebx,ebx"
 "	      005086f6    mov bl,[edx+0DBh]"
 "	      005086fc    xor edx,edx"
 "	      005086fe    mov dl,[ecx+ebx]"
 "	      00508701    or eax,edx"
-"	      00508703    mov [ebp-0Ch],ax"
+"	      00508703    mov eastTile,ax"
 "	      00508707    jmp near ptr 0050870Ch"
 );
 // LINE 4106:
 	asm( 
-"	      0050870c    mov eax,[ebp-20h]"
+"	      0050870c    mov eax,this"
 "	      0050870f    xor ecx,ecx"
 "	      00508711    mov cl,[eax+0DCh]"
 "	      00508717    test ecx,ecx"
 "	      00508719    jl near ptr 00508760h"
-"	      0050871f    mov eax,[ebp-20h]"
+"	      0050871f    mov eax,this"
 "	      00508722    xor ecx,ecx"
 "	      00508724    mov cl,[eax+0DDh]"
 "	      0050872a    test ecx,ecx"
 "	      0050872c    jl near ptr 00508760h"
-"	      00508732    mov eax,[ebp-20h]"
+"	      00508732    mov eax,this"
 "	      00508735    xor ecx,ecx"
 "	      00508737    mov cl,[eax+0DCh]"
 "	      0050873d    cmp ecx,80h"
 "	      00508743    jge near ptr 00508760h"
-"	      00508749    mov eax,[ebp-20h]"
+"	      00508749    mov eax,this"
 "	      0050874c    xor ecx,ecx"
 "	      0050874e    mov cl,[eax+0DDh]"
 "	      00508754    cmp ecx,80h"
 "	      0050875a    jl near ptr 0050876Bh"
-"	      00508760    mov word ptr [ebp-14h],0"
+"	      00508760    mov westTile,0"
 "	      00508766    jmp near ptr 005087C3h"
-"	      0050876b    mov eax,[ebp-20h]"
+"	      0050876b    mov eax,this"
 "	      0050876e    xor ecx,ecx"
 "	      00508770    mov cl,[eax+0DCh]"
 "	      00508776    mov eax,[ecx*4+638F70h]"
-"	      0050877d    mov ecx,[ebp-20h]"
+"	      0050877d    mov ecx,this"
 "	      00508780    xor edx,edx"
 "	      00508782    mov dl,[ecx+0DDh]"
 "	      00508788    xor ecx,ecx"
@@ -12259,17 +12259,17 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      0050878d    and ecx,2"
 "	      00508790    movsx eax,cx"
 "	      00508793    shl eax,0Eh"
-"	      00508796    mov ecx,[ebp-20h]"
+"	      00508796    mov ecx,this"
 "	      00508799    xor edx,edx"
 "	      0050879b    mov dl,[ecx+0DCh]"
 "	      005087a1    mov ecx,[edx*4+639850h]"
-"	      005087a8    mov edx,[ebp-20h]"
+"	      005087a8    mov edx,this"
 "	      005087ab    xor ebx,ebx"
 "	      005087ad    mov bl,[edx+0DDh]"
 "	      005087b3    xor edx,edx"
 "	      005087b5    mov dl,[ecx+ebx]"
 "	      005087b8    or eax,edx"
-"	      005087ba    mov [ebp-14h],ax"
+"	      005087ba    mov westTile,ax"
 "	      005087be    jmp near ptr 005087C3h"
 );
 // LINE 4112:
@@ -12281,36 +12281,36 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4116:
 	asm( 
-"	      005087d3    mov eax,[ebp-20h]"
+"	      005087d3    mov eax,this"
 "	      005087d6    xor ecx,ecx"
 "	      005087d8    mov cl,[eax+0DCh]"
 "	      005087de    test ecx,0FEh"
 "	      005087e4    jl near ptr 0050882Fh"
-"	      005087ea    mov eax,[ebp-20h]"
+"	      005087ea    mov eax,this"
 "	      005087ed    xor ecx,ecx"
 "	      005087ef    mov cl,[eax+0DDh]"
 "	      005087f5    test ecx,0FEh"
 "	      005087fb    jl near ptr 0050882Fh"
-"	      00508801    mov eax,[ebp-20h]"
+"	      00508801    mov eax,this"
 "	      00508804    xor ecx,ecx"
 "	      00508806    mov cl,[eax+0DCh]"
 "	      0050880c    and cl,0FEh"
 "	      0050880f    cmp cl,80h"
 "	      00508812    jae near ptr 0050882Fh"
-"	      00508818    mov eax,[ebp-20h]"
+"	      00508818    mov eax,this"
 "	      0050881b    xor ecx,ecx"
 "	      0050881d    mov cl,[eax+0DDh]"
 "	      00508823    and cl,0FEh"
 "	      00508826    cmp cl,80h"
 "	      00508829    jb near ptr 0050883Ah"
-"	      0050882f    mov word ptr [ebp-14h],0"
+"	      0050882f    mov westTile,0"
 "	      00508835    jmp near ptr 005088AAh"
-"	      0050883a    mov eax,[ebp-20h]"
+"	      0050883a    mov eax,this"
 "	      0050883d    xor ecx,ecx"
 "	      0050883f    mov cl,[eax+0DCh]"
 "	      00508845    and ecx,0FEh"
 "	      0050884b    mov eax,[ecx*4+638F70h]"
-"	      00508852    mov ecx,[ebp-20h]"
+"	      00508852    mov ecx,this"
 "	      00508855    xor edx,edx"
 "	      00508857    mov dl,[ecx+0DDh]"
 "	      0050885d    and edx,0FEh"
@@ -12319,19 +12319,19 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508868    and ecx,2"
 "	      0050886b    movsx eax,cx"
 "	      0050886e    shl eax,0Eh"
-"	      00508871    mov ecx,[ebp-20h]"
+"	      00508871    mov ecx,this"
 "	      00508874    xor edx,edx"
 "	      00508876    mov dl,[ecx+0DCh]"
 "	      0050887c    and edx,0FEh"
 "	      00508882    mov ecx,[edx*4+639850h]"
-"	      00508889    mov edx,[ebp-20h]"
+"	      00508889    mov edx,this"
 "	      0050888c    xor ebx,ebx"
 "	      0050888e    mov bl,[edx+0DDh]"
 "	      00508894    and ebx,0FEh"
 "	      0050889a    xor edx,edx"
 "	      0050889c    mov dl,[ecx+ebx]"
 "	      0050889f    or eax,edx"
-"	      005088a1    mov [ebp-14h],ax"
+"	      005088a1    mov westTile,ax"
 "	      005088a5    jmp near ptr 005088AAh"
 );
 // LINE 4117:
@@ -12349,11 +12349,11 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4123:
 	asm( 
-"	      005088cd    mov dword ptr [ebp-8],0"
+"	      005088cd    mov intersection,0"
 );
 // LINE 4127:
 	asm( 
-"	      005088d4    mov eax,[ebp-20h]"
+"	      005088d4    mov eax,this"
 "	      005088d7    test byte ptr [eax+0CEh],1"
 "	      005088de    je near ptr 00508943h"
 );
@@ -12364,14 +12364,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      005088e9    push eax"
 "	      005088ea    mov eax,[ebp-10h]"
 "	      005088ed    push eax"
-"	      005088ee    mov ecx,[ebp-20h]"
+"	      005088ee    mov ecx,this"
 "	      005088f1    call 00507488h"
 "	      005088f6    test eax,eax"
 "	      005088f8    je near ptr 00508902h"
 );
 // LINE 4132:
 	asm( 
-"	      005088fe    or dword ptr [ebp-8],1"
+"	      005088fe    or intersection,1"
 );
 // LINE 4134:
 	asm( 
@@ -12380,14 +12380,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508907    push eax"
 "	      00508908    mov eax,[ebp-10h]"
 "	      0050890b    push eax"
-"	      0050890c    mov ecx,[ebp-20h]"
+"	      0050890c    mov ecx,this"
 "	      0050890f    call 00507488h"
 "	      00508914    test eax,eax"
 "	      00508916    je near ptr 00508920h"
 );
 // LINE 4136:
 	asm( 
-"	      0050891c    or dword ptr [ebp-8],2"
+"	      0050891c    or intersection,2"
 );
 // LINE 4138:
 	asm( 
@@ -12396,19 +12396,19 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508925    push eax"
 "	      00508926    mov eax,[ebp-10h]"
 "	      00508929    push eax"
-"	      0050892a    mov ecx,[ebp-20h]"
+"	      0050892a    mov ecx,this"
 "	      0050892d    call 00507488h"
 "	      00508932    test eax,eax"
 "	      00508934    je near ptr 0050893Eh"
 );
 // LINE 4140:
 	asm( 
-"	      0050893a    or dword ptr [ebp-8],4"
+"	      0050893a    or intersection,4"
 );
 // LINE 4143:
 	asm( 
 "	      0050893e    jmp near ptr 00508A97h"
-"	      00508943    mov eax,[ebp-20h]"
+"	      00508943    mov eax,this"
 "	      00508946    test byte ptr [eax+0CEh],4"
 "	      0050894d    je near ptr 005089B2h"
 );
@@ -12419,14 +12419,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508958    push eax"
 "	      00508959    mov eax,[ebp-10h]"
 "	      0050895c    push eax"
-"	      0050895d    mov ecx,[ebp-20h]"
+"	      0050895d    mov ecx,this"
 "	      00508960    call 00507488h"
 "	      00508965    test eax,eax"
 "	      00508967    je near ptr 00508971h"
 );
 // LINE 4148:
 	asm( 
-"	      0050896d    or dword ptr [ebp-8],1"
+"	      0050896d    or intersection,1"
 );
 // LINE 4150:
 	asm( 
@@ -12435,14 +12435,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508976    push eax"
 "	      00508977    mov eax,[ebp-10h]"
 "	      0050897a    push eax"
-"	      0050897b    mov ecx,[ebp-20h]"
+"	      0050897b    mov ecx,this"
 "	      0050897e    call 00507488h"
 "	      00508983    test eax,eax"
 "	      00508985    je near ptr 0050898Fh"
 );
 // LINE 4152:
 	asm( 
-"	      0050898b    or dword ptr [ebp-8],2"
+"	      0050898b    or intersection,2"
 );
 // LINE 4154:
 	asm( 
@@ -12451,19 +12451,19 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508994    push eax"
 "	      00508995    mov eax,[ebp-10h]"
 "	      00508998    push eax"
-"	      00508999    mov ecx,[ebp-20h]"
+"	      00508999    mov ecx,this"
 "	      0050899c    call 00507488h"
 "	      005089a1    test eax,eax"
 "	      005089a3    je near ptr 005089ADh"
 );
 // LINE 4156:
 	asm( 
-"	      005089a9    or dword ptr [ebp-8],4"
+"	      005089a9    or intersection,4"
 );
 // LINE 4159:
 	asm( 
 "	      005089ad    jmp near ptr 00508A97h"
-"	      005089b2    mov eax,[ebp-20h]"
+"	      005089b2    mov eax,this"
 "	      005089b5    test byte ptr [eax+0CEh],2"
 "	      005089bc    je near ptr 00508A21h"
 );
@@ -12474,14 +12474,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      005089c7    push eax"
 "	      005089c8    mov eax,[ebp-10h]"
 "	      005089cb    push eax"
-"	      005089cc    mov ecx,[ebp-20h]"
+"	      005089cc    mov ecx,this"
 "	      005089cf    call 00507488h"
 "	      005089d4    test eax,eax"
 "	      005089d6    je near ptr 005089E0h"
 );
 // LINE 4164:
 	asm( 
-"	      005089dc    or dword ptr [ebp-8],1"
+"	      005089dc    or intersection,1"
 );
 // LINE 4166:
 	asm( 
@@ -12490,14 +12490,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      005089e5    push eax"
 "	      005089e6    mov eax,[ebp-10h]"
 "	      005089e9    push eax"
-"	      005089ea    mov ecx,[ebp-20h]"
+"	      005089ea    mov ecx,this"
 "	      005089ed    call 00507488h"
 "	      005089f2    test eax,eax"
 "	      005089f4    je near ptr 005089FEh"
 );
 // LINE 4168:
 	asm( 
-"	      005089fa    or dword ptr [ebp-8],2"
+"	      005089fa    or intersection,2"
 );
 // LINE 4170:
 	asm( 
@@ -12506,19 +12506,19 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508a03    push eax"
 "	      00508a04    mov eax,[ebp-10h]"
 "	      00508a07    push eax"
-"	      00508a08    mov ecx,[ebp-20h]"
+"	      00508a08    mov ecx,this"
 "	      00508a0b    call 00507488h"
 "	      00508a10    test eax,eax"
 "	      00508a12    je near ptr 00508A1Ch"
 );
 // LINE 4172:
 	asm( 
-"	      00508a18    or dword ptr [ebp-8],4"
+"	      00508a18    or intersection,4"
 );
 // LINE 4175:
 	asm( 
 "	      00508a1c    jmp near ptr 00508A97h"
-"	      00508a21    mov eax,[ebp-20h]"
+"	      00508a21    mov eax,this"
 "	      00508a24    test byte ptr [eax+0CEh],8"
 "	      00508a2b    je near ptr 00508A90h"
 );
@@ -12529,14 +12529,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508a36    push eax"
 "	      00508a37    mov eax,[ebp-10h]"
 "	      00508a3a    push eax"
-"	      00508a3b    mov ecx,[ebp-20h]"
+"	      00508a3b    mov ecx,this"
 "	      00508a3e    call 00507488h"
 "	      00508a43    test eax,eax"
 "	      00508a45    je near ptr 00508A4Fh"
 );
 // LINE 4180:
 	asm( 
-"	      00508a4b    or dword ptr [ebp-8],1"
+"	      00508a4b    or intersection,1"
 );
 // LINE 4182:
 	asm( 
@@ -12545,14 +12545,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508a54    push eax"
 "	      00508a55    mov eax,[ebp-10h]"
 "	      00508a58    push eax"
-"	      00508a59    mov ecx,[ebp-20h]"
+"	      00508a59    mov ecx,this"
 "	      00508a5c    call 00507488h"
 "	      00508a61    test eax,eax"
 "	      00508a63    je near ptr 00508A6Dh"
 );
 // LINE 4184:
 	asm( 
-"	      00508a69    or dword ptr [ebp-8],2"
+"	      00508a69    or intersection,2"
 );
 // LINE 4186:
 	asm( 
@@ -12561,14 +12561,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 "	      00508a72    push eax"
 "	      00508a73    mov eax,[ebp-10h]"
 "	      00508a76    push eax"
-"	      00508a77    mov ecx,[ebp-20h]"
+"	      00508a77    mov ecx,this"
 "	      00508a7a    call 00507488h"
 "	      00508a7f    test eax,eax"
 "	      00508a81    je near ptr 00508A8Bh"
 );
 // LINE 4188:
 	asm( 
-"	      00508a87    or dword ptr [ebp-8],4"
+"	      00508a87    or intersection,4"
 );
 // LINE 4191:
 	asm( 
@@ -12593,7 +12593,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4203:
 	asm( 
-"	      00508ab2    mov dword ptr [ebp-8],1"
+"	      00508ab2    mov intersection,1"
 );
 // LINE 4204:
 	asm( 
@@ -12601,11 +12601,11 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4205:
 	asm( 
-"	      00508abe    mov dword ptr [ebp-8],0"
+"	      00508abe    mov intersection,0"
 );
 // LINE 4216:
 	asm( 
-"	      00508ac5    mov eax,[ebp-8]"
+"	      00508ac5    mov eax,intersection"
 "	      00508ac8    jmp near ptr 00508ACDh"
 );
 // LINE 4217:
@@ -12630,17 +12630,17 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 "	      00508ada    push ebx"
 "	      00508adb    push esi"
 "	      00508adc    push edi"
-"	      00508add    mov [ebp-4],ecx"
+"	      00508add    mov this,ecx"
 );
 // LINE 4237:
 	asm( 
-"	      00508ae0    mov eax,[ebp+8]"
+"	      00508ae0    mov eax,intersectionType"
 "	      00508ae3    mov [ebp-8],eax"
 "	      00508ae6    jmp near ptr 00508C62h"
 );
 // LINE 4241:
 	asm( 
-"	      00508aeb    mov ecx,[ebp-4]"
+"	      00508aeb    mov ecx,this"
 "	      00508aee    call 00503E6Eh"
 );
 // LINE 4242:
@@ -12649,7 +12649,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4246:
 	asm( 
-"	      00508af8    mov ecx,[ebp-4]"
+"	      00508af8    mov ecx,this"
 "	      00508afb    call 00508CC3h"
 );
 // LINE 4248:
@@ -12658,7 +12658,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4252:
 	asm( 
-"	      00508b05    mov ecx,[ebp-4]"
+"	      00508b05    mov ecx,this"
 "	      00508b08    call 00508D9Eh"
 );
 // LINE 4254:
@@ -12667,7 +12667,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4258:
 	asm( 
-"	      00508b12    mov ecx,[ebp-4]"
+"	      00508b12    mov ecx,this"
 "	      00508b15    call 00508E79h"
 );
 // LINE 4260:
@@ -12683,7 +12683,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4266:
 	asm( 
-"	      00508b2f    mov ecx,[ebp-4]"
+"	      00508b2f    mov ecx,this"
 "	      00508b32    call 00508D9Eh"
 );
 // LINE 4268:
@@ -12692,7 +12692,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4270:
 	asm( 
-"	      00508b3c    mov ecx,[ebp-4]"
+"	      00508b3c    mov ecx,this"
 "	      00508b3f    call 00508CC3h"
 );
 // LINE 4273:
@@ -12708,7 +12708,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4279:
 	asm( 
-"	      00508b59    mov ecx,[ebp-4]"
+"	      00508b59    mov ecx,this"
 "	      00508b5c    call 00508D9Eh"
 );
 // LINE 4281:
@@ -12717,7 +12717,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4283:
 	asm( 
-"	      00508b66    mov ecx,[ebp-4]"
+"	      00508b66    mov ecx,this"
 "	      00508b69    call 00508E79h"
 );
 // LINE 4286:
@@ -12733,7 +12733,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4292:
 	asm( 
-"	      00508b83    mov ecx,[ebp-4]"
+"	      00508b83    mov ecx,this"
 "	      00508b86    call 00508E79h"
 );
 // LINE 4294:
@@ -12742,7 +12742,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4296:
 	asm( 
-"	      00508b90    mov ecx,[ebp-4]"
+"	      00508b90    mov ecx,this"
 "	      00508b93    call 00508CC3h"
 );
 // LINE 4299:
@@ -12761,19 +12761,19 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4305:
 	asm( 
-"	      00508bb5    mov ecx,[ebp-4]"
+"	      00508bb5    mov ecx,this"
 "	      00508bb8    call 00508CC3h"
 "	      00508bbd    jmp near ptr 00508C2Ah"
 );
 // LINE 4306:
 	asm( 
-"	      00508bc2    mov ecx,[ebp-4]"
+"	      00508bc2    mov ecx,this"
 "	      00508bc5    call 00508D9Eh"
 "	      00508bca    jmp near ptr 00508C2Ah"
 );
 // LINE 4307:
 	asm( 
-"	      00508bcf    mov ecx,[ebp-4]"
+"	      00508bcf    mov ecx,this"
 "	      00508bd2    call 00508E79h"
 "	      00508bd7    jmp near ptr 00508C2Ah"
 );
@@ -12805,7 +12805,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 );
 // LINE 4315:
 	asm( 
-"	      00508c2f    mov ecx,[ebp-4]"
+"	      00508c2f    mov ecx,this"
 "	      00508c32    call 00503E6Eh"
 );
 // LINE 4316:
@@ -12874,61 +12874,61 @@ void AutomobileClass::GoStraight() {
 "	      00508cc9    push ebx"
 "	      00508cca    push esi"
 "	      00508ccb    push edi"
-"	      00508ccc    mov [ebp-4],ecx"
+"	      00508ccc    mov this,ecx"
 );
 // LINE 4347:
 	asm( 
-"	      00508ccf    mov eax,[ebp-4]"
+"	      00508ccf    mov eax,this"
 "	      00508cd2    test byte ptr [eax+0CEh],1"
 "	      00508cd9    je near ptr 00508CF8h"
 );
 // LINE 4350:
 	asm( 
-"	      00508cdf    mov eax,[ebp-4]"
+"	      00508cdf    mov eax,this"
 "	      00508ce2    mov ax,[eax+0D6h]"
-"	      00508ce9    mov ecx,[ebp-4]"
+"	      00508ce9    mov ecx,this"
 "	      00508cec    mov [ecx+0D4h],ax"
 );
 // LINE 4352:
 	asm( 
 "	      00508cf3    jmp near ptr 00508D94h"
-"	      00508cf8    mov eax,[ebp-4]"
+"	      00508cf8    mov eax,this"
 "	      00508cfb    test byte ptr [eax+0CEh],4"
 "	      00508d02    je near ptr 00508D21h"
 );
 // LINE 4355:
 	asm( 
-"	      00508d08    mov eax,[ebp-4]"
+"	      00508d08    mov eax,this"
 "	      00508d0b    mov ax,[eax+0D8h]"
-"	      00508d12    mov ecx,[ebp-4]"
+"	      00508d12    mov ecx,this"
 "	      00508d15    mov [ecx+0D4h],ax"
 );
 // LINE 4357:
 	asm( 
 "	      00508d1c    jmp near ptr 00508D94h"
-"	      00508d21    mov eax,[ebp-4]"
+"	      00508d21    mov eax,this"
 "	      00508d24    test byte ptr [eax+0CEh],2"
 "	      00508d2b    je near ptr 00508D4Ah"
 );
 // LINE 4360:
 	asm( 
-"	      00508d31    mov eax,[ebp-4]"
+"	      00508d31    mov eax,this"
 "	      00508d34    mov ax,[eax+0DAh]"
-"	      00508d3b    mov ecx,[ebp-4]"
+"	      00508d3b    mov ecx,this"
 "	      00508d3e    mov [ecx+0D4h],ax"
 );
 // LINE 4362:
 	asm( 
 "	      00508d45    jmp near ptr 00508D94h"
-"	      00508d4a    mov eax,[ebp-4]"
+"	      00508d4a    mov eax,this"
 "	      00508d4d    test byte ptr [eax+0CEh],8"
 "	      00508d54    je near ptr 00508D73h"
 );
 // LINE 4365:
 	asm( 
-"	      00508d5a    mov eax,[ebp-4]"
+"	      00508d5a    mov eax,this"
 "	      00508d5d    mov ax,[eax+0DCh]"
-"	      00508d64    mov ecx,[ebp-4]"
+"	      00508d64    mov ecx,this"
 "	      00508d67    mov [ecx+0D4h],ax"
 );
 // LINE 4367:
@@ -12966,61 +12966,61 @@ void AutomobileClass::TurnLeft() {
 "	      00508da4    push ebx"
 "	      00508da5    push esi"
 "	      00508da6    push edi"
-"	      00508da7    mov [ebp-4],ecx"
+"	      00508da7    mov this,ecx"
 );
 // LINE 4393:
 	asm( 
-"	      00508daa    mov eax,[ebp-4]"
+"	      00508daa    mov eax,this"
 "	      00508dad    test byte ptr [eax+0CEh],1"
 "	      00508db4    je near ptr 00508DD3h"
 );
 // LINE 4396:
 	asm( 
-"	      00508dba    mov eax,[ebp-4]"
+"	      00508dba    mov eax,this"
 "	      00508dbd    mov ax,[eax+0DCh]"
-"	      00508dc4    mov ecx,[ebp-4]"
+"	      00508dc4    mov ecx,this"
 "	      00508dc7    mov [ecx+0D4h],ax"
 );
 // LINE 4398:
 	asm( 
 "	      00508dce    jmp near ptr 00508E6Fh"
-"	      00508dd3    mov eax,[ebp-4]"
+"	      00508dd3    mov eax,this"
 "	      00508dd6    test byte ptr [eax+0CEh],4"
 "	      00508ddd    je near ptr 00508DFCh"
 );
 // LINE 4401:
 	asm( 
-"	      00508de3    mov eax,[ebp-4]"
+"	      00508de3    mov eax,this"
 "	      00508de6    mov ax,[eax+0DAh]"
-"	      00508ded    mov ecx,[ebp-4]"
+"	      00508ded    mov ecx,this"
 "	      00508df0    mov [ecx+0D4h],ax"
 );
 // LINE 4403:
 	asm( 
 "	      00508df7    jmp near ptr 00508E6Fh"
-"	      00508dfc    mov eax,[ebp-4]"
+"	      00508dfc    mov eax,this"
 "	      00508dff    test byte ptr [eax+0CEh],2"
 "	      00508e06    je near ptr 00508E25h"
 );
 // LINE 4406:
 	asm( 
-"	      00508e0c    mov eax,[ebp-4]"
+"	      00508e0c    mov eax,this"
 "	      00508e0f    mov ax,[eax+0D6h]"
-"	      00508e16    mov ecx,[ebp-4]"
+"	      00508e16    mov ecx,this"
 "	      00508e19    mov [ecx+0D4h],ax"
 );
 // LINE 4408:
 	asm( 
 "	      00508e20    jmp near ptr 00508E6Fh"
-"	      00508e25    mov eax,[ebp-4]"
+"	      00508e25    mov eax,this"
 "	      00508e28    test byte ptr [eax+0CEh],8"
 "	      00508e2f    je near ptr 00508E4Eh"
 );
 // LINE 4411:
 	asm( 
-"	      00508e35    mov eax,[ebp-4]"
+"	      00508e35    mov eax,this"
 "	      00508e38    mov ax,[eax+0D8h]"
-"	      00508e3f    mov ecx,[ebp-4]"
+"	      00508e3f    mov ecx,this"
 "	      00508e42    mov [ecx+0D4h],ax"
 );
 // LINE 4413:
@@ -13058,61 +13058,61 @@ void AutomobileClass::TurnRight() {
 "	      00508e7f    push ebx"
 "	      00508e80    push esi"
 "	      00508e81    push edi"
-"	      00508e82    mov [ebp-4],ecx"
+"	      00508e82    mov this,ecx"
 );
 // LINE 4440:
 	asm( 
-"	      00508e85    mov eax,[ebp-4]"
+"	      00508e85    mov eax,this"
 "	      00508e88    test byte ptr [eax+0CEh],1"
 "	      00508e8f    je near ptr 00508EAEh"
 );
 // LINE 4443:
 	asm( 
-"	      00508e95    mov eax,[ebp-4]"
+"	      00508e95    mov eax,this"
 "	      00508e98    mov ax,[eax+0DAh]"
-"	      00508e9f    mov ecx,[ebp-4]"
+"	      00508e9f    mov ecx,this"
 "	      00508ea2    mov [ecx+0D4h],ax"
 );
 // LINE 4446:
 	asm( 
 "	      00508ea9    jmp near ptr 00508F4Ah"
-"	      00508eae    mov eax,[ebp-4]"
+"	      00508eae    mov eax,this"
 "	      00508eb1    test byte ptr [eax+0CEh],4"
 "	      00508eb8    je near ptr 00508ED7h"
 );
 // LINE 4449:
 	asm( 
-"	      00508ebe    mov eax,[ebp-4]"
+"	      00508ebe    mov eax,this"
 "	      00508ec1    mov ax,[eax+0DCh]"
-"	      00508ec8    mov ecx,[ebp-4]"
+"	      00508ec8    mov ecx,this"
 "	      00508ecb    mov [ecx+0D4h],ax"
 );
 // LINE 4452:
 	asm( 
 "	      00508ed2    jmp near ptr 00508F4Ah"
-"	      00508ed7    mov eax,[ebp-4]"
+"	      00508ed7    mov eax,this"
 "	      00508eda    test byte ptr [eax+0CEh],2"
 "	      00508ee1    je near ptr 00508F00h"
 );
 // LINE 4455:
 	asm( 
-"	      00508ee7    mov eax,[ebp-4]"
+"	      00508ee7    mov eax,this"
 "	      00508eea    mov ax,[eax+0D8h]"
-"	      00508ef1    mov ecx,[ebp-4]"
+"	      00508ef1    mov ecx,this"
 "	      00508ef4    mov [ecx+0D4h],ax"
 );
 // LINE 4458:
 	asm( 
 "	      00508efb    jmp near ptr 00508F4Ah"
-"	      00508f00    mov eax,[ebp-4]"
+"	      00508f00    mov eax,this"
 "	      00508f03    test byte ptr [eax+0CEh],8"
 "	      00508f0a    je near ptr 00508F29h"
 );
 // LINE 4461:
 	asm( 
-"	      00508f10    mov eax,[ebp-4]"
+"	      00508f10    mov eax,this"
 "	      00508f13    mov ax,[eax+0D6h]"
-"	      00508f1a    mov ecx,[ebp-4]"
+"	      00508f1a    mov ecx,this"
 "	      00508f1d    mov [ecx+0D4h],ax"
 );
 // LINE 4464:
@@ -13152,74 +13152,74 @@ void AutomobileClass::MoveForwardOnHiway() {
 "	      00508f5a    push ebx"
 "	      00508f5b    push esi"
 "	      00508f5c    push edi"
-"	      00508f5d    mov [ebp-8],ecx"
+"	      00508f5d    mov this,ecx"
 );
 // LINE 4490:
 	asm( 
 "	      00508f60    mov eax,ds:[5B4760h]"
 "	      00508f65    push eax"
-"	      00508f66    mov eax,[ebp-8]"
+"	      00508f66    mov eax,this"
 "	      00508f69    mov eax,[eax+0DEh]"
 "	      00508f6f    push eax"
 "	      00508f70    call 004D19BDh"
 "	      00508f75    add esp,8"
-"	      00508f78    mov [ebp-4],eax"
+"	      00508f78    mov distance,eax"
 );
 // LINE 4492:
 	asm( 
-"	      00508f7b    mov eax,[ebp-8]"
-"	      00508f7e    mov ecx,[ebp-4]"
+"	      00508f7b    mov eax,this"
+"	      00508f7e    mov ecx,distance"
 "	      00508f81    cmp [eax+0EAh],ecx"
 "	      00508f87    jge near ptr 00508F99h"
 );
 // LINE 4493:
 	asm( 
-"	      00508f8d    mov eax,[ebp-8]"
+"	      00508f8d    mov eax,this"
 "	      00508f90    mov eax,[eax+0EAh]"
-"	      00508f96    mov [ebp-4],eax"
+"	      00508f96    mov distance,eax"
 );
 // LINE 4494:
 	asm( 
 "	      00508f99    xor eax,eax"
-"	      00508f9b    sub eax,[ebp-4]"
+"	      00508f9b    sub eax,distance"
 "	      00508f9e    neg eax"
-"	      00508fa0    mov ecx,[ebp-8]"
+"	      00508fa0    mov ecx,this"
 "	      00508fa3    sub [ecx+0EAh],eax"
 );
 // LINE 4501:
 	asm( 
-"	      00508fa9    mov eax,[ebp-4]"
+"	      00508fa9    mov eax,distance"
 "	      00508fac    push eax"
-"	      00508fad    mov eax,[ebp-8]"
+"	      00508fad    mov eax,this"
 "	      00508fb0    mov eax,[eax+0A2h]"
 "	      00508fb6    push eax"
 "	      00508fb7    call 004D19BDh"
 "	      00508fbc    add esp,8"
-"	      00508fbf    mov ecx,[ebp-8]"
+"	      00508fbf    mov ecx,this"
 "	      00508fc2    add [ecx+24h],eax"
 );
 // LINE 4502:
 	asm( 
-"	      00508fc5    mov eax,[ebp-4]"
+"	      00508fc5    mov eax,distance"
 "	      00508fc8    push eax"
-"	      00508fc9    mov eax,[ebp-8]"
+"	      00508fc9    mov eax,this"
 "	      00508fcc    mov eax,[eax+0A6h]"
 "	      00508fd2    push eax"
 "	      00508fd3    call 004D19BDh"
 "	      00508fd8    add esp,8"
-"	      00508fdb    mov ecx,[ebp-8]"
+"	      00508fdb    mov ecx,this"
 "	      00508fde    add [ecx+28h],eax"
 );
 // LINE 4503:
 	asm( 
-"	      00508fe1    mov eax,[ebp-4]"
+"	      00508fe1    mov eax,distance"
 "	      00508fe4    push eax"
-"	      00508fe5    mov eax,[ebp-8]"
+"	      00508fe5    mov eax,this"
 "	      00508fe8    mov eax,[eax+0AAh]"
 "	      00508fee    push eax"
 "	      00508fef    call 004D19BDh"
 "	      00508ff4    add esp,8"
-"	      00508ff7    mov ecx,[ebp-8]"
+"	      00508ff7    mov ecx,this"
 "	      00508ffa    add [ecx+2Ch],eax"
 );
 // LINE 4506:
@@ -13245,7 +13245,7 @@ int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 4518:
 	asm( 
-"	      0050900d    mov eax,[ebp+8]"
+"	      0050900d    mov eax,miffReader"
 "	      00509010    push eax"
 "	      00509011    call 0050903Fh"
 "	      00509016    add esp,4"
@@ -13273,7 +13273,7 @@ int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 4531:
 	asm( 
-"	      00509029    mov eax,[ebp+8]"
+"	      00509029    mov eax,miffWriter"
 "	      0050902c    push eax"
 "	      0050902d    call 005090FBh"
 "	      00509032    add esp,4"
@@ -13308,15 +13308,15 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      00509048    push 344h"
 "	      0050904d    push 608C28h"
 "	      00509052    push 4155544Fh"
-"	      00509057    mov eax,[ebp+8]"
+"	      00509057    mov eax,miffReader"
 "	      0050905a    push eax"
 "	      0050905b    call 004AB530h"
 "	      00509060    add esp,10h"
-"	      00509063    mov [ebp-4],eax"
+"	      00509063    mov ret,eax"
 );
 // LINE 4550:
 	asm( 
-"	      00509066    cmp dword ptr [ebp-4],0"
+"	      00509066    cmp ret,0"
 "	      0050906a    jne near ptr 00509077h"
 );
 // LINE 4551:
@@ -13326,17 +13326,17 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 4553:
 	asm( 
-"	      00509077    mov dword ptr [ebp-8],0"
+"	      00509077    mov i,0"
 "	      0050907e    jmp near ptr 00509086h"
-"	      00509083    inc dword ptr [ebp-8]"
-"	      00509086    cmp dword ptr [ebp-8],46h"
+"	      00509083    inc i"
+"	      00509086    cmp i,46h"
 "	      0050908a    jge near ptr 005090ECh"
 );
 // LINE 4555:
 	asm( 
 "	      00509090    push 608C28h"
-"	      00509095    mov eax,[ebp-8]"
-"	      00509098    mov ecx,[ebp-8]"
+"	      00509095    mov eax,i"
+"	      00509098    mov ecx,i"
 "	      0050909b    mov ecx,[ecx*4+608F80h]"
 "	      005090a2    mov edx,[ecx]"
 "	      005090a4    mov ecx,[eax*4+608F80h]"
@@ -13347,17 +13347,17 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      005090ae    push 344h"
 "	      005090b3    push 608C28h"
 "	      005090b8    push 4155544Fh"
-"	      005090bd    mov eax,[ebp+8]"
+"	      005090bd    mov eax,miffReader"
 "	      005090c0    push eax"
 "	      005090c1    call 004AB57Ch"
 "	      005090c6    add esp,10h"
-"	      005090c9    mov [ebp-4],eax"
+"	      005090c9    mov ret,eax"
 );
 // LINE 4563:
 	asm( 
-"	      005090cc    cmp dword ptr [ebp-4],0"
+"	      005090cc    cmp ret,0"
 "	      005090d0    jne near ptr 005090E7h"
-"	      005090d6    cmp dword ptr [ebp-8],45h"
+"	      005090d6    cmp i,45h"
 "	      005090da    je near ptr 005090E7h"
 );
 // LINE 4564:
@@ -13400,17 +13400,17 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 4580:
 	asm( 
-"	      00509104    mov dword ptr [ebp-8],0"
+"	      00509104    mov i,0"
 "	      0050910b    jmp near ptr 00509113h"
-"	      00509110    inc dword ptr [ebp-8]"
-"	      00509113    cmp dword ptr [ebp-8],46h"
+"	      00509110    inc i"
+"	      00509113    cmp i,46h"
 "	      00509117    jge near ptr 0050916Fh"
 );
 // LINE 4583:
 	asm( 
 "	      0050911d    push 608C28h"
-"	      00509122    mov eax,[ebp-8]"
-"	      00509125    mov ecx,[ebp-8]"
+"	      00509122    mov eax,i"
+"	      00509125    mov ecx,i"
 "	      00509128    mov ecx,[ecx*4+608F80h]"
 "	      0050912f    mov edx,[ecx]"
 "	      00509131    mov ecx,[eax*4+608F80h]"
@@ -13421,15 +13421,15 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 "	      0050913b    push 344h"
 "	      00509140    push 608C28h"
 "	      00509145    push 4155544Fh"
-"	      0050914a    mov eax,[ebp+8]"
+"	      0050914a    mov eax,miffWriter"
 "	      0050914d    push eax"
 "	      0050914e    call 004AB5BDh"
 "	      00509153    add esp,10h"
-"	      00509156    mov [ebp-4],eax"
+"	      00509156    mov ret,eax"
 );
 // LINE 4589:
 	asm( 
-"	      00509159    cmp dword ptr [ebp-4],0"
+"	      00509159    cmp ret,0"
 "	      0050915d    jne near ptr 0050916Ah"
 );
 // LINE 4590:
@@ -13466,19 +13466,19 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00509184    push ebx"
 "	      00509185    push esi"
 "	      00509186    push edi"
-"	      00509187    mov [ebp-4],ecx"
+"	      00509187    mov this,ecx"
 );
 // LINE 4605:
 	asm( 
-"	      0050918a    mov eax,[ebp-4]"
+"	      0050918a    mov eax,this"
 "	      0050918d    mov eax,[eax+8]"
-"	      00509190    mov ecx,[ebp+8]"
+"	      00509190    mov ecx,sd"
 "	      00509193    mov [ecx],eax"
 );
 // LINE 4606:
 	asm( 
-"	      00509195    mov esi,[ebp-4]"
-"	      00509198    mov edi,[ebp+8]"
+"	      00509195    mov esi,this"
+"	      00509198    mov edi,sd"
 "	      0050919b    add edi,4"
 "	      0050919e    add esi,0Ch"
 "	      005091a1    mov ecx,19h"
@@ -13486,8 +13486,8 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4607:
 	asm( 
-"	      005091a8    mov esi,[ebp-4]"
-"	      005091ab    mov edi,[ebp+8]"
+"	      005091a8    mov esi,this"
+"	      005091ab    mov edi,sd"
 "	      005091ae    add edi,68h"
 "	      005091b1    add esi,70h"
 "	      005091b4    mov ecx,0Ah"
@@ -13496,23 +13496,23 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4608:
 	asm( 
-"	      005091bd    mov eax,[ebp-4]"
+"	      005091bd    mov eax,this"
 "	      005091c0    mov eax,[eax+9Ah]"
-"	      005091c6    mov ecx,[ebp+8]"
+"	      005091c6    mov ecx,sd"
 "	      005091c9    mov [ecx+94h],eax"
 );
 // LINE 4609:
 	asm( 
-"	      005091cf    mov eax,[ebp-4]"
+"	      005091cf    mov eax,this"
 "	      005091d2    mov eax,[eax+9Eh]"
-"	      005091d8    mov ecx,[ebp+8]"
+"	      005091d8    mov ecx,sd"
 "	      005091db    mov [ecx+98h],eax"
 );
 // LINE 4610:
 	asm( 
-"	      005091e1    mov eax,[ebp-4]"
+"	      005091e1    mov eax,this"
 "	      005091e4    add eax,0A2h"
-"	      005091e9    mov ecx,[ebp+8]"
+"	      005091e9    mov ecx,sd"
 "	      005091ec    add ecx,9Ch"
 "	      005091f2    mov edx,[eax]"
 "	      005091f4    mov [ecx],edx"
@@ -13523,220 +13523,220 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4611:
 	asm( 
-"	      00509202    mov eax,[ebp-4]"
+"	      00509202    mov eax,this"
 "	      00509205    mov eax,[eax+0AEh]"
-"	      0050920b    mov ecx,[ebp+8]"
+"	      0050920b    mov ecx,sd"
 "	      0050920e    mov [ecx+0A8h],eax"
 );
 // LINE 4612:
 	asm( 
-"	      00509214    mov eax,[ebp-4]"
+"	      00509214    mov eax,this"
 "	      00509217    mov eax,[eax+0B2h]"
-"	      0050921d    mov ecx,[ebp+8]"
+"	      0050921d    mov ecx,sd"
 "	      00509220    mov [ecx+0ACh],eax"
 );
 // LINE 4613:
 	asm( 
-"	      00509226    mov eax,[ebp-4]"
+"	      00509226    mov eax,this"
 "	      00509229    mov eax,[eax+0B6h]"
-"	      0050922f    mov ecx,[ebp+8]"
+"	      0050922f    mov ecx,sd"
 "	      00509232    mov [ecx+0B0h],eax"
 );
 // LINE 4614:
 	asm( 
-"	      00509238    mov eax,[ebp-4]"
+"	      00509238    mov eax,this"
 "	      0050923b    mov eax,[eax+0BAh]"
-"	      00509241    mov ecx,[ebp+8]"
+"	      00509241    mov ecx,sd"
 "	      00509244    mov [ecx+0B4h],eax"
 );
 // LINE 4615:
 	asm( 
-"	      0050924a    mov eax,[ebp-4]"
+"	      0050924a    mov eax,this"
 "	      0050924d    mov eax,[eax+0BEh]"
-"	      00509253    mov ecx,[ebp+8]"
+"	      00509253    mov ecx,sd"
 "	      00509256    mov [ecx+0B8h],eax"
 );
 // LINE 4616:
 	asm( 
-"	      0050925c    mov eax,[ebp-4]"
+"	      0050925c    mov eax,this"
 "	      0050925f    mov eax,[eax+0C2h]"
-"	      00509265    mov ecx,[ebp+8]"
+"	      00509265    mov ecx,sd"
 "	      00509268    mov [ecx+0BCh],eax"
 );
 // LINE 4617:
 	asm( 
-"	      0050926e    mov eax,[ebp-4]"
+"	      0050926e    mov eax,this"
 "	      00509271    mov eax,[eax+0C6h]"
-"	      00509277    mov ecx,[ebp+8]"
+"	      00509277    mov ecx,sd"
 "	      0050927a    mov [ecx+0C0h],eax"
 );
 // LINE 4618:
 	asm( 
-"	      00509280    mov eax,[ebp-4]"
+"	      00509280    mov eax,this"
 "	      00509283    mov eax,[eax+0CEh]"
-"	      00509289    mov ecx,[ebp+8]"
+"	      00509289    mov ecx,sd"
 "	      0050928c    mov [ecx+0C4h],eax"
 );
 // LINE 4619:
 	asm( 
-"	      00509292    mov eax,[ebp-4]"
+"	      00509292    mov eax,this"
 "	      00509295    mov ax,[eax+0D2h]"
-"	      0050929c    mov ecx,[ebp+8]"
+"	      0050929c    mov ecx,sd"
 "	      0050929f    mov [ecx+0C8h],ax"
 );
 // LINE 4620:
 	asm( 
-"	      005092a6    mov eax,[ebp-4]"
+"	      005092a6    mov eax,this"
 "	      005092a9    mov ax,[eax+0D4h]"
-"	      005092b0    mov ecx,[ebp+8]"
+"	      005092b0    mov ecx,sd"
 "	      005092b3    mov [ecx+0CAh],ax"
 );
 // LINE 4621:
 	asm( 
-"	      005092ba    mov eax,[ebp-4]"
+"	      005092ba    mov eax,this"
 "	      005092bd    mov ax,[eax+0D6h]"
-"	      005092c4    mov ecx,[ebp+8]"
+"	      005092c4    mov ecx,sd"
 "	      005092c7    mov [ecx+0CCh],ax"
 );
 // LINE 4622:
 	asm( 
-"	      005092ce    mov eax,[ebp-4]"
+"	      005092ce    mov eax,this"
 "	      005092d1    mov ax,[eax+0DAh]"
-"	      005092d8    mov ecx,[ebp+8]"
+"	      005092d8    mov ecx,sd"
 "	      005092db    mov [ecx+0D0h],ax"
 );
 // LINE 4623:
 	asm( 
-"	      005092e2    mov eax,[ebp-4]"
+"	      005092e2    mov eax,this"
 "	      005092e5    mov ax,[eax+0DCh]"
-"	      005092ec    mov ecx,[ebp+8]"
+"	      005092ec    mov ecx,sd"
 "	      005092ef    mov [ecx+0D2h],ax"
 );
 // LINE 4624:
 	asm( 
-"	      005092f6    mov eax,[ebp-4]"
+"	      005092f6    mov eax,this"
 "	      005092f9    mov ax,[eax+0D8h]"
-"	      00509300    mov ecx,[ebp+8]"
+"	      00509300    mov ecx,sd"
 "	      00509303    mov [ecx+0CEh],ax"
 );
 // LINE 4625:
 	asm( 
-"	      0050930a    mov eax,[ebp-4]"
+"	      0050930a    mov eax,this"
 "	      0050930d    mov eax,[eax+0DEh]"
-"	      00509313    mov ecx,[ebp+8]"
+"	      00509313    mov ecx,sd"
 "	      00509316    mov [ecx+0D4h],eax"
 );
 // LINE 4626:
 	asm( 
-"	      0050931c    mov eax,[ebp-4]"
+"	      0050931c    mov eax,this"
 "	      0050931f    mov eax,[eax+0E2h]"
-"	      00509325    mov ecx,[ebp+8]"
+"	      00509325    mov ecx,sd"
 "	      00509328    mov [ecx+0D8h],eax"
 );
 // LINE 4627:
 	asm( 
-"	      0050932e    mov eax,[ebp-4]"
+"	      0050932e    mov eax,this"
 "	      00509331    mov eax,[eax+0E6h]"
-"	      00509337    mov ecx,[ebp+8]"
+"	      00509337    mov ecx,sd"
 "	      0050933a    mov [ecx+0DCh],eax"
 );
 // LINE 4628:
 	asm( 
-"	      00509340    mov eax,[ebp-4]"
+"	      00509340    mov eax,this"
 "	      00509343    mov eax,[eax+0EAh]"
-"	      00509349    mov ecx,[ebp+8]"
+"	      00509349    mov ecx,sd"
 "	      0050934c    mov [ecx+0E0h],eax"
 );
 // LINE 4629:
 	asm( 
-"	      00509352    mov eax,[ebp-4]"
+"	      00509352    mov eax,this"
 "	      00509355    mov eax,[eax+0EEh]"
-"	      0050935b    mov ecx,[ebp+8]"
+"	      0050935b    mov ecx,sd"
 "	      0050935e    mov [ecx+0E4h],eax"
 );
 // LINE 4630:
 	asm( 
-"	      00509364    mov eax,[ebp-4]"
+"	      00509364    mov eax,this"
 "	      00509367    mov eax,[eax+0F6h]"
-"	      0050936d    mov ecx,[ebp+8]"
+"	      0050936d    mov ecx,sd"
 "	      00509370    mov [ecx+0ECh],eax"
 );
 // LINE 4631:
 	asm( 
-"	      00509376    mov eax,[ebp-4]"
+"	      00509376    mov eax,this"
 "	      00509379    mov eax,[eax+0FAh]"
-"	      0050937f    mov ecx,[ebp+8]"
+"	      0050937f    mov ecx,sd"
 "	      00509382    mov [ecx+0F0h],eax"
 );
 // LINE 4632:
 	asm( 
-"	      00509388    mov eax,[ebp-4]"
+"	      00509388    mov eax,this"
 "	      0050938b    mov eax,[eax+0FEh]"
-"	      00509391    mov ecx,[ebp+8]"
+"	      00509391    mov ecx,sd"
 "	      00509394    mov [ecx+0F4h],eax"
 );
 // LINE 4633:
 	asm( 
-"	      0050939a    mov eax,[ebp-4]"
+"	      0050939a    mov eax,this"
 "	      0050939d    mov eax,[eax+102h]"
-"	      005093a3    mov ecx,[ebp+8]"
+"	      005093a3    mov ecx,sd"
 "	      005093a6    mov [ecx+0F8h],eax"
 );
 // LINE 4634:
 	asm( 
-"	      005093ac    mov eax,[ebp-4]"
+"	      005093ac    mov eax,this"
 "	      005093af    mov eax,[eax+106h]"
-"	      005093b5    mov ecx,[ebp+8]"
+"	      005093b5    mov ecx,sd"
 "	      005093b8    mov [ecx+0FCh],eax"
 );
 // LINE 4635:
 	asm( 
-"	      005093be    mov eax,[ebp-4]"
+"	      005093be    mov eax,this"
 "	      005093c1    mov eax,[eax+10Ah]"
-"	      005093c7    mov ecx,[ebp+8]"
+"	      005093c7    mov ecx,sd"
 "	      005093ca    mov [ecx+100h],eax"
 );
 // LINE 4636:
 	asm( 
-"	      005093d0    mov eax,[ebp-4]"
+"	      005093d0    mov eax,this"
 "	      005093d3    mov eax,[eax+10Eh]"
-"	      005093d9    mov ecx,[ebp+8]"
+"	      005093d9    mov ecx,sd"
 "	      005093dc    mov [ecx+104h],eax"
 );
 // LINE 4637:
 	asm( 
-"	      005093e2    mov eax,[ebp-4]"
+"	      005093e2    mov eax,this"
 "	      005093e5    mov eax,[eax+116h]"
-"	      005093eb    mov ecx,[ebp+8]"
+"	      005093eb    mov ecx,sd"
 "	      005093ee    mov [ecx+10Ah],eax"
 );
 // LINE 4639:
 	asm( 
-"	      005093f4    mov eax,[ebp-4]"
+"	      005093f4    mov eax,this"
 "	      005093f7    test byte ptr [eax+8],2"
 "	      005093fb    je near ptr 0050947Dh"
 );
 // LINE 4641:
 	asm( 
-"	      00509401    mov eax,[ebp-4]"
+"	      00509401    mov eax,this"
 "	      00509404    mov eax,[eax+70h]"
 "	      00509407    mov al,[eax]"
-"	      00509409    mov ecx,[ebp+8]"
+"	      00509409    mov ecx,sd"
 "	      0050940c    mov [ecx+92h],al"
 );
 // LINE 4642:
 	asm( 
-"	      00509412    mov eax,[ebp-4]"
+"	      00509412    mov eax,this"
 "	      00509415    mov eax,[eax+70h]"
 "	      00509418    mov al,[eax+1]"
-"	      0050941b    mov ecx,[ebp+8]"
+"	      0050941b    mov ecx,sd"
 "	      0050941e    mov [ecx+93h],al"
 );
 // LINE 4643:
 	asm( 
-"	      00509424    mov eax,[ebp-4]"
+"	      00509424    mov eax,this"
 "	      00509427    mov eax,[eax+0F2h]"
-"	      0050942d    mov ecx,[ebp+8]"
+"	      0050942d    mov ecx,sd"
 "	      00509430    add ecx,9Ch"
 "	      00509436    mov edx,[eax]"
 "	      00509438    mov [ecx],edx"
@@ -13747,15 +13747,15 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4646:
 	asm( 
-"	      00509446    mov eax,[ebp-4]"
+"	      00509446    mov eax,this"
 "	      00509449    test byte ptr [eax+9],8"
 "	      0050944d    je near ptr 0050946Ch"
 );
 // LINE 4648:
 	asm( 
-"	      00509453    mov eax,[ebp-4]"
+"	      00509453    mov eax,this"
 "	      00509456    mov ax,[eax+0D2h]"
-"	      0050945d    mov ecx,[ebp+8]"
+"	      0050945d    mov ecx,sd"
 "	      00509460    mov [ecx+108h],ax"
 );
 // LINE 4650:
@@ -13764,9 +13764,9 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4652:
 	asm( 
-"	      0050946c    mov eax,[ebp-4]"
+"	      0050946c    mov eax,this"
 "	      0050946f    mov ax,[eax+7Ch]"
-"	      00509473    mov ecx,[ebp+8]"
+"	      00509473    mov ecx,sd"
 "	      00509476    mov [ecx+108h],ax"
 );
 // LINE 4655:
@@ -13792,11 +13792,11 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      0050948f    push ebx"
 "	      00509490    push esi"
 "	      00509491    push edi"
-"	      00509492    mov [ebp-20h],ecx"
+"	      00509492    mov this,ecx"
 );
 // LINE 4670:
 	asm( 
-"	      00509495    mov eax,[ebp+8]"
+"	      00509495    mov eax,sd"
 "	      00509498    test byte ptr [eax],2"
 "	      0050949b    jne near ptr 005094A6h"
 );
@@ -13806,15 +13806,15 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4675:
 	asm( 
-"	      005094a6    mov eax,[ebp+8]"
+"	      005094a6    mov eax,sd"
 "	      005094a9    mov eax,[eax]"
-"	      005094ab    mov ecx,[ebp-20h]"
+"	      005094ab    mov ecx,this"
 "	      005094ae    mov [ecx+8],eax"
 );
 // LINE 4676:
 	asm( 
-"	      005094b1    mov esi,[ebp+8]"
-"	      005094b4    mov edi,[ebp-20h]"
+"	      005094b1    mov esi,sd"
+"	      005094b4    mov edi,this"
 "	      005094b7    add edi,70h"
 "	      005094ba    add esi,68h"
 "	      005094bd    mov ecx,0Ah"
@@ -13823,23 +13823,23 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4677:
 	asm( 
-"	      005094c6    mov eax,[ebp+8]"
+"	      005094c6    mov eax,sd"
 "	      005094c9    mov eax,[eax+94h]"
-"	      005094cf    mov ecx,[ebp-20h]"
+"	      005094cf    mov ecx,this"
 "	      005094d2    mov [ecx+9Ah],eax"
 );
 // LINE 4678:
 	asm( 
-"	      005094d8    mov eax,[ebp+8]"
+"	      005094d8    mov eax,sd"
 "	      005094db    mov eax,[eax+98h]"
-"	      005094e1    mov ecx,[ebp-20h]"
+"	      005094e1    mov ecx,this"
 "	      005094e4    mov [ecx+9Eh],eax"
 );
 // LINE 4679:
 	asm( 
-"	      005094ea    mov eax,[ebp+8]"
+"	      005094ea    mov eax,sd"
 "	      005094ed    add eax,9Ch"
-"	      005094f2    mov ecx,[ebp-20h]"
+"	      005094f2    mov ecx,this"
 "	      005094f5    add ecx,0A2h"
 "	      005094fb    mov edx,[eax]"
 "	      005094fd    mov [ecx],edx"
@@ -13850,198 +13850,198 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4680:
 	asm( 
-"	      0050950b    mov eax,[ebp+8]"
+"	      0050950b    mov eax,sd"
 "	      0050950e    mov eax,[eax+0A8h]"
-"	      00509514    mov ecx,[ebp-20h]"
+"	      00509514    mov ecx,this"
 "	      00509517    mov [ecx+0AEh],eax"
 );
 // LINE 4681:
 	asm( 
-"	      0050951d    mov eax,[ebp+8]"
+"	      0050951d    mov eax,sd"
 "	      00509520    mov eax,[eax+0ACh]"
-"	      00509526    mov ecx,[ebp-20h]"
+"	      00509526    mov ecx,this"
 "	      00509529    mov [ecx+0B2h],eax"
 );
 // LINE 4682:
 	asm( 
-"	      0050952f    mov eax,[ebp+8]"
+"	      0050952f    mov eax,sd"
 "	      00509532    mov eax,[eax+0B0h]"
-"	      00509538    mov ecx,[ebp-20h]"
+"	      00509538    mov ecx,this"
 "	      0050953b    mov [ecx+0B6h],eax"
 );
 // LINE 4683:
 	asm( 
-"	      00509541    mov eax,[ebp+8]"
+"	      00509541    mov eax,sd"
 "	      00509544    mov eax,[eax+0B4h]"
-"	      0050954a    mov ecx,[ebp-20h]"
+"	      0050954a    mov ecx,this"
 "	      0050954d    mov [ecx+0BAh],eax"
 );
 // LINE 4684:
 	asm( 
-"	      00509553    mov eax,[ebp+8]"
+"	      00509553    mov eax,sd"
 "	      00509556    mov eax,[eax+0B8h]"
-"	      0050955c    mov ecx,[ebp-20h]"
+"	      0050955c    mov ecx,this"
 "	      0050955f    mov [ecx+0BEh],eax"
 );
 // LINE 4685:
 	asm( 
-"	      00509565    mov eax,[ebp+8]"
+"	      00509565    mov eax,sd"
 "	      00509568    mov eax,[eax+0BCh]"
-"	      0050956e    mov ecx,[ebp-20h]"
+"	      0050956e    mov ecx,this"
 "	      00509571    mov [ecx+0C2h],eax"
 );
 // LINE 4686:
 	asm( 
-"	      00509577    mov eax,[ebp+8]"
+"	      00509577    mov eax,sd"
 "	      0050957a    mov eax,[eax+0C0h]"
-"	      00509580    mov ecx,[ebp-20h]"
+"	      00509580    mov ecx,this"
 "	      00509583    mov [ecx+0C6h],eax"
 );
 // LINE 4687:
 	asm( 
-"	      00509589    mov eax,[ebp+8]"
+"	      00509589    mov eax,sd"
 "	      0050958c    mov eax,[eax+0C4h]"
-"	      00509592    mov ecx,[ebp-20h]"
+"	      00509592    mov ecx,this"
 "	      00509595    mov [ecx+0CEh],eax"
 );
 // LINE 4688:
 	asm( 
-"	      0050959b    mov eax,[ebp+8]"
+"	      0050959b    mov eax,sd"
 "	      0050959e    mov ax,[eax+0C8h]"
-"	      005095a5    mov ecx,[ebp-20h]"
+"	      005095a5    mov ecx,this"
 "	      005095a8    mov [ecx+0D2h],ax"
 );
 // LINE 4689:
 	asm( 
-"	      005095af    mov eax,[ebp+8]"
+"	      005095af    mov eax,sd"
 "	      005095b2    mov ax,[eax+0CAh]"
-"	      005095b9    mov ecx,[ebp-20h]"
+"	      005095b9    mov ecx,this"
 "	      005095bc    mov [ecx+0D4h],ax"
 );
 // LINE 4690:
 	asm( 
-"	      005095c3    mov eax,[ebp+8]"
+"	      005095c3    mov eax,sd"
 "	      005095c6    mov ax,[eax+0CCh]"
-"	      005095cd    mov ecx,[ebp-20h]"
+"	      005095cd    mov ecx,this"
 "	      005095d0    mov [ecx+0D6h],ax"
 );
 // LINE 4691:
 	asm( 
-"	      005095d7    mov eax,[ebp+8]"
+"	      005095d7    mov eax,sd"
 "	      005095da    mov ax,[eax+0D0h]"
-"	      005095e1    mov ecx,[ebp-20h]"
+"	      005095e1    mov ecx,this"
 "	      005095e4    mov [ecx+0DAh],ax"
 );
 // LINE 4692:
 	asm( 
-"	      005095eb    mov eax,[ebp+8]"
+"	      005095eb    mov eax,sd"
 "	      005095ee    mov ax,[eax+0D2h]"
-"	      005095f5    mov ecx,[ebp-20h]"
+"	      005095f5    mov ecx,this"
 "	      005095f8    mov [ecx+0DCh],ax"
 );
 // LINE 4693:
 	asm( 
-"	      005095ff    mov eax,[ebp+8]"
+"	      005095ff    mov eax,sd"
 "	      00509602    mov ax,[eax+0CEh]"
-"	      00509609    mov ecx,[ebp-20h]"
+"	      00509609    mov ecx,this"
 "	      0050960c    mov [ecx+0D8h],ax"
 );
 // LINE 4694:
 	asm( 
-"	      00509613    mov eax,[ebp+8]"
+"	      00509613    mov eax,sd"
 "	      00509616    mov eax,[eax+0D4h]"
-"	      0050961c    mov ecx,[ebp-20h]"
+"	      0050961c    mov ecx,this"
 "	      0050961f    mov [ecx+0DEh],eax"
 );
 // LINE 4695:
 	asm( 
-"	      00509625    mov eax,[ebp+8]"
+"	      00509625    mov eax,sd"
 "	      00509628    mov eax,[eax+0D8h]"
-"	      0050962e    mov ecx,[ebp-20h]"
+"	      0050962e    mov ecx,this"
 "	      00509631    mov [ecx+0E2h],eax"
 );
 // LINE 4696:
 	asm( 
-"	      00509637    mov eax,[ebp+8]"
+"	      00509637    mov eax,sd"
 "	      0050963a    mov eax,[eax+0DCh]"
-"	      00509640    mov ecx,[ebp-20h]"
+"	      00509640    mov ecx,this"
 "	      00509643    mov [ecx+0E6h],eax"
 );
 // LINE 4697:
 	asm( 
-"	      00509649    mov eax,[ebp+8]"
+"	      00509649    mov eax,sd"
 "	      0050964c    mov eax,[eax+0E0h]"
-"	      00509652    mov ecx,[ebp-20h]"
+"	      00509652    mov ecx,this"
 "	      00509655    mov [ecx+0EAh],eax"
 );
 // LINE 4698:
 	asm( 
-"	      0050965b    mov eax,[ebp+8]"
+"	      0050965b    mov eax,sd"
 "	      0050965e    mov eax,[eax+0E4h]"
-"	      00509664    mov ecx,[ebp-20h]"
+"	      00509664    mov ecx,this"
 "	      00509667    mov [ecx+0EEh],eax"
 );
 // LINE 4699:
 	asm( 
-"	      0050966d    mov eax,[ebp+8]"
+"	      0050966d    mov eax,sd"
 "	      00509670    mov eax,[eax+0ECh]"
-"	      00509676    mov ecx,[ebp-20h]"
+"	      00509676    mov ecx,this"
 "	      00509679    mov [ecx+0F6h],eax"
 );
 // LINE 4700:
 	asm( 
-"	      0050967f    mov eax,[ebp+8]"
+"	      0050967f    mov eax,sd"
 "	      00509682    mov eax,[eax+0F0h]"
-"	      00509688    mov ecx,[ebp-20h]"
+"	      00509688    mov ecx,this"
 "	      0050968b    mov [ecx+0FAh],eax"
 );
 // LINE 4701:
 	asm( 
-"	      00509691    mov eax,[ebp+8]"
+"	      00509691    mov eax,sd"
 "	      00509694    mov eax,[eax+0F4h]"
-"	      0050969a    mov ecx,[ebp-20h]"
+"	      0050969a    mov ecx,this"
 "	      0050969d    mov [ecx+0FEh],eax"
 );
 // LINE 4702:
 	asm( 
-"	      005096a3    mov eax,[ebp+8]"
+"	      005096a3    mov eax,sd"
 "	      005096a6    mov eax,[eax+0F8h]"
-"	      005096ac    mov ecx,[ebp-20h]"
+"	      005096ac    mov ecx,this"
 "	      005096af    mov [ecx+102h],eax"
 );
 // LINE 4703:
 	asm( 
-"	      005096b5    mov eax,[ebp+8]"
+"	      005096b5    mov eax,sd"
 "	      005096b8    mov eax,[eax+0FCh]"
-"	      005096be    mov ecx,[ebp-20h]"
+"	      005096be    mov ecx,this"
 "	      005096c1    mov [ecx+106h],eax"
 );
 // LINE 4704:
 	asm( 
-"	      005096c7    mov eax,[ebp+8]"
+"	      005096c7    mov eax,sd"
 "	      005096ca    mov eax,[eax+100h]"
-"	      005096d0    mov ecx,[ebp-20h]"
+"	      005096d0    mov ecx,this"
 "	      005096d3    mov [ecx+10Ah],eax"
 );
 // LINE 4705:
 	asm( 
-"	      005096d9    mov eax,[ebp+8]"
+"	      005096d9    mov eax,sd"
 "	      005096dc    mov eax,[eax+104h]"
-"	      005096e2    mov ecx,[ebp-20h]"
+"	      005096e2    mov ecx,this"
 "	      005096e5    mov [ecx+10Eh],eax"
 );
 // LINE 4706:
 	asm( 
-"	      005096eb    mov eax,[ebp+8]"
+"	      005096eb    mov eax,sd"
 "	      005096ee    mov eax,[eax+10Ah]"
-"	      005096f4    mov ecx,[ebp-20h]"
+"	      005096f4    mov ecx,this"
 "	      005096f7    mov [ecx+116h],eax"
 );
 // LINE 4708:
 	asm( 
-"	      005096fd    mov eax,[ebp+8]"
+"	      005096fd    mov eax,sd"
 "	      00509700    add eax,1Ch"
-"	      00509703    mov ecx,[ebp-20h]"
+"	      00509703    mov ecx,this"
 "	      00509706    add ecx,24h"
 "	      00509709    mov edx,[eax]"
 "	      0050970b    mov [ecx],edx"
@@ -14052,8 +14052,8 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4709:
 	asm( 
-"	      00509719    mov esi,[ebp+8]"
-"	      0050971c    mov edi,[ebp-20h]"
+"	      00509719    mov esi,sd"
+"	      0050971c    mov edi,this"
 "	      0050971f    add edi,30h"
 "	      00509722    add esi,28h"
 "	      00509725    mov ecx,10h"
@@ -14061,54 +14061,54 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4711:
 	asm( 
-"	      0050972c    mov eax,[ebp-20h]"
+"	      0050972c    mov eax,this"
 "	      0050972f    add eax,0A2h"
-"	      00509734    mov ecx,[ebp-20h]"
+"	      00509734    mov ecx,this"
 "	      00509737    mov [ecx+0F2h],eax"
 );
 // LINE 4714:
 	asm( 
-"	      0050973d    mov eax,[ebp+8]"
+"	      0050973d    mov eax,sd"
 "	      00509740    xor ecx,ecx"
 "	      00509742    mov cl,[eax+93h]"
 "	      00509748    push ecx"
-"	      00509749    mov eax,[ebp+8]"
+"	      00509749    mov eax,sd"
 "	      0050974c    xor ecx,ecx"
 "	      0050974e    mov cl,[eax+92h]"
 "	      00509754    push ecx"
 "	      00509755    mov ecx,5C3828h"
 "	      0050975a    call 0053D167h"
-"	      0050975f    mov [ebp-4],al"
+"	      0050975f    mov yindex,al"
 );
 // LINE 4715:
 	asm( 
-"	      00509762    mov eax,[ebp+8]"
+"	      00509762    mov eax,sd"
 "	      00509765    xor ecx,ecx"
 "	      00509767    mov cl,[eax+92h]"
 "	      0050976d    mov eax,[ecx*4+5C3828h]"
 "	      00509774    xor ecx,ecx"
-"	      00509776    mov cl,[ebp-4]"
+"	      00509776    mov cl,yindex"
 "	      00509779    mov edx,ecx"
 "	      0050977b    lea ecx,[ecx+ecx*4]"
 "	      0050977e    lea ecx,[ecx+ecx*4]"
 "	      00509781    lea ecx,[edx+ecx*2]"
 "	      00509784    add eax,ecx"
-"	      00509786    mov ecx,[ebp-20h]"
+"	      00509786    mov ecx,this"
 "	      00509789    mov [ecx+70h],eax"
 );
 // LINE 4717:
 	asm( 
-"	      0050978c    mov eax,[ebp-20h]"
+"	      0050978c    mov eax,this"
 "	      0050978f    test byte ptr [eax+9],8"
 "	      00509793    je near ptr 00509825h"
 );
 // LINE 4718:
 	asm( 
-"	      00509799    mov eax,[ebp-20h]"
+"	      00509799    mov eax,this"
 "	      0050979c    xor ecx,ecx"
 "	      0050979e    mov cl,[eax+0D3h]"
 "	      005097a4    mov [ebp-0Ch],ecx"
-"	      005097a7    mov eax,[ebp-20h]"
+"	      005097a7    mov eax,this"
 "	      005097aa    xor ecx,ecx"
 "	      005097ac    mov cl,[eax+0D2h]"
 "	      005097b2    mov [ebp-10h],ecx"
@@ -14133,15 +14133,15 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      005097f9    jmp near ptr 005097FEh"
 "	      005097fe    jmp near ptr 00509803h"
 "	      00509803    mov eax,[ebp-8]"
-"	      00509806    mov ecx,[ebp-20h]"
+"	      00509806    mov ecx,this"
 "	      00509809    mov [ecx+112h],eax"
 );
 // LINE 4720:
 	asm( 
-"	      0050980f    mov eax,[ebp-20h]"
+"	      0050980f    mov eax,this"
 "	      00509812    add eax,0D2h"
 "	      00509817    push eax"
-"	      00509818    mov ecx,[ebp-20h]"
+"	      00509818    mov ecx,this"
 "	      0050981b    call 00502B74h"
 );
 // LINE 4722:
@@ -14150,11 +14150,11 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 4723:
 	asm( 
-"	      00509825    mov eax,[ebp-20h]"
+"	      00509825    mov eax,this"
 "	      00509828    xor ecx,ecx"
 "	      0050982a    mov cl,[eax+7Dh]"
 "	      0050982d    mov [ebp-18h],ecx"
-"	      00509830    mov eax,[ebp-20h]"
+"	      00509830    mov eax,this"
 "	      00509833    xor ecx,ecx"
 "	      00509835    mov cl,[eax+7Ch]"
 "	      00509838    mov [ebp-1Ch],ecx"
@@ -14179,15 +14179,15 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      0050987f    jmp near ptr 00509884h"
 "	      00509884    jmp near ptr 00509889h"
 "	      00509889    mov eax,[ebp-14h]"
-"	      0050988c    mov ecx,[ebp-20h]"
+"	      0050988c    mov ecx,this"
 "	      0050988f    mov [ecx+112h],eax"
 );
 // LINE 4725:
 	asm( 
-"	      00509895    mov eax,[ebp-20h]"
+"	      00509895    mov eax,this"
 "	      00509898    add eax,7Ch"
 "	      0050989b    push eax"
-"	      0050989c    mov ecx,[ebp-20h]"
+"	      0050989c    mov ecx,this"
 "	      0050989f    call 00502B74h"
 );
 // LINE 4727:
@@ -14211,11 +14211,11 @@ void AutomobileClass::HonkHorn() {
 "	      005098b6    push ebx"
 "	      005098b7    push esi"
 "	      005098b8    push edi"
-"	      005098b9    mov [ebp-4],ecx"
+"	      005098b9    mov this,ecx"
 );
 // LINE 4740:
 	asm( 
-"	      005098bc    mov eax,[ebp-4]"
+"	      005098bc    mov eax,this"
 "	      005098bf    test byte ptr [eax+9],2"
 "	      005098c3    je near ptr 005098EDh"
 );
@@ -14257,7 +14257,7 @@ void AutomobileClass::HonkHorn() {
 );
 // LINE 4753:
 	asm( 
-"	      0050990c    mov eax,[ebp-4]"
+"	      0050990c    mov eax,this"
 "	      0050990f    mov eax,[eax+0CAh]"
 "	      00509915    push eax"
 "	      00509916    call 00446F02h"
@@ -14268,10 +14268,10 @@ void AutomobileClass::HonkHorn() {
 // LINE 4755:
 	asm( 
 "	      00509926    push 0"
-"	      00509928    mov eax,[ebp-4]"
+"	      00509928    mov eax,this"
 "	      0050992b    add eax,24h"
 "	      0050992e    push eax"
-"	      0050992f    mov eax,[ebp-4]"
+"	      0050992f    mov eax,this"
 "	      00509932    mov eax,[eax+0CAh]"
 "	      00509938    push eax"
 "	      00509939    call 00446CC2h"
@@ -14343,18 +14343,18 @@ void S3AutoSoundDriver() {
 // LINE 4794:
 	asm( 
 "	      0050998c    mov eax,ds:[608F78h]"
-"	      00509991    mov [ebp-4],eax"
+"	      00509991    mov dist,eax"
 );
 // LINE 4795:
 	asm( 
-"	      00509994    cmp dword ptr [ebp-4],7800000h"
+"	      00509994    cmp dist,7800000h"
 "	      0050999b    jge near ptr 00509A1Ch"
 );
 // LINE 4797:
 	asm( 
 "	      005099a1    mov eax,6C1210h"
 "	      005099a6    add eax,5Ch"
-"	      005099a9    lea ecx,[ebp-10h]"
+"	      005099a9    lea ecx,loc.x"
 "	      005099ac    mov edx,[eax]"
 "	      005099ae    mov [ecx],edx"
 "	      005099b0    mov edx,[eax+4]"
@@ -14364,8 +14364,8 @@ void S3AutoSoundDriver() {
 );
 // LINE 4798:
 	asm( 
-"	      005099bc    mov eax,[ebp-4]"
-"	      005099bf    add [ebp-8],eax"
+"	      005099bc    mov eax,dist"
+"	      005099bf    add loc.z,eax"
 );
 // LINE 4800:
 	asm( 
@@ -14378,7 +14378,7 @@ void S3AutoSoundDriver() {
 // LINE 4802:
 	asm( 
 "	      005099d4    push 1"
-"	      005099d6    lea eax,[ebp-10h]"
+"	      005099d6    lea eax,loc.x"
 "	      005099d9    push eax"
 "	      005099da    push 12h"
 "	      005099dc    call 00446CC2h"
@@ -14388,7 +14388,7 @@ void S3AutoSoundDriver() {
 	asm( 
 "	      005099e4    push 0F0600000h"
 "	      005099e9    push 7800000h"
-"	      005099ee    mov eax,[ebp-4]"
+"	      005099ee    mov eax,dist"
 "	      005099f1    push eax"
 "	      005099f2    call 004D19DFh"
 "	      005099f7    add esp,8"
@@ -14396,11 +14396,11 @@ void S3AutoSoundDriver() {
 "	      005099fb    call 004D19BDh"
 "	      00509a00    add esp,8"
 "	      00509a03    sar eax,10h"
-"	      00509a06    mov [ebp-14h],eax"
+"	      00509a06    mov vol_adj,eax"
 );
 // LINE 4807:
 	asm( 
-"	      00509a09    mov eax,[ebp-14h]"
+"	      00509a09    mov eax,vol_adj"
 "	      00509a0c    push eax"
 "	      00509a0d    push 12h"
 "	      00509a0f    call 00446E82h"
@@ -14427,18 +14427,18 @@ void S3AutoSoundDriver() {
 // LINE 4818:
 	asm( 
 "	      00509a39    mov eax,ds:[608F74h]"
-"	      00509a3e    mov [ebp-4],eax"
+"	      00509a3e    mov dist,eax"
 );
 // LINE 4819:
 	asm( 
-"	      00509a41    cmp dword ptr [ebp-4],7800000h"
+"	      00509a41    cmp dist,7800000h"
 "	      00509a48    jge near ptr 00509AC9h"
 );
 // LINE 4821:
 	asm( 
 "	      00509a4e    mov eax,6C1210h"
 "	      00509a53    add eax,5Ch"
-"	      00509a56    lea ecx,[ebp-10h]"
+"	      00509a56    lea ecx,loc.x"
 "	      00509a59    mov edx,[eax]"
 "	      00509a5b    mov [ecx],edx"
 "	      00509a5d    mov edx,[eax+4]"
@@ -14448,8 +14448,8 @@ void S3AutoSoundDriver() {
 );
 // LINE 4822:
 	asm( 
-"	      00509a69    mov eax,[ebp-4]"
-"	      00509a6c    add [ebp-8],eax"
+"	      00509a69    mov eax,dist"
+"	      00509a6c    add loc.z,eax"
 );
 // LINE 4824:
 	asm( 
@@ -14462,7 +14462,7 @@ void S3AutoSoundDriver() {
 // LINE 4826:
 	asm( 
 "	      00509a81    push 1"
-"	      00509a83    lea eax,[ebp-10h]"
+"	      00509a83    lea eax,loc.x"
 "	      00509a86    push eax"
 "	      00509a87    push 13h"
 "	      00509a89    call 00446CC2h"
@@ -14472,7 +14472,7 @@ void S3AutoSoundDriver() {
 	asm( 
 "	      00509a91    push 0F0600000h"
 "	      00509a96    push 7800000h"
-"	      00509a9b    mov eax,[ebp-4]"
+"	      00509a9b    mov eax,dist"
 "	      00509a9e    push eax"
 "	      00509a9f    call 004D19DFh"
 "	      00509aa4    add esp,8"
@@ -14480,11 +14480,11 @@ void S3AutoSoundDriver() {
 "	      00509aa8    call 004D19BDh"
 "	      00509aad    add esp,8"
 "	      00509ab0    sar eax,10h"
-"	      00509ab3    mov [ebp-14h],eax"
+"	      00509ab3    mov vol_adj,eax"
 );
 // LINE 4831:
 	asm( 
-"	      00509ab6    mov eax,[ebp-14h]"
+"	      00509ab6    mov eax,vol_adj"
 "	      00509ab9    push eax"
 "	      00509aba    push 13h"
 "	      00509abc    call 00446E82h"
@@ -14511,18 +14511,18 @@ void S3AutoSoundDriver() {
 // LINE 4842:
 	asm( 
 "	      00509ae6    mov eax,ds:[608F70h]"
-"	      00509aeb    mov [ebp-4],eax"
+"	      00509aeb    mov dist,eax"
 );
 // LINE 4843:
 	asm( 
-"	      00509aee    cmp dword ptr [ebp-4],7800000h"
+"	      00509aee    cmp dist,7800000h"
 "	      00509af5    jge near ptr 00509B76h"
 );
 // LINE 4845:
 	asm( 
 "	      00509afb    mov eax,6C1210h"
 "	      00509b00    add eax,5Ch"
-"	      00509b03    lea ecx,[ebp-10h]"
+"	      00509b03    lea ecx,loc.x"
 "	      00509b06    mov edx,[eax]"
 "	      00509b08    mov [ecx],edx"
 "	      00509b0a    mov edx,[eax+4]"
@@ -14532,8 +14532,8 @@ void S3AutoSoundDriver() {
 );
 // LINE 4846:
 	asm( 
-"	      00509b16    mov eax,[ebp-4]"
-"	      00509b19    add [ebp-8],eax"
+"	      00509b16    mov eax,dist"
+"	      00509b19    add loc.z,eax"
 );
 // LINE 4848:
 	asm( 
@@ -14546,7 +14546,7 @@ void S3AutoSoundDriver() {
 // LINE 4850:
 	asm( 
 "	      00509b2e    push 1"
-"	      00509b30    lea eax,[ebp-10h]"
+"	      00509b30    lea eax,loc.x"
 "	      00509b33    push eax"
 "	      00509b34    push 11h"
 "	      00509b36    call 00446CC2h"
@@ -14556,7 +14556,7 @@ void S3AutoSoundDriver() {
 	asm( 
 "	      00509b3e    push 0F0600000h"
 "	      00509b43    push 7800000h"
-"	      00509b48    mov eax,[ebp-4]"
+"	      00509b48    mov eax,dist"
 "	      00509b4b    push eax"
 "	      00509b4c    call 004D19DFh"
 "	      00509b51    add esp,8"
@@ -14564,11 +14564,11 @@ void S3AutoSoundDriver() {
 "	      00509b55    call 004D19BDh"
 "	      00509b5a    add esp,8"
 "	      00509b5d    sar eax,10h"
-"	      00509b60    mov [ebp-14h],eax"
+"	      00509b60    mov vol_adj,eax"
 );
 // LINE 4855:
 	asm( 
-"	      00509b63    mov eax,[ebp-14h]"
+"	      00509b63    mov eax,vol_adj"
 "	      00509b66    push eax"
 "	      00509b67    push 11h"
 "	      00509b69    call 00446E82h"
@@ -14595,18 +14595,18 @@ void S3AutoSoundDriver() {
 // LINE 4866:
 	asm( 
 "	      00509b93    mov eax,ds:[608F6Ch]"
-"	      00509b98    mov [ebp-4],eax"
+"	      00509b98    mov dist,eax"
 );
 // LINE 4867:
 	asm( 
-"	      00509b9b    cmp dword ptr [ebp-4],7800000h"
+"	      00509b9b    cmp dist,7800000h"
 "	      00509ba2    jge near ptr 00509C23h"
 );
 // LINE 4869:
 	asm( 
 "	      00509ba8    mov eax,6C1210h"
 "	      00509bad    add eax,5Ch"
-"	      00509bb0    lea ecx,[ebp-10h]"
+"	      00509bb0    lea ecx,loc.x"
 "	      00509bb3    mov edx,[eax]"
 "	      00509bb5    mov [ecx],edx"
 "	      00509bb7    mov edx,[eax+4]"
@@ -14616,8 +14616,8 @@ void S3AutoSoundDriver() {
 );
 // LINE 4870:
 	asm( 
-"	      00509bc3    mov eax,[ebp-4]"
-"	      00509bc6    add [ebp-8],eax"
+"	      00509bc3    mov eax,dist"
+"	      00509bc6    add loc.z,eax"
 );
 // LINE 4872:
 	asm( 
@@ -14630,7 +14630,7 @@ void S3AutoSoundDriver() {
 // LINE 4874:
 	asm( 
 "	      00509bdb    push 1"
-"	      00509bdd    lea eax,[ebp-10h]"
+"	      00509bdd    lea eax,loc.x"
 "	      00509be0    push eax"
 "	      00509be1    push 14h"
 "	      00509be3    call 00446CC2h"
@@ -14640,7 +14640,7 @@ void S3AutoSoundDriver() {
 	asm( 
 "	      00509beb    push 0F0600000h"
 "	      00509bf0    push 7800000h"
-"	      00509bf5    mov eax,[ebp-4]"
+"	      00509bf5    mov eax,dist"
 "	      00509bf8    push eax"
 "	      00509bf9    call 004D19DFh"
 "	      00509bfe    add esp,8"
@@ -14648,11 +14648,11 @@ void S3AutoSoundDriver() {
 "	      00509c02    call 004D19BDh"
 "	      00509c07    add esp,8"
 "	      00509c0a    sar eax,10h"
-"	      00509c0d    mov [ebp-14h],eax"
+"	      00509c0d    mov vol_adj,eax"
 );
 // LINE 4879:
 	asm( 
-"	      00509c10    mov eax,[ebp-14h]"
+"	      00509c10    mov eax,vol_adj"
 "	      00509c13    push eax"
 "	      00509c14    push 14h"
 "	      00509c16    call 00446E82h"
@@ -14679,18 +14679,18 @@ void S3AutoSoundDriver() {
 // LINE 4890:
 	asm( 
 "	      00509c40    mov eax,ds:[608F6Ch]"
-"	      00509c45    mov [ebp-4],eax"
+"	      00509c45    mov dist,eax"
 );
 // LINE 4891:
 	asm( 
-"	      00509c48    cmp dword ptr [ebp-4],7800000h"
+"	      00509c48    cmp dist,7800000h"
 "	      00509c4f    jge near ptr 00509CD0h"
 );
 // LINE 4893:
 	asm( 
 "	      00509c55    mov eax,6C1210h"
 "	      00509c5a    add eax,5Ch"
-"	      00509c5d    lea ecx,[ebp-10h]"
+"	      00509c5d    lea ecx,loc.x"
 "	      00509c60    mov edx,[eax]"
 "	      00509c62    mov [ecx],edx"
 "	      00509c64    mov edx,[eax+4]"
@@ -14700,8 +14700,8 @@ void S3AutoSoundDriver() {
 );
 // LINE 4894:
 	asm( 
-"	      00509c70    mov eax,[ebp-4]"
-"	      00509c73    add [ebp-8],eax"
+"	      00509c70    mov eax,dist"
+"	      00509c73    add loc.z,eax"
 );
 // LINE 4896:
 	asm( 
@@ -14714,7 +14714,7 @@ void S3AutoSoundDriver() {
 // LINE 4898:
 	asm( 
 "	      00509c88    push 1"
-"	      00509c8a    lea eax,[ebp-10h]"
+"	      00509c8a    lea eax,loc.x"
 "	      00509c8d    push eax"
 "	      00509c8e    push 14h"
 "	      00509c90    call 00446CC2h"
@@ -14724,7 +14724,7 @@ void S3AutoSoundDriver() {
 	asm( 
 "	      00509c98    push 0F0600000h"
 "	      00509c9d    push 7800000h"
-"	      00509ca2    mov eax,[ebp-4]"
+"	      00509ca2    mov eax,dist"
 "	      00509ca5    push eax"
 "	      00509ca6    call 004D19DFh"
 "	      00509cab    add esp,8"
@@ -14732,11 +14732,11 @@ void S3AutoSoundDriver() {
 "	      00509caf    call 004D19BDh"
 "	      00509cb4    add esp,8"
 "	      00509cb7    sar eax,10h"
-"	      00509cba    mov [ebp-14h],eax"
+"	      00509cba    mov vol_adj,eax"
 );
 // LINE 4903:
 	asm( 
-"	      00509cbd    mov eax,[ebp-14h]"
+"	      00509cbd    mov eax,vol_adj"
 "	      00509cc0    push eax"
 "	      00509cc1    push 14h"
 "	      00509cc3    call 00446E82h"
@@ -14791,7 +14791,7 @@ void AutomobileClass::ChangeAutoColor() {
 "	      00509cfd    push ebx"
 "	      00509cfe    push esi"
 "	      00509cff    push edi"
-"	      00509d00    mov [ebp-60h],ecx"
+"	      00509d00    mov this,ecx"
 );
 // LINE 4935:
 	asm( 
@@ -14803,11 +14803,11 @@ void AutomobileClass::ChangeAutoColor() {
 "	      00509d13    mov eax,edx"
 "	      00509d15    shl eax,4"
 "	      00509d18    add eax,10h"
-"	      00509d1b    mov [ebp-28h],eax"
+"	      00509d1b    mov newbase,eax"
 );
 // LINE 4938:
 	asm( 
-"	      00509d1e    cmp dword ptr [ebp-28h],30h"
+"	      00509d1e    cmp newbase,30h"
 "	      00509d22    jne near ptr 00509D43h"
 );
 // LINE 4939:
@@ -14820,13 +14820,13 @@ void AutomobileClass::ChangeAutoColor() {
 "	      00509d38    mov eax,edx"
 "	      00509d3a    shl eax,4"
 "	      00509d3d    add eax,10h"
-"	      00509d40    add [ebp-28h],eax"
+"	      00509d40    add newbase,eax"
 );
 // LINE 4941:
 	asm( 
-"	      00509d43    lea eax,[ebp-24h]"
+"	      00509d43    lea eax,oinfo.Faces"
 "	      00509d46    push eax"
-"	      00509d47    mov eax,[ebp-60h]"
+"	      00509d47    mov eax,this"
 "	      00509d4a    mov eax,[eax+14h]"
 "	      00509d4d    push eax"
 "	      00509d4e    call 004D8859h"
@@ -14834,71 +14834,71 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4942:
 	asm( 
-"	      00509d56    mov eax,[ebp-60h]"
+"	      00509d56    mov eax,this"
 "	      00509d59    mov eax,[eax+14h]"
 "	      00509d5c    push eax"
 "	      00509d5d    call 004D85CDh"
 "	      00509d62    add esp,4"
-"	      00509d65    mov [ebp-2Ch],eax"
+"	      00509d65    mov face,eax"
 );
 // LINE 4943:
 	asm( 
-"	      00509d68    mov dword ptr [ebp-34h],0"
+"	      00509d68    mov count,0"
 "	      00509d6f    jmp near ptr 00509D77h"
-"	      00509d74    inc dword ptr [ebp-34h]"
-"	      00509d77    mov eax,[ebp-34h]"
-"	      00509d7a    cmp [ebp-24h],eax"
+"	      00509d74    inc count"
+"	      00509d77    mov eax,count"
+"	      00509d7a    cmp oinfo.Faces,eax"
 "	      00509d7d    jle near ptr 00509FA8h"
 );
 // LINE 4945:
 	asm( 
-"	      00509d83    lea eax,[ebp-54h]"
+"	      00509d83    lea eax,finfo.Face"
 "	      00509d86    push eax"
-"	      00509d87    mov eax,[ebp-2Ch]"
+"	      00509d87    mov eax,face"
 "	      00509d8a    push eax"
 "	      00509d8b    call 004D6905h"
 "	      00509d90    add esp,8"
 );
 // LINE 4946:
 	asm( 
-"	      00509d93    cmp dword ptr [ebp-48h],0Fh"
+"	      00509d93    cmp finfo.Plotter,0Fh"
 "	      00509d97    jne near ptr 00509F94h"
 );
 // LINE 4949:
 	asm( 
-"	      00509d9d    mov eax,[ebp-44h]"
-"	      00509da0    mov [ebp-30h],eax"
+"	      00509d9d    mov eax,finfo.Bitmap"
+"	      00509da0    mov color,eax"
 );
 // LINE 4950:
 	asm( 
-"	      00509da3    mov eax,[ebp-30h]"
+"	      00509da3    mov eax,color"
 "	      00509da6    and eax,0FFFFFFF0h"
-"	      00509da9    mov [ebp-5Ch],eax"
+"	      00509da9    mov base,eax"
 );
 // LINE 4951:
 	asm( 
-"	      00509dac    mov eax,[ebp-30h]"
+"	      00509dac    mov eax,color"
 "	      00509daf    and eax,0Fh"
-"	      00509db2    mov [ebp-58h],eax"
+"	      00509db2    mov index,eax"
 );
 // LINE 4955:
 	asm( 
-"	      00509db5    mov eax,[ebp-60h]"
+"	      00509db5    mov eax,this"
 "	      00509db8    mov eax,[eax+4]"
 "	      00509dbb    mov [ebp-64h],eax"
 "	      00509dbe    jmp near ptr 00509EA2h"
 );
 // LINE 4958:
 	asm( 
-"	      00509dc3    cmp dword ptr [ebp-5Ch],80h"
+"	      00509dc3    cmp base,80h"
 "	      00509dca    jne near ptr 00509DE3h"
 );
 // LINE 4959:
 	asm( 
-"	      00509dd0    mov eax,[ebp-28h]"
-"	      00509dd3    add eax,[ebp-58h]"
+"	      00509dd0    mov eax,newbase"
+"	      00509dd3    add eax,index"
 "	      00509dd6    push eax"
-"	      00509dd7    mov eax,[ebp-2Ch]"
+"	      00509dd7    mov eax,face"
 "	      00509dda    push eax"
 "	      00509ddb    call 004D997Fh"
 "	      00509de0    add esp,8"
@@ -14909,15 +14909,15 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4962:
 	asm( 
-"	      00509de8    cmp dword ptr [ebp-5Ch],80h"
+"	      00509de8    cmp base,80h"
 "	      00509def    jne near ptr 00509E08h"
 );
 // LINE 4963:
 	asm( 
-"	      00509df5    mov eax,[ebp-28h]"
-"	      00509df8    add eax,[ebp-58h]"
+"	      00509df5    mov eax,newbase"
+"	      00509df8    add eax,index"
 "	      00509dfb    push eax"
-"	      00509dfc    mov eax,[ebp-2Ch]"
+"	      00509dfc    mov eax,face"
 "	      00509dff    push eax"
 "	      00509e00    call 004D997Fh"
 "	      00509e05    add esp,8"
@@ -14928,15 +14928,15 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4966:
 	asm( 
-"	      00509e0d    cmp dword ptr [ebp-5Ch],50h"
+"	      00509e0d    cmp base,50h"
 "	      00509e11    jne near ptr 00509E2Ah"
 );
 // LINE 4967:
 	asm( 
-"	      00509e17    mov eax,[ebp-28h]"
-"	      00509e1a    add eax,[ebp-58h]"
+"	      00509e17    mov eax,newbase"
+"	      00509e1a    add eax,index"
 "	      00509e1d    push eax"
-"	      00509e1e    mov eax,[ebp-2Ch]"
+"	      00509e1e    mov eax,face"
 "	      00509e21    push eax"
 "	      00509e22    call 004D997Fh"
 "	      00509e27    add esp,8"
@@ -14947,15 +14947,15 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4970:
 	asm( 
-"	      00509e2f    cmp dword ptr [ebp-5Ch],50h"
+"	      00509e2f    cmp base,50h"
 "	      00509e33    jne near ptr 00509E4Ch"
 );
 // LINE 4971:
 	asm( 
-"	      00509e39    mov eax,[ebp-28h]"
-"	      00509e3c    add eax,[ebp-58h]"
+"	      00509e39    mov eax,newbase"
+"	      00509e3c    add eax,index"
 "	      00509e3f    push eax"
-"	      00509e40    mov eax,[ebp-2Ch]"
+"	      00509e40    mov eax,face"
 "	      00509e43    push eax"
 "	      00509e44    call 004D997Fh"
 "	      00509e49    add esp,8"
@@ -14966,15 +14966,15 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4974:
 	asm( 
-"	      00509e51    cmp dword ptr [ebp-5Ch],0A0h"
+"	      00509e51    cmp base,0A0h"
 "	      00509e58    jne near ptr 00509E71h"
 );
 // LINE 4975:
 	asm( 
-"	      00509e5e    mov eax,[ebp-28h]"
-"	      00509e61    add eax,[ebp-58h]"
+"	      00509e5e    mov eax,newbase"
+"	      00509e61    add eax,index"
 "	      00509e64    push eax"
-"	      00509e65    mov eax,[ebp-2Ch]"
+"	      00509e65    mov eax,face"
 "	      00509e68    push eax"
 "	      00509e69    call 004D997Fh"
 "	      00509e6e    add esp,8"
@@ -14985,15 +14985,15 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4978:
 	asm( 
-"	      00509e76    cmp dword ptr [ebp-5Ch],30h"
+"	      00509e76    cmp base,30h"
 "	      00509e7a    jne near ptr 00509E93h"
 );
 // LINE 4979:
 	asm( 
-"	      00509e80    mov eax,[ebp-28h]"
-"	      00509e83    add eax,[ebp-58h]"
+"	      00509e80    mov eax,newbase"
+"	      00509e83    add eax,index"
 "	      00509e86    push eax"
-"	      00509e87    mov eax,[ebp-2Ch]"
+"	      00509e87    mov eax,face"
 "	      00509e8a    push eax"
 "	      00509e8b    call 004D997Fh"
 "	      00509e90    add esp,8"
@@ -15209,11 +15209,11 @@ void AutomobileClass::ChangeAutoColor() {
 );
 // LINE 4986:
 	asm( 
-"	      00509f94    mov eax,[ebp-2Ch]"
+"	      00509f94    mov eax,face"
 "	      00509f97    push eax"
 "	      00509f98    call 004D85F8h"
 "	      00509f9d    add esp,4"
-"	      00509fa0    mov [ebp-2Ch],eax"
+"	      00509fa0    mov face,eax"
 );
 // LINE 4987:
 	asm( 

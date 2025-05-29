@@ -15,17 +15,17 @@ void YObjLang::YObjLang(unsigned char * fileName) {
 "	      005609d6    push ebx"
 "	      005609d7    push esi"
 "	      005609d8    push edi"
-"	      005609d9    mov [ebp-4],ecx"
-"	      005609dc    mov eax,[ebp-4]"
+"	      005609d9    mov this,ecx"
+"	      005609dc    mov eax,this"
 "	      005609df    mov dword ptr [eax],593700h"
 "	      005609e5    jmp near ptr 005609EAh"
-"	      005609ea    mov eax,[ebp-4]"
+"	      005609ea    mov eax,this"
 "	      005609ed    mov dword ptr [eax],5936E8h"
 );
 // LINE 48:
 	asm( 
 "	      005609f3    jmp near ptr 005609F8h"
-"	      005609f8    mov eax,[ebp-4]"
+"	      005609f8    mov eax,this"
 "	      005609fb    pop edi"
 "	      005609fc    pop esi"
 "	      005609fd    pop ebx"
@@ -47,13 +47,13 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 );
 // LINE 53:
 	asm( 
-"	      00560a0b    movsx eax,word ptr [ebp+8]"
+"	      00560a0b    movsx eax,id"
 "	      00560a0f    mov [ebp-8],eax"
 "	      00560a12    jmp near ptr 00560A91h"
 );
 // LINE 56:
 	asm( 
-"	      00560a17    mov eax,[ebp+0Ch]"
+"	      00560a17    mov eax,param"
 "	      00560a1a    push eax"
 "	      00560a1b    call 00566906h"
 "	      00560a20    add esp,4"
@@ -66,19 +66,19 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // Block start:
 	struct YObjLang::AttrParam* par;
 	asm( 
-"	      00560a28    mov eax,[ebp+0Ch]"
-"	      00560a2b    mov [ebp-4],eax"
+"	      00560a28    mov eax,param"
+"	      00560a2b    mov par,eax"
 );
 // LINE 60:
 	asm( 
-"	      00560a2e    mov eax,[ebp-4]"
+"	      00560a2e    mov eax,par"
 "	      00560a31    push eax"
 "	      00560a32    call 0056695Bh"
 "	      00560a37    add esp,4"
 );
 // LINE 61:
 	asm( 
-"	      00560a3a    mov eax,[ebp-4]"
+"	      00560a3a    mov eax,par"
 "	      00560a3d    add eax,2"
 "	      00560a40    push eax"
 "	      00560a41    call 0056695Bh"
@@ -91,14 +91,14 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // LINE 65:
 // Block end:
 	asm( 
-"	      00560a4e    mov eax,[ebp+0Ch]"
+"	      00560a4e    mov eax,param"
 "	      00560a51    push eax"
 "	      00560a52    call 0056695Bh"
 "	      00560a57    add esp,4"
 );
 // LINE 66:
 	asm( 
-"	      00560a5a    mov eax,[ebp+0Ch]"
+"	      00560a5a    mov eax,param"
 "	      00560a5d    add eax,2"
 "	      00560a60    push eax"
 "	      00560a61    call 0056695Bh"
@@ -106,7 +106,7 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 );
 // LINE 67:
 	asm( 
-"	      00560a69    mov eax,[ebp+0Ch]"
+"	      00560a69    mov eax,param"
 "	      00560a6c    add eax,4"
 "	      00560a6f    push eax"
 "	      00560a70    call 0056695Bh"
@@ -114,7 +114,7 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 );
 // LINE 68:
 	asm( 
-"	      00560a78    mov eax,[ebp+0Ch]"
+"	      00560a78    mov eax,param"
 "	      00560a7b    add eax,6"
 "	      00560a7e    push eax"
 "	      00560a7f    call 0056695Bh"
@@ -161,15 +161,15 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 );
 // LINE 76:
 	asm( 
-"	      00560ac7    mov eax,[ebp+8]"
-"	      00560aca    mov [ebp-4],eax"
+"	      00560ac7    mov eax,treevoid"
+"	      00560aca    mov tree,eax"
 );
 // LINE 77:
 	asm( 
 "	      00560acd    push 560A02h"
-"	      00560ad2    mov eax,[ebp+0Ch]"
+"	      00560ad2    mov eax,size"
 "	      00560ad5    push eax"
-"	      00560ad6    mov eax,[ebp-4]"
+"	      00560ad6    mov eax,tree"
 "	      00560ad9    push eax"
 "	      00560ada    call 00560385h"
 "	      00560adf    add esp,0Ch"
@@ -195,17 +195,17 @@ void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 "	      00560af2    push ebx"
 "	      00560af3    push esi"
 "	      00560af4    push edi"
-"	      00560af5    mov [ebp-4],ecx"
-"	      00560af8    mov eax,[ebp-4]"
+"	      00560af5    mov this,ecx"
+"	      00560af8    mov eax,this"
 "	      00560afb    mov dword ptr [eax],593700h"
 "	      00560b01    jmp near ptr 00560B06h"
-"	      00560b06    mov eax,[ebp-4]"
+"	      00560b06    mov eax,this"
 "	      00560b09    mov dword ptr [eax],5936E8h"
 );
 // LINE 88:
 	asm( 
 "	      00560b0f    jmp near ptr 00560B14h"
-"	      00560b14    mov eax,[ebp-4]"
+"	      00560b14    mov eax,this"
 "	      00560b17    pop edi"
 "	      00560b18    pop esi"
 "	      00560b19    pop ebx"
@@ -224,8 +224,8 @@ void YObjLang::~YObjLang() {
 "	      00560b24    push ebx"
 "	      00560b25    push esi"
 "	      00560b26    push edi"
-"	      00560b27    mov [ebp-4],ecx"
-"	      00560b2a    mov eax,[ebp-4]"
+"	      00560b27    mov this,ecx"
+"	      00560b2a    mov eax,this"
 "	      00560b2d    mov dword ptr [eax],5936E8h"
 );
 // LINE 95:
@@ -249,7 +249,7 @@ short YObjLang::CountPrimitives() {
 "	      00560b43    push ebx"
 "	      00560b44    push esi"
 "	      00560b45    push edi"
-"	      00560b46    mov [ebp-4],ecx"
+"	      00560b46    mov this,ecx"
 );
 // LINE 103:
 	asm( 
@@ -276,7 +276,7 @@ void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 "	      00560b5d    push ebx"
 "	      00560b5e    push esi"
 "	      00560b5f    push edi"
-"	      00560b60    mov [ebp-4],ecx"
+"	      00560b60    mov this,ecx"
 );
 // LINE 112:
 	asm( 
@@ -299,7 +299,7 @@ unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
 "	      00560b75    push ebx"
 "	      00560b76    push esi"
 "	      00560b77    push edi"
-"	      00560b78    mov [ebp-4],ecx"
+"	      00560b78    mov this,ecx"
 );
 // LINE 129:
 	asm( 
@@ -326,7 +326,7 @@ void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, un
 "	      00560b90    push ebx"
 "	      00560b91    push esi"
 "	      00560b92    push edi"
-"	      00560b93    mov [ebp-4],ecx"
+"	      00560b93    mov this,ecx"
 );
 // LINE 478:
 	asm( 

@@ -20,7 +20,7 @@ unsigned short wincpuidsupport() {
 );
 // LINE 64:
 	asm( 
-"	      0047b649    mov dword ptr [ebp-4],1"
+"	      0047b649    mov cpuid_support,1"
 );
 // LINE 67:
 	asm( 
@@ -64,7 +64,7 @@ unsigned short wincpuidsupport() {
 );
 // LINE 79:
 	asm( 
-"	      0047b665    mov dword ptr [ebp-4],0"
+"	      0047b665    mov cpuid_support,0"
 );
 // LINE 83:
 support:
@@ -105,7 +105,7 @@ unsigned short wincpuid() {
 // LINE 112:
 	asm( 
 "	      0047b693    call 0047BA8Dh"
-"	      0047b698    mov [ebp-4],ax"
+"	      0047b698    mov cpuid,ax"
 );
 // LINE 114:
 	asm( 
@@ -120,7 +120,7 @@ unsigned short wincpuid() {
 // LINE 118:
 	asm( 
 "	      0047b6ae    call 0047B999h"
-"	      0047b6b3    mov [ebp-4],ax"
+"	      0047b6b3    mov cpuid,ax"
 );
 // LINE 119:
 	asm( 
@@ -131,7 +131,7 @@ unsigned short wincpuid() {
 // LINE 121:
 	asm( 
 "	      0047b6c9    call 0047B9EBh"
-"	      0047b6ce    mov [ebp-4],ax"
+"	      0047b6ce    mov cpuid,ax"
 );
 // LINE 122:
 	asm( 
@@ -144,7 +144,7 @@ unsigned short wincpuid() {
 // LINE 124:
 	asm( 
 "	      0047b6e8    call 0047BA3Ah"
-"	      0047b6ed    mov [ebp-4],ax"
+"	      0047b6ed    mov cpuid,ax"
 );
 // LINE 125:
 	asm( 
@@ -156,7 +156,7 @@ unsigned short wincpuid() {
 );
 // LINE 127:
 	asm( 
-"	      0047b707    mov word ptr [ebp-4],4"
+"	      0047b707    mov cpuid,4"
 );
 // LINE 133:
 end:
@@ -169,11 +169,11 @@ end:
 "	      0047b71a    mov eax,[ebp-4]"
 "	      0047b71d    and eax,0FFFFh"
 "	      0047b722    or eax,8000h"
-"	      0047b727    mov [ebp-4],ax"
+"	      0047b727    mov cpuid,ax"
 );
 // LINE 137:
 	asm( 
-"	      0047b72b    mov ax,[ebp-4]"
+"	      0047b72b    mov ax,cpuid"
 "	      0047b72f    jmp near ptr 0047B734h"
 );
 // LINE 139:
@@ -205,20 +205,20 @@ unsigned short wincpuidext() {
 );
 // LINE 164:
 	asm( 
-"	      0047b742    mov dword ptr [ebp-18h],0"
+"	      0047b742    mov i,0"
 );
 // LINE 165:
 	asm( 
-"	      0047b749    mov word ptr [ebp-4],0"
+"	      0047b749    mov cpu_type,0"
 );
 // LINE 166:
 	asm( 
-"	      0047b74f    mov word ptr [ebp-14h],0"
+"	      0047b74f    mov cpuidext,0"
 );
 // LINE 167:
 	asm( 
 "	      0047b755    mov eax,5999D0h"
-"	      0047b75a    lea ecx,[ebp-10h]"
+"	      0047b75a    lea ecx,vendor_id[0]"
 "	      0047b75d    mov edx,[eax]"
 "	      0047b75f    mov [ecx],edx"
 "	      0047b761    mov edx,[eax+4]"
@@ -229,7 +229,7 @@ unsigned short wincpuidext() {
 // LINE 168:
 	asm( 
 "	      0047b76d    mov eax,5999E0h"
-"	      0047b772    lea ecx,[ebp-24h]"
+"	      0047b772    lea ecx,intel_id[0]"
 "	      0047b775    mov edx,[eax]"
 "	      0047b777    mov [ecx],edx"
 "	      0047b779    mov edx,[eax+4]"
@@ -266,18 +266,18 @@ unsigned short wincpuidext() {
 );
 // LINE 183:
 	asm( 
-"	      0047b7a2    mov dword ptr [ebp-18h],0"
+"	      0047b7a2    mov i,0"
 "	      0047b7a9    jmp near ptr 0047B7B1h"
-"	      0047b7ae    inc dword ptr [ebp-18h]"
-"	      0047b7b1    cmp dword ptr [ebp-18h],0Ch"
+"	      0047b7ae    inc i"
+"	      0047b7b1    cmp i,0Ch"
 "	      0047b7b5    jge near ptr 0047B7E4h"
 );
 // LINE 185:
 	asm( 
-"	      0047b7bb    mov eax,[ebp-18h]"
+"	      0047b7bb    mov eax,i"
 "	      0047b7be    xor ecx,ecx"
 "	      0047b7c0    mov cl,[ebp+eax-24h]"
-"	      0047b7c4    mov eax,[ebp-18h]"
+"	      0047b7c4    mov eax,i"
 "	      0047b7c7    xor edx,edx"
 "	      0047b7c9    mov dl,[ebp+eax-10h]"
 "	      0047b7cd    cmp ecx,edx"
@@ -313,12 +313,12 @@ unsigned short wincpuidext() {
 );
 // LINE 200:
 	asm( 
-"	      0047b7f2    mov [ebp-14h],ax"
+"	      0047b7f2    mov cpuidext,ax"
 );
 // LINE 203:
 end_cpuidext:
 	asm( 
-"	      0047b7f6    mov ax,[ebp-14h]"
+"	      0047b7f6    mov ax,cpuidext"
 );
 // LINE 206:
 	asm( 
@@ -327,18 +327,18 @@ end_cpuidext:
 // LINE 208:
 	asm( 
 "	      0047b7ff    call 0047B67Ah"
-"	      0047b804    mov [ebp-4],ax"
+"	      0047b804    mov cpu_type,ax"
 );
 // LINE 209:
 	asm( 
 "	      0047b808    mov eax,[ebp-4]"
 "	      0047b80b    and eax,0FFFFh"
 "	      0047b810    shl eax,8"
-"	      0047b813    mov [ebp-14h],ax"
+"	      0047b813    mov cpuidext,ax"
 );
 // LINE 213:
 	asm( 
-"	      0047b817    mov ax,[ebp-14h]"
+"	      0047b817    mov ax,cpuidext"
 "	      0047b81b    jmp near ptr 0047B820h"
 );
 // LINE 215:
@@ -369,16 +369,16 @@ unsigned long wincpufeatures() {
 );
 // LINE 255:
 	asm( 
-"	      0047b82e    mov dword ptr [ebp-14h],0"
+"	      0047b82e    mov i,0"
 );
 // LINE 256:
 	asm( 
-"	      0047b835    mov dword ptr [ebp-10h],0"
+"	      0047b835    mov cpuff,0"
 );
 // LINE 257:
 	asm( 
 "	      0047b83c    mov eax,5999F0h"
-"	      0047b841    lea ecx,[ebp-0Ch]"
+"	      0047b841    lea ecx,vendor_id[0]"
 "	      0047b844    mov edx,[eax]"
 "	      0047b846    mov [ecx],edx"
 "	      0047b848    mov edx,[eax+4]"
@@ -389,7 +389,7 @@ unsigned long wincpufeatures() {
 // LINE 258:
 	asm( 
 "	      0047b854    mov eax,599A00h"
-"	      0047b859    lea ecx,[ebp-20h]"
+"	      0047b859    lea ecx,intel_id[0]"
 "	      0047b85c    mov edx,[eax]"
 "	      0047b85e    mov [ecx],edx"
 "	      0047b860    mov edx,[eax+4]"
@@ -426,18 +426,18 @@ unsigned long wincpufeatures() {
 );
 // LINE 273:
 	asm( 
-"	      0047b889    mov dword ptr [ebp-14h],0"
+"	      0047b889    mov i,0"
 "	      0047b890    jmp near ptr 0047B898h"
-"	      0047b895    inc dword ptr [ebp-14h]"
-"	      0047b898    cmp dword ptr [ebp-14h],0Ch"
+"	      0047b895    inc i"
+"	      0047b898    cmp i,0Ch"
 "	      0047b89c    jge near ptr 0047B8CBh"
 );
 // LINE 275:
 	asm( 
-"	      0047b8a2    mov eax,[ebp-14h]"
+"	      0047b8a2    mov eax,i"
 "	      0047b8a5    xor ecx,ecx"
 "	      0047b8a7    mov cl,[ebp+eax-20h]"
-"	      0047b8ab    mov eax,[ebp-14h]"
+"	      0047b8ab    mov eax,i"
 "	      0047b8ae    xor edx,edx"
 "	      0047b8b0    mov dl,[ebp+eax-0Ch]"
 "	      0047b8b4    cmp ecx,edx"
@@ -473,16 +473,16 @@ unsigned long wincpufeatures() {
 );
 // LINE 290:
 	asm( 
-"	      0047b8d9    mov [ebp-10h],edx"
+"	      0047b8d9    mov cpuff,edx"
 );
 // LINE 293:
 end_cpuff:
 	asm( 
-"	      0047b8dc    mov eax,[ebp-10h]"
+"	      0047b8dc    mov eax,cpuff"
 );
 // LINE 297:
 	asm( 
-"	      0047b8df    mov eax,[ebp-10h]"
+"	      0047b8df    mov eax,cpuff"
 "	      0047b8e2    jmp near ptr 0047B8E7h"
 );
 // LINE 299:
@@ -512,15 +512,15 @@ struct TIME_STAMP winrdtsc() {
 // LINE 324:
 	asm( 
 "	      0047b8f5    call 0047B825h"
-"	      0047b8fa    mov [ebp-4],eax"
+"	      0047b8fa    mov features,eax"
 );
 // LINE 326:
 	asm( 
-"	      0047b8fd    mov dword ptr [ebp-8],0"
+"	      0047b8fd    mov timestamp.Low,0"
 );
 // LINE 327:
 	asm( 
-"	      0047b904    mov dword ptr [ebp-0Ch],0"
+"	      0047b904    mov timestamp.High,0"
 );
 // LINE 329:
 	asm( 
@@ -533,16 +533,16 @@ struct TIME_STAMP winrdtsc() {
 );
 // LINE 335:
 	asm( 
-"	      0047b917    mov [ebp-8],eax"
+"	      0047b917    mov timestamp.Low,eax"
 );
 // LINE 336:
 	asm( 
-"	      0047b91a    mov [ebp-0Ch],edx"
+"	      0047b91a    mov timestamp.High,edx"
 );
 // LINE 341:
 	asm( 
-"	      0047b91d    mov eax,[ebp-0Ch]"
-"	      0047b920    mov edx,[ebp-8]"
+"	      0047b91d    mov eax,timestamp.High"
+"	      0047b920    mov edx,timestamp.Low"
 "	      0047b923    jmp near ptr 0047B928h"
 );
 // LINE 343:
@@ -570,11 +570,11 @@ unsigned short getdllversion() {
 );
 // LINE 360:
 	asm( 
-"	      0047b936    mov word ptr [ebp-4],100h"
+"	      0047b936    mov Version,100h"
 );
 // LINE 362:
 	asm( 
-"	      0047b93c    mov ax,[ebp-4]"
+"	      0047b93c    mov ax,Version"
 "	      0047b940    jmp near ptr 0047B945h"
 );
 // LINE 364:
@@ -602,7 +602,7 @@ unsigned short check_clone() {
 );
 // LINE 382:
 	asm( 
-"	      0047b953    mov word ptr [ebp-4],0"
+"	      0047b953    mov cpu_type,0"
 );
 // LINE 386:
 	asm( 
@@ -656,17 +656,17 @@ clone:
 );
 // LINE 400:
 	asm( 
-"	      0047b97c    mov [ebp-4],ax"
+"	      0047b97c    mov cpu_type,ax"
 );
 // LINE 403:
 	asm( 
-"	      0047b980    movsx eax,word ptr [ebp-4]"
+"	      0047b980    movsx eax,cpu_type"
 "	      0047b984    and eax,1"
-"	      0047b987    mov [ebp-4],ax"
+"	      0047b987    mov cpu_type,ax"
 );
 // LINE 405:
 	asm( 
-"	      0047b98b    mov ax,[ebp-4]"
+"	      0047b98b    mov ax,cpu_type"
 "	      0047b98f    jmp near ptr 0047B994h"
 );
 // LINE 407:
@@ -694,7 +694,7 @@ unsigned short check_8086() {
 );
 // LINE 424:
 	asm( 
-"	      0047b9a2    mov word ptr [ebp-4],0FFFFh"
+"	      0047b9a2    mov cpu_type,0FFFFh"
 );
 // LINE 427:
 	asm( 
@@ -738,7 +738,7 @@ unsigned short check_8086() {
 );
 // LINE 437:
 	asm( 
-"	      0047b9c3    mov word ptr [ebp-4],0"
+"	      0047b9c3    mov cpu_type,0"
 );
 // LINE 438:
 	asm( 
@@ -746,7 +746,7 @@ unsigned short check_8086() {
 );
 // LINE 440:
 	asm( 
-"	      0047b9cf    mov word ptr [ebp-4],0FFFFh"
+"	      0047b9cf    mov cpu_type,0FFFFh"
 );
 // LINE 442:
 end_8086:
@@ -759,11 +759,11 @@ end_8086:
 );
 // LINE 444:
 	asm( 
-"	      0047b9d9    mov ax,[ebp-4]"
+"	      0047b9d9    mov ax,cpu_type"
 );
 // LINE 448:
 	asm( 
-"	      0047b9dd    mov ax,[ebp-4]"
+"	      0047b9dd    mov ax,cpu_type"
 "	      0047b9e1    jmp near ptr 0047B9E6h"
 );
 // LINE 450:
@@ -791,7 +791,7 @@ unsigned short check_80286() {
 );
 // LINE 467:
 	asm( 
-"	      0047b9f4    mov word ptr [ebp-4],0FFFFh"
+"	      0047b9f4    mov cpu_type,0FFFFh"
 );
 // LINE 470:
 	asm( 
@@ -831,7 +831,7 @@ unsigned short check_80286() {
 );
 // LINE 480:
 	asm( 
-"	      0047ba12    mov word ptr [ebp-4],2"
+"	      0047ba12    mov cpu_type,2"
 );
 // LINE 483:
 	asm( 
@@ -839,7 +839,7 @@ unsigned short check_80286() {
 );
 // LINE 486:
 	asm( 
-"	      0047ba1e    mov word ptr [ebp-4],0FFFFh"
+"	      0047ba1e    mov cpu_type,0FFFFh"
 );
 // LINE 488:
 end_80286:
@@ -852,11 +852,11 @@ end_80286:
 );
 // LINE 490:
 	asm( 
-"	      0047ba28    mov ax,[ebp-4]"
+"	      0047ba28    mov ax,cpu_type"
 );
 // LINE 494:
 	asm( 
-"	      0047ba2c    mov ax,[ebp-4]"
+"	      0047ba2c    mov ax,cpu_type"
 "	      0047ba30    jmp near ptr 0047BA35h"
 );
 // LINE 496:
@@ -884,7 +884,7 @@ unsigned short check_80386() {
 );
 // LINE 513:
 	asm( 
-"	      0047ba43    mov word ptr [ebp-4],0FFFFh"
+"	      0047ba43    mov cpu_type,0FFFFh"
 );
 // LINE 516:
 	asm( 
@@ -932,7 +932,7 @@ unsigned short check_80386() {
 );
 // LINE 533:
 	asm( 
-"	      0047ba5f    mov word ptr [ebp-4],3"
+"	      0047ba5f    mov cpu_type,3"
 );
 // LINE 534:
 	asm( 
@@ -940,7 +940,7 @@ unsigned short check_80386() {
 );
 // LINE 535:
 	asm( 
-"	      0047ba6b    mov word ptr [ebp-4],0FFFFh"
+"	      0047ba6b    mov cpu_type,0FFFFh"
 );
 // LINE 537:
 end_80386:
@@ -957,7 +957,7 @@ end_80386:
 );
 // LINE 540:
 	asm( 
-"	      0047ba76    mov ax,[ebp-4]"
+"	      0047ba76    mov ax,cpu_type"
 );
 // LINE 541:
 	asm( 
@@ -965,7 +965,7 @@ end_80386:
 );
 // LINE 544:
 	asm( 
-"	      0047ba7f    mov ax,[ebp-4]"
+"	      0047ba7f    mov ax,cpu_type"
 "	      0047ba83    jmp near ptr 0047BA88h"
 );
 // LINE 546:
@@ -998,24 +998,24 @@ unsigned short check_IDProc() {
 );
 // LINE 563:
 	asm( 
-"	      0047ba96    mov dword ptr [ebp-18h],0"
+"	      0047ba96    mov i,0"
 );
 // LINE 564:
 	asm( 
-"	      0047ba9d    mov word ptr [ebp-8],0FFFFh"
+"	      0047ba9d    mov cpu_type,0FFFFh"
 );
 // LINE 565:
 	asm( 
-"	      0047baa3    mov byte ptr [ebp-1Ch],0"
+"	      0047baa3    mov stepping,0"
 );
 // LINE 566:
 	asm( 
-"	      0047baa7    mov byte ptr [ebp-4],0"
+"	      0047baa7    mov model,0"
 );
 // LINE 567:
 	asm( 
 "	      0047baab    mov eax,599A10h"
-"	      0047bab0    lea ecx,[ebp-14h]"
+"	      0047bab0    lea ecx,vendor_id[0]"
 "	      0047bab3    mov edx,[eax]"
 "	      0047bab5    mov [ecx],edx"
 "	      0047bab7    mov edx,[eax+4]"
@@ -1026,7 +1026,7 @@ unsigned short check_IDProc() {
 // LINE 568:
 	asm( 
 "	      0047bac3    mov eax,599A20h"
-"	      0047bac8    lea ecx,[ebp-28h]"
+"	      0047bac8    lea ecx,intel_id[0]"
 "	      0047bacb    mov edx,[eax]"
 "	      0047bacd    mov [ecx],edx"
 "	      0047bacf    mov edx,[eax+4]"
@@ -1056,18 +1056,18 @@ unsigned short check_IDProc() {
 );
 // LINE 581:
 	asm( 
-"	      0047bae8    mov dword ptr [ebp-18h],0"
+"	      0047bae8    mov i,0"
 "	      0047baef    jmp near ptr 0047BAF7h"
-"	      0047baf4    inc dword ptr [ebp-18h]"
-"	      0047baf7    cmp dword ptr [ebp-18h],0Ch"
+"	      0047baf4    inc i"
+"	      0047baf7    cmp i,0Ch"
 "	      0047bafb    jge near ptr 0047BB2Ah"
 );
 // LINE 583:
 	asm( 
-"	      0047bb01    mov eax,[ebp-18h]"
+"	      0047bb01    mov eax,i"
 "	      0047bb04    xor ecx,ecx"
 "	      0047bb06    mov cl,[ebp+eax-28h]"
-"	      0047bb0a    mov eax,[ebp-18h]"
+"	      0047bb0a    mov eax,i"
 "	      0047bb0d    xor edx,edx"
 "	      0047bb0f    mov dl,[ebp+eax-14h]"
 "	      0047bb13    cmp ecx,edx"
@@ -1103,11 +1103,11 @@ unsigned short check_IDProc() {
 );
 // LINE 598:
 	asm( 
-"	      0047bb38    mov [ebp-1Ch],al"
+"	      0047bb38    mov stepping,al"
 );
 // LINE 599:
 	asm( 
-"	      0047bb3b    and byte ptr [ebp-1Ch],0Fh"
+"	      0047bb3b    and stepping,0Fh"
 );
 // LINE 601:
 	asm( 
@@ -1119,7 +1119,7 @@ unsigned short check_IDProc() {
 );
 // LINE 603:
 	asm( 
-"	      0047bb44    mov [ebp-4],al"
+"	      0047bb44    mov model,al"
 );
 // LINE 605:
 	asm( 
@@ -1135,16 +1135,16 @@ unsigned short check_IDProc() {
 );
 // LINE 608:
 	asm( 
-"	      0047bb52    mov [ebp-8],ax"
+"	      0047bb52    mov cpu_type,ax"
 );
 // LINE 611:
 end_IDProc:
 	asm( 
-"	      0047bb56    mov ax,[ebp-8]"
+"	      0047bb56    mov ax,cpu_type"
 );
 // LINE 614:
 	asm( 
-"	      0047bb5a    mov ax,[ebp-8]"
+"	      0047bb5a    mov ax,cpu_type"
 "	      0047bb5e    jmp near ptr 0047BB63h"
 );
 // LINE 616:

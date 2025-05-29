@@ -17,15 +17,15 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 "	      004a03a6    push ebx"
 "	      004a03a7    push esi"
 "	      004a03a8    push edi"
-"	      004a03a9    mov [ebp-10h],ecx"
+"	      004a03a9    mov this,ecx"
 );
 // LINE 37:
 	asm( 
-"	      004a03ac    mov dword ptr [ebp-4],0F0h"
+"	      004a03ac    mov shareFlags,0F0h"
 );
 // LINE 39:
 	asm( 
-"	      004a03b3    mov eax,[ebp-10h]"
+"	      004a03b3    mov eax,this"
 "	      004a03b6    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a03bd    jle near ptr 004A03C8h"
 "	      004a03c3    jmp near ptr 004A03CDh"
@@ -41,21 +41,21 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 );
 // LINE 43:
 	asm( 
-"	      004a03e6    cmp dword ptr [ebp+8],0"
+"	      004a03e6    cmp name,0"
 "	      004a03ea    je near ptr 004A041Dh"
 );
 // LINE 44:
 	asm( 
-"	      004a03f0    mov eax,[ebp+8]"
+"	      004a03f0    mov eax,name"
 "	      004a03f3    movsx eax,byte ptr [eax]"
 "	      004a03f6    test eax,eax"
 "	      004a03f8    je near ptr 004A0416h"
 );
 // LINE 45:
 	asm( 
-"	      004a03fe    mov eax,[ebp+8]"
+"	      004a03fe    mov eax,name"
 "	      004a0401    push eax"
-"	      004a0402    mov eax,[ebp-10h]"
+"	      004a0402    mov eax,this"
 "	      004a0405    add eax,4"
 "	      004a0408    push eax"
 "	      004a0409    call 0056CEB0h"
@@ -72,7 +72,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 );
 // LINE 49:
 	asm( 
-"	      004a041d    mov eax,[ebp-10h]"
+"	      004a041d    mov eax,this"
 "	      004a0420    movsx eax,byte ptr [eax+4]"
 "	      004a0424    test eax,eax"
 "	      004a0426    jne near ptr 004A0433h"
@@ -84,17 +84,17 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 );
 // LINE 53:
 	asm( 
-"	      004a0433    mov eax,[ebp-10h]"
+"	      004a0433    mov eax,this"
 "	      004a0436    add eax,4"
 "	      004a0439    push eax"
-"	      004a043a    mov ecx,[ebp-10h]"
+"	      004a043a    mov ecx,this"
 "	      004a043d    call 004A06E6h"
 "	      004a0442    test eax,eax"
 "	      004a0444    jne near ptr 004A047Dh"
 );
 // LINE 54:
 	asm( 
-"	      004a044a    cmp dword ptr [ebp+14h],0"
+"	      004a044a    cmp bCreateIfNotFound,0"
 "	      004a044e    je near ptr 004A0471h"
 );
 // LINE 55:
@@ -102,10 +102,10 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 "	      004a0454    mov eax,[ebp+0Ch]"
 "	      004a0457    and eax,0FFFFh"
 "	      004a045c    push eax"
-"	      004a045d    mov eax,[ebp-10h]"
+"	      004a045d    mov eax,this"
 "	      004a0460    add eax,4"
 "	      004a0463    push eax"
-"	      004a0464    mov ecx,[ebp-10h]"
+"	      004a0464    mov ecx,this"
 "	      004a0467    call 004A05F3h"
 );
 // LINE 56:
@@ -131,7 +131,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 "	      004a0487    mov eax,[ebp+0Ch]"
 "	      004a048a    and eax,0FFFFh"
 "	      004a048f    or eax,40h"
-"	      004a0492    mov [ebp+0Ch],ax"
+"	      004a0492    mov access,ax"
 );
 // LINE 64:
 	asm( 
@@ -141,17 +141,17 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 "	      004a049f    mov eax,[ebp+0Ch]"
 "	      004a04a2    and eax,0FE0Fh"
 "	      004a04a7    push eax"
-"	      004a04a8    mov eax,[ebp-10h]"
+"	      004a04a8    mov eax,this"
 "	      004a04ab    add eax,4"
 "	      004a04ae    push eax"
 "	      004a04af    call 00586690h"
 "	      004a04b4    add esp,0Ch"
-"	      004a04b7    mov ecx,[ebp-10h]"
+"	      004a04b7    mov ecx,this"
 "	      004a04ba    mov [ecx+108h],eax"
 );
 // LINE 66:
 	asm( 
-"	      004a04c0    mov eax,[ebp-10h]"
+"	      004a04c0    mov eax,this"
 "	      004a04c3    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a04ca    jle near ptr 004A04DAh"
 "	      004a04d0    mov eax,1"
@@ -181,11 +181,11 @@ int32_t PFile::Close() {
 "	      004a04f6    push ebx"
 "	      004a04f7    push esi"
 "	      004a04f8    push edi"
-"	      004a04f9    mov [ebp-8],ecx"
+"	      004a04f9    mov this,ecx"
 );
 // LINE 76:
 	asm( 
-"	      004a04fc    mov eax,[ebp-8]"
+"	      004a04fc    mov eax,this"
 "	      004a04ff    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a0506    jle near ptr 004A0511h"
 "	      004a050c    jmp near ptr 004A0516h"
@@ -196,7 +196,7 @@ int32_t PFile::Close() {
 );
 // LINE 77:
 	asm( 
-"	      004a0525    mov eax,[ebp-8]"
+"	      004a0525    mov eax,this"
 "	      004a0528    mov eax,[eax+108h]"
 "	      004a052e    push eax"
 "	      004a052f    call 00578E50h"
@@ -206,7 +206,7 @@ int32_t PFile::Close() {
 );
 // LINE 78:
 	asm( 
-"	      004a053f    mov eax,[ebp-8]"
+"	      004a053f    mov eax,this"
 "	      004a0542    mov dword ptr [eax+108h],0FFFFFFFFh"
 );
 // LINE 79:
@@ -241,11 +241,11 @@ long PFile::Length() {
 "	      004a0568    push ebx"
 "	      004a0569    push esi"
 "	      004a056a    push edi"
-"	      004a056b    mov [ebp-0Ch],ecx"
+"	      004a056b    mov this,ecx"
 );
 // LINE 94:
 	asm( 
-"	      004a056e    mov eax,[ebp-0Ch]"
+"	      004a056e    mov eax,this"
 "	      004a0571    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a0578    jle near ptr 004A0588h"
 "	      004a057e    jmp near ptr 004A05D7h"
@@ -260,33 +260,33 @@ long PFile::Length() {
 "	      004a0599    push 180h"
 "	      004a059e    push 0"
 "	      004a05a0    push 0"
-"	      004a05a2    mov ecx,[ebp-0Ch]"
+"	      004a05a2    mov ecx,this"
 "	      004a05a5    call 004A03A0h"
 "	      004a05aa    test eax,eax"
 "	      004a05ac    je near ptr 004A05D7h"
 );
 // LINE 96:
 	asm( 
-"	      004a05b2    mov eax,[ebp-0Ch]"
+"	      004a05b2    mov eax,this"
 "	      004a05b5    mov eax,[eax+108h]"
 "	      004a05bb    push eax"
 "	      004a05bc    call 0058E450h"
 "	      004a05c1    add esp,4"
-"	      004a05c4    mov [ebp-4],eax"
+"	      004a05c4    mov lFileLength,eax"
 );
 // LINE 97:
 	asm( 
-"	      004a05c7    mov ecx,[ebp-0Ch]"
+"	      004a05c7    mov ecx,this"
 "	      004a05ca    call 004A04F0h"
 );
 // LINE 98:
 	asm( 
-"	      004a05cf    mov eax,[ebp-4]"
+"	      004a05cf    mov eax,lFileLength"
 "	      004a05d2    jmp near ptr 004A05EEh"
 );
 // LINE 101:
 	asm( 
-"	      004a05d7    mov eax,[ebp-0Ch]"
+"	      004a05d7    mov eax,this"
 "	      004a05da    mov eax,[eax+108h]"
 "	      004a05e0    push eax"
 "	      004a05e1    call 0058E450h"
@@ -313,11 +313,11 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 "	      004a05f9    push ebx"
 "	      004a05fa    push esi"
 "	      004a05fb    push edi"
-"	      004a05fc    mov [ebp-0Ch],ecx"
+"	      004a05fc    mov this,ecx"
 );
 // LINE 113:
 	asm( 
-"	      004a05ff    mov eax,[ebp-0Ch]"
+"	      004a05ff    mov eax,this"
 "	      004a0602    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a0609    jle near ptr 004A0614h"
 "	      004a060f    jmp near ptr 004A0619h"
@@ -333,21 +333,21 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 );
 // LINE 117:
 	asm( 
-"	      004a062f    cmp dword ptr [ebp+8],0"
+"	      004a062f    cmp name,0"
 "	      004a0633    je near ptr 004A0666h"
 );
 // LINE 118:
 	asm( 
-"	      004a0639    mov eax,[ebp+8]"
+"	      004a0639    mov eax,name"
 "	      004a063c    movsx eax,byte ptr [eax]"
 "	      004a063f    test eax,eax"
 "	      004a0641    je near ptr 004A065Fh"
 );
 // LINE 119:
 	asm( 
-"	      004a0647    mov eax,[ebp+8]"
+"	      004a0647    mov eax,name"
 "	      004a064a    push eax"
-"	      004a064b    mov eax,[ebp-0Ch]"
+"	      004a064b    mov eax,this"
 "	      004a064e    add eax,4"
 "	      004a0651    push eax"
 "	      004a0652    call 0056CEB0h"
@@ -364,7 +364,7 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 );
 // LINE 123:
 	asm( 
-"	      004a0666    mov eax,[ebp-0Ch]"
+"	      004a0666    mov eax,this"
 "	      004a0669    movsx eax,byte ptr [eax+4]"
 "	      004a066d    test eax,eax"
 "	      004a066f    jne near ptr 004A067Ch"
@@ -376,10 +376,10 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 );
 // LINE 125:
 	asm( 
-"	      004a067c    mov eax,[ebp-0Ch]"
+"	      004a067c    mov eax,this"
 "	      004a067f    add eax,4"
 "	      004a0682    push eax"
-"	      004a0683    mov ecx,[ebp-0Ch]"
+"	      004a0683    mov ecx,this"
 "	      004a0686    call 004A06E6h"
 "	      004a068b    test eax,eax"
 "	      004a068d    je near ptr 004A069Ah"
@@ -391,19 +391,19 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 );
 // LINE 127:
 	asm( 
-"	      004a069a    mov eax,[ebp+0Ch]"
+"	      004a069a    mov eax,nAccessMode"
 "	      004a069d    push eax"
-"	      004a069e    mov eax,[ebp-0Ch]"
+"	      004a069e    mov eax,this"
 "	      004a06a1    add eax,4"
 "	      004a06a4    push eax"
 "	      004a06a5    call 0058E540h"
 "	      004a06aa    add esp,8"
-"	      004a06ad    mov ecx,[ebp-0Ch]"
+"	      004a06ad    mov ecx,this"
 "	      004a06b0    mov [ecx+108h],eax"
 );
 // LINE 129:
 	asm( 
-"	      004a06b6    mov eax,[ebp-0Ch]"
+"	      004a06b6    mov eax,this"
 "	      004a06b9    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a06c0    jle near ptr 004A06D0h"
 "	      004a06c6    mov eax,1"
@@ -436,17 +436,17 @@ long PFile::FileExists(char * name) {
 "	      004a06ef    push ebx"
 "	      004a06f0    push esi"
 "	      004a06f1    push edi"
-"	      004a06f2    mov [ebp-90h],ecx"
+"	      004a06f2    mov this,ecx"
 );
 // LINE 142:
 	asm( 
-"	      004a06f8    cmp dword ptr [ebp+8],0"
+"	      004a06f8    cmp name,0"
 "	      004a06fc    je near ptr 004A0710h"
 );
 // LINE 143:
 	asm( 
-"	      004a0702    mov eax,[ebp+8]"
-"	      004a0705    mov [ebp-8Ch],eax"
+"	      004a0702    mov eax,name"
+"	      004a0705    mov szFilePathToUse,eax"
 );
 // LINE 144:
 	asm( 
@@ -454,16 +454,16 @@ long PFile::FileExists(char * name) {
 );
 // LINE 145:
 	asm( 
-"	      004a0710    mov eax,[ebp-90h]"
+"	      004a0710    mov eax,this"
 "	      004a0716    add eax,4"
-"	      004a0719    mov [ebp-8Ch],eax"
+"	      004a0719    mov szFilePathToUse,eax"
 );
 // LINE 148:
 	asm( 
 "	      004a071f    push 4000h"
-"	      004a0724    lea eax,[ebp-88h]"
+"	      004a0724    lea eax,ofStruct.cBytes"
 "	      004a072a    push eax"
-"	      004a072b    mov eax,[ebp-8Ch]"
+"	      004a072b    mov eax,szFilePathToUse"
 "	      004a0731    push eax"
 "	      004a0732    call dword ptr ds:[6C3638h]"
 "	      004a0738    cmp eax,0FFFFFFFFh"
@@ -493,11 +493,11 @@ long PFile::SetPath(char * szPath) {
 "	      004a075f    push ebx"
 "	      004a0760    push esi"
 "	      004a0761    push edi"
-"	      004a0762    mov [ebp-8],ecx"
+"	      004a0762    mov this,ecx"
 );
 // LINE 162:
 	asm( 
-"	      004a0765    mov eax,[ebp-8]"
+"	      004a0765    mov eax,this"
 "	      004a0768    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004a076f    jle near ptr 004A077Ah"
 "	      004a0775    jmp near ptr 004A077Fh"
@@ -513,9 +513,9 @@ long PFile::SetPath(char * szPath) {
 );
 // LINE 164:
 	asm( 
-"	      004a0795    mov eax,[ebp+8]"
+"	      004a0795    mov eax,szPath"
 "	      004a0798    push eax"
-"	      004a0799    mov eax,[ebp-8]"
+"	      004a0799    mov eax,this"
 "	      004a079c    add eax,4"
 "	      004a079f    push eax"
 "	      004a07a0    call 0056CEB0h"
@@ -559,28 +559,28 @@ unsigned long PFile::Checksum(char * name) {
 );
 // LINE 174:
 	asm( 
-"	      004a07c5    mov dword ptr [ebp-14h],0"
+"	      004a07c5    mov lCurrentValue,0"
 );
 // LINE 180:
 	asm( 
-"	      004a07cc    mov dword ptr [ebp-18h],7D00h"
+"	      004a07cc    mov lBlockSize,7D00h"
 );
 // LINE 182:
 	asm( 
-"	      004a07d3    mov dword ptr [ebp-20h],0FFFFFFFFh"
-"	      004a07da    mov dword ptr [ebp-1Ch],1"
-"	      004a07e1    mov dword ptr [ebp-128h],590468h"
+"	      004a07d3    mov tempPFile.Handle,0FFFFFFFFh"
+"	      004a07da    mov tempPFile.ShouldClose,1"
+"	      004a07e1    mov tempPFile.<vftable>,590468h"
 "	      004a07eb    mov dword ptr ds:[5C0920h],8000h"
-"	      004a07f5    cmp dword ptr [ebp+8],0"
+"	      004a07f5    cmp name,0"
 "	      004a07f9    je near ptr 004A0817h"
-"	      004a07ff    mov eax,[ebp+8]"
+"	      004a07ff    mov eax,name"
 "	      004a0802    push eax"
-"	      004a0803    lea eax,[ebp-124h]"
+"	      004a0803    lea eax,tempPFile.szFilePath[0]"
 "	      004a0809    push eax"
 "	      004a080a    call 0056CEB0h"
 "	      004a080f    add esp,8"
 "	      004a0812    jmp near ptr 004A081Eh"
-"	      004a0817    mov byte ptr [ebp-124h],0"
+"	      004a0817    mov tempPFile.szFilePath[0],0"
 "	      004a081e    jmp near ptr 004A0823h"
 );
 // LINE 183:
@@ -589,91 +589,91 @@ unsigned long PFile::Checksum(char * name) {
 "	      004a0825    push 100h"
 "	      004a082a    push 0"
 "	      004a082c    push 0"
-"	      004a082e    lea ecx,[ebp-128h]"
+"	      004a082e    lea ecx,tempPFile.<vftable>"
 "	      004a0834    call 004A03A0h"
 "	      004a0839    test eax,eax"
 "	      004a083b    je near ptr 004A0993h"
 );
 // LINE 184:
 	asm( 
-"	      004a0841    lea ecx,[ebp-128h]"
+"	      004a0841    lea ecx,tempPFile.<vftable>"
 "	      004a0847    call 004A0562h"
-"	      004a084c    mov [ebp-10h],eax"
+"	      004a084c    mov lFileLength,eax"
 );
 // LINE 186:
 	asm( 
 "	      004a084f    push 7D00h"
 "	      004a0854    call 0056A600h"
 "	      004a0859    add esp,4"
-"	      004a085c    mov [ebp-0Ch],eax"
+"	      004a085c    mov chBuffer,eax"
 );
 // LINE 187:
 	asm( 
-"	      004a085f    cmp dword ptr [ebp-0Ch],0"
+"	      004a085f    cmp chBuffer,0"
 "	      004a0863    je near ptr 004A0934h"
 );
 // LINE 189:
 	asm( 
-"	      004a0869    mov dword ptr [ebp-14h],0"
+"	      004a0869    mov lCurrentValue,0"
 );
 // LINE 191:
 	asm( 
-"	      004a0870    mov dword ptr [ebp-8],0"
+"	      004a0870    mov lCurrentBlockStartPosition,0"
 );
 // LINE 193:
 	asm( 
 "	      004a0877    jmp near ptr 004A0883h"
-"	      004a087c    add dword ptr [ebp-8],7D00h"
-"	      004a0883    mov eax,[ebp-10h]"
-"	      004a0886    cmp [ebp-8],eax"
+"	      004a087c    add lCurrentBlockStartPosition,7D00h"
+"	      004a0883    mov eax,lFileLength"
+"	      004a0886    cmp lCurrentBlockStartPosition,eax"
 "	      004a0889    jge near ptr 004A090Bh"
 );
 // LINE 195:
 	asm( 
-"	      004a088f    mov dword ptr [ebp-4],7D00h"
+"	      004a088f    mov lUsedBlockSize,7D00h"
 );
 // LINE 196:
 	asm( 
-"	      004a0896    mov eax,[ebp-8]"
+"	      004a0896    mov eax,lCurrentBlockStartPosition"
 "	      004a0899    add eax,7D00h"
-"	      004a089e    cmp eax,[ebp-10h]"
+"	      004a089e    cmp eax,lFileLength"
 "	      004a08a1    jle near ptr 004A08B0h"
 );
 // LINE 197:
 	asm( 
-"	      004a08a7    mov eax,[ebp-10h]"
-"	      004a08aa    sub eax,[ebp-8]"
-"	      004a08ad    mov [ebp-4],eax"
+"	      004a08a7    mov eax,lFileLength"
+"	      004a08aa    sub eax,lCurrentBlockStartPosition"
+"	      004a08ad    mov lUsedBlockSize,eax"
 );
 // LINE 198:
 	asm( 
 "	      004a08b0    jmp near ptr 004A08B5h"
-"	      004a08b5    mov eax,[ebp-4]"
+"	      004a08b5    mov eax,lUsedBlockSize"
 "	      004a08b8    push eax"
-"	      004a08b9    mov eax,[ebp-0Ch]"
+"	      004a08b9    mov eax,chBuffer"
 "	      004a08bc    push eax"
-"	      004a08bd    mov eax,[ebp-20h]"
+"	      004a08bd    mov eax,tempPFile.Handle"
 "	      004a08c0    push eax"
 "	      004a08c1    call 00580B50h"
 "	      004a08c6    add esp,0Ch"
-"	      004a08c9    mov [ebp-4],eax"
+"	      004a08c9    mov lUsedBlockSize,eax"
 );
 // LINE 199:
 	asm( 
-"	      004a08cc    mov dword ptr [ebp-12Ch],0"
+"	      004a08cc    mov lIndex,0"
 "	      004a08d6    jmp near ptr 004A08E1h"
-"	      004a08db    inc dword ptr [ebp-12Ch]"
-"	      004a08e1    mov eax,[ebp-12Ch]"
-"	      004a08e7    cmp [ebp-4],eax"
+"	      004a08db    inc lIndex"
+"	      004a08e1    mov eax,lIndex"
+"	      004a08e7    cmp lUsedBlockSize,eax"
 "	      004a08ea    jle near ptr 004A0906h"
 );
 // LINE 200:
 	asm( 
-"	      004a08f0    mov eax,[ebp-0Ch]"
-"	      004a08f3    mov ecx,[ebp-12Ch]"
+"	      004a08f0    mov eax,chBuffer"
+"	      004a08f3    mov ecx,lIndex"
 "	      004a08f9    xor edx,edx"
 "	      004a08fb    mov dl,[eax+ecx]"
-"	      004a08fe    add [ebp-14h],edx"
+"	      004a08fe    add lCurrentValue,edx"
 "	      004a0901    jmp near ptr 004A08DBh"
 );
 // LINE 201:
@@ -682,7 +682,7 @@ unsigned long PFile::Checksum(char * name) {
 );
 // LINE 202:
 	asm( 
-"	      004a090b    mov eax,[ebp-0Ch]"
+"	      004a090b    mov eax,chBuffer"
 "	      004a090e    mov [ebp-134h],eax"
 "	      004a0914    mov eax,[ebp-134h]"
 "	      004a091a    mov [ebp-13Ch],eax"
@@ -697,21 +697,21 @@ unsigned long PFile::Checksum(char * name) {
 );
 // LINE 206:
 	asm( 
-"	      004a0934    mov dword ptr [ebp-14h],0"
-"	      004a093b    mov eax,[ebp-14h]"
-"	      004a093e    mov [ebp-12Ch],eax"
+"	      004a0934    mov lCurrentValue,0"
+"	      004a093b    mov eax,lCurrentValue"
+"	      004a093e    mov lIndex,eax"
 "	      004a0944    jmp near ptr 004A094Fh"
-"	      004a0949    inc dword ptr [ebp-12Ch]"
-"	      004a094f    mov eax,[ebp-12Ch]"
-"	      004a0955    cmp [ebp-10h],eax"
+"	      004a0949    inc lIndex"
+"	      004a094f    mov eax,lIndex"
+"	      004a0955    cmp lFileLength,eax"
 "	      004a0958    jle near ptr 004A0988h"
 );
 // LINE 207:
 	asm( 
 "	      004a095e    push 1"
-"	      004a0960    lea eax,[ebp-130h]"
+"	      004a0960    lea eax,chValue"
 "	      004a0966    push eax"
-"	      004a0967    mov eax,[ebp-20h]"
+"	      004a0967    mov eax,tempPFile.Handle"
 "	      004a096a    push eax"
 "	      004a096b    call 00580B50h"
 "	      004a0970    add esp,0Ch"
@@ -720,8 +720,8 @@ unsigned long PFile::Checksum(char * name) {
 // LINE 208:
 	asm( 
 "	      004a0978    xor eax,eax"
-"	      004a097a    mov al,[ebp-130h]"
-"	      004a0980    add [ebp-14h],eax"
+"	      004a097a    mov al,chValue"
+"	      004a0980    add lCurrentValue,eax"
 );
 // LINE 209:
 	asm( 
@@ -729,24 +729,24 @@ unsigned long PFile::Checksum(char * name) {
 );
 // LINE 211:
 	asm( 
-"	      004a0988    lea ecx,[ebp-128h]"
+"	      004a0988    lea ecx,tempPFile.<vftable>"
 "	      004a098e    call 004A04F0h"
 );
 // LINE 213:
 	asm( 
-"	      004a0993    mov eax,[ebp-14h]"
+"	      004a0993    mov eax,lCurrentValue"
 "	      004a0996    mov [ebp-138h],eax"
-"	      004a099c    mov dword ptr [ebp-128h],590468h"
-"	      004a09a6    cmp dword ptr [ebp-20h],0FFFFFFFFh"
+"	      004a099c    mov tempPFile.<vftable>,590468h"
+"	      004a09a6    cmp tempPFile.Handle,0FFFFFFFFh"
 "	      004a09aa    jle near ptr 004A09B5h"
 "	      004a09b0    jmp near ptr 004A09BAh"
 "	      004a09b5    jmp near ptr 004A09E2h"
 "	      004a09ba    jmp near ptr 004A09CCh"
 "	      004a09bf    cmp dword ptr [ebp-140h],0"
 "	      004a09c6    je near ptr 004A09E2h"
-"	      004a09cc    cmp dword ptr [ebp-1Ch],0"
+"	      004a09cc    cmp tempPFile.ShouldClose,0"
 "	      004a09d0    je near ptr 004A09E2h"
-"	      004a09d6    mov eax,[ebp-20h]"
+"	      004a09d6    mov eax,tempPFile.Handle"
 "	      004a09d9    push eax"
 "	      004a09da    call 00578E50h"
 "	      004a09df    add esp,4"

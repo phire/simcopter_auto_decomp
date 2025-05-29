@@ -9,19 +9,19 @@ void execute(char * data) {
 "	      004256d6    push ebx"
 "	      004256d7    push esi"
 "	      004256d8    push edi"
-"	      004256d9    mov [ebp-4],ecx"
+"	      004256d9    mov this,ecx"
 );
 // LINE 45:
 	asm( 
-"	      004256dc    mov eax,[ebp-4]"
+"	      004256dc    mov eax,this"
 "	      004256df    cmp dword ptr [eax+14h],0"
 "	      004256e3    je near ptr 004256F8h"
 );
 // LINE 46:
 	asm( 
-"	      004256e9    mov eax,[ebp+8]"
+"	      004256e9    mov eax,data"
 "	      004256ec    push eax"
-"	      004256ed    mov eax,[ebp-4]"
+"	      004256ed    mov eax,this"
 "	      004256f0    mov ecx,[eax+14h]"
 "	      004256f3    call 00422280h"
 );

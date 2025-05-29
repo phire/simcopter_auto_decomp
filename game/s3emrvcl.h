@@ -9,7 +9,7 @@ void EmergencyVehicleClass::BeamToWithinCameraRange() {
 "	      005360a6    push ebx"
 "	      005360a7    push esi"
 "	      005360a8    push edi"
-"	      005360a9    mov [ebp-4],ecx"
+"	      005360a9    mov this,ecx"
 "	      005360ac    jmp near ptr 005360B1h"
 "	      005360b1    pop edi"
 "	      005360b2    pop esi"

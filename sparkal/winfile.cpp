@@ -22,29 +22,29 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 );
 // LINE 34:
 	asm( 
-"	      0048fed9    mov dword ptr [ebp-8],0"
+"	      0048fed9    mov i,0"
 );
 // LINE 36:
 	asm( 
-"	      0048fee0    mov ecx,[ebp+8]"
+"	      0048fee0    mov ecx,sFilter"
 "	      0048fee3    call 00417AE0h"
-"	      0048fee8    mov [ebp-4],eax"
+"	      0048fee8    mov szString,eax"
 );
 // LINE 38:
 	asm( 
 "	      0048feeb    jmp near ptr 0048FEF0h"
-"	      0048fef0    mov eax,[ebp+8]"
+"	      0048fef0    mov eax,sFilter"
 "	      0048fef3    mov eax,[eax+4]"
-"	      0048fef6    mov ecx,[ebp-8]"
+"	      0048fef6    mov ecx,i"
 "	      0048fef9    cmp [eax+4],ecx"
 "	      0048fefc    jle near ptr 0049042Fh"
 );
 // LINE 39:
 	asm( 
 "	      0048ff02    jmp near ptr 0048FF07h"
-"	      0048ff07    mov eax,[ebp+8]"
+"	      0048ff07    mov eax,sFilter"
 "	      0048ff0a    mov eax,[eax+4]"
-"	      0048ff0d    mov ecx,[ebp-8]"
+"	      0048ff0d    mov ecx,i"
 "	      0048ff10    cmp [eax+4],ecx"
 "	      0048ff13    ja near ptr 0048FF4Bh"
 "	      0048ff19    push 59722Ch"
@@ -61,7 +61,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      0048ff43    add esp,4"
 "	      0048ff46    jmp near ptr 0048FF4Bh"
 "	      0048ff4b    jmp near ptr 0048FF50h"
-"	      0048ff50    mov eax,[ebp+8]"
+"	      0048ff50    mov eax,sFilter"
 "	      0048ff53    mov eax,[eax+4]"
 "	      0048ff56    cmp dword ptr [eax+0Ch],1"
 "	      0048ff5a    jbe near ptr 00490035h"
@@ -74,11 +74,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      0048ff77    jmp near ptr 0048FF7Ch"
 "	      0048ff7c    jmp near ptr 0048FF81h"
 "	      0048ff81    jmp near ptr 0048FF86h"
-"	      0048ff86    mov eax,[ebp+8]"
+"	      0048ff86    mov eax,sFilter"
 "	      0048ff89    mov eax,[eax+4]"
 "	      0048ff8c    cmp dword ptr [eax+4],0"
 "	      0048ff90    je near ptr 0048FFABh"
-"	      0048ff96    mov eax,[ebp+8]"
+"	      0048ff96    mov eax,sFilter"
 "	      0048ff99    mov eax,[eax+4]"
 "	      0048ff9c    mov eax,[eax]"
 "	      0048ff9e    mov [ebp-20h],eax"
@@ -86,11 +86,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      0048ffa6    jmp near ptr 0048FFB7h"
 "	      0048ffab    mov dword ptr [ebp-20h],0"
 "	      0048ffb2    jmp near ptr 0048FFB7h"
-"	      0048ffb7    mov eax,[ebp+8]"
+"	      0048ffb7    mov eax,sFilter"
 "	      0048ffba    mov eax,[eax+4]"
 "	      0048ffbd    mov eax,[eax+4]"
 "	      0048ffc0    push eax"
-"	      0048ffc1    mov eax,[ebp+8]"
+"	      0048ffc1    mov eax,sFilter"
 "	      0048ffc4    mov eax,[eax+4]"
 "	      0048ffc7    mov eax,[eax+4]"
 "	      0048ffca    push eax"
@@ -101,14 +101,14 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      0048ffd7    mov [ebp-18h],eax"
 "	      0048ffda    jmp near ptr 0048FFE6h"
 "	      0048ffdf    mov dword ptr [ebp-18h],0"
-"	      0048ffe6    mov eax,[ebp+8]"
+"	      0048ffe6    mov eax,sFilter"
 "	      0048ffe9    mov eax,[eax+4]"
 "	      0048ffec    dec dword ptr [eax+0Ch]"
-"	      0048ffef    mov eax,[ebp+8]"
+"	      0048ffef    mov eax,sFilter"
 "	      0048fff2    mov eax,[eax+4]"
 "	      0048fff5    cmp dword ptr [eax+0Ch],0"
 "	      0048fff9    jne near ptr 00490027h"
-"	      0048ffff    mov eax,[ebp+8]"
+"	      0048ffff    mov eax,sFilter"
 "	      00490002    mov eax,[eax+4]"
 "	      00490005    mov [ebp-2Ch],eax"
 "	      00490008    mov eax,[ebp-2Ch]"
@@ -121,30 +121,30 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490022    jmp near ptr 00490027h"
 "	      00490027    jmp near ptr 0049002Ch"
 "	      0049002c    mov eax,[ebp-18h]"
-"	      0049002f    mov ecx,[ebp+8]"
+"	      0049002f    mov ecx,sFilter"
 "	      00490032    mov [ecx+4],eax"
 "	      00490035    jmp near ptr 0049003Ah"
 "	      0049003a    jmp near ptr 0049003Fh"
-"	      0049003f    mov eax,[ebp+8]"
+"	      0049003f    mov eax,sFilter"
 "	      00490042    mov eax,[eax+4]"
 "	      00490045    mov eax,[eax]"
-"	      00490047    mov ecx,[ebp-8]"
+"	      00490047    mov ecx,i"
 "	      0049004a    mov al,[eax+ecx]"
-"	      0049004d    mov [ebp-0Ch],al"
+"	      0049004d    mov chCurrentValue,al"
 );
 // LINE 40:
 	asm( 
-"	      00490050    movsx eax,byte ptr [ebp-0Ch]"
-"	      00490054    movsx ecx,byte ptr [ebp+0Ch]"
+"	      00490050    movsx eax,chCurrentValue"
+"	      00490054    movsx ecx,chReplacementToken"
 "	      00490058    cmp eax,ecx"
 "	      0049005a    jne near ptr 00490427h"
 );
 // LINE 41:
 	asm( 
 "	      00490060    jmp near ptr 00490065h"
-"	      00490065    mov eax,[ebp+8]"
+"	      00490065    mov eax,sFilter"
 "	      00490068    mov eax,[eax+4]"
-"	      0049006b    mov ecx,[ebp-8]"
+"	      0049006b    mov ecx,i"
 "	      0049006e    cmp [eax+4],ecx"
 "	      00490071    ja near ptr 004900A9h"
 "	      00490077    push 59722Ch"
@@ -161,7 +161,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004900a1    add esp,4"
 "	      004900a4    jmp near ptr 004900A9h"
 "	      004900a9    jmp near ptr 004900AEh"
-"	      004900ae    mov eax,[ebp+8]"
+"	      004900ae    mov eax,sFilter"
 "	      004900b1    mov eax,[eax+4]"
 "	      004900b4    cmp dword ptr [eax+0Ch],1"
 "	      004900b8    jbe near ptr 00490193h"
@@ -174,11 +174,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004900d5    jmp near ptr 004900DAh"
 "	      004900da    jmp near ptr 004900DFh"
 "	      004900df    jmp near ptr 004900E4h"
-"	      004900e4    mov eax,[ebp+8]"
+"	      004900e4    mov eax,sFilter"
 "	      004900e7    mov eax,[eax+4]"
 "	      004900ea    cmp dword ptr [eax+4],0"
 "	      004900ee    je near ptr 00490109h"
-"	      004900f4    mov eax,[ebp+8]"
+"	      004900f4    mov eax,sFilter"
 "	      004900f7    mov eax,[eax+4]"
 "	      004900fa    mov eax,[eax]"
 "	      004900fc    mov [ebp-38h],eax"
@@ -186,11 +186,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490104    jmp near ptr 00490115h"
 "	      00490109    mov dword ptr [ebp-38h],0"
 "	      00490110    jmp near ptr 00490115h"
-"	      00490115    mov eax,[ebp+8]"
+"	      00490115    mov eax,sFilter"
 "	      00490118    mov eax,[eax+4]"
 "	      0049011b    mov eax,[eax+4]"
 "	      0049011e    push eax"
-"	      0049011f    mov eax,[ebp+8]"
+"	      0049011f    mov eax,sFilter"
 "	      00490122    mov eax,[eax+4]"
 "	      00490125    mov eax,[eax+4]"
 "	      00490128    push eax"
@@ -201,14 +201,14 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490135    mov [ebp-30h],eax"
 "	      00490138    jmp near ptr 00490144h"
 "	      0049013d    mov dword ptr [ebp-30h],0"
-"	      00490144    mov eax,[ebp+8]"
+"	      00490144    mov eax,sFilter"
 "	      00490147    mov eax,[eax+4]"
 "	      0049014a    dec dword ptr [eax+0Ch]"
-"	      0049014d    mov eax,[ebp+8]"
+"	      0049014d    mov eax,sFilter"
 "	      00490150    mov eax,[eax+4]"
 "	      00490153    cmp dword ptr [eax+0Ch],0"
 "	      00490157    jne near ptr 00490185h"
-"	      0049015d    mov eax,[ebp+8]"
+"	      0049015d    mov eax,sFilter"
 "	      00490160    mov eax,[eax+4]"
 "	      00490163    mov [ebp-44h],eax"
 "	      00490166    mov eax,[ebp-44h]"
@@ -221,13 +221,13 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490180    jmp near ptr 00490185h"
 "	      00490185    jmp near ptr 0049018Ah"
 "	      0049018a    mov eax,[ebp-30h]"
-"	      0049018d    mov ecx,[ebp+8]"
+"	      0049018d    mov ecx,sFilter"
 "	      00490190    mov [ecx+4],eax"
 "	      00490193    jmp near ptr 00490198h"
-"	      00490198    mov eax,[ebp+8]"
+"	      00490198    mov eax,sFilter"
 "	      0049019b    mov eax,[eax+4]"
 "	      0049019e    mov eax,[eax]"
-"	      004901a0    add eax,[ebp-8]"
+"	      004901a0    add eax,i"
 "	      004901a3    mov [ebp-10h],eax"
 "	      004901a6    jmp near ptr 004901ABh"
 "	      004901ab    mov eax,[ebp-10h]"
@@ -236,9 +236,9 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 // LINE 42:
 	asm( 
 "	      004901b1    jmp near ptr 004901B6h"
-"	      004901b6    mov eax,[ebp+8]"
+"	      004901b6    mov eax,sFilter"
 "	      004901b9    mov eax,[eax+4]"
-"	      004901bc    mov ecx,[ebp-8]"
+"	      004901bc    mov ecx,i"
 "	      004901bf    inc ecx"
 "	      004901c0    cmp [eax+4],ecx"
 "	      004901c3    ja near ptr 004901FBh"
@@ -256,7 +256,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004901f3    add esp,4"
 "	      004901f6    jmp near ptr 004901FBh"
 "	      004901fb    jmp near ptr 00490200h"
-"	      00490200    mov eax,[ebp+8]"
+"	      00490200    mov eax,sFilter"
 "	      00490203    mov eax,[eax+4]"
 "	      00490206    cmp dword ptr [eax+0Ch],1"
 "	      0049020a    jbe near ptr 004902E5h"
@@ -269,11 +269,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490227    jmp near ptr 0049022Ch"
 "	      0049022c    jmp near ptr 00490231h"
 "	      00490231    jmp near ptr 00490236h"
-"	      00490236    mov eax,[ebp+8]"
+"	      00490236    mov eax,sFilter"
 "	      00490239    mov eax,[eax+4]"
 "	      0049023c    cmp dword ptr [eax+4],0"
 "	      00490240    je near ptr 0049025Bh"
-"	      00490246    mov eax,[ebp+8]"
+"	      00490246    mov eax,sFilter"
 "	      00490249    mov eax,[eax+4]"
 "	      0049024c    mov eax,[eax]"
 "	      0049024e    mov [ebp-50h],eax"
@@ -281,11 +281,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490256    jmp near ptr 00490267h"
 "	      0049025b    mov dword ptr [ebp-50h],0"
 "	      00490262    jmp near ptr 00490267h"
-"	      00490267    mov eax,[ebp+8]"
+"	      00490267    mov eax,sFilter"
 "	      0049026a    mov eax,[eax+4]"
 "	      0049026d    mov eax,[eax+4]"
 "	      00490270    push eax"
-"	      00490271    mov eax,[ebp+8]"
+"	      00490271    mov eax,sFilter"
 "	      00490274    mov eax,[eax+4]"
 "	      00490277    mov eax,[eax+4]"
 "	      0049027a    push eax"
@@ -296,14 +296,14 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490287    mov [ebp-48h],eax"
 "	      0049028a    jmp near ptr 00490296h"
 "	      0049028f    mov dword ptr [ebp-48h],0"
-"	      00490296    mov eax,[ebp+8]"
+"	      00490296    mov eax,sFilter"
 "	      00490299    mov eax,[eax+4]"
 "	      0049029c    dec dword ptr [eax+0Ch]"
-"	      0049029f    mov eax,[ebp+8]"
+"	      0049029f    mov eax,sFilter"
 "	      004902a2    mov eax,[eax+4]"
 "	      004902a5    cmp dword ptr [eax+0Ch],0"
 "	      004902a9    jne near ptr 004902D7h"
-"	      004902af    mov eax,[ebp+8]"
+"	      004902af    mov eax,sFilter"
 "	      004902b2    mov eax,[eax+4]"
 "	      004902b5    mov [ebp-5Ch],eax"
 "	      004902b8    mov eax,[ebp-5Ch]"
@@ -316,25 +316,25 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004902d2    jmp near ptr 004902D7h"
 "	      004902d7    jmp near ptr 004902DCh"
 "	      004902dc    mov eax,[ebp-48h]"
-"	      004902df    mov ecx,[ebp+8]"
+"	      004902df    mov ecx,sFilter"
 "	      004902e2    mov [ecx+4],eax"
 "	      004902e5    jmp near ptr 004902EAh"
 "	      004902ea    jmp near ptr 004902EFh"
-"	      004902ef    mov eax,[ebp+8]"
+"	      004902ef    mov eax,sFilter"
 "	      004902f2    mov eax,[eax+4]"
 "	      004902f5    mov eax,[eax]"
-"	      004902f7    mov ecx,[ebp-8]"
+"	      004902f7    mov ecx,i"
 "	      004902fa    movsx eax,byte ptr [eax+ecx+1]"
-"	      004902ff    movsx ecx,byte ptr [ebp+0Ch]"
+"	      004902ff    movsx ecx,chReplacementToken"
 "	      00490303    cmp eax,ecx"
 "	      00490305    jne near ptr 00490427h"
 );
 // LINE 43:
 	asm( 
 "	      0049030b    jmp near ptr 00490310h"
-"	      00490310    mov eax,[ebp+8]"
+"	      00490310    mov eax,sFilter"
 "	      00490313    mov eax,[eax+4]"
-"	      00490316    mov ecx,[ebp-8]"
+"	      00490316    mov ecx,i"
 "	      00490319    inc ecx"
 "	      0049031a    cmp [eax+4],ecx"
 "	      0049031d    ja near ptr 00490355h"
@@ -352,7 +352,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      0049034d    add esp,4"
 "	      00490350    jmp near ptr 00490355h"
 "	      00490355    jmp near ptr 0049035Ah"
-"	      0049035a    mov eax,[ebp+8]"
+"	      0049035a    mov eax,sFilter"
 "	      0049035d    mov eax,[eax+4]"
 "	      00490360    cmp dword ptr [eax+0Ch],1"
 "	      00490364    jbe near ptr 00490401h"
@@ -365,11 +365,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      00490381    jmp near ptr 00490386h"
 "	      00490386    jmp near ptr 0049038Bh"
 "	      0049038b    jmp near ptr 00490390h"
-"	      00490390    mov eax,[ebp+8]"
+"	      00490390    mov eax,sFilter"
 "	      00490393    mov eax,[eax+4]"
 "	      00490396    cmp dword ptr [eax+4],0"
 "	      0049039a    je near ptr 004903B5h"
-"	      004903a0    mov eax,[ebp+8]"
+"	      004903a0    mov eax,sFilter"
 "	      004903a3    mov eax,[eax+4]"
 "	      004903a6    mov eax,[eax]"
 "	      004903a8    mov [ebp-68h],eax"
@@ -377,11 +377,11 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004903b0    jmp near ptr 004903C1h"
 "	      004903b5    mov dword ptr [ebp-68h],0"
 "	      004903bc    jmp near ptr 004903C1h"
-"	      004903c1    mov eax,[ebp+8]"
+"	      004903c1    mov eax,sFilter"
 "	      004903c4    mov eax,[eax+4]"
 "	      004903c7    mov eax,[eax+4]"
 "	      004903ca    push eax"
-"	      004903cb    mov eax,[ebp+8]"
+"	      004903cb    mov eax,sFilter"
 "	      004903ce    mov eax,[eax+4]"
 "	      004903d1    mov eax,[eax+4]"
 "	      004903d4    push eax"
@@ -392,16 +392,16 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 "	      004903e1    mov [ebp-60h],eax"
 "	      004903e4    jmp near ptr 004903F0h"
 "	      004903e9    mov dword ptr [ebp-60h],0"
-"	      004903f0    mov ecx,[ebp+8]"
+"	      004903f0    mov ecx,sFilter"
 "	      004903f3    call 00412080h"
 "	      004903f8    mov eax,[ebp-60h]"
-"	      004903fb    mov ecx,[ebp+8]"
+"	      004903fb    mov ecx,sFilter"
 "	      004903fe    mov [ecx+4],eax"
 "	      00490401    jmp near ptr 00490406h"
-"	      00490406    mov eax,[ebp+8]"
+"	      00490406    mov eax,sFilter"
 "	      00490409    mov eax,[eax+4]"
 "	      0049040c    mov eax,[eax]"
-"	      0049040e    mov ecx,[ebp-8]"
+"	      0049040e    mov ecx,i"
 "	      00490411    inc ecx"
 "	      00490412    add eax,ecx"
 "	      00490414    mov [ebp-14h],eax"
@@ -415,7 +415,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 );
 // LINE 47:
 	asm( 
-"	      00490427    inc dword ptr [ebp-8]"
+"	      00490427    inc i"
 );
 // LINE 48:
 	asm( 
@@ -467,10 +467,10 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490482    mov dword ptr [eax+0Ch],1"
 "	      00490489    jmp near ptr 0049048Eh"
 "	      0049048e    mov eax,[ebp-20h]"
-"	      00490491    mov [ebp-4],eax"
+"	      00490491    mov sTitle.reference,eax"
 "	      00490494    jmp near ptr 004904A0h"
-"	      00490499    mov dword ptr [ebp-4],0"
-"	      004904a0    mov dword ptr [ebp-8],0"
+"	      00490499    mov sTitle.reference,0"
+"	      004904a0    mov sTitle.c_str_ptr,0"
 "	      004904a7    jmp near ptr 004904ACh"
 );
 // LINE 64:
@@ -493,10 +493,10 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004904e5    mov dword ptr [eax+0Ch],1"
 "	      004904ec    jmp near ptr 004904F1h"
 "	      004904f1    mov eax,[ebp-24h]"
-"	      004904f4    mov [ebp-0Ch],eax"
+"	      004904f4    mov sFilter.reference,eax"
 "	      004904f7    jmp near ptr 00490503h"
-"	      004904fc    mov dword ptr [ebp-0Ch],0"
-"	      00490503    mov dword ptr [ebp-10h],0"
+"	      004904fc    mov sFilter.reference,0"
+"	      00490503    mov sFilter.c_str_ptr,0"
 "	      0049050a    jmp near ptr 0049050Fh"
 );
 // LINE 66:
@@ -504,7 +504,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      0049050f    push 0FFFh"
 "	      00490514    lea eax,[ebp-106Ch]"
 "	      0049051a    push eax"
-"	      0049051b    mov eax,[ebp+0Ch]"
+"	      0049051b    mov eax,nLoadTitleStringID"
 "	      0049051e    push eax"
 "	      0049051f    mov eax,ds:[5C28C8h]"
 "	      00490524    push eax"
@@ -516,7 +516,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490543    lea eax,[ebp-106Ch]"
 "	      00490549    push eax"
 "	      0049054a    mov ecx,3E8h"
-"	      0049054f    mov eax,[ebp+0Ch]"
+"	      0049054f    mov eax,nLoadTitleStringID"
 "	      00490552    sub edx,edx"
 "	      00490554    div ecx"
 "	      00490556    push edx"
@@ -532,7 +532,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      0049057d    push eax"
 "	      0049057e    lea eax,[ebp-106Ch]"
 "	      00490584    push eax"
-"	      00490585    lea ecx,[ebp-8]"
+"	      00490585    lea ecx,sTitle.c_str_ptr"
 "	      00490588    call 0040FEE0h"
 "	      0049058d    jmp near ptr 00490592h"
 "	      00490592    jmp near ptr 00490597h"
@@ -541,7 +541,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004905a1    add esp,4"
 "	      004905a4    push eax"
 "	      004905a5    push 597200h"
-"	      004905aa    lea ecx,[ebp-8]"
+"	      004905aa    lea ecx,sTitle.c_str_ptr"
 "	      004905ad    call 00410130h"
 "	      004905b2    jmp near ptr 004905B7h"
 "	      004905b7    cmp dword ptr [ebp-1070h],0"
@@ -555,7 +555,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004905dd    push eax"
 "	      004905de    lea eax,[ebp-106Ch]"
 "	      004905e4    push eax"
-"	      004905e5    lea ecx,[ebp-8]"
+"	      004905e5    lea ecx,sTitle.c_str_ptr"
 "	      004905e8    call 0040FEE0h"
 "	      004905ed    jmp near ptr 004905F2h"
 "	      004905f2    cmp dword ptr [ebp-1070h],0"
@@ -567,12 +567,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 67:
 	asm( 
 "	      00490611    mov dword ptr [ebp-14h],80000000h"
-"	      00490618    mov eax,[ebp-0Ch]"
+"	      00490618    mov eax,sFilter.reference"
 "	      0049061b    dec dword ptr [eax+0Ch]"
-"	      0049061e    mov eax,[ebp-0Ch]"
+"	      0049061e    mov eax,sFilter.reference"
 "	      00490621    cmp dword ptr [eax+0Ch],0"
 "	      00490625    jne near ptr 00490650h"
-"	      0049062b    mov eax,[ebp-0Ch]"
+"	      0049062b    mov eax,sFilter.reference"
 "	      0049062e    mov [ebp-34h],eax"
 "	      00490631    mov eax,[ebp-34h]"
 "	      00490634    mov [ebp-30h],eax"
@@ -583,9 +583,9 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490646    call 0041DD70h"
 "	      0049064b    jmp near ptr 00490650h"
 "	      00490650    jmp near ptr 00490655h"
-"	      00490655    cmp dword ptr [ebp-10h],0"
+"	      00490655    cmp sFilter.c_str_ptr,0"
 "	      00490659    je near ptr 00490677h"
-"	      0049065f    mov eax,[ebp-10h]"
+"	      0049065f    mov eax,sFilter.c_str_ptr"
 "	      00490662    mov [ebp-28h],eax"
 "	      00490665    mov eax,[ebp-28h]"
 "	      00490668    mov [ebp-2Ch],eax"
@@ -594,12 +594,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      0049066f    call 0056A740h"
 "	      00490674    add esp,4"
 "	      00490677    jmp near ptr 0049067Ch"
-"	      0049067c    mov eax,[ebp-4]"
+"	      0049067c    mov eax,sTitle.reference"
 "	      0049067f    dec dword ptr [eax+0Ch]"
-"	      00490682    mov eax,[ebp-4]"
+"	      00490682    mov eax,sTitle.reference"
 "	      00490685    cmp dword ptr [eax+0Ch],0"
 "	      00490689    jne near ptr 004906B4h"
-"	      0049068f    mov eax,[ebp-4]"
+"	      0049068f    mov eax,sTitle.reference"
 "	      00490692    mov [ebp-44h],eax"
 "	      00490695    mov eax,[ebp-44h]"
 "	      00490698    mov [ebp-40h],eax"
@@ -610,9 +610,9 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004906aa    call 0041DD70h"
 "	      004906af    jmp near ptr 004906B4h"
 "	      004906b4    jmp near ptr 004906B9h"
-"	      004906b9    cmp dword ptr [ebp-8],0"
+"	      004906b9    cmp sTitle.c_str_ptr,0"
 "	      004906bd    je near ptr 004906DBh"
-"	      004906c3    mov eax,[ebp-8]"
+"	      004906c3    mov eax,sTitle.c_str_ptr"
 "	      004906c6    mov [ebp-38h],eax"
 "	      004906c9    mov eax,[ebp-38h]"
 "	      004906cc    mov [ebp-3Ch],eax"
@@ -629,7 +629,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004906e8    push 0FFFh"
 "	      004906ed    lea eax,[ebp-2074h]"
 "	      004906f3    push eax"
-"	      004906f4    mov eax,[ebp+10h]"
+"	      004906f4    mov eax,nFileFilterStringID"
 "	      004906f7    push eax"
 "	      004906f8    mov eax,ds:[5C28C8h]"
 "	      004906fd    push eax"
@@ -641,7 +641,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      0049071c    lea eax,[ebp-2074h]"
 "	      00490722    push eax"
 "	      00490723    mov ecx,3E8h"
-"	      00490728    mov eax,[ebp+10h]"
+"	      00490728    mov eax,nFileFilterStringID"
 "	      0049072b    sub edx,edx"
 "	      0049072d    div ecx"
 "	      0049072f    push edx"
@@ -657,7 +657,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490756    push eax"
 "	      00490757    lea eax,[ebp-2074h]"
 "	      0049075d    push eax"
-"	      0049075e    lea ecx,[ebp-10h]"
+"	      0049075e    lea ecx,sFilter.c_str_ptr"
 "	      00490761    call 0040FEE0h"
 "	      00490766    jmp near ptr 0049076Bh"
 "	      0049076b    jmp near ptr 00490770h"
@@ -666,7 +666,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      0049077a    add esp,4"
 "	      0049077d    push eax"
 "	      0049077e    push 597200h"
-"	      00490783    lea ecx,[ebp-10h]"
+"	      00490783    lea ecx,sFilter.c_str_ptr"
 "	      00490786    call 00410130h"
 "	      0049078b    jmp near ptr 00490790h"
 "	      00490790    cmp dword ptr [ebp-2078h],0"
@@ -680,7 +680,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004907b6    push eax"
 "	      004907b7    lea eax,[ebp-2074h]"
 "	      004907bd    push eax"
-"	      004907be    lea ecx,[ebp-10h]"
+"	      004907be    lea ecx,sFilter.c_str_ptr"
 "	      004907c1    call 0040FEE0h"
 "	      004907c6    jmp near ptr 004907CBh"
 "	      004907cb    cmp dword ptr [ebp-2078h],0"
@@ -692,11 +692,11 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 69:
 	asm( 
 "	      004907ea    mov dword ptr [ebp-18h],80000000h"
-"	      004907f1    lea ecx,[ebp-10h]"
+"	      004907f1    lea ecx,sFilter.c_str_ptr"
 "	      004907f4    call 00412080h"
-"	      004907f9    cmp dword ptr [ebp-10h],0"
+"	      004907f9    cmp sFilter.c_str_ptr,0"
 "	      004907fd    je near ptr 0049081Bh"
-"	      00490803    mov eax,[ebp-10h]"
+"	      00490803    mov eax,sFilter.c_str_ptr"
 "	      00490806    mov [ebp-48h],eax"
 "	      00490809    mov eax,[ebp-48h]"
 "	      0049080c    mov [ebp-4Ch],eax"
@@ -705,11 +705,11 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490813    call 0056A740h"
 "	      00490818    add esp,4"
 "	      0049081b    jmp near ptr 00490820h"
-"	      00490820    lea ecx,[ebp-8]"
+"	      00490820    lea ecx,sTitle.c_str_ptr"
 "	      00490823    call 00412080h"
-"	      00490828    cmp dword ptr [ebp-8],0"
+"	      00490828    cmp sTitle.c_str_ptr,0"
 "	      0049082c    je near ptr 0049084Ah"
-"	      00490832    mov eax,[ebp-8]"
+"	      00490832    mov eax,sTitle.c_str_ptr"
 "	      00490835    mov [ebp-50h],eax"
 "	      00490838    mov eax,[ebp-50h]"
 "	      0049083b    mov [ebp-54h],eax"
@@ -724,32 +724,32 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 70:
 	asm( 
 "	      00490857    push 3Fh"
-"	      00490859    lea eax,[ebp-10h]"
+"	      00490859    lea eax,sFilter.c_str_ptr"
 "	      0049085c    push eax"
 "	      0049085d    call 0048FED0h"
 "	      00490862    add esp,8"
 );
 // LINE 72:
 	asm( 
-"	      00490865    mov eax,[ebp+14h]"
+"	      00490865    mov eax,pInitialDirectory"
 "	      00490868    push eax"
-"	      00490869    lea ecx,[ebp-10h]"
+"	      00490869    lea ecx,sFilter.c_str_ptr"
 "	      0049086c    call 00417AE0h"
 "	      00490871    push eax"
-"	      00490872    lea ecx,[ebp-8]"
+"	      00490872    lea ecx,sTitle.c_str_ptr"
 "	      00490875    call 00417AE0h"
 "	      0049087a    push eax"
-"	      0049087b    mov eax,[ebp+8]"
+"	      0049087b    mov eax,pFilePath"
 "	      0049087e    push eax"
 "	      0049087f    call 0049092Ah"
 "	      00490884    add esp,10h"
 "	      00490887    mov [ebp-1Ch],eax"
-"	      0049088a    mov eax,[ebp-0Ch]"
+"	      0049088a    mov eax,sFilter.reference"
 "	      0049088d    dec dword ptr [eax+0Ch]"
-"	      00490890    mov eax,[ebp-0Ch]"
+"	      00490890    mov eax,sFilter.reference"
 "	      00490893    cmp dword ptr [eax+0Ch],0"
 "	      00490897    jne near ptr 004908C2h"
-"	      0049089d    mov eax,[ebp-0Ch]"
+"	      0049089d    mov eax,sFilter.reference"
 "	      004908a0    mov [ebp-64h],eax"
 "	      004908a3    mov eax,[ebp-64h]"
 "	      004908a6    mov [ebp-60h],eax"
@@ -760,9 +760,9 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004908b8    call 0041DD70h"
 "	      004908bd    jmp near ptr 004908C2h"
 "	      004908c2    jmp near ptr 004908C7h"
-"	      004908c7    cmp dword ptr [ebp-10h],0"
+"	      004908c7    cmp sFilter.c_str_ptr,0"
 "	      004908cb    je near ptr 004908E9h"
-"	      004908d1    mov eax,[ebp-10h]"
+"	      004908d1    mov eax,sFilter.c_str_ptr"
 "	      004908d4    mov [ebp-58h],eax"
 "	      004908d7    mov eax,[ebp-58h]"
 "	      004908da    mov [ebp-5Ch],eax"
@@ -771,11 +771,11 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      004908e1    call 0056A740h"
 "	      004908e6    add esp,4"
 "	      004908e9    jmp near ptr 004908EEh"
-"	      004908ee    lea ecx,[ebp-8]"
+"	      004908ee    lea ecx,sTitle.c_str_ptr"
 "	      004908f1    call 00412080h"
-"	      004908f6    cmp dword ptr [ebp-8],0"
+"	      004908f6    cmp sTitle.c_str_ptr,0"
 "	      004908fa    je near ptr 00490918h"
-"	      00490900    mov eax,[ebp-8]"
+"	      00490900    mov eax,sTitle.c_str_ptr"
 "	      00490903    mov [ebp-68h],eax"
 "	      00490906    mov eax,[ebp-68h]"
 "	      00490909    mov [ebp-6Ch],eax"
@@ -812,93 +812,93 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 );
 // LINE 86:
 	asm( 
-"	      00490933    mov dword ptr [ebp-4Ch],4Ch"
+"	      00490933    mov ofn.lStructSize,4Ch"
 );
 // LINE 87:
 	asm( 
 "	      0049093a    call dword ptr ds:[6C3884h]"
-"	      00490940    mov [ebp-48h],eax"
+"	      00490940    mov ofn.hwndOwner,eax"
 );
 // LINE 88:
 	asm( 
 "	      00490943    mov eax,ds:[5C28C8h]"
-"	      00490948    mov [ebp-44h],eax"
+"	      00490948    mov ofn.hInstance,eax"
 );
 // LINE 89:
 	asm( 
-"	      0049094b    mov eax,[ebp+10h]"
-"	      0049094e    mov [ebp-40h],eax"
+"	      0049094b    mov eax,pFilter"
+"	      0049094e    mov ofn.lpstrFilter,eax"
 );
 // LINE 90:
 	asm( 
-"	      00490951    mov dword ptr [ebp-3Ch],0"
+"	      00490951    mov ofn.lpstrCustomFilter,0"
 );
 // LINE 91:
 	asm( 
-"	      00490958    mov dword ptr [ebp-38h],0"
+"	      00490958    mov ofn.nMaxCustFilter,0"
 );
 // LINE 92:
 	asm( 
-"	      0049095f    mov dword ptr [ebp-34h],0"
+"	      0049095f    mov ofn.nFilterIndex,0"
 );
 // LINE 93:
 	asm( 
-"	      00490966    mov eax,[ebp+8]"
-"	      00490969    mov [ebp-30h],eax"
+"	      00490966    mov eax,pFilePath"
+"	      00490969    mov ofn.lpstrFile,eax"
 );
 // LINE 94:
 	asm( 
-"	      0049096c    mov dword ptr [ebp-2Ch],104h"
+"	      0049096c    mov ofn.nMaxFile,104h"
 );
 // LINE 95:
 	asm( 
-"	      00490973    mov dword ptr [ebp-28h],0"
+"	      00490973    mov ofn.lpstrFileTitle,0"
 );
 // LINE 96:
 	asm( 
-"	      0049097a    mov dword ptr [ebp-24h],0"
+"	      0049097a    mov ofn.nMaxFileTitle,0"
 );
 // LINE 97:
 	asm( 
-"	      00490981    mov eax,[ebp+14h]"
-"	      00490984    mov [ebp-20h],eax"
+"	      00490981    mov eax,pInitialDirectory"
+"	      00490984    mov ofn.lpstrInitialDir,eax"
 );
 // LINE 98:
 	asm( 
-"	      00490987    mov eax,[ebp+0Ch]"
-"	      0049098a    mov [ebp-1Ch],eax"
+"	      00490987    mov eax,pLoadTitle"
+"	      0049098a    mov ofn.lpstrTitle,eax"
 );
 // LINE 99:
 	asm( 
-"	      0049098d    mov word ptr [ebp-14h],0"
+"	      0049098d    mov ofn.nFileOffset,0"
 );
 // LINE 100:
 	asm( 
-"	      00490993    mov word ptr [ebp-12h],0"
+"	      00490993    mov ofn.nFileExtension,0"
 );
 // LINE 101:
 	asm( 
-"	      00490999    mov dword ptr [ebp-10h],0"
+"	      00490999    mov ofn.lpstrDefExt,0"
 );
 // LINE 102:
 	asm( 
-"	      004909a0    mov dword ptr [ebp-0Ch],0"
+"	      004909a0    mov ofn.lCustData,0"
 );
 // LINE 103:
 	asm( 
-"	      004909a7    mov dword ptr [ebp-8],0"
+"	      004909a7    mov ofn.lpfnHook,0"
 );
 // LINE 104:
 	asm( 
-"	      004909ae    mov dword ptr [ebp-4],0"
+"	      004909ae    mov ofn.lpTemplateName,0"
 );
 // LINE 105:
 	asm( 
-"	      004909b5    mov dword ptr [ebp-18h],200000h"
+"	      004909b5    mov ofn.Flags,200000h"
 );
 // LINE 108:
 	asm( 
-"	      004909bc    lea eax,[ebp-4Ch]"
+"	      004909bc    lea eax,ofn.lStructSize"
 "	      004909bf    push eax"
 "	      004909c0    call 004C458Eh"
 "	      004909c5    test eax,eax"
@@ -959,10 +959,10 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490a2c    mov dword ptr [eax+0Ch],1"
 "	      00490a33    jmp near ptr 00490A38h"
 "	      00490a38    mov eax,[ebp-20h]"
-"	      00490a3b    mov [ebp-4],eax"
+"	      00490a3b    mov sTitle.reference,eax"
 "	      00490a3e    jmp near ptr 00490A4Ah"
-"	      00490a43    mov dword ptr [ebp-4],0"
-"	      00490a4a    mov dword ptr [ebp-8],0"
+"	      00490a43    mov sTitle.reference,0"
+"	      00490a4a    mov sTitle.c_str_ptr,0"
 "	      00490a51    jmp near ptr 00490A56h"
 );
 // LINE 122:
@@ -985,10 +985,10 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490a8f    mov dword ptr [eax+0Ch],1"
 "	      00490a96    jmp near ptr 00490A9Bh"
 "	      00490a9b    mov eax,[ebp-24h]"
-"	      00490a9e    mov [ebp-0Ch],eax"
+"	      00490a9e    mov sFilter.reference,eax"
 "	      00490aa1    jmp near ptr 00490AADh"
-"	      00490aa6    mov dword ptr [ebp-0Ch],0"
-"	      00490aad    mov dword ptr [ebp-10h],0"
+"	      00490aa6    mov sFilter.reference,0"
+"	      00490aad    mov sFilter.c_str_ptr,0"
 "	      00490ab4    jmp near ptr 00490AB9h"
 );
 // LINE 124:
@@ -996,7 +996,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490ab9    push 0FFFh"
 "	      00490abe    lea eax,[ebp-106Ch]"
 "	      00490ac4    push eax"
-"	      00490ac5    mov eax,[ebp+0Ch]"
+"	      00490ac5    mov eax,nLoadTitleStringID"
 "	      00490ac8    push eax"
 "	      00490ac9    mov eax,ds:[5C28C8h]"
 "	      00490ace    push eax"
@@ -1008,7 +1008,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490aed    lea eax,[ebp-106Ch]"
 "	      00490af3    push eax"
 "	      00490af4    mov ecx,3E8h"
-"	      00490af9    mov eax,[ebp+0Ch]"
+"	      00490af9    mov eax,nLoadTitleStringID"
 "	      00490afc    sub edx,edx"
 "	      00490afe    div ecx"
 "	      00490b00    push edx"
@@ -1024,7 +1024,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490b27    push eax"
 "	      00490b28    lea eax,[ebp-106Ch]"
 "	      00490b2e    push eax"
-"	      00490b2f    lea ecx,[ebp-8]"
+"	      00490b2f    lea ecx,sTitle.c_str_ptr"
 "	      00490b32    call 0040FEE0h"
 "	      00490b37    jmp near ptr 00490B3Ch"
 "	      00490b3c    jmp near ptr 00490B41h"
@@ -1033,7 +1033,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490b4b    add esp,4"
 "	      00490b4e    push eax"
 "	      00490b4f    push 597200h"
-"	      00490b54    lea ecx,[ebp-8]"
+"	      00490b54    lea ecx,sTitle.c_str_ptr"
 "	      00490b57    call 00410130h"
 "	      00490b5c    jmp near ptr 00490B61h"
 "	      00490b61    cmp dword ptr [ebp-1070h],0"
@@ -1047,7 +1047,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490b87    push eax"
 "	      00490b88    lea eax,[ebp-106Ch]"
 "	      00490b8e    push eax"
-"	      00490b8f    lea ecx,[ebp-8]"
+"	      00490b8f    lea ecx,sTitle.c_str_ptr"
 "	      00490b92    call 0040FEE0h"
 "	      00490b97    jmp near ptr 00490B9Ch"
 "	      00490b9c    cmp dword ptr [ebp-1070h],0"
@@ -1059,12 +1059,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 125:
 	asm( 
 "	      00490bbb    mov dword ptr [ebp-14h],80000000h"
-"	      00490bc2    mov eax,[ebp-0Ch]"
+"	      00490bc2    mov eax,sFilter.reference"
 "	      00490bc5    dec dword ptr [eax+0Ch]"
-"	      00490bc8    mov eax,[ebp-0Ch]"
+"	      00490bc8    mov eax,sFilter.reference"
 "	      00490bcb    cmp dword ptr [eax+0Ch],0"
 "	      00490bcf    jne near ptr 00490BFAh"
-"	      00490bd5    mov eax,[ebp-0Ch]"
+"	      00490bd5    mov eax,sFilter.reference"
 "	      00490bd8    mov [ebp-34h],eax"
 "	      00490bdb    mov eax,[ebp-34h]"
 "	      00490bde    mov [ebp-30h],eax"
@@ -1075,9 +1075,9 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490bf0    call 0041DD70h"
 "	      00490bf5    jmp near ptr 00490BFAh"
 "	      00490bfa    jmp near ptr 00490BFFh"
-"	      00490bff    cmp dword ptr [ebp-10h],0"
+"	      00490bff    cmp sFilter.c_str_ptr,0"
 "	      00490c03    je near ptr 00490C21h"
-"	      00490c09    mov eax,[ebp-10h]"
+"	      00490c09    mov eax,sFilter.c_str_ptr"
 "	      00490c0c    mov [ebp-28h],eax"
 "	      00490c0f    mov eax,[ebp-28h]"
 "	      00490c12    mov [ebp-2Ch],eax"
@@ -1086,12 +1086,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490c19    call 0056A740h"
 "	      00490c1e    add esp,4"
 "	      00490c21    jmp near ptr 00490C26h"
-"	      00490c26    mov eax,[ebp-4]"
+"	      00490c26    mov eax,sTitle.reference"
 "	      00490c29    dec dword ptr [eax+0Ch]"
-"	      00490c2c    mov eax,[ebp-4]"
+"	      00490c2c    mov eax,sTitle.reference"
 "	      00490c2f    cmp dword ptr [eax+0Ch],0"
 "	      00490c33    jne near ptr 00490C5Eh"
-"	      00490c39    mov eax,[ebp-4]"
+"	      00490c39    mov eax,sTitle.reference"
 "	      00490c3c    mov [ebp-44h],eax"
 "	      00490c3f    mov eax,[ebp-44h]"
 "	      00490c42    mov [ebp-40h],eax"
@@ -1102,9 +1102,9 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490c54    call 0041DD70h"
 "	      00490c59    jmp near ptr 00490C5Eh"
 "	      00490c5e    jmp near ptr 00490C63h"
-"	      00490c63    cmp dword ptr [ebp-8],0"
+"	      00490c63    cmp sTitle.c_str_ptr,0"
 "	      00490c67    je near ptr 00490C85h"
-"	      00490c6d    mov eax,[ebp-8]"
+"	      00490c6d    mov eax,sTitle.c_str_ptr"
 "	      00490c70    mov [ebp-38h],eax"
 "	      00490c73    mov eax,[ebp-38h]"
 "	      00490c76    mov [ebp-3Ch],eax"
@@ -1121,7 +1121,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490c92    push 0FFFh"
 "	      00490c97    lea eax,[ebp-2074h]"
 "	      00490c9d    push eax"
-"	      00490c9e    mov eax,[ebp+10h]"
+"	      00490c9e    mov eax,nFileFilterStringID"
 "	      00490ca1    push eax"
 "	      00490ca2    mov eax,ds:[5C28C8h]"
 "	      00490ca7    push eax"
@@ -1133,7 +1133,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490cc6    lea eax,[ebp-2074h]"
 "	      00490ccc    push eax"
 "	      00490ccd    mov ecx,3E8h"
-"	      00490cd2    mov eax,[ebp+10h]"
+"	      00490cd2    mov eax,nFileFilterStringID"
 "	      00490cd5    sub edx,edx"
 "	      00490cd7    div ecx"
 "	      00490cd9    push edx"
@@ -1149,7 +1149,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490d00    push eax"
 "	      00490d01    lea eax,[ebp-2074h]"
 "	      00490d07    push eax"
-"	      00490d08    lea ecx,[ebp-10h]"
+"	      00490d08    lea ecx,sFilter.c_str_ptr"
 "	      00490d0b    call 0040FEE0h"
 "	      00490d10    jmp near ptr 00490D15h"
 "	      00490d15    jmp near ptr 00490D1Ah"
@@ -1158,7 +1158,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490d24    add esp,4"
 "	      00490d27    push eax"
 "	      00490d28    push 597200h"
-"	      00490d2d    lea ecx,[ebp-10h]"
+"	      00490d2d    lea ecx,sFilter.c_str_ptr"
 "	      00490d30    call 00410130h"
 "	      00490d35    jmp near ptr 00490D3Ah"
 "	      00490d3a    cmp dword ptr [ebp-2078h],0"
@@ -1172,7 +1172,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490d60    push eax"
 "	      00490d61    lea eax,[ebp-2074h]"
 "	      00490d67    push eax"
-"	      00490d68    lea ecx,[ebp-10h]"
+"	      00490d68    lea ecx,sFilter.c_str_ptr"
 "	      00490d6b    call 0040FEE0h"
 "	      00490d70    jmp near ptr 00490D75h"
 "	      00490d75    cmp dword ptr [ebp-2078h],0"
@@ -1184,11 +1184,11 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 127:
 	asm( 
 "	      00490d94    mov dword ptr [ebp-18h],80000000h"
-"	      00490d9b    lea ecx,[ebp-10h]"
+"	      00490d9b    lea ecx,sFilter.c_str_ptr"
 "	      00490d9e    call 00412080h"
-"	      00490da3    cmp dword ptr [ebp-10h],0"
+"	      00490da3    cmp sFilter.c_str_ptr,0"
 "	      00490da7    je near ptr 00490DC5h"
-"	      00490dad    mov eax,[ebp-10h]"
+"	      00490dad    mov eax,sFilter.c_str_ptr"
 "	      00490db0    mov [ebp-48h],eax"
 "	      00490db3    mov eax,[ebp-48h]"
 "	      00490db6    mov [ebp-4Ch],eax"
@@ -1197,11 +1197,11 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490dbd    call 0056A740h"
 "	      00490dc2    add esp,4"
 "	      00490dc5    jmp near ptr 00490DCAh"
-"	      00490dca    lea ecx,[ebp-8]"
+"	      00490dca    lea ecx,sTitle.c_str_ptr"
 "	      00490dcd    call 00412080h"
-"	      00490dd2    cmp dword ptr [ebp-8],0"
+"	      00490dd2    cmp sTitle.c_str_ptr,0"
 "	      00490dd6    je near ptr 00490DF4h"
-"	      00490ddc    mov eax,[ebp-8]"
+"	      00490ddc    mov eax,sTitle.c_str_ptr"
 "	      00490ddf    mov [ebp-50h],eax"
 "	      00490de2    mov eax,[ebp-50h]"
 "	      00490de5    mov [ebp-54h],eax"
@@ -1216,32 +1216,32 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 // LINE 128:
 	asm( 
 "	      00490e01    push 3Fh"
-"	      00490e03    lea eax,[ebp-10h]"
+"	      00490e03    lea eax,sFilter.c_str_ptr"
 "	      00490e06    push eax"
 "	      00490e07    call 0048FED0h"
 "	      00490e0c    add esp,8"
 );
 // LINE 130:
 	asm( 
-"	      00490e0f    mov eax,[ebp+14h]"
+"	      00490e0f    mov eax,pInitialDirectory"
 "	      00490e12    push eax"
-"	      00490e13    lea ecx,[ebp-10h]"
+"	      00490e13    lea ecx,sFilter.c_str_ptr"
 "	      00490e16    call 00417AE0h"
 "	      00490e1b    push eax"
-"	      00490e1c    lea ecx,[ebp-8]"
+"	      00490e1c    lea ecx,sTitle.c_str_ptr"
 "	      00490e1f    call 00417AE0h"
 "	      00490e24    push eax"
-"	      00490e25    mov eax,[ebp+8]"
+"	      00490e25    mov eax,pFilePath"
 "	      00490e28    push eax"
 "	      00490e29    call 00490ED4h"
 "	      00490e2e    add esp,10h"
 "	      00490e31    mov [ebp-1Ch],eax"
-"	      00490e34    mov eax,[ebp-0Ch]"
+"	      00490e34    mov eax,sFilter.reference"
 "	      00490e37    dec dword ptr [eax+0Ch]"
-"	      00490e3a    mov eax,[ebp-0Ch]"
+"	      00490e3a    mov eax,sFilter.reference"
 "	      00490e3d    cmp dword ptr [eax+0Ch],0"
 "	      00490e41    jne near ptr 00490E6Ch"
-"	      00490e47    mov eax,[ebp-0Ch]"
+"	      00490e47    mov eax,sFilter.reference"
 "	      00490e4a    mov [ebp-64h],eax"
 "	      00490e4d    mov eax,[ebp-64h]"
 "	      00490e50    mov [ebp-60h],eax"
@@ -1252,9 +1252,9 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490e62    call 0041DD70h"
 "	      00490e67    jmp near ptr 00490E6Ch"
 "	      00490e6c    jmp near ptr 00490E71h"
-"	      00490e71    cmp dword ptr [ebp-10h],0"
+"	      00490e71    cmp sFilter.c_str_ptr,0"
 "	      00490e75    je near ptr 00490E93h"
-"	      00490e7b    mov eax,[ebp-10h]"
+"	      00490e7b    mov eax,sFilter.c_str_ptr"
 "	      00490e7e    mov [ebp-58h],eax"
 "	      00490e81    mov eax,[ebp-58h]"
 "	      00490e84    mov [ebp-5Ch],eax"
@@ -1263,11 +1263,11 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 "	      00490e8b    call 0056A740h"
 "	      00490e90    add esp,4"
 "	      00490e93    jmp near ptr 00490E98h"
-"	      00490e98    lea ecx,[ebp-8]"
+"	      00490e98    lea ecx,sTitle.c_str_ptr"
 "	      00490e9b    call 00412080h"
-"	      00490ea0    cmp dword ptr [ebp-8],0"
+"	      00490ea0    cmp sTitle.c_str_ptr,0"
 "	      00490ea4    je near ptr 00490EC2h"
-"	      00490eaa    mov eax,[ebp-8]"
+"	      00490eaa    mov eax,sTitle.c_str_ptr"
 "	      00490ead    mov [ebp-68h],eax"
 "	      00490eb0    mov eax,[ebp-68h]"
 "	      00490eb3    mov [ebp-6Ch],eax"
@@ -1304,93 +1304,93 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 );
 // LINE 143:
 	asm( 
-"	      00490edd    mov dword ptr [ebp-4Ch],4Ch"
+"	      00490edd    mov ofn.lStructSize,4Ch"
 );
 // LINE 144:
 	asm( 
 "	      00490ee4    call dword ptr ds:[6C3884h]"
-"	      00490eea    mov [ebp-48h],eax"
+"	      00490eea    mov ofn.hwndOwner,eax"
 );
 // LINE 145:
 	asm( 
 "	      00490eed    mov eax,ds:[5C28C8h]"
-"	      00490ef2    mov [ebp-44h],eax"
+"	      00490ef2    mov ofn.hInstance,eax"
 );
 // LINE 146:
 	asm( 
-"	      00490ef5    mov eax,[ebp+10h]"
-"	      00490ef8    mov [ebp-40h],eax"
+"	      00490ef5    mov eax,pFilter"
+"	      00490ef8    mov ofn.lpstrFilter,eax"
 );
 // LINE 147:
 	asm( 
-"	      00490efb    mov dword ptr [ebp-3Ch],0"
+"	      00490efb    mov ofn.lpstrCustomFilter,0"
 );
 // LINE 148:
 	asm( 
-"	      00490f02    mov dword ptr [ebp-38h],0"
+"	      00490f02    mov ofn.nMaxCustFilter,0"
 );
 // LINE 149:
 	asm( 
-"	      00490f09    mov dword ptr [ebp-34h],0"
+"	      00490f09    mov ofn.nFilterIndex,0"
 );
 // LINE 150:
 	asm( 
-"	      00490f10    mov eax,[ebp+8]"
-"	      00490f13    mov [ebp-30h],eax"
+"	      00490f10    mov eax,pFilePath"
+"	      00490f13    mov ofn.lpstrFile,eax"
 );
 // LINE 151:
 	asm( 
-"	      00490f16    mov dword ptr [ebp-2Ch],104h"
+"	      00490f16    mov ofn.nMaxFile,104h"
 );
 // LINE 152:
 	asm( 
-"	      00490f1d    mov dword ptr [ebp-28h],0"
+"	      00490f1d    mov ofn.lpstrFileTitle,0"
 );
 // LINE 153:
 	asm( 
-"	      00490f24    mov dword ptr [ebp-24h],0"
+"	      00490f24    mov ofn.nMaxFileTitle,0"
 );
 // LINE 154:
 	asm( 
-"	      00490f2b    mov eax,[ebp+14h]"
-"	      00490f2e    mov [ebp-20h],eax"
+"	      00490f2b    mov eax,pInitialDirectory"
+"	      00490f2e    mov ofn.lpstrInitialDir,eax"
 );
 // LINE 155:
 	asm( 
-"	      00490f31    mov eax,[ebp+0Ch]"
-"	      00490f34    mov [ebp-1Ch],eax"
+"	      00490f31    mov eax,pSaveTitle"
+"	      00490f34    mov ofn.lpstrTitle,eax"
 );
 // LINE 156:
 	asm( 
-"	      00490f37    mov word ptr [ebp-14h],0"
+"	      00490f37    mov ofn.nFileOffset,0"
 );
 // LINE 157:
 	asm( 
-"	      00490f3d    mov word ptr [ebp-12h],0"
+"	      00490f3d    mov ofn.nFileExtension,0"
 );
 // LINE 158:
 	asm( 
-"	      00490f43    mov dword ptr [ebp-10h],0"
+"	      00490f43    mov ofn.lpstrDefExt,0"
 );
 // LINE 159:
 	asm( 
-"	      00490f4a    mov dword ptr [ebp-0Ch],0"
+"	      00490f4a    mov ofn.lCustData,0"
 );
 // LINE 160:
 	asm( 
-"	      00490f51    mov dword ptr [ebp-8],0"
+"	      00490f51    mov ofn.lpfnHook,0"
 );
 // LINE 161:
 	asm( 
-"	      00490f58    mov dword ptr [ebp-4],0"
+"	      00490f58    mov ofn.lpTemplateName,0"
 );
 // LINE 162:
 	asm( 
-"	      00490f5f    mov dword ptr [ebp-18h],200000h"
+"	      00490f5f    mov ofn.Flags,200000h"
 );
 // LINE 165:
 	asm( 
-"	      00490f66    lea eax,[ebp-4Ch]"
+"	      00490f66    lea eax,ofn.lStructSize"
 "	      00490f69    push eax"
 "	      00490f6a    call 004C4594h"
 "	      00490f6f    test eax,eax"

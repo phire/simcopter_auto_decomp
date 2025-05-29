@@ -21,9 +21,9 @@ short GetAltitude(int32_t x, int32_t y) {
 );
 // LINE 96:
 	asm( 
-"	      00513d59    cmp dword ptr [ebp+8],0"
+"	      00513d59    cmp x,0"
 "	      00513d5d    jl near ptr 00513D6Dh"
-"	      00513d63    cmp dword ptr [ebp+0Ch],0"
+"	      00513d63    cmp y,0"
 "	      00513d67    jge near ptr 00513D75h"
 );
 // LINE 97:
@@ -33,9 +33,9 @@ short GetAltitude(int32_t x, int32_t y) {
 );
 // LINE 98:
 	asm( 
-"	      00513d75    cmp dword ptr [ebp+8],80h"
+"	      00513d75    cmp x,80h"
 "	      00513d7c    jge near ptr 00513D8Fh"
-"	      00513d82    cmp dword ptr [ebp+0Ch],80h"
+"	      00513d82    cmp y,80h"
 "	      00513d89    jl near ptr 00513D97h"
 );
 // LINE 99:
@@ -45,34 +45,34 @@ short GetAltitude(int32_t x, int32_t y) {
 );
 // LINE 100:
 	asm( 
-"	      00513d97    mov eax,[ebp+8]"
+"	      00513d97    mov eax,x"
 "	      00513d9a    mov eax,[eax*4+639510h]"
-"	      00513da1    mov ecx,[ebp+0Ch]"
+"	      00513da1    mov ecx,y"
 "	      00513da4    xor edx,edx"
 "	      00513da6    mov dx,[eax+ecx*2]"
 "	      00513daa    and edx,1Fh"
-"	      00513dad    mov [ebp-8],dx"
+"	      00513dad    mov alt,dx"
 );
 // LINE 101:
 	asm( 
-"	      00513db1    mov eax,[ebp+8]"
+"	      00513db1    mov eax,x"
 "	      00513db4    mov eax,[eax*4+639510h]"
-"	      00513dbb    mov ecx,[ebp+0Ch]"
+"	      00513dbb    mov ecx,y"
 "	      00513dbe    xor edx,edx"
 "	      00513dc0    mov dx,[eax+ecx*2]"
 "	      00513dc4    shr edx,5"
 "	      00513dc7    and edx,1Fh"
-"	      00513dca    mov [ebp-4],dx"
+"	      00513dca    mov wat,dx"
 );
 // LINE 105:
 	asm( 
-"	      00513dce    movsx eax,word ptr [ebp-8]"
-"	      00513dd2    movsx ecx,word ptr [ebp-4]"
+"	      00513dce    movsx eax,alt"
+"	      00513dd2    movsx ecx,wat"
 "	      00513dd6    cmp eax,ecx"
 "	      00513dd8    jge near ptr 00513E07h"
-"	      00513dde    mov eax,[ebp+8]"
+"	      00513dde    mov eax,x"
 "	      00513de1    mov eax,[eax*4+63A270h]"
-"	      00513de8    mov ecx,[ebp+0Ch]"
+"	      00513de8    mov ecx,y"
 "	      00513deb    xor edx,edx"
 "	      00513ded    mov dl,[eax+ecx]"
 "	      00513df0    cmp edx,0Fh"
@@ -80,7 +80,7 @@ short GetAltitude(int32_t x, int32_t y) {
 );
 // LINE 106:
 	asm( 
-"	      00513df9    mov ax,[ebp-4]"
+"	      00513df9    mov ax,wat"
 "	      00513dfd    jmp near ptr 00513E10h"
 );
 // LINE 107:
@@ -89,7 +89,7 @@ short GetAltitude(int32_t x, int32_t y) {
 );
 // LINE 108:
 	asm( 
-"	      00513e07    mov ax,[ebp-8]"
+"	      00513e07    mov ax,alt"
 "	      00513e0b    jmp near ptr 00513E10h"
 );
 // LINE 110:
@@ -125,24 +125,24 @@ void S3TerrainInit() {
 );
 // LINE 135:
 	asm( 
-"	      00513e35    mov dword ptr [ebp-4],0"
+"	      00513e35    mov i,0"
 "	      00513e3c    jmp near ptr 00513E44h"
-"	      00513e41    inc dword ptr [ebp-4]"
-"	      00513e44    cmp dword ptr [ebp-4],40h"
+"	      00513e41    inc i"
+"	      00513e44    cmp i,40h"
 "	      00513e48    jge near ptr 00513E77h"
 );
 // LINE 137:
 	asm( 
-"	      00513e4e    mov eax,[ebp-4]"
+"	      00513e4e    mov eax,i"
 "	      00513e51    or eax,140000h"
-"	      00513e56    mov ecx,[ebp-4]"
+"	      00513e56    mov ecx,i"
 "	      00513e59    mov [ecx*4+67EB20h],eax"
 );
 // LINE 138:
 	asm( 
-"	      00513e60    mov eax,[ebp-4]"
+"	      00513e60    mov eax,i"
 "	      00513e63    or eax,0D0000h"
-"	      00513e68    mov ecx,[ebp-4]"
+"	      00513e68    mov ecx,i"
 "	      00513e6b    mov [ecx*4+67EC20h],eax"
 );
 // LINE 139:
@@ -246,42 +246,42 @@ short S3TerrainInitMap() {
 );
 // LINE 190:
 	asm( 
-"	      00513f22    mov dword ptr [ebp-1Ch],0"
+"	      00513f22    mov x,0"
 "	      00513f29    jmp near ptr 00513F31h"
-"	      00513f2e    inc dword ptr [ebp-1Ch]"
-"	      00513f31    cmp dword ptr [ebp-1Ch],80h"
+"	      00513f2e    inc x"
+"	      00513f31    cmp x,80h"
 "	      00513f38    jge near ptr 00514025h"
 );
 // LINE 191:
 	asm( 
-"	      00513f3e    mov dword ptr [ebp-20h],0"
+"	      00513f3e    mov y,0"
 "	      00513f45    jmp near ptr 00513F4Dh"
-"	      00513f4a    inc dword ptr [ebp-20h]"
-"	      00513f4d    cmp dword ptr [ebp-20h],80h"
+"	      00513f4a    inc y"
+"	      00513f4d    cmp y,80h"
 "	      00513f54    jge near ptr 00514020h"
 );
 // LINE 193:
 	asm( 
-"	      00513f5a    mov eax,[ebp-20h]"
+"	      00513f5a    mov eax,y"
 "	      00513f5d    push eax"
-"	      00513f5e    mov eax,[ebp-1Ch]"
+"	      00513f5e    mov eax,x"
 "	      00513f61    push eax"
 "	      00513f62    call 00513D50h"
 "	      00513f67    add esp,8"
-"	      00513f6a    mov [ebp-24h],ax"
+"	      00513f6a    mov alt,ax"
 );
 // LINE 195:
 	asm( 
-"	      00513f6e    mov eax,[ebp-1Ch]"
+"	      00513f6e    mov eax,x"
 "	      00513f71    mov eax,[eax*4+63A270h]"
-"	      00513f78    mov ecx,[ebp-20h]"
+"	      00513f78    mov ecx,y"
 "	      00513f7b    xor edx,edx"
 "	      00513f7d    mov dl,[eax+ecx]"
 "	      00513f80    cmp edx,0Dh"
 "	      00513f83    je near ptr 00513FA4h"
-"	      00513f89    mov eax,[ebp-1Ch]"
+"	      00513f89    mov eax,x"
 "	      00513f8c    mov eax,[eax*4+63A270h]"
-"	      00513f93    mov ecx,[ebp-20h]"
+"	      00513f93    mov ecx,y"
 "	      00513f96    xor edx,edx"
 "	      00513f98    mov dl,[eax+ecx]"
 "	      00513f9b    cmp edx,0Eh"
@@ -289,47 +289,47 @@ short S3TerrainInitMap() {
 );
 // LINE 196:
 	asm( 
-"	      00513fa4    inc word ptr [ebp-24h]"
+"	      00513fa4    inc alt"
 );
 // LINE 199:
 	asm( 
-"	      00513fa8    movsx eax,word ptr [ebp-24h]"
+"	      00513fa8    movsx eax,alt"
 "	      00513fac    shl eax,5"
 "	      00513faf    add eax,20h"
-"	      00513fb2    mov [ebp-24h],ax"
+"	      00513fb2    mov alt,ax"
 );
 // LINE 202:
 	asm( 
-"	      00513fb6    movsx eax,word ptr [ebp-24h]"
+"	      00513fb6    movsx eax,alt"
 "	      00513fba    cmp eax,ds:[67ED20h]"
 "	      00513fc0    jle near ptr 00513FCFh"
 );
 // LINE 203:
 	asm( 
-"	      00513fc6    movsx eax,word ptr [ebp-24h]"
+"	      00513fc6    movsx eax,alt"
 "	      00513fca    mov ds:[67ED20h],eax"
 );
 // LINE 204:
 	asm( 
-"	      00513fcf    movsx eax,word ptr [ebp-24h]"
+"	      00513fcf    movsx eax,alt"
 "	      00513fd3    cmp eax,ds:[66EB00h]"
 "	      00513fd9    jge near ptr 00513FE8h"
 );
 // LINE 205:
 	asm( 
-"	      00513fdf    movsx eax,word ptr [ebp-24h]"
+"	      00513fdf    movsx eax,alt"
 "	      00513fe3    mov ds:[66EB00h],eax"
 );
 // LINE 207:
 	asm( 
-"	      00513fe8    mov ax,[ebp-24h]"
-"	      00513fec    mov edx,[ebp-20h]"
+"	      00513fe8    mov ax,alt"
+"	      00513fec    mov edx,y"
 "	      00513fef    add edx,edx"
 "	      00513ff1    inc edx"
 "	      00513ff2    and edx,ds:[5B5CBCh]"
 "	      00513ff8    mov cl,ds:[5B5CC0h]"
 "	      00513ffe    shl edx,cl"
-"	      00514000    mov ecx,[ebp-1Ch]"
+"	      00514000    mov ecx,x"
 "	      00514003    add ecx,ecx"
 "	      00514005    inc ecx"
 "	      00514006    and ecx,ds:[5B5CBCh]"
@@ -359,51 +359,51 @@ short S3TerrainInitMap() {
 );
 // LINE 219:
 	asm( 
-"	      0051404a    mov dword ptr [ebp-1Ch],1"
+"	      0051404a    mov x,1"
 "	      00514051    jmp near ptr 0051405Ah"
-"	      00514056    add dword ptr [ebp-1Ch],2"
-"	      0051405a    cmp dword ptr [ebp-1Ch],100h"
+"	      00514056    add x,2"
+"	      0051405a    cmp x,100h"
 "	      00514061    jge near ptr 005141FDh"
 );
 // LINE 220:
 	asm( 
-"	      00514067    mov dword ptr [ebp-20h],0"
+"	      00514067    mov y,0"
 "	      0051406e    jmp near ptr 00514077h"
-"	      00514073    add dword ptr [ebp-20h],2"
-"	      00514077    cmp dword ptr [ebp-20h],100h"
+"	      00514073    add y,2"
+"	      00514077    cmp y,100h"
 "	      0051407e    jg near ptr 005141F8h"
 );
 // LINE 222:
 	asm( 
-"	      00514084    cmp dword ptr [ebp-20h],0"
+"	      00514084    cmp y,0"
 "	      00514088    jne near ptr 005140F3h"
 );
 // LINE 224:
 	asm( 
-"	      0051408e    mov eax,[ebp-20h]"
+"	      0051408e    mov eax,y"
 "	      00514091    inc eax"
 "	      00514092    and eax,ds:[5B5CBCh]"
 "	      00514098    mov cl,ds:[5B5CC0h]"
 "	      0051409e    shl eax,cl"
 "	      005140a0    mov ecx,ds:[5B5CBCh]"
-"	      005140a6    and ecx,[ebp-1Ch]"
+"	      005140a6    and ecx,x"
 "	      005140a9    add ecx,ecx"
 "	      005140ab    lea eax,[ecx+eax*2]"
 "	      005140ae    mov ecx,ds:[67EB10h]"
 "	      005140b4    xor edx,edx"
 "	      005140b6    mov dx,[eax+ecx]"
 "	      005140ba    sub edx,2"
-"	      005140bd    mov [ebp-24h],dx"
+"	      005140bd    mov alt,dx"
 );
 // LINE 225:
 	asm( 
-"	      005140c1    mov ax,[ebp-24h]"
-"	      005140c5    mov edx,[ebp-20h]"
+"	      005140c1    mov ax,alt"
+"	      005140c5    mov edx,y"
 "	      005140c8    and edx,ds:[5B5CBCh]"
 "	      005140ce    mov cl,ds:[5B5CC0h]"
 "	      005140d4    shl edx,cl"
 "	      005140d6    mov ecx,ds:[5B5CBCh]"
-"	      005140dc    and ecx,[ebp-1Ch]"
+"	      005140dc    and ecx,x"
 "	      005140df    add ecx,ecx"
 "	      005140e1    lea edx,[ecx+edx*2]"
 "	      005140e4    mov ecx,ds:[67EB10h]"
@@ -412,35 +412,35 @@ short S3TerrainInitMap() {
 // LINE 227:
 	asm( 
 "	      005140ee    jmp near ptr 005141F3h"
-"	      005140f3    cmp dword ptr [ebp-20h],100h"
+"	      005140f3    cmp y,100h"
 "	      005140fa    jne near ptr 00514165h"
 );
 // LINE 229:
 	asm( 
-"	      00514100    mov eax,[ebp-20h]"
+"	      00514100    mov eax,y"
 "	      00514103    dec eax"
 "	      00514104    and eax,ds:[5B5CBCh]"
 "	      0051410a    mov cl,ds:[5B5CC0h]"
 "	      00514110    shl eax,cl"
 "	      00514112    mov ecx,ds:[5B5CBCh]"
-"	      00514118    and ecx,[ebp-1Ch]"
+"	      00514118    and ecx,x"
 "	      0051411b    add ecx,ecx"
 "	      0051411d    lea eax,[ecx+eax*2]"
 "	      00514120    mov ecx,ds:[67EB10h]"
 "	      00514126    xor edx,edx"
 "	      00514128    mov dx,[eax+ecx]"
 "	      0051412c    sub edx,2"
-"	      0051412f    mov [ebp-24h],dx"
+"	      0051412f    mov alt,dx"
 );
 // LINE 230:
 	asm( 
-"	      00514133    mov ax,[ebp-24h]"
-"	      00514137    mov edx,[ebp-20h]"
+"	      00514133    mov ax,alt"
+"	      00514137    mov edx,y"
 "	      0051413a    and edx,ds:[5B5CBCh]"
 "	      00514140    mov cl,ds:[5B5CC0h]"
 "	      00514146    shl edx,cl"
 "	      00514148    mov ecx,ds:[5B5CBCh]"
-"	      0051414e    and ecx,[ebp-1Ch]"
+"	      0051414e    and ecx,x"
 "	      00514151    add ecx,ecx"
 "	      00514153    lea edx,[ecx+edx*2]"
 "	      00514156    mov ecx,ds:[67EB10h]"
@@ -452,25 +452,25 @@ short S3TerrainInitMap() {
 );
 // LINE 234:
 	asm( 
-"	      00514165    mov eax,[ebp-20h]"
+"	      00514165    mov eax,y"
 "	      00514168    dec eax"
 "	      00514169    and eax,ds:[5B5CBCh]"
 "	      0051416f    mov cl,ds:[5B5CC0h]"
 "	      00514175    shl eax,cl"
 "	      00514177    mov ecx,ds:[5B5CBCh]"
-"	      0051417d    and ecx,[ebp-1Ch]"
+"	      0051417d    and ecx,x"
 "	      00514180    add ecx,ecx"
 "	      00514182    lea eax,[ecx+eax*2]"
 "	      00514185    mov ecx,ds:[67EB10h]"
 "	      0051418b    xor edx,edx"
 "	      0051418d    mov dx,[eax+ecx]"
-"	      00514191    mov eax,[ebp-20h]"
+"	      00514191    mov eax,y"
 "	      00514194    inc eax"
 "	      00514195    and eax,ds:[5B5CBCh]"
 "	      0051419b    mov cl,ds:[5B5CC0h]"
 "	      005141a1    shl eax,cl"
 "	      005141a3    mov ecx,ds:[5B5CBCh]"
-"	      005141a9    and ecx,[ebp-1Ch]"
+"	      005141a9    and ecx,x"
 "	      005141ac    add ecx,ecx"
 "	      005141ae    lea eax,[ecx+eax*2]"
 "	      005141b1    mov ecx,ds:[67EB10h]"
@@ -478,17 +478,17 @@ short S3TerrainInitMap() {
 "	      005141b9    mov bx,[eax+ecx]"
 "	      005141bd    add edx,ebx"
 "	      005141bf    sar edx,1"
-"	      005141c2    mov [ebp-24h],dx"
+"	      005141c2    mov alt,dx"
 );
 // LINE 235:
 	asm( 
-"	      005141c6    mov ax,[ebp-24h]"
-"	      005141ca    mov edx,[ebp-20h]"
+"	      005141c6    mov ax,alt"
+"	      005141ca    mov edx,y"
 "	      005141cd    and edx,ds:[5B5CBCh]"
 "	      005141d3    mov cl,ds:[5B5CC0h]"
 "	      005141d9    shl edx,cl"
 "	      005141db    mov ecx,ds:[5B5CBCh]"
-"	      005141e1    and ecx,[ebp-1Ch]"
+"	      005141e1    and ecx,x"
 "	      005141e4    add ecx,ecx"
 "	      005141e6    lea edx,[ecx+edx*2]"
 "	      005141e9    mov ecx,ds:[67EB10h]"
@@ -501,32 +501,32 @@ short S3TerrainInitMap() {
 );
 // LINE 242:
 	asm( 
-"	      005141fd    mov dword ptr [ebp-20h],1"
+"	      005141fd    mov y,1"
 "	      00514204    jmp near ptr 0051420Dh"
-"	      00514209    add dword ptr [ebp-20h],2"
-"	      0051420d    cmp dword ptr [ebp-20h],100h"
+"	      00514209    add y,2"
+"	      0051420d    cmp y,100h"
 "	      00514214    jge near ptr 005143B0h"
 );
 // LINE 243:
 	asm( 
-"	      0051421a    mov dword ptr [ebp-1Ch],0"
+"	      0051421a    mov x,0"
 "	      00514221    jmp near ptr 0051422Ah"
-"	      00514226    add dword ptr [ebp-1Ch],2"
-"	      0051422a    cmp dword ptr [ebp-1Ch],100h"
+"	      00514226    add x,2"
+"	      0051422a    cmp x,100h"
 "	      00514231    jg near ptr 005143ABh"
 );
 // LINE 245:
 	asm( 
-"	      00514237    cmp dword ptr [ebp-1Ch],0"
+"	      00514237    cmp x,0"
 "	      0051423b    jne near ptr 005142A6h"
 );
 // LINE 247:
 	asm( 
-"	      00514241    mov eax,[ebp-20h]"
+"	      00514241    mov eax,y"
 "	      00514244    and eax,ds:[5B5CBCh]"
 "	      0051424a    mov cl,ds:[5B5CC0h]"
 "	      00514250    shl eax,cl"
-"	      00514252    mov ecx,[ebp-1Ch]"
+"	      00514252    mov ecx,x"
 "	      00514255    inc ecx"
 "	      00514256    and ecx,ds:[5B5CBCh]"
 "	      0051425c    add ecx,ecx"
@@ -535,17 +535,17 @@ short S3TerrainInitMap() {
 "	      00514267    xor edx,edx"
 "	      00514269    mov dx,[eax+ecx]"
 "	      0051426d    sub edx,2"
-"	      00514270    mov [ebp-24h],dx"
+"	      00514270    mov alt,dx"
 );
 // LINE 248:
 	asm( 
-"	      00514274    mov ax,[ebp-24h]"
-"	      00514278    mov edx,[ebp-20h]"
+"	      00514274    mov ax,alt"
+"	      00514278    mov edx,y"
 "	      0051427b    and edx,ds:[5B5CBCh]"
 "	      00514281    mov cl,ds:[5B5CC0h]"
 "	      00514287    shl edx,cl"
 "	      00514289    mov ecx,ds:[5B5CBCh]"
-"	      0051428f    and ecx,[ebp-1Ch]"
+"	      0051428f    and ecx,x"
 "	      00514292    add ecx,ecx"
 "	      00514294    lea edx,[ecx+edx*2]"
 "	      00514297    mov ecx,ds:[67EB10h]"
@@ -554,16 +554,16 @@ short S3TerrainInitMap() {
 // LINE 250:
 	asm( 
 "	      005142a1    jmp near ptr 005143A6h"
-"	      005142a6    cmp dword ptr [ebp-1Ch],100h"
+"	      005142a6    cmp x,100h"
 "	      005142ad    jne near ptr 00514318h"
 );
 // LINE 252:
 	asm( 
-"	      005142b3    mov eax,[ebp-20h]"
+"	      005142b3    mov eax,y"
 "	      005142b6    and eax,ds:[5B5CBCh]"
 "	      005142bc    mov cl,ds:[5B5CC0h]"
 "	      005142c2    shl eax,cl"
-"	      005142c4    mov ecx,[ebp-1Ch]"
+"	      005142c4    mov ecx,x"
 "	      005142c7    dec ecx"
 "	      005142c8    and ecx,ds:[5B5CBCh]"
 "	      005142ce    add ecx,ecx"
@@ -572,17 +572,17 @@ short S3TerrainInitMap() {
 "	      005142d9    xor edx,edx"
 "	      005142db    mov dx,[eax+ecx]"
 "	      005142df    sub edx,2"
-"	      005142e2    mov [ebp-24h],dx"
+"	      005142e2    mov alt,dx"
 );
 // LINE 253:
 	asm( 
-"	      005142e6    mov ax,[ebp-24h]"
-"	      005142ea    mov edx,[ebp-20h]"
+"	      005142e6    mov ax,alt"
+"	      005142ea    mov edx,y"
 "	      005142ed    and edx,ds:[5B5CBCh]"
 "	      005142f3    mov cl,ds:[5B5CC0h]"
 "	      005142f9    shl edx,cl"
 "	      005142fb    mov ecx,ds:[5B5CBCh]"
-"	      00514301    and ecx,[ebp-1Ch]"
+"	      00514301    and ecx,x"
 "	      00514304    add ecx,ecx"
 "	      00514306    lea edx,[ecx+edx*2]"
 "	      00514309    mov ecx,ds:[67EB10h]"
@@ -594,11 +594,11 @@ short S3TerrainInitMap() {
 );
 // LINE 257:
 	asm( 
-"	      00514318    mov eax,[ebp-20h]"
+"	      00514318    mov eax,y"
 "	      0051431b    and eax,ds:[5B5CBCh]"
 "	      00514321    mov cl,ds:[5B5CC0h]"
 "	      00514327    shl eax,cl"
-"	      00514329    mov ecx,[ebp-1Ch]"
+"	      00514329    mov ecx,x"
 "	      0051432c    dec ecx"
 "	      0051432d    and ecx,ds:[5B5CBCh]"
 "	      00514333    add ecx,ecx"
@@ -606,11 +606,11 @@ short S3TerrainInitMap() {
 "	      00514338    mov ecx,ds:[67EB10h]"
 "	      0051433e    xor edx,edx"
 "	      00514340    mov dx,[eax+ecx]"
-"	      00514344    mov eax,[ebp-20h]"
+"	      00514344    mov eax,y"
 "	      00514347    and eax,ds:[5B5CBCh]"
 "	      0051434d    mov cl,ds:[5B5CC0h]"
 "	      00514353    shl eax,cl"
-"	      00514355    mov ecx,[ebp-1Ch]"
+"	      00514355    mov ecx,x"
 "	      00514358    inc ecx"
 "	      00514359    and ecx,ds:[5B5CBCh]"
 "	      0051435f    add ecx,ecx"
@@ -620,17 +620,17 @@ short S3TerrainInitMap() {
 "	      0051436c    mov bx,[eax+ecx]"
 "	      00514370    add edx,ebx"
 "	      00514372    sar edx,1"
-"	      00514375    mov [ebp-24h],dx"
+"	      00514375    mov alt,dx"
 );
 // LINE 258:
 	asm( 
-"	      00514379    mov ax,[ebp-24h]"
-"	      0051437d    mov edx,[ebp-20h]"
+"	      00514379    mov ax,alt"
+"	      0051437d    mov edx,y"
 "	      00514380    and edx,ds:[5B5CBCh]"
 "	      00514386    mov cl,ds:[5B5CC0h]"
 "	      0051438c    shl edx,cl"
 "	      0051438e    mov ecx,ds:[5B5CBCh]"
-"	      00514394    and ecx,[ebp-1Ch]"
+"	      00514394    and ecx,x"
 "	      00514397    add ecx,ecx"
 "	      00514399    lea edx,[ecx+edx*2]"
 "	      0051439c    mov ecx,ds:[67EB10h]"
@@ -643,32 +643,32 @@ short S3TerrainInitMap() {
 );
 // LINE 264:
 	asm( 
-"	      005143b0    mov dword ptr [ebp-20h],0"
+"	      005143b0    mov y,0"
 "	      005143b7    jmp near ptr 005143C0h"
-"	      005143bc    add dword ptr [ebp-20h],2"
-"	      005143c0    cmp dword ptr [ebp-20h],100h"
+"	      005143bc    add y,2"
+"	      005143c0    cmp y,100h"
 "	      005143c7    jg near ptr 0051455Fh"
 );
 // LINE 265:
 	asm( 
-"	      005143cd    mov dword ptr [ebp-1Ch],0"
+"	      005143cd    mov x,0"
 "	      005143d4    jmp near ptr 005143DDh"
-"	      005143d9    add dword ptr [ebp-1Ch],2"
-"	      005143dd    cmp dword ptr [ebp-1Ch],100h"
+"	      005143d9    add x,2"
+"	      005143dd    cmp x,100h"
 "	      005143e4    jg near ptr 0051455Ah"
 );
 // LINE 267:
 	asm( 
-"	      005143ea    cmp dword ptr [ebp-1Ch],0"
+"	      005143ea    cmp x,0"
 "	      005143ee    jne near ptr 00514457h"
 );
 // LINE 269:
 	asm( 
-"	      005143f4    mov eax,[ebp-20h]"
+"	      005143f4    mov eax,y"
 "	      005143f7    and eax,ds:[5B5CBCh]"
 "	      005143fd    mov cl,ds:[5B5CC0h]"
 "	      00514403    shl eax,cl"
-"	      00514405    mov ecx,[ebp-1Ch]"
+"	      00514405    mov ecx,x"
 "	      00514408    inc ecx"
 "	      00514409    and ecx,ds:[5B5CBCh]"
 "	      0051440f    add ecx,ecx"
@@ -677,17 +677,17 @@ short S3TerrainInitMap() {
 "	      0051441a    xor edx,edx"
 "	      0051441c    mov dx,[eax+ecx]"
 "	      00514420    dec edx"
-"	      00514421    mov [ebp-24h],dx"
+"	      00514421    mov alt,dx"
 );
 // LINE 270:
 	asm( 
-"	      00514425    mov ax,[ebp-24h]"
-"	      00514429    mov edx,[ebp-20h]"
+"	      00514425    mov ax,alt"
+"	      00514429    mov edx,y"
 "	      0051442c    and edx,ds:[5B5CBCh]"
 "	      00514432    mov cl,ds:[5B5CC0h]"
 "	      00514438    shl edx,cl"
 "	      0051443a    mov ecx,ds:[5B5CBCh]"
-"	      00514440    and ecx,[ebp-1Ch]"
+"	      00514440    and ecx,x"
 "	      00514443    add ecx,ecx"
 "	      00514445    lea edx,[ecx+edx*2]"
 "	      00514448    mov ecx,ds:[67EB10h]"
@@ -696,16 +696,16 @@ short S3TerrainInitMap() {
 // LINE 272:
 	asm( 
 "	      00514452    jmp near ptr 00514555h"
-"	      00514457    cmp dword ptr [ebp-1Ch],100h"
+"	      00514457    cmp x,100h"
 "	      0051445e    jne near ptr 005144C7h"
 );
 // LINE 274:
 	asm( 
-"	      00514464    mov eax,[ebp-20h]"
+"	      00514464    mov eax,y"
 "	      00514467    and eax,ds:[5B5CBCh]"
 "	      0051446d    mov cl,ds:[5B5CC0h]"
 "	      00514473    shl eax,cl"
-"	      00514475    mov ecx,[ebp-1Ch]"
+"	      00514475    mov ecx,x"
 "	      00514478    dec ecx"
 "	      00514479    and ecx,ds:[5B5CBCh]"
 "	      0051447f    add ecx,ecx"
@@ -714,17 +714,17 @@ short S3TerrainInitMap() {
 "	      0051448a    xor edx,edx"
 "	      0051448c    mov dx,[eax+ecx]"
 "	      00514490    dec edx"
-"	      00514491    mov [ebp-24h],dx"
+"	      00514491    mov alt,dx"
 );
 // LINE 275:
 	asm( 
-"	      00514495    mov ax,[ebp-24h]"
-"	      00514499    mov edx,[ebp-20h]"
+"	      00514495    mov ax,alt"
+"	      00514499    mov edx,y"
 "	      0051449c    and edx,ds:[5B5CBCh]"
 "	      005144a2    mov cl,ds:[5B5CC0h]"
 "	      005144a8    shl edx,cl"
 "	      005144aa    mov ecx,ds:[5B5CBCh]"
-"	      005144b0    and ecx,[ebp-1Ch]"
+"	      005144b0    and ecx,x"
 "	      005144b3    add ecx,ecx"
 "	      005144b5    lea edx,[ecx+edx*2]"
 "	      005144b8    mov ecx,ds:[67EB10h]"
@@ -736,11 +736,11 @@ short S3TerrainInitMap() {
 );
 // LINE 279:
 	asm( 
-"	      005144c7    mov eax,[ebp-20h]"
+"	      005144c7    mov eax,y"
 "	      005144ca    and eax,ds:[5B5CBCh]"
 "	      005144d0    mov cl,ds:[5B5CC0h]"
 "	      005144d6    shl eax,cl"
-"	      005144d8    mov ecx,[ebp-1Ch]"
+"	      005144d8    mov ecx,x"
 "	      005144db    dec ecx"
 "	      005144dc    and ecx,ds:[5B5CBCh]"
 "	      005144e2    add ecx,ecx"
@@ -748,11 +748,11 @@ short S3TerrainInitMap() {
 "	      005144e7    mov ecx,ds:[67EB10h]"
 "	      005144ed    xor edx,edx"
 "	      005144ef    mov dx,[eax+ecx]"
-"	      005144f3    mov eax,[ebp-20h]"
+"	      005144f3    mov eax,y"
 "	      005144f6    and eax,ds:[5B5CBCh]"
 "	      005144fc    mov cl,ds:[5B5CC0h]"
 "	      00514502    shl eax,cl"
-"	      00514504    mov ecx,[ebp-1Ch]"
+"	      00514504    mov ecx,x"
 "	      00514507    inc ecx"
 "	      00514508    and ecx,ds:[5B5CBCh]"
 "	      0051450e    add ecx,ecx"
@@ -762,17 +762,17 @@ short S3TerrainInitMap() {
 "	      0051451b    mov bx,[eax+ecx]"
 "	      0051451f    add edx,ebx"
 "	      00514521    sar edx,1"
-"	      00514524    mov [ebp-24h],dx"
+"	      00514524    mov alt,dx"
 );
 // LINE 280:
 	asm( 
-"	      00514528    mov ax,[ebp-24h]"
-"	      0051452c    mov edx,[ebp-20h]"
+"	      00514528    mov ax,alt"
+"	      0051452c    mov edx,y"
 "	      0051452f    and edx,ds:[5B5CBCh]"
 "	      00514535    mov cl,ds:[5B5CC0h]"
 "	      0051453b    shl edx,cl"
 "	      0051453d    mov ecx,ds:[5B5CBCh]"
-"	      00514543    and ecx,[ebp-1Ch]"
+"	      00514543    and ecx,x"
 "	      00514546    add ecx,ecx"
 "	      00514548    lea edx,[ecx+edx*2]"
 "	      0051454b    mov ecx,ds:[67EB10h]"
@@ -785,40 +785,40 @@ short S3TerrainInitMap() {
 );
 // LINE 290:
 	asm( 
-"	      0051455f    mov dword ptr [ebp-20h],0"
+"	      0051455f    mov y,0"
 "	      00514566    jmp near ptr 0051456Eh"
-"	      0051456b    inc dword ptr [ebp-20h]"
-"	      0051456e    cmp dword ptr [ebp-20h],80h"
+"	      0051456b    inc y"
+"	      0051456e    cmp y,80h"
 "	      00514575    jge near ptr 00514640h"
 );
 // LINE 292:
 	asm( 
-"	      0051457b    mov dword ptr [ebp-1Ch],0"
+"	      0051457b    mov x,0"
 "	      00514582    jmp near ptr 0051458Ah"
-"	      00514587    inc dword ptr [ebp-1Ch]"
-"	      0051458a    cmp dword ptr [ebp-1Ch],80h"
+"	      00514587    inc x"
+"	      0051458a    cmp x,80h"
 "	      00514591    jge near ptr 005145F2h"
 );
 // LINE 294:
 	asm( 
-"	      00514597    mov eax,[ebp-20h]"
+"	      00514597    mov eax,y"
 "	      0051459a    add eax,eax"
 "	      0051459c    and eax,ds:[5B5CBCh]"
 "	      005145a2    mov cl,ds:[5B5CC0h]"
 "	      005145a8    shl eax,cl"
-"	      005145aa    mov ecx,[ebp-1Ch]"
+"	      005145aa    mov ecx,x"
 "	      005145ad    add ecx,ecx"
 "	      005145af    and ecx,ds:[5B5CBCh]"
 "	      005145b5    add ecx,ecx"
 "	      005145b7    lea eax,[ecx+eax*2]"
 "	      005145ba    mov ecx,ds:[67EB10h]"
 "	      005145c0    mov ax,[eax+ecx]"
-"	      005145c4    mov edx,[ebp-20h]"
+"	      005145c4    mov edx,y"
 "	      005145c7    and edx,ds:[5B5CBCh]"
 "	      005145cd    mov cl,ds:[5B5CC0h]"
 "	      005145d3    shl edx,cl"
 "	      005145d5    mov ecx,ds:[5B5CBCh]"
-"	      005145db    and ecx,[ebp-1Ch]"
+"	      005145db    and ecx,x"
 "	      005145de    add ecx,ecx"
 "	      005145e0    lea edx,[ecx+edx*2]"
 "	      005145e3    mov ecx,ds:[67EB10h]"
@@ -835,12 +835,12 @@ short S3TerrainInitMap() {
 "	      005145f8    sub eax,edx"
 "	      005145fa    sar eax,1"
 "	      005145fd    lea edx,[eax*2]"
-"	      00514604    mov eax,[ebp-20h]"
+"	      00514604    mov eax,y"
 "	      00514607    and eax,ds:[5B5CBCh]"
 "	      0051460d    mov cl,ds:[5B5CC0h]"
 "	      00514613    shl eax,cl"
 "	      00514615    mov ecx,ds:[5B5CBCh]"
-"	      0051461b    and ecx,[ebp-1Ch]"
+"	      0051461b    and ecx,x"
 "	      0051461e    add ecx,ecx"
 "	      00514620    lea eax,[ecx+eax*2]"
 "	      00514623    add eax,ds:[67EB10h]"
@@ -859,18 +859,18 @@ short S3TerrainInitMap() {
 );
 // LINE 302:
 	asm( 
-"	      00514640    mov dword ptr [ebp-20h],80h"
+"	      00514640    mov y,80h"
 "	      00514647    jmp near ptr 0051464Fh"
-"	      0051464c    inc dword ptr [ebp-20h]"
+"	      0051464c    inc y"
 "	      0051464f    mov eax,ds:[5B5CB8h]"
-"	      00514654    cmp [ebp-20h],eax"
+"	      00514654    cmp y,eax"
 "	      00514657    jge near ptr 00514695h"
 );
 // LINE 304:
 	asm( 
 "	      0051465d    mov edx,ds:[5B5CB8h]"
 "	      00514663    add edx,edx"
-"	      00514665    mov eax,[ebp-20h]"
+"	      00514665    mov eax,y"
 "	      00514668    and eax,ds:[5B5CBCh]"
 "	      0051466e    mov cl,ds:[5B5CC0h]"
 "	      00514674    shl eax,cl"
@@ -891,15 +891,15 @@ short S3TerrainInitMap() {
 );
 // LINE 311:
 	asm( 
-"	      00514695    mov dword ptr [ebp-20h],0"
+"	      00514695    mov y,0"
 "	      0051469c    jmp near ptr 005146A4h"
-"	      005146a1    inc dword ptr [ebp-20h]"
-"	      005146a4    cmp dword ptr [ebp-20h],80h"
+"	      005146a1    inc y"
+"	      005146a4    cmp y,80h"
 "	      005146ab    jge near ptr 0051474Fh"
 );
 // LINE 313:
 	asm( 
-"	      005146b1    mov eax,[ebp-20h]"
+"	      005146b1    mov eax,y"
 "	      005146b4    and eax,ds:[5B5CBCh]"
 "	      005146ba    mov cl,ds:[5B5CC0h]"
 "	      005146c0    shl eax,cl"
@@ -909,7 +909,7 @@ short S3TerrainInitMap() {
 "	      005146cd    lea eax,[ecx+eax*2]"
 "	      005146d0    mov ecx,ds:[67EB10h]"
 "	      005146d6    mov ax,[eax+ecx]"
-"	      005146da    mov edx,[ebp-20h]"
+"	      005146da    mov edx,y"
 "	      005146dd    and edx,ds:[5B5CBCh]"
 "	      005146e3    mov cl,ds:[5B5CC0h]"
 "	      005146e9    shl edx,cl"
@@ -922,7 +922,7 @@ short S3TerrainInitMap() {
 );
 // LINE 314:
 	asm( 
-"	      00514706    mov eax,[ebp-20h]"
+"	      00514706    mov eax,y"
 "	      00514709    and eax,ds:[5B5CBCh]"
 "	      0051470f    mov cl,ds:[5B5CC0h]"
 "	      00514715    shl eax,cl"
@@ -932,7 +932,7 @@ short S3TerrainInitMap() {
 "	      00514722    lea eax,[ecx+eax*2]"
 "	      00514725    mov ecx,ds:[67EB10h]"
 "	      0051472b    mov ax,[eax+ecx]"
-"	      0051472f    mov edx,[ebp-20h]"
+"	      0051472f    mov edx,y"
 "	      00514732    and edx,ds:[5B5CBCh]"
 "	      00514738    mov cl,ds:[5B5CC0h]"
 "	      0051473e    shl edx,cl"
@@ -945,10 +945,10 @@ short S3TerrainInitMap() {
 );
 // LINE 317:
 	asm( 
-"	      0051474f    mov dword ptr [ebp-1Ch],0"
+"	      0051474f    mov x,0"
 "	      00514756    jmp near ptr 0051475Eh"
-"	      0051475b    inc dword ptr [ebp-1Ch]"
-"	      0051475e    cmp dword ptr [ebp-1Ch],80h"
+"	      0051475b    inc x"
+"	      0051475e    cmp x,80h"
 "	      00514765    jge near ptr 0051480Eh"
 );
 // LINE 319:
@@ -958,7 +958,7 @@ short S3TerrainInitMap() {
 "	      00514773    mov cl,ds:[5B5CC0h]"
 "	      00514779    shl eax,cl"
 "	      0051477b    mov ecx,ds:[5B5CBCh]"
-"	      00514781    and ecx,[ebp-1Ch]"
+"	      00514781    and ecx,x"
 "	      00514784    add ecx,ecx"
 "	      00514786    lea eax,[ecx+eax*2]"
 "	      00514789    mov ecx,ds:[67EB10h]"
@@ -968,7 +968,7 @@ short S3TerrainInitMap() {
 "	      0051479f    mov cl,ds:[5B5CC0h]"
 "	      005147a5    shl edx,cl"
 "	      005147a7    mov ecx,ds:[5B5CBCh]"
-"	      005147ad    and ecx,[ebp-1Ch]"
+"	      005147ad    and ecx,x"
 "	      005147b0    add ecx,ecx"
 "	      005147b2    lea edx,[ecx+edx*2]"
 "	      005147b5    mov ecx,ds:[67EB10h]"
@@ -981,7 +981,7 @@ short S3TerrainInitMap() {
 "	      005147c7    mov cl,ds:[5B5CC0h]"
 "	      005147cd    shl eax,cl"
 "	      005147cf    mov ecx,ds:[5B5CBCh]"
-"	      005147d5    and ecx,[ebp-1Ch]"
+"	      005147d5    and ecx,x"
 "	      005147d8    add ecx,ecx"
 "	      005147da    lea eax,[ecx+eax*2]"
 "	      005147dd    mov ecx,ds:[67EB10h]"
@@ -990,7 +990,7 @@ short S3TerrainInitMap() {
 "	      005147e9    mov cl,ds:[5B5CC0h]"
 "	      005147ef    shl edx,cl"
 "	      005147f1    mov ecx,ds:[5B5CBCh]"
-"	      005147f7    and ecx,[ebp-1Ch]"
+"	      005147f7    and ecx,x"
 "	      005147fa    add ecx,ecx"
 "	      005147fc    lea edx,[ecx+edx*2]"
 "	      005147ff    mov ecx,ds:[67EB10h]"
@@ -1012,33 +1012,33 @@ short S3TerrainInitMap() {
 "	      00514829    lea eax,[ecx+eax*2]"
 "	      0051482c    mov ecx,ds:[67EB10h]"
 "	      00514832    mov ax,[eax+ecx]"
-"	      00514836    mov [ebp-24h],ax"
+"	      00514836    mov alt,ax"
 );
 // LINE 326:
 	asm( 
-"	      0051483a    mov dword ptr [ebp-1Ch],80h"
+"	      0051483a    mov x,80h"
 "	      00514841    jmp near ptr 00514849h"
-"	      00514846    inc dword ptr [ebp-1Ch]"
-"	      00514849    cmp dword ptr [ebp-1Ch],90h"
+"	      00514846    inc x"
+"	      00514849    cmp x,90h"
 "	      00514850    jg near ptr 005148A9h"
 );
 // LINE 328:
 	asm( 
-"	      00514856    mov dword ptr [ebp-20h],80h"
+"	      00514856    mov y,80h"
 "	      0051485d    jmp near ptr 00514865h"
-"	      00514862    inc dword ptr [ebp-20h]"
-"	      00514865    cmp dword ptr [ebp-20h],90h"
+"	      00514862    inc y"
+"	      00514865    cmp y,90h"
 "	      0051486c    jg near ptr 005148A4h"
 );
 // LINE 330:
 	asm( 
-"	      00514872    mov ax,[ebp-24h]"
-"	      00514876    mov edx,[ebp-20h]"
+"	      00514872    mov ax,alt"
+"	      00514876    mov edx,y"
 "	      00514879    and edx,ds:[5B5CBCh]"
 "	      0051487f    mov cl,ds:[5B5CC0h]"
 "	      00514885    shl edx,cl"
 "	      00514887    mov ecx,ds:[5B5CBCh]"
-"	      0051488d    and ecx,[ebp-1Ch]"
+"	      0051488d    and ecx,x"
 "	      00514890    add ecx,ecx"
 "	      00514892    lea edx,[ecx+edx*2]"
 "	      00514895    mov ecx,ds:[67EB10h]"
@@ -1075,54 +1075,54 @@ short S3TerrainInitMap() {
 );
 // LINE 351:
 	asm( 
-"	      005148d6    mov dword ptr [ebp-8],30A3h"
+"	      005148d6    mov k1,30A3h"
 );
 // LINE 352:
 	asm( 
-"	      005148dd    mov dword ptr [ebp-0Ch],547Ah"
+"	      005148dd    mov k2,547Ah"
 );
 // LINE 353:
 	asm( 
-"	      005148e4    mov dword ptr [ebp-18h],7AE1h"
+"	      005148e4    mov k3,7AE1h"
 );
 // LINE 354:
 	asm( 
-"	      005148eb    mov dword ptr [ebp-1Ch],0"
+"	      005148eb    mov x,0"
 "	      005148f2    jmp near ptr 005148FAh"
-"	      005148f7    inc dword ptr [ebp-1Ch]"
+"	      005148f7    inc x"
 "	      005148fa    mov eax,ds:[5B5CB8h]"
-"	      005148ff    cmp [ebp-1Ch],eax"
+"	      005148ff    cmp x,eax"
 "	      00514902    jg near ptr 00514A43h"
 );
 // LINE 356:
 	asm( 
-"	      00514908    mov dword ptr [ebp-20h],0"
+"	      00514908    mov y,0"
 "	      0051490f    jmp near ptr 00514917h"
-"	      00514914    inc dword ptr [ebp-20h]"
+"	      00514914    inc y"
 "	      00514917    mov eax,ds:[5B5CB8h]"
-"	      0051491c    cmp [ebp-20h],eax"
+"	      0051491c    cmp y,eax"
 "	      0051491f    jg near ptr 00514A3Eh"
 );
 // LINE 359:
 	asm( 
 "	      00514925    mov eax,ds:[5B5CB8h]"
 "	      0051492a    sar eax,1"
-"	      0051492d    cmp eax,[ebp-1Ch]"
+"	      0051492d    cmp eax,x"
 "	      00514930    jle near ptr 0051494Ch"
 "	      00514936    mov eax,ds:[5B5CB8h]"
 "	      0051493b    sar eax,1"
-"	      0051493e    cmp eax,[ebp-20h]"
+"	      0051493e    cmp eax,y"
 "	      00514941    jle near ptr 0051494Ch"
 "	      00514947    jmp near ptr 00514914h"
 );
 // LINE 365:
 	asm( 
-"	      0051494c    mov eax,[ebp-20h]"
+"	      0051494c    mov eax,y"
 "	      0051494f    add eax,2"
 "	      00514952    and eax,ds:[5B5CBCh]"
 "	      00514958    mov cl,ds:[5B5CC0h]"
 "	      0051495e    shl eax,cl"
-"	      00514960    mov ecx,[ebp-1Ch]"
+"	      00514960    mov ecx,x"
 "	      00514963    sub ecx,2"
 "	      00514966    and ecx,ds:[5B5CBCh]"
 "	      0051496c    add ecx,ecx"
@@ -1132,17 +1132,17 @@ short S3TerrainInitMap() {
 "	      00514979    mov dx,[eax+ecx]"
 "	      0051497d    shl edx,10h"
 "	      00514980    push edx"
-"	      00514981    mov eax,[ebp-18h]"
+"	      00514981    mov eax,k3"
 "	      00514984    push eax"
 "	      00514985    call 004D19BDh"
 "	      0051498a    add esp,8"
 "	      0051498d    mov ebx,eax"
-"	      0051498f    mov eax,[ebp-20h]"
+"	      0051498f    mov eax,y"
 "	      00514992    sub eax,2"
 "	      00514995    and eax,ds:[5B5CBCh]"
 "	      0051499b    mov cl,ds:[5B5CC0h]"
 "	      005149a1    shl eax,cl"
-"	      005149a3    mov ecx,[ebp-1Ch]"
+"	      005149a3    mov ecx,x"
 "	      005149a6    inc ecx"
 "	      005149a7    and ecx,ds:[5B5CBCh]"
 "	      005149ad    add ecx,ecx"
@@ -1152,17 +1152,17 @@ short S3TerrainInitMap() {
 "	      005149ba    mov dx,[eax+ecx]"
 "	      005149be    shl edx,10h"
 "	      005149c1    push edx"
-"	      005149c2    mov eax,[ebp-0Ch]"
+"	      005149c2    mov eax,k2"
 "	      005149c5    push eax"
 "	      005149c6    call 004D19BDh"
 "	      005149cb    add esp,8"
 "	      005149ce    add ebx,eax"
-"	      005149d0    mov eax,[ebp-20h]"
+"	      005149d0    mov eax,y"
 "	      005149d3    and eax,ds:[5B5CBCh]"
 "	      005149d9    mov cl,ds:[5B5CC0h]"
 "	      005149df    shl eax,cl"
 "	      005149e1    mov ecx,ds:[5B5CBCh]"
-"	      005149e7    and ecx,[ebp-1Ch]"
+"	      005149e7    and ecx,x"
 "	      005149ea    add ecx,ecx"
 "	      005149ec    lea eax,[ecx+eax*2]"
 "	      005149ef    mov ecx,ds:[67EB10h]"
@@ -1170,18 +1170,18 @@ short S3TerrainInitMap() {
 "	      005149f7    mov dx,[eax+ecx]"
 "	      005149fb    shl edx,10h"
 "	      005149fe    push edx"
-"	      005149ff    mov eax,[ebp-8]"
+"	      005149ff    mov eax,k1"
 "	      00514a02    push eax"
 "	      00514a03    call 004D19BDh"
 "	      00514a08    add esp,8"
 "	      00514a0b    add ebx,eax"
 "	      00514a0d    sar ebx,10h"
-"	      00514a10    mov eax,[ebp-20h]"
+"	      00514a10    mov eax,y"
 "	      00514a13    and eax,ds:[5B5CBCh]"
 "	      00514a19    mov cl,ds:[5B5CC0h]"
 "	      00514a1f    shl eax,cl"
 "	      00514a21    mov ecx,ds:[5B5CBCh]"
-"	      00514a27    and ecx,[ebp-1Ch]"
+"	      00514a27    and ecx,x"
 "	      00514a2a    add ecx,ecx"
 "	      00514a2c    lea eax,[ecx+eax*2]"
 "	      00514a2f    mov ecx,ds:[67EB10h]"
@@ -1201,24 +1201,24 @@ short S3TerrainInitMap() {
 );
 // LINE 383:
 	asm( 
-"	      00514a48    mov dword ptr [ebp-1Ch],0"
+"	      00514a48    mov x,0"
 "	      00514a4f    jmp near ptr 00514A57h"
-"	      00514a54    inc dword ptr [ebp-1Ch]"
-"	      00514a57    cmp dword ptr [ebp-1Ch],100h"
+"	      00514a54    inc x"
+"	      00514a57    cmp x,100h"
 "	      00514a5e    jge near ptr 00514A9Bh"
 );
 // LINE 385:
 	asm( 
-"	      00514a64    mov dword ptr [ebp-20h],0"
+"	      00514a64    mov y,0"
 "	      00514a6b    jmp near ptr 00514A73h"
-"	      00514a70    inc dword ptr [ebp-20h]"
-"	      00514a73    cmp dword ptr [ebp-20h],100h"
+"	      00514a70    inc y"
+"	      00514a73    cmp y,100h"
 "	      00514a7a    jge near ptr 00514A96h"
 );
 // LINE 395:
 	asm( 
-"	      00514a80    mov eax,[ebp-20h]"
-"	      00514a83    mov ecx,[ebp-1Ch]"
+"	      00514a80    mov eax,y"
+"	      00514a83    mov ecx,x"
 "	      00514a86    shl ecx,8"
 "	      00514a89    mov byte ptr [eax+ecx+66EB10h],30h"
 );
@@ -1232,34 +1232,34 @@ short S3TerrainInitMap() {
 );
 // LINE 402:
 	asm( 
-"	      00514a9b    mov dword ptr [ebp-1Ch],0"
+"	      00514a9b    mov x,0"
 "	      00514aa2    jmp near ptr 00514AAAh"
-"	      00514aa7    inc dword ptr [ebp-1Ch]"
-"	      00514aaa    cmp dword ptr [ebp-1Ch],80h"
+"	      00514aa7    inc x"
+"	      00514aaa    cmp x,80h"
 "	      00514ab1    jge near ptr 00514C0Eh"
 );
 // LINE 404:
 	asm( 
-"	      00514ab7    mov dword ptr [ebp-20h],0"
+"	      00514ab7    mov y,0"
 "	      00514abe    jmp near ptr 00514AC6h"
-"	      00514ac3    inc dword ptr [ebp-20h]"
-"	      00514ac6    cmp dword ptr [ebp-20h],80h"
+"	      00514ac3    inc y"
+"	      00514ac6    cmp y,80h"
 "	      00514acd    jge near ptr 00514C09h"
 );
 // LINE 406:
 	asm( 
-"	      00514ad3    mov eax,[ebp-1Ch]"
+"	      00514ad3    mov eax,x"
 "	      00514ad6    mov eax,[eax*4+639850h]"
-"	      00514add    mov ecx,[ebp-20h]"
+"	      00514add    mov ecx,y"
 "	      00514ae0    movzx ax,byte ptr [eax+ecx]"
-"	      00514ae5    mov [ebp-28h],ax"
+"	      00514ae5    mov tile,ax"
 );
 // LINE 407:
 	asm( 
-"	      00514ae9    movsx eax,word ptr [ebp-28h]"
+"	      00514ae9    movsx eax,tile"
 "	      00514aed    test eax,eax"
 "	      00514aef    jle near ptr 00514B2Eh"
-"	      00514af5    movsx eax,word ptr [ebp-28h]"
+"	      00514af5    movsx eax,tile"
 "	      00514af9    cmp eax,5"
 "	      00514afc    jge near ptr 00514B2Eh"
 );
@@ -1274,37 +1274,37 @@ short S3TerrainInitMap() {
 "	      00514b12    xor eax,edx"
 "	      00514b14    sub eax,edx"
 "	      00514b16    add eax,0Ah"
-"	      00514b19    mov ecx,[ebp-20h]"
-"	      00514b1c    mov edx,[ebp-1Ch]"
+"	      00514b19    mov ecx,y"
+"	      00514b1c    mov edx,x"
 "	      00514b1f    shl edx,8"
 "	      00514b22    mov [ecx+edx+66EB10h],al"
 );
 // LINE 412:
 	asm( 
 "	      00514b29    jmp near ptr 00514C04h"
-"	      00514b2e    movsx eax,word ptr [ebp-28h]"
+"	      00514b2e    movsx eax,tile"
 "	      00514b32    cmp eax,6"
 "	      00514b35    jl near ptr 00514B48h"
-"	      00514b3b    movsx eax,word ptr [ebp-28h]"
+"	      00514b3b    movsx eax,tile"
 "	      00514b3f    cmp eax,0Dh"
 "	      00514b42    jle near ptr 00514B57h"
-"	      00514b48    movsx eax,word ptr [ebp-28h]"
+"	      00514b48    movsx eax,tile"
 "	      00514b4c    cmp eax,0D5h"
 "	      00514b51    jne near ptr 00514B6Dh"
 );
 // LINE 414:
 	asm( 
-"	      00514b57    mov eax,[ebp-20h]"
-"	      00514b5a    mov ecx,[ebp-1Ch]"
+"	      00514b57    mov eax,y"
+"	      00514b5a    mov ecx,x"
 "	      00514b5d    shl ecx,8"
 "	      00514b60    mov byte ptr [eax+ecx+66EB10h],20h"
 );
 // LINE 416:
 	asm( 
 "	      00514b68    jmp near ptr 00514C04h"
-"	      00514b6d    mov eax,[ebp-1Ch]"
+"	      00514b6d    mov eax,x"
 "	      00514b70    mov eax,[eax*4+63A270h]"
-"	      00514b77    mov ecx,[ebp-20h]"
+"	      00514b77    mov ecx,y"
 "	      00514b7a    xor edx,edx"
 "	      00514b7c    mov dl,[eax+ecx]"
 "	      00514b7f    cmp edx,0Fh"
@@ -1312,8 +1312,8 @@ short S3TerrainInitMap() {
 );
 // LINE 418:
 	asm( 
-"	      00514b88    mov eax,[ebp-20h]"
-"	      00514b8b    mov ecx,[ebp-1Ch]"
+"	      00514b88    mov eax,y"
+"	      00514b8b    mov ecx,x"
 "	      00514b8e    shl ecx,8"
 "	      00514b91    mov byte ptr [eax+ecx+66EB10h],5"
 );
@@ -1326,24 +1326,24 @@ short S3TerrainInitMap() {
 );
 // LINE 421:
 	asm( 
-"	      00514bad    mov eax,[ebp-20h]"
+"	      00514bad    mov eax,y"
 "	      00514bb0    and eax,ds:[5B5CBCh]"
 "	      00514bb6    mov cl,ds:[5B5CC0h]"
 "	      00514bbc    shl eax,cl"
 "	      00514bbe    mov ecx,ds:[5B5CBCh]"
-"	      00514bc4    and ecx,[ebp-1Ch]"
+"	      00514bc4    and ecx,x"
 "	      00514bc7    add ecx,ecx"
 "	      00514bc9    lea eax,[ecx+eax*2]"
 "	      00514bcc    mov ecx,ds:[67EB10h]"
 "	      00514bd2    xor edx,edx"
 "	      00514bd4    mov dx,[eax+ecx]"
 "	      00514bd8    sub edx,8"
-"	      00514bdb    mov eax,[ebp-20h]"
+"	      00514bdb    mov eax,y"
 "	      00514bde    and eax,ds:[5B5CBCh]"
 "	      00514be4    mov cl,ds:[5B5CC0h]"
 "	      00514bea    shl eax,cl"
 "	      00514bec    mov ecx,ds:[5B5CBCh]"
-"	      00514bf2    and ecx,[ebp-1Ch]"
+"	      00514bf2    and ecx,x"
 "	      00514bf5    add ecx,ecx"
 "	      00514bf7    lea eax,[ecx+eax*2]"
 "	      00514bfa    mov ecx,ds:[67EB10h]"
@@ -1359,99 +1359,99 @@ short S3TerrainInitMap() {
 );
 // LINE 430:
 	asm( 
-"	      00514c0e    mov dword ptr [ebp-1Ch],1"
+"	      00514c0e    mov x,1"
 "	      00514c15    jmp near ptr 00514C1Dh"
-"	      00514c1a    inc dword ptr [ebp-1Ch]"
-"	      00514c1d    cmp dword ptr [ebp-1Ch],7Fh"
+"	      00514c1a    inc x"
+"	      00514c1d    cmp x,7Fh"
 "	      00514c21    jge near ptr 00514D68h"
 );
 // LINE 432:
 	asm( 
-"	      00514c27    mov dword ptr [ebp-20h],1"
+"	      00514c27    mov y,1"
 "	      00514c2e    jmp near ptr 00514C36h"
-"	      00514c33    inc dword ptr [ebp-20h]"
-"	      00514c36    cmp dword ptr [ebp-20h],7Fh"
+"	      00514c33    inc y"
+"	      00514c36    cmp y,7Fh"
 "	      00514c3a    jge near ptr 00514D63h"
 );
 // LINE 434:
 // Block start:
 	unsigned char texid;
 	asm( 
-"	      00514c40    mov eax,[ebp-20h]"
-"	      00514c43    mov ecx,[ebp-1Ch]"
+"	      00514c40    mov eax,y"
+"	      00514c43    mov ecx,x"
 "	      00514c46    shl ecx,8"
 "	      00514c49    mov al,[eax+ecx+66EB10h]"
-"	      00514c50    mov [ebp-2Ch],al"
+"	      00514c50    mov texid,al"
 );
 // LINE 436:
 	asm( 
 "	      00514c53    xor eax,eax"
-"	      00514c55    mov al,[ebp-2Ch]"
+"	      00514c55    mov al,texid"
 "	      00514c58    cmp eax,30h"
 "	      00514c5b    je near ptr 00514C6Fh"
 "	      00514c61    xor eax,eax"
-"	      00514c63    mov al,[ebp-2Ch]"
+"	      00514c63    mov al,texid"
 "	      00514c66    cmp eax,20h"
 "	      00514c69    jne near ptr 00514D5Eh"
 );
 // LINE 445:
 	asm( 
-"	      00514c6f    mov eax,[ebp-20h]"
-"	      00514c72    mov ecx,[ebp-1Ch]"
+"	      00514c6f    mov eax,y"
+"	      00514c72    mov ecx,x"
 "	      00514c75    dec ecx"
 "	      00514c76    shl ecx,8"
 "	      00514c79    xor edx,edx"
 "	      00514c7b    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514c82    cmp edx,5"
 "	      00514c85    je near ptr 00514D4Dh"
-"	      00514c8b    mov eax,[ebp-1Ch]"
+"	      00514c8b    mov eax,x"
 "	      00514c8e    shl eax,8"
-"	      00514c91    mov ecx,[ebp-20h]"
+"	      00514c91    mov ecx,y"
 "	      00514c94    xor edx,edx"
 "	      00514c96    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514c9d    cmp edx,5"
 "	      00514ca0    je near ptr 00514D4Dh"
-"	      00514ca6    mov eax,[ebp-1Ch]"
+"	      00514ca6    mov eax,x"
 "	      00514ca9    inc eax"
 "	      00514caa    shl eax,8"
-"	      00514cad    mov ecx,[ebp-20h]"
+"	      00514cad    mov ecx,y"
 "	      00514cb0    xor edx,edx"
 "	      00514cb2    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514cb9    cmp edx,5"
 "	      00514cbc    je near ptr 00514D4Dh"
-"	      00514cc2    mov eax,[ebp-20h]"
-"	      00514cc5    mov ecx,[ebp-1Ch]"
+"	      00514cc2    mov eax,y"
+"	      00514cc5    mov ecx,x"
 "	      00514cc8    dec ecx"
 "	      00514cc9    shl ecx,8"
 "	      00514ccc    xor edx,edx"
 "	      00514cce    mov dl,[eax+ecx+66EB10h]"
 "	      00514cd5    cmp edx,5"
 "	      00514cd8    je near ptr 00514D4Dh"
-"	      00514cde    mov eax,[ebp-20h]"
-"	      00514ce1    mov ecx,[ebp-1Ch]"
+"	      00514cde    mov eax,y"
+"	      00514ce1    mov ecx,x"
 "	      00514ce4    inc ecx"
 "	      00514ce5    shl ecx,8"
 "	      00514ce8    xor edx,edx"
 "	      00514cea    mov dl,[eax+ecx+66EB10h]"
 "	      00514cf1    cmp edx,5"
 "	      00514cf4    je near ptr 00514D4Dh"
-"	      00514cfa    mov eax,[ebp-20h]"
-"	      00514cfd    mov ecx,[ebp-1Ch]"
+"	      00514cfa    mov eax,y"
+"	      00514cfd    mov ecx,x"
 "	      00514d00    dec ecx"
 "	      00514d01    shl ecx,8"
 "	      00514d04    xor edx,edx"
 "	      00514d06    mov dl,[eax+ecx+66EB11h]"
 "	      00514d0d    cmp edx,5"
 "	      00514d10    je near ptr 00514D4Dh"
-"	      00514d16    mov eax,[ebp-20h]"
-"	      00514d19    mov ecx,[ebp-1Ch]"
+"	      00514d16    mov eax,y"
+"	      00514d19    mov ecx,x"
 "	      00514d1c    shl ecx,8"
 "	      00514d1f    xor edx,edx"
 "	      00514d21    mov dl,[eax+ecx+66EB11h]"
 "	      00514d28    cmp edx,5"
 "	      00514d2b    je near ptr 00514D4Dh"
-"	      00514d31    mov eax,[ebp-20h]"
-"	      00514d34    mov ecx,[ebp-1Ch]"
+"	      00514d31    mov eax,y"
+"	      00514d34    mov ecx,x"
 "	      00514d37    inc ecx"
 "	      00514d38    shl ecx,8"
 "	      00514d3b    xor edx,edx"
@@ -1461,8 +1461,8 @@ short S3TerrainInitMap() {
 );
 // LINE 447:
 	asm( 
-"	      00514d4d    mov eax,[ebp-20h]"
-"	      00514d50    mov ecx,[ebp-1Ch]"
+"	      00514d4d    mov eax,y"
+"	      00514d50    mov ecx,x"
 "	      00514d53    shl ecx,8"
 "	      00514d56    mov byte ptr [eax+ecx+66EB10h],10h"
 );
@@ -1477,95 +1477,95 @@ short S3TerrainInitMap() {
 );
 // LINE 456:
 	asm( 
-"	      00514d68    mov dword ptr [ebp-1Ch],1"
+"	      00514d68    mov x,1"
 "	      00514d6f    jmp near ptr 00514D77h"
-"	      00514d74    inc dword ptr [ebp-1Ch]"
-"	      00514d77    cmp dword ptr [ebp-1Ch],7Fh"
+"	      00514d74    inc x"
+"	      00514d77    cmp x,7Fh"
 "	      00514d7b    jge near ptr 00514EB4h"
 );
 // LINE 458:
 	asm( 
-"	      00514d81    mov dword ptr [ebp-20h],1"
+"	      00514d81    mov y,1"
 "	      00514d88    jmp near ptr 00514D90h"
-"	      00514d8d    inc dword ptr [ebp-20h]"
-"	      00514d90    cmp dword ptr [ebp-20h],7Fh"
+"	      00514d8d    inc y"
+"	      00514d90    cmp y,7Fh"
 "	      00514d94    jge near ptr 00514EAFh"
 );
 // LINE 460:
 // Block start:
 	unsigned char texid;
 	asm( 
-"	      00514d9a    mov eax,[ebp-20h]"
-"	      00514d9d    mov ecx,[ebp-1Ch]"
+"	      00514d9a    mov eax,y"
+"	      00514d9d    mov ecx,x"
 "	      00514da0    shl ecx,8"
 "	      00514da3    mov al,[eax+ecx+66EB10h]"
-"	      00514daa    mov [ebp-30h],al"
+"	      00514daa    mov texid,al"
 );
 // LINE 462:
 	asm( 
 "	      00514dad    xor eax,eax"
-"	      00514daf    mov al,[ebp-30h]"
+"	      00514daf    mov al,texid"
 "	      00514db2    cmp eax,30h"
 "	      00514db5    jne near ptr 00514EAAh"
 );
 // LINE 471:
 	asm( 
-"	      00514dbb    mov eax,[ebp-20h]"
-"	      00514dbe    mov ecx,[ebp-1Ch]"
+"	      00514dbb    mov eax,y"
+"	      00514dbe    mov ecx,x"
 "	      00514dc1    dec ecx"
 "	      00514dc2    shl ecx,8"
 "	      00514dc5    xor edx,edx"
 "	      00514dc7    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514dce    cmp edx,10h"
 "	      00514dd1    je near ptr 00514E99h"
-"	      00514dd7    mov eax,[ebp-1Ch]"
+"	      00514dd7    mov eax,x"
 "	      00514dda    shl eax,8"
-"	      00514ddd    mov ecx,[ebp-20h]"
+"	      00514ddd    mov ecx,y"
 "	      00514de0    xor edx,edx"
 "	      00514de2    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514de9    cmp edx,10h"
 "	      00514dec    je near ptr 00514E99h"
-"	      00514df2    mov eax,[ebp-1Ch]"
+"	      00514df2    mov eax,x"
 "	      00514df5    inc eax"
 "	      00514df6    shl eax,8"
-"	      00514df9    mov ecx,[ebp-20h]"
+"	      00514df9    mov ecx,y"
 "	      00514dfc    xor edx,edx"
 "	      00514dfe    mov dl,[eax+ecx+66EB0Fh]"
 "	      00514e05    cmp edx,10h"
 "	      00514e08    je near ptr 00514E99h"
-"	      00514e0e    mov eax,[ebp-20h]"
-"	      00514e11    mov ecx,[ebp-1Ch]"
+"	      00514e0e    mov eax,y"
+"	      00514e11    mov ecx,x"
 "	      00514e14    dec ecx"
 "	      00514e15    shl ecx,8"
 "	      00514e18    xor edx,edx"
 "	      00514e1a    mov dl,[eax+ecx+66EB10h]"
 "	      00514e21    cmp edx,10h"
 "	      00514e24    je near ptr 00514E99h"
-"	      00514e2a    mov eax,[ebp-20h]"
-"	      00514e2d    mov ecx,[ebp-1Ch]"
+"	      00514e2a    mov eax,y"
+"	      00514e2d    mov ecx,x"
 "	      00514e30    inc ecx"
 "	      00514e31    shl ecx,8"
 "	      00514e34    xor edx,edx"
 "	      00514e36    mov dl,[eax+ecx+66EB10h]"
 "	      00514e3d    cmp edx,10h"
 "	      00514e40    je near ptr 00514E99h"
-"	      00514e46    mov eax,[ebp-20h]"
-"	      00514e49    mov ecx,[ebp-1Ch]"
+"	      00514e46    mov eax,y"
+"	      00514e49    mov ecx,x"
 "	      00514e4c    dec ecx"
 "	      00514e4d    shl ecx,8"
 "	      00514e50    xor edx,edx"
 "	      00514e52    mov dl,[eax+ecx+66EB11h]"
 "	      00514e59    cmp edx,10h"
 "	      00514e5c    je near ptr 00514E99h"
-"	      00514e62    mov eax,[ebp-20h]"
-"	      00514e65    mov ecx,[ebp-1Ch]"
+"	      00514e62    mov eax,y"
+"	      00514e65    mov ecx,x"
 "	      00514e68    shl ecx,8"
 "	      00514e6b    xor edx,edx"
 "	      00514e6d    mov dl,[eax+ecx+66EB11h]"
 "	      00514e74    cmp edx,10h"
 "	      00514e77    je near ptr 00514E99h"
-"	      00514e7d    mov eax,[ebp-20h]"
-"	      00514e80    mov ecx,[ebp-1Ch]"
+"	      00514e7d    mov eax,y"
+"	      00514e80    mov ecx,x"
 "	      00514e83    inc ecx"
 "	      00514e84    shl ecx,8"
 "	      00514e87    xor edx,edx"
@@ -1575,8 +1575,8 @@ short S3TerrainInitMap() {
 );
 // LINE 473:
 	asm( 
-"	      00514e99    mov eax,[ebp-20h]"
-"	      00514e9c    mov ecx,[ebp-1Ch]"
+"	      00514e99    mov eax,y"
+"	      00514e9c    mov ecx,x"
 "	      00514e9f    shl ecx,8"
 "	      00514ea2    mov byte ptr [eax+ecx+66EB10h],20h"
 );
@@ -1591,24 +1591,24 @@ short S3TerrainInitMap() {
 );
 // LINE 482:
 	asm( 
-"	      00514eb4    mov dword ptr [ebp-1Ch],0"
+"	      00514eb4    mov x,0"
 "	      00514ebb    jmp near ptr 00514EC3h"
-"	      00514ec0    inc dword ptr [ebp-1Ch]"
-"	      00514ec3    cmp dword ptr [ebp-1Ch],80h"
+"	      00514ec0    inc x"
+"	      00514ec3    cmp x,80h"
 "	      00514eca    jge near ptr 0051547Bh"
 );
 // LINE 484:
 	asm( 
-"	      00514ed0    mov dword ptr [ebp-20h],0"
+"	      00514ed0    mov y,0"
 "	      00514ed7    jmp near ptr 00514EDFh"
-"	      00514edc    inc dword ptr [ebp-20h]"
-"	      00514edf    cmp dword ptr [ebp-20h],80h"
+"	      00514edc    inc y"
+"	      00514edf    cmp y,80h"
 "	      00514ee6    jge near ptr 00515476h"
 );
 // LINE 487:
 	asm( 
-"	      00514eec    mov eax,[ebp-20h]"
-"	      00514eef    mov ecx,[ebp-1Ch]"
+"	      00514eec    mov eax,y"
+"	      00514eef    mov ecx,x"
 "	      00514ef2    shl ecx,8"
 "	      00514ef5    xor edx,edx"
 "	      00514ef7    mov dl,[eax+ecx+66EB10h]"
@@ -1621,14 +1621,14 @@ short S3TerrainInitMap() {
 );
 // LINE 490:
 	asm( 
-"	      00514f0c    mov word ptr [ebp-4],0"
+"	      00514f0c    mov wflags,0"
 );
 // LINE 493:
 	asm( 
-"	      00514f12    mov eax,[ebp-20h]"
+"	      00514f12    mov eax,y"
 "	      00514f15    dec eax"
 "	      00514f16    and eax,0FFh"
-"	      00514f1b    mov ecx,[ebp-1Ch]"
+"	      00514f1b    mov ecx,x"
 "	      00514f1e    dec ecx"
 "	      00514f1f    and ecx,0FFh"
 "	      00514f25    shl ecx,8"
@@ -1636,10 +1636,10 @@ short S3TerrainInitMap() {
 "	      00514f2a    mov dl,[eax+ecx+66EB10h]"
 "	      00514f31    test edx,edx"
 "	      00514f33    jl near ptr 00514F61h"
-"	      00514f39    mov eax,[ebp-20h]"
+"	      00514f39    mov eax,y"
 "	      00514f3c    dec eax"
 "	      00514f3d    and eax,0FFh"
-"	      00514f42    mov ecx,[ebp-1Ch]"
+"	      00514f42    mov ecx,x"
 "	      00514f45    dec ecx"
 "	      00514f46    and ecx,0FFh"
 "	      00514f4c    shl ecx,8"
@@ -1647,10 +1647,10 @@ short S3TerrainInitMap() {
 "	      00514f51    mov dl,[eax+ecx+66EB10h]"
 "	      00514f58    cmp edx,5"
 "	      00514f5b    jl near ptr 00514FBCh"
-"	      00514f61    mov eax,[ebp-20h]"
+"	      00514f61    mov eax,y"
 "	      00514f64    dec eax"
 "	      00514f65    and eax,0FFh"
-"	      00514f6a    mov ecx,[ebp-1Ch]"
+"	      00514f6a    mov ecx,x"
 "	      00514f6d    dec ecx"
 "	      00514f6e    and ecx,0FFh"
 "	      00514f74    shl ecx,8"
@@ -1658,10 +1658,10 @@ short S3TerrainInitMap() {
 "	      00514f79    mov dl,[eax+ecx+66EB10h]"
 "	      00514f80    cmp edx,5"
 "	      00514f83    jl near ptr 00514FB1h"
-"	      00514f89    mov eax,[ebp-20h]"
+"	      00514f89    mov eax,y"
 "	      00514f8c    dec eax"
 "	      00514f8d    and eax,0FFh"
-"	      00514f92    mov ecx,[ebp-1Ch]"
+"	      00514f92    mov ecx,x"
 "	      00514f95    dec ecx"
 "	      00514f96    and ecx,0FFh"
 "	      00514f9c    shl ecx,8"
@@ -1672,46 +1672,46 @@ short S3TerrainInitMap() {
 );
 // LINE 494:
 	asm( 
-"	      00514fb1    movsx eax,word ptr [ebp-4]"
+"	      00514fb1    movsx eax,wflags"
 "	      00514fb5    or eax,1"
-"	      00514fb8    mov [ebp-4],ax"
+"	      00514fb8    mov wflags,ax"
 );
 // LINE 495:
 	asm( 
-"	      00514fbc    mov eax,[ebp-20h]"
+"	      00514fbc    mov eax,y"
 "	      00514fbf    dec eax"
 "	      00514fc0    and eax,0FFh"
-"	      00514fc5    mov ecx,[ebp-1Ch]"
+"	      00514fc5    mov ecx,x"
 "	      00514fc8    and ecx,0FFh"
 "	      00514fce    shl ecx,8"
 "	      00514fd1    xor edx,edx"
 "	      00514fd3    mov dl,[eax+ecx+66EB10h]"
 "	      00514fda    test edx,edx"
 "	      00514fdc    jl near ptr 00515009h"
-"	      00514fe2    mov eax,[ebp-20h]"
+"	      00514fe2    mov eax,y"
 "	      00514fe5    dec eax"
 "	      00514fe6    and eax,0FFh"
-"	      00514feb    mov ecx,[ebp-1Ch]"
+"	      00514feb    mov ecx,x"
 "	      00514fee    and ecx,0FFh"
 "	      00514ff4    shl ecx,8"
 "	      00514ff7    xor edx,edx"
 "	      00514ff9    mov dl,[eax+ecx+66EB10h]"
 "	      00515000    cmp edx,5"
 "	      00515003    jl near ptr 00515062h"
-"	      00515009    mov eax,[ebp-20h]"
+"	      00515009    mov eax,y"
 "	      0051500c    dec eax"
 "	      0051500d    and eax,0FFh"
-"	      00515012    mov ecx,[ebp-1Ch]"
+"	      00515012    mov ecx,x"
 "	      00515015    and ecx,0FFh"
 "	      0051501b    shl ecx,8"
 "	      0051501e    xor edx,edx"
 "	      00515020    mov dl,[eax+ecx+66EB10h]"
 "	      00515027    cmp edx,5"
 "	      0051502a    jl near ptr 00515057h"
-"	      00515030    mov eax,[ebp-20h]"
+"	      00515030    mov eax,y"
 "	      00515033    dec eax"
 "	      00515034    and eax,0FFh"
-"	      00515039    mov ecx,[ebp-1Ch]"
+"	      00515039    mov ecx,x"
 "	      0051503c    and ecx,0FFh"
 "	      00515042    shl ecx,8"
 "	      00515045    xor edx,edx"
@@ -1721,50 +1721,50 @@ short S3TerrainInitMap() {
 );
 // LINE 496:
 	asm( 
-"	      00515057    movsx eax,word ptr [ebp-4]"
+"	      00515057    movsx eax,wflags"
 "	      0051505b    or eax,2"
-"	      0051505e    mov [ebp-4],ax"
+"	      0051505e    mov wflags,ax"
 );
 // LINE 497:
 	asm( 
-"	      00515062    mov eax,[ebp-1Ch]"
+"	      00515062    mov eax,x"
 "	      00515065    inc eax"
 "	      00515066    and eax,0FFh"
 "	      0051506b    shl eax,8"
-"	      0051506e    mov ecx,[ebp-20h]"
+"	      0051506e    mov ecx,y"
 "	      00515071    dec ecx"
 "	      00515072    and ecx,0FFh"
 "	      00515078    xor edx,edx"
 "	      0051507a    mov dl,[eax+ecx+66EB10h]"
 "	      00515081    test edx,edx"
 "	      00515083    jl near ptr 005150B1h"
-"	      00515089    mov eax,[ebp-1Ch]"
+"	      00515089    mov eax,x"
 "	      0051508c    inc eax"
 "	      0051508d    and eax,0FFh"
 "	      00515092    shl eax,8"
-"	      00515095    mov ecx,[ebp-20h]"
+"	      00515095    mov ecx,y"
 "	      00515098    dec ecx"
 "	      00515099    and ecx,0FFh"
 "	      0051509f    xor edx,edx"
 "	      005150a1    mov dl,[eax+ecx+66EB10h]"
 "	      005150a8    cmp edx,5"
 "	      005150ab    jl near ptr 0051510Ch"
-"	      005150b1    mov eax,[ebp-1Ch]"
+"	      005150b1    mov eax,x"
 "	      005150b4    inc eax"
 "	      005150b5    and eax,0FFh"
 "	      005150ba    shl eax,8"
-"	      005150bd    mov ecx,[ebp-20h]"
+"	      005150bd    mov ecx,y"
 "	      005150c0    dec ecx"
 "	      005150c1    and ecx,0FFh"
 "	      005150c7    xor edx,edx"
 "	      005150c9    mov dl,[eax+ecx+66EB10h]"
 "	      005150d0    cmp edx,5"
 "	      005150d3    jl near ptr 00515101h"
-"	      005150d9    mov eax,[ebp-1Ch]"
+"	      005150d9    mov eax,x"
 "	      005150dc    inc eax"
 "	      005150dd    and eax,0FFh"
 "	      005150e2    shl eax,8"
-"	      005150e5    mov ecx,[ebp-20h]"
+"	      005150e5    mov ecx,y"
 "	      005150e8    dec ecx"
 "	      005150e9    and ecx,0FFh"
 "	      005150ef    xor edx,edx"
@@ -1774,47 +1774,47 @@ short S3TerrainInitMap() {
 );
 // LINE 498:
 	asm( 
-"	      00515101    movsx eax,word ptr [ebp-4]"
+"	      00515101    movsx eax,wflags"
 "	      00515105    or eax,4"
-"	      00515108    mov [ebp-4],ax"
+"	      00515108    mov wflags,ax"
 );
 // LINE 499:
 	asm( 
-"	      0051510c    mov eax,[ebp-1Ch]"
+"	      0051510c    mov eax,x"
 "	      0051510f    dec eax"
 "	      00515110    and eax,0FFh"
 "	      00515115    shl eax,8"
-"	      00515118    mov ecx,[ebp-20h]"
+"	      00515118    mov ecx,y"
 "	      0051511b    and ecx,0FFh"
 "	      00515121    xor edx,edx"
 "	      00515123    mov dl,[eax+ecx+66EB10h]"
 "	      0051512a    test edx,edx"
 "	      0051512c    jl near ptr 00515159h"
-"	      00515132    mov eax,[ebp-1Ch]"
+"	      00515132    mov eax,x"
 "	      00515135    dec eax"
 "	      00515136    and eax,0FFh"
 "	      0051513b    shl eax,8"
-"	      0051513e    mov ecx,[ebp-20h]"
+"	      0051513e    mov ecx,y"
 "	      00515141    and ecx,0FFh"
 "	      00515147    xor edx,edx"
 "	      00515149    mov dl,[eax+ecx+66EB10h]"
 "	      00515150    cmp edx,5"
 "	      00515153    jl near ptr 005151B2h"
-"	      00515159    mov eax,[ebp-1Ch]"
+"	      00515159    mov eax,x"
 "	      0051515c    dec eax"
 "	      0051515d    and eax,0FFh"
 "	      00515162    shl eax,8"
-"	      00515165    mov ecx,[ebp-20h]"
+"	      00515165    mov ecx,y"
 "	      00515168    and ecx,0FFh"
 "	      0051516e    xor edx,edx"
 "	      00515170    mov dl,[eax+ecx+66EB10h]"
 "	      00515177    cmp edx,5"
 "	      0051517a    jl near ptr 005151A7h"
-"	      00515180    mov eax,[ebp-1Ch]"
+"	      00515180    mov eax,x"
 "	      00515183    dec eax"
 "	      00515184    and eax,0FFh"
 "	      00515189    shl eax,8"
-"	      0051518c    mov ecx,[ebp-20h]"
+"	      0051518c    mov ecx,y"
 "	      0051518f    and ecx,0FFh"
 "	      00515195    xor edx,edx"
 "	      00515197    mov dl,[eax+ecx+66EB10h]"
@@ -1823,47 +1823,47 @@ short S3TerrainInitMap() {
 );
 // LINE 500:
 	asm( 
-"	      005151a7    movsx eax,word ptr [ebp-4]"
+"	      005151a7    movsx eax,wflags"
 "	      005151ab    or eax,8"
-"	      005151ae    mov [ebp-4],ax"
+"	      005151ae    mov wflags,ax"
 );
 // LINE 501:
 	asm( 
-"	      005151b2    mov eax,[ebp-1Ch]"
+"	      005151b2    mov eax,x"
 "	      005151b5    inc eax"
 "	      005151b6    and eax,0FFh"
 "	      005151bb    shl eax,8"
-"	      005151be    mov ecx,[ebp-20h]"
+"	      005151be    mov ecx,y"
 "	      005151c1    and ecx,0FFh"
 "	      005151c7    xor edx,edx"
 "	      005151c9    mov dl,[eax+ecx+66EB10h]"
 "	      005151d0    test edx,edx"
 "	      005151d2    jl near ptr 005151FFh"
-"	      005151d8    mov eax,[ebp-1Ch]"
+"	      005151d8    mov eax,x"
 "	      005151db    inc eax"
 "	      005151dc    and eax,0FFh"
 "	      005151e1    shl eax,8"
-"	      005151e4    mov ecx,[ebp-20h]"
+"	      005151e4    mov ecx,y"
 "	      005151e7    and ecx,0FFh"
 "	      005151ed    xor edx,edx"
 "	      005151ef    mov dl,[eax+ecx+66EB10h]"
 "	      005151f6    cmp edx,5"
 "	      005151f9    jl near ptr 00515258h"
-"	      005151ff    mov eax,[ebp-1Ch]"
+"	      005151ff    mov eax,x"
 "	      00515202    inc eax"
 "	      00515203    and eax,0FFh"
 "	      00515208    shl eax,8"
-"	      0051520b    mov ecx,[ebp-20h]"
+"	      0051520b    mov ecx,y"
 "	      0051520e    and ecx,0FFh"
 "	      00515214    xor edx,edx"
 "	      00515216    mov dl,[eax+ecx+66EB10h]"
 "	      0051521d    cmp edx,5"
 "	      00515220    jl near ptr 0051524Dh"
-"	      00515226    mov eax,[ebp-1Ch]"
+"	      00515226    mov eax,x"
 "	      00515229    inc eax"
 "	      0051522a    and eax,0FFh"
 "	      0051522f    shl eax,8"
-"	      00515232    mov ecx,[ebp-20h]"
+"	      00515232    mov ecx,y"
 "	      00515235    and ecx,0FFh"
 "	      0051523b    xor edx,edx"
 "	      0051523d    mov dl,[eax+ecx+66EB10h]"
@@ -1872,16 +1872,16 @@ short S3TerrainInitMap() {
 );
 // LINE 502:
 	asm( 
-"	      0051524d    movsx eax,word ptr [ebp-4]"
+"	      0051524d    movsx eax,wflags"
 "	      00515251    or eax,10h"
-"	      00515254    mov [ebp-4],ax"
+"	      00515254    mov wflags,ax"
 );
 // LINE 503:
 	asm( 
-"	      00515258    mov eax,[ebp-20h]"
+"	      00515258    mov eax,y"
 "	      0051525b    inc eax"
 "	      0051525c    and eax,0FFh"
-"	      00515261    mov ecx,[ebp-1Ch]"
+"	      00515261    mov ecx,x"
 "	      00515264    dec ecx"
 "	      00515265    and ecx,0FFh"
 "	      0051526b    shl ecx,8"
@@ -1889,10 +1889,10 @@ short S3TerrainInitMap() {
 "	      00515270    mov dl,[eax+ecx+66EB10h]"
 "	      00515277    test edx,edx"
 "	      00515279    jl near ptr 005152A7h"
-"	      0051527f    mov eax,[ebp-20h]"
+"	      0051527f    mov eax,y"
 "	      00515282    inc eax"
 "	      00515283    and eax,0FFh"
-"	      00515288    mov ecx,[ebp-1Ch]"
+"	      00515288    mov ecx,x"
 "	      0051528b    dec ecx"
 "	      0051528c    and ecx,0FFh"
 "	      00515292    shl ecx,8"
@@ -1900,10 +1900,10 @@ short S3TerrainInitMap() {
 "	      00515297    mov dl,[eax+ecx+66EB10h]"
 "	      0051529e    cmp edx,5"
 "	      005152a1    jl near ptr 00515302h"
-"	      005152a7    mov eax,[ebp-20h]"
+"	      005152a7    mov eax,y"
 "	      005152aa    inc eax"
 "	      005152ab    and eax,0FFh"
-"	      005152b0    mov ecx,[ebp-1Ch]"
+"	      005152b0    mov ecx,x"
 "	      005152b3    dec ecx"
 "	      005152b4    and ecx,0FFh"
 "	      005152ba    shl ecx,8"
@@ -1911,10 +1911,10 @@ short S3TerrainInitMap() {
 "	      005152bf    mov dl,[eax+ecx+66EB10h]"
 "	      005152c6    cmp edx,5"
 "	      005152c9    jl near ptr 005152F7h"
-"	      005152cf    mov eax,[ebp-20h]"
+"	      005152cf    mov eax,y"
 "	      005152d2    inc eax"
 "	      005152d3    and eax,0FFh"
-"	      005152d8    mov ecx,[ebp-1Ch]"
+"	      005152d8    mov ecx,x"
 "	      005152db    dec ecx"
 "	      005152dc    and ecx,0FFh"
 "	      005152e2    shl ecx,8"
@@ -1925,46 +1925,46 @@ short S3TerrainInitMap() {
 );
 // LINE 504:
 	asm( 
-"	      005152f7    movsx eax,word ptr [ebp-4]"
+"	      005152f7    movsx eax,wflags"
 "	      005152fb    or eax,20h"
-"	      005152fe    mov [ebp-4],ax"
+"	      005152fe    mov wflags,ax"
 );
 // LINE 505:
 	asm( 
-"	      00515302    mov eax,[ebp-20h]"
+"	      00515302    mov eax,y"
 "	      00515305    inc eax"
 "	      00515306    and eax,0FFh"
-"	      0051530b    mov ecx,[ebp-1Ch]"
+"	      0051530b    mov ecx,x"
 "	      0051530e    and ecx,0FFh"
 "	      00515314    shl ecx,8"
 "	      00515317    xor edx,edx"
 "	      00515319    mov dl,[eax+ecx+66EB10h]"
 "	      00515320    test edx,edx"
 "	      00515322    jl near ptr 0051534Fh"
-"	      00515328    mov eax,[ebp-20h]"
+"	      00515328    mov eax,y"
 "	      0051532b    inc eax"
 "	      0051532c    and eax,0FFh"
-"	      00515331    mov ecx,[ebp-1Ch]"
+"	      00515331    mov ecx,x"
 "	      00515334    and ecx,0FFh"
 "	      0051533a    shl ecx,8"
 "	      0051533d    xor edx,edx"
 "	      0051533f    mov dl,[eax+ecx+66EB10h]"
 "	      00515346    cmp edx,5"
 "	      00515349    jl near ptr 005153A8h"
-"	      0051534f    mov eax,[ebp-20h]"
+"	      0051534f    mov eax,y"
 "	      00515352    inc eax"
 "	      00515353    and eax,0FFh"
-"	      00515358    mov ecx,[ebp-1Ch]"
+"	      00515358    mov ecx,x"
 "	      0051535b    and ecx,0FFh"
 "	      00515361    shl ecx,8"
 "	      00515364    xor edx,edx"
 "	      00515366    mov dl,[eax+ecx+66EB10h]"
 "	      0051536d    cmp edx,5"
 "	      00515370    jl near ptr 0051539Dh"
-"	      00515376    mov eax,[ebp-20h]"
+"	      00515376    mov eax,y"
 "	      00515379    inc eax"
 "	      0051537a    and eax,0FFh"
-"	      0051537f    mov ecx,[ebp-1Ch]"
+"	      0051537f    mov ecx,x"
 "	      00515382    and ecx,0FFh"
 "	      00515388    shl ecx,8"
 "	      0051538b    xor edx,edx"
@@ -1974,16 +1974,16 @@ short S3TerrainInitMap() {
 );
 // LINE 506:
 	asm( 
-"	      0051539d    movsx eax,word ptr [ebp-4]"
+"	      0051539d    movsx eax,wflags"
 "	      005153a1    or eax,40h"
-"	      005153a4    mov [ebp-4],ax"
+"	      005153a4    mov wflags,ax"
 );
 // LINE 507:
 	asm( 
-"	      005153a8    mov eax,[ebp-20h]"
+"	      005153a8    mov eax,y"
 "	      005153ab    inc eax"
 "	      005153ac    and eax,0FFh"
-"	      005153b1    mov ecx,[ebp-1Ch]"
+"	      005153b1    mov ecx,x"
 "	      005153b4    inc ecx"
 "	      005153b5    and ecx,0FFh"
 "	      005153bb    shl ecx,8"
@@ -1991,10 +1991,10 @@ short S3TerrainInitMap() {
 "	      005153c0    mov dl,[eax+ecx+66EB10h]"
 "	      005153c7    test edx,edx"
 "	      005153c9    jl near ptr 005153F7h"
-"	      005153cf    mov eax,[ebp-20h]"
+"	      005153cf    mov eax,y"
 "	      005153d2    inc eax"
 "	      005153d3    and eax,0FFh"
-"	      005153d8    mov ecx,[ebp-1Ch]"
+"	      005153d8    mov ecx,x"
 "	      005153db    inc ecx"
 "	      005153dc    and ecx,0FFh"
 "	      005153e2    shl ecx,8"
@@ -2002,10 +2002,10 @@ short S3TerrainInitMap() {
 "	      005153e7    mov dl,[eax+ecx+66EB10h]"
 "	      005153ee    cmp edx,5"
 "	      005153f1    jl near ptr 00515454h"
-"	      005153f7    mov eax,[ebp-20h]"
+"	      005153f7    mov eax,y"
 "	      005153fa    inc eax"
 "	      005153fb    and eax,0FFh"
-"	      00515400    mov ecx,[ebp-1Ch]"
+"	      00515400    mov ecx,x"
 "	      00515403    inc ecx"
 "	      00515404    and ecx,0FFh"
 "	      0051540a    shl ecx,8"
@@ -2013,10 +2013,10 @@ short S3TerrainInitMap() {
 "	      0051540f    mov dl,[eax+ecx+66EB10h]"
 "	      00515416    cmp edx,5"
 "	      00515419    jl near ptr 00515447h"
-"	      0051541f    mov eax,[ebp-20h]"
+"	      0051541f    mov eax,y"
 "	      00515422    inc eax"
 "	      00515423    and eax,0FFh"
-"	      00515428    mov ecx,[ebp-1Ch]"
+"	      00515428    mov ecx,x"
 "	      0051542b    inc ecx"
 "	      0051542c    and ecx,0FFh"
 "	      00515432    shl ecx,8"
@@ -2027,20 +2027,20 @@ short S3TerrainInitMap() {
 );
 // LINE 508:
 	asm( 
-"	      00515447    movsx eax,word ptr [ebp-4]"
+"	      00515447    movsx eax,wflags"
 "	      0051544b    or eax,80h"
-"	      00515450    mov [ebp-4],ax"
+"	      00515450    mov wflags,ax"
 );
 // LINE 510:
 	asm( 
-"	      00515454    movsx eax,word ptr [ebp-4]"
+"	      00515454    movsx eax,wflags"
 "	      00515458    test eax,eax"
 "	      0051545a    je near ptr 00515471h"
 );
 // LINE 511:
 	asm( 
-"	      00515460    mov eax,[ebp-20h]"
-"	      00515463    mov ecx,[ebp-1Ch]"
+"	      00515460    mov eax,y"
+"	      00515463    mov ecx,x"
 "	      00515466    shl ecx,8"
 "	      00515469    mov byte ptr [eax+ecx+66EB10h],0"
 );
@@ -2054,37 +2054,37 @@ short S3TerrainInitMap() {
 );
 // LINE 520:
 	asm( 
-"	      0051547b    mov dword ptr [ebp-20h],0"
+"	      0051547b    mov y,0"
 "	      00515482    jmp near ptr 0051548Ah"
-"	      00515487    inc dword ptr [ebp-20h]"
-"	      0051548a    cmp dword ptr [ebp-20h],80h"
+"	      00515487    inc y"
+"	      0051548a    cmp y,80h"
 "	      00515491    jge near ptr 0051565Dh"
 );
 // LINE 522:
 	asm( 
-"	      00515497    mov dword ptr [ebp-1Ch],0"
+"	      00515497    mov x,0"
 "	      0051549e    jmp near ptr 005154A6h"
-"	      005154a3    inc dword ptr [ebp-1Ch]"
-"	      005154a6    cmp dword ptr [ebp-1Ch],80h"
+"	      005154a3    inc x"
+"	      005154a6    cmp x,80h"
 "	      005154ad    jge near ptr 00515658h"
 );
 // LINE 525:
 	asm( 
-"	      005154b3    mov eax,[ebp-1Ch]"
+"	      005154b3    mov eax,x"
 "	      005154b6    mov eax,[eax*4+639850h]"
-"	      005154bd    mov ecx,[ebp-20h]"
+"	      005154bd    mov ecx,y"
 "	      005154c0    movzx ax,byte ptr [eax+ecx]"
-"	      005154c5    mov [ebp-28h],ax"
+"	      005154c5    mov tile,ax"
 );
 // LINE 526:
 	asm( 
-"	      005154c9    movsx eax,word ptr [ebp-28h]"
+"	      005154c9    movsx eax,tile"
 "	      005154cd    cmp eax,70h"
 "	      005154d0    jge near ptr 0051553Fh"
 );
 // LINE 532:
 	asm( 
-"	      005154d6    movsx eax,word ptr [ebp-28h]"
+"	      005154d6    movsx eax,tile"
 "	      005154da    mov [ebp-34h],eax"
 "	      005154dd    jmp near ptr 005154F1h"
 );
@@ -2136,26 +2136,26 @@ short S3TerrainInitMap() {
 );
 // LINE 562:
 	asm( 
-"	      0051553f    mov eax,[ebp-20h]"
+"	      0051553f    mov eax,y"
 "	      00515542    push eax"
-"	      00515543    mov eax,[ebp-1Ch]"
+"	      00515543    mov eax,x"
 "	      00515546    push eax"
 "	      00515547    call 00513D50h"
 "	      0051554c    add esp,8"
-"	      0051554f    mov [ebp-24h],ax"
+"	      0051554f    mov alt,ax"
 );
 // LINE 563:
 	asm( 
-"	      00515553    mov eax,[ebp-1Ch]"
+"	      00515553    mov eax,x"
 "	      00515556    mov eax,[eax*4+63A270h]"
-"	      0051555d    mov ecx,[ebp-20h]"
+"	      0051555d    mov ecx,y"
 "	      00515560    xor edx,edx"
 "	      00515562    mov dl,[eax+ecx]"
 "	      00515565    cmp edx,0Dh"
 "	      00515568    je near ptr 00515589h"
-"	      0051556e    mov eax,[ebp-1Ch]"
+"	      0051556e    mov eax,x"
 "	      00515571    mov eax,[eax*4+63A270h]"
-"	      00515578    mov ecx,[ebp-20h]"
+"	      00515578    mov ecx,y"
 "	      0051557b    xor edx,edx"
 "	      0051557d    mov dl,[eax+ecx]"
 "	      00515580    cmp edx,0Eh"
@@ -2163,24 +2163,24 @@ short S3TerrainInitMap() {
 );
 // LINE 564:
 	asm( 
-"	      00515589    inc word ptr [ebp-24h]"
+"	      00515589    inc alt"
 );
 // LINE 565:
 	asm( 
-"	      0051558d    movsx eax,word ptr [ebp-24h]"
+"	      0051558d    movsx eax,alt"
 "	      00515591    shl eax,5"
 "	      00515594    add eax,20h"
-"	      00515597    mov [ebp-24h],ax"
+"	      00515597    mov alt,ax"
 );
 // LINE 566:
 	asm( 
-"	      0051559b    mov ax,[ebp-24h]"
-"	      0051559f    mov edx,[ebp-20h]"
+"	      0051559b    mov ax,alt"
+"	      0051559f    mov edx,y"
 "	      005155a2    and edx,ds:[5B5CBCh]"
 "	      005155a8    mov cl,ds:[5B5CC0h]"
 "	      005155ae    shl edx,cl"
 "	      005155b0    mov ecx,ds:[5B5CBCh]"
-"	      005155b6    and ecx,[ebp-1Ch]"
+"	      005155b6    and ecx,x"
 "	      005155b9    add ecx,ecx"
 "	      005155bb    lea edx,[ecx+edx*2]"
 "	      005155be    mov ecx,ds:[67EB10h]"
@@ -2188,12 +2188,12 @@ short S3TerrainInitMap() {
 );
 // LINE 567:
 	asm( 
-"	      005155c8    mov ax,[ebp-24h]"
-"	      005155cc    mov edx,[ebp-20h]"
+"	      005155c8    mov ax,alt"
+"	      005155cc    mov edx,y"
 "	      005155cf    and edx,ds:[5B5CBCh]"
 "	      005155d5    mov cl,ds:[5B5CC0h]"
 "	      005155db    shl edx,cl"
-"	      005155dd    mov ecx,[ebp-1Ch]"
+"	      005155dd    mov ecx,x"
 "	      005155e0    inc ecx"
 "	      005155e1    and ecx,ds:[5B5CBCh]"
 "	      005155e7    add ecx,ecx"
@@ -2203,14 +2203,14 @@ short S3TerrainInitMap() {
 );
 // LINE 568:
 	asm( 
-"	      005155f6    mov ax,[ebp-24h]"
-"	      005155fa    mov edx,[ebp-20h]"
+"	      005155f6    mov ax,alt"
+"	      005155fa    mov edx,y"
 "	      005155fd    inc edx"
 "	      005155fe    and edx,ds:[5B5CBCh]"
 "	      00515604    mov cl,ds:[5B5CC0h]"
 "	      0051560a    shl edx,cl"
 "	      0051560c    mov ecx,ds:[5B5CBCh]"
-"	      00515612    and ecx,[ebp-1Ch]"
+"	      00515612    and ecx,x"
 "	      00515615    add ecx,ecx"
 "	      00515617    lea edx,[ecx+edx*2]"
 "	      0051561a    mov ecx,ds:[67EB10h]"
@@ -2218,13 +2218,13 @@ short S3TerrainInitMap() {
 );
 // LINE 569:
 	asm( 
-"	      00515624    mov ax,[ebp-24h]"
-"	      00515628    mov edx,[ebp-20h]"
+"	      00515624    mov ax,alt"
+"	      00515628    mov edx,y"
 "	      0051562b    inc edx"
 "	      0051562c    and edx,ds:[5B5CBCh]"
 "	      00515632    mov cl,ds:[5B5CC0h]"
 "	      00515638    shl edx,cl"
-"	      0051563a    mov ecx,[ebp-1Ch]"
+"	      0051563a    mov ecx,x"
 "	      0051563d    inc ecx"
 "	      0051563e    and ecx,ds:[5B5CBCh]"
 "	      00515644    add ecx,ecx"
@@ -2244,35 +2244,35 @@ short S3TerrainInitMap() {
 	asm( 
 "	      0051565d    mov eax,ds:[67ED20h]"
 "	      00515662    sub eax,ds:[66EB00h]"
-"	      00515668    mov [ebp-10h],ax"
+"	      00515668    mov alt2,ax"
 );
 // LINE 579:
 	asm( 
-"	      0051566c    movsx eax,word ptr [ebp-10h]"
+"	      0051566c    movsx eax,alt2"
 "	      00515670    sar eax,4"
-"	      00515673    mov [ebp-10h],ax"
+"	      00515673    mov alt2,ax"
 );
 // LINE 584:
 	asm( 
-"	      00515677    mov dword ptr [ebp-1Ch],0"
+"	      00515677    mov x,0"
 "	      0051567e    jmp near ptr 00515686h"
-"	      00515683    inc dword ptr [ebp-1Ch]"
-"	      00515686    cmp dword ptr [ebp-1Ch],100h"
+"	      00515683    inc x"
+"	      00515686    cmp x,100h"
 "	      0051568d    jge near ptr 005157DDh"
 );
 // LINE 586:
 	asm( 
-"	      00515693    mov dword ptr [ebp-20h],0"
+"	      00515693    mov y,0"
 "	      0051569a    jmp near ptr 005156A2h"
-"	      0051569f    inc dword ptr [ebp-20h]"
-"	      005156a2    cmp dword ptr [ebp-20h],100h"
+"	      0051569f    inc y"
+"	      005156a2    cmp y,100h"
 "	      005156a9    jge near ptr 005157D8h"
 );
 // LINE 589:
 	asm( 
-"	      005156af    cmp dword ptr [ebp-1Ch],80h"
+"	      005156af    cmp x,80h"
 "	      005156b6    jge near ptr 005156CEh"
-"	      005156bc    cmp dword ptr [ebp-20h],80h"
+"	      005156bc    cmp y,80h"
 "	      005156c3    jge near ptr 005156CEh"
 );
 // LINE 590:
@@ -2281,25 +2281,25 @@ short S3TerrainInitMap() {
 );
 // LINE 593:
 	asm( 
-"	      005156ce    mov eax,[ebp-20h]"
+"	      005156ce    mov eax,y"
 "	      005156d1    and eax,ds:[5B5CBCh]"
 "	      005156d7    mov cl,ds:[5B5CC0h]"
 "	      005156dd    shl eax,cl"
 "	      005156df    mov ecx,ds:[5B5CBCh]"
-"	      005156e5    and ecx,[ebp-1Ch]"
+"	      005156e5    and ecx,x"
 "	      005156e8    add ecx,ecx"
 "	      005156ea    lea eax,[ecx+eax*2]"
 "	      005156ed    mov ecx,ds:[67EB10h]"
 "	      005156f3    mov ax,[eax+ecx]"
-"	      005156f7    mov [ebp-24h],ax"
+"	      005156f7    mov alt,ax"
 );
 // LINE 594:
 	asm( 
-"	      005156fb    mov eax,[ebp-20h]"
+"	      005156fb    mov eax,y"
 "	      005156fe    and eax,ds:[5B5CBCh]"
 "	      00515704    mov cl,ds:[5B5CC0h]"
 "	      0051570a    shl eax,cl"
-"	      0051570c    mov ecx,[ebp-1Ch]"
+"	      0051570c    mov ecx,x"
 "	      0051570f    inc ecx"
 "	      00515710    and ecx,ds:[5B5CBCh]"
 "	      00515716    add ecx,ecx"
@@ -2307,18 +2307,18 @@ short S3TerrainInitMap() {
 "	      0051571b    mov ecx,ds:[67EB10h]"
 "	      00515721    xor edx,edx"
 "	      00515723    mov dx,[eax+ecx]"
-"	      00515727    movsx eax,word ptr [ebp-24h]"
+"	      00515727    movsx eax,alt"
 "	      0051572b    add edx,eax"
-"	      0051572d    mov [ebp-24h],dx"
+"	      0051572d    mov alt,dx"
 );
 // LINE 595:
 	asm( 
-"	      00515731    mov eax,[ebp-20h]"
+"	      00515731    mov eax,y"
 "	      00515734    inc eax"
 "	      00515735    and eax,ds:[5B5CBCh]"
 "	      0051573b    mov cl,ds:[5B5CC0h]"
 "	      00515741    shl eax,cl"
-"	      00515743    mov ecx,[ebp-1Ch]"
+"	      00515743    mov ecx,x"
 "	      00515746    inc ecx"
 "	      00515747    and ecx,ds:[5B5CBCh]"
 "	      0051574d    add ecx,ecx"
@@ -2326,47 +2326,47 @@ short S3TerrainInitMap() {
 "	      00515752    mov ecx,ds:[67EB10h]"
 "	      00515758    xor edx,edx"
 "	      0051575a    mov dx,[eax+ecx]"
-"	      0051575e    movsx eax,word ptr [ebp-24h]"
+"	      0051575e    movsx eax,alt"
 "	      00515762    add edx,eax"
-"	      00515764    mov [ebp-24h],dx"
+"	      00515764    mov alt,dx"
 );
 // LINE 596:
 	asm( 
-"	      00515768    mov eax,[ebp-20h]"
+"	      00515768    mov eax,y"
 "	      0051576b    inc eax"
 "	      0051576c    and eax,ds:[5B5CBCh]"
 "	      00515772    mov cl,ds:[5B5CC0h]"
 "	      00515778    shl eax,cl"
 "	      0051577a    mov ecx,ds:[5B5CBCh]"
-"	      00515780    and ecx,[ebp-1Ch]"
+"	      00515780    and ecx,x"
 "	      00515783    add ecx,ecx"
 "	      00515785    lea eax,[ecx+eax*2]"
 "	      00515788    mov ecx,ds:[67EB10h]"
 "	      0051578e    xor edx,edx"
 "	      00515790    mov dx,[eax+ecx]"
-"	      00515794    movsx eax,word ptr [ebp-24h]"
+"	      00515794    movsx eax,alt"
 "	      00515798    add edx,eax"
-"	      0051579a    mov [ebp-24h],dx"
+"	      0051579a    mov alt,dx"
 );
 // LINE 597:
 	asm( 
-"	      0051579e    movsx eax,word ptr [ebp-24h]"
+"	      0051579e    movsx eax,alt"
 "	      005157a2    sar eax,2"
-"	      005157a5    mov [ebp-24h],ax"
+"	      005157a5    mov alt,ax"
 );
 // LINE 599:
 	asm( 
-"	      005157a9    movsx eax,word ptr [ebp-10h]"
+"	      005157a9    movsx eax,alt2"
 "	      005157ad    sar eax,1"
 "	      005157b0    add eax,ds:[66EB00h]"
-"	      005157b6    movsx ecx,word ptr [ebp-24h]"
+"	      005157b6    movsx ecx,alt"
 "	      005157ba    cmp eax,ecx"
 "	      005157bc    jl near ptr 005157D3h"
 );
 // LINE 600:
 	asm( 
-"	      005157c2    mov eax,[ebp-20h]"
-"	      005157c5    mov ecx,[ebp-1Ch]"
+"	      005157c2    mov eax,y"
+"	      005157c5    mov ecx,x"
 "	      005157c8    shl ecx,8"
 "	      005157cb    mov byte ptr [eax+ecx+66EB10h],0"
 );
@@ -2380,41 +2380,41 @@ short S3TerrainInitMap() {
 );
 // LINE 605:
 	asm( 
-"	      005157dd    mov dword ptr [ebp-1Ch],0"
+"	      005157dd    mov x,0"
 "	      005157e4    jmp near ptr 005157ECh"
-"	      005157e9    inc dword ptr [ebp-1Ch]"
-"	      005157ec    cmp dword ptr [ebp-1Ch],100h"
+"	      005157e9    inc x"
+"	      005157ec    cmp x,100h"
 "	      005157f3    jge near ptr 005159F2h"
 );
 // LINE 607:
 	asm( 
-"	      005157f9    mov dword ptr [ebp-20h],0"
+"	      005157f9    mov y,0"
 "	      00515800    jmp near ptr 00515808h"
-"	      00515805    inc dword ptr [ebp-20h]"
-"	      00515808    cmp dword ptr [ebp-20h],100h"
+"	      00515805    inc y"
+"	      00515808    cmp y,100h"
 "	      0051580f    jge near ptr 005159EDh"
 );
 // LINE 616:
 	asm( 
-"	      00515815    mov eax,[ebp-20h]"
+"	      00515815    mov eax,y"
 "	      00515818    and eax,ds:[5B5CBCh]"
 "	      0051581e    mov cl,ds:[5B5CC0h]"
 "	      00515824    shl eax,cl"
 "	      00515826    mov ecx,ds:[5B5CBCh]"
-"	      0051582c    and ecx,[ebp-1Ch]"
+"	      0051582c    and ecx,x"
 "	      0051582f    add ecx,ecx"
 "	      00515831    lea eax,[ecx+eax*2]"
 "	      00515834    mov ecx,ds:[67EB10h]"
 "	      0051583a    mov ax,[eax+ecx]"
-"	      0051583e    mov [ebp-24h],ax"
+"	      0051583e    mov alt,ax"
 );
 // LINE 617:
 	asm( 
-"	      00515842    mov eax,[ebp-20h]"
+"	      00515842    mov eax,y"
 "	      00515845    and eax,ds:[5B5CBCh]"
 "	      0051584b    mov cl,ds:[5B5CC0h]"
 "	      00515851    shl eax,cl"
-"	      00515853    mov ecx,[ebp-1Ch]"
+"	      00515853    mov ecx,x"
 "	      00515856    inc ecx"
 "	      00515857    and ecx,ds:[5B5CBCh]"
 "	      0051585d    add ecx,ecx"
@@ -2422,18 +2422,18 @@ short S3TerrainInitMap() {
 "	      00515862    mov ecx,ds:[67EB10h]"
 "	      00515868    xor edx,edx"
 "	      0051586a    mov dx,[eax+ecx]"
-"	      0051586e    movsx eax,word ptr [ebp-24h]"
+"	      0051586e    movsx eax,alt"
 "	      00515872    add edx,eax"
-"	      00515874    mov [ebp-24h],dx"
+"	      00515874    mov alt,dx"
 );
 // LINE 618:
 	asm( 
-"	      00515878    mov eax,[ebp-20h]"
+"	      00515878    mov eax,y"
 "	      0051587b    inc eax"
 "	      0051587c    and eax,ds:[5B5CBCh]"
 "	      00515882    mov cl,ds:[5B5CC0h]"
 "	      00515888    shl eax,cl"
-"	      0051588a    mov ecx,[ebp-1Ch]"
+"	      0051588a    mov ecx,x"
 "	      0051588d    inc ecx"
 "	      0051588e    and ecx,ds:[5B5CBCh]"
 "	      00515894    add ecx,ecx"
@@ -2441,40 +2441,40 @@ short S3TerrainInitMap() {
 "	      00515899    mov ecx,ds:[67EB10h]"
 "	      0051589f    xor edx,edx"
 "	      005158a1    mov dx,[eax+ecx]"
-"	      005158a5    movsx eax,word ptr [ebp-24h]"
+"	      005158a5    movsx eax,alt"
 "	      005158a9    add edx,eax"
-"	      005158ab    mov [ebp-24h],dx"
+"	      005158ab    mov alt,dx"
 );
 // LINE 619:
 	asm( 
-"	      005158af    mov eax,[ebp-20h]"
+"	      005158af    mov eax,y"
 "	      005158b2    inc eax"
 "	      005158b3    and eax,ds:[5B5CBCh]"
 "	      005158b9    mov cl,ds:[5B5CC0h]"
 "	      005158bf    shl eax,cl"
 "	      005158c1    mov ecx,ds:[5B5CBCh]"
-"	      005158c7    and ecx,[ebp-1Ch]"
+"	      005158c7    and ecx,x"
 "	      005158ca    add ecx,ecx"
 "	      005158cc    lea eax,[ecx+eax*2]"
 "	      005158cf    mov ecx,ds:[67EB10h]"
 "	      005158d5    xor edx,edx"
 "	      005158d7    mov dx,[eax+ecx]"
-"	      005158db    movsx eax,word ptr [ebp-24h]"
+"	      005158db    movsx eax,alt"
 "	      005158df    add edx,eax"
-"	      005158e1    mov [ebp-24h],dx"
+"	      005158e1    mov alt,dx"
 );
 // LINE 620:
 	asm( 
-"	      005158e5    movsx eax,word ptr [ebp-24h]"
+"	      005158e5    movsx eax,alt"
 "	      005158e9    sar eax,2"
-"	      005158ec    mov [ebp-24h],ax"
+"	      005158ec    mov alt,ax"
 );
 // LINE 622:
 	asm( 
-"	      005158f0    mov eax,[ebp-1Ch]"
+"	      005158f0    mov eax,x"
 "	      005158f3    and eax,0FFh"
 "	      005158f8    shl eax,8"
-"	      005158fb    mov ecx,[ebp-20h]"
+"	      005158fb    mov ecx,y"
 "	      005158fe    and ecx,0FFh"
 "	      00515904    xor edx,edx"
 "	      00515906    mov dl,[eax+ecx+66EB10h]"
@@ -2483,40 +2483,40 @@ short S3TerrainInitMap() {
 );
 // LINE 627:
 	asm( 
-"	      00515916    mov eax,[ebp-1Ch]"
+"	      00515916    mov eax,x"
 "	      00515919    dec eax"
 "	      0051591a    and eax,0FFh"
 "	      0051591f    shl eax,8"
-"	      00515922    mov ecx,[ebp-20h]"
+"	      00515922    mov ecx,y"
 "	      00515925    and ecx,0FFh"
 "	      0051592b    xor edx,edx"
 "	      0051592d    mov dl,[eax+ecx+66EB10h]"
 "	      00515934    test edx,edx"
 "	      00515936    je near ptr 005159AEh"
-"	      0051593c    mov eax,[ebp-1Ch]"
+"	      0051593c    mov eax,x"
 "	      0051593f    inc eax"
 "	      00515940    and eax,0FFh"
 "	      00515945    shl eax,8"
-"	      00515948    mov ecx,[ebp-20h]"
+"	      00515948    mov ecx,y"
 "	      0051594b    and ecx,0FFh"
 "	      00515951    xor edx,edx"
 "	      00515953    mov dl,[eax+ecx+66EB10h]"
 "	      0051595a    test edx,edx"
 "	      0051595c    je near ptr 005159AEh"
-"	      00515962    mov eax,[ebp-20h]"
+"	      00515962    mov eax,y"
 "	      00515965    inc eax"
 "	      00515966    and eax,0FFh"
-"	      0051596b    mov ecx,[ebp-1Ch]"
+"	      0051596b    mov ecx,x"
 "	      0051596e    and ecx,0FFh"
 "	      00515974    shl ecx,8"
 "	      00515977    xor edx,edx"
 "	      00515979    mov dl,[eax+ecx+66EB10h]"
 "	      00515980    test edx,edx"
 "	      00515982    je near ptr 005159AEh"
-"	      00515988    mov eax,[ebp-20h]"
+"	      00515988    mov eax,y"
 "	      0051598b    dec eax"
 "	      0051598c    and eax,0FFh"
-"	      00515991    mov ecx,[ebp-1Ch]"
+"	      00515991    mov ecx,x"
 "	      00515994    and ecx,0FFh"
 "	      0051599a    shl ecx,8"
 "	      0051599d    xor edx,edx"
@@ -2526,24 +2526,24 @@ short S3TerrainInitMap() {
 );
 // LINE 629:
 	asm( 
-"	      005159ae    mov eax,[ebp-20h]"
-"	      005159b1    mov ecx,[ebp-1Ch]"
+"	      005159ae    mov eax,y"
+"	      005159b1    mov ecx,x"
 "	      005159b4    shl ecx,8"
 "	      005159b7    mov byte ptr [eax+ecx+66EB10h],10h"
 );
 // LINE 634:
 	asm( 
-"	      005159bf    movsx eax,word ptr [ebp-10h]"
+"	      005159bf    movsx eax,alt2"
 "	      005159c3    add eax,eax"
 "	      005159c5    add eax,ds:[66EB00h]"
-"	      005159cb    movsx ecx,word ptr [ebp-24h]"
+"	      005159cb    movsx ecx,alt"
 "	      005159cf    cmp eax,ecx"
 "	      005159d1    jl near ptr 005159E8h"
 );
 // LINE 635:
 	asm( 
-"	      005159d7    mov eax,[ebp-20h]"
-"	      005159da    mov ecx,[ebp-1Ch]"
+"	      005159d7    mov eax,y"
+"	      005159da    mov ecx,x"
 "	      005159dd    shl ecx,8"
 "	      005159e0    mov byte ptr [eax+ecx+66EB10h],10h"
 );
@@ -2557,41 +2557,41 @@ short S3TerrainInitMap() {
 );
 // LINE 641:
 	asm( 
-"	      005159f2    mov dword ptr [ebp-1Ch],0"
+"	      005159f2    mov x,0"
 "	      005159f9    jmp near ptr 00515A01h"
-"	      005159fe    inc dword ptr [ebp-1Ch]"
-"	      00515a01    cmp dword ptr [ebp-1Ch],100h"
+"	      005159fe    inc x"
+"	      00515a01    cmp x,100h"
 "	      00515a08    jge near ptr 00515C0Ch"
 );
 // LINE 643:
 	asm( 
-"	      00515a0e    mov dword ptr [ebp-20h],0"
+"	      00515a0e    mov y,0"
 "	      00515a15    jmp near ptr 00515A1Dh"
-"	      00515a1a    inc dword ptr [ebp-20h]"
-"	      00515a1d    cmp dword ptr [ebp-20h],100h"
+"	      00515a1a    inc y"
+"	      00515a1d    cmp y,100h"
 "	      00515a24    jge near ptr 00515C07h"
 );
 // LINE 652:
 	asm( 
-"	      00515a2a    mov eax,[ebp-20h]"
+"	      00515a2a    mov eax,y"
 "	      00515a2d    and eax,ds:[5B5CBCh]"
 "	      00515a33    mov cl,ds:[5B5CC0h]"
 "	      00515a39    shl eax,cl"
 "	      00515a3b    mov ecx,ds:[5B5CBCh]"
-"	      00515a41    and ecx,[ebp-1Ch]"
+"	      00515a41    and ecx,x"
 "	      00515a44    add ecx,ecx"
 "	      00515a46    lea eax,[ecx+eax*2]"
 "	      00515a49    mov ecx,ds:[67EB10h]"
 "	      00515a4f    mov ax,[eax+ecx]"
-"	      00515a53    mov [ebp-24h],ax"
+"	      00515a53    mov alt,ax"
 );
 // LINE 653:
 	asm( 
-"	      00515a57    mov eax,[ebp-20h]"
+"	      00515a57    mov eax,y"
 "	      00515a5a    and eax,ds:[5B5CBCh]"
 "	      00515a60    mov cl,ds:[5B5CC0h]"
 "	      00515a66    shl eax,cl"
-"	      00515a68    mov ecx,[ebp-1Ch]"
+"	      00515a68    mov ecx,x"
 "	      00515a6b    inc ecx"
 "	      00515a6c    and ecx,ds:[5B5CBCh]"
 "	      00515a72    add ecx,ecx"
@@ -2599,18 +2599,18 @@ short S3TerrainInitMap() {
 "	      00515a77    mov ecx,ds:[67EB10h]"
 "	      00515a7d    xor edx,edx"
 "	      00515a7f    mov dx,[eax+ecx]"
-"	      00515a83    movsx eax,word ptr [ebp-24h]"
+"	      00515a83    movsx eax,alt"
 "	      00515a87    add edx,eax"
-"	      00515a89    mov [ebp-24h],dx"
+"	      00515a89    mov alt,dx"
 );
 // LINE 654:
 	asm( 
-"	      00515a8d    mov eax,[ebp-20h]"
+"	      00515a8d    mov eax,y"
 "	      00515a90    inc eax"
 "	      00515a91    and eax,ds:[5B5CBCh]"
 "	      00515a97    mov cl,ds:[5B5CC0h]"
 "	      00515a9d    shl eax,cl"
-"	      00515a9f    mov ecx,[ebp-1Ch]"
+"	      00515a9f    mov ecx,x"
 "	      00515aa2    inc ecx"
 "	      00515aa3    and ecx,ds:[5B5CBCh]"
 "	      00515aa9    add ecx,ecx"
@@ -2618,40 +2618,40 @@ short S3TerrainInitMap() {
 "	      00515aae    mov ecx,ds:[67EB10h]"
 "	      00515ab4    xor edx,edx"
 "	      00515ab6    mov dx,[eax+ecx]"
-"	      00515aba    movsx eax,word ptr [ebp-24h]"
+"	      00515aba    movsx eax,alt"
 "	      00515abe    add edx,eax"
-"	      00515ac0    mov [ebp-24h],dx"
+"	      00515ac0    mov alt,dx"
 );
 // LINE 655:
 	asm( 
-"	      00515ac4    mov eax,[ebp-20h]"
+"	      00515ac4    mov eax,y"
 "	      00515ac7    inc eax"
 "	      00515ac8    and eax,ds:[5B5CBCh]"
 "	      00515ace    mov cl,ds:[5B5CC0h]"
 "	      00515ad4    shl eax,cl"
 "	      00515ad6    mov ecx,ds:[5B5CBCh]"
-"	      00515adc    and ecx,[ebp-1Ch]"
+"	      00515adc    and ecx,x"
 "	      00515adf    add ecx,ecx"
 "	      00515ae1    lea eax,[ecx+eax*2]"
 "	      00515ae4    mov ecx,ds:[67EB10h]"
 "	      00515aea    xor edx,edx"
 "	      00515aec    mov dx,[eax+ecx]"
-"	      00515af0    movsx eax,word ptr [ebp-24h]"
+"	      00515af0    movsx eax,alt"
 "	      00515af4    add edx,eax"
-"	      00515af6    mov [ebp-24h],dx"
+"	      00515af6    mov alt,dx"
 );
 // LINE 656:
 	asm( 
-"	      00515afa    movsx eax,word ptr [ebp-24h]"
+"	      00515afa    movsx eax,alt"
 "	      00515afe    sar eax,2"
-"	      00515b01    mov [ebp-24h],ax"
+"	      00515b01    mov alt,ax"
 );
 // LINE 658:
 	asm( 
-"	      00515b05    mov eax,[ebp-1Ch]"
+"	      00515b05    mov eax,x"
 "	      00515b08    and eax,0FFh"
 "	      00515b0d    shl eax,8"
-"	      00515b10    mov ecx,[ebp-20h]"
+"	      00515b10    mov ecx,y"
 "	      00515b13    and ecx,0FFh"
 "	      00515b19    xor edx,edx"
 "	      00515b1b    mov dl,[eax+ecx+66EB10h]"
@@ -2660,40 +2660,40 @@ short S3TerrainInitMap() {
 );
 // LINE 663:
 	asm( 
-"	      00515b2b    mov eax,[ebp-1Ch]"
+"	      00515b2b    mov eax,x"
 "	      00515b2e    dec eax"
 "	      00515b2f    and eax,0FFh"
 "	      00515b34    shl eax,8"
-"	      00515b37    mov ecx,[ebp-20h]"
+"	      00515b37    mov ecx,y"
 "	      00515b3a    and ecx,0FFh"
 "	      00515b40    xor edx,edx"
 "	      00515b42    mov dl,[eax+ecx+66EB10h]"
 "	      00515b49    cmp edx,10h"
 "	      00515b4c    je near ptr 00515BC7h"
-"	      00515b52    mov eax,[ebp-1Ch]"
+"	      00515b52    mov eax,x"
 "	      00515b55    inc eax"
 "	      00515b56    and eax,0FFh"
 "	      00515b5b    shl eax,8"
-"	      00515b5e    mov ecx,[ebp-20h]"
+"	      00515b5e    mov ecx,y"
 "	      00515b61    and ecx,0FFh"
 "	      00515b67    xor edx,edx"
 "	      00515b69    mov dl,[eax+ecx+66EB10h]"
 "	      00515b70    cmp edx,10h"
 "	      00515b73    je near ptr 00515BC7h"
-"	      00515b79    mov eax,[ebp-20h]"
+"	      00515b79    mov eax,y"
 "	      00515b7c    inc eax"
 "	      00515b7d    and eax,0FFh"
-"	      00515b82    mov ecx,[ebp-1Ch]"
+"	      00515b82    mov ecx,x"
 "	      00515b85    and ecx,0FFh"
 "	      00515b8b    shl ecx,8"
 "	      00515b8e    xor edx,edx"
 "	      00515b90    mov dl,[eax+ecx+66EB10h]"
 "	      00515b97    cmp edx,10h"
 "	      00515b9a    je near ptr 00515BC7h"
-"	      00515ba0    mov eax,[ebp-20h]"
+"	      00515ba0    mov eax,y"
 "	      00515ba3    dec eax"
 "	      00515ba4    and eax,0FFh"
-"	      00515ba9    mov ecx,[ebp-1Ch]"
+"	      00515ba9    mov ecx,x"
 "	      00515bac    and ecx,0FFh"
 "	      00515bb2    shl ecx,8"
 "	      00515bb5    xor edx,edx"
@@ -2703,24 +2703,24 @@ short S3TerrainInitMap() {
 );
 // LINE 665:
 	asm( 
-"	      00515bc7    mov eax,[ebp-20h]"
-"	      00515bca    mov ecx,[ebp-1Ch]"
+"	      00515bc7    mov eax,y"
+"	      00515bca    mov ecx,x"
 "	      00515bcd    shl ecx,8"
 "	      00515bd0    mov byte ptr [eax+ecx+66EB10h],20h"
 );
 // LINE 669:
 	asm( 
-"	      00515bd8    movsx eax,word ptr [ebp-10h]"
+"	      00515bd8    movsx eax,alt2"
 "	      00515bdc    lea eax,[eax+eax*4]"
 "	      00515bdf    add eax,ds:[66EB00h]"
-"	      00515be5    movsx ecx,word ptr [ebp-24h]"
+"	      00515be5    movsx ecx,alt"
 "	      00515be9    cmp eax,ecx"
 "	      00515beb    jl near ptr 00515C02h"
 );
 // LINE 670:
 	asm( 
-"	      00515bf1    mov eax,[ebp-20h]"
-"	      00515bf4    mov ecx,[ebp-1Ch]"
+"	      00515bf1    mov eax,y"
+"	      00515bf4    mov ecx,x"
 "	      00515bf7    shl ecx,8"
 "	      00515bfa    mov byte ptr [eax+ecx+66EB10h],20h"
 );
@@ -2734,24 +2734,24 @@ short S3TerrainInitMap() {
 );
 // LINE 677:
 	asm( 
-"	      00515c0c    mov dword ptr [ebp-1Ch],80h"
+"	      00515c0c    mov x,80h"
 "	      00515c13    jmp near ptr 00515C1Bh"
-"	      00515c18    inc dword ptr [ebp-1Ch]"
-"	      00515c1b    cmp dword ptr [ebp-1Ch],84h"
+"	      00515c18    inc x"
+"	      00515c1b    cmp x,84h"
 "	      00515c22    jge near ptr 00515C5Fh"
 );
 // LINE 679:
 	asm( 
-"	      00515c28    mov dword ptr [ebp-20h],80h"
+"	      00515c28    mov y,80h"
 "	      00515c2f    jmp near ptr 00515C37h"
-"	      00515c34    inc dword ptr [ebp-20h]"
-"	      00515c37    cmp dword ptr [ebp-20h],84h"
+"	      00515c34    inc y"
+"	      00515c37    cmp y,84h"
 "	      00515c3e    jge near ptr 00515C5Ah"
 );
 // LINE 681:
 	asm( 
-"	      00515c44    mov eax,[ebp-20h]"
-"	      00515c47    mov ecx,[ebp-1Ch]"
+"	      00515c44    mov eax,y"
+"	      00515c47    mov ecx,x"
 "	      00515c4a    shl ecx,8"
 "	      00515c4d    mov byte ptr [eax+ecx+66EB10h],20h"
 );
@@ -2765,26 +2765,26 @@ short S3TerrainInitMap() {
 );
 // LINE 686:
 	asm( 
-"	      00515c5f    mov dword ptr [ebp-1Ch],0"
+"	      00515c5f    mov x,0"
 "	      00515c66    jmp near ptr 00515C6Eh"
-"	      00515c6b    inc dword ptr [ebp-1Ch]"
-"	      00515c6e    cmp dword ptr [ebp-1Ch],100h"
+"	      00515c6b    inc x"
+"	      00515c6e    cmp x,100h"
 "	      00515c75    jge near ptr 00515F11h"
 );
 // LINE 688:
 	asm( 
-"	      00515c7b    mov dword ptr [ebp-20h],0"
+"	      00515c7b    mov y,0"
 "	      00515c82    jmp near ptr 00515C8Ah"
-"	      00515c87    inc dword ptr [ebp-20h]"
-"	      00515c8a    cmp dword ptr [ebp-20h],100h"
+"	      00515c87    inc y"
+"	      00515c8a    cmp y,100h"
 "	      00515c91    jge near ptr 00515F0Ch"
 );
 // LINE 696:
 	asm( 
-"	      00515c97    mov eax,[ebp-1Ch]"
+"	      00515c97    mov eax,x"
 "	      00515c9a    and eax,0FFh"
 "	      00515c9f    shl eax,8"
-"	      00515ca2    mov ecx,[ebp-20h]"
+"	      00515ca2    mov ecx,y"
 "	      00515ca5    and ecx,0FFh"
 "	      00515cab    xor edx,edx"
 "	      00515cad    mov dl,[eax+ecx+66EB10h]"
@@ -2797,25 +2797,25 @@ short S3TerrainInitMap() {
 );
 // LINE 700:
 	asm( 
-"	      00515cc2    mov eax,[ebp-20h]"
+"	      00515cc2    mov eax,y"
 "	      00515cc5    and eax,ds:[5B5CBCh]"
 "	      00515ccb    mov cl,ds:[5B5CC0h]"
 "	      00515cd1    shl eax,cl"
 "	      00515cd3    mov ecx,ds:[5B5CBCh]"
-"	      00515cd9    and ecx,[ebp-1Ch]"
+"	      00515cd9    and ecx,x"
 "	      00515cdc    add ecx,ecx"
 "	      00515cde    lea eax,[ecx+eax*2]"
 "	      00515ce1    mov ecx,ds:[67EB10h]"
 "	      00515ce7    mov ax,[eax+ecx]"
-"	      00515ceb    mov [ebp-24h],ax"
+"	      00515ceb    mov alt,ax"
 );
 // LINE 701:
 	asm( 
-"	      00515cef    mov eax,[ebp-20h]"
+"	      00515cef    mov eax,y"
 "	      00515cf2    and eax,ds:[5B5CBCh]"
 "	      00515cf8    mov cl,ds:[5B5CC0h]"
 "	      00515cfe    shl eax,cl"
-"	      00515d00    mov ecx,[ebp-1Ch]"
+"	      00515d00    mov ecx,x"
 "	      00515d03    inc ecx"
 "	      00515d04    and ecx,ds:[5B5CBCh]"
 "	      00515d0a    add ecx,ecx"
@@ -2823,18 +2823,18 @@ short S3TerrainInitMap() {
 "	      00515d0f    mov ecx,ds:[67EB10h]"
 "	      00515d15    xor edx,edx"
 "	      00515d17    mov dx,[eax+ecx]"
-"	      00515d1b    movsx eax,word ptr [ebp-24h]"
+"	      00515d1b    movsx eax,alt"
 "	      00515d1f    add edx,eax"
-"	      00515d21    mov [ebp-24h],dx"
+"	      00515d21    mov alt,dx"
 );
 // LINE 702:
 	asm( 
-"	      00515d25    mov eax,[ebp-20h]"
+"	      00515d25    mov eax,y"
 "	      00515d28    inc eax"
 "	      00515d29    and eax,ds:[5B5CBCh]"
 "	      00515d2f    mov cl,ds:[5B5CC0h]"
 "	      00515d35    shl eax,cl"
-"	      00515d37    mov ecx,[ebp-1Ch]"
+"	      00515d37    mov ecx,x"
 "	      00515d3a    inc ecx"
 "	      00515d3b    and ecx,ds:[5B5CBCh]"
 "	      00515d41    add ecx,ecx"
@@ -2842,42 +2842,42 @@ short S3TerrainInitMap() {
 "	      00515d46    mov ecx,ds:[67EB10h]"
 "	      00515d4c    xor edx,edx"
 "	      00515d4e    mov dx,[eax+ecx]"
-"	      00515d52    movsx eax,word ptr [ebp-24h]"
+"	      00515d52    movsx eax,alt"
 "	      00515d56    add edx,eax"
-"	      00515d58    mov [ebp-24h],dx"
+"	      00515d58    mov alt,dx"
 );
 // LINE 703:
 	asm( 
-"	      00515d5c    mov eax,[ebp-20h]"
+"	      00515d5c    mov eax,y"
 "	      00515d5f    inc eax"
 "	      00515d60    and eax,ds:[5B5CBCh]"
 "	      00515d66    mov cl,ds:[5B5CC0h]"
 "	      00515d6c    shl eax,cl"
 "	      00515d6e    mov ecx,ds:[5B5CBCh]"
-"	      00515d74    and ecx,[ebp-1Ch]"
+"	      00515d74    and ecx,x"
 "	      00515d77    add ecx,ecx"
 "	      00515d79    lea eax,[ecx+eax*2]"
 "	      00515d7c    mov ecx,ds:[67EB10h]"
 "	      00515d82    xor edx,edx"
 "	      00515d84    mov dx,[eax+ecx]"
-"	      00515d88    movsx eax,word ptr [ebp-24h]"
+"	      00515d88    movsx eax,alt"
 "	      00515d8c    add edx,eax"
-"	      00515d8e    mov [ebp-24h],dx"
+"	      00515d8e    mov alt,dx"
 );
 // LINE 704:
 	asm( 
-"	      00515d92    movsx eax,word ptr [ebp-24h]"
+"	      00515d92    movsx eax,alt"
 "	      00515d96    sar eax,2"
-"	      00515d99    mov [ebp-24h],ax"
+"	      00515d99    mov alt,ax"
 );
 // LINE 707:
 	asm( 
 "	      00515d9d    mov eax,ds:[67ED20h]"
-"	      00515da2    movsx ecx,word ptr [ebp-10h]"
+"	      00515da2    movsx ecx,alt2"
 "	      00515da6    lea ecx,[ecx+ecx*2]"
 "	      00515da9    add ecx,ecx"
 "	      00515dab    sub eax,ecx"
-"	      00515dad    movsx ecx,word ptr [ebp-24h]"
+"	      00515dad    movsx ecx,alt"
 "	      00515db1    cmp eax,ecx"
 "	      00515db3    jle near ptr 00515DBEh"
 );
@@ -2887,80 +2887,80 @@ short S3TerrainInitMap() {
 );
 // LINE 719:
 	asm( 
-"	      00515dbe    mov eax,[ebp-1Ch]"
+"	      00515dbe    mov eax,x"
 "	      00515dc1    dec eax"
 "	      00515dc2    and eax,0FFh"
 "	      00515dc7    shl eax,8"
-"	      00515dca    mov ecx,[ebp-20h]"
+"	      00515dca    mov ecx,y"
 "	      00515dcd    and ecx,0FFh"
 "	      00515dd3    xor edx,edx"
 "	      00515dd5    mov dl,[eax+ecx+66EB10h]"
 "	      00515ddc    cmp edx,30h"
 "	      00515ddf    je near ptr 00515E0Ch"
-"	      00515de5    mov eax,[ebp-1Ch]"
+"	      00515de5    mov eax,x"
 "	      00515de8    dec eax"
 "	      00515de9    and eax,0FFh"
 "	      00515dee    shl eax,8"
-"	      00515df1    mov ecx,[ebp-20h]"
+"	      00515df1    mov ecx,y"
 "	      00515df4    and ecx,0FFh"
 "	      00515dfa    xor edx,edx"
 "	      00515dfc    mov dl,[eax+ecx+66EB10h]"
 "	      00515e03    cmp edx,40h"
 "	      00515e06    jne near ptr 00515F07h"
-"	      00515e0c    mov eax,[ebp-1Ch]"
+"	      00515e0c    mov eax,x"
 "	      00515e0f    inc eax"
 "	      00515e10    and eax,0FFh"
 "	      00515e15    shl eax,8"
-"	      00515e18    mov ecx,[ebp-20h]"
+"	      00515e18    mov ecx,y"
 "	      00515e1b    and ecx,0FFh"
 "	      00515e21    xor edx,edx"
 "	      00515e23    mov dl,[eax+ecx+66EB10h]"
 "	      00515e2a    cmp edx,30h"
 "	      00515e2d    je near ptr 00515E5Ah"
-"	      00515e33    mov eax,[ebp-1Ch]"
+"	      00515e33    mov eax,x"
 "	      00515e36    inc eax"
 "	      00515e37    and eax,0FFh"
 "	      00515e3c    shl eax,8"
-"	      00515e3f    mov ecx,[ebp-20h]"
+"	      00515e3f    mov ecx,y"
 "	      00515e42    and ecx,0FFh"
 "	      00515e48    xor edx,edx"
 "	      00515e4a    mov dl,[eax+ecx+66EB10h]"
 "	      00515e51    cmp edx,40h"
 "	      00515e54    jne near ptr 00515F07h"
-"	      00515e5a    mov eax,[ebp-20h]"
+"	      00515e5a    mov eax,y"
 "	      00515e5d    inc eax"
 "	      00515e5e    and eax,0FFh"
-"	      00515e63    mov ecx,[ebp-1Ch]"
+"	      00515e63    mov ecx,x"
 "	      00515e66    and ecx,0FFh"
 "	      00515e6c    shl ecx,8"
 "	      00515e6f    xor edx,edx"
 "	      00515e71    mov dl,[eax+ecx+66EB10h]"
 "	      00515e78    cmp edx,30h"
 "	      00515e7b    je near ptr 00515EA8h"
-"	      00515e81    mov eax,[ebp-20h]"
+"	      00515e81    mov eax,y"
 "	      00515e84    inc eax"
 "	      00515e85    and eax,0FFh"
-"	      00515e8a    mov ecx,[ebp-1Ch]"
+"	      00515e8a    mov ecx,x"
 "	      00515e8d    and ecx,0FFh"
 "	      00515e93    shl ecx,8"
 "	      00515e96    xor edx,edx"
 "	      00515e98    mov dl,[eax+ecx+66EB10h]"
 "	      00515e9f    cmp edx,40h"
 "	      00515ea2    jne near ptr 00515F07h"
-"	      00515ea8    mov eax,[ebp-20h]"
+"	      00515ea8    mov eax,y"
 "	      00515eab    dec eax"
 "	      00515eac    and eax,0FFh"
-"	      00515eb1    mov ecx,[ebp-1Ch]"
+"	      00515eb1    mov ecx,x"
 "	      00515eb4    and ecx,0FFh"
 "	      00515eba    shl ecx,8"
 "	      00515ebd    xor edx,edx"
 "	      00515ebf    mov dl,[eax+ecx+66EB10h]"
 "	      00515ec6    cmp edx,30h"
 "	      00515ec9    je near ptr 00515EF6h"
-"	      00515ecf    mov eax,[ebp-20h]"
+"	      00515ecf    mov eax,y"
 "	      00515ed2    dec eax"
 "	      00515ed3    and eax,0FFh"
-"	      00515ed8    mov ecx,[ebp-1Ch]"
+"	      00515ed8    mov ecx,x"
 "	      00515edb    and ecx,0FFh"
 "	      00515ee1    shl ecx,8"
 "	      00515ee4    xor edx,edx"
@@ -2970,8 +2970,8 @@ short S3TerrainInitMap() {
 );
 // LINE 721:
 	asm( 
-"	      00515ef6    mov eax,[ebp-20h]"
-"	      00515ef9    mov ecx,[ebp-1Ch]"
+"	      00515ef6    mov eax,y"
+"	      00515ef9    mov ecx,x"
 "	      00515efc    shl ecx,8"
 "	      00515eff    mov byte ptr [eax+ecx+66EB10h],40h"
 );
@@ -2985,26 +2985,26 @@ short S3TerrainInitMap() {
 );
 // LINE 728:
 	asm( 
-"	      00515f11    mov dword ptr [ebp-1Ch],0"
+"	      00515f11    mov x,0"
 "	      00515f18    jmp near ptr 00515F20h"
-"	      00515f1d    inc dword ptr [ebp-1Ch]"
-"	      00515f20    cmp dword ptr [ebp-1Ch],100h"
+"	      00515f1d    inc x"
+"	      00515f20    cmp x,100h"
 "	      00515f27    jge near ptr 005161C1h"
 );
 // LINE 730:
 	asm( 
-"	      00515f2d    mov dword ptr [ebp-20h],0"
+"	      00515f2d    mov y,0"
 "	      00515f34    jmp near ptr 00515F3Ch"
-"	      00515f39    inc dword ptr [ebp-20h]"
-"	      00515f3c    cmp dword ptr [ebp-20h],100h"
+"	      00515f39    inc y"
+"	      00515f3c    cmp y,100h"
 "	      00515f43    jge near ptr 005161BCh"
 );
 // LINE 738:
 	asm( 
-"	      00515f49    mov eax,[ebp-1Ch]"
+"	      00515f49    mov eax,x"
 "	      00515f4c    and eax,0FFh"
 "	      00515f51    shl eax,8"
-"	      00515f54    mov ecx,[ebp-20h]"
+"	      00515f54    mov ecx,y"
 "	      00515f57    and ecx,0FFh"
 "	      00515f5d    xor edx,edx"
 "	      00515f5f    mov dl,[eax+ecx+66EB10h]"
@@ -3017,25 +3017,25 @@ short S3TerrainInitMap() {
 );
 // LINE 742:
 	asm( 
-"	      00515f74    mov eax,[ebp-20h]"
+"	      00515f74    mov eax,y"
 "	      00515f77    and eax,ds:[5B5CBCh]"
 "	      00515f7d    mov cl,ds:[5B5CC0h]"
 "	      00515f83    shl eax,cl"
 "	      00515f85    mov ecx,ds:[5B5CBCh]"
-"	      00515f8b    and ecx,[ebp-1Ch]"
+"	      00515f8b    and ecx,x"
 "	      00515f8e    add ecx,ecx"
 "	      00515f90    lea eax,[ecx+eax*2]"
 "	      00515f93    mov ecx,ds:[67EB10h]"
 "	      00515f99    mov ax,[eax+ecx]"
-"	      00515f9d    mov [ebp-24h],ax"
+"	      00515f9d    mov alt,ax"
 );
 // LINE 743:
 	asm( 
-"	      00515fa1    mov eax,[ebp-20h]"
+"	      00515fa1    mov eax,y"
 "	      00515fa4    and eax,ds:[5B5CBCh]"
 "	      00515faa    mov cl,ds:[5B5CC0h]"
 "	      00515fb0    shl eax,cl"
-"	      00515fb2    mov ecx,[ebp-1Ch]"
+"	      00515fb2    mov ecx,x"
 "	      00515fb5    inc ecx"
 "	      00515fb6    and ecx,ds:[5B5CBCh]"
 "	      00515fbc    add ecx,ecx"
@@ -3043,18 +3043,18 @@ short S3TerrainInitMap() {
 "	      00515fc1    mov ecx,ds:[67EB10h]"
 "	      00515fc7    xor edx,edx"
 "	      00515fc9    mov dx,[eax+ecx]"
-"	      00515fcd    movsx eax,word ptr [ebp-24h]"
+"	      00515fcd    movsx eax,alt"
 "	      00515fd1    add edx,eax"
-"	      00515fd3    mov [ebp-24h],dx"
+"	      00515fd3    mov alt,dx"
 );
 // LINE 744:
 	asm( 
-"	      00515fd7    mov eax,[ebp-20h]"
+"	      00515fd7    mov eax,y"
 "	      00515fda    inc eax"
 "	      00515fdb    and eax,ds:[5B5CBCh]"
 "	      00515fe1    mov cl,ds:[5B5CC0h]"
 "	      00515fe7    shl eax,cl"
-"	      00515fe9    mov ecx,[ebp-1Ch]"
+"	      00515fe9    mov ecx,x"
 "	      00515fec    inc ecx"
 "	      00515fed    and ecx,ds:[5B5CBCh]"
 "	      00515ff3    add ecx,ecx"
@@ -3062,41 +3062,41 @@ short S3TerrainInitMap() {
 "	      00515ff8    mov ecx,ds:[67EB10h]"
 "	      00515ffe    xor edx,edx"
 "	      00516000    mov dx,[eax+ecx]"
-"	      00516004    movsx eax,word ptr [ebp-24h]"
+"	      00516004    movsx eax,alt"
 "	      00516008    add edx,eax"
-"	      0051600a    mov [ebp-24h],dx"
+"	      0051600a    mov alt,dx"
 );
 // LINE 745:
 	asm( 
-"	      0051600e    mov eax,[ebp-20h]"
+"	      0051600e    mov eax,y"
 "	      00516011    inc eax"
 "	      00516012    and eax,ds:[5B5CBCh]"
 "	      00516018    mov cl,ds:[5B5CC0h]"
 "	      0051601e    shl eax,cl"
 "	      00516020    mov ecx,ds:[5B5CBCh]"
-"	      00516026    and ecx,[ebp-1Ch]"
+"	      00516026    and ecx,x"
 "	      00516029    add ecx,ecx"
 "	      0051602b    lea eax,[ecx+eax*2]"
 "	      0051602e    mov ecx,ds:[67EB10h]"
 "	      00516034    xor edx,edx"
 "	      00516036    mov dx,[eax+ecx]"
-"	      0051603a    movsx eax,word ptr [ebp-24h]"
+"	      0051603a    movsx eax,alt"
 "	      0051603e    add edx,eax"
-"	      00516040    mov [ebp-24h],dx"
+"	      00516040    mov alt,dx"
 );
 // LINE 746:
 	asm( 
-"	      00516044    movsx eax,word ptr [ebp-24h]"
+"	      00516044    movsx eax,alt"
 "	      00516048    sar eax,2"
-"	      0051604b    mov [ebp-24h],ax"
+"	      0051604b    mov alt,ax"
 );
 // LINE 749:
 	asm( 
 "	      0051604f    mov eax,ds:[67ED20h]"
-"	      00516054    movsx ecx,word ptr [ebp-10h]"
+"	      00516054    movsx ecx,alt2"
 "	      00516058    lea ecx,[ecx+ecx*2]"
 "	      0051605b    sub eax,ecx"
-"	      0051605d    movsx ecx,word ptr [ebp-24h]"
+"	      0051605d    movsx ecx,alt"
 "	      00516061    cmp eax,ecx"
 "	      00516063    jle near ptr 0051606Eh"
 );
@@ -3106,80 +3106,80 @@ short S3TerrainInitMap() {
 );
 // LINE 761:
 	asm( 
-"	      0051606e    mov eax,[ebp-1Ch]"
+"	      0051606e    mov eax,x"
 "	      00516071    dec eax"
 "	      00516072    and eax,0FFh"
 "	      00516077    shl eax,8"
-"	      0051607a    mov ecx,[ebp-20h]"
+"	      0051607a    mov ecx,y"
 "	      0051607d    and ecx,0FFh"
 "	      00516083    xor edx,edx"
 "	      00516085    mov dl,[eax+ecx+66EB10h]"
 "	      0051608c    cmp edx,50h"
 "	      0051608f    je near ptr 005160BCh"
-"	      00516095    mov eax,[ebp-1Ch]"
+"	      00516095    mov eax,x"
 "	      00516098    dec eax"
 "	      00516099    and eax,0FFh"
 "	      0051609e    shl eax,8"
-"	      005160a1    mov ecx,[ebp-20h]"
+"	      005160a1    mov ecx,y"
 "	      005160a4    and ecx,0FFh"
 "	      005160aa    xor edx,edx"
 "	      005160ac    mov dl,[eax+ecx+66EB10h]"
 "	      005160b3    cmp edx,40h"
 "	      005160b6    jne near ptr 005161B7h"
-"	      005160bc    mov eax,[ebp-1Ch]"
+"	      005160bc    mov eax,x"
 "	      005160bf    inc eax"
 "	      005160c0    and eax,0FFh"
 "	      005160c5    shl eax,8"
-"	      005160c8    mov ecx,[ebp-20h]"
+"	      005160c8    mov ecx,y"
 "	      005160cb    and ecx,0FFh"
 "	      005160d1    xor edx,edx"
 "	      005160d3    mov dl,[eax+ecx+66EB10h]"
 "	      005160da    cmp edx,50h"
 "	      005160dd    je near ptr 0051610Ah"
-"	      005160e3    mov eax,[ebp-1Ch]"
+"	      005160e3    mov eax,x"
 "	      005160e6    inc eax"
 "	      005160e7    and eax,0FFh"
 "	      005160ec    shl eax,8"
-"	      005160ef    mov ecx,[ebp-20h]"
+"	      005160ef    mov ecx,y"
 "	      005160f2    and ecx,0FFh"
 "	      005160f8    xor edx,edx"
 "	      005160fa    mov dl,[eax+ecx+66EB10h]"
 "	      00516101    cmp edx,40h"
 "	      00516104    jne near ptr 005161B7h"
-"	      0051610a    mov eax,[ebp-20h]"
+"	      0051610a    mov eax,y"
 "	      0051610d    inc eax"
 "	      0051610e    and eax,0FFh"
-"	      00516113    mov ecx,[ebp-1Ch]"
+"	      00516113    mov ecx,x"
 "	      00516116    and ecx,0FFh"
 "	      0051611c    shl ecx,8"
 "	      0051611f    xor edx,edx"
 "	      00516121    mov dl,[eax+ecx+66EB10h]"
 "	      00516128    cmp edx,50h"
 "	      0051612b    je near ptr 00516158h"
-"	      00516131    mov eax,[ebp-20h]"
+"	      00516131    mov eax,y"
 "	      00516134    inc eax"
 "	      00516135    and eax,0FFh"
-"	      0051613a    mov ecx,[ebp-1Ch]"
+"	      0051613a    mov ecx,x"
 "	      0051613d    and ecx,0FFh"
 "	      00516143    shl ecx,8"
 "	      00516146    xor edx,edx"
 "	      00516148    mov dl,[eax+ecx+66EB10h]"
 "	      0051614f    cmp edx,40h"
 "	      00516152    jne near ptr 005161B7h"
-"	      00516158    mov eax,[ebp-20h]"
+"	      00516158    mov eax,y"
 "	      0051615b    dec eax"
 "	      0051615c    and eax,0FFh"
-"	      00516161    mov ecx,[ebp-1Ch]"
+"	      00516161    mov ecx,x"
 "	      00516164    and ecx,0FFh"
 "	      0051616a    shl ecx,8"
 "	      0051616d    xor edx,edx"
 "	      0051616f    mov dl,[eax+ecx+66EB10h]"
 "	      00516176    cmp edx,50h"
 "	      00516179    je near ptr 005161A6h"
-"	      0051617f    mov eax,[ebp-20h]"
+"	      0051617f    mov eax,y"
 "	      00516182    dec eax"
 "	      00516183    and eax,0FFh"
-"	      00516188    mov ecx,[ebp-1Ch]"
+"	      00516188    mov ecx,x"
 "	      0051618b    and ecx,0FFh"
 "	      00516191    shl ecx,8"
 "	      00516194    xor edx,edx"
@@ -3189,8 +3189,8 @@ short S3TerrainInitMap() {
 );
 // LINE 763:
 	asm( 
-"	      005161a6    mov eax,[ebp-20h]"
-"	      005161a9    mov ecx,[ebp-1Ch]"
+"	      005161a6    mov eax,y"
+"	      005161a9    mov ecx,x"
 "	      005161ac    shl ecx,8"
 "	      005161af    mov byte ptr [eax+ecx+66EB10h],50h"
 );
@@ -3204,26 +3204,26 @@ short S3TerrainInitMap() {
 );
 // LINE 770:
 	asm( 
-"	      005161c1    mov dword ptr [ebp-1Ch],0"
+"	      005161c1    mov x,0"
 "	      005161c8    jmp near ptr 005161D0h"
-"	      005161cd    inc dword ptr [ebp-1Ch]"
-"	      005161d0    cmp dword ptr [ebp-1Ch],100h"
+"	      005161cd    inc x"
+"	      005161d0    cmp x,100h"
 "	      005161d7    jge near ptr 0051646Dh"
 );
 // LINE 772:
 	asm( 
-"	      005161dd    mov dword ptr [ebp-20h],0"
+"	      005161dd    mov y,0"
 "	      005161e4    jmp near ptr 005161ECh"
-"	      005161e9    inc dword ptr [ebp-20h]"
-"	      005161ec    cmp dword ptr [ebp-20h],100h"
+"	      005161e9    inc y"
+"	      005161ec    cmp y,100h"
 "	      005161f3    jge near ptr 00516468h"
 );
 // LINE 780:
 	asm( 
-"	      005161f9    mov eax,[ebp-1Ch]"
+"	      005161f9    mov eax,x"
 "	      005161fc    and eax,0FFh"
 "	      00516201    shl eax,8"
-"	      00516204    mov ecx,[ebp-20h]"
+"	      00516204    mov ecx,y"
 "	      00516207    and ecx,0FFh"
 "	      0051620d    xor edx,edx"
 "	      0051620f    mov dl,[eax+ecx+66EB10h]"
@@ -3236,25 +3236,25 @@ short S3TerrainInitMap() {
 );
 // LINE 784:
 	asm( 
-"	      00516224    mov eax,[ebp-20h]"
+"	      00516224    mov eax,y"
 "	      00516227    and eax,ds:[5B5CBCh]"
 "	      0051622d    mov cl,ds:[5B5CC0h]"
 "	      00516233    shl eax,cl"
 "	      00516235    mov ecx,ds:[5B5CBCh]"
-"	      0051623b    and ecx,[ebp-1Ch]"
+"	      0051623b    and ecx,x"
 "	      0051623e    add ecx,ecx"
 "	      00516240    lea eax,[ecx+eax*2]"
 "	      00516243    mov ecx,ds:[67EB10h]"
 "	      00516249    mov ax,[eax+ecx]"
-"	      0051624d    mov [ebp-24h],ax"
+"	      0051624d    mov alt,ax"
 );
 // LINE 785:
 	asm( 
-"	      00516251    mov eax,[ebp-20h]"
+"	      00516251    mov eax,y"
 "	      00516254    and eax,ds:[5B5CBCh]"
 "	      0051625a    mov cl,ds:[5B5CC0h]"
 "	      00516260    shl eax,cl"
-"	      00516262    mov ecx,[ebp-1Ch]"
+"	      00516262    mov ecx,x"
 "	      00516265    inc ecx"
 "	      00516266    and ecx,ds:[5B5CBCh]"
 "	      0051626c    add ecx,ecx"
@@ -3262,18 +3262,18 @@ short S3TerrainInitMap() {
 "	      00516271    mov ecx,ds:[67EB10h]"
 "	      00516277    xor edx,edx"
 "	      00516279    mov dx,[eax+ecx]"
-"	      0051627d    movsx eax,word ptr [ebp-24h]"
+"	      0051627d    movsx eax,alt"
 "	      00516281    add edx,eax"
-"	      00516283    mov [ebp-24h],dx"
+"	      00516283    mov alt,dx"
 );
 // LINE 786:
 	asm( 
-"	      00516287    mov eax,[ebp-20h]"
+"	      00516287    mov eax,y"
 "	      0051628a    inc eax"
 "	      0051628b    and eax,ds:[5B5CBCh]"
 "	      00516291    mov cl,ds:[5B5CC0h]"
 "	      00516297    shl eax,cl"
-"	      00516299    mov ecx,[ebp-1Ch]"
+"	      00516299    mov ecx,x"
 "	      0051629c    inc ecx"
 "	      0051629d    and ecx,ds:[5B5CBCh]"
 "	      005162a3    add ecx,ecx"
@@ -3281,39 +3281,39 @@ short S3TerrainInitMap() {
 "	      005162a8    mov ecx,ds:[67EB10h]"
 "	      005162ae    xor edx,edx"
 "	      005162b0    mov dx,[eax+ecx]"
-"	      005162b4    movsx eax,word ptr [ebp-24h]"
+"	      005162b4    movsx eax,alt"
 "	      005162b8    add edx,eax"
-"	      005162ba    mov [ebp-24h],dx"
+"	      005162ba    mov alt,dx"
 );
 // LINE 787:
 	asm( 
-"	      005162be    mov eax,[ebp-20h]"
+"	      005162be    mov eax,y"
 "	      005162c1    inc eax"
 "	      005162c2    and eax,ds:[5B5CBCh]"
 "	      005162c8    mov cl,ds:[5B5CC0h]"
 "	      005162ce    shl eax,cl"
 "	      005162d0    mov ecx,ds:[5B5CBCh]"
-"	      005162d6    and ecx,[ebp-1Ch]"
+"	      005162d6    and ecx,x"
 "	      005162d9    add ecx,ecx"
 "	      005162db    lea eax,[ecx+eax*2]"
 "	      005162de    mov ecx,ds:[67EB10h]"
 "	      005162e4    xor edx,edx"
 "	      005162e6    mov dx,[eax+ecx]"
-"	      005162ea    movsx eax,word ptr [ebp-24h]"
+"	      005162ea    movsx eax,alt"
 "	      005162ee    add edx,eax"
-"	      005162f0    mov [ebp-24h],dx"
+"	      005162f0    mov alt,dx"
 );
 // LINE 788:
 	asm( 
-"	      005162f4    movsx eax,word ptr [ebp-24h]"
+"	      005162f4    movsx eax,alt"
 "	      005162f8    sar eax,2"
-"	      005162fb    mov [ebp-24h],ax"
+"	      005162fb    mov alt,ax"
 );
 // LINE 791:
 	asm( 
-"	      005162ff    movsx eax,word ptr [ebp-10h]"
+"	      005162ff    movsx eax,alt2"
 "	      00516303    add eax,ds:[67ED20h]"
-"	      00516309    movsx ecx,word ptr [ebp-24h]"
+"	      00516309    movsx ecx,alt"
 "	      0051630d    cmp eax,ecx"
 "	      0051630f    jle near ptr 0051631Ah"
 );
@@ -3323,80 +3323,80 @@ short S3TerrainInitMap() {
 );
 // LINE 803:
 	asm( 
-"	      0051631a    mov eax,[ebp-1Ch]"
+"	      0051631a    mov eax,x"
 "	      0051631d    dec eax"
 "	      0051631e    and eax,0FFh"
 "	      00516323    shl eax,8"
-"	      00516326    mov ecx,[ebp-20h]"
+"	      00516326    mov ecx,y"
 "	      00516329    and ecx,0FFh"
 "	      0051632f    xor edx,edx"
 "	      00516331    mov dl,[eax+ecx+66EB10h]"
 "	      00516338    cmp edx,50h"
 "	      0051633b    je near ptr 00516368h"
-"	      00516341    mov eax,[ebp-1Ch]"
+"	      00516341    mov eax,x"
 "	      00516344    dec eax"
 "	      00516345    and eax,0FFh"
 "	      0051634a    shl eax,8"
-"	      0051634d    mov ecx,[ebp-20h]"
+"	      0051634d    mov ecx,y"
 "	      00516350    and ecx,0FFh"
 "	      00516356    xor edx,edx"
 "	      00516358    mov dl,[eax+ecx+66EB10h]"
 "	      0051635f    cmp edx,60h"
 "	      00516362    jne near ptr 00516463h"
-"	      00516368    mov eax,[ebp-1Ch]"
+"	      00516368    mov eax,x"
 "	      0051636b    inc eax"
 "	      0051636c    and eax,0FFh"
 "	      00516371    shl eax,8"
-"	      00516374    mov ecx,[ebp-20h]"
+"	      00516374    mov ecx,y"
 "	      00516377    and ecx,0FFh"
 "	      0051637d    xor edx,edx"
 "	      0051637f    mov dl,[eax+ecx+66EB10h]"
 "	      00516386    cmp edx,50h"
 "	      00516389    je near ptr 005163B6h"
-"	      0051638f    mov eax,[ebp-1Ch]"
+"	      0051638f    mov eax,x"
 "	      00516392    inc eax"
 "	      00516393    and eax,0FFh"
 "	      00516398    shl eax,8"
-"	      0051639b    mov ecx,[ebp-20h]"
+"	      0051639b    mov ecx,y"
 "	      0051639e    and ecx,0FFh"
 "	      005163a4    xor edx,edx"
 "	      005163a6    mov dl,[eax+ecx+66EB10h]"
 "	      005163ad    cmp edx,60h"
 "	      005163b0    jne near ptr 00516463h"
-"	      005163b6    mov eax,[ebp-20h]"
+"	      005163b6    mov eax,y"
 "	      005163b9    inc eax"
 "	      005163ba    and eax,0FFh"
-"	      005163bf    mov ecx,[ebp-1Ch]"
+"	      005163bf    mov ecx,x"
 "	      005163c2    and ecx,0FFh"
 "	      005163c8    shl ecx,8"
 "	      005163cb    xor edx,edx"
 "	      005163cd    mov dl,[eax+ecx+66EB10h]"
 "	      005163d4    cmp edx,50h"
 "	      005163d7    je near ptr 00516404h"
-"	      005163dd    mov eax,[ebp-20h]"
+"	      005163dd    mov eax,y"
 "	      005163e0    inc eax"
 "	      005163e1    and eax,0FFh"
-"	      005163e6    mov ecx,[ebp-1Ch]"
+"	      005163e6    mov ecx,x"
 "	      005163e9    and ecx,0FFh"
 "	      005163ef    shl ecx,8"
 "	      005163f2    xor edx,edx"
 "	      005163f4    mov dl,[eax+ecx+66EB10h]"
 "	      005163fb    cmp edx,60h"
 "	      005163fe    jne near ptr 00516463h"
-"	      00516404    mov eax,[ebp-20h]"
+"	      00516404    mov eax,y"
 "	      00516407    dec eax"
 "	      00516408    and eax,0FFh"
-"	      0051640d    mov ecx,[ebp-1Ch]"
+"	      0051640d    mov ecx,x"
 "	      00516410    and ecx,0FFh"
 "	      00516416    shl ecx,8"
 "	      00516419    xor edx,edx"
 "	      0051641b    mov dl,[eax+ecx+66EB10h]"
 "	      00516422    cmp edx,50h"
 "	      00516425    je near ptr 00516452h"
-"	      0051642b    mov eax,[ebp-20h]"
+"	      0051642b    mov eax,y"
 "	      0051642e    dec eax"
 "	      0051642f    and eax,0FFh"
-"	      00516434    mov ecx,[ebp-1Ch]"
+"	      00516434    mov ecx,x"
 "	      00516437    and ecx,0FFh"
 "	      0051643d    shl ecx,8"
 "	      00516440    xor edx,edx"
@@ -3406,8 +3406,8 @@ short S3TerrainInitMap() {
 );
 // LINE 805:
 	asm( 
-"	      00516452    mov eax,[ebp-20h]"
-"	      00516455    mov ecx,[ebp-1Ch]"
+"	      00516452    mov eax,y"
+"	      00516455    mov ecx,x"
 "	      00516458    shl ecx,8"
 "	      0051645b    mov byte ptr [eax+ecx+66EB10h],60h"
 );
@@ -3421,26 +3421,26 @@ short S3TerrainInitMap() {
 );
 // LINE 812:
 	asm( 
-"	      0051646d    mov dword ptr [ebp-1Ch],0"
+"	      0051646d    mov x,0"
 "	      00516474    jmp near ptr 0051647Ch"
-"	      00516479    inc dword ptr [ebp-1Ch]"
-"	      0051647c    cmp dword ptr [ebp-1Ch],100h"
+"	      00516479    inc x"
+"	      0051647c    cmp x,100h"
 "	      00516483    jge near ptr 00516FB6h"
 );
 // LINE 814:
 	asm( 
-"	      00516489    mov dword ptr [ebp-20h],0"
+"	      00516489    mov y,0"
 "	      00516490    jmp near ptr 00516498h"
-"	      00516495    inc dword ptr [ebp-20h]"
-"	      00516498    cmp dword ptr [ebp-20h],100h"
+"	      00516495    inc y"
+"	      00516498    cmp y,100h"
 "	      0051649f    jge near ptr 00516FB1h"
 );
 // LINE 816:
 	asm( 
-"	      005164a5    mov eax,[ebp-1Ch]"
+"	      005164a5    mov eax,x"
 "	      005164a8    and eax,0FFh"
 "	      005164ad    shl eax,8"
-"	      005164b0    mov ecx,[ebp-20h]"
+"	      005164b0    mov ecx,y"
 "	      005164b3    and ecx,0FFh"
 "	      005164b9    xor edx,edx"
 "	      005164bb    mov dl,[eax+ecx+66EB10h]"
@@ -3449,44 +3449,44 @@ short S3TerrainInitMap() {
 );
 // LINE 818:
 	asm( 
-"	      005164cb    mov byte ptr [ebp-14h],10h"
+"	      005164cb    mov texval,10h"
 );
 // LINE 821:
 	asm( 
-"	      005164cf    mov eax,[ebp-20h]"
+"	      005164cf    mov eax,y"
 "	      005164d2    dec eax"
 "	      005164d3    and eax,0FFh"
-"	      005164d8    mov ecx,[ebp-1Ch]"
+"	      005164d8    mov ecx,x"
 "	      005164db    and ecx,0FFh"
 "	      005164e1    shl ecx,8"
 "	      005164e4    xor edx,edx"
 "	      005164e6    mov dl,[eax+ecx+66EB10h]"
 "	      005164ed    test edx,edx"
 "	      005164ef    jl near ptr 0051651Ch"
-"	      005164f5    mov eax,[ebp-20h]"
+"	      005164f5    mov eax,y"
 "	      005164f8    dec eax"
 "	      005164f9    and eax,0FFh"
-"	      005164fe    mov ecx,[ebp-1Ch]"
+"	      005164fe    mov ecx,x"
 "	      00516501    and ecx,0FFh"
 "	      00516507    shl ecx,8"
 "	      0051650a    xor edx,edx"
 "	      0051650c    mov dl,[eax+ecx+66EB10h]"
 "	      00516513    cmp edx,5"
 "	      00516516    jl near ptr 0051656Ah"
-"	      0051651c    mov eax,[ebp-20h]"
+"	      0051651c    mov eax,y"
 "	      0051651f    dec eax"
 "	      00516520    and eax,0FFh"
-"	      00516525    mov ecx,[ebp-1Ch]"
+"	      00516525    mov ecx,x"
 "	      00516528    and ecx,0FFh"
 "	      0051652e    shl ecx,8"
 "	      00516531    xor edx,edx"
 "	      00516533    mov dl,[eax+ecx+66EB10h]"
 "	      0051653a    cmp edx,5"
 "	      0051653d    jl near ptr 00516573h"
-"	      00516543    mov eax,[ebp-20h]"
+"	      00516543    mov eax,y"
 "	      00516546    dec eax"
 "	      00516547    and eax,0FFh"
-"	      0051654c    mov ecx,[ebp-1Ch]"
+"	      0051654c    mov ecx,x"
 "	      0051654f    and ecx,0FFh"
 "	      00516555    shl ecx,8"
 "	      00516558    xor edx,edx"
@@ -3497,47 +3497,47 @@ short S3TerrainInitMap() {
 // LINE 822:
 	asm( 
 "	      0051656a    xor eax,eax"
-"	      0051656c    mov al,[ebp-14h]"
+"	      0051656c    mov al,texval"
 "	      0051656f    inc eax"
-"	      00516570    mov [ebp-14h],al"
+"	      00516570    mov texval,al"
 );
 // LINE 824:
 	asm( 
-"	      00516573    mov eax,[ebp-1Ch]"
+"	      00516573    mov eax,x"
 "	      00516576    inc eax"
 "	      00516577    and eax,0FFh"
 "	      0051657c    shl eax,8"
-"	      0051657f    mov ecx,[ebp-20h]"
+"	      0051657f    mov ecx,y"
 "	      00516582    and ecx,0FFh"
 "	      00516588    xor edx,edx"
 "	      0051658a    mov dl,[eax+ecx+66EB10h]"
 "	      00516591    test edx,edx"
 "	      00516593    jl near ptr 005165C0h"
-"	      00516599    mov eax,[ebp-1Ch]"
+"	      00516599    mov eax,x"
 "	      0051659c    inc eax"
 "	      0051659d    and eax,0FFh"
 "	      005165a2    shl eax,8"
-"	      005165a5    mov ecx,[ebp-20h]"
+"	      005165a5    mov ecx,y"
 "	      005165a8    and ecx,0FFh"
 "	      005165ae    xor edx,edx"
 "	      005165b0    mov dl,[eax+ecx+66EB10h]"
 "	      005165b7    cmp edx,5"
 "	      005165ba    jl near ptr 0051660Eh"
-"	      005165c0    mov eax,[ebp-1Ch]"
+"	      005165c0    mov eax,x"
 "	      005165c3    inc eax"
 "	      005165c4    and eax,0FFh"
 "	      005165c9    shl eax,8"
-"	      005165cc    mov ecx,[ebp-20h]"
+"	      005165cc    mov ecx,y"
 "	      005165cf    and ecx,0FFh"
 "	      005165d5    xor edx,edx"
 "	      005165d7    mov dl,[eax+ecx+66EB10h]"
 "	      005165de    cmp edx,5"
 "	      005165e1    jl near ptr 00516619h"
-"	      005165e7    mov eax,[ebp-1Ch]"
+"	      005165e7    mov eax,x"
 "	      005165ea    inc eax"
 "	      005165eb    and eax,0FFh"
 "	      005165f0    shl eax,8"
-"	      005165f3    mov ecx,[ebp-20h]"
+"	      005165f3    mov ecx,y"
 "	      005165f6    and ecx,0FFh"
 "	      005165fc    xor edx,edx"
 "	      005165fe    mov dl,[eax+ecx+66EB10h]"
@@ -3547,46 +3547,46 @@ short S3TerrainInitMap() {
 // LINE 825:
 	asm( 
 "	      0051660e    xor eax,eax"
-"	      00516610    mov al,[ebp-14h]"
+"	      00516610    mov al,texval"
 "	      00516613    add eax,2"
-"	      00516616    mov [ebp-14h],al"
+"	      00516616    mov texval,al"
 );
 // LINE 827:
 	asm( 
-"	      00516619    mov eax,[ebp-20h]"
+"	      00516619    mov eax,y"
 "	      0051661c    inc eax"
 "	      0051661d    and eax,0FFh"
-"	      00516622    mov ecx,[ebp-1Ch]"
+"	      00516622    mov ecx,x"
 "	      00516625    and ecx,0FFh"
 "	      0051662b    shl ecx,8"
 "	      0051662e    xor edx,edx"
 "	      00516630    mov dl,[eax+ecx+66EB10h]"
 "	      00516637    test edx,edx"
 "	      00516639    jl near ptr 00516666h"
-"	      0051663f    mov eax,[ebp-20h]"
+"	      0051663f    mov eax,y"
 "	      00516642    inc eax"
 "	      00516643    and eax,0FFh"
-"	      00516648    mov ecx,[ebp-1Ch]"
+"	      00516648    mov ecx,x"
 "	      0051664b    and ecx,0FFh"
 "	      00516651    shl ecx,8"
 "	      00516654    xor edx,edx"
 "	      00516656    mov dl,[eax+ecx+66EB10h]"
 "	      0051665d    cmp edx,5"
 "	      00516660    jl near ptr 005166B4h"
-"	      00516666    mov eax,[ebp-20h]"
+"	      00516666    mov eax,y"
 "	      00516669    inc eax"
 "	      0051666a    and eax,0FFh"
-"	      0051666f    mov ecx,[ebp-1Ch]"
+"	      0051666f    mov ecx,x"
 "	      00516672    and ecx,0FFh"
 "	      00516678    shl ecx,8"
 "	      0051667b    xor edx,edx"
 "	      0051667d    mov dl,[eax+ecx+66EB10h]"
 "	      00516684    cmp edx,5"
 "	      00516687    jl near ptr 005166BFh"
-"	      0051668d    mov eax,[ebp-20h]"
+"	      0051668d    mov eax,y"
 "	      00516690    inc eax"
 "	      00516691    and eax,0FFh"
-"	      00516696    mov ecx,[ebp-1Ch]"
+"	      00516696    mov ecx,x"
 "	      00516699    and ecx,0FFh"
 "	      0051669f    shl ecx,8"
 "	      005166a2    xor edx,edx"
@@ -3597,47 +3597,47 @@ short S3TerrainInitMap() {
 // LINE 828:
 	asm( 
 "	      005166b4    xor eax,eax"
-"	      005166b6    mov al,[ebp-14h]"
+"	      005166b6    mov al,texval"
 "	      005166b9    add eax,4"
-"	      005166bc    mov [ebp-14h],al"
+"	      005166bc    mov texval,al"
 );
 // LINE 830:
 	asm( 
-"	      005166bf    mov eax,[ebp-1Ch]"
+"	      005166bf    mov eax,x"
 "	      005166c2    dec eax"
 "	      005166c3    and eax,0FFh"
 "	      005166c8    shl eax,8"
-"	      005166cb    mov ecx,[ebp-20h]"
+"	      005166cb    mov ecx,y"
 "	      005166ce    and ecx,0FFh"
 "	      005166d4    xor edx,edx"
 "	      005166d6    mov dl,[eax+ecx+66EB10h]"
 "	      005166dd    test edx,edx"
 "	      005166df    jl near ptr 0051670Ch"
-"	      005166e5    mov eax,[ebp-1Ch]"
+"	      005166e5    mov eax,x"
 "	      005166e8    dec eax"
 "	      005166e9    and eax,0FFh"
 "	      005166ee    shl eax,8"
-"	      005166f1    mov ecx,[ebp-20h]"
+"	      005166f1    mov ecx,y"
 "	      005166f4    and ecx,0FFh"
 "	      005166fa    xor edx,edx"
 "	      005166fc    mov dl,[eax+ecx+66EB10h]"
 "	      00516703    cmp edx,5"
 "	      00516706    jl near ptr 0051675Ah"
-"	      0051670c    mov eax,[ebp-1Ch]"
+"	      0051670c    mov eax,x"
 "	      0051670f    dec eax"
 "	      00516710    and eax,0FFh"
 "	      00516715    shl eax,8"
-"	      00516718    mov ecx,[ebp-20h]"
+"	      00516718    mov ecx,y"
 "	      0051671b    and ecx,0FFh"
 "	      00516721    xor edx,edx"
 "	      00516723    mov dl,[eax+ecx+66EB10h]"
 "	      0051672a    cmp edx,5"
 "	      0051672d    jl near ptr 00516765h"
-"	      00516733    mov eax,[ebp-1Ch]"
+"	      00516733    mov eax,x"
 "	      00516736    dec eax"
 "	      00516737    and eax,0FFh"
 "	      0051673c    shl eax,8"
-"	      0051673f    mov ecx,[ebp-20h]"
+"	      0051673f    mov ecx,y"
 "	      00516742    and ecx,0FFh"
 "	      00516748    xor edx,edx"
 "	      0051674a    mov dl,[eax+ecx+66EB10h]"
@@ -3647,25 +3647,25 @@ short S3TerrainInitMap() {
 // LINE 831:
 	asm( 
 "	      0051675a    xor eax,eax"
-"	      0051675c    mov al,[ebp-14h]"
+"	      0051675c    mov al,texval"
 "	      0051675f    add eax,8"
-"	      00516762    mov [ebp-14h],al"
+"	      00516762    mov texval,al"
 );
 // LINE 832:
 	asm( 
-"	      00516765    mov al,[ebp-14h]"
-"	      00516768    mov ecx,[ebp-20h]"
-"	      0051676b    mov edx,[ebp-1Ch]"
+"	      00516765    mov al,texval"
+"	      00516768    mov ecx,y"
+"	      0051676b    mov edx,x"
 "	      0051676e    shl edx,8"
 "	      00516771    mov [ecx+edx+66EB10h],al"
 );
 // LINE 834:
 	asm( 
 "	      00516778    jmp near ptr 00516FACh"
-"	      0051677d    mov eax,[ebp-1Ch]"
+"	      0051677d    mov eax,x"
 "	      00516780    and eax,0FFh"
 "	      00516785    shl eax,8"
-"	      00516788    mov ecx,[ebp-20h]"
+"	      00516788    mov ecx,y"
 "	      0051678b    and ecx,0FFh"
 "	      00516791    xor edx,edx"
 "	      00516793    mov dl,[eax+ecx+66EB10h]"
@@ -3674,24 +3674,24 @@ short S3TerrainInitMap() {
 );
 // LINE 836:
 	asm( 
-"	      005167a3    mov byte ptr [ebp-14h],20h"
+"	      005167a3    mov texval,20h"
 );
 // LINE 839:
 	asm( 
-"	      005167a7    mov eax,[ebp-20h]"
+"	      005167a7    mov eax,y"
 "	      005167aa    dec eax"
 "	      005167ab    and eax,0FFh"
-"	      005167b0    mov ecx,[ebp-1Ch]"
+"	      005167b0    mov ecx,x"
 "	      005167b3    and ecx,0FFh"
 "	      005167b9    shl ecx,8"
 "	      005167bc    xor edx,edx"
 "	      005167be    mov dl,[eax+ecx+66EB10h]"
 "	      005167c5    cmp edx,10h"
 "	      005167c8    jl near ptr 005167FEh"
-"	      005167ce    mov eax,[ebp-20h]"
+"	      005167ce    mov eax,y"
 "	      005167d1    dec eax"
 "	      005167d2    and eax,0FFh"
-"	      005167d7    mov ecx,[ebp-1Ch]"
+"	      005167d7    mov ecx,x"
 "	      005167da    and ecx,0FFh"
 "	      005167e0    shl ecx,8"
 "	      005167e3    xor edx,edx"
@@ -3702,27 +3702,27 @@ short S3TerrainInitMap() {
 // LINE 840:
 	asm( 
 "	      005167f5    xor eax,eax"
-"	      005167f7    mov al,[ebp-14h]"
+"	      005167f7    mov al,texval"
 "	      005167fa    inc eax"
-"	      005167fb    mov [ebp-14h],al"
+"	      005167fb    mov texval,al"
 );
 // LINE 842:
 	asm( 
-"	      005167fe    mov eax,[ebp-1Ch]"
+"	      005167fe    mov eax,x"
 "	      00516801    inc eax"
 "	      00516802    and eax,0FFh"
 "	      00516807    shl eax,8"
-"	      0051680a    mov ecx,[ebp-20h]"
+"	      0051680a    mov ecx,y"
 "	      0051680d    and ecx,0FFh"
 "	      00516813    xor edx,edx"
 "	      00516815    mov dl,[eax+ecx+66EB10h]"
 "	      0051681c    cmp edx,10h"
 "	      0051681f    jl near ptr 00516857h"
-"	      00516825    mov eax,[ebp-1Ch]"
+"	      00516825    mov eax,x"
 "	      00516828    inc eax"
 "	      00516829    and eax,0FFh"
 "	      0051682e    shl eax,8"
-"	      00516831    mov ecx,[ebp-20h]"
+"	      00516831    mov ecx,y"
 "	      00516834    and ecx,0FFh"
 "	      0051683a    xor edx,edx"
 "	      0051683c    mov dl,[eax+ecx+66EB10h]"
@@ -3732,26 +3732,26 @@ short S3TerrainInitMap() {
 // LINE 843:
 	asm( 
 "	      0051684c    xor eax,eax"
-"	      0051684e    mov al,[ebp-14h]"
+"	      0051684e    mov al,texval"
 "	      00516851    add eax,2"
-"	      00516854    mov [ebp-14h],al"
+"	      00516854    mov texval,al"
 );
 // LINE 845:
 	asm( 
-"	      00516857    mov eax,[ebp-20h]"
+"	      00516857    mov eax,y"
 "	      0051685a    inc eax"
 "	      0051685b    and eax,0FFh"
-"	      00516860    mov ecx,[ebp-1Ch]"
+"	      00516860    mov ecx,x"
 "	      00516863    and ecx,0FFh"
 "	      00516869    shl ecx,8"
 "	      0051686c    xor edx,edx"
 "	      0051686e    mov dl,[eax+ecx+66EB10h]"
 "	      00516875    cmp edx,10h"
 "	      00516878    jl near ptr 005168B0h"
-"	      0051687e    mov eax,[ebp-20h]"
+"	      0051687e    mov eax,y"
 "	      00516881    inc eax"
 "	      00516882    and eax,0FFh"
-"	      00516887    mov ecx,[ebp-1Ch]"
+"	      00516887    mov ecx,x"
 "	      0051688a    and ecx,0FFh"
 "	      00516890    shl ecx,8"
 "	      00516893    xor edx,edx"
@@ -3762,27 +3762,27 @@ short S3TerrainInitMap() {
 // LINE 846:
 	asm( 
 "	      005168a5    xor eax,eax"
-"	      005168a7    mov al,[ebp-14h]"
+"	      005168a7    mov al,texval"
 "	      005168aa    add eax,4"
-"	      005168ad    mov [ebp-14h],al"
+"	      005168ad    mov texval,al"
 );
 // LINE 848:
 	asm( 
-"	      005168b0    mov eax,[ebp-1Ch]"
+"	      005168b0    mov eax,x"
 "	      005168b3    dec eax"
 "	      005168b4    and eax,0FFh"
 "	      005168b9    shl eax,8"
-"	      005168bc    mov ecx,[ebp-20h]"
+"	      005168bc    mov ecx,y"
 "	      005168bf    and ecx,0FFh"
 "	      005168c5    xor edx,edx"
 "	      005168c7    mov dl,[eax+ecx+66EB10h]"
 "	      005168ce    cmp edx,10h"
 "	      005168d1    jl near ptr 00516909h"
-"	      005168d7    mov eax,[ebp-1Ch]"
+"	      005168d7    mov eax,x"
 "	      005168da    dec eax"
 "	      005168db    and eax,0FFh"
 "	      005168e0    shl eax,8"
-"	      005168e3    mov ecx,[ebp-20h]"
+"	      005168e3    mov ecx,y"
 "	      005168e6    and ecx,0FFh"
 "	      005168ec    xor edx,edx"
 "	      005168ee    mov dl,[eax+ecx+66EB10h]"
@@ -3792,25 +3792,25 @@ short S3TerrainInitMap() {
 // LINE 849:
 	asm( 
 "	      005168fe    xor eax,eax"
-"	      00516900    mov al,[ebp-14h]"
+"	      00516900    mov al,texval"
 "	      00516903    add eax,8"
-"	      00516906    mov [ebp-14h],al"
+"	      00516906    mov texval,al"
 );
 // LINE 850:
 	asm( 
-"	      00516909    mov al,[ebp-14h]"
-"	      0051690c    mov ecx,[ebp-20h]"
-"	      0051690f    mov edx,[ebp-1Ch]"
+"	      00516909    mov al,texval"
+"	      0051690c    mov ecx,y"
+"	      0051690f    mov edx,x"
 "	      00516912    shl edx,8"
 "	      00516915    mov [ecx+edx+66EB10h],al"
 );
 // LINE 852:
 	asm( 
 "	      0051691c    jmp near ptr 00516FACh"
-"	      00516921    mov eax,[ebp-1Ch]"
+"	      00516921    mov eax,x"
 "	      00516924    and eax,0FFh"
 "	      00516929    shl eax,8"
-"	      0051692c    mov ecx,[ebp-20h]"
+"	      0051692c    mov ecx,y"
 "	      0051692f    and ecx,0FFh"
 "	      00516935    xor edx,edx"
 "	      00516937    mov dl,[eax+ecx+66EB10h]"
@@ -3819,24 +3819,24 @@ short S3TerrainInitMap() {
 );
 // LINE 854:
 	asm( 
-"	      00516947    mov byte ptr [ebp-14h],30h"
+"	      00516947    mov texval,30h"
 );
 // LINE 857:
 	asm( 
-"	      0051694b    mov eax,[ebp-20h]"
+"	      0051694b    mov eax,y"
 "	      0051694e    dec eax"
 "	      0051694f    and eax,0FFh"
-"	      00516954    mov ecx,[ebp-1Ch]"
+"	      00516954    mov ecx,x"
 "	      00516957    and ecx,0FFh"
 "	      0051695d    shl ecx,8"
 "	      00516960    xor edx,edx"
 "	      00516962    mov dl,[eax+ecx+66EB10h]"
 "	      00516969    cmp edx,20h"
 "	      0051696c    jl near ptr 005169A2h"
-"	      00516972    mov eax,[ebp-20h]"
+"	      00516972    mov eax,y"
 "	      00516975    dec eax"
 "	      00516976    and eax,0FFh"
-"	      0051697b    mov ecx,[ebp-1Ch]"
+"	      0051697b    mov ecx,x"
 "	      0051697e    and ecx,0FFh"
 "	      00516984    shl ecx,8"
 "	      00516987    xor edx,edx"
@@ -3847,27 +3847,27 @@ short S3TerrainInitMap() {
 // LINE 858:
 	asm( 
 "	      00516999    xor eax,eax"
-"	      0051699b    mov al,[ebp-14h]"
+"	      0051699b    mov al,texval"
 "	      0051699e    inc eax"
-"	      0051699f    mov [ebp-14h],al"
+"	      0051699f    mov texval,al"
 );
 // LINE 860:
 	asm( 
-"	      005169a2    mov eax,[ebp-1Ch]"
+"	      005169a2    mov eax,x"
 "	      005169a5    inc eax"
 "	      005169a6    and eax,0FFh"
 "	      005169ab    shl eax,8"
-"	      005169ae    mov ecx,[ebp-20h]"
+"	      005169ae    mov ecx,y"
 "	      005169b1    and ecx,0FFh"
 "	      005169b7    xor edx,edx"
 "	      005169b9    mov dl,[eax+ecx+66EB10h]"
 "	      005169c0    cmp edx,20h"
 "	      005169c3    jl near ptr 005169FBh"
-"	      005169c9    mov eax,[ebp-1Ch]"
+"	      005169c9    mov eax,x"
 "	      005169cc    inc eax"
 "	      005169cd    and eax,0FFh"
 "	      005169d2    shl eax,8"
-"	      005169d5    mov ecx,[ebp-20h]"
+"	      005169d5    mov ecx,y"
 "	      005169d8    and ecx,0FFh"
 "	      005169de    xor edx,edx"
 "	      005169e0    mov dl,[eax+ecx+66EB10h]"
@@ -3877,26 +3877,26 @@ short S3TerrainInitMap() {
 // LINE 861:
 	asm( 
 "	      005169f0    xor eax,eax"
-"	      005169f2    mov al,[ebp-14h]"
+"	      005169f2    mov al,texval"
 "	      005169f5    add eax,2"
-"	      005169f8    mov [ebp-14h],al"
+"	      005169f8    mov texval,al"
 );
 // LINE 863:
 	asm( 
-"	      005169fb    mov eax,[ebp-20h]"
+"	      005169fb    mov eax,y"
 "	      005169fe    inc eax"
 "	      005169ff    and eax,0FFh"
-"	      00516a04    mov ecx,[ebp-1Ch]"
+"	      00516a04    mov ecx,x"
 "	      00516a07    and ecx,0FFh"
 "	      00516a0d    shl ecx,8"
 "	      00516a10    xor edx,edx"
 "	      00516a12    mov dl,[eax+ecx+66EB10h]"
 "	      00516a19    cmp edx,20h"
 "	      00516a1c    jl near ptr 00516A54h"
-"	      00516a22    mov eax,[ebp-20h]"
+"	      00516a22    mov eax,y"
 "	      00516a25    inc eax"
 "	      00516a26    and eax,0FFh"
-"	      00516a2b    mov ecx,[ebp-1Ch]"
+"	      00516a2b    mov ecx,x"
 "	      00516a2e    and ecx,0FFh"
 "	      00516a34    shl ecx,8"
 "	      00516a37    xor edx,edx"
@@ -3907,27 +3907,27 @@ short S3TerrainInitMap() {
 // LINE 864:
 	asm( 
 "	      00516a49    xor eax,eax"
-"	      00516a4b    mov al,[ebp-14h]"
+"	      00516a4b    mov al,texval"
 "	      00516a4e    add eax,4"
-"	      00516a51    mov [ebp-14h],al"
+"	      00516a51    mov texval,al"
 );
 // LINE 866:
 	asm( 
-"	      00516a54    mov eax,[ebp-1Ch]"
+"	      00516a54    mov eax,x"
 "	      00516a57    dec eax"
 "	      00516a58    and eax,0FFh"
 "	      00516a5d    shl eax,8"
-"	      00516a60    mov ecx,[ebp-20h]"
+"	      00516a60    mov ecx,y"
 "	      00516a63    and ecx,0FFh"
 "	      00516a69    xor edx,edx"
 "	      00516a6b    mov dl,[eax+ecx+66EB10h]"
 "	      00516a72    cmp edx,20h"
 "	      00516a75    jl near ptr 00516AADh"
-"	      00516a7b    mov eax,[ebp-1Ch]"
+"	      00516a7b    mov eax,x"
 "	      00516a7e    dec eax"
 "	      00516a7f    and eax,0FFh"
 "	      00516a84    shl eax,8"
-"	      00516a87    mov ecx,[ebp-20h]"
+"	      00516a87    mov ecx,y"
 "	      00516a8a    and ecx,0FFh"
 "	      00516a90    xor edx,edx"
 "	      00516a92    mov dl,[eax+ecx+66EB10h]"
@@ -3937,25 +3937,25 @@ short S3TerrainInitMap() {
 // LINE 867:
 	asm( 
 "	      00516aa2    xor eax,eax"
-"	      00516aa4    mov al,[ebp-14h]"
+"	      00516aa4    mov al,texval"
 "	      00516aa7    add eax,8"
-"	      00516aaa    mov [ebp-14h],al"
+"	      00516aaa    mov texval,al"
 );
 // LINE 868:
 	asm( 
-"	      00516aad    mov al,[ebp-14h]"
-"	      00516ab0    mov ecx,[ebp-20h]"
-"	      00516ab3    mov edx,[ebp-1Ch]"
+"	      00516aad    mov al,texval"
+"	      00516ab0    mov ecx,y"
+"	      00516ab3    mov edx,x"
 "	      00516ab6    shl edx,8"
 "	      00516ab9    mov [ecx+edx+66EB10h],al"
 );
 // LINE 870:
 	asm( 
 "	      00516ac0    jmp near ptr 00516FACh"
-"	      00516ac5    mov eax,[ebp-1Ch]"
+"	      00516ac5    mov eax,x"
 "	      00516ac8    and eax,0FFh"
 "	      00516acd    shl eax,8"
-"	      00516ad0    mov ecx,[ebp-20h]"
+"	      00516ad0    mov ecx,y"
 "	      00516ad3    and ecx,0FFh"
 "	      00516ad9    xor edx,edx"
 "	      00516adb    mov dl,[eax+ecx+66EB10h]"
@@ -3964,24 +3964,24 @@ short S3TerrainInitMap() {
 );
 // LINE 872:
 	asm( 
-"	      00516aeb    mov byte ptr [ebp-14h],40h"
+"	      00516aeb    mov texval,40h"
 );
 // LINE 875:
 	asm( 
-"	      00516aef    mov eax,[ebp-20h]"
+"	      00516aef    mov eax,y"
 "	      00516af2    dec eax"
 "	      00516af3    and eax,0FFh"
-"	      00516af8    mov ecx,[ebp-1Ch]"
+"	      00516af8    mov ecx,x"
 "	      00516afb    and ecx,0FFh"
 "	      00516b01    shl ecx,8"
 "	      00516b04    xor edx,edx"
 "	      00516b06    mov dl,[eax+ecx+66EB10h]"
 "	      00516b0d    cmp edx,30h"
 "	      00516b10    jl near ptr 00516B46h"
-"	      00516b16    mov eax,[ebp-20h]"
+"	      00516b16    mov eax,y"
 "	      00516b19    dec eax"
 "	      00516b1a    and eax,0FFh"
-"	      00516b1f    mov ecx,[ebp-1Ch]"
+"	      00516b1f    mov ecx,x"
 "	      00516b22    and ecx,0FFh"
 "	      00516b28    shl ecx,8"
 "	      00516b2b    xor edx,edx"
@@ -3992,27 +3992,27 @@ short S3TerrainInitMap() {
 // LINE 876:
 	asm( 
 "	      00516b3d    xor eax,eax"
-"	      00516b3f    mov al,[ebp-14h]"
+"	      00516b3f    mov al,texval"
 "	      00516b42    inc eax"
-"	      00516b43    mov [ebp-14h],al"
+"	      00516b43    mov texval,al"
 );
 // LINE 878:
 	asm( 
-"	      00516b46    mov eax,[ebp-1Ch]"
+"	      00516b46    mov eax,x"
 "	      00516b49    inc eax"
 "	      00516b4a    and eax,0FFh"
 "	      00516b4f    shl eax,8"
-"	      00516b52    mov ecx,[ebp-20h]"
+"	      00516b52    mov ecx,y"
 "	      00516b55    and ecx,0FFh"
 "	      00516b5b    xor edx,edx"
 "	      00516b5d    mov dl,[eax+ecx+66EB10h]"
 "	      00516b64    cmp edx,30h"
 "	      00516b67    jl near ptr 00516B9Fh"
-"	      00516b6d    mov eax,[ebp-1Ch]"
+"	      00516b6d    mov eax,x"
 "	      00516b70    inc eax"
 "	      00516b71    and eax,0FFh"
 "	      00516b76    shl eax,8"
-"	      00516b79    mov ecx,[ebp-20h]"
+"	      00516b79    mov ecx,y"
 "	      00516b7c    and ecx,0FFh"
 "	      00516b82    xor edx,edx"
 "	      00516b84    mov dl,[eax+ecx+66EB10h]"
@@ -4022,26 +4022,26 @@ short S3TerrainInitMap() {
 // LINE 879:
 	asm( 
 "	      00516b94    xor eax,eax"
-"	      00516b96    mov al,[ebp-14h]"
+"	      00516b96    mov al,texval"
 "	      00516b99    add eax,2"
-"	      00516b9c    mov [ebp-14h],al"
+"	      00516b9c    mov texval,al"
 );
 // LINE 881:
 	asm( 
-"	      00516b9f    mov eax,[ebp-20h]"
+"	      00516b9f    mov eax,y"
 "	      00516ba2    inc eax"
 "	      00516ba3    and eax,0FFh"
-"	      00516ba8    mov ecx,[ebp-1Ch]"
+"	      00516ba8    mov ecx,x"
 "	      00516bab    and ecx,0FFh"
 "	      00516bb1    shl ecx,8"
 "	      00516bb4    xor edx,edx"
 "	      00516bb6    mov dl,[eax+ecx+66EB10h]"
 "	      00516bbd    cmp edx,30h"
 "	      00516bc0    jl near ptr 00516BF8h"
-"	      00516bc6    mov eax,[ebp-20h]"
+"	      00516bc6    mov eax,y"
 "	      00516bc9    inc eax"
 "	      00516bca    and eax,0FFh"
-"	      00516bcf    mov ecx,[ebp-1Ch]"
+"	      00516bcf    mov ecx,x"
 "	      00516bd2    and ecx,0FFh"
 "	      00516bd8    shl ecx,8"
 "	      00516bdb    xor edx,edx"
@@ -4052,27 +4052,27 @@ short S3TerrainInitMap() {
 // LINE 882:
 	asm( 
 "	      00516bed    xor eax,eax"
-"	      00516bef    mov al,[ebp-14h]"
+"	      00516bef    mov al,texval"
 "	      00516bf2    add eax,4"
-"	      00516bf5    mov [ebp-14h],al"
+"	      00516bf5    mov texval,al"
 );
 // LINE 884:
 	asm( 
-"	      00516bf8    mov eax,[ebp-1Ch]"
+"	      00516bf8    mov eax,x"
 "	      00516bfb    dec eax"
 "	      00516bfc    and eax,0FFh"
 "	      00516c01    shl eax,8"
-"	      00516c04    mov ecx,[ebp-20h]"
+"	      00516c04    mov ecx,y"
 "	      00516c07    and ecx,0FFh"
 "	      00516c0d    xor edx,edx"
 "	      00516c0f    mov dl,[eax+ecx+66EB10h]"
 "	      00516c16    cmp edx,30h"
 "	      00516c19    jl near ptr 00516C51h"
-"	      00516c1f    mov eax,[ebp-1Ch]"
+"	      00516c1f    mov eax,x"
 "	      00516c22    dec eax"
 "	      00516c23    and eax,0FFh"
 "	      00516c28    shl eax,8"
-"	      00516c2b    mov ecx,[ebp-20h]"
+"	      00516c2b    mov ecx,y"
 "	      00516c2e    and ecx,0FFh"
 "	      00516c34    xor edx,edx"
 "	      00516c36    mov dl,[eax+ecx+66EB10h]"
@@ -4082,25 +4082,25 @@ short S3TerrainInitMap() {
 // LINE 885:
 	asm( 
 "	      00516c46    xor eax,eax"
-"	      00516c48    mov al,[ebp-14h]"
+"	      00516c48    mov al,texval"
 "	      00516c4b    add eax,8"
-"	      00516c4e    mov [ebp-14h],al"
+"	      00516c4e    mov texval,al"
 );
 // LINE 886:
 	asm( 
-"	      00516c51    mov al,[ebp-14h]"
-"	      00516c54    mov ecx,[ebp-20h]"
-"	      00516c57    mov edx,[ebp-1Ch]"
+"	      00516c51    mov al,texval"
+"	      00516c54    mov ecx,y"
+"	      00516c57    mov edx,x"
 "	      00516c5a    shl edx,8"
 "	      00516c5d    mov [ecx+edx+66EB10h],al"
 );
 // LINE 888:
 	asm( 
 "	      00516c64    jmp near ptr 00516FACh"
-"	      00516c69    mov eax,[ebp-1Ch]"
+"	      00516c69    mov eax,x"
 "	      00516c6c    and eax,0FFh"
 "	      00516c71    shl eax,8"
-"	      00516c74    mov ecx,[ebp-20h]"
+"	      00516c74    mov ecx,y"
 "	      00516c77    and ecx,0FFh"
 "	      00516c7d    xor edx,edx"
 "	      00516c7f    mov dl,[eax+ecx+66EB10h]"
@@ -4109,24 +4109,24 @@ short S3TerrainInitMap() {
 );
 // LINE 890:
 	asm( 
-"	      00516c8f    mov byte ptr [ebp-14h],50h"
+"	      00516c8f    mov texval,50h"
 );
 // LINE 893:
 	asm( 
-"	      00516c93    mov eax,[ebp-20h]"
+"	      00516c93    mov eax,y"
 "	      00516c96    dec eax"
 "	      00516c97    and eax,0FFh"
-"	      00516c9c    mov ecx,[ebp-1Ch]"
+"	      00516c9c    mov ecx,x"
 "	      00516c9f    and ecx,0FFh"
 "	      00516ca5    shl ecx,8"
 "	      00516ca8    xor edx,edx"
 "	      00516caa    mov dl,[eax+ecx+66EB10h]"
 "	      00516cb1    cmp edx,40h"
 "	      00516cb4    jl near ptr 00516CEAh"
-"	      00516cba    mov eax,[ebp-20h]"
+"	      00516cba    mov eax,y"
 "	      00516cbd    dec eax"
 "	      00516cbe    and eax,0FFh"
-"	      00516cc3    mov ecx,[ebp-1Ch]"
+"	      00516cc3    mov ecx,x"
 "	      00516cc6    and ecx,0FFh"
 "	      00516ccc    shl ecx,8"
 "	      00516ccf    xor edx,edx"
@@ -4137,27 +4137,27 @@ short S3TerrainInitMap() {
 // LINE 894:
 	asm( 
 "	      00516ce1    xor eax,eax"
-"	      00516ce3    mov al,[ebp-14h]"
+"	      00516ce3    mov al,texval"
 "	      00516ce6    inc eax"
-"	      00516ce7    mov [ebp-14h],al"
+"	      00516ce7    mov texval,al"
 );
 // LINE 896:
 	asm( 
-"	      00516cea    mov eax,[ebp-1Ch]"
+"	      00516cea    mov eax,x"
 "	      00516ced    inc eax"
 "	      00516cee    and eax,0FFh"
 "	      00516cf3    shl eax,8"
-"	      00516cf6    mov ecx,[ebp-20h]"
+"	      00516cf6    mov ecx,y"
 "	      00516cf9    and ecx,0FFh"
 "	      00516cff    xor edx,edx"
 "	      00516d01    mov dl,[eax+ecx+66EB10h]"
 "	      00516d08    cmp edx,40h"
 "	      00516d0b    jl near ptr 00516D43h"
-"	      00516d11    mov eax,[ebp-1Ch]"
+"	      00516d11    mov eax,x"
 "	      00516d14    inc eax"
 "	      00516d15    and eax,0FFh"
 "	      00516d1a    shl eax,8"
-"	      00516d1d    mov ecx,[ebp-20h]"
+"	      00516d1d    mov ecx,y"
 "	      00516d20    and ecx,0FFh"
 "	      00516d26    xor edx,edx"
 "	      00516d28    mov dl,[eax+ecx+66EB10h]"
@@ -4167,26 +4167,26 @@ short S3TerrainInitMap() {
 // LINE 897:
 	asm( 
 "	      00516d38    xor eax,eax"
-"	      00516d3a    mov al,[ebp-14h]"
+"	      00516d3a    mov al,texval"
 "	      00516d3d    add eax,2"
-"	      00516d40    mov [ebp-14h],al"
+"	      00516d40    mov texval,al"
 );
 // LINE 899:
 	asm( 
-"	      00516d43    mov eax,[ebp-20h]"
+"	      00516d43    mov eax,y"
 "	      00516d46    inc eax"
 "	      00516d47    and eax,0FFh"
-"	      00516d4c    mov ecx,[ebp-1Ch]"
+"	      00516d4c    mov ecx,x"
 "	      00516d4f    and ecx,0FFh"
 "	      00516d55    shl ecx,8"
 "	      00516d58    xor edx,edx"
 "	      00516d5a    mov dl,[eax+ecx+66EB10h]"
 "	      00516d61    cmp edx,40h"
 "	      00516d64    jl near ptr 00516D9Ch"
-"	      00516d6a    mov eax,[ebp-20h]"
+"	      00516d6a    mov eax,y"
 "	      00516d6d    inc eax"
 "	      00516d6e    and eax,0FFh"
-"	      00516d73    mov ecx,[ebp-1Ch]"
+"	      00516d73    mov ecx,x"
 "	      00516d76    and ecx,0FFh"
 "	      00516d7c    shl ecx,8"
 "	      00516d7f    xor edx,edx"
@@ -4197,27 +4197,27 @@ short S3TerrainInitMap() {
 // LINE 900:
 	asm( 
 "	      00516d91    xor eax,eax"
-"	      00516d93    mov al,[ebp-14h]"
+"	      00516d93    mov al,texval"
 "	      00516d96    add eax,4"
-"	      00516d99    mov [ebp-14h],al"
+"	      00516d99    mov texval,al"
 );
 // LINE 902:
 	asm( 
-"	      00516d9c    mov eax,[ebp-1Ch]"
+"	      00516d9c    mov eax,x"
 "	      00516d9f    dec eax"
 "	      00516da0    and eax,0FFh"
 "	      00516da5    shl eax,8"
-"	      00516da8    mov ecx,[ebp-20h]"
+"	      00516da8    mov ecx,y"
 "	      00516dab    and ecx,0FFh"
 "	      00516db1    xor edx,edx"
 "	      00516db3    mov dl,[eax+ecx+66EB10h]"
 "	      00516dba    cmp edx,40h"
 "	      00516dbd    jl near ptr 00516DF5h"
-"	      00516dc3    mov eax,[ebp-1Ch]"
+"	      00516dc3    mov eax,x"
 "	      00516dc6    dec eax"
 "	      00516dc7    and eax,0FFh"
 "	      00516dcc    shl eax,8"
-"	      00516dcf    mov ecx,[ebp-20h]"
+"	      00516dcf    mov ecx,y"
 "	      00516dd2    and ecx,0FFh"
 "	      00516dd8    xor edx,edx"
 "	      00516dda    mov dl,[eax+ecx+66EB10h]"
@@ -4227,25 +4227,25 @@ short S3TerrainInitMap() {
 // LINE 903:
 	asm( 
 "	      00516dea    xor eax,eax"
-"	      00516dec    mov al,[ebp-14h]"
+"	      00516dec    mov al,texval"
 "	      00516def    add eax,8"
-"	      00516df2    mov [ebp-14h],al"
+"	      00516df2    mov texval,al"
 );
 // LINE 904:
 	asm( 
-"	      00516df5    mov al,[ebp-14h]"
-"	      00516df8    mov ecx,[ebp-20h]"
-"	      00516dfb    mov edx,[ebp-1Ch]"
+"	      00516df5    mov al,texval"
+"	      00516df8    mov ecx,y"
+"	      00516dfb    mov edx,x"
 "	      00516dfe    shl edx,8"
 "	      00516e01    mov [ecx+edx+66EB10h],al"
 );
 // LINE 906:
 	asm( 
 "	      00516e08    jmp near ptr 00516FACh"
-"	      00516e0d    mov eax,[ebp-1Ch]"
+"	      00516e0d    mov eax,x"
 "	      00516e10    and eax,0FFh"
 "	      00516e15    shl eax,8"
-"	      00516e18    mov ecx,[ebp-20h]"
+"	      00516e18    mov ecx,y"
 "	      00516e1b    and ecx,0FFh"
 "	      00516e21    xor edx,edx"
 "	      00516e23    mov dl,[eax+ecx+66EB10h]"
@@ -4254,24 +4254,24 @@ short S3TerrainInitMap() {
 );
 // LINE 908:
 	asm( 
-"	      00516e33    mov byte ptr [ebp-14h],60h"
+"	      00516e33    mov texval,60h"
 );
 // LINE 911:
 	asm( 
-"	      00516e37    mov eax,[ebp-20h]"
+"	      00516e37    mov eax,y"
 "	      00516e3a    dec eax"
 "	      00516e3b    and eax,0FFh"
-"	      00516e40    mov ecx,[ebp-1Ch]"
+"	      00516e40    mov ecx,x"
 "	      00516e43    and ecx,0FFh"
 "	      00516e49    shl ecx,8"
 "	      00516e4c    xor edx,edx"
 "	      00516e4e    mov dl,[eax+ecx+66EB10h]"
 "	      00516e55    cmp edx,50h"
 "	      00516e58    jl near ptr 00516E8Eh"
-"	      00516e5e    mov eax,[ebp-20h]"
+"	      00516e5e    mov eax,y"
 "	      00516e61    dec eax"
 "	      00516e62    and eax,0FFh"
-"	      00516e67    mov ecx,[ebp-1Ch]"
+"	      00516e67    mov ecx,x"
 "	      00516e6a    and ecx,0FFh"
 "	      00516e70    shl ecx,8"
 "	      00516e73    xor edx,edx"
@@ -4282,27 +4282,27 @@ short S3TerrainInitMap() {
 // LINE 912:
 	asm( 
 "	      00516e85    xor eax,eax"
-"	      00516e87    mov al,[ebp-14h]"
+"	      00516e87    mov al,texval"
 "	      00516e8a    inc eax"
-"	      00516e8b    mov [ebp-14h],al"
+"	      00516e8b    mov texval,al"
 );
 // LINE 914:
 	asm( 
-"	      00516e8e    mov eax,[ebp-1Ch]"
+"	      00516e8e    mov eax,x"
 "	      00516e91    inc eax"
 "	      00516e92    and eax,0FFh"
 "	      00516e97    shl eax,8"
-"	      00516e9a    mov ecx,[ebp-20h]"
+"	      00516e9a    mov ecx,y"
 "	      00516e9d    and ecx,0FFh"
 "	      00516ea3    xor edx,edx"
 "	      00516ea5    mov dl,[eax+ecx+66EB10h]"
 "	      00516eac    cmp edx,50h"
 "	      00516eaf    jl near ptr 00516EE7h"
-"	      00516eb5    mov eax,[ebp-1Ch]"
+"	      00516eb5    mov eax,x"
 "	      00516eb8    inc eax"
 "	      00516eb9    and eax,0FFh"
 "	      00516ebe    shl eax,8"
-"	      00516ec1    mov ecx,[ebp-20h]"
+"	      00516ec1    mov ecx,y"
 "	      00516ec4    and ecx,0FFh"
 "	      00516eca    xor edx,edx"
 "	      00516ecc    mov dl,[eax+ecx+66EB10h]"
@@ -4312,26 +4312,26 @@ short S3TerrainInitMap() {
 // LINE 915:
 	asm( 
 "	      00516edc    xor eax,eax"
-"	      00516ede    mov al,[ebp-14h]"
+"	      00516ede    mov al,texval"
 "	      00516ee1    add eax,2"
-"	      00516ee4    mov [ebp-14h],al"
+"	      00516ee4    mov texval,al"
 );
 // LINE 917:
 	asm( 
-"	      00516ee7    mov eax,[ebp-20h]"
+"	      00516ee7    mov eax,y"
 "	      00516eea    inc eax"
 "	      00516eeb    and eax,0FFh"
-"	      00516ef0    mov ecx,[ebp-1Ch]"
+"	      00516ef0    mov ecx,x"
 "	      00516ef3    and ecx,0FFh"
 "	      00516ef9    shl ecx,8"
 "	      00516efc    xor edx,edx"
 "	      00516efe    mov dl,[eax+ecx+66EB10h]"
 "	      00516f05    cmp edx,50h"
 "	      00516f08    jl near ptr 00516F40h"
-"	      00516f0e    mov eax,[ebp-20h]"
+"	      00516f0e    mov eax,y"
 "	      00516f11    inc eax"
 "	      00516f12    and eax,0FFh"
-"	      00516f17    mov ecx,[ebp-1Ch]"
+"	      00516f17    mov ecx,x"
 "	      00516f1a    and ecx,0FFh"
 "	      00516f20    shl ecx,8"
 "	      00516f23    xor edx,edx"
@@ -4342,27 +4342,27 @@ short S3TerrainInitMap() {
 // LINE 918:
 	asm( 
 "	      00516f35    xor eax,eax"
-"	      00516f37    mov al,[ebp-14h]"
+"	      00516f37    mov al,texval"
 "	      00516f3a    add eax,4"
-"	      00516f3d    mov [ebp-14h],al"
+"	      00516f3d    mov texval,al"
 );
 // LINE 920:
 	asm( 
-"	      00516f40    mov eax,[ebp-1Ch]"
+"	      00516f40    mov eax,x"
 "	      00516f43    dec eax"
 "	      00516f44    and eax,0FFh"
 "	      00516f49    shl eax,8"
-"	      00516f4c    mov ecx,[ebp-20h]"
+"	      00516f4c    mov ecx,y"
 "	      00516f4f    and ecx,0FFh"
 "	      00516f55    xor edx,edx"
 "	      00516f57    mov dl,[eax+ecx+66EB10h]"
 "	      00516f5e    cmp edx,50h"
 "	      00516f61    jl near ptr 00516F99h"
-"	      00516f67    mov eax,[ebp-1Ch]"
+"	      00516f67    mov eax,x"
 "	      00516f6a    dec eax"
 "	      00516f6b    and eax,0FFh"
 "	      00516f70    shl eax,8"
-"	      00516f73    mov ecx,[ebp-20h]"
+"	      00516f73    mov ecx,y"
 "	      00516f76    and ecx,0FFh"
 "	      00516f7c    xor edx,edx"
 "	      00516f7e    mov dl,[eax+ecx+66EB10h]"
@@ -4372,15 +4372,15 @@ short S3TerrainInitMap() {
 // LINE 921:
 	asm( 
 "	      00516f8e    xor eax,eax"
-"	      00516f90    mov al,[ebp-14h]"
+"	      00516f90    mov al,texval"
 "	      00516f93    add eax,8"
-"	      00516f96    mov [ebp-14h],al"
+"	      00516f96    mov texval,al"
 );
 // LINE 922:
 	asm( 
-"	      00516f99    mov al,[ebp-14h]"
-"	      00516f9c    mov ecx,[ebp-20h]"
-"	      00516f9f    mov edx,[ebp-1Ch]"
+"	      00516f99    mov al,texval"
+"	      00516f9c    mov ecx,y"
+"	      00516f9f    mov edx,x"
 "	      00516fa2    shl edx,8"
 "	      00516fa5    mov [ecx+edx+66EB10h],al"
 );
@@ -4394,26 +4394,26 @@ short S3TerrainInitMap() {
 );
 // LINE 930:
 	asm( 
-"	      00516fb6    mov dword ptr [ebp-1Ch],0"
+"	      00516fb6    mov x,0"
 "	      00516fbd    jmp near ptr 00516FC5h"
-"	      00516fc2    inc dword ptr [ebp-1Ch]"
-"	      00516fc5    cmp dword ptr [ebp-1Ch],100h"
+"	      00516fc2    inc x"
+"	      00516fc5    cmp x,100h"
 "	      00516fcc    jge near ptr 005171FBh"
 );
 // LINE 932:
 	asm( 
-"	      00516fd2    mov dword ptr [ebp-20h],0"
+"	      00516fd2    mov y,0"
 "	      00516fd9    jmp near ptr 00516FE1h"
-"	      00516fde    inc dword ptr [ebp-20h]"
-"	      00516fe1    cmp dword ptr [ebp-20h],100h"
+"	      00516fde    inc y"
+"	      00516fe1    cmp y,100h"
 "	      00516fe8    jge near ptr 005171F6h"
 );
 // LINE 934:
 	asm( 
-"	      00516fee    mov eax,[ebp-1Ch]"
+"	      00516fee    mov eax,x"
 "	      00516ff1    and eax,0FFh"
 "	      00516ff6    shl eax,8"
-"	      00516ff9    mov ecx,[ebp-20h]"
+"	      00516ff9    mov ecx,y"
 "	      00516ffc    and ecx,0FFh"
 "	      00517002    xor edx,edx"
 "	      00517004    mov dl,[eax+ecx+66EB10h]"
@@ -4440,18 +4440,18 @@ short S3TerrainInitMap() {
 "	      0051703b    cdq"
 "	      0051703c    idiv ecx"
 "	      0051703e    lea eax,[edx+70h]"
-"	      00517041    mov ecx,[ebp-20h]"
-"	      00517044    mov edx,[ebp-1Ch]"
+"	      00517041    mov ecx,y"
+"	      00517044    mov edx,x"
 "	      00517047    shl edx,8"
 "	      0051704a    mov [ecx+edx+66EB10h],al"
 );
 // LINE 941:
 	asm( 
 "	      00517051    jmp near ptr 005171F1h"
-"	      00517056    mov eax,[ebp-1Ch]"
+"	      00517056    mov eax,x"
 "	      00517059    and eax,0FFh"
 "	      0051705e    shl eax,8"
-"	      00517061    mov ecx,[ebp-20h]"
+"	      00517061    mov ecx,y"
 "	      00517064    and ecx,0FFh"
 "	      0051706a    xor edx,edx"
 "	      0051706c    mov dl,[eax+ecx+66EB10h]"
@@ -4478,18 +4478,18 @@ short S3TerrainInitMap() {
 "	      005170a3    cdq"
 "	      005170a4    idiv ecx"
 "	      005170a6    lea eax,[edx+73h]"
-"	      005170a9    mov ecx,[ebp-20h]"
-"	      005170ac    mov edx,[ebp-1Ch]"
+"	      005170a9    mov ecx,y"
+"	      005170ac    mov edx,x"
 "	      005170af    shl edx,8"
 "	      005170b2    mov [ecx+edx+66EB10h],al"
 );
 // LINE 948:
 	asm( 
 "	      005170b9    jmp near ptr 005171F1h"
-"	      005170be    mov eax,[ebp-1Ch]"
+"	      005170be    mov eax,x"
 "	      005170c1    and eax,0FFh"
 "	      005170c6    shl eax,8"
-"	      005170c9    mov ecx,[ebp-20h]"
+"	      005170c9    mov ecx,y"
 "	      005170cc    and ecx,0FFh"
 "	      005170d2    xor edx,edx"
 "	      005170d4    mov dl,[eax+ecx+66EB10h]"
@@ -4516,18 +4516,18 @@ short S3TerrainInitMap() {
 "	      0051710b    cdq"
 "	      0051710c    idiv ecx"
 "	      0051710e    lea eax,[edx+76h]"
-"	      00517111    mov ecx,[ebp-20h]"
-"	      00517114    mov edx,[ebp-1Ch]"
+"	      00517111    mov ecx,y"
+"	      00517114    mov edx,x"
 "	      00517117    shl edx,8"
 "	      0051711a    mov [ecx+edx+66EB10h],al"
 );
 // LINE 955:
 	asm( 
 "	      00517121    jmp near ptr 005171F1h"
-"	      00517126    mov eax,[ebp-1Ch]"
+"	      00517126    mov eax,x"
 "	      00517129    and eax,0FFh"
 "	      0051712e    shl eax,8"
-"	      00517131    mov ecx,[ebp-20h]"
+"	      00517131    mov ecx,y"
 "	      00517134    and ecx,0FFh"
 "	      0051713a    xor edx,edx"
 "	      0051713c    mov dl,[eax+ecx+66EB10h]"
@@ -4554,18 +4554,18 @@ short S3TerrainInitMap() {
 "	      00517173    cdq"
 "	      00517174    idiv ecx"
 "	      00517176    lea eax,[edx+79h]"
-"	      00517179    mov ecx,[ebp-20h]"
-"	      0051717c    mov edx,[ebp-1Ch]"
+"	      00517179    mov ecx,y"
+"	      0051717c    mov edx,x"
 "	      0051717f    shl edx,8"
 "	      00517182    mov [ecx+edx+66EB10h],al"
 );
 // LINE 962:
 	asm( 
 "	      00517189    jmp near ptr 005171F1h"
-"	      0051718e    mov eax,[ebp-1Ch]"
+"	      0051718e    mov eax,x"
 "	      00517191    and eax,0FFh"
 "	      00517196    shl eax,8"
-"	      00517199    mov ecx,[ebp-20h]"
+"	      00517199    mov ecx,y"
 "	      0051719c    and ecx,0FFh"
 "	      005171a2    xor edx,edx"
 "	      005171a4    mov dl,[eax+ecx+66EB10h]"
@@ -4592,8 +4592,8 @@ short S3TerrainInitMap() {
 "	      005171db    cdq"
 "	      005171dc    idiv ecx"
 "	      005171de    lea eax,[edx+7Ch]"
-"	      005171e1    mov ecx,[ebp-20h]"
-"	      005171e4    mov edx,[ebp-1Ch]"
+"	      005171e1    mov ecx,y"
+"	      005171e4    mov edx,x"
 "	      005171e7    shl edx,8"
 "	      005171ea    mov [ecx+edx+66EB10h],al"
 );
@@ -4666,13 +4666,13 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1015:
 	asm( 
-"	      00517245    movsx eax,word ptr [ebp+10h]"
+"	      00517245    movsx eax,msize"
 "	      00517249    sar eax,1"
-"	      0051724c    mov [ebp-8],ax"
+"	      0051724c    mov midp,ax"
 );
 // LINE 1017:
 	asm( 
-"	      00517250    movsx eax,word ptr [ebp+10h]"
+"	      00517250    movsx eax,msize"
 "	      00517254    cmp eax,1"
 "	      00517257    jg near ptr 00517262h"
 );
@@ -4682,19 +4682,19 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1019:
 	asm( 
-"	      00517262    movsx eax,word ptr [ebp+10h]"
+"	      00517262    movsx eax,msize"
 "	      00517266    and eax,1"
-"	      00517269    mov [ebp-4],ax"
+"	      00517269    mov is_odd,ax"
 );
 // LINE 1025:
 	asm( 
-"	      0051726d    movsx eax,word ptr [ebp-8]"
-"	      00517271    movsx ecx,word ptr [ebp+0Ch]"
+"	      0051726d    movsx eax,midp"
+"	      00517271    movsx ecx,y"
 "	      00517275    add eax,ecx"
 "	      00517277    and eax,ds:[5B5CBCh]"
 "	      0051727d    mov cl,ds:[5B5CC0h]"
 "	      00517283    shl eax,cl"
-"	      00517285    movsx ecx,word ptr [ebp+8]"
+"	      00517285    movsx ecx,x"
 "	      00517289    and ecx,ds:[5B5CBCh]"
 "	      0051728f    add ecx,ecx"
 "	      00517291    lea eax,[ecx+eax*2]"
@@ -4706,24 +4706,24 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1027:
 	asm( 
-"	      005172a8    movsx eax,word ptr [ebp+10h]"
-"	      005172ac    movsx ecx,word ptr [ebp+0Ch]"
+"	      005172a8    movsx eax,msize"
+"	      005172ac    movsx ecx,y"
 "	      005172b0    add eax,ecx"
 "	      005172b2    and eax,ds:[5B5CBCh]"
 "	      005172b8    mov cl,ds:[5B5CC0h]"
 "	      005172be    shl eax,cl"
-"	      005172c0    movsx ecx,word ptr [ebp+8]"
+"	      005172c0    movsx ecx,x"
 "	      005172c4    and ecx,ds:[5B5CBCh]"
 "	      005172ca    add ecx,ecx"
 "	      005172cc    lea eax,[ecx+eax*2]"
 "	      005172cf    mov ecx,ds:[67EB10h]"
 "	      005172d5    xor edx,edx"
 "	      005172d7    mov dx,[eax+ecx]"
-"	      005172db    movsx eax,word ptr [ebp+0Ch]"
+"	      005172db    movsx eax,y"
 "	      005172df    and eax,ds:[5B5CBCh]"
 "	      005172e5    mov cl,ds:[5B5CC0h]"
 "	      005172eb    shl eax,cl"
-"	      005172ed    movsx ecx,word ptr [ebp+8]"
+"	      005172ed    movsx ecx,x"
 "	      005172f1    and ecx,ds:[5B5CBCh]"
 "	      005172f7    add ecx,ecx"
 "	      005172f9    lea eax,[ecx+eax*2]"
@@ -4734,7 +4734,7 @@ void do_map_square(short x, short y, short msize) {
 "	      0051730b    cdq"
 "	      0051730c    sub eax,edx"
 "	      0051730e    sar eax,1"
-"	      00517311    mov [ebp-0Ch],ax"
+"	      00517311    mov hght,ax"
 );
 // LINE 1028:
 	asm( 
@@ -4744,13 +4744,13 @@ void do_map_square(short x, short y, short msize) {
 "	      0051731c    push eax"
 "	      0051731d    call 00517DC6h"
 "	      00517322    add esp,8"
-"	      00517325    movsx edx,word ptr [ebp-8]"
-"	      00517329    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517325    movsx edx,midp"
+"	      00517329    movsx ebx,y"
 "	      0051732d    add edx,ebx"
 "	      0051732f    and edx,ds:[5B5CBCh]"
 "	      00517335    mov cl,ds:[5B5CC0h]"
 "	      0051733b    shl edx,cl"
-"	      0051733d    movsx ecx,word ptr [ebp+8]"
+"	      0051733d    movsx ecx,x"
 "	      00517341    and ecx,ds:[5B5CBCh]"
 "	      00517347    add ecx,ecx"
 "	      00517349    lea edx,[ecx+edx*2]"
@@ -4759,14 +4759,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1030:
 	asm( 
-"	      00517356    movsx eax,word ptr [ebp-8]"
-"	      0051735a    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517356    movsx eax,midp"
+"	      0051735a    movsx ecx,y"
 "	      0051735e    add eax,ecx"
 "	      00517360    and eax,ds:[5B5CBCh]"
 "	      00517366    mov cl,ds:[5B5CC0h]"
 "	      0051736c    shl eax,cl"
-"	      0051736e    movsx ecx,word ptr [ebp+10h]"
-"	      00517372    movsx edx,word ptr [ebp+8]"
+"	      0051736e    movsx ecx,msize"
+"	      00517372    movsx edx,x"
 "	      00517376    add ecx,edx"
 "	      00517378    and ecx,ds:[5B5CBCh]"
 "	      0051737e    add ecx,ecx"
@@ -4779,14 +4779,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1032:
 	asm( 
-"	      00517397    movsx eax,word ptr [ebp+10h]"
-"	      0051739b    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517397    movsx eax,msize"
+"	      0051739b    movsx ecx,y"
 "	      0051739f    add eax,ecx"
 "	      005173a1    and eax,ds:[5B5CBCh]"
 "	      005173a7    mov cl,ds:[5B5CC0h]"
 "	      005173ad    shl eax,cl"
-"	      005173af    movsx ecx,word ptr [ebp+10h]"
-"	      005173b3    movsx edx,word ptr [ebp+8]"
+"	      005173af    movsx ecx,msize"
+"	      005173b3    movsx edx,x"
 "	      005173b7    add ecx,edx"
 "	      005173b9    and ecx,ds:[5B5CBCh]"
 "	      005173bf    add ecx,ecx"
@@ -4794,11 +4794,11 @@ void do_map_square(short x, short y, short msize) {
 "	      005173c4    mov ecx,ds:[67EB10h]"
 "	      005173ca    xor edx,edx"
 "	      005173cc    mov dx,[eax+ecx]"
-"	      005173d0    movsx eax,word ptr [ebp+10h]"
-"	      005173d4    movsx ecx,word ptr [ebp+8]"
+"	      005173d0    movsx eax,msize"
+"	      005173d4    movsx ecx,x"
 "	      005173d8    add eax,ecx"
 "	      005173da    and eax,ds:[5B5CBCh]"
-"	      005173e0    movsx ebx,word ptr [ebp+0Ch]"
+"	      005173e0    movsx ebx,y"
 "	      005173e4    and ebx,ds:[5B5CBCh]"
 "	      005173ea    mov cl,ds:[5B5CC0h]"
 "	      005173f0    shl ebx,cl"
@@ -4811,7 +4811,7 @@ void do_map_square(short x, short y, short msize) {
 "	      00517406    cdq"
 "	      00517407    sub eax,edx"
 "	      00517409    sar eax,1"
-"	      0051740c    mov [ebp-0Ch],ax"
+"	      0051740c    mov hght,ax"
 );
 // LINE 1033:
 	asm( 
@@ -4821,14 +4821,14 @@ void do_map_square(short x, short y, short msize) {
 "	      00517417    push eax"
 "	      00517418    call 00517DC6h"
 "	      0051741d    add esp,8"
-"	      00517420    movsx edx,word ptr [ebp-8]"
-"	      00517424    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517420    movsx edx,midp"
+"	      00517424    movsx ebx,y"
 "	      00517428    add edx,ebx"
 "	      0051742a    and edx,ds:[5B5CBCh]"
 "	      00517430    mov cl,ds:[5B5CC0h]"
 "	      00517436    shl edx,cl"
-"	      00517438    movsx ecx,word ptr [ebp+10h]"
-"	      0051743c    movsx ebx,word ptr [ebp+8]"
+"	      00517438    movsx ecx,msize"
+"	      0051743c    movsx ebx,x"
 "	      00517440    add ecx,ebx"
 "	      00517442    and ecx,ds:[5B5CBCh]"
 "	      00517448    add ecx,ecx"
@@ -4838,11 +4838,11 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1035:
 	asm( 
-"	      00517457    movsx eax,word ptr [ebp-8]"
-"	      0051745b    movsx ecx,word ptr [ebp+8]"
+"	      00517457    movsx eax,midp"
+"	      0051745b    movsx ecx,x"
 "	      0051745f    add eax,ecx"
 "	      00517461    and eax,ds:[5B5CBCh]"
-"	      00517467    movsx edx,word ptr [ebp+0Ch]"
+"	      00517467    movsx edx,y"
 "	      0051746b    and edx,ds:[5B5CBCh]"
 "	      00517471    mov cl,ds:[5B5CC0h]"
 "	      00517477    shl edx,cl"
@@ -4856,11 +4856,11 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1037:
 	asm( 
-"	      00517492    movsx eax,word ptr [ebp+10h]"
-"	      00517496    movsx ecx,word ptr [ebp+8]"
+"	      00517492    movsx eax,msize"
+"	      00517496    movsx ecx,x"
 "	      0051749a    add eax,ecx"
 "	      0051749c    and eax,ds:[5B5CBCh]"
-"	      005174a2    movsx edx,word ptr [ebp+0Ch]"
+"	      005174a2    movsx edx,y"
 "	      005174a6    and edx,ds:[5B5CBCh]"
 "	      005174ac    mov cl,ds:[5B5CC0h]"
 "	      005174b2    shl edx,cl"
@@ -4869,11 +4869,11 @@ void do_map_square(short x, short y, short msize) {
 "	      005174b9    mov ecx,ds:[67EB10h]"
 "	      005174bf    xor edx,edx"
 "	      005174c1    mov dx,[eax+ecx]"
-"	      005174c5    movsx eax,word ptr [ebp+0Ch]"
+"	      005174c5    movsx eax,y"
 "	      005174c9    and eax,ds:[5B5CBCh]"
 "	      005174cf    mov cl,ds:[5B5CC0h]"
 "	      005174d5    shl eax,cl"
-"	      005174d7    movsx ecx,word ptr [ebp+8]"
+"	      005174d7    movsx ecx,x"
 "	      005174db    and ecx,ds:[5B5CBCh]"
 "	      005174e1    add ecx,ecx"
 "	      005174e3    lea eax,[ecx+eax*2]"
@@ -4884,7 +4884,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005174f5    cdq"
 "	      005174f6    sub eax,edx"
 "	      005174f8    sar eax,1"
-"	      005174fb    mov [ebp-0Ch],ax"
+"	      005174fb    mov hght,ax"
 );
 // LINE 1038:
 	asm( 
@@ -4894,11 +4894,11 @@ void do_map_square(short x, short y, short msize) {
 "	      00517506    push eax"
 "	      00517507    call 00517DC6h"
 "	      0051750c    add esp,8"
-"	      0051750f    movsx edx,word ptr [ebp-8]"
-"	      00517513    movsx ebx,word ptr [ebp+8]"
+"	      0051750f    movsx edx,midp"
+"	      00517513    movsx ebx,x"
 "	      00517517    add edx,ebx"
 "	      00517519    and edx,ds:[5B5CBCh]"
-"	      0051751f    movsx ebx,word ptr [ebp+0Ch]"
+"	      0051751f    movsx ebx,y"
 "	      00517523    and ebx,ds:[5B5CBCh]"
 "	      00517529    mov cl,ds:[5B5CC0h]"
 "	      0051752f    shl ebx,cl"
@@ -4909,14 +4909,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1040:
 	asm( 
-"	      00517540    movsx eax,word ptr [ebp+10h]"
-"	      00517544    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517540    movsx eax,msize"
+"	      00517544    movsx ecx,y"
 "	      00517548    add eax,ecx"
 "	      0051754a    and eax,ds:[5B5CBCh]"
 "	      00517550    mov cl,ds:[5B5CC0h]"
 "	      00517556    shl eax,cl"
-"	      00517558    movsx ecx,word ptr [ebp-8]"
-"	      0051755c    movsx edx,word ptr [ebp+8]"
+"	      00517558    movsx ecx,midp"
+"	      0051755c    movsx edx,x"
 "	      00517560    add ecx,edx"
 "	      00517562    and ecx,ds:[5B5CBCh]"
 "	      00517568    add ecx,ecx"
@@ -4929,14 +4929,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1042:
 	asm( 
-"	      00517581    movsx eax,word ptr [ebp+10h]"
-"	      00517585    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517581    movsx eax,msize"
+"	      00517585    movsx ecx,y"
 "	      00517589    add eax,ecx"
 "	      0051758b    and eax,ds:[5B5CBCh]"
 "	      00517591    mov cl,ds:[5B5CC0h]"
 "	      00517597    shl eax,cl"
-"	      00517599    movsx ecx,word ptr [ebp+10h]"
-"	      0051759d    movsx edx,word ptr [ebp+8]"
+"	      00517599    movsx ecx,msize"
+"	      0051759d    movsx edx,x"
 "	      005175a1    add ecx,edx"
 "	      005175a3    and ecx,ds:[5B5CBCh]"
 "	      005175a9    add ecx,ecx"
@@ -4944,13 +4944,13 @@ void do_map_square(short x, short y, short msize) {
 "	      005175ae    mov ecx,ds:[67EB10h]"
 "	      005175b4    xor edx,edx"
 "	      005175b6    mov dx,[eax+ecx]"
-"	      005175ba    movsx eax,word ptr [ebp+10h]"
-"	      005175be    movsx ecx,word ptr [ebp+0Ch]"
+"	      005175ba    movsx eax,msize"
+"	      005175be    movsx ecx,y"
 "	      005175c2    add eax,ecx"
 "	      005175c4    and eax,ds:[5B5CBCh]"
 "	      005175ca    mov cl,ds:[5B5CC0h]"
 "	      005175d0    shl eax,cl"
-"	      005175d2    movsx ecx,word ptr [ebp+8]"
+"	      005175d2    movsx ecx,x"
 "	      005175d6    and ecx,ds:[5B5CBCh]"
 "	      005175dc    add ecx,ecx"
 "	      005175de    lea eax,[ecx+eax*2]"
@@ -4961,7 +4961,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005175f0    cdq"
 "	      005175f1    sub eax,edx"
 "	      005175f3    sar eax,1"
-"	      005175f6    mov [ebp-0Ch],ax"
+"	      005175f6    mov hght,ax"
 );
 // LINE 1043:
 	asm( 
@@ -4971,14 +4971,14 @@ void do_map_square(short x, short y, short msize) {
 "	      00517601    push eax"
 "	      00517602    call 00517DC6h"
 "	      00517607    add esp,8"
-"	      0051760a    movsx edx,word ptr [ebp+10h]"
-"	      0051760e    movsx ebx,word ptr [ebp+0Ch]"
+"	      0051760a    movsx edx,msize"
+"	      0051760e    movsx ebx,y"
 "	      00517612    add edx,ebx"
 "	      00517614    and edx,ds:[5B5CBCh]"
 "	      0051761a    mov cl,ds:[5B5CC0h]"
 "	      00517620    shl edx,cl"
-"	      00517622    movsx ecx,word ptr [ebp-8]"
-"	      00517626    movsx ebx,word ptr [ebp+8]"
+"	      00517622    movsx ecx,midp"
+"	      00517626    movsx ebx,x"
 "	      0051762a    add ecx,ebx"
 "	      0051762c    and ecx,ds:[5B5CBCh]"
 "	      00517632    add ecx,ecx"
@@ -4988,20 +4988,20 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1049:
 	asm( 
-"	      00517641    movsx eax,word ptr [ebp-4]"
+"	      00517641    movsx eax,is_odd"
 "	      00517645    test eax,eax"
 "	      00517647    je near ptr 00517A29h"
 );
 // LINE 1051:
 	asm( 
-"	      0051764d    movsx eax,word ptr [ebp-8]"
-"	      00517651    movsx ecx,word ptr [ebp+0Ch]"
+"	      0051764d    movsx eax,midp"
+"	      00517651    movsx ecx,y"
 "	      00517655    add eax,ecx"
 "	      00517657    inc eax"
 "	      00517658    and eax,ds:[5B5CBCh]"
 "	      0051765e    mov cl,ds:[5B5CC0h]"
 "	      00517664    shl eax,cl"
-"	      00517666    movsx ecx,word ptr [ebp+8]"
+"	      00517666    movsx ecx,x"
 "	      0051766a    and ecx,ds:[5B5CBCh]"
 "	      00517670    add ecx,ecx"
 "	      00517672    lea eax,[ecx+eax*2]"
@@ -5013,24 +5013,24 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1053:
 	asm( 
-"	      00517689    movsx eax,word ptr [ebp+10h]"
-"	      0051768d    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517689    movsx eax,msize"
+"	      0051768d    movsx ecx,y"
 "	      00517691    add eax,ecx"
 "	      00517693    and eax,ds:[5B5CBCh]"
 "	      00517699    mov cl,ds:[5B5CC0h]"
 "	      0051769f    shl eax,cl"
-"	      005176a1    movsx ecx,word ptr [ebp+8]"
+"	      005176a1    movsx ecx,x"
 "	      005176a5    and ecx,ds:[5B5CBCh]"
 "	      005176ab    add ecx,ecx"
 "	      005176ad    lea eax,[ecx+eax*2]"
 "	      005176b0    mov ecx,ds:[67EB10h]"
 "	      005176b6    xor edx,edx"
 "	      005176b8    mov dx,[eax+ecx]"
-"	      005176bc    movsx eax,word ptr [ebp+0Ch]"
+"	      005176bc    movsx eax,y"
 "	      005176c0    and eax,ds:[5B5CBCh]"
 "	      005176c6    mov cl,ds:[5B5CC0h]"
 "	      005176cc    shl eax,cl"
-"	      005176ce    movsx ecx,word ptr [ebp+8]"
+"	      005176ce    movsx ecx,x"
 "	      005176d2    and ecx,ds:[5B5CBCh]"
 "	      005176d8    add ecx,ecx"
 "	      005176da    lea eax,[ecx+eax*2]"
@@ -5041,7 +5041,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005176ec    cdq"
 "	      005176ed    sub eax,edx"
 "	      005176ef    sar eax,1"
-"	      005176f2    mov [ebp-0Ch],ax"
+"	      005176f2    mov hght,ax"
 );
 // LINE 1054:
 	asm( 
@@ -5051,14 +5051,14 @@ void do_map_square(short x, short y, short msize) {
 "	      005176fd    push eax"
 "	      005176fe    call 00517DC6h"
 "	      00517703    add esp,8"
-"	      00517706    movsx edx,word ptr [ebp-8]"
-"	      0051770a    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517706    movsx edx,midp"
+"	      0051770a    movsx ebx,y"
 "	      0051770e    add edx,ebx"
 "	      00517710    inc edx"
 "	      00517711    and edx,ds:[5B5CBCh]"
 "	      00517717    mov cl,ds:[5B5CC0h]"
 "	      0051771d    shl edx,cl"
-"	      0051771f    movsx ecx,word ptr [ebp+8]"
+"	      0051771f    movsx ecx,x"
 "	      00517723    and ecx,ds:[5B5CBCh]"
 "	      00517729    add ecx,ecx"
 "	      0051772b    lea edx,[ecx+edx*2]"
@@ -5067,15 +5067,15 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1056:
 	asm( 
-"	      00517738    movsx eax,word ptr [ebp-8]"
-"	      0051773c    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517738    movsx eax,midp"
+"	      0051773c    movsx ecx,y"
 "	      00517740    add eax,ecx"
 "	      00517742    inc eax"
 "	      00517743    and eax,ds:[5B5CBCh]"
 "	      00517749    mov cl,ds:[5B5CC0h]"
 "	      0051774f    shl eax,cl"
-"	      00517751    movsx ecx,word ptr [ebp+10h]"
-"	      00517755    movsx edx,word ptr [ebp+8]"
+"	      00517751    movsx ecx,msize"
+"	      00517755    movsx edx,x"
 "	      00517759    add ecx,edx"
 "	      0051775b    and ecx,ds:[5B5CBCh]"
 "	      00517761    add ecx,ecx"
@@ -5088,14 +5088,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1058:
 	asm( 
-"	      0051777a    movsx eax,word ptr [ebp+10h]"
-"	      0051777e    movsx ecx,word ptr [ebp+0Ch]"
+"	      0051777a    movsx eax,msize"
+"	      0051777e    movsx ecx,y"
 "	      00517782    add eax,ecx"
 "	      00517784    and eax,ds:[5B5CBCh]"
 "	      0051778a    mov cl,ds:[5B5CC0h]"
 "	      00517790    shl eax,cl"
-"	      00517792    movsx ecx,word ptr [ebp+10h]"
-"	      00517796    movsx edx,word ptr [ebp+8]"
+"	      00517792    movsx ecx,msize"
+"	      00517796    movsx edx,x"
 "	      0051779a    add ecx,edx"
 "	      0051779c    and ecx,ds:[5B5CBCh]"
 "	      005177a2    add ecx,ecx"
@@ -5103,11 +5103,11 @@ void do_map_square(short x, short y, short msize) {
 "	      005177a7    mov ecx,ds:[67EB10h]"
 "	      005177ad    xor edx,edx"
 "	      005177af    mov dx,[eax+ecx]"
-"	      005177b3    movsx eax,word ptr [ebp+10h]"
-"	      005177b7    movsx ecx,word ptr [ebp+8]"
+"	      005177b3    movsx eax,msize"
+"	      005177b7    movsx ecx,x"
 "	      005177bb    add eax,ecx"
 "	      005177bd    and eax,ds:[5B5CBCh]"
-"	      005177c3    movsx ebx,word ptr [ebp+0Ch]"
+"	      005177c3    movsx ebx,y"
 "	      005177c7    and ebx,ds:[5B5CBCh]"
 "	      005177cd    mov cl,ds:[5B5CC0h]"
 "	      005177d3    shl ebx,cl"
@@ -5120,7 +5120,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005177e9    cdq"
 "	      005177ea    sub eax,edx"
 "	      005177ec    sar eax,1"
-"	      005177ef    mov [ebp-0Ch],ax"
+"	      005177ef    mov hght,ax"
 );
 // LINE 1059:
 	asm( 
@@ -5130,15 +5130,15 @@ void do_map_square(short x, short y, short msize) {
 "	      005177fa    push eax"
 "	      005177fb    call 00517DC6h"
 "	      00517800    add esp,8"
-"	      00517803    movsx edx,word ptr [ebp-8]"
-"	      00517807    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517803    movsx edx,midp"
+"	      00517807    movsx ebx,y"
 "	      0051780b    add edx,ebx"
 "	      0051780d    inc edx"
 "	      0051780e    and edx,ds:[5B5CBCh]"
 "	      00517814    mov cl,ds:[5B5CC0h]"
 "	      0051781a    shl edx,cl"
-"	      0051781c    movsx ecx,word ptr [ebp+10h]"
-"	      00517820    movsx ebx,word ptr [ebp+8]"
+"	      0051781c    movsx ecx,msize"
+"	      00517820    movsx ebx,x"
 "	      00517824    add ecx,ebx"
 "	      00517826    and ecx,ds:[5B5CBCh]"
 "	      0051782c    add ecx,ecx"
@@ -5148,12 +5148,12 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1061:
 	asm( 
-"	      0051783b    movsx eax,word ptr [ebp-8]"
-"	      0051783f    movsx ecx,word ptr [ebp+8]"
+"	      0051783b    movsx eax,midp"
+"	      0051783f    movsx ecx,x"
 "	      00517843    add eax,ecx"
 "	      00517845    inc eax"
 "	      00517846    and eax,ds:[5B5CBCh]"
-"	      0051784c    movsx edx,word ptr [ebp+0Ch]"
+"	      0051784c    movsx edx,y"
 "	      00517850    and edx,ds:[5B5CBCh]"
 "	      00517856    mov cl,ds:[5B5CC0h]"
 "	      0051785c    shl edx,cl"
@@ -5167,11 +5167,11 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1063:
 	asm( 
-"	      00517877    movsx eax,word ptr [ebp+10h]"
-"	      0051787b    movsx ecx,word ptr [ebp+8]"
+"	      00517877    movsx eax,msize"
+"	      0051787b    movsx ecx,x"
 "	      0051787f    add eax,ecx"
 "	      00517881    and eax,ds:[5B5CBCh]"
-"	      00517887    movsx edx,word ptr [ebp+0Ch]"
+"	      00517887    movsx edx,y"
 "	      0051788b    and edx,ds:[5B5CBCh]"
 "	      00517891    mov cl,ds:[5B5CC0h]"
 "	      00517897    shl edx,cl"
@@ -5180,11 +5180,11 @@ void do_map_square(short x, short y, short msize) {
 "	      0051789e    mov ecx,ds:[67EB10h]"
 "	      005178a4    xor edx,edx"
 "	      005178a6    mov dx,[eax+ecx]"
-"	      005178aa    movsx eax,word ptr [ebp+0Ch]"
+"	      005178aa    movsx eax,y"
 "	      005178ae    and eax,ds:[5B5CBCh]"
 "	      005178b4    mov cl,ds:[5B5CC0h]"
 "	      005178ba    shl eax,cl"
-"	      005178bc    movsx ecx,word ptr [ebp+8]"
+"	      005178bc    movsx ecx,x"
 "	      005178c0    and ecx,ds:[5B5CBCh]"
 "	      005178c6    add ecx,ecx"
 "	      005178c8    lea eax,[ecx+eax*2]"
@@ -5195,7 +5195,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005178da    cdq"
 "	      005178db    sub eax,edx"
 "	      005178dd    sar eax,1"
-"	      005178e0    mov [ebp-0Ch],ax"
+"	      005178e0    mov hght,ax"
 );
 // LINE 1064:
 	asm( 
@@ -5205,12 +5205,12 @@ void do_map_square(short x, short y, short msize) {
 "	      005178eb    push eax"
 "	      005178ec    call 00517DC6h"
 "	      005178f1    add esp,8"
-"	      005178f4    movsx edx,word ptr [ebp-8]"
-"	      005178f8    movsx ebx,word ptr [ebp+8]"
+"	      005178f4    movsx edx,midp"
+"	      005178f8    movsx ebx,x"
 "	      005178fc    add edx,ebx"
 "	      005178fe    inc edx"
 "	      005178ff    and edx,ds:[5B5CBCh]"
-"	      00517905    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517905    movsx ebx,y"
 "	      00517909    and ebx,ds:[5B5CBCh]"
 "	      0051790f    mov cl,ds:[5B5CC0h]"
 "	      00517915    shl ebx,cl"
@@ -5221,14 +5221,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1066:
 	asm( 
-"	      00517926    movsx eax,word ptr [ebp+10h]"
-"	      0051792a    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517926    movsx eax,msize"
+"	      0051792a    movsx ecx,y"
 "	      0051792e    add eax,ecx"
 "	      00517930    and eax,ds:[5B5CBCh]"
 "	      00517936    mov cl,ds:[5B5CC0h]"
 "	      0051793c    shl eax,cl"
-"	      0051793e    movsx ecx,word ptr [ebp-8]"
-"	      00517942    movsx edx,word ptr [ebp+8]"
+"	      0051793e    movsx ecx,midp"
+"	      00517942    movsx edx,x"
 "	      00517946    add ecx,edx"
 "	      00517948    inc ecx"
 "	      00517949    and ecx,ds:[5B5CBCh]"
@@ -5242,14 +5242,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1068:
 	asm( 
-"	      00517968    movsx eax,word ptr [ebp+10h]"
-"	      0051796c    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517968    movsx eax,msize"
+"	      0051796c    movsx ecx,y"
 "	      00517970    add eax,ecx"
 "	      00517972    and eax,ds:[5B5CBCh]"
 "	      00517978    mov cl,ds:[5B5CC0h]"
 "	      0051797e    shl eax,cl"
-"	      00517980    movsx ecx,word ptr [ebp+10h]"
-"	      00517984    movsx edx,word ptr [ebp+8]"
+"	      00517980    movsx ecx,msize"
+"	      00517984    movsx edx,x"
 "	      00517988    add ecx,edx"
 "	      0051798a    and ecx,ds:[5B5CBCh]"
 "	      00517990    add ecx,ecx"
@@ -5257,13 +5257,13 @@ void do_map_square(short x, short y, short msize) {
 "	      00517995    mov ecx,ds:[67EB10h]"
 "	      0051799b    xor edx,edx"
 "	      0051799d    mov dx,[eax+ecx]"
-"	      005179a1    movsx eax,word ptr [ebp+10h]"
-"	      005179a5    movsx ecx,word ptr [ebp+0Ch]"
+"	      005179a1    movsx eax,msize"
+"	      005179a5    movsx ecx,y"
 "	      005179a9    add eax,ecx"
 "	      005179ab    and eax,ds:[5B5CBCh]"
 "	      005179b1    mov cl,ds:[5B5CC0h]"
 "	      005179b7    shl eax,cl"
-"	      005179b9    movsx ecx,word ptr [ebp+8]"
+"	      005179b9    movsx ecx,x"
 "	      005179bd    and ecx,ds:[5B5CBCh]"
 "	      005179c3    add ecx,ecx"
 "	      005179c5    lea eax,[ecx+eax*2]"
@@ -5274,7 +5274,7 @@ void do_map_square(short x, short y, short msize) {
 "	      005179d7    cdq"
 "	      005179d8    sub eax,edx"
 "	      005179da    sar eax,1"
-"	      005179dd    mov [ebp-0Ch],ax"
+"	      005179dd    mov hght,ax"
 );
 // LINE 1069:
 	asm( 
@@ -5284,14 +5284,14 @@ void do_map_square(short x, short y, short msize) {
 "	      005179e8    push eax"
 "	      005179e9    call 00517DC6h"
 "	      005179ee    add esp,8"
-"	      005179f1    movsx edx,word ptr [ebp+10h]"
-"	      005179f5    movsx ebx,word ptr [ebp+0Ch]"
+"	      005179f1    movsx edx,msize"
+"	      005179f5    movsx ebx,y"
 "	      005179f9    add edx,ebx"
 "	      005179fb    and edx,ds:[5B5CBCh]"
 "	      00517a01    mov cl,ds:[5B5CC0h]"
 "	      00517a07    shl edx,cl"
-"	      00517a09    movsx ecx,word ptr [ebp-8]"
-"	      00517a0d    movsx ebx,word ptr [ebp+8]"
+"	      00517a09    movsx ecx,midp"
+"	      00517a0d    movsx ebx,x"
 "	      00517a11    add ecx,ebx"
 "	      00517a13    inc ecx"
 "	      00517a14    and ecx,ds:[5B5CBCh]"
@@ -5302,14 +5302,14 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1078:
 	asm( 
-"	      00517a29    movsx eax,word ptr [ebp+10h]"
-"	      00517a2d    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517a29    movsx eax,msize"
+"	      00517a2d    movsx ecx,y"
 "	      00517a31    add eax,ecx"
 "	      00517a33    and eax,ds:[5B5CBCh]"
 "	      00517a39    mov cl,ds:[5B5CC0h]"
 "	      00517a3f    shl eax,cl"
-"	      00517a41    movsx ecx,word ptr [ebp+10h]"
-"	      00517a45    movsx edx,word ptr [ebp+8]"
+"	      00517a41    movsx ecx,msize"
+"	      00517a45    movsx edx,x"
 "	      00517a49    add ecx,edx"
 "	      00517a4b    and ecx,ds:[5B5CBCh]"
 "	      00517a51    add ecx,ecx"
@@ -5317,11 +5317,11 @@ void do_map_square(short x, short y, short msize) {
 "	      00517a56    mov ecx,ds:[67EB10h]"
 "	      00517a5c    xor edx,edx"
 "	      00517a5e    mov dx,[eax+ecx]"
-"	      00517a62    movsx eax,word ptr [ebp+10h]"
-"	      00517a66    movsx ecx,word ptr [ebp+8]"
+"	      00517a62    movsx eax,msize"
+"	      00517a66    movsx ecx,x"
 "	      00517a6a    add eax,ecx"
 "	      00517a6c    and eax,ds:[5B5CBCh]"
-"	      00517a72    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517a72    movsx ebx,y"
 "	      00517a76    and ebx,ds:[5B5CBCh]"
 "	      00517a7c    mov cl,ds:[5B5CC0h]"
 "	      00517a82    shl ebx,cl"
@@ -5331,13 +5331,13 @@ void do_map_square(short x, short y, short msize) {
 "	      00517a8f    xor ebx,ebx"
 "	      00517a91    mov bx,[eax+ecx]"
 "	      00517a95    add edx,ebx"
-"	      00517a97    movsx eax,word ptr [ebp+10h]"
-"	      00517a9b    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517a97    movsx eax,msize"
+"	      00517a9b    movsx ecx,y"
 "	      00517a9f    add eax,ecx"
 "	      00517aa1    and eax,ds:[5B5CBCh]"
 "	      00517aa7    mov cl,ds:[5B5CC0h]"
 "	      00517aad    shl eax,cl"
-"	      00517aaf    movsx ecx,word ptr [ebp+8]"
+"	      00517aaf    movsx ecx,x"
 "	      00517ab3    and ecx,ds:[5B5CBCh]"
 "	      00517ab9    add ecx,ecx"
 "	      00517abb    lea eax,[ecx+eax*2]"
@@ -5345,11 +5345,11 @@ void do_map_square(short x, short y, short msize) {
 "	      00517ac4    xor ebx,ebx"
 "	      00517ac6    mov bx,[eax+ecx]"
 "	      00517aca    add edx,ebx"
-"	      00517acc    movsx eax,word ptr [ebp+0Ch]"
+"	      00517acc    movsx eax,y"
 "	      00517ad0    and eax,ds:[5B5CBCh]"
 "	      00517ad6    mov cl,ds:[5B5CC0h]"
 "	      00517adc    shl eax,cl"
-"	      00517ade    movsx ecx,word ptr [ebp+8]"
+"	      00517ade    movsx ecx,x"
 "	      00517ae2    and ecx,ds:[5B5CBCh]"
 "	      00517ae8    add ecx,ecx"
 "	      00517aea    lea eax,[ecx+eax*2]"
@@ -5361,18 +5361,18 @@ void do_map_square(short x, short y, short msize) {
 "	      00517afd    and edx,3"
 "	      00517b00    add eax,edx"
 "	      00517b02    sar eax,2"
-"	      00517b05    mov [ebp-0Ch],ax"
+"	      00517b05    mov hght,ax"
 );
 // LINE 1079:
 	asm( 
-"	      00517b09    movsx eax,word ptr [ebp-8]"
-"	      00517b0d    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517b09    movsx eax,midp"
+"	      00517b0d    movsx ecx,y"
 "	      00517b11    add eax,ecx"
 "	      00517b13    and eax,ds:[5B5CBCh]"
 "	      00517b19    mov cl,ds:[5B5CC0h]"
 "	      00517b1f    shl eax,cl"
-"	      00517b21    movsx ecx,word ptr [ebp-8]"
-"	      00517b25    movsx edx,word ptr [ebp+8]"
+"	      00517b21    movsx ecx,midp"
+"	      00517b25    movsx edx,x"
 "	      00517b29    add ecx,edx"
 "	      00517b2b    and ecx,ds:[5B5CBCh]"
 "	      00517b31    add ecx,ecx"
@@ -5391,14 +5391,14 @@ void do_map_square(short x, short y, short msize) {
 "	      00517b51    push eax"
 "	      00517b52    call 00517DC6h"
 "	      00517b57    add esp,8"
-"	      00517b5a    movsx edx,word ptr [ebp-8]"
-"	      00517b5e    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517b5a    movsx edx,midp"
+"	      00517b5e    movsx ebx,y"
 "	      00517b62    add edx,ebx"
 "	      00517b64    and edx,ds:[5B5CBCh]"
 "	      00517b6a    mov cl,ds:[5B5CC0h]"
 "	      00517b70    shl edx,cl"
-"	      00517b72    movsx ecx,word ptr [ebp-8]"
-"	      00517b76    movsx ebx,word ptr [ebp+8]"
+"	      00517b72    movsx ecx,midp"
+"	      00517b76    movsx ebx,x"
 "	      00517b7a    add ecx,ebx"
 "	      00517b7c    and ecx,ds:[5B5CBCh]"
 "	      00517b82    add ecx,ecx"
@@ -5408,20 +5408,20 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1082:
 	asm( 
-"	      00517b91    movsx eax,word ptr [ebp-4]"
+"	      00517b91    movsx eax,is_odd"
 "	      00517b95    test eax,eax"
 "	      00517b97    je near ptr 00517D3Dh"
 );
 // LINE 1084:
 	asm( 
-"	      00517b9d    movsx eax,word ptr [ebp-8]"
-"	      00517ba1    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517b9d    movsx eax,midp"
+"	      00517ba1    movsx ecx,y"
 "	      00517ba5    add eax,ecx"
 "	      00517ba7    and eax,ds:[5B5CBCh]"
 "	      00517bad    mov cl,ds:[5B5CC0h]"
 "	      00517bb3    shl eax,cl"
-"	      00517bb5    movsx ecx,word ptr [ebp-8]"
-"	      00517bb9    movsx edx,word ptr [ebp+8]"
+"	      00517bb5    movsx ecx,midp"
+"	      00517bb9    movsx edx,x"
 "	      00517bbd    add ecx,edx"
 "	      00517bbf    inc ecx"
 "	      00517bc0    and ecx,ds:[5B5CBCh]"
@@ -5441,14 +5441,14 @@ void do_map_square(short x, short y, short msize) {
 "	      00517be6    push eax"
 "	      00517be7    call 00517DC6h"
 "	      00517bec    add esp,8"
-"	      00517bef    movsx edx,word ptr [ebp-8]"
-"	      00517bf3    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517bef    movsx edx,midp"
+"	      00517bf3    movsx ebx,y"
 "	      00517bf7    add edx,ebx"
 "	      00517bf9    and edx,ds:[5B5CBCh]"
 "	      00517bff    mov cl,ds:[5B5CC0h]"
 "	      00517c05    shl edx,cl"
-"	      00517c07    movsx ecx,word ptr [ebp-8]"
-"	      00517c0b    movsx ebx,word ptr [ebp+8]"
+"	      00517c07    movsx ecx,midp"
+"	      00517c0b    movsx ebx,x"
 "	      00517c0f    add ecx,ebx"
 "	      00517c11    inc ecx"
 "	      00517c12    and ecx,ds:[5B5CBCh]"
@@ -5459,15 +5459,15 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1086:
 	asm( 
-"	      00517c27    movsx eax,word ptr [ebp-8]"
-"	      00517c2b    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517c27    movsx eax,midp"
+"	      00517c2b    movsx ecx,y"
 "	      00517c2f    add eax,ecx"
 "	      00517c31    inc eax"
 "	      00517c32    and eax,ds:[5B5CBCh]"
 "	      00517c38    mov cl,ds:[5B5CC0h]"
 "	      00517c3e    shl eax,cl"
-"	      00517c40    movsx ecx,word ptr [ebp-8]"
-"	      00517c44    movsx edx,word ptr [ebp+8]"
+"	      00517c40    movsx ecx,midp"
+"	      00517c44    movsx edx,x"
 "	      00517c48    add ecx,edx"
 "	      00517c4a    and ecx,ds:[5B5CBCh]"
 "	      00517c50    add ecx,ecx"
@@ -5486,15 +5486,15 @@ void do_map_square(short x, short y, short msize) {
 "	      00517c70    push eax"
 "	      00517c71    call 00517DC6h"
 "	      00517c76    add esp,8"
-"	      00517c79    movsx edx,word ptr [ebp-8]"
-"	      00517c7d    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517c79    movsx edx,midp"
+"	      00517c7d    movsx ebx,y"
 "	      00517c81    add edx,ebx"
 "	      00517c83    inc edx"
 "	      00517c84    and edx,ds:[5B5CBCh]"
 "	      00517c8a    mov cl,ds:[5B5CC0h]"
 "	      00517c90    shl edx,cl"
-"	      00517c92    movsx ecx,word ptr [ebp-8]"
-"	      00517c96    movsx ebx,word ptr [ebp+8]"
+"	      00517c92    movsx ecx,midp"
+"	      00517c96    movsx ebx,x"
 "	      00517c9a    add ecx,ebx"
 "	      00517c9c    and ecx,ds:[5B5CBCh]"
 "	      00517ca2    add ecx,ecx"
@@ -5504,15 +5504,15 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1088:
 	asm( 
-"	      00517cb1    movsx eax,word ptr [ebp-8]"
-"	      00517cb5    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517cb1    movsx eax,midp"
+"	      00517cb5    movsx ecx,y"
 "	      00517cb9    add eax,ecx"
 "	      00517cbb    inc eax"
 "	      00517cbc    and eax,ds:[5B5CBCh]"
 "	      00517cc2    mov cl,ds:[5B5CC0h]"
 "	      00517cc8    shl eax,cl"
-"	      00517cca    movsx ecx,word ptr [ebp-8]"
-"	      00517cce    movsx edx,word ptr [ebp+8]"
+"	      00517cca    movsx ecx,midp"
+"	      00517cce    movsx edx,x"
 "	      00517cd2    add ecx,edx"
 "	      00517cd4    inc ecx"
 "	      00517cd5    and ecx,ds:[5B5CBCh]"
@@ -5532,15 +5532,15 @@ void do_map_square(short x, short y, short msize) {
 "	      00517cfb    push eax"
 "	      00517cfc    call 00517DC6h"
 "	      00517d01    add esp,8"
-"	      00517d04    movsx edx,word ptr [ebp-8]"
-"	      00517d08    movsx ebx,word ptr [ebp+0Ch]"
+"	      00517d04    movsx edx,midp"
+"	      00517d08    movsx ebx,y"
 "	      00517d0c    add edx,ebx"
 "	      00517d0e    inc edx"
 "	      00517d0f    and edx,ds:[5B5CBCh]"
 "	      00517d15    mov cl,ds:[5B5CC0h]"
 "	      00517d1b    shl edx,cl"
-"	      00517d1d    movsx ecx,word ptr [ebp-8]"
-"	      00517d21    movsx ebx,word ptr [ebp+8]"
+"	      00517d1d    movsx ecx,midp"
+"	      00517d21    movsx ebx,x"
 "	      00517d25    add ecx,ebx"
 "	      00517d27    inc ecx"
 "	      00517d28    and ecx,ds:[5B5CBCh]"
@@ -5564,10 +5564,10 @@ void do_map_square(short x, short y, short msize) {
 	asm( 
 "	      00517d51    mov eax,[ebp-8]"
 "	      00517d54    push eax"
-"	      00517d55    movsx eax,word ptr [ebp-8]"
-"	      00517d59    movsx ecx,word ptr [ebp-4]"
+"	      00517d55    movsx eax,midp"
+"	      00517d59    movsx ecx,is_odd"
 "	      00517d5d    add eax,ecx"
-"	      00517d5f    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517d5f    movsx ecx,y"
 "	      00517d63    add eax,ecx"
 "	      00517d65    push eax"
 "	      00517d66    mov eax,[ebp+8]"
@@ -5581,10 +5581,10 @@ void do_map_square(short x, short y, short msize) {
 "	      00517d75    push eax"
 "	      00517d76    mov eax,[ebp+0Ch]"
 "	      00517d79    push eax"
-"	      00517d7a    movsx eax,word ptr [ebp-8]"
-"	      00517d7e    movsx ecx,word ptr [ebp-4]"
+"	      00517d7a    movsx eax,midp"
+"	      00517d7e    movsx ecx,is_odd"
 "	      00517d82    add eax,ecx"
-"	      00517d84    movsx ecx,word ptr [ebp+8]"
+"	      00517d84    movsx ecx,x"
 "	      00517d88    add eax,ecx"
 "	      00517d8a    push eax"
 "	      00517d8b    call 0051723Ch"
@@ -5594,16 +5594,16 @@ void do_map_square(short x, short y, short msize) {
 	asm( 
 "	      00517d93    mov eax,[ebp-8]"
 "	      00517d96    push eax"
-"	      00517d97    movsx eax,word ptr [ebp-8]"
-"	      00517d9b    movsx ecx,word ptr [ebp-4]"
+"	      00517d97    movsx eax,midp"
+"	      00517d9b    movsx ecx,is_odd"
 "	      00517d9f    add eax,ecx"
-"	      00517da1    movsx ecx,word ptr [ebp+0Ch]"
+"	      00517da1    movsx ecx,y"
 "	      00517da5    add eax,ecx"
 "	      00517da7    push eax"
-"	      00517da8    movsx eax,word ptr [ebp-8]"
-"	      00517dac    movsx ecx,word ptr [ebp-4]"
+"	      00517da8    movsx eax,midp"
+"	      00517dac    movsx ecx,is_odd"
 "	      00517db0    add eax,ecx"
-"	      00517db2    movsx ecx,word ptr [ebp+8]"
+"	      00517db2    movsx ecx,x"
 "	      00517db6    add eax,ecx"
 "	      00517db8    push eax"
 "	      00517db9    call 0051723Ch"
@@ -5636,12 +5636,12 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 );
 // LINE 1110:
 	asm( 
-"	      00517dcf    mov dword ptr [ebp-8],7FFh"
+"	      00517dcf    mov max_noise,7FFh"
 );
 // LINE 1115:
 	asm( 
 "	      00517dd6    call 0056EC50h"
-"	      00517ddb    and eax,[ebp-8]"
+"	      00517ddb    and eax,max_noise"
 "	      00517dde    mov [ebp-10h],eax"
 "	      00517de1    fild dword ptr [ebp-10h]"
 "	      00517de4    mov eax,[ebp+0Ch]"
@@ -5654,7 +5654,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 "	      00517e00    mov [ebp-1Ch],eax"
 "	      00517e03    fidiv dword ptr [ebp-1Ch]"
 "	      00517e06    call 0056EBE8h"
-"	      00517e0b    mov [ebp-0Ch],eax"
+"	      00517e0b    mov delta,eax"
 );
 // LINE 1116:
 	asm( 
@@ -5662,25 +5662,25 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 "	      00517e13    test al,1"
 "	      00517e15    je near ptr 00517E20h"
 "	      00517e1b    jmp near ptr 00517E28h"
-"	      00517e20    mov eax,[ebp-0Ch]"
+"	      00517e20    mov eax,delta"
 "	      00517e23    neg eax"
-"	      00517e25    mov [ebp-0Ch],eax"
+"	      00517e25    mov delta,eax"
 );
 // LINE 1117:
 	asm( 
 "	      00517e28    mov eax,[ebp+8]"
 "	      00517e2b    and eax,0FFFFh"
-"	      00517e30    add eax,[ebp-0Ch]"
-"	      00517e33    mov [ebp-4],eax"
+"	      00517e30    add eax,delta"
+"	      00517e33    mov new_height,eax"
 );
 // LINE 1119:
 	asm( 
 "	      00517e36    mov eax,ds:[66EB00h]"
-"	      00517e3b    cmp [ebp-4],eax"
+"	      00517e3b    cmp new_height,eax"
 "	      00517e3e    jge near ptr 00517E4Fh"
 "	      00517e44    xor eax,eax"
 "	      00517e46    mov ax,ds:[66EB00h]"
-"	      00517e4c    mov [ebp-4],eax"
+"	      00517e4c    mov new_height,eax"
 );
 // LINE 1120:
 	asm( 
@@ -5717,45 +5717,45 @@ void S3TerrSetGridObj() {
 	asm( 
 "	      00517e66    mov eax,ds:[67ED28h]"
 "	      00517e6b    and eax,0FFh"
-"	      00517e70    mov [ebp-8],eax"
+"	      00517e70    mov ulp.x,eax"
 );
 // LINE 1145:
 	asm( 
 "	      00517e73    mov eax,ds:[67ED2Ch]"
 "	      00517e78    and eax,0FFh"
-"	      00517e7d    mov [ebp-4],eax"
+"	      00517e7d    mov ulp.y,eax"
 );
 // LINE 1148:
 	asm( 
 "	      00517e80    mov eax,ds:[666368h]"
 "	      00517e85    add eax,4"
-"	      00517e88    mov [ebp-0Ch],eax"
+"	      00517e88    mov yptr,eax"
 );
 // LINE 1150:
 	asm( 
-"	      00517e8b    mov eax,[ebp-4]"
-"	      00517e8e    mov [ebp-14h],eax"
+"	      00517e8b    mov eax,ulp.y"
+"	      00517e8e    mov y,eax"
 "	      00517e91    jmp near ptr 00517E99h"
-"	      00517e96    inc dword ptr [ebp-14h]"
-"	      00517e99    mov eax,[ebp-4]"
+"	      00517e96    inc y"
+"	      00517e99    mov eax,ulp.y"
 "	      00517e9c    add eax,ds:[666358h]"
-"	      00517ea2    cmp eax,[ebp-14h]"
+"	      00517ea2    cmp eax,y"
 "	      00517ea5    jle near ptr 00517F6Bh"
 );
 // LINE 1152:
 	asm( 
-"	      00517eab    mov eax,[ebp-8]"
-"	      00517eae    mov [ebp-10h],eax"
+"	      00517eab    mov eax,ulp.x"
+"	      00517eae    mov x,eax"
 "	      00517eb1    jmp near ptr 00517EB9h"
-"	      00517eb6    inc dword ptr [ebp-10h]"
-"	      00517eb9    mov eax,[ebp-8]"
+"	      00517eb6    inc x"
+"	      00517eb9    mov eax,ulp.x"
 "	      00517ebc    add eax,ds:[666358h]"
-"	      00517ec2    cmp eax,[ebp-10h]"
+"	      00517ec2    cmp eax,x"
 "	      00517ec5    jle near ptr 00517F66h"
 );
 // LINE 1154:
 	asm( 
-"	      00517ecb    mov eax,[ebp-0Ch]"
+"	      00517ecb    mov eax,yptr"
 "	      00517ece    cmp ds:[666368h],eax"
 "	      00517ed4    jbe near ptr 00517EF6h"
 "	      00517eda    push 482h"
@@ -5768,7 +5768,7 @@ void S3TerrSetGridObj() {
 );
 // LINE 1155:
 	asm( 
-"	      00517efb    mov eax,[ebp-0Ch]"
+"	      00517efb    mov eax,yptr"
 "	      00517efe    cmp ds:[662874h],eax"
 "	      00517f04    ja near ptr 00517F26h"
 "	      00517f0a    push 483h"
@@ -5782,23 +5782,23 @@ void S3TerrSetGridObj() {
 // LINE 1158:
 	asm( 
 "	      00517f2b    mov eax,ds:[5B5CBCh]"
-"	      00517f30    and eax,[ebp-14h]"
+"	      00517f30    and eax,y"
 "	      00517f33    mov cl,ds:[5B5CC0h]"
 "	      00517f39    shl eax,cl"
 "	      00517f3b    mov ecx,ds:[5B5CBCh]"
-"	      00517f41    and ecx,[ebp-10h]"
+"	      00517f41    and ecx,x"
 "	      00517f44    add ecx,ecx"
 "	      00517f46    lea eax,[ecx+eax*2]"
 "	      00517f49    mov ecx,ds:[67EB10h]"
 "	      00517f4f    xor edx,edx"
 "	      00517f51    mov dx,[eax+ecx]"
 "	      00517f55    shl edx,10h"
-"	      00517f58    mov eax,[ebp-0Ch]"
+"	      00517f58    mov eax,yptr"
 "	      00517f5b    mov [eax],edx"
 );
 // LINE 1160:
 	asm( 
-"	      00517f5d    add dword ptr [ebp-0Ch],0Ch"
+"	      00517f5d    add yptr,0Ch"
 );
 // LINE 1161:
 	asm( 
@@ -5843,23 +5843,23 @@ void S3TerrainMorph() {
 "	      00517f86    mov eax,ds:[66EAF8h]"
 "	      00517f8b    and eax,0FFh"
 "	      00517f90    add eax,eax"
-"	      00517f92    mov [ebp-8],eax"
+"	      00517f92    mov ulp.x,eax"
 );
 // LINE 1203:
 	asm( 
 "	      00517f95    mov eax,ds:[66EAFCh]"
 "	      00517f9a    and eax,0FFh"
 "	      00517f9f    add eax,eax"
-"	      00517fa1    mov [ebp-4],eax"
+"	      00517fa1    mov ulp.y,eax"
 );
 // LINE 1204:
 	asm( 
-"	      00517fa4    mov eax,[ebp-4]"
+"	      00517fa4    mov eax,ulp.y"
 "	      00517fa7    and eax,ds:[5B5CBCh]"
 "	      00517fad    and eax,ds:[5B5CBCh]"
 "	      00517fb3    mov cl,ds:[5B5CC0h]"
 "	      00517fb9    shl eax,cl"
-"	      00517fbb    mov ecx,[ebp-8]"
+"	      00517fbb    mov ecx,ulp.x"
 "	      00517fbe    and ecx,ds:[5B5CBCh]"
 "	      00517fc4    and ecx,ds:[5B5CBCh]"
 "	      00517fca    add ecx,ecx"
@@ -5869,12 +5869,12 @@ void S3TerrainMorph() {
 );
 // LINE 1205:
 	asm( 
-"	      00517fda    mov eax,[ebp-4]"
+"	      00517fda    mov eax,ulp.y"
 "	      00517fdd    and eax,ds:[5B5CBCh]"
 "	      00517fe3    and eax,ds:[5B5CBCh]"
 "	      00517fe9    mov cl,ds:[5B5CC0h]"
 "	      00517fef    shl eax,cl"
-"	      00517ff1    mov ecx,[ebp-8]"
+"	      00517ff1    mov ecx,ulp.x"
 "	      00517ff4    inc ecx"
 "	      00517ff5    and ecx,ds:[5B5CBCh]"
 "	      00517ffb    and ecx,ds:[5B5CBCh]"
@@ -5885,12 +5885,12 @@ void S3TerrainMorph() {
 );
 // LINE 1206:
 	asm( 
-"	      00518011    mov eax,[ebp-4]"
+"	      00518011    mov eax,ulp.y"
 "	      00518014    and eax,ds:[5B5CBCh]"
 "	      0051801a    and eax,ds:[5B5CBCh]"
 "	      00518020    mov cl,ds:[5B5CC0h]"
 "	      00518026    shl eax,cl"
-"	      00518028    mov ecx,[ebp-8]"
+"	      00518028    mov ecx,ulp.x"
 "	      0051802b    add ecx,2"
 "	      0051802e    and ecx,ds:[5B5CBCh]"
 "	      00518034    and ecx,ds:[5B5CBCh]"
@@ -5901,13 +5901,13 @@ void S3TerrainMorph() {
 );
 // LINE 1207:
 	asm( 
-"	      0051804a    mov eax,[ebp-4]"
+"	      0051804a    mov eax,ulp.y"
 "	      0051804d    inc eax"
 "	      0051804e    and eax,ds:[5B5CBCh]"
 "	      00518054    and eax,ds:[5B5CBCh]"
 "	      0051805a    mov cl,ds:[5B5CC0h]"
 "	      00518060    shl eax,cl"
-"	      00518062    mov ecx,[ebp-8]"
+"	      00518062    mov ecx,ulp.x"
 "	      00518065    and ecx,ds:[5B5CBCh]"
 "	      0051806b    and ecx,ds:[5B5CBCh]"
 "	      00518071    add ecx,ecx"
@@ -5917,13 +5917,13 @@ void S3TerrainMorph() {
 );
 // LINE 1208:
 	asm( 
-"	      00518081    mov eax,[ebp-4]"
+"	      00518081    mov eax,ulp.y"
 "	      00518084    inc eax"
 "	      00518085    and eax,ds:[5B5CBCh]"
 "	      0051808b    and eax,ds:[5B5CBCh]"
 "	      00518091    mov cl,ds:[5B5CC0h]"
 "	      00518097    shl eax,cl"
-"	      00518099    mov ecx,[ebp-8]"
+"	      00518099    mov ecx,ulp.x"
 "	      0051809c    inc ecx"
 "	      0051809d    and ecx,ds:[5B5CBCh]"
 "	      005180a3    and ecx,ds:[5B5CBCh]"
@@ -5934,13 +5934,13 @@ void S3TerrainMorph() {
 );
 // LINE 1209:
 	asm( 
-"	      005180b9    mov eax,[ebp-4]"
+"	      005180b9    mov eax,ulp.y"
 "	      005180bc    inc eax"
 "	      005180bd    and eax,ds:[5B5CBCh]"
 "	      005180c3    and eax,ds:[5B5CBCh]"
 "	      005180c9    mov cl,ds:[5B5CC0h]"
 "	      005180cf    shl eax,cl"
-"	      005180d1    mov ecx,[ebp-8]"
+"	      005180d1    mov ecx,ulp.x"
 "	      005180d4    add ecx,2"
 "	      005180d7    and ecx,ds:[5B5CBCh]"
 "	      005180dd    and ecx,ds:[5B5CBCh]"
@@ -5951,13 +5951,13 @@ void S3TerrainMorph() {
 );
 // LINE 1210:
 	asm( 
-"	      005180f3    mov eax,[ebp-4]"
+"	      005180f3    mov eax,ulp.y"
 "	      005180f6    add eax,2"
 "	      005180f9    and eax,ds:[5B5CBCh]"
 "	      005180ff    and eax,ds:[5B5CBCh]"
 "	      00518105    mov cl,ds:[5B5CC0h]"
 "	      0051810b    shl eax,cl"
-"	      0051810d    mov ecx,[ebp-8]"
+"	      0051810d    mov ecx,ulp.x"
 "	      00518110    and ecx,ds:[5B5CBCh]"
 "	      00518116    and ecx,ds:[5B5CBCh]"
 "	      0051811c    add ecx,ecx"
@@ -5967,13 +5967,13 @@ void S3TerrainMorph() {
 );
 // LINE 1211:
 	asm( 
-"	      0051812c    mov eax,[ebp-4]"
+"	      0051812c    mov eax,ulp.y"
 "	      0051812f    add eax,2"
 "	      00518132    and eax,ds:[5B5CBCh]"
 "	      00518138    and eax,ds:[5B5CBCh]"
 "	      0051813e    mov cl,ds:[5B5CC0h]"
 "	      00518144    shl eax,cl"
-"	      00518146    mov ecx,[ebp-8]"
+"	      00518146    mov ecx,ulp.x"
 "	      00518149    inc ecx"
 "	      0051814a    and ecx,ds:[5B5CBCh]"
 "	      00518150    and ecx,ds:[5B5CBCh]"
@@ -5984,13 +5984,13 @@ void S3TerrainMorph() {
 );
 // LINE 1212:
 	asm( 
-"	      00518166    mov eax,[ebp-4]"
+"	      00518166    mov eax,ulp.y"
 "	      00518169    add eax,2"
 "	      0051816c    and eax,ds:[5B5CBCh]"
 "	      00518172    and eax,ds:[5B5CBCh]"
 "	      00518178    mov cl,ds:[5B5CC0h]"
 "	      0051817e    shl eax,cl"
-"	      00518180    mov ecx,[ebp-8]"
+"	      00518180    mov ecx,ulp.x"
 "	      00518183    add ecx,2"
 "	      00518186    and ecx,ds:[5B5CBCh]"
 "	      0051818c    and ecx,ds:[5B5CBCh]"
@@ -6139,25 +6139,25 @@ void S3TerrainMorph() {
 	asm( 
 "	      005182fc    mov eax,ds:[66EAF8h]"
 "	      00518301    sub eax,ds:[67ED28h]"
-"	      00518307    mov [ebp-14h],eax"
+"	      00518307    mov mcell.x,eax"
 );
 // LINE 1250:
 	asm( 
 "	      0051830a    mov eax,ds:[66EAFCh]"
 "	      0051830f    sub eax,ds:[67ED2Ch]"
-"	      00518315    mov [ebp-10h],eax"
+"	      00518315    mov mcell.y,eax"
 );
 // LINE 1255:
 	asm( 
-"	      00518318    cmp dword ptr [ebp-14h],0"
+"	      00518318    cmp mcell.x,0"
 "	      0051831c    jl near ptr 00518348h"
-"	      00518322    cmp dword ptr [ebp-10h],0"
+"	      00518322    cmp mcell.y,0"
 "	      00518326    jl near ptr 00518348h"
 "	      0051832c    mov eax,ds:[6663A0h]"
-"	      00518331    cmp [ebp-14h],eax"
+"	      00518331    cmp mcell.x,eax"
 "	      00518334    jge near ptr 00518348h"
 "	      0051833a    mov eax,ds:[6663A0h]"
-"	      0051833f    cmp [ebp-10h],eax"
+"	      0051833f    cmp mcell.y,eax"
 "	      00518342    jl near ptr 0051834Dh"
 );
 // LINE 1256:
@@ -6166,20 +6166,20 @@ void S3TerrainMorph() {
 );
 // LINE 1259:
 	asm( 
-"	      0051834d    mov eax,[ebp-10h]"
+"	      0051834d    mov eax,mcell.y"
 "	      00518350    imul eax,ds:[666358h]"
 "	      00518357    lea eax,[eax+eax*2]"
-"	      0051835a    mov ecx,[ebp-14h]"
+"	      0051835a    mov ecx,mcell.x"
 "	      0051835d    lea ecx,[ecx+ecx*2]"
 "	      00518360    shl ecx,3"
 "	      00518363    lea eax,[ecx+eax*8]"
 "	      00518366    add eax,ds:[666368h]"
-"	      0051836c    mov [ebp-0Ch],eax"
+"	      0051836c    mov v,eax"
 );
 // LINE 1261:
 	asm( 
 "	      0051836f    mov eax,ds:[666368h]"
-"	      00518374    cmp [ebp-0Ch],eax"
+"	      00518374    cmp v,eax"
 "	      00518377    jae near ptr 00518399h"
 "	      0051837d    push 4EDh"
 "	      00518382    push 5B5E14h"
@@ -6192,7 +6192,7 @@ void S3TerrainMorph() {
 // LINE 1262:
 	asm( 
 "	      0051839e    mov eax,ds:[662874h]"
-"	      005183a3    cmp [ebp-0Ch],eax"
+"	      005183a3    cmp v,eax"
 "	      005183a6    jb near ptr 005183C8h"
 "	      005183ac    push 4EEh"
 "	      005183b1    push 5B5E44h"
@@ -6208,7 +6208,7 @@ void S3TerrainMorph() {
 "	      005183d2    xor ecx,ecx"
 "	      005183d4    mov cx,[eax]"
 "	      005183d7    shl ecx,10h"
-"	      005183da    mov eax,[ebp-0Ch]"
+"	      005183da    mov eax,v"
 "	      005183dd    mov [eax+4],ecx"
 );
 // LINE 1266:
@@ -6217,7 +6217,7 @@ void S3TerrainMorph() {
 "	      005183e5    xor ecx,ecx"
 "	      005183e7    mov cx,[eax]"
 "	      005183ea    shl ecx,10h"
-"	      005183ed    mov eax,[ebp-0Ch]"
+"	      005183ed    mov eax,v"
 "	      005183f0    mov [eax+10h],ecx"
 );
 // LINE 1267:
@@ -6226,7 +6226,7 @@ void S3TerrainMorph() {
 "	      005183f8    xor ecx,ecx"
 "	      005183fa    mov cx,[eax]"
 "	      005183fd    shl ecx,10h"
-"	      00518400    mov eax,[ebp-0Ch]"
+"	      00518400    mov eax,v"
 "	      00518403    mov [eax+1Ch],ecx"
 );
 // LINE 1268:
@@ -6234,7 +6234,7 @@ void S3TerrainMorph() {
 "	      00518406    mov eax,ds:[666358h]"
 "	      0051840b    lea eax,[eax+eax*2]"
 "	      0051840e    shl eax,2"
-"	      00518411    add [ebp-0Ch],eax"
+"	      00518411    add v,eax"
 );
 // LINE 1269:
 	asm( 
@@ -6242,7 +6242,7 @@ void S3TerrainMorph() {
 "	      00518419    xor ecx,ecx"
 "	      0051841b    mov cx,[eax]"
 "	      0051841e    shl ecx,10h"
-"	      00518421    mov eax,[ebp-0Ch]"
+"	      00518421    mov eax,v"
 "	      00518424    mov [eax+4],ecx"
 );
 // LINE 1270:
@@ -6251,7 +6251,7 @@ void S3TerrainMorph() {
 "	      0051842c    xor ecx,ecx"
 "	      0051842e    mov cx,[eax]"
 "	      00518431    shl ecx,10h"
-"	      00518434    mov eax,[ebp-0Ch]"
+"	      00518434    mov eax,v"
 "	      00518437    mov [eax+10h],ecx"
 );
 // LINE 1271:
@@ -6260,7 +6260,7 @@ void S3TerrainMorph() {
 "	      0051843f    xor ecx,ecx"
 "	      00518441    mov cx,[eax]"
 "	      00518444    shl ecx,10h"
-"	      00518447    mov eax,[ebp-0Ch]"
+"	      00518447    mov eax,v"
 "	      0051844a    mov [eax+1Ch],ecx"
 );
 // LINE 1272:
@@ -6268,7 +6268,7 @@ void S3TerrainMorph() {
 "	      0051844d    mov eax,ds:[666358h]"
 "	      00518452    lea eax,[eax+eax*2]"
 "	      00518455    shl eax,2"
-"	      00518458    add [ebp-0Ch],eax"
+"	      00518458    add v,eax"
 );
 // LINE 1273:
 	asm( 
@@ -6276,7 +6276,7 @@ void S3TerrainMorph() {
 "	      00518460    xor ecx,ecx"
 "	      00518462    mov cx,[eax]"
 "	      00518465    shl ecx,10h"
-"	      00518468    mov eax,[ebp-0Ch]"
+"	      00518468    mov eax,v"
 "	      0051846b    mov [eax+4],ecx"
 );
 // LINE 1274:
@@ -6285,7 +6285,7 @@ void S3TerrainMorph() {
 "	      00518473    xor ecx,ecx"
 "	      00518475    mov cx,[eax]"
 "	      00518478    shl ecx,10h"
-"	      0051847b    mov eax,[ebp-0Ch]"
+"	      0051847b    mov eax,v"
 "	      0051847e    mov [eax+10h],ecx"
 );
 // LINE 1275:
@@ -6294,7 +6294,7 @@ void S3TerrainMorph() {
 "	      00518486    xor ecx,ecx"
 "	      00518488    mov cx,[eax]"
 "	      0051848b    shl ecx,10h"
-"	      0051848e    mov eax,[ebp-0Ch]"
+"	      0051848e    mov eax,v"
 "	      00518491    mov [eax+1Ch],ecx"
 );
 // LINE 1277:
@@ -6354,15 +6354,15 @@ int32_t S3TerrMorphWater() {
 );
 // LINE 1450:
 	asm( 
-"	      005184de    mov dword ptr [ebp-1Ch],0"
+"	      005184de    mov xstart,0"
 );
 // LINE 1451:
 	asm( 
-"	      005184e5    mov dword ptr [ebp-18h],0"
+"	      005184e5    mov ystart,0"
 );
 // LINE 1452:
 	asm( 
-"	      005184ec    mov dword ptr [ebp-0Ch],5B5CD4h"
+"	      005184ec    mov cycle,5B5CD4h"
 );
 // LINE 1453:
 	asm( 
@@ -6370,7 +6370,7 @@ int32_t S3TerrMorphWater() {
 );
 // LINE 1454:
 	asm( 
-"	      005184fd    mov dword ptr [ebp-4],5B5D28h"
+"	      005184fd    mov array1,5B5D28h"
 );
 // LINE 1455:
 	asm( 
@@ -6378,15 +6378,15 @@ int32_t S3TerrMorphWater() {
 );
 // LINE 1458:
 	asm( 
-"	      00518509    mov dword ptr [ebp-1Ch],1"
+"	      00518509    mov xstart,1"
 );
 // LINE 1459:
 	asm( 
-"	      00518510    mov dword ptr [ebp-18h],1"
+"	      00518510    mov ystart,1"
 );
 // LINE 1460:
 	asm( 
-"	      00518517    mov dword ptr [ebp-0Ch],5B5CD8h"
+"	      00518517    mov cycle,5B5CD8h"
 );
 // LINE 1461:
 	asm( 
@@ -6394,7 +6394,7 @@ int32_t S3TerrMorphWater() {
 );
 // LINE 1462:
 	asm( 
-"	      00518528    mov dword ptr [ebp-4],5B5CE8h"
+"	      00518528    mov array1,5B5CE8h"
 );
 // LINE 1463:
 	asm( 
@@ -6425,40 +6425,40 @@ int32_t S3TerrMorphWater() {
 );
 // LINE 1469:
 	asm( 
-"	      0051857d    mov eax,[ebp-0Ch]"
+"	      0051857d    mov eax,cycle"
 "	      00518580    movsx eax,word ptr [eax]"
 "	      00518583    and eax,1Fh"
-"	      00518586    mov ecx,[ebp-4]"
+"	      00518586    mov ecx,array1"
 "	      00518589    mov ax,[ecx+eax*2]"
-"	      0051858d    mov [ebp-8],ax"
+"	      0051858d    mov alt0,ax"
 );
 // LINE 1471:
 	asm( 
-"	      00518591    mov eax,[ebp-0Ch]"
+"	      00518591    mov eax,cycle"
 "	      00518594    inc word ptr [eax]"
 );
 // LINE 1476:
 	asm( 
-"	      00518597    mov eax,[ebp-1Ch]"
-"	      0051859a    mov [ebp-10h],eax"
+"	      00518597    mov eax,xstart"
+"	      0051859a    mov x,eax"
 "	      0051859d    jmp near ptr 005185A6h"
-"	      005185a2    add dword ptr [ebp-10h],2"
-"	      005185a6    cmp dword ptr [ebp-10h],80h"
+"	      005185a2    add x,2"
+"	      005185a6    cmp x,80h"
 "	      005185ad    jge near ptr 0051864Ch"
 );
 // LINE 1478:
 	asm( 
-"	      005185b3    mov eax,[ebp-18h]"
-"	      005185b6    mov [ebp-14h],eax"
+"	      005185b3    mov eax,ystart"
+"	      005185b6    mov y,eax"
 "	      005185b9    jmp near ptr 005185C2h"
-"	      005185be    add dword ptr [ebp-14h],2"
-"	      005185c2    cmp dword ptr [ebp-14h],80h"
+"	      005185be    add y,2"
+"	      005185c2    cmp y,80h"
 "	      005185c9    jge near ptr 00518647h"
 );
 // LINE 1481:
 	asm( 
-"	      005185cf    mov eax,[ebp-14h]"
-"	      005185d2    mov ecx,[ebp-10h]"
+"	      005185cf    mov eax,y"
+"	      005185d2    mov ecx,x"
 "	      005185d5    shl ecx,8"
 "	      005185d8    xor edx,edx"
 "	      005185da    mov dl,[eax+ecx+66EB10h]"
@@ -6468,24 +6468,24 @@ int32_t S3TerrMorphWater() {
 // LINE 1483:
 	asm( 
 "	      005185ea    mov eax,ds:[5B5CBCh]"
-"	      005185ef    and eax,[ebp-14h]"
+"	      005185ef    and eax,y"
 "	      005185f2    mov cl,ds:[5B5CC0h]"
 "	      005185f8    shl eax,cl"
 "	      005185fa    mov ecx,ds:[5B5CBCh]"
-"	      00518600    and ecx,[ebp-10h]"
+"	      00518600    and ecx,x"
 "	      00518603    add ecx,ecx"
 "	      00518605    lea eax,[ecx+eax*2]"
 "	      00518608    mov ecx,ds:[67EB10h]"
 "	      0051860e    xor edx,edx"
 "	      00518610    mov dx,[eax+ecx]"
-"	      00518614    movsx eax,word ptr [ebp-8]"
+"	      00518614    movsx eax,alt0"
 "	      00518618    add edx,eax"
 "	      0051861a    mov eax,ds:[5B5CBCh]"
-"	      0051861f    and eax,[ebp-14h]"
+"	      0051861f    and eax,y"
 "	      00518622    mov cl,ds:[5B5CC0h]"
 "	      00518628    shl eax,cl"
 "	      0051862a    mov ecx,ds:[5B5CBCh]"
-"	      00518630    and ecx,[ebp-10h]"
+"	      00518630    and ecx,x"
 "	      00518633    add ecx,ecx"
 "	      00518635    lea eax,[ecx+eax*2]"
 "	      00518638    mov ecx,ds:[67EB10h]"
@@ -6540,71 +6540,71 @@ void AdjustTerrainMap() {
 	asm( 
 "	      00518664    mov eax,ds:[5B5CB8h]"
 "	      00518669    sar eax,1"
-"	      0051866c    mov [ebp-14h],eax"
+"	      0051866c    mov citysize,eax"
 );
 // LINE 1545:
 	asm( 
-"	      0051866f    mov dword ptr [ebp-28h],0"
+"	      0051866f    mov start,0"
 );
 // LINE 1546:
 	asm( 
-"	      00518676    mov dword ptr [ebp-8],20h"
+"	      00518676    mov end,20h"
 );
 // LINE 1548:
 	asm( 
-"	      0051867d    mov eax,[ebp-28h]"
-"	      00518680    mov [ebp-1Ch],eax"
+"	      0051867d    mov eax,start"
+"	      00518680    mov i,eax"
 "	      00518683    jmp near ptr 0051868Bh"
-"	      00518688    inc dword ptr [ebp-1Ch]"
-"	      0051868b    mov eax,[ebp-1Ch]"
-"	      0051868e    cmp [ebp-8],eax"
+"	      00518688    inc i"
+"	      0051868b    mov eax,i"
+"	      0051868e    cmp end,eax"
 "	      00518691    jle near ptr 005189E7h"
 );
 // LINE 1550:
 	asm( 
-"	      00518697    mov eax,[ebp-14h]"
-"	      0051869a    add eax,[ebp-1Ch]"
-"	      0051869d    mov [ebp-18h],eax"
+"	      00518697    mov eax,citysize"
+"	      0051869a    add eax,i"
+"	      0051869d    mov x,eax"
 );
 // LINE 1551:
 	asm( 
-"	      005186a0    mov eax,[ebp-14h]"
-"	      005186a3    add eax,[ebp-1Ch]"
-"	      005186a6    mov [ebp-20h],eax"
+"	      005186a0    mov eax,citysize"
+"	      005186a3    add eax,i"
+"	      005186a6    mov z,eax"
 );
 // LINE 1553:
 	asm( 
 "	      005186a9    jmp near ptr 005186B1h"
-"	      005186ae    dec dword ptr [ebp-20h]"
-"	      005186b1    mov eax,[ebp-1Ch]"
+"	      005186ae    dec z"
+"	      005186b1    mov eax,i"
 "	      005186b4    neg eax"
 "	      005186b6    dec eax"
-"	      005186b7    cmp eax,[ebp-20h]"
+"	      005186b7    cmp eax,z"
 "	      005186ba    jg near ptr 0051883Ch"
 );
 // LINE 1555:
 	asm( 
 "	      005186c0    mov eax,ds:[5B5CBCh]"
-"	      005186c5    and eax,[ebp-20h]"
+"	      005186c5    and eax,z"
 "	      005186c8    mov cl,ds:[5B5CC0h]"
 "	      005186ce    shl eax,cl"
 "	      005186d0    mov ecx,ds:[5B5CBCh]"
-"	      005186d6    and ecx,[ebp-18h]"
+"	      005186d6    and ecx,x"
 "	      005186d9    add ecx,ecx"
 "	      005186db    lea eax,[ecx+eax*2]"
 "	      005186de    mov ecx,ds:[67EB10h]"
 "	      005186e4    xor edx,edx"
 "	      005186e6    mov dx,[eax+ecx]"
-"	      005186ea    mov [ebp-24h],edx"
+"	      005186ea    mov alt,edx"
 );
 // LINE 1556:
 	asm( 
-"	      005186ed    mov eax,[ebp-20h]"
+"	      005186ed    mov eax,z"
 "	      005186f0    inc eax"
 "	      005186f1    and eax,ds:[5B5CBCh]"
 "	      005186f7    mov cl,ds:[5B5CC0h]"
 "	      005186fd    shl eax,cl"
-"	      005186ff    mov ecx,[ebp-18h]"
+"	      005186ff    mov ecx,x"
 "	      00518702    dec ecx"
 "	      00518703    and ecx,ds:[5B5CBCh]"
 "	      00518709    add ecx,ecx"
@@ -6612,15 +6612,15 @@ void AdjustTerrainMap() {
 "	      0051870e    mov ecx,ds:[67EB10h]"
 "	      00518714    xor edx,edx"
 "	      00518716    mov dx,[eax+ecx]"
-"	      0051871a    mov [ebp-4],edx"
+"	      0051871a    mov alt1,edx"
 );
 // LINE 1557:
 	asm( 
 "	      0051871d    mov eax,ds:[5B5CBCh]"
-"	      00518722    and eax,[ebp-20h]"
+"	      00518722    and eax,z"
 "	      00518725    mov cl,ds:[5B5CC0h]"
 "	      0051872b    shl eax,cl"
-"	      0051872d    mov ecx,[ebp-18h]"
+"	      0051872d    mov ecx,x"
 "	      00518730    dec ecx"
 "	      00518731    and ecx,ds:[5B5CBCh]"
 "	      00518737    add ecx,ecx"
@@ -6628,16 +6628,16 @@ void AdjustTerrainMap() {
 "	      0051873c    mov ecx,ds:[67EB10h]"
 "	      00518742    xor edx,edx"
 "	      00518744    mov dx,[eax+ecx]"
-"	      00518748    mov [ebp-0Ch],edx"
+"	      00518748    mov alt2,edx"
 );
 // LINE 1558:
 	asm( 
-"	      0051874b    mov eax,[ebp-20h]"
+"	      0051874b    mov eax,z"
 "	      0051874e    dec eax"
 "	      0051874f    and eax,ds:[5B5CBCh]"
 "	      00518755    mov cl,ds:[5B5CC0h]"
 "	      0051875b    shl eax,cl"
-"	      0051875d    mov ecx,[ebp-18h]"
+"	      0051875d    mov ecx,x"
 "	      00518760    dec ecx"
 "	      00518761    and ecx,ds:[5B5CBCh]"
 "	      00518767    add ecx,ecx"
@@ -6645,59 +6645,59 @@ void AdjustTerrainMap() {
 "	      0051876c    mov ecx,ds:[67EB10h]"
 "	      00518772    xor edx,edx"
 "	      00518774    mov dx,[eax+ecx]"
-"	      00518778    mov [ebp-10h],edx"
+"	      00518778    mov alt3,edx"
 );
 // LINE 1559:
 	asm( 
-"	      0051877b    mov eax,[ebp-4]"
+"	      0051877b    mov eax,alt1"
 "	      0051877e    add eax,20h"
-"	      00518781    cmp eax,[ebp-24h]"
+"	      00518781    cmp eax,alt"
 "	      00518784    jge near ptr 00518793h"
-"	      0051878a    mov eax,[ebp-4]"
+"	      0051878a    mov eax,alt1"
 "	      0051878d    add eax,20h"
-"	      00518790    mov [ebp-24h],eax"
-"	      00518793    mov eax,[ebp-4]"
+"	      00518790    mov alt,eax"
+"	      00518793    mov eax,alt1"
 "	      00518796    sub eax,20h"
-"	      00518799    cmp eax,[ebp-24h]"
+"	      00518799    cmp eax,alt"
 "	      0051879c    jle near ptr 005187ABh"
-"	      005187a2    mov eax,[ebp-4]"
+"	      005187a2    mov eax,alt1"
 "	      005187a5    sub eax,20h"
-"	      005187a8    mov [ebp-24h],eax"
-"	      005187ab    mov eax,[ebp-10h]"
+"	      005187a8    mov alt,eax"
+"	      005187ab    mov eax,alt3"
 "	      005187ae    add eax,20h"
-"	      005187b1    cmp eax,[ebp-24h]"
+"	      005187b1    cmp eax,alt"
 "	      005187b4    jge near ptr 005187C3h"
-"	      005187ba    mov eax,[ebp-10h]"
+"	      005187ba    mov eax,alt3"
 "	      005187bd    add eax,20h"
-"	      005187c0    mov [ebp-24h],eax"
-"	      005187c3    mov eax,[ebp-10h]"
+"	      005187c0    mov alt,eax"
+"	      005187c3    mov eax,alt3"
 "	      005187c6    sub eax,20h"
-"	      005187c9    cmp eax,[ebp-24h]"
+"	      005187c9    cmp eax,alt"
 "	      005187cc    jle near ptr 005187DBh"
-"	      005187d2    mov eax,[ebp-10h]"
+"	      005187d2    mov eax,alt3"
 "	      005187d5    sub eax,20h"
-"	      005187d8    mov [ebp-24h],eax"
-"	      005187db    mov eax,[ebp-0Ch]"
+"	      005187d8    mov alt,eax"
+"	      005187db    mov eax,alt2"
 "	      005187de    add eax,20h"
-"	      005187e1    cmp eax,[ebp-24h]"
+"	      005187e1    cmp eax,alt"
 "	      005187e4    jge near ptr 005187F3h"
-"	      005187ea    mov eax,[ebp-0Ch]"
+"	      005187ea    mov eax,alt2"
 "	      005187ed    add eax,20h"
-"	      005187f0    mov [ebp-24h],eax"
-"	      005187f3    mov eax,[ebp-0Ch]"
+"	      005187f0    mov alt,eax"
+"	      005187f3    mov eax,alt2"
 "	      005187f6    sub eax,20h"
-"	      005187f9    cmp eax,[ebp-24h]"
+"	      005187f9    cmp eax,alt"
 "	      005187fc    jle near ptr 0051880Bh"
-"	      00518802    mov eax,[ebp-0Ch]"
+"	      00518802    mov eax,alt2"
 "	      00518805    sub eax,20h"
-"	      00518808    mov [ebp-24h],eax"
-"	      0051880b    mov eax,[ebp-24h]"
+"	      00518808    mov alt,eax"
+"	      0051880b    mov eax,alt"
 "	      0051880e    mov edx,ds:[5B5CBCh]"
-"	      00518814    and edx,[ebp-20h]"
+"	      00518814    and edx,z"
 "	      00518817    mov cl,ds:[5B5CC0h]"
 "	      0051881d    shl edx,cl"
 "	      0051881f    mov ecx,ds:[5B5CBCh]"
-"	      00518825    and ecx,[ebp-18h]"
+"	      00518825    and ecx,x"
 "	      00518828    add ecx,ecx"
 "	      0051882a    lea edx,[ecx+edx*2]"
 "	      0051882d    mov ecx,ds:[67EB10h]"
@@ -6709,49 +6709,49 @@ void AdjustTerrainMap() {
 );
 // LINE 1563:
 	asm( 
-"	      0051883c    mov eax,[ebp-14h]"
-"	      0051883f    add eax,[ebp-1Ch]"
-"	      00518842    mov [ebp-18h],eax"
+"	      0051883c    mov eax,citysize"
+"	      0051883f    add eax,i"
+"	      00518842    mov x,eax"
 );
 // LINE 1564:
 	asm( 
-"	      00518845    mov eax,[ebp-14h]"
-"	      00518848    add eax,[ebp-1Ch]"
-"	      0051884b    mov [ebp-20h],eax"
+"	      00518845    mov eax,citysize"
+"	      00518848    add eax,i"
+"	      0051884b    mov z,eax"
 );
 // LINE 1566:
 	asm( 
 "	      0051884e    jmp near ptr 00518856h"
-"	      00518853    dec dword ptr [ebp-18h]"
-"	      00518856    mov eax,[ebp-1Ch]"
+"	      00518853    dec x"
+"	      00518856    mov eax,i"
 "	      00518859    neg eax"
 "	      0051885b    dec eax"
-"	      0051885c    cmp eax,[ebp-18h]"
+"	      0051885c    cmp eax,x"
 "	      0051885f    jg near ptr 005189E2h"
 );
 // LINE 1568:
 	asm( 
 "	      00518865    mov eax,ds:[5B5CBCh]"
-"	      0051886a    and eax,[ebp-20h]"
+"	      0051886a    and eax,z"
 "	      0051886d    mov cl,ds:[5B5CC0h]"
 "	      00518873    shl eax,cl"
 "	      00518875    mov ecx,ds:[5B5CBCh]"
-"	      0051887b    and ecx,[ebp-18h]"
+"	      0051887b    and ecx,x"
 "	      0051887e    add ecx,ecx"
 "	      00518880    lea eax,[ecx+eax*2]"
 "	      00518883    mov ecx,ds:[67EB10h]"
 "	      00518889    xor edx,edx"
 "	      0051888b    mov dx,[eax+ecx]"
-"	      0051888f    mov [ebp-24h],edx"
+"	      0051888f    mov alt,edx"
 );
 // LINE 1569:
 	asm( 
-"	      00518892    mov eax,[ebp-20h]"
+"	      00518892    mov eax,z"
 "	      00518895    dec eax"
 "	      00518896    and eax,ds:[5B5CBCh]"
 "	      0051889c    mov cl,ds:[5B5CC0h]"
 "	      005188a2    shl eax,cl"
-"	      005188a4    mov ecx,[ebp-18h]"
+"	      005188a4    mov ecx,x"
 "	      005188a7    dec ecx"
 "	      005188a8    and ecx,ds:[5B5CBCh]"
 "	      005188ae    add ecx,ecx"
@@ -6759,32 +6759,32 @@ void AdjustTerrainMap() {
 "	      005188b3    mov ecx,ds:[67EB10h]"
 "	      005188b9    xor edx,edx"
 "	      005188bb    mov dx,[eax+ecx]"
-"	      005188bf    mov [ebp-4],edx"
+"	      005188bf    mov alt1,edx"
 );
 // LINE 1570:
 	asm( 
-"	      005188c2    mov eax,[ebp-20h]"
+"	      005188c2    mov eax,z"
 "	      005188c5    dec eax"
 "	      005188c6    and eax,ds:[5B5CBCh]"
 "	      005188cc    mov cl,ds:[5B5CC0h]"
 "	      005188d2    shl eax,cl"
 "	      005188d4    mov ecx,ds:[5B5CBCh]"
-"	      005188da    and ecx,[ebp-18h]"
+"	      005188da    and ecx,x"
 "	      005188dd    add ecx,ecx"
 "	      005188df    lea eax,[ecx+eax*2]"
 "	      005188e2    mov ecx,ds:[67EB10h]"
 "	      005188e8    xor edx,edx"
 "	      005188ea    mov dx,[eax+ecx]"
-"	      005188ee    mov [ebp-0Ch],edx"
+"	      005188ee    mov alt2,edx"
 );
 // LINE 1571:
 	asm( 
-"	      005188f1    mov eax,[ebp-20h]"
+"	      005188f1    mov eax,z"
 "	      005188f4    dec eax"
 "	      005188f5    and eax,ds:[5B5CBCh]"
 "	      005188fb    mov cl,ds:[5B5CC0h]"
 "	      00518901    shl eax,cl"
-"	      00518903    mov ecx,[ebp-18h]"
+"	      00518903    mov ecx,x"
 "	      00518906    inc ecx"
 "	      00518907    and ecx,ds:[5B5CBCh]"
 "	      0051890d    add ecx,ecx"
@@ -6792,59 +6792,59 @@ void AdjustTerrainMap() {
 "	      00518912    mov ecx,ds:[67EB10h]"
 "	      00518918    xor edx,edx"
 "	      0051891a    mov dx,[eax+ecx]"
-"	      0051891e    mov [ebp-10h],edx"
+"	      0051891e    mov alt3,edx"
 );
 // LINE 1572:
 	asm( 
-"	      00518921    mov eax,[ebp-4]"
+"	      00518921    mov eax,alt1"
 "	      00518924    add eax,20h"
-"	      00518927    cmp eax,[ebp-24h]"
+"	      00518927    cmp eax,alt"
 "	      0051892a    jge near ptr 00518939h"
-"	      00518930    mov eax,[ebp-4]"
+"	      00518930    mov eax,alt1"
 "	      00518933    add eax,20h"
-"	      00518936    mov [ebp-24h],eax"
-"	      00518939    mov eax,[ebp-4]"
+"	      00518936    mov alt,eax"
+"	      00518939    mov eax,alt1"
 "	      0051893c    sub eax,20h"
-"	      0051893f    cmp eax,[ebp-24h]"
+"	      0051893f    cmp eax,alt"
 "	      00518942    jle near ptr 00518951h"
-"	      00518948    mov eax,[ebp-4]"
+"	      00518948    mov eax,alt1"
 "	      0051894b    sub eax,20h"
-"	      0051894e    mov [ebp-24h],eax"
-"	      00518951    mov eax,[ebp-10h]"
+"	      0051894e    mov alt,eax"
+"	      00518951    mov eax,alt3"
 "	      00518954    add eax,20h"
-"	      00518957    cmp eax,[ebp-24h]"
+"	      00518957    cmp eax,alt"
 "	      0051895a    jge near ptr 00518969h"
-"	      00518960    mov eax,[ebp-10h]"
+"	      00518960    mov eax,alt3"
 "	      00518963    add eax,20h"
-"	      00518966    mov [ebp-24h],eax"
-"	      00518969    mov eax,[ebp-10h]"
+"	      00518966    mov alt,eax"
+"	      00518969    mov eax,alt3"
 "	      0051896c    sub eax,20h"
-"	      0051896f    cmp eax,[ebp-24h]"
+"	      0051896f    cmp eax,alt"
 "	      00518972    jle near ptr 00518981h"
-"	      00518978    mov eax,[ebp-10h]"
+"	      00518978    mov eax,alt3"
 "	      0051897b    sub eax,20h"
-"	      0051897e    mov [ebp-24h],eax"
-"	      00518981    mov eax,[ebp-0Ch]"
+"	      0051897e    mov alt,eax"
+"	      00518981    mov eax,alt2"
 "	      00518984    add eax,20h"
-"	      00518987    cmp eax,[ebp-24h]"
+"	      00518987    cmp eax,alt"
 "	      0051898a    jge near ptr 00518999h"
-"	      00518990    mov eax,[ebp-0Ch]"
+"	      00518990    mov eax,alt2"
 "	      00518993    add eax,20h"
-"	      00518996    mov [ebp-24h],eax"
-"	      00518999    mov eax,[ebp-0Ch]"
+"	      00518996    mov alt,eax"
+"	      00518999    mov eax,alt2"
 "	      0051899c    sub eax,20h"
-"	      0051899f    cmp eax,[ebp-24h]"
+"	      0051899f    cmp eax,alt"
 "	      005189a2    jle near ptr 005189B1h"
-"	      005189a8    mov eax,[ebp-0Ch]"
+"	      005189a8    mov eax,alt2"
 "	      005189ab    sub eax,20h"
-"	      005189ae    mov [ebp-24h],eax"
-"	      005189b1    mov eax,[ebp-24h]"
+"	      005189ae    mov alt,eax"
+"	      005189b1    mov eax,alt"
 "	      005189b4    mov edx,ds:[5B5CBCh]"
-"	      005189ba    and edx,[ebp-20h]"
+"	      005189ba    and edx,z"
 "	      005189bd    mov cl,ds:[5B5CC0h]"
 "	      005189c3    shl edx,cl"
 "	      005189c5    mov ecx,ds:[5B5CBCh]"
-"	      005189cb    and ecx,[ebp-18h]"
+"	      005189cb    and ecx,x"
 "	      005189ce    add ecx,ecx"
 "	      005189d0    lea edx,[ecx+edx*2]"
 "	      005189d3    mov ecx,ds:[67EB10h]"
@@ -6871,33 +6871,33 @@ void AdjustTerrainMap() {
 "	      00518a0a    mov ecx,ds:[67EB10h]"
 "	      00518a10    xor edx,edx"
 "	      00518a12    mov dx,[eax+ecx]"
-"	      00518a16    mov [ebp-24h],edx"
+"	      00518a16    mov alt,edx"
 );
 // LINE 1580:
 	asm( 
-"	      00518a19    mov dword ptr [ebp-18h],80h"
+"	      00518a19    mov x,80h"
 "	      00518a20    jmp near ptr 00518A28h"
-"	      00518a25    inc dword ptr [ebp-18h]"
-"	      00518a28    cmp dword ptr [ebp-18h],90h"
+"	      00518a25    inc x"
+"	      00518a28    cmp x,90h"
 "	      00518a2f    jg near ptr 00518A87h"
 );
 // LINE 1582:
 	asm( 
-"	      00518a35    mov dword ptr [ebp-20h],80h"
+"	      00518a35    mov z,80h"
 "	      00518a3c    jmp near ptr 00518A44h"
-"	      00518a41    inc dword ptr [ebp-20h]"
-"	      00518a44    cmp dword ptr [ebp-20h],90h"
+"	      00518a41    inc z"
+"	      00518a44    cmp z,90h"
 "	      00518a4b    jg near ptr 00518A82h"
 );
 // LINE 1584:
 	asm( 
-"	      00518a51    mov eax,[ebp-24h]"
+"	      00518a51    mov eax,alt"
 "	      00518a54    mov edx,ds:[5B5CBCh]"
-"	      00518a5a    and edx,[ebp-20h]"
+"	      00518a5a    and edx,z"
 "	      00518a5d    mov cl,ds:[5B5CC0h]"
 "	      00518a63    shl edx,cl"
 "	      00518a65    mov ecx,ds:[5B5CBCh]"
-"	      00518a6b    and ecx,[ebp-18h]"
+"	      00518a6b    and ecx,x"
 "	      00518a6e    add ecx,ecx"
 "	      00518a70    lea edx,[ecx+edx*2]"
 "	      00518a73    mov ecx,ds:[67EB10h]"
@@ -6946,51 +6946,51 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1613:
 	asm( 
-"	      00518a95    cmp dword ptr [ebp+10h],0"
+"	      00518a95    cmp landable,0"
 "	      00518a99    je near ptr 00518AA8h"
 );
 // LINE 1614:
 	asm( 
-"	      00518a9f    mov eax,[ebp+10h]"
+"	      00518a9f    mov eax,landable"
 "	      00518aa2    mov dword ptr [eax],0"
 );
 // LINE 1617:
 	asm( 
-"	      00518aa8    mov eax,[ebp+8]"
+"	      00518aa8    mov eax,worldx"
 "	      00518aab    add eax,20000000h"
 "	      00518ab0    sar eax,16h"
-"	      00518ab3    mov [ebp-30h],eax"
+"	      00518ab3    mov cell.x,eax"
 );
 // LINE 1618:
 	asm( 
 "	      00518ab6    mov eax,20000000h"
-"	      00518abb    sub eax,[ebp+0Ch]"
+"	      00518abb    sub eax,worldz"
 "	      00518abe    sar eax,16h"
-"	      00518ac1    mov [ebp-2Ch],eax"
+"	      00518ac1    mov cell.y,eax"
 );
 // LINE 1621:
 	asm( 
-"	      00518ac4    mov eax,[ebp-30h]"
+"	      00518ac4    mov eax,cell.x"
 "	      00518ac7    shl eax,6"
 "	      00518aca    sub eax,1FE0h"
-"	      00518acf    mov [ebp-18h],eax"
+"	      00518acf    mov x,eax"
 );
 // LINE 1622:
 	asm( 
 "	      00518ad2    mov eax,2000h"
-"	      00518ad7    mov ecx,[ebp-2Ch]"
+"	      00518ad7    mov ecx,cell.y"
 "	      00518ada    shl ecx,6"
 "	      00518add    sub eax,ecx"
 "	      00518adf    sub eax,20h"
-"	      00518ae2    mov [ebp-1Ch],eax"
+"	      00518ae2    mov z,eax"
 );
 // LINE 1625:
 	asm( 
-"	      00518ae5    mov eax,[ebp-2Ch]"
+"	      00518ae5    mov eax,cell.y"
 "	      00518ae8    and eax,ds:[5B5CBCh]"
 "	      00518aee    mov cl,ds:[5B5CC0h]"
 "	      00518af4    shl eax,cl"
-"	      00518af6    mov ecx,[ebp-30h]"
+"	      00518af6    mov ecx,cell.x"
 "	      00518af9    inc ecx"
 "	      00518afa    and ecx,ds:[5B5CBCh]"
 "	      00518b00    add ecx,ecx"
@@ -6999,16 +6999,16 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518b0b    xor edx,edx"
 "	      00518b0d    mov dx,[eax+ecx]"
 "	      00518b11    shl edx,10h"
-"	      00518b14    mov [ebp-4],edx"
+"	      00518b14    mov alt1,edx"
 );
 // LINE 1626:
 	asm( 
-"	      00518b17    mov eax,[ebp-2Ch]"
+"	      00518b17    mov eax,cell.y"
 "	      00518b1a    inc eax"
 "	      00518b1b    and eax,ds:[5B5CBCh]"
 "	      00518b21    mov cl,ds:[5B5CC0h]"
 "	      00518b27    shl eax,cl"
-"	      00518b29    mov ecx,[ebp-30h]"
+"	      00518b29    mov ecx,cell.x"
 "	      00518b2c    and ecx,ds:[5B5CBCh]"
 "	      00518b32    add ecx,ecx"
 "	      00518b34    lea eax,[ecx+eax*2]"
@@ -7016,61 +7016,61 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518b3d    xor edx,edx"
 "	      00518b3f    mov dx,[eax+ecx]"
 "	      00518b43    shl edx,10h"
-"	      00518b46    mov [ebp-0Ch],edx"
+"	      00518b46    mov alt2,edx"
 );
 // LINE 1633:
 	asm( 
-"	      00518b49    and dword ptr [ebp+8],3FFFFFh"
+"	      00518b49    and worldx,3FFFFFh"
 );
 // LINE 1634:
 	asm( 
-"	      00518b50    and dword ptr [ebp+0Ch],3FFFFFh"
+"	      00518b50    and worldz,3FFFFFh"
 );
 // LINE 1642:
 	asm( 
 "	      00518b57    mov eax,ds:[62A524h]"
 "	      00518b5c    push eax"
-"	      00518b5d    mov eax,[ebp+8]"
+"	      00518b5d    mov eax,worldx"
 "	      00518b60    push eax"
 "	      00518b61    call 004D19BDh"
 "	      00518b66    add esp,8"
-"	      00518b69    mov [ebp-24h],eax"
+"	      00518b69    mov ratio,eax"
 );
 // LINE 1643:
 	asm( 
-"	      00518b6c    mov eax,[ebp-24h]"
+"	      00518b6c    mov eax,ratio"
 "	      00518b6f    push eax"
 "	      00518b70    push 400000h"
 "	      00518b75    call 004D19BDh"
 "	      00518b7a    add esp,8"
-"	      00518b7d    mov [ebp-28h],eax"
+"	      00518b7d    mov hypz,eax"
 );
 // LINE 1644:
 	asm( 
-"	      00518b80    mov eax,[ebp-24h]"
+"	      00518b80    mov eax,ratio"
 "	      00518b83    push eax"
-"	      00518b84    mov eax,[ebp-4]"
-"	      00518b87    sub eax,[ebp-0Ch]"
+"	      00518b84    mov eax,alt1"
+"	      00518b87    sub eax,alt2"
 "	      00518b8a    push eax"
 "	      00518b8b    call 004D19BDh"
 "	      00518b90    add esp,8"
-"	      00518b93    mov edx,[ebp-0Ch]"
+"	      00518b93    mov edx,alt2"
 "	      00518b96    add edx,eax"
-"	      00518b98    mov [ebp-8],edx"
+"	      00518b98    mov hypalt,edx"
 );
 // LINE 1651:
 	asm( 
-"	      00518b9b    mov eax,[ebp+0Ch]"
-"	      00518b9e    cmp [ebp-28h],eax"
+"	      00518b9b    mov eax,worldz"
+"	      00518b9e    cmp hypz,eax"
 "	      00518ba1    jge near ptr 00518C63h"
 );
 // LINE 1654:
 	asm( 
-"	      00518ba7    mov eax,[ebp-2Ch]"
+"	      00518ba7    mov eax,cell.y"
 "	      00518baa    and eax,ds:[5B5CBCh]"
 "	      00518bb0    mov cl,ds:[5B5CC0h]"
 "	      00518bb6    shl eax,cl"
-"	      00518bb8    mov ecx,[ebp-30h]"
+"	      00518bb8    mov ecx,cell.x"
 "	      00518bbb    inc ecx"
 "	      00518bbc    and ecx,ds:[5B5CBCh]"
 "	      00518bc2    add ecx,ecx"
@@ -7079,15 +7079,15 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518bcd    xor edx,edx"
 "	      00518bcf    mov dx,[eax+ecx]"
 "	      00518bd3    shl edx,10h"
-"	      00518bd6    mov [ebp-4],edx"
+"	      00518bd6    mov alt1,edx"
 );
 // LINE 1655:
 	asm( 
-"	      00518bd9    mov eax,[ebp-2Ch]"
+"	      00518bd9    mov eax,cell.y"
 "	      00518bdc    and eax,ds:[5B5CBCh]"
 "	      00518be2    mov cl,ds:[5B5CC0h]"
 "	      00518be8    shl eax,cl"
-"	      00518bea    mov ecx,[ebp-30h]"
+"	      00518bea    mov ecx,cell.x"
 "	      00518bed    and ecx,ds:[5B5CBCh]"
 "	      00518bf3    add ecx,ecx"
 "	      00518bf5    lea eax,[ecx+eax*2]"
@@ -7095,28 +7095,28 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518bfe    xor edx,edx"
 "	      00518c00    mov dx,[eax+ecx]"
 "	      00518c04    shl edx,10h"
-"	      00518c07    mov [ebp-0Ch],edx"
+"	      00518c07    mov alt2,edx"
 );
 // LINE 1656:
 	asm( 
-"	      00518c0a    mov dword ptr [ebp-14h],400000h"
+"	      00518c0a    mov sidez,400000h"
 );
 // LINE 1657:
 	asm( 
-"	      00518c11    cmp dword ptr [ebp+10h],0"
+"	      00518c11    cmp landable,0"
 "	      00518c15    je near ptr 00518C5Eh"
 );
 // LINE 1660:
 	asm( 
-"	      00518c1b    mov eax,[ebp-8]"
-"	      00518c1e    sub eax,[ebp-4]"
+"	      00518c1b    mov eax,hypalt"
+"	      00518c1e    sub eax,alt1"
 "	      00518c21    cdq"
 "	      00518c22    xor eax,edx"
 "	      00518c24    sub eax,edx"
 "	      00518c26    cmp eax,90000h"
 "	      00518c2b    jge near ptr 00518C55h"
-"	      00518c31    mov eax,[ebp-8]"
-"	      00518c34    sub eax,[ebp-0Ch]"
+"	      00518c31    mov eax,hypalt"
+"	      00518c34    sub eax,alt2"
 "	      00518c37    cdq"
 "	      00518c38    xor eax,edx"
 "	      00518c3a    sub eax,edx"
@@ -7125,7 +7125,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1662:
 	asm( 
-"	      00518c47    mov eax,[ebp+10h]"
+"	      00518c47    mov eax,landable"
 "	      00518c4a    mov dword ptr [eax],1"
 );
 // LINE 1664:
@@ -7134,24 +7134,24 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1666:
 	asm( 
-"	      00518c55    mov eax,[ebp+10h]"
+"	      00518c55    mov eax,landable"
 "	      00518c58    mov dword ptr [eax],0"
 );
 // LINE 1670:
 	asm( 
 "	      00518c5e    jmp near ptr 00518DE6h"
-"	      00518c63    mov eax,[ebp+0Ch]"
-"	      00518c66    cmp [ebp-28h],eax"
+"	      00518c63    mov eax,worldz"
+"	      00518c66    cmp hypz,eax"
 "	      00518c69    jle near ptr 00518D2Dh"
 );
 // LINE 1673:
 	asm( 
-"	      00518c6f    mov eax,[ebp-2Ch]"
+"	      00518c6f    mov eax,cell.y"
 "	      00518c72    inc eax"
 "	      00518c73    and eax,ds:[5B5CBCh]"
 "	      00518c79    mov cl,ds:[5B5CC0h]"
 "	      00518c7f    shl eax,cl"
-"	      00518c81    mov ecx,[ebp-30h]"
+"	      00518c81    mov ecx,cell.x"
 "	      00518c84    inc ecx"
 "	      00518c85    and ecx,ds:[5B5CBCh]"
 "	      00518c8b    add ecx,ecx"
@@ -7160,16 +7160,16 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518c96    xor edx,edx"
 "	      00518c98    mov dx,[eax+ecx]"
 "	      00518c9c    shl edx,10h"
-"	      00518c9f    mov [ebp-4],edx"
+"	      00518c9f    mov alt1,edx"
 );
 // LINE 1674:
 	asm( 
-"	      00518ca2    mov eax,[ebp-2Ch]"
+"	      00518ca2    mov eax,cell.y"
 "	      00518ca5    inc eax"
 "	      00518ca6    and eax,ds:[5B5CBCh]"
 "	      00518cac    mov cl,ds:[5B5CC0h]"
 "	      00518cb2    shl eax,cl"
-"	      00518cb4    mov ecx,[ebp-30h]"
+"	      00518cb4    mov ecx,cell.x"
 "	      00518cb7    and ecx,ds:[5B5CBCh]"
 "	      00518cbd    add ecx,ecx"
 "	      00518cbf    lea eax,[ecx+eax*2]"
@@ -7177,28 +7177,28 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518cc8    xor edx,edx"
 "	      00518cca    mov dx,[eax+ecx]"
 "	      00518cce    shl edx,10h"
-"	      00518cd1    mov [ebp-0Ch],edx"
+"	      00518cd1    mov alt2,edx"
 );
 // LINE 1675:
 	asm( 
-"	      00518cd4    mov dword ptr [ebp-14h],0"
+"	      00518cd4    mov sidez,0"
 );
 // LINE 1676:
 	asm( 
-"	      00518cdb    cmp dword ptr [ebp+10h],0"
+"	      00518cdb    cmp landable,0"
 "	      00518cdf    je near ptr 00518D28h"
 );
 // LINE 1679:
 	asm( 
-"	      00518ce5    mov eax,[ebp-8]"
-"	      00518ce8    sub eax,[ebp-4]"
+"	      00518ce5    mov eax,hypalt"
+"	      00518ce8    sub eax,alt1"
 "	      00518ceb    cdq"
 "	      00518cec    xor eax,edx"
 "	      00518cee    sub eax,edx"
 "	      00518cf0    cmp eax,90000h"
 "	      00518cf5    jge near ptr 00518D1Fh"
-"	      00518cfb    mov eax,[ebp-8]"
-"	      00518cfe    sub eax,[ebp-0Ch]"
+"	      00518cfb    mov eax,hypalt"
+"	      00518cfe    sub eax,alt2"
 "	      00518d01    cdq"
 "	      00518d02    xor eax,edx"
 "	      00518d04    sub eax,edx"
@@ -7207,7 +7207,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1681:
 	asm( 
-"	      00518d11    mov eax,[ebp+10h]"
+"	      00518d11    mov eax,landable"
 "	      00518d14    mov dword ptr [eax],1"
 );
 // LINE 1683:
@@ -7216,7 +7216,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1685:
 	asm( 
-"	      00518d1f    mov eax,[ebp+10h]"
+"	      00518d1f    mov eax,landable"
 "	      00518d22    mov dword ptr [eax],0"
 );
 // LINE 1689:
@@ -7225,17 +7225,17 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1691:
 	asm( 
-"	      00518d2d    cmp dword ptr [ebp+10h],0"
+"	      00518d2d    cmp landable,0"
 "	      00518d31    je near ptr 00518DDEh"
 );
 // LINE 1693:
 	asm( 
-"	      00518d37    mov eax,[ebp-2Ch]"
+"	      00518d37    mov eax,cell.y"
 "	      00518d3a    inc eax"
 "	      00518d3b    and eax,ds:[5B5CBCh]"
 "	      00518d41    mov cl,ds:[5B5CC0h]"
 "	      00518d47    shl eax,cl"
-"	      00518d49    mov ecx,[ebp-30h]"
+"	      00518d49    mov ecx,cell.x"
 "	      00518d4c    inc ecx"
 "	      00518d4d    and ecx,ds:[5B5CBCh]"
 "	      00518d53    add ecx,ecx"
@@ -7244,15 +7244,15 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518d5e    xor edx,edx"
 "	      00518d60    mov dx,[eax+ecx]"
 "	      00518d64    shl edx,10h"
-"	      00518d67    mov [ebp-4],edx"
+"	      00518d67    mov alt1,edx"
 );
 // LINE 1694:
 	asm( 
-"	      00518d6a    mov eax,[ebp-2Ch]"
+"	      00518d6a    mov eax,cell.y"
 "	      00518d6d    and eax,ds:[5B5CBCh]"
 "	      00518d73    mov cl,ds:[5B5CC0h]"
 "	      00518d79    shl eax,cl"
-"	      00518d7b    mov ecx,[ebp-30h]"
+"	      00518d7b    mov ecx,cell.x"
 "	      00518d7e    and ecx,ds:[5B5CBCh]"
 "	      00518d84    add ecx,ecx"
 "	      00518d86    lea eax,[ecx+eax*2]"
@@ -7260,19 +7260,19 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 "	      00518d8f    xor edx,edx"
 "	      00518d91    mov dx,[eax+ecx]"
 "	      00518d95    shl edx,10h"
-"	      00518d98    mov [ebp-0Ch],edx"
+"	      00518d98    mov alt2,edx"
 );
 // LINE 1697:
 	asm( 
-"	      00518d9b    mov eax,[ebp-8]"
-"	      00518d9e    sub eax,[ebp-4]"
+"	      00518d9b    mov eax,hypalt"
+"	      00518d9e    sub eax,alt1"
 "	      00518da1    cdq"
 "	      00518da2    xor eax,edx"
 "	      00518da4    sub eax,edx"
 "	      00518da6    cmp eax,90000h"
 "	      00518dab    jge near ptr 00518DD5h"
-"	      00518db1    mov eax,[ebp-8]"
-"	      00518db4    sub eax,[ebp-0Ch]"
+"	      00518db1    mov eax,hypalt"
+"	      00518db4    sub eax,alt2"
 "	      00518db7    cdq"
 "	      00518db8    xor eax,edx"
 "	      00518dba    sub eax,edx"
@@ -7281,7 +7281,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1699:
 	asm( 
-"	      00518dc7    mov eax,[ebp+10h]"
+"	      00518dc7    mov eax,landable"
 "	      00518dca    mov dword ptr [eax],1"
 );
 // LINE 1701:
@@ -7290,72 +7290,72 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 );
 // LINE 1703:
 	asm( 
-"	      00518dd5    mov eax,[ebp+10h]"
+"	      00518dd5    mov eax,landable"
 "	      00518dd8    mov dword ptr [eax],0"
 );
 // LINE 1707:
 	asm( 
-"	      00518dde    mov eax,[ebp-8]"
+"	      00518dde    mov eax,hypalt"
 "	      00518de1    jmp near ptr 00518E5Fh"
 );
 // LINE 1710:
 	asm( 
-"	      00518de6    mov eax,[ebp-24h]"
+"	      00518de6    mov eax,ratio"
 "	      00518de9    push eax"
-"	      00518dea    mov eax,[ebp-4]"
-"	      00518ded    sub eax,[ebp-0Ch]"
+"	      00518dea    mov eax,alt1"
+"	      00518ded    sub eax,alt2"
 "	      00518df0    push eax"
 "	      00518df1    call 004D19BDh"
 "	      00518df6    add esp,8"
-"	      00518df9    mov ecx,[ebp-0Ch]"
+"	      00518df9    mov ecx,alt2"
 "	      00518dfc    add ecx,eax"
-"	      00518dfe    mov [ebp-10h],ecx"
+"	      00518dfe    mov sidealt,ecx"
 );
 // LINE 1715:
 	asm( 
-"	      00518e01    mov eax,[ebp-14h]"
-"	      00518e04    sub eax,[ebp-28h]"
-"	      00518e07    mov [ebp-20h],eax"
+"	      00518e01    mov eax,sidez"
+"	      00518e04    sub eax,hypz"
+"	      00518e07    mov zdist,eax"
 );
 // LINE 1718:
 	asm( 
-"	      00518e0a    cmp dword ptr [ebp-20h],64h"
+"	      00518e0a    cmp zdist,64h"
 "	      00518e0e    jge near ptr 00518E26h"
-"	      00518e14    cmp dword ptr [ebp-20h],0FFFFFF9Ch"
+"	      00518e14    cmp zdist,0FFFFFF9Ch"
 "	      00518e18    jle near ptr 00518E26h"
 );
 // LINE 1719:
 	asm( 
-"	      00518e1e    mov eax,[ebp-8]"
+"	      00518e1e    mov eax,hypalt"
 "	      00518e21    jmp near ptr 00518E5Fh"
 );
 // LINE 1721:
 	asm( 
-"	      00518e26    mov eax,[ebp-20h]"
+"	      00518e26    mov eax,zdist"
 "	      00518e29    push eax"
-"	      00518e2a    mov eax,[ebp-14h]"
-"	      00518e2d    sub eax,[ebp+0Ch]"
+"	      00518e2a    mov eax,sidez"
+"	      00518e2d    sub eax,worldz"
 "	      00518e30    push eax"
 "	      00518e31    call 004D19DFh"
 "	      00518e36    add esp,8"
-"	      00518e39    mov [ebp-24h],eax"
+"	      00518e39    mov ratio,eax"
 );
 // LINE 1724:
 	asm( 
-"	      00518e3c    mov eax,[ebp-24h]"
+"	      00518e3c    mov eax,ratio"
 "	      00518e3f    push eax"
-"	      00518e40    mov eax,[ebp-8]"
-"	      00518e43    sub eax,[ebp-10h]"
+"	      00518e40    mov eax,hypalt"
+"	      00518e43    sub eax,sidealt"
 "	      00518e46    push eax"
 "	      00518e47    call 004D19BDh"
 "	      00518e4c    add esp,8"
-"	      00518e4f    mov ecx,[ebp-10h]"
+"	      00518e4f    mov ecx,sidealt"
 "	      00518e52    add ecx,eax"
-"	      00518e54    mov [ebp-4],ecx"
+"	      00518e54    mov alt1,ecx"
 );
 // LINE 1726:
 	asm( 
-"	      00518e57    mov eax,[ebp-4]"
+"	      00518e57    mov eax,alt1"
 "	      00518e5a    jmp near ptr 00518E5Fh"
 );
 // LINE 1727:
@@ -7416,64 +7416,64 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 );
 // LINE 1829:
 	asm( 
-"	      00518e7f    mov eax,[ebp+8]"
+"	      00518e7f    mov eax,cityx"
 "	      00518e82    add eax,20000000h"
 "	      00518e87    shr eax,16h"
 "	      00518e8a    and eax,0FFh"
 "	      00518e8f    shl eax,0Ah"
 "	      00518e92    mov ecx,20000000h"
-"	      00518e97    sub ecx,[ebp+0Ch]"
+"	      00518e97    sub ecx,cityy"
 "	      00518e9a    shr ecx,16h"
 "	      00518e9d    and ecx,0FFh"
 "	      00518ea3    mov eax,[eax+ecx*4+67ED30h]"
-"	      00518eaa    mov [ebp-1Ch],eax"
+"	      00518eaa    mov cptr,eax"
 );
 // LINE 1831:
 	asm( 
-"	      00518ead    mov eax,[ebp+8]"
-"	      00518eb0    mov ecx,[ebp-1Ch]"
+"	      00518ead    mov eax,cityx"
+"	      00518eb0    mov ecx,cptr"
 "	      00518eb3    movsx ecx,word ptr [ecx+2]"
 "	      00518eb7    shl ecx,10h"
 "	      00518eba    sub eax,ecx"
-"	      00518ebc    mov [ebp-20h],eax"
+"	      00518ebc    mov normx,eax"
 );
 // LINE 1832:
 	asm( 
-"	      00518ebf    mov eax,[ebp+0Ch]"
-"	      00518ec2    mov ecx,[ebp-1Ch]"
+"	      00518ebf    mov eax,cityy"
+"	      00518ec2    mov ecx,cptr"
 "	      00518ec5    movsx ecx,word ptr [ecx+6]"
 "	      00518ec9    shl ecx,10h"
 "	      00518ecc    sub eax,ecx"
-"	      00518ece    mov [ebp-8],eax"
+"	      00518ece    mov normz,eax"
 );
 // LINE 1837:
 	asm( 
-"	      00518ed1    mov dword ptr [ebp-24h],220000h"
+"	      00518ed1    mov normy,220000h"
 );
 // LINE 1839:
 	asm( 
-"	      00518ed8    mov dword ptr [ebp-14h],0"
+"	      00518ed8    mov objy,0"
 );
 // LINE 1840:
 	asm( 
-"	      00518edf    mov dword ptr [ebp-0Ch],0"
+"	      00518edf    mov maxobjy,0"
 );
 // LINE 1841:
 	asm( 
-"	      00518ee6    mov eax,[ebp-1Ch]"
+"	      00518ee6    mov eax,cptr"
 "	      00518ee9    mov eax,[eax+0Ch]"
-"	      00518eec    mov [ebp-10h],eax"
+"	      00518eec    mov stobj,eax"
 );
 // LINE 1842:
 	asm( 
-"	      00518eef    cmp dword ptr [ebp-10h],0"
+"	      00518eef    cmp stobj,0"
 "	      00518ef3    je near ptr 00518F4Bh"
 );
 // LINE 1844:
 	asm( 
-"	      00518ef9    mov eax,[ebp-10h]"
+"	      00518ef9    mov eax,stobj"
 "	      00518efc    mov eax,[eax+8]"
-"	      00518eff    mov [ebp-4],eax"
+"	      00518eff    mov flags,eax"
 );
 // LINE 1850:
 	asm( 
@@ -7481,37 +7481,37 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 "	      00518f04    push 0"
 "	      00518f06    push 5"
 "	      00518f08    push 3"
-"	      00518f0a    lea eax,[ebp-4]"
+"	      00518f0a    lea eax,flags"
 "	      00518f0d    push eax"
-"	      00518f0e    mov eax,[ebp-8]"
+"	      00518f0e    mov eax,normz"
 "	      00518f11    push eax"
-"	      00518f12    mov eax,[ebp-24h]"
+"	      00518f12    mov eax,normy"
 "	      00518f15    push eax"
-"	      00518f16    mov eax,[ebp-20h]"
+"	      00518f16    mov eax,normx"
 "	      00518f19    push eax"
-"	      00518f1a    mov eax,[ebp-10h]"
+"	      00518f1a    mov eax,stobj"
 "	      00518f1d    mov eax,[eax+4]"
 "	      00518f20    push eax"
 "	      00518f21    call 004D31E7h"
 "	      00518f26    add esp,24h"
-"	      00518f29    mov [ebp-14h],eax"
+"	      00518f29    mov objy,eax"
 );
 // LINE 1852:
 	asm( 
-"	      00518f2c    mov eax,[ebp-14h]"
-"	      00518f2f    cmp [ebp-0Ch],eax"
+"	      00518f2c    mov eax,objy"
+"	      00518f2f    cmp maxobjy,eax"
 "	      00518f32    jge near ptr 00518F3Eh"
 );
 // LINE 1853:
 	asm( 
-"	      00518f38    mov eax,[ebp-14h]"
-"	      00518f3b    mov [ebp-0Ch],eax"
+"	      00518f38    mov eax,objy"
+"	      00518f3b    mov maxobjy,eax"
 );
 // LINE 1854:
 	asm( 
-"	      00518f3e    mov eax,[ebp-10h]"
+"	      00518f3e    mov eax,stobj"
 "	      00518f41    mov eax,[eax]"
-"	      00518f43    mov [ebp-10h],eax"
+"	      00518f43    mov stobj,eax"
 );
 // LINE 1855:
 	asm( 
@@ -7519,19 +7519,19 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 );
 // LINE 1860:
 	asm( 
-"	      00518f4b    cmp dword ptr [ebp-0Ch],0"
+"	      00518f4b    cmp maxobjy,0"
 "	      00518f4f    jne near ptr 00518F6Fh"
 );
 // LINE 1861:
 	asm( 
 "	      00518f55    push 0"
-"	      00518f57    mov eax,[ebp+0Ch]"
+"	      00518f57    mov eax,cityy"
 "	      00518f5a    push eax"
-"	      00518f5b    mov eax,[ebp+8]"
+"	      00518f5b    mov eax,cityx"
 "	      00518f5e    push eax"
 "	      00518f5f    call 00518A8Ch"
 "	      00518f64    add esp,0Ch"
-"	      00518f67    mov [ebp-18h],eax"
+"	      00518f67    mov alt,eax"
 );
 // LINE 1862:
 	asm( 
@@ -7539,15 +7539,15 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 );
 // LINE 1863:
 	asm( 
-"	      00518f6f    mov eax,[ebp-1Ch]"
+"	      00518f6f    mov eax,cptr"
 "	      00518f72    movsx eax,word ptr [eax+4]"
 "	      00518f76    shl eax,10h"
-"	      00518f79    add eax,[ebp-0Ch]"
-"	      00518f7c    mov [ebp-18h],eax"
+"	      00518f79    add eax,maxobjy"
+"	      00518f7c    mov alt,eax"
 );
 // LINE 1865:
 	asm( 
-"	      00518f7f    mov eax,[ebp-18h]"
+"	      00518f7f    mov eax,alt"
 "	      00518f82    jmp near ptr 00518F87h"
 );
 // LINE 1866:

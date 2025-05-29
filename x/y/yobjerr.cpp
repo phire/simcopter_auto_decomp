@@ -17,11 +17,11 @@ void cYObject::Error(short errNum) {
 "	      00562506    push ebx"
 "	      00562507    push esi"
 "	      00562508    push edi"
-"	      00562509    mov [ebp-4],ecx"
+"	      00562509    mov this,ecx"
 );
 // LINE 14:
 	asm( 
-"	      0056250c    movsx eax,word ptr [ebp+8]"
+"	      0056250c    movsx eax,errNum"
 "	      00562510    mov [ebp-8],eax"
 "	      00562513    jmp near ptr 005625B3h"
 );

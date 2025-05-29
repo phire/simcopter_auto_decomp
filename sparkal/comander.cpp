@@ -15,19 +15,19 @@ void ICommander::ICommander() {
 "	      0049ad36    push ebx"
 "	      0049ad37    push esi"
 "	      0049ad38    push edi"
-"	      0049ad39    mov [ebp-4],ecx"
-"	      0049ad3c    mov eax,[ebp-4]"
+"	      0049ad39    mov this,ecx"
+"	      0049ad3c    mov eax,this"
 "	      0049ad3f    mov dword ptr [eax],5912A8h"
 );
 // LINE 15:
 	asm( 
-"	      0049ad45    mov eax,[ebp-4]"
+"	      0049ad45    mov eax,this"
 "	      0049ad48    mov dword ptr [eax+4],0"
 );
 // LINE 16:
 	asm( 
 "	      0049ad4f    jmp near ptr 0049AD54h"
-"	      0049ad54    mov eax,[ebp-4]"
+"	      0049ad54    mov eax,this"
 "	      0049ad57    pop edi"
 "	      0049ad58    pop esi"
 "	      0049ad59    pop ebx"
@@ -46,8 +46,8 @@ void ICommander::~ICommander() {
 "	      0049ad62    push ebx"
 "	      0049ad63    push esi"
 "	      0049ad64    push edi"
-"	      0049ad65    mov [ebp-4],ecx"
-"	      0049ad68    mov eax,[ebp-4]"
+"	      0049ad65    mov this,ecx"
+"	      0049ad68    mov eax,this"
 "	      0049ad6b    mov dword ptr [eax],5912A8h"
 );
 // LINE 25:
@@ -73,24 +73,24 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 "	      0049ad81    push ebx"
 "	      0049ad82    push esi"
 "	      0049ad83    push edi"
-"	      0049ad84    mov [ebp-8],ecx"
+"	      0049ad84    mov this,ecx"
 );
 // LINE 29:
 	asm( 
-"	      0049ad87    mov eax,[ebp-8]"
+"	      0049ad87    mov eax,this"
 "	      0049ad8a    mov eax,[eax+4]"
-"	      0049ad8d    mov [ebp-4],eax"
+"	      0049ad8d    mov ReturnWindow,eax"
 );
 // LINE 31:
 	asm( 
-"	      0049ad90    mov eax,[ebp-8]"
-"	      0049ad93    mov ecx,[ebp+8]"
+"	      0049ad90    mov eax,this"
+"	      0049ad93    mov ecx,pWindow"
 "	      0049ad96    cmp [eax+4],ecx"
 "	      0049ad99    jne near ptr 0049ADABh"
 );
 // LINE 32:
 	asm( 
-"	      0049ad9f    mov dword ptr [ebp-4],0"
+"	      0049ad9f    mov ReturnWindow,0"
 );
 // LINE 33:
 	asm( 
@@ -98,13 +98,13 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 );
 // LINE 34:
 	asm( 
-"	      0049adab    mov eax,[ebp+8]"
-"	      0049adae    mov ecx,[ebp-8]"
+"	      0049adab    mov eax,pWindow"
+"	      0049adae    mov ecx,this"
 "	      0049adb1    mov [ecx+4],eax"
 );
 // LINE 36:
 	asm( 
-"	      0049adb4    mov eax,[ebp-4]"
+"	      0049adb4    mov eax,ReturnWindow"
 "	      0049adb7    jmp near ptr 0049ADBCh"
 );
 // LINE 37:
@@ -127,16 +127,16 @@ void CDefaultCommander::CDefaultCommander() {
 "	      0049adc9    push ebx"
 "	      0049adca    push esi"
 "	      0049adcb    push edi"
-"	      0049adcc    mov [ebp-4],ecx"
-"	      0049adcf    mov ecx,[ebp-4]"
+"	      0049adcc    mov this,ecx"
+"	      0049adcf    mov ecx,this"
 "	      0049add2    call 0049AD30h"
-"	      0049add7    mov eax,[ebp-4]"
+"	      0049add7    mov eax,this"
 "	      0049adda    mov dword ptr [eax],5912D0h"
 );
 // LINE 45:
 	asm( 
 "	      0049ade0    jmp near ptr 0049ADE5h"
-"	      0049ade5    mov eax,[ebp-4]"
+"	      0049ade5    mov eax,this"
 "	      0049ade8    pop edi"
 "	      0049ade9    pop esi"
 "	      0049adea    pop ebx"
@@ -155,14 +155,14 @@ void CDefaultCommander::~CDefaultCommander() {
 "	      0049adf3    push ebx"
 "	      0049adf4    push esi"
 "	      0049adf5    push edi"
-"	      0049adf6    mov [ebp-4],ecx"
-"	      0049adf9    mov eax,[ebp-4]"
+"	      0049adf6    mov this,ecx"
+"	      0049adf9    mov eax,this"
 "	      0049adfc    mov dword ptr [eax],5912D0h"
 );
 // LINE 49:
 	asm( 
 "	      0049ae02    jmp near ptr 0049AE07h"
-"	      0049ae07    mov ecx,[ebp-4]"
+"	      0049ae07    mov ecx,this"
 "	      0049ae0a    call 0049AD5Ch"
 "	      0049ae0f    pop edi"
 "	      0049ae10    pop esi"
@@ -182,7 +182,7 @@ unsigned long CDefaultCommander::Idle() {
 "	      0049ae1a    push ebx"
 "	      0049ae1b    push esi"
 "	      0049ae1c    push edi"
-"	      0049ae1d    mov [ebp-4],ecx"
+"	      0049ae1d    mov this,ecx"
 );
 // LINE 56:
 	asm( 
@@ -209,7 +209,7 @@ unsigned long CDefaultCommander::OnCharacter(char Character, int32_t RepeatCount
 "	      0049ae32    push ebx"
 "	      0049ae33    push esi"
 "	      0049ae34    push edi"
-"	      0049ae35    mov [ebp-4],ecx"
+"	      0049ae35    mov this,ecx"
 );
 // LINE 61:
 	asm( 
@@ -236,7 +236,7 @@ unsigned long CDefaultCommander::OnMouseDown(int32_t x, int32_t y) {
 "	      0049ae4c    push ebx"
 "	      0049ae4d    push esi"
 "	      0049ae4e    push edi"
-"	      0049ae4f    mov [ebp-4],ecx"
+"	      0049ae4f    mov this,ecx"
 );
 // LINE 66:
 	asm( 
@@ -263,7 +263,7 @@ unsigned long CDefaultCommander::OnMouseUp(int32_t x, int32_t y) {
 "	      0049ae66    push ebx"
 "	      0049ae67    push esi"
 "	      0049ae68    push edi"
-"	      0049ae69    mov [ebp-4],ecx"
+"	      0049ae69    mov this,ecx"
 );
 // LINE 71:
 	asm( 
@@ -290,7 +290,7 @@ unsigned long CDefaultCommander::OnMouseMove(int32_t x, int32_t y) {
 "	      0049ae80    push ebx"
 "	      0049ae81    push esi"
 "	      0049ae82    push edi"
-"	      0049ae83    mov [ebp-4],ecx"
+"	      0049ae83    mov this,ecx"
 );
 // LINE 76:
 	asm( 
@@ -317,11 +317,11 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 "	      0049ae9a    push ebx"
 "	      0049ae9b    push esi"
 "	      0049ae9c    push edi"
-"	      0049ae9d    mov [ebp-4],ecx"
+"	      0049ae9d    mov this,ecx"
 );
 // LINE 81:
 	asm( 
-"	      0049aea0    mov eax,[ebp-4]"
+"	      0049aea0    mov eax,this"
 "	      0049aea3    cmp dword ptr [eax+4],0"
 "	      0049aea7    jne near ptr 0049AEC6h"
 "	      0049aead    push 51h"
@@ -335,8 +335,8 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 // LINE 82:
 	asm( 
 "	      0049aecb    push 0"
-"	      0049aecd    mov eax,[ebp-4]"
-"	      0049aed0    mov ecx,[ebp-4]"
+"	      0049aecd    mov eax,this"
+"	      0049aed0    mov ecx,this"
 "	      0049aed3    mov ecx,[ecx+4]"
 "	      0049aed6    mov edx,[ecx]"
 "	      0049aed8    mov ecx,[eax+4]"
@@ -363,7 +363,7 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 "	      0049aeee    push ebx"
 "	      0049aeef    push esi"
 "	      0049aef0    push edi"
-"	      0049aef1    mov [ebp-4],ecx"
+"	      0049aef1    mov this,ecx"
 );
 // LINE 87:
 	asm( 

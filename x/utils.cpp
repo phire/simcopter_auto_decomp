@@ -17,7 +17,7 @@ void EmptyPStr(unsigned char * str) {
 );
 // LINE 55:
 	asm( 
-"	      00565ca6    mov eax,[ebp+8]"
+"	      00565ca6    mov eax,str"
 "	      00565ca9    mov byte ptr [eax],0"
 );
 // LINE 56:
@@ -48,49 +48,49 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 );
 // LINE 62:
 	asm( 
-"	      00565cbf    mov word ptr [ebp-4],0"
+"	      00565cbf    mov neg,0"
 );
 // LINE 65:
 	asm( 
-"	      00565cc5    mov byte ptr [ebp-8],1"
+"	      00565cc5    mov count,1"
 );
 // LINE 66:
 	asm( 
 "	      00565cc9    xor eax,eax"
-"	      00565ccb    mov al,[ebp-8]"
-"	      00565cce    mov ecx,[ebp+8]"
+"	      00565ccb    mov al,count"
+"	      00565cce    mov ecx,str"
 "	      00565cd1    xor edx,edx"
 "	      00565cd3    mov dl,[eax+ecx]"
 "	      00565cd6    cmp edx,20h"
 "	      00565cd9    jne near ptr 00565CFBh"
-"	      00565cdf    mov eax,[ebp+8]"
+"	      00565cdf    mov eax,str"
 "	      00565ce2    xor ecx,ecx"
 "	      00565ce4    mov cl,[eax]"
 "	      00565ce6    xor eax,eax"
-"	      00565ce8    mov al,[ebp-8]"
+"	      00565ce8    mov al,count"
 "	      00565ceb    cmp ecx,eax"
 "	      00565ced    jl near ptr 00565CFBh"
 );
 // LINE 67:
 	asm( 
-"	      00565cf3    inc byte ptr [ebp-8]"
+"	      00565cf3    inc count"
 "	      00565cf6    jmp near ptr 00565CC9h"
 );
 // LINE 68:
 	asm( 
-"	      00565cfb    mov eax,[ebp+8]"
+"	      00565cfb    mov eax,str"
 "	      00565cfe    xor ecx,ecx"
 "	      00565d00    mov cl,[eax]"
 "	      00565d02    xor eax,eax"
-"	      00565d04    mov al,[ebp-8]"
+"	      00565d04    mov al,count"
 "	      00565d07    cmp ecx,eax"
 "	      00565d09    jl near ptr 00565D4Ch"
 );
 // LINE 70:
 	asm( 
 "	      00565d0f    xor eax,eax"
-"	      00565d11    mov al,[ebp-8]"
-"	      00565d14    mov ecx,[ebp+8]"
+"	      00565d11    mov al,count"
+"	      00565d14    mov ecx,str"
 "	      00565d17    xor edx,edx"
 "	      00565d19    mov dl,[eax+ecx]"
 "	      00565d1c    cmp edx,2Dh"
@@ -98,18 +98,18 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 );
 // LINE 72:
 	asm( 
-"	      00565d25    mov word ptr [ebp-4],1"
+"	      00565d25    mov neg,1"
 );
 // LINE 73:
 	asm( 
-"	      00565d2b    inc byte ptr [ebp-8]"
+"	      00565d2b    inc count"
 );
 // LINE 75:
 	asm( 
 "	      00565d2e    jmp near ptr 00565D4Ch"
 "	      00565d33    xor eax,eax"
-"	      00565d35    mov al,[ebp-8]"
-"	      00565d38    mov ecx,[ebp+8]"
+"	      00565d35    mov al,count"
+"	      00565d38    mov ecx,str"
 "	      00565d3b    xor edx,edx"
 "	      00565d3d    mov dl,[eax+ecx]"
 "	      00565d40    cmp edx,2Bh"
@@ -117,71 +117,71 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 );
 // LINE 77:
 	asm( 
-"	      00565d49    inc byte ptr [ebp-8]"
+"	      00565d49    inc count"
 );
 // LINE 80:
 	asm( 
-"	      00565d4c    mov al,[ebp-8]"
-"	      00565d4f    mov [ebp-0Ch],al"
+"	      00565d4c    mov al,count"
+"	      00565d4f    mov digit,al"
 );
 // LINE 81:
 	asm( 
 "	      00565d52    xor eax,eax"
-"	      00565d54    mov al,[ebp-8]"
-"	      00565d57    mov ecx,[ebp+8]"
+"	      00565d54    mov al,count"
+"	      00565d57    mov ecx,str"
 "	      00565d5a    xor edx,edx"
 "	      00565d5c    mov dl,[eax+ecx]"
 "	      00565d5f    cmp edx,30h"
 "	      00565d62    jl near ptr 00565D9Ah"
 "	      00565d68    xor eax,eax"
-"	      00565d6a    mov al,[ebp-8]"
-"	      00565d6d    mov ecx,[ebp+8]"
+"	      00565d6a    mov al,count"
+"	      00565d6d    mov ecx,str"
 "	      00565d70    xor edx,edx"
 "	      00565d72    mov dl,[eax+ecx]"
 "	      00565d75    cmp edx,39h"
 "	      00565d78    jg near ptr 00565D9Ah"
-"	      00565d7e    mov eax,[ebp+8]"
+"	      00565d7e    mov eax,str"
 "	      00565d81    xor ecx,ecx"
 "	      00565d83    mov cl,[eax]"
 "	      00565d85    xor eax,eax"
-"	      00565d87    mov al,[ebp-8]"
+"	      00565d87    mov al,count"
 "	      00565d8a    cmp ecx,eax"
 "	      00565d8c    jl near ptr 00565D9Ah"
 );
 // LINE 82:
 	asm( 
-"	      00565d92    inc byte ptr [ebp-8]"
+"	      00565d92    inc count"
 "	      00565d95    jmp near ptr 00565D52h"
 );
 // LINE 83:
 	asm( 
 "	      00565d9a    xor eax,eax"
-"	      00565d9c    mov al,[ebp-8]"
-"	      00565d9f    mov ecx,[ebp+8]"
+"	      00565d9c    mov al,count"
+"	      00565d9f    mov ecx,str"
 "	      00565da2    xor edx,edx"
 "	      00565da4    mov dl,[eax+ecx]"
 "	      00565da7    cmp edx,20h"
 "	      00565daa    jne near ptr 00565DCCh"
-"	      00565db0    mov eax,[ebp+8]"
+"	      00565db0    mov eax,str"
 "	      00565db3    xor ecx,ecx"
 "	      00565db5    mov cl,[eax]"
 "	      00565db7    xor eax,eax"
-"	      00565db9    mov al,[ebp-8]"
+"	      00565db9    mov al,count"
 "	      00565dbc    cmp ecx,eax"
 "	      00565dbe    jl near ptr 00565DCCh"
 );
 // LINE 84:
 	asm( 
-"	      00565dc4    inc byte ptr [ebp-8]"
+"	      00565dc4    inc count"
 "	      00565dc7    jmp near ptr 00565D9Ah"
 );
 // LINE 86:
 	asm( 
-"	      00565dcc    mov eax,[ebp+8]"
+"	      00565dcc    mov eax,str"
 "	      00565dcf    xor ecx,ecx"
 "	      00565dd1    mov cl,[eax]"
 "	      00565dd3    xor eax,eax"
-"	      00565dd5    mov al,[ebp-8]"
+"	      00565dd5    mov al,count"
 "	      00565dd8    cmp ecx,eax"
 "	      00565dda    jle near ptr 00565DE8h"
 "	      00565de0    xor ax,ax"
@@ -189,51 +189,51 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 );
 // LINE 88:
 	asm( 
-"	      00565de8    mov eax,[ebp+0Ch]"
+"	      00565de8    mov eax,num"
 "	      00565deb    mov dword ptr [eax],0"
 );
 // LINE 89:
 	asm( 
 "	      00565df1    xor eax,eax"
-"	      00565df3    mov al,[ebp-0Ch]"
-"	      00565df6    mov ecx,[ebp+8]"
+"	      00565df3    mov al,digit"
+"	      00565df6    mov ecx,str"
 "	      00565df9    xor edx,edx"
 "	      00565dfb    mov dl,[eax+ecx]"
 "	      00565dfe    cmp edx,30h"
 "	      00565e01    jl near ptr 00565E59h"
 "	      00565e07    xor eax,eax"
-"	      00565e09    mov al,[ebp-0Ch]"
-"	      00565e0c    mov ecx,[ebp+8]"
+"	      00565e09    mov al,digit"
+"	      00565e0c    mov ecx,str"
 "	      00565e0f    xor edx,edx"
 "	      00565e11    mov dl,[eax+ecx]"
 "	      00565e14    cmp edx,39h"
 "	      00565e17    jg near ptr 00565E59h"
-"	      00565e1d    mov eax,[ebp+8]"
+"	      00565e1d    mov eax,str"
 "	      00565e20    xor ecx,ecx"
 "	      00565e22    mov cl,[eax]"
 "	      00565e24    xor eax,eax"
-"	      00565e26    mov al,[ebp-0Ch]"
+"	      00565e26    mov al,digit"
 "	      00565e29    cmp ecx,eax"
 "	      00565e2b    jl near ptr 00565E59h"
 );
 // LINE 91:
 	asm( 
 "	      00565e31    xor eax,eax"
-"	      00565e33    mov al,[ebp-0Ch]"
-"	      00565e36    mov ecx,[ebp+8]"
+"	      00565e33    mov al,digit"
+"	      00565e36    mov ecx,str"
 "	      00565e39    xor edx,edx"
 "	      00565e3b    mov dl,[eax+ecx]"
-"	      00565e3e    mov eax,[ebp+0Ch]"
+"	      00565e3e    mov eax,num"
 "	      00565e41    mov eax,[eax]"
 "	      00565e43    lea eax,[eax+eax*4]"
 "	      00565e46    lea eax,[edx+eax*2]"
 "	      00565e49    sub eax,30h"
-"	      00565e4c    mov ecx,[ebp+0Ch]"
+"	      00565e4c    mov ecx,num"
 "	      00565e4f    mov [ecx],eax"
 );
 // LINE 92:
 	asm( 
-"	      00565e51    inc byte ptr [ebp-0Ch]"
+"	      00565e51    inc digit"
 );
 // LINE 93:
 	asm( 
@@ -243,10 +243,10 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	asm( 
 "	      00565e59    test dword ptr [ebp-4],0FFFFh"
 "	      00565e60    je near ptr 00565E72h"
-"	      00565e66    mov eax,[ebp+0Ch]"
+"	      00565e66    mov eax,num"
 "	      00565e69    mov eax,[eax]"
 "	      00565e6b    neg eax"
-"	      00565e6d    mov ecx,[ebp+0Ch]"
+"	      00565e6d    mov ecx,num"
 "	      00565e70    mov [ecx],eax"
 );
 // LINE 95:
@@ -281,26 +281,26 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 100:
 	asm( 
-"	      00565e89    mov dword ptr [ebp-0Ch],0"
+"	      00565e89    mov power,0"
 );
 // LINE 101:
 	asm( 
-"	      00565e90    mov dword ptr [ebp-4],1"
+"	      00565e90    mov tenPower,1"
 );
 // LINE 104:
 	asm( 
-"	      00565e97    cmp dword ptr [ebp+8],0"
+"	      00565e97    cmp num,0"
 "	      00565e9b    jge near ptr 00565EB4h"
 );
 // LINE 106:
 	asm( 
-"	      00565ea1    mov word ptr [ebp-8],1"
+"	      00565ea1    mov neg,1"
 );
 // LINE 107:
 	asm( 
-"	      00565ea7    mov eax,[ebp+8]"
+"	      00565ea7    mov eax,num"
 "	      00565eaa    neg eax"
-"	      00565eac    mov [ebp+8],eax"
+"	      00565eac    mov num,eax"
 );
 // LINE 109:
 	asm( 
@@ -308,21 +308,21 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 110:
 	asm( 
-"	      00565eb4    mov word ptr [ebp-8],0"
+"	      00565eb4    mov neg,0"
 );
 // LINE 112:
 	asm( 
-"	      00565eba    cmp dword ptr [ebp+8],0"
+"	      00565eba    cmp num,0"
 "	      00565ebe    jne near ptr 00565ED6h"
 );
 // LINE 114:
 	asm( 
-"	      00565ec4    mov eax,[ebp+0Ch]"
+"	      00565ec4    mov eax,str"
 "	      00565ec7    mov byte ptr [eax],1"
 );
 // LINE 115:
 	asm( 
-"	      00565eca    mov eax,[ebp+0Ch]"
+"	      00565eca    mov eax,str"
 "	      00565ecd    mov byte ptr [eax+1],30h"
 );
 // LINE 116:
@@ -331,19 +331,19 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 119:
 	asm( 
-"	      00565ed6    mov eax,[ebp+8]"
+"	      00565ed6    mov eax,num"
 "	      00565ed9    sub edx,edx"
-"	      00565edb    div dword ptr [ebp-4]"
+"	      00565edb    div tenPower"
 "	      00565ede    test eax,eax"
 "	      00565ee0    je near ptr 00565F26h"
 );
 // LINE 121:
 	asm( 
-"	      00565ee6    inc dword ptr [ebp-0Ch]"
+"	      00565ee6    inc power"
 );
 // LINE 122:
 	asm( 
-"	      00565ee9    cmp dword ptr [ebp-0Ch],0Ah"
+"	      00565ee9    cmp power,0Ah"
 "	      00565eed    jle near ptr 00565F0Ch"
 "	      00565ef3    push 8C085h"
 "	      00565ef8    push 5BF570h"
@@ -354,16 +354,16 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 124:
 	asm( 
-"	      00565f0c    mov eax,[ebp-0Ch]"
-"	      00565f0f    mov ecx,[ebp+0Ch]"
+"	      00565f0c    mov eax,power"
+"	      00565f0f    mov ecx,str"
 "	      00565f12    mov byte ptr [eax+ecx],30h"
 );
 // LINE 125:
 	asm( 
-"	      00565f16    mov eax,[ebp-4]"
+"	      00565f16    mov eax,tenPower"
 "	      00565f19    lea eax,[eax+eax*4]"
 "	      00565f1c    add eax,eax"
-"	      00565f1e    mov [ebp-4],eax"
+"	      00565f1e    mov tenPower,eax"
 );
 // LINE 126:
 	asm( 
@@ -376,25 +376,25 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 131:
 	asm( 
-"	      00565f33    mov eax,[ebp-0Ch]"
-"	      00565f36    mov ecx,[ebp+0Ch]"
+"	      00565f33    mov eax,power"
+"	      00565f36    mov ecx,str"
 "	      00565f39    mov byte ptr [eax+ecx+1],30h"
 );
 // LINE 132:
 	asm( 
-"	      00565f3e    mov eax,[ebp-0Ch]"
+"	      00565f3e    mov eax,power"
 "	      00565f41    inc eax"
-"	      00565f42    mov ecx,[ebp+0Ch]"
+"	      00565f42    mov ecx,str"
 "	      00565f45    mov [ecx],al"
 );
 // LINE 133:
 	asm( 
-"	      00565f47    mov eax,[ebp+0Ch]"
+"	      00565f47    mov eax,str"
 "	      00565f4a    mov byte ptr [eax+1],2Dh"
 );
 // LINE 134:
 	asm( 
-"	      00565f4e    mov dword ptr [ebp-0Ch],2"
+"	      00565f4e    mov power,2"
 );
 // LINE 136:
 	asm( 
@@ -403,16 +403,16 @@ void Num2Str(long num, unsigned char * str) {
 // LINE 138:
 	asm( 
 "	      00565f5a    mov al,[ebp-0Ch]"
-"	      00565f5d    mov ecx,[ebp+0Ch]"
+"	      00565f5d    mov ecx,str"
 "	      00565f60    mov [ecx],al"
 );
 // LINE 139:
 	asm( 
-"	      00565f62    mov dword ptr [ebp-0Ch],1"
+"	      00565f62    mov power,1"
 );
 // LINE 142:
 	asm( 
-"	      00565f69    cmp dword ptr [ebp+8],0"
+"	      00565f69    cmp num,0"
 "	      00565f6d    je near ptr 00565FB3h"
 );
 // LINE 144:
@@ -420,37 +420,37 @@ void Num2Str(long num, unsigned char * str) {
 	long digit;
 	asm( 
 "	      00565f73    mov ecx,0Ah"
-"	      00565f78    mov eax,[ebp-4]"
+"	      00565f78    mov eax,tenPower"
 "	      00565f7b    sub edx,edx"
 "	      00565f7d    div ecx"
-"	      00565f7f    mov [ebp-4],eax"
+"	      00565f7f    mov tenPower,eax"
 );
 // LINE 145:
 	asm( 
-"	      00565f82    mov eax,[ebp+8]"
+"	      00565f82    mov eax,num"
 "	      00565f85    sub edx,edx"
-"	      00565f87    div dword ptr [ebp-4]"
-"	      00565f8a    mov [ebp-10h],eax"
+"	      00565f87    div tenPower"
+"	      00565f8a    mov digit,eax"
 );
 // LINE 146:
 	asm( 
-"	      00565f8d    mov eax,[ebp-10h]"
+"	      00565f8d    mov eax,digit"
 "	      00565f90    add eax,30h"
-"	      00565f93    mov ecx,[ebp-0Ch]"
-"	      00565f96    mov edx,[ebp+0Ch]"
+"	      00565f93    mov ecx,power"
+"	      00565f96    mov edx,str"
 "	      00565f99    mov [ecx+edx],al"
 );
 // LINE 147:
 	asm( 
-"	      00565f9c    mov eax,[ebp+8]"
-"	      00565f9f    mov ecx,[ebp-4]"
-"	      00565fa2    imul ecx,[ebp-10h]"
+"	      00565f9c    mov eax,num"
+"	      00565f9f    mov ecx,tenPower"
+"	      00565fa2    imul ecx,digit"
 "	      00565fa6    sub eax,ecx"
-"	      00565fa8    mov [ebp+8],eax"
+"	      00565fa8    mov num,eax"
 );
 // LINE 148:
 	asm( 
-"	      00565fab    inc dword ptr [ebp-0Ch]"
+"	      00565fab    inc power"
 );
 // LINE 149:
 // Block end:
@@ -485,27 +485,27 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 );
 // LINE 155:
 	asm( 
-"	      00565fc6    mov byte ptr [ebp-0Ch],1"
+"	      00565fc6    mov digit,1"
 );
 // LINE 157:
 	asm( 
-"	      00565fca    mov dword ptr [ebp-4],0"
+"	      00565fca    mov result,0"
 );
 // LINE 158:
 	asm( 
-"	      00565fd1    mov eax,[ebp+8]"
+"	      00565fd1    mov eax,str"
 "	      00565fd4    xor ecx,ecx"
 "	      00565fd6    mov cl,[eax]"
 "	      00565fd8    xor eax,eax"
-"	      00565fda    mov al,[ebp-0Ch]"
+"	      00565fda    mov al,digit"
 "	      00565fdd    cmp ecx,eax"
 "	      00565fdf    jl near ptr 005660A8h"
 );
 // LINE 160:
 	asm( 
 "	      00565fe5    xor eax,eax"
-"	      00565fe7    mov al,[ebp-0Ch]"
-"	      00565fea    mov ecx,[ebp+8]"
+"	      00565fe7    mov al,digit"
+"	      00565fea    mov ecx,str"
 "	      00565fed    xor edx,edx"
 "	      00565fef    mov dl,[eax+ecx]"
 "	      00565ff2    cmp edx,20h"
@@ -518,15 +518,15 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 162:
 	asm( 
 "	      00566000    xor eax,eax"
-"	      00566002    mov al,[ebp-0Ch]"
-"	      00566005    mov ecx,[ebp+8]"
+"	      00566002    mov al,digit"
+"	      00566005    mov ecx,str"
 "	      00566008    xor edx,edx"
 "	      0056600a    mov dl,[eax+ecx]"
 "	      0056600d    cmp edx,30h"
 "	      00566010    jl near ptr 00566044h"
 "	      00566016    xor eax,eax"
-"	      00566018    mov al,[ebp-0Ch]"
-"	      0056601b    mov ecx,[ebp+8]"
+"	      00566018    mov al,digit"
+"	      0056601b    mov ecx,str"
 "	      0056601e    xor edx,edx"
 "	      00566020    mov dl,[eax+ecx]"
 "	      00566023    cmp edx,39h"
@@ -535,26 +535,26 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 163:
 	asm( 
 "	      0056602c    xor eax,eax"
-"	      0056602e    mov al,[ebp-0Ch]"
-"	      00566031    mov ecx,[ebp+8]"
+"	      0056602e    mov al,digit"
+"	      00566031    mov ecx,str"
 "	      00566034    xor edx,edx"
 "	      00566036    mov dl,[eax+ecx]"
 "	      00566039    sub edx,30h"
-"	      0056603c    mov [ebp-8],dl"
+"	      0056603c    mov digitval,dl"
 );
 // LINE 164:
 	asm( 
 "	      0056603f    jmp near ptr 00566090h"
 "	      00566044    xor eax,eax"
-"	      00566046    mov al,[ebp-0Ch]"
-"	      00566049    mov ecx,[ebp+8]"
+"	      00566046    mov al,digit"
+"	      00566049    mov ecx,str"
 "	      0056604c    xor edx,edx"
 "	      0056604e    mov dl,[eax+ecx]"
 "	      00566051    cmp edx,41h"
 "	      00566054    jl near ptr 00566088h"
 "	      0056605a    xor eax,eax"
-"	      0056605c    mov al,[ebp-0Ch]"
-"	      0056605f    mov ecx,[ebp+8]"
+"	      0056605c    mov al,digit"
+"	      0056605f    mov ecx,str"
 "	      00566062    xor edx,edx"
 "	      00566064    mov dl,[eax+ecx]"
 "	      00566067    cmp edx,46h"
@@ -563,12 +563,12 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 165:
 	asm( 
 "	      00566070    xor eax,eax"
-"	      00566072    mov al,[ebp-0Ch]"
-"	      00566075    mov ecx,[ebp+8]"
+"	      00566072    mov al,digit"
+"	      00566075    mov ecx,str"
 "	      00566078    xor edx,edx"
 "	      0056607a    mov dl,[eax+ecx]"
 "	      0056607d    sub edx,37h"
-"	      00566080    mov [ebp-8],dl"
+"	      00566080    mov digitval,dl"
 );
 // LINE 166:
 	asm( 
@@ -582,15 +582,15 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 168:
 	asm( 
 "	      00566090    xor eax,eax"
-"	      00566092    mov al,[ebp-8]"
-"	      00566095    mov ecx,[ebp-4]"
+"	      00566092    mov al,digitval"
+"	      00566095    mov ecx,result"
 "	      00566098    shl ecx,4"
 "	      0056609b    add eax,ecx"
-"	      0056609d    mov [ebp-4],eax"
+"	      0056609d    mov result,eax"
 );
 // LINE 169:
 	asm( 
-"	      005660a0    inc byte ptr [ebp-0Ch]"
+"	      005660a0    inc digit"
 );
 // LINE 170:
 	asm( 
@@ -598,8 +598,8 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 );
 // LINE 171:
 	asm( 
-"	      005660a8    mov eax,[ebp-4]"
-"	      005660ab    mov ecx,[ebp+0Ch]"
+"	      005660a8    mov eax,result"
+"	      005660ab    mov ecx,num"
 "	      005660ae    mov [ecx],eax"
 );
 // LINE 172:
@@ -633,25 +633,25 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 );
 // LINE 177:
 	asm( 
-"	      005660c7    mov dword ptr [ebp-8],0"
+"	      005660c7    mov power,0"
 );
 // LINE 178:
 	asm( 
-"	      005660ce    mov dword ptr [ebp-4],1"
+"	      005660ce    mov sixteenPower,1"
 );
 // LINE 180:
 	asm( 
-"	      005660d5    cmp dword ptr [ebp+8],0"
+"	      005660d5    cmp num,0"
 "	      005660d9    jne near ptr 005660F1h"
 );
 // LINE 182:
 	asm( 
-"	      005660df    mov eax,[ebp+0Ch]"
+"	      005660df    mov eax,str"
 "	      005660e2    mov byte ptr [eax],1"
 );
 // LINE 183:
 	asm( 
-"	      005660e5    mov eax,[ebp+0Ch]"
+"	      005660e5    mov eax,str"
 "	      005660e8    mov byte ptr [eax+1],30h"
 );
 // LINE 184:
@@ -660,19 +660,19 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 );
 // LINE 187:
 	asm( 
-"	      005660f1    mov eax,[ebp+8]"
+"	      005660f1    mov eax,num"
 "	      005660f4    sub edx,edx"
-"	      005660f6    div dword ptr [ebp-4]"
+"	      005660f6    div sixteenPower"
 "	      005660f9    test eax,eax"
 "	      005660fb    je near ptr 0056613Dh"
 );
 // LINE 189:
 	asm( 
-"	      00566101    inc dword ptr [ebp-8]"
+"	      00566101    inc power"
 );
 // LINE 190:
 	asm( 
-"	      00566104    cmp dword ptr [ebp-8],7"
+"	      00566104    cmp power,7"
 "	      00566108    jle near ptr 0056612Ah"
 "	      0056610e    push 8C085h"
 "	      00566113    push 5BF5A4h"
@@ -683,13 +683,13 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 );
 // LINE 191:
 	asm( 
-"	      0056612a    mov eax,[ebp-8]"
-"	      0056612d    mov ecx,[ebp+0Ch]"
+"	      0056612a    mov eax,power"
+"	      0056612d    mov ecx,str"
 "	      00566130    mov byte ptr [eax+ecx],30h"
 );
 // LINE 192:
 	asm( 
-"	      00566134    shl dword ptr [ebp-4],4"
+"	      00566134    shl sixteenPower,4"
 );
 // LINE 193:
 	asm( 
@@ -698,42 +698,42 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 // LINE 195:
 	asm( 
 "	      0056613d    mov al,[ebp-8]"
-"	      00566140    mov ecx,[ebp+0Ch]"
+"	      00566140    mov ecx,str"
 "	      00566143    mov [ecx],al"
 );
 // LINE 196:
 	asm( 
-"	      00566145    mov dword ptr [ebp-8],1"
+"	      00566145    mov power,1"
 );
 // LINE 197:
 	asm( 
-"	      0056614c    cmp dword ptr [ebp+8],0"
+"	      0056614c    cmp num,0"
 "	      00566150    je near ptr 005661AAh"
 );
 // LINE 199:
 // Block start:
 	long digit;
 	asm( 
-"	      00566156    mov eax,[ebp+8]"
+"	      00566156    mov eax,num"
 "	      00566159    sub edx,edx"
-"	      0056615b    div dword ptr [ebp-4]"
-"	      0056615e    mov [ebp-0Ch],eax"
+"	      0056615b    div sixteenPower"
+"	      0056615e    mov digit,eax"
 );
 // LINE 200:
 	asm( 
-"	      00566161    shr dword ptr [ebp-4],4"
+"	      00566161    shr sixteenPower,4"
 );
 // LINE 201:
 	asm( 
-"	      00566165    cmp dword ptr [ebp-0Ch],9"
+"	      00566165    cmp digit,9"
 "	      00566169    jle near ptr 00566183h"
 );
 // LINE 202:
 	asm( 
-"	      0056616f    mov eax,[ebp-0Ch]"
+"	      0056616f    mov eax,digit"
 "	      00566172    add eax,37h"
-"	      00566175    mov ecx,[ebp-8]"
-"	      00566178    mov edx,[ebp+0Ch]"
+"	      00566175    mov ecx,power"
+"	      00566178    mov edx,str"
 "	      0056617b    mov [ecx+edx],al"
 );
 // LINE 203:
@@ -742,24 +742,24 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 );
 // LINE 204:
 	asm( 
-"	      00566183    mov eax,[ebp-0Ch]"
+"	      00566183    mov eax,digit"
 "	      00566186    add eax,30h"
-"	      00566189    mov ecx,[ebp-8]"
-"	      0056618c    mov edx,[ebp+0Ch]"
+"	      00566189    mov ecx,power"
+"	      0056618c    mov edx,str"
 "	      0056618f    mov [ecx+edx],al"
 );
 // LINE 205:
 	asm( 
 "	      00566192    xor eax,eax"
-"	      00566194    mov ecx,[ebp-0Ch]"
-"	      00566197    imul ecx,[ebp-4]"
+"	      00566194    mov ecx,digit"
+"	      00566197    imul ecx,sixteenPower"
 "	      0056619b    sub eax,ecx"
 "	      0056619d    neg eax"
-"	      0056619f    sub [ebp+8],eax"
+"	      0056619f    sub num,eax"
 );
 // LINE 206:
 	asm( 
-"	      005661a2    inc dword ptr [ebp-8]"
+"	      005661a2    inc power"
 );
 // LINE 207:
 // Block end:
@@ -789,33 +789,33 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 );
 // LINE 215:
 	asm( 
-"	      005661ba    mov eax,[ebp+0Ch]"
+"	      005661ba    mov eax,name"
 "	      005661bd    mov byte ptr [eax],4"
 );
 // LINE 216:
 	asm( 
-"	      005661c0    mov eax,[ebp+8]"
+"	      005661c0    mov eax,namelet"
 "	      005661c3    shr eax,18h"
-"	      005661c6    mov ecx,[ebp+0Ch]"
+"	      005661c6    mov ecx,name"
 "	      005661c9    mov [ecx+1],al"
 );
 // LINE 217:
 	asm( 
-"	      005661cc    mov eax,[ebp+8]"
+"	      005661cc    mov eax,namelet"
 "	      005661cf    shr eax,10h"
-"	      005661d2    mov ecx,[ebp+0Ch]"
+"	      005661d2    mov ecx,name"
 "	      005661d5    mov [ecx+2],al"
 );
 // LINE 218:
 	asm( 
-"	      005661d8    mov eax,[ebp+8]"
-"	      005661db    mov ecx,[ebp+0Ch]"
+"	      005661d8    mov eax,namelet"
+"	      005661db    mov ecx,name"
 "	      005661de    mov [ecx+3],ah"
 );
 // LINE 219:
 	asm( 
 "	      005661e1    mov al,[ebp+8]"
-"	      005661e4    mov ecx,[ebp+0Ch]"
+"	      005661e4    mov ecx,name"
 "	      005661e7    mov [ecx+4],al"
 );
 // LINE 220:
@@ -842,7 +842,7 @@ unsigned long PStr2Long(unsigned char * name) {
 );
 // LINE 224:
 	asm( 
-"	      005661fd    mov eax,[ebp+8]"
+"	      005661fd    mov eax,name"
 "	      00566200    xor ecx,ecx"
 "	      00566202    mov cl,[eax]"
 "	      00566204    test ecx,ecx"
@@ -861,7 +861,7 @@ unsigned long PStr2Long(unsigned char * name) {
 // Block start:
 	unsigned long name4;
 	asm( 
-"	      00566218    mov eax,[ebp+8]"
+"	      00566218    mov eax,name"
 "	      0056621b    xor ecx,ecx"
 "	      0056621d    mov cl,[eax]"
 "	      0056621f    cmp ecx,4"
@@ -875,20 +875,20 @@ unsigned long PStr2Long(unsigned char * name) {
 );
 // LINE 228:
 	asm( 
-"	      00566244    mov eax,[ebp+8]"
+"	      00566244    mov eax,name"
 "	      00566247    mov eax,[eax+1]"
-"	      0056624a    mov [ebp-4],eax"
+"	      0056624a    mov name4,eax"
 );
 // LINE 229:
 	asm( 
-"	      0056624d    lea eax,[ebp-4]"
+"	      0056624d    lea eax,name4"
 "	      00566250    push eax"
 "	      00566251    call 00566906h"
 "	      00566256    add esp,4"
 );
 // LINE 230:
 	asm( 
-"	      00566259    mov eax,[ebp-4]"
+"	      00566259    mov eax,name4"
 "	      0056625c    jmp near ptr 00566261h"
 );
 // LINE 232:
@@ -917,31 +917,31 @@ void CToPString(char * cstr, unsigned char * pstr) {
 );
 // LINE 260:
 	asm( 
-"	      0056626f    mov eax,[ebp+8]"
+"	      0056626f    mov eax,cstr"
 "	      00566272    push eax"
 "	      00566273    call 0056ABE0h"
 "	      00566278    add esp,4"
-"	      0056627b    mov ecx,[ebp+0Ch]"
+"	      0056627b    mov ecx,pstr"
 "	      0056627e    mov [ecx],al"
 );
 // LINE 261:
 	asm( 
-"	      00566280    mov dword ptr [ebp-4],0"
+"	      00566280    mov count,0"
 "	      00566287    jmp near ptr 0056628Fh"
-"	      0056628c    inc dword ptr [ebp-4]"
-"	      0056628f    mov eax,[ebp+0Ch]"
+"	      0056628c    inc count"
+"	      0056628f    mov eax,pstr"
 "	      00566292    xor ecx,ecx"
 "	      00566294    mov cl,[eax]"
-"	      00566296    cmp ecx,[ebp-4]"
+"	      00566296    cmp ecx,count"
 "	      00566299    jl near ptr 005662B7h"
 );
 // LINE 262:
 	asm( 
-"	      0056629f    mov eax,[ebp-4]"
-"	      005662a2    mov ecx,[ebp+8]"
+"	      0056629f    mov eax,count"
+"	      005662a2    mov ecx,cstr"
 "	      005662a5    mov al,[eax+ecx]"
-"	      005662a8    mov ecx,[ebp-4]"
-"	      005662ab    mov edx,[ebp+0Ch]"
+"	      005662a8    mov ecx,count"
+"	      005662ab    mov edx,pstr"
 "	      005662ae    mov [ecx+edx+1],al"
 "	      005662b2    jmp near ptr 0056628Ch"
 );
@@ -973,9 +973,9 @@ short Round(float val) {
 );
 // LINE 270:
 	asm( 
-"	      005662ca    lea eax,[ebp-8]"
+"	      005662ca    lea eax,dint"
 "	      005662cd    push eax"
-"	      005662ce    fld dword ptr [ebp+8]"
+"	      005662ce    fld val"
 "	      005662d1    sub esp,8"
 "	      005662d4    fstp qword ptr [esp]"
 "	      005662d7    call 00575810h"
@@ -984,18 +984,18 @@ short Round(float val) {
 // LINE 271:
 	asm( 
 "	      005662df    fcom qword ptr ds:[593A18h]"
-"	      005662e5    fstp qword ptr [ebp-14h]"
+"	      005662e5    fstp frac"
 "	      005662e8    fnstsw ax"
 "	      005662ea    test ah,41h"
 "	      005662ed    jne near ptr 00566304h"
-"	      005662f3    fld qword ptr [ebp-8]"
+"	      005662f3    fld dint"
 "	      005662f6    fadd qword ptr ds:[593A20h]"
-"	      005662fc    fstp qword ptr [ebp-8]"
+"	      005662fc    fstp dint"
 );
 // LINE 272:
 	asm( 
 "	      005662ff    jmp near ptr 00566324h"
-"	      00566304    fld qword ptr [ebp-14h]"
+"	      00566304    fld frac"
 "	      00566307    fcomp qword ptr ds:[593A28h]"
 "	      0056630d    fnstsw ax"
 "	      0056630f    test ah,1"
@@ -1003,19 +1003,19 @@ short Round(float val) {
 );
 // LINE 276:
 	asm( 
-"	      00566318    fld qword ptr [ebp-8]"
+"	      00566318    fld dint"
 "	      0056631b    fsub qword ptr ds:[593A20h]"
-"	      00566321    fstp qword ptr [ebp-8]"
+"	      00566321    fstp dint"
 );
 // LINE 278:
 	asm( 
-"	      00566324    fld qword ptr [ebp-8]"
+"	      00566324    fld dint"
 "	      00566327    call 0056EBE8h"
-"	      0056632c    mov [ebp-0Ch],ax"
+"	      0056632c    mov intval,ax"
 );
 // LINE 279:
 	asm( 
-"	      00566330    mov ax,[ebp-0Ch]"
+"	      00566330    mov ax,intval"
 "	      00566334    jmp near ptr 00566339h"
 );
 // LINE 280:
@@ -1041,32 +1041,32 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 );
 // LINE 366:
 	asm( 
-"	      00566347    mov eax,[ebp+0Ch]"
+"	      00566347    mov eax,pstr"
 "	      0056634a    mov byte ptr [eax],0"
 );
 // LINE 367:
 	asm( 
-"	      0056634d    mov eax,[ebp+8]"
+"	      0056634d    mov eax,cstr"
 "	      00566350    movsx eax,byte ptr [eax]"
 "	      00566353    test eax,eax"
 "	      00566355    je near ptr 00566392h"
-"	      0056635b    mov eax,[ebp+0Ch]"
+"	      0056635b    mov eax,pstr"
 "	      0056635e    mov al,[eax]"
 "	      00566360    mov [ebp-4],al"
-"	      00566363    mov eax,[ebp+0Ch]"
+"	      00566363    mov eax,pstr"
 "	      00566366    inc byte ptr [eax]"
 "	      00566368    xor eax,eax"
 "	      0056636a    mov al,[ebp-4]"
 "	      0056636d    cmp eax,0FFh"
 "	      00566372    je near ptr 00566392h"
-"	      00566378    mov eax,[ebp+8]"
+"	      00566378    mov eax,cstr"
 "	      0056637b    mov al,[eax]"
-"	      0056637d    mov ecx,[ebp+0Ch]"
+"	      0056637d    mov ecx,pstr"
 "	      00566380    xor edx,edx"
 "	      00566382    mov dl,[ecx]"
-"	      00566384    mov ecx,[ebp+0Ch]"
+"	      00566384    mov ecx,pstr"
 "	      00566387    mov [edx+ecx],al"
-"	      0056638a    inc dword ptr [ebp+8]"
+"	      0056638a    inc cstr"
 "	      0056638d    jmp near ptr 0056634Dh"
 );
 // LINE 368:
@@ -1095,26 +1095,26 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 );
 // LINE 445:
 	asm( 
-"	      005663a5    mov eax,[ebp+0Ch]"
+"	      005663a5    mov eax,str2"
 "	      005663a8    xor ecx,ecx"
 "	      005663aa    mov cl,[eax]"
-"	      005663ac    mov eax,[ebp+8]"
+"	      005663ac    mov eax,str1"
 "	      005663af    xor edx,edx"
 "	      005663b1    mov dl,[eax]"
 "	      005663b3    add ecx,edx"
-"	      005663b5    movsx eax,word ptr [ebp+10h]"
+"	      005663b5    movsx eax,destSize"
 "	      005663b9    cmp ecx,eax"
 "	      005663bb    jl near ptr 005663D8h"
 );
 // LINE 446:
 	asm( 
-"	      005663c1    movsx eax,word ptr [ebp+10h]"
-"	      005663c5    mov ecx,[ebp+0Ch]"
+"	      005663c1    movsx eax,destSize"
+"	      005663c5    mov ecx,str2"
 "	      005663c8    xor edx,edx"
 "	      005663ca    mov dl,[ecx]"
 "	      005663cc    sub eax,edx"
 "	      005663ce    dec eax"
-"	      005663cf    mov [ebp-4],ax"
+"	      005663cf    mov copyBytes,ax"
 );
 // LINE 447:
 	asm( 
@@ -1122,22 +1122,22 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 );
 // LINE 448:
 	asm( 
-"	      005663d8    mov eax,[ebp+8]"
+"	      005663d8    mov eax,str1"
 "	      005663db    movzx ax,byte ptr [eax]"
-"	      005663df    mov [ebp-4],ax"
+"	      005663df    mov copyBytes,ax"
 );
 // LINE 450:
 	asm( 
 "	      005663e3    mov eax,[ebp-4]"
 "	      005663e6    and eax,0FFFFh"
 "	      005663eb    push eax"
-"	      005663ec    mov eax,[ebp+0Ch]"
+"	      005663ec    mov eax,str2"
 "	      005663ef    xor ecx,ecx"
 "	      005663f1    mov cl,[eax]"
-"	      005663f3    add ecx,[ebp+0Ch]"
+"	      005663f3    add ecx,str2"
 "	      005663f6    inc ecx"
 "	      005663f7    push ecx"
-"	      005663f8    mov eax,[ebp+8]"
+"	      005663f8    mov eax,str1"
 "	      005663fb    inc eax"
 "	      005663fc    push eax"
 "	      005663fd    call 00554B76h"
@@ -1145,13 +1145,13 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 );
 // LINE 451:
 	asm( 
-"	      00566405    mov eax,[ebp+0Ch]"
+"	      00566405    mov eax,str2"
 "	      00566408    xor ecx,ecx"
 "	      0056640a    mov cl,[eax]"
 "	      0056640c    mov eax,[ebp-4]"
 "	      0056640f    and eax,0FFFFh"
 "	      00566414    add ecx,eax"
-"	      00566416    mov eax,[ebp+0Ch]"
+"	      00566416    mov eax,str2"
 "	      00566419    mov [eax],cl"
 );
 // LINE 452:
@@ -1181,16 +1181,16 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 // LINE 456:
 	asm( 
 "	      00566431    push 100h"
-"	      00566436    lea eax,[ebp-100h]"
+"	      00566436    lea eax,buff[0]"
 "	      0056643c    push eax"
-"	      0056643d    mov eax,[ebp+8]"
+"	      0056643d    mov eax,src"
 "	      00566440    push eax"
 "	      00566441    call 00554B76h"
 "	      00566446    add esp,0Ch"
 );
 // LINE 457:
 	asm( 
-"	      00566449    lea eax,[ebp-100h]"
+"	      00566449    lea eax,buff[0]"
 "	      0056644f    push eax"
 "	      00566450    call 00566B52h"
 "	      00566455    add esp,4"
@@ -1199,9 +1199,9 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	asm( 
 "	      00566458    mov eax,[ebp+10h]"
 "	      0056645b    push eax"
-"	      0056645c    mov eax,[ebp+0Ch]"
+"	      0056645c    mov eax,dest"
 "	      0056645f    push eax"
-"	      00566460    lea eax,[ebp-100h]"
+"	      00566460    lea eax,buff[0]"
 "	      00566466    push eax"
 "	      00566467    call 0056639Ch"
 "	      0056646c    add esp,0Ch"
@@ -1232,9 +1232,9 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 );
 // LINE 467:
 	asm( 
-"	      00566485    lea eax,[ebp-100h]"
+"	      00566485    lea eax,numStr[0]"
 "	      0056648b    push eax"
-"	      0056648c    mov eax,[ebp+8]"
+"	      0056648c    mov eax,number"
 "	      0056648f    push eax"
 "	      00566490    call 00565E80h"
 "	      00566495    add esp,8"
@@ -1243,9 +1243,9 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	asm( 
 "	      00566498    mov eax,[ebp+10h]"
 "	      0056649b    push eax"
-"	      0056649c    mov eax,[ebp+0Ch]"
+"	      0056649c    mov eax,str"
 "	      0056649f    push eax"
-"	      005664a0    lea eax,[ebp-100h]"
+"	      005664a0    lea eax,numStr[0]"
 "	      005664a6    push eax"
 "	      005664a7    call 0056639Ch"
 "	      005664ac    add esp,0Ch"
@@ -1277,27 +1277,27 @@ void HexToString(unsigned long num, unsigned char * str) {
 );
 // LINE 500:
 	asm( 
-"	      005664c2    mov word ptr [ebp-8],1Ch"
+"	      005664c2    mov position,1Ch"
 );
 // LINE 503:
 	asm( 
-"	      005664c8    mov eax,[ebp+0Ch]"
+"	      005664c8    mov eax,str"
 "	      005664cb    mov byte ptr [eax],1"
 );
 // LINE 504:
 	asm( 
-"	      005664ce    mov eax,[ebp+0Ch]"
+"	      005664ce    mov eax,str"
 "	      005664d1    mov byte ptr [eax+1],78h"
 );
 // LINE 506:
 	asm( 
-"	      005664d5    movsx eax,word ptr [ebp-8]"
+"	      005664d5    movsx eax,position"
 "	      005664d9    test eax,eax"
 "	      005664db    jl near ptr 0056650Ah"
 "	      005664e1    mov ebx,1"
 "	      005664e6    mov cl,[ebp-8]"
 "	      005664e9    shl ebx,cl"
-"	      005664eb    mov eax,[ebp+8]"
+"	      005664eb    mov eax,num"
 "	      005664ee    sub edx,edx"
 "	      005664f0    div ebx"
 "	      005664f2    test eax,eax"
@@ -1305,25 +1305,25 @@ void HexToString(unsigned long num, unsigned char * str) {
 );
 // LINE 507:
 	asm( 
-"	      005664fa    movsx eax,word ptr [ebp-8]"
+"	      005664fa    movsx eax,position"
 "	      005664fe    sub eax,4"
-"	      00566501    mov [ebp-8],ax"
+"	      00566501    mov position,ax"
 "	      00566505    jmp near ptr 005664D5h"
 );
 // LINE 509:
 	asm( 
-"	      0056650a    movsx eax,word ptr [ebp-8]"
+"	      0056650a    movsx eax,position"
 "	      0056650e    test eax,eax"
 "	      00566510    jge near ptr 0056652Eh"
 );
 // LINE 511:
 	asm( 
-"	      00566516    mov eax,[ebp+0Ch]"
+"	      00566516    mov eax,str"
 "	      00566519    inc byte ptr [eax]"
-"	      0056651b    mov eax,[ebp+0Ch]"
+"	      0056651b    mov eax,str"
 "	      0056651e    xor ecx,ecx"
 "	      00566520    mov cl,[eax]"
-"	      00566522    mov eax,[ebp+0Ch]"
+"	      00566522    mov eax,str"
 "	      00566525    mov byte ptr [ecx+eax],30h"
 );
 // LINE 512:
@@ -1333,10 +1333,10 @@ void HexToString(unsigned long num, unsigned char * str) {
 // LINE 515:
 	asm( 
 "	      0056652e    jmp near ptr 0056653Eh"
-"	      00566533    movsx eax,word ptr [ebp-8]"
+"	      00566533    movsx eax,position"
 "	      00566537    sub eax,4"
-"	      0056653a    mov [ebp-8],ax"
-"	      0056653e    movsx eax,word ptr [ebp-8]"
+"	      0056653a    mov position,ax"
+"	      0056653e    movsx eax,position"
 "	      00566542    test eax,eax"
 "	      00566544    jl near ptr 005665ADh"
 );
@@ -1345,10 +1345,10 @@ void HexToString(unsigned long num, unsigned char * str) {
 "	      0056654a    mov ebx,1"
 "	      0056654f    mov cl,[ebp-8]"
 "	      00566552    shl ebx,cl"
-"	      00566554    mov eax,[ebp+8]"
+"	      00566554    mov eax,num"
 "	      00566557    sub edx,edx"
 "	      00566559    div ebx"
-"	      0056655b    mov [ebp-4],al"
+"	      0056655b    mov letter,al"
 );
 // LINE 518:
 	asm( 
@@ -1356,33 +1356,33 @@ void HexToString(unsigned long num, unsigned char * str) {
 "	      00566563    mov cl,[ebp-8]"
 "	      00566566    shl eax,cl"
 "	      00566568    not eax"
-"	      0056656a    and [ebp+8],eax"
+"	      0056656a    and num,eax"
 );
 // LINE 519:
 	asm( 
-"	      0056656d    movsx eax,byte ptr [ebp-4]"
+"	      0056656d    movsx eax,letter"
 "	      00566571    cmp eax,9"
 "	      00566574    jle near ptr 00566589h"
-"	      0056657a    movsx eax,byte ptr [ebp-4]"
+"	      0056657a    movsx eax,letter"
 "	      0056657e    add eax,37h"
-"	      00566581    mov [ebp-4],al"
+"	      00566581    mov letter,al"
 );
 // LINE 520:
 	asm( 
 "	      00566584    jmp near ptr 00566593h"
-"	      00566589    movsx eax,byte ptr [ebp-4]"
+"	      00566589    movsx eax,letter"
 "	      0056658d    add eax,30h"
-"	      00566590    mov [ebp-4],al"
+"	      00566590    mov letter,al"
 );
 // LINE 521:
 	asm( 
-"	      00566593    mov eax,[ebp+0Ch]"
+"	      00566593    mov eax,str"
 "	      00566596    inc byte ptr [eax]"
-"	      00566598    mov al,[ebp-4]"
-"	      0056659b    mov ecx,[ebp+0Ch]"
+"	      00566598    mov al,letter"
+"	      0056659b    mov ecx,str"
 "	      0056659e    xor edx,edx"
 "	      005665a0    mov dl,[ecx]"
-"	      005665a2    mov ecx,[ebp+0Ch]"
+"	      005665a2    mov ecx,str"
 "	      005665a5    mov [edx+ecx],al"
 );
 // LINE 522:
@@ -1420,89 +1420,89 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 );
 // LINE 907:
 	asm( 
-"	      005665c0    mov eax,[ebp+8]"
-"	      005665c3    mov [ebp-4],eax"
-"	      005665c6    mov eax,[ebp+0Ch]"
-"	      005665c9    mov [ebp-0Ch],eax"
+"	      005665c0    mov eax,voidFirst"
+"	      005665c3    mov first,eax"
+"	      005665c6    mov eax,voidSecond"
+"	      005665c9    mov second,eax"
 );
 // LINE 911:
 	asm( 
-"	      005665cc    mov eax,[ebp-4]"
+"	      005665cc    mov eax,first"
 "	      005665cf    movzx ax,byte ptr [eax]"
-"	      005665d3    mov [ebp-10h],ax"
+"	      005665d3    mov numChars,ax"
 );
 // LINE 912:
 	asm( 
-"	      005665d7    mov eax,[ebp-0Ch]"
+"	      005665d7    mov eax,second"
 "	      005665da    xor ecx,ecx"
 "	      005665dc    mov cl,[eax]"
-"	      005665de    movsx eax,word ptr [ebp-10h]"
+"	      005665de    movsx eax,numChars"
 "	      005665e2    cmp ecx,eax"
 "	      005665e4    jge near ptr 005665F5h"
-"	      005665ea    mov eax,[ebp-0Ch]"
+"	      005665ea    mov eax,second"
 "	      005665ed    movzx ax,byte ptr [eax]"
-"	      005665f1    mov [ebp-10h],ax"
+"	      005665f1    mov numChars,ax"
 );
 // LINE 913:
 	asm( 
-"	      005665f5    mov word ptr [ebp-8],1"
+"	      005665f5    mov count,1"
 "	      005665fb    jmp near ptr 00566604h"
-"	      00566600    inc word ptr [ebp-8]"
-"	      00566604    movsx eax,word ptr [ebp-10h]"
-"	      00566608    movsx ecx,word ptr [ebp-8]"
+"	      00566600    inc count"
+"	      00566604    movsx eax,numChars"
+"	      00566608    movsx ecx,count"
 "	      0056660c    cmp eax,ecx"
 "	      0056660e    jl near ptr 005666B9h"
 );
 // LINE 915:
 	asm( 
-"	      00566614    movsx eax,word ptr [ebp-8]"
-"	      00566618    mov ecx,[ebp-4]"
+"	      00566614    movsx eax,count"
+"	      00566618    mov ecx,first"
 "	      0056661b    mov al,[eax+ecx]"
-"	      0056661e    mov [ebp-14h],al"
+"	      0056661e    mov char1,al"
 );
 // LINE 916:
 	asm( 
-"	      00566621    movsx eax,word ptr [ebp-8]"
-"	      00566625    mov ecx,[ebp-0Ch]"
+"	      00566621    movsx eax,count"
+"	      00566625    mov ecx,second"
 "	      00566628    mov al,[eax+ecx]"
-"	      0056662b    mov [ebp-18h],al"
+"	      0056662b    mov char2,al"
 );
 // LINE 917:
 	asm( 
 "	      0056662e    xor eax,eax"
-"	      00566630    mov al,[ebp-14h]"
+"	      00566630    mov al,char1"
 "	      00566633    cmp eax,61h"
 "	      00566636    jl near ptr 00566655h"
 "	      0056663c    xor eax,eax"
-"	      0056663e    mov al,[ebp-14h]"
+"	      0056663e    mov al,char1"
 "	      00566641    cmp eax,7Ah"
 "	      00566644    jg near ptr 00566655h"
 "	      0056664a    xor eax,eax"
-"	      0056664c    mov al,[ebp-14h]"
+"	      0056664c    mov al,char1"
 "	      0056664f    sub eax,20h"
-"	      00566652    mov [ebp-14h],al"
+"	      00566652    mov char1,al"
 );
 // LINE 918:
 	asm( 
 "	      00566655    xor eax,eax"
-"	      00566657    mov al,[ebp-18h]"
+"	      00566657    mov al,char2"
 "	      0056665a    cmp eax,61h"
 "	      0056665d    jl near ptr 0056667Ch"
 "	      00566663    xor eax,eax"
-"	      00566665    mov al,[ebp-18h]"
+"	      00566665    mov al,char2"
 "	      00566668    cmp eax,7Ah"
 "	      0056666b    jg near ptr 0056667Ch"
 "	      00566671    xor eax,eax"
-"	      00566673    mov al,[ebp-18h]"
+"	      00566673    mov al,char2"
 "	      00566676    sub eax,20h"
-"	      00566679    mov [ebp-18h],al"
+"	      00566679    mov char2,al"
 );
 // LINE 919:
 	asm( 
 "	      0056667c    xor eax,eax"
-"	      0056667e    mov al,[ebp-18h]"
+"	      0056667e    mov al,char2"
 "	      00566681    xor ecx,ecx"
-"	      00566683    mov cl,[ebp-14h]"
+"	      00566683    mov cl,char1"
 "	      00566686    cmp eax,ecx"
 "	      00566688    jge near ptr 00566698h"
 "	      0056668e    mov eax,1"
@@ -1511,9 +1511,9 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 // LINE 920:
 	asm( 
 "	      00566698    xor eax,eax"
-"	      0056669a    mov al,[ebp-18h]"
+"	      0056669a    mov al,char2"
 "	      0056669d    xor ecx,ecx"
-"	      0056669f    mov cl,[ebp-14h]"
+"	      0056669f    mov cl,char1"
 "	      005666a2    cmp eax,ecx"
 "	      005666a4    jle near ptr 005666B4h"
 "	      005666aa    mov eax,0FFFFFFFFh"
@@ -1525,10 +1525,10 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 );
 // LINE 922:
 	asm( 
-"	      005666b9    mov eax,[ebp-0Ch]"
+"	      005666b9    mov eax,second"
 "	      005666bc    xor ecx,ecx"
 "	      005666be    mov cl,[eax]"
-"	      005666c0    mov eax,[ebp-4]"
+"	      005666c0    mov eax,first"
 "	      005666c3    xor edx,edx"
 "	      005666c5    mov dl,[eax]"
 "	      005666c7    cmp ecx,edx"
@@ -1538,10 +1538,10 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 );
 // LINE 923:
 	asm( 
-"	      005666d9    mov eax,[ebp-0Ch]"
+"	      005666d9    mov eax,second"
 "	      005666dc    xor ecx,ecx"
 "	      005666de    mov cl,[eax]"
-"	      005666e0    mov eax,[ebp-4]"
+"	      005666e0    mov eax,first"
 "	      005666e3    xor edx,edx"
 "	      005666e5    mov dl,[eax]"
 "	      005666e7    cmp ecx,edx"
@@ -1579,48 +1579,48 @@ void ExtractFileName(unsigned char * path, unsigned char * name) {
 );
 // LINE 929:
 	asm( 
-"	      0056670e    mov eax,[ebp+8]"
+"	      0056670e    mov eax,path"
 "	      00566711    movzx ax,byte ptr [eax]"
-"	      00566715    mov [ebp-4],ax"
+"	      00566715    mov place,ax"
 );
 // LINE 930:
 	asm( 
-"	      00566719    movsx eax,word ptr [ebp-4]"
-"	      0056671d    mov ecx,[ebp+8]"
+"	      00566719    movsx eax,place"
+"	      0056671d    mov ecx,path"
 "	      00566720    xor edx,edx"
 "	      00566722    mov dl,[eax+ecx]"
 "	      00566725    cmp edx,3Ah"
 "	      00566728    je near ptr 00566743h"
-"	      0056672e    movsx eax,word ptr [ebp-4]"
+"	      0056672e    movsx eax,place"
 "	      00566732    test eax,eax"
 "	      00566734    jle near ptr 00566743h"
 );
 // LINE 931:
 	asm( 
-"	      0056673a    dec word ptr [ebp-4]"
+"	      0056673a    dec place"
 "	      0056673e    jmp near ptr 00566719h"
 );
 // LINE 933:
 	asm( 
-"	      00566743    mov eax,[ebp+8]"
+"	      00566743    mov eax,path"
 "	      00566746    xor ecx,ecx"
 "	      00566748    mov cl,[eax]"
-"	      0056674a    movsx eax,word ptr [ebp-4]"
+"	      0056674a    movsx eax,place"
 "	      0056674e    sub ecx,eax"
-"	      00566750    mov eax,[ebp+0Ch]"
+"	      00566750    mov eax,name"
 "	      00566753    mov [eax],cl"
 );
 // LINE 934:
 	asm( 
-"	      00566755    mov eax,[ebp+0Ch]"
+"	      00566755    mov eax,name"
 "	      00566758    xor ecx,ecx"
 "	      0056675a    mov cl,[eax]"
 "	      0056675c    push ecx"
-"	      0056675d    mov eax,[ebp+0Ch]"
+"	      0056675d    mov eax,name"
 "	      00566760    inc eax"
 "	      00566761    push eax"
-"	      00566762    movsx eax,word ptr [ebp-4]"
-"	      00566766    add eax,[ebp+8]"
+"	      00566762    movsx eax,place"
+"	      00566766    add eax,path"
 "	      00566769    inc eax"
 "	      0056676a    push eax"
 "	      0056676b    call 00554B76h"
@@ -1649,7 +1649,7 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 );
 // LINE 1076:
 	asm( 
-"	      00566783    movsx eax,word ptr [ebp+14h]"
+"	      00566783    movsx eax,justType"
 "	      00566787    cmp eax,1"
 "	      0056678a    jne near ptr 005667A3h"
 );
@@ -1663,7 +1663,7 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 // LINE 1078:
 	asm( 
 "	      0056679e    jmp near ptr 005667D1h"
-"	      005667a3    movsx eax,word ptr [ebp+14h]"
+"	      005667a3    movsx eax,justType"
 "	      005667a7    cmp eax,0FFFFFFFEh"
 "	      005667aa    jne near ptr 005667C3h"
 );
@@ -1687,14 +1687,14 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 );
 // LINE 1082:
 	asm( 
-"	      005667d1    mov eax,[ebp+0Ch]"
+"	      005667d1    mov eax,strLen"
 "	      005667d4    push eax"
-"	      005667d5    mov eax,[ebp+8]"
+"	      005667d5    mov eax,cString"
 "	      005667d8    push eax"
-"	      005667d9    mov eax,[ebp+10h]"
+"	      005667d9    mov eax,rect"
 "	      005667dc    movsx eax,word ptr [eax]"
 "	      005667df    push eax"
-"	      005667e0    mov eax,[ebp+10h]"
+"	      005667e0    mov eax,rect"
 "	      005667e3    movsx eax,word ptr [eax+2]"
 "	      005667e7    push eax"
 "	      005667e8    mov eax,ds:[5BF63Ch]"
@@ -1727,27 +1727,27 @@ struct Point center(struct Rect* pRect) {
 );
 // LINE 1255:
 	asm( 
-"	      00566807    mov eax,[ebp+8]"
+"	      00566807    mov eax,pRect"
 "	      0056680a    movsx eax,word ptr [eax+4]"
-"	      0056680e    mov ecx,[ebp+8]"
+"	      0056680e    mov ecx,pRect"
 "	      00566811    movsx ecx,word ptr [ecx]"
 "	      00566814    add eax,ecx"
 "	      00566816    cdq"
 "	      00566817    sub eax,edx"
 "	      00566819    sar eax,1"
-"	      0056681c    mov [ebp-4],ax"
+"	      0056681c    mov tmp.v,ax"
 );
 // LINE 1257:
 	asm( 
-"	      00566820    mov eax,[ebp+8]"
+"	      00566820    mov eax,pRect"
 "	      00566823    movsx eax,word ptr [eax+2]"
-"	      00566827    mov ecx,[ebp+8]"
+"	      00566827    mov ecx,pRect"
 "	      0056682a    movsx ecx,word ptr [ecx+6]"
 "	      0056682e    add eax,ecx"
 "	      00566830    cdq"
 "	      00566831    sub eax,edx"
 "	      00566833    sar eax,1"
-"	      00566836    mov [ebp-2],ax"
+"	      00566836    mov tmp.h,ax"
 );
 // LINE 1258:
 	asm( 

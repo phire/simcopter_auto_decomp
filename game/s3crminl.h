@@ -9,7 +9,7 @@ void CriminalEvaderCarClass::BeamToWithinCameraRange() {
 "	      00535846    push ebx"
 "	      00535847    push esi"
 "	      00535848    push edi"
-"	      00535849    mov [ebp-4],ecx"
+"	      00535849    mov this,ecx"
 "	      0053584c    jmp near ptr 00535851h"
 "	      00535851    pop edi"
 "	      00535852    pop esi"

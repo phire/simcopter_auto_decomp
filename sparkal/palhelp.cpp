@@ -15,23 +15,23 @@ void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNe
 "	      004963b6    push ebx"
 "	      004963b7    push esi"
 "	      004963b8    push edi"
-"	      004963b9    mov [ebp-4],ecx"
-"	      004963bc    mov eax,[ebp+8]"
-"	      004963bf    mov ecx,[ebp-4]"
+"	      004963b9    mov this,ecx"
+"	      004963bc    mov eax,pNewColors"
+"	      004963bf    mov ecx,this"
 "	      004963c2    mov [ecx+4],eax"
-"	      004963c5    mov eax,[ebp+10h]"
-"	      004963c8    mov ecx,[ebp-4]"
+"	      004963c5    mov eax,lNewColors"
+"	      004963c8    mov ecx,this"
 "	      004963cb    mov [ecx+8],eax"
-"	      004963ce    mov eax,[ebp+0Ch]"
-"	      004963d1    mov ecx,[ebp-4]"
+"	      004963ce    mov eax,bNewOwnColors"
+"	      004963d1    mov ecx,this"
 "	      004963d4    mov [ecx+0Ch],eax"
-"	      004963d7    mov eax,[ebp-4]"
+"	      004963d7    mov eax,this"
 "	      004963da    mov dword ptr [eax],5910F8h"
 );
 // LINE 31:
 	asm( 
 "	      004963e0    jmp near ptr 004963E5h"
-"	      004963e5    mov eax,[ebp-4]"
+"	      004963e5    mov eax,this"
 "	      004963e8    pop edi"
 "	      004963e9    pop esi"
 "	      004963ea    pop ebx"
@@ -50,20 +50,20 @@ void SparkalPalette::SparkalPalette() {
 "	      004963f5    push ebx"
 "	      004963f6    push esi"
 "	      004963f7    push edi"
-"	      004963f8    mov [ebp-4],ecx"
-"	      004963fb    mov eax,[ebp-4]"
+"	      004963f8    mov this,ecx"
+"	      004963fb    mov eax,this"
 "	      004963fe    mov dword ptr [eax+4],0"
-"	      00496405    mov eax,[ebp-4]"
+"	      00496405    mov eax,this"
 "	      00496408    mov dword ptr [eax+8],0"
-"	      0049640f    mov eax,[ebp-4]"
+"	      0049640f    mov eax,this"
 "	      00496412    mov dword ptr [eax+0Ch],0"
-"	      00496419    mov eax,[ebp-4]"
+"	      00496419    mov eax,this"
 "	      0049641c    mov dword ptr [eax],5910F8h"
 );
 // LINE 41:
 	asm( 
 "	      00496422    jmp near ptr 00496427h"
-"	      00496427    mov eax,[ebp-4]"
+"	      00496427    mov eax,this"
 "	      0049642a    pop edi"
 "	      0049642b    pop esi"
 "	      0049642c    pop ebx"
@@ -82,22 +82,22 @@ void SparkalPalette::~SparkalPalette() {
 "	      00496435    push ebx"
 "	      00496436    push esi"
 "	      00496437    push edi"
-"	      00496438    mov [ebp-0Ch],ecx"
-"	      0049643b    mov eax,[ebp-0Ch]"
+"	      00496438    mov this,ecx"
+"	      0049643b    mov eax,this"
 "	      0049643e    mov dword ptr [eax],5910F8h"
 );
 // LINE 48:
 	asm( 
-"	      00496444    mov eax,[ebp-0Ch]"
+"	      00496444    mov eax,this"
 "	      00496447    cmp dword ptr [eax+0Ch],0"
 "	      0049644b    je near ptr 00496479h"
-"	      00496451    mov eax,[ebp-0Ch]"
+"	      00496451    mov eax,this"
 "	      00496454    cmp dword ptr [eax+4],0"
 "	      00496458    je near ptr 00496479h"
 );
 // LINE 49:
 	asm( 
-"	      0049645e    mov eax,[ebp-0Ch]"
+"	      0049645e    mov eax,this"
 "	      00496461    mov eax,[eax+4]"
 "	      00496464    mov [ebp-4],eax"
 "	      00496467    mov eax,[ebp-4]"
@@ -133,42 +133,42 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 "	      00496489    push ebx"
 "	      0049648a    push esi"
 "	      0049648b    push edi"
-"	      0049648c    mov [ebp-14h],ecx"
+"	      0049648c    mov this,ecx"
 );
 // LINE 67:
 	asm( 
-"	      0049648f    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0049648f    mov lClosestDistance,0FFFFFFFFh"
 );
 // LINE 70:
 	asm( 
-"	      00496496    mov dword ptr [ebp-10h],0"
-"	      0049649d    mov eax,[ebp-10h]"
-"	      004964a0    mov [ebp-0Ch],eax"
+"	      00496496    mov nCurrentBestMatch,0"
+"	      0049649d    mov eax,nCurrentBestMatch"
+"	      004964a0    mov i,eax"
 "	      004964a3    jmp near ptr 004964ABh"
-"	      004964a8    inc dword ptr [ebp-0Ch]"
-"	      004964ab    mov eax,[ebp-14h]"
-"	      004964ae    mov ecx,[ebp-0Ch]"
+"	      004964a8    inc i"
+"	      004964ab    mov eax,this"
+"	      004964ae    mov ecx,i"
 "	      004964b1    cmp [eax+8],ecx"
 "	      004964b4    jle near ptr 0049659Ch"
 );
 // LINE 77:
 	asm( 
-"	      004964ba    mov eax,[ebp+8]"
+"	      004964ba    mov eax,colorValue"
 "	      004964bd    xor ecx,ecx"
 "	      004964bf    mov cl,[eax+2]"
-"	      004964c2    mov eax,[ebp-14h]"
+"	      004964c2    mov eax,this"
 "	      004964c5    mov eax,[eax+4]"
-"	      004964c8    mov edx,[ebp-0Ch]"
+"	      004964c8    mov edx,i"
 "	      004964cb    xor ebx,ebx"
 "	      004964cd    mov bl,[eax+edx*4+2]"
 "	      004964d1    sub ecx,ebx"
 "	      004964d3    mov [ebp-18h],ecx"
-"	      004964d6    mov eax,[ebp+8]"
+"	      004964d6    mov eax,colorValue"
 "	      004964d9    xor edx,edx"
 "	      004964db    mov dl,[eax+2]"
-"	      004964de    mov eax,[ebp-14h]"
+"	      004964de    mov eax,this"
 "	      004964e1    mov eax,[eax+4]"
-"	      004964e4    mov ebx,[ebp-0Ch]"
+"	      004964e4    mov ebx,i"
 "	      004964e7    xor ecx,ecx"
 "	      004964e9    mov cl,[eax+ebx*4+2]"
 "	      004964ed    sub edx,ecx"
@@ -176,22 +176,22 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 "	      004964f2    imul eax,edx"
 "	      004964f5    lea eax,[eax+eax*2]"
 "	      004964f8    mov [ebp-1Ch],eax"
-"	      004964fb    mov ecx,[ebp+8]"
+"	      004964fb    mov ecx,colorValue"
 "	      004964fe    xor edx,edx"
 "	      00496500    mov dl,[ecx]"
-"	      00496502    mov ecx,[ebp-14h]"
+"	      00496502    mov ecx,this"
 "	      00496505    mov ecx,[ecx+4]"
-"	      00496508    mov ebx,[ebp-0Ch]"
+"	      00496508    mov ebx,i"
 "	      0049650b    xor eax,eax"
 "	      0049650d    mov al,[ecx+ebx*4]"
 "	      00496510    sub edx,eax"
 "	      00496512    mov [ebp-20h],edx"
-"	      00496515    mov eax,[ebp+8]"
+"	      00496515    mov eax,colorValue"
 "	      00496518    xor ecx,ecx"
 "	      0049651a    mov cl,[eax]"
-"	      0049651c    mov eax,[ebp-14h]"
+"	      0049651c    mov eax,this"
 "	      0049651f    mov eax,[eax+4]"
-"	      00496522    mov ebx,[ebp-0Ch]"
+"	      00496522    mov ebx,i"
 "	      00496525    xor edx,edx"
 "	      00496527    mov dl,[eax+ebx*4]"
 "	      0049652a    sub ecx,edx"
@@ -200,22 +200,22 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 "	      00496532    mov ecx,[ebp-1Ch]"
 "	      00496535    lea eax,[ecx+eax*2]"
 "	      00496538    mov [ebp-24h],eax"
-"	      0049653b    mov ecx,[ebp+8]"
+"	      0049653b    mov ecx,colorValue"
 "	      0049653e    xor edx,edx"
 "	      00496540    mov dl,[ecx+1]"
-"	      00496543    mov ecx,[ebp-14h]"
+"	      00496543    mov ecx,this"
 "	      00496546    mov ecx,[ecx+4]"
-"	      00496549    mov ebx,[ebp-0Ch]"
+"	      00496549    mov ebx,i"
 "	      0049654c    xor eax,eax"
 "	      0049654e    mov al,[ecx+ebx*4+1]"
 "	      00496552    sub edx,eax"
 "	      00496554    mov [ebp-28h],edx"
-"	      00496557    mov eax,[ebp+8]"
+"	      00496557    mov eax,colorValue"
 "	      0049655a    xor ecx,ecx"
 "	      0049655c    mov cl,[eax+1]"
-"	      0049655f    mov eax,[ebp-14h]"
+"	      0049655f    mov eax,this"
 "	      00496562    mov eax,[eax+4]"
-"	      00496565    mov ebx,[ebp-0Ch]"
+"	      00496565    mov ebx,i"
 "	      00496568    xor edx,edx"
 "	      0049656a    mov dl,[eax+ebx*4+1]"
 "	      0049656e    sub ecx,edx"
@@ -223,23 +223,23 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 "	      00496573    imul eax,ecx"
 "	      00496576    mov ecx,[ebp-24h]"
 "	      00496579    lea eax,[ecx+eax*4]"
-"	      0049657c    mov [ebp-8],eax"
+"	      0049657c    mov lCurrentDistance,eax"
 );
 // LINE 78:
 	asm( 
-"	      0049657f    mov eax,[ebp-4]"
-"	      00496582    cmp [ebp-8],eax"
+"	      0049657f    mov eax,lClosestDistance"
+"	      00496582    cmp lCurrentDistance,eax"
 "	      00496585    jae near ptr 00496597h"
 );
 // LINE 79:
 	asm( 
-"	      0049658b    mov eax,[ebp-4]"
-"	      0049658e    mov [ebp-8],eax"
+"	      0049658b    mov eax,lClosestDistance"
+"	      0049658e    mov lCurrentDistance,eax"
 );
 // LINE 80:
 	asm( 
-"	      00496591    mov eax,[ebp-0Ch]"
-"	      00496594    mov [ebp-10h],eax"
+"	      00496591    mov eax,i"
+"	      00496594    mov nCurrentBestMatch,eax"
 );
 // LINE 82:
 	asm( 
@@ -247,8 +247,8 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 );
 // LINE 83:
 	asm( 
-"	      0049659c    mov eax,[ebp-10h]"
-"	      0049659f    mov ecx,[ebp+0Ch]"
+"	      0049659c    mov eax,nCurrentBestMatch"
+"	      0049659f    mov ecx,nIndex"
 "	      004965a2    mov [ecx],eax"
 );
 // LINE 84:
@@ -281,24 +281,24 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 "	      004965b9    push ebx"
 "	      004965ba    push esi"
 "	      004965bb    push edi"
-"	      004965bc    mov [ebp-460h],ecx"
+"	      004965bc    mov this,ecx"
 );
 // LINE 95:
 	asm( 
-"	      004965c2    mov eax,[ebp+8]"
+"	      004965c2    mov eax,lFadeTime"
 "	      004965c5    cdq"
 "	      004965c6    and edx,3Fh"
 "	      004965c9    add eax,edx"
 "	      004965cb    sar eax,6"
-"	      004965ce    mov [ebp-428h],eax"
+"	      004965ce    mov lDelayTime,eax"
 );
 // LINE 96:
 	asm( 
-"	      004965d4    mov dword ptr [ebp-424h],1"
-"	      004965de    mov dword ptr [ebp-420h],0"
-"	      004965e8    mov dword ptr [ebp-41Ch],0"
-"	      004965f2    mov dword ptr [ebp-418h],0"
-"	      004965fc    cmp dword ptr [ebp-424h],0"
+"	      004965d4    mov timerFade.nTimerResolution,1"
+"	      004965de    mov timerFade.lStartTime,0"
+"	      004965e8    mov timerFade.lTotalElapsedTime,0"
+"	      004965f2    mov timerFade.lFrequency,0"
+"	      004965fc    cmp timerFade.nTimerResolution,0"
 "	      00496603    jne near ptr 00496633h"
 "	      00496609    lea eax,[ebp-440h]"
 "	      0049660f    push eax"
@@ -306,7 +306,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 "	      00496616    mov eax,[ebp-440h]"
 "	      0049661c    mov [ebp-438h],eax"
 "	      00496622    mov eax,[ebp-438h]"
-"	      00496628    mov [ebp-418h],eax"
+"	      00496628    mov timerFade.lFrequency,eax"
 "	      0049662e    jmp near ptr 00496633h"
 "	      00496633    jmp near ptr 00496638h"
 );
@@ -315,7 +315,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 "	      00496638    call dword ptr ds:[6C35F4h]"
 "	      0049663e    push eax"
 "	      0049663f    call dword ptr ds:[6C35E0h]"
-"	      00496645    mov [ebp-0Ch],eax"
+"	      00496645    mov nOriginalPriority,eax"
 );
 // LINE 114:
 	asm( 
@@ -336,42 +336,42 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 118:
 	asm( 
-"	      0049666e    mov dword ptr [ebp-10h],0Ah"
+"	      0049666e    mov i,0Ah"
 "	      00496675    jmp near ptr 0049667Dh"
-"	      0049667a    inc dword ptr [ebp-10h]"
-"	      0049667d    cmp dword ptr [ebp-10h],0F6h"
+"	      0049667a    inc i"
+"	      0049667d    cmp i,0F6h"
 "	      00496684    jge near ptr 004966E7h"
 );
 // LINE 119:
 	asm( 
-"	      0049668a    mov eax,[ebp-460h]"
+"	      0049668a    mov eax,this"
 "	      00496690    mov eax,[eax+4]"
-"	      00496693    mov ecx,[ebp-10h]"
+"	      00496693    mov ecx,i"
 "	      00496696    mov al,[eax+ecx*4+2]"
-"	      0049669a    mov ecx,[ebp-10h]"
+"	      0049669a    mov ecx,i"
 "	      0049669d    mov [ebp+ecx*4-414h],al"
 );
 // LINE 120:
 	asm( 
-"	      004966a4    mov eax,[ebp-460h]"
+"	      004966a4    mov eax,this"
 "	      004966aa    mov eax,[eax+4]"
-"	      004966ad    mov ecx,[ebp-10h]"
+"	      004966ad    mov ecx,i"
 "	      004966b0    mov al,[eax+ecx*4+1]"
-"	      004966b4    mov ecx,[ebp-10h]"
+"	      004966b4    mov ecx,i"
 "	      004966b7    mov [ebp+ecx*4-413h],al"
 );
 // LINE 121:
 	asm( 
-"	      004966be    mov eax,[ebp-460h]"
+"	      004966be    mov eax,this"
 "	      004966c4    mov eax,[eax+4]"
-"	      004966c7    mov ecx,[ebp-10h]"
+"	      004966c7    mov ecx,i"
 "	      004966ca    mov al,[eax+ecx*4]"
-"	      004966cd    mov ecx,[ebp-10h]"
+"	      004966cd    mov ecx,i"
 "	      004966d0    mov [ebp+ecx*4-412h],al"
 );
 // LINE 122:
 	asm( 
-"	      004966d7    mov eax,[ebp-10h]"
+"	      004966d7    mov eax,i"
 "	      004966da    mov byte ptr [ebp+eax*4-411h],5"
 );
 // LINE 123:
@@ -380,36 +380,36 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 124:
 	asm( 
-"	      004966e7    mov dword ptr [ebp-8],3Fh"
+"	      004966e7    mov nMultiplier,3Fh"
 );
 // LINE 125:
 	asm( 
-"	      004966ee    mov dword ptr [ebp-4],40h"
+"	      004966ee    mov nDivisor,40h"
 );
 // LINE 126:
 	asm( 
-"	      004966f5    mov dword ptr [ebp-10h],0"
+"	      004966f5    mov i,0"
 "	      004966fc    jmp near ptr 00496704h"
-"	      00496701    inc dword ptr [ebp-10h]"
-"	      00496704    cmp dword ptr [ebp-10h],40h"
+"	      00496701    inc i"
+"	      00496704    cmp i,40h"
 "	      00496708    jge near ptr 004969F2h"
 );
 // LINE 127:
 	asm( 
-"	      0049670e    mov dword ptr [ebp-41Ch],0"
-"	      00496718    mov dword ptr [ebp-420h],0"
+"	      0049670e    mov timerFade.lTotalElapsedTime,0"
+"	      00496718    mov timerFade.lStartTime,0"
 "	      00496722    jmp near ptr 00496727h"
 "	      00496727    jmp near ptr 0049672Ch"
-"	      0049672c    cmp dword ptr [ebp-420h],0"
+"	      0049672c    cmp timerFade.lStartTime,0"
 "	      00496733    je near ptr 0049673Eh"
 "	      00496739    jmp near ptr 004967BCh"
-"	      0049673e    cmp dword ptr [ebp-424h],1"
+"	      0049673e    cmp timerFade.nTimerResolution,1"
 "	      00496745    jne near ptr 00496761h"
 "	      0049674b    call dword ptr ds:[6C3908h]"
-"	      00496751    mov [ebp-420h],eax"
+"	      00496751    mov timerFade.lStartTime,eax"
 "	      00496757    jmp near ptr 004967B7h"
 "	      0049675c    jmp near ptr 004967B7h"
-"	      00496761    cmp dword ptr [ebp-424h],0"
+"	      00496761    cmp timerFade.nTimerResolution,0"
 "	      00496768    jne near ptr 0049679Dh"
 "	      0049676e    lea eax,[ebp-434h]"
 "	      00496774    push eax"
@@ -417,21 +417,21 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 "	      0049677b    mov eax,[ebp-434h]"
 "	      00496781    mov [ebp-42Ch],eax"
 "	      00496787    mov eax,[ebp-42Ch]"
-"	      0049678d    mov [ebp-420h],eax"
+"	      0049678d    mov timerFade.lStartTime,eax"
 "	      00496793    jmp near ptr 004967B7h"
 "	      00496798    jmp near ptr 004967B7h"
 "	      0049679d    call dword ptr ds:[6C3908h]"
 "	      004967a3    mov ecx,3E8h"
 "	      004967a8    sub edx,edx"
 "	      004967aa    div ecx"
-"	      004967ac    mov [ebp-420h],eax"
+"	      004967ac    mov timerFade.lStartTime,eax"
 "	      004967b2    jmp near ptr 004967B7h"
 "	      004967b7    jmp near ptr 004967BCh"
 "	      004967bc    jmp near ptr 004967C1h"
 );
 // LINE 128:
 	asm( 
-"	      004967c1    mov eax,[ebp-10h]"
+"	      004967c1    mov eax,i"
 "	      004967c4    cdq"
 "	      004967c5    xor eax,edx"
 "	      004967c7    sub eax,edx"
@@ -442,65 +442,65 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 129:
 	asm( 
-"	      004967d6    sar dword ptr [ebp-4],1"
+"	      004967d6    sar nDivisor,1"
 );
 // LINE 130:
 	asm( 
-"	      004967da    mov eax,[ebp-4]"
+"	      004967da    mov eax,nDivisor"
 "	      004967dd    dec eax"
-"	      004967de    mov [ebp-8],eax"
+"	      004967de    mov nMultiplier,eax"
 );
 // LINE 132:
 	asm( 
-"	      004967e1    mov dword ptr [ebp-14h],0Ah"
+"	      004967e1    mov j,0Ah"
 "	      004967e8    jmp near ptr 004967F0h"
-"	      004967ed    inc dword ptr [ebp-14h]"
-"	      004967f0    cmp dword ptr [ebp-14h],0F6h"
+"	      004967ed    inc j"
+"	      004967f0    cmp j,0F6h"
 "	      004967f7    jge near ptr 00496886h"
 );
 // LINE 134:
 	asm( 
 "	      004967fd    mov ecx,0FFh"
 "	      00496802    mov eax,0FFh"
-"	      00496807    mov edx,[ebp-14h]"
+"	      00496807    mov edx,j"
 "	      0049680a    xor ebx,ebx"
 "	      0049680c    mov bl,[ebp+edx*4-414h]"
 "	      00496813    sub eax,ebx"
-"	      00496815    imul eax,[ebp-8]"
+"	      00496815    imul eax,nMultiplier"
 "	      00496819    cdq"
-"	      0049681a    idiv dword ptr [ebp-4]"
+"	      0049681a    idiv nDivisor"
 "	      0049681d    sub ecx,eax"
-"	      0049681f    mov eax,[ebp-14h]"
+"	      0049681f    mov eax,j"
 "	      00496822    mov [ebp+eax*4-414h],cl"
 );
 // LINE 135:
 	asm( 
 "	      00496829    mov ecx,0FFh"
 "	      0049682e    mov eax,0FFh"
-"	      00496833    mov edx,[ebp-14h]"
+"	      00496833    mov edx,j"
 "	      00496836    xor ebx,ebx"
 "	      00496838    mov bl,[ebp+edx*4-413h]"
 "	      0049683f    sub eax,ebx"
-"	      00496841    imul eax,[ebp-8]"
+"	      00496841    imul eax,nMultiplier"
 "	      00496845    cdq"
-"	      00496846    idiv dword ptr [ebp-4]"
+"	      00496846    idiv nDivisor"
 "	      00496849    sub ecx,eax"
-"	      0049684b    mov eax,[ebp-14h]"
+"	      0049684b    mov eax,j"
 "	      0049684e    mov [ebp+eax*4-413h],cl"
 );
 // LINE 136:
 	asm( 
 "	      00496855    mov ecx,0FFh"
 "	      0049685a    mov eax,0FFh"
-"	      0049685f    mov edx,[ebp-14h]"
+"	      0049685f    mov edx,j"
 "	      00496862    xor ebx,ebx"
 "	      00496864    mov bl,[ebp+edx*4-412h]"
 "	      0049686b    sub eax,ebx"
-"	      0049686d    imul eax,[ebp-8]"
+"	      0049686d    imul eax,nMultiplier"
 "	      00496871    cdq"
-"	      00496872    idiv dword ptr [ebp-4]"
+"	      00496872    idiv nDivisor"
 "	      00496875    sub ecx,eax"
-"	      00496877    mov eax,[ebp-14h]"
+"	      00496877    mov eax,j"
 "	      0049687a    mov [ebp+eax*4-412h],cl"
 );
 // LINE 137:
@@ -519,7 +519,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 140:
 	asm( 
-"	      0049689a    lea eax,[ebp-3ECh]"
+"	      0049689a    lea eax,palEntries[10].peRed"
 "	      004968a0    push eax"
 "	      004968a1    push 0ECh"
 "	      004968a6    push 0Ah"
@@ -532,18 +532,18 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 144:
 	asm( 
-"	      004968ba    mov eax,[ebp-41Ch]"
+"	      004968ba    mov eax,timerFade.lTotalElapsedTime"
 "	      004968c0    mov [ebp-448h],eax"
 "	      004968c6    jmp near ptr 004968CBh"
-"	      004968cb    cmp dword ptr [ebp-420h],0"
+"	      004968cb    cmp timerFade.lStartTime,0"
 "	      004968d2    je near ptr 0049696Fh"
-"	      004968d8    cmp dword ptr [ebp-424h],1"
+"	      004968d8    cmp timerFade.nTimerResolution,1"
 "	      004968df    jne near ptr 004968FBh"
 "	      004968e5    call dword ptr ds:[6C3908h]"
 "	      004968eb    mov [ebp-458h],eax"
 "	      004968f1    jmp near ptr 00496951h"
 "	      004968f6    jmp near ptr 00496951h"
-"	      004968fb    cmp dword ptr [ebp-424h],0"
+"	      004968fb    cmp timerFade.nTimerResolution,0"
 "	      00496902    jne near ptr 00496937h"
 "	      00496908    lea eax,[ebp-454h]"
 "	      0049690e    push eax"
@@ -561,30 +561,30 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 "	      00496946    mov [ebp-458h],eax"
 "	      0049694c    jmp near ptr 00496951h"
 "	      00496951    mov eax,[ebp-458h]"
-"	      00496957    sub eax,[ebp-420h]"
+"	      00496957    sub eax,timerFade.lStartTime"
 "	      0049695d    mov [ebp-444h],eax"
 "	      00496963    mov eax,[ebp-444h]"
 "	      00496969    add [ebp-448h],eax"
-"	      0049696f    cmp dword ptr [ebp-424h],0"
+"	      0049696f    cmp timerFade.nTimerResolution,0"
 "	      00496976    jne near ptr 004969BFh"
-"	      0049697c    cmp dword ptr [ebp-418h],0"
+"	      0049697c    cmp timerFade.lFrequency,0"
 "	      00496983    je near ptr 004969BFh"
-"	      00496989    mov eax,[ebp-418h]"
+"	      00496989    mov eax,timerFade.lFrequency"
 "	      0049698f    push eax"
 "	      00496990    push 0F4240h"
 "	      00496995    mov eax,[ebp-448h]"
 "	      0049699b    push eax"
 "	      0049699c    call dword ptr ds:[6C372Ch]"
 "	      004969a2    mov [ebp-448h],eax"
-"	      004969a8    mov eax,[ebp-428h]"
+"	      004969a8    mov eax,lDelayTime"
 "	      004969ae    cmp [ebp-448h],eax"
 "	      004969b4    jae near ptr 004969EDh"
 "	      004969ba    jmp near ptr 004969E8h"
-"	      004969bf    mov eax,[ebp-428h]"
+"	      004969bf    mov eax,lDelayTime"
 "	      004969c5    cmp [ebp-448h],eax"
 "	      004969cb    jae near ptr 004969EDh"
 "	      004969d1    jmp near ptr 004969E8h"
-"	      004969d6    mov eax,[ebp-428h]"
+"	      004969d6    mov eax,lDelayTime"
 "	      004969dc    cmp [ebp-45Ch],eax"
 "	      004969e2    jae near ptr 004969EDh"
 "	      004969e8    jmp near ptr 004968BAh"
@@ -595,7 +595,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 );
 // LINE 147:
 	asm( 
-"	      004969f2    mov eax,[ebp-0Ch]"
+"	      004969f2    mov eax,nOriginalPriority"
 "	      004969f5    push eax"
 "	      004969f6    call dword ptr ds:[6C35F4h]"
 "	      004969fc    push eax"
@@ -632,24 +632,24 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496a1d    push ebx"
 "	      00496a1e    push esi"
 "	      00496a1f    push edi"
-"	      00496a20    mov [ebp-460h],ecx"
+"	      00496a20    mov this,ecx"
 );
 // LINE 182:
 	asm( 
-"	      00496a26    mov eax,[ebp+8]"
+"	      00496a26    mov eax,lFadeTime"
 "	      00496a29    cdq"
 "	      00496a2a    and edx,3Fh"
 "	      00496a2d    add eax,edx"
 "	      00496a2f    sar eax,6"
-"	      00496a32    mov [ebp-428h],eax"
+"	      00496a32    mov lDelayTime,eax"
 );
 // LINE 183:
 	asm( 
-"	      00496a38    mov dword ptr [ebp-424h],1"
-"	      00496a42    mov dword ptr [ebp-420h],0"
-"	      00496a4c    mov dword ptr [ebp-41Ch],0"
-"	      00496a56    mov dword ptr [ebp-418h],0"
-"	      00496a60    cmp dword ptr [ebp-424h],0"
+"	      00496a38    mov timerFade.nTimerResolution,1"
+"	      00496a42    mov timerFade.lStartTime,0"
+"	      00496a4c    mov timerFade.lTotalElapsedTime,0"
+"	      00496a56    mov timerFade.lFrequency,0"
+"	      00496a60    cmp timerFade.nTimerResolution,0"
 "	      00496a67    jne near ptr 00496A97h"
 "	      00496a6d    lea eax,[ebp-440h]"
 "	      00496a73    push eax"
@@ -657,7 +657,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496a7a    mov eax,[ebp-440h]"
 "	      00496a80    mov [ebp-438h],eax"
 "	      00496a86    mov eax,[ebp-438h]"
-"	      00496a8c    mov [ebp-418h],eax"
+"	      00496a8c    mov timerFade.lFrequency,eax"
 "	      00496a92    jmp near ptr 00496A97h"
 "	      00496a97    jmp near ptr 00496A9Ch"
 );
@@ -666,7 +666,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496a9c    call dword ptr ds:[6C35F4h]"
 "	      00496aa2    push eax"
 "	      00496aa3    call dword ptr ds:[6C35E0h]"
-"	      00496aa9    mov [ebp-0Ch],eax"
+"	      00496aa9    mov nOriginalPriority,eax"
 );
 // LINE 201:
 	asm( 
@@ -687,42 +687,42 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 206:
 	asm( 
-"	      00496ad2    mov dword ptr [ebp-10h],0Ah"
+"	      00496ad2    mov i,0Ah"
 "	      00496ad9    jmp near ptr 00496AE1h"
-"	      00496ade    inc dword ptr [ebp-10h]"
-"	      00496ae1    cmp dword ptr [ebp-10h],0F6h"
+"	      00496ade    inc i"
+"	      00496ae1    cmp i,0F6h"
 "	      00496ae8    jge near ptr 00496B4Bh"
 );
 // LINE 207:
 	asm( 
-"	      00496aee    mov eax,[ebp-460h]"
+"	      00496aee    mov eax,this"
 "	      00496af4    mov eax,[eax+4]"
-"	      00496af7    mov ecx,[ebp-10h]"
+"	      00496af7    mov ecx,i"
 "	      00496afa    mov al,[eax+ecx*4+2]"
-"	      00496afe    mov ecx,[ebp-10h]"
+"	      00496afe    mov ecx,i"
 "	      00496b01    mov [ebp+ecx*4-414h],al"
 );
 // LINE 208:
 	asm( 
-"	      00496b08    mov eax,[ebp-460h]"
+"	      00496b08    mov eax,this"
 "	      00496b0e    mov eax,[eax+4]"
-"	      00496b11    mov ecx,[ebp-10h]"
+"	      00496b11    mov ecx,i"
 "	      00496b14    mov al,[eax+ecx*4+1]"
-"	      00496b18    mov ecx,[ebp-10h]"
+"	      00496b18    mov ecx,i"
 "	      00496b1b    mov [ebp+ecx*4-413h],al"
 );
 // LINE 209:
 	asm( 
-"	      00496b22    mov eax,[ebp-460h]"
+"	      00496b22    mov eax,this"
 "	      00496b28    mov eax,[eax+4]"
-"	      00496b2b    mov ecx,[ebp-10h]"
+"	      00496b2b    mov ecx,i"
 "	      00496b2e    mov al,[eax+ecx*4]"
-"	      00496b31    mov ecx,[ebp-10h]"
+"	      00496b31    mov ecx,i"
 "	      00496b34    mov [ebp+ecx*4-412h],al"
 );
 // LINE 210:
 	asm( 
-"	      00496b3b    mov eax,[ebp-10h]"
+"	      00496b3b    mov eax,i"
 "	      00496b3e    mov byte ptr [ebp+eax*4-411h],5"
 );
 // LINE 211:
@@ -731,36 +731,36 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 213:
 	asm( 
-"	      00496b4b    mov dword ptr [ebp-8],3Fh"
+"	      00496b4b    mov nMultiplier,3Fh"
 );
 // LINE 214:
 	asm( 
-"	      00496b52    mov dword ptr [ebp-4],40h"
+"	      00496b52    mov nDivisor,40h"
 );
 // LINE 215:
 	asm( 
-"	      00496b59    mov dword ptr [ebp-10h],0"
+"	      00496b59    mov i,0"
 "	      00496b60    jmp near ptr 00496B68h"
-"	      00496b65    inc dword ptr [ebp-10h]"
-"	      00496b68    cmp dword ptr [ebp-10h],40h"
+"	      00496b65    inc i"
+"	      00496b68    cmp i,40h"
 "	      00496b6c    jge near ptr 00496E32h"
 );
 // LINE 216:
 	asm( 
-"	      00496b72    mov dword ptr [ebp-41Ch],0"
-"	      00496b7c    mov dword ptr [ebp-420h],0"
+"	      00496b72    mov timerFade.lTotalElapsedTime,0"
+"	      00496b7c    mov timerFade.lStartTime,0"
 "	      00496b86    jmp near ptr 00496B8Bh"
 "	      00496b8b    jmp near ptr 00496B90h"
-"	      00496b90    cmp dword ptr [ebp-420h],0"
+"	      00496b90    cmp timerFade.lStartTime,0"
 "	      00496b97    je near ptr 00496BA2h"
 "	      00496b9d    jmp near ptr 00496C20h"
-"	      00496ba2    cmp dword ptr [ebp-424h],1"
+"	      00496ba2    cmp timerFade.nTimerResolution,1"
 "	      00496ba9    jne near ptr 00496BC5h"
 "	      00496baf    call dword ptr ds:[6C3908h]"
-"	      00496bb5    mov [ebp-420h],eax"
+"	      00496bb5    mov timerFade.lStartTime,eax"
 "	      00496bbb    jmp near ptr 00496C1Bh"
 "	      00496bc0    jmp near ptr 00496C1Bh"
-"	      00496bc5    cmp dword ptr [ebp-424h],0"
+"	      00496bc5    cmp timerFade.nTimerResolution,0"
 "	      00496bcc    jne near ptr 00496C01h"
 "	      00496bd2    lea eax,[ebp-434h]"
 "	      00496bd8    push eax"
@@ -768,21 +768,21 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496bdf    mov eax,[ebp-434h]"
 "	      00496be5    mov [ebp-42Ch],eax"
 "	      00496beb    mov eax,[ebp-42Ch]"
-"	      00496bf1    mov [ebp-420h],eax"
+"	      00496bf1    mov timerFade.lStartTime,eax"
 "	      00496bf7    jmp near ptr 00496C1Bh"
 "	      00496bfc    jmp near ptr 00496C1Bh"
 "	      00496c01    call dword ptr ds:[6C3908h]"
 "	      00496c07    mov ecx,3E8h"
 "	      00496c0c    sub edx,edx"
 "	      00496c0e    div ecx"
-"	      00496c10    mov [ebp-420h],eax"
+"	      00496c10    mov timerFade.lStartTime,eax"
 "	      00496c16    jmp near ptr 00496C1Bh"
 "	      00496c1b    jmp near ptr 00496C20h"
 "	      00496c20    jmp near ptr 00496C25h"
 );
 // LINE 217:
 	asm( 
-"	      00496c25    mov eax,[ebp-10h]"
+"	      00496c25    mov eax,i"
 "	      00496c28    cdq"
 "	      00496c29    xor eax,edx"
 "	      00496c2b    sub eax,edx"
@@ -793,56 +793,56 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 218:
 	asm( 
-"	      00496c3a    sar dword ptr [ebp-4],1"
+"	      00496c3a    sar nDivisor,1"
 );
 // LINE 219:
 	asm( 
-"	      00496c3e    mov eax,[ebp-4]"
+"	      00496c3e    mov eax,nDivisor"
 "	      00496c41    dec eax"
-"	      00496c42    mov [ebp-8],eax"
+"	      00496c42    mov nMultiplier,eax"
 );
 // LINE 221:
 	asm( 
-"	      00496c45    mov dword ptr [ebp-14h],0Ah"
+"	      00496c45    mov j,0Ah"
 "	      00496c4c    jmp near ptr 00496C54h"
-"	      00496c51    inc dword ptr [ebp-14h]"
-"	      00496c54    cmp dword ptr [ebp-14h],0F6h"
+"	      00496c51    inc j"
+"	      00496c54    cmp j,0F6h"
 "	      00496c5b    jge near ptr 00496CC6h"
 );
 // LINE 223:
 	asm( 
-"	      00496c61    mov eax,[ebp-14h]"
+"	      00496c61    mov eax,j"
 "	      00496c64    xor ecx,ecx"
 "	      00496c66    mov cl,[ebp+eax*4-414h]"
-"	      00496c6d    imul ecx,[ebp-8]"
+"	      00496c6d    imul ecx,nMultiplier"
 "	      00496c71    mov eax,ecx"
 "	      00496c73    cdq"
-"	      00496c74    idiv dword ptr [ebp-4]"
-"	      00496c77    mov ecx,[ebp-14h]"
+"	      00496c74    idiv nDivisor"
+"	      00496c77    mov ecx,j"
 "	      00496c7a    mov [ebp+ecx*4-414h],al"
 );
 // LINE 224:
 	asm( 
-"	      00496c81    mov eax,[ebp-14h]"
+"	      00496c81    mov eax,j"
 "	      00496c84    xor ecx,ecx"
 "	      00496c86    mov cl,[ebp+eax*4-413h]"
-"	      00496c8d    imul ecx,[ebp-8]"
+"	      00496c8d    imul ecx,nMultiplier"
 "	      00496c91    mov eax,ecx"
 "	      00496c93    cdq"
-"	      00496c94    idiv dword ptr [ebp-4]"
-"	      00496c97    mov ecx,[ebp-14h]"
+"	      00496c94    idiv nDivisor"
+"	      00496c97    mov ecx,j"
 "	      00496c9a    mov [ebp+ecx*4-413h],al"
 );
 // LINE 225:
 	asm( 
-"	      00496ca1    mov eax,[ebp-14h]"
+"	      00496ca1    mov eax,j"
 "	      00496ca4    xor ecx,ecx"
 "	      00496ca6    mov cl,[ebp+eax*4-412h]"
-"	      00496cad    imul ecx,[ebp-8]"
+"	      00496cad    imul ecx,nMultiplier"
 "	      00496cb1    mov eax,ecx"
 "	      00496cb3    cdq"
-"	      00496cb4    idiv dword ptr [ebp-4]"
-"	      00496cb7    mov ecx,[ebp-14h]"
+"	      00496cb4    idiv nDivisor"
+"	      00496cb7    mov ecx,j"
 "	      00496cba    mov [ebp+ecx*4-412h],al"
 );
 // LINE 226:
@@ -861,7 +861,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 229:
 	asm( 
-"	      00496cda    lea eax,[ebp-3ECh]"
+"	      00496cda    lea eax,palEntries[10].peRed"
 "	      00496ce0    push eax"
 "	      00496ce1    push 0ECh"
 "	      00496ce6    push 0Ah"
@@ -874,18 +874,18 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 233:
 	asm( 
-"	      00496cfa    mov eax,[ebp-41Ch]"
+"	      00496cfa    mov eax,timerFade.lTotalElapsedTime"
 "	      00496d00    mov [ebp-448h],eax"
 "	      00496d06    jmp near ptr 00496D0Bh"
-"	      00496d0b    cmp dword ptr [ebp-420h],0"
+"	      00496d0b    cmp timerFade.lStartTime,0"
 "	      00496d12    je near ptr 00496DAFh"
-"	      00496d18    cmp dword ptr [ebp-424h],1"
+"	      00496d18    cmp timerFade.nTimerResolution,1"
 "	      00496d1f    jne near ptr 00496D3Bh"
 "	      00496d25    call dword ptr ds:[6C3908h]"
 "	      00496d2b    mov [ebp-458h],eax"
 "	      00496d31    jmp near ptr 00496D91h"
 "	      00496d36    jmp near ptr 00496D91h"
-"	      00496d3b    cmp dword ptr [ebp-424h],0"
+"	      00496d3b    cmp timerFade.nTimerResolution,0"
 "	      00496d42    jne near ptr 00496D77h"
 "	      00496d48    lea eax,[ebp-454h]"
 "	      00496d4e    push eax"
@@ -903,15 +903,15 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496d86    mov [ebp-458h],eax"
 "	      00496d8c    jmp near ptr 00496D91h"
 "	      00496d91    mov eax,[ebp-458h]"
-"	      00496d97    sub eax,[ebp-420h]"
+"	      00496d97    sub eax,timerFade.lStartTime"
 "	      00496d9d    mov [ebp-444h],eax"
 "	      00496da3    mov eax,[ebp-444h]"
 "	      00496da9    add [ebp-448h],eax"
-"	      00496daf    cmp dword ptr [ebp-424h],0"
+"	      00496daf    cmp timerFade.nTimerResolution,0"
 "	      00496db6    jne near ptr 00496DFFh"
-"	      00496dbc    cmp dword ptr [ebp-418h],0"
+"	      00496dbc    cmp timerFade.lFrequency,0"
 "	      00496dc3    je near ptr 00496DFFh"
-"	      00496dc9    mov eax,[ebp-418h]"
+"	      00496dc9    mov eax,timerFade.lFrequency"
 "	      00496dcf    push eax"
 "	      00496dd0    push 0F4240h"
 "	      00496dd5    mov eax,[ebp-448h]"
@@ -919,15 +919,15 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 "	      00496ddc    call dword ptr ds:[6C372Ch]"
 "	      00496de2    mov [ebp-448h],eax"
 "	      00496de8    mov eax,[ebp-448h]"
-"	      00496dee    cmp [ebp-428h],eax"
+"	      00496dee    cmp lDelayTime,eax"
 "	      00496df4    jbe near ptr 00496E2Dh"
 "	      00496dfa    jmp near ptr 00496E28h"
 "	      00496dff    mov eax,[ebp-448h]"
-"	      00496e05    cmp [ebp-428h],eax"
+"	      00496e05    cmp lDelayTime,eax"
 "	      00496e0b    jbe near ptr 00496E2Dh"
 "	      00496e11    jmp near ptr 00496E28h"
 "	      00496e16    mov eax,[ebp-45Ch]"
-"	      00496e1c    cmp [ebp-428h],eax"
+"	      00496e1c    cmp lDelayTime,eax"
 "	      00496e22    jbe near ptr 00496E2Dh"
 "	      00496e28    jmp near ptr 00496CFAh"
 );
@@ -937,7 +937,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 );
 // LINE 236:
 	asm( 
-"	      00496e32    mov eax,[ebp-0Ch]"
+"	      00496e32    mov eax,nOriginalPriority"
 "	      00496e35    push eax"
 "	      00496e36    call dword ptr ds:[6C35F4h]"
 "	      00496e3c    push eax"
@@ -975,24 +975,24 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      00496e5d    push ebx"
 "	      00496e5e    push esi"
 "	      00496e5f    push edi"
-"	      00496e60    mov [ebp-464h],ecx"
+"	      00496e60    mov this,ecx"
 );
 // LINE 272:
 	asm( 
-"	      00496e66    mov eax,[ebp+0Ch]"
+"	      00496e66    mov eax,lFadeTime"
 "	      00496e69    cdq"
 "	      00496e6a    and edx,3Fh"
 "	      00496e6d    add eax,edx"
 "	      00496e6f    sar eax,6"
-"	      00496e72    mov [ebp-42Ch],eax"
+"	      00496e72    mov lDelayTime,eax"
 );
 // LINE 273:
 	asm( 
-"	      00496e78    mov dword ptr [ebp-428h],1"
-"	      00496e82    mov dword ptr [ebp-424h],0"
-"	      00496e8c    mov dword ptr [ebp-420h],0"
-"	      00496e96    mov dword ptr [ebp-41Ch],0"
-"	      00496ea0    cmp dword ptr [ebp-428h],0"
+"	      00496e78    mov timerFade.nTimerResolution,1"
+"	      00496e82    mov timerFade.lStartTime,0"
+"	      00496e8c    mov timerFade.lTotalElapsedTime,0"
+"	      00496e96    mov timerFade.lFrequency,0"
+"	      00496ea0    cmp timerFade.nTimerResolution,0"
 "	      00496ea7    jne near ptr 00496ED7h"
 "	      00496ead    lea eax,[ebp-444h]"
 "	      00496eb3    push eax"
@@ -1000,7 +1000,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      00496eba    mov eax,[ebp-444h]"
 "	      00496ec0    mov [ebp-43Ch],eax"
 "	      00496ec6    mov eax,[ebp-43Ch]"
-"	      00496ecc    mov [ebp-41Ch],eax"
+"	      00496ecc    mov timerFade.lFrequency,eax"
 "	      00496ed2    jmp near ptr 00496ED7h"
 "	      00496ed7    jmp near ptr 00496EDCh"
 );
@@ -1009,7 +1009,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      00496edc    call dword ptr ds:[6C35F4h]"
 "	      00496ee2    push eax"
 "	      00496ee3    call dword ptr ds:[6C35E0h]"
-"	      00496ee9    mov [ebp-0Ch],eax"
+"	      00496ee9    mov nOriginalPriority,eax"
 );
 // LINE 291:
 	asm( 
@@ -1030,42 +1030,42 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 295:
 	asm( 
-"	      00496f12    mov dword ptr [ebp-10h],0Ah"
+"	      00496f12    mov i,0Ah"
 "	      00496f19    jmp near ptr 00496F21h"
-"	      00496f1e    inc dword ptr [ebp-10h]"
-"	      00496f21    cmp dword ptr [ebp-10h],0F6h"
+"	      00496f1e    inc i"
+"	      00496f21    cmp i,0F6h"
 "	      00496f28    jge near ptr 00496F8Bh"
 );
 // LINE 296:
 	asm( 
-"	      00496f2e    mov eax,[ebp-464h]"
+"	      00496f2e    mov eax,this"
 "	      00496f34    mov eax,[eax+4]"
-"	      00496f37    mov ecx,[ebp-10h]"
+"	      00496f37    mov ecx,i"
 "	      00496f3a    mov al,[eax+ecx*4+2]"
-"	      00496f3e    mov ecx,[ebp-10h]"
+"	      00496f3e    mov ecx,i"
 "	      00496f41    mov [ebp+ecx*4-418h],al"
 );
 // LINE 297:
 	asm( 
-"	      00496f48    mov eax,[ebp-464h]"
+"	      00496f48    mov eax,this"
 "	      00496f4e    mov eax,[eax+4]"
-"	      00496f51    mov ecx,[ebp-10h]"
+"	      00496f51    mov ecx,i"
 "	      00496f54    mov al,[eax+ecx*4+1]"
-"	      00496f58    mov ecx,[ebp-10h]"
+"	      00496f58    mov ecx,i"
 "	      00496f5b    mov [ebp+ecx*4-417h],al"
 );
 // LINE 298:
 	asm( 
-"	      00496f62    mov eax,[ebp-464h]"
+"	      00496f62    mov eax,this"
 "	      00496f68    mov eax,[eax+4]"
-"	      00496f6b    mov ecx,[ebp-10h]"
+"	      00496f6b    mov ecx,i"
 "	      00496f6e    mov al,[eax+ecx*4]"
-"	      00496f71    mov ecx,[ebp-10h]"
+"	      00496f71    mov ecx,i"
 "	      00496f74    mov [ebp+ecx*4-416h],al"
 );
 // LINE 299:
 	asm( 
-"	      00496f7b    mov eax,[ebp-10h]"
+"	      00496f7b    mov eax,i"
 "	      00496f7e    mov byte ptr [ebp+eax*4-415h],5"
 );
 // LINE 300:
@@ -1074,36 +1074,36 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 302:
 	asm( 
-"	      00496f8b    mov dword ptr [ebp-8],3Fh"
+"	      00496f8b    mov nMultiplier,3Fh"
 );
 // LINE 303:
 	asm( 
-"	      00496f92    mov dword ptr [ebp-4],40h"
+"	      00496f92    mov nDivisor,40h"
 );
 // LINE 304:
 	asm( 
-"	      00496f99    mov dword ptr [ebp-10h],0"
+"	      00496f99    mov i,0"
 "	      00496fa0    jmp near ptr 00496FA8h"
-"	      00496fa5    inc dword ptr [ebp-10h]"
-"	      00496fa8    cmp dword ptr [ebp-10h],40h"
+"	      00496fa5    inc i"
+"	      00496fa8    cmp i,40h"
 "	      00496fac    jge near ptr 004972C5h"
 );
 // LINE 305:
 	asm( 
-"	      00496fb2    mov dword ptr [ebp-420h],0"
-"	      00496fbc    mov dword ptr [ebp-424h],0"
+"	      00496fb2    mov timerFade.lTotalElapsedTime,0"
+"	      00496fbc    mov timerFade.lStartTime,0"
 "	      00496fc6    jmp near ptr 00496FCBh"
 "	      00496fcb    jmp near ptr 00496FD0h"
-"	      00496fd0    cmp dword ptr [ebp-424h],0"
+"	      00496fd0    cmp timerFade.lStartTime,0"
 "	      00496fd7    je near ptr 00496FE2h"
 "	      00496fdd    jmp near ptr 00497060h"
-"	      00496fe2    cmp dword ptr [ebp-428h],1"
+"	      00496fe2    cmp timerFade.nTimerResolution,1"
 "	      00496fe9    jne near ptr 00497005h"
 "	      00496fef    call dword ptr ds:[6C3908h]"
-"	      00496ff5    mov [ebp-424h],eax"
+"	      00496ff5    mov timerFade.lStartTime,eax"
 "	      00496ffb    jmp near ptr 0049705Bh"
 "	      00497000    jmp near ptr 0049705Bh"
-"	      00497005    cmp dword ptr [ebp-428h],0"
+"	      00497005    cmp timerFade.nTimerResolution,0"
 "	      0049700c    jne near ptr 00497041h"
 "	      00497012    lea eax,[ebp-438h]"
 "	      00497018    push eax"
@@ -1111,21 +1111,21 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      0049701f    mov eax,[ebp-438h]"
 "	      00497025    mov [ebp-430h],eax"
 "	      0049702b    mov eax,[ebp-430h]"
-"	      00497031    mov [ebp-424h],eax"
+"	      00497031    mov timerFade.lStartTime,eax"
 "	      00497037    jmp near ptr 0049705Bh"
 "	      0049703c    jmp near ptr 0049705Bh"
 "	      00497041    call dword ptr ds:[6C3908h]"
 "	      00497047    mov ecx,3E8h"
 "	      0049704c    sub edx,edx"
 "	      0049704e    div ecx"
-"	      00497050    mov [ebp-424h],eax"
+"	      00497050    mov timerFade.lStartTime,eax"
 "	      00497056    jmp near ptr 0049705Bh"
 "	      0049705b    jmp near ptr 00497060h"
 "	      00497060    jmp near ptr 00497065h"
 );
 // LINE 306:
 	asm( 
-"	      00497065    mov eax,[ebp-10h]"
+"	      00497065    mov eax,i"
 "	      00497068    cdq"
 "	      00497069    xor eax,edx"
 "	      0049706b    sub eax,edx"
@@ -1136,92 +1136,92 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 307:
 	asm( 
-"	      0049707a    sar dword ptr [ebp-4],1"
+"	      0049707a    sar nDivisor,1"
 );
 // LINE 308:
 	asm( 
-"	      0049707e    mov eax,[ebp-4]"
+"	      0049707e    mov eax,nDivisor"
 "	      00497081    dec eax"
-"	      00497082    mov [ebp-8],eax"
+"	      00497082    mov nMultiplier,eax"
 );
 // LINE 310:
 	asm( 
-"	      00497085    mov dword ptr [ebp-14h],0Ah"
+"	      00497085    mov j,0Ah"
 "	      0049708c    jmp near ptr 00497094h"
-"	      00497091    inc dword ptr [ebp-14h]"
-"	      00497094    cmp dword ptr [ebp-14h],0F6h"
+"	      00497091    inc j"
+"	      00497094    cmp j,0F6h"
 "	      0049709b    jge near ptr 00497159h"
 );
 // LINE 311:
 	asm( 
-"	      004970a1    mov eax,[ebp+8]"
+"	      004970a1    mov eax,colorToFadeTo"
 "	      004970a4    xor ecx,ecx"
 "	      004970a6    mov cl,[eax+2]"
-"	      004970a9    mov eax,[ebp-14h]"
+"	      004970a9    mov eax,j"
 "	      004970ac    xor edx,edx"
 "	      004970ae    mov dl,[ebp+eax*4-418h]"
 "	      004970b5    sub ecx,edx"
-"	      004970b7    mov [ebp-18h],ecx"
+"	      004970b7    mov nDifference,ecx"
 );
 // LINE 312:
 	asm( 
-"	      004970ba    mov eax,[ebp-14h]"
+"	      004970ba    mov eax,j"
 "	      004970bd    xor ecx,ecx"
 "	      004970bf    mov cl,[ebp+eax*4-418h]"
-"	      004970c6    mov eax,[ebp-8]"
-"	      004970c9    imul eax,[ebp-18h]"
+"	      004970c6    mov eax,nMultiplier"
+"	      004970c9    imul eax,nDifference"
 "	      004970cd    cdq"
-"	      004970ce    idiv dword ptr [ebp-4]"
+"	      004970ce    idiv nDivisor"
 "	      004970d1    add ecx,eax"
-"	      004970d3    mov eax,[ebp-14h]"
+"	      004970d3    mov eax,j"
 "	      004970d6    mov [ebp+eax*4-418h],cl"
 );
 // LINE 314:
 	asm( 
-"	      004970dd    mov eax,[ebp+8]"
+"	      004970dd    mov eax,colorToFadeTo"
 "	      004970e0    xor ecx,ecx"
 "	      004970e2    mov cl,[eax+1]"
-"	      004970e5    mov eax,[ebp-14h]"
+"	      004970e5    mov eax,j"
 "	      004970e8    xor edx,edx"
 "	      004970ea    mov dl,[ebp+eax*4-417h]"
 "	      004970f1    sub ecx,edx"
-"	      004970f3    mov [ebp-18h],ecx"
+"	      004970f3    mov nDifference,ecx"
 );
 // LINE 315:
 	asm( 
-"	      004970f6    mov eax,[ebp-14h]"
+"	      004970f6    mov eax,j"
 "	      004970f9    xor ecx,ecx"
 "	      004970fb    mov cl,[ebp+eax*4-417h]"
-"	      00497102    mov eax,[ebp-8]"
-"	      00497105    imul eax,[ebp-18h]"
+"	      00497102    mov eax,nMultiplier"
+"	      00497105    imul eax,nDifference"
 "	      00497109    cdq"
-"	      0049710a    idiv dword ptr [ebp-4]"
+"	      0049710a    idiv nDivisor"
 "	      0049710d    add ecx,eax"
-"	      0049710f    mov eax,[ebp-14h]"
+"	      0049710f    mov eax,j"
 "	      00497112    mov [ebp+eax*4-417h],cl"
 );
 // LINE 317:
 	asm( 
-"	      00497119    mov eax,[ebp+8]"
+"	      00497119    mov eax,colorToFadeTo"
 "	      0049711c    xor ecx,ecx"
 "	      0049711e    mov cl,[eax]"
-"	      00497120    mov eax,[ebp-14h]"
+"	      00497120    mov eax,j"
 "	      00497123    xor edx,edx"
 "	      00497125    mov dl,[ebp+eax*4-416h]"
 "	      0049712c    sub ecx,edx"
-"	      0049712e    mov [ebp-18h],ecx"
+"	      0049712e    mov nDifference,ecx"
 );
 // LINE 318:
 	asm( 
-"	      00497131    mov eax,[ebp-14h]"
+"	      00497131    mov eax,j"
 "	      00497134    xor ecx,ecx"
 "	      00497136    mov cl,[ebp+eax*4-416h]"
-"	      0049713d    mov eax,[ebp-8]"
-"	      00497140    imul eax,[ebp-18h]"
+"	      0049713d    mov eax,nMultiplier"
+"	      00497140    imul eax,nDifference"
 "	      00497144    cdq"
-"	      00497145    idiv dword ptr [ebp-4]"
+"	      00497145    idiv nDivisor"
 "	      00497148    add ecx,eax"
-"	      0049714a    mov eax,[ebp-14h]"
+"	      0049714a    mov eax,j"
 "	      0049714d    mov [ebp+eax*4-416h],cl"
 );
 // LINE 319:
@@ -1240,7 +1240,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 322:
 	asm( 
-"	      0049716d    lea eax,[ebp-3F0h]"
+"	      0049716d    lea eax,palEntries[10].peRed"
 "	      00497173    push eax"
 "	      00497174    push 0ECh"
 "	      00497179    push 0Ah"
@@ -1253,18 +1253,18 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 326:
 	asm( 
-"	      0049718d    mov eax,[ebp-420h]"
+"	      0049718d    mov eax,timerFade.lTotalElapsedTime"
 "	      00497193    mov [ebp-44Ch],eax"
 "	      00497199    jmp near ptr 0049719Eh"
-"	      0049719e    cmp dword ptr [ebp-424h],0"
+"	      0049719e    cmp timerFade.lStartTime,0"
 "	      004971a5    je near ptr 00497242h"
-"	      004971ab    cmp dword ptr [ebp-428h],1"
+"	      004971ab    cmp timerFade.nTimerResolution,1"
 "	      004971b2    jne near ptr 004971CEh"
 "	      004971b8    call dword ptr ds:[6C3908h]"
 "	      004971be    mov [ebp-45Ch],eax"
 "	      004971c4    jmp near ptr 00497224h"
 "	      004971c9    jmp near ptr 00497224h"
-"	      004971ce    cmp dword ptr [ebp-428h],0"
+"	      004971ce    cmp timerFade.nTimerResolution,0"
 "	      004971d5    jne near ptr 0049720Ah"
 "	      004971db    lea eax,[ebp-458h]"
 "	      004971e1    push eax"
@@ -1282,15 +1282,15 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      00497219    mov [ebp-45Ch],eax"
 "	      0049721f    jmp near ptr 00497224h"
 "	      00497224    mov eax,[ebp-45Ch]"
-"	      0049722a    sub eax,[ebp-424h]"
+"	      0049722a    sub eax,timerFade.lStartTime"
 "	      00497230    mov [ebp-448h],eax"
 "	      00497236    mov eax,[ebp-448h]"
 "	      0049723c    add [ebp-44Ch],eax"
-"	      00497242    cmp dword ptr [ebp-428h],0"
+"	      00497242    cmp timerFade.nTimerResolution,0"
 "	      00497249    jne near ptr 00497292h"
-"	      0049724f    cmp dword ptr [ebp-41Ch],0"
+"	      0049724f    cmp timerFade.lFrequency,0"
 "	      00497256    je near ptr 00497292h"
-"	      0049725c    mov eax,[ebp-41Ch]"
+"	      0049725c    mov eax,timerFade.lFrequency"
 "	      00497262    push eax"
 "	      00497263    push 0F4240h"
 "	      00497268    mov eax,[ebp-44Ch]"
@@ -1298,14 +1298,14 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 "	      0049726f    call dword ptr ds:[6C372Ch]"
 "	      00497275    mov [ebp-44Ch],eax"
 "	      0049727b    mov eax,[ebp-44Ch]"
-"	      00497281    cmp [ebp-42Ch],eax"
+"	      00497281    cmp lDelayTime,eax"
 "	      00497287    jbe near ptr 004972C0h"
 "	      0049728d    jmp near ptr 004972BBh"
 "	      00497292    mov eax,[ebp-44Ch]"
-"	      00497298    cmp [ebp-42Ch],eax"
+"	      00497298    cmp lDelayTime,eax"
 "	      0049729e    jbe near ptr 004972C0h"
 "	      004972a4    jmp near ptr 004972BBh"
-"	      004972a9    mov eax,[ebp-42Ch]"
+"	      004972a9    mov eax,lDelayTime"
 "	      004972af    cmp [ebp-460h],eax"
 "	      004972b5    jae near ptr 004972C0h"
 "	      004972bb    jmp near ptr 0049718Dh"
@@ -1316,7 +1316,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 );
 // LINE 329:
 	asm( 
-"	      004972c5    mov eax,[ebp-0Ch]"
+"	      004972c5    mov eax,nOriginalPriority"
 "	      004972c8    push eax"
 "	      004972c9    call dword ptr ds:[6C35F4h]"
 "	      004972cf    push eax"
@@ -1344,15 +1344,15 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 "	      004972ed    push ebx"
 "	      004972ee    push esi"
 "	      004972ef    push edi"
-"	      004972f0    mov [ebp-4],ecx"
+"	      004972f0    mov this,ecx"
 );
 // LINE 361:
 	asm( 
-"	      004972f3    mov eax,[ebp+10h]"
+"	      004972f3    mov eax,lSteps"
 "	      004972f6    push eax"
-"	      004972f7    mov eax,[ebp+0Ch]"
+"	      004972f7    mov eax,lFadeTime"
 "	      004972fa    push eax"
-"	      004972fb    mov eax,[ebp-4]"
+"	      004972fb    mov eax,this"
 "	      004972fe    mov eax,[eax+4]"
 "	      00497301    push eax"
 "	      00497302    mov eax,[ebp+8]"
@@ -1396,18 +1396,18 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 379:
 	asm( 
-"	      00497323    mov eax,[ebp+10h]"
+"	      00497323    mov eax,lFadeTime"
 "	      00497326    cdq"
-"	      00497327    idiv dword ptr [ebp+14h]"
-"	      0049732a    mov [ebp-34h],eax"
+"	      00497327    idiv lSteps"
+"	      0049732a    mov lDelayTime,eax"
 );
 // LINE 381:
 	asm( 
-"	      0049732d    mov dword ptr [ebp-30h],1"
-"	      00497334    mov dword ptr [ebp-2Ch],0"
-"	      0049733b    mov dword ptr [ebp-28h],0"
-"	      00497342    mov dword ptr [ebp-24h],0"
-"	      00497349    cmp dword ptr [ebp-30h],0"
+"	      0049732d    mov timerFade.nTimerResolution,1"
+"	      00497334    mov timerFade.lStartTime,0"
+"	      0049733b    mov timerFade.lTotalElapsedTime,0"
+"	      00497342    mov timerFade.lFrequency,0"
+"	      00497349    cmp timerFade.nTimerResolution,0"
 "	      0049734d    jne near ptr 0049736Eh"
 "	      00497353    lea eax,[ebp-54h]"
 "	      00497356    push eax"
@@ -1415,40 +1415,40 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 "	      0049735d    mov eax,[ebp-54h]"
 "	      00497360    mov [ebp-4Ch],eax"
 "	      00497363    mov eax,[ebp-4Ch]"
-"	      00497366    mov [ebp-24h],eax"
+"	      00497366    mov timerFade.lFrequency,eax"
 "	      00497369    jmp near ptr 0049736Eh"
 "	      0049736e    jmp near ptr 00497373h"
 );
 // LINE 384:
 	asm( 
-"	      00497373    cmp dword ptr [ebp+14h],0C8h"
+"	      00497373    cmp lSteps,0C8h"
 "	      0049737a    jle near ptr 00497387h"
 );
 // LINE 385:
 	asm( 
-"	      00497380    mov dword ptr [ebp+14h],0C8h"
+"	      00497380    mov lSteps,0C8h"
 );
 // LINE 391:
 	asm( 
-"	      00497387    mov eax,[ebp+14h]"
+"	      00497387    mov eax,lSteps"
 "	      0049738a    shl eax,0Ah"
 "	      0049738d    push eax"
 "	      0049738e    call 0056A600h"
 "	      00497393    add esp,4"
-"	      00497396    mov [ebp-1Ch],eax"
+"	      00497396    mov paletteArray,eax"
 );
 // LINE 392:
 	asm( 
-"	      00497399    mov eax,[ebp+14h]"
+"	      00497399    mov eax,lSteps"
 "	      0049739c    dec eax"
-"	      0049739d    mov [ebp-10h],eax"
+"	      0049739d    mov nLastStepIndex,eax"
 );
 // LINE 396:
 	asm( 
 "	      004973a0    call dword ptr ds:[6C35F4h]"
 "	      004973a6    push eax"
 "	      004973a7    call dword ptr ds:[6C35E0h]"
-"	      004973ad    mov [ebp-0Ch],eax"
+"	      004973ad    mov nOriginalPriority,eax"
 );
 // LINE 397:
 	asm( 
@@ -1469,28 +1469,28 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 401:
 	asm( 
-"	      004973d6    mov dword ptr [ebp-14h],0"
+"	      004973d6    mov i,0"
 "	      004973dd    jmp near ptr 004973E5h"
-"	      004973e2    inc dword ptr [ebp-14h]"
-"	      004973e5    mov eax,[ebp+14h]"
-"	      004973e8    cmp [ebp-14h],eax"
+"	      004973e2    inc i"
+"	      004973e5    mov eax,lSteps"
+"	      004973e8    cmp i,eax"
 "	      004973eb    jge near ptr 0049742Bh"
 );
 // LINE 402:
 	asm( 
-"	      004973f1    mov dword ptr [ebp-18h],0Ah"
+"	      004973f1    mov j,0Ah"
 "	      004973f8    jmp near ptr 00497400h"
-"	      004973fd    inc dword ptr [ebp-18h]"
-"	      00497400    cmp dword ptr [ebp-18h],0F5h"
+"	      004973fd    inc j"
+"	      00497400    cmp j,0F5h"
 "	      00497407    jge near ptr 00497426h"
 );
 // LINE 403:
 	asm( 
-"	      0049740d    mov eax,[ebp-18h]"
-"	      00497410    mov ecx,[ebp-14h]"
+"	      0049740d    mov eax,j"
+"	      00497410    mov ecx,i"
 "	      00497413    shl ecx,0Ah"
 "	      00497416    lea eax,[ecx+eax*4]"
-"	      00497419    mov ecx,[ebp-1Ch]"
+"	      00497419    mov ecx,paletteArray"
 "	      0049741c    mov byte ptr [eax+ecx+3],5"
 "	      00497421    jmp near ptr 004973FDh"
 );
@@ -1500,67 +1500,67 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 406:
 	asm( 
-"	      0049742b    mov dword ptr [ebp-18h],0Ah"
+"	      0049742b    mov j,0Ah"
 "	      00497432    jmp near ptr 0049743Ah"
-"	      00497437    inc dword ptr [ebp-18h]"
-"	      0049743a    cmp dword ptr [ebp-18h],0F6h"
+"	      00497437    inc j"
+"	      0049743a    cmp j,0F6h"
 "	      00497441    jge near ptr 004974C7h"
 );
 // LINE 407:
 	asm( 
-"	      00497447    mov al,[ebp+0Ah]"
-"	      0049744a    mov ecx,[ebp-18h]"
-"	      0049744d    mov edx,[ebp-1Ch]"
+"	      00497447    mov al,colorStart.Red"
+"	      0049744a    mov ecx,j"
+"	      0049744d    mov edx,paletteArray"
 "	      00497450    mov [edx+ecx*4],al"
 );
 // LINE 408:
 	asm( 
-"	      00497453    mov al,[ebp+9]"
-"	      00497456    mov ecx,[ebp-18h]"
-"	      00497459    mov edx,[ebp-1Ch]"
+"	      00497453    mov al,colorStart.Green"
+"	      00497456    mov ecx,j"
+"	      00497459    mov edx,paletteArray"
 "	      0049745c    mov [edx+ecx*4+1],al"
 );
 // LINE 409:
 	asm( 
-"	      00497460    mov al,[ebp+8]"
-"	      00497463    mov ecx,[ebp-18h]"
-"	      00497466    mov edx,[ebp-1Ch]"
+"	      00497460    mov al,colorStart.Blue"
+"	      00497463    mov ecx,j"
+"	      00497466    mov edx,paletteArray"
 "	      00497469    mov [edx+ecx*4+2],al"
 );
 // LINE 410:
 	asm( 
-"	      0049746d    mov eax,[ebp-18h]"
-"	      00497470    mov ecx,[ebp+0Ch]"
+"	      0049746d    mov eax,j"
+"	      00497470    mov ecx,paletteDestination"
 "	      00497473    mov al,[ecx+eax*4+2]"
-"	      00497477    mov ecx,[ebp-18h]"
-"	      0049747a    mov edx,[ebp-10h]"
+"	      00497477    mov ecx,j"
+"	      0049747a    mov edx,nLastStepIndex"
 "	      0049747d    shl edx,0Ah"
 "	      00497480    lea ecx,[edx+ecx*4]"
-"	      00497483    mov edx,[ebp-1Ch]"
+"	      00497483    mov edx,paletteArray"
 "	      00497486    mov [ecx+edx],al"
 );
 // LINE 411:
 	asm( 
-"	      00497489    mov eax,[ebp-18h]"
-"	      0049748c    mov ecx,[ebp+0Ch]"
+"	      00497489    mov eax,j"
+"	      0049748c    mov ecx,paletteDestination"
 "	      0049748f    mov al,[ecx+eax*4+1]"
-"	      00497493    mov ecx,[ebp-18h]"
-"	      00497496    mov edx,[ebp-10h]"
+"	      00497493    mov ecx,j"
+"	      00497496    mov edx,nLastStepIndex"
 "	      00497499    shl edx,0Ah"
 "	      0049749c    lea ecx,[edx+ecx*4]"
-"	      0049749f    mov edx,[ebp-1Ch]"
+"	      0049749f    mov edx,paletteArray"
 "	      004974a2    mov [ecx+edx+1],al"
 );
 // LINE 412:
 	asm( 
-"	      004974a6    mov eax,[ebp-18h]"
-"	      004974a9    mov ecx,[ebp+0Ch]"
+"	      004974a6    mov eax,j"
+"	      004974a9    mov ecx,paletteDestination"
 "	      004974ac    mov al,[ecx+eax*4]"
-"	      004974af    mov ecx,[ebp-18h]"
-"	      004974b2    mov edx,[ebp-10h]"
+"	      004974af    mov ecx,j"
+"	      004974b2    mov edx,nLastStepIndex"
 "	      004974b5    shl edx,0Ah"
 "	      004974b8    lea ecx,[edx+ecx*4]"
-"	      004974bb    mov edx,[ebp-1Ch]"
+"	      004974bb    mov edx,paletteArray"
 "	      004974be    mov [ecx+edx+2],al"
 );
 // LINE 413:
@@ -1569,37 +1569,37 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 417:
 	asm( 
-"	      004974c7    mov dword ptr [ebp-8],3Fh"
+"	      004974c7    mov nMultiplier,3Fh"
 );
 // LINE 418:
 	asm( 
-"	      004974ce    mov dword ptr [ebp-4],40h"
+"	      004974ce    mov nDivisor,40h"
 );
 // LINE 419:
 	asm( 
-"	      004974d5    mov dword ptr [ebp-14h],1"
+"	      004974d5    mov i,1"
 "	      004974dc    jmp near ptr 004974E4h"
-"	      004974e1    inc dword ptr [ebp-14h]"
-"	      004974e4    mov eax,[ebp-10h]"
-"	      004974e7    cmp [ebp-14h],eax"
+"	      004974e1    inc i"
+"	      004974e4    mov eax,nLastStepIndex"
+"	      004974e7    cmp i,eax"
 "	      004974ea    jge near ptr 004977D2h"
 );
 // LINE 420:
 	asm( 
-"	      004974f0    mov dword ptr [ebp-28h],0"
-"	      004974f7    mov dword ptr [ebp-2Ch],0"
+"	      004974f0    mov timerFade.lTotalElapsedTime,0"
+"	      004974f7    mov timerFade.lStartTime,0"
 "	      004974fe    jmp near ptr 00497503h"
 "	      00497503    jmp near ptr 00497508h"
-"	      00497508    cmp dword ptr [ebp-2Ch],0"
+"	      00497508    cmp timerFade.lStartTime,0"
 "	      0049750c    je near ptr 00497517h"
 "	      00497512    jmp near ptr 0049757Ah"
-"	      00497517    cmp dword ptr [ebp-30h],1"
+"	      00497517    cmp timerFade.nTimerResolution,1"
 "	      0049751b    jne near ptr 00497534h"
 "	      00497521    call dword ptr ds:[6C3908h]"
-"	      00497527    mov [ebp-2Ch],eax"
+"	      00497527    mov timerFade.lStartTime,eax"
 "	      0049752a    jmp near ptr 00497575h"
 "	      0049752f    jmp near ptr 00497575h"
-"	      00497534    cmp dword ptr [ebp-30h],0"
+"	      00497534    cmp timerFade.nTimerResolution,0"
 "	      00497538    jne near ptr 0049755Eh"
 "	      0049753e    lea eax,[ebp-48h]"
 "	      00497541    push eax"
@@ -1607,23 +1607,23 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 "	      00497548    mov eax,[ebp-48h]"
 "	      0049754b    mov [ebp-40h],eax"
 "	      0049754e    mov eax,[ebp-40h]"
-"	      00497551    mov [ebp-2Ch],eax"
+"	      00497551    mov timerFade.lStartTime,eax"
 "	      00497554    jmp near ptr 00497575h"
 "	      00497559    jmp near ptr 00497575h"
 "	      0049755e    call dword ptr ds:[6C3908h]"
 "	      00497564    mov ecx,3E8h"
 "	      00497569    sub edx,edx"
 "	      0049756b    div ecx"
-"	      0049756d    mov [ebp-2Ch],eax"
+"	      0049756d    mov timerFade.lStartTime,eax"
 "	      00497570    jmp near ptr 00497575h"
 "	      00497575    jmp near ptr 0049757Ah"
 "	      0049757a    jmp near ptr 0049757Fh"
 );
 // LINE 421:
 	asm( 
-"	      0049757f    mov ecx,[ebp+14h]"
+"	      0049757f    mov ecx,lSteps"
 "	      00497582    sar ecx,2"
-"	      00497585    mov eax,[ebp-14h]"
+"	      00497585    mov eax,i"
 "	      00497588    cdq"
 "	      00497589    idiv ecx"
 "	      0049758b    test edx,edx"
@@ -1631,125 +1631,125 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 422:
 	asm( 
-"	      00497593    sar dword ptr [ebp-4],1"
+"	      00497593    sar nDivisor,1"
 );
 // LINE 423:
 	asm( 
-"	      00497597    mov eax,[ebp-4]"
+"	      00497597    mov eax,nDivisor"
 "	      0049759a    dec eax"
-"	      0049759b    mov [ebp-8],eax"
+"	      0049759b    mov nMultiplier,eax"
 );
 // LINE 425:
 	asm( 
-"	      0049759e    mov dword ptr [ebp-18h],0Ah"
+"	      0049759e    mov j,0Ah"
 "	      004975a5    jmp near ptr 004975ADh"
-"	      004975aa    inc dword ptr [ebp-18h]"
-"	      004975ad    cmp dword ptr [ebp-18h],0F6h"
+"	      004975aa    inc j"
+"	      004975ad    cmp j,0F6h"
 "	      004975b4    jge near ptr 004976B4h"
 );
 // LINE 426:
 	asm( 
-"	      004975ba    mov eax,[ebp-18h]"
-"	      004975bd    mov ecx,[ebp+0Ch]"
+"	      004975ba    mov eax,j"
+"	      004975bd    mov ecx,paletteDestination"
 "	      004975c0    xor edx,edx"
 "	      004975c2    mov dl,[ecx+eax*4+2]"
-"	      004975c6    mov eax,[ebp-14h]"
+"	      004975c6    mov eax,i"
 "	      004975c9    dec eax"
 "	      004975ca    shl eax,0Ah"
-"	      004975cd    mov ecx,[ebp-18h]"
+"	      004975cd    mov ecx,j"
 "	      004975d0    lea eax,[eax+ecx*4]"
-"	      004975d3    mov ecx,[ebp-1Ch]"
+"	      004975d3    mov ecx,paletteArray"
 "	      004975d6    xor ebx,ebx"
 "	      004975d8    mov bl,[eax+ecx]"
 "	      004975db    sub edx,ebx"
-"	      004975dd    mov [ebp-20h],edx"
+"	      004975dd    mov nDifference,edx"
 );
 // LINE 427:
 	asm( 
-"	      004975e0    mov eax,[ebp-18h]"
-"	      004975e3    mov ecx,[ebp+0Ch]"
+"	      004975e0    mov eax,j"
+"	      004975e3    mov ecx,paletteDestination"
 "	      004975e6    xor ebx,ebx"
 "	      004975e8    mov bl,[ecx+eax*4+2]"
-"	      004975ec    mov eax,[ebp-8]"
-"	      004975ef    imul eax,[ebp-20h]"
+"	      004975ec    mov eax,nMultiplier"
+"	      004975ef    imul eax,nDifference"
 "	      004975f3    cdq"
-"	      004975f4    idiv dword ptr [ebp-4]"
+"	      004975f4    idiv nDivisor"
 "	      004975f7    sub ebx,eax"
-"	      004975f9    mov eax,[ebp-18h]"
-"	      004975fc    mov ecx,[ebp-14h]"
+"	      004975f9    mov eax,j"
+"	      004975fc    mov ecx,i"
 "	      004975ff    shl ecx,0Ah"
 "	      00497602    lea eax,[ecx+eax*4]"
-"	      00497605    mov ecx,[ebp-1Ch]"
+"	      00497605    mov ecx,paletteArray"
 "	      00497608    mov [eax+ecx],bl"
 );
 // LINE 429:
 	asm( 
-"	      0049760b    mov eax,[ebp-18h]"
-"	      0049760e    mov ecx,[ebp+0Ch]"
+"	      0049760b    mov eax,j"
+"	      0049760e    mov ecx,paletteDestination"
 "	      00497611    xor edx,edx"
 "	      00497613    mov dl,[ecx+eax*4+1]"
-"	      00497617    mov eax,[ebp-14h]"
+"	      00497617    mov eax,i"
 "	      0049761a    dec eax"
 "	      0049761b    shl eax,0Ah"
-"	      0049761e    mov ecx,[ebp-18h]"
+"	      0049761e    mov ecx,j"
 "	      00497621    lea eax,[eax+ecx*4]"
-"	      00497624    mov ecx,[ebp-1Ch]"
+"	      00497624    mov ecx,paletteArray"
 "	      00497627    xor ebx,ebx"
 "	      00497629    mov bl,[eax+ecx+1]"
 "	      0049762d    sub edx,ebx"
-"	      0049762f    mov [ebp-20h],edx"
+"	      0049762f    mov nDifference,edx"
 );
 // LINE 430:
 	asm( 
-"	      00497632    mov eax,[ebp-18h]"
-"	      00497635    mov ecx,[ebp+0Ch]"
+"	      00497632    mov eax,j"
+"	      00497635    mov ecx,paletteDestination"
 "	      00497638    xor ebx,ebx"
 "	      0049763a    mov bl,[ecx+eax*4+1]"
-"	      0049763e    mov eax,[ebp-8]"
-"	      00497641    imul eax,[ebp-20h]"
+"	      0049763e    mov eax,nMultiplier"
+"	      00497641    imul eax,nDifference"
 "	      00497645    cdq"
-"	      00497646    idiv dword ptr [ebp-4]"
+"	      00497646    idiv nDivisor"
 "	      00497649    sub ebx,eax"
-"	      0049764b    mov eax,[ebp-18h]"
-"	      0049764e    mov ecx,[ebp-14h]"
+"	      0049764b    mov eax,j"
+"	      0049764e    mov ecx,i"
 "	      00497651    shl ecx,0Ah"
 "	      00497654    lea eax,[ecx+eax*4]"
-"	      00497657    mov ecx,[ebp-1Ch]"
+"	      00497657    mov ecx,paletteArray"
 "	      0049765a    mov [eax+ecx+1],bl"
 );
 // LINE 432:
 	asm( 
-"	      0049765e    mov eax,[ebp-18h]"
-"	      00497661    mov ecx,[ebp+0Ch]"
+"	      0049765e    mov eax,j"
+"	      00497661    mov ecx,paletteDestination"
 "	      00497664    xor edx,edx"
 "	      00497666    mov dl,[ecx+eax*4]"
-"	      00497669    mov eax,[ebp-14h]"
+"	      00497669    mov eax,i"
 "	      0049766c    dec eax"
 "	      0049766d    shl eax,0Ah"
-"	      00497670    mov ecx,[ebp-18h]"
+"	      00497670    mov ecx,j"
 "	      00497673    lea eax,[eax+ecx*4]"
-"	      00497676    mov ecx,[ebp-1Ch]"
+"	      00497676    mov ecx,paletteArray"
 "	      00497679    xor ebx,ebx"
 "	      0049767b    mov bl,[eax+ecx+2]"
 "	      0049767f    sub edx,ebx"
-"	      00497681    mov [ebp-20h],edx"
+"	      00497681    mov nDifference,edx"
 );
 // LINE 433:
 	asm( 
-"	      00497684    mov eax,[ebp-18h]"
-"	      00497687    mov ecx,[ebp+0Ch]"
+"	      00497684    mov eax,j"
+"	      00497687    mov ecx,paletteDestination"
 "	      0049768a    xor ebx,ebx"
 "	      0049768c    mov bl,[ecx+eax*4]"
-"	      0049768f    mov eax,[ebp-8]"
-"	      00497692    imul eax,[ebp-20h]"
+"	      0049768f    mov eax,nMultiplier"
+"	      00497692    imul eax,nDifference"
 "	      00497696    cdq"
-"	      00497697    idiv dword ptr [ebp-4]"
+"	      00497697    idiv nDivisor"
 "	      0049769a    sub ebx,eax"
-"	      0049769c    mov eax,[ebp-18h]"
-"	      0049769f    mov ecx,[ebp-14h]"
+"	      0049769c    mov eax,j"
+"	      0049769f    mov ecx,i"
 "	      004976a2    shl ecx,0Ah"
 "	      004976a5    lea eax,[ecx+eax*4]"
-"	      004976a8    mov ecx,[ebp-1Ch]"
+"	      004976a8    mov ecx,paletteArray"
 "	      004976ab    mov [eax+ecx+2],bl"
 );
 // LINE 434:
@@ -1768,9 +1768,9 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 437:
 	asm( 
-"	      004976c8    mov eax,[ebp-14h]"
+"	      004976c8    mov eax,i"
 "	      004976cb    shl eax,0Ah"
-"	      004976ce    add eax,[ebp-1Ch]"
+"	      004976ce    add eax,paletteArray"
 "	      004976d1    add eax,28h"
 "	      004976d4    push eax"
 "	      004976d5    push 0ECh"
@@ -1784,18 +1784,18 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 441:
 	asm( 
-"	      004976ee    mov eax,[ebp-28h]"
+"	      004976ee    mov eax,timerFade.lTotalElapsedTime"
 "	      004976f1    mov [ebp-5Ch],eax"
 "	      004976f4    jmp near ptr 004976F9h"
-"	      004976f9    cmp dword ptr [ebp-2Ch],0"
+"	      004976f9    cmp timerFade.lStartTime,0"
 "	      004976fd    je near ptr 00497770h"
-"	      00497703    cmp dword ptr [ebp-30h],1"
+"	      00497703    cmp timerFade.nTimerResolution,1"
 "	      00497707    jne near ptr 00497720h"
 "	      0049770d    call dword ptr ds:[6C3908h]"
 "	      00497713    mov [ebp-6Ch],eax"
 "	      00497716    jmp near ptr 00497761h"
 "	      0049771b    jmp near ptr 00497761h"
-"	      00497720    cmp dword ptr [ebp-30h],0"
+"	      00497720    cmp timerFade.nTimerResolution,0"
 "	      00497724    jne near ptr 0049774Ah"
 "	      0049772a    lea eax,[ebp-68h]"
 "	      0049772d    push eax"
@@ -1813,30 +1813,30 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 "	      00497759    mov [ebp-6Ch],eax"
 "	      0049775c    jmp near ptr 00497761h"
 "	      00497761    mov eax,[ebp-6Ch]"
-"	      00497764    sub eax,[ebp-2Ch]"
+"	      00497764    sub eax,timerFade.lStartTime"
 "	      00497767    mov [ebp-58h],eax"
 "	      0049776a    mov eax,[ebp-58h]"
 "	      0049776d    add [ebp-5Ch],eax"
-"	      00497770    cmp dword ptr [ebp-30h],0"
+"	      00497770    cmp timerFade.nTimerResolution,0"
 "	      00497774    jne near ptr 004977ABh"
-"	      0049777a    cmp dword ptr [ebp-24h],0"
+"	      0049777a    cmp timerFade.lFrequency,0"
 "	      0049777e    je near ptr 004977ABh"
-"	      00497784    mov eax,[ebp-24h]"
+"	      00497784    mov eax,timerFade.lFrequency"
 "	      00497787    push eax"
 "	      00497788    push 0F4240h"
 "	      0049778d    mov eax,[ebp-5Ch]"
 "	      00497790    push eax"
 "	      00497791    call dword ptr ds:[6C372Ch]"
 "	      00497797    mov [ebp-5Ch],eax"
-"	      0049779a    mov eax,[ebp-34h]"
+"	      0049779a    mov eax,lDelayTime"
 "	      0049779d    cmp [ebp-5Ch],eax"
 "	      004977a0    jae near ptr 004977CDh"
 "	      004977a6    jmp near ptr 004977C8h"
-"	      004977ab    mov eax,[ebp-34h]"
+"	      004977ab    mov eax,lDelayTime"
 "	      004977ae    cmp [ebp-5Ch],eax"
 "	      004977b1    jae near ptr 004977CDh"
 "	      004977b7    jmp near ptr 004977C8h"
-"	      004977bc    mov eax,[ebp-34h]"
+"	      004977bc    mov eax,lDelayTime"
 "	      004977bf    cmp [ebp-70h],eax"
 "	      004977c2    jae near ptr 004977CDh"
 "	      004977c8    jmp near ptr 004976EEh"
@@ -1857,9 +1857,9 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 445:
 	asm( 
-"	      004977e6    mov eax,[ebp-10h]"
+"	      004977e6    mov eax,nLastStepIndex"
 "	      004977e9    shl eax,0Ah"
-"	      004977ec    add eax,[ebp-1Ch]"
+"	      004977ec    add eax,paletteArray"
 "	      004977ef    add eax,28h"
 "	      004977f2    push eax"
 "	      004977f3    push 0ECh"
@@ -1873,7 +1873,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 450:
 	asm( 
-"	      0049780c    mov eax,[ebp-0Ch]"
+"	      0049780c    mov eax,nOriginalPriority"
 "	      0049780f    push eax"
 "	      00497810    call dword ptr ds:[6C35F4h]"
 "	      00497816    push eax"
@@ -1881,7 +1881,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 );
 // LINE 452:
 	asm( 
-"	      0049781d    mov eax,[ebp-1Ch]"
+"	      0049781d    mov eax,paletteArray"
 "	      00497820    mov [ebp-38h],eax"
 "	      00497823    mov eax,[ebp-38h]"
 "	      00497826    mov [ebp-3Ch],eax"
@@ -1918,36 +1918,36 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 );
 // LINE 467:
 	asm( 
-"	      00497850    mov dword ptr [ebp-4],0Ah"
+"	      00497850    mov i,0Ah"
 "	      00497857    jmp near ptr 0049785Fh"
-"	      0049785c    inc dword ptr [ebp-4]"
-"	      0049785f    cmp dword ptr [ebp-4],0F6h"
+"	      0049785c    inc i"
+"	      0049785f    cmp i,0F6h"
 "	      00497866    jge near ptr 004978ABh"
 );
 // LINE 468:
 	asm( 
-"	      0049786c    mov eax,[ebp+8]"
+"	      0049786c    mov eax,colorToSet"
 "	      0049786f    mov al,[eax+2]"
-"	      00497872    mov ecx,[ebp-4]"
+"	      00497872    mov ecx,i"
 "	      00497875    mov [ebp+ecx*4-404h],al"
 );
 // LINE 469:
 	asm( 
-"	      0049787c    mov eax,[ebp+8]"
+"	      0049787c    mov eax,colorToSet"
 "	      0049787f    mov al,[eax+1]"
-"	      00497882    mov ecx,[ebp-4]"
+"	      00497882    mov ecx,i"
 "	      00497885    mov [ebp+ecx*4-403h],al"
 );
 // LINE 470:
 	asm( 
-"	      0049788c    mov eax,[ebp+8]"
+"	      0049788c    mov eax,colorToSet"
 "	      0049788f    mov al,[eax]"
-"	      00497891    mov ecx,[ebp-4]"
+"	      00497891    mov ecx,i"
 "	      00497894    mov [ebp+ecx*4-402h],al"
 );
 // LINE 471:
 	asm( 
-"	      0049789b    mov eax,[ebp-4]"
+"	      0049789b    mov eax,i"
 "	      0049789e    mov byte ptr [ebp+eax*4-401h],5"
 );
 // LINE 472:
@@ -1966,7 +1966,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 );
 // LINE 476:
 	asm( 
-"	      004978bf    lea eax,[ebp-3DCh]"
+"	      004978bf    lea eax,palEntries[10].peRed"
 "	      004978c5    push eax"
 "	      004978c6    push 0ECh"
 "	      004978cb    push 0Ah"
@@ -2002,43 +2002,43 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 "	      004978f2    push ebx"
 "	      004978f3    push esi"
 "	      004978f4    push edi"
-"	      004978f5    mov [ebp-410h],ecx"
+"	      004978f5    mov this,ecx"
 );
 // LINE 503:
 	asm( 
-"	      004978fb    mov dword ptr [ebp-4],0Ah"
+"	      004978fb    mov i,0Ah"
 "	      00497902    jmp near ptr 0049790Ah"
-"	      00497907    inc dword ptr [ebp-4]"
-"	      0049790a    cmp dword ptr [ebp-4],0F6h"
+"	      00497907    inc i"
+"	      0049790a    cmp i,0F6h"
 "	      00497911    jge near ptr 00497962h"
 );
 // LINE 504:
 	asm( 
-"	      00497917    mov eax,[ebp-4]"
-"	      0049791a    mov ecx,[ebp+8]"
+"	      00497917    mov eax,i"
+"	      0049791a    mov ecx,pNewColors"
 "	      0049791d    mov al,[ecx+eax*4+2]"
-"	      00497921    mov ecx,[ebp-4]"
+"	      00497921    mov ecx,i"
 "	      00497924    mov [ebp+ecx*4-404h],al"
 );
 // LINE 505:
 	asm( 
-"	      0049792b    mov eax,[ebp-4]"
-"	      0049792e    mov ecx,[ebp+8]"
+"	      0049792b    mov eax,i"
+"	      0049792e    mov ecx,pNewColors"
 "	      00497931    mov al,[ecx+eax*4+1]"
-"	      00497935    mov ecx,[ebp-4]"
+"	      00497935    mov ecx,i"
 "	      00497938    mov [ebp+ecx*4-403h],al"
 );
 // LINE 506:
 	asm( 
-"	      0049793f    mov eax,[ebp-4]"
-"	      00497942    mov ecx,[ebp+8]"
+"	      0049793f    mov eax,i"
+"	      00497942    mov ecx,pNewColors"
 "	      00497945    mov al,[ecx+eax*4]"
-"	      00497948    mov ecx,[ebp-4]"
+"	      00497948    mov ecx,i"
 "	      0049794b    mov [ebp+ecx*4-402h],al"
 );
 // LINE 507:
 	asm( 
-"	      00497952    mov eax,[ebp-4]"
+"	      00497952    mov eax,i"
 "	      00497955    mov byte ptr [ebp+eax*4-401h],5"
 );
 // LINE 508:
@@ -2052,7 +2052,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 );
 // LINE 511:
 	asm( 
-"	      0049796f    lea eax,[ebp-3DCh]"
+"	      0049796f    lea eax,palEntries[10].peRed"
 "	      00497975    push eax"
 "	      00497976    push 0ECh"
 "	      0049797b    push 0Ah"
@@ -2062,16 +2062,16 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 "	      00497985    mov eax,ds:[597268h]"
 "	      0049798a    mov eax,[eax]"
 "	      0049798c    call dword ptr [eax+18h]"
-"	      0049798f    mov [ebp-408h],eax"
+"	      0049798f    mov hResult,eax"
 );
 // LINE 512:
 	asm( 
-"	      00497995    cmp dword ptr [ebp-408h],0"
+"	      00497995    cmp hResult,0"
 "	      0049799c    je near ptr 004979C3h"
 );
 // LINE 513:
 	asm( 
-"	      004979a2    mov eax,[ebp-408h]"
+"	      004979a2    mov eax,hResult"
 "	      004979a8    mov [ebp-40Ch],eax"
 "	      004979ae    jmp near ptr 004979B3h"
 "	      004979b3    push 59A1C8h"
@@ -2099,16 +2099,16 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 "	      004979d5    push ebx"
 "	      004979d6    push esi"
 "	      004979d7    push edi"
-"	      004979d8    mov [ebp-4],ecx"
-"	      004979db    mov ecx,[ebp-4]"
+"	      004979d8    mov this,ecx"
+"	      004979db    mov ecx,this"
 "	      004979de    call 004963EFh"
-"	      004979e3    mov eax,[ebp-4]"
+"	      004979e3    mov eax,this"
 "	      004979e6    mov dword ptr [eax],591118h"
 );
 // LINE 535:
 	asm( 
 "	      004979ec    jmp near ptr 004979F1h"
-"	      004979f1    mov eax,[ebp-4]"
+"	      004979f1    mov eax,this"
 "	      004979f4    pop edi"
 "	      004979f5    pop esi"
 "	      004979f6    pop ebx"
@@ -2127,21 +2127,21 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors,
 "	      004979ff    push ebx"
 "	      00497a00    push esi"
 "	      00497a01    push edi"
-"	      00497a02    mov [ebp-4],ecx"
+"	      00497a02    mov this,ecx"
 "	      00497a05    push 100h"
-"	      00497a0a    mov eax,[ebp+0Ch]"
+"	      00497a0a    mov eax,bNewOwnColors"
 "	      00497a0d    push eax"
-"	      00497a0e    mov eax,[ebp+8]"
+"	      00497a0e    mov eax,pNewColors"
 "	      00497a11    push eax"
-"	      00497a12    mov ecx,[ebp-4]"
+"	      00497a12    mov ecx,this"
 "	      00497a15    call 004963B0h"
-"	      00497a1a    mov eax,[ebp-4]"
+"	      00497a1a    mov eax,this"
 "	      00497a1d    mov dword ptr [eax],591118h"
 );
 // LINE 544:
 	asm( 
 "	      00497a23    jmp near ptr 00497A28h"
-"	      00497a28    mov eax,[ebp-4]"
+"	      00497a28    mov eax,this"
 "	      00497a2b    pop edi"
 "	      00497a2c    pop esi"
 "	      00497a2d    pop ebx"
@@ -2169,39 +2169,39 @@ void ClearWindowsSystemPalette() {
 );
 // LINE 570:
 	asm( 
-"	      00497a3e    mov word ptr [ebp-408h],300h"
-"	      00497a47    mov word ptr [ebp-406h],100h"
-"	      00497a50    lea edi,[ebp-404h]"
+"	      00497a3e    mov Palette.Version,300h"
+"	      00497a47    mov Palette.NumberOfEntries,100h"
+"	      00497a50    lea edi,Palette.aEntries[0].peRed"
 "	      00497a56    xor eax,eax"
 "	      00497a58    mov ecx,100h"
 "	      00497a5d    rep stosd"
 );
 // LINE 573:
 	asm( 
-"	      00497a5f    mov dword ptr [ebp-4],0"
+"	      00497a5f    mov Counter,0"
 "	      00497a66    jmp near ptr 00497A6Eh"
-"	      00497a6b    inc dword ptr [ebp-4]"
-"	      00497a6e    cmp dword ptr [ebp-4],100h"
+"	      00497a6b    inc Counter"
+"	      00497a6e    cmp Counter,100h"
 "	      00497a75    jge near ptr 00497AACh"
 );
 // LINE 574:
 	asm( 
-"	      00497a7b    mov eax,[ebp-4]"
+"	      00497a7b    mov eax,Counter"
 "	      00497a7e    mov byte ptr [ebp+eax*4-404h],0"
 );
 // LINE 575:
 	asm( 
-"	      00497a86    mov eax,[ebp-4]"
+"	      00497a86    mov eax,Counter"
 "	      00497a89    mov byte ptr [ebp+eax*4-403h],0"
 );
 // LINE 576:
 	asm( 
-"	      00497a91    mov eax,[ebp-4]"
+"	      00497a91    mov eax,Counter"
 "	      00497a94    mov byte ptr [ebp+eax*4-402h],0"
 );
 // LINE 577:
 	asm( 
-"	      00497a9c    mov eax,[ebp-4]"
+"	      00497a9c    mov eax,Counter"
 "	      00497a9f    mov byte ptr [ebp+eax*4-401h],5"
 );
 // LINE 578:
@@ -2212,59 +2212,59 @@ void ClearWindowsSystemPalette() {
 	asm( 
 "	      00497aac    push 0"
 "	      00497aae    call dword ptr ds:[6C3850h]"
-"	      00497ab4    mov [ebp-414h],eax"
+"	      00497ab4    mov ScreenDC,eax"
 );
 // LINE 583:
 	asm( 
-"	      00497aba    cmp dword ptr [ebp-414h],0"
+"	      00497aba    cmp ScreenDC,0"
 "	      00497ac1    je near ptr 00497B42h"
 );
 // LINE 584:
 	asm( 
-"	      00497ac7    lea eax,[ebp-408h]"
+"	      00497ac7    lea eax,Palette.Version"
 "	      00497acd    push eax"
 "	      00497ace    call dword ptr ds:[6C357Ch]"
-"	      00497ad4    mov [ebp-40Ch],eax"
+"	      00497ad4    mov BlackPalette,eax"
 );
 // LINE 585:
 	asm( 
-"	      00497ada    cmp dword ptr [ebp-40Ch],0"
+"	      00497ada    cmp BlackPalette,0"
 "	      00497ae1    je near ptr 00497B33h"
 );
 // LINE 586:
 	asm( 
 "	      00497ae7    push 0"
-"	      00497ae9    mov eax,[ebp-40Ch]"
+"	      00497ae9    mov eax,BlackPalette"
 "	      00497aef    push eax"
-"	      00497af0    mov eax,[ebp-414h]"
+"	      00497af0    mov eax,ScreenDC"
 "	      00497af6    push eax"
 "	      00497af7    call dword ptr ds:[6C3570h]"
-"	      00497afd    mov [ebp-410h],eax"
+"	      00497afd    mov OldPalette,eax"
 );
 // LINE 587:
 	asm( 
-"	      00497b03    mov eax,[ebp-414h]"
+"	      00497b03    mov eax,ScreenDC"
 "	      00497b09    push eax"
 "	      00497b0a    call dword ptr ds:[6C3578h]"
 );
 // LINE 588:
 	asm( 
 "	      00497b10    push 0"
-"	      00497b12    mov eax,[ebp-410h]"
+"	      00497b12    mov eax,OldPalette"
 "	      00497b18    push eax"
-"	      00497b19    mov eax,[ebp-414h]"
+"	      00497b19    mov eax,ScreenDC"
 "	      00497b1f    push eax"
 "	      00497b20    call dword ptr ds:[6C3570h]"
 );
 // LINE 589:
 	asm( 
-"	      00497b26    mov eax,[ebp-40Ch]"
+"	      00497b26    mov eax,BlackPalette"
 "	      00497b2c    push eax"
 "	      00497b2d    call dword ptr ds:[6C358Ch]"
 );
 // LINE 591:
 	asm( 
-"	      00497b33    mov eax,[ebp-414h]"
+"	      00497b33    mov eax,ScreenDC"
 "	      00497b39    push eax"
 "	      00497b3a    push 0"
 "	      00497b3c    call dword ptr ds:[6C384Ch]"

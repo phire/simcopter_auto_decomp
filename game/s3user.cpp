@@ -70,14 +70,14 @@ void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo)
 // LINE 94:
 	asm( 
 "	      00428f8b    lea edi,ds:[5C2A48h]"
-"	      00428f91    mov esi,[ebp+8]"
+"	      00428f91    mov esi,newUserPersonalInfo"
 "	      00428f94    mov ecx,16h"
 "	      00428f99    rep movsd"
 );
 // LINE 95:
 	asm( 
 "	      00428f9b    lea edi,ds:[5C2ABCh]"
-"	      00428fa1    mov esi,[ebp+8]"
+"	      00428fa1    mov esi,newUserPersonalInfo"
 "	      00428fa4    mov ecx,16h"
 "	      00428fa9    rep movsd"
 );
@@ -133,7 +133,7 @@ void SetUserMoney(long lNewMoney) {
 	asm( 
 "	      00428fd6    call 00428F4Ah"
 "	      00428fdb    mov [ebp-4],eax"
-"	      00428fde    mov eax,[ebp+8]"
+"	      00428fde    mov eax,lNewMoney"
 "	      00428fe1    mov ecx,[ebp-4]"
 "	      00428fe4    mov [ecx+40h],eax"
 );
@@ -163,7 +163,7 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 	asm( 
 "	      00428ffa    call 00428F4Ah"
 "	      00428fff    mov [ebp-4],eax"
-"	      00429002    mov eax,[ebp+8]"
+"	      00429002    mov eax,lNewMoneyDelta"
 "	      00429005    mov ecx,[ebp-4]"
 "	      00429008    add [ecx+40h],eax"
 );
@@ -219,7 +219,7 @@ void SetUserPoints(long lNewPoints) {
 	asm( 
 "	      00429036    call 00428F4Ah"
 "	      0042903b    mov [ebp-4],eax"
-"	      0042903e    mov eax,[ebp+8]"
+"	      0042903e    mov eax,lNewPoints"
 "	      00429041    mov ecx,[ebp-4]"
 "	      00429044    mov [ecx+50h],eax"
 );
@@ -249,7 +249,7 @@ void ChangeUserPoints(long lNewPointsDelta) {
 	asm( 
 "	      0042905a    call 00428F4Ah"
 "	      0042905f    mov [ebp-4],eax"
-"	      00429062    mov eax,[ebp+8]"
+"	      00429062    mov eax,lNewPointsDelta"
 "	      00429065    mov ecx,[ebp-4]"
 "	      00429068    add [ecx+50h],eax"
 );
@@ -317,12 +317,12 @@ void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 // LINE 157:
 	asm( 
 "	      004290b4    call 00429075h"
-"	      004290b9    mov [ebp-4],eax"
+"	      004290b9    mov tempCitySettings,eax"
 );
 // LINE 158:
 	asm( 
-"	      004290bc    mov edi,[ebp-4]"
-"	      004290bf    mov esi,[ebp+8]"
+"	      004290bc    mov edi,tempCitySettings"
+"	      004290bf    mov esi,newCitySettings"
 "	      004290c2    mov ecx,9"
 "	      004290c7    rep movsd"
 );
@@ -374,7 +374,7 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 );
 // LINE 178:
 	asm( 
-"	      004290ee    mov eax,[ebp+8]"
+"	      004290ee    mov eax,szNewCurrentCityPath"
 "	      004290f1    push eax"
 "	      004290f2    push 5C2918h"
 "	      004290f7    call 0056CEB0h"
@@ -480,23 +480,23 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 );
 // LINE 215:
 	asm( 
-"	      00429176    mov eax,[ebp+0Ch]"
+"	      00429176    mov eax,szCityFileNameBase"
 "	      00429179    push eax"
-"	      0042917a    mov eax,[ebp+10h]"
+"	      0042917a    mov eax,szCityFileName"
 "	      0042917d    push eax"
 "	      0042917e    call 0056CEB0h"
 "	      00429183    add esp,8"
 );
 // LINE 217:
 	asm( 
-"	      00429186    cmp dword ptr [ebp+8],1"
+"	      00429186    cmp nCityFileType,1"
 "	      0042918a    jne near ptr 004291A7h"
 );
 // LINE 218:
 	asm( 
 "	      00429190    mov eax,ds:[597540h]"
 "	      00429195    push eax"
-"	      00429196    mov eax,[ebp+10h]"
+"	      00429196    mov eax,szCityFileName"
 "	      00429199    push eax"
 "	      0042919a    call 0056CEC0h"
 "	      0042919f    add esp,8"
@@ -504,14 +504,14 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 // LINE 219:
 	asm( 
 "	      004291a2    jmp near ptr 004291E4h"
-"	      004291a7    cmp dword ptr [ebp+8],2"
+"	      004291a7    cmp nCityFileType,2"
 "	      004291ab    jne near ptr 004291C8h"
 );
 // LINE 220:
 	asm( 
 "	      004291b1    mov eax,ds:[597544h]"
 "	      004291b6    push eax"
-"	      004291b7    mov eax,[ebp+10h]"
+"	      004291b7    mov eax,szCityFileName"
 "	      004291ba    push eax"
 "	      004291bb    call 0056CEC0h"
 "	      004291c0    add esp,8"
@@ -519,14 +519,14 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 // LINE 221:
 	asm( 
 "	      004291c3    jmp near ptr 004291E4h"
-"	      004291c8    cmp dword ptr [ebp+8],3"
+"	      004291c8    cmp nCityFileType,3"
 "	      004291cc    jne near ptr 004291E4h"
 );
 // LINE 222:
 	asm( 
 "	      004291d2    mov eax,ds:[597548h]"
 "	      004291d7    push eax"
-"	      004291d8    mov eax,[ebp+10h]"
+"	      004291d8    mov eax,szCityFileName"
 "	      004291db    push eax"
 "	      004291dc    call 0056CEC0h"
 "	      004291e1    add esp,8"
@@ -681,85 +681,85 @@ void CareerCityTweakInit() {
 );
 // LINE 268:
 	asm( 
-"	      004292f5    mov dword ptr [ebp-30h],9"
+"	      004292f5    mov nPvals,9"
 );
 // LINE 273:
 	asm( 
-"	      004292fc    mov dword ptr [ebp-8],0"
+"	      004292fc    mov i,0"
 "	      00429303    jmp near ptr 0042930Bh"
-"	      00429308    inc dword ptr [ebp-8]"
-"	      0042930b    cmp dword ptr [ebp-8],1Fh"
+"	      00429308    inc i"
+"	      0042930b    cmp i,1Fh"
 "	      0042930f    jge near ptr 00429391h"
 );
 // LINE 274:
 	asm( 
-"	      00429315    mov eax,[ebp-8]"
+"	      00429315    mov eax,i"
 "	      00429318    shl eax,3"
 "	      0042931b    lea eax,[eax+eax*8]"
 "	      0042931e    add eax,5C2B18h"
-"	      00429323    mov [ebp-4],eax"
+"	      00429323    mov currentCareerCityInfo,eax"
 );
 // LINE 275:
 	asm( 
-"	      00429326    mov eax,[ebp-4]"
+"	      00429326    mov eax,currentCareerCityInfo"
 "	      00429329    add eax,4"
-"	      0042932c    mov [ebp-2Ch],eax"
+"	      0042932c    mov pvals[0],eax"
 );
 // LINE 276:
 	asm( 
-"	      0042932f    mov eax,[ebp-4]"
+"	      0042932f    mov eax,currentCareerCityInfo"
 "	      00429332    add eax,8"
-"	      00429335    mov [ebp-28h],eax"
+"	      00429335    mov pvals[1],eax"
 );
 // LINE 277:
 	asm( 
-"	      00429338    mov eax,[ebp-4]"
+"	      00429338    mov eax,currentCareerCityInfo"
 "	      0042933b    add eax,0Ch"
-"	      0042933e    mov [ebp-24h],eax"
+"	      0042933e    mov pvals[2],eax"
 );
 // LINE 278:
 	asm( 
-"	      00429341    mov eax,[ebp-4]"
+"	      00429341    mov eax,currentCareerCityInfo"
 "	      00429344    add eax,10h"
-"	      00429347    mov [ebp-20h],eax"
+"	      00429347    mov pvals[3],eax"
 );
 // LINE 279:
 	asm( 
-"	      0042934a    mov eax,[ebp-4]"
+"	      0042934a    mov eax,currentCareerCityInfo"
 "	      0042934d    add eax,14h"
-"	      00429350    mov [ebp-1Ch],eax"
+"	      00429350    mov pvals[4],eax"
 );
 // LINE 280:
 	asm( 
-"	      00429353    mov eax,[ebp-4]"
+"	      00429353    mov eax,currentCareerCityInfo"
 "	      00429356    add eax,18h"
-"	      00429359    mov [ebp-18h],eax"
+"	      00429359    mov pvals[5],eax"
 );
 // LINE 281:
 	asm( 
-"	      0042935c    mov eax,[ebp-4]"
+"	      0042935c    mov eax,currentCareerCityInfo"
 "	      0042935f    add eax,1Ch"
-"	      00429362    mov [ebp-14h],eax"
+"	      00429362    mov pvals[6],eax"
 );
 // LINE 282:
 	asm( 
-"	      00429365    mov eax,[ebp-4]"
+"	      00429365    mov eax,currentCareerCityInfo"
 "	      00429368    add eax,20h"
-"	      0042936b    mov [ebp-10h],eax"
+"	      0042936b    mov pvals[7],eax"
 );
 // LINE 283:
 	asm( 
-"	      0042936e    mov eax,[ebp-4]"
+"	      0042936e    mov eax,currentCareerCityInfo"
 "	      00429371    add eax,24h"
-"	      00429374    mov [ebp-0Ch],eax"
+"	      00429374    mov pvals[8],eax"
 );
 // LINE 284:
 	asm( 
-"	      00429377    mov eax,[ebp-4]"
+"	      00429377    mov eax,currentCareerCityInfo"
 "	      0042937a    mov eax,[eax+44h]"
 "	      0042937d    push eax"
 "	      0042937e    push 9"
-"	      00429380    lea eax,[ebp-2Ch]"
+"	      00429380    lea eax,pvals[0]"
 "	      00429383    push eax"
 "	      00429384    call 004C9AD0h"
 "	      00429389    add esp,0Ch"
@@ -794,20 +794,20 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 );
 // LINE 303:
 	asm( 
-"	      004293a7    cmp dword ptr [ebp+8],1Fh"
+"	      004293a7    cmp lNewCareerCityIndex,1Fh"
 "	      004293ab    jge near ptr 004293BBh"
-"	      004293b1    cmp dword ptr [ebp+8],0"
+"	      004293b1    cmp lNewCareerCityIndex,0"
 "	      004293b5    jge near ptr 004293C2h"
 );
 // LINE 304:
 	asm( 
-"	      004293bb    mov dword ptr [ebp+8],0"
+"	      004293bb    mov lNewCareerCityIndex,0"
 );
 // LINE 307:
 	asm( 
-"	      004293c2    lea eax,[ebp-100h]"
+"	      004293c2    lea eax,szFullCityFileName[0]"
 "	      004293c8    push eax"
-"	      004293c9    mov eax,[ebp+8]"
+"	      004293c9    mov eax,lNewCareerCityIndex"
 "	      004293cc    shl eax,3"
 "	      004293cf    mov eax,[eax+eax*8+5C2B5Ch]"
 "	      004293d6    push eax"
@@ -818,7 +818,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 // LINE 308:
 	asm( 
 "	      004293e1    push 5C2918h"
-"	      004293e6    lea eax,[ebp-100h]"
+"	      004293e6    lea eax,szFullCityFileName[0]"
 "	      004293ec    push eax"
 "	      004293ed    push 0"
 "	      004293ef    push 5"
@@ -839,7 +839,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 );
 // LINE 313:
 	asm( 
-"	      00429417    mov eax,[ebp+8]"
+"	      00429417    mov eax,lNewCareerCityIndex"
 "	      0042941a    mov ds:[5C2AB4h],eax"
 );
 // LINE 314:
@@ -880,7 +880,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 );
 // LINE 323:
 	asm( 
-"	      00429476    mov eax,[ebp+8]"
+"	      00429476    mov eax,lNewCareerCityIndex"
 "	      00429479    shl eax,3"
 "	      0042947c    mov eax,[eax+eax*8+5C2B3Ch]"
 "	      00429483    push eax"
@@ -967,7 +967,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 );
 // LINE 348:
 	asm( 
-"	      0042958b    mov eax,[ebp+8]"
+"	      0042958b    mov eax,szUserCityPath"
 "	      0042958e    push eax"
 "	      0042958f    push 5C2918h"
 "	      00429594    call 0056CEB0h"
@@ -1028,11 +1028,11 @@ void SetUpNewUserCity(char * szUserCityPath) {
 "	      0042961c    mov eax,[eax]"
 "	      0042961e    mov ecx,ds:[599BC4h]"
 "	      00429624    call dword ptr [eax+1Ch]"
-"	      00429627    mov [ebp-4],eax"
+"	      00429627    mov chPrefData,eax"
 );
 // LINE 363:
 	asm( 
-"	      0042962a    cmp dword ptr [ebp-4],0"
+"	      0042962a    cmp chPrefData,0"
 "	      0042962e    je near ptr 00429661h"
 );
 // LINE 364:
@@ -1048,7 +1048,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 // LINE 365:
 	asm( 
 "	      00429652    mov edi,5C2A20h"
-"	      00429657    mov esi,[ebp-4]"
+"	      00429657    mov esi,chPrefData"
 "	      0042965a    mov ecx,9"
 "	      0042965f    rep movsd"
 );
@@ -1144,13 +1144,13 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 // LINE 395:
 	asm( 
 "	      0042976c    mov eax,ds:[5C2AB4h]"
-"	      00429771    mov [ebp-4],eax"
+"	      00429771    mov lOriginalIndex,eax"
 );
 // LINE 398:
 	asm( 
-"	      00429774    lea eax,[ebp-104h]"
+"	      00429774    lea eax,szFullCityFileName[0]"
 "	      0042977a    push eax"
-"	      0042977b    mov eax,[ebp+8]"
+"	      0042977b    mov eax,lNewCareerCityIndex"
 "	      0042977e    shl eax,3"
 "	      00429781    mov eax,[eax+eax*8+5C2B5Ch]"
 "	      00429788    push eax"
@@ -1161,7 +1161,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 // LINE 399:
 	asm( 
 "	      00429793    push 5C2918h"
-"	      00429798    lea eax,[ebp-104h]"
+"	      00429798    lea eax,szFullCityFileName[0]"
 "	      0042979e    push eax"
 "	      0042979f    push 0"
 "	      004297a1    push 5"
@@ -1170,33 +1170,33 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 );
 // LINE 401:
 	asm( 
-"	      004297ab    mov eax,[ebp-4]"
+"	      004297ab    mov eax,lOriginalIndex"
 "	      004297ae    shl eax,3"
 "	      004297b1    mov eax,[eax+eax*8+5C2B40h]"
 "	      004297b8    mov ds:[5C2AA8h],eax"
 );
 // LINE 402:
 	asm( 
-"	      004297bd    mov eax,[ebp-4]"
+"	      004297bd    mov eax,lOriginalIndex"
 "	      004297c0    shl eax,3"
 "	      004297c3    mov eax,[eax+eax*8+5C2B44h]"
 "	      004297ca    mov ds:[5C2AACh],eax"
 );
 // LINE 403:
 	asm( 
-"	      004297cf    mov eax,[ebp-4]"
+"	      004297cf    mov eax,lOriginalIndex"
 "	      004297d2    shl eax,3"
 "	      004297d5    mov eax,[eax+eax*8+5C2B48h]"
 "	      004297dc    mov ds:[5C2AB0h],eax"
 );
 // LINE 404:
 	asm( 
-"	      004297e1    mov eax,[ebp+8]"
+"	      004297e1    mov eax,lNewCareerCityIndex"
 "	      004297e4    mov ds:[5C2AB4h],eax"
 );
 // LINE 405:
 	asm( 
-"	      004297e9    mov eax,[ebp+8]"
+"	      004297e9    mov eax,lNewCareerCityIndex"
 "	      004297ec    shl eax,3"
 "	      004297ef    mov eax,[eax+eax*8+5C2B3Ch]"
 "	      004297f6    push eax"
@@ -2457,68 +2457,68 @@ void InitializeAllCareerCitiesInfo() {
 );
 // LINE 744:
 	asm( 
-"	      0042a420    mov dword ptr [ebp-4],0"
+"	      0042a420    mov i,0"
 "	      0042a427    jmp near ptr 0042A42Fh"
-"	      0042a42c    inc dword ptr [ebp-4]"
-"	      0042a42f    cmp dword ptr [ebp-4],1Fh"
+"	      0042a42c    inc i"
+"	      0042a42f    cmp i,1Fh"
 "	      0042a433    jge near ptr 0042A4E1h"
 );
 // LINE 745:
 	asm( 
-"	      0042a439    mov eax,[ebp-4]"
+"	      0042a439    mov eax,i"
 "	      0042a43c    shl eax,2"
 "	      0042a43f    mov ecx,1Fh"
 "	      0042a444    cdq"
 "	      0042a445    idiv ecx"
-"	      0042a447    mov ecx,[ebp-4]"
+"	      0042a447    mov ecx,i"
 "	      0042a44a    shl ecx,3"
 "	      0042a44d    mov [ecx+ecx*8+5C2B1Ch],eax"
 );
 // LINE 746:
 	asm( 
-"	      0042a454    mov eax,[ebp-4]"
+"	      0042a454    mov eax,i"
 "	      0042a457    shl eax,3"
 "	      0042a45a    mov dword ptr [eax+eax*8+5C2B20h],1Ah"
 );
 // LINE 747:
 	asm( 
-"	      0042a465    mov eax,[ebp-4]"
+"	      0042a465    mov eax,i"
 "	      0042a468    shl eax,3"
 "	      0042a46b    mov dword ptr [eax+eax*8+5C2B24h],14h"
 );
 // LINE 748:
 	asm( 
-"	      0042a476    mov eax,[ebp-4]"
+"	      0042a476    mov eax,i"
 "	      0042a479    shl eax,3"
 "	      0042a47c    mov dword ptr [eax+eax*8+5C2B28h],8"
 );
 // LINE 749:
 	asm( 
-"	      0042a487    mov eax,[ebp-4]"
+"	      0042a487    mov eax,i"
 "	      0042a48a    shl eax,3"
 "	      0042a48d    mov dword ptr [eax+eax*8+5C2B2Ch],0Ch"
 );
 // LINE 750:
 	asm( 
-"	      0042a498    mov eax,[ebp-4]"
+"	      0042a498    mov eax,i"
 "	      0042a49b    shl eax,3"
 "	      0042a49e    mov dword ptr [eax+eax*8+5C2B30h],14h"
 );
 // LINE 751:
 	asm( 
-"	      0042a4a9    mov eax,[ebp-4]"
+"	      0042a4a9    mov eax,i"
 "	      0042a4ac    shl eax,3"
 "	      0042a4af    mov dword ptr [eax+eax*8+5C2B34h],0Eh"
 );
 // LINE 752:
 	asm( 
-"	      0042a4ba    mov eax,[ebp-4]"
+"	      0042a4ba    mov eax,i"
 "	      0042a4bd    shl eax,3"
 "	      0042a4c0    mov dword ptr [eax+eax*8+5C2B38h],0"
 );
 // LINE 753:
 	asm( 
-"	      0042a4cb    mov eax,[ebp-4]"
+"	      0042a4cb    mov eax,i"
 "	      0042a4ce    shl eax,3"
 "	      0042a4d1    mov dword ptr [eax+eax*8+5C2B3Ch],1"
 );

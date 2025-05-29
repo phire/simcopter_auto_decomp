@@ -17,74 +17,74 @@ void CSparkalWindow::CSparkalWindow() {
 "	      00480696    push ebx"
 "	      00480697    push esi"
 "	      00480698    push edi"
-"	      00480699    mov [ebp-8],ecx"
-"	      0048069c    mov eax,[ebp-8]"
+"	      00480699    mov this,ecx"
+"	      0048069c    mov eax,this"
 "	      0048069f    mov dword ptr [eax],590EF8h"
 );
 // LINE 55:
 	asm( 
-"	      004806a5    mov eax,[ebp-8]"
+"	      004806a5    mov eax,this"
 "	      004806a8    mov dword ptr [eax+10h],0"
 );
 // LINE 56:
 	asm( 
-"	      004806af    mov eax,[ebp-8]"
+"	      004806af    mov eax,this"
 "	      004806b2    mov dword ptr [eax+14h],0"
 );
 // LINE 57:
 	asm( 
-"	      004806b9    mov eax,[ebp-8]"
+"	      004806b9    mov eax,this"
 "	      004806bc    mov dword ptr [eax+18h],0"
 );
 // LINE 58:
 	asm( 
-"	      004806c3    mov eax,[ebp-8]"
+"	      004806c3    mov eax,this"
 "	      004806c6    mov dword ptr [eax+8],0"
 );
 // LINE 59:
 	asm( 
-"	      004806cd    mov eax,[ebp-8]"
+"	      004806cd    mov eax,this"
 "	      004806d0    mov dword ptr [eax+4],0"
 );
 // LINE 60:
 	asm( 
-"	      004806d7    mov eax,[ebp-8]"
+"	      004806d7    mov eax,this"
 "	      004806da    mov dword ptr [eax+0Ch],0"
 );
 // LINE 61:
 	asm( 
-"	      004806e1    mov eax,[ebp-8]"
+"	      004806e1    mov eax,this"
 "	      004806e4    mov dword ptr [eax+1Ch],0"
 );
 // LINE 62:
 	asm( 
-"	      004806eb    mov eax,[ebp-8]"
+"	      004806eb    mov eax,this"
 "	      004806ee    mov dword ptr [eax+20h],0"
 );
 // LINE 63:
 	asm( 
-"	      004806f5    mov eax,[ebp-8]"
+"	      004806f5    mov eax,this"
 "	      004806f8    mov dword ptr [eax+24h],0"
 );
 // LINE 65:
 	asm( 
-"	      004806ff    mov dword ptr [ebp-4],0"
+"	      004806ff    mov i,0"
 "	      00480706    jmp near ptr 0048070Eh"
-"	      0048070b    inc dword ptr [ebp-4]"
-"	      0048070e    cmp dword ptr [ebp-4],10h"
+"	      0048070b    inc i"
+"	      0048070e    cmp i,10h"
 "	      00480712    jge near ptr 0048072Bh"
 );
 // LINE 66:
 	asm( 
-"	      00480718    mov eax,[ebp-4]"
-"	      0048071b    mov ecx,[ebp-8]"
+"	      00480718    mov eax,i"
+"	      0048071b    mov ecx,this"
 "	      0048071e    mov dword ptr [ecx+eax*4+28h],0"
 "	      00480726    jmp near ptr 0048070Bh"
 );
 // LINE 67:
 	asm( 
 "	      0048072b    jmp near ptr 00480730h"
-"	      00480730    mov eax,[ebp-8]"
+"	      00480730    mov eax,this"
 "	      00480733    pop edi"
 "	      00480734    pop esi"
 "	      00480735    pop ebx"
@@ -112,76 +112,76 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 "	      00480741    push ebx"
 "	      00480742    push esi"
 "	      00480743    push edi"
-"	      00480744    mov [ebp-474h],ecx"
-"	      0048074a    mov eax,[ebp-474h]"
+"	      00480744    mov this,ecx"
+"	      0048074a    mov eax,this"
 "	      00480750    mov dword ptr [eax],590EF8h"
 );
 // LINE 80:
 	asm( 
-"	      00480756    mov eax,[ebp-474h]"
+"	      00480756    mov eax,this"
 "	      0048075c    mov dword ptr [eax+10h],0"
 );
 // LINE 81:
 	asm( 
-"	      00480763    mov eax,[ebp-474h]"
+"	      00480763    mov eax,this"
 "	      00480769    mov dword ptr [eax+14h],0"
 );
 // LINE 82:
 	asm( 
-"	      00480770    mov eax,[ebp-474h]"
+"	      00480770    mov eax,this"
 "	      00480776    mov dword ptr [eax+18h],0"
 );
 // LINE 83:
 	asm( 
-"	      0048077d    mov eax,[ebp+8]"
-"	      00480780    mov ecx,[ebp-474h]"
+"	      0048077d    mov eax,Width"
+"	      00480780    mov ecx,this"
 "	      00480786    mov [ecx+8],eax"
 );
 // LINE 84:
 	asm( 
-"	      00480789    mov eax,[ebp+0Ch]"
-"	      0048078c    mov ecx,[ebp-474h]"
+"	      00480789    mov eax,Height"
+"	      0048078c    mov ecx,this"
 "	      00480792    mov [ecx+4],eax"
 );
 // LINE 85:
 	asm( 
-"	      00480795    mov eax,[ebp+10h]"
-"	      00480798    mov ecx,[ebp-474h]"
+"	      00480795    mov eax,Style"
+"	      00480798    mov ecx,this"
 "	      0048079e    mov [ecx+0Ch],eax"
 );
 // LINE 86:
 	asm( 
-"	      004807a1    mov eax,[ebp-474h]"
+"	      004807a1    mov eax,this"
 "	      004807a7    mov dword ptr [eax+1Ch],0"
 );
 // LINE 87:
 	asm( 
-"	      004807ae    mov eax,[ebp-474h]"
+"	      004807ae    mov eax,this"
 "	      004807b4    mov dword ptr [eax+20h],0"
 );
 // LINE 88:
 	asm( 
-"	      004807bb    mov eax,[ebp-474h]"
+"	      004807bb    mov eax,this"
 "	      004807c1    mov dword ptr [eax+24h],0"
 );
 // LINE 90:
 	asm( 
-"	      004807c8    mov dword ptr [ebp-38h],0"
+"	      004807c8    mov i,0"
 "	      004807cf    jmp near ptr 004807D7h"
-"	      004807d4    inc dword ptr [ebp-38h]"
-"	      004807d7    cmp dword ptr [ebp-38h],10h"
+"	      004807d4    inc i"
+"	      004807d7    cmp i,10h"
 "	      004807db    jge near ptr 004807F7h"
 );
 // LINE 91:
 	asm( 
-"	      004807e1    mov eax,[ebp-38h]"
-"	      004807e4    mov ecx,[ebp-474h]"
+"	      004807e1    mov eax,i"
+"	      004807e4    mov ecx,this"
 "	      004807ea    mov dword ptr [ecx+eax*4+28h],0"
 "	      004807f2    jmp near ptr 004807D4h"
 );
 // LINE 94:
 	asm( 
-"	      004807f7    lea eax,[ebp-2Ch]"
+"	      004807f7    lea eax,ClassInfo.style"
 "	      004807fa    push eax"
 "	      004807fb    push 599AB8h"
 "	      00480800    mov eax,ds:[5C28C8h]"
@@ -192,59 +192,59 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 95:
 	asm( 
-"	      00480814    mov dword ptr [ebp-14h],0"
+"	      00480814    mov ClassInfo.hCursor,0"
 );
 // LINE 96:
 	asm( 
-"	      0048081b    mov dword ptr [ebp-0Ch],599AC0h"
+"	      0048081b    mov ClassInfo.lpszMenuName,599AC0h"
 );
 // LINE 97:
 	asm( 
-"	      00480822    mov dword ptr [ebp-8],599AB8h"
+"	      00480822    mov ClassInfo.lpszClassName,599AB8h"
 );
 // LINE 98:
 	asm( 
 "	      00480829    push 4"
 "	      0048082b    call dword ptr ds:[6C3560h]"
-"	      00480831    mov [ebp-10h],eax"
+"	      00480831    mov ClassInfo.hbrBackground,eax"
 );
 // LINE 99:
 	asm( 
 "	      00480834    mov eax,ds:[5C28C8h]"
-"	      00480839    mov [ebp-1Ch],eax"
+"	      00480839    mov ClassInfo.hInstance,eax"
 );
 // LINE 100:
 	asm( 
-"	      0048083c    mov dword ptr [ebp-2Ch],23h"
+"	      0048083c    mov ClassInfo.style,23h"
 );
 // LINE 101:
 	asm( 
-"	      00480843    mov dword ptr [ebp-28h],4815DDh"
+"	      00480843    mov ClassInfo.lpfnWndProc,4815DDh"
 );
 // LINE 102:
 	asm( 
-"	      0048084a    mov dword ptr [ebp-20h],4"
+"	      0048084a    mov ClassInfo.cbWndExtra,4"
 );
 // LINE 103:
 	asm( 
-"	      00480851    mov dword ptr [ebp-24h],0"
+"	      00480851    mov ClassInfo.cbClsExtra,0"
 );
 // LINE 104:
 	asm( 
 "	      00480858    push 7F00h"
 "	      0048085d    push 0"
 "	      0048085f    call dword ptr ds:[6C381Ch]"
-"	      00480865    mov [ebp-18h],eax"
+"	      00480865    mov ClassInfo.hIcon,eax"
 );
 // LINE 105:
 	asm( 
-"	      00480868    lea eax,[ebp-2Ch]"
+"	      00480868    lea eax,ClassInfo.style"
 "	      0048086b    push eax"
 "	      0048086c    call dword ptr ds:[6C3814h]"
 );
 // LINE 109:
 	asm( 
-"	      00480872    mov dword ptr [ebp-30h],0"
+"	      00480872    mov dwWindowsStyle,0"
 );
 // LINE 110:
 	asm( 
@@ -253,7 +253,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 111:
 	asm( 
-"	      00480883    or dword ptr [ebp-30h],40000h"
+"	      00480883    or dwWindowsStyle,40000h"
 );
 // LINE 112:
 	asm( 
@@ -263,7 +263,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 113:
 	asm( 
-"	      00480899    or dword ptr [ebp-30h],800000h"
+"	      00480899    or dwWindowsStyle,800000h"
 );
 // LINE 114:
 	asm( 
@@ -271,7 +271,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 115:
 	asm( 
-"	      004808a5    or dword ptr [ebp-30h],80000000h"
+"	      004808a5    or dwWindowsStyle,80000000h"
 );
 // LINE 116:
 	asm( 
@@ -280,7 +280,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 117:
 	asm( 
-"	      004808b6    or dword ptr [ebp-30h],0C00000h"
+"	      004808b6    or dwWindowsStyle,0C00000h"
 );
 // LINE 118:
 	asm( 
@@ -289,7 +289,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 119:
 	asm( 
-"	      004808c7    or dword ptr [ebp-30h],0C80000h"
+"	      004808c7    or dwWindowsStyle,0C80000h"
 );
 // LINE 120:
 	asm( 
@@ -298,23 +298,23 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 121:
 	asm( 
-"	      004808d8    or dword ptr [ebp-30h],30000h"
+"	      004808d8    or dwWindowsStyle,30000h"
 );
 // LINE 124:
 	asm( 
-"	      004808df    mov dword ptr [ebp-48h],0"
-"	      004808e6    mov dword ptr [ebp-44h],0"
-"	      004808ed    mov eax,[ebp+8]"
-"	      004808f0    mov [ebp-40h],eax"
-"	      004808f3    mov eax,[ebp+0Ch]"
-"	      004808f6    mov [ebp-3Ch],eax"
+"	      004808df    mov WindowRect.left,0"
+"	      004808e6    mov WindowRect.top,0"
+"	      004808ed    mov eax,Width"
+"	      004808f0    mov WindowRect.right,eax"
+"	      004808f3    mov eax,Height"
+"	      004808f6    mov WindowRect.bottom,eax"
 );
 // LINE 125:
 	asm( 
 "	      004808f9    push 0"
-"	      004808fb    mov eax,[ebp-30h]"
+"	      004808fb    mov eax,dwWindowsStyle"
 "	      004808fe    push eax"
-"	      004808ff    lea eax,[ebp-48h]"
+"	      004808ff    lea eax,WindowRect.left"
 "	      00480902    push eax"
 "	      00480903    call dword ptr ds:[6C3890h]"
 );
@@ -322,25 +322,25 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	asm( 
 "	      00480909    push 0"
 "	      0048090b    call dword ptr ds:[6C3810h]"
-"	      00480911    mov [ebp-34h],eax"
+"	      00480911    mov ScreenWidth,eax"
 "	      00480914    jmp near ptr 00480919h"
 );
 // LINE 129:
 	asm( 
 "	      00480919    push 1"
 "	      0048091b    call dword ptr ds:[6C3810h]"
-"	      00480921    mov [ebp-4],eax"
+"	      00480921    mov ScreenHeight,eax"
 "	      00480924    jmp near ptr 00480929h"
 );
 // LINE 131:
 	asm( 
-"	      00480929    cmp dword ptr [ebp+8],0"
+"	      00480929    cmp Width,0"
 "	      0048092d    jne near ptr 0048093Eh"
 );
 // LINE 132:
 	asm( 
-"	      00480933    mov eax,[ebp-34h]"
-"	      00480936    mov [ebp+8],eax"
+"	      00480933    mov eax,ScreenWidth"
+"	      00480936    mov Width,eax"
 );
 // LINE 133:
 	asm( 
@@ -348,19 +348,19 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 134:
 	asm( 
-"	      0048093e    mov eax,[ebp-40h]"
-"	      00480941    sub eax,[ebp-48h]"
-"	      00480944    mov [ebp+8],eax"
+"	      0048093e    mov eax,WindowRect.right"
+"	      00480941    sub eax,WindowRect.left"
+"	      00480944    mov Width,eax"
 );
 // LINE 135:
 	asm( 
-"	      00480947    cmp dword ptr [ebp+0Ch],0"
+"	      00480947    cmp Height,0"
 "	      0048094b    jne near ptr 0048095Ch"
 );
 // LINE 136:
 	asm( 
-"	      00480951    mov eax,[ebp-4]"
-"	      00480954    mov [ebp+0Ch],eax"
+"	      00480951    mov eax,ScreenHeight"
+"	      00480954    mov Height,eax"
 );
 // LINE 137:
 	asm( 
@@ -368,49 +368,49 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 138:
 	asm( 
-"	      0048095c    mov eax,[ebp-3Ch]"
-"	      0048095f    sub eax,[ebp-44h]"
-"	      00480962    mov [ebp+0Ch],eax"
+"	      0048095c    mov eax,WindowRect.bottom"
+"	      0048095f    sub eax,WindowRect.top"
+"	      00480962    mov Height,eax"
 );
 // LINE 141:
 	asm( 
-"	      00480965    mov eax,[ebp+8]"
-"	      00480968    cmp [ebp-34h],eax"
+"	      00480965    mov eax,Width"
+"	      00480968    cmp ScreenWidth,eax"
 "	      0048096b    jae near ptr 00480977h"
 );
 // LINE 142:
 	asm( 
-"	      00480971    mov eax,[ebp-34h]"
-"	      00480974    mov [ebp+8],eax"
+"	      00480971    mov eax,ScreenWidth"
+"	      00480974    mov Width,eax"
 );
 // LINE 143:
 	asm( 
-"	      00480977    mov eax,[ebp+0Ch]"
-"	      0048097a    cmp [ebp-4],eax"
+"	      00480977    mov eax,Height"
+"	      0048097a    cmp ScreenHeight,eax"
 "	      0048097d    jae near ptr 00480989h"
 );
 // LINE 144:
 	asm( 
-"	      00480983    mov eax,[ebp-4]"
-"	      00480986    mov [ebp+0Ch],eax"
+"	      00480983    mov eax,ScreenHeight"
+"	      00480986    mov Height,eax"
 );
 // LINE 147:
 	asm( 
-"	      00480989    mov eax,[ebp-34h]"
+"	      00480989    mov eax,ScreenWidth"
 "	      0048098c    shr eax,1"
-"	      0048098f    mov ecx,[ebp+8]"
+"	      0048098f    mov ecx,Width"
 "	      00480992    shr ecx,1"
 "	      00480995    sub eax,ecx"
-"	      00480997    mov [ebp-50h],eax"
+"	      00480997    mov Left,eax"
 );
 // LINE 148:
 	asm( 
-"	      0048099a    mov eax,[ebp-4]"
+"	      0048099a    mov eax,ScreenHeight"
 "	      0048099d    shr eax,1"
-"	      004809a0    mov ecx,[ebp+0Ch]"
+"	      004809a0    mov ecx,Height"
 "	      004809a3    shr ecx,1"
 "	      004809a6    sub eax,ecx"
-"	      004809a8    mov [ebp-4Ch],eax"
+"	      004809a8    mov Top,eax"
 );
 // LINE 152:
 	asm( 
@@ -419,27 +419,27 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 "	      004809b2    push eax"
 "	      004809b3    push 0"
 "	      004809b5    push 0"
-"	      004809b7    mov eax,[ebp+0Ch]"
+"	      004809b7    mov eax,Height"
 "	      004809ba    push eax"
-"	      004809bb    mov eax,[ebp+8]"
+"	      004809bb    mov eax,Width"
 "	      004809be    push eax"
-"	      004809bf    mov eax,[ebp-4Ch]"
+"	      004809bf    mov eax,Top"
 "	      004809c2    push eax"
-"	      004809c3    mov eax,[ebp-50h]"
+"	      004809c3    mov eax,Left"
 "	      004809c6    push eax"
-"	      004809c7    mov eax,[ebp-30h]"
+"	      004809c7    mov eax,dwWindowsStyle"
 "	      004809ca    push eax"
-"	      004809cb    mov eax,[ebp+18h]"
+"	      004809cb    mov eax,Caption"
 "	      004809ce    push eax"
 "	      004809cf    push 599AB8h"
 "	      004809d4    push 0"
 "	      004809d6    call dword ptr ds:[6C3808h]"
-"	      004809dc    mov ecx,[ebp-474h]"
+"	      004809dc    mov ecx,this"
 "	      004809e2    mov [ecx+18h],eax"
 );
 // LINE 155:
 	asm( 
-"	      004809e5    mov eax,[ebp-474h]"
+"	      004809e5    mov eax,this"
 "	      004809eb    cmp dword ptr [eax+18h],0"
 "	      004809ef    je near ptr 00480CEFh"
 );
@@ -453,173 +453,173 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	int32_t Start;
 	int32_t Counter;
 	asm( 
-"	      004809f5    lea eax,[ebp-48h]"
+"	      004809f5    lea eax,WindowRect.left"
 "	      004809f8    push eax"
-"	      004809f9    mov eax,[ebp-474h]"
+"	      004809f9    mov eax,this"
 "	      004809ff    mov eax,[eax+18h]"
 "	      00480a02    push eax"
 "	      00480a03    call dword ptr ds:[6C382Ch]"
 );
 // LINE 157:
 	asm( 
-"	      00480a09    mov eax,[ebp-40h]"
-"	      00480a0c    sub eax,[ebp-48h]"
-"	      00480a0f    mov ecx,[ebp-474h]"
+"	      00480a09    mov eax,WindowRect.right"
+"	      00480a0c    sub eax,WindowRect.left"
+"	      00480a0f    mov ecx,this"
 "	      00480a15    mov [ecx+8],eax"
 );
 // LINE 158:
 	asm( 
-"	      00480a18    mov eax,[ebp-3Ch]"
-"	      00480a1b    sub eax,[ebp-44h]"
-"	      00480a1e    mov ecx,[ebp-474h]"
+"	      00480a18    mov eax,WindowRect.bottom"
+"	      00480a1b    sub eax,WindowRect.top"
+"	      00480a1e    mov ecx,this"
 "	      00480a24    mov [ecx+4],eax"
 );
 // LINE 165:
 	asm( 
-"	      00480a27    mov word ptr [ebp-46Ch],300h"
-"	      00480a30    mov word ptr [ebp-46Ah],100h"
-"	      00480a39    lea edi,[ebp-468h]"
+"	      00480a27    mov LogPalette.Version,300h"
+"	      00480a30    mov LogPalette.NumberOfEntries,100h"
+"	      00480a39    lea edi,LogPalette.aEntries[0].peRed"
 "	      00480a3f    xor eax,eax"
 "	      00480a41    mov ecx,100h"
 "	      00480a46    rep stosd"
 );
 // LINE 169:
 	asm( 
-"	      00480a48    mov dword ptr [ebp-64h],14h"
+"	      00480a48    mov StaticCount,14h"
 );
 // LINE 170:
 	asm( 
-"	      00480a4f    mov dword ptr [ebp-60h],1"
+"	      00480a4f    mov PaletteUse,1"
 );
 // LINE 172:
 	asm( 
 "	      00480a56    push 0"
 "	      00480a58    call dword ptr ds:[6C3850h]"
-"	      00480a5e    mov [ebp-68h],eax"
+"	      00480a5e    mov hdc,eax"
 );
 // LINE 173:
 	asm( 
-"	      00480a61    cmp dword ptr [ebp-68h],0"
+"	      00480a61    cmp hdc,0"
 "	      00480a65    je near ptr 00480AABh"
 );
 // LINE 174:
 	asm( 
-"	      00480a6b    mov eax,[ebp-68h]"
+"	      00480a6b    mov eax,hdc"
 "	      00480a6e    push eax"
 "	      00480a6f    call dword ptr ds:[6C3588h]"
-"	      00480a75    mov [ebp-60h],eax"
+"	      00480a75    mov PaletteUse,eax"
 );
 // LINE 175:
 	asm( 
 "	      00480a78    push 18h"
-"	      00480a7a    mov eax,[ebp-68h]"
+"	      00480a7a    mov eax,hdc"
 "	      00480a7d    push eax"
 "	      00480a7e    call dword ptr ds:[6C3590h]"
-"	      00480a84    mov [ebp-64h],eax"
+"	      00480a84    mov StaticCount,eax"
 );
 // LINE 176:
 	asm( 
-"	      00480a87    lea eax,[ebp-468h]"
+"	      00480a87    lea eax,LogPalette.aEntries[0].peRed"
 "	      00480a8d    push eax"
 "	      00480a8e    push 100h"
 "	      00480a93    push 0"
-"	      00480a95    mov eax,[ebp-68h]"
+"	      00480a95    mov eax,hdc"
 "	      00480a98    push eax"
 "	      00480a99    call dword ptr ds:[6C3580h]"
 );
 // LINE 177:
 	asm( 
-"	      00480a9f    mov eax,[ebp-68h]"
+"	      00480a9f    mov eax,hdc"
 "	      00480aa2    push eax"
 "	      00480aa3    push 0"
 "	      00480aa5    call dword ptr ds:[6C384Ch]"
 );
 // LINE 181:
 	asm( 
-"	      00480aab    mov eax,[ebp-64h]"
+"	      00480aab    mov eax,StaticCount"
 "	      00480aae    cdq"
 "	      00480aaf    sub eax,edx"
 "	      00480ab1    sar eax,1"
-"	      00480ab4    mov [ebp-58h],eax"
+"	      00480ab4    mov Start,eax"
 );
 // LINE 182:
 	asm( 
 "	      00480ab7    mov ecx,100h"
-"	      00480abc    mov eax,[ebp-64h]"
+"	      00480abc    mov eax,StaticCount"
 "	      00480abf    cdq"
 "	      00480ac0    sub eax,edx"
 "	      00480ac2    sar eax,1"
 "	      00480ac5    sub ecx,eax"
-"	      00480ac7    mov [ebp-5Ch],ecx"
+"	      00480ac7    mov End,ecx"
 );
 // LINE 184:
 	asm( 
-"	      00480aca    cmp dword ptr [ebp-60h],2"
+"	      00480aca    cmp PaletteUse,2"
 "	      00480ace    jne near ptr 00480AE2h"
 );
 // LINE 185:
 	asm( 
-"	      00480ad4    mov dword ptr [ebp-58h],1"
+"	      00480ad4    mov Start,1"
 );
 // LINE 186:
 	asm( 
-"	      00480adb    mov dword ptr [ebp-5Ch],0FFh"
+"	      00480adb    mov End,0FFh"
 );
 // LINE 192:
 	asm( 
-"	      00480ae2    mov dword ptr [ebp-54h],0"
+"	      00480ae2    mov Counter,0"
 "	      00480ae9    jmp near ptr 00480AF1h"
-"	      00480aee    inc dword ptr [ebp-54h]"
-"	      00480af1    mov eax,[ebp-58h]"
-"	      00480af4    cmp [ebp-54h],eax"
+"	      00480aee    inc Counter"
+"	      00480af1    mov eax,Start"
+"	      00480af4    cmp Counter,eax"
 "	      00480af7    jge near ptr 00480B0Dh"
 );
 // LINE 193:
 	asm( 
-"	      00480afd    mov eax,[ebp-54h]"
+"	      00480afd    mov eax,Counter"
 "	      00480b00    mov byte ptr [ebp+eax*4-465h],0"
 "	      00480b08    jmp near ptr 00480AEEh"
 );
 // LINE 196:
 	asm( 
-"	      00480b0d    cmp dword ptr [ebp+14h],0"
+"	      00480b0d    cmp pColors,0"
 "	      00480b11    je near ptr 00480B7Bh"
 );
 // LINE 197:
 	asm( 
 "	      00480b17    jmp near ptr 00480B1Fh"
-"	      00480b1c    inc dword ptr [ebp-54h]"
-"	      00480b1f    mov eax,[ebp-5Ch]"
-"	      00480b22    cmp [ebp-54h],eax"
+"	      00480b1c    inc Counter"
+"	      00480b1f    mov eax,End"
+"	      00480b22    cmp Counter,eax"
 "	      00480b25    jge near ptr 00480B76h"
 );
 // LINE 198:
 	asm( 
-"	      00480b2b    mov eax,[ebp-54h]"
-"	      00480b2e    mov ecx,[ebp+14h]"
+"	      00480b2b    mov eax,Counter"
+"	      00480b2e    mov ecx,pColors"
 "	      00480b31    mov al,[ecx+eax*4]"
-"	      00480b34    mov ecx,[ebp-54h]"
+"	      00480b34    mov ecx,Counter"
 "	      00480b37    mov [ebp+ecx*4-466h],al"
 );
 // LINE 199:
 	asm( 
-"	      00480b3e    mov eax,[ebp-54h]"
-"	      00480b41    mov ecx,[ebp+14h]"
+"	      00480b3e    mov eax,Counter"
+"	      00480b41    mov ecx,pColors"
 "	      00480b44    mov al,[ecx+eax*4+1]"
-"	      00480b48    mov ecx,[ebp-54h]"
+"	      00480b48    mov ecx,Counter"
 "	      00480b4b    mov [ebp+ecx*4-467h],al"
 );
 // LINE 200:
 	asm( 
-"	      00480b52    mov eax,[ebp-54h]"
-"	      00480b55    mov ecx,[ebp+14h]"
+"	      00480b52    mov eax,Counter"
+"	      00480b55    mov ecx,pColors"
 "	      00480b58    mov al,[ecx+eax*4+2]"
-"	      00480b5c    mov ecx,[ebp-54h]"
+"	      00480b5c    mov ecx,Counter"
 "	      00480b5f    mov [ebp+ecx*4-468h],al"
 );
 // LINE 201:
 	asm( 
-"	      00480b66    mov eax,[ebp-54h]"
+"	      00480b66    mov eax,Counter"
 "	      00480b69    mov byte ptr [ebp+eax*4-465h],5"
 );
 // LINE 202:
@@ -633,32 +633,32 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 205:
 	asm( 
 "	      00480b7b    jmp near ptr 00480B83h"
-"	      00480b80    inc dword ptr [ebp-54h]"
-"	      00480b83    mov eax,[ebp-5Ch]"
-"	      00480b86    cmp [ebp-54h],eax"
+"	      00480b80    inc Counter"
+"	      00480b83    mov eax,End"
+"	      00480b86    cmp Counter,eax"
 "	      00480b89    jge near ptr 00480BC6h"
 );
 // LINE 206:
 	asm( 
 "	      00480b8f    mov al,[ebp-54h]"
-"	      00480b92    mov ecx,[ebp-54h]"
+"	      00480b92    mov ecx,Counter"
 "	      00480b95    mov [ebp+ecx*4-466h],al"
 );
 // LINE 207:
 	asm( 
 "	      00480b9c    mov al,[ebp-54h]"
-"	      00480b9f    mov ecx,[ebp-54h]"
+"	      00480b9f    mov ecx,Counter"
 "	      00480ba2    mov [ebp+ecx*4-467h],al"
 );
 // LINE 208:
 	asm( 
 "	      00480ba9    mov al,[ebp-54h]"
-"	      00480bac    mov ecx,[ebp-54h]"
+"	      00480bac    mov ecx,Counter"
 "	      00480baf    mov [ebp+ecx*4-468h],al"
 );
 // LINE 209:
 	asm( 
-"	      00480bb6    mov eax,[ebp-54h]"
+"	      00480bb6    mov eax,Counter"
 "	      00480bb9    mov byte ptr [ebp+eax*4-465h],5"
 );
 // LINE 210:
@@ -668,30 +668,30 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 214:
 	asm( 
 "	      00480bc6    jmp near ptr 00480BCEh"
-"	      00480bcb    inc dword ptr [ebp-54h]"
-"	      00480bce    cmp dword ptr [ebp-54h],100h"
+"	      00480bcb    inc Counter"
+"	      00480bce    cmp Counter,100h"
 "	      00480bd5    jge near ptr 00480BEBh"
 );
 // LINE 215:
 	asm( 
-"	      00480bdb    mov eax,[ebp-54h]"
+"	      00480bdb    mov eax,Counter"
 "	      00480bde    mov byte ptr [ebp+eax*4-465h],0"
 "	      00480be6    jmp near ptr 00480BCBh"
 );
 // LINE 218:
 	asm( 
-"	      00480beb    lea eax,[ebp-46Ch]"
+"	      00480beb    lea eax,LogPalette.Version"
 "	      00480bf1    push eax"
 "	      00480bf2    call dword ptr ds:[6C357Ch]"
-"	      00480bf8    mov ecx,[ebp-474h]"
+"	      00480bf8    mov ecx,this"
 "	      00480bfe    mov [ecx+1Ch],eax"
-"	      00480c01    mov eax,[ebp-474h]"
+"	      00480c01    mov eax,this"
 "	      00480c07    mov eax,[eax+18h]"
 "	      00480c0a    mov [ebp-470h],eax"
 );
 // LINE 222:
 	asm( 
-"	      00480c10    mov eax,[ebp-474h]"
+"	      00480c10    mov eax,this"
 "	      00480c16    push eax"
 "	      00480c17    push 0"
 "	      00480c19    mov eax,[ebp-470h]"
@@ -702,69 +702,69 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 224:
 	asm( 
 "	      00480c2b    push 1"
-"	      00480c2d    mov eax,[ebp-474h]"
+"	      00480c2d    mov eax,this"
 "	      00480c33    mov eax,[eax+18h]"
 "	      00480c36    push eax"
 "	      00480c37    call dword ptr ds:[6C3820h]"
 );
 // LINE 225:
 	asm( 
-"	      00480c3d    mov eax,[ebp-474h]"
+"	      00480c3d    mov eax,this"
 "	      00480c43    mov eax,[eax+18h]"
 "	      00480c46    push eax"
 "	      00480c47    call dword ptr ds:[6C3864h]"
 );
 // LINE 228:
 	asm( 
-"	      00480c4d    mov eax,[ebp-474h]"
+"	      00480c4d    mov eax,this"
 "	      00480c53    mov eax,[eax+18h]"
 "	      00480c56    push eax"
 "	      00480c57    call dword ptr ds:[6C3850h]"
-"	      00480c5d    mov [ebp-68h],eax"
+"	      00480c5d    mov hdc,eax"
 );
 // LINE 229:
 	asm( 
-"	      00480c60    cmp dword ptr [ebp-68h],0"
+"	      00480c60    cmp hdc,0"
 "	      00480c64    je near ptr 00480CEFh"
 );
 // LINE 230:
 	asm( 
 "	      00480c6a    push 1"
-"	      00480c6c    mov eax,[ebp-68h]"
+"	      00480c6c    mov eax,hdc"
 "	      00480c6f    push eax"
 "	      00480c70    call dword ptr ds:[6C3584h]"
 );
 // LINE 231:
 	asm( 
 "	      00480c76    push 1"
-"	      00480c78    mov eax,[ebp-68h]"
+"	      00480c78    mov eax,hdc"
 "	      00480c7b    push eax"
 "	      00480c7c    call dword ptr ds:[6C3574h]"
 );
 // LINE 232:
 	asm( 
 "	      00480c82    push 0"
-"	      00480c84    mov eax,[ebp-474h]"
+"	      00480c84    mov eax,this"
 "	      00480c8a    mov eax,[eax+1Ch]"
 "	      00480c8d    push eax"
-"	      00480c8e    mov eax,[ebp-68h]"
+"	      00480c8e    mov eax,hdc"
 "	      00480c91    push eax"
 "	      00480c92    call dword ptr ds:[6C3570h]"
 );
 // LINE 233:
 	asm( 
-"	      00480c98    mov eax,[ebp-68h]"
+"	      00480c98    mov eax,hdc"
 "	      00480c9b    push eax"
 "	      00480c9c    call dword ptr ds:[6C3578h]"
 );
 // LINE 235:
 	asm( 
-"	      00480ca2    lea eax,[ebp-468h]"
+"	      00480ca2    lea eax,LogPalette.aEntries[0].peRed"
 "	      00480ca8    push eax"
-"	      00480ca9    mov eax,[ebp-474h]"
+"	      00480ca9    mov eax,this"
 "	      00480caf    mov eax,[eax+1Ch]"
 "	      00480cb2    push eax"
-"	      00480cb3    mov eax,[ebp-68h]"
+"	      00480cb3    mov eax,hdc"
 "	      00480cb6    push eax"
 "	      00480cb7    call 0048132Bh"
 "	      00480cbc    add esp,0Ch"
@@ -781,9 +781,9 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 238:
 	asm( 
-"	      00480cdb    mov eax,[ebp-68h]"
+"	      00480cdb    mov eax,hdc"
 "	      00480cde    push eax"
-"	      00480cdf    mov eax,[ebp-474h]"
+"	      00480cdf    mov eax,this"
 "	      00480ce5    mov eax,[eax+18h]"
 "	      00480ce8    push eax"
 "	      00480ce9    call dword ptr ds:[6C384Ch]"
@@ -792,7 +792,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // Block end:
 	asm( 
 "	      00480cef    jmp near ptr 00480CF4h"
-"	      00480cf4    mov eax,[ebp-474h]"
+"	      00480cf4    mov eax,this"
 "	      00480cfa    pop edi"
 "	      00480cfb    pop esi"
 "	      00480cfc    pop ebx"
@@ -813,16 +813,16 @@ void CSparkalWindow::~CSparkalWindow() {
 "	      00480d07    push ebx"
 "	      00480d08    push esi"
 "	      00480d09    push edi"
-"	      00480d0a    mov [ebp-0Ch],ecx"
-"	      00480d0d    mov eax,[ebp-0Ch]"
+"	      00480d0a    mov this,ecx"
+"	      00480d0d    mov eax,this"
 "	      00480d10    mov dword ptr [eax],590EF8h"
 );
 // LINE 251:
 	asm( 
-"	      00480d16    mov eax,[ebp-0Ch]"
+"	      00480d16    mov eax,this"
 "	      00480d19    cmp dword ptr [eax+18h],0"
 "	      00480d1d    je near ptr 00480D4Ch"
-"	      00480d23    mov eax,[ebp-0Ch]"
+"	      00480d23    mov eax,this"
 "	      00480d26    mov eax,[eax+18h]"
 "	      00480d29    mov [ebp-8],eax"
 );
@@ -837,43 +837,43 @@ void CSparkalWindow::~CSparkalWindow() {
 );
 // LINE 255:
 	asm( 
-"	      00480d3f    mov eax,[ebp-0Ch]"
+"	      00480d3f    mov eax,this"
 "	      00480d42    mov eax,[eax+18h]"
 "	      00480d45    push eax"
 "	      00480d46    call dword ptr ds:[6C3804h]"
 );
 // LINE 257:
 	asm( 
-"	      00480d4c    mov eax,[ebp-0Ch]"
+"	      00480d4c    mov eax,this"
 "	      00480d4f    cmp dword ptr [eax+1Ch],0"
 "	      00480d53    je near ptr 00480D66h"
 );
 // LINE 258:
 	asm( 
-"	      00480d59    mov eax,[ebp-0Ch]"
+"	      00480d59    mov eax,this"
 "	      00480d5c    mov eax,[eax+1Ch]"
 "	      00480d5f    push eax"
 "	      00480d60    call dword ptr ds:[6C358Ch]"
 );
 // LINE 259:
 	asm( 
-"	      00480d66    mov dword ptr [ebp-4],0"
+"	      00480d66    mov i,0"
 "	      00480d6d    jmp near ptr 00480D75h"
-"	      00480d72    inc dword ptr [ebp-4]"
-"	      00480d75    cmp dword ptr [ebp-4],10h"
+"	      00480d72    inc i"
+"	      00480d75    cmp i,10h"
 "	      00480d79    jge near ptr 00480DA6h"
 );
 // LINE 260:
 	asm( 
-"	      00480d7f    mov eax,[ebp-4]"
-"	      00480d82    mov ecx,[ebp-0Ch]"
+"	      00480d7f    mov eax,i"
+"	      00480d82    mov ecx,this"
 "	      00480d85    cmp dword ptr [ecx+eax*4+28h],0"
 "	      00480d8a    je near ptr 00480DA1h"
 );
 // LINE 261:
 	asm( 
-"	      00480d90    mov eax,[ebp-4]"
-"	      00480d93    mov ecx,[ebp-0Ch]"
+"	      00480d90    mov eax,i"
+"	      00480d93    mov ecx,this"
 "	      00480d96    mov eax,[ecx+eax*4+28h]"
 "	      00480d9a    push eax"
 "	      00480d9b    call dword ptr ds:[6C358Ch]"
@@ -884,13 +884,13 @@ void CSparkalWindow::~CSparkalWindow() {
 );
 // LINE 267:
 	asm( 
-"	      00480da6    mov eax,[ebp-0Ch]"
+"	      00480da6    mov eax,this"
 "	      00480da9    cmp dword ptr [eax+24h],0"
 "	      00480dad    je near ptr 00480DC0h"
 );
 // LINE 268:
 	asm( 
-"	      00480db3    mov eax,[ebp-0Ch]"
+"	      00480db3    mov eax,this"
 "	      00480db6    mov eax,[eax+24h]"
 "	      00480db9    push eax"
 "	      00480dba    call dword ptr ds:[6C358Ch]"
@@ -918,13 +918,13 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 "	      00480dd0    push ebx"
 "	      00480dd1    push esi"
 "	      00480dd2    push edi"
-"	      00480dd3    mov [ebp-18h],ecx"
+"	      00480dd3    mov this,ecx"
 );
 // LINE 277:
 	asm( 
-"	      00480dd6    cmp dword ptr [ebp+8],0"
+"	      00480dd6    cmp pWidth,0"
 "	      00480dda    je near ptr 00480DEAh"
-"	      00480de0    cmp dword ptr [ebp+0Ch],0"
+"	      00480de0    cmp pHeight,0"
 "	      00480de4    jne near ptr 00480E06h"
 "	      00480dea    push 115h"
 "	      00480def    push 599AF0h"
@@ -936,11 +936,11 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 );
 // LINE 279:
 	asm( 
-"	      00480e0b    mov dword ptr [ebp-4],0"
+"	      00480e0b    mov Error,0"
 );
 // LINE 281:
 	asm( 
-"	      00480e12    mov eax,[ebp-18h]"
+"	      00480e12    mov eax,this"
 "	      00480e15    cmp dword ptr [eax+18h],0"
 "	      00480e19    je near ptr 00480E4Bh"
 );
@@ -948,25 +948,25 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 // Block start:
 	struct tagRECT r;
 	asm( 
-"	      00480e1f    lea eax,[ebp-14h]"
+"	      00480e1f    lea eax,r.left"
 "	      00480e22    push eax"
-"	      00480e23    mov eax,[ebp-18h]"
+"	      00480e23    mov eax,this"
 "	      00480e26    mov eax,[eax+18h]"
 "	      00480e29    push eax"
 "	      00480e2a    call dword ptr ds:[6C382Ch]"
 );
 // LINE 284:
 	asm( 
-"	      00480e30    mov eax,[ebp-0Ch]"
-"	      00480e33    sub eax,[ebp-14h]"
-"	      00480e36    mov ecx,[ebp+8]"
+"	      00480e30    mov eax,r.right"
+"	      00480e33    sub eax,r.left"
+"	      00480e36    mov ecx,pWidth"
 "	      00480e39    mov [ecx],eax"
 );
 // LINE 285:
 	asm( 
-"	      00480e3b    mov eax,[ebp-8]"
-"	      00480e3e    sub eax,[ebp-10h]"
-"	      00480e41    mov ecx,[ebp+0Ch]"
+"	      00480e3b    mov eax,r.bottom"
+"	      00480e3e    sub eax,r.top"
+"	      00480e41    mov ecx,pHeight"
 "	      00480e44    mov [ecx],eax"
 );
 // LINE 287:
@@ -976,20 +976,20 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 );
 // LINE 288:
 	asm( 
-"	      00480e4b    mov eax,[ebp+0Ch]"
+"	      00480e4b    mov eax,pHeight"
 "	      00480e4e    mov dword ptr [eax],0"
-"	      00480e54    mov eax,[ebp+0Ch]"
+"	      00480e54    mov eax,pHeight"
 "	      00480e57    mov eax,[eax]"
-"	      00480e59    mov ecx,[ebp+8]"
+"	      00480e59    mov ecx,pWidth"
 "	      00480e5c    mov [ecx],eax"
 );
 // LINE 289:
 	asm( 
-"	      00480e5e    mov dword ptr [ebp-4],80000000h"
+"	      00480e5e    mov Error,80000000h"
 );
 // LINE 292:
 	asm( 
-"	      00480e65    mov eax,[ebp-4]"
+"	      00480e65    mov eax,Error"
 "	      00480e68    jmp near ptr 00480E6Dh"
 );
 // LINE 293:
@@ -1015,46 +1015,46 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 "	      00480e7a    push ebx"
 "	      00480e7b    push esi"
 "	      00480e7c    push edi"
-"	      00480e7d    mov [ebp-0Ch],ecx"
+"	      00480e7d    mov this,ecx"
 );
 // LINE 309:
 	asm( 
-"	      00480e80    mov dword ptr [ebp-4],0"
+"	      00480e80    mov ReturnCode,0"
 );
 // LINE 312:
 	asm( 
-"	      00480e87    cmp dword ptr [ebp+8],0"
+"	      00480e87    cmp CursorID,0"
 "	      00480e8b    je near ptr 00480EDBh"
 );
 // LINE 313:
 	asm( 
-"	      00480e91    mov eax,[ebp+8]"
+"	      00480e91    mov eax,CursorID"
 "	      00480e94    and eax,0FFFFh"
 "	      00480e99    push eax"
 "	      00480e9a    mov eax,ds:[5C28C8h]"
 "	      00480e9f    push eax"
 "	      00480ea0    call dword ptr ds:[6C3818h]"
-"	      00480ea6    mov [ebp-8],eax"
+"	      00480ea6    mov hNewCursor,eax"
 );
 // LINE 314:
 	asm( 
-"	      00480ea9    cmp dword ptr [ebp-8],0"
+"	      00480ea9    cmp hNewCursor,0"
 "	      00480ead    je near ptr 00480ECDh"
-"	      00480eb3    mov eax,[ebp-0Ch]"
+"	      00480eb3    mov eax,this"
 "	      00480eb6    cmp dword ptr [eax+24h],0"
 "	      00480eba    je near ptr 00480ECDh"
 );
 // LINE 315:
 	asm( 
-"	      00480ec0    mov eax,[ebp-0Ch]"
+"	      00480ec0    mov eax,this"
 "	      00480ec3    mov eax,[eax+24h]"
 "	      00480ec6    push eax"
 "	      00480ec7    call dword ptr ds:[6C358Ch]"
 );
 // LINE 316:
 	asm( 
-"	      00480ecd    mov eax,[ebp-8]"
-"	      00480ed0    mov ecx,[ebp-0Ch]"
+"	      00480ecd    mov eax,hNewCursor"
+"	      00480ed0    mov ecx,this"
 "	      00480ed3    mov [ecx+24h],eax"
 );
 // LINE 318:
@@ -1066,22 +1066,22 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 "	      00480edb    push 7F00h"
 "	      00480ee0    push 0"
 "	      00480ee2    call dword ptr ds:[6C3818h]"
-"	      00480ee8    mov [ebp-8],eax"
+"	      00480ee8    mov hNewCursor,eax"
 );
 // LINE 321:
 	asm( 
-"	      00480eeb    mov eax,[ebp-8]"
-"	      00480eee    mov ecx,[ebp-0Ch]"
+"	      00480eeb    mov eax,hNewCursor"
+"	      00480eee    mov ecx,this"
 "	      00480ef1    mov [ecx+20h],eax"
 );
 // LINE 323:
 	asm( 
-"	      00480ef4    cmp dword ptr [ebp-8],0"
+"	      00480ef4    cmp hNewCursor,0"
 "	      00480ef8    je near ptr 00480F1Ch"
 );
 // LINE 324:
 	asm( 
-"	      00480efe    mov eax,[ebp-8]"
+"	      00480efe    mov eax,hNewCursor"
 "	      00480f01    push eax"
 "	      00480f02    call dword ptr ds:[6C388Ch]"
 "	      00480f08    test eax,eax"
@@ -1089,7 +1089,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 );
 // LINE 325:
 	asm( 
-"	      00480f10    mov dword ptr [ebp-4],80000000h"
+"	      00480f10    mov ReturnCode,80000000h"
 );
 // LINE 327:
 	asm( 
@@ -1097,11 +1097,11 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 );
 // LINE 328:
 	asm( 
-"	      00480f1c    mov dword ptr [ebp-4],80000007h"
+"	      00480f1c    mov ReturnCode,80000007h"
 );
 // LINE 329:
 	asm( 
-"	      00480f23    mov eax,[ebp-4]"
+"	      00480f23    mov eax,ReturnCode"
 "	      00480f26    jmp near ptr 00480F2Bh"
 );
 // LINE 330:
@@ -1126,23 +1126,23 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 "	      00480f38    push ebx"
 "	      00480f39    push esi"
 "	      00480f3a    push edi"
-"	      00480f3b    mov [ebp-8],ecx"
+"	      00480f3b    mov this,ecx"
 );
 // LINE 338:
 	asm( 
-"	      00480f3e    mov dword ptr [ebp-4],0"
+"	      00480f3e    mov ReturnCode,0"
 );
 // LINE 340:
 	asm( 
-"	      00480f45    mov eax,[ebp+8]"
-"	      00480f48    mov ecx,[ebp-8]"
+"	      00480f45    mov eax,nIndex"
+"	      00480f48    mov ecx,this"
 "	      00480f4b    mov eax,[ecx+eax*4+28h]"
-"	      00480f4f    mov ecx,[ebp-8]"
+"	      00480f4f    mov ecx,this"
 "	      00480f52    mov [ecx+20h],eax"
 );
 // LINE 341:
 	asm( 
-"	      00480f55    mov eax,[ebp-8]"
+"	      00480f55    mov eax,this"
 "	      00480f58    mov eax,[eax+20h]"
 "	      00480f5b    push eax"
 "	      00480f5c    call dword ptr ds:[6C388Ch]"
@@ -1151,11 +1151,11 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 );
 // LINE 342:
 	asm( 
-"	      00480f6a    mov dword ptr [ebp-4],80000007h"
+"	      00480f6a    mov ReturnCode,80000007h"
 );
 // LINE 344:
 	asm( 
-"	      00480f71    mov eax,[ebp-4]"
+"	      00480f71    mov eax,ReturnCode"
 "	      00480f74    jmp near ptr 00480F79h"
 );
 // LINE 345:
@@ -1178,7 +1178,7 @@ unsigned long CSparkalWindow::LoadGameCursors() {
 "	      00480f86    push ebx"
 "	      00480f87    push esi"
 "	      00480f88    push edi"
-"	      00480f89    mov [ebp-4],ecx"
+"	      00480f89    mov this,ecx"
 );
 // LINE 353:
 	asm( 
@@ -1205,7 +1205,7 @@ void CSparkalWindow::FreeGameCursors() {
 "	      00480fa1    push ebx"
 "	      00480fa2    push esi"
 "	      00480fa3    push edi"
-"	      00480fa4    mov [ebp-4],ecx"
+"	      00480fa4    mov this,ecx"
 );
 // LINE 362:
 	asm( 
@@ -1235,11 +1235,11 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 "	      00480fb7    push ebx"
 "	      00480fb8    push esi"
 "	      00480fb9    push edi"
-"	      00480fba    mov [ebp-2Ch],ecx"
+"	      00480fba    mov this,ecx"
 );
 // LINE 373:
 	asm( 
-"	      00480fbd    mov eax,[ebp-2Ch]"
+"	      00480fbd    mov eax,this"
 "	      00480fc0    cmp dword ptr [eax+18h],0"
 "	      00480fc4    jne near ptr 00480FE6h"
 "	      00480fca    push 175h"
@@ -1252,28 +1252,28 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 376:
 	asm( 
-"	      00480feb    mov eax,[ebp-2Ch]"
+"	      00480feb    mov eax,this"
 "	      00480fee    mov eax,[eax+18h]"
 "	      00480ff1    push eax"
 "	      00480ff2    call dword ptr ds:[6C3850h]"
-"	      00480ff8    mov [ebp-28h],eax"
+"	      00480ff8    mov DeviceContext,eax"
 );
 // LINE 380:
 	asm( 
-"	      00480ffb    mov eax,[ebp+8]"
+"	      00480ffb    mov eax,pText"
 "	      00480ffe    push eax"
 "	      00480fff    call dword ptr ds:[6C3608h]"
-"	      00481005    mov [ebp-20h],eax"
+"	      00481005    mov Length,eax"
 );
 // LINE 383:
 	asm( 
-"	      00481008    lea eax,[ebp-18h]"
+"	      00481008    lea eax,TextSize.cx"
 "	      0048100b    push eax"
-"	      0048100c    mov eax,[ebp-20h]"
+"	      0048100c    mov eax,Length"
 "	      0048100f    push eax"
-"	      00481010    mov eax,[ebp+8]"
+"	      00481010    mov eax,pText"
 "	      00481013    push eax"
-"	      00481014    mov eax,[ebp-28h]"
+"	      00481014    mov eax,DeviceContext"
 "	      00481017    push eax"
 "	      00481018    call dword ptr ds:[6C35A4h]"
 );
@@ -1284,14 +1284,14 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 390:
 	asm( 
-"	      00481028    mov ecx,[ebp+10h]"
-"	      0048102b    mov eax,[ebp-18h]"
+"	      00481028    mov ecx,Left"
+"	      0048102b    mov eax,TextSize.cx"
 "	      0048102e    cdq"
 "	      0048102f    sub eax,edx"
 "	      00481031    sar eax,1"
 "	      00481034    sub ecx,eax"
 "	      00481036    sub ecx,2"
-"	      00481039    mov [ebp-10h],ecx"
+"	      00481039    mov TextRect.left,ecx"
 );
 // LINE 391:
 	asm( 
@@ -1299,9 +1299,9 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 392:
 	asm( 
-"	      00481041    mov eax,[ebp+10h]"
+"	      00481041    mov eax,Left"
 "	      00481044    sub eax,2"
-"	      00481047    mov [ebp-10h],eax"
+"	      00481047    mov TextRect.left,eax"
 );
 // LINE 394:
 	asm( 
@@ -1310,14 +1310,14 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 395:
 	asm( 
-"	      00481054    mov ecx,[ebp+14h]"
-"	      00481057    mov eax,[ebp-14h]"
+"	      00481054    mov ecx,Top"
+"	      00481057    mov eax,TextSize.cy"
 "	      0048105a    cdq"
 "	      0048105b    sub eax,edx"
 "	      0048105d    sar eax,1"
 "	      00481060    sub ecx,eax"
 "	      00481062    sub ecx,2"
-"	      00481065    mov [ebp-0Ch],ecx"
+"	      00481065    mov TextRect.top,ecx"
 );
 // LINE 396:
 	asm( 
@@ -1325,102 +1325,102 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 397:
 	asm( 
-"	      0048106d    mov eax,[ebp+14h]"
+"	      0048106d    mov eax,Top"
 "	      00481070    sub eax,2"
-"	      00481073    mov [ebp-0Ch],eax"
+"	      00481073    mov TextRect.top,eax"
 );
 // LINE 399:
 	asm( 
-"	      00481076    mov eax,[ebp-18h]"
-"	      00481079    add eax,[ebp-10h]"
+"	      00481076    mov eax,TextSize.cx"
+"	      00481079    add eax,TextRect.left"
 "	      0048107c    add eax,2"
-"	      0048107f    mov [ebp-8],eax"
+"	      0048107f    mov TextRect.right,eax"
 );
 // LINE 400:
 	asm( 
-"	      00481082    mov eax,[ebp-0Ch]"
-"	      00481085    add eax,[ebp-14h]"
+"	      00481082    mov eax,TextRect.top"
+"	      00481085    add eax,TextSize.cy"
 "	      00481088    add eax,2"
-"	      0048108b    mov [ebp-4],eax"
+"	      0048108b    mov TextRect.bottom,eax"
 );
 // LINE 404:
 	asm( 
-"	      0048108e    lea eax,[ebp-24h]"
+"	      0048108e    lea eax,ClientHeight"
 "	      00481091    push eax"
-"	      00481092    lea eax,[ebp-1Ch]"
+"	      00481092    lea eax,ClientWidth"
 "	      00481095    push eax"
-"	      00481096    mov eax,[ebp-2Ch]"
+"	      00481096    mov eax,this"
 "	      00481099    mov eax,[eax]"
-"	      0048109b    mov ecx,[ebp-2Ch]"
+"	      0048109b    mov ecx,this"
 "	      0048109e    call dword ptr [eax+4]"
 );
 // LINE 407:
 	asm( 
-"	      004810a1    mov eax,[ebp-1Ch]"
-"	      004810a4    cmp [ebp-8],eax"
+"	      004810a1    mov eax,ClientWidth"
+"	      004810a4    cmp TextRect.right,eax"
 "	      004810a7    jl near ptr 004810C0h"
 );
 // LINE 409:
 	asm( 
-"	      004810ad    mov eax,[ebp-1Ch]"
+"	      004810ad    mov eax,ClientWidth"
 "	      004810b0    dec eax"
-"	      004810b1    mov [ebp-8],eax"
+"	      004810b1    mov TextRect.right,eax"
 );
 // LINE 410:
 	asm( 
-"	      004810b4    mov eax,[ebp-8]"
-"	      004810b7    sub eax,[ebp-18h]"
+"	      004810b4    mov eax,TextRect.right"
+"	      004810b7    sub eax,TextSize.cx"
 "	      004810ba    sub eax,4"
-"	      004810bd    mov [ebp-10h],eax"
+"	      004810bd    mov TextRect.left,eax"
 );
 // LINE 412:
 	asm( 
-"	      004810c0    cmp dword ptr [ebp-10h],0"
+"	      004810c0    cmp TextRect.left,0"
 "	      004810c4    jge near ptr 004810DAh"
 );
 // LINE 414:
 	asm( 
-"	      004810ca    mov eax,[ebp-18h]"
+"	      004810ca    mov eax,TextSize.cx"
 "	      004810cd    add eax,4"
-"	      004810d0    mov [ebp-8],eax"
+"	      004810d0    mov TextRect.right,eax"
 );
 // LINE 415:
 	asm( 
-"	      004810d3    mov dword ptr [ebp-10h],0"
+"	      004810d3    mov TextRect.left,0"
 );
 // LINE 417:
 	asm( 
-"	      004810da    cmp dword ptr [ebp-0Ch],0"
+"	      004810da    cmp TextRect.top,0"
 "	      004810de    jge near ptr 004810F4h"
 );
 // LINE 419:
 	asm( 
-"	      004810e4    mov eax,[ebp-14h]"
+"	      004810e4    mov eax,TextSize.cy"
 "	      004810e7    add eax,4"
-"	      004810ea    mov [ebp-4],eax"
+"	      004810ea    mov TextRect.bottom,eax"
 );
 // LINE 420:
 	asm( 
-"	      004810ed    mov dword ptr [ebp-0Ch],0"
+"	      004810ed    mov TextRect.top,0"
 );
 // LINE 422:
 	asm( 
-"	      004810f4    mov eax,[ebp-24h]"
-"	      004810f7    cmp [ebp-4],eax"
+"	      004810f4    mov eax,ClientHeight"
+"	      004810f7    cmp TextRect.bottom,eax"
 "	      004810fa    jl near ptr 00481113h"
 );
 // LINE 424:
 	asm( 
-"	      00481100    mov eax,[ebp-24h]"
+"	      00481100    mov eax,ClientHeight"
 "	      00481103    dec eax"
-"	      00481104    mov [ebp-4],eax"
+"	      00481104    mov TextRect.bottom,eax"
 );
 // LINE 425:
 	asm( 
-"	      00481107    mov eax,[ebp-4]"
-"	      0048110a    sub eax,[ebp-14h]"
+"	      00481107    mov eax,TextRect.bottom"
+"	      0048110a    sub eax,TextSize.cy"
 "	      0048110d    sub eax,4"
-"	      00481110    mov [ebp-0Ch],eax"
+"	      00481110    mov TextRect.top,eax"
 );
 // LINE 430:
 	asm( 
@@ -1432,70 +1432,70 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 "	      0048111d    push 0"
 "	      0048111f    call dword ptr ds:[6C3560h]"
 "	      00481125    push eax"
-"	      00481126    lea eax,[ebp-10h]"
+"	      00481126    lea eax,TextRect.left"
 "	      00481129    push eax"
-"	      0048112a    mov eax,[ebp-28h]"
+"	      0048112a    mov eax,DeviceContext"
 "	      0048112d    push eax"
 "	      0048112e    call dword ptr ds:[6C3888h]"
 );
 // LINE 436:
 	asm( 
-"	      00481134    mov eax,[ebp-20h]"
+"	      00481134    mov eax,Length"
 "	      00481137    push eax"
-"	      00481138    mov eax,[ebp+8]"
+"	      00481138    mov eax,pText"
 "	      0048113b    push eax"
-"	      0048113c    mov eax,[ebp-0Ch]"
+"	      0048113c    mov eax,TextRect.top"
 "	      0048113f    add eax,2"
 "	      00481142    push eax"
-"	      00481143    mov eax,[ebp-10h]"
+"	      00481143    mov eax,TextRect.left"
 "	      00481146    add eax,2"
 "	      00481149    push eax"
-"	      0048114a    mov eax,[ebp-28h]"
+"	      0048114a    mov eax,DeviceContext"
 "	      0048114d    push eax"
 "	      0048114e    call dword ptr ds:[6C3558h]"
 );
 // LINE 439:
 	asm( 
-"	      00481154    mov eax,[ebp-28h]"
+"	      00481154    mov eax,DeviceContext"
 "	      00481157    push eax"
-"	      00481158    mov eax,[ebp-2Ch]"
+"	      00481158    mov eax,this"
 "	      0048115b    mov eax,[eax+18h]"
 "	      0048115e    push eax"
 "	      0048115f    call dword ptr ds:[6C384Ch]"
 );
 // LINE 443:
 	asm( 
-"	      00481165    cmp dword ptr [ebp+18h],0"
+"	      00481165    cmp pRectLeft,0"
 "	      00481169    je near ptr 004811ADh"
-"	      0048116f    cmp dword ptr [ebp+1Ch],0"
+"	      0048116f    cmp pRectTop,0"
 "	      00481173    je near ptr 004811ADh"
-"	      00481179    cmp dword ptr [ebp+20h],0"
+"	      00481179    cmp pRectRight,0"
 "	      0048117d    je near ptr 004811ADh"
-"	      00481183    cmp dword ptr [ebp+24h],0"
+"	      00481183    cmp pRectBottom,0"
 "	      00481187    je near ptr 004811ADh"
 );
 // LINE 445:
 	asm( 
-"	      0048118d    mov eax,[ebp-10h]"
-"	      00481190    mov ecx,[ebp+18h]"
+"	      0048118d    mov eax,TextRect.left"
+"	      00481190    mov ecx,pRectLeft"
 "	      00481193    mov [ecx],eax"
 );
 // LINE 446:
 	asm( 
-"	      00481195    mov eax,[ebp-8]"
-"	      00481198    mov ecx,[ebp+20h]"
+"	      00481195    mov eax,TextRect.right"
+"	      00481198    mov ecx,pRectRight"
 "	      0048119b    mov [ecx],eax"
 );
 // LINE 447:
 	asm( 
-"	      0048119d    mov eax,[ebp-0Ch]"
-"	      004811a0    mov ecx,[ebp+1Ch]"
+"	      0048119d    mov eax,TextRect.top"
+"	      004811a0    mov ecx,pRectTop"
 "	      004811a3    mov [ecx],eax"
 );
 // LINE 448:
 	asm( 
-"	      004811a5    mov eax,[ebp-4]"
-"	      004811a8    mov ecx,[ebp+24h]"
+"	      004811a5    mov eax,TextRect.bottom"
+"	      004811a8    mov ecx,pRectBottom"
 "	      004811ab    mov [ecx],eax"
 );
 // LINE 451:
@@ -1525,11 +1525,11 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 "	      004811c1    push ebx"
 "	      004811c2    push esi"
 "	      004811c3    push edi"
-"	      004811c4    mov [ebp-8],ecx"
+"	      004811c4    mov this,ecx"
 );
 // LINE 463:
 	asm( 
-"	      004811c7    mov eax,[ebp-8]"
+"	      004811c7    mov eax,this"
 "	      004811ca    cmp dword ptr [eax+18h],0"
 "	      004811ce    jne near ptr 004811F0h"
 "	      004811d4    push 1CFh"
@@ -1542,47 +1542,47 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 );
 // LINE 465:
 	asm( 
-"	      004811f5    mov eax,[ebp-8]"
+"	      004811f5    mov eax,this"
 "	      004811f8    mov eax,[eax+18h]"
 "	      004811fb    push eax"
 "	      004811fc    call dword ptr ds:[6C3850h]"
-"	      00481202    mov [ebp-4],eax"
+"	      00481202    mov hdc,eax"
 );
 // LINE 466:
 	asm( 
-"	      00481205    cmp dword ptr [ebp-4],0"
+"	      00481205    cmp hdc,0"
 "	      00481209    je near ptr 00481257h"
 );
 // LINE 469:
 	asm( 
 "	      0048120f    push 0CC0020h"
-"	      00481214    mov eax,[ebp+0Ch]"
+"	      00481214    mov eax,Top"
 "	      00481217    push eax"
-"	      00481218    mov eax,[ebp+8]"
+"	      00481218    mov eax,Left"
 "	      0048121b    push eax"
-"	      0048121c    mov eax,[ebp-4]"
+"	      0048121c    mov eax,hdc"
 "	      0048121f    push eax"
-"	      00481220    mov eax,[ebp+14h]"
-"	      00481223    sub eax,[ebp+0Ch]"
+"	      00481220    mov eax,Bottom"
+"	      00481223    sub eax,Top"
 "	      00481226    push eax"
-"	      00481227    mov eax,[ebp+10h]"
-"	      0048122a    sub eax,[ebp+8]"
+"	      00481227    mov eax,Right"
+"	      0048122a    sub eax,Left"
 "	      0048122d    push eax"
-"	      0048122e    mov eax,[ebp+1Ch]"
-"	      00481231    add eax,[ebp+0Ch]"
+"	      0048122e    mov eax,ScrollDownAmount"
+"	      00481231    add eax,Top"
 "	      00481234    push eax"
-"	      00481235    mov eax,[ebp+8]"
-"	      00481238    add eax,[ebp+18h]"
+"	      00481235    mov eax,Left"
+"	      00481238    add eax,ScrollRightAmount"
 "	      0048123b    push eax"
-"	      0048123c    mov eax,[ebp-4]"
+"	      0048123c    mov eax,hdc"
 "	      0048123f    push eax"
 "	      00481240    call dword ptr ds:[6C35B4h]"
 );
 // LINE 470:
 	asm( 
-"	      00481246    mov eax,[ebp-4]"
+"	      00481246    mov eax,hdc"
 "	      00481249    push eax"
-"	      0048124a    mov eax,[ebp-8]"
+"	      0048124a    mov eax,this"
 "	      0048124d    mov eax,[eax+18h]"
 "	      00481250    push eax"
 "	      00481251    call dword ptr ds:[6C384Ch]"
@@ -1615,54 +1615,54 @@ void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* 
 "	      0048126e    push ebx"
 "	      0048126f    push esi"
 "	      00481270    push edi"
-"	      00481271    mov [ebp-408h],ecx"
+"	      00481271    mov this,ecx"
 );
 // LINE 486:
 	asm( 
-"	      00481277    mov eax,[ebp-408h]"
+"	      00481277    mov eax,this"
 "	      0048127d    cmp dword ptr [eax+1Ch],0"
 "	      00481281    je near ptr 0048131Fh"
 );
 // LINE 487:
 	asm( 
-"	      00481287    mov eax,[ebp+8]"
-"	      0048128a    mov [ebp-404h],eax"
+"	      00481287    mov eax,start"
+"	      0048128a    mov i,eax"
 "	      00481290    jmp near ptr 0048129Bh"
-"	      00481295    inc dword ptr [ebp-404h]"
-"	      0048129b    mov eax,[ebp+0Ch]"
-"	      0048129e    add eax,[ebp+8]"
-"	      004812a1    cmp eax,[ebp-404h]"
+"	      00481295    inc i"
+"	      0048129b    mov eax,count"
+"	      0048129e    add eax,start"
+"	      004812a1    cmp eax,i"
 "	      004812a7    jle near ptr 004812FCh"
 );
 // LINE 488:
 	asm( 
-"	      004812ad    mov eax,[ebp+10h]"
+"	      004812ad    mov eax,pColor"
 "	      004812b0    mov al,[eax+2]"
-"	      004812b3    mov ecx,[ebp-404h]"
+"	      004812b3    mov ecx,i"
 "	      004812b9    mov [ebp+ecx*4-400h],al"
 );
 // LINE 489:
 	asm( 
-"	      004812c0    mov eax,[ebp+10h]"
+"	      004812c0    mov eax,pColor"
 "	      004812c3    mov al,[eax+1]"
-"	      004812c6    mov ecx,[ebp-404h]"
+"	      004812c6    mov ecx,i"
 "	      004812cc    mov [ebp+ecx*4-3FFh],al"
 );
 // LINE 490:
 	asm( 
-"	      004812d3    mov eax,[ebp+10h]"
+"	      004812d3    mov eax,pColor"
 "	      004812d6    mov al,[eax]"
-"	      004812d8    mov ecx,[ebp-404h]"
+"	      004812d8    mov ecx,i"
 "	      004812de    mov [ebp+ecx*4-3FEh],al"
 );
 // LINE 491:
 	asm( 
-"	      004812e5    mov eax,[ebp-404h]"
+"	      004812e5    mov eax,i"
 "	      004812eb    mov byte ptr [ebp+eax*4-3FDh],5"
 );
 // LINE 492:
 	asm( 
-"	      004812f3    add dword ptr [ebp+10h],4"
+"	      004812f3    add pColor,4"
 );
 // LINE 493:
 	asm( 
@@ -1670,14 +1670,14 @@ void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* 
 );
 // LINE 494:
 	asm( 
-"	      004812fc    mov eax,[ebp+8]"
+"	      004812fc    mov eax,start"
 "	      004812ff    lea eax,[ebp+eax*4-400h]"
 "	      00481306    push eax"
-"	      00481307    mov eax,[ebp+0Ch]"
+"	      00481307    mov eax,count"
 "	      0048130a    push eax"
-"	      0048130b    mov eax,[ebp+8]"
+"	      0048130b    mov eax,start"
 "	      0048130e    push eax"
-"	      0048130f    mov eax,[ebp-408h]"
+"	      0048130f    mov eax,this"
 "	      00481315    mov eax,[eax+1Ch]"
 "	      00481318    push eax"
 "	      00481319    call dword ptr ds:[6C35ACh]"
@@ -1712,18 +1712,18 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 );
 // LINE 506:
 	asm( 
-"	      00481337    mov dword ptr [ebp-108h],0"
+"	      00481337    mov IsID,0"
 );
 // LINE 512:
 	asm( 
-"	      00481341    mov eax,[ebp+8]"
+"	      00481341    mov eax,hdc"
 "	      00481344    push eax"
 "	      00481345    call dword ptr ds:[6C35C8h]"
-"	      0048134b    mov [ebp-104h],eax"
+"	      0048134b    mov MemDC,eax"
 );
 // LINE 513:
 	asm( 
-"	      00481351    cmp dword ptr [ebp-104h],0"
+"	      00481351    cmp MemDC,0"
 "	      00481358    je near ptr 004815CDh"
 );
 // LINE 514:
@@ -1732,14 +1732,14 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	asm( 
 "	      0048135e    push 1"
 "	      00481360    push 100h"
-"	      00481365    mov eax,[ebp+8]"
+"	      00481365    mov eax,hdc"
 "	      00481368    push eax"
 "	      00481369    call dword ptr ds:[6C35BCh]"
-"	      0048136f    mov [ebp-114h],eax"
+"	      0048136f    mov MemBitmap,eax"
 );
 // LINE 515:
 	asm( 
-"	      00481375    cmp dword ptr [ebp-114h],0"
+"	      00481375    cmp MemBitmap,0"
 "	      0048137c    je near ptr 004815C0h"
 );
 // LINE 516:
@@ -1747,101 +1747,101 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	struct CheckIdentityPalette::__unnamed Info;
 	void * __ptr32 Mono;
 	asm( 
-"	      00481382    mov eax,[ebp-114h]"
+"	      00481382    mov eax,MemBitmap"
 "	      00481388    push eax"
-"	      00481389    mov eax,[ebp-104h]"
+"	      00481389    mov eax,MemDC"
 "	      0048138f    push eax"
 "	      00481390    call dword ptr ds:[6C359Ch]"
-"	      00481396    mov [ebp-118h],eax"
+"	      00481396    mov Mono,eax"
 );
 // LINE 517:
 	asm( 
 "	      0048139c    push 0"
-"	      0048139e    mov eax,[ebp+0Ch]"
+"	      0048139e    mov eax,hPalette"
 "	      004813a1    push eax"
-"	      004813a2    mov eax,[ebp-104h]"
+"	      004813a2    mov eax,MemDC"
 "	      004813a8    push eax"
 "	      004813a9    call dword ptr ds:[6C3570h]"
 );
 // LINE 525:
 	asm( 
-"	      004813af    mov dword ptr [ebp-540h],28h"
+"	      004813af    mov Info.Header.biSize,28h"
 );
 // LINE 526:
 	asm( 
-"	      004813b9    mov dword ptr [ebp-53Ch],100h"
+"	      004813b9    mov Info.Header.biWidth,100h"
 );
 // LINE 527:
 	asm( 
-"	      004813c3    mov dword ptr [ebp-538h],1"
+"	      004813c3    mov Info.Header.biHeight,1"
 );
 // LINE 528:
 	asm( 
-"	      004813cd    mov word ptr [ebp-534h],1"
+"	      004813cd    mov Info.Header.biPlanes,1"
 );
 // LINE 529:
 	asm( 
-"	      004813d6    mov word ptr [ebp-532h],8"
+"	      004813d6    mov Info.Header.biBitCount,8"
 );
 // LINE 530:
 	asm( 
-"	      004813df    mov dword ptr [ebp-530h],0"
+"	      004813df    mov Info.Header.biCompression,0"
 );
 // LINE 531:
 	asm( 
-"	      004813e9    mov dword ptr [ebp-52Ch],0"
+"	      004813e9    mov Info.Header.biSizeImage,0"
 );
 // LINE 532:
 	asm( 
-"	      004813f3    mov dword ptr [ebp-528h],0"
+"	      004813f3    mov Info.Header.biXPelsPerMeter,0"
 );
 // LINE 533:
 	asm( 
-"	      004813fd    mov dword ptr [ebp-524h],0"
+"	      004813fd    mov Info.Header.biYPelsPerMeter,0"
 );
 // LINE 534:
 	asm( 
-"	      00481407    mov dword ptr [ebp-520h],0"
+"	      00481407    mov Info.Header.biClrUsed,0"
 );
 // LINE 535:
 	asm( 
-"	      00481411    mov dword ptr [ebp-51Ch],0"
+"	      00481411    mov Info.Header.biClrImportant,0"
 );
 // LINE 537:
 	asm( 
-"	      0048141b    mov dword ptr [ebp-10Ch],0"
+"	      0048141b    mov i,0"
 "	      00481425    jmp near ptr 00481430h"
-"	      0048142a    inc dword ptr [ebp-10Ch]"
-"	      00481430    cmp dword ptr [ebp-10Ch],100h"
+"	      0048142a    inc i"
+"	      00481430    cmp i,100h"
 "	      0048143a    jge near ptr 004814A0h"
 );
 // LINE 538:
 	asm( 
-"	      00481440    mov eax,[ebp-10Ch]"
-"	      00481446    mov ecx,[ebp+10h]"
+"	      00481440    mov eax,i"
+"	      00481446    mov ecx,pColors"
 "	      00481449    mov al,[ecx+eax*4]"
-"	      0048144c    mov ecx,[ebp-10Ch]"
+"	      0048144c    mov ecx,i"
 "	      00481452    mov [ebp+ecx*4-516h],al"
 );
 // LINE 539:
 	asm( 
-"	      00481459    mov eax,[ebp-10Ch]"
-"	      0048145f    mov ecx,[ebp+10h]"
+"	      00481459    mov eax,i"
+"	      0048145f    mov ecx,pColors"
 "	      00481462    mov al,[ecx+eax*4+1]"
-"	      00481466    mov ecx,[ebp-10Ch]"
+"	      00481466    mov ecx,i"
 "	      0048146c    mov [ebp+ecx*4-517h],al"
 );
 // LINE 540:
 	asm( 
-"	      00481473    mov eax,[ebp-10Ch]"
-"	      00481479    mov ecx,[ebp+10h]"
+"	      00481473    mov eax,i"
+"	      00481479    mov ecx,pColors"
 "	      0048147c    mov al,[ecx+eax*4+2]"
-"	      00481480    mov ecx,[ebp-10Ch]"
+"	      00481480    mov ecx,i"
 "	      00481486    mov [ebp+ecx*4-518h],al"
 );
 // LINE 541:
 	asm( 
-"	      0048148d    mov eax,[ebp-10Ch]"
+"	      0048148d    mov eax,i"
 "	      00481493    mov byte ptr [ebp+eax*4-515h],0"
 );
 // LINE 542:
@@ -1850,16 +1850,16 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 );
 // LINE 545:
 	asm( 
-"	      004814a0    mov dword ptr [ebp-10Ch],0"
+"	      004814a0    mov i,0"
 "	      004814aa    jmp near ptr 004814B5h"
-"	      004814af    inc dword ptr [ebp-10Ch]"
-"	      004814b5    cmp dword ptr [ebp-10Ch],100h"
+"	      004814af    inc i"
+"	      004814b5    cmp i,100h"
 "	      004814bf    jge near ptr 004814DDh"
 );
 // LINE 546:
 	asm( 
 "	      004814c5    mov al,[ebp-10Ch]"
-"	      004814cb    mov ecx,[ebp-10Ch]"
+"	      004814cb    mov ecx,i"
 "	      004814d1    mov [ebp+ecx-100h],al"
 "	      004814d8    jmp near ptr 004814AFh"
 );
@@ -1867,9 +1867,9 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	asm( 
 "	      004814dd    push 0CC0020h"
 "	      004814e2    push 0"
-"	      004814e4    lea eax,[ebp-540h]"
+"	      004814e4    lea eax,Info.Header.biSize"
 "	      004814ea    push eax"
-"	      004814eb    lea eax,[ebp-100h]"
+"	      004814eb    lea eax,Bits[0]"
 "	      004814f1    push eax"
 "	      004814f2    push 1"
 "	      004814f4    push 100h"
@@ -1879,48 +1879,48 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 "	      004814ff    push 100h"
 "	      00481504    push 0"
 "	      00481506    push 0"
-"	      00481508    mov eax,[ebp-104h]"
+"	      00481508    mov eax,MemDC"
 "	      0048150e    push eax"
 "	      0048150f    call dword ptr ds:[6C35B8h]"
-"	      00481515    mov [ebp-110h],eax"
+"	      00481515    mov nReturnValue,eax"
 );
 // LINE 551:
 	asm( 
-"	      0048151b    cmp dword ptr [ebp-110h],0FFFFFFFFh"
+"	      0048151b    cmp nReturnValue,0FFFFFFFFh"
 "	      00481522    je near ptr 0048159Fh"
 );
 // LINE 553:
 	asm( 
-"	      00481528    mov dword ptr [ebp-108h],1"
+"	      00481528    mov IsID,1"
 );
 // LINE 554:
 	asm( 
-"	      00481532    lea eax,[ebp-100h]"
+"	      00481532    lea eax,Bits[0]"
 "	      00481538    push eax"
 "	      00481539    push 100h"
-"	      0048153e    mov eax,[ebp-114h]"
+"	      0048153e    mov eax,MemBitmap"
 "	      00481544    push eax"
 "	      00481545    call dword ptr ds:[6C35C0h]"
 );
 // LINE 555:
 	asm( 
-"	      0048154b    mov dword ptr [ebp-10Ch],0"
+"	      0048154b    mov i,0"
 "	      00481555    jmp near ptr 00481560h"
-"	      0048155a    inc dword ptr [ebp-10Ch]"
-"	      00481560    cmp dword ptr [ebp-10Ch],100h"
+"	      0048155a    inc i"
+"	      00481560    cmp i,100h"
 "	      0048156a    jge near ptr 0048159Fh"
 );
 // LINE 556:
 	asm( 
-"	      00481570    mov eax,[ebp-10Ch]"
+"	      00481570    mov eax,i"
 "	      00481576    xor ecx,ecx"
 "	      00481578    mov cl,[ebp+eax-100h]"
-"	      0048157f    cmp ecx,[ebp-10Ch]"
+"	      0048157f    cmp ecx,i"
 "	      00481585    je near ptr 0048159Ah"
 );
 // LINE 557:
 	asm( 
-"	      0048158b    mov dword ptr [ebp-108h],0"
+"	      0048158b    mov IsID,0"
 );
 // LINE 558:
 	asm( 
@@ -1932,29 +1932,29 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 );
 // LINE 563:
 	asm( 
-"	      0048159f    mov eax,[ebp-118h]"
+"	      0048159f    mov eax,Mono"
 "	      004815a5    push eax"
-"	      004815a6    mov eax,[ebp-104h]"
+"	      004815a6    mov eax,MemDC"
 "	      004815ac    push eax"
 "	      004815ad    call dword ptr ds:[6C359Ch]"
 );
 // LINE 564:
 	asm( 
-"	      004815b3    mov eax,[ebp-114h]"
+"	      004815b3    mov eax,MemBitmap"
 "	      004815b9    push eax"
 "	      004815ba    call dword ptr ds:[6C358Ch]"
 );
 // LINE 567:
 // Block end:
 	asm( 
-"	      004815c0    mov eax,[ebp-104h]"
+"	      004815c0    mov eax,MemDC"
 "	      004815c6    push eax"
 "	      004815c7    call dword ptr ds:[6C35B0h]"
 );
 // LINE 570:
 // Block end:
 	asm( 
-"	      004815cd    mov eax,[ebp-108h]"
+"	      004815cd    mov eax,IsID"
 "	      004815d3    jmp near ptr 004815D8h"
 );
 // LINE 571:
@@ -1984,42 +1984,42 @@ long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam,
 	asm( 
 "	      004815e6    jmp near ptr 004815EBh"
 "	      004815eb    push 0"
-"	      004815ed    mov eax,[ebp+8]"
+"	      004815ed    mov eax,Window"
 "	      004815f0    push eax"
 "	      004815f1    call dword ptr ds:[6C3868h]"
-"	      004815f7    mov [ebp-4],eax"
+"	      004815f7    mov pWindow,eax"
 );
 // LINE 586:
 	asm( 
-"	      004815fa    cmp dword ptr [ebp-4],0"
+"	      004815fa    cmp pWindow,0"
 "	      004815fe    je near ptr 00481625h"
 );
 // LINE 587:
 	asm( 
-"	      00481604    mov eax,[ebp+14h]"
+"	      00481604    mov eax,lParam"
 "	      00481607    push eax"
-"	      00481608    mov eax,[ebp+10h]"
+"	      00481608    mov eax,wParam"
 "	      0048160b    push eax"
-"	      0048160c    mov eax,[ebp+0Ch]"
+"	      0048160c    mov eax,Message"
 "	      0048160f    push eax"
-"	      00481610    mov eax,[ebp+8]"
+"	      00481610    mov eax,Window"
 "	      00481613    push eax"
-"	      00481614    mov eax,[ebp-4]"
+"	      00481614    mov eax,pWindow"
 "	      00481617    push eax"
-"	      00481618    mov eax,[ebp-4]"
+"	      00481618    mov eax,pWindow"
 "	      0048161b    mov eax,[eax]"
 "	      0048161d    call dword ptr [eax+30h]"
 "	      00481620    jmp near ptr 00481640h"
 );
 // LINE 588:
 	asm( 
-"	      00481625    mov eax,[ebp+14h]"
+"	      00481625    mov eax,lParam"
 "	      00481628    push eax"
-"	      00481629    mov eax,[ebp+10h]"
+"	      00481629    mov eax,wParam"
 "	      0048162c    push eax"
-"	      0048162d    mov eax,[ebp+0Ch]"
+"	      0048162d    mov eax,Message"
 "	      00481630    push eax"
-"	      00481631    mov eax,[ebp+8]"
+"	      00481631    mov eax,Window"
 "	      00481634    push eax"
 "	      00481635    call dword ptr ds:[6C3860h]"
 "	      0048163b    jmp near ptr 00481640h"
@@ -2047,7 +2047,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 603:
 	asm( 
-"	      00481650    mov eax,[ebp+10h]"
+"	      00481650    mov eax,Message"
 "	      00481653    mov [ebp-70h],eax"
 "	      00481656    jmp near ptr 004819EEh"
 );
@@ -2056,8 +2056,8 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 	void * __ptr32 hdc;
 	struct tagPAINTSTRUCT Paint;
 	asm( 
-"	      0048165b    mov eax,[ebp+0Ch]"
-"	      0048165e    cmp [ebp+14h],eax"
+"	      0048165b    mov eax,Window"
+"	      0048165e    cmp wParam,eax"
 "	      00481661    jne near ptr 0048166Ch"
 );
 // LINE 609:
@@ -2066,7 +2066,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 612:
 	asm( 
-"	      0048166c    mov eax,[ebp+8]"
+"	      0048166c    mov eax,this"
 "	      0048166f    cmp dword ptr [eax+1Ch],0"
 "	      00481673    je near ptr 004816D4h"
 );
@@ -2075,52 +2075,52 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 	int32_t bRedraw;
 	void * __ptr32 hdc;
 	asm( 
-"	      00481679    mov eax,[ebp+0Ch]"
+"	      00481679    mov eax,Window"
 "	      0048167c    push eax"
 "	      0048167d    call dword ptr ds:[6C3850h]"
-"	      00481683    mov [ebp-48h],eax"
+"	      00481683    mov hdc,eax"
 );
 // LINE 616:
 	asm( 
 "	      00481686    push 0"
-"	      00481688    mov eax,[ebp+8]"
+"	      00481688    mov eax,this"
 "	      0048168b    mov eax,[eax+1Ch]"
 "	      0048168e    push eax"
-"	      0048168f    mov eax,[ebp-48h]"
+"	      0048168f    mov eax,hdc"
 "	      00481692    push eax"
 "	      00481693    call dword ptr ds:[6C3570h]"
 );
 // LINE 617:
 	asm( 
-"	      00481699    mov eax,[ebp-48h]"
+"	      00481699    mov eax,hdc"
 "	      0048169c    push eax"
 "	      0048169d    call dword ptr ds:[6C3578h]"
-"	      004816a3    mov [ebp-4Ch],eax"
+"	      004816a3    mov bRedraw,eax"
 );
 // LINE 618:
 	asm( 
-"	      004816a6    mov eax,[ebp-48h]"
+"	      004816a6    mov eax,hdc"
 "	      004816a9    push eax"
-"	      004816aa    mov eax,[ebp+0Ch]"
+"	      004816aa    mov eax,Window"
 "	      004816ad    push eax"
 "	      004816ae    call dword ptr ds:[6C384Ch]"
 );
 // LINE 619:
 	asm( 
-"	      004816b4    cmp dword ptr [ebp-4Ch],0"
+"	      004816b4    cmp bRedraw,0"
 "	      004816b8    je near ptr 004816CCh"
 );
 // LINE 620:
 	asm( 
 "	      004816be    push 0"
 "	      004816c0    push 0"
-"	      004816c2    mov eax,[ebp+0Ch]"
+"	      004816c2    mov eax,Window"
 "	      004816c5    push eax"
 "	      004816c6    call dword ptr ds:[6C3824h]"
 );
 // LINE 621:
 	asm( 
-"	      004816cc    mov eax,[ebp-4Ch]"
+"	      004816cc    mov eax,bRedraw"
 "	      004816cf    jmp near ptr 00481ACAh"
 );
 // LINE 623:
@@ -2130,7 +2130,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 626:
 	asm( 
-"	      004816d9    cmp dword ptr [ebp+14h],0"
+"	      004816d9    cmp wParam,0"
 "	      004816dd    je near ptr 00481701h"
 );
 // LINE 627:
@@ -2157,7 +2157,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 631:
 	asm( 
-"	      0048171a    mov eax,[ebp+8]"
+"	      0048171a    mov eax,this"
 "	      0048171d    cmp dword ptr [eax+1Ch],0"
 "	      00481721    je near ptr 0048176Ch"
 );
@@ -2165,14 +2165,14 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 // Block start:
 	void * __ptr32 hdc;
 	asm( 
-"	      00481727    mov eax,[ebp+0Ch]"
+"	      00481727    mov eax,Window"
 "	      0048172a    push eax"
 "	      0048172b    call dword ptr ds:[6C3850h]"
-"	      00481731    mov [ebp-50h],eax"
+"	      00481731    mov hdc,eax"
 );
 // LINE 633:
 	asm( 
-"	      00481734    mov eax,[ebp+8]"
+"	      00481734    mov eax,this"
 "	      00481737    mov eax,[eax+1Ch]"
 "	      0048173a    push eax"
 "	      0048173b    call dword ptr ds:[6C35CCh]"
@@ -2180,24 +2180,24 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 // LINE 634:
 	asm( 
 "	      00481741    push 0"
-"	      00481743    mov eax,[ebp+8]"
+"	      00481743    mov eax,this"
 "	      00481746    mov eax,[eax+1Ch]"
 "	      00481749    push eax"
-"	      0048174a    mov eax,[ebp-50h]"
+"	      0048174a    mov eax,hdc"
 "	      0048174d    push eax"
 "	      0048174e    call dword ptr ds:[6C3570h]"
 );
 // LINE 635:
 	asm( 
-"	      00481754    mov eax,[ebp-50h]"
+"	      00481754    mov eax,hdc"
 "	      00481757    push eax"
 "	      00481758    call dword ptr ds:[6C3578h]"
 );
 // LINE 636:
 	asm( 
-"	      0048175e    mov eax,[ebp-50h]"
+"	      0048175e    mov eax,hdc"
 "	      00481761    push eax"
-"	      00481762    mov eax,[ebp+0Ch]"
+"	      00481762    mov eax,Window"
 "	      00481765    push eax"
 "	      00481766    call dword ptr ds:[6C384Ch]"
 );
@@ -2217,7 +2217,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 643:
 	asm( 
-"	      0048178a    mov eax,[ebp+8]"
+"	      0048178a    mov eax,this"
 "	      0048178d    mov dword ptr [eax+18h],0"
 );
 // LINE 644:
@@ -2226,19 +2226,19 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 649:
 	asm( 
-"	      00481799    mov eax,[ebp+8]"
+"	      00481799    mov eax,this"
 "	      0048179c    cmp dword ptr [eax+10h],0"
 "	      004817a0    je near ptr 004817DAh"
 );
 // LINE 650:
 	asm( 
-"	      004817a6    test dword ptr [ebp+14h],0FFFFh"
+"	      004817a6    test wParam,0FFFFh"
 "	      004817ad    je near ptr 004817C9h"
 );
 // LINE 651:
 	asm( 
-"	      004817b3    mov eax,[ebp+8]"
-"	      004817b6    mov ecx,[ebp+8]"
+"	      004817b3    mov eax,this"
+"	      004817b6    mov ecx,this"
 "	      004817b9    mov ecx,[ecx+10h]"
 "	      004817bc    mov edx,[ecx]"
 "	      004817be    mov ecx,[eax+10h]"
@@ -2250,8 +2250,8 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 653:
 	asm( 
-"	      004817c9    mov eax,[ebp+8]"
-"	      004817cc    mov ecx,[ebp+8]"
+"	      004817c9    mov eax,this"
+"	      004817cc    mov ecx,this"
 "	      004817cf    mov ecx,[ecx+10h]"
 "	      004817d2    mov edx,[ecx]"
 "	      004817d4    mov ecx,[eax+10h]"
@@ -2263,19 +2263,19 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 658:
 	asm( 
-"	      004817df    mov eax,[ebp+8]"
+"	      004817df    mov eax,this"
 "	      004817e2    cmp dword ptr [eax+10h],0"
 "	      004817e6    je near ptr 0048180Ah"
 );
 // LINE 659:
 	asm( 
-"	      004817ec    mov eax,[ebp+18h]"
+"	      004817ec    mov eax,lParam"
 "	      004817ef    and eax,0FFFFh"
 "	      004817f4    push eax"
-"	      004817f5    mov eax,[ebp+14h]"
+"	      004817f5    mov eax,wParam"
 "	      004817f8    push eax"
-"	      004817f9    mov eax,[ebp+8]"
-"	      004817fc    mov ecx,[ebp+8]"
+"	      004817f9    mov eax,this"
+"	      004817fc    mov ecx,this"
 "	      004817ff    mov ecx,[ecx+10h]"
 "	      00481802    mov edx,[ecx]"
 "	      00481804    mov ecx,[eax+10h]"
@@ -2287,7 +2287,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 663:
 	asm( 
-"	      0048180f    mov eax,[ebp+0Ch]"
+"	      0048180f    mov eax,Window"
 "	      00481812    push eax"
 "	      00481813    call dword ptr ds:[6C38A0h]"
 );
@@ -2302,22 +2302,22 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 665:
 	asm( 
-"	      00481832    mov eax,[ebp+8]"
+"	      00481832    mov eax,this"
 "	      00481835    cmp dword ptr [eax+10h],0"
 "	      00481839    je near ptr 00481868h"
 );
 // LINE 666:
 	asm( 
-"	      0048183f    mov eax,[ebp+18h]"
+"	      0048183f    mov eax,lParam"
 "	      00481842    shr eax,10h"
 "	      00481845    and eax,0FFFFh"
 "	      0048184a    movzx eax,ax"
 "	      0048184d    push eax"
-"	      0048184e    mov eax,[ebp+18h]"
+"	      0048184e    mov eax,lParam"
 "	      00481851    and eax,0FFFFh"
 "	      00481856    push eax"
-"	      00481857    mov eax,[ebp+8]"
-"	      0048185a    mov ecx,[ebp+8]"
+"	      00481857    mov eax,this"
+"	      0048185a    mov ecx,this"
 "	      0048185d    mov ecx,[ecx+10h]"
 "	      00481860    mov edx,[ecx]"
 "	      00481862    mov ecx,[eax+10h]"
@@ -2329,7 +2329,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 670:
 	asm( 
-"	      0048186d    mov eax,[ebp+0Ch]"
+"	      0048186d    mov eax,Window"
 "	      00481870    push eax"
 "	      00481871    call dword ptr ds:[6C38A0h]"
 );
@@ -2344,22 +2344,22 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 672:
 	asm( 
-"	      00481890    mov eax,[ebp+8]"
+"	      00481890    mov eax,this"
 "	      00481893    cmp dword ptr [eax+10h],0"
 "	      00481897    je near ptr 004818C6h"
 );
 // LINE 673:
 	asm( 
-"	      0048189d    mov eax,[ebp+18h]"
+"	      0048189d    mov eax,lParam"
 "	      004818a0    shr eax,10h"
 "	      004818a3    and eax,0FFFFh"
 "	      004818a8    movzx eax,ax"
 "	      004818ab    push eax"
-"	      004818ac    mov eax,[ebp+18h]"
+"	      004818ac    mov eax,lParam"
 "	      004818af    and eax,0FFFFh"
 "	      004818b4    push eax"
-"	      004818b5    mov eax,[ebp+8]"
-"	      004818b8    mov ecx,[ebp+8]"
+"	      004818b5    mov eax,this"
+"	      004818b8    mov ecx,this"
 "	      004818bb    mov ecx,[ecx+10h]"
 "	      004818be    mov edx,[ecx]"
 "	      004818c0    mov ecx,[eax+10h]"
@@ -2384,22 +2384,22 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 679:
 	asm( 
-"	      004818ea    mov eax,[ebp+8]"
+"	      004818ea    mov eax,this"
 "	      004818ed    cmp dword ptr [eax+10h],0"
 "	      004818f1    je near ptr 00481920h"
 );
 // LINE 680:
 	asm( 
-"	      004818f7    mov eax,[ebp+18h]"
+"	      004818f7    mov eax,lParam"
 "	      004818fa    shr eax,10h"
 "	      004818fd    and eax,0FFFFh"
 "	      00481902    movzx eax,ax"
 "	      00481905    push eax"
-"	      00481906    mov eax,[ebp+18h]"
+"	      00481906    mov eax,lParam"
 "	      00481909    and eax,0FFFFh"
 "	      0048190e    push eax"
-"	      0048190f    mov eax,[ebp+8]"
-"	      00481912    mov ecx,[ebp+8]"
+"	      0048190f    mov eax,this"
+"	      00481912    mov ecx,this"
 "	      00481915    mov ecx,[ecx+10h]"
 "	      00481918    mov edx,[ecx]"
 "	      0048191a    mov ecx,[eax+10h]"
@@ -2424,22 +2424,22 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 686:
 	asm( 
-"	      00481944    mov eax,[ebp+8]"
+"	      00481944    mov eax,this"
 "	      00481947    cmp dword ptr [eax+10h],0"
 "	      0048194b    je near ptr 0048197Ah"
 );
 // LINE 687:
 	asm( 
-"	      00481951    mov eax,[ebp+18h]"
+"	      00481951    mov eax,lParam"
 "	      00481954    shr eax,10h"
 "	      00481957    and eax,0FFFFh"
 "	      0048195c    movzx eax,ax"
 "	      0048195f    push eax"
-"	      00481960    mov eax,[ebp+18h]"
+"	      00481960    mov eax,lParam"
 "	      00481963    and eax,0FFFFh"
 "	      00481968    push eax"
-"	      00481969    mov eax,[ebp+8]"
-"	      0048196c    mov ecx,[ebp+8]"
+"	      00481969    mov eax,this"
+"	      0048196c    mov ecx,this"
 "	      0048196f    mov ecx,[ecx+10h]"
 "	      00481972    mov edx,[ecx]"
 "	      00481974    mov ecx,[eax+10h]"
@@ -2451,22 +2451,22 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 691:
 	asm( 
-"	      0048197f    mov eax,[ebp+8]"
+"	      0048197f    mov eax,this"
 "	      00481982    cmp dword ptr [eax+10h],0"
 "	      00481986    je near ptr 004819B5h"
 );
 // LINE 692:
 	asm( 
-"	      0048198c    mov eax,[ebp+18h]"
+"	      0048198c    mov eax,lParam"
 "	      0048198f    shr eax,10h"
 "	      00481992    and eax,0FFFFh"
 "	      00481997    movzx eax,ax"
 "	      0048199a    push eax"
-"	      0048199b    mov eax,[ebp+18h]"
+"	      0048199b    mov eax,lParam"
 "	      0048199e    and eax,0FFFFh"
 "	      004819a3    push eax"
-"	      004819a4    mov eax,[ebp+8]"
-"	      004819a7    mov ecx,[ebp+8]"
+"	      004819a4    mov eax,this"
+"	      004819a7    mov ecx,this"
 "	      004819aa    mov ecx,[ecx+10h]"
 "	      004819ad    mov edx,[ecx]"
 "	      004819af    mov ecx,[eax+10h]"
@@ -2478,25 +2478,25 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 699:
 	asm( 
-"	      004819ba    lea eax,[ebp-40h]"
+"	      004819ba    lea eax,Paint.hdc"
 "	      004819bd    push eax"
-"	      004819be    mov eax,[ebp+0Ch]"
+"	      004819be    mov eax,Window"
 "	      004819c1    push eax"
 "	      004819c2    call dword ptr ds:[6C3838h]"
-"	      004819c8    mov [ebp-44h],eax"
+"	      004819c8    mov hdc,eax"
 );
 // LINE 700:
 	asm( 
-"	      004819cb    mov eax,[ebp+8]"
+"	      004819cb    mov eax,this"
 "	      004819ce    mov eax,[eax]"
-"	      004819d0    mov ecx,[ebp+8]"
+"	      004819d0    mov ecx,this"
 "	      004819d3    call dword ptr [eax+8]"
 );
 // LINE 701:
 	asm( 
-"	      004819d6    lea eax,[ebp-40h]"
+"	      004819d6    lea eax,Paint.hdc"
 "	      004819d9    push eax"
-"	      004819da    mov eax,[ebp+0Ch]"
+"	      004819da    mov eax,Window"
 "	      004819dd    push eax"
 "	      004819de    call dword ptr ds:[6C3830h]"
 );
@@ -2552,13 +2552,13 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 );
 // LINE 705:
 	asm( 
-"	      00481aaf    mov eax,[ebp+18h]"
+"	      00481aaf    mov eax,lParam"
 "	      00481ab2    push eax"
-"	      00481ab3    mov eax,[ebp+14h]"
+"	      00481ab3    mov eax,wParam"
 "	      00481ab6    push eax"
-"	      00481ab7    mov eax,[ebp+10h]"
+"	      00481ab7    mov eax,Message"
 "	      00481aba    push eax"
-"	      00481abb    mov eax,[ebp+0Ch]"
+"	      00481abb    mov eax,Window"
 "	      00481abe    push eax"
 "	      00481abf    call dword ptr ds:[6C3860h]"
 "	      00481ac5    jmp near ptr 00481ACAh"

@@ -33,7 +33,7 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 "	      00431ccb    call 00431EB1h"
 "	      00431cd0    movsx eax,al"
 "	      00431cd3    xor ecx,ecx"
-"	      00431cd5    mov cl,[ebp+8]"
+"	      00431cd5    mov cl,chModifiers"
 "	      00431cd8    and eax,ecx"
 "	      00431cda    jmp near ptr 00431CDFh"
 );
@@ -57,19 +57,19 @@ void Keyboard::Keyboard() {
 "	      00431cea    push ebx"
 "	      00431ceb    push esi"
 "	      00431cec    push edi"
-"	      00431ced    mov [ebp-4],ecx"
-"	      00431cf0    mov ecx,[ebp-4]"
+"	      00431ced    mov this,ecx"
+"	      00431cf0    mov ecx,this"
 "	      00431cf3    call 0043D432h"
 );
 // LINE 32:
 	asm( 
-"	      00431cf8    mov ecx,[ebp-4]"
+"	      00431cf8    mov ecx,this"
 "	      00431cfb    call 00431E19h"
 );
 // LINE 33:
 	asm( 
 "	      00431d00    jmp near ptr 00431D05h"
-"	      00431d05    mov eax,[ebp-4]"
+"	      00431d05    mov eax,this"
 "	      00431d08    pop edi"
 "	      00431d09    pop esi"
 "	      00431d0a    pop ebx"
@@ -88,13 +88,13 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 "	      00431d13    push ebx"
 "	      00431d14    push esi"
 "	      00431d15    push edi"
-"	      00431d16    mov [ebp-4],ecx"
+"	      00431d16    mov this,ecx"
 );
 // LINE 41:
 	asm( 
 "	      00431d19    xor eax,eax"
-"	      00431d1b    mov al,[ebp+8]"
-"	      00431d1e    mov ecx,[ebp-4]"
+"	      00431d1b    mov al,chKey"
+"	      00431d1e    mov ecx,this"
 "	      00431d21    movsx eax,byte ptr [eax+ecx+10h]"
 "	      00431d26    jmp near ptr 00431D2Bh"
 );
@@ -120,13 +120,13 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 "	      00431d38    push ebx"
 "	      00431d39    push esi"
 "	      00431d3a    push edi"
-"	      00431d3b    mov [ebp-8],ecx"
+"	      00431d3b    mov this,ecx"
 );
 // LINE 52:
 	asm( 
 "	      00431d3e    mov eax,[ebp+8]"
 "	      00431d41    push eax"
-"	      00431d42    mov ecx,[ebp-8]"
+"	      00431d42    mov ecx,this"
 "	      00431d45    call 00431D0Dh"
 "	      00431d4a    test eax,eax"
 "	      00431d4c    jne near ptr 00431D59h"
@@ -138,15 +138,15 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 );
 // LINE 57:
 	asm( 
-"	      00431d59    mov ecx,[ebp-8]"
+"	      00431d59    mov ecx,this"
 "	      00431d5c    call 00431EB1h"
-"	      00431d61    mov [ebp-4],al"
+"	      00431d61    mov chCurrentModifiers,al"
 );
 // LINE 58:
 	asm( 
-"	      00431d64    movsx eax,byte ptr [ebp-4]"
+"	      00431d64    movsx eax,chCurrentModifiers"
 "	      00431d68    xor ecx,ecx"
-"	      00431d6a    mov cl,[ebp+0Ch]"
+"	      00431d6a    mov cl,chModifiers"
 "	      00431d6d    cmp eax,ecx"
 "	      00431d6f    jne near ptr 00431D7Fh"
 "	      00431d75    mov eax,1"
@@ -174,13 +174,13 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 "	      00431d93    push ebx"
 "	      00431d94    push esi"
 "	      00431d95    push edi"
-"	      00431d96    mov [ebp-4],ecx"
+"	      00431d96    mov this,ecx"
 );
 // LINE 70:
 	asm( 
 "	      00431d99    xor eax,eax"
-"	      00431d9b    mov al,[ebp+8]"
-"	      00431d9e    mov ecx,[ebp-4]"
+"	      00431d9b    mov al,chKey"
+"	      00431d9e    mov ecx,this"
 "	      00431da1    movsx eax,byte ptr [eax+ecx+10h]"
 "	      00431da6    test eax,eax"
 "	      00431da8    jne near ptr 00431DC7h"
@@ -188,15 +188,15 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 // LINE 71:
 	asm( 
 "	      00431dae    xor eax,eax"
-"	      00431db0    mov al,[ebp+8]"
-"	      00431db3    mov ecx,[ebp-4]"
+"	      00431db0    mov al,chKey"
+"	      00431db3    mov ecx,this"
 "	      00431db6    mov byte ptr [eax+ecx+10h],1"
 );
 // LINE 72:
 	asm( 
 "	      00431dbb    mov eax,[ebp+8]"
 "	      00431dbe    push eax"
-"	      00431dbf    mov ecx,[ebp-4]"
+"	      00431dbf    mov ecx,this"
 "	      00431dc2    call 0043D4EBh"
 );
 // LINE 74:
@@ -220,13 +220,13 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 "	      00431dd9    push ebx"
 "	      00431dda    push esi"
 "	      00431ddb    push edi"
-"	      00431ddc    mov [ebp-4],ecx"
+"	      00431ddc    mov this,ecx"
 );
 // LINE 83:
 	asm( 
 "	      00431ddf    xor eax,eax"
-"	      00431de1    mov al,[ebp+8]"
-"	      00431de4    mov ecx,[ebp-4]"
+"	      00431de1    mov al,chKey"
+"	      00431de4    mov ecx,this"
 "	      00431de7    movsx eax,byte ptr [eax+ecx+10h]"
 "	      00431dec    test eax,eax"
 "	      00431dee    je near ptr 00431E0Dh"
@@ -234,15 +234,15 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 // LINE 84:
 	asm( 
 "	      00431df4    xor eax,eax"
-"	      00431df6    mov al,[ebp+8]"
-"	      00431df9    mov ecx,[ebp-4]"
+"	      00431df6    mov al,chKey"
+"	      00431df9    mov ecx,this"
 "	      00431dfc    mov byte ptr [eax+ecx+10h],0"
 );
 // LINE 85:
 	asm( 
 "	      00431e01    mov eax,[ebp+8]"
 "	      00431e04    push eax"
-"	      00431e05    mov ecx,[ebp-4]"
+"	      00431e05    mov ecx,this"
 "	      00431e08    call 0043D67Fh"
 );
 // LINE 87:
@@ -268,26 +268,26 @@ void Keyboard::ClearSettings() {
 "	      00431e1f    push ebx"
 "	      00431e20    push esi"
 "	      00431e21    push edi"
-"	      00431e22    mov [ebp-8],ecx"
+"	      00431e22    mov this,ecx"
 );
 // LINE 98:
 	asm( 
-"	      00431e25    mov dword ptr [ebp-4],0"
+"	      00431e25    mov i,0"
 "	      00431e2c    jmp near ptr 00431E34h"
-"	      00431e31    inc dword ptr [ebp-4]"
-"	      00431e34    cmp dword ptr [ebp-4],100h"
+"	      00431e31    inc i"
+"	      00431e34    cmp i,100h"
 "	      00431e3b    jge near ptr 00431E51h"
 );
 // LINE 99:
 	asm( 
-"	      00431e41    mov eax,[ebp-4]"
-"	      00431e44    mov ecx,[ebp-8]"
+"	      00431e41    mov eax,i"
+"	      00431e44    mov ecx,this"
 "	      00431e47    mov byte ptr [eax+ecx+10h],0"
 "	      00431e4c    jmp near ptr 00431E31h"
 );
 // LINE 100:
 	asm( 
-"	      00431e51    mov ecx,[ebp-8]"
+"	      00431e51    mov ecx,this"
 "	      00431e54    call 0043D703h"
 );
 // LINE 101:
@@ -311,20 +311,20 @@ int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 "	      00431e69    push ebx"
 "	      00431e6a    push esi"
 "	      00431e6b    push edi"
-"	      00431e6c    mov [ebp-4],ecx"
+"	      00431e6c    mov this,ecx"
 );
 // LINE 111:
 	asm( 
 "	      00431e6f    xor eax,eax"
-"	      00431e71    mov al,[ebp+8]"
+"	      00431e71    mov al,chKey"
 "	      00431e74    cmp eax,10h"
 "	      00431e77    je near ptr 00431E99h"
 "	      00431e7d    xor eax,eax"
-"	      00431e7f    mov al,[ebp+8]"
+"	      00431e7f    mov al,chKey"
 "	      00431e82    cmp eax,11h"
 "	      00431e85    je near ptr 00431E99h"
 "	      00431e8b    xor eax,eax"
-"	      00431e8d    mov al,[ebp+8]"
+"	      00431e8d    mov al,chKey"
 "	      00431e90    cmp eax,12h"
 "	      00431e93    jne near ptr 00431EA3h"
 );
@@ -360,57 +360,57 @@ char Keyboard::GetCurrentModifierState() {
 "	      00431eb7    push ebx"
 "	      00431eb8    push esi"
 "	      00431eb9    push edi"
-"	      00431eba    mov [ebp-8],ecx"
+"	      00431eba    mov this,ecx"
 );
 // LINE 125:
 	asm( 
-"	      00431ebd    mov byte ptr [ebp-4],0"
+"	      00431ebd    mov chReturnValue,0"
 );
 // LINE 128:
 	asm( 
 "	      00431ec1    push 10h"
-"	      00431ec3    mov ecx,[ebp-8]"
+"	      00431ec3    mov ecx,this"
 "	      00431ec6    call 00431D0Dh"
 "	      00431ecb    test eax,eax"
 "	      00431ecd    je near ptr 00431EDCh"
 );
 // LINE 129:
 	asm( 
-"	      00431ed3    movsx eax,byte ptr [ebp-4]"
+"	      00431ed3    movsx eax,chReturnValue"
 "	      00431ed7    or al,1"
-"	      00431ed9    mov [ebp-4],al"
+"	      00431ed9    mov chReturnValue,al"
 );
 // LINE 130:
 	asm( 
 "	      00431edc    push 11h"
-"	      00431ede    mov ecx,[ebp-8]"
+"	      00431ede    mov ecx,this"
 "	      00431ee1    call 00431D0Dh"
 "	      00431ee6    test eax,eax"
 "	      00431ee8    je near ptr 00431EF7h"
 );
 // LINE 131:
 	asm( 
-"	      00431eee    movsx eax,byte ptr [ebp-4]"
+"	      00431eee    movsx eax,chReturnValue"
 "	      00431ef2    or al,2"
-"	      00431ef4    mov [ebp-4],al"
+"	      00431ef4    mov chReturnValue,al"
 );
 // LINE 132:
 	asm( 
 "	      00431ef7    push 12h"
-"	      00431ef9    mov ecx,[ebp-8]"
+"	      00431ef9    mov ecx,this"
 "	      00431efc    call 00431D0Dh"
 "	      00431f01    test eax,eax"
 "	      00431f03    je near ptr 00431F12h"
 );
 // LINE 133:
 	asm( 
-"	      00431f09    movsx eax,byte ptr [ebp-4]"
+"	      00431f09    movsx eax,chReturnValue"
 "	      00431f0d    or al,4"
-"	      00431f0f    mov [ebp-4],al"
+"	      00431f0f    mov chReturnValue,al"
 );
 // LINE 136:
 	asm( 
-"	      00431f12    mov al,[ebp-4]"
+"	      00431f12    mov al,chReturnValue"
 "	      00431f15    jmp near ptr 00431F1Ah"
 );
 // LINE 137:
@@ -441,18 +441,18 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 // LINE 171:
 	asm( 
 "	      00431f28    xor eax,eax"
-"	      00431f2a    mov al,[ebp+8]"
+"	      00431f2a    mov al,chKey"
 "	      00431f2d    cmp eax,41h"
 "	      00431f30    jl near ptr 00431FCCh"
 "	      00431f36    xor eax,eax"
-"	      00431f38    mov al,[ebp+8]"
+"	      00431f38    mov al,chKey"
 "	      00431f3b    cmp eax,5Ah"
 "	      00431f3e    jg near ptr 00431FCCh"
 );
 // LINE 172:
 	asm( 
 "	      00431f44    xor eax,eax"
-"	      00431f46    mov al,[ebp+0Ch]"
+"	      00431f46    mov al,chModifiers"
 "	      00431f49    and eax,1"
 "	      00431f4c    mov [ebp-8],eax"
 "	      00431f4f    push 14h"
@@ -478,7 +478,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 );
 // LINE 173:
 	asm( 
-"	      00431fb2    mov al,[ebp+8]"
+"	      00431fb2    mov al,chKey"
 "	      00431fb5    jmp near ptr 00432221h"
 );
 // LINE 174:
@@ -488,25 +488,25 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 // LINE 175:
 	asm( 
 "	      00431fbf    xor eax,eax"
-"	      00431fc1    mov al,[ebp+8]"
+"	      00431fc1    mov al,chKey"
 "	      00431fc4    add eax,20h"
 "	      00431fc7    jmp near ptr 00432221h"
 );
 // LINE 180:
 	asm( 
 "	      00431fcc    xor eax,eax"
-"	      00431fce    mov al,[ebp+8]"
+"	      00431fce    mov al,chKey"
 "	      00431fd1    cmp eax,30h"
 "	      00431fd4    jl near ptr 00432073h"
 "	      00431fda    xor eax,eax"
-"	      00431fdc    mov al,[ebp+8]"
+"	      00431fdc    mov al,chKey"
 "	      00431fdf    cmp eax,39h"
 "	      00431fe2    jg near ptr 00432073h"
 );
 // LINE 181:
 	asm( 
 "	      00431fe8    xor eax,eax"
-"	      00431fea    mov al,[ebp+0Ch]"
+"	      00431fea    mov al,chModifiers"
 "	      00431fed    and eax,1"
 "	      00431ff0    mov [ebp-14h],eax"
 "	      00431ff3    push 14h"
@@ -533,7 +533,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 // LINE 182:
 	asm( 
 "	      00432056    xor eax,eax"
-"	      00432058    mov al,[ebp+8]"
+"	      00432058    mov al,chKey"
 "	      0043205b    mov al,[eax+598320h]"
 "	      00432061    jmp near ptr 00432221h"
 );
@@ -543,154 +543,154 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 );
 // LINE 184:
 	asm( 
-"	      0043206b    mov al,[ebp+8]"
+"	      0043206b    mov al,chKey"
 "	      0043206e    jmp near ptr 00432221h"
 );
 // LINE 189:
 	asm( 
-"	      00432073    mov byte ptr [ebp-4],0FFh"
+"	      00432073    mov chIndex,0FFh"
 );
 // LINE 190:
 	asm( 
 "	      00432077    xor eax,eax"
-"	      00432079    mov al,[ebp+8]"
+"	      00432079    mov al,chKey"
 "	      0043207c    cmp eax,60h"
 "	      0043207f    jne near ptr 0043208Eh"
 );
 // LINE 191:
 	asm( 
-"	      00432085    mov byte ptr [ebp-4],0"
+"	      00432085    mov chIndex,0"
 );
 // LINE 192:
 	asm( 
 "	      00432089    jmp near ptr 0043216Fh"
 "	      0043208e    xor eax,eax"
-"	      00432090    mov al,[ebp+8]"
+"	      00432090    mov al,chKey"
 "	      00432093    cmp eax,2Dh"
 "	      00432096    jne near ptr 004320A5h"
 );
 // LINE 193:
 	asm( 
-"	      0043209c    mov byte ptr [ebp-4],1"
+"	      0043209c    mov chIndex,1"
 );
 // LINE 194:
 	asm( 
 "	      004320a0    jmp near ptr 0043216Fh"
 "	      004320a5    xor eax,eax"
-"	      004320a7    mov al,[ebp+8]"
+"	      004320a7    mov al,chKey"
 "	      004320aa    cmp eax,3Dh"
 "	      004320ad    jne near ptr 004320BCh"
 );
 // LINE 195:
 	asm( 
-"	      004320b3    mov byte ptr [ebp-4],2"
+"	      004320b3    mov chIndex,2"
 );
 // LINE 196:
 	asm( 
 "	      004320b7    jmp near ptr 0043216Fh"
 "	      004320bc    xor eax,eax"
-"	      004320be    mov al,[ebp+8]"
+"	      004320be    mov al,chKey"
 "	      004320c1    cmp eax,5Bh"
 "	      004320c4    jne near ptr 004320D3h"
 );
 // LINE 197:
 	asm( 
-"	      004320ca    mov byte ptr [ebp-4],3"
+"	      004320ca    mov chIndex,3"
 );
 // LINE 198:
 	asm( 
 "	      004320ce    jmp near ptr 0043216Fh"
 "	      004320d3    xor eax,eax"
-"	      004320d5    mov al,[ebp+8]"
+"	      004320d5    mov al,chKey"
 "	      004320d8    cmp eax,5Dh"
 "	      004320db    jne near ptr 004320EAh"
 );
 // LINE 199:
 	asm( 
-"	      004320e1    mov byte ptr [ebp-4],4"
+"	      004320e1    mov chIndex,4"
 );
 // LINE 200:
 	asm( 
 "	      004320e5    jmp near ptr 0043216Fh"
 "	      004320ea    xor eax,eax"
-"	      004320ec    mov al,[ebp+8]"
+"	      004320ec    mov al,chKey"
 "	      004320ef    cmp eax,5Ch"
 "	      004320f2    jne near ptr 00432101h"
 );
 // LINE 201:
 	asm( 
-"	      004320f8    mov byte ptr [ebp-4],5"
+"	      004320f8    mov chIndex,5"
 );
 // LINE 202:
 	asm( 
 "	      004320fc    jmp near ptr 0043216Fh"
 "	      00432101    xor eax,eax"
-"	      00432103    mov al,[ebp+8]"
+"	      00432103    mov al,chKey"
 "	      00432106    cmp eax,3Bh"
 "	      00432109    jne near ptr 00432118h"
 );
 // LINE 203:
 	asm( 
-"	      0043210f    mov byte ptr [ebp-4],6"
+"	      0043210f    mov chIndex,6"
 );
 // LINE 204:
 	asm( 
 "	      00432113    jmp near ptr 0043216Fh"
 "	      00432118    xor eax,eax"
-"	      0043211a    mov al,[ebp+8]"
+"	      0043211a    mov al,chKey"
 "	      0043211d    cmp eax,27h"
 "	      00432120    jne near ptr 0043212Fh"
 );
 // LINE 205:
 	asm( 
-"	      00432126    mov byte ptr [ebp-4],7"
+"	      00432126    mov chIndex,7"
 );
 // LINE 206:
 	asm( 
 "	      0043212a    jmp near ptr 0043216Fh"
 "	      0043212f    xor eax,eax"
-"	      00432131    mov al,[ebp+8]"
+"	      00432131    mov al,chKey"
 "	      00432134    cmp eax,2Ch"
 "	      00432137    jne near ptr 00432146h"
 );
 // LINE 207:
 	asm( 
-"	      0043213d    mov byte ptr [ebp-4],8"
+"	      0043213d    mov chIndex,8"
 );
 // LINE 208:
 	asm( 
 "	      00432141    jmp near ptr 0043216Fh"
 "	      00432146    xor eax,eax"
-"	      00432148    mov al,[ebp+8]"
+"	      00432148    mov al,chKey"
 "	      0043214b    cmp eax,2Eh"
 "	      0043214e    jne near ptr 0043215Dh"
 );
 // LINE 209:
 	asm( 
-"	      00432154    mov byte ptr [ebp-4],9"
+"	      00432154    mov chIndex,9"
 );
 // LINE 210:
 	asm( 
 "	      00432158    jmp near ptr 0043216Fh"
 "	      0043215d    xor eax,eax"
-"	      0043215f    mov al,[ebp+8]"
+"	      0043215f    mov al,chKey"
 "	      00432162    cmp eax,2Fh"
 "	      00432165    jne near ptr 0043216Fh"
 );
 // LINE 211:
 	asm( 
-"	      0043216b    mov byte ptr [ebp-4],0Ah"
+"	      0043216b    mov chIndex,0Ah"
 );
 // LINE 213:
 	asm( 
-"	      0043216f    movsx eax,byte ptr [ebp-4]"
+"	      0043216f    movsx eax,chIndex"
 "	      00432173    test eax,eax"
 "	      00432175    jl near ptr 00432205h"
 );
 // LINE 214:
 	asm( 
 "	      0043217b    xor eax,eax"
-"	      0043217d    mov al,[ebp+0Ch]"
+"	      0043217d    mov al,chModifiers"
 "	      00432180    and eax,1"
 "	      00432183    mov [ebp-20h],eax"
 "	      00432186    push 14h"
@@ -716,7 +716,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 );
 // LINE 215:
 	asm( 
-"	      004321e9    movsx eax,byte ptr [ebp-4]"
+"	      004321e9    movsx eax,chIndex"
 "	      004321ed    mov al,[eax+598360h]"
 "	      004321f3    jmp near ptr 00432221h"
 );
@@ -726,13 +726,13 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 );
 // LINE 217:
 	asm( 
-"	      004321fd    mov al,[ebp+8]"
+"	      004321fd    mov al,chKey"
 "	      00432200    jmp near ptr 00432221h"
 );
 // LINE 220:
 	asm( 
 "	      00432205    xor eax,eax"
-"	      00432207    mov al,[ebp+8]"
+"	      00432207    mov al,chKey"
 "	      0043220a    cmp eax,20h"
 "	      0043220d    jne near ptr 0043221Ah"
 );
@@ -769,7 +769,7 @@ int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 // LINE 243:
 	asm( 
 "	      0043222c    xor eax,eax"
-"	      0043222e    mov al,[ebp+8]"
+"	      0043222e    mov al,chToggleKey"
 "	      00432231    push eax"
 "	      00432232    call dword ptr ds:[6C386Ch]"
 "	      00432238    movsx eax,ax"

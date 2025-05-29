@@ -9,7 +9,7 @@ int32_t DigitalSound::GetSoundType() {
 "	      00431b06    push ebx"
 "	      00431b07    push esi"
 "	      00431b08    push edi"
-"	      00431b09    mov [ebp-4],ecx"
+"	      00431b09    mov this,ecx"
 "	      00431b0c    mov eax,1"
 "	      00431b11    jmp near ptr 00431B16h"
 "	      00431b16    pop edi"

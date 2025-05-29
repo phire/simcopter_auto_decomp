@@ -21,14 +21,14 @@ void S3ViewerInit() {
 );
 // LINE 109:
 	asm( 
-"	      004ee729    lea eax,[ebp-4Ch]"
+"	      004ee729    lea eax,IdealCameraLoc.x"
 "	      004ee72c    push eax"
 "	      004ee72d    call 004F9240h"
 "	      004ee732    add esp,4"
 );
 // LINE 110:
 	asm( 
-"	      004ee735    lea eax,[ebp-4Ch]"
+"	      004ee735    lea eax,IdealCameraLoc.x"
 "	      004ee738    mov ecx,6C12A0h"
 "	      004ee73d    add ecx,78h"
 "	      004ee740    mov edx,[eax]"
@@ -95,14 +95,14 @@ void S3ViewerInit() {
 	asm( 
 "	      004ee7e7    push 59B508h"
 "	      004ee7ec    push 0CE40000h"
-"	      004ee7f1    lea eax,[ebp-40h]"
+"	      004ee7f1    lea eax,rotmat[0][0]"
 "	      004ee7f4    push eax"
 "	      004ee7f5    call 004CA810h"
 "	      004ee7fa    add esp,0Ch"
 );
 // LINE 137:
 	asm( 
-"	      004ee7fd    lea eax,[ebp-40h]"
+"	      004ee7fd    lea eax,rotmat[0][0]"
 "	      004ee800    push eax"
 "	      004ee801    mov eax,6C1210h"
 "	      004ee806    add eax,20h"
@@ -117,14 +117,14 @@ void S3ViewerInit() {
 	asm( 
 "	      004ee81b    push 59B508h"
 "	      004ee820    push 12C0000h"
-"	      004ee825    lea eax,[ebp-40h]"
+"	      004ee825    lea eax,rotmat[0][0]"
 "	      004ee828    push eax"
 "	      004ee829    call 004CA810h"
 "	      004ee82e    add esp,0Ch"
 );
 // LINE 139:
 	asm( 
-"	      004ee831    lea eax,[ebp-40h]"
+"	      004ee831    lea eax,rotmat[0][0]"
 "	      004ee834    push eax"
 "	      004ee835    mov eax,6C1210h"
 "	      004ee83a    add eax,38h"
@@ -237,7 +237,7 @@ void S3ViewerControl() {
 );
 // LINE 178:
 	asm( 
-"	      004ee90a    mov dword ptr [ebp-2Ch],200h"
+"	      004ee90a    mov timerDelay,200h"
 );
 // LINE 179:
 	asm( 
@@ -246,13 +246,13 @@ void S3ViewerControl() {
 // LINE 180:
 	asm( 
 "	      004ee916    mov eax,ds:[5B4760h]"
-"	      004ee91b    mov [ebp-2Ch],eax"
+"	      004ee91b    mov timerDelay,eax"
 );
 // LINE 183:
 	asm( 
-"	      004ee91e    mov dword ptr [ebp-28h],0"
-"	      004ee925    mov eax,[ebp-28h]"
-"	      004ee928    mov [ebp-18h],eax"
+"	      004ee91e    mov roty,0"
+"	      004ee925    mov eax,roty"
+"	      004ee928    mov rotx,eax"
 );
 // LINE 186:
 	asm( 
@@ -266,7 +266,7 @@ void S3ViewerControl() {
 );
 // LINE 187:
 	asm( 
-"	      004ee94a    mov dword ptr [ebp-18h],280000h"
+"	      004ee94a    mov rotx,280000h"
 );
 // LINE 188:
 	asm( 
@@ -281,7 +281,7 @@ void S3ViewerControl() {
 );
 // LINE 189:
 	asm( 
-"	      004ee975    mov dword ptr [ebp-18h],0FFD80000h"
+"	      004ee975    mov rotx,0FFD80000h"
 );
 // LINE 190:
 	asm( 
@@ -297,10 +297,10 @@ void S3ViewerControl() {
 "	      004ee98f    je near ptr 004EE9AEh"
 "	      004ee995    cmp dword ptr ds:[5B4DB8h],3"
 "	      004ee99c    je near ptr 004EE9AEh"
-"	      004ee9a2    mov dword ptr [ebp-14h],1"
+"	      004ee9a2    mov lJoystickValue,1"
 "	      004ee9a9    jmp near ptr 004EE9B5h"
-"	      004ee9ae    mov dword ptr [ebp-14h],0"
-"	      004ee9b5    cmp dword ptr [ebp-14h],0"
+"	      004ee9ae    mov lJoystickValue,0"
+"	      004ee9b5    cmp lJoystickValue,0"
 "	      004ee9b9    je near ptr 004EE9D8h"
 );
 // LINE 193:
@@ -309,7 +309,7 @@ void S3ViewerControl() {
 );
 // LINE 194:
 	asm( 
-"	      004ee9c5    mov dword ptr [ebp-18h],280000h"
+"	      004ee9c5    mov rotx,280000h"
 );
 // LINE 195:
 	asm( 
@@ -317,7 +317,7 @@ void S3ViewerControl() {
 );
 // LINE 196:
 	asm( 
-"	      004ee9d1    mov dword ptr [ebp-18h],0FFD80000h"
+"	      004ee9d1    mov rotx,0FFD80000h"
 );
 // LINE 199:
 	asm( 
@@ -331,7 +331,7 @@ void S3ViewerControl() {
 );
 // LINE 200:
 	asm( 
-"	      004ee9f7    mov dword ptr [ebp-28h],280000h"
+"	      004ee9f7    mov roty,280000h"
 );
 // LINE 201:
 	asm( 
@@ -346,7 +346,7 @@ void S3ViewerControl() {
 );
 // LINE 202:
 	asm( 
-"	      004eea22    mov dword ptr [ebp-28h],0FFD80000h"
+"	      004eea22    mov roty,0FFD80000h"
 );
 // LINE 203:
 	asm( 
@@ -362,10 +362,10 @@ void S3ViewerControl() {
 "	      004eea3c    je near ptr 004EEA5Bh"
 "	      004eea42    cmp dword ptr ds:[5B4DB8h],3"
 "	      004eea49    je near ptr 004EEA5Bh"
-"	      004eea4f    mov dword ptr [ebp-14h],1"
+"	      004eea4f    mov lJoystickValue,1"
 "	      004eea56    jmp near ptr 004EEA62h"
-"	      004eea5b    mov dword ptr [ebp-14h],0"
-"	      004eea62    cmp dword ptr [ebp-14h],0"
+"	      004eea5b    mov lJoystickValue,0"
+"	      004eea62    cmp lJoystickValue,0"
 "	      004eea66    je near ptr 004EEA85h"
 );
 // LINE 206:
@@ -374,7 +374,7 @@ void S3ViewerControl() {
 );
 // LINE 207:
 	asm( 
-"	      004eea72    mov dword ptr [ebp-28h],280000h"
+"	      004eea72    mov roty,280000h"
 );
 // LINE 208:
 	asm( 
@@ -382,34 +382,34 @@ void S3ViewerControl() {
 );
 // LINE 209:
 	asm( 
-"	      004eea7e    mov dword ptr [ebp-28h],0FFD80000h"
+"	      004eea7e    mov roty,0FFD80000h"
 );
 // LINE 212:
 	asm( 
-"	      004eea85    cmp dword ptr [ebp-18h],0"
+"	      004eea85    cmp rotx,0"
 "	      004eea89    jne near ptr 004EEA99h"
-"	      004eea8f    cmp dword ptr [ebp-28h],0"
+"	      004eea8f    cmp roty,0"
 "	      004eea93    je near ptr 004EEAA9h"
 );
 // LINE 213:
 	asm( 
-"	      004eea99    mov eax,[ebp-28h]"
+"	      004eea99    mov eax,roty"
 "	      004eea9c    push eax"
-"	      004eea9d    mov eax,[ebp-18h]"
+"	      004eea9d    mov eax,rotx"
 "	      004eeaa0    push eax"
 "	      004eeaa1    call 004F6477h"
 "	      004eeaa6    add esp,8"
 );
 // LINE 223:
 	asm( 
-"	      004eeaa9    lea eax,[ebp-24h]"
+"	      004eeaa9    lea eax,IdealCameraPos.x"
 "	      004eeaac    push eax"
 "	      004eeaad    call 004F9240h"
 "	      004eeab2    add esp,4"
 );
 // LINE 225:
 	asm( 
-"	      004eeab5    lea eax,[ebp-24h]"
+"	      004eeab5    lea eax,IdealCameraPos.x"
 "	      004eeab8    push eax"
 "	      004eeab9    call 004F8AF0h"
 "	      004eeabe    add esp,4"
@@ -528,23 +528,23 @@ void S3ViewerControl() {
 	asm( 
 "	      004eebcf    mov eax,ds:[6C126Ch]"
 "	      004eebd4    sub eax,ds:[606EA0h]"
-"	      004eebda    mov [ebp-10h],eax"
+"	      004eebda    mov vec.x,eax"
 );
 // LINE 252:
 	asm( 
 "	      004eebdd    mov eax,ds:[6C1270h]"
 "	      004eebe2    sub eax,ds:[606EA4h]"
-"	      004eebe8    mov [ebp-0Ch],eax"
+"	      004eebe8    mov vec.y,eax"
 );
 // LINE 253:
 	asm( 
 "	      004eebeb    mov eax,ds:[6C1274h]"
 "	      004eebf0    sub eax,ds:[606EA8h]"
-"	      004eebf6    mov [ebp-8],eax"
+"	      004eebf6    mov vec.z,eax"
 );
 // LINE 254:
 	asm( 
-"	      004eebf9    lea eax,[ebp-10h]"
+"	      004eebf9    lea eax,vec.x"
 "	      004eebfc    push eax"
 "	      004eebfd    call 004CA1E3h"
 "	      004eec02    add esp,4"
@@ -610,11 +610,11 @@ void S3ViewerControl() {
 // LINE 268:
 	asm( 
 "	      004eec91    mov eax,ds:[6663A0h]"
-"	      004eec96    mov [ebp-4],eax"
+"	      004eec96    mov viewSize,eax"
 );
 // LINE 269:
 	asm( 
-"	      004eec99    mov eax,[ebp-4]"
+"	      004eec99    mov eax,viewSize"
 "	      004eec9c    add eax,2"
 "	      004eec9f    push eax"
 "	      004eeca0    call 004D6B40h"
@@ -634,7 +634,7 @@ void S3ViewerControl() {
 );
 // LINE 272:
 	asm( 
-"	      004eecc2    mov eax,[ebp-4]"
+"	      004eecc2    mov eax,viewSize"
 "	      004eecc5    add eax,2"
 "	      004eecc8    cmp eax,ds:[6663A0h]"
 "	      004eecce    jne near ptr 004EECE0h"
@@ -659,11 +659,11 @@ void S3ViewerControl() {
 // LINE 278:
 	asm( 
 "	      004eecf7    mov eax,ds:[6663A0h]"
-"	      004eecfc    mov [ebp-4],eax"
+"	      004eecfc    mov viewSize,eax"
 );
 // LINE 279:
 	asm( 
-"	      004eecff    mov eax,[ebp-4]"
+"	      004eecff    mov eax,viewSize"
 "	      004eed02    sub eax,2"
 "	      004eed05    push eax"
 "	      004eed06    call 004D6B40h"
@@ -683,7 +683,7 @@ void S3ViewerControl() {
 );
 // LINE 281:
 	asm( 
-"	      004eed28    mov eax,[ebp-4]"
+"	      004eed28    mov eax,viewSize"
 "	      004eed2b    sub eax,2"
 "	      004eed2e    cmp eax,ds:[6663A0h]"
 "	      004eed34    jne near ptr 004EED46h"
@@ -703,8 +703,8 @@ void S3ViewerControl() {
 "	      004eed4d    push 2Ch"
 "	      004eed4f    call 00431BFBh"
 "	      004eed54    add esp,8"
-"	      004eed57    mov [ebp-14h],eax"
-"	      004eed5a    cmp dword ptr [ebp-14h],0"
+"	      004eed57    mov lJoystickValue,eax"
+"	      004eed5a    cmp lJoystickValue,0"
 "	      004eed5e    je near ptr 004EEE0Dh"
 );
 // LINE 287:
@@ -714,11 +714,11 @@ void S3ViewerControl() {
 // LINE 288:
 	asm( 
 "	      004eed6a    mov eax,ds:[6663A0h]"
-"	      004eed6f    mov [ebp-4],eax"
+"	      004eed6f    mov viewSize,eax"
 );
 // LINE 289:
 	asm( 
-"	      004eed72    mov eax,[ebp-4]"
+"	      004eed72    mov eax,viewSize"
 "	      004eed75    add eax,2"
 "	      004eed78    push eax"
 "	      004eed79    call 004D6B40h"
@@ -738,7 +738,7 @@ void S3ViewerControl() {
 );
 // LINE 292:
 	asm( 
-"	      004eed9b    mov eax,[ebp-4]"
+"	      004eed9b    mov eax,viewSize"
 "	      004eed9e    add eax,2"
 "	      004eeda1    cmp eax,ds:[6663A0h]"
 "	      004eeda7    jne near ptr 004EEDB9h"
@@ -758,11 +758,11 @@ void S3ViewerControl() {
 // LINE 298:
 	asm( 
 "	      004eedbe    mov eax,ds:[6663A0h]"
-"	      004eedc3    mov [ebp-4],eax"
+"	      004eedc3    mov viewSize,eax"
 );
 // LINE 299:
 	asm( 
-"	      004eedc6    mov eax,[ebp-4]"
+"	      004eedc6    mov eax,viewSize"
 "	      004eedc9    sub eax,2"
 "	      004eedcc    push eax"
 "	      004eedcd    call 004D6B40h"
@@ -782,7 +782,7 @@ void S3ViewerControl() {
 );
 // LINE 301:
 	asm( 
-"	      004eedef    mov eax,[ebp-4]"
+"	      004eedef    mov eax,viewSize"
 "	      004eedf2    sub eax,2"
 "	      004eedf5    cmp eax,ds:[6663A0h]"
 "	      004eedfb    jne near ptr 004EEE0Dh"
@@ -822,37 +822,37 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 // LINE 323:
 	asm( 
 "	      004eee1b    mov eax,ds:[6663A0h]"
-"	      004eee20    mov [ebp-8],eax"
+"	      004eee20    mov nOriginalViewSize,eax"
 );
 // LINE 325:
 	asm( 
-"	      004eee23    cmp dword ptr [ebp+8],0"
+"	      004eee23    cmp lValue,0"
 "	      004eee27    jge near ptr 004EEE34h"
 );
 // LINE 326:
 	asm( 
-"	      004eee2d    mov dword ptr [ebp+8],0"
+"	      004eee2d    mov lValue,0"
 );
 // LINE 327:
 	asm( 
-"	      004eee34    cmp dword ptr [ebp+8],64h"
+"	      004eee34    cmp lValue,64h"
 "	      004eee38    jle near ptr 004EEE45h"
 );
 // LINE 328:
 	asm( 
-"	      004eee3e    mov dword ptr [ebp+8],64h"
+"	      004eee3e    mov lValue,64h"
 );
 // LINE 329:
 	asm( 
-"	      004eee45    mov eax,[ebp+8]"
+"	      004eee45    mov eax,lValue"
 "	      004eee48    push eax"
 "	      004eee49    call 004EEECCh"
 "	      004eee4e    add esp,4"
-"	      004eee51    mov [ebp-4],eax"
+"	      004eee51    mov nConvertedValue,eax"
 );
 // LINE 332:
 	asm( 
-"	      004eee54    mov eax,[ebp-4]"
+"	      004eee54    mov eax,nConvertedValue"
 "	      004eee57    push eax"
 "	      004eee58    call 004D6B40h"
 "	      004eee5d    add esp,4"
@@ -872,12 +872,12 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 // LINE 335:
 	asm( 
 "	      004eee7a    mov eax,ds:[6663A0h]"
-"	      004eee7f    cmp [ebp-4],eax"
+"	      004eee7f    cmp nConvertedValue,eax"
 "	      004eee82    jne near ptr 004EEEB2h"
 );
 // LINE 337:
 	asm( 
-"	      004eee88    mov eax,[ebp-8]"
+"	      004eee88    mov eax,nOriginalViewSize"
 "	      004eee8b    sub eax,ds:[6663A0h]"
 "	      004eee91    cdq"
 "	      004eee92    sub eax,edx"
@@ -886,7 +886,7 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 );
 // LINE 338:
 	asm( 
-"	      004eee9d    mov eax,[ebp-8]"
+"	      004eee9d    mov eax,nOriginalViewSize"
 "	      004eeea0    sub eax,ds:[6663A0h]"
 "	      004eeea6    cdq"
 "	      004eeea7    sub eax,edx"
@@ -943,33 +943,33 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 );
 // LINE 361:
 	asm( 
-"	      004eeed5    mov dword ptr [ebp-4],18h"
+"	      004eeed5    mov lHalfOfGOBJRange,18h"
 );
 // LINE 364:
 	asm( 
-"	      004eeedc    mov eax,[ebp-4]"
-"	      004eeedf    imul eax,[ebp+8]"
-"	      004eeee3    mov [ebp+8],eax"
+"	      004eeedc    mov eax,lHalfOfGOBJRange"
+"	      004eeedf    imul eax,lValue"
+"	      004eeee3    mov lValue,eax"
 );
 // LINE 365:
 	asm( 
 "	      004eeee6    mov ecx,64h"
-"	      004eeeeb    mov eax,[ebp+8]"
+"	      004eeeeb    mov eax,lValue"
 "	      004eeeee    cdq"
 "	      004eeeef    idiv ecx"
-"	      004eeef1    mov [ebp+8],eax"
+"	      004eeef1    mov lValue,eax"
 );
 // LINE 366:
 	asm( 
-"	      004eeef4    shl dword ptr [ebp+8],1"
+"	      004eeef4    shl lValue,1"
 );
 // LINE 367:
 	asm( 
-"	      004eeef8    add dword ptr [ebp+8],0Dh"
+"	      004eeef8    add lValue,0Dh"
 );
 // LINE 368:
 	asm( 
-"	      004eeefc    mov eax,[ebp+8]"
+"	      004eeefc    mov eax,lValue"
 "	      004eeeff    jmp near ptr 004EEF04h"
 );
 // LINE 369:
@@ -997,38 +997,38 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 );
 // LINE 380:
 	asm( 
-"	      004eef12    mov dword ptr [ebp-4],18h"
+"	      004eef12    mov lHalfOfGOBJRange,18h"
 );
 // LINE 382:
 	asm( 
-"	      004eef19    sub dword ptr [ebp+8],0Dh"
+"	      004eef19    sub lValue,0Dh"
 );
 // LINE 383:
 	asm( 
-"	      004eef1d    mov eax,[ebp+8]"
+"	      004eef1d    mov eax,lValue"
 "	      004eef20    cdq"
 "	      004eef21    sub eax,edx"
 "	      004eef23    sar eax,1"
-"	      004eef26    mov [ebp+8],eax"
+"	      004eef26    mov lValue,eax"
 );
 // LINE 384:
 	asm( 
-"	      004eef29    mov eax,[ebp+8]"
+"	      004eef29    mov eax,lValue"
 "	      004eef2c    shl eax,2"
 "	      004eef2f    lea eax,[eax+eax*4]"
 "	      004eef32    lea eax,[eax+eax*4]"
-"	      004eef35    mov [ebp+8],eax"
+"	      004eef35    mov lValue,eax"
 );
 // LINE 385:
 	asm( 
-"	      004eef38    mov eax,[ebp+8]"
+"	      004eef38    mov eax,lValue"
 "	      004eef3b    cdq"
-"	      004eef3c    idiv dword ptr [ebp-4]"
-"	      004eef3f    mov [ebp+8],eax"
+"	      004eef3c    idiv lHalfOfGOBJRange"
+"	      004eef3f    mov lValue,eax"
 );
 // LINE 387:
 	asm( 
-"	      004eef42    mov eax,[ebp+8]"
+"	      004eef42    mov eax,lValue"
 "	      004eef45    jmp near ptr 004EEF4Ah"
 );
 // LINE 388:
@@ -1110,25 +1110,25 @@ void S3ViewerSetView() {
 	asm( 
 "	      004eef88    mov eax,ds:[6C1318h]"
 "	      004eef8d    neg eax"
-"	      004eef8f    mov [ebp-0Ch],eax"
+"	      004eef8f    mov p.x,eax"
 );
 // LINE 428:
 	asm( 
 "	      004eef92    mov eax,ds:[6C131Ch]"
 "	      004eef97    neg eax"
-"	      004eef99    mov [ebp-8],eax"
+"	      004eef99    mov p.y,eax"
 );
 // LINE 429:
 	asm( 
 "	      004eef9c    mov eax,ds:[6C1320h]"
 "	      004eefa1    neg eax"
-"	      004eefa3    mov [ebp-4],eax"
+"	      004eefa3    mov p.z,eax"
 );
 // LINE 430:
 	asm( 
-"	      004eefa6    lea eax,[ebp-0Ch]"
+"	      004eefa6    lea eax,p.x"
 "	      004eefa9    push eax"
-"	      004eefaa    lea eax,[ebp-4Ch]"
+"	      004eefaa    lea eax,matrix[0][0]"
 "	      004eefad    push eax"
 "	      004eefae    mov eax,6C12A0h"
 "	      004eefb3    add eax,38h"
@@ -1138,7 +1138,7 @@ void S3ViewerSetView() {
 );
 // LINE 431:
 	asm( 
-"	      004eefbf    lea eax,[ebp-4Ch]"
+"	      004eefbf    lea eax,matrix[0][0]"
 "	      004eefc2    push eax"
 "	      004eefc3    mov eax,6C12A0h"
 "	      004eefc8    add eax,78h"
@@ -1168,14 +1168,14 @@ void S3ViewerCommand(int32_t nCommand) {
 );
 // LINE 445:
 	asm( 
-"	      004eefdf    cmp dword ptr [ebp+8],1Bh"
+"	      004eefdf    cmp nCommand,1Bh"
 "	      004eefe3    jl near ptr 004EF004h"
-"	      004eefe9    cmp dword ptr [ebp+8],20h"
+"	      004eefe9    cmp nCommand,20h"
 "	      004eefed    jg near ptr 004EF004h"
 );
 // LINE 447:
 	asm( 
-"	      004eeff3    mov eax,[ebp+8]"
+"	      004eeff3    mov eax,nCommand"
 "	      004eeff6    push eax"
 "	      004eeff7    call 004F9912h"
 "	      004eeffc    add esp,4"
@@ -1183,7 +1183,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 449:
 	asm( 
 "	      004eefff    jmp near ptr 004EF146h"
-"	      004ef004    cmp dword ptr [ebp+8],2Dh"
+"	      004ef004    cmp nCommand,2Dh"
 "	      004ef008    jne near ptr 004EF01Ah"
 );
 // LINE 450:
@@ -1193,7 +1193,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 451:
 	asm( 
 "	      004ef015    jmp near ptr 004EF146h"
-"	      004ef01a    cmp dword ptr [ebp+8],2Eh"
+"	      004ef01a    cmp nCommand,2Eh"
 "	      004ef01e    jne near ptr 004EF030h"
 );
 // LINE 452:
@@ -1203,7 +1203,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 453:
 	asm( 
 "	      004ef02b    jmp near ptr 004EF146h"
-"	      004ef030    cmp dword ptr [ebp+8],5"
+"	      004ef030    cmp nCommand,5"
 "	      004ef034    jne near ptr 004EF051h"
 );
 // LINE 455:
@@ -1218,7 +1218,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 458:
 	asm( 
 "	      004ef04c    jmp near ptr 004EF146h"
-"	      004ef051    cmp dword ptr [ebp+8],4"
+"	      004ef051    cmp nCommand,4"
 "	      004ef055    jne near ptr 004EF065h"
 );
 // LINE 459:
@@ -1228,7 +1228,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 460:
 	asm( 
 "	      004ef060    jmp near ptr 004EF146h"
-"	      004ef065    cmp dword ptr [ebp+8],2Fh"
+"	      004ef065    cmp nCommand,2Fh"
 "	      004ef069    jne near ptr 004EF088h"
 );
 // LINE 461:
@@ -1243,7 +1243,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 462:
 	asm( 
 "	      004ef083    jmp near ptr 004EF146h"
-"	      004ef088    cmp dword ptr [ebp+8],14h"
+"	      004ef088    cmp nCommand,14h"
 "	      004ef08c    jne near ptr 004EF146h"
 "	      004ef092    cmp dword ptr ds:[5B4DB8h],3"
 "	      004ef099    je near ptr 004EF146h"
@@ -1334,7 +1334,7 @@ void S3SetDayNight(int32_t nDayOrNight) {
 );
 // LINE 489:
 	asm( 
-"	      004ef151    mov eax,[ebp+8]"
+"	      004ef151    mov eax,nDayOrNight"
 "	      004ef154    mov ds:[598E90h],eax"
 );
 // LINE 490:

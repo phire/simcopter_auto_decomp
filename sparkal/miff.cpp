@@ -17,18 +17,18 @@ int32_t ReadFirstMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptr
 );
 // LINE 18:
 	asm( 
-"	      004ab536    mov eax,[ebp+8]"
+"	      004ab536    mov eax,miffReader"
 "	      004ab539    mov eax,[eax]"
-"	      004ab53b    mov ecx,[ebp+8]"
+"	      004ab53b    mov ecx,miffReader"
 "	      004ab53e    call dword ptr [eax+44h]"
 );
 // LINE 19:
 	asm( 
-"	      004ab541    mov eax,[ebp+0Ch]"
+"	      004ab541    mov eax,lDataType"
 "	      004ab544    push eax"
-"	      004ab545    mov eax,[ebp+8]"
+"	      004ab545    mov eax,miffReader"
 "	      004ab548    mov eax,[eax]"
-"	      004ab54a    mov ecx,[ebp+8]"
+"	      004ab54a    mov ecx,miffReader"
 "	      004ab54d    call dword ptr [eax+54h]"
 "	      004ab550    test eax,eax"
 "	      004ab552    jne near ptr 004AB55Fh"
@@ -40,13 +40,13 @@ int32_t ReadFirstMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptr
 );
 // LINE 21:
 	asm( 
-"	      004ab55f    mov eax,[ebp+14h]"
+"	      004ab55f    mov eax,lDataLength"
 "	      004ab562    push eax"
-"	      004ab563    mov eax,[ebp+10h]"
+"	      004ab563    mov eax,ptrData"
 "	      004ab566    push eax"
-"	      004ab567    mov eax,[ebp+8]"
+"	      004ab567    mov eax,miffReader"
 "	      004ab56a    mov eax,[eax]"
-"	      004ab56c    mov ecx,[ebp+8]"
+"	      004ab56c    mov ecx,miffReader"
 "	      004ab56f    call dword ptr [eax+40h]"
 "	      004ab572    jmp near ptr 004AB577h"
 );
@@ -72,11 +72,11 @@ int32_t ReadNextMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrD
 );
 // LINE 30:
 	asm( 
-"	      004ab582    mov eax,[ebp+0Ch]"
+"	      004ab582    mov eax,lDataType"
 "	      004ab585    push eax"
-"	      004ab586    mov eax,[ebp+8]"
+"	      004ab586    mov eax,miffReader"
 "	      004ab589    mov eax,[eax]"
-"	      004ab58b    mov ecx,[ebp+8]"
+"	      004ab58b    mov ecx,miffReader"
 "	      004ab58e    call dword ptr [eax+54h]"
 "	      004ab591    test eax,eax"
 "	      004ab593    jne near ptr 004AB5A0h"
@@ -88,13 +88,13 @@ int32_t ReadNextMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrD
 );
 // LINE 32:
 	asm( 
-"	      004ab5a0    mov eax,[ebp+14h]"
+"	      004ab5a0    mov eax,lDataLength"
 "	      004ab5a3    push eax"
-"	      004ab5a4    mov eax,[ebp+10h]"
+"	      004ab5a4    mov eax,ptrData"
 "	      004ab5a7    push eax"
-"	      004ab5a8    mov eax,[ebp+8]"
+"	      004ab5a8    mov eax,miffReader"
 "	      004ab5ab    mov eax,[eax]"
-"	      004ab5ad    mov ecx,[ebp+8]"
+"	      004ab5ad    mov ecx,miffReader"
 "	      004ab5b0    call dword ptr [eax+40h]"
 "	      004ab5b3    jmp near ptr 004AB5B8h"
 );
@@ -120,15 +120,15 @@ int32_t WriteMIFFChunk(void * __ptr32 miffWriter, long lDataType, char * ptrData
 );
 // LINE 41:
 	asm( 
-"	      004ab5c3    mov eax,[ebp+14h]"
+"	      004ab5c3    mov eax,lDataLength"
 "	      004ab5c6    push eax"
-"	      004ab5c7    mov eax,[ebp+10h]"
+"	      004ab5c7    mov eax,ptrData"
 "	      004ab5ca    push eax"
-"	      004ab5cb    mov eax,[ebp+0Ch]"
+"	      004ab5cb    mov eax,lDataType"
 "	      004ab5ce    push eax"
-"	      004ab5cf    mov eax,[ebp+8]"
+"	      004ab5cf    mov eax,miffWriter"
 "	      004ab5d2    mov eax,[eax]"
-"	      004ab5d4    mov ecx,[ebp+8]"
+"	      004ab5d4    mov ecx,miffWriter"
 "	      004ab5d7    call dword ptr [eax+64h]"
 "	      004ab5da    jmp near ptr 004AB5DFh"
 );
@@ -152,94 +152,94 @@ void MIFF::MIFF() {
 "	      004ab5ea    push ebx"
 "	      004ab5eb    push esi"
 "	      004ab5ec    push edi"
-"	      004ab5ed    mov [ebp-4],ecx"
-"	      004ab5f0    mov eax,[ebp-4]"
+"	      004ab5ed    mov this,ecx"
+"	      004ab5f0    mov eax,this"
 "	      004ab5f3    mov dword ptr [eax+108h],0FFFFFFFFh"
-"	      004ab5fd    mov eax,[ebp-4]"
+"	      004ab5fd    mov eax,this"
 "	      004ab600    mov dword ptr [eax+10Ch],0"
-"	      004ab60a    mov eax,[ebp-4]"
+"	      004ab60a    mov eax,this"
 "	      004ab60d    mov dword ptr [eax],590468h"
 "	      004ab613    mov dword ptr ds:[5C0920h],8000h"
-"	      004ab61d    mov eax,[ebp-4]"
+"	      004ab61d    mov eax,this"
 "	      004ab620    mov byte ptr [eax+4],0"
 "	      004ab624    jmp near ptr 004AB629h"
-"	      004ab629    mov eax,[ebp-4]"
+"	      004ab629    mov eax,this"
 "	      004ab62c    mov dword ptr [eax],591950h"
 );
 // LINE 57:
 	asm( 
-"	      004ab632    mov eax,[ebp-4]"
+"	      004ab632    mov eax,this"
 "	      004ab635    mov dword ptr [eax+110h],0"
 );
 // LINE 58:
 	asm( 
-"	      004ab63f    mov eax,[ebp-4]"
+"	      004ab63f    mov eax,this"
 "	      004ab642    mov dword ptr [eax+114h],0"
 );
 // LINE 59:
 	asm( 
-"	      004ab64c    mov eax,[ebp-4]"
+"	      004ab64c    mov eax,this"
 "	      004ab64f    mov dword ptr [eax+118h],0"
 );
 // LINE 60:
 	asm( 
-"	      004ab659    mov eax,[ebp-4]"
+"	      004ab659    mov eax,this"
 "	      004ab65c    mov dword ptr [eax+11Ch],0"
 );
 // LINE 61:
 	asm( 
-"	      004ab666    mov eax,[ebp-4]"
+"	      004ab666    mov eax,this"
 "	      004ab669    mov dword ptr [eax+120h],0"
 );
 // LINE 62:
 	asm( 
-"	      004ab673    mov eax,[ebp-4]"
+"	      004ab673    mov eax,this"
 "	      004ab676    mov dword ptr [eax+124h],0"
 );
 // LINE 63:
 	asm( 
-"	      004ab680    mov eax,[ebp-4]"
+"	      004ab680    mov eax,this"
 "	      004ab683    mov dword ptr [eax+128h],0"
 );
 // LINE 64:
 	asm( 
-"	      004ab68d    mov eax,[ebp-4]"
+"	      004ab68d    mov eax,this"
 "	      004ab690    mov dword ptr [eax+12Ch],0"
 );
 // LINE 65:
 	asm( 
-"	      004ab69a    mov eax,[ebp-4]"
+"	      004ab69a    mov eax,this"
 "	      004ab69d    mov dword ptr [eax+130h],0"
 );
 // LINE 66:
 	asm( 
-"	      004ab6a7    mov eax,[ebp-4]"
+"	      004ab6a7    mov eax,this"
 "	      004ab6aa    mov dword ptr [eax+134h],0"
 );
 // LINE 67:
 	asm( 
-"	      004ab6b4    mov eax,[ebp-4]"
+"	      004ab6b4    mov eax,this"
 "	      004ab6b7    mov dword ptr [eax+138h],0"
 );
 // LINE 68:
 	asm( 
-"	      004ab6c1    mov eax,[ebp-4]"
+"	      004ab6c1    mov eax,this"
 "	      004ab6c4    mov dword ptr [eax+13Ch],0"
 );
 // LINE 69:
 	asm( 
-"	      004ab6ce    mov eax,[ebp-4]"
+"	      004ab6ce    mov eax,this"
 "	      004ab6d1    mov dword ptr [eax+140h],0"
 );
 // LINE 70:
 	asm( 
-"	      004ab6db    mov eax,[ebp-4]"
+"	      004ab6db    mov eax,this"
 "	      004ab6de    mov dword ptr [eax+144h],0"
 );
 // LINE 71:
 	asm( 
 "	      004ab6e8    jmp near ptr 004AB6EDh"
-"	      004ab6ed    mov eax,[ebp-4]"
+"	      004ab6ed    mov eax,this"
 "	      004ab6f0    pop edi"
 "	      004ab6f1    pop esi"
 "	      004ab6f2    pop ebx"
@@ -258,69 +258,69 @@ void MIFF::MIFF(char * szFileOrPath) {
 "	      004ab6fb    push ebx"
 "	      004ab6fc    push esi"
 "	      004ab6fd    push edi"
-"	      004ab6fe    mov [ebp-4],ecx"
-"	      004ab701    mov eax,[ebp-4]"
+"	      004ab6fe    mov this,ecx"
+"	      004ab701    mov eax,this"
 "	      004ab704    mov dword ptr [eax+108h],0FFFFFFFFh"
-"	      004ab70e    mov eax,[ebp-4]"
+"	      004ab70e    mov eax,this"
 "	      004ab711    mov dword ptr [eax+10Ch],1"
-"	      004ab71b    mov eax,[ebp-4]"
+"	      004ab71b    mov eax,this"
 "	      004ab71e    mov dword ptr [eax],590468h"
 "	      004ab724    mov dword ptr ds:[5C0920h],8000h"
-"	      004ab72e    cmp dword ptr [ebp+8],0"
+"	      004ab72e    cmp szFileOrPath,0"
 "	      004ab732    je near ptr 004AB750h"
-"	      004ab738    mov eax,[ebp+8]"
+"	      004ab738    mov eax,szFileOrPath"
 "	      004ab73b    push eax"
-"	      004ab73c    mov eax,[ebp-4]"
+"	      004ab73c    mov eax,this"
 "	      004ab73f    add eax,4"
 "	      004ab742    push eax"
 "	      004ab743    call 0056CEB0h"
 "	      004ab748    add esp,8"
 "	      004ab74b    jmp near ptr 004AB757h"
-"	      004ab750    mov eax,[ebp-4]"
+"	      004ab750    mov eax,this"
 "	      004ab753    mov byte ptr [eax+4],0"
 "	      004ab757    jmp near ptr 004AB75Ch"
-"	      004ab75c    mov eax,[ebp-4]"
+"	      004ab75c    mov eax,this"
 "	      004ab75f    mov dword ptr [eax],591950h"
 );
 // LINE 84:
 	asm( 
-"	      004ab765    mov eax,[ebp-4]"
+"	      004ab765    mov eax,this"
 "	      004ab768    mov dword ptr [eax+110h],0"
 );
 // LINE 85:
 	asm( 
-"	      004ab772    mov eax,[ebp-4]"
+"	      004ab772    mov eax,this"
 "	      004ab775    mov dword ptr [eax+118h],0"
 );
 // LINE 86:
 	asm( 
-"	      004ab77f    mov eax,[ebp-4]"
+"	      004ab77f    mov eax,this"
 "	      004ab782    mov dword ptr [eax+114h],0"
 );
 // LINE 87:
 	asm( 
-"	      004ab78c    mov eax,[ebp-4]"
+"	      004ab78c    mov eax,this"
 "	      004ab78f    mov dword ptr [eax+11Ch],0"
 );
 // LINE 88:
 	asm( 
-"	      004ab799    mov eax,[ebp-4]"
+"	      004ab799    mov eax,this"
 "	      004ab79c    mov dword ptr [eax+120h],0"
 );
 // LINE 89:
 	asm( 
-"	      004ab7a6    mov eax,[ebp-4]"
+"	      004ab7a6    mov eax,this"
 "	      004ab7a9    mov dword ptr [eax+128h],0"
 );
 // LINE 90:
 	asm( 
-"	      004ab7b3    mov eax,[ebp-4]"
+"	      004ab7b3    mov eax,this"
 "	      004ab7b6    mov dword ptr [eax+124h],0"
 );
 // LINE 91:
 	asm( 
 "	      004ab7c0    jmp near ptr 004AB7C5h"
-"	      004ab7c5    mov eax,[ebp-4]"
+"	      004ab7c5    mov eax,this"
 "	      004ab7c8    pop edi"
 "	      004ab7c9    pop esi"
 "	      004ab7ca    pop ebx"
@@ -339,13 +339,13 @@ void MIFF::~MIFF() {
 "	      004ab7d5    push ebx"
 "	      004ab7d6    push esi"
 "	      004ab7d7    push edi"
-"	      004ab7d8    mov [ebp-0Ch],ecx"
-"	      004ab7db    mov eax,[ebp-0Ch]"
+"	      004ab7d8    mov this,ecx"
+"	      004ab7db    mov eax,this"
 "	      004ab7de    mov dword ptr [eax],591950h"
 );
 // LINE 98:
 	asm( 
-"	      004ab7e4    mov eax,[ebp-0Ch]"
+"	      004ab7e4    mov eax,this"
 "	      004ab7e7    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab7ee    jle near ptr 004AB7F9h"
 "	      004ab7f4    jmp near ptr 004AB7FEh"
@@ -356,15 +356,15 @@ void MIFF::~MIFF() {
 );
 // LINE 99:
 	asm( 
-"	      004ab80d    mov ecx,[ebp-0Ch]"
+"	      004ab80d    mov ecx,this"
 "	      004ab810    call 004ABB47h"
 );
 // LINE 101:
 	asm( 
 "	      004ab815    jmp near ptr 004AB81Ah"
-"	      004ab81a    mov eax,[ebp-0Ch]"
+"	      004ab81a    mov eax,this"
 "	      004ab81d    mov dword ptr [eax],590468h"
-"	      004ab823    mov eax,[ebp-0Ch]"
+"	      004ab823    mov eax,this"
 "	      004ab826    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab82d    jle near ptr 004AB838h"
 "	      004ab833    jmp near ptr 004AB83Dh"
@@ -372,10 +372,10 @@ void MIFF::~MIFF() {
 "	      004ab83d    jmp near ptr 004AB84Ch"
 "	      004ab842    cmp dword ptr [ebp-8],0"
 "	      004ab846    je near ptr 004AB86Eh"
-"	      004ab84c    mov eax,[ebp-0Ch]"
+"	      004ab84c    mov eax,this"
 "	      004ab84f    cmp dword ptr [eax+10Ch],0"
 "	      004ab856    je near ptr 004AB86Eh"
-"	      004ab85c    mov eax,[ebp-0Ch]"
+"	      004ab85c    mov eax,this"
 "	      004ab85f    mov eax,[eax+108h]"
 "	      004ab865    push eax"
 "	      004ab866    call 00578E50h"
@@ -399,16 +399,16 @@ long MIFF::OpenForReading() {
 "	      004ab87e    push ebx"
 "	      004ab87f    push esi"
 "	      004ab880    push edi"
-"	      004ab881    mov [ebp-0Ch],ecx"
+"	      004ab881    mov this,ecx"
 );
 // LINE 114:
 	asm( 
 "	      004ab884    push 0"
-"	      004ab886    mov ecx,[ebp-0Ch]"
+"	      004ab886    mov ecx,this"
 "	      004ab889    call 004A06E6h"
 "	      004ab88e    test eax,eax"
 "	      004ab890    je near ptr 004AB92Bh"
-"	      004ab896    mov eax,[ebp-0Ch]"
+"	      004ab896    mov eax,this"
 "	      004ab899    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab8a0    jle near ptr 004AB8B0h"
 "	      004ab8a6    jmp near ptr 004AB92Bh"
@@ -423,12 +423,12 @@ long MIFF::OpenForReading() {
 "	      004ab8c1    push 180h"
 "	      004ab8c6    push 8020h"
 "	      004ab8cb    push 0"
-"	      004ab8cd    mov ecx,[ebp-0Ch]"
+"	      004ab8cd    mov ecx,this"
 "	      004ab8d0    call 004A03A0h"
 );
 // LINE 116:
 	asm( 
-"	      004ab8d5    mov eax,[ebp-0Ch]"
+"	      004ab8d5    mov eax,this"
 "	      004ab8d8    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab8df    jle near ptr 004AB8EAh"
 "	      004ab8e5    jmp near ptr 004AB8EFh"
@@ -439,21 +439,21 @@ long MIFF::OpenForReading() {
 );
 // LINE 117:
 	asm( 
-"	      004ab8fe    mov eax,[ebp-0Ch]"
+"	      004ab8fe    mov eax,this"
 "	      004ab901    mov dword ptr [eax+120h],1"
 );
 // LINE 118:
 	asm( 
-"	      004ab90b    mov eax,[ebp-0Ch]"
+"	      004ab90b    mov eax,this"
 "	      004ab90e    mov eax,[eax]"
-"	      004ab910    mov ecx,[ebp-0Ch]"
+"	      004ab910    mov ecx,this"
 "	      004ab913    call dword ptr [eax+28h]"
 );
 // LINE 119:
 	asm( 
-"	      004ab916    mov eax,[ebp-0Ch]"
+"	      004ab916    mov eax,this"
 "	      004ab919    mov eax,[eax]"
-"	      004ab91b    mov ecx,[ebp-0Ch]"
+"	      004ab91b    mov ecx,this"
 "	      004ab91e    call dword ptr [eax+44h]"
 );
 // LINE 120:
@@ -486,12 +486,12 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 "	      004ab93d    push ebx"
 "	      004ab93e    push esi"
 "	      004ab93f    push edi"
-"	      004ab940    mov [ebp-0Ch],ecx"
+"	      004ab940    mov this,ecx"
 );
 // LINE 139:
 	asm( 
 "	      004ab943    push 0"
-"	      004ab945    mov ecx,[ebp-0Ch]"
+"	      004ab945    mov ecx,this"
 "	      004ab948    call 004A06E6h"
 "	      004ab94d    test eax,eax"
 "	      004ab94f    jne near ptr 004AB97Dh"
@@ -504,7 +504,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	asm( 
 "	      004ab95f    push 180h"
 "	      004ab964    push 0"
-"	      004ab966    mov ecx,[ebp-0Ch]"
+"	      004ab966    mov ecx,this"
 "	      004ab969    call 004A05F3h"
 "	      004ab96e    test eax,eax"
 "	      004ab970    jne near ptr 004AB97Dh"
@@ -516,7 +516,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 );
 // LINE 144:
 	asm( 
-"	      004ab97d    mov eax,[ebp-0Ch]"
+"	      004ab97d    mov eax,this"
 "	      004ab980    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab987    jle near ptr 004AB997h"
 "	      004ab98d    jmp near ptr 004AB9BCh"
@@ -531,12 +531,12 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 "	      004ab9a8    push 180h"
 "	      004ab9ad    push 8002h"
 "	      004ab9b2    push 0"
-"	      004ab9b4    mov ecx,[ebp-0Ch]"
+"	      004ab9b4    mov ecx,this"
 "	      004ab9b7    call 004A03A0h"
 );
 // LINE 147:
 	asm( 
-"	      004ab9bc    mov eax,[ebp-0Ch]"
+"	      004ab9bc    mov eax,this"
 "	      004ab9bf    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ab9c6    jle near ptr 004AB9D1h"
 "	      004ab9cc    jmp near ptr 004AB9D6h"
@@ -547,27 +547,27 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 );
 // LINE 148:
 	asm( 
-"	      004ab9e5    mov eax,[ebp-0Ch]"
+"	      004ab9e5    mov eax,this"
 "	      004ab9e8    mov dword ptr [eax+120h],2"
 );
 // LINE 149:
 	asm( 
-"	      004ab9f2    mov eax,[ebp+10h]"
+"	      004ab9f2    mov eax,lFileVersion"
 "	      004ab9f5    push eax"
-"	      004ab9f6    mov eax,[ebp+0Ch]"
+"	      004ab9f6    mov eax,lFileType"
 "	      004ab9f9    push eax"
-"	      004ab9fa    mov eax,[ebp+8]"
+"	      004ab9fa    mov eax,lFileCreator"
 "	      004ab9fd    push eax"
-"	      004ab9fe    mov eax,[ebp-0Ch]"
+"	      004ab9fe    mov eax,this"
 "	      004aba01    mov eax,[eax]"
-"	      004aba03    mov ecx,[ebp-0Ch]"
+"	      004aba03    mov ecx,this"
 "	      004aba06    call dword ptr [eax+68h]"
 );
 // LINE 150:
 	asm( 
-"	      004aba09    mov eax,[ebp-0Ch]"
+"	      004aba09    mov eax,this"
 "	      004aba0c    mov eax,[eax]"
-"	      004aba0e    mov ecx,[ebp-0Ch]"
+"	      004aba0e    mov ecx,this"
 "	      004aba11    call dword ptr [eax+44h]"
 );
 // LINE 151:
@@ -600,12 +600,12 @@ long MIFF::OpenForAppending() {
 "	      004aba32    push ebx"
 "	      004aba33    push esi"
 "	      004aba34    push edi"
-"	      004aba35    mov [ebp-0Ch],ecx"
+"	      004aba35    mov this,ecx"
 );
 // LINE 169:
 	asm( 
 "	      004aba38    push 0"
-"	      004aba3a    mov ecx,[ebp-0Ch]"
+"	      004aba3a    mov ecx,this"
 "	      004aba3d    call 004A06E6h"
 "	      004aba42    test eax,eax"
 "	      004aba44    jne near ptr 004ABA72h"
@@ -618,7 +618,7 @@ long MIFF::OpenForAppending() {
 	asm( 
 "	      004aba54    push 180h"
 "	      004aba59    push 0"
-"	      004aba5b    mov ecx,[ebp-0Ch]"
+"	      004aba5b    mov ecx,this"
 "	      004aba5e    call 004A05F3h"
 "	      004aba63    test eax,eax"
 "	      004aba65    jne near ptr 004ABA72h"
@@ -630,7 +630,7 @@ long MIFF::OpenForAppending() {
 );
 // LINE 174:
 	asm( 
-"	      004aba72    mov eax,[ebp-0Ch]"
+"	      004aba72    mov eax,this"
 "	      004aba75    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004aba7c    jle near ptr 004ABA8Ch"
 "	      004aba82    jmp near ptr 004ABAB1h"
@@ -645,12 +645,12 @@ long MIFF::OpenForAppending() {
 "	      004aba9d    push 180h"
 "	      004abaa2    push 8002h"
 "	      004abaa7    push 0"
-"	      004abaa9    mov ecx,[ebp-0Ch]"
+"	      004abaa9    mov ecx,this"
 "	      004abaac    call 004A03A0h"
 );
 // LINE 177:
 	asm( 
-"	      004abab1    mov eax,[ebp-0Ch]"
+"	      004abab1    mov eax,this"
 "	      004abab4    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ababb    jle near ptr 004ABAC6h"
 "	      004abac1    jmp near ptr 004ABACBh"
@@ -661,14 +661,14 @@ long MIFF::OpenForAppending() {
 );
 // LINE 178:
 	asm( 
-"	      004abada    mov eax,[ebp-0Ch]"
+"	      004abada    mov eax,this"
 "	      004abadd    mov eax,[eax]"
-"	      004abadf    mov ecx,[ebp-0Ch]"
+"	      004abadf    mov ecx,this"
 "	      004abae2    call dword ptr [eax+28h]"
 );
 // LINE 179:
 	asm( 
-"	      004abae5    mov eax,[ebp-0Ch]"
+"	      004abae5    mov eax,this"
 "	      004abae8    cmp dword ptr [eax+12Ch],4646494Dh"
 "	      004abaf2    je near ptr 004ABB09h"
 );
@@ -677,21 +677,21 @@ long MIFF::OpenForAppending() {
 "	      004abaf8    push 1"
 "	      004abafa    push 1"
 "	      004abafc    push 1"
-"	      004abafe    mov eax,[ebp-0Ch]"
+"	      004abafe    mov eax,this"
 "	      004abb01    mov eax,[eax]"
-"	      004abb03    mov ecx,[ebp-0Ch]"
+"	      004abb03    mov ecx,this"
 "	      004abb06    call dword ptr [eax+68h]"
 );
 // LINE 181:
 	asm( 
-"	      004abb09    mov eax,[ebp-0Ch]"
+"	      004abb09    mov eax,this"
 "	      004abb0c    mov dword ptr [eax+120h],2"
 );
 // LINE 182:
 	asm( 
 "	      004abb16    push 2"
 "	      004abb18    push 0"
-"	      004abb1a    mov eax,[ebp-0Ch]"
+"	      004abb1a    mov eax,this"
 "	      004abb1d    mov eax,[eax+108h]"
 "	      004abb23    push eax"
 "	      004abb24    call 005810C0h"
@@ -728,27 +728,27 @@ long MIFF::Close() {
 "	      004abb4d    push ebx"
 "	      004abb4e    push esi"
 "	      004abb4f    push edi"
-"	      004abb50    mov [ebp-4],ecx"
+"	      004abb50    mov this,ecx"
 );
 // LINE 194:
 	asm( 
-"	      004abb53    mov eax,[ebp-4]"
+"	      004abb53    mov eax,this"
 "	      004abb56    cmp dword ptr [eax+120h],2"
 "	      004abb5d    jne near ptr 004ABB7Eh"
-"	      004abb63    mov eax,[ebp-4]"
+"	      004abb63    mov eax,this"
 "	      004abb66    cmp dword ptr [eax+124h],0"
 "	      004abb6d    jne near ptr 004ABB7Eh"
 );
 // LINE 195:
 	asm( 
-"	      004abb73    mov eax,[ebp-4]"
+"	      004abb73    mov eax,this"
 "	      004abb76    mov eax,[eax]"
-"	      004abb78    mov ecx,[ebp-4]"
+"	      004abb78    mov ecx,this"
 "	      004abb7b    call dword ptr [eax+6Ch]"
 );
 // LINE 196:
 	asm( 
-"	      004abb7e    mov ecx,[ebp-4]"
+"	      004abb7e    mov ecx,this"
 "	      004abb81    call 004A04F0h"
 );
 // LINE 197:
@@ -776,11 +776,11 @@ long MIFF::VerifyFile() {
 "	      004abb9b    push ebx"
 "	      004abb9c    push esi"
 "	      004abb9d    push edi"
-"	      004abb9e    mov [ebp-0Ch],ecx"
+"	      004abb9e    mov this,ecx"
 );
 // LINE 206:
 	asm( 
-"	      004abba1    mov eax,[ebp-0Ch]"
+"	      004abba1    mov eax,this"
 "	      004abba4    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abbab    jle near ptr 004ABBBBh"
 "	      004abbb1    jmp near ptr 004ABC05h"
@@ -791,14 +791,14 @@ long MIFF::VerifyFile() {
 );
 // LINE 207:
 	asm( 
-"	      004abbca    mov eax,[ebp-0Ch]"
+"	      004abbca    mov eax,this"
 "	      004abbcd    mov eax,[eax]"
-"	      004abbcf    mov ecx,[ebp-0Ch]"
+"	      004abbcf    mov ecx,this"
 "	      004abbd2    call dword ptr [eax+4]"
 );
 // LINE 208:
 	asm( 
-"	      004abbd5    mov eax,[ebp-0Ch]"
+"	      004abbd5    mov eax,this"
 "	      004abbd8    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abbdf    jle near ptr 004ABBEFh"
 "	      004abbe5    jmp near ptr 004ABC05h"
@@ -814,9 +814,9 @@ long MIFF::VerifyFile() {
 );
 // LINE 211:
 	asm( 
-"	      004abc05    mov ecx,[ebp-0Ch]"
+"	      004abc05    mov ecx,this"
 "	      004abc08    call 004A0562h"
-"	      004abc0d    mov ecx,[ebp-0Ch]"
+"	      004abc0d    mov ecx,this"
 "	      004abc10    cmp eax,[ecx+140h]"
 "	      004abc16    jne near ptr 004ABC26h"
 );
@@ -850,11 +850,11 @@ long MIFF::ReadMIFFHeader() {
 "	      004abc38    push ebx"
 "	      004abc39    push esi"
 "	      004abc3a    push edi"
-"	      004abc3b    mov [ebp-8],ecx"
+"	      004abc3b    mov this,ecx"
 );
 // LINE 223:
 	asm( 
-"	      004abc3e    mov eax,[ebp-8]"
+"	      004abc3e    mov eax,this"
 "	      004abc41    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abc48    jle near ptr 004ABC53h"
 "	      004abc4e    jmp near ptr 004ABC58h"
@@ -867,7 +867,7 @@ long MIFF::ReadMIFFHeader() {
 	asm( 
 "	      004abc67    push 0"
 "	      004abc69    push 0"
-"	      004abc6b    mov eax,[ebp-8]"
+"	      004abc6b    mov eax,this"
 "	      004abc6e    mov eax,[eax+108h]"
 "	      004abc74    push eax"
 "	      004abc75    call 005810C0h"
@@ -877,10 +877,10 @@ long MIFF::ReadMIFFHeader() {
 // LINE 225:
 	asm( 
 "	      004abc82    push 1Ch"
-"	      004abc84    mov eax,[ebp-8]"
+"	      004abc84    mov eax,this"
 "	      004abc87    add eax,12Ch"
 "	      004abc8c    push eax"
-"	      004abc8d    mov eax,[ebp-8]"
+"	      004abc8d    mov eax,this"
 "	      004abc90    mov eax,[eax+108h]"
 "	      004abc96    push eax"
 "	      004abc97    call 00580B50h"
@@ -920,15 +920,15 @@ long MIFF::ReadFileCreator() {
 "	      004abcc0    push ebx"
 "	      004abcc1    push esi"
 "	      004abcc2    push edi"
-"	      004abcc3    mov [ebp-14h],ecx"
+"	      004abcc3    mov this,ecx"
 );
 // LINE 237:
 	asm( 
-"	      004abcc6    mov dword ptr [ebp-4],0"
+"	      004abcc6    mov bWeOpenedFile,0"
 );
 // LINE 240:
 	asm( 
-"	      004abccd    mov eax,[ebp-14h]"
+"	      004abccd    mov eax,this"
 "	      004abcd0    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abcd7    jle near ptr 004ABCE7h"
 "	      004abcdd    jmp near ptr 004ABD17h"
@@ -939,9 +939,9 @@ long MIFF::ReadFileCreator() {
 );
 // LINE 241:
 	asm( 
-"	      004abcf6    mov eax,[ebp-14h]"
+"	      004abcf6    mov eax,this"
 "	      004abcf9    mov eax,[eax]"
-"	      004abcfb    mov ecx,[ebp-14h]"
+"	      004abcfb    mov ecx,this"
 "	      004abcfe    call dword ptr [eax+4]"
 "	      004abd01    test eax,eax"
 "	      004abd03    jne near ptr 004ABD10h"
@@ -953,35 +953,35 @@ long MIFF::ReadFileCreator() {
 );
 // LINE 243:
 	asm( 
-"	      004abd10    mov dword ptr [ebp-4],1"
+"	      004abd10    mov bWeOpenedFile,1"
 );
 // LINE 245:
 	asm( 
-"	      004abd17    mov eax,[ebp-14h]"
+"	      004abd17    mov eax,this"
 "	      004abd1a    mov eax,[eax+134h]"
-"	      004abd20    mov [ebp-8],eax"
+"	      004abd20    mov lResult,eax"
 );
 // LINE 246:
 	asm( 
-"	      004abd23    cmp dword ptr [ebp-4],0"
+"	      004abd23    cmp bWeOpenedFile,0"
 "	      004abd27    je near ptr 004ABD38h"
 );
 // LINE 247:
 	asm( 
-"	      004abd2d    mov eax,[ebp-14h]"
+"	      004abd2d    mov eax,this"
 "	      004abd30    mov eax,[eax]"
-"	      004abd32    mov ecx,[ebp-14h]"
+"	      004abd32    mov ecx,this"
 "	      004abd35    call dword ptr [eax+10h]"
 );
 // LINE 249:
 	asm( 
-"	      004abd38    mov eax,[ebp-14h]"
+"	      004abd38    mov eax,this"
 "	      004abd3b    mov eax,[eax+110h]"
 "	      004abd41    mov [ebp-10h],eax"
 "	      004abd44    push 0"
 "	      004abd46    mov eax,[ebp-10h]"
 "	      004abd49    push eax"
-"	      004abd4a    mov eax,[ebp-14h]"
+"	      004abd4a    mov eax,this"
 "	      004abd4d    mov eax,[eax+108h]"
 "	      004abd53    push eax"
 "	      004abd54    call 005810C0h"
@@ -990,7 +990,7 @@ long MIFF::ReadFileCreator() {
 );
 // LINE 250:
 	asm( 
-"	      004abd61    mov eax,[ebp-8]"
+"	      004abd61    mov eax,lResult"
 "	      004abd64    jmp near ptr 004ABD69h"
 );
 // LINE 251:
@@ -1016,15 +1016,15 @@ long MIFF::ReadFileType() {
 "	      004abd74    push ebx"
 "	      004abd75    push esi"
 "	      004abd76    push edi"
-"	      004abd77    mov [ebp-14h],ecx"
+"	      004abd77    mov this,ecx"
 );
 // LINE 259:
 	asm( 
-"	      004abd7a    mov dword ptr [ebp-4],0"
+"	      004abd7a    mov bWeOpenedFile,0"
 );
 // LINE 262:
 	asm( 
-"	      004abd81    mov eax,[ebp-14h]"
+"	      004abd81    mov eax,this"
 "	      004abd84    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abd8b    jle near ptr 004ABD9Bh"
 "	      004abd91    jmp near ptr 004ABDCBh"
@@ -1035,9 +1035,9 @@ long MIFF::ReadFileType() {
 );
 // LINE 263:
 	asm( 
-"	      004abdaa    mov eax,[ebp-14h]"
+"	      004abdaa    mov eax,this"
 "	      004abdad    mov eax,[eax]"
-"	      004abdaf    mov ecx,[ebp-14h]"
+"	      004abdaf    mov ecx,this"
 "	      004abdb2    call dword ptr [eax+4]"
 "	      004abdb5    test eax,eax"
 "	      004abdb7    jne near ptr 004ABDC4h"
@@ -1049,35 +1049,35 @@ long MIFF::ReadFileType() {
 );
 // LINE 265:
 	asm( 
-"	      004abdc4    mov dword ptr [ebp-4],1"
+"	      004abdc4    mov bWeOpenedFile,1"
 );
 // LINE 267:
 	asm( 
-"	      004abdcb    mov eax,[ebp-14h]"
+"	      004abdcb    mov eax,this"
 "	      004abdce    mov eax,[eax+138h]"
-"	      004abdd4    mov [ebp-8],eax"
+"	      004abdd4    mov lResult,eax"
 );
 // LINE 268:
 	asm( 
-"	      004abdd7    cmp dword ptr [ebp-4],0"
+"	      004abdd7    cmp bWeOpenedFile,0"
 "	      004abddb    je near ptr 004ABDECh"
 );
 // LINE 269:
 	asm( 
-"	      004abde1    mov eax,[ebp-14h]"
+"	      004abde1    mov eax,this"
 "	      004abde4    mov eax,[eax]"
-"	      004abde6    mov ecx,[ebp-14h]"
+"	      004abde6    mov ecx,this"
 "	      004abde9    call dword ptr [eax+10h]"
 );
 // LINE 271:
 	asm( 
-"	      004abdec    mov eax,[ebp-14h]"
+"	      004abdec    mov eax,this"
 "	      004abdef    mov eax,[eax+110h]"
 "	      004abdf5    mov [ebp-10h],eax"
 "	      004abdf8    push 0"
 "	      004abdfa    mov eax,[ebp-10h]"
 "	      004abdfd    push eax"
-"	      004abdfe    mov eax,[ebp-14h]"
+"	      004abdfe    mov eax,this"
 "	      004abe01    mov eax,[eax+108h]"
 "	      004abe07    push eax"
 "	      004abe08    call 005810C0h"
@@ -1086,7 +1086,7 @@ long MIFF::ReadFileType() {
 );
 // LINE 272:
 	asm( 
-"	      004abe15    mov eax,[ebp-8]"
+"	      004abe15    mov eax,lResult"
 "	      004abe18    jmp near ptr 004ABE1Dh"
 );
 // LINE 273:
@@ -1112,15 +1112,15 @@ long MIFF::ReadFileVersion() {
 "	      004abe28    push ebx"
 "	      004abe29    push esi"
 "	      004abe2a    push edi"
-"	      004abe2b    mov [ebp-14h],ecx"
+"	      004abe2b    mov this,ecx"
 );
 // LINE 280:
 	asm( 
-"	      004abe2e    mov dword ptr [ebp-4],0"
+"	      004abe2e    mov bWeOpenedFile,0"
 );
 // LINE 283:
 	asm( 
-"	      004abe35    mov eax,[ebp-14h]"
+"	      004abe35    mov eax,this"
 "	      004abe38    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abe3f    jle near ptr 004ABE4Fh"
 "	      004abe45    jmp near ptr 004ABE7Fh"
@@ -1131,9 +1131,9 @@ long MIFF::ReadFileVersion() {
 );
 // LINE 284:
 	asm( 
-"	      004abe5e    mov eax,[ebp-14h]"
+"	      004abe5e    mov eax,this"
 "	      004abe61    mov eax,[eax]"
-"	      004abe63    mov ecx,[ebp-14h]"
+"	      004abe63    mov ecx,this"
 "	      004abe66    call dword ptr [eax+4]"
 "	      004abe69    test eax,eax"
 "	      004abe6b    jne near ptr 004ABE78h"
@@ -1145,35 +1145,35 @@ long MIFF::ReadFileVersion() {
 );
 // LINE 286:
 	asm( 
-"	      004abe78    mov dword ptr [ebp-4],1"
+"	      004abe78    mov bWeOpenedFile,1"
 );
 // LINE 288:
 	asm( 
-"	      004abe7f    mov eax,[ebp-14h]"
+"	      004abe7f    mov eax,this"
 "	      004abe82    mov eax,[eax+13Ch]"
-"	      004abe88    mov [ebp-8],eax"
+"	      004abe88    mov lResult,eax"
 );
 // LINE 289:
 	asm( 
-"	      004abe8b    cmp dword ptr [ebp-4],0"
+"	      004abe8b    cmp bWeOpenedFile,0"
 "	      004abe8f    je near ptr 004ABEA0h"
 );
 // LINE 290:
 	asm( 
-"	      004abe95    mov eax,[ebp-14h]"
+"	      004abe95    mov eax,this"
 "	      004abe98    mov eax,[eax]"
-"	      004abe9a    mov ecx,[ebp-14h]"
+"	      004abe9a    mov ecx,this"
 "	      004abe9d    call dword ptr [eax+10h]"
 );
 // LINE 292:
 	asm( 
-"	      004abea0    mov eax,[ebp-14h]"
+"	      004abea0    mov eax,this"
 "	      004abea3    mov eax,[eax+110h]"
 "	      004abea9    mov [ebp-10h],eax"
 "	      004abeac    push 0"
 "	      004abeae    mov eax,[ebp-10h]"
 "	      004abeb1    push eax"
-"	      004abeb2    mov eax,[ebp-14h]"
+"	      004abeb2    mov eax,this"
 "	      004abeb5    mov eax,[eax+108h]"
 "	      004abebb    push eax"
 "	      004abebc    call 005810C0h"
@@ -1182,7 +1182,7 @@ long MIFF::ReadFileVersion() {
 );
 // LINE 293:
 	asm( 
-"	      004abec9    mov eax,[ebp-8]"
+"	      004abec9    mov eax,lResult"
 "	      004abecc    jmp near ptr 004ABED1h"
 );
 // LINE 294:
@@ -1207,15 +1207,15 @@ long MIFF::ReadRecordHeader() {
 "	      004abedc    push ebx"
 "	      004abedd    push esi"
 "	      004abede    push edi"
-"	      004abedf    mov [ebp-0Ch],ecx"
+"	      004abedf    mov this,ecx"
 );
 // LINE 314:
 	asm( 
 "	      004abee2    push 4"
-"	      004abee4    mov eax,[ebp-0Ch]"
+"	      004abee4    mov eax,this"
 "	      004abee7    add eax,114h"
 "	      004abeec    push eax"
-"	      004abeed    mov eax,[ebp-0Ch]"
+"	      004abeed    mov eax,this"
 "	      004abef0    mov eax,[eax+108h]"
 "	      004abef6    push eax"
 "	      004abef7    call 00580B50h"
@@ -1226,25 +1226,25 @@ long MIFF::ReadRecordHeader() {
 	asm( 
 "	      004abf04    jmp near ptr 004ABF09h"
 "	      004abf09    push 4"
-"	      004abf0b    mov eax,[ebp-0Ch]"
+"	      004abf0b    mov eax,this"
 "	      004abf0e    add eax,118h"
 "	      004abf13    push eax"
-"	      004abf14    mov eax,[ebp-0Ch]"
+"	      004abf14    mov eax,this"
 "	      004abf17    mov eax,[eax+108h]"
 "	      004abf1d    push eax"
 "	      004abf1e    call 00580B50h"
 "	      004abf23    add esp,0Ch"
-"	      004abf26    mov [ebp-4],eax"
+"	      004abf26    mov lBytesRead,eax"
 );
 // LINE 316:
 	asm( 
-"	      004abf29    mov eax,[ebp-0Ch]"
+"	      004abf29    mov eax,this"
 "	      004abf2c    cmp dword ptr [eax+118h],0"
 "	      004abf33    jge near ptr 004ABF4Dh"
 );
 // LINE 317:
 	asm( 
-"	      004abf39    mov eax,[ebp-0Ch]"
+"	      004abf39    mov eax,this"
 "	      004abf3c    mov dword ptr [eax+128h],1"
 );
 // LINE 318:
@@ -1254,13 +1254,13 @@ long MIFF::ReadRecordHeader() {
 );
 // LINE 321:
 	asm( 
-"	      004abf4d    mov eax,[ebp-0Ch]"
+"	      004abf4d    mov eax,this"
 "	      004abf50    mov eax,[eax+110h]"
 "	      004abf56    mov [ebp-8],eax"
 "	      004abf59    push 0"
 "	      004abf5b    mov eax,[ebp-8]"
 "	      004abf5e    push eax"
-"	      004abf5f    mov eax,[ebp-0Ch]"
+"	      004abf5f    mov eax,this"
 "	      004abf62    mov eax,[eax+108h]"
 "	      004abf68    push eax"
 "	      004abf69    call 005810C0h"
@@ -1269,7 +1269,7 @@ long MIFF::ReadRecordHeader() {
 );
 // LINE 322:
 	asm( 
-"	      004abf76    cmp dword ptr [ebp-4],0"
+"	      004abf76    cmp lBytesRead,0"
 "	      004abf7a    jg near ptr 004ABF87h"
 );
 // LINE 323:
@@ -1279,18 +1279,18 @@ long MIFF::ReadRecordHeader() {
 );
 // LINE 324:
 	asm( 
-"	      004abf87    mov ecx,[ebp-0Ch]"
+"	      004abf87    mov ecx,this"
 "	      004abf8a    call 004A0562h"
-"	      004abf8f    mov ecx,[ebp-0Ch]"
+"	      004abf8f    mov ecx,this"
 "	      004abf92    mov ecx,[ecx+118h]"
-"	      004abf98    mov edx,[ebp-0Ch]"
+"	      004abf98    mov edx,this"
 "	      004abf9b    add ecx,[edx+110h]"
 "	      004abfa1    cmp eax,ecx"
 "	      004abfa3    jge near ptr 004ABFBDh"
 );
 // LINE 325:
 	asm( 
-"	      004abfa9    mov eax,[ebp-0Ch]"
+"	      004abfa9    mov eax,this"
 "	      004abfac    mov dword ptr [eax+128h],1"
 );
 // LINE 326:
@@ -1326,19 +1326,19 @@ long MIFF::CountRecords() {
 "	      004abfd2    push ebx"
 "	      004abfd3    push esi"
 "	      004abfd4    push edi"
-"	      004abfd5    mov [ebp-10h],ecx"
+"	      004abfd5    mov this,ecx"
 );
 // LINE 352:
 	asm( 
-"	      004abfd8    mov dword ptr [ebp-4],0"
+"	      004abfd8    mov bWeOpenedFile,0"
 );
 // LINE 353:
 	asm( 
-"	      004abfdf    mov dword ptr [ebp-8],0"
+"	      004abfdf    mov lCount,0"
 );
 // LINE 355:
 	asm( 
-"	      004abfe6    mov eax,[ebp-10h]"
+"	      004abfe6    mov eax,this"
 "	      004abfe9    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004abff0    jle near ptr 004AC000h"
 "	      004abff6    jmp near ptr 004AC040h"
@@ -1353,7 +1353,7 @@ long MIFF::CountRecords() {
 "	      004ac011    push 180h"
 "	      004ac016    push 8020h"
 "	      004ac01b    push 0"
-"	      004ac01d    mov ecx,[ebp-10h]"
+"	      004ac01d    mov ecx,this"
 "	      004ac020    call 004A03A0h"
 "	      004ac025    test eax,eax"
 "	      004ac027    jne near ptr 004AC034h"
@@ -1365,12 +1365,12 @@ long MIFF::CountRecords() {
 );
 // LINE 358:
 	asm( 
-"	      004ac034    mov dword ptr [ebp-4],1"
+"	      004ac034    mov bWeOpenedFile,1"
 );
 // LINE 360:
 	asm( 
 "	      004ac03b    jmp near ptr 004AC057h"
-"	      004ac040    mov eax,[ebp-10h]"
+"	      004ac040    mov eax,this"
 "	      004ac043    cmp dword ptr [eax+128h],0"
 "	      004ac04a    je near ptr 004AC057h"
 );
@@ -1381,16 +1381,16 @@ long MIFF::CountRecords() {
 );
 // LINE 363:
 	asm( 
-"	      004ac057    mov eax,[ebp-10h]"
+"	      004ac057    mov eax,this"
 "	      004ac05a    mov eax,[eax]"
-"	      004ac05c    mov ecx,[ebp-10h]"
+"	      004ac05c    mov ecx,this"
 "	      004ac05f    call dword ptr [eax+44h]"
 );
 // LINE 365:
 	asm( 
-"	      004ac062    mov eax,[ebp-10h]"
+"	      004ac062    mov eax,this"
 "	      004ac065    mov eax,[eax]"
-"	      004ac067    mov ecx,[ebp-10h]"
+"	      004ac067    mov ecx,this"
 "	      004ac06a    call dword ptr [eax+48h]"
 "	      004ac06d    test eax,eax"
 "	      004ac06f    jne near ptr 004AC07Fh"
@@ -1405,7 +1405,7 @@ long MIFF::CountRecords() {
 );
 // LINE 368:
 	asm( 
-"	      004ac07f    inc dword ptr [ebp-8]"
+"	      004ac07f    inc lCount"
 );
 // LINE 369:
 	asm( 
@@ -1413,26 +1413,26 @@ long MIFF::CountRecords() {
 );
 // LINE 370:
 	asm( 
-"	      004ac087    mov eax,[ebp-10h]"
+"	      004ac087    mov eax,this"
 "	      004ac08a    mov eax,[eax]"
-"	      004ac08c    mov ecx,[ebp-10h]"
+"	      004ac08c    mov ecx,this"
 "	      004ac08f    call dword ptr [eax+44h]"
 );
 // LINE 371:
 	asm( 
-"	      004ac092    cmp dword ptr [ebp-4],0"
+"	      004ac092    cmp bWeOpenedFile,0"
 "	      004ac096    je near ptr 004AC0A7h"
 );
 // LINE 372:
 	asm( 
-"	      004ac09c    mov eax,[ebp-10h]"
+"	      004ac09c    mov eax,this"
 "	      004ac09f    mov eax,[eax]"
-"	      004ac0a1    mov ecx,[ebp-10h]"
+"	      004ac0a1    mov ecx,this"
 "	      004ac0a4    call dword ptr [eax+10h]"
 );
 // LINE 373:
 	asm( 
-"	      004ac0a7    mov eax,[ebp-8]"
+"	      004ac0a7    mov eax,lCount"
 "	      004ac0aa    jmp near ptr 004AC0AFh"
 );
 // LINE 374:
@@ -1455,11 +1455,11 @@ long MIFF::GoToFirstRecord() {
 "	      004ac0ba    push ebx"
 "	      004ac0bb    push esi"
 "	      004ac0bc    push edi"
-"	      004ac0bd    mov [ebp-8],ecx"
+"	      004ac0bd    mov this,ecx"
 );
 // LINE 391:
 	asm( 
-"	      004ac0c0    mov eax,[ebp-8]"
+"	      004ac0c0    mov eax,this"
 "	      004ac0c3    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac0ca    jle near ptr 004AC0D5h"
 "	      004ac0d0    jmp near ptr 004AC0DAh"
@@ -1467,7 +1467,7 @@ long MIFF::GoToFirstRecord() {
 "	      004ac0da    jmp near ptr 004AC0E9h"
 "	      004ac0df    cmp dword ptr [ebp-4],0"
 "	      004ac0e3    je near ptr 004AC0F9h"
-"	      004ac0e9    mov eax,[ebp-8]"
+"	      004ac0e9    mov eax,this"
 "	      004ac0ec    cmp dword ptr [eax+128h],0"
 "	      004ac0f3    je near ptr 004AC100h"
 );
@@ -1480,7 +1480,7 @@ long MIFF::GoToFirstRecord() {
 	asm( 
 "	      004ac100    push 0"
 "	      004ac102    push 1Ch"
-"	      004ac104    mov eax,[ebp-8]"
+"	      004ac104    mov eax,this"
 "	      004ac107    mov eax,[eax+108h]"
 "	      004ac10d    push eax"
 "	      004ac10e    call 005810C0h"
@@ -1489,19 +1489,19 @@ long MIFF::GoToFirstRecord() {
 );
 // LINE 394:
 	asm( 
-"	      004ac11b    mov eax,[ebp-8]"
+"	      004ac11b    mov eax,this"
 "	      004ac11e    mov dword ptr [eax+110h],1Ch"
 );
 // LINE 395:
 	asm( 
-"	      004ac128    mov eax,[ebp-8]"
+"	      004ac128    mov eax,this"
 "	      004ac12b    mov dword ptr [eax+11Ch],0"
 );
 // LINE 396:
 	asm( 
-"	      004ac135    mov eax,[ebp-8]"
+"	      004ac135    mov eax,this"
 "	      004ac138    mov eax,[eax]"
-"	      004ac13a    mov ecx,[ebp-8]"
+"	      004ac13a    mov ecx,this"
 "	      004ac13d    call dword ptr [eax+2Ch]"
 );
 // LINE 397:
@@ -1532,17 +1532,17 @@ long MIFF::GoToNextRecord() {
 "	      004ac155    push ebx"
 "	      004ac156    push esi"
 "	      004ac157    push edi"
-"	      004ac158    mov [ebp-1Ch],ecx"
+"	      004ac158    mov this,ecx"
 );
 // LINE 420:
 	asm( 
-"	      004ac15b    mov eax,[ebp-1Ch]"
+"	      004ac15b    mov eax,this"
 "	      004ac15e    mov eax,[eax+110h]"
-"	      004ac164    mov [ebp-4],eax"
+"	      004ac164    mov lSavedPreviousStart,eax"
 );
 // LINE 422:
 	asm( 
-"	      004ac167    mov eax,[ebp-1Ch]"
+"	      004ac167    mov eax,this"
 "	      004ac16a    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac171    jle near ptr 004AC17Ch"
 "	      004ac177    jmp near ptr 004AC181h"
@@ -1550,7 +1550,7 @@ long MIFF::GoToNextRecord() {
 "	      004ac181    jmp near ptr 004AC190h"
 "	      004ac186    cmp dword ptr [ebp-0Ch],0"
 "	      004ac18a    je near ptr 004AC1A0h"
-"	      004ac190    mov eax,[ebp-1Ch]"
+"	      004ac190    mov eax,this"
 "	      004ac193    cmp dword ptr [eax+128h],0"
 "	      004ac19a    je near ptr 004AC1A7h"
 );
@@ -1561,13 +1561,13 @@ long MIFF::GoToNextRecord() {
 );
 // LINE 425:
 	asm( 
-"	      004ac1a7    mov eax,[ebp-1Ch]"
+"	      004ac1a7    mov eax,this"
 "	      004ac1aa    cmp dword ptr [eax+118h],8000h"
 "	      004ac1b4    jg near ptr 004AC1CAh"
-"	      004ac1ba    mov eax,[ebp-1Ch]"
+"	      004ac1ba    mov eax,this"
 "	      004ac1bd    cmp dword ptr [eax+118h],0"
 "	      004ac1c4    jg near ptr 004AC1FAh"
-"	      004ac1ca    mov eax,[ebp-1Ch]"
+"	      004ac1ca    mov eax,this"
 "	      004ac1cd    mov eax,[eax+110h]"
 "	      004ac1d3    mov [ebp-10h],eax"
 );
@@ -1576,7 +1576,7 @@ long MIFF::GoToNextRecord() {
 "	      004ac1d6    push 0"
 "	      004ac1d8    mov eax,[ebp-10h]"
 "	      004ac1db    push eax"
-"	      004ac1dc    mov eax,[ebp-1Ch]"
+"	      004ac1dc    mov eax,this"
 "	      004ac1df    mov eax,[eax+108h]"
 "	      004ac1e5    push eax"
 "	      004ac1e6    call 005810C0h"
@@ -1590,25 +1590,25 @@ long MIFF::GoToNextRecord() {
 );
 // LINE 432:
 	asm( 
-"	      004ac1fa    mov eax,[ebp-1Ch]"
+"	      004ac1fa    mov eax,this"
 "	      004ac1fd    mov eax,[eax+118h]"
 "	      004ac203    mov [ebp-14h],eax"
 "	      004ac206    push 1"
 "	      004ac208    mov eax,[ebp-14h]"
 "	      004ac20b    push eax"
-"	      004ac20c    mov eax,[ebp-1Ch]"
+"	      004ac20c    mov eax,this"
 "	      004ac20f    mov eax,[eax+108h]"
 "	      004ac215    push eax"
 "	      004ac216    call 005810C0h"
 "	      004ac21b    add esp,0Ch"
-"	      004ac21e    mov [ebp-8],eax"
+"	      004ac21e    mov lResult,eax"
 "	      004ac221    jmp near ptr 004AC226h"
 );
 // LINE 433:
 	asm( 
-"	      004ac226    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004ac226    cmp lResult,0FFFFFFFFh"
 "	      004ac22a    jne near ptr 004AC260h"
-"	      004ac230    mov eax,[ebp-1Ch]"
+"	      004ac230    mov eax,this"
 "	      004ac233    mov eax,[eax+110h]"
 "	      004ac239    mov [ebp-18h],eax"
 );
@@ -1617,7 +1617,7 @@ long MIFF::GoToNextRecord() {
 "	      004ac23c    push 0"
 "	      004ac23e    mov eax,[ebp-18h]"
 "	      004ac241    push eax"
-"	      004ac242    mov eax,[ebp-1Ch]"
+"	      004ac242    mov eax,this"
 "	      004ac245    mov eax,[eax+108h]"
 "	      004ac24b    push eax"
 "	      004ac24c    call 005810C0h"
@@ -1631,23 +1631,23 @@ long MIFF::GoToNextRecord() {
 );
 // LINE 440:
 	asm( 
-"	      004ac260    mov eax,[ebp-8]"
-"	      004ac263    mov ecx,[ebp-1Ch]"
+"	      004ac260    mov eax,lResult"
+"	      004ac263    mov ecx,this"
 "	      004ac266    mov [ecx+110h],eax"
 );
 // LINE 441:
 	asm( 
-"	      004ac26c    mov eax,[ebp-1Ch]"
-"	      004ac26f    mov ecx,[ebp-4]"
+"	      004ac26c    mov eax,this"
+"	      004ac26f    mov ecx,lSavedPreviousStart"
 "	      004ac272    cmp [eax+110h],ecx"
 "	      004ac278    jg near ptr 004AC2A2h"
 );
 // LINE 442:
 	asm( 
 "	      004ac27e    push 0"
-"	      004ac280    mov eax,[ebp-4]"
+"	      004ac280    mov eax,lSavedPreviousStart"
 "	      004ac283    push eax"
-"	      004ac284    mov eax,[ebp-1Ch]"
+"	      004ac284    mov eax,this"
 "	      004ac287    mov eax,[eax+108h]"
 "	      004ac28d    push eax"
 "	      004ac28e    call 005810C0h"
@@ -1661,9 +1661,9 @@ long MIFF::GoToNextRecord() {
 );
 // LINE 446:
 	asm( 
-"	      004ac2a2    mov eax,[ebp-1Ch]"
+"	      004ac2a2    mov eax,this"
 "	      004ac2a5    mov eax,[eax]"
-"	      004ac2a7    mov ecx,[ebp-1Ch]"
+"	      004ac2a7    mov ecx,this"
 "	      004ac2aa    call dword ptr [eax+2Ch]"
 "	      004ac2ad    test eax,eax"
 "	      004ac2af    jne near ptr 004AC2D9h"
@@ -1671,9 +1671,9 @@ long MIFF::GoToNextRecord() {
 // LINE 447:
 	asm( 
 "	      004ac2b5    push 0"
-"	      004ac2b7    mov eax,[ebp-4]"
+"	      004ac2b7    mov eax,lSavedPreviousStart"
 "	      004ac2ba    push eax"
-"	      004ac2bb    mov eax,[ebp-1Ch]"
+"	      004ac2bb    mov eax,this"
 "	      004ac2be    mov eax,[eax+108h]"
 "	      004ac2c4    push eax"
 "	      004ac2c5    call 005810C0h"
@@ -1687,7 +1687,7 @@ long MIFF::GoToNextRecord() {
 );
 // LINE 450:
 	asm( 
-"	      004ac2d9    mov eax,[ebp-1Ch]"
+"	      004ac2d9    mov eax,this"
 "	      004ac2dc    inc dword ptr [eax+11Ch]"
 );
 // LINE 451:
@@ -1717,35 +1717,35 @@ long MIFF::GoToPreviousRecord() {
 "	      004ac2f7    push ebx"
 "	      004ac2f8    push esi"
 "	      004ac2f9    push edi"
-"	      004ac2fa    mov [ebp-8],ecx"
+"	      004ac2fa    mov this,ecx"
 );
 // LINE 473:
 	asm( 
-"	      004ac2fd    mov eax,[ebp-8]"
+"	      004ac2fd    mov eax,this"
 "	      004ac300    mov eax,[eax+11Ch]"
-"	      004ac306    mov [ebp-4],eax"
+"	      004ac306    mov lTempPresentRecord,eax"
 );
 // LINE 474:
 	asm( 
-"	      004ac309    cmp dword ptr [ebp-4],0"
+"	      004ac309    cmp lTempPresentRecord,0"
 "	      004ac30d    je near ptr 004AC316h"
 );
 // LINE 475:
 	asm( 
-"	      004ac313    dec dword ptr [ebp-4]"
+"	      004ac313    dec lTempPresentRecord"
 );
 // LINE 476:
 	asm( 
-"	      004ac316    mov eax,[ebp-4]"
+"	      004ac316    mov eax,lTempPresentRecord"
 "	      004ac319    push eax"
-"	      004ac31a    mov eax,[ebp-8]"
+"	      004ac31a    mov eax,this"
 "	      004ac31d    mov eax,[eax]"
-"	      004ac31f    mov ecx,[ebp-8]"
+"	      004ac31f    mov ecx,this"
 "	      004ac322    call dword ptr [eax+58h]"
 );
 // LINE 477:
 	asm( 
-"	      004ac325    mov eax,[ebp-4]"
+"	      004ac325    mov eax,lTempPresentRecord"
 "	      004ac328    jmp near ptr 004AC32Dh"
 );
 // LINE 478:
@@ -1768,22 +1768,22 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 "	      004ac338    push ebx"
 "	      004ac339    push esi"
 "	      004ac33a    push edi"
-"	      004ac33b    mov [ebp-4],ecx"
+"	      004ac33b    mov this,ecx"
 );
 // LINE 492:
 	asm( 
-"	      004ac33e    mov eax,[ebp-4]"
+"	      004ac33e    mov eax,this"
 "	      004ac341    mov eax,[eax]"
-"	      004ac343    mov ecx,[ebp-4]"
+"	      004ac343    mov ecx,this"
 "	      004ac346    call dword ptr [eax+44h]"
 );
 // LINE 493:
 	asm( 
-"	      004ac349    mov eax,[ebp-4]"
+"	      004ac349    mov eax,this"
 "	      004ac34c    mov eax,[eax]"
-"	      004ac34e    mov ecx,[ebp-4]"
+"	      004ac34e    mov ecx,this"
 "	      004ac351    call dword ptr [eax+14h]"
-"	      004ac354    cmp eax,[ebp+8]"
+"	      004ac354    cmp eax,lRecordType"
 "	      004ac357    jne near ptr 004AC367h"
 );
 // LINE 494:
@@ -1793,20 +1793,20 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 );
 // LINE 496:
 	asm( 
-"	      004ac367    mov eax,[ebp-4]"
+"	      004ac367    mov eax,this"
 "	      004ac36a    mov eax,[eax]"
-"	      004ac36c    mov ecx,[ebp-4]"
+"	      004ac36c    mov ecx,this"
 "	      004ac36f    call dword ptr [eax+48h]"
 "	      004ac372    test eax,eax"
 "	      004ac374    je near ptr 004AC39Dh"
 );
 // LINE 497:
 	asm( 
-"	      004ac37a    mov eax,[ebp-4]"
+"	      004ac37a    mov eax,this"
 "	      004ac37d    mov eax,[eax]"
-"	      004ac37f    mov ecx,[ebp-4]"
+"	      004ac37f    mov ecx,this"
 "	      004ac382    call dword ptr [eax+14h]"
-"	      004ac385    cmp eax,[ebp+8]"
+"	      004ac385    cmp eax,lRecordType"
 "	      004ac388    jne near ptr 004AC398h"
 );
 // LINE 498:
@@ -1843,24 +1843,24 @@ long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
 "	      004ac3b1    push ebx"
 "	      004ac3b2    push esi"
 "	      004ac3b3    push edi"
-"	      004ac3b4    mov [ebp-4],ecx"
+"	      004ac3b4    mov this,ecx"
 );
 // LINE 515:
 	asm( 
-"	      004ac3b7    mov eax,[ebp-4]"
+"	      004ac3b7    mov eax,this"
 "	      004ac3ba    mov eax,[eax]"
-"	      004ac3bc    mov ecx,[ebp-4]"
+"	      004ac3bc    mov ecx,this"
 "	      004ac3bf    call dword ptr [eax+48h]"
 "	      004ac3c2    test eax,eax"
 "	      004ac3c4    je near ptr 004AC3EDh"
 );
 // LINE 516:
 	asm( 
-"	      004ac3ca    mov eax,[ebp-4]"
+"	      004ac3ca    mov eax,this"
 "	      004ac3cd    mov eax,[eax]"
-"	      004ac3cf    mov ecx,[ebp-4]"
+"	      004ac3cf    mov ecx,this"
 "	      004ac3d2    call dword ptr [eax+14h]"
-"	      004ac3d5    cmp eax,[ebp+8]"
+"	      004ac3d5    cmp eax,lRecordType"
 "	      004ac3d8    jne near ptr 004AC3E8h"
 );
 // LINE 517:
@@ -1899,29 +1899,29 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 "	      004ac401    push ebx"
 "	      004ac402    push esi"
 "	      004ac403    push edi"
-"	      004ac404    mov [ebp-8],ecx"
+"	      004ac404    mov this,ecx"
 );
 // LINE 540:
 	asm( 
-"	      004ac407    mov eax,[ebp-8]"
+"	      004ac407    mov eax,this"
 "	      004ac40a    mov eax,[eax]"
-"	      004ac40c    mov ecx,[ebp-8]"
+"	      004ac40c    mov ecx,this"
 "	      004ac40f    call dword ptr [eax+44h]"
 );
 // LINE 541:
 	asm( 
-"	      004ac412    mov dword ptr [ebp-4],0"
+"	      004ac412    mov lTempPresentRecord,0"
 "	      004ac419    jmp near ptr 004AC421h"
-"	      004ac41e    inc dword ptr [ebp-4]"
-"	      004ac421    mov eax,[ebp+8]"
-"	      004ac424    cmp [ebp-4],eax"
+"	      004ac41e    inc lTempPresentRecord"
+"	      004ac421    mov eax,lRecordToGoTo"
+"	      004ac424    cmp lTempPresentRecord,eax"
 "	      004ac427    jge near ptr 004AC43Dh"
 );
 // LINE 542:
 	asm( 
-"	      004ac42d    mov eax,[ebp-8]"
+"	      004ac42d    mov eax,this"
 "	      004ac430    mov eax,[eax]"
-"	      004ac432    mov ecx,[ebp-8]"
+"	      004ac432    mov ecx,this"
 "	      004ac435    call dword ptr [eax+48h]"
 "	      004ac438    jmp near ptr 004AC41Eh"
 );
@@ -1953,11 +1953,11 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 "	      004ac454    push ebx"
 "	      004ac455    push esi"
 "	      004ac456    push edi"
-"	      004ac457    mov [ebp-14h],ecx"
+"	      004ac457    mov this,ecx"
 );
 // LINE 563:
 	asm( 
-"	      004ac45a    mov eax,[ebp-14h]"
+"	      004ac45a    mov eax,this"
 "	      004ac45d    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac464    jle near ptr 004AC46Fh"
 "	      004ac46a    jmp near ptr 004AC474h"
@@ -1965,7 +1965,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 "	      004ac474    jmp near ptr 004AC483h"
 "	      004ac479    cmp dword ptr [ebp-0Ch],0"
 "	      004ac47d    je near ptr 004AC493h"
-"	      004ac483    mov eax,[ebp-14h]"
+"	      004ac483    mov eax,this"
 "	      004ac486    cmp dword ptr [eax+128h],0"
 "	      004ac48d    je near ptr 004AC49Ah"
 );
@@ -1976,47 +1976,47 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 );
 // LINE 567:
 	asm( 
-"	      004ac49a    sub dword ptr [ebp+0Ch],8"
+"	      004ac49a    sub lMaxBytesToRead,8"
 );
 // LINE 568:
 	asm( 
-"	      004ac49e    mov eax,[ebp-14h]"
+"	      004ac49e    mov eax,this"
 "	      004ac4a1    mov eax,[eax+118h]"
-"	      004ac4a7    mov ecx,[ebp+0Ch]"
+"	      004ac4a7    mov ecx,lMaxBytesToRead"
 "	      004ac4aa    cmp eax,ecx"
 "	      004ac4ac    jl near ptr 004AC4B4h"
 "	      004ac4b2    mov eax,ecx"
-"	      004ac4b4    mov [ebp-4],eax"
+"	      004ac4b4    mov lActualDataBytesToRead,eax"
 );
 // LINE 569:
 	asm( 
-"	      004ac4b7    mov eax,[ebp-14h]"
+"	      004ac4b7    mov eax,this"
 "	      004ac4ba    mov eax,[eax+114h]"
-"	      004ac4c0    mov ecx,[ebp+8]"
+"	      004ac4c0    mov ecx,miffRecordToRead"
 "	      004ac4c3    mov [ecx],eax"
 );
 // LINE 570:
 	asm( 
-"	      004ac4c5    mov eax,[ebp-14h]"
+"	      004ac4c5    mov eax,this"
 "	      004ac4c8    mov eax,[eax+118h]"
-"	      004ac4ce    mov ecx,[ebp+8]"
+"	      004ac4ce    mov ecx,miffRecordToRead"
 "	      004ac4d1    mov [ecx+4],eax"
 );
 // LINE 572:
 	asm( 
 "	      004ac4d4    jmp near ptr 004AC4D9h"
-"	      004ac4d9    mov eax,[ebp-4]"
+"	      004ac4d9    mov eax,lActualDataBytesToRead"
 "	      004ac4dc    push eax"
-"	      004ac4dd    mov eax,[ebp+8]"
+"	      004ac4dd    mov eax,miffRecordToRead"
 "	      004ac4e0    add eax,8"
 "	      004ac4e3    push eax"
-"	      004ac4e4    mov eax,[ebp-14h]"
+"	      004ac4e4    mov eax,this"
 "	      004ac4e7    mov eax,[eax+108h]"
 "	      004ac4ed    push eax"
 "	      004ac4ee    call 00580B50h"
 "	      004ac4f3    add esp,0Ch"
-"	      004ac4f6    mov [ebp-8],eax"
-"	      004ac4f9    mov eax,[ebp-14h]"
+"	      004ac4f6    mov lReturnValue,eax"
+"	      004ac4f9    mov eax,this"
 "	      004ac4fc    mov eax,[eax+110h]"
 "	      004ac502    mov [ebp-10h],eax"
 );
@@ -2025,7 +2025,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 "	      004ac505    push 0"
 "	      004ac507    mov eax,[ebp-10h]"
 "	      004ac50a    push eax"
-"	      004ac50b    mov eax,[ebp-14h]"
+"	      004ac50b    mov eax,this"
 "	      004ac50e    mov eax,[eax+108h]"
 "	      004ac514    push eax"
 "	      004ac515    call 005810C0h"
@@ -2034,7 +2034,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 );
 // LINE 579:
 	asm( 
-"	      004ac522    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004ac522    cmp lReturnValue,0FFFFFFFFh"
 "	      004ac526    jne near ptr 004AC533h"
 );
 // LINE 580:
@@ -2070,11 +2070,11 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 "	      004ac54a    push ebx"
 "	      004ac54b    push esi"
 "	      004ac54c    push edi"
-"	      004ac54d    mov [ebp-14h],ecx"
+"	      004ac54d    mov this,ecx"
 );
 // LINE 601:
 	asm( 
-"	      004ac550    mov eax,[ebp-14h]"
+"	      004ac550    mov eax,this"
 "	      004ac553    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac55a    jle near ptr 004AC565h"
 "	      004ac560    jmp near ptr 004AC56Ah"
@@ -2082,7 +2082,7 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 "	      004ac56a    jmp near ptr 004AC579h"
 "	      004ac56f    cmp dword ptr [ebp-0Ch],0"
 "	      004ac573    je near ptr 004AC589h"
-"	      004ac579    mov eax,[ebp-14h]"
+"	      004ac579    mov eax,this"
 "	      004ac57c    cmp dword ptr [eax+128h],0"
 "	      004ac583    je near ptr 004AC590h"
 );
@@ -2093,19 +2093,19 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 );
 // LINE 605:
 	asm( 
-"	      004ac590    mov eax,[ebp-14h]"
+"	      004ac590    mov eax,this"
 "	      004ac593    mov eax,[eax+118h]"
-"	      004ac599    mov ecx,[ebp+0Ch]"
+"	      004ac599    mov ecx,lMaxBytesToRead"
 "	      004ac59c    cmp eax,ecx"
 "	      004ac59e    jl near ptr 004AC5A6h"
 "	      004ac5a4    mov eax,ecx"
-"	      004ac5a6    mov [ebp-4],eax"
+"	      004ac5a6    mov lActualBytesToRead,eax"
 );
 // LINE 607:
 	asm( 
 "	      004ac5a9    push 1"
 "	      004ac5ab    push 8"
-"	      004ac5ad    mov eax,[ebp-14h]"
+"	      004ac5ad    mov eax,this"
 "	      004ac5b0    mov eax,[eax+108h]"
 "	      004ac5b6    push eax"
 "	      004ac5b7    call 005810C0h"
@@ -2115,17 +2115,17 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 // LINE 609:
 	asm( 
 "	      004ac5c4    jmp near ptr 004AC5C9h"
-"	      004ac5c9    mov eax,[ebp-4]"
+"	      004ac5c9    mov eax,lActualBytesToRead"
 "	      004ac5cc    push eax"
-"	      004ac5cd    mov eax,[ebp+8]"
+"	      004ac5cd    mov eax,chBuffer"
 "	      004ac5d0    push eax"
-"	      004ac5d1    mov eax,[ebp-14h]"
+"	      004ac5d1    mov eax,this"
 "	      004ac5d4    mov eax,[eax+108h]"
 "	      004ac5da    push eax"
 "	      004ac5db    call 00580B50h"
 "	      004ac5e0    add esp,0Ch"
-"	      004ac5e3    mov [ebp-8],eax"
-"	      004ac5e6    mov eax,[ebp-14h]"
+"	      004ac5e3    mov lReturnValue,eax"
+"	      004ac5e6    mov eax,this"
 "	      004ac5e9    mov eax,[eax+110h]"
 "	      004ac5ef    mov [ebp-10h],eax"
 );
@@ -2134,7 +2134,7 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 "	      004ac5f2    push 0"
 "	      004ac5f4    mov eax,[ebp-10h]"
 "	      004ac5f7    push eax"
-"	      004ac5f8    mov eax,[ebp-14h]"
+"	      004ac5f8    mov eax,this"
 "	      004ac5fb    mov eax,[eax+108h]"
 "	      004ac601    push eax"
 "	      004ac602    call 005810C0h"
@@ -2143,9 +2143,9 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 );
 // LINE 616:
 	asm( 
-"	      004ac60f    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004ac60f    cmp lReturnValue,0FFFFFFFFh"
 "	      004ac613    je near ptr 004AC623h"
-"	      004ac619    cmp dword ptr [ebp-8],0"
+"	      004ac619    cmp lReturnValue,0"
 "	      004ac61d    jne near ptr 004AC62Ah"
 );
 // LINE 617:
@@ -2180,11 +2180,11 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 "	      004ac641    push ebx"
 "	      004ac642    push esi"
 "	      004ac643    push edi"
-"	      004ac644    mov [ebp-0Ch],ecx"
+"	      004ac644    mov this,ecx"
 );
 // LINE 645:
 	asm( 
-"	      004ac647    mov eax,[ebp-0Ch]"
+"	      004ac647    mov eax,this"
 "	      004ac64a    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac651    jle near ptr 004AC65Ch"
 "	      004ac657    jmp near ptr 004AC661h"
@@ -2192,7 +2192,7 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 "	      004ac661    jmp near ptr 004AC670h"
 "	      004ac666    cmp dword ptr [ebp-8],0"
 "	      004ac66a    je near ptr 004AC680h"
-"	      004ac670    mov eax,[ebp-0Ch]"
+"	      004ac670    mov eax,this"
 "	      004ac673    cmp dword ptr [eax+120h],2"
 "	      004ac67a    je near ptr 004AC687h"
 );
@@ -2203,52 +2203,52 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 );
 // LINE 648:
 	asm( 
-"	      004ac687    mov eax,[ebp-0Ch]"
+"	      004ac687    mov eax,this"
 "	      004ac68a    mov dword ptr [eax+12Ch],4646494Dh"
 );
 // LINE 649:
 	asm( 
-"	      004ac694    mov eax,[ebp-0Ch]"
+"	      004ac694    mov eax,this"
 "	      004ac697    mov dword ptr [eax+130h],2"
 );
 // LINE 650:
 	asm( 
-"	      004ac6a1    mov eax,[ebp+8]"
-"	      004ac6a4    mov ecx,[ebp-0Ch]"
+"	      004ac6a1    mov eax,lCreatorType"
+"	      004ac6a4    mov ecx,this"
 "	      004ac6a7    mov [ecx+134h],eax"
 );
 // LINE 651:
 	asm( 
-"	      004ac6ad    mov eax,[ebp+0Ch]"
-"	      004ac6b0    mov ecx,[ebp-0Ch]"
+"	      004ac6ad    mov eax,lFileType"
+"	      004ac6b0    mov ecx,this"
 "	      004ac6b3    mov [ecx+138h],eax"
 );
 // LINE 652:
 	asm( 
-"	      004ac6b9    mov eax,[ebp+10h]"
-"	      004ac6bc    mov ecx,[ebp-0Ch]"
+"	      004ac6b9    mov eax,lFileVersion"
+"	      004ac6bc    mov ecx,this"
 "	      004ac6bf    mov [ecx+13Ch],eax"
 );
 // LINE 653:
 	asm( 
-"	      004ac6c5    mov eax,[ebp-0Ch]"
+"	      004ac6c5    mov eax,this"
 "	      004ac6c8    mov dword ptr [eax+140h],1Ch"
 );
 // LINE 654:
 	asm( 
-"	      004ac6d2    mov eax,[ebp-0Ch]"
+"	      004ac6d2    mov eax,this"
 "	      004ac6d5    mov dword ptr [eax+144h],1"
 );
 // LINE 656:
 	asm( 
-"	      004ac6df    mov eax,[ebp-0Ch]"
+"	      004ac6df    mov eax,this"
 "	      004ac6e2    mov dword ptr [eax+124h],0"
 );
 // LINE 657:
 	asm( 
 "	      004ac6ec    push 0"
 "	      004ac6ee    push 0"
-"	      004ac6f0    mov eax,[ebp-0Ch]"
+"	      004ac6f0    mov eax,this"
 "	      004ac6f3    mov eax,[eax+108h]"
 "	      004ac6f9    push eax"
 "	      004ac6fa    call 005810C0h"
@@ -2259,21 +2259,21 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 	asm( 
 "	      004ac707    jmp near ptr 004AC70Ch"
 "	      004ac70c    push 1Ch"
-"	      004ac70e    mov eax,[ebp-0Ch]"
+"	      004ac70e    mov eax,this"
 "	      004ac711    add eax,12Ch"
 "	      004ac716    push eax"
-"	      004ac717    mov eax,[ebp-0Ch]"
+"	      004ac717    mov eax,this"
 "	      004ac71a    mov eax,[eax+108h]"
 "	      004ac720    push eax"
 "	      004ac721    call 00579170h"
 "	      004ac726    add esp,0Ch"
-"	      004ac729    mov [ebp-4],eax"
+"	      004ac729    mov lReturnValue,eax"
 );
 // LINE 659:
 	asm( 
-"	      004ac72c    cmp dword ptr [ebp-4],0FFFFFFFFh"
+"	      004ac72c    cmp lReturnValue,0FFFFFFFFh"
 "	      004ac730    je near ptr 004AC740h"
-"	      004ac736    cmp dword ptr [ebp-4],0"
+"	      004ac736    cmp lReturnValue,0"
 "	      004ac73a    jne near ptr 004AC747h"
 );
 // LINE 660:
@@ -2309,11 +2309,11 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 "	      004ac75e    push ebx"
 "	      004ac75f    push esi"
 "	      004ac760    push edi"
-"	      004ac761    mov [ebp-10h],ecx"
+"	      004ac761    mov this,ecx"
 );
 // LINE 678:
 	asm( 
-"	      004ac764    mov eax,[ebp-10h]"
+"	      004ac764    mov eax,this"
 "	      004ac767    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac76e    jle near ptr 004AC779h"
 "	      004ac774    jmp near ptr 004AC77Eh"
@@ -2321,7 +2321,7 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 "	      004ac77e    jmp near ptr 004AC78Dh"
 "	      004ac783    cmp dword ptr [ebp-0Ch],0"
 "	      004ac787    je near ptr 004AC79Dh"
-"	      004ac78d    mov eax,[ebp-10h]"
+"	      004ac78d    mov eax,this"
 "	      004ac790    cmp dword ptr [eax+120h],2"
 "	      004ac797    je near ptr 004AC7A4h"
 );
@@ -2332,40 +2332,40 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 );
 // LINE 680:
 	asm( 
-"	      004ac7a4    mov eax,[ebp-10h]"
+"	      004ac7a4    mov eax,this"
 "	      004ac7a7    mov dword ptr [eax+124h],0"
 );
 // LINE 681:
 	asm( 
-"	      004ac7b1    mov eax,[ebp+0Ch]"
+"	      004ac7b1    mov eax,lSizeOfMIFFRecordData"
 "	      004ac7b4    add eax,8"
-"	      004ac7b7    mov [ebp-4],eax"
+"	      004ac7b7    mov lAmountOfDataToWrite,eax"
 );
 // LINE 682:
 	asm( 
-"	      004ac7ba    mov eax,[ebp-4]"
-"	      004ac7bd    mov ecx,[ebp+8]"
+"	      004ac7ba    mov eax,lAmountOfDataToWrite"
+"	      004ac7bd    mov ecx,miffRecordToWrite"
 "	      004ac7c0    mov [ecx+4],eax"
 );
 // LINE 685:
 	asm( 
 "	      004ac7c3    jmp near ptr 004AC7C8h"
-"	      004ac7c8    mov eax,[ebp-4]"
+"	      004ac7c8    mov eax,lAmountOfDataToWrite"
 "	      004ac7cb    push eax"
-"	      004ac7cc    mov eax,[ebp+8]"
+"	      004ac7cc    mov eax,miffRecordToWrite"
 "	      004ac7cf    push eax"
-"	      004ac7d0    mov eax,[ebp-10h]"
+"	      004ac7d0    mov eax,this"
 "	      004ac7d3    mov eax,[eax+108h]"
 "	      004ac7d9    push eax"
 "	      004ac7da    call 00579170h"
 "	      004ac7df    add esp,0Ch"
-"	      004ac7e2    mov [ebp-8],eax"
+"	      004ac7e2    mov lReturnValue,eax"
 );
 // LINE 690:
 	asm( 
-"	      004ac7e5    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004ac7e5    cmp lReturnValue,0FFFFFFFFh"
 "	      004ac7e9    je near ptr 004AC7F9h"
-"	      004ac7ef    cmp dword ptr [ebp-8],0"
+"	      004ac7ef    cmp lReturnValue,0"
 "	      004ac7f3    jne near ptr 004AC800h"
 );
 // LINE 691:
@@ -2401,17 +2401,17 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 "	      004ac817    push ebx"
 "	      004ac818    push esi"
 "	      004ac819    push edi"
-"	      004ac81a    mov [ebp-10h],ecx"
+"	      004ac81a    mov this,ecx"
 );
 // LINE 704:
 	asm( 
-"	      004ac81d    mov eax,[ebp+10h]"
+"	      004ac81d    mov eax,lDataLength"
 "	      004ac820    add eax,8"
-"	      004ac823    mov [ebp-4],eax"
+"	      004ac823    mov lRecordLength,eax"
 );
 // LINE 707:
 	asm( 
-"	      004ac826    mov eax,[ebp-10h]"
+"	      004ac826    mov eax,this"
 "	      004ac829    cmp dword ptr [eax+108h],0FFFFFFFFh"
 "	      004ac830    jle near ptr 004AC83Bh"
 "	      004ac836    jmp near ptr 004AC840h"
@@ -2419,7 +2419,7 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 "	      004ac840    jmp near ptr 004AC84Fh"
 "	      004ac845    cmp dword ptr [ebp-0Ch],0"
 "	      004ac849    je near ptr 004AC85Fh"
-"	      004ac84f    mov eax,[ebp-10h]"
+"	      004ac84f    mov eax,this"
 "	      004ac852    cmp dword ptr [eax+120h],2"
 "	      004ac859    je near ptr 004AC866h"
 );
@@ -2430,15 +2430,15 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 );
 // LINE 709:
 	asm( 
-"	      004ac866    mov eax,[ebp-10h]"
+"	      004ac866    mov eax,this"
 "	      004ac869    mov dword ptr [eax+124h],0"
 );
 // LINE 711:
 	asm( 
 "	      004ac873    push 4"
-"	      004ac875    lea eax,[ebp+8]"
+"	      004ac875    lea eax,lRecordType"
 "	      004ac878    push eax"
-"	      004ac879    mov eax,[ebp-10h]"
+"	      004ac879    mov eax,this"
 "	      004ac87c    mov eax,[eax+108h]"
 "	      004ac882    push eax"
 "	      004ac883    call 00579170h"
@@ -2448,9 +2448,9 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 // LINE 712:
 	asm( 
 "	      004ac890    push 4"
-"	      004ac892    lea eax,[ebp-4]"
+"	      004ac892    lea eax,lRecordLength"
 "	      004ac895    push eax"
-"	      004ac896    mov eax,[ebp-10h]"
+"	      004ac896    mov eax,this"
 "	      004ac899    mov eax,[eax+108h]"
 "	      004ac89f    push eax"
 "	      004ac8a0    call 00579170h"
@@ -2460,22 +2460,22 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 // LINE 715:
 	asm( 
 "	      004ac8ad    jmp near ptr 004AC8B2h"
-"	      004ac8b2    mov eax,[ebp+10h]"
+"	      004ac8b2    mov eax,lDataLength"
 "	      004ac8b5    push eax"
-"	      004ac8b6    mov eax,[ebp+0Ch]"
+"	      004ac8b6    mov eax,ptrData"
 "	      004ac8b9    push eax"
-"	      004ac8ba    mov eax,[ebp-10h]"
+"	      004ac8ba    mov eax,this"
 "	      004ac8bd    mov eax,[eax+108h]"
 "	      004ac8c3    push eax"
 "	      004ac8c4    call 00579170h"
 "	      004ac8c9    add esp,0Ch"
-"	      004ac8cc    mov [ebp-8],eax"
+"	      004ac8cc    mov lReturnValue,eax"
 );
 // LINE 721:
 	asm( 
-"	      004ac8cf    cmp dword ptr [ebp-8],0FFFFFFFFh"
+"	      004ac8cf    cmp lReturnValue,0FFFFFFFFh"
 "	      004ac8d3    je near ptr 004AC8E3h"
-"	      004ac8d9    cmp dword ptr [ebp-8],0"
+"	      004ac8d9    cmp lReturnValue,0"
 "	      004ac8dd    jne near ptr 004AC8EAh"
 );
 // LINE 722:
@@ -2511,23 +2511,23 @@ long MIFF::WriteEnd() {
 "	      004ac901    push ebx"
 "	      004ac902    push esi"
 "	      004ac903    push edi"
-"	      004ac904    mov [ebp-0Ch],ecx"
+"	      004ac904    mov this,ecx"
 );
 // LINE 739:
 	asm( 
-"	      004ac907    mov eax,[ebp-0Ch]"
+"	      004ac907    mov eax,this"
 "	      004ac90a    mov eax,[eax+108h]"
 "	      004ac910    push eax"
 "	      004ac911    call 0058E430h"
 "	      004ac916    add esp,4"
-"	      004ac919    mov [ebp-8],eax"
+"	      004ac919    mov lPresentPosition,eax"
 "	      004ac91c    jmp near ptr 004AC921h"
 );
 // LINE 741:
 	asm( 
-"	      004ac921    mov eax,[ebp-8]"
+"	      004ac921    mov eax,lPresentPosition"
 "	      004ac924    push eax"
-"	      004ac925    mov eax,[ebp-0Ch]"
+"	      004ac925    mov eax,this"
 "	      004ac928    mov eax,[eax+108h]"
 "	      004ac92e    push eax"
 "	      004ac92f    call 0058C880h"
@@ -2536,15 +2536,15 @@ long MIFF::WriteEnd() {
 );
 // LINE 742:
 	asm( 
-"	      004ac93c    mov ecx,[ebp-0Ch]"
+"	      004ac93c    mov ecx,this"
 "	      004ac93f    call 004A0562h"
-"	      004ac944    mov [ebp-4],eax"
+"	      004ac944    mov lFileLength,eax"
 );
 // LINE 743:
 	asm( 
 "	      004ac947    push 0"
 "	      004ac949    push 14h"
-"	      004ac94b    mov eax,[ebp-0Ch]"
+"	      004ac94b    mov eax,this"
 "	      004ac94e    mov eax,[eax+108h]"
 "	      004ac954    push eax"
 "	      004ac955    call 005810C0h"
@@ -2554,9 +2554,9 @@ long MIFF::WriteEnd() {
 // LINE 744:
 	asm( 
 "	      004ac962    push 4"
-"	      004ac964    lea eax,[ebp-4]"
+"	      004ac964    lea eax,lFileLength"
 "	      004ac967    push eax"
-"	      004ac968    mov eax,[ebp-0Ch]"
+"	      004ac968    mov eax,this"
 "	      004ac96b    mov eax,[eax+108h]"
 "	      004ac971    push eax"
 "	      004ac972    call 00579170h"
@@ -2565,14 +2565,14 @@ long MIFF::WriteEnd() {
 );
 // LINE 745:
 	asm( 
-"	      004ac97f    mov eax,[ebp-0Ch]"
+"	      004ac97f    mov eax,this"
 "	      004ac982    mov dword ptr [eax+124h],1"
 );
 // LINE 746:
 	asm( 
 "	      004ac98c    push 2"
 "	      004ac98e    push 0"
-"	      004ac990    mov eax,[ebp-0Ch]"
+"	      004ac990    mov eax,this"
 "	      004ac993    mov eax,[eax+108h]"
 "	      004ac999    push eax"
 "	      004ac99a    call 005810C0h"

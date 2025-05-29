@@ -18,53 +18,53 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates here, 
 "	      00543696    push ebx"
 "	      00543697    push esi"
 "	      00543698    push edi"
-"	      00543699    mov [ebp-0Ch],ecx"
+"	      00543699    mov this,ecx"
 );
 // LINE 16:
 	asm( 
 "	      0054369c    xor eax,eax"
-"	      0054369e    mov al,[ebp+0Ch]"
+"	      0054369e    mov al,destination.x"
 "	      005436a1    xor ecx,ecx"
-"	      005436a3    mov cl,[ebp+8]"
+"	      005436a3    mov cl,here.x"
 "	      005436a6    sub eax,ecx"
-"	      005436a8    mov [ebp-4],eax"
+"	      005436a8    mov x,eax"
 );
 // LINE 17:
 	asm( 
 "	      005436ab    xor eax,eax"
-"	      005436ad    mov al,[ebp+0Dh]"
+"	      005436ad    mov al,destination.y"
 "	      005436b0    xor ecx,ecx"
-"	      005436b2    mov cl,[ebp+9]"
+"	      005436b2    mov cl,here.y"
 "	      005436b5    sub eax,ecx"
-"	      005436b7    mov [ebp-8],eax"
+"	      005436b7    mov y,eax"
 );
 // LINE 19:
 	asm( 
-"	      005436ba    mov eax,[ebp-4]"
+"	      005436ba    mov eax,x"
 "	      005436bd    cdq"
 "	      005436be    xor eax,edx"
 "	      005436c0    sub eax,edx"
-"	      005436c2    mov [ebp-4],eax"
+"	      005436c2    mov x,eax"
 );
 // LINE 20:
 	asm( 
-"	      005436c5    mov eax,[ebp-8]"
+"	      005436c5    mov eax,y"
 "	      005436c8    cdq"
 "	      005436c9    xor eax,edx"
 "	      005436cb    sub eax,edx"
-"	      005436cd    mov [ebp-8],eax"
+"	      005436cd    mov y,eax"
 );
 // LINE 22:
 	asm( 
-"	      005436d0    mov eax,[ebp-4]"
-"	      005436d3    cmp [ebp-8],eax"
+"	      005436d0    mov eax,x"
+"	      005436d3    cmp y,eax"
 "	      005436d6    jge near ptr 005436EFh"
 );
 // LINE 24:
 	asm( 
-"	      005436dc    mov eax,[ebp-8]"
+"	      005436dc    mov eax,y"
 "	      005436df    sar eax,1"
-"	      005436e2    add eax,[ebp-4]"
+"	      005436e2    add eax,x"
 "	      005436e5    jmp near ptr 005436FDh"
 );
 // LINE 26:
@@ -73,9 +73,9 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates here, 
 );
 // LINE 28:
 	asm( 
-"	      005436ef    mov eax,[ebp-4]"
+"	      005436ef    mov eax,x"
 "	      005436f2    sar eax,1"
-"	      005436f5    add eax,[ebp-8]"
+"	      005436f5    add eax,y"
 "	      005436f8    jmp near ptr 005436FDh"
 );
 // LINE 30:
@@ -104,52 +104,52 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      0054370a    push ebx"
 "	      0054370b    push esi"
 "	      0054370c    push edi"
-"	      0054370d    mov [ebp-38h],ecx"
+"	      0054370d    mov this,ecx"
 );
 // LINE 37:
 	asm( 
 "	      00543710    xor eax,eax"
-"	      00543712    mov al,[ebp+0Ch]"
+"	      00543712    mov al,destVertex.x"
 "	      00543715    mov eax,[eax*4+5C3828h]"
 "	      0054371c    xor ecx,ecx"
-"	      0054371e    mov cl,[ebp+0Dh]"
+"	      0054371e    mov cl,destVertex.yindex"
 "	      00543721    mov edx,ecx"
 "	      00543723    lea ecx,[ecx+ecx*4]"
 "	      00543726    lea ecx,[ecx+ecx*4]"
 "	      00543729    lea ecx,[edx+ecx*2]"
 "	      0054372c    add eax,ecx"
-"	      0054372e    mov [ebp-10h],eax"
+"	      0054372e    mov pRGV,eax"
 );
 // LINE 40:
 	asm( 
 "	      00543731    xor eax,eax"
-"	      00543733    mov al,[ebp+0Ch]"
+"	      00543733    mov al,destVertex.x"
 "	      00543736    xor ecx,ecx"
-"	      00543738    mov cl,[ebp+8]"
+"	      00543738    mov cl,startVertex.x"
 "	      0054373b    cmp eax,ecx"
 "	      0054373d    jne near ptr 00543778h"
 "	      00543743    xor eax,eax"
-"	      00543745    mov al,[ebp+0Dh]"
+"	      00543745    mov al,destVertex.yindex"
 "	      00543748    xor ecx,ecx"
-"	      0054374a    mov cl,[ebp+9]"
+"	      0054374a    mov cl,startVertex.yindex"
 "	      0054374d    cmp eax,ecx"
 "	      0054374f    jne near ptr 00543778h"
 );
 // LINE 42:
 	asm( 
-"	      00543755    mov eax,[ebp-10h]"
+"	      00543755    mov eax,pRGV"
 "	      00543758    mov byte ptr [eax+2Eh],0FFh"
 );
 // LINE 43:
 	asm( 
-"	      0054375c    mov al,[ebp+0Dh]"
-"	      0054375f    mov ecx,[ebp-10h]"
+"	      0054375c    mov al,destVertex.yindex"
+"	      0054375f    mov ecx,pRGV"
 "	      00543762    mov [ecx+2Ch],al"
 );
 // LINE 44:
 	asm( 
-"	      00543765    mov al,[ebp+0Ch]"
-"	      00543768    mov ecx,[ebp-10h]"
+"	      00543765    mov al,destVertex.x"
+"	      00543768    mov ecx,pRGV"
 "	      0054376b    mov [ecx+2Dh],al"
 );
 // LINE 45:
@@ -159,72 +159,72 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 49:
 	asm( 
-"	      00543778    mov dword ptr [ebp-24h],0"
+"	      00543778    mov pathFoundFlag,0"
 );
 // LINE 52:
 	asm( 
-"	      0054377f    mov eax,[ebp-38h]"
+"	      0054377f    mov eax,this"
 "	      00543782    mov dword ptr [eax],5C3AB0h"
 );
 // LINE 53:
 	asm( 
-"	      00543788    mov eax,[ebp-38h]"
+"	      00543788    mov eax,this"
 "	      0054378b    mov eax,[eax]"
 "	      0054378d    mov dword ptr [eax+5],0FFFFFFFFh"
 );
 // LINE 54:
 	asm( 
-"	      00543794    mov eax,[ebp-38h]"
+"	      00543794    mov eax,this"
 "	      00543797    mov dword ptr [eax+4],0"
 );
 // LINE 57:
 	asm( 
-"	      0054379e    mov dword ptr [ebp-20h],0"
+"	      0054379e    mov x,0"
 "	      005437a5    jmp near ptr 005437ADh"
-"	      005437aa    inc dword ptr [ebp-20h]"
-"	      005437ad    cmp dword ptr [ebp-20h],80h"
+"	      005437aa    inc x"
+"	      005437ad    cmp x,80h"
 "	      005437b4    jge near ptr 0054381Ch"
 );
 // LINE 59:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      005437ba    mov dword ptr [ebp-28h],0"
+"	      005437ba    mov yindex,0"
 "	      005437c1    jmp near ptr 005437C9h"
-"	      005437c6    inc dword ptr [ebp-28h]"
-"	      005437c9    mov eax,[ebp-20h]"
+"	      005437c6    inc yindex"
+"	      005437c9    mov eax,x"
 "	      005437cc    xor ecx,ecx"
 "	      005437ce    mov cl,[eax+5C3A28h]"
-"	      005437d4    cmp ecx,[ebp-28h]"
+"	      005437d4    cmp ecx,yindex"
 "	      005437d7    jle near ptr 00543817h"
 );
 // LINE 61:
 // Block start:
 	struct RGVertex* pRGV;
 	asm( 
-"	      005437dd    mov eax,[ebp-20h]"
+"	      005437dd    mov eax,x"
 "	      005437e0    mov eax,[eax*4+5C3828h]"
-"	      005437e7    mov ecx,[ebp-28h]"
+"	      005437e7    mov ecx,yindex"
 "	      005437ea    mov edx,ecx"
 "	      005437ec    lea ecx,[ecx+ecx*4]"
 "	      005437ef    lea ecx,[ecx+ecx*4]"
 "	      005437f2    lea ecx,[edx+ecx*2]"
 "	      005437f5    add eax,ecx"
-"	      005437f7    mov [ebp-2Ch],eax"
+"	      005437f7    mov pRGV,eax"
 );
 // LINE 62:
 	asm( 
-"	      005437fa    mov eax,[ebp-2Ch]"
+"	      005437fa    mov eax,pRGV"
 "	      005437fd    mov dword ptr [eax+2Fh],0"
 );
 // LINE 63:
 	asm( 
-"	      00543804    mov eax,[ebp-2Ch]"
+"	      00543804    mov eax,pRGV"
 "	      00543807    mov byte ptr [eax+2Dh],0FFh"
 );
 // LINE 64:
 	asm( 
-"	      0054380b    mov eax,[ebp-2Ch]"
+"	      0054380b    mov eax,pRGV"
 "	      0054380e    mov byte ptr [eax+2Ch],0FFh"
 );
 // LINE 65:
@@ -239,113 +239,113 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 70:
 	asm( 
-"	      0054381c    mov al,[ebp+9]"
-"	      0054381f    mov [ebp-0Bh],al"
+"	      0054381c    mov al,startVertex.yindex"
+"	      0054381f    mov scratch.yindexCurr,al"
 );
 // LINE 71:
 	asm( 
-"	      00543822    mov al,[ebp+8]"
-"	      00543825    mov [ebp-0Ch],al"
+"	      00543822    mov al,startVertex.x"
+"	      00543825    mov scratch.xCurr,al"
 );
 // LINE 72:
 	asm( 
-"	      00543828    mov byte ptr [ebp-0Ah],0FFh"
+"	      00543828    mov scratch.edgeIndexPrev,0FFh"
 );
 // LINE 73:
 	asm( 
-"	      0054382c    mov byte ptr [ebp-8],0FFh"
+"	      0054382c    mov scratch.yindexPrev,0FFh"
 );
 // LINE 74:
 	asm( 
-"	      00543830    mov byte ptr [ebp-9],0FFh"
+"	      00543830    mov scratch.xPrev,0FFh"
 );
 // LINE 75:
 	asm( 
-"	      00543834    mov dword ptr [ebp-7],0"
+"	      00543834    mov scratch.cost,0"
 );
 // LINE 76:
 	asm( 
-"	      0054383b    lea eax,[ebp-0Ch]"
+"	      0054383b    lea eax,scratch.xCurr"
 "	      0054383e    push eax"
-"	      0054383f    mov ecx,[ebp-38h]"
+"	      0054383f    mov ecx,this"
 "	      00543842    call 00543CDDh"
 );
 // LINE 81:
 	asm( 
-"	      00543847    mov eax,[ebp-38h]"
+"	      00543847    mov eax,this"
 "	      0054384a    cmp dword ptr [eax+4],0"
 "	      0054384e    je near ptr 005439ACh"
-"	      00543854    cmp dword ptr [ebp-24h],0"
+"	      00543854    cmp pathFoundFlag,0"
 "	      00543858    jne near ptr 005439ACh"
 );
 // LINE 85:
 	asm( 
-"	      0054385e    lea eax,[ebp-1Ch]"
+"	      0054385e    lea eax,path.xCurr"
 "	      00543861    push eax"
-"	      00543862    mov ecx,[ebp-38h]"
+"	      00543862    mov ecx,this"
 "	      00543865    call 00543DCBh"
 );
 // LINE 87:
 	asm( 
 "	      0054386a    xor eax,eax"
-"	      0054386c    mov al,[ebp-1Ch]"
+"	      0054386c    mov al,path.xCurr"
 "	      0054386f    mov eax,[eax*4+5C3828h]"
 "	      00543876    xor ecx,ecx"
-"	      00543878    mov cl,[ebp-1Bh]"
+"	      00543878    mov cl,path.yindexCurr"
 "	      0054387b    mov edx,ecx"
 "	      0054387d    lea ecx,[ecx+ecx*4]"
 "	      00543880    lea ecx,[ecx+ecx*4]"
 "	      00543883    lea ecx,[edx+ecx*2]"
 "	      00543886    add eax,ecx"
-"	      00543888    mov [ebp-10h],eax"
+"	      00543888    mov pRGV,eax"
 );
 // LINE 88:
 	asm( 
-"	      0054388b    mov eax,[ebp-10h]"
+"	      0054388b    mov eax,pRGV"
 "	      0054388e    cmp dword ptr [eax+2Fh],0"
 "	      00543892    jne near ptr 005439A7h"
 );
 // LINE 92:
 	asm( 
-"	      00543898    mov al,[ebp-19h]"
-"	      0054389b    mov ecx,[ebp-10h]"
+"	      00543898    mov al,path.xPrev"
+"	      0054389b    mov ecx,pRGV"
 "	      0054389e    mov [ecx+2Dh],al"
 );
 // LINE 93:
 	asm( 
-"	      005438a1    mov al,[ebp-18h]"
-"	      005438a4    mov ecx,[ebp-10h]"
+"	      005438a1    mov al,path.yindexPrev"
+"	      005438a4    mov ecx,pRGV"
 "	      005438a7    mov [ecx+2Ch],al"
 );
 // LINE 94:
 	asm( 
-"	      005438aa    mov al,[ebp-1Ah]"
-"	      005438ad    mov ecx,[ebp-10h]"
+"	      005438aa    mov al,path.edgeIndexPrev"
+"	      005438ad    mov ecx,pRGV"
 "	      005438b0    mov [ecx+2Eh],al"
 );
 // LINE 95:
 	asm( 
-"	      005438b3    mov eax,[ebp-10h]"
+"	      005438b3    mov eax,pRGV"
 "	      005438b6    mov dword ptr [eax+2Fh],1"
 );
 // LINE 99:
 	asm( 
 "	      005438bd    xor eax,eax"
-"	      005438bf    mov al,[ebp-1Ch]"
+"	      005438bf    mov al,path.xCurr"
 "	      005438c2    xor ecx,ecx"
-"	      005438c4    mov cl,[ebp+0Ch]"
+"	      005438c4    mov cl,destVertex.x"
 "	      005438c7    cmp eax,ecx"
 "	      005438c9    jne near ptr 005438EDh"
 "	      005438cf    xor eax,eax"
-"	      005438d1    mov al,[ebp-1Bh]"
+"	      005438d1    mov al,path.yindexCurr"
 "	      005438d4    xor ecx,ecx"
-"	      005438d6    mov cl,[ebp+0Dh]"
+"	      005438d6    mov cl,destVertex.yindex"
 "	      005438d9    cmp eax,ecx"
 "	      005438db    jne near ptr 005438EDh"
 );
 // LINE 101:
 	asm( 
-"	      005438e1    mov dword ptr [ebp-24h],1"
+"	      005438e1    mov pathFoundFlag,1"
 );
 // LINE 104:
 	asm( 
@@ -355,22 +355,22 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 // Block start:
 	int32_t i;
 	asm( 
-"	      005438ed    mov dword ptr [ebp-30h],0"
+"	      005438ed    mov i,0"
 "	      005438f4    jmp near ptr 005438FCh"
-"	      005438f9    inc dword ptr [ebp-30h]"
-"	      005438fc    cmp dword ptr [ebp-30h],4"
+"	      005438f9    inc i"
+"	      005438fc    cmp i,4"
 "	      00543900    jge near ptr 005439A7h"
 );
 // LINE 111:
 // Block start:
 	struct Edge* pEdge;
 	asm( 
-"	      00543906    mov eax,[ebp-10h]"
+"	      00543906    mov eax,pRGV"
 "	      00543909    mov al,[eax+2]"
 "	      0054390c    and al,0Fh"
 "	      0054390e    xor ecx,ecx"
 "	      00543910    mov cl,al"
-"	      00543912    mov eax,[ebp-30h]"
+"	      00543912    mov eax,i"
 "	      00543915    test [eax*4+5934F8h],ecx"
 "	      0054391c    jne near ptr 00543927h"
 );
@@ -380,20 +380,20 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 115:
 	asm( 
-"	      00543927    mov eax,[ebp-30h]"
+"	      00543927    mov eax,i"
 "	      0054392a    lea eax,[eax+eax*4]"
 "	      0054392d    add eax,eax"
-"	      0054392f    add eax,[ebp-10h]"
+"	      0054392f    add eax,pRGV"
 "	      00543932    add eax,4"
-"	      00543935    mov [ebp-34h],eax"
+"	      00543935    mov pEdge,eax"
 );
 // LINE 116:
 	asm( 
-"	      00543938    mov eax,[ebp-34h]"
+"	      00543938    mov eax,pEdge"
 "	      0054393b    xor ecx,ecx"
 "	      0054393d    mov cl,[eax+1]"
 "	      00543940    mov eax,[ecx*4+5C3828h]"
-"	      00543947    mov ecx,[ebp-34h]"
+"	      00543947    mov ecx,pEdge"
 "	      0054394a    xor edx,edx"
 "	      0054394c    mov dl,[ecx]"
 "	      0054394e    mov ecx,edx"
@@ -405,44 +405,44 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 118:
 	asm( 
-"	      00543964    mov eax,[ebp-34h]"
+"	      00543964    mov eax,pEdge"
 "	      00543967    mov al,[eax+1]"
-"	      0054396a    mov [ebp-0Ch],al"
+"	      0054396a    mov scratch.xCurr,al"
 );
 // LINE 119:
 	asm( 
-"	      0054396d    mov eax,[ebp-34h]"
+"	      0054396d    mov eax,pEdge"
 "	      00543970    mov al,[eax]"
-"	      00543972    mov [ebp-0Bh],al"
+"	      00543972    mov scratch.yindexCurr,al"
 );
 // LINE 120:
 	asm( 
-"	      00543975    mov eax,[ebp-34h]"
+"	      00543975    mov eax,pEdge"
 "	      00543978    xor ecx,ecx"
 "	      0054397a    mov cx,[eax+2]"
-"	      0054397e    add ecx,[ebp-17h]"
-"	      00543981    mov [ebp-7],ecx"
+"	      0054397e    add ecx,path.cost"
+"	      00543981    mov scratch.cost,ecx"
 );
 // LINE 121:
 	asm( 
 "	      00543984    mov al,[ebp-30h]"
-"	      00543987    mov [ebp-0Ah],al"
+"	      00543987    mov scratch.edgeIndexPrev,al"
 );
 // LINE 122:
 	asm( 
-"	      0054398a    mov al,[ebp-1Ch]"
-"	      0054398d    mov [ebp-9],al"
+"	      0054398a    mov al,path.xCurr"
+"	      0054398d    mov scratch.xPrev,al"
 );
 // LINE 123:
 	asm( 
-"	      00543990    mov al,[ebp-1Bh]"
-"	      00543993    mov [ebp-8],al"
+"	      00543990    mov al,path.yindexCurr"
+"	      00543993    mov scratch.yindexPrev,al"
 );
 // LINE 124:
 	asm( 
-"	      00543996    lea eax,[ebp-0Ch]"
+"	      00543996    lea eax,scratch.xCurr"
 "	      00543999    push eax"
-"	      0054399a    mov ecx,[ebp-38h]"
+"	      0054399a    mov ecx,this"
 "	      0054399d    call 00543CDDh"
 );
 // LINE 126:
@@ -457,7 +457,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 131:
 	asm( 
-"	      005439ac    mov eax,[ebp-24h]"
+"	      005439ac    mov eax,pathFoundFlag"
 "	      005439af    jmp near ptr 005439B4h"
 );
 // LINE 132:
@@ -488,64 +488,64 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      005439c1    push ebx"
 "	      005439c2    push esi"
 "	      005439c3    push edi"
-"	      005439c4    mov [ebp-44h],ecx"
+"	      005439c4    mov this,ecx"
 );
 // LINE 139:
 	asm( 
 "	      005439c7    xor eax,eax"
-"	      005439c9    mov al,[ebp+0Ch]"
+"	      005439c9    mov al,destVertex.x"
 "	      005439cc    mov eax,[eax*4+5C3828h]"
 "	      005439d3    xor ecx,ecx"
-"	      005439d5    mov cl,[ebp+0Dh]"
+"	      005439d5    mov cl,destVertex.yindex"
 "	      005439d8    mov edx,ecx"
 "	      005439da    lea ecx,[ecx+ecx*4]"
 "	      005439dd    lea ecx,[ecx+ecx*4]"
 "	      005439e0    lea ecx,[edx+ecx*2]"
 "	      005439e3    add eax,ecx"
-"	      005439e5    mov [ebp-10h],eax"
+"	      005439e5    mov pRGV,eax"
 );
 // LINE 142:
 	asm( 
-"	      005439e8    mov eax,[ebp-10h]"
+"	      005439e8    mov eax,pRGV"
 "	      005439eb    mov al,[eax]"
-"	      005439ed    mov [ebp-2Ch],al"
+"	      005439ed    mov destLoc.x,al"
 );
 // LINE 143:
 	asm( 
-"	      005439f0    mov eax,[ebp-10h]"
+"	      005439f0    mov eax,pRGV"
 "	      005439f3    mov al,[eax+1]"
-"	      005439f6    mov [ebp-2Bh],al"
+"	      005439f6    mov destLoc.y,al"
 );
 // LINE 146:
 	asm( 
 "	      005439f9    xor eax,eax"
-"	      005439fb    mov al,[ebp+0Ch]"
+"	      005439fb    mov al,destVertex.x"
 "	      005439fe    xor ecx,ecx"
-"	      00543a00    mov cl,[ebp+8]"
+"	      00543a00    mov cl,startVertex.x"
 "	      00543a03    cmp eax,ecx"
 "	      00543a05    jne near ptr 00543A40h"
 "	      00543a0b    xor eax,eax"
-"	      00543a0d    mov al,[ebp+0Dh]"
+"	      00543a0d    mov al,destVertex.yindex"
 "	      00543a10    xor ecx,ecx"
-"	      00543a12    mov cl,[ebp+9]"
+"	      00543a12    mov cl,startVertex.yindex"
 "	      00543a15    cmp eax,ecx"
 "	      00543a17    jne near ptr 00543A40h"
 );
 // LINE 148:
 	asm( 
-"	      00543a1d    mov eax,[ebp-10h]"
+"	      00543a1d    mov eax,pRGV"
 "	      00543a20    mov byte ptr [eax+2Eh],0FFh"
 );
 // LINE 149:
 	asm( 
-"	      00543a24    mov al,[ebp+0Dh]"
-"	      00543a27    mov ecx,[ebp-10h]"
+"	      00543a24    mov al,destVertex.yindex"
+"	      00543a27    mov ecx,pRGV"
 "	      00543a2a    mov [ecx+2Ch],al"
 );
 // LINE 150:
 	asm( 
-"	      00543a2d    mov al,[ebp+0Ch]"
-"	      00543a30    mov ecx,[ebp-10h]"
+"	      00543a2d    mov al,destVertex.x"
+"	      00543a30    mov ecx,pRGV"
 "	      00543a33    mov [ecx+2Dh],al"
 );
 // LINE 151:
@@ -555,72 +555,72 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 155:
 	asm( 
-"	      00543a40    mov dword ptr [ebp-28h],0"
+"	      00543a40    mov pathFoundFlag,0"
 );
 // LINE 158:
 	asm( 
-"	      00543a47    mov eax,[ebp-44h]"
+"	      00543a47    mov eax,this"
 "	      00543a4a    mov dword ptr [eax],5C3AB0h"
 );
 // LINE 159:
 	asm( 
-"	      00543a50    mov eax,[ebp-44h]"
+"	      00543a50    mov eax,this"
 "	      00543a53    mov eax,[eax]"
 "	      00543a55    mov dword ptr [eax+5],0FFFFFFFFh"
 );
 // LINE 160:
 	asm( 
-"	      00543a5c    mov eax,[ebp-44h]"
+"	      00543a5c    mov eax,this"
 "	      00543a5f    mov dword ptr [eax+4],0"
 );
 // LINE 163:
 	asm( 
-"	      00543a66    mov dword ptr [ebp-20h],0"
+"	      00543a66    mov x,0"
 "	      00543a6d    jmp near ptr 00543A75h"
-"	      00543a72    inc dword ptr [ebp-20h]"
-"	      00543a75    cmp dword ptr [ebp-20h],80h"
+"	      00543a72    inc x"
+"	      00543a75    cmp x,80h"
 "	      00543a7c    jge near ptr 00543AE4h"
 );
 // LINE 165:
 // Block start:
 	int32_t yindex;
 	asm( 
-"	      00543a82    mov dword ptr [ebp-30h],0"
+"	      00543a82    mov yindex,0"
 "	      00543a89    jmp near ptr 00543A91h"
-"	      00543a8e    inc dword ptr [ebp-30h]"
-"	      00543a91    mov eax,[ebp-20h]"
+"	      00543a8e    inc yindex"
+"	      00543a91    mov eax,x"
 "	      00543a94    xor ecx,ecx"
 "	      00543a96    mov cl,[eax+5C3A28h]"
-"	      00543a9c    cmp ecx,[ebp-30h]"
+"	      00543a9c    cmp ecx,yindex"
 "	      00543a9f    jle near ptr 00543ADFh"
 );
 // LINE 167:
 // Block start:
 	struct RGVertex* pRGV;
 	asm( 
-"	      00543aa5    mov eax,[ebp-20h]"
+"	      00543aa5    mov eax,x"
 "	      00543aa8    mov eax,[eax*4+5C3828h]"
-"	      00543aaf    mov ecx,[ebp-30h]"
+"	      00543aaf    mov ecx,yindex"
 "	      00543ab2    mov edx,ecx"
 "	      00543ab4    lea ecx,[ecx+ecx*4]"
 "	      00543ab7    lea ecx,[ecx+ecx*4]"
 "	      00543aba    lea ecx,[edx+ecx*2]"
 "	      00543abd    add eax,ecx"
-"	      00543abf    mov [ebp-34h],eax"
+"	      00543abf    mov pRGV,eax"
 );
 // LINE 168:
 	asm( 
-"	      00543ac2    mov eax,[ebp-34h]"
+"	      00543ac2    mov eax,pRGV"
 "	      00543ac5    mov dword ptr [eax+2Fh],0"
 );
 // LINE 169:
 	asm( 
-"	      00543acc    mov eax,[ebp-34h]"
+"	      00543acc    mov eax,pRGV"
 "	      00543acf    mov byte ptr [eax+2Dh],0FFh"
 );
 // LINE 170:
 	asm( 
-"	      00543ad3    mov eax,[ebp-34h]"
+"	      00543ad3    mov eax,pRGV"
 "	      00543ad6    mov byte ptr [eax+2Ch],0FFh"
 );
 // LINE 171:
@@ -636,50 +636,50 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 // LINE 176:
 	asm( 
 "	      00543ae4    xor eax,eax"
-"	      00543ae6    mov al,[ebp+8]"
+"	      00543ae6    mov al,startVertex.x"
 "	      00543ae9    mov eax,[eax*4+5C3828h]"
 "	      00543af0    xor ecx,ecx"
-"	      00543af2    mov cl,[ebp+9]"
+"	      00543af2    mov cl,startVertex.yindex"
 "	      00543af5    mov edx,ecx"
 "	      00543af7    lea ecx,[ecx+ecx*4]"
 "	      00543afa    lea ecx,[ecx+ecx*4]"
 "	      00543afd    lea ecx,[edx+ecx*2]"
 "	      00543b00    add eax,ecx"
-"	      00543b02    mov [ebp-10h],eax"
+"	      00543b02    mov pRGV,eax"
 );
 // LINE 177:
 	asm( 
-"	      00543b05    mov eax,[ebp-10h]"
+"	      00543b05    mov eax,pRGV"
 "	      00543b08    mov al,[eax]"
-"	      00543b0a    mov [ebp-24h],al"
+"	      00543b0a    mov currLoc.x,al"
 );
 // LINE 178:
 	asm( 
-"	      00543b0d    mov eax,[ebp-10h]"
+"	      00543b0d    mov eax,pRGV"
 "	      00543b10    mov al,[eax+1]"
-"	      00543b13    mov [ebp-23h],al"
+"	      00543b13    mov currLoc.y,al"
 );
 // LINE 180:
 	asm( 
-"	      00543b16    mov al,[ebp+8]"
-"	      00543b19    mov [ebp-0Ch],al"
+"	      00543b16    mov al,startVertex.x"
+"	      00543b19    mov scratch.xCurr,al"
 );
 // LINE 181:
 	asm( 
-"	      00543b1c    mov al,[ebp+9]"
-"	      00543b1f    mov [ebp-0Bh],al"
+"	      00543b1c    mov al,startVertex.yindex"
+"	      00543b1f    mov scratch.yindexCurr,al"
 );
 // LINE 182:
 	asm( 
-"	      00543b22    mov byte ptr [ebp-0Ah],0FFh"
+"	      00543b22    mov scratch.edgeIndexPrev,0FFh"
 );
 // LINE 183:
 	asm( 
-"	      00543b26    mov byte ptr [ebp-8],0FFh"
+"	      00543b26    mov scratch.yindexPrev,0FFh"
 );
 // LINE 184:
 	asm( 
-"	      00543b2a    mov byte ptr [ebp-9],0FFh"
+"	      00543b2a    mov scratch.xPrev,0FFh"
 );
 // LINE 185:
 	asm( 
@@ -687,93 +687,93 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543b31    push eax"
 "	      00543b32    mov eax,[ebp-24h]"
 "	      00543b35    push eax"
-"	      00543b36    mov ecx,[ebp-44h]"
+"	      00543b36    mov ecx,this"
 "	      00543b39    call 00543690h"
-"	      00543b3e    mov [ebp-7],eax"
+"	      00543b3e    mov scratch.cost,eax"
 );
 // LINE 186:
 	asm( 
-"	      00543b41    lea eax,[ebp-0Ch]"
+"	      00543b41    lea eax,scratch.xCurr"
 "	      00543b44    push eax"
-"	      00543b45    mov ecx,[ebp-44h]"
+"	      00543b45    mov ecx,this"
 "	      00543b48    call 00543CDDh"
 );
 // LINE 191:
 	asm( 
-"	      00543b4d    mov eax,[ebp-44h]"
+"	      00543b4d    mov eax,this"
 "	      00543b50    cmp dword ptr [eax+4],0"
 "	      00543b54    je near ptr 00543CCEh"
-"	      00543b5a    cmp dword ptr [ebp-28h],0"
+"	      00543b5a    cmp pathFoundFlag,0"
 "	      00543b5e    jne near ptr 00543CCEh"
 );
 // LINE 195:
 	asm( 
-"	      00543b64    lea eax,[ebp-1Ch]"
+"	      00543b64    lea eax,path.xCurr"
 "	      00543b67    push eax"
-"	      00543b68    mov ecx,[ebp-44h]"
+"	      00543b68    mov ecx,this"
 "	      00543b6b    call 00543DCBh"
 );
 // LINE 197:
 	asm( 
 "	      00543b70    xor eax,eax"
-"	      00543b72    mov al,[ebp-1Ch]"
+"	      00543b72    mov al,path.xCurr"
 "	      00543b75    mov eax,[eax*4+5C3828h]"
 "	      00543b7c    xor ecx,ecx"
-"	      00543b7e    mov cl,[ebp-1Bh]"
+"	      00543b7e    mov cl,path.yindexCurr"
 "	      00543b81    mov edx,ecx"
 "	      00543b83    lea ecx,[ecx+ecx*4]"
 "	      00543b86    lea ecx,[ecx+ecx*4]"
 "	      00543b89    lea ecx,[edx+ecx*2]"
 "	      00543b8c    add eax,ecx"
-"	      00543b8e    mov [ebp-10h],eax"
+"	      00543b8e    mov pRGV,eax"
 );
 // LINE 199:
 	asm( 
-"	      00543b91    mov eax,[ebp-10h]"
+"	      00543b91    mov eax,pRGV"
 "	      00543b94    cmp dword ptr [eax+2Fh],0"
 "	      00543b98    jne near ptr 00543CC9h"
 );
 // LINE 203:
 	asm( 
-"	      00543b9e    mov al,[ebp-19h]"
-"	      00543ba1    mov ecx,[ebp-10h]"
+"	      00543b9e    mov al,path.xPrev"
+"	      00543ba1    mov ecx,pRGV"
 "	      00543ba4    mov [ecx+2Dh],al"
 );
 // LINE 204:
 	asm( 
-"	      00543ba7    mov al,[ebp-18h]"
-"	      00543baa    mov ecx,[ebp-10h]"
+"	      00543ba7    mov al,path.yindexPrev"
+"	      00543baa    mov ecx,pRGV"
 "	      00543bad    mov [ecx+2Ch],al"
 );
 // LINE 205:
 	asm( 
-"	      00543bb0    mov al,[ebp-1Ah]"
-"	      00543bb3    mov ecx,[ebp-10h]"
+"	      00543bb0    mov al,path.edgeIndexPrev"
+"	      00543bb3    mov ecx,pRGV"
 "	      00543bb6    mov [ecx+2Eh],al"
 );
 // LINE 206:
 	asm( 
-"	      00543bb9    mov eax,[ebp-10h]"
+"	      00543bb9    mov eax,pRGV"
 "	      00543bbc    mov dword ptr [eax+2Fh],1"
 );
 // LINE 210:
 	asm( 
 "	      00543bc3    xor eax,eax"
-"	      00543bc5    mov al,[ebp-1Ch]"
+"	      00543bc5    mov al,path.xCurr"
 "	      00543bc8    xor ecx,ecx"
-"	      00543bca    mov cl,[ebp+0Ch]"
+"	      00543bca    mov cl,destVertex.x"
 "	      00543bcd    cmp eax,ecx"
 "	      00543bcf    jne near ptr 00543BF3h"
 "	      00543bd5    xor eax,eax"
-"	      00543bd7    mov al,[ebp-1Bh]"
+"	      00543bd7    mov al,path.yindexCurr"
 "	      00543bda    xor ecx,ecx"
-"	      00543bdc    mov cl,[ebp+0Dh]"
+"	      00543bdc    mov cl,destVertex.yindex"
 "	      00543bdf    cmp eax,ecx"
 "	      00543be1    jne near ptr 00543BF3h"
 );
 // LINE 212:
 	asm( 
-"	      00543be7    mov dword ptr [ebp-28h],1"
+"	      00543be7    mov pathFoundFlag,1"
 );
 // LINE 215:
 	asm( 
@@ -783,10 +783,10 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 // Block start:
 	int32_t i;
 	asm( 
-"	      00543bf3    mov dword ptr [ebp-38h],0"
+"	      00543bf3    mov i,0"
 "	      00543bfa    jmp near ptr 00543C02h"
-"	      00543bff    inc dword ptr [ebp-38h]"
-"	      00543c02    cmp dword ptr [ebp-38h],4"
+"	      00543bff    inc i"
+"	      00543c02    cmp i,4"
 "	      00543c06    jge near ptr 00543CC9h"
 );
 // LINE 222:
@@ -794,12 +794,12 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	struct RGVertex* pCurrRGV;
 	struct Edge* pEdge;
 	asm( 
-"	      00543c0c    mov eax,[ebp-10h]"
+"	      00543c0c    mov eax,pRGV"
 "	      00543c0f    mov al,[eax+2]"
 "	      00543c12    and al,0Fh"
 "	      00543c14    xor ecx,ecx"
 "	      00543c16    mov cl,al"
-"	      00543c18    mov eax,[ebp-38h]"
+"	      00543c18    mov eax,i"
 "	      00543c1b    test [eax*4+5934F8h],ecx"
 "	      00543c22    jne near ptr 00543C2Dh"
 );
@@ -809,20 +809,20 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 226:
 	asm( 
-"	      00543c2d    mov eax,[ebp-38h]"
+"	      00543c2d    mov eax,i"
 "	      00543c30    lea eax,[eax+eax*4]"
 "	      00543c33    add eax,eax"
-"	      00543c35    add eax,[ebp-10h]"
+"	      00543c35    add eax,pRGV"
 "	      00543c38    add eax,4"
-"	      00543c3b    mov [ebp-3Ch],eax"
+"	      00543c3b    mov pEdge,eax"
 );
 // LINE 227:
 	asm( 
-"	      00543c3e    mov eax,[ebp-3Ch]"
+"	      00543c3e    mov eax,pEdge"
 "	      00543c41    xor ecx,ecx"
 "	      00543c43    mov cl,[eax+1]"
 "	      00543c46    mov eax,[ecx*4+5C3828h]"
-"	      00543c4d    mov ecx,[ebp-3Ch]"
+"	      00543c4d    mov ecx,pEdge"
 "	      00543c50    xor edx,edx"
 "	      00543c52    mov dl,[ecx]"
 "	      00543c54    mov ecx,edx"
@@ -830,37 +830,37 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543c59    lea edx,[edx+edx*4]"
 "	      00543c5c    lea ecx,[ecx+edx*2]"
 "	      00543c5f    add eax,ecx"
-"	      00543c61    mov [ebp-40h],eax"
+"	      00543c61    mov pCurrRGV,eax"
 );
 // LINE 228:
 	asm( 
-"	      00543c64    mov eax,[ebp-40h]"
+"	      00543c64    mov eax,pCurrRGV"
 "	      00543c67    cmp dword ptr [eax+2Fh],0"
 "	      00543c6b    jne near ptr 00543CC4h"
 );
 // LINE 230:
 	asm( 
-"	      00543c71    mov eax,[ebp-40h]"
+"	      00543c71    mov eax,pCurrRGV"
 "	      00543c74    mov al,[eax]"
-"	      00543c76    mov [ebp-24h],al"
+"	      00543c76    mov currLoc.x,al"
 );
 // LINE 231:
 	asm( 
-"	      00543c79    mov eax,[ebp-40h]"
+"	      00543c79    mov eax,pCurrRGV"
 "	      00543c7c    mov al,[eax+1]"
-"	      00543c7f    mov [ebp-23h],al"
+"	      00543c7f    mov currLoc.y,al"
 );
 // LINE 233:
 	asm( 
-"	      00543c82    mov eax,[ebp-3Ch]"
+"	      00543c82    mov eax,pEdge"
 "	      00543c85    mov al,[eax+1]"
-"	      00543c88    mov [ebp-0Ch],al"
+"	      00543c88    mov scratch.xCurr,al"
 );
 // LINE 234:
 	asm( 
-"	      00543c8b    mov eax,[ebp-3Ch]"
+"	      00543c8b    mov eax,pEdge"
 "	      00543c8e    mov al,[eax]"
-"	      00543c90    mov [ebp-0Bh],al"
+"	      00543c90    mov scratch.yindexCurr,al"
 );
 // LINE 235:
 	asm( 
@@ -868,30 +868,30 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543c96    push eax"
 "	      00543c97    mov eax,[ebp-24h]"
 "	      00543c9a    push eax"
-"	      00543c9b    mov ecx,[ebp-44h]"
+"	      00543c9b    mov ecx,this"
 "	      00543c9e    call 00543690h"
-"	      00543ca3    mov [ebp-7],eax"
+"	      00543ca3    mov scratch.cost,eax"
 );
 // LINE 236:
 	asm( 
 "	      00543ca6    mov al,[ebp-38h]"
-"	      00543ca9    mov [ebp-0Ah],al"
+"	      00543ca9    mov scratch.edgeIndexPrev,al"
 );
 // LINE 237:
 	asm( 
-"	      00543cac    mov al,[ebp-1Ch]"
-"	      00543caf    mov [ebp-9],al"
+"	      00543cac    mov al,path.xCurr"
+"	      00543caf    mov scratch.xPrev,al"
 );
 // LINE 238:
 	asm( 
-"	      00543cb2    mov al,[ebp-1Bh]"
-"	      00543cb5    mov [ebp-8],al"
+"	      00543cb2    mov al,path.yindexCurr"
+"	      00543cb5    mov scratch.yindexPrev,al"
 );
 // LINE 239:
 	asm( 
-"	      00543cb8    lea eax,[ebp-0Ch]"
+"	      00543cb8    lea eax,scratch.xCurr"
 "	      00543cbb    push eax"
-"	      00543cbc    mov ecx,[ebp-44h]"
+"	      00543cbc    mov ecx,this"
 "	      00543cbf    call 00543CDDh"
 );
 // LINE 241:
@@ -906,7 +906,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 246:
 	asm( 
-"	      00543cce    mov eax,[ebp-28h]"
+"	      00543cce    mov eax,pathFoundFlag"
 "	      00543cd1    jmp near ptr 00543CD6h"
 );
 // LINE 247:
@@ -932,22 +932,22 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 "	      00543ce3    push ebx"
 "	      00543ce4    push esi"
 "	      00543ce5    push edi"
-"	      00543ce6    mov [ebp-14h],ecx"
+"	      00543ce6    mov this,ecx"
 );
 // LINE 255:
 	asm( 
-"	      00543ce9    mov eax,[ebp-14h]"
+"	      00543ce9    mov eax,this"
 "	      00543cec    inc dword ptr [eax+4]"
-"	      00543cef    mov eax,[ebp-14h]"
+"	      00543cef    mov eax,this"
 "	      00543cf2    mov eax,[eax+4]"
-"	      00543cf5    mov [ebp-10h],eax"
+"	      00543cf5    mov index,eax"
 );
 // LINE 258:
 	asm( 
-"	      00543cf8    mov eax,[ebp+8]"
-"	      00543cfb    mov ecx,[ebp-10h]"
+"	      00543cf8    mov eax,pInsertNode"
+"	      00543cfb    mov ecx,index"
 "	      00543cfe    lea ecx,[ecx+ecx*8]"
-"	      00543d01    mov edx,[ebp-14h]"
+"	      00543d01    mov edx,this"
 "	      00543d04    add ecx,[edx]"
 "	      00543d06    mov edx,[eax]"
 "	      00543d08    mov [ecx],edx"
@@ -958,16 +958,16 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 );
 // LINE 264:
 	asm( 
-"	      00543d16    mov eax,[ebp-10h]"
+"	      00543d16    mov eax,index"
 "	      00543d19    cdq"
 "	      00543d1a    sub eax,edx"
 "	      00543d1c    sar eax,1"
 "	      00543d1f    lea eax,[eax+eax*8]"
-"	      00543d22    mov ecx,[ebp-14h]"
+"	      00543d22    mov ecx,this"
 "	      00543d25    mov ecx,[ecx]"
-"	      00543d27    mov edx,[ebp-10h]"
+"	      00543d27    mov edx,index"
 "	      00543d2a    lea edx,[edx+edx*8]"
-"	      00543d2d    mov ebx,[ebp-14h]"
+"	      00543d2d    mov ebx,this"
 "	      00543d30    mov ebx,[ebx]"
 "	      00543d32    mov edx,[edx+ebx+5]"
 "	      00543d36    cmp [eax+ecx+5],edx"
@@ -975,11 +975,11 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 );
 // LINE 266:
 	asm( 
-"	      00543d40    mov eax,[ebp-10h]"
+"	      00543d40    mov eax,index"
 "	      00543d43    lea eax,[eax+eax*8]"
-"	      00543d46    mov ecx,[ebp-14h]"
+"	      00543d46    mov ecx,this"
 "	      00543d49    add eax,[ecx]"
-"	      00543d4b    lea ecx,[ebp-0Ch]"
+"	      00543d4b    lea ecx,tempNode.xCurr"
 "	      00543d4e    mov edx,[eax]"
 "	      00543d50    mov [ecx],edx"
 "	      00543d52    mov edx,[eax+4]"
@@ -989,16 +989,16 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 );
 // LINE 267:
 	asm( 
-"	      00543d5e    mov eax,[ebp-10h]"
+"	      00543d5e    mov eax,index"
 "	      00543d61    cdq"
 "	      00543d62    sub eax,edx"
 "	      00543d64    sar eax,1"
 "	      00543d67    lea eax,[eax+eax*8]"
-"	      00543d6a    mov ecx,[ebp-14h]"
+"	      00543d6a    mov ecx,this"
 "	      00543d6d    add eax,[ecx]"
-"	      00543d6f    mov ecx,[ebp-10h]"
+"	      00543d6f    mov ecx,index"
 "	      00543d72    lea ecx,[ecx+ecx*8]"
-"	      00543d75    mov edx,[ebp-14h]"
+"	      00543d75    mov edx,this"
 "	      00543d78    add ecx,[edx]"
 "	      00543d7a    mov edx,[eax]"
 "	      00543d7c    mov [ecx],edx"
@@ -1009,13 +1009,13 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 );
 // LINE 268:
 	asm( 
-"	      00543d8a    lea ecx,[ebp-0Ch]"
-"	      00543d8d    mov eax,[ebp-10h]"
+"	      00543d8a    lea ecx,tempNode.xCurr"
+"	      00543d8d    mov eax,index"
 "	      00543d90    cdq"
 "	      00543d91    sub eax,edx"
 "	      00543d93    sar eax,1"
 "	      00543d96    lea eax,[eax+eax*8]"
-"	      00543d99    mov edx,[ebp-14h]"
+"	      00543d99    mov edx,this"
 "	      00543d9c    add eax,[edx]"
 "	      00543d9e    mov edx,[ecx]"
 "	      00543da0    mov [eax],edx"
@@ -1026,11 +1026,11 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 );
 // LINE 269:
 	asm( 
-"	      00543dae    mov eax,[ebp-10h]"
+"	      00543dae    mov eax,index"
 "	      00543db1    cdq"
 "	      00543db2    sub eax,edx"
 "	      00543db4    sar eax,1"
-"	      00543db7    mov [ebp-10h],eax"
+"	      00543db7    mov index,eax"
 );
 // LINE 270:
 	asm( 
@@ -1062,22 +1062,22 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 "	      00543dd1    push ebx"
 "	      00543dd2    push esi"
 "	      00543dd3    push edi"
-"	      00543dd4    mov [ebp-20h],ecx"
+"	      00543dd4    mov this,ecx"
 );
 // LINE 281:
 	asm( 
-"	      00543dd7    mov eax,[ebp-20h]"
+"	      00543dd7    mov eax,this"
 "	      00543dda    mov eax,[eax+4]"
-"	      00543ddd    mov [ebp-18h],eax"
-"	      00543de0    mov eax,[ebp-20h]"
+"	      00543ddd    mov index,eax"
+"	      00543de0    mov eax,this"
 "	      00543de3    dec dword ptr [eax+4]"
 );
 // LINE 282:
 	asm( 
-"	      00543de6    mov eax,[ebp-20h]"
+"	      00543de6    mov eax,this"
 "	      00543de9    mov eax,[eax]"
 "	      00543deb    add eax,9"
-"	      00543dee    mov ecx,[ebp+8]"
+"	      00543dee    mov ecx,pRemovedNode"
 "	      00543df1    mov edx,[eax]"
 "	      00543df3    mov [ecx],edx"
 "	      00543df5    mov edx,[eax+4]"
@@ -1087,12 +1087,12 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 283:
 	asm( 
-"	      00543e01    mov eax,[ebp-20h]"
+"	      00543e01    mov eax,this"
 "	      00543e04    mov eax,[eax]"
-"	      00543e06    mov ecx,[ebp-18h]"
+"	      00543e06    mov ecx,index"
 "	      00543e09    lea ecx,[ecx+ecx*8]"
 "	      00543e0c    add eax,ecx"
-"	      00543e0e    mov ecx,[ebp-20h]"
+"	      00543e0e    mov ecx,this"
 "	      00543e11    mov ecx,[ecx]"
 "	      00543e13    add ecx,9"
 "	      00543e16    mov edx,[eax]"
@@ -1101,12 +1101,12 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 "	      00543e1d    mov [ecx+4],edx"
 "	      00543e20    mov al,[eax+8]"
 "	      00543e23    mov [ecx+8],al"
-"	      00543e26    mov eax,[ebp-20h]"
+"	      00543e26    mov eax,this"
 "	      00543e29    mov eax,[eax]"
 "	      00543e2b    add eax,9"
 "	      00543e2e    mov [ebp-1Ch],eax"
 "	      00543e31    mov eax,[ebp-1Ch]"
-"	      00543e34    lea ecx,[ebp-0Ch]"
+"	      00543e34    lea ecx,tempNode.xCurr"
 "	      00543e37    mov edx,[eax]"
 "	      00543e39    mov [ecx],edx"
 "	      00543e3b    mov edx,[eax+4]"
@@ -1116,37 +1116,37 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 287:
 	asm( 
-"	      00543e47    mov dword ptr [ebp-10h],1"
+"	      00543e47    mov parent,1"
 );
 // LINE 290:
 	asm( 
-"	      00543e4e    mov eax,[ebp-20h]"
+"	      00543e4e    mov eax,this"
 "	      00543e51    mov eax,[eax+4]"
 "	      00543e54    cdq"
 "	      00543e55    sub eax,edx"
 "	      00543e57    sar eax,1"
-"	      00543e5a    cmp eax,[ebp-10h]"
+"	      00543e5a    cmp eax,parent"
 "	      00543e5d    jl near ptr 00543F41h"
 );
 // LINE 293:
 	asm( 
-"	      00543e63    mov eax,[ebp-10h]"
-"	      00543e66    add eax,[ebp-10h]"
-"	      00543e69    mov [ebp-14h],eax"
+"	      00543e63    mov eax,parent"
+"	      00543e66    add eax,parent"
+"	      00543e69    mov child,eax"
 );
 // LINE 296:
 	asm( 
-"	      00543e6c    mov eax,[ebp-20h]"
-"	      00543e6f    mov ecx,[ebp-14h]"
+"	      00543e6c    mov eax,this"
+"	      00543e6f    mov ecx,child"
 "	      00543e72    cmp [eax+4],ecx"
 "	      00543e75    jle near ptr 00543EA3h"
-"	      00543e7b    mov eax,[ebp-14h]"
+"	      00543e7b    mov eax,child"
 "	      00543e7e    lea eax,[eax+eax*8+9]"
-"	      00543e82    mov ecx,[ebp-20h]"
+"	      00543e82    mov ecx,this"
 "	      00543e85    mov ecx,[ecx]"
-"	      00543e87    mov edx,[ebp-20h]"
+"	      00543e87    mov edx,this"
 "	      00543e8a    mov edx,[edx]"
-"	      00543e8c    mov ebx,[ebp-14h]"
+"	      00543e8c    mov ebx,child"
 "	      00543e8f    lea ebx,[ebx+ebx*8]"
 "	      00543e92    mov edx,[edx+ebx+5]"
 "	      00543e96    cmp [eax+ecx+5],edx"
@@ -1154,17 +1154,17 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 297:
 	asm( 
-"	      00543ea0    inc dword ptr [ebp-14h]"
+"	      00543ea0    inc child"
 );
 // LINE 300:
 	asm( 
-"	      00543ea3    mov eax,[ebp-20h]"
+"	      00543ea3    mov eax,this"
 "	      00543ea6    mov eax,[eax]"
-"	      00543ea8    mov ecx,[ebp-10h]"
+"	      00543ea8    mov ecx,parent"
 "	      00543eab    lea ecx,[ecx+ecx*8]"
-"	      00543eae    mov edx,[ebp-20h]"
+"	      00543eae    mov edx,this"
 "	      00543eb1    mov edx,[edx]"
-"	      00543eb3    mov ebx,[ebp-14h]"
+"	      00543eb3    mov ebx,child"
 "	      00543eb6    lea ebx,[ebx+ebx*8]"
 "	      00543eb9    mov edx,[edx+ebx+5]"
 "	      00543ebd    cmp [eax+ecx+5],edx"
@@ -1176,12 +1176,12 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 304:
 	asm( 
-"	      00543ecc    mov eax,[ebp-20h]"
+"	      00543ecc    mov eax,this"
 "	      00543ecf    mov eax,[eax]"
-"	      00543ed1    mov ecx,[ebp-10h]"
+"	      00543ed1    mov ecx,parent"
 "	      00543ed4    lea ecx,[ecx+ecx*8]"
 "	      00543ed7    add eax,ecx"
-"	      00543ed9    lea ecx,[ebp-0Ch]"
+"	      00543ed9    lea ecx,tempNode.xCurr"
 "	      00543edc    mov edx,[eax]"
 "	      00543ede    mov [ecx],edx"
 "	      00543ee0    mov edx,[eax+4]"
@@ -1191,14 +1191,14 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 305:
 	asm( 
-"	      00543eec    mov eax,[ebp-20h]"
+"	      00543eec    mov eax,this"
 "	      00543eef    mov eax,[eax]"
-"	      00543ef1    mov ecx,[ebp-14h]"
+"	      00543ef1    mov ecx,child"
 "	      00543ef4    lea ecx,[ecx+ecx*8]"
 "	      00543ef7    add eax,ecx"
-"	      00543ef9    mov ecx,[ebp-20h]"
+"	      00543ef9    mov ecx,this"
 "	      00543efc    mov ecx,[ecx]"
-"	      00543efe    mov edx,[ebp-10h]"
+"	      00543efe    mov edx,parent"
 "	      00543f01    lea edx,[edx+edx*8]"
 "	      00543f04    add ecx,edx"
 "	      00543f06    mov edx,[eax]"
@@ -1210,10 +1210,10 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 306:
 	asm( 
-"	      00543f16    lea eax,[ebp-0Ch]"
-"	      00543f19    mov ecx,[ebp-20h]"
+"	      00543f16    lea eax,tempNode.xCurr"
+"	      00543f19    mov ecx,this"
 "	      00543f1c    mov ecx,[ecx]"
-"	      00543f1e    mov edx,[ebp-14h]"
+"	      00543f1e    mov edx,child"
 "	      00543f21    lea edx,[edx+edx*8]"
 "	      00543f24    add ecx,edx"
 "	      00543f26    mov edx,[eax]"
@@ -1225,8 +1225,8 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 309:
 	asm( 
-"	      00543f36    mov eax,[ebp-14h]"
-"	      00543f39    mov [ebp-10h],eax"
+"	      00543f36    mov eax,child"
+"	      00543f39    mov parent,eax"
 );
 // LINE 310:
 	asm( 
@@ -1234,10 +1234,10 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 );
 // LINE 313:
 	asm( 
-"	      00543f41    lea eax,[ebp-0Ch]"
-"	      00543f44    mov ecx,[ebp-20h]"
+"	      00543f41    lea eax,tempNode.xCurr"
+"	      00543f44    mov ecx,this"
 "	      00543f47    mov ecx,[ecx]"
-"	      00543f49    mov edx,[ebp-10h]"
+"	      00543f49    mov edx,parent"
 "	      00543f4c    lea edx,[edx+edx*8]"
 "	      00543f4f    add ecx,edx"
 "	      00543f51    mov edx,[eax]"

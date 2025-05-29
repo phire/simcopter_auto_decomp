@@ -17,7 +17,7 @@ void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32 mh) {
 );
 // LINE 104:
 	asm( 
-"	      00554726    mov eax,[ebp+8]"
+"	      00554726    mov eax,mh"
 "	      00554729    jmp near ptr 0055472Eh"
 );
 // LINE 105:
@@ -42,7 +42,7 @@ void * __ptr32 Memory::GetPlatformHandle(void * __ptr32 mh) {
 );
 // LINE 108:
 	asm( 
-"	      00554739    mov eax,[ebp+8]"
+"	      00554739    mov eax,mh"
 "	      0055473c    jmp near ptr 00554741h"
 );
 // LINE 109:
@@ -67,7 +67,7 @@ void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 );
 // LINE 115:
 	asm( 
-"	      0055474c    mov eax,[ebp+8]"
+"	      0055474c    mov eax,mem"
 "	      0055474f    jmp near ptr 00554754h"
 );
 // LINE 116:
@@ -101,37 +101,37 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 );
 // LINE 160:
 	asm( 
-"	      0055476a    mov dword ptr [ebp-4],2"
+"	      0055476a    mov wstate,2"
 );
 // LINE 162:
 	asm( 
 "	      00554771    test byte ptr [ebp+0Ch],40h"
 "	      00554775    je near ptr 00554782h"
-"	      0055477b    or dword ptr [ebp-4],0F00h"
+"	      0055477b    or wstate,0F00h"
 );
 // LINE 165:
 	asm( 
-"	      00554782    mov eax,[ebp+8]"
+"	      00554782    mov eax,size"
 "	      00554785    push eax"
-"	      00554786    mov eax,[ebp-4]"
+"	      00554786    mov eax,wstate"
 "	      00554789    push eax"
 "	      0055478a    call dword ptr ds:[6C3728h]"
-"	      00554790    mov [ebp-8],eax"
+"	      00554790    mov mem,eax"
 );
 // LINE 166:
 	asm( 
-"	      00554793    cmp dword ptr [ebp-8],0"
+"	      00554793    cmp mem,0"
 "	      00554797    je near ptr 005547B3h"
 "	      0055479d    test byte ptr [ebp+0Ch],80h"
 "	      005547a1    je near ptr 005547B3h"
-"	      005547a7    mov eax,[ebp-8]"
+"	      005547a7    mov eax,mem"
 "	      005547aa    push eax"
 "	      005547ab    call 005549E0h"
 "	      005547b0    add esp,4"
 );
 // LINE 168:
 	asm( 
-"	      005547b3    cmp dword ptr [ebp-8],0"
+"	      005547b3    cmp mem,0"
 "	      005547b7    jne near ptr 005547D9h"
 "	      005547bd    push 8C085h"
 "	      005547c2    push 5BC130h"
@@ -142,37 +142,37 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 );
 // LINE 169:
 	asm( 
-"	      005547d9    cmp dword ptr [ebp-8],0"
+"	      005547d9    cmp mem,0"
 "	      005547dd    je near ptr 0055483Bh"
 );
 // LINE 172:
 // Block start:
 	unsigned char * p;
 	asm( 
-"	      005547e3    mov eax,[ebp-8]"
+"	      005547e3    mov eax,mem"
 "	      005547e6    push eax"
 "	      005547e7    call 005549E0h"
 "	      005547ec    add esp,4"
-"	      005547ef    mov [ebp-0Ch],eax"
+"	      005547ef    mov p,eax"
 );
 // LINE 173:
 	asm( 
-"	      005547f2    cmp dword ptr [ebp-0Ch],0"
+"	      005547f2    cmp p,0"
 "	      005547f6    je near ptr 0055481Fh"
 );
 // LINE 175:
 	asm( 
-"	      005547fc    mov eax,[ebp+8]"
+"	      005547fc    mov eax,size"
 "	      005547ff    push eax"
 "	      00554800    push 0"
-"	      00554802    mov eax,[ebp-0Ch]"
+"	      00554802    mov eax,p"
 "	      00554805    push eax"
 "	      00554806    call 00554C10h"
 "	      0055480b    add esp,0Ch"
 );
 // LINE 176:
 	asm( 
-"	      0055480e    mov eax,[ebp-8]"
+"	      0055480e    mov eax,mem"
 "	      00554811    push eax"
 "	      00554812    call 00554A3Dh"
 "	      00554817    add esp,4"
@@ -193,7 +193,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 // LINE 183:
 // Block end:
 	asm( 
-"	      0055483b    mov eax,[ebp-8]"
+"	      0055483b    mov eax,mem"
 "	      0055483e    jmp near ptr 00554843h"
 );
 // LINE 184:
@@ -224,9 +224,9 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 // LINE 195:
 	asm( 
 "	      00554856    push 2"
-"	      00554858    mov eax,[ebp+0Ch]"
+"	      00554858    mov eax,oldSize"
 "	      0055485b    push eax"
-"	      0055485c    mov eax,[ebp+8]"
+"	      0055485c    mov eax,purged"
 "	      0055485f    push eax"
 "	      00554860    call dword ptr ds:[6C371Ch]"
 );
@@ -262,14 +262,14 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 // LINE 210:
 	asm( 
 "	      00554881    push 60h"
-"	      00554883    mov eax,[ebp+0Ch]"
+"	      00554883    mov eax,size"
 "	      00554886    push eax"
 "	      00554887    call dword ptr ds:[6C3728h]"
-"	      0055488d    mov [ebp-4],eax"
+"	      0055488d    mov mem,eax"
 );
 // LINE 211:
 	asm( 
-"	      00554890    cmp dword ptr [ebp-4],0"
+"	      00554890    cmp mem,0"
 "	      00554894    jne near ptr 005548B6h"
 "	      0055489a    push 8C085h"
 "	      0055489f    push 5BC1A4h"
@@ -280,7 +280,7 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 );
 // LINE 212:
 	asm( 
-"	      005548b6    mov eax,[ebp-4]"
+"	      005548b6    mov eax,mem"
 "	      005548b9    jmp near ptr 005548BEh"
 );
 // LINE 214:
@@ -313,33 +313,33 @@ void Memory::HFree(void * __ptr32 mem) {
 );
 // LINE 225:
 	asm( 
-"	      005548d4    mov eax,[ebp+8]"
+"	      005548d4    mov eax,mem"
 "	      005548d7    push eax"
 "	      005548d8    call 005549E0h"
 "	      005548dd    add esp,4"
-"	      005548e0    mov [ebp-4],eax"
+"	      005548e0    mov p,eax"
 );
 // LINE 226:
 	asm( 
-"	      005548e3    cmp dword ptr [ebp-4],0"
+"	      005548e3    cmp p,0"
 "	      005548e7    je near ptr 0055491Ch"
 );
 // LINE 228:
 	asm( 
-"	      005548ed    mov eax,[ebp+8]"
+"	      005548ed    mov eax,mem"
 "	      005548f0    push eax"
 "	      005548f1    call 00554D05h"
 "	      005548f6    add esp,4"
 "	      005548f9    push eax"
 "	      005548fa    push 0A3h"
-"	      005548ff    mov eax,[ebp-4]"
+"	      005548ff    mov eax,p"
 "	      00554902    push eax"
 "	      00554903    call 00554C10h"
 "	      00554908    add esp,0Ch"
 );
 // LINE 229:
 	asm( 
-"	      0055490b    mov eax,[ebp+8]"
+"	      0055490b    mov eax,mem"
 "	      0055490e    push eax"
 "	      0055490f    call 00554A3Dh"
 "	      00554914    add esp,4"
@@ -359,7 +359,7 @@ void Memory::HFree(void * __ptr32 mem) {
 );
 // LINE 240:
 	asm( 
-"	      00554938    mov eax,[ebp+8]"
+"	      00554938    mov eax,mem"
 "	      0055493b    push eax"
 "	      0055493c    call dword ptr ds:[6C3714h]"
 );
@@ -403,20 +403,20 @@ void Memory::PFree(unsigned char * mem) {
 );
 // LINE 251:
 	asm( 
-"	      00554984    mov eax,[ebp+8]"
+"	      00554984    mov eax,mem"
 "	      00554987    push eax"
 "	      00554988    call 00554D5Ah"
 "	      0055498d    add esp,4"
 "	      00554990    push eax"
 "	      00554991    push 0A3h"
-"	      00554996    mov eax,[ebp+8]"
+"	      00554996    mov eax,mem"
 "	      00554999    push eax"
 "	      0055499a    call 00554C10h"
 "	      0055499f    add esp,0Ch"
 );
 // LINE 257:
 	asm( 
-"	      005549a2    mov eax,[ebp+8]"
+"	      005549a2    mov eax,mem"
 "	      005549a5    push eax"
 "	      005549a6    call dword ptr ds:[6C3714h]"
 );
@@ -464,22 +464,22 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 );
 // LINE 274:
 	asm( 
-"	      005549f1    mov eax,[ebp+8]"
+"	      005549f1    mov eax,mem"
 "	      005549f4    push eax"
 "	      005549f5    call dword ptr ds:[6C3710h]"
-"	      005549fb    mov [ebp-4],eax"
+"	      005549fb    mov p,eax"
 );
 // LINE 278:
 	asm( 
 "	      005549fe    call dword ptr ds:[6C3718h]"
-"	      00554a04    mov [ebp-8],ax"
+"	      00554a04    mov err,ax"
 );
 // LINE 279:
 	asm( 
-"	      00554a08    movsx eax,word ptr [ebp-8]"
+"	      00554a08    movsx eax,err"
 "	      00554a0c    test eax,eax"
 "	      00554a0e    je near ptr 00554A30h"
-"	      00554a14    movsx eax,word ptr [ebp-8]"
+"	      00554a14    movsx eax,err"
 "	      00554a18    push eax"
 "	      00554a19    push 5BC278h"
 "	      00554a1e    push 117h"
@@ -489,7 +489,7 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 );
 // LINE 289:
 	asm( 
-"	      00554a30    mov eax,[ebp-4]"
+"	      00554a30    mov eax,p"
 "	      00554a33    jmp near ptr 00554A38h"
 );
 // LINE 290:
@@ -522,18 +522,18 @@ void Memory::HUnlock(void * __ptr32 mem) {
 );
 // LINE 300:
 	asm( 
-"	      00554a4e    mov eax,[ebp+8]"
+"	      00554a4e    mov eax,mem"
 "	      00554a51    push eax"
 "	      00554a52    call dword ptr ds:[6C370Ch]"
 );
 // LINE 304:
 	asm( 
 "	      00554a58    call dword ptr ds:[6C3718h]"
-"	      00554a5e    mov [ebp-4],ax"
+"	      00554a5e    mov err,ax"
 );
 // LINE 305:
 	asm( 
-"	      00554a62    movsx eax,word ptr [ebp-4]"
+"	      00554a62    movsx eax,err"
 "	      00554a66    test eax,eax"
 "	      00554a68    je near ptr 00554A8Ah"
 "	      00554a6e    push 8C085h"
@@ -660,24 +660,24 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 );
 // LINE 353:
 	asm( 
-"	      00554b15    mov eax,[ebp+8]"
+"	      00554b15    mov eax,h"
 "	      00554b18    push eax"
 "	      00554b19    call 00554A3Dh"
 "	      00554b1e    add esp,4"
 );
 // LINE 354:
 	asm( 
-"	      00554b21    mov eax,[ebp+8]"
+"	      00554b21    mov eax,h"
 "	      00554b24    push eax"
 "	      00554b25    call 00554A94h"
 "	      00554b2a    add esp,4"
 );
 // LINE 360:
 	asm( 
-"	      00554b2d    mov eax,[ebp+8]"
+"	      00554b2d    mov eax,h"
 "	      00554b30    push eax"
 "	      00554b31    call dword ptr ds:[6C3708h]"
-"	      00554b37    mov [ebp-4],eax"
+"	      00554b37    mov flags,eax"
 );
 // LINE 361:
 	asm( 
@@ -692,7 +692,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 );
 // LINE 363:
 	asm( 
-"	      00554b60    mov eax,[ebp+8]"
+"	      00554b60    mov eax,h"
 "	      00554b63    push eax"
 "	      00554b64    call 005549E0h"
 "	      00554b69    add esp,4"
@@ -720,7 +720,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 );
 // LINE 371:
 	asm( 
-"	      00554b7c    cmp dword ptr [ebp+10h],7A1200h"
+"	      00554b7c    cmp size,7A1200h"
 "	      00554b83    jb near ptr 00554BA5h"
 "	      00554b89    push 8C085h"
 "	      00554b8e    push 5BC3C4h"
@@ -731,11 +731,11 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 );
 // LINE 375:
 	asm( 
-"	      00554ba5    mov eax,[ebp+10h]"
+"	      00554ba5    mov eax,size"
 "	      00554ba8    push eax"
-"	      00554ba9    mov eax,[ebp+8]"
+"	      00554ba9    mov eax,from"
 "	      00554bac    push eax"
-"	      00554bad    mov eax,[ebp+0Ch]"
+"	      00554bad    mov eax,to"
 "	      00554bb0    push eax"
 "	      00554bb1    call 00575320h"
 "	      00554bb6    add esp,0Ch"
@@ -763,7 +763,7 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 );
 // LINE 381:
 	asm( 
-"	      00554bc9    cmp dword ptr [ebp+10h],7A1200h"
+"	      00554bc9    cmp size,7A1200h"
 "	      00554bd0    jb near ptr 00554BF2h"
 "	      00554bd6    push 8C085h"
 "	      00554bdb    push 5BC41Ch"
@@ -774,11 +774,11 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 );
 // LINE 385:
 	asm( 
-"	      00554bf2    mov eax,[ebp+10h]"
+"	      00554bf2    mov eax,size"
 "	      00554bf5    push eax"
-"	      00554bf6    mov eax,[ebp+8]"
+"	      00554bf6    mov eax,from"
 "	      00554bf9    push eax"
-"	      00554bfa    mov eax,[ebp+0Ch]"
+"	      00554bfa    mov eax,to"
 "	      00554bfd    push eax"
 "	      00554bfe    call 0056A800h"
 "	      00554c03    add esp,0Ch"
@@ -814,12 +814,12 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 );
 // LINE 395:
 	asm( 
-"	      00554c21    mov eax,[ebp+10h]"
+"	      00554c21    mov eax,size"
 "	      00554c24    push eax"
 "	      00554c25    xor eax,eax"
-"	      00554c27    mov al,[ebp+0Ch]"
+"	      00554c27    mov al,byteVal"
 "	      00554c2a    push eax"
-"	      00554c2b    mov eax,[ebp+8]"
+"	      00554c2b    mov eax,mem"
 "	      00554c2e    push eax"
 "	      00554c2f    call 0056EB90h"
 "	      00554c34    add esp,0Ch"
@@ -827,11 +827,11 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 // LINE 397:
 	asm( 
 "	      00554c37    call dword ptr ds:[6C3718h]"
-"	      00554c3d    mov [ebp-4],ax"
+"	      00554c3d    mov err,ax"
 );
 // LINE 398:
 	asm( 
-"	      00554c41    movsx eax,word ptr [ebp-4]"
+"	      00554c41    movsx eax,err"
 "	      00554c45    test eax,eax"
 "	      00554c47    je near ptr 00554C69h"
 "	      00554c4d    push 8C085h"
@@ -864,11 +864,11 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 );
 // LINE 402:
 	asm( 
-"	      00554c79    mov eax,[ebp+10h]"
+"	      00554c79    mov eax,size"
 "	      00554c7c    push eax"
-"	      00554c7d    mov eax,[ebp+0Ch]"
+"	      00554c7d    mov eax,second"
 "	      00554c80    push eax"
-"	      00554c81    mov eax,[ebp+8]"
+"	      00554c81    mov eax,first"
 "	      00554c84    push eax"
 "	      00554c85    call 0056AC90h"
 "	      00554c8a    add esp,0Ch"
@@ -973,10 +973,10 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 );
 // LINE 429:
 	asm( 
-"	      00554d16    mov eax,[ebp+8]"
+"	      00554d16    mov eax,mem"
 "	      00554d19    push eax"
 "	      00554d1a    call dword ptr ds:[6C3704h]"
-"	      00554d20    mov [ebp-4],eax"
+"	      00554d20    mov size,eax"
 );
 // LINE 431:
 	asm( 
@@ -992,7 +992,7 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 );
 // LINE 432:
 	asm( 
-"	      00554d4d    mov eax,[ebp-4]"
+"	      00554d4d    mov eax,size"
 "	      00554d50    jmp near ptr 00554D55h"
 );
 // LINE 433:
@@ -1025,10 +1025,10 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 );
 // LINE 444:
 	asm( 
-"	      00554d6b    mov eax,[ebp+8]"
+"	      00554d6b    mov eax,mem"
 "	      00554d6e    push eax"
 "	      00554d6f    call dword ptr ds:[6C3704h]"
-"	      00554d75    mov [ebp-4],eax"
+"	      00554d75    mov size,eax"
 );
 // LINE 446:
 	asm( 
@@ -1044,7 +1044,7 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 );
 // LINE 447:
 	asm( 
-"	      00554da2    mov eax,[ebp-4]"
+"	      00554da2    mov eax,size"
 "	      00554da5    jmp near ptr 00554DAAh"
 );
 // LINE 448:
@@ -1072,11 +1072,11 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 );
 // LINE 455:
 	asm( 
-"	      00554db8    mov eax,[ebp+8]"
+"	      00554db8    mov eax,h"
 "	      00554dbb    push eax"
 "	      00554dbc    call 00554DE7h"
 "	      00554dc1    add esp,4"
-"	      00554dc4    mov [ebp-4],eax"
+"	      00554dc4    mov state,eax"
 );
 // LINE 456:
 	asm( 
@@ -1118,26 +1118,26 @@ long Memory::HGetState(void * __ptr32 h) {
 );
 // LINE 468:
 	asm( 
-"	      00554df8    mov eax,[ebp+8]"
+"	      00554df8    mov eax,h"
 "	      00554dfb    push eax"
 "	      00554dfc    call dword ptr ds:[6C3708h]"
-"	      00554e02    mov [ebp-4],eax"
+"	      00554e02    mov wstate,eax"
 );
 // LINE 469:
 	asm( 
-"	      00554e05    mov dword ptr [ebp-8],0"
+"	      00554e05    mov state,0"
 );
 // LINE 470:
 	asm( 
 "	      00554e0c    cmp byte ptr [ebp-4],0"
 "	      00554e10    je near ptr 00554E1Dh"
-"	      00554e16    or dword ptr [ebp-8],80h"
+"	      00554e16    or state,80h"
 );
 // LINE 471:
 	asm( 
 "	      00554e1d    test byte ptr [ebp-3],0Fh"
 "	      00554e21    je near ptr 00554E2Bh"
-"	      00554e27    or dword ptr [ebp-8],40h"
+"	      00554e27    or state,40h"
 );
 // LINE 472:
 	asm( 
@@ -1153,7 +1153,7 @@ long Memory::HGetState(void * __ptr32 h) {
 );
 // LINE 474:
 	asm( 
-"	      00554e55    mov eax,[ebp-8]"
+"	      00554e55    mov eax,state"
 "	      00554e58    jmp near ptr 00554E5Dh"
 );
 // LINE 475:
@@ -1180,7 +1180,7 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	asm( 
 "	      00554e68    test byte ptr [ebp+0Ch],80h"
 "	      00554e6c    je near ptr 00554E83h"
-"	      00554e72    mov eax,[ebp+8]"
+"	      00554e72    mov eax,h"
 "	      00554e75    push eax"
 "	      00554e76    call 005549E0h"
 "	      00554e7b    add esp,4"
@@ -1188,7 +1188,7 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 // LINE 487:
 	asm( 
 "	      00554e7e    jmp near ptr 00554E8Fh"
-"	      00554e83    mov eax,[ebp+8]"
+"	      00554e83    mov eax,h"
 "	      00554e86    push eax"
 "	      00554e87    call 00554A3Dh"
 "	      00554e8c    add esp,4"
@@ -1224,7 +1224,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 );
 // LINE 502:
 	asm( 
-"	      00554eaa    mov eax,[ebp+8]"
+"	      00554eaa    mov eax,mem"
 "	      00554ead    push eax"
 "	      00554eae    call 00554DAFh"
 "	      00554eb3    add esp,4"
@@ -1241,21 +1241,21 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 // LINE 503:
 	asm( 
 "	      00554edd    push 2"
-"	      00554edf    mov eax,[ebp+0Ch]"
+"	      00554edf    mov eax,newSize"
 "	      00554ee2    push eax"
-"	      00554ee3    mov eax,[ebp+8]"
+"	      00554ee3    mov eax,mem"
 "	      00554ee6    push eax"
 "	      00554ee7    call dword ptr ds:[6C371Ch]"
-"	      00554eed    mov [ebp+8],eax"
+"	      00554eed    mov mem,eax"
 );
 // LINE 504:
 	asm( 
 "	      00554ef0    call dword ptr ds:[6C3718h]"
-"	      00554ef6    mov [ebp-4],eax"
+"	      00554ef6    mov err,eax"
 );
 // LINE 506:
 	asm( 
-"	      00554ef9    mov eax,[ebp-4]"
+"	      00554ef9    mov eax,err"
 "	      00554efc    jmp near ptr 00554F01h"
 );
 // LINE 507:
@@ -1284,11 +1284,11 @@ long Memory::Error() {
 // LINE 541:
 	asm( 
 "	      00554f0f    call dword ptr ds:[6C3718h]"
-"	      00554f15    mov [ebp-4],eax"
+"	      00554f15    mov err,eax"
 );
 // LINE 543:
 	asm( 
-"	      00554f18    mov eax,[ebp-4]"
+"	      00554f18    mov eax,err"
 "	      00554f1b    jmp near ptr 00554F20h"
 );
 // LINE 544:

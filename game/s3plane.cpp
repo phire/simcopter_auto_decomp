@@ -29,22 +29,22 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 "	      0052b153    push ebx"
 "	      0052b154    push esi"
 "	      0052b155    push edi"
-"	      0052b156    mov [ebp-8],ecx"
-"	      0052b159    mov eax,[ebp-8]"
+"	      0052b156    mov this,ecx"
+"	      0052b159    mov eax,this"
 "	      0052b15c    mov dword ptr [eax],593220h"
 );
 // LINE 177:
 	asm( 
-"	      0052b162    mov dword ptr [ebp-4],0"
+"	      0052b162    mov currentFlag,0"
 "	      0052b169    jmp near ptr 0052B171h"
-"	      0052b16e    inc dword ptr [ebp-4]"
-"	      0052b171    cmp dword ptr [ebp-4],4"
+"	      0052b16e    inc currentFlag"
+"	      0052b171    cmp currentFlag,4"
 "	      0052b175    jge near ptr 0052B18Bh"
 );
 // LINE 179:
 	asm( 
-"	      0052b17b    mov eax,[ebp-4]"
-"	      0052b17e    mov ecx,[ebp-8]"
+"	      0052b17b    mov eax,currentFlag"
+"	      0052b17e    mov ecx,this"
 "	      0052b181    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 180:
@@ -53,46 +53,46 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 );
 // LINE 182:
 	asm( 
-"	      0052b18b    mov eax,[ebp-8]"
+"	      0052b18b    mov eax,this"
 "	      0052b18e    mov dword ptr [eax+60h],0"
 );
 // LINE 183:
 	asm( 
-"	      0052b195    mov eax,[ebp-8]"
+"	      0052b195    mov eax,this"
 "	      0052b198    mov dword ptr [eax+34h],0"
 );
 // LINE 184:
 	asm( 
-"	      0052b19f    mov eax,[ebp-8]"
+"	      0052b19f    mov eax,this"
 "	      0052b1a2    mov dword ptr [eax+18h],0"
 );
 // LINE 185:
 	asm( 
-"	      0052b1a9    mov eax,[ebp-8]"
+"	      0052b1a9    mov eax,this"
 "	      0052b1ac    mov dword ptr [eax+1Ch],0"
 );
 // LINE 186:
 	asm( 
-"	      0052b1b3    mov eax,[ebp+8]"
-"	      0052b1b6    mov ecx,[ebp-8]"
+"	      0052b1b3    mov eax,mapx"
+"	      0052b1b6    mov ecx,this"
 "	      0052b1b9    mov [ecx+20h],eax"
 );
 // LINE 187:
 	asm( 
-"	      0052b1bc    mov eax,[ebp+0Ch]"
-"	      0052b1bf    mov ecx,[ebp-8]"
+"	      0052b1bc    mov eax,mapy"
+"	      0052b1bf    mov ecx,this"
 "	      0052b1c2    mov [ecx+24h],eax"
 );
 // LINE 188:
 	asm( 
-"	      0052b1c5    mov eax,[ebp+8]"
-"	      0052b1c8    mov ecx,[ebp-8]"
+"	      0052b1c5    mov eax,mapx"
+"	      0052b1c8    mov ecx,this"
 "	      0052b1cb    mov [ecx+28h],eax"
 );
 // LINE 189:
 	asm( 
-"	      0052b1ce    mov eax,[ebp+0Ch]"
-"	      0052b1d1    mov ecx,[ebp-8]"
+"	      0052b1ce    mov eax,mapy"
+"	      0052b1d1    mov ecx,this"
 "	      0052b1d4    mov [ecx+2Ch],eax"
 );
 // LINE 196:
@@ -102,7 +102,7 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 );
 // LINE 198:
 	asm( 
-"	      0052b1e4    mov eax,[ebp-8]"
+"	      0052b1e4    mov eax,this"
 "	      0052b1e7    mov dword ptr [eax+54h],12Eh"
 );
 // LINE 199:
@@ -115,13 +115,13 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 );
 // LINE 203:
 	asm( 
-"	      0052b1fd    mov eax,[ebp-8]"
+"	      0052b1fd    mov eax,this"
 "	      0052b200    mov dword ptr [eax+54h],17Ch"
 );
 // LINE 205:
 	asm( 
 "	      0052b207    jmp near ptr 0052B20Ch"
-"	      0052b20c    mov eax,[ebp-8]"
+"	      0052b20c    mov eax,this"
 "	      0052b20f    pop edi"
 "	      0052b210    pop esi"
 "	      0052b211    pop ebx"
@@ -140,14 +140,14 @@ void PlaneClass::~PlaneClass() {
 "	      0052b21c    push ebx"
 "	      0052b21d    push esi"
 "	      0052b21e    push edi"
-"	      0052b21f    mov [ebp-4],ecx"
-"	      0052b222    mov eax,[ebp-4]"
+"	      0052b21f    mov this,ecx"
+"	      0052b222    mov eax,this"
 "	      0052b225    mov dword ptr [eax],593220h"
 );
 // LINE 229:
 	asm( 
 "	      0052b22b    jmp near ptr 0052B230h"
-"	      0052b230    mov eax,[ebp-4]"
+"	      0052b230    mov eax,this"
 "	      0052b233    movsx eax,byte ptr [eax+4]"
 "	      0052b237    test eax,eax"
 "	      0052b239    je near ptr 0052B262h"
@@ -155,22 +155,22 @@ void PlaneClass::~PlaneClass() {
 // LINE 231:
 	asm( 
 "	      0052b23f    jmp near ptr 0052B244h"
-"	      0052b244    mov eax,[ebp-4]"
+"	      0052b244    mov eax,this"
 "	      0052b247    movsx eax,byte ptr [eax+5]"
 "	      0052b24b    test eax,eax"
 "	      0052b24d    je near ptr 0052B262h"
 );
 // LINE 233:
 	asm( 
-"	      0052b253    mov eax,[ebp-4]"
+"	      0052b253    mov eax,this"
 "	      0052b256    add eax,20h"
 "	      0052b259    push eax"
-"	      0052b25a    mov ecx,[ebp-4]"
+"	      0052b25a    mov ecx,this"
 "	      0052b25d    call 0052CACBh"
 );
 // LINE 245:
 	asm( 
-"	      0052b262    mov eax,[ebp-4]"
+"	      0052b262    mov eax,this"
 "	      0052b265    mov byte ptr [eax+4],0"
 );
 // LINE 246:
@@ -196,7 +196,7 @@ class PlaneClass* PlaneClass::GetPlanePointer(long index) {
 );
 // LINE 266:
 	asm( 
-"	      0052b279    cmp dword ptr [ebp+8],2"
+"	      0052b279    cmp index,2"
 "	      0052b27d    jl near ptr 0052B28Ah"
 );
 // LINE 267:
@@ -206,7 +206,7 @@ class PlaneClass* PlaneClass::GetPlanePointer(long index) {
 );
 // LINE 269:
 	asm( 
-"	      0052b28a    mov eax,[ebp+8]"
+"	      0052b28a    mov eax,index"
 "	      0052b28d    mov eax,[eax*4+62B7A8h]"
 "	      0052b294    jmp near ptr 0052B299h"
 );
@@ -232,7 +232,7 @@ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 290:
 	asm( 
-"	      0052b2a4    mov eax,[ebp+8]"
+"	      0052b2a4    mov eax,instanceID"
 "	      0052b2a7    push eax"
 "	      0052b2a8    push 0FFFFFFFFh"
 "	      0052b2aa    push 0FFFFFFFFh"
@@ -271,33 +271,33 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 "	      0052b2d4    mov [ebp-8],eax"
 "	      0052b2d7    cmp dword ptr [ebp-8],0"
 "	      0052b2db    je near ptr 0052B2F9h"
-"	      0052b2e1    mov eax,[ebp+0Ch]"
+"	      0052b2e1    mov eax,mapy"
 "	      0052b2e4    push eax"
-"	      0052b2e5    mov eax,[ebp+8]"
+"	      0052b2e5    mov eax,mapx"
 "	      0052b2e8    push eax"
 "	      0052b2e9    mov ecx,[ebp-8]"
 "	      0052b2ec    call 0052B14Dh"
-"	      0052b2f1    mov [ebp-4],eax"
+"	      0052b2f1    mov newplane,eax"
 "	      0052b2f4    jmp near ptr 0052B300h"
-"	      0052b2f9    mov dword ptr [ebp-4],0"
+"	      0052b2f9    mov newplane,0"
 );
 // LINE 357:
 	asm( 
-"	      0052b300    cmp dword ptr [ebp-4],0"
+"	      0052b300    cmp newplane,0"
 "	      0052b304    je near ptr 0052B352h"
 );
 // LINE 361:
 	asm( 
-"	      0052b30a    mov eax,[ebp+10h]"
+"	      0052b30a    mov eax,instanceID"
 "	      0052b30d    push eax"
-"	      0052b30e    mov ecx,[ebp-4]"
+"	      0052b30e    mov ecx,newplane"
 "	      0052b311    call 0052B35Eh"
 "	      0052b316    test eax,eax"
 "	      0052b318    je near ptr 0052B32Bh"
 );
 // LINE 363:
 	asm( 
-"	      0052b31e    mov eax,[ebp-4]"
+"	      0052b31e    mov eax,newplane"
 "	      0052b321    jmp near ptr 0052B359h"
 );
 // LINE 365:
@@ -306,7 +306,7 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 );
 // LINE 369:
 	asm( 
-"	      0052b32b    mov eax,[ebp-4]"
+"	      0052b32b    mov eax,newplane"
 "	      0052b32e    mov [ebp-10h],eax"
 "	      0052b331    mov eax,[ebp-10h]"
 "	      0052b334    mov [ebp-0Ch],eax"
@@ -344,19 +344,19 @@ int32_t PlaneClass::Initialize(int32_t instanceID) {
 "	      0052b364    push ebx"
 "	      0052b365    push esi"
 "	      0052b366    push edi"
-"	      0052b367    mov [ebp-4],ecx"
+"	      0052b367    mov this,ecx"
 );
 // LINE 453:
 	asm( 
-"	      0052b36a    mov eax,[ebp+8]"
+"	      0052b36a    mov eax,instanceID"
 "	      0052b36d    push eax"
-"	      0052b36e    mov eax,[ebp-4]"
+"	      0052b36e    mov eax,this"
 "	      0052b371    mov eax,[eax+24h]"
 "	      0052b374    push eax"
-"	      0052b375    mov eax,[ebp-4]"
+"	      0052b375    mov eax,this"
 "	      0052b378    mov eax,[eax+20h]"
 "	      0052b37b    push eax"
-"	      0052b37c    mov ecx,[ebp-4]"
+"	      0052b37c    mov ecx,this"
 "	      0052b37f    call 0052D456h"
 "	      0052b384    jmp near ptr 0052B389h"
 );
@@ -385,15 +385,15 @@ void PlaneClass::ResetAll() {
 );
 // LINE 498:
 	asm( 
-"	      0052b399    mov dword ptr [ebp-4],0"
+"	      0052b399    mov currentPlaneIndex,0"
 "	      0052b3a0    jmp near ptr 0052B3A8h"
-"	      0052b3a5    inc dword ptr [ebp-4]"
-"	      0052b3a8    cmp dword ptr [ebp-4],2"
+"	      0052b3a5    inc currentPlaneIndex"
+"	      0052b3a8    cmp currentPlaneIndex,2"
 "	      0052b3ac    jge near ptr 0052B3C6h"
 );
 // LINE 500:
 	asm( 
-"	      0052b3b2    mov eax,[ebp-4]"
+"	      0052b3b2    mov eax,currentPlaneIndex"
 "	      0052b3b5    mov ecx,[eax*4+62B7A8h]"
 "	      0052b3bc    call 0052B64Ah"
 );
@@ -427,15 +427,15 @@ void PlaneClass::ItterateAll() {
 );
 // LINE 548:
 	asm( 
-"	      0052b3d9    mov dword ptr [ebp-4],0"
+"	      0052b3d9    mov currentPlaneIndex,0"
 "	      0052b3e0    jmp near ptr 0052B3E8h"
-"	      0052b3e5    inc dword ptr [ebp-4]"
-"	      0052b3e8    cmp dword ptr [ebp-4],2"
+"	      0052b3e5    inc currentPlaneIndex"
+"	      0052b3e8    cmp currentPlaneIndex,2"
 "	      0052b3ec    jge near ptr 0052B406h"
 );
 // LINE 550:
 	asm( 
-"	      0052b3f2    mov eax,[ebp-4]"
+"	      0052b3f2    mov eax,currentPlaneIndex"
 "	      0052b3f5    mov ecx,[eax*4+62B7A8h]"
 "	      0052b3fc    call 0052B4D5h"
 );
@@ -469,27 +469,27 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 );
 // LINE 580:
 	asm( 
-"	      0052b419    mov dword ptr [ebp-4],0"
+"	      0052b419    mov currentPlaneIndex,0"
 "	      0052b420    jmp near ptr 0052B428h"
-"	      0052b425    inc dword ptr [ebp-4]"
-"	      0052b428    cmp dword ptr [ebp-4],2"
+"	      0052b425    inc currentPlaneIndex"
+"	      0052b428    cmp currentPlaneIndex,2"
 "	      0052b42c    jge near ptr 0052B4C9h"
 );
 // LINE 584:
 	asm( 
 "	      0052b432    jmp near ptr 0052B437h"
-"	      0052b437    mov eax,[ebp-4]"
+"	      0052b437    mov eax,currentPlaneIndex"
 "	      0052b43a    mov eax,[eax*4+62B7A8h]"
 "	      0052b441    movsx eax,byte ptr [eax+6]"
 "	      0052b445    test eax,eax"
 "	      0052b447    jne near ptr 0052B4C4h"
 "	      0052b44d    jmp near ptr 0052B452h"
-"	      0052b452    mov eax,[ebp-4]"
+"	      0052b452    mov eax,currentPlaneIndex"
 "	      0052b455    mov eax,[eax*4+62B7A8h]"
 "	      0052b45c    movsx eax,byte ptr [eax+7]"
 "	      0052b460    test eax,eax"
 "	      0052b462    jne near ptr 0052B4C4h"
-"	      0052b468    mov eax,[ebp-4]"
+"	      0052b468    mov eax,currentPlaneIndex"
 "	      0052b46b    mov eax,[eax*4+62B7A8h]"
 "	      0052b472    cmp dword ptr [eax+54h],12Eh"
 "	      0052b479    jne near ptr 0052B484h"
@@ -501,7 +501,7 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 );
 // LINE 585:
 	asm( 
-"	      0052b498    mov eax,[ebp-4]"
+"	      0052b498    mov eax,currentPlaneIndex"
 "	      0052b49b    mov eax,[eax*4+62B7A8h]"
 "	      0052b4a2    mov [ebp-0Ch],eax"
 );
@@ -509,7 +509,7 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	asm( 
 "	      0052b4a5    mov eax,[ebp-0Ch]"
 "	      0052b4a8    mov byte ptr [eax+6],1"
-"	      0052b4ac    mov eax,[ebp+8]"
+"	      0052b4ac    mov eax,mission_id"
 "	      0052b4af    mov ecx,[ebp-0Ch]"
 "	      0052b4b2    mov [ecx+3Ch],eax"
 "	      0052b4b5    jmp near ptr 0052B4BAh"
@@ -548,12 +548,12 @@ void PlaneClass::Itterate() {
 "	      0052b4db    push ebx"
 "	      0052b4dc    push esi"
 "	      0052b4dd    push edi"
-"	      0052b4de    mov [ebp-60h],ecx"
+"	      0052b4de    mov this,ecx"
 );
 // LINE 614:
 	asm( 
 "	      0052b4e1    jmp near ptr 0052B4E6h"
-"	      0052b4e6    mov eax,[ebp-60h]"
+"	      0052b4e6    mov eax,this"
 "	      0052b4e9    movsx eax,byte ptr [eax+4]"
 "	      0052b4ed    test eax,eax"
 "	      0052b4ef    je near ptr 0052B60Bh"
@@ -561,14 +561,14 @@ void PlaneClass::Itterate() {
 // LINE 617:
 	asm( 
 "	      0052b4f5    jmp near ptr 0052B4FAh"
-"	      0052b4fa    mov eax,[ebp-60h]"
+"	      0052b4fa    mov eax,this"
 "	      0052b4fd    movsx eax,byte ptr [eax+5]"
 "	      0052b501    test eax,eax"
 "	      0052b503    jne near ptr 0052B58Dh"
 );
 // LINE 621:
 	asm( 
-"	      0052b509    mov eax,[ebp-60h]"
+"	      0052b509    mov eax,this"
 "	      0052b50c    cmp dword ptr [eax+54h],12Eh"
 "	      0052b513    jne near ptr 0052B523h"
 "	      0052b519    jmp near ptr 0052B551h"
@@ -581,7 +581,7 @@ void PlaneClass::Itterate() {
 	asm( 
 "	      0052b532    cmp dword ptr ds:[5B4924h],0"
 "	      0052b539    je near ptr 0052B54Ch"
-"	      0052b53f    mov eax,[ebp-60h]"
+"	      0052b53f    mov eax,this"
 "	      0052b542    cmp dword ptr [eax+50h],0Ah"
 "	      0052b546    jl near ptr 0052B551h"
 );
@@ -592,33 +592,33 @@ void PlaneClass::Itterate() {
 // LINE 627:
 	asm( 
 "	      0052b551    mov eax,ds:[5B4760h]"
-"	      0052b556    mov ecx,[ebp-60h]"
+"	      0052b556    mov ecx,this"
 "	      0052b559    add [ecx+34h],eax"
 );
 // LINE 628:
 	asm( 
 "	      0052b55c    jmp near ptr 0052B561h"
-"	      0052b561    mov eax,[ebp-60h]"
+"	      0052b561    mov eax,this"
 "	      0052b564    movsx eax,byte ptr [eax+7]"
 "	      0052b568    test eax,eax"
 "	      0052b56a    jne near ptr 0052B58Dh"
-"	      0052b570    mov eax,[ebp-60h]"
-"	      0052b573    mov ecx,[ebp-60h]"
+"	      0052b570    mov eax,this"
+"	      0052b573    mov ecx,this"
 "	      0052b576    mov ecx,[ecx+34h]"
 "	      0052b579    cmp [eax+30h],ecx"
 "	      0052b57c    jge near ptr 0052B58Dh"
 );
 // LINE 631:
 	asm( 
-"	      0052b582    mov eax,[ebp-60h]"
+"	      0052b582    mov eax,this"
 "	      0052b585    mov eax,[eax]"
-"	      0052b587    mov ecx,[ebp-60h]"
+"	      0052b587    mov ecx,this"
 "	      0052b58a    call dword ptr [eax+10h]"
 );
 // LINE 635:
 	asm( 
 "	      0052b58d    jmp near ptr 0052B592h"
-"	      0052b592    mov eax,[ebp-60h]"
+"	      0052b592    mov eax,this"
 "	      0052b595    movsx eax,byte ptr [eax+5]"
 "	      0052b599    test eax,eax"
 "	      0052b59b    je near ptr 0052B5FEh"
@@ -627,24 +627,24 @@ void PlaneClass::Itterate() {
 // Block start:
 	struct VRview position;
 	asm( 
-"	      0052b5a1    mov eax,[ebp-60h]"
+"	      0052b5a1    mov eax,this"
 "	      0052b5a4    mov eax,[eax]"
-"	      0052b5a6    mov ecx,[ebp-60h]"
+"	      0052b5a6    mov ecx,this"
 "	      0052b5a9    call dword ptr [eax+4]"
 );
 // LINE 645:
 	asm( 
 "	      0052b5ac    jmp near ptr 0052B5B1h"
-"	      0052b5b1    mov eax,[ebp-60h]"
+"	      0052b5b1    mov eax,this"
 "	      0052b5b4    movsx eax,byte ptr [eax+5]"
 "	      0052b5b8    test eax,eax"
 "	      0052b5ba    je near ptr 0052B5FEh"
 );
 // LINE 648:
 	asm( 
-"	      0052b5c0    mov eax,[ebp-60h]"
+"	      0052b5c0    mov eax,this"
 "	      0052b5c3    add eax,70h"
-"	      0052b5c6    lea ecx,[ebp-58h]"
+"	      0052b5c6    lea ecx,position.loc.x"
 "	      0052b5c9    mov edx,[eax]"
 "	      0052b5cb    mov [ecx],edx"
 "	      0052b5cd    mov edx,[eax+4]"
@@ -654,8 +654,8 @@ void PlaneClass::Itterate() {
 );
 // LINE 652:
 	asm( 
-"	      0052b5d9    mov esi,[ebp-60h]"
-"	      0052b5dc    lea edi,[ebp-40h]"
+"	      0052b5d9    mov esi,this"
+"	      0052b5dc    lea edi,position.matrix[0][0]"
 "	      0052b5df    add esi,7Ch"
 "	      0052b5e2    mov ecx,10h"
 "	      0052b5e7    rep movsd"
@@ -663,9 +663,9 @@ void PlaneClass::Itterate() {
 // LINE 656:
 	asm( 
 "	      0052b5e9    push 3"
-"	      0052b5eb    lea eax,[ebp-58h]"
+"	      0052b5eb    lea eax,position.loc.x"
 "	      0052b5ee    push eax"
-"	      0052b5ef    mov eax,[ebp-60h]"
+"	      0052b5ef    mov eax,this"
 "	      0052b5f2    mov eax,[eax+60h]"
 "	      0052b5f5    push eax"
 "	      0052b5f6    call 004D8781h"
@@ -674,7 +674,7 @@ void PlaneClass::Itterate() {
 // LINE 661:
 // Block end:
 	asm( 
-"	      0052b5fe    mov ecx,[ebp-60h]"
+"	      0052b5fe    mov ecx,this"
 "	      0052b601    call 0052B6D0h"
 );
 // LINE 663:
@@ -684,7 +684,7 @@ void PlaneClass::Itterate() {
 // LINE 667:
 	asm( 
 "	      0052b60b    jmp near ptr 0052B610h"
-"	      0052b610    mov eax,[ebp-60h]"
+"	      0052b610    mov eax,this"
 "	      0052b613    movsx eax,byte ptr [eax+4]"
 "	      0052b617    test eax,eax"
 "	      0052b619    jne near ptr 0052B63Bh"
@@ -717,66 +717,66 @@ void PlaneClass::Reset() {
 "	      0052b650    push ebx"
 "	      0052b651    push esi"
 "	      0052b652    push edi"
-"	      0052b653    mov [ebp-4],ecx"
+"	      0052b653    mov this,ecx"
 );
 // LINE 689:
 	asm( 
-"	      0052b656    mov ecx,[ebp-4]"
+"	      0052b656    mov ecx,this"
 "	      0052b659    call 0052D411h"
 );
 // LINE 691:
 	asm( 
-"	      0052b65e    mov eax,[ebp-4]"
+"	      0052b65e    mov eax,this"
 "	      0052b661    mov byte ptr [eax+6],0"
 );
 // LINE 692:
 	asm( 
-"	      0052b665    mov eax,[ebp-4]"
+"	      0052b665    mov eax,this"
 "	      0052b668    mov byte ptr [eax+7],0"
 );
 // LINE 694:
 	asm( 
-"	      0052b66c    mov eax,[ebp-4]"
+"	      0052b66c    mov eax,this"
 "	      0052b66f    mov dword ptr [eax+18h],0"
 );
 // LINE 695:
 	asm( 
-"	      0052b676    mov eax,[ebp-4]"
+"	      0052b676    mov eax,this"
 "	      0052b679    mov dword ptr [eax+3Ch],0FFFFFFFFh"
 );
 // LINE 696:
 	asm( 
-"	      0052b680    mov eax,[ebp-4]"
+"	      0052b680    mov eax,this"
 "	      0052b683    mov dword ptr [eax+40h],0FFFFFFFFh"
 );
 // LINE 697:
 	asm( 
-"	      0052b68a    mov eax,[ebp-4]"
+"	      0052b68a    mov eax,this"
 "	      0052b68d    mov dword ptr [eax+44h],0FFFFFFFFh"
 );
 // LINE 698:
 	asm( 
-"	      0052b694    mov eax,[ebp-4]"
+"	      0052b694    mov eax,this"
 "	      0052b697    mov dword ptr [eax+20h],0FFFFFFFFh"
 );
 // LINE 699:
 	asm( 
-"	      0052b69e    mov eax,[ebp-4]"
+"	      0052b69e    mov eax,this"
 "	      0052b6a1    mov dword ptr [eax+24h],0FFFFFFFFh"
 );
 // LINE 700:
 	asm( 
-"	      0052b6a8    mov eax,[ebp-4]"
+"	      0052b6a8    mov eax,this"
 "	      0052b6ab    mov dword ptr [eax+28h],0FFFFFFFFh"
 );
 // LINE 701:
 	asm( 
-"	      0052b6b2    mov eax,[ebp-4]"
+"	      0052b6b2    mov eax,this"
 "	      0052b6b5    mov dword ptr [eax+2Ch],0FFFFFFFFh"
 );
 // LINE 702:
 	asm( 
-"	      0052b6bc    mov eax,[ebp-4]"
+"	      0052b6bc    mov eax,this"
 "	      0052b6bf    mov dword ptr [eax+50h],0"
 );
 // LINE 704:
@@ -804,11 +804,11 @@ void PlaneClass::PlaneSoundDriver() {
 "	      0052b6d6    push ebx"
 "	      0052b6d7    push esi"
 "	      0052b6d8    push edi"
-"	      0052b6d9    mov [ebp-1Ch],ecx"
+"	      0052b6d9    mov this,ecx"
 );
 // LINE 750:
 	asm( 
-"	      0052b6dc    mov eax,[ebp-1Ch]"
+"	      0052b6dc    mov eax,this"
 "	      0052b6df    cmp dword ptr [eax+54h],12Eh"
 "	      0052b6e6    jne near ptr 0052B6F1h"
 "	      0052b6ec    jmp near ptr 0052B705h"
@@ -820,7 +820,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 753:
 	asm( 
 "	      0052b705    jmp near ptr 0052B70Ah"
-"	      0052b70a    mov eax,[ebp-1Ch]"
+"	      0052b70a    mov eax,this"
 "	      0052b70d    movsx eax,byte ptr [eax+5]"
 "	      0052b711    test eax,eax"
 "	      0052b713    jne near ptr 0052B758h"
@@ -860,35 +860,35 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 767:
 	asm( 
 "	      0052b758    mov eax,ds:[6C126Ch]"
-"	      0052b75d    mov ecx,[ebp-1Ch]"
+"	      0052b75d    mov ecx,this"
 "	      0052b760    sub eax,[ecx+70h]"
-"	      0052b763    mov [ebp-10h],eax"
+"	      0052b763    mov vec.x,eax"
 );
 // LINE 768:
 	asm( 
 "	      0052b766    mov eax,ds:[6C1270h]"
-"	      0052b76b    mov ecx,[ebp-1Ch]"
+"	      0052b76b    mov ecx,this"
 "	      0052b76e    sub eax,[ecx+74h]"
-"	      0052b771    mov [ebp-0Ch],eax"
+"	      0052b771    mov vec.y,eax"
 );
 // LINE 769:
 	asm( 
 "	      0052b774    mov eax,ds:[6C1274h]"
-"	      0052b779    mov ecx,[ebp-1Ch]"
+"	      0052b779    mov ecx,this"
 "	      0052b77c    sub eax,[ecx+78h]"
-"	      0052b77f    mov [ebp-8],eax"
+"	      0052b77f    mov vec.z,eax"
 );
 // LINE 770:
 	asm( 
-"	      0052b782    lea eax,[ebp-10h]"
+"	      0052b782    lea eax,vec.x"
 "	      0052b785    push eax"
 "	      0052b786    call 004CA1E3h"
 "	      0052b78b    add esp,4"
-"	      0052b78e    mov [ebp-4],eax"
+"	      0052b78e    mov dist,eax"
 );
 // LINE 772:
 	asm( 
-"	      0052b791    cmp dword ptr [ebp-4],7800000h"
+"	      0052b791    cmp dist,7800000h"
 "	      0052b798    jge near ptr 0052B864h"
 );
 // LINE 774:
@@ -902,7 +902,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 776:
 	asm( 
 "	      0052b7b0    push 1"
-"	      0052b7b2    mov eax,[ebp-1Ch]"
+"	      0052b7b2    mov eax,this"
 "	      0052b7b5    add eax,70h"
 "	      0052b7b8    push eax"
 "	      0052b7b9    push 1Ch"
@@ -913,7 +913,7 @@ void PlaneClass::PlaneSoundDriver() {
 	asm( 
 "	      0052b7c3    push 0F0600000h"
 "	      0052b7c8    push 7800000h"
-"	      0052b7cd    mov eax,[ebp-4]"
+"	      0052b7cd    mov eax,dist"
 "	      0052b7d0    push eax"
 "	      0052b7d1    call 004D19DFh"
 "	      0052b7d6    add esp,8"
@@ -921,11 +921,11 @@ void PlaneClass::PlaneSoundDriver() {
 "	      0052b7da    call 004D19BDh"
 "	      0052b7df    add esp,8"
 "	      0052b7e2    sar eax,10h"
-"	      0052b7e5    mov [ebp-14h],eax"
+"	      0052b7e5    mov vol_adj,eax"
 );
 // LINE 783:
 	asm( 
-"	      0052b7e8    mov eax,[ebp-14h]"
+"	      0052b7e8    mov eax,vol_adj"
 "	      0052b7eb    push eax"
 "	      0052b7ec    push 1Ch"
 "	      0052b7ee    call 00446E82h"
@@ -934,7 +934,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 785:
 	asm( 
 "	      0052b7f6    jmp near ptr 0052B7FBh"
-"	      0052b7fb    mov eax,[ebp-1Ch]"
+"	      0052b7fb    mov eax,this"
 "	      0052b7fe    movsx eax,byte ptr [eax+7]"
 "	      0052b802    test eax,eax"
 "	      0052b804    je near ptr 0052B842h"
@@ -950,7 +950,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 789:
 	asm( 
 "	      0052b81c    push 1"
-"	      0052b81e    mov eax,[ebp-1Ch]"
+"	      0052b81e    mov eax,this"
 "	      0052b821    add eax,70h"
 "	      0052b824    push eax"
 "	      0052b825    push 1Bh"
@@ -959,7 +959,7 @@ void PlaneClass::PlaneSoundDriver() {
 );
 // LINE 791:
 	asm( 
-"	      0052b82f    mov eax,[ebp-14h]"
+"	      0052b82f    mov eax,vol_adj"
 "	      0052b832    push eax"
 "	      0052b833    push 1Bh"
 "	      0052b835    call 00446E82h"
@@ -1022,7 +1022,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 816:
 	asm( 
 "	      0052b8a3    jmp near ptr 0052B8A8h"
-"	      0052b8a8    mov eax,[ebp-1Ch]"
+"	      0052b8a8    mov eax,this"
 "	      0052b8ab    movsx eax,byte ptr [eax+5]"
 "	      0052b8af    test eax,eax"
 "	      0052b8b1    jne near ptr 0052B8D9h"
@@ -1048,35 +1048,35 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 826:
 	asm( 
 "	      0052b8d9    mov eax,ds:[6C126Ch]"
-"	      0052b8de    mov ecx,[ebp-1Ch]"
+"	      0052b8de    mov ecx,this"
 "	      0052b8e1    sub eax,[ecx+70h]"
-"	      0052b8e4    mov [ebp-10h],eax"
+"	      0052b8e4    mov vec.x,eax"
 );
 // LINE 827:
 	asm( 
 "	      0052b8e7    mov eax,ds:[6C1270h]"
-"	      0052b8ec    mov ecx,[ebp-1Ch]"
+"	      0052b8ec    mov ecx,this"
 "	      0052b8ef    sub eax,[ecx+74h]"
-"	      0052b8f2    mov [ebp-0Ch],eax"
+"	      0052b8f2    mov vec.y,eax"
 );
 // LINE 828:
 	asm( 
 "	      0052b8f5    mov eax,ds:[6C1274h]"
-"	      0052b8fa    mov ecx,[ebp-1Ch]"
+"	      0052b8fa    mov ecx,this"
 "	      0052b8fd    sub eax,[ecx+78h]"
-"	      0052b900    mov [ebp-8],eax"
+"	      0052b900    mov vec.z,eax"
 );
 // LINE 829:
 	asm( 
-"	      0052b903    lea eax,[ebp-10h]"
+"	      0052b903    lea eax,vec.x"
 "	      0052b906    push eax"
 "	      0052b907    call 004CA1E3h"
 "	      0052b90c    add esp,4"
-"	      0052b90f    mov [ebp-4],eax"
+"	      0052b90f    mov dist,eax"
 );
 // LINE 831:
 	asm( 
-"	      0052b912    cmp dword ptr [ebp-4],7800000h"
+"	      0052b912    cmp dist,7800000h"
 "	      0052b919    jge near ptr 0052B97Ch"
 );
 // LINE 833:
@@ -1090,7 +1090,7 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 835:
 	asm( 
 "	      0052b931    push 1"
-"	      0052b933    mov eax,[ebp-1Ch]"
+"	      0052b933    mov eax,this"
 "	      0052b936    add eax,70h"
 "	      0052b939    push eax"
 "	      0052b93a    push 29h"
@@ -1101,7 +1101,7 @@ void PlaneClass::PlaneSoundDriver() {
 	asm( 
 "	      0052b944    push 0F0600000h"
 "	      0052b949    push 7800000h"
-"	      0052b94e    mov eax,[ebp-4]"
+"	      0052b94e    mov eax,dist"
 "	      0052b951    push eax"
 "	      0052b952    call 004D19DFh"
 "	      0052b957    add esp,8"
@@ -1109,11 +1109,11 @@ void PlaneClass::PlaneSoundDriver() {
 "	      0052b95b    call 004D19BDh"
 "	      0052b960    add esp,8"
 "	      0052b963    sar eax,10h"
-"	      0052b966    mov [ebp-14h],eax"
+"	      0052b966    mov vol_adj,eax"
 );
 // LINE 842:
 	asm( 
-"	      0052b969    mov eax,[ebp-14h]"
+"	      0052b969    mov eax,vol_adj"
 "	      0052b96c    push eax"
 "	      0052b96d    push 29h"
 "	      0052b96f    call 00446E82h"
@@ -1158,23 +1158,23 @@ void PlaneClass::ItterateFSM() {
 "	      0052b9a9    push ebx"
 "	      0052b9aa    push esi"
 "	      0052b9ab    push edi"
-"	      0052b9ac    mov [ebp-8],ecx"
+"	      0052b9ac    mov this,ecx"
 );
 // LINE 872:
 	asm( 
-"	      0052b9af    mov ecx,[ebp-8]"
+"	      0052b9af    mov ecx,this"
 "	      0052b9b2    call 0052BDADh"
 "	      0052b9b7    test eax,eax"
 "	      0052b9b9    je near ptr 0052B9E0h"
 "	      0052b9bf    jmp near ptr 0052B9C4h"
-"	      0052b9c4    mov eax,[ebp-8]"
+"	      0052b9c4    mov eax,this"
 "	      0052b9c7    movsx eax,byte ptr [eax+7]"
 "	      0052b9cb    test eax,eax"
 "	      0052b9cd    jne near ptr 0052B9E0h"
 );
 // LINE 875:
 	asm( 
-"	      0052b9d3    mov ecx,[ebp-8]"
+"	      0052b9d3    mov ecx,this"
 "	      0052b9d6    call 0052D411h"
 );
 // LINE 876:
@@ -1183,7 +1183,7 @@ void PlaneClass::ItterateFSM() {
 );
 // LINE 880:
 	asm( 
-"	      0052b9e0    mov eax,[ebp-8]"
+"	      0052b9e0    mov eax,this"
 "	      0052b9e3    cmp dword ptr [eax+54h],12Eh"
 "	      0052b9ea    jne near ptr 0052B9FAh"
 "	      0052b9f0    jmp near ptr 0052BA11h"
@@ -1194,33 +1194,33 @@ void PlaneClass::ItterateFSM() {
 );
 // LINE 882:
 	asm( 
-"	      0052ba09    mov ecx,[ebp-8]"
+"	      0052ba09    mov ecx,this"
 "	      0052ba0c    call 0052D618h"
 );
 // LINE 885:
 	asm( 
 "	      0052ba11    jmp near ptr 0052BA16h"
-"	      0052ba16    mov eax,[ebp-8]"
+"	      0052ba16    mov eax,this"
 "	      0052ba19    movsx eax,byte ptr [eax+6]"
 "	      0052ba1d    test eax,eax"
 "	      0052ba1f    je near ptr 0052BA2Dh"
 );
 // LINE 887:
 	asm( 
-"	      0052ba25    mov ecx,[ebp-8]"
+"	      0052ba25    mov ecx,this"
 "	      0052ba28    call 0052BB60h"
 );
 // LINE 892:
 	asm( 
 "	      0052ba2d    jmp near ptr 0052BA32h"
-"	      0052ba32    mov eax,[ebp-8]"
+"	      0052ba32    mov eax,this"
 "	      0052ba35    movsx eax,byte ptr [eax+7]"
 "	      0052ba39    test eax,eax"
 "	      0052ba3b    je near ptr 0052BA4Eh"
 );
 // LINE 894:
 	asm( 
-"	      0052ba41    mov ecx,[ebp-8]"
+"	      0052ba41    mov ecx,this"
 "	      0052ba44    call 0052BEDAh"
 );
 // LINE 895:
@@ -1229,69 +1229,69 @@ void PlaneClass::ItterateFSM() {
 );
 // LINE 898:
 	asm( 
-"	      0052ba4e    mov eax,[ebp-8]"
+"	      0052ba4e    mov eax,this"
 "	      0052ba51    mov eax,[eax]"
-"	      0052ba53    mov ecx,[ebp-8]"
+"	      0052ba53    mov ecx,this"
 "	      0052ba56    call dword ptr [eax+0Ch]"
 "	      0052ba59    mov [ebp-0Ch],eax"
 "	      0052ba5c    jmp near ptr 0052BADCh"
 );
 // LINE 904:
 	asm( 
-"	      0052ba61    mov ecx,[ebp-8]"
+"	      0052ba61    mov ecx,this"
 "	      0052ba64    call 0052BEDAh"
 );
 // LINE 907:
 	asm( 
-"	      0052ba69    mov ecx,[ebp-8]"
+"	      0052ba69    mov ecx,this"
 "	      0052ba6c    call 0052CA29h"
 "	      0052ba71    test eax,eax"
 "	      0052ba73    je near ptr 0052BAC7h"
 );
 // LINE 910:
 	asm( 
-"	      0052ba79    mov eax,[ebp-8]"
+"	      0052ba79    mov eax,this"
 "	      0052ba7c    add eax,20h"
 "	      0052ba7f    push eax"
-"	      0052ba80    mov ecx,[ebp-8]"
+"	      0052ba80    mov ecx,this"
 "	      0052ba83    call 0052CACBh"
 );
 // LINE 911:
 	asm( 
-"	      0052ba88    mov eax,[ebp-8]"
+"	      0052ba88    mov eax,this"
 "	      0052ba8b    mov eax,[eax+70h]"
 "	      0052ba8e    add eax,20000000h"
 "	      0052ba93    sar eax,16h"
-"	      0052ba96    mov ecx,[ebp-8]"
+"	      0052ba96    mov ecx,this"
 "	      0052ba99    mov [ecx+20h],eax"
 );
 // LINE 912:
 	asm( 
 "	      0052ba9c    mov eax,20000000h"
-"	      0052baa1    mov ecx,[ebp-8]"
+"	      0052baa1    mov ecx,this"
 "	      0052baa4    sub eax,[ecx+78h]"
 "	      0052baa7    sar eax,16h"
-"	      0052baaa    mov ecx,[ebp-8]"
+"	      0052baaa    mov ecx,this"
 "	      0052baad    mov [ecx+24h],eax"
 );
 // LINE 913:
 	asm( 
-"	      0052bab0    mov eax,[ebp-8]"
+"	      0052bab0    mov eax,this"
 "	      0052bab3    add eax,20h"
 "	      0052bab6    push eax"
-"	      0052bab7    mov ecx,[ebp-8]"
+"	      0052bab7    mov ecx,this"
 "	      0052baba    call 0052CBE1h"
 );
 // LINE 914:
 	asm( 
-"	      0052babf    mov ecx,[ebp-8]"
+"	      0052babf    mov ecx,this"
 "	      0052bac2    call 0052CEE5h"
 );
 // LINE 920:
 	asm( 
-"	      0052bac7    mov eax,[ebp-8]"
+"	      0052bac7    mov eax,this"
 "	      0052baca    mov eax,[eax]"
-"	      0052bacc    mov ecx,[ebp-8]"
+"	      0052bacc    mov ecx,this"
 "	      0052bacf    call dword ptr [eax+8]"
 );
 // LINE 922:
@@ -1328,13 +1328,13 @@ void PlaneClass::AdjustSpeed() {
 "	      0052bafb    push ebx"
 "	      0052bafc    push esi"
 "	      0052bafd    push edi"
-"	      0052bafe    mov [ebp-4],ecx"
+"	      0052bafe    mov this,ecx"
 );
 // LINE 954:
 	asm( 
-"	      0052bb01    mov eax,[ebp-4]"
+"	      0052bb01    mov eax,this"
 "	      0052bb04    mov eax,[eax+1Ch]"
-"	      0052bb07    mov ecx,[ebp-4]"
+"	      0052bb07    mov ecx,this"
 "	      0052bb0a    mov [ecx+18h],eax"
 );
 // LINE 956:
@@ -1344,7 +1344,7 @@ void PlaneClass::AdjustSpeed() {
 );
 // LINE 958:
 	asm( 
-"	      0052bb1a    mov eax,[ebp-4]"
+"	      0052bb1a    mov eax,this"
 "	      0052bb1d    mov dword ptr [eax+18h],1"
 );
 // LINE 960:
@@ -1368,7 +1368,7 @@ enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
 "	      0052bb34    push ebx"
 "	      0052bb35    push esi"
 "	      0052bb36    push edi"
-"	      0052bb37    mov [ebp-4],ecx"
+"	      0052bb37    mov this,ecx"
 );
 // LINE 1000:
 	asm( 
@@ -1395,7 +1395,7 @@ enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct P
 "	      0052bb4c    push ebx"
 "	      0052bb4d    push esi"
 "	      0052bb4e    push edi"
-"	      0052bb4f    mov [ebp-4],ecx"
+"	      0052bb4f    mov this,ecx"
 );
 // LINE 1160:
 	asm( 
@@ -1430,11 +1430,11 @@ void PlaneClass::SetCrashWhenReady() {
 "	      0052bb66    push ebx"
 "	      0052bb67    push esi"
 "	      0052bb68    push edi"
-"	      0052bb69    mov [ebp-40h],ecx"
+"	      0052bb69    mov this,ecx"
 );
 // LINE 1186:
 	asm( 
-"	      0052bb6c    mov eax,[ebp-40h]"
+"	      0052bb6c    mov eax,this"
 "	      0052bb6f    cmp dword ptr [eax+54h],12Eh"
 "	      0052bb76    jne near ptr 0052BB86h"
 "	      0052bb7c    jmp near ptr 0052BBBDh"
@@ -1445,65 +1445,65 @@ void PlaneClass::SetCrashWhenReady() {
 );
 // LINE 1188:
 	asm( 
-"	      0052bb95    mov dword ptr [ebp-1Ch],0FFFFFFFFh"
+"	      0052bb95    mov mp.id,0FFFFFFFFh"
 );
 // LINE 1189:
 	asm( 
-"	      0052bb9c    mov dword ptr [ebp-20h],27h"
+"	      0052bb9c    mov mp.op,27h"
 );
 // LINE 1190:
 	asm( 
-"	      0052bba3    mov dword ptr [ebp-0Ch],0"
+"	      0052bba3    mov mp.flags,0"
 );
 // LINE 1191:
 	asm( 
-"	      0052bbaa    mov dword ptr [ebp-10h],1"
+"	      0052bbaa    mov mp.i2num,1"
 );
 // LINE 1192:
 	asm( 
-"	      0052bbb1    lea eax,[ebp-20h]"
+"	      0052bbb1    lea eax,mp.op"
 "	      0052bbb4    push eax"
 "	      0052bbb5    call 004FBD4Ah"
 "	      0052bbba    add esp,4"
 );
 // LINE 1196:
 	asm( 
-"	      0052bbbd    mov eax,[ebp-40h]"
+"	      0052bbbd    mov eax,this"
 "	      0052bbc0    cmp dword ptr [eax+50h],0"
 "	      0052bbc4    jne near ptr 0052BC26h"
 );
 // LINE 1198:
 	asm( 
 "	      0052bbca    mov eax,ds:[6BF188h]"
-"	      0052bbcf    mov ecx,[ebp-40h]"
+"	      0052bbcf    mov ecx,this"
 "	      0052bbd2    sub eax,[ecx+20h]"
 "	      0052bbd5    cdq"
 "	      0052bbd6    xor eax,edx"
 "	      0052bbd8    sub eax,edx"
-"	      0052bbda    mov [ebp-2Ch],eax"
+"	      0052bbda    mov deltaX,eax"
 );
 // LINE 1199:
 	asm( 
 "	      0052bbdd    mov eax,ds:[6BF18Ch]"
-"	      0052bbe2    mov ecx,[ebp-40h]"
+"	      0052bbe2    mov ecx,this"
 "	      0052bbe5    sub eax,[ecx+24h]"
 "	      0052bbe8    cdq"
 "	      0052bbe9    xor eax,edx"
 "	      0052bbeb    sub eax,edx"
-"	      0052bbed    mov [ebp-30h],eax"
+"	      0052bbed    mov deltaY,eax"
 );
 // LINE 1200:
 	asm( 
-"	      0052bbf0    mov eax,[ebp-2Ch]"
-"	      0052bbf3    cmp [ebp-30h],eax"
+"	      0052bbf0    mov eax,deltaX"
+"	      0052bbf3    cmp deltaY,eax"
 "	      0052bbf6    jge near ptr 0052BC0Ch"
 );
 // LINE 1201:
 	asm( 
-"	      0052bbfc    mov eax,[ebp-2Ch]"
+"	      0052bbfc    mov eax,deltaX"
 "	      0052bbff    add eax,eax"
-"	      0052bc01    add eax,[ebp-30h]"
-"	      0052bc04    mov [ebp-4],eax"
+"	      0052bc01    add eax,deltaY"
+"	      0052bc04    mov dist,eax"
 );
 // LINE 1202:
 	asm( 
@@ -1511,14 +1511,14 @@ void PlaneClass::SetCrashWhenReady() {
 );
 // LINE 1203:
 	asm( 
-"	      0052bc0c    mov eax,[ebp-30h]"
+"	      0052bc0c    mov eax,deltaY"
 "	      0052bc0f    add eax,eax"
-"	      0052bc11    add eax,[ebp-2Ch]"
-"	      0052bc14    mov [ebp-4],eax"
+"	      0052bc11    add eax,deltaX"
+"	      0052bc14    mov dist,eax"
 );
 // LINE 1206:
 	asm( 
-"	      0052bc17    cmp dword ptr [ebp-4],14h"
+"	      0052bc17    cmp dist,14h"
 "	      0052bc1b    jle near ptr 0052BC26h"
 );
 // LINE 1207:
@@ -1527,46 +1527,46 @@ void PlaneClass::SetCrashWhenReady() {
 );
 // LINE 1211:
 	asm( 
-"	      0052bc26    mov eax,[ebp-40h]"
+"	      0052bc26    mov eax,this"
 "	      0052bc29    mov eax,[eax+8]"
 "	      0052bc2c    shl eax,8"
 "	      0052bc2f    lea eax,[eax+eax*2]"
-"	      0052bc32    mov ecx,[ebp-40h]"
+"	      0052bc32    mov ecx,this"
 "	      0052bc35    add eax,[ecx+70h]"
-"	      0052bc38    mov [ebp-8],eax"
+"	      0052bc38    mov x,eax"
 );
 // LINE 1212:
 	asm( 
-"	      0052bc3b    mov eax,[ebp-40h]"
+"	      0052bc3b    mov eax,this"
 "	      0052bc3e    mov eax,[eax+10h]"
 "	      0052bc41    shl eax,8"
 "	      0052bc44    lea eax,[eax+eax*2]"
-"	      0052bc47    mov ecx,[ebp-40h]"
+"	      0052bc47    mov ecx,this"
 "	      0052bc4a    add eax,[ecx+78h]"
-"	      0052bc4d    mov [ebp-24h],eax"
+"	      0052bc4d    mov z,eax"
 );
 // LINE 1214:
 	asm( 
-"	      0052bc50    mov eax,[ebp-8]"
+"	      0052bc50    mov eax,x"
 "	      0052bc53    add eax,20000000h"
 "	      0052bc58    sar eax,16h"
-"	      0052bc5b    mov ecx,[ebp-40h]"
+"	      0052bc5b    mov ecx,this"
 "	      0052bc5e    mov [ecx+40h],eax"
 );
 // LINE 1215:
 	asm( 
 "	      0052bc61    mov eax,20000000h"
-"	      0052bc66    sub eax,[ebp-24h]"
+"	      0052bc66    sub eax,z"
 "	      0052bc69    sar eax,16h"
-"	      0052bc6c    mov ecx,[ebp-40h]"
+"	      0052bc6c    mov ecx,this"
 "	      0052bc6f    mov [ecx+44h],eax"
 );
 // LINE 1227:
 	asm( 
-"	      0052bc72    mov eax,[ebp-40h]"
+"	      0052bc72    mov eax,this"
 "	      0052bc75    mov eax,[eax+44h]"
 "	      0052bc78    and eax,0FFh"
-"	      0052bc7d    mov ecx,[ebp-40h]"
+"	      0052bc7d    mov ecx,this"
 "	      0052bc80    mov ecx,[ecx+40h]"
 "	      0052bc83    and ecx,0FFh"
 "	      0052bc89    shl ecx,0Ah"
@@ -1583,61 +1583,61 @@ void PlaneClass::SetCrashWhenReady() {
 "	      0052bcbc    jmp near ptr 0052BCC1h"
 "	      0052bcc1    jmp near ptr 0052BCC6h"
 "	      0052bcc6    mov eax,[ebp-3Ch]"
-"	      0052bcc9    mov [ebp-28h],eax"
+"	      0052bcc9    mov cptr,eax"
 );
 // LINE 1230:
 	asm( 
-"	      0052bccc    mov eax,[ebp-28h]"
+"	      0052bccc    mov eax,cptr"
 "	      0052bccf    movsx eax,word ptr [eax+2]"
 "	      0052bcd3    shl eax,10h"
-"	      0052bcd6    mov ecx,[ebp-40h]"
+"	      0052bcd6    mov ecx,this"
 "	      0052bcd9    sub eax,[ecx+70h]"
-"	      0052bcdc    mov ecx,[ebp-40h]"
+"	      0052bcdc    mov ecx,this"
 "	      0052bcdf    mov [ecx+8],eax"
 );
 // LINE 1231:
 	asm( 
-"	      0052bce2    mov eax,[ebp-28h]"
+"	      0052bce2    mov eax,cptr"
 "	      0052bce5    movsx eax,word ptr [eax+4]"
 "	      0052bce9    shl eax,10h"
-"	      0052bcec    mov ecx,[ebp-40h]"
+"	      0052bcec    mov ecx,this"
 "	      0052bcef    sub eax,[ecx+74h]"
-"	      0052bcf2    mov ecx,[ebp-40h]"
+"	      0052bcf2    mov ecx,this"
 "	      0052bcf5    mov [ecx+0Ch],eax"
 );
 // LINE 1232:
 	asm( 
-"	      0052bcf8    mov eax,[ebp-28h]"
+"	      0052bcf8    mov eax,cptr"
 "	      0052bcfb    movsx eax,word ptr [eax+6]"
 "	      0052bcff    shl eax,10h"
-"	      0052bd02    mov ecx,[ebp-40h]"
+"	      0052bd02    mov ecx,this"
 "	      0052bd05    sub eax,[ecx+78h]"
-"	      0052bd08    mov ecx,[ebp-40h]"
+"	      0052bd08    mov ecx,this"
 "	      0052bd0b    mov [ecx+10h],eax"
 );
 // LINE 1234:
 	asm( 
-"	      0052bd0e    mov eax,[ebp-40h]"
+"	      0052bd0e    mov eax,this"
 "	      0052bd11    add eax,8"
 "	      0052bd14    push eax"
 "	      0052bd15    call 004CA1E3h"
 "	      0052bd1a    add esp,4"
-"	      0052bd1d    mov ecx,[ebp-40h]"
+"	      0052bd1d    mov ecx,this"
 "	      0052bd20    mov [ecx+14h],eax"
 );
 // LINE 1236:
 	asm( 
-"	      0052bd23    mov eax,[ebp-40h]"
+"	      0052bd23    mov eax,this"
 "	      0052bd26    movsx eax,word ptr [eax+64h]"
 "	      0052bd2a    test al,1"
 "	      0052bd2c    je near ptr 0052BD48h"
 );
 // LINE 1238:
 	asm( 
-"	      0052bd32    mov eax,[ebp-40h]"
+"	      0052bd32    mov eax,this"
 "	      0052bd35    add eax,8"
 "	      0052bd38    push eax"
-"	      0052bd39    mov eax,[ebp-40h]"
+"	      0052bd39    mov eax,this"
 "	      0052bd3c    add eax,7Ch"
 "	      0052bd3f    push eax"
 "	      0052bd40    call 004CAEFBh"
@@ -1645,22 +1645,22 @@ void PlaneClass::SetCrashWhenReady() {
 );
 // LINE 1241:
 	asm( 
-"	      0052bd48    mov eax,[ebp-40h]"
+"	      0052bd48    mov eax,this"
 "	      0052bd4b    mov byte ptr [eax+6],0"
 );
 // LINE 1242:
 	asm( 
-"	      0052bd4f    mov eax,[ebp-40h]"
+"	      0052bd4f    mov eax,this"
 "	      0052bd52    mov byte ptr [eax+7],1"
 );
 // LINE 1244:
 	asm( 
-"	      0052bd56    mov eax,[ebp-40h]"
+"	      0052bd56    mov eax,this"
 "	      0052bd59    mov dword ptr [eax+48h],0"
 );
 // LINE 1247:
 	asm( 
-"	      0052bd60    mov eax,[ebp-40h]"
+"	      0052bd60    mov eax,this"
 "	      0052bd63    cmp dword ptr [eax+54h],12Eh"
 "	      0052bd6a    jne near ptr 0052BD75h"
 "	      0052bd70    jmp near ptr 0052BD89h"
@@ -1707,30 +1707,30 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 "	      0052bdb3    push ebx"
 "	      0052bdb4    push esi"
 "	      0052bdb5    push edi"
-"	      0052bdb6    mov [ebp-0Ch],ecx"
+"	      0052bdb6    mov this,ecx"
 );
 // LINE 1281:
 	asm( 
 "	      0052bdb9    mov eax,ds:[6BF188h]"
-"	      0052bdbe    mov ecx,[ebp-0Ch]"
+"	      0052bdbe    mov ecx,this"
 "	      0052bdc1    sub eax,[ecx+20h]"
-"	      0052bdc4    mov [ebp-4],eax"
+"	      0052bdc4    mov deltaX,eax"
 );
 // LINE 1282:
 	asm( 
 "	      0052bdc7    mov eax,ds:[6BF18Ch]"
-"	      0052bdcc    mov ecx,[ebp-0Ch]"
+"	      0052bdcc    mov ecx,this"
 "	      0052bdcf    sub eax,[ecx+24h]"
-"	      0052bdd2    mov [ebp-8],eax"
+"	      0052bdd2    mov deltaY,eax"
 );
 // LINE 1287:
 	asm( 
-"	      0052bdd5    cmp dword ptr [ebp-4],80h"
+"	      0052bdd5    cmp deltaX,80h"
 "	      0052bddc    jle near ptr 0052BDEEh"
 );
 // LINE 1289:
 	asm( 
-"	      0052bde2    sub dword ptr [ebp-4],100h"
+"	      0052bde2    sub deltaX,100h"
 );
 // LINE 1290:
 	asm( 
@@ -1738,12 +1738,12 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 );
 // LINE 1291:
 	asm( 
-"	      0052bdee    cmp dword ptr [ebp-4],0FFFFFF80h"
+"	      0052bdee    cmp deltaX,0FFFFFF80h"
 "	      0052bdf2    jge near ptr 0052BE04h"
 );
 // LINE 1293:
 	asm( 
-"	      0052bdf8    add dword ptr [ebp-4],100h"
+"	      0052bdf8    add deltaX,100h"
 );
 // LINE 1294:
 	asm( 
@@ -1751,12 +1751,12 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 );
 // LINE 1296:
 	asm( 
-"	      0052be04    cmp dword ptr [ebp-8],80h"
+"	      0052be04    cmp deltaY,80h"
 "	      0052be0b    jle near ptr 0052BE1Dh"
 );
 // LINE 1298:
 	asm( 
-"	      0052be11    sub dword ptr [ebp-8],100h"
+"	      0052be11    sub deltaY,100h"
 );
 // LINE 1299:
 	asm( 
@@ -1764,12 +1764,12 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 );
 // LINE 1300:
 	asm( 
-"	      0052be1d    cmp dword ptr [ebp-8],0FFFFFF80h"
+"	      0052be1d    cmp deltaY,0FFFFFF80h"
 "	      0052be21    jge near ptr 0052BE33h"
 );
 // LINE 1302:
 	asm( 
-"	      0052be27    add dword ptr [ebp-8],100h"
+"	      0052be27    add deltaY,100h"
 );
 // LINE 1303:
 	asm( 
@@ -1777,37 +1777,37 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 );
 // LINE 1305:
 	asm( 
-"	      0052be33    cmp dword ptr [ebp-4],0"
+"	      0052be33    cmp deltaX,0"
 "	      0052be37    jge near ptr 0052BE45h"
 );
 // LINE 1307:
 	asm( 
-"	      0052be3d    mov eax,[ebp-4]"
+"	      0052be3d    mov eax,deltaX"
 "	      0052be40    neg eax"
-"	      0052be42    mov [ebp-4],eax"
+"	      0052be42    mov deltaX,eax"
 );
 // LINE 1309:
 	asm( 
-"	      0052be45    cmp dword ptr [ebp-8],0"
+"	      0052be45    cmp deltaY,0"
 "	      0052be49    jge near ptr 0052BE57h"
 );
 // LINE 1311:
 	asm( 
-"	      0052be4f    mov eax,[ebp-8]"
+"	      0052be4f    mov eax,deltaY"
 "	      0052be52    neg eax"
-"	      0052be54    mov [ebp-8],eax"
+"	      0052be54    mov deltaY,eax"
 );
 // LINE 1315:
 	asm( 
 "	      0052be57    mov eax,ds:[6663A0h]"
 "	      0052be5c    sar eax,1"
 "	      0052be5f    add eax,4"
-"	      0052be62    cmp eax,[ebp-4]"
+"	      0052be62    cmp eax,deltaX"
 "	      0052be65    jl near ptr 0052BE7Fh"
 "	      0052be6b    mov eax,ds:[6663A0h]"
 "	      0052be70    sar eax,1"
 "	      0052be73    add eax,4"
-"	      0052be76    cmp eax,[ebp-8]"
+"	      0052be76    cmp eax,deltaY"
 "	      0052be79    jge near ptr 0052BE8Eh"
 );
 // LINE 1317:
@@ -1844,11 +1844,11 @@ void PlaneClass::SlowDown() {
 "	      0052bea0    push ebx"
 "	      0052bea1    push esi"
 "	      0052bea2    push edi"
-"	      0052bea3    mov [ebp-4],ecx"
+"	      0052bea3    mov this,ecx"
 );
 // LINE 1342:
 	asm( 
-"	      0052bea6    mov eax,[ebp-4]"
+"	      0052bea6    mov eax,this"
 "	      0052bea9    sub dword ptr [eax+18h],20000h"
 );
 // LINE 1343:
@@ -1872,11 +1872,11 @@ void PlaneClass::Stop() {
 "	      0052bec0    push ebx"
 "	      0052bec1    push esi"
 "	      0052bec2    push edi"
-"	      0052bec3    mov [ebp-4],ecx"
+"	      0052bec3    mov this,ecx"
 );
 // LINE 1363:
 	asm( 
-"	      0052bec6    mov eax,[ebp-4]"
+"	      0052bec6    mov eax,this"
 "	      0052bec9    mov dword ptr [eax+18h],0"
 );
 // LINE 1364:
@@ -1906,77 +1906,77 @@ void PlaneClass::MoveForward() {
 "	      0052bee0    push ebx"
 "	      0052bee1    push esi"
 "	      0052bee2    push edi"
-"	      0052bee3    mov [ebp-2Ch],ecx"
+"	      0052bee3    mov this,ecx"
 );
 // LINE 1390:
 	asm( 
 "	      0052bee6    mov eax,ds:[5B4760h]"
 "	      0052beeb    push eax"
-"	      0052beec    mov eax,[ebp-2Ch]"
+"	      0052beec    mov eax,this"
 "	      0052beef    mov eax,[eax+18h]"
 "	      0052bef2    push eax"
 "	      0052bef3    call 004D19BDh"
 "	      0052bef8    add esp,8"
-"	      0052befb    mov [ebp-4],eax"
+"	      0052befb    mov dist,eax"
 );
 // LINE 1394:
 	asm( 
 "	      0052befe    jmp near ptr 0052BF03h"
-"	      0052bf03    mov eax,[ebp-2Ch]"
+"	      0052bf03    mov eax,this"
 "	      0052bf06    movsx eax,byte ptr [eax+7]"
 "	      0052bf0a    test eax,eax"
 "	      0052bf0c    jne near ptr 0052BF7Ah"
 );
 // LINE 1396:
 	asm( 
-"	      0052bf12    mov eax,[ebp-2Ch]"
-"	      0052bf15    mov ecx,[ebp-4]"
+"	      0052bf12    mov eax,this"
+"	      0052bf15    mov ecx,dist"
 "	      0052bf18    cmp [eax+14h],ecx"
 "	      0052bf1b    jge near ptr 0052BF2Ah"
 );
 // LINE 1397:
 	asm( 
-"	      0052bf21    mov eax,[ebp-2Ch]"
+"	      0052bf21    mov eax,this"
 "	      0052bf24    mov eax,[eax+14h]"
-"	      0052bf27    mov [ebp-4],eax"
+"	      0052bf27    mov dist,eax"
 );
 // LINE 1398:
 	asm( 
 "	      0052bf2a    xor eax,eax"
-"	      0052bf2c    sub eax,[ebp-4]"
+"	      0052bf2c    sub eax,dist"
 "	      0052bf2f    neg eax"
-"	      0052bf31    mov ecx,[ebp-2Ch]"
+"	      0052bf31    mov ecx,this"
 "	      0052bf34    sub [ecx+14h],eax"
 );
 // LINE 1403:
 	asm( 
-"	      0052bf37    mov eax,[ebp-4]"
+"	      0052bf37    mov eax,dist"
 "	      0052bf3a    push eax"
-"	      0052bf3b    mov eax,[ebp-2Ch]"
+"	      0052bf3b    mov eax,this"
 "	      0052bf3e    mov eax,[eax+8]"
 "	      0052bf41    push eax"
 "	      0052bf42    call 004D19BDh"
 "	      0052bf47    add esp,8"
-"	      0052bf4a    mov ecx,[ebp-2Ch]"
+"	      0052bf4a    mov ecx,this"
 "	      0052bf4d    add [ecx+70h],eax"
 );
 // LINE 1405:
 	asm( 
-"	      0052bf50    mov eax,[ebp-4]"
+"	      0052bf50    mov eax,dist"
 "	      0052bf53    push eax"
-"	      0052bf54    mov eax,[ebp-2Ch]"
+"	      0052bf54    mov eax,this"
 "	      0052bf57    mov eax,[eax+10h]"
 "	      0052bf5a    push eax"
 "	      0052bf5b    call 004D19BDh"
 "	      0052bf60    add esp,8"
-"	      0052bf63    mov ecx,[ebp-2Ch]"
+"	      0052bf63    mov ecx,this"
 "	      0052bf66    add [ecx+78h],eax"
 );
 // LINE 1406:
 	asm( 
-"	      0052bf69    mov eax,[ebp-2Ch]"
+"	      0052bf69    mov eax,this"
 "	      0052bf6c    mov eax,[eax+38h]"
-"	      0052bf6f    mov ecx,[ebp-2Ch]"
+"	      0052bf6f    mov ecx,this"
 "	      0052bf72    add [ecx+74h],eax"
 );
 // LINE 1408:
@@ -1985,66 +1985,66 @@ void PlaneClass::MoveForward() {
 );
 // LINE 1413:
 	asm( 
-"	      0052bf7a    mov eax,[ebp-4]"
+"	      0052bf7a    mov eax,dist"
 "	      0052bf7d    push eax"
-"	      0052bf7e    mov eax,[ebp-2Ch]"
+"	      0052bf7e    mov eax,this"
 "	      0052bf81    mov eax,[eax+8]"
 "	      0052bf84    push eax"
 "	      0052bf85    call 004D19BDh"
 "	      0052bf8a    add esp,8"
-"	      0052bf8d    mov ecx,[ebp-2Ch]"
+"	      0052bf8d    mov ecx,this"
 "	      0052bf90    mov ecx,[ecx+70h]"
 "	      0052bf93    add ecx,eax"
-"	      0052bf95    mov [ebp-10h],ecx"
+"	      0052bf95    mov newloc.x,ecx"
 );
 // LINE 1414:
 	asm( 
-"	      0052bf98    mov eax,[ebp-4]"
+"	      0052bf98    mov eax,dist"
 "	      0052bf9b    push eax"
-"	      0052bf9c    mov eax,[ebp-2Ch]"
+"	      0052bf9c    mov eax,this"
 "	      0052bf9f    mov eax,[eax+0Ch]"
 "	      0052bfa2    push eax"
 "	      0052bfa3    call 004D19BDh"
 "	      0052bfa8    add esp,8"
-"	      0052bfab    mov ecx,[ebp-2Ch]"
+"	      0052bfab    mov ecx,this"
 "	      0052bfae    mov ecx,[ecx+74h]"
 "	      0052bfb1    add ecx,eax"
-"	      0052bfb3    mov [ebp-0Ch],ecx"
+"	      0052bfb3    mov newloc.y,ecx"
 );
 // LINE 1415:
 	asm( 
-"	      0052bfb6    mov eax,[ebp-4]"
+"	      0052bfb6    mov eax,dist"
 "	      0052bfb9    push eax"
-"	      0052bfba    mov eax,[ebp-2Ch]"
+"	      0052bfba    mov eax,this"
 "	      0052bfbd    mov eax,[eax+10h]"
 "	      0052bfc0    push eax"
 "	      0052bfc1    call 004D19BDh"
 "	      0052bfc6    add esp,8"
-"	      0052bfc9    mov ecx,[ebp-2Ch]"
+"	      0052bfc9    mov ecx,this"
 "	      0052bfcc    mov ecx,[ecx+78h]"
 "	      0052bfcf    add ecx,eax"
-"	      0052bfd1    mov [ebp-8],ecx"
+"	      0052bfd1    mov newloc.z,ecx"
 );
 // LINE 1417:
 	asm( 
-"	      0052bfd4    mov eax,[ebp-10h]"
+"	      0052bfd4    mov eax,newloc.x"
 "	      0052bfd7    add eax,20000000h"
 "	      0052bfdc    sar eax,16h"
-"	      0052bfdf    mov [ebp-18h],eax"
+"	      0052bfdf    mov newpos.x,eax"
 );
 // LINE 1418:
 	asm( 
 "	      0052bfe2    mov eax,20000000h"
-"	      0052bfe7    sub eax,[ebp-8]"
+"	      0052bfe7    sub eax,newloc.z"
 "	      0052bfea    sar eax,16h"
-"	      0052bfed    mov [ebp-14h],eax"
+"	      0052bfed    mov newpos.y,eax"
 );
 // LINE 1420:
 	asm( 
-"	      0052bff0    mov eax,[ebp-2Ch]"
+"	      0052bff0    mov eax,this"
 "	      0052bff3    mov eax,[eax+24h]"
 "	      0052bff6    and eax,0FFh"
-"	      0052bffb    mov ecx,[ebp-2Ch]"
+"	      0052bffb    mov ecx,this"
 "	      0052bffe    mov ecx,[ecx+20h]"
 "	      0052c001    and ecx,0FFh"
 "	      0052c007    shl ecx,0Ah"
@@ -2061,13 +2061,13 @@ void PlaneClass::MoveForward() {
 "	      0052c03a    jmp near ptr 0052C03Fh"
 "	      0052c03f    jmp near ptr 0052C044h"
 "	      0052c044    mov eax,[ebp-24h]"
-"	      0052c047    mov [ebp-20h],eax"
+"	      0052c047    mov lcptr,eax"
 );
 // LINE 1421:
 	asm( 
-"	      0052c04a    mov eax,[ebp-14h]"
+"	      0052c04a    mov eax,newpos.y"
 "	      0052c04d    and eax,0FFh"
-"	      0052c052    mov ecx,[ebp-18h]"
+"	      0052c052    mov ecx,newpos.x"
 "	      0052c055    and ecx,0FFh"
 "	      0052c05b    shl ecx,0Ah"
 "	      0052c05e    mov eax,[ecx+eax*4+67ED30h]"
@@ -2083,50 +2083,50 @@ void PlaneClass::MoveForward() {
 "	      0052c08e    jmp near ptr 0052C093h"
 "	      0052c093    jmp near ptr 0052C098h"
 "	      0052c098    mov eax,[ebp-28h]"
-"	      0052c09b    mov [ebp-1Ch],eax"
+"	      0052c09b    mov cptr,eax"
 );
 // LINE 1424:
 	asm( 
 "	      0052c09e    xor eax,eax"
 "	      0052c0a0    sub eax,ds:[5B4768h]"
 "	      0052c0a6    neg eax"
-"	      0052c0a8    mov ecx,[ebp-2Ch]"
+"	      0052c0a8    mov ecx,this"
 "	      0052c0ab    sub [ecx+48h],eax"
 );
 // LINE 1427:
 	asm( 
-"	      0052c0ae    mov eax,[ebp-2Ch]"
+"	      0052c0ae    mov eax,this"
 "	      0052c0b1    cmp dword ptr [eax+48h],0"
 "	      0052c0b5    jge near ptr 0052C0D7h"
 );
 // LINE 1429:
 	asm( 
 "	      0052c0bb    push 1"
-"	      0052c0bd    lea eax,[ebp-10h]"
+"	      0052c0bd    lea eax,newloc.x"
 "	      0052c0c0    push eax"
-"	      0052c0c1    mov eax,[ebp-1Ch]"
+"	      0052c0c1    mov eax,cptr"
 "	      0052c0c4    push eax"
 "	      0052c0c5    call 005240DCh"
 "	      0052c0ca    add esp,0Ch"
 );
 // LINE 1430:
 	asm( 
-"	      0052c0cd    mov eax,[ebp-2Ch]"
+"	      0052c0cd    mov eax,this"
 "	      0052c0d0    mov dword ptr [eax+48h],3333h"
 );
 // LINE 1434:
 	asm( 
-"	      0052c0d7    mov eax,[ebp-20h]"
+"	      0052c0d7    mov eax,lcptr"
 "	      0052c0da    push eax"
-"	      0052c0db    mov eax,[ebp-4]"
+"	      0052c0db    mov eax,dist"
 "	      0052c0de    push eax"
-"	      0052c0df    mov ecx,[ebp-2Ch]"
+"	      0052c0df    mov ecx,this"
 "	      0052c0e2    call 0052C1A3h"
 );
 // LINE 1435:
 	asm( 
 "	      0052c0e7    jmp near ptr 0052C0ECh"
-"	      0052c0ec    mov eax,[ebp-2Ch]"
+"	      0052c0ec    mov eax,this"
 "	      0052c0ef    movsx eax,byte ptr [eax+5]"
 "	      0052c0f3    test eax,eax"
 "	      0052c0f5    jne near ptr 0052C100h"
@@ -2137,23 +2137,23 @@ void PlaneClass::MoveForward() {
 );
 // LINE 1441:
 	asm( 
-"	      0052c100    mov eax,[ebp-20h]"
-"	      0052c103    cmp [ebp-1Ch],eax"
+"	      0052c100    mov eax,lcptr"
+"	      0052c103    cmp cptr,eax"
 "	      0052c106    je near ptr 0052C135h"
 );
 // LINE 1443:
 	asm( 
-"	      0052c10c    mov eax,[ebp-1Ch]"
+"	      0052c10c    mov eax,cptr"
 "	      0052c10f    push eax"
-"	      0052c110    mov eax,[ebp-4]"
+"	      0052c110    mov eax,dist"
 "	      0052c113    push eax"
-"	      0052c114    mov ecx,[ebp-2Ch]"
+"	      0052c114    mov ecx,this"
 "	      0052c117    call 0052C1A3h"
 );
 // LINE 1444:
 	asm( 
 "	      0052c11c    jmp near ptr 0052C121h"
-"	      0052c121    mov eax,[ebp-2Ch]"
+"	      0052c121    mov eax,this"
 "	      0052c124    movsx eax,byte ptr [eax+5]"
 "	      0052c128    test eax,eax"
 "	      0052c12a    jne near ptr 0052C135h"
@@ -2164,42 +2164,42 @@ void PlaneClass::MoveForward() {
 );
 // LINE 1456:
 	asm( 
-"	      0052c135    mov eax,[ebp-20h]"
-"	      0052c138    cmp [ebp-1Ch],eax"
+"	      0052c135    mov eax,lcptr"
+"	      0052c138    cmp cptr,eax"
 "	      0052c13b    je near ptr 0052C180h"
 );
 // LINE 1458:
 	asm( 
 "	      0052c141    jmp near ptr 0052C146h"
-"	      0052c146    mov eax,[ebp-2Ch]"
+"	      0052c146    mov eax,this"
 "	      0052c149    add eax,20h"
 "	      0052c14c    push eax"
-"	      0052c14d    mov ecx,[ebp-2Ch]"
+"	      0052c14d    mov ecx,this"
 "	      0052c150    call 0052CACBh"
 );
 // LINE 1459:
 	asm( 
-"	      0052c155    mov eax,[ebp-18h]"
-"	      0052c158    mov ecx,[ebp-2Ch]"
+"	      0052c155    mov eax,newpos.x"
+"	      0052c158    mov ecx,this"
 "	      0052c15b    mov [ecx+20h],eax"
-"	      0052c15e    mov eax,[ebp-14h]"
-"	      0052c161    mov ecx,[ebp-2Ch]"
+"	      0052c15e    mov eax,newpos.y"
+"	      0052c161    mov ecx,this"
 "	      0052c164    mov [ecx+24h],eax"
 "	      0052c167    jmp near ptr 0052C16Ch"
 );
 // LINE 1460:
 	asm( 
 "	      0052c16c    jmp near ptr 0052C171h"
-"	      0052c171    mov eax,[ebp-2Ch]"
+"	      0052c171    mov eax,this"
 "	      0052c174    add eax,20h"
 "	      0052c177    push eax"
-"	      0052c178    mov ecx,[ebp-2Ch]"
+"	      0052c178    mov ecx,this"
 "	      0052c17b    call 0052CBE1h"
 );
 // LINE 1463:
 	asm( 
-"	      0052c180    lea eax,[ebp-10h]"
-"	      0052c183    mov ecx,[ebp-2Ch]"
+"	      0052c180    lea eax,newloc.x"
+"	      0052c183    mov ecx,this"
 "	      0052c186    add ecx,70h"
 "	      0052c189    mov edx,[eax]"
 "	      0052c18b    mov [ecx],edx"
@@ -2247,59 +2247,59 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 "	      0052c1ac    push ebx"
 "	      0052c1ad    push esi"
 "	      0052c1ae    push edi"
-"	      0052c1af    mov [ebp-0ECh],ecx"
+"	      0052c1af    mov this,ecx"
 );
 // LINE 1490:
 	asm( 
-"	      0052c1b5    mov eax,[ebp+0Ch]"
+"	      0052c1b5    mov eax,cptr"
 "	      0052c1b8    movsx eax,word ptr [eax+2]"
 "	      0052c1bc    shl eax,10h"
-"	      0052c1bf    mov [ebp-44h],eax"
+"	      0052c1bf    mov cloc.x,eax"
 );
 // LINE 1491:
 	asm( 
-"	      0052c1c2    mov eax,[ebp+0Ch]"
+"	      0052c1c2    mov eax,cptr"
 "	      0052c1c5    movsx eax,word ptr [eax+4]"
 "	      0052c1c9    shl eax,10h"
-"	      0052c1cc    mov [ebp-40h],eax"
+"	      0052c1cc    mov cloc.y,eax"
 );
 // LINE 1492:
 	asm( 
-"	      0052c1cf    mov eax,[ebp+0Ch]"
+"	      0052c1cf    mov eax,cptr"
 "	      0052c1d2    movsx eax,word ptr [eax+6]"
 "	      0052c1d6    shl eax,10h"
-"	      0052c1d9    mov [ebp-3Ch],eax"
+"	      0052c1d9    mov cloc.z,eax"
 );
 // LINE 1493:
 	asm( 
-"	      0052c1dc    mov eax,[ebp-44h]"
+"	      0052c1dc    mov eax,cloc.x"
 "	      0052c1df    add eax,20000000h"
 "	      0052c1e4    sar eax,16h"
-"	      0052c1e7    mov [ebp-0A8h],eax"
+"	      0052c1e7    mov celloc.x,eax"
 );
 // LINE 1494:
 	asm( 
 "	      0052c1ed    mov eax,20000000h"
-"	      0052c1f2    sub eax,[ebp-3Ch]"
+"	      0052c1f2    sub eax,cloc.z"
 "	      0052c1f5    sar eax,16h"
-"	      0052c1f8    mov [ebp-0A4h],eax"
+"	      0052c1f8    mov celloc.y,eax"
 );
 // LINE 1497:
 	asm( 
-"	      0052c1fe    mov eax,[ebp+0Ch]"
+"	      0052c1fe    mov eax,cptr"
 "	      0052c201    mov eax,[eax+0Ch]"
-"	      0052c204    mov [ebp-48h],eax"
+"	      0052c204    mov stobj,eax"
 );
 // LINE 1498:
 	asm( 
-"	      0052c207    cmp dword ptr [ebp-48h],0"
+"	      0052c207    cmp stobj,0"
 "	      0052c20b    je near ptr 0052C786h"
 );
 // LINE 1502:
 	asm( 
-"	      0052c211    lea eax,[ebp-2Ch]"
+"	      0052c211    lea eax,oinfo.Faces"
 "	      0052c214    push eax"
-"	      0052c215    mov eax,[ebp-48h]"
+"	      0052c215    mov eax,stobj"
 "	      0052c218    mov eax,[eax+4]"
 "	      0052c21b    push eax"
 "	      0052c21c    call 004D8859h"
@@ -2307,9 +2307,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1503:
 	asm( 
-"	      0052c224    lea eax,[ebp-0A0h]"
+"	      0052c224    lea eax,center.x"
 "	      0052c22a    push eax"
-"	      0052c22b    mov eax,[ebp-48h]"
+"	      0052c22b    mov eax,stobj"
 "	      0052c22e    mov eax,[eax+4]"
 "	      0052c231    push eax"
 "	      0052c232    call 004D88C3h"
@@ -2317,8 +2317,8 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1505:
 	asm( 
-"	      0052c23a    lea eax,[ebp-44h]"
-"	      0052c23d    lea ecx,[ebp-0DCh]"
+"	      0052c23a    lea eax,cloc.x"
+"	      0052c23d    lea ecx,oloc.x"
 "	      0052c243    mov edx,[eax]"
 "	      0052c245    mov [ecx],edx"
 "	      0052c247    mov edx,[eax+4]"
@@ -2328,114 +2328,114 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1506:
 	asm( 
-"	      0052c253    mov eax,[ebp-0A0h]"
-"	      0052c259    add [ebp-0DCh],eax"
+"	      0052c253    mov eax,center.x"
+"	      0052c259    add oloc.x,eax"
 );
 // LINE 1507:
 	asm( 
-"	      0052c25f    mov eax,[ebp-9Ch]"
-"	      0052c265    add [ebp-0D8h],eax"
+"	      0052c25f    mov eax,center.y"
+"	      0052c265    add oloc.y,eax"
 );
 // LINE 1508:
 	asm( 
-"	      0052c26b    mov eax,[ebp-98h]"
-"	      0052c271    add [ebp-0D4h],eax"
+"	      0052c26b    mov eax,center.z"
+"	      0052c271    add oloc.z,eax"
 );
 // LINE 1514:
 	asm( 
-"	      0052c277    mov eax,[ebp-20h]"
+"	      0052c277    mov eax,oinfo.Radius"
 "	      0052c27a    push eax"
-"	      0052c27b    lea eax,[ebp-0DCh]"
+"	      0052c27b    lea eax,oloc.x"
 "	      0052c281    push eax"
-"	      0052c282    mov eax,[ebp+8]"
+"	      0052c282    mov eax,dist"
 "	      0052c285    push eax"
-"	      0052c286    mov eax,[ebp-0ECh]"
+"	      0052c286    mov eax,this"
 "	      0052c28c    add eax,8"
 "	      0052c28f    push eax"
-"	      0052c290    mov eax,[ebp-0ECh]"
+"	      0052c290    mov eax,this"
 "	      0052c296    add eax,70h"
 "	      0052c299    push eax"
 "	      0052c29a    call 00522EB3h"
 "	      0052c29f    add esp,14h"
-"	      0052c2a2    mov [ebp-0E0h],eax"
+"	      0052c2a2    mov newdist,eax"
 );
 // LINE 1518:
 	asm( 
-"	      0052c2a8    cmp dword ptr [ebp-0E0h],0"
+"	      0052c2a8    cmp newdist,0"
 "	      0052c2af    jle near ptr 0052C2EAh"
 );
 // LINE 1525:
 	asm( 
-"	      0052c2b5    lea eax,[ebp-8]"
+"	      0052c2b5    lea eax,norm"
 "	      0052c2b8    push eax"
-"	      0052c2b9    mov eax,[ebp-48h]"
+"	      0052c2b9    mov eax,stobj"
 "	      0052c2bc    mov eax,[eax+4]"
 "	      0052c2bf    push eax"
-"	      0052c2c0    lea eax,[ebp-44h]"
+"	      0052c2c0    lea eax,cloc.x"
 "	      0052c2c3    push eax"
-"	      0052c2c4    mov eax,[ebp+8]"
+"	      0052c2c4    mov eax,dist"
 "	      0052c2c7    push eax"
-"	      0052c2c8    mov eax,[ebp-0ECh]"
+"	      0052c2c8    mov eax,this"
 "	      0052c2ce    add eax,8"
 "	      0052c2d1    push eax"
-"	      0052c2d2    mov eax,[ebp-0ECh]"
+"	      0052c2d2    mov eax,this"
 "	      0052c2d8    add eax,70h"
 "	      0052c2db    push eax"
 "	      0052c2dc    call 004D4F25h"
 "	      0052c2e1    add esp,18h"
-"	      0052c2e4    mov [ebp-0E0h],eax"
+"	      0052c2e4    mov newdist,eax"
 );
 // LINE 1528:
 	asm( 
-"	      0052c2ea    cmp dword ptr [ebp-0E0h],0"
+"	      0052c2ea    cmp newdist,0"
 "	      0052c2f1    jle near ptr 0052C779h"
 );
 // LINE 1532:
 	asm( 
-"	      0052c2f7    mov eax,[ebp-0E0h]"
+"	      0052c2f7    mov eax,newdist"
 "	      0052c2fd    push eax"
-"	      0052c2fe    mov eax,[ebp-0ECh]"
+"	      0052c2fe    mov eax,this"
 "	      0052c304    mov eax,[eax+8]"
 "	      0052c307    push eax"
 "	      0052c308    call 004D19BDh"
 "	      0052c30d    add esp,8"
-"	      0052c310    mov ecx,[ebp-0ECh]"
+"	      0052c310    mov ecx,this"
 "	      0052c316    mov ecx,[ecx+70h]"
 "	      0052c319    add ecx,eax"
-"	      0052c31b    mov [ebp-0B4h],ecx"
+"	      0052c31b    mov loc.x,ecx"
 );
 // LINE 1533:
 	asm( 
-"	      0052c321    mov eax,[ebp-0E0h]"
+"	      0052c321    mov eax,newdist"
 "	      0052c327    push eax"
-"	      0052c328    mov eax,[ebp-0ECh]"
+"	      0052c328    mov eax,this"
 "	      0052c32e    mov eax,[eax+0Ch]"
 "	      0052c331    push eax"
 "	      0052c332    call 004D19BDh"
 "	      0052c337    add esp,8"
-"	      0052c33a    mov ecx,[ebp-0ECh]"
+"	      0052c33a    mov ecx,this"
 "	      0052c340    mov ecx,[ecx+74h]"
 "	      0052c343    add ecx,eax"
-"	      0052c345    mov [ebp-0B0h],ecx"
+"	      0052c345    mov loc.y,ecx"
 );
 // LINE 1534:
 	asm( 
-"	      0052c34b    mov eax,[ebp-0E0h]"
+"	      0052c34b    mov eax,newdist"
 "	      0052c351    push eax"
-"	      0052c352    mov eax,[ebp-0ECh]"
+"	      0052c352    mov eax,this"
 "	      0052c358    mov eax,[eax+10h]"
 "	      0052c35b    push eax"
 "	      0052c35c    call 004D19BDh"
 "	      0052c361    add esp,8"
-"	      0052c364    mov ecx,[ebp-0ECh]"
+"	      0052c364    mov ecx,this"
 "	      0052c36a    mov ecx,[ecx+78h]"
 "	      0052c36d    add ecx,eax"
-"	      0052c36f    mov [ebp-0ACh],ecx"
+"	      0052c36f    mov loc.z,ecx"
 );
 // LINE 1535:
 	asm( 
-"	      0052c375    lea eax,[ebp-0B4h]"
-"	      0052c37b    lea ecx,[ebp-38h]"
+"	      0052c375    lea eax,loc.x"
+"	      0052c37b    lea ecx,sloc.x"
 "	      0052c37e    mov edx,[eax]"
 "	      0052c380    mov [ecx],edx"
 "	      0052c382    mov edx,[eax+4]"
@@ -2446,37 +2446,37 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1536:
 	asm( 
 "	      0052c38e    xor eax,eax"
-"	      0052c390    sub eax,[ebp-44h]"
+"	      0052c390    sub eax,cloc.x"
 "	      0052c393    neg eax"
-"	      0052c395    sub [ebp-0B4h],eax"
+"	      0052c395    sub loc.x,eax"
 );
 // LINE 1537:
 	asm( 
 "	      0052c39b    xor eax,eax"
-"	      0052c39d    sub eax,[ebp-40h]"
+"	      0052c39d    sub eax,cloc.y"
 "	      0052c3a0    neg eax"
-"	      0052c3a2    sub [ebp-0B0h],eax"
+"	      0052c3a2    sub loc.y,eax"
 );
 // LINE 1538:
 	asm( 
 "	      0052c3a8    xor eax,eax"
-"	      0052c3aa    sub eax,[ebp-3Ch]"
+"	      0052c3aa    sub eax,cloc.z"
 "	      0052c3ad    neg eax"
-"	      0052c3af    sub [ebp-0ACh],eax"
+"	      0052c3af    sub loc.z,eax"
 );
 // LINE 1540:
 	asm( 
-"	      0052c3b5    mov eax,[ebp-0ECh]"
+"	      0052c3b5    mov eax,this"
 "	      0052c3bb    mov eax,[eax+3Ch]"
 "	      0052c3be    push eax"
 "	      0052c3bf    push 4"
-"	      0052c3c1    mov eax,[ebp-0ACh]"
+"	      0052c3c1    mov eax,loc.z"
 "	      0052c3c7    push eax"
-"	      0052c3c8    mov eax,[ebp-0B0h]"
+"	      0052c3c8    mov eax,loc.y"
 "	      0052c3ce    push eax"
-"	      0052c3cf    mov eax,[ebp-0B4h]"
+"	      0052c3cf    mov eax,loc.x"
 "	      0052c3d5    push eax"
-"	      0052c3d6    mov eax,[ebp+0Ch]"
+"	      0052c3d6    mov eax,cptr"
 "	      0052c3d9    push eax"
 "	      0052c3da    call 00523F50h"
 "	      0052c3df    add esp,18h"
@@ -2484,7 +2484,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1542:
 	asm( 
 "	      0052c3e2    push 0"
-"	      0052c3e4    lea eax,[ebp-38h]"
+"	      0052c3e4    lea eax,sloc.x"
 "	      0052c3e7    push eax"
 "	      0052c3e8    push 1Ah"
 "	      0052c3ea    call 00446CC2h"
@@ -2492,29 +2492,29 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1545:
 	asm( 
-"	      0052c3f2    mov ecx,[ebp-0ECh]"
+"	      0052c3f2    mov ecx,this"
 "	      0052c3f8    call 0052D411h"
 );
 // LINE 1546:
 	asm( 
-"	      0052c3fd    mov eax,[ebp-0ECh]"
+"	      0052c3fd    mov eax,this"
 "	      0052c403    mov byte ptr [eax+7],0"
 );
 // LINE 1549:
 	asm( 
-"	      0052c407    mov dword ptr [ebp-0E8h],0FFFFFFFFh"
+"	      0052c407    mov new_mission_id,0FFFFFFFFh"
 );
 // LINE 1551:
 	asm( 
-"	      0052c411    mov eax,[ebp-0A4h]"
+"	      0052c411    mov eax,celloc.y"
 "	      0052c417    push eax"
-"	      0052c418    mov eax,[ebp-0A8h]"
+"	      0052c418    mov eax,celloc.x"
 "	      0052c41e    push eax"
 "	      0052c41f    call 00526595h"
 "	      0052c424    add esp,8"
 "	      0052c427    cmp eax,1"
 "	      0052c42a    jne near ptr 0052C487h"
-"	      0052c430    mov eax,[ebp+0Ch]"
+"	      0052c430    mov eax,cptr"
 "	      0052c433    movsx eax,word ptr [eax]"
 "	      0052c436    test al,20h"
 "	      0052c438    jne near ptr 0052C487h"
@@ -2528,13 +2528,13 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1556:
 	asm( 
 "	      0052c44b    push 1"
-"	      0052c44d    mov eax,[ebp-0A4h]"
+"	      0052c44d    mov eax,celloc.y"
 "	      0052c453    push eax"
-"	      0052c454    mov eax,[ebp-0A8h]"
+"	      0052c454    mov eax,celloc.x"
 "	      0052c45a    push eax"
 "	      0052c45b    call 004FAC6Dh"
 "	      0052c460    add esp,0Ch"
-"	      0052c463    mov [ebp-0E8h],eax"
+"	      0052c463    mov new_mission_id,eax"
 );
 // LINE 1558:
 	asm( 
@@ -2542,64 +2542,64 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1560:
 	asm( 
-"	      0052c46e    lea eax,[ebp-0A8h]"
+"	      0052c46e    lea eax,celloc.x"
 "	      0052c474    push eax"
-"	      0052c475    mov eax,[ebp+0Ch]"
+"	      0052c475    mov eax,cptr"
 "	      0052c478    push eax"
 "	      0052c479    call 00526B96h"
 "	      0052c47e    add esp,8"
-"	      0052c481    mov [ebp-0E8h],eax"
+"	      0052c481    mov new_mission_id,eax"
 );
 // LINE 1564:
 	asm( 
-"	      0052c487    cmp dword ptr [ebp-0E8h],0FFFFFFFFh"
+"	      0052c487    cmp new_mission_id,0FFFFFFFFh"
 "	      0052c48e    je near ptr 0052C5ECh"
 );
 // LINE 1568:
 	asm( 
-"	      0052c494    mov dword ptr [ebp-0CCh],1Dh"
+"	      0052c494    mov mp.op,1Dh"
 );
 // LINE 1569:
 	asm( 
-"	      0052c49e    mov dword ptr [ebp-0BCh],4"
+"	      0052c49e    mov mp.i2num,4"
 );
 // LINE 1570:
 	asm( 
-"	      0052c4a8    mov eax,[ebp-0ECh]"
+"	      0052c4a8    mov eax,this"
 "	      0052c4ae    mov eax,[eax+3Ch]"
-"	      0052c4b1    mov [ebp-0C8h],eax"
+"	      0052c4b1    mov mp.id,eax"
 );
 // LINE 1571:
 	asm( 
-"	      0052c4b7    lea eax,[ebp-0CCh]"
+"	      0052c4b7    lea eax,mp.op"
 "	      0052c4bd    push eax"
 "	      0052c4be    call 004FBD4Ah"
 "	      0052c4c3    add esp,4"
 );
 // LINE 1572:
 	asm( 
-"	      0052c4c6    mov eax,[ebp-0E8h]"
-"	      0052c4cc    mov ecx,[ebp-0ECh]"
+"	      0052c4c6    mov eax,new_mission_id"
+"	      0052c4cc    mov ecx,this"
 "	      0052c4d2    mov [ecx+3Ch],eax"
 );
 // LINE 1574:
 	asm( 
 "	      0052c4d5    call 0056EC50h"
-"	      0052c4da    mov ecx,[ebp+0Ch]"
+"	      0052c4da    mov ecx,cptr"
 "	      0052c4dd    movsx ecx,word ptr [ecx+8]"
 "	      0052c4e1    movsx eax,ax"
 "	      0052c4e4    cdq"
 "	      0052c4e5    idiv ecx"
 "	      0052c4e7    lea eax,[edx+3]"
-"	      0052c4ea    mov [ebp-0E4h],eax"
+"	      0052c4ea    mov num_debris,eax"
 );
 // LINE 1575:
 	asm( 
-"	      0052c4f0    mov dword ptr [ebp-0D0h],0"
+"	      0052c4f0    mov j,0"
 "	      0052c4fa    jmp near ptr 0052C505h"
-"	      0052c4ff    inc dword ptr [ebp-0D0h]"
-"	      0052c505    mov eax,[ebp-0E4h]"
-"	      0052c50b    cmp [ebp-0D0h],eax"
+"	      0052c4ff    inc j"
+"	      0052c505    mov eax,num_debris"
+"	      0052c50b    cmp j,eax"
 "	      0052c511    jge near ptr 0052C5E7h"
 );
 // LINE 1577:
@@ -2612,18 +2612,18 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 "	      0052c527    mov eax,edx"
 "	      0052c529    shl eax,10h"
 "	      0052c52c    add eax,190000h"
-"	      0052c531    mov [ebp-4],eax"
+"	      0052c531    mov speed,eax"
 );
 // LINE 1578:
 	asm( 
-"	      0052c534    lea eax,[ebp-88h]"
+"	      0052c534    lea eax,refmat[0][0]"
 "	      0052c53a    push eax"
 "	      0052c53b    call 004D1FF1h"
 "	      0052c540    add esp,4"
 );
 // LINE 1579:
 	asm( 
-"	      0052c543    lea eax,[ebp-88h]"
+"	      0052c543    lea eax,refmat[0][0]"
 "	      0052c549    push eax"
 "	      0052c54a    call 0056EC50h"
 "	      0052c54f    mov ecx,0E10h"
@@ -2638,7 +2638,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1580:
 	asm( 
-"	      0052c568    lea eax,[ebp-88h]"
+"	      0052c568    lea eax,refmat[0][0]"
 "	      0052c56e    push eax"
 "	      0052c56f    call 0056EC50h"
 "	      0052c574    mov ecx,78h"
@@ -2653,9 +2653,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1581:
 	asm( 
-"	      0052c591    lea eax,[ebp-88h]"
+"	      0052c591    lea eax,refmat[0][0]"
 "	      0052c597    push eax"
-"	      0052c598    lea eax,[ebp-94h]"
+"	      0052c598    lea eax,vec.x"
 "	      0052c59e    push eax"
 "	      0052c59f    push 59B518h"
 "	      0052c5a4    call 004D2094h"
@@ -2663,20 +2663,20 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1592:
 	asm( 
-"	      0052c5ac    mov eax,[ebp-0ECh]"
+"	      0052c5ac    mov eax,this"
 "	      0052c5b2    mov eax,[eax+3Ch]"
 "	      0052c5b5    push eax"
-"	      0052c5b6    mov eax,[ebp-4]"
+"	      0052c5b6    mov eax,speed"
 "	      0052c5b9    push eax"
-"	      0052c5ba    mov eax,[ebp-0ECh]"
+"	      0052c5ba    mov eax,this"
 "	      0052c5c0    add eax,58h"
 "	      0052c5c3    push eax"
 "	      0052c5c4    push 8"
-"	      0052c5c6    lea eax,[ebp-94h]"
+"	      0052c5c6    lea eax,vec.x"
 "	      0052c5cc    push eax"
-"	      0052c5cd    lea eax,[ebp-38h]"
+"	      0052c5cd    lea eax,sloc.x"
 "	      0052c5d0    push eax"
-"	      0052c5d1    lea eax,[ebp-0A8h]"
+"	      0052c5d1    lea eax,celloc.x"
 "	      0052c5d7    push eax"
 "	      0052c5d8    push 4"
 "	      0052c5da    call 0051EEE5h"
@@ -2693,21 +2693,21 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1598:
 	asm( 
 "	      0052c5ec    call 0056EC50h"
-"	      0052c5f1    mov ecx,[ebp+0Ch]"
+"	      0052c5f1    mov ecx,cptr"
 "	      0052c5f4    movsx ecx,word ptr [ecx+8]"
 "	      0052c5f8    movsx eax,ax"
 "	      0052c5fb    cdq"
 "	      0052c5fc    idiv ecx"
 "	      0052c5fe    lea eax,[edx+3]"
-"	      0052c601    mov [ebp-0E4h],eax"
+"	      0052c601    mov num_debris,eax"
 );
 // LINE 1599:
 	asm( 
-"	      0052c607    mov dword ptr [ebp-0D0h],0"
+"	      0052c607    mov j,0"
 "	      0052c611    jmp near ptr 0052C61Ch"
-"	      0052c616    inc dword ptr [ebp-0D0h]"
-"	      0052c61c    mov eax,[ebp-0E4h]"
-"	      0052c622    cmp [ebp-0D0h],eax"
+"	      0052c616    inc j"
+"	      0052c61c    mov eax,num_debris"
+"	      0052c622    cmp j,eax"
 "	      0052c628    jge near ptr 0052C6FEh"
 );
 // LINE 1601:
@@ -2720,18 +2720,18 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 "	      0052c63e    mov eax,edx"
 "	      0052c640    shl eax,10h"
 "	      0052c643    add eax,190000h"
-"	      0052c648    mov [ebp-4],eax"
+"	      0052c648    mov speed,eax"
 );
 // LINE 1602:
 	asm( 
-"	      0052c64b    lea eax,[ebp-88h]"
+"	      0052c64b    lea eax,refmat[0][0]"
 "	      0052c651    push eax"
 "	      0052c652    call 004D1FF1h"
 "	      0052c657    add esp,4"
 );
 // LINE 1603:
 	asm( 
-"	      0052c65a    lea eax,[ebp-88h]"
+"	      0052c65a    lea eax,refmat[0][0]"
 "	      0052c660    push eax"
 "	      0052c661    call 0056EC50h"
 "	      0052c666    mov ecx,0E10h"
@@ -2746,7 +2746,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1604:
 	asm( 
-"	      0052c67f    lea eax,[ebp-88h]"
+"	      0052c67f    lea eax,refmat[0][0]"
 "	      0052c685    push eax"
 "	      0052c686    call 0056EC50h"
 "	      0052c68b    mov ecx,78h"
@@ -2761,9 +2761,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1605:
 	asm( 
-"	      0052c6a8    lea eax,[ebp-88h]"
+"	      0052c6a8    lea eax,refmat[0][0]"
 "	      0052c6ae    push eax"
-"	      0052c6af    lea eax,[ebp-94h]"
+"	      0052c6af    lea eax,vec.x"
 "	      0052c6b5    push eax"
 "	      0052c6b6    push 59B518h"
 "	      0052c6bb    call 004D2094h"
@@ -2771,20 +2771,20 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1616:
 	asm( 
-"	      0052c6c3    mov eax,[ebp-0ECh]"
+"	      0052c6c3    mov eax,this"
 "	      0052c6c9    mov eax,[eax+3Ch]"
 "	      0052c6cc    push eax"
-"	      0052c6cd    mov eax,[ebp-4]"
+"	      0052c6cd    mov eax,speed"
 "	      0052c6d0    push eax"
-"	      0052c6d1    mov eax,[ebp-0ECh]"
+"	      0052c6d1    mov eax,this"
 "	      0052c6d7    add eax,58h"
 "	      0052c6da    push eax"
 "	      0052c6db    push 8"
-"	      0052c6dd    lea eax,[ebp-94h]"
+"	      0052c6dd    lea eax,vec.x"
 "	      0052c6e3    push eax"
-"	      0052c6e4    lea eax,[ebp-38h]"
+"	      0052c6e4    lea eax,sloc.x"
 "	      0052c6e7    push eax"
-"	      0052c6e8    lea eax,[ebp-0A8h]"
+"	      0052c6e8    lea eax,celloc.x"
 "	      0052c6ee    push eax"
 "	      0052c6ef    push 4"
 "	      0052c6f1    call 0051EEE5h"
@@ -2796,46 +2796,46 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1621:
 	asm( 
-"	      0052c6fe    mov dword ptr [ebp-0CCh],1Dh"
+"	      0052c6fe    mov mp.op,1Dh"
 );
 // LINE 1622:
 	asm( 
-"	      0052c708    mov dword ptr [ebp-0BCh],0"
+"	      0052c708    mov mp.i2num,0"
 );
 // LINE 1623:
 	asm( 
-"	      0052c712    mov eax,[ebp-0ECh]"
+"	      0052c712    mov eax,this"
 "	      0052c718    mov eax,[eax+3Ch]"
-"	      0052c71b    mov [ebp-0C8h],eax"
+"	      0052c71b    mov mp.id,eax"
 );
 // LINE 1624:
 	asm( 
-"	      0052c721    lea eax,[ebp-0CCh]"
+"	      0052c721    lea eax,mp.op"
 "	      0052c727    push eax"
 "	      0052c728    call 004FBD4Ah"
 "	      0052c72d    add esp,4"
 );
 // LINE 1626:
 	asm( 
-"	      0052c730    mov dword ptr [ebp-0CCh],0"
+"	      0052c730    mov mp.op,0"
 );
 // LINE 1627:
 	asm( 
-"	      0052c73a    mov eax,[ebp-0ECh]"
+"	      0052c73a    mov eax,this"
 "	      0052c740    mov eax,[eax+3Ch]"
-"	      0052c743    mov [ebp-0C8h],eax"
+"	      0052c743    mov mp.id,eax"
 );
 // LINE 1628:
 	asm( 
-"	      0052c749    mov eax,[ebp-0A8h]"
-"	      0052c74f    mov ecx,[ebp-0A4h]"
-"	      0052c755    lea edx,[ebp-0C4h]"
+"	      0052c749    mov eax,celloc.x"
+"	      0052c74f    mov ecx,celloc.y"
+"	      0052c755    lea edx,mp.maploc.x"
 "	      0052c75b    mov [edx],eax"
 "	      0052c75d    mov [edx+4],ecx"
 );
 // LINE 1629:
 	asm( 
-"	      0052c760    lea eax,[ebp-0CCh]"
+"	      0052c760    lea eax,mp.op"
 "	      0052c766    push eax"
 "	      0052c767    call 004FBD4Ah"
 "	      0052c76c    add esp,4"
@@ -2847,9 +2847,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1640:
 	asm( 
-"	      0052c779    mov eax,[ebp-48h]"
+"	      0052c779    mov eax,stobj"
 "	      0052c77c    mov eax,[eax]"
-"	      0052c77e    mov [ebp-48h],eax"
+"	      0052c77e    mov stobj,eax"
 );
 // LINE 1641:
 	asm( 
@@ -2857,71 +2857,71 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1647:
 	asm( 
-"	      0052c786    lea eax,[ebp-44h]"
+"	      0052c786    lea eax,cloc.x"
 "	      0052c789    push eax"
-"	      0052c78a    mov eax,[ebp+8]"
+"	      0052c78a    mov eax,dist"
 "	      0052c78d    push eax"
-"	      0052c78e    mov eax,[ebp-0ECh]"
+"	      0052c78e    mov eax,this"
 "	      0052c794    add eax,8"
 "	      0052c797    push eax"
-"	      0052c798    mov eax,[ebp-0ECh]"
+"	      0052c798    mov eax,this"
 "	      0052c79e    add eax,70h"
 "	      0052c7a1    push eax"
 "	      0052c7a2    call 00522DBCh"
 "	      0052c7a7    add esp,10h"
-"	      0052c7aa    mov [ebp-0E0h],eax"
+"	      0052c7aa    mov newdist,eax"
 );
 // LINE 1648:
 	asm( 
-"	      0052c7b0    cmp dword ptr [ebp-0E0h],0"
+"	      0052c7b0    cmp newdist,0"
 "	      0052c7b7    jle near ptr 0052CA1Bh"
 );
 // LINE 1652:
 	asm( 
-"	      0052c7bd    mov eax,[ebp-0E0h]"
+"	      0052c7bd    mov eax,newdist"
 "	      0052c7c3    push eax"
-"	      0052c7c4    mov eax,[ebp-0ECh]"
+"	      0052c7c4    mov eax,this"
 "	      0052c7ca    mov eax,[eax+8]"
 "	      0052c7cd    push eax"
 "	      0052c7ce    call 004D19BDh"
 "	      0052c7d3    add esp,8"
-"	      0052c7d6    mov ecx,[ebp-0ECh]"
+"	      0052c7d6    mov ecx,this"
 "	      0052c7dc    mov ecx,[ecx+70h]"
 "	      0052c7df    add ecx,eax"
-"	      0052c7e1    mov [ebp-0B4h],ecx"
+"	      0052c7e1    mov loc.x,ecx"
 );
 // LINE 1653:
 	asm( 
-"	      0052c7e7    mov eax,[ebp-0E0h]"
+"	      0052c7e7    mov eax,newdist"
 "	      0052c7ed    push eax"
-"	      0052c7ee    mov eax,[ebp-0ECh]"
+"	      0052c7ee    mov eax,this"
 "	      0052c7f4    mov eax,[eax+0Ch]"
 "	      0052c7f7    push eax"
 "	      0052c7f8    call 004D19BDh"
 "	      0052c7fd    add esp,8"
-"	      0052c800    mov ecx,[ebp-0ECh]"
+"	      0052c800    mov ecx,this"
 "	      0052c806    mov ecx,[ecx+74h]"
 "	      0052c809    add ecx,eax"
-"	      0052c80b    mov [ebp-0B0h],ecx"
+"	      0052c80b    mov loc.y,ecx"
 );
 // LINE 1654:
 	asm( 
-"	      0052c811    mov eax,[ebp-0E0h]"
+"	      0052c811    mov eax,newdist"
 "	      0052c817    push eax"
-"	      0052c818    mov eax,[ebp-0ECh]"
+"	      0052c818    mov eax,this"
 "	      0052c81e    mov eax,[eax+10h]"
 "	      0052c821    push eax"
 "	      0052c822    call 004D19BDh"
 "	      0052c827    add esp,8"
-"	      0052c82a    mov ecx,[ebp-0ECh]"
+"	      0052c82a    mov ecx,this"
 "	      0052c830    mov ecx,[ecx+78h]"
 "	      0052c833    add ecx,eax"
-"	      0052c835    mov [ebp-0ACh],ecx"
+"	      0052c835    mov loc.z,ecx"
 );
 // LINE 1655:
 	asm( 
-"	      0052c83b    lea eax,[ebp-0B4h]"
-"	      0052c841    lea ecx,[ebp-38h]"
+"	      0052c83b    lea eax,loc.x"
+"	      0052c841    lea ecx,sloc.x"
 "	      0052c844    mov edx,[eax]"
 "	      0052c846    mov [ecx],edx"
 "	      0052c848    mov edx,[eax+4]"
@@ -2932,37 +2932,37 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1656:
 	asm( 
 "	      0052c854    xor eax,eax"
-"	      0052c856    sub eax,[ebp-44h]"
+"	      0052c856    sub eax,cloc.x"
 "	      0052c859    neg eax"
-"	      0052c85b    sub [ebp-0B4h],eax"
+"	      0052c85b    sub loc.x,eax"
 );
 // LINE 1657:
 	asm( 
 "	      0052c861    xor eax,eax"
-"	      0052c863    sub eax,[ebp-40h]"
+"	      0052c863    sub eax,cloc.y"
 "	      0052c866    neg eax"
-"	      0052c868    sub [ebp-0B0h],eax"
+"	      0052c868    sub loc.y,eax"
 );
 // LINE 1658:
 	asm( 
 "	      0052c86e    xor eax,eax"
-"	      0052c870    sub eax,[ebp-3Ch]"
+"	      0052c870    sub eax,cloc.z"
 "	      0052c873    neg eax"
-"	      0052c875    sub [ebp-0ACh],eax"
+"	      0052c875    sub loc.z,eax"
 );
 // LINE 1662:
 	asm( 
-"	      0052c87b    mov eax,[ebp-0ECh]"
+"	      0052c87b    mov eax,this"
 "	      0052c881    mov eax,[eax+3Ch]"
 "	      0052c884    push eax"
 "	      0052c885    push 4"
-"	      0052c887    mov eax,[ebp-0ACh]"
+"	      0052c887    mov eax,loc.z"
 "	      0052c88d    push eax"
-"	      0052c88e    mov eax,[ebp-0B0h]"
+"	      0052c88e    mov eax,loc.y"
 "	      0052c894    push eax"
-"	      0052c895    mov eax,[ebp-0B4h]"
+"	      0052c895    mov eax,loc.x"
 "	      0052c89b    push eax"
-"	      0052c89c    mov eax,[ebp+0Ch]"
+"	      0052c89c    mov eax,cptr"
 "	      0052c89f    push eax"
 "	      0052c8a0    call 00523F50h"
 "	      0052c8a5    add esp,18h"
@@ -2970,7 +2970,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 // LINE 1664:
 	asm( 
 "	      0052c8a8    push 0"
-"	      0052c8aa    lea eax,[ebp-38h]"
+"	      0052c8aa    lea eax,sloc.x"
 "	      0052c8ad    push eax"
 "	      0052c8ae    push 1Ah"
 "	      0052c8b0    call 00446CC2h"
@@ -2978,32 +2978,32 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1667:
 	asm( 
-"	      0052c8b8    mov ecx,[ebp-0ECh]"
+"	      0052c8b8    mov ecx,this"
 "	      0052c8be    call 0052D411h"
 );
 // LINE 1668:
 	asm( 
-"	      0052c8c3    mov eax,[ebp-0ECh]"
+"	      0052c8c3    mov eax,this"
 "	      0052c8c9    mov byte ptr [eax+7],0"
 );
 // LINE 1710:
 	asm( 
 "	      0052c8cd    call 0056EC50h"
-"	      0052c8d2    mov ecx,[ebp+0Ch]"
+"	      0052c8d2    mov ecx,cptr"
 "	      0052c8d5    movsx ecx,word ptr [ecx+8]"
 "	      0052c8d9    movsx eax,ax"
 "	      0052c8dc    cdq"
 "	      0052c8dd    idiv ecx"
 "	      0052c8df    lea eax,[edx+3]"
-"	      0052c8e2    mov [ebp-0E4h],eax"
+"	      0052c8e2    mov num_debris,eax"
 );
 // LINE 1711:
 	asm( 
-"	      0052c8e8    mov dword ptr [ebp-0D0h],0"
+"	      0052c8e8    mov j,0"
 "	      0052c8f2    jmp near ptr 0052C8FDh"
-"	      0052c8f7    inc dword ptr [ebp-0D0h]"
-"	      0052c8fd    mov eax,[ebp-0E4h]"
-"	      0052c903    cmp [ebp-0D0h],eax"
+"	      0052c8f7    inc j"
+"	      0052c8fd    mov eax,num_debris"
+"	      0052c903    cmp j,eax"
 "	      0052c909    jge near ptr 0052C9DFh"
 );
 // LINE 1713:
@@ -3016,18 +3016,18 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 "	      0052c91f    mov eax,edx"
 "	      0052c921    shl eax,10h"
 "	      0052c924    add eax,190000h"
-"	      0052c929    mov [ebp-4],eax"
+"	      0052c929    mov speed,eax"
 );
 // LINE 1714:
 	asm( 
-"	      0052c92c    lea eax,[ebp-88h]"
+"	      0052c92c    lea eax,refmat[0][0]"
 "	      0052c932    push eax"
 "	      0052c933    call 004D1FF1h"
 "	      0052c938    add esp,4"
 );
 // LINE 1715:
 	asm( 
-"	      0052c93b    lea eax,[ebp-88h]"
+"	      0052c93b    lea eax,refmat[0][0]"
 "	      0052c941    push eax"
 "	      0052c942    call 0056EC50h"
 "	      0052c947    mov ecx,0E10h"
@@ -3042,7 +3042,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1716:
 	asm( 
-"	      0052c960    lea eax,[ebp-88h]"
+"	      0052c960    lea eax,refmat[0][0]"
 "	      0052c966    push eax"
 "	      0052c967    call 0056EC50h"
 "	      0052c96c    mov ecx,78h"
@@ -3057,9 +3057,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1717:
 	asm( 
-"	      0052c989    lea eax,[ebp-88h]"
+"	      0052c989    lea eax,refmat[0][0]"
 "	      0052c98f    push eax"
-"	      0052c990    lea eax,[ebp-94h]"
+"	      0052c990    lea eax,vec.x"
 "	      0052c996    push eax"
 "	      0052c997    push 59B518h"
 "	      0052c99c    call 004D2094h"
@@ -3067,20 +3067,20 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1728:
 	asm( 
-"	      0052c9a4    mov eax,[ebp-0ECh]"
+"	      0052c9a4    mov eax,this"
 "	      0052c9aa    mov eax,[eax+3Ch]"
 "	      0052c9ad    push eax"
-"	      0052c9ae    mov eax,[ebp-4]"
+"	      0052c9ae    mov eax,speed"
 "	      0052c9b1    push eax"
-"	      0052c9b2    mov eax,[ebp-0ECh]"
+"	      0052c9b2    mov eax,this"
 "	      0052c9b8    add eax,58h"
 "	      0052c9bb    push eax"
 "	      0052c9bc    push 8"
-"	      0052c9be    lea eax,[ebp-94h]"
+"	      0052c9be    lea eax,vec.x"
 "	      0052c9c4    push eax"
-"	      0052c9c5    lea eax,[ebp-38h]"
+"	      0052c9c5    lea eax,sloc.x"
 "	      0052c9c8    push eax"
-"	      0052c9c9    lea eax,[ebp-0A8h]"
+"	      0052c9c9    lea eax,celloc.x"
 "	      0052c9cf    push eax"
 "	      0052c9d0    push 4"
 "	      0052c9d2    call 0051EEE5h"
@@ -3092,21 +3092,21 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 );
 // LINE 1733:
 	asm( 
-"	      0052c9df    mov dword ptr [ebp-0CCh],1Dh"
+"	      0052c9df    mov mp.op,1Dh"
 );
 // LINE 1734:
 	asm( 
-"	      0052c9e9    mov dword ptr [ebp-0BCh],0"
+"	      0052c9e9    mov mp.i2num,0"
 );
 // LINE 1735:
 	asm( 
-"	      0052c9f3    mov eax,[ebp-0ECh]"
+"	      0052c9f3    mov eax,this"
 "	      0052c9f9    mov eax,[eax+3Ch]"
-"	      0052c9fc    mov [ebp-0C8h],eax"
+"	      0052c9fc    mov mp.id,eax"
 );
 // LINE 1736:
 	asm( 
-"	      0052ca02    lea eax,[ebp-0CCh]"
+"	      0052ca02    lea eax,mp.op"
 "	      0052ca08    push eax"
 "	      0052ca09    call 004FBD4Ah"
 "	      0052ca0e    add esp,4"
@@ -3141,11 +3141,11 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 "	      0052ca2f    push ebx"
 "	      0052ca30    push esi"
 "	      0052ca31    push edi"
-"	      0052ca32    mov [ebp-4],ecx"
+"	      0052ca32    mov this,ecx"
 );
 // LINE 1765:
 	asm( 
-"	      0052ca35    mov eax,[ebp-4]"
+"	      0052ca35    mov eax,this"
 "	      0052ca38    cmp dword ptr [eax+14h],0"
 "	      0052ca3c    jg near ptr 0052CA51h"
 );
@@ -3183,35 +3183,35 @@ int32_t PlaneClass::AmIInANewCell() {
 "	      0052ca63    push ebx"
 "	      0052ca64    push esi"
 "	      0052ca65    push edi"
-"	      0052ca66    mov [ebp-4],ecx"
+"	      0052ca66    mov this,ecx"
 );
 // LINE 1797:
 	asm( 
-"	      0052ca69    mov eax,[ebp-4]"
+"	      0052ca69    mov eax,this"
 "	      0052ca6c    mov eax,[eax+70h]"
 "	      0052ca6f    add eax,20000000h"
 "	      0052ca74    sar eax,16h"
-"	      0052ca77    mov ecx,[ebp-4]"
+"	      0052ca77    mov ecx,this"
 "	      0052ca7a    mov [ecx+28h],eax"
 );
 // LINE 1798:
 	asm( 
 "	      0052ca7d    mov eax,20000000h"
-"	      0052ca82    mov ecx,[ebp-4]"
+"	      0052ca82    mov ecx,this"
 "	      0052ca85    sub eax,[ecx+78h]"
 "	      0052ca88    sar eax,16h"
-"	      0052ca8b    mov ecx,[ebp-4]"
+"	      0052ca8b    mov ecx,this"
 "	      0052ca8e    mov [ecx+2Ch],eax"
 );
 // LINE 1802:
 	asm( 
-"	      0052ca91    mov eax,[ebp-4]"
-"	      0052ca94    mov ecx,[ebp-4]"
+"	      0052ca91    mov eax,this"
+"	      0052ca94    mov ecx,this"
 "	      0052ca97    mov ecx,[ecx+20h]"
 "	      0052ca9a    cmp [eax+28h],ecx"
 "	      0052ca9d    jne near ptr 0052CAB5h"
-"	      0052caa3    mov eax,[ebp-4]"
-"	      0052caa6    mov ecx,[ebp-4]"
+"	      0052caa3    mov eax,this"
+"	      0052caa6    mov ecx,this"
 "	      0052caa9    mov ecx,[ecx+24h]"
 "	      0052caac    cmp [eax+2Ch],ecx"
 "	      0052caaf    je near ptr 0052CABFh"
@@ -3248,14 +3248,14 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052cad1    push ebx"
 "	      0052cad2    push esi"
 "	      0052cad3    push edi"
-"	      0052cad4    mov [ebp-10h],ecx"
+"	      0052cad4    mov this,ecx"
 );
 // LINE 1830:
 	asm( 
-"	      0052cad7    mov eax,[ebp+8]"
+"	      0052cad7    mov eax,point"
 "	      0052cada    mov eax,[eax+4]"
 "	      0052cadd    and eax,0FFh"
-"	      0052cae2    mov ecx,[ebp+8]"
+"	      0052cae2    mov ecx,point"
 "	      0052cae5    mov ecx,[ecx]"
 "	      0052cae7    and ecx,0FFh"
 "	      0052caed    shl ecx,0Ah"
@@ -3272,11 +3272,11 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052cb20    jmp near ptr 0052CB25h"
 "	      0052cb25    jmp near ptr 0052CB2Ah"
 "	      0052cb2a    mov eax,[ebp-0Ch]"
-"	      0052cb2d    mov [ebp-4],eax"
+"	      0052cb2d    mov cellPointer,eax"
 );
 // LINE 1832:
 	asm( 
-"	      0052cb30    cmp dword ptr [ebp-4],0"
+"	      0052cb30    cmp cellPointer,0"
 "	      0052cb34    jne near ptr 0052CB56h"
 "	      0052cb3a    push 728h"
 "	      0052cb3f    push 5B76DCh"
@@ -3288,36 +3288,36 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1834:
 	asm( 
-"	      0052cb5b    cmp dword ptr [ebp-4],0"
+"	      0052cb5b    cmp cellPointer,0"
 "	      0052cb5f    je near ptr 0052CBD5h"
 );
 // LINE 1836:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
 	asm( 
-"	      0052cb65    mov eax,[ebp-4]"
+"	      0052cb65    mov eax,cellPointer"
 "	      0052cb68    add eax,10h"
-"	      0052cb6b    mov [ebp-8],eax"
+"	      0052cb6b    mov dyptrptr,eax"
 );
 // LINE 1838:
 	asm( 
-"	      0052cb6e    mov eax,[ebp-8]"
+"	      0052cb6e    mov eax,dyptrptr"
 "	      0052cb71    cmp dword ptr [eax],0"
 "	      0052cb74    je near ptr 0052CBA8h"
 );
 // LINE 1842:
 	asm( 
-"	      0052cb7a    mov eax,[ebp-10h]"
+"	      0052cb7a    mov eax,this"
 "	      0052cb7d    add eax,58h"
-"	      0052cb80    mov ecx,[ebp-8]"
+"	      0052cb80    mov ecx,dyptrptr"
 "	      0052cb83    cmp eax,[ecx]"
 "	      0052cb85    jne near ptr 0052CB9Bh"
 );
 // LINE 1846:
 	asm( 
-"	      0052cb8b    mov eax,[ebp-10h]"
+"	      0052cb8b    mov eax,this"
 "	      0052cb8e    mov eax,[eax+58h]"
-"	      0052cb91    mov ecx,[ebp-8]"
+"	      0052cb91    mov ecx,dyptrptr"
 "	      0052cb94    mov [ecx],eax"
 );
 // LINE 1848:
@@ -3326,9 +3326,9 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1851:
 	asm( 
-"	      0052cb9b    mov eax,[ebp-8]"
+"	      0052cb9b    mov eax,dyptrptr"
 "	      0052cb9e    mov eax,[eax]"
-"	      0052cba0    mov [ebp-8],eax"
+"	      0052cba0    mov dyptrptr,eax"
 );
 // LINE 1852:
 	asm( 
@@ -3336,7 +3336,7 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1854:
 	asm( 
-"	      0052cba8    mov eax,[ebp-8]"
+"	      0052cba8    mov eax,dyptrptr"
 "	      0052cbab    cmp dword ptr [eax],0"
 "	      0052cbae    jne near ptr 0052CBD0h"
 "	      0052cbb4    push 73Eh"
@@ -3371,14 +3371,14 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 "	      0052cbe7    push ebx"
 "	      0052cbe8    push esi"
 "	      0052cbe9    push edi"
-"	      0052cbea    mov [ebp-0Ch],ecx"
+"	      0052cbea    mov this,ecx"
 );
 // LINE 1878:
 	asm( 
-"	      0052cbed    mov eax,[ebp+8]"
+"	      0052cbed    mov eax,point"
 "	      0052cbf0    mov eax,[eax+4]"
 "	      0052cbf3    and eax,0FFh"
-"	      0052cbf8    mov ecx,[ebp+8]"
+"	      0052cbf8    mov ecx,point"
 "	      0052cbfb    mov ecx,[ecx]"
 "	      0052cbfd    and ecx,0FFh"
 "	      0052cc03    shl ecx,0Ah"
@@ -3395,12 +3395,12 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 "	      0052cc36    jmp near ptr 0052CC3Bh"
 "	      0052cc3b    jmp near ptr 0052CC40h"
 "	      0052cc40    mov eax,[ebp-8]"
-"	      0052cc43    mov [ebp-4],eax"
+"	      0052cc43    mov cellPointer,eax"
 );
 // LINE 1880:
 	asm( 
-"	      0052cc46    mov eax,[ebp-4]"
-"	      0052cc49    mov ecx,[ebp-0Ch]"
+"	      0052cc46    mov eax,cellPointer"
+"	      0052cc49    mov ecx,this"
 "	      0052cc4c    add ecx,58h"
 "	      0052cc4f    cmp [eax+10h],ecx"
 "	      0052cc52    jne near ptr 0052CC74h"
@@ -3414,16 +3414,16 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 );
 // LINE 1882:
 	asm( 
-"	      0052cc79    mov eax,[ebp-4]"
+"	      0052cc79    mov eax,cellPointer"
 "	      0052cc7c    mov eax,[eax+10h]"
-"	      0052cc7f    mov ecx,[ebp-0Ch]"
+"	      0052cc7f    mov ecx,this"
 "	      0052cc82    mov [ecx+58h],eax"
 );
 // LINE 1883:
 	asm( 
-"	      0052cc85    mov eax,[ebp-0Ch]"
+"	      0052cc85    mov eax,this"
 "	      0052cc88    add eax,58h"
-"	      0052cc8b    mov ecx,[ebp-4]"
+"	      0052cc8b    mov ecx,cellPointer"
 "	      0052cc8e    mov [ecx+10h],eax"
 );
 // LINE 1884:
@@ -3450,14 +3450,14 @@ void PlaneClass::AdjustCurrentPosition() {
 "	      0052cca3    push ebx"
 "	      0052cca4    push esi"
 "	      0052cca5    push edi"
-"	      0052cca6    mov [ebp-10h],ecx"
+"	      0052cca6    mov this,ecx"
 );
 // LINE 1905:
 	asm( 
-"	      0052cca9    mov eax,[ebp-10h]"
+"	      0052cca9    mov eax,this"
 "	      0052ccac    mov eax,[eax+24h]"
 "	      0052ccaf    and eax,0FFh"
-"	      0052ccb4    mov ecx,[ebp-10h]"
+"	      0052ccb4    mov ecx,this"
 "	      0052ccb7    mov ecx,[ecx+20h]"
 "	      0052ccba    and ecx,0FFh"
 "	      0052ccc0    shl ecx,0Ah"
@@ -3474,11 +3474,11 @@ void PlaneClass::AdjustCurrentPosition() {
 "	      0052ccf3    jmp near ptr 0052CCF8h"
 "	      0052ccf8    jmp near ptr 0052CCFDh"
 "	      0052ccfd    mov eax,[ebp-0Ch]"
-"	      0052cd00    mov [ebp-8],eax"
+"	      0052cd00    mov cellPointer,eax"
 );
 // LINE 1907:
 	asm( 
-"	      0052cd03    cmp dword ptr [ebp-8],0"
+"	      0052cd03    cmp cellPointer,0"
 "	      0052cd07    jne near ptr 0052CD29h"
 "	      0052cd0d    push 773h"
 "	      0052cd12    push 5B7780h"
@@ -3490,44 +3490,44 @@ void PlaneClass::AdjustCurrentPosition() {
 );
 // LINE 1911:
 	asm( 
-"	      0052cd2e    mov eax,[ebp-8]"
+"	      0052cd2e    mov eax,cellPointer"
 "	      0052cd31    movsx eax,word ptr [eax+2]"
 "	      0052cd35    shl eax,10h"
-"	      0052cd38    mov ecx,[ebp-10h]"
+"	      0052cd38    mov ecx,this"
 "	      0052cd3b    mov [ecx+70h],eax"
 );
 // LINE 1912:
 	asm( 
-"	      0052cd3e    mov eax,[ebp-8]"
+"	      0052cd3e    mov eax,cellPointer"
 "	      0052cd41    movsx eax,word ptr [eax+4]"
 "	      0052cd45    shl eax,10h"
-"	      0052cd48    mov ecx,[ebp-10h]"
+"	      0052cd48    mov ecx,this"
 "	      0052cd4b    mov [ecx+74h],eax"
 );
 // LINE 1913:
 	asm( 
-"	      0052cd4e    mov eax,[ebp-8]"
+"	      0052cd4e    mov eax,cellPointer"
 "	      0052cd51    movsx eax,word ptr [eax+6]"
 "	      0052cd55    shl eax,10h"
-"	      0052cd58    mov ecx,[ebp-10h]"
+"	      0052cd58    mov ecx,this"
 "	      0052cd5b    mov [ecx+78h],eax"
 );
 // LINE 1916:
 	asm( 
-"	      0052cd5e    mov eax,[ebp-8]"
+"	      0052cd5e    mov eax,cellPointer"
 "	      0052cd61    push eax"
 "	      0052cd62    call 004F5A0Ch"
 "	      0052cd67    add esp,4"
-"	      0052cd6a    mov [ebp-4],eax"
+"	      0052cd6a    mov alt,eax"
 );
 // LINE 1917:
 	asm( 
-"	      0052cd6d    cmp dword ptr [ebp-4],15E0000h"
+"	      0052cd6d    cmp alt,15E0000h"
 "	      0052cd74    jge near ptr 0052CD89h"
 );
 // LINE 1918:
 	asm( 
-"	      0052cd7a    mov eax,[ebp-10h]"
+"	      0052cd7a    mov eax,this"
 "	      0052cd7d    add dword ptr [eax+74h],17C0000h"
 );
 // LINE 1919:
@@ -3536,9 +3536,9 @@ void PlaneClass::AdjustCurrentPosition() {
 );
 // LINE 1920:
 	asm( 
-"	      0052cd89    mov eax,[ebp-4]"
+"	      0052cd89    mov eax,alt"
 "	      0052cd8c    add eax,1E0000h"
-"	      0052cd91    mov ecx,[ebp-10h]"
+"	      0052cd91    mov ecx,this"
 "	      0052cd94    add [ecx+74h],eax"
 );
 // LINE 1923:
@@ -3566,7 +3566,7 @@ void PlaneClass::AdjustNextPosition() {
 "	      0052cda7    push ebx"
 "	      0052cda8    push esi"
 "	      0052cda9    push edi"
-"	      0052cdaa    mov [ebp-58h],ecx"
+"	      0052cdaa    mov this,ecx"
 );
 // LINE 1944:
 	asm( 
@@ -3588,11 +3588,11 @@ void PlaneClass::AdjustNextPosition() {
 "	      0052cdf6    jmp near ptr 0052CDFBh"
 "	      0052cdfb    jmp near ptr 0052CE00h"
 "	      0052ce00    mov eax,[ebp-54h]"
-"	      0052ce03    mov [ebp-50h],eax"
+"	      0052ce03    mov cellPointer,eax"
 );
 // LINE 1948:
 	asm( 
-"	      0052ce06    cmp dword ptr [ebp-50h],0"
+"	      0052ce06    cmp cellPointer,0"
 "	      0052ce0a    jne near ptr 0052CE2Ch"
 "	      0052ce10    push 79Ch"
 "	      0052ce15    push 5B77B0h"
@@ -3604,43 +3604,43 @@ void PlaneClass::AdjustNextPosition() {
 );
 // LINE 1951:
 	asm( 
-"	      0052ce31    mov eax,[ebp-50h]"
+"	      0052ce31    mov eax,cellPointer"
 "	      0052ce34    movsx eax,word ptr [eax+2]"
 "	      0052ce38    shl eax,10h"
-"	      0052ce3b    mov ecx,[ebp-58h]"
+"	      0052ce3b    mov ecx,this"
 "	      0052ce3e    sub eax,[ecx+70h]"
-"	      0052ce41    mov [ebp-4Ch],eax"
+"	      0052ce41    mov nextFineLocation.x,eax"
 );
 // LINE 1952:
 	asm( 
-"	      0052ce44    mov eax,[ebp-50h]"
+"	      0052ce44    mov eax,cellPointer"
 "	      0052ce47    movsx eax,word ptr [eax+6]"
 "	      0052ce4b    shl eax,10h"
-"	      0052ce4e    mov ecx,[ebp-58h]"
+"	      0052ce4e    mov ecx,this"
 "	      0052ce51    sub eax,[ecx+78h]"
-"	      0052ce54    mov [ebp-44h],eax"
+"	      0052ce54    mov nextFineLocation.z,eax"
 );
 // LINE 1953:
 	asm( 
-"	      0052ce57    mov dword ptr [ebp-48h],0"
+"	      0052ce57    mov nextFineLocation.y,0"
 );
 // LINE 1956:
 	asm( 
-"	      0052ce5e    lea eax,[ebp-4Ch]"
+"	      0052ce5e    lea eax,nextFineLocation.x"
 "	      0052ce61    push eax"
 "	      0052ce62    call 004CA1E3h"
 "	      0052ce67    add esp,4"
 );
 // LINE 1959:
 	asm( 
-"	      0052ce6a    lea eax,[ebp-40h]"
+"	      0052ce6a    lea eax,mat[0][0]"
 "	      0052ce6d    push eax"
 "	      0052ce6e    call 004D1FF1h"
 "	      0052ce73    add esp,4"
 );
 // LINE 1960:
 	asm( 
-"	      0052ce76    lea eax,[ebp-40h]"
+"	      0052ce76    lea eax,mat[0][0]"
 "	      0052ce79    push eax"
 "	      0052ce7a    mov ebx,12C0000h"
 "	      0052ce7f    call 0056EC50h"
@@ -3657,29 +3657,29 @@ void PlaneClass::AdjustNextPosition() {
 );
 // LINE 1961:
 	asm( 
-"	      0052ce9f    lea eax,[ebp-40h]"
+"	      0052ce9f    lea eax,mat[0][0]"
 "	      0052cea2    push eax"
-"	      0052cea3    mov eax,[ebp-58h]"
+"	      0052cea3    mov eax,this"
 "	      0052cea6    add eax,8"
 "	      0052cea9    push eax"
-"	      0052ceaa    lea eax,[ebp-4Ch]"
+"	      0052ceaa    lea eax,nextFineLocation.x"
 "	      0052cead    push eax"
 "	      0052ceae    call 004D2094h"
 "	      0052ceb3    add esp,0Ch"
 );
 // LINE 1963:
 	asm( 
-"	      0052ceb6    mov eax,[ebp-58h]"
+"	      0052ceb6    mov eax,this"
 "	      0052ceb9    movsx eax,word ptr [eax+64h]"
 "	      0052cebd    test al,1"
 "	      0052cebf    je near ptr 0052CEDBh"
 );
 // LINE 1965:
 	asm( 
-"	      0052cec5    mov eax,[ebp-58h]"
+"	      0052cec5    mov eax,this"
 "	      0052cec8    add eax,8"
 "	      0052cecb    push eax"
-"	      0052cecc    mov eax,[ebp-58h]"
+"	      0052cecc    mov eax,this"
 "	      0052cecf    add eax,7Ch"
 "	      0052ced2    push eax"
 "	      0052ced3    call 004CAEFBh"
@@ -3713,11 +3713,11 @@ void PlaneClass::AdjustNextAltitude() {
 "	      0052ceeb    push ebx"
 "	      0052ceec    push esi"
 "	      0052ceed    push edi"
-"	      0052ceee    mov [ebp-6Ch],ecx"
+"	      0052ceee    mov this,ecx"
 );
 // LINE 1995:
 	asm( 
-"	      0052cef1    mov eax,[ebp-6Ch]"
+"	      0052cef1    mov eax,this"
 "	      0052cef4    cmp dword ptr [eax+54h],12Eh"
 "	      0052cefb    jne near ptr 0052CF0Bh"
 "	      0052cf01    jmp near ptr 0052CF97h"
@@ -3740,14 +3740,14 @@ void PlaneClass::AdjustNextAltitude() {
 );
 // LINE 1999:
 	asm( 
-"	      0052cf34    lea eax,[ebp-40h]"
+"	      0052cf34    lea eax,mat[0][0]"
 "	      0052cf37    push eax"
 "	      0052cf38    call 004D1FF1h"
 "	      0052cf3d    add esp,4"
 );
 // LINE 2000:
 	asm( 
-"	      0052cf40    lea eax,[ebp-40h]"
+"	      0052cf40    lea eax,mat[0][0]"
 "	      0052cf43    push eax"
 "	      0052cf44    mov ebx,320h"
 "	      0052cf49    call 0056EC50h"
@@ -3763,11 +3763,11 @@ void PlaneClass::AdjustNextAltitude() {
 );
 // LINE 2001:
 	asm( 
-"	      0052cf67    lea eax,[ebp-40h]"
+"	      0052cf67    lea eax,mat[0][0]"
 "	      0052cf6a    push eax"
-"	      0052cf6b    lea eax,[ebp-4Ch]"
+"	      0052cf6b    lea eax,loc.x"
 "	      0052cf6e    push eax"
-"	      0052cf6f    mov eax,[ebp-6Ch]"
+"	      0052cf6f    mov eax,this"
 "	      0052cf72    add eax,8"
 "	      0052cf75    push eax"
 "	      0052cf76    call 004D2094h"
@@ -3775,8 +3775,8 @@ void PlaneClass::AdjustNextAltitude() {
 );
 // LINE 2002:
 	asm( 
-"	      0052cf7e    lea eax,[ebp-4Ch]"
-"	      0052cf81    mov ecx,[ebp-6Ch]"
+"	      0052cf7e    lea eax,loc.x"
+"	      0052cf81    mov ecx,this"
 "	      0052cf84    add ecx,8"
 "	      0052cf87    mov edx,[eax]"
 "	      0052cf89    mov [ecx],edx"
@@ -3787,42 +3787,42 @@ void PlaneClass::AdjustNextAltitude() {
 );
 // LINE 2008:
 	asm( 
-"	      0052cf97    mov eax,[ebp-6Ch]"
+"	      0052cf97    mov eax,this"
 "	      0052cf9a    mov eax,[eax+70h]"
-"	      0052cf9d    mov ecx,[ebp-6Ch]"
+"	      0052cf9d    mov ecx,this"
 "	      0052cfa0    mov ecx,[ecx+8]"
 "	      0052cfa3    shl ecx,5"
 "	      0052cfa6    add eax,ecx"
-"	      0052cfa8    mov [ebp-4Ch],eax"
+"	      0052cfa8    mov loc.x,eax"
 );
 // LINE 2009:
 	asm( 
-"	      0052cfab    mov eax,[ebp-6Ch]"
+"	      0052cfab    mov eax,this"
 "	      0052cfae    mov eax,[eax+10h]"
 "	      0052cfb1    shl eax,5"
-"	      0052cfb4    mov ecx,[ebp-6Ch]"
+"	      0052cfb4    mov ecx,this"
 "	      0052cfb7    add eax,[ecx+78h]"
-"	      0052cfba    mov [ebp-44h],eax"
+"	      0052cfba    mov loc.z,eax"
 );
 // LINE 2011:
 	asm( 
-"	      0052cfbd    mov eax,[ebp-4Ch]"
+"	      0052cfbd    mov eax,loc.x"
 "	      0052cfc0    add eax,20000000h"
 "	      0052cfc5    sar eax,16h"
-"	      0052cfc8    mov [ebp-5Ch],eax"
+"	      0052cfc8    mov nextcell.x,eax"
 );
 // LINE 2012:
 	asm( 
 "	      0052cfcb    mov eax,20000000h"
-"	      0052cfd0    sub eax,[ebp-44h]"
+"	      0052cfd0    sub eax,loc.z"
 "	      0052cfd3    sar eax,16h"
-"	      0052cfd6    mov [ebp-58h],eax"
+"	      0052cfd6    mov nextcell.y,eax"
 );
 // LINE 2014:
 	asm( 
-"	      0052cfd9    mov eax,[ebp-58h]"
+"	      0052cfd9    mov eax,nextcell.y"
 "	      0052cfdc    and eax,0FFh"
-"	      0052cfe1    mov ecx,[ebp-5Ch]"
+"	      0052cfe1    mov ecx,nextcell.x"
 "	      0052cfe4    and ecx,0FFh"
 "	      0052cfea    shl ecx,0Ah"
 "	      0052cfed    mov eax,[ecx+eax*4+67ED30h]"
@@ -3838,46 +3838,46 @@ void PlaneClass::AdjustNextAltitude() {
 "	      0052d01d    jmp near ptr 0052D022h"
 "	      0052d022    jmp near ptr 0052D027h"
 "	      0052d027    mov eax,[ebp-68h]"
-"	      0052d02a    mov [ebp-60h],eax"
+"	      0052d02a    mov cellPointer,eax"
 );
 // LINE 2016:
 	asm( 
-"	      0052d02d    mov eax,[ebp-60h]"
+"	      0052d02d    mov eax,cellPointer"
 "	      0052d030    push eax"
 "	      0052d031    call 004F5A0Ch"
 "	      0052d036    add esp,4"
-"	      0052d039    mov [ebp-54h],eax"
+"	      0052d039    mov alt,eax"
 );
 // LINE 2017:
 	asm( 
-"	      0052d03c    cmp dword ptr [ebp-54h],15E0000h"
+"	      0052d03c    cmp alt,15E0000h"
 "	      0052d043    jge near ptr 0052D050h"
 );
 // LINE 2018:
 	asm( 
-"	      0052d049    mov dword ptr [ebp-54h],15E0000h"
+"	      0052d049    mov alt,15E0000h"
 );
 // LINE 2023:
 	asm( 
-"	      0052d050    mov eax,[ebp-60h]"
+"	      0052d050    mov eax,cellPointer"
 "	      0052d053    movsx eax,word ptr [eax+4]"
 "	      0052d057    shl eax,10h"
-"	      0052d05a    add eax,[ebp-54h]"
+"	      0052d05a    add eax,alt"
 "	      0052d05d    add eax,1E0000h"
-"	      0052d062    mov ecx,[ebp-6Ch]"
+"	      0052d062    mov ecx,this"
 "	      0052d065    sub eax,[ecx+74h]"
-"	      0052d068    mov [ebp-50h],eax"
+"	      0052d068    mov altdiff,eax"
 );
 // LINE 2024:
 	asm( 
-"	      0052d06b    mov eax,[ebp-50h]"
+"	      0052d06b    mov eax,altdiff"
 "	      0052d06e    sar eax,4"
-"	      0052d071    mov ecx,[ebp-6Ch]"
+"	      0052d071    mov ecx,this"
 "	      0052d074    mov [ecx+38h],eax"
 );
 // LINE 2029:
 	asm( 
-"	      0052d077    mov eax,[ebp-6Ch]"
+"	      0052d077    mov eax,this"
 "	      0052d07a    mov dword ptr [eax+14h],200000h"
 );
 // LINE 2034:
@@ -3915,33 +3915,33 @@ void PlaneClass::BeamToWithinCameraRange() {
 "	      0052d091    push ebx"
 "	      0052d092    push esi"
 "	      0052d093    push edi"
-"	      0052d094    mov [ebp-48h],ecx"
+"	      0052d094    mov this,ecx"
 );
 // LINE 2057:
 	asm( 
-"	      0052d097    mov dword ptr [ebp-0Ch],0"
+"	      0052d097    mov curr_dist,0"
 );
 // LINE 2058:
 	asm( 
-"	      0052d09e    mov dword ptr [ebp-38h],0FFFFFFFFh"
+"	      0052d09e    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 2060:
 	asm( 
-"	      0052d0a5    mov dword ptr [ebp-3Ch],0"
+"	      0052d0a5    mov stop_now,0"
 );
 // LINE 2061:
 	asm( 
-"	      0052d0ac    mov dword ptr [ebp-10h],7"
+"	      0052d0ac    mov spiral_dist,7"
 );
 // LINE 2063:
 	asm( 
-"	      0052d0b3    mov dword ptr [ebp-40h],0"
+"	      0052d0b3    mov foundcell,0"
 );
 // LINE 2067:
 	asm( 
 "	      0052d0ba    mov eax,6C1210h"
 "	      0052d0bf    add eax,14h"
-"	      0052d0c2    lea ecx,[ebp-1Ch]"
+"	      0052d0c2    lea ecx,vec.x"
 "	      0052d0c5    mov edx,[eax]"
 "	      0052d0c7    mov [ecx],edx"
 "	      0052d0c9    mov edx,[eax+4]"
@@ -3951,7 +3951,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2069:
 	asm( 
-"	      0052d0d5    mov eax,[ebp-48h]"
+"	      0052d0d5    mov eax,this"
 "	      0052d0d8    mov dword ptr [eax+34h],0"
 );
 // LINE 2075:
@@ -3969,35 +3969,35 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2079:
 	asm( 
-"	      0052d0fb    mov eax,[ebp-14h]"
-"	      0052d0fe    mov [ebp-18h],eax"
+"	      0052d0fb    mov eax,vec.z"
+"	      0052d0fe    mov vec.y,eax"
 );
 // LINE 2080:
 	asm( 
-"	      0052d101    mov eax,[ebp-1Ch]"
+"	      0052d101    mov eax,vec.x"
 "	      0052d104    neg eax"
-"	      0052d106    mov [ebp-14h],eax"
+"	      0052d106    mov vec.z,eax"
 );
 // LINE 2081:
 	asm( 
-"	      0052d109    mov eax,[ebp-18h]"
-"	      0052d10c    mov [ebp-1Ch],eax"
+"	      0052d109    mov eax,vec.y"
+"	      0052d10c    mov vec.x,eax"
 );
 // LINE 2083:
 	asm( 
-"	      0052d10f    mov eax,[ebp-1Ch]"
+"	      0052d10f    mov eax,vec.x"
 "	      0052d112    mov ecx,ds:[6663A0h]"
 "	      0052d118    sar ecx,1"
 "	      0052d11b    imul eax,ecx"
-"	      0052d11e    mov [ebp-1Ch],eax"
+"	      0052d11e    mov vec.x,eax"
 );
 // LINE 2084:
 	asm( 
-"	      0052d121    mov eax,[ebp-14h]"
+"	      0052d121    mov eax,vec.z"
 "	      0052d124    mov ecx,ds:[6663A0h]"
 "	      0052d12a    sar ecx,1"
 "	      0052d12d    imul eax,ecx"
-"	      0052d130    mov [ebp-14h],eax"
+"	      0052d130    mov vec.z,eax"
 );
 // LINE 2085:
 	asm( 
@@ -4005,35 +4005,35 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2088:
 	asm( 
-"	      0052d138    mov eax,[ebp-14h]"
+"	      0052d138    mov eax,vec.z"
 "	      0052d13b    neg eax"
-"	      0052d13d    mov [ebp-18h],eax"
+"	      0052d13d    mov vec.y,eax"
 );
 // LINE 2089:
 	asm( 
-"	      0052d140    mov eax,[ebp-1Ch]"
-"	      0052d143    mov [ebp-14h],eax"
+"	      0052d140    mov eax,vec.x"
+"	      0052d143    mov vec.z,eax"
 );
 // LINE 2090:
 	asm( 
-"	      0052d146    mov eax,[ebp-18h]"
-"	      0052d149    mov [ebp-1Ch],eax"
+"	      0052d146    mov eax,vec.y"
+"	      0052d149    mov vec.x,eax"
 );
 // LINE 2092:
 	asm( 
-"	      0052d14c    mov eax,[ebp-1Ch]"
+"	      0052d14c    mov eax,vec.x"
 "	      0052d14f    mov ecx,ds:[6663A0h]"
 "	      0052d155    sar ecx,1"
 "	      0052d158    imul eax,ecx"
-"	      0052d15b    mov [ebp-1Ch],eax"
+"	      0052d15b    mov vec.x,eax"
 );
 // LINE 2093:
 	asm( 
-"	      0052d15e    mov eax,[ebp-14h]"
+"	      0052d15e    mov eax,vec.z"
 "	      0052d161    mov ecx,ds:[6663A0h]"
 "	      0052d167    sar ecx,1"
 "	      0052d16a    imul eax,ecx"
-"	      0052d16d    mov [ebp-14h],eax"
+"	      0052d16d    mov vec.z,eax"
 );
 // LINE 2094:
 	asm( 
@@ -4041,31 +4041,31 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2097:
 	asm( 
-"	      0052d175    mov eax,[ebp-1Ch]"
+"	      0052d175    mov eax,vec.x"
 "	      0052d178    neg eax"
-"	      0052d17a    mov [ebp-1Ch],eax"
+"	      0052d17a    mov vec.x,eax"
 );
 // LINE 2098:
 	asm( 
-"	      0052d17d    mov eax,[ebp-14h]"
+"	      0052d17d    mov eax,vec.z"
 "	      0052d180    neg eax"
-"	      0052d182    mov [ebp-14h],eax"
+"	      0052d182    mov vec.z,eax"
 );
 // LINE 2100:
 	asm( 
-"	      0052d185    mov eax,[ebp-1Ch]"
+"	      0052d185    mov eax,vec.x"
 "	      0052d188    mov ecx,ds:[6663A0h]"
 "	      0052d18e    sar ecx,1"
 "	      0052d191    imul eax,ecx"
-"	      0052d194    mov [ebp-1Ch],eax"
+"	      0052d194    mov vec.x,eax"
 );
 // LINE 2101:
 	asm( 
-"	      0052d197    mov eax,[ebp-14h]"
+"	      0052d197    mov eax,vec.z"
 "	      0052d19a    mov ecx,ds:[6663A0h]"
 "	      0052d1a0    sar ecx,1"
 "	      0052d1a3    imul eax,ecx"
-"	      0052d1a6    mov [ebp-14h],eax"
+"	      0052d1a6    mov vec.z,eax"
 );
 // LINE 2102:
 	asm( 
@@ -4076,16 +4076,16 @@ void PlaneClass::BeamToWithinCameraRange() {
 "	      0052d1ae    mov eax,ds:[6663A0h]"
 "	      0052d1b3    sar eax,1"
 "	      0052d1b6    inc eax"
-"	      0052d1b7    imul eax,[ebp-1Ch]"
-"	      0052d1bb    mov [ebp-1Ch],eax"
+"	      0052d1b7    imul eax,vec.x"
+"	      0052d1bb    mov vec.x,eax"
 );
 // LINE 2107:
 	asm( 
 "	      0052d1be    mov eax,ds:[6663A0h]"
 "	      0052d1c3    sar eax,1"
 "	      0052d1c6    inc eax"
-"	      0052d1c7    imul eax,[ebp-14h]"
-"	      0052d1cb    mov [ebp-14h],eax"
+"	      0052d1c7    imul eax,vec.z"
+"	      0052d1cb    mov vec.z,eax"
 );
 // LINE 2108:
 	asm( 
@@ -4104,38 +4104,38 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2111:
 	asm( 
-"	      0052d1fb    shl dword ptr [ebp-1Ch],6"
+"	      0052d1fb    shl vec.x,6"
 );
 // LINE 2112:
 	asm( 
-"	      0052d1ff    shl dword ptr [ebp-14h],6"
+"	      0052d1ff    shl vec.z,6"
 );
 // LINE 2114:
 	asm( 
 "	      0052d203    mov eax,ds:[6C126Ch]"
-"	      0052d208    add eax,[ebp-1Ch]"
+"	      0052d208    add eax,vec.x"
 "	      0052d20b    add eax,20000000h"
 "	      0052d210    sar eax,16h"
-"	      0052d213    mov [ebp-28h],eax"
+"	      0052d213    mov x,eax"
 );
 // LINE 2115:
 	asm( 
 "	      0052d216    mov eax,20000000h"
 "	      0052d21b    mov ecx,ds:[6C1274h]"
-"	      0052d221    add ecx,[ebp-14h]"
+"	      0052d221    add ecx,vec.z"
 "	      0052d224    sub eax,ecx"
 "	      0052d226    sar eax,16h"
-"	      0052d229    mov [ebp-2Ch],eax"
+"	      0052d229    mov y,eax"
 );
 // LINE 2118:
 	asm( 
-"	      0052d22c    cmp dword ptr [ebp-28h],3"
+"	      0052d22c    cmp x,3"
 "	      0052d230    jl near ptr 0052D254h"
-"	      0052d236    cmp dword ptr [ebp-28h],7Dh"
+"	      0052d236    cmp x,7Dh"
 "	      0052d23a    jg near ptr 0052D254h"
-"	      0052d240    cmp dword ptr [ebp-2Ch],3"
+"	      0052d240    cmp y,3"
 "	      0052d244    jl near ptr 0052D254h"
-"	      0052d24a    cmp dword ptr [ebp-2Ch],7Dh"
+"	      0052d24a    cmp y,7Dh"
 "	      0052d24e    jle near ptr 0052D259h"
 );
 // LINE 2119:
@@ -4144,29 +4144,29 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2126:
 	asm( 
-"	      0052d259    inc dword ptr [ebp-38h]"
+"	      0052d259    inc curr_dir"
 );
 // LINE 2127:
 	asm( 
-"	      0052d25c    mov eax,[ebp-38h]"
+"	      0052d25c    mov eax,curr_dir"
 "	      0052d25f    mov [ebp-50h],eax"
 "	      0052d262    jmp near ptr 0052D2C5h"
 );
 // LINE 2131:
 	asm( 
-"	      0052d267    mov dword ptr [ebp-38h],0"
+"	      0052d267    mov curr_dir,0"
 );
 // LINE 2132:
 	asm( 
-"	      0052d26e    inc dword ptr [ebp-0Ch]"
+"	      0052d26e    inc curr_dist"
 );
 // LINE 2133:
 	asm( 
-"	      0052d271    mov dword ptr [ebp-4],0"
+"	      0052d271    mov xdir,0"
 );
 // LINE 2134:
 	asm( 
-"	      0052d278    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      0052d278    mov ydir,0FFFFFFFFh"
 );
 // LINE 2135:
 	asm( 
@@ -4174,11 +4174,11 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2137:
 	asm( 
-"	      0052d284    mov dword ptr [ebp-4],1"
+"	      0052d284    mov xdir,1"
 );
 // LINE 2138:
 	asm( 
-"	      0052d28b    mov dword ptr [ebp-8],0"
+"	      0052d28b    mov ydir,0"
 );
 // LINE 2139:
 	asm( 
@@ -4186,15 +4186,15 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2141:
 	asm( 
-"	      0052d297    inc dword ptr [ebp-0Ch]"
+"	      0052d297    inc curr_dist"
 );
 // LINE 2142:
 	asm( 
-"	      0052d29a    mov dword ptr [ebp-4],0"
+"	      0052d29a    mov xdir,0"
 );
 // LINE 2143:
 	asm( 
-"	      0052d2a1    mov dword ptr [ebp-8],1"
+"	      0052d2a1    mov ydir,1"
 );
 // LINE 2144:
 	asm( 
@@ -4202,11 +4202,11 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2146:
 	asm( 
-"	      0052d2ad    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      0052d2ad    mov xdir,0FFFFFFFFh"
 );
 // LINE 2147:
 	asm( 
-"	      0052d2b4    mov dword ptr [ebp-8],0"
+"	      0052d2b4    mov ydir,0"
 );
 // LINE 2148:
 	asm( 
@@ -4228,36 +4228,36 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2153:
 	asm( 
-"	      0052d2ed    mov eax,[ebp-0Ch]"
-"	      0052d2f0    cmp [ebp-10h],eax"
+"	      0052d2ed    mov eax,curr_dist"
+"	      0052d2f0    cmp spiral_dist,eax"
 "	      0052d2f3    jne near ptr 0052D303h"
 );
 // LINE 2155:
 	asm( 
-"	      0052d2f9    dec dword ptr [ebp-0Ch]"
+"	      0052d2f9    dec curr_dist"
 );
 // LINE 2156:
 	asm( 
-"	      0052d2fc    mov dword ptr [ebp-3Ch],1"
+"	      0052d2fc    mov stop_now,1"
 );
 // LINE 2160:
 	asm( 
-"	      0052d303    mov dword ptr [ebp-30h],0"
+"	      0052d303    mov i,0"
 "	      0052d30a    jmp near ptr 0052D312h"
-"	      0052d30f    inc dword ptr [ebp-30h]"
-"	      0052d312    mov eax,[ebp-30h]"
-"	      0052d315    cmp [ebp-0Ch],eax"
+"	      0052d30f    inc i"
+"	      0052d312    mov eax,i"
+"	      0052d315    cmp curr_dist,eax"
 "	      0052d318    jle near ptr 0052D339h"
 );
 // LINE 2162:
 	asm( 
-"	      0052d31e    mov eax,[ebp-28h]"
-"	      0052d321    mov [ebp-24h],eax"
+"	      0052d31e    mov eax,x"
+"	      0052d321    mov beampoint.x,eax"
 );
 // LINE 2163:
 	asm( 
-"	      0052d324    mov eax,[ebp-2Ch]"
-"	      0052d327    mov [ebp-20h],eax"
+"	      0052d324    mov eax,y"
+"	      0052d327    mov beampoint.y,eax"
 );
 // LINE 2164:
 	asm( 
@@ -4270,7 +4270,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 // LINE 2169:
 	asm( 
-"	      0052d339    cmp dword ptr [ebp-3Ch],1"
+"	      0052d339    cmp stop_now,1"
 "	      0052d33d    jne near ptr 0052D348h"
 );
 // LINE 2171:
@@ -4288,16 +4288,16 @@ void PlaneClass::BeamToWithinCameraRange() {
 // LINE 2182:
 foundCell:
 	asm( 
-"	      0052d352    mov dword ptr [ebp-34h],3"
+"	      0052d352    mov currentFlag,3"
 "	      0052d359    jmp near ptr 0052D361h"
-"	      0052d35e    inc dword ptr [ebp-34h]"
-"	      0052d361    cmp dword ptr [ebp-34h],4"
+"	      0052d35e    inc currentFlag"
+"	      0052d361    cmp currentFlag,4"
 "	      0052d365    jge near ptr 0052D37Bh"
 );
 // LINE 2184:
 	asm( 
-"	      0052d36b    mov eax,[ebp-34h]"
-"	      0052d36e    mov ecx,[ebp-48h]"
+"	      0052d36b    mov eax,currentFlag"
+"	      0052d36e    mov ecx,this"
 "	      0052d371    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 2185:
@@ -4306,51 +4306,51 @@ foundCell:
 );
 // LINE 2187:
 	asm( 
-"	      0052d37b    mov eax,[ebp-48h]"
+"	      0052d37b    mov eax,this"
 "	      0052d37e    mov dword ptr [eax+18h],0"
 );
 // LINE 2190:
 	asm( 
-"	      0052d385    mov eax,[ebp-48h]"
+"	      0052d385    mov eax,this"
 "	      0052d388    mov byte ptr [eax+5],1"
 );
 // LINE 2195:
 	asm( 
-"	      0052d38c    mov eax,[ebp-24h]"
-"	      0052d38f    mov ecx,[ebp-48h]"
+"	      0052d38c    mov eax,beampoint.x"
+"	      0052d38f    mov ecx,this"
 "	      0052d392    mov [ecx+20h],eax"
-"	      0052d395    mov eax,[ebp-20h]"
-"	      0052d398    mov ecx,[ebp-48h]"
+"	      0052d395    mov eax,beampoint.y"
+"	      0052d398    mov ecx,this"
 "	      0052d39b    mov [ecx+24h],eax"
 "	      0052d39e    jmp near ptr 0052D3A3h"
 );
 // LINE 2199:
 	asm( 
 "	      0052d3a3    jmp near ptr 0052D3A8h"
-"	      0052d3a8    mov eax,[ebp-48h]"
+"	      0052d3a8    mov eax,this"
 "	      0052d3ab    add eax,20h"
 "	      0052d3ae    push eax"
-"	      0052d3af    mov ecx,[ebp-48h]"
+"	      0052d3af    mov ecx,this"
 "	      0052d3b2    call 0052CBE1h"
 );
 // LINE 2203:
 	asm( 
-"	      0052d3b7    mov ecx,[ebp-48h]"
+"	      0052d3b7    mov ecx,this"
 "	      0052d3ba    call 0052CC9Dh"
 );
 // LINE 2204:
 	asm( 
-"	      0052d3bf    mov ecx,[ebp-48h]"
+"	      0052d3bf    mov ecx,this"
 "	      0052d3c2    call 0052CDA1h"
 );
 // LINE 2205:
 	asm( 
-"	      0052d3c7    mov ecx,[ebp-48h]"
+"	      0052d3c7    mov ecx,this"
 "	      0052d3ca    call 0052CEE5h"
 );
 // LINE 2208:
 	asm( 
-"	      0052d3cf    mov eax,[ebp-48h]"
+"	      0052d3cf    mov eax,this"
 "	      0052d3d2    cmp dword ptr [eax+54h],12Eh"
 "	      0052d3d9    jne near ptr 0052D3E4h"
 "	      0052d3df    jmp near ptr 0052D3F8h"
@@ -4361,7 +4361,7 @@ foundCell:
 );
 // LINE 2210:
 	asm( 
-"	      0052d3f8    mov eax,[ebp-48h]"
+"	      0052d3f8    mov eax,this"
 "	      0052d3fb    mov dword ptr [eax+50h],0"
 );
 // LINE 2213:
@@ -4386,12 +4386,12 @@ void PlaneClass::UnPlacePlane() {
 "	      0052d417    push ebx"
 "	      0052d418    push esi"
 "	      0052d419    push edi"
-"	      0052d41a    mov [ebp-4],ecx"
+"	      0052d41a    mov this,ecx"
 );
 // LINE 2236:
 	asm( 
 "	      0052d41d    jmp near ptr 0052D422h"
-"	      0052d422    mov eax,[ebp-4]"
+"	      0052d422    mov eax,this"
 "	      0052d425    movsx eax,byte ptr [eax+5]"
 "	      0052d429    test eax,eax"
 "	      0052d42b    je near ptr 0052D44Ch"
@@ -4399,15 +4399,15 @@ void PlaneClass::UnPlacePlane() {
 // LINE 2238:
 	asm( 
 "	      0052d431    jmp near ptr 0052D436h"
-"	      0052d436    mov eax,[ebp-4]"
+"	      0052d436    mov eax,this"
 "	      0052d439    add eax,20h"
 "	      0052d43c    push eax"
-"	      0052d43d    mov ecx,[ebp-4]"
+"	      0052d43d    mov ecx,this"
 "	      0052d440    call 0052CACBh"
 );
 // LINE 2239:
 	asm( 
-"	      0052d445    mov eax,[ebp-4]"
+"	      0052d445    mov eax,this"
 "	      0052d448    mov byte ptr [eax+5],0"
 );
 // LINE 2241:
@@ -4434,25 +4434,25 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 "	      0052d45c    push ebx"
 "	      0052d45d    push esi"
 "	      0052d45e    push edi"
-"	      0052d45f    mov [ebp-2Ch],ecx"
+"	      0052d45f    mov this,ecx"
 );
 // LINE 2272:
 	asm( 
-"	      0052d462    mov eax,[ebp-2Ch]"
+"	      0052d462    mov eax,this"
 "	      0052d465    mov dword ptr [eax+60h],0"
 );
 // LINE 2294:
 	asm( 
-"	      0052d46c    mov eax,[ebp-2Ch]"
+"	      0052d46c    mov eax,this"
 "	      0052d46f    mov eax,[eax+54h]"
 "	      0052d472    push eax"
 "	      0052d473    call 004D8821h"
 "	      0052d478    add esp,4"
-"	      0052d47b    mov [ebp-28h],eax"
+"	      0052d47b    mov object,eax"
 );
 // LINE 2296:
 	asm( 
-"	      0052d47e    cmp dword ptr [ebp-28h],0"
+"	      0052d47e    cmp object,0"
 "	      0052d482    jne near ptr 0052D4B0h"
 );
 // LINE 2300:
@@ -4472,24 +4472,24 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 );
 // LINE 2305:
 	asm( 
-"	      0052d4b0    mov eax,[ebp-28h]"
-"	      0052d4b3    mov ecx,[ebp-2Ch]"
+"	      0052d4b0    mov eax,object"
+"	      0052d4b3    mov ecx,this"
 "	      0052d4b6    mov [ecx+60h],eax"
 );
 // LINE 2363:
 	asm( 
-"	      0052d4b9    mov eax,[ebp+10h]"
-"	      0052d4bc    mov ecx,[ebp-2Ch]"
+"	      0052d4b9    mov eax,instanceID"
+"	      0052d4bc    mov ecx,this"
 "	      0052d4bf    mov [ecx+66h],ax"
 );
 // LINE 2364:
 	asm( 
-"	      0052d4c3    mov eax,[ebp-2Ch]"
+"	      0052d4c3    mov eax,this"
 "	      0052d4c6    mov word ptr [eax+64h],101h"
 );
 // LINE 2365:
 	asm( 
-"	      0052d4cc    mov eax,[ebp-2Ch]"
+"	      0052d4cc    mov eax,this"
 "	      0052d4cf    add eax,7Ch"
 "	      0052d4d2    push eax"
 "	      0052d4d3    call 004D1FF1h"
@@ -4497,78 +4497,78 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 );
 // LINE 2367:
 	asm( 
-"	      0052d4db    lea eax,[ebp-24h]"
+"	      0052d4db    lea eax,objectInfo.Faces"
 "	      0052d4de    push eax"
-"	      0052d4df    mov eax,[ebp-28h]"
+"	      0052d4df    mov eax,object"
 "	      0052d4e2    push eax"
 "	      0052d4e3    call 004D8859h"
 "	      0052d4e8    add esp,8"
 );
 // LINE 2368:
 	asm( 
-"	      0052d4eb    mov eax,[ebp-18h]"
-"	      0052d4ee    mov ecx,[ebp-2Ch]"
+"	      0052d4eb    mov eax,objectInfo.Radius"
+"	      0052d4ee    mov ecx,this"
 "	      0052d4f1    mov [ecx+68h],eax"
 );
 // LINE 2389:
 	asm( 
-"	      0052d4f4    mov eax,[ebp-2Ch]"
+"	      0052d4f4    mov eax,this"
 "	      0052d4f7    mov dword ptr [eax+34h],3C0000h"
 );
 // LINE 2390:
 	asm( 
-"	      0052d4fe    mov eax,[ebp+8]"
-"	      0052d501    mov ecx,[ebp-2Ch]"
+"	      0052d4fe    mov eax,mapx"
+"	      0052d501    mov ecx,this"
 "	      0052d504    mov [ecx+20h],eax"
 );
 // LINE 2391:
 	asm( 
-"	      0052d507    mov eax,[ebp+0Ch]"
-"	      0052d50a    mov ecx,[ebp-2Ch]"
+"	      0052d507    mov eax,mapy"
+"	      0052d50a    mov ecx,this"
 "	      0052d50d    mov [ecx+24h],eax"
 );
 // LINE 2392:
 	asm( 
-"	      0052d510    mov eax,[ebp+8]"
-"	      0052d513    mov ecx,[ebp-2Ch]"
+"	      0052d510    mov eax,mapx"
+"	      0052d513    mov ecx,this"
 "	      0052d516    mov [ecx+28h],eax"
 );
 // LINE 2393:
 	asm( 
-"	      0052d519    mov eax,[ebp+0Ch]"
-"	      0052d51c    mov ecx,[ebp-2Ch]"
+"	      0052d519    mov eax,mapy"
+"	      0052d51c    mov ecx,this"
 "	      0052d51f    mov [ecx+2Ch],eax"
 );
 // LINE 2394:
 	asm( 
-"	      0052d522    mov eax,[ebp-2Ch]"
+"	      0052d522    mov eax,this"
 "	      0052d525    mov dword ptr [eax+1Ch],780000h"
 );
 // LINE 2395:
 	asm( 
-"	      0052d52c    mov eax,[ebp-2Ch]"
+"	      0052d52c    mov eax,this"
 "	      0052d52f    mov dword ptr [eax+4Ch],1"
 );
 // LINE 2396:
 	asm( 
-"	      0052d536    mov eax,[ebp-2Ch]"
+"	      0052d536    mov eax,this"
 "	      0052d539    mov dword ptr [eax+50h],0"
 );
 // LINE 2397:
 	asm( 
-"	      0052d540    mov eax,[ebp-2Ch]"
+"	      0052d540    mov eax,this"
 "	      0052d543    mov dword ptr [eax+48h],0B40000h"
 );
 // LINE 2401:
 	asm( 
-"	      0052d54a    mov eax,[ebp-2Ch]"
+"	      0052d54a    mov eax,this"
 "	      0052d54d    mov eax,[eax+54h]"
 "	      0052d550    mov [ebp-30h],eax"
 "	      0052d553    jmp near ptr 0052D57Bh"
 );
 // LINE 2404:
 	asm( 
-"	      0052d558    mov eax,[ebp-2Ch]"
+"	      0052d558    mov eax,this"
 "	      0052d55b    mov dword ptr [eax+30h],3C0000h"
 );
 // LINE 2405:
@@ -4577,7 +4577,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 );
 // LINE 2408:
 	asm( 
-"	      0052d567    mov eax,[ebp-2Ch]"
+"	      0052d567    mov eax,this"
 "	      0052d56a    mov dword ptr [eax+30h],3C0000h"
 );
 // LINE 2409:
@@ -4595,44 +4595,44 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 );
 // LINE 2415:
 	asm( 
-"	      0052d59a    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      0052d59a    cmp mapx,0FFFFFFFFh"
 "	      0052d59e    je near ptr 0052D5ECh"
-"	      0052d5a4    cmp dword ptr [ebp+0Ch],0FFFFFFFFh"
+"	      0052d5a4    cmp mapy,0FFFFFFFFh"
 "	      0052d5a8    je near ptr 0052D5ECh"
 );
 // LINE 2419:
 	asm( 
-"	      0052d5ae    mov eax,[ebp-2Ch]"
+"	      0052d5ae    mov eax,this"
 "	      0052d5b1    add eax,20h"
 "	      0052d5b4    push eax"
-"	      0052d5b5    mov ecx,[ebp-2Ch]"
+"	      0052d5b5    mov ecx,this"
 "	      0052d5b8    call 0052CBE1h"
 );
 // LINE 2423:
 	asm( 
-"	      0052d5bd    mov ecx,[ebp-2Ch]"
+"	      0052d5bd    mov ecx,this"
 "	      0052d5c0    call 0052CC9Dh"
 );
 // LINE 2424:
 	asm( 
-"	      0052d5c5    mov ecx,[ebp-2Ch]"
+"	      0052d5c5    mov ecx,this"
 "	      0052d5c8    call 0052CDA1h"
 );
 // LINE 2425:
 	asm( 
-"	      0052d5cd    mov ecx,[ebp-2Ch]"
+"	      0052d5cd    mov ecx,this"
 "	      0052d5d0    call 0052CEE5h"
 );
 // LINE 2429:
 	asm( 
-"	      0052d5d5    mov eax,[ebp-2Ch]"
+"	      0052d5d5    mov eax,this"
 "	      0052d5d8    mov eax,[eax]"
-"	      0052d5da    mov ecx,[ebp-2Ch]"
+"	      0052d5da    mov ecx,this"
 "	      0052d5dd    call dword ptr [eax+8]"
 );
 // LINE 2433:
 	asm( 
-"	      0052d5e0    mov eax,[ebp-2Ch]"
+"	      0052d5e0    mov eax,this"
 "	      0052d5e3    mov byte ptr [eax+5],1"
 );
 // LINE 2435:
@@ -4641,18 +4641,18 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 );
 // LINE 2439:
 	asm( 
-"	      0052d5ec    mov eax,[ebp-2Ch]"
+"	      0052d5ec    mov eax,this"
 "	      0052d5ef    mov byte ptr [eax+5],0"
 );
 // LINE 2448:
 	asm( 
-"	      0052d5f3    mov eax,[ebp-2Ch]"
-"	      0052d5f6    mov ecx,[ebp+10h]"
+"	      0052d5f3    mov eax,this"
+"	      0052d5f6    mov ecx,instanceID"
 "	      0052d5f9    mov [ecx*4+62B7A8h],eax"
 );
 // LINE 2451:
 	asm( 
-"	      0052d600    mov eax,[ebp-2Ch]"
+"	      0052d600    mov eax,this"
 "	      0052d603    mov byte ptr [eax+4],1"
 );
 // LINE 2453:
@@ -4682,28 +4682,28 @@ void PlaneClass::HandleUFOStuff() {
 "	      0052d61e    push ebx"
 "	      0052d61f    push esi"
 "	      0052d620    push edi"
-"	      0052d621    mov [ebp-10h],ecx"
+"	      0052d621    mov this,ecx"
 );
 // LINE 2477:
 	asm( 
-"	      0052d624    mov eax,[ebp-10h]"
+"	      0052d624    mov eax,this"
 "	      0052d627    cmp dword ptr [eax+4Ch],0"
 "	      0052d62b    je near ptr 0052D64Ch"
 );
 // LINE 2479:
 	asm( 
-"	      0052d631    mov eax,[ebp-10h]"
+"	      0052d631    mov eax,this"
 "	      0052d634    dec dword ptr [eax+4Ch]"
 );
 // LINE 2480:
 	asm( 
-"	      0052d637    mov eax,[ebp-10h]"
+"	      0052d637    mov eax,this"
 "	      0052d63a    cmp dword ptr [eax+4Ch],0"
 "	      0052d63e    jne near ptr 0052D64Ch"
 );
 // LINE 2482:
 	asm( 
-"	      0052d644    mov ecx,[ebp-10h]"
+"	      0052d644    mov ecx,this"
 "	      0052d647    call 0052DA3Ch"
 );
 // LINE 2487:
@@ -4711,44 +4711,44 @@ void PlaneClass::HandleUFOStuff() {
 "	      0052d64c    xor eax,eax"
 "	      0052d64e    sub eax,ds:[5B4760h]"
 "	      0052d654    neg eax"
-"	      0052d656    mov ecx,[ebp-10h]"
+"	      0052d656    mov ecx,this"
 "	      0052d659    sub [ecx+48h],eax"
 );
 // LINE 2488:
 	asm( 
-"	      0052d65c    mov eax,[ebp-10h]"
+"	      0052d65c    mov eax,this"
 "	      0052d65f    cmp dword ptr [eax+48h],0"
 "	      0052d663    jge near ptr 0052D6B3h"
 );
 // LINE 2491:
 	asm( 
-"	      0052d669    mov dword ptr [ebp-4],0"
-"	      0052d670    mov eax,[ebp-4]"
-"	      0052d673    mov [ebp-0Ch],eax"
+"	      0052d669    mov vec.z,0"
+"	      0052d670    mov eax,vec.z"
+"	      0052d673    mov vec.x,eax"
 );
 // LINE 2492:
 	asm( 
-"	      0052d676    mov dword ptr [ebp-8],0FFFF0000h"
+"	      0052d676    mov vec.y,0FFFF0000h"
 );
 // LINE 2494:
 	asm( 
-"	      0052d67d    mov eax,[ebp-10h]"
+"	      0052d67d    mov eax,this"
 "	      0052d680    mov dword ptr [eax+48h],0B40000h"
 );
 // LINE 2504:
 	asm( 
 "	      0052d687    push 0FFFFFFFFh"
 "	      0052d689    push 12C0000h"
-"	      0052d68e    mov eax,[ebp-10h]"
+"	      0052d68e    mov eax,this"
 "	      0052d691    add eax,58h"
 "	      0052d694    push eax"
 "	      0052d695    push 1"
-"	      0052d697    lea eax,[ebp-0Ch]"
+"	      0052d697    lea eax,vec.x"
 "	      0052d69a    push eax"
-"	      0052d69b    mov eax,[ebp-10h]"
+"	      0052d69b    mov eax,this"
 "	      0052d69e    add eax,70h"
 "	      0052d6a1    push eax"
-"	      0052d6a2    mov eax,[ebp-10h]"
+"	      0052d6a2    mov eax,this"
 "	      0052d6a5    add eax,20h"
 "	      0052d6a8    push eax"
 "	      0052d6a9    push 0Bh"
@@ -4778,7 +4778,7 @@ void CreatePlaneInstance(int32_t instanceID) {
 );
 // LINE 2554:
 	asm( 
-"	      0052d6c3    mov eax,[ebp+8]"
+"	      0052d6c3    mov eax,instanceID"
 "	      0052d6c6    push eax"
 "	      0052d6c7    call 0052B29Eh"
 "	      0052d6cc    add esp,4"
@@ -4806,7 +4806,7 @@ int32_t S3PlaneCrashWhenReady(long mission_id) {
 );
 // LINE 2574:
 	asm( 
-"	      0052d6df    mov eax,[ebp+8]"
+"	      0052d6df    mov eax,mission_id"
 "	      0052d6e2    push eax"
 "	      0052d6e3    call 0052B410h"
 "	      0052d6e8    add esp,4"
@@ -4885,7 +4885,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2635:
 	asm( 
-"	      0052d728    mov eax,[ebp+8]"
+"	      0052d728    mov eax,hitter_type"
 "	      0052d72b    mov [ebp-18h],eax"
 "	      0052d72e    jmp near ptr 0052D917h"
 );
@@ -4903,7 +4903,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2644:
 	asm( 
-"	      0052d742    mov eax,[ebp+10h]"
+"	      0052d742    mov eax,dyhittee"
 "	      0052d745    movsx eax,word ptr [eax+0Eh]"
 "	      0052d749    mov eax,[eax*4+62B7A8h]"
 "	      0052d750    cmp dword ptr [eax+54h],12Eh"
@@ -4916,28 +4916,28 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2646:
 	asm( 
-"	      0052d776    mov eax,[ebp+10h]"
+"	      0052d776    mov eax,dyhittee"
 "	      0052d779    movsx eax,word ptr [eax+0Eh]"
 "	      0052d77d    mov eax,[eax*4+62B7A8h]"
 "	      0052d784    mov dword ptr [eax+4Ch],3"
 );
 // LINE 2647:
 	asm( 
-"	      0052d78b    mov eax,[ebp+10h]"
+"	      0052d78b    mov eax,dyhittee"
 "	      0052d78e    movsx eax,word ptr [eax+0Eh]"
 "	      0052d792    mov ecx,[eax*4+62B7A8h]"
 "	      0052d799    call 0052D9A1h"
 );
 // LINE 2648:
 	asm( 
-"	      0052d79e    mov eax,[ebp+10h]"
+"	      0052d79e    mov eax,dyhittee"
 "	      0052d7a1    movsx eax,word ptr [eax+0Eh]"
 "	      0052d7a5    mov eax,[eax*4+62B7A8h]"
 "	      0052d7ac    inc dword ptr [eax+50h]"
 );
 // LINE 2649:
 	asm( 
-"	      0052d7af    mov eax,[ebp+10h]"
+"	      0052d7af    mov eax,dyhittee"
 "	      0052d7b2    movsx eax,word ptr [eax+0Eh]"
 "	      0052d7b6    mov eax,[eax*4+62B7A8h]"
 "	      0052d7bd    cmp dword ptr [eax+50h],0Ah"
@@ -4945,7 +4945,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2650:
 	asm( 
-"	      0052d7c7    mov eax,[ebp+10h]"
+"	      0052d7c7    mov eax,dyhittee"
 "	      0052d7ca    movsx eax,word ptr [eax+0Eh]"
 "	      0052d7ce    mov eax,[eax*4+62B7A8h]"
 "	      0052d7d5    mov [ebp-0Ch],eax"
@@ -4961,11 +4961,11 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2655:
 	asm( 
-"	      0052d7f3    mov eax,[ebp+10h]"
+"	      0052d7f3    mov eax,dyhittee"
 "	      0052d7f6    movsx eax,word ptr [eax+0Eh]"
 "	      0052d7fa    mov eax,[eax*4+62B7A8h]"
 "	      0052d801    mov dword ptr [eax+50h],1"
-"	      0052d808    mov eax,[ebp+10h]"
+"	      0052d808    mov eax,dyhittee"
 "	      0052d80b    movsx eax,word ptr [eax+0Eh]"
 "	      0052d80f    mov eax,[eax*4+62B7A8h]"
 "	      0052d816    mov [ebp-10h],eax"
@@ -4996,7 +4996,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2666:
 	asm( 
-"	      0052d843    mov eax,[ebp+10h]"
+"	      0052d843    mov eax,dyhittee"
 "	      0052d846    movsx eax,word ptr [eax+0Eh]"
 "	      0052d84a    mov eax,[eax*4+62B7A8h]"
 "	      0052d851    cmp dword ptr [eax+54h],12Eh"
@@ -5009,14 +5009,14 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2668:
 	asm( 
-"	      0052d877    mov eax,[ebp+10h]"
+"	      0052d877    mov eax,dyhittee"
 "	      0052d87a    movsx eax,word ptr [eax+0Eh]"
 "	      0052d87e    mov eax,[eax*4+62B7A8h]"
 "	      0052d885    mov dword ptr [eax+4Ch],3"
 );
 // LINE 2669:
 	asm( 
-"	      0052d88c    mov eax,[ebp+10h]"
+"	      0052d88c    mov eax,dyhittee"
 "	      0052d88f    movsx eax,word ptr [eax+0Eh]"
 "	      0052d893    mov ecx,[eax*4+62B7A8h]"
 "	      0052d89a    call 0052D9A1h"
@@ -5027,11 +5027,11 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 );
 // LINE 2674:
 	asm( 
-"	      0052d8a4    mov eax,[ebp+10h]"
+"	      0052d8a4    mov eax,dyhittee"
 "	      0052d8a7    movsx eax,word ptr [eax+0Eh]"
 "	      0052d8ab    mov eax,[eax*4+62B7A8h]"
 "	      0052d8b2    mov dword ptr [eax+50h],1"
-"	      0052d8b9    mov eax,[ebp+10h]"
+"	      0052d8b9    mov eax,dyhittee"
 "	      0052d8bc    movsx eax,word ptr [eax+0Eh]"
 "	      0052d8c0    mov eax,[eax*4+62B7A8h]"
 "	      0052d8c7    mov [ebp-14h],eax"
@@ -5147,15 +5147,15 @@ void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 );
 // LINE 2708:
 	asm( 
-"	      0052d97b    mov eax,[ebp+18h]"
+"	      0052d97b    mov eax,xtra_msg"
 "	      0052d97e    push eax"
-"	      0052d97f    mov eax,[ebp+14h]"
+"	      0052d97f    mov eax,mission_id"
 "	      0052d982    push eax"
-"	      0052d983    mov eax,[ebp+10h]"
+"	      0052d983    mov eax,dyhittee"
 "	      0052d986    push eax"
-"	      0052d987    mov eax,[ebp+0Ch]"
+"	      0052d987    mov eax,dyhitter"
 "	      0052d98a    push eax"
-"	      0052d98b    mov eax,[ebp+8]"
+"	      0052d98b    mov eax,hitter_type"
 "	      0052d98e    push eax"
 "	      0052d98f    call 0052D71Fh"
 "	      0052d994    add esp,14h"
@@ -5186,13 +5186,13 @@ void PlaneClass::TurnOnShields() {
 "	      0052d9a7    push ebx"
 "	      0052d9a8    push esi"
 "	      0052d9a9    push edi"
-"	      0052d9aa    mov [ebp-50h],ecx"
+"	      0052d9aa    mov this,ecx"
 );
 // LINE 2728:
 	asm( 
-"	      0052d9ad    lea eax,[ebp-24h]"
+"	      0052d9ad    lea eax,oinfo.Faces"
 "	      0052d9b0    push eax"
-"	      0052d9b1    mov eax,[ebp-50h]"
+"	      0052d9b1    mov eax,this"
 "	      0052d9b4    mov eax,[eax+60h]"
 "	      0052d9b7    push eax"
 "	      0052d9b8    call 004D8859h"
@@ -5200,56 +5200,56 @@ void PlaneClass::TurnOnShields() {
 );
 // LINE 2729:
 	asm( 
-"	      0052d9c0    mov eax,[ebp-50h]"
+"	      0052d9c0    mov eax,this"
 "	      0052d9c3    mov eax,[eax+60h]"
 "	      0052d9c6    push eax"
 "	      0052d9c7    call 004D85CDh"
 "	      0052d9cc    add esp,4"
-"	      0052d9cf    mov [ebp-28h],eax"
+"	      0052d9cf    mov face,eax"
 );
 // LINE 2730:
 	asm( 
-"	      0052d9d2    mov dword ptr [ebp-2Ch],0"
+"	      0052d9d2    mov count,0"
 "	      0052d9d9    jmp near ptr 0052D9E1h"
-"	      0052d9de    inc dword ptr [ebp-2Ch]"
-"	      0052d9e1    mov eax,[ebp-2Ch]"
-"	      0052d9e4    cmp [ebp-24h],eax"
+"	      0052d9de    inc count"
+"	      0052d9e1    mov eax,count"
+"	      0052d9e4    cmp oinfo.Faces,eax"
 "	      0052d9e7    jle near ptr 0052DA32h"
 );
 // LINE 2732:
 	asm( 
-"	      0052d9ed    lea eax,[ebp-4Ch]"
+"	      0052d9ed    lea eax,finfo.Face"
 "	      0052d9f0    push eax"
-"	      0052d9f1    mov eax,[ebp-28h]"
+"	      0052d9f1    mov eax,face"
 "	      0052d9f4    push eax"
 "	      0052d9f5    call 004D6905h"
 "	      0052d9fa    add esp,8"
 );
 // LINE 2733:
 	asm( 
-"	      0052d9fd    cmp dword ptr [ebp-40h],0Bh"
+"	      0052d9fd    cmp finfo.Plotter,0Bh"
 "	      0052da01    jne near ptr 0052DA1Eh"
 );
 // LINE 2735:
 	asm( 
-"	      0052da07    and dword ptr [ebp-44h],7FFFFFFFh"
+"	      0052da07    and finfo.Attribute,7FFFFFFFh"
 );
 // LINE 2736:
 	asm( 
-"	      0052da0e    lea eax,[ebp-4Ch]"
+"	      0052da0e    lea eax,finfo.Face"
 "	      0052da11    push eax"
-"	      0052da12    mov eax,[ebp-28h]"
+"	      0052da12    mov eax,face"
 "	      0052da15    push eax"
 "	      0052da16    call 004D6941h"
 "	      0052da1b    add esp,8"
 );
 // LINE 2738:
 	asm( 
-"	      0052da1e    mov eax,[ebp-28h]"
+"	      0052da1e    mov eax,face"
 "	      0052da21    push eax"
 "	      0052da22    call 004D85F8h"
 "	      0052da27    add esp,4"
-"	      0052da2a    mov [ebp-28h],eax"
+"	      0052da2a    mov face,eax"
 );
 // LINE 2739:
 	asm( 
@@ -5281,13 +5281,13 @@ void PlaneClass::TurnOffShields() {
 "	      0052da42    push ebx"
 "	      0052da43    push esi"
 "	      0052da44    push edi"
-"	      0052da45    mov [ebp-50h],ecx"
+"	      0052da45    mov this,ecx"
 );
 // LINE 2750:
 	asm( 
-"	      0052da48    lea eax,[ebp-24h]"
+"	      0052da48    lea eax,oinfo.Faces"
 "	      0052da4b    push eax"
-"	      0052da4c    mov eax,[ebp-50h]"
+"	      0052da4c    mov eax,this"
 "	      0052da4f    mov eax,[eax+60h]"
 "	      0052da52    push eax"
 "	      0052da53    call 004D8859h"
@@ -5295,58 +5295,58 @@ void PlaneClass::TurnOffShields() {
 );
 // LINE 2751:
 	asm( 
-"	      0052da5b    mov eax,[ebp-50h]"
+"	      0052da5b    mov eax,this"
 "	      0052da5e    mov eax,[eax+60h]"
 "	      0052da61    push eax"
 "	      0052da62    call 004D85CDh"
 "	      0052da67    add esp,4"
-"	      0052da6a    mov [ebp-28h],eax"
+"	      0052da6a    mov face,eax"
 );
 // LINE 2752:
 	asm( 
-"	      0052da6d    mov dword ptr [ebp-2Ch],0"
+"	      0052da6d    mov count,0"
 "	      0052da74    jmp near ptr 0052DA7Ch"
-"	      0052da79    inc dword ptr [ebp-2Ch]"
-"	      0052da7c    mov eax,[ebp-2Ch]"
-"	      0052da7f    cmp [ebp-24h],eax"
+"	      0052da79    inc count"
+"	      0052da7c    mov eax,count"
+"	      0052da7f    cmp oinfo.Faces,eax"
 "	      0052da82    jle near ptr 0052DAD1h"
 );
 // LINE 2754:
 	asm( 
-"	      0052da88    lea eax,[ebp-4Ch]"
+"	      0052da88    lea eax,finfo.Face"
 "	      0052da8b    push eax"
-"	      0052da8c    mov eax,[ebp-28h]"
+"	      0052da8c    mov eax,face"
 "	      0052da8f    push eax"
 "	      0052da90    call 004D6905h"
 "	      0052da95    add esp,8"
 );
 // LINE 2755:
 	asm( 
-"	      0052da98    cmp dword ptr [ebp-40h],0Bh"
+"	      0052da98    cmp finfo.Plotter,0Bh"
 "	      0052da9c    jne near ptr 0052DABDh"
 );
 // LINE 2757:
 	asm( 
-"	      0052daa2    mov eax,[ebp-44h]"
+"	      0052daa2    mov eax,finfo.Attribute"
 "	      0052daa5    or eax,80000000h"
-"	      0052daaa    mov [ebp-44h],eax"
+"	      0052daaa    mov finfo.Attribute,eax"
 );
 // LINE 2758:
 	asm( 
-"	      0052daad    lea eax,[ebp-4Ch]"
+"	      0052daad    lea eax,finfo.Face"
 "	      0052dab0    push eax"
-"	      0052dab1    mov eax,[ebp-28h]"
+"	      0052dab1    mov eax,face"
 "	      0052dab4    push eax"
 "	      0052dab5    call 004D6941h"
 "	      0052daba    add esp,8"
 );
 // LINE 2760:
 	asm( 
-"	      0052dabd    mov eax,[ebp-28h]"
+"	      0052dabd    mov eax,face"
 "	      0052dac0    push eax"
 "	      0052dac1    call 004D85F8h"
 "	      0052dac6    add esp,4"
-"	      0052dac9    mov [ebp-28h],eax"
+"	      0052dac9    mov face,eax"
 );
 // LINE 2761:
 	asm( 
@@ -5375,7 +5375,7 @@ int32_t S3PlaneMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 2773:
 	asm( 
-"	      0052dae1    mov eax,[ebp+8]"
+"	      0052dae1    mov eax,miffReader"
 "	      0052dae4    push eax"
 "	      0052dae5    call 0052DB13h"
 "	      0052daea    add esp,4"
@@ -5403,7 +5403,7 @@ int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 2786:
 	asm( 
-"	      0052dafd    mov eax,[ebp+8]"
+"	      0052dafd    mov eax,miffWriter"
 "	      0052db00    push eax"
 "	      0052db01    call 0052DCF2h"
 "	      0052db06    add esp,4"
@@ -5439,15 +5439,15 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052db1c    push 0BCh"
 "	      0052db21    push 62B6E8h"
 "	      0052db26    push 504C414Eh"
-"	      0052db2b    mov eax,[ebp+8]"
+"	      0052db2b    mov eax,miffReader"
 "	      0052db2e    push eax"
 "	      0052db2f    call 004AB530h"
 "	      0052db34    add esp,10h"
-"	      0052db37    mov [ebp-8],eax"
+"	      0052db37    mov ret,eax"
 );
 // LINE 2806:
 	asm( 
-"	      0052db3a    cmp dword ptr [ebp-8],0"
+"	      0052db3a    cmp ret,0"
 "	      0052db3e    jne near ptr 0052DB4Bh"
 );
 // LINE 2807:
@@ -5457,23 +5457,23 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 2809:
 	asm( 
-"	      0052db4b    mov dword ptr [ebp-0Ch],0"
+"	      0052db4b    mov i,0"
 "	      0052db52    jmp near ptr 0052DB5Ah"
-"	      0052db57    inc dword ptr [ebp-0Ch]"
-"	      0052db5a    cmp dword ptr [ebp-0Ch],2"
+"	      0052db57    inc i"
+"	      0052db5a    cmp i,2"
 "	      0052db5e    jge near ptr 0052DCE3h"
 );
 // LINE 2812:
 	asm( 
-"	      0052db64    mov eax,[ebp-0Ch]"
+"	      0052db64    mov eax,i"
 "	      0052db67    mov eax,[eax*4+62B7A8h]"
-"	      0052db6e    mov [ebp-4],eax"
+"	      0052db6e    mov p,eax"
 );
 // LINE 2813:
 	asm( 
 "	      0052db71    mov eax,62B6E8h"
 "	      0052db76    add eax,8"
-"	      0052db79    mov ecx,[ebp-4]"
+"	      0052db79    mov ecx,p"
 "	      0052db7c    add ecx,8"
 "	      0052db7f    mov edx,[eax]"
 "	      0052db81    mov [ecx],edx"
@@ -5485,19 +5485,19 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 2814:
 	asm( 
 "	      0052db8f    mov eax,ds:[62B6FCh]"
-"	      0052db94    mov ecx,[ebp-4]"
+"	      0052db94    mov ecx,p"
 "	      0052db97    mov [ecx+14h],eax"
 );
 // LINE 2815:
 	asm( 
 "	      0052db9a    mov eax,ds:[62B700h]"
-"	      0052db9f    mov ecx,[ebp-4]"
+"	      0052db9f    mov ecx,p"
 "	      0052dba2    mov [ecx+18h],eax"
 );
 // LINE 2816:
 	asm( 
 "	      0052dba5    mov eax,ds:[62B704h]"
-"	      0052dbaa    mov ecx,[ebp-4]"
+"	      0052dbaa    mov ecx,p"
 "	      0052dbad    mov [ecx+1Ch],eax"
 );
 // LINE 2817:
@@ -5506,7 +5506,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052dbb5    add eax,20h"
 "	      0052dbb8    mov ecx,[eax]"
 "	      0052dbba    mov eax,[eax+4]"
-"	      0052dbbd    mov edx,[ebp-4]"
+"	      0052dbbd    mov edx,p"
 "	      0052dbc0    add edx,20h"
 "	      0052dbc3    mov [edx],ecx"
 "	      0052dbc5    mov [edx+4],eax"
@@ -5517,7 +5517,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052dbcd    add eax,28h"
 "	      0052dbd0    mov ecx,[eax]"
 "	      0052dbd2    mov eax,[eax+4]"
-"	      0052dbd5    mov edx,[ebp-4]"
+"	      0052dbd5    mov edx,p"
 "	      0052dbd8    add edx,28h"
 "	      0052dbdb    mov [edx],ecx"
 "	      0052dbdd    mov [edx+4],eax"
@@ -5525,25 +5525,25 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 2819:
 	asm( 
 "	      0052dbe0    mov eax,ds:[62B718h]"
-"	      0052dbe5    mov ecx,[ebp-4]"
+"	      0052dbe5    mov ecx,p"
 "	      0052dbe8    mov [ecx+30h],eax"
 );
 // LINE 2820:
 	asm( 
 "	      0052dbeb    mov eax,ds:[62B71Ch]"
-"	      0052dbf0    mov ecx,[ebp-4]"
+"	      0052dbf0    mov ecx,p"
 "	      0052dbf3    mov [ecx+34h],eax"
 );
 // LINE 2821:
 	asm( 
 "	      0052dbf6    mov eax,ds:[62B724h]"
-"	      0052dbfb    mov ecx,[ebp-4]"
+"	      0052dbfb    mov ecx,p"
 "	      0052dbfe    mov [ecx+3Ch],eax"
 );
 // LINE 2822:
 	asm( 
 "	      0052dc01    mov eax,ds:[62B720h]"
-"	      0052dc06    mov ecx,[ebp-4]"
+"	      0052dc06    mov ecx,p"
 "	      0052dc09    mov [ecx+38h],eax"
 );
 // LINE 2823:
@@ -5552,7 +5552,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052dc11    add eax,40h"
 "	      0052dc14    mov ecx,[eax]"
 "	      0052dc16    mov eax,[eax+4]"
-"	      0052dc19    mov edx,[ebp-4]"
+"	      0052dc19    mov edx,p"
 "	      0052dc1c    add edx,40h"
 "	      0052dc1f    mov [edx],ecx"
 "	      0052dc21    mov [edx+4],eax"
@@ -5560,26 +5560,26 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 2824:
 	asm( 
 "	      0052dc24    mov eax,ds:[62B730h]"
-"	      0052dc29    mov ecx,[ebp-4]"
+"	      0052dc29    mov ecx,p"
 "	      0052dc2c    mov [ecx+48h],eax"
 );
 // LINE 2825:
 	asm( 
 "	      0052dc2f    mov eax,ds:[62B734h]"
-"	      0052dc34    mov ecx,[ebp-4]"
+"	      0052dc34    mov ecx,p"
 "	      0052dc37    mov [ecx+4Ch],eax"
 );
 // LINE 2826:
 	asm( 
 "	      0052dc3a    mov eax,ds:[62B738h]"
-"	      0052dc3f    mov ecx,[ebp-4]"
+"	      0052dc3f    mov ecx,p"
 "	      0052dc42    mov [ecx+50h],eax"
 );
 // LINE 2827:
 	asm( 
 "	      0052dc45    mov eax,62B6E8h"
 "	      0052dc4a    add eax,70h"
-"	      0052dc4d    mov ecx,[ebp-4]"
+"	      0052dc4d    mov ecx,p"
 "	      0052dc50    add ecx,70h"
 "	      0052dc53    mov edx,[eax]"
 "	      0052dc55    mov [ecx],edx"
@@ -5590,7 +5590,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 2828:
 	asm( 
-"	      0052dc63    mov edi,[ebp-4]"
+"	      0052dc63    mov edi,p"
 "	      0052dc66    add edi,7Ch"
 "	      0052dc69    lea esi,ds:[62B764h]"
 "	      0052dc6f    mov ecx,10h"
@@ -5598,24 +5598,24 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 2829:
 	asm( 
-"	      0052dc76    mov eax,[ebp-4]"
+"	      0052dc76    mov eax,p"
 "	      0052dc79    mov ecx,ds:[62B6ECh]"
 "	      0052dc7f    mov [eax+4],ecx"
 );
 // LINE 2831:
 	asm( 
 "	      0052dc82    jmp near ptr 0052DC87h"
-"	      0052dc87    mov eax,[ebp-4]"
+"	      0052dc87    mov eax,p"
 "	      0052dc8a    movsx eax,byte ptr [eax+5]"
 "	      0052dc8e    test eax,eax"
 "	      0052dc90    je near ptr 0052DCA5h"
 );
 // LINE 2833:
 	asm( 
-"	      0052dc96    mov eax,[ebp-4]"
+"	      0052dc96    mov eax,p"
 "	      0052dc99    add eax,20h"
 "	      0052dc9c    push eax"
-"	      0052dc9d    mov ecx,[ebp-4]"
+"	      0052dc9d    mov ecx,p"
 "	      0052dca0    call 0052CBE1h"
 );
 // LINE 2840:
@@ -5623,17 +5623,17 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052dca5    push 0BCh"
 "	      0052dcaa    push 62B6E8h"
 "	      0052dcaf    push 504C414Eh"
-"	      0052dcb4    mov eax,[ebp+8]"
+"	      0052dcb4    mov eax,miffReader"
 "	      0052dcb7    push eax"
 "	      0052dcb8    call 004AB57Ch"
 "	      0052dcbd    add esp,10h"
-"	      0052dcc0    mov [ebp-8],eax"
+"	      0052dcc0    mov ret,eax"
 );
 // LINE 2842:
 	asm( 
-"	      0052dcc3    cmp dword ptr [ebp-8],0"
+"	      0052dcc3    cmp ret,0"
 "	      0052dcc7    jne near ptr 0052DCDEh"
-"	      0052dccd    cmp dword ptr [ebp-0Ch],1"
+"	      0052dccd    cmp i,1"
 "	      0052dcd1    je near ptr 0052DCDEh"
 );
 // LINE 2843:
@@ -5676,28 +5676,28 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 2859:
 	asm( 
-"	      0052dcfb    mov dword ptr [ebp-8],0"
+"	      0052dcfb    mov i,0"
 "	      0052dd02    jmp near ptr 0052DD0Ah"
-"	      0052dd07    inc dword ptr [ebp-8]"
-"	      0052dd0a    cmp dword ptr [ebp-8],2"
+"	      0052dd07    inc i"
+"	      0052dd0a    cmp i,2"
 "	      0052dd0e    jge near ptr 0052DD4Eh"
 );
 // LINE 2864:
 	asm( 
 "	      0052dd14    push 0BCh"
-"	      0052dd19    mov eax,[ebp-8]"
+"	      0052dd19    mov eax,i"
 "	      0052dd1c    mov eax,[eax*4+62B7A8h]"
 "	      0052dd23    push eax"
 "	      0052dd24    push 504C414Eh"
-"	      0052dd29    mov eax,[ebp+8]"
+"	      0052dd29    mov eax,miffWriter"
 "	      0052dd2c    push eax"
 "	      0052dd2d    call 004AB5BDh"
 "	      0052dd32    add esp,10h"
-"	      0052dd35    mov [ebp-4],eax"
+"	      0052dd35    mov ret,eax"
 );
 // LINE 2865:
 	asm( 
-"	      0052dd38    cmp dword ptr [ebp-4],0"
+"	      0052dd38    cmp ret,0"
 "	      0052dd3c    jne near ptr 0052DD49h"
 );
 // LINE 2866:

@@ -15,17 +15,17 @@ int  CGameApp::CanWeSwitchToWindowedMode() {
 "	      004324e6    push ebx"
 "	      004324e7    push esi"
 "	      004324e8    push edi"
-"	      004324e9    mov [ebp-4],ecx"
+"	      004324e9    mov this,ecx"
 );
 // LINE 31:
 	asm( 
-"	      004324ec    mov eax,[ebp-4]"
+"	      004324ec    mov eax,this"
 "	      004324ef    cmp dword ptr [eax+42ECh],280h"
 "	      004324f9    jle near ptr 0043252Ch"
-"	      004324ff    mov eax,[ebp-4]"
+"	      004324ff    mov eax,this"
 "	      00432502    cmp dword ptr [eax+42F0h],1E0h"
 "	      0043250c    jle near ptr 0043252Ch"
-"	      00432512    mov eax,[ebp-4]"
+"	      00432512    mov eax,this"
 "	      00432515    cmp dword ptr [eax+42F4h],8"
 "	      0043251c    jne near ptr 0043252Ch"
 "	      00432522    mov eax,1"
@@ -53,7 +53,7 @@ int  CGameApp::CanWeSwitchToFullScreenMode() {
 "	      0043253e    push ebx"
 "	      0043253f    push esi"
 "	      00432540    push edi"
-"	      00432541    mov [ebp-4],ecx"
+"	      00432541    mov this,ecx"
 );
 // LINE 41:
 	asm( 
@@ -82,11 +82,11 @@ int  CGameApp::SwitchToWindowedMode() {
 "	      00432559    push ebx"
 "	      0043255a    push esi"
 "	      0043255b    push edi"
-"	      0043255c    mov [ebp-0Ch],ecx"
+"	      0043255c    mov this,ecx"
 );
 // LINE 58:
 	asm( 
-"	      0043255f    mov eax,[ebp-0Ch]"
+"	      0043255f    mov eax,this"
 "	      00432562    cmp dword ptr [eax+2Ch],0"
 "	      00432566    je near ptr 00432573h"
 );
@@ -97,7 +97,7 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 60:
 	asm( 
-"	      00432573    mov eax,[ebp-0Ch]"
+"	      00432573    mov eax,this"
 "	      00432576    cmp dword ptr [eax+30h],1"
 "	      0043257a    jne near ptr 0043258Ah"
 );
@@ -108,9 +108,9 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 62:
 	asm( 
-"	      0043258a    mov eax,[ebp-0Ch]"
+"	      0043258a    mov eax,this"
 "	      0043258d    mov eax,[eax]"
-"	      0043258f    mov ecx,[ebp-0Ch]"
+"	      0043258f    mov ecx,this"
 "	      00432592    call dword ptr [eax+44h]"
 "	      00432595    test eax,eax"
 "	      00432597    jne near ptr 004325A4h"
@@ -122,18 +122,18 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 67:
 	asm( 
-"	      004325a4    mov eax,[ebp-0Ch]"
+"	      004325a4    mov eax,this"
 "	      004325a7    mov dword ptr [eax+2Ch],1"
 );
 // LINE 69:
 	asm( 
-"	      004325ae    mov ecx,[ebp-0Ch]"
+"	      004325ae    mov ecx,this"
 "	      004325b1    call 004330EAh"
 );
 // LINE 70:
 	asm( 
-"	      004325b6    mov eax,[ebp-0Ch]"
-"	      004325b9    mov ecx,[ebp-0Ch]"
+"	      004325b6    mov eax,this"
+"	      004325b9    mov ecx,this"
 "	      004325bc    mov ecx,[ecx+50h]"
 "	      004325bf    mov edx,[ecx]"
 "	      004325c1    mov ecx,[eax+50h]"
@@ -141,8 +141,8 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 71:
 	asm( 
-"	      004325c7    mov eax,[ebp-0Ch]"
-"	      004325ca    mov ecx,[ebp-0Ch]"
+"	      004325c7    mov eax,this"
+"	      004325ca    mov ecx,this"
 "	      004325cd    mov ecx,[ecx+38h]"
 "	      004325d0    mov edx,[ecx]"
 "	      004325d2    mov ecx,[eax+38h]"
@@ -150,15 +150,15 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 72:
 	asm( 
-"	      004325d8    mov eax,[ebp-0Ch]"
+"	      004325d8    mov eax,this"
 "	      004325db    mov eax,[eax]"
-"	      004325dd    mov ecx,[ebp-0Ch]"
+"	      004325dd    mov ecx,this"
 "	      004325e0    call dword ptr [eax+74h]"
 );
 // LINE 74:
 	asm( 
-"	      004325e3    mov eax,[ebp-0Ch]"
-"	      004325e6    mov ecx,[ebp-0Ch]"
+"	      004325e3    mov eax,this"
+"	      004325e6    mov ecx,this"
 "	      004325e9    mov ecx,[ecx+34h]"
 "	      004325ec    mov edx,[ecx]"
 "	      004325ee    mov ecx,[eax+34h]"
@@ -166,14 +166,14 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 76:
 	asm( 
-"	      004325f4    mov eax,[ebp-0Ch]"
+"	      004325f4    mov eax,this"
 "	      004325f7    mov dword ptr [eax+30h],1"
 );
 // LINE 81:
 	asm( 
 "	      004325fe    jmp near ptr 00432603h"
 "	      00432603    push 8"
-"	      00432605    mov eax,[ebp-0Ch]"
+"	      00432605    mov eax,this"
 "	      00432608    mov eax,[eax+50h]"
 "	      0043260b    mov eax,[eax+18h]"
 "	      0043260e    push eax"
@@ -182,16 +182,16 @@ int  CGameApp::SwitchToWindowedMode() {
 "	      00432615    mov eax,ds:[597264h]"
 "	      0043261a    mov eax,[eax]"
 "	      0043261c    call dword ptr [eax+50h]"
-"	      0043261f    mov [ebp-4],eax"
+"	      0043261f    mov hResult,eax"
 );
 // LINE 82:
 	asm( 
-"	      00432622    cmp dword ptr [ebp-4],0"
+"	      00432622    cmp hResult,0"
 "	      00432626    je near ptr 0043264Bh"
 );
 // LINE 83:
 	asm( 
-"	      0043262c    mov eax,[ebp-4]"
+"	      0043262c    mov eax,hResult"
 "	      0043262f    mov [ebp-8],eax"
 "	      00432632    jmp near ptr 00432637h"
 "	      00432637    push 59839Ch"
@@ -205,16 +205,16 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 87:
 	asm( 
-"	      0043264b    mov eax,[ebp-0Ch]"
+"	      0043264b    mov eax,this"
 "	      0043264e    mov eax,[eax]"
-"	      00432650    mov ecx,[ebp-0Ch]"
+"	      00432650    mov ecx,this"
 "	      00432653    call dword ptr [eax+54h]"
 );
 // LINE 88:
 	asm( 
 "	      00432656    push 1"
-"	      00432658    mov eax,[ebp-0Ch]"
-"	      0043265b    mov ecx,[ebp-0Ch]"
+"	      00432658    mov eax,this"
+"	      0043265b    mov ecx,this"
 "	      0043265e    mov ecx,[ecx+34h]"
 "	      00432661    mov edx,[ecx]"
 "	      00432663    mov ecx,[eax+34h]"
@@ -222,8 +222,8 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 89:
 	asm( 
-"	      0043266c    mov eax,[ebp-0Ch]"
-"	      0043266f    mov ecx,[ebp-0Ch]"
+"	      0043266c    mov eax,this"
+"	      0043266f    mov ecx,this"
 "	      00432672    mov ecx,[ecx+34h]"
 "	      00432675    mov edx,[ecx]"
 "	      00432677    mov ecx,[eax+34h]"
@@ -231,15 +231,15 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 90:
 	asm( 
-"	      0043267d    mov eax,[ebp-0Ch]"
+"	      0043267d    mov eax,this"
 "	      00432680    mov eax,[eax]"
-"	      00432682    mov ecx,[ebp-0Ch]"
+"	      00432682    mov ecx,this"
 "	      00432685    call dword ptr [eax+70h]"
 );
 // LINE 91:
 	asm( 
-"	      00432688    mov eax,[ebp-0Ch]"
-"	      0043268b    mov ecx,[ebp-0Ch]"
+"	      00432688    mov eax,this"
+"	      0043268b    mov ecx,this"
 "	      0043268e    mov ecx,[ecx+38h]"
 "	      00432691    mov edx,[ecx]"
 "	      00432693    mov ecx,[eax+38h]"
@@ -247,8 +247,8 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 94:
 	asm( 
-"	      00432699    mov eax,[ebp-0Ch]"
-"	      0043269c    mov ecx,[ebp-0Ch]"
+"	      00432699    mov eax,this"
+"	      0043269c    mov ecx,this"
 "	      0043269f    mov ecx,[ecx+50h]"
 "	      004326a2    mov edx,[ecx]"
 "	      004326a4    mov ecx,[eax+50h]"
@@ -256,12 +256,12 @@ int  CGameApp::SwitchToWindowedMode() {
 );
 // LINE 96:
 	asm( 
-"	      004326aa    mov ecx,[ebp-0Ch]"
+"	      004326aa    mov ecx,this"
 "	      004326ad    call 00432E37h"
 );
 // LINE 98:
 	asm( 
-"	      004326b2    mov eax,[ebp-0Ch]"
+"	      004326b2    mov eax,this"
 "	      004326b5    mov dword ptr [eax+2Ch],0"
 );
 // LINE 99:
@@ -291,11 +291,11 @@ int  CGameApp::SwitchToFullScreenMode() {
 "	      004326d1    push ebx"
 "	      004326d2    push esi"
 "	      004326d3    push edi"
-"	      004326d4    mov [ebp-0Ch],ecx"
+"	      004326d4    mov this,ecx"
 );
 // LINE 113:
 	asm( 
-"	      004326d7    mov eax,[ebp-0Ch]"
+"	      004326d7    mov eax,this"
 "	      004326da    cmp dword ptr [eax+2Ch],0"
 "	      004326de    je near ptr 004326EBh"
 );
@@ -306,7 +306,7 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 115:
 	asm( 
-"	      004326eb    mov eax,[ebp-0Ch]"
+"	      004326eb    mov eax,this"
 "	      004326ee    cmp dword ptr [eax+30h],0"
 "	      004326f2    jne near ptr 00432702h"
 );
@@ -317,9 +317,9 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 117:
 	asm( 
-"	      00432702    mov eax,[ebp-0Ch]"
+"	      00432702    mov eax,this"
 "	      00432705    mov eax,[eax]"
-"	      00432707    mov ecx,[ebp-0Ch]"
+"	      00432707    mov ecx,this"
 "	      0043270a    call dword ptr [eax+48h]"
 "	      0043270d    test eax,eax"
 "	      0043270f    jne near ptr 0043271Ch"
@@ -331,18 +331,18 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 122:
 	asm( 
-"	      0043271c    mov eax,[ebp-0Ch]"
+"	      0043271c    mov eax,this"
 "	      0043271f    mov dword ptr [eax+2Ch],1"
 );
 // LINE 124:
 	asm( 
-"	      00432726    mov ecx,[ebp-0Ch]"
+"	      00432726    mov ecx,this"
 "	      00432729    call 004330EAh"
 );
 // LINE 125:
 	asm( 
-"	      0043272e    mov eax,[ebp-0Ch]"
-"	      00432731    mov ecx,[ebp-0Ch]"
+"	      0043272e    mov eax,this"
+"	      00432731    mov ecx,this"
 "	      00432734    mov ecx,[ecx+50h]"
 "	      00432737    mov edx,[ecx]"
 "	      00432739    mov ecx,[eax+50h]"
@@ -350,8 +350,8 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 126:
 	asm( 
-"	      0043273f    mov eax,[ebp-0Ch]"
-"	      00432742    mov ecx,[ebp-0Ch]"
+"	      0043273f    mov eax,this"
+"	      00432742    mov ecx,this"
 "	      00432745    mov ecx,[ecx+38h]"
 "	      00432748    mov edx,[ecx]"
 "	      0043274a    mov ecx,[eax+38h]"
@@ -359,15 +359,15 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 127:
 	asm( 
-"	      00432750    mov eax,[ebp-0Ch]"
+"	      00432750    mov eax,this"
 "	      00432753    mov eax,[eax]"
-"	      00432755    mov ecx,[ebp-0Ch]"
+"	      00432755    mov ecx,this"
 "	      00432758    call dword ptr [eax+74h]"
 );
 // LINE 129:
 	asm( 
-"	      0043275b    mov eax,[ebp-0Ch]"
-"	      0043275e    mov ecx,[ebp-0Ch]"
+"	      0043275b    mov eax,this"
+"	      0043275e    mov ecx,this"
 "	      00432761    mov ecx,[ecx+34h]"
 "	      00432764    mov edx,[ecx]"
 "	      00432766    mov ecx,[eax+34h]"
@@ -375,14 +375,14 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 131:
 	asm( 
-"	      0043276c    mov eax,[ebp-0Ch]"
+"	      0043276c    mov eax,this"
 "	      0043276f    mov dword ptr [eax+30h],0"
 );
 // LINE 137:
 	asm( 
 "	      00432776    jmp near ptr 0043277Bh"
 "	      0043277b    push 11h"
-"	      0043277d    mov eax,[ebp-0Ch]"
+"	      0043277d    mov eax,this"
 "	      00432780    mov eax,[eax+50h]"
 "	      00432783    mov eax,[eax+18h]"
 "	      00432786    push eax"
@@ -391,16 +391,16 @@ int  CGameApp::SwitchToFullScreenMode() {
 "	      0043278d    mov eax,ds:[597264h]"
 "	      00432792    mov eax,[eax]"
 "	      00432794    call dword ptr [eax+50h]"
-"	      00432797    mov [ebp-4],eax"
+"	      00432797    mov hResult,eax"
 );
 // LINE 138:
 	asm( 
-"	      0043279a    cmp dword ptr [ebp-4],0"
+"	      0043279a    cmp hResult,0"
 "	      0043279e    je near ptr 004327C3h"
 );
 // LINE 139:
 	asm( 
-"	      004327a4    mov eax,[ebp-4]"
+"	      004327a4    mov eax,hResult"
 "	      004327a7    mov [ebp-8],eax"
 "	      004327aa    jmp near ptr 004327AFh"
 "	      004327af    push 5983E4h"
@@ -414,16 +414,16 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 143:
 	asm( 
-"	      004327c3    mov eax,[ebp-0Ch]"
+"	      004327c3    mov eax,this"
 "	      004327c6    mov eax,[eax]"
-"	      004327c8    mov ecx,[ebp-0Ch]"
+"	      004327c8    mov ecx,this"
 "	      004327cb    call dword ptr [eax+58h]"
 );
 // LINE 144:
 	asm( 
 "	      004327ce    push 0"
-"	      004327d0    mov eax,[ebp-0Ch]"
-"	      004327d3    mov ecx,[ebp-0Ch]"
+"	      004327d0    mov eax,this"
+"	      004327d3    mov ecx,this"
 "	      004327d6    mov ecx,[ecx+34h]"
 "	      004327d9    mov edx,[ecx]"
 "	      004327db    mov ecx,[eax+34h]"
@@ -431,8 +431,8 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 145:
 	asm( 
-"	      004327e4    mov eax,[ebp-0Ch]"
-"	      004327e7    mov ecx,[ebp-0Ch]"
+"	      004327e4    mov eax,this"
+"	      004327e7    mov ecx,this"
 "	      004327ea    mov ecx,[ecx+34h]"
 "	      004327ed    mov edx,[ecx]"
 "	      004327ef    mov ecx,[eax+34h]"
@@ -440,15 +440,15 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 146:
 	asm( 
-"	      004327f5    mov eax,[ebp-0Ch]"
+"	      004327f5    mov eax,this"
 "	      004327f8    mov eax,[eax]"
-"	      004327fa    mov ecx,[ebp-0Ch]"
+"	      004327fa    mov ecx,this"
 "	      004327fd    call dword ptr [eax+70h]"
 );
 // LINE 147:
 	asm( 
-"	      00432800    mov eax,[ebp-0Ch]"
-"	      00432803    mov ecx,[ebp-0Ch]"
+"	      00432800    mov eax,this"
+"	      00432803    mov ecx,this"
 "	      00432806    mov ecx,[ecx+38h]"
 "	      00432809    mov edx,[ecx]"
 "	      0043280b    mov ecx,[eax+38h]"
@@ -456,8 +456,8 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 150:
 	asm( 
-"	      00432811    mov eax,[ebp-0Ch]"
-"	      00432814    mov ecx,[ebp-0Ch]"
+"	      00432811    mov eax,this"
+"	      00432814    mov ecx,this"
 "	      00432817    mov ecx,[ecx+50h]"
 "	      0043281a    mov edx,[ecx]"
 "	      0043281c    mov ecx,[eax+50h]"
@@ -465,12 +465,12 @@ int  CGameApp::SwitchToFullScreenMode() {
 );
 // LINE 152:
 	asm( 
-"	      00432822    mov ecx,[ebp-0Ch]"
+"	      00432822    mov ecx,this"
 "	      00432825    call 00432E37h"
 );
 // LINE 154:
 	asm( 
-"	      0043282a    mov eax,[ebp-0Ch]"
+"	      0043282a    mov eax,this"
 "	      0043282d    mov dword ptr [eax+2Ch],0"
 );
 // LINE 155:
@@ -500,7 +500,7 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 "	      00432849    push ebx"
 "	      0043284a    push esi"
 "	      0043284b    push edi"
-"	      0043284c    mov [ebp-8],ecx"
+"	      0043284c    mov this,ecx"
 );
 // LINE 168:
 	asm( 
@@ -509,7 +509,7 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 "	      00432855    mov eax,ds:[597264h]"
 "	      0043285a    mov eax,[eax]"
 "	      0043285c    call dword ptr [eax+4Ch]"
-"	      0043285f    mov [ebp-4],eax"
+"	      0043285f    mov hResult,eax"
 );
 // LINE 171:
 	asm( 
@@ -538,17 +538,17 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 "	      00432877    push ebx"
 "	      00432878    push esi"
 "	      00432879    push edi"
-"	      0043287a    mov [ebp-8],ecx"
+"	      0043287a    mov this,ecx"
 );
 // LINE 185:
 	asm( 
-"	      0043287d    mov eax,[ebp-8]"
+"	      0043287d    mov eax,this"
 "	      00432880    mov eax,[eax+42DCh]"
 "	      00432886    push eax"
-"	      00432887    mov eax,[ebp-8]"
+"	      00432887    mov eax,this"
 "	      0043288a    mov eax,[eax+42D8h]"
 "	      00432890    push eax"
-"	      00432891    mov eax,[ebp-8]"
+"	      00432891    mov eax,this"
 "	      00432894    mov eax,[eax+42D4h]"
 "	      0043289a    push eax"
 "	      0043289b    mov eax,ds:[597264h]"
@@ -556,7 +556,7 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 "	      004328a1    mov eax,ds:[597264h]"
 "	      004328a6    mov eax,[eax]"
 "	      004328a8    call dword ptr [eax+54h]"
-"	      004328ab    mov [ebp-4],eax"
+"	      004328ab    mov hResult,eax"
 );
 // LINE 187:
 	asm( 
@@ -583,19 +583,19 @@ int  CGameApp::ToggleScreenMode() {
 "	      004328c3    push ebx"
 "	      004328c4    push esi"
 "	      004328c5    push edi"
-"	      004328c6    mov [ebp-4],ecx"
+"	      004328c6    mov this,ecx"
 );
 // LINE 199:
 	asm( 
-"	      004328c9    mov eax,[ebp-4]"
+"	      004328c9    mov eax,this"
 "	      004328cc    cmp dword ptr [eax+30h],0"
 "	      004328d0    jne near ptr 004328EBh"
 );
 // LINE 200:
 	asm( 
-"	      004328d6    mov eax,[ebp-4]"
+"	      004328d6    mov eax,this"
 "	      004328d9    mov eax,[eax]"
-"	      004328db    mov ecx,[ebp-4]"
+"	      004328db    mov ecx,this"
 "	      004328de    call dword ptr [eax+4Ch]"
 "	      004328e1    jmp near ptr 004328FBh"
 );
@@ -605,9 +605,9 @@ int  CGameApp::ToggleScreenMode() {
 );
 // LINE 202:
 	asm( 
-"	      004328eb    mov eax,[ebp-4]"
+"	      004328eb    mov eax,this"
 "	      004328ee    mov eax,[eax]"
-"	      004328f0    mov ecx,[ebp-4]"
+"	      004328f0    mov ecx,this"
 "	      004328f3    call dword ptr [eax+50h]"
 "	      004328f6    jmp near ptr 004328FBh"
 );
@@ -635,7 +635,7 @@ int  CGameApp::CreateDisplaySurfaces() {
 "	      00432906    push ebx"
 "	      00432907    push esi"
 "	      00432908    push edi"
-"	      00432909    mov [ebp-2Ch],ecx"
+"	      00432909    mov this,ecx"
 );
 // LINE 212:
 	asm( 
@@ -644,12 +644,12 @@ int  CGameApp::CreateDisplaySurfaces() {
 );
 // LINE 215:
 	asm( 
-"	      00432916    lea eax,[ebp-4]"
+"	      00432916    lea eax,nWindowHeight"
 "	      00432919    push eax"
-"	      0043291a    lea eax,[ebp-8]"
+"	      0043291a    lea eax,nWindowWidth"
 "	      0043291d    push eax"
-"	      0043291e    mov eax,[ebp-2Ch]"
-"	      00432921    mov ecx,[ebp-2Ch]"
+"	      0043291e    mov eax,this"
+"	      00432921    mov ecx,this"
 "	      00432924    mov ecx,[ecx+50h]"
 "	      00432927    mov edx,[ecx]"
 "	      00432929    mov ecx,[eax+50h]"
@@ -664,43 +664,43 @@ int  CGameApp::CreateDisplaySurfaces() {
 "	      0043293f    cmp dword ptr [ebp-1Ch],0"
 "	      00432943    je near ptr 00432985h"
 "	      00432949    push 0"
-"	      0043294b    mov eax,[ebp-2Ch]"
+"	      0043294b    mov eax,this"
 "	      0043294e    mov eax,[eax+30h]"
 "	      00432951    push eax"
-"	      00432952    mov eax,[ebp-2Ch]"
+"	      00432952    mov eax,this"
 "	      00432955    mov eax,[eax+4304h]"
 "	      0043295b    push eax"
-"	      0043295c    mov eax,[ebp-2Ch]"
+"	      0043295c    mov eax,this"
 "	      0043295f    mov eax,[eax+4]"
 "	      00432962    push eax"
-"	      00432963    mov eax,[ebp-4]"
+"	      00432963    mov eax,nWindowHeight"
 "	      00432966    push eax"
-"	      00432967    mov eax,[ebp-8]"
+"	      00432967    mov eax,nWindowWidth"
 "	      0043296a    push eax"
-"	      0043296b    mov eax,[ebp-2Ch]"
+"	      0043296b    mov eax,this"
 "	      0043296e    mov eax,[eax+50h]"
 "	      00432971    push eax"
 "	      00432972    mov ecx,[ebp-1Ch]"
 "	      00432975    call 0049E534h"
-"	      0043297a    mov ecx,[ebp-2Ch]"
+"	      0043297a    mov ecx,this"
 "	      0043297d    mov [ecx+34h],eax"
 "	      00432980    jmp near ptr 0043298Fh"
-"	      00432985    mov eax,[ebp-2Ch]"
+"	      00432985    mov eax,this"
 "	      00432988    mov dword ptr [eax+34h],0"
 );
 // LINE 222:
 	asm( 
-"	      0043298f    mov eax,[ebp-2Ch]"
+"	      0043298f    mov eax,this"
 "	      00432992    mov eax,[eax+34h]"
 "	      00432995    push eax"
-"	      00432996    mov eax,[ebp-2Ch]"
+"	      00432996    mov eax,this"
 "	      00432999    mov ecx,[eax+50h]"
 "	      0043299c    call 004322D7h"
 );
 // LINE 223:
 	asm( 
-"	      004329a1    mov eax,[ebp-2Ch]"
-"	      004329a4    mov ecx,[ebp-2Ch]"
+"	      004329a1    mov eax,this"
+"	      004329a4    mov ecx,this"
 "	      004329a7    mov ecx,[ecx+50h]"
 "	      004329aa    mov edx,[ecx]"
 "	      004329ac    mov ecx,[eax+50h]"
@@ -713,10 +713,10 @@ int  CGameApp::CreateDisplaySurfaces() {
 );
 // LINE 227:
 	asm( 
-"	      004329bf    mov dword ptr [ebp-18h],0"
-"	      004329c6    mov dword ptr [ebp-14h],0"
-"	      004329cd    mov dword ptr [ebp-10h],280h"
-"	      004329d4    mov dword ptr [ebp-0Ch],1E0h"
+"	      004329bf    mov rectScreenWindow.left,0"
+"	      004329c6    mov rectScreenWindow.top,0"
+"	      004329cd    mov rectScreenWindow.right,280h"
+"	      004329d4    mov rectScreenWindow.bottom,1E0h"
 "	      004329db    jmp near ptr 004329E0h"
 );
 // LINE 228:
@@ -727,10 +727,10 @@ int  CGameApp::CreateDisplaySurfaces() {
 );
 // LINE 229:
 	asm( 
-"	      004329f2    mov dword ptr [ebp-18h],0"
-"	      004329f9    mov dword ptr [ebp-14h],0"
-"	      00432a00    mov dword ptr [ebp-10h],320h"
-"	      00432a07    mov dword ptr [ebp-0Ch],258h"
+"	      004329f2    mov rectScreenWindow.left,0"
+"	      004329f9    mov rectScreenWindow.top,0"
+"	      00432a00    mov rectScreenWindow.right,320h"
+"	      00432a07    mov rectScreenWindow.bottom,258h"
 "	      00432a0e    jmp near ptr 00432A13h"
 );
 // LINE 230:
@@ -741,10 +741,10 @@ int  CGameApp::CreateDisplaySurfaces() {
 );
 // LINE 231:
 	asm( 
-"	      00432a25    mov dword ptr [ebp-18h],0"
-"	      00432a2c    mov dword ptr [ebp-14h],0"
-"	      00432a33    mov dword ptr [ebp-10h],400h"
-"	      00432a3a    mov dword ptr [ebp-0Ch],300h"
+"	      00432a25    mov rectScreenWindow.left,0"
+"	      00432a2c    mov rectScreenWindow.top,0"
+"	      00432a33    mov rectScreenWindow.right,400h"
+"	      00432a3a    mov rectScreenWindow.bottom,300h"
 "	      00432a41    jmp near ptr 00432A46h"
 );
 // LINE 232:
@@ -755,9 +755,9 @@ int  CGameApp::CreateDisplaySurfaces() {
 "	      00432a50    mov [ebp-20h],eax"
 "	      00432a53    cmp dword ptr [ebp-20h],0"
 "	      00432a57    je near ptr 00432AA2h"
-"	      00432a5d    cmp dword ptr [ebp-2Ch],0"
+"	      00432a5d    cmp this,0"
 "	      00432a61    je near ptr 00432A75h"
-"	      00432a67    mov eax,[ebp-2Ch]"
+"	      00432a67    mov eax,this"
 "	      00432a6a    add eax,14h"
 "	      00432a6d    mov [ebp-24h],eax"
 "	      00432a70    jmp near ptr 00432A7Ch"
@@ -765,20 +765,20 @@ int  CGameApp::CreateDisplaySurfaces() {
 "	      00432a7c    push 1"
 "	      00432a7e    mov eax,[ebp-24h]"
 "	      00432a81    push eax"
-"	      00432a82    mov eax,[ebp-2Ch]"
+"	      00432a82    mov eax,this"
 "	      00432a85    mov eax,[eax+34h]"
 "	      00432a88    push eax"
 "	      00432a89    push 0"
-"	      00432a8b    lea eax,[ebp-18h]"
+"	      00432a8b    lea eax,rectScreenWindow.left"
 "	      00432a8e    push eax"
 "	      00432a8f    mov ecx,[ebp-20h]"
 "	      00432a92    call 004A7989h"
-"	      00432a97    mov ecx,[ebp-2Ch]"
+"	      00432a97    mov ecx,this"
 "	      00432a9a    mov [ecx+38h],eax"
 "	      00432a9d    jmp near ptr 00432AACh"
-"	      00432aa2    mov eax,[ebp-2Ch]"
+"	      00432aa2    mov eax,this"
 "	      00432aa5    mov dword ptr [eax+38h],0"
-"	      00432aac    mov eax,[ebp-2Ch]"
+"	      00432aac    mov eax,this"
 "	      00432aaf    mov eax,[eax+38h]"
 "	      00432ab2    mov [ebp-28h],eax"
 );
@@ -790,18 +790,18 @@ int  CGameApp::CreateDisplaySurfaces() {
 );
 // LINE 234:
 	asm( 
-"	      00432ac2    mov eax,[ebp-2Ch]"
+"	      00432ac2    mov eax,this"
 "	      00432ac5    mov eax,[eax+38h]"
 "	      00432ac8    push eax"
-"	      00432ac9    mov ecx,[ebp-2Ch]"
-"	      00432acc    mov eax,[ebp-2Ch]"
+"	      00432ac9    mov ecx,this"
+"	      00432acc    mov eax,this"
 "	      00432acf    mov eax,[eax+3Ch]"
 "	      00432ad2    add ecx,3Ch"
 "	      00432ad5    call dword ptr [eax]"
 );
 // LINE 236:
 	asm( 
-"	      00432ad7    mov ecx,[ebp-2Ch]"
+"	      00432ad7    mov ecx,this"
 "	      00432ada    call 00440DCFh"
 );
 // LINE 238:
@@ -829,23 +829,23 @@ int  CGameApp::DestroyDisplaySurfaces() {
 "	      00432af4    push ebx"
 "	      00432af5    push esi"
 "	      00432af6    push edi"
-"	      00432af7    mov [ebp-0Ch],ecx"
+"	      00432af7    mov this,ecx"
 );
 // LINE 247:
 	asm( 
-"	      00432afa    mov ecx,[ebp-0Ch]"
+"	      00432afa    mov ecx,this"
 "	      00432afd    call 00440ED6h"
 );
 // LINE 248:
 	asm( 
-"	      00432b02    mov eax,[ebp-0Ch]"
+"	      00432b02    mov eax,this"
 "	      00432b05    cmp dword ptr [eax+38h],0"
 "	      00432b09    je near ptr 00432B2Ah"
 );
 // LINE 249:
 	asm( 
-"	      00432b0f    mov eax,[ebp-0Ch]"
-"	      00432b12    mov ecx,[ebp-0Ch]"
+"	      00432b0f    mov eax,this"
+"	      00432b12    mov ecx,this"
 "	      00432b15    mov ecx,[ecx+38h]"
 "	      00432b18    mov edx,[ecx]"
 "	      00432b1a    mov ecx,[eax+38h]"
@@ -853,7 +853,7 @@ int  CGameApp::DestroyDisplaySurfaces() {
 );
 // LINE 250:
 	asm( 
-"	      00432b20    mov eax,[ebp-0Ch]"
+"	      00432b20    mov eax,this"
 "	      00432b23    mov dword ptr [eax+38h],0"
 );
 // LINE 252:
@@ -871,21 +871,21 @@ int  CGameApp::DestroyDisplaySurfaces() {
 );
 // LINE 253:
 	asm( 
-"	      00432b5d    mov eax,[ebp-0Ch]"
+"	      00432b5d    mov eax,this"
 "	      00432b60    cmp dword ptr [eax+34h],0"
 "	      00432b64    je near ptr 00432BBDh"
 );
 // LINE 254:
 	asm( 
 "	      00432b6a    push 0"
-"	      00432b6c    mov eax,[ebp-0Ch]"
+"	      00432b6c    mov eax,this"
 "	      00432b6f    mov ecx,[eax+50h]"
 "	      00432b72    call 004322D7h"
 );
 // LINE 255:
 	asm( 
-"	      00432b77    mov eax,[ebp-0Ch]"
-"	      00432b7a    mov ecx,[ebp-0Ch]"
+"	      00432b77    mov eax,this"
+"	      00432b7a    mov ecx,this"
 "	      00432b7d    mov ecx,[ecx+34h]"
 "	      00432b80    mov edx,[ecx]"
 "	      00432b82    mov ecx,[eax+34h]"
@@ -893,7 +893,7 @@ int  CGameApp::DestroyDisplaySurfaces() {
 );
 // LINE 256:
 	asm( 
-"	      00432b88    mov eax,[ebp-0Ch]"
+"	      00432b88    mov eax,this"
 "	      00432b8b    mov eax,[eax+34h]"
 "	      00432b8e    mov [ebp-8],eax"
 "	      00432b91    mov eax,[ebp-8]"
@@ -909,7 +909,7 @@ int  CGameApp::DestroyDisplaySurfaces() {
 );
 // LINE 257:
 	asm( 
-"	      00432bb3    mov eax,[ebp-0Ch]"
+"	      00432bb3    mov eax,this"
 "	      00432bb6    mov dword ptr [eax+34h],0"
 );
 // LINE 259:
@@ -940,45 +940,45 @@ int  CGameApp::CreateModeSurfaces() {
 "	      00432bd2    push ebx"
 "	      00432bd3    push esi"
 "	      00432bd4    push edi"
-"	      00432bd5    mov [ebp-28h],ecx"
+"	      00432bd5    mov this,ecx"
 );
 // LINE 282:
 	asm( 
-"	      00432bd8    mov eax,[ebp-28h]"
+"	      00432bd8    mov eax,this"
 "	      00432bdb    cmp dword ptr [eax+430Ch],0"
 "	      00432be2    je near ptr 00432BF0h"
 );
 // LINE 283:
 	asm( 
-"	      00432be8    mov ecx,[ebp-28h]"
+"	      00432be8    mov ecx,this"
 "	      00432beb    call 00440F3Ah"
 );
 // LINE 284:
 	asm( 
-"	      00432bf0    mov ecx,[ebp-28h]"
+"	      00432bf0    mov ecx,this"
 "	      00432bf3    call 00440DCFh"
 );
 // LINE 289:
 	asm( 
-"	      00432bf8    mov eax,[ebp-28h]"
+"	      00432bf8    mov eax,this"
 "	      00432bfb    mov eax,[eax+4338h]"
 "	      00432c01    mov eax,[eax]"
 "	      00432c03    mov [ebp-20h],eax"
 "	      00432c06    mov eax,[ebp-20h]"
-"	      00432c09    mov [ebp-4],eax"
+"	      00432c09    mov i.node,eax"
 "	      00432c0c    jmp near ptr 00432C11h"
 "	      00432c11    jmp near ptr 00432C16h"
 );
 // LINE 291:
 	asm( 
-"	      00432c16    mov eax,[ebp-28h]"
+"	      00432c16    mov eax,this"
 "	      00432c19    mov eax,[eax+4338h]"
 "	      00432c1f    mov [ebp-14h],eax"
 "	      00432c22    mov eax,[ebp-14h]"
 "	      00432c25    mov [ebp-0Ch],eax"
 "	      00432c28    jmp near ptr 00432C2Dh"
 "	      00432c2d    jmp near ptr 00432C32h"
-"	      00432c32    mov eax,[ebp-4]"
+"	      00432c32    mov eax,i.node"
 "	      00432c35    cmp [ebp-0Ch],eax"
 "	      00432c38    jne near ptr 00432C48h"
 "	      00432c3e    jmp near ptr 00432C5Ch"
@@ -995,19 +995,19 @@ int  CGameApp::CreateModeSurfaces() {
 // LINE 292:
 	asm( 
 "	      00432c70    jmp near ptr 00432C75h"
-"	      00432c75    mov eax,[ebp-4]"
+"	      00432c75    mov eax,i.node"
 "	      00432c78    mov eax,[eax+8]"
-"	      00432c7b    mov [ebp-8],eax"
+"	      00432c7b    mov nCurrentMode,eax"
 );
 // LINE 293:
 	asm( 
-"	      00432c7e    mov eax,[ebp-8]"
+"	      00432c7e    mov eax,nCurrentMode"
 "	      00432c81    mov [ebp-2Ch],eax"
 "	      00432c84    jmp near ptr 00432CA1h"
 );
 // LINE 295:
 	asm( 
-"	      00432c89    mov ecx,[ebp-28h]"
+"	      00432c89    mov ecx,this"
 "	      00432c8c    add ecx,0A0h"
 "	      00432c92    call 004BF4FCh"
 );
@@ -1024,11 +1024,11 @@ int  CGameApp::CreateModeSurfaces() {
 );
 // LINE 298:
 	asm( 
-"	      00432cb0    mov eax,[ebp-4]"
+"	      00432cb0    mov eax,i.node"
 "	      00432cb3    mov [ebp-24h],eax"
-"	      00432cb6    mov eax,[ebp-4]"
+"	      00432cb6    mov eax,i.node"
 "	      00432cb9    mov eax,[eax]"
-"	      00432cbb    mov [ebp-4],eax"
+"	      00432cbb    mov i.node,eax"
 "	      00432cbe    jmp near ptr 00432CC3h"
 "	      00432cc3    mov eax,[ebp-24h]"
 "	      00432cc6    mov [ebp-10h],eax"
@@ -1066,17 +1066,17 @@ int  CGameApp::DestroyModeSurfaces() {
 "	      00432ce8    push ebx"
 "	      00432ce9    push esi"
 "	      00432cea    push edi"
-"	      00432ceb    mov [ebp-30h],ecx"
+"	      00432ceb    mov this,ecx"
 );
 // LINE 323:
 	asm( 
-"	      00432cee    mov eax,[ebp-30h]"
+"	      00432cee    mov eax,this"
 "	      00432cf1    cmp dword ptr [eax+42BCh],0"
 "	      00432cf8    je near ptr 00432D45h"
 );
 // LINE 324:
 	asm( 
-"	      00432cfe    mov eax,[ebp-30h]"
+"	      00432cfe    mov eax,this"
 "	      00432d01    mov eax,[eax+42BCh]"
 "	      00432d07    mov [ebp-10h],eax"
 "	      00432d0a    mov eax,[ebp-10h]"
@@ -1094,28 +1094,28 @@ int  CGameApp::DestroyModeSurfaces() {
 );
 // LINE 325:
 	asm( 
-"	      00432d38    mov eax,[ebp-30h]"
+"	      00432d38    mov eax,this"
 "	      00432d3b    mov dword ptr [eax+42BCh],0"
 );
 // LINE 327:
 	asm( 
-"	      00432d45    mov ecx,[ebp-30h]"
+"	      00432d45    mov ecx,this"
 "	      00432d48    call 00440ED6h"
 );
 // LINE 332:
 	asm( 
-"	      00432d4d    mov eax,[ebp-30h]"
+"	      00432d4d    mov eax,this"
 "	      00432d50    mov eax,[eax+4338h]"
 "	      00432d56    mov eax,[eax]"
 "	      00432d58    mov [ebp-28h],eax"
 "	      00432d5b    mov eax,[ebp-28h]"
-"	      00432d5e    mov [ebp-4],eax"
+"	      00432d5e    mov i.node,eax"
 "	      00432d61    jmp near ptr 00432D66h"
 "	      00432d66    jmp near ptr 00432D6Bh"
 );
 // LINE 334:
 	asm( 
-"	      00432d6b    mov eax,[ebp-30h]"
+"	      00432d6b    mov eax,this"
 "	      00432d6e    mov eax,[eax+4338h]"
 "	      00432d74    mov [ebp-1Ch],eax"
 "	      00432d77    mov eax,[ebp-1Ch]"
@@ -1123,7 +1123,7 @@ int  CGameApp::DestroyModeSurfaces() {
 "	      00432d7d    jmp near ptr 00432D82h"
 "	      00432d82    jmp near ptr 00432D87h"
 "	      00432d87    mov eax,[ebp-14h]"
-"	      00432d8a    cmp [ebp-4],eax"
+"	      00432d8a    cmp i.node,eax"
 "	      00432d8d    jne near ptr 00432D9Dh"
 "	      00432d93    jmp near ptr 00432DB1h"
 "	      00432d98    jmp near ptr 00432D9Dh"
@@ -1139,19 +1139,19 @@ int  CGameApp::DestroyModeSurfaces() {
 // LINE 335:
 	asm( 
 "	      00432dc5    jmp near ptr 00432DCAh"
-"	      00432dca    mov eax,[ebp-4]"
+"	      00432dca    mov eax,i.node"
 "	      00432dcd    mov eax,[eax+8]"
-"	      00432dd0    mov [ebp-8],eax"
+"	      00432dd0    mov nCurrentMode,eax"
 );
 // LINE 336:
 	asm( 
-"	      00432dd3    mov eax,[ebp-8]"
+"	      00432dd3    mov eax,nCurrentMode"
 "	      00432dd6    mov [ebp-34h],eax"
 "	      00432dd9    jmp near ptr 00432DF6h"
 );
 // LINE 338:
 	asm( 
-"	      00432dde    mov ecx,[ebp-30h]"
+"	      00432dde    mov ecx,this"
 "	      00432de1    add ecx,0A0h"
 "	      00432de7    call 004BF5CAh"
 );
@@ -1168,11 +1168,11 @@ int  CGameApp::DestroyModeSurfaces() {
 );
 // LINE 341:
 	asm( 
-"	      00432e05    mov eax,[ebp-4]"
+"	      00432e05    mov eax,i.node"
 "	      00432e08    mov [ebp-2Ch],eax"
-"	      00432e0b    mov eax,[ebp-4]"
+"	      00432e0b    mov eax,i.node"
 "	      00432e0e    mov eax,[eax]"
-"	      00432e10    mov [ebp-4],eax"
+"	      00432e10    mov i.node,eax"
 "	      00432e13    jmp near ptr 00432E18h"
 "	      00432e18    mov eax,[ebp-2Ch]"
 "	      00432e1b    mov [ebp-18h],eax"
@@ -1207,11 +1207,11 @@ void  CGameApp::PaletteInitialize() {
 "	      00432e3d    push ebx"
 "	      00432e3e    push esi"
 "	      00432e3f    push edi"
-"	      00432e40    mov [ebp-3Ch],ecx"
+"	      00432e40    mov this,ecx"
 );
 // LINE 360:
 	asm( 
-"	      00432e43    mov eax,[ebp-3Ch]"
+"	      00432e43    mov eax,this"
 "	      00432e46    mov eax,[eax+4338h]"
 "	      00432e4c    mov [ebp-8],eax"
 "	      00432e4f    mov eax,[ebp-8]"
@@ -1230,20 +1230,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 361:
 	asm( 
-"	      00432e84    mov ecx,[ebp-3Ch]"
+"	      00432e84    mov ecx,this"
 "	      00432e87    add ecx,58h"
 "	      00432e8a    call 004BD81Ah"
 );
 // LINE 362:
 	asm( 
-"	      00432e8f    mov ecx,[ebp-3Ch]"
+"	      00432e8f    mov ecx,this"
 "	      00432e92    add ecx,58h"
 "	      00432e95    call 004BD8F7h"
 );
 // LINE 364:
 	asm( 
 "	      00432e9a    jmp near ptr 004330E0h"
-"	      00432e9f    mov eax,[ebp-3Ch]"
+"	      00432e9f    mov eax,this"
 "	      00432ea2    mov eax,[eax+4338h]"
 "	      00432ea8    mov [ebp-10h],eax"
 "	      00432eab    mov eax,[ebp-10h]"
@@ -1262,20 +1262,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 365:
 	asm( 
-"	      00432ee0    mov ecx,[ebp-3Ch]"
+"	      00432ee0    mov ecx,this"
 "	      00432ee3    add ecx,70h"
 "	      00432ee6    call 004BDD5Bh"
 );
 // LINE 366:
 	asm( 
-"	      00432eeb    mov ecx,[ebp-3Ch]"
+"	      00432eeb    mov ecx,this"
 "	      00432eee    add ecx,70h"
 "	      00432ef1    call 004BDE38h"
 );
 // LINE 368:
 	asm( 
 "	      00432ef6    jmp near ptr 004330E0h"
-"	      00432efb    mov eax,[ebp-3Ch]"
+"	      00432efb    mov eax,this"
 "	      00432efe    mov eax,[eax+4338h]"
 "	      00432f04    mov [ebp-18h],eax"
 "	      00432f07    mov eax,[ebp-18h]"
@@ -1294,20 +1294,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 369:
 	asm( 
-"	      00432f3c    mov ecx,[ebp-3Ch]"
+"	      00432f3c    mov ecx,this"
 "	      00432f3f    add ecx,0A0h"
 "	      00432f45    call 004BE16Eh"
 );
 // LINE 370:
 	asm( 
-"	      00432f4a    mov ecx,[ebp-3Ch]"
+"	      00432f4a    mov ecx,this"
 "	      00432f4d    add ecx,0A0h"
 "	      00432f53    call 004BE305h"
 );
 // LINE 372:
 	asm( 
 "	      00432f58    jmp near ptr 004330E0h"
-"	      00432f5d    mov eax,[ebp-3Ch]"
+"	      00432f5d    mov eax,this"
 "	      00432f60    mov eax,[eax+4338h]"
 "	      00432f66    mov [ebp-20h],eax"
 "	      00432f69    mov eax,[ebp-20h]"
@@ -1326,20 +1326,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 373:
 	asm( 
-"	      00432f9e    mov ecx,[ebp-3Ch]"
+"	      00432f9e    mov ecx,this"
 "	      00432fa1    add ecx,0BB8h"
 "	      00432fa7    call 004C14AFh"
 );
 // LINE 374:
 	asm( 
-"	      00432fac    mov ecx,[ebp-3Ch]"
+"	      00432fac    mov ecx,this"
 "	      00432faf    add ecx,0BB8h"
 "	      00432fb5    call 004C1542h"
 );
 // LINE 376:
 	asm( 
 "	      00432fba    jmp near ptr 004330E0h"
-"	      00432fbf    mov eax,[ebp-3Ch]"
+"	      00432fbf    mov eax,this"
 "	      00432fc2    mov eax,[eax+4338h]"
 "	      00432fc8    mov [ebp-28h],eax"
 "	      00432fcb    mov eax,[ebp-28h]"
@@ -1358,20 +1358,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 377:
 	asm( 
-"	      00433000    mov ecx,[ebp-3Ch]"
+"	      00433000    mov ecx,this"
 "	      00433003    add ecx,1678h"
 "	      00433009    call 004C1D25h"
 );
 // LINE 378:
 	asm( 
-"	      0043300e    mov ecx,[ebp-3Ch]"
+"	      0043300e    mov ecx,this"
 "	      00433011    add ecx,1678h"
 "	      00433017    call 004C1DB8h"
 );
 // LINE 380:
 	asm( 
 "	      0043301c    jmp near ptr 004330E0h"
-"	      00433021    mov eax,[ebp-3Ch]"
+"	      00433021    mov eax,this"
 "	      00433024    mov eax,[eax+4338h]"
 "	      0043302a    mov [ebp-30h],eax"
 "	      0043302d    mov eax,[ebp-30h]"
@@ -1390,20 +1390,20 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 381:
 	asm( 
-"	      00433062    mov ecx,[ebp-3Ch]"
+"	      00433062    mov ecx,this"
 "	      00433065    add ecx,2138h"
 "	      0043306b    call 004C26ADh"
 );
 // LINE 382:
 	asm( 
-"	      00433070    mov ecx,[ebp-3Ch]"
+"	      00433070    mov ecx,this"
 "	      00433073    add ecx,2138h"
 "	      00433079    call 004C2740h"
 );
 // LINE 384:
 	asm( 
 "	      0043307e    jmp near ptr 004330E0h"
-"	      00433083    mov eax,[ebp-3Ch]"
+"	      00433083    mov eax,this"
 "	      00433086    mov eax,[eax+4338h]"
 "	      0043308c    mov [ebp-38h],eax"
 "	      0043308f    mov eax,[ebp-38h]"
@@ -1422,13 +1422,13 @@ void  CGameApp::PaletteInitialize() {
 );
 // LINE 385:
 	asm( 
-"	      004330c4    mov ecx,[ebp-3Ch]"
+"	      004330c4    mov ecx,this"
 "	      004330c7    add ecx,2BF8h"
 "	      004330cd    call 004C3035h"
 );
 // LINE 386:
 	asm( 
-"	      004330d2    mov ecx,[ebp-3Ch]"
+"	      004330d2    mov ecx,this"
 "	      004330d5    add ecx,2BF8h"
 "	      004330db    call 004C30C8h"
 );
@@ -1453,12 +1453,12 @@ void  CGameApp::PaletteUninitialize() {
 "	      004330f0    push ebx"
 "	      004330f1    push esi"
 "	      004330f2    push edi"
-"	      004330f3    mov [ebp-4],ecx"
+"	      004330f3    mov this,ecx"
 );
 // LINE 398:
 	asm( 
-"	      004330f6    mov eax,[ebp-4]"
-"	      004330f9    mov ecx,[ebp-4]"
+"	      004330f6    mov eax,this"
+"	      004330f9    mov ecx,this"
 "	      004330fc    mov ecx,[ecx+34h]"
 "	      004330ff    mov edx,[ecx]"
 "	      00433101    mov ecx,[eax+34h]"

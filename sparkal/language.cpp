@@ -95,36 +95,36 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a56d    mov dword ptr [eax+0Ch],1"
 "	      0042a574    jmp near ptr 0042A579h"
 "	      0042a579    mov eax,[ebp-18h]"
-"	      0042a57c    mov [ebp-4],eax"
+"	      0042a57c    mov sLocale.reference,eax"
 "	      0042a57f    jmp near ptr 0042A58Bh"
-"	      0042a584    mov dword ptr [ebp-4],0"
-"	      0042a58b    mov dword ptr [ebp-8],0"
+"	      0042a584    mov sLocale.reference,0"
+"	      0042a58b    mov sLocale.c_str_ptr,0"
 "	      0042a592    jmp near ptr 0042A597h"
 );
 // LINE 67:
 	asm( 
-"	      0042a597    cmp dword ptr [ebp+8],0"
+"	      0042a597    cmp nLanguage,0"
 "	      0042a59b    jne near ptr 0042A5A8h"
 );
 // LINE 68:
 	asm( 
-"	      0042a5a1    mov dword ptr [ebp+8],1"
+"	      0042a5a1    mov nLanguage,1"
 );
 // LINE 69:
 	asm( 
-"	      0042a5a8    mov eax,[ebp+8]"
+"	      0042a5a8    mov eax,nLanguage"
 "	      0042a5ab    cmp ds:[597664h],eax"
 "	      0042a5b1    jne near ptr 0042A675h"
 );
 // LINE 70:
 	asm( 
 "	      0042a5b7    mov dword ptr [ebp-0Ch],0"
-"	      0042a5be    mov eax,[ebp-4]"
+"	      0042a5be    mov eax,sLocale.reference"
 "	      0042a5c1    dec dword ptr [eax+0Ch]"
-"	      0042a5c4    mov eax,[ebp-4]"
+"	      0042a5c4    mov eax,sLocale.reference"
 "	      0042a5c7    cmp dword ptr [eax+0Ch],0"
 "	      0042a5cb    jne near ptr 0042A641h"
-"	      0042a5d1    mov eax,[ebp-4]"
+"	      0042a5d1    mov eax,sLocale.reference"
 "	      0042a5d4    mov [ebp-28h],eax"
 "	      0042a5d7    mov eax,[ebp-28h]"
 "	      0042a5da    mov [ebp-24h],eax"
@@ -155,9 +155,9 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a637    jmp near ptr 0042A63Ch"
 "	      0042a63c    jmp near ptr 0042A641h"
 "	      0042a641    jmp near ptr 0042A646h"
-"	      0042a646    cmp dword ptr [ebp-8],0"
+"	      0042a646    cmp sLocale.c_str_ptr,0"
 "	      0042a64a    je near ptr 0042A668h"
-"	      0042a650    mov eax,[ebp-8]"
+"	      0042a650    mov eax,sLocale.c_str_ptr"
 "	      0042a653    mov [ebp-1Ch],eax"
 "	      0042a656    mov eax,[ebp-1Ch]"
 "	      0042a659    mov [ebp-20h],eax"
@@ -171,7 +171,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 );
 // LINE 72:
 	asm( 
-"	      0042a675    mov eax,[ebp+8]"
+"	      0042a675    mov eax,nLanguage"
 "	      0042a678    push eax"
 "	      0042a679    call 0042B1AFh"
 "	      0042a67e    add esp,4"
@@ -187,30 +187,30 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 );
 // LINE 74:
 	asm( 
-"	      0042a697    mov eax,[ebp+8]"
+"	      0042a697    mov eax,nLanguage"
 "	      0042a69a    mov ds:[597664h],eax"
 );
 // LINE 75:
 	asm( 
-"	      0042a69f    mov eax,[ebp+8]"
+"	      0042a69f    mov eax,nLanguage"
 "	      0042a6a2    push eax"
 "	      0042a6a3    call 0042CEDAh"
 "	      0042a6a8    add esp,4"
 );
 // LINE 76:
 	asm( 
-"	      0042a6ab    mov eax,[ebp+8]"
+"	      0042a6ab    mov eax,nLanguage"
 "	      0042a6ae    push eax"
-"	      0042a6af    lea eax,[ebp-8]"
+"	      0042a6af    lea eax,sLocale.c_str_ptr"
 "	      0042a6b2    push eax"
 "	      0042a6b3    call 0042C776h"
 "	      0042a6b8    add esp,8"
 );
 // LINE 77:
 	asm( 
-"	      0042a6bb    cmp dword ptr [ebp-8],0"
+"	      0042a6bb    cmp sLocale.c_str_ptr,0"
 "	      0042a6bf    je near ptr 0042A6DDh"
-"	      0042a6c5    mov eax,[ebp-8]"
+"	      0042a6c5    mov eax,sLocale.c_str_ptr"
 "	      0042a6c8    mov [ebp-64h],eax"
 "	      0042a6cb    mov eax,[ebp-64h]"
 "	      0042a6ce    mov [ebp-6Ch],eax"
@@ -219,33 +219,33 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a6d5    call 0056A740h"
 "	      0042a6da    add esp,4"
 "	      0042a6dd    jmp near ptr 0042A6E2h"
-"	      0042a6e2    mov eax,[ebp-4]"
+"	      0042a6e2    mov eax,sLocale.reference"
 "	      0042a6e5    mov eax,[eax+4]"
 "	      0042a6e8    inc eax"
 "	      0042a6e9    push eax"
 "	      0042a6ea    call 0056A600h"
 "	      0042a6ef    add esp,4"
-"	      0042a6f2    mov [ebp-8],eax"
+"	      0042a6f2    mov sLocale.c_str_ptr,eax"
 "	      0042a6f5    jmp near ptr 0042A6FAh"
-"	      0042a6fa    mov eax,[ebp-4]"
+"	      0042a6fa    mov eax,sLocale.reference"
 "	      0042a6fd    cmp dword ptr [eax+4],0"
 "	      0042a701    je near ptr 0042A764h"
 "	      0042a707    jmp near ptr 0042A70Ch"
 "	      0042a70c    jmp near ptr 0042A711h"
-"	      0042a711    mov eax,[ebp-4]"
+"	      0042a711    mov eax,sLocale.reference"
 "	      0042a714    cmp dword ptr [eax+4],0"
 "	      0042a718    je near ptr 0042A730h"
-"	      0042a71e    mov eax,[ebp-4]"
+"	      0042a71e    mov eax,sLocale.reference"
 "	      0042a721    mov eax,[eax]"
 "	      0042a723    mov [ebp-78h],eax"
 "	      0042a726    jmp near ptr 0042A73Ch"
 "	      0042a72b    jmp near ptr 0042A73Ch"
 "	      0042a730    mov dword ptr [ebp-78h],0"
 "	      0042a737    jmp near ptr 0042A73Ch"
-"	      0042a73c    mov eax,[ebp-4]"
+"	      0042a73c    mov eax,sLocale.reference"
 "	      0042a73f    mov eax,[eax+4]"
 "	      0042a742    mov [ebp-7Ch],eax"
-"	      0042a745    mov eax,[ebp-8]"
+"	      0042a745    mov eax,sLocale.c_str_ptr"
 "	      0042a748    mov [ebp-80h],eax"
 "	      0042a74b    mov eax,[ebp-7Ch]"
 "	      0042a74e    push eax"
@@ -262,9 +262,9 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a772    lea eax,[ebp-68h]"
 "	      0042a775    mov [ebp-70h],eax"
 "	      0042a778    jmp near ptr 0042A77Dh"
-"	      0042a77d    mov eax,[ebp-4]"
+"	      0042a77d    mov eax,sLocale.reference"
 "	      0042a780    mov eax,[eax+4]"
-"	      0042a783    add eax,[ebp-8]"
+"	      0042a783    add eax,sLocale.c_str_ptr"
 "	      0042a786    mov [ebp-74h],eax"
 "	      0042a789    mov eax,[ebp-70h]"
 "	      0042a78c    mov al,[eax]"
@@ -272,7 +272,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a791    mov [ecx],al"
 "	      0042a793    jmp near ptr 0042A798h"
 "	      0042a798    jmp near ptr 0042A79Dh"
-"	      0042a79d    mov eax,[ebp-8]"
+"	      0042a79d    mov eax,sLocale.c_str_ptr"
 "	      0042a7a0    push eax"
 "	      0042a7a1    push 0"
 "	      0042a7a3    call 0056E040h"
@@ -281,12 +281,12 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 // LINE 78:
 	asm( 
 "	      0042a7ab    mov dword ptr [ebp-10h],1"
-"	      0042a7b2    mov eax,[ebp-4]"
+"	      0042a7b2    mov eax,sLocale.reference"
 "	      0042a7b5    dec dword ptr [eax+0Ch]"
-"	      0042a7b8    mov eax,[ebp-4]"
+"	      0042a7b8    mov eax,sLocale.reference"
 "	      0042a7bb    cmp dword ptr [eax+0Ch],0"
 "	      0042a7bf    jne near ptr 0042A835h"
-"	      0042a7c5    mov eax,[ebp-4]"
+"	      0042a7c5    mov eax,sLocale.reference"
 "	      0042a7c8    mov [ebp-40h],eax"
 "	      0042a7cb    mov eax,[ebp-40h]"
 "	      0042a7ce    mov [ebp-3Ch],eax"
@@ -317,9 +317,9 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a82b    jmp near ptr 0042A830h"
 "	      0042a830    jmp near ptr 0042A835h"
 "	      0042a835    jmp near ptr 0042A83Ah"
-"	      0042a83a    cmp dword ptr [ebp-8],0"
+"	      0042a83a    cmp sLocale.c_str_ptr,0"
 "	      0042a83e    je near ptr 0042A85Ch"
-"	      0042a844    mov eax,[ebp-8]"
+"	      0042a844    mov eax,sLocale.c_str_ptr"
 "	      0042a847    mov [ebp-34h],eax"
 "	      0042a84a    mov eax,[ebp-34h]"
 "	      0042a84d    mov [ebp-38h],eax"
@@ -334,12 +334,12 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 // LINE 80:
 	asm( 
 "	      0042a869    mov dword ptr [ebp-14h],0"
-"	      0042a870    mov eax,[ebp-4]"
+"	      0042a870    mov eax,sLocale.reference"
 "	      0042a873    dec dword ptr [eax+0Ch]"
-"	      0042a876    mov eax,[ebp-4]"
+"	      0042a876    mov eax,sLocale.reference"
 "	      0042a879    cmp dword ptr [eax+0Ch],0"
 "	      0042a87d    jne near ptr 0042A8F3h"
-"	      0042a883    mov eax,[ebp-4]"
+"	      0042a883    mov eax,sLocale.reference"
 "	      0042a886    mov [ebp-58h],eax"
 "	      0042a889    mov eax,[ebp-58h]"
 "	      0042a88c    mov [ebp-54h],eax"
@@ -370,9 +370,9 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 "	      0042a8e9    jmp near ptr 0042A8EEh"
 "	      0042a8ee    jmp near ptr 0042A8F3h"
 "	      0042a8f3    jmp near ptr 0042A8F8h"
-"	      0042a8f8    cmp dword ptr [ebp-8],0"
+"	      0042a8f8    cmp sLocale.c_str_ptr,0"
 "	      0042a8fc    je near ptr 0042A91Ah"
-"	      0042a902    mov eax,[ebp-8]"
+"	      0042a902    mov eax,sLocale.c_str_ptr"
 "	      0042a905    mov [ebp-4Ch],eax"
 "	      0042a908    mov eax,[ebp-4Ch]"
 "	      0042a90b    mov [ebp-50h],eax"
@@ -429,28 +429,28 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042a975    mov dword ptr [eax+0Ch],1"
 "	      0042a97c    jmp near ptr 0042A981h"
 "	      0042a981    mov eax,[ebp-1Ch]"
-"	      0042a984    mov [ebp-4],eax"
+"	      0042a984    mov stringLanguage.reference,eax"
 "	      0042a987    jmp near ptr 0042A993h"
-"	      0042a98c    mov dword ptr [ebp-4],0"
-"	      0042a993    mov dword ptr [ebp-8],0"
+"	      0042a98c    mov stringLanguage.reference,0"
+"	      0042a993    mov stringLanguage.c_str_ptr,0"
 "	      0042a99a    jmp near ptr 0042A99Fh"
 );
 // LINE 99:
 	asm( 
-"	      0042a99f    cmp dword ptr [ebp+8],0"
+"	      0042a99f    cmp nLanguage,0"
 "	      0042a9a3    jl near ptr 0042A9B3h"
-"	      0042a9a9    cmp dword ptr [ebp+8],2Dh"
+"	      0042a9a9    cmp nLanguage,2Dh"
 "	      0042a9ad    jle near ptr 0042AA3Ah"
 );
 // LINE 100:
 	asm( 
 "	      0042a9b3    mov dword ptr [ebp-10h],0"
-"	      0042a9ba    mov eax,[ebp-4]"
+"	      0042a9ba    mov eax,stringLanguage.reference"
 "	      0042a9bd    dec dword ptr [eax+0Ch]"
-"	      0042a9c0    mov eax,[ebp-4]"
+"	      0042a9c0    mov eax,stringLanguage.reference"
 "	      0042a9c3    cmp dword ptr [eax+0Ch],0"
 "	      0042a9c7    jne near ptr 0042AA06h"
-"	      0042a9cd    mov eax,[ebp-4]"
+"	      0042a9cd    mov eax,stringLanguage.reference"
 "	      0042a9d0    mov [ebp-2Ch],eax"
 "	      0042a9d3    mov eax,[ebp-2Ch]"
 "	      0042a9d6    mov [ebp-28h],eax"
@@ -466,9 +466,9 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042a9fc    jmp near ptr 0042AA01h"
 "	      0042aa01    jmp near ptr 0042AA06h"
 "	      0042aa06    jmp near ptr 0042AA0Bh"
-"	      0042aa0b    cmp dword ptr [ebp-8],0"
+"	      0042aa0b    cmp stringLanguage.c_str_ptr,0"
 "	      0042aa0f    je near ptr 0042AA2Dh"
-"	      0042aa15    mov eax,[ebp-8]"
+"	      0042aa15    mov eax,stringLanguage.c_str_ptr"
 "	      0042aa18    mov [ebp-20h],eax"
 "	      0042aa1b    mov eax,[ebp-20h]"
 "	      0042aa1e    mov [ebp-24h],eax"
@@ -482,20 +482,20 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 );
 // LINE 101:
 	asm( 
-"	      0042aa3a    cmp dword ptr [ebp+8],0"
+"	      0042aa3a    cmp nLanguage,0"
 "	      0042aa3e    jne near ptr 0042AA4Ch"
 );
 // LINE 102:
 	asm( 
 "	      0042aa44    mov eax,ds:[597664h]"
-"	      0042aa49    mov [ebp+8],eax"
+"	      0042aa49    mov nLanguage,eax"
 );
 // LINE 105:
 	asm( 
 "	      0042aa4c    push 0FFFh"
 "	      0042aa51    lea eax,[ebp-104Ch]"
 "	      0042aa57    push eax"
-"	      0042aa58    mov eax,[ebp+8]"
+"	      0042aa58    mov eax,nLanguage"
 "	      0042aa5b    lea eax,[eax+eax*4-5]"
 "	      0042aa5f    lea eax,[eax+eax*4]"
 "	      0042aa62    lea eax,[eax+eax*4]"
@@ -510,7 +510,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042aa88    push 0FFFh"
 "	      0042aa8d    lea eax,[ebp-104Ch]"
 "	      0042aa93    push eax"
-"	      0042aa94    mov eax,[ebp+8]"
+"	      0042aa94    mov eax,nLanguage"
 "	      0042aa97    lea eax,[eax+eax*4-5]"
 "	      0042aa9b    lea eax,[eax+eax*4]"
 "	      0042aa9e    lea eax,[eax+eax*4]"
@@ -531,7 +531,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042aad4    push eax"
 "	      0042aad5    lea eax,[ebp-104Ch]"
 "	      0042aadb    push eax"
-"	      0042aadc    lea ecx,[ebp-8]"
+"	      0042aadc    lea ecx,stringLanguage.c_str_ptr"
 "	      0042aadf    call 0040FEE0h"
 "	      0042aae4    jmp near ptr 0042AAE9h"
 "	      0042aae9    jmp near ptr 0042AAEEh"
@@ -540,11 +540,11 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042aaf8    add esp,4"
 "	      0042aafb    push eax"
 "	      0042aafc    push 597200h"
-"	      0042ab01    lea ecx,[ebp-8]"
+"	      0042ab01    lea ecx,stringLanguage.c_str_ptr"
 "	      0042ab04    call 00410130h"
 "	      0042ab09    jmp near ptr 0042AB0Eh"
 "	      0042ab0e    mov eax,[ebp-1050h]"
-"	      0042ab14    mov [ebp-0Ch],eax"
+"	      0042ab14    mov nStringFound,eax"
 "	      0042ab17    jmp near ptr 0042AB53h"
 "	      0042ab1c    jmp near ptr 0042AB21h"
 "	      0042ab21    lea eax,[ebp-104Ch]"
@@ -554,23 +554,23 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042ab30    push eax"
 "	      0042ab31    lea eax,[ebp-104Ch]"
 "	      0042ab37    push eax"
-"	      0042ab38    lea ecx,[ebp-8]"
+"	      0042ab38    lea ecx,stringLanguage.c_str_ptr"
 "	      0042ab3b    call 0040FEE0h"
 "	      0042ab40    jmp near ptr 0042AB45h"
 "	      0042ab45    mov eax,[ebp-1050h]"
-"	      0042ab4b    mov [ebp-0Ch],eax"
+"	      0042ab4b    mov nStringFound,eax"
 "	      0042ab4e    jmp near ptr 0042AB53h"
 );
 // LINE 106:
 	asm( 
-"	      0042ab53    cmp dword ptr [ebp-0Ch],0"
+"	      0042ab53    cmp nStringFound,0"
 "	      0042ab57    je near ptr 0042AD09h"
 );
 // LINE 107:
 	asm( 
-"	      0042ab5d    cmp dword ptr [ebp-8],0"
+"	      0042ab5d    cmp stringLanguage.c_str_ptr,0"
 "	      0042ab61    je near ptr 0042AB8Bh"
-"	      0042ab67    mov eax,[ebp-8]"
+"	      0042ab67    mov eax,stringLanguage.c_str_ptr"
 "	      0042ab6a    mov [ebp-1054h],eax"
 "	      0042ab70    mov eax,[ebp-1054h]"
 "	      0042ab76    mov [ebp-105Ch],eax"
@@ -579,33 +579,33 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042ab83    call 0056A740h"
 "	      0042ab88    add esp,4"
 "	      0042ab8b    jmp near ptr 0042AB90h"
-"	      0042ab90    mov eax,[ebp-4]"
+"	      0042ab90    mov eax,stringLanguage.reference"
 "	      0042ab93    mov eax,[eax+4]"
 "	      0042ab96    inc eax"
 "	      0042ab97    push eax"
 "	      0042ab98    call 0056A600h"
 "	      0042ab9d    add esp,4"
-"	      0042aba0    mov [ebp-8],eax"
+"	      0042aba0    mov stringLanguage.c_str_ptr,eax"
 "	      0042aba3    jmp near ptr 0042ABA8h"
-"	      0042aba8    mov eax,[ebp-4]"
+"	      0042aba8    mov eax,stringLanguage.reference"
 "	      0042abab    cmp dword ptr [eax+4],0"
 "	      0042abaf    je near ptr 0042AC27h"
 "	      0042abb5    jmp near ptr 0042ABBAh"
 "	      0042abba    jmp near ptr 0042ABBFh"
-"	      0042abbf    mov eax,[ebp-4]"
+"	      0042abbf    mov eax,stringLanguage.reference"
 "	      0042abc2    cmp dword ptr [eax+4],0"
 "	      0042abc6    je near ptr 0042ABE1h"
-"	      0042abcc    mov eax,[ebp-4]"
+"	      0042abcc    mov eax,stringLanguage.reference"
 "	      0042abcf    mov eax,[eax]"
 "	      0042abd1    mov [ebp-1068h],eax"
 "	      0042abd7    jmp near ptr 0042ABF0h"
 "	      0042abdc    jmp near ptr 0042ABF0h"
 "	      0042abe1    mov dword ptr [ebp-1068h],0"
 "	      0042abeb    jmp near ptr 0042ABF0h"
-"	      0042abf0    mov eax,[ebp-4]"
+"	      0042abf0    mov eax,stringLanguage.reference"
 "	      0042abf3    mov eax,[eax+4]"
 "	      0042abf6    mov [ebp-106Ch],eax"
-"	      0042abfc    mov eax,[ebp-8]"
+"	      0042abfc    mov eax,stringLanguage.c_str_ptr"
 "	      0042abff    mov [ebp-1070h],eax"
 "	      0042ac05    mov eax,[ebp-106Ch]"
 "	      0042ac0b    push eax"
@@ -622,9 +622,9 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042ac38    lea eax,[ebp-1058h]"
 "	      0042ac3e    mov [ebp-1060h],eax"
 "	      0042ac44    jmp near ptr 0042AC49h"
-"	      0042ac49    mov eax,[ebp-4]"
+"	      0042ac49    mov eax,stringLanguage.reference"
 "	      0042ac4c    mov eax,[eax+4]"
-"	      0042ac4f    add eax,[ebp-8]"
+"	      0042ac4f    add eax,stringLanguage.c_str_ptr"
 "	      0042ac52    mov [ebp-1064h],eax"
 "	      0042ac58    mov eax,[ebp-1060h]"
 "	      0042ac5e    mov al,[eax]"
@@ -632,9 +632,9 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042ac66    mov [ecx],al"
 "	      0042ac68    jmp near ptr 0042AC6Dh"
 "	      0042ac6d    jmp near ptr 0042AC72h"
-"	      0042ac72    mov eax,[ebp-8]"
+"	      0042ac72    mov eax,stringLanguage.c_str_ptr"
 "	      0042ac75    push eax"
-"	      0042ac76    mov eax,[ebp+0Ch]"
+"	      0042ac76    mov eax,szLanguageName"
 "	      0042ac79    push eax"
 "	      0042ac7a    call 0056CEB0h"
 "	      0042ac7f    add esp,8"
@@ -642,12 +642,12 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 // LINE 108:
 	asm( 
 "	      0042ac82    mov dword ptr [ebp-14h],1"
-"	      0042ac89    mov eax,[ebp-4]"
+"	      0042ac89    mov eax,stringLanguage.reference"
 "	      0042ac8c    dec dword ptr [eax+0Ch]"
-"	      0042ac8f    mov eax,[ebp-4]"
+"	      0042ac8f    mov eax,stringLanguage.reference"
 "	      0042ac92    cmp dword ptr [eax+0Ch],0"
 "	      0042ac96    jne near ptr 0042ACD5h"
-"	      0042ac9c    mov eax,[ebp-4]"
+"	      0042ac9c    mov eax,stringLanguage.reference"
 "	      0042ac9f    mov [ebp-3Ch],eax"
 "	      0042aca2    mov eax,[ebp-3Ch]"
 "	      0042aca5    mov [ebp-38h],eax"
@@ -663,9 +663,9 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042accb    jmp near ptr 0042ACD0h"
 "	      0042acd0    jmp near ptr 0042ACD5h"
 "	      0042acd5    jmp near ptr 0042ACDAh"
-"	      0042acda    cmp dword ptr [ebp-8],0"
+"	      0042acda    cmp stringLanguage.c_str_ptr,0"
 "	      0042acde    je near ptr 0042ACFCh"
-"	      0042ace4    mov eax,[ebp-8]"
+"	      0042ace4    mov eax,stringLanguage.c_str_ptr"
 "	      0042ace7    mov [ebp-30h],eax"
 "	      0042acea    mov eax,[ebp-30h]"
 "	      0042aced    mov [ebp-34h],eax"
@@ -680,12 +680,12 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 // LINE 110:
 	asm( 
 "	      0042ad09    mov dword ptr [ebp-18h],0"
-"	      0042ad10    mov eax,[ebp-4]"
+"	      0042ad10    mov eax,stringLanguage.reference"
 "	      0042ad13    dec dword ptr [eax+0Ch]"
-"	      0042ad16    mov eax,[ebp-4]"
+"	      0042ad16    mov eax,stringLanguage.reference"
 "	      0042ad19    cmp dword ptr [eax+0Ch],0"
 "	      0042ad1d    jne near ptr 0042AD5Ch"
-"	      0042ad23    mov eax,[ebp-4]"
+"	      0042ad23    mov eax,stringLanguage.reference"
 "	      0042ad26    mov [ebp-4Ch],eax"
 "	      0042ad29    mov eax,[ebp-4Ch]"
 "	      0042ad2c    mov [ebp-48h],eax"
@@ -701,9 +701,9 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 "	      0042ad52    jmp near ptr 0042AD57h"
 "	      0042ad57    jmp near ptr 0042AD5Ch"
 "	      0042ad5c    jmp near ptr 0042AD61h"
-"	      0042ad61    cmp dword ptr [ebp-8],0"
+"	      0042ad61    cmp stringLanguage.c_str_ptr,0"
 "	      0042ad65    je near ptr 0042AD83h"
-"	      0042ad6b    mov eax,[ebp-8]"
+"	      0042ad6b    mov eax,stringLanguage.c_str_ptr"
 "	      0042ad6e    mov [ebp-40h],eax"
 "	      0042ad71    mov eax,[ebp-40h]"
 "	      0042ad74    mov [ebp-44h],eax"
@@ -761,10 +761,10 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042add7    mov dword ptr [eax+0Ch],1"
 "	      0042adde    jmp near ptr 0042ADE3h"
 "	      0042ade3    mov eax,[ebp-24h]"
-"	      0042ade6    mov [ebp-14h],eax"
+"	      0042ade6    mov stringLanguageCompare.reference,eax"
 "	      0042ade9    jmp near ptr 0042ADF5h"
-"	      0042adee    mov dword ptr [ebp-14h],0"
-"	      0042adf5    mov dword ptr [ebp-18h],0"
+"	      0042adee    mov stringLanguageCompare.reference,0"
+"	      0042adf5    mov stringLanguageCompare.c_str_ptr,0"
 "	      0042adfc    jmp near ptr 0042AE01h"
 );
 // LINE 130:
@@ -775,7 +775,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042ae0b    mov [ebp-68h],eax"
 "	      0042ae0e    cmp dword ptr [ebp-68h],0"
 "	      0042ae12    je near ptr 0042AEAEh"
-"	      0042ae18    mov eax,[ebp+8]"
+"	      0042ae18    mov eax,szLanguageName"
 "	      0042ae1b    push eax"
 "	      0042ae1c    call 0056ABE0h"
 "	      0042ae21    add esp,4"
@@ -804,7 +804,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042ae6a    mov [ebp-70h],eax"
 "	      0042ae6d    mov eax,[ebp-6Ch]"
 "	      0042ae70    push eax"
-"	      0042ae71    mov eax,[ebp+8]"
+"	      0042ae71    mov eax,szLanguageName"
 "	      0042ae74    push eax"
 "	      0042ae75    mov eax,[ebp-70h]"
 "	      0042ae78    push eax"
@@ -818,57 +818,57 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042ae97    mov dword ptr [eax+0Ch],1"
 "	      0042ae9e    jmp near ptr 0042AEA3h"
 "	      0042aea3    mov eax,[ebp-68h]"
-"	      0042aea6    mov [ebp-4],eax"
+"	      0042aea6    mov stringLanguageName.reference,eax"
 "	      0042aea9    jmp near ptr 0042AEB5h"
-"	      0042aeae    mov dword ptr [ebp-4],0"
-"	      0042aeb5    mov dword ptr [ebp-8],0"
+"	      0042aeae    mov stringLanguageName.reference,0"
+"	      0042aeb5    mov stringLanguageName.c_str_ptr,0"
 "	      0042aebc    jmp near ptr 0042AEC1h"
 );
 // LINE 134:
 	asm( 
-"	      0042aec1    mov dword ptr [ebp-0Ch],1"
+"	      0042aec1    mov i,1"
 "	      0042aec8    jmp near ptr 0042AED0h"
-"	      0042aecd    inc dword ptr [ebp-0Ch]"
-"	      0042aed0    cmp dword ptr [ebp-0Ch],2Dh"
+"	      0042aecd    inc i"
+"	      0042aed0    cmp i,2Dh"
 "	      0042aed4    jg near ptr 0042B083h"
 );
 // LINE 137:
 	asm( 
-"	      0042aeda    mov eax,[ebp-0Ch]"
+"	      0042aeda    mov eax,i"
 "	      0042aedd    lea eax,[eax+eax*4-5]"
 "	      0042aee1    lea eax,[eax+eax*4]"
 "	      0042aee4    lea eax,[eax+eax*4]"
 "	      0042aee7    shl eax,3"
 "	      0042aeea    push eax"
-"	      0042aeeb    lea eax,[ebp-18h]"
+"	      0042aeeb    lea eax,stringLanguageCompare.c_str_ptr"
 "	      0042aeee    push eax"
 "	      0042aeef    call 0040F710h"
 "	      0042aef4    add esp,8"
-"	      0042aef7    mov [ebp-10h],eax"
+"	      0042aef7    mov nStringFound,eax"
 );
 // LINE 138:
 	asm( 
-"	      0042aefa    cmp dword ptr [ebp-10h],0"
+"	      0042aefa    cmp nStringFound,0"
 "	      0042aefe    je near ptr 0042B07Eh"
 );
 // LINE 139:
 	asm( 
 "	      0042af04    jmp near ptr 0042AF09h"
-"	      0042af09    mov eax,[ebp-4]"
+"	      0042af09    mov eax,stringLanguageName.reference"
 "	      0042af0c    cmp dword ptr [eax+4],0FFFFFFFFh"
 "	      0042af10    jae near ptr 0042AF29h"
 "	      0042af16    jmp near ptr 0042AF1Bh"
-"	      0042af1b    mov eax,[ebp-4]"
+"	      0042af1b    mov eax,stringLanguageName.reference"
 "	      0042af1e    mov eax,[eax+4]"
 "	      0042af21    mov [ebp-74h],eax"
 "	      0042af24    jmp near ptr 0042AF30h"
 "	      0042af29    mov dword ptr [ebp-74h],0FFFFFFFFh"
 "	      0042af30    jmp near ptr 0042AF35h"
 "	      0042af35    jmp near ptr 0042AF3Ah"
-"	      0042af3a    mov eax,[ebp-14h]"
+"	      0042af3a    mov eax,stringLanguageCompare.reference"
 "	      0042af3d    cmp dword ptr [eax+4],0"
 "	      0042af41    je near ptr 0042AF59h"
-"	      0042af47    mov eax,[ebp-14h]"
+"	      0042af47    mov eax,stringLanguageCompare.reference"
 "	      0042af4a    mov eax,[eax]"
 "	      0042af4c    mov [ebp-78h],eax"
 "	      0042af4f    jmp near ptr 0042AF65h"
@@ -876,7 +876,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042af59    mov dword ptr [ebp-78h],0"
 "	      0042af60    jmp near ptr 0042AF65h"
 "	      0042af65    jmp near ptr 0042AF6Ah"
-"	      0042af6a    mov eax,[ebp-14h]"
+"	      0042af6a    mov eax,stringLanguageCompare.reference"
 "	      0042af6d    mov eax,[eax+4]"
 "	      0042af70    push eax"
 "	      0042af71    mov eax,[ebp-74h]"
@@ -884,26 +884,26 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042af75    mov eax,[ebp-78h]"
 "	      0042af78    push eax"
 "	      0042af79    push 0"
-"	      0042af7b    lea ecx,[ebp-8]"
+"	      0042af7b    lea ecx,stringLanguageName.c_str_ptr"
 "	      0042af7e    call 00410C40h"
 "	      0042af83    test eax,eax"
 "	      0042af85    jne near ptr 0042B07Eh"
 );
 // LINE 140:
 	asm( 
-"	      0042af8b    mov eax,[ebp-0Ch]"
-"	      0042af8e    mov ecx,[ebp+0Ch]"
+"	      0042af8b    mov eax,i"
+"	      0042af8e    mov ecx,nLanguage"
 "	      0042af91    mov [ecx],eax"
 );
 // LINE 141:
 	asm( 
 "	      0042af93    mov dword ptr [ebp-1Ch],1"
-"	      0042af9a    mov eax,[ebp-4]"
+"	      0042af9a    mov eax,stringLanguageName.reference"
 "	      0042af9d    dec dword ptr [eax+0Ch]"
-"	      0042afa0    mov eax,[ebp-4]"
+"	      0042afa0    mov eax,stringLanguageName.reference"
 "	      0042afa3    cmp dword ptr [eax+0Ch],0"
 "	      0042afa7    jne near ptr 0042AFE6h"
-"	      0042afad    mov eax,[ebp-4]"
+"	      0042afad    mov eax,stringLanguageName.reference"
 "	      0042afb0    mov [ebp-34h],eax"
 "	      0042afb3    mov eax,[ebp-34h]"
 "	      0042afb6    mov [ebp-30h],eax"
@@ -919,9 +919,9 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042afdc    jmp near ptr 0042AFE1h"
 "	      0042afe1    jmp near ptr 0042AFE6h"
 "	      0042afe6    jmp near ptr 0042AFEBh"
-"	      0042afeb    cmp dword ptr [ebp-8],0"
+"	      0042afeb    cmp stringLanguageName.c_str_ptr,0"
 "	      0042afef    je near ptr 0042B00Dh"
-"	      0042aff5    mov eax,[ebp-8]"
+"	      0042aff5    mov eax,stringLanguageName.c_str_ptr"
 "	      0042aff8    mov [ebp-28h],eax"
 "	      0042affb    mov eax,[ebp-28h]"
 "	      0042affe    mov [ebp-2Ch],eax"
@@ -930,12 +930,12 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042b005    call 0056A740h"
 "	      0042b00a    add esp,4"
 "	      0042b00d    jmp near ptr 0042B012h"
-"	      0042b012    mov eax,[ebp-14h]"
+"	      0042b012    mov eax,stringLanguageCompare.reference"
 "	      0042b015    dec dword ptr [eax+0Ch]"
-"	      0042b018    mov eax,[ebp-14h]"
+"	      0042b018    mov eax,stringLanguageCompare.reference"
 "	      0042b01b    cmp dword ptr [eax+0Ch],0"
 "	      0042b01f    jne near ptr 0042B04Ah"
-"	      0042b025    mov eax,[ebp-14h]"
+"	      0042b025    mov eax,stringLanguageCompare.reference"
 "	      0042b028    mov [ebp-44h],eax"
 "	      0042b02b    mov eax,[ebp-44h]"
 "	      0042b02e    mov [ebp-40h],eax"
@@ -946,9 +946,9 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042b040    call 0041DD70h"
 "	      0042b045    jmp near ptr 0042B04Ah"
 "	      0042b04a    jmp near ptr 0042B04Fh"
-"	      0042b04f    cmp dword ptr [ebp-18h],0"
+"	      0042b04f    cmp stringLanguageCompare.c_str_ptr,0"
 "	      0042b053    je near ptr 0042B071h"
-"	      0042b059    mov eax,[ebp-18h]"
+"	      0042b059    mov eax,stringLanguageCompare.c_str_ptr"
 "	      0042b05c    mov [ebp-38h],eax"
 "	      0042b05f    mov eax,[ebp-38h]"
 "	      0042b062    mov [ebp-3Ch],eax"
@@ -967,12 +967,12 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 // LINE 145:
 	asm( 
 "	      0042b083    mov dword ptr [ebp-20h],0"
-"	      0042b08a    mov eax,[ebp-4]"
+"	      0042b08a    mov eax,stringLanguageName.reference"
 "	      0042b08d    dec dword ptr [eax+0Ch]"
-"	      0042b090    mov eax,[ebp-4]"
+"	      0042b090    mov eax,stringLanguageName.reference"
 "	      0042b093    cmp dword ptr [eax+0Ch],0"
 "	      0042b097    jne near ptr 0042B0C2h"
-"	      0042b09d    mov eax,[ebp-4]"
+"	      0042b09d    mov eax,stringLanguageName.reference"
 "	      0042b0a0    mov [ebp-54h],eax"
 "	      0042b0a3    mov eax,[ebp-54h]"
 "	      0042b0a6    mov [ebp-50h],eax"
@@ -983,9 +983,9 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042b0b8    call 0041DD70h"
 "	      0042b0bd    jmp near ptr 0042B0C2h"
 "	      0042b0c2    jmp near ptr 0042B0C7h"
-"	      0042b0c7    cmp dword ptr [ebp-8],0"
+"	      0042b0c7    cmp stringLanguageName.c_str_ptr,0"
 "	      0042b0cb    je near ptr 0042B0E9h"
-"	      0042b0d1    mov eax,[ebp-8]"
+"	      0042b0d1    mov eax,stringLanguageName.c_str_ptr"
 "	      0042b0d4    mov [ebp-48h],eax"
 "	      0042b0d7    mov eax,[ebp-48h]"
 "	      0042b0da    mov [ebp-4Ch],eax"
@@ -994,12 +994,12 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042b0e1    call 0056A740h"
 "	      0042b0e6    add esp,4"
 "	      0042b0e9    jmp near ptr 0042B0EEh"
-"	      0042b0ee    mov eax,[ebp-14h]"
+"	      0042b0ee    mov eax,stringLanguageCompare.reference"
 "	      0042b0f1    dec dword ptr [eax+0Ch]"
-"	      0042b0f4    mov eax,[ebp-14h]"
+"	      0042b0f4    mov eax,stringLanguageCompare.reference"
 "	      0042b0f7    cmp dword ptr [eax+0Ch],0"
 "	      0042b0fb    jne near ptr 0042B126h"
-"	      0042b101    mov eax,[ebp-14h]"
+"	      0042b101    mov eax,stringLanguageCompare.reference"
 "	      0042b104    mov [ebp-64h],eax"
 "	      0042b107    mov eax,[ebp-64h]"
 "	      0042b10a    mov [ebp-60h],eax"
@@ -1010,9 +1010,9 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 "	      0042b11c    call 0041DD70h"
 "	      0042b121    jmp near ptr 0042B126h"
 "	      0042b126    jmp near ptr 0042B12Bh"
-"	      0042b12b    cmp dword ptr [ebp-18h],0"
+"	      0042b12b    cmp stringLanguageCompare.c_str_ptr,0"
 "	      0042b12f    je near ptr 0042B14Dh"
-"	      0042b135    mov eax,[ebp-18h]"
+"	      0042b135    mov eax,stringLanguageCompare.c_str_ptr"
 "	      0042b138    mov [ebp-58h],eax"
 "	      0042b13b    mov eax,[ebp-58h]"
 "	      0042b13e    mov [ebp-5Ch],eax"
@@ -1046,9 +1046,9 @@ int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
 );
 // LINE 156:
 	asm( 
-"	      0042b165    cmp dword ptr [ebp+0Ch],0"
+"	      0042b165    cmp nLanguage,0"
 "	      0042b169    jl near ptr 0042B179h"
-"	      0042b16f    cmp dword ptr [ebp+0Ch],2Dh"
+"	      0042b16f    cmp nLanguage,2Dh"
 "	      0042b173    jl near ptr 0042B180h"
 );
 // LINE 157:
@@ -1058,22 +1058,22 @@ int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
 );
 // LINE 158:
 	asm( 
-"	      0042b180    cmp dword ptr [ebp+0Ch],0"
+"	      0042b180    cmp nLanguage,0"
 "	      0042b184    jne near ptr 0042B192h"
 );
 // LINE 159:
 	asm( 
 "	      0042b18a    mov eax,ds:[597664h]"
-"	      0042b18f    mov [ebp+0Ch],eax"
+"	      0042b18f    mov nLanguage,eax"
 );
 // LINE 160:
 	asm( 
-"	      0042b192    mov eax,[ebp+0Ch]"
+"	      0042b192    mov eax,nLanguage"
 "	      0042b195    lea eax,[eax+eax*4-5]"
 "	      0042b199    lea eax,[eax+eax*4]"
 "	      0042b19c    lea eax,[eax+eax*4]"
 "	      0042b19f    shl eax,3"
-"	      0042b1a2    add eax,[ebp+8]"
+"	      0042b1a2    add eax,nStringID"
 "	      0042b1a5    jmp near ptr 0042B1AAh"
 );
 // LINE 161:
@@ -1121,27 +1121,27 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b1f8    mov dword ptr [eax+0Ch],1"
 "	      0042b1ff    jmp near ptr 0042B204h"
 "	      0042b204    mov eax,[ebp-14h]"
-"	      0042b207    mov [ebp-4],eax"
+"	      0042b207    mov sMessage.reference,eax"
 "	      0042b20a    jmp near ptr 0042B216h"
-"	      0042b20f    mov dword ptr [ebp-4],0"
-"	      0042b216    mov dword ptr [ebp-8],0"
+"	      0042b20f    mov sMessage.reference,0"
+"	      0042b216    mov sMessage.c_str_ptr,0"
 "	      0042b21d    jmp near ptr 0042B222h"
 );
 // LINE 180:
 	asm( 
-"	      0042b222    mov eax,[ebp+8]"
+"	      0042b222    mov eax,nLanguageToSwitchTo"
 "	      0042b225    push eax"
 "	      0042b226    push 1"
 "	      0042b228    call 0042B15Fh"
 "	      0042b22d    add esp,8"
-"	      0042b230    mov [ebp-0Ch],eax"
+"	      0042b230    mov nFullStringID,eax"
 );
 // LINE 181:
 	asm( 
 "	      0042b233    push 0FFFh"
 "	      0042b238    lea eax,[ebp-102Ch]"
 "	      0042b23e    push eax"
-"	      0042b23f    mov eax,[ebp-0Ch]"
+"	      0042b23f    mov eax,nFullStringID"
 "	      0042b242    push eax"
 "	      0042b243    mov eax,ds:[5C28C8h]"
 "	      0042b248    push eax"
@@ -1153,7 +1153,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b267    lea eax,[ebp-102Ch]"
 "	      0042b26d    push eax"
 "	      0042b26e    mov ecx,3E8h"
-"	      0042b273    mov eax,[ebp-0Ch]"
+"	      0042b273    mov eax,nFullStringID"
 "	      0042b276    sub edx,edx"
 "	      0042b278    div ecx"
 "	      0042b27a    push edx"
@@ -1183,13 +1183,13 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b2e4    add esp,4"
 "	      0042b2e7    jmp near ptr 0042B2ECh"
 "	      0042b2ec    jmp near ptr 0042B2F1h"
-"	      0042b2f1    mov eax,[ebp-4]"
+"	      0042b2f1    mov eax,sMessage.reference"
 "	      0042b2f4    cmp dword ptr [eax+0Ch],1"
 "	      0042b2f8    ja near ptr 0042B322h"
 "	      0042b2fe    cmp dword ptr [ebp-1044h],0"
 "	      0042b305    je near ptr 0042B383h"
 "	      0042b30b    jmp near ptr 0042B310h"
-"	      0042b310    mov eax,[ebp-4]"
+"	      0042b310    mov eax,sMessage.reference"
 "	      0042b313    mov ecx,[ebp-1044h]"
 "	      0042b319    cmp [eax+8],ecx"
 "	      0042b31c    jae near ptr 0042B383h"
@@ -1208,15 +1208,15 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b358    mov [ebp-1034h],eax"
 "	      0042b35e    jmp near ptr 0042B36Dh"
 "	      0042b363    mov dword ptr [ebp-1034h],0"
-"	      0042b36d    lea ecx,[ebp-8]"
+"	      0042b36d    lea ecx,sMessage.c_str_ptr"
 "	      0042b370    call 00412080h"
 "	      0042b375    mov eax,[ebp-1034h]"
-"	      0042b37b    mov [ebp-4],eax"
+"	      0042b37b    mov sMessage.reference,eax"
 "	      0042b37e    jmp near ptr 0042B3C2h"
 "	      0042b383    cmp dword ptr [ebp-1044h],0"
 "	      0042b38a    je near ptr 0042B3C2h"
 "	      0042b390    jmp near ptr 0042B395h"
-"	      0042b395    mov eax,[ebp-4]"
+"	      0042b395    mov eax,sMessage.reference"
 "	      0042b398    mov eax,[eax]"
 "	      0042b39a    mov [ebp-103Ch],eax"
 "	      0042b3a0    mov eax,[ebp-1044h]"
@@ -1229,7 +1229,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b3ba    add esp,0Ch"
 "	      0042b3bd    jmp near ptr 0042B3C2h"
 "	      0042b3c2    mov eax,[ebp-1044h]"
-"	      0042b3c8    mov ecx,[ebp-4]"
+"	      0042b3c8    mov ecx,sMessage.reference"
 "	      0042b3cb    mov [ecx+4],eax"
 "	      0042b3ce    jmp near ptr 0042B3D3h"
 "	      0042b3d3    jmp near ptr 0042B3D8h"
@@ -1239,7 +1239,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b3e7    add esp,4"
 "	      0042b3ea    mov [ebp-1058h],eax"
 "	      0042b3f0    jmp near ptr 0042B3F5h"
-"	      0042b3f5    mov eax,[ebp-4]"
+"	      0042b3f5    mov eax,sMessage.reference"
 "	      0042b3f8    mov ecx,0FFFFFFFFh"
 "	      0042b3fd    sub ecx,[ebp-1058h]"
 "	      0042b403    cmp [eax+4],ecx"
@@ -1258,14 +1258,14 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b43c    add esp,4"
 "	      0042b43f    jmp near ptr 0042B444h"
 "	      0042b444    jmp near ptr 0042B449h"
-"	      0042b449    mov eax,[ebp-4]"
+"	      0042b449    mov eax,sMessage.reference"
 "	      0042b44c    cmp dword ptr [eax+0Ch],1"
 "	      0042b450    ja near ptr 0042B478h"
 "	      0042b456    jmp near ptr 0042B45Bh"
 "	      0042b45b    jmp near ptr 0042B460h"
-"	      0042b460    mov eax,[ebp-4]"
+"	      0042b460    mov eax,sMessage.reference"
 "	      0042b463    mov eax,[eax+8]"
-"	      0042b466    mov ecx,[ebp-4]"
+"	      0042b466    mov ecx,sMessage.reference"
 "	      0042b469    sub eax,[ecx+4]"
 "	      0042b46c    cmp eax,[ebp-1058h]"
 "	      0042b472    jae near ptr 0042B4EDh"
@@ -1277,14 +1277,14 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b48f    je near ptr 0042B4D2h"
 "	      0042b495    jmp near ptr 0042B49Ah"
 "	      0042b49a    jmp near ptr 0042B49Fh"
-"	      0042b49f    mov eax,[ebp-4]"
+"	      0042b49f    mov eax,sMessage.reference"
 "	      0042b4a2    mov eax,[eax+4]"
 "	      0042b4a5    add eax,[ebp-1058h]"
 "	      0042b4ab    push eax"
-"	      0042b4ac    mov eax,[ebp-4]"
+"	      0042b4ac    mov eax,sMessage.reference"
 "	      0042b4af    mov eax,[eax+4]"
 "	      0042b4b2    push eax"
-"	      0042b4b3    lea ecx,[ebp-8]"
+"	      0042b4b3    lea ecx,sMessage.c_str_ptr"
 "	      0042b4b6    call 00417C00h"
 "	      0042b4bb    push eax"
 "	      0042b4bc    mov ecx,[ebp-104Ch]"
@@ -1292,17 +1292,17 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b4c7    mov [ebp-1048h],eax"
 "	      0042b4cd    jmp near ptr 0042B4DCh"
 "	      0042b4d2    mov dword ptr [ebp-1048h],0"
-"	      0042b4dc    lea ecx,[ebp-8]"
+"	      0042b4dc    lea ecx,sMessage.c_str_ptr"
 "	      0042b4df    call 00412080h"
 "	      0042b4e4    mov eax,[ebp-1048h]"
-"	      0042b4ea    mov [ebp-4],eax"
+"	      0042b4ea    mov sMessage.reference,eax"
 "	      0042b4ed    cmp dword ptr [ebp-1058h],0"
 "	      0042b4f4    je near ptr 0042B535h"
 "	      0042b4fa    jmp near ptr 0042B4FFh"
 "	      0042b4ff    jmp near ptr 0042B504h"
-"	      0042b504    mov eax,[ebp-4]"
+"	      0042b504    mov eax,sMessage.reference"
 "	      0042b507    mov eax,[eax+4]"
-"	      0042b50a    mov ecx,[ebp-4]"
+"	      0042b50a    mov ecx,sMessage.reference"
 "	      0042b50d    add eax,[ecx]"
 "	      0042b50f    mov [ebp-1050h],eax"
 "	      0042b515    mov eax,[ebp-1058h]"
@@ -1314,7 +1314,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b52d    add esp,0Ch"
 "	      0042b530    jmp near ptr 0042B535h"
 "	      0042b535    mov eax,[ebp-1058h]"
-"	      0042b53b    mov ecx,[ebp-4]"
+"	      0042b53b    mov ecx,sMessage.reference"
 "	      0042b53e    add [ecx+4],eax"
 "	      0042b541    jmp near ptr 0042B546h"
 "	      0042b546    jmp near ptr 0042B54Bh"
@@ -1341,13 +1341,13 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b5a7    add esp,4"
 "	      0042b5aa    jmp near ptr 0042B5AFh"
 "	      0042b5af    jmp near ptr 0042B5B4h"
-"	      0042b5b4    mov eax,[ebp-4]"
+"	      0042b5b4    mov eax,sMessage.reference"
 "	      0042b5b7    cmp dword ptr [eax+0Ch],1"
 "	      0042b5bb    ja near ptr 0042B5E5h"
 "	      0042b5c1    cmp dword ptr [ebp-1074h],0"
 "	      0042b5c8    je near ptr 0042B68Ah"
 "	      0042b5ce    jmp near ptr 0042B5D3h"
-"	      0042b5d3    mov eax,[ebp-4]"
+"	      0042b5d3    mov eax,sMessage.reference"
 "	      0042b5d6    mov ecx,[ebp-1074h]"
 "	      0042b5dc    cmp [eax+8],ecx"
 "	      0042b5df    jae near ptr 0042B68Ah"
@@ -1366,12 +1366,12 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b61b    mov [ebp-105Ch],eax"
 "	      0042b621    jmp near ptr 0042B630h"
 "	      0042b626    mov dword ptr [ebp-105Ch],0"
-"	      0042b630    mov eax,[ebp-4]"
+"	      0042b630    mov eax,sMessage.reference"
 "	      0042b633    dec dword ptr [eax+0Ch]"
-"	      0042b636    mov eax,[ebp-4]"
+"	      0042b636    mov eax,sMessage.reference"
 "	      0042b639    cmp dword ptr [eax+0Ch],0"
 "	      0042b63d    jne near ptr 0042B677h"
-"	      0042b643    mov eax,[ebp-4]"
+"	      0042b643    mov eax,sMessage.reference"
 "	      0042b646    mov [ebp-1070h],eax"
 "	      0042b64c    mov eax,[ebp-1070h]"
 "	      0042b652    mov [ebp-106Ch],eax"
@@ -1383,12 +1383,12 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b672    jmp near ptr 0042B677h"
 "	      0042b677    jmp near ptr 0042B67Ch"
 "	      0042b67c    mov eax,[ebp-105Ch]"
-"	      0042b682    mov [ebp-4],eax"
+"	      0042b682    mov sMessage.reference,eax"
 "	      0042b685    jmp near ptr 0042B6C9h"
 "	      0042b68a    cmp dword ptr [ebp-1074h],0"
 "	      0042b691    je near ptr 0042B6C9h"
 "	      0042b697    jmp near ptr 0042B69Ch"
-"	      0042b69c    mov eax,[ebp-4]"
+"	      0042b69c    mov eax,sMessage.reference"
 "	      0042b69f    mov eax,[eax]"
 "	      0042b6a1    mov [ebp-1064h],eax"
 "	      0042b6a7    mov eax,[ebp-1074h]"
@@ -1401,7 +1401,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b6c1    add esp,0Ch"
 "	      0042b6c4    jmp near ptr 0042B6C9h"
 "	      0042b6c9    mov eax,[ebp-1074h]"
-"	      0042b6cf    mov ecx,[ebp-4]"
+"	      0042b6cf    mov ecx,sMessage.reference"
 "	      0042b6d2    mov [ecx+4],eax"
 "	      0042b6d5    jmp near ptr 0042B6DAh"
 "	      0042b6da    jmp near ptr 0042B6DFh"
@@ -1410,15 +1410,15 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 // LINE 182:
 	asm( 
 "	      0042b6e4    jmp near ptr 0042B6E9h"
-"	      0042b6e9    mov eax,[ebp-4]"
+"	      0042b6e9    mov eax,sMessage.reference"
 "	      0042b6ec    mov eax,[eax+4]"
 "	      0042b6ef    mov [ebp-10h],eax"
-"	      0042b6f2    mov eax,[ebp-4]"
+"	      0042b6f2    mov eax,sMessage.reference"
 "	      0042b6f5    dec dword ptr [eax+0Ch]"
-"	      0042b6f8    mov eax,[ebp-4]"
+"	      0042b6f8    mov eax,sMessage.reference"
 "	      0042b6fb    cmp dword ptr [eax+0Ch],0"
 "	      0042b6ff    jne near ptr 0042B775h"
-"	      0042b705    mov eax,[ebp-4]"
+"	      0042b705    mov eax,sMessage.reference"
 "	      0042b708    mov [ebp-24h],eax"
 "	      0042b70b    mov eax,[ebp-24h]"
 "	      0042b70e    mov [ebp-20h],eax"
@@ -1449,9 +1449,9 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 "	      0042b76b    jmp near ptr 0042B770h"
 "	      0042b770    jmp near ptr 0042B775h"
 "	      0042b775    jmp near ptr 0042B77Ah"
-"	      0042b77a    cmp dword ptr [ebp-8],0"
+"	      0042b77a    cmp sMessage.c_str_ptr,0"
 "	      0042b77e    je near ptr 0042B79Ch"
-"	      0042b784    mov eax,[ebp-8]"
+"	      0042b784    mov eax,sMessage.c_str_ptr"
 "	      0042b787    mov [ebp-18h],eax"
 "	      0042b78a    mov eax,[ebp-18h]"
 "	      0042b78d    mov [ebp-1Ch],eax"
@@ -1488,14 +1488,14 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 );
 // LINE 193:
 	asm( 
-"	      0042b7b7    mov eax,[ebp+8]"
-"	      0042b7ba    mov [ebp-4],eax"
+"	      0042b7b7    mov eax,nCurrentLanguage"
+"	      0042b7ba    mov nInitialLanguage,eax"
 );
 // LINE 195:
 	asm( 
-"	      0042b7bd    cmp dword ptr [ebp+8],2Dh"
+"	      0042b7bd    cmp nCurrentLanguage,2Dh"
 "	      0042b7c1    jge near ptr 0042B7D1h"
-"	      0042b7c7    cmp dword ptr [ebp+8],0"
+"	      0042b7c7    cmp nCurrentLanguage,0"
 "	      0042b7cb    jge near ptr 0042B7D8h"
 );
 // LINE 196:
@@ -1505,32 +1505,32 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 );
 // LINE 199:
 	asm( 
-"	      0042b7d8    inc dword ptr [ebp+8]"
+"	      0042b7d8    inc nCurrentLanguage"
 );
 // LINE 200:
 	asm( 
-"	      0042b7db    cmp dword ptr [ebp+8],2Dh"
+"	      0042b7db    cmp nCurrentLanguage,2Dh"
 "	      0042b7df    jl near ptr 0042B7ECh"
 );
 // LINE 201:
 	asm( 
-"	      0042b7e5    mov dword ptr [ebp+8],1"
+"	      0042b7e5    mov nCurrentLanguage,1"
 );
 // LINE 202:
 	asm( 
-"	      0042b7ec    mov eax,[ebp+8]"
+"	      0042b7ec    mov eax,nCurrentLanguage"
 "	      0042b7ef    push eax"
 "	      0042b7f0    call 0042B1AFh"
 "	      0042b7f5    add esp,4"
 "	      0042b7f8    test eax,eax"
 "	      0042b7fa    jne near ptr 0042B80Ch"
-"	      0042b800    mov eax,[ebp+8]"
-"	      0042b803    cmp [ebp-4],eax"
+"	      0042b800    mov eax,nCurrentLanguage"
+"	      0042b803    cmp nInitialLanguage,eax"
 "	      0042b806    jne near ptr 0042B7D8h"
 );
 // LINE 203:
 	asm( 
-"	      0042b80c    mov eax,[ebp+8]"
+"	      0042b80c    mov eax,nCurrentLanguage"
 "	      0042b80f    jmp near ptr 0042B814h"
 );
 // LINE 204:
@@ -1555,17 +1555,17 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 230:
 	asm( 
-"	      0042b81f    cmp dword ptr [ebp+8],0"
+"	      0042b81f    cmp nLanguage,0"
 "	      0042b823    jne near ptr 0042B831h"
 );
 // LINE 231:
 	asm( 
 "	      0042b829    mov eax,ds:[597664h]"
-"	      0042b82e    mov [ebp+8],eax"
+"	      0042b82e    mov nLanguage,eax"
 );
 // LINE 235:
 	asm( 
-"	      0042b831    cmp dword ptr [ebp+8],2"
+"	      0042b831    cmp nLanguage,2"
 "	      0042b835    jne near ptr 0042B845h"
 );
 // LINE 236:
@@ -1575,11 +1575,11 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 239:
 	asm( 
-"	      0042b845    cmp dword ptr [ebp+8],20h"
+"	      0042b845    cmp nLanguage,20h"
 "	      0042b849    je near ptr 0042B863h"
-"	      0042b84f    cmp dword ptr [ebp+8],21h"
+"	      0042b84f    cmp nLanguage,21h"
 "	      0042b853    je near ptr 0042B863h"
-"	      0042b859    cmp dword ptr [ebp+8],22h"
+"	      0042b859    cmp nLanguage,22h"
 "	      0042b85d    jne near ptr 0042B86Dh"
 );
 // LINE 240:
@@ -1589,7 +1589,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 241:
 	asm( 
-"	      0042b86d    cmp dword ptr [ebp+8],23h"
+"	      0042b86d    cmp nLanguage,23h"
 "	      0042b871    jne near ptr 0042B881h"
 );
 // LINE 242:
@@ -1599,7 +1599,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 243:
 	asm( 
-"	      0042b881    cmp dword ptr [ebp+8],24h"
+"	      0042b881    cmp nLanguage,24h"
 "	      0042b885    jne near ptr 0042B895h"
 );
 // LINE 244:
@@ -1609,7 +1609,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 245:
 	asm( 
-"	      0042b895    cmp dword ptr [ebp+8],25h"
+"	      0042b895    cmp nLanguage,25h"
 "	      0042b899    jne near ptr 0042B8A9h"
 );
 // LINE 246:
@@ -1619,7 +1619,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 247:
 	asm( 
-"	      0042b8a9    cmp dword ptr [ebp+8],26h"
+"	      0042b8a9    cmp nLanguage,26h"
 "	      0042b8ad    jne near ptr 0042B8BDh"
 );
 // LINE 248:
@@ -1629,7 +1629,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 249:
 	asm( 
-"	      0042b8bd    cmp dword ptr [ebp+8],27h"
+"	      0042b8bd    cmp nLanguage,27h"
 "	      0042b8c1    jne near ptr 0042B8D1h"
 );
 // LINE 250:
@@ -1639,7 +1639,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 251:
 	asm( 
-"	      0042b8d1    cmp dword ptr [ebp+8],2Ah"
+"	      0042b8d1    cmp nLanguage,2Ah"
 "	      0042b8d5    jne near ptr 0042B8E5h"
 );
 // LINE 252:
@@ -1649,7 +1649,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 253:
 	asm( 
-"	      0042b8e5    cmp dword ptr [ebp+8],0Eh"
+"	      0042b8e5    cmp nLanguage,0Eh"
 "	      0042b8e9    jne near ptr 0042B8F9h"
 );
 // LINE 254:
@@ -1659,7 +1659,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 255:
 	asm( 
-"	      0042b8f9    cmp dword ptr [ebp+8],0Fh"
+"	      0042b8f9    cmp nLanguage,0Fh"
 "	      0042b8fd    jne near ptr 0042B90Dh"
 );
 // LINE 256:
@@ -1669,7 +1669,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 );
 // LINE 260:
 	asm( 
-"	      0042b90d    mov eax,[ebp+8]"
+"	      0042b90d    mov eax,nLanguage"
 "	      0042b910    jmp near ptr 0042B915h"
 );
 // LINE 261:
@@ -1694,53 +1694,53 @@ int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t nLanguage) {
 );
 // LINE 299:
 	asm( 
-"	      0042b920    cmp dword ptr [ebp+8],1"
+"	      0042b920    cmp nLanguage,1"
 "	      0042b924    je near ptr 0042BA10h"
-"	      0042b92a    cmp dword ptr [ebp+8],2"
+"	      0042b92a    cmp nLanguage,2"
 "	      0042b92e    je near ptr 0042BA10h"
-"	      0042b934    cmp dword ptr [ebp+8],3"
+"	      0042b934    cmp nLanguage,3"
 "	      0042b938    je near ptr 0042BA10h"
-"	      0042b93e    cmp dword ptr [ebp+8],4"
+"	      0042b93e    cmp nLanguage,4"
 "	      0042b942    je near ptr 0042BA10h"
-"	      0042b948    cmp dword ptr [ebp+8],5"
+"	      0042b948    cmp nLanguage,5"
 "	      0042b94c    je near ptr 0042BA10h"
-"	      0042b952    cmp dword ptr [ebp+8],7"
+"	      0042b952    cmp nLanguage,7"
 "	      0042b956    je near ptr 0042BA10h"
-"	      0042b95c    cmp dword ptr [ebp+8],8"
+"	      0042b95c    cmp nLanguage,8"
 "	      0042b960    je near ptr 0042BA10h"
-"	      0042b966    cmp dword ptr [ebp+8],9"
+"	      0042b966    cmp nLanguage,9"
 "	      0042b96a    je near ptr 0042BA10h"
-"	      0042b970    cmp dword ptr [ebp+8],0Ah"
+"	      0042b970    cmp nLanguage,0Ah"
 "	      0042b974    je near ptr 0042BA10h"
-"	      0042b97a    cmp dword ptr [ebp+8],0Bh"
+"	      0042b97a    cmp nLanguage,0Bh"
 "	      0042b97e    je near ptr 0042BA10h"
-"	      0042b984    cmp dword ptr [ebp+8],14h"
+"	      0042b984    cmp nLanguage,14h"
 "	      0042b988    je near ptr 0042BA10h"
-"	      0042b98e    cmp dword ptr [ebp+8],15h"
+"	      0042b98e    cmp nLanguage,15h"
 "	      0042b992    je near ptr 0042BA10h"
-"	      0042b998    cmp dword ptr [ebp+8],16h"
+"	      0042b998    cmp nLanguage,16h"
 "	      0042b99c    je near ptr 0042BA10h"
-"	      0042b9a2    cmp dword ptr [ebp+8],17h"
+"	      0042b9a2    cmp nLanguage,17h"
 "	      0042b9a6    je near ptr 0042BA10h"
-"	      0042b9ac    cmp dword ptr [ebp+8],18h"
+"	      0042b9ac    cmp nLanguage,18h"
 "	      0042b9b0    je near ptr 0042BA10h"
-"	      0042b9b6    cmp dword ptr [ebp+8],19h"
+"	      0042b9b6    cmp nLanguage,19h"
 "	      0042b9ba    je near ptr 0042BA10h"
-"	      0042b9c0    cmp dword ptr [ebp+8],6"
+"	      0042b9c0    cmp nLanguage,6"
 "	      0042b9c4    je near ptr 0042BA10h"
-"	      0042b9ca    cmp dword ptr [ebp+8],26h"
+"	      0042b9ca    cmp nLanguage,26h"
 "	      0042b9ce    je near ptr 0042BA10h"
-"	      0042b9d4    cmp dword ptr [ebp+8],20h"
+"	      0042b9d4    cmp nLanguage,20h"
 "	      0042b9d8    je near ptr 0042BA10h"
-"	      0042b9de    cmp dword ptr [ebp+8],21h"
+"	      0042b9de    cmp nLanguage,21h"
 "	      0042b9e2    je near ptr 0042BA10h"
-"	      0042b9e8    cmp dword ptr [ebp+8],22h"
+"	      0042b9e8    cmp nLanguage,22h"
 "	      0042b9ec    je near ptr 0042BA10h"
-"	      0042b9f2    cmp dword ptr [ebp+8],23h"
+"	      0042b9f2    cmp nLanguage,23h"
 "	      0042b9f6    je near ptr 0042BA10h"
-"	      0042b9fc    cmp dword ptr [ebp+8],24h"
+"	      0042b9fc    cmp nLanguage,24h"
 "	      0042ba00    je near ptr 0042BA10h"
-"	      0042ba06    cmp dword ptr [ebp+8],25h"
+"	      0042ba06    cmp nLanguage,25h"
 "	      0042ba0a    jne near ptr 0042BA1Ah"
 "	      0042ba10    mov eax,1"
 "	      0042ba15    jmp near ptr 0042BA1Ch"
@@ -1769,9 +1769,9 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLan
 );
 // LINE 314:
 	asm( 
-"	      0042ba2c    mov eax,[ebp+0Ch]"
+"	      0042ba2c    mov eax,nLanguage"
 "	      0042ba2f    push eax"
-"	      0042ba30    mov eax,[ebp+8]"
+"	      0042ba30    mov eax,sLanguage"
 "	      0042ba33    push eax"
 "	      0042ba34    call 0042BA46h"
 "	      0042ba39    add esp,8"
@@ -1803,29 +1803,29 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 );
 // LINE 328:
 	asm( 
-"	      0042ba56    cmp dword ptr [ebp+0Ch],0"
+"	      0042ba56    cmp nLanguage,0"
 "	      0042ba5a    jne near ptr 0042BA68h"
 );
 // LINE 329:
 	asm( 
 "	      0042ba60    mov eax,ds:[597664h]"
-"	      0042ba65    mov [ebp+0Ch],eax"
+"	      0042ba65    mov nLanguage,eax"
 );
 // LINE 331:
 	asm( 
-"	      0042ba68    mov eax,[ebp+0Ch]"
+"	      0042ba68    mov eax,nLanguage"
 "	      0042ba6b    push eax"
 "	      0042ba6c    push 0"
 "	      0042ba6e    call 0042B15Fh"
 "	      0042ba73    add esp,8"
-"	      0042ba76    mov [ebp-4],eax"
+"	      0042ba76    mov nFullStringID,eax"
 );
 // LINE 332:
 	asm( 
 "	      0042ba79    push 0FFFh"
 "	      0042ba7e    lea eax,[ebp-1034h]"
 "	      0042ba84    push eax"
-"	      0042ba85    mov eax,[ebp-4]"
+"	      0042ba85    mov eax,nFullStringID"
 "	      0042ba88    push eax"
 "	      0042ba89    mov eax,ds:[5C28C8h]"
 "	      0042ba8e    push eax"
@@ -1837,7 +1837,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042baad    lea eax,[ebp-1034h]"
 "	      0042bab3    push eax"
 "	      0042bab4    mov ecx,3E8h"
-"	      0042bab9    mov eax,[ebp-4]"
+"	      0042bab9    mov eax,nFullStringID"
 "	      0042babc    sub edx,edx"
 "	      0042babe    div ecx"
 "	      0042bac0    push edx"
@@ -1853,7 +1853,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bae7    push eax"
 "	      0042bae8    lea eax,[ebp-1034h]"
 "	      0042baee    push eax"
-"	      0042baef    mov ecx,[ebp+8]"
+"	      0042baef    mov ecx,sLanguage"
 "	      0042baf2    call 0040FEE0h"
 "	      0042baf7    jmp near ptr 0042BAFCh"
 "	      0042bafc    jmp near ptr 0042BB01h"
@@ -1862,7 +1862,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bb0b    add esp,4"
 "	      0042bb0e    mov [ebp-104Ch],eax"
 "	      0042bb14    jmp near ptr 0042BB19h"
-"	      0042bb19    mov eax,[ebp+8]"
+"	      0042bb19    mov eax,sLanguage"
 "	      0042bb1c    mov eax,[eax+4]"
 "	      0042bb1f    mov ecx,0FFFFFFFFh"
 "	      0042bb24    sub ecx,[ebp-104Ch]"
@@ -1882,16 +1882,16 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bb63    add esp,4"
 "	      0042bb66    jmp near ptr 0042BB6Bh"
 "	      0042bb6b    jmp near ptr 0042BB70h"
-"	      0042bb70    mov eax,[ebp+8]"
+"	      0042bb70    mov eax,sLanguage"
 "	      0042bb73    mov eax,[eax+4]"
 "	      0042bb76    cmp dword ptr [eax+0Ch],1"
 "	      0042bb7a    ja near ptr 0042BBA8h"
 "	      0042bb80    jmp near ptr 0042BB85h"
 "	      0042bb85    jmp near ptr 0042BB8Ah"
-"	      0042bb8a    mov eax,[ebp+8]"
+"	      0042bb8a    mov eax,sLanguage"
 "	      0042bb8d    mov eax,[eax+4]"
 "	      0042bb90    mov eax,[eax+8]"
-"	      0042bb93    mov ecx,[ebp+8]"
+"	      0042bb93    mov ecx,sLanguage"
 "	      0042bb96    mov ecx,[ecx+4]"
 "	      0042bb99    sub eax,[ecx+4]"
 "	      0042bb9c    cmp eax,[ebp-104Ch]"
@@ -1904,16 +1904,16 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bbbf    je near ptr 0042BC08h"
 "	      0042bbc5    jmp near ptr 0042BBCAh"
 "	      0042bbca    jmp near ptr 0042BBCFh"
-"	      0042bbcf    mov eax,[ebp+8]"
+"	      0042bbcf    mov eax,sLanguage"
 "	      0042bbd2    mov eax,[eax+4]"
 "	      0042bbd5    mov eax,[eax+4]"
 "	      0042bbd8    add eax,[ebp-104Ch]"
 "	      0042bbde    push eax"
-"	      0042bbdf    mov eax,[ebp+8]"
+"	      0042bbdf    mov eax,sLanguage"
 "	      0042bbe2    mov eax,[eax+4]"
 "	      0042bbe5    mov eax,[eax+4]"
 "	      0042bbe8    push eax"
-"	      0042bbe9    mov ecx,[ebp+8]"
+"	      0042bbe9    mov ecx,sLanguage"
 "	      0042bbec    call 00417C00h"
 "	      0042bbf1    push eax"
 "	      0042bbf2    mov ecx,[ebp-1040h]"
@@ -1921,19 +1921,19 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bbfd    mov [ebp-103Ch],eax"
 "	      0042bc03    jmp near ptr 0042BC12h"
 "	      0042bc08    mov dword ptr [ebp-103Ch],0"
-"	      0042bc12    mov ecx,[ebp+8]"
+"	      0042bc12    mov ecx,sLanguage"
 "	      0042bc15    call 00412080h"
 "	      0042bc1a    mov eax,[ebp-103Ch]"
-"	      0042bc20    mov ecx,[ebp+8]"
+"	      0042bc20    mov ecx,sLanguage"
 "	      0042bc23    mov [ecx+4],eax"
 "	      0042bc26    cmp dword ptr [ebp-104Ch],0"
 "	      0042bc2d    je near ptr 0042BC74h"
 "	      0042bc33    jmp near ptr 0042BC38h"
 "	      0042bc38    jmp near ptr 0042BC3Dh"
-"	      0042bc3d    mov eax,[ebp+8]"
+"	      0042bc3d    mov eax,sLanguage"
 "	      0042bc40    mov eax,[eax+4]"
 "	      0042bc43    mov eax,[eax+4]"
-"	      0042bc46    mov ecx,[ebp+8]"
+"	      0042bc46    mov ecx,sLanguage"
 "	      0042bc49    mov ecx,[ecx+4]"
 "	      0042bc4c    add eax,[ecx]"
 "	      0042bc4e    mov [ebp-1044h],eax"
@@ -1946,7 +1946,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bc6c    add esp,0Ch"
 "	      0042bc6f    jmp near ptr 0042BC74h"
 "	      0042bc74    mov eax,[ebp-104Ch]"
-"	      0042bc7a    mov ecx,[ebp+8]"
+"	      0042bc7a    mov ecx,sLanguage"
 "	      0042bc7d    mov ecx,[ecx+4]"
 "	      0042bc80    add [ecx+4],eax"
 "	      0042bc83    jmp near ptr 0042BC88h"
@@ -1976,14 +1976,14 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bcf6    add esp,4"
 "	      0042bcf9    jmp near ptr 0042BCFEh"
 "	      0042bcfe    jmp near ptr 0042BD03h"
-"	      0042bd03    mov eax,[ebp+8]"
+"	      0042bd03    mov eax,sLanguage"
 "	      0042bd06    mov eax,[eax+4]"
 "	      0042bd09    cmp dword ptr [eax+0Ch],1"
 "	      0042bd0d    ja near ptr 0042BD3Ah"
 "	      0042bd13    cmp dword ptr [ebp-1068h],0"
 "	      0042bd1a    je near ptr 0042BDEBh"
 "	      0042bd20    jmp near ptr 0042BD25h"
-"	      0042bd25    mov eax,[ebp+8]"
+"	      0042bd25    mov eax,sLanguage"
 "	      0042bd28    mov eax,[eax+4]"
 "	      0042bd2b    mov ecx,[ebp-1068h]"
 "	      0042bd31    cmp [eax+8],ecx"
@@ -2003,14 +2003,14 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bd70    mov [ebp-1050h],eax"
 "	      0042bd76    jmp near ptr 0042BD85h"
 "	      0042bd7b    mov dword ptr [ebp-1050h],0"
-"	      0042bd85    mov eax,[ebp+8]"
+"	      0042bd85    mov eax,sLanguage"
 "	      0042bd88    mov eax,[eax+4]"
 "	      0042bd8b    dec dword ptr [eax+0Ch]"
-"	      0042bd8e    mov eax,[ebp+8]"
+"	      0042bd8e    mov eax,sLanguage"
 "	      0042bd91    mov eax,[eax+4]"
 "	      0042bd94    cmp dword ptr [eax+0Ch],0"
 "	      0042bd98    jne near ptr 0042BDD5h"
-"	      0042bd9e    mov eax,[ebp+8]"
+"	      0042bd9e    mov eax,sLanguage"
 "	      0042bda1    mov eax,[eax+4]"
 "	      0042bda4    mov [ebp-1064h],eax"
 "	      0042bdaa    mov eax,[ebp-1064h]"
@@ -2023,13 +2023,13 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bdd0    jmp near ptr 0042BDD5h"
 "	      0042bdd5    jmp near ptr 0042BDDAh"
 "	      0042bdda    mov eax,[ebp-1050h]"
-"	      0042bde0    mov ecx,[ebp+8]"
+"	      0042bde0    mov ecx,sLanguage"
 "	      0042bde3    mov [ecx+4],eax"
 "	      0042bde6    jmp near ptr 0042BE2Dh"
 "	      0042bdeb    cmp dword ptr [ebp-1068h],0"
 "	      0042bdf2    je near ptr 0042BE2Dh"
 "	      0042bdf8    jmp near ptr 0042BDFDh"
-"	      0042bdfd    mov eax,[ebp+8]"
+"	      0042bdfd    mov eax,sLanguage"
 "	      0042be00    mov eax,[eax+4]"
 "	      0042be03    mov eax,[eax]"
 "	      0042be05    mov [ebp-1058h],eax"
@@ -2043,7 +2043,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042be25    add esp,0Ch"
 "	      0042be28    jmp near ptr 0042BE2Dh"
 "	      0042be2d    mov eax,[ebp-1068h]"
-"	      0042be33    mov ecx,[ebp+8]"
+"	      0042be33    mov ecx,sLanguage"
 "	      0042be36    mov ecx,[ecx+4]"
 "	      0042be39    mov [ecx+4],eax"
 "	      0042be3c    jmp near ptr 0042BE41h"
@@ -2062,7 +2062,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042be74    add esp,4"
 "	      0042be77    mov [ebp-34h],eax"
 "	      0042be7a    jmp near ptr 0042BE7Fh"
-"	      0042be7f    mov eax,[ebp+8]"
+"	      0042be7f    mov eax,sLanguage"
 "	      0042be82    mov eax,[eax+4]"
 "	      0042be85    mov ecx,0FFFFFFFFh"
 "	      0042be8a    sub ecx,[ebp-34h]"
@@ -2082,16 +2082,16 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bec0    add esp,4"
 "	      0042bec3    jmp near ptr 0042BEC8h"
 "	      0042bec8    jmp near ptr 0042BECDh"
-"	      0042becd    mov eax,[ebp+8]"
+"	      0042becd    mov eax,sLanguage"
 "	      0042bed0    mov eax,[eax+4]"
 "	      0042bed3    cmp dword ptr [eax+0Ch],1"
 "	      0042bed7    ja near ptr 0042BF02h"
 "	      0042bedd    jmp near ptr 0042BEE2h"
 "	      0042bee2    jmp near ptr 0042BEE7h"
-"	      0042bee7    mov eax,[ebp+8]"
+"	      0042bee7    mov eax,sLanguage"
 "	      0042beea    mov eax,[eax+4]"
 "	      0042beed    mov eax,[eax+8]"
-"	      0042bef0    mov ecx,[ebp+8]"
+"	      0042bef0    mov ecx,sLanguage"
 "	      0042bef3    mov ecx,[ecx+4]"
 "	      0042bef6    sub eax,[ecx+4]"
 "	      0042bef9    cmp eax,[ebp-34h]"
@@ -2105,11 +2105,11 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bf19    jmp near ptr 0042BF1Eh"
 "	      0042bf1e    jmp near ptr 0042BF23h"
 "	      0042bf23    jmp near ptr 0042BF28h"
-"	      0042bf28    mov eax,[ebp+8]"
+"	      0042bf28    mov eax,sLanguage"
 "	      0042bf2b    mov eax,[eax+4]"
 "	      0042bf2e    cmp dword ptr [eax+4],0"
 "	      0042bf32    je near ptr 0042BF4Dh"
-"	      0042bf38    mov eax,[ebp+8]"
+"	      0042bf38    mov eax,sLanguage"
 "	      0042bf3b    mov eax,[eax+4]"
 "	      0042bf3e    mov eax,[eax]"
 "	      0042bf40    mov [ebp-14h],eax"
@@ -2117,12 +2117,12 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bf48    jmp near ptr 0042BF59h"
 "	      0042bf4d    mov dword ptr [ebp-14h],0"
 "	      0042bf54    jmp near ptr 0042BF59h"
-"	      0042bf59    mov eax,[ebp+8]"
+"	      0042bf59    mov eax,sLanguage"
 "	      0042bf5c    mov eax,[eax+4]"
 "	      0042bf5f    mov eax,[eax+4]"
 "	      0042bf62    add eax,[ebp-34h]"
 "	      0042bf65    mov [ebp-2Ch],eax"
-"	      0042bf68    mov eax,[ebp+8]"
+"	      0042bf68    mov eax,sLanguage"
 "	      0042bf6b    mov eax,[eax+4]"
 "	      0042bf6e    mov eax,[eax+4]"
 "	      0042bf71    mov [ebp-30h],eax"
@@ -2170,14 +2170,14 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042bffe    mov [ebp-8],eax"
 "	      0042c001    jmp near ptr 0042C00Dh"
 "	      0042c006    mov dword ptr [ebp-8],0"
-"	      0042c00d    mov eax,[ebp+8]"
+"	      0042c00d    mov eax,sLanguage"
 "	      0042c010    mov eax,[eax+4]"
 "	      0042c013    dec dword ptr [eax+0Ch]"
-"	      0042c016    mov eax,[ebp+8]"
+"	      0042c016    mov eax,sLanguage"
 "	      0042c019    mov eax,[eax+4]"
 "	      0042c01c    cmp dword ptr [eax+0Ch],0"
 "	      0042c020    jne near ptr 0042C062h"
-"	      0042c026    mov eax,[ebp+8]"
+"	      0042c026    mov eax,sLanguage"
 "	      0042c029    mov eax,[eax+4]"
 "	      0042c02c    mov [ebp-20h],eax"
 "	      0042c02f    mov eax,[ebp-20h]"
@@ -2195,16 +2195,16 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042c05d    jmp near ptr 0042C062h"
 "	      0042c062    jmp near ptr 0042C067h"
 "	      0042c067    mov eax,[ebp-8]"
-"	      0042c06a    mov ecx,[ebp+8]"
+"	      0042c06a    mov ecx,sLanguage"
 "	      0042c06d    mov [ecx+4],eax"
 "	      0042c070    cmp dword ptr [ebp-34h],0"
 "	      0042c074    je near ptr 0042C0B2h"
 "	      0042c07a    jmp near ptr 0042C07Fh"
 "	      0042c07f    jmp near ptr 0042C084h"
-"	      0042c084    mov eax,[ebp+8]"
+"	      0042c084    mov eax,sLanguage"
 "	      0042c087    mov eax,[eax+4]"
 "	      0042c08a    mov eax,[eax+4]"
-"	      0042c08d    mov ecx,[ebp+8]"
+"	      0042c08d    mov ecx,sLanguage"
 "	      0042c090    mov ecx,[ecx+4]"
 "	      0042c093    add eax,[ecx]"
 "	      0042c095    mov [ebp-10h],eax"
@@ -2217,7 +2217,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 "	      0042c0aa    add esp,0Ch"
 "	      0042c0ad    jmp near ptr 0042C0B2h"
 "	      0042c0b2    mov eax,[ebp-34h]"
-"	      0042c0b5    mov ecx,[ebp+8]"
+"	      0042c0b5    mov ecx,sLanguage"
 "	      0042c0b8    mov ecx,[ecx+4]"
 "	      0042c0bb    add [ecx+4],eax"
 "	      0042c0be    jmp near ptr 0042C0C3h"
@@ -2259,29 +2259,29 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 );
 // LINE 350:
 	asm( 
-"	      0042c0ee    cmp dword ptr [ebp+0Ch],0"
+"	      0042c0ee    cmp nLanguage,0"
 "	      0042c0f2    jne near ptr 0042C100h"
 );
 // LINE 351:
 	asm( 
 "	      0042c0f8    mov eax,ds:[597664h]"
-"	      0042c0fd    mov [ebp+0Ch],eax"
+"	      0042c0fd    mov nLanguage,eax"
 );
 // LINE 353:
 	asm( 
-"	      0042c100    mov eax,[ebp+0Ch]"
+"	      0042c100    mov eax,nLanguage"
 "	      0042c103    push eax"
 "	      0042c104    push 1"
 "	      0042c106    call 0042B15Fh"
 "	      0042c10b    add esp,8"
-"	      0042c10e    mov [ebp-4],eax"
+"	      0042c10e    mov nFullStringID,eax"
 );
 // LINE 354:
 	asm( 
 "	      0042c111    push 0FFFh"
 "	      0042c116    lea eax,[ebp-1034h]"
 "	      0042c11c    push eax"
-"	      0042c11d    mov eax,[ebp-4]"
+"	      0042c11d    mov eax,nFullStringID"
 "	      0042c120    push eax"
 "	      0042c121    mov eax,ds:[5C28C8h]"
 "	      0042c126    push eax"
@@ -2293,7 +2293,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c145    lea eax,[ebp-1034h]"
 "	      0042c14b    push eax"
 "	      0042c14c    mov ecx,3E8h"
-"	      0042c151    mov eax,[ebp-4]"
+"	      0042c151    mov eax,nFullStringID"
 "	      0042c154    sub edx,edx"
 "	      0042c156    div ecx"
 "	      0042c158    push edx"
@@ -2309,7 +2309,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c17f    push eax"
 "	      0042c180    lea eax,[ebp-1034h]"
 "	      0042c186    push eax"
-"	      0042c187    mov ecx,[ebp+8]"
+"	      0042c187    mov ecx,sLanguage"
 "	      0042c18a    call 0040FEE0h"
 "	      0042c18f    jmp near ptr 0042C194h"
 "	      0042c194    jmp near ptr 0042C199h"
@@ -2318,7 +2318,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c1a3    add esp,4"
 "	      0042c1a6    mov [ebp-104Ch],eax"
 "	      0042c1ac    jmp near ptr 0042C1B1h"
-"	      0042c1b1    mov eax,[ebp+8]"
+"	      0042c1b1    mov eax,sLanguage"
 "	      0042c1b4    mov eax,[eax+4]"
 "	      0042c1b7    mov ecx,0FFFFFFFFh"
 "	      0042c1bc    sub ecx,[ebp-104Ch]"
@@ -2338,16 +2338,16 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c1fb    add esp,4"
 "	      0042c1fe    jmp near ptr 0042C203h"
 "	      0042c203    jmp near ptr 0042C208h"
-"	      0042c208    mov eax,[ebp+8]"
+"	      0042c208    mov eax,sLanguage"
 "	      0042c20b    mov eax,[eax+4]"
 "	      0042c20e    cmp dword ptr [eax+0Ch],1"
 "	      0042c212    ja near ptr 0042C240h"
 "	      0042c218    jmp near ptr 0042C21Dh"
 "	      0042c21d    jmp near ptr 0042C222h"
-"	      0042c222    mov eax,[ebp+8]"
+"	      0042c222    mov eax,sLanguage"
 "	      0042c225    mov eax,[eax+4]"
 "	      0042c228    mov eax,[eax+8]"
-"	      0042c22b    mov ecx,[ebp+8]"
+"	      0042c22b    mov ecx,sLanguage"
 "	      0042c22e    mov ecx,[ecx+4]"
 "	      0042c231    sub eax,[ecx+4]"
 "	      0042c234    cmp eax,[ebp-104Ch]"
@@ -2360,16 +2360,16 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c257    je near ptr 0042C2A0h"
 "	      0042c25d    jmp near ptr 0042C262h"
 "	      0042c262    jmp near ptr 0042C267h"
-"	      0042c267    mov eax,[ebp+8]"
+"	      0042c267    mov eax,sLanguage"
 "	      0042c26a    mov eax,[eax+4]"
 "	      0042c26d    mov eax,[eax+4]"
 "	      0042c270    add eax,[ebp-104Ch]"
 "	      0042c276    push eax"
-"	      0042c277    mov eax,[ebp+8]"
+"	      0042c277    mov eax,sLanguage"
 "	      0042c27a    mov eax,[eax+4]"
 "	      0042c27d    mov eax,[eax+4]"
 "	      0042c280    push eax"
-"	      0042c281    mov ecx,[ebp+8]"
+"	      0042c281    mov ecx,sLanguage"
 "	      0042c284    call 00417C00h"
 "	      0042c289    push eax"
 "	      0042c28a    mov ecx,[ebp-1040h]"
@@ -2377,19 +2377,19 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c295    mov [ebp-103Ch],eax"
 "	      0042c29b    jmp near ptr 0042C2AAh"
 "	      0042c2a0    mov dword ptr [ebp-103Ch],0"
-"	      0042c2aa    mov ecx,[ebp+8]"
+"	      0042c2aa    mov ecx,sLanguage"
 "	      0042c2ad    call 00412080h"
 "	      0042c2b2    mov eax,[ebp-103Ch]"
-"	      0042c2b8    mov ecx,[ebp+8]"
+"	      0042c2b8    mov ecx,sLanguage"
 "	      0042c2bb    mov [ecx+4],eax"
 "	      0042c2be    cmp dword ptr [ebp-104Ch],0"
 "	      0042c2c5    je near ptr 0042C30Ch"
 "	      0042c2cb    jmp near ptr 0042C2D0h"
 "	      0042c2d0    jmp near ptr 0042C2D5h"
-"	      0042c2d5    mov eax,[ebp+8]"
+"	      0042c2d5    mov eax,sLanguage"
 "	      0042c2d8    mov eax,[eax+4]"
 "	      0042c2db    mov eax,[eax+4]"
-"	      0042c2de    mov ecx,[ebp+8]"
+"	      0042c2de    mov ecx,sLanguage"
 "	      0042c2e1    mov ecx,[ecx+4]"
 "	      0042c2e4    add eax,[ecx]"
 "	      0042c2e6    mov [ebp-1044h],eax"
@@ -2402,7 +2402,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c304    add esp,0Ch"
 "	      0042c307    jmp near ptr 0042C30Ch"
 "	      0042c30c    mov eax,[ebp-104Ch]"
-"	      0042c312    mov ecx,[ebp+8]"
+"	      0042c312    mov ecx,sLanguage"
 "	      0042c315    mov ecx,[ecx+4]"
 "	      0042c318    add [ecx+4],eax"
 "	      0042c31b    jmp near ptr 0042C320h"
@@ -2432,14 +2432,14 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c38e    add esp,4"
 "	      0042c391    jmp near ptr 0042C396h"
 "	      0042c396    jmp near ptr 0042C39Bh"
-"	      0042c39b    mov eax,[ebp+8]"
+"	      0042c39b    mov eax,sLanguage"
 "	      0042c39e    mov eax,[eax+4]"
 "	      0042c3a1    cmp dword ptr [eax+0Ch],1"
 "	      0042c3a5    ja near ptr 0042C3D2h"
 "	      0042c3ab    cmp dword ptr [ebp-1068h],0"
 "	      0042c3b2    je near ptr 0042C483h"
 "	      0042c3b8    jmp near ptr 0042C3BDh"
-"	      0042c3bd    mov eax,[ebp+8]"
+"	      0042c3bd    mov eax,sLanguage"
 "	      0042c3c0    mov eax,[eax+4]"
 "	      0042c3c3    mov ecx,[ebp-1068h]"
 "	      0042c3c9    cmp [eax+8],ecx"
@@ -2459,14 +2459,14 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c408    mov [ebp-1050h],eax"
 "	      0042c40e    jmp near ptr 0042C41Dh"
 "	      0042c413    mov dword ptr [ebp-1050h],0"
-"	      0042c41d    mov eax,[ebp+8]"
+"	      0042c41d    mov eax,sLanguage"
 "	      0042c420    mov eax,[eax+4]"
 "	      0042c423    dec dword ptr [eax+0Ch]"
-"	      0042c426    mov eax,[ebp+8]"
+"	      0042c426    mov eax,sLanguage"
 "	      0042c429    mov eax,[eax+4]"
 "	      0042c42c    cmp dword ptr [eax+0Ch],0"
 "	      0042c430    jne near ptr 0042C46Dh"
-"	      0042c436    mov eax,[ebp+8]"
+"	      0042c436    mov eax,sLanguage"
 "	      0042c439    mov eax,[eax+4]"
 "	      0042c43c    mov [ebp-1064h],eax"
 "	      0042c442    mov eax,[ebp-1064h]"
@@ -2479,13 +2479,13 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c468    jmp near ptr 0042C46Dh"
 "	      0042c46d    jmp near ptr 0042C472h"
 "	      0042c472    mov eax,[ebp-1050h]"
-"	      0042c478    mov ecx,[ebp+8]"
+"	      0042c478    mov ecx,sLanguage"
 "	      0042c47b    mov [ecx+4],eax"
 "	      0042c47e    jmp near ptr 0042C4C5h"
 "	      0042c483    cmp dword ptr [ebp-1068h],0"
 "	      0042c48a    je near ptr 0042C4C5h"
 "	      0042c490    jmp near ptr 0042C495h"
-"	      0042c495    mov eax,[ebp+8]"
+"	      0042c495    mov eax,sLanguage"
 "	      0042c498    mov eax,[eax+4]"
 "	      0042c49b    mov eax,[eax]"
 "	      0042c49d    mov [ebp-1058h],eax"
@@ -2499,7 +2499,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c4bd    add esp,0Ch"
 "	      0042c4c0    jmp near ptr 0042C4C5h"
 "	      0042c4c5    mov eax,[ebp-1068h]"
-"	      0042c4cb    mov ecx,[ebp+8]"
+"	      0042c4cb    mov ecx,sLanguage"
 "	      0042c4ce    mov ecx,[ecx+4]"
 "	      0042c4d1    mov [ecx+4],eax"
 "	      0042c4d4    jmp near ptr 0042C4D9h"
@@ -2518,7 +2518,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c50c    add esp,4"
 "	      0042c50f    mov [ebp-34h],eax"
 "	      0042c512    jmp near ptr 0042C517h"
-"	      0042c517    mov eax,[ebp+8]"
+"	      0042c517    mov eax,sLanguage"
 "	      0042c51a    mov eax,[eax+4]"
 "	      0042c51d    mov ecx,0FFFFFFFFh"
 "	      0042c522    sub ecx,[ebp-34h]"
@@ -2538,16 +2538,16 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c558    add esp,4"
 "	      0042c55b    jmp near ptr 0042C560h"
 "	      0042c560    jmp near ptr 0042C565h"
-"	      0042c565    mov eax,[ebp+8]"
+"	      0042c565    mov eax,sLanguage"
 "	      0042c568    mov eax,[eax+4]"
 "	      0042c56b    cmp dword ptr [eax+0Ch],1"
 "	      0042c56f    ja near ptr 0042C59Ah"
 "	      0042c575    jmp near ptr 0042C57Ah"
 "	      0042c57a    jmp near ptr 0042C57Fh"
-"	      0042c57f    mov eax,[ebp+8]"
+"	      0042c57f    mov eax,sLanguage"
 "	      0042c582    mov eax,[eax+4]"
 "	      0042c585    mov eax,[eax+8]"
-"	      0042c588    mov ecx,[ebp+8]"
+"	      0042c588    mov ecx,sLanguage"
 "	      0042c58b    mov ecx,[ecx+4]"
 "	      0042c58e    sub eax,[ecx+4]"
 "	      0042c591    cmp eax,[ebp-34h]"
@@ -2561,11 +2561,11 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c5b1    jmp near ptr 0042C5B6h"
 "	      0042c5b6    jmp near ptr 0042C5BBh"
 "	      0042c5bb    jmp near ptr 0042C5C0h"
-"	      0042c5c0    mov eax,[ebp+8]"
+"	      0042c5c0    mov eax,sLanguage"
 "	      0042c5c3    mov eax,[eax+4]"
 "	      0042c5c6    cmp dword ptr [eax+4],0"
 "	      0042c5ca    je near ptr 0042C5E5h"
-"	      0042c5d0    mov eax,[ebp+8]"
+"	      0042c5d0    mov eax,sLanguage"
 "	      0042c5d3    mov eax,[eax+4]"
 "	      0042c5d6    mov eax,[eax]"
 "	      0042c5d8    mov [ebp-14h],eax"
@@ -2573,12 +2573,12 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c5e0    jmp near ptr 0042C5F1h"
 "	      0042c5e5    mov dword ptr [ebp-14h],0"
 "	      0042c5ec    jmp near ptr 0042C5F1h"
-"	      0042c5f1    mov eax,[ebp+8]"
+"	      0042c5f1    mov eax,sLanguage"
 "	      0042c5f4    mov eax,[eax+4]"
 "	      0042c5f7    mov eax,[eax+4]"
 "	      0042c5fa    add eax,[ebp-34h]"
 "	      0042c5fd    mov [ebp-2Ch],eax"
-"	      0042c600    mov eax,[ebp+8]"
+"	      0042c600    mov eax,sLanguage"
 "	      0042c603    mov eax,[eax+4]"
 "	      0042c606    mov eax,[eax+4]"
 "	      0042c609    mov [ebp-30h],eax"
@@ -2626,14 +2626,14 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c696    mov [ebp-8],eax"
 "	      0042c699    jmp near ptr 0042C6A5h"
 "	      0042c69e    mov dword ptr [ebp-8],0"
-"	      0042c6a5    mov eax,[ebp+8]"
+"	      0042c6a5    mov eax,sLanguage"
 "	      0042c6a8    mov eax,[eax+4]"
 "	      0042c6ab    dec dword ptr [eax+0Ch]"
-"	      0042c6ae    mov eax,[ebp+8]"
+"	      0042c6ae    mov eax,sLanguage"
 "	      0042c6b1    mov eax,[eax+4]"
 "	      0042c6b4    cmp dword ptr [eax+0Ch],0"
 "	      0042c6b8    jne near ptr 0042C6FAh"
-"	      0042c6be    mov eax,[ebp+8]"
+"	      0042c6be    mov eax,sLanguage"
 "	      0042c6c1    mov eax,[eax+4]"
 "	      0042c6c4    mov [ebp-20h],eax"
 "	      0042c6c7    mov eax,[ebp-20h]"
@@ -2651,16 +2651,16 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c6f5    jmp near ptr 0042C6FAh"
 "	      0042c6fa    jmp near ptr 0042C6FFh"
 "	      0042c6ff    mov eax,[ebp-8]"
-"	      0042c702    mov ecx,[ebp+8]"
+"	      0042c702    mov ecx,sLanguage"
 "	      0042c705    mov [ecx+4],eax"
 "	      0042c708    cmp dword ptr [ebp-34h],0"
 "	      0042c70c    je near ptr 0042C74Ah"
 "	      0042c712    jmp near ptr 0042C717h"
 "	      0042c717    jmp near ptr 0042C71Ch"
-"	      0042c71c    mov eax,[ebp+8]"
+"	      0042c71c    mov eax,sLanguage"
 "	      0042c71f    mov eax,[eax+4]"
 "	      0042c722    mov eax,[eax+4]"
-"	      0042c725    mov ecx,[ebp+8]"
+"	      0042c725    mov ecx,sLanguage"
 "	      0042c728    mov ecx,[ecx+4]"
 "	      0042c72b    add eax,[ecx]"
 "	      0042c72d    mov [ebp-10h],eax"
@@ -2673,7 +2673,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 "	      0042c742    add esp,0Ch"
 "	      0042c745    jmp near ptr 0042C74Ah"
 "	      0042c74a    mov eax,[ebp-34h]"
-"	      0042c74d    mov ecx,[ebp+8]"
+"	      0042c74d    mov ecx,sLanguage"
 "	      0042c750    mov ecx,[ecx+4]"
 "	      0042c753    add [ecx+4],eax"
 "	      0042c756    jmp near ptr 0042C75Bh"
@@ -2715,29 +2715,29 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 );
 // LINE 372:
 	asm( 
-"	      0042c786    cmp dword ptr [ebp+0Ch],0"
+"	      0042c786    cmp nLanguage,0"
 "	      0042c78a    jne near ptr 0042C798h"
 );
 // LINE 373:
 	asm( 
 "	      0042c790    mov eax,ds:[597664h]"
-"	      0042c795    mov [ebp+0Ch],eax"
+"	      0042c795    mov nLanguage,eax"
 );
 // LINE 375:
 	asm( 
-"	      0042c798    mov eax,[ebp+0Ch]"
+"	      0042c798    mov eax,nLanguage"
 "	      0042c79b    push eax"
 "	      0042c79c    push 2"
 "	      0042c79e    call 0042B15Fh"
 "	      0042c7a3    add esp,8"
-"	      0042c7a6    mov [ebp-4],eax"
+"	      0042c7a6    mov nFullStringID,eax"
 );
 // LINE 376:
 	asm( 
 "	      0042c7a9    push 0FFFh"
 "	      0042c7ae    lea eax,[ebp-1034h]"
 "	      0042c7b4    push eax"
-"	      0042c7b5    mov eax,[ebp-4]"
+"	      0042c7b5    mov eax,nFullStringID"
 "	      0042c7b8    push eax"
 "	      0042c7b9    mov eax,ds:[5C28C8h]"
 "	      0042c7be    push eax"
@@ -2749,7 +2749,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c7dd    lea eax,[ebp-1034h]"
 "	      0042c7e3    push eax"
 "	      0042c7e4    mov ecx,3E8h"
-"	      0042c7e9    mov eax,[ebp-4]"
+"	      0042c7e9    mov eax,nFullStringID"
 "	      0042c7ec    sub edx,edx"
 "	      0042c7ee    div ecx"
 "	      0042c7f0    push edx"
@@ -2765,7 +2765,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c817    push eax"
 "	      0042c818    lea eax,[ebp-1034h]"
 "	      0042c81e    push eax"
-"	      0042c81f    mov ecx,[ebp+8]"
+"	      0042c81f    mov ecx,sLanguage"
 "	      0042c822    call 0040FEE0h"
 "	      0042c827    jmp near ptr 0042C82Ch"
 "	      0042c82c    jmp near ptr 0042C831h"
@@ -2774,7 +2774,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c83b    add esp,4"
 "	      0042c83e    mov [ebp-104Ch],eax"
 "	      0042c844    jmp near ptr 0042C849h"
-"	      0042c849    mov eax,[ebp+8]"
+"	      0042c849    mov eax,sLanguage"
 "	      0042c84c    mov eax,[eax+4]"
 "	      0042c84f    mov ecx,0FFFFFFFFh"
 "	      0042c854    sub ecx,[ebp-104Ch]"
@@ -2794,16 +2794,16 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c893    add esp,4"
 "	      0042c896    jmp near ptr 0042C89Bh"
 "	      0042c89b    jmp near ptr 0042C8A0h"
-"	      0042c8a0    mov eax,[ebp+8]"
+"	      0042c8a0    mov eax,sLanguage"
 "	      0042c8a3    mov eax,[eax+4]"
 "	      0042c8a6    cmp dword ptr [eax+0Ch],1"
 "	      0042c8aa    ja near ptr 0042C8D8h"
 "	      0042c8b0    jmp near ptr 0042C8B5h"
 "	      0042c8b5    jmp near ptr 0042C8BAh"
-"	      0042c8ba    mov eax,[ebp+8]"
+"	      0042c8ba    mov eax,sLanguage"
 "	      0042c8bd    mov eax,[eax+4]"
 "	      0042c8c0    mov eax,[eax+8]"
-"	      0042c8c3    mov ecx,[ebp+8]"
+"	      0042c8c3    mov ecx,sLanguage"
 "	      0042c8c6    mov ecx,[ecx+4]"
 "	      0042c8c9    sub eax,[ecx+4]"
 "	      0042c8cc    cmp eax,[ebp-104Ch]"
@@ -2816,16 +2816,16 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c8ef    je near ptr 0042C938h"
 "	      0042c8f5    jmp near ptr 0042C8FAh"
 "	      0042c8fa    jmp near ptr 0042C8FFh"
-"	      0042c8ff    mov eax,[ebp+8]"
+"	      0042c8ff    mov eax,sLanguage"
 "	      0042c902    mov eax,[eax+4]"
 "	      0042c905    mov eax,[eax+4]"
 "	      0042c908    add eax,[ebp-104Ch]"
 "	      0042c90e    push eax"
-"	      0042c90f    mov eax,[ebp+8]"
+"	      0042c90f    mov eax,sLanguage"
 "	      0042c912    mov eax,[eax+4]"
 "	      0042c915    mov eax,[eax+4]"
 "	      0042c918    push eax"
-"	      0042c919    mov ecx,[ebp+8]"
+"	      0042c919    mov ecx,sLanguage"
 "	      0042c91c    call 00417C00h"
 "	      0042c921    push eax"
 "	      0042c922    mov ecx,[ebp-1040h]"
@@ -2833,19 +2833,19 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c92d    mov [ebp-103Ch],eax"
 "	      0042c933    jmp near ptr 0042C942h"
 "	      0042c938    mov dword ptr [ebp-103Ch],0"
-"	      0042c942    mov ecx,[ebp+8]"
+"	      0042c942    mov ecx,sLanguage"
 "	      0042c945    call 00412080h"
 "	      0042c94a    mov eax,[ebp-103Ch]"
-"	      0042c950    mov ecx,[ebp+8]"
+"	      0042c950    mov ecx,sLanguage"
 "	      0042c953    mov [ecx+4],eax"
 "	      0042c956    cmp dword ptr [ebp-104Ch],0"
 "	      0042c95d    je near ptr 0042C9A4h"
 "	      0042c963    jmp near ptr 0042C968h"
 "	      0042c968    jmp near ptr 0042C96Dh"
-"	      0042c96d    mov eax,[ebp+8]"
+"	      0042c96d    mov eax,sLanguage"
 "	      0042c970    mov eax,[eax+4]"
 "	      0042c973    mov eax,[eax+4]"
-"	      0042c976    mov ecx,[ebp+8]"
+"	      0042c976    mov ecx,sLanguage"
 "	      0042c979    mov ecx,[ecx+4]"
 "	      0042c97c    add eax,[ecx]"
 "	      0042c97e    mov [ebp-1044h],eax"
@@ -2858,7 +2858,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042c99c    add esp,0Ch"
 "	      0042c99f    jmp near ptr 0042C9A4h"
 "	      0042c9a4    mov eax,[ebp-104Ch]"
-"	      0042c9aa    mov ecx,[ebp+8]"
+"	      0042c9aa    mov ecx,sLanguage"
 "	      0042c9ad    mov ecx,[ecx+4]"
 "	      0042c9b0    add [ecx+4],eax"
 "	      0042c9b3    jmp near ptr 0042C9B8h"
@@ -2888,14 +2888,14 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042ca26    add esp,4"
 "	      0042ca29    jmp near ptr 0042CA2Eh"
 "	      0042ca2e    jmp near ptr 0042CA33h"
-"	      0042ca33    mov eax,[ebp+8]"
+"	      0042ca33    mov eax,sLanguage"
 "	      0042ca36    mov eax,[eax+4]"
 "	      0042ca39    cmp dword ptr [eax+0Ch],1"
 "	      0042ca3d    ja near ptr 0042CA6Ah"
 "	      0042ca43    cmp dword ptr [ebp-1068h],0"
 "	      0042ca4a    je near ptr 0042CB1Bh"
 "	      0042ca50    jmp near ptr 0042CA55h"
-"	      0042ca55    mov eax,[ebp+8]"
+"	      0042ca55    mov eax,sLanguage"
 "	      0042ca58    mov eax,[eax+4]"
 "	      0042ca5b    mov ecx,[ebp-1068h]"
 "	      0042ca61    cmp [eax+8],ecx"
@@ -2915,14 +2915,14 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042caa0    mov [ebp-1050h],eax"
 "	      0042caa6    jmp near ptr 0042CAB5h"
 "	      0042caab    mov dword ptr [ebp-1050h],0"
-"	      0042cab5    mov eax,[ebp+8]"
+"	      0042cab5    mov eax,sLanguage"
 "	      0042cab8    mov eax,[eax+4]"
 "	      0042cabb    dec dword ptr [eax+0Ch]"
-"	      0042cabe    mov eax,[ebp+8]"
+"	      0042cabe    mov eax,sLanguage"
 "	      0042cac1    mov eax,[eax+4]"
 "	      0042cac4    cmp dword ptr [eax+0Ch],0"
 "	      0042cac8    jne near ptr 0042CB05h"
-"	      0042cace    mov eax,[ebp+8]"
+"	      0042cace    mov eax,sLanguage"
 "	      0042cad1    mov eax,[eax+4]"
 "	      0042cad4    mov [ebp-1064h],eax"
 "	      0042cada    mov eax,[ebp-1064h]"
@@ -2935,13 +2935,13 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cb00    jmp near ptr 0042CB05h"
 "	      0042cb05    jmp near ptr 0042CB0Ah"
 "	      0042cb0a    mov eax,[ebp-1050h]"
-"	      0042cb10    mov ecx,[ebp+8]"
+"	      0042cb10    mov ecx,sLanguage"
 "	      0042cb13    mov [ecx+4],eax"
 "	      0042cb16    jmp near ptr 0042CB5Dh"
 "	      0042cb1b    cmp dword ptr [ebp-1068h],0"
 "	      0042cb22    je near ptr 0042CB5Dh"
 "	      0042cb28    jmp near ptr 0042CB2Dh"
-"	      0042cb2d    mov eax,[ebp+8]"
+"	      0042cb2d    mov eax,sLanguage"
 "	      0042cb30    mov eax,[eax+4]"
 "	      0042cb33    mov eax,[eax]"
 "	      0042cb35    mov [ebp-1058h],eax"
@@ -2955,7 +2955,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cb55    add esp,0Ch"
 "	      0042cb58    jmp near ptr 0042CB5Dh"
 "	      0042cb5d    mov eax,[ebp-1068h]"
-"	      0042cb63    mov ecx,[ebp+8]"
+"	      0042cb63    mov ecx,sLanguage"
 "	      0042cb66    mov ecx,[ecx+4]"
 "	      0042cb69    mov [ecx+4],eax"
 "	      0042cb6c    jmp near ptr 0042CB71h"
@@ -2974,7 +2974,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cba4    add esp,4"
 "	      0042cba7    mov [ebp-34h],eax"
 "	      0042cbaa    jmp near ptr 0042CBAFh"
-"	      0042cbaf    mov eax,[ebp+8]"
+"	      0042cbaf    mov eax,sLanguage"
 "	      0042cbb2    mov eax,[eax+4]"
 "	      0042cbb5    mov ecx,0FFFFFFFFh"
 "	      0042cbba    sub ecx,[ebp-34h]"
@@ -2994,16 +2994,16 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cbf0    add esp,4"
 "	      0042cbf3    jmp near ptr 0042CBF8h"
 "	      0042cbf8    jmp near ptr 0042CBFDh"
-"	      0042cbfd    mov eax,[ebp+8]"
+"	      0042cbfd    mov eax,sLanguage"
 "	      0042cc00    mov eax,[eax+4]"
 "	      0042cc03    cmp dword ptr [eax+0Ch],1"
 "	      0042cc07    ja near ptr 0042CC32h"
 "	      0042cc0d    jmp near ptr 0042CC12h"
 "	      0042cc12    jmp near ptr 0042CC17h"
-"	      0042cc17    mov eax,[ebp+8]"
+"	      0042cc17    mov eax,sLanguage"
 "	      0042cc1a    mov eax,[eax+4]"
 "	      0042cc1d    mov eax,[eax+8]"
-"	      0042cc20    mov ecx,[ebp+8]"
+"	      0042cc20    mov ecx,sLanguage"
 "	      0042cc23    mov ecx,[ecx+4]"
 "	      0042cc26    sub eax,[ecx+4]"
 "	      0042cc29    cmp eax,[ebp-34h]"
@@ -3017,11 +3017,11 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cc49    jmp near ptr 0042CC4Eh"
 "	      0042cc4e    jmp near ptr 0042CC53h"
 "	      0042cc53    jmp near ptr 0042CC58h"
-"	      0042cc58    mov eax,[ebp+8]"
+"	      0042cc58    mov eax,sLanguage"
 "	      0042cc5b    mov eax,[eax+4]"
 "	      0042cc5e    cmp dword ptr [eax+4],0"
 "	      0042cc62    je near ptr 0042CC7Dh"
-"	      0042cc68    mov eax,[ebp+8]"
+"	      0042cc68    mov eax,sLanguage"
 "	      0042cc6b    mov eax,[eax+4]"
 "	      0042cc6e    mov eax,[eax]"
 "	      0042cc70    mov [ebp-14h],eax"
@@ -3029,12 +3029,12 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cc78    jmp near ptr 0042CC89h"
 "	      0042cc7d    mov dword ptr [ebp-14h],0"
 "	      0042cc84    jmp near ptr 0042CC89h"
-"	      0042cc89    mov eax,[ebp+8]"
+"	      0042cc89    mov eax,sLanguage"
 "	      0042cc8c    mov eax,[eax+4]"
 "	      0042cc8f    mov eax,[eax+4]"
 "	      0042cc92    add eax,[ebp-34h]"
 "	      0042cc95    mov [ebp-2Ch],eax"
-"	      0042cc98    mov eax,[ebp+8]"
+"	      0042cc98    mov eax,sLanguage"
 "	      0042cc9b    mov eax,[eax+4]"
 "	      0042cc9e    mov eax,[eax+4]"
 "	      0042cca1    mov [ebp-30h],eax"
@@ -3082,14 +3082,14 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cd2e    mov [ebp-8],eax"
 "	      0042cd31    jmp near ptr 0042CD3Dh"
 "	      0042cd36    mov dword ptr [ebp-8],0"
-"	      0042cd3d    mov eax,[ebp+8]"
+"	      0042cd3d    mov eax,sLanguage"
 "	      0042cd40    mov eax,[eax+4]"
 "	      0042cd43    dec dword ptr [eax+0Ch]"
-"	      0042cd46    mov eax,[ebp+8]"
+"	      0042cd46    mov eax,sLanguage"
 "	      0042cd49    mov eax,[eax+4]"
 "	      0042cd4c    cmp dword ptr [eax+0Ch],0"
 "	      0042cd50    jne near ptr 0042CD92h"
-"	      0042cd56    mov eax,[ebp+8]"
+"	      0042cd56    mov eax,sLanguage"
 "	      0042cd59    mov eax,[eax+4]"
 "	      0042cd5c    mov [ebp-20h],eax"
 "	      0042cd5f    mov eax,[ebp-20h]"
@@ -3107,16 +3107,16 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cd8d    jmp near ptr 0042CD92h"
 "	      0042cd92    jmp near ptr 0042CD97h"
 "	      0042cd97    mov eax,[ebp-8]"
-"	      0042cd9a    mov ecx,[ebp+8]"
+"	      0042cd9a    mov ecx,sLanguage"
 "	      0042cd9d    mov [ecx+4],eax"
 "	      0042cda0    cmp dword ptr [ebp-34h],0"
 "	      0042cda4    je near ptr 0042CDE2h"
 "	      0042cdaa    jmp near ptr 0042CDAFh"
 "	      0042cdaf    jmp near ptr 0042CDB4h"
-"	      0042cdb4    mov eax,[ebp+8]"
+"	      0042cdb4    mov eax,sLanguage"
 "	      0042cdb7    mov eax,[eax+4]"
 "	      0042cdba    mov eax,[eax+4]"
-"	      0042cdbd    mov ecx,[ebp+8]"
+"	      0042cdbd    mov ecx,sLanguage"
 "	      0042cdc0    mov ecx,[ecx+4]"
 "	      0042cdc3    add eax,[ecx]"
 "	      0042cdc5    mov [ebp-10h],eax"
@@ -3129,7 +3129,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 "	      0042cdda    add esp,0Ch"
 "	      0042cddd    jmp near ptr 0042CDE2h"
 "	      0042cde2    mov eax,[ebp-34h]"
-"	      0042cde5    mov ecx,[ebp+8]"
+"	      0042cde5    mov ecx,sLanguage"
 "	      0042cde8    mov ecx,[ecx+4]"
 "	      0042cdeb    add [ecx+4],eax"
 "	      0042cdee    jmp near ptr 0042CDF3h"
@@ -3167,17 +3167,17 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 );
 // LINE 393:
 	asm( 
-"	      0042ce14    cmp dword ptr [ebp+8],0"
+"	      0042ce14    cmp nLanguage,0"
 "	      0042ce18    jne near ptr 0042CE26h"
 );
 // LINE 394:
 	asm( 
 "	      0042ce1e    mov eax,ds:[597664h]"
-"	      0042ce23    mov [ebp+8],eax"
+"	      0042ce23    mov nLanguage,eax"
 );
 // LINE 399:
 	asm( 
-"	      0042ce26    mov eax,[ebp+8]"
+"	      0042ce26    mov eax,nLanguage"
 "	      0042ce29    push eax"
 "	      0042ce2a    call 0042B91Ah"
 "	      0042ce2f    add esp,4"
@@ -3187,7 +3187,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 // LINE 400:
 	asm( 
 "	      0042ce3a    push 597674h"
-"	      0042ce3f    mov eax,[ebp+10h]"
+"	      0042ce3f    mov eax,szFaceName"
 "	      0042ce42    push eax"
 "	      0042ce43    call 0056CEB0h"
 "	      0042ce48    add esp,8"
@@ -3203,17 +3203,17 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 );
 // LINE 405:
 	asm( 
-"	      0042ce5a    cmp dword ptr [ebp+8],0Eh"
+"	      0042ce5a    cmp nLanguage,0Eh"
 "	      0042ce5e    je near ptr 0042CE78h"
-"	      0042ce64    cmp dword ptr [ebp+8],0Fh"
+"	      0042ce64    cmp nLanguage,0Fh"
 "	      0042ce68    je near ptr 0042CE78h"
-"	      0042ce6e    cmp dword ptr [ebp+8],10h"
+"	      0042ce6e    cmp nLanguage,10h"
 "	      0042ce72    jne near ptr 0042CE93h"
 );
 // LINE 407:
 	asm( 
 "	      0042ce78    push 59767Ch"
-"	      0042ce7d    mov eax,[ebp+10h]"
+"	      0042ce7d    mov eax,szFaceName"
 "	      0042ce80    push eax"
 "	      0042ce81    call 0056CEB0h"
 "	      0042ce86    add esp,8"
@@ -3250,12 +3250,12 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 );
 // LINE 427:
 	asm( 
-"	      0042cea5    cmp dword ptr [ebp+8],10h"
+"	      0042cea5    cmp nLanguage,10h"
 "	      0042cea9    jne near ptr 0042CECEh"
 );
 // LINE 428:
 	asm( 
-"	      0042ceaf    mov eax,[ebp+10h]"
+"	      0042ceaf    mov eax,szFontFilePath"
 "	      0042ceb2    push eax"
 "	      0042ceb3    push 59768Ch"
 "	      0042ceb8    push 0"
@@ -3299,7 +3299,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 459:
 	asm( 
-"	      0042cee6    mov eax,[ebp+8]"
+"	      0042cee6    mov eax,nLanguage"
 "	      0042cee9    push eax"
 "	      0042ceea    call 0042B91Ah"
 "	      0042ceef    add esp,4"
@@ -3313,15 +3313,15 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 462:
 	asm( 
-"	      0042cf04    mov eax,[ebp+8]"
+"	      0042cf04    mov eax,nLanguage"
 "	      0042cf07    push eax"
 "	      0042cf08    call 0042B819h"
 "	      0042cf0d    add esp,4"
-"	      0042cf10    mov [ebp+8],eax"
+"	      0042cf10    mov nLanguage,eax"
 );
 // LINE 464:
 	asm( 
-"	      0042cf13    cmp dword ptr [ebp+8],10h"
+"	      0042cf13    cmp nLanguage,10h"
 "	      0042cf17    jne near ptr 0042CF82h"
 );
 // LINE 465:
@@ -3334,7 +3334,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 466:
 	asm( 
-"	      0042cf32    lea eax,[ebp-108h]"
+"	      0042cf32    lea eax,szFontPath[0]"
 "	      0042cf38    push eax"
 "	      0042cf39    push 0"
 "	      0042cf3b    push 10h"
@@ -3343,14 +3343,14 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 468:
 	asm( 
-"	      0042cf45    lea eax,[ebp-108h]"
+"	      0042cf45    lea eax,szFontPath[0]"
 "	      0042cf4b    push eax"
 "	      0042cf4c    call dword ptr ds:[6C356Ch]"
-"	      0042cf52    mov [ebp-4],eax"
+"	      0042cf52    mov nReturnValue,eax"
 );
 // LINE 469:
 	asm( 
-"	      0042cf55    cmp dword ptr [ebp-4],0"
+"	      0042cf55    cmp nReturnValue,0"
 "	      0042cf59    je near ptr 0042CF70h"
 );
 // LINE 470:
@@ -3363,7 +3363,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 472:
 	asm( 
-"	      0042cf70    mov eax,[ebp-4]"
+"	      0042cf70    mov eax,nReturnValue"
 "	      0042cf73    jmp near ptr 0042CF89h"
 );
 // LINE 474:
@@ -3402,7 +3402,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 492:
 	asm( 
-"	      0042cf9a    mov eax,[ebp+8]"
+"	      0042cf9a    mov eax,nLanguage"
 "	      0042cf9d    push eax"
 "	      0042cf9e    call 0042B91Ah"
 "	      0042cfa3    add esp,4"
@@ -3416,20 +3416,20 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 495:
 	asm( 
-"	      0042cfb8    mov eax,[ebp+8]"
+"	      0042cfb8    mov eax,nLanguage"
 "	      0042cfbb    push eax"
 "	      0042cfbc    call 0042B819h"
 "	      0042cfc1    add esp,4"
-"	      0042cfc4    mov [ebp+8],eax"
+"	      0042cfc4    mov nLanguage,eax"
 );
 // LINE 497:
 	asm( 
-"	      0042cfc7    cmp dword ptr [ebp+8],10h"
+"	      0042cfc7    cmp nLanguage,10h"
 "	      0042cfcb    jne near ptr 0042D017h"
 );
 // LINE 498:
 	asm( 
-"	      0042cfd1    lea eax,[ebp-108h]"
+"	      0042cfd1    lea eax,szFontPath[0]"
 "	      0042cfd7    push eax"
 "	      0042cfd8    push 0"
 "	      0042cfda    push 10h"
@@ -3438,14 +3438,14 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 500:
 	asm( 
-"	      0042cfe4    lea eax,[ebp-108h]"
+"	      0042cfe4    lea eax,szFontPath[0]"
 "	      0042cfea    push eax"
 "	      0042cfeb    call dword ptr ds:[6C3564h]"
-"	      0042cff1    mov [ebp-4],eax"
+"	      0042cff1    mov nReturnValue,eax"
 );
 // LINE 501:
 	asm( 
-"	      0042cff4    cmp dword ptr [ebp-4],0"
+"	      0042cff4    cmp nReturnValue,0"
 "	      0042cff8    je near ptr 0042D00Fh"
 );
 // LINE 502:
@@ -3458,7 +3458,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 );
 // LINE 504:
 	asm( 
-"	      0042d00f    mov eax,[ebp-4]"
+"	      0042d00f    mov eax,nReturnValue"
 "	      0042d012    jmp near ptr 0042D01Eh"
 );
 // LINE 506:
@@ -3494,42 +3494,42 @@ int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 	asm( 
 "	      0042d02c    push 0"
 "	      0042d02e    call dword ptr ds:[6C3850h]"
-"	      0042d034    mov [ebp-4],eax"
+"	      0042d034    mov hdcScreen,eax"
 );
 // LINE 528:
 	asm( 
-"	      0042d037    cmp dword ptr [ebp-4],0"
+"	      0042d037    cmp hdcScreen,0"
 "	      0042d03b    je near ptr 0042D077h"
 );
 // LINE 529:
 	asm( 
-"	      0042d041    mov eax,[ebp+8]"
-"	      0042d044    mov [ebp-0Ch],eax"
+"	      0042d041    mov eax,szFaceName"
+"	      0042d044    mov tempTypefaceTestStruct.szLanguageTypefaceName,eax"
 );
 // LINE 530:
 	asm( 
-"	      0042d047    mov dword ptr [ebp-8],0"
+"	      0042d047    mov tempTypefaceTestStruct.bExists,0"
 );
 // LINE 534:
 	asm( 
-"	      0042d04e    lea eax,[ebp-0Ch]"
+"	      0042d04e    lea eax,tempTypefaceTestStruct.szLanguageTypefaceName"
 "	      0042d051    push eax"
 "	      0042d052    push 42D3C9h"
 "	      0042d057    push 0"
-"	      0042d059    mov eax,[ebp-4]"
+"	      0042d059    mov eax,hdcScreen"
 "	      0042d05c    push eax"
 "	      0042d05d    call dword ptr ds:[6C3568h]"
 );
 // LINE 535:
 	asm( 
-"	      0042d063    mov eax,[ebp-4]"
+"	      0042d063    mov eax,hdcScreen"
 "	      0042d066    push eax"
 "	      0042d067    push 0"
 "	      0042d069    call dword ptr ds:[6C384Ch]"
 );
 // LINE 536:
 	asm( 
-"	      0042d06f    mov eax,[ebp-8]"
+"	      0042d06f    mov eax,tempTypefaceTestStruct.bExists"
 "	      0042d072    jmp near ptr 0042D07Eh"
 );
 // LINE 538:
@@ -3565,12 +3565,12 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 // LINE 554:
 	asm( 
 "	      0042d08c    call dword ptr ds:[6C364Ch]"
-"	      0042d092    mov [ebp-4],eax"
+"	      0042d092    mov currentLCID,eax"
 );
 // LINE 555:
 	asm( 
-"	      0042d095    mov eax,[ebp-4]"
-"	      0042d098    mov [ebp-8],ax"
+"	      0042d095    mov eax,currentLCID"
+"	      0042d098    mov currentLanguageID,ax"
 );
 // LINE 556:
 	asm( 
@@ -3888,19 +3888,19 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t nLanguage) {
 );
 // LINE 604:
 	asm( 
-"	      0042d38d    cmp dword ptr [ebp+8],0"
+"	      0042d38d    cmp nLanguage,0"
 "	      0042d391    jne near ptr 0042D39Fh"
 );
 // LINE 605:
 	asm( 
 "	      0042d397    mov eax,ds:[597664h]"
-"	      0042d39c    mov [ebp+8],eax"
+"	      0042d39c    mov nLanguage,eax"
 );
 // LINE 608:
 	asm( 
-"	      0042d39f    cmp dword ptr [ebp+8],2"
+"	      0042d39f    cmp nLanguage,2"
 "	      0042d3a3    je near ptr 0042D3B3h"
-"	      0042d3a9    cmp dword ptr [ebp+8],2Ch"
+"	      0042d3a9    cmp nLanguage,2Ch"
 "	      0042d3ad    jne near ptr 0042D3BAh"
 );
 // LINE 610:
@@ -3939,21 +3939,21 @@ int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXT
 );
 // LINE 627:
 	asm( 
-"	      0042d3d2    mov eax,[ebp+14h]"
-"	      0042d3d5    mov [ebp-8],eax"
+"	      0042d3d2    mov eax,lParam"
+"	      0042d3d5    mov tempTypefaceTestStruct,eax"
 );
 // LINE 628:
 	asm( 
-"	      0042d3d8    mov eax,[ebp+8]"
+"	      0042d3d8    mov eax,lpelf"
 "	      0042d3db    add eax,1Ch"
-"	      0042d3de    mov [ebp-4],eax"
+"	      0042d3de    mov szEnumeratedFaceName,eax"
 );
 // LINE 630:
 	asm( 
-"	      0042d3e1    mov eax,[ebp-8]"
+"	      0042d3e1    mov eax,tempTypefaceTestStruct"
 "	      0042d3e4    mov eax,[eax]"
 "	      0042d3e6    push eax"
-"	      0042d3e7    mov eax,[ebp-4]"
+"	      0042d3e7    mov eax,szEnumeratedFaceName"
 "	      0042d3ea    push eax"
 "	      0042d3eb    call 0056CE20h"
 "	      0042d3f0    add esp,8"
@@ -3962,7 +3962,7 @@ int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXT
 );
 // LINE 631:
 	asm( 
-"	      0042d3fb    mov eax,[ebp-8]"
+"	      0042d3fb    mov eax,tempTypefaceTestStruct"
 "	      0042d3fe    mov dword ptr [eax+4],1"
 );
 // LINE 632:

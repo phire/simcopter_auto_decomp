@@ -15,11 +15,11 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 "	      00427556    push ebx"
 "	      00427557    push esi"
 "	      00427558    push edi"
-"	      00427559    mov [ebp-4],ecx"
+"	      00427559    mov this,ecx"
 );
 // LINE 63:
 	asm( 
-"	      0042755c    mov eax,[ebp+8]"
+"	      0042755c    mov eax,szFilePath"
 "	      0042755f    push eax"
 "	      00427560    call 004C4690h"
 "	      00427565    add esp,4"
@@ -28,7 +28,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 );
 // LINE 64:
 	asm( 
-"	      00427570    mov eax,[ebp+0Ch]"
+"	      00427570    mov eax,lFileType"
 "	      00427573    mov dword ptr [eax],1"
 );
 // LINE 65:
@@ -39,7 +39,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 // LINE 67:
 	asm( 
 "	      00427580    jmp near ptr 004275D2h"
-"	      00427585    mov eax,[ebp+8]"
+"	      00427585    mov eax,szFilePath"
 "	      00427588    push eax"
 "	      00427589    call 004C4A2Bh"
 "	      0042758e    add esp,4"
@@ -48,7 +48,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 );
 // LINE 68:
 	asm( 
-"	      00427599    mov eax,[ebp+0Ch]"
+"	      00427599    mov eax,lFileType"
 "	      0042759c    mov dword ptr [eax],5"
 );
 // LINE 69:
@@ -62,16 +62,16 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 );
 // LINE 72:
 	asm( 
-"	      004275ae    mov eax,[ebp+8]"
+"	      004275ae    mov eax,szFilePath"
 "	      004275b1    push eax"
-"	      004275b2    mov ecx,[ebp-4]"
+"	      004275b2    mov ecx,this"
 "	      004275b5    call 00428A74h"
-"	      004275ba    mov ecx,[ebp+0Ch]"
+"	      004275ba    mov ecx,lFileType"
 "	      004275bd    mov [ecx],eax"
 );
 // LINE 73:
 	asm( 
-"	      004275bf    mov eax,[ebp+0Ch]"
+"	      004275bf    mov eax,lFileType"
 "	      004275c2    cmp dword ptr [eax],0"
 "	      004275c5    je near ptr 004275D2h"
 );
@@ -105,21 +105,21 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 "	      004275e9    push ebx"
 "	      004275ea    push esi"
 "	      004275eb    push edi"
-"	      004275ec    mov [ebp-4],ecx"
+"	      004275ec    mov this,ecx"
 );
 // LINE 86:
 	asm( 
-"	      004275ef    mov eax,[ebp-4]"
+"	      004275ef    mov eax,this"
 "	      004275f2    mov dword ptr [eax+20h],0"
 );
 // LINE 87:
 	asm( 
-"	      004275f9    cmp dword ptr [ebp+0Ch],1"
+"	      004275f9    cmp lFileType,1"
 "	      004275fd    jne near ptr 00427639h"
 );
 // LINE 88:
 	asm( 
-"	      00427603    mov eax,[ebp+8]"
+"	      00427603    mov eax,szLoadGamePath"
 "	      00427606    push eax"
 "	      00427607    call 004C4690h"
 "	      0042760c    add esp,4"
@@ -133,7 +133,7 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 );
 // LINE 90:
 	asm( 
-"	      00427621    mov eax,[ebp+8]"
+"	      00427621    mov eax,szLoadGamePath"
 "	      00427624    push eax"
 "	      00427625    call 00429582h"
 "	      0042762a    add esp,4"
@@ -146,28 +146,28 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 // LINE 93:
 	asm( 
 "	      00427634    jmp near ptr 00427680h"
-"	      00427639    cmp dword ptr [ebp+0Ch],3"
+"	      00427639    cmp lFileType,3"
 "	      0042763d    je near ptr 0042764Dh"
-"	      00427643    cmp dword ptr [ebp+0Ch],4"
+"	      00427643    cmp lFileType,4"
 "	      00427647    jne near ptr 00427663h"
 );
 // LINE 94:
 	asm( 
-"	      0042764d    mov eax,[ebp+8]"
+"	      0042764d    mov eax,szLoadGamePath"
 "	      00427650    push eax"
-"	      00427651    mov ecx,[ebp-4]"
+"	      00427651    mov ecx,this"
 "	      00427654    call 00427691h"
 "	      00427659    jmp near ptr 0042768Ah"
 );
 // LINE 96:
 	asm( 
 "	      0042765e    jmp near ptr 00427680h"
-"	      00427663    cmp dword ptr [ebp+0Ch],5"
+"	      00427663    cmp lFileType,5"
 "	      00427667    jne near ptr 00427680h"
 );
 // LINE 97:
 	asm( 
-"	      0042766d    mov eax,[ebp+8]"
+"	      0042766d    mov eax,szLoadGamePath"
 "	      00427670    push eax"
 "	      00427671    call 00429582h"
 "	      00427676    add esp,4"
@@ -218,33 +218,33 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 "	      0042769a    push ebx"
 "	      0042769b    push esi"
 "	      0042769c    push edi"
-"	      0042769d    mov [ebp-638h],ecx"
+"	      0042769d    mov this,ecx"
 );
 // LINE 126:
 	asm( 
-"	      004276a3    mov eax,[ebp-638h]"
+"	      004276a3    mov eax,this"
 "	      004276a9    mov dword ptr [eax+20h],0"
 );
 // LINE 127:
 	asm( 
-"	      004276b0    mov ecx,[ebp-638h]"
-"	      004276b6    mov eax,[ebp-638h]"
+"	      004276b0    mov ecx,this"
+"	      004276b6    mov eax,this"
 "	      004276bc    mov eax,[eax+4174h]"
 "	      004276c2    add ecx,4174h"
 "	      004276c8    call dword ptr [eax+10h]"
 );
 // LINE 128:
 	asm( 
-"	      004276cb    mov eax,[ebp+8]"
+"	      004276cb    mov eax,szGamePath"
 "	      004276ce    push eax"
-"	      004276cf    mov ecx,[ebp-638h]"
+"	      004276cf    mov ecx,this"
 "	      004276d5    add ecx,4174h"
 "	      004276db    call 004A0759h"
 );
 // LINE 129:
 	asm( 
-"	      004276e0    mov ecx,[ebp-638h]"
-"	      004276e6    mov eax,[ebp-638h]"
+"	      004276e0    mov ecx,this"
+"	      004276e6    mov eax,this"
 "	      004276ec    mov eax,[eax+4174h]"
 "	      004276f2    add ecx,4174h"
 "	      004276f8    call dword ptr [eax+4]"
@@ -258,15 +258,15 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 132:
 	asm( 
-"	      0042770d    mov ecx,[ebp-638h]"
-"	      00427713    mov eax,[ebp-638h]"
+"	      0042770d    mov ecx,this"
+"	      00427713    mov eax,this"
 "	      00427719    mov eax,[eax+4174h]"
 "	      0042771f    add ecx,4174h"
 "	      00427725    call dword ptr [eax+24h]"
 "	      00427728    test eax,eax"
 "	      0042772a    je near ptr 00427756h"
-"	      00427730    mov ecx,[ebp-638h]"
-"	      00427736    mov eax,[ebp-638h]"
+"	      00427730    mov ecx,this"
+"	      00427736    mov eax,this"
 "	      0042773c    mov eax,[eax+4174h]"
 "	      00427742    add ecx,4174h"
 "	      00427748    call dword ptr [eax+30h]"
@@ -275,8 +275,8 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 133:
 	asm( 
-"	      00427756    mov ecx,[ebp-638h]"
-"	      0042775c    mov eax,[ebp-638h]"
+"	      00427756    mov ecx,this"
+"	      0042775c    mov eax,this"
 "	      00427762    mov eax,[eax+4174h]"
 "	      00427768    add ecx,4174h"
 "	      0042776e    call dword ptr [eax+10h]"
@@ -288,24 +288,24 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 137:
 	asm( 
-"	      0042777b    mov ecx,[ebp-638h]"
-"	      00427781    mov eax,[ebp-638h]"
+"	      0042777b    mov ecx,this"
+"	      00427781    mov eax,this"
 "	      00427787    mov eax,[eax+4174h]"
 "	      0042778d    add ecx,4174h"
 "	      00427793    call dword ptr [eax+34h]"
-"	      00427796    mov [ebp-10Ch],eax"
+"	      00427796    mov lFileType,eax"
 );
 // LINE 138:
 	asm( 
-"	      0042779c    cmp dword ptr [ebp-10Ch],43524552h"
+"	      0042779c    cmp lFileType,43524552h"
 "	      004277a6    je near ptr 004277E1h"
-"	      004277ac    cmp dword ptr [ebp-10Ch],55534552h"
+"	      004277ac    cmp lFileType,55534552h"
 "	      004277b6    je near ptr 004277E1h"
 );
 // LINE 139:
 	asm( 
-"	      004277bc    mov ecx,[ebp-638h]"
-"	      004277c2    mov eax,[ebp-638h]"
+"	      004277bc    mov ecx,this"
+"	      004277c2    mov eax,this"
 "	      004277c8    mov eax,[eax+4174h]"
 "	      004277ce    add ecx,4174h"
 "	      004277d4    call dword ptr [eax+10h]"
@@ -317,46 +317,46 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 143:
 	asm( 
-"	      004277e1    mov dword ptr [ebp-180h],0"
-"	      004277eb    mov eax,[ebp-180h]"
-"	      004277f1    mov [ebp-3A8h],eax"
+"	      004277e1    mov bSaveGameInfoFound,0"
+"	      004277eb    mov eax,bSaveGameInfoFound"
+"	      004277f1    mov bPathInfoFound,eax"
 );
 // LINE 144:
 	asm( 
-"	      004277f7    mov ecx,[ebp-638h]"
-"	      004277fd    mov eax,[ebp-638h]"
+"	      004277f7    mov ecx,this"
+"	      004277fd    mov eax,this"
 "	      00427803    mov eax,[eax+4174h]"
 "	      00427809    add ecx,4174h"
 "	      0042780f    call dword ptr [eax+44h]"
 );
 // LINE 146:
 	asm( 
-"	      00427812    mov ecx,[ebp-638h]"
-"	      00427818    mov eax,[ebp-638h]"
+"	      00427812    mov ecx,this"
+"	      00427818    mov eax,this"
 "	      0042781e    mov eax,[eax+4174h]"
 "	      00427824    add ecx,4174h"
 "	      0042782a    call dword ptr [eax+14h]"
-"	      0042782d    mov [ebp-4],eax"
+"	      0042782d    mov lPresentRecordType,eax"
 );
 // LINE 147:
 	asm( 
-"	      00427830    cmp dword ptr [ebp-4],4346494Ch"
+"	      00427830    cmp lPresentRecordType,4346494Ch"
 "	      00427837    jne near ptr 00427873h"
 );
 // LINE 148:
 	asm( 
 "	      0042783d    push 104h"
-"	      00427842    lea eax,[ebp-634h]"
+"	      00427842    lea eax,szCityFile[0]"
 "	      00427848    push eax"
-"	      00427849    mov ecx,[ebp-638h]"
-"	      0042784f    mov eax,[ebp-638h]"
+"	      00427849    mov ecx,this"
+"	      0042784f    mov eax,this"
 "	      00427855    mov eax,[eax+4174h]"
 "	      0042785b    add ecx,4174h"
 "	      00427861    call dword ptr [eax+40h]"
 );
 // LINE 149:
 	asm( 
-"	      00427864    mov dword ptr [ebp-3A8h],1"
+"	      00427864    mov bPathInfoFound,1"
 );
 // LINE 151:
 	asm( 
@@ -364,25 +364,25 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 152:
 	asm( 
-"	      00427873    cmp dword ptr [ebp-4],55494E46h"
+"	      00427873    cmp lPresentRecordType,55494E46h"
 "	      0042787a    jne near ptr 004278C6h"
-"	      00427880    cmp dword ptr [ebp-10Ch],55534552h"
+"	      00427880    cmp lFileType,55534552h"
 "	      0042788a    jne near ptr 004278C6h"
 );
 // LINE 154:
 	asm( 
 "	      00427890    push 80h"
-"	      00427895    lea eax,[ebp-530h]"
+"	      00427895    lea eax,tempUserCityInfo.citySettings.lDifficulty"
 "	      0042789b    push eax"
-"	      0042789c    mov ecx,[ebp-638h]"
-"	      004278a2    mov eax,[ebp-638h]"
+"	      0042789c    mov ecx,this"
+"	      004278a2    mov eax,this"
 "	      004278a8    mov eax,[eax+4174h]"
 "	      004278ae    add ecx,4174h"
 "	      004278b4    call dword ptr [eax+40h]"
 );
 // LINE 155:
 	asm( 
-"	      004278b7    mov dword ptr [ebp-180h],1"
+"	      004278b7    mov bSaveGameInfoFound,1"
 );
 // LINE 157:
 	asm( 
@@ -390,31 +390,31 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 158:
 	asm( 
-"	      004278c6    cmp dword ptr [ebp-4],43494E46h"
+"	      004278c6    cmp lPresentRecordType,43494E46h"
 "	      004278cd    jne near ptr 00427911h"
-"	      004278d3    cmp dword ptr [ebp-10Ch],43524552h"
+"	      004278d3    cmp lFileType,43524552h"
 "	      004278dd    jne near ptr 00427911h"
 );
 // LINE 160:
 	asm( 
 "	      004278e3    push 6Ch"
-"	      004278e5    lea eax,[ebp-17Ch]"
+"	      004278e5    lea eax,tempCurrentCareerCityInfo.lCurrentCities[0]"
 "	      004278eb    push eax"
-"	      004278ec    mov ecx,[ebp-638h]"
-"	      004278f2    mov eax,[ebp-638h]"
+"	      004278ec    mov ecx,this"
+"	      004278f2    mov eax,this"
 "	      004278f8    mov eax,[eax+4174h]"
 "	      004278fe    add ecx,4174h"
 "	      00427904    call dword ptr [eax+40h]"
 );
 // LINE 161:
 	asm( 
-"	      00427907    mov dword ptr [ebp-180h],1"
+"	      00427907    mov bSaveGameInfoFound,1"
 );
 // LINE 163:
 	asm( 
-"	      00427911    cmp dword ptr [ebp-3A8h],0"
+"	      00427911    cmp bPathInfoFound,0"
 "	      00427918    je near ptr 00427930h"
-"	      0042791e    cmp dword ptr [ebp-180h],0"
+"	      0042791e    cmp bSaveGameInfoFound,0"
 "	      00427925    je near ptr 00427930h"
 );
 // LINE 164:
@@ -423,8 +423,8 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 165:
 	asm( 
-"	      00427930    mov ecx,[ebp-638h]"
-"	      00427936    mov eax,[ebp-638h]"
+"	      00427930    mov ecx,this"
+"	      00427936    mov eax,this"
 "	      0042793c    mov eax,[eax+4174h]"
 "	      00427942    add ecx,4174h"
 "	      00427948    call dword ptr [eax+48h]"
@@ -433,15 +433,15 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 167:
 	asm( 
-"	      00427953    cmp dword ptr [ebp-3A8h],0"
+"	      00427953    cmp bPathInfoFound,0"
 "	      0042795a    je near ptr 0042796Dh"
-"	      00427960    cmp dword ptr [ebp-180h],0"
+"	      00427960    cmp bSaveGameInfoFound,0"
 "	      00427967    jne near ptr 00427992h"
 );
 // LINE 168:
 	asm( 
-"	      0042796d    mov ecx,[ebp-638h]"
-"	      00427973    mov eax,[ebp-638h]"
+"	      0042796d    mov ecx,this"
+"	      00427973    mov eax,this"
 "	      00427979    mov eax,[eax+4174h]"
 "	      0042797f    add ecx,4174h"
 "	      00427985    call dword ptr [eax+10h]"
@@ -453,49 +453,49 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 173:
 	asm( 
-"	      00427992    lea eax,[ebp-104h]"
+"	      00427992    lea eax,szSplitPathExtension[0]"
 "	      00427998    push eax"
-"	      00427999    lea eax,[ebp-3A4h]"
+"	      00427999    lea eax,szSplitPathFilename[0]"
 "	      0042799f    push eax"
-"	      004279a0    lea eax,[ebp-280h]"
+"	      004279a0    lea eax,szSplitPathDirectory[0]"
 "	      004279a6    push eax"
-"	      004279a7    lea eax,[ebp-108h]"
+"	      004279a7    lea eax,szSplitPathDrive[0]"
 "	      004279ad    push eax"
-"	      004279ae    mov eax,[ebp+8]"
+"	      004279ae    mov eax,szGamePath"
 "	      004279b1    push eax"
 "	      004279b2    call 0056DDF0h"
 "	      004279b7    add esp,14h"
 );
 // LINE 174:
 	asm( 
-"	      004279ba    lea eax,[ebp-108h]"
+"	      004279ba    lea eax,szSplitPathDrive[0]"
 "	      004279c0    push eax"
-"	      004279c1    lea eax,[ebp-4ACh]"
+"	      004279c1    lea eax,szCityPath[0]"
 "	      004279c7    push eax"
 "	      004279c8    call 0056CEB0h"
 "	      004279cd    add esp,8"
 );
 // LINE 175:
 	asm( 
-"	      004279d0    lea eax,[ebp-280h]"
+"	      004279d0    lea eax,szSplitPathDirectory[0]"
 "	      004279d6    push eax"
-"	      004279d7    lea eax,[ebp-4ACh]"
+"	      004279d7    lea eax,szCityPath[0]"
 "	      004279dd    push eax"
 "	      004279de    call 0056CEC0h"
 "	      004279e3    add esp,8"
 );
 // LINE 176:
 	asm( 
-"	      004279e6    lea eax,[ebp-634h]"
+"	      004279e6    lea eax,szCityFile[0]"
 "	      004279ec    push eax"
-"	      004279ed    lea eax,[ebp-4ACh]"
+"	      004279ed    lea eax,szCityPath[0]"
 "	      004279f3    push eax"
 "	      004279f4    call 0056CEC0h"
 "	      004279f9    add esp,8"
 );
 // LINE 177:
 	asm( 
-"	      004279fc    lea eax,[ebp-4ACh]"
+"	      004279fc    lea eax,szCityPath[0]"
 "	      00427a02    push eax"
 "	      00427a03    call 004C4690h"
 "	      00427a08    add esp,4"
@@ -504,8 +504,8 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 178:
 	asm( 
-"	      00427a13    mov ecx,[ebp-638h]"
-"	      00427a19    mov eax,[ebp-638h]"
+"	      00427a13    mov ecx,this"
+"	      00427a19    mov eax,this"
 "	      00427a1f    mov eax,[eax+4174h]"
 "	      00427a25    add ecx,4174h"
 "	      00427a2b    call dword ptr [eax+10h]"
@@ -517,7 +517,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 181:
 	asm( 
-"	      00427a38    cmp dword ptr [ebp-10Ch],55534552h"
+"	      00427a38    cmp lFileType,55534552h"
 "	      00427a42    jne near ptr 00427A73h"
 );
 // LINE 182:
@@ -526,7 +526,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 183:
 	asm( 
-"	      00427a52    lea esi,[ebp-530h]"
+"	      00427a52    lea esi,tempUserCityInfo.citySettings.lDifficulty"
 "	      00427a58    mov edi,5C2A20h"
 "	      00427a5d    mov ecx,20h"
 "	      00427a62    rep movsd"
@@ -546,7 +546,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 189:
 	asm( 
-"	      00427a7d    lea esi,[ebp-17Ch]"
+"	      00427a7d    lea esi,tempCurrentCareerCityInfo.lCurrentCities[0]"
 "	      00427a83    mov edi,5C2AA8h"
 "	      00427a88    mov ecx,1Bh"
 "	      00427a8d    rep movsd"
@@ -554,8 +554,8 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 190:
 	asm( 
 "	      00427a8f    push 43534554h"
-"	      00427a94    mov ecx,[ebp-638h]"
-"	      00427a9a    mov eax,[ebp-638h]"
+"	      00427a94    mov ecx,this"
+"	      00427a9a    mov eax,this"
 "	      00427aa0    mov eax,[eax+4174h]"
 "	      00427aa6    add ecx,4174h"
 "	      00427aac    call dword ptr [eax+50h]"
@@ -565,22 +565,22 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 191:
 	asm( 
 "	      00427ab7    push 24h"
-"	      00427ab9    lea eax,[ebp-2A4h]"
+"	      00427ab9    lea eax,savedCitySettings.lDifficulty"
 "	      00427abf    push eax"
-"	      00427ac0    mov ecx,[ebp-638h]"
-"	      00427ac6    mov eax,[ebp-638h]"
+"	      00427ac0    mov ecx,this"
+"	      00427ac6    mov eax,this"
 "	      00427acc    mov eax,[eax+4174h]"
 "	      00427ad2    add ecx,4174h"
 "	      00427ad8    call dword ptr [eax+40h]"
 );
 // LINE 193:
 	asm( 
-"	      00427adb    mov eax,[ebp-284h]"
+"	      00427adb    mov eax,savedCitySettings.lDaytime"
 "	      00427ae1    mov ds:[598E90h],eax"
 );
 // LINE 196:
 	asm( 
-"	      00427ae6    lea eax,[ebp-4ACh]"
+"	      00427ae6    lea eax,szCityPath[0]"
 "	      00427aec    push eax"
 "	      00427aed    push 5C2918h"
 "	      00427af2    call 0056CEB0h"
@@ -588,12 +588,12 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 199:
 	asm( 
-"	      00427afa    mov dword ptr [ebp-110h],0"
+"	      00427afa    mov lSavedCityFileChecksum,0"
 );
 // LINE 200:
 	asm( 
-"	      00427b04    mov ecx,[ebp-638h]"
-"	      00427b0a    mov eax,[ebp-638h]"
+"	      00427b04    mov ecx,this"
+"	      00427b0a    mov eax,this"
 "	      00427b10    mov eax,[eax+4174h]"
 "	      00427b16    add ecx,4174h"
 "	      00427b1c    call dword ptr [eax+44h]"
@@ -601,8 +601,8 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 201:
 	asm( 
 "	      00427b1f    push 4353554Dh"
-"	      00427b24    mov ecx,[ebp-638h]"
-"	      00427b2a    mov eax,[ebp-638h]"
+"	      00427b24    mov ecx,this"
+"	      00427b2a    mov eax,this"
 "	      00427b30    mov eax,[eax+4174h]"
 "	      00427b36    add ecx,4174h"
 "	      00427b3c    call dword ptr [eax+54h]"
@@ -612,35 +612,35 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 202:
 	asm( 
 "	      00427b47    push 4"
-"	      00427b49    lea eax,[ebp-110h]"
+"	      00427b49    lea eax,lSavedCityFileChecksum"
 "	      00427b4f    push eax"
-"	      00427b50    mov ecx,[ebp-638h]"
-"	      00427b56    mov eax,[ebp-638h]"
+"	      00427b50    mov ecx,this"
+"	      00427b56    mov eax,this"
 "	      00427b5c    mov eax,[eax+4174h]"
 "	      00427b62    add ecx,4174h"
 "	      00427b68    call dword ptr [eax+40h]"
 );
 // LINE 203:
 	asm( 
-"	      00427b6b    lea eax,[ebp-4ACh]"
+"	      00427b6b    lea eax,szCityPath[0]"
 "	      00427b71    push eax"
 "	      00427b72    call 004A07B9h"
 "	      00427b77    add esp,4"
-"	      00427b7a    mov [ebp-4B0h],eax"
+"	      00427b7a    mov lActualCityFileChecksum,eax"
 );
 // LINE 204:
 	asm( 
-"	      00427b80    cmp dword ptr [ebp-4B0h],0"
+"	      00427b80    cmp lActualCityFileChecksum,0"
 "	      00427b87    je near ptr 00427BBEh"
-"	      00427b8d    cmp dword ptr [ebp-110h],0"
+"	      00427b8d    cmp lSavedCityFileChecksum,0"
 "	      00427b94    je near ptr 00427BBEh"
-"	      00427b9a    mov eax,[ebp-4B0h]"
-"	      00427ba0    cmp [ebp-110h],eax"
+"	      00427b9a    mov eax,lActualCityFileChecksum"
+"	      00427ba0    cmp lSavedCityFileChecksum,eax"
 "	      00427ba6    jne near ptr 00427BBEh"
 );
 // LINE 205:
 	asm( 
-"	      00427bac    mov eax,[ebp-638h]"
+"	      00427bac    mov eax,this"
 "	      00427bb2    mov dword ptr [eax+20h],1"
 );
 // LINE 208:
@@ -649,13 +649,13 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 );
 // LINE 209:
 	asm( 
-"	      00427bbe    mov eax,[ebp-638h]"
+"	      00427bbe    mov eax,this"
 "	      00427bc4    mov dword ptr [eax+20h],0"
 );
 // LINE 210:
 	asm( 
-"	      00427bcb    mov ecx,[ebp-638h]"
-"	      00427bd1    mov eax,[ebp-638h]"
+"	      00427bcb    mov ecx,this"
+"	      00427bd1    mov eax,this"
 "	      00427bd7    mov eax,[eax+4174h]"
 "	      00427bdd    add ecx,4174h"
 "	      00427be3    call dword ptr [eax+10h]"
@@ -694,21 +694,21 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 "	      00427bfd    push ebx"
 "	      00427bfe    push esi"
 "	      00427bff    push edi"
-"	      00427c00    mov [ebp-434h],ecx"
+"	      00427c00    mov this,ecx"
 );
 // LINE 232:
 	asm( 
-"	      00427c06    mov ecx,[ebp-434h]"
-"	      00427c0c    mov eax,[ebp-434h]"
+"	      00427c06    mov ecx,this"
+"	      00427c0c    mov eax,this"
 "	      00427c12    mov eax,[eax+4174h]"
 "	      00427c18    add ecx,4174h"
 "	      00427c1e    call dword ptr [eax+10h]"
 );
 // LINE 233:
 	asm( 
-"	      00427c21    mov eax,[ebp+8]"
+"	      00427c21    mov eax,szGamePath"
 "	      00427c24    push eax"
-"	      00427c25    mov ecx,[ebp-434h]"
+"	      00427c25    mov ecx,this"
 "	      00427c2b    add ecx,4174h"
 "	      00427c31    call 004A0759h"
 );
@@ -723,7 +723,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 237:
 	asm( 
-"	      00427c48    mov dword ptr [ebp-108h],43524552h"
+"	      00427c48    mov lFileType,43524552h"
 );
 // LINE 238:
 	asm( 
@@ -733,16 +733,16 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 239:
 	asm( 
-"	      00427c64    mov dword ptr [ebp-108h],55534552h"
+"	      00427c64    mov lFileType,55534552h"
 );
 // LINE 241:
 	asm( 
 "	      00427c6e    push 100h"
-"	      00427c73    mov eax,[ebp-108h]"
+"	      00427c73    mov eax,lFileType"
 "	      00427c79    push eax"
 "	      00427c7a    push 43505452h"
-"	      00427c7f    mov ecx,[ebp-434h]"
-"	      00427c85    mov eax,[ebp-434h]"
+"	      00427c7f    mov ecx,this"
+"	      00427c85    mov eax,this"
 "	      00427c8b    mov eax,[eax+4174h]"
 "	      00427c91    add ecx,4174h"
 "	      00427c97    call dword ptr [eax+8]"
@@ -756,50 +756,50 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 244:
 	asm( 
-"	      00427cac    lea eax,[ebp-100h]"
+"	      00427cac    lea eax,szSplitPathExtension[0]"
 "	      00427cb2    push eax"
-"	      00427cb3    lea eax,[ebp-32Ch]"
+"	      00427cb3    lea eax,szSplitPathFilename[0]"
 "	      00427cb9    push eax"
-"	      00427cba    lea eax,[ebp-208h]"
+"	      00427cba    lea eax,szSplitPathDirectory[0]"
 "	      00427cc0    push eax"
-"	      00427cc1    lea eax,[ebp-104h]"
+"	      00427cc1    lea eax,szSplitPathDrive[0]"
 "	      00427cc7    push eax"
-"	      00427cc8    mov eax,[ebp+0Ch]"
+"	      00427cc8    mov eax,szCityPath"
 "	      00427ccb    push eax"
 "	      00427ccc    call 0056DDF0h"
 "	      00427cd1    add esp,14h"
 );
 // LINE 245:
 	asm( 
-"	      00427cd4    lea eax,[ebp-32Ch]"
+"	      00427cd4    lea eax,szSplitPathFilename[0]"
 "	      00427cda    push eax"
-"	      00427cdb    lea eax,[ebp-42Ch]"
+"	      00427cdb    lea eax,szCityFile[0]"
 "	      00427ce1    push eax"
 "	      00427ce2    call 0056CEB0h"
 "	      00427ce7    add esp,8"
 );
 // LINE 246:
 	asm( 
-"	      00427cea    lea eax,[ebp-100h]"
+"	      00427cea    lea eax,szSplitPathExtension[0]"
 "	      00427cf0    push eax"
-"	      00427cf1    lea eax,[ebp-42Ch]"
+"	      00427cf1    lea eax,szCityFile[0]"
 "	      00427cf7    push eax"
 "	      00427cf8    call 0056CEC0h"
 "	      00427cfd    add esp,8"
 );
 // LINE 247:
 	asm( 
-"	      00427d00    lea eax,[ebp-42Ch]"
+"	      00427d00    lea eax,szCityFile[0]"
 "	      00427d06    push eax"
 "	      00427d07    call 0056ABE0h"
 "	      00427d0c    add esp,4"
 "	      00427d0f    inc eax"
 "	      00427d10    push eax"
-"	      00427d11    lea eax,[ebp-42Ch]"
+"	      00427d11    lea eax,szCityFile[0]"
 "	      00427d17    push eax"
 "	      00427d18    push 4346494Ch"
-"	      00427d1d    mov ecx,[ebp-434h]"
-"	      00427d23    mov eax,[ebp-434h]"
+"	      00427d1d    mov ecx,this"
+"	      00427d23    mov eax,this"
 "	      00427d29    mov eax,[eax+4174h]"
 "	      00427d2f    add ecx,4174h"
 "	      00427d35    call dword ptr [eax+64h]"
@@ -808,8 +808,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 248:
 	asm( 
-"	      00427d40    mov ecx,[ebp-434h]"
-"	      00427d46    mov eax,[ebp-434h]"
+"	      00427d40    mov ecx,this"
+"	      00427d46    mov eax,this"
 "	      00427d4c    mov eax,[eax+4174h]"
 "	      00427d52    add ecx,4174h"
 "	      00427d58    call dword ptr [eax+10h]"
@@ -829,8 +829,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 "	      00427d72    push 6Ch"
 "	      00427d74    push 5C2AA8h"
 "	      00427d79    push 43494E46h"
-"	      00427d7e    mov ecx,[ebp-434h]"
-"	      00427d84    mov eax,[ebp-434h]"
+"	      00427d7e    mov ecx,this"
+"	      00427d84    mov eax,this"
 "	      00427d8a    mov eax,[eax+4174h]"
 "	      00427d90    add ecx,4174h"
 "	      00427d96    call dword ptr [eax+64h]"
@@ -839,8 +839,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 253:
 	asm( 
-"	      00427da1    mov ecx,[ebp-434h]"
-"	      00427da7    mov eax,[ebp-434h]"
+"	      00427da1    mov ecx,this"
+"	      00427da7    mov eax,this"
 "	      00427dad    mov eax,[eax+4174h]"
 "	      00427db3    add ecx,4174h"
 "	      00427db9    call dword ptr [eax+10h]"
@@ -854,7 +854,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	asm( 
 "	      00427dc6    mov eax,ds:[5C2AB4h]"
 "	      00427dcb    shl eax,3"
-"	      00427dce    lea edi,[ebp-22Ch]"
+"	      00427dce    lea edi,tempCitySettings.lDifficulty"
 "	      00427dd4    lea esi,[eax+eax*8+5C2B1Ch]"
 "	      00427ddb    mov ecx,9"
 "	      00427de0    rep movsd"
@@ -862,16 +862,16 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 // LINE 261:
 	asm( 
 "	      00427de2    mov eax,ds:[598E90h]"
-"	      00427de7    mov [ebp-20Ch],eax"
+"	      00427de7    mov tempCitySettings.lDaytime,eax"
 );
 // LINE 262:
 	asm( 
 "	      00427ded    push 24h"
-"	      00427def    lea eax,[ebp-22Ch]"
+"	      00427def    lea eax,tempCitySettings.lDifficulty"
 "	      00427df5    push eax"
 "	      00427df6    push 43534554h"
-"	      00427dfb    mov ecx,[ebp-434h]"
-"	      00427e01    mov eax,[ebp-434h]"
+"	      00427dfb    mov ecx,this"
+"	      00427e01    mov eax,this"
 "	      00427e07    mov eax,[eax+4174h]"
 "	      00427e0d    add ecx,4174h"
 "	      00427e13    call dword ptr [eax+64h]"
@@ -880,8 +880,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 263:
 	asm( 
-"	      00427e1e    mov ecx,[ebp-434h]"
-"	      00427e24    mov eax,[ebp-434h]"
+"	      00427e1e    mov ecx,this"
+"	      00427e24    mov eax,this"
 "	      00427e2a    mov eax,[eax+4174h]"
 "	      00427e30    add ecx,4174h"
 "	      00427e36    call dword ptr [eax+10h]"
@@ -902,8 +902,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 "	      00427e55    push 80h"
 "	      00427e5a    push 5C2A20h"
 "	      00427e5f    push 55494E46h"
-"	      00427e64    mov ecx,[ebp-434h]"
-"	      00427e6a    mov eax,[ebp-434h]"
+"	      00427e64    mov ecx,this"
+"	      00427e6a    mov eax,this"
 "	      00427e70    mov eax,[eax+4174h]"
 "	      00427e76    add ecx,4174h"
 "	      00427e7c    call dword ptr [eax+64h]"
@@ -912,8 +912,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 269:
 	asm( 
-"	      00427e87    mov ecx,[ebp-434h]"
-"	      00427e8d    mov eax,[ebp-434h]"
+"	      00427e87    mov ecx,this"
+"	      00427e8d    mov eax,this"
 "	      00427e93    mov eax,[eax+4174h]"
 "	      00427e99    add ecx,4174h"
 "	      00427e9f    call dword ptr [eax+10h]"
@@ -925,7 +925,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 274:
 	asm( 
-"	      00427eac    mov eax,[ebp-434h]"
+"	      00427eac    mov eax,this"
 "	      00427eb2    add eax,4174h"
 "	      00427eb7    push eax"
 "	      00427eb8    mov ecx,606E78h"
@@ -933,7 +933,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 275:
 	asm( 
-"	      00427ec2    mov eax,[ebp-434h]"
+"	      00427ec2    mov eax,this"
 "	      00427ec8    add eax,4174h"
 "	      00427ecd    push eax"
 "	      00427ece    call 004EB909h"
@@ -941,7 +941,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 277:
 	asm( 
-"	      00427ed6    mov eax,[ebp+0Ch]"
+"	      00427ed6    mov eax,szCityPath"
 "	      00427ed9    push eax"
 "	      00427eda    call 004C680Eh"
 "	      00427edf    add esp,4"
@@ -951,8 +951,8 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 278:
 	asm( 
-"	      00427eed    mov ecx,[ebp-434h]"
-"	      00427ef3    mov eax,[ebp-434h]"
+"	      00427eed    mov ecx,this"
+"	      00427ef3    mov eax,this"
 "	      00427ef9    mov eax,[eax+4174h]"
 "	      00427eff    add ecx,4174h"
 "	      00427f05    call dword ptr [eax+10h]"
@@ -964,35 +964,35 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 283:
 	asm( 
-"	      00427f12    mov eax,[ebp+0Ch]"
+"	      00427f12    mov eax,szCityPath"
 "	      00427f15    push eax"
 "	      00427f16    call 004A07B9h"
 "	      00427f1b    add esp,4"
-"	      00427f1e    mov [ebp-430h],eax"
+"	      00427f1e    mov lActualCityFileChecksum,eax"
 );
 // LINE 284:
 	asm( 
 "	      00427f24    push 4"
-"	      00427f26    lea eax,[ebp-430h]"
+"	      00427f26    lea eax,lActualCityFileChecksum"
 "	      00427f2c    push eax"
 "	      00427f2d    push 4353554Dh"
-"	      00427f32    mov ecx,[ebp-434h]"
-"	      00427f38    mov eax,[ebp-434h]"
+"	      00427f32    mov ecx,this"
+"	      00427f38    mov eax,this"
 "	      00427f3e    mov eax,[eax+4174h]"
 "	      00427f44    add ecx,4174h"
 "	      00427f4a    call dword ptr [eax+64h]"
 );
 // LINE 285:
 	asm( 
-"	      00427f4d    mov ecx,[ebp-434h]"
-"	      00427f53    mov eax,[ebp-434h]"
+"	      00427f4d    mov ecx,this"
+"	      00427f53    mov eax,this"
 "	      00427f59    mov eax,[eax+4174h]"
 "	      00427f5f    add ecx,4174h"
 "	      00427f65    call dword ptr [eax+10h]"
 );
 // LINE 288:
 	asm( 
-"	      00427f68    mov eax,[ebp+8]"
+"	      00427f68    mov eax,szGamePath"
 "	      00427f6b    push eax"
 "	      00427f6c    push 5C33E8h"
 "	      00427f71    call 0056CEB0h"
@@ -1000,7 +1000,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 );
 // LINE 289:
 	asm( 
-"	      00427f79    mov eax,[ebp+0Ch]"
+"	      00427f79    mov eax,szCityPath"
 "	      00427f7c    push eax"
 "	      00427f7d    push 5C2918h"
 "	      00427f82    call 0056CEB0h"
@@ -1045,17 +1045,17 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00427fa1    push ebx"
 "	      00427fa2    push esi"
 "	      00427fa3    push edi"
-"	      00427fa4    mov [ebp-808h],ecx"
+"	      00427fa4    mov this,ecx"
 );
 // LINE 326:
 	asm( 
-"	      00427faa    lea eax,[ebp-100h]"
+"	      00427faa    lea eax,szSplitPathExtension[0]"
 "	      00427fb0    push eax"
-"	      00427fb1    lea eax,[ebp-718h]"
+"	      00427fb1    lea eax,szSplitPathFilename[0]"
 "	      00427fb7    push eax"
-"	      00427fb8    lea eax,[ebp-410h]"
+"	      00427fb8    lea eax,szSplitPathDirectory[0]"
 "	      00427fbe    push eax"
-"	      00427fbf    lea eax,[ebp-108h]"
+"	      00427fbf    lea eax,szSplitPathDrive[0]"
 "	      00427fc5    push eax"
 "	      00427fc6    push 5C2918h"
 "	      00427fcb    call 0056DDF0h"
@@ -1068,11 +1068,11 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00427fdd    mov eax,[eax]"
 "	      00427fdf    mov ecx,ds:[599BC4h]"
 "	      00427fe5    call dword ptr [eax+1Ch]"
-"	      00427fe8    mov [ebp-210h],eax"
+"	      00427fe8    mov chPrefData,eax"
 );
 // LINE 329:
 	asm( 
-"	      00427fee    cmp dword ptr [ebp-210h],0"
+"	      00427fee    cmp chPrefData,0"
 "	      00427ff5    je near ptr 004282A4h"
 "	      00427ffb    push 10h"
 "	      00427ffd    call 0056A600h"
@@ -1080,7 +1080,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00428005    mov [ebp-7CCh],eax"
 "	      0042800b    cmp dword ptr [ebp-7CCh],0"
 "	      00428012    je near ptr 00428035h"
-"	      00428018    mov eax,[ebp-210h]"
+"	      00428018    mov eax,chPrefData"
 "	      0042801e    push eax"
 "	      0042801f    mov ecx,[ebp-7CCh]"
 "	      00428025    call 0041DFE0h"
@@ -1204,18 +1204,18 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 331:
 	asm( 
-"	      00428273    mov eax,[ebp-210h]"
+"	      00428273    mov eax,chPrefData"
 "	      00428279    push eax"
-"	      0042827a    lea eax,[ebp-618h]"
+"	      0042827a    lea eax,szGameFileSavePath[0]"
 "	      00428280    push eax"
 "	      00428281    call 0056CEB0h"
 "	      00428286    add esp,8"
 );
 // LINE 332:
 	asm( 
-"	      00428289    lea eax,[ebp-718h]"
+"	      00428289    lea eax,szSplitPathFilename[0]"
 "	      0042828f    push eax"
-"	      00428290    lea eax,[ebp-618h]"
+"	      00428290    lea eax,szGameFileSavePath[0]"
 "	      00428296    push eax"
 "	      00428297    call 0056CEC0h"
 "	      0042829c    add esp,8"
@@ -1228,7 +1228,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	asm( 
 "	      004282a4    mov eax,ds:[598F04h]"
 "	      004282a9    push eax"
-"	      004282aa    lea eax,[ebp-618h]"
+"	      004282aa    lea eax,szGameFileSavePath[0]"
 "	      004282b0    push eax"
 "	      004282b1    call 0056CEB0h"
 "	      004282b6    add esp,8"
@@ -1239,14 +1239,14 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      004282bb    push 32h"
 "	      004282bd    call 0042B15Fh"
 "	      004282c2    add esp,8"
-"	      004282c5    mov [ebp-104h],eax"
+"	      004282c5    mov nFullStringID,eax"
 );
 // LINE 342:
 	asm( 
 "	      004282cb    push 0FFFh"
-"	      004282d0    lea eax,[ebp-310h]"
+"	      004282d0    lea eax,szNewDirectory[0]"
 "	      004282d6    push eax"
-"	      004282d7    mov eax,[ebp-104h]"
+"	      004282d7    mov eax,nFullStringID"
 "	      004282dd    push eax"
 "	      004282de    mov eax,ds:[5C28C8h]"
 "	      004282e3    push eax"
@@ -1255,10 +1255,10 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      004282f0    cmp dword ptr [ebp-7F0h],0"
 "	      004282f7    jne near ptr 00428344h"
 "	      004282fd    push 0FFFh"
-"	      00428302    lea eax,[ebp-310h]"
+"	      00428302    lea eax,szNewDirectory[0]"
 "	      00428308    push eax"
 "	      00428309    mov ecx,3E8h"
-"	      0042830e    mov eax,[ebp-104h]"
+"	      0042830e    mov eax,nFullStringID"
 "	      00428314    sub edx,edx"
 "	      00428316    div ecx"
 "	      00428318    push edx"
@@ -1267,7 +1267,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      0042831f    call dword ptr ds:[6C38B4h]"
 "	      00428325    mov [ebp-7F0h],eax"
 "	      0042832b    push 597200h"
-"	      00428330    lea eax,[ebp-310h]"
+"	      00428330    lea eax,szNewDirectory[0]"
 "	      00428336    push eax"
 "	      00428337    call 0056CEC0h"
 "	      0042833c    add esp,8"
@@ -1276,9 +1276,9 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 343:
 	asm( 
-"	      00428349    lea eax,[ebp-310h]"
+"	      00428349    lea eax,szNewDirectory[0]"
 "	      0042834f    push eax"
-"	      00428350    lea eax,[ebp-618h]"
+"	      00428350    lea eax,szGameFileSavePath[0]"
 "	      00428356    push eax"
 "	      00428357    call 0056CEC0h"
 "	      0042835c    add esp,8"
@@ -1291,7 +1291,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00428369    mov [ebp-7D0h],eax"
 "	      0042836f    cmp dword ptr [ebp-7D0h],0"
 "	      00428376    je near ptr 00428399h"
-"	      0042837c    lea eax,[ebp-618h]"
+"	      0042837c    lea eax,szGameFileSavePath[0]"
 "	      00428382    push eax"
 "	      00428383    mov ecx,[ebp-7D0h]"
 "	      00428389    call 0041DFE0h"
@@ -1349,7 +1349,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00428493    mov [ebp-7D4h],eax"
 "	      00428499    cmp dword ptr [ebp-7D4h],0"
 "	      004284a0    je near ptr 00428572h"
-"	      004284a6    lea eax,[ebp-310h]"
+"	      004284a6    lea eax,szNewDirectory[0]"
 "	      004284ac    push eax"
 "	      004284ad    call 0056ABE0h"
 "	      004284b2    add esp,4"
@@ -1378,7 +1378,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 "	      00428516    mov [ebp-7DCh],eax"
 "	      0042851c    mov eax,[ebp-7D8h]"
 "	      00428522    push eax"
-"	      00428523    lea eax,[ebp-310h]"
+"	      00428523    lea eax,szNewDirectory[0]"
 "	      00428529    push eax"
 "	      0042852a    mov eax,[ebp-7DCh]"
 "	      00428530    push eax"
@@ -1501,9 +1501,9 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 346:
 	asm( 
-"	      0042878c    lea eax,[ebp-718h]"
+"	      0042878c    lea eax,szSplitPathFilename[0]"
 "	      00428792    push eax"
-"	      00428793    lea eax,[ebp-618h]"
+"	      00428793    lea eax,szGameFileSavePath[0]"
 "	      00428799    push eax"
 "	      0042879a    call 0056CEC0h"
 "	      0042879f    add esp,8"
@@ -1515,11 +1515,11 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 355:
 	asm( 
-"	      004287af    mov dword ptr [ebp-10Ch],2Fh"
+"	      004287af    mov nFullTitleID,2Fh"
 );
 // LINE 356:
 	asm( 
-"	      004287b9    mov dword ptr [ebp-71Ch],2Dh"
+"	      004287b9    mov nFullFilterID,2Dh"
 );
 // LINE 358:
 	asm( 
@@ -1527,46 +1527,46 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 359:
 	asm( 
-"	      004287c8    mov dword ptr [ebp-10Ch],2Eh"
+"	      004287c8    mov nFullTitleID,2Eh"
 );
 // LINE 360:
 	asm( 
-"	      004287d2    mov dword ptr [ebp-71Ch],2Bh"
+"	      004287d2    mov nFullFilterID,2Bh"
 );
 // LINE 362:
 	asm( 
 "	      004287dc    push 0"
-"	      004287de    mov eax,[ebp-10Ch]"
+"	      004287de    mov eax,nFullTitleID"
 "	      004287e4    push eax"
 "	      004287e5    call 0042B15Fh"
 "	      004287ea    add esp,8"
-"	      004287ed    mov [ebp-10Ch],eax"
+"	      004287ed    mov nFullTitleID,eax"
 );
 // LINE 363:
 	asm( 
 "	      004287f3    push 0"
-"	      004287f5    mov eax,[ebp-71Ch]"
+"	      004287f5    mov eax,nFullFilterID"
 "	      004287fb    push eax"
 "	      004287fc    call 0042B15Fh"
 "	      00428801    add esp,8"
-"	      00428804    mov [ebp-71Ch],eax"
+"	      00428804    mov nFullFilterID,eax"
 );
 // LINE 365:
 	asm( 
 "	      0042880a    push 0"
-"	      0042880c    mov eax,[ebp-71Ch]"
+"	      0042880c    mov eax,nFullFilterID"
 "	      00428812    push eax"
-"	      00428813    mov eax,[ebp-10Ch]"
+"	      00428813    mov eax,nFullTitleID"
 "	      00428819    push eax"
-"	      0042881a    lea eax,[ebp-618h]"
+"	      0042881a    lea eax,szGameFileSavePath[0]"
 "	      00428820    push eax"
 "	      00428821    call 004909E3h"
 "	      00428826    add esp,10h"
-"	      00428829    mov [ebp-720h],eax"
+"	      00428829    mov nResult,eax"
 );
 // LINE 366:
 	asm( 
-"	      0042882f    cmp dword ptr [ebp-720h],0"
+"	      0042882f    cmp nResult,0"
 "	      00428836    je near ptr 00428846h"
 );
 // LINE 367:
@@ -1576,42 +1576,42 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 373:
 	asm( 
-"	      00428846    lea eax,[ebp-100h]"
+"	      00428846    lea eax,szSplitPathExtension[0]"
 "	      0042884c    push eax"
-"	      0042884d    lea eax,[ebp-718h]"
+"	      0042884d    lea eax,szSplitPathFilename[0]"
 "	      00428853    push eax"
-"	      00428854    lea eax,[ebp-410h]"
+"	      00428854    lea eax,szSplitPathDirectory[0]"
 "	      0042885a    push eax"
-"	      0042885b    lea eax,[ebp-108h]"
+"	      0042885b    lea eax,szSplitPathDrive[0]"
 "	      00428861    push eax"
-"	      00428862    lea eax,[ebp-618h]"
+"	      00428862    lea eax,szGameFileSavePath[0]"
 "	      00428868    push eax"
 "	      00428869    call 0056DDF0h"
 "	      0042886e    add esp,14h"
 );
 // LINE 376:
 	asm( 
-"	      00428871    lea eax,[ebp-108h]"
+"	      00428871    lea eax,szSplitPathDrive[0]"
 "	      00428877    push eax"
-"	      00428878    lea eax,[ebp-618h]"
+"	      00428878    lea eax,szGameFileSavePath[0]"
 "	      0042887e    push eax"
 "	      0042887f    call 0056CEB0h"
 "	      00428884    add esp,8"
 );
 // LINE 377:
 	asm( 
-"	      00428887    lea eax,[ebp-410h]"
+"	      00428887    lea eax,szSplitPathDirectory[0]"
 "	      0042888d    push eax"
-"	      0042888e    lea eax,[ebp-618h]"
+"	      0042888e    lea eax,szGameFileSavePath[0]"
 "	      00428894    push eax"
 "	      00428895    call 0056CEC0h"
 "	      0042889a    add esp,8"
 );
 // LINE 378:
 	asm( 
-"	      0042889d    lea eax,[ebp-718h]"
+"	      0042889d    lea eax,szSplitPathFilename[0]"
 "	      004288a3    push eax"
-"	      004288a4    lea eax,[ebp-618h]"
+"	      004288a4    lea eax,szGameFileSavePath[0]"
 "	      004288aa    push eax"
 "	      004288ab    call 0056CEC0h"
 "	      004288b0    add esp,8"
@@ -1623,12 +1623,12 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 381:
 	asm( 
-"	      004288c0    movsx eax,byte ptr [ebp-100h]"
+"	      004288c0    movsx eax,szSplitPathExtension[0]"
 "	      004288c7    test eax,eax"
 "	      004288c9    je near ptr 00428902h"
 "	      004288cf    mov eax,ds:[597488h]"
 "	      004288d4    push eax"
-"	      004288d5    lea eax,[ebp-100h]"
+"	      004288d5    lea eax,szSplitPathExtension[0]"
 "	      004288db    push eax"
 "	      004288dc    call 0056CE20h"
 "	      004288e1    add esp,8"
@@ -1637,18 +1637,18 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 382:
 	asm( 
-"	      004288ec    lea eax,[ebp-100h]"
+"	      004288ec    lea eax,szSplitPathExtension[0]"
 "	      004288f2    push eax"
-"	      004288f3    lea eax,[ebp-618h]"
+"	      004288f3    lea eax,szGameFileSavePath[0]"
 "	      004288f9    push eax"
 "	      004288fa    call 0056CEC0h"
 "	      004288ff    add esp,8"
 );
 // LINE 383:
 	asm( 
-"	      00428902    lea eax,[ebp-618h]"
+"	      00428902    lea eax,szGameFileSavePath[0]"
 "	      00428908    push eax"
-"	      00428909    lea eax,[ebp-514h]"
+"	      00428909    lea eax,szCityFileSavePath[0]"
 "	      0042890f    push eax"
 "	      00428910    call 0056CEB0h"
 "	      00428915    add esp,8"
@@ -1657,7 +1657,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	asm( 
 "	      00428918    mov eax,ds:[597488h]"
 "	      0042891d    push eax"
-"	      0042891e    lea eax,[ebp-618h]"
+"	      0042891e    lea eax,szGameFileSavePath[0]"
 "	      00428924    push eax"
 "	      00428925    call 0056CEC0h"
 "	      0042892a    add esp,8"
@@ -1668,12 +1668,12 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 387:
 	asm( 
-"	      00428932    movsx eax,byte ptr [ebp-100h]"
+"	      00428932    movsx eax,szSplitPathExtension[0]"
 "	      00428939    test eax,eax"
 "	      0042893b    je near ptr 00428974h"
 "	      00428941    mov eax,ds:[59748Ch]"
 "	      00428946    push eax"
-"	      00428947    lea eax,[ebp-100h]"
+"	      00428947    lea eax,szSplitPathExtension[0]"
 "	      0042894d    push eax"
 "	      0042894e    call 0056CE20h"
 "	      00428953    add esp,8"
@@ -1682,18 +1682,18 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 388:
 	asm( 
-"	      0042895e    lea eax,[ebp-100h]"
+"	      0042895e    lea eax,szSplitPathExtension[0]"
 "	      00428964    push eax"
-"	      00428965    lea eax,[ebp-618h]"
+"	      00428965    lea eax,szGameFileSavePath[0]"
 "	      0042896b    push eax"
 "	      0042896c    call 0056CEC0h"
 "	      00428971    add esp,8"
 );
 // LINE 389:
 	asm( 
-"	      00428974    lea eax,[ebp-618h]"
+"	      00428974    lea eax,szGameFileSavePath[0]"
 "	      0042897a    push eax"
-"	      0042897b    lea eax,[ebp-514h]"
+"	      0042897b    lea eax,szCityFileSavePath[0]"
 "	      00428981    push eax"
 "	      00428982    call 0056CEB0h"
 "	      00428987    add esp,8"
@@ -1702,7 +1702,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	asm( 
 "	      0042898a    mov eax,ds:[59748Ch]"
 "	      0042898f    push eax"
-"	      00428990    lea eax,[ebp-618h]"
+"	      00428990    lea eax,szGameFileSavePath[0]"
 "	      00428996    push eax"
 "	      00428997    call 0056CEC0h"
 "	      0042899c    add esp,8"
@@ -1711,68 +1711,68 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	asm( 
 "	      0042899f    mov eax,ds:[597484h]"
 "	      004289a4    push eax"
-"	      004289a5    lea eax,[ebp-514h]"
+"	      004289a5    lea eax,szCityFileSavePath[0]"
 "	      004289ab    push eax"
 "	      004289ac    call 0056CEC0h"
 "	      004289b1    add esp,8"
 );
 // LINE 396:
 	asm( 
-"	      004289b4    lea eax,[ebp-514h]"
+"	      004289b4    lea eax,szCityFileSavePath[0]"
 "	      004289ba    push eax"
-"	      004289bb    lea eax,[ebp-618h]"
+"	      004289bb    lea eax,szGameFileSavePath[0]"
 "	      004289c1    push eax"
-"	      004289c2    mov ecx,[ebp-808h]"
+"	      004289c2    mov ecx,this"
 "	      004289c8    call 00427BF4h"
-"	      004289cd    mov [ebp-720h],eax"
+"	      004289cd    mov nResult,eax"
 );
 // LINE 398:
 	asm( 
-"	      004289d3    cmp dword ptr [ebp-720h],0"
+"	      004289d3    cmp nResult,0"
 "	      004289da    jne near ptr 00428A64h"
 );
 // LINE 399:
 	asm( 
-"	      004289e0    lea eax,[ebp-100h]"
+"	      004289e0    lea eax,szSplitPathExtension[0]"
 "	      004289e6    push eax"
-"	      004289e7    lea eax,[ebp-718h]"
+"	      004289e7    lea eax,szSplitPathFilename[0]"
 "	      004289ed    push eax"
-"	      004289ee    lea eax,[ebp-410h]"
+"	      004289ee    lea eax,szSplitPathDirectory[0]"
 "	      004289f4    push eax"
-"	      004289f5    lea eax,[ebp-108h]"
+"	      004289f5    lea eax,szSplitPathDrive[0]"
 "	      004289fb    push eax"
-"	      004289fc    lea eax,[ebp-618h]"
+"	      004289fc    lea eax,szGameFileSavePath[0]"
 "	      00428a02    push eax"
 "	      00428a03    call 0056DDF0h"
 "	      00428a08    add esp,14h"
 );
 // LINE 400:
 	asm( 
-"	      00428a0b    lea eax,[ebp-108h]"
+"	      00428a0b    lea eax,szSplitPathDrive[0]"
 "	      00428a11    push eax"
-"	      00428a12    lea eax,[ebp-20Ch]"
+"	      00428a12    lea eax,szSplitPathFullDirectory[0]"
 "	      00428a18    push eax"
 "	      00428a19    call 0056CEB0h"
 "	      00428a1e    add esp,8"
 );
 // LINE 401:
 	asm( 
-"	      00428a21    lea eax,[ebp-410h]"
+"	      00428a21    lea eax,szSplitPathDirectory[0]"
 "	      00428a27    push eax"
-"	      00428a28    lea eax,[ebp-20Ch]"
+"	      00428a28    lea eax,szSplitPathFullDirectory[0]"
 "	      00428a2e    push eax"
 "	      00428a2f    call 0056CEC0h"
 "	      00428a34    add esp,8"
 );
 // LINE 402:
 	asm( 
-"	      00428a37    lea eax,[ebp-20Ch]"
+"	      00428a37    lea eax,szSplitPathFullDirectory[0]"
 "	      00428a3d    push eax"
 "	      00428a3e    call 0056ABE0h"
 "	      00428a43    add esp,4"
 "	      00428a46    inc eax"
 "	      00428a47    push eax"
-"	      00428a48    lea eax,[ebp-20Ch]"
+"	      00428a48    lea eax,szSplitPathFullDirectory[0]"
 "	      00428a4e    push eax"
 "	      00428a4f    push 7EEEEEEh"
 "	      00428a54    mov eax,ds:[599BC4h]"
@@ -1782,7 +1782,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 );
 // LINE 405:
 	asm( 
-"	      00428a64    mov eax,[ebp-720h]"
+"	      00428a64    mov eax,nResult"
 "	      00428a6a    jmp near ptr 00428A6Fh"
 );
 // LINE 406:
@@ -1808,18 +1808,18 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 "	      00428a7d    push ebx"
 "	      00428a7e    push esi"
 "	      00428a7f    push edi"
-"	      00428a80    mov [ebp-16Ch],ecx"
+"	      00428a80    mov this,ecx"
 );
 // LINE 422:
 	asm( 
-"	      00428a86    mov eax,[ebp+8]"
+"	      00428a86    mov eax,szGamePath"
 "	      00428a89    push eax"
-"	      00428a8a    lea ecx,[ebp-14Ch]"
+"	      00428a8a    lea ecx,myMIFF.<vftable>"
 "	      00428a90    call 004AB6F5h"
 );
 // LINE 425:
 	asm( 
-"	      00428a95    lea ecx,[ebp-14Ch]"
+"	      00428a95    lea ecx,myMIFF.<vftable>"
 "	      00428a9b    call 004AB878h"
 "	      00428aa0    test eax,eax"
 "	      00428aa2    jne near ptr 00428AC8h"
@@ -1827,57 +1827,57 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 426:
 	asm( 
 "	      00428aa8    mov dword ptr [ebp-150h],0"
-"	      00428ab2    lea ecx,[ebp-14Ch]"
+"	      00428ab2    lea ecx,myMIFF.<vftable>"
 "	      00428ab8    call 004AB7CFh"
 "	      00428abd    mov eax,[ebp-150h]"
 "	      00428ac3    jmp near ptr 00428C31h"
 );
 // LINE 428:
 	asm( 
-"	      00428ac8    lea ecx,[ebp-14Ch]"
+"	      00428ac8    lea ecx,myMIFF.<vftable>"
 "	      00428ace    call 004ABB95h"
 "	      00428ad3    test eax,eax"
 "	      00428ad5    je near ptr 00428AF1h"
-"	      00428adb    lea ecx,[ebp-14Ch]"
+"	      00428adb    lea ecx,myMIFF.<vftable>"
 "	      00428ae1    call 004ABCBAh"
 "	      00428ae6    cmp eax,43505452h"
 "	      00428aeb    je near ptr 00428B1Ch"
 );
 // LINE 429:
 	asm( 
-"	      00428af1    lea ecx,[ebp-14Ch]"
+"	      00428af1    lea ecx,myMIFF.<vftable>"
 "	      00428af7    call 004ABB47h"
 );
 // LINE 430:
 	asm( 
 "	      00428afc    mov dword ptr [ebp-154h],0"
-"	      00428b06    lea ecx,[ebp-14Ch]"
+"	      00428b06    lea ecx,myMIFF.<vftable>"
 "	      00428b0c    call 004AB7CFh"
 "	      00428b11    mov eax,[ebp-154h]"
 "	      00428b17    jmp near ptr 00428C31h"
 );
 // LINE 433:
 	asm( 
-"	      00428b1c    lea ecx,[ebp-14Ch]"
+"	      00428b1c    lea ecx,myMIFF.<vftable>"
 "	      00428b22    call 004ABD6Eh"
-"	      00428b27    mov [ebp-4],eax"
+"	      00428b27    mov lFileType,eax"
 );
 // LINE 435:
 	asm( 
-"	      00428b2a    cmp dword ptr [ebp-4],43524552h"
+"	      00428b2a    cmp lFileType,43524552h"
 "	      00428b31    je near ptr 00428B6Fh"
-"	      00428b37    cmp dword ptr [ebp-4],55534552h"
+"	      00428b37    cmp lFileType,55534552h"
 "	      00428b3e    je near ptr 00428B6Fh"
 );
 // LINE 437:
 	asm( 
-"	      00428b44    lea ecx,[ebp-14Ch]"
+"	      00428b44    lea ecx,myMIFF.<vftable>"
 "	      00428b4a    call 004ABB47h"
 );
 // LINE 438:
 	asm( 
 "	      00428b4f    mov dword ptr [ebp-158h],0"
-"	      00428b59    lea ecx,[ebp-14Ch]"
+"	      00428b59    lea ecx,myMIFF.<vftable>"
 "	      00428b5f    call 004AB7CFh"
 "	      00428b64    mov eax,[ebp-158h]"
 "	      00428b6a    jmp near ptr 00428C31h"
@@ -1885,33 +1885,33 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 443:
 	asm( 
 "	      00428b6f    push 4346494Ch"
-"	      00428b74    lea ecx,[ebp-14Ch]"
+"	      00428b74    lea ecx,myMIFF.<vftable>"
 "	      00428b7a    call 004AC332h"
 "	      00428b7f    test eax,eax"
 "	      00428b81    jne near ptr 00428BB2h"
 );
 // LINE 444:
 	asm( 
-"	      00428b87    lea ecx,[ebp-14Ch]"
+"	      00428b87    lea ecx,myMIFF.<vftable>"
 "	      00428b8d    call 004ABB47h"
 );
 // LINE 445:
 	asm( 
 "	      00428b92    mov dword ptr [ebp-15Ch],0"
-"	      00428b9c    lea ecx,[ebp-14Ch]"
+"	      00428b9c    lea ecx,myMIFF.<vftable>"
 "	      00428ba2    call 004AB7CFh"
 "	      00428ba7    mov eax,[ebp-15Ch]"
 "	      00428bad    jmp near ptr 00428C31h"
 );
 // LINE 450:
 	asm( 
-"	      00428bb2    cmp dword ptr [ebp-4],55534552h"
+"	      00428bb2    cmp lFileType,55534552h"
 "	      00428bb9    jne near ptr 00428BE4h"
 );
 // LINE 451:
 	asm( 
 "	      00428bbf    mov dword ptr [ebp-160h],3"
-"	      00428bc9    lea ecx,[ebp-14Ch]"
+"	      00428bc9    lea ecx,myMIFF.<vftable>"
 "	      00428bcf    call 004AB7CFh"
 "	      00428bd4    mov eax,[ebp-160h]"
 "	      00428bda    jmp near ptr 00428C31h"
@@ -1919,13 +1919,13 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 452:
 	asm( 
 "	      00428bdf    jmp near ptr 00428C11h"
-"	      00428be4    cmp dword ptr [ebp-4],43524552h"
+"	      00428be4    cmp lFileType,43524552h"
 "	      00428beb    jne near ptr 00428C11h"
 );
 // LINE 453:
 	asm( 
 "	      00428bf1    mov dword ptr [ebp-164h],4"
-"	      00428bfb    lea ecx,[ebp-14Ch]"
+"	      00428bfb    lea ecx,myMIFF.<vftable>"
 "	      00428c01    call 004AB7CFh"
 "	      00428c06    mov eax,[ebp-164h]"
 "	      00428c0c    jmp near ptr 00428C31h"
@@ -1933,7 +1933,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 454:
 	asm( 
 "	      00428c11    mov dword ptr [ebp-168h],0"
-"	      00428c1b    lea ecx,[ebp-14Ch]"
+"	      00428c1b    lea ecx,myMIFF.<vftable>"
 "	      00428c21    call 004AB7CFh"
 "	      00428c26    mov eax,[ebp-168h]"
 "	      00428c2c    jmp near ptr 00428C31h"
@@ -1958,16 +1958,16 @@ int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
 "	      00428c3e    push ebx"
 "	      00428c3f    push esi"
 "	      00428c40    push edi"
-"	      00428c41    mov [ebp-4],ecx"
+"	      00428c41    mov this,ecx"
 );
 // LINE 463:
 	asm( 
 "	      00428c44    push 1"
-"	      00428c46    mov eax,[ebp+8]"
+"	      00428c46    mov eax,nResult"
 "	      00428c49    add eax,15Eh"
 "	      00428c4e    push eax"
 "	      00428c4f    push 7D9h"
-"	      00428c54    mov ecx,[ebp-4]"
+"	      00428c54    mov ecx,this"
 "	      00428c57    call 0043F2B9h"
 "	      00428c5c    jmp near ptr 00428C61h"
 );

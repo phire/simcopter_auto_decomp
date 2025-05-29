@@ -15,79 +15,79 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 "	      00495406    push ebx"
 "	      00495407    push esi"
 "	      00495408    push edi"
-"	      00495409    mov [ebp-4],ecx"
+"	      00495409    mov this,ecx"
 "	      0049540c    push 0"
-"	      0049540e    mov eax,[ebp+10h]"
+"	      0049540e    mov eax,nNewBitmapHeight"
 "	      00495411    push eax"
-"	      00495412    mov eax,[ebp+0Ch]"
+"	      00495412    mov eax,nNewBitmapWidth"
 "	      00495415    push eax"
-"	      00495416    mov ecx,[ebp-4]"
+"	      00495416    mov ecx,this"
 "	      00495419    call 0046EA06h"
-"	      0049541e    mov eax,[ebp+8]"
-"	      00495421    mov ecx,[ebp-4]"
+"	      0049541e    mov eax,nNewSkyType"
+"	      00495421    mov ecx,this"
 "	      00495424    mov [ecx+13Ch],eax"
-"	      0049542a    mov eax,[ebp-4]"
+"	      0049542a    mov eax,this"
 "	      0049542d    mov dword ptr [eax],591090h"
 );
 // LINE 31:
 	asm( 
-"	      00495433    mov eax,[ebp-4]"
+"	      00495433    mov eax,this"
 "	      00495436    mov dword ptr [eax+134h],280h"
 );
 // LINE 32:
 	asm( 
-"	      00495440    mov eax,[ebp-4]"
+"	      00495440    mov eax,this"
 "	      00495443    mov dword ptr [eax+138h],0C8h"
 );
 // LINE 38:
 	asm( 
-"	      0049544d    mov eax,[ebp-4]"
+"	      0049544d    mov eax,this"
 "	      00495450    mov eax,[eax+134h]"
 "	      00495456    shl eax,10h"
 "	      00495459    mov ecx,0E10h"
 "	      0049545e    cdq"
 "	      0049545f    idiv ecx"
-"	      00495461    mov ecx,[ebp-4]"
+"	      00495461    mov ecx,this"
 "	      00495464    mov [ecx+140h],eax"
 );
 // LINE 42:
 	asm( 
 "	      0049546a    mov eax,ds:[67ED20h]"
 "	      0049546f    add eax,0C80000h"
-"	      00495474    mov ecx,[ebp-4]"
+"	      00495474    mov ecx,this"
 "	      00495477    mov [ecx+144h],eax"
 );
 // LINE 46:
 	asm( 
-"	      0049547d    mov eax,[ebp-4]"
+"	      0049547d    mov eax,this"
 "	      00495480    mov eax,[eax+138h]"
 "	      00495486    shl eax,10h"
 "	      00495489    mov ecx,3E8h"
 "	      0049548e    cdq"
 "	      0049548f    idiv ecx"
-"	      00495491    mov ecx,[ebp-4]"
+"	      00495491    mov ecx,this"
 "	      00495494    mov [ecx+148h],eax"
 );
 // LINE 49:
 	asm( 
-"	      0049549a    mov eax,[ebp-4]"
+"	      0049549a    mov eax,this"
 "	      0049549d    mov eax,[eax+138h]"
 "	      004954a3    shl eax,10h"
 "	      004954a6    mov ecx,320h"
 "	      004954ab    cdq"
 "	      004954ac    idiv ecx"
-"	      004954ae    mov ecx,[ebp-4]"
+"	      004954ae    mov ecx,this"
 "	      004954b1    mov [ecx+14Ch],eax"
 );
 // LINE 51:
 	asm( 
-"	      004954b7    mov ecx,[ebp-4]"
+"	      004954b7    mov ecx,this"
 "	      004954ba    call 00495575h"
 );
 // LINE 52:
 	asm( 
 "	      004954bf    jmp near ptr 004954C4h"
-"	      004954c4    mov eax,[ebp-4]"
+"	      004954c4    mov eax,this"
 "	      004954c7    pop edi"
 "	      004954c8    pop esi"
 "	      004954c9    pop ebx"
@@ -106,24 +106,24 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 "	      004954d4    push ebx"
 "	      004954d5    push esi"
 "	      004954d6    push edi"
-"	      004954d7    mov [ebp-4],ecx"
+"	      004954d7    mov this,ecx"
 );
 // LINE 60:
 	asm( 
-"	      004954da    mov eax,[ebp-4]"
-"	      004954dd    mov ecx,[ebp+8]"
+"	      004954da    mov eax,this"
+"	      004954dd    mov ecx,nNewSkyType"
 "	      004954e0    cmp [eax+13Ch],ecx"
 "	      004954e6    je near ptr 00495500h"
 );
 // LINE 61:
 	asm( 
-"	      004954ec    mov eax,[ebp+8]"
-"	      004954ef    mov ecx,[ebp-4]"
+"	      004954ec    mov eax,nNewSkyType"
+"	      004954ef    mov ecx,this"
 "	      004954f2    mov [ecx+13Ch],eax"
 );
 // LINE 62:
 	asm( 
-"	      004954f8    mov ecx,[ebp-4]"
+"	      004954f8    mov ecx,this"
 "	      004954fb    call 00495575h"
 );
 // LINE 64:
@@ -147,20 +147,20 @@ void SkyImage::SwitchToProperSkyType() {
 "	      00495512    push ebx"
 "	      00495513    push esi"
 "	      00495514    push edi"
-"	      00495515    mov [ebp-4],ecx"
+"	      00495515    mov this,ecx"
 );
 // LINE 71:
 	asm( 
 "	      00495518    cmp dword ptr ds:[598E90h],0"
 "	      0049551f    jne near ptr 00495544h"
-"	      00495525    mov eax,[ebp-4]"
+"	      00495525    mov eax,this"
 "	      00495528    cmp dword ptr [eax+13Ch],0"
 "	      0049552f    je near ptr 00495544h"
 );
 // LINE 72:
 	asm( 
 "	      00495535    push 0"
-"	      00495537    mov ecx,[ebp-4]"
+"	      00495537    mov ecx,this"
 "	      0049553a    call 004954CEh"
 );
 // LINE 73:
@@ -168,14 +168,14 @@ void SkyImage::SwitchToProperSkyType() {
 "	      0049553f    jmp near ptr 0049556Bh"
 "	      00495544    cmp dword ptr ds:[598E90h],1"
 "	      0049554b    jne near ptr 0049556Bh"
-"	      00495551    mov eax,[ebp-4]"
+"	      00495551    mov eax,this"
 "	      00495554    cmp dword ptr [eax+13Ch],1"
 "	      0049555b    je near ptr 0049556Bh"
 );
 // LINE 74:
 	asm( 
 "	      00495561    push 1"
-"	      00495563    mov ecx,[ebp-4]"
+"	      00495563    mov ecx,this"
 "	      00495566    call 004954CEh"
 );
 // LINE 75:
@@ -206,17 +206,17 @@ int32_t SkyImage::LoadImageA() {
 "	      0049557e    push ebx"
 "	      0049557f    push esi"
 "	      00495580    push edi"
-"	      00495581    mov [ebp-11Ch],ecx"
+"	      00495581    mov this,ecx"
 );
 // LINE 102:
 	asm( 
-"	      00495587    mov eax,[ebp-11Ch]"
+"	      00495587    mov eax,this"
 "	      0049558d    cmp dword ptr [eax+13Ch],0"
 "	      00495594    jne near ptr 004955B8h"
 );
 // LINE 103:
 	asm( 
-"	      0049559a    lea eax,[ebp-10Ch]"
+"	      0049559a    lea eax,szFullSkyImagePath[0]"
 "	      004955a0    push eax"
 "	      004955a1    mov eax,ds:[59A120h]"
 "	      004955a6    push eax"
@@ -231,7 +231,7 @@ int32_t SkyImage::LoadImageA() {
 );
 // LINE 105:
 	asm( 
-"	      004955b8    lea eax,[ebp-10Ch]"
+"	      004955b8    lea eax,szFullSkyImagePath[0]"
 "	      004955be    push eax"
 "	      004955bf    mov eax,ds:[59A124h]"
 "	      004955c4    push eax"
@@ -244,15 +244,15 @@ int32_t SkyImage::LoadImageA() {
 	asm( 
 "	      004955d1    push 59A13Ch"
 "	      004955d6    push 3"
-"	      004955d8    lea eax,[ebp-10Ch]"
+"	      004955d8    lea eax,szFullSkyImagePath[0]"
 "	      004955de    push eax"
 "	      004955df    call 004D5356h"
 "	      004955e4    add esp,0Ch"
-"	      004955e7    mov [ebp-114h],eax"
+"	      004955e7    mov vrResource,eax"
 );
 // LINE 108:
 	asm( 
-"	      004955ed    cmp dword ptr [ebp-114h],0"
+"	      004955ed    cmp vrResource,0"
 "	      004955f4    jne near ptr 00495601h"
 );
 // LINE 109:
@@ -263,30 +263,30 @@ int32_t SkyImage::LoadImageA() {
 // LINE 112:
 	asm( 
 "	      00495601    push 0"
-"	      00495603    mov eax,[ebp-114h]"
+"	      00495603    mov eax,vrResource"
 "	      00495609    push eax"
 "	      0049560a    call 004D6246h"
 "	      0049560f    add esp,8"
-"	      00495612    mov [ebp-4],eax"
+"	      00495612    mov bmpHeader,eax"
 );
 // LINE 113:
 	asm( 
-"	      00495615    mov eax,[ebp-4]"
-"	      00495618    mov [ebp-8],eax"
+"	      00495615    mov eax,bmpHeader"
+"	      00495618    mov pSourceImage,eax"
 );
 // LINE 114:
 	asm( 
-"	      0049561b    mov eax,[ebp-4]"
+"	      0049561b    mov eax,bmpHeader"
 "	      0049561e    mov eax,[eax+4]"
 "	      00495621    shl eax,2"
 "	      00495624    add eax,0Ch"
-"	      00495627    add [ebp-8],eax"
+"	      00495627    add pSourceImage,eax"
 );
 // LINE 117:
 	asm( 
-"	      0049562a    mov eax,[ebp-11Ch]"
+"	      0049562a    mov eax,this"
 "	      00495630    mov eax,[eax]"
-"	      00495632    mov ecx,[ebp-11Ch]"
+"	      00495632    mov ecx,this"
 "	      00495638    call dword ptr [eax]"
 "	      0049563a    test eax,eax"
 "	      0049563c    je near ptr 004956E1h"
@@ -294,28 +294,28 @@ int32_t SkyImage::LoadImageA() {
 // LINE 118:
 	asm( 
 "	      00495642    jmp near ptr 00495647h"
-"	      00495647    mov eax,[ebp-11Ch]"
+"	      00495647    mov eax,this"
 "	      0049564d    mov eax,[eax+10h]"
-"	      00495650    mov [ebp-118h],eax"
+"	      00495650    mov pDestinationImage,eax"
 );
 // LINE 119:
 	asm( 
-"	      00495656    mov dword ptr [ebp-110h],0"
+"	      00495656    mov i,0"
 "	      00495660    jmp near ptr 0049566Bh"
-"	      00495665    inc dword ptr [ebp-110h]"
-"	      0049566b    mov eax,[ebp-11Ch]"
-"	      00495671    mov ecx,[ebp-110h]"
+"	      00495665    inc i"
+"	      0049566b    mov eax,this"
+"	      00495671    mov ecx,i"
 "	      00495677    cmp [eax+138h],ecx"
 "	      0049567d    jle near ptr 004956CBh"
 );
 // LINE 120:
 	asm( 
-"	      00495683    mov eax,[ebp-11Ch]"
+"	      00495683    mov eax,this"
 "	      00495689    mov eax,[eax+134h]"
 "	      0049568f    push eax"
-"	      00495690    mov eax,[ebp-8]"
+"	      00495690    mov eax,pSourceImage"
 "	      00495693    push eax"
-"	      00495694    mov eax,[ebp-118h]"
+"	      00495694    mov eax,pDestinationImage"
 "	      0049569a    push eax"
 "	      0049569b    call 0056A800h"
 "	      004956a0    add esp,0Ch"
@@ -323,15 +323,15 @@ int32_t SkyImage::LoadImageA() {
 // LINE 121:
 	asm( 
 "	      004956a3    jmp near ptr 004956A8h"
-"	      004956a8    mov eax,[ebp-11Ch]"
+"	      004956a8    mov eax,this"
 "	      004956ae    mov eax,[eax+14h]"
-"	      004956b1    add [ebp-118h],eax"
+"	      004956b1    add pDestinationImage,eax"
 );
 // LINE 122:
 	asm( 
-"	      004956b7    mov eax,[ebp-11Ch]"
+"	      004956b7    mov eax,this"
 "	      004956bd    mov eax,[eax+134h]"
-"	      004956c3    add [ebp-8],eax"
+"	      004956c3    add pSourceImage,eax"
 );
 // LINE 123:
 	asm( 
@@ -339,9 +339,9 @@ int32_t SkyImage::LoadImageA() {
 );
 // LINE 124:
 	asm( 
-"	      004956cb    mov eax,[ebp-11Ch]"
+"	      004956cb    mov eax,this"
 "	      004956d1    mov eax,[eax]"
-"	      004956d3    mov ecx,[ebp-11Ch]"
+"	      004956d3    mov ecx,this"
 "	      004956d9    call dword ptr [eax+4]"
 );
 // LINE 126:
@@ -365,41 +365,41 @@ int32_t SkyImage::LoadImageA() {
 "	      004956fc    push eax"
 "	      004956fd    call 004D6246h"
 "	      00495702    add esp,8"
-"	      00495705    mov [ebp-4],eax"
+"	      00495705    mov bmpHeader,eax"
 );
 // LINE 137:
 	asm( 
-"	      00495708    mov eax,[ebp-4]"
-"	      0049570b    mov [ebp-118h],eax"
+"	      00495708    mov eax,bmpHeader"
+"	      0049570b    mov pDestinationImage,eax"
 );
 // LINE 138:
 	asm( 
-"	      00495711    add dword ptr [ebp-118h],40Ch"
+"	      00495711    add pDestinationImage,40Ch"
 );
 // LINE 141:
 	asm( 
 "	      0049571b    push 1"
-"	      0049571d    mov eax,[ebp-114h]"
+"	      0049571d    mov eax,vrResource"
 "	      00495723    push eax"
 "	      00495724    call 004D6246h"
 "	      00495729    add esp,8"
-"	      0049572c    mov [ebp-4],eax"
+"	      0049572c    mov bmpHeader,eax"
 );
 // LINE 142:
 	asm( 
-"	      0049572f    mov eax,[ebp-4]"
-"	      00495732    mov [ebp-8],eax"
+"	      0049572f    mov eax,bmpHeader"
+"	      00495732    mov pSourceImage,eax"
 );
 // LINE 143:
 	asm( 
-"	      00495735    add dword ptr [ebp-8],40Ch"
+"	      00495735    add pSourceImage,40Ch"
 );
 // LINE 146:
 	asm( 
 "	      0049573c    push 10000h"
-"	      00495741    mov eax,[ebp-8]"
+"	      00495741    mov eax,pSourceImage"
 "	      00495744    push eax"
-"	      00495745    mov eax,[ebp-118h]"
+"	      00495745    mov eax,pDestinationImage"
 "	      0049574b    push eax"
 "	      0049574c    call 0056A800h"
 "	      00495751    add esp,0Ch"
@@ -411,41 +411,41 @@ int32_t SkyImage::LoadImageA() {
 "	      0049575b    push eax"
 "	      0049575c    call 004D6246h"
 "	      00495761    add esp,8"
-"	      00495764    mov [ebp-4],eax"
+"	      00495764    mov bmpHeader,eax"
 );
 // LINE 150:
 	asm( 
-"	      00495767    mov eax,[ebp-4]"
-"	      0049576a    mov [ebp-118h],eax"
+"	      00495767    mov eax,bmpHeader"
+"	      0049576a    mov pDestinationImage,eax"
 );
 // LINE 151:
 	asm( 
-"	      00495770    add dword ptr [ebp-118h],40Ch"
+"	      00495770    add pDestinationImage,40Ch"
 );
 // LINE 154:
 	asm( 
 "	      0049577a    push 2"
-"	      0049577c    mov eax,[ebp-114h]"
+"	      0049577c    mov eax,vrResource"
 "	      00495782    push eax"
 "	      00495783    call 004D6246h"
 "	      00495788    add esp,8"
-"	      0049578b    mov [ebp-4],eax"
+"	      0049578b    mov bmpHeader,eax"
 );
 // LINE 155:
 	asm( 
-"	      0049578e    mov eax,[ebp-4]"
-"	      00495791    mov [ebp-8],eax"
+"	      0049578e    mov eax,bmpHeader"
+"	      00495791    mov pSourceImage,eax"
 );
 // LINE 156:
 	asm( 
-"	      00495794    add dword ptr [ebp-8],40Ch"
+"	      00495794    add pSourceImage,40Ch"
 );
 // LINE 159:
 	asm( 
 "	      0049579b    push 10000h"
-"	      004957a0    mov eax,[ebp-8]"
+"	      004957a0    mov eax,pSourceImage"
 "	      004957a3    push eax"
-"	      004957a4    mov eax,[ebp-118h]"
+"	      004957a4    mov eax,pDestinationImage"
 "	      004957aa    push eax"
 "	      004957ab    call 0056A800h"
 "	      004957b0    add esp,0Ch"
@@ -457,41 +457,41 @@ int32_t SkyImage::LoadImageA() {
 "	      004957ba    push eax"
 "	      004957bb    call 004D6246h"
 "	      004957c0    add esp,8"
-"	      004957c3    mov [ebp-4],eax"
+"	      004957c3    mov bmpHeader,eax"
 );
 // LINE 163:
 	asm( 
-"	      004957c6    mov eax,[ebp-4]"
-"	      004957c9    mov [ebp-118h],eax"
+"	      004957c6    mov eax,bmpHeader"
+"	      004957c9    mov pDestinationImage,eax"
 );
 // LINE 164:
 	asm( 
-"	      004957cf    add dword ptr [ebp-118h],40Ch"
+"	      004957cf    add pDestinationImage,40Ch"
 );
 // LINE 167:
 	asm( 
 "	      004957d9    push 3"
-"	      004957db    mov eax,[ebp-114h]"
+"	      004957db    mov eax,vrResource"
 "	      004957e1    push eax"
 "	      004957e2    call 004D6246h"
 "	      004957e7    add esp,8"
-"	      004957ea    mov [ebp-4],eax"
+"	      004957ea    mov bmpHeader,eax"
 );
 // LINE 168:
 	asm( 
-"	      004957ed    mov eax,[ebp-4]"
-"	      004957f0    mov [ebp-8],eax"
+"	      004957ed    mov eax,bmpHeader"
+"	      004957f0    mov pSourceImage,eax"
 );
 // LINE 169:
 	asm( 
-"	      004957f3    add dword ptr [ebp-8],40Ch"
+"	      004957f3    add pSourceImage,40Ch"
 );
 // LINE 172:
 	asm( 
 "	      004957fa    push 10000h"
-"	      004957ff    mov eax,[ebp-8]"
+"	      004957ff    mov eax,pSourceImage"
 "	      00495802    push eax"
-"	      00495803    mov eax,[ebp-118h]"
+"	      00495803    mov eax,pDestinationImage"
 "	      00495809    push eax"
 "	      0049580a    call 0056A800h"
 "	      0049580f    add esp,0Ch"
@@ -503,38 +503,38 @@ int32_t SkyImage::LoadImageA() {
 "	      00495819    push eax"
 "	      0049581a    call 004D6246h"
 "	      0049581f    add esp,8"
-"	      00495822    mov [ebp-4],eax"
+"	      00495822    mov bmpHeader,eax"
 );
 // LINE 177:
 	asm( 
-"	      00495825    mov eax,[ebp-4]"
+"	      00495825    mov eax,bmpHeader"
 "	      00495828    mov eax,[eax+10h]"
-"	      0049582b    mov [ebp-118h],eax"
+"	      0049582b    mov pDestinationImage,eax"
 );
 // LINE 180:
 	asm( 
 "	      00495831    push 4"
-"	      00495833    mov eax,[ebp-114h]"
+"	      00495833    mov eax,vrResource"
 "	      00495839    push eax"
 "	      0049583a    call 004D6246h"
 "	      0049583f    add esp,8"
-"	      00495842    mov [ebp-4],eax"
+"	      00495842    mov bmpHeader,eax"
 );
 // LINE 181:
 	asm( 
-"	      00495845    mov eax,[ebp-4]"
-"	      00495848    mov [ebp-8],eax"
+"	      00495845    mov eax,bmpHeader"
+"	      00495848    mov pSourceImage,eax"
 );
 // LINE 182:
 	asm( 
-"	      0049584b    add dword ptr [ebp-8],40Ch"
+"	      0049584b    add pSourceImage,40Ch"
 );
 // LINE 185:
 	asm( 
 "	      00495852    push 10000h"
-"	      00495857    mov eax,[ebp-8]"
+"	      00495857    mov eax,pSourceImage"
 "	      0049585a    push eax"
-"	      0049585b    mov eax,[ebp-118h]"
+"	      0049585b    mov eax,pDestinationImage"
 "	      00495861    push eax"
 "	      00495862    call 0056A800h"
 "	      00495867    add esp,0Ch"
@@ -546,48 +546,48 @@ int32_t SkyImage::LoadImageA() {
 "	      00495871    push eax"
 "	      00495872    call 004D6246h"
 "	      00495877    add esp,8"
-"	      0049587a    mov [ebp-4],eax"
+"	      0049587a    mov bmpHeader,eax"
 );
 // LINE 189:
 	asm( 
-"	      0049587d    mov eax,[ebp-4]"
-"	      00495880    mov [ebp-118h],eax"
+"	      0049587d    mov eax,bmpHeader"
+"	      00495880    mov pDestinationImage,eax"
 );
 // LINE 190:
 	asm( 
-"	      00495886    add dword ptr [ebp-118h],40Ch"
+"	      00495886    add pDestinationImage,40Ch"
 );
 // LINE 193:
 	asm( 
 "	      00495890    push 5"
-"	      00495892    mov eax,[ebp-114h]"
+"	      00495892    mov eax,vrResource"
 "	      00495898    push eax"
 "	      00495899    call 004D6246h"
 "	      0049589e    add esp,8"
-"	      004958a1    mov [ebp-4],eax"
+"	      004958a1    mov bmpHeader,eax"
 );
 // LINE 194:
 	asm( 
-"	      004958a4    mov eax,[ebp-4]"
-"	      004958a7    mov [ebp-8],eax"
+"	      004958a4    mov eax,bmpHeader"
+"	      004958a7    mov pSourceImage,eax"
 );
 // LINE 195:
 	asm( 
-"	      004958aa    add dword ptr [ebp-8],40Ch"
+"	      004958aa    add pSourceImage,40Ch"
 );
 // LINE 198:
 	asm( 
 "	      004958b1    push 10000h"
-"	      004958b6    mov eax,[ebp-8]"
+"	      004958b6    mov eax,pSourceImage"
 "	      004958b9    push eax"
-"	      004958ba    mov eax,[ebp-118h]"
+"	      004958ba    mov eax,pDestinationImage"
 "	      004958c0    push eax"
 "	      004958c1    call 0056A800h"
 "	      004958c6    add esp,0Ch"
 );
 // LINE 203:
 	asm( 
-"	      004958c9    mov eax,[ebp-114h]"
+"	      004958c9    mov eax,vrResource"
 "	      004958cf    push eax"
 "	      004958d0    call 004D5872h"
 "	      004958d5    add esp,4"
@@ -626,7 +626,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 "	      004958ed    push ebx"
 "	      004958ee    push esi"
 "	      004958ef    push edi"
-"	      004958f0    mov [ebp-3Ch],ecx"
+"	      004958f0    mov this,ecx"
 );
 // LINE 218:
 	asm( 
@@ -639,53 +639,53 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 // LINE 224:
 	asm( 
 "	      004958fd    mov eax,ds:[6C1270h]"
-"	      00495902    mov ecx,[ebp-3Ch]"
+"	      00495902    mov ecx,this"
 "	      00495905    sub eax,[ecx+144h]"
-"	      0049590b    mov [ebp-18h],eax"
+"	      0049590b    mov altdiff,eax"
 );
 // LINE 226:
 	asm( 
 "	      0049590e    mov eax,ds:[6BF1B0h]"
-"	      00495913    mov [ebp-34h],eax"
+"	      00495913    mov pitch,eax"
 );
 // LINE 227:
 	asm( 
-"	      00495916    cmp dword ptr [ebp-34h],7080000h"
+"	      00495916    cmp pitch,7080000h"
 "	      0049591d    jle near ptr 0049592Ah"
 );
 // LINE 228:
 	asm( 
-"	      00495923    sub dword ptr [ebp-34h],0E100000h"
+"	      00495923    sub pitch,0E100000h"
 );
 // LINE 232:
 	asm( 
-"	      0049592a    mov eax,[ebp-3Ch]"
+"	      0049592a    mov eax,this"
 "	      0049592d    mov ebx,[eax+138h]"
 "	      00495933    dec ebx"
-"	      00495934    mov eax,[ebp-3Ch]"
+"	      00495934    mov eax,this"
 "	      00495937    mov eax,[eax+148h]"
 "	      0049593d    push eax"
-"	      0049593e    mov eax,[ebp-18h]"
+"	      0049593e    mov eax,altdiff"
 "	      00495941    push eax"
 "	      00495942    call 004D19BDh"
 "	      00495947    add esp,8"
 "	      0049594a    sar eax,10h"
 "	      0049594d    sub ebx,eax"
-"	      0049594f    mov eax,[ebp-3Ch]"
+"	      0049594f    mov eax,this"
 "	      00495952    mov eax,[eax+14Ch]"
 "	      00495958    push eax"
-"	      00495959    mov eax,[ebp-34h]"
+"	      00495959    mov eax,pitch"
 "	      0049595c    push eax"
 "	      0049595d    call 004D19BDh"
 "	      00495962    add esp,8"
 "	      00495965    sar eax,10h"
 "	      00495968    add ebx,eax"
-"	      0049596a    mov [ebp-4],ebx"
+"	      0049596a    mov start_row,ebx"
 );
 // LINE 234:
 	asm( 
-"	      0049596d    mov eax,[ebp-3Ch]"
-"	      00495970    mov ecx,[ebp-4]"
+"	      0049596d    mov eax,this"
+"	      00495970    mov ecx,start_row"
 "	      00495973    cmp [eax+138h],ecx"
 "	      00495979    jg near ptr 00495989h"
 );
@@ -696,16 +696,16 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 );
 // LINE 236:
 	asm( 
-"	      00495989    cmp dword ptr [ebp-4],0"
+"	      00495989    cmp start_row,0"
 "	      0049598d    jge near ptr 0049599Ah"
 );
 // LINE 237:
 	asm( 
-"	      00495993    mov dword ptr [ebp-4],0"
+"	      00495993    mov start_row,0"
 );
 // LINE 241:
 	asm( 
-"	      0049599a    mov eax,[ebp-3Ch]"
+"	      0049599a    mov eax,this"
 "	      0049599d    mov eax,[eax+140h]"
 "	      004959a3    push eax"
 "	      004959a4    mov eax,ds:[6BF1ACh]"
@@ -713,44 +713,44 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 "	      004959aa    call 004D19BDh"
 "	      004959af    add esp,8"
 "	      004959b2    sar eax,10h"
-"	      004959b5    mov [ebp-30h],eax"
+"	      004959b5    mov start_col,eax"
 );
 // LINE 244:
 	asm( 
-"	      004959b8    mov eax,[ebp-3Ch]"
-"	      004959bb    mov ecx,[ebp-30h]"
+"	      004959b8    mov eax,this"
+"	      004959bb    mov ecx,start_col"
 "	      004959be    cmp [eax+134h],ecx"
 "	      004959c4    jg near ptr 004959DAh"
 );
 // LINE 245:
 	asm( 
 "	      004959ca    xor eax,eax"
-"	      004959cc    mov ecx,[ebp-3Ch]"
+"	      004959cc    mov ecx,this"
 "	      004959cf    sub eax,[ecx+134h]"
 "	      004959d5    neg eax"
-"	      004959d7    sub [ebp-30h],eax"
+"	      004959d7    sub start_col,eax"
 );
 // LINE 249:
 	asm( 
-"	      004959da    mov eax,[ebp-30h]"
-"	      004959dd    add eax,[ebp+0Ch]"
-"	      004959e0    mov ecx,[ebp-3Ch]"
+"	      004959da    mov eax,start_col"
+"	      004959dd    add eax,nDestinationWidth"
+"	      004959e0    mov ecx,this"
 "	      004959e3    cmp eax,[ecx+134h]"
 "	      004959e9    jle near ptr 00495A0Fh"
 );
 // LINE 250:
 	asm( 
-"	      004959ef    mov eax,[ebp-30h]"
-"	      004959f2    add eax,[ebp+0Ch]"
-"	      004959f5    mov ecx,[ebp-3Ch]"
+"	      004959ef    mov eax,start_col"
+"	      004959f2    add eax,nDestinationWidth"
+"	      004959f5    mov ecx,this"
 "	      004959f8    sub eax,[ecx+134h]"
-"	      004959fe    mov [ebp-38h],eax"
+"	      004959fe    mov len2,eax"
 );
 // LINE 251:
 	asm( 
-"	      00495a01    mov eax,[ebp+0Ch]"
-"	      00495a04    sub eax,[ebp-38h]"
-"	      00495a07    mov [ebp-2Ch],eax"
+"	      00495a01    mov eax,nDestinationWidth"
+"	      00495a04    sub eax,len2"
+"	      00495a07    mov len1,eax"
 );
 // LINE 253:
 	asm( 
@@ -758,34 +758,34 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 );
 // LINE 254:
 	asm( 
-"	      00495a0f    mov dword ptr [ebp-38h],0"
+"	      00495a0f    mov len2,0"
 );
 // LINE 255:
 	asm( 
-"	      00495a16    mov eax,[ebp+0Ch]"
-"	      00495a19    mov [ebp-2Ch],eax"
+"	      00495a16    mov eax,nDestinationWidth"
+"	      00495a19    mov len1,eax"
 );
 // LINE 261:
 	asm( 
-"	      00495a1c    mov eax,[ebp-4]"
-"	      00495a1f    mov [ebp-10h],eax"
+"	      00495a1c    mov eax,start_row"
+"	      00495a1f    mov rectSource.top,eax"
 );
 // LINE 262:
 	asm( 
-"	      00495a22    mov eax,[ebp-3Ch]"
+"	      00495a22    mov eax,this"
 "	      00495a25    mov eax,[eax+138h]"
-"	      00495a2b    mov [ebp-8],eax"
+"	      00495a2b    mov rectSource.bottom,eax"
 );
 // LINE 265:
 	asm( 
-"	      00495a2e    mov eax,[ebp-30h]"
-"	      00495a31    mov [ebp-14h],eax"
+"	      00495a2e    mov eax,start_col"
+"	      00495a31    mov rectSource.left,eax"
 );
 // LINE 266:
 	asm( 
-"	      00495a34    mov eax,[ebp-2Ch]"
-"	      00495a37    add eax,[ebp-30h]"
-"	      00495a3a    mov [ebp-0Ch],eax"
+"	      00495a34    mov eax,len1"
+"	      00495a37    add eax,start_col"
+"	      00495a3a    mov rectSource.right,eax"
 );
 // LINE 268:
 	asm( 
@@ -794,76 +794,76 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 );
 // LINE 270:
 	asm( 
-"	      00495a4a    mov dword ptr [ebp-24h],0"
+"	      00495a4a    mov rectDestination.top,0"
 );
 // LINE 271:
 	asm( 
-"	      00495a51    mov dword ptr [ebp-28h],0"
+"	      00495a51    mov rectDestination.left,0"
 );
 // LINE 272:
 	asm( 
-"	      00495a58    mov eax,[ebp-2Ch]"
+"	      00495a58    mov eax,len1"
 "	      00495a5b    add eax,eax"
-"	      00495a5d    mov [ebp-20h],eax"
+"	      00495a5d    mov rectDestination.right,eax"
 );
 // LINE 273:
 	asm( 
-"	      00495a60    mov eax,[ebp-8]"
-"	      00495a63    sub eax,[ebp-10h]"
+"	      00495a60    mov eax,rectSource.bottom"
+"	      00495a63    sub eax,rectSource.top"
 "	      00495a66    add eax,eax"
-"	      00495a68    mov [ebp-1Ch],eax"
+"	      00495a68    mov rectDestination.bottom,eax"
 );
 // LINE 274:
 	asm( 
-"	      00495a6b    lea eax,[ebp-14h]"
+"	      00495a6b    lea eax,rectSource.left"
 "	      00495a6e    push eax"
-"	      00495a6f    lea eax,[ebp-28h]"
+"	      00495a6f    lea eax,rectDestination.left"
 "	      00495a72    push eax"
-"	      00495a73    mov eax,[ebp+8]"
+"	      00495a73    mov eax,pDestImage"
 "	      00495a76    push eax"
-"	      00495a77    mov eax,[ebp-3Ch]"
+"	      00495a77    mov eax,this"
 "	      00495a7a    mov eax,[eax]"
-"	      00495a7c    mov ecx,[ebp-3Ch]"
+"	      00495a7c    mov ecx,this"
 "	      00495a7f    call dword ptr [eax+30h]"
 );
 // LINE 277:
 	asm( 
-"	      00495a82    cmp dword ptr [ebp-38h],0"
+"	      00495a82    cmp len2,0"
 "	      00495a86    je near ptr 00495AC3h"
 );
 // LINE 278:
 	asm( 
-"	      00495a8c    mov dword ptr [ebp-14h],0"
+"	      00495a8c    mov rectSource.left,0"
 );
 // LINE 279:
 	asm( 
-"	      00495a93    mov eax,[ebp-38h]"
-"	      00495a96    mov [ebp-0Ch],eax"
+"	      00495a93    mov eax,len2"
+"	      00495a96    mov rectSource.right,eax"
 );
 // LINE 280:
 	asm( 
-"	      00495a99    mov eax,[ebp-2Ch]"
+"	      00495a99    mov eax,len1"
 "	      00495a9c    add eax,eax"
-"	      00495a9e    mov [ebp-28h],eax"
+"	      00495a9e    mov rectDestination.left,eax"
 );
 // LINE 281:
 	asm( 
-"	      00495aa1    mov eax,[ebp-38h]"
+"	      00495aa1    mov eax,len2"
 "	      00495aa4    add eax,eax"
-"	      00495aa6    add eax,[ebp-28h]"
-"	      00495aa9    mov [ebp-20h],eax"
+"	      00495aa6    add eax,rectDestination.left"
+"	      00495aa9    mov rectDestination.right,eax"
 );
 // LINE 282:
 	asm( 
-"	      00495aac    lea eax,[ebp-14h]"
+"	      00495aac    lea eax,rectSource.left"
 "	      00495aaf    push eax"
-"	      00495ab0    lea eax,[ebp-28h]"
+"	      00495ab0    lea eax,rectDestination.left"
 "	      00495ab3    push eax"
-"	      00495ab4    mov eax,[ebp+8]"
+"	      00495ab4    mov eax,pDestImage"
 "	      00495ab7    push eax"
-"	      00495ab8    mov eax,[ebp-3Ch]"
+"	      00495ab8    mov eax,this"
 "	      00495abb    mov eax,[eax]"
-"	      00495abd    mov ecx,[ebp-3Ch]"
+"	      00495abd    mov ecx,this"
 "	      00495ac0    call dword ptr [eax+30h]"
 );
 // LINE 285:
@@ -872,51 +872,51 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 );
 // LINE 289:
 	asm( 
-"	      00495ac8    mov eax,[ebp-8]"
+"	      00495ac8    mov eax,rectSource.bottom"
 "	      00495acb    push eax"
-"	      00495acc    mov eax,[ebp-0Ch]"
+"	      00495acc    mov eax,rectSource.right"
 "	      00495acf    push eax"
-"	      00495ad0    mov eax,[ebp-10h]"
+"	      00495ad0    mov eax,rectSource.top"
 "	      00495ad3    push eax"
-"	      00495ad4    mov eax,[ebp-14h]"
+"	      00495ad4    mov eax,rectSource.left"
 "	      00495ad7    push eax"
 "	      00495ad8    push 0"
 "	      00495ada    push 0"
-"	      00495adc    mov eax,[ebp+8]"
+"	      00495adc    mov eax,pDestImage"
 "	      00495adf    push eax"
-"	      00495ae0    mov ecx,[ebp-3Ch]"
+"	      00495ae0    mov ecx,this"
 "	      00495ae3    call 0046F948h"
 );
 // LINE 292:
 	asm( 
-"	      00495ae8    cmp dword ptr [ebp-38h],0"
+"	      00495ae8    cmp len2,0"
 "	      00495aec    je near ptr 00495B21h"
 );
 // LINE 293:
 	asm( 
-"	      00495af2    mov dword ptr [ebp-14h],0"
+"	      00495af2    mov rectSource.left,0"
 );
 // LINE 294:
 	asm( 
-"	      00495af9    mov eax,[ebp-38h]"
-"	      00495afc    mov [ebp-0Ch],eax"
+"	      00495af9    mov eax,len2"
+"	      00495afc    mov rectSource.right,eax"
 );
 // LINE 296:
 	asm( 
-"	      00495aff    mov eax,[ebp-8]"
+"	      00495aff    mov eax,rectSource.bottom"
 "	      00495b02    push eax"
-"	      00495b03    mov eax,[ebp-0Ch]"
+"	      00495b03    mov eax,rectSource.right"
 "	      00495b06    push eax"
-"	      00495b07    mov eax,[ebp-10h]"
+"	      00495b07    mov eax,rectSource.top"
 "	      00495b0a    push eax"
-"	      00495b0b    mov eax,[ebp-14h]"
+"	      00495b0b    mov eax,rectSource.left"
 "	      00495b0e    push eax"
 "	      00495b0f    push 0"
-"	      00495b11    mov eax,[ebp-2Ch]"
+"	      00495b11    mov eax,len1"
 "	      00495b14    push eax"
-"	      00495b15    mov eax,[ebp+8]"
+"	      00495b15    mov eax,pDestImage"
 "	      00495b18    push eax"
-"	      00495b19    mov ecx,[ebp-3Ch]"
+"	      00495b19    mov ecx,this"
 "	      00495b1c    call 0046F948h"
 );
 // LINE 299:

@@ -17,20 +17,20 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 "	      0042d429    push ebx"
 "	      0042d42a    push esi"
 "	      0042d42b    push edi"
-"	      0042d42c    mov [ebp-104h],ecx"
+"	      0042d42c    mov this,ecx"
 );
 // LINE 13:
 	asm( 
-"	      0042d432    mov eax,[ebp+8]"
+"	      0042d432    mov eax,szErrorDescription"
 "	      0042d435    push eax"
-"	      0042d436    lea eax,[ebp-100h]"
+"	      0042d436    lea eax,szFullErrorDescription[0]"
 "	      0042d43c    push eax"
-"	      0042d43d    mov ecx,[ebp-104h]"
+"	      0042d43d    mov ecx,this"
 "	      0042d443    call 0042D468h"
 );
 // LINE 18:
 	asm( 
-"	      0042d448    lea eax,[ebp-100h]"
+"	      0042d448    lea eax,szFullErrorDescription[0]"
 "	      0042d44e    push eax"
 "	      0042d44f    push 5976A8h"
 "	      0042d454    call 00424B14h"
@@ -57,11 +57,11 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 "	      0042d46e    push ebx"
 "	      0042d46f    push esi"
 "	      0042d470    push edi"
-"	      0042d471    mov [ebp-4],ecx"
+"	      0042d471    mov this,ecx"
 );
 // LINE 29:
 	asm( 
-"	      0042d474    mov eax,[ebp-4]"
+"	      0042d474    mov eax,this"
 "	      0042d477    mov eax,[eax]"
 "	      0042d479    mov [ebp-8],eax"
 "	      0042d47c    jmp near ptr 0042D8D2h"
@@ -69,7 +69,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 31:
 	asm( 
 "	      0042d481    push 5976ACh"
-"	      0042d486    mov eax,[ebp+8]"
+"	      0042d486    mov eax,szFullErrorDescription"
 "	      0042d489    push eax"
 "	      0042d48a    call 0056CEB0h"
 "	      0042d48f    add esp,8"
@@ -81,7 +81,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 34:
 	asm( 
 "	      0042d497    push 5976D0h"
-"	      0042d49c    mov eax,[ebp+8]"
+"	      0042d49c    mov eax,szFullErrorDescription"
 "	      0042d49f    push eax"
 "	      0042d4a0    call 0056CEB0h"
 "	      0042d4a5    add esp,8"
@@ -93,7 +93,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 37:
 	asm( 
 "	      0042d4ad    push 5976F4h"
-"	      0042d4b2    mov eax,[ebp+8]"
+"	      0042d4b2    mov eax,szFullErrorDescription"
 "	      0042d4b5    push eax"
 "	      0042d4b6    call 0056CEB0h"
 "	      0042d4bb    add esp,8"
@@ -105,7 +105,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 40:
 	asm( 
 "	      0042d4c3    push 59770Ch"
-"	      0042d4c8    mov eax,[ebp+8]"
+"	      0042d4c8    mov eax,szFullErrorDescription"
 "	      0042d4cb    push eax"
 "	      0042d4cc    call 0056CEB0h"
 "	      0042d4d1    add esp,8"
@@ -117,7 +117,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 43:
 	asm( 
 "	      0042d4d9    push 597728h"
-"	      0042d4de    mov eax,[ebp+8]"
+"	      0042d4de    mov eax,szFullErrorDescription"
 "	      0042d4e1    push eax"
 "	      0042d4e2    call 0056CEB0h"
 "	      0042d4e7    add esp,8"
@@ -129,7 +129,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 46:
 	asm( 
 "	      0042d4ef    push 597744h"
-"	      0042d4f4    mov eax,[ebp+8]"
+"	      0042d4f4    mov eax,szFullErrorDescription"
 "	      0042d4f7    push eax"
 "	      0042d4f8    call 0056CEB0h"
 "	      0042d4fd    add esp,8"
@@ -141,7 +141,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 49:
 	asm( 
 "	      0042d505    push 597764h"
-"	      0042d50a    mov eax,[ebp+8]"
+"	      0042d50a    mov eax,szFullErrorDescription"
 "	      0042d50d    push eax"
 "	      0042d50e    call 0056CEB0h"
 "	      0042d513    add esp,8"
@@ -153,7 +153,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 52:
 	asm( 
 "	      0042d51b    push 597780h"
-"	      0042d520    mov eax,[ebp+8]"
+"	      0042d520    mov eax,szFullErrorDescription"
 "	      0042d523    push eax"
 "	      0042d524    call 0056CEB0h"
 "	      0042d529    add esp,8"
@@ -165,7 +165,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 55:
 	asm( 
 "	      0042d531    push 5977A0h"
-"	      0042d536    mov eax,[ebp+8]"
+"	      0042d536    mov eax,szFullErrorDescription"
 "	      0042d539    push eax"
 "	      0042d53a    call 0056CEB0h"
 "	      0042d53f    add esp,8"
@@ -177,7 +177,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 58:
 	asm( 
 "	      0042d547    push 5977C4h"
-"	      0042d54c    mov eax,[ebp+8]"
+"	      0042d54c    mov eax,szFullErrorDescription"
 "	      0042d54f    push eax"
 "	      0042d550    call 0056CEB0h"
 "	      0042d555    add esp,8"
@@ -189,7 +189,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 61:
 	asm( 
 "	      0042d55d    push 5977E0h"
-"	      0042d562    mov eax,[ebp+8]"
+"	      0042d562    mov eax,szFullErrorDescription"
 "	      0042d565    push eax"
 "	      0042d566    call 0056CEB0h"
 "	      0042d56b    add esp,8"
@@ -201,7 +201,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 64:
 	asm( 
 "	      0042d573    push 5977F8h"
-"	      0042d578    mov eax,[ebp+8]"
+"	      0042d578    mov eax,szFullErrorDescription"
 "	      0042d57b    push eax"
 "	      0042d57c    call 0056CEB0h"
 "	      0042d581    add esp,8"
@@ -213,7 +213,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 67:
 	asm( 
 "	      0042d589    push 597814h"
-"	      0042d58e    mov eax,[ebp+8]"
+"	      0042d58e    mov eax,szFullErrorDescription"
 "	      0042d591    push eax"
 "	      0042d592    call 0056CEB0h"
 "	      0042d597    add esp,8"
@@ -225,7 +225,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 70:
 	asm( 
 "	      0042d59f    push 597830h"
-"	      0042d5a4    mov eax,[ebp+8]"
+"	      0042d5a4    mov eax,szFullErrorDescription"
 "	      0042d5a7    push eax"
 "	      0042d5a8    call 0056CEB0h"
 "	      0042d5ad    add esp,8"
@@ -237,7 +237,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 73:
 	asm( 
 "	      0042d5b5    push 597850h"
-"	      0042d5ba    mov eax,[ebp+8]"
+"	      0042d5ba    mov eax,szFullErrorDescription"
 "	      0042d5bd    push eax"
 "	      0042d5be    call 0056CEB0h"
 "	      0042d5c3    add esp,8"
@@ -249,7 +249,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 76:
 	asm( 
 "	      0042d5cb    push 597870h"
-"	      0042d5d0    mov eax,[ebp+8]"
+"	      0042d5d0    mov eax,szFullErrorDescription"
 "	      0042d5d3    push eax"
 "	      0042d5d4    call 0056CEB0h"
 "	      0042d5d9    add esp,8"
@@ -261,7 +261,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 79:
 	asm( 
 "	      0042d5e1    push 59788Ch"
-"	      0042d5e6    mov eax,[ebp+8]"
+"	      0042d5e6    mov eax,szFullErrorDescription"
 "	      0042d5e9    push eax"
 "	      0042d5ea    call 0056CEB0h"
 "	      0042d5ef    add esp,8"
@@ -273,7 +273,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 82:
 	asm( 
 "	      0042d5f7    push 5978A4h"
-"	      0042d5fc    mov eax,[ebp+8]"
+"	      0042d5fc    mov eax,szFullErrorDescription"
 "	      0042d5ff    push eax"
 "	      0042d600    call 0056CEB0h"
 "	      0042d605    add esp,8"
@@ -285,7 +285,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 85:
 	asm( 
 "	      0042d60d    push 5978C0h"
-"	      0042d612    mov eax,[ebp+8]"
+"	      0042d612    mov eax,szFullErrorDescription"
 "	      0042d615    push eax"
 "	      0042d616    call 0056CEB0h"
 "	      0042d61b    add esp,8"
@@ -297,7 +297,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 88:
 	asm( 
 "	      0042d623    push 5978DCh"
-"	      0042d628    mov eax,[ebp+8]"
+"	      0042d628    mov eax,szFullErrorDescription"
 "	      0042d62b    push eax"
 "	      0042d62c    call 0056CEB0h"
 "	      0042d631    add esp,8"
@@ -309,7 +309,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 91:
 	asm( 
 "	      0042d639    push 5978F8h"
-"	      0042d63e    mov eax,[ebp+8]"
+"	      0042d63e    mov eax,szFullErrorDescription"
 "	      0042d641    push eax"
 "	      0042d642    call 0056CEB0h"
 "	      0042d647    add esp,8"
@@ -321,7 +321,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 94:
 	asm( 
 "	      0042d64f    push 597918h"
-"	      0042d654    mov eax,[ebp+8]"
+"	      0042d654    mov eax,szFullErrorDescription"
 "	      0042d657    push eax"
 "	      0042d658    call 0056CEB0h"
 "	      0042d65d    add esp,8"
@@ -333,7 +333,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 97:
 	asm( 
 "	      0042d665    push 597934h"
-"	      0042d66a    mov eax,[ebp+8]"
+"	      0042d66a    mov eax,szFullErrorDescription"
 "	      0042d66d    push eax"
 "	      0042d66e    call 0056CEB0h"
 "	      0042d673    add esp,8"
@@ -345,7 +345,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 100:
 	asm( 
 "	      0042d67b    push 597954h"
-"	      0042d680    mov eax,[ebp+8]"
+"	      0042d680    mov eax,szFullErrorDescription"
 "	      0042d683    push eax"
 "	      0042d684    call 0056CEB0h"
 "	      0042d689    add esp,8"
@@ -357,7 +357,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 103:
 	asm( 
 "	      0042d691    push 597978h"
-"	      0042d696    mov eax,[ebp+8]"
+"	      0042d696    mov eax,szFullErrorDescription"
 "	      0042d699    push eax"
 "	      0042d69a    call 0056CEB0h"
 "	      0042d69f    add esp,8"
@@ -369,7 +369,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 106:
 	asm( 
 "	      0042d6a7    push 597998h"
-"	      0042d6ac    mov eax,[ebp+8]"
+"	      0042d6ac    mov eax,szFullErrorDescription"
 "	      0042d6af    push eax"
 "	      0042d6b0    call 0056CEB0h"
 "	      0042d6b5    add esp,8"
@@ -381,7 +381,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 109:
 	asm( 
 "	      0042d6bd    push 5979B4h"
-"	      0042d6c2    mov eax,[ebp+8]"
+"	      0042d6c2    mov eax,szFullErrorDescription"
 "	      0042d6c5    push eax"
 "	      0042d6c6    call 0056CEB0h"
 "	      0042d6cb    add esp,8"
@@ -393,7 +393,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 112:
 	asm( 
 "	      0042d6d3    push 5979D0h"
-"	      0042d6d8    mov eax,[ebp+8]"
+"	      0042d6d8    mov eax,szFullErrorDescription"
 "	      0042d6db    push eax"
 "	      0042d6dc    call 0056CEB0h"
 "	      0042d6e1    add esp,8"
@@ -405,7 +405,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 115:
 	asm( 
 "	      0042d6e9    push 5979ECh"
-"	      0042d6ee    mov eax,[ebp+8]"
+"	      0042d6ee    mov eax,szFullErrorDescription"
 "	      0042d6f1    push eax"
 "	      0042d6f2    call 0056CEB0h"
 "	      0042d6f7    add esp,8"
@@ -417,7 +417,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 118:
 	asm( 
 "	      0042d6ff    push 597A08h"
-"	      0042d704    mov eax,[ebp+8]"
+"	      0042d704    mov eax,szFullErrorDescription"
 "	      0042d707    push eax"
 "	      0042d708    call 0056CEB0h"
 "	      0042d70d    add esp,8"
@@ -429,7 +429,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 121:
 	asm( 
 "	      0042d715    push 597A24h"
-"	      0042d71a    mov eax,[ebp+8]"
+"	      0042d71a    mov eax,szFullErrorDescription"
 "	      0042d71d    push eax"
 "	      0042d71e    call 0056CEB0h"
 "	      0042d723    add esp,8"
@@ -441,7 +441,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 124:
 	asm( 
 "	      0042d72b    push 597A48h"
-"	      0042d730    mov eax,[ebp+8]"
+"	      0042d730    mov eax,szFullErrorDescription"
 "	      0042d733    push eax"
 "	      0042d734    call 0056CEB0h"
 "	      0042d739    add esp,8"
@@ -453,7 +453,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 127:
 	asm( 
 "	      0042d741    push 597A68h"
-"	      0042d746    mov eax,[ebp+8]"
+"	      0042d746    mov eax,szFullErrorDescription"
 "	      0042d749    push eax"
 "	      0042d74a    call 0056CEB0h"
 "	      0042d74f    add esp,8"
@@ -465,7 +465,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 130:
 	asm( 
 "	      0042d757    push 597A84h"
-"	      0042d75c    mov eax,[ebp+8]"
+"	      0042d75c    mov eax,szFullErrorDescription"
 "	      0042d75f    push eax"
 "	      0042d760    call 0056CEB0h"
 "	      0042d765    add esp,8"
@@ -477,7 +477,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 133:
 	asm( 
 "	      0042d76d    push 597AACh"
-"	      0042d772    mov eax,[ebp+8]"
+"	      0042d772    mov eax,szFullErrorDescription"
 "	      0042d775    push eax"
 "	      0042d776    call 0056CEB0h"
 "	      0042d77b    add esp,8"
@@ -489,7 +489,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 136:
 	asm( 
 "	      0042d783    push 597AD4h"
-"	      0042d788    mov eax,[ebp+8]"
+"	      0042d788    mov eax,szFullErrorDescription"
 "	      0042d78b    push eax"
 "	      0042d78c    call 0056CEB0h"
 "	      0042d791    add esp,8"
@@ -501,7 +501,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 139:
 	asm( 
 "	      0042d799    push 597AF0h"
-"	      0042d79e    mov eax,[ebp+8]"
+"	      0042d79e    mov eax,szFullErrorDescription"
 "	      0042d7a1    push eax"
 "	      0042d7a2    call 0056CEB0h"
 "	      0042d7a7    add esp,8"
@@ -513,7 +513,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 142:
 	asm( 
 "	      0042d7af    push 597B14h"
-"	      0042d7b4    mov eax,[ebp+8]"
+"	      0042d7b4    mov eax,szFullErrorDescription"
 "	      0042d7b7    push eax"
 "	      0042d7b8    call 0056CEB0h"
 "	      0042d7bd    add esp,8"
@@ -525,7 +525,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 145:
 	asm( 
 "	      0042d7c5    push 597B30h"
-"	      0042d7ca    mov eax,[ebp+8]"
+"	      0042d7ca    mov eax,szFullErrorDescription"
 "	      0042d7cd    push eax"
 "	      0042d7ce    call 0056CEB0h"
 "	      0042d7d3    add esp,8"
@@ -537,7 +537,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 148:
 	asm( 
 "	      0042d7db    push 597B54h"
-"	      0042d7e0    mov eax,[ebp+8]"
+"	      0042d7e0    mov eax,szFullErrorDescription"
 "	      0042d7e3    push eax"
 "	      0042d7e4    call 0056CEB0h"
 "	      0042d7e9    add esp,8"
@@ -549,7 +549,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 151:
 	asm( 
 "	      0042d7f1    push 597B74h"
-"	      0042d7f6    mov eax,[ebp+8]"
+"	      0042d7f6    mov eax,szFullErrorDescription"
 "	      0042d7f9    push eax"
 "	      0042d7fa    call 0056CEB0h"
 "	      0042d7ff    add esp,8"
@@ -561,7 +561,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 154:
 	asm( 
 "	      0042d807    push 597B90h"
-"	      0042d80c    mov eax,[ebp+8]"
+"	      0042d80c    mov eax,szFullErrorDescription"
 "	      0042d80f    push eax"
 "	      0042d810    call 0056CEB0h"
 "	      0042d815    add esp,8"
@@ -573,7 +573,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 157:
 	asm( 
 "	      0042d81d    push 597BACh"
-"	      0042d822    mov eax,[ebp+8]"
+"	      0042d822    mov eax,szFullErrorDescription"
 "	      0042d825    push eax"
 "	      0042d826    call 0056CEB0h"
 "	      0042d82b    add esp,8"
@@ -585,7 +585,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 160:
 	asm( 
 "	      0042d833    push 597BC8h"
-"	      0042d838    mov eax,[ebp+8]"
+"	      0042d838    mov eax,szFullErrorDescription"
 "	      0042d83b    push eax"
 "	      0042d83c    call 0056CEB0h"
 "	      0042d841    add esp,8"
@@ -597,7 +597,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 163:
 	asm( 
 "	      0042d849    push 597BECh"
-"	      0042d84e    mov eax,[ebp+8]"
+"	      0042d84e    mov eax,szFullErrorDescription"
 "	      0042d851    push eax"
 "	      0042d852    call 0056CEB0h"
 "	      0042d857    add esp,8"
@@ -609,7 +609,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 166:
 	asm( 
 "	      0042d85f    push 597C0Ch"
-"	      0042d864    mov eax,[ebp+8]"
+"	      0042d864    mov eax,szFullErrorDescription"
 "	      0042d867    push eax"
 "	      0042d868    call 0056CEB0h"
 "	      0042d86d    add esp,8"
@@ -621,7 +621,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 169:
 	asm( 
 "	      0042d875    push 597C34h"
-"	      0042d87a    mov eax,[ebp+8]"
+"	      0042d87a    mov eax,szFullErrorDescription"
 "	      0042d87d    push eax"
 "	      0042d87e    call 0056CEB0h"
 "	      0042d883    add esp,8"
@@ -633,7 +633,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 172:
 	asm( 
 "	      0042d88b    push 597C54h"
-"	      0042d890    mov eax,[ebp+8]"
+"	      0042d890    mov eax,szFullErrorDescription"
 "	      0042d893    push eax"
 "	      0042d894    call 0056CEB0h"
 "	      0042d899    add esp,8"
@@ -645,7 +645,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 175:
 	asm( 
 "	      0042d8a1    push 597C6Ch"
-"	      0042d8a6    mov eax,[ebp+8]"
+"	      0042d8a6    mov eax,szFullErrorDescription"
 "	      0042d8a9    push eax"
 "	      0042d8aa    call 0056CEB0h"
 "	      0042d8af    add esp,8"
@@ -657,7 +657,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 // LINE 178:
 	asm( 
 "	      0042d8b7    push 597C7Ch"
-"	      0042d8bc    mov eax,[ebp+8]"
+"	      0042d8bc    mov eax,szFullErrorDescription"
 "	      0042d8bf    push eax"
 "	      0042d8c0    call 0056CEB0h"
 "	      0042d8c5    add esp,8"
@@ -815,14 +815,14 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 );
 // LINE 181:
 	asm( 
-"	      0042dc43    cmp dword ptr [ebp+0Ch],0"
+"	      0042dc43    cmp szErrorDescription,0"
 "	      0042dc47    je near ptr 0042DC5Dh"
 );
 // LINE 182:
 	asm( 
-"	      0042dc4d    mov eax,[ebp+0Ch]"
+"	      0042dc4d    mov eax,szErrorDescription"
 "	      0042dc50    push eax"
-"	      0042dc51    mov eax,[ebp+8]"
+"	      0042dc51    mov eax,szFullErrorDescription"
 "	      0042dc54    push eax"
 "	      0042dc55    call 0056CEC0h"
 "	      0042dc5a    add esp,8"
@@ -850,20 +850,20 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 "	      0042dc72    push ebx"
 "	      0042dc73    push esi"
 "	      0042dc74    push edi"
-"	      0042dc75    mov [ebp-104h],ecx"
+"	      0042dc75    mov this,ecx"
 );
 // LINE 193:
 	asm( 
-"	      0042dc7b    mov eax,[ebp+8]"
+"	      0042dc7b    mov eax,szErrorDescription"
 "	      0042dc7e    push eax"
-"	      0042dc7f    lea eax,[ebp-100h]"
+"	      0042dc7f    lea eax,szFullErrorDescription[0]"
 "	      0042dc85    push eax"
-"	      0042dc86    mov ecx,[ebp-104h]"
+"	      0042dc86    mov ecx,this"
 "	      0042dc8c    call 0042DCB1h"
 );
 // LINE 198:
 	asm( 
-"	      0042dc91    lea eax,[ebp-100h]"
+"	      0042dc91    lea eax,szFullErrorDescription[0]"
 "	      0042dc97    push eax"
 "	      0042dc98    push 597C90h"
 "	      0042dc9d    call 00424B14h"
@@ -890,11 +890,11 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 "	      0042dcb7    push ebx"
 "	      0042dcb8    push esi"
 "	      0042dcb9    push edi"
-"	      0042dcba    mov [ebp-4],ecx"
+"	      0042dcba    mov this,ecx"
 );
 // LINE 210:
 	asm( 
-"	      0042dcbd    mov eax,[ebp-4]"
+"	      0042dcbd    mov eax,this"
 "	      0042dcc0    mov eax,[eax]"
 "	      0042dcc2    mov [ebp-8],eax"
 "	      0042dcc5    jmp near ptr 0042DE2Fh"
@@ -902,7 +902,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 212:
 	asm( 
 "	      0042dcca    push 597C94h"
-"	      0042dccf    mov eax,[ebp+8]"
+"	      0042dccf    mov eax,szFullErrorDescription"
 "	      0042dcd2    push eax"
 "	      0042dcd3    call 0056CEB0h"
 "	      0042dcd8    add esp,8"
@@ -914,7 +914,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 215:
 	asm( 
 "	      0042dce0    push 597CB0h"
-"	      0042dce5    mov eax,[ebp+8]"
+"	      0042dce5    mov eax,szFullErrorDescription"
 "	      0042dce8    push eax"
 "	      0042dce9    call 0056CEB0h"
 "	      0042dcee    add esp,8"
@@ -926,7 +926,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 218:
 	asm( 
 "	      0042dcf6    push 597CD0h"
-"	      0042dcfb    mov eax,[ebp+8]"
+"	      0042dcfb    mov eax,szFullErrorDescription"
 "	      0042dcfe    push eax"
 "	      0042dcff    call 0056CEB0h"
 "	      0042dd04    add esp,8"
@@ -938,7 +938,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 221:
 	asm( 
 "	      0042dd0c    push 597CF0h"
-"	      0042dd11    mov eax,[ebp+8]"
+"	      0042dd11    mov eax,szFullErrorDescription"
 "	      0042dd14    push eax"
 "	      0042dd15    call 0056CEB0h"
 "	      0042dd1a    add esp,8"
@@ -950,7 +950,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 224:
 	asm( 
 "	      0042dd22    push 597D0Ch"
-"	      0042dd27    mov eax,[ebp+8]"
+"	      0042dd27    mov eax,szFullErrorDescription"
 "	      0042dd2a    push eax"
 "	      0042dd2b    call 0056CEB0h"
 "	      0042dd30    add esp,8"
@@ -962,7 +962,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 227:
 	asm( 
 "	      0042dd38    push 597D24h"
-"	      0042dd3d    mov eax,[ebp+8]"
+"	      0042dd3d    mov eax,szFullErrorDescription"
 "	      0042dd40    push eax"
 "	      0042dd41    call 0056CEB0h"
 "	      0042dd46    add esp,8"
@@ -974,7 +974,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 230:
 	asm( 
 "	      0042dd4e    push 597D44h"
-"	      0042dd53    mov eax,[ebp+8]"
+"	      0042dd53    mov eax,szFullErrorDescription"
 "	      0042dd56    push eax"
 "	      0042dd57    call 0056CEB0h"
 "	      0042dd5c    add esp,8"
@@ -986,7 +986,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 233:
 	asm( 
 "	      0042dd64    push 597D60h"
-"	      0042dd69    mov eax,[ebp+8]"
+"	      0042dd69    mov eax,szFullErrorDescription"
 "	      0042dd6c    push eax"
 "	      0042dd6d    call 0056CEB0h"
 "	      0042dd72    add esp,8"
@@ -998,7 +998,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 236:
 	asm( 
 "	      0042dd7a    push 597D7Ch"
-"	      0042dd7f    mov eax,[ebp+8]"
+"	      0042dd7f    mov eax,szFullErrorDescription"
 "	      0042dd82    push eax"
 "	      0042dd83    call 0056CEB0h"
 "	      0042dd88    add esp,8"
@@ -1010,7 +1010,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 239:
 	asm( 
 "	      0042dd90    push 597D98h"
-"	      0042dd95    mov eax,[ebp+8]"
+"	      0042dd95    mov eax,szFullErrorDescription"
 "	      0042dd98    push eax"
 "	      0042dd99    call 0056CEB0h"
 "	      0042dd9e    add esp,8"
@@ -1022,7 +1022,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 242:
 	asm( 
 "	      0042dda6    push 597DB4h"
-"	      0042ddab    mov eax,[ebp+8]"
+"	      0042ddab    mov eax,szFullErrorDescription"
 "	      0042ddae    push eax"
 "	      0042ddaf    call 0056CEB0h"
 "	      0042ddb4    add esp,8"
@@ -1034,7 +1034,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 245:
 	asm( 
 "	      0042ddbc    push 597DD8h"
-"	      0042ddc1    mov eax,[ebp+8]"
+"	      0042ddc1    mov eax,szFullErrorDescription"
 "	      0042ddc4    push eax"
 "	      0042ddc5    call 0056CEB0h"
 "	      0042ddca    add esp,8"
@@ -1046,7 +1046,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 248:
 	asm( 
 "	      0042ddd2    push 597DF8h"
-"	      0042ddd7    mov eax,[ebp+8]"
+"	      0042ddd7    mov eax,szFullErrorDescription"
 "	      0042ddda    push eax"
 "	      0042dddb    call 0056CEB0h"
 "	      0042dde0    add esp,8"
@@ -1058,7 +1058,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 251:
 	asm( 
 "	      0042dde8    push 597E14h"
-"	      0042dded    mov eax,[ebp+8]"
+"	      0042dded    mov eax,szFullErrorDescription"
 "	      0042ddf0    push eax"
 "	      0042ddf1    call 0056CEB0h"
 "	      0042ddf6    add esp,8"
@@ -1070,7 +1070,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 254:
 	asm( 
 "	      0042ddfe    push 597E34h"
-"	      0042de03    mov eax,[ebp+8]"
+"	      0042de03    mov eax,szFullErrorDescription"
 "	      0042de06    push eax"
 "	      0042de07    call 0056CEB0h"
 "	      0042de0c    add esp,8"
@@ -1082,7 +1082,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 // LINE 257:
 	asm( 
 "	      0042de14    push 597E44h"
-"	      0042de19    mov eax,[ebp+8]"
+"	      0042de19    mov eax,szFullErrorDescription"
 "	      0042de1c    push eax"
 "	      0042de1d    call 0056CEB0h"
 "	      0042de22    add esp,8"
@@ -1140,14 +1140,14 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 );
 // LINE 260:
 	asm( 
-"	      0042df36    cmp dword ptr [ebp+0Ch],0"
+"	      0042df36    cmp szErrorDescription,0"
 "	      0042df3a    je near ptr 0042DF50h"
 );
 // LINE 261:
 	asm( 
-"	      0042df40    mov eax,[ebp+0Ch]"
+"	      0042df40    mov eax,szErrorDescription"
 "	      0042df43    push eax"
-"	      0042df44    mov eax,[ebp+8]"
+"	      0042df44    mov eax,szFullErrorDescription"
 "	      0042df47    push eax"
 "	      0042df48    call 0056CEC0h"
 "	      0042df4d    add esp,8"

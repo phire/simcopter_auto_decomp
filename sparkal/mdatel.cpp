@@ -18,29 +18,29 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 "	      0041fad6    push ebx"
 "	      0041fad7    push esi"
 "	      0041fad8    push edi"
-"	      0041fad9    mov [ebp-68h],ecx"
+"	      0041fad9    mov this,ecx"
 );
 // LINE 28:
 	asm( 
-"	      0041fadc    mov eax,[ebp-68h]"
+"	      0041fadc    mov eax,this"
 "	      0041fadf    mov eax,[eax+0Ch]"
-"	      0041fae2    mov [ebp-5Ch],eax"
+"	      0041fae2    mov nTempOriginalLanguage,eax"
 );
 // LINE 29:
 	asm( 
-"	      0041fae5    cmp dword ptr [ebp+0Ch],0"
+"	      0041fae5    cmp nLanguageToUse,0"
 "	      0041fae9    jne near ptr 0041FAF8h"
 );
 // LINE 30:
 	asm( 
-"	      0041faef    mov eax,[ebp-68h]"
+"	      0041faef    mov eax,this"
 "	      0041faf2    mov eax,[eax+0Ch]"
-"	      0041faf5    mov [ebp+0Ch],eax"
+"	      0041faf5    mov nLanguageToUse,eax"
 );
 // LINE 31:
 	asm( 
-"	      0041faf8    mov eax,[ebp+0Ch]"
-"	      0041fafb    mov ecx,[ebp-68h]"
+"	      0041faf8    mov eax,nLanguageToUse"
+"	      0041fafb    mov ecx,this"
 "	      0041fafe    mov [ecx+0Ch],eax"
 );
 // LINE 33:
@@ -48,13 +48,13 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 "	      0041fb01    push 1"
 "	      0041fb03    push 2"
 "	      0041fb05    push 40h"
-"	      0041fb07    mov eax,[ebp+8]"
+"	      0041fb07    mov eax,szTime"
 "	      0041fb0a    push eax"
-"	      0041fb0b    lea ecx,[ebp-58h]"
+"	      0041fb0b    lea ecx,strtemp.ios"
 "	      0041fb0e    call 0056C780h"
-"	      0041fb13    mov eax,[ebp-68h]"
+"	      0041fb13    mov eax,this"
 "	      0041fb16    push eax"
-"	      0041fb17    lea eax,[ebp-58h]"
+"	      0041fb17    lea eax,strtemp.ios"
 "	      0041fb1a    push eax"
 "	      0041fb1b    call 0041FB6Ah"
 "	      0041fb20    add esp,8"
@@ -70,18 +70,18 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 );
 // LINE 36:
 	asm( 
-"	      0041fb37    mov eax,[ebp-5Ch]"
-"	      0041fb3a    mov ecx,[ebp-68h]"
+"	      0041fb37    mov eax,nTempOriginalLanguage"
+"	      0041fb3a    mov ecx,this"
 "	      0041fb3d    mov [ecx+0Ch],eax"
 );
 // LINE 37:
 	asm( 
-"	      0041fb40    mov eax,[ebp+8]"
+"	      0041fb40    mov eax,szTime"
 "	      0041fb43    mov [ebp-60h],eax"
 "	      0041fb46    jmp near ptr 0041FB4Bh"
-"	      0041fb4b    lea ecx,[ebp-50h]"
+"	      0041fb4b    lea ecx,strtemp.<ostrstream+0x08>"
 "	      0041fb4e    call 0056C8D0h"
-"	      0041fb53    lea ecx,[ebp-50h]"
+"	      0041fb53    lea ecx,strtemp.<ostrstream+0x08>"
 "	      0041fb56    call 0056B140h"
 "	      0041fb5b    mov eax,[ebp-60h]"
 "	      0041fb5e    jmp near ptr 0041FB63h"
@@ -118,8 +118,8 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 50:
 	asm( 
 "	      0041fb76    mov al,ds:[597298h]"
-"	      0041fb7b    mov [ebp-0A0h],al"
-"	      0041fb81    lea edi,[ebp-9Fh]"
+"	      0041fb7b    mov buf[0],al"
+"	      0041fb81    lea edi,buf[1]"
 "	      0041fb87    xor eax,eax"
 "	      0041fb89    mov ecx,13h"
 "	      0041fb8e    rep stosd"
@@ -129,8 +129,8 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 51:
 	asm( 
 "	      0041fb93    mov al,ds:[59729Ch]"
-"	      0041fb98    mov [ebp-50h],al"
-"	      0041fb9b    lea edi,[ebp-4Fh]"
+"	      0041fb98    mov buf1[0],al"
+"	      0041fb9b    lea edi,buf1[1]"
 "	      0041fb9e    xor eax,eax"
 "	      0041fba0    mov ecx,13h"
 "	      0041fba5    rep stosd"
@@ -139,45 +139,45 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 52:
 	asm( 
-"	      0041fbaa    mov ecx,[ebp+0Ch]"
+"	      0041fbaa    mov ecx,t"
 "	      0041fbad    add ecx,4"
 "	      0041fbb0    call 0043CCF2h"
-"	      0041fbb5    mov [ebp-104h],eax"
+"	      0041fbb5    mov hh,eax"
 );
 // LINE 53:
 	asm( 
-"	      0041fbbb    mov ecx,[ebp+0Ch]"
+"	      0041fbbb    mov ecx,t"
 "	      0041fbbe    add ecx,4"
 "	      0041fbc1    call 0043CF0Ch"
-"	      0041fbc6    mov [ebp-100h],eax"
+"	      0041fbc6    mov mm,eax"
 );
 // LINE 54:
 	asm( 
-"	      0041fbcc    mov eax,[ebp+0Ch]"
+"	      0041fbcc    mov eax,t"
 "	      0041fbcf    mov eax,[eax+0Ch]"
-"	      0041fbd2    mov [ebp-0FCh],eax"
+"	      0041fbd2    mov nLanguageToUse,eax"
 );
 // LINE 56:
 	asm( 
 "	      0041fbd8    push 1"
 "	      0041fbda    push 2"
 "	      0041fbdc    push 50h"
-"	      0041fbde    lea eax,[ebp-0A0h]"
+"	      0041fbde    lea eax,buf[0]"
 "	      0041fbe4    push eax"
-"	      0041fbe5    lea ecx,[ebp-0F8h]"
+"	      0041fbe5    lea ecx,out.ios"
 "	      0041fbeb    call 0056C780h"
 );
 // LINE 58:
 	asm( 
-"	      0041fbf0    mov eax,[ebp+0Ch]"
+"	      0041fbf0    mov eax,t"
 "	      0041fbf3    cmp dword ptr [eax+8],0"
 "	      0041fbf7    je near ptr 0041FC6Ah"
 );
 // LINE 59:
 	asm( 
-"	      0041fbfd    cmp dword ptr [ebp+0Ch],0"
+"	      0041fbfd    cmp t,0"
 "	      0041fc01    je near ptr 0041FC18h"
-"	      0041fc07    mov eax,[ebp+0Ch]"
+"	      0041fc07    mov eax,t"
 "	      0041fc0a    add eax,4"
 "	      0041fc0d    mov [ebp-11Ch],eax"
 "	      0041fc13    jmp near ptr 0041FC22h"
@@ -188,7 +188,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 "	      0041fc2e    lea ecx,[ebp-114h]"
 "	      0041fc34    call 0041FFBAh"
 "	      0041fc39    push eax"
-"	      0041fc3a    lea eax,[ebp-0F8h]"
+"	      0041fc3a    lea eax,out.ios"
 "	      0041fc40    push eax"
 "	      0041fc41    call 004203D3h"
 "	      0041fc46    add esp,8"
@@ -203,45 +203,45 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 61:
 	asm( 
-"	      0041fc6a    cmp dword ptr [ebp-0FCh],0"
+"	      0041fc6a    cmp nLanguageToUse,0"
 "	      0041fc71    jne near ptr 0041FC82h"
 );
 // LINE 62:
 	asm( 
 "	      0041fc77    mov eax,ds:[597664h]"
-"	      0041fc7c    mov [ebp-0FCh],eax"
+"	      0041fc7c    mov nLanguageToUse,eax"
 );
 // LINE 64:
 	asm( 
-"	      0041fc82    cmp dword ptr [ebp-0FCh],1"
+"	      0041fc82    cmp nLanguageToUse,1"
 "	      0041fc89    jne near ptr 0041FCFEh"
 );
 // LINE 65:
 	asm( 
-"	      0041fc8f    cmp dword ptr [ebp-104h],0Ch"
+"	      0041fc8f    cmp hh,0Ch"
 "	      0041fc96    jbe near ptr 0041FCB0h"
-"	      0041fc9c    mov eax,[ebp-104h]"
+"	      0041fc9c    mov eax,hh"
 "	      0041fca2    sub eax,0Ch"
 "	      0041fca5    mov [ebp-120h],eax"
 "	      0041fcab    jmp near ptr 0041FCBCh"
-"	      0041fcb0    mov eax,[ebp-104h]"
+"	      0041fcb0    mov eax,hh"
 "	      0041fcb6    mov [ebp-120h],eax"
 "	      0041fcbc    mov eax,5972A8h"
 "	      0041fcc1    mov ecx,5972A4h"
 "	      0041fcc6    xor edx,edx"
-"	      0041fcc8    cmp dword ptr [ebp-104h],0Ch"
+"	      0041fcc8    cmp hh,0Ch"
 "	      0041fccf    setae dl"
 "	      0041fcd2    dec edx"
 "	      0041fcd3    sub ecx,eax"
 "	      0041fcd5    and edx,ecx"
 "	      0041fcd7    add edx,eax"
 "	      0041fcd9    push edx"
-"	      0041fcda    mov eax,[ebp-100h]"
+"	      0041fcda    mov eax,mm"
 "	      0041fce0    push eax"
 "	      0041fce1    mov eax,[ebp-120h]"
 "	      0041fce7    push eax"
 "	      0041fce8    push 5972ACh"
-"	      0041fced    lea eax,[ebp-50h]"
+"	      0041fced    lea eax,buf1[0]"
 "	      0041fcf0    push eax"
 "	      0041fcf1    call 0056CD30h"
 "	      0041fcf6    add esp,14h"
@@ -252,18 +252,18 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 68:
 	asm( 
-"	      0041fcfe    mov eax,[ebp-0FCh]"
+"	      0041fcfe    mov eax,nLanguageToUse"
 "	      0041fd04    mov [ebp-128h],eax"
 "	      0041fd0a    jmp near ptr 0041FD7Bh"
 );
 // LINE 85:
 	asm( 
-"	      0041fd0f    mov eax,[ebp-100h]"
+"	      0041fd0f    mov eax,mm"
 "	      0041fd15    push eax"
-"	      0041fd16    mov eax,[ebp-104h]"
+"	      0041fd16    mov eax,hh"
 "	      0041fd1c    push eax"
 "	      0041fd1d    push 5972B8h"
-"	      0041fd22    lea eax,[ebp-50h]"
+"	      0041fd22    lea eax,buf1[0]"
 "	      0041fd25    push eax"
 "	      0041fd26    call 0056CD30h"
 "	      0041fd2b    add esp,10h"
@@ -274,12 +274,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 96:
 	asm( 
-"	      0041fd33    mov eax,[ebp-100h]"
+"	      0041fd33    mov eax,mm"
 "	      0041fd39    push eax"
-"	      0041fd3a    mov eax,[ebp-104h]"
+"	      0041fd3a    mov eax,hh"
 "	      0041fd40    push eax"
 "	      0041fd41    push 5972C0h"
-"	      0041fd46    lea eax,[ebp-50h]"
+"	      0041fd46    lea eax,buf1[0]"
 "	      0041fd49    push eax"
 "	      0041fd4a    call 0056CD30h"
 "	      0041fd4f    add esp,10h"
@@ -290,12 +290,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 100:
 	asm( 
-"	      0041fd57    mov eax,[ebp-100h]"
+"	      0041fd57    mov eax,mm"
 "	      0041fd5d    push eax"
-"	      0041fd5e    mov eax,[ebp-104h]"
+"	      0041fd5e    mov eax,hh"
 "	      0041fd64    push eax"
 "	      0041fd65    push 5972C8h"
-"	      0041fd6a    lea eax,[ebp-50h]"
+"	      0041fd6a    lea eax,buf1[0]"
 "	      0041fd6d    push eax"
 "	      0041fd6e    call 0056CD30h"
 "	      0041fd73    add esp,10h"
@@ -372,23 +372,23 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 );
 // LINE 104:
 	asm( 
-"	      0041fe09    lea eax,[ebp-50h]"
+"	      0041fe09    lea eax,buf1[0]"
 "	      0041fe0c    push eax"
-"	      0041fe0d    lea eax,[ebp-0A0h]"
+"	      0041fe0d    lea eax,buf[0]"
 "	      0041fe13    push eax"
-"	      0041fe14    mov ecx,[ebp+8]"
+"	      0041fe14    mov ecx,s"
 "	      0041fe17    call 00569960h"
 "	      0041fe1c    mov ecx,eax"
 "	      0041fe1e    call 00569960h"
 );
 // LINE 105:
 	asm( 
-"	      0041fe23    mov eax,[ebp+8]"
+"	      0041fe23    mov eax,s"
 "	      0041fe26    mov [ebp-118h],eax"
 "	      0041fe2c    jmp near ptr 0041FE31h"
-"	      0041fe31    lea ecx,[ebp-0F0h]"
+"	      0041fe31    lea ecx,out.<ostrstream+0x08>"
 "	      0041fe37    call 0056C8D0h"
-"	      0041fe3c    lea ecx,[ebp-0F0h]"
+"	      0041fe3c    lea ecx,out.<ostrstream+0x08>"
 "	      0041fe42    call 0056B140h"
 "	      0041fe47    mov eax,[ebp-118h]"
 "	      0041fe4d    jmp near ptr 0041FE52h"
@@ -413,18 +413,18 @@ void MDateLocalized::MDateLocalized() {
 "	      0041fe5d    push ebx"
 "	      0041fe5e    push esi"
 "	      0041fe5f    push edi"
-"	      0041fe60    mov [ebp-4],ecx"
-"	      0041fe63    mov ecx,[ebp-4]"
+"	      0041fe60    mov this,ecx"
+"	      0041fe63    mov ecx,this"
 "	      0041fe66    call 004BC460h"
-"	      0041fe6b    mov eax,[ebp-4]"
+"	      0041fe6b    mov eax,this"
 "	      0041fe6e    mov dword ptr [eax+0Ch],0"
-"	      0041fe75    mov eax,[ebp-4]"
+"	      0041fe75    mov eax,this"
 "	      0041fe78    mov dword ptr [eax],58F3D0h"
 );
 // LINE 122:
 	asm( 
 "	      0041fe7e    jmp near ptr 0041FE83h"
-"	      0041fe83    mov eax,[ebp-4]"
+"	      0041fe83    mov eax,this"
 "	      0041fe86    pop edi"
 "	      0041fe87    pop esi"
 "	      0041fe88    pop ebx"
@@ -443,22 +443,22 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 "	      0041fe91    push ebx"
 "	      0041fe92    push esi"
 "	      0041fe93    push edi"
-"	      0041fe94    mov [ebp-4],ecx"
-"	      0041fe97    mov eax,[ebp+0Ch]"
+"	      0041fe94    mov this,ecx"
+"	      0041fe97    mov eax,year"
 "	      0041fe9a    push eax"
-"	      0041fe9b    mov eax,[ebp+8]"
+"	      0041fe9b    mov eax,day"
 "	      0041fe9e    push eax"
-"	      0041fe9f    mov ecx,[ebp-4]"
+"	      0041fe9f    mov ecx,this"
 "	      0041fea2    call 004BC4D1h"
-"	      0041fea7    mov eax,[ebp-4]"
+"	      0041fea7    mov eax,this"
 "	      0041feaa    mov dword ptr [eax+0Ch],0"
-"	      0041feb1    mov eax,[ebp-4]"
+"	      0041feb1    mov eax,this"
 "	      0041feb4    mov dword ptr [eax],58F3D0h"
 );
 // LINE 130:
 	asm( 
 "	      0041feba    jmp near ptr 0041FEBFh"
-"	      0041febf    mov eax,[ebp-4]"
+"	      0041febf    mov eax,this"
 "	      0041fec2    pop edi"
 "	      0041fec3    pop esi"
 "	      0041fec4    pop ebx"
@@ -477,41 +477,41 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 "	      0041fecf    push ebx"
 "	      0041fed0    push esi"
 "	      0041fed1    push edi"
-"	      0041fed2    mov [ebp-4],ecx"
-"	      0041fed5    mov eax,[ebp+10h]"
+"	      0041fed2    mov this,ecx"
+"	      0041fed5    mov eax,year"
 "	      0041fed8    push eax"
-"	      0041fed9    mov eax,[ebp+0Ch]"
+"	      0041fed9    mov eax,monthName"
 "	      0041fedc    push eax"
-"	      0041fedd    mov eax,[ebp+8]"
+"	      0041fedd    mov eax,day"
 "	      0041fee0    push eax"
-"	      0041fee1    mov ecx,[ebp-4]"
+"	      0041fee1    mov ecx,this"
 "	      0041fee4    call 004BC538h"
-"	      0041fee9    mov eax,[ebp-4]"
+"	      0041fee9    mov eax,this"
 "	      0041feec    mov dword ptr [eax+0Ch],0"
-"	      0041fef3    mov eax,[ebp-4]"
+"	      0041fef3    mov eax,this"
 "	      0041fef6    mov dword ptr [eax],58F3D0h"
 );
 // LINE 138:
 	asm( 
-"	      0041fefc    mov eax,[ebp+10h]"
+"	      0041fefc    mov eax,year"
 "	      0041feff    push eax"
-"	      0041ff00    mov eax,[ebp+8]"
+"	      0041ff00    mov eax,day"
 "	      0041ff03    push eax"
 "	      0041ff04    push 0"
-"	      0041ff06    mov eax,[ebp+0Ch]"
+"	      0041ff06    mov eax,monthName"
 "	      0041ff09    push eax"
 "	      0041ff0a    call 00420237h"
 "	      0041ff0f    add esp,8"
 "	      0041ff12    push eax"
 "	      0041ff13    call 004BC7C6h"
 "	      0041ff18    add esp,0Ch"
-"	      0041ff1b    mov ecx,[ebp-4]"
+"	      0041ff1b    mov ecx,this"
 "	      0041ff1e    mov [ecx+4],eax"
 );
 // LINE 139:
 	asm( 
 "	      0041ff21    jmp near ptr 0041FF26h"
-"	      0041ff26    mov eax,[ebp-4]"
+"	      0041ff26    mov eax,this"
 "	      0041ff29    pop edi"
 "	      0041ff2a    pop esi"
 "	      0041ff2b    pop ebx"
@@ -530,24 +530,24 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year)
 "	      0041ff36    push ebx"
 "	      0041ff37    push esi"
 "	      0041ff38    push edi"
-"	      0041ff39    mov [ebp-4],ecx"
-"	      0041ff3c    mov eax,[ebp+10h]"
+"	      0041ff39    mov this,ecx"
+"	      0041ff3c    mov eax,year"
 "	      0041ff3f    push eax"
-"	      0041ff40    mov eax,[ebp+0Ch]"
+"	      0041ff40    mov eax,month"
 "	      0041ff43    push eax"
-"	      0041ff44    mov eax,[ebp+8]"
+"	      0041ff44    mov eax,day"
 "	      0041ff47    push eax"
-"	      0041ff48    mov ecx,[ebp-4]"
+"	      0041ff48    mov ecx,this"
 "	      0041ff4b    call 004BC589h"
-"	      0041ff50    mov eax,[ebp-4]"
+"	      0041ff50    mov eax,this"
 "	      0041ff53    mov dword ptr [eax+0Ch],0"
-"	      0041ff5a    mov eax,[ebp-4]"
+"	      0041ff5a    mov eax,this"
 "	      0041ff5d    mov dword ptr [eax],58F3D0h"
 );
 // LINE 147:
 	asm( 
 "	      0041ff63    jmp near ptr 0041FF68h"
-"	      0041ff68    mov eax,[ebp-4]"
+"	      0041ff68    mov eax,this"
 "	      0041ff6b    pop edi"
 "	      0041ff6c    pop esi"
 "	      0041ff6d    pop ebx"
@@ -566,23 +566,23 @@ void MDateLocalized::MDateLocalized(class istream& s) {
 "	      0041ff78    push ebx"
 "	      0041ff79    push esi"
 "	      0041ff7a    push edi"
-"	      0041ff7b    mov [ebp-4],ecx"
-"	      0041ff7e    mov eax,[ebp-4]"
+"	      0041ff7b    mov this,ecx"
+"	      0041ff7e    mov eax,this"
 "	      0041ff81    mov dword ptr [eax],58F3E8h"
-"	      0041ff87    mov eax,[ebp+8]"
+"	      0041ff87    mov eax,s"
 "	      0041ff8a    push eax"
-"	      0041ff8b    mov ecx,[ebp-4]"
+"	      0041ff8b    mov ecx,this"
 "	      0041ff8e    call 004BCE73h"
 "	      0041ff93    jmp near ptr 0041FF98h"
-"	      0041ff98    mov eax,[ebp-4]"
+"	      0041ff98    mov eax,this"
 "	      0041ff9b    mov dword ptr [eax+0Ch],0"
-"	      0041ffa2    mov eax,[ebp-4]"
+"	      0041ffa2    mov eax,this"
 "	      0041ffa5    mov dword ptr [eax],58F3D0h"
 );
 // LINE 155:
 	asm( 
 "	      0041ffab    jmp near ptr 0041FFB0h"
-"	      0041ffb0    mov eax,[ebp-4]"
+"	      0041ffb0    mov eax,this"
 "	      0041ffb3    pop edi"
 "	      0041ffb4    pop esi"
 "	      0041ffb5    pop ebx"
@@ -601,20 +601,20 @@ void MDateLocalized::MDateLocalized(const class MTime& time) {
 "	      0041ffc0    push ebx"
 "	      0041ffc1    push esi"
 "	      0041ffc2    push edi"
-"	      0041ffc3    mov [ebp-4],ecx"
-"	      0041ffc6    mov eax,[ebp+8]"
+"	      0041ffc3    mov this,ecx"
+"	      0041ffc6    mov eax,time"
 "	      0041ffc9    push eax"
-"	      0041ffca    mov ecx,[ebp-4]"
+"	      0041ffca    mov ecx,this"
 "	      0041ffcd    call 0043C73Fh"
-"	      0041ffd2    mov eax,[ebp-4]"
+"	      0041ffd2    mov eax,this"
 "	      0041ffd5    mov dword ptr [eax+0Ch],0"
-"	      0041ffdc    mov eax,[ebp-4]"
+"	      0041ffdc    mov eax,this"
 "	      0041ffdf    mov dword ptr [eax],58F3D0h"
 );
 // LINE 163:
 	asm( 
 "	      0041ffe5    jmp near ptr 0041FFEAh"
-"	      0041ffea    mov eax,[ebp-4]"
+"	      0041ffea    mov eax,this"
 "	      0041ffed    pop edi"
 "	      0041ffee    pop esi"
 "	      0041ffef    pop ebx"
@@ -633,36 +633,36 @@ char * MDateLocalized::NameOfDayLocalized(char * szDayName, int32_t nLanguageToU
 "	      0041fffa    push ebx"
 "	      0041fffb    push esi"
 "	      0041fffc    push edi"
-"	      0041fffd    mov [ebp-4],ecx"
+"	      0041fffd    mov this,ecx"
 );
 // LINE 171:
 	asm( 
-"	      00420000    cmp dword ptr [ebp+0Ch],0"
+"	      00420000    cmp nLanguageToUse,0"
 "	      00420004    jne near ptr 00420013h"
 );
 // LINE 172:
 	asm( 
-"	      0042000a    mov eax,[ebp-4]"
+"	      0042000a    mov eax,this"
 "	      0042000d    mov eax,[eax+0Ch]"
-"	      00420010    mov [ebp+0Ch],eax"
+"	      00420010    mov nLanguageToUse,eax"
 );
 // LINE 173:
 	asm( 
-"	      00420013    cmp dword ptr [ebp+0Ch],0"
+"	      00420013    cmp nLanguageToUse,0"
 "	      00420017    jne near ptr 00420025h"
 );
 // LINE 174:
 	asm( 
 "	      0042001d    mov eax,ds:[597664h]"
-"	      00420022    mov [ebp+0Ch],eax"
+"	      00420022    mov nLanguageToUse,eax"
 );
 // LINE 176:
 	asm( 
-"	      00420025    mov eax,[ebp+0Ch]"
+"	      00420025    mov eax,nLanguageToUse"
 "	      00420028    push eax"
-"	      00420029    mov eax,[ebp+8]"
+"	      00420029    mov eax,szDayName"
 "	      0042002c    push eax"
-"	      0042002d    mov ecx,[ebp-4]"
+"	      0042002d    mov ecx,this"
 "	      00420030    call 004BCD7Ch"
 "	      00420035    push eax"
 "	      00420036    call 004202A5h"
@@ -689,36 +689,36 @@ char * MDateLocalized::NameOfMonthLocalized(char * szMonthName, int32_t nLanguag
 "	      00420050    push ebx"
 "	      00420051    push esi"
 "	      00420052    push edi"
-"	      00420053    mov [ebp-4],ecx"
+"	      00420053    mov this,ecx"
 );
 // LINE 184:
 	asm( 
-"	      00420056    cmp dword ptr [ebp+0Ch],0"
+"	      00420056    cmp nLanguageToUse,0"
 "	      0042005a    jne near ptr 00420069h"
 );
 // LINE 185:
 	asm( 
-"	      00420060    mov eax,[ebp-4]"
+"	      00420060    mov eax,this"
 "	      00420063    mov eax,[eax+0Ch]"
-"	      00420066    mov [ebp+0Ch],eax"
+"	      00420066    mov nLanguageToUse,eax"
 );
 // LINE 186:
 	asm( 
-"	      00420069    cmp dword ptr [ebp+0Ch],0"
+"	      00420069    cmp nLanguageToUse,0"
 "	      0042006d    jne near ptr 0042007Bh"
 );
 // LINE 187:
 	asm( 
 "	      00420073    mov eax,ds:[597664h]"
-"	      00420078    mov [ebp+0Ch],eax"
+"	      00420078    mov nLanguageToUse,eax"
 );
 // LINE 189:
 	asm( 
-"	      0042007b    mov eax,[ebp+0Ch]"
+"	      0042007b    mov eax,nLanguageToUse"
 "	      0042007e    push eax"
-"	      0042007f    mov eax,[ebp+8]"
+"	      0042007f    mov eax,szMonthName"
 "	      00420082    push eax"
-"	      00420083    mov ecx,[ebp-4]"
+"	      00420083    mov ecx,this"
 "	      00420086    call 004BCCA1h"
 "	      0042008b    push eax"
 "	      0042008c    call 0042033Ch"
@@ -748,39 +748,39 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 "	      004200a6    push ebx"
 "	      004200a7    push esi"
 "	      004200a8    push edi"
-"	      004200a9    mov [ebp-68h],ecx"
+"	      004200a9    mov this,ecx"
 );
 // LINE 200:
 	asm( 
-"	      004200ac    mov eax,[ebp-68h]"
+"	      004200ac    mov eax,this"
 "	      004200af    mov eax,[eax+0Ch]"
-"	      004200b2    mov [ebp-5Ch],eax"
+"	      004200b2    mov nTempOriginalLanguage,eax"
 );
 // LINE 201:
 	asm( 
-"	      004200b5    cmp dword ptr [ebp+0Ch],0"
+"	      004200b5    cmp nLanguageToUse,0"
 "	      004200b9    jne near ptr 004200C8h"
 );
 // LINE 202:
 	asm( 
-"	      004200bf    mov eax,[ebp-68h]"
+"	      004200bf    mov eax,this"
 "	      004200c2    mov eax,[eax+0Ch]"
-"	      004200c5    mov [ebp+0Ch],eax"
+"	      004200c5    mov nLanguageToUse,eax"
 );
 // LINE 203:
 	asm( 
-"	      004200c8    cmp dword ptr [ebp+0Ch],0"
+"	      004200c8    cmp nLanguageToUse,0"
 "	      004200cc    jne near ptr 004200DAh"
 );
 // LINE 204:
 	asm( 
 "	      004200d2    mov eax,ds:[597664h]"
-"	      004200d7    mov [ebp+0Ch],eax"
+"	      004200d7    mov nLanguageToUse,eax"
 );
 // LINE 205:
 	asm( 
-"	      004200da    mov eax,[ebp+0Ch]"
-"	      004200dd    mov ecx,[ebp-68h]"
+"	      004200da    mov eax,nLanguageToUse"
+"	      004200dd    mov ecx,this"
 "	      004200e0    mov [ecx+0Ch],eax"
 );
 // LINE 207:
@@ -788,13 +788,13 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 "	      004200e3    push 1"
 "	      004200e5    push 2"
 "	      004200e7    push 40h"
-"	      004200e9    mov eax,[ebp+8]"
+"	      004200e9    mov eax,szDate"
 "	      004200ec    push eax"
-"	      004200ed    lea ecx,[ebp-58h]"
+"	      004200ed    lea ecx,strtemp.ios"
 "	      004200f0    call 0056C780h"
-"	      004200f5    mov eax,[ebp-68h]"
+"	      004200f5    mov eax,this"
 "	      004200f8    push eax"
-"	      004200f9    lea eax,[ebp-58h]"
+"	      004200f9    lea eax,strtemp.ios"
 "	      004200fc    push eax"
 "	      004200fd    call 004203D3h"
 "	      00420102    add esp,8"
@@ -810,18 +810,18 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 );
 // LINE 210:
 	asm( 
-"	      00420119    mov eax,[ebp-5Ch]"
-"	      0042011c    mov ecx,[ebp-68h]"
+"	      00420119    mov eax,nTempOriginalLanguage"
+"	      0042011c    mov ecx,this"
 "	      0042011f    mov [ecx+0Ch],eax"
 );
 // LINE 211:
 	asm( 
-"	      00420122    mov eax,[ebp+8]"
+"	      00420122    mov eax,szDate"
 "	      00420125    mov [ebp-60h],eax"
 "	      00420128    jmp near ptr 0042012Dh"
-"	      0042012d    lea ecx,[ebp-50h]"
+"	      0042012d    lea ecx,strtemp.<ostrstream+0x08>"
 "	      00420130    call 0056C8D0h"
-"	      00420135    lea ecx,[ebp-50h]"
+"	      00420135    lea ecx,strtemp.<ostrstream+0x08>"
 "	      00420138    call 0056B140h"
 "	      0042013d    mov eax,[ebp-60h]"
 "	      00420140    jmp near ptr 00420145h"
@@ -848,60 +848,60 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 "	      00420152    push ebx"
 "	      00420153    push esi"
 "	      00420154    push edi"
-"	      00420155    mov [ebp-8],ecx"
+"	      00420155    mov this,ecx"
 );
 // LINE 222:
 	asm( 
-"	      00420158    cmp dword ptr [ebp+10h],0"
+"	      00420158    cmp nLanguageToUse,0"
 "	      0042015c    jne near ptr 0042016Bh"
 );
 // LINE 223:
 	asm( 
-"	      00420162    mov eax,[ebp-8]"
+"	      00420162    mov eax,this"
 "	      00420165    mov eax,[eax+0Ch]"
-"	      00420168    mov [ebp+10h],eax"
+"	      00420168    mov nLanguageToUse,eax"
 );
 // LINE 224:
 	asm( 
-"	      0042016b    cmp dword ptr [ebp+10h],0"
+"	      0042016b    cmp nLanguageToUse,0"
 "	      0042016f    jne near ptr 0042017Dh"
 );
 // LINE 225:
 	asm( 
 "	      00420175    mov eax,ds:[597664h]"
-"	      0042017a    mov [ebp+10h],eax"
+"	      0042017a    mov nLanguageToUse,eax"
 );
 // LINE 227:
 	asm( 
-"	      0042017d    mov eax,[ebp+10h]"
+"	      0042017d    mov eax,nLanguageToUse"
 "	      00420180    push eax"
-"	      00420181    mov eax,[ebp+0Ch]"
+"	      00420181    mov eax,dayName"
 "	      00420184    push eax"
 "	      00420185    call 004201C9h"
 "	      0042018a    add esp,8"
-"	      0042018d    mov [ebp-4],eax"
+"	      0042018d    mov day,eax"
 );
 // LINE 228:
 	asm( 
-"	      00420190    cmp dword ptr [ebp-4],0"
+"	      00420190    cmp day,0"
 "	      00420194    je near ptr 004201B2h"
 );
 // LINE 229:
 	asm( 
-"	      0042019a    mov eax,[ebp-4]"
+"	      0042019a    mov eax,day"
 "	      0042019d    push eax"
-"	      0042019e    mov eax,[ebp+8]"
+"	      0042019e    mov eax,__$ReturnUdt"
 "	      004201a1    push eax"
-"	      004201a2    mov ecx,[ebp-8]"
+"	      004201a2    mov ecx,this"
 "	      004201a5    call 004BCD02h"
-"	      004201aa    mov eax,[ebp+8]"
+"	      004201aa    mov eax,__$ReturnUdt"
 "	      004201ad    jmp near ptr 004201C2h"
 );
 // LINE 230:
 	asm( 
-"	      004201b2    mov ecx,[ebp+8]"
+"	      004201b2    mov ecx,__$ReturnUdt"
 "	      004201b5    call 004BC460h"
-"	      004201ba    mov eax,[ebp+8]"
+"	      004201ba    mov eax,__$ReturnUdt"
 "	      004201bd    jmp near ptr 004201C2h"
 );
 // LINE 231:
@@ -931,21 +931,21 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 );
 // LINE 246:
 	asm( 
-"	      004201d9    mov dword ptr [ebp-4],1"
+"	      004201d9    mov i,1"
 "	      004201e0    jmp near ptr 004201E8h"
-"	      004201e5    inc dword ptr [ebp-4]"
-"	      004201e8    cmp dword ptr [ebp-4],7"
+"	      004201e5    inc i"
+"	      004201e8    cmp i,7"
 "	      004201ec    jg near ptr 0042022Bh"
 );
 // LINE 247:
 	asm( 
-"	      004201f2    mov eax,[ebp+8]"
+"	      004201f2    mov eax,dayName"
 "	      004201f5    push eax"
-"	      004201f6    mov eax,[ebp+0Ch]"
+"	      004201f6    mov eax,nLanguageToUse"
 "	      004201f9    push eax"
-"	      004201fa    lea eax,[ebp-1004h]"
+"	      004201fa    lea eax,szCurrentDay[0]"
 "	      00420200    push eax"
-"	      00420201    mov eax,[ebp-4]"
+"	      00420201    mov eax,i"
 "	      00420204    push eax"
 "	      00420205    call 004202A5h"
 "	      0042020a    add esp,0Ch"
@@ -957,7 +957,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 );
 // LINE 248:
 	asm( 
-"	      0042021e    mov eax,[ebp-4]"
+"	      0042021e    mov eax,i"
 "	      00420221    jmp near ptr 00420232h"
 );
 // LINE 249:
@@ -996,21 +996,21 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 );
 // LINE 267:
 	asm( 
-"	      00420247    mov dword ptr [ebp-4],1"
+"	      00420247    mov i,1"
 "	      0042024e    jmp near ptr 00420256h"
-"	      00420253    inc dword ptr [ebp-4]"
-"	      00420256    cmp dword ptr [ebp-4],1Fh"
+"	      00420253    inc i"
+"	      00420256    cmp i,1Fh"
 "	      0042025a    jg near ptr 00420299h"
 );
 // LINE 268:
 	asm( 
-"	      00420260    mov eax,[ebp+8]"
+"	      00420260    mov eax,monthName"
 "	      00420263    push eax"
-"	      00420264    mov eax,[ebp+0Ch]"
+"	      00420264    mov eax,nLanguageToUse"
 "	      00420267    push eax"
-"	      00420268    lea eax,[ebp-1004h]"
+"	      00420268    lea eax,szCurrentMonth[0]"
 "	      0042026e    push eax"
-"	      0042026f    mov eax,[ebp-4]"
+"	      0042026f    mov eax,i"
 "	      00420272    push eax"
 "	      00420273    call 0042033Ch"
 "	      00420278    add esp,0Ch"
@@ -1022,7 +1022,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 );
 // LINE 269:
 	asm( 
-"	      0042028c    mov eax,[ebp-4]"
+"	      0042028c    mov eax,i"
 "	      0042028f    jmp near ptr 004202A0h"
 );
 // LINE 270:
@@ -1059,25 +1059,25 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 );
 // LINE 288:
 	asm( 
-"	      004202ae    dec dword ptr [ebp+8]"
+"	      004202ae    dec weekDayNumber"
 );
 // LINE 289:
 	asm( 
-"	      004202b1    mov eax,[ebp+10h]"
+"	      004202b1    mov eax,nLanguageToUse"
 "	      004202b4    push eax"
-"	      004202b5    mov eax,[ebp+8]"
+"	      004202b5    mov eax,weekDayNumber"
 "	      004202b8    add eax,1F4h"
 "	      004202bd    push eax"
 "	      004202be    call 0042B15Fh"
 "	      004202c3    add esp,8"
-"	      004202c6    mov [ebp-4],eax"
+"	      004202c6    mov nFullStringID,eax"
 );
 // LINE 290:
 	asm( 
 "	      004202c9    push 0FFFh"
-"	      004202ce    mov eax,[ebp+0Ch]"
+"	      004202ce    mov eax,szDayName"
 "	      004202d1    push eax"
-"	      004202d2    mov eax,[ebp-4]"
+"	      004202d2    mov eax,nFullStringID"
 "	      004202d5    push eax"
 "	      004202d6    mov eax,ds:[5C28C8h]"
 "	      004202db    push eax"
@@ -1086,10 +1086,10 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 "	      004202e5    cmp dword ptr [ebp-8],0"
 "	      004202e9    jne near ptr 0042032Ah"
 "	      004202ef    push 0FFFh"
-"	      004202f4    mov eax,[ebp+0Ch]"
+"	      004202f4    mov eax,szDayName"
 "	      004202f7    push eax"
 "	      004202f8    mov ecx,3E8h"
-"	      004202fd    mov eax,[ebp-4]"
+"	      004202fd    mov eax,nFullStringID"
 "	      00420300    sub edx,edx"
 "	      00420302    div ecx"
 "	      00420304    push edx"
@@ -1098,7 +1098,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 "	      0042030b    call dword ptr ds:[6C38B4h]"
 "	      00420311    mov [ebp-8],eax"
 "	      00420314    push 597200h"
-"	      00420319    mov eax,[ebp+0Ch]"
+"	      00420319    mov eax,szDayName"
 "	      0042031c    push eax"
 "	      0042031d    call 0056CEC0h"
 "	      00420322    add esp,8"
@@ -1107,7 +1107,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 );
 // LINE 292:
 	asm( 
-"	      0042032f    mov eax,[ebp+0Ch]"
+"	      0042032f    mov eax,szDayName"
 "	      00420332    jmp near ptr 00420337h"
 );
 // LINE 293:
@@ -1135,25 +1135,25 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 );
 // LINE 308:
 	asm( 
-"	      00420345    dec dword ptr [ebp+8]"
+"	      00420345    dec monthNumber"
 );
 // LINE 309:
 	asm( 
-"	      00420348    mov eax,[ebp+10h]"
+"	      00420348    mov eax,nLanguageToUse"
 "	      0042034b    push eax"
-"	      0042034c    mov eax,[ebp+8]"
+"	      0042034c    mov eax,monthNumber"
 "	      0042034f    add eax,1FEh"
 "	      00420354    push eax"
 "	      00420355    call 0042B15Fh"
 "	      0042035a    add esp,8"
-"	      0042035d    mov [ebp-4],eax"
+"	      0042035d    mov nFullStringID,eax"
 );
 // LINE 310:
 	asm( 
 "	      00420360    push 0FFFh"
-"	      00420365    mov eax,[ebp+0Ch]"
+"	      00420365    mov eax,szMonthName"
 "	      00420368    push eax"
-"	      00420369    mov eax,[ebp-4]"
+"	      00420369    mov eax,nFullStringID"
 "	      0042036c    push eax"
 "	      0042036d    mov eax,ds:[5C28C8h]"
 "	      00420372    push eax"
@@ -1162,10 +1162,10 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 "	      0042037c    cmp dword ptr [ebp-8],0"
 "	      00420380    jne near ptr 004203C1h"
 "	      00420386    push 0FFFh"
-"	      0042038b    mov eax,[ebp+0Ch]"
+"	      0042038b    mov eax,szMonthName"
 "	      0042038e    push eax"
 "	      0042038f    mov ecx,3E8h"
-"	      00420394    mov eax,[ebp-4]"
+"	      00420394    mov eax,nFullStringID"
 "	      00420397    sub edx,edx"
 "	      00420399    div ecx"
 "	      0042039b    push edx"
@@ -1174,7 +1174,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 "	      004203a2    call dword ptr ds:[6C38B4h]"
 "	      004203a8    mov [ebp-8],eax"
 "	      004203ab    push 597200h"
-"	      004203b0    mov eax,[ebp+0Ch]"
+"	      004203b0    mov eax,szMonthName"
 "	      004203b3    push eax"
 "	      004203b4    call 0056CEC0h"
 "	      004203b9    add esp,8"
@@ -1183,7 +1183,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 );
 // LINE 312:
 	asm( 
-"	      004203c6    mov eax,[ebp+0Ch]"
+"	      004203c6    mov eax,szMonthName"
 "	      004203c9    jmp near ptr 004203CEh"
 );
 // LINE 313:
@@ -1213,39 +1213,39 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 327:
 	asm( 
-"	      004203dc    mov eax,[ebp+0Ch]"
+"	      004203dc    mov eax,d"
 "	      004203df    mov eax,[eax+0Ch]"
-"	      004203e2    mov [ebp-54h],eax"
+"	      004203e2    mov nLanguageToUse,eax"
 );
 // LINE 329:
 	asm( 
-"	      004203e5    cmp dword ptr [ebp-54h],0"
+"	      004203e5    cmp nLanguageToUse,0"
 "	      004203e9    jne near ptr 004203F7h"
 );
 // LINE 330:
 	asm( 
 "	      004203ef    mov eax,ds:[597664h]"
-"	      004203f4    mov [ebp-54h],eax"
+"	      004203f4    mov nLanguageToUse,eax"
 );
 // LINE 332:
 	asm( 
-"	      004203f7    mov eax,[ebp-54h]"
+"	      004203f7    mov eax,nLanguageToUse"
 "	      004203fa    mov [ebp-58h],eax"
 "	      004203fd    jmp near ptr 00420528h"
 );
 // LINE 340:
 	asm( 
-"	      00420402    mov ecx,[ebp+0Ch]"
+"	      00420402    mov ecx,d"
 "	      00420405    call 004BCDDEh"
 "	      0042040a    push eax"
-"	      0042040b    mov ecx,[ebp+0Ch]"
+"	      0042040b    mov ecx,d"
 "	      0042040e    call 004BC9D0h"
 "	      00420413    push eax"
-"	      00420414    mov ecx,[ebp+0Ch]"
+"	      00420414    mov ecx,d"
 "	      00420417    call 004BCCA1h"
 "	      0042041c    push eax"
 "	      0042041d    push 5972D0h"
-"	      00420422    lea eax,[ebp-50h]"
+"	      00420422    lea eax,buf[0]"
 "	      00420425    push eax"
 "	      00420426    call 0056CD30h"
 "	      0042042b    add esp,14h"
@@ -1256,17 +1256,17 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 356:
 	asm( 
-"	      00420433    mov ecx,[ebp+0Ch]"
+"	      00420433    mov ecx,d"
 "	      00420436    call 004BCDDEh"
 "	      0042043b    push eax"
-"	      0042043c    mov ecx,[ebp+0Ch]"
+"	      0042043c    mov ecx,d"
 "	      0042043f    call 004BCCA1h"
 "	      00420444    push eax"
-"	      00420445    mov ecx,[ebp+0Ch]"
+"	      00420445    mov ecx,d"
 "	      00420448    call 004BC9D0h"
 "	      0042044d    push eax"
 "	      0042044e    push 5972DCh"
-"	      00420453    lea eax,[ebp-50h]"
+"	      00420453    lea eax,buf[0]"
 "	      00420456    push eax"
 "	      00420457    call 0056CD30h"
 "	      0042045c    add esp,14h"
@@ -1277,17 +1277,17 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 366:
 	asm( 
-"	      00420464    mov ecx,[ebp+0Ch]"
+"	      00420464    mov ecx,d"
 "	      00420467    call 004BCDDEh"
 "	      0042046c    push eax"
-"	      0042046d    mov ecx,[ebp+0Ch]"
+"	      0042046d    mov ecx,d"
 "	      00420470    call 004BCCA1h"
 "	      00420475    push eax"
-"	      00420476    mov ecx,[ebp+0Ch]"
+"	      00420476    mov ecx,d"
 "	      00420479    call 004BC9D0h"
 "	      0042047e    push eax"
 "	      0042047f    push 5972E8h"
-"	      00420484    lea eax,[ebp-50h]"
+"	      00420484    lea eax,buf[0]"
 "	      00420487    push eax"
 "	      00420488    call 0056CD30h"
 "	      0042048d    add esp,14h"
@@ -1298,17 +1298,17 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 382:
 	asm( 
-"	      00420495    mov ecx,[ebp+0Ch]"
+"	      00420495    mov ecx,d"
 "	      00420498    call 004BCDDEh"
 "	      0042049d    push eax"
-"	      0042049e    mov ecx,[ebp+0Ch]"
+"	      0042049e    mov ecx,d"
 "	      004204a1    call 004BCCA1h"
 "	      004204a6    push eax"
-"	      004204a7    mov ecx,[ebp+0Ch]"
+"	      004204a7    mov ecx,d"
 "	      004204aa    call 004BC9D0h"
 "	      004204af    push eax"
 "	      004204b0    push 5972F4h"
-"	      004204b5    lea eax,[ebp-50h]"
+"	      004204b5    lea eax,buf[0]"
 "	      004204b8    push eax"
 "	      004204b9    call 0056CD30h"
 "	      004204be    add esp,14h"
@@ -1319,17 +1319,17 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 393:
 	asm( 
-"	      004204c6    mov ecx,[ebp+0Ch]"
+"	      004204c6    mov ecx,d"
 "	      004204c9    call 004BC9D0h"
 "	      004204ce    push eax"
-"	      004204cf    mov ecx,[ebp+0Ch]"
+"	      004204cf    mov ecx,d"
 "	      004204d2    call 004BCCA1h"
 "	      004204d7    push eax"
-"	      004204d8    mov ecx,[ebp+0Ch]"
+"	      004204d8    mov ecx,d"
 "	      004204db    call 004BCDDEh"
 "	      004204e0    push eax"
 "	      004204e1    push 597300h"
-"	      004204e6    lea eax,[ebp-50h]"
+"	      004204e6    lea eax,buf[0]"
 "	      004204e9    push eax"
 "	      004204ea    call 0056CD30h"
 "	      004204ef    add esp,14h"
@@ -1340,17 +1340,17 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 401:
 	asm( 
-"	      004204f7    mov ecx,[ebp+0Ch]"
+"	      004204f7    mov ecx,d"
 "	      004204fa    call 004BCDDEh"
 "	      004204ff    push eax"
-"	      00420500    mov ecx,[ebp+0Ch]"
+"	      00420500    mov ecx,d"
 "	      00420503    call 004BCCA1h"
 "	      00420508    push eax"
-"	      00420509    mov ecx,[ebp+0Ch]"
+"	      00420509    mov ecx,d"
 "	      0042050c    call 004BC9D0h"
 "	      00420511    push eax"
 "	      00420512    push 59730Ch"
-"	      00420517    lea eax,[ebp-50h]"
+"	      00420517    lea eax,buf[0]"
 "	      0042051a    push eax"
 "	      0042051b    call 0056CD30h"
 "	      00420520    add esp,14h"
@@ -1408,14 +1408,14 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 );
 // LINE 403:
 	asm( 
-"	      004205b3    lea eax,[ebp-50h]"
+"	      004205b3    lea eax,buf[0]"
 "	      004205b6    push eax"
-"	      004205b7    mov ecx,[ebp+8]"
+"	      004205b7    mov ecx,s"
 "	      004205ba    call 00569960h"
 );
 // LINE 404:
 	asm( 
-"	      004205bf    mov eax,[ebp+8]"
+"	      004205bf    mov eax,s"
 "	      004205c2    jmp near ptr 004205C7h"
 );
 // LINE 405:

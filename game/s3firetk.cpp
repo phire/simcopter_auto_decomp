@@ -17,7 +17,7 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 );
 // LINE 77:
 	asm( 
-"	      00536106    mov eax,[ebp+8]"
+"	      00536106    mov eax,instanceID"
 "	      00536109    push eax"
 "	      0053610a    call 0053618Bh"
 "	      0053610f    add esp,4"
@@ -48,21 +48,21 @@ void FireEngineClass::FireEngineClass() {
 "	      00536136    push ebx"
 "	      00536137    push esi"
 "	      00536138    push edi"
-"	      00536139    mov [ebp-4],ecx"
-"	      0053613c    mov ecx,[ebp-4]"
+"	      00536139    mov this,ecx"
+"	      0053613c    mov ecx,this"
 "	      0053613f    call 005415D5h"
-"	      00536144    mov eax,[ebp-4]"
+"	      00536144    mov eax,this"
 "	      00536147    mov dword ptr [eax],5932A8h"
 );
 // LINE 83:
 	asm( 
-"	      0053614d    mov eax,[ebp-4]"
+"	      0053614d    mov eax,this"
 "	      00536150    mov dword ptr [eax+4],11Ch"
 );
 // LINE 84:
 	asm( 
 "	      00536157    jmp near ptr 0053615Ch"
-"	      0053615c    mov eax,[ebp-4]"
+"	      0053615c    mov eax,this"
 "	      0053615f    pop edi"
 "	      00536160    pop esi"
 "	      00536161    pop ebx"
@@ -81,11 +81,11 @@ void FireEngineClass::~FireEngineClass() {
 "	      0053616a    push ebx"
 "	      0053616b    push esi"
 "	      0053616c    push edi"
-"	      0053616d    mov [ebp-4],ecx"
-"	      00536170    mov eax,[ebp-4]"
+"	      0053616d    mov this,ecx"
+"	      00536170    mov eax,this"
 "	      00536173    mov dword ptr [eax],5932A8h"
 "	      00536179    jmp near ptr 0053617Eh"
-"	      0053617e    mov ecx,[ebp-4]"
+"	      0053617e    mov ecx,this"
 "	      00536181    call 0054163Ah"
 "	      00536186    pop edi"
 "	      00536187    pop esi"
@@ -120,20 +120,20 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 "	      005361a8    je near ptr 005361BEh"
 "	      005361ae    mov ecx,[ebp-34h]"
 "	      005361b1    call 00536130h"
-"	      005361b6    mov [ebp-8],eax"
+"	      005361b6    mov youveWonABrandNewCar,eax"
 "	      005361b9    jmp near ptr 005361C5h"
-"	      005361be    mov dword ptr [ebp-8],0"
+"	      005361be    mov youveWonABrandNewCar,0"
 );
 // LINE 120:
 	asm( 
-"	      005361c5    cmp dword ptr [ebp-8],0"
+"	      005361c5    cmp youveWonABrandNewCar,0"
 "	      005361c9    je near ptr 00536375h"
 );
 // LINE 123:
 	asm( 
-"	      005361cf    mov eax,[ebp+8]"
+"	      005361cf    mov eax,instanceID"
 "	      005361d2    push eax"
-"	      005361d3    mov ecx,[ebp-8]"
+"	      005361d3    mov ecx,youveWonABrandNewCar"
 "	      005361d6    call 00504554h"
 "	      005361db    test eax,eax"
 "	      005361dd    je near ptr 0053634Eh"
@@ -145,11 +145,11 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 "	      005361e3    push 123h"
 "	      005361e8    call 004D8821h"
 "	      005361ed    add esp,4"
-"	      005361f0    mov [ebp-0Ch],eax"
+"	      005361f0    mov object,eax"
 );
 // LINE 128:
 	asm( 
-"	      005361f3    mov eax,[ebp-0Ch]"
+"	      005361f3    mov eax,object"
 "	      005361f6    push eax"
 "	      005361f7    call 004D8520h"
 "	      005361fc    add esp,4"
@@ -158,27 +158,27 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 "	      00536205    push eax"
 "	      00536206    call 004CB4ACh"
 "	      0053620b    add esp,8"
-"	      0053620e    mov [ebp-4],eax"
+"	      0053620e    mov objectMemory,eax"
 );
 // LINE 130:
 	asm( 
-"	      00536211    cmp dword ptr [ebp-4],0"
+"	      00536211    cmp objectMemory,0"
 "	      00536215    je near ptr 0053629Eh"
 );
 // LINE 135:
 	asm( 
-"	      0053621b    mov eax,[ebp-4]"
+"	      0053621b    mov eax,objectMemory"
 "	      0053621e    push eax"
-"	      0053621f    mov eax,[ebp-0Ch]"
+"	      0053621f    mov eax,object"
 "	      00536222    push eax"
 "	      00536223    call 004D8570h"
 "	      00536228    add esp,8"
-"	      0053622b    mov ecx,[ebp-8]"
+"	      0053622b    mov ecx,youveWonABrandNewCar"
 "	      0053622e    mov [ecx+12Eh],eax"
 );
 // LINE 137:
 	asm( 
-"	      00536234    mov eax,[ebp-8]"
+"	      00536234    mov eax,youveWonABrandNewCar"
 "	      00536237    cmp dword ptr [eax+12Eh],0"
 "	      0053623e    je near ptr 00536261h"
 );
@@ -186,7 +186,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	asm( 
 "	      00536244    mov eax,ds:[5B4780h]"
 "	      00536249    push eax"
-"	      0053624a    mov eax,[ebp-8]"
+"	      0053624a    mov eax,youveWonABrandNewCar"
 "	      0053624d    mov eax,[eax+12Eh]"
 "	      00536253    push eax"
 "	      00536254    call 004D84DBh"
@@ -198,7 +198,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 145:
 	asm( 
-"	      00536261    mov eax,[ebp-8]"
+"	      00536261    mov eax,youveWonABrandNewCar"
 "	      00536264    cmp dword ptr [eax+12Eh],0"
 "	      0053626b    jne near ptr 0053628Dh"
 "	      00536271    push 91h"
@@ -220,7 +220,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 153:
 	asm( 
-"	      0053629e    cmp dword ptr [ebp-4],0"
+"	      0053629e    cmp objectMemory,0"
 "	      005362a2    jne near ptr 005362C4h"
 "	      005362a8    push 99h"
 "	      005362ad    push 5B7E18h"
@@ -237,24 +237,24 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 161:
 	asm( 
-"	      005362d0    mov eax,[ebp-8]"
+"	      005362d0    mov eax,youveWonABrandNewCar"
 "	      005362d3    mov dword ptr [eax+2A0h],0"
 );
 // LINE 163:
 	asm( 
-"	      005362dd    mov eax,[ebp-8]"
+"	      005362dd    mov eax,youveWonABrandNewCar"
 "	      005362e0    mov word ptr [eax+134h],0"
 );
 // LINE 164:
 	asm( 
-"	      005362e9    mov eax,[ebp-8]"
+"	      005362e9    mov eax,youveWonABrandNewCar"
 "	      005362ec    mov word ptr [eax+132h],21h"
 );
 // LINE 165:
 	asm( 
-"	      005362f5    lea eax,[ebp-30h]"
+"	      005362f5    lea eax,oinfo.Faces"
 "	      005362f8    push eax"
-"	      005362f9    mov eax,[ebp-8]"
+"	      005362f9    mov eax,youveWonABrandNewCar"
 "	      005362fc    mov eax,[eax+12Eh]"
 "	      00536302    push eax"
 "	      00536303    call 004D8859h"
@@ -262,14 +262,14 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 166:
 	asm( 
-"	      0053630b    mov eax,[ebp-24h]"
-"	      0053630e    mov ecx,[ebp-8]"
+"	      0053630b    mov eax,oinfo.Radius"
+"	      0053630e    mov ecx,youveWonABrandNewCar"
 "	      00536311    mov [ecx+136h],eax"
 );
 // LINE 167:
 	asm( 
 "	      00536317    push 0"
-"	      00536319    mov eax,[ebp-8]"
+"	      00536319    mov eax,youveWonABrandNewCar"
 "	      0053631c    mov eax,[eax+12Eh]"
 "	      00536322    push eax"
 "	      00536323    call 004D6970h"
@@ -277,14 +277,14 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 169:
 	asm( 
-"	      0053632b    mov eax,[ebp-8]"
+"	      0053632b    mov eax,youveWonABrandNewCar"
 "	      0053632e    mov ecx,ds:[5B7DC8h]"
 "	      00536334    mov [ecx*4+62B9D0h],eax"
 "	      0053633b    inc dword ptr ds:[5B7DC8h]"
 );
 // LINE 171:
 	asm( 
-"	      00536341    mov eax,[ebp-8]"
+"	      00536341    mov eax,youveWonABrandNewCar"
 "	      00536344    jmp near ptr 0053637Ch"
 );
 // LINE 173:
@@ -294,7 +294,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 176:
 	asm( 
-"	      0053634e    mov eax,[ebp-8]"
+"	      0053634e    mov eax,youveWonABrandNewCar"
 "	      00536351    mov [ebp-3Ch],eax"
 "	      00536354    mov eax,[ebp-3Ch]"
 "	      00536357    mov [ebp-38h],eax"
@@ -336,13 +336,13 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	asm( 
 "	      00536387    push 5"
 "	      00536389    push 62B9D0h"
-"	      0053638e    mov eax,[ebp+0Ch]"
+"	      0053638e    mov eax,responseLevel"
 "	      00536391    push eax"
-"	      00536392    mov eax,[ebp+8]"
+"	      00536392    mov eax,responseType"
 "	      00536395    push eax"
-"	      00536396    mov eax,[ebp+14h]"
+"	      00536396    mov eax,mapy"
 "	      00536399    push eax"
-"	      0053639a    mov eax,[ebp+10h]"
+"	      0053639a    mov eax,mapx"
 "	      0053639d    push eax"
 "	      0053639e    mov ecx,ds:[5C3AA8h]"
 "	      005363a4    call 0053AB93h"
@@ -402,27 +402,27 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 );
 // LINE 225:
 	asm( 
-"	      005363eb    cmp dword ptr [ebp+8],0"
+"	      005363eb    cmp mapX,0"
 "	      005363ef    jl near ptr 00536419h"
-"	      005363f5    cmp dword ptr [ebp+0Ch],0"
+"	      005363f5    cmp mapY,0"
 "	      005363f9    jl near ptr 00536419h"
-"	      005363ff    cmp dword ptr [ebp+8],80h"
+"	      005363ff    cmp mapX,80h"
 "	      00536406    jge near ptr 00536419h"
-"	      0053640c    cmp dword ptr [ebp+0Ch],80h"
+"	      0053640c    cmp mapY,80h"
 "	      00536413    jl near ptr 00536423h"
 "	      00536419    jmp near ptr 00536482h"
 "	      0053641e    jmp near ptr 00536478h"
-"	      00536423    mov eax,[ebp+8]"
+"	      00536423    mov eax,mapX"
 "	      00536426    mov eax,[eax*4+638F70h]"
-"	      0053642d    mov ecx,[ebp+0Ch]"
+"	      0053642d    mov ecx,mapY"
 "	      00536430    xor edx,edx"
 "	      00536432    mov dl,[eax+ecx]"
 "	      00536435    and edx,2"
 "	      00536438    movsx eax,dx"
 "	      0053643b    shl eax,0Eh"
-"	      0053643e    mov ecx,[ebp+8]"
+"	      0053643e    mov ecx,mapX"
 "	      00536441    mov ecx,[ecx*4+639850h]"
-"	      00536448    mov edx,[ebp+0Ch]"
+"	      00536448    mov edx,mapY"
 "	      0053644b    xor ebx,ebx"
 "	      0053644d    mov bl,[ecx+edx]"
 "	      00536450    or eax,ebx"
@@ -462,29 +462,29 @@ void FireEngineClass::ItterateFSM() {
 "	      00536494    push ebx"
 "	      00536495    push esi"
 "	      00536496    push edi"
-"	      00536497    mov [ebp-14h],ecx"
+"	      00536497    mov this,ecx"
 );
 // LINE 254:
 	asm( 
-"	      0053649a    mov eax,[ebp-14h]"
+"	      0053649a    mov eax,this"
 "	      0053649d    mov eax,[eax+294h]"
 "	      005364a3    mov [ebp-18h],eax"
 "	      005364a6    jmp near ptr 0053674Bh"
 );
 // LINE 257:
 	asm( 
-"	      005364ab    mov eax,[ebp-14h]"
+"	      005364ab    mov eax,this"
 "	      005364ae    xor ecx,ecx"
 "	      005364b0    mov cl,[eax+7Ch]"
-"	      005364b3    mov eax,[ebp-14h]"
+"	      005364b3    mov eax,this"
 "	      005364b6    xor edx,edx"
 "	      005364b8    mov dl,[eax+11Ah]"
 "	      005364be    cmp ecx,edx"
 "	      005364c0    jne near ptr 0053650Eh"
-"	      005364c6    mov eax,[ebp-14h]"
+"	      005364c6    mov eax,this"
 "	      005364c9    xor ecx,ecx"
 "	      005364cb    mov cl,[eax+7Dh]"
-"	      005364ce    mov eax,[ebp-14h]"
+"	      005364ce    mov eax,this"
 "	      005364d1    xor edx,edx"
 "	      005364d3    mov dl,[eax+11Bh]"
 "	      005364d9    cmp ecx,edx"
@@ -492,7 +492,7 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 260:
 	asm( 
-"	      005364e1    mov eax,[ebp-14h]"
+"	      005364e1    mov eax,this"
 "	      005364e4    mov eax,[eax+298h]"
 "	      005364ea    push eax"
 "	      005364eb    mov ecx,ds:[5C3AA8h]"
@@ -500,12 +500,12 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 261:
 	asm( 
-"	      005364f6    mov ecx,[ebp-14h]"
+"	      005364f6    mov ecx,this"
 "	      005364f9    call 00503E6Eh"
 );
 // LINE 264:
 	asm( 
-"	      005364fe    mov eax,[ebp-14h]"
+"	      005364fe    mov eax,this"
 "	      00536501    movsx eax,word ptr [eax+1Ah]"
 "	      00536505    push eax"
 "	      00536506    call 00500FC3h"
@@ -513,7 +513,7 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 268:
 	asm( 
-"	      0053650e    mov ecx,[ebp-14h]"
+"	      0053650e    mov ecx,this"
 "	      00536511    call 005022B0h"
 );
 // LINE 269:
@@ -522,23 +522,23 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 273:
 	asm( 
-"	      0053651b    mov ecx,[ebp-14h]"
+"	      0053651b    mov ecx,this"
 "	      0053651e    call 005422EEh"
 );
 // LINE 274:
 	asm( 
-"	      00536523    mov eax,[ebp-14h]"
+"	      00536523    mov eax,this"
 "	      00536526    xor ecx,ecx"
 "	      00536528    mov cl,[eax+7Ch]"
-"	      0053652b    mov eax,[ebp-14h]"
+"	      0053652b    mov eax,this"
 "	      0053652e    xor edx,edx"
 "	      00536530    mov dl,[eax+11Ch]"
 "	      00536536    cmp ecx,edx"
 "	      00536538    jne near ptr 00536640h"
-"	      0053653e    mov eax,[ebp-14h]"
+"	      0053653e    mov eax,this"
 "	      00536541    xor ecx,ecx"
 "	      00536543    mov cl,[eax+7Dh]"
-"	      00536546    mov eax,[ebp-14h]"
+"	      00536546    mov eax,this"
 "	      00536549    xor edx,edx"
 "	      0053654b    mov dl,[eax+11Dh]"
 "	      00536551    cmp ecx,edx"
@@ -546,54 +546,54 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 276:
 	asm( 
-"	      00536559    mov eax,[ebp-14h]"
+"	      00536559    mov eax,this"
 "	      0053655c    mov ax,[eax+11Ch]"
 "	      00536563    push eax"
-"	      00536564    mov ecx,[ebp-14h]"
+"	      00536564    mov ecx,this"
 "	      00536567    call 00542461h"
 );
 // LINE 277:
 	asm( 
-"	      0053656c    mov ecx,[ebp-14h]"
+"	      0053656c    mov ecx,this"
 "	      0053656f    call 005429D6h"
 );
 // LINE 278:
 	asm( 
-"	      00536574    mov eax,[ebp-14h]"
+"	      00536574    mov eax,this"
 "	      00536577    mov ax,[eax+11Ch]"
 "	      0053657e    push eax"
-"	      0053657f    mov ecx,[ebp-14h]"
+"	      0053657f    mov ecx,this"
 "	      00536582    call 005368CDh"
 "	      00536587    test eax,eax"
 "	      00536589    je near ptr 005365D7h"
 );
 // LINE 281:
 	asm( 
-"	      0053658f    mov eax,[ebp-14h]"
+"	      0053658f    mov eax,this"
 "	      00536592    mov dword ptr [eax+294h],5"
 );
 // LINE 282:
 	asm( 
-"	      0053659c    mov ecx,[ebp-14h]"
+"	      0053659c    mov ecx,this"
 "	      0053659f    call 00536AE2h"
 );
 // LINE 283:
 	asm( 
 "	      005365a4    push 9"
 "	      005365a6    push 0Dh"
-"	      005365a8    mov ecx,[ebp-14h]"
+"	      005365a8    mov ecx,this"
 "	      005365ab    call 0050217Ch"
 "	      005365b0    test eax,eax"
 "	      005365b2    je near ptr 005365D2h"
 );
 // LINE 285:
 	asm( 
-"	      005365b8    mov eax,[ebp-14h]"
+"	      005365b8    mov eax,this"
 "	      005365bb    mov dword ptr [eax+0F6h],0"
 );
 // LINE 286:
 	asm( 
-"	      005365c5    mov eax,[ebp-14h]"
+"	      005365c5    mov eax,this"
 "	      005365c8    mov dword ptr [eax+0FEh],780000h"
 );
 // LINE 289:
@@ -602,22 +602,22 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 291:
 	asm( 
-"	      005365d7    mov eax,[ebp-14h]"
+"	      005365d7    mov eax,this"
 "	      005365da    mov dword ptr [eax+122h],0"
 );
 // LINE 292:
 	asm( 
-"	      005365e4    mov eax,[ebp-14h]"
+"	      005365e4    mov eax,this"
 "	      005365e7    mov dword ptr [eax+11Eh],0"
 );
 // LINE 296:
 	asm( 
-"	      005365f1    mov ecx,[ebp-14h]"
+"	      005365f1    mov ecx,this"
 "	      005365f4    call 00503E6Eh"
 );
 // LINE 297:
 	asm( 
-"	      005365f9    mov eax,[ebp-14h]"
+"	      005365f9    mov eax,this"
 "	      005365fc    movsx eax,word ptr [eax+1Ah]"
 "	      00536600    push eax"
 "	      00536601    call 00500FC3h"
@@ -625,7 +625,7 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 298:
 	asm( 
-"	      00536609    mov eax,[ebp-14h]"
+"	      00536609    mov eax,this"
 "	      0053660c    mov eax,[eax+298h]"
 "	      00536612    push eax"
 "	      00536613    mov ecx,ds:[5C3AA8h]"
@@ -633,14 +633,14 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 302:
 	asm( 
-"	      0053661e    mov eax,[ebp-14h]"
+"	      0053661e    mov eax,this"
 "	      00536621    mov dword ptr [eax+294h],2"
 );
 // LINE 303:
 	asm( 
-"	      0053662b    mov eax,[ebp-14h]"
+"	      0053662b    mov eax,this"
 "	      0053662e    mov eax,[eax]"
-"	      00536630    mov ecx,[ebp-14h]"
+"	      00536630    mov ecx,this"
 "	      00536633    call dword ptr [eax+8]"
 );
 // LINE 305:
@@ -653,57 +653,57 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 310:
 	asm( 
-"	      00536640    mov ecx,[ebp-14h]"
+"	      00536640    mov ecx,this"
 "	      00536643    call 005422EEh"
 );
 // LINE 313:
 	asm( 
 "	      00536648    mov eax,ds:[6C126Ch]"
-"	      0053664d    mov ecx,[ebp-14h]"
+"	      0053664d    mov ecx,this"
 "	      00536650    sub eax,[ecx+24h]"
-"	      00536653    mov [ebp-10h],eax"
+"	      00536653    mov vec.x,eax"
 );
 // LINE 314:
 	asm( 
 "	      00536656    mov eax,ds:[6C1270h]"
-"	      0053665b    mov ecx,[ebp-14h]"
+"	      0053665b    mov ecx,this"
 "	      0053665e    sub eax,[ecx+28h]"
-"	      00536661    mov [ebp-0Ch],eax"
+"	      00536661    mov vec.y,eax"
 );
 // LINE 315:
 	asm( 
 "	      00536664    mov eax,ds:[6C1274h]"
-"	      00536669    mov ecx,[ebp-14h]"
+"	      00536669    mov ecx,this"
 "	      0053666c    sub eax,[ecx+2Ch]"
-"	      0053666f    mov [ebp-8],eax"
+"	      0053666f    mov vec.z,eax"
 );
 // LINE 316:
 	asm( 
-"	      00536672    lea eax,[ebp-10h]"
+"	      00536672    lea eax,vec.x"
 "	      00536675    push eax"
 "	      00536676    call 004CA1E3h"
 "	      0053667b    add esp,4"
-"	      0053667e    mov [ebp-4],eax"
+"	      0053667e    mov dist,eax"
 );
 // LINE 317:
 	asm( 
 "	      00536681    mov eax,ds:[608F78h]"
-"	      00536686    cmp [ebp-4],eax"
+"	      00536686    cmp dist,eax"
 "	      00536689    jge near ptr 00536697h"
 );
 // LINE 318:
 	asm( 
-"	      0053668f    mov eax,[ebp-4]"
+"	      0053668f    mov eax,dist"
 "	      00536692    mov ds:[608F78h],eax"
 );
 // LINE 320:
 	asm( 
-"	      00536697    mov ecx,[ebp-14h]"
+"	      00536697    mov ecx,this"
 "	      0053669a    call 0050417Dh"
 );
 // LINE 321:
 	asm( 
-"	      0053669f    mov ecx,[ebp-14h]"
+"	      0053669f    mov ecx,this"
 "	      005366a2    call 005022B0h"
 );
 // LINE 322:
@@ -712,29 +712,29 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 326:
 	asm( 
-"	      005366ac    mov ecx,[ebp-14h]"
+"	      005366ac    mov ecx,this"
 "	      005366af    call 00536778h"
 "	      005366b4    test eax,eax"
 "	      005366b6    jne near ptr 0053671Bh"
 );
 // LINE 328:
 	asm( 
-"	      005366bc    mov eax,[ebp-14h]"
+"	      005366bc    mov eax,this"
 "	      005366bf    mov dword ptr [eax+122h],0"
 );
 // LINE 329:
 	asm( 
-"	      005366c9    mov eax,[ebp-14h]"
+"	      005366c9    mov eax,this"
 "	      005366cc    mov dword ptr [eax+11Eh],0"
 );
 // LINE 332:
 	asm( 
-"	      005366d6    mov ecx,[ebp-14h]"
+"	      005366d6    mov ecx,this"
 "	      005366d9    call 00503E6Eh"
 );
 // LINE 334:
 	asm( 
-"	      005366de    mov eax,[ebp-14h]"
+"	      005366de    mov eax,this"
 "	      005366e1    movsx eax,word ptr [eax+1Ah]"
 "	      005366e5    push eax"
 "	      005366e6    call 00500FC3h"
@@ -742,7 +742,7 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 335:
 	asm( 
-"	      005366ee    mov eax,[ebp-14h]"
+"	      005366ee    mov eax,this"
 "	      005366f1    mov eax,[eax+298h]"
 "	      005366f7    push eax"
 "	      005366f8    mov ecx,ds:[5C3AA8h]"
@@ -750,14 +750,14 @@ void FireEngineClass::ItterateFSM() {
 );
 // LINE 339:
 	asm( 
-"	      00536703    mov eax,[ebp-14h]"
+"	      00536703    mov eax,this"
 "	      00536706    mov dword ptr [eax+294h],2"
 );
 // LINE 340:
 	asm( 
-"	      00536710    mov eax,[ebp-14h]"
+"	      00536710    mov eax,this"
 "	      00536713    mov eax,[eax]"
-"	      00536715    mov ecx,[ebp-14h]"
+"	      00536715    mov ecx,this"
 "	      00536718    call dword ptr [eax+8]"
 );
 // LINE 342:
@@ -813,26 +813,26 @@ int32_t FireEngineClass::AtScene() {
 "	      0053677e    push ebx"
 "	      0053677f    push esi"
 "	      00536780    push edi"
-"	      00536781    mov [ebp-14h],ecx"
+"	      00536781    mov this,ecx"
 );
 // LINE 358:
 	asm( 
-"	      00536784    mov eax,[ebp-14h]"
+"	      00536784    mov eax,this"
 "	      00536787    cmp dword ptr [eax+2A4h],0"
 "	      0053678e    je near ptr 005367FCh"
 );
 // LINE 360:
 	asm( 
-"	      00536794    mov eax,[ebp-14h]"
+"	      00536794    mov eax,this"
 "	      00536797    add eax,2B0h"
 "	      0053679c    push eax"
-"	      0053679d    mov eax,[ebp-14h]"
+"	      0053679d    mov eax,this"
 "	      005367a0    add eax,0Ch"
 "	      005367a3    push eax"
-"	      005367a4    mov eax,[ebp-14h]"
+"	      005367a4    mov eax,this"
 "	      005367a7    mov eax,[eax+2ACh]"
 "	      005367ad    push eax"
-"	      005367ae    mov eax,[ebp-14h]"
+"	      005367ae    mov eax,this"
 "	      005367b1    mov eax,[eax+2A4h]"
 "	      005367b7    push eax"
 "	      005367b8    call 00526292h"
@@ -842,17 +842,17 @@ int32_t FireEngineClass::AtScene() {
 );
 // LINE 363:
 	asm( 
-"	      005367c8    mov eax,[ebp-14h]"
+"	      005367c8    mov eax,this"
 "	      005367cb    mov ax,[eax+11Ch]"
 "	      005367d2    push eax"
-"	      005367d3    mov ecx,[ebp-14h]"
+"	      005367d3    mov ecx,this"
 "	      005367d6    call 005368CDh"
 "	      005367db    test eax,eax"
 "	      005367dd    je near ptr 005367F0h"
 );
 // LINE 365:
 	asm( 
-"	      005367e3    mov ecx,[ebp-14h]"
+"	      005367e3    mov ecx,this"
 "	      005367e6    call 00536AE2h"
 );
 // LINE 367:
@@ -867,22 +867,22 @@ int32_t FireEngineClass::AtScene() {
 // LINE 374:
 	asm( 
 "	      005367f7    jmp near ptr 0053686Fh"
-"	      005367fc    mov eax,[ebp-14h]"
+"	      005367fc    mov eax,this"
 "	      005367ff    cmp dword ptr [eax+2A8h],0"
 "	      00536806    je near ptr 0053686Fh"
 );
 // LINE 376:
 	asm( 
-"	      0053680c    mov eax,[ebp-14h]"
+"	      0053680c    mov eax,this"
 "	      0053680f    add eax,2B0h"
 "	      00536814    push eax"
-"	      00536815    mov eax,[ebp-14h]"
+"	      00536815    mov eax,this"
 "	      00536818    add eax,0Ch"
 "	      0053681b    push eax"
-"	      0053681c    mov eax,[ebp-14h]"
+"	      0053681c    mov eax,this"
 "	      0053681f    mov eax,[eax+2ACh]"
 "	      00536825    push eax"
-"	      00536826    mov eax,[ebp-14h]"
+"	      00536826    mov eax,this"
 "	      00536829    mov eax,[eax+2A8h]"
 "	      0053682f    push eax"
 "	      00536830    call 005263ECh"
@@ -892,17 +892,17 @@ int32_t FireEngineClass::AtScene() {
 );
 // LINE 379:
 	asm( 
-"	      00536840    mov eax,[ebp-14h]"
+"	      00536840    mov eax,this"
 "	      00536843    mov ax,[eax+11Ch]"
 "	      0053684a    push eax"
-"	      0053684b    mov ecx,[ebp-14h]"
+"	      0053684b    mov ecx,this"
 "	      0053684e    call 005368CDh"
 "	      00536853    test eax,eax"
 "	      00536855    je near ptr 00536868h"
 );
 // LINE 381:
 	asm( 
-"	      0053685b    mov ecx,[ebp-14h]"
+"	      0053685b    mov ecx,this"
 "	      0053685e    call 00536AE2h"
 );
 // LINE 383:
@@ -917,41 +917,41 @@ int32_t FireEngineClass::AtScene() {
 // LINE 392:
 	asm( 
 "	      0053686f    mov eax,ds:[6C126Ch]"
-"	      00536874    mov ecx,[ebp-14h]"
+"	      00536874    mov ecx,this"
 "	      00536877    sub eax,[ecx+24h]"
-"	      0053687a    mov [ebp-10h],eax"
+"	      0053687a    mov vec.x,eax"
 );
 // LINE 393:
 	asm( 
 "	      0053687d    mov eax,ds:[6C1270h]"
-"	      00536882    mov ecx,[ebp-14h]"
+"	      00536882    mov ecx,this"
 "	      00536885    sub eax,[ecx+28h]"
-"	      00536888    mov [ebp-0Ch],eax"
+"	      00536888    mov vec.y,eax"
 );
 // LINE 394:
 	asm( 
 "	      0053688b    mov eax,ds:[6C1274h]"
-"	      00536890    mov ecx,[ebp-14h]"
+"	      00536890    mov ecx,this"
 "	      00536893    sub eax,[ecx+2Ch]"
-"	      00536896    mov [ebp-8],eax"
+"	      00536896    mov vec.z,eax"
 );
 // LINE 395:
 	asm( 
-"	      00536899    lea eax,[ebp-10h]"
+"	      00536899    lea eax,vec.x"
 "	      0053689c    push eax"
 "	      0053689d    call 004CA1E3h"
 "	      005368a2    add esp,4"
-"	      005368a5    mov [ebp-4],eax"
+"	      005368a5    mov dist,eax"
 );
 // LINE 396:
 	asm( 
 "	      005368a8    mov eax,ds:[608F6Ch]"
-"	      005368ad    cmp [ebp-4],eax"
+"	      005368ad    cmp dist,eax"
 "	      005368b0    jge near ptr 005368BEh"
 );
 // LINE 397:
 	asm( 
-"	      005368b6    mov eax,[ebp-4]"
+"	      005368b6    mov eax,dist"
 "	      005368b9    mov ds:[608F6Ch],eax"
 );
 // LINE 399:
@@ -986,17 +986,17 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 "	      005368d3    push ebx"
 "	      005368d4    push esi"
 "	      005368d5    push edi"
-"	      005368d6    mov [ebp-44h],ecx"
+"	      005368d6    mov this,ecx"
 );
 // LINE 424:
 	asm( 
 "	      005368d9    push 5"
-"	      005368db    lea ecx,[ebp-10h]"
+"	      005368db    lea ecx,spiral.currDist"
 "	      005368de    call 00542DC0h"
 );
 // LINE 425:
 	asm( 
-"	      005368e3    mov dword ptr [ebp-20h],0"
+"	      005368e3    mov fires_found,0"
 );
 // LINE 426:
 	asm( 
@@ -1005,19 +1005,19 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 429:
 	asm( 
-"	      005368f2    mov eax,[ebp-44h]"
+"	      005368f2    mov eax,this"
 "	      005368f5    mov dword ptr [eax+2A4h],0"
 );
 // LINE 430:
 	asm( 
-"	      005368ff    mov eax,[ebp-44h]"
+"	      005368ff    mov eax,this"
 "	      00536902    mov dword ptr [eax+2A8h],0"
 );
 // LINE 431:
 	asm( 
-"	      0053690c    lea eax,[ebp+8]"
+"	      0053690c    lea eax,fireloc.x"
 "	      0053690f    push eax"
-"	      00536910    lea ecx,[ebp-10h]"
+"	      00536910    lea ecx,spiral.currDist"
 "	      00536913    call 00542E03h"
 "	      00536918    test eax,eax"
 "	      0053691a    je near ptr 00536AA3h"
@@ -1025,10 +1025,10 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 432:
 	asm( 
 "	      00536920    xor eax,eax"
-"	      00536922    mov al,[ebp+9]"
+"	      00536922    mov al,fireloc.y"
 "	      00536925    mov [ebp-3Ch],eax"
 "	      00536928    xor eax,eax"
-"	      0053692a    mov al,[ebp+8]"
+"	      0053692a    mov al,fireloc.x"
 "	      0053692d    mov [ebp-40h],eax"
 );
 // LINE 434:
@@ -1051,41 +1051,41 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 "	      00536974    jmp near ptr 00536979h"
 "	      00536979    jmp near ptr 0053697Eh"
 "	      0053697e    mov eax,[ebp-38h]"
-"	      00536981    mov [ebp-24h],eax"
+"	      00536981    mov cptr,eax"
 );
 // LINE 435:
 	asm( 
-"	      00536984    mov eax,[ebp-24h]"
+"	      00536984    mov eax,cptr"
 "	      00536987    movsx eax,word ptr [eax]"
 "	      0053698a    test al,20h"
 "	      0053698c    je near ptr 00536A20h"
 );
 // LINE 441:
 	asm( 
-"	      00536992    mov dword ptr [ebp-20h],0"
+"	      00536992    mov fires_found,0"
 );
 // LINE 442:
 	asm( 
-"	      00536999    mov eax,[ebp-24h]"
+"	      00536999    mov eax,cptr"
 "	      0053699c    mov eax,[eax+0Ch]"
-"	      0053699f    mov [ebp-18h],eax"
+"	      0053699f    mov stobj,eax"
 );
 // LINE 443:
 	asm( 
-"	      005369a2    cmp dword ptr [ebp-18h],0"
+"	      005369a2    cmp stobj,0"
 "	      005369a6    je near ptr 00536A20h"
 );
 // LINE 445:
 	asm( 
-"	      005369ac    mov eax,[ebp-18h]"
+"	      005369ac    mov eax,stobj"
 "	      005369af    test byte ptr [eax+8],1"
 "	      005369b3    jne near ptr 005369C6h"
 );
 // LINE 448:
 	asm( 
-"	      005369b9    mov eax,[ebp-18h]"
+"	      005369b9    mov eax,stobj"
 "	      005369bc    mov eax,[eax]"
-"	      005369be    mov [ebp-18h],eax"
+"	      005369be    mov stobj,eax"
 );
 // LINE 449:
 	asm( 
@@ -1093,26 +1093,26 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 452:
 	asm( 
-"	      005369c6    inc dword ptr [ebp-20h]"
+"	      005369c6    inc fires_found"
 );
 // LINE 458:
 	asm( 
-"	      005369c9    mov eax,[ebp-18h]"
+"	      005369c9    mov eax,stobj"
 "	      005369cc    mov eax,[eax+0Ch]"
-"	      005369cf    mov ecx,[ebp-44h]"
+"	      005369cf    mov ecx,this"
 "	      005369d2    mov [ecx+2A4h],eax"
 );
 // LINE 461:
 	asm( 
 "	      005369d8    call 0056EC50h"
-"	      005369dd    mov ecx,[ebp-44h]"
+"	      005369dd    mov ecx,this"
 "	      005369e0    mov ecx,[ecx+2A4h]"
 "	      005369e6    mov ecx,[ecx+98h]"
 "	      005369ec    movsx eax,ax"
 "	      005369ef    cdq"
 "	      005369f0    idiv dword ptr [ecx+4]"
 "	      005369f3    mov eax,edx"
-"	      005369f5    sub eax,[ebp-20h]"
+"	      005369f5    sub eax,fires_found"
 "	      005369f8    inc eax"
 "	      005369f9    jne near ptr 00536A13h"
 );
@@ -1125,9 +1125,9 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 468:
 	asm( 
-"	      00536a13    mov eax,[ebp-18h]"
+"	      00536a13    mov eax,stobj"
 "	      00536a16    mov eax,[eax]"
-"	      00536a18    mov [ebp-18h],eax"
+"	      00536a18    mov stobj,eax"
 );
 // LINE 469:
 	asm( 
@@ -1135,26 +1135,26 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 472:
 	asm( 
-"	      00536a20    mov eax,[ebp-24h]"
+"	      00536a20    mov eax,cptr"
 "	      00536a23    mov eax,[eax+10h]"
-"	      00536a26    mov [ebp-14h],eax"
+"	      00536a26    mov dyobj,eax"
 );
 // LINE 473:
 	asm( 
-"	      00536a29    cmp dword ptr [ebp-14h],0"
+"	      00536a29    cmp dyobj,0"
 "	      00536a2d    je near ptr 00536A9Eh"
 );
 // LINE 476:
 	asm( 
-"	      00536a33    mov eax,[ebp-14h]"
+"	      00536a33    mov eax,dyobj"
 "	      00536a36    movsx eax,word ptr [eax+0Ch]"
 "	      00536a3a    test ah,10h"
 "	      00536a3d    je near ptr 00536A63h"
 );
 // LINE 478:
 	asm( 
-"	      00536a43    mov eax,[ebp-14h]"
-"	      00536a46    mov ecx,[ebp-44h]"
+"	      00536a43    mov eax,dyobj"
+"	      00536a46    mov ecx,this"
 "	      00536a49    mov [ecx+2A8h],eax"
 );
 // LINE 479:
@@ -1166,14 +1166,14 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 483:
 	asm( 
-"	      00536a63    mov eax,[ebp-14h]"
+"	      00536a63    mov eax,dyobj"
 "	      00536a66    movsx eax,word ptr [eax+0Ch]"
 "	      00536a6a    test al,4"
 "	      00536a6c    je near ptr 00536A91h"
 );
 // LINE 485:
 	asm( 
-"	      00536a72    mov eax,[ebp-14h]"
+"	      00536a72    mov eax,dyobj"
 "	      00536a75    mov eax,[eax]"
 "	      00536a77    mov eax,[eax]"
 "	      00536a79    mov eax,[eax]"
@@ -1184,7 +1184,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 "	      00536a83    mov eax,[eax]"
 "	      00536a85    mov eax,[eax]"
 "	      00536a87    mov eax,[eax]"
-"	      00536a89    mov [ebp-14h],eax"
+"	      00536a89    mov dyobj,eax"
 );
 // LINE 487:
 	asm( 
@@ -1192,9 +1192,9 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 488:
 	asm( 
-"	      00536a91    mov eax,[ebp-14h]"
+"	      00536a91    mov eax,dyobj"
 "	      00536a94    mov eax,[eax]"
-"	      00536a96    mov [ebp-14h],eax"
+"	      00536a96    mov dyobj,eax"
 );
 // LINE 489:
 	asm( 
@@ -1206,7 +1206,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 494:
 	asm( 
-"	      00536aa3    mov eax,[ebp-44h]"
+"	      00536aa3    mov eax,this"
 "	      00536aa6    cmp dword ptr [eax+2A4h],0"
 "	      00536aad    je near ptr 00536AC7h"
 );
@@ -1244,54 +1244,54 @@ void FireEngineClass::PointStreamAtFire() {
 "	      00536ae8    push ebx"
 "	      00536ae9    push esi"
 "	      00536aea    push edi"
-"	      00536aeb    mov [ebp-4],ecx"
+"	      00536aeb    mov this,ecx"
 );
 // LINE 521:
 	asm( 
-"	      00536aee    mov eax,[ebp-4]"
+"	      00536aee    mov eax,this"
 "	      00536af1    cmp dword ptr [eax+2A4h],0"
 "	      00536af8    je near ptr 00536B8Ah"
 );
 // LINE 523:
 	asm( 
-"	      00536afe    mov eax,[ebp-4]"
+"	      00536afe    mov eax,this"
 "	      00536b01    mov eax,[eax+2A4h]"
 "	      00536b07    mov eax,[eax+98h]"
 "	      00536b0d    mov eax,[eax]"
 "	      00536b0f    movsx eax,word ptr [eax+2]"
 "	      00536b13    shl eax,10h"
-"	      00536b16    mov ecx,[ebp-4]"
+"	      00536b16    mov ecx,this"
 "	      00536b19    mov ecx,[ecx+2A4h]"
 "	      00536b1f    add eax,[ecx+10h]"
-"	      00536b22    mov ecx,[ebp-4]"
+"	      00536b22    mov ecx,this"
 "	      00536b25    mov [ecx+2B0h],eax"
 );
 // LINE 524:
 	asm( 
-"	      00536b2b    mov eax,[ebp-4]"
+"	      00536b2b    mov eax,this"
 "	      00536b2e    mov eax,[eax+2A4h]"
 "	      00536b34    mov eax,[eax+98h]"
 "	      00536b3a    mov eax,[eax]"
 "	      00536b3c    movsx eax,word ptr [eax+4]"
 "	      00536b40    shl eax,10h"
-"	      00536b43    mov ecx,[ebp-4]"
+"	      00536b43    mov ecx,this"
 "	      00536b46    mov ecx,[ecx+2A4h]"
 "	      00536b4c    add eax,[ecx+14h]"
-"	      00536b4f    mov ecx,[ebp-4]"
+"	      00536b4f    mov ecx,this"
 "	      00536b52    mov [ecx+2B4h],eax"
 );
 // LINE 525:
 	asm( 
-"	      00536b58    mov eax,[ebp-4]"
+"	      00536b58    mov eax,this"
 "	      00536b5b    mov eax,[eax+2A4h]"
 "	      00536b61    mov eax,[eax+98h]"
 "	      00536b67    mov eax,[eax]"
 "	      00536b69    movsx eax,word ptr [eax+6]"
 "	      00536b6d    shl eax,10h"
-"	      00536b70    mov ecx,[ebp-4]"
+"	      00536b70    mov ecx,this"
 "	      00536b73    mov ecx,[ecx+2A4h]"
 "	      00536b79    add eax,[ecx+18h]"
-"	      00536b7c    mov ecx,[ebp-4]"
+"	      00536b7c    mov ecx,this"
 "	      00536b7f    mov [ecx+2B8h],eax"
 );
 // LINE 527:
@@ -1300,7 +1300,7 @@ void FireEngineClass::PointStreamAtFire() {
 );
 // LINE 530:
 	asm( 
-"	      00536b8a    mov eax,[ebp-4]"
+"	      00536b8a    mov eax,this"
 "	      00536b8d    cmp dword ptr [eax+2A8h],0"
 "	      00536b94    jne near ptr 00536BB6h"
 "	      00536b9a    push 212h"
@@ -1313,10 +1313,10 @@ void FireEngineClass::PointStreamAtFire() {
 );
 // LINE 531:
 	asm( 
-"	      00536bbb    mov eax,[ebp-4]"
+"	      00536bbb    mov eax,this"
 "	      00536bbe    mov eax,[eax+2A8h]"
 "	      00536bc4    add eax,18h"
-"	      00536bc7    mov ecx,[ebp-4]"
+"	      00536bc7    mov ecx,this"
 "	      00536bca    add ecx,2B0h"
 "	      00536bd0    mov edx,[eax]"
 "	      00536bd2    mov [ecx],edx"
@@ -1328,38 +1328,38 @@ void FireEngineClass::PointStreamAtFire() {
 // LINE 535:
 	asm( 
 "	      00536be0    xor eax,eax"
-"	      00536be2    mov ecx,[ebp-4]"
+"	      00536be2    mov ecx,this"
 "	      00536be5    sub eax,[ecx+24h]"
 "	      00536be8    neg eax"
-"	      00536bea    mov ecx,[ebp-4]"
+"	      00536bea    mov ecx,this"
 "	      00536bed    sub [ecx+2B0h],eax"
 );
 // LINE 536:
 	asm( 
 "	      00536bf3    xor eax,eax"
-"	      00536bf5    mov ecx,[ebp-4]"
+"	      00536bf5    mov ecx,this"
 "	      00536bf8    sub eax,[ecx+28h]"
 "	      00536bfb    neg eax"
-"	      00536bfd    mov ecx,[ebp-4]"
+"	      00536bfd    mov ecx,this"
 "	      00536c00    sub [ecx+2B4h],eax"
 );
 // LINE 537:
 	asm( 
 "	      00536c06    xor eax,eax"
-"	      00536c08    mov ecx,[ebp-4]"
+"	      00536c08    mov ecx,this"
 "	      00536c0b    sub eax,[ecx+2Ch]"
 "	      00536c0e    neg eax"
-"	      00536c10    mov ecx,[ebp-4]"
+"	      00536c10    mov ecx,this"
 "	      00536c13    sub [ecx+2B8h],eax"
 );
 // LINE 540:
 	asm( 
-"	      00536c19    mov eax,[ebp-4]"
+"	      00536c19    mov eax,this"
 "	      00536c1c    add eax,2B0h"
 "	      00536c21    push eax"
 "	      00536c22    call 004CA1E3h"
 "	      00536c27    add esp,4"
-"	      00536c2a    mov ecx,[ebp-4]"
+"	      00536c2a    mov ecx,this"
 "	      00536c2d    mov [ecx+2ACh],eax"
 );
 // LINE 542:
@@ -1383,27 +1383,27 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00536c43    push ebx"
 "	      00536c44    push esi"
 "	      00536c45    push edi"
-"	      00536c46    mov [ebp-4],ecx"
+"	      00536c46    mov this,ecx"
 );
 // LINE 554:
 	asm( 
-"	      00536c49    mov eax,[ebp-4]"
+"	      00536c49    mov eax,this"
 "	      00536c4c    mov eax,[eax+2A0h]"
-"	      00536c52    mov ecx,[ebp+8]"
+"	      00536c52    mov ecx,sd"
 "	      00536c55    mov [ecx+2A4h],eax"
 );
 // LINE 555:
 	asm( 
-"	      00536c5b    mov eax,[ebp-4]"
+"	      00536c5b    mov eax,this"
 "	      00536c5e    mov eax,[eax+2ACh]"
-"	      00536c64    mov ecx,[ebp+8]"
+"	      00536c64    mov ecx,sd"
 "	      00536c67    mov [ecx+2A8h],eax"
 );
 // LINE 556:
 	asm( 
-"	      00536c6d    mov eax,[ebp-4]"
+"	      00536c6d    mov eax,this"
 "	      00536c70    add eax,2B0h"
-"	      00536c75    mov ecx,[ebp+8]"
+"	      00536c75    mov ecx,sd"
 "	      00536c78    add ecx,2ACh"
 "	      00536c7e    mov edx,[eax]"
 "	      00536c80    mov [ecx],edx"
@@ -1414,16 +1414,16 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 557:
 	asm( 
-"	      00536c8e    mov eax,[ebp-4]"
+"	      00536c8e    mov eax,this"
 "	      00536c91    mov eax,[eax+2BCh]"
-"	      00536c97    mov ecx,[ebp+8]"
+"	      00536c97    mov ecx,sd"
 "	      00536c9a    mov [ecx+2B8h],eax"
 );
 // LINE 560:
 	asm( 
-"	      00536ca0    mov eax,[ebp+8]"
+"	      00536ca0    mov eax,sd"
 "	      00536ca3    push eax"
-"	      00536ca4    mov ecx,[ebp-4]"
+"	      00536ca4    mov ecx,this"
 "	      00536ca7    call 00542A75h"
 );
 // LINE 561:
@@ -1447,11 +1447,11 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 "	      00536cbe    push ebx"
 "	      00536cbf    push esi"
 "	      00536cc0    push edi"
-"	      00536cc1    mov [ebp-4],ecx"
+"	      00536cc1    mov this,ecx"
 );
 // LINE 575:
 	asm( 
-"	      00536cc4    mov eax,[ebp+8]"
+"	      00536cc4    mov eax,sd"
 "	      00536cc7    test byte ptr [eax],2"
 "	      00536cca    jne near ptr 00536CD5h"
 );
@@ -1461,24 +1461,24 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 581:
 	asm( 
-"	      00536cd5    mov eax,[ebp+8]"
+"	      00536cd5    mov eax,sd"
 "	      00536cd8    push eax"
-"	      00536cd9    mov ecx,[ebp-4]"
+"	      00536cd9    mov ecx,this"
 "	      00536cdc    call 00542B90h"
 );
 // LINE 583:
 	asm( 
-"	      00536ce1    mov eax,[ebp-4]"
+"	      00536ce1    mov eax,this"
 "	      00536ce4    mov eax,[eax+294h]"
 "	      00536cea    mov [ebp-8],eax"
 "	      00536ced    jmp near ptr 00536D14h"
 );
 // LINE 589:
 	asm( 
-"	      00536cf2    mov eax,[ebp-4]"
+"	      00536cf2    mov eax,this"
 "	      00536cf5    mov ax,[eax+11Ch]"
 "	      00536cfc    push eax"
-"	      00536cfd    mov ecx,[ebp-4]"
+"	      00536cfd    mov ecx,this"
 "	      00536d00    call 00542570h"
 );
 // LINE 590:
@@ -1500,23 +1500,23 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 596:
 	asm( 
-"	      00536d2d    mov eax,[ebp+8]"
+"	      00536d2d    mov eax,sd"
 "	      00536d30    mov eax,[eax+2A4h]"
-"	      00536d36    mov ecx,[ebp-4]"
+"	      00536d36    mov ecx,this"
 "	      00536d39    mov [ecx+2A0h],eax"
 );
 // LINE 597:
 	asm( 
-"	      00536d3f    mov eax,[ebp+8]"
+"	      00536d3f    mov eax,sd"
 "	      00536d42    mov eax,[eax+2A8h]"
-"	      00536d48    mov ecx,[ebp-4]"
+"	      00536d48    mov ecx,this"
 "	      00536d4b    mov [ecx+2ACh],eax"
 );
 // LINE 598:
 	asm( 
-"	      00536d51    mov eax,[ebp+8]"
+"	      00536d51    mov eax,sd"
 "	      00536d54    add eax,2ACh"
-"	      00536d59    mov ecx,[ebp-4]"
+"	      00536d59    mov ecx,this"
 "	      00536d5c    add ecx,2B0h"
 "	      00536d62    mov edx,[eax]"
 "	      00536d64    mov [ecx],edx"
@@ -1527,24 +1527,24 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 );
 // LINE 599:
 	asm( 
-"	      00536d72    mov eax,[ebp+8]"
+"	      00536d72    mov eax,sd"
 "	      00536d75    mov eax,[eax+2B8h]"
-"	      00536d7b    mov ecx,[ebp-4]"
+"	      00536d7b    mov ecx,this"
 "	      00536d7e    mov [ecx+2BCh],eax"
 );
 // LINE 601:
 	asm( 
-"	      00536d84    mov eax,[ebp-4]"
+"	      00536d84    mov eax,this"
 "	      00536d87    mov ax,[eax+11Ch]"
 "	      00536d8e    push eax"
-"	      00536d8f    mov ecx,[ebp-4]"
+"	      00536d8f    mov ecx,this"
 "	      00536d92    call 005368CDh"
 "	      00536d97    test eax,eax"
 "	      00536d99    je near ptr 00536DA7h"
 );
 // LINE 603:
 	asm( 
-"	      00536d9f    mov ecx,[ebp-4]"
+"	      00536d9f    mov ecx,this"
 "	      00536da2    call 00536AE2h"
 );
 // LINE 606:

@@ -15,8 +15,8 @@ void UserMenuWindow::UserMenuWindow() {
 "	      0049af86    push ebx"
 "	      0049af87    push esi"
 "	      0049af88    push edi"
-"	      0049af89    mov [ebp-34h],ecx"
-"	      0049af8c    mov ecx,[ebp-34h]"
+"	      0049af89    mov this,ecx"
+"	      0049af8c    mov ecx,this"
 "	      0049af8f    call 004A2A3Fh"
 "	      0049af94    push 10h"
 "	      0049af96    call 0056A600h"
@@ -36,12 +36,12 @@ void UserMenuWindow::UserMenuWindow() {
 "	      0049afcd    mov dword ptr [eax+0Ch],1"
 "	      0049afd4    jmp near ptr 0049AFD9h"
 "	      0049afd9    mov eax,[ebp-30h]"
-"	      0049afdc    mov ecx,[ebp-34h]"
+"	      0049afdc    mov ecx,this"
 "	      0049afdf    mov [ecx+78h],eax"
 "	      0049afe2    jmp near ptr 0049AFF1h"
-"	      0049afe7    mov eax,[ebp-34h]"
+"	      0049afe7    mov eax,this"
 "	      0049afea    mov dword ptr [eax+78h],0"
-"	      0049aff1    mov eax,[ebp-34h]"
+"	      0049aff1    mov eax,this"
 "	      0049aff4    mov dword ptr [eax+74h],0"
 "	      0049affb    jmp near ptr 0049B000h"
 "	      0049b000    jmp near ptr 0049B005h"
@@ -53,14 +53,14 @@ void UserMenuWindow::UserMenuWindow() {
 "	      0049b01e    jmp near ptr 0049B023h"
 "	      0049b023    jmp near ptr 0049B028h"
 "	      0049b028    jmp near ptr 0049B02Dh"
-"	      0049b02d    mov eax,[ebp-34h]"
+"	      0049b02d    mov eax,this"
 "	      0049b030    mov dword ptr [eax+0C8h],0"
-"	      0049b03a    mov eax,[ebp-34h]"
+"	      0049b03a    mov eax,this"
 "	      0049b03d    mov dword ptr [eax+0CCh],0"
-"	      0049b047    mov eax,[ebp-34h]"
+"	      0049b047    mov eax,this"
 "	      0049b04a    mov dword ptr [eax+0D0h],0"
 "	      0049b054    jmp near ptr 0049B059h"
-"	      0049b059    mov eax,[ebp-34h]"
+"	      0049b059    mov eax,this"
 "	      0049b05c    mov dword ptr [eax+0D4h],0"
 "	      0049b066    push 10h"
 "	      0049b068    call 0056A600h"
@@ -117,7 +117,7 @@ void UserMenuWindow::UserMenuWindow() {
 "	      0049b122    push 2"
 "	      0049b124    lea eax,[ebp-8]"
 "	      0049b127    push eax"
-"	      0049b128    mov ecx,[ebp-34h]"
+"	      0049b128    mov ecx,this"
 "	      0049b12b    add ecx,0D8h"
 "	      0049b131    call 0042F00Fh"
 "	      0049b136    mov eax,[ebp-4]"
@@ -167,13 +167,13 @@ void UserMenuWindow::UserMenuWindow() {
 "	      0049b1d8    call 0056A740h"
 "	      0049b1dd    add esp,4"
 "	      0049b1e0    jmp near ptr 0049B1E5h"
-"	      0049b1e5    mov eax,[ebp-34h]"
+"	      0049b1e5    mov eax,this"
 "	      0049b1e8    mov dword ptr [eax],5912F8h"
 );
 // LINE 40:
 	asm( 
 "	      0049b1ee    jmp near ptr 0049B1F3h"
-"	      0049b1f3    mov eax,[ebp-34h]"
+"	      0049b1f3    mov eax,this"
 "	      0049b1f6    pop edi"
 "	      0049b1f7    pop esi"
 "	      0049b1f8    pop ebx"
@@ -192,8 +192,8 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b201    push ebx"
 "	      0049b202    push esi"
 "	      0049b203    push edi"
-"	      0049b204    mov [ebp-50h],ecx"
-"	      0049b207    mov eax,[ebp+8]"
+"	      0049b204    mov this,ecx"
+"	      0049b207    mov eax,newUserMenuWindowDescription"
 "	      0049b20a    add eax,0Ch"
 "	      0049b20d    lea ecx,[ebp-10h]"
 "	      0049b210    mov edx,[eax]"
@@ -206,10 +206,10 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b223    mov [ecx+0Ch],eax"
 "	      0049b226    lea eax,[ebp-10h]"
 "	      0049b229    mov [ebp-14h],eax"
-"	      0049b22c    mov eax,[ebp+8]"
+"	      0049b22c    mov eax,newUserMenuWindowDescription"
 "	      0049b22f    cmp dword ptr [eax],0"
 "	      0049b232    je near ptr 0049B252h"
-"	      0049b238    mov eax,[ebp+8]"
+"	      0049b238    mov eax,newUserMenuWindowDescription"
 "	      0049b23b    mov eax,[eax]"
 "	      0049b23d    mov [ebp-18h],eax"
 "	      0049b240    mov eax,[ebp-18h]"
@@ -219,27 +219,27 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b24a    call 0056A740h"
 "	      0049b24f    add esp,4"
 "	      0049b252    jmp near ptr 0049B257h"
-"	      0049b257    mov eax,[ebp+8]"
+"	      0049b257    mov eax,newUserMenuWindowDescription"
 "	      0049b25a    mov eax,[eax+4]"
 "	      0049b25d    mov eax,[eax+4]"
 "	      0049b260    inc eax"
 "	      0049b261    push eax"
 "	      0049b262    call 0056A600h"
 "	      0049b267    add esp,4"
-"	      0049b26a    mov ecx,[ebp+8]"
+"	      0049b26a    mov ecx,newUserMenuWindowDescription"
 "	      0049b26d    mov [ecx],eax"
 "	      0049b26f    jmp near ptr 0049B274h"
-"	      0049b274    mov eax,[ebp+8]"
+"	      0049b274    mov eax,newUserMenuWindowDescription"
 "	      0049b277    mov eax,[eax+4]"
 "	      0049b27a    cmp dword ptr [eax+4],0"
 "	      0049b27e    je near ptr 0049B2ECh"
 "	      0049b284    jmp near ptr 0049B289h"
 "	      0049b289    jmp near ptr 0049B28Eh"
-"	      0049b28e    mov eax,[ebp+8]"
+"	      0049b28e    mov eax,newUserMenuWindowDescription"
 "	      0049b291    mov eax,[eax+4]"
 "	      0049b294    cmp dword ptr [eax+4],0"
 "	      0049b298    je near ptr 0049B2B3h"
-"	      0049b29e    mov eax,[ebp+8]"
+"	      0049b29e    mov eax,newUserMenuWindowDescription"
 "	      0049b2a1    mov eax,[eax+4]"
 "	      0049b2a4    mov eax,[eax]"
 "	      0049b2a6    mov [ebp-2Ch],eax"
@@ -247,11 +247,11 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b2ae    jmp near ptr 0049B2BFh"
 "	      0049b2b3    mov dword ptr [ebp-2Ch],0"
 "	      0049b2ba    jmp near ptr 0049B2BFh"
-"	      0049b2bf    mov eax,[ebp+8]"
+"	      0049b2bf    mov eax,newUserMenuWindowDescription"
 "	      0049b2c2    mov eax,[eax+4]"
 "	      0049b2c5    mov eax,[eax+4]"
 "	      0049b2c8    mov [ebp-30h],eax"
-"	      0049b2cb    mov eax,[ebp+8]"
+"	      0049b2cb    mov eax,newUserMenuWindowDescription"
 "	      0049b2ce    mov eax,[eax]"
 "	      0049b2d0    mov [ebp-34h],eax"
 "	      0049b2d3    mov eax,[ebp-30h]"
@@ -269,10 +269,10 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b2fa    lea eax,[ebp-1Ch]"
 "	      0049b2fd    mov [ebp-24h],eax"
 "	      0049b300    jmp near ptr 0049B305h"
-"	      0049b305    mov eax,[ebp+8]"
+"	      0049b305    mov eax,newUserMenuWindowDescription"
 "	      0049b308    mov eax,[eax+4]"
 "	      0049b30b    mov eax,[eax+4]"
-"	      0049b30e    mov ecx,[ebp+8]"
+"	      0049b30e    mov ecx,newUserMenuWindowDescription"
 "	      0049b311    add eax,[ecx]"
 "	      0049b313    mov [ebp-28h],eax"
 "	      0049b316    mov eax,[ebp-24h]"
@@ -281,26 +281,26 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b31e    mov [ecx],al"
 "	      0049b320    jmp near ptr 0049B325h"
 "	      0049b325    jmp near ptr 0049B32Ah"
-"	      0049b32a    mov eax,[ebp+8]"
+"	      0049b32a    mov eax,newUserMenuWindowDescription"
 "	      0049b32d    mov eax,[eax+8]"
 "	      0049b330    push eax"
-"	      0049b331    mov eax,[ebp+18h]"
+"	      0049b331    mov eax,bAddToParentList"
 "	      0049b334    push eax"
-"	      0049b335    mov eax,[ebp+14h]"
+"	      0049b335    mov eax,myNewOwner"
 "	      0049b338    push eax"
-"	      0049b339    mov eax,[ebp+10h]"
+"	      0049b339    mov eax,windowNewParent"
 "	      0049b33c    push eax"
-"	      0049b33d    mov eax,[ebp+0Ch]"
+"	      0049b33d    mov eax,nNewID"
 "	      0049b340    push eax"
 "	      0049b341    mov eax,[ebp-14h]"
 "	      0049b344    push eax"
-"	      0049b345    mov eax,[ebp+8]"
+"	      0049b345    mov eax,newUserMenuWindowDescription"
 "	      0049b348    mov eax,[eax]"
 "	      0049b34a    push eax"
-"	      0049b34b    mov ecx,[ebp-50h]"
+"	      0049b34b    mov ecx,this"
 "	      0049b34e    call 004A393Dh"
 "	      0049b353    jmp near ptr 0049B358h"
-"	      0049b358    mov eax,[ebp+8]"
+"	      0049b358    mov eax,newUserMenuWindowDescription"
 "	      0049b35b    mov eax,[eax+4]"
 "	      0049b35e    cmp dword ptr [eax+4],0"
 "	      0049b362    jae near ptr 0049B39Ah"
@@ -318,33 +318,33 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b392    add esp,4"
 "	      0049b395    jmp near ptr 0049B39Ah"
 "	      0049b39a    jmp near ptr 0049B39Fh"
-"	      0049b39f    mov eax,[ebp+8]"
+"	      0049b39f    mov eax,newUserMenuWindowDescription"
 "	      0049b3a2    mov eax,[eax+4]"
 "	      0049b3a5    cmp dword ptr [eax+4],0FFFFFFFFh"
 "	      0049b3a9    jae near ptr 0049B3C5h"
 "	      0049b3af    jmp near ptr 0049B3B4h"
-"	      0049b3b4    mov eax,[ebp+8]"
+"	      0049b3b4    mov eax,newUserMenuWindowDescription"
 "	      0049b3b7    mov eax,[eax+4]"
 "	      0049b3ba    mov eax,[eax+4]"
 "	      0049b3bd    mov [ebp-38h],eax"
 "	      0049b3c0    jmp near ptr 0049B3CCh"
 "	      0049b3c5    mov dword ptr [ebp-38h],0FFFFFFFFh"
 "	      0049b3cc    jmp near ptr 0049B3D1h"
-"	      0049b3d1    mov eax,[ebp+8]"
+"	      0049b3d1    mov eax,newUserMenuWindowDescription"
 "	      0049b3d4    mov eax,[eax+4]"
 "	      0049b3d7    mov ecx,[ebp-38h]"
 "	      0049b3da    cmp [eax+4],ecx"
 "	      0049b3dd    jne near ptr 0049B412h"
 "	      0049b3e3    jmp near ptr 0049B3E8h"
-"	      0049b3e8    mov eax,[ebp+8]"
+"	      0049b3e8    mov eax,newUserMenuWindowDescription"
 "	      0049b3eb    mov eax,[eax+4]"
 "	      0049b3ee    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      0049b3f2    je near ptr 0049B412h"
-"	      0049b3f8    mov eax,[ebp+8]"
+"	      0049b3f8    mov eax,newUserMenuWindowDescription"
 "	      0049b3fb    mov eax,[eax+4]"
-"	      0049b3fe    mov ecx,[ebp-50h]"
+"	      0049b3fe    mov ecx,this"
 "	      0049b401    mov [ecx+78h],eax"
-"	      0049b404    mov eax,[ebp-50h]"
+"	      0049b404    mov eax,this"
 "	      0049b407    mov eax,[eax+78h]"
 "	      0049b40a    inc dword ptr [eax+0Ch]"
 "	      0049b40d    jmp near ptr 0049B4F4h"
@@ -372,11 +372,11 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b45a    mov ecx,[ebp-3Ch]"
 "	      0049b45d    mov [ecx],eax"
 "	      0049b45f    jmp near ptr 0049B464h"
-"	      0049b464    mov eax,[ebp+8]"
+"	      0049b464    mov eax,newUserMenuWindowDescription"
 "	      0049b467    mov eax,[eax+4]"
 "	      0049b46a    cmp dword ptr [eax+4],0"
 "	      0049b46e    je near ptr 0049B489h"
-"	      0049b474    mov eax,[ebp+8]"
+"	      0049b474    mov eax,newUserMenuWindowDescription"
 "	      0049b477    mov eax,[eax+4]"
 "	      0049b47a    mov eax,[eax]"
 "	      0049b47c    mov [ebp-44h],eax"
@@ -406,21 +406,21 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b4d0    mov dword ptr [eax+0Ch],1"
 "	      0049b4d7    jmp near ptr 0049B4DCh"
 "	      0049b4dc    mov eax,[ebp-3Ch]"
-"	      0049b4df    mov ecx,[ebp-50h]"
+"	      0049b4df    mov ecx,this"
 "	      0049b4e2    mov [ecx+78h],eax"
 "	      0049b4e5    jmp near ptr 0049B4F4h"
-"	      0049b4ea    mov eax,[ebp-50h]"
+"	      0049b4ea    mov eax,this"
 "	      0049b4ed    mov dword ptr [eax+78h],0"
-"	      0049b4f4    mov eax,[ebp-50h]"
+"	      0049b4f4    mov eax,this"
 "	      0049b4f7    mov dword ptr [eax+74h],0"
 "	      0049b4fe    jmp near ptr 0049B503h"
-"	      0049b503    mov eax,[ebp+8]"
+"	      0049b503    mov eax,newUserMenuWindowDescription"
 "	      0049b506    mov eax,[eax+8]"
-"	      0049b509    mov ecx,[ebp-50h]"
+"	      0049b509    mov ecx,this"
 "	      0049b50c    mov [ecx+7Ch],eax"
-"	      0049b50f    mov eax,[ebp+8]"
+"	      0049b50f    mov eax,newUserMenuWindowDescription"
 "	      0049b512    add eax,0Ch"
-"	      0049b515    mov ecx,[ebp-50h]"
+"	      0049b515    mov ecx,this"
 "	      0049b518    add ecx,80h"
 "	      0049b51e    mov edx,[eax]"
 "	      0049b520    mov [ecx],edx"
@@ -430,88 +430,88 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 "	      0049b52b    mov [ecx+8],edx"
 "	      0049b52e    mov eax,[eax+0Ch]"
 "	      0049b531    mov [ecx+0Ch],eax"
-"	      0049b534    mov eax,[ebp+8]"
+"	      0049b534    mov eax,newUserMenuWindowDescription"
 "	      0049b537    mov eax,[eax+1Ch]"
-"	      0049b53a    mov ecx,[ebp-50h]"
+"	      0049b53a    mov ecx,this"
 "	      0049b53d    mov [ecx+90h],eax"
-"	      0049b543    mov eax,[ebp+8]"
+"	      0049b543    mov eax,newUserMenuWindowDescription"
 "	      0049b546    mov eax,[eax+20h]"
-"	      0049b549    mov ecx,[ebp-50h]"
+"	      0049b549    mov ecx,this"
 "	      0049b54c    mov [ecx+94h],eax"
-"	      0049b552    mov eax,[ebp+8]"
+"	      0049b552    mov eax,newUserMenuWindowDescription"
 "	      0049b555    mov eax,[eax+24h]"
-"	      0049b558    mov ecx,[ebp-50h]"
+"	      0049b558    mov ecx,this"
 "	      0049b55b    mov [ecx+98h],eax"
-"	      0049b561    mov eax,[ebp+8]"
+"	      0049b561    mov eax,newUserMenuWindowDescription"
 "	      0049b564    mov eax,[eax+28h]"
-"	      0049b567    mov ecx,[ebp-50h]"
+"	      0049b567    mov ecx,this"
 "	      0049b56a    mov [ecx+9Ch],eax"
-"	      0049b570    mov eax,[ebp+8]"
+"	      0049b570    mov eax,newUserMenuWindowDescription"
 "	      0049b573    mov eax,[eax+2Ch]"
-"	      0049b576    mov ecx,[ebp-50h]"
+"	      0049b576    mov ecx,this"
 "	      0049b579    mov [ecx+0A0h],eax"
-"	      0049b57f    mov eax,[ebp+8]"
+"	      0049b57f    mov eax,newUserMenuWindowDescription"
 "	      0049b582    add eax,30h"
 "	      0049b585    mov ecx,[eax]"
 "	      0049b587    mov eax,[eax+4]"
-"	      0049b58a    mov edx,[ebp-50h]"
+"	      0049b58a    mov edx,this"
 "	      0049b58d    add edx,0A4h"
 "	      0049b593    mov [edx],ecx"
 "	      0049b595    mov [edx+4],eax"
-"	      0049b598    mov eax,[ebp+8]"
+"	      0049b598    mov eax,newUserMenuWindowDescription"
 "	      0049b59b    mov eax,[eax+38h]"
-"	      0049b59e    mov ecx,[ebp-50h]"
+"	      0049b59e    mov ecx,this"
 "	      0049b5a1    mov [ecx+0ACh],eax"
-"	      0049b5a7    mov eax,[ebp+8]"
+"	      0049b5a7    mov eax,newUserMenuWindowDescription"
 "	      0049b5aa    mov eax,[eax+3Ch]"
-"	      0049b5ad    mov ecx,[ebp-50h]"
+"	      0049b5ad    mov ecx,this"
 "	      0049b5b0    mov [ecx+0B0h],eax"
-"	      0049b5b6    mov eax,[ebp+8]"
+"	      0049b5b6    mov eax,newUserMenuWindowDescription"
 "	      0049b5b9    mov eax,[eax+40h]"
-"	      0049b5bc    mov ecx,[ebp-50h]"
+"	      0049b5bc    mov ecx,this"
 "	      0049b5bf    mov [ecx+0B4h],eax"
-"	      0049b5c5    mov eax,[ebp+8]"
+"	      0049b5c5    mov eax,newUserMenuWindowDescription"
 "	      0049b5c8    mov eax,[eax+44h]"
-"	      0049b5cb    mov ecx,[ebp-50h]"
+"	      0049b5cb    mov ecx,this"
 "	      0049b5ce    mov [ecx+0B8h],eax"
-"	      0049b5d4    mov eax,[ebp+8]"
+"	      0049b5d4    mov eax,newUserMenuWindowDescription"
 "	      0049b5d7    add eax,48h"
 "	      0049b5da    mov ecx,[eax]"
 "	      0049b5dc    mov eax,[eax+4]"
-"	      0049b5df    mov edx,[ebp-50h]"
+"	      0049b5df    mov edx,this"
 "	      0049b5e2    add edx,0BCh"
 "	      0049b5e8    mov [edx],ecx"
 "	      0049b5ea    mov [edx+4],eax"
-"	      0049b5ed    mov eax,[ebp+8]"
+"	      0049b5ed    mov eax,newUserMenuWindowDescription"
 "	      0049b5f0    mov eax,[eax+50h]"
-"	      0049b5f3    mov ecx,[ebp-50h]"
+"	      0049b5f3    mov ecx,this"
 "	      0049b5f6    mov [ecx+0C4h],eax"
 "	      0049b5fc    jmp near ptr 0049B601h"
-"	      0049b601    mov eax,[ebp-50h]"
+"	      0049b601    mov eax,this"
 "	      0049b604    mov dword ptr [eax+0C8h],0"
-"	      0049b60e    mov eax,[ebp-50h]"
+"	      0049b60e    mov eax,this"
 "	      0049b611    mov dword ptr [eax+0CCh],0"
-"	      0049b61b    mov eax,[ebp-50h]"
+"	      0049b61b    mov eax,this"
 "	      0049b61e    mov dword ptr [eax+0D0h],0"
 "	      0049b628    jmp near ptr 0049B62Dh"
-"	      0049b62d    mov eax,[ebp-50h]"
+"	      0049b62d    mov eax,this"
 "	      0049b630    mov dword ptr [eax+0D4h],0"
-"	      0049b63a    mov ecx,[ebp-50h]"
+"	      0049b63a    mov ecx,this"
 "	      0049b63d    add ecx,0D8h"
 "	      0049b643    call 0042EF87h"
-"	      0049b648    mov eax,[ebp-50h]"
+"	      0049b648    mov eax,this"
 "	      0049b64b    mov dword ptr [eax],5912F8h"
 );
 // LINE 56:
 	asm( 
-"	      0049b651    mov eax,[ebp-50h]"
+"	      0049b651    mov eax,this"
 "	      0049b654    push eax"
 "	      0049b655    call 004A7075h"
 "	      0049b65a    add esp,4"
 );
 // LINE 57:
 	asm( 
-"	      0049b65d    mov eax,[ebp-50h]"
+"	      0049b65d    mov eax,this"
 "	      0049b660    push eax"
 "	      0049b661    call 004A7470h"
 "	      0049b666    add esp,4"
@@ -519,7 +519,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 // LINE 58:
 	asm( 
 "	      0049b669    jmp near ptr 0049B66Eh"
-"	      0049b66e    mov eax,[ebp-50h]"
+"	      0049b66e    mov eax,this"
 "	      0049b671    pop edi"
 "	      0049b672    pop esi"
 "	      0049b673    pop ebx"
@@ -541,8 +541,8 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b67e    push ebx"
 "	      0049b67f    push esi"
 "	      0049b680    push edi"
-"	      0049b681    mov [ebp-34h],ecx"
-"	      0049b684    mov eax,[ebp-34h]"
+"	      0049b681    mov this,ecx"
+"	      0049b684    mov eax,this"
 "	      0049b687    mov dword ptr [eax],5912F8h"
 );
 // LINE 68:
@@ -550,29 +550,29 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b68d    jmp near ptr 0049B692h"
 "	      0049b692    jmp near ptr 0049B697h"
 "	      0049b697    jmp near ptr 0049B69Ch"
-"	      0049b69c    mov eax,[ebp-34h]"
+"	      0049b69c    mov eax,this"
 "	      0049b69f    mov eax,[eax+0CCh]"
-"	      0049b6a5    mov ecx,[ebp-34h]"
+"	      0049b6a5    mov ecx,this"
 "	      0049b6a8    sub eax,[ecx+0C8h]"
 "	      0049b6ae    sar eax,2"
-"	      0049b6b1    mov [ebp-4],eax"
+"	      0049b6b1    mov iEnd,eax"
 );
 // LINE 70:
 	asm( 
-"	      0049b6b4    mov dword ptr [ebp-8],0"
+"	      0049b6b4    mov i,0"
 "	      0049b6bb    jmp near ptr 0049B6C3h"
-"	      0049b6c0    inc dword ptr [ebp-8]"
-"	      0049b6c3    mov eax,[ebp-8]"
-"	      0049b6c6    cmp [ebp-4],eax"
+"	      0049b6c0    inc i"
+"	      0049b6c3    mov eax,i"
+"	      0049b6c6    cmp iEnd,eax"
 "	      0049b6c9    jle near ptr 0049B715h"
 );
 // LINE 71:
 	asm( 
 "	      0049b6cf    jmp near ptr 0049B6D4h"
 "	      0049b6d4    jmp near ptr 0049B6D9h"
-"	      0049b6d9    mov eax,[ebp-34h]"
+"	      0049b6d9    mov eax,this"
 "	      0049b6dc    mov eax,[eax+0C8h]"
-"	      0049b6e2    mov ecx,[ebp-8]"
+"	      0049b6e2    mov ecx,i"
 "	      0049b6e5    mov eax,[eax+ecx*4]"
 "	      0049b6e8    mov [ebp-10h],eax"
 "	      0049b6eb    mov eax,[ebp-10h]"
@@ -589,19 +589,19 @@ void UserMenuWindow::~UserMenuWindow() {
 );
 // LINE 73:
 	asm( 
-"	      0049b715    mov ecx,[ebp-34h]"
+"	      0049b715    mov ecx,this"
 "	      0049b718    call 004A4CABh"
 );
 // LINE 74:
 	asm( 
 "	      0049b71d    jmp near ptr 0049B722h"
-"	      0049b722    mov ecx,[ebp-34h]"
+"	      0049b722    mov ecx,this"
 "	      0049b725    add ecx,0D8h"
 "	      0049b72b    call 0042F2E9h"
-"	      0049b730    mov eax,[ebp-34h]"
+"	      0049b730    mov eax,this"
 "	      0049b733    mov eax,[eax+0C8h]"
 "	      0049b739    mov [ebp-30h],eax"
-"	      0049b73c    mov eax,[ebp-34h]"
+"	      0049b73c    mov eax,this"
 "	      0049b73f    mov ecx,[ebp-30h]"
 "	      0049b742    cmp [eax+0CCh],ecx"
 "	      0049b748    je near ptr 0049B75Ch"
@@ -609,7 +609,7 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b753    add dword ptr [ebp-30h],4"
 "	      0049b757    jmp near ptr 0049B73Ch"
 "	      0049b75c    jmp near ptr 0049B761h"
-"	      0049b761    mov eax,[ebp-34h]"
+"	      0049b761    mov eax,this"
 "	      0049b764    mov eax,[eax+0C8h]"
 "	      0049b76a    mov [ebp-2Ch],eax"
 "	      0049b76d    mov eax,[ebp-2Ch]"
@@ -620,14 +620,14 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b77e    jmp near ptr 0049B783h"
 "	      0049b783    jmp near ptr 0049B788h"
 "	      0049b788    jmp near ptr 0049B78Dh"
-"	      0049b78d    mov eax,[ebp-34h]"
+"	      0049b78d    mov eax,this"
 "	      0049b790    mov eax,[eax+78h]"
 "	      0049b793    dec dword ptr [eax+0Ch]"
-"	      0049b796    mov eax,[ebp-34h]"
+"	      0049b796    mov eax,this"
 "	      0049b799    mov eax,[eax+78h]"
 "	      0049b79c    cmp dword ptr [eax+0Ch],0"
 "	      0049b7a0    jne near ptr 0049B819h"
-"	      0049b7a6    mov eax,[ebp-34h]"
+"	      0049b7a6    mov eax,this"
 "	      0049b7a9    mov eax,[eax+78h]"
 "	      0049b7ac    mov [ebp-20h],eax"
 "	      0049b7af    mov eax,[ebp-20h]"
@@ -659,10 +659,10 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b80f    jmp near ptr 0049B814h"
 "	      0049b814    jmp near ptr 0049B819h"
 "	      0049b819    jmp near ptr 0049B81Eh"
-"	      0049b81e    mov eax,[ebp-34h]"
+"	      0049b81e    mov eax,this"
 "	      0049b821    cmp dword ptr [eax+74h],0"
 "	      0049b825    je near ptr 0049B846h"
-"	      0049b82b    mov eax,[ebp-34h]"
+"	      0049b82b    mov eax,this"
 "	      0049b82e    mov eax,[eax+74h]"
 "	      0049b831    mov [ebp-14h],eax"
 "	      0049b834    mov eax,[ebp-14h]"
@@ -672,7 +672,7 @@ void UserMenuWindow::~UserMenuWindow() {
 "	      0049b83e    call 0056A740h"
 "	      0049b843    add esp,4"
 "	      0049b846    jmp near ptr 0049B84Bh"
-"	      0049b84b    mov ecx,[ebp-34h]"
+"	      0049b84b    mov ecx,this"
 "	      0049b84e    call 004A4045h"
 "	      0049b853    pop edi"
 "	      0049b854    pop esi"
@@ -697,7 +697,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049b861    push ebx"
 "	      0049b862    push esi"
 "	      0049b863    push edi"
-"	      0049b864    mov [ebp-1CCh],ecx"
+"	      0049b864    mov this,ecx"
 );
 // LINE 89:
 	asm( 
@@ -706,7 +706,7 @@ int32_t UserMenuWindow::Initialize() {
 );
 // LINE 93:
 	asm( 
-"	      0049b874    lea eax,[ebp-104h]"
+"	      0049b874    lea eax,szFullSoundPath[0]"
 "	      0049b87a    push eax"
 "	      0049b87b    mov eax,ds:[59A2D0h]"
 "	      0049b880    push eax"
@@ -723,7 +723,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049b897    mov [ebp-148h],eax"
 "	      0049b89d    cmp dword ptr [ebp-148h],0"
 "	      0049b8a4    je near ptr 0049B976h"
-"	      0049b8aa    lea eax,[ebp-104h]"
+"	      0049b8aa    lea eax,szFullSoundPath[0]"
 "	      0049b8b0    push eax"
 "	      0049b8b1    call 0056ABE0h"
 "	      0049b8b6    add esp,4"
@@ -752,7 +752,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049b91a    mov [ebp-150h],eax"
 "	      0049b920    mov eax,[ebp-14Ch]"
 "	      0049b926    push eax"
-"	      0049b927    lea eax,[ebp-104h]"
+"	      0049b927    lea eax,szFullSoundPath[0]"
 "	      0049b92d    push eax"
 "	      0049b92e    mov eax,[ebp-150h]"
 "	      0049b934    push eax"
@@ -774,8 +774,8 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049b98f    push 2"
 "	      0049b991    lea eax,[ebp-124h]"
 "	      0049b997    push eax"
-"	      0049b998    mov ecx,[ebp-1CCh]"
-"	      0049b99e    mov eax,[ebp-1CCh]"
+"	      0049b998    mov ecx,this"
+"	      0049b99e    mov eax,this"
 "	      0049b9a4    mov eax,[eax+0D8h]"
 "	      0049b9aa    add ecx,0D8h"
 "	      0049b9b0    call dword ptr [eax+2Ch]"
@@ -829,49 +829,49 @@ int32_t UserMenuWindow::Initialize() {
 );
 // LINE 95:
 	asm( 
-"	      0049baa4    mov ecx,[ebp-1CCh]"
-"	      0049baaa    mov eax,[ebp-1CCh]"
+"	      0049baa4    mov ecx,this"
+"	      0049baaa    mov eax,this"
 "	      0049bab0    mov eax,[eax+0D8h]"
 "	      0049bab6    add ecx,0D8h"
 "	      0049babc    call dword ptr [eax+30h]"
 );
 // LINE 98:
 	asm( 
-"	      0049babf    mov eax,[ebp-1CCh]"
+"	      0049babf    mov eax,this"
 "	      0049bac5    cmp dword ptr [eax+0B4h],0FFFFFFFFh"
 "	      0049bacc    je near ptr 0049BC59h"
 );
 // LINE 99:
 	asm( 
-"	      0049bad2    mov eax,[ebp-1CCh]"
+"	      0049bad2    mov eax,this"
 "	      0049bad8    cmp dword ptr [eax+0B8h],0"
 "	      0049badf    je near ptr 0049BB3Bh"
 );
 // LINE 100:
 	asm( 
-"	      0049bae5    mov dword ptr [ebp-11Ch],0"
+"	      0049bae5    mov rectTextWindow.left,0"
 );
 // LINE 101:
 	asm( 
 "	      0049baef    jmp near ptr 0049BAF4h"
-"	      0049baf4    mov eax,[ebp-1CCh]"
+"	      0049baf4    mov eax,this"
 "	      0049bafa    mov eax,[eax+18h]"
-"	      0049bafd    mov ecx,[ebp-1CCh]"
+"	      0049bafd    mov ecx,this"
 "	      0049bb03    sub eax,[ecx+10h]"
-"	      0049bb06    mov [ebp-114h],eax"
+"	      0049bb06    mov rectTextWindow.right,eax"
 );
 // LINE 102:
 	asm( 
-"	      0049bb0c    mov eax,[ebp-1CCh]"
+"	      0049bb0c    mov eax,this"
 "	      0049bb12    mov eax,[eax+0C0h]"
-"	      0049bb18    mov [ebp-118h],eax"
+"	      0049bb18    mov rectTextWindow.top,eax"
 );
 // LINE 103:
 	asm( 
-"	      0049bb1e    mov eax,[ebp-1CCh]"
+"	      0049bb1e    mov eax,this"
 "	      0049bb24    mov eax,[eax+0C4h]"
-"	      0049bb2a    add eax,[ebp-118h]"
-"	      0049bb30    mov [ebp-110h],eax"
+"	      0049bb2a    add eax,rectTextWindow.top"
+"	      0049bb30    mov rectTextWindow.bottom,eax"
 );
 // LINE 105:
 	asm( 
@@ -879,31 +879,31 @@ int32_t UserMenuWindow::Initialize() {
 );
 // LINE 106:
 	asm( 
-"	      0049bb3b    mov eax,[ebp-1CCh]"
+"	      0049bb3b    mov eax,this"
 "	      0049bb41    mov eax,[eax+0BCh]"
-"	      0049bb47    mov [ebp-11Ch],eax"
+"	      0049bb47    mov rectTextWindow.left,eax"
 );
 // LINE 107:
 	asm( 
 "	      0049bb4d    jmp near ptr 0049BB52h"
-"	      0049bb52    mov eax,[ebp-1CCh]"
+"	      0049bb52    mov eax,this"
 "	      0049bb58    mov eax,[eax+18h]"
-"	      0049bb5b    mov ecx,[ebp-1CCh]"
+"	      0049bb5b    mov ecx,this"
 "	      0049bb61    sub eax,[ecx+10h]"
-"	      0049bb64    mov [ebp-114h],eax"
+"	      0049bb64    mov rectTextWindow.right,eax"
 );
 // LINE 108:
 	asm( 
-"	      0049bb6a    mov eax,[ebp-1CCh]"
+"	      0049bb6a    mov eax,this"
 "	      0049bb70    mov eax,[eax+0C0h]"
-"	      0049bb76    mov [ebp-118h],eax"
+"	      0049bb76    mov rectTextWindow.top,eax"
 );
 // LINE 109:
 	asm( 
-"	      0049bb7c    mov eax,[ebp-1CCh]"
+"	      0049bb7c    mov eax,this"
 "	      0049bb82    mov eax,[eax+0C4h]"
-"	      0049bb88    add eax,[ebp-118h]"
-"	      0049bb8e    mov [ebp-110h],eax"
+"	      0049bb88    add eax,rectTextWindow.top"
+"	      0049bb8e    mov rectTextWindow.bottom,eax"
 );
 // LINE 112:
 	asm( 
@@ -914,105 +914,105 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049bba7    cmp dword ptr [ebp-128h],0"
 "	      0049bbae    je near ptr 0049BBF0h"
 "	      0049bbb4    push 1"
-"	      0049bbb6    mov eax,[ebp-1CCh]"
+"	      0049bbb6    mov eax,this"
 "	      0049bbbc    push eax"
-"	      0049bbbd    mov eax,[ebp-1CCh]"
+"	      0049bbbd    mov eax,this"
 "	      0049bbc3    push eax"
-"	      0049bbc4    mov eax,[ebp-1CCh]"
+"	      0049bbc4    mov eax,this"
 "	      0049bbca    mov eax,[eax+0B4h]"
 "	      0049bbd0    push eax"
 "	      0049bbd1    push 0"
-"	      0049bbd3    lea eax,[ebp-11Ch]"
+"	      0049bbd3    lea eax,rectTextWindow.left"
 "	      0049bbd9    push eax"
 "	      0049bbda    mov ecx,[ebp-128h]"
 "	      0049bbe0    call 004ACCE6h"
-"	      0049bbe5    mov [ebp-10Ch],eax"
+"	      0049bbe5    mov tempTextWindow,eax"
 "	      0049bbeb    jmp near ptr 0049BBFAh"
-"	      0049bbf0    mov dword ptr [ebp-10Ch],0"
+"	      0049bbf0    mov tempTextWindow,0"
 );
 // LINE 113:
 	asm( 
-"	      0049bbfa    mov eax,[ebp-10Ch]"
+"	      0049bbfa    mov eax,tempTextWindow"
 "	      0049bc00    mov eax,[eax]"
-"	      0049bc02    mov ecx,[ebp-10Ch]"
+"	      0049bc02    mov ecx,tempTextWindow"
 "	      0049bc08    call dword ptr [eax+4]"
 );
 // LINE 114:
 	asm( 
 "	      0049bc0b    push 0"
 "	      0049bc0d    push 0"
-"	      0049bc0f    mov eax,[ebp-1CCh]"
+"	      0049bc0f    mov eax,this"
 "	      0049bc15    mov eax,[eax+0C4h]"
 "	      0049bc1b    push eax"
-"	      0049bc1c    mov eax,[ebp-10Ch]"
+"	      0049bc1c    mov eax,tempTextWindow"
 "	      0049bc22    mov eax,[eax]"
-"	      0049bc24    mov ecx,[ebp-10Ch]"
+"	      0049bc24    mov ecx,tempTextWindow"
 "	      0049bc2a    call dword ptr [eax+0CCh]"
 );
 // LINE 115:
 	asm( 
-"	      0049bc30    mov eax,[ebp-1CCh]"
+"	      0049bc30    mov eax,this"
 "	      0049bc36    cmp dword ptr [eax+0B8h],0"
 "	      0049bc3d    je near ptr 0049BC59h"
 );
 // LINE 116:
 	asm( 
 "	      0049bc43    push 1"
-"	      0049bc45    mov eax,[ebp-10Ch]"
+"	      0049bc45    mov eax,tempTextWindow"
 "	      0049bc4b    mov eax,[eax]"
-"	      0049bc4d    mov ecx,[ebp-10Ch]"
+"	      0049bc4d    mov ecx,tempTextWindow"
 "	      0049bc53    call dword ptr [eax+0D0h]"
 );
 // LINE 119:
 	asm( 
-"	      0049bc59    mov eax,[ebp-1CCh]"
+"	      0049bc59    mov eax,this"
 "	      0049bc5f    cmp dword ptr [eax+90h],0FFFFFFFFh"
 "	      0049bc66    je near ptr 0049C380h"
 );
 // LINE 121:
 	asm( 
-"	      0049bc6c    mov dword ptr [ebp-108h],0"
+"	      0049bc6c    mov i,0"
 "	      0049bc76    jmp near ptr 0049BC81h"
-"	      0049bc7b    inc dword ptr [ebp-108h]"
-"	      0049bc81    mov eax,[ebp-1CCh]"
-"	      0049bc87    mov ecx,[ebp-108h]"
+"	      0049bc7b    inc i"
+"	      0049bc81    mov eax,this"
+"	      0049bc87    mov ecx,i"
 "	      0049bc8d    cmp [eax+94h],ecx"
 "	      0049bc93    jle near ptr 0049C380h"
 );
 // LINE 125:
 	asm( 
-"	      0049bc99    mov eax,[ebp-1CCh]"
+"	      0049bc99    mov eax,this"
 "	      0049bc9f    mov eax,[eax+0A4h]"
-"	      0049bca5    mov [ebp-11Ch],eax"
+"	      0049bca5    mov rectTextWindow.left,eax"
 );
 // LINE 126:
 	asm( 
 "	      0049bcab    jmp near ptr 0049BCB0h"
-"	      0049bcb0    mov eax,[ebp-1CCh]"
+"	      0049bcb0    mov eax,this"
 "	      0049bcb6    mov eax,[eax+18h]"
-"	      0049bcb9    mov ecx,[ebp-1CCh]"
+"	      0049bcb9    mov ecx,this"
 "	      0049bcbf    sub eax,[ecx+10h]"
-"	      0049bcc2    sub eax,[ebp-11Ch]"
-"	      0049bcc8    mov [ebp-114h],eax"
+"	      0049bcc2    sub eax,rectTextWindow.left"
+"	      0049bcc8    mov rectTextWindow.right,eax"
 );
 // LINE 128:
 	asm( 
-"	      0049bcce    mov eax,[ebp-1CCh]"
+"	      0049bcce    mov eax,this"
 "	      0049bcd4    mov eax,[eax+0B0h]"
-"	      0049bcda    imul eax,[ebp-108h]"
-"	      0049bce1    mov ecx,[ebp-1CCh]"
+"	      0049bcda    imul eax,i"
+"	      0049bce1    mov ecx,this"
 "	      0049bce7    add eax,[ecx+0A8h]"
-"	      0049bced    mov [ebp-118h],eax"
+"	      0049bced    mov rectTextWindow.top,eax"
 );
 // LINE 129:
 	asm( 
 "	      0049bcf3    jmp near ptr 0049BCF8h"
-"	      0049bcf8    mov eax,[ebp-1CCh]"
+"	      0049bcf8    mov eax,this"
 "	      0049bcfe    mov eax,[eax+1Ch]"
-"	      0049bd01    mov ecx,[ebp-1CCh]"
+"	      0049bd01    mov ecx,this"
 "	      0049bd07    sub eax,[ecx+14h]"
-"	      0049bd0a    sub eax,[ebp-118h]"
-"	      0049bd10    mov [ebp-110h],eax"
+"	      0049bd0a    sub eax,rectTextWindow.top"
+"	      0049bd10    mov rectTextWindow.bottom,eax"
 );
 // LINE 138:
 	asm( 
@@ -1023,58 +1023,58 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049bd29    cmp dword ptr [ebp-12Ch],0"
 "	      0049bd30    je near ptr 0049BD7Dh"
 "	      0049bd36    push 0"
-"	      0049bd38    mov eax,[ebp-1CCh]"
+"	      0049bd38    mov eax,this"
 "	      0049bd3e    push eax"
-"	      0049bd3f    mov eax,[ebp-1CCh]"
+"	      0049bd3f    mov eax,this"
 "	      0049bd45    push eax"
-"	      0049bd46    mov eax,[ebp-1CCh]"
+"	      0049bd46    mov eax,this"
 "	      0049bd4c    mov eax,[eax+90h]"
-"	      0049bd52    add eax,[ebp-108h]"
+"	      0049bd52    add eax,i"
 "	      0049bd58    push eax"
-"	      0049bd59    mov eax,[ebp-108h]"
+"	      0049bd59    mov eax,i"
 "	      0049bd5f    push eax"
-"	      0049bd60    lea eax,[ebp-11Ch]"
+"	      0049bd60    lea eax,rectTextWindow.left"
 "	      0049bd66    push eax"
 "	      0049bd67    mov ecx,[ebp-12Ch]"
 "	      0049bd6d    call 004ACCE6h"
-"	      0049bd72    mov [ebp-10Ch],eax"
+"	      0049bd72    mov tempTextWindow,eax"
 "	      0049bd78    jmp near ptr 0049BD87h"
-"	      0049bd7d    mov dword ptr [ebp-10Ch],0"
+"	      0049bd7d    mov tempTextWindow,0"
 );
 // LINE 139:
 	asm( 
-"	      0049bd87    mov eax,[ebp-10Ch]"
+"	      0049bd87    mov eax,tempTextWindow"
 "	      0049bd8d    mov eax,[eax]"
-"	      0049bd8f    mov ecx,[ebp-10Ch]"
+"	      0049bd8f    mov ecx,tempTextWindow"
 "	      0049bd95    call dword ptr [eax+4]"
 );
 // LINE 140:
 	asm( 
 "	      0049bd98    push 0"
 "	      0049bd9a    push 0"
-"	      0049bd9c    mov eax,[ebp-1CCh]"
+"	      0049bd9c    mov eax,this"
 "	      0049bda2    mov eax,[eax+0ACh]"
 "	      0049bda8    push eax"
-"	      0049bda9    mov eax,[ebp-10Ch]"
+"	      0049bda9    mov eax,tempTextWindow"
 "	      0049bdaf    mov eax,[eax]"
-"	      0049bdb1    mov ecx,[ebp-10Ch]"
+"	      0049bdb1    mov ecx,tempTextWindow"
 "	      0049bdb7    call dword ptr [eax+0CCh]"
 );
 // LINE 141:
 	asm( 
-"	      0049bdbd    mov eax,[ebp-1CCh]"
-"	      0049bdc3    mov ecx,[ebp-108h]"
+"	      0049bdbd    mov eax,this"
+"	      0049bdc3    mov ecx,i"
 "	      0049bdc9    cmp [eax+0D4h],ecx"
 "	      0049bdcf    jne near ptr 0049BDFAh"
 );
 // LINE 142:
 	asm( 
-"	      0049bdd5    mov eax,[ebp-1CCh]"
+"	      0049bdd5    mov eax,this"
 "	      0049bddb    add eax,0A0h"
 "	      0049bde0    push eax"
-"	      0049bde1    mov eax,[ebp-10Ch]"
+"	      0049bde1    mov eax,tempTextWindow"
 "	      0049bde7    mov eax,[eax]"
-"	      0049bde9    mov ecx,[ebp-10Ch]"
+"	      0049bde9    mov ecx,tempTextWindow"
 "	      0049bdef    call dword ptr [eax+0D4h]"
 );
 // LINE 143:
@@ -1083,29 +1083,29 @@ int32_t UserMenuWindow::Initialize() {
 );
 // LINE 144:
 	asm( 
-"	      0049bdfa    mov eax,[ebp-1CCh]"
+"	      0049bdfa    mov eax,this"
 "	      0049be00    add eax,9Ch"
 "	      0049be05    push eax"
-"	      0049be06    mov eax,[ebp-10Ch]"
+"	      0049be06    mov eax,tempTextWindow"
 "	      0049be0c    mov eax,[eax]"
-"	      0049be0e    mov ecx,[ebp-10Ch]"
+"	      0049be0e    mov ecx,tempTextWindow"
 "	      0049be14    call dword ptr [eax+0D4h]"
 );
 // LINE 145:
 	asm( 
-"	      0049be1a    mov eax,[ebp-10Ch]"
+"	      0049be1a    mov eax,tempTextWindow"
 "	      0049be20    mov eax,[eax]"
-"	      0049be22    mov ecx,[ebp-10Ch]"
+"	      0049be22    mov ecx,tempTextWindow"
 "	      0049be28    call dword ptr [eax+0E0h]"
 );
 // LINE 146:
 	asm( 
-"	      0049be2e    mov eax,[ebp-1CCh]"
-"	      0049be34    mov ecx,[ebp-1CCh]"
+"	      0049be2e    mov eax,this"
+"	      0049be34    mov ecx,this"
 "	      0049be3a    mov ecx,[ecx+0D0h]"
 "	      0049be40    cmp [eax+0CCh],ecx"
 "	      0049be46    je near ptr 0049BEA6h"
-"	      0049be4c    mov eax,[ebp-1CCh]"
+"	      0049be4c    mov eax,this"
 "	      0049be52    mov eax,[eax+0CCh]"
 "	      0049be58    mov [ebp-158h],eax"
 "	      0049be5e    mov eax,[ebp-158h]"
@@ -1113,28 +1113,28 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049be6a    jmp near ptr 0049BE6Fh"
 "	      0049be6f    cmp dword ptr [ebp-154h],0"
 "	      0049be76    je near ptr 0049BE8Fh"
-"	      0049be7c    mov eax,[ebp-10Ch]"
+"	      0049be7c    mov eax,tempTextWindow"
 "	      0049be82    mov ecx,[ebp-154h]"
 "	      0049be88    mov [ecx],eax"
 "	      0049be8a    jmp near ptr 0049BE8Fh"
 "	      0049be8f    jmp near ptr 0049BE94h"
-"	      0049be94    mov eax,[ebp-1CCh]"
+"	      0049be94    mov eax,this"
 "	      0049be9a    add dword ptr [eax+0CCh],4"
 "	      0049bea1    jmp near ptr 0049C376h"
 "	      0049bea6    jmp near ptr 0049BEABh"
-"	      0049beab    mov eax,[ebp-1CCh]"
+"	      0049beab    mov eax,this"
 "	      0049beb1    mov eax,[eax+0CCh]"
 "	      0049beb7    mov [ebp-1C8h],eax"
-"	      0049bebd    mov eax,[ebp-1CCh]"
-"	      0049bec3    mov ecx,[ebp-1CCh]"
+"	      0049bebd    mov eax,this"
+"	      0049bec3    mov ecx,this"
 "	      0049bec9    mov ecx,[ecx+0D0h]"
 "	      0049becf    cmp [eax+0CCh],ecx"
 "	      0049bed5    je near ptr 0049BFBBh"
-"	      0049bedb    mov eax,[ebp-1CCh]"
+"	      0049bedb    mov eax,this"
 "	      0049bee1    mov eax,[eax+0CCh]"
 "	      0049bee7    sub eax,4"
 "	      0049beea    mov [ebp-18Ch],eax"
-"	      0049bef0    mov eax,[ebp-1CCh]"
+"	      0049bef0    mov eax,this"
 "	      0049bef6    mov eax,[eax+0CCh]"
 "	      0049befc    mov [ebp-190h],eax"
 "	      0049bf02    mov eax,[ebp-190h]"
@@ -1148,10 +1148,10 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049bf2e    mov [ecx],eax"
 "	      0049bf30    jmp near ptr 0049BF35h"
 "	      0049bf35    jmp near ptr 0049BF3Ah"
-"	      0049bf3a    mov eax,[ebp-1CCh]"
+"	      0049bf3a    mov eax,this"
 "	      0049bf40    mov eax,[eax+0CCh]"
 "	      0049bf46    mov [ebp-180h],eax"
-"	      0049bf4c    mov eax,[ebp-1CCh]"
+"	      0049bf4c    mov eax,this"
 "	      0049bf52    mov eax,[eax+0CCh]"
 "	      0049bf58    sub eax,4"
 "	      0049bf5b    mov [ebp-184h],eax"
@@ -1166,18 +1166,18 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049bf8f    mov [ecx],eax"
 "	      0049bf91    jmp near ptr 0049BF61h"
 "	      0049bf96    jmp near ptr 0049BF9Bh"
-"	      0049bf9b    mov eax,[ebp-10Ch]"
+"	      0049bf9b    mov eax,tempTextWindow"
 "	      0049bfa1    mov ecx,[ebp-1C8h]"
 "	      0049bfa7    mov [ecx],eax"
-"	      0049bfa9    mov eax,[ebp-1CCh]"
+"	      0049bfa9    mov eax,this"
 "	      0049bfaf    add dword ptr [eax+0CCh],4"
 "	      0049bfb6    jmp near ptr 0049C371h"
 "	      0049bfbb    jmp near ptr 0049BFC0h"
 "	      0049bfc0    jmp near ptr 0049BFC5h"
 "	      0049bfc5    jmp near ptr 0049BFCAh"
-"	      0049bfca    mov eax,[ebp-1CCh]"
+"	      0049bfca    mov eax,this"
 "	      0049bfd0    mov eax,[eax+0CCh]"
-"	      0049bfd6    mov ecx,[ebp-1CCh]"
+"	      0049bfd6    mov ecx,this"
 "	      0049bfdc    sub eax,[ecx+0C8h]"
 "	      0049bfe2    sar eax,2"
 "	      0049bfe5    test eax,eax"
@@ -1185,9 +1185,9 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049bfed    jmp near ptr 0049BFF2h"
 "	      0049bff2    jmp near ptr 0049BFF7h"
 "	      0049bff7    jmp near ptr 0049BFFCh"
-"	      0049bffc    mov eax,[ebp-1CCh]"
+"	      0049bffc    mov eax,this"
 "	      0049c002    mov eax,[eax+0CCh]"
-"	      0049c008    mov ecx,[ebp-1CCh]"
+"	      0049c008    mov ecx,this"
 "	      0049c00e    sub eax,[ecx+0C8h]"
 "	      0049c014    sar eax,2"
 "	      0049c017    add eax,eax"
@@ -1224,7 +1224,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c0b7    jmp near ptr 0049C0BCh"
 "	      0049c0bc    mov eax,[ebp-15Ch]"
 "	      0049c0c2    mov [ebp-1A8h],eax"
-"	      0049c0c8    mov eax,[ebp-1CCh]"
+"	      0049c0c8    mov eax,this"
 "	      0049c0ce    mov eax,[eax+0C8h]"
 "	      0049c0d4    mov [ebp-1ACh],eax"
 "	      0049c0da    mov eax,[ebp-1ACh]"
@@ -1251,7 +1251,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c14f    jmp near ptr 0049C154h"
 "	      0049c154    jmp near ptr 0049C159h"
 "	      0049c159    mov eax,[ebp-1C8h]"
-"	      0049c15f    mov ecx,[ebp-1CCh]"
+"	      0049c15f    mov ecx,this"
 "	      0049c165    sub eax,[ecx+0C8h]"
 "	      0049c16b    and eax,0FFFFFFFCh"
 "	      0049c16e    sar eax,0"
@@ -1265,7 +1265,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c18f    jmp near ptr 0049C194h"
 "	      0049c194    cmp dword ptr [ebp-194h],0"
 "	      0049c19b    je near ptr 0049C1B4h"
-"	      0049c1a1    mov eax,[ebp-10Ch]"
+"	      0049c1a1    mov eax,tempTextWindow"
 "	      0049c1a7    mov ecx,[ebp-194h]"
 "	      0049c1ad    mov [ecx],eax"
 "	      0049c1af    jmp near ptr 0049C1B4h"
@@ -1273,7 +1273,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c1b9    jmp near ptr 0049C1BEh"
 "	      0049c1be    jmp near ptr 0049C1C3h"
 "	      0049c1c3    mov eax,[ebp-1C8h]"
-"	      0049c1c9    mov ecx,[ebp-1CCh]"
+"	      0049c1c9    mov ecx,this"
 "	      0049c1cf    sub eax,[ecx+0C8h]"
 "	      0049c1d5    and eax,0FFFFFFFCh"
 "	      0049c1d8    sar eax,0"
@@ -1283,7 +1283,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c1e1    add eax,[ebp-15Ch]"
 "	      0049c1e7    add eax,4"
 "	      0049c1ea    mov [ebp-1BCh],eax"
-"	      0049c1f0    mov eax,[ebp-1CCh]"
+"	      0049c1f0    mov eax,this"
 "	      0049c1f6    mov eax,[eax+0CCh]"
 "	      0049c1fc    mov [ebp-1C0h],eax"
 "	      0049c202    mov eax,[ebp-1C8h]"
@@ -1312,10 +1312,10 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c283    jmp near ptr 0049C288h"
 "	      0049c288    jmp near ptr 0049C28Dh"
 "	      0049c28d    jmp near ptr 0049C292h"
-"	      0049c292    mov eax,[ebp-1CCh]"
+"	      0049c292    mov eax,this"
 "	      0049c298    mov eax,[eax+0C8h]"
 "	      0049c29e    mov [ebp-168h],eax"
-"	      0049c2a4    mov eax,[ebp-1CCh]"
+"	      0049c2a4    mov eax,this"
 "	      0049c2aa    mov ecx,[ebp-168h]"
 "	      0049c2b0    cmp [eax+0CCh],ecx"
 "	      0049c2b6    je near ptr 0049C2CDh"
@@ -1324,7 +1324,7 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c2c8    jmp near ptr 0049C2A4h"
 "	      0049c2cd    jmp near ptr 0049C2D2h"
 "	      0049c2d2    jmp near ptr 0049C2D7h"
-"	      0049c2d7    mov eax,[ebp-1CCh]"
+"	      0049c2d7    mov eax,this"
 "	      0049c2dd    mov eax,[eax+0C8h]"
 "	      0049c2e3    mov [ebp-164h],eax"
 "	      0049c2e9    mov eax,[ebp-164h]"
@@ -1336,23 +1336,23 @@ int32_t UserMenuWindow::Initialize() {
 "	      0049c302    mov eax,[ebp-160h]"
 "	      0049c308    shl eax,2"
 "	      0049c30b    add eax,[ebp-15Ch]"
-"	      0049c311    mov ecx,[ebp-1CCh]"
+"	      0049c311    mov ecx,this"
 "	      0049c317    mov [ecx+0D0h],eax"
 "	      0049c31d    jmp near ptr 0049C322h"
 "	      0049c322    jmp near ptr 0049C327h"
 "	      0049c327    jmp near ptr 0049C32Ch"
-"	      0049c32c    mov eax,[ebp-1CCh]"
+"	      0049c32c    mov eax,this"
 "	      0049c332    mov eax,[eax+0CCh]"
-"	      0049c338    mov ecx,[ebp-1CCh]"
+"	      0049c338    mov ecx,this"
 "	      0049c33e    sub eax,[ecx+0C8h]"
 "	      0049c344    sar eax,2"
 "	      0049c347    shl eax,2"
 "	      0049c34a    add eax,[ebp-15Ch]"
 "	      0049c350    add eax,4"
-"	      0049c353    mov ecx,[ebp-1CCh]"
+"	      0049c353    mov ecx,this"
 "	      0049c359    mov [ecx+0CCh],eax"
 "	      0049c35f    mov eax,[ebp-15Ch]"
-"	      0049c365    mov ecx,[ebp-1CCh]"
+"	      0049c365    mov ecx,this"
 "	      0049c36b    mov [ecx+0C8h],eax"
 "	      0049c371    jmp near ptr 0049C376h"
 "	      0049c376    jmp near ptr 0049C37Bh"
@@ -1365,8 +1365,8 @@ int32_t UserMenuWindow::Initialize() {
 	asm( 
 "	      0049c380    mov eax,ds:[5C37F0h]"
 "	      0049c385    push eax"
-"	      0049c386    mov ecx,[ebp-1CCh]"
-"	      0049c38c    mov eax,[ebp-1CCh]"
+"	      0049c386    mov ecx,this"
+"	      0049c38c    mov eax,this"
 "	      0049c392    mov eax,[eax+0D8h]"
 "	      0049c398    add ecx,0D8h"
 "	      0049c39e    call dword ptr [eax+24h]"
@@ -1399,36 +1399,36 @@ int32_t UserMenuWindow::DrawSelf() {
 "	      0049c3b3    push ebx"
 "	      0049c3b4    push esi"
 "	      0049c3b5    push edi"
-"	      0049c3b6    mov [ebp-14h],ecx"
+"	      0049c3b6    mov this,ecx"
 );
 // LINE 160:
 	asm( 
 "	      0049c3b9    jmp near ptr 0049C3BEh"
 "	      0049c3be    jmp near ptr 0049C3C3h"
 "	      0049c3c3    jmp near ptr 0049C3C8h"
-"	      0049c3c8    mov eax,[ebp-14h]"
+"	      0049c3c8    mov eax,this"
 "	      0049c3cb    mov eax,[eax+0CCh]"
-"	      0049c3d1    mov ecx,[ebp-14h]"
+"	      0049c3d1    mov ecx,this"
 "	      0049c3d4    sub eax,[ecx+0C8h]"
 "	      0049c3da    sar eax,2"
-"	      0049c3dd    mov [ebp-4],eax"
+"	      0049c3dd    mov iEnd,eax"
 );
 // LINE 171:
 	asm( 
-"	      0049c3e0    mov dword ptr [ebp-8],0"
+"	      0049c3e0    mov i,0"
 "	      0049c3e7    jmp near ptr 0049C3EFh"
-"	      0049c3ec    inc dword ptr [ebp-8]"
-"	      0049c3ef    mov eax,[ebp-8]"
-"	      0049c3f2    cmp [ebp-4],eax"
+"	      0049c3ec    inc i"
+"	      0049c3ef    mov eax,i"
+"	      0049c3f2    cmp iEnd,eax"
 "	      0049c3f5    jle near ptr 0049C42Dh"
 );
 // LINE 172:
 	asm( 
 "	      0049c3fb    jmp near ptr 0049C400h"
 "	      0049c400    jmp near ptr 0049C405h"
-"	      0049c405    mov eax,[ebp-14h]"
+"	      0049c405    mov eax,this"
 "	      0049c408    mov eax,[eax+0C8h]"
-"	      0049c40e    mov ecx,[ebp-8]"
+"	      0049c40e    mov ecx,i"
 "	      0049c411    mov eax,[eax+ecx*4]"
 "	      0049c414    mov [ebp-0Ch],eax"
 "	      0049c417    mov eax,[ebp-0Ch]"
@@ -1464,21 +1464,21 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 "	      0049c442    push ebx"
 "	      0049c443    push esi"
 "	      0049c444    push edi"
-"	      0049c445    mov [ebp-14h],ecx"
+"	      0049c445    mov this,ecx"
 );
 // LINE 182:
 	asm( 
-"	      0049c448    cmp dword ptr [ebp+8],0"
+"	      0049c448    cmp nIndex,0"
 "	      0049c44c    jl near ptr 0049C47Ch"
-"	      0049c452    mov eax,[ebp-14h]"
+"	      0049c452    mov eax,this"
 "	      0049c455    mov eax,[eax]"
-"	      0049c457    mov ecx,[ebp-14h]"
+"	      0049c457    mov ecx,this"
 "	      0049c45a    call dword ptr [eax+0D4h]"
 "	      0049c460    dec eax"
-"	      0049c461    cmp eax,[ebp+8]"
+"	      0049c461    cmp eax,nIndex"
 "	      0049c464    jl near ptr 0049C47Ch"
-"	      0049c46a    mov eax,[ebp-14h]"
-"	      0049c46d    mov ecx,[ebp+8]"
+"	      0049c46a    mov eax,this"
+"	      0049c46d    mov ecx,nIndex"
 "	      0049c470    cmp [eax+0D4h],ecx"
 "	      0049c476    jne near ptr 0049C483h"
 );
@@ -1491,16 +1491,16 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	asm( 
 "	      0049c483    jmp near ptr 0049C488h"
 "	      0049c488    jmp near ptr 0049C48Dh"
-"	      0049c48d    mov eax,[ebp-14h]"
+"	      0049c48d    mov eax,this"
 "	      0049c490    mov eax,[eax+0D4h]"
-"	      0049c496    mov ecx,[ebp-14h]"
+"	      0049c496    mov ecx,this"
 "	      0049c499    mov ecx,[ecx+0C8h]"
 "	      0049c49f    mov eax,[ecx+eax*4]"
 "	      0049c4a2    mov [ebp-4],eax"
 "	      0049c4a5    mov eax,[ebp-4]"
 "	      0049c4a8    mov eax,[eax]"
 "	      0049c4aa    mov [ebp-8],eax"
-"	      0049c4ad    mov eax,[ebp-14h]"
+"	      0049c4ad    mov eax,this"
 "	      0049c4b0    add eax,9Ch"
 "	      0049c4b5    push eax"
 "	      0049c4b6    mov eax,[ebp-8]"
@@ -1511,15 +1511,15 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	asm( 
 "	      0049c4c2    jmp near ptr 0049C4C7h"
 "	      0049c4c7    jmp near ptr 0049C4CCh"
-"	      0049c4cc    mov eax,[ebp-14h]"
+"	      0049c4cc    mov eax,this"
 "	      0049c4cf    mov eax,[eax+0C8h]"
-"	      0049c4d5    mov ecx,[ebp+8]"
+"	      0049c4d5    mov ecx,nIndex"
 "	      0049c4d8    mov eax,[eax+ecx*4]"
 "	      0049c4db    mov [ebp-0Ch],eax"
 "	      0049c4de    mov eax,[ebp-0Ch]"
 "	      0049c4e1    mov eax,[eax]"
 "	      0049c4e3    mov [ebp-10h],eax"
-"	      0049c4e6    mov eax,[ebp-14h]"
+"	      0049c4e6    mov eax,this"
 "	      0049c4e9    add eax,0A0h"
 "	      0049c4ee    push eax"
 "	      0049c4ef    mov eax,[ebp-10h]"
@@ -1528,25 +1528,25 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 );
 // LINE 187:
 	asm( 
-"	      0049c4fb    mov eax,[ebp+8]"
-"	      0049c4fe    mov ecx,[ebp-14h]"
+"	      0049c4fb    mov eax,nIndex"
+"	      0049c4fe    mov ecx,this"
 "	      0049c501    mov [ecx+0D4h],eax"
 );
 // LINE 188:
 	asm( 
 "	      0049c507    push 1"
 "	      0049c509    push 1"
-"	      0049c50b    mov eax,[ebp-14h]"
+"	      0049c50b    mov eax,this"
 "	      0049c50e    mov eax,[eax]"
-"	      0049c510    mov ecx,[ebp-14h]"
+"	      0049c510    mov ecx,this"
 "	      0049c513    call dword ptr [eax+30h]"
 );
 // LINE 189:
 	asm( 
 "	      0049c516    mov eax,ds:[5C37F0h]"
 "	      0049c51b    push eax"
-"	      0049c51c    mov ecx,[ebp-14h]"
-"	      0049c51f    mov eax,[ebp-14h]"
+"	      0049c51c    mov ecx,this"
+"	      0049c51f    mov eax,this"
 "	      0049c522    mov eax,[eax+0D8h]"
 "	      0049c528    add ecx,0D8h"
 "	      0049c52e    call dword ptr [eax+24h]"
@@ -1555,8 +1555,8 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	asm( 
 "	      0049c531    push 1"
 "	      0049c533    push 0"
-"	      0049c535    mov ecx,[ebp-14h]"
-"	      0049c538    mov eax,[ebp-14h]"
+"	      0049c535    mov ecx,this"
+"	      0049c538    mov eax,this"
 "	      0049c53b    mov eax,[eax+0D8h]"
 "	      0049c541    add ecx,0D8h"
 "	      0049c547    call dword ptr [eax+8]"
@@ -1586,23 +1586,23 @@ int32_t UserMenuWindow::SetSelectionValue(int32_t nValue) {
 "	      0049c561    push ebx"
 "	      0049c562    push esi"
 "	      0049c563    push edi"
-"	      0049c564    mov [ebp-4],ecx"
+"	      0049c564    mov this,ecx"
 );
 // LINE 198:
 	asm( 
 "	      0049c567    xor eax,eax"
-"	      0049c569    mov ecx,[ebp-4]"
+"	      0049c569    mov ecx,this"
 "	      0049c56c    sub eax,[ecx+98h]"
 "	      0049c572    neg eax"
-"	      0049c574    sub [ebp+8],eax"
+"	      0049c574    sub nValue,eax"
 );
 // LINE 199:
 	asm( 
-"	      0049c577    mov eax,[ebp+8]"
+"	      0049c577    mov eax,nValue"
 "	      0049c57a    push eax"
-"	      0049c57b    mov eax,[ebp-4]"
+"	      0049c57b    mov eax,this"
 "	      0049c57e    mov eax,[eax]"
-"	      0049c580    mov ecx,[ebp-4]"
+"	      0049c580    mov ecx,this"
 "	      0049c583    call dword ptr [eax+0C4h]"
 "	      0049c589    jmp near ptr 0049C58Eh"
 );
@@ -1626,7 +1626,7 @@ void UserMenuWindow::DrawSelectionIndicators() {
 "	      0049c59b    push ebx"
 "	      0049c59c    push esi"
 "	      0049c59d    push edi"
-"	      0049c59e    mov [ebp-4],ecx"
+"	      0049c59e    mov this,ecx"
 );
 // LINE 212:
 	asm( 
@@ -1652,20 +1652,20 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 "	      0049c5b1    push ebx"
 "	      0049c5b2    push esi"
 "	      0049c5b3    push edi"
-"	      0049c5b4    mov [ebp-18h],ecx"
+"	      0049c5b4    mov this,ecx"
 );
 // LINE 235:
 	asm( 
-"	      0049c5b7    mov dword ptr [ebp-8],0"
-"	      0049c5be    mov eax,[ebp-18h]"
+"	      0049c5b7    mov i,0"
+"	      0049c5be    mov eax,this"
 "	      0049c5c1    mov eax,[eax]"
-"	      0049c5c3    mov ecx,[ebp-18h]"
+"	      0049c5c3    mov ecx,this"
 "	      0049c5c6    call dword ptr [eax+0D4h]"
-"	      0049c5cc    mov [ebp-4],eax"
+"	      0049c5cc    mov iEnd,eax"
 "	      0049c5cf    jmp near ptr 0049C5D7h"
-"	      0049c5d4    inc dword ptr [ebp-8]"
-"	      0049c5d7    mov eax,[ebp-8]"
-"	      0049c5da    cmp [ebp-4],eax"
+"	      0049c5d4    inc i"
+"	      0049c5d7    mov eax,i"
+"	      0049c5da    cmp iEnd,eax"
 "	      0049c5dd    jle near ptr 0049C69Fh"
 );
 // LINE 236:
@@ -1673,35 +1673,35 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 "	      0049c5e3    jmp near ptr 0049C5E8h"
 "	      0049c5e8    jmp near ptr 0049C5EDh"
 "	      0049c5ed    jmp near ptr 0049C5F2h"
-"	      0049c5f2    mov eax,[ebp+0Ch]"
+"	      0049c5f2    mov eax,nCursorX"
 "	      0049c5f5    mov [ebp-10h],eax"
-"	      0049c5f8    mov eax,[ebp+10h]"
+"	      0049c5f8    mov eax,nCursorY"
 "	      0049c5fb    mov [ebp-0Ch],eax"
 "	      0049c5fe    jmp near ptr 0049C603h"
-"	      0049c603    mov eax,[ebp-18h]"
+"	      0049c603    mov eax,this"
 "	      0049c606    mov eax,[eax+0C8h]"
-"	      0049c60c    mov ecx,[ebp-8]"
+"	      0049c60c    mov ecx,i"
 "	      0049c60f    mov eax,[eax+ecx*4]"
 "	      0049c612    mov ecx,[ebp-10h]"
 "	      0049c615    cmp [eax+10h],ecx"
 "	      0049c618    jg near ptr 0049C674h"
-"	      0049c61e    mov eax,[ebp-18h]"
+"	      0049c61e    mov eax,this"
 "	      0049c621    mov eax,[eax+0C8h]"
-"	      0049c627    mov ecx,[ebp-8]"
+"	      0049c627    mov ecx,i"
 "	      0049c62a    mov eax,[eax+ecx*4]"
 "	      0049c62d    mov ecx,[ebp-0Ch]"
 "	      0049c630    cmp [eax+14h],ecx"
 "	      0049c633    jg near ptr 0049C674h"
-"	      0049c639    mov eax,[ebp-18h]"
+"	      0049c639    mov eax,this"
 "	      0049c63c    mov eax,[eax+0C8h]"
-"	      0049c642    mov ecx,[ebp-8]"
+"	      0049c642    mov ecx,i"
 "	      0049c645    mov eax,[eax+ecx*4]"
 "	      0049c648    mov ecx,[ebp-10h]"
 "	      0049c64b    cmp [eax+18h],ecx"
 "	      0049c64e    jle near ptr 0049C674h"
-"	      0049c654    mov eax,[ebp-18h]"
+"	      0049c654    mov eax,this"
 "	      0049c657    mov eax,[eax+0C8h]"
-"	      0049c65d    mov ecx,[ebp-8]"
+"	      0049c65d    mov ecx,i"
 "	      0049c660    mov eax,[eax+ecx*4]"
 "	      0049c663    mov ecx,[ebp-0Ch]"
 "	      0049c666    cmp [eax+1Ch],ecx"
@@ -1714,8 +1714,8 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 );
 // LINE 237:
 	asm( 
-"	      0049c688    mov eax,[ebp-8]"
-"	      0049c68b    mov ecx,[ebp+8]"
+"	      0049c688    mov eax,i"
+"	      0049c68b    mov ecx,nHitIndex"
 "	      0049c68e    mov [ecx],eax"
 );
 // LINE 238:
@@ -1752,23 +1752,23 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, class MPoint& ptPos
 "	      0049c6b3    push ebx"
 "	      0049c6b4    push esi"
 "	      0049c6b5    push edi"
-"	      0049c6b6    mov [ebp-4],ecx"
+"	      0049c6b6    mov this,ecx"
 );
 // LINE 249:
 	asm( 
-"	      0049c6b9    mov eax,[ebp-4]"
+"	      0049c6b9    mov eax,this"
 "	      0049c6bc    mov eax,[eax+0A4h]"
-"	      0049c6c2    mov ecx,[ebp+0Ch]"
+"	      0049c6c2    mov ecx,ptPosition"
 "	      0049c6c5    mov [ecx],eax"
 );
 // LINE 251:
 	asm( 
-"	      0049c6c7    mov eax,[ebp-4]"
+"	      0049c6c7    mov eax,this"
 "	      0049c6ca    mov eax,[eax+0B0h]"
-"	      0049c6d0    imul eax,[ebp+8]"
-"	      0049c6d4    mov ecx,[ebp-4]"
+"	      0049c6d0    imul eax,nIndex"
+"	      0049c6d4    mov ecx,this"
 "	      0049c6d7    add eax,[ecx+0A8h]"
-"	      0049c6dd    mov ecx,[ebp+0Ch]"
+"	      0049c6dd    mov ecx,ptPosition"
 "	      0049c6e0    mov [ecx+4],eax"
 );
 // LINE 252:
@@ -1799,37 +1799,37 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 "	      0049c6fa    push ebx"
 "	      0049c6fb    push esi"
 "	      0049c6fc    push edi"
-"	      0049c6fd    mov [ebp-40h],ecx"
+"	      0049c6fd    mov this,ecx"
 );
 // LINE 264:
 	asm( 
-"	      0049c700    mov dword ptr [ebp-8],0"
+"	      0049c700    mov i,0"
 );
 // LINE 265:
 	asm( 
 "	      0049c707    jmp near ptr 0049C70Ch"
 "	      0049c70c    jmp near ptr 0049C711h"
 "	      0049c711    jmp near ptr 0049C716h"
-"	      0049c716    mov eax,[ebp-40h]"
+"	      0049c716    mov eax,this"
 "	      0049c719    mov eax,[eax+0CCh]"
-"	      0049c71f    mov ecx,[ebp-40h]"
+"	      0049c71f    mov ecx,this"
 "	      0049c722    sub eax,[ecx+0C8h]"
 "	      0049c728    sar eax,2"
-"	      0049c72b    mov [ebp-4],eax"
+"	      0049c72b    mov iEnd,eax"
 );
 // LINE 267:
 	asm( 
-"	      0049c72e    mov eax,[ebp-8]"
-"	      0049c731    cmp [ebp-4],eax"
+"	      0049c72e    mov eax,i"
+"	      0049c731    cmp iEnd,eax"
 "	      0049c734    jle near ptr 0049C999h"
 );
 // LINE 268:
 	asm( 
 "	      0049c73a    jmp near ptr 0049C73Fh"
 "	      0049c73f    jmp near ptr 0049C744h"
-"	      0049c744    mov eax,[ebp-40h]"
+"	      0049c744    mov eax,this"
 "	      0049c747    mov eax,[eax+0C8h]"
-"	      0049c74d    mov ecx,[ebp-8]"
+"	      0049c74d    mov ecx,i"
 "	      0049c750    mov eax,[eax+ecx*4]"
 "	      0049c753    add eax,8"
 "	      0049c756    mov [ebp-3Ch],eax"
@@ -1977,16 +1977,16 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 "	      0049c964    mov eax,[eax+4]"
 "	      0049c967    mov eax,[eax]"
 "	      0049c969    movsx eax,byte ptr [eax]"
-"	      0049c96c    cmp eax,[ebp+8]"
+"	      0049c96c    cmp eax,lCharacter"
 "	      0049c96f    jne near ptr 0049C991h"
 );
 // LINE 269:
 	asm( 
-"	      0049c975    mov eax,[ebp-8]"
+"	      0049c975    mov eax,i"
 "	      0049c978    push eax"
-"	      0049c979    mov eax,[ebp-40h]"
+"	      0049c979    mov eax,this"
 "	      0049c97c    mov eax,[eax]"
-"	      0049c97e    mov ecx,[ebp-40h]"
+"	      0049c97e    mov ecx,this"
 "	      0049c981    call dword ptr [eax+0C4h]"
 );
 // LINE 270:
@@ -1996,7 +1996,7 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 );
 // LINE 272:
 	asm( 
-"	      0049c991    inc dword ptr [ebp-8]"
+"	      0049c991    inc i"
 );
 // LINE 273:
 	asm( 
@@ -2027,32 +2027,32 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      0049c9ad    push ebx"
 "	      0049c9ae    push esi"
 "	      0049c9af    push edi"
-"	      0049c9b0    mov [ebp-8],ecx"
+"	      0049c9b0    mov this,ecx"
 );
 // LINE 282:
 	asm( 
-"	      0049c9b3    cmp dword ptr [ebp+8],28h"
+"	      0049c9b3    cmp lKey,28h"
 "	      0049c9b7    je near ptr 0049C9C7h"
-"	      0049c9bd    cmp dword ptr [ebp+8],22h"
+"	      0049c9bd    cmp lKey,22h"
 "	      0049c9c1    jne near ptr 0049CA22h"
 );
 // LINE 283:
 	asm( 
-"	      0049c9c7    mov eax,[ebp-8]"
+"	      0049c9c7    mov eax,this"
 "	      0049c9ca    mov eax,[eax]"
-"	      0049c9cc    mov ecx,[ebp-8]"
+"	      0049c9cc    mov ecx,this"
 "	      0049c9cf    call dword ptr [eax+0D4h]"
 "	      0049c9d5    dec eax"
-"	      0049c9d6    mov ecx,[ebp-8]"
+"	      0049c9d6    mov ecx,this"
 "	      0049c9d9    cmp eax,[ecx+0D4h]"
 "	      0049c9df    jg near ptr 0049C9FAh"
 );
 // LINE 284:
 	asm( 
 "	      0049c9e5    push 0"
-"	      0049c9e7    mov eax,[ebp-8]"
+"	      0049c9e7    mov eax,this"
 "	      0049c9ea    mov eax,[eax]"
-"	      0049c9ec    mov ecx,[ebp-8]"
+"	      0049c9ec    mov ecx,this"
 "	      0049c9ef    call dword ptr [eax+0C4h]"
 );
 // LINE 285:
@@ -2061,13 +2061,13 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 286:
 	asm( 
-"	      0049c9fa    mov eax,[ebp-8]"
+"	      0049c9fa    mov eax,this"
 "	      0049c9fd    mov eax,[eax+0D4h]"
 "	      0049ca03    inc eax"
 "	      0049ca04    push eax"
-"	      0049ca05    mov eax,[ebp-8]"
+"	      0049ca05    mov eax,this"
 "	      0049ca08    mov eax,[eax]"
-"	      0049ca0a    mov ecx,[ebp-8]"
+"	      0049ca0a    mov ecx,this"
 "	      0049ca0d    call dword ptr [eax+0C4h]"
 );
 // LINE 287:
@@ -2078,31 +2078,31 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 289:
 	asm( 
 "	      0049ca1d    jmp near ptr 0049CB7Fh"
-"	      0049ca22    cmp dword ptr [ebp+8],26h"
+"	      0049ca22    cmp lKey,26h"
 "	      0049ca26    je near ptr 0049CA46h"
-"	      0049ca2c    cmp dword ptr [ebp+8],21h"
+"	      0049ca2c    cmp lKey,21h"
 "	      0049ca30    jne near ptr 0049CAA1h"
-"	      0049ca36    mov eax,[ebp-8]"
+"	      0049ca36    mov eax,this"
 "	      0049ca39    cmp dword ptr [eax+0D4h],0"
 "	      0049ca40    jle near ptr 0049CAA1h"
 );
 // LINE 290:
 	asm( 
-"	      0049ca46    mov eax,[ebp-8]"
+"	      0049ca46    mov eax,this"
 "	      0049ca49    cmp dword ptr [eax+0D4h],0"
 "	      0049ca50    jne near ptr 0049CA79h"
 );
 // LINE 291:
 	asm( 
-"	      0049ca56    mov eax,[ebp-8]"
+"	      0049ca56    mov eax,this"
 "	      0049ca59    mov eax,[eax]"
-"	      0049ca5b    mov ecx,[ebp-8]"
+"	      0049ca5b    mov ecx,this"
 "	      0049ca5e    call dword ptr [eax+0D4h]"
 "	      0049ca64    dec eax"
 "	      0049ca65    push eax"
-"	      0049ca66    mov eax,[ebp-8]"
+"	      0049ca66    mov eax,this"
 "	      0049ca69    mov eax,[eax]"
-"	      0049ca6b    mov ecx,[ebp-8]"
+"	      0049ca6b    mov ecx,this"
 "	      0049ca6e    call dword ptr [eax+0C4h]"
 );
 // LINE 292:
@@ -2111,13 +2111,13 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 293:
 	asm( 
-"	      0049ca79    mov eax,[ebp-8]"
+"	      0049ca79    mov eax,this"
 "	      0049ca7c    mov eax,[eax+0D4h]"
 "	      0049ca82    dec eax"
 "	      0049ca83    push eax"
-"	      0049ca84    mov eax,[ebp-8]"
+"	      0049ca84    mov eax,this"
 "	      0049ca87    mov eax,[eax]"
-"	      0049ca89    mov ecx,[ebp-8]"
+"	      0049ca89    mov ecx,this"
 "	      0049ca8c    call dword ptr [eax+0C4h]"
 );
 // LINE 294:
@@ -2128,15 +2128,15 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 296:
 	asm( 
 "	      0049ca9c    jmp near ptr 0049CB7Fh"
-"	      0049caa1    cmp dword ptr [ebp+8],24h"
+"	      0049caa1    cmp lKey,24h"
 "	      0049caa5    jne near ptr 0049CACAh"
 );
 // LINE 297:
 	asm( 
 "	      0049caab    push 0"
-"	      0049caad    mov eax,[ebp-8]"
+"	      0049caad    mov eax,this"
 "	      0049cab0    mov eax,[eax]"
-"	      0049cab2    mov ecx,[ebp-8]"
+"	      0049cab2    mov ecx,this"
 "	      0049cab5    call dword ptr [eax+0C4h]"
 );
 // LINE 298:
@@ -2147,20 +2147,20 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 300:
 	asm( 
 "	      0049cac5    jmp near ptr 0049CB7Fh"
-"	      0049caca    cmp dword ptr [ebp+8],23h"
+"	      0049caca    cmp lKey,23h"
 "	      0049cace    jne near ptr 0049CB01h"
 );
 // LINE 301:
 	asm( 
-"	      0049cad4    mov eax,[ebp-8]"
+"	      0049cad4    mov eax,this"
 "	      0049cad7    mov eax,[eax]"
-"	      0049cad9    mov ecx,[ebp-8]"
+"	      0049cad9    mov ecx,this"
 "	      0049cadc    call dword ptr [eax+0D4h]"
 "	      0049cae2    dec eax"
 "	      0049cae3    push eax"
-"	      0049cae4    mov eax,[ebp-8]"
+"	      0049cae4    mov eax,this"
 "	      0049cae7    mov eax,[eax]"
-"	      0049cae9    mov ecx,[ebp-8]"
+"	      0049cae9    mov ecx,this"
 "	      0049caec    call dword ptr [eax+0C4h]"
 );
 // LINE 302:
@@ -2171,17 +2171,17 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 304:
 	asm( 
 "	      0049cafc    jmp near ptr 0049CB7Fh"
-"	      0049cb01    cmp dword ptr [ebp+8],0Dh"
+"	      0049cb01    cmp lKey,0Dh"
 "	      0049cb05    jne near ptr 0049CB32h"
 );
 // LINE 305:
 	asm( 
-"	      0049cb0b    mov eax,[ebp-8]"
+"	      0049cb0b    mov eax,this"
 "	      0049cb0e    mov eax,[eax+0D4h]"
 "	      0049cb14    push eax"
-"	      0049cb15    mov eax,[ebp-8]"
+"	      0049cb15    mov eax,this"
 "	      0049cb18    mov eax,[eax]"
-"	      0049cb1a    mov ecx,[ebp-8]"
+"	      0049cb1a    mov ecx,this"
 "	      0049cb1d    call dword ptr [eax+0D8h]"
 );
 // LINE 306:
@@ -2192,31 +2192,31 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 308:
 	asm( 
 "	      0049cb2d    jmp near ptr 0049CB7Fh"
-"	      0049cb32    cmp dword ptr [ebp+8],1Bh"
+"	      0049cb32    cmp lKey,1Bh"
 "	      0049cb36    jne near ptr 0049CB7Fh"
 );
 // LINE 309:
 // Block start:
 	long lValue;
 	asm( 
-"	      0049cb3c    mov eax,[ebp-8]"
+"	      0049cb3c    mov eax,this"
 "	      0049cb3f    mov eax,[eax+98h]"
-"	      0049cb45    mov ecx,[ebp-8]"
+"	      0049cb45    mov ecx,this"
 "	      0049cb48    add eax,[ecx+0D4h]"
-"	      0049cb4e    mov [ebp-4],eax"
+"	      0049cb4e    mov lValue,eax"
 );
 // LINE 310:
 	asm( 
-"	      0049cb51    lea eax,[ebp-4]"
+"	      0049cb51    lea eax,lValue"
 "	      0049cb54    push eax"
 "	      0049cb55    push 3EAh"
-"	      0049cb5a    mov eax,[ebp-8]"
+"	      0049cb5a    mov eax,this"
 "	      0049cb5d    mov eax,[eax+4]"
 "	      0049cb60    push eax"
-"	      0049cb61    mov eax,[ebp-8]"
+"	      0049cb61    mov eax,this"
 "	      0049cb64    push eax"
-"	      0049cb65    mov eax,[ebp-8]"
-"	      0049cb68    mov ecx,[ebp-8]"
+"	      0049cb65    mov eax,this"
+"	      0049cb68    mov ecx,this"
 "	      0049cb6b    mov ecx,[ecx+38h]"
 "	      0049cb6e    mov edx,[ecx]"
 "	      0049cb70    mov ecx,[eax+38h]"
@@ -2256,59 +2256,59 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 "	      0049cb93    push ebx"
 "	      0049cb94    push esi"
 "	      0049cb95    push edi"
-"	      0049cb96    mov [ebp-0Ch],ecx"
+"	      0049cb96    mov this,ecx"
 );
 // LINE 329:
 	asm( 
-"	      0049cb99    mov dword ptr [ebp-4],0"
+"	      0049cb99    mov bExecute,0"
 );
 // LINE 331:
 	asm( 
-"	      0049cba0    mov eax,[ebp+0Ch]"
+"	      0049cba0    mov eax,nCursorY"
 "	      0049cba3    push eax"
-"	      0049cba4    mov eax,[ebp+8]"
+"	      0049cba4    mov eax,nCursorX"
 "	      0049cba7    push eax"
-"	      0049cba8    lea eax,[ebp-8]"
+"	      0049cba8    lea eax,nIndex"
 "	      0049cbab    push eax"
-"	      0049cbac    mov eax,[ebp-0Ch]"
+"	      0049cbac    mov eax,this"
 "	      0049cbaf    mov eax,[eax]"
-"	      0049cbb1    mov ecx,[ebp-0Ch]"
+"	      0049cbb1    mov ecx,this"
 "	      0049cbb4    call dword ptr [eax+0E0h]"
 "	      0049cbba    test eax,eax"
 "	      0049cbbc    je near ptr 0049CC09h"
 );
 // LINE 332:
 	asm( 
-"	      0049cbc2    mov eax,[ebp-0Ch]"
-"	      0049cbc5    mov ecx,[ebp-8]"
+"	      0049cbc2    mov eax,this"
+"	      0049cbc5    mov ecx,nIndex"
 "	      0049cbc8    cmp [eax+0D4h],ecx"
 "	      0049cbce    jne near ptr 0049CBDBh"
 );
 // LINE 333:
 	asm( 
-"	      0049cbd4    mov dword ptr [ebp-4],1"
+"	      0049cbd4    mov bExecute,1"
 );
 // LINE 334:
 	asm( 
-"	      0049cbdb    mov eax,[ebp-8]"
+"	      0049cbdb    mov eax,nIndex"
 "	      0049cbde    push eax"
-"	      0049cbdf    mov eax,[ebp-0Ch]"
+"	      0049cbdf    mov eax,this"
 "	      0049cbe2    mov eax,[eax]"
-"	      0049cbe4    mov ecx,[ebp-0Ch]"
+"	      0049cbe4    mov ecx,this"
 "	      0049cbe7    call dword ptr [eax+0C4h]"
 );
 // LINE 335:
 	asm( 
-"	      0049cbed    cmp dword ptr [ebp-4],0"
+"	      0049cbed    cmp bExecute,0"
 "	      0049cbf1    je near ptr 0049CC09h"
 );
 // LINE 336:
 	asm( 
-"	      0049cbf7    mov eax,[ebp-8]"
+"	      0049cbf7    mov eax,nIndex"
 "	      0049cbfa    push eax"
-"	      0049cbfb    mov eax,[ebp-0Ch]"
+"	      0049cbfb    mov eax,this"
 "	      0049cbfe    mov eax,[eax]"
-"	      0049cc00    mov ecx,[ebp-0Ch]"
+"	      0049cc00    mov ecx,this"
 "	      0049cc03    call dword ptr [eax+0D8h]"
 );
 // LINE 338:
@@ -2338,30 +2338,30 @@ long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      0049cc20    push ebx"
 "	      0049cc21    push esi"
 "	      0049cc22    push edi"
-"	      0049cc23    mov [ebp-8],ecx"
+"	      0049cc23    mov this,ecx"
 );
 // LINE 349:
 	asm( 
-"	      0049cc26    mov eax,[ebp+0Ch]"
+"	      0049cc26    mov eax,nCursorY"
 "	      0049cc29    push eax"
-"	      0049cc2a    mov eax,[ebp+8]"
+"	      0049cc2a    mov eax,nCursorX"
 "	      0049cc2d    push eax"
-"	      0049cc2e    lea eax,[ebp-4]"
+"	      0049cc2e    lea eax,nIndex"
 "	      0049cc31    push eax"
-"	      0049cc32    mov eax,[ebp-8]"
+"	      0049cc32    mov eax,this"
 "	      0049cc35    mov eax,[eax]"
-"	      0049cc37    mov ecx,[ebp-8]"
+"	      0049cc37    mov ecx,this"
 "	      0049cc3a    call dword ptr [eax+0E0h]"
 "	      0049cc40    test eax,eax"
 "	      0049cc42    je near ptr 0049CC5Ah"
 );
 // LINE 350:
 	asm( 
-"	      0049cc48    mov eax,[ebp-4]"
+"	      0049cc48    mov eax,nIndex"
 "	      0049cc4b    push eax"
-"	      0049cc4c    mov eax,[ebp-8]"
+"	      0049cc4c    mov eax,this"
 "	      0049cc4f    mov eax,[eax]"
-"	      0049cc51    mov ecx,[ebp-8]"
+"	      0049cc51    mov ecx,this"
 "	      0049cc54    call dword ptr [eax+0C4h]"
 );
 // LINE 351:
@@ -2391,27 +2391,27 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 "	      0049cc71    push ebx"
 "	      0049cc72    push esi"
 "	      0049cc73    push edi"
-"	      0049cc74    mov [ebp-8],ecx"
+"	      0049cc74    mov this,ecx"
 );
 // LINE 360:
 	asm( 
-"	      0049cc77    mov eax,[ebp-8]"
+"	      0049cc77    mov eax,this"
 "	      0049cc7a    mov eax,[eax+98h]"
-"	      0049cc80    add eax,[ebp+8]"
-"	      0049cc83    mov [ebp-4],eax"
+"	      0049cc80    add eax,nIndex"
+"	      0049cc83    mov lValue,eax"
 );
 // LINE 362:
 	asm( 
-"	      0049cc86    lea eax,[ebp-4]"
+"	      0049cc86    lea eax,lValue"
 "	      0049cc89    push eax"
 "	      0049cc8a    push 3E9h"
-"	      0049cc8f    mov eax,[ebp-8]"
+"	      0049cc8f    mov eax,this"
 "	      0049cc92    mov eax,[eax+4]"
 "	      0049cc95    push eax"
-"	      0049cc96    mov eax,[ebp-8]"
+"	      0049cc96    mov eax,this"
 "	      0049cc99    push eax"
-"	      0049cc9a    mov eax,[ebp-8]"
-"	      0049cc9d    mov ecx,[ebp-8]"
+"	      0049cc9a    mov eax,this"
+"	      0049cc9d    mov ecx,this"
 "	      0049cca0    mov ecx,[ecx+38h]"
 "	      0049cca3    mov edx,[ecx]"
 "	      0049cca5    mov ecx,[eax+38h]"
@@ -2442,30 +2442,30 @@ void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMen
 "	      0049ccc1    push ebx"
 "	      0049ccc2    push esi"
 "	      0049ccc3    push edi"
-"	      0049ccc4    mov [ebp-4],ecx"
-"	      0049ccc7    mov eax,[ebp+18h]"
+"	      0049ccc4    mov this,ecx"
+"	      0049ccc7    mov eax,bAddToParentList"
 "	      0049ccca    push eax"
-"	      0049cccb    mov eax,[ebp+14h]"
+"	      0049cccb    mov eax,myNewOwner"
 "	      0049ccce    push eax"
-"	      0049cccf    mov eax,[ebp+10h]"
+"	      0049cccf    mov eax,windowNewParent"
 "	      0049ccd2    push eax"
-"	      0049ccd3    mov eax,[ebp+0Ch]"
+"	      0049ccd3    mov eax,nNewID"
 "	      0049ccd6    push eax"
-"	      0049ccd7    mov eax,[ebp+8]"
+"	      0049ccd7    mov eax,newUserMenuWindowDescription"
 "	      0049ccda    push eax"
-"	      0049ccdb    mov ecx,[ebp-4]"
+"	      0049ccdb    mov ecx,this"
 "	      0049ccde    call 0049B1FBh"
-"	      0049cce3    mov eax,[ebp-4]"
+"	      0049cce3    mov eax,this"
 "	      0049cce6    mov dword ptr [eax+15Ah],0"
-"	      0049ccf0    mov eax,[ebp-4]"
+"	      0049ccf0    mov eax,this"
 "	      0049ccf3    mov dword ptr [eax+15Eh],0"
-"	      0049ccfd    mov eax,[ebp-4]"
+"	      0049ccfd    mov eax,this"
 "	      0049cd00    mov dword ptr [eax],5913E0h"
 );
 // LINE 394:
 	asm( 
 "	      0049cd06    jmp near ptr 0049CD0Bh"
-"	      0049cd0b    mov eax,[ebp-4]"
+"	      0049cd0b    mov eax,this"
 "	      0049cd0e    pop edi"
 "	      0049cd0f    pop esi"
 "	      0049cd10    pop ebx"
@@ -2484,14 +2484,14 @@ void CopterMainMenu::~CopterMainMenu() {
 "	      0049cd1b    push ebx"
 "	      0049cd1c    push esi"
 "	      0049cd1d    push edi"
-"	      0049cd1e    mov [ebp-4],ecx"
-"	      0049cd21    mov eax,[ebp-4]"
+"	      0049cd1e    mov this,ecx"
+"	      0049cd21    mov eax,this"
 "	      0049cd24    mov dword ptr [eax],5913E0h"
 );
 // LINE 401:
 	asm( 
-"	      0049cd2a    mov eax,[ebp-4]"
-"	      0049cd2d    mov ecx,[ebp-4]"
+"	      0049cd2a    mov eax,this"
+"	      0049cd2d    mov ecx,this"
 "	      0049cd30    mov ecx,[ecx+152h]"
 "	      0049cd36    mov edx,[ecx]"
 "	      0049cd38    mov ecx,[eax+152h]"
@@ -2499,8 +2499,8 @@ void CopterMainMenu::~CopterMainMenu() {
 );
 // LINE 402:
 	asm( 
-"	      0049cd41    mov eax,[ebp-4]"
-"	      0049cd44    mov ecx,[ebp-4]"
+"	      0049cd41    mov eax,this"
+"	      0049cd44    mov ecx,this"
 "	      0049cd47    mov ecx,[ecx+156h]"
 "	      0049cd4d    mov edx,[ecx]"
 "	      0049cd4f    mov ecx,[eax+156h]"
@@ -2508,13 +2508,13 @@ void CopterMainMenu::~CopterMainMenu() {
 );
 // LINE 403:
 	asm( 
-"	      0049cd58    mov ecx,[ebp-4]"
+"	      0049cd58    mov ecx,this"
 "	      0049cd5b    call 0049D3FDh"
 );
 // LINE 404:
 	asm( 
 "	      0049cd60    jmp near ptr 0049CD65h"
-"	      0049cd65    mov ecx,[ebp-4]"
+"	      0049cd65    mov ecx,this"
 "	      0049cd68    call 0049B678h"
 "	      0049cd6d    pop edi"
 "	      0049cd6e    pop esi"
@@ -2534,7 +2534,7 @@ int32_t CopterMainMenu::Initialize() {
 "	      0049cd78    push ebx"
 "	      0049cd79    push esi"
 "	      0049cd7a    push edi"
-"	      0049cd7b    mov [ebp-2Ch],ecx"
+"	      0049cd7b    mov this,ecx"
 );
 // LINE 413:
 	asm( 
@@ -2553,9 +2553,9 @@ int32_t CopterMainMenu::Initialize() {
 "	      0049cdbb    mov eax,ds:[606988h]"
 "	      0049cdc0    push eax"
 "	      0049cdc1    push 1"
-"	      0049cdc3    mov eax,[ebp-2Ch]"
+"	      0049cdc3    mov eax,this"
 "	      0049cdc6    push eax"
-"	      0049cdc7    mov eax,[ebp-2Ch]"
+"	      0049cdc7    mov eax,this"
 "	      0049cdca    mov eax,[eax+3Ch]"
 "	      0049cdcd    push eax"
 "	      0049cdce    push 0"
@@ -2565,10 +2565,10 @@ int32_t CopterMainMenu::Initialize() {
 "	      0049cdd9    push eax"
 "	      0049cdda    mov ecx,[ebp-4]"
 "	      0049cddd    call 004A393Dh"
-"	      0049cde2    mov ecx,[ebp-2Ch]"
+"	      0049cde2    mov ecx,this"
 "	      0049cde5    mov [ecx+152h],eax"
 "	      0049cdeb    jmp near ptr 0049CDFDh"
-"	      0049cdf0    mov eax,[ebp-2Ch]"
+"	      0049cdf0    mov eax,this"
 "	      0049cdf3    mov dword ptr [eax+152h],0"
 );
 // LINE 415:
@@ -2588,9 +2588,9 @@ int32_t CopterMainMenu::Initialize() {
 "	      0049ce3a    mov eax,ds:[606988h]"
 "	      0049ce3f    push eax"
 "	      0049ce40    push 1"
-"	      0049ce42    mov eax,[ebp-2Ch]"
+"	      0049ce42    mov eax,this"
 "	      0049ce45    push eax"
-"	      0049ce46    mov eax,[ebp-2Ch]"
+"	      0049ce46    mov eax,this"
 "	      0049ce49    mov eax,[eax+3Ch]"
 "	      0049ce4c    push eax"
 "	      0049ce4d    push 0"
@@ -2600,23 +2600,23 @@ int32_t CopterMainMenu::Initialize() {
 "	      0049ce58    push eax"
 "	      0049ce59    mov ecx,[ebp-18h]"
 "	      0049ce5c    call 004A393Dh"
-"	      0049ce61    mov ecx,[ebp-2Ch]"
+"	      0049ce61    mov ecx,this"
 "	      0049ce64    mov [ecx+156h],eax"
 "	      0049ce6a    jmp near ptr 0049CE7Ch"
-"	      0049ce6f    mov eax,[ebp-2Ch]"
+"	      0049ce6f    mov eax,this"
 "	      0049ce72    mov dword ptr [eax+156h],0"
 );
 // LINE 416:
 	asm( 
-"	      0049ce7c    mov ecx,[ebp-2Ch]"
+"	      0049ce7c    mov ecx,this"
 "	      0049ce7f    call 0049B858h"
 );
 // LINE 417:
 	asm( 
 "	      0049ce84    push 1"
-"	      0049ce86    mov eax,[ebp-2Ch]"
+"	      0049ce86    mov eax,this"
 "	      0049ce89    mov eax,[eax]"
-"	      0049ce8b    mov ecx,[ebp-2Ch]"
+"	      0049ce8b    mov ecx,this"
 "	      0049ce8e    call dword ptr [eax+10h]"
 "	      0049ce91    jmp near ptr 0049CE96h"
 );
@@ -2643,7 +2643,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049cea4    push ebx"
 "	      0049cea5    push esi"
 "	      0049cea6    push edi"
-"	      0049cea7    mov [ebp-0A0h],ecx"
+"	      0049cea7    mov this,ecx"
 );
 // LINE 426:
 	asm( 
@@ -2665,10 +2665,10 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049cee6    mov dword ptr [eax+0Ch],1"
 "	      0049ceed    jmp near ptr 0049CEF2h"
 "	      0049cef2    mov eax,[ebp-28h]"
-"	      0049cef5    mov [ebp-4],eax"
+"	      0049cef5    mov sImageFile.reference,eax"
 "	      0049cef8    jmp near ptr 0049CF04h"
-"	      0049cefd    mov dword ptr [ebp-4],0"
-"	      0049cf04    mov dword ptr [ebp-8],0"
+"	      0049cefd    mov sImageFile.reference,0"
+"	      0049cf04    mov sImageFile.c_str_ptr,0"
 "	      0049cf0b    jmp near ptr 0049CF10h"
 );
 // LINE 427:
@@ -2691,21 +2691,21 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049cf49    mov dword ptr [eax+0Ch],1"
 "	      0049cf50    jmp near ptr 0049CF55h"
 "	      0049cf55    mov eax,[ebp-2Ch]"
-"	      0049cf58    mov [ebp-0Ch],eax"
+"	      0049cf58    mov sImagePath.reference,eax"
 "	      0049cf5b    jmp near ptr 0049CF67h"
-"	      0049cf60    mov dword ptr [ebp-0Ch],0"
-"	      0049cf67    mov dword ptr [ebp-10h],0"
+"	      0049cf60    mov sImagePath.reference,0"
+"	      0049cf67    mov sImagePath.c_str_ptr,0"
 "	      0049cf6e    jmp near ptr 0049CF73h"
 );
 // LINE 429:
 	asm( 
 "	      0049cf73    push 1"
-"	      0049cf75    mov ecx,[ebp-0A0h]"
+"	      0049cf75    mov ecx,this"
 "	      0049cf7b    call 004A4AA0h"
 );
 // LINE 430:
 	asm( 
-"	      0049cf80    mov eax,[ebp-0A0h]"
+"	      0049cf80    mov eax,this"
 "	      0049cf86    cmp dword ptr [eax+15Ah],0"
 "	      0049cf8d    jne near ptr 0049D102h"
 "	      0049cf93    mov eax,ds:[59A2E0h]"
@@ -2721,15 +2721,15 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049cfac    push eax"
 "	      0049cfad    mov eax,[ebp-20h]"
 "	      0049cfb0    push eax"
-"	      0049cfb1    lea ecx,[ebp-8]"
+"	      0049cfb1    lea ecx,sImageFile.c_str_ptr"
 "	      0049cfb4    call 0040FEE0h"
 "	      0049cfb9    jmp near ptr 0049CFBEh"
 );
 // LINE 432:
 	asm( 
-"	      0049cfbe    lea eax,[ebp-10h]"
+"	      0049cfbe    lea eax,sImagePath.c_str_ptr"
 "	      0049cfc1    push eax"
-"	      0049cfc2    lea eax,[ebp-8]"
+"	      0049cfc2    lea eax,sImageFile.c_str_ptr"
 "	      0049cfc5    push eax"
 "	      0049cfc6    push 0"
 "	      0049cfc8    push 6"
@@ -2745,9 +2745,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049cfe6    mov [ebp-14h],eax"
 "	      0049cfe9    cmp dword ptr [ebp-14h],0"
 "	      0049cfed    je near ptr 0049D0F2h"
-"	      0049cff3    cmp dword ptr [ebp-10h],0"
+"	      0049cff3    cmp sImagePath.c_str_ptr,0"
 "	      0049cff7    je near ptr 0049D015h"
-"	      0049cffd    mov eax,[ebp-10h]"
+"	      0049cffd    mov eax,sImagePath.c_str_ptr"
 "	      0049d000    mov [ebp-60h],eax"
 "	      0049d003    mov eax,[ebp-60h]"
 "	      0049d006    mov [ebp-68h],eax"
@@ -2756,33 +2756,33 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d00d    call 0056A740h"
 "	      0049d012    add esp,4"
 "	      0049d015    jmp near ptr 0049D01Ah"
-"	      0049d01a    mov eax,[ebp-0Ch]"
+"	      0049d01a    mov eax,sImagePath.reference"
 "	      0049d01d    mov eax,[eax+4]"
 "	      0049d020    inc eax"
 "	      0049d021    push eax"
 "	      0049d022    call 0056A600h"
 "	      0049d027    add esp,4"
-"	      0049d02a    mov [ebp-10h],eax"
+"	      0049d02a    mov sImagePath.c_str_ptr,eax"
 "	      0049d02d    jmp near ptr 0049D032h"
-"	      0049d032    mov eax,[ebp-0Ch]"
+"	      0049d032    mov eax,sImagePath.reference"
 "	      0049d035    cmp dword ptr [eax+4],0"
 "	      0049d039    je near ptr 0049D09Ch"
 "	      0049d03f    jmp near ptr 0049D044h"
 "	      0049d044    jmp near ptr 0049D049h"
-"	      0049d049    mov eax,[ebp-0Ch]"
+"	      0049d049    mov eax,sImagePath.reference"
 "	      0049d04c    cmp dword ptr [eax+4],0"
 "	      0049d050    je near ptr 0049D068h"
-"	      0049d056    mov eax,[ebp-0Ch]"
+"	      0049d056    mov eax,sImagePath.reference"
 "	      0049d059    mov eax,[eax]"
 "	      0049d05b    mov [ebp-74h],eax"
 "	      0049d05e    jmp near ptr 0049D074h"
 "	      0049d063    jmp near ptr 0049D074h"
 "	      0049d068    mov dword ptr [ebp-74h],0"
 "	      0049d06f    jmp near ptr 0049D074h"
-"	      0049d074    mov eax,[ebp-0Ch]"
+"	      0049d074    mov eax,sImagePath.reference"
 "	      0049d077    mov eax,[eax+4]"
 "	      0049d07a    mov [ebp-78h],eax"
-"	      0049d07d    mov eax,[ebp-10h]"
+"	      0049d07d    mov eax,sImagePath.c_str_ptr"
 "	      0049d080    mov [ebp-7Ch],eax"
 "	      0049d083    mov eax,[ebp-78h]"
 "	      0049d086    push eax"
@@ -2799,9 +2799,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d0aa    lea eax,[ebp-64h]"
 "	      0049d0ad    mov [ebp-6Ch],eax"
 "	      0049d0b0    jmp near ptr 0049D0B5h"
-"	      0049d0b5    mov eax,[ebp-0Ch]"
+"	      0049d0b5    mov eax,sImagePath.reference"
 "	      0049d0b8    mov eax,[eax+4]"
-"	      0049d0bb    add eax,[ebp-10h]"
+"	      0049d0bb    add eax,sImagePath.c_str_ptr"
 "	      0049d0be    mov [ebp-70h],eax"
 "	      0049d0c1    mov eax,[ebp-6Ch]"
 "	      0049d0c4    mov al,[eax]"
@@ -2809,19 +2809,19 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d0c9    mov [ecx],al"
 "	      0049d0cb    jmp near ptr 0049D0D0h"
 "	      0049d0d0    jmp near ptr 0049D0D5h"
-"	      0049d0d5    mov eax,[ebp-10h]"
+"	      0049d0d5    mov eax,sImagePath.c_str_ptr"
 "	      0049d0d8    push eax"
 "	      0049d0d9    mov ecx,[ebp-14h]"
 "	      0049d0dc    call 0046E6DFh"
-"	      0049d0e1    mov ecx,[ebp-0A0h]"
+"	      0049d0e1    mov ecx,this"
 "	      0049d0e7    mov [ecx+15Ah],eax"
 "	      0049d0ed    jmp near ptr 0049D102h"
-"	      0049d0f2    mov eax,[ebp-0A0h]"
+"	      0049d0f2    mov eax,this"
 "	      0049d0f8    mov dword ptr [eax+15Ah],0"
 );
 // LINE 435:
 	asm( 
-"	      0049d102    mov eax,[ebp-0A0h]"
+"	      0049d102    mov eax,this"
 "	      0049d108    cmp dword ptr [eax+15Eh],0"
 "	      0049d10f    jne near ptr 0049D289h"
 "	      0049d115    mov eax,ds:[59A2DCh]"
@@ -2837,15 +2837,15 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d12e    push eax"
 "	      0049d12f    mov eax,[ebp-24h]"
 "	      0049d132    push eax"
-"	      0049d133    lea ecx,[ebp-8]"
+"	      0049d133    lea ecx,sImageFile.c_str_ptr"
 "	      0049d136    call 0040FEE0h"
 "	      0049d13b    jmp near ptr 0049D140h"
 );
 // LINE 437:
 	asm( 
-"	      0049d140    lea eax,[ebp-10h]"
+"	      0049d140    lea eax,sImagePath.c_str_ptr"
 "	      0049d143    push eax"
-"	      0049d144    lea eax,[ebp-8]"
+"	      0049d144    lea eax,sImageFile.c_str_ptr"
 "	      0049d147    push eax"
 "	      0049d148    push 0"
 "	      0049d14a    push 6"
@@ -2861,9 +2861,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d168    mov [ebp-18h],eax"
 "	      0049d16b    cmp dword ptr [ebp-18h],0"
 "	      0049d16f    je near ptr 0049D279h"
-"	      0049d175    cmp dword ptr [ebp-10h],0"
+"	      0049d175    cmp sImagePath.c_str_ptr,0"
 "	      0049d179    je near ptr 0049D19Dh"
-"	      0049d17f    mov eax,[ebp-10h]"
+"	      0049d17f    mov eax,sImagePath.c_str_ptr"
 "	      0049d182    mov [ebp-80h],eax"
 "	      0049d185    mov eax,[ebp-80h]"
 "	      0049d188    mov [ebp-88h],eax"
@@ -2872,25 +2872,25 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d195    call 0056A740h"
 "	      0049d19a    add esp,4"
 "	      0049d19d    jmp near ptr 0049D1A2h"
-"	      0049d1a2    mov eax,[ebp-0Ch]"
+"	      0049d1a2    mov eax,sImagePath.reference"
 "	      0049d1a5    mov eax,[eax+4]"
 "	      0049d1a8    inc eax"
 "	      0049d1a9    push eax"
 "	      0049d1aa    call 0056A600h"
 "	      0049d1af    add esp,4"
-"	      0049d1b2    mov [ebp-10h],eax"
+"	      0049d1b2    mov sImagePath.c_str_ptr,eax"
 "	      0049d1b5    jmp near ptr 0049D1BAh"
-"	      0049d1ba    mov eax,[ebp-0Ch]"
+"	      0049d1ba    mov eax,sImagePath.reference"
 "	      0049d1bd    cmp dword ptr [eax+4],0"
 "	      0049d1c1    je near ptr 0049D211h"
 "	      0049d1c7    jmp near ptr 0049D1CCh"
-"	      0049d1cc    mov eax,[ebp-0Ch]"
+"	      0049d1cc    mov eax,sImagePath.reference"
 "	      0049d1cf    mov eax,[eax+4]"
 "	      0049d1d2    mov [ebp-94h],eax"
-"	      0049d1d8    lea ecx,[ebp-10h]"
+"	      0049d1d8    lea ecx,sImagePath.c_str_ptr"
 "	      0049d1db    call 00417C00h"
 "	      0049d1e0    mov [ebp-98h],eax"
-"	      0049d1e6    mov eax,[ebp-10h]"
+"	      0049d1e6    mov eax,sImagePath.c_str_ptr"
 "	      0049d1e9    mov [ebp-9Ch],eax"
 "	      0049d1ef    mov eax,[ebp-94h]"
 "	      0049d1f5    push eax"
@@ -2907,9 +2907,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d222    lea eax,[ebp-84h]"
 "	      0049d228    mov [ebp-8Ch],eax"
 "	      0049d22e    jmp near ptr 0049D233h"
-"	      0049d233    mov eax,[ebp-0Ch]"
+"	      0049d233    mov eax,sImagePath.reference"
 "	      0049d236    mov eax,[eax+4]"
-"	      0049d239    add eax,[ebp-10h]"
+"	      0049d239    add eax,sImagePath.c_str_ptr"
 "	      0049d23c    mov [ebp-90h],eax"
 "	      0049d242    mov eax,[ebp-8Ch]"
 "	      0049d248    mov al,[eax]"
@@ -2917,25 +2917,25 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d250    mov [ecx],al"
 "	      0049d252    jmp near ptr 0049D257h"
 "	      0049d257    jmp near ptr 0049D25Ch"
-"	      0049d25c    mov eax,[ebp-10h]"
+"	      0049d25c    mov eax,sImagePath.c_str_ptr"
 "	      0049d25f    push eax"
 "	      0049d260    mov ecx,[ebp-18h]"
 "	      0049d263    call 0046E6DFh"
-"	      0049d268    mov ecx,[ebp-0A0h]"
+"	      0049d268    mov ecx,this"
 "	      0049d26e    mov [ecx+15Eh],eax"
 "	      0049d274    jmp near ptr 0049D289h"
-"	      0049d279    mov eax,[ebp-0A0h]"
+"	      0049d279    mov eax,this"
 "	      0049d27f    mov dword ptr [eax+15Eh],0"
 );
 // LINE 440:
 	asm( 
 "	      0049d289    mov dword ptr [ebp-1Ch],1"
-"	      0049d290    mov eax,[ebp-0Ch]"
+"	      0049d290    mov eax,sImagePath.reference"
 "	      0049d293    dec dword ptr [eax+0Ch]"
-"	      0049d296    mov eax,[ebp-0Ch]"
+"	      0049d296    mov eax,sImagePath.reference"
 "	      0049d299    cmp dword ptr [eax+0Ch],0"
 "	      0049d29d    jne near ptr 0049D313h"
-"	      0049d2a3    mov eax,[ebp-0Ch]"
+"	      0049d2a3    mov eax,sImagePath.reference"
 "	      0049d2a6    mov [ebp-3Ch],eax"
 "	      0049d2a9    mov eax,[ebp-3Ch]"
 "	      0049d2ac    mov [ebp-38h],eax"
@@ -2966,9 +2966,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d309    jmp near ptr 0049D30Eh"
 "	      0049d30e    jmp near ptr 0049D313h"
 "	      0049d313    jmp near ptr 0049D318h"
-"	      0049d318    cmp dword ptr [ebp-10h],0"
+"	      0049d318    cmp sImagePath.c_str_ptr,0"
 "	      0049d31c    je near ptr 0049D33Ah"
-"	      0049d322    mov eax,[ebp-10h]"
+"	      0049d322    mov eax,sImagePath.c_str_ptr"
 "	      0049d325    mov [ebp-30h],eax"
 "	      0049d328    mov eax,[ebp-30h]"
 "	      0049d32b    mov [ebp-34h],eax"
@@ -2977,12 +2977,12 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d332    call 0056A740h"
 "	      0049d337    add esp,4"
 "	      0049d33a    jmp near ptr 0049D33Fh"
-"	      0049d33f    mov eax,[ebp-4]"
+"	      0049d33f    mov eax,sImageFile.reference"
 "	      0049d342    dec dword ptr [eax+0Ch]"
-"	      0049d345    mov eax,[ebp-4]"
+"	      0049d345    mov eax,sImageFile.reference"
 "	      0049d348    cmp dword ptr [eax+0Ch],0"
 "	      0049d34c    jne near ptr 0049D3C2h"
-"	      0049d352    mov eax,[ebp-4]"
+"	      0049d352    mov eax,sImageFile.reference"
 "	      0049d355    mov [ebp-54h],eax"
 "	      0049d358    mov eax,[ebp-54h]"
 "	      0049d35b    mov [ebp-50h],eax"
@@ -3013,9 +3013,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 "	      0049d3b8    jmp near ptr 0049D3BDh"
 "	      0049d3bd    jmp near ptr 0049D3C2h"
 "	      0049d3c2    jmp near ptr 0049D3C7h"
-"	      0049d3c7    cmp dword ptr [ebp-8],0"
+"	      0049d3c7    cmp sImageFile.c_str_ptr,0"
 "	      0049d3cb    je near ptr 0049D3E9h"
-"	      0049d3d1    mov eax,[ebp-8]"
+"	      0049d3d1    mov eax,sImageFile.c_str_ptr"
 "	      0049d3d4    mov [ebp-48h],eax"
 "	      0049d3d7    mov eax,[ebp-48h]"
 "	      0049d3da    mov [ebp-4Ch],eax"
@@ -3047,17 +3047,17 @@ void CopterMainMenu::DestroyImage() {
 "	      0049d403    push ebx"
 "	      0049d404    push esi"
 "	      0049d405    push edi"
-"	      0049d406    mov [ebp-14h],ecx"
+"	      0049d406    mov this,ecx"
 );
 // LINE 447:
 	asm( 
-"	      0049d409    mov eax,[ebp-14h]"
+"	      0049d409    mov eax,this"
 "	      0049d40c    cmp dword ptr [eax+15Ah],0"
 "	      0049d413    je near ptr 0049D460h"
 );
 // LINE 448:
 	asm( 
-"	      0049d419    mov eax,[ebp-14h]"
+"	      0049d419    mov eax,this"
 "	      0049d41c    mov eax,[eax+15Ah]"
 "	      0049d422    mov [ebp-8],eax"
 "	      0049d425    mov eax,[ebp-8]"
@@ -3075,18 +3075,18 @@ void CopterMainMenu::DestroyImage() {
 );
 // LINE 449:
 	asm( 
-"	      0049d453    mov eax,[ebp-14h]"
+"	      0049d453    mov eax,this"
 "	      0049d456    mov dword ptr [eax+15Ah],0"
 );
 // LINE 451:
 	asm( 
-"	      0049d460    mov eax,[ebp-14h]"
+"	      0049d460    mov eax,this"
 "	      0049d463    cmp dword ptr [eax+15Eh],0"
 "	      0049d46a    je near ptr 0049D4B7h"
 );
 // LINE 452:
 	asm( 
-"	      0049d470    mov eax,[ebp-14h]"
+"	      0049d470    mov eax,this"
 "	      0049d473    mov eax,[eax+15Eh]"
 "	      0049d479    mov [ebp-10h],eax"
 "	      0049d47c    mov eax,[ebp-10h]"
@@ -3104,12 +3104,12 @@ void CopterMainMenu::DestroyImage() {
 );
 // LINE 453:
 	asm( 
-"	      0049d4aa    mov eax,[ebp-14h]"
+"	      0049d4aa    mov eax,this"
 "	      0049d4ad    mov dword ptr [eax+15Eh],0"
 );
 // LINE 455:
 	asm( 
-"	      0049d4b7    mov ecx,[ebp-14h]"
+"	      0049d4b7    mov ecx,this"
 "	      0049d4ba    call 004A4CABh"
 );
 // LINE 456:
@@ -3133,16 +3133,16 @@ int32_t CopterMainMenu::DrawSelf() {
 "	      0049d4cf    push ebx"
 "	      0049d4d0    push esi"
 "	      0049d4d1    push edi"
-"	      0049d4d2    mov [ebp-4],ecx"
+"	      0049d4d2    mov this,ecx"
 );
 // LINE 462:
 	asm( 
-"	      0049d4d5    mov ecx,[ebp-4]"
+"	      0049d4d5    mov ecx,this"
 "	      0049d4d8    call 0049C3ADh"
 );
 // LINE 463:
 	asm( 
-"	      0049d4dd    mov ecx,[ebp-4]"
+"	      0049d4dd    mov ecx,this"
 "	      0049d4e0    call 0049D4F4h"
 );
 // LINE 465:
@@ -3176,9 +3176,9 @@ void CopterMainMenu::DrawRatchetAndLights() {
 "	      0049d4fd    push ebx"
 "	      0049d4fe    push esi"
 "	      0049d4ff    push edi"
-"	      0049d500    mov [ebp-118h],ecx"
+"	      0049d500    mov this,ecx"
 "	      0049d506    mov dword ptr [ebp-0F8h],5"
-"	      0049d510    lea eax,[ebp-0F4h]"
+"	      0049d510    lea eax,ptLightsDestination[0].x"
 "	      0049d516    mov [ebp-0FCh],eax"
 );
 // LINE 473:
@@ -3191,7 +3191,7 @@ void CopterMainMenu::DrawRatchetAndLights() {
 "	      0049d53a    jmp near ptr 0049D51Ch"
 "	      0049d53f    jmp near ptr 0049D544h"
 "	      0049d544    mov dword ptr [ebp-100h],5"
-"	      0049d54e    lea eax,[ebp-0CCh]"
+"	      0049d54e    lea eax,rectLightsSource[0].left"
 "	      0049d554    mov [ebp-104h],eax"
 );
 // LINE 474:
@@ -3204,7 +3204,7 @@ void CopterMainMenu::DrawRatchetAndLights() {
 "	      0049d578    jmp near ptr 0049D55Ah"
 "	      0049d57d    jmp near ptr 0049D582h"
 "	      0049d582    mov dword ptr [ebp-108h],5"
-"	      0049d58c    lea eax,[ebp-28h]"
+"	      0049d58c    lea eax,ptRatchetsDestination[0].x"
 "	      0049d58f    mov [ebp-10Ch],eax"
 );
 // LINE 475:
@@ -3217,7 +3217,7 @@ void CopterMainMenu::DrawRatchetAndLights() {
 "	      0049d5b3    jmp near ptr 0049D595h"
 "	      0049d5b8    jmp near ptr 0049D5BDh"
 "	      0049d5bd    mov dword ptr [ebp-110h],5"
-"	      0049d5c7    lea eax,[ebp-78h]"
+"	      0049d5c7    lea eax,rectRatchetsSource[0].left"
 "	      0049d5ca    mov [ebp-114h],eax"
 );
 // LINE 476:
@@ -3232,50 +3232,50 @@ void CopterMainMenu::DrawRatchetAndLights() {
 );
 // LINE 479:
 	asm( 
-"	      0049d5f8    lea eax,[ebp-0CCh]"
+"	      0049d5f8    lea eax,rectLightsSource[0].left"
 "	      0049d5fe    push eax"
-"	      0049d5ff    lea eax,[ebp-0F4h]"
+"	      0049d5ff    lea eax,ptLightsDestination[0].x"
 "	      0049d605    push eax"
-"	      0049d606    mov ecx,[ebp-118h]"
+"	      0049d606    mov ecx,this"
 "	      0049d60c    call 0049D742h"
 );
 // LINE 480:
 	asm( 
-"	      0049d611    mov dword ptr [ebp-7Ch],0"
+"	      0049d611    mov i,0"
 "	      0049d618    jmp near ptr 0049D620h"
-"	      0049d61d    inc dword ptr [ebp-7Ch]"
-"	      0049d620    cmp dword ptr [ebp-7Ch],5"
+"	      0049d61d    inc i"
+"	      0049d620    cmp i,5"
 "	      0049d624    jge near ptr 0049D6A4h"
 );
 // LINE 483:
 	asm( 
-"	      0049d62a    mov eax,[ebp-7Ch]"
+"	      0049d62a    mov eax,i"
 "	      0049d62d    shl eax,4"
 "	      0049d630    mov eax,[ebp+eax-0C0h]"
 "	      0049d637    push eax"
-"	      0049d638    mov eax,[ebp-7Ch]"
+"	      0049d638    mov eax,i"
 "	      0049d63b    shl eax,4"
 "	      0049d63e    mov eax,[ebp+eax-0C4h]"
 "	      0049d645    push eax"
-"	      0049d646    mov eax,[ebp-7Ch]"
+"	      0049d646    mov eax,i"
 "	      0049d649    shl eax,4"
 "	      0049d64c    mov eax,[ebp+eax-0C8h]"
 "	      0049d653    push eax"
-"	      0049d654    mov eax,[ebp-7Ch]"
+"	      0049d654    mov eax,i"
 "	      0049d657    shl eax,4"
 "	      0049d65a    mov eax,[ebp+eax-0CCh]"
 "	      0049d661    push eax"
-"	      0049d662    mov eax,[ebp-7Ch]"
+"	      0049d662    mov eax,i"
 "	      0049d665    mov eax,[ebp+eax*8-0F0h]"
 "	      0049d66c    push eax"
-"	      0049d66d    mov eax,[ebp-7Ch]"
+"	      0049d66d    mov eax,i"
 "	      0049d670    mov eax,[ebp+eax*8-0F4h]"
 "	      0049d677    push eax"
-"	      0049d678    mov eax,[ebp-118h]"
+"	      0049d678    mov eax,this"
 "	      0049d67e    mov eax,[eax+40h]"
 "	      0049d681    push eax"
-"	      0049d682    mov eax,[ebp-118h]"
-"	      0049d688    mov ecx,[ebp-118h]"
+"	      0049d682    mov eax,this"
+"	      0049d688    mov ecx,this"
 "	      0049d68e    mov ecx,[ecx+15Eh]"
 "	      0049d694    mov edx,[ecx]"
 "	      0049d696    mov ecx,[eax+15Eh]"
@@ -3284,50 +3284,50 @@ void CopterMainMenu::DrawRatchetAndLights() {
 );
 // LINE 485:
 	asm( 
-"	      0049d6a4    lea eax,[ebp-78h]"
+"	      0049d6a4    lea eax,rectRatchetsSource[0].left"
 "	      0049d6a7    push eax"
-"	      0049d6a8    lea eax,[ebp-28h]"
+"	      0049d6a8    lea eax,ptRatchetsDestination[0].x"
 "	      0049d6ab    push eax"
-"	      0049d6ac    mov ecx,[ebp-118h]"
+"	      0049d6ac    mov ecx,this"
 "	      0049d6b2    call 0049D8ABh"
 );
 // LINE 486:
 	asm( 
-"	      0049d6b7    mov dword ptr [ebp-7Ch],0"
+"	      0049d6b7    mov i,0"
 "	      0049d6be    jmp near ptr 0049D6C6h"
-"	      0049d6c3    inc dword ptr [ebp-7Ch]"
-"	      0049d6c6    cmp dword ptr [ebp-7Ch],5"
+"	      0049d6c3    inc i"
+"	      0049d6c6    cmp i,5"
 "	      0049d6ca    jge near ptr 0049D738h"
 );
 // LINE 489:
 	asm( 
-"	      0049d6d0    mov eax,[ebp-7Ch]"
+"	      0049d6d0    mov eax,i"
 "	      0049d6d3    shl eax,4"
 "	      0049d6d6    mov eax,[ebp+eax-6Ch]"
 "	      0049d6da    push eax"
-"	      0049d6db    mov eax,[ebp-7Ch]"
+"	      0049d6db    mov eax,i"
 "	      0049d6de    shl eax,4"
 "	      0049d6e1    mov eax,[ebp+eax-70h]"
 "	      0049d6e5    push eax"
-"	      0049d6e6    mov eax,[ebp-7Ch]"
+"	      0049d6e6    mov eax,i"
 "	      0049d6e9    shl eax,4"
 "	      0049d6ec    mov eax,[ebp+eax-74h]"
 "	      0049d6f0    push eax"
-"	      0049d6f1    mov eax,[ebp-7Ch]"
+"	      0049d6f1    mov eax,i"
 "	      0049d6f4    shl eax,4"
 "	      0049d6f7    mov eax,[ebp+eax-78h]"
 "	      0049d6fb    push eax"
-"	      0049d6fc    mov eax,[ebp-7Ch]"
+"	      0049d6fc    mov eax,i"
 "	      0049d6ff    mov eax,[ebp+eax*8-24h]"
 "	      0049d703    push eax"
-"	      0049d704    mov eax,[ebp-7Ch]"
+"	      0049d704    mov eax,i"
 "	      0049d707    mov eax,[ebp+eax*8-28h]"
 "	      0049d70b    push eax"
-"	      0049d70c    mov eax,[ebp-118h]"
+"	      0049d70c    mov eax,this"
 "	      0049d712    mov eax,[eax+40h]"
 "	      0049d715    push eax"
-"	      0049d716    mov eax,[ebp-118h]"
-"	      0049d71c    mov ecx,[ebp-118h]"
+"	      0049d716    mov eax,this"
+"	      0049d71c    mov ecx,this"
 "	      0049d722    mov ecx,[ecx+15Ah]"
 "	      0049d728    mov edx,[ecx]"
 "	      0049d72a    mov ecx,[eax+15Ah]"
@@ -3355,172 +3355,172 @@ void CopterMainMenu::GetCoordinatesForLights(class MPoint* ptDestinationArray, c
 "	      0049d748    push ebx"
 "	      0049d749    push esi"
 "	      0049d74a    push edi"
-"	      0049d74b    mov [ebp-4],ecx"
+"	      0049d74b    mov this,ecx"
 );
 // LINE 502:
 	asm( 
-"	      0049d74e    mov eax,[ebp+8]"
+"	      0049d74e    mov eax,ptDestinationArray"
 "	      0049d751    mov dword ptr [eax],14Eh"
 );
 // LINE 503:
 	asm( 
-"	      0049d757    mov eax,[ebp+8]"
+"	      0049d757    mov eax,ptDestinationArray"
 "	      0049d75a    mov dword ptr [eax+4],20h"
 );
 // LINE 504:
 	asm( 
-"	      0049d761    mov eax,[ebp+0Ch]"
+"	      0049d761    mov eax,rectSourceArray"
 "	      0049d764    mov dword ptr [eax],0"
 );
 // LINE 505:
 	asm( 
-"	      0049d76a    mov eax,[ebp+0Ch]"
+"	      0049d76a    mov eax,rectSourceArray"
 "	      0049d76d    mov dword ptr [eax+8],3Ch"
 );
 // LINE 506:
 	asm( 
-"	      0049d774    mov eax,[ebp+0Ch]"
+"	      0049d774    mov eax,rectSourceArray"
 "	      0049d777    mov dword ptr [eax+4],0"
 );
 // LINE 507:
 	asm( 
-"	      0049d77e    mov eax,[ebp+0Ch]"
+"	      0049d77e    mov eax,rectSourceArray"
 "	      0049d781    mov dword ptr [eax+0Ch],38h"
 );
 // LINE 509:
 	asm( 
-"	      0049d788    mov eax,[ebp+8]"
+"	      0049d788    mov eax,ptDestinationArray"
 "	      0049d78b    mov dword ptr [eax+8],14Eh"
 );
 // LINE 510:
 	asm( 
-"	      0049d792    mov eax,[ebp+8]"
+"	      0049d792    mov eax,ptDestinationArray"
 "	      0049d795    mov dword ptr [eax+0Ch],58h"
 );
 // LINE 511:
 	asm( 
-"	      0049d79c    mov eax,[ebp+0Ch]"
+"	      0049d79c    mov eax,rectSourceArray"
 "	      0049d79f    mov dword ptr [eax+10h],0"
 );
 // LINE 512:
 	asm( 
-"	      0049d7a6    mov eax,[ebp+0Ch]"
+"	      0049d7a6    mov eax,rectSourceArray"
 "	      0049d7a9    mov dword ptr [eax+18h],3Ch"
 );
 // LINE 513:
 	asm( 
-"	      0049d7b0    mov eax,[ebp+0Ch]"
+"	      0049d7b0    mov eax,rectSourceArray"
 "	      0049d7b3    mov dword ptr [eax+14h],38h"
 );
 // LINE 514:
 	asm( 
-"	      0049d7ba    mov eax,[ebp+0Ch]"
+"	      0049d7ba    mov eax,rectSourceArray"
 "	      0049d7bd    mov dword ptr [eax+1Ch],78h"
 );
 // LINE 516:
 	asm( 
-"	      0049d7c4    mov eax,[ebp+8]"
+"	      0049d7c4    mov eax,ptDestinationArray"
 "	      0049d7c7    mov dword ptr [eax+10h],14Eh"
 );
 // LINE 517:
 	asm( 
-"	      0049d7ce    mov eax,[ebp+8]"
+"	      0049d7ce    mov eax,ptDestinationArray"
 "	      0049d7d1    mov dword ptr [eax+14h],98h"
 );
 // LINE 518:
 	asm( 
-"	      0049d7d8    mov eax,[ebp+0Ch]"
+"	      0049d7d8    mov eax,rectSourceArray"
 "	      0049d7db    mov dword ptr [eax+20h],0"
 );
 // LINE 519:
 	asm( 
-"	      0049d7e2    mov eax,[ebp+0Ch]"
+"	      0049d7e2    mov eax,rectSourceArray"
 "	      0049d7e5    mov dword ptr [eax+28h],3Ch"
 );
 // LINE 520:
 	asm( 
-"	      0049d7ec    mov eax,[ebp+0Ch]"
+"	      0049d7ec    mov eax,rectSourceArray"
 "	      0049d7ef    mov dword ptr [eax+24h],78h"
 );
 // LINE 521:
 	asm( 
-"	      0049d7f6    mov eax,[ebp+0Ch]"
+"	      0049d7f6    mov eax,rectSourceArray"
 "	      0049d7f9    mov dword ptr [eax+2Ch],0B8h"
 );
 // LINE 523:
 	asm( 
-"	      0049d800    mov eax,[ebp+8]"
+"	      0049d800    mov eax,ptDestinationArray"
 "	      0049d803    mov dword ptr [eax+18h],14Eh"
 );
 // LINE 524:
 	asm( 
-"	      0049d80a    mov eax,[ebp+8]"
+"	      0049d80a    mov eax,ptDestinationArray"
 "	      0049d80d    mov dword ptr [eax+1Ch],0D8h"
 );
 // LINE 525:
 	asm( 
-"	      0049d814    mov eax,[ebp+0Ch]"
+"	      0049d814    mov eax,rectSourceArray"
 "	      0049d817    mov dword ptr [eax+30h],0"
 );
 // LINE 526:
 	asm( 
-"	      0049d81e    mov eax,[ebp+0Ch]"
+"	      0049d81e    mov eax,rectSourceArray"
 "	      0049d821    mov dword ptr [eax+38h],3Ch"
 );
 // LINE 527:
 	asm( 
-"	      0049d828    mov eax,[ebp+0Ch]"
+"	      0049d828    mov eax,rectSourceArray"
 "	      0049d82b    mov dword ptr [eax+34h],0B8h"
 );
 // LINE 528:
 	asm( 
-"	      0049d832    mov eax,[ebp+0Ch]"
+"	      0049d832    mov eax,rectSourceArray"
 "	      0049d835    mov dword ptr [eax+3Ch],0F8h"
 );
 // LINE 530:
 	asm( 
-"	      0049d83c    mov eax,[ebp+8]"
+"	      0049d83c    mov eax,ptDestinationArray"
 "	      0049d83f    mov dword ptr [eax+20h],14Eh"
 );
 // LINE 531:
 	asm( 
-"	      0049d846    mov eax,[ebp+8]"
+"	      0049d846    mov eax,ptDestinationArray"
 "	      0049d849    mov dword ptr [eax+24h],118h"
 );
 // LINE 532:
 	asm( 
-"	      0049d850    mov eax,[ebp+0Ch]"
+"	      0049d850    mov eax,rectSourceArray"
 "	      0049d853    mov dword ptr [eax+40h],0"
 );
 // LINE 533:
 	asm( 
-"	      0049d85a    mov eax,[ebp+0Ch]"
+"	      0049d85a    mov eax,rectSourceArray"
 "	      0049d85d    mov dword ptr [eax+48h],3Ch"
 );
 // LINE 534:
 	asm( 
-"	      0049d864    mov eax,[ebp+0Ch]"
+"	      0049d864    mov eax,rectSourceArray"
 "	      0049d867    mov dword ptr [eax+44h],0F8h"
 );
 // LINE 535:
 	asm( 
-"	      0049d86e    mov eax,[ebp+0Ch]"
+"	      0049d86e    mov eax,rectSourceArray"
 "	      0049d871    mov dword ptr [eax+4Ch],138h"
 );
 // LINE 537:
 	asm( 
-"	      0049d878    mov eax,[ebp-4]"
+"	      0049d878    mov eax,this"
 "	      0049d87b    mov eax,[eax+0D4h]"
 "	      0049d881    shl eax,4"
-"	      0049d884    mov ecx,[ebp+0Ch]"
+"	      0049d884    mov ecx,rectSourceArray"
 "	      0049d887    add dword ptr [eax+ecx],3Ch"
 );
 // LINE 538:
 	asm( 
-"	      0049d88b    mov eax,[ebp-4]"
+"	      0049d88b    mov eax,this"
 "	      0049d88e    mov eax,[eax+0D4h]"
 "	      0049d894    shl eax,4"
-"	      0049d897    mov ecx,[ebp+0Ch]"
+"	      0049d897    mov ecx,rectSourceArray"
 "	      0049d89a    add dword ptr [eax+ecx+8],3Ch"
 );
 // LINE 539:
@@ -3544,172 +3544,172 @@ void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray,
 "	      0049d8b1    push ebx"
 "	      0049d8b2    push esi"
 "	      0049d8b3    push edi"
-"	      0049d8b4    mov [ebp-4],ecx"
+"	      0049d8b4    mov this,ecx"
 );
 // LINE 546:
 	asm( 
-"	      0049d8b7    mov eax,[ebp+8]"
+"	      0049d8b7    mov eax,ptDestinationArray"
 "	      0049d8ba    mov dword ptr [eax],21h"
 );
 // LINE 547:
 	asm( 
-"	      0049d8c0    mov eax,[ebp+8]"
+"	      0049d8c0    mov eax,ptDestinationArray"
 "	      0049d8c3    mov dword ptr [eax+4],23h"
 );
 // LINE 548:
 	asm( 
-"	      0049d8ca    mov eax,[ebp+0Ch]"
+"	      0049d8ca    mov eax,rectSourceArray"
 "	      0049d8cd    mov dword ptr [eax],0"
 );
 // LINE 549:
 	asm( 
-"	      0049d8d3    mov eax,[ebp+0Ch]"
+"	      0049d8d3    mov eax,rectSourceArray"
 "	      0049d8d6    mov dword ptr [eax+8],27h"
 );
 // LINE 550:
 	asm( 
-"	      0049d8dd    mov eax,[ebp+0Ch]"
+"	      0049d8dd    mov eax,rectSourceArray"
 "	      0049d8e0    mov dword ptr [eax+4],0"
 );
 // LINE 551:
 	asm( 
-"	      0049d8e7    mov eax,[ebp+0Ch]"
+"	      0049d8e7    mov eax,rectSourceArray"
 "	      0049d8ea    mov dword ptr [eax+0Ch],41h"
 );
 // LINE 553:
 	asm( 
-"	      0049d8f1    mov eax,[ebp+8]"
+"	      0049d8f1    mov eax,ptDestinationArray"
 "	      0049d8f4    mov dword ptr [eax+8],21h"
 );
 // LINE 554:
 	asm( 
-"	      0049d8fb    mov eax,[ebp+8]"
+"	      0049d8fb    mov eax,ptDestinationArray"
 "	      0049d8fe    mov dword ptr [eax+0Ch],64h"
 );
 // LINE 555:
 	asm( 
-"	      0049d905    mov eax,[ebp+0Ch]"
+"	      0049d905    mov eax,rectSourceArray"
 "	      0049d908    mov dword ptr [eax+10h],0"
 );
 // LINE 556:
 	asm( 
-"	      0049d90f    mov eax,[ebp+0Ch]"
+"	      0049d90f    mov eax,rectSourceArray"
 "	      0049d912    mov dword ptr [eax+18h],27h"
 );
 // LINE 557:
 	asm( 
-"	      0049d919    mov eax,[ebp+0Ch]"
+"	      0049d919    mov eax,rectSourceArray"
 "	      0049d91c    mov dword ptr [eax+14h],41h"
 );
 // LINE 558:
 	asm( 
-"	      0049d923    mov eax,[ebp+0Ch]"
+"	      0049d923    mov eax,rectSourceArray"
 "	      0049d926    mov dword ptr [eax+1Ch],81h"
 );
 // LINE 560:
 	asm( 
-"	      0049d92d    mov eax,[ebp+8]"
+"	      0049d92d    mov eax,ptDestinationArray"
 "	      0049d930    mov dword ptr [eax+10h],21h"
 );
 // LINE 561:
 	asm( 
-"	      0049d937    mov eax,[ebp+8]"
+"	      0049d937    mov eax,ptDestinationArray"
 "	      0049d93a    mov dword ptr [eax+14h],0A4h"
 );
 // LINE 562:
 	asm( 
-"	      0049d941    mov eax,[ebp+0Ch]"
+"	      0049d941    mov eax,rectSourceArray"
 "	      0049d944    mov dword ptr [eax+20h],0"
 );
 // LINE 563:
 	asm( 
-"	      0049d94b    mov eax,[ebp+0Ch]"
+"	      0049d94b    mov eax,rectSourceArray"
 "	      0049d94e    mov dword ptr [eax+28h],27h"
 );
 // LINE 564:
 	asm( 
-"	      0049d955    mov eax,[ebp+0Ch]"
+"	      0049d955    mov eax,rectSourceArray"
 "	      0049d958    mov dword ptr [eax+24h],81h"
 );
 // LINE 565:
 	asm( 
-"	      0049d95f    mov eax,[ebp+0Ch]"
+"	      0049d95f    mov eax,rectSourceArray"
 "	      0049d962    mov dword ptr [eax+2Ch],0C0h"
 );
 // LINE 567:
 	asm( 
-"	      0049d969    mov eax,[ebp+8]"
+"	      0049d969    mov eax,ptDestinationArray"
 "	      0049d96c    mov dword ptr [eax+18h],21h"
 );
 // LINE 568:
 	asm( 
-"	      0049d973    mov eax,[ebp+8]"
+"	      0049d973    mov eax,ptDestinationArray"
 "	      0049d976    mov dword ptr [eax+1Ch],0E3h"
 );
 // LINE 569:
 	asm( 
-"	      0049d97d    mov eax,[ebp+0Ch]"
+"	      0049d97d    mov eax,rectSourceArray"
 "	      0049d980    mov dword ptr [eax+30h],0"
 );
 // LINE 570:
 	asm( 
-"	      0049d987    mov eax,[ebp+0Ch]"
+"	      0049d987    mov eax,rectSourceArray"
 "	      0049d98a    mov dword ptr [eax+38h],27h"
 );
 // LINE 571:
 	asm( 
-"	      0049d991    mov eax,[ebp+0Ch]"
+"	      0049d991    mov eax,rectSourceArray"
 "	      0049d994    mov dword ptr [eax+34h],0C0h"
 );
 // LINE 572:
 	asm( 
-"	      0049d99b    mov eax,[ebp+0Ch]"
+"	      0049d99b    mov eax,rectSourceArray"
 "	      0049d99e    mov dword ptr [eax+3Ch],0FEh"
 );
 // LINE 574:
 	asm( 
-"	      0049d9a5    mov eax,[ebp+8]"
+"	      0049d9a5    mov eax,ptDestinationArray"
 "	      0049d9a8    mov dword ptr [eax+20h],21h"
 );
 // LINE 575:
 	asm( 
-"	      0049d9af    mov eax,[ebp+8]"
+"	      0049d9af    mov eax,ptDestinationArray"
 "	      0049d9b2    mov dword ptr [eax+24h],121h"
 );
 // LINE 576:
 	asm( 
-"	      0049d9b9    mov eax,[ebp+0Ch]"
+"	      0049d9b9    mov eax,rectSourceArray"
 "	      0049d9bc    mov dword ptr [eax+40h],0"
 );
 // LINE 577:
 	asm( 
-"	      0049d9c3    mov eax,[ebp+0Ch]"
+"	      0049d9c3    mov eax,rectSourceArray"
 "	      0049d9c6    mov dword ptr [eax+48h],27h"
 );
 // LINE 578:
 	asm( 
-"	      0049d9cd    mov eax,[ebp+0Ch]"
+"	      0049d9cd    mov eax,rectSourceArray"
 "	      0049d9d0    mov dword ptr [eax+44h],0FEh"
 );
 // LINE 579:
 	asm( 
-"	      0049d9d7    mov eax,[ebp+0Ch]"
+"	      0049d9d7    mov eax,rectSourceArray"
 "	      0049d9da    mov dword ptr [eax+4Ch],129h"
 );
 // LINE 581:
 	asm( 
-"	      0049d9e1    mov eax,[ebp-4]"
+"	      0049d9e1    mov eax,this"
 "	      0049d9e4    mov eax,[eax+0D4h]"
 "	      0049d9ea    shl eax,4"
-"	      0049d9ed    mov ecx,[ebp+0Ch]"
+"	      0049d9ed    mov ecx,rectSourceArray"
 "	      0049d9f0    add dword ptr [eax+ecx],27h"
 );
 // LINE 582:
 	asm( 
-"	      0049d9f4    mov eax,[ebp-4]"
+"	      0049d9f4    mov eax,this"
 "	      0049d9f7    mov eax,[eax+0D4h]"
 "	      0049d9fd    shl eax,4"
-"	      0049da00    mov ecx,[ebp+0Ch]"
+"	      0049da00    mov ecx,rectSourceArray"
 "	      0049da03    add dword ptr [eax+ecx+8],27h"
 );
 // LINE 583:
@@ -3733,30 +3733,30 @@ void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMen
 "	      0049da1a    push ebx"
 "	      0049da1b    push esi"
 "	      0049da1c    push edi"
-"	      0049da1d    mov [ebp-4],ecx"
-"	      0049da20    mov eax,[ebp+18h]"
+"	      0049da1d    mov this,ecx"
+"	      0049da20    mov eax,bAddToParentList"
 "	      0049da23    push eax"
-"	      0049da24    mov eax,[ebp+14h]"
+"	      0049da24    mov eax,myNewOwner"
 "	      0049da27    push eax"
-"	      0049da28    mov eax,[ebp+10h]"
+"	      0049da28    mov eax,windowNewParent"
 "	      0049da2b    push eax"
-"	      0049da2c    mov eax,[ebp+0Ch]"
+"	      0049da2c    mov eax,nNewID"
 "	      0049da2f    push eax"
-"	      0049da30    mov eax,[ebp+8]"
+"	      0049da30    mov eax,newUserMenuWindowDescription"
 "	      0049da33    push eax"
-"	      0049da34    mov ecx,[ebp-4]"
+"	      0049da34    mov ecx,this"
 "	      0049da37    call 0049B1FBh"
-"	      0049da3c    mov eax,[ebp-4]"
+"	      0049da3c    mov eax,this"
 "	      0049da3f    mov dword ptr [eax+152h],0"
-"	      0049da49    mov eax,[ebp-4]"
+"	      0049da49    mov eax,this"
 "	      0049da4c    mov dword ptr [eax+156h],0"
-"	      0049da56    mov eax,[ebp-4]"
+"	      0049da56    mov eax,this"
 "	      0049da59    mov dword ptr [eax],5914C8h"
 );
 // LINE 605:
 	asm( 
 "	      0049da5f    jmp near ptr 0049DA64h"
-"	      0049da64    mov eax,[ebp-4]"
+"	      0049da64    mov eax,this"
 "	      0049da67    pop edi"
 "	      0049da68    pop esi"
 "	      0049da69    pop ebx"
@@ -3775,19 +3775,19 @@ void CopterPlayMenu::~CopterPlayMenu() {
 "	      0049da74    push ebx"
 "	      0049da75    push esi"
 "	      0049da76    push edi"
-"	      0049da77    mov [ebp-4],ecx"
-"	      0049da7a    mov eax,[ebp-4]"
+"	      0049da77    mov this,ecx"
+"	      0049da7a    mov eax,this"
 "	      0049da7d    mov dword ptr [eax],5914C8h"
 );
 // LINE 613:
 	asm( 
-"	      0049da83    mov ecx,[ebp-4]"
+"	      0049da83    mov ecx,this"
 "	      0049da86    call 0049E04Fh"
 );
 // LINE 614:
 	asm( 
 "	      0049da8b    jmp near ptr 0049DA90h"
-"	      0049da90    mov ecx,[ebp-4]"
+"	      0049da90    mov ecx,this"
 "	      0049da93    call 0049B678h"
 "	      0049da98    pop edi"
 "	      0049da99    pop esi"
@@ -3807,19 +3807,19 @@ int32_t CopterPlayMenu::Initialize() {
 "	      0049daa3    push ebx"
 "	      0049daa4    push esi"
 "	      0049daa5    push edi"
-"	      0049daa6    mov [ebp-4],ecx"
+"	      0049daa6    mov this,ecx"
 );
 // LINE 622:
 	asm( 
-"	      0049daa9    mov ecx,[ebp-4]"
+"	      0049daa9    mov ecx,this"
 "	      0049daac    call 0049B858h"
 );
 // LINE 623:
 	asm( 
 "	      0049dab1    push 1"
-"	      0049dab3    mov eax,[ebp-4]"
+"	      0049dab3    mov eax,this"
 "	      0049dab6    mov eax,[eax]"
-"	      0049dab8    mov ecx,[ebp-4]"
+"	      0049dab8    mov ecx,this"
 "	      0049dabb    call dword ptr [eax+10h]"
 "	      0049dabe    jmp near ptr 0049DAC3h"
 );
@@ -3846,7 +3846,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dad1    push ebx"
 "	      0049dad2    push esi"
 "	      0049dad3    push edi"
-"	      0049dad4    mov [ebp-0A0h],ecx"
+"	      0049dad4    mov this,ecx"
 );
 // LINE 631:
 	asm( 
@@ -3868,10 +3868,10 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049db13    mov dword ptr [eax+0Ch],1"
 "	      0049db1a    jmp near ptr 0049DB1Fh"
 "	      0049db1f    mov eax,[ebp-28h]"
-"	      0049db22    mov [ebp-4],eax"
+"	      0049db22    mov sImageFile.reference,eax"
 "	      0049db25    jmp near ptr 0049DB31h"
-"	      0049db2a    mov dword ptr [ebp-4],0"
-"	      0049db31    mov dword ptr [ebp-8],0"
+"	      0049db2a    mov sImageFile.reference,0"
+"	      0049db31    mov sImageFile.c_str_ptr,0"
 "	      0049db38    jmp near ptr 0049DB3Dh"
 );
 // LINE 632:
@@ -3894,21 +3894,21 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049db76    mov dword ptr [eax+0Ch],1"
 "	      0049db7d    jmp near ptr 0049DB82h"
 "	      0049db82    mov eax,[ebp-2Ch]"
-"	      0049db85    mov [ebp-0Ch],eax"
+"	      0049db85    mov sImagePath.reference,eax"
 "	      0049db88    jmp near ptr 0049DB94h"
-"	      0049db8d    mov dword ptr [ebp-0Ch],0"
-"	      0049db94    mov dword ptr [ebp-10h],0"
+"	      0049db8d    mov sImagePath.reference,0"
+"	      0049db94    mov sImagePath.c_str_ptr,0"
 "	      0049db9b    jmp near ptr 0049DBA0h"
 );
 // LINE 634:
 	asm( 
 "	      0049dba0    push 1"
-"	      0049dba2    mov ecx,[ebp-0A0h]"
+"	      0049dba2    mov ecx,this"
 "	      0049dba8    call 004A4AA0h"
 );
 // LINE 635:
 	asm( 
-"	      0049dbad    mov eax,[ebp-0A0h]"
+"	      0049dbad    mov eax,this"
 "	      0049dbb3    cmp dword ptr [eax+152h],0"
 "	      0049dbba    jne near ptr 0049DD54h"
 "	      0049dbc0    mov eax,ds:[59A2E4h]"
@@ -3924,15 +3924,15 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dbd9    push eax"
 "	      0049dbda    mov eax,[ebp-20h]"
 "	      0049dbdd    push eax"
-"	      0049dbde    lea ecx,[ebp-8]"
+"	      0049dbde    lea ecx,sImageFile.c_str_ptr"
 "	      0049dbe1    call 0040FEE0h"
 "	      0049dbe6    jmp near ptr 0049DBEBh"
 );
 // LINE 637:
 	asm( 
-"	      0049dbeb    lea eax,[ebp-10h]"
+"	      0049dbeb    lea eax,sImagePath.c_str_ptr"
 "	      0049dbee    push eax"
-"	      0049dbef    lea eax,[ebp-8]"
+"	      0049dbef    lea eax,sImageFile.c_str_ptr"
 "	      0049dbf2    push eax"
 "	      0049dbf3    push 0"
 "	      0049dbf5    push 6"
@@ -3948,9 +3948,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dc13    mov [ebp-14h],eax"
 "	      0049dc16    cmp dword ptr [ebp-14h],0"
 "	      0049dc1a    je near ptr 0049DD1Fh"
-"	      0049dc20    cmp dword ptr [ebp-10h],0"
+"	      0049dc20    cmp sImagePath.c_str_ptr,0"
 "	      0049dc24    je near ptr 0049DC42h"
-"	      0049dc2a    mov eax,[ebp-10h]"
+"	      0049dc2a    mov eax,sImagePath.c_str_ptr"
 "	      0049dc2d    mov [ebp-60h],eax"
 "	      0049dc30    mov eax,[ebp-60h]"
 "	      0049dc33    mov [ebp-68h],eax"
@@ -3959,33 +3959,33 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dc3a    call 0056A740h"
 "	      0049dc3f    add esp,4"
 "	      0049dc42    jmp near ptr 0049DC47h"
-"	      0049dc47    mov eax,[ebp-0Ch]"
+"	      0049dc47    mov eax,sImagePath.reference"
 "	      0049dc4a    mov eax,[eax+4]"
 "	      0049dc4d    inc eax"
 "	      0049dc4e    push eax"
 "	      0049dc4f    call 0056A600h"
 "	      0049dc54    add esp,4"
-"	      0049dc57    mov [ebp-10h],eax"
+"	      0049dc57    mov sImagePath.c_str_ptr,eax"
 "	      0049dc5a    jmp near ptr 0049DC5Fh"
-"	      0049dc5f    mov eax,[ebp-0Ch]"
+"	      0049dc5f    mov eax,sImagePath.reference"
 "	      0049dc62    cmp dword ptr [eax+4],0"
 "	      0049dc66    je near ptr 0049DCC9h"
 "	      0049dc6c    jmp near ptr 0049DC71h"
 "	      0049dc71    jmp near ptr 0049DC76h"
-"	      0049dc76    mov eax,[ebp-0Ch]"
+"	      0049dc76    mov eax,sImagePath.reference"
 "	      0049dc79    cmp dword ptr [eax+4],0"
 "	      0049dc7d    je near ptr 0049DC95h"
-"	      0049dc83    mov eax,[ebp-0Ch]"
+"	      0049dc83    mov eax,sImagePath.reference"
 "	      0049dc86    mov eax,[eax]"
 "	      0049dc88    mov [ebp-74h],eax"
 "	      0049dc8b    jmp near ptr 0049DCA1h"
 "	      0049dc90    jmp near ptr 0049DCA1h"
 "	      0049dc95    mov dword ptr [ebp-74h],0"
 "	      0049dc9c    jmp near ptr 0049DCA1h"
-"	      0049dca1    mov eax,[ebp-0Ch]"
+"	      0049dca1    mov eax,sImagePath.reference"
 "	      0049dca4    mov eax,[eax+4]"
 "	      0049dca7    mov [ebp-78h],eax"
-"	      0049dcaa    mov eax,[ebp-10h]"
+"	      0049dcaa    mov eax,sImagePath.c_str_ptr"
 "	      0049dcad    mov [ebp-7Ch],eax"
 "	      0049dcb0    mov eax,[ebp-78h]"
 "	      0049dcb3    push eax"
@@ -4002,9 +4002,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dcd7    lea eax,[ebp-64h]"
 "	      0049dcda    mov [ebp-6Ch],eax"
 "	      0049dcdd    jmp near ptr 0049DCE2h"
-"	      0049dce2    mov eax,[ebp-0Ch]"
+"	      0049dce2    mov eax,sImagePath.reference"
 "	      0049dce5    mov eax,[eax+4]"
-"	      0049dce8    add eax,[ebp-10h]"
+"	      0049dce8    add eax,sImagePath.c_str_ptr"
 "	      0049dceb    mov [ebp-70h],eax"
 "	      0049dcee    mov eax,[ebp-6Ch]"
 "	      0049dcf1    mov al,[eax]"
@@ -4012,14 +4012,14 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dcf6    mov [ecx],al"
 "	      0049dcf8    jmp near ptr 0049DCFDh"
 "	      0049dcfd    jmp near ptr 0049DD02h"
-"	      0049dd02    mov eax,[ebp-10h]"
+"	      0049dd02    mov eax,sImagePath.c_str_ptr"
 "	      0049dd05    push eax"
 "	      0049dd06    mov ecx,[ebp-14h]"
 "	      0049dd09    call 0046E6DFh"
-"	      0049dd0e    mov ecx,[ebp-0A0h]"
+"	      0049dd0e    mov ecx,this"
 "	      0049dd14    mov [ecx+152h],eax"
 "	      0049dd1a    jmp near ptr 0049DD2Fh"
-"	      0049dd1f    mov eax,[ebp-0A0h]"
+"	      0049dd1f    mov eax,this"
 "	      0049dd25    mov dword ptr [eax+152h],0"
 );
 // LINE 639:
@@ -4027,8 +4027,8 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dd2f    mov eax,ds:[606988h]"
 "	      0049dd34    push eax"
 "	      0049dd35    push 1"
-"	      0049dd37    mov eax,[ebp-0A0h]"
-"	      0049dd3d    mov ecx,[ebp-0A0h]"
+"	      0049dd37    mov eax,this"
+"	      0049dd3d    mov ecx,this"
 "	      0049dd43    mov ecx,[ecx+152h]"
 "	      0049dd49    mov edx,[ecx]"
 "	      0049dd4b    mov ecx,[eax+152h]"
@@ -4036,7 +4036,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 );
 // LINE 641:
 	asm( 
-"	      0049dd54    mov eax,[ebp-0A0h]"
+"	      0049dd54    mov eax,this"
 "	      0049dd5a    cmp dword ptr [eax+156h],0"
 "	      0049dd61    jne near ptr 0049DEDBh"
 "	      0049dd67    mov eax,ds:[59A2E8h]"
@@ -4052,15 +4052,15 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dd80    push eax"
 "	      0049dd81    mov eax,[ebp-24h]"
 "	      0049dd84    push eax"
-"	      0049dd85    lea ecx,[ebp-8]"
+"	      0049dd85    lea ecx,sImageFile.c_str_ptr"
 "	      0049dd88    call 0040FEE0h"
 "	      0049dd8d    jmp near ptr 0049DD92h"
 );
 // LINE 643:
 	asm( 
-"	      0049dd92    lea eax,[ebp-10h]"
+"	      0049dd92    lea eax,sImagePath.c_str_ptr"
 "	      0049dd95    push eax"
-"	      0049dd96    lea eax,[ebp-8]"
+"	      0049dd96    lea eax,sImageFile.c_str_ptr"
 "	      0049dd99    push eax"
 "	      0049dd9a    push 0"
 "	      0049dd9c    push 6"
@@ -4076,9 +4076,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049ddba    mov [ebp-18h],eax"
 "	      0049ddbd    cmp dword ptr [ebp-18h],0"
 "	      0049ddc1    je near ptr 0049DECBh"
-"	      0049ddc7    cmp dword ptr [ebp-10h],0"
+"	      0049ddc7    cmp sImagePath.c_str_ptr,0"
 "	      0049ddcb    je near ptr 0049DDEFh"
-"	      0049ddd1    mov eax,[ebp-10h]"
+"	      0049ddd1    mov eax,sImagePath.c_str_ptr"
 "	      0049ddd4    mov [ebp-80h],eax"
 "	      0049ddd7    mov eax,[ebp-80h]"
 "	      0049ddda    mov [ebp-88h],eax"
@@ -4087,25 +4087,25 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dde7    call 0056A740h"
 "	      0049ddec    add esp,4"
 "	      0049ddef    jmp near ptr 0049DDF4h"
-"	      0049ddf4    mov eax,[ebp-0Ch]"
+"	      0049ddf4    mov eax,sImagePath.reference"
 "	      0049ddf7    mov eax,[eax+4]"
 "	      0049ddfa    inc eax"
 "	      0049ddfb    push eax"
 "	      0049ddfc    call 0056A600h"
 "	      0049de01    add esp,4"
-"	      0049de04    mov [ebp-10h],eax"
+"	      0049de04    mov sImagePath.c_str_ptr,eax"
 "	      0049de07    jmp near ptr 0049DE0Ch"
-"	      0049de0c    mov eax,[ebp-0Ch]"
+"	      0049de0c    mov eax,sImagePath.reference"
 "	      0049de0f    cmp dword ptr [eax+4],0"
 "	      0049de13    je near ptr 0049DE63h"
 "	      0049de19    jmp near ptr 0049DE1Eh"
-"	      0049de1e    mov eax,[ebp-0Ch]"
+"	      0049de1e    mov eax,sImagePath.reference"
 "	      0049de21    mov eax,[eax+4]"
 "	      0049de24    mov [ebp-94h],eax"
-"	      0049de2a    lea ecx,[ebp-10h]"
+"	      0049de2a    lea ecx,sImagePath.c_str_ptr"
 "	      0049de2d    call 00417C00h"
 "	      0049de32    mov [ebp-98h],eax"
-"	      0049de38    mov eax,[ebp-10h]"
+"	      0049de38    mov eax,sImagePath.c_str_ptr"
 "	      0049de3b    mov [ebp-9Ch],eax"
 "	      0049de41    mov eax,[ebp-94h]"
 "	      0049de47    push eax"
@@ -4122,9 +4122,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049de74    lea eax,[ebp-84h]"
 "	      0049de7a    mov [ebp-8Ch],eax"
 "	      0049de80    jmp near ptr 0049DE85h"
-"	      0049de85    mov eax,[ebp-0Ch]"
+"	      0049de85    mov eax,sImagePath.reference"
 "	      0049de88    mov eax,[eax+4]"
-"	      0049de8b    add eax,[ebp-10h]"
+"	      0049de8b    add eax,sImagePath.c_str_ptr"
 "	      0049de8e    mov [ebp-90h],eax"
 "	      0049de94    mov eax,[ebp-8Ch]"
 "	      0049de9a    mov al,[eax]"
@@ -4132,25 +4132,25 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049dea2    mov [ecx],al"
 "	      0049dea4    jmp near ptr 0049DEA9h"
 "	      0049dea9    jmp near ptr 0049DEAEh"
-"	      0049deae    mov eax,[ebp-10h]"
+"	      0049deae    mov eax,sImagePath.c_str_ptr"
 "	      0049deb1    push eax"
 "	      0049deb2    mov ecx,[ebp-18h]"
 "	      0049deb5    call 0046E6DFh"
-"	      0049deba    mov ecx,[ebp-0A0h]"
+"	      0049deba    mov ecx,this"
 "	      0049dec0    mov [ecx+156h],eax"
 "	      0049dec6    jmp near ptr 0049DEDBh"
-"	      0049decb    mov eax,[ebp-0A0h]"
+"	      0049decb    mov eax,this"
 "	      0049ded1    mov dword ptr [eax+156h],0"
 );
 // LINE 646:
 	asm( 
 "	      0049dedb    mov dword ptr [ebp-1Ch],1"
-"	      0049dee2    mov eax,[ebp-0Ch]"
+"	      0049dee2    mov eax,sImagePath.reference"
 "	      0049dee5    dec dword ptr [eax+0Ch]"
-"	      0049dee8    mov eax,[ebp-0Ch]"
+"	      0049dee8    mov eax,sImagePath.reference"
 "	      0049deeb    cmp dword ptr [eax+0Ch],0"
 "	      0049deef    jne near ptr 0049DF65h"
-"	      0049def5    mov eax,[ebp-0Ch]"
+"	      0049def5    mov eax,sImagePath.reference"
 "	      0049def8    mov [ebp-3Ch],eax"
 "	      0049defb    mov eax,[ebp-3Ch]"
 "	      0049defe    mov [ebp-38h],eax"
@@ -4181,9 +4181,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049df5b    jmp near ptr 0049DF60h"
 "	      0049df60    jmp near ptr 0049DF65h"
 "	      0049df65    jmp near ptr 0049DF6Ah"
-"	      0049df6a    cmp dword ptr [ebp-10h],0"
+"	      0049df6a    cmp sImagePath.c_str_ptr,0"
 "	      0049df6e    je near ptr 0049DF8Ch"
-"	      0049df74    mov eax,[ebp-10h]"
+"	      0049df74    mov eax,sImagePath.c_str_ptr"
 "	      0049df77    mov [ebp-30h],eax"
 "	      0049df7a    mov eax,[ebp-30h]"
 "	      0049df7d    mov [ebp-34h],eax"
@@ -4192,12 +4192,12 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049df84    call 0056A740h"
 "	      0049df89    add esp,4"
 "	      0049df8c    jmp near ptr 0049DF91h"
-"	      0049df91    mov eax,[ebp-4]"
+"	      0049df91    mov eax,sImageFile.reference"
 "	      0049df94    dec dword ptr [eax+0Ch]"
-"	      0049df97    mov eax,[ebp-4]"
+"	      0049df97    mov eax,sImageFile.reference"
 "	      0049df9a    cmp dword ptr [eax+0Ch],0"
 "	      0049df9e    jne near ptr 0049E014h"
-"	      0049dfa4    mov eax,[ebp-4]"
+"	      0049dfa4    mov eax,sImageFile.reference"
 "	      0049dfa7    mov [ebp-54h],eax"
 "	      0049dfaa    mov eax,[ebp-54h]"
 "	      0049dfad    mov [ebp-50h],eax"
@@ -4228,9 +4228,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 "	      0049e00a    jmp near ptr 0049E00Fh"
 "	      0049e00f    jmp near ptr 0049E014h"
 "	      0049e014    jmp near ptr 0049E019h"
-"	      0049e019    cmp dword ptr [ebp-8],0"
+"	      0049e019    cmp sImageFile.c_str_ptr,0"
 "	      0049e01d    je near ptr 0049E03Bh"
-"	      0049e023    mov eax,[ebp-8]"
+"	      0049e023    mov eax,sImageFile.c_str_ptr"
 "	      0049e026    mov [ebp-48h],eax"
 "	      0049e029    mov eax,[ebp-48h]"
 "	      0049e02c    mov [ebp-4Ch],eax"
@@ -4262,17 +4262,17 @@ void CopterPlayMenu::DestroyImage() {
 "	      0049e055    push ebx"
 "	      0049e056    push esi"
 "	      0049e057    push edi"
-"	      0049e058    mov [ebp-14h],ecx"
+"	      0049e058    mov this,ecx"
 );
 // LINE 653:
 	asm( 
-"	      0049e05b    mov eax,[ebp-14h]"
+"	      0049e05b    mov eax,this"
 "	      0049e05e    cmp dword ptr [eax+152h],0"
 "	      0049e065    je near ptr 0049E0B2h"
 );
 // LINE 654:
 	asm( 
-"	      0049e06b    mov eax,[ebp-14h]"
+"	      0049e06b    mov eax,this"
 "	      0049e06e    mov eax,[eax+152h]"
 "	      0049e074    mov [ebp-8],eax"
 "	      0049e077    mov eax,[ebp-8]"
@@ -4290,18 +4290,18 @@ void CopterPlayMenu::DestroyImage() {
 );
 // LINE 655:
 	asm( 
-"	      0049e0a5    mov eax,[ebp-14h]"
+"	      0049e0a5    mov eax,this"
 "	      0049e0a8    mov dword ptr [eax+152h],0"
 );
 // LINE 657:
 	asm( 
-"	      0049e0b2    mov eax,[ebp-14h]"
+"	      0049e0b2    mov eax,this"
 "	      0049e0b5    cmp dword ptr [eax+156h],0"
 "	      0049e0bc    je near ptr 0049E109h"
 );
 // LINE 658:
 	asm( 
-"	      0049e0c2    mov eax,[ebp-14h]"
+"	      0049e0c2    mov eax,this"
 "	      0049e0c5    mov eax,[eax+156h]"
 "	      0049e0cb    mov [ebp-10h],eax"
 "	      0049e0ce    mov eax,[ebp-10h]"
@@ -4319,12 +4319,12 @@ void CopterPlayMenu::DestroyImage() {
 );
 // LINE 659:
 	asm( 
-"	      0049e0fc    mov eax,[ebp-14h]"
+"	      0049e0fc    mov eax,this"
 "	      0049e0ff    mov dword ptr [eax+156h],0"
 );
 // LINE 661:
 	asm( 
-"	      0049e109    mov ecx,[ebp-14h]"
+"	      0049e109    mov ecx,this"
 "	      0049e10c    call 004A4CABh"
 );
 // LINE 662:
@@ -4348,16 +4348,16 @@ int32_t CopterPlayMenu::DrawSelf() {
 "	      0049e121    push ebx"
 "	      0049e122    push esi"
 "	      0049e123    push edi"
-"	      0049e124    mov [ebp-4],ecx"
+"	      0049e124    mov this,ecx"
 );
 // LINE 668:
 	asm( 
-"	      0049e127    mov ecx,[ebp-4]"
+"	      0049e127    mov ecx,this"
 "	      0049e12a    call 0049C3ADh"
 );
 // LINE 669:
 	asm( 
-"	      0049e12f    mov ecx,[ebp-4]"
+"	      0049e12f    mov ecx,this"
 "	      0049e132    call 0049E146h"
 );
 // LINE 670:
@@ -4388,13 +4388,13 @@ void CopterPlayMenu::DrawRatchet() {
 "	      0049e14c    push ebx"
 "	      0049e14d    push esi"
 "	      0049e14e    push edi"
-"	      0049e14f    mov [ebp-14h],ecx"
+"	      0049e14f    mov this,ecx"
 );
 // LINE 678:
 	asm( 
 "	      0049e152    jmp near ptr 0049E157h"
-"	      0049e157    mov dword ptr [ebp-8],1Eh"
-"	      0049e15e    mov dword ptr [ebp-4],23h"
+"	      0049e157    mov ptDestinationBackground.x,1Eh"
+"	      0049e15e    mov ptDestinationBackground.y,23h"
 "	      0049e165    jmp near ptr 0049E16Ah"
 );
 // LINE 679:
@@ -4406,25 +4406,25 @@ void CopterPlayMenu::DrawRatchet() {
 	asm( 
 "	      0049e174    jmp near ptr 0049E179h"
 "	      0049e179    jmp near ptr 0049E17Eh"
-"	      0049e17e    mov eax,[ebp-14h]"
+"	      0049e17e    mov eax,this"
 "	      0049e181    mov eax,[eax+156h]"
 "	      0049e187    mov eax,[eax+0Ch]"
 "	      0049e18a    push eax"
-"	      0049e18b    mov eax,[ebp-14h]"
+"	      0049e18b    mov eax,this"
 "	      0049e18e    mov eax,[eax+156h]"
 "	      0049e194    mov eax,[eax+8]"
 "	      0049e197    push eax"
 "	      0049e198    push 0"
 "	      0049e19a    push 0"
-"	      0049e19c    mov eax,[ebp-4]"
+"	      0049e19c    mov eax,ptDestinationBackground.y"
 "	      0049e19f    push eax"
-"	      0049e1a0    mov eax,[ebp-8]"
+"	      0049e1a0    mov eax,ptDestinationBackground.x"
 "	      0049e1a3    push eax"
-"	      0049e1a4    mov eax,[ebp-14h]"
+"	      0049e1a4    mov eax,this"
 "	      0049e1a7    mov eax,[eax+40h]"
 "	      0049e1aa    push eax"
-"	      0049e1ab    mov eax,[ebp-14h]"
-"	      0049e1ae    mov ecx,[ebp-14h]"
+"	      0049e1ab    mov eax,this"
+"	      0049e1ae    mov ecx,this"
 "	      0049e1b1    mov ecx,[ecx+156h]"
 "	      0049e1b7    mov edx,[ecx]"
 "	      0049e1b9    mov ecx,[eax+156h]"
@@ -4432,34 +4432,34 @@ void CopterPlayMenu::DrawRatchet() {
 );
 // LINE 684:
 	asm( 
-"	      0049e1c2    lea eax,[ebp-10h]"
+"	      0049e1c2    lea eax,ptDestinationRatchet.x"
 "	      0049e1c5    push eax"
-"	      0049e1c6    mov ecx,[ebp-14h]"
+"	      0049e1c6    mov ecx,this"
 "	      0049e1c9    call 0049E226h"
 );
 // LINE 686:
 	asm( 
 "	      0049e1ce    jmp near ptr 0049E1D3h"
 "	      0049e1d3    jmp near ptr 0049E1D8h"
-"	      0049e1d8    mov eax,[ebp-14h]"
+"	      0049e1d8    mov eax,this"
 "	      0049e1db    mov eax,[eax+152h]"
 "	      0049e1e1    mov eax,[eax+0Ch]"
 "	      0049e1e4    push eax"
-"	      0049e1e5    mov eax,[ebp-14h]"
+"	      0049e1e5    mov eax,this"
 "	      0049e1e8    mov eax,[eax+152h]"
 "	      0049e1ee    mov eax,[eax+8]"
 "	      0049e1f1    push eax"
 "	      0049e1f2    push 0"
 "	      0049e1f4    push 0"
-"	      0049e1f6    mov eax,[ebp-0Ch]"
+"	      0049e1f6    mov eax,ptDestinationRatchet.y"
 "	      0049e1f9    push eax"
-"	      0049e1fa    mov eax,[ebp-10h]"
+"	      0049e1fa    mov eax,ptDestinationRatchet.x"
 "	      0049e1fd    push eax"
-"	      0049e1fe    mov eax,[ebp-14h]"
+"	      0049e1fe    mov eax,this"
 "	      0049e201    mov eax,[eax+40h]"
 "	      0049e204    push eax"
-"	      0049e205    mov eax,[ebp-14h]"
-"	      0049e208    mov ecx,[ebp-14h]"
+"	      0049e205    mov eax,this"
+"	      0049e208    mov ecx,this"
 "	      0049e20b    mov ecx,[ecx+152h]"
 "	      0049e211    mov edx,[ecx]"
 "	      0049e213    mov ecx,[eax+152h]"
@@ -4486,27 +4486,27 @@ void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 "	      0049e22c    push ebx"
 "	      0049e22d    push esi"
 "	      0049e22e    push edi"
-"	      0049e22f    mov [ebp-4],ecx"
+"	      0049e22f    mov this,ecx"
 );
 // LINE 694:
 	asm( 
-"	      0049e232    mov eax,[ebp+8]"
+"	      0049e232    mov eax,ptDestination"
 "	      0049e235    mov dword ptr [eax],1Dh"
 );
 // LINE 695:
 	asm( 
-"	      0049e23b    mov eax,[ebp-4]"
+"	      0049e23b    mov eax,this"
 "	      0049e23e    cmp dword ptr [eax+98h],0"
 "	      0049e245    jne near ptr 0049E268h"
 );
 // LINE 696:
 	asm( 
-"	      0049e24b    mov eax,[ebp-4]"
+"	      0049e24b    mov eax,this"
 "	      0049e24e    mov eax,[eax+0D4h]"
 "	      0049e254    lea eax,[eax+eax*4]"
 "	      0049e257    shl eax,3"
 "	      0049e25a    add eax,2Dh"
-"	      0049e25d    mov ecx,[ebp+8]"
+"	      0049e25d    mov ecx,ptDestination"
 "	      0049e260    mov [ecx+4],eax"
 );
 // LINE 697:
@@ -4515,12 +4515,12 @@ void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 );
 // LINE 698:
 	asm( 
-"	      0049e268    mov eax,[ebp-4]"
+"	      0049e268    mov eax,this"
 "	      0049e26b    mov eax,[eax+0D4h]"
 "	      0049e271    lea eax,[eax+eax*4]"
 "	      0049e274    shl eax,3"
 "	      0049e277    add eax,55h"
-"	      0049e27a    mov ecx,[ebp+8]"
+"	      0049e27a    mov ecx,ptDestination"
 "	      0049e27d    mov [ecx+4],eax"
 );
 // LINE 699:
@@ -4559,16 +4559,16 @@ int32_t UserMenuWindow::GetLineCount() {
 "	      0049e326    push ebx"
 "	      0049e327    push esi"
 "	      0049e328    push edi"
-"	      0049e329    mov [ebp-4],ecx"
+"	      0049e329    mov this,ecx"
 );
 // LINE 219:
 	asm( 
 "	      0049e32c    jmp near ptr 0049E331h"
 "	      0049e331    jmp near ptr 0049E336h"
 "	      0049e336    jmp near ptr 0049E33Bh"
-"	      0049e33b    mov eax,[ebp-4]"
+"	      0049e33b    mov eax,this"
 "	      0049e33e    mov eax,[eax+0CCh]"
-"	      0049e344    mov ecx,[ebp-4]"
+"	      0049e344    mov ecx,this"
 "	      0049e347    sub eax,[ecx+0C8h]"
 "	      0049e34d    sar eax,2"
 "	      0049e350    jmp near ptr 0049E355h"

@@ -9,7 +9,7 @@ void (*)(void * __ptr32, long) YObjLang::GetSwizzler() {
 "	      00551fa6    push ebx"
 "	      00551fa7    push esi"
 "	      00551fa8    push edi"
-"	      00551fa9    mov [ebp-4],ecx"
+"	      00551fa9    mov this,ecx"
 "	      00551fac    mov eax,560ABEh"
 "	      00551fb1    jmp near ptr 00551FB6h"
 "	      00551fb6    pop edi"

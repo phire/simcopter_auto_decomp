@@ -17,23 +17,23 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560bf6    push ebx"
 "	      00560bf7    push esi"
 "	      00560bf8    push edi"
-"	      00560bf9    mov [ebp-3Ch],ecx"
+"	      00560bf9    mov this,ecx"
 );
 // LINE 1943:
 	asm( 
-"	      00560bfc    mov word ptr [ebp-4],0"
+"	      00560bfc    mov count,0"
 "	      00560c02    jmp near ptr 00560C0Bh"
-"	      00560c07    inc word ptr [ebp-4]"
-"	      00560c0b    mov eax,[ebp-3Ch]"
+"	      00560c07    inc count"
+"	      00560c0b    mov eax,this"
 "	      00560c0e    mov eax,[eax+2Ch]"
-"	      00560c11    movsx ecx,word ptr [ebp-4]"
+"	      00560c11    movsx ecx,count"
 "	      00560c15    cmp [eax+10h],ecx"
 "	      00560c18    jle near ptr 00560E6Ah"
 	);
 // Block start:
 	struct AnimLookup* al;
 	asm( 
-"	      00560c1e    mov eax,[ebp-3Ch]"
+"	      00560c1e    mov eax,this"
 "	      00560c21    mov eax,[eax+2Ch]"
 "	      00560c24    mov [ebp-10h],eax"
 );
@@ -55,10 +55,10 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560c5b    cmp dword ptr [eax+14h],0"
 "	      00560c5f    jle near ptr 00560C81h"
 "	      00560c65    mov eax,[ebp-10h]"
-"	      00560c68    movsx ecx,word ptr [ebp-4]"
+"	      00560c68    movsx ecx,count"
 "	      00560c6c    cmp [eax+10h],ecx"
 "	      00560c6f    jle near ptr 00560C81h"
-"	      00560c75    movsx eax,word ptr [ebp-4]"
+"	      00560c75    movsx eax,count"
 "	      00560c79    test eax,eax"
 "	      00560c7b    jge near ptr 00560C9Dh"
 "	      00560c81    push 8C085h"
@@ -71,21 +71,21 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560ca2    mov eax,[ebp-10h]"
 "	      00560ca5    mov eax,[eax+4]"
 "	      00560ca8    mov eax,[eax]"
-"	      00560caa    movsx ecx,word ptr [ebp-4]"
+"	      00560caa    movsx ecx,count"
 "	      00560cae    lea eax,[eax+ecx*8]"
-"	      00560cb1    mov [ebp-8],eax"
+"	      00560cb1    mov al,eax"
 );
 // LINE 1945:
 	asm( 
-"	      00560cb4    mov eax,[ebp-8]"
-"	      00560cb7    mov ecx,[ebp+8]"
+"	      00560cb4    mov eax,al"
+"	      00560cb7    mov ecx,animName"
 "	      00560cba    cmp [eax],ecx"
 "	      00560cbc    jne near ptr 00560E65h"
 	);
 // Block start:
 	class cCopterAnim* privanim;
 	asm( 
-"	      00560cc2    mov eax,[ebp-8]"
+"	      00560cc2    mov eax,al"
 "	      00560cc5    mov eax,[eax+4]"
 "	      00560cc8    mov [ebp-34h],eax"
 "	      00560ccb    mov eax,ds:[5BF6D4h]"
@@ -175,11 +175,11 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560e25    mov dword ptr [ebp-30h],0"
 "	      00560e2c    jmp near ptr 00560E31h"
 "	      00560e31    mov eax,[ebp-30h]"
-"	      00560e34    mov [ebp-0Ch],eax"
+"	      00560e34    mov privanim,eax"
 );
 // LINE 1947:
 	asm( 
-"	      00560e37    cmp dword ptr [ebp-0Ch],0"
+"	      00560e37    cmp privanim,0"
 "	      00560e3b    jne near ptr 00560E5Dh"
 "	      00560e41    push 8C085h"
 "	      00560e46    push 5BE638h"
@@ -190,7 +190,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 );
 // LINE 1948:
 	asm( 
-"	      00560e5d    mov eax,[ebp-0Ch]"
+"	      00560e5d    mov eax,privanim"
 "	      00560e60    jmp near ptr 00560E71h"
 );
 // LINE 1950:
@@ -226,11 +226,11 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 "	      00560e7e    push ebx"
 "	      00560e7f    push esi"
 "	      00560e80    push edi"
-"	      00560e81    mov [ebp-10h],ecx"
+"	      00560e81    mov this,ecx"
 );
 // LINE 2062:
 	asm( 
-"	      00560e84    cmp dword ptr [ebp-10h],0"
+"	      00560e84    cmp this,0"
 "	      00560e88    jne near ptr 00560EAAh"
 "	      00560e8e    push 8C085h"
 "	      00560e93    push 5BE67Ch"
@@ -241,19 +241,19 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2063:
 	asm( 
-"	      00560eaa    mov word ptr [ebp-4],0"
+"	      00560eaa    mov count,0"
 "	      00560eb0    jmp near ptr 00560EB9h"
-"	      00560eb5    inc word ptr [ebp-4]"
-"	      00560eb9    mov eax,[ebp-10h]"
+"	      00560eb5    inc count"
+"	      00560eb9    mov eax,this"
 "	      00560ebc    mov eax,[eax+28h]"
-"	      00560ebf    movsx ecx,word ptr [ebp-4]"
+"	      00560ebf    movsx ecx,count"
 "	      00560ec3    cmp [eax+10h],ecx"
 "	      00560ec6    jle near ptr 00560FF9h"
 	);
 // Block start:
 	struct cCopterBody::Part* part;
 	asm( 
-"	      00560ecc    mov eax,[ebp-10h]"
+"	      00560ecc    mov eax,this"
 "	      00560ecf    mov eax,[eax+28h]"
 "	      00560ed2    mov [ebp-0Ch],eax"
 );
@@ -275,10 +275,10 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 "	      00560f09    cmp dword ptr [eax+14h],0"
 "	      00560f0d    jle near ptr 00560F2Fh"
 "	      00560f13    mov eax,[ebp-0Ch]"
-"	      00560f16    movsx ecx,word ptr [ebp-4]"
+"	      00560f16    movsx ecx,count"
 "	      00560f1a    cmp [eax+10h],ecx"
 "	      00560f1d    jle near ptr 00560F2Fh"
-"	      00560f23    movsx eax,word ptr [ebp-4]"
+"	      00560f23    movsx eax,count"
 "	      00560f27    test eax,eax"
 "	      00560f29    jge near ptr 00560F4Bh"
 "	      00560f2f    push 8C085h"
@@ -291,10 +291,10 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 "	      00560f50    mov eax,[ebp-0Ch]"
 "	      00560f53    mov eax,[eax+4]"
 "	      00560f56    mov eax,[eax]"
-"	      00560f58    movsx ecx,word ptr [ebp-4]"
+"	      00560f58    movsx ecx,count"
 "	      00560f5c    lea ecx,[ecx+ecx*4]"
 "	      00560f5f    lea eax,[eax+ecx*8]"
-"	      00560f62    mov [ebp-8],eax"
+"	      00560f62    mov part,eax"
 );
 // LINE 2065:
 	asm( 
@@ -313,18 +313,18 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2067:
 	asm( 
-"	      00560f93    mov eax,[ebp-8]"
+"	      00560f93    mov eax,part"
 "	      00560f96    cmp dword ptr [eax+0Ch],0"
 "	      00560f9a    je near ptr 00560FBAh"
 );
 // LINE 2068:
 	asm( 
-"	      00560fa0    mov eax,[ebp-8]"
+"	      00560fa0    mov eax,part"
 "	      00560fa3    mov eax,[eax+0Ch]"
 "	      00560fa6    push eax"
-"	      00560fa7    mov ecx,[ebp-10h]"
+"	      00560fa7    mov ecx,this"
 "	      00560faa    call 00561190h"
-"	      00560faf    mov ecx,[ebp-8]"
+"	      00560faf    mov ecx,part"
 "	      00560fb2    mov [ecx+0Ch],eax"
 );
 // LINE 2071:
@@ -333,7 +333,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2072:
 	asm( 
-"	      00560fba    mov eax,[ebp-8]"
+"	      00560fba    mov eax,part"
 "	      00560fbd    mov dword ptr [eax+0Ch],0"
 );
 // LINE 2074:
@@ -342,16 +342,16 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2075:
 	asm( 
-"	      00560fc9    mov eax,[ebp-8]"
+"	      00560fc9    mov eax,part"
 "	      00560fcc    cmp dword ptr [eax+0Ch],0"
 "	      00560fd0    je near ptr 00560FEAh"
 );
 // LINE 2076:
 	asm( 
-"	      00560fd6    mov eax,[ebp-8]"
+"	      00560fd6    mov eax,part"
 "	      00560fd9    mov eax,[eax+0Ch]"
 "	      00560fdc    mov eax,[eax+8]"
-"	      00560fdf    mov ecx,[ebp-8]"
+"	      00560fdf    mov ecx,part"
 "	      00560fe2    mov [ecx+0Ch],eax"
 );
 // LINE 2077:
@@ -360,7 +360,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2078:
 	asm( 
-"	      00560fea    mov eax,[ebp-8]"
+"	      00560fea    mov eax,part"
 "	      00560fed    mov dword ptr [eax+0Ch],0"
 );
 // LINE 2080:
@@ -389,7 +389,7 @@ class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 "	      0056100b    push ebx"
 "	      0056100c    push esi"
 "	      0056100d    push edi"
-"	      0056100e    mov eax,[ebp+8]"
+"	      0056100e    mov eax,name"
 "	      00561011    push eax"
 "	      00561012    call 005661F4h"
 "	      00561017    add esp,4"
@@ -506,19 +506,19 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 "	      00561196    push ebx"
 "	      00561197    push esi"
 "	      00561198    push edi"
-"	      00561199    mov [ebp-10h],ecx"
+"	      00561199    mov this,ecx"
 );
 // LINE 2093:
 	asm( 
-"	      0056119c    mov word ptr [ebp-4],0"
+"	      0056119c    mov count,0"
 "	      005611a2    jmp near ptr 005611ABh"
-"	      005611a7    inc word ptr [ebp-4]"
-"	      005611ab    mov eax,[ebp-10h]"
+"	      005611a7    inc count"
+"	      005611ab    mov eax,this"
 "	      005611ae    mov eax,[eax+28h]"
-"	      005611b1    movsx ecx,word ptr [ebp-4]"
+"	      005611b1    movsx ecx,count"
 "	      005611b5    cmp [eax+10h],ecx"
 "	      005611b8    jle near ptr 00561273h"
-"	      005611be    mov eax,[ebp-10h]"
+"	      005611be    mov eax,this"
 "	      005611c1    mov eax,[eax+28h]"
 "	      005611c4    mov [ebp-0Ch],eax"
 );
@@ -540,10 +540,10 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 "	      005611fb    cmp dword ptr [eax+14h],0"
 "	      005611ff    jle near ptr 00561221h"
 "	      00561205    mov eax,[ebp-0Ch]"
-"	      00561208    movsx ecx,word ptr [ebp-4]"
+"	      00561208    movsx ecx,count"
 "	      0056120c    cmp [eax+10h],ecx"
 "	      0056120f    jle near ptr 00561221h"
-"	      00561215    movsx eax,word ptr [ebp-4]"
+"	      00561215    movsx eax,count"
 "	      00561219    test eax,eax"
 "	      0056121b    jge near ptr 0056123Dh"
 "	      00561221    push 8C085h"
@@ -556,21 +556,21 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 "	      00561242    mov eax,[ebp-0Ch]"
 "	      00561245    mov eax,[eax+4]"
 "	      00561248    mov eax,[eax]"
-"	      0056124a    movsx ecx,word ptr [ebp-4]"
+"	      0056124a    movsx ecx,count"
 "	      0056124e    lea ecx,[ecx+ecx*4]"
 "	      00561251    lea eax,[eax+ecx*8]"
-"	      00561254    mov [ebp-8],eax"
+"	      00561254    mov part,eax"
 );
 // LINE 2095:
 	asm( 
-"	      00561257    mov eax,[ebp-8]"
-"	      0056125a    mov ecx,[ebp+8]"
+"	      00561257    mov eax,part"
+"	      0056125a    mov ecx,partname"
 "	      0056125d    cmp [eax+8],ecx"
 "	      00561260    jne near ptr 0056126Eh"
 );
 // LINE 2096:
 	asm( 
-"	      00561266    mov eax,[ebp-8]"
+"	      00561266    mov eax,part"
 "	      00561269    jmp near ptr 0056127Ah"
 );
 // LINE 2097:
@@ -609,11 +609,11 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      00561287    push ebx"
 "	      00561288    push esi"
 "	      00561289    push edi"
-"	      0056128a    mov [ebp-48h],ecx"
+"	      0056128a    mov this,ecx"
 );
 // LINE 2103:
 	asm( 
-"	      0056128d    cmp dword ptr [ebp+10h],0"
+"	      0056128d    cmp part,0"
 "	      00561291    jne near ptr 005612B3h"
 "	      00561297    push 8C085h"
 "	      0056129c    push 5BE740h"
@@ -624,21 +624,21 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2104:
 	asm( 
-"	      005612b3    mov eax,[ebp+10h]"
+"	      005612b3    mov eax,part"
 "	      005612b6    movsx eax,byte ptr [eax+2]"
 "	      005612ba    shl eax,2"
-"	      005612bd    lea edi,[ebp-38h]"
+"	      005612bd    lea edi,transinfo.startPoint.v"
 "	      005612c0    lea esi,[eax+eax*4+6376D0h]"
 "	      005612c7    mov ecx,5"
 "	      005612cc    rep movsd"
 );
 // LINE 2105:
 	asm( 
-"	      005612ce    mov eax,[ebp+10h]"
+"	      005612ce    mov eax,part"
 "	      005612d1    movsx eax,byte ptr [eax+2]"
 "	      005612d5    test eax,eax"
 "	      005612d7    jl near ptr 005612EFh"
-"	      005612dd    mov eax,[ebp+10h]"
+"	      005612dd    mov eax,part"
 "	      005612e0    movsx eax,byte ptr [eax+2]"
 "	      005612e4    cmp eax,0C8h"
 "	      005612e9    jl near ptr 0056130Bh"
@@ -656,14 +656,14 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2107:
 	asm( 
-"	      00561311    movsx eax,word ptr [ebp-22h]"
-"	      00561315    movsx ecx,word ptr [ebp+14h]"
+"	      00561311    movsx eax,cpt.h"
+"	      00561315    movsx ecx,screenx"
 "	      00561319    add eax,ecx"
-"	      0056131b    mov [ebp-22h],ax"
-"	      0056131f    movsx eax,word ptr [ebp-24h]"
-"	      00561323    movsx ecx,word ptr [ebp+18h]"
+"	      0056131b    mov cpt.h,ax"
+"	      0056131f    movsx eax,cpt.v"
+"	      00561323    movsx ecx,screeny"
 "	      00561327    add eax,ecx"
-"	      00561329    mov [ebp-24h],ax"
+"	      00561329    mov cpt.v,ax"
 );
 // LINE 2108:
 	asm( 
@@ -672,75 +672,75 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2109:
 	asm( 
-"	      00561333    movsx eax,word ptr [ebp-1Eh]"
-"	      00561337    movsx ecx,word ptr [ebp+14h]"
+"	      00561333    movsx eax,ept.h"
+"	      00561337    movsx ecx,screenx"
 "	      0056133b    add eax,ecx"
-"	      0056133d    mov [ebp-1Eh],ax"
-"	      00561341    movsx eax,word ptr [ebp-20h]"
-"	      00561345    movsx ecx,word ptr [ebp+18h]"
+"	      0056133d    mov ept.h,ax"
+"	      00561341    movsx eax,ept.v"
+"	      00561345    movsx ecx,screeny"
 "	      00561349    add eax,ecx"
-"	      0056134b    mov [ebp-20h],ax"
+"	      0056134b    mov ept.v,ax"
 );
 // LINE 2112:
 	asm( 
-"	      0056134f    movsx eax,word ptr [ebp-22h]"
-"	      00561353    mov [ebp-0Ch],eax"
+"	      0056134f    movsx eax,cpt.h"
+"	      00561353    mov sPt.x,eax"
 );
 // LINE 2113:
 	asm( 
-"	      00561356    movsx eax,word ptr [ebp-24h]"
-"	      0056135a    mov [ebp-8],eax"
+"	      00561356    movsx eax,cpt.v"
+"	      0056135a    mov sPt.y,eax"
 );
 // LINE 2114:
 	asm( 
-"	      0056135d    movsx eax,word ptr [ebp-1Eh]"
-"	      00561361    mov [ebp-1Ch],eax"
+"	      0056135d    movsx eax,ept.h"
+"	      00561361    mov ePt.x,eax"
 );
 // LINE 2115:
 	asm( 
-"	      00561364    movsx eax,word ptr [ebp-20h]"
-"	      00561368    mov [ebp-18h],eax"
+"	      00561364    movsx eax,ept.v"
+"	      00561368    mov ePt.y,eax"
 );
 // LINE 2122:
 	asm( 
-"	      0056136b    mov eax,[ebp+10h]"
+"	      0056136b    mov eax,part"
 "	      0056136e    movsx ax,byte ptr [eax+3]"
-"	      00561373    mov [ebp-10h],ax"
+"	      00561373    mov color,ax"
 );
 // LINE 2124:
 	asm( 
-"	      00561377    movsx eax,word ptr [ebp+20h]"
+"	      00561377    movsx eax,colorIndexShift"
 "	      0056137b    test eax,eax"
 "	      0056137d    je near ptr 005613A8h"
-"	      00561383    mov eax,[ebp+10h]"
+"	      00561383    mov eax,part"
 "	      00561386    movsx eax,byte ptr [eax+5]"
 "	      0056138a    test eax,eax"
 "	      0056138c    jne near ptr 005613A8h"
 );
 // LINE 2126:
 	asm( 
-"	      00561392    movsx eax,word ptr [ebp+20h]"
-"	      00561396    movsx ecx,word ptr [ebp-10h]"
+"	      00561392    movsx eax,colorIndexShift"
+"	      00561396    movsx ecx,color"
 "	      0056139a    mov ebx,0Eh"
 "	      0056139f    add eax,ecx"
 "	      005613a1    cdq"
 "	      005613a2    idiv ebx"
-"	      005613a4    mov [ebp-10h],dx"
+"	      005613a4    mov color,dx"
 );
 // LINE 2128:
 	asm( 
-"	      005613a8    movsx eax,word ptr [ebp-10h]"
+"	      005613a8    movsx eax,color"
 "	      005613ac    add eax,2"
 "	      005613af    shl eax,4"
 "	      005613b2    add eax,4"
-"	      005613b5    mov [ebp-10h],ax"
+"	      005613b5    mov color,ax"
 );
 // LINE 2130:
 	asm( 
-"	      005613b9    movsx eax,word ptr [ebp-10h]"
+"	      005613b9    movsx eax,color"
 "	      005613bd    test eax,eax"
 "	      005613bf    jl near ptr 005613D4h"
-"	      005613c5    movsx eax,word ptr [ebp-10h]"
+"	      005613c5    movsx eax,color"
 "	      005613c9    cmp eax,100h"
 "	      005613ce    jl near ptr 005613F0h"
 "	      005613d4    push 8C085h"
@@ -752,31 +752,31 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2131:
 	asm( 
-"	      005613f0    mov eax,[ebp+10h]"
+"	      005613f0    mov eax,part"
 "	      005613f3    movsx eax,byte ptr [eax]"
 "	      005613f6    mov [ebp-4Ch],eax"
 "	      005613f9    jmp near ptr 005615D1h"
 );
 // LINE 2133:
 	asm( 
-"	      005613fe    mov eax,[ebp+10h]"
+"	      005613fe    mov eax,part"
 "	      00561401    fld dword ptr [eax+20h]"
-"	      00561404    fmul dword ptr [ebp+1Ch]"
+"	      00561404    fmul scale"
 "	      00561407    call 0056EBE8h"
 "	      0056140c    push eax"
 "	      0056140d    mov eax,[ebp-10h]"
 "	      00561410    push eax"
-"	      00561411    mov eax,[ebp-14h]"
+"	      00561411    mov eax,ePt.z"
 "	      00561414    push eax"
-"	      00561415    mov eax,[ebp-18h]"
+"	      00561415    mov eax,ePt.y"
 "	      00561418    push eax"
-"	      00561419    mov eax,[ebp-1Ch]"
+"	      00561419    mov eax,ePt.x"
 "	      0056141c    push eax"
-"	      0056141d    mov eax,[ebp-4]"
+"	      0056141d    mov eax,sPt.z"
 "	      00561420    push eax"
-"	      00561421    mov eax,[ebp-8]"
+"	      00561421    mov eax,sPt.y"
 "	      00561424    push eax"
-"	      00561425    mov eax,[ebp-0Ch]"
+"	      00561425    mov eax,sPt.x"
 "	      00561428    push eax"
 "	      00561429    call 00565225h"
 "	      0056142e    add esp,20h"
@@ -789,10 +789,10 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // Block start:
 	float drawwidth;
 	asm( 
-"	      00561436    mov eax,[ebp+10h]"
+"	      00561436    mov eax,part"
 "	      00561439    fld dword ptr [eax+20h]"
-"	      0056143c    fmul dword ptr [ebp+1Ch]"
-"	      0056143f    fst dword ptr [ebp-3Ch]"
+"	      0056143c    fmul scale"
+"	      0056143f    fst drawwidth"
 );
 // LINE 2138:
 	asm( 
@@ -800,23 +800,23 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      00561447    push eax"
 "	      00561448    mov eax,[ebp-10h]"
 "	      0056144b    push eax"
-"	      0056144c    fld dword ptr [ebp-3Ch]"
+"	      0056144c    fld drawwidth"
 "	      0056144f    fdiv dword ptr ds:[593718h]"
-"	      00561455    mov eax,[ebp+10h]"
+"	      00561455    mov eax,part"
 "	      00561458    fmul dword ptr [eax+24h]"
 "	      0056145b    call 0056EBE8h"
 "	      00561460    push eax"
-"	      00561461    mov eax,[ebp-14h]"
+"	      00561461    mov eax,ePt.z"
 "	      00561464    push eax"
-"	      00561465    mov eax,[ebp-18h]"
+"	      00561465    mov eax,ePt.y"
 "	      00561468    push eax"
-"	      00561469    mov eax,[ebp-1Ch]"
+"	      00561469    mov eax,ePt.x"
 "	      0056146c    push eax"
-"	      0056146d    mov eax,[ebp-4]"
+"	      0056146d    mov eax,sPt.z"
 "	      00561470    push eax"
-"	      00561471    mov eax,[ebp-8]"
+"	      00561471    mov eax,sPt.y"
 "	      00561474    push eax"
-"	      00561475    mov eax,[ebp-0Ch]"
+"	      00561475    mov eax,sPt.x"
 "	      00561478    push eax"
 "	      00561479    call 00564D8Dh"
 "	      0056147e    add esp,24h"
@@ -830,9 +830,9 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	asm( 
 "	      00561486    mov eax,[ebp-10h]"
 "	      00561489    push eax"
-"	      0056148a    mov eax,[ebp-8]"
+"	      0056148a    mov eax,sPt.y"
 "	      0056148d    push eax"
-"	      0056148e    mov eax,[ebp-0Ch]"
+"	      0056148e    mov eax,sPt.x"
 "	      00561491    push eax"
 "	      00561492    call 00563EB5h"
 "	      00561497    add esp,0Ch"
@@ -845,24 +845,24 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // Block start:
 	enum SPHERE_SHADE_FLAG flag;
 	asm( 
-"	      0056149f    mov eax,[ebp+10h]"
+"	      0056149f    mov eax,part"
 "	      005614a2    movsx eax,byte ptr [eax]"
 "	      005614a5    mov [ebp-50h],eax"
 "	      005614a8    jmp near ptr 005614D6h"
 );
 // LINE 2151:
 	asm( 
-"	      005614ad    mov dword ptr [ebp-40h],1"
+"	      005614ad    mov flag,1"
 "	      005614b4    jmp near ptr 005614F9h"
 );
 // LINE 2153:
 	asm( 
-"	      005614b9    mov dword ptr [ebp-40h],2"
+"	      005614b9    mov flag,2"
 "	      005614c0    jmp near ptr 005614F9h"
 );
 // LINE 2155:
 	asm( 
-"	      005614c5    mov dword ptr [ebp-40h],0"
+"	      005614c5    mov flag,0"
 "	      005614cc    jmp near ptr 005614F9h"
 );
 // LINE 2156:
@@ -878,21 +878,21 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2157:
 	asm( 
-"	      005614f9    mov eax,[ebp-40h]"
+"	      005614f9    mov eax,flag"
 "	      005614fc    push eax"
 "	      005614fd    mov eax,[ebp-10h]"
 "	      00561500    push eax"
-"	      00561501    mov eax,[ebp+10h]"
+"	      00561501    mov eax,part"
 "	      00561504    fld dword ptr [eax+1Ch]"
-"	      00561507    fmul dword ptr [ebp+1Ch]"
+"	      00561507    fmul scale"
 "	      0056150a    fmul qword ptr ds:[593720h]"
 "	      00561510    call 0056EBE8h"
 "	      00561515    push eax"
-"	      00561516    mov eax,[ebp-4]"
+"	      00561516    mov eax,sPt.z"
 "	      00561519    push eax"
-"	      0056151a    mov eax,[ebp-8]"
+"	      0056151a    mov eax,sPt.y"
 "	      0056151d    push eax"
-"	      0056151e    mov eax,[ebp-0Ch]"
+"	      0056151e    mov eax,sPt.x"
 "	      00561521    push eax"
 "	      00561522    call 00563FD1h"
 "	      00561527    add esp,18h"
@@ -906,7 +906,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	float smallPsi;
 // Block end:
 	asm( 
-"	      0056152f    mov eax,[ebp-48h]"
+"	      0056152f    mov eax,this"
 "	      00561532    movsx eax,word ptr [eax+30h]"
 "	      00561536    cmp eax,0FFFFFFFFh"
 "	      00561539    jne near ptr 0056155Bh"
@@ -919,8 +919,8 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2164:
 	asm( 
-"	      0056155b    fld dword ptr [ebp-28h]"
-"	      0056155e    fadd dword ptr [ebp+0Ch]"
+"	      0056155b    fld transinfo.info"
+"	      0056155e    fadd psiOff"
 "	      00561561    fstp dword ptr [ebp-44h]"
 );
 // LINE 2165:
@@ -932,23 +932,23 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2166:
 	asm( 
-"	      00561570    mov eax,[ebp-48h]"
+"	      00561570    mov eax,this"
 "	      00561573    mov ax,[eax+30h]"
 "	      00561577    push eax"
 "	      00561578    push 3FF00000h"
 "	      0056157d    push 0"
 "	      0056157f    mov eax,[ebp-44h]"
 "	      00561582    push eax"
-"	      00561583    mov eax,[ebp+10h]"
+"	      00561583    mov eax,part"
 "	      00561586    fld dword ptr [eax+1Ch]"
-"	      00561589    fmul dword ptr [ebp+1Ch]"
+"	      00561589    fmul scale"
 "	      0056158c    call 0056EBE8h"
 "	      00561591    push eax"
-"	      00561592    mov eax,[ebp-4]"
+"	      00561592    mov eax,sPt.z"
 "	      00561595    push eax"
-"	      00561596    mov eax,[ebp-8]"
+"	      00561596    mov eax,sPt.y"
 "	      00561599    push eax"
-"	      0056159a    mov eax,[ebp-0Ch]"
+"	      0056159a    mov eax,sPt.x"
 "	      0056159d    push eax"
 "	      0056159e    call 00564770h"
 "	      005615a3    add esp,20h"
@@ -1023,12 +1023,12 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      0056161a    push ebx"
 "	      0056161b    push esi"
 "	      0056161c    push edi"
-"	      0056161d    mov [ebp-0A4h],ecx"
+"	      0056161d    mov this,ecx"
 );
 // LINE 2181:
 	asm( 
 "	      00561623    jmp near ptr 00561628h"
-"	      00561628    mov eax,[ebp+10h]"
+"	      00561628    mov eax,privanim"
 "	      0056162b    mov eax,[eax+28h]"
 "	      0056162e    movsx eax,word ptr [eax+10h]"
 "	      00561632    test eax,eax"
@@ -1038,7 +1038,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 // LINE 2182:
 	asm( 
 "	      0056163f    jmp near ptr 00561644h"
-"	      00561644    mov eax,[ebp-0A4h]"
+"	      00561644    mov eax,this"
 "	      0056164a    mov eax,[eax+28h]"
 "	      0056164d    movsx eax,word ptr [eax+10h]"
 "	      00561651    test eax,eax"
@@ -1049,95 +1049,95 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	asm( 
 "	      0056165e    mov eax,[ebp+14h]"
 "	      00561661    push eax"
-"	      00561662    mov eax,[ebp+10h]"
+"	      00561662    mov eax,privanim"
 "	      00561665    mov eax,[eax]"
-"	      00561667    mov ecx,[ebp+10h]"
+"	      00561667    mov ecx,privanim"
 "	      0056166a    call dword ptr [eax+28h]"
-"	      0056166d    mov [ebp-20h],eax"
+"	      0056166d    mov privpartinfos,eax"
 );
 // LINE 2187:
 	asm( 
 "	      00561670    jmp near ptr 00561675h"
-"	      00561675    mov eax,[ebp-0A4h]"
+"	      00561675    mov eax,this"
 "	      0056167b    mov eax,[eax+28h]"
 "	      0056167e    movsx eax,word ptr [eax+10h]"
-"	      00561682    mov [ebp-14h],eax"
+"	      00561682    mov numParts,eax"
 );
 // LINE 2188:
 	asm( 
-"	      00561685    mov word ptr [ebp-0Ch],0"
+"	      00561685    mov count,0"
 "	      0056168b    jmp near ptr 00561694h"
-"	      00561690    inc word ptr [ebp-0Ch]"
-"	      00561694    movsx eax,word ptr [ebp-0Ch]"
-"	      00561698    cmp eax,[ebp-14h]"
+"	      00561690    inc count"
+"	      00561694    movsx eax,count"
+"	      00561698    cmp eax,numParts"
 "	      0056169b    jge near ptr 005616D1h"
 );
 // LINE 2189:
 	asm( 
-"	      005616a1    movsx eax,word ptr [ebp-0Ch]"
+"	      005616a1    movsx eax,count"
 "	      005616a5    shl eax,2"
 "	      005616a8    mov byte ptr [eax+eax*4+6376DDh],0"
-"	      005616b0    movsx eax,word ptr [ebp-0Ch]"
+"	      005616b0    movsx eax,count"
 "	      005616b4    shl eax,2"
 "	      005616b7    mov al,[eax+eax*4+6376DDh]"
-"	      005616be    movsx ecx,word ptr [ebp-0Ch]"
+"	      005616be    movsx ecx,count"
 "	      005616c2    shl ecx,2"
 "	      005616c5    mov [ecx+ecx*4+6376DCh],al"
 "	      005616cc    jmp near ptr 00561690h"
 );
 // LINE 2196:
 	asm( 
-"	      005616d1    fld dword ptr [ebp+8]"
+"	      005616d1    fld xOff"
 "	      005616d4    sub esp,8"
 "	      005616d7    fstp qword ptr [esp]"
 "	      005616da    call 0056F320h"
 "	      005616df    add esp,8"
-"	      005616e2    fstp dword ptr [ebp-4]"
+"	      005616e2    fstp sinX"
 );
 // LINE 2197:
 	asm( 
-"	      005616e5    fld dword ptr [ebp+8]"
+"	      005616e5    fld xOff"
 "	      005616e8    sub esp,8"
 "	      005616eb    fstp qword ptr [esp]"
 "	      005616ee    call 0056F32Ah"
 "	      005616f3    add esp,8"
-"	      005616f6    fstp dword ptr [ebp-24h]"
+"	      005616f6    fstp cosX"
 );
 // LINE 2198:
 	asm( 
-"	      005616f9    fld dword ptr [ebp+0Ch]"
+"	      005616f9    fld yOff"
 "	      005616fc    sub esp,8"
 "	      005616ff    fstp qword ptr [esp]"
 "	      00561702    call 0056F320h"
 "	      00561707    add esp,8"
-"	      0056170a    fstp dword ptr [ebp-8]"
+"	      0056170a    fstp sinY"
 );
 // LINE 2199:
 	asm( 
-"	      0056170d    fld dword ptr [ebp+0Ch]"
+"	      0056170d    fld yOff"
 "	      00561710    sub esp,8"
 "	      00561713    fstp qword ptr [esp]"
 "	      00561716    call 0056F32Ah"
 "	      0056171b    add esp,8"
-"	      0056171e    fstp dword ptr [ebp-28h]"
+"	      0056171e    fstp cosY"
 );
 // LINE 2213:
 	asm( 
-"	      00561721    mov dword ptr [ebp-1Ch],0"
+"	      00561721    mov drawordercount,0"
 );
 // LINE 2214:
 	asm( 
-"	      00561728    mov word ptr [ebp-0Ch],0"
+"	      00561728    mov count,0"
 "	      0056172e    jmp near ptr 00561737h"
-"	      00561733    inc word ptr [ebp-0Ch]"
-"	      00561737    movsx eax,word ptr [ebp-0Ch]"
-"	      0056173b    cmp eax,[ebp-14h]"
+"	      00561733    inc count"
+"	      00561737    movsx eax,count"
+"	      0056173b    cmp eax,numParts"
 "	      0056173e    jge near ptr 00561AB7h"
 	);
 // Block start:
 	short drawProc;
 	asm( 
-"	      00561744    mov eax,[ebp-0A4h]"
+"	      00561744    mov eax,this"
 "	      0056174a    mov eax,[eax+28h]"
 "	      0056174d    mov [ebp-0A0h],eax"
 );
@@ -1159,10 +1159,10 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561790    cmp dword ptr [eax+14h],0"
 "	      00561794    jle near ptr 005617B9h"
 "	      0056179a    mov eax,[ebp-0A0h]"
-"	      005617a0    movsx ecx,word ptr [ebp-0Ch]"
+"	      005617a0    movsx ecx,count"
 "	      005617a4    cmp [eax+10h],ecx"
 "	      005617a7    jle near ptr 005617B9h"
-"	      005617ad    movsx eax,word ptr [ebp-0Ch]"
+"	      005617ad    movsx eax,count"
 "	      005617b1    test eax,eax"
 "	      005617b3    jge near ptr 005617D5h"
 "	      005617b9    push 8C085h"
@@ -1175,25 +1175,25 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      005617da    mov eax,[ebp-0A0h]"
 "	      005617e0    mov eax,[eax+4]"
 "	      005617e3    mov eax,[eax]"
-"	      005617e5    movsx ecx,word ptr [ebp-0Ch]"
+"	      005617e5    movsx ecx,count"
 "	      005617e9    lea ecx,[ecx+ecx*4]"
 "	      005617ec    lea eax,[eax+ecx*8]"
-"	      005617ef    mov [ebp-18h],eax"
+"	      005617ef    mov part,eax"
 );
 // LINE 2216:
 	asm( 
-"	      005617f2    mov eax,[ebp-18h]"
+"	      005617f2    mov eax,part"
 "	      005617f5    movsx ax,byte ptr [eax]"
-"	      005617f9    mov [ebp-2Ch],ax"
+"	      005617f9    mov drawProc,ax"
 );
 // LINE 2217:
 	asm( 
-"	      005617fd    movsx eax,word ptr [ebp-2Ch]"
+"	      005617fd    movsx eax,drawProc"
 "	      00561801    test eax,eax"
 "	      00561803    je near ptr 00561AB2h"
-"	      00561809    mov eax,[ebp-18h]"
+"	      00561809    mov eax,part"
 "	      0056180c    movsx eax,byte ptr [eax+4]"
-"	      00561810    movsx ecx,word ptr [ebp+24h]"
+"	      00561810    movsx ecx,nearMedFar"
 "	      00561814    test ecx,eax"
 "	      00561816    je near ptr 00561AB2h"
 );
@@ -1205,9 +1205,9 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	struct PrivAnimPartInfo* partinfo;
 	unsigned short parentendtransformed;
 	asm( 
-"	      0056181c    cmp dword ptr [ebp-18h],0"
+"	      0056181c    cmp part,0"
 "	      00561820    je near ptr 00561835h"
-"	      00561826    mov eax,[ebp-18h]"
+"	      00561826    mov eax,part"
 "	      00561829    movsx eax,byte ptr [eax+2]"
 "	      0056182d    test eax,eax"
 "	      0056182f    jge near ptr 00561851h"
@@ -1220,14 +1220,14 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2219:
 	asm( 
-"	      00561851    movsx eax,word ptr [ebp-0Ch]"
+"	      00561851    movsx eax,count"
 "	      00561855    shl eax,3"
-"	      00561858    add eax,[ebp-20h]"
-"	      0056185b    mov [ebp-34h],eax"
+"	      00561858    add eax,privpartinfos"
+"	      0056185b    mov partinfo,eax"
 );
 // LINE 2222:
 	asm( 
-"	      0056185e    mov eax,[ebp-34h]"
+"	      0056185e    mov eax,partinfo"
 "	      00561861    mov eax,[eax]"
 "	      00561863    push eax"
 "	      00561864    lea eax,[ebp-8Ch]"
@@ -1244,7 +1244,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561886    mov eax,[eax+0Ch]"
 "	      00561889    mov [ecx+0Ch],eax"
 "	      0056188c    lea eax,[ebp-6Ch]"
-"	      0056188f    lea ecx,[ebp-54h]"
+"	      0056188f    lea ecx,start.x"
 "	      00561892    mov edx,[eax]"
 "	      00561894    mov [ecx],edx"
 "	      00561896    mov edx,[eax+4]"
@@ -1256,7 +1256,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2223:
 	asm( 
-"	      005618a8    mov eax,[ebp-34h]"
+"	      005618a8    mov eax,partinfo"
 "	      005618ab    mov eax,[eax+4]"
 "	      005618ae    push eax"
 "	      005618af    lea eax,[ebp-9Ch]"
@@ -1273,7 +1273,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      005618d1    mov eax,[eax+0Ch]"
 "	      005618d4    mov [ecx+0Ch],eax"
 "	      005618d7    lea eax,[ebp-7Ch]"
-"	      005618da    lea ecx,[ebp-44h]"
+"	      005618da    lea ecx,end.x"
 "	      005618dd    mov edx,[eax]"
 "	      005618df    mov [ecx],edx"
 "	      005618e1    mov edx,[eax+4]"
@@ -1285,20 +1285,20 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2224:
 	asm( 
-"	      005618f3    mov eax,[ebp-18h]"
+"	      005618f3    mov eax,part"
 "	      005618f6    movsx eax,byte ptr [eax+2]"
 "	      005618fa    shl eax,2"
 "	      005618fd    lea eax,[eax+eax*4]"
 "	      00561900    add eax,6376D0h"
-"	      00561905    mov [ebp-58h],eax"
+"	      00561905    mov transinfo,eax"
 );
 // LINE 2225:
 	asm( 
-"	      00561908    mov word ptr [ebp-30h],0"
+"	      00561908    mov parentendtransformed,0"
 );
 // LINE 2226:
 	asm( 
-"	      0056190e    mov eax,[ebp-18h]"
+"	      0056190e    mov eax,part"
 "	      00561911    cmp dword ptr [eax+0Ch],0"
 "	      00561915    je near ptr 0056196Ch"
 );
@@ -1306,39 +1306,39 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 // Block start:
 	struct TransformedInfo* parenttransinfo;
 	asm( 
-"	      0056191b    mov eax,[ebp-18h]"
+"	      0056191b    mov eax,part"
 "	      0056191e    mov eax,[eax+0Ch]"
 "	      00561921    movsx eax,byte ptr [eax+2]"
 "	      00561925    shl eax,2"
 "	      00561928    lea eax,[eax+eax*4]"
 "	      0056192b    add eax,6376D0h"
-"	      00561930    mov [ebp-5Ch],eax"
+"	      00561930    mov parenttransinfo,eax"
 );
 // LINE 2228:
 	asm( 
-"	      00561933    mov eax,[ebp-5Ch]"
+"	      00561933    mov eax,parenttransinfo"
 "	      00561936    movzx ax,byte ptr [eax+0Dh]"
-"	      0056193b    mov [ebp-30h],ax"
+"	      0056193b    mov parentendtransformed,ax"
 "	      0056193f    test dword ptr [ebp-30h],0FFFFh"
 "	      00561946    je near ptr 0056196Ch"
 );
 // LINE 2229:
 	asm( 
-"	      0056194c    mov eax,[ebp-5Ch]"
+"	      0056194c    mov eax,parenttransinfo"
 "	      0056194f    mov eax,[eax+4]"
-"	      00561952    mov ecx,[ebp-58h]"
+"	      00561952    mov ecx,transinfo"
 "	      00561955    mov [ecx],eax"
 );
 // LINE 2230:
 	asm( 
-"	      00561957    mov eax,[ebp-5Ch]"
+"	      00561957    mov eax,parenttransinfo"
 "	      0056195a    mov ax,[eax+0Ah]"
-"	      0056195e    mov ecx,[ebp-58h]"
+"	      0056195e    mov ecx,transinfo"
 "	      00561961    mov [ecx+8],ax"
 );
 // LINE 2231:
 	asm( 
-"	      00561965    mov eax,[ebp-58h]"
+"	      00561965    mov eax,transinfo"
 "	      00561968    mov byte ptr [eax+0Ch],1"
 );
 // LINE 2234:
@@ -1350,147 +1350,147 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 // LINE 2240:
 	asm( 
 "	      00561979    push 1"
-"	      0056197b    mov eax,[ebp-58h]"
+"	      0056197b    mov eax,transinfo"
 "	      0056197e    add eax,8"
 "	      00561981    push eax"
-"	      00561982    mov eax,[ebp-58h]"
+"	      00561982    mov eax,transinfo"
 "	      00561985    push eax"
-"	      00561986    mov eax,[ebp-58h]"
+"	      00561986    mov eax,transinfo"
 "	      00561989    add eax,2"
 "	      0056198c    push eax"
-"	      0056198d    mov eax,[ebp-48h]"
+"	      0056198d    mov eax,start.info"
 "	      00561990    push eax"
-"	      00561991    mov eax,[ebp-4Ch]"
+"	      00561991    mov eax,start.y"
 "	      00561994    push eax"
-"	      00561995    mov eax,[ebp-50h]"
+"	      00561995    mov eax,start.z"
 "	      00561998    push eax"
-"	      00561999    mov eax,[ebp-54h]"
+"	      00561999    mov eax,start.x"
 "	      0056199c    push eax"
-"	      0056199d    mov eax,[ebp+20h]"
+"	      0056199d    mov eax,scale"
 "	      005619a0    push eax"
-"	      005619a1    mov eax,[ebp-28h]"
+"	      005619a1    mov eax,cosY"
 "	      005619a4    push eax"
-"	      005619a5    mov eax,[ebp-8]"
+"	      005619a5    mov eax,sinY"
 "	      005619a8    push eax"
-"	      005619a9    mov eax,[ebp-24h]"
+"	      005619a9    mov eax,cosX"
 "	      005619ac    push eax"
-"	      005619ad    mov eax,[ebp-4]"
+"	      005619ad    mov eax,sinX"
 "	      005619b0    push eax"
 "	      005619b1    call 00562AC5h"
 "	      005619b6    add esp,34h"
 );
 // LINE 2241:
 	asm( 
-"	      005619b9    mov eax,[ebp-58h]"
+"	      005619b9    mov eax,transinfo"
 "	      005619bc    mov byte ptr [eax+0Ch],1"
 );
 // LINE 2243:
 	asm( 
-"	      005619c0    mov eax,[ebp-18h]"
+"	      005619c0    mov eax,part"
 "	      005619c3    movsx eax,byte ptr [eax]"
 "	      005619c6    cmp eax,9"
 "	      005619c9    jne near ptr 005619E4h"
 );
 // LINE 2244:
 	asm( 
-"	      005619cf    mov eax,[ebp-34h]"
+"	      005619cf    mov eax,partinfo"
 "	      005619d2    mov al,[eax+3]"
 "	      005619d5    push eax"
 "	      005619d6    call 0055DA2Eh"
 "	      005619db    add esp,4"
-"	      005619de    mov eax,[ebp-58h]"
+"	      005619de    mov eax,transinfo"
 "	      005619e1    fstp dword ptr [eax+10h]"
 );
 // LINE 2251:
 	asm( 
-"	      005619e4    movsx eax,word ptr [ebp-2Ch]"
+"	      005619e4    movsx eax,drawProc"
 "	      005619e8    cmp eax,9"
 "	      005619eb    je near ptr 00561A6Fh"
-"	      005619f1    movsx eax,word ptr [ebp-2Ch]"
+"	      005619f1    movsx eax,drawProc"
 "	      005619f5    cmp eax,0Ch"
 "	      005619f8    je near ptr 00561A6Fh"
-"	      005619fe    movsx eax,word ptr [ebp-2Ch]"
+"	      005619fe    movsx eax,drawProc"
 "	      00561a02    cmp eax,0Eh"
 "	      00561a05    je near ptr 00561A6Fh"
-"	      00561a0b    movsx eax,word ptr [ebp-2Ch]"
+"	      00561a0b    movsx eax,drawProc"
 "	      00561a0f    cmp eax,8"
 "	      00561a12    je near ptr 00561A6Fh"
-"	      00561a18    movsx eax,word ptr [ebp-2Ch]"
+"	      00561a18    movsx eax,drawProc"
 "	      00561a1c    cmp eax,0Dh"
 "	      00561a1f    je near ptr 00561A6Fh"
 );
 // LINE 2258:
 	asm( 
 "	      00561a25    push 1"
-"	      00561a27    mov eax,[ebp-58h]"
+"	      00561a27    mov eax,transinfo"
 "	      00561a2a    add eax,0Ah"
 "	      00561a2d    push eax"
-"	      00561a2e    mov eax,[ebp-58h]"
+"	      00561a2e    mov eax,transinfo"
 "	      00561a31    add eax,4"
 "	      00561a34    push eax"
-"	      00561a35    mov eax,[ebp-58h]"
+"	      00561a35    mov eax,transinfo"
 "	      00561a38    add eax,6"
 "	      00561a3b    push eax"
-"	      00561a3c    mov eax,[ebp-38h]"
+"	      00561a3c    mov eax,end.info"
 "	      00561a3f    push eax"
-"	      00561a40    mov eax,[ebp-3Ch]"
+"	      00561a40    mov eax,end.y"
 "	      00561a43    push eax"
-"	      00561a44    mov eax,[ebp-40h]"
+"	      00561a44    mov eax,end.z"
 "	      00561a47    push eax"
-"	      00561a48    mov eax,[ebp-44h]"
+"	      00561a48    mov eax,end.x"
 "	      00561a4b    push eax"
-"	      00561a4c    mov eax,[ebp+20h]"
+"	      00561a4c    mov eax,scale"
 "	      00561a4f    push eax"
-"	      00561a50    mov eax,[ebp-28h]"
+"	      00561a50    mov eax,cosY"
 "	      00561a53    push eax"
-"	      00561a54    mov eax,[ebp-8]"
+"	      00561a54    mov eax,sinY"
 "	      00561a57    push eax"
-"	      00561a58    mov eax,[ebp-24h]"
+"	      00561a58    mov eax,cosX"
 "	      00561a5b    push eax"
-"	      00561a5c    mov eax,[ebp-4]"
+"	      00561a5c    mov eax,sinX"
 "	      00561a5f    push eax"
 "	      00561a60    call 00562AC5h"
 "	      00561a65    add esp,34h"
 );
 // LINE 2259:
 	asm( 
-"	      00561a68    mov eax,[ebp-58h]"
+"	      00561a68    mov eax,transinfo"
 "	      00561a6b    mov byte ptr [eax+0Dh],1"
 );
 // LINE 2263:
 	asm( 
-"	      00561a6f    mov eax,[ebp-58h]"
+"	      00561a6f    mov eax,transinfo"
 "	      00561a72    mov eax,[eax]"
-"	      00561a74    mov ecx,[ebp-18h]"
+"	      00561a74    mov ecx,part"
 "	      00561a77    mov [ecx+10h],eax"
 );
 // LINE 2264:
 	asm( 
-"	      00561a7a    mov eax,[ebp-58h]"
+"	      00561a7a    mov eax,transinfo"
 "	      00561a7d    mov ax,[eax+8]"
-"	      00561a81    mov ecx,[ebp-18h]"
+"	      00561a81    mov ecx,part"
 "	      00561a84    mov [ecx+18h],ax"
 );
 // LINE 2265:
 	asm( 
-"	      00561a88    mov eax,[ebp-58h]"
+"	      00561a88    mov eax,transinfo"
 "	      00561a8b    mov eax,[eax+4]"
-"	      00561a8e    mov ecx,[ebp-18h]"
+"	      00561a8e    mov ecx,part"
 "	      00561a91    mov [ecx+14h],eax"
 );
 // LINE 2266:
 	asm( 
-"	      00561a94    mov eax,[ebp-58h]"
+"	      00561a94    mov eax,transinfo"
 "	      00561a97    mov ax,[eax+0Ah]"
-"	      00561a9b    mov ecx,[ebp-18h]"
+"	      00561a9b    mov ecx,part"
 "	      00561a9e    mov [ecx+1Ah],ax"
 );
 // LINE 2268:
 	asm( 
-"	      00561aa2    mov eax,[ebp-18h]"
-"	      00561aa5    mov ecx,[ebp-1Ch]"
+"	      00561aa2    mov eax,part"
+"	      00561aa5    mov ecx,drawordercount"
 "	      00561aa8    mov [ecx*4+638670h],eax"
-"	      00561aaf    inc dword ptr [ebp-1Ch]"
+"	      00561aaf    inc drawordercount"
 );
 // LINE 2270:
 // Block end:
@@ -1500,14 +1500,14 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2271:
 	asm( 
-"	      00561ab7    cmp dword ptr [ebp-1Ch],0"
+"	      00561ab7    cmp drawordercount,0"
 "	      00561abb    je near ptr 00561AD9h"
 );
 // LINE 2272:
 	asm( 
 "	      00561ac1    push 5623CDh"
 "	      00561ac6    push 4"
-"	      00561ac8    mov eax,[ebp-1Ch]"
+"	      00561ac8    mov eax,drawordercount"
 "	      00561acb    push eax"
 "	      00561acc    push 638670h"
 "	      00561ad1    call 00575470h"
@@ -1515,22 +1515,22 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2276:
 	asm( 
-"	      00561ad9    mov word ptr [ebp-10h],0"
+"	      00561ad9    mov orderID,0"
 "	      00561adf    jmp near ptr 00561AE8h"
-"	      00561ae4    inc word ptr [ebp-10h]"
-"	      00561ae8    movsx eax,word ptr [ebp-10h]"
-"	      00561aec    cmp eax,[ebp-1Ch]"
+"	      00561ae4    inc orderID"
+"	      00561ae8    movsx eax,orderID"
+"	      00561aec    cmp eax,drawordercount"
 "	      00561aef    jge near ptr 00561B68h"
 );
 // LINE 2277:
 	asm( 
-"	      00561af5    movsx eax,word ptr [ebp-10h]"
+"	      00561af5    movsx eax,orderID"
 "	      00561af9    mov eax,[eax*4+638670h]"
-"	      00561b00    mov [ebp-18h],eax"
+"	      00561b00    mov part,eax"
 );
 // LINE 2278:
 	asm( 
-"	      00561b03    cmp dword ptr [ebp-18h],0"
+"	      00561b03    cmp part,0"
 "	      00561b07    jne near ptr 00561B29h"
 "	      00561b0d    push 8C085h"
 "	      00561b12    push 5BE8D4h"
@@ -1541,9 +1541,9 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2279:
 	asm( 
-"	      00561b29    mov eax,[ebp-18h]"
+"	      00561b29    mov eax,part"
 "	      00561b2c    movsx eax,byte ptr [eax+4]"
-"	      00561b30    movsx ecx,word ptr [ebp+24h]"
+"	      00561b30    movsx ecx,nearMedFar"
 "	      00561b34    test ecx,eax"
 "	      00561b36    je near ptr 00561B63h"
 );
@@ -1551,19 +1551,19 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	asm( 
 "	      00561b3c    mov eax,[ebp+28h]"
 "	      00561b3f    push eax"
-"	      00561b40    mov eax,[ebp+20h]"
+"	      00561b40    mov eax,scale"
 "	      00561b43    push eax"
 "	      00561b44    mov eax,[ebp+1Ch]"
 "	      00561b47    push eax"
 "	      00561b48    mov eax,[ebp+18h]"
 "	      00561b4b    push eax"
-"	      00561b4c    mov eax,[ebp-18h]"
+"	      00561b4c    mov eax,part"
 "	      00561b4f    push eax"
-"	      00561b50    mov eax,[ebp+0Ch]"
+"	      00561b50    mov eax,yOff"
 "	      00561b53    push eax"
-"	      00561b54    mov eax,[ebp+8]"
+"	      00561b54    mov eax,xOff"
 "	      00561b57    push eax"
-"	      00561b58    mov ecx,[ebp-0A4h]"
+"	      00561b58    mov ecx,this"
 "	      00561b5e    call 00561281h"
 );
 // LINE 2281:
@@ -1599,7 +1599,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00561b92    push ebx"
 "	      00561b93    push esi"
 "	      00561b94    push edi"
-"	      00561b95    mov [ebp-9Ch],ecx"
+"	      00561b95    mov this,ecx"
 );
 // LINE 2286:
 	asm( 
@@ -1615,9 +1615,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 2290:
 	asm( 
 "	      00561bc4    push 10h"
-"	      00561bc6    lea eax,[ebp-1Ch]"
+"	      00561bc6    lea eax,tmp[0]"
 "	      00561bc9    push eax"
-"	      00561bca    mov eax,[ebp-9Ch]"
+"	      00561bca    mov eax,this"
 "	      00561bd0    add eax,0Ch"
 "	      00561bd3    push eax"
 "	      00561bd4    call 00554B76h"
@@ -1625,8 +1625,8 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 );
 // LINE 2291:
 	asm( 
-"	      00561bdc    mov byte ptr [ebp-18h],63h"
-"	      00561be0    mov ax,[ebp+8]"
+"	      00561bdc    mov tmp[4],63h"
+"	      00561be0    mov ax,expectondisk"
 "	      00561be4    mov [ebp-54h],ax"
 "	      00561be8    mov eax,ds:[5BE630h]"
 "	      00561bed    mov eax,[eax+0Ch]"
@@ -1634,7 +1634,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 );
 // LINE 2292:
 	asm( 
-"	      00561bf3    lea eax,[ebp-1Ch]"
+"	      00561bf3    lea eax,tmp[0]"
 "	      00561bf6    push eax"
 "	      00561bf7    call 005661F4h"
 "	      00561bfc    add esp,4"
@@ -1704,7 +1704,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00561d21    mov dword ptr [ebp-3Ch],41524350h"
 "	      00561d28    mov eax,[ebp-58h]"
 "	      00561d2b    mov [ebp-40h],eax"
-"	      00561d2e    lea eax,[ebp-1Ch]"
+"	      00561d2e    lea eax,tmp[0]"
 "	      00561d31    mov [ebp-44h],eax"
 "	      00561d34    mov dword ptr [ebp-48h],0"
 "	      00561d3b    mov dword ptr [ebp-4Ch],1"
@@ -1757,11 +1757,11 @@ _L31451:
 "	      00561de4    call 00554F30h"
 "	      00561de9    add esp,10h"
 "	      00561dec    mov eax,[ebp-24h]"
-"	      00561def    mov ecx,[ebp-9Ch]"
+"	      00561def    mov ecx,this"
 "	      00561df5    mov [ecx+28h],eax"
 "	      00561df8    jmp near ptr 00561E16h"
 "	      00561dfd    mov eax,[ebp-5Ch]"
-"	      00561e00    mov ecx,[ebp-9Ch]"
+"	      00561e00    mov ecx,this"
 "	      00561e06    mov [ecx+28h],eax"
 	);
 _L31439:
@@ -1774,12 +1774,12 @@ _L31439:
 );
 // LINE 2293:
 	asm( 
-"	      00561e16    mov word ptr [ebp-20h],0"
+"	      00561e16    mov numRealAnims,0"
 );
 // LINE 2294:
 	asm( 
-"	      00561e1c    mov byte ptr [ebp-18h],4Ch"
-"	      00561e20    mov ax,[ebp+8]"
+"	      00561e1c    mov tmp[4],4Ch"
+"	      00561e20    mov ax,expectondisk"
 "	      00561e24    mov [ebp-90h],ax"
 "	      00561e2b    mov eax,ds:[5BE630h]"
 "	      00561e30    mov eax,[eax+0Ch]"
@@ -1787,7 +1787,7 @@ _L31439:
 );
 // LINE 2295:
 	asm( 
-"	      00561e39    lea eax,[ebp-1Ch]"
+"	      00561e39    lea eax,tmp[0]"
 "	      00561e3c    push eax"
 "	      00561e3d    call 005661F4h"
 "	      00561e42    add esp,4"
@@ -1857,7 +1857,7 @@ _L31439:
 "	      00561f6a    mov dword ptr [ebp-78h],41524C55h"
 "	      00561f71    mov eax,[ebp-94h]"
 "	      00561f77    mov [ebp-7Ch],eax"
-"	      00561f7a    lea eax,[ebp-1Ch]"
+"	      00561f7a    lea eax,tmp[0]"
 "	      00561f7d    mov [ebp-80h],eax"
 "	      00561f80    mov dword ptr [ebp-84h],0"
 "	      00561f8a    mov dword ptr [ebp-88h],1"
@@ -1910,11 +1910,11 @@ _L31498:
 "	      0056204e    call 00554F30h"
 "	      00562053    add esp,10h"
 "	      00562056    mov eax,[ebp-60h]"
-"	      00562059    mov ecx,[ebp-9Ch]"
+"	      00562059    mov ecx,this"
 "	      0056205f    mov [ecx+2Ch],eax"
 "	      00562062    jmp near ptr 00562083h"
 "	      00562067    mov eax,[ebp-98h]"
-"	      0056206d    mov ecx,[ebp-9Ch]"
+"	      0056206d    mov ecx,this"
 "	      00562073    mov [ecx+2Ch],eax"
 	);
 _L31486:
@@ -1928,7 +1928,7 @@ _L31486:
 // LINE 2296:
 	asm( 
 "	      00562083    push 1"
-"	      00562085    mov ecx,[ebp-9Ch]"
+"	      00562085    mov ecx,this"
 "	      0056208b    call 00560E78h"
 );
 // LINE 2297:
@@ -1979,7 +1979,7 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2303:
 	asm( 
-"	      005620da    mov word ptr [ebp-4],0"
+"	      005620da    mov count,0"
 );
 // LINE 2304:
 	asm( 
@@ -1991,8 +1991,8 @@ void  cCopterBody::DestroyAll() {
 "	      005620ed    mov eax,ds:[5BE630h]"
 "	      005620f2    mov ecx,[eax+0Ch]"
 "	      005620f5    call 00553452h"
-"	      005620fa    mov [ebp-8],eax"
-"	      005620fd    cmp dword ptr [ebp-8],0"
+"	      005620fa    mov h,eax"
+"	      005620fd    cmp h,0"
 "	      00562101    je near ptr 00562148h"
 );
 // LINE 2305:
@@ -2001,9 +2001,9 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2306:
 	asm( 
-"	      0056210c    mov ax,[ebp-4]"
+"	      0056210c    mov ax,count"
 "	      00562110    mov [ebp-0Ch],ax"
-"	      00562114    inc word ptr [ebp-4]"
+"	      00562114    inc count"
 "	      00562118    movsx eax,word ptr [ebp-0Ch]"
 "	      0056211c    cmp eax,3E8h"
 "	      00562121    jle near ptr 00562143h"
@@ -2020,7 +2020,7 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2308:
 	asm( 
-"	      00562148    mov word ptr [ebp-4],0"
+"	      00562148    mov count,0"
 );
 // LINE 2309:
 	asm( 
@@ -2030,8 +2030,8 @@ void  cCopterBody::DestroyAll() {
 "	      00562157    mov eax,ds:[5BE630h]"
 "	      0056215c    mov ecx,[eax+0Ch]"
 "	      0056215f    call 00553452h"
-"	      00562164    mov [ebp-8],eax"
-"	      00562167    cmp dword ptr [ebp-8],0"
+"	      00562164    mov h,eax"
+"	      00562167    cmp h,0"
 "	      0056216b    je near ptr 005621B2h"
 );
 // LINE 2310:
@@ -2040,9 +2040,9 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2311:
 	asm( 
-"	      00562176    mov ax,[ebp-4]"
+"	      00562176    mov ax,count"
 "	      0056217a    mov [ebp-10h],ax"
-"	      0056217e    inc word ptr [ebp-4]"
+"	      0056217e    inc count"
 "	      00562182    movsx eax,word ptr [ebp-10h]"
 "	      00562186    cmp eax,3E8h"
 "	      0056218b    jle near ptr 005621ADh"
@@ -2059,7 +2059,7 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2313:
 	asm( 
-"	      005621b2    mov word ptr [ebp-4],0"
+"	      005621b2    mov count,0"
 );
 // LINE 2314:
 	asm( 
@@ -2069,8 +2069,8 @@ void  cCopterBody::DestroyAll() {
 "	      005621c1    mov eax,ds:[5BE630h]"
 "	      005621c6    mov ecx,[eax+0Ch]"
 "	      005621c9    call 00553452h"
-"	      005621ce    mov [ebp-8],eax"
-"	      005621d1    cmp dword ptr [ebp-8],0"
+"	      005621ce    mov h,eax"
+"	      005621d1    cmp h,0"
 "	      005621d5    je near ptr 0056221Ch"
 );
 // LINE 2315:
@@ -2079,9 +2079,9 @@ void  cCopterBody::DestroyAll() {
 );
 // LINE 2316:
 	asm( 
-"	      005621e0    mov ax,[ebp-4]"
+"	      005621e0    mov ax,count"
 "	      005621e4    mov [ebp-14h],ax"
-"	      005621e8    inc word ptr [ebp-4]"
+"	      005621e8    inc count"
 "	      005621ec    movsx eax,word ptr [ebp-14h]"
 "	      005621f0    cmp eax,3E8h"
 "	      005621f5    jle near ptr 00562217h"
@@ -2237,10 +2237,10 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 );
 // LINE 2325:
 	asm( 
-"	      005623d3    mov eax,[ebp+0Ch]"
+"	      005623d3    mov eax,p2"
 "	      005623d6    mov eax,[eax]"
 "	      005623d8    movsx eax,word ptr [eax+1Ah]"
-"	      005623dc    mov ecx,[ebp+8]"
+"	      005623dc    mov ecx,p1"
 "	      005623df    mov ecx,[ecx]"
 "	      005623e1    movsx ecx,word ptr [ecx+1Ah]"
 "	      005623e5    cmp eax,ecx"
@@ -2286,11 +2286,11 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2334:
 	asm( 
-"	      00562414    mov word ptr [ebp-4],28h"
+"	      00562414    mov debugbodypartsize,28h"
 );
 // LINE 2335:
 	asm( 
-"	      0056241a    cmp dword ptr [ebp+0Ch],28h"
+"	      0056241a    cmp size,28h"
 "	      0056241e    je near ptr 00562440h"
 "	      00562424    push 8C085h"
 "	      00562429    push 5BEA34h"
@@ -2301,12 +2301,12 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2336:
 	asm( 
-"	      00562440    mov eax,[ebp+8]"
-"	      00562443    mov [ebp-8],eax"
+"	      00562440    mov eax,val"
+"	      00562443    mov part,eax"
 );
 // LINE 2337:
 	asm( 
-"	      00562446    mov eax,[ebp-8]"
+"	      00562446    mov eax,part"
 "	      00562449    add eax,8"
 "	      0056244c    push eax"
 "	      0056244d    call 00566906h"
@@ -2314,7 +2314,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2338:
 	asm( 
-"	      00562455    mov eax,[ebp-8]"
+"	      00562455    mov eax,part"
 "	      00562458    add eax,0Ch"
 "	      0056245b    push eax"
 "	      0056245c    call 00566906h"
@@ -2322,7 +2322,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2339:
 	asm( 
-"	      00562464    mov eax,[ebp-8]"
+"	      00562464    mov eax,part"
 "	      00562467    add eax,1Ch"
 "	      0056246a    push eax"
 "	      0056246b    call 005668EAh"
@@ -2330,7 +2330,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2340:
 	asm( 
-"	      00562473    mov eax,[ebp-8]"
+"	      00562473    mov eax,part"
 "	      00562476    add eax,20h"
 "	      00562479    push eax"
 "	      0056247a    call 005668EAh"
@@ -2338,7 +2338,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 );
 // LINE 2341:
 	asm( 
-"	      00562482    mov eax,[ebp-8]"
+"	      00562482    mov eax,part"
 "	      00562485    add eax,24h"
 "	      00562488    push eax"
 "	      00562489    call 005668EAh"
@@ -2370,7 +2370,7 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 );
 // LINE 2348:
 	asm( 
-"	      005624a4    cmp dword ptr [ebp+0Ch],8"
+"	      005624a4    cmp size,8"
 "	      005624a8    je near ptr 005624CAh"
 "	      005624ae    push 8C085h"
 "	      005624b3    push 5BEA84h"
@@ -2381,19 +2381,19 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 );
 // LINE 2349:
 	asm( 
-"	      005624ca    mov eax,[ebp+8]"
-"	      005624cd    mov [ebp-4],eax"
+"	      005624ca    mov eax,val"
+"	      005624cd    mov al,eax"
 );
 // LINE 2350:
 	asm( 
-"	      005624d0    mov eax,[ebp-4]"
+"	      005624d0    mov eax,al"
 "	      005624d3    push eax"
 "	      005624d4    call 00566906h"
 "	      005624d9    add esp,4"
 );
 // LINE 2351:
 	asm( 
-"	      005624dc    mov eax,[ebp-4]"
+"	      005624dc    mov eax,al"
 "	      005624df    add eax,4"
 "	      005624e2    push eax"
 "	      005624e3    call 00566906h"

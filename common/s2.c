@@ -20,28 +20,28 @@ long S2TileSize(long tile) {
 );
 // LINE 46:
 	asm( 
-"	      0058e379    cmp dword ptr [ebp+8],61h"
+"	      0058e379    cmp tile,61h"
 "	      0058e37d    jl near ptr 0058E38Dh"
-"	      0058e383    cmp dword ptr [ebp+8],6Ch"
+"	      0058e383    cmp tile,6Ch"
 "	      0058e387    jl near ptr 0058E3A1h"
-"	      0058e38d    cmp dword ptr [ebp+8],49h"
+"	      0058e38d    cmp tile,49h"
 "	      0058e391    jl near ptr 0058E3ADh"
-"	      0058e397    cmp dword ptr [ebp+8],51h"
+"	      0058e397    cmp tile,51h"
 "	      0058e39b    jge near ptr 0058E3ADh"
 );
 // LINE 47:
 	asm( 
-"	      0058e3a1    mov dword ptr [ebp-4],2"
+"	      0058e3a1    mov size,2"
 );
 // LINE 49:
 	asm( 
 "	      0058e3a8    jmp near ptr 0058E3D1h"
-"	      0058e3ad    cmp dword ptr [ebp+8],70h"
+"	      0058e3ad    cmp tile,70h"
 "	      0058e3b1    jge near ptr 0058E3C3h"
 );
 // LINE 50:
 	asm( 
-"	      0058e3b7    mov dword ptr [ebp-4],1"
+"	      0058e3b7    mov size,1"
 );
 // LINE 52:
 	asm( 
@@ -49,13 +49,13 @@ long S2TileSize(long tile) {
 );
 // LINE 53:
 	asm( 
-"	      0058e3c3    mov eax,[ebp+8]"
+"	      0058e3c3    mov eax,tile"
 "	      0058e3c6    movsx eax,word ptr [eax*2+59BF68h]"
-"	      0058e3ce    mov [ebp-4],eax"
+"	      0058e3ce    mov size,eax"
 );
 // LINE 55:
 	asm( 
-"	      0058e3d1    mov eax,[ebp-4]"
+"	      0058e3d1    mov eax,size"
 "	      0058e3d4    jmp near ptr 0058E3D9h"
 );
 // LINE 56:

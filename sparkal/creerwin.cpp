@@ -27,24 +27,24 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 "	      0047df04    push ebx"
 "	      0047df05    push esi"
 "	      0047df06    push edi"
-"	      0047df07    mov [ebp-14h],ecx"
+"	      0047df07    mov this,ecx"
 "	      0047df0a    push 0FFFFFFFFh"
-"	      0047df0c    mov eax,[ebp+20h]"
+"	      0047df0c    mov eax,bAddToParentList"
 "	      0047df0f    push eax"
-"	      0047df10    mov eax,[ebp+1Ch]"
+"	      0047df10    mov eax,myNewOwner"
 "	      0047df13    push eax"
-"	      0047df14    mov eax,[ebp+18h]"
+"	      0047df14    mov eax,windowNewParent"
 "	      0047df17    push eax"
-"	      0047df18    mov eax,[ebp+0Ch]"
+"	      0047df18    mov eax,nNewID"
 "	      0047df1b    push eax"
-"	      0047df1c    mov eax,[ebp+8]"
+"	      0047df1c    mov eax,rectNewPosition"
 "	      0047df1f    push eax"
 "	      0047df20    mov eax,ds:[599A84h]"
 "	      0047df25    push eax"
-"	      0047df26    mov ecx,[ebp-14h]"
+"	      0047df26    mov ecx,this"
 "	      0047df29    call 004A393Dh"
 "	      0047df2e    mov dword ptr [ebp-4],3"
-"	      0047df35    mov eax,[ebp-14h]"
+"	      0047df35    mov eax,this"
 "	      0047df38    add eax,78h"
 "	      0047df3b    mov [ebp-8],eax"
 "	      0047df3e    dec dword ptr [ebp-4]"
@@ -54,11 +54,11 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 "	      0047df4f    add dword ptr [ebp-8],10h"
 "	      0047df53    jmp near ptr 0047DF3Eh"
 "	      0047df58    jmp near ptr 0047DF5Dh"
-"	      0047df5d    mov eax,[ebp+24h]"
-"	      0047df60    mov ecx,[ebp-14h]"
+"	      0047df5d    mov eax,bNewAllowCancel"
+"	      0047df60    mov ecx,this"
 "	      0047df63    mov [ecx+0B8h],eax"
 "	      0047df69    mov dword ptr [ebp-0Ch],3"
-"	      0047df70    mov eax,[ebp-14h]"
+"	      0047df70    mov eax,this"
 "	      0047df73    add eax,0BCh"
 "	      0047df78    mov [ebp-10h],eax"
 "	      0047df7b    dec dword ptr [ebp-0Ch]"
@@ -68,74 +68,74 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 "	      0047df8c    add dword ptr [ebp-10h],27Ch"
 "	      0047df93    jmp near ptr 0047DF7Bh"
 "	      0047df98    jmp near ptr 0047DF9Dh"
-"	      0047df9d    mov eax,[ebp+10h]"
-"	      0047dfa0    mov ecx,[ebp-14h]"
+"	      0047df9d    mov eax,myNewPlatformWindow"
+"	      0047dfa0    mov ecx,this"
 "	      0047dfa3    mov [ecx+830h],eax"
-"	      0047dfa9    mov eax,[ebp-14h]"
+"	      0047dfa9    mov eax,this"
 "	      0047dfac    mov dword ptr [eax+83Ch],0"
-"	      0047dfb6    mov eax,[ebp-14h]"
+"	      0047dfb6    mov eax,this"
 "	      0047dfb9    mov dword ptr [eax],590E30h"
 );
 // LINE 64:
 	asm( 
-"	      0047dfbf    mov eax,[ebp-14h]"
+"	      0047dfbf    mov eax,this"
 "	      0047dfc2    mov dword ptr [eax+78h],4Dh"
-"	      0047dfc9    mov eax,[ebp-14h]"
+"	      0047dfc9    mov eax,this"
 "	      0047dfcc    mov dword ptr [eax+7Ch],47h"
-"	      0047dfd3    mov eax,[ebp-14h]"
+"	      0047dfd3    mov eax,this"
 "	      0047dfd6    mov dword ptr [eax+80h],115h"
-"	      0047dfe0    mov eax,[ebp-14h]"
+"	      0047dfe0    mov eax,this"
 "	      0047dfe3    mov dword ptr [eax+84h],0B3h"
 "	      0047dfed    jmp near ptr 0047DFF2h"
 );
 // LINE 65:
 	asm( 
-"	      0047dff2    mov eax,[ebp-14h]"
+"	      0047dff2    mov eax,this"
 "	      0047dff5    mov dword ptr [eax+88h],153h"
-"	      0047dfff    mov eax,[ebp-14h]"
+"	      0047dfff    mov eax,this"
 "	      0047e002    mov dword ptr [eax+8Ch],47h"
-"	      0047e00c    mov eax,[ebp-14h]"
+"	      0047e00c    mov eax,this"
 "	      0047e00f    mov dword ptr [eax+90h],21Bh"
-"	      0047e019    mov eax,[ebp-14h]"
+"	      0047e019    mov eax,this"
 "	      0047e01c    mov dword ptr [eax+94h],0B3h"
 "	      0047e026    jmp near ptr 0047E02Bh"
 );
 // LINE 66:
 	asm( 
-"	      0047e02b    mov eax,[ebp-14h]"
+"	      0047e02b    mov eax,this"
 "	      0047e02e    mov dword ptr [eax+98h],4Dh"
-"	      0047e038    mov eax,[ebp-14h]"
+"	      0047e038    mov eax,this"
 "	      0047e03b    mov dword ptr [eax+9Ch],0F9h"
-"	      0047e045    mov eax,[ebp-14h]"
+"	      0047e045    mov eax,this"
 "	      0047e048    mov dword ptr [eax+0A0h],115h"
-"	      0047e052    mov eax,[ebp-14h]"
+"	      0047e052    mov eax,this"
 "	      0047e055    mov dword ptr [eax+0A4h],165h"
 "	      0047e05f    jmp near ptr 0047E064h"
 );
 // LINE 68:
 	asm( 
-"	      0047e064    cmp dword ptr [ebp+14h],0"
+"	      0047e064    cmp lNewCities,0"
 "	      0047e068    je near ptr 0047E09Fh"
 );
 // LINE 69:
 	asm( 
-"	      0047e06e    mov eax,[ebp+14h]"
+"	      0047e06e    mov eax,lNewCities"
 "	      0047e071    mov eax,[eax]"
-"	      0047e073    mov ecx,[ebp-14h]"
+"	      0047e073    mov ecx,this"
 "	      0047e076    mov [ecx+0A8h],eax"
 );
 // LINE 70:
 	asm( 
-"	      0047e07c    mov eax,[ebp+14h]"
+"	      0047e07c    mov eax,lNewCities"
 "	      0047e07f    mov eax,[eax+4]"
-"	      0047e082    mov ecx,[ebp-14h]"
+"	      0047e082    mov ecx,this"
 "	      0047e085    mov [ecx+0ACh],eax"
 );
 // LINE 71:
 	asm( 
-"	      0047e08b    mov eax,[ebp+14h]"
+"	      0047e08b    mov eax,lNewCities"
 "	      0047e08e    mov eax,[eax+8]"
-"	      0047e091    mov ecx,[ebp-14h]"
+"	      0047e091    mov ecx,this"
 "	      0047e094    mov [ecx+0B0h],eax"
 );
 // LINE 73:
@@ -145,57 +145,57 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 // LINE 74:
 	asm( 
 "	      0047e09f    mov eax,ds:[5C2AA8h]"
-"	      0047e0a4    mov ecx,[ebp-14h]"
+"	      0047e0a4    mov ecx,this"
 "	      0047e0a7    mov [ecx+0A8h],eax"
 );
 // LINE 75:
 	asm( 
 "	      0047e0ad    mov eax,ds:[5C2AACh]"
-"	      0047e0b2    mov ecx,[ebp-14h]"
+"	      0047e0b2    mov ecx,this"
 "	      0047e0b5    mov [ecx+0ACh],eax"
 );
 // LINE 76:
 	asm( 
 "	      0047e0bb    mov eax,ds:[5C2AB0h]"
-"	      0047e0c0    mov ecx,[ebp-14h]"
+"	      0047e0c0    mov ecx,this"
 "	      0047e0c3    mov [ecx+0B0h],eax"
 );
 // LINE 80:
 	asm( 
-"	      0047e0c9    mov eax,[ebp-14h]"
+"	      0047e0c9    mov eax,this"
 "	      0047e0cc    mov dword ptr [eax+0B4h],3"
 );
 // LINE 81:
 	asm( 
-"	      0047e0d6    mov eax,[ebp-14h]"
+"	      0047e0d6    mov eax,this"
 "	      0047e0d9    cmp dword ptr [eax+0B0h],0FFFFFFFFh"
 "	      0047e0e0    jne near ptr 0047E0F3h"
 );
 // LINE 82:
 	asm( 
-"	      0047e0e6    mov eax,[ebp-14h]"
+"	      0047e0e6    mov eax,this"
 "	      0047e0e9    mov dword ptr [eax+0B4h],2"
 );
 // LINE 83:
 	asm( 
-"	      0047e0f3    mov eax,[ebp-14h]"
+"	      0047e0f3    mov eax,this"
 "	      0047e0f6    cmp dword ptr [eax+0ACh],0FFFFFFFFh"
 "	      0047e0fd    jne near ptr 0047E110h"
 );
 // LINE 84:
 	asm( 
-"	      0047e103    mov eax,[ebp-14h]"
+"	      0047e103    mov eax,this"
 "	      0047e106    mov dword ptr [eax+0B4h],1"
 );
 // LINE 86:
 	asm( 
-"	      0047e110    mov eax,[ebp-14h]"
+"	      0047e110    mov eax,this"
 "	      0047e113    mov dword ptr [eax+74h],0FFFFFFFFh"
 );
 // LINE 87:
 	asm( 
 "	      0047e11a    jmp near ptr 0047E11Fh"
-"	      0047e11f    mov eax,[ebp-14h]"
+"	      0047e11f    mov eax,this"
 "	      0047e122    pop edi"
 "	      0047e123    pop esi"
 "	      0047e124    pop ebx"
@@ -214,20 +214,20 @@ void CareerWindow::~CareerWindow() {
 "	      0047e12f    push ebx"
 "	      0047e130    push esi"
 "	      0047e131    push edi"
-"	      0047e132    mov [ebp-0Ch],ecx"
-"	      0047e135    mov eax,[ebp-0Ch]"
+"	      0047e132    mov this,ecx"
+"	      0047e135    mov eax,this"
 "	      0047e138    mov dword ptr [eax],590E30h"
 );
 // LINE 94:
 	asm( 
-"	      0047e13e    mov ecx,[ebp-0Ch]"
+"	      0047e13e    mov ecx,this"
 "	      0047e141    call 0047F75Ah"
 );
 // LINE 95:
 	asm( 
 "	      0047e146    jmp near ptr 0047E14Bh"
 "	      0047e14b    mov dword ptr [ebp-4],3"
-"	      0047e152    mov eax,[ebp-0Ch]"
+"	      0047e152    mov eax,this"
 "	      0047e155    add eax,0BCh"
 "	      0047e15a    mov [ebp-8],eax"
 "	      0047e15d    mov eax,[ebp-4]"
@@ -244,7 +244,7 @@ void CareerWindow::~CareerWindow() {
 "	      0047e182    call 00498FE5h"
 "	      0047e187    jmp near ptr 0047E16Fh"
 "	      0047e18c    jmp near ptr 0047E191h"
-"	      0047e191    mov ecx,[ebp-0Ch]"
+"	      0047e191    mov ecx,this"
 "	      0047e194    call 004A4045h"
 "	      0047e199    pop edi"
 "	      0047e19a    pop esi"
@@ -272,7 +272,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e1ab    push ebx"
 "	      0047e1ac    push esi"
 "	      0047e1ad    push edi"
-"	      0047e1ae    mov [ebp-5320h],ecx"
+"	      0047e1ae    mov this,ecx"
 );
 // LINE 103:
 	asm( 
@@ -294,20 +294,20 @@ int32_t CareerWindow::Initialize() {
 "	      0047e202    mov dword ptr [eax+0Ch],1"
 "	      0047e209    jmp near ptr 0047E20Eh"
 "	      0047e20e    mov eax,[ebp-298h]"
-"	      0047e214    mov [ebp-8],eax"
+"	      0047e214    mov sText.reference,eax"
 "	      0047e217    jmp near ptr 0047E223h"
-"	      0047e21c    mov dword ptr [ebp-8],0"
-"	      0047e223    mov dword ptr [ebp-0Ch],0"
+"	      0047e21c    mov sText.reference,0"
+"	      0047e223    mov sText.c_str_ptr,0"
 "	      0047e22a    jmp near ptr 0047E22Fh"
 );
 // LINE 109:
 	asm( 
-"	      0047e22f    mov ecx,[ebp-5320h]"
+"	      0047e22f    mov ecx,this"
 "	      0047e235    call 004A44D4h"
 );
 // LINE 111:
 	asm( 
-"	      0047e23a    mov eax,[ebp-5320h]"
+"	      0047e23a    mov eax,this"
 "	      0047e240    cmp dword ptr [eax+0B8h],0"
 "	      0047e247    je near ptr 0047E89Ch"
 );
@@ -329,20 +329,20 @@ int32_t CareerWindow::Initialize() {
 "	      0047e290    mov dword ptr [ebp-22Ch],153h"
 "	      0047e29a    jmp near ptr 0047E29Fh"
 "	      0047e29f    push 1"
-"	      0047e2a1    mov eax,[ebp-5320h]"
+"	      0047e2a1    mov eax,this"
 "	      0047e2a7    push eax"
 "	      0047e2a8    mov eax,ds:[599A8Ch]"
 "	      0047e2ad    push eax"
-"	      0047e2ae    mov eax,[ebp-5320h]"
+"	      0047e2ae    mov eax,this"
 "	      0047e2b4    push eax"
 "	      0047e2b5    push 1"
 "	      0047e2b7    lea eax,[ebp-238h]"
 "	      0047e2bd    push eax"
 "	      0047e2be    mov ecx,[ebp-228h]"
 "	      0047e2c4    call 00471847h"
-"	      0047e2c9    mov [ebp-21Ch],eax"
+"	      0047e2c9    mov tempButtonWindow1,eax"
 "	      0047e2cf    jmp near ptr 0047E2DEh"
-"	      0047e2d4    mov dword ptr [ebp-21Ch],0"
+"	      0047e2d4    mov tempButtonWindow1,0"
 );
 // LINE 116:
 	asm( 
@@ -350,14 +350,14 @@ int32_t CareerWindow::Initialize() {
 "	      0047e2e0    push 51h"
 "	      0047e2e2    call 0042B15Fh"
 "	      0047e2e7    add esp,8"
-"	      0047e2ea    mov [ebp-4],eax"
+"	      0047e2ea    mov nFullStringID,eax"
 );
 // LINE 117:
 	asm( 
 "	      0047e2ed    push 0FFFh"
 "	      0047e2f2    lea eax,[ebp-12A8h]"
 "	      0047e2f8    push eax"
-"	      0047e2f9    mov eax,[ebp-4]"
+"	      0047e2f9    mov eax,nFullStringID"
 "	      0047e2fc    push eax"
 "	      0047e2fd    mov eax,ds:[5C28C8h]"
 "	      0047e302    push eax"
@@ -369,7 +369,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e321    lea eax,[ebp-12A8h]"
 "	      0047e327    push eax"
 "	      0047e328    mov ecx,3E8h"
-"	      0047e32d    mov eax,[ebp-4]"
+"	      0047e32d    mov eax,nFullStringID"
 "	      0047e330    sub edx,edx"
 "	      0047e332    div ecx"
 "	      0047e334    push edx"
@@ -385,7 +385,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e35b    push eax"
 "	      0047e35c    lea eax,[ebp-12A8h]"
 "	      0047e362    push eax"
-"	      0047e363    lea ecx,[ebp-0Ch]"
+"	      0047e363    lea ecx,sText.c_str_ptr"
 "	      0047e366    call 0040FEE0h"
 "	      0047e36b    jmp near ptr 0047E370h"
 "	      0047e370    jmp near ptr 0047E375h"
@@ -394,7 +394,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e37f    add esp,4"
 "	      0047e382    push eax"
 "	      0047e383    push 597200h"
-"	      0047e388    lea ecx,[ebp-0Ch]"
+"	      0047e388    lea ecx,sText.c_str_ptr"
 "	      0047e38b    call 00410130h"
 "	      0047e390    jmp near ptr 0047E395h"
 "	      0047e395    jmp near ptr 0047E52Eh"
@@ -420,13 +420,13 @@ int32_t CareerWindow::Initialize() {
 "	      0047e3f1    add esp,4"
 "	      0047e3f4    jmp near ptr 0047E3F9h"
 "	      0047e3f9    jmp near ptr 0047E3FEh"
-"	      0047e3fe    mov eax,[ebp-8]"
+"	      0047e3fe    mov eax,sText.reference"
 "	      0047e401    cmp dword ptr [eax+0Ch],1"
 "	      0047e405    ja near ptr 0047E42Fh"
 "	      0047e40b    cmp dword ptr [ebp-12C8h],0"
 "	      0047e412    je near ptr 0047E4D4h"
 "	      0047e418    jmp near ptr 0047E41Dh"
-"	      0047e41d    mov eax,[ebp-8]"
+"	      0047e41d    mov eax,sText.reference"
 "	      0047e420    mov ecx,[ebp-12C8h]"
 "	      0047e426    cmp [eax+8],ecx"
 "	      0047e429    jae near ptr 0047E4D4h"
@@ -445,12 +445,12 @@ int32_t CareerWindow::Initialize() {
 "	      0047e465    mov [ebp-12B0h],eax"
 "	      0047e46b    jmp near ptr 0047E47Ah"
 "	      0047e470    mov dword ptr [ebp-12B0h],0"
-"	      0047e47a    mov eax,[ebp-8]"
+"	      0047e47a    mov eax,sText.reference"
 "	      0047e47d    dec dword ptr [eax+0Ch]"
-"	      0047e480    mov eax,[ebp-8]"
+"	      0047e480    mov eax,sText.reference"
 "	      0047e483    cmp dword ptr [eax+0Ch],0"
 "	      0047e487    jne near ptr 0047E4C1h"
-"	      0047e48d    mov eax,[ebp-8]"
+"	      0047e48d    mov eax,sText.reference"
 "	      0047e490    mov [ebp-12C4h],eax"
 "	      0047e496    mov eax,[ebp-12C4h]"
 "	      0047e49c    mov [ebp-12C0h],eax"
@@ -462,12 +462,12 @@ int32_t CareerWindow::Initialize() {
 "	      0047e4bc    jmp near ptr 0047E4C1h"
 "	      0047e4c1    jmp near ptr 0047E4C6h"
 "	      0047e4c6    mov eax,[ebp-12B0h]"
-"	      0047e4cc    mov [ebp-8],eax"
+"	      0047e4cc    mov sText.reference,eax"
 "	      0047e4cf    jmp near ptr 0047E513h"
 "	      0047e4d4    cmp dword ptr [ebp-12C8h],0"
 "	      0047e4db    je near ptr 0047E513h"
 "	      0047e4e1    jmp near ptr 0047E4E6h"
-"	      0047e4e6    mov eax,[ebp-8]"
+"	      0047e4e6    mov eax,sText.reference"
 "	      0047e4e9    mov eax,[eax]"
 "	      0047e4eb    mov [ebp-12B8h],eax"
 "	      0047e4f1    mov eax,[ebp-12C8h]"
@@ -480,7 +480,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e50b    add esp,0Ch"
 "	      0047e50e    jmp near ptr 0047E513h"
 "	      0047e513    mov eax,[ebp-12C8h]"
-"	      0047e519    mov ecx,[ebp-8]"
+"	      0047e519    mov ecx,sText.reference"
 "	      0047e51c    mov [ecx+4],eax"
 "	      0047e51f    jmp near ptr 0047E524h"
 "	      0047e524    jmp near ptr 0047E529h"
@@ -488,27 +488,27 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 118:
 	asm( 
-"	      0047e52e    lea eax,[ebp-0Ch]"
+"	      0047e52e    lea eax,sText.c_str_ptr"
 "	      0047e531    push eax"
-"	      0047e532    mov eax,[ebp-21Ch]"
+"	      0047e532    mov eax,tempButtonWindow1"
 "	      0047e538    mov eax,[eax]"
-"	      0047e53a    mov ecx,[ebp-21Ch]"
+"	      0047e53a    mov ecx,tempButtonWindow1"
 "	      0047e540    call dword ptr [eax+48h]"
 );
 // LINE 119:
 	asm( 
 "	      0047e543    push 60444Ch"
 "	      0047e548    push 604448h"
-"	      0047e54d    mov eax,[ebp-21Ch]"
+"	      0047e54d    mov eax,tempButtonWindow1"
 "	      0047e553    mov eax,[eax]"
-"	      0047e555    mov ecx,[ebp-21Ch]"
+"	      0047e555    mov ecx,tempButtonWindow1"
 "	      0047e55b    call dword ptr [eax+0D8h]"
 );
 // LINE 120:
 	asm( 
-"	      0047e561    mov eax,[ebp-21Ch]"
+"	      0047e561    mov eax,tempButtonWindow1"
 "	      0047e567    mov eax,[eax]"
-"	      0047e569    mov ecx,[ebp-21Ch]"
+"	      0047e569    mov ecx,tempButtonWindow1"
 "	      0047e56f    call dword ptr [eax+4]"
 );
 // LINE 124:
@@ -526,20 +526,20 @@ int32_t CareerWindow::Initialize() {
 "	      0047e5b5    mov dword ptr [ebp-240h],153h"
 "	      0047e5bf    jmp near ptr 0047E5C4h"
 "	      0047e5c4    push 1"
-"	      0047e5c6    mov eax,[ebp-5320h]"
+"	      0047e5c6    mov eax,this"
 "	      0047e5cc    push eax"
 "	      0047e5cd    mov eax,ds:[599A8Ch]"
 "	      0047e5d2    push eax"
-"	      0047e5d3    mov eax,[ebp-5320h]"
+"	      0047e5d3    mov eax,this"
 "	      0047e5d9    push eax"
 "	      0047e5da    push 2"
 "	      0047e5dc    lea eax,[ebp-24Ch]"
 "	      0047e5e2    push eax"
 "	      0047e5e3    mov ecx,[ebp-23Ch]"
 "	      0047e5e9    call 00471847h"
-"	      0047e5ee    mov [ebp-220h],eax"
+"	      0047e5ee    mov tempButtonWindow2,eax"
 "	      0047e5f4    jmp near ptr 0047E603h"
-"	      0047e5f9    mov dword ptr [ebp-220h],0"
+"	      0047e5f9    mov tempButtonWindow2,0"
 );
 // LINE 125:
 	asm( 
@@ -547,14 +547,14 @@ int32_t CareerWindow::Initialize() {
 "	      0047e605    push 52h"
 "	      0047e607    call 0042B15Fh"
 "	      0047e60c    add esp,8"
-"	      0047e60f    mov [ebp-4],eax"
+"	      0047e60f    mov nFullStringID,eax"
 );
 // LINE 126:
 	asm( 
 "	      0047e612    push 0FFFh"
 "	      0047e617    lea eax,[ebp-22C8h]"
 "	      0047e61d    push eax"
-"	      0047e61e    mov eax,[ebp-4]"
+"	      0047e61e    mov eax,nFullStringID"
 "	      0047e621    push eax"
 "	      0047e622    mov eax,ds:[5C28C8h]"
 "	      0047e627    push eax"
@@ -566,7 +566,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e646    lea eax,[ebp-22C8h]"
 "	      0047e64c    push eax"
 "	      0047e64d    mov ecx,3E8h"
-"	      0047e652    mov eax,[ebp-4]"
+"	      0047e652    mov eax,nFullStringID"
 "	      0047e655    sub edx,edx"
 "	      0047e657    div ecx"
 "	      0047e659    push edx"
@@ -582,7 +582,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e680    push eax"
 "	      0047e681    lea eax,[ebp-22C8h]"
 "	      0047e687    push eax"
-"	      0047e688    lea ecx,[ebp-0Ch]"
+"	      0047e688    lea ecx,sText.c_str_ptr"
 "	      0047e68b    call 0040FEE0h"
 "	      0047e690    jmp near ptr 0047E695h"
 "	      0047e695    jmp near ptr 0047E69Ah"
@@ -591,7 +591,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e6a4    add esp,4"
 "	      0047e6a7    push eax"
 "	      0047e6a8    push 597200h"
-"	      0047e6ad    lea ecx,[ebp-0Ch]"
+"	      0047e6ad    lea ecx,sText.c_str_ptr"
 "	      0047e6b0    call 00410130h"
 "	      0047e6b5    jmp near ptr 0047E6BAh"
 "	      0047e6ba    jmp near ptr 0047E853h"
@@ -617,13 +617,13 @@ int32_t CareerWindow::Initialize() {
 "	      0047e716    add esp,4"
 "	      0047e719    jmp near ptr 0047E71Eh"
 "	      0047e71e    jmp near ptr 0047E723h"
-"	      0047e723    mov eax,[ebp-8]"
+"	      0047e723    mov eax,sText.reference"
 "	      0047e726    cmp dword ptr [eax+0Ch],1"
 "	      0047e72a    ja near ptr 0047E754h"
 "	      0047e730    cmp dword ptr [ebp-22E8h],0"
 "	      0047e737    je near ptr 0047E7F9h"
 "	      0047e73d    jmp near ptr 0047E742h"
-"	      0047e742    mov eax,[ebp-8]"
+"	      0047e742    mov eax,sText.reference"
 "	      0047e745    mov ecx,[ebp-22E8h]"
 "	      0047e74b    cmp [eax+8],ecx"
 "	      0047e74e    jae near ptr 0047E7F9h"
@@ -642,12 +642,12 @@ int32_t CareerWindow::Initialize() {
 "	      0047e78a    mov [ebp-22D0h],eax"
 "	      0047e790    jmp near ptr 0047E79Fh"
 "	      0047e795    mov dword ptr [ebp-22D0h],0"
-"	      0047e79f    mov eax,[ebp-8]"
+"	      0047e79f    mov eax,sText.reference"
 "	      0047e7a2    dec dword ptr [eax+0Ch]"
-"	      0047e7a5    mov eax,[ebp-8]"
+"	      0047e7a5    mov eax,sText.reference"
 "	      0047e7a8    cmp dword ptr [eax+0Ch],0"
 "	      0047e7ac    jne near ptr 0047E7E6h"
-"	      0047e7b2    mov eax,[ebp-8]"
+"	      0047e7b2    mov eax,sText.reference"
 "	      0047e7b5    mov [ebp-22E4h],eax"
 "	      0047e7bb    mov eax,[ebp-22E4h]"
 "	      0047e7c1    mov [ebp-22E0h],eax"
@@ -659,12 +659,12 @@ int32_t CareerWindow::Initialize() {
 "	      0047e7e1    jmp near ptr 0047E7E6h"
 "	      0047e7e6    jmp near ptr 0047E7EBh"
 "	      0047e7eb    mov eax,[ebp-22D0h]"
-"	      0047e7f1    mov [ebp-8],eax"
+"	      0047e7f1    mov sText.reference,eax"
 "	      0047e7f4    jmp near ptr 0047E838h"
 "	      0047e7f9    cmp dword ptr [ebp-22E8h],0"
 "	      0047e800    je near ptr 0047E838h"
 "	      0047e806    jmp near ptr 0047E80Bh"
-"	      0047e80b    mov eax,[ebp-8]"
+"	      0047e80b    mov eax,sText.reference"
 "	      0047e80e    mov eax,[eax]"
 "	      0047e810    mov [ebp-22D8h],eax"
 "	      0047e816    mov eax,[ebp-22E8h]"
@@ -677,7 +677,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e830    add esp,0Ch"
 "	      0047e833    jmp near ptr 0047E838h"
 "	      0047e838    mov eax,[ebp-22E8h]"
-"	      0047e83e    mov ecx,[ebp-8]"
+"	      0047e83e    mov ecx,sText.reference"
 "	      0047e841    mov [ecx+4],eax"
 "	      0047e844    jmp near ptr 0047E849h"
 "	      0047e849    jmp near ptr 0047E84Eh"
@@ -685,27 +685,27 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 127:
 	asm( 
-"	      0047e853    lea eax,[ebp-0Ch]"
+"	      0047e853    lea eax,sText.c_str_ptr"
 "	      0047e856    push eax"
-"	      0047e857    mov eax,[ebp-220h]"
+"	      0047e857    mov eax,tempButtonWindow2"
 "	      0047e85d    mov eax,[eax]"
-"	      0047e85f    mov ecx,[ebp-220h]"
+"	      0047e85f    mov ecx,tempButtonWindow2"
 "	      0047e865    call dword ptr [eax+48h]"
 );
 // LINE 128:
 	asm( 
 "	      0047e868    push 60444Ch"
 "	      0047e86d    push 604448h"
-"	      0047e872    mov eax,[ebp-220h]"
+"	      0047e872    mov eax,tempButtonWindow2"
 "	      0047e878    mov eax,[eax]"
-"	      0047e87a    mov ecx,[ebp-220h]"
+"	      0047e87a    mov ecx,tempButtonWindow2"
 "	      0047e880    call dword ptr [eax+0D8h]"
 );
 // LINE 129:
 	asm( 
-"	      0047e886    mov eax,[ebp-220h]"
+"	      0047e886    mov eax,tempButtonWindow2"
 "	      0047e88c    mov eax,[eax]"
-"	      0047e88e    mov ecx,[ebp-220h]"
+"	      0047e88e    mov ecx,tempButtonWindow2"
 "	      0047e894    call dword ptr [eax+4]"
 );
 // LINE 131:
@@ -730,20 +730,20 @@ int32_t CareerWindow::Initialize() {
 "	      0047e8df    mov dword ptr [ebp-254h],153h"
 "	      0047e8e9    jmp near ptr 0047E8EEh"
 "	      0047e8ee    push 1"
-"	      0047e8f0    mov eax,[ebp-5320h]"
+"	      0047e8f0    mov eax,this"
 "	      0047e8f6    push eax"
 "	      0047e8f7    mov eax,ds:[599A8Ch]"
 "	      0047e8fc    push eax"
-"	      0047e8fd    mov eax,[ebp-5320h]"
+"	      0047e8fd    mov eax,this"
 "	      0047e903    push eax"
 "	      0047e904    push 1"
 "	      0047e906    lea eax,[ebp-260h]"
 "	      0047e90c    push eax"
 "	      0047e90d    mov ecx,[ebp-250h]"
 "	      0047e913    call 00471847h"
-"	      0047e918    mov [ebp-224h],eax"
+"	      0047e918    mov tempButtonWindow1,eax"
 "	      0047e91e    jmp near ptr 0047E92Dh"
-"	      0047e923    mov dword ptr [ebp-224h],0"
+"	      0047e923    mov tempButtonWindow1,0"
 );
 // LINE 135:
 	asm( 
@@ -751,14 +751,14 @@ int32_t CareerWindow::Initialize() {
 "	      0047e92f    push 51h"
 "	      0047e931    call 0042B15Fh"
 "	      0047e936    add esp,8"
-"	      0047e939    mov [ebp-4],eax"
+"	      0047e939    mov nFullStringID,eax"
 );
 // LINE 136:
 	asm( 
 "	      0047e93c    push 0FFFh"
 "	      0047e941    lea eax,[ebp-32E8h]"
 "	      0047e947    push eax"
-"	      0047e948    mov eax,[ebp-4]"
+"	      0047e948    mov eax,nFullStringID"
 "	      0047e94b    push eax"
 "	      0047e94c    mov eax,ds:[5C28C8h]"
 "	      0047e951    push eax"
@@ -770,7 +770,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e970    lea eax,[ebp-32E8h]"
 "	      0047e976    push eax"
 "	      0047e977    mov ecx,3E8h"
-"	      0047e97c    mov eax,[ebp-4]"
+"	      0047e97c    mov eax,nFullStringID"
 "	      0047e97f    sub edx,edx"
 "	      0047e981    div ecx"
 "	      0047e983    push edx"
@@ -786,7 +786,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e9aa    push eax"
 "	      0047e9ab    lea eax,[ebp-32E8h]"
 "	      0047e9b1    push eax"
-"	      0047e9b2    lea ecx,[ebp-0Ch]"
+"	      0047e9b2    lea ecx,sText.c_str_ptr"
 "	      0047e9b5    call 0040FEE0h"
 "	      0047e9ba    jmp near ptr 0047E9BFh"
 "	      0047e9bf    jmp near ptr 0047E9C4h"
@@ -795,7 +795,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047e9ce    add esp,4"
 "	      0047e9d1    push eax"
 "	      0047e9d2    push 597200h"
-"	      0047e9d7    lea ecx,[ebp-0Ch]"
+"	      0047e9d7    lea ecx,sText.c_str_ptr"
 "	      0047e9da    call 00410130h"
 "	      0047e9df    jmp near ptr 0047E9E4h"
 "	      0047e9e4    jmp near ptr 0047EB39h"
@@ -821,13 +821,13 @@ int32_t CareerWindow::Initialize() {
 "	      0047ea40    add esp,4"
 "	      0047ea43    jmp near ptr 0047EA48h"
 "	      0047ea48    jmp near ptr 0047EA4Dh"
-"	      0047ea4d    mov eax,[ebp-8]"
+"	      0047ea4d    mov eax,sText.reference"
 "	      0047ea50    cmp dword ptr [eax+0Ch],1"
 "	      0047ea54    ja near ptr 0047EA7Eh"
 "	      0047ea5a    cmp dword ptr [ebp-3300h],0"
 "	      0047ea61    je near ptr 0047EADFh"
 "	      0047ea67    jmp near ptr 0047EA6Ch"
-"	      0047ea6c    mov eax,[ebp-8]"
+"	      0047ea6c    mov eax,sText.reference"
 "	      0047ea6f    mov ecx,[ebp-3300h]"
 "	      0047ea75    cmp [eax+8],ecx"
 "	      0047ea78    jae near ptr 0047EADFh"
@@ -846,15 +846,15 @@ int32_t CareerWindow::Initialize() {
 "	      0047eab4    mov [ebp-32F0h],eax"
 "	      0047eaba    jmp near ptr 0047EAC9h"
 "	      0047eabf    mov dword ptr [ebp-32F0h],0"
-"	      0047eac9    lea ecx,[ebp-0Ch]"
+"	      0047eac9    lea ecx,sText.c_str_ptr"
 "	      0047eacc    call 00412080h"
 "	      0047ead1    mov eax,[ebp-32F0h]"
-"	      0047ead7    mov [ebp-8],eax"
+"	      0047ead7    mov sText.reference,eax"
 "	      0047eada    jmp near ptr 0047EB1Eh"
 "	      0047eadf    cmp dword ptr [ebp-3300h],0"
 "	      0047eae6    je near ptr 0047EB1Eh"
 "	      0047eaec    jmp near ptr 0047EAF1h"
-"	      0047eaf1    mov eax,[ebp-8]"
+"	      0047eaf1    mov eax,sText.reference"
 "	      0047eaf4    mov eax,[eax]"
 "	      0047eaf6    mov [ebp-32F8h],eax"
 "	      0047eafc    mov eax,[ebp-3300h]"
@@ -867,7 +867,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047eb16    add esp,0Ch"
 "	      0047eb19    jmp near ptr 0047EB1Eh"
 "	      0047eb1e    mov eax,[ebp-3300h]"
-"	      0047eb24    mov ecx,[ebp-8]"
+"	      0047eb24    mov ecx,sText.reference"
 "	      0047eb27    mov [ecx+4],eax"
 "	      0047eb2a    jmp near ptr 0047EB2Fh"
 "	      0047eb2f    jmp near ptr 0047EB34h"
@@ -875,52 +875,52 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 137:
 	asm( 
-"	      0047eb39    lea eax,[ebp-0Ch]"
+"	      0047eb39    lea eax,sText.c_str_ptr"
 "	      0047eb3c    push eax"
-"	      0047eb3d    mov eax,[ebp-224h]"
+"	      0047eb3d    mov eax,tempButtonWindow1"
 "	      0047eb43    mov eax,[eax]"
-"	      0047eb45    mov ecx,[ebp-224h]"
+"	      0047eb45    mov ecx,tempButtonWindow1"
 "	      0047eb4b    call dword ptr [eax+48h]"
 );
 // LINE 138:
 	asm( 
 "	      0047eb4e    push 60444Ch"
 "	      0047eb53    push 604448h"
-"	      0047eb58    mov eax,[ebp-224h]"
+"	      0047eb58    mov eax,tempButtonWindow1"
 "	      0047eb5e    mov eax,[eax]"
-"	      0047eb60    mov ecx,[ebp-224h]"
+"	      0047eb60    mov ecx,tempButtonWindow1"
 "	      0047eb66    call dword ptr [eax+0D8h]"
 );
 // LINE 139:
 	asm( 
-"	      0047eb6c    mov eax,[ebp-224h]"
+"	      0047eb6c    mov eax,tempButtonWindow1"
 "	      0047eb72    mov eax,[eax]"
-"	      0047eb74    mov ecx,[ebp-224h]"
+"	      0047eb74    mov ecx,tempButtonWindow1"
 "	      0047eb7a    call dword ptr [eax+4]"
 );
 // LINE 143:
 // Block end:
 	asm( 
-"	      0047eb7d    mov eax,[ebp-5320h]"
+"	      0047eb7d    mov eax,this"
 "	      0047eb83    mov eax,[eax+0A8h]"
 "	      0047eb89    add eax,0F0h"
-"	      0047eb8e    mov [ebp-10h],eax"
+"	      0047eb8e    mov lCityNameString,eax"
 );
 // LINE 144:
 	asm( 
 "	      0047eb91    push 0"
-"	      0047eb93    mov eax,[ebp-10h]"
+"	      0047eb93    mov eax,lCityNameString"
 "	      0047eb96    push eax"
 "	      0047eb97    call 0042B15Fh"
 "	      0047eb9c    add esp,8"
-"	      0047eb9f    mov [ebp-4],eax"
+"	      0047eb9f    mov nFullStringID,eax"
 );
 // LINE 145:
 	asm( 
 "	      0047eba2    push 0FFFh"
 "	      0047eba7    lea eax,[ebp-4300h]"
 "	      0047ebad    push eax"
-"	      0047ebae    mov eax,[ebp-4]"
+"	      0047ebae    mov eax,nFullStringID"
 "	      0047ebb1    push eax"
 "	      0047ebb2    mov eax,ds:[5C28C8h]"
 "	      0047ebb7    push eax"
@@ -932,7 +932,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ebd6    lea eax,[ebp-4300h]"
 "	      0047ebdc    push eax"
 "	      0047ebdd    mov ecx,3E8h"
-"	      0047ebe2    mov eax,[ebp-4]"
+"	      0047ebe2    mov eax,nFullStringID"
 "	      0047ebe5    sub edx,edx"
 "	      0047ebe7    div ecx"
 "	      0047ebe9    push edx"
@@ -948,7 +948,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ec10    push eax"
 "	      0047ec11    lea eax,[ebp-4300h]"
 "	      0047ec17    push eax"
-"	      0047ec18    lea ecx,[ebp-0Ch]"
+"	      0047ec18    lea ecx,sText.c_str_ptr"
 "	      0047ec1b    call 0040FEE0h"
 "	      0047ec20    jmp near ptr 0047EC25h"
 "	      0047ec25    jmp near ptr 0047EC2Ah"
@@ -957,7 +957,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ec34    add esp,4"
 "	      0047ec37    push eax"
 "	      0047ec38    push 597200h"
-"	      0047ec3d    lea ecx,[ebp-0Ch]"
+"	      0047ec3d    lea ecx,sText.c_str_ptr"
 "	      0047ec40    call 00410130h"
 "	      0047ec45    jmp near ptr 0047EC4Ah"
 "	      0047ec4a    jmp near ptr 0047ED9Fh"
@@ -983,13 +983,13 @@ int32_t CareerWindow::Initialize() {
 "	      0047eca6    add esp,4"
 "	      0047eca9    jmp near ptr 0047ECAEh"
 "	      0047ecae    jmp near ptr 0047ECB3h"
-"	      0047ecb3    mov eax,[ebp-8]"
+"	      0047ecb3    mov eax,sText.reference"
 "	      0047ecb6    cmp dword ptr [eax+0Ch],1"
 "	      0047ecba    ja near ptr 0047ECE4h"
 "	      0047ecc0    cmp dword ptr [ebp-4318h],0"
 "	      0047ecc7    je near ptr 0047ED45h"
 "	      0047eccd    jmp near ptr 0047ECD2h"
-"	      0047ecd2    mov eax,[ebp-8]"
+"	      0047ecd2    mov eax,sText.reference"
 "	      0047ecd5    mov ecx,[ebp-4318h]"
 "	      0047ecdb    cmp [eax+8],ecx"
 "	      0047ecde    jae near ptr 0047ED45h"
@@ -1008,15 +1008,15 @@ int32_t CareerWindow::Initialize() {
 "	      0047ed1a    mov [ebp-4308h],eax"
 "	      0047ed20    jmp near ptr 0047ED2Fh"
 "	      0047ed25    mov dword ptr [ebp-4308h],0"
-"	      0047ed2f    lea ecx,[ebp-0Ch]"
+"	      0047ed2f    lea ecx,sText.c_str_ptr"
 "	      0047ed32    call 00412080h"
 "	      0047ed37    mov eax,[ebp-4308h]"
-"	      0047ed3d    mov [ebp-8],eax"
+"	      0047ed3d    mov sText.reference,eax"
 "	      0047ed40    jmp near ptr 0047ED84h"
 "	      0047ed45    cmp dword ptr [ebp-4318h],0"
 "	      0047ed4c    je near ptr 0047ED84h"
 "	      0047ed52    jmp near ptr 0047ED57h"
-"	      0047ed57    mov eax,[ebp-8]"
+"	      0047ed57    mov eax,sText.reference"
 "	      0047ed5a    mov eax,[eax]"
 "	      0047ed5c    mov [ebp-4310h],eax"
 "	      0047ed62    mov eax,[ebp-4318h]"
@@ -1029,7 +1029,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ed7c    add esp,0Ch"
 "	      0047ed7f    jmp near ptr 0047ED84h"
 "	      0047ed84    mov eax,[ebp-4318h]"
-"	      0047ed8a    mov ecx,[ebp-8]"
+"	      0047ed8a    mov ecx,sText.reference"
 "	      0047ed8d    mov [ecx+4],eax"
 "	      0047ed90    jmp near ptr 0047ED95h"
 "	      0047ed95    jmp near ptr 0047ED9Ah"
@@ -1051,25 +1051,25 @@ int32_t CareerWindow::Initialize() {
 "	      0047edec    jmp near ptr 0047EDF1h"
 "	      0047edf1    push 1"
 "	      0047edf3    push 0"
-"	      0047edf5    mov eax,[ebp-5320h]"
+"	      0047edf5    mov eax,this"
 "	      0047edfb    push eax"
-"	      0047edfc    lea eax,[ebp-0Ch]"
+"	      0047edfc    lea eax,sText.c_str_ptr"
 "	      0047edff    push eax"
 "	      0047ee00    push 0"
 "	      0047ee02    lea eax,[ebp-274h]"
 "	      0047ee08    push eax"
 "	      0047ee09    mov ecx,[ebp-264h]"
 "	      0047ee0f    call 004ACDA2h"
-"	      0047ee14    mov ecx,[ebp-5320h]"
+"	      0047ee14    mov ecx,this"
 "	      0047ee1a    mov [ecx+834h],eax"
 "	      0047ee20    jmp near ptr 0047EE35h"
-"	      0047ee25    mov eax,[ebp-5320h]"
+"	      0047ee25    mov eax,this"
 "	      0047ee2b    mov dword ptr [eax+834h],0"
 );
 // LINE 149:
 	asm( 
-"	      0047ee35    mov eax,[ebp-5320h]"
-"	      0047ee3b    mov ecx,[ebp-5320h]"
+"	      0047ee35    mov eax,this"
+"	      0047ee3b    mov ecx,this"
 "	      0047ee41    mov ecx,[ecx+834h]"
 "	      0047ee47    mov edx,[ecx]"
 "	      0047ee49    mov ecx,[eax+834h]"
@@ -1080,8 +1080,8 @@ int32_t CareerWindow::Initialize() {
 "	      0047ee52    push 0"
 "	      0047ee54    push 0"
 "	      0047ee56    push 12h"
-"	      0047ee58    mov eax,[ebp-5320h]"
-"	      0047ee5e    mov ecx,[ebp-5320h]"
+"	      0047ee58    mov eax,this"
+"	      0047ee5e    mov ecx,this"
 "	      0047ee64    mov ecx,[ecx+834h]"
 "	      0047ee6a    mov edx,[ecx]"
 "	      0047ee6c    mov ecx,[eax+834h]"
@@ -1090,8 +1090,8 @@ int32_t CareerWindow::Initialize() {
 // LINE 151:
 	asm( 
 "	      0047ee78    push 1"
-"	      0047ee7a    mov eax,[ebp-5320h]"
-"	      0047ee80    mov ecx,[ebp-5320h]"
+"	      0047ee7a    mov eax,this"
+"	      0047ee80    mov ecx,this"
 "	      0047ee86    mov ecx,[ecx+834h]"
 "	      0047ee8c    mov edx,[ecx]"
 "	      0047ee8e    mov ecx,[eax+834h]"
@@ -1105,8 +1105,8 @@ int32_t CareerWindow::Initialize() {
 "	      0047eeaf    jmp near ptr 0047EEB4h"
 "	      0047eeb4    lea eax,[ebp-278h]"
 "	      0047eeba    push eax"
-"	      0047eebb    mov eax,[ebp-5320h]"
-"	      0047eec1    mov ecx,[ebp-5320h]"
+"	      0047eebb    mov eax,this"
+"	      0047eec1    mov ecx,this"
 "	      0047eec7    mov ecx,[ecx+834h]"
 "	      0047eecd    mov edx,[ecx]"
 "	      0047eecf    mov ecx,[eax+834h]"
@@ -1114,28 +1114,28 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 154:
 	asm( 
-"	      0047eedb    mov eax,[ebp-5320h]"
+"	      0047eedb    mov eax,this"
 "	      0047eee1    mov eax,[eax+0A8h]"
 "	      0047eee7    shl eax,3"
 "	      0047eeea    mov eax,[eax+eax*8+5C2B18h]"
 "	      0047eef1    add eax,122h"
-"	      0047eef6    mov [ebp-118h],eax"
+"	      0047eef6    mov lCityLevelString,eax"
 );
 // LINE 155:
 	asm( 
 "	      0047eefc    push 0"
-"	      0047eefe    mov eax,[ebp-118h]"
+"	      0047eefe    mov eax,lCityLevelString"
 "	      0047ef04    push eax"
 "	      0047ef05    call 0042B15Fh"
 "	      0047ef0a    add esp,8"
-"	      0047ef0d    mov [ebp-4],eax"
+"	      0047ef0d    mov nFullStringID,eax"
 );
 // LINE 156:
 	asm( 
 "	      0047ef10    push 0FFFh"
 "	      0047ef15    lea eax,[ebp-5318h]"
 "	      0047ef1b    push eax"
-"	      0047ef1c    mov eax,[ebp-4]"
+"	      0047ef1c    mov eax,nFullStringID"
 "	      0047ef1f    push eax"
 "	      0047ef20    mov eax,ds:[5C28C8h]"
 "	      0047ef25    push eax"
@@ -1147,7 +1147,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ef44    lea eax,[ebp-5318h]"
 "	      0047ef4a    push eax"
 "	      0047ef4b    mov ecx,3E8h"
-"	      0047ef50    mov eax,[ebp-4]"
+"	      0047ef50    mov eax,nFullStringID"
 "	      0047ef53    sub edx,edx"
 "	      0047ef55    div ecx"
 "	      0047ef57    push edx"
@@ -1163,7 +1163,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047ef7e    push eax"
 "	      0047ef7f    lea eax,[ebp-5318h]"
 "	      0047ef85    push eax"
-"	      0047ef86    lea ecx,[ebp-0Ch]"
+"	      0047ef86    lea ecx,sText.c_str_ptr"
 "	      0047ef89    call 0040FEE0h"
 "	      0047ef8e    jmp near ptr 0047EF93h"
 "	      0047ef93    jmp near ptr 0047EF98h"
@@ -1172,7 +1172,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047efa2    add esp,4"
 "	      0047efa5    push eax"
 "	      0047efa6    push 597200h"
-"	      0047efab    lea ecx,[ebp-0Ch]"
+"	      0047efab    lea ecx,sText.c_str_ptr"
 "	      0047efae    call 00410130h"
 "	      0047efb3    jmp near ptr 0047EFB8h"
 "	      0047efb8    jmp near ptr 0047EFEBh"
@@ -1184,7 +1184,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047efd1    push eax"
 "	      0047efd2    lea eax,[ebp-5318h]"
 "	      0047efd8    push eax"
-"	      0047efd9    lea ecx,[ebp-0Ch]"
+"	      0047efd9    lea ecx,sText.c_str_ptr"
 "	      0047efdc    call 0040FEE0h"
 "	      0047efe1    jmp near ptr 0047EFE6h"
 "	      0047efe6    jmp near ptr 0047EFEBh"
@@ -1205,25 +1205,25 @@ int32_t CareerWindow::Initialize() {
 "	      0047f038    jmp near ptr 0047F03Dh"
 "	      0047f03d    push 1"
 "	      0047f03f    push 0"
-"	      0047f041    mov eax,[ebp-5320h]"
+"	      0047f041    mov eax,this"
 "	      0047f047    push eax"
-"	      0047f048    lea eax,[ebp-0Ch]"
+"	      0047f048    lea eax,sText.c_str_ptr"
 "	      0047f04b    push eax"
 "	      0047f04c    push 0"
 "	      0047f04e    lea eax,[ebp-28Ch]"
 "	      0047f054    push eax"
 "	      0047f055    mov ecx,[ebp-27Ch]"
 "	      0047f05b    call 004ACDA2h"
-"	      0047f060    mov ecx,[ebp-5320h]"
+"	      0047f060    mov ecx,this"
 "	      0047f066    mov [ecx+838h],eax"
 "	      0047f06c    jmp near ptr 0047F081h"
-"	      0047f071    mov eax,[ebp-5320h]"
+"	      0047f071    mov eax,this"
 "	      0047f077    mov dword ptr [eax+838h],0"
 );
 // LINE 160:
 	asm( 
-"	      0047f081    mov eax,[ebp-5320h]"
-"	      0047f087    mov ecx,[ebp-5320h]"
+"	      0047f081    mov eax,this"
+"	      0047f087    mov ecx,this"
 "	      0047f08d    mov ecx,[ecx+838h]"
 "	      0047f093    mov edx,[ecx]"
 "	      0047f095    mov ecx,[eax+838h]"
@@ -1234,8 +1234,8 @@ int32_t CareerWindow::Initialize() {
 "	      0047f09e    push 0"
 "	      0047f0a0    push 0"
 "	      0047f0a2    push 12h"
-"	      0047f0a4    mov eax,[ebp-5320h]"
-"	      0047f0aa    mov ecx,[ebp-5320h]"
+"	      0047f0a4    mov eax,this"
+"	      0047f0aa    mov ecx,this"
 "	      0047f0b0    mov ecx,[ecx+838h]"
 "	      0047f0b6    mov edx,[ecx]"
 "	      0047f0b8    mov ecx,[eax+838h]"
@@ -1244,8 +1244,8 @@ int32_t CareerWindow::Initialize() {
 // LINE 162:
 	asm( 
 "	      0047f0c4    push 1"
-"	      0047f0c6    mov eax,[ebp-5320h]"
-"	      0047f0cc    mov ecx,[ebp-5320h]"
+"	      0047f0c6    mov eax,this"
+"	      0047f0cc    mov ecx,this"
 "	      0047f0d2    mov ecx,[ecx+838h]"
 "	      0047f0d8    mov edx,[ecx]"
 "	      0047f0da    mov ecx,[eax+838h]"
@@ -1259,8 +1259,8 @@ int32_t CareerWindow::Initialize() {
 "	      0047f0fb    jmp near ptr 0047F100h"
 "	      0047f100    lea eax,[ebp-290h]"
 "	      0047f106    push eax"
-"	      0047f107    mov eax,[ebp-5320h]"
-"	      0047f10d    mov ecx,[ebp-5320h]"
+"	      0047f107    mov eax,this"
+"	      0047f10d    mov ecx,this"
 "	      0047f113    mov ecx,[ecx+838h]"
 "	      0047f119    mov edx,[ecx]"
 "	      0047f11b    mov ecx,[eax+838h]"
@@ -1268,9 +1268,9 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 167:
 	asm( 
-"	      0047f127    lea eax,[ebp-218h]"
+"	      0047f127    lea eax,szFullCityVideoFileName[0]"
 "	      0047f12d    push eax"
-"	      0047f12e    mov eax,[ebp-5320h]"
+"	      0047f12e    mov eax,this"
 "	      0047f134    mov eax,[eax+0A8h]"
 "	      0047f13a    shl eax,3"
 "	      0047f13d    mov eax,[eax+eax*8+5C2B5Ch]"
@@ -1281,9 +1281,9 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 169:
 	asm( 
-"	      0047f14f    lea eax,[ebp-114h]"
+"	      0047f14f    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f155    push eax"
-"	      0047f156    lea eax,[ebp-218h]"
+"	      0047f156    lea eax,szFullCityVideoFileName[0]"
 "	      0047f15c    push eax"
 "	      0047f15d    push 0"
 "	      0047f15f    push 1"
@@ -1294,24 +1294,24 @@ int32_t CareerWindow::Initialize() {
 	asm( 
 "	      0047f169    push 0FFFFFFFFh"
 "	      0047f16b    push 0FE000h"
-"	      0047f170    lea eax,[ebp-114h]"
+"	      0047f170    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f176    push eax"
-"	      0047f177    mov ecx,[ebp-5320h]"
-"	      0047f17d    mov eax,[ebp-5320h]"
+"	      0047f177    mov ecx,this"
+"	      0047f17d    mov eax,this"
 "	      0047f183    mov eax,[eax+0BCh]"
 "	      0047f189    add ecx,0BCh"
 "	      0047f18f    call dword ptr [eax+10h]"
 );
 // LINE 171:
 	asm( 
-"	      0047f192    mov eax,[ebp-5320h]"
+"	      0047f192    mov eax,this"
 "	      0047f198    mov dword ptr [eax+0C4h],1"
 );
 // LINE 174:
 	asm( 
-"	      0047f1a2    lea eax,[ebp-218h]"
+"	      0047f1a2    lea eax,szFullCityVideoFileName[0]"
 "	      0047f1a8    push eax"
-"	      0047f1a9    mov eax,[ebp-5320h]"
+"	      0047f1a9    mov eax,this"
 "	      0047f1af    mov eax,[eax+0ACh]"
 "	      0047f1b5    shl eax,3"
 "	      0047f1b8    mov eax,[eax+eax*8+5C2B5Ch]"
@@ -1322,9 +1322,9 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 176:
 	asm( 
-"	      0047f1ca    lea eax,[ebp-114h]"
+"	      0047f1ca    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f1d0    push eax"
-"	      0047f1d1    lea eax,[ebp-218h]"
+"	      0047f1d1    lea eax,szFullCityVideoFileName[0]"
 "	      0047f1d7    push eax"
 "	      0047f1d8    push 0"
 "	      0047f1da    push 1"
@@ -1335,24 +1335,24 @@ int32_t CareerWindow::Initialize() {
 	asm( 
 "	      0047f1e4    push 0FFFFFFFFh"
 "	      0047f1e6    push 0FE000h"
-"	      0047f1eb    lea eax,[ebp-114h]"
+"	      0047f1eb    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f1f1    push eax"
-"	      0047f1f2    mov ecx,[ebp-5320h]"
-"	      0047f1f8    mov eax,[ebp-5320h]"
+"	      0047f1f2    mov ecx,this"
+"	      0047f1f8    mov eax,this"
 "	      0047f1fe    mov eax,[eax+338h]"
 "	      0047f204    add ecx,338h"
 "	      0047f20a    call dword ptr [eax+10h]"
 );
 // LINE 178:
 	asm( 
-"	      0047f20d    mov eax,[ebp-5320h]"
+"	      0047f20d    mov eax,this"
 "	      0047f213    mov dword ptr [eax+340h],1"
 );
 // LINE 181:
 	asm( 
-"	      0047f21d    lea eax,[ebp-218h]"
+"	      0047f21d    lea eax,szFullCityVideoFileName[0]"
 "	      0047f223    push eax"
-"	      0047f224    mov eax,[ebp-5320h]"
+"	      0047f224    mov eax,this"
 "	      0047f22a    mov eax,[eax+0B0h]"
 "	      0047f230    shl eax,3"
 "	      0047f233    mov eax,[eax+eax*8+5C2B5Ch]"
@@ -1363,9 +1363,9 @@ int32_t CareerWindow::Initialize() {
 );
 // LINE 183:
 	asm( 
-"	      0047f245    lea eax,[ebp-114h]"
+"	      0047f245    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f24b    push eax"
-"	      0047f24c    lea eax,[ebp-218h]"
+"	      0047f24c    lea eax,szFullCityVideoFileName[0]"
 "	      0047f252    push eax"
 "	      0047f253    push 0"
 "	      0047f255    push 1"
@@ -1376,45 +1376,45 @@ int32_t CareerWindow::Initialize() {
 	asm( 
 "	      0047f25f    push 0FFFFFFFFh"
 "	      0047f261    push 0FE000h"
-"	      0047f266    lea eax,[ebp-114h]"
+"	      0047f266    lea eax,szFullCityVideoFilePath[0]"
 "	      0047f26c    push eax"
-"	      0047f26d    mov ecx,[ebp-5320h]"
-"	      0047f273    mov eax,[ebp-5320h]"
+"	      0047f26d    mov ecx,this"
+"	      0047f273    mov eax,this"
 "	      0047f279    mov eax,[eax+5B4h]"
 "	      0047f27f    add ecx,5B4h"
 "	      0047f285    call dword ptr [eax+10h]"
 );
 // LINE 185:
 	asm( 
-"	      0047f288    mov eax,[ebp-5320h]"
+"	      0047f288    mov eax,this"
 "	      0047f28e    mov dword ptr [eax+5BCh],1"
 );
 // LINE 187:
 	asm( 
 "	      0047f298    push 1"
-"	      0047f29a    mov eax,[ebp-5320h]"
+"	      0047f29a    mov eax,this"
 "	      0047f2a0    mov eax,[eax]"
-"	      0047f2a2    mov ecx,[ebp-5320h]"
+"	      0047f2a2    mov ecx,this"
 "	      0047f2a8    call dword ptr [eax+10h]"
 );
 // LINE 189:
 	asm( 
-"	      0047f2ab    mov eax,[ebp-5320h]"
+"	      0047f2ab    mov eax,this"
 "	      0047f2b1    mov eax,[eax+0A8h]"
 "	      0047f2b7    push eax"
-"	      0047f2b8    mov ecx,[ebp-5320h]"
+"	      0047f2b8    mov ecx,this"
 "	      0047f2be    call 0047FDF2h"
 );
 // LINE 191:
 	asm( 
-"	      0047f2c3    mov eax,[ebp-5320h]"
+"	      0047f2c3    mov eax,this"
 "	      0047f2c9    push eax"
 "	      0047f2ca    call 004A7075h"
 "	      0047f2cf    add esp,4"
 );
 // LINE 192:
 	asm( 
-"	      0047f2d2    mov eax,[ebp-5320h]"
+"	      0047f2d2    mov eax,this"
 "	      0047f2d8    push eax"
 "	      0047f2d9    call 004A7470h"
 "	      0047f2de    add esp,4"
@@ -1422,12 +1422,12 @@ int32_t CareerWindow::Initialize() {
 // LINE 194:
 	asm( 
 "	      0047f2e1    mov dword ptr [ebp-294h],1"
-"	      0047f2eb    mov eax,[ebp-8]"
+"	      0047f2eb    mov eax,sText.reference"
 "	      0047f2ee    dec dword ptr [eax+0Ch]"
-"	      0047f2f1    mov eax,[ebp-8]"
+"	      0047f2f1    mov eax,sText.reference"
 "	      0047f2f4    cmp dword ptr [eax+0Ch],0"
 "	      0047f2f8    jne near ptr 0047F349h"
-"	      0047f2fe    mov eax,[ebp-8]"
+"	      0047f2fe    mov eax,sText.reference"
 "	      0047f301    mov [ebp-2A8h],eax"
 "	      0047f307    mov eax,[ebp-2A8h]"
 "	      0047f30d    mov [ebp-2A4h],eax"
@@ -1443,9 +1443,9 @@ int32_t CareerWindow::Initialize() {
 "	      0047f33f    jmp near ptr 0047F344h"
 "	      0047f344    jmp near ptr 0047F349h"
 "	      0047f349    jmp near ptr 0047F34Eh"
-"	      0047f34e    cmp dword ptr [ebp-0Ch],0"
+"	      0047f34e    cmp sText.c_str_ptr,0"
 "	      0047f352    je near ptr 0047F37Ch"
-"	      0047f358    mov eax,[ebp-0Ch]"
+"	      0047f358    mov eax,sText.c_str_ptr"
 "	      0047f35b    mov [ebp-29Ch],eax"
 "	      0047f361    mov eax,[ebp-29Ch]"
 "	      0047f367    mov [ebp-2A0h],eax"
@@ -1480,7 +1480,7 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f397    push ebx"
 "	      0047f398    push esi"
 "	      0047f399    push edi"
-"	      0047f39a    mov [ebp-78h],ecx"
+"	      0047f39a    mov this,ecx"
 );
 // LINE 202:
 	asm( 
@@ -1502,10 +1502,10 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f3d6    mov dword ptr [eax+0Ch],1"
 "	      0047f3dd    jmp near ptr 0047F3E2h"
 "	      0047f3e2    mov eax,[ebp-20h]"
-"	      0047f3e5    mov [ebp-4],eax"
+"	      0047f3e5    mov sImageFile.reference,eax"
 "	      0047f3e8    jmp near ptr 0047F3F4h"
-"	      0047f3ed    mov dword ptr [ebp-4],0"
-"	      0047f3f4    mov dword ptr [ebp-8],0"
+"	      0047f3ed    mov sImageFile.reference,0"
+"	      0047f3f4    mov sImageFile.c_str_ptr,0"
 "	      0047f3fb    jmp near ptr 0047F400h"
 );
 // LINE 203:
@@ -1528,21 +1528,21 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f439    mov dword ptr [eax+0Ch],1"
 "	      0047f440    jmp near ptr 0047F445h"
 "	      0047f445    mov eax,[ebp-24h]"
-"	      0047f448    mov [ebp-0Ch],eax"
+"	      0047f448    mov sImagePath.reference,eax"
 "	      0047f44b    jmp near ptr 0047F457h"
-"	      0047f450    mov dword ptr [ebp-0Ch],0"
-"	      0047f457    mov dword ptr [ebp-10h],0"
+"	      0047f450    mov sImagePath.reference,0"
+"	      0047f457    mov sImagePath.c_str_ptr,0"
 "	      0047f45e    jmp near ptr 0047F463h"
 );
 // LINE 205:
 	asm( 
 "	      0047f463    push 1"
-"	      0047f465    mov ecx,[ebp-78h]"
+"	      0047f465    mov ecx,this"
 "	      0047f468    call 004A4AA0h"
 );
 // LINE 206:
 	asm( 
-"	      0047f46d    mov eax,[ebp-78h]"
+"	      0047f46d    mov eax,this"
 "	      0047f470    cmp dword ptr [eax+83Ch],0"
 "	      0047f477    jne near ptr 0047F5E6h"
 "	      0047f47d    mov eax,ds:[599A88h]"
@@ -1558,15 +1558,15 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f496    push eax"
 "	      0047f497    mov eax,[ebp-1Ch]"
 "	      0047f49a    push eax"
-"	      0047f49b    lea ecx,[ebp-8]"
+"	      0047f49b    lea ecx,sImageFile.c_str_ptr"
 "	      0047f49e    call 0040FEE0h"
 "	      0047f4a3    jmp near ptr 0047F4A8h"
 );
 // LINE 208:
 	asm( 
-"	      0047f4a8    lea eax,[ebp-10h]"
+"	      0047f4a8    lea eax,sImagePath.c_str_ptr"
 "	      0047f4ab    push eax"
-"	      0047f4ac    lea eax,[ebp-8]"
+"	      0047f4ac    lea eax,sImageFile.c_str_ptr"
 "	      0047f4af    push eax"
 "	      0047f4b0    push 0"
 "	      0047f4b2    push 6"
@@ -1582,9 +1582,9 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f4d0    mov [ebp-14h],eax"
 "	      0047f4d3    cmp dword ptr [ebp-14h],0"
 "	      0047f4d7    je near ptr 0047F5D9h"
-"	      0047f4dd    cmp dword ptr [ebp-10h],0"
+"	      0047f4dd    cmp sImagePath.c_str_ptr,0"
 "	      0047f4e1    je near ptr 0047F4FFh"
-"	      0047f4e7    mov eax,[ebp-10h]"
+"	      0047f4e7    mov eax,sImagePath.c_str_ptr"
 "	      0047f4ea    mov [ebp-58h],eax"
 "	      0047f4ed    mov eax,[ebp-58h]"
 "	      0047f4f0    mov [ebp-60h],eax"
@@ -1593,33 +1593,33 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f4f7    call 0056A740h"
 "	      0047f4fc    add esp,4"
 "	      0047f4ff    jmp near ptr 0047F504h"
-"	      0047f504    mov eax,[ebp-0Ch]"
+"	      0047f504    mov eax,sImagePath.reference"
 "	      0047f507    mov eax,[eax+4]"
 "	      0047f50a    inc eax"
 "	      0047f50b    push eax"
 "	      0047f50c    call 0056A600h"
 "	      0047f511    add esp,4"
-"	      0047f514    mov [ebp-10h],eax"
+"	      0047f514    mov sImagePath.c_str_ptr,eax"
 "	      0047f517    jmp near ptr 0047F51Ch"
-"	      0047f51c    mov eax,[ebp-0Ch]"
+"	      0047f51c    mov eax,sImagePath.reference"
 "	      0047f51f    cmp dword ptr [eax+4],0"
 "	      0047f523    je near ptr 0047F586h"
 "	      0047f529    jmp near ptr 0047F52Eh"
 "	      0047f52e    jmp near ptr 0047F533h"
-"	      0047f533    mov eax,[ebp-0Ch]"
+"	      0047f533    mov eax,sImagePath.reference"
 "	      0047f536    cmp dword ptr [eax+4],0"
 "	      0047f53a    je near ptr 0047F552h"
-"	      0047f540    mov eax,[ebp-0Ch]"
+"	      0047f540    mov eax,sImagePath.reference"
 "	      0047f543    mov eax,[eax]"
 "	      0047f545    mov [ebp-6Ch],eax"
 "	      0047f548    jmp near ptr 0047F55Eh"
 "	      0047f54d    jmp near ptr 0047F55Eh"
 "	      0047f552    mov dword ptr [ebp-6Ch],0"
 "	      0047f559    jmp near ptr 0047F55Eh"
-"	      0047f55e    mov eax,[ebp-0Ch]"
+"	      0047f55e    mov eax,sImagePath.reference"
 "	      0047f561    mov eax,[eax+4]"
 "	      0047f564    mov [ebp-70h],eax"
-"	      0047f567    mov eax,[ebp-10h]"
+"	      0047f567    mov eax,sImagePath.c_str_ptr"
 "	      0047f56a    mov [ebp-74h],eax"
 "	      0047f56d    mov eax,[ebp-70h]"
 "	      0047f570    push eax"
@@ -1636,9 +1636,9 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f594    lea eax,[ebp-5Ch]"
 "	      0047f597    mov [ebp-64h],eax"
 "	      0047f59a    jmp near ptr 0047F59Fh"
-"	      0047f59f    mov eax,[ebp-0Ch]"
+"	      0047f59f    mov eax,sImagePath.reference"
 "	      0047f5a2    mov eax,[eax+4]"
-"	      0047f5a5    add eax,[ebp-10h]"
+"	      0047f5a5    add eax,sImagePath.c_str_ptr"
 "	      0047f5a8    mov [ebp-68h],eax"
 "	      0047f5ab    mov eax,[ebp-64h]"
 "	      0047f5ae    mov al,[eax]"
@@ -1646,25 +1646,25 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f5b3    mov [ecx],al"
 "	      0047f5b5    jmp near ptr 0047F5BAh"
 "	      0047f5ba    jmp near ptr 0047F5BFh"
-"	      0047f5bf    mov eax,[ebp-10h]"
+"	      0047f5bf    mov eax,sImagePath.c_str_ptr"
 "	      0047f5c2    push eax"
 "	      0047f5c3    mov ecx,[ebp-14h]"
 "	      0047f5c6    call 0046E6DFh"
-"	      0047f5cb    mov ecx,[ebp-78h]"
+"	      0047f5cb    mov ecx,this"
 "	      0047f5ce    mov [ecx+83Ch],eax"
 "	      0047f5d4    jmp near ptr 0047F5E6h"
-"	      0047f5d9    mov eax,[ebp-78h]"
+"	      0047f5d9    mov eax,this"
 "	      0047f5dc    mov dword ptr [eax+83Ch],0"
 );
 // LINE 211:
 	asm( 
 "	      0047f5e6    mov dword ptr [ebp-18h],1"
-"	      0047f5ed    mov eax,[ebp-0Ch]"
+"	      0047f5ed    mov eax,sImagePath.reference"
 "	      0047f5f0    dec dword ptr [eax+0Ch]"
-"	      0047f5f3    mov eax,[ebp-0Ch]"
+"	      0047f5f3    mov eax,sImagePath.reference"
 "	      0047f5f6    cmp dword ptr [eax+0Ch],0"
 "	      0047f5fa    jne near ptr 0047F670h"
-"	      0047f600    mov eax,[ebp-0Ch]"
+"	      0047f600    mov eax,sImagePath.reference"
 "	      0047f603    mov [ebp-34h],eax"
 "	      0047f606    mov eax,[ebp-34h]"
 "	      0047f609    mov [ebp-30h],eax"
@@ -1695,9 +1695,9 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f666    jmp near ptr 0047F66Bh"
 "	      0047f66b    jmp near ptr 0047F670h"
 "	      0047f670    jmp near ptr 0047F675h"
-"	      0047f675    cmp dword ptr [ebp-10h],0"
+"	      0047f675    cmp sImagePath.c_str_ptr,0"
 "	      0047f679    je near ptr 0047F697h"
-"	      0047f67f    mov eax,[ebp-10h]"
+"	      0047f67f    mov eax,sImagePath.c_str_ptr"
 "	      0047f682    mov [ebp-28h],eax"
 "	      0047f685    mov eax,[ebp-28h]"
 "	      0047f688    mov [ebp-2Ch],eax"
@@ -1706,12 +1706,12 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f68f    call 0056A740h"
 "	      0047f694    add esp,4"
 "	      0047f697    jmp near ptr 0047F69Ch"
-"	      0047f69c    mov eax,[ebp-4]"
+"	      0047f69c    mov eax,sImageFile.reference"
 "	      0047f69f    dec dword ptr [eax+0Ch]"
-"	      0047f6a2    mov eax,[ebp-4]"
+"	      0047f6a2    mov eax,sImageFile.reference"
 "	      0047f6a5    cmp dword ptr [eax+0Ch],0"
 "	      0047f6a9    jne near ptr 0047F71Fh"
-"	      0047f6af    mov eax,[ebp-4]"
+"	      0047f6af    mov eax,sImageFile.reference"
 "	      0047f6b2    mov [ebp-4Ch],eax"
 "	      0047f6b5    mov eax,[ebp-4Ch]"
 "	      0047f6b8    mov [ebp-48h],eax"
@@ -1742,9 +1742,9 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 "	      0047f715    jmp near ptr 0047F71Ah"
 "	      0047f71a    jmp near ptr 0047F71Fh"
 "	      0047f71f    jmp near ptr 0047F724h"
-"	      0047f724    cmp dword ptr [ebp-8],0"
+"	      0047f724    cmp sImageFile.c_str_ptr,0"
 "	      0047f728    je near ptr 0047F746h"
-"	      0047f72e    mov eax,[ebp-8]"
+"	      0047f72e    mov eax,sImageFile.c_str_ptr"
 "	      0047f731    mov [ebp-40h],eax"
 "	      0047f734    mov eax,[ebp-40h]"
 "	      0047f737    mov [ebp-44h],eax"
@@ -1776,17 +1776,17 @@ void CareerWindow::DestroyImage() {
 "	      0047f760    push ebx"
 "	      0047f761    push esi"
 "	      0047f762    push edi"
-"	      0047f763    mov [ebp-0Ch],ecx"
+"	      0047f763    mov this,ecx"
 );
 // LINE 220:
 	asm( 
-"	      0047f766    mov eax,[ebp-0Ch]"
+"	      0047f766    mov eax,this"
 "	      0047f769    cmp dword ptr [eax+83Ch],0"
 "	      0047f770    jne near ptr 0047F7BDh"
 );
 // LINE 221:
 	asm( 
-"	      0047f776    mov eax,[ebp-0Ch]"
+"	      0047f776    mov eax,this"
 "	      0047f779    mov eax,[eax+83Ch]"
 "	      0047f77f    mov [ebp-8],eax"
 "	      0047f782    mov eax,[ebp-8]"
@@ -1804,12 +1804,12 @@ void CareerWindow::DestroyImage() {
 );
 // LINE 222:
 	asm( 
-"	      0047f7b0    mov eax,[ebp-0Ch]"
+"	      0047f7b0    mov eax,this"
 "	      0047f7b3    mov dword ptr [eax+83Ch],0"
 );
 // LINE 224:
 	asm( 
-"	      0047f7bd    mov ecx,[ebp-0Ch]"
+"	      0047f7bd    mov ecx,this"
 "	      0047f7c0    call 004A4CABh"
 );
 // LINE 225:
@@ -1836,15 +1836,15 @@ int32_t CareerWindow::DrawSelf() {
 "	      0047f7d5    push ebx"
 "	      0047f7d6    push esi"
 "	      0047f7d7    push edi"
-"	      0047f7d8    mov [ebp-0Ch],ecx"
+"	      0047f7d8    mov this,ecx"
 );
 // LINE 241:
 	asm( 
-"	      0047f7db    mov dword ptr [ebp-8],0"
+"	      0047f7db    mov i,0"
 "	      0047f7e2    jmp near ptr 0047F7EAh"
-"	      0047f7e7    inc dword ptr [ebp-8]"
-"	      0047f7ea    mov eax,[ebp-0Ch]"
-"	      0047f7ed    mov ecx,[ebp-8]"
+"	      0047f7e7    inc i"
+"	      0047f7ea    mov eax,this"
+"	      0047f7ed    mov ecx,i"
 "	      0047f7f0    cmp [eax+0B4h],ecx"
 "	      0047f7f6    jle near ptr 0047F89Eh"
 );
@@ -1852,57 +1852,57 @@ int32_t CareerWindow::DrawSelf() {
 	asm( 
 "	      0047f7fc    jmp near ptr 0047F801h"
 "	      0047f801    jmp near ptr 0047F806h"
-"	      0047f806    mov eax,[ebp-8]"
+"	      0047f806    mov eax,i"
 "	      0047f809    mov ecx,eax"
 "	      0047f80b    shl eax,7"
 "	      0047f80e    sub eax,ecx"
 "	      0047f810    lea eax,[eax+eax*4]"
 "	      0047f813    add eax,ecx"
-"	      0047f815    mov ecx,[ebp-0Ch]"
+"	      0047f815    mov ecx,this"
 "	      0047f818    mov eax,[eax+ecx+208h]"
 "	      0047f81f    push eax"
-"	      0047f820    mov eax,[ebp-8]"
+"	      0047f820    mov eax,i"
 "	      0047f823    mov ecx,eax"
 "	      0047f825    shl eax,7"
 "	      0047f828    sub eax,ecx"
 "	      0047f82a    lea eax,[eax+eax*4]"
 "	      0047f82d    add eax,ecx"
-"	      0047f82f    mov ecx,[ebp-0Ch]"
+"	      0047f82f    mov ecx,this"
 "	      0047f832    mov eax,[eax+ecx+204h]"
 "	      0047f839    push eax"
 "	      0047f83a    push 0"
 "	      0047f83c    push 0"
-"	      0047f83e    mov eax,[ebp-8]"
+"	      0047f83e    mov eax,i"
 "	      0047f841    shl eax,4"
-"	      0047f844    mov ecx,[ebp-0Ch]"
+"	      0047f844    mov ecx,this"
 "	      0047f847    mov eax,[eax+ecx+7Ch]"
 "	      0047f84b    push eax"
-"	      0047f84c    mov eax,[ebp-8]"
+"	      0047f84c    mov eax,i"
 "	      0047f84f    shl eax,4"
-"	      0047f852    mov ecx,[ebp-0Ch]"
+"	      0047f852    mov ecx,this"
 "	      0047f855    mov eax,[eax+ecx+78h]"
 "	      0047f859    push eax"
-"	      0047f85a    mov eax,[ebp-0Ch]"
+"	      0047f85a    mov eax,this"
 "	      0047f85d    mov eax,[eax+40h]"
 "	      0047f860    push eax"
-"	      0047f861    mov eax,[ebp-8]"
+"	      0047f861    mov eax,i"
 "	      0047f864    mov ecx,eax"
 "	      0047f866    shl eax,7"
 "	      0047f869    sub eax,ecx"
 "	      0047f86b    lea eax,[eax+eax*4]"
 "	      0047f86e    add eax,ecx"
-"	      0047f870    mov ecx,[ebp-0Ch]"
-"	      0047f873    mov edx,[ebp-8]"
+"	      0047f870    mov ecx,this"
+"	      0047f873    mov edx,i"
 "	      0047f876    mov ebx,edx"
 "	      0047f878    shl edx,7"
 "	      0047f87b    sub edx,ebx"
 "	      0047f87d    lea edx,[edx+edx*4]"
 "	      0047f880    add edx,ebx"
-"	      0047f882    mov ebx,[ebp-0Ch]"
+"	      0047f882    mov ebx,this"
 "	      0047f885    mov edx,[edx+ebx+1FCh]"
 "	      0047f88c    lea ecx,[eax+ecx+1FCh]"
 "	      0047f893    call dword ptr [edx+0Ch]"
-"	      0047f896    mov [ebp-4],eax"
+"	      0047f896    mov nErrorCode,eax"
 );
 // LINE 246:
 	asm( 
@@ -1910,7 +1910,7 @@ int32_t CareerWindow::DrawSelf() {
 );
 // LINE 247:
 	asm( 
-"	      0047f89e    mov eax,[ebp-4]"
+"	      0047f89e    mov eax,nErrorCode"
 "	      0047f8a1    jmp near ptr 0047F8A6h"
 );
 // LINE 248:
@@ -1938,9 +1938,9 @@ void CareerWindow::DrawCitySelection() {
 "	      0047f8b4    push ebx"
 "	      0047f8b5    push esi"
 "	      0047f8b6    push edi"
-"	      0047f8b7    mov [ebp-13Ch],ecx"
+"	      0047f8b7    mov this,ecx"
 "	      0047f8bd    mov dword ptr [ebp-12Ch],0Ch"
-"	      0047f8c7    lea eax,[ebp-128h]"
+"	      0047f8c7    lea eax,ptDestinations[0][0].x"
 "	      0047f8cd    mov [ebp-130h],eax"
 );
 // LINE 257:
@@ -1953,7 +1953,7 @@ void CareerWindow::DrawCitySelection() {
 "	      0047f8f1    jmp near ptr 0047F8D3h"
 "	      0047f8f6    jmp near ptr 0047F8FBh"
 "	      0047f8fb    mov dword ptr [ebp-134h],0Ch"
-"	      0047f905    lea eax,[ebp-0C0h]"
+"	      0047f905    lea eax,rectSources[0][0].left"
 "	      0047f90b    mov [ebp-138h],eax"
 );
 // LINE 258:
@@ -1968,76 +1968,76 @@ void CareerWindow::DrawCitySelection() {
 );
 // LINE 261:
 	asm( 
-"	      0047f939    lea eax,[ebp-0C0h]"
+"	      0047f939    lea eax,rectSources[0][0].left"
 "	      0047f93f    push eax"
-"	      0047f940    lea eax,[ebp-128h]"
+"	      0047f940    lea eax,ptDestinations[0][0].x"
 "	      0047f946    push eax"
-"	      0047f947    mov ecx,[ebp-13Ch]"
+"	      0047f947    mov ecx,this"
 "	      0047f94d    call 0047FF29h"
 );
 // LINE 262:
 	asm( 
-"	      0047f952    mov dword ptr [ebp-0C4h],0"
+"	      0047f952    mov i,0"
 "	      0047f95c    jmp near ptr 0047F967h"
-"	      0047f961    inc dword ptr [ebp-0C4h]"
-"	      0047f967    cmp dword ptr [ebp-0C4h],3"
+"	      0047f961    inc i"
+"	      0047f967    cmp i,3"
 "	      0047f96e    jge near ptr 0047FA6Bh"
 );
 // LINE 263:
 	asm( 
-"	      0047f974    mov dword ptr [ebp-0C8h],0"
+"	      0047f974    mov j,0"
 "	      0047f97e    jmp near ptr 0047F989h"
-"	      0047f983    inc dword ptr [ebp-0C8h]"
-"	      0047f989    cmp dword ptr [ebp-0C8h],4"
+"	      0047f983    inc j"
+"	      0047f989    cmp j,4"
 "	      0047f990    jge near ptr 0047FA66h"
 );
 // LINE 270:
 	asm( 
-"	      0047f996    mov eax,[ebp-0C4h]"
+"	      0047f996    mov eax,i"
 "	      0047f99c    shl eax,6"
-"	      0047f99f    mov ecx,[ebp-0C8h]"
+"	      0047f99f    mov ecx,j"
 "	      0047f9a5    shl ecx,4"
 "	      0047f9a8    add eax,ecx"
 "	      0047f9aa    mov eax,[ebp+eax-0B4h]"
 "	      0047f9b1    push eax"
-"	      0047f9b2    mov eax,[ebp-0C4h]"
+"	      0047f9b2    mov eax,i"
 "	      0047f9b8    shl eax,6"
-"	      0047f9bb    mov ecx,[ebp-0C8h]"
+"	      0047f9bb    mov ecx,j"
 "	      0047f9c1    shl ecx,4"
 "	      0047f9c4    add eax,ecx"
 "	      0047f9c6    mov eax,[ebp+eax-0B8h]"
 "	      0047f9cd    push eax"
-"	      0047f9ce    mov eax,[ebp-0C4h]"
+"	      0047f9ce    mov eax,i"
 "	      0047f9d4    shl eax,6"
-"	      0047f9d7    mov ecx,[ebp-0C8h]"
+"	      0047f9d7    mov ecx,j"
 "	      0047f9dd    shl ecx,4"
 "	      0047f9e0    add eax,ecx"
 "	      0047f9e2    mov eax,[ebp+eax-0BCh]"
 "	      0047f9e9    push eax"
-"	      0047f9ea    mov eax,[ebp-0C4h]"
+"	      0047f9ea    mov eax,i"
 "	      0047f9f0    shl eax,6"
-"	      0047f9f3    mov ecx,[ebp-0C8h]"
+"	      0047f9f3    mov ecx,j"
 "	      0047f9f9    shl ecx,4"
 "	      0047f9fc    add eax,ecx"
 "	      0047f9fe    mov eax,[ebp+eax-0C0h]"
 "	      0047fa05    push eax"
-"	      0047fa06    mov eax,[ebp-0C8h]"
-"	      0047fa0c    mov ecx,[ebp-0C4h]"
+"	      0047fa06    mov eax,j"
+"	      0047fa0c    mov ecx,i"
 "	      0047fa12    shl ecx,5"
 "	      0047fa15    lea eax,[ecx+eax*8]"
 "	      0047fa18    mov eax,[ebp+eax-124h]"
 "	      0047fa1f    push eax"
-"	      0047fa20    mov eax,[ebp-0C8h]"
-"	      0047fa26    mov ecx,[ebp-0C4h]"
+"	      0047fa20    mov eax,j"
+"	      0047fa26    mov ecx,i"
 "	      0047fa2c    shl ecx,5"
 "	      0047fa2f    lea eax,[ecx+eax*8]"
 "	      0047fa32    mov eax,[ebp+eax-128h]"
 "	      0047fa39    push eax"
-"	      0047fa3a    mov eax,[ebp-13Ch]"
+"	      0047fa3a    mov eax,this"
 "	      0047fa40    mov eax,[eax+40h]"
 "	      0047fa43    push eax"
-"	      0047fa44    mov eax,[ebp-13Ch]"
-"	      0047fa4a    mov ecx,[ebp-13Ch]"
+"	      0047fa44    mov eax,this"
+"	      0047fa4a    mov ecx,this"
 "	      0047fa50    mov ecx,[ecx+83Ch]"
 "	      0047fa56    mov edx,[ecx]"
 "	      0047fa58    mov ecx,[eax+83Ch]"
@@ -2072,19 +2072,19 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      0047fa7b    push ebx"
 "	      0047fa7c    push esi"
 "	      0047fa7d    push edi"
-"	      0047fa7e    mov [ebp-4],ecx"
+"	      0047fa7e    mov this,ecx"
 );
 // LINE 280:
 	asm( 
-"	      0047fa81    cmp dword ptr [ebp+8],1Bh"
+"	      0047fa81    cmp lKey,1Bh"
 "	      0047fa85    je near ptr 0047FA9Bh"
-"	      0047fa8b    mov eax,[ebp-4]"
+"	      0047fa8b    mov eax,this"
 "	      0047fa8e    cmp dword ptr [eax+0B8h],0"
 "	      0047fa95    je near ptr 0047FACAh"
 );
 // LINE 281:
 	asm( 
-"	      0047fa9b    mov eax,[ebp-4]"
+"	      0047fa9b    mov eax,this"
 "	      0047fa9e    cmp dword ptr [eax+38h],0"
 "	      0047faa2    je near ptr 0047FACAh"
 );
@@ -2092,13 +2092,13 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 	asm( 
 "	      0047faa8    push 0"
 "	      0047faaa    push 3EAh"
-"	      0047faaf    mov eax,[ebp-4]"
+"	      0047faaf    mov eax,this"
 "	      0047fab2    mov eax,[eax+4]"
 "	      0047fab5    push eax"
-"	      0047fab6    mov eax,[ebp-4]"
+"	      0047fab6    mov eax,this"
 "	      0047fab9    push eax"
-"	      0047faba    mov eax,[ebp-4]"
-"	      0047fabd    mov ecx,[ebp-4]"
+"	      0047faba    mov eax,this"
+"	      0047fabd    mov ecx,this"
 "	      0047fac0    mov ecx,[ecx+38h]"
 "	      0047fac3    mov edx,[ecx]"
 "	      0047fac5    mov ecx,[eax+38h]"
@@ -2106,12 +2106,12 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 284:
 	asm( 
-"	      0047faca    cmp dword ptr [ebp+8],0Dh"
+"	      0047faca    cmp lKey,0Dh"
 "	      0047face    jne near ptr 0047FB03h"
 );
 // LINE 285:
 	asm( 
-"	      0047fad4    mov eax,[ebp-4]"
+"	      0047fad4    mov eax,this"
 "	      0047fad7    cmp dword ptr [eax+38h],0"
 "	      0047fadb    je near ptr 0047FB03h"
 );
@@ -2119,13 +2119,13 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 	asm( 
 "	      0047fae1    push 0"
 "	      0047fae3    push 3E9h"
-"	      0047fae8    mov eax,[ebp-4]"
+"	      0047fae8    mov eax,this"
 "	      0047faeb    mov eax,[eax+4]"
 "	      0047faee    push eax"
-"	      0047faef    mov eax,[ebp-4]"
+"	      0047faef    mov eax,this"
 "	      0047faf2    push eax"
-"	      0047faf3    mov eax,[ebp-4]"
-"	      0047faf6    mov ecx,[ebp-4]"
+"	      0047faf3    mov eax,this"
+"	      0047faf6    mov ecx,this"
 "	      0047faf9    mov ecx,[ecx+38h]"
 "	      0047fafc    mov edx,[ecx]"
 "	      0047fafe    mov ecx,[eax+38h]"
@@ -2158,47 +2158,47 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 "	      0047fb1a    push ebx"
 "	      0047fb1b    push esi"
 "	      0047fb1c    push edi"
-"	      0047fb1d    mov [ebp-14h],ecx"
+"	      0047fb1d    mov this,ecx"
 );
 // LINE 299:
 	asm( 
-"	      0047fb20    mov dword ptr [ebp-4],0"
+"	      0047fb20    mov i,0"
 "	      0047fb27    jmp near ptr 0047FB2Fh"
-"	      0047fb2c    inc dword ptr [ebp-4]"
-"	      0047fb2f    mov eax,[ebp-14h]"
-"	      0047fb32    mov ecx,[ebp-4]"
+"	      0047fb2c    inc i"
+"	      0047fb2f    mov eax,this"
+"	      0047fb32    mov ecx,i"
 "	      0047fb35    cmp [eax+0B4h],ecx"
 "	      0047fb3b    jle near ptr 0047FC36h"
 );
 // LINE 300:
 	asm( 
 "	      0047fb41    jmp near ptr 0047FB46h"
-"	      0047fb46    mov eax,[ebp+8]"
+"	      0047fb46    mov eax,nCursorX"
 "	      0047fb49    mov [ebp-0Ch],eax"
-"	      0047fb4c    mov eax,[ebp+0Ch]"
+"	      0047fb4c    mov eax,nCursorY"
 "	      0047fb4f    mov [ebp-8],eax"
 "	      0047fb52    jmp near ptr 0047FB57h"
-"	      0047fb57    mov eax,[ebp-4]"
+"	      0047fb57    mov eax,i"
 "	      0047fb5a    shl eax,4"
-"	      0047fb5d    mov ecx,[ebp-14h]"
+"	      0047fb5d    mov ecx,this"
 "	      0047fb60    mov edx,[ebp-0Ch]"
 "	      0047fb63    cmp [eax+ecx+78h],edx"
 "	      0047fb67    jg near ptr 0047FBBAh"
-"	      0047fb6d    mov eax,[ebp-4]"
+"	      0047fb6d    mov eax,i"
 "	      0047fb70    shl eax,4"
-"	      0047fb73    mov ecx,[ebp-14h]"
+"	      0047fb73    mov ecx,this"
 "	      0047fb76    mov edx,[ebp-8]"
 "	      0047fb79    cmp [eax+ecx+7Ch],edx"
 "	      0047fb7d    jg near ptr 0047FBBAh"
-"	      0047fb83    mov eax,[ebp-4]"
+"	      0047fb83    mov eax,i"
 "	      0047fb86    shl eax,4"
-"	      0047fb89    mov ecx,[ebp-14h]"
+"	      0047fb89    mov ecx,this"
 "	      0047fb8c    mov edx,[ebp-0Ch]"
 "	      0047fb8f    cmp [eax+ecx+80h],edx"
 "	      0047fb96    jle near ptr 0047FBBAh"
-"	      0047fb9c    mov eax,[ebp-4]"
+"	      0047fb9c    mov eax,i"
 "	      0047fb9f    shl eax,4"
-"	      0047fba2    mov ecx,[ebp-14h]"
+"	      0047fba2    mov ecx,this"
 "	      0047fba5    mov edx,[ebp-8]"
 "	      0047fba8    cmp [eax+ecx+84h],edx"
 "	      0047fbaf    jle near ptr 0047FBBAh"
@@ -2210,14 +2210,14 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 );
 // LINE 301:
 	asm( 
-"	      0047fbce    mov eax,[ebp-14h]"
-"	      0047fbd1    mov ecx,[ebp-4]"
+"	      0047fbce    mov eax,this"
+"	      0047fbd1    mov ecx,i"
 "	      0047fbd4    cmp [eax+74h],ecx"
 "	      0047fbd7    jne near ptr 0047FC1Bh"
 );
 // LINE 303:
 	asm( 
-"	      0047fbdd    mov eax,[ebp-14h]"
+"	      0047fbdd    mov eax,this"
 "	      0047fbe0    cmp dword ptr [eax+38h],0"
 "	      0047fbe4    je near ptr 0047FC0Ch"
 );
@@ -2225,13 +2225,13 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	asm( 
 "	      0047fbea    push 0"
 "	      0047fbec    push 3E9h"
-"	      0047fbf1    mov eax,[ebp-14h]"
+"	      0047fbf1    mov eax,this"
 "	      0047fbf4    mov eax,[eax+4]"
 "	      0047fbf7    push eax"
-"	      0047fbf8    mov eax,[ebp-14h]"
+"	      0047fbf8    mov eax,this"
 "	      0047fbfb    push eax"
-"	      0047fbfc    mov eax,[ebp-14h]"
-"	      0047fbff    mov ecx,[ebp-14h]"
+"	      0047fbfc    mov eax,this"
+"	      0047fbff    mov ecx,this"
 "	      0047fc02    mov ecx,[ecx+38h]"
 "	      0047fc05    mov edx,[ecx]"
 "	      0047fc07    mov ecx,[eax+38h]"
@@ -2248,9 +2248,9 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 );
 // LINE 308:
 	asm( 
-"	      0047fc1b    mov eax,[ebp-4]"
+"	      0047fc1b    mov eax,i"
 "	      0047fc1e    push eax"
-"	      0047fc1f    mov ecx,[ebp-14h]"
+"	      0047fc1f    mov ecx,this"
 "	      0047fc22    call 0047FDF2h"
 );
 // LINE 309:
@@ -2289,47 +2289,47 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      0047fc4d    push ebx"
 "	      0047fc4e    push esi"
 "	      0047fc4f    push edi"
-"	      0047fc50    mov [ebp-14h],ecx"
+"	      0047fc50    mov this,ecx"
 );
 // LINE 324:
 	asm( 
-"	      0047fc53    mov dword ptr [ebp-4],0"
+"	      0047fc53    mov i,0"
 "	      0047fc5a    jmp near ptr 0047FC62h"
-"	      0047fc5f    inc dword ptr [ebp-4]"
-"	      0047fc62    mov eax,[ebp-14h]"
-"	      0047fc65    mov ecx,[ebp-4]"
+"	      0047fc5f    inc i"
+"	      0047fc62    mov eax,this"
+"	      0047fc65    mov ecx,i"
 "	      0047fc68    cmp [eax+0B4h],ecx"
 "	      0047fc6e    jle near ptr 0047FD1Ch"
 );
 // LINE 325:
 	asm( 
 "	      0047fc74    jmp near ptr 0047FC79h"
-"	      0047fc79    mov eax,[ebp+8]"
+"	      0047fc79    mov eax,nCursorX"
 "	      0047fc7c    mov [ebp-0Ch],eax"
-"	      0047fc7f    mov eax,[ebp+0Ch]"
+"	      0047fc7f    mov eax,nCursorY"
 "	      0047fc82    mov [ebp-8],eax"
 "	      0047fc85    jmp near ptr 0047FC8Ah"
-"	      0047fc8a    mov eax,[ebp-4]"
+"	      0047fc8a    mov eax,i"
 "	      0047fc8d    shl eax,4"
-"	      0047fc90    mov ecx,[ebp-14h]"
+"	      0047fc90    mov ecx,this"
 "	      0047fc93    mov edx,[ebp-0Ch]"
 "	      0047fc96    cmp [eax+ecx+78h],edx"
 "	      0047fc9a    jg near ptr 0047FCEDh"
-"	      0047fca0    mov eax,[ebp-4]"
+"	      0047fca0    mov eax,i"
 "	      0047fca3    shl eax,4"
-"	      0047fca6    mov ecx,[ebp-14h]"
+"	      0047fca6    mov ecx,this"
 "	      0047fca9    mov edx,[ebp-8]"
 "	      0047fcac    cmp [eax+ecx+7Ch],edx"
 "	      0047fcb0    jg near ptr 0047FCEDh"
-"	      0047fcb6    mov eax,[ebp-4]"
+"	      0047fcb6    mov eax,i"
 "	      0047fcb9    shl eax,4"
-"	      0047fcbc    mov ecx,[ebp-14h]"
+"	      0047fcbc    mov ecx,this"
 "	      0047fcbf    mov edx,[ebp-0Ch]"
 "	      0047fcc2    cmp [eax+ecx+80h],edx"
 "	      0047fcc9    jle near ptr 0047FCEDh"
-"	      0047fccf    mov eax,[ebp-4]"
+"	      0047fccf    mov eax,i"
 "	      0047fcd2    shl eax,4"
-"	      0047fcd5    mov ecx,[ebp-14h]"
+"	      0047fcd5    mov ecx,this"
 "	      0047fcd8    mov edx,[ebp-8]"
 "	      0047fcdb    cmp [eax+ecx+84h],edx"
 "	      0047fce2    jle near ptr 0047FCEDh"
@@ -2341,9 +2341,9 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 );
 // LINE 326:
 	asm( 
-"	      0047fd01    mov eax,[ebp-4]"
+"	      0047fd01    mov eax,i"
 "	      0047fd04    push eax"
-"	      0047fd05    mov ecx,[ebp-14h]"
+"	      0047fd05    mov ecx,this"
 "	      0047fd08    call 0047FDF2h"
 );
 // LINE 327:
@@ -2380,17 +2380,17 @@ int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 "	      0047fd33    push ebx"
 "	      0047fd34    push esi"
 "	      0047fd35    push edi"
-"	      0047fd36    mov [ebp-4],ecx"
+"	      0047fd36    mov this,ecx"
 );
 // LINE 339:
 	asm( 
-"	      0047fd39    mov eax,[ebp+0Ch]"
+"	      0047fd39    mov eax,lWindowID"
 "	      0047fd3c    mov [ebp-8],eax"
 "	      0047fd3f    jmp near ptr 0047FDCBh"
 );
 // LINE 341:
 	asm( 
-"	      0047fd44    mov eax,[ebp-4]"
+"	      0047fd44    mov eax,this"
 "	      0047fd47    cmp dword ptr [eax+38h],0"
 "	      0047fd4b    je near ptr 0047FD73h"
 );
@@ -2398,13 +2398,13 @@ int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 	asm( 
 "	      0047fd51    push 0"
 "	      0047fd53    push 3E9h"
-"	      0047fd58    mov eax,[ebp-4]"
+"	      0047fd58    mov eax,this"
 "	      0047fd5b    mov eax,[eax+4]"
 "	      0047fd5e    push eax"
-"	      0047fd5f    mov eax,[ebp-4]"
+"	      0047fd5f    mov eax,this"
 "	      0047fd62    push eax"
-"	      0047fd63    mov eax,[ebp-4]"
-"	      0047fd66    mov ecx,[ebp-4]"
+"	      0047fd63    mov eax,this"
+"	      0047fd66    mov ecx,this"
 "	      0047fd69    mov ecx,[ecx+38h]"
 "	      0047fd6c    mov edx,[ecx]"
 "	      0047fd6e    mov ecx,[eax+38h]"
@@ -2417,10 +2417,10 @@ int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 );
 // LINE 346:
 	asm( 
-"	      0047fd7d    mov eax,[ebp-4]"
+"	      0047fd7d    mov eax,this"
 "	      0047fd80    cmp dword ptr [eax+38h],0"
 "	      0047fd84    je near ptr 0047FDBCh"
-"	      0047fd8a    mov eax,[ebp-4]"
+"	      0047fd8a    mov eax,this"
 "	      0047fd8d    cmp dword ptr [eax+0B8h],0"
 "	      0047fd94    je near ptr 0047FDBCh"
 );
@@ -2428,13 +2428,13 @@ int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 	asm( 
 "	      0047fd9a    push 0"
 "	      0047fd9c    push 3EAh"
-"	      0047fda1    mov eax,[ebp-4]"
+"	      0047fda1    mov eax,this"
 "	      0047fda4    mov eax,[eax+4]"
 "	      0047fda7    push eax"
-"	      0047fda8    mov eax,[ebp-4]"
+"	      0047fda8    mov eax,this"
 "	      0047fdab    push eax"
-"	      0047fdac    mov eax,[ebp-4]"
-"	      0047fdaf    mov ecx,[ebp-4]"
+"	      0047fdac    mov eax,this"
+"	      0047fdaf    mov ecx,this"
 "	      0047fdb2    mov ecx,[ecx+38h]"
 "	      0047fdb5    mov edx,[ecx]"
 "	      0047fdb7    mov ecx,[eax+38h]"
@@ -2479,15 +2479,15 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 "	      0047fdf8    push ebx"
 "	      0047fdf9    push esi"
 "	      0047fdfa    push edi"
-"	      0047fdfb    mov [ebp-1Ch],ecx"
+"	      0047fdfb    mov this,ecx"
 );
 // LINE 359:
 	asm( 
-"	      0047fdfe    mov eax,[ebp-1Ch]"
-"	      0047fe01    mov ecx,[ebp+8]"
+"	      0047fdfe    mov eax,this"
+"	      0047fe01    mov ecx,lNewCitySelection"
 "	      0047fe04    cmp [eax+0B4h],ecx"
 "	      0047fe0a    jle near ptr 0047FE1Ah"
-"	      0047fe10    cmp dword ptr [ebp+8],0"
+"	      0047fe10    cmp lNewCitySelection,0"
 "	      0047fe14    jge near ptr 0047FE21h"
 );
 // LINE 360:
@@ -2497,15 +2497,15 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 );
 // LINE 362:
 	asm( 
-"	      0047fe21    mov eax,[ebp-1Ch]"
-"	      0047fe24    mov ecx,[ebp+8]"
+"	      0047fe21    mov eax,this"
+"	      0047fe24    mov ecx,lNewCitySelection"
 "	      0047fe27    cmp [eax+74h],ecx"
 "	      0047fe2a    je near ptr 0047FF18h"
 );
 // LINE 363:
 	asm( 
-"	      0047fe30    mov eax,[ebp+8]"
-"	      0047fe33    mov ecx,[ebp-1Ch]"
+"	      0047fe30    mov eax,lNewCitySelection"
+"	      0047fe33    mov ecx,this"
 "	      0047fe36    mov [ecx+74h],eax"
 );
 // LINE 364:
@@ -2524,11 +2524,11 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 "	      0047fe7a    push eax"
 "	      0047fe7b    lea eax,[ebp-18h]"
 "	      0047fe7e    push eax"
-"	      0047fe7f    mov eax,[ebp-1Ch]"
+"	      0047fe7f    mov eax,this"
 "	      0047fe82    mov eax,[eax+40h]"
 "	      0047fe85    push eax"
-"	      0047fe86    mov eax,[ebp-1Ch]"
-"	      0047fe89    mov ecx,[ebp-1Ch]"
+"	      0047fe86    mov eax,this"
+"	      0047fe89    mov ecx,this"
 "	      0047fe8c    mov ecx,[ecx+83Ch]"
 "	      0047fe92    mov edx,[ecx]"
 "	      0047fe94    mov ecx,[eax+83Ch]"
@@ -2536,13 +2536,13 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 );
 // LINE 365:
 	asm( 
-"	      0047fe9d    mov eax,[ebp+8]"
-"	      0047fea0    mov ecx,[ebp-1Ch]"
+"	      0047fe9d    mov eax,lNewCitySelection"
+"	      0047fea0    mov ecx,this"
 "	      0047fea3    mov eax,[ecx+eax*4+0A8h]"
 "	      0047feaa    add eax,0F0h"
 "	      0047feaf    push eax"
-"	      0047feb0    mov eax,[ebp-1Ch]"
-"	      0047feb3    mov ecx,[ebp-1Ch]"
+"	      0047feb0    mov eax,this"
+"	      0047feb3    mov ecx,this"
 "	      0047feb6    mov ecx,[ecx+834h]"
 "	      0047febc    mov edx,[ecx]"
 "	      0047febe    mov ecx,[eax+834h]"
@@ -2550,15 +2550,15 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 );
 // LINE 366:
 	asm( 
-"	      0047feca    mov eax,[ebp+8]"
-"	      0047fecd    mov ecx,[ebp-1Ch]"
+"	      0047feca    mov eax,lNewCitySelection"
+"	      0047fecd    mov ecx,this"
 "	      0047fed0    mov eax,[ecx+eax*4+0A8h]"
 "	      0047fed7    shl eax,3"
 "	      0047feda    mov eax,[eax+eax*8+5C2B18h]"
 "	      0047fee1    add eax,122h"
 "	      0047fee6    push eax"
-"	      0047fee7    mov eax,[ebp-1Ch]"
-"	      0047feea    mov ecx,[ebp-1Ch]"
+"	      0047fee7    mov eax,this"
+"	      0047feea    mov ecx,this"
 "	      0047feed    mov ecx,[ecx+838h]"
 "	      0047fef3    mov edx,[ecx]"
 "	      0047fef5    mov ecx,[eax+838h]"
@@ -2566,16 +2566,16 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 );
 // LINE 367:
 	asm( 
-"	      0047ff01    mov ecx,[ebp-1Ch]"
+"	      0047ff01    mov ecx,this"
 "	      0047ff04    call 0047F8ABh"
 );
 // LINE 368:
 	asm( 
 "	      0047ff09    push 1"
 "	      0047ff0b    push 1"
-"	      0047ff0d    mov eax,[ebp-1Ch]"
+"	      0047ff0d    mov eax,this"
 "	      0047ff10    mov eax,[eax]"
-"	      0047ff12    mov ecx,[ebp-1Ch]"
+"	      0047ff12    mov ecx,this"
 "	      0047ff15    call dword ptr [eax+30h]"
 );
 // LINE 370:
@@ -2607,23 +2607,23 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinatio
 "	      0047ff32    push ebx"
 "	      0047ff33    push esi"
 "	      0047ff34    push edi"
-"	      0047ff35    mov [ebp-0F4h],ecx"
+"	      0047ff35    mov this,ecx"
 );
 // LINE 385:
 	asm( 
-"	      0047ff3b    mov eax,[ebp-0F4h]"
+"	      0047ff3b    mov eax,this"
 "	      0047ff41    cmp dword ptr [eax+74h],1"
 "	      0047ff45    sbb eax,eax"
 "	      0047ff47    neg eax"
 "	      0047ff49    push eax"
 "	      0047ff4a    push 1"
 "	      0047ff4c    push 1"
-"	      0047ff4e    lea ecx,[ebp-0A0h]"
+"	      0047ff4e    lea ecx,upperLeft.<vftable>"
 "	      0047ff54    call 00480032h"
 );
 // LINE 386:
 	asm( 
-"	      0047ff59    mov eax,[ebp-0F4h]"
+"	      0047ff59    mov eax,this"
 "	      0047ff5f    mov eax,[eax+74h]"
 "	      0047ff62    dec eax"
 "	      0047ff63    cmp eax,1"
@@ -2632,12 +2632,12 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinatio
 "	      0047ff6a    push eax"
 "	      0047ff6b    push 1"
 "	      0047ff6d    push 0"
-"	      0047ff6f    lea ecx,[ebp-50h]"
+"	      0047ff6f    lea ecx,upperRight.<vftable>"
 "	      0047ff72    call 00480032h"
 );
 // LINE 387:
 	asm( 
-"	      0047ff77    mov eax,[ebp-0F4h]"
+"	      0047ff77    mov eax,this"
 "	      0047ff7d    mov eax,[eax+74h]"
 "	      0047ff80    sub eax,2"
 "	      0047ff83    cmp eax,1"
@@ -2646,62 +2646,62 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinatio
 "	      0047ff8a    push eax"
 "	      0047ff8b    push 0"
 "	      0047ff8d    push 1"
-"	      0047ff8f    lea ecx,[ebp-0F0h]"
+"	      0047ff8f    lea ecx,lowerLeft.<vftable>"
 "	      0047ff95    call 00480032h"
 );
 // LINE 389:
 	asm( 
-"	      0047ff9a    mov eax,[ebp+8]"
+"	      0047ff9a    mov eax,ptDestinations"
 "	      0047ff9d    push eax"
-"	      0047ff9e    lea ecx,[ebp-0A0h]"
+"	      0047ff9e    lea ecx,upperLeft.<vftable>"
 "	      0047ffa4    call 0048049Dh"
 );
 // LINE 390:
 	asm( 
-"	      0047ffa9    mov eax,[ebp+8]"
+"	      0047ffa9    mov eax,ptDestinations"
 "	      0047ffac    add eax,20h"
 "	      0047ffaf    push eax"
-"	      0047ffb0    lea ecx,[ebp-50h]"
+"	      0047ffb0    lea ecx,upperRight.<vftable>"
 "	      0047ffb3    call 0048049Dh"
 );
 // LINE 391:
 	asm( 
-"	      0047ffb8    mov eax,[ebp+8]"
+"	      0047ffb8    mov eax,ptDestinations"
 "	      0047ffbb    add eax,40h"
 "	      0047ffbe    push eax"
-"	      0047ffbf    lea ecx,[ebp-0F0h]"
+"	      0047ffbf    lea ecx,lowerLeft.<vftable>"
 "	      0047ffc5    call 0048049Dh"
 );
 // LINE 393:
 	asm( 
-"	      0047ffca    mov eax,[ebp+0Ch]"
+"	      0047ffca    mov eax,rectSources"
 "	      0047ffcd    push eax"
-"	      0047ffce    lea ecx,[ebp-0A0h]"
+"	      0047ffce    lea ecx,upperLeft.<vftable>"
 "	      0047ffd4    call 004804F7h"
 );
 // LINE 394:
 	asm( 
-"	      0047ffd9    mov eax,[ebp+0Ch]"
+"	      0047ffd9    mov eax,rectSources"
 "	      0047ffdc    add eax,40h"
 "	      0047ffdf    push eax"
-"	      0047ffe0    lea ecx,[ebp-50h]"
+"	      0047ffe0    lea ecx,upperRight.<vftable>"
 "	      0047ffe3    call 004804F7h"
 );
 // LINE 395:
 	asm( 
-"	      0047ffe8    mov eax,[ebp+0Ch]"
+"	      0047ffe8    mov eax,rectSources"
 "	      0047ffeb    add eax,80h"
 "	      0047fff0    push eax"
-"	      0047fff1    lea ecx,[ebp-0F0h]"
+"	      0047fff1    lea ecx,lowerLeft.<vftable>"
 "	      0047fff7    call 004804F7h"
 );
 // LINE 396:
 	asm( 
-"	      0047fffc    mov dword ptr [ebp-0F0h],590EF4h"
+"	      0047fffc    mov lowerLeft.<vftable>,590EF4h"
 "	      00480006    jmp near ptr 0048000Bh"
-"	      0048000b    mov dword ptr [ebp-50h],590EF4h"
+"	      0048000b    mov upperRight.<vftable>,590EF4h"
 "	      00480012    jmp near ptr 00480017h"
-"	      00480017    mov dword ptr [ebp-0A0h],590EF4h"
+"	      00480017    mov upperLeft.<vftable>,590EF4h"
 "	      00480021    jmp near ptr 00480026h"
 "	      00480026    jmp near ptr 0048002Bh"
 "	      0048002b    pop edi"
@@ -2722,18 +2722,18 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      0048003b    push ebx"
 "	      0048003c    push esi"
 "	      0048003d    push edi"
-"	      0048003e    mov [ebp-0CCh],ecx"
-"	      00480044    mov eax,[ebp+8]"
-"	      00480047    mov ecx,[ebp-0CCh]"
+"	      0048003e    mov this,ecx"
+"	      00480044    mov eax,b_Left"
+"	      00480047    mov ecx,this"
 "	      0048004d    mov [ecx+4],eax"
-"	      00480050    mov eax,[ebp+0Ch]"
-"	      00480053    mov ecx,[ebp-0CCh]"
+"	      00480050    mov eax,b_Top"
+"	      00480053    mov ecx,this"
 "	      00480059    mov [ecx+8],eax"
-"	      0048005c    mov eax,[ebp+10h]"
-"	      0048005f    mov ecx,[ebp-0CCh]"
+"	      0048005c    mov eax,b_Selected"
+"	      0048005f    mov ecx,this"
 "	      00480065    mov [ecx+0Ch],eax"
 "	      00480068    mov dword ptr [ebp-0C4h],4"
-"	      00480072    mov eax,[ebp-0CCh]"
+"	      00480072    mov eax,this"
 "	      00480078    add eax,10h"
 "	      0048007b    mov [ebp-0C8h],eax"
 "	      00480081    dec dword ptr [ebp-0C4h]"
@@ -2743,15 +2743,15 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480098    add dword ptr [ebp-0C8h],10h"
 "	      0048009f    jmp near ptr 00480081h"
 "	      004800a4    jmp near ptr 004800A9h"
-"	      004800a9    mov eax,[ebp-0CCh]"
+"	      004800a9    mov eax,this"
 "	      004800af    mov dword ptr [eax],590EF4h"
 );
 // LINE 402:
 	asm( 
-"	      004800b5    mov eax,[ebp-0CCh]"
+"	      004800b5    mov eax,this"
 "	      004800bb    cmp dword ptr [eax+4],0"
 "	      004800bf    je near ptr 004801FAh"
-"	      004800c5    mov eax,[ebp-0CCh]"
+"	      004800c5    mov eax,this"
 "	      004800cb    cmp dword ptr [eax+8],0"
 "	      004800cf    je near ptr 004801FAh"
 );
@@ -2764,7 +2764,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      004800ef    mov dword ptr [ebp-4],0D8h"
 "	      004800f6    jmp near ptr 004800FBh"
 "	      004800fb    lea eax,[ebp-10h]"
-"	      004800fe    mov ecx,[ebp-0CCh]"
+"	      004800fe    mov ecx,this"
 "	      00480104    add ecx,10h"
 "	      00480107    mov edx,[eax]"
 "	      00480109    mov [ecx],edx"
@@ -2784,7 +2784,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480137    mov dword ptr [ebp-14h],45h"
 "	      0048013e    jmp near ptr 00480143h"
 "	      00480143    lea eax,[ebp-20h]"
-"	      00480146    mov ecx,[ebp-0CCh]"
+"	      00480146    mov ecx,this"
 "	      0048014c    add ecx,20h"
 "	      0048014f    mov edx,[eax]"
 "	      00480151    mov [ecx],edx"
@@ -2804,7 +2804,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      0048017f    mov dword ptr [ebp-24h],0D8h"
 "	      00480186    jmp near ptr 0048018Bh"
 "	      0048018b    lea eax,[ebp-30h]"
-"	      0048018e    mov ecx,[ebp-0CCh]"
+"	      0048018e    mov ecx,this"
 "	      00480194    add ecx,30h"
 "	      00480197    mov edx,[eax]"
 "	      00480199    mov [ecx],edx"
@@ -2824,7 +2824,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      004801c7    mov dword ptr [ebp-34h],0D8h"
 "	      004801ce    jmp near ptr 004801D3h"
 "	      004801d3    lea eax,[ebp-40h]"
-"	      004801d6    mov ecx,[ebp-0CCh]"
+"	      004801d6    mov ecx,this"
 "	      004801dc    add ecx,40h"
 "	      004801df    mov edx,[eax]"
 "	      004801e1    mov [ecx],edx"
@@ -2838,7 +2838,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 // LINE 409:
 	asm( 
 "	      004801f5    jmp near ptr 0048048Bh"
-"	      004801fa    mov eax,[ebp-0CCh]"
+"	      004801fa    mov eax,this"
 "	      00480200    cmp dword ptr [eax+8],0"
 "	      00480204    je near ptr 0048032Fh"
 );
@@ -2851,7 +2851,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480224    mov dword ptr [ebp-44h],0D8h"
 "	      0048022b    jmp near ptr 00480230h"
 "	      00480230    lea eax,[ebp-50h]"
-"	      00480233    mov ecx,[ebp-0CCh]"
+"	      00480233    mov ecx,this"
 "	      00480239    add ecx,10h"
 "	      0048023c    mov edx,[eax]"
 "	      0048023e    mov [ecx],edx"
@@ -2871,7 +2871,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      0048026c    mov dword ptr [ebp-54h],45h"
 "	      00480273    jmp near ptr 00480278h"
 "	      00480278    lea eax,[ebp-60h]"
-"	      0048027b    mov ecx,[ebp-0CCh]"
+"	      0048027b    mov ecx,this"
 "	      00480281    add ecx,20h"
 "	      00480284    mov edx,[eax]"
 "	      00480286    mov [ecx],edx"
@@ -2891,7 +2891,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      004802b4    mov dword ptr [ebp-64h],0D8h"
 "	      004802bb    jmp near ptr 004802C0h"
 "	      004802c0    lea eax,[ebp-70h]"
-"	      004802c3    mov ecx,[ebp-0CCh]"
+"	      004802c3    mov ecx,this"
 "	      004802c9    add ecx,30h"
 "	      004802cc    mov edx,[eax]"
 "	      004802ce    mov [ecx],edx"
@@ -2911,7 +2911,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      004802fc    mov dword ptr [ebp-74h],0D8h"
 "	      00480303    jmp near ptr 00480308h"
 "	      00480308    lea eax,[ebp-80h]"
-"	      0048030b    mov ecx,[ebp-0CCh]"
+"	      0048030b    mov ecx,this"
 "	      00480311    add ecx,40h"
 "	      00480314    mov edx,[eax]"
 "	      00480316    mov [ecx],edx"
@@ -2935,7 +2935,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480352    mov dword ptr [ebp-84h],17Eh"
 "	      0048035c    jmp near ptr 00480361h"
 "	      00480361    lea eax,[ebp-90h]"
-"	      00480367    mov ecx,[ebp-0CCh]"
+"	      00480367    mov ecx,this"
 "	      0048036d    add ecx,10h"
 "	      00480370    mov edx,[eax]"
 "	      00480372    mov [ecx],edx"
@@ -2955,7 +2955,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      004803a9    mov dword ptr [ebp-94h],0F8h"
 "	      004803b3    jmp near ptr 004803B8h"
 "	      004803b8    lea eax,[ebp-0A0h]"
-"	      004803be    mov ecx,[ebp-0CCh]"
+"	      004803be    mov ecx,this"
 "	      004803c4    add ecx,20h"
 "	      004803c7    mov edx,[eax]"
 "	      004803c9    mov [ecx],edx"
@@ -2975,7 +2975,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480400    mov dword ptr [ebp-0A4h],17Eh"
 "	      0048040a    jmp near ptr 0048040Fh"
 "	      0048040f    lea eax,[ebp-0B0h]"
-"	      00480415    mov ecx,[ebp-0CCh]"
+"	      00480415    mov ecx,this"
 "	      0048041b    add ecx,30h"
 "	      0048041e    mov edx,[eax]"
 "	      00480420    mov [ecx],edx"
@@ -2995,7 +2995,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 "	      00480457    mov dword ptr [ebp-0B4h],17Eh"
 "	      00480461    jmp near ptr 00480466h"
 "	      00480466    lea eax,[ebp-0C0h]"
-"	      0048046c    mov ecx,[ebp-0CCh]"
+"	      0048046c    mov ecx,this"
 "	      00480472    add ecx,40h"
 "	      00480475    mov edx,[eax]"
 "	      00480477    mov [ecx],edx"
@@ -3009,7 +3009,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 // LINE 423:
 	asm( 
 "	      0048048b    jmp near ptr 00480490h"
-"	      00480490    mov eax,[ebp-0CCh]"
+"	      00480490    mov eax,this"
 "	      00480496    pop edi"
 "	      00480497    pop esi"
 "	      00480498    pop ebx"
@@ -3030,28 +3030,28 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDes
 "	      004804a3    push ebx"
 "	      004804a4    push esi"
 "	      004804a5    push edi"
-"	      004804a6    mov [ebp-8],ecx"
+"	      004804a6    mov this,ecx"
 );
 // LINE 427:
 	asm( 
-"	      004804a9    mov dword ptr [ebp-4],0"
+"	      004804a9    mov nN,0"
 "	      004804b0    jmp near ptr 004804B8h"
-"	      004804b5    inc dword ptr [ebp-4]"
-"	      004804b8    cmp dword ptr [ebp-4],4"
+"	      004804b5    inc nN"
+"	      004804b8    cmp nN,4"
 "	      004804bc    jge near ptr 004804EBh"
 );
 // LINE 429:
 	asm( 
 "	      004804c2    jmp near ptr 004804C7h"
-"	      004804c7    mov eax,[ebp-4]"
+"	      004804c7    mov eax,nN"
 "	      004804ca    shl eax,4"
-"	      004804cd    add eax,[ebp-8]"
+"	      004804cd    add eax,this"
 "	      004804d0    add eax,10h"
 "	      004804d3    mov ecx,[eax]"
 "	      004804d5    mov eax,[eax+4]"
-"	      004804d8    mov edx,[ebp-4]"
+"	      004804d8    mov edx,nN"
 "	      004804db    shl edx,3"
-"	      004804de    add edx,[ebp+8]"
+"	      004804de    add edx,ptDest"
 "	      004804e1    mov [edx],ecx"
 "	      004804e3    mov [edx+4],eax"
 );
@@ -3082,31 +3082,31 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 "	      004804fd    push ebx"
 "	      004804fe    push esi"
 "	      004804ff    push edi"
-"	      00480500    mov [ebp-28h],ecx"
+"	      00480500    mov this,ecx"
 );
 // LINE 435:
 	asm( 
-"	      00480503    mov dword ptr [ebp-4],0"
+"	      00480503    mov nN,0"
 "	      0048050a    jmp near ptr 00480512h"
-"	      0048050f    inc dword ptr [ebp-4]"
-"	      00480512    cmp dword ptr [ebp-4],4"
+"	      0048050f    inc nN"
+"	      00480512    cmp nN,4"
 "	      00480516    jge near ptr 00480600h"
 );
 // LINE 437:
 	asm( 
-"	      0048051c    mov eax,[ebp-28h]"
+"	      0048051c    mov eax,this"
 "	      0048051f    cmp dword ptr [eax+0Ch],0"
 "	      00480523    je near ptr 00480559h"
 );
 // LINE 439:
 	asm( 
-"	      00480529    mov eax,[ebp-4]"
+"	      00480529    mov eax,nN"
 "	      0048052c    shl eax,4"
-"	      0048052f    add eax,[ebp-28h]"
+"	      0048052f    add eax,this"
 "	      00480532    add eax,10h"
-"	      00480535    mov ecx,[ebp-4]"
+"	      00480535    mov ecx,nN"
 "	      00480538    shl ecx,4"
-"	      0048053b    add ecx,[ebp+8]"
+"	      0048053b    add ecx,rectSrc"
 "	      0048053e    mov edx,[eax]"
 "	      00480540    mov [ecx],edx"
 "	      00480542    mov edx,[eax+4]"
@@ -3126,26 +3126,26 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 "	      0048055e    jmp near ptr 00480563h"
 "	      00480563    jmp near ptr 00480568h"
 "	      00480568    jmp near ptr 0048056Dh"
-"	      0048056d    mov eax,[ebp-4]"
+"	      0048056d    mov eax,nN"
 "	      00480570    shl eax,4"
-"	      00480573    mov ecx,[ebp-28h]"
+"	      00480573    mov ecx,this"
 "	      00480576    mov eax,[eax+ecx+1Ch]"
 "	      0048057a    add eax,168h"
 "	      0048057f    mov [ebp-18h],eax"
-"	      00480582    mov eax,[ebp-4]"
+"	      00480582    mov eax,nN"
 "	      00480585    shl eax,4"
-"	      00480588    mov ecx,[ebp-28h]"
+"	      00480588    mov ecx,this"
 "	      0048058b    mov eax,[eax+ecx+18h]"
 "	      0048058f    mov [ebp-1Ch],eax"
-"	      00480592    mov eax,[ebp-4]"
+"	      00480592    mov eax,nN"
 "	      00480595    shl eax,4"
-"	      00480598    mov ecx,[ebp-28h]"
+"	      00480598    mov ecx,this"
 "	      0048059b    mov eax,[eax+ecx+14h]"
 "	      0048059f    add eax,168h"
 "	      004805a4    mov [ebp-20h],eax"
-"	      004805a7    mov eax,[ebp-4]"
+"	      004805a7    mov eax,nN"
 "	      004805aa    shl eax,4"
-"	      004805ad    mov ecx,[ebp-28h]"
+"	      004805ad    mov ecx,this"
 "	      004805b0    mov eax,[eax+ecx+10h]"
 "	      004805b4    mov [ebp-24h],eax"
 "	      004805b7    jmp near ptr 004805BCh"
@@ -3159,9 +3159,9 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 "	      004805d1    mov [ebp-8],eax"
 "	      004805d4    jmp near ptr 004805D9h"
 "	      004805d9    lea eax,[ebp-14h]"
-"	      004805dc    mov ecx,[ebp-4]"
+"	      004805dc    mov ecx,nN"
 "	      004805df    shl ecx,4"
-"	      004805e2    add ecx,[ebp+8]"
+"	      004805e2    add ecx,rectSrc"
 "	      004805e5    mov edx,[eax]"
 "	      004805e7    mov [ecx],edx"
 "	      004805e9    mov edx,[eax+4]"

@@ -15,17 +15,17 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 "	      00471f76    push ebx"
 "	      00471f77    push esi"
 "	      00471f78    push edi"
-"	      00471f79    mov [ebp-78h],ecx"
+"	      00471f79    mov this,ecx"
 "	      00471f7c    jmp near ptr 00471F81h"
 "	      00471f81    jmp near ptr 00471F86h"
-"	      00471f86    mov eax,[ebp+0Ch]"
+"	      00471f86    mov eax,windowNewParent"
 "	      00471f89    mov eax,[eax+1Ch]"
-"	      00471f8c    mov ecx,[ebp+0Ch]"
+"	      00471f8c    mov ecx,windowNewParent"
 "	      00471f8f    sub eax,[ecx+14h]"
 "	      00471f92    mov [ebp-14h],eax"
-"	      00471f95    mov eax,[ebp+0Ch]"
+"	      00471f95    mov eax,windowNewParent"
 "	      00471f98    mov eax,[eax+18h]"
-"	      00471f9b    mov ecx,[ebp+0Ch]"
+"	      00471f9b    mov ecx,windowNewParent"
 "	      00471f9e    sub eax,[ecx+10h]"
 "	      00471fa1    mov [ebp-18h],eax"
 "	      00471fa4    jmp near ptr 00471FA9h"
@@ -36,42 +36,42 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 "	      00471fbd    mov eax,[ebp-14h]"
 "	      00471fc0    mov [ebp-4],eax"
 "	      00471fc3    jmp near ptr 00471FC8h"
-"	      00471fc8    mov eax,[ebp+14h]"
+"	      00471fc8    mov eax,bAddToParentList"
 "	      00471fcb    push eax"
-"	      00471fcc    mov eax,[ebp+10h]"
+"	      00471fcc    mov eax,myNewOwner"
 "	      00471fcf    push eax"
-"	      00471fd0    mov eax,[ebp+0Ch]"
+"	      00471fd0    mov eax,windowNewParent"
 "	      00471fd3    push eax"
-"	      00471fd4    mov eax,[ebp+8]"
+"	      00471fd4    mov eax,nNewID"
 "	      00471fd7    push eax"
 "	      00471fd8    lea eax,[ebp-10h]"
 "	      00471fdb    push eax"
-"	      00471fdc    mov ecx,[ebp-78h]"
+"	      00471fdc    mov ecx,this"
 "	      00471fdf    call 004A33EEh"
-"	      00471fe4    mov eax,[ebp-78h]"
+"	      00471fe4    mov eax,this"
 "	      00471fe7    mov dword ptr [eax+74h],0"
-"	      00471fee    mov ecx,[ebp-78h]"
+"	      00471fee    mov ecx,this"
 "	      00471ff1    add ecx,78h"
 "	      00471ff4    call 0042EF87h"
-"	      00471ff9    mov eax,[ebp-78h]"
+"	      00471ff9    mov eax,this"
 "	      00471ffc    mov dword ptr [eax+0F2h],1"
-"	      00472006    mov eax,[ebp-78h]"
+"	      00472006    mov eax,this"
 "	      00472009    mov dword ptr [eax+0F6h],1"
-"	      00472013    mov eax,[ebp-78h]"
+"	      00472013    mov eax,this"
 "	      00472016    mov dword ptr [eax+0FAh],1"
-"	      00472020    mov eax,[ebp-78h]"
+"	      00472020    mov eax,this"
 "	      00472023    mov dword ptr [eax+0FEh],0"
-"	      0047202d    mov eax,[ebp-78h]"
+"	      0047202d    mov eax,this"
 "	      00472030    mov dword ptr [eax+102h],0"
-"	      0047203a    mov eax,[ebp-78h]"
+"	      0047203a    mov eax,this"
 "	      0047203d    mov dword ptr [eax+106h],1"
-"	      00472047    mov eax,[ebp-78h]"
+"	      00472047    mov eax,this"
 "	      0047204a    mov dword ptr [eax+10Ah],0"
-"	      00472054    mov eax,[ebp-78h]"
+"	      00472054    mov eax,this"
 "	      00472057    mov dword ptr [eax+10Eh],0"
-"	      00472061    mov eax,[ebp-78h]"
+"	      00472061    mov eax,this"
 "	      00472064    mov dword ptr [eax+112h],0"
-"	      0047206e    mov eax,[ebp-78h]"
+"	      0047206e    mov eax,this"
 "	      00472071    cmp dword ptr [eax+106h],0"
 "	      00472078    jne near ptr 0047209Fh"
 "	      0047207e    lea eax,[ebp-24h]"
@@ -80,11 +80,11 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 "	      00472088    mov eax,[ebp-24h]"
 "	      0047208b    mov [ebp-1Ch],eax"
 "	      0047208e    mov eax,[ebp-1Ch]"
-"	      00472091    mov ecx,[ebp-78h]"
+"	      00472091    mov ecx,this"
 "	      00472094    mov [ecx+112h],eax"
 "	      0047209a    jmp near ptr 0047209Fh"
 "	      0047209f    jmp near ptr 004720A4h"
-"	      004720a4    mov eax,[ebp-78h]"
+"	      004720a4    mov eax,this"
 "	      004720a7    mov dword ptr [eax+11Ah],0"
 "	      004720b1    inc dword ptr ds:[5971CCh]"
 "	      004720b7    mov eax,ds:[5971D8h]"
@@ -227,61 +227,61 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 "	      004722c5    mov [ebp-74h],eax"
 "	      004722c8    jmp near ptr 004722CDh"
 "	      004722cd    mov eax,[ebp-74h]"
-"	      004722d0    mov ecx,[ebp-78h]"
+"	      004722d0    mov ecx,this"
 "	      004722d3    mov [ecx+116h],eax"
-"	      004722d9    mov eax,[ebp-78h]"
+"	      004722d9    mov eax,this"
 "	      004722dc    mov eax,[eax+116h]"
-"	      004722e2    mov ecx,[ebp-78h]"
+"	      004722e2    mov ecx,this"
 "	      004722e5    mov ecx,[ecx+116h]"
 "	      004722eb    mov [ecx],eax"
-"	      004722ed    mov eax,[ebp-78h]"
+"	      004722ed    mov eax,this"
 "	      004722f0    mov eax,[eax+116h]"
-"	      004722f6    mov ecx,[ebp-78h]"
+"	      004722f6    mov ecx,this"
 "	      004722f9    mov ecx,[ecx+116h]"
 "	      004722ff    mov [ecx+4],eax"
 "	      00472302    jmp near ptr 00472307h"
-"	      00472307    mov eax,[ebp-78h]"
+"	      00472307    mov eax,this"
 "	      0047230a    mov dword ptr [eax+11Eh],0"
 "	      00472314    jmp near ptr 00472319h"
-"	      00472319    mov eax,[ebp-78h]"
+"	      00472319    mov eax,this"
 "	      0047231c    mov dword ptr [eax+122h],0FFFFFFFFh"
-"	      00472326    mov eax,[ebp-78h]"
+"	      00472326    mov eax,this"
 "	      00472329    mov dword ptr [eax+126h],0FFFFFFFFh"
 "	      00472333    jmp near ptr 00472338h"
-"	      00472338    mov eax,[ebp-78h]"
+"	      00472338    mov eax,this"
 "	      0047233b    mov dword ptr [eax+12Ah],0"
-"	      00472345    mov eax,[ebp-78h]"
+"	      00472345    mov eax,this"
 "	      00472348    mov dword ptr [eax],590C20h"
 );
 // LINE 54:
 	asm( 
 "	      0047234e    cmp dword ptr ds:[598E90h],0"
 "	      00472355    jne near ptr 0047236Dh"
-"	      0047235b    mov eax,[ebp-78h]"
+"	      0047235b    mov eax,this"
 "	      0047235e    mov dword ptr [eax+0F2h],1"
 "	      00472368    jmp near ptr 0047237Ah"
-"	      0047236d    mov eax,[ebp-78h]"
+"	      0047236d    mov eax,this"
 "	      00472370    mov dword ptr [eax+0F2h],0"
 );
 // LINE 55:
 	asm( 
-"	      0047237a    mov ecx,[ebp-78h]"
+"	      0047237a    mov ecx,this"
 "	      0047237d    call 0047474Eh"
 );
 // LINE 56:
 	asm( 
 "	      00472382    push 1"
-"	      00472384    mov ecx,[ebp-78h]"
+"	      00472384    mov ecx,this"
 "	      00472387    call 004730A3h"
 );
 // LINE 57:
 	asm( 
-"	      0047238c    mov ecx,[ebp-78h]"
+"	      0047238c    mov ecx,this"
 "	      0047238f    call 004A6BCDh"
 );
 // LINE 58:
 	asm( 
-"	      00472394    mov eax,[ebp-78h]"
+"	      00472394    mov eax,this"
 "	      00472397    push eax"
 "	      00472398    call 004A7470h"
 "	      0047239d    add esp,4"
@@ -289,7 +289,7 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 // LINE 59:
 	asm( 
 "	      004723a0    jmp near ptr 004723A5h"
-"	      004723a5    mov eax,[ebp-78h]"
+"	      004723a5    mov eax,this"
 "	      004723a8    pop edi"
 "	      004723a9    pop esi"
 "	      004723aa    pop ebx"
@@ -308,26 +308,26 @@ void HangarWindow::~HangarWindow() {
 "	      004723b5    push ebx"
 "	      004723b6    push esi"
 "	      004723b7    push edi"
-"	      004723b8    mov [ebp-48h],ecx"
-"	      004723bb    mov eax,[ebp-48h]"
+"	      004723b8    mov this,ecx"
+"	      004723bb    mov eax,this"
 "	      004723be    mov dword ptr [eax],590C20h"
 );
 // LINE 66:
 	asm( 
-"	      004723c4    mov ecx,[ebp-48h]"
+"	      004723c4    mov ecx,this"
 "	      004723c7    call 00473229h"
 );
 // LINE 67:
 	asm( 
 "	      004723cc    jmp near ptr 004723D1h"
-"	      004723d1    mov eax,[ebp-48h]"
+"	      004723d1    mov eax,this"
 "	      004723d4    mov eax,[eax+116h]"
 "	      004723da    mov [ebp-10h],eax"
 "	      004723dd    mov eax,[ebp-10h]"
 "	      004723e0    mov [ebp-4],eax"
 "	      004723e3    jmp near ptr 004723E8h"
 "	      004723e8    jmp near ptr 004723EDh"
-"	      004723ed    mov eax,[ebp-48h]"
+"	      004723ed    mov eax,this"
 "	      004723f0    mov eax,[eax+116h]"
 "	      004723f6    mov eax,[eax]"
 "	      004723f8    mov [ebp-14h],eax"
@@ -414,12 +414,12 @@ void HangarWindow::~HangarWindow() {
 "	      0047251d    mov eax,[ebp-34h]"
 "	      00472520    mov ds:[5971D8h],eax"
 "	      00472525    jmp near ptr 0047252Ah"
-"	      0047252a    mov eax,[ebp-48h]"
+"	      0047252a    mov eax,this"
 "	      0047252d    dec dword ptr [eax+11Ah]"
 "	      00472533    jmp near ptr 00472538h"
 "	      00472538    jmp near ptr 00472417h"
 "	      0047253d    jmp near ptr 00472542h"
-"	      00472542    mov eax,[ebp-48h]"
+"	      00472542    mov eax,this"
 "	      00472545    mov eax,[eax+116h]"
 "	      0047254b    mov [ebp-0Ch],eax"
 "	      0047254e    mov eax,ds:[5971D8h]"
@@ -459,10 +459,10 @@ void HangarWindow::~HangarWindow() {
 "	      004725ea    jmp near ptr 004725EFh"
 "	      004725ef    jmp near ptr 004725F4h"
 "	      004725f4    jmp near ptr 004725F9h"
-"	      004725f9    mov ecx,[ebp-48h]"
+"	      004725f9    mov ecx,this"
 "	      004725fc    add ecx,78h"
 "	      004725ff    call 0042F2E9h"
-"	      00472604    mov ecx,[ebp-48h]"
+"	      00472604    mov ecx,this"
 "	      00472607    call 004A4045h"
 "	      0047260c    pop edi"
 "	      0047260d    pop esi"
@@ -488,7 +488,7 @@ int32_t HangarWindow::Initialize() {
 "	      0047261e    push ebx"
 "	      0047261f    push esi"
 "	      00472620    push edi"
-"	      00472621    mov [ebp-40BCh],ecx"
+"	      00472621    mov this,ecx"
 );
 // LINE 76:
 	asm( 
@@ -510,27 +510,27 @@ int32_t HangarWindow::Initialize() {
 "	      00472675    mov dword ptr [eax+0Ch],1"
 "	      0047267c    jmp near ptr 00472681h"
 "	      00472681    mov eax,[ebp-84h]"
-"	      00472687    mov [ebp-8],eax"
+"	      00472687    mov sText.reference,eax"
 "	      0047268a    jmp near ptr 00472696h"
-"	      0047268f    mov dword ptr [ebp-8],0"
-"	      00472696    mov dword ptr [ebp-0Ch],0"
+"	      0047268f    mov sText.reference,0"
+"	      00472696    mov sText.c_str_ptr,0"
 "	      0047269d    jmp near ptr 004726A2h"
 );
 // LINE 78:
 	asm( 
 "	      004726a2    jmp near ptr 004726A7h"
-"	      004726a7    mov eax,[ebp-40BCh]"
+"	      004726a7    mov eax,this"
 "	      004726ad    cmp dword ptr [eax+0F2h],0"
 "	      004726b4    je near ptr 004726C7h"
 "	      004726ba    mov eax,ds:[5997D0h]"
-"	      004726bf    mov [ebp-10h],eax"
+"	      004726bf    mov szButtonFileName,eax"
 "	      004726c2    jmp near ptr 004726CFh"
 "	      004726c7    mov eax,ds:[5997D4h]"
-"	      004726cc    mov [ebp-10h],eax"
+"	      004726cc    mov szButtonFileName,eax"
 );
 // LINE 80:
 	asm( 
-"	      004726cf    mov ecx,[ebp-40BCh]"
+"	      004726cf    mov ecx,this"
 "	      004726d5    call 004A44D4h"
 );
 // LINE 81:
@@ -548,9 +548,9 @@ int32_t HangarWindow::Initialize() {
 "	      0047270e    mov dword ptr [ebp-1Ch],0Ah"
 "	      00472715    jmp near ptr 0047271Ah"
 "	      0047271a    push 1"
-"	      0047271c    mov eax,[ebp-40BCh]"
+"	      0047271c    mov eax,this"
 "	      00472722    push eax"
-"	      00472723    mov eax,[ebp-40BCh]"
+"	      00472723    mov eax,this"
 "	      00472729    push eax"
 "	      0047272a    push 0"
 "	      0047272c    push 0"
@@ -558,10 +558,10 @@ int32_t HangarWindow::Initialize() {
 "	      00472731    push eax"
 "	      00472732    mov ecx,[ebp-18h]"
 "	      00472735    call 004ACCE6h"
-"	      0047273a    mov ecx,[ebp-40BCh]"
+"	      0047273a    mov ecx,this"
 "	      00472740    mov [ecx+74h],eax"
 "	      00472743    jmp near ptr 00472755h"
-"	      00472748    mov eax,[ebp-40BCh]"
+"	      00472748    mov eax,this"
 "	      0047274e    mov dword ptr [eax+74h],0"
 );
 // LINE 82:
@@ -569,8 +569,8 @@ int32_t HangarWindow::Initialize() {
 "	      00472755    push 0"
 "	      00472757    push 0"
 "	      00472759    push 10h"
-"	      0047275b    mov eax,[ebp-40BCh]"
-"	      00472761    mov ecx,[ebp-40BCh]"
+"	      0047275b    mov eax,this"
+"	      00472761    mov ecx,this"
 "	      00472767    mov ecx,[ecx+74h]"
 "	      0047276a    mov edx,[ecx]"
 "	      0047276c    mov ecx,[eax+74h]"
@@ -579,8 +579,8 @@ int32_t HangarWindow::Initialize() {
 // LINE 83:
 	asm( 
 "	      00472775    push 1"
-"	      00472777    mov eax,[ebp-40BCh]"
-"	      0047277d    mov ecx,[ebp-40BCh]"
+"	      00472777    mov eax,this"
+"	      0047277d    mov ecx,this"
 "	      00472783    mov ecx,[ecx+74h]"
 "	      00472786    mov edx,[ecx]"
 "	      00472788    mov ecx,[eax+74h]"
@@ -589,13 +589,13 @@ int32_t HangarWindow::Initialize() {
 // LINE 84:
 	asm( 
 "	      0047278e    push 1"
-"	      00472790    mov eax,[ebp-40BCh]"
-"	      00472796    mov ecx,[ebp-40BCh]"
+"	      00472790    mov eax,this"
+"	      00472796    mov ecx,this"
 "	      0047279c    mov ecx,[ecx+74h]"
 "	      0047279f    mov edx,[ecx]"
 "	      004727a1    mov ecx,[eax+74h]"
 "	      004727a4    call dword ptr [edx+0D8h]"
-"	      004727aa    mov eax,[ebp-40BCh]"
+"	      004727aa    mov eax,this"
 "	      004727b0    mov eax,[eax+74h]"
 "	      004727b3    mov [ebp-80h],eax"
 );
@@ -607,7 +607,7 @@ int32_t HangarWindow::Initialize() {
 );
 // LINE 86:
 	asm( 
-"	      004727c5    mov eax,[ebp-40BCh]"
+"	      004727c5    mov eax,this"
 "	      004727cb    mov dword ptr [eax+12Ah],152h"
 );
 // LINE 88:
@@ -625,20 +625,20 @@ int32_t HangarWindow::Initialize() {
 "	      00472809    mov dword ptr [ebp-30h],1ABh"
 "	      00472810    jmp near ptr 00472815h"
 "	      00472815    push 1"
-"	      00472817    mov eax,[ebp-40BCh]"
+"	      00472817    mov eax,this"
 "	      0047281d    push eax"
-"	      0047281e    mov eax,[ebp-10h]"
+"	      0047281e    mov eax,szButtonFileName"
 "	      00472821    push eax"
-"	      00472822    mov eax,[ebp-40BCh]"
+"	      00472822    mov eax,this"
 "	      00472828    push eax"
 "	      00472829    push 0"
 "	      0047282b    lea eax,[ebp-3Ch]"
 "	      0047282e    push eax"
 "	      0047282f    mov ecx,[ebp-2Ch]"
 "	      00472832    call 00471847h"
-"	      00472837    mov [ebp-14h],eax"
+"	      00472837    mov tempButtonWindow,eax"
 "	      0047283a    jmp near ptr 00472846h"
-"	      0047283f    mov dword ptr [ebp-14h],0"
+"	      0047283f    mov tempButtonWindow,0"
 );
 // LINE 89:
 	asm( 
@@ -646,14 +646,14 @@ int32_t HangarWindow::Initialize() {
 "	      00472848    push 7Dh"
 "	      0047284a    call 0042B15Fh"
 "	      0047284f    add esp,8"
-"	      00472852    mov [ebp-4],eax"
+"	      00472852    mov nFullStringID,eax"
 );
 // LINE 90:
 	asm( 
 "	      00472855    push 0FFFh"
 "	      0047285a    lea eax,[ebp-1094h]"
 "	      00472860    push eax"
-"	      00472861    mov eax,[ebp-4]"
+"	      00472861    mov eax,nFullStringID"
 "	      00472864    push eax"
 "	      00472865    mov eax,ds:[5C28C8h]"
 "	      0047286a    push eax"
@@ -665,7 +665,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472889    lea eax,[ebp-1094h]"
 "	      0047288f    push eax"
 "	      00472890    mov ecx,3E8h"
-"	      00472895    mov eax,[ebp-4]"
+"	      00472895    mov eax,nFullStringID"
 "	      00472898    sub edx,edx"
 "	      0047289a    div ecx"
 "	      0047289c    push edx"
@@ -681,7 +681,7 @@ int32_t HangarWindow::Initialize() {
 "	      004728c3    push eax"
 "	      004728c4    lea eax,[ebp-1094h]"
 "	      004728ca    push eax"
-"	      004728cb    lea ecx,[ebp-0Ch]"
+"	      004728cb    lea ecx,sText.c_str_ptr"
 "	      004728ce    call 0040FEE0h"
 "	      004728d3    jmp near ptr 004728D8h"
 "	      004728d8    jmp near ptr 004728DDh"
@@ -690,7 +690,7 @@ int32_t HangarWindow::Initialize() {
 "	      004728e7    add esp,4"
 "	      004728ea    push eax"
 "	      004728eb    push 597200h"
-"	      004728f0    lea ecx,[ebp-0Ch]"
+"	      004728f0    lea ecx,sText.c_str_ptr"
 "	      004728f3    call 00410130h"
 "	      004728f8    jmp near ptr 004728FDh"
 "	      004728fd    jmp near ptr 00472930h"
@@ -702,25 +702,25 @@ int32_t HangarWindow::Initialize() {
 "	      00472916    push eax"
 "	      00472917    lea eax,[ebp-1094h]"
 "	      0047291d    push eax"
-"	      0047291e    lea ecx,[ebp-0Ch]"
+"	      0047291e    lea ecx,sText.c_str_ptr"
 "	      00472921    call 0040FEE0h"
 "	      00472926    jmp near ptr 0047292Bh"
 "	      0047292b    jmp near ptr 00472930h"
 );
 // LINE 91:
 	asm( 
-"	      00472930    lea eax,[ebp-0Ch]"
+"	      00472930    lea eax,sText.c_str_ptr"
 "	      00472933    push eax"
-"	      00472934    mov eax,[ebp-14h]"
+"	      00472934    mov eax,tempButtonWindow"
 "	      00472937    mov eax,[eax]"
-"	      00472939    mov ecx,[ebp-14h]"
+"	      00472939    mov ecx,tempButtonWindow"
 "	      0047293c    call dword ptr [eax+48h]"
 );
 // LINE 92:
 	asm( 
-"	      0047293f    mov eax,[ebp-14h]"
+"	      0047293f    mov eax,tempButtonWindow"
 "	      00472942    mov eax,[eax]"
-"	      00472944    mov ecx,[ebp-14h]"
+"	      00472944    mov ecx,tempButtonWindow"
 "	      00472947    call dword ptr [eax+4]"
 );
 // LINE 94:
@@ -738,20 +738,20 @@ int32_t HangarWindow::Initialize() {
 "	      0047297e    mov dword ptr [ebp-44h],1ABh"
 "	      00472985    jmp near ptr 0047298Ah"
 "	      0047298a    push 1"
-"	      0047298c    mov eax,[ebp-40BCh]"
+"	      0047298c    mov eax,this"
 "	      00472992    push eax"
-"	      00472993    mov eax,[ebp-10h]"
+"	      00472993    mov eax,szButtonFileName"
 "	      00472996    push eax"
-"	      00472997    mov eax,[ebp-40BCh]"
+"	      00472997    mov eax,this"
 "	      0047299d    push eax"
 "	      0047299e    push 1"
 "	      004729a0    lea eax,[ebp-50h]"
 "	      004729a3    push eax"
 "	      004729a4    mov ecx,[ebp-40h]"
 "	      004729a7    call 00471847h"
-"	      004729ac    mov [ebp-14h],eax"
+"	      004729ac    mov tempButtonWindow,eax"
 "	      004729af    jmp near ptr 004729BBh"
-"	      004729b4    mov dword ptr [ebp-14h],0"
+"	      004729b4    mov tempButtonWindow,0"
 );
 // LINE 95:
 	asm( 
@@ -759,14 +759,14 @@ int32_t HangarWindow::Initialize() {
 "	      004729bd    push 7Eh"
 "	      004729bf    call 0042B15Fh"
 "	      004729c4    add esp,8"
-"	      004729c7    mov [ebp-4],eax"
+"	      004729c7    mov nFullStringID,eax"
 );
 // LINE 96:
 	asm( 
 "	      004729ca    push 0FFFh"
 "	      004729cf    lea eax,[ebp-2098h]"
 "	      004729d5    push eax"
-"	      004729d6    mov eax,[ebp-4]"
+"	      004729d6    mov eax,nFullStringID"
 "	      004729d9    push eax"
 "	      004729da    mov eax,ds:[5C28C8h]"
 "	      004729df    push eax"
@@ -778,7 +778,7 @@ int32_t HangarWindow::Initialize() {
 "	      004729fe    lea eax,[ebp-2098h]"
 "	      00472a04    push eax"
 "	      00472a05    mov ecx,3E8h"
-"	      00472a0a    mov eax,[ebp-4]"
+"	      00472a0a    mov eax,nFullStringID"
 "	      00472a0d    sub edx,edx"
 "	      00472a0f    div ecx"
 "	      00472a11    push edx"
@@ -794,7 +794,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472a38    push eax"
 "	      00472a39    lea eax,[ebp-2098h]"
 "	      00472a3f    push eax"
-"	      00472a40    lea ecx,[ebp-0Ch]"
+"	      00472a40    lea ecx,sText.c_str_ptr"
 "	      00472a43    call 0040FEE0h"
 "	      00472a48    jmp near ptr 00472A4Dh"
 "	      00472a4d    jmp near ptr 00472A52h"
@@ -803,7 +803,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472a5c    add esp,4"
 "	      00472a5f    push eax"
 "	      00472a60    push 597200h"
-"	      00472a65    lea ecx,[ebp-0Ch]"
+"	      00472a65    lea ecx,sText.c_str_ptr"
 "	      00472a68    call 00410130h"
 "	      00472a6d    jmp near ptr 00472A72h"
 "	      00472a72    jmp near ptr 00472BC7h"
@@ -829,13 +829,13 @@ int32_t HangarWindow::Initialize() {
 "	      00472ace    add esp,4"
 "	      00472ad1    jmp near ptr 00472AD6h"
 "	      00472ad6    jmp near ptr 00472ADBh"
-"	      00472adb    mov eax,[ebp-8]"
+"	      00472adb    mov eax,sText.reference"
 "	      00472ade    cmp dword ptr [eax+0Ch],1"
 "	      00472ae2    ja near ptr 00472B0Ch"
 "	      00472ae8    cmp dword ptr [ebp-20B0h],0"
 "	      00472aef    je near ptr 00472B6Dh"
 "	      00472af5    jmp near ptr 00472AFAh"
-"	      00472afa    mov eax,[ebp-8]"
+"	      00472afa    mov eax,sText.reference"
 "	      00472afd    mov ecx,[ebp-20B0h]"
 "	      00472b03    cmp [eax+8],ecx"
 "	      00472b06    jae near ptr 00472B6Dh"
@@ -854,15 +854,15 @@ int32_t HangarWindow::Initialize() {
 "	      00472b42    mov [ebp-20A0h],eax"
 "	      00472b48    jmp near ptr 00472B57h"
 "	      00472b4d    mov dword ptr [ebp-20A0h],0"
-"	      00472b57    lea ecx,[ebp-0Ch]"
+"	      00472b57    lea ecx,sText.c_str_ptr"
 "	      00472b5a    call 00412080h"
 "	      00472b5f    mov eax,[ebp-20A0h]"
-"	      00472b65    mov [ebp-8],eax"
+"	      00472b65    mov sText.reference,eax"
 "	      00472b68    jmp near ptr 00472BACh"
 "	      00472b6d    cmp dword ptr [ebp-20B0h],0"
 "	      00472b74    je near ptr 00472BACh"
 "	      00472b7a    jmp near ptr 00472B7Fh"
-"	      00472b7f    mov eax,[ebp-8]"
+"	      00472b7f    mov eax,sText.reference"
 "	      00472b82    mov eax,[eax]"
 "	      00472b84    mov [ebp-20A8h],eax"
 "	      00472b8a    mov eax,[ebp-20B0h]"
@@ -875,7 +875,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472ba4    add esp,0Ch"
 "	      00472ba7    jmp near ptr 00472BACh"
 "	      00472bac    mov eax,[ebp-20B0h]"
-"	      00472bb2    mov ecx,[ebp-8]"
+"	      00472bb2    mov ecx,sText.reference"
 "	      00472bb5    mov [ecx+4],eax"
 "	      00472bb8    jmp near ptr 00472BBDh"
 "	      00472bbd    jmp near ptr 00472BC2h"
@@ -883,18 +883,18 @@ int32_t HangarWindow::Initialize() {
 );
 // LINE 97:
 	asm( 
-"	      00472bc7    lea eax,[ebp-0Ch]"
+"	      00472bc7    lea eax,sText.c_str_ptr"
 "	      00472bca    push eax"
-"	      00472bcb    mov eax,[ebp-14h]"
+"	      00472bcb    mov eax,tempButtonWindow"
 "	      00472bce    mov eax,[eax]"
-"	      00472bd0    mov ecx,[ebp-14h]"
+"	      00472bd0    mov ecx,tempButtonWindow"
 "	      00472bd3    call dword ptr [eax+48h]"
 );
 // LINE 98:
 	asm( 
-"	      00472bd6    mov eax,[ebp-14h]"
+"	      00472bd6    mov eax,tempButtonWindow"
 "	      00472bd9    mov eax,[eax]"
-"	      00472bdb    mov ecx,[ebp-14h]"
+"	      00472bdb    mov ecx,tempButtonWindow"
 "	      00472bde    call dword ptr [eax+4]"
 );
 // LINE 100:
@@ -912,20 +912,20 @@ int32_t HangarWindow::Initialize() {
 "	      00472c15    mov dword ptr [ebp-58h],1ABh"
 "	      00472c1c    jmp near ptr 00472C21h"
 "	      00472c21    push 1"
-"	      00472c23    mov eax,[ebp-40BCh]"
+"	      00472c23    mov eax,this"
 "	      00472c29    push eax"
-"	      00472c2a    mov eax,[ebp-10h]"
+"	      00472c2a    mov eax,szButtonFileName"
 "	      00472c2d    push eax"
-"	      00472c2e    mov eax,[ebp-40BCh]"
+"	      00472c2e    mov eax,this"
 "	      00472c34    push eax"
 "	      00472c35    push 2"
 "	      00472c37    lea eax,[ebp-64h]"
 "	      00472c3a    push eax"
 "	      00472c3b    mov ecx,[ebp-54h]"
 "	      00472c3e    call 00471847h"
-"	      00472c43    mov [ebp-14h],eax"
+"	      00472c43    mov tempButtonWindow,eax"
 "	      00472c46    jmp near ptr 00472C52h"
-"	      00472c4b    mov dword ptr [ebp-14h],0"
+"	      00472c4b    mov tempButtonWindow,0"
 );
 // LINE 101:
 	asm( 
@@ -933,14 +933,14 @@ int32_t HangarWindow::Initialize() {
 "	      00472c54    push 7Fh"
 "	      00472c56    call 0042B15Fh"
 "	      00472c5b    add esp,8"
-"	      00472c5e    mov [ebp-4],eax"
+"	      00472c5e    mov nFullStringID,eax"
 );
 // LINE 102:
 	asm( 
 "	      00472c61    push 0FFFh"
 "	      00472c66    lea eax,[ebp-30B0h]"
 "	      00472c6c    push eax"
-"	      00472c6d    mov eax,[ebp-4]"
+"	      00472c6d    mov eax,nFullStringID"
 "	      00472c70    push eax"
 "	      00472c71    mov eax,ds:[5C28C8h]"
 "	      00472c76    push eax"
@@ -952,7 +952,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472c95    lea eax,[ebp-30B0h]"
 "	      00472c9b    push eax"
 "	      00472c9c    mov ecx,3E8h"
-"	      00472ca1    mov eax,[ebp-4]"
+"	      00472ca1    mov eax,nFullStringID"
 "	      00472ca4    sub edx,edx"
 "	      00472ca6    div ecx"
 "	      00472ca8    push edx"
@@ -968,7 +968,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472ccf    push eax"
 "	      00472cd0    lea eax,[ebp-30B0h]"
 "	      00472cd6    push eax"
-"	      00472cd7    lea ecx,[ebp-0Ch]"
+"	      00472cd7    lea ecx,sText.c_str_ptr"
 "	      00472cda    call 0040FEE0h"
 "	      00472cdf    jmp near ptr 00472CE4h"
 "	      00472ce4    jmp near ptr 00472CE9h"
@@ -977,7 +977,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472cf3    add esp,4"
 "	      00472cf6    push eax"
 "	      00472cf7    push 597200h"
-"	      00472cfc    lea ecx,[ebp-0Ch]"
+"	      00472cfc    lea ecx,sText.c_str_ptr"
 "	      00472cff    call 00410130h"
 "	      00472d04    jmp near ptr 00472D09h"
 "	      00472d09    jmp near ptr 00472D3Ch"
@@ -989,25 +989,25 @@ int32_t HangarWindow::Initialize() {
 "	      00472d22    push eax"
 "	      00472d23    lea eax,[ebp-30B0h]"
 "	      00472d29    push eax"
-"	      00472d2a    lea ecx,[ebp-0Ch]"
+"	      00472d2a    lea ecx,sText.c_str_ptr"
 "	      00472d2d    call 0040FEE0h"
 "	      00472d32    jmp near ptr 00472D37h"
 "	      00472d37    jmp near ptr 00472D3Ch"
 );
 // LINE 103:
 	asm( 
-"	      00472d3c    lea eax,[ebp-0Ch]"
+"	      00472d3c    lea eax,sText.c_str_ptr"
 "	      00472d3f    push eax"
-"	      00472d40    mov eax,[ebp-14h]"
+"	      00472d40    mov eax,tempButtonWindow"
 "	      00472d43    mov eax,[eax]"
-"	      00472d45    mov ecx,[ebp-14h]"
+"	      00472d45    mov ecx,tempButtonWindow"
 "	      00472d48    call dword ptr [eax+48h]"
 );
 // LINE 104:
 	asm( 
-"	      00472d4b    mov eax,[ebp-14h]"
+"	      00472d4b    mov eax,tempButtonWindow"
 "	      00472d4e    mov eax,[eax]"
-"	      00472d50    mov ecx,[ebp-14h]"
+"	      00472d50    mov ecx,tempButtonWindow"
 "	      00472d53    call dword ptr [eax+4]"
 );
 // LINE 106:
@@ -1025,20 +1025,20 @@ int32_t HangarWindow::Initialize() {
 "	      00472d8a    mov dword ptr [ebp-6Ch],1ABh"
 "	      00472d91    jmp near ptr 00472D96h"
 "	      00472d96    push 1"
-"	      00472d98    mov eax,[ebp-40BCh]"
+"	      00472d98    mov eax,this"
 "	      00472d9e    push eax"
-"	      00472d9f    mov eax,[ebp-10h]"
+"	      00472d9f    mov eax,szButtonFileName"
 "	      00472da2    push eax"
-"	      00472da3    mov eax,[ebp-40BCh]"
+"	      00472da3    mov eax,this"
 "	      00472da9    push eax"
 "	      00472daa    push 3"
 "	      00472dac    lea eax,[ebp-78h]"
 "	      00472daf    push eax"
 "	      00472db0    mov ecx,[ebp-68h]"
 "	      00472db3    call 00471847h"
-"	      00472db8    mov [ebp-14h],eax"
+"	      00472db8    mov tempButtonWindow,eax"
 "	      00472dbb    jmp near ptr 00472DC7h"
-"	      00472dc0    mov dword ptr [ebp-14h],0"
+"	      00472dc0    mov tempButtonWindow,0"
 );
 // LINE 107:
 	asm( 
@@ -1046,14 +1046,14 @@ int32_t HangarWindow::Initialize() {
 "	      00472dc9    push 80h"
 "	      00472dce    call 0042B15Fh"
 "	      00472dd3    add esp,8"
-"	      00472dd6    mov [ebp-4],eax"
+"	      00472dd6    mov nFullStringID,eax"
 );
 // LINE 108:
 	asm( 
 "	      00472dd9    push 0FFFh"
 "	      00472dde    lea eax,[ebp-40B4h]"
 "	      00472de4    push eax"
-"	      00472de5    mov eax,[ebp-4]"
+"	      00472de5    mov eax,nFullStringID"
 "	      00472de8    push eax"
 "	      00472de9    mov eax,ds:[5C28C8h]"
 "	      00472dee    push eax"
@@ -1065,7 +1065,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472e0d    lea eax,[ebp-40B4h]"
 "	      00472e13    push eax"
 "	      00472e14    mov ecx,3E8h"
-"	      00472e19    mov eax,[ebp-4]"
+"	      00472e19    mov eax,nFullStringID"
 "	      00472e1c    sub edx,edx"
 "	      00472e1e    div ecx"
 "	      00472e20    push edx"
@@ -1081,7 +1081,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472e47    push eax"
 "	      00472e48    lea eax,[ebp-40B4h]"
 "	      00472e4e    push eax"
-"	      00472e4f    lea ecx,[ebp-0Ch]"
+"	      00472e4f    lea ecx,sText.c_str_ptr"
 "	      00472e52    call 0040FEE0h"
 "	      00472e57    jmp near ptr 00472E5Ch"
 "	      00472e5c    jmp near ptr 00472E61h"
@@ -1090,7 +1090,7 @@ int32_t HangarWindow::Initialize() {
 "	      00472e6b    add esp,4"
 "	      00472e6e    push eax"
 "	      00472e6f    push 597200h"
-"	      00472e74    lea ecx,[ebp-0Ch]"
+"	      00472e74    lea ecx,sText.c_str_ptr"
 "	      00472e77    call 00410130h"
 "	      00472e7c    jmp near ptr 00472E81h"
 "	      00472e81    jmp near ptr 00472EB4h"
@@ -1102,36 +1102,36 @@ int32_t HangarWindow::Initialize() {
 "	      00472e9a    push eax"
 "	      00472e9b    lea eax,[ebp-40B4h]"
 "	      00472ea1    push eax"
-"	      00472ea2    lea ecx,[ebp-0Ch]"
+"	      00472ea2    lea ecx,sText.c_str_ptr"
 "	      00472ea5    call 0040FEE0h"
 "	      00472eaa    jmp near ptr 00472EAFh"
 "	      00472eaf    jmp near ptr 00472EB4h"
 );
 // LINE 109:
 	asm( 
-"	      00472eb4    lea eax,[ebp-0Ch]"
+"	      00472eb4    lea eax,sText.c_str_ptr"
 "	      00472eb7    push eax"
-"	      00472eb8    mov eax,[ebp-14h]"
+"	      00472eb8    mov eax,tempButtonWindow"
 "	      00472ebb    mov eax,[eax]"
-"	      00472ebd    mov ecx,[ebp-14h]"
+"	      00472ebd    mov ecx,tempButtonWindow"
 "	      00472ec0    call dword ptr [eax+48h]"
 );
 // LINE 110:
 	asm( 
-"	      00472ec3    mov eax,[ebp-14h]"
+"	      00472ec3    mov eax,tempButtonWindow"
 "	      00472ec6    mov eax,[eax]"
-"	      00472ec8    mov ecx,[ebp-14h]"
+"	      00472ec8    mov ecx,tempButtonWindow"
 "	      00472ecb    call dword ptr [eax+4]"
 );
 // LINE 112:
 	asm( 
 "	      00472ece    mov dword ptr [ebp-7Ch],1"
-"	      00472ed5    mov eax,[ebp-8]"
+"	      00472ed5    mov eax,sText.reference"
 "	      00472ed8    dec dword ptr [eax+0Ch]"
-"	      00472edb    mov eax,[ebp-8]"
+"	      00472edb    mov eax,sText.reference"
 "	      00472ede    cmp dword ptr [eax+0Ch],0"
 "	      00472ee2    jne near ptr 00472F1Ch"
-"	      00472ee8    mov eax,[ebp-8]"
+"	      00472ee8    mov eax,sText.reference"
 "	      00472eeb    mov [ebp-94h],eax"
 "	      00472ef1    mov eax,[ebp-94h]"
 "	      00472ef7    mov [ebp-90h],eax"
@@ -1142,9 +1142,9 @@ int32_t HangarWindow::Initialize() {
 "	      00472f12    call 0041DD70h"
 "	      00472f17    jmp near ptr 00472F1Ch"
 "	      00472f1c    jmp near ptr 00472F21h"
-"	      00472f21    cmp dword ptr [ebp-0Ch],0"
+"	      00472f21    cmp sText.c_str_ptr,0"
 "	      00472f25    je near ptr 00472F4Fh"
-"	      00472f2b    mov eax,[ebp-0Ch]"
+"	      00472f2b    mov eax,sText.c_str_ptr"
 "	      00472f2e    mov [ebp-88h],eax"
 "	      00472f34    mov eax,[ebp-88h]"
 "	      00472f3a    mov [ebp-8Ch],eax"
@@ -1176,14 +1176,14 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      00472f67    push ebx"
 "	      00472f68    push esi"
 "	      00472f69    push edi"
-"	      00472f6a    mov [ebp-24h],ecx"
+"	      00472f6a    mov this,ecx"
 );
 // LINE 122:
 	asm( 
-"	      00472f6d    mov eax,[ebp-24h]"
+"	      00472f6d    mov eax,this"
 "	      00472f70    cmp dword ptr [eax+64h],0"
 "	      00472f74    je near ptr 00472F95h"
-"	      00472f7a    mov eax,[ebp-24h]"
+"	      00472f7a    mov eax,this"
 "	      00472f7d    mov eax,[eax+64h]"
 "	      00472f80    mov [ebp-4],eax"
 "	      00472f83    mov eax,[ebp-4]"
@@ -1193,27 +1193,27 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      00472f8d    call 0056A740h"
 "	      00472f92    add esp,4"
 "	      00472f95    jmp near ptr 00472F9Ah"
-"	      00472f9a    mov eax,[ebp-24h]"
+"	      00472f9a    mov eax,this"
 "	      00472f9d    mov eax,[eax+68h]"
 "	      00472fa0    mov eax,[eax+4]"
 "	      00472fa3    inc eax"
 "	      00472fa4    push eax"
 "	      00472fa5    call 0056A600h"
 "	      00472faa    add esp,4"
-"	      00472fad    mov ecx,[ebp-24h]"
+"	      00472fad    mov ecx,this"
 "	      00472fb0    mov [ecx+64h],eax"
 "	      00472fb3    jmp near ptr 00472FB8h"
-"	      00472fb8    mov eax,[ebp-24h]"
+"	      00472fb8    mov eax,this"
 "	      00472fbb    mov eax,[eax+68h]"
 "	      00472fbe    cmp dword ptr [eax+4],0"
 "	      00472fc2    je near ptr 00473031h"
 "	      00472fc8    jmp near ptr 00472FCDh"
 "	      00472fcd    jmp near ptr 00472FD2h"
-"	      00472fd2    mov eax,[ebp-24h]"
+"	      00472fd2    mov eax,this"
 "	      00472fd5    mov eax,[eax+68h]"
 "	      00472fd8    cmp dword ptr [eax+4],0"
 "	      00472fdc    je near ptr 00472FF7h"
-"	      00472fe2    mov eax,[ebp-24h]"
+"	      00472fe2    mov eax,this"
 "	      00472fe5    mov eax,[eax+68h]"
 "	      00472fe8    mov eax,[eax]"
 "	      00472fea    mov [ebp-18h],eax"
@@ -1221,11 +1221,11 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      00472ff2    jmp near ptr 00473003h"
 "	      00472ff7    mov dword ptr [ebp-18h],0"
 "	      00472ffe    jmp near ptr 00473003h"
-"	      00473003    mov eax,[ebp-24h]"
+"	      00473003    mov eax,this"
 "	      00473006    mov eax,[eax+68h]"
 "	      00473009    mov eax,[eax+4]"
 "	      0047300c    mov [ebp-1Ch],eax"
-"	      0047300f    mov eax,[ebp-24h]"
+"	      0047300f    mov eax,this"
 "	      00473012    mov eax,[eax+64h]"
 "	      00473015    mov [ebp-20h],eax"
 "	      00473018    mov eax,[ebp-1Ch]"
@@ -1243,10 +1243,10 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      0047303f    lea eax,[ebp-8]"
 "	      00473042    mov [ebp-10h],eax"
 "	      00473045    jmp near ptr 0047304Ah"
-"	      0047304a    mov eax,[ebp-24h]"
+"	      0047304a    mov eax,this"
 "	      0047304d    mov eax,[eax+68h]"
 "	      00473050    mov eax,[eax+4]"
-"	      00473053    mov ecx,[ebp-24h]"
+"	      00473053    mov ecx,this"
 "	      00473056    add eax,[ecx+64h]"
 "	      00473059    mov [ebp-14h],eax"
 "	      0047305c    mov eax,[ebp-10h]"
@@ -1255,9 +1255,9 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 "	      00473064    mov [ecx],al"
 "	      00473066    jmp near ptr 0047306Bh"
 "	      0047306b    jmp near ptr 00473070h"
-"	      00473070    mov eax,[ebp+8]"
+"	      00473070    mov eax,pColorTable"
 "	      00473073    push eax"
-"	      00473074    mov eax,[ebp-24h]"
+"	      00473074    mov eax,this"
 "	      00473077    mov eax,[eax+64h]"
 "	      0047307a    push eax"
 "	      0047307b    call 004704DBh"
@@ -1289,19 +1289,19 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004730a9    push ebx"
 "	      004730aa    push esi"
 "	      004730ab    push edi"
-"	      004730ac    mov [ebp-28h],ecx"
+"	      004730ac    mov this,ecx"
 );
 // LINE 133:
 	asm( 
-"	      004730af    mov eax,[ebp-28h]"
+"	      004730af    mov eax,this"
 "	      004730b2    cmp dword ptr [eax+11Eh],0"
 "	      004730b9    jne near ptr 00473214h"
 );
 // LINE 134:
 	asm( 
-"	      004730bf    mov eax,[ebp-28h]"
+"	      004730bf    mov eax,this"
 "	      004730c2    mov eax,[eax]"
-"	      004730c4    mov ecx,[ebp-28h]"
+"	      004730c4    mov ecx,this"
 "	      004730c7    call dword ptr [eax+0B4h]"
 );
 // LINE 135:
@@ -1312,10 +1312,10 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004730da    mov [ebp-4],eax"
 "	      004730dd    cmp dword ptr [ebp-4],0"
 "	      004730e1    je near ptr 00473207h"
-"	      004730e7    mov eax,[ebp-28h]"
+"	      004730e7    mov eax,this"
 "	      004730ea    cmp dword ptr [eax+64h],0"
 "	      004730ee    je near ptr 0047310Fh"
-"	      004730f4    mov eax,[ebp-28h]"
+"	      004730f4    mov eax,this"
 "	      004730f7    mov eax,[eax+64h]"
 "	      004730fa    mov [ebp-8],eax"
 "	      004730fd    mov eax,[ebp-8]"
@@ -1325,27 +1325,27 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      00473107    call 0056A740h"
 "	      0047310c    add esp,4"
 "	      0047310f    jmp near ptr 00473114h"
-"	      00473114    mov eax,[ebp-28h]"
+"	      00473114    mov eax,this"
 "	      00473117    mov eax,[eax+68h]"
 "	      0047311a    mov eax,[eax+4]"
 "	      0047311d    inc eax"
 "	      0047311e    push eax"
 "	      0047311f    call 0056A600h"
 "	      00473124    add esp,4"
-"	      00473127    mov ecx,[ebp-28h]"
+"	      00473127    mov ecx,this"
 "	      0047312a    mov [ecx+64h],eax"
 "	      0047312d    jmp near ptr 00473132h"
-"	      00473132    mov eax,[ebp-28h]"
+"	      00473132    mov eax,this"
 "	      00473135    mov eax,[eax+68h]"
 "	      00473138    cmp dword ptr [eax+4],0"
 "	      0047313c    je near ptr 004731ABh"
 "	      00473142    jmp near ptr 00473147h"
 "	      00473147    jmp near ptr 0047314Ch"
-"	      0047314c    mov eax,[ebp-28h]"
+"	      0047314c    mov eax,this"
 "	      0047314f    mov eax,[eax+68h]"
 "	      00473152    cmp dword ptr [eax+4],0"
 "	      00473156    je near ptr 00473171h"
-"	      0047315c    mov eax,[ebp-28h]"
+"	      0047315c    mov eax,this"
 "	      0047315f    mov eax,[eax+68h]"
 "	      00473162    mov eax,[eax]"
 "	      00473164    mov [ebp-1Ch],eax"
@@ -1353,11 +1353,11 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      0047316c    jmp near ptr 0047317Dh"
 "	      00473171    mov dword ptr [ebp-1Ch],0"
 "	      00473178    jmp near ptr 0047317Dh"
-"	      0047317d    mov eax,[ebp-28h]"
+"	      0047317d    mov eax,this"
 "	      00473180    mov eax,[eax+68h]"
 "	      00473183    mov eax,[eax+4]"
 "	      00473186    mov [ebp-20h],eax"
-"	      00473189    mov eax,[ebp-28h]"
+"	      00473189    mov eax,this"
 "	      0047318c    mov eax,[eax+64h]"
 "	      0047318f    mov [ebp-24h],eax"
 "	      00473192    mov eax,[ebp-20h]"
@@ -1375,10 +1375,10 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004731b9    lea eax,[ebp-0Ch]"
 "	      004731bc    mov [ebp-14h],eax"
 "	      004731bf    jmp near ptr 004731C4h"
-"	      004731c4    mov eax,[ebp-28h]"
+"	      004731c4    mov eax,this"
 "	      004731c7    mov eax,[eax+68h]"
 "	      004731ca    mov eax,[eax+4]"
-"	      004731cd    mov ecx,[ebp-28h]"
+"	      004731cd    mov ecx,this"
 "	      004731d0    add eax,[ecx+64h]"
 "	      004731d3    mov [ebp-18h],eax"
 "	      004731d6    mov eax,[ebp-14h]"
@@ -1387,20 +1387,20 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004731de    mov [ecx],al"
 "	      004731e0    jmp near ptr 004731E5h"
 "	      004731e5    jmp near ptr 004731EAh"
-"	      004731ea    mov eax,[ebp-28h]"
+"	      004731ea    mov eax,this"
 "	      004731ed    mov eax,[eax+64h]"
 "	      004731f0    push eax"
 "	      004731f1    mov ecx,[ebp-4]"
 "	      004731f4    call 0046E6DFh"
-"	      004731f9    mov ecx,[ebp-28h]"
+"	      004731f9    mov ecx,this"
 "	      004731fc    mov [ecx+11Eh],eax"
 "	      00473202    jmp near ptr 00473214h"
-"	      00473207    mov eax,[ebp-28h]"
+"	      00473207    mov eax,this"
 "	      0047320a    mov dword ptr [eax+11Eh],0"
 );
 // LINE 137:
 	asm( 
-"	      00473214    mov eax,[ebp-28h]"
+"	      00473214    mov eax,this"
 "	      00473217    mov eax,[eax+11Eh]"
 "	      0047321d    jmp near ptr 00473222h"
 );
@@ -1424,17 +1424,17 @@ void HangarWindow::DestroyImage() {
 "	      0047322f    push ebx"
 "	      00473230    push esi"
 "	      00473231    push edi"
-"	      00473232    mov [ebp-0Ch],ecx"
+"	      00473232    mov this,ecx"
 );
 // LINE 144:
 	asm( 
-"	      00473235    mov eax,[ebp-0Ch]"
+"	      00473235    mov eax,this"
 "	      00473238    cmp dword ptr [eax+11Eh],0"
 "	      0047323f    je near ptr 0047328Ch"
 );
 // LINE 145:
 	asm( 
-"	      00473245    mov eax,[ebp-0Ch]"
+"	      00473245    mov eax,this"
 "	      00473248    mov eax,[eax+11Eh]"
 "	      0047324e    mov [ebp-8],eax"
 "	      00473251    mov eax,[ebp-8]"
@@ -1452,7 +1452,7 @@ void HangarWindow::DestroyImage() {
 );
 // LINE 146:
 	asm( 
-"	      0047327f    mov eax,[ebp-0Ch]"
+"	      0047327f    mov eax,this"
 "	      00473282    mov dword ptr [eax+11Eh],0"
 );
 // LINE 148:
@@ -1478,14 +1478,14 @@ int32_t HangarWindow::ComposeSelf() {
 "	      0047329c    push ebx"
 "	      0047329d    push esi"
 "	      0047329e    push edi"
-"	      0047329f    mov [ebp-28h],ecx"
+"	      0047329f    mov this,ecx"
 );
 // LINE 156:
 	asm( 
-"	      004732a2    mov eax,[ebp-28h]"
+"	      004732a2    mov eax,this"
 "	      004732a5    cmp dword ptr [eax+44h],0"
 "	      004732a9    je near ptr 004732BCh"
-"	      004732af    mov eax,[ebp-28h]"
+"	      004732af    mov eax,this"
 "	      004732b2    cmp dword ptr [eax+54h],0"
 "	      004732b6    jne near ptr 004732C3h"
 );
@@ -1496,35 +1496,35 @@ int32_t HangarWindow::ComposeSelf() {
 );
 // LINE 159:
 	asm( 
-"	      004732c3    mov eax,[ebp-28h]"
+"	      004732c3    mov eax,this"
 "	      004732c6    cmp dword ptr [eax+102h],0"
 "	      004732cd    je near ptr 004732E5h"
 );
 // LINE 160:
 	asm( 
-"	      004732d3    mov eax,[ebp-28h]"
+"	      004732d3    mov eax,this"
 "	      004732d6    mov eax,[eax+102h]"
 "	      004732dc    push eax"
-"	      004732dd    mov ecx,[ebp-28h]"
+"	      004732dd    mov ecx,this"
 "	      004732e0    call 00473C6Ch"
 );
 // LINE 161:
 	asm( 
-"	      004732e5    mov eax,[ebp-28h]"
+"	      004732e5    mov eax,this"
 "	      004732e8    mov eax,[eax+10Eh]"
 "	      004732ee    mov [ebp-10h],eax"
 "	      004732f1    jmp near ptr 004732F6h"
-"	      004732f6    mov eax,[ebp-28h]"
+"	      004732f6    mov eax,this"
 "	      004732f9    cmp dword ptr [eax+10Ah],0"
 "	      00473300    je near ptr 00473385h"
-"	      00473306    mov eax,[ebp-28h]"
+"	      00473306    mov eax,this"
 "	      00473309    cmp dword ptr [eax+106h],1"
 "	      00473310    jne near ptr 00473329h"
 "	      00473316    call dword ptr ds:[6C3908h]"
 "	      0047331c    mov [ebp-20h],eax"
 "	      0047331f    jmp near ptr 00473370h"
 "	      00473324    jmp near ptr 00473370h"
-"	      00473329    mov eax,[ebp-28h]"
+"	      00473329    mov eax,this"
 "	      0047332c    cmp dword ptr [eax+106h],0"
 "	      00473333    jne near ptr 00473359h"
 "	      00473339    lea eax,[ebp-1Ch]"
@@ -1543,18 +1543,18 @@ int32_t HangarWindow::ComposeSelf() {
 "	      00473368    mov [ebp-20h],eax"
 "	      0047336b    jmp near ptr 00473370h"
 "	      00473370    mov eax,[ebp-20h]"
-"	      00473373    mov ecx,[ebp-28h]"
+"	      00473373    mov ecx,this"
 "	      00473376    sub eax,[ecx+10Ah]"
 "	      0047337c    mov [ebp-0Ch],eax"
 "	      0047337f    mov eax,[ebp-0Ch]"
 "	      00473382    add [ebp-10h],eax"
-"	      00473385    mov eax,[ebp-28h]"
+"	      00473385    mov eax,this"
 "	      00473388    cmp dword ptr [eax+106h],0"
 "	      0047338f    jne near ptr 004733CCh"
-"	      00473395    mov eax,[ebp-28h]"
+"	      00473395    mov eax,this"
 "	      00473398    cmp dword ptr [eax+112h],0"
 "	      0047339f    je near ptr 004733CCh"
-"	      004733a5    mov eax,[ebp-28h]"
+"	      004733a5    mov eax,this"
 "	      004733a8    mov eax,[eax+112h]"
 "	      004733ae    push eax"
 "	      004733af    push 0F4240h"
@@ -1575,82 +1575,82 @@ int32_t HangarWindow::ComposeSelf() {
 "	      004733ee    jmp near ptr 004733FDh"
 "	      004733f3    cmp dword ptr [ebp-24h],0"
 "	      004733f7    je near ptr 0047344Ch"
-"	      004733fd    mov eax,[ebp-28h]"
+"	      004733fd    mov eax,this"
 "	      00473400    cmp dword ptr [eax+0FEh],0"
 "	      00473407    jne near ptr 0047344Ch"
 );
 // LINE 162:
 	asm( 
-"	      0047340d    mov eax,[ebp-28h]"
+"	      0047340d    mov eax,this"
 "	      00473410    add eax,122h"
 "	      00473415    push eax"
-"	      00473416    lea eax,[ebp-4]"
+"	      00473416    lea eax,lHelpID"
 "	      00473419    push eax"
-"	      0047341a    mov ecx,[ebp-28h]"
+"	      0047341a    mov ecx,this"
 "	      0047341d    call 00473B5Ch"
 "	      00473422    test eax,eax"
 "	      00473424    je near ptr 0047343Fh"
 );
 // LINE 163:
 	asm( 
-"	      0047342a    mov eax,[ebp-28h]"
+"	      0047342a    mov eax,this"
 "	      0047342d    add eax,122h"
 "	      00473432    push eax"
-"	      00473433    mov eax,[ebp-4]"
+"	      00473433    mov eax,lHelpID"
 "	      00473436    push eax"
-"	      00473437    mov ecx,[ebp-28h]"
+"	      00473437    mov ecx,this"
 "	      0047343a    call 00473F53h"
 );
 // LINE 164:
 	asm( 
-"	      0047343f    mov eax,[ebp-28h]"
+"	      0047343f    mov eax,this"
 "	      00473442    mov dword ptr [eax+0FEh],1"
 );
 // LINE 167:
 	asm( 
 "	      0047344c    jmp near ptr 00473451h"
-"	      00473451    mov eax,[ebp-28h]"
+"	      00473451    mov eax,this"
 "	      00473454    cmp dword ptr [eax+48h],0"
 "	      00473458    je near ptr 004734DEh"
 );
 // LINE 168:
 	asm( 
 "	      0047345e    push 0"
-"	      00473460    mov eax,[ebp-28h]"
+"	      00473460    mov eax,this"
 "	      00473463    mov eax,[eax]"
-"	      00473465    mov ecx,[ebp-28h]"
+"	      00473465    mov ecx,this"
 "	      00473468    call dword ptr [eax+50h]"
 );
 // LINE 170:
 	asm( 
 "	      0047346b    jmp near ptr 00473470h"
 "	      00473470    jmp near ptr 00473475h"
-"	      00473475    mov eax,[ebp-28h]"
+"	      00473475    mov eax,this"
 "	      00473478    mov eax,[eax+11Eh]"
 "	      0047347e    mov eax,[eax+0Ch]"
 "	      00473481    push eax"
-"	      00473482    mov eax,[ebp-28h]"
+"	      00473482    mov eax,this"
 "	      00473485    mov eax,[eax+18h]"
-"	      00473488    mov ecx,[ebp-28h]"
+"	      00473488    mov ecx,this"
 "	      0047348b    sub eax,[ecx+10h]"
-"	      0047348e    mov ecx,[ebp-28h]"
+"	      0047348e    mov ecx,this"
 "	      00473491    add eax,[ecx+12Ah]"
 "	      00473497    push eax"
 "	      00473498    push 0"
-"	      0047349a    mov eax,[ebp-28h]"
+"	      0047349a    mov eax,this"
 "	      0047349d    mov eax,[eax+12Ah]"
 "	      004734a3    push eax"
-"	      004734a4    mov eax,[ebp-28h]"
+"	      004734a4    mov eax,this"
 "	      004734a7    mov eax,[eax+24h]"
 "	      004734aa    push eax"
-"	      004734ab    mov eax,[ebp-28h]"
+"	      004734ab    mov eax,this"
 "	      004734ae    mov eax,[eax+20h]"
 "	      004734b1    push eax"
-"	      004734b2    mov eax,[ebp-28h]"
+"	      004734b2    mov eax,this"
 "	      004734b5    mov eax,[eax+44h]"
 "	      004734b8    push eax"
-"	      004734b9    mov eax,[ebp-28h]"
-"	      004734bc    mov ecx,[ebp-28h]"
+"	      004734b9    mov eax,this"
+"	      004734bc    mov ecx,this"
 "	      004734bf    mov ecx,[ecx+11Eh]"
 "	      004734c5    mov edx,[ecx]"
 "	      004734c7    mov ecx,[eax+11Eh]"
@@ -1658,9 +1658,9 @@ int32_t HangarWindow::ComposeSelf() {
 );
 // LINE 171:
 	asm( 
-"	      004734d0    mov eax,[ebp-28h]"
+"	      004734d0    mov eax,this"
 "	      004734d3    mov eax,[eax]"
-"	      004734d5    mov ecx,[ebp-28h]"
+"	      004734d5    mov ecx,this"
 "	      004734d8    call dword ptr [eax+0B8h]"
 );
 // LINE 176:
@@ -1690,29 +1690,29 @@ int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 "	      004734f3    push ebx"
 "	      004734f4    push esi"
 "	      004734f5    push edi"
-"	      004734f6    mov [ebp-8],ecx"
+"	      004734f6    mov this,ecx"
 );
 // LINE 186:
 	asm( 
-"	      004734f9    cmp dword ptr [ebp+0Ch],0"
+"	      004734f9    cmp lWindowID,0"
 "	      004734fd    jne near ptr 00473530h"
 );
 // LINE 187:
 	asm( 
-"	      00473503    mov dword ptr [ebp-4],0"
+"	      00473503    mov lOwnerMessage,0"
 );
 // LINE 188:
 	asm( 
-"	      0047350a    lea eax,[ebp-4]"
+"	      0047350a    lea eax,lOwnerMessage"
 "	      0047350d    push eax"
 "	      0047350e    push 1"
-"	      00473510    mov eax,[ebp-8]"
+"	      00473510    mov eax,this"
 "	      00473513    mov eax,[eax+4]"
 "	      00473516    push eax"
-"	      00473517    mov eax,[ebp-8]"
+"	      00473517    mov eax,this"
 "	      0047351a    push eax"
-"	      0047351b    mov eax,[ebp-8]"
-"	      0047351e    mov ecx,[ebp-8]"
+"	      0047351b    mov eax,this"
+"	      0047351e    mov ecx,this"
 "	      00473521    mov ecx,[ecx+38h]"
 "	      00473524    mov edx,[ecx]"
 "	      00473526    mov ecx,[eax+38h]"
@@ -1721,25 +1721,25 @@ int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 // LINE 190:
 	asm( 
 "	      0047352b    jmp near ptr 004735D0h"
-"	      00473530    cmp dword ptr [ebp+0Ch],1"
+"	      00473530    cmp lWindowID,1"
 "	      00473534    jne near ptr 00473567h"
 );
 // LINE 191:
 	asm( 
-"	      0047353a    mov dword ptr [ebp-4],1"
+"	      0047353a    mov lOwnerMessage,1"
 );
 // LINE 192:
 	asm( 
-"	      00473541    lea eax,[ebp-4]"
+"	      00473541    lea eax,lOwnerMessage"
 "	      00473544    push eax"
 "	      00473545    push 1"
-"	      00473547    mov eax,[ebp-8]"
+"	      00473547    mov eax,this"
 "	      0047354a    mov eax,[eax+4]"
 "	      0047354d    push eax"
-"	      0047354e    mov eax,[ebp-8]"
+"	      0047354e    mov eax,this"
 "	      00473551    push eax"
-"	      00473552    mov eax,[ebp-8]"
-"	      00473555    mov ecx,[ebp-8]"
+"	      00473552    mov eax,this"
+"	      00473555    mov ecx,this"
 "	      00473558    mov ecx,[ecx+38h]"
 "	      0047355b    mov edx,[ecx]"
 "	      0047355d    mov ecx,[eax+38h]"
@@ -1748,25 +1748,25 @@ int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 // LINE 194:
 	asm( 
 "	      00473562    jmp near ptr 004735D0h"
-"	      00473567    cmp dword ptr [ebp+0Ch],2"
+"	      00473567    cmp lWindowID,2"
 "	      0047356b    jne near ptr 0047359Eh"
 );
 // LINE 195:
 	asm( 
-"	      00473571    mov dword ptr [ebp-4],2"
+"	      00473571    mov lOwnerMessage,2"
 );
 // LINE 196:
 	asm( 
-"	      00473578    lea eax,[ebp-4]"
+"	      00473578    lea eax,lOwnerMessage"
 "	      0047357b    push eax"
 "	      0047357c    push 1"
-"	      0047357e    mov eax,[ebp-8]"
+"	      0047357e    mov eax,this"
 "	      00473581    mov eax,[eax+4]"
 "	      00473584    push eax"
-"	      00473585    mov eax,[ebp-8]"
+"	      00473585    mov eax,this"
 "	      00473588    push eax"
-"	      00473589    mov eax,[ebp-8]"
-"	      0047358c    mov ecx,[ebp-8]"
+"	      00473589    mov eax,this"
+"	      0047358c    mov ecx,this"
 "	      0047358f    mov ecx,[ecx+38h]"
 "	      00473592    mov edx,[ecx]"
 "	      00473594    mov ecx,[eax+38h]"
@@ -1775,25 +1775,25 @@ int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 // LINE 198:
 	asm( 
 "	      00473599    jmp near ptr 004735D0h"
-"	      0047359e    cmp dword ptr [ebp+0Ch],3"
+"	      0047359e    cmp lWindowID,3"
 "	      004735a2    jne near ptr 004735D0h"
 );
 // LINE 199:
 	asm( 
-"	      004735a8    mov dword ptr [ebp-4],63h"
+"	      004735a8    mov lOwnerMessage,63h"
 );
 // LINE 200:
 	asm( 
-"	      004735af    lea eax,[ebp-4]"
+"	      004735af    lea eax,lOwnerMessage"
 "	      004735b2    push eax"
 "	      004735b3    push 1"
-"	      004735b5    mov eax,[ebp-8]"
+"	      004735b5    mov eax,this"
 "	      004735b8    mov eax,[eax+4]"
 "	      004735bb    push eax"
-"	      004735bc    mov eax,[ebp-8]"
+"	      004735bc    mov eax,this"
 "	      004735bf    push eax"
-"	      004735c0    mov eax,[ebp-8]"
-"	      004735c3    mov ecx,[ebp-8]"
+"	      004735c0    mov eax,this"
+"	      004735c3    mov ecx,this"
 "	      004735c6    mov ecx,[ecx+38h]"
 "	      004735c9    mov edx,[ecx]"
 "	      004735cb    mov ecx,[eax+38h]"
@@ -1824,17 +1824,17 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      004735e7    push ebx"
 "	      004735e8    push esi"
 "	      004735e9    push edi"
-"	      004735ea    mov [ebp-4],ecx"
+"	      004735ea    mov this,ecx"
 );
 // LINE 216:
 	asm( 
-"	      004735ed    cmp dword ptr [ebp+8],25h"
+"	      004735ed    cmp lKey,25h"
 "	      004735f1    jne near ptr 00473610h"
 );
 // LINE 217:
 	asm( 
 "	      004735f7    push 0FFFFFFE8h"
-"	      004735f9    mov ecx,[ebp-4]"
+"	      004735f9    mov ecx,this"
 "	      004735fc    call 00473C6Ch"
 );
 // LINE 218:
@@ -1845,13 +1845,13 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 220:
 	asm( 
 "	      0047360b    jmp near ptr 0047362Eh"
-"	      00473610    cmp dword ptr [ebp+8],27h"
+"	      00473610    cmp lKey,27h"
 "	      00473614    jne near ptr 0047362Eh"
 );
 // LINE 221:
 	asm( 
 "	      0047361a    push 18h"
-"	      0047361c    mov ecx,[ebp-4]"
+"	      0047361c    mov ecx,this"
 "	      0047361f    call 00473C6Ch"
 );
 // LINE 222:
@@ -1886,37 +1886,37 @@ long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 "	      00473642    push ebx"
 "	      00473643    push esi"
 "	      00473644    push edi"
-"	      00473645    mov [ebp-10h],ecx"
+"	      00473645    mov this,ecx"
 );
 // LINE 236:
 	asm( 
 "	      00473648    jmp near ptr 0047364Dh"
-"	      0047364d    mov eax,[ebp+8]"
+"	      0047364d    mov eax,nCursorX"
 "	      00473650    mov [ebp-0Ch],eax"
-"	      00473653    mov eax,[ebp+0Ch]"
+"	      00473653    mov eax,nCursorY"
 "	      00473656    mov [ebp-8],eax"
 "	      00473659    jmp near ptr 0047365Eh"
 "	      0047365e    lea eax,[ebp-0Ch]"
 "	      00473661    push eax"
-"	      00473662    lea eax,[ebp-4]"
+"	      00473662    lea eax,lHotspotID"
 "	      00473665    push eax"
-"	      00473666    mov ecx,[ebp-10h]"
+"	      00473666    mov ecx,this"
 "	      00473669    call 00473B5Ch"
 "	      0047366e    test eax,eax"
 "	      00473670    je near ptr 00473697h"
 );
 // LINE 239:
 	asm( 
-"	      00473676    lea eax,[ebp-4]"
+"	      00473676    lea eax,lHotspotID"
 "	      00473679    push eax"
 "	      0047367a    push 1"
-"	      0047367c    mov eax,[ebp-10h]"
+"	      0047367c    mov eax,this"
 "	      0047367f    mov eax,[eax+4]"
 "	      00473682    push eax"
-"	      00473683    mov eax,[ebp-10h]"
+"	      00473683    mov eax,this"
 "	      00473686    push eax"
-"	      00473687    mov eax,[ebp-10h]"
-"	      0047368a    mov ecx,[ebp-10h]"
+"	      00473687    mov eax,this"
+"	      0047368a    mov ecx,this"
 "	      0047368d    mov ecx,[ecx+38h]"
 "	      00473690    mov edx,[ecx]"
 "	      00473692    mov ecx,[eax+38h]"
@@ -1947,7 +1947,7 @@ long HangarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButto
 "	      004736ae    push ebx"
 "	      004736af    push esi"
 "	      004736b0    push edi"
-"	      004736b1    mov [ebp-4],ecx"
+"	      004736b1    mov this,ecx"
 );
 // LINE 251:
 	asm( 
@@ -1974,33 +1974,33 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      004736cb    push ebx"
 "	      004736cc    push esi"
 "	      004736cd    push edi"
-"	      004736ce    mov [ebp-10h],ecx"
+"	      004736ce    mov this,ecx"
 );
 // LINE 262:
 	asm( 
-"	      004736d1    cmp dword ptr [ebp+8],8"
+"	      004736d1    cmp nCursorX,8"
 "	      004736d5    jge near ptr 004736EDh"
 );
 // LINE 263:
 	asm( 
-"	      004736db    mov eax,[ebp-10h]"
+"	      004736db    mov eax,this"
 "	      004736de    mov dword ptr [eax+102h],0FFFFFFE8h"
 );
 // LINE 264:
 	asm( 
 "	      004736e8    jmp near ptr 00473729h"
 "	      004736ed    jmp near ptr 004736F2h"
-"	      004736f2    mov eax,[ebp-10h]"
+"	      004736f2    mov eax,this"
 "	      004736f5    mov eax,[eax+18h]"
-"	      004736f8    mov ecx,[ebp-10h]"
+"	      004736f8    mov ecx,this"
 "	      004736fb    sub eax,[ecx+10h]"
 "	      004736fe    sub eax,8"
-"	      00473701    cmp eax,[ebp+8]"
+"	      00473701    cmp eax,nCursorX"
 "	      00473704    jge near ptr 0047371Ch"
 );
 // LINE 265:
 	asm( 
-"	      0047370a    mov eax,[ebp-10h]"
+"	      0047370a    mov eax,this"
 "	      0047370d    mov dword ptr [eax+102h],18h"
 );
 // LINE 266:
@@ -2009,32 +2009,32 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 );
 // LINE 267:
 	asm( 
-"	      0047371c    mov eax,[ebp-10h]"
+"	      0047371c    mov eax,this"
 "	      0047371f    mov dword ptr [eax+102h],0"
 );
 // LINE 268:
 	asm( 
-"	      00473729    mov eax,[ebp-10h]"
+"	      00473729    mov eax,this"
 "	      0047372c    mov dword ptr [eax+0FEh],0"
-"	      00473736    mov eax,[ebp-10h]"
+"	      00473736    mov eax,this"
 "	      00473739    mov dword ptr [eax+10Eh],0"
-"	      00473743    mov eax,[ebp-10h]"
+"	      00473743    mov eax,this"
 "	      00473746    mov dword ptr [eax+10Ah],0"
 "	      00473750    jmp near ptr 00473755h"
 "	      00473755    jmp near ptr 0047375Ah"
-"	      0047375a    mov eax,[ebp-10h]"
+"	      0047375a    mov eax,this"
 "	      0047375d    cmp dword ptr [eax+10Ah],0"
 "	      00473764    je near ptr 0047376Fh"
 "	      0047376a    jmp near ptr 004737F0h"
-"	      0047376f    mov eax,[ebp-10h]"
+"	      0047376f    mov eax,this"
 "	      00473772    cmp dword ptr [eax+106h],1"
 "	      00473779    jne near ptr 00473798h"
 "	      0047377f    call dword ptr ds:[6C3908h]"
-"	      00473785    mov ecx,[ebp-10h]"
+"	      00473785    mov ecx,this"
 "	      00473788    mov [ecx+10Ah],eax"
 "	      0047378e    jmp near ptr 004737EBh"
 "	      00473793    jmp near ptr 004737EBh"
-"	      00473798    mov eax,[ebp-10h]"
+"	      00473798    mov eax,this"
 "	      0047379b    cmp dword ptr [eax+106h],0"
 "	      004737a2    jne near ptr 004737CEh"
 "	      004737a8    lea eax,[ebp-0Ch]"
@@ -2043,7 +2043,7 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      004737b2    mov eax,[ebp-0Ch]"
 "	      004737b5    mov [ebp-4],eax"
 "	      004737b8    mov eax,[ebp-4]"
-"	      004737bb    mov ecx,[ebp-10h]"
+"	      004737bb    mov ecx,this"
 "	      004737be    mov [ecx+10Ah],eax"
 "	      004737c4    jmp near ptr 004737EBh"
 "	      004737c9    jmp near ptr 004737EBh"
@@ -2051,7 +2051,7 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      004737d4    mov ecx,3E8h"
 "	      004737d9    sub edx,edx"
 "	      004737db    div ecx"
-"	      004737dd    mov ecx,[ebp-10h]"
+"	      004737dd    mov ecx,this"
 "	      004737e0    mov [ecx+10Ah],eax"
 "	      004737e6    jmp near ptr 004737EBh"
 "	      004737eb    jmp near ptr 004737F0h"
@@ -2059,19 +2059,19 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 );
 // LINE 269:
 	asm( 
-"	      004737f5    mov ecx,[ebp-10h]"
+"	      004737f5    mov ecx,this"
 "	      004737f8    call 00474577h"
 );
 // LINE 270:
 	asm( 
-"	      004737fd    mov eax,[ebp+8]"
-"	      00473800    mov ecx,[ebp-10h]"
+"	      004737fd    mov eax,nCursorX"
+"	      00473800    mov ecx,this"
 "	      00473803    mov [ecx+122h],eax"
 );
 // LINE 271:
 	asm( 
-"	      00473809    mov eax,[ebp+0Ch]"
-"	      0047380c    mov ecx,[ebp-10h]"
+"	      00473809    mov eax,nCursorY"
+"	      0047380c    mov ecx,this"
 "	      0047380f    mov [ecx+126h],eax"
 );
 // LINE 272:
@@ -2099,11 +2099,11 @@ void HangarWindow::GetImagePath() {
 "	      0047382c    push ebx"
 "	      0047382d    push esi"
 "	      0047382e    push edi"
-"	      0047382f    mov [ebp-44h],ecx"
+"	      0047382f    mov this,ecx"
 );
 // LINE 280:
 	asm( 
-"	      00473832    mov eax,[ebp-44h]"
+"	      00473832    mov eax,this"
 "	      00473835    cmp dword ptr [eax+0F2h],0"
 "	      0047383c    je near ptr 004739BCh"
 );
@@ -2133,14 +2133,14 @@ void HangarWindow::GetImagePath() {
 "	      00473892    add esp,4"
 "	      00473895    jmp near ptr 0047389Ah"
 "	      0047389a    jmp near ptr 0047389Fh"
-"	      0047389f    mov eax,[ebp-44h]"
+"	      0047389f    mov eax,this"
 "	      004738a2    mov eax,[eax+60h]"
 "	      004738a5    cmp dword ptr [eax+0Ch],1"
 "	      004738a9    ja near ptr 004738D0h"
 "	      004738af    cmp dword ptr [ebp-1Ch],0"
 "	      004738b3    je near ptr 0047396Eh"
 "	      004738b9    jmp near ptr 004738BEh"
-"	      004738be    mov eax,[ebp-44h]"
+"	      004738be    mov eax,this"
 "	      004738c1    mov eax,[eax+60h]"
 "	      004738c4    mov ecx,[ebp-1Ch]"
 "	      004738c7    cmp [eax+8],ecx"
@@ -2160,14 +2160,14 @@ void HangarWindow::GetImagePath() {
 "	      004738f7    mov [ebp-4],eax"
 "	      004738fa    jmp near ptr 00473906h"
 "	      004738ff    mov dword ptr [ebp-4],0"
-"	      00473906    mov eax,[ebp-44h]"
+"	      00473906    mov eax,this"
 "	      00473909    mov eax,[eax+60h]"
 "	      0047390c    dec dword ptr [eax+0Ch]"
-"	      0047390f    mov eax,[ebp-44h]"
+"	      0047390f    mov eax,this"
 "	      00473912    mov eax,[eax+60h]"
 "	      00473915    cmp dword ptr [eax+0Ch],0"
 "	      00473919    jne near ptr 0047395Bh"
-"	      0047391f    mov eax,[ebp-44h]"
+"	      0047391f    mov eax,this"
 "	      00473922    mov eax,[eax+60h]"
 "	      00473925    mov [ebp-18h],eax"
 "	      00473928    mov eax,[ebp-18h]"
@@ -2185,13 +2185,13 @@ void HangarWindow::GetImagePath() {
 "	      00473956    jmp near ptr 0047395Bh"
 "	      0047395b    jmp near ptr 00473960h"
 "	      00473960    mov eax,[ebp-4]"
-"	      00473963    mov ecx,[ebp-44h]"
+"	      00473963    mov ecx,this"
 "	      00473966    mov [ecx+60h],eax"
 "	      00473969    jmp near ptr 004739A1h"
 "	      0047396e    cmp dword ptr [ebp-1Ch],0"
 "	      00473972    je near ptr 004739A1h"
 "	      00473978    jmp near ptr 0047397Dh"
-"	      0047397d    mov eax,[ebp-44h]"
+"	      0047397d    mov eax,this"
 "	      00473980    mov eax,[eax+60h]"
 "	      00473983    mov eax,[eax]"
 "	      00473985    mov [ebp-0Ch],eax"
@@ -2205,7 +2205,7 @@ void HangarWindow::GetImagePath() {
 "	      00473999    add esp,0Ch"
 "	      0047399c    jmp near ptr 004739A1h"
 "	      004739a1    mov eax,[ebp-1Ch]"
-"	      004739a4    mov ecx,[ebp-44h]"
+"	      004739a4    mov ecx,this"
 "	      004739a7    mov ecx,[ecx+60h]"
 "	      004739aa    mov [ecx+4],eax"
 "	      004739ad    jmp near ptr 004739B2h"
@@ -2241,14 +2241,14 @@ void HangarWindow::GetImagePath() {
 "	      00473a0c    add esp,4"
 "	      00473a0f    jmp near ptr 00473A14h"
 "	      00473a14    jmp near ptr 00473A19h"
-"	      00473a19    mov eax,[ebp-44h]"
+"	      00473a19    mov eax,this"
 "	      00473a1c    mov eax,[eax+60h]"
 "	      00473a1f    cmp dword ptr [eax+0Ch],1"
 "	      00473a23    ja near ptr 00473A4Ah"
 "	      00473a29    cmp dword ptr [ebp-3Ch],0"
 "	      00473a2d    je near ptr 00473AE8h"
 "	      00473a33    jmp near ptr 00473A38h"
-"	      00473a38    mov eax,[ebp-44h]"
+"	      00473a38    mov eax,this"
 "	      00473a3b    mov eax,[eax+60h]"
 "	      00473a3e    mov ecx,[ebp-3Ch]"
 "	      00473a41    cmp [eax+8],ecx"
@@ -2268,14 +2268,14 @@ void HangarWindow::GetImagePath() {
 "	      00473a71    mov [ebp-24h],eax"
 "	      00473a74    jmp near ptr 00473A80h"
 "	      00473a79    mov dword ptr [ebp-24h],0"
-"	      00473a80    mov eax,[ebp-44h]"
+"	      00473a80    mov eax,this"
 "	      00473a83    mov eax,[eax+60h]"
 "	      00473a86    dec dword ptr [eax+0Ch]"
-"	      00473a89    mov eax,[ebp-44h]"
+"	      00473a89    mov eax,this"
 "	      00473a8c    mov eax,[eax+60h]"
 "	      00473a8f    cmp dword ptr [eax+0Ch],0"
 "	      00473a93    jne near ptr 00473AD5h"
-"	      00473a99    mov eax,[ebp-44h]"
+"	      00473a99    mov eax,this"
 "	      00473a9c    mov eax,[eax+60h]"
 "	      00473a9f    mov [ebp-38h],eax"
 "	      00473aa2    mov eax,[ebp-38h]"
@@ -2293,13 +2293,13 @@ void HangarWindow::GetImagePath() {
 "	      00473ad0    jmp near ptr 00473AD5h"
 "	      00473ad5    jmp near ptr 00473ADAh"
 "	      00473ada    mov eax,[ebp-24h]"
-"	      00473add    mov ecx,[ebp-44h]"
+"	      00473add    mov ecx,this"
 "	      00473ae0    mov [ecx+60h],eax"
 "	      00473ae3    jmp near ptr 00473B1Bh"
 "	      00473ae8    cmp dword ptr [ebp-3Ch],0"
 "	      00473aec    je near ptr 00473B1Bh"
 "	      00473af2    jmp near ptr 00473AF7h"
-"	      00473af7    mov eax,[ebp-44h]"
+"	      00473af7    mov eax,this"
 "	      00473afa    mov eax,[eax+60h]"
 "	      00473afd    mov eax,[eax]"
 "	      00473aff    mov [ebp-2Ch],eax"
@@ -2313,7 +2313,7 @@ void HangarWindow::GetImagePath() {
 "	      00473b13    add esp,0Ch"
 "	      00473b16    jmp near ptr 00473B1Bh"
 "	      00473b1b    mov eax,[ebp-3Ch]"
-"	      00473b1e    mov ecx,[ebp-44h]"
+"	      00473b1e    mov ecx,this"
 "	      00473b21    mov ecx,[ecx+60h]"
 "	      00473b24    mov [ecx+4],eax"
 "	      00473b27    jmp near ptr 00473B2Ch"
@@ -2321,10 +2321,10 @@ void HangarWindow::GetImagePath() {
 );
 // LINE 284:
 	asm( 
-"	      00473b31    mov eax,[ebp-44h]"
+"	      00473b31    mov eax,this"
 "	      00473b34    add eax,64h"
 "	      00473b37    push eax"
-"	      00473b38    mov eax,[ebp-44h]"
+"	      00473b38    mov eax,this"
 "	      00473b3b    add eax,5Ch"
 "	      00473b3e    push eax"
 "	      00473b3f    push 0"
@@ -2357,26 +2357,26 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 "	      00473b62    push ebx"
 "	      00473b63    push esi"
 "	      00473b64    push edi"
-"	      00473b65    mov [ebp-28h],ecx"
+"	      00473b65    mov this,ecx"
 );
 // LINE 293:
 	asm( 
-"	      00473b68    mov dword ptr [ebp-4],0"
+"	      00473b68    mov i,0"
 );
 // LINE 294:
 	asm( 
-"	      00473b6f    mov eax,[ebp-28h]"
+"	      00473b6f    mov eax,this"
 "	      00473b72    mov eax,[eax+116h]"
 "	      00473b78    mov eax,[eax]"
 "	      00473b7a    mov [ebp-20h],eax"
 "	      00473b7d    mov eax,[ebp-20h]"
-"	      00473b80    mov [ebp-8],eax"
+"	      00473b80    mov iterator.node,eax"
 "	      00473b83    jmp near ptr 00473B88h"
 "	      00473b88    jmp near ptr 00473B8Dh"
 );
 // LINE 296:
 	asm( 
-"	      00473b8d    mov eax,[ebp-28h]"
+"	      00473b8d    mov eax,this"
 "	      00473b90    mov eax,[eax+116h]"
 "	      00473b96    mov [ebp-14h],eax"
 "	      00473b99    mov eax,[ebp-14h]"
@@ -2384,7 +2384,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 "	      00473b9f    jmp near ptr 00473BA4h"
 "	      00473ba4    jmp near ptr 00473BA9h"
 "	      00473ba9    mov eax,[ebp-0Ch]"
-"	      00473bac    cmp [ebp-8],eax"
+"	      00473bac    cmp iterator.node,eax"
 "	      00473baf    jne near ptr 00473BBFh"
 "	      00473bb5    jmp near ptr 00473BD3h"
 "	      00473bba    jmp near ptr 00473BBFh"
@@ -2400,15 +2400,15 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 // LINE 297:
 	asm( 
 "	      00473be7    jmp near ptr 00473BECh"
-"	      00473bec    mov eax,[ebp+0Ch]"
+"	      00473bec    mov eax,ptPosition"
 "	      00473bef    mov eax,[eax+4]"
 "	      00473bf2    push eax"
-"	      00473bf3    mov eax,[ebp-28h]"
+"	      00473bf3    mov eax,this"
 "	      00473bf6    mov eax,[eax+12Ah]"
-"	      00473bfc    mov ecx,[ebp+0Ch]"
+"	      00473bfc    mov ecx,ptPosition"
 "	      00473bff    add eax,[ecx]"
 "	      00473c01    push eax"
-"	      00473c02    mov ecx,[ebp-8]"
+"	      00473c02    mov ecx,iterator.node"
 "	      00473c05    add ecx,8"
 "	      00473c08    call 004BAD05h"
 "	      00473c0d    test eax,eax"
@@ -2417,9 +2417,9 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 // LINE 298:
 	asm( 
 "	      00473c15    jmp near ptr 00473C1Ah"
-"	      00473c1a    mov eax,[ebp-8]"
+"	      00473c1a    mov eax,iterator.node"
 "	      00473c1d    mov eax,[eax+8]"
-"	      00473c20    mov ecx,[ebp+8]"
+"	      00473c20    mov ecx,lHelpID"
 "	      00473c23    mov [ecx],eax"
 );
 // LINE 299:
@@ -2429,11 +2429,11 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 );
 // LINE 301:
 	asm( 
-"	      00473c2f    mov eax,[ebp-8]"
+"	      00473c2f    mov eax,iterator.node"
 "	      00473c32    mov [ebp-24h],eax"
-"	      00473c35    mov eax,[ebp-8]"
+"	      00473c35    mov eax,iterator.node"
 "	      00473c38    mov eax,[eax]"
-"	      00473c3a    mov [ebp-8],eax"
+"	      00473c3a    mov iterator.node,eax"
 "	      00473c3d    jmp near ptr 00473C42h"
 "	      00473c42    mov eax,[ebp-24h]"
 "	      00473c45    mov [ebp-10h],eax"
@@ -2441,7 +2441,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 );
 // LINE 302:
 	asm( 
-"	      00473c4d    inc dword ptr [ebp-4]"
+"	      00473c4d    inc i"
 );
 // LINE 303:
 	asm( 
@@ -2449,7 +2449,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 );
 // LINE 304:
 	asm( 
-"	      00473c55    mov eax,[ebp+8]"
+"	      00473c55    mov eax,lHelpID"
 "	      00473c58    mov dword ptr [eax],0"
 );
 // LINE 305:
@@ -2480,90 +2480,90 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 "	      00473c72    push ebx"
 "	      00473c73    push esi"
 "	      00473c74    push edi"
-"	      00473c75    mov [ebp-18h],ecx"
+"	      00473c75    mov this,ecx"
 );
 // LINE 314:
 	asm( 
 "	      00473c78    jmp near ptr 00473C7Dh"
-"	      00473c7d    mov eax,[ebp-18h]"
+"	      00473c7d    mov eax,this"
 "	      00473c80    mov eax,[eax+18h]"
-"	      00473c83    mov ecx,[ebp-18h]"
+"	      00473c83    mov ecx,this"
 "	      00473c86    sub eax,[ecx+10h]"
-"	      00473c89    mov [ebp-4],eax"
+"	      00473c89    mov lHangarWindowWidth,eax"
 );
 // LINE 315:
 	asm( 
-"	      00473c8c    mov eax,[ebp-18h]"
+"	      00473c8c    mov eax,this"
 "	      00473c8f    mov eax,[eax+11Eh]"
 "	      00473c95    mov eax,[eax+8]"
-"	      00473c98    mov [ebp-8],eax"
+"	      00473c98    mov lHangarGraphicWidth,eax"
 "	      00473c9b    jmp near ptr 00473CA0h"
 );
 // LINE 317:
 	asm( 
-"	      00473ca0    mov eax,[ebp+8]"
-"	      00473ca3    mov ecx,[ebp-18h]"
+"	      00473ca0    mov eax,lDistance"
+"	      00473ca3    mov ecx,this"
 "	      00473ca6    add [ecx+12Ah],eax"
 );
 // LINE 318:
 	asm( 
-"	      00473cac    mov eax,[ebp-18h]"
+"	      00473cac    mov eax,this"
 "	      00473caf    cmp dword ptr [eax+12Ah],0"
 "	      00473cb6    jge near ptr 00473CCEh"
 );
 // LINE 319:
 	asm( 
-"	      00473cbc    mov eax,[ebp-18h]"
+"	      00473cbc    mov eax,this"
 "	      00473cbf    mov dword ptr [eax+12Ah],0"
 );
 // LINE 320:
 	asm( 
 "	      00473cc9    jmp near ptr 00473CF2h"
-"	      00473cce    mov eax,[ebp-8]"
-"	      00473cd1    sub eax,[ebp-4]"
-"	      00473cd4    mov ecx,[ebp-18h]"
+"	      00473cce    mov eax,lHangarGraphicWidth"
+"	      00473cd1    sub eax,lHangarWindowWidth"
+"	      00473cd4    mov ecx,this"
 "	      00473cd7    cmp eax,[ecx+12Ah]"
 "	      00473cdd    jge near ptr 00473CF2h"
 );
 // LINE 321:
 	asm( 
-"	      00473ce3    mov eax,[ebp-8]"
-"	      00473ce6    sub eax,[ebp-4]"
-"	      00473ce9    mov ecx,[ebp-18h]"
+"	      00473ce3    mov eax,lHangarGraphicWidth"
+"	      00473ce6    sub eax,lHangarWindowWidth"
+"	      00473ce9    mov ecx,this"
 "	      00473cec    mov [ecx+12Ah],eax"
 );
 // LINE 322:
 	asm( 
 "	      00473cf2    push 1"
 "	      00473cf4    push 1"
-"	      00473cf6    mov eax,[ebp-18h]"
+"	      00473cf6    mov eax,this"
 "	      00473cf9    mov eax,[eax]"
-"	      00473cfb    mov ecx,[ebp-18h]"
+"	      00473cfb    mov ecx,this"
 "	      00473cfe    call dword ptr [eax+30h]"
 );
 // LINE 323:
 	asm( 
-"	      00473d01    mov eax,[ebp-18h]"
+"	      00473d01    mov eax,this"
 "	      00473d04    mov dword ptr [eax+0FEh],0"
-"	      00473d0e    mov eax,[ebp-18h]"
+"	      00473d0e    mov eax,this"
 "	      00473d11    mov dword ptr [eax+10Eh],0"
-"	      00473d1b    mov eax,[ebp-18h]"
+"	      00473d1b    mov eax,this"
 "	      00473d1e    mov dword ptr [eax+10Ah],0"
 "	      00473d28    jmp near ptr 00473D2Dh"
 "	      00473d2d    jmp near ptr 00473D32h"
-"	      00473d32    mov eax,[ebp-18h]"
+"	      00473d32    mov eax,this"
 "	      00473d35    cmp dword ptr [eax+10Ah],0"
 "	      00473d3c    je near ptr 00473D47h"
 "	      00473d42    jmp near ptr 00473DC8h"
-"	      00473d47    mov eax,[ebp-18h]"
+"	      00473d47    mov eax,this"
 "	      00473d4a    cmp dword ptr [eax+106h],1"
 "	      00473d51    jne near ptr 00473D70h"
 "	      00473d57    call dword ptr ds:[6C3908h]"
-"	      00473d5d    mov ecx,[ebp-18h]"
+"	      00473d5d    mov ecx,this"
 "	      00473d60    mov [ecx+10Ah],eax"
 "	      00473d66    jmp near ptr 00473DC3h"
 "	      00473d6b    jmp near ptr 00473DC3h"
-"	      00473d70    mov eax,[ebp-18h]"
+"	      00473d70    mov eax,this"
 "	      00473d73    cmp dword ptr [eax+106h],0"
 "	      00473d7a    jne near ptr 00473DA6h"
 "	      00473d80    lea eax,[ebp-14h]"
@@ -2572,7 +2572,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 "	      00473d8a    mov eax,[ebp-14h]"
 "	      00473d8d    mov [ebp-0Ch],eax"
 "	      00473d90    mov eax,[ebp-0Ch]"
-"	      00473d93    mov ecx,[ebp-18h]"
+"	      00473d93    mov ecx,this"
 "	      00473d96    mov [ecx+10Ah],eax"
 "	      00473d9c    jmp near ptr 00473DC3h"
 "	      00473da1    jmp near ptr 00473DC3h"
@@ -2580,7 +2580,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 "	      00473dac    mov ecx,3E8h"
 "	      00473db1    sub edx,edx"
 "	      00473db3    div ecx"
-"	      00473db5    mov ecx,[ebp-18h]"
+"	      00473db5    mov ecx,this"
 "	      00473db8    mov [ecx+10Ah],eax"
 "	      00473dbe    jmp near ptr 00473DC3h"
 "	      00473dc3    jmp near ptr 00473DC8h"
@@ -2588,7 +2588,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 );
 // LINE 324:
 	asm( 
-"	      00473dcd    mov ecx,[ebp-18h]"
+"	      00473dcd    mov ecx,this"
 "	      00473dd0    call 00474577h"
 );
 // LINE 325:
@@ -2615,12 +2615,12 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 "	      00473de7    push ebx"
 "	      00473de8    push esi"
 "	      00473de9    push edi"
-"	      00473dea    mov [ebp-30h],ecx"
+"	      00473dea    mov this,ecx"
 );
 // LINE 367:
 	asm( 
-"	      00473ded    mov eax,[ebp+8]"
-"	      00473df0    lea ecx,[ebp-20h]"
+"	      00473ded    mov eax,rectHangar"
+"	      00473df0    lea ecx,rectCompare.left"
 "	      00473df3    mov edx,[eax]"
 "	      00473df5    mov [ecx],edx"
 "	      00473df7    mov edx,[eax+4]"
@@ -2632,9 +2632,9 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 );
 // LINE 368:
 	asm( 
-"	      00473e09    mov eax,[ebp-30h]"
+"	      00473e09    mov eax,this"
 "	      00473e0c    add eax,10h"
-"	      00473e0f    lea ecx,[ebp-10h]"
+"	      00473e0f    lea ecx,rectWindowLocal.left"
 "	      00473e12    mov edx,[eax]"
 "	      00473e14    mov [ecx],edx"
 "	      00473e16    mov edx,[eax+4]"
@@ -2647,50 +2647,50 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 // LINE 369:
 	asm( 
 "	      00473e28    xor eax,eax"
-"	      00473e2a    mov ecx,[ebp-30h]"
+"	      00473e2a    mov ecx,this"
 "	      00473e2d    sub eax,[ecx+12Ah]"
 "	      00473e33    neg eax"
-"	      00473e35    sub [ebp-20h],eax"
+"	      00473e35    sub rectCompare.left,eax"
 );
 // LINE 370:
 	asm( 
 "	      00473e38    xor eax,eax"
-"	      00473e3a    mov ecx,[ebp-30h]"
+"	      00473e3a    mov ecx,this"
 "	      00473e3d    sub eax,[ecx+12Ah]"
 "	      00473e43    neg eax"
-"	      00473e45    sub [ebp-18h],eax"
+"	      00473e45    sub rectCompare.right,eax"
 );
 // LINE 371:
 	asm( 
 "	      00473e48    xor eax,eax"
-"	      00473e4a    sub eax,[ebp-10h]"
+"	      00473e4a    sub eax,rectWindowLocal.left"
 "	      00473e4d    mov [ebp-2Ch],eax"
 "	      00473e50    xor eax,eax"
-"	      00473e52    sub eax,[ebp-0Ch]"
+"	      00473e52    sub eax,rectWindowLocal.top"
 "	      00473e55    mov [ebp-28h],eax"
 "	      00473e58    mov eax,[ebp-2Ch]"
-"	      00473e5b    add [ebp-10h],eax"
+"	      00473e5b    add rectWindowLocal.left,eax"
 "	      00473e5e    mov eax,[ebp-2Ch]"
-"	      00473e61    add [ebp-8],eax"
+"	      00473e61    add rectWindowLocal.right,eax"
 "	      00473e64    mov eax,[ebp-28h]"
-"	      00473e67    add [ebp-0Ch],eax"
+"	      00473e67    add rectWindowLocal.top,eax"
 "	      00473e6a    mov eax,[ebp-28h]"
-"	      00473e6d    add [ebp-4],eax"
+"	      00473e6d    add rectWindowLocal.bottom,eax"
 "	      00473e70    jmp near ptr 00473E75h"
 );
 // LINE 373:
 	asm( 
-"	      00473e75    mov eax,[ebp-10h]"
-"	      00473e78    cmp [ebp-18h],eax"
+"	      00473e75    mov eax,rectWindowLocal.left"
+"	      00473e78    cmp rectCompare.right,eax"
 "	      00473e7b    jl near ptr 00473EAFh"
-"	      00473e81    mov eax,[ebp-8]"
-"	      00473e84    cmp [ebp-20h],eax"
+"	      00473e81    mov eax,rectWindowLocal.right"
+"	      00473e84    cmp rectCompare.left,eax"
 "	      00473e87    jg near ptr 00473EAFh"
-"	      00473e8d    mov eax,[ebp-0Ch]"
-"	      00473e90    cmp [ebp-14h],eax"
+"	      00473e8d    mov eax,rectWindowLocal.top"
+"	      00473e90    cmp rectCompare.bottom,eax"
 "	      00473e93    jl near ptr 00473EAFh"
-"	      00473e99    mov eax,[ebp-4]"
-"	      00473e9c    cmp [ebp-1Ch],eax"
+"	      00473e99    mov eax,rectWindowLocal.bottom"
+"	      00473e9c    cmp rectCompare.top,eax"
 "	      00473e9f    jl near ptr 00473EAFh"
 "	      00473ea5    mov eax,1"
 "	      00473eaa    jmp near ptr 00473EB1h"
@@ -2719,66 +2719,66 @@ void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
 "	      00473ecb    push ebx"
 "	      00473ecc    push esi"
 "	      00473ecd    push edi"
-"	      00473ece    mov [ebp-4],ecx"
+"	      00473ece    mov this,ecx"
 );
 // LINE 384:
 	asm( 
-"	      00473ed1    mov eax,[ebp-4]"
-"	      00473ed4    mov ecx,[ebp+8]"
+"	      00473ed1    mov eax,this"
+"	      00473ed4    mov ecx,rectToClip"
 "	      00473ed7    mov ecx,[ecx]"
 "	      00473ed9    cmp [eax+10h],ecx"
 "	      00473edc    jle near ptr 00473EEDh"
 );
 // LINE 385:
 	asm( 
-"	      00473ee2    mov eax,[ebp-4]"
+"	      00473ee2    mov eax,this"
 "	      00473ee5    mov eax,[eax+10h]"
-"	      00473ee8    mov ecx,[ebp+8]"
+"	      00473ee8    mov ecx,rectToClip"
 "	      00473eeb    mov [ecx],eax"
 );
 // LINE 386:
 	asm( 
-"	      00473eed    mov eax,[ebp-4]"
-"	      00473ef0    mov ecx,[ebp+8]"
+"	      00473eed    mov eax,this"
+"	      00473ef0    mov ecx,rectToClip"
 "	      00473ef3    mov ecx,[ecx+4]"
 "	      00473ef6    cmp [eax+14h],ecx"
 "	      00473ef9    jle near ptr 00473F0Bh"
 );
 // LINE 387:
 	asm( 
-"	      00473eff    mov eax,[ebp-4]"
+"	      00473eff    mov eax,this"
 "	      00473f02    mov eax,[eax+14h]"
-"	      00473f05    mov ecx,[ebp+8]"
+"	      00473f05    mov ecx,rectToClip"
 "	      00473f08    mov [ecx+4],eax"
 );
 // LINE 388:
 	asm( 
-"	      00473f0b    mov eax,[ebp-4]"
-"	      00473f0e    mov ecx,[ebp+8]"
+"	      00473f0b    mov eax,this"
+"	      00473f0e    mov ecx,rectToClip"
 "	      00473f11    mov ecx,[ecx+8]"
 "	      00473f14    cmp [eax+18h],ecx"
 "	      00473f17    jge near ptr 00473F29h"
 );
 // LINE 389:
 	asm( 
-"	      00473f1d    mov eax,[ebp-4]"
+"	      00473f1d    mov eax,this"
 "	      00473f20    mov eax,[eax+18h]"
-"	      00473f23    mov ecx,[ebp+8]"
+"	      00473f23    mov ecx,rectToClip"
 "	      00473f26    mov [ecx+8],eax"
 );
 // LINE 390:
 	asm( 
-"	      00473f29    mov eax,[ebp-4]"
-"	      00473f2c    mov ecx,[ebp+8]"
+"	      00473f29    mov eax,this"
+"	      00473f2c    mov ecx,rectToClip"
 "	      00473f2f    mov ecx,[ecx+0Ch]"
 "	      00473f32    cmp [eax+1Ch],ecx"
 "	      00473f35    jge near ptr 00473F47h"
 );
 // LINE 391:
 	asm( 
-"	      00473f3b    mov eax,[ebp-4]"
+"	      00473f3b    mov eax,this"
 "	      00473f3e    mov eax,[eax+1Ch]"
-"	      00473f41    mov ecx,[ebp+8]"
+"	      00473f41    mov ecx,rectToClip"
 "	      00473f44    add [ecx+0Ch],eax"
 );
 // LINE 392:
@@ -2807,7 +2807,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00473f60    push ebx"
 "	      00473f61    push esi"
 "	      00473f62    push edi"
-"	      00473f63    mov [ebp-1094h],ecx"
+"	      00473f63    mov this,ecx"
 );
 // LINE 440:
 	asm( 
@@ -2829,10 +2829,10 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00473fa2    mov dword ptr [eax+0Ch],1"
 "	      00473fa9    jmp near ptr 00473FAEh"
 "	      00473fae    mov eax,[ebp-6Ch]"
-"	      00473fb1    mov [ebp-8],eax"
+"	      00473fb1    mov sHelp.reference,eax"
 "	      00473fb4    jmp near ptr 00473FC0h"
-"	      00473fb9    mov dword ptr [ebp-8],0"
-"	      00473fc0    mov dword ptr [ebp-0Ch],0"
+"	      00473fb9    mov sHelp.reference,0"
+"	      00473fc0    mov sHelp.c_str_ptr,0"
 "	      00473fc7    jmp near ptr 00473FCCh"
 );
 // LINE 441:
@@ -2842,17 +2842,17 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 443:
 	asm( 
-"	      00473fd6    cmp dword ptr [ebp+8],19h"
+"	      00473fd6    cmp nHelp,19h"
 "	      00473fda    jle near ptr 0047405Dh"
 );
 // LINE 444:
 	asm( 
-"	      00473fe0    mov eax,[ebp-8]"
+"	      00473fe0    mov eax,sHelp.reference"
 "	      00473fe3    dec dword ptr [eax+0Ch]"
-"	      00473fe6    mov eax,[ebp-8]"
+"	      00473fe6    mov eax,sHelp.reference"
 "	      00473fe9    cmp dword ptr [eax+0Ch],0"
 "	      00473fed    jne near ptr 0047402Ch"
-"	      00473ff3    mov eax,[ebp-8]"
+"	      00473ff3    mov eax,sHelp.reference"
 "	      00473ff6    mov [ebp-7Ch],eax"
 "	      00473ff9    mov eax,[ebp-7Ch]"
 "	      00473ffc    mov [ebp-78h],eax"
@@ -2868,9 +2868,9 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00474022    jmp near ptr 00474027h"
 "	      00474027    jmp near ptr 0047402Ch"
 "	      0047402c    jmp near ptr 00474031h"
-"	      00474031    cmp dword ptr [ebp-0Ch],0"
+"	      00474031    cmp sHelp.c_str_ptr,0"
 "	      00474035    je near ptr 00474053h"
-"	      0047403b    mov eax,[ebp-0Ch]"
+"	      0047403b    mov eax,sHelp.c_str_ptr"
 "	      0047403e    mov [ebp-70h],eax"
 "	      00474041    mov eax,[ebp-70h]"
 "	      00474044    mov [ebp-74h],eax"
@@ -2883,26 +2883,26 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 446:
 	asm( 
-"	      0047405d    mov eax,[ebp-1094h]"
+"	      0047405d    mov eax,this"
 "	      00474063    cmp dword ptr [eax+0F6h],0"
 "	      0047406a    je near ptr 0047425Ch"
 );
 // LINE 447:
 	asm( 
 "	      00474070    push 0"
-"	      00474072    mov eax,[ebp+8]"
+"	      00474072    mov eax,nHelp"
 "	      00474075    add eax,64h"
 "	      00474078    push eax"
 "	      00474079    call 0042B15Fh"
 "	      0047407e    add esp,8"
-"	      00474081    mov [ebp-4],eax"
+"	      00474081    mov nFullStringID,eax"
 );
 // LINE 448:
 	asm( 
 "	      00474084    push 0FFFh"
 "	      00474089    lea eax,[ebp-108Ch]"
 "	      0047408f    push eax"
-"	      00474090    mov eax,[ebp-4]"
+"	      00474090    mov eax,nFullStringID"
 "	      00474093    push eax"
 "	      00474094    mov eax,ds:[5C28C8h]"
 "	      00474099    push eax"
@@ -2914,7 +2914,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      004740b8    lea eax,[ebp-108Ch]"
 "	      004740be    push eax"
 "	      004740bf    mov ecx,3E8h"
-"	      004740c4    mov eax,[ebp-4]"
+"	      004740c4    mov eax,nFullStringID"
 "	      004740c7    sub edx,edx"
 "	      004740c9    div ecx"
 "	      004740cb    push edx"
@@ -2930,7 +2930,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      004740f2    push eax"
 "	      004740f3    lea eax,[ebp-108Ch]"
 "	      004740f9    push eax"
-"	      004740fa    lea ecx,[ebp-0Ch]"
+"	      004740fa    lea ecx,sHelp.c_str_ptr"
 "	      004740fd    call 0040FEE0h"
 "	      00474102    jmp near ptr 00474107h"
 "	      00474107    jmp near ptr 0047410Ch"
@@ -2939,7 +2939,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00474116    add esp,4"
 "	      00474119    push eax"
 "	      0047411a    push 597200h"
-"	      0047411f    lea ecx,[ebp-0Ch]"
+"	      0047411f    lea ecx,sHelp.c_str_ptr"
 "	      00474122    call 00410130h"
 "	      00474127    jmp near ptr 0047412Ch"
 "	      0047412c    jmp near ptr 0047415Fh"
@@ -2951,17 +2951,17 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00474145    push eax"
 "	      00474146    lea eax,[ebp-108Ch]"
 "	      0047414c    push eax"
-"	      0047414d    lea ecx,[ebp-0Ch]"
+"	      0047414d    lea ecx,sHelp.c_str_ptr"
 "	      00474150    call 0040FEE0h"
 "	      00474155    jmp near ptr 0047415Ah"
 "	      0047415a    jmp near ptr 0047415Fh"
 );
 // LINE 449:
 	asm( 
-"	      0047415f    lea eax,[ebp-0Ch]"
+"	      0047415f    lea eax,sHelp.c_str_ptr"
 "	      00474162    push eax"
-"	      00474163    mov eax,[ebp-1094h]"
-"	      00474169    mov ecx,[ebp-1094h]"
+"	      00474163    mov eax,this"
+"	      00474169    mov ecx,this"
 "	      0047416f    mov ecx,[ecx+74h]"
 "	      00474172    mov edx,[ecx]"
 "	      00474174    mov ecx,[eax+74h]"
@@ -2969,8 +2969,8 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 450:
 	asm( 
-"	      0047417d    mov eax,[ebp-1094h]"
-"	      00474183    mov ecx,[ebp-1094h]"
+"	      0047417d    mov eax,this"
+"	      00474183    mov ecx,this"
 "	      00474189    mov ecx,[ecx+74h]"
 "	      0047418c    mov edx,[ecx]"
 "	      0047418e    mov ecx,[eax+74h]"
@@ -2978,14 +2978,14 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 451:
 	asm( 
-"	      00474197    mov eax,[ebp+0Ch]"
+"	      00474197    mov eax,ptHelp"
 "	      0047419a    mov eax,[eax+4]"
 "	      0047419d    push eax"
-"	      0047419e    mov eax,[ebp+0Ch]"
+"	      0047419e    mov eax,ptHelp"
 "	      004741a1    mov eax,[eax]"
 "	      004741a3    push eax"
-"	      004741a4    mov eax,[ebp-1094h]"
-"	      004741aa    mov ecx,[ebp-1094h]"
+"	      004741a4    mov eax,this"
+"	      004741aa    mov ecx,this"
 "	      004741b0    mov ecx,[ecx+74h]"
 "	      004741b3    mov edx,[ecx]"
 "	      004741b5    mov ecx,[eax+74h]"
@@ -2993,10 +2993,10 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 454:
 	asm( 
-"	      004741bb    mov eax,[ebp-1094h]"
+"	      004741bb    mov eax,this"
 "	      004741c1    mov eax,[eax+74h]"
 "	      004741c4    add eax,10h"
-"	      004741c7    lea ecx,[ebp-1Ch]"
+"	      004741c7    lea ecx,rectTempChildWindow.left"
 "	      004741ca    mov edx,[eax]"
 "	      004741cc    mov [ecx],edx"
 "	      004741ce    mov edx,[eax+4]"
@@ -3008,27 +3008,27 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 455:
 	asm( 
-"	      004741e0    lea eax,[ebp-1Ch]"
+"	      004741e0    lea eax,rectTempChildWindow.left"
 "	      004741e3    push eax"
-"	      004741e4    mov ecx,[ebp-1094h]"
+"	      004741e4    mov ecx,this"
 "	      004741ea    call 004A4F5Ch"
 );
 // LINE 458:
 	asm( 
 "	      004741ef    jmp near ptr 004741F4h"
-"	      004741f4    mov eax,[ebp-1094h]"
+"	      004741f4    mov eax,this"
 "	      004741fa    mov eax,[eax+1Ch]"
-"	      004741fd    mov ecx,[ebp-1094h]"
+"	      004741fd    mov ecx,this"
 "	      00474203    sub eax,[ecx+14h]"
 "	      00474206    cdq"
 "	      00474207    sub eax,edx"
 "	      00474209    sar eax,1"
-"	      0047420c    cmp eax,[ebp-18h]"
+"	      0047420c    cmp eax,rectTempChildWindow.top"
 "	      0047420f    jle near ptr 0047421Eh"
 );
 // LINE 459:
 	asm( 
-"	      00474215    add dword ptr [ebp-18h],22h"
+"	      00474215    add rectTempChildWindow.top,22h"
 );
 // LINE 460:
 	asm( 
@@ -3036,21 +3036,21 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 461:
 	asm( 
-"	      0047421e    sub dword ptr [ebp-18h],22h"
+"	      0047421e    sub rectTempChildWindow.top,22h"
 );
 // LINE 462:
 	asm( 
-"	      00474222    mov eax,[ebp-18h]"
+"	      00474222    mov eax,rectTempChildWindow.top"
 "	      00474225    push eax"
-"	      00474226    mov eax,[ebp-1Ch]"
+"	      00474226    mov eax,rectTempChildWindow.left"
 "	      00474229    push eax"
-"	      0047422a    mov eax,[ebp-1094h]"
-"	      00474230    mov ecx,[ebp-1094h]"
+"	      0047422a    mov eax,this"
+"	      00474230    mov ecx,this"
 "	      00474236    mov ecx,[ecx+74h]"
 "	      00474239    mov edx,[ecx]"
 "	      0047423b    mov ecx,[eax+74h]"
 "	      0047423e    call dword ptr [edx+34h]"
-"	      00474241    mov eax,[ebp-1094h]"
+"	      00474241    mov eax,this"
 "	      00474247    mov eax,[eax+74h]"
 "	      0047424a    mov [ebp-68h],eax"
 );
@@ -3062,32 +3062,32 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 );
 // LINE 467:
 	asm( 
-"	      0047425c    mov eax,[ebp-1094h]"
+"	      0047425c    mov eax,this"
 "	      00474262    cmp dword ptr [eax+0FAh],0"
 "	      00474269    je near ptr 00474507h"
 );
 // LINE 468:
 	asm( 
-"	      0047426f    lea eax,[ebp-0Ch]"
+"	      0047426f    lea eax,sHelp.c_str_ptr"
 "	      00474272    push eax"
-"	      00474273    mov eax,[ebp+8]"
+"	      00474273    mov eax,nHelp"
 "	      00474276    push eax"
-"	      00474277    mov ecx,[ebp-1094h]"
+"	      00474277    mov ecx,this"
 "	      0047427d    call 004745A5h"
 );
 // LINE 469:
 	asm( 
-"	      00474282    mov ecx,[ebp-1094h]"
-"	      00474288    mov eax,[ebp-1094h]"
+"	      00474282    mov ecx,this"
+"	      00474288    mov eax,this"
 "	      0047428e    mov eax,[eax+78h]"
 "	      00474291    add ecx,78h"
 "	      00474294    call dword ptr [eax+3Ch]"
 );
 // LINE 470:
 	asm( 
-"	      00474297    cmp dword ptr [ebp-0Ch],0"
+"	      00474297    cmp sHelp.c_str_ptr,0"
 "	      0047429b    je near ptr 004742B9h"
-"	      004742a1    mov eax,[ebp-0Ch]"
+"	      004742a1    mov eax,sHelp.c_str_ptr"
 "	      004742a4    mov [ebp-48h],eax"
 "	      004742a7    mov eax,[ebp-48h]"
 "	      004742aa    mov [ebp-50h],eax"
@@ -3096,33 +3096,33 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      004742b1    call 0056A740h"
 "	      004742b6    add esp,4"
 "	      004742b9    jmp near ptr 004742BEh"
-"	      004742be    mov eax,[ebp-8]"
+"	      004742be    mov eax,sHelp.reference"
 "	      004742c1    mov eax,[eax+4]"
 "	      004742c4    inc eax"
 "	      004742c5    push eax"
 "	      004742c6    call 0056A600h"
 "	      004742cb    add esp,4"
-"	      004742ce    mov [ebp-0Ch],eax"
+"	      004742ce    mov sHelp.c_str_ptr,eax"
 "	      004742d1    jmp near ptr 004742D6h"
-"	      004742d6    mov eax,[ebp-8]"
+"	      004742d6    mov eax,sHelp.reference"
 "	      004742d9    cmp dword ptr [eax+4],0"
 "	      004742dd    je near ptr 00474340h"
 "	      004742e3    jmp near ptr 004742E8h"
 "	      004742e8    jmp near ptr 004742EDh"
-"	      004742ed    mov eax,[ebp-8]"
+"	      004742ed    mov eax,sHelp.reference"
 "	      004742f0    cmp dword ptr [eax+4],0"
 "	      004742f4    je near ptr 0047430Ch"
-"	      004742fa    mov eax,[ebp-8]"
+"	      004742fa    mov eax,sHelp.reference"
 "	      004742fd    mov eax,[eax]"
 "	      004742ff    mov [ebp-5Ch],eax"
 "	      00474302    jmp near ptr 00474318h"
 "	      00474307    jmp near ptr 00474318h"
 "	      0047430c    mov dword ptr [ebp-5Ch],0"
 "	      00474313    jmp near ptr 00474318h"
-"	      00474318    mov eax,[ebp-8]"
+"	      00474318    mov eax,sHelp.reference"
 "	      0047431b    mov eax,[eax+4]"
 "	      0047431e    mov [ebp-60h],eax"
-"	      00474321    mov eax,[ebp-0Ch]"
+"	      00474321    mov eax,sHelp.c_str_ptr"
 "	      00474324    mov [ebp-64h],eax"
 "	      00474327    mov eax,[ebp-60h]"
 "	      0047432a    push eax"
@@ -3139,9 +3139,9 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      0047434e    lea eax,[ebp-4Ch]"
 "	      00474351    mov [ebp-54h],eax"
 "	      00474354    jmp near ptr 00474359h"
-"	      00474359    mov eax,[ebp-8]"
+"	      00474359    mov eax,sHelp.reference"
 "	      0047435c    mov eax,[eax+4]"
-"	      0047435f    add eax,[ebp-0Ch]"
+"	      0047435f    add eax,sHelp.c_str_ptr"
 "	      00474362    mov [ebp-58h],eax"
 "	      00474365    mov eax,[ebp-54h]"
 "	      00474368    mov al,[eax]"
@@ -3149,7 +3149,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      0047436d    mov [ecx],al"
 "	      0047436f    jmp near ptr 00474374h"
 "	      00474374    jmp near ptr 00474379h"
-"	      00474379    mov eax,[ebp-0Ch]"
+"	      00474379    mov eax,sHelp.c_str_ptr"
 "	      0047437c    mov [ebp-8Ch],eax"
 "	      00474382    push 10h"
 "	      00474384    call 0056A600h"
@@ -3208,8 +3208,8 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00474454    push 2"
 "	      00474456    lea eax,[ebp-24h]"
 "	      00474459    push eax"
-"	      0047445a    mov ecx,[ebp-1094h]"
-"	      00474460    mov eax,[ebp-1094h]"
+"	      0047445a    mov ecx,this"
+"	      00474460    mov eax,this"
 "	      00474466    mov eax,[eax+78h]"
 "	      00474469    add ecx,78h"
 "	      0047446c    call dword ptr [eax+2Ch]"
@@ -3245,8 +3245,8 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	asm( 
 "	      004744d3    mov eax,ds:[5C37F0h]"
 "	      004744d8    push eax"
-"	      004744d9    mov ecx,[ebp-1094h]"
-"	      004744df    mov eax,[ebp-1094h]"
+"	      004744d9    mov ecx,this"
+"	      004744df    mov eax,this"
 "	      004744e5    mov eax,[eax+78h]"
 "	      004744e8    add ecx,78h"
 "	      004744eb    call dword ptr [eax+24h]"
@@ -3255,20 +3255,20 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	asm( 
 "	      004744ee    push 1"
 "	      004744f0    push 0"
-"	      004744f2    mov ecx,[ebp-1094h]"
-"	      004744f8    mov eax,[ebp-1094h]"
+"	      004744f2    mov ecx,this"
+"	      004744f8    mov eax,this"
 "	      004744fe    mov eax,[eax+78h]"
 "	      00474501    add ecx,78h"
 "	      00474504    call dword ptr [eax+8]"
 );
 // LINE 474:
 	asm( 
-"	      00474507    mov eax,[ebp-8]"
+"	      00474507    mov eax,sHelp.reference"
 "	      0047450a    dec dword ptr [eax+0Ch]"
-"	      0047450d    mov eax,[ebp-8]"
+"	      0047450d    mov eax,sHelp.reference"
 "	      00474510    cmp dword ptr [eax+0Ch],0"
 "	      00474514    jne near ptr 0047453Fh"
-"	      0047451a    mov eax,[ebp-8]"
+"	      0047451a    mov eax,sHelp.reference"
 "	      0047451d    mov [ebp-44h],eax"
 "	      00474520    mov eax,[ebp-44h]"
 "	      00474523    mov [ebp-40h],eax"
@@ -3279,9 +3279,9 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 "	      00474535    call 0041DD70h"
 "	      0047453a    jmp near ptr 0047453Fh"
 "	      0047453f    jmp near ptr 00474544h"
-"	      00474544    cmp dword ptr [ebp-0Ch],0"
+"	      00474544    cmp sHelp.c_str_ptr,0"
 "	      00474548    je near ptr 00474566h"
-"	      0047454e    mov eax,[ebp-0Ch]"
+"	      0047454e    mov eax,sHelp.c_str_ptr"
 "	      00474551    mov [ebp-38h],eax"
 "	      00474554    mov eax,[ebp-38h]"
 "	      00474557    mov [ebp-3Ch],eax"
@@ -3309,8 +3309,8 @@ void HangarWindow::HideHelp() {
 "	      0047457d    push ebx"
 "	      0047457e    push esi"
 "	      0047457f    push edi"
-"	      00474580    mov [ebp-8],ecx"
-"	      00474583    mov eax,[ebp-8]"
+"	      00474580    mov this,ecx"
+"	      00474583    mov eax,this"
 "	      00474586    mov eax,[eax+74h]"
 "	      00474589    mov [ebp-4],eax"
 );
@@ -3341,7 +3341,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 "	      004745ab    push ebx"
 "	      004745ac    push esi"
 "	      004745ad    push edi"
-"	      004745ae    mov [ebp-30h],ecx"
+"	      004745ae    mov this,ecx"
 );
 // LINE 496:
 	asm( 
@@ -3397,7 +3397,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 "	      00474660    mov dword ptr [ebp-4],0"
 "	      00474667    mov dword ptr [ebp-8],0"
 "	      0047466e    jmp near ptr 00474673h"
-"	      00474673    mov eax,[ebp+0Ch]"
+"	      00474673    mov eax,sSoundFileName"
 "	      00474676    push eax"
 "	      00474677    lea eax,[ebp-8]"
 "	      0047467a    push eax"
@@ -3479,12 +3479,12 @@ void HangarWindow::LoadHotSpots() {
 "	      00474754    push ebx"
 "	      00474755    push esi"
 "	      00474756    push edi"
-"	      00474757    mov [ebp-4],ecx"
+"	      00474757    mov this,ecx"
 );
 // LINE 505:
 	asm( 
 "	      0047475a    push 6Ah"
-"	      0047475c    mov eax,[ebp-4]"
+"	      0047475c    mov eax,this"
 "	      0047475f    add eax,116h"
 "	      00474764    push eax"
 "	      00474765    call 004BB49Bh"

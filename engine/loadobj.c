@@ -22,7 +22,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 152:
 	asm( 
-"	      004d2189    mov eax,[ebp+0Ch]"
+"	      004d2189    mov eax,objs"
 "	      004d218c    shl eax,2"
 "	      004d218f    add eax,18h"
 "	      004d2192    push eax"
@@ -30,11 +30,11 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 "	      004d2198    push eax"
 "	      004d2199    call 004CB4ACh"
 "	      004d219e    add esp,8"
-"	      004d21a1    mov [ebp-8],eax"
+"	      004d21a1    mov res,eax"
 );
 // LINE 153:
 	asm( 
-"	      004d21a4    cmp dword ptr [ebp-8],0"
+"	      004d21a4    cmp res,0"
 "	      004d21a8    jne near ptr 004D21BFh"
 );
 // LINE 154:
@@ -48,40 +48,40 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 166:
 	asm( 
-"	      004d21bf    mov eax,[ebp+8]"
+"	      004d21bf    mov eax,info"
 "	      004d21c2    mov eax,[eax+4]"
-"	      004d21c5    mov ecx,[ebp+8]"
+"	      004d21c5    mov ecx,info"
 "	      004d21c8    mov ecx,[ecx+4]"
 "	      004d21cb    shl ecx,2"
 "	      004d21ce    lea eax,[ecx+eax*8]"
-"	      004d21d1    mov ecx,[ebp+8]"
+"	      004d21d1    mov ecx,info"
 "	      004d21d4    mov ecx,[ecx]"
 "	      004d21d6    mov edx,ecx"
 "	      004d21d8    shl ecx,3"
 "	      004d21db    sub ecx,edx"
 "	      004d21dd    lea eax,[eax+ecx*4]"
-"	      004d21e0    mov ecx,[ebp+8]"
+"	      004d21e0    mov ecx,info"
 "	      004d21e3    mov ecx,[ecx+14h]"
 "	      004d21e6    lea ecx,[ecx+ecx*2]"
 "	      004d21e9    lea eax,[eax+ecx*4]"
-"	      004d21ec    mov ecx,[ebp+8]"
+"	      004d21ec    mov ecx,info"
 "	      004d21ef    mov ecx,[ecx+8]"
 "	      004d21f2    shl ecx,5"
 "	      004d21f5    add eax,ecx"
-"	      004d21f7    mov ecx,[ebp+8]"
+"	      004d21f7    mov ecx,info"
 "	      004d21fa    mov ecx,[ecx+0Ch]"
 "	      004d21fd    shl ecx,5"
 "	      004d2200    add eax,ecx"
-"	      004d2202    mov ecx,[ebp+8]"
+"	      004d2202    mov ecx,info"
 "	      004d2205    mov ecx,[ecx+10h]"
 "	      004d2208    shl ecx,4"
 "	      004d220b    lea ecx,[ecx+ecx*2]"
 "	      004d220e    add eax,ecx"
-"	      004d2210    mov ecx,[ebp+8]"
+"	      004d2210    mov ecx,info"
 "	      004d2213    mov ecx,[ecx+10h]"
 "	      004d2216    shl ecx,4"
 "	      004d2219    add eax,ecx"
-"	      004d221b    mov ecx,[ebp+0Ch]"
+"	      004d221b    mov ecx,objs"
 "	      004d221e    lea ecx,[ecx+ecx*8]"
 "	      004d2221    shl ecx,4"
 "	      004d2224    add eax,ecx"
@@ -89,18 +89,18 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 168:
 	asm( 
-"	      004d222b    mov eax,[ebp+8]"
+"	      004d222b    mov eax,info"
 "	      004d222e    mov eax,[eax+4]"
 "	      004d2231    shl eax,3"
 "	      004d2234    push eax"
 "	      004d2235    call 004CB401h"
 "	      004d223a    add esp,4"
-"	      004d223d    mov ecx,[ebp-8]"
+"	      004d223d    mov ecx,res"
 "	      004d2240    mov [ecx+14h],eax"
 );
 // LINE 169:
 	asm( 
-"	      004d2243    mov eax,[ebp-8]"
+"	      004d2243    mov eax,res"
 "	      004d2246    cmp dword ptr [eax+14h],0"
 "	      004d224a    jge near ptr 004D2261h"
 );
@@ -121,8 +121,8 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 "	      004d226c    push eax"
 "	      004d226d    call 004CB4ACh"
 "	      004d2272    add esp,8"
-"	      004d2275    mov [ebp-4],eax"
-"	      004d2278    cmp dword ptr [ebp-4],0"
+"	      004d2275    mov group,eax"
+"	      004d2278    cmp group,0"
 "	      004d227c    jne near ptr 004D2293h"
 );
 // LINE 176:
@@ -136,7 +136,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 180:
 	asm( 
-"	      004d2293    mov eax,[ebp-4]"
+"	      004d2293    mov eax,group"
 "	      004d2296    mov ds:[606A60h],eax"
 );
 // LINE 184:
@@ -145,23 +145,23 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 185:
 	asm( 
-"	      004d22a5    mov dword ptr [ebp-0Ch],0"
+"	      004d22a5    mov i,0"
 "	      004d22ac    jmp near ptr 004D22B4h"
-"	      004d22b1    inc dword ptr [ebp-0Ch]"
-"	      004d22b4    mov eax,[ebp+0Ch]"
-"	      004d22b7    cmp [ebp-0Ch],eax"
+"	      004d22b1    inc i"
+"	      004d22b4    mov eax,objs"
+"	      004d22b7    cmp i,eax"
 "	      004d22ba    jge near ptr 004D231Bh"
 );
 // LINE 186:
 	asm( 
 "	      004d22c0    mov eax,ds:[606A60h]"
-"	      004d22c5    mov ecx,[ebp-0Ch]"
-"	      004d22c8    mov edx,[ebp-8]"
+"	      004d22c5    mov ecx,i"
+"	      004d22c8    mov edx,res"
 "	      004d22cb    mov [edx+ecx*4+18h],eax"
 );
 // LINE 187:
 	asm( 
-"	      004d22cf    mov eax,[ebp-8]"
+"	      004d22cf    mov eax,res"
 "	      004d22d2    mov eax,[eax+14h]"
 "	      004d22d5    push eax"
 "	      004d22d6    call 004D2409h"
@@ -220,29 +220,29 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 );
 // LINE 208:
 	asm( 
-"	      004d2347    mov eax,[ebp-4]"
-"	      004d234a    mov ecx,[ebp-8]"
+"	      004d2347    mov eax,group"
+"	      004d234a    mov ecx,res"
 "	      004d234d    mov [ecx],eax"
 );
 // LINE 209:
 	asm( 
-"	      004d234f    mov eax,[ebp-8]"
+"	      004d234f    mov eax,res"
 "	      004d2352    mov dword ptr [eax+8],1"
 );
 // LINE 210:
 	asm( 
-"	      004d2359    mov eax,[ebp-8]"
+"	      004d2359    mov eax,res"
 "	      004d235c    mov dword ptr [eax+0Ch],0"
 );
 // LINE 211:
 	asm( 
-"	      004d2363    mov eax,[ebp+0Ch]"
-"	      004d2366    mov ecx,[ebp-8]"
+"	      004d2363    mov eax,objs"
+"	      004d2366    mov ecx,res"
 "	      004d2369    mov [ecx+10h],eax"
 );
 // LINE 212:
 	asm( 
-"	      004d236c    mov eax,[ebp-8]"
+"	      004d236c    mov eax,res"
 "	      004d236f    jmp near ptr 004D2374h"
 );
 // LINE 214:
@@ -271,25 +271,25 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 );
 // LINE 229:
 	asm( 
-"	      004d2382    mov eax,[ebp+8]"
-"	      004d2385    mov [ebp-8],eax"
+"	      004d2382    mov eax,res"
+"	      004d2385    mov geo,eax"
 );
 // LINE 230:
 	asm( 
-"	      004d2388    mov dword ptr [ebp-4],0"
+"	      004d2388    mov i,0"
 "	      004d238f    jmp near ptr 004D2397h"
-"	      004d2394    inc dword ptr [ebp-4]"
-"	      004d2397    mov eax,[ebp-8]"
-"	      004d239a    mov ecx,[ebp-4]"
+"	      004d2394    inc i"
+"	      004d2397    mov eax,geo"
+"	      004d239a    mov ecx,i"
 "	      004d239d    cmp [eax+10h],ecx"
 "	      004d23a0    jle near ptr 004D23C2h"
 );
 // LINE 231:
 	asm( 
-"	      004d23a6    mov eax,[ebp+0Ch]"
+"	      004d23a6    mov eax,mem"
 "	      004d23a9    push eax"
-"	      004d23aa    mov eax,[ebp-4]"
-"	      004d23ad    mov ecx,[ebp-8]"
+"	      004d23aa    mov eax,i"
+"	      004d23ad    mov ecx,geo"
 "	      004d23b0    mov eax,[ecx+eax*4+18h]"
 "	      004d23b4    push eax"
 "	      004d23b5    call 004D84DBh"
@@ -324,12 +324,12 @@ int32_t VRGetResObjectCnt(struct VRResource* res) {
 );
 // LINE 247:
 	asm( 
-"	      004d23d0    mov eax,[ebp+8]"
-"	      004d23d3    mov [ebp-4],eax"
+"	      004d23d0    mov eax,res"
+"	      004d23d3    mov geo,eax"
 );
 // LINE 248:
 	asm( 
-"	      004d23d6    mov eax,[ebp-4]"
+"	      004d23d6    mov eax,geo"
 "	      004d23d9    mov eax,[eax+10h]"
 "	      004d23dc    jmp near ptr 004D23E1h"
 );
@@ -358,13 +358,13 @@ int32_t VRGetResObject(struct VRResource* res, int32_t i) {
 );
 // LINE 264:
 	asm( 
-"	      004d23ef    mov eax,[ebp+8]"
-"	      004d23f2    mov [ebp-4],eax"
+"	      004d23ef    mov eax,res"
+"	      004d23f2    mov geo,eax"
 );
 // LINE 265:
 	asm( 
-"	      004d23f5    mov eax,[ebp+0Ch]"
-"	      004d23f8    mov ecx,[ebp-4]"
+"	      004d23f5    mov eax,i"
+"	      004d23f8    mov ecx,geo"
 "	      004d23fb    mov eax,[ecx+eax*4+18h]"
 "	      004d23ff    jmp near ptr 004D2404h"
 );
@@ -389,7 +389,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	int32_t hibyte;
 	int32_t x;
 	int32_t * FaceVertPtr;
-	short[256] w;
+	short[128] w;
 	struct FileBSPTreeHdrType treehdr;
 	int32_t lobyte;
 	struct _FaceHdr* faceptr;
@@ -409,22 +409,22 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 296:
 	asm( 
-"	      004d2415    mov dword ptr [ebp-8],0"
+"	      004d2415    mov uses_gouraud,0"
 );
 // LINE 299:
 	asm( 
 "	      004d241c    mov eax,ds:[606A60h]"
-"	      004d2421    mov [ebp-0Ch],eax"
+"	      004d2421    mov ObjectPtr,eax"
 );
 // LINE 300:
 	asm( 
-"	      004d2424    mov eax,[ebp-0Ch]"
+"	      004d2424    mov eax,ObjectPtr"
 "	      004d2427    add eax,90h"
-"	      004d242c    mov [ebp-1D0h],eax"
+"	      004d242c    mov dataptr,eax"
 );
 // LINE 301:
 	asm( 
-"	      004d2432    mov eax,[ebp-0Ch]"
+"	      004d2432    mov eax,ObjectPtr"
 "	      004d2435    push eax"
 "	      004d2436    call 004D8643h"
 "	      004d243b    add esp,4"
@@ -443,7 +443,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 307:
 	asm( 
 "	      004d2457    push 7Ch"
-"	      004d2459    lea eax,[ebp-1CCh]"
+"	      004d2459    lea eax,fileobjhdr.Id[0]"
 "	      004d245f    push eax"
 "	      004d2460    call 004D5F1Eh"
 "	      004d2465    add esp,8"
@@ -457,50 +457,50 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 375:
 	asm( 
-"	      004d2477    mov eax,[ebp-1C0h]"
-"	      004d247d    mov ecx,[ebp-0Ch]"
+"	      004d2477    mov eax,fileobjhdr.Attrib"
+"	      004d247d    mov ecx,ObjectPtr"
 "	      004d2480    mov [ecx],eax"
 );
 // LINE 376:
 	asm( 
-"	      004d2482    movsx eax,word ptr [ebp-1C4h]"
+"	      004d2482    movsx eax,fileobjhdr.NVerts"
 "	      004d2489    dec eax"
-"	      004d248a    mov ecx,[ebp-0Ch]"
+"	      004d248a    mov ecx,ObjectPtr"
 "	      004d248d    mov [ecx+4],eax"
 );
 // LINE 377:
 	asm( 
-"	      004d2490    movsx eax,word ptr [ebp-1C2h]"
-"	      004d2497    mov ecx,[ebp-0Ch]"
+"	      004d2490    movsx eax,fileobjhdr.NFaces"
+"	      004d2497    mov ecx,ObjectPtr"
 "	      004d249a    mov [ecx+10h],eax"
 );
 // LINE 378:
 	asm( 
-"	      004d249d    mov eax,[ebp-154h]"
-"	      004d24a3    mov ecx,[ebp-0Ch]"
+"	      004d249d    mov eax,fileobjhdr.ID"
+"	      004d24a3    mov ecx,ObjectPtr"
 "	      004d24a6    mov [ecx+44h],eax"
 );
 // LINE 379:
 	asm( 
-"	      004d24a9    mov eax,[ebp-1BCh]"
-"	      004d24af    mov ecx,[ebp-0Ch]"
+"	      004d24a9    mov eax,fileobjhdr.Radius"
+"	      004d24af    mov ecx,ObjectPtr"
 "	      004d24b2    mov [ecx+30h],eax"
 );
 // LINE 380:
 	asm( 
-"	      004d24b5    mov eax,[ebp-1D0h]"
-"	      004d24bb    mov ecx,[ebp-0Ch]"
+"	      004d24b5    mov eax,dataptr"
+"	      004d24bb    mov ecx,ObjectPtr"
 "	      004d24be    mov [ecx+8],eax"
 );
 // LINE 381:
 	asm( 
-"	      004d24c1    mov eax,[ebp-0Ch]"
+"	      004d24c1    mov eax,ObjectPtr"
 "	      004d24c4    mov dword ptr [eax+40h],0"
 );
 // LINE 389:
 	asm( 
 "	      004d24cb    push 0Ch"
-"	      004d24cd    mov eax,[ebp-0Ch]"
+"	      004d24cd    mov eax,ObjectPtr"
 "	      004d24d0    add eax,18h"
 "	      004d24d3    push eax"
 "	      004d24d4    call 004D5F1Eh"
@@ -515,12 +515,12 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 413:
 	asm( 
-"	      004d24eb    mov eax,[ebp-0Ch]"
+"	      004d24eb    mov eax,ObjectPtr"
 "	      004d24ee    mov eax,[eax+4]"
 "	      004d24f1    lea eax,[eax+eax*2]"
 "	      004d24f4    shl eax,2"
 "	      004d24f7    push eax"
-"	      004d24f8    mov eax,[ebp-1D0h]"
+"	      004d24f8    mov eax,dataptr"
 "	      004d24fe    push eax"
 "	      004d24ff    call 004D5F1Eh"
 "	      004d2504    add esp,8"
@@ -534,11 +534,11 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 415:
 	asm( 
-"	      004d2516    mov eax,[ebp-0Ch]"
+"	      004d2516    mov eax,ObjectPtr"
 "	      004d2519    mov eax,[eax+4]"
 "	      004d251c    lea eax,[eax+eax*2]"
 "	      004d251f    shl eax,2"
-"	      004d2522    add [ebp-1D0h],eax"
+"	      004d2522    add dataptr,eax"
 );
 // LINE 448:
 	asm( 
@@ -547,7 +547,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 450:
 	asm( 
-"	      004d2535    movsx eax,word ptr [ebp-1C2h]"
+"	      004d2535    movsx eax,fileobjhdr.NFaces"
 "	      004d253c    shl eax,2"
 "	      004d253f    push eax"
 "	      004d2540    mov eax,ds:[63A854h]"
@@ -569,29 +569,29 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 459:
 	asm( 
-"	      004d2571    mov eax,[ebp-1D0h]"
-"	      004d2577    mov ecx,[ebp-0Ch]"
+"	      004d2571    mov eax,dataptr"
+"	      004d2577    mov ecx,ObjectPtr"
 "	      004d257a    mov [ecx+4Ch],eax"
 );
 // LINE 460:
 	asm( 
-"	      004d257d    mov dword ptr [ebp-140h],0"
-"	      004d2587    mov dword ptr [ebp-14Ch],0"
+"	      004d257d    mov x,0"
+"	      004d2587    mov VertCount,0"
 "	      004d2591    jmp near ptr 004D259Ch"
-"	      004d2596    inc dword ptr [ebp-140h]"
-"	      004d259c    movsx eax,word ptr [ebp-1C2h]"
-"	      004d25a3    cmp eax,[ebp-140h]"
+"	      004d2596    inc x"
+"	      004d259c    movsx eax,fileobjhdr.NFaces"
+"	      004d25a3    cmp eax,x"
 "	      004d25a9    jle near ptr 004D29C8h"
 );
 // LINE 461:
 	asm( 
-"	      004d25af    mov eax,[ebp-1D0h]"
-"	      004d25b5    mov [ebp-28h],eax"
+"	      004d25af    mov eax,dataptr"
+"	      004d25b5    mov faceptr,eax"
 );
 // LINE 464:
 	asm( 
 "	      004d25b8    push 15h"
-"	      004d25ba    lea eax,[ebp-24h]"
+"	      004d25ba    lea eax,filefacehdr.Id[0]"
 "	      004d25bd    push eax"
 "	      004d25be    call 004D5F1Eh"
 "	      004d25c3    add esp,8"
@@ -614,7 +614,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	asm( 
 "	      004d25e3    push 4"
 "	      004d25e5    push 59C218h"
-"	      004d25ea    lea eax,[ebp-24h]"
+"	      004d25ea    lea eax,filefacehdr.Id[0]"
 "	      004d25ed    push eax"
 "	      004d25ee    call 005752E0h"
 "	      004d25f3    add esp,0Ch"
@@ -639,95 +639,95 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 512:
 	asm( 
-"	      004d261d    movsx eax,word ptr [ebp-1Ch]"
-"	      004d2621    add [ebp-14Ch],eax"
+"	      004d261d    movsx eax,filefacehdr.NVerts"
+"	      004d2621    add VertCount,eax"
 );
 // LINE 513:
 	asm( 
-"	      004d2627    movsx eax,word ptr [ebp-1Ch]"
-"	      004d262b    mov ecx,[ebp-28h]"
+"	      004d2627    movsx eax,filefacehdr.NVerts"
+"	      004d262b    mov ecx,faceptr"
 "	      004d262e    mov [ecx+4],eax"
 );
 // LINE 514:
 	asm( 
-"	      004d2631    mov eax,[ebp-1Ah]"
-"	      004d2634    mov ecx,[ebp-28h]"
+"	      004d2631    mov eax,filefacehdr.Attrib"
+"	      004d2634    mov ecx,faceptr"
 "	      004d2637    mov [ecx+8],eax"
 );
 // LINE 515:
 	asm( 
-"	      004d263a    mov eax,[ebp-16h]"
-"	      004d263d    mov ecx,[ebp-28h]"
+"	      004d263a    mov eax,filefacehdr.AuxAttrib"
+"	      004d263d    mov ecx,faceptr"
 "	      004d2640    mov [ecx+0Ch],eax"
 );
 // LINE 516:
 	asm( 
 "	      004d2643    xor eax,eax"
-"	      004d2645    mov al,[ebp-12h]"
-"	      004d2648    mov ecx,[ebp-28h]"
+"	      004d2645    mov al,filefacehdr.Color"
+"	      004d2648    mov ecx,faceptr"
 "	      004d264b    mov [ecx+10h],eax"
 );
 // LINE 517:
 	asm( 
-"	      004d264e    movsx eax,word ptr [ebp-11h]"
+"	      004d264e    movsx eax,filefacehdr.TextureId"
 "	      004d2652    and eax,0FF00h"
-"	      004d2657    mov [ebp-144h],eax"
+"	      004d2657    mov hibyte,eax"
 );
 // LINE 518:
 	asm( 
-"	      004d265d    movsx eax,word ptr [ebp-11h]"
+"	      004d265d    movsx eax,filefacehdr.TextureId"
 "	      004d2661    and eax,0FFh"
-"	      004d2666    mov [ebp-2Ch],eax"
+"	      004d2666    mov lobyte,eax"
 );
 // LINE 519:
 	asm( 
-"	      004d2669    mov eax,[ebp-144h]"
+"	      004d2669    mov eax,hibyte"
 "	      004d266f    shl eax,8"
-"	      004d2672    or eax,[ebp-2Ch]"
-"	      004d2675    mov ecx,[ebp-28h]"
+"	      004d2672    or eax,lobyte"
+"	      004d2675    mov ecx,faceptr"
 "	      004d2678    mov [ecx+24h],eax"
 );
 // LINE 520:
 	asm( 
-"	      004d267b    add dword ptr [ebp-1D0h],30h"
+"	      004d267b    add dataptr,30h"
 );
 // LINE 528:
 	asm( 
-"	      004d2682    mov eax,[ebp-28h]"
+"	      004d2682    mov eax,faceptr"
 "	      004d2685    test byte ptr [eax+9],40h"
 "	      004d2689    je near ptr 004D2696h"
 );
 // LINE 529:
 	asm( 
-"	      004d268f    mov dword ptr [ebp-8],1"
+"	      004d268f    mov uses_gouraud,1"
 );
 // LINE 532:
 	asm( 
-"	      004d2696    mov eax,[ebp-28h]"
+"	      004d2696    mov eax,faceptr"
 "	      004d2699    test byte ptr [eax+8],4"
 "	      004d269d    je near ptr 004D26ADh"
 );
 // LINE 533:
 	asm( 
-"	      004d26a3    mov dword ptr [ebp-148h],0"
+"	      004d26a3    mov y,0"
 );
 // LINE 539:
 	asm( 
-"	      004d26ad    mov eax,[ebp-1D0h]"
-"	      004d26b3    mov ecx,[ebp-28h]"
+"	      004d26ad    mov eax,dataptr"
+"	      004d26b3    mov ecx,faceptr"
 "	      004d26b6    mov [ecx+1Ch],eax"
 );
 // LINE 540:
 	asm( 
-"	      004d26b9    mov eax,[ebp-1D0h]"
-"	      004d26bf    mov [ebp-13Ch],eax"
+"	      004d26b9    mov eax,dataptr"
+"	      004d26bf    mov FaceVertPtr,eax"
 );
 // LINE 544:
 	asm( 
-"	      004d26c5    movsx eax,word ptr [ebp-1Ch]"
+"	      004d26c5    movsx eax,filefacehdr.NVerts"
 "	      004d26c9    add eax,eax"
 "	      004d26cb    push eax"
-"	      004d26cc    lea eax,[ebp-138h]"
+"	      004d26cc    lea eax,w[0]"
 "	      004d26d2    push eax"
 "	      004d26d3    call 004D5F1Eh"
 "	      004d26d8    add esp,8"
@@ -741,26 +741,26 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 566:
 	asm( 
-"	      004d26ea    mov dword ptr [ebp-148h],0"
+"	      004d26ea    mov y,0"
 "	      004d26f4    jmp near ptr 004D26FFh"
-"	      004d26f9    inc dword ptr [ebp-148h]"
-"	      004d26ff    movsx eax,word ptr [ebp-1Ch]"
-"	      004d2703    cmp eax,[ebp-148h]"
+"	      004d26f9    inc y"
+"	      004d26ff    movsx eax,filefacehdr.NVerts"
+"	      004d2703    cmp eax,y"
 "	      004d2709    jle near ptr 004D2742h"
 );
 // LINE 568:
 	asm( 
-"	      004d270f    mov eax,[ebp-148h]"
+"	      004d270f    mov eax,y"
 "	      004d2715    dec word ptr [ebp+eax*2-138h]"
 );
 // LINE 569:
 	asm( 
-"	      004d271d    mov eax,[ebp-148h]"
+"	      004d271d    mov eax,y"
 "	      004d2723    movsx eax,word ptr [ebp+eax*2-138h]"
 "	      004d272b    shl eax,4"
-"	      004d272e    mov ecx,[ebp-13Ch]"
+"	      004d272e    mov ecx,FaceVertPtr"
 "	      004d2734    mov [ecx],eax"
-"	      004d2736    add dword ptr [ebp-13Ch],4"
+"	      004d2736    add FaceVertPtr,4"
 );
 // LINE 570:
 	asm( 
@@ -768,21 +768,21 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 571:
 	asm( 
-"	      004d2742    mov eax,[ebp-13Ch]"
-"	      004d2748    mov [ebp-1D0h],eax"
+"	      004d2742    mov eax,FaceVertPtr"
+"	      004d2748    mov dataptr,eax"
 );
 // LINE 577:
 	asm( 
-"	      004d274e    mov eax,[ebp-1D0h]"
-"	      004d2754    mov ecx,[ebp-28h]"
+"	      004d274e    mov eax,dataptr"
+"	      004d2754    mov ecx,faceptr"
 "	      004d2757    mov [ecx+20h],eax"
 );
 // LINE 581:
 	asm( 
-"	      004d275a    movsx eax,word ptr [ebp-1Ch]"
+"	      004d275a    movsx eax,filefacehdr.NVerts"
 "	      004d275e    shl eax,3"
 "	      004d2761    push eax"
-"	      004d2762    mov eax,[ebp-1D0h]"
+"	      004d2762    mov eax,dataptr"
 "	      004d2768    push eax"
 "	      004d2769    call 004D5F1Eh"
 "	      004d276e    add esp,8"
@@ -803,31 +803,31 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 586:
 	asm( 
-"	      004d278e    movsx eax,word ptr [ebp-1Ch]"
+"	      004d278e    movsx eax,filefacehdr.NVerts"
 "	      004d2792    shl eax,3"
-"	      004d2795    add [ebp-1D0h],eax"
+"	      004d2795    add dataptr,eax"
 );
 // LINE 608:
 	asm( 
-"	      004d279b    movsx eax,word ptr [ebp-1Ch]"
+"	      004d279b    movsx eax,filefacehdr.NVerts"
 "	      004d279f    shl eax,3"
 "	      004d27a2    push eax"
-"	      004d27a3    mov eax,[ebp+8]"
+"	      004d27a3    mov eax,barrymempool"
 "	      004d27a6    push eax"
 "	      004d27a7    call 004CB4ACh"
 "	      004d27ac    add esp,8"
-"	      004d27af    mov ecx,[ebp-28h]"
+"	      004d27af    mov ecx,faceptr"
 "	      004d27b2    mov [ecx+28h],eax"
 );
 // LINE 609:
 	asm( 
-"	      004d27b5    movsx eax,word ptr [ebp-1Ch]"
+"	      004d27b5    movsx eax,filefacehdr.NVerts"
 "	      004d27b9    shl eax,3"
 "	      004d27bc    push eax"
-"	      004d27bd    mov eax,[ebp-28h]"
+"	      004d27bd    mov eax,faceptr"
 "	      004d27c0    mov eax,[eax+20h]"
 "	      004d27c3    push eax"
-"	      004d27c4    mov eax,[ebp-28h]"
+"	      004d27c4    mov eax,faceptr"
 "	      004d27c7    mov eax,[eax+28h]"
 "	      004d27ca    push eax"
 "	      004d27cb    call 0056A800h"
@@ -835,75 +835,75 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 617:
 	asm( 
-"	      004d27d3    mov eax,[ebp-1D0h]"
-"	      004d27d9    mov ecx,[ebp-28h]"
+"	      004d27d3    mov eax,dataptr"
+"	      004d27d9    mov ecx,faceptr"
 "	      004d27dc    mov [ecx+2Ch],eax"
 );
 // LINE 618:
 	asm( 
-"	      004d27df    add dword ptr [ebp-1D0h],10h"
+"	      004d27df    add dataptr,10h"
 );
 // LINE 619:
 	asm( 
-"	      004d27e6    movsx eax,word ptr [ebp-138h]"
+"	      004d27e6    movsx eax,w[0]"
 "	      004d27ed    lea eax,[eax+eax*2]"
 "	      004d27f0    shl eax,2"
-"	      004d27f3    mov ecx,[ebp-0Ch]"
+"	      004d27f3    mov ecx,ObjectPtr"
 "	      004d27f6    add eax,[ecx+8]"
-"	      004d27f9    mov [ebp-1D4h],eax"
+"	      004d27f9    mov v0,eax"
 );
 // LINE 620:
 	asm( 
-"	      004d27ff    movsx eax,word ptr [ebp-136h]"
+"	      004d27ff    movsx eax,w[1]"
 "	      004d2806    lea eax,[eax+eax*2]"
 "	      004d2809    shl eax,2"
-"	      004d280c    mov ecx,[ebp-0Ch]"
+"	      004d280c    mov ecx,ObjectPtr"
 "	      004d280f    add eax,[ecx+8]"
-"	      004d2812    mov [ebp-4],eax"
+"	      004d2812    mov v1,eax"
 );
 // LINE 621:
 	asm( 
-"	      004d2815    movsx eax,word ptr [ebp-1Ch]"
+"	      004d2815    movsx eax,filefacehdr.NVerts"
 "	      004d2819    movsx eax,word ptr [ebp+eax*2-13Ah]"
 "	      004d2821    lea eax,[eax+eax*2]"
 "	      004d2824    shl eax,2"
-"	      004d2827    mov ecx,[ebp-0Ch]"
+"	      004d2827    mov ecx,ObjectPtr"
 "	      004d282a    add eax,[ecx+8]"
-"	      004d282d    mov [ebp-150h],eax"
+"	      004d282d    mov vlst,eax"
 );
 // LINE 622:
 	asm( 
-"	      004d2833    mov eax,[ebp-28h]"
+"	      004d2833    mov eax,faceptr"
 "	      004d2836    mov eax,[eax+2Ch]"
 "	      004d2839    push eax"
-"	      004d283a    mov eax,[ebp-150h]"
+"	      004d283a    mov eax,vlst"
 "	      004d2840    push eax"
-"	      004d2841    mov eax,[ebp-4]"
+"	      004d2841    mov eax,v1"
 "	      004d2844    push eax"
-"	      004d2845    mov eax,[ebp-1D4h]"
+"	      004d2845    mov eax,v0"
 "	      004d284b    push eax"
 "	      004d284c    call 004D44DEh"
 "	      004d2851    add esp,10h"
 );
 // LINE 627:
 	asm( 
-"	      004d2854    mov eax,[ebp-28h]"
+"	      004d2854    mov eax,faceptr"
 "	      004d2857    mov eax,[eax+2Ch]"
 "	      004d285a    cmp dword ptr [eax],0"
 "	      004d285d    jne near ptr 004D28B8h"
-"	      004d2863    mov eax,[ebp-28h]"
+"	      004d2863    mov eax,faceptr"
 "	      004d2866    mov eax,[eax+2Ch]"
 "	      004d2869    cmp dword ptr [eax+4],0"
 "	      004d286d    jne near ptr 004D28B8h"
 );
 // LINE 629:
 	asm( 
-"	      004d2873    mov eax,[ebp-28h]"
+"	      004d2873    mov eax,faceptr"
 "	      004d2876    or dword ptr [eax+8],10000000h"
 );
 // LINE 630:
 	asm( 
-"	      004d287d    mov eax,[ebp-28h]"
+"	      004d287d    mov eax,faceptr"
 "	      004d2880    mov eax,[eax+2Ch]"
 "	      004d2883    mov eax,[eax+8]"
 "	      004d2886    mov [ebp-1D8h],eax"
@@ -916,29 +916,29 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 631:
 	asm( 
-"	      004d28a9    mov eax,[ebp-28h]"
+"	      004d28a9    mov eax,faceptr"
 "	      004d28ac    or dword ptr [eax+8],20000000h"
 );
 // LINE 633:
 	asm( 
 "	      004d28b3    jmp near ptr 004D298Ah"
-"	      004d28b8    mov eax,[ebp-28h]"
+"	      004d28b8    mov eax,faceptr"
 "	      004d28bb    mov eax,[eax+2Ch]"
 "	      004d28be    cmp dword ptr [eax],0"
 "	      004d28c1    jne near ptr 004D291Ch"
-"	      004d28c7    mov eax,[ebp-28h]"
+"	      004d28c7    mov eax,faceptr"
 "	      004d28ca    mov eax,[eax+2Ch]"
 "	      004d28cd    cmp dword ptr [eax+8],0"
 "	      004d28d1    jne near ptr 004D291Ch"
 );
 // LINE 635:
 	asm( 
-"	      004d28d7    mov eax,[ebp-28h]"
+"	      004d28d7    mov eax,faceptr"
 "	      004d28da    or dword ptr [eax+8],8000000h"
 );
 // LINE 636:
 	asm( 
-"	      004d28e1    mov eax,[ebp-28h]"
+"	      004d28e1    mov eax,faceptr"
 "	      004d28e4    mov eax,[eax+2Ch]"
 "	      004d28e7    mov eax,[eax+4]"
 "	      004d28ea    mov [ebp-1DCh],eax"
@@ -951,29 +951,29 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 637:
 	asm( 
-"	      004d290d    mov eax,[ebp-28h]"
+"	      004d290d    mov eax,faceptr"
 "	      004d2910    or dword ptr [eax+8],20000000h"
 );
 // LINE 639:
 	asm( 
 "	      004d2917    jmp near ptr 004D298Ah"
-"	      004d291c    mov eax,[ebp-28h]"
+"	      004d291c    mov eax,faceptr"
 "	      004d291f    mov eax,[eax+2Ch]"
 "	      004d2922    cmp dword ptr [eax+4],0"
 "	      004d2926    jne near ptr 004D2980h"
-"	      004d292c    mov eax,[ebp-28h]"
+"	      004d292c    mov eax,faceptr"
 "	      004d292f    mov eax,[eax+2Ch]"
 "	      004d2932    cmp dword ptr [eax+8],0"
 "	      004d2936    jne near ptr 004D2980h"
 );
 // LINE 641:
 	asm( 
-"	      004d293c    mov eax,[ebp-28h]"
+"	      004d293c    mov eax,faceptr"
 "	      004d293f    or dword ptr [eax+8],4000000h"
 );
 // LINE 642:
 	asm( 
-"	      004d2946    mov eax,[ebp-28h]"
+"	      004d2946    mov eax,faceptr"
 "	      004d2949    mov eax,[eax+2Ch]"
 "	      004d294c    mov eax,[eax]"
 "	      004d294e    mov [ebp-1E0h],eax"
@@ -986,7 +986,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 643:
 	asm( 
-"	      004d2971    mov eax,[ebp-28h]"
+"	      004d2971    mov eax,faceptr"
 "	      004d2974    or dword ptr [eax+8],20000000h"
 );
 // LINE 645:
@@ -995,20 +995,20 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 646:
 	asm( 
-"	      004d2980    mov eax,[ebp-28h]"
+"	      004d2980    mov eax,faceptr"
 "	      004d2983    or dword ptr [eax+8],40000000h"
 );
 // LINE 648:
 	asm( 
-"	      004d298a    mov eax,[ebp-1D4h]"
-"	      004d2990    mov ecx,[ebp-28h]"
+"	      004d298a    mov eax,v0"
+"	      004d2990    mov ecx,faceptr"
 "	      004d2993    mov ecx,[ecx+2Ch]"
 "	      004d2996    mov [ecx+0Ch],eax"
 );
 // LINE 650:
 	asm( 
-"	      004d2999    mov eax,[ebp-1D0h]"
-"	      004d299f    mov ecx,[ebp-28h]"
+"	      004d2999    mov eax,dataptr"
+"	      004d299f    mov ecx,faceptr"
 "	      004d29a2    mov [ecx],eax"
 );
 // LINE 651:
@@ -1018,8 +1018,8 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 652:
 	asm( 
-"	      004d29b1    mov eax,[ebp-28h]"
-"	      004d29b4    mov ecx,[ebp-140h]"
+"	      004d29b1    mov eax,faceptr"
+"	      004d29b4    mov ecx,x"
 "	      004d29ba    mov edx,ds:[6666C0h]"
 "	      004d29c0    mov [edx+ecx*4],eax"
 );
@@ -1034,13 +1034,13 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 659:
 	asm( 
-"	      004d29d5    mov eax,[ebp-1D0h]"
+"	      004d29d5    mov eax,dataptr"
 "	      004d29db    mov ds:[606A64h],eax"
 );
 // LINE 662:
 	asm( 
 "	      004d29e0    push 0Ah"
-"	      004d29e2    lea eax,[ebp-38h]"
+"	      004d29e2    lea eax,treehdr.Id[0]"
 "	      004d29e5    push eax"
 "	      004d29e6    call 004D5F1Eh"
 "	      004d29eb    add esp,8"
@@ -1066,22 +1066,22 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 688:
 	asm( 
 "	      004d2a14    call 004D3FEAh"
-"	      004d2a19    mov ecx,[ebp-0Ch]"
+"	      004d2a19    mov ecx,ObjectPtr"
 "	      004d2a1c    mov [ecx+34h],eax"
 );
 // LINE 689:
 	asm( 
-"	      004d2a1f    movsx eax,word ptr [ebp-30h]"
+"	      004d2a1f    movsx eax,treehdr.NNodes"
 "	      004d2a23    mov ecx,eax"
 "	      004d2a25    shl eax,3"
 "	      004d2a28    sub eax,ecx"
 "	      004d2a2a    shl eax,2"
-"	      004d2a2d    add [ebp-1D0h],eax"
+"	      004d2a2d    add dataptr,eax"
 );
 // LINE 691:
 	asm( 
 "	      004d2a33    jmp near ptr 004D2A42h"
-"	      004d2a38    mov eax,[ebp-0Ch]"
+"	      004d2a38    mov eax,ObjectPtr"
 "	      004d2a3b    mov dword ptr [eax+34h],0"
 );
 // LINE 693:
@@ -1097,14 +1097,14 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 700:
 	asm( 
-"	      004d2a5a    mov eax,[ebp-14Ch]"
-"	      004d2a60    mov ecx,[ebp-0Ch]"
+"	      004d2a5a    mov eax,VertCount"
+"	      004d2a60    mov ecx,ObjectPtr"
 "	      004d2a63    mov [ecx+14h],eax"
 );
 // LINE 701:
 	asm( 
 "	      004d2a66    xor eax,eax"
-"	      004d2a68    mov ecx,[ebp-1D0h]"
+"	      004d2a68    mov ecx,dataptr"
 "	      004d2a6e    sub ecx,ds:[606A60h]"
 "	      004d2a74    sub eax,ecx"
 "	      004d2a76    neg eax"
@@ -1112,27 +1112,27 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 702:
 	asm( 
-"	      004d2a7e    mov eax,[ebp-1D0h]"
+"	      004d2a7e    mov eax,dataptr"
 "	      004d2a84    mov ds:[606A60h],eax"
 );
 // LINE 703:
 	asm( 
-"	      004d2a89    mov eax,[ebp-0Ch]"
+"	      004d2a89    mov eax,ObjectPtr"
 "	      004d2a8c    test byte ptr [eax],2"
 "	      004d2a8f    je near ptr 004D2AA1h"
-"	      004d2a95    mov eax,[ebp-0Ch]"
+"	      004d2a95    mov eax,ObjectPtr"
 "	      004d2a98    push eax"
 "	      004d2a99    call 004D40E1h"
 "	      004d2a9e    add esp,4"
 );
 // LINE 706:
 	asm( 
-"	      004d2aa1    cmp dword ptr [ebp-8],1"
+"	      004d2aa1    cmp uses_gouraud,1"
 "	      004d2aa5    jne near ptr 004D2AB7h"
 );
 // LINE 707:
 	asm( 
-"	      004d2aab    mov eax,[ebp-0Ch]"
+"	      004d2aab    mov eax,ObjectPtr"
 "	      004d2aae    push eax"
 "	      004d2aaf    call 004D46BCh"
 "	      004d2ab4    add esp,4"
@@ -1169,24 +1169,24 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 );
 // LINE 733:
 	asm( 
-"	      004d2acf    mov dword ptr [ebp-4],0"
+"	      004d2acf    mov flags,0"
 );
 // LINE 736:
 	asm( 
-"	      004d2ad6    lea eax,[ebp-44h]"
+"	      004d2ad6    lea eax,tmat[0][0]"
 "	      004d2ad9    push eax"
-"	      004d2ada    mov eax,[ebp+0Ch]"
+"	      004d2ada    mov eax,dymat"
 "	      004d2add    push eax"
 "	      004d2ade    call 004D8C2Eh"
 "	      004d2ae3    add esp,8"
 );
 // LINE 739:
 	asm( 
-"	      004d2ae6    lea eax,[ebp-44h]"
+"	      004d2ae6    lea eax,tmat[0][0]"
 "	      004d2ae9    push eax"
-"	      004d2aea    lea eax,[ebp-50h]"
+"	      004d2aea    lea eax,tloc.x"
 "	      004d2aed    push eax"
-"	      004d2aee    mov eax,[ebp+10h]"
+"	      004d2aee    mov eax,loc"
 "	      004d2af1    push eax"
 "	      004d2af2    call 004D2094h"
 "	      004d2af7    add esp,0Ch"
@@ -1195,17 +1195,17 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 	asm( 
 "	      004d2afa    push 0"
 "	      004d2afc    push 0"
-"	      004d2afe    mov eax,[ebp+14h]"
+"	      004d2afe    mov eax,dim"
 "	      004d2b01    push eax"
-"	      004d2b02    lea eax,[ebp-4]"
+"	      004d2b02    lea eax,flags"
 "	      004d2b05    push eax"
-"	      004d2b06    mov eax,[ebp-48h]"
+"	      004d2b06    mov eax,tloc.z"
 "	      004d2b09    push eax"
-"	      004d2b0a    mov eax,[ebp-4Ch]"
+"	      004d2b0a    mov eax,tloc.y"
 "	      004d2b0d    push eax"
-"	      004d2b0e    mov eax,[ebp-50h]"
+"	      004d2b0e    mov eax,tloc.x"
 "	      004d2b11    push eax"
-"	      004d2b12    mov eax,[ebp+8]"
+"	      004d2b12    mov eax,obj"
 "	      004d2b15    push eax"
 "	      004d2b16    call 004D2B28h"
 "	      004d2b1b    add esp,20h"
@@ -1258,56 +1258,56 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 776:
 	asm( 
-"	      004d2b31    mov eax,[ebp+8]"
-"	      004d2b34    mov [ebp-3Ch],eax"
+"	      004d2b31    mov eax,obj"
+"	      004d2b34    mov oh,eax"
 );
 // LINE 788:
 	asm( 
-"	      004d2b37    mov dword ptr [ebp-44h],0"
+"	      004d2b37    mov overhang,0"
 );
 // LINE 789:
 	asm( 
-"	      004d2b3e    mov dword ptr [ebp-4],0"
+"	      004d2b3e    mov check_for_overhang,0"
 );
 // LINE 793:
 	asm( 
-"	      004d2b45    mov eax,[ebp-3Ch]"
+"	      004d2b45    mov eax,oh"
 "	      004d2b48    mov eax,[eax+30h]"
 "	      004d2b4b    add eax,eax"
 "	      004d2b4d    add eax,50000h"
-"	      004d2b52    cmp eax,[ebp+10h]"
+"	      004d2b52    cmp eax,y"
 "	      004d2b55    jge near ptr 004D2B69h"
 );
 // LINE 794:
 	asm( 
-"	      004d2b5b    mov eax,[ebp-3Ch]"
+"	      004d2b5b    mov eax,oh"
 "	      004d2b5e    mov eax,[eax+30h]"
 "	      004d2b61    sar eax,3"
 "	      004d2b64    jmp near ptr 004D31E2h"
 );
 // LINE 796:
 	asm( 
-"	      004d2b69    mov eax,[ebp+18h]"
+"	      004d2b69    mov eax,flags"
 "	      004d2b6c    test byte ptr [eax+1],2"
 "	      004d2b70    je near ptr 004D2B7Dh"
 );
 // LINE 797:
 	asm( 
-"	      004d2b76    mov dword ptr [ebp-4],1"
+"	      004d2b76    mov check_for_overhang,1"
 );
 // LINE 799:
 	asm( 
-"	      004d2b7d    cmp dword ptr [ebp+24h],0"
+"	      004d2b7d    cmp landable,0"
 "	      004d2b81    je near ptr 004D2B90h"
 );
 // LINE 800:
 	asm( 
-"	      004d2b87    mov eax,[ebp+24h]"
+"	      004d2b87    mov eax,landable"
 "	      004d2b8a    mov dword ptr [eax],0"
 );
 // LINE 803:
 	asm( 
-"	      004d2b90    cmp dword ptr [ebp+8],0"
+"	      004d2b90    cmp obj,0"
 "	      004d2b94    jne near ptr 004D2BA1h"
 );
 // LINE 804:
@@ -1317,35 +1317,35 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 807:
 	asm( 
-"	      004d2ba1    mov dword ptr [ebp-1Ch],75300000h"
+"	      004d2ba1    mov altydown,75300000h"
 );
 // LINE 808:
 	asm( 
-"	      004d2ba8    mov dword ptr [ebp-28h],75300000h"
+"	      004d2ba8    mov altyupabove,75300000h"
 );
 // LINE 809:
 	asm( 
-"	      004d2baf    mov dword ptr [ebp-4Ch],0"
+"	      004d2baf    mov altyupbelow,0"
 );
 // LINE 812:
 	asm( 
-"	      004d2bb6    mov eax,[ebp-3Ch]"
+"	      004d2bb6    mov eax,oh"
 "	      004d2bb9    mov eax,[eax+4Ch]"
-"	      004d2bbc    mov [ebp-8],eax"
+"	      004d2bbc    mov faceptr,eax"
 );
 // LINE 813:
 	asm( 
-"	      004d2bbf    mov dword ptr [ebp-30h],0"
+"	      004d2bbf    mov i,0"
 "	      004d2bc6    jmp near ptr 004D2BCEh"
-"	      004d2bcb    inc dword ptr [ebp-30h]"
-"	      004d2bce    mov eax,[ebp-3Ch]"
-"	      004d2bd1    mov ecx,[ebp-30h]"
+"	      004d2bcb    inc i"
+"	      004d2bce    mov eax,oh"
+"	      004d2bd1    mov ecx,i"
 "	      004d2bd4    cmp [eax+10h],ecx"
 "	      004d2bd7    jle near ptr 004D317Eh"
 );
 // LINE 816:
 	asm( 
-"	      004d2bdd    mov eax,[ebp-8]"
+"	      004d2bdd    mov eax,faceptr"
 "	      004d2be0    test byte ptr [eax+8],4"
 "	      004d2be4    je near ptr 004D2BEFh"
 );
@@ -1355,7 +1355,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 819:
 	asm( 
-"	      004d2bef    mov eax,[ebp-8]"
+"	      004d2bef    mov eax,faceptr"
 "	      004d2bf2    test dword ptr [eax+8],18000h"
 "	      004d2bf9    je near ptr 004D2C04h"
 );
@@ -1365,26 +1365,26 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 823:
 	asm( 
-"	      004d2c04    mov eax,[ebp-8]"
+"	      004d2c04    mov eax,faceptr"
 "	      004d2c07    mov eax,[eax+2Ch]"
 "	      004d2c0a    cmp dword ptr [eax+4],0FFFFFF9Ch"
 "	      004d2c0e    jge near ptr 004D2C20h"
 );
 // LINE 824:
 	asm( 
-"	      004d2c14    mov dword ptr [ebp-14h],1"
+"	      004d2c14    mov normaldir,1"
 );
 // LINE 825:
 	asm( 
 "	      004d2c1b    jmp near ptr 004D2C55h"
-"	      004d2c20    mov eax,[ebp-8]"
+"	      004d2c20    mov eax,faceptr"
 "	      004d2c23    mov eax,[eax+2Ch]"
 "	      004d2c26    cmp dword ptr [eax+4],64h"
 "	      004d2c2a    jle near ptr 004D2C50h"
 );
 // LINE 826:
 	asm( 
-"	      004d2c30    cmp dword ptr [ebp-4],0"
+"	      004d2c30    cmp check_for_overhang,0"
 "	      004d2c34    jne near ptr 004D2C44h"
 );
 // LINE 827:
@@ -1397,7 +1397,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 829:
 	asm( 
-"	      004d2c44    mov dword ptr [ebp-14h],0FFFFFFFFh"
+"	      004d2c44    mov normaldir,0FFFFFFFFh"
 );
 // LINE 830:
 	asm( 
@@ -1409,119 +1409,119 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 834:
 	asm( 
-"	      004d2c55    mov eax,[ebp-8]"
-"	      004d2c58    mov [ebp-5Ch],eax"
+"	      004d2c55    mov eax,faceptr"
+"	      004d2c58    mov dataptr,eax"
 );
 // LINE 835:
 	asm( 
-"	      004d2c5b    add dword ptr [ebp-5Ch],30h"
+"	      004d2c5b    add dataptr,30h"
 );
 // LINE 836:
 	asm( 
-"	      004d2c5f    mov eax,[ebp-8]"
+"	      004d2c5f    mov eax,faceptr"
 "	      004d2c62    mov eax,[eax+1Ch]"
-"	      004d2c65    mov [ebp-10h],eax"
+"	      004d2c65    mov vertno,eax"
 );
 // LINE 839:
 	asm( 
-"	      004d2c68    mov dword ptr [ebp-40h],75300000h"
-"	      004d2c6f    mov eax,[ebp-40h]"
-"	      004d2c72    mov [ebp-34h],eax"
-"	      004d2c75    mov eax,[ebp-34h]"
-"	      004d2c78    mov [ebp-2Ch],eax"
+"	      004d2c68    mov minz,75300000h"
+"	      004d2c6f    mov eax,minz"
+"	      004d2c72    mov miny,eax"
+"	      004d2c75    mov eax,miny"
+"	      004d2c78    mov minx,eax"
 );
 // LINE 840:
 	asm( 
-"	      004d2c7b    mov dword ptr [ebp-58h],8AD00000h"
-"	      004d2c82    mov eax,[ebp-58h]"
-"	      004d2c85    mov [ebp-54h],eax"
-"	      004d2c88    mov eax,[ebp-54h]"
-"	      004d2c8b    mov [ebp-48h],eax"
+"	      004d2c7b    mov maxz,8AD00000h"
+"	      004d2c82    mov eax,maxz"
+"	      004d2c85    mov maxy,eax"
+"	      004d2c88    mov eax,maxy"
+"	      004d2c8b    mov maxx,eax"
 );
 // LINE 845:
 	asm( 
-"	      004d2c8e    mov dword ptr [ebp-38h],0"
+"	      004d2c8e    mov j,0"
 "	      004d2c95    jmp near ptr 004D2C9Dh"
-"	      004d2c9a    inc dword ptr [ebp-38h]"
-"	      004d2c9d    mov eax,[ebp-8]"
-"	      004d2ca0    mov ecx,[ebp-38h]"
+"	      004d2c9a    inc j"
+"	      004d2c9d    mov eax,faceptr"
+"	      004d2ca0    mov ecx,j"
 "	      004d2ca3    cmp [eax+4],ecx"
 "	      004d2ca6    jle near ptr 004D2D58h"
 );
 // LINE 851:
 	asm( 
-"	      004d2cac    mov eax,[ebp-10h]"
+"	      004d2cac    mov eax,vertno"
 "	      004d2caf    mov eax,[eax]"
 "	      004d2cb1    shr eax,4"
 "	      004d2cb4    lea eax,[eax+eax*2]"
 "	      004d2cb7    shl eax,2"
-"	      004d2cba    mov ecx,[ebp-3Ch]"
+"	      004d2cba    mov ecx,oh"
 "	      004d2cbd    add eax,[ecx+8]"
-"	      004d2cc0    mov [ebp-18h],eax"
+"	      004d2cc0    mov vert,eax"
 );
 // LINE 855:
 	asm( 
-"	      004d2cc3    add dword ptr [ebp-10h],4"
+"	      004d2cc3    add vertno,4"
 );
 // LINE 858:
 	asm( 
-"	      004d2cc7    mov eax,[ebp-18h]"
-"	      004d2cca    mov ecx,[ebp-2Ch]"
+"	      004d2cc7    mov eax,vert"
+"	      004d2cca    mov ecx,minx"
 "	      004d2ccd    cmp [eax],ecx"
 "	      004d2ccf    jge near ptr 004D2CDDh"
-"	      004d2cd5    mov eax,[ebp-18h]"
+"	      004d2cd5    mov eax,vert"
 "	      004d2cd8    mov eax,[eax]"
-"	      004d2cda    mov [ebp-2Ch],eax"
+"	      004d2cda    mov minx,eax"
 );
 // LINE 859:
 	asm( 
-"	      004d2cdd    mov eax,[ebp-18h]"
-"	      004d2ce0    mov ecx,[ebp-34h]"
+"	      004d2cdd    mov eax,vert"
+"	      004d2ce0    mov ecx,miny"
 "	      004d2ce3    cmp [eax+4],ecx"
 "	      004d2ce6    jge near ptr 004D2CF5h"
-"	      004d2cec    mov eax,[ebp-18h]"
+"	      004d2cec    mov eax,vert"
 "	      004d2cef    mov eax,[eax+4]"
-"	      004d2cf2    mov [ebp-34h],eax"
+"	      004d2cf2    mov miny,eax"
 );
 // LINE 860:
 	asm( 
-"	      004d2cf5    mov eax,[ebp-18h]"
-"	      004d2cf8    mov ecx,[ebp-40h]"
+"	      004d2cf5    mov eax,vert"
+"	      004d2cf8    mov ecx,minz"
 "	      004d2cfb    cmp [eax+8],ecx"
 "	      004d2cfe    jge near ptr 004D2D0Dh"
-"	      004d2d04    mov eax,[ebp-18h]"
+"	      004d2d04    mov eax,vert"
 "	      004d2d07    mov eax,[eax+8]"
-"	      004d2d0a    mov [ebp-40h],eax"
+"	      004d2d0a    mov minz,eax"
 );
 // LINE 861:
 	asm( 
-"	      004d2d0d    mov eax,[ebp-18h]"
-"	      004d2d10    mov ecx,[ebp-48h]"
+"	      004d2d0d    mov eax,vert"
+"	      004d2d10    mov ecx,maxx"
 "	      004d2d13    cmp [eax],ecx"
 "	      004d2d15    jle near ptr 004D2D23h"
-"	      004d2d1b    mov eax,[ebp-18h]"
+"	      004d2d1b    mov eax,vert"
 "	      004d2d1e    mov eax,[eax]"
-"	      004d2d20    mov [ebp-48h],eax"
+"	      004d2d20    mov maxx,eax"
 );
 // LINE 862:
 	asm( 
-"	      004d2d23    mov eax,[ebp-18h]"
-"	      004d2d26    mov ecx,[ebp-54h]"
+"	      004d2d23    mov eax,vert"
+"	      004d2d26    mov ecx,maxy"
 "	      004d2d29    cmp [eax+4],ecx"
 "	      004d2d2c    jle near ptr 004D2D3Bh"
-"	      004d2d32    mov eax,[ebp-18h]"
+"	      004d2d32    mov eax,vert"
 "	      004d2d35    mov eax,[eax+4]"
-"	      004d2d38    mov [ebp-54h],eax"
+"	      004d2d38    mov maxy,eax"
 );
 // LINE 863:
 	asm( 
-"	      004d2d3b    mov eax,[ebp-18h]"
-"	      004d2d3e    mov ecx,[ebp-58h]"
+"	      004d2d3b    mov eax,vert"
+"	      004d2d3e    mov ecx,maxz"
 "	      004d2d41    cmp [eax+8],ecx"
 "	      004d2d44    jle near ptr 004D2D53h"
-"	      004d2d4a    mov eax,[ebp-18h]"
+"	      004d2d4a    mov eax,vert"
 "	      004d2d4d    mov eax,[eax+8]"
-"	      004d2d50    mov [ebp-58h],eax"
+"	      004d2d50    mov maxz,eax"
 );
 // LINE 864:
 	asm( 
@@ -1529,190 +1529,190 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 868:
 	asm( 
-"	      004d2d58    mov eax,[ebp+1Ch]"
-"	      004d2d5b    add eax,[ebp+0Ch]"
-"	      004d2d5e    cmp eax,[ebp-2Ch]"
+"	      004d2d58    mov eax,dim"
+"	      004d2d5b    add eax,x"
+"	      004d2d5e    cmp eax,minx"
 "	      004d2d61    jl near ptr 004D306Ch"
-"	      004d2d67    mov eax,[ebp+0Ch]"
-"	      004d2d6a    sub eax,[ebp+1Ch]"
-"	      004d2d6d    cmp eax,[ebp-48h]"
+"	      004d2d67    mov eax,x"
+"	      004d2d6a    sub eax,dim"
+"	      004d2d6d    cmp eax,maxx"
 "	      004d2d70    jg near ptr 004D306Ch"
-"	      004d2d76    mov eax,[ebp+1Ch]"
-"	      004d2d79    add eax,[ebp+14h]"
-"	      004d2d7c    cmp eax,[ebp-40h]"
+"	      004d2d76    mov eax,dim"
+"	      004d2d79    add eax,z"
+"	      004d2d7c    cmp eax,minz"
 "	      004d2d7f    jl near ptr 004D306Ch"
-"	      004d2d85    mov eax,[ebp+14h]"
-"	      004d2d88    sub eax,[ebp+1Ch]"
-"	      004d2d8b    cmp eax,[ebp-58h]"
+"	      004d2d85    mov eax,z"
+"	      004d2d88    sub eax,dim"
+"	      004d2d8b    cmp eax,maxz"
 "	      004d2d8e    jg near ptr 004D306Ch"
 );
 // LINE 877:
 	asm( 
-"	      004d2d94    mov eax,[ebp-8]"
+"	      004d2d94    mov eax,faceptr"
 "	      004d2d97    mov eax,[eax+2Ch]"
 "	      004d2d9a    mov eax,[eax+4]"
 "	      004d2d9d    push eax"
-"	      004d2d9e    mov eax,[ebp-18h]"
+"	      004d2d9e    mov eax,vert"
 "	      004d2da1    mov eax,[eax+4]"
 "	      004d2da4    push eax"
 "	      004d2da5    call 004D19BDh"
 "	      004d2daa    add esp,8"
 "	      004d2dad    mov ebx,eax"
-"	      004d2daf    mov eax,[ebp-8]"
+"	      004d2daf    mov eax,faceptr"
 "	      004d2db2    mov eax,[eax+2Ch]"
 "	      004d2db5    mov eax,[eax+8]"
 "	      004d2db8    push eax"
-"	      004d2db9    mov eax,[ebp-18h]"
+"	      004d2db9    mov eax,vert"
 "	      004d2dbc    mov eax,[eax+8]"
 "	      004d2dbf    push eax"
 "	      004d2dc0    call 004D19BDh"
 "	      004d2dc5    add esp,8"
 "	      004d2dc8    add ebx,eax"
-"	      004d2dca    mov eax,[ebp-8]"
+"	      004d2dca    mov eax,faceptr"
 "	      004d2dcd    mov eax,[eax+2Ch]"
 "	      004d2dd0    mov eax,[eax]"
 "	      004d2dd2    push eax"
-"	      004d2dd3    mov eax,[ebp-18h]"
+"	      004d2dd3    mov eax,vert"
 "	      004d2dd6    mov eax,[eax]"
 "	      004d2dd8    push eax"
 "	      004d2dd9    call 004D19BDh"
 "	      004d2dde    add esp,8"
 "	      004d2de1    add ebx,eax"
-"	      004d2de3    mov [ebp-20h],ebx"
+"	      004d2de3    mov planed,ebx"
 );
 // LINE 883:
 	asm( 
-"	      004d2de6    mov eax,[ebp-8]"
+"	      004d2de6    mov eax,faceptr"
 "	      004d2de9    mov eax,[eax+2Ch]"
 "	      004d2dec    mov eax,[eax+8]"
 "	      004d2def    push eax"
-"	      004d2df0    mov eax,[ebp+14h]"
+"	      004d2df0    mov eax,z"
 "	      004d2df3    push eax"
 "	      004d2df4    call 004D19BDh"
 "	      004d2df9    add esp,8"
 "	      004d2dfc    mov ebx,eax"
-"	      004d2dfe    mov eax,[ebp-8]"
+"	      004d2dfe    mov eax,faceptr"
 "	      004d2e01    mov eax,[eax+2Ch]"
 "	      004d2e04    mov eax,[eax]"
 "	      004d2e06    push eax"
-"	      004d2e07    mov eax,[ebp+0Ch]"
+"	      004d2e07    mov eax,x"
 "	      004d2e0a    push eax"
 "	      004d2e0b    call 004D19BDh"
 "	      004d2e10    add esp,8"
 "	      004d2e13    add ebx,eax"
-"	      004d2e15    mov [ebp-24h],ebx"
+"	      004d2e15    mov scalar,ebx"
 );
 // LINE 888:
 	asm( 
-"	      004d2e18    mov eax,[ebp-8]"
+"	      004d2e18    mov eax,faceptr"
 "	      004d2e1b    mov eax,[eax+2Ch]"
 "	      004d2e1e    mov eax,[eax+4]"
 "	      004d2e21    push eax"
-"	      004d2e22    mov eax,[ebp-20h]"
-"	      004d2e25    sub eax,[ebp-24h]"
+"	      004d2e22    mov eax,planed"
+"	      004d2e25    sub eax,scalar"
 "	      004d2e28    push eax"
 "	      004d2e29    call 004D19DFh"
 "	      004d2e2e    add esp,8"
-"	      004d2e31    mov [ebp-50h],eax"
+"	      004d2e31    mov facealt,eax"
 );
 // LINE 890:
 	asm( 
-"	      004d2e34    mov eax,[ebp-54h]"
-"	      004d2e37    cmp [ebp-50h],eax"
+"	      004d2e34    mov eax,maxy"
+"	      004d2e37    cmp facealt,eax"
 "	      004d2e3a    jg near ptr 004D2E4Ch"
-"	      004d2e40    mov eax,[ebp-34h]"
-"	      004d2e43    cmp [ebp-50h],eax"
+"	      004d2e40    mov eax,miny"
+"	      004d2e43    cmp facealt,eax"
 "	      004d2e46    jge near ptr 004D2E58h"
 );
 // LINE 891:
 	asm( 
-"	      004d2e4c    mov eax,[ebp-54h]"
-"	      004d2e4f    add eax,[ebp-34h]"
+"	      004d2e4c    mov eax,maxy"
+"	      004d2e4f    add eax,miny"
 "	      004d2e52    sar eax,1"
-"	      004d2e55    mov [ebp-50h],eax"
+"	      004d2e55    mov facealt,eax"
 );
 // LINE 893:
 	asm( 
-"	      004d2e58    cmp dword ptr [ebp-4],0"
+"	      004d2e58    cmp check_for_overhang,0"
 "	      004d2e5c    jne near ptr 004D2F33h"
 );
 // LINE 895:
 	asm( 
-"	      004d2e62    mov eax,[ebp-50h]"
-"	      004d2e65    cmp [ebp-4Ch],eax"
+"	      004d2e62    mov eax,facealt"
+"	      004d2e65    cmp altyupbelow,eax"
 "	      004d2e68    jge near ptr 004D2F2Eh"
 );
 // LINE 897:
 	asm( 
-"	      004d2e6e    mov eax,[ebp-50h]"
-"	      004d2e71    mov [ebp-4Ch],eax"
+"	      004d2e6e    mov eax,facealt"
+"	      004d2e71    mov altyupbelow,eax"
 );
 // LINE 898:
 	asm( 
-"	      004d2e74    mov eax,[ebp-8]"
+"	      004d2e74    mov eax,faceptr"
 "	      004d2e77    mov eax,[eax+0Ch]"
-"	      004d2e7a    mov ecx,[ebp+18h]"
+"	      004d2e7a    mov ecx,flags"
 "	      004d2e7d    mov [ecx],eax"
 );
 // LINE 902:
 	asm( 
-"	      004d2e7f    cmp dword ptr [ebp+20h],0"
+"	      004d2e7f    cmp collisvec,0"
 "	      004d2e83    je near ptr 004D2EB6h"
 );
 // LINE 904:
 	asm( 
-"	      004d2e89    mov eax,[ebp-2Ch]"
-"	      004d2e8c    add eax,[ebp-48h]"
+"	      004d2e89    mov eax,minx"
+"	      004d2e8c    add eax,maxx"
 "	      004d2e8f    sar eax,1"
-"	      004d2e92    sub eax,[ebp+0Ch]"
-"	      004d2e95    mov ecx,[ebp+20h]"
+"	      004d2e92    sub eax,x"
+"	      004d2e95    mov ecx,collisvec"
 "	      004d2e98    mov [ecx],eax"
 );
 // LINE 905:
 	asm( 
-"	      004d2e9a    mov eax,[ebp-58h]"
-"	      004d2e9d    add eax,[ebp-40h]"
+"	      004d2e9a    mov eax,maxz"
+"	      004d2e9d    add eax,minz"
 "	      004d2ea0    sar eax,1"
-"	      004d2ea3    sub eax,[ebp+14h]"
-"	      004d2ea6    mov ecx,[ebp+20h]"
+"	      004d2ea3    sub eax,z"
+"	      004d2ea6    mov ecx,collisvec"
 "	      004d2ea9    mov [ecx+8],eax"
 );
 // LINE 906:
 	asm( 
-"	      004d2eac    mov eax,[ebp+20h]"
+"	      004d2eac    mov eax,collisvec"
 "	      004d2eaf    mov dword ptr [eax+4],0"
 );
 // LINE 912:
 	asm( 
-"	      004d2eb6    cmp dword ptr [ebp+24h],0"
+"	      004d2eb6    cmp landable,0"
 "	      004d2eba    je near ptr 004D2F2Eh"
-"	      004d2ec0    mov eax,[ebp-8]"
+"	      004d2ec0    mov eax,faceptr"
 "	      004d2ec3    mov eax,[eax+2Ch]"
 "	      004d2ec6    cmp dword ptr [eax+4],0FFFF15A0h"
 "	      004d2ecd    jge near ptr 004D2F2Eh"
 );
 // LINE 915:
 	asm( 
-"	      004d2ed3    mov eax,[ebp+0Ch]"
+"	      004d2ed3    mov eax,x"
 "	      004d2ed6    sub eax,20000h"
-"	      004d2edb    cmp eax,[ebp-2Ch]"
+"	      004d2edb    cmp eax,minx"
 "	      004d2ede    jl near ptr 004D2F25h"
-"	      004d2ee4    mov eax,[ebp+0Ch]"
+"	      004d2ee4    mov eax,x"
 "	      004d2ee7    add eax,20000h"
-"	      004d2eec    cmp eax,[ebp-48h]"
+"	      004d2eec    cmp eax,maxx"
 "	      004d2eef    jg near ptr 004D2F25h"
-"	      004d2ef5    mov eax,[ebp+14h]"
+"	      004d2ef5    mov eax,z"
 "	      004d2ef8    sub eax,20000h"
-"	      004d2efd    cmp eax,[ebp-40h]"
+"	      004d2efd    cmp eax,minz"
 "	      004d2f00    jl near ptr 004D2F25h"
-"	      004d2f06    mov eax,[ebp+14h]"
+"	      004d2f06    mov eax,z"
 "	      004d2f09    add eax,20000h"
-"	      004d2f0e    cmp eax,[ebp-58h]"
+"	      004d2f0e    cmp eax,maxz"
 "	      004d2f11    jg near ptr 004D2F25h"
 );
 // LINE 917:
 	asm( 
-"	      004d2f17    mov eax,[ebp+24h]"
+"	      004d2f17    mov eax,landable"
 "	      004d2f1a    mov dword ptr [eax],1"
 );
 // LINE 919:
@@ -1721,7 +1721,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 921:
 	asm( 
-"	      004d2f25    mov eax,[ebp+24h]"
+"	      004d2f25    mov eax,landable"
 "	      004d2f28    mov dword ptr [eax],0"
 );
 // LINE 925:
@@ -1730,89 +1730,89 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 929:
 	asm( 
-"	      004d2f33    cmp dword ptr [ebp-14h],0"
+"	      004d2f33    cmp normaldir,0"
 "	      004d2f37    jle near ptr 004D303Dh"
 );
 // LINE 932:
 	asm( 
-"	      004d2f3d    mov eax,[ebp+10h]"
-"	      004d2f40    cmp [ebp-50h],eax"
+"	      004d2f3d    mov eax,y"
+"	      004d2f40    cmp facealt,eax"
 "	      004d2f43    jge near ptr 004D301Ah"
-"	      004d2f49    mov eax,[ebp-50h]"
-"	      004d2f4c    cmp [ebp-4Ch],eax"
+"	      004d2f49    mov eax,facealt"
+"	      004d2f4c    cmp altyupbelow,eax"
 "	      004d2f4f    jge near ptr 004D301Ah"
 );
 // LINE 934:
 	asm( 
-"	      004d2f55    mov eax,[ebp-50h]"
-"	      004d2f58    mov [ebp-4Ch],eax"
+"	      004d2f55    mov eax,facealt"
+"	      004d2f58    mov altyupbelow,eax"
 );
 // LINE 937:
 	asm( 
-"	      004d2f5b    mov eax,[ebp-8]"
+"	      004d2f5b    mov eax,faceptr"
 "	      004d2f5e    mov eax,[eax+0Ch]"
-"	      004d2f61    mov ecx,[ebp+18h]"
+"	      004d2f61    mov ecx,flags"
 "	      004d2f64    mov [ecx],eax"
 );
 // LINE 941:
 	asm( 
-"	      004d2f66    cmp dword ptr [ebp+20h],0"
+"	      004d2f66    cmp collisvec,0"
 "	      004d2f6a    je near ptr 004D2F9Dh"
 );
 // LINE 943:
 	asm( 
-"	      004d2f70    mov eax,[ebp-2Ch]"
-"	      004d2f73    add eax,[ebp-48h]"
+"	      004d2f70    mov eax,minx"
+"	      004d2f73    add eax,maxx"
 "	      004d2f76    sar eax,1"
-"	      004d2f79    sub eax,[ebp+0Ch]"
-"	      004d2f7c    mov ecx,[ebp+20h]"
+"	      004d2f79    sub eax,x"
+"	      004d2f7c    mov ecx,collisvec"
 "	      004d2f7f    mov [ecx],eax"
 );
 // LINE 944:
 	asm( 
-"	      004d2f81    mov eax,[ebp-58h]"
-"	      004d2f84    add eax,[ebp-40h]"
+"	      004d2f81    mov eax,maxz"
+"	      004d2f84    add eax,minz"
 "	      004d2f87    sar eax,1"
-"	      004d2f8a    sub eax,[ebp+14h]"
-"	      004d2f8d    mov ecx,[ebp+20h]"
+"	      004d2f8a    sub eax,z"
+"	      004d2f8d    mov ecx,collisvec"
 "	      004d2f90    mov [ecx+8],eax"
 );
 // LINE 945:
 	asm( 
-"	      004d2f93    mov eax,[ebp+20h]"
+"	      004d2f93    mov eax,collisvec"
 "	      004d2f96    mov dword ptr [eax+4],0"
 );
 // LINE 950:
 	asm( 
-"	      004d2f9d    cmp dword ptr [ebp+24h],0"
+"	      004d2f9d    cmp landable,0"
 "	      004d2fa1    je near ptr 004D3015h"
-"	      004d2fa7    mov eax,[ebp-8]"
+"	      004d2fa7    mov eax,faceptr"
 "	      004d2faa    mov eax,[eax+2Ch]"
 "	      004d2fad    cmp dword ptr [eax+4],0FFFF15A0h"
 "	      004d2fb4    jge near ptr 004D3015h"
 );
 // LINE 953:
 	asm( 
-"	      004d2fba    mov eax,[ebp+0Ch]"
+"	      004d2fba    mov eax,x"
 "	      004d2fbd    sub eax,10000h"
-"	      004d2fc2    cmp eax,[ebp-2Ch]"
+"	      004d2fc2    cmp eax,minx"
 "	      004d2fc5    jl near ptr 004D300Ch"
-"	      004d2fcb    mov eax,[ebp+0Ch]"
+"	      004d2fcb    mov eax,x"
 "	      004d2fce    add eax,10000h"
-"	      004d2fd3    cmp eax,[ebp-48h]"
+"	      004d2fd3    cmp eax,maxx"
 "	      004d2fd6    jg near ptr 004D300Ch"
-"	      004d2fdc    mov eax,[ebp+14h]"
+"	      004d2fdc    mov eax,z"
 "	      004d2fdf    sub eax,10000h"
-"	      004d2fe4    cmp eax,[ebp-40h]"
+"	      004d2fe4    cmp eax,minz"
 "	      004d2fe7    jl near ptr 004D300Ch"
-"	      004d2fed    mov eax,[ebp+14h]"
+"	      004d2fed    mov eax,z"
 "	      004d2ff0    add eax,10000h"
-"	      004d2ff5    cmp eax,[ebp-58h]"
+"	      004d2ff5    cmp eax,maxz"
 "	      004d2ff8    jg near ptr 004D300Ch"
 );
 // LINE 955:
 	asm( 
-"	      004d2ffe    mov eax,[ebp+24h]"
+"	      004d2ffe    mov eax,landable"
 "	      004d3001    mov dword ptr [eax],1"
 );
 // LINE 957:
@@ -1821,23 +1821,23 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 959:
 	asm( 
-"	      004d300c    mov eax,[ebp+24h]"
+"	      004d300c    mov eax,landable"
 "	      004d300f    mov dword ptr [eax],0"
 );
 // LINE 964:
 	asm( 
 "	      004d3015    jmp near ptr 004D3038h"
-"	      004d301a    mov eax,[ebp+10h]"
-"	      004d301d    cmp [ebp-50h],eax"
+"	      004d301a    mov eax,y"
+"	      004d301d    cmp facealt,eax"
 "	      004d3020    jl near ptr 004D3038h"
-"	      004d3026    mov eax,[ebp-28h]"
-"	      004d3029    cmp [ebp-50h],eax"
+"	      004d3026    mov eax,altyupabove"
+"	      004d3029    cmp facealt,eax"
 "	      004d302c    jge near ptr 004D3038h"
 );
 // LINE 966:
 	asm( 
-"	      004d3032    mov eax,[ebp-50h]"
-"	      004d3035    mov [ebp-28h],eax"
+"	      004d3032    mov eax,facealt"
+"	      004d3035    mov altyupabove,eax"
 );
 // LINE 971:
 	asm( 
@@ -1845,9 +1845,9 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 978:
 	asm( 
-"	      004d303d    mov eax,[ebp+10h]"
+"	      004d303d    mov eax,y"
 "	      004d3040    add eax,0A0000h"
-"	      004d3045    cmp eax,[ebp-50h]"
+"	      004d3045    cmp eax,facealt"
 "	      004d3048    jle near ptr 004D3053h"
 );
 // LINE 979:
@@ -1856,25 +1856,25 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 );
 // LINE 981:
 	asm( 
-"	      004d3053    mov dword ptr [ebp-44h],1"
+"	      004d3053    mov overhang,1"
 );
 // LINE 984:
 	asm( 
-"	      004d305a    mov eax,[ebp-50h]"
-"	      004d305d    cmp [ebp-1Ch],eax"
+"	      004d305a    mov eax,facealt"
+"	      004d305d    cmp altydown,eax"
 "	      004d3060    jle near ptr 004D306Ch"
 );
 // LINE 986:
 	asm( 
-"	      004d3066    mov eax,[ebp-50h]"
-"	      004d3069    mov [ebp-1Ch],eax"
+"	      004d3066    mov eax,facealt"
+"	      004d3069    mov altydown,eax"
 );
 // LINE 994:
 next_face:
 	asm( 
-"	      004d306c    mov eax,[ebp-8]"
+"	      004d306c    mov eax,faceptr"
 "	      004d306f    mov eax,[eax]"
-"	      004d3071    mov [ebp-8],eax"
+"	      004d3071    mov faceptr,eax"
 );
 // LINE 995:
 	asm( 
@@ -1883,121 +1883,121 @@ next_face:
 // LINE 1003:
 do_2d_face:
 	asm( 
-"	      004d3079    mov eax,[ebp-8]"
+"	      004d3079    mov eax,faceptr"
 "	      004d307c    mov eax,[eax+1Ch]"
-"	      004d307f    mov [ebp-10h],eax"
+"	      004d307f    mov vertno,eax"
 );
 // LINE 1005:
 	asm( 
-"	      004d3082    mov eax,[ebp-10h]"
+"	      004d3082    mov eax,vertno"
 "	      004d3085    mov eax,[eax]"
 "	      004d3087    shr eax,4"
 "	      004d308a    lea eax,[eax+eax*2]"
 "	      004d308d    shl eax,2"
-"	      004d3090    mov ecx,[ebp-3Ch]"
+"	      004d3090    mov ecx,oh"
 "	      004d3093    add eax,[ecx+8]"
-"	      004d3096    mov [ebp-18h],eax"
+"	      004d3096    mov vert,eax"
 );
 // LINE 1010:
 	asm( 
-"	      004d3099    add dword ptr [ebp-10h],4"
+"	      004d3099    add vertno,4"
 );
 // LINE 1012:
 	asm( 
-"	      004d309d    mov eax,[ebp-10h]"
+"	      004d309d    mov eax,vertno"
 "	      004d30a0    mov eax,[eax]"
 "	      004d30a2    shr eax,4"
 "	      004d30a5    lea eax,[eax+eax*2]"
 "	      004d30a8    shl eax,2"
-"	      004d30ab    mov ecx,[ebp-3Ch]"
+"	      004d30ab    mov ecx,oh"
 "	      004d30ae    add eax,[ecx+8]"
-"	      004d30b1    mov [ebp-0Ch],eax"
+"	      004d30b1    mov vert2,eax"
 );
 // LINE 1021:
 	asm( 
-"	      004d30b4    mov eax,[ebp-18h]"
+"	      004d30b4    mov eax,vert"
 "	      004d30b7    mov eax,[eax]"
 "	      004d30b9    sub eax,40000h"
-"	      004d30be    mov ecx,[ebp+1Ch]"
-"	      004d30c1    add ecx,[ebp+0Ch]"
+"	      004d30be    mov ecx,dim"
+"	      004d30c1    add ecx,x"
 "	      004d30c4    cmp eax,ecx"
 "	      004d30c6    jg near ptr 004D3171h"
-"	      004d30cc    mov eax,[ebp-18h]"
+"	      004d30cc    mov eax,vert"
 "	      004d30cf    mov eax,[eax]"
 "	      004d30d1    add eax,40000h"
-"	      004d30d6    mov ecx,[ebp+0Ch]"
-"	      004d30d9    sub ecx,[ebp+1Ch]"
+"	      004d30d6    mov ecx,x"
+"	      004d30d9    sub ecx,dim"
 "	      004d30dc    cmp eax,ecx"
 "	      004d30de    jl near ptr 004D3171h"
-"	      004d30e4    mov eax,[ebp-18h]"
+"	      004d30e4    mov eax,vert"
 "	      004d30e7    mov eax,[eax+8]"
 "	      004d30ea    sub eax,40000h"
-"	      004d30ef    mov ecx,[ebp+1Ch]"
-"	      004d30f2    add ecx,[ebp+14h]"
+"	      004d30ef    mov ecx,dim"
+"	      004d30f2    add ecx,z"
 "	      004d30f5    cmp eax,ecx"
 "	      004d30f7    jg near ptr 004D3171h"
-"	      004d30fd    mov eax,[ebp-18h]"
+"	      004d30fd    mov eax,vert"
 "	      004d3100    mov eax,[eax+8]"
 "	      004d3103    add eax,40000h"
-"	      004d3108    mov ecx,[ebp+14h]"
-"	      004d310b    sub ecx,[ebp+1Ch]"
+"	      004d3108    mov ecx,z"
+"	      004d310b    sub ecx,dim"
 "	      004d310e    cmp eax,ecx"
 "	      004d3110    jl near ptr 004D3171h"
 );
 // LINE 1023:
 	asm( 
-"	      004d3116    mov eax,[ebp-0Ch]"
-"	      004d3119    mov ecx,[ebp-4Ch]"
+"	      004d3116    mov eax,vert2"
+"	      004d3119    mov ecx,altyupbelow"
 "	      004d311c    cmp [eax+4],ecx"
 "	      004d311f    jle near ptr 004D3171h"
 );
 // LINE 1025:
 	asm( 
-"	      004d3125    mov eax,[ebp-0Ch]"
+"	      004d3125    mov eax,vert2"
 "	      004d3128    mov eax,[eax+4]"
-"	      004d312b    mov [ebp-4Ch],eax"
+"	      004d312b    mov altyupbelow,eax"
 );
 // LINE 1027:
 	asm( 
-"	      004d312e    cmp dword ptr [ebp+24h],0"
+"	      004d312e    cmp landable,0"
 "	      004d3132    je near ptr 004D3141h"
 );
 // LINE 1029:
 	asm( 
-"	      004d3138    mov eax,[ebp+24h]"
+"	      004d3138    mov eax,landable"
 "	      004d313b    mov dword ptr [eax],0"
 );
 // LINE 1032:
 	asm( 
-"	      004d3141    cmp dword ptr [ebp+20h],0"
+"	      004d3141    cmp collisvec,0"
 "	      004d3145    je near ptr 004D3171h"
 );
 // LINE 1034:
 	asm( 
-"	      004d314b    mov eax,[ebp-18h]"
+"	      004d314b    mov eax,vert"
 "	      004d314e    mov eax,[eax]"
-"	      004d3150    sub eax,[ebp+0Ch]"
-"	      004d3153    mov ecx,[ebp+20h]"
+"	      004d3150    sub eax,x"
+"	      004d3153    mov ecx,collisvec"
 "	      004d3156    mov [ecx],eax"
 );
 // LINE 1035:
 	asm( 
-"	      004d3158    mov eax,[ebp-18h]"
+"	      004d3158    mov eax,vert"
 "	      004d315b    mov eax,[eax+8]"
-"	      004d315e    sub eax,[ebp+14h]"
-"	      004d3161    mov ecx,[ebp+20h]"
+"	      004d315e    sub eax,z"
+"	      004d3161    mov ecx,collisvec"
 "	      004d3164    mov [ecx+8],eax"
 );
 // LINE 1036:
 	asm( 
-"	      004d3167    mov eax,[ebp+20h]"
+"	      004d3167    mov eax,collisvec"
 "	      004d316a    mov dword ptr [eax+4],0"
 );
 // LINE 1042:
 	asm( 
-"	      004d3171    mov eax,[ebp-8]"
+"	      004d3171    mov eax,faceptr"
 "	      004d3174    mov eax,[eax]"
-"	      004d3176    mov [ebp-8],eax"
+"	      004d3176    mov faceptr,eax"
 );
 // LINE 1044:
 	asm( 
@@ -2005,28 +2005,28 @@ do_2d_face:
 );
 // LINE 1046:
 	asm( 
-"	      004d317e    cmp dword ptr [ebp-4],0"
+"	      004d317e    cmp check_for_overhang,0"
 "	      004d3182    jne near ptr 004D3190h"
 );
 // LINE 1048:
 	asm( 
-"	      004d3188    mov eax,[ebp-4Ch]"
+"	      004d3188    mov eax,altyupbelow"
 "	      004d318b    jmp near ptr 004D31E2h"
 );
 // LINE 1053:
 	asm( 
-"	      004d3190    cmp dword ptr [ebp-44h],1"
+"	      004d3190    cmp overhang,1"
 "	      004d3194    jne near ptr 004D31C0h"
 );
 // LINE 1055:
 	asm( 
-"	      004d319a    mov eax,[ebp-28h]"
-"	      004d319d    cmp [ebp-1Ch],eax"
+"	      004d319a    mov eax,altyupabove"
+"	      004d319d    cmp altydown,eax"
 "	      004d31a0    jle near ptr 004D31B3h"
 );
 // LINE 1056:
 	asm( 
-"	      004d31a6    mov eax,[ebp-28h]"
+"	      004d31a6    mov eax,altyupabove"
 "	      004d31a9    jmp near ptr 004D31E2h"
 );
 // LINE 1057:
@@ -2035,7 +2035,7 @@ do_2d_face:
 );
 // LINE 1058:
 	asm( 
-"	      004d31b3    mov eax,[ebp-4Ch]"
+"	      004d31b3    mov eax,altyupbelow"
 "	      004d31b6    jmp near ptr 004D31E2h"
 );
 // LINE 1060:
@@ -2044,12 +2044,12 @@ do_2d_face:
 );
 // LINE 1062:
 	asm( 
-"	      004d31c0    cmp dword ptr [ebp-28h],75300000h"
+"	      004d31c0    cmp altyupabove,75300000h"
 "	      004d31c7    je near ptr 004D31DAh"
 );
 // LINE 1063:
 	asm( 
-"	      004d31cd    mov eax,[ebp-28h]"
+"	      004d31cd    mov eax,altyupabove"
 "	      004d31d0    jmp near ptr 004D31E2h"
 );
 // LINE 1064:
@@ -2058,7 +2058,7 @@ do_2d_face:
 );
 // LINE 1065:
 	asm( 
-"	      004d31da    mov eax,[ebp-4Ch]"
+"	      004d31da    mov eax,altyupbelow"
 "	      004d31dd    jmp near ptr 004D31E2h"
 );
 // LINE 1067:
@@ -2108,56 +2108,56 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1088:
 	asm( 
-"	      004d31f0    mov eax,[ebp+8]"
-"	      004d31f3    mov [ebp-3Ch],eax"
+"	      004d31f0    mov eax,obj"
+"	      004d31f3    mov oh,eax"
 );
 // LINE 1100:
 	asm( 
-"	      004d31f6    mov dword ptr [ebp-44h],0"
+"	      004d31f6    mov overhang,0"
 );
 // LINE 1101:
 	asm( 
-"	      004d31fd    mov dword ptr [ebp-4],0"
+"	      004d31fd    mov check_for_overhang,0"
 );
 // LINE 1105:
 	asm( 
-"	      004d3204    mov eax,[ebp-3Ch]"
+"	      004d3204    mov eax,oh"
 "	      004d3207    mov eax,[eax+30h]"
 "	      004d320a    add eax,eax"
 "	      004d320c    add eax,50000h"
-"	      004d3211    cmp eax,[ebp+10h]"
+"	      004d3211    cmp eax,y"
 "	      004d3214    jge near ptr 004D3228h"
 );
 // LINE 1106:
 	asm( 
-"	      004d321a    mov eax,[ebp-3Ch]"
+"	      004d321a    mov eax,oh"
 "	      004d321d    mov eax,[eax+30h]"
 "	      004d3220    sar eax,3"
 "	      004d3223    jmp near ptr 004D392Ah"
 );
 // LINE 1108:
 	asm( 
-"	      004d3228    mov eax,[ebp+18h]"
+"	      004d3228    mov eax,flags"
 "	      004d322b    test byte ptr [eax+1],2"
 "	      004d322f    je near ptr 004D323Ch"
 );
 // LINE 1109:
 	asm( 
-"	      004d3235    mov dword ptr [ebp-4],1"
+"	      004d3235    mov check_for_overhang,1"
 );
 // LINE 1111:
 	asm( 
-"	      004d323c    cmp dword ptr [ebp+28h],0"
+"	      004d323c    cmp landable,0"
 "	      004d3240    je near ptr 004D324Fh"
 );
 // LINE 1112:
 	asm( 
-"	      004d3246    mov eax,[ebp+28h]"
+"	      004d3246    mov eax,landable"
 "	      004d3249    mov dword ptr [eax],0"
 );
 // LINE 1115:
 	asm( 
-"	      004d324f    cmp dword ptr [ebp+8],0"
+"	      004d324f    cmp obj,0"
 "	      004d3253    jne near ptr 004D3260h"
 );
 // LINE 1116:
@@ -2167,35 +2167,35 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1119:
 	asm( 
-"	      004d3260    mov dword ptr [ebp-1Ch],75300000h"
+"	      004d3260    mov altydown,75300000h"
 );
 // LINE 1120:
 	asm( 
-"	      004d3267    mov dword ptr [ebp-28h],75300000h"
+"	      004d3267    mov altyupabove,75300000h"
 );
 // LINE 1121:
 	asm( 
-"	      004d326e    mov dword ptr [ebp-4Ch],0"
+"	      004d326e    mov altyupbelow,0"
 );
 // LINE 1124:
 	asm( 
-"	      004d3275    mov eax,[ebp-3Ch]"
+"	      004d3275    mov eax,oh"
 "	      004d3278    mov eax,[eax+4Ch]"
-"	      004d327b    mov [ebp-8],eax"
+"	      004d327b    mov faceptr,eax"
 );
 // LINE 1125:
 	asm( 
-"	      004d327e    mov dword ptr [ebp-30h],0"
+"	      004d327e    mov i,0"
 "	      004d3285    jmp near ptr 004D328Dh"
-"	      004d328a    inc dword ptr [ebp-30h]"
-"	      004d328d    mov eax,[ebp-3Ch]"
-"	      004d3290    mov ecx,[ebp-30h]"
+"	      004d328a    inc i"
+"	      004d328d    mov eax,oh"
+"	      004d3290    mov ecx,i"
 "	      004d3293    cmp [eax+10h],ecx"
 "	      004d3296    jle near ptr 004D38C6h"
 );
 // LINE 1128:
 	asm( 
-"	      004d329c    mov eax,[ebp-8]"
+"	      004d329c    mov eax,faceptr"
 "	      004d329f    test byte ptr [eax+8],4"
 "	      004d32a3    je near ptr 004D32AEh"
 );
@@ -2205,7 +2205,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1131:
 	asm( 
-"	      004d32ae    mov eax,[ebp-8]"
+"	      004d32ae    mov eax,faceptr"
 "	      004d32b1    test dword ptr [eax+8],18004h"
 "	      004d32b8    je near ptr 004D32C3h"
 );
@@ -2215,26 +2215,26 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1135:
 	asm( 
-"	      004d32c3    mov eax,[ebp-8]"
+"	      004d32c3    mov eax,faceptr"
 "	      004d32c6    mov eax,[eax+2Ch]"
 "	      004d32c9    cmp dword ptr [eax+4],0FFFFFF9Ch"
 "	      004d32cd    jge near ptr 004D32DFh"
 );
 // LINE 1137:
 	asm( 
-"	      004d32d3    mov dword ptr [ebp-14h],1"
+"	      004d32d3    mov normaldir,1"
 );
 // LINE 1139:
 	asm( 
 "	      004d32da    jmp near ptr 004D332Ah"
-"	      004d32df    mov eax,[ebp-8]"
+"	      004d32df    mov eax,faceptr"
 "	      004d32e2    mov eax,[eax+2Ch]"
 "	      004d32e5    cmp dword ptr [eax+4],64h"
 "	      004d32e9    jle near ptr 004D330Fh"
 );
 // LINE 1141:
 	asm( 
-"	      004d32ef    cmp dword ptr [ebp-4],0"
+"	      004d32ef    cmp check_for_overhang,0"
 "	      004d32f3    jne near ptr 004D3303h"
 );
 // LINE 1142:
@@ -2247,7 +2247,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1144:
 	asm( 
-"	      004d3303    mov dword ptr [ebp-14h],0FFFFFFFFh"
+"	      004d3303    mov normaldir,0FFFFFFFFh"
 );
 // LINE 1146:
 	asm( 
@@ -2255,12 +2255,12 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1149:
 	asm( 
-"	      004d330f    cmp dword ptr [ebp-4],1"
+"	      004d330f    cmp check_for_overhang,1"
 "	      004d3313    jne near ptr 004D3325h"
 );
 // LINE 1150:
 	asm( 
-"	      004d3319    mov dword ptr [ebp-14h],0"
+"	      004d3319    mov normaldir,0"
 );
 // LINE 1151:
 	asm( 
@@ -2272,119 +2272,119 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1156:
 	asm( 
-"	      004d332a    mov eax,[ebp-8]"
-"	      004d332d    mov [ebp-5Ch],eax"
+"	      004d332a    mov eax,faceptr"
+"	      004d332d    mov dataptr,eax"
 );
 // LINE 1157:
 	asm( 
-"	      004d3330    add dword ptr [ebp-5Ch],30h"
+"	      004d3330    add dataptr,30h"
 );
 // LINE 1158:
 	asm( 
-"	      004d3334    mov eax,[ebp-8]"
+"	      004d3334    mov eax,faceptr"
 "	      004d3337    mov eax,[eax+1Ch]"
-"	      004d333a    mov [ebp-10h],eax"
+"	      004d333a    mov vertno,eax"
 );
 // LINE 1161:
 	asm( 
-"	      004d333d    mov dword ptr [ebp-40h],75300000h"
-"	      004d3344    mov eax,[ebp-40h]"
-"	      004d3347    mov [ebp-34h],eax"
-"	      004d334a    mov eax,[ebp-34h]"
-"	      004d334d    mov [ebp-2Ch],eax"
+"	      004d333d    mov minz,75300000h"
+"	      004d3344    mov eax,minz"
+"	      004d3347    mov miny,eax"
+"	      004d334a    mov eax,miny"
+"	      004d334d    mov minx,eax"
 );
 // LINE 1162:
 	asm( 
-"	      004d3350    mov dword ptr [ebp-58h],8AD00000h"
-"	      004d3357    mov eax,[ebp-58h]"
-"	      004d335a    mov [ebp-54h],eax"
-"	      004d335d    mov eax,[ebp-54h]"
-"	      004d3360    mov [ebp-48h],eax"
+"	      004d3350    mov maxz,8AD00000h"
+"	      004d3357    mov eax,maxz"
+"	      004d335a    mov maxy,eax"
+"	      004d335d    mov eax,maxy"
+"	      004d3360    mov maxx,eax"
 );
 // LINE 1167:
 	asm( 
-"	      004d3363    mov dword ptr [ebp-38h],0"
+"	      004d3363    mov j,0"
 "	      004d336a    jmp near ptr 004D3372h"
-"	      004d336f    inc dword ptr [ebp-38h]"
-"	      004d3372    mov eax,[ebp-8]"
-"	      004d3375    mov ecx,[ebp-38h]"
+"	      004d336f    inc j"
+"	      004d3372    mov eax,faceptr"
+"	      004d3375    mov ecx,j"
 "	      004d3378    cmp [eax+4],ecx"
 "	      004d337b    jle near ptr 004D342Dh"
 );
 // LINE 1173:
 	asm( 
-"	      004d3381    mov eax,[ebp-10h]"
+"	      004d3381    mov eax,vertno"
 "	      004d3384    mov eax,[eax]"
 "	      004d3386    shr eax,4"
 "	      004d3389    lea eax,[eax+eax*2]"
 "	      004d338c    shl eax,2"
-"	      004d338f    mov ecx,[ebp-3Ch]"
+"	      004d338f    mov ecx,oh"
 "	      004d3392    add eax,[ecx+8]"
-"	      004d3395    mov [ebp-18h],eax"
+"	      004d3395    mov vert,eax"
 );
 // LINE 1177:
 	asm( 
-"	      004d3398    add dword ptr [ebp-10h],4"
+"	      004d3398    add vertno,4"
 );
 // LINE 1180:
 	asm( 
-"	      004d339c    mov eax,[ebp-18h]"
-"	      004d339f    mov ecx,[ebp-2Ch]"
+"	      004d339c    mov eax,vert"
+"	      004d339f    mov ecx,minx"
 "	      004d33a2    cmp [eax],ecx"
 "	      004d33a4    jge near ptr 004D33B2h"
-"	      004d33aa    mov eax,[ebp-18h]"
+"	      004d33aa    mov eax,vert"
 "	      004d33ad    mov eax,[eax]"
-"	      004d33af    mov [ebp-2Ch],eax"
+"	      004d33af    mov minx,eax"
 );
 // LINE 1181:
 	asm( 
-"	      004d33b2    mov eax,[ebp-18h]"
-"	      004d33b5    mov ecx,[ebp-34h]"
+"	      004d33b2    mov eax,vert"
+"	      004d33b5    mov ecx,miny"
 "	      004d33b8    cmp [eax+4],ecx"
 "	      004d33bb    jge near ptr 004D33CAh"
-"	      004d33c1    mov eax,[ebp-18h]"
+"	      004d33c1    mov eax,vert"
 "	      004d33c4    mov eax,[eax+4]"
-"	      004d33c7    mov [ebp-34h],eax"
+"	      004d33c7    mov miny,eax"
 );
 // LINE 1182:
 	asm( 
-"	      004d33ca    mov eax,[ebp-18h]"
-"	      004d33cd    mov ecx,[ebp-40h]"
+"	      004d33ca    mov eax,vert"
+"	      004d33cd    mov ecx,minz"
 "	      004d33d0    cmp [eax+8],ecx"
 "	      004d33d3    jge near ptr 004D33E2h"
-"	      004d33d9    mov eax,[ebp-18h]"
+"	      004d33d9    mov eax,vert"
 "	      004d33dc    mov eax,[eax+8]"
-"	      004d33df    mov [ebp-40h],eax"
+"	      004d33df    mov minz,eax"
 );
 // LINE 1183:
 	asm( 
-"	      004d33e2    mov eax,[ebp-18h]"
-"	      004d33e5    mov ecx,[ebp-48h]"
+"	      004d33e2    mov eax,vert"
+"	      004d33e5    mov ecx,maxx"
 "	      004d33e8    cmp [eax],ecx"
 "	      004d33ea    jle near ptr 004D33F8h"
-"	      004d33f0    mov eax,[ebp-18h]"
+"	      004d33f0    mov eax,vert"
 "	      004d33f3    mov eax,[eax]"
-"	      004d33f5    mov [ebp-48h],eax"
+"	      004d33f5    mov maxx,eax"
 );
 // LINE 1184:
 	asm( 
-"	      004d33f8    mov eax,[ebp-18h]"
-"	      004d33fb    mov ecx,[ebp-54h]"
+"	      004d33f8    mov eax,vert"
+"	      004d33fb    mov ecx,maxy"
 "	      004d33fe    cmp [eax+4],ecx"
 "	      004d3401    jle near ptr 004D3410h"
-"	      004d3407    mov eax,[ebp-18h]"
+"	      004d3407    mov eax,vert"
 "	      004d340a    mov eax,[eax+4]"
-"	      004d340d    mov [ebp-54h],eax"
+"	      004d340d    mov maxy,eax"
 );
 // LINE 1185:
 	asm( 
-"	      004d3410    mov eax,[ebp-18h]"
-"	      004d3413    mov ecx,[ebp-58h]"
+"	      004d3410    mov eax,vert"
+"	      004d3413    mov ecx,maxz"
 "	      004d3416    cmp [eax+8],ecx"
 "	      004d3419    jle near ptr 004D3428h"
-"	      004d341f    mov eax,[ebp-18h]"
+"	      004d341f    mov eax,vert"
 "	      004d3422    mov eax,[eax+8]"
-"	      004d3425    mov [ebp-58h],eax"
+"	      004d3425    mov maxz,eax"
 );
 // LINE 1186:
 	asm( 
@@ -2392,112 +2392,112 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1190:
 	asm( 
-"	      004d342d    mov eax,[ebp+1Ch]"
-"	      004d3430    add eax,[ebp+0Ch]"
-"	      004d3433    cmp eax,[ebp-2Ch]"
+"	      004d342d    mov eax,dim"
+"	      004d3430    add eax,x"
+"	      004d3433    cmp eax,minx"
 "	      004d3436    jl near ptr 004D37B4h"
-"	      004d343c    mov eax,[ebp+0Ch]"
-"	      004d343f    sub eax,[ebp+1Ch]"
-"	      004d3442    cmp eax,[ebp-48h]"
+"	      004d343c    mov eax,x"
+"	      004d343f    sub eax,dim"
+"	      004d3442    cmp eax,maxx"
 "	      004d3445    jg near ptr 004D37B4h"
-"	      004d344b    mov eax,[ebp+1Ch]"
-"	      004d344e    add eax,[ebp+14h]"
-"	      004d3451    cmp eax,[ebp-40h]"
+"	      004d344b    mov eax,dim"
+"	      004d344e    add eax,z"
+"	      004d3451    cmp eax,minz"
 "	      004d3454    jl near ptr 004D37B4h"
-"	      004d345a    mov eax,[ebp+14h]"
-"	      004d345d    sub eax,[ebp+1Ch]"
-"	      004d3460    cmp eax,[ebp-58h]"
+"	      004d345a    mov eax,z"
+"	      004d345d    sub eax,dim"
+"	      004d3460    cmp eax,maxz"
 "	      004d3463    jg near ptr 004D37B4h"
 );
 // LINE 1195:
 	asm( 
-"	      004d3469    cmp dword ptr [ebp-14h],0"
+"	      004d3469    cmp normaldir,0"
 "	      004d346d    je near ptr 004D353Ch"
 );
 // LINE 1201:
 	asm( 
-"	      004d3473    mov eax,[ebp-8]"
+"	      004d3473    mov eax,faceptr"
 "	      004d3476    mov eax,[eax+2Ch]"
 "	      004d3479    mov eax,[eax+8]"
 "	      004d347c    push eax"
-"	      004d347d    mov eax,[ebp-18h]"
+"	      004d347d    mov eax,vert"
 "	      004d3480    mov eax,[eax+8]"
 "	      004d3483    push eax"
 "	      004d3484    call 004D19BDh"
 "	      004d3489    add esp,8"
 "	      004d348c    mov ebx,eax"
-"	      004d348e    mov eax,[ebp-8]"
+"	      004d348e    mov eax,faceptr"
 "	      004d3491    mov eax,[eax+2Ch]"
 "	      004d3494    mov eax,[eax+4]"
 "	      004d3497    push eax"
-"	      004d3498    mov eax,[ebp-18h]"
+"	      004d3498    mov eax,vert"
 "	      004d349b    mov eax,[eax+4]"
 "	      004d349e    push eax"
 "	      004d349f    call 004D19BDh"
 "	      004d34a4    add esp,8"
 "	      004d34a7    add ebx,eax"
-"	      004d34a9    mov eax,[ebp-8]"
+"	      004d34a9    mov eax,faceptr"
 "	      004d34ac    mov eax,[eax+2Ch]"
 "	      004d34af    mov eax,[eax]"
 "	      004d34b1    push eax"
-"	      004d34b2    mov eax,[ebp-18h]"
+"	      004d34b2    mov eax,vert"
 "	      004d34b5    mov eax,[eax]"
 "	      004d34b7    push eax"
 "	      004d34b8    call 004D19BDh"
 "	      004d34bd    add esp,8"
 "	      004d34c0    add ebx,eax"
-"	      004d34c2    mov [ebp-20h],ebx"
+"	      004d34c2    mov planed,ebx"
 );
 // LINE 1207:
 	asm( 
-"	      004d34c5    mov eax,[ebp-8]"
+"	      004d34c5    mov eax,faceptr"
 "	      004d34c8    mov eax,[eax+2Ch]"
 "	      004d34cb    mov eax,[eax+8]"
 "	      004d34ce    push eax"
-"	      004d34cf    mov eax,[ebp+14h]"
+"	      004d34cf    mov eax,z"
 "	      004d34d2    push eax"
 "	      004d34d3    call 004D19BDh"
 "	      004d34d8    add esp,8"
 "	      004d34db    mov ebx,eax"
-"	      004d34dd    mov eax,[ebp-8]"
+"	      004d34dd    mov eax,faceptr"
 "	      004d34e0    mov eax,[eax+2Ch]"
 "	      004d34e3    mov eax,[eax]"
 "	      004d34e5    push eax"
-"	      004d34e6    mov eax,[ebp+0Ch]"
+"	      004d34e6    mov eax,x"
 "	      004d34e9    push eax"
 "	      004d34ea    call 004D19BDh"
 "	      004d34ef    add esp,8"
 "	      004d34f2    add ebx,eax"
-"	      004d34f4    mov [ebp-24h],ebx"
+"	      004d34f4    mov scalar,ebx"
 );
 // LINE 1212:
 	asm( 
-"	      004d34f7    mov eax,[ebp-8]"
+"	      004d34f7    mov eax,faceptr"
 "	      004d34fa    mov eax,[eax+2Ch]"
 "	      004d34fd    mov eax,[eax+4]"
 "	      004d3500    push eax"
-"	      004d3501    mov eax,[ebp-20h]"
-"	      004d3504    sub eax,[ebp-24h]"
+"	      004d3501    mov eax,planed"
+"	      004d3504    sub eax,scalar"
 "	      004d3507    push eax"
 "	      004d3508    call 004D19DFh"
 "	      004d350d    add esp,8"
-"	      004d3510    mov [ebp-50h],eax"
+"	      004d3510    mov facealt,eax"
 );
 // LINE 1214:
 	asm( 
-"	      004d3513    mov eax,[ebp-54h]"
-"	      004d3516    cmp [ebp-50h],eax"
+"	      004d3513    mov eax,maxy"
+"	      004d3516    cmp facealt,eax"
 "	      004d3519    jg near ptr 004D352Bh"
-"	      004d351f    mov eax,[ebp-34h]"
-"	      004d3522    cmp [ebp-50h],eax"
+"	      004d351f    mov eax,miny"
+"	      004d3522    cmp facealt,eax"
 "	      004d3525    jge near ptr 004D3537h"
 );
 // LINE 1215:
 	asm( 
-"	      004d352b    mov eax,[ebp-54h]"
-"	      004d352e    add eax,[ebp-34h]"
+"	      004d352b    mov eax,maxy"
+"	      004d352e    add eax,miny"
 "	      004d3531    sar eax,1"
-"	      004d3534    mov [ebp-50h],eax"
+"	      004d3534    mov facealt,eax"
 );
 // LINE 1217:
 	asm( 
@@ -2505,20 +2505,20 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1220:
 	asm( 
-"	      004d353c    mov eax,[ebp+20h]"
-"	      004d353f    add eax,[ebp+10h]"
-"	      004d3542    cmp eax,[ebp-34h]"
+"	      004d353c    mov eax,ydim"
+"	      004d353f    add eax,y"
+"	      004d3542    cmp eax,miny"
 "	      004d3545    jle near ptr 004D3568h"
-"	      004d354b    mov eax,[ebp+10h]"
-"	      004d354e    cmp [ebp-54h],eax"
+"	      004d354b    mov eax,y"
+"	      004d354e    cmp maxy,eax"
 "	      004d3551    jle near ptr 004D3568h"
 );
 // LINE 1221:
 	asm( 
-"	      004d3557    mov eax,[ebp-54h]"
-"	      004d355a    add eax,[ebp+10h]"
+"	      004d3557    mov eax,maxy"
+"	      004d355a    add eax,y"
 "	      004d355d    sar eax,1"
-"	      004d3560    mov [ebp-50h],eax"
+"	      004d3560    mov facealt,eax"
 );
 // LINE 1222:
 	asm( 
@@ -2530,86 +2530,86 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1226:
 	asm( 
-"	      004d356d    cmp dword ptr [ebp-4],0"
+"	      004d356d    cmp check_for_overhang,0"
 "	      004d3571    jne near ptr 004D3648h"
 );
 // LINE 1228:
 	asm( 
-"	      004d3577    mov eax,[ebp-50h]"
-"	      004d357a    cmp [ebp-4Ch],eax"
+"	      004d3577    mov eax,facealt"
+"	      004d357a    cmp altyupbelow,eax"
 "	      004d357d    jge near ptr 004D3643h"
 );
 // LINE 1230:
 	asm( 
-"	      004d3583    mov eax,[ebp-50h]"
-"	      004d3586    mov [ebp-4Ch],eax"
+"	      004d3583    mov eax,facealt"
+"	      004d3586    mov altyupbelow,eax"
 );
 // LINE 1231:
 	asm( 
-"	      004d3589    mov eax,[ebp-8]"
+"	      004d3589    mov eax,faceptr"
 "	      004d358c    mov eax,[eax+0Ch]"
-"	      004d358f    mov ecx,[ebp+18h]"
+"	      004d358f    mov ecx,flags"
 "	      004d3592    mov [ecx],eax"
 );
 // LINE 1235:
 	asm( 
-"	      004d3594    cmp dword ptr [ebp+24h],0"
+"	      004d3594    cmp collisvec,0"
 "	      004d3598    je near ptr 004D35CBh"
 );
 // LINE 1237:
 	asm( 
-"	      004d359e    mov eax,[ebp-48h]"
-"	      004d35a1    add eax,[ebp-2Ch]"
+"	      004d359e    mov eax,maxx"
+"	      004d35a1    add eax,minx"
 "	      004d35a4    sar eax,1"
-"	      004d35a7    sub eax,[ebp+0Ch]"
-"	      004d35aa    mov ecx,[ebp+24h]"
+"	      004d35a7    sub eax,x"
+"	      004d35aa    mov ecx,collisvec"
 "	      004d35ad    mov [ecx],eax"
 );
 // LINE 1238:
 	asm( 
-"	      004d35af    mov eax,[ebp-58h]"
-"	      004d35b2    add eax,[ebp-40h]"
+"	      004d35af    mov eax,maxz"
+"	      004d35b2    add eax,minz"
 "	      004d35b5    sar eax,1"
-"	      004d35b8    sub eax,[ebp+14h]"
-"	      004d35bb    mov ecx,[ebp+24h]"
+"	      004d35b8    sub eax,z"
+"	      004d35bb    mov ecx,collisvec"
 "	      004d35be    mov [ecx+8],eax"
 );
 // LINE 1239:
 	asm( 
-"	      004d35c1    mov eax,[ebp+24h]"
+"	      004d35c1    mov eax,collisvec"
 "	      004d35c4    mov dword ptr [eax+4],0"
 );
 // LINE 1245:
 	asm( 
-"	      004d35cb    cmp dword ptr [ebp+28h],0"
+"	      004d35cb    cmp landable,0"
 "	      004d35cf    je near ptr 004D3643h"
-"	      004d35d5    mov eax,[ebp-8]"
+"	      004d35d5    mov eax,faceptr"
 "	      004d35d8    mov eax,[eax+2Ch]"
 "	      004d35db    cmp dword ptr [eax+4],0FFFF15A0h"
 "	      004d35e2    jge near ptr 004D3643h"
 );
 // LINE 1248:
 	asm( 
-"	      004d35e8    mov eax,[ebp+0Ch]"
+"	      004d35e8    mov eax,x"
 "	      004d35eb    sub eax,20000h"
-"	      004d35f0    cmp eax,[ebp-2Ch]"
+"	      004d35f0    cmp eax,minx"
 "	      004d35f3    jl near ptr 004D363Ah"
-"	      004d35f9    mov eax,[ebp+0Ch]"
+"	      004d35f9    mov eax,x"
 "	      004d35fc    add eax,20000h"
-"	      004d3601    cmp eax,[ebp-48h]"
+"	      004d3601    cmp eax,maxx"
 "	      004d3604    jg near ptr 004D363Ah"
-"	      004d360a    mov eax,[ebp+14h]"
+"	      004d360a    mov eax,z"
 "	      004d360d    sub eax,20000h"
-"	      004d3612    cmp eax,[ebp-40h]"
+"	      004d3612    cmp eax,minz"
 "	      004d3615    jl near ptr 004D363Ah"
-"	      004d361b    mov eax,[ebp+14h]"
+"	      004d361b    mov eax,z"
 "	      004d361e    add eax,20000h"
-"	      004d3623    cmp eax,[ebp-58h]"
+"	      004d3623    cmp eax,maxz"
 "	      004d3626    jg near ptr 004D363Ah"
 );
 // LINE 1250:
 	asm( 
-"	      004d362c    mov eax,[ebp+28h]"
+"	      004d362c    mov eax,landable"
 "	      004d362f    mov dword ptr [eax],1"
 );
 // LINE 1252:
@@ -2618,7 +2618,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1254:
 	asm( 
-"	      004d363a    mov eax,[ebp+28h]"
+"	      004d363a    mov eax,landable"
 "	      004d363d    mov dword ptr [eax],0"
 );
 // LINE 1258:
@@ -2627,61 +2627,61 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1262:
 	asm( 
-"	      004d3648    cmp dword ptr [ebp-14h],0"
+"	      004d3648    cmp normaldir,0"
 "	      004d364c    jl near ptr 004D3787h"
 );
 // LINE 1265:
 	asm( 
-"	      004d3652    mov eax,[ebp+10h]"
-"	      004d3655    cmp [ebp-50h],eax"
+"	      004d3652    mov eax,y"
+"	      004d3655    cmp facealt,eax"
 "	      004d3658    jge near ptr 004D3764h"
-"	      004d365e    mov eax,[ebp-50h]"
-"	      004d3661    cmp [ebp-4Ch],eax"
+"	      004d365e    mov eax,facealt"
+"	      004d3661    cmp altyupbelow,eax"
 "	      004d3664    jge near ptr 004D3764h"
 );
 // LINE 1267:
 	asm( 
-"	      004d366a    mov eax,[ebp-50h]"
-"	      004d366d    mov [ebp-4Ch],eax"
+"	      004d366a    mov eax,facealt"
+"	      004d366d    mov altyupbelow,eax"
 );
 // LINE 1270:
 	asm( 
-"	      004d3670    mov eax,[ebp-8]"
+"	      004d3670    mov eax,faceptr"
 "	      004d3673    mov eax,[eax+0Ch]"
-"	      004d3676    mov ecx,[ebp+18h]"
+"	      004d3676    mov ecx,flags"
 "	      004d3679    mov [ecx],eax"
 );
 // LINE 1274:
 	asm( 
-"	      004d367b    cmp dword ptr [ebp+24h],0"
+"	      004d367b    cmp collisvec,0"
 "	      004d367f    je near ptr 004D36E7h"
 );
 // LINE 1276:
 	asm( 
-"	      004d3685    cmp dword ptr [ebp-14h],0"
+"	      004d3685    cmp normaldir,0"
 "	      004d3689    jle near ptr 004D36C1h"
 );
 // LINE 1278:
 	asm( 
-"	      004d368f    mov eax,[ebp-48h]"
-"	      004d3692    add eax,[ebp-2Ch]"
+"	      004d368f    mov eax,maxx"
+"	      004d3692    add eax,minx"
 "	      004d3695    sar eax,1"
-"	      004d3698    sub eax,[ebp+0Ch]"
-"	      004d369b    mov ecx,[ebp+24h]"
+"	      004d3698    sub eax,x"
+"	      004d369b    mov ecx,collisvec"
 "	      004d369e    mov [ecx],eax"
 );
 // LINE 1279:
 	asm( 
-"	      004d36a0    mov eax,[ebp-58h]"
-"	      004d36a3    add eax,[ebp-40h]"
+"	      004d36a0    mov eax,maxz"
+"	      004d36a3    add eax,minz"
 "	      004d36a6    sar eax,1"
-"	      004d36a9    sub eax,[ebp+14h]"
-"	      004d36ac    mov ecx,[ebp+24h]"
+"	      004d36a9    sub eax,z"
+"	      004d36ac    mov ecx,collisvec"
 "	      004d36af    mov [ecx+8],eax"
 );
 // LINE 1280:
 	asm( 
-"	      004d36b2    mov eax,[ebp+24h]"
+"	      004d36b2    mov eax,collisvec"
 "	      004d36b5    mov dword ptr [eax+4],0"
 );
 // LINE 1282:
@@ -2690,56 +2690,56 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1284:
 	asm( 
-"	      004d36c1    mov eax,[ebp-8]"
+"	      004d36c1    mov eax,faceptr"
 "	      004d36c4    mov eax,[eax+2Ch]"
 "	      004d36c7    mov eax,[eax]"
-"	      004d36c9    mov ecx,[ebp+24h]"
+"	      004d36c9    mov ecx,collisvec"
 "	      004d36cc    mov [ecx],eax"
 );
 // LINE 1285:
 	asm( 
-"	      004d36ce    mov eax,[ebp-8]"
+"	      004d36ce    mov eax,faceptr"
 "	      004d36d1    mov eax,[eax+2Ch]"
 "	      004d36d4    mov eax,[eax+8]"
-"	      004d36d7    mov ecx,[ebp+24h]"
+"	      004d36d7    mov ecx,collisvec"
 "	      004d36da    mov [ecx+8],eax"
 );
 // LINE 1286:
 	asm( 
-"	      004d36dd    mov eax,[ebp+24h]"
+"	      004d36dd    mov eax,collisvec"
 "	      004d36e0    mov dword ptr [eax+4],0"
 );
 // LINE 1292:
 	asm( 
-"	      004d36e7    cmp dword ptr [ebp+28h],0"
+"	      004d36e7    cmp landable,0"
 "	      004d36eb    je near ptr 004D375Fh"
-"	      004d36f1    mov eax,[ebp-8]"
+"	      004d36f1    mov eax,faceptr"
 "	      004d36f4    mov eax,[eax+2Ch]"
 "	      004d36f7    cmp dword ptr [eax+4],0FFFF15A0h"
 "	      004d36fe    jge near ptr 004D375Fh"
 );
 // LINE 1295:
 	asm( 
-"	      004d3704    mov eax,[ebp+0Ch]"
+"	      004d3704    mov eax,x"
 "	      004d3707    sub eax,10000h"
-"	      004d370c    cmp eax,[ebp-2Ch]"
+"	      004d370c    cmp eax,minx"
 "	      004d370f    jl near ptr 004D3756h"
-"	      004d3715    mov eax,[ebp+0Ch]"
+"	      004d3715    mov eax,x"
 "	      004d3718    add eax,10000h"
-"	      004d371d    cmp eax,[ebp-48h]"
+"	      004d371d    cmp eax,maxx"
 "	      004d3720    jg near ptr 004D3756h"
-"	      004d3726    mov eax,[ebp+14h]"
+"	      004d3726    mov eax,z"
 "	      004d3729    sub eax,10000h"
-"	      004d372e    cmp eax,[ebp-40h]"
+"	      004d372e    cmp eax,minz"
 "	      004d3731    jl near ptr 004D3756h"
-"	      004d3737    mov eax,[ebp+14h]"
+"	      004d3737    mov eax,z"
 "	      004d373a    add eax,10000h"
-"	      004d373f    cmp eax,[ebp-58h]"
+"	      004d373f    cmp eax,maxz"
 "	      004d3742    jg near ptr 004D3756h"
 );
 // LINE 1297:
 	asm( 
-"	      004d3748    mov eax,[ebp+28h]"
+"	      004d3748    mov eax,landable"
 "	      004d374b    mov dword ptr [eax],1"
 );
 // LINE 1299:
@@ -2748,23 +2748,23 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1301:
 	asm( 
-"	      004d3756    mov eax,[ebp+28h]"
+"	      004d3756    mov eax,landable"
 "	      004d3759    mov dword ptr [eax],0"
 );
 // LINE 1306:
 	asm( 
 "	      004d375f    jmp near ptr 004D3782h"
-"	      004d3764    mov eax,[ebp+10h]"
-"	      004d3767    cmp [ebp-50h],eax"
+"	      004d3764    mov eax,y"
+"	      004d3767    cmp facealt,eax"
 "	      004d376a    jl near ptr 004D3782h"
-"	      004d3770    mov eax,[ebp-28h]"
-"	      004d3773    cmp [ebp-50h],eax"
+"	      004d3770    mov eax,altyupabove"
+"	      004d3773    cmp facealt,eax"
 "	      004d3776    jge near ptr 004D3782h"
 );
 // LINE 1308:
 	asm( 
-"	      004d377c    mov eax,[ebp-50h]"
-"	      004d377f    mov [ebp-28h],eax"
+"	      004d377c    mov eax,facealt"
+"	      004d377f    mov altyupabove,eax"
 );
 // LINE 1313:
 	asm( 
@@ -2772,9 +2772,9 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1320:
 	asm( 
-"	      004d3787    mov eax,[ebp+20h]"
-"	      004d378a    add eax,[ebp+10h]"
-"	      004d378d    cmp eax,[ebp-50h]"
+"	      004d3787    mov eax,ydim"
+"	      004d378a    add eax,y"
+"	      004d378d    cmp eax,facealt"
 "	      004d3790    jle near ptr 004D379Bh"
 );
 // LINE 1321:
@@ -2783,25 +2783,25 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 );
 // LINE 1323:
 	asm( 
-"	      004d379b    mov dword ptr [ebp-44h],1"
+"	      004d379b    mov overhang,1"
 );
 // LINE 1326:
 	asm( 
-"	      004d37a2    mov eax,[ebp-50h]"
-"	      004d37a5    cmp [ebp-1Ch],eax"
+"	      004d37a2    mov eax,facealt"
+"	      004d37a5    cmp altydown,eax"
 "	      004d37a8    jle near ptr 004D37B4h"
 );
 // LINE 1328:
 	asm( 
-"	      004d37ae    mov eax,[ebp-50h]"
-"	      004d37b1    mov [ebp-1Ch],eax"
+"	      004d37ae    mov eax,facealt"
+"	      004d37b1    mov altydown,eax"
 );
 // LINE 1336:
 next_face:
 	asm( 
-"	      004d37b4    mov eax,[ebp-8]"
+"	      004d37b4    mov eax,faceptr"
 "	      004d37b7    mov eax,[eax]"
-"	      004d37b9    mov [ebp-8],eax"
+"	      004d37b9    mov faceptr,eax"
 );
 // LINE 1337:
 	asm( 
@@ -2810,121 +2810,121 @@ next_face:
 // LINE 1345:
 do_2d_face:
 	asm( 
-"	      004d37c1    mov eax,[ebp-8]"
+"	      004d37c1    mov eax,faceptr"
 "	      004d37c4    mov eax,[eax+1Ch]"
-"	      004d37c7    mov [ebp-10h],eax"
+"	      004d37c7    mov vertno,eax"
 );
 // LINE 1347:
 	asm( 
-"	      004d37ca    mov eax,[ebp-10h]"
+"	      004d37ca    mov eax,vertno"
 "	      004d37cd    mov eax,[eax]"
 "	      004d37cf    shr eax,4"
 "	      004d37d2    lea eax,[eax+eax*2]"
 "	      004d37d5    shl eax,2"
-"	      004d37d8    mov ecx,[ebp-3Ch]"
+"	      004d37d8    mov ecx,oh"
 "	      004d37db    add eax,[ecx+8]"
-"	      004d37de    mov [ebp-18h],eax"
+"	      004d37de    mov vert,eax"
 );
 // LINE 1352:
 	asm( 
-"	      004d37e1    add dword ptr [ebp-10h],4"
+"	      004d37e1    add vertno,4"
 );
 // LINE 1354:
 	asm( 
-"	      004d37e5    mov eax,[ebp-10h]"
+"	      004d37e5    mov eax,vertno"
 "	      004d37e8    mov eax,[eax]"
 "	      004d37ea    shr eax,4"
 "	      004d37ed    lea eax,[eax+eax*2]"
 "	      004d37f0    shl eax,2"
-"	      004d37f3    mov ecx,[ebp-3Ch]"
+"	      004d37f3    mov ecx,oh"
 "	      004d37f6    add eax,[ecx+8]"
-"	      004d37f9    mov [ebp-0Ch],eax"
+"	      004d37f9    mov vert2,eax"
 );
 // LINE 1363:
 	asm( 
-"	      004d37fc    mov eax,[ebp-18h]"
+"	      004d37fc    mov eax,vert"
 "	      004d37ff    mov eax,[eax]"
 "	      004d3801    sub eax,40000h"
-"	      004d3806    mov ecx,[ebp+1Ch]"
-"	      004d3809    add ecx,[ebp+0Ch]"
+"	      004d3806    mov ecx,dim"
+"	      004d3809    add ecx,x"
 "	      004d380c    cmp eax,ecx"
 "	      004d380e    jg near ptr 004D38B9h"
-"	      004d3814    mov eax,[ebp-18h]"
+"	      004d3814    mov eax,vert"
 "	      004d3817    mov eax,[eax]"
 "	      004d3819    add eax,40000h"
-"	      004d381e    mov ecx,[ebp+0Ch]"
-"	      004d3821    sub ecx,[ebp+1Ch]"
+"	      004d381e    mov ecx,x"
+"	      004d3821    sub ecx,dim"
 "	      004d3824    cmp eax,ecx"
 "	      004d3826    jl near ptr 004D38B9h"
-"	      004d382c    mov eax,[ebp-18h]"
+"	      004d382c    mov eax,vert"
 "	      004d382f    mov eax,[eax+8]"
 "	      004d3832    sub eax,40000h"
-"	      004d3837    mov ecx,[ebp+1Ch]"
-"	      004d383a    add ecx,[ebp+14h]"
+"	      004d3837    mov ecx,dim"
+"	      004d383a    add ecx,z"
 "	      004d383d    cmp eax,ecx"
 "	      004d383f    jg near ptr 004D38B9h"
-"	      004d3845    mov eax,[ebp-18h]"
+"	      004d3845    mov eax,vert"
 "	      004d3848    mov eax,[eax+8]"
 "	      004d384b    add eax,40000h"
-"	      004d3850    mov ecx,[ebp+14h]"
-"	      004d3853    sub ecx,[ebp+1Ch]"
+"	      004d3850    mov ecx,z"
+"	      004d3853    sub ecx,dim"
 "	      004d3856    cmp eax,ecx"
 "	      004d3858    jl near ptr 004D38B9h"
 );
 // LINE 1365:
 	asm( 
-"	      004d385e    mov eax,[ebp-0Ch]"
-"	      004d3861    mov ecx,[ebp-4Ch]"
+"	      004d385e    mov eax,vert2"
+"	      004d3861    mov ecx,altyupbelow"
 "	      004d3864    cmp [eax+4],ecx"
 "	      004d3867    jle near ptr 004D38B9h"
 );
 // LINE 1367:
 	asm( 
-"	      004d386d    mov eax,[ebp-0Ch]"
+"	      004d386d    mov eax,vert2"
 "	      004d3870    mov eax,[eax+4]"
-"	      004d3873    mov [ebp-4Ch],eax"
+"	      004d3873    mov altyupbelow,eax"
 );
 // LINE 1369:
 	asm( 
-"	      004d3876    cmp dword ptr [ebp+28h],0"
+"	      004d3876    cmp landable,0"
 "	      004d387a    je near ptr 004D3889h"
 );
 // LINE 1371:
 	asm( 
-"	      004d3880    mov eax,[ebp+28h]"
+"	      004d3880    mov eax,landable"
 "	      004d3883    mov dword ptr [eax],0"
 );
 // LINE 1374:
 	asm( 
-"	      004d3889    cmp dword ptr [ebp+24h],0"
+"	      004d3889    cmp collisvec,0"
 "	      004d388d    je near ptr 004D38B9h"
 );
 // LINE 1376:
 	asm( 
-"	      004d3893    mov eax,[ebp-18h]"
+"	      004d3893    mov eax,vert"
 "	      004d3896    mov eax,[eax]"
-"	      004d3898    sub eax,[ebp+0Ch]"
-"	      004d389b    mov ecx,[ebp+24h]"
+"	      004d3898    sub eax,x"
+"	      004d389b    mov ecx,collisvec"
 "	      004d389e    mov [ecx],eax"
 );
 // LINE 1377:
 	asm( 
-"	      004d38a0    mov eax,[ebp-18h]"
+"	      004d38a0    mov eax,vert"
 "	      004d38a3    mov eax,[eax+8]"
-"	      004d38a6    sub eax,[ebp+14h]"
-"	      004d38a9    mov ecx,[ebp+24h]"
+"	      004d38a6    sub eax,z"
+"	      004d38a9    mov ecx,collisvec"
 "	      004d38ac    mov [ecx+8],eax"
 );
 // LINE 1378:
 	asm( 
-"	      004d38af    mov eax,[ebp+24h]"
+"	      004d38af    mov eax,collisvec"
 "	      004d38b2    mov dword ptr [eax+4],0"
 );
 // LINE 1384:
 	asm( 
-"	      004d38b9    mov eax,[ebp-8]"
+"	      004d38b9    mov eax,faceptr"
 "	      004d38bc    mov eax,[eax]"
-"	      004d38be    mov [ebp-8],eax"
+"	      004d38be    mov faceptr,eax"
 );
 // LINE 1386:
 	asm( 
@@ -2932,28 +2932,28 @@ do_2d_face:
 );
 // LINE 1388:
 	asm( 
-"	      004d38c6    cmp dword ptr [ebp-4],0"
+"	      004d38c6    cmp check_for_overhang,0"
 "	      004d38ca    jne near ptr 004D38D8h"
 );
 // LINE 1390:
 	asm( 
-"	      004d38d0    mov eax,[ebp-4Ch]"
+"	      004d38d0    mov eax,altyupbelow"
 "	      004d38d3    jmp near ptr 004D392Ah"
 );
 // LINE 1395:
 	asm( 
-"	      004d38d8    cmp dword ptr [ebp-44h],1"
+"	      004d38d8    cmp overhang,1"
 "	      004d38dc    jne near ptr 004D3908h"
 );
 // LINE 1397:
 	asm( 
-"	      004d38e2    mov eax,[ebp-28h]"
-"	      004d38e5    cmp [ebp-1Ch],eax"
+"	      004d38e2    mov eax,altyupabove"
+"	      004d38e5    cmp altydown,eax"
 "	      004d38e8    jle near ptr 004D38FBh"
 );
 // LINE 1398:
 	asm( 
-"	      004d38ee    mov eax,[ebp-28h]"
+"	      004d38ee    mov eax,altyupabove"
 "	      004d38f1    jmp near ptr 004D392Ah"
 );
 // LINE 1399:
@@ -2962,7 +2962,7 @@ do_2d_face:
 );
 // LINE 1400:
 	asm( 
-"	      004d38fb    mov eax,[ebp-4Ch]"
+"	      004d38fb    mov eax,altyupbelow"
 "	      004d38fe    jmp near ptr 004D392Ah"
 );
 // LINE 1402:
@@ -2971,12 +2971,12 @@ do_2d_face:
 );
 // LINE 1404:
 	asm( 
-"	      004d3908    cmp dword ptr [ebp-28h],75300000h"
+"	      004d3908    cmp altyupabove,75300000h"
 "	      004d390f    je near ptr 004D3922h"
 );
 // LINE 1405:
 	asm( 
-"	      004d3915    mov eax,[ebp-28h]"
+"	      004d3915    mov eax,altyupabove"
 "	      004d3918    jmp near ptr 004D392Ah"
 );
 // LINE 1406:
@@ -2985,7 +2985,7 @@ do_2d_face:
 );
 // LINE 1407:
 	asm( 
-"	      004d3922    mov eax,[ebp-4Ch]"
+"	      004d3922    mov eax,altyupbelow"
 "	      004d3925    jmp near ptr 004D392Ah"
 );
 // LINE 1409:
@@ -3027,12 +3027,12 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 );
 // LINE 1424:
 	asm( 
-"	      004d3938    mov eax,[ebp+8]"
-"	      004d393b    mov [ebp-24h],eax"
+"	      004d3938    mov eax,obj"
+"	      004d393b    mov oh,eax"
 );
 // LINE 1435:
 	asm( 
-"	      004d393e    cmp dword ptr [ebp+8],0"
+"	      004d393e    cmp obj,0"
 "	      004d3942    jne near ptr 004D394Fh"
 );
 // LINE 1436:
@@ -3042,36 +3042,36 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 );
 // LINE 1439:
 	asm( 
-"	      004d394f    mov dword ptr [ebp-30h],0"
+"	      004d394f    mov distz,0"
 );
 // LINE 1442:
 	asm( 
-"	      004d3956    mov eax,[ebp-24h]"
+"	      004d3956    mov eax,oh"
 "	      004d3959    mov eax,[eax+4Ch]"
-"	      004d395c    mov [ebp-4],eax"
+"	      004d395c    mov faceptr,eax"
 );
 // LINE 1443:
 	asm( 
-"	      004d395f    mov dword ptr [ebp-18h],0"
+"	      004d395f    mov i,0"
 "	      004d3966    jmp near ptr 004D396Eh"
-"	      004d396b    inc dword ptr [ebp-18h]"
-"	      004d396e    mov eax,[ebp-24h]"
-"	      004d3971    mov ecx,[ebp-18h]"
+"	      004d396b    inc i"
+"	      004d396e    mov eax,oh"
+"	      004d3971    mov ecx,i"
 "	      004d3974    cmp [eax+10h],ecx"
 "	      004d3977    jle near ptr 004D3B36h"
 );
 // LINE 1446:
 	asm( 
-"	      004d397d    mov eax,[ebp-4]"
+"	      004d397d    mov eax,faceptr"
 "	      004d3980    test byte ptr [eax+8],4"
 "	      004d3984    je near ptr 004D398Fh"
 "	      004d398a    jmp near ptr 004D3B29h"
 );
 // LINE 1449:
 	asm( 
-"	      004d398f    cmp dword ptr [ebp+14h],0"
+"	      004d398f    cmp dir,0"
 "	      004d3993    jge near ptr 004D39B1h"
-"	      004d3999    mov eax,[ebp-4]"
+"	      004d3999    mov eax,faceptr"
 "	      004d399c    mov eax,[eax+2Ch]"
 "	      004d399f    cmp dword ptr [eax+8],0FFFFD8F0h"
 "	      004d39a6    jle near ptr 004D39B1h"
@@ -3082,9 +3082,9 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 );
 // LINE 1451:
 	asm( 
-"	      004d39b1    cmp dword ptr [ebp+14h],0"
+"	      004d39b1    cmp dir,0"
 "	      004d39b5    jle near ptr 004D39D3h"
-"	      004d39bb    mov eax,[ebp-4]"
+"	      004d39bb    mov eax,faceptr"
 "	      004d39be    mov eax,[eax+2Ch]"
 "	      004d39c1    cmp dword ptr [eax+8],2710h"
 "	      004d39c8    jge near ptr 004D39D3h"
@@ -3095,118 +3095,118 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 );
 // LINE 1455:
 	asm( 
-"	      004d39d3    mov eax,[ebp-4]"
-"	      004d39d6    mov [ebp-3Ch],eax"
+"	      004d39d3    mov eax,faceptr"
+"	      004d39d6    mov dataptr,eax"
 );
 // LINE 1456:
 	asm( 
-"	      004d39d9    add dword ptr [ebp-3Ch],30h"
+"	      004d39d9    add dataptr,30h"
 );
 // LINE 1457:
 	asm( 
-"	      004d39dd    mov eax,[ebp-3Ch]"
-"	      004d39e0    mov [ebp-8],eax"
+"	      004d39dd    mov eax,dataptr"
+"	      004d39e0    mov vertno,eax"
 );
 // LINE 1460:
 	asm( 
-"	      004d39e3    mov dword ptr [ebp-28h],75300000h"
-"	      004d39ea    mov eax,[ebp-28h]"
-"	      004d39ed    mov [ebp-1Ch],eax"
-"	      004d39f0    mov eax,[ebp-1Ch]"
-"	      004d39f3    mov [ebp-14h],eax"
+"	      004d39e3    mov minz,75300000h"
+"	      004d39ea    mov eax,minz"
+"	      004d39ed    mov miny,eax"
+"	      004d39f0    mov eax,miny"
+"	      004d39f3    mov minx,eax"
 );
 // LINE 1461:
 	asm( 
-"	      004d39f6    mov dword ptr [ebp-38h],8AD00000h"
-"	      004d39fd    mov eax,[ebp-38h]"
-"	      004d3a00    mov [ebp-34h],eax"
-"	      004d3a03    mov eax,[ebp-34h]"
-"	      004d3a06    mov [ebp-2Ch],eax"
+"	      004d39f6    mov maxz,8AD00000h"
+"	      004d39fd    mov eax,maxz"
+"	      004d3a00    mov maxy,eax"
+"	      004d3a03    mov eax,maxy"
+"	      004d3a06    mov maxx,eax"
 );
 // LINE 1466:
 	asm( 
-"	      004d3a09    mov dword ptr [ebp-20h],0"
+"	      004d3a09    mov j,0"
 "	      004d3a10    jmp near ptr 004D3A18h"
-"	      004d3a15    inc dword ptr [ebp-20h]"
-"	      004d3a18    mov eax,[ebp-4]"
-"	      004d3a1b    mov ecx,[ebp-20h]"
+"	      004d3a15    inc j"
+"	      004d3a18    mov eax,faceptr"
+"	      004d3a1b    mov ecx,j"
 "	      004d3a1e    cmp [eax+4],ecx"
 "	      004d3a21    jle near ptr 004D3AD3h"
 );
 // LINE 1472:
 	asm( 
-"	      004d3a27    mov eax,[ebp-8]"
+"	      004d3a27    mov eax,vertno"
 "	      004d3a2a    mov eax,[eax]"
 "	      004d3a2c    shr eax,4"
 "	      004d3a2f    lea eax,[eax+eax*2]"
 "	      004d3a32    shl eax,2"
-"	      004d3a35    mov ecx,[ebp-24h]"
+"	      004d3a35    mov ecx,oh"
 "	      004d3a38    add eax,[ecx+8]"
-"	      004d3a3b    mov [ebp-0Ch],eax"
+"	      004d3a3b    mov vert,eax"
 );
 // LINE 1476:
 	asm( 
-"	      004d3a3e    add dword ptr [ebp-8],4"
+"	      004d3a3e    add vertno,4"
 );
 // LINE 1479:
 	asm( 
-"	      004d3a42    mov eax,[ebp-0Ch]"
-"	      004d3a45    mov ecx,[ebp-14h]"
+"	      004d3a42    mov eax,vert"
+"	      004d3a45    mov ecx,minx"
 "	      004d3a48    cmp [eax],ecx"
 "	      004d3a4a    jge near ptr 004D3A58h"
-"	      004d3a50    mov eax,[ebp-0Ch]"
+"	      004d3a50    mov eax,vert"
 "	      004d3a53    mov eax,[eax]"
-"	      004d3a55    mov [ebp-14h],eax"
+"	      004d3a55    mov minx,eax"
 );
 // LINE 1480:
 	asm( 
-"	      004d3a58    mov eax,[ebp-0Ch]"
-"	      004d3a5b    mov ecx,[ebp-1Ch]"
+"	      004d3a58    mov eax,vert"
+"	      004d3a5b    mov ecx,miny"
 "	      004d3a5e    cmp [eax+4],ecx"
 "	      004d3a61    jge near ptr 004D3A70h"
-"	      004d3a67    mov eax,[ebp-0Ch]"
+"	      004d3a67    mov eax,vert"
 "	      004d3a6a    mov eax,[eax+4]"
-"	      004d3a6d    mov [ebp-1Ch],eax"
+"	      004d3a6d    mov miny,eax"
 );
 // LINE 1481:
 	asm( 
-"	      004d3a70    mov eax,[ebp-0Ch]"
-"	      004d3a73    mov ecx,[ebp-28h]"
+"	      004d3a70    mov eax,vert"
+"	      004d3a73    mov ecx,minz"
 "	      004d3a76    cmp [eax+8],ecx"
 "	      004d3a79    jge near ptr 004D3A88h"
-"	      004d3a7f    mov eax,[ebp-0Ch]"
+"	      004d3a7f    mov eax,vert"
 "	      004d3a82    mov eax,[eax+8]"
-"	      004d3a85    mov [ebp-28h],eax"
+"	      004d3a85    mov minz,eax"
 );
 // LINE 1482:
 	asm( 
-"	      004d3a88    mov eax,[ebp-0Ch]"
-"	      004d3a8b    mov ecx,[ebp-2Ch]"
+"	      004d3a88    mov eax,vert"
+"	      004d3a8b    mov ecx,maxx"
 "	      004d3a8e    cmp [eax],ecx"
 "	      004d3a90    jle near ptr 004D3A9Eh"
-"	      004d3a96    mov eax,[ebp-0Ch]"
+"	      004d3a96    mov eax,vert"
 "	      004d3a99    mov eax,[eax]"
-"	      004d3a9b    mov [ebp-2Ch],eax"
+"	      004d3a9b    mov maxx,eax"
 );
 // LINE 1483:
 	asm( 
-"	      004d3a9e    mov eax,[ebp-0Ch]"
-"	      004d3aa1    mov ecx,[ebp-34h]"
+"	      004d3a9e    mov eax,vert"
+"	      004d3aa1    mov ecx,maxy"
 "	      004d3aa4    cmp [eax+4],ecx"
 "	      004d3aa7    jle near ptr 004D3AB6h"
-"	      004d3aad    mov eax,[ebp-0Ch]"
+"	      004d3aad    mov eax,vert"
 "	      004d3ab0    mov eax,[eax+4]"
-"	      004d3ab3    mov [ebp-34h],eax"
+"	      004d3ab3    mov maxy,eax"
 );
 // LINE 1484:
 	asm( 
-"	      004d3ab6    mov eax,[ebp-0Ch]"
-"	      004d3ab9    mov ecx,[ebp-38h]"
+"	      004d3ab6    mov eax,vert"
+"	      004d3ab9    mov ecx,maxz"
 "	      004d3abc    cmp [eax+8],ecx"
 "	      004d3abf    jle near ptr 004D3ACEh"
-"	      004d3ac5    mov eax,[ebp-0Ch]"
+"	      004d3ac5    mov eax,vert"
 "	      004d3ac8    mov eax,[eax+8]"
-"	      004d3acb    mov [ebp-38h],eax"
+"	      004d3acb    mov maxz,eax"
 );
 // LINE 1485:
 	asm( 
@@ -3214,46 +3214,46 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 );
 // LINE 1489:
 	asm( 
-"	      004d3ad3    mov eax,[ebp+18h]"
-"	      004d3ad6    add eax,[ebp+10h]"
-"	      004d3ad9    cmp eax,[ebp-1Ch]"
+"	      004d3ad3    mov eax,dim"
+"	      004d3ad6    add eax,y"
+"	      004d3ad9    cmp eax,miny"
 "	      004d3adc    jl near ptr 004D3B29h"
-"	      004d3ae2    mov eax,[ebp+10h]"
-"	      004d3ae5    sub eax,[ebp+18h]"
-"	      004d3ae8    cmp eax,[ebp-34h]"
+"	      004d3ae2    mov eax,y"
+"	      004d3ae5    sub eax,dim"
+"	      004d3ae8    cmp eax,maxy"
 "	      004d3aeb    jg near ptr 004D3B29h"
-"	      004d3af1    mov eax,[ebp+0Ch]"
-"	      004d3af4    add eax,[ebp+18h]"
-"	      004d3af7    cmp eax,[ebp-14h]"
+"	      004d3af1    mov eax,x"
+"	      004d3af4    add eax,dim"
+"	      004d3af7    cmp eax,minx"
 "	      004d3afa    jl near ptr 004D3B29h"
-"	      004d3b00    mov eax,[ebp+0Ch]"
-"	      004d3b03    sub eax,[ebp+18h]"
-"	      004d3b06    cmp eax,[ebp-2Ch]"
+"	      004d3b00    mov eax,x"
+"	      004d3b03    sub eax,dim"
+"	      004d3b06    cmp eax,maxx"
 "	      004d3b09    jg near ptr 004D3B29h"
 );
 // LINE 1492:
 	asm( 
-"	      004d3b0f    mov eax,[ebp-38h]"
-"	      004d3b12    add eax,[ebp-28h]"
+"	      004d3b0f    mov eax,maxz"
+"	      004d3b12    add eax,minz"
 "	      004d3b15    sar eax,1"
-"	      004d3b18    mov [ebp-10h],eax"
+"	      004d3b18    mov facez,eax"
 );
 // LINE 1493:
 	asm( 
-"	      004d3b1b    mov eax,[ebp-10h]"
-"	      004d3b1e    mov [ebp-30h],eax"
+"	      004d3b1b    mov eax,facez"
+"	      004d3b1e    mov distz,eax"
 );
 // LINE 1494:
 	asm( 
-"	      004d3b21    mov eax,[ebp-30h]"
+"	      004d3b21    mov eax,distz"
 "	      004d3b24    jmp near ptr 004D3B3Eh"
 );
 // LINE 1506:
 next_face:
 	asm( 
-"	      004d3b29    mov eax,[ebp-4]"
+"	      004d3b29    mov eax,faceptr"
 "	      004d3b2c    mov eax,[eax]"
-"	      004d3b2e    mov [ebp-4],eax"
+"	      004d3b2e    mov faceptr,eax"
 );
 // LINE 1507:
 	asm( 
@@ -3261,7 +3261,7 @@ next_face:
 );
 // LINE 1509:
 	asm( 
-"	      004d3b36    mov eax,[ebp-30h]"
+"	      004d3b36    mov eax,distz"
 "	      004d3b39    jmp near ptr 004D3B3Eh"
 );
 // LINE 1511:
@@ -3303,12 +3303,12 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 );
 // LINE 1526:
 	asm( 
-"	      004d3b4c    mov eax,[ebp+8]"
-"	      004d3b4f    mov [ebp-24h],eax"
+"	      004d3b4c    mov eax,obj"
+"	      004d3b4f    mov oh,eax"
 );
 // LINE 1537:
 	asm( 
-"	      004d3b52    cmp dword ptr [ebp+8],0"
+"	      004d3b52    cmp obj,0"
 "	      004d3b56    jne near ptr 004D3B63h"
 );
 // LINE 1538:
@@ -3318,36 +3318,36 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 );
 // LINE 1541:
 	asm( 
-"	      004d3b63    mov dword ptr [ebp-28h],0"
+"	      004d3b63    mov distx,0"
 );
 // LINE 1544:
 	asm( 
-"	      004d3b6a    mov eax,[ebp-24h]"
+"	      004d3b6a    mov eax,oh"
 "	      004d3b6d    mov eax,[eax+4Ch]"
-"	      004d3b70    mov [ebp-4],eax"
+"	      004d3b70    mov faceptr,eax"
 );
 // LINE 1545:
 	asm( 
-"	      004d3b73    mov dword ptr [ebp-18h],0"
+"	      004d3b73    mov i,0"
 "	      004d3b7a    jmp near ptr 004D3B82h"
-"	      004d3b7f    inc dword ptr [ebp-18h]"
-"	      004d3b82    mov eax,[ebp-24h]"
-"	      004d3b85    mov ecx,[ebp-18h]"
+"	      004d3b7f    inc i"
+"	      004d3b82    mov eax,oh"
+"	      004d3b85    mov ecx,i"
 "	      004d3b88    cmp [eax+10h],ecx"
 "	      004d3b8b    jle near ptr 004D3D48h"
 );
 // LINE 1548:
 	asm( 
-"	      004d3b91    mov eax,[ebp-4]"
+"	      004d3b91    mov eax,faceptr"
 "	      004d3b94    test byte ptr [eax+8],4"
 "	      004d3b98    je near ptr 004D3BA3h"
 "	      004d3b9e    jmp near ptr 004D3D3Bh"
 );
 // LINE 1551:
 	asm( 
-"	      004d3ba3    cmp dword ptr [ebp+14h],0"
+"	      004d3ba3    cmp dir,0"
 "	      004d3ba7    jge near ptr 004D3BC4h"
-"	      004d3bad    mov eax,[ebp-4]"
+"	      004d3bad    mov eax,faceptr"
 "	      004d3bb0    mov eax,[eax+2Ch]"
 "	      004d3bb3    cmp dword ptr [eax],0FFFFD8F0h"
 "	      004d3bb9    jle near ptr 004D3BC4h"
@@ -3358,9 +3358,9 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 );
 // LINE 1553:
 	asm( 
-"	      004d3bc4    cmp dword ptr [ebp+14h],0"
+"	      004d3bc4    cmp dir,0"
 "	      004d3bc8    jle near ptr 004D3BE5h"
-"	      004d3bce    mov eax,[ebp-4]"
+"	      004d3bce    mov eax,faceptr"
 "	      004d3bd1    mov eax,[eax+2Ch]"
 "	      004d3bd4    cmp dword ptr [eax],2710h"
 "	      004d3bda    jge near ptr 004D3BE5h"
@@ -3371,118 +3371,118 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 );
 // LINE 1557:
 	asm( 
-"	      004d3be5    mov eax,[ebp-4]"
-"	      004d3be8    mov [ebp-3Ch],eax"
+"	      004d3be5    mov eax,faceptr"
+"	      004d3be8    mov dataptr,eax"
 );
 // LINE 1558:
 	asm( 
-"	      004d3beb    add dword ptr [ebp-3Ch],30h"
+"	      004d3beb    add dataptr,30h"
 );
 // LINE 1559:
 	asm( 
-"	      004d3bef    mov eax,[ebp-3Ch]"
-"	      004d3bf2    mov [ebp-8],eax"
+"	      004d3bef    mov eax,dataptr"
+"	      004d3bf2    mov vertno,eax"
 );
 // LINE 1562:
 	asm( 
-"	      004d3bf5    mov dword ptr [ebp-2Ch],75300000h"
-"	      004d3bfc    mov eax,[ebp-2Ch]"
-"	      004d3bff    mov [ebp-1Ch],eax"
-"	      004d3c02    mov eax,[ebp-1Ch]"
-"	      004d3c05    mov [ebp-14h],eax"
+"	      004d3bf5    mov minz,75300000h"
+"	      004d3bfc    mov eax,minz"
+"	      004d3bff    mov miny,eax"
+"	      004d3c02    mov eax,miny"
+"	      004d3c05    mov minx,eax"
 );
 // LINE 1563:
 	asm( 
-"	      004d3c08    mov dword ptr [ebp-38h],8AD00000h"
-"	      004d3c0f    mov eax,[ebp-38h]"
-"	      004d3c12    mov [ebp-34h],eax"
-"	      004d3c15    mov eax,[ebp-34h]"
-"	      004d3c18    mov [ebp-30h],eax"
+"	      004d3c08    mov maxz,8AD00000h"
+"	      004d3c0f    mov eax,maxz"
+"	      004d3c12    mov maxy,eax"
+"	      004d3c15    mov eax,maxy"
+"	      004d3c18    mov maxx,eax"
 );
 // LINE 1568:
 	asm( 
-"	      004d3c1b    mov dword ptr [ebp-20h],0"
+"	      004d3c1b    mov j,0"
 "	      004d3c22    jmp near ptr 004D3C2Ah"
-"	      004d3c27    inc dword ptr [ebp-20h]"
-"	      004d3c2a    mov eax,[ebp-4]"
-"	      004d3c2d    mov ecx,[ebp-20h]"
+"	      004d3c27    inc j"
+"	      004d3c2a    mov eax,faceptr"
+"	      004d3c2d    mov ecx,j"
 "	      004d3c30    cmp [eax+4],ecx"
 "	      004d3c33    jle near ptr 004D3CE5h"
 );
 // LINE 1574:
 	asm( 
-"	      004d3c39    mov eax,[ebp-8]"
+"	      004d3c39    mov eax,vertno"
 "	      004d3c3c    mov eax,[eax]"
 "	      004d3c3e    shr eax,4"
 "	      004d3c41    lea eax,[eax+eax*2]"
 "	      004d3c44    shl eax,2"
-"	      004d3c47    mov ecx,[ebp-24h]"
+"	      004d3c47    mov ecx,oh"
 "	      004d3c4a    add eax,[ecx+8]"
-"	      004d3c4d    mov [ebp-10h],eax"
+"	      004d3c4d    mov vert,eax"
 );
 // LINE 1578:
 	asm( 
-"	      004d3c50    add dword ptr [ebp-8],4"
+"	      004d3c50    add vertno,4"
 );
 // LINE 1581:
 	asm( 
-"	      004d3c54    mov eax,[ebp-10h]"
-"	      004d3c57    mov ecx,[ebp-14h]"
+"	      004d3c54    mov eax,vert"
+"	      004d3c57    mov ecx,minx"
 "	      004d3c5a    cmp [eax],ecx"
 "	      004d3c5c    jge near ptr 004D3C6Ah"
-"	      004d3c62    mov eax,[ebp-10h]"
+"	      004d3c62    mov eax,vert"
 "	      004d3c65    mov eax,[eax]"
-"	      004d3c67    mov [ebp-14h],eax"
+"	      004d3c67    mov minx,eax"
 );
 // LINE 1582:
 	asm( 
-"	      004d3c6a    mov eax,[ebp-10h]"
-"	      004d3c6d    mov ecx,[ebp-1Ch]"
+"	      004d3c6a    mov eax,vert"
+"	      004d3c6d    mov ecx,miny"
 "	      004d3c70    cmp [eax+4],ecx"
 "	      004d3c73    jge near ptr 004D3C82h"
-"	      004d3c79    mov eax,[ebp-10h]"
+"	      004d3c79    mov eax,vert"
 "	      004d3c7c    mov eax,[eax+4]"
-"	      004d3c7f    mov [ebp-1Ch],eax"
+"	      004d3c7f    mov miny,eax"
 );
 // LINE 1583:
 	asm( 
-"	      004d3c82    mov eax,[ebp-10h]"
-"	      004d3c85    mov ecx,[ebp-2Ch]"
+"	      004d3c82    mov eax,vert"
+"	      004d3c85    mov ecx,minz"
 "	      004d3c88    cmp [eax+8],ecx"
 "	      004d3c8b    jge near ptr 004D3C9Ah"
-"	      004d3c91    mov eax,[ebp-10h]"
+"	      004d3c91    mov eax,vert"
 "	      004d3c94    mov eax,[eax+8]"
-"	      004d3c97    mov [ebp-2Ch],eax"
+"	      004d3c97    mov minz,eax"
 );
 // LINE 1584:
 	asm( 
-"	      004d3c9a    mov eax,[ebp-10h]"
-"	      004d3c9d    mov ecx,[ebp-30h]"
+"	      004d3c9a    mov eax,vert"
+"	      004d3c9d    mov ecx,maxx"
 "	      004d3ca0    cmp [eax],ecx"
 "	      004d3ca2    jle near ptr 004D3CB0h"
-"	      004d3ca8    mov eax,[ebp-10h]"
+"	      004d3ca8    mov eax,vert"
 "	      004d3cab    mov eax,[eax]"
-"	      004d3cad    mov [ebp-30h],eax"
+"	      004d3cad    mov maxx,eax"
 );
 // LINE 1585:
 	asm( 
-"	      004d3cb0    mov eax,[ebp-10h]"
-"	      004d3cb3    mov ecx,[ebp-34h]"
+"	      004d3cb0    mov eax,vert"
+"	      004d3cb3    mov ecx,maxy"
 "	      004d3cb6    cmp [eax+4],ecx"
 "	      004d3cb9    jle near ptr 004D3CC8h"
-"	      004d3cbf    mov eax,[ebp-10h]"
+"	      004d3cbf    mov eax,vert"
 "	      004d3cc2    mov eax,[eax+4]"
-"	      004d3cc5    mov [ebp-34h],eax"
+"	      004d3cc5    mov maxy,eax"
 );
 // LINE 1586:
 	asm( 
-"	      004d3cc8    mov eax,[ebp-10h]"
-"	      004d3ccb    mov ecx,[ebp-38h]"
+"	      004d3cc8    mov eax,vert"
+"	      004d3ccb    mov ecx,maxz"
 "	      004d3cce    cmp [eax+8],ecx"
 "	      004d3cd1    jle near ptr 004D3CE0h"
-"	      004d3cd7    mov eax,[ebp-10h]"
+"	      004d3cd7    mov eax,vert"
 "	      004d3cda    mov eax,[eax+8]"
-"	      004d3cdd    mov [ebp-38h],eax"
+"	      004d3cdd    mov maxz,eax"
 );
 // LINE 1587:
 	asm( 
@@ -3490,46 +3490,46 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 );
 // LINE 1591:
 	asm( 
-"	      004d3ce5    mov eax,[ebp+18h]"
-"	      004d3ce8    add eax,[ebp+0Ch]"
-"	      004d3ceb    cmp eax,[ebp-1Ch]"
+"	      004d3ce5    mov eax,dim"
+"	      004d3ce8    add eax,y"
+"	      004d3ceb    cmp eax,miny"
 "	      004d3cee    jl near ptr 004D3D3Bh"
-"	      004d3cf4    mov eax,[ebp+0Ch]"
-"	      004d3cf7    sub eax,[ebp+18h]"
-"	      004d3cfa    cmp eax,[ebp-34h]"
+"	      004d3cf4    mov eax,y"
+"	      004d3cf7    sub eax,dim"
+"	      004d3cfa    cmp eax,maxy"
 "	      004d3cfd    jg near ptr 004D3D3Bh"
-"	      004d3d03    mov eax,[ebp+18h]"
-"	      004d3d06    add eax,[ebp+10h]"
-"	      004d3d09    cmp eax,[ebp-2Ch]"
+"	      004d3d03    mov eax,dim"
+"	      004d3d06    add eax,z"
+"	      004d3d09    cmp eax,minz"
 "	      004d3d0c    jl near ptr 004D3D3Bh"
-"	      004d3d12    mov eax,[ebp+10h]"
-"	      004d3d15    sub eax,[ebp+18h]"
-"	      004d3d18    cmp eax,[ebp-38h]"
+"	      004d3d12    mov eax,z"
+"	      004d3d15    sub eax,dim"
+"	      004d3d18    cmp eax,maxz"
 "	      004d3d1b    jg near ptr 004D3D3Bh"
 );
 // LINE 1594:
 	asm( 
-"	      004d3d21    mov eax,[ebp-14h]"
-"	      004d3d24    add eax,[ebp-30h]"
+"	      004d3d21    mov eax,minx"
+"	      004d3d24    add eax,maxx"
 "	      004d3d27    sar eax,1"
-"	      004d3d2a    mov [ebp-0Ch],eax"
+"	      004d3d2a    mov facex,eax"
 );
 // LINE 1595:
 	asm( 
-"	      004d3d2d    mov eax,[ebp-0Ch]"
-"	      004d3d30    mov [ebp-28h],eax"
+"	      004d3d2d    mov eax,facex"
+"	      004d3d30    mov distx,eax"
 );
 // LINE 1596:
 	asm( 
-"	      004d3d33    mov eax,[ebp-28h]"
+"	      004d3d33    mov eax,distx"
 "	      004d3d36    jmp near ptr 004D3D50h"
 );
 // LINE 1608:
 next_face:
 	asm( 
-"	      004d3d3b    mov eax,[ebp-4]"
+"	      004d3d3b    mov eax,faceptr"
 "	      004d3d3e    mov eax,[eax]"
-"	      004d3d40    mov [ebp-4],eax"
+"	      004d3d40    mov faceptr,eax"
 );
 // LINE 1609:
 	asm( 
@@ -3537,7 +3537,7 @@ next_face:
 );
 // LINE 1611:
 	asm( 
-"	      004d3d48    mov eax,[ebp-28h]"
+"	      004d3d48    mov eax,distx"
 "	      004d3d4b    jmp near ptr 004D3D50h"
 );
 // LINE 1613:
@@ -3571,34 +3571,34 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 );
 // LINE 1630:
 	asm( 
-"	      004d3d5e    mov eax,[ebp+8]"
-"	      004d3d61    mov [ebp-18h],eax"
+"	      004d3d5e    mov eax,obj"
+"	      004d3d61    mov oh,eax"
 );
 // LINE 1637:
 	asm( 
-"	      004d3d64    mov eax,[ebp-18h]"
+"	      004d3d64    mov eax,oh"
 "	      004d3d67    mov eax,[eax+4Ch]"
-"	      004d3d6a    mov [ebp-8],eax"
+"	      004d3d6a    mov faceptr,eax"
 );
 // LINE 1639:
 	asm( 
-"	      004d3d6d    mov eax,[ebp-18h]"
+"	      004d3d6d    mov eax,oh"
 "	      004d3d70    mov eax,[eax+4Ch]"
-"	      004d3d73    mov [ebp-8],eax"
+"	      004d3d73    mov faceptr,eax"
 );
 // LINE 1640:
 	asm( 
-"	      004d3d76    mov dword ptr [ebp-14h],0"
+"	      004d3d76    mov i,0"
 "	      004d3d7d    jmp near ptr 004D3D85h"
-"	      004d3d82    inc dword ptr [ebp-14h]"
-"	      004d3d85    mov eax,[ebp-18h]"
-"	      004d3d88    mov ecx,[ebp-14h]"
+"	      004d3d82    inc i"
+"	      004d3d85    mov eax,oh"
+"	      004d3d88    mov ecx,i"
 "	      004d3d8b    cmp [eax+10h],ecx"
 "	      004d3d8e    jle near ptr 004D3E1Fh"
 );
 // LINE 1642:
 	asm( 
-"	      004d3d94    mov eax,[ebp-8]"
+"	      004d3d94    mov eax,faceptr"
 "	      004d3d97    test byte ptr [eax+8],4"
 "	      004d3d9b    jne near ptr 004D3DA6h"
 );
@@ -3608,71 +3608,71 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 );
 // LINE 1646:
 	asm( 
-"	      004d3da6    mov eax,[ebp-8]"
-"	      004d3da9    mov [ebp-1Ch],eax"
+"	      004d3da6    mov eax,faceptr"
+"	      004d3da9    mov dataptr,eax"
 );
 // LINE 1647:
 	asm( 
-"	      004d3dac    add dword ptr [ebp-1Ch],30h"
+"	      004d3dac    add dataptr,30h"
 );
 // LINE 1650:
 	asm( 
-"	      004d3db0    mov eax,[ebp-1Ch]"
-"	      004d3db3    mov [ebp-10h],eax"
+"	      004d3db0    mov eax,dataptr"
+"	      004d3db3    mov vertno,eax"
 );
 // LINE 1652:
 	asm( 
-"	      004d3db6    mov eax,[ebp-10h]"
+"	      004d3db6    mov eax,vertno"
 "	      004d3db9    mov eax,[eax]"
 "	      004d3dbb    shr eax,4"
 "	      004d3dbe    lea eax,[eax+eax*2]"
 "	      004d3dc1    shl eax,2"
-"	      004d3dc4    mov ecx,[ebp-18h]"
+"	      004d3dc4    mov ecx,oh"
 "	      004d3dc7    add eax,[ecx+8]"
-"	      004d3dca    mov [ebp-4],eax"
+"	      004d3dca    mov vert1,eax"
 );
 // LINE 1657:
 	asm( 
-"	      004d3dcd    add dword ptr [ebp-10h],4"
+"	      004d3dcd    add vertno,4"
 );
 // LINE 1659:
 	asm( 
-"	      004d3dd1    mov eax,[ebp-10h]"
+"	      004d3dd1    mov eax,vertno"
 "	      004d3dd4    mov eax,[eax]"
 "	      004d3dd6    shr eax,4"
 "	      004d3dd9    lea eax,[eax+eax*2]"
 "	      004d3ddc    shl eax,2"
-"	      004d3ddf    mov ecx,[ebp-18h]"
+"	      004d3ddf    mov ecx,oh"
 "	      004d3de2    add eax,[ecx+8]"
-"	      004d3de5    mov [ebp-0Ch],eax"
+"	      004d3de5    mov vert2,eax"
 );
 // LINE 1665:
 	asm( 
-"	      004d3de8    mov eax,[ebp+0Ch]"
+"	      004d3de8    mov eax,width"
 "	      004d3deb    shl eax,10h"
 "	      004d3dee    sar eax,1"
-"	      004d3df1    mov ecx,[ebp-4]"
+"	      004d3df1    mov ecx,vert1"
 "	      004d3df4    add eax,[ecx]"
-"	      004d3df6    mov ecx,[ebp-0Ch]"
+"	      004d3df6    mov ecx,vert2"
 "	      004d3df9    mov [ecx],eax"
 );
 // LINE 1666:
 	asm( 
-"	      004d3dfb    mov eax,[ebp-4]"
+"	      004d3dfb    mov eax,vert1"
 "	      004d3dfe    mov eax,[eax+4]"
-"	      004d3e01    mov ecx,[ebp+10h]"
+"	      004d3e01    mov ecx,height"
 "	      004d3e04    shl ecx,10h"
 "	      004d3e07    sar ecx,1"
 "	      004d3e0a    add eax,ecx"
-"	      004d3e0c    mov ecx,[ebp-0Ch]"
+"	      004d3e0c    mov ecx,vert2"
 "	      004d3e0f    mov [ecx+4],eax"
 );
 // LINE 1670:
 next_face:
 	asm( 
-"	      004d3e12    mov eax,[ebp-8]"
+"	      004d3e12    mov eax,faceptr"
 "	      004d3e15    mov eax,[eax]"
-"	      004d3e17    mov [ebp-8],eax"
+"	      004d3e17    mov faceptr,eax"
 );
 // LINE 1671:
 	asm( 
@@ -3705,39 +3705,39 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 );
 // LINE 1685:
 	asm( 
-"	      004d3e2d    mov eax,[ebp+8]"
-"	      004d3e30    mov [ebp-0Ch],eax"
+"	      004d3e2d    mov eax,obj"
+"	      004d3e30    mov oh,eax"
 );
 // LINE 1689:
 	asm( 
-"	      004d3e33    mov dword ptr [ebp-8],0"
-"	      004d3e3a    mov eax,[ebp-0Ch]"
+"	      004d3e33    mov i,0"
+"	      004d3e3a    mov eax,oh"
 "	      004d3e3d    mov eax,[eax+8]"
-"	      004d3e40    mov [ebp-4],eax"
+"	      004d3e40    mov vert,eax"
 "	      004d3e43    jmp near ptr 004D3E4Fh"
-"	      004d3e48    inc dword ptr [ebp-8]"
-"	      004d3e4b    add dword ptr [ebp-4],0Ch"
-"	      004d3e4f    mov eax,[ebp-0Ch]"
-"	      004d3e52    mov ecx,[ebp-8]"
+"	      004d3e48    inc i"
+"	      004d3e4b    add vert,0Ch"
+"	      004d3e4f    mov eax,oh"
+"	      004d3e52    mov ecx,i"
 "	      004d3e55    cmp [eax+4],ecx"
 "	      004d3e58    jle near ptr 004D3E7Dh"
 );
 // LINE 1691:
 	asm( 
-"	      004d3e5e    mov eax,[ebp+0Ch]"
-"	      004d3e61    mov ecx,[ebp-4]"
+"	      004d3e5e    mov eax,x"
+"	      004d3e61    mov ecx,vert"
 "	      004d3e64    add [ecx],eax"
 );
 // LINE 1692:
 	asm( 
-"	      004d3e66    mov eax,[ebp+10h]"
-"	      004d3e69    mov ecx,[ebp-4]"
+"	      004d3e66    mov eax,y"
+"	      004d3e69    mov ecx,vert"
 "	      004d3e6c    add [ecx+4],eax"
 );
 // LINE 1693:
 	asm( 
-"	      004d3e6f    mov eax,[ebp+14h]"
-"	      004d3e72    mov ecx,[ebp-4]"
+"	      004d3e6f    mov eax,z"
+"	      004d3e72    mov ecx,vert"
 "	      004d3e75    add [ecx+8],eax"
 );
 // LINE 1694:
@@ -3746,20 +3746,20 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 );
 // LINE 1697:
 	asm( 
-"	      004d3e7d    mov eax,[ebp+0Ch]"
-"	      004d3e80    mov ecx,[ebp-0Ch]"
+"	      004d3e7d    mov eax,x"
+"	      004d3e80    mov ecx,oh"
 "	      004d3e83    add [ecx+18h],eax"
 );
 // LINE 1698:
 	asm( 
-"	      004d3e86    mov eax,[ebp+10h]"
-"	      004d3e89    mov ecx,[ebp-0Ch]"
+"	      004d3e86    mov eax,y"
+"	      004d3e89    mov ecx,oh"
 "	      004d3e8c    add [ecx+1Ch],eax"
 );
 // LINE 1699:
 	asm( 
-"	      004d3e8f    mov eax,[ebp+14h]"
-"	      004d3e92    mov ecx,[ebp-0Ch]"
+"	      004d3e8f    mov eax,z"
+"	      004d3e92    mov ecx,oh"
 "	      004d3e95    add [ecx+20h],eax"
 );
 // LINE 1701:
@@ -3790,39 +3790,39 @@ int32_t VRObjGetHeight(int32_t obj) {
 );
 // LINE 1713:
 	asm( 
-"	      004d3ea6    mov eax,[ebp+8]"
-"	      004d3ea9    mov [ebp-0Ch],eax"
+"	      004d3ea6    mov eax,obj"
+"	      004d3ea9    mov oh,eax"
 );
 // LINE 1716:
 	asm( 
-"	      004d3eac    mov dword ptr [ebp-10h],80000000h"
+"	      004d3eac    mov maxy,80000000h"
 );
 // LINE 1718:
 	asm( 
-"	      004d3eb3    mov dword ptr [ebp-8],0"
-"	      004d3eba    mov eax,[ebp-0Ch]"
+"	      004d3eb3    mov i,0"
+"	      004d3eba    mov eax,oh"
 "	      004d3ebd    mov eax,[eax+8]"
-"	      004d3ec0    mov [ebp-4],eax"
+"	      004d3ec0    mov vert,eax"
 "	      004d3ec3    jmp near ptr 004D3ECFh"
-"	      004d3ec8    inc dword ptr [ebp-8]"
-"	      004d3ecb    add dword ptr [ebp-4],0Ch"
-"	      004d3ecf    mov eax,[ebp-0Ch]"
-"	      004d3ed2    mov ecx,[ebp-8]"
+"	      004d3ec8    inc i"
+"	      004d3ecb    add vert,0Ch"
+"	      004d3ecf    mov eax,oh"
+"	      004d3ed2    mov ecx,i"
 "	      004d3ed5    cmp [eax+4],ecx"
 "	      004d3ed8    jle near ptr 004D3EFBh"
 );
 // LINE 1720:
 	asm( 
-"	      004d3ede    mov eax,[ebp-4]"
-"	      004d3ee1    mov ecx,[ebp-10h]"
+"	      004d3ede    mov eax,vert"
+"	      004d3ee1    mov ecx,maxy"
 "	      004d3ee4    cmp [eax+4],ecx"
 "	      004d3ee7    jle near ptr 004D3EF6h"
 );
 // LINE 1721:
 	asm( 
-"	      004d3eed    mov eax,[ebp-4]"
+"	      004d3eed    mov eax,vert"
 "	      004d3ef0    mov eax,[eax+4]"
-"	      004d3ef3    mov [ebp-10h],eax"
+"	      004d3ef3    mov maxy,eax"
 );
 // LINE 1722:
 	asm( 
@@ -3830,7 +3830,7 @@ int32_t VRObjGetHeight(int32_t obj) {
 );
 // LINE 1724:
 	asm( 
-"	      004d3efb    mov eax,[ebp-10h]"
+"	      004d3efb    mov eax,maxy"
 "	      004d3efe    jmp near ptr 004D3F03h"
 );
 // LINE 1725:
@@ -3865,18 +3865,18 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 );
 // LINE 1740:
 	asm( 
-"	      004d3f11    mov eax,[ebp+8]"
-"	      004d3f14    mov [ebp-1Ch],eax"
+"	      004d3f11    mov eax,obj"
+"	      004d3f14    mov oh,eax"
 );
 // LINE 1747:
 	asm( 
-"	      004d3f17    mov eax,[ebp-1Ch]"
+"	      004d3f17    mov eax,oh"
 "	      004d3f1a    mov eax,[eax+4Ch]"
-"	      004d3f1d    mov [ebp-0Ch],eax"
+"	      004d3f1d    mov faceptr,eax"
 );
 // LINE 1749:
 	asm( 
-"	      004d3f20    mov eax,[ebp-0Ch]"
+"	      004d3f20    mov eax,faceptr"
 "	      004d3f23    test byte ptr [eax+8],4"
 "	      004d3f27    jne near ptr 004D3F32h"
 );
@@ -3886,114 +3886,114 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 );
 // LINE 1752:
 	asm( 
-"	      004d3f32    mov eax,[ebp-0Ch]"
-"	      004d3f35    mov [ebp-20h],eax"
+"	      004d3f32    mov eax,faceptr"
+"	      004d3f35    mov dataptr,eax"
 );
 // LINE 1753:
 	asm( 
-"	      004d3f38    add dword ptr [ebp-20h],30h"
+"	      004d3f38    add dataptr,30h"
 );
 // LINE 1754:
 	asm( 
-"	      004d3f3c    mov eax,[ebp-20h]"
-"	      004d3f3f    mov [ebp-14h],eax"
+"	      004d3f3c    mov eax,dataptr"
+"	      004d3f3f    mov vertno,eax"
 );
 // LINE 1758:
 	asm( 
-"	      004d3f42    mov eax,[ebp-14h]"
+"	      004d3f42    mov eax,vertno"
 "	      004d3f45    mov eax,[eax]"
 "	      004d3f47    shr eax,4"
 "	      004d3f4a    lea eax,[eax+eax*2]"
 "	      004d3f4d    shl eax,2"
-"	      004d3f50    mov ecx,[ebp-1Ch]"
+"	      004d3f50    mov ecx,oh"
 "	      004d3f53    add eax,[ecx+8]"
-"	      004d3f56    mov [ebp-8],eax"
+"	      004d3f56    mov vert1,eax"
 );
 // LINE 1762:
 	asm( 
-"	      004d3f59    add dword ptr [ebp-14h],4"
+"	      004d3f59    add vertno,4"
 );
 // LINE 1764:
 	asm( 
-"	      004d3f5d    mov eax,[ebp-14h]"
+"	      004d3f5d    mov eax,vertno"
 "	      004d3f60    mov eax,[eax]"
 "	      004d3f62    shr eax,4"
 "	      004d3f65    lea eax,[eax+eax*2]"
 "	      004d3f68    shl eax,2"
-"	      004d3f6b    mov ecx,[ebp-1Ch]"
+"	      004d3f6b    mov ecx,oh"
 "	      004d3f6e    add eax,[ecx+8]"
-"	      004d3f71    mov [ebp-10h],eax"
+"	      004d3f71    mov vert2,eax"
 );
 // LINE 1770:
 	asm( 
-"	      004d3f74    mov eax,[ebp-10h]"
+"	      004d3f74    mov eax,vert2"
 "	      004d3f77    mov eax,[eax]"
-"	      004d3f79    mov ecx,[ebp-8]"
+"	      004d3f79    mov ecx,vert1"
 "	      004d3f7c    sub eax,[ecx]"
-"	      004d3f7e    mov [ebp-18h],eax"
+"	      004d3f7e    mov xdiff,eax"
 );
 // LINE 1771:
 	asm( 
-"	      004d3f81    mov eax,[ebp-10h]"
+"	      004d3f81    mov eax,vert2"
 "	      004d3f84    mov eax,[eax+4]"
-"	      004d3f87    mov ecx,[ebp-8]"
+"	      004d3f87    mov ecx,vert1"
 "	      004d3f8a    sub eax,[ecx+4]"
-"	      004d3f8d    mov [ebp-4],eax"
+"	      004d3f8d    mov ydiff,eax"
 );
 // LINE 1775:
 	asm( 
-"	      004d3f90    mov eax,[ebp+0Ch]"
-"	      004d3f93    mov ecx,[ebp-8]"
+"	      004d3f90    mov eax,x"
+"	      004d3f93    mov ecx,vert1"
 "	      004d3f96    mov [ecx],eax"
 );
 // LINE 1776:
 	asm( 
-"	      004d3f98    mov eax,[ebp+10h]"
-"	      004d3f9b    mov ecx,[ebp-8]"
+"	      004d3f98    mov eax,y"
+"	      004d3f9b    mov ecx,vert1"
 "	      004d3f9e    mov [ecx+4],eax"
 );
 // LINE 1777:
 	asm( 
-"	      004d3fa1    mov eax,[ebp+14h]"
-"	      004d3fa4    mov ecx,[ebp-8]"
+"	      004d3fa1    mov eax,z"
+"	      004d3fa4    mov ecx,vert1"
 "	      004d3fa7    mov [ecx+8],eax"
 );
 // LINE 1779:
 	asm( 
-"	      004d3faa    mov eax,[ebp+0Ch]"
-"	      004d3fad    add eax,[ebp-18h]"
-"	      004d3fb0    mov ecx,[ebp-10h]"
+"	      004d3faa    mov eax,x"
+"	      004d3fad    add eax,xdiff"
+"	      004d3fb0    mov ecx,vert2"
 "	      004d3fb3    mov [ecx],eax"
 );
 // LINE 1780:
 	asm( 
-"	      004d3fb5    mov eax,[ebp+10h]"
-"	      004d3fb8    add eax,[ebp-4]"
-"	      004d3fbb    mov ecx,[ebp-10h]"
+"	      004d3fb5    mov eax,y"
+"	      004d3fb8    add eax,ydiff"
+"	      004d3fbb    mov ecx,vert2"
 "	      004d3fbe    mov [ecx+4],eax"
 );
 // LINE 1781:
 	asm( 
-"	      004d3fc1    mov eax,[ebp+14h]"
-"	      004d3fc4    mov ecx,[ebp-10h]"
+"	      004d3fc1    mov eax,z"
+"	      004d3fc4    mov ecx,vert2"
 "	      004d3fc7    mov [ecx+8],eax"
 );
 // LINE 1783:
 	asm( 
-"	      004d3fca    mov eax,[ebp+0Ch]"
-"	      004d3fcd    mov ecx,[ebp-1Ch]"
+"	      004d3fca    mov eax,x"
+"	      004d3fcd    mov ecx,oh"
 "	      004d3fd0    mov [ecx+18h],eax"
 );
 // LINE 1784:
 	asm( 
-"	      004d3fd3    mov eax,[ebp+10h]"
-"	      004d3fd6    mov ecx,[ebp-1Ch]"
+"	      004d3fd3    mov eax,y"
+"	      004d3fd6    mov ecx,oh"
 "	      004d3fd9    mov [ecx+1Ch],eax"
 );
 // LINE 1785:
 	asm( 
-"	      004d3fdc    mov eax,[ebp+14h]"
-"	      004d3fdf    mov ecx,[ebp-1Ch]"
+"	      004d3fdc    mov eax,z"
+"	      004d3fdf    mov ecx,oh"
 "	      004d3fe2    mov [ecx+20h],eax"
 );
 // LINE 1787:
@@ -4023,7 +4023,7 @@ struct _BSPtree* ReadTree() {
 // LINE 1803:
 	asm( 
 "	      004d3ff3    push 2"
-"	      004d3ff5    lea eax,[ebp-8]"
+"	      004d3ff5    lea eax,FaceIndex"
 "	      004d3ff8    push eax"
 "	      004d3ff9    call 004D5F1Eh"
 "	      004d3ffe    add esp,8"
@@ -4038,7 +4038,7 @@ struct _BSPtree* ReadTree() {
 // LINE 1811:
 	asm( 
 "	      004d4014    mov ax,ds:[606A68h]"
-"	      004d401a    mov [ebp-4],ax"
+"	      004d401a    mov ThisIndex,ax"
 );
 // LINE 1812:
 	asm( 
@@ -4140,9 +4140,9 @@ void NormalizeObj(struct ObjectHdr* obj) {
 );
 // LINE 1848:
 	asm( 
-"	      004d40ea    mov eax,[ebp+8]"
+"	      004d40ea    mov eax,obj"
 "	      004d40ed    add eax,18h"
-"	      004d40f0    lea ecx,[ebp-10h]"
+"	      004d40f0    lea ecx,c.x"
 "	      004d40f3    mov edx,[eax]"
 "	      004d40f5    mov [ecx],edx"
 "	      004d40f7    mov edx,[eax+4]"
@@ -4152,57 +4152,57 @@ void NormalizeObj(struct ObjectHdr* obj) {
 );
 // LINE 1849:
 	asm( 
-"	      004d4103    mov eax,[ebp+8]"
+"	      004d4103    mov eax,obj"
 "	      004d4106    mov eax,[eax+8]"
-"	      004d4109    mov [ebp-4],eax"
+"	      004d4109    mov s,eax"
 );
 // LINE 1850:
 	asm( 
-"	      004d410c    mov eax,[ebp+8]"
+"	      004d410c    mov eax,obj"
 "	      004d410f    mov eax,[eax+8]"
-"	      004d4112    mov [ebp-14h],eax"
+"	      004d4112    mov d,eax"
 );
 // LINE 1851:
 	asm( 
-"	      004d4115    mov dword ptr [ebp-18h],0"
+"	      004d4115    mov i,0"
 "	      004d411c    jmp near ptr 004D4124h"
-"	      004d4121    inc dword ptr [ebp-18h]"
-"	      004d4124    mov eax,[ebp+8]"
-"	      004d4127    mov ecx,[ebp-18h]"
+"	      004d4121    inc i"
+"	      004d4124    mov eax,obj"
+"	      004d4127    mov ecx,i"
 "	      004d412a    cmp [eax+4],ecx"
 "	      004d412d    jle near ptr 004D416Bh"
 );
 // LINE 1852:
 	asm( 
-"	      004d4133    mov eax,[ebp-4]"
+"	      004d4133    mov eax,s"
 "	      004d4136    mov eax,[eax]"
-"	      004d4138    sub eax,[ebp-10h]"
-"	      004d413b    mov ecx,[ebp-14h]"
+"	      004d4138    sub eax,c.x"
+"	      004d413b    mov ecx,d"
 "	      004d413e    mov [ecx],eax"
 );
 // LINE 1853:
 	asm( 
-"	      004d4140    mov eax,[ebp-4]"
+"	      004d4140    mov eax,s"
 "	      004d4143    mov eax,[eax+4]"
-"	      004d4146    sub eax,[ebp-0Ch]"
-"	      004d4149    mov ecx,[ebp-14h]"
+"	      004d4146    sub eax,c.y"
+"	      004d4149    mov ecx,d"
 "	      004d414c    mov [ecx+4],eax"
 );
 // LINE 1854:
 	asm( 
-"	      004d414f    mov eax,[ebp-4]"
+"	      004d414f    mov eax,s"
 "	      004d4152    mov eax,[eax+8]"
-"	      004d4155    sub eax,[ebp-8]"
-"	      004d4158    mov ecx,[ebp-14h]"
+"	      004d4155    sub eax,c.z"
+"	      004d4158    mov ecx,d"
 "	      004d415b    mov [ecx+8],eax"
 );
 // LINE 1855:
 	asm( 
-"	      004d415e    add dword ptr [ebp-14h],0Ch"
+"	      004d415e    add d,0Ch"
 );
 // LINE 1856:
 	asm( 
-"	      004d4162    add dword ptr [ebp-4],0Ch"
+"	      004d4162    add s,0Ch"
 );
 // LINE 1857:
 	asm( 
@@ -4210,15 +4210,15 @@ void NormalizeObj(struct ObjectHdr* obj) {
 );
 // LINE 1858:
 	asm( 
-"	      004d416b    mov eax,[ebp+8]"
+"	      004d416b    mov eax,obj"
 "	      004d416e    mov dword ptr [eax+20h],0"
-"	      004d4175    mov eax,[ebp+8]"
+"	      004d4175    mov eax,obj"
 "	      004d4178    mov eax,[eax+20h]"
-"	      004d417b    mov ecx,[ebp+8]"
+"	      004d417b    mov ecx,obj"
 "	      004d417e    mov [ecx+1Ch],eax"
-"	      004d4181    mov eax,[ebp+8]"
+"	      004d4181    mov eax,obj"
 "	      004d4184    mov eax,[eax+1Ch]"
-"	      004d4187    mov ecx,[ebp+8]"
+"	      004d4187    mov ecx,obj"
 "	      004d418a    mov [ecx+18h],eax"
 );
 // LINE 1859:
@@ -4256,80 +4256,80 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 );
 // LINE 1880:
 	asm( 
-"	      004d419b    mov eax,[ebp+8]"
-"	      004d419e    mov [ebp-44h],eax"
+"	      004d419b    mov eax,g"
+"	      004d419e    mov geo,eax"
 );
 // LINE 1881:
 	asm( 
-"	      004d41a1    mov eax,[ebp+0Ch]"
-"	      004d41a4    mov [ebp-40h],eax"
+"	      004d41a1    mov eax,b"
+"	      004d41a4    mov bmp,eax"
 );
 // LINE 1882:
 	asm( 
-"	      004d41a7    mov dword ptr [ebp-34h],0"
+"	      004d41a7    mov i,0"
 "	      004d41ae    jmp near ptr 004D41B6h"
-"	      004d41b3    inc dword ptr [ebp-34h]"
-"	      004d41b6    mov eax,[ebp-44h]"
-"	      004d41b9    mov ecx,[ebp-34h]"
+"	      004d41b3    inc i"
+"	      004d41b6    mov eax,geo"
+"	      004d41b9    mov ecx,i"
 "	      004d41bc    cmp [eax+10h],ecx"
 "	      004d41bf    jle near ptr 004D4328h"
 );
 // LINE 1883:
 	asm( 
-"	      004d41c5    mov eax,[ebp-34h]"
-"	      004d41c8    mov ecx,[ebp-44h]"
+"	      004d41c5    mov eax,i"
+"	      004d41c8    mov ecx,geo"
 "	      004d41cb    mov eax,[ecx+eax*4+18h]"
-"	      004d41cf    mov [ebp-4Ch],eax"
+"	      004d41cf    mov obj,eax"
 );
 // LINE 1884:
 	asm( 
-"	      004d41d2    lea eax,[ebp-28h]"
+"	      004d41d2    lea eax,oinfo.Faces"
 "	      004d41d5    push eax"
-"	      004d41d6    mov eax,[ebp-4Ch]"
+"	      004d41d6    mov eax,obj"
 "	      004d41d9    push eax"
 "	      004d41da    call 004D8859h"
 "	      004d41df    add esp,8"
 );
 // LINE 1885:
 	asm( 
-"	      004d41e2    mov eax,[ebp-4Ch]"
+"	      004d41e2    mov eax,obj"
 "	      004d41e5    push eax"
 "	      004d41e6    call 004D85CDh"
 "	      004d41eb    add esp,4"
-"	      004d41ee    mov [ebp-2Ch],eax"
+"	      004d41ee    mov face,eax"
 );
 // LINE 1886:
 	asm( 
-"	      004d41f1    mov dword ptr [ebp-38h],0"
+"	      004d41f1    mov j,0"
 "	      004d41f8    jmp near ptr 004D4200h"
-"	      004d41fd    inc dword ptr [ebp-38h]"
-"	      004d4200    mov eax,[ebp-38h]"
-"	      004d4203    cmp [ebp-28h],eax"
+"	      004d41fd    inc j"
+"	      004d4200    mov eax,j"
+"	      004d4203    cmp oinfo.Faces,eax"
 "	      004d4206    jle near ptr 004D4323h"
 );
 // LINE 1887:
 	asm( 
-"	      004d420c    mov eax,[ebp-2Ch]"
-"	      004d420f    mov [ebp-30h],eax"
+"	      004d420c    mov eax,face"
+"	      004d420f    mov fh,eax"
 );
 // LINE 1893:
 	asm( 
-"	      004d4212    mov eax,[ebp-30h]"
+"	      004d4212    mov eax,fh"
 "	      004d4215    test byte ptr [eax+8],1"
 "	      004d4219    je near ptr 004D422Ch"
-"	      004d421f    mov eax,[ebp-30h]"
+"	      004d421f    mov eax,fh"
 "	      004d4222    test byte ptr [eax+8],4"
 "	      004d4226    je near ptr 004D4260h"
-"	      004d422c    mov eax,[ebp-30h]"
+"	      004d422c    mov eax,fh"
 "	      004d422f    test byte ptr [eax+9],8"
 "	      004d4233    jne near ptr 004D4260h"
-"	      004d4239    mov eax,[ebp-30h]"
+"	      004d4239    mov eax,fh"
 "	      004d423c    test byte ptr [eax+9],80h"
 "	      004d4240    jne near ptr 004D4260h"
-"	      004d4246    mov eax,[ebp-30h]"
+"	      004d4246    mov eax,fh"
 "	      004d4249    test byte ptr [eax+0Ah],1"
 "	      004d424d    jne near ptr 004D4260h"
-"	      004d4253    mov eax,[ebp-30h]"
+"	      004d4253    mov eax,fh"
 "	      004d4256    test byte ptr [eax+9],40h"
 "	      004d425a    je near ptr 004D4265h"
 );
@@ -4339,33 +4339,33 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 );
 // LINE 1895:
 	asm( 
-"	      004d4265    mov eax,[ebp-2Ch]"
+"	      004d4265    mov eax,face"
 "	      004d4268    push eax"
 "	      004d4269    call 004D8610h"
 "	      004d426e    add esp,4"
-"	      004d4271    mov [ebp-48h],eax"
+"	      004d4271    mov k,eax"
 );
 // LINE 1896:
 	asm( 
-"	      004d4274    mov eax,[ebp-48h]"
+"	      004d4274    mov eax,k"
 "	      004d4277    sar eax,10h"
-"	      004d427a    mov [ebp-3Ch],eax"
+"	      004d427a    mov hiword,eax"
 );
 // LINE 1897:
 	asm( 
-"	      004d427d    mov eax,[ebp-48h]"
+"	      004d427d    mov eax,k"
 "	      004d4280    and eax,0FFFFh"
-"	      004d4285    mov [ebp-4],eax"
+"	      004d4285    mov loword,eax"
 );
 // LINE 1901:
 	asm( 
-"	      004d4288    cmp dword ptr [ebp-3Ch],0"
+"	      004d4288    cmp hiword,0"
 "	      004d428c    je near ptr 004D42D5h"
 );
 // LINE 1903:
 	asm( 
-"	      004d4292    mov eax,[ebp-40h]"
-"	      004d4295    mov ecx,[ebp-3Ch]"
+"	      004d4292    mov eax,bmp"
+"	      004d4295    mov ecx,hiword"
 "	      004d4298    cmp [eax+10h],ecx"
 "	      004d429b    jge near ptr 004D42B2h"
 );
@@ -4380,14 +4380,14 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 );
 // LINE 1909:
 	asm( 
-"	      004d42b2    mov eax,[ebp-4]"
+"	      004d42b2    mov eax,loword"
 "	      004d42b5    push eax"
-"	      004d42b6    mov eax,[ebp-3Ch]"
+"	      004d42b6    mov eax,hiword"
 "	      004d42b9    lea eax,[eax+eax*2]"
-"	      004d42bc    mov ecx,[ebp-40h]"
+"	      004d42bc    mov ecx,bmp"
 "	      004d42bf    mov eax,[ecx+eax*4+20h]"
 "	      004d42c3    push eax"
-"	      004d42c4    mov eax,[ebp-30h]"
+"	      004d42c4    mov eax,fh"
 "	      004d42c7    push eax"
 "	      004d42c8    call 004D4337h"
 "	      004d42cd    add esp,0Ch"
@@ -4398,8 +4398,8 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 );
 // LINE 1913:
 	asm( 
-"	      004d42d5    mov eax,[ebp-40h]"
-"	      004d42d8    mov ecx,[ebp-48h]"
+"	      004d42d5    mov eax,bmp"
+"	      004d42d8    mov ecx,k"
 "	      004d42db    cmp [eax+10h],ecx"
 "	      004d42de    jge near ptr 004D42F5h"
 );
@@ -4414,12 +4414,12 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 );
 // LINE 1917:
 	asm( 
-"	      004d42f5    mov eax,[ebp-48h]"
+"	      004d42f5    mov eax,k"
 "	      004d42f8    lea eax,[eax+eax*2]"
-"	      004d42fb    mov ecx,[ebp-40h]"
+"	      004d42fb    mov ecx,bmp"
 "	      004d42fe    mov eax,[ecx+eax*4+20h]"
 "	      004d4302    push eax"
-"	      004d4303    mov eax,[ebp-2Ch]"
+"	      004d4303    mov eax,face"
 "	      004d4306    push eax"
 "	      004d4307    call 004D698Dh"
 "	      004d430c    add esp,8"
@@ -4427,11 +4427,11 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 // LINE 1919:
 next_face:
 	asm( 
-"	      004d430f    mov eax,[ebp-2Ch]"
+"	      004d430f    mov eax,face"
 "	      004d4312    push eax"
 "	      004d4313    call 004D85F8h"
 "	      004d4318    add esp,4"
-"	      004d431b    mov [ebp-2Ch],eax"
+"	      004d431b    mov face,eax"
 );
 // LINE 1920:
 	asm( 
@@ -4475,61 +4475,61 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 );
 // LINE 1937:
 	asm( 
-"	      004d4340    mov eax,[ebp+8]"
+"	      004d4340    mov eax,fh"
 "	      004d4343    mov eax,[eax+20h]"
-"	      004d4346    mov [ebp-4],eax"
+"	      004d4346    mov mv,eax"
 );
 // LINE 1938:
 	asm( 
-"	      004d4349    mov eax,[ebp+8]"
+"	      004d4349    mov eax,fh"
 "	      004d434c    mov eax,[eax+28h]"
-"	      004d434f    mov [ebp-8],eax"
+"	      004d434f    mov barry,eax"
 );
 // LINE 1940:
 	asm( 
-"	      004d4352    mov eax,[ebp+0Ch]"
+"	      004d4352    mov eax,bmp"
 "	      004d4355    mov eax,[eax]"
-"	      004d4357    mov [ebp-0Ch],eax"
+"	      004d4357    mov w,eax"
 );
 // LINE 1941:
 	asm( 
-"	      004d435a    mov eax,[ebp+0Ch]"
+"	      004d435a    mov eax,bmp"
 "	      004d435d    mov eax,[eax+4]"
-"	      004d4360    mov [ebp-10h],eax"
+"	      004d4360    mov h,eax"
 );
 // LINE 1946:
 	asm( 
-"	      004d4363    mov dword ptr [ebp-14h],0"
+"	      004d4363    mov i,0"
 "	      004d436a    jmp near ptr 004D4372h"
-"	      004d436f    inc dword ptr [ebp-14h]"
-"	      004d4372    mov eax,[ebp+8]"
-"	      004d4375    mov ecx,[ebp-14h]"
+"	      004d436f    inc i"
+"	      004d4372    mov eax,fh"
+"	      004d4375    mov ecx,i"
 "	      004d4378    cmp [eax+4],ecx"
 "	      004d437b    jle near ptr 004D43ACh"
 );
 // LINE 1948:
 	asm( 
-"	      004d4381    mov eax,[ebp-8]"
+"	      004d4381    mov eax,barry"
 "	      004d4384    mov eax,[eax]"
-"	      004d4386    imul eax,[ebp-0Ch]"
-"	      004d438a    mov ecx,[ebp-4]"
+"	      004d4386    imul eax,w"
+"	      004d438a    mov ecx,mv"
 "	      004d438d    mov [ecx],eax"
 );
 // LINE 1949:
 	asm( 
-"	      004d438f    mov eax,[ebp-8]"
+"	      004d438f    mov eax,barry"
 "	      004d4392    mov eax,[eax+4]"
-"	      004d4395    imul eax,[ebp-10h]"
-"	      004d4399    mov ecx,[ebp-4]"
+"	      004d4395    imul eax,h"
+"	      004d4399    mov ecx,mv"
 "	      004d439c    mov [ecx+4],eax"
 );
 // LINE 1950:
 	asm( 
-"	      004d439f    add dword ptr [ebp-4],8"
+"	      004d439f    add mv,8"
 );
 // LINE 1951:
 	asm( 
-"	      004d43a3    add dword ptr [ebp-8],8"
+"	      004d43a3    add barry,8"
 );
 // LINE 1952:
 	asm( 
@@ -4537,11 +4537,11 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 );
 // LINE 1958:
 	asm( 
-"	      004d43ac    mov eax,[ebp+10h]"
+"	      004d43ac    mov eax,tileid"
 "	      004d43af    shl eax,3"
-"	      004d43b2    add eax,[ebp+0Ch]"
+"	      004d43b2    add eax,bmp"
 "	      004d43b5    add eax,0Ch"
-"	      004d43b8    mov ecx,[ebp+8]"
+"	      004d43b8    mov ecx,fh"
 "	      004d43bb    mov [ecx+24h],eax"
 );
 // LINE 1959:
@@ -4569,14 +4569,14 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 );
 // LINE 1975:
 	asm( 
-"	      004d43cc    mov eax,[ebp+0Ch]"
-"	      004d43cf    add eax,[ebp+8]"
+"	      004d43cc    mov eax,d2"
+"	      004d43cf    add eax,xf"
 "	      004d43d2    add eax,0A0h"
 "	      004d43d7    push eax"
 "	      004d43d8    call 00572C10h"
 "	      004d43dd    add esp,4"
-"	      004d43e0    mov [ebp-4],eax"
-"	      004d43e3    cmp dword ptr [ebp-4],0"
+"	      004d43e0    mov mp,eax"
+"	      004d43e3    cmp mp,0"
 "	      004d43e7    jne near ptr 004D43FEh"
 );
 // LINE 1976:
@@ -4590,48 +4590,48 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 );
 // LINE 1982:
 	asm( 
-"	      004d43fe    mov eax,[ebp-4]"
+"	      004d43fe    mov eax,mp"
 "	      004d4401    mov dword ptr [eax],0"
 );
 // LINE 1983:
 	asm( 
-"	      004d4407    mov eax,[ebp-4]"
+"	      004d4407    mov eax,mp"
 "	      004d440a    add eax,30h"
 "	      004d440d    and eax,0FFFFFFF0h"
-"	      004d4410    mov ecx,[ebp-4]"
+"	      004d4410    mov ecx,mp"
 "	      004d4413    mov [ecx+8],eax"
 );
 // LINE 1984:
 	asm( 
-"	      004d4416    mov eax,[ebp-4]"
+"	      004d4416    mov eax,mp"
 "	      004d4419    mov eax,[eax+8]"
-"	      004d441c    add eax,[ebp+8]"
+"	      004d441c    add eax,xf"
 "	      004d441f    add eax,10h"
 "	      004d4422    and eax,0FFFFFFF0h"
-"	      004d4425    mov ecx,[ebp-4]"
+"	      004d4425    mov ecx,mp"
 "	      004d4428    mov [ecx+0Ch],eax"
 );
 // LINE 1985:
 	asm( 
-"	      004d442b    mov eax,[ebp-4]"
+"	      004d442b    mov eax,mp"
 "	      004d442e    mov eax,[eax+0Ch]"
-"	      004d4431    mov ecx,[ebp-4]"
+"	      004d4431    mov ecx,mp"
 "	      004d4434    mov [ecx+18h],eax"
 );
 // LINE 1986:
 	asm( 
-"	      004d4437    mov eax,[ebp-4]"
+"	      004d4437    mov eax,mp"
 "	      004d443a    mov eax,[eax+0Ch]"
-"	      004d443d    add eax,[ebp+0Ch]"
+"	      004d443d    add eax,d2"
 "	      004d4440    add eax,10h"
 "	      004d4443    and eax,0FFFFFFF0h"
-"	      004d4446    mov ecx,[ebp-4]"
+"	      004d4446    mov ecx,mp"
 "	      004d4449    mov [ecx+1Ch],eax"
 );
 // LINE 1988:
 	asm( 
-"	      004d444c    mov eax,[ebp+0Ch]"
-"	      004d444f    add eax,[ebp+8]"
+"	      004d444c    mov eax,d2"
+"	      004d444f    add eax,xf"
 "	      004d4452    add eax,0A0h"
 "	      004d4457    add ds:[59B524h],eax"
 "	      004d445d    mov eax,ds:[59B524h]"
@@ -4642,14 +4642,14 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 );
 // LINE 1989:
 	asm( 
-"	      004d4478    mov eax,[ebp+0Ch]"
-"	      004d447b    add eax,[ebp+8]"
+"	      004d4478    mov eax,d2"
+"	      004d447b    add eax,xf"
 "	      004d447e    add eax,0A0h"
 "	      004d4483    add ds:[59B530h],eax"
 );
 // LINE 1992:
 	asm( 
-"	      004d4489    mov eax,[ebp-4]"
+"	      004d4489    mov eax,mp"
 "	      004d448c    push eax"
 "	      004d448d    call 004D8491h"
 "	      004d4492    add esp,4"
@@ -4667,7 +4667,7 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 );
 // LINE 1996:
 	asm( 
-"	      004d44ae    mov eax,[ebp-4]"
+"	      004d44ae    mov eax,mp"
 "	      004d44b1    jmp near ptr 004D44B6h"
 );
 // LINE 1997:
@@ -4692,14 +4692,14 @@ void VRFreeMemPool(struct VRMemPool* mp) {
 );
 // LINE 2010:
 	asm( 
-"	      004d44c1    mov eax,[ebp+8]"
+"	      004d44c1    mov eax,mp"
 "	      004d44c4    push eax"
 "	      004d44c5    call 004D84B9h"
 "	      004d44ca    add esp,4"
 );
 // LINE 2011:
 	asm( 
-"	      004d44cd    mov eax,[ebp+8]"
+"	      004d44cd    mov eax,mp"
 "	      004d44d0    push eax"
 "	      004d44d1    call 005737A0h"
 "	      004d44d6    add esp,4"
@@ -4737,186 +4737,186 @@ void FaceCalcNormal(struct Point3d* v0, struct Point3d* v1, struct Point3d* vlst
 );
 // LINE 2034:
 	asm( 
-"	      004d44ea    mov eax,[ebp+8]"
+"	      004d44ea    mov eax,v0"
 "	      004d44ed    mov eax,[eax]"
 "	      004d44ef    mov [ebp-9Ch],eax"
 "	      004d44f5    fild dword ptr [ebp-9Ch]"
 "	      004d44fb    fdiv qword ptr ds:[592460h]"
-"	      004d4501    fstp qword ptr [ebp-48h]"
+"	      004d4501    fstp fv0.x"
 );
 // LINE 2035:
 	asm( 
-"	      004d4504    mov eax,[ebp+8]"
+"	      004d4504    mov eax,v0"
 "	      004d4507    mov eax,[eax+4]"
 "	      004d450a    mov [ebp-0A0h],eax"
 "	      004d4510    fild dword ptr [ebp-0A0h]"
 "	      004d4516    fdiv qword ptr ds:[592460h]"
-"	      004d451c    fstp qword ptr [ebp-40h]"
+"	      004d451c    fstp fv0.y"
 );
 // LINE 2036:
 	asm( 
-"	      004d451f    mov eax,[ebp+8]"
+"	      004d451f    mov eax,v0"
 "	      004d4522    mov eax,[eax+8]"
 "	      004d4525    mov [ebp-0A4h],eax"
 "	      004d452b    fild dword ptr [ebp-0A4h]"
 "	      004d4531    fdiv qword ptr ds:[592460h]"
-"	      004d4537    fstp qword ptr [ebp-38h]"
+"	      004d4537    fstp fv0.z"
 );
 // LINE 2037:
 	asm( 
-"	      004d453a    mov eax,[ebp+0Ch]"
+"	      004d453a    mov eax,v1"
 "	      004d453d    mov eax,[eax]"
 "	      004d453f    mov [ebp-0A8h],eax"
 "	      004d4545    fild dword ptr [ebp-0A8h]"
 "	      004d454b    fdiv qword ptr ds:[592460h]"
-"	      004d4551    fstp qword ptr [ebp-68h]"
+"	      004d4551    fstp fv1.x"
 );
 // LINE 2038:
 	asm( 
-"	      004d4554    mov eax,[ebp+0Ch]"
+"	      004d4554    mov eax,v1"
 "	      004d4557    mov eax,[eax+4]"
 "	      004d455a    mov [ebp-0ACh],eax"
 "	      004d4560    fild dword ptr [ebp-0ACh]"
 "	      004d4566    fdiv qword ptr ds:[592460h]"
-"	      004d456c    fstp qword ptr [ebp-60h]"
+"	      004d456c    fstp fv1.y"
 );
 // LINE 2039:
 	asm( 
-"	      004d456f    mov eax,[ebp+0Ch]"
+"	      004d456f    mov eax,v1"
 "	      004d4572    mov eax,[eax+8]"
 "	      004d4575    mov [ebp-0B0h],eax"
 "	      004d457b    fild dword ptr [ebp-0B0h]"
 "	      004d4581    fdiv qword ptr ds:[592460h]"
-"	      004d4587    fstp qword ptr [ebp-58h]"
+"	      004d4587    fstp fv1.z"
 );
 // LINE 2040:
 	asm( 
-"	      004d458a    mov eax,[ebp+10h]"
+"	      004d458a    mov eax,vlst"
 "	      004d458d    mov eax,[eax]"
 "	      004d458f    mov [ebp-0B4h],eax"
 "	      004d4595    fild dword ptr [ebp-0B4h]"
 "	      004d459b    fdiv qword ptr ds:[592460h]"
-"	      004d45a1    fstp qword ptr [ebp-98h]"
+"	      004d45a1    fstp fvlst.x"
 );
 // LINE 2041:
 	asm( 
-"	      004d45a7    mov eax,[ebp+10h]"
+"	      004d45a7    mov eax,vlst"
 "	      004d45aa    mov eax,[eax+4]"
 "	      004d45ad    mov [ebp-0B8h],eax"
 "	      004d45b3    fild dword ptr [ebp-0B8h]"
 "	      004d45b9    fdiv qword ptr ds:[592460h]"
-"	      004d45bf    fstp qword ptr [ebp-90h]"
+"	      004d45bf    fstp fvlst.y"
 );
 // LINE 2042:
 	asm( 
-"	      004d45c5    mov eax,[ebp+10h]"
+"	      004d45c5    mov eax,vlst"
 "	      004d45c8    mov eax,[eax+8]"
 "	      004d45cb    mov [ebp-0BCh],eax"
 "	      004d45d1    fild dword ptr [ebp-0BCh]"
 "	      004d45d7    fdiv qword ptr ds:[592460h]"
-"	      004d45dd    fstp qword ptr [ebp-88h]"
+"	      004d45dd    fstp fvlst.z"
 );
 // LINE 2047:
 	asm( 
-"	      004d45e3    fld qword ptr [ebp-98h]"
-"	      004d45e9    fsub qword ptr [ebp-48h]"
-"	      004d45ec    fstp qword ptr [ebp-30h]"
+"	      004d45e3    fld fvlst.x"
+"	      004d45e9    fsub fv0.x"
+"	      004d45ec    fstp fV2.x"
 );
 // LINE 2048:
 	asm( 
-"	      004d45ef    fld qword ptr [ebp-90h]"
-"	      004d45f5    fsub qword ptr [ebp-40h]"
-"	      004d45f8    fstp qword ptr [ebp-28h]"
+"	      004d45ef    fld fvlst.y"
+"	      004d45f5    fsub fv0.y"
+"	      004d45f8    fstp fV2.y"
 );
 // LINE 2049:
 	asm( 
-"	      004d45fb    fld qword ptr [ebp-88h]"
-"	      004d4601    fsub qword ptr [ebp-38h]"
-"	      004d4604    fstp qword ptr [ebp-20h]"
+"	      004d45fb    fld fvlst.z"
+"	      004d4601    fsub fv0.z"
+"	      004d4604    fstp fV2.z"
 );
 // LINE 2050:
 	asm( 
-"	      004d4607    fld qword ptr [ebp-68h]"
-"	      004d460a    fsub qword ptr [ebp-48h]"
-"	      004d460d    fstp qword ptr [ebp-18h]"
+"	      004d4607    fld fv1.x"
+"	      004d460a    fsub fv0.x"
+"	      004d460d    fstp fV1.x"
 );
 // LINE 2051:
 	asm( 
-"	      004d4610    fld qword ptr [ebp-60h]"
-"	      004d4613    fsub qword ptr [ebp-40h]"
-"	      004d4616    fstp qword ptr [ebp-10h]"
+"	      004d4610    fld fv1.y"
+"	      004d4613    fsub fv0.y"
+"	      004d4616    fstp fV1.y"
 );
 // LINE 2052:
 	asm( 
-"	      004d4619    fld qword ptr [ebp-58h]"
-"	      004d461c    fsub qword ptr [ebp-38h]"
-"	      004d461f    fst qword ptr [ebp-8]"
+"	      004d4619    fld fv1.z"
+"	      004d461c    fsub fv0.z"
+"	      004d461f    fst fV1.z"
 );
 // LINE 2057:
 	asm( 
-"	      004d4622    fmul qword ptr [ebp-28h]"
-"	      004d4625    fld qword ptr [ebp-10h]"
-"	      004d4628    fmul qword ptr [ebp-20h]"
+"	      004d4622    fmul fV2.y"
+"	      004d4625    fld fV1.y"
+"	      004d4628    fmul fV2.z"
 "	      004d462b    fsubp"
-"	      004d462d    fstp qword ptr [ebp-50h]"
+"	      004d462d    fstp tmpX"
 );
 // LINE 2058:
 	asm( 
-"	      004d4630    fld qword ptr [ebp-20h]"
-"	      004d4633    fmul qword ptr [ebp-18h]"
-"	      004d4636    fld qword ptr [ebp-8]"
-"	      004d4639    fmul qword ptr [ebp-30h]"
+"	      004d4630    fld fV2.z"
+"	      004d4633    fmul fV1.x"
+"	      004d4636    fld fV1.z"
+"	      004d4639    fmul fV2.x"
 "	      004d463c    fsubp"
-"	      004d463e    fstp qword ptr [ebp-70h]"
+"	      004d463e    fstp tmpY"
 );
 // LINE 2059:
 	asm( 
-"	      004d4641    fld qword ptr [ebp-10h]"
-"	      004d4644    fmul qword ptr [ebp-30h]"
-"	      004d4647    fld qword ptr [ebp-18h]"
-"	      004d464a    fmul qword ptr [ebp-28h]"
+"	      004d4641    fld fV1.y"
+"	      004d4644    fmul fV2.x"
+"	      004d4647    fld fV1.x"
+"	      004d464a    fmul fV2.y"
 "	      004d464d    fsubp"
-"	      004d464f    fst qword ptr [ebp-78h]"
+"	      004d464f    fst tmpZ"
 );
 // LINE 2062:
 	asm( 
-"	      004d4652    fmul qword ptr [ebp-78h]"
-"	      004d4655    fld qword ptr [ebp-70h]"
-"	      004d4658    fmul qword ptr [ebp-70h]"
+"	      004d4652    fmul tmpZ"
+"	      004d4655    fld tmpY"
+"	      004d4658    fmul tmpY"
 "	      004d465b    faddp"
-"	      004d465d    fld qword ptr [ebp-50h]"
-"	      004d4660    fmul qword ptr [ebp-50h]"
+"	      004d465d    fld tmpX"
+"	      004d4660    fmul tmpX"
 "	      004d4663    faddp"
 "	      004d4665    sub esp,8"
 "	      004d4668    fstp qword ptr [esp]"
 "	      004d466b    call 0056EC10h"
 "	      004d4670    add esp,8"
-"	      004d4673    fst qword ptr [ebp-80h]"
+"	      004d4673    fst length"
 );
 // LINE 2064:
 	asm( 
-"	      004d4676    fdivr qword ptr [ebp-50h]"
+"	      004d4676    fdivr tmpX"
 "	      004d4679    fmul qword ptr ds:[592460h]"
 "	      004d467f    call 0056EBE8h"
-"	      004d4684    mov ecx,[ebp+14h]"
+"	      004d4684    mov ecx,norm"
 "	      004d4687    mov [ecx],eax"
 );
 // LINE 2065:
 	asm( 
-"	      004d4689    fld qword ptr [ebp-70h]"
-"	      004d468c    fdiv qword ptr [ebp-80h]"
+"	      004d4689    fld tmpY"
+"	      004d468c    fdiv length"
 "	      004d468f    fmul qword ptr ds:[592460h]"
 "	      004d4695    call 0056EBE8h"
-"	      004d469a    mov ecx,[ebp+14h]"
+"	      004d469a    mov ecx,norm"
 "	      004d469d    mov [ecx+4],eax"
 );
 // LINE 2066:
 	asm( 
-"	      004d46a0    fld qword ptr [ebp-78h]"
-"	      004d46a3    fdiv qword ptr [ebp-80h]"
+"	      004d46a0    fld tmpZ"
+"	      004d46a3    fdiv length"
 "	      004d46a6    fmul qword ptr ds:[592460h]"
 "	      004d46ac    call 0056EBE8h"
-"	      004d46b1    mov ecx,[ebp+14h]"
+"	      004d46b1    mov ecx,norm"
 "	      004d46b4    mov [ecx+8],eax"
 );
 // LINE 2067:
@@ -4954,18 +4954,18 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2105:
 	asm( 
-"	      004d46c5    mov eax,[ebp+8]"
+"	      004d46c5    mov eax,obj"
 "	      004d46c8    mov eax,[eax+4]"
 "	      004d46cb    lea eax,[eax+eax*2]"
 "	      004d46ce    shl eax,2"
 "	      004d46d1    push eax"
 "	      004d46d2    call 00572C10h"
 "	      004d46d7    add esp,4"
-"	      004d46da    mov [ebp-30h],eax"
+"	      004d46da    mov vnorms,eax"
 );
 // LINE 2106:
 	asm( 
-"	      004d46dd    cmp dword ptr [ebp-30h],0"
+"	      004d46dd    cmp vnorms,0"
 "	      004d46e1    jne near ptr 004D46ECh"
 );
 // LINE 2107:
@@ -4974,7 +4974,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2109:
 	asm( 
-"	      004d46ec    mov eax,[ebp+8]"
+"	      004d46ec    mov eax,obj"
 "	      004d46ef    mov eax,[eax+4]"
 "	      004d46f2    lea eax,[eax+eax*2]"
 "	      004d46f5    shl eax,2"
@@ -4987,7 +4987,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2110:
 	asm( 
-"	      004d4719    mov eax,[ebp+8]"
+"	      004d4719    mov eax,obj"
 "	      004d471c    mov eax,[eax+4]"
 "	      004d471f    lea eax,[eax+eax*2]"
 "	      004d4722    shl eax,2"
@@ -4995,11 +4995,11 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2116:
 	asm( 
-"	      004d472b    mov dword ptr [ebp-2Ch],0"
+"	      004d472b    mov i,0"
 "	      004d4732    jmp near ptr 004D473Ah"
-"	      004d4737    inc dword ptr [ebp-2Ch]"
-"	      004d473a    mov eax,[ebp+8]"
-"	      004d473d    mov ecx,[ebp-2Ch]"
+"	      004d4737    inc i"
+"	      004d473a    mov eax,obj"
+"	      004d473d    mov ecx,i"
 "	      004d4740    cmp [eax+4],ecx"
 "	      004d4743    jle near ptr 004D48FBh"
 );
@@ -5008,48 +5008,48 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	struct Point3d* vn;
 	int32_t no_vert_faces;
 	asm( 
-"	      004d4749    mov dword ptr [ebp-40h],0"
+"	      004d4749    mov no_vert_faces,0"
 );
 // LINE 2119:
 	asm( 
-"	      004d4750    mov eax,[ebp-2Ch]"
+"	      004d4750    mov eax,i"
 "	      004d4753    lea eax,[eax+eax*2]"
 "	      004d4756    shl eax,2"
-"	      004d4759    add eax,[ebp-30h]"
-"	      004d475c    mov [ebp-44h],eax"
+"	      004d4759    add eax,vnorms"
+"	      004d475c    mov vn,eax"
 );
 // LINE 2121:
 	asm( 
-"	      004d475f    mov eax,[ebp-44h]"
+"	      004d475f    mov eax,vn"
 "	      004d4762    mov dword ptr [eax+8],0"
-"	      004d4769    mov eax,[ebp-44h]"
+"	      004d4769    mov eax,vn"
 "	      004d476c    mov eax,[eax+8]"
-"	      004d476f    mov ecx,[ebp-44h]"
+"	      004d476f    mov ecx,vn"
 "	      004d4772    mov [ecx+4],eax"
-"	      004d4775    mov eax,[ebp-44h]"
+"	      004d4775    mov eax,vn"
 "	      004d4778    mov eax,[eax+4]"
-"	      004d477b    mov ecx,[ebp-44h]"
+"	      004d477b    mov ecx,vn"
 "	      004d477e    mov [ecx],eax"
 );
 // LINE 2129:
 	asm( 
-"	      004d4780    mov eax,[ebp-2Ch]"
+"	      004d4780    mov eax,i"
 "	      004d4783    shl eax,4"
-"	      004d4786    mov [ebp-1Ch],eax"
+"	      004d4786    mov vertid,eax"
 );
 // LINE 2136:
 	asm( 
-"	      004d4789    mov eax,[ebp+8]"
+"	      004d4789    mov eax,obj"
 "	      004d478c    mov eax,[eax+4Ch]"
-"	      004d478f    mov [ebp-3Ch],eax"
+"	      004d478f    mov fp,eax"
 );
 // LINE 2137:
 	asm( 
-"	      004d4792    mov dword ptr [ebp-34h],0"
+"	      004d4792    mov j,0"
 "	      004d4799    jmp near ptr 004D47A1h"
-"	      004d479e    inc dword ptr [ebp-34h]"
-"	      004d47a1    mov eax,[ebp+8]"
-"	      004d47a4    mov ecx,[ebp-34h]"
+"	      004d479e    inc j"
+"	      004d47a1    mov eax,obj"
+"	      004d47a4    mov ecx,j"
 "	      004d47a7    cmp [eax+10h],ecx"
 "	      004d47aa    jle near ptr 004D482Eh"
 );
@@ -5057,57 +5057,57 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 // Block start:
 	struct Project3d* fn;
 	asm( 
-"	      004d47b0    mov eax,[ebp-3Ch]"
+"	      004d47b0    mov eax,fp"
 "	      004d47b3    mov eax,[eax+2Ch]"
-"	      004d47b6    mov [ebp-48h],eax"
+"	      004d47b6    mov fn,eax"
 );
 // LINE 2141:
 	asm( 
-"	      004d47b9    mov eax,[ebp-3Ch]"
+"	      004d47b9    mov eax,fp"
 "	      004d47bc    mov eax,[eax+1Ch]"
-"	      004d47bf    mov [ebp-28h],eax"
+"	      004d47bf    mov faceverts,eax"
 );
 // LINE 2147:
 	asm( 
-"	      004d47c2    mov dword ptr [ebp-38h],0"
+"	      004d47c2    mov k,0"
 "	      004d47c9    jmp near ptr 004D47D1h"
-"	      004d47ce    inc dword ptr [ebp-38h]"
-"	      004d47d1    mov eax,[ebp-3Ch]"
-"	      004d47d4    mov ecx,[ebp-38h]"
+"	      004d47ce    inc k"
+"	      004d47d1    mov eax,fp"
+"	      004d47d4    mov ecx,k"
 "	      004d47d7    cmp [eax+4],ecx"
 "	      004d47da    jle near ptr 004D4821h"
 );
 // LINE 2149:
 	asm( 
-"	      004d47e0    mov eax,[ebp-38h]"
-"	      004d47e3    mov ecx,[ebp-28h]"
-"	      004d47e6    mov edx,[ebp-1Ch]"
+"	      004d47e0    mov eax,k"
+"	      004d47e3    mov ecx,faceverts"
+"	      004d47e6    mov edx,vertid"
 "	      004d47e9    cmp [ecx+eax*4],edx"
 "	      004d47ec    jne near ptr 004D481Ch"
 );
 // LINE 2151:
 	asm( 
-"	      004d47f2    inc dword ptr [ebp-40h]"
+"	      004d47f2    inc no_vert_faces"
 );
 // LINE 2152:
 	asm( 
-"	      004d47f5    mov eax,[ebp-48h]"
+"	      004d47f5    mov eax,fn"
 "	      004d47f8    mov eax,[eax]"
-"	      004d47fa    mov ecx,[ebp-44h]"
+"	      004d47fa    mov ecx,vn"
 "	      004d47fd    add [ecx],eax"
 );
 // LINE 2153:
 	asm( 
-"	      004d47ff    mov eax,[ebp-48h]"
+"	      004d47ff    mov eax,fn"
 "	      004d4802    mov eax,[eax+4]"
-"	      004d4805    mov ecx,[ebp-44h]"
+"	      004d4805    mov ecx,vn"
 "	      004d4808    add [ecx+4],eax"
 );
 // LINE 2154:
 	asm( 
-"	      004d480b    mov eax,[ebp-48h]"
+"	      004d480b    mov eax,fn"
 "	      004d480e    mov eax,[eax+8]"
-"	      004d4811    mov ecx,[ebp-44h]"
+"	      004d4811    mov ecx,vn"
 "	      004d4814    add [ecx+8],eax"
 );
 // LINE 2155:
@@ -5120,9 +5120,9 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2160:
 	asm( 
-"	      004d4821    mov eax,[ebp-3Ch]"
+"	      004d4821    mov eax,fp"
 "	      004d4824    mov eax,[eax]"
-"	      004d4826    mov [ebp-3Ch],eax"
+"	      004d4826    mov fp,eax"
 );
 // LINE 2162:
 // Block end:
@@ -5131,84 +5131,84 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2168:
 	asm( 
-"	      004d482e    cmp dword ptr [ebp-40h],0"
+"	      004d482e    cmp no_vert_faces,0"
 "	      004d4832    jle near ptr 004D48F6h"
 );
 // LINE 2171:
 	asm( 
-"	      004d4838    mov eax,[ebp-44h]"
+"	      004d4838    mov eax,vn"
 "	      004d483b    mov eax,[eax]"
 "	      004d483d    mov [ebp-4Ch],eax"
 "	      004d4840    fild dword ptr [ebp-4Ch]"
 "	      004d4843    fdiv qword ptr ds:[592460h]"
-"	      004d4849    mov eax,[ebp-40h]"
+"	      004d4849    mov eax,no_vert_faces"
 "	      004d484c    mov [ebp-50h],eax"
 "	      004d484f    fidiv dword ptr [ebp-50h]"
-"	      004d4852    fstp qword ptr [ebp-8]"
+"	      004d4852    fstp tmpX"
 );
 // LINE 2172:
 	asm( 
-"	      004d4855    mov eax,[ebp-44h]"
+"	      004d4855    mov eax,vn"
 "	      004d4858    mov eax,[eax+4]"
 "	      004d485b    mov [ebp-54h],eax"
 "	      004d485e    fild dword ptr [ebp-54h]"
 "	      004d4861    fdiv qword ptr ds:[592460h]"
-"	      004d4867    mov eax,[ebp-40h]"
+"	      004d4867    mov eax,no_vert_faces"
 "	      004d486a    mov [ebp-58h],eax"
 "	      004d486d    fidiv dword ptr [ebp-58h]"
-"	      004d4870    fstp qword ptr [ebp-10h]"
+"	      004d4870    fstp tmpY"
 );
 // LINE 2173:
 	asm( 
-"	      004d4873    mov eax,[ebp-44h]"
+"	      004d4873    mov eax,vn"
 "	      004d4876    mov eax,[eax+8]"
 "	      004d4879    mov [ebp-5Ch],eax"
 "	      004d487c    fild dword ptr [ebp-5Ch]"
 "	      004d487f    fdiv qword ptr ds:[592460h]"
-"	      004d4885    mov eax,[ebp-40h]"
+"	      004d4885    mov eax,no_vert_faces"
 "	      004d4888    mov [ebp-60h],eax"
 "	      004d488b    fidiv dword ptr [ebp-60h]"
-"	      004d488e    fst qword ptr [ebp-18h]"
+"	      004d488e    fst tmpZ"
 );
 // LINE 2175:
 	asm( 
-"	      004d4891    fmul qword ptr [ebp-18h]"
-"	      004d4894    fld qword ptr [ebp-10h]"
-"	      004d4897    fmul qword ptr [ebp-10h]"
+"	      004d4891    fmul tmpZ"
+"	      004d4894    fld tmpY"
+"	      004d4897    fmul tmpY"
 "	      004d489a    faddp"
-"	      004d489c    fld qword ptr [ebp-8]"
-"	      004d489f    fmul qword ptr [ebp-8]"
+"	      004d489c    fld tmpX"
+"	      004d489f    fmul tmpX"
 "	      004d48a2    faddp"
 "	      004d48a4    sub esp,8"
 "	      004d48a7    fstp qword ptr [esp]"
 "	      004d48aa    call 0056EC10h"
 "	      004d48af    add esp,8"
-"	      004d48b2    fst qword ptr [ebp-24h]"
+"	      004d48b2    fst length"
 );
 // LINE 2176:
 	asm( 
-"	      004d48b5    fdivr qword ptr [ebp-8]"
+"	      004d48b5    fdivr tmpX"
 "	      004d48b8    fmul qword ptr ds:[592460h]"
 "	      004d48be    call 0056EBE8h"
-"	      004d48c3    mov ecx,[ebp-44h]"
+"	      004d48c3    mov ecx,vn"
 "	      004d48c6    mov [ecx],eax"
 );
 // LINE 2177:
 	asm( 
-"	      004d48c8    fld qword ptr [ebp-10h]"
-"	      004d48cb    fdiv qword ptr [ebp-24h]"
+"	      004d48c8    fld tmpY"
+"	      004d48cb    fdiv length"
 "	      004d48ce    fmul qword ptr ds:[592460h]"
 "	      004d48d4    call 0056EBE8h"
-"	      004d48d9    mov ecx,[ebp-44h]"
+"	      004d48d9    mov ecx,vn"
 "	      004d48dc    mov [ecx+4],eax"
 );
 // LINE 2178:
 	asm( 
-"	      004d48df    fld qword ptr [ebp-18h]"
-"	      004d48e2    fdiv qword ptr [ebp-24h]"
+"	      004d48df    fld tmpZ"
+"	      004d48e2    fdiv length"
 "	      004d48e5    fmul qword ptr ds:[592460h]"
 "	      004d48eb    call 0056EBE8h"
-"	      004d48f0    mov ecx,[ebp-44h]"
+"	      004d48f0    mov ecx,vn"
 "	      004d48f3    mov [ecx+8],eax"
 );
 // LINE 2182:
@@ -5218,16 +5218,16 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 );
 // LINE 2185:
 	asm( 
-"	      004d48fb    mov eax,[ebp-30h]"
+"	      004d48fb    mov eax,vnorms"
 "	      004d48fe    push eax"
-"	      004d48ff    mov eax,[ebp+8]"
+"	      004d48ff    mov eax,obj"
 "	      004d4902    push eax"
 "	      004d4903    call 004D9712h"
 "	      004d4908    add esp,8"
 );
 // LINE 2189:
 	asm( 
-"	      004d490b    mov eax,[ebp-30h]"
+"	      004d490b    mov eax,vnorms"
 "	      004d490e    push eax"
 "	      004d490f    call 005737A0h"
 "	      004d4914    add esp,4"
@@ -5235,7 +5235,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 // LINE 2190:
 	asm( 
 "	      004d4917    xor eax,eax"
-"	      004d4919    mov ecx,[ebp+8]"
+"	      004d4919    mov ecx,obj"
 "	      004d491c    mov ecx,[ecx+4]"
 "	      004d491f    lea ecx,[ecx+ecx*2]"
 "	      004d4922    shl ecx,2"
@@ -5246,7 +5246,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 // LINE 2191:
 	asm( 
 "	      004d492f    xor eax,eax"
-"	      004d4931    mov ecx,[ebp+8]"
+"	      004d4931    mov ecx,obj"
 "	      004d4934    mov ecx,[ecx+4]"
 "	      004d4937    lea ecx,[ecx+ecx*2]"
 "	      004d493a    shl ecx,2"
@@ -5279,13 +5279,13 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 );
 // LINE 2204:
 	asm( 
-"	      004d4955    mov eax,[ebp+8]"
-"	      004d4958    mov [ebp-4],eax"
+"	      004d4955    mov eax,dest"
+"	      004d4958    mov destptr,eax"
 );
 // LINE 2206:
 	asm( 
-"	      004d495b    mov eax,[ebp+0Ch]"
-"	      004d495e    mov ecx,[ebp-4]"
+"	      004d495b    mov eax,src"
+"	      004d495e    mov ecx,destptr"
 "	      004d4961    mov [ecx+40h],eax"
 );
 // LINE 2207:
@@ -5324,13 +5324,13 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 );
 // LINE 2238:
 	asm( 
-"	      004d4977    mov eax,[ebp+8]"
-"	      004d497a    mov ecx,[ebp+8]"
+"	      004d4977    mov eax,nverts"
+"	      004d497a    mov ecx,nverts"
 "	      004d497d    dec ecx"
 "	      004d497e    shl ecx,4"
 "	      004d4981    lea ecx,[ecx+ecx*2]"
 "	      004d4984    lea eax,[ecx+eax*8-8]"
-"	      004d4988    mov ecx,[ebp+8]"
+"	      004d4988    mov ecx,nverts"
 "	      004d498b    lea ecx,[ecx+ecx*2]"
 "	      004d498e    lea eax,[eax+ecx*4]"
 "	      004d4991    add eax,0A0h"
@@ -5344,8 +5344,8 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 "	      004d49a6    push eax"
 "	      004d49a7    call 004CB4ACh"
 "	      004d49ac    add esp,8"
-"	      004d49af    mov [ebp-20h],eax"
-"	      004d49b2    cmp dword ptr [ebp-20h],0"
+"	      004d49af    mov dataptr,eax"
+"	      004d49b2    cmp dataptr,0"
 "	      004d49b6    jne near ptr 004D49CDh"
 );
 // LINE 2244:
@@ -5359,7 +5359,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 );
 // LINE 2248:
 	asm( 
-"	      004d49cd    mov eax,[ebp-20h]"
+"	      004d49cd    mov eax,dataptr"
 "	      004d49d0    push eax"
 "	      004d49d1    call 004D8643h"
 "	      004d49d6    add esp,4"
@@ -5380,108 +5380,108 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 "	      004d49f2    mov eax,ds:[606A5Ch]"
 "	      004d49f7    push eax"
 "	      004d49f8    push 0"
-"	      004d49fa    mov eax,[ebp-20h]"
+"	      004d49fa    mov eax,dataptr"
 "	      004d49fd    push eax"
 "	      004d49fe    call 0056EB90h"
 "	      004d4a03    add esp,0Ch"
 );
 // LINE 2256:
 	asm( 
-"	      004d4a06    mov eax,[ebp-20h]"
-"	      004d4a09    mov [ebp-4],eax"
+"	      004d4a06    mov eax,dataptr"
+"	      004d4a09    mov ptr,eax"
 );
 // LINE 2259:
 	asm( 
-"	      004d4a0c    mov eax,[ebp-4]"
-"	      004d4a0f    mov [ebp-18h],eax"
+"	      004d4a0c    mov eax,ptr"
+"	      004d4a0f    mov oh,eax"
 );
 // LINE 2260:
 	asm( 
-"	      004d4a12    add dword ptr [ebp-4],90h"
+"	      004d4a12    add ptr,90h"
 );
 // LINE 2261:
 	asm( 
-"	      004d4a19    mov eax,[ebp-18h]"
+"	      004d4a19    mov eax,oh"
 "	      004d4a1c    mov dword ptr [eax],0"
 );
 // LINE 2262:
 	asm( 
-"	      004d4a22    mov eax,[ebp+8]"
-"	      004d4a25    mov ecx,[ebp-18h]"
+"	      004d4a22    mov eax,nverts"
+"	      004d4a25    mov ecx,oh"
 "	      004d4a28    mov [ecx+4],eax"
 );
 // LINE 2263:
 	asm( 
-"	      004d4a2b    mov eax,[ebp+8]"
+"	      004d4a2b    mov eax,nverts"
 "	      004d4a2e    dec eax"
-"	      004d4a2f    mov ecx,[ebp-18h]"
+"	      004d4a2f    mov ecx,oh"
 "	      004d4a32    mov [ecx+10h],eax"
 );
 // LINE 2264:
 	asm( 
-"	      004d4a35    mov eax,[ebp-18h]"
+"	      004d4a35    mov eax,oh"
 "	      004d4a38    mov dword ptr [eax+44h],0"
 );
 // LINE 2265:
 	asm( 
-"	      004d4a3f    mov eax,[ebp+10h]"
-"	      004d4a42    imul eax,[ebp+8]"
+"	      004d4a3f    mov eax,seglen"
+"	      004d4a42    imul eax,nverts"
 "	      004d4a46    sar eax,1"
-"	      004d4a49    mov ecx,[ebp-18h]"
+"	      004d4a49    mov ecx,oh"
 "	      004d4a4c    mov [ecx+30h],eax"
 );
 // LINE 2266:
 	asm( 
-"	      004d4a4f    mov eax,[ebp-4]"
-"	      004d4a52    mov ecx,[ebp-18h]"
+"	      004d4a4f    mov eax,ptr"
+"	      004d4a52    mov ecx,oh"
 "	      004d4a55    mov [ecx+8],eax"
 );
 // LINE 2267:
 	asm( 
-"	      004d4a58    mov eax,[ebp-18h]"
+"	      004d4a58    mov eax,oh"
 "	      004d4a5b    mov dword ptr [eax+40h],0"
 );
 // LINE 2270:
 	asm( 
-"	      004d4a62    mov eax,[ebp-4]"
-"	      004d4a65    mov [ebp-0Ch],eax"
+"	      004d4a62    mov eax,ptr"
+"	      004d4a65    mov vert,eax"
 );
 // LINE 2271:
 	asm( 
-"	      004d4a68    mov eax,[ebp+8]"
+"	      004d4a68    mov eax,nverts"
 "	      004d4a6b    lea eax,[eax+eax*2]"
 "	      004d4a6e    shl eax,2"
-"	      004d4a71    add [ebp-4],eax"
+"	      004d4a71    add ptr,eax"
 );
 // LINE 2272:
 	asm( 
-"	      004d4a74    mov dword ptr [ebp-14h],0"
+"	      004d4a74    mov i,0"
 "	      004d4a7b    jmp near ptr 004D4A83h"
-"	      004d4a80    inc dword ptr [ebp-14h]"
-"	      004d4a83    mov eax,[ebp-14h]"
-"	      004d4a86    cmp [ebp+8],eax"
+"	      004d4a80    inc i"
+"	      004d4a83    mov eax,i"
+"	      004d4a86    cmp nverts,eax"
 "	      004d4a89    jle near ptr 004D4ABCh"
 );
 // LINE 2274:
 	asm( 
-"	      004d4a8f    mov eax,[ebp-0Ch]"
+"	      004d4a8f    mov eax,vert"
 "	      004d4a92    mov dword ptr [eax+8],0"
-"	      004d4a99    mov eax,[ebp-0Ch]"
+"	      004d4a99    mov eax,vert"
 "	      004d4a9c    mov eax,[eax+8]"
-"	      004d4a9f    mov ecx,[ebp-0Ch]"
+"	      004d4a9f    mov ecx,vert"
 "	      004d4aa2    mov [ecx],eax"
 );
 // LINE 2275:
 	asm( 
-"	      004d4aa4    mov eax,[ebp+10h]"
-"	      004d4aa7    imul eax,[ebp-14h]"
+"	      004d4aa4    mov eax,seglen"
+"	      004d4aa7    imul eax,i"
 "	      004d4aab    neg eax"
-"	      004d4aad    mov ecx,[ebp-0Ch]"
+"	      004d4aad    mov ecx,vert"
 "	      004d4ab0    mov [ecx+4],eax"
 );
 // LINE 2276:
 	asm( 
-"	      004d4ab3    add dword ptr [ebp-0Ch],0Ch"
+"	      004d4ab3    add vert,0Ch"
 );
 // LINE 2277:
 	asm( 
@@ -5489,116 +5489,116 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 );
 // LINE 2281:
 	asm( 
-"	      004d4abc    mov eax,[ebp-4]"
-"	      004d4abf    mov [ebp-1Ch],eax"
+"	      004d4abc    mov eax,ptr"
+"	      004d4abf    mov mvert,eax"
 );
 // LINE 2282:
 	asm( 
-"	      004d4ac2    add dword ptr [ebp-4],10h"
+"	      004d4ac2    add ptr,10h"
 );
 // LINE 2285:
 	asm( 
-"	      004d4ac6    mov eax,[ebp-4]"
-"	      004d4ac9    mov ecx,[ebp-18h]"
+"	      004d4ac6    mov eax,ptr"
+"	      004d4ac9    mov ecx,oh"
 "	      004d4acc    mov [ecx+4Ch],eax"
 );
 // LINE 2286:
 	asm( 
-"	      004d4acf    mov eax,[ebp-4]"
-"	      004d4ad2    mov [ebp-10h],eax"
+"	      004d4acf    mov eax,ptr"
+"	      004d4ad2    mov fh,eax"
 );
 // LINE 2287:
 	asm( 
-"	      004d4ad5    add dword ptr [ebp-4],30h"
+"	      004d4ad5    add ptr,30h"
 );
 // LINE 2288:
 	asm( 
-"	      004d4ad9    mov dword ptr [ebp-14h],0"
+"	      004d4ad9    mov i,0"
 "	      004d4ae0    jmp near ptr 004D4AE8h"
-"	      004d4ae5    inc dword ptr [ebp-14h]"
-"	      004d4ae8    mov eax,[ebp+8]"
+"	      004d4ae5    inc i"
+"	      004d4ae8    mov eax,nverts"
 "	      004d4aeb    dec eax"
-"	      004d4aec    cmp eax,[ebp-14h]"
+"	      004d4aec    cmp eax,i"
 "	      004d4aef    jle near ptr 004D4B73h"
 );
 // LINE 2291:
 	asm( 
-"	      004d4af5    mov eax,[ebp-4]"
-"	      004d4af8    mov [ebp-8],eax"
+"	      004d4af5    mov eax,ptr"
+"	      004d4af8    mov iptr,eax"
 );
 // LINE 2292:
 	asm( 
-"	      004d4afb    add dword ptr [ebp-4],8"
+"	      004d4afb    add ptr,8"
 );
 // LINE 2295:
 	asm( 
-"	      004d4aff    mov eax,[ebp-10h]"
+"	      004d4aff    mov eax,fh"
 "	      004d4b02    mov dword ptr [eax+4],2"
 );
 // LINE 2296:
 	asm( 
-"	      004d4b09    mov eax,[ebp-10h]"
+"	      004d4b09    mov eax,fh"
 "	      004d4b0c    mov dword ptr [eax+8],8002h"
 );
 // LINE 2297:
 	asm( 
-"	      004d4b13    mov eax,[ebp+0Ch]"
-"	      004d4b16    mov ecx,[ebp-10h]"
+"	      004d4b13    mov eax,color"
+"	      004d4b16    mov ecx,fh"
 "	      004d4b19    mov [ecx+0Ch],eax"
 );
 // LINE 2298:
 	asm( 
-"	      004d4b1c    mov eax,[ebp-10h]"
+"	      004d4b1c    mov eax,fh"
 "	      004d4b1f    mov dword ptr [eax+10h],14h"
 );
 // LINE 2299:
 	asm( 
-"	      004d4b26    mov eax,[ebp+0Ch]"
-"	      004d4b29    mov ecx,[ebp-10h]"
+"	      004d4b26    mov eax,color"
+"	      004d4b29    mov ecx,fh"
 "	      004d4b2c    mov [ecx+24h],eax"
 );
 // LINE 2300:
 	asm( 
-"	      004d4b2f    mov eax,[ebp-1Ch]"
-"	      004d4b32    mov ecx,[ebp-10h]"
+"	      004d4b2f    mov eax,mvert"
+"	      004d4b32    mov ecx,fh"
 "	      004d4b35    mov [ecx+20h],eax"
 );
 // LINE 2301:
 	asm( 
-"	      004d4b38    mov eax,[ebp-4]"
-"	      004d4b3b    mov ecx,[ebp-10h]"
+"	      004d4b38    mov eax,ptr"
+"	      004d4b3b    mov ecx,fh"
 "	      004d4b3e    mov [ecx],eax"
 );
 // LINE 2302:
 	asm( 
-"	      004d4b40    mov eax,[ebp-8]"
-"	      004d4b43    mov ecx,[ebp-10h]"
+"	      004d4b40    mov eax,iptr"
+"	      004d4b43    mov ecx,fh"
 "	      004d4b46    mov [ecx+1Ch],eax"
 );
 // LINE 2305:
 	asm( 
-"	      004d4b49    mov eax,[ebp-14h]"
+"	      004d4b49    mov eax,i"
 "	      004d4b4c    shl eax,4"
-"	      004d4b4f    mov ecx,[ebp-8]"
+"	      004d4b4f    mov ecx,iptr"
 "	      004d4b52    mov [ecx],eax"
-"	      004d4b54    add dword ptr [ebp-8],4"
+"	      004d4b54    add iptr,4"
 );
 // LINE 2306:
 	asm( 
-"	      004d4b58    mov eax,[ebp-14h]"
+"	      004d4b58    mov eax,i"
 "	      004d4b5b    inc eax"
 "	      004d4b5c    shl eax,4"
-"	      004d4b5f    mov ecx,[ebp-8]"
+"	      004d4b5f    mov ecx,iptr"
 "	      004d4b62    mov [ecx],eax"
 );
 // LINE 2309:
 	asm( 
-"	      004d4b64    mov eax,[ebp-4]"
-"	      004d4b67    mov [ebp-10h],eax"
+"	      004d4b64    mov eax,ptr"
+"	      004d4b67    mov fh,eax"
 );
 // LINE 2310:
 	asm( 
-"	      004d4b6a    add dword ptr [ebp-4],30h"
+"	      004d4b6a    add ptr,30h"
 );
 // LINE 2311:
 	asm( 
@@ -5606,7 +5606,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 );
 // LINE 2313:
 	asm( 
-"	      004d4b73    mov eax,[ebp-20h]"
+"	      004d4b73    mov eax,dataptr"
 "	      004d4b76    jmp near ptr 004D4B7Bh"
 );
 // LINE 2314:
@@ -5641,12 +5641,12 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 );
 // LINE 2343:
 	asm( 
-"	      004d4b89    mov eax,[ebp+8]"
-"	      004d4b8c    mov ecx,[ebp+8]"
+"	      004d4b89    mov eax,nverts"
+"	      004d4b8c    mov ecx,nverts"
 "	      004d4b8f    shl ecx,4"
 "	      004d4b92    lea ecx,[ecx+ecx*2]"
 "	      004d4b95    lea eax,[ecx+eax*4]"
-"	      004d4b98    mov ecx,[ebp+8]"
+"	      004d4b98    mov ecx,nverts"
 "	      004d4b9b    lea ecx,[ecx+ecx*2]"
 "	      004d4b9e    lea eax,[eax+ecx*4]"
 "	      004d4ba1    add eax,98h"
@@ -5660,8 +5660,8 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 "	      004d4bb6    push eax"
 "	      004d4bb7    call 004CB4ACh"
 "	      004d4bbc    add esp,8"
-"	      004d4bbf    mov [ebp-20h],eax"
-"	      004d4bc2    cmp dword ptr [ebp-20h],0"
+"	      004d4bbf    mov dataptr,eax"
+"	      004d4bc2    cmp dataptr,0"
 "	      004d4bc6    jne near ptr 004D4BDDh"
 );
 // LINE 2349:
@@ -5675,7 +5675,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 );
 // LINE 2353:
 	asm( 
-"	      004d4bdd    mov eax,[ebp-20h]"
+"	      004d4bdd    mov eax,dataptr"
 "	      004d4be0    push eax"
 "	      004d4be1    call 004D8643h"
 "	      004d4be6    add esp,4"
@@ -5696,100 +5696,100 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 "	      004d4c02    mov eax,ds:[606A5Ch]"
 "	      004d4c07    push eax"
 "	      004d4c08    push 0"
-"	      004d4c0a    mov eax,[ebp-20h]"
+"	      004d4c0a    mov eax,dataptr"
 "	      004d4c0d    push eax"
 "	      004d4c0e    call 0056EB90h"
 "	      004d4c13    add esp,0Ch"
 );
 // LINE 2361:
 	asm( 
-"	      004d4c16    mov eax,[ebp-20h]"
-"	      004d4c19    mov [ebp-4],eax"
+"	      004d4c16    mov eax,dataptr"
+"	      004d4c19    mov ptr,eax"
 );
 // LINE 2364:
 	asm( 
-"	      004d4c1c    mov eax,[ebp-4]"
-"	      004d4c1f    mov [ebp-18h],eax"
+"	      004d4c1c    mov eax,ptr"
+"	      004d4c1f    mov oh,eax"
 );
 // LINE 2365:
 	asm( 
-"	      004d4c22    add dword ptr [ebp-4],90h"
+"	      004d4c22    add ptr,90h"
 );
 // LINE 2366:
 	asm( 
-"	      004d4c29    mov eax,[ebp-18h]"
+"	      004d4c29    mov eax,oh"
 "	      004d4c2c    mov dword ptr [eax],0"
 );
 // LINE 2367:
 	asm( 
-"	      004d4c32    mov eax,[ebp+8]"
-"	      004d4c35    mov ecx,[ebp-18h]"
+"	      004d4c32    mov eax,nverts"
+"	      004d4c35    mov ecx,oh"
 "	      004d4c38    mov [ecx+4],eax"
 );
 // LINE 2368:
 	asm( 
-"	      004d4c3b    mov eax,[ebp+8]"
-"	      004d4c3e    mov ecx,[ebp-18h]"
+"	      004d4c3b    mov eax,nverts"
+"	      004d4c3e    mov ecx,oh"
 "	      004d4c41    mov [ecx+10h],eax"
 );
 // LINE 2369:
 	asm( 
-"	      004d4c44    mov eax,[ebp-18h]"
+"	      004d4c44    mov eax,oh"
 "	      004d4c47    mov dword ptr [eax+44h],0"
 );
 // LINE 2370:
 	asm( 
-"	      004d4c4e    mov eax,[ebp-18h]"
+"	      004d4c4e    mov eax,oh"
 "	      004d4c51    mov dword ptr [eax+30h],0"
 );
 // LINE 2371:
 	asm( 
-"	      004d4c58    mov eax,[ebp-4]"
-"	      004d4c5b    mov ecx,[ebp-18h]"
+"	      004d4c58    mov eax,ptr"
+"	      004d4c5b    mov ecx,oh"
 "	      004d4c5e    mov [ecx+8],eax"
 );
 // LINE 2372:
 	asm( 
-"	      004d4c61    mov eax,[ebp-18h]"
+"	      004d4c61    mov eax,oh"
 "	      004d4c64    mov dword ptr [eax+40h],0"
 );
 // LINE 2375:
 	asm( 
-"	      004d4c6b    mov eax,[ebp-4]"
-"	      004d4c6e    mov [ebp-0Ch],eax"
+"	      004d4c6b    mov eax,ptr"
+"	      004d4c6e    mov vert,eax"
 );
 // LINE 2376:
 	asm( 
-"	      004d4c71    mov eax,[ebp+8]"
+"	      004d4c71    mov eax,nverts"
 "	      004d4c74    lea eax,[eax+eax*2]"
 "	      004d4c77    shl eax,2"
-"	      004d4c7a    add [ebp-4],eax"
+"	      004d4c7a    add ptr,eax"
 );
 // LINE 2377:
 	asm( 
-"	      004d4c7d    mov dword ptr [ebp-14h],0"
+"	      004d4c7d    mov i,0"
 "	      004d4c84    jmp near ptr 004D4C8Ch"
-"	      004d4c89    inc dword ptr [ebp-14h]"
-"	      004d4c8c    mov eax,[ebp-14h]"
-"	      004d4c8f    cmp [ebp+8],eax"
+"	      004d4c89    inc i"
+"	      004d4c8c    mov eax,i"
+"	      004d4c8f    cmp nverts,eax"
 "	      004d4c92    jle near ptr 004D4CC1h"
 );
 // LINE 2379:
 	asm( 
-"	      004d4c98    mov eax,[ebp-0Ch]"
+"	      004d4c98    mov eax,vert"
 "	      004d4c9b    mov dword ptr [eax+8],0"
-"	      004d4ca2    mov eax,[ebp-0Ch]"
+"	      004d4ca2    mov eax,vert"
 "	      004d4ca5    mov eax,[eax+8]"
-"	      004d4ca8    mov ecx,[ebp-0Ch]"
+"	      004d4ca8    mov ecx,vert"
 "	      004d4cab    mov [ecx],eax"
-"	      004d4cad    mov eax,[ebp-0Ch]"
+"	      004d4cad    mov eax,vert"
 "	      004d4cb0    mov eax,[eax]"
-"	      004d4cb2    mov ecx,[ebp-0Ch]"
+"	      004d4cb2    mov ecx,vert"
 "	      004d4cb5    mov [ecx+4],eax"
 );
 // LINE 2380:
 	asm( 
-"	      004d4cb8    add dword ptr [ebp-0Ch],0Ch"
+"	      004d4cb8    add vert,0Ch"
 );
 // LINE 2381:
 	asm( 
@@ -5797,107 +5797,107 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 );
 // LINE 2385:
 	asm( 
-"	      004d4cc1    mov eax,[ebp-4]"
-"	      004d4cc4    mov [ebp-1Ch],eax"
+"	      004d4cc1    mov eax,ptr"
+"	      004d4cc4    mov mvert,eax"
 );
 // LINE 2386:
 	asm( 
-"	      004d4cc7    add dword ptr [ebp-4],8"
+"	      004d4cc7    add ptr,8"
 );
 // LINE 2389:
 	asm( 
-"	      004d4ccb    mov eax,[ebp-4]"
-"	      004d4cce    mov ecx,[ebp-18h]"
+"	      004d4ccb    mov eax,ptr"
+"	      004d4cce    mov ecx,oh"
 "	      004d4cd1    mov [ecx+4Ch],eax"
 );
 // LINE 2390:
 	asm( 
-"	      004d4cd4    mov eax,[ebp-4]"
-"	      004d4cd7    mov [ebp-10h],eax"
+"	      004d4cd4    mov eax,ptr"
+"	      004d4cd7    mov fh,eax"
 );
 // LINE 2391:
 	asm( 
-"	      004d4cda    add dword ptr [ebp-4],30h"
+"	      004d4cda    add ptr,30h"
 );
 // LINE 2392:
 	asm( 
-"	      004d4cde    mov dword ptr [ebp-14h],0"
+"	      004d4cde    mov i,0"
 "	      004d4ce5    jmp near ptr 004D4CEDh"
-"	      004d4cea    inc dword ptr [ebp-14h]"
-"	      004d4ced    mov eax,[ebp-14h]"
-"	      004d4cf0    cmp [ebp+8],eax"
+"	      004d4cea    inc i"
+"	      004d4ced    mov eax,i"
+"	      004d4cf0    cmp nverts,eax"
 "	      004d4cf3    jle near ptr 004D4D66h"
 );
 // LINE 2395:
 	asm( 
-"	      004d4cf9    mov eax,[ebp-4]"
-"	      004d4cfc    mov [ebp-8],eax"
+"	      004d4cf9    mov eax,ptr"
+"	      004d4cfc    mov iptr,eax"
 );
 // LINE 2396:
 	asm( 
-"	      004d4cff    add dword ptr [ebp-4],4"
+"	      004d4cff    add ptr,4"
 );
 // LINE 2399:
 	asm( 
-"	      004d4d03    mov eax,[ebp-10h]"
+"	      004d4d03    mov eax,fh"
 "	      004d4d06    mov dword ptr [eax+4],1"
 );
 // LINE 2400:
 	asm( 
-"	      004d4d0d    mov eax,[ebp-10h]"
+"	      004d4d0d    mov eax,fh"
 "	      004d4d10    mov dword ptr [eax+8],10002h"
 );
 // LINE 2401:
 	asm( 
-"	      004d4d17    mov eax,[ebp-14h]"
-"	      004d4d1a    mov ecx,[ebp-10h]"
+"	      004d4d17    mov eax,i"
+"	      004d4d1a    mov ecx,fh"
 "	      004d4d1d    mov [ecx+0Ch],eax"
 );
 // LINE 2402:
 	asm( 
-"	      004d4d20    mov eax,[ebp+0Ch]"
-"	      004d4d23    mov ecx,[ebp-10h]"
+"	      004d4d20    mov eax,plotter"
+"	      004d4d23    mov ecx,fh"
 "	      004d4d26    mov [ecx+10h],eax"
 );
 // LINE 2403:
 	asm( 
-"	      004d4d29    mov eax,[ebp-14h]"
-"	      004d4d2c    mov ecx,[ebp-10h]"
+"	      004d4d29    mov eax,i"
+"	      004d4d2c    mov ecx,fh"
 "	      004d4d2f    mov [ecx+24h],eax"
 );
 // LINE 2404:
 	asm( 
-"	      004d4d32    mov eax,[ebp-1Ch]"
-"	      004d4d35    mov ecx,[ebp-10h]"
+"	      004d4d32    mov eax,mvert"
+"	      004d4d35    mov ecx,fh"
 "	      004d4d38    mov [ecx+20h],eax"
 );
 // LINE 2405:
 	asm( 
-"	      004d4d3b    mov eax,[ebp-4]"
-"	      004d4d3e    mov ecx,[ebp-10h]"
+"	      004d4d3b    mov eax,ptr"
+"	      004d4d3e    mov ecx,fh"
 "	      004d4d41    mov [ecx],eax"
 );
 // LINE 2406:
 	asm( 
-"	      004d4d43    mov eax,[ebp-8]"
-"	      004d4d46    mov ecx,[ebp-10h]"
+"	      004d4d43    mov eax,iptr"
+"	      004d4d46    mov ecx,fh"
 "	      004d4d49    mov [ecx+1Ch],eax"
 );
 // LINE 2409:
 	asm( 
-"	      004d4d4c    mov eax,[ebp-14h]"
+"	      004d4d4c    mov eax,i"
 "	      004d4d4f    shl eax,4"
-"	      004d4d52    mov ecx,[ebp-8]"
+"	      004d4d52    mov ecx,iptr"
 "	      004d4d55    mov [ecx],eax"
 );
 // LINE 2412:
 	asm( 
-"	      004d4d57    mov eax,[ebp-4]"
-"	      004d4d5a    mov [ebp-10h],eax"
+"	      004d4d57    mov eax,ptr"
+"	      004d4d5a    mov fh,eax"
 );
 // LINE 2413:
 	asm( 
-"	      004d4d5d    add dword ptr [ebp-4],30h"
+"	      004d4d5d    add ptr,30h"
 );
 // LINE 2414:
 	asm( 
@@ -5905,7 +5905,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 );
 // LINE 2416:
 	asm( 
-"	      004d4d66    mov eax,[ebp-20h]"
+"	      004d4d66    mov eax,dataptr"
 "	      004d4d69    jmp near ptr 004D4D6Eh"
 );
 // LINE 2417:
@@ -5936,37 +5936,37 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 );
 // LINE 2434:
 	asm( 
-"	      004d4d7c    mov eax,[ebp+8]"
-"	      004d4d7f    mov [ebp-0Ch],eax"
+"	      004d4d7c    mov eax,obj"
+"	      004d4d7f    mov oh,eax"
 );
 // LINE 2436:
 	asm( 
-"	      004d4d82    mov eax,[ebp+8]"
+"	      004d4d82    mov eax,obj"
 "	      004d4d85    push eax"
 "	      004d4d86    call 004D8520h"
 "	      004d4d8b    add esp,4"
-"	      004d4d8e    mov [ebp-4],eax"
+"	      004d4d8e    mov size1,eax"
 );
 // LINE 2437:
 	asm( 
-"	      004d4d91    mov eax,[ebp-0Ch]"
+"	      004d4d91    mov eax,oh"
 "	      004d4d94    mov eax,[eax+4]"
 "	      004d4d97    lea eax,[eax+eax*2]"
 "	      004d4d9a    shl eax,2"
-"	      004d4d9d    mov [ebp-8],eax"
+"	      004d4d9d    mov size2,eax"
 );
 // LINE 2438:
 	asm( 
-"	      004d4da0    mov eax,[ebp-0Ch]"
+"	      004d4da0    mov eax,oh"
 "	      004d4da3    mov eax,[eax+14h]"
 "	      004d4da6    shl eax,2"
-"	      004d4da9    mov [ebp-10h],eax"
+"	      004d4da9    mov size3,eax"
 );
 // LINE 2440:
 	asm( 
-"	      004d4dac    mov eax,[ebp-10h]"
-"	      004d4daf    add eax,[ebp-8]"
-"	      004d4db2    add eax,[ebp-4]"
+"	      004d4dac    mov eax,size3"
+"	      004d4daf    add eax,size2"
+"	      004d4db2    add eax,size1"
 "	      004d4db5    jmp near ptr 004D4DBAh"
 );
 // LINE 2441:
@@ -5999,22 +5999,22 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 );
 // LINE 2452:
 	asm( 
-"	      004d4dc8    mov eax,[ebp+8]"
-"	      004d4dcb    mov [ebp-14h],eax"
+"	      004d4dc8    mov eax,obj"
+"	      004d4dcb    mov oh,eax"
 );
 // LINE 2458:
 	asm( 
-"	      004d4dce    mov eax,[ebp+0Ch]"
-"	      004d4dd1    mov [ebp-4],eax"
+"	      004d4dce    mov eax,mem"
+"	      004d4dd1    mov to,eax"
 );
 // LINE 2459:
 	asm( 
-"	      004d4dd4    mov eax,[ebp-4]"
-"	      004d4dd7    mov [ebp-18h],eax"
+"	      004d4dd4    mov eax,to"
+"	      004d4dd7    mov oh2,eax"
 );
 // LINE 2461:
 	asm( 
-"	      004d4dda    mov eax,[ebp-4]"
+"	      004d4dda    mov eax,to"
 "	      004d4ddd    push eax"
 "	      004d4dde    call 004D8643h"
 "	      004d4de3    add esp,4"
@@ -6033,152 +6033,152 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 // LINE 2468:
 	asm( 
 "	      004d4dff    push 90h"
-"	      004d4e04    mov eax,[ebp-14h]"
+"	      004d4e04    mov eax,oh"
 "	      004d4e07    push eax"
-"	      004d4e08    mov eax,[ebp-4]"
+"	      004d4e08    mov eax,to"
 "	      004d4e0b    push eax"
 "	      004d4e0c    call 0056A800h"
 "	      004d4e11    add esp,0Ch"
 );
 // LINE 2469:
 	asm( 
-"	      004d4e14    add dword ptr [ebp-4],90h"
+"	      004d4e14    add to,90h"
 );
 // LINE 2471:
 	asm( 
-"	      004d4e1b    mov eax,[ebp-4]"
-"	      004d4e1e    mov ecx,[ebp-18h]"
+"	      004d4e1b    mov eax,to"
+"	      004d4e1e    mov ecx,oh2"
 "	      004d4e21    mov [ecx+8],eax"
 );
 // LINE 2474:
 	asm( 
-"	      004d4e24    mov eax,[ebp-14h]"
+"	      004d4e24    mov eax,oh"
 "	      004d4e27    mov eax,[eax+4]"
 "	      004d4e2a    lea eax,[eax+eax*2]"
 "	      004d4e2d    shl eax,2"
 "	      004d4e30    push eax"
-"	      004d4e31    mov eax,[ebp-14h]"
+"	      004d4e31    mov eax,oh"
 "	      004d4e34    mov eax,[eax+8]"
 "	      004d4e37    push eax"
-"	      004d4e38    mov eax,[ebp-4]"
+"	      004d4e38    mov eax,to"
 "	      004d4e3b    push eax"
 "	      004d4e3c    call 0056A800h"
 "	      004d4e41    add esp,0Ch"
 );
 // LINE 2475:
 	asm( 
-"	      004d4e44    mov eax,[ebp-14h]"
+"	      004d4e44    mov eax,oh"
 "	      004d4e47    mov eax,[eax+4]"
 "	      004d4e4a    lea eax,[eax+eax*2]"
 "	      004d4e4d    shl eax,2"
-"	      004d4e50    add [ebp-4],eax"
+"	      004d4e50    add to,eax"
 );
 // LINE 2478:
 	asm( 
-"	      004d4e53    mov eax,[ebp-4]"
-"	      004d4e56    mov ecx,[ebp-18h]"
+"	      004d4e53    mov eax,to"
+"	      004d4e56    mov ecx,oh2"
 "	      004d4e59    mov [ecx+4Ch],eax"
 );
 // LINE 2481:
 	asm( 
-"	      004d4e5c    mov eax,[ebp-14h]"
+"	      004d4e5c    mov eax,oh"
 "	      004d4e5f    mov eax,[eax+4Ch]"
-"	      004d4e62    mov [ebp-8],eax"
+"	      004d4e62    mov fh,eax"
 );
 // LINE 2482:
 	asm( 
-"	      004d4e65    mov dword ptr [ebp-0Ch],0"
+"	      004d4e65    mov i,0"
 "	      004d4e6c    jmp near ptr 004D4E74h"
-"	      004d4e71    inc dword ptr [ebp-0Ch]"
-"	      004d4e74    mov eax,[ebp-14h]"
-"	      004d4e77    mov ecx,[ebp-0Ch]"
+"	      004d4e71    inc i"
+"	      004d4e74    mov eax,oh"
+"	      004d4e77    mov ecx,i"
 "	      004d4e7a    cmp [eax+10h],ecx"
 "	      004d4e7d    jle near ptr 004D4F18h"
 );
 // LINE 2485:
 	asm( 
 "	      004d4e83    push 30h"
-"	      004d4e85    mov eax,[ebp-8]"
+"	      004d4e85    mov eax,fh"
 "	      004d4e88    push eax"
-"	      004d4e89    mov eax,[ebp-4]"
+"	      004d4e89    mov eax,to"
 "	      004d4e8c    push eax"
 "	      004d4e8d    call 0056A800h"
 "	      004d4e92    add esp,0Ch"
 );
 // LINE 2486:
 	asm( 
-"	      004d4e95    mov eax,[ebp-4]"
-"	      004d4e98    mov [ebp-10h],eax"
+"	      004d4e95    mov eax,to"
+"	      004d4e98    mov fh2,eax"
 );
 // LINE 2487:
 	asm( 
-"	      004d4e9b    add dword ptr [ebp-4],30h"
+"	      004d4e9b    add to,30h"
 );
 // LINE 2490:
 	asm( 
-"	      004d4e9f    mov eax,[ebp-8]"
+"	      004d4e9f    mov eax,fh"
 "	      004d4ea2    mov eax,[eax+4]"
 "	      004d4ea5    shl eax,2"
 "	      004d4ea8    push eax"
-"	      004d4ea9    mov eax,[ebp-8]"
+"	      004d4ea9    mov eax,fh"
 "	      004d4eac    mov eax,[eax+1Ch]"
 "	      004d4eaf    push eax"
-"	      004d4eb0    mov eax,[ebp-4]"
+"	      004d4eb0    mov eax,to"
 "	      004d4eb3    push eax"
 "	      004d4eb4    call 0056A800h"
 "	      004d4eb9    add esp,0Ch"
 );
 // LINE 2491:
 	asm( 
-"	      004d4ebc    mov eax,[ebp-4]"
-"	      004d4ebf    mov ecx,[ebp-10h]"
+"	      004d4ebc    mov eax,to"
+"	      004d4ebf    mov ecx,fh2"
 "	      004d4ec2    mov [ecx+1Ch],eax"
 );
 // LINE 2492:
 	asm( 
-"	      004d4ec5    mov eax,[ebp-8]"
+"	      004d4ec5    mov eax,fh"
 "	      004d4ec8    mov eax,[eax+4]"
 "	      004d4ecb    shl eax,2"
-"	      004d4ece    add [ebp-4],eax"
+"	      004d4ece    add to,eax"
 );
 // LINE 2495:
 	asm( 
-"	      004d4ed1    mov eax,[ebp-8]"
+"	      004d4ed1    mov eax,fh"
 "	      004d4ed4    mov eax,[eax+4]"
 "	      004d4ed7    shl eax,3"
 "	      004d4eda    push eax"
-"	      004d4edb    mov eax,[ebp-8]"
+"	      004d4edb    mov eax,fh"
 "	      004d4ede    mov eax,[eax+20h]"
 "	      004d4ee1    push eax"
-"	      004d4ee2    mov eax,[ebp-4]"
+"	      004d4ee2    mov eax,to"
 "	      004d4ee5    push eax"
 "	      004d4ee6    call 0056A800h"
 "	      004d4eeb    add esp,0Ch"
 );
 // LINE 2496:
 	asm( 
-"	      004d4eee    mov eax,[ebp-4]"
-"	      004d4ef1    mov ecx,[ebp-10h]"
+"	      004d4eee    mov eax,to"
+"	      004d4ef1    mov ecx,fh2"
 "	      004d4ef4    mov [ecx+20h],eax"
 );
 // LINE 2497:
 	asm( 
-"	      004d4ef7    mov eax,[ebp-8]"
+"	      004d4ef7    mov eax,fh"
 "	      004d4efa    mov eax,[eax+4]"
 "	      004d4efd    shl eax,3"
-"	      004d4f00    add [ebp-4],eax"
+"	      004d4f00    add to,eax"
 );
 // LINE 2500:
 	asm( 
-"	      004d4f03    mov eax,[ebp-4]"
-"	      004d4f06    mov ecx,[ebp-10h]"
+"	      004d4f03    mov eax,to"
+"	      004d4f06    mov ecx,fh2"
 "	      004d4f09    mov [ecx],eax"
 );
 // LINE 2503:
 	asm( 
-"	      004d4f0b    mov eax,[ebp-8]"
+"	      004d4f0b    mov eax,fh"
 "	      004d4f0e    mov eax,[eax]"
-"	      004d4f10    mov [ebp-8],eax"
+"	      004d4f10    mov fh,eax"
 );
 // LINE 2504:
 	asm( 
@@ -6186,7 +6186,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 );
 // LINE 2506:
 	asm( 
-"	      004d4f18    mov eax,[ebp+0Ch]"
+"	      004d4f18    mov eax,mem"
 "	      004d4f1b    jmp near ptr 004D4F20h"
 );
 // LINE 2508:
@@ -6231,90 +6231,90 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2529:
 	asm( 
-"	      004d4f2e    mov eax,[ebp+18h]"
-"	      004d4f31    mov [ebp-40h],eax"
+"	      004d4f2e    mov eax,tobj"
+"	      004d4f31    mov oh,eax"
 );
 // LINE 2540:
 	asm( 
-"	      004d4f34    mov eax,[ebp+8]"
+"	      004d4f34    mov eax,sloc"
 "	      004d4f37    mov eax,[eax]"
-"	      004d4f39    mov ecx,[ebp+14h]"
+"	      004d4f39    mov ecx,tloc"
 "	      004d4f3c    sub eax,[ecx]"
-"	      004d4f3e    mov [ebp-34h],eax"
+"	      004d4f3e    mov loc.x,eax"
 );
 // LINE 2541:
 	asm( 
-"	      004d4f41    mov eax,[ebp+8]"
+"	      004d4f41    mov eax,sloc"
 "	      004d4f44    mov eax,[eax+4]"
-"	      004d4f47    mov ecx,[ebp+14h]"
+"	      004d4f47    mov ecx,tloc"
 "	      004d4f4a    sub eax,[ecx+4]"
-"	      004d4f4d    mov [ebp-30h],eax"
+"	      004d4f4d    mov loc.y,eax"
 );
 // LINE 2542:
 	asm( 
-"	      004d4f50    mov eax,[ebp+8]"
+"	      004d4f50    mov eax,sloc"
 "	      004d4f53    mov eax,[eax+8]"
-"	      004d4f56    mov ecx,[ebp+14h]"
+"	      004d4f56    mov ecx,tloc"
 "	      004d4f59    sub eax,[ecx+8]"
-"	      004d4f5c    mov [ebp-2Ch],eax"
+"	      004d4f5c    mov loc.z,eax"
 );
 // LINE 2546:
 	asm( 
-"	      004d4f5f    mov eax,[ebp-40h]"
+"	      004d4f5f    mov eax,oh"
 "	      004d4f62    mov eax,[eax+4Ch]"
-"	      004d4f65    mov [ebp-20h],eax"
+"	      004d4f65    mov fh,eax"
 );
 // LINE 2547:
 	asm( 
-"	      004d4f68    mov dword ptr [ebp-28h],0"
+"	      004d4f68    mov i,0"
 "	      004d4f6f    jmp near ptr 004D4F7Fh"
-"	      004d4f74    inc dword ptr [ebp-28h]"
-"	      004d4f77    mov eax,[ebp-20h]"
+"	      004d4f74    inc i"
+"	      004d4f77    mov eax,fh"
 "	      004d4f7a    mov eax,[eax]"
-"	      004d4f7c    mov [ebp-20h],eax"
-"	      004d4f7f    mov eax,[ebp-40h]"
-"	      004d4f82    mov ecx,[ebp-28h]"
+"	      004d4f7c    mov fh,eax"
+"	      004d4f7f    mov eax,oh"
+"	      004d4f82    mov ecx,i"
 "	      004d4f85    cmp [eax+10h],ecx"
 "	      004d4f88    jle near ptr 004D52ACh"
 );
 // LINE 2552:
 	asm( 
-"	      004d4f8e    mov eax,[ebp-20h]"
+"	      004d4f8e    mov eax,fh"
 "	      004d4f91    mov eax,[eax+2Ch]"
 "	      004d4f94    mov eax,[eax+4]"
 "	      004d4f97    push eax"
-"	      004d4f98    mov eax,[ebp+0Ch]"
+"	      004d4f98    mov eax,svec"
 "	      004d4f9b    mov eax,[eax+4]"
 "	      004d4f9e    push eax"
 "	      004d4f9f    call 004D19BDh"
 "	      004d4fa4    add esp,8"
 "	      004d4fa7    mov ebx,eax"
-"	      004d4fa9    mov eax,[ebp-20h]"
+"	      004d4fa9    mov eax,fh"
 "	      004d4fac    mov eax,[eax+2Ch]"
 "	      004d4faf    mov eax,[eax+8]"
 "	      004d4fb2    push eax"
-"	      004d4fb3    mov eax,[ebp+0Ch]"
+"	      004d4fb3    mov eax,svec"
 "	      004d4fb6    mov eax,[eax+8]"
 "	      004d4fb9    push eax"
 "	      004d4fba    call 004D19BDh"
 "	      004d4fbf    add esp,8"
 "	      004d4fc2    add ebx,eax"
-"	      004d4fc4    mov eax,[ebp-20h]"
+"	      004d4fc4    mov eax,fh"
 "	      004d4fc7    mov eax,[eax+2Ch]"
 "	      004d4fca    mov eax,[eax]"
 "	      004d4fcc    push eax"
-"	      004d4fcd    mov eax,[ebp+0Ch]"
+"	      004d4fcd    mov eax,svec"
 "	      004d4fd0    mov eax,[eax]"
 "	      004d4fd2    push eax"
 "	      004d4fd3    call 004D19BDh"
 "	      004d4fd8    add esp,8"
 "	      004d4fdb    add ebx,eax"
 "	      004d4fdd    neg ebx"
-"	      004d4fdf    mov [ebp-10h],ebx"
+"	      004d4fdf    mov dotp1,ebx"
 );
 // LINE 2557:
 	asm( 
-"	      004d4fe2    cmp dword ptr [ebp-10h],0FFFFFAE2h"
+"	      004d4fe2    cmp dotp1,0FFFFFAE2h"
 "	      004d4fe9    jl near ptr 004D4FF4h"
 );
 // LINE 2558:
@@ -6323,94 +6323,94 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2562:
 	asm( 
-"	      004d4ff4    mov eax,[ebp-20h]"
+"	      004d4ff4    mov eax,fh"
 "	      004d4ff7    mov eax,[eax+2Ch]"
 "	      004d4ffa    mov eax,[eax+0Ch]"
-"	      004d4ffd    mov [ebp-58h],eax"
+"	      004d4ffd    mov v0,eax"
 );
 // LINE 2565:
 	asm( 
-"	      004d5000    mov eax,[ebp-20h]"
+"	      004d5000    mov eax,fh"
 "	      004d5003    mov eax,[eax+2Ch]"
 "	      004d5006    mov eax,[eax+4]"
 "	      004d5009    push eax"
-"	      004d500a    mov eax,[ebp-58h]"
+"	      004d500a    mov eax,v0"
 "	      004d500d    mov eax,[eax+4]"
 "	      004d5010    push eax"
 "	      004d5011    call 004D19BDh"
 "	      004d5016    add esp,8"
 "	      004d5019    mov ebx,eax"
-"	      004d501b    mov eax,[ebp-20h]"
+"	      004d501b    mov eax,fh"
 "	      004d501e    mov eax,[eax+2Ch]"
 "	      004d5021    mov eax,[eax+8]"
 "	      004d5024    push eax"
-"	      004d5025    mov eax,[ebp-58h]"
+"	      004d5025    mov eax,v0"
 "	      004d5028    mov eax,[eax+8]"
 "	      004d502b    push eax"
 "	      004d502c    call 004D19BDh"
 "	      004d5031    add esp,8"
 "	      004d5034    add ebx,eax"
-"	      004d5036    mov eax,[ebp-20h]"
+"	      004d5036    mov eax,fh"
 "	      004d5039    mov eax,[eax+2Ch]"
 "	      004d503c    mov eax,[eax]"
 "	      004d503e    push eax"
-"	      004d503f    mov eax,[ebp-58h]"
+"	      004d503f    mov eax,v0"
 "	      004d5042    mov eax,[eax]"
 "	      004d5044    push eax"
 "	      004d5045    call 004D19BDh"
 "	      004d504a    add esp,8"
 "	      004d504d    add ebx,eax"
-"	      004d504f    mov [ebp-14h],ebx"
+"	      004d504f    mov dotp2,ebx"
 );
 // LINE 2570:
 	asm( 
-"	      004d5052    mov eax,[ebp-20h]"
+"	      004d5052    mov eax,fh"
 "	      004d5055    mov eax,[eax+2Ch]"
 "	      004d5058    mov eax,[eax+4]"
 "	      004d505b    push eax"
-"	      004d505c    mov eax,[ebp-30h]"
+"	      004d505c    mov eax,loc.y"
 "	      004d505f    push eax"
 "	      004d5060    call 004D19BDh"
 "	      004d5065    add esp,8"
 "	      004d5068    mov ebx,eax"
-"	      004d506a    mov eax,[ebp-20h]"
+"	      004d506a    mov eax,fh"
 "	      004d506d    mov eax,[eax+2Ch]"
 "	      004d5070    mov eax,[eax+8]"
 "	      004d5073    push eax"
-"	      004d5074    mov eax,[ebp-2Ch]"
+"	      004d5074    mov eax,loc.z"
 "	      004d5077    push eax"
 "	      004d5078    call 004D19BDh"
 "	      004d507d    add esp,8"
 "	      004d5080    add ebx,eax"
-"	      004d5082    mov eax,[ebp-20h]"
+"	      004d5082    mov eax,fh"
 "	      004d5085    mov eax,[eax+2Ch]"
 "	      004d5088    mov eax,[eax]"
 "	      004d508a    push eax"
-"	      004d508b    mov eax,[ebp-34h]"
+"	      004d508b    mov eax,loc.x"
 "	      004d508e    push eax"
 "	      004d508f    call 004D19BDh"
 "	      004d5094    add esp,8"
 "	      004d5097    add ebx,eax"
 "	      004d5099    neg ebx"
-"	      004d509b    mov [ebp-18h],ebx"
+"	      004d509b    mov dotp3,ebx"
 );
 // LINE 2574:
 	asm( 
-"	      004d509e    mov eax,[ebp-10h]"
+"	      004d509e    mov eax,dotp1"
 "	      004d50a1    push eax"
-"	      004d50a2    mov eax,[ebp-18h]"
-"	      004d50a5    add eax,[ebp-14h]"
+"	      004d50a2    mov eax,dotp3"
+"	      004d50a5    add eax,dotp2"
 "	      004d50a8    push eax"
 "	      004d50a9    call 004D19DFh"
 "	      004d50ae    add esp,8"
 "	      004d50b1    neg eax"
-"	      004d50b3    mov [ebp-48h],eax"
+"	      004d50b3    mov tval,eax"
 );
 // LINE 2577:
 	asm( 
-"	      004d50b6    mov eax,[ebp+10h]"
+"	      004d50b6    mov eax,dist"
 "	      004d50b9    add eax,50000h"
-"	      004d50be    cmp eax,[ebp-48h]"
+"	      004d50be    cmp eax,tval"
 "	      004d50c1    jge near ptr 004D50CCh"
 );
 // LINE 2578:
@@ -6419,149 +6419,149 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2581:
 	asm( 
-"	      004d50cc    mov eax,[ebp+0Ch]"
+"	      004d50cc    mov eax,svec"
 "	      004d50cf    mov eax,[eax]"
 "	      004d50d1    push eax"
-"	      004d50d2    mov eax,[ebp-48h]"
+"	      004d50d2    mov eax,tval"
 "	      004d50d5    push eax"
 "	      004d50d6    call 004D19BDh"
 "	      004d50db    add esp,8"
-"	      004d50de    mov ecx,[ebp-34h]"
+"	      004d50de    mov ecx,loc.x"
 "	      004d50e1    add ecx,eax"
-"	      004d50e3    mov [ebp-0Ch],ecx"
+"	      004d50e3    mov iloc.x,ecx"
 );
 // LINE 2582:
 	asm( 
-"	      004d50e6    mov eax,[ebp+0Ch]"
+"	      004d50e6    mov eax,svec"
 "	      004d50e9    mov eax,[eax+4]"
 "	      004d50ec    push eax"
-"	      004d50ed    mov eax,[ebp-48h]"
+"	      004d50ed    mov eax,tval"
 "	      004d50f0    push eax"
 "	      004d50f1    call 004D19BDh"
 "	      004d50f6    add esp,8"
-"	      004d50f9    mov ecx,[ebp-30h]"
+"	      004d50f9    mov ecx,loc.y"
 "	      004d50fc    add ecx,eax"
-"	      004d50fe    mov [ebp-8],ecx"
+"	      004d50fe    mov iloc.y,ecx"
 );
 // LINE 2583:
 	asm( 
-"	      004d5101    mov eax,[ebp+0Ch]"
+"	      004d5101    mov eax,svec"
 "	      004d5104    mov eax,[eax+8]"
 "	      004d5107    push eax"
-"	      004d5108    mov eax,[ebp-48h]"
+"	      004d5108    mov eax,tval"
 "	      004d510b    push eax"
 "	      004d510c    call 004D19BDh"
 "	      004d5111    add esp,8"
-"	      004d5114    mov ecx,[ebp-2Ch]"
+"	      004d5114    mov ecx,loc.z"
 "	      004d5117    add ecx,eax"
-"	      004d5119    mov [ebp-4],ecx"
+"	      004d5119    mov iloc.z,ecx"
 );
 // LINE 2587:
 	asm( 
-"	      004d511c    mov dword ptr [ebp-44h],7FF80000h"
-"	      004d5123    mov eax,[ebp-44h]"
-"	      004d5126    mov [ebp-38h],eax"
-"	      004d5129    mov eax,[ebp-38h]"
-"	      004d512c    mov [ebp-24h],eax"
+"	      004d511c    mov minz,7FF80000h"
+"	      004d5123    mov eax,minz"
+"	      004d5126    mov miny,eax"
+"	      004d5129    mov eax,miny"
+"	      004d512c    mov minx,eax"
 );
 // LINE 2588:
 	asm( 
-"	      004d512f    mov dword ptr [ebp-54h],80080000h"
-"	      004d5136    mov eax,[ebp-54h]"
-"	      004d5139    mov [ebp-50h],eax"
-"	      004d513c    mov eax,[ebp-50h]"
-"	      004d513f    mov [ebp-4Ch],eax"
+"	      004d512f    mov maxz,80080000h"
+"	      004d5136    mov eax,maxz"
+"	      004d5139    mov maxy,eax"
+"	      004d513c    mov eax,maxy"
+"	      004d513f    mov maxx,eax"
 );
 // LINE 2593:
 	asm( 
-"	      004d5142    mov eax,[ebp-20h]"
+"	      004d5142    mov eax,fh"
 "	      004d5145    mov eax,[eax+1Ch]"
-"	      004d5148    mov [ebp-1Ch],eax"
+"	      004d5148    mov vertno,eax"
 );
 // LINE 2594:
 	asm( 
-"	      004d514b    mov dword ptr [ebp-3Ch],0"
+"	      004d514b    mov j,0"
 "	      004d5152    jmp near ptr 004D515Ah"
-"	      004d5157    inc dword ptr [ebp-3Ch]"
-"	      004d515a    mov eax,[ebp-20h]"
-"	      004d515d    mov ecx,[ebp-3Ch]"
+"	      004d5157    inc j"
+"	      004d515a    mov eax,fh"
+"	      004d515d    mov ecx,j"
 "	      004d5160    cmp [eax+4],ecx"
 "	      004d5163    jle near ptr 004D5215h"
 );
 // LINE 2600:
 	asm( 
-"	      004d5169    mov eax,[ebp-1Ch]"
+"	      004d5169    mov eax,vertno"
 "	      004d516c    mov eax,[eax]"
 "	      004d516e    shr eax,4"
 "	      004d5171    lea eax,[eax+eax*2]"
 "	      004d5174    shl eax,2"
-"	      004d5177    mov ecx,[ebp-40h]"
+"	      004d5177    mov ecx,oh"
 "	      004d517a    add eax,[ecx+8]"
-"	      004d517d    mov [ebp-58h],eax"
+"	      004d517d    mov v0,eax"
 );
 // LINE 2604:
 	asm( 
-"	      004d5180    add dword ptr [ebp-1Ch],4"
+"	      004d5180    add vertno,4"
 );
 // LINE 2607:
 	asm( 
-"	      004d5184    mov eax,[ebp-58h]"
-"	      004d5187    mov ecx,[ebp-24h]"
+"	      004d5184    mov eax,v0"
+"	      004d5187    mov ecx,minx"
 "	      004d518a    cmp [eax],ecx"
 "	      004d518c    jge near ptr 004D519Ah"
-"	      004d5192    mov eax,[ebp-58h]"
+"	      004d5192    mov eax,v0"
 "	      004d5195    mov eax,[eax]"
-"	      004d5197    mov [ebp-24h],eax"
+"	      004d5197    mov minx,eax"
 );
 // LINE 2608:
 	asm( 
-"	      004d519a    mov eax,[ebp-58h]"
-"	      004d519d    mov ecx,[ebp-38h]"
+"	      004d519a    mov eax,v0"
+"	      004d519d    mov ecx,miny"
 "	      004d51a0    cmp [eax+4],ecx"
 "	      004d51a3    jge near ptr 004D51B2h"
-"	      004d51a9    mov eax,[ebp-58h]"
+"	      004d51a9    mov eax,v0"
 "	      004d51ac    mov eax,[eax+4]"
-"	      004d51af    mov [ebp-38h],eax"
+"	      004d51af    mov miny,eax"
 );
 // LINE 2609:
 	asm( 
-"	      004d51b2    mov eax,[ebp-58h]"
-"	      004d51b5    mov ecx,[ebp-44h]"
+"	      004d51b2    mov eax,v0"
+"	      004d51b5    mov ecx,minz"
 "	      004d51b8    cmp [eax+8],ecx"
 "	      004d51bb    jge near ptr 004D51CAh"
-"	      004d51c1    mov eax,[ebp-58h]"
+"	      004d51c1    mov eax,v0"
 "	      004d51c4    mov eax,[eax+8]"
-"	      004d51c7    mov [ebp-44h],eax"
+"	      004d51c7    mov minz,eax"
 );
 // LINE 2610:
 	asm( 
-"	      004d51ca    mov eax,[ebp-58h]"
-"	      004d51cd    mov ecx,[ebp-4Ch]"
+"	      004d51ca    mov eax,v0"
+"	      004d51cd    mov ecx,maxx"
 "	      004d51d0    cmp [eax],ecx"
 "	      004d51d2    jle near ptr 004D51E0h"
-"	      004d51d8    mov eax,[ebp-58h]"
+"	      004d51d8    mov eax,v0"
 "	      004d51db    mov eax,[eax]"
-"	      004d51dd    mov [ebp-4Ch],eax"
+"	      004d51dd    mov maxx,eax"
 );
 // LINE 2611:
 	asm( 
-"	      004d51e0    mov eax,[ebp-58h]"
-"	      004d51e3    mov ecx,[ebp-50h]"
+"	      004d51e0    mov eax,v0"
+"	      004d51e3    mov ecx,maxy"
 "	      004d51e6    cmp [eax+4],ecx"
 "	      004d51e9    jle near ptr 004D51F8h"
-"	      004d51ef    mov eax,[ebp-58h]"
+"	      004d51ef    mov eax,v0"
 "	      004d51f2    mov eax,[eax+4]"
-"	      004d51f5    mov [ebp-50h],eax"
+"	      004d51f5    mov maxy,eax"
 );
 // LINE 2612:
 	asm( 
-"	      004d51f8    mov eax,[ebp-58h]"
-"	      004d51fb    mov ecx,[ebp-54h]"
+"	      004d51f8    mov eax,v0"
+"	      004d51fb    mov ecx,maxz"
 "	      004d51fe    cmp [eax+8],ecx"
 "	      004d5201    jle near ptr 004D5210h"
-"	      004d5207    mov eax,[ebp-58h]"
+"	      004d5207    mov eax,v0"
 "	      004d520a    mov eax,[eax+8]"
-"	      004d520d    mov [ebp-54h],eax"
+"	      004d520d    mov maxz,eax"
 );
 // LINE 2613:
 	asm( 
@@ -6569,13 +6569,13 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2617:
 	asm( 
-"	      004d5215    mov eax,[ebp-54h]"
+"	      004d5215    mov eax,maxz"
 "	      004d5218    add eax,20000h"
-"	      004d521d    cmp [ebp-4],eax"
+"	      004d521d    cmp iloc.z,eax"
 "	      004d5220    jg near ptr 004D5237h"
-"	      004d5226    mov eax,[ebp-44h]"
+"	      004d5226    mov eax,minz"
 "	      004d5229    sub eax,20000h"
-"	      004d522e    cmp [ebp-4],eax"
+"	      004d522e    cmp iloc.z,eax"
 "	      004d5231    jge near ptr 004D523Ch"
 );
 // LINE 2618:
@@ -6584,13 +6584,13 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2619:
 	asm( 
-"	      004d523c    mov eax,[ebp-50h]"
+"	      004d523c    mov eax,maxy"
 "	      004d523f    add eax,20000h"
-"	      004d5244    cmp [ebp-8],eax"
+"	      004d5244    cmp iloc.y,eax"
 "	      004d5247    jg near ptr 004D525Eh"
-"	      004d524d    mov eax,[ebp-38h]"
+"	      004d524d    mov eax,miny"
 "	      004d5250    sub eax,20000h"
-"	      004d5255    cmp [ebp-8],eax"
+"	      004d5255    cmp iloc.y,eax"
 "	      004d5258    jge near ptr 004D5263h"
 );
 // LINE 2620:
@@ -6599,13 +6599,13 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2621:
 	asm( 
-"	      004d5263    mov eax,[ebp-4Ch]"
+"	      004d5263    mov eax,maxx"
 "	      004d5266    add eax,20000h"
-"	      004d526b    cmp [ebp-0Ch],eax"
+"	      004d526b    cmp iloc.x,eax"
 "	      004d526e    jg near ptr 004D5285h"
-"	      004d5274    mov eax,[ebp-24h]"
+"	      004d5274    mov eax,minx"
 "	      004d5277    sub eax,20000h"
-"	      004d527c    cmp eax,[ebp-0Ch]"
+"	      004d527c    cmp eax,iloc.x"
 "	      004d527f    jle near ptr 004D528Ah"
 );
 // LINE 2622:
@@ -6614,19 +6614,19 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 );
 // LINE 2626:
 	asm( 
-"	      004d528a    cmp dword ptr [ebp+1Ch],0"
+"	      004d528a    cmp nptrptr,0"
 "	      004d528e    je near ptr 004D529Fh"
 );
 // LINE 2627:
 	asm( 
-"	      004d5294    mov eax,[ebp-20h]"
+"	      004d5294    mov eax,fh"
 "	      004d5297    mov eax,[eax+2Ch]"
-"	      004d529a    mov ecx,[ebp+1Ch]"
+"	      004d529a    mov ecx,nptrptr"
 "	      004d529d    mov [ecx],eax"
 );
 // LINE 2629:
 	asm( 
-"	      004d529f    mov eax,[ebp-48h]"
+"	      004d529f    mov eax,tval"
 "	      004d52a2    jmp near ptr 004D52B6h"
 );
 // LINE 2631:

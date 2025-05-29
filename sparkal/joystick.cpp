@@ -23,46 +23,46 @@ void JoystickManager::JoystickManager() {
 "	      0049a4b5    push ebx"
 "	      0049a4b6    push esi"
 "	      0049a4b7    push edi"
-"	      0049a4b8    mov [ebp-8],ecx"
+"	      0049a4b8    mov this,ecx"
 );
 // LINE 29:
 	asm( 
-"	      0049a4bb    mov eax,[ebp-8]"
+"	      0049a4bb    mov eax,this"
 "	      0049a4be    mov dword ptr [eax+54h],0FFFFFF9Ch"
 );
 // LINE 30:
 	asm( 
-"	      0049a4c5    mov eax,[ebp-8]"
+"	      0049a4c5    mov eax,this"
 "	      0049a4c8    mov dword ptr [eax+58h],64h"
 );
 // LINE 31:
 	asm( 
-"	      0049a4cf    mov eax,[ebp-8]"
+"	      0049a4cf    mov eax,this"
 "	      0049a4d2    mov dword ptr [eax+5Ch],0"
 );
 // LINE 32:
 	asm( 
-"	      0049a4d9    mov eax,[ebp-8]"
+"	      0049a4d9    mov eax,this"
 "	      0049a4dc    mov dword ptr [eax+60h],0"
 );
 // LINE 33:
 	asm( 
-"	      0049a4e3    mov dword ptr [ebp-4],0"
+"	      0049a4e3    mov i,0"
 "	      0049a4ea    jmp near ptr 0049A4F2h"
-"	      0049a4ef    inc dword ptr [ebp-4]"
-"	      0049a4f2    cmp dword ptr [ebp-4],10h"
+"	      0049a4ef    inc i"
+"	      0049a4f2    cmp i,10h"
 "	      0049a4f6    jge near ptr 0049A51Ah"
 );
 // LINE 34:
 	asm( 
-"	      0049a4fc    mov eax,[ebp-4]"
-"	      0049a4ff    mov ecx,[ebp-8]"
+"	      0049a4fc    mov eax,i"
+"	      0049a4ff    mov ecx,this"
 "	      0049a502    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 35:
 	asm( 
-"	      0049a507    mov eax,[ebp-4]"
-"	      0049a50a    mov ecx,[ebp-8]"
+"	      0049a507    mov eax,i"
+"	      0049a50a    mov ecx,this"
 "	      0049a50d    mov dword ptr [ecx+eax*4+14h],0"
 );
 // LINE 36:
@@ -72,7 +72,7 @@ void JoystickManager::JoystickManager() {
 // LINE 38:
 	asm( 
 "	      0049a51a    jmp near ptr 0049A51Fh"
-"	      0049a51f    mov eax,[ebp-8]"
+"	      0049a51f    mov eax,this"
 "	      0049a522    pop edi"
 "	      0049a523    pop esi"
 "	      0049a524    pop ebx"
@@ -96,36 +96,36 @@ int32_t JoystickManager::Initialize() {
 "	      0049a52d    push ebx"
 "	      0049a52e    push esi"
 "	      0049a52f    push edi"
-"	      0049a530    mov [ebp-20h],ecx"
+"	      0049a530    mov this,ecx"
 );
 // LINE 51:
 	asm( 
-"	      0049a533    mov eax,[ebp-20h]"
+"	      0049a533    mov eax,this"
 "	      0049a536    mov dword ptr [eax],0"
 );
 // LINE 60:
 	asm( 
-"	      0049a53c    mov eax,[ebp-20h]"
+"	      0049a53c    mov eax,this"
 "	      0049a53f    mov dword ptr [eax],0"
 );
 // LINE 61:
 	asm( 
-"	      0049a545    mov dword ptr [ebp-8],0"
+"	      0049a545    mov i,0"
 "	      0049a54c    jmp near ptr 0049A554h"
-"	      0049a551    inc dword ptr [ebp-8]"
-"	      0049a554    cmp dword ptr [ebp-8],10h"
+"	      0049a551    inc i"
+"	      0049a554    cmp i,10h"
 "	      0049a558    jge near ptr 0049A57Ch"
 );
 // LINE 62:
 	asm( 
-"	      0049a55e    mov eax,[ebp-8]"
-"	      0049a561    mov ecx,[ebp-20h]"
+"	      0049a55e    mov eax,i"
+"	      0049a561    mov ecx,this"
 "	      0049a564    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 63:
 	asm( 
-"	      0049a569    mov eax,[ebp-8]"
-"	      0049a56c    mov ecx,[ebp-20h]"
+"	      0049a569    mov eax,i"
+"	      0049a56c    mov ecx,this"
 "	      0049a56f    mov dword ptr [ecx+eax*4+14h],0"
 );
 // LINE 64:
@@ -135,75 +135,75 @@ int32_t JoystickManager::Initialize() {
 // LINE 66:
 	asm( 
 "	      0049a57c    call dword ptr ds:[6C38DCh]"
-"	      0049a582    mov [ebp-1Ch],eax"
+"	      0049a582    mov nMaxJoysticks,eax"
 );
 // LINE 67:
 	asm( 
-"	      0049a585    cmp dword ptr [ebp-1Ch],10h"
+"	      0049a585    cmp nMaxJoysticks,10h"
 "	      0049a589    jle near ptr 0049A596h"
 );
 // LINE 68:
 	asm( 
-"	      0049a58f    mov dword ptr [ebp-1Ch],10h"
+"	      0049a58f    mov nMaxJoysticks,10h"
 );
 // LINE 70:
 	asm( 
-"	      0049a596    mov dword ptr [ebp-8],0"
+"	      0049a596    mov i,0"
 "	      0049a59d    jmp near ptr 0049A5A5h"
-"	      0049a5a2    inc dword ptr [ebp-8]"
-"	      0049a5a5    mov eax,[ebp-8]"
-"	      0049a5a8    cmp [ebp-1Ch],eax"
+"	      0049a5a2    inc i"
+"	      0049a5a5    mov eax,i"
+"	      0049a5a8    cmp nMaxJoysticks,eax"
 "	      0049a5ab    jle near ptr 0049A61Ah"
 );
 // LINE 71:
 	asm( 
-"	      0049a5b1    lea eax,[ebp-18h]"
+"	      0049a5b1    lea eax,joyInfo.wXpos"
 "	      0049a5b4    push eax"
-"	      0049a5b5    mov eax,[ebp-8]"
+"	      0049a5b5    mov eax,i"
 "	      0049a5b8    push eax"
 "	      0049a5b9    call dword ptr ds:[6C38E0h]"
-"	      0049a5bf    mov [ebp-4],eax"
+"	      0049a5bf    mov mmResult,eax"
 );
 // LINE 72:
 	asm( 
-"	      0049a5c2    cmp dword ptr [ebp-4],0"
+"	      0049a5c2    cmp mmResult,0"
 "	      0049a5c6    jne near ptr 0049A615h"
 );
 // LINE 73:
 	asm( 
-"	      0049a5cc    mov eax,[ebp-8]"
-"	      0049a5cf    mov ecx,[ebp-20h]"
+"	      0049a5cc    mov eax,i"
+"	      0049a5cf    mov ecx,this"
 "	      0049a5d2    mov ecx,[ecx]"
-"	      0049a5d4    mov edx,[ebp-20h]"
+"	      0049a5d4    mov edx,this"
 "	      0049a5d7    mov [edx+ecx*4+14h],eax"
 );
 // LINE 74:
 	asm( 
-"	      0049a5db    mov eax,[ebp-20h]"
+"	      0049a5db    mov eax,this"
 "	      0049a5de    mov eax,[eax]"
-"	      0049a5e0    mov ecx,[ebp-20h]"
+"	      0049a5e0    mov ecx,this"
 "	      0049a5e3    mov byte ptr [eax+ecx+4],1"
 );
 // LINE 75:
 	asm( 
 "	      0049a5e8    push 194h"
-"	      0049a5ed    mov eax,[ebp-20h]"
+"	      0049a5ed    mov eax,this"
 "	      0049a5f0    mov eax,[eax]"
 "	      0049a5f2    mov ecx,eax"
 "	      0049a5f4    lea eax,[eax+eax*4]"
 "	      0049a5f7    lea eax,[eax+eax*8]"
 "	      0049a5fa    lea eax,[eax+eax*8]"
 "	      0049a5fd    sub eax,ecx"
-"	      0049a5ff    add eax,[ebp-20h]"
+"	      0049a5ff    add eax,this"
 "	      0049a602    add eax,64h"
 "	      0049a605    push eax"
-"	      0049a606    mov eax,[ebp-8]"
+"	      0049a606    mov eax,i"
 "	      0049a609    push eax"
 "	      0049a60a    call dword ptr ds:[6C38E4h]"
 );
 // LINE 76:
 	asm( 
-"	      0049a610    mov eax,[ebp-20h]"
+"	      0049a610    mov eax,this"
 "	      0049a613    inc dword ptr [eax]"
 );
 // LINE 78:
@@ -212,7 +212,7 @@ int32_t JoystickManager::Initialize() {
 );
 // LINE 82:
 	asm( 
-"	      0049a61a    mov eax,[ebp-20h]"
+"	      0049a61a    mov eax,this"
 "	      0049a61d    mov eax,[eax]"
 "	      0049a61f    jmp near ptr 0049A624h"
 );
@@ -238,27 +238,27 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 "	      0049a62f    push ebx"
 "	      0049a630    push esi"
 "	      0049a631    push edi"
-"	      0049a632    mov [ebp-8],ecx"
+"	      0049a632    mov this,ecx"
 );
 // LINE 93:
 	asm( 
-"	      0049a635    mov dword ptr [ebp-4],0"
+"	      0049a635    mov i,0"
 "	      0049a63c    jmp near ptr 0049A644h"
-"	      0049a641    inc dword ptr [ebp-4]"
-"	      0049a644    cmp dword ptr [ebp-4],10h"
+"	      0049a641    inc i"
+"	      0049a644    cmp i,10h"
 "	      0049a648    jge near ptr 0049A688h"
 );
 // LINE 95:
 	asm( 
-"	      0049a64e    mov eax,[ebp+8]"
+"	      0049a64e    mov eax,szJoystickName"
 "	      0049a651    push eax"
-"	      0049a652    mov eax,[ebp-4]"
+"	      0049a652    mov eax,i"
 "	      0049a655    mov ecx,eax"
 "	      0049a657    lea eax,[eax+eax*4]"
 "	      0049a65a    lea eax,[eax+eax*8]"
 "	      0049a65d    lea eax,[eax+eax*8]"
 "	      0049a660    sub eax,ecx"
-"	      0049a662    add eax,[ebp-8]"
+"	      0049a662    add eax,this"
 "	      0049a665    add eax,68h"
 "	      0049a668    push eax"
 "	      0049a669    call 0056CE20h"
@@ -300,11 +300,11 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 "	      0049a69c    push ebx"
 "	      0049a69d    push esi"
 "	      0049a69e    push edi"
-"	      0049a69f    mov [ebp-4],ecx"
+"	      0049a69f    mov this,ecx"
 );
 // LINE 107:
 	asm( 
-"	      0049a6a2    cmp dword ptr [ebp+8],10h"
+"	      0049a6a2    cmp nJoystick,10h"
 "	      0049a6a6    jb near ptr 0049A6B3h"
 );
 // LINE 108:
@@ -314,8 +314,8 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 );
 // LINE 109:
 	asm( 
-"	      0049a6b3    mov eax,[ebp+8]"
-"	      0049a6b6    mov ecx,[ebp-4]"
+"	      0049a6b3    mov eax,nJoystick"
+"	      0049a6b6    mov ecx,this"
 "	      0049a6b9    movsx eax,byte ptr [eax+ecx+4]"
 "	      0049a6be    test eax,eax"
 "	      0049a6c0    jne near ptr 0049A6CDh"
@@ -327,16 +327,16 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 );
 // LINE 112:
 	asm( 
-"	      0049a6cd    mov eax,[ebp+8]"
+"	      0049a6cd    mov eax,nJoystick"
 "	      0049a6d0    mov ecx,eax"
 "	      0049a6d2    lea eax,[eax+eax*4]"
 "	      0049a6d5    lea eax,[eax+eax*8]"
 "	      0049a6d8    lea eax,[eax+eax*8]"
 "	      0049a6db    sub eax,ecx"
-"	      0049a6dd    add eax,[ebp-4]"
+"	      0049a6dd    add eax,this"
 "	      0049a6e0    add eax,68h"
 "	      0049a6e3    push eax"
-"	      0049a6e4    mov eax,[ebp+0Ch]"
+"	      0049a6e4    mov eax,szJoystickName"
 "	      0049a6e7    push eax"
 "	      0049a6e8    call 0056CEB0h"
 "	      0049a6ed    add esp,8"
@@ -368,27 +368,27 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 "	      0049a707    push ebx"
 "	      0049a708    push esi"
 "	      0049a709    push edi"
-"	      0049a70a    mov [ebp-8],ecx"
+"	      0049a70a    mov this,ecx"
 );
 // LINE 127:
 	asm( 
-"	      0049a70d    mov dword ptr [ebp-4],0"
+"	      0049a70d    mov i,0"
 "	      0049a714    jmp near ptr 0049A71Ch"
-"	      0049a719    inc dword ptr [ebp-4]"
-"	      0049a71c    cmp dword ptr [ebp-4],10h"
+"	      0049a719    inc i"
+"	      0049a71c    cmp i,10h"
 "	      0049a720    jge near ptr 0049A768h"
 );
 // LINE 129:
 	asm( 
-"	      0049a726    mov eax,[ebp+8]"
+"	      0049a726    mov eax,szJoystickName"
 "	      0049a729    push eax"
-"	      0049a72a    mov eax,[ebp-4]"
+"	      0049a72a    mov eax,i"
 "	      0049a72d    mov ecx,eax"
 "	      0049a72f    lea eax,[eax+eax*4]"
 "	      0049a732    lea eax,[eax+eax*8]"
 "	      0049a735    lea eax,[eax+eax*8]"
 "	      0049a738    sub eax,ecx"
-"	      0049a73a    add eax,[ebp-8]"
+"	      0049a73a    add eax,this"
 "	      0049a73d    add eax,68h"
 "	      0049a740    push eax"
 "	      0049a741    call 0056CE20h"
@@ -398,8 +398,8 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 );
 // LINE 130:
 	asm( 
-"	      0049a751    mov eax,[ebp-4]"
-"	      0049a754    mov ecx,[ebp+0Ch]"
+"	      0049a751    mov eax,i"
+"	      0049a754    mov ecx,nJoystick"
 "	      0049a757    mov [ecx],eax"
 );
 // LINE 131:
@@ -436,27 +436,27 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 "	      0049a77f    push ebx"
 "	      0049a780    push esi"
 "	      0049a781    push edi"
-"	      0049a782    mov [ebp-4],ecx"
+"	      0049a782    mov this,ecx"
 );
 // LINE 160:
 	asm( 
 "	      0049a785    push 0FFFFh"
-"	      0049a78a    mov eax,[ebp+8]"
+"	      0049a78a    mov eax,nPosition"
 "	      0049a78d    push eax"
-"	      0049a78e    mov eax,[ebp-4]"
+"	      0049a78e    mov eax,this"
 "	      0049a791    mov eax,[eax+58h]"
-"	      0049a794    mov ecx,[ebp-4]"
+"	      0049a794    mov ecx,this"
 "	      0049a797    sub eax,[ecx+54h]"
 "	      0049a79a    push eax"
 "	      0049a79b    call dword ptr ds:[6C372Ch]"
-"	      0049a7a1    mov ecx,[ebp-4]"
+"	      0049a7a1    mov ecx,this"
 "	      0049a7a4    mov ecx,[ecx+54h]"
 "	      0049a7a7    add ecx,eax"
-"	      0049a7a9    mov [ebp+8],ecx"
+"	      0049a7a9    mov nPosition,ecx"
 );
 // LINE 167:
 	asm( 
-"	      0049a7ac    mov eax,[ebp+8]"
+"	      0049a7ac    mov eax,nPosition"
 "	      0049a7af    jmp near ptr 0049A7B4h"
 );
 // LINE 168:
@@ -482,35 +482,35 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 "	      0049a7c1    push ebx"
 "	      0049a7c2    push esi"
 "	      0049a7c3    push edi"
-"	      0049a7c4    mov [ebp-0Ch],ecx"
+"	      0049a7c4    mov this,ecx"
 );
 // LINE 191:
 	asm( 
-"	      0049a7c7    mov eax,[ebp+10h]"
+"	      0049a7c7    mov eax,bUseCache"
 "	      0049a7ca    push eax"
-"	      0049a7cb    mov eax,[ebp+0Ch]"
+"	      0049a7cb    mov eax,nAxis"
 "	      0049a7ce    push eax"
-"	      0049a7cf    mov eax,[ebp+8]"
+"	      0049a7cf    mov eax,nJoystick"
 "	      0049a7d2    push eax"
-"	      0049a7d3    mov ecx,[ebp-0Ch]"
+"	      0049a7d3    mov ecx,this"
 "	      0049a7d6    call 0049A836h"
-"	      0049a7db    mov [ebp-4],eax"
+"	      0049a7db    mov nValue,eax"
 );
 // LINE 192:
 	asm( 
-"	      0049a7de    mov eax,[ebp-0Ch]"
+"	      0049a7de    mov eax,this"
 "	      0049a7e1    mov eax,[eax+58h]"
-"	      0049a7e4    mov ecx,[ebp-0Ch]"
+"	      0049a7e4    mov ecx,this"
 "	      0049a7e7    sub eax,[ecx+54h]"
 "	      0049a7ea    sar eax,2"
-"	      0049a7ed    mov [ebp-8],eax"
+"	      0049a7ed    mov nOneQuarterOfTheRange,eax"
 );
 // LINE 193:
 	asm( 
-"	      0049a7f0    mov eax,[ebp-0Ch]"
+"	      0049a7f0    mov eax,this"
 "	      0049a7f3    mov eax,[eax+5Ch]"
-"	      0049a7f6    sub eax,[ebp-8]"
-"	      0049a7f9    cmp eax,[ebp-4]"
+"	      0049a7f6    sub eax,nOneQuarterOfTheRange"
+"	      0049a7f9    cmp eax,nValue"
 "	      0049a7fc    jle near ptr 0049A80Ch"
 );
 // LINE 194:
@@ -520,10 +520,10 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 );
 // LINE 195:
 	asm( 
-"	      0049a80c    mov eax,[ebp-0Ch]"
+"	      0049a80c    mov eax,this"
 "	      0049a80f    mov eax,[eax+5Ch]"
-"	      0049a812    add eax,[ebp-8]"
-"	      0049a815    cmp eax,[ebp-4]"
+"	      0049a812    add eax,nOneQuarterOfTheRange"
+"	      0049a815    cmp eax,nValue"
 "	      0049a818    jge near ptr 0049A828h"
 );
 // LINE 196:
@@ -563,11 +563,11 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 "	      0049a83c    push ebx"
 "	      0049a83d    push esi"
 "	      0049a83e    push edi"
-"	      0049a83f    mov [ebp-4Ch],ecx"
+"	      0049a83f    mov this,ecx"
 );
 // LINE 227:
 	asm( 
-"	      0049a842    cmp dword ptr [ebp+8],10h"
+"	      0049a842    cmp nJoystick,10h"
 "	      0049a846    jle near ptr 0049A853h"
 );
 // LINE 228:
@@ -577,19 +577,19 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 230:
 	asm( 
-"	      0049a853    cmp dword ptr [ebp+10h],0"
+"	      0049a853    cmp bUseCache,0"
 "	      0049a857    je near ptr 0049A87Bh"
 );
 // LINE 231:
 	asm( 
-"	      0049a85d    mov eax,[ebp+8]"
+"	      0049a85d    mov eax,nJoystick"
 "	      0049a860    mov ecx,eax"
 "	      0049a862    lea eax,[eax+eax*2]"
 "	      0049a865    lea eax,[ecx+eax*4]"
 "	      0049a868    shl eax,2"
-"	      0049a86b    add eax,[ebp-4Ch]"
+"	      0049a86b    add eax,this"
 "	      0049a86e    add eax,19A4h"
-"	      0049a873    mov [ebp-0Ch],eax"
+"	      0049a873    mov joyInfoExToUse,eax"
 );
 // LINE 232:
 	asm( 
@@ -597,24 +597,24 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 233:
 	asm( 
-"	      0049a87b    lea eax,[ebp-44h]"
-"	      0049a87e    mov [ebp-0Ch],eax"
+"	      0049a87b    lea eax,joyInfoEx.dwSize"
+"	      0049a87e    mov joyInfoExToUse,eax"
 );
 // LINE 235:
 	asm( 
-"	      0049a881    mov eax,[ebp+0Ch]"
+"	      0049a881    mov eax,nAxis"
 "	      0049a884    mov [ebp-50h],eax"
 "	      0049a887    jmp near ptr 0049A916h"
 );
 // LINE 237:
 	asm( 
-"	      0049a88c    mov dword ptr [ebp-10h],1"
+"	      0049a88c    mov dwFlagToUse,1"
 );
 // LINE 238:
 	asm( 
-"	      0049a893    mov eax,[ebp-0Ch]"
+"	      0049a893    mov eax,joyInfoExToUse"
 "	      0049a896    add eax,8"
-"	      0049a899    mov [ebp-4],eax"
+"	      0049a899    mov dwResultToUse,eax"
 );
 // LINE 239:
 	asm( 
@@ -622,13 +622,13 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 241:
 	asm( 
-"	      0049a8a1    mov dword ptr [ebp-10h],2"
+"	      0049a8a1    mov dwFlagToUse,2"
 );
 // LINE 242:
 	asm( 
-"	      0049a8a8    mov eax,[ebp-0Ch]"
+"	      0049a8a8    mov eax,joyInfoExToUse"
 "	      0049a8ab    add eax,0Ch"
-"	      0049a8ae    mov [ebp-4],eax"
+"	      0049a8ae    mov dwResultToUse,eax"
 );
 // LINE 243:
 	asm( 
@@ -636,13 +636,13 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 245:
 	asm( 
-"	      0049a8b6    mov dword ptr [ebp-10h],4"
+"	      0049a8b6    mov dwFlagToUse,4"
 );
 // LINE 246:
 	asm( 
-"	      0049a8bd    mov eax,[ebp-0Ch]"
+"	      0049a8bd    mov eax,joyInfoExToUse"
 "	      0049a8c0    add eax,10h"
-"	      0049a8c3    mov [ebp-4],eax"
+"	      0049a8c3    mov dwResultToUse,eax"
 );
 // LINE 247:
 	asm( 
@@ -650,13 +650,13 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 249:
 	asm( 
-"	      0049a8cb    mov dword ptr [ebp-10h],8"
+"	      0049a8cb    mov dwFlagToUse,8"
 );
 // LINE 250:
 	asm( 
-"	      0049a8d2    mov eax,[ebp-0Ch]"
+"	      0049a8d2    mov eax,joyInfoExToUse"
 "	      0049a8d5    add eax,14h"
-"	      0049a8d8    mov [ebp-4],eax"
+"	      0049a8d8    mov dwResultToUse,eax"
 );
 // LINE 251:
 	asm( 
@@ -664,13 +664,13 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 253:
 	asm( 
-"	      0049a8e0    mov dword ptr [ebp-10h],10h"
+"	      0049a8e0    mov dwFlagToUse,10h"
 );
 // LINE 254:
 	asm( 
-"	      0049a8e7    mov eax,[ebp-0Ch]"
+"	      0049a8e7    mov eax,joyInfoExToUse"
 "	      0049a8ea    add eax,18h"
-"	      0049a8ed    mov [ebp-4],eax"
+"	      0049a8ed    mov dwResultToUse,eax"
 );
 // LINE 255:
 	asm( 
@@ -678,13 +678,13 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 257:
 	asm( 
-"	      0049a8f5    mov dword ptr [ebp-10h],20h"
+"	      0049a8f5    mov dwFlagToUse,20h"
 );
 // LINE 258:
 	asm( 
-"	      0049a8fc    mov eax,[ebp-0Ch]"
+"	      0049a8fc    mov eax,joyInfoExToUse"
 "	      0049a8ff    add eax,1Ch"
-"	      0049a902    mov [ebp-4],eax"
+"	      0049a902    mov dwResultToUse,eax"
 );
 // LINE 259:
 	asm( 
@@ -714,35 +714,35 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 263:
 	asm( 
-"	      0049a942    cmp dword ptr [ebp+10h],0"
+"	      0049a942    cmp bUseCache,0"
 "	      0049a946    jne near ptr 0049A98Ch"
 );
 // LINE 264:
 	asm( 
-"	      0049a94c    mov eax,[ebp-0Ch]"
+"	      0049a94c    mov eax,joyInfoExToUse"
 "	      0049a94f    mov dword ptr [eax],34h"
 );
 // LINE 265:
 	asm( 
-"	      0049a955    mov eax,[ebp-10h]"
-"	      0049a958    mov ecx,[ebp-0Ch]"
+"	      0049a955    mov eax,dwFlagToUse"
+"	      0049a958    mov ecx,joyInfoExToUse"
 "	      0049a95b    mov [ecx+4],eax"
 );
 // LINE 266:
 	asm( 
 "	      0049a95e    jmp near ptr 0049A963h"
-"	      0049a963    mov eax,[ebp-0Ch]"
+"	      0049a963    mov eax,joyInfoExToUse"
 "	      0049a966    push eax"
-"	      0049a967    mov eax,[ebp+8]"
-"	      0049a96a    mov ecx,[ebp-4Ch]"
+"	      0049a967    mov eax,nJoystick"
+"	      0049a96a    mov ecx,this"
 "	      0049a96d    mov eax,[ecx+eax*4+14h]"
 "	      0049a971    push eax"
 "	      0049a972    call dword ptr ds:[6C38D8h]"
-"	      0049a978    mov [ebp-8],eax"
+"	      0049a978    mov mmResult,eax"
 );
 // LINE 267:
 	asm( 
-"	      0049a97b    cmp dword ptr [ebp-8],0"
+"	      0049a97b    cmp mmResult,0"
 "	      0049a97f    je near ptr 0049A98Ch"
 );
 // LINE 268:
@@ -752,26 +752,26 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 270:
 	asm( 
-"	      0049a98c    mov eax,[ebp-4]"
+"	      0049a98c    mov eax,dwResultToUse"
 "	      0049a98f    mov eax,[eax]"
 "	      0049a991    push eax"
-"	      0049a992    mov ecx,[ebp-4Ch]"
+"	      0049a992    mov ecx,this"
 "	      0049a995    call 0049A779h"
-"	      0049a99a    mov [ebp-48h],eax"
+"	      0049a99a    mov nReturnValue,eax"
 );
 // LINE 272:
 	asm( 
-"	      0049a99d    mov eax,[ebp-4Ch]"
+"	      0049a99d    mov eax,this"
 "	      0049a9a0    mov eax,[eax+5Ch]"
-"	      0049a9a3    mov ecx,[ebp-4Ch]"
+"	      0049a9a3    mov ecx,this"
 "	      0049a9a6    add eax,[ecx+60h]"
-"	      0049a9a9    cmp eax,[ebp-48h]"
+"	      0049a9a9    cmp eax,nReturnValue"
 "	      0049a9ac    jle near ptr 0049A9CEh"
-"	      0049a9b2    mov eax,[ebp-4Ch]"
+"	      0049a9b2    mov eax,this"
 "	      0049a9b5    mov eax,[eax+5Ch]"
-"	      0049a9b8    mov ecx,[ebp-4Ch]"
+"	      0049a9b8    mov ecx,this"
 "	      0049a9bb    sub eax,[ecx+60h]"
-"	      0049a9be    cmp eax,[ebp-48h]"
+"	      0049a9be    cmp eax,nReturnValue"
 "	      0049a9c1    jge near ptr 0049A9CEh"
 );
 // LINE 273:
@@ -781,7 +781,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 );
 // LINE 274:
 	asm( 
-"	      0049a9ce    mov eax,[ebp-48h]"
+"	      0049a9ce    mov eax,nReturnValue"
 "	      0049a9d1    jmp near ptr 0049A9D6h"
 );
 // LINE 279:
@@ -808,13 +808,13 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 "	      0049a9e3    push ebx"
 "	      0049a9e4    push esi"
 "	      0049a9e5    push edi"
-"	      0049a9e6    mov [ebp-40h],ecx"
+"	      0049a9e6    mov this,ecx"
 );
 // LINE 304:
 	asm( 
-"	      0049a9e9    cmp dword ptr [ebp+8],10h"
+"	      0049a9e9    cmp nJoystick,10h"
 "	      0049a9ed    jg near ptr 0049A9FDh"
-"	      0049a9f3    cmp dword ptr [ebp+0Ch],20h"
+"	      0049a9f3    cmp nButton,20h"
 "	      0049a9f7    jle near ptr 0049AA04h"
 );
 // LINE 305:
@@ -824,19 +824,19 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 );
 // LINE 306:
 	asm( 
-"	      0049aa04    cmp dword ptr [ebp+10h],0"
+"	      0049aa04    cmp bUseCache,0"
 "	      0049aa08    je near ptr 0049AA2Ch"
 );
 // LINE 307:
 	asm( 
-"	      0049aa0e    mov eax,[ebp+8]"
+"	      0049aa0e    mov eax,nJoystick"
 "	      0049aa11    mov ecx,eax"
 "	      0049aa13    lea eax,[eax+eax*2]"
 "	      0049aa16    lea eax,[ecx+eax*4]"
 "	      0049aa19    shl eax,2"
-"	      0049aa1c    add eax,[ebp-40h]"
+"	      0049aa1c    add eax,this"
 "	      0049aa1f    add eax,19A4h"
-"	      0049aa24    mov [ebp-8],eax"
+"	      0049aa24    mov joyInfoExToUse,eax"
 );
 // LINE 308:
 	asm( 
@@ -844,39 +844,39 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 );
 // LINE 309:
 	asm( 
-"	      0049aa2c    lea eax,[ebp-3Ch]"
-"	      0049aa2f    mov [ebp-8],eax"
+"	      0049aa2c    lea eax,joyInfoEx.dwSize"
+"	      0049aa2f    mov joyInfoExToUse,eax"
 );
 // LINE 311:
 	asm( 
-"	      0049aa32    cmp dword ptr [ebp+10h],0"
+"	      0049aa32    cmp bUseCache,0"
 "	      0049aa36    jne near ptr 0049AA7Dh"
 );
 // LINE 312:
 	asm( 
-"	      0049aa3c    mov eax,[ebp-8]"
+"	      0049aa3c    mov eax,joyInfoExToUse"
 "	      0049aa3f    mov dword ptr [eax],34h"
 );
 // LINE 313:
 	asm( 
-"	      0049aa45    mov eax,[ebp-8]"
+"	      0049aa45    mov eax,joyInfoExToUse"
 "	      0049aa48    mov dword ptr [eax+4],80h"
 );
 // LINE 314:
 	asm( 
 "	      0049aa4f    jmp near ptr 0049AA54h"
-"	      0049aa54    mov eax,[ebp-8]"
+"	      0049aa54    mov eax,joyInfoExToUse"
 "	      0049aa57    push eax"
-"	      0049aa58    mov eax,[ebp+8]"
-"	      0049aa5b    mov ecx,[ebp-40h]"
+"	      0049aa58    mov eax,nJoystick"
+"	      0049aa5b    mov ecx,this"
 "	      0049aa5e    mov eax,[ecx+eax*4+14h]"
 "	      0049aa62    push eax"
 "	      0049aa63    call dword ptr ds:[6C38D8h]"
-"	      0049aa69    mov [ebp-4],eax"
+"	      0049aa69    mov mmResult,eax"
 );
 // LINE 315:
 	asm( 
-"	      0049aa6c    cmp dword ptr [ebp-4],0"
+"	      0049aa6c    cmp mmResult,0"
 "	      0049aa70    je near ptr 0049AA7Dh"
 );
 // LINE 316:
@@ -886,9 +886,9 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 );
 // LINE 318:
 	asm( 
-"	      0049aa7d    mov eax,[ebp+0Ch]"
+"	      0049aa7d    mov eax,nButton"
 "	      0049aa80    mov eax,[eax*4+591228h]"
-"	      0049aa87    mov ecx,[ebp-8]"
+"	      0049aa87    mov ecx,joyInfoExToUse"
 "	      0049aa8a    and eax,[ecx+20h]"
 "	      0049aa8d    jmp near ptr 0049AA92h"
 );
@@ -914,11 +914,11 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 "	      0049aa9f    push ebx"
 "	      0049aaa0    push esi"
 "	      0049aaa1    push edi"
-"	      0049aaa2    mov [ebp-8],ecx"
+"	      0049aaa2    mov this,ecx"
 );
 // LINE 341:
 	asm( 
-"	      0049aaa5    cmp dword ptr [ebp+8],10h"
+"	      0049aaa5    cmp nJoystick,10h"
 "	      0049aaa9    jle near ptr 0049AAB6h"
 );
 // LINE 342:
@@ -928,43 +928,43 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 );
 // LINE 343:
 	asm( 
-"	      0049aab6    mov eax,[ebp+8]"
+"	      0049aab6    mov eax,nJoystick"
 "	      0049aab9    mov ecx,eax"
 "	      0049aabb    lea eax,[eax+eax*2]"
 "	      0049aabe    lea eax,[ecx+eax*4]"
-"	      0049aac1    mov ecx,[ebp-8]"
+"	      0049aac1    mov ecx,this"
 "	      0049aac4    mov dword ptr [ecx+eax*4+19A4h],34h"
 );
 // LINE 344:
 	asm( 
-"	      0049aacf    mov eax,[ebp+8]"
+"	      0049aacf    mov eax,nJoystick"
 "	      0049aad2    mov ecx,eax"
 "	      0049aad4    lea eax,[eax+eax*2]"
 "	      0049aad7    lea eax,[ecx+eax*4]"
-"	      0049aada    mov ecx,[ebp-8]"
+"	      0049aada    mov ecx,this"
 "	      0049aadd    mov dword ptr [ecx+eax*4+19A8h],0FFh"
 );
 // LINE 345:
 	asm( 
 "	      0049aae8    jmp near ptr 0049AAEDh"
-"	      0049aaed    mov eax,[ebp+8]"
+"	      0049aaed    mov eax,nJoystick"
 "	      0049aaf0    mov ecx,eax"
 "	      0049aaf2    lea eax,[eax+eax*2]"
 "	      0049aaf5    lea eax,[ecx+eax*4]"
 "	      0049aaf8    shl eax,2"
-"	      0049aafb    add eax,[ebp-8]"
+"	      0049aafb    add eax,this"
 "	      0049aafe    add eax,19A4h"
 "	      0049ab03    push eax"
-"	      0049ab04    mov eax,[ebp+8]"
-"	      0049ab07    mov ecx,[ebp-8]"
+"	      0049ab04    mov eax,nJoystick"
+"	      0049ab07    mov ecx,this"
 "	      0049ab0a    mov eax,[ecx+eax*4+14h]"
 "	      0049ab0e    push eax"
 "	      0049ab0f    call dword ptr ds:[6C38D8h]"
-"	      0049ab15    mov [ebp-4],eax"
+"	      0049ab15    mov mmResult,eax"
 );
 // LINE 346:
 	asm( 
-"	      0049ab18    cmp dword ptr [ebp-4],0"
+"	      0049ab18    cmp mmResult,0"
 "	      0049ab1c    jne near ptr 0049AB2Ch"
 );
 // LINE 347:
@@ -1001,11 +1001,11 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 "	      0049ab40    push ebx"
 "	      0049ab41    push esi"
 "	      0049ab42    push edi"
-"	      0049ab43    mov [ebp-40h],ecx"
+"	      0049ab43    mov this,ecx"
 );
 // LINE 382:
 	asm( 
-"	      0049ab46    cmp dword ptr [ebp+8],10h"
+"	      0049ab46    cmp nJoystick,10h"
 "	      0049ab4a    jle near ptr 0049AB57h"
 );
 // LINE 383:
@@ -1015,19 +1015,19 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 );
 // LINE 384:
 	asm( 
-"	      0049ab57    cmp dword ptr [ebp+0Ch],0"
+"	      0049ab57    cmp bUseCache,0"
 "	      0049ab5b    je near ptr 0049AB7Fh"
 );
 // LINE 385:
 	asm( 
-"	      0049ab61    mov eax,[ebp+8]"
+"	      0049ab61    mov eax,nJoystick"
 "	      0049ab64    mov ecx,eax"
 "	      0049ab66    lea eax,[eax+eax*2]"
 "	      0049ab69    lea eax,[ecx+eax*4]"
 "	      0049ab6c    shl eax,2"
-"	      0049ab6f    add eax,[ebp-40h]"
+"	      0049ab6f    add eax,this"
 "	      0049ab72    add eax,19A4h"
-"	      0049ab77    mov [ebp-8],eax"
+"	      0049ab77    mov joyInfoExToUse,eax"
 );
 // LINE 386:
 	asm( 
@@ -1035,39 +1035,39 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 );
 // LINE 387:
 	asm( 
-"	      0049ab7f    lea eax,[ebp-3Ch]"
-"	      0049ab82    mov [ebp-8],eax"
+"	      0049ab7f    lea eax,joyInfoEx.dwSize"
+"	      0049ab82    mov joyInfoExToUse,eax"
 );
 // LINE 389:
 	asm( 
-"	      0049ab85    cmp dword ptr [ebp+0Ch],0"
+"	      0049ab85    cmp bUseCache,0"
 "	      0049ab89    jne near ptr 0049ABD0h"
 );
 // LINE 390:
 	asm( 
-"	      0049ab8f    mov eax,[ebp-8]"
+"	      0049ab8f    mov eax,joyInfoExToUse"
 "	      0049ab92    mov dword ptr [eax],34h"
 );
 // LINE 391:
 	asm( 
-"	      0049ab98    mov eax,[ebp-8]"
+"	      0049ab98    mov eax,joyInfoExToUse"
 "	      0049ab9b    mov dword ptr [eax+4],40h"
 );
 // LINE 392:
 	asm( 
 "	      0049aba2    jmp near ptr 0049ABA7h"
-"	      0049aba7    mov eax,[ebp-8]"
+"	      0049aba7    mov eax,joyInfoExToUse"
 "	      0049abaa    push eax"
-"	      0049abab    mov eax,[ebp+8]"
-"	      0049abae    mov ecx,[ebp-40h]"
+"	      0049abab    mov eax,nJoystick"
+"	      0049abae    mov ecx,this"
 "	      0049abb1    mov eax,[ecx+eax*4+14h]"
 "	      0049abb5    push eax"
 "	      0049abb6    call dword ptr ds:[6C38D8h]"
-"	      0049abbc    mov [ebp-4],eax"
+"	      0049abbc    mov mmResult,eax"
 );
 // LINE 393:
 	asm( 
-"	      0049abbf    cmp dword ptr [ebp-4],0"
+"	      0049abbf    cmp mmResult,0"
 "	      0049abc3    je near ptr 0049ABD0h"
 );
 // LINE 394:
@@ -1077,7 +1077,7 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 );
 // LINE 396:
 	asm( 
-"	      0049abd0    mov eax,[ebp-8]"
+"	      0049abd0    mov eax,joyInfoExToUse"
 "	      0049abd3    mov eax,[eax+28h]"
 "	      0049abd6    jmp near ptr 0049ABDBh"
 );
@@ -1103,18 +1103,18 @@ int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 "	      0049abe8    push ebx"
 "	      0049abe9    push esi"
 "	      0049abea    push edi"
-"	      0049abeb    mov [ebp-8],ecx"
+"	      0049abeb    mov this,ecx"
 );
 // LINE 419:
 	asm( 
 "	      0049abee    push 1"
 "	      0049abf0    push 59A28Ch"
 "	      0049abf5    call dword ptr ds:[6C35DCh]"
-"	      0049abfb    mov [ebp-4],eax"
+"	      0049abfb    mov nReturnValue,eax"
 );
 // LINE 420:
 	asm( 
-"	      0049abfe    cmp dword ptr [ebp-4],1Fh"
+"	      0049abfe    cmp nReturnValue,1Fh"
 "	      0049ac02    jbe near ptr 0049AC12h"
 );
 // LINE 421:
@@ -1149,11 +1149,11 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 "	      0049ac26    push ebx"
 "	      0049ac27    push esi"
 "	      0049ac28    push edi"
-"	      0049ac29    mov [ebp-8],ecx"
+"	      0049ac29    mov this,ecx"
 );
 // LINE 453:
 	asm( 
-"	      0049ac2c    cmp dword ptr [ebp+8],10h"
+"	      0049ac2c    cmp nJoystick,10h"
 "	      0049ac30    jle near ptr 0049AC3Dh"
 );
 // LINE 454:
@@ -1164,18 +1164,18 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 // LINE 455:
 	asm( 
 "	      0049ac3d    jmp near ptr 0049AC42h"
-"	      0049ac42    mov eax,[ebp+0Ch]"
+"	      0049ac42    mov eax,lThreshold"
 "	      0049ac45    push eax"
-"	      0049ac46    mov eax,[ebp+8]"
-"	      0049ac49    mov ecx,[ebp-8]"
+"	      0049ac46    mov eax,nJoystick"
+"	      0049ac49    mov ecx,this"
 "	      0049ac4c    mov eax,[ecx+eax*4+14h]"
 "	      0049ac50    push eax"
 "	      0049ac51    call dword ptr ds:[6C38D4h]"
-"	      0049ac57    mov [ebp-4],eax"
+"	      0049ac57    mov mmResult,eax"
 );
 // LINE 456:
 	asm( 
-"	      0049ac5a    cmp dword ptr [ebp-4],0"
+"	      0049ac5a    cmp mmResult,0"
 "	      0049ac5e    jne near ptr 0049AC6Eh"
 );
 // LINE 457:
@@ -1210,11 +1210,11 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 "	      0049ac82    push ebx"
 "	      0049ac83    push esi"
 "	      0049ac84    push edi"
-"	      0049ac85    mov [ebp-8],ecx"
+"	      0049ac85    mov this,ecx"
 );
 // LINE 477:
 	asm( 
-"	      0049ac88    cmp dword ptr [ebp+8],10h"
+"	      0049ac88    cmp nJoystick,10h"
 "	      0049ac8c    jle near ptr 0049AC99h"
 );
 // LINE 478:
@@ -1225,18 +1225,18 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 // LINE 479:
 	asm( 
 "	      0049ac99    jmp near ptr 0049AC9Eh"
-"	      0049ac9e    mov eax,[ebp+0Ch]"
+"	      0049ac9e    mov eax,lThreshold"
 "	      0049aca1    push eax"
-"	      0049aca2    mov eax,[ebp+8]"
-"	      0049aca5    mov ecx,[ebp-8]"
+"	      0049aca2    mov eax,nJoystick"
+"	      0049aca5    mov ecx,this"
 "	      0049aca8    mov eax,[ecx+eax*4+14h]"
 "	      0049acac    push eax"
 "	      0049acad    call dword ptr ds:[6C38D0h]"
-"	      0049acb3    mov [ebp-4],eax"
+"	      0049acb3    mov mmResult,eax"
 );
 // LINE 480:
 	asm( 
-"	      0049acb6    cmp dword ptr [ebp-4],0"
+"	      0049acb6    cmp mmResult,0"
 "	      0049acba    jne near ptr 0049ACCAh"
 );
 // LINE 481:
@@ -1269,33 +1269,33 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 "	      0049acde    push ebx"
 "	      0049acdf    push esi"
 "	      0049ace0    push edi"
-"	      0049ace1    mov [ebp-4],ecx"
+"	      0049ace1    mov this,ecx"
 );
 // LINE 499:
 	asm( 
-"	      0049ace4    mov eax,[ebp+8]"
-"	      0049ace7    mov ecx,[ebp-4]"
+"	      0049ace4    mov eax,lNewMin"
+"	      0049ace7    mov ecx,this"
 "	      0049acea    mov [ecx+54h],eax"
 );
 // LINE 500:
 	asm( 
-"	      0049aced    mov eax,[ebp+0Ch]"
-"	      0049acf0    mov ecx,[ebp-4]"
+"	      0049aced    mov eax,lNewMax"
+"	      0049acf0    mov ecx,this"
 "	      0049acf3    mov [ecx+58h],eax"
 );
 // LINE 501:
 	asm( 
-"	      0049acf6    mov eax,[ebp-4]"
+"	      0049acf6    mov eax,this"
 "	      0049acf9    mov eax,[eax+58h]"
-"	      0049acfc    mov ecx,[ebp-4]"
+"	      0049acfc    mov ecx,this"
 "	      0049acff    sub eax,[ecx+54h]"
 "	      0049ad02    cdq"
 "	      0049ad03    sub eax,edx"
 "	      0049ad05    sar eax,1"
-"	      0049ad08    mov ecx,[ebp-4]"
+"	      0049ad08    mov ecx,this"
 "	      0049ad0b    mov ecx,[ecx+54h]"
 "	      0049ad0e    add ecx,eax"
-"	      0049ad10    mov eax,[ebp-4]"
+"	      0049ad10    mov eax,this"
 "	      0049ad13    mov [eax+5Ch],ecx"
 );
 // LINE 503:

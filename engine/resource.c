@@ -67,12 +67,12 @@ void VRResFreeBarrys(struct VRResource* res) {
 );
 // LINE 113:
 	asm( 
-"	      004d5318    mov eax,[ebp+8]"
-"	      004d531b    mov [ebp-4],eax"
+"	      004d5318    mov eax,res"
+"	      004d531b    mov geo,eax"
 );
 // LINE 115:
 	asm( 
-"	      004d531e    mov eax,[ebp+8]"
+"	      004d531e    mov eax,res"
 "	      004d5321    cmp dword ptr [eax+8],1"
 "	      004d5325    je near ptr 004D5330h"
 );
@@ -82,7 +82,7 @@ void VRResFreeBarrys(struct VRResource* res) {
 );
 // LINE 118:
 	asm( 
-"	      004d5330    mov eax,[ebp-4]"
+"	      004d5330    mov eax,geo"
 "	      004d5333    cmp dword ptr [eax+14h],0"
 "	      004d5337    jge near ptr 004D5342h"
 );
@@ -92,7 +92,7 @@ void VRResFreeBarrys(struct VRResource* res) {
 );
 // LINE 121:
 	asm( 
-"	      004d5342    mov eax,[ebp-4]"
+"	      004d5342    mov eax,geo"
 "	      004d5345    mov eax,[eax+14h]"
 "	      004d5348    push eax"
 "	      004d5349    call 004CB6C3h"
@@ -124,13 +124,13 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 142:
 	asm( 
-"	      004d535f    mov eax,[ebp+0Ch]"
+"	      004d535f    mov eax,Flags"
 "	      004d5362    mov [ebp-0Ch],eax"
 "	      004d5365    jmp near ptr 004D57F2h"
 );
 // LINE 146:
 	asm( 
-"	      004d536a    mov eax,[ebp+8]"
+"	      004d536a    mov eax,name"
 "	      004d536d    push eax"
 "	      004d536e    call 004D5BAFh"
 "	      004d5373    add esp,4"
@@ -144,18 +144,18 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 148:
 	asm( 
-"	      004d5385    mov dword ptr [ebp-8],0"
+"	      004d5385    mov i,0"
 "	      004d538c    jmp near ptr 004D5394h"
-"	      004d5391    inc dword ptr [ebp-8]"
-"	      004d5394    mov eax,[ebp-8]"
+"	      004d5391    inc i"
+"	      004d5394    mov eax,i"
 "	      004d5397    cmp ds:[6666A4h],eax"
 "	      004d539d    jle near ptr 004D5491h"
 );
 // LINE 149:
 	asm( 
-"	      004d53a3    mov eax,[ebp+10h]"
+"	      004d53a3    mov eax,misc"
 "	      004d53a6    push eax"
-"	      004d53a7    mov eax,[ebp-8]"
+"	      004d53a7    mov eax,i"
 "	      004d53aa    mov ecx,eax"
 "	      004d53ac    lea eax,[eax+eax*4]"
 "	      004d53af    lea eax,[ecx+eax*4]"
@@ -173,7 +173,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 153:
 	asm( 
 "	      004d53d3    push 0"
-"	      004d53d5    mov eax,[ebp-8]"
+"	      004d53d5    mov eax,i"
 "	      004d53d8    mov ecx,eax"
 "	      004d53da    lea eax,[eax+eax*4]"
 "	      004d53dd    lea eax,[ecx+eax*4]"
@@ -213,11 +213,11 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 159:
 	asm( 
 "	      004d5439    call 004D20D0h"
-"	      004d543e    mov [ebp-4],eax"
+"	      004d543e    mov res,eax"
 );
 // LINE 160:
 	asm( 
-"	      004d5441    cmp dword ptr [ebp-4],0"
+"	      004d5441    cmp res,0"
 "	      004d5445    jne near ptr 004D5452h"
 );
 // LINE 161:
@@ -228,12 +228,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 162:
 	asm( 
 "	      004d5452    mov eax,ds:[59C22Ch]"
-"	      004d5457    mov ecx,[ebp-4]"
+"	      004d5457    mov ecx,res"
 "	      004d545a    mov [ecx+4],eax"
 );
 // LINE 163:
 	asm( 
-"	      004d545d    mov eax,[ebp-4]"
+"	      004d545d    mov eax,res"
 "	      004d5460    push eax"
 "	      004d5461    call 004D5FA9h"
 "	      004d5466    add esp,4"
@@ -242,7 +242,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 164:
 	asm( 
-"	      004d5471    mov eax,[ebp-4]"
+"	      004d5471    mov eax,res"
 "	      004d5474    push eax"
 "	      004d5475    call 004D5872h"
 "	      004d547a    add esp,4"
@@ -254,7 +254,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 167:
 	asm( 
-"	      004d5484    mov eax,[ebp-4]"
+"	      004d5484    mov eax,res"
 "	      004d5487    jmp near ptr 004D5820h"
 );
 // LINE 169:
@@ -290,15 +290,15 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 178:
 	asm( 
-"	      004d54cd    mov eax,[ebp+8]"
+"	      004d54cd    mov eax,name"
 "	      004d54d0    push eax"
 "	      004d54d1    call 004D6060h"
 "	      004d54d6    add esp,4"
-"	      004d54d9    mov [ebp-4],eax"
+"	      004d54d9    mov res,eax"
 );
 // LINE 179:
 	asm( 
-"	      004d54dc    cmp dword ptr [ebp-4],0"
+"	      004d54dc    cmp res,0"
 "	      004d54e0    jne near ptr 004D54EDh"
 );
 // LINE 180:
@@ -309,12 +309,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 181:
 	asm( 
 "	      004d54ed    mov eax,ds:[59C22Ch]"
-"	      004d54f2    mov ecx,[ebp-4]"
+"	      004d54f2    mov ecx,res"
 "	      004d54f5    mov [ecx+4],eax"
 );
 // LINE 182:
 	asm( 
-"	      004d54f8    mov eax,[ebp-4]"
+"	      004d54f8    mov eax,res"
 "	      004d54fb    push eax"
 "	      004d54fc    call 004D5FA9h"
 "	      004d5501    add esp,4"
@@ -323,7 +323,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 183:
 	asm( 
-"	      004d550c    mov eax,[ebp-4]"
+"	      004d550c    mov eax,res"
 "	      004d550f    push eax"
 "	      004d5510    call 004D5872h"
 "	      004d5515    add esp,4"
@@ -335,12 +335,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 186:
 	asm( 
-"	      004d551f    mov eax,[ebp-4]"
+"	      004d551f    mov eax,res"
 "	      004d5522    jmp near ptr 004D5820h"
 );
 // LINE 190:
 	asm( 
-"	      004d5527    mov eax,[ebp+8]"
+"	      004d5527    mov eax,name"
 "	      004d552a    push eax"
 "	      004d552b    call 004D5926h"
 "	      004d5530    add esp,4"
@@ -354,18 +354,18 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 193:
 	asm( 
-"	      004d5542    mov dword ptr [ebp-8],0"
+"	      004d5542    mov i,0"
 "	      004d5549    jmp near ptr 004D5551h"
-"	      004d554e    inc dword ptr [ebp-8]"
-"	      004d5551    mov eax,[ebp-8]"
+"	      004d554e    inc i"
+"	      004d5551    mov eax,i"
 "	      004d5554    cmp ds:[6666B0h],eax"
 "	      004d555a    jle near ptr 004D5688h"
 );
 // LINE 194:
 	asm( 
-"	      004d5560    mov eax,[ebp+10h]"
+"	      004d5560    mov eax,misc"
 "	      004d5563    push eax"
-"	      004d5564    mov eax,[ebp-8]"
+"	      004d5564    mov eax,i"
 "	      004d5567    mov ecx,eax"
 "	      004d5569    lea eax,[eax+eax*2]"
 "	      004d556c    lea eax,[ecx+eax*4]"
@@ -384,7 +384,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 198:
 	asm( 
 "	      004d5593    push 0"
-"	      004d5595    mov eax,[ebp-8]"
+"	      004d5595    mov eax,i"
 "	      004d5598    mov ecx,eax"
 "	      004d559a    lea eax,[eax+eax*2]"
 "	      004d559d    lea eax,[ecx+eax*4]"
@@ -424,7 +424,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 204:
 	asm( 
-"	      004d55fc    mov eax,[ebp-8]"
+"	      004d55fc    mov eax,i"
 "	      004d55ff    mov ecx,eax"
 "	      004d5601    lea eax,[eax+eax*2]"
 "	      004d5604    lea eax,[ecx+eax*4]"
@@ -432,7 +432,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 "	      004d560a    mov ecx,ds:[666698h]"
 "	      004d5610    mov eax,[eax+ecx+15h]"
 "	      004d5614    push eax"
-"	      004d5615    mov eax,[ebp-8]"
+"	      004d5615    mov eax,i"
 "	      004d5618    mov ecx,eax"
 "	      004d561a    lea eax,[eax+eax*2]"
 "	      004d561d    lea eax,[ecx+eax*4]"
@@ -442,11 +442,11 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 "	      004d562c    push eax"
 "	      004d562d    call 004D2180h"
 "	      004d5632    add esp,8"
-"	      004d5635    mov [ebp-4],eax"
+"	      004d5635    mov res,eax"
 );
 // LINE 205:
 	asm( 
-"	      004d5638    cmp dword ptr [ebp-4],0"
+"	      004d5638    cmp res,0"
 "	      004d563c    jne near ptr 004D5649h"
 );
 // LINE 206:
@@ -457,12 +457,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 207:
 	asm( 
 "	      004d5649    mov eax,ds:[59C22Ch]"
-"	      004d564e    mov ecx,[ebp-4]"
+"	      004d564e    mov ecx,res"
 "	      004d5651    mov [ecx+4],eax"
 );
 // LINE 208:
 	asm( 
-"	      004d5654    mov eax,[ebp-4]"
+"	      004d5654    mov eax,res"
 "	      004d5657    push eax"
 "	      004d5658    call 004D5FA9h"
 "	      004d565d    add esp,4"
@@ -471,7 +471,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 209:
 	asm( 
-"	      004d5668    mov eax,[ebp-4]"
+"	      004d5668    mov eax,res"
 "	      004d566b    push eax"
 "	      004d566c    call 004D5872h"
 "	      004d5671    add esp,4"
@@ -483,7 +483,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 212:
 	asm( 
-"	      004d567b    mov eax,[ebp-4]"
+"	      004d567b    mov eax,res"
 "	      004d567e    jmp near ptr 004D5820h"
 );
 // LINE 214:
@@ -505,7 +505,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 221:
 	asm( 
-"	      004d569e    mov eax,[ebp+8]"
+"	      004d569e    mov eax,name"
 "	      004d56a1    push eax"
 "	      004d56a2    call 004D5926h"
 "	      004d56a7    add esp,4"
@@ -519,20 +519,20 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 224:
 	asm( 
-"	      004d56b9    mov dword ptr [ebp-8],0"
+"	      004d56b9    mov i,0"
 "	      004d56c0    jmp near ptr 004D56C8h"
-"	      004d56c5    inc dword ptr [ebp-8]"
-"	      004d56c8    mov eax,[ebp-8]"
+"	      004d56c5    inc i"
+"	      004d56c8    mov eax,i"
 "	      004d56cb    cmp ds:[6666B4h],eax"
 "	      004d56d1    jle near ptr 004D57D0h"
 );
 // LINE 225:
 	asm( 
-"	      004d56d7    mov eax,[ebp-8]"
+"	      004d56d7    mov eax,i"
 "	      004d56da    shl eax,2"
 "	      004d56dd    lea eax,[eax+eax*8]"
 "	      004d56e0    mov ecx,ds:[66669Ch]"
-"	      004d56e6    mov edx,[ebp+10h]"
+"	      004d56e6    mov edx,misc"
 "	      004d56e9    cmp [eax+ecx],edx"
 "	      004d56ec    jne near ptr 004D57CBh"
 );
@@ -543,7 +543,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 229:
 	asm( 
 "	      004d56fc    push 0"
-"	      004d56fe    mov eax,[ebp-8]"
+"	      004d56fe    mov eax,i"
 "	      004d5701    shl eax,2"
 "	      004d5704    lea eax,[eax+eax*8]"
 "	      004d5707    mov ecx,ds:[66669Ch]"
@@ -582,7 +582,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 235:
 	asm( 
 "	      004d5760    push 1"
-"	      004d5762    mov eax,[ebp-8]"
+"	      004d5762    mov eax,i"
 "	      004d5765    shl eax,2"
 "	      004d5768    lea eax,[eax+eax*8]"
 "	      004d576b    add eax,ds:[66669Ch]"
@@ -590,11 +590,11 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 "	      004d5774    push eax"
 "	      004d5775    call 004D2180h"
 "	      004d577a    add esp,8"
-"	      004d577d    mov [ebp-4],eax"
+"	      004d577d    mov res,eax"
 );
 // LINE 236:
 	asm( 
-"	      004d5780    cmp dword ptr [ebp-4],0"
+"	      004d5780    cmp res,0"
 "	      004d5784    jne near ptr 004D5791h"
 );
 // LINE 237:
@@ -605,12 +605,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 238:
 	asm( 
 "	      004d5791    mov eax,ds:[59C22Ch]"
-"	      004d5796    mov ecx,[ebp-4]"
+"	      004d5796    mov ecx,res"
 "	      004d5799    mov [ecx+4],eax"
 );
 // LINE 239:
 	asm( 
-"	      004d579c    mov eax,[ebp-4]"
+"	      004d579c    mov eax,res"
 "	      004d579f    push eax"
 "	      004d57a0    call 004D5FA9h"
 "	      004d57a5    add esp,4"
@@ -619,7 +619,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 240:
 	asm( 
-"	      004d57b0    mov eax,[ebp-4]"
+"	      004d57b0    mov eax,res"
 "	      004d57b3    push eax"
 "	      004d57b4    call 004D5872h"
 "	      004d57b9    add esp,4"
@@ -631,7 +631,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 );
 // LINE 243:
 	asm( 
-"	      004d57c3    mov eax,[ebp-4]"
+"	      004d57c3    mov eax,res"
 "	      004d57c6    jmp near ptr 004D5820h"
 );
 // LINE 245:
@@ -710,11 +710,11 @@ int32_t VRUnLoadAllResources() {
 // LINE 279:
 	asm( 
 "	      004d583b    mov eax,ds:[666500h]"
-"	      004d5840    mov [ebp-4],eax"
+"	      004d5840    mov res,eax"
 );
 // LINE 280:
 	asm( 
-"	      004d5843    mov eax,[ebp-4]"
+"	      004d5843    mov eax,res"
 "	      004d5846    push eax"
 "	      004d5847    call 004D5872h"
 "	      004d584c    add esp,4"
@@ -760,19 +760,19 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 );
 // LINE 305:
 	asm( 
-"	      004d587b    mov eax,[ebp+8]"
+"	      004d587b    mov eax,res"
 "	      004d587e    mov eax,[eax+8]"
 "	      004d5881    mov [ebp-8],eax"
 "	      004d5884    jmp near ptr 004D58D8h"
 );
 // LINE 308:
 	asm( 
-"	      004d5889    mov eax,[ebp+8]"
-"	      004d588c    mov [ebp-4],eax"
+"	      004d5889    mov eax,res"
+"	      004d588c    mov geo,eax"
 );
 // LINE 309:
 	asm( 
-"	      004d588f    mov eax,[ebp+8]"
+"	      004d588f    mov eax,res"
 "	      004d5892    push eax"
 "	      004d5893    call 004D5FFDh"
 "	      004d5898    add esp,4"
@@ -783,7 +783,7 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 );
 // LINE 320:
 	asm( 
-"	      004d58a0    mov eax,[ebp+8]"
+"	      004d58a0    mov eax,res"
 "	      004d58a3    push eax"
 "	      004d58a4    call 004D5FFDh"
 "	      004d58a9    add esp,4"
@@ -794,7 +794,7 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 );
 // LINE 324:
 	asm( 
-"	      004d58b1    mov eax,[ebp+8]"
+"	      004d58b1    mov eax,res"
 "	      004d58b4    push eax"
 "	      004d58b5    call 004D5FFDh"
 "	      004d58ba    add esp,4"
@@ -825,13 +825,13 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 );
 // LINE 334:
 	asm( 
-"	      004d58fb    mov eax,[ebp+8]"
+"	      004d58fb    mov eax,res"
 "	      004d58fe    cmp dword ptr [eax+4],0"
 "	      004d5902    jl near ptr 004D5917h"
 );
 // LINE 335:
 	asm( 
-"	      004d5908    mov eax,[ebp+8]"
+"	      004d5908    mov eax,res"
 "	      004d590b    mov eax,[eax+4]"
 "	      004d590e    push eax"
 "	      004d590f    call 004CB6C3h"
@@ -868,7 +868,7 @@ int32_t GetDir_GEOM(char * name) {
 );
 // LINE 364:
 	asm( 
-"	      004d592f    mov eax,[ebp+8]"
+"	      004d592f    mov eax,name"
 "	      004d5932    push eax"
 "	      004d5933    call 004D5D48h"
 "	      004d5938    add esp,4"
@@ -894,16 +894,16 @@ int32_t GetDir_GEOM(char * name) {
 );
 // LINE 375:
 	asm( 
-"	      004d596e    mov dword ptr [ebp-4],0"
+"	      004d596e    mov i,0"
 "	      004d5975    jmp near ptr 004D597Dh"
-"	      004d597a    inc dword ptr [ebp-4]"
-"	      004d597d    mov eax,[ebp-4]"
+"	      004d597a    inc i"
+"	      004d597d    mov eax,i"
 "	      004d5980    cmp ds:[666694h],eax"
 "	      004d5986    jle near ptr 004D5B99h"
 );
 // LINE 377:
 	asm( 
-"	      004d598c    mov eax,[ebp-4]"
+"	      004d598c    mov eax,i"
 "	      004d598f    mov ecx,ds:[6663ECh]"
 "	      004d5995    cmp dword ptr [ecx+eax*8],4D4F4547h"
 "	      004d599c    jne near ptr 004D5B94h"
@@ -915,7 +915,7 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 381:
 	asm( 
 "	      004d59ac    push 0"
-"	      004d59ae    mov eax,[ebp-4]"
+"	      004d59ae    mov eax,i"
 "	      004d59b1    mov ecx,ds:[6663ECh]"
 "	      004d59b7    mov eax,[ecx+eax*8+4]"
 "	      004d59bb    push eax"
@@ -938,7 +938,7 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 386:
 	asm( 
 "	      004d59e4    push 8"
-"	      004d59e6    lea eax,[ebp-0Ch]"
+"	      004d59e6    lea eax,chunk.Id"
 "	      004d59e9    push eax"
 "	      004d59ea    call 004D5F1Eh"
 "	      004d59ef    add esp,8"
@@ -952,7 +952,7 @@ int32_t GetDir_GEOM(char * name) {
 );
 // LINE 403:
 	asm( 
-"	      004d5a01    cmp dword ptr [ebp-0Ch],4D4F4547h"
+"	      004d5a01    cmp chunk.Id,4D4F4547h"
 "	      004d5a08    je near ptr 004D5A1Fh"
 );
 // LINE 404:
@@ -1160,7 +1160,7 @@ int32_t GetDir_CMAP(char * name) {
 );
 // LINE 640:
 	asm( 
-"	      004d5bb8    mov eax,[ebp+8]"
+"	      004d5bb8    mov eax,name"
 "	      004d5bbb    push eax"
 "	      004d5bbc    call 004D5D48h"
 "	      004d5bc1    add esp,4"
@@ -1184,16 +1184,16 @@ int32_t GetDir_CMAP(char * name) {
 );
 // LINE 651:
 	asm( 
-"	      004d5bea    mov dword ptr [ebp-4],0"
+"	      004d5bea    mov i,0"
 "	      004d5bf1    jmp near ptr 004D5BF9h"
-"	      004d5bf6    inc dword ptr [ebp-4]"
-"	      004d5bf9    mov eax,[ebp-4]"
+"	      004d5bf6    inc i"
+"	      004d5bf9    mov eax,i"
 "	      004d5bfc    cmp ds:[666694h],eax"
 "	      004d5c02    jle near ptr 004D5D32h"
 );
 // LINE 653:
 	asm( 
-"	      004d5c08    mov eax,[ebp-4]"
+"	      004d5c08    mov eax,i"
 "	      004d5c0b    mov ecx,ds:[6663ECh]"
 "	      004d5c11    cmp dword ptr [ecx+eax*8],50414D43h"
 "	      004d5c18    jne near ptr 004D5D2Dh"
@@ -1205,7 +1205,7 @@ int32_t GetDir_CMAP(char * name) {
 // LINE 657:
 	asm( 
 "	      004d5c28    push 0"
-"	      004d5c2a    mov eax,[ebp-4]"
+"	      004d5c2a    mov eax,i"
 "	      004d5c2d    mov ecx,ds:[6663ECh]"
 "	      004d5c33    mov eax,[ecx+eax*8+4]"
 "	      004d5c37    push eax"
@@ -1228,7 +1228,7 @@ int32_t GetDir_CMAP(char * name) {
 // LINE 662:
 	asm( 
 "	      004d5c60    push 8"
-"	      004d5c62    lea eax,[ebp-0Ch]"
+"	      004d5c62    lea eax,chunk.Id"
 "	      004d5c65    push eax"
 "	      004d5c66    call 004D5F1Eh"
 "	      004d5c6b    add esp,8"
@@ -1242,7 +1242,7 @@ int32_t GetDir_CMAP(char * name) {
 );
 // LINE 678:
 	asm( 
-"	      004d5c7d    cmp dword ptr [ebp-0Ch],50414D43h"
+"	      004d5c7d    cmp chunk.Id,50414D43h"
 "	      004d5c84    je near ptr 004D5C9Bh"
 );
 // LINE 679:
@@ -1357,7 +1357,7 @@ int32_t GetResourceDir(char * name) {
 );
 // LINE 758:
 	asm( 
-"	      004d5d51    mov eax,[ebp+8]"
+"	      004d5d51    mov eax,name"
 "	      004d5d54    push eax"
 "	      004d5d55    push 6663F0h"
 "	      004d5d5a    call 005884D0h"
@@ -1405,7 +1405,7 @@ int32_t GetResourceDir(char * name) {
 );
 // LINE 774:
 	asm( 
-"	      004d5dbc    mov eax,[ebp+8]"
+"	      004d5dbc    mov eax,name"
 "	      004d5dbf    push eax"
 "	      004d5dc0    call 004D5E81h"
 "	      004d5dc5    add esp,4"
@@ -1420,7 +1420,7 @@ int32_t GetResourceDir(char * name) {
 // LINE 783:
 	asm( 
 "	      004d5dd7    push 8"
-"	      004d5dd9    lea eax,[ebp-8]"
+"	      004d5dd9    lea eax,chunk.Id"
 "	      004d5ddc    push eax"
 "	      004d5ddd    call 004D5F1Eh"
 "	      004d5de2    add esp,8"
@@ -1520,7 +1520,7 @@ int32_t OpenResourceFile(char * name) {
 // LINE 873:
 	asm( 
 "	      004d5e8c    push 8000h"
-"	      004d5e91    mov eax,[ebp+8]"
+"	      004d5e91    mov eax,name"
 "	      004d5e94    push eax"
 "	      004d5e95    call 00586640h"
 "	      004d5e9a    add esp,8"
@@ -1564,7 +1564,7 @@ int32_t OpenResourceFile(char * name) {
 );
 // LINE 884:
 	asm( 
-"	      004d5efe    mov eax,[ebp+8]"
+"	      004d5efe    mov eax,name"
 "	      004d5f01    push eax"
 "	      004d5f02    push 6663F0h"
 "	      004d5f07    call 0056CEB0h"
@@ -1597,15 +1597,15 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 );
 // LINE 1058:
 	asm( 
-"	      004d5f24    mov eax,[ebp+0Ch]"
+"	      004d5f24    mov eax,s"
 "	      004d5f27    push eax"
-"	      004d5f28    mov eax,[ebp+8]"
+"	      004d5f28    mov eax,buf"
 "	      004d5f2b    push eax"
 "	      004d5f2c    mov eax,ds:[6666A0h]"
 "	      004d5f31    push eax"
 "	      004d5f32    call 00580B50h"
 "	      004d5f37    add esp,0Ch"
-"	      004d5f3a    cmp eax,[ebp+0Ch]"
+"	      004d5f3a    cmp eax,s"
 "	      004d5f3d    je near ptr 004D5F54h"
 );
 // LINE 1059:
@@ -1707,12 +1707,12 @@ int32_t RegisterResource(struct VRResource* res) {
 // LINE 1123:
 	asm( 
 "	      004d5fcd    mov eax,ds:[59C224h]"
-"	      004d5fd2    mov ecx,[ebp+8]"
+"	      004d5fd2    mov ecx,res"
 "	      004d5fd5    mov [ecx+0Ch],eax"
 );
 // LINE 1124:
 	asm( 
-"	      004d5fd8    mov eax,[ebp+8]"
+"	      004d5fd8    mov eax,res"
 "	      004d5fdb    mov ecx,ds:[59C224h]"
 "	      004d5fe1    mov [ecx*4+666500h],eax"
 "	      004d5fe8    inc dword ptr ds:[59C224h]"
@@ -1748,14 +1748,14 @@ void UnRegisterResource(struct VRResource* res) {
 );
 // LINE 1146:
 	asm( 
-"	      004d6006    mov eax,[ebp+8]"
+"	      004d6006    mov eax,res"
 "	      004d6009    mov eax,[eax+0Ch]"
-"	      004d600c    mov [ebp-8],eax"
+"	      004d600c    mov i,eax"
 );
 // LINE 1147:
 	asm( 
-"	      004d600f    mov eax,[ebp-8]"
-"	      004d6012    mov ecx,[ebp+8]"
+"	      004d600f    mov eax,i"
+"	      004d6012    mov ecx,res"
 "	      004d6015    cmp [eax*4+666500h],ecx"
 "	      004d601c    je near ptr 004D6027h"
 );
@@ -1771,16 +1771,16 @@ void UnRegisterResource(struct VRResource* res) {
 	asm( 
 "	      004d602d    mov eax,ds:[59C224h]"
 "	      004d6032    mov eax,[eax*4+666500h]"
-"	      004d6039    mov ecx,[ebp-8]"
+"	      004d6039    mov ecx,i"
 "	      004d603c    mov [ecx*4+666500h],eax"
-"	      004d6043    mov eax,[ebp-8]"
+"	      004d6043    mov eax,i"
 "	      004d6046    mov eax,[eax*4+666500h]"
-"	      004d604d    mov [ebp-4],eax"
+"	      004d604d    mov r,eax"
 );
 // LINE 1151:
 	asm( 
-"	      004d6050    mov eax,[ebp-8]"
-"	      004d6053    mov ecx,[ebp-4]"
+"	      004d6050    mov eax,i"
+"	      004d6053    mov ecx,r"
 "	      004d6056    mov [ecx+0Ch],eax"
 );
 // LINE 1153:

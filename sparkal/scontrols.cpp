@@ -63,10 +63,10 @@ void SoundButtonWindow::SoundButtonWindow() {
 "	      00471806    push ebx"
 "	      00471807    push esi"
 "	      00471808    push edi"
-"	      00471809    mov [ebp-4],ecx"
-"	      0047180c    mov ecx,[ebp-4]"
+"	      00471809    mov this,ecx"
+"	      0047180c    mov ecx,this"
 "	      0047180f    call 004ADE3Dh"
-"	      00471814    mov eax,[ebp-4]"
+"	      00471814    mov eax,this"
 "	      00471817    mov dword ptr [eax],590870h"
 );
 // LINE 30:
@@ -86,7 +86,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 // LINE 33:
 	asm( 
 "	      0047183a    jmp near ptr 0047183Fh"
-"	      0047183f    mov eax,[ebp-4]"
+"	      0047183f    mov eax,this"
 "	      00471842    pop edi"
 "	      00471843    pop esi"
 "	      00471844    pop ebx"
@@ -105,22 +105,22 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 "	      0047184d    push ebx"
 "	      0047184e    push esi"
 "	      0047184f    push edi"
-"	      00471850    mov [ebp-4],ecx"
-"	      00471853    mov eax,[ebp+1Ch]"
+"	      00471850    mov this,ecx"
+"	      00471853    mov eax,bAddToParentList"
 "	      00471856    push eax"
-"	      00471857    mov eax,[ebp+18h]"
+"	      00471857    mov eax,myNewOwner"
 "	      0047185a    push eax"
-"	      0047185b    mov eax,[ebp+14h]"
+"	      0047185b    mov eax,szImageFileName"
 "	      0047185e    push eax"
-"	      0047185f    mov eax,[ebp+10h]"
+"	      0047185f    mov eax,windowNewParent"
 "	      00471862    push eax"
-"	      00471863    mov eax,[ebp+0Ch]"
+"	      00471863    mov eax,nNewID"
 "	      00471866    push eax"
-"	      00471867    mov eax,[ebp+8]"
+"	      00471867    mov eax,rectNewWindow"
 "	      0047186a    push eax"
-"	      0047186b    mov ecx,[ebp-4]"
+"	      0047186b    mov ecx,this"
 "	      0047186e    call 004AE05Dh"
-"	      00471873    mov eax,[ebp-4]"
+"	      00471873    mov eax,this"
 "	      00471876    mov dword ptr [eax],590870h"
 );
 // LINE 45:
@@ -140,7 +140,7 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 // LINE 48:
 	asm( 
 "	      00471899    jmp near ptr 0047189Eh"
-"	      0047189e    mov eax,[ebp-4]"
+"	      0047189e    mov eax,this"
 "	      004718a1    pop edi"
 "	      004718a2    pop esi"
 "	      004718a3    pop ebx"
@@ -159,8 +159,8 @@ void SoundButtonWindow::~SoundButtonWindow() {
 "	      004718ae    push ebx"
 "	      004718af    push esi"
 "	      004718b0    push edi"
-"	      004718b1    mov [ebp-4],ecx"
-"	      004718b4    mov eax,[ebp-4]"
+"	      004718b1    mov this,ecx"
+"	      004718b4    mov eax,this"
 "	      004718b7    mov dword ptr [eax],590870h"
 );
 // LINE 56:
@@ -180,7 +180,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 	asm( 
 "	      004718d3    jmp near ptr 004718D8h"
 "	      004718d8    jmp near ptr 004718DDh"
-"	      004718dd    mov ecx,[ebp-4]"
+"	      004718dd    mov ecx,this"
 "	      004718e0    call 004A4045h"
 "	      004718e5    pop edi"
 "	      004718e6    pop esi"
@@ -200,15 +200,15 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 "	      004718f0    push ebx"
 "	      004718f1    push esi"
 "	      004718f2    push edi"
-"	      004718f3    mov [ebp-4],ecx"
+"	      004718f3    mov this,ecx"
 );
 // LINE 66:
 	asm( 
-"	      004718f6    mov eax,[ebp-4]"
-"	      004718f9    mov ecx,[ebp+8]"
+"	      004718f6    mov eax,this"
+"	      004718f9    mov ecx,nNewButtonState"
 "	      004718fc    cmp [eax+74h],ecx"
 "	      004718ff    je near ptr 0047192Dh"
-"	      00471905    cmp dword ptr [ebp+8],2"
+"	      00471905    cmp nNewButtonState,2"
 "	      00471909    jne near ptr 0047192Dh"
 );
 // LINE 67:
@@ -227,9 +227,9 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 );
 // LINE 70:
 	asm( 
-"	      0047192d    mov eax,[ebp+8]"
+"	      0047192d    mov eax,nNewButtonState"
 "	      00471930    push eax"
-"	      00471931    mov ecx,[ebp-4]"
+"	      00471931    mov ecx,this"
 "	      00471934    call 004AEACEh"
 );
 // LINE 71:
@@ -253,24 +253,24 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 "	      0047194b    push ebx"
 "	      0047194c    push esi"
 "	      0047194d    push edi"
-"	      0047194e    mov [ebp-4],ecx"
-"	      00471951    mov eax,[ebp+20h]"
+"	      0047194e    mov this,ecx"
+"	      00471951    mov eax,bAddToParentList"
 "	      00471954    push eax"
-"	      00471955    mov eax,[ebp+1Ch]"
+"	      00471955    mov eax,myNewOwner"
 "	      00471958    push eax"
-"	      00471959    mov eax,[ebp+18h]"
+"	      00471959    mov eax,szImageFileName"
 "	      0047195c    push eax"
-"	      0047195d    mov eax,[ebp+14h]"
+"	      0047195d    mov eax,windowNewParent"
 "	      00471960    push eax"
-"	      00471961    mov eax,[ebp+10h]"
+"	      00471961    mov eax,nNewID"
 "	      00471964    push eax"
-"	      00471965    mov eax,[ebp+0Ch]"
+"	      00471965    mov eax,rectNewWindow"
 "	      00471968    push eax"
-"	      00471969    mov eax,[ebp+8]"
+"	      00471969    mov eax,myNewRadioButtonGroup"
 "	      0047196c    push eax"
-"	      0047196d    mov ecx,[ebp-4]"
+"	      0047196d    mov ecx,this"
 "	      00471970    call 004AF7F7h"
-"	      00471975    mov eax,[ebp-4]"
+"	      00471975    mov eax,this"
 "	      00471978    mov dword ptr [eax],590950h"
 );
 // LINE 83:
@@ -290,7 +290,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 // LINE 86:
 	asm( 
 "	      0047199b    jmp near ptr 004719A0h"
-"	      004719a0    mov eax,[ebp-4]"
+"	      004719a0    mov eax,this"
 "	      004719a3    pop edi"
 "	      004719a4    pop esi"
 "	      004719a5    pop ebx"
@@ -309,8 +309,8 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 "	      004719b0    push ebx"
 "	      004719b1    push esi"
 "	      004719b2    push edi"
-"	      004719b3    mov [ebp-4],ecx"
-"	      004719b6    mov eax,[ebp-4]"
+"	      004719b3    mov this,ecx"
+"	      004719b6    mov eax,this"
 "	      004719b9    mov dword ptr [eax],590950h"
 );
 // LINE 92:
@@ -329,7 +329,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 95:
 	asm( 
 "	      004719d5    jmp near ptr 004719DAh"
-"	      004719da    mov ecx,[ebp-4]"
+"	      004719da    mov ecx,this"
 "	      004719dd    call 004AFCFEh"
 "	      004719e2    pop edi"
 "	      004719e3    pop esi"
@@ -349,15 +349,15 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 "	      004719ed    push ebx"
 "	      004719ee    push esi"
 "	      004719ef    push edi"
-"	      004719f0    mov [ebp-4],ecx"
+"	      004719f0    mov this,ecx"
 );
 // LINE 102:
 	asm( 
-"	      004719f3    mov eax,[ebp-4]"
-"	      004719f6    mov ecx,[ebp+8]"
+"	      004719f3    mov eax,this"
+"	      004719f6    mov ecx,nNewButtonState"
 "	      004719f9    cmp [eax+74h],ecx"
 "	      004719fc    je near ptr 00471A2Dh"
-"	      00471a02    mov eax,[ebp-4]"
+"	      00471a02    mov eax,this"
 "	      00471a05    cmp dword ptr [eax+74h],0"
 "	      00471a09    je near ptr 00471A2Dh"
 );
@@ -377,9 +377,9 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 );
 // LINE 106:
 	asm( 
-"	      00471a2d    mov eax,[ebp+8]"
+"	      00471a2d    mov eax,nNewButtonState"
 "	      00471a30    push eax"
-"	      00471a31    mov ecx,[ebp-4]"
+"	      00471a31    mov ecx,this"
 "	      00471a34    call 004AFEE3h"
 );
 // LINE 107:
@@ -403,10 +403,10 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 "	      00471a4b    push ebx"
 "	      00471a4c    push esi"
 "	      00471a4d    push edi"
-"	      00471a4e    mov [ebp-4],ecx"
-"	      00471a51    mov ecx,[ebp-4]"
+"	      00471a4e    mov this,ecx"
+"	      00471a51    mov ecx,this"
 "	      00471a54    call 004AEE29h"
-"	      00471a59    mov eax,[ebp-4]"
+"	      00471a59    mov eax,this"
 "	      00471a5c    mov dword ptr [eax],590A38h"
 );
 // LINE 113:
@@ -426,7 +426,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 // LINE 116:
 	asm( 
 "	      00471a7f    jmp near ptr 00471A84h"
-"	      00471a84    mov eax,[ebp-4]"
+"	      00471a84    mov eax,this"
 "	      00471a87    pop edi"
 "	      00471a88    pop esi"
 "	      00471a89    pop ebx"
@@ -445,22 +445,22 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 "	      00471a92    push ebx"
 "	      00471a93    push esi"
 "	      00471a94    push edi"
-"	      00471a95    mov [ebp-4],ecx"
-"	      00471a98    mov eax,[ebp+1Ch]"
+"	      00471a95    mov this,ecx"
+"	      00471a98    mov eax,bAddToParentList"
 "	      00471a9b    push eax"
-"	      00471a9c    mov eax,[ebp+18h]"
+"	      00471a9c    mov eax,myNewOwner"
 "	      00471a9f    push eax"
-"	      00471aa0    mov eax,[ebp+14h]"
+"	      00471aa0    mov eax,szImageFileName"
 "	      00471aa3    push eax"
-"	      00471aa4    mov eax,[ebp+10h]"
+"	      00471aa4    mov eax,windowNewParent"
 "	      00471aa7    push eax"
-"	      00471aa8    mov eax,[ebp+0Ch]"
+"	      00471aa8    mov eax,nNewID"
 "	      00471aab    push eax"
-"	      00471aac    mov eax,[ebp+8]"
+"	      00471aac    mov eax,rectNewWindow"
 "	      00471aaf    push eax"
-"	      00471ab0    mov ecx,[ebp-4]"
+"	      00471ab0    mov ecx,this"
 "	      00471ab3    call 004AF0ABh"
-"	      00471ab8    mov eax,[ebp-4]"
+"	      00471ab8    mov eax,this"
 "	      00471abb    mov dword ptr [eax],590A38h"
 );
 // LINE 127:
@@ -480,7 +480,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 // LINE 130:
 	asm( 
 "	      00471ade    jmp near ptr 00471AE3h"
-"	      00471ae3    mov eax,[ebp-4]"
+"	      00471ae3    mov eax,this"
 "	      00471ae6    pop edi"
 "	      00471ae7    pop esi"
 "	      00471ae8    pop ebx"
@@ -499,8 +499,8 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 "	      00471af3    push ebx"
 "	      00471af4    push esi"
 "	      00471af5    push edi"
-"	      00471af6    mov [ebp-4],ecx"
-"	      00471af9    mov eax,[ebp-4]"
+"	      00471af6    mov this,ecx"
+"	      00471af9    mov eax,this"
 "	      00471afc    mov dword ptr [eax],590A38h"
 );
 // LINE 136:
@@ -521,7 +521,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 "	      00471b18    jmp near ptr 00471B1Dh"
 "	      00471b1d    jmp near ptr 00471B22h"
 "	      00471b22    jmp near ptr 00471B27h"
-"	      00471b27    mov ecx,[ebp-4]"
+"	      00471b27    mov ecx,this"
 "	      00471b2a    call 004A4045h"
 "	      00471b2f    pop edi"
 "	      00471b30    pop esi"
@@ -541,12 +541,12 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 "	      00471b3a    push ebx"
 "	      00471b3b    push esi"
 "	      00471b3c    push edi"
-"	      00471b3d    mov [ebp-4],ecx"
+"	      00471b3d    mov this,ecx"
 );
 // LINE 146:
 	asm( 
-"	      00471b40    mov eax,[ebp-4]"
-"	      00471b43    mov ecx,[ebp+8]"
+"	      00471b40    mov eax,this"
+"	      00471b43    mov ecx,nNewButtonState"
 "	      00471b46    cmp [eax+74h],ecx"
 "	      00471b49    je near ptr 00471B6Dh"
 );
@@ -566,9 +566,9 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 );
 // LINE 150:
 	asm( 
-"	      00471b6d    mov eax,[ebp+8]"
+"	      00471b6d    mov eax,nNewButtonState"
 "	      00471b70    push eax"
-"	      00471b71    mov ecx,[ebp-4]"
+"	      00471b71    mov ecx,this"
 "	      00471b74    call 004AF6ABh"
 );
 // LINE 151:
@@ -592,10 +592,10 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 "	      00471b8b    push ebx"
 "	      00471b8c    push esi"
 "	      00471b8d    push edi"
-"	      00471b8e    mov [ebp-4],ecx"
-"	      00471b91    mov ecx,[ebp-4]"
+"	      00471b8e    mov this,ecx"
+"	      00471b91    mov ecx,this"
 "	      00471b94    call 004B28F8h"
-"	      00471b99    mov eax,[ebp-4]"
+"	      00471b99    mov eax,this"
 "	      00471b9c    mov dword ptr [eax],590B18h"
 );
 // LINE 157:
@@ -615,7 +615,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 // LINE 160:
 	asm( 
 "	      00471bbf    jmp near ptr 00471BC4h"
-"	      00471bc4    mov eax,[ebp-4]"
+"	      00471bc4    mov eax,this"
 "	      00471bc7    pop edi"
 "	      00471bc8    pop esi"
 "	      00471bc9    pop ebx"
@@ -634,24 +634,24 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 "	      00471bd2    push ebx"
 "	      00471bd3    push esi"
 "	      00471bd4    push edi"
-"	      00471bd5    mov [ebp-4],ecx"
-"	      00471bd8    mov eax,[ebp+20h]"
+"	      00471bd5    mov this,ecx"
+"	      00471bd8    mov eax,szImageFileName"
 "	      00471bdb    push eax"
-"	      00471bdc    mov eax,[ebp+1Ch]"
+"	      00471bdc    mov eax,bAddToParentList"
 "	      00471bdf    push eax"
-"	      00471be0    mov eax,[ebp+18h]"
+"	      00471be0    mov eax,myNewOwner"
 "	      00471be3    push eax"
-"	      00471be4    mov eax,[ebp+14h]"
+"	      00471be4    mov eax,windowNewParent"
 "	      00471be7    push eax"
-"	      00471be8    mov eax,[ebp+10h]"
+"	      00471be8    mov eax,newSliderWindowDirection"
 "	      00471beb    push eax"
-"	      00471bec    mov eax,[ebp+0Ch]"
+"	      00471bec    mov eax,nNewID"
 "	      00471bef    push eax"
-"	      00471bf0    mov eax,[ebp+8]"
+"	      00471bf0    mov eax,rectNewWindow"
 "	      00471bf3    push eax"
-"	      00471bf4    mov ecx,[ebp-4]"
+"	      00471bf4    mov ecx,this"
 "	      00471bf7    call 004B2C25h"
-"	      00471bfc    mov eax,[ebp-4]"
+"	      00471bfc    mov eax,this"
 "	      00471bff    mov dword ptr [eax],590B18h"
 );
 // LINE 171:
@@ -671,7 +671,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 // LINE 174:
 	asm( 
 "	      00471c22    jmp near ptr 00471C27h"
-"	      00471c27    mov eax,[ebp-4]"
+"	      00471c27    mov eax,this"
 "	      00471c2a    pop edi"
 "	      00471c2b    pop esi"
 "	      00471c2c    pop ebx"
@@ -690,8 +690,8 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 "	      00471c37    push ebx"
 "	      00471c38    push esi"
 "	      00471c39    push edi"
-"	      00471c3a    mov [ebp-4],ecx"
-"	      00471c3d    mov eax,[ebp-4]"
+"	      00471c3a    mov this,ecx"
+"	      00471c3d    mov eax,this"
 "	      00471c40    mov dword ptr [eax],590B18h"
 );
 // LINE 180:
@@ -712,7 +712,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 "	      00471c5c    jmp near ptr 00471C61h"
 "	      00471c61    jmp near ptr 00471C66h"
 "	      00471c66    jmp near ptr 00471C6Bh"
-"	      00471c6b    mov ecx,[ebp-4]"
+"	      00471c6b    mov ecx,this"
 "	      00471c6e    call 004B19E0h"
 "	      00471c73    pop edi"
 "	      00471c74    pop esi"
@@ -732,12 +732,12 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 "	      00471c7e    push ebx"
 "	      00471c7f    push esi"
 "	      00471c80    push edi"
-"	      00471c81    mov [ebp-4],ecx"
+"	      00471c81    mov this,ecx"
 );
 // LINE 191:
 	asm( 
-"	      00471c84    mov eax,[ebp-4]"
-"	      00471c87    mov ecx,[ebp-4]"
+"	      00471c84    mov eax,this"
+"	      00471c87    mov ecx,this"
 "	      00471c8a    mov ecx,[ecx+78h]"
 "	      00471c8d    cmp [eax+80h],ecx"
 "	      00471c93    jle near ptr 00471CB7h"
@@ -758,7 +758,7 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 );
 // LINE 195:
 	asm( 
-"	      00471cb7    mov ecx,[ebp-4]"
+"	      00471cb7    mov ecx,this"
 "	      00471cba    call 004B39D0h"
 );
 // LINE 196:
@@ -782,12 +782,12 @@ void SoundScrollBarWindow::MoveLineNext() {
 "	      00471ccf    push ebx"
 "	      00471cd0    push esi"
 "	      00471cd1    push edi"
-"	      00471cd2    mov [ebp-4],ecx"
+"	      00471cd2    mov this,ecx"
 );
 // LINE 205:
 	asm( 
-"	      00471cd5    mov eax,[ebp-4]"
-"	      00471cd8    mov ecx,[ebp-4]"
+"	      00471cd5    mov eax,this"
+"	      00471cd8    mov ecx,this"
 "	      00471cdb    mov ecx,[ecx+80h]"
 "	      00471ce1    cmp [eax+7Ch],ecx"
 "	      00471ce4    jle near ptr 00471D08h"
@@ -808,7 +808,7 @@ void SoundScrollBarWindow::MoveLineNext() {
 );
 // LINE 209:
 	asm( 
-"	      00471d08    mov ecx,[ebp-4]"
+"	      00471d08    mov ecx,this"
 "	      00471d0b    call 004B3A46h"
 );
 // LINE 210:

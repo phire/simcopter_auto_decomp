@@ -17,13 +17,13 @@ void PaletteBuffer::PaletteBuffer() {
 "	      00447246    push ebx"
 "	      00447247    push esi"
 "	      00447248    push edi"
-"	      00447249    mov [ebp-58h],ecx"
+"	      00447249    mov this,ecx"
 "	      0044724c    push 0"
 "	      0044724e    push 1B8h"
 "	      00447253    push 258h"
-"	      00447258    mov ecx,[ebp-58h]"
+"	      00447258    mov ecx,this"
 "	      0044725b    call 0046EA06h"
-"	      00447260    mov eax,[ebp-58h]"
+"	      00447260    mov eax,this"
 "	      00447263    mov dword ptr [eax],58F5E0h"
 );
 // LINE 37:
@@ -45,20 +45,20 @@ void PaletteBuffer::PaletteBuffer() {
 "	      004472a5    jmp near ptr 00447290h"
 "	      004472aa    jmp near ptr 004472AFh"
 "	      004472af    mov eax,[ebp-44h]"
-"	      004472b2    mov ecx,[ebp-58h]"
+"	      004472b2    mov ecx,this"
 "	      004472b5    mov [ecx+134h],eax"
 "	      004472bb    jmp near ptr 004472CDh"
-"	      004472c0    mov eax,[ebp-58h]"
+"	      004472c0    mov eax,this"
 "	      004472c3    mov dword ptr [eax+134h],0"
 );
 // LINE 38:
 	asm( 
-"	      004472cd    mov ecx,[ebp-58h]"
+"	      004472cd    mov ecx,this"
 "	      004472d0    call 00447501h"
 );
 // LINE 39:
 	asm( 
-"	      004472d5    lea eax,[ebp-40h]"
+"	      004472d5    lea eax,szTypeFaceName[0]"
 "	      004472d8    push eax"
 "	      004472d9    push 0"
 "	      004472db    push 0"
@@ -77,7 +77,7 @@ void PaletteBuffer::PaletteBuffer() {
 "	      004472fe    push 0"
 "	      00447300    push 0"
 "	      00447302    push 8"
-"	      00447304    lea eax,[ebp-40h]"
+"	      00447304    lea eax,szTypeFaceName[0]"
 "	      00447307    push eax"
 "	      00447308    mov ecx,[ebp-48h]"
 "	      0044730b    call 0049F937h"
@@ -86,18 +86,18 @@ void PaletteBuffer::PaletteBuffer() {
 "	      00447318    mov dword ptr [ebp-4Ch],0"
 "	      0044731f    mov eax,[ebp-4Ch]"
 "	      00447322    push eax"
-"	      00447323    mov ecx,[ebp-58h]"
+"	      00447323    mov ecx,this"
 "	      00447326    call 00470440h"
 );
 // LINE 41:
 	asm( 
-"	      0044732b    mov ecx,[ebp-58h]"
+"	      0044732b    mov ecx,this"
 "	      0044732e    call 004475E2h"
 );
 // LINE 42:
 	asm( 
 "	      00447333    jmp near ptr 00447338h"
-"	      00447338    mov eax,[ebp-58h]"
+"	      00447338    mov eax,this"
 "	      0044733b    pop edi"
 "	      0044733c    pop esi"
 "	      0044733d    pop ebx"
@@ -118,13 +118,13 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 "	      00447346    push ebx"
 "	      00447347    push esi"
 "	      00447348    push edi"
-"	      00447349    mov [ebp-58h],ecx"
+"	      00447349    mov this,ecx"
 "	      0044734c    push 0"
 "	      0044734e    push 1B8h"
 "	      00447353    push 258h"
-"	      00447358    mov ecx,[ebp-58h]"
+"	      00447358    mov ecx,this"
 "	      0044735b    call 0046EA06h"
-"	      00447360    mov eax,[ebp-58h]"
+"	      00447360    mov eax,this"
 "	      00447363    mov dword ptr [eax],58F5E0h"
 );
 // LINE 55:
@@ -146,28 +146,28 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 "	      004473a5    jmp near ptr 00447390h"
 "	      004473aa    jmp near ptr 004473AFh"
 "	      004473af    mov eax,[ebp-44h]"
-"	      004473b2    mov ecx,[ebp-58h]"
+"	      004473b2    mov ecx,this"
 "	      004473b5    mov [ecx+134h],eax"
 "	      004473bb    jmp near ptr 004473CDh"
-"	      004473c0    mov eax,[ebp-58h]"
+"	      004473c0    mov eax,this"
 "	      004473c3    mov dword ptr [eax+134h],0"
 );
 // LINE 56:
 	asm( 
-"	      004473cd    mov eax,[ebp-58h]"
+"	      004473cd    mov eax,this"
 "	      004473d0    cmp dword ptr [eax+134h],0"
 "	      004473d7    je near ptr 004473E9h"
 );
 // LINE 57:
 	asm( 
-"	      004473dd    mov eax,[ebp+8]"
+"	      004473dd    mov eax,newSparkalColors"
 "	      004473e0    push eax"
-"	      004473e1    mov ecx,[ebp-58h]"
+"	      004473e1    mov ecx,this"
 "	      004473e4    call 004474ABh"
 );
 // LINE 58:
 	asm( 
-"	      004473e9    lea eax,[ebp-40h]"
+"	      004473e9    lea eax,szTypeFaceName[0]"
 "	      004473ec    push eax"
 "	      004473ed    push 0"
 "	      004473ef    push 0"
@@ -186,7 +186,7 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 "	      00447412    push 0"
 "	      00447414    push 0"
 "	      00447416    push 8"
-"	      00447418    lea eax,[ebp-40h]"
+"	      00447418    lea eax,szTypeFaceName[0]"
 "	      0044741b    push eax"
 "	      0044741c    mov ecx,[ebp-48h]"
 "	      0044741f    call 0049F937h"
@@ -195,18 +195,18 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 "	      0044742c    mov dword ptr [ebp-4Ch],0"
 "	      00447433    mov eax,[ebp-4Ch]"
 "	      00447436    push eax"
-"	      00447437    mov ecx,[ebp-58h]"
+"	      00447437    mov ecx,this"
 "	      0044743a    call 00470440h"
 );
 // LINE 60:
 	asm( 
-"	      0044743f    mov ecx,[ebp-58h]"
+"	      0044743f    mov ecx,this"
 "	      00447442    call 004475E2h"
 );
 // LINE 61:
 	asm( 
 "	      00447447    jmp near ptr 0044744Ch"
-"	      0044744c    mov eax,[ebp-58h]"
+"	      0044744c    mov eax,this"
 "	      0044744f    pop edi"
 "	      00447450    pop esi"
 "	      00447451    pop ebx"
@@ -225,19 +225,19 @@ void PaletteBuffer::~PaletteBuffer() {
 "	      0044745c    push ebx"
 "	      0044745d    push esi"
 "	      0044745e    push edi"
-"	      0044745f    mov [ebp-0Ch],ecx"
-"	      00447462    mov eax,[ebp-0Ch]"
+"	      0044745f    mov this,ecx"
+"	      00447462    mov eax,this"
 "	      00447465    mov dword ptr [eax],58F5E0h"
 );
 // LINE 70:
 	asm( 
-"	      0044746b    mov eax,[ebp-0Ch]"
+"	      0044746b    mov eax,this"
 "	      0044746e    cmp dword ptr [eax+134h],0"
 "	      00447475    je near ptr 00447499h"
 );
 // LINE 71:
 	asm( 
-"	      0044747b    mov eax,[ebp-0Ch]"
+"	      0044747b    mov eax,this"
 "	      0044747e    mov eax,[eax+134h]"
 "	      00447484    mov [ebp-4],eax"
 "	      00447487    mov eax,[ebp-4]"
@@ -250,7 +250,7 @@ void PaletteBuffer::~PaletteBuffer() {
 // LINE 72:
 	asm( 
 "	      00447499    jmp near ptr 0044749Eh"
-"	      0044749e    mov ecx,[ebp-0Ch]"
+"	      0044749e    mov ecx,this"
 "	      004474a1    call 0046EC7Ah"
 "	      004474a6    pop edi"
 "	      004474a7    pop esi"
@@ -272,24 +272,24 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 "	      004474b1    push ebx"
 "	      004474b2    push esi"
 "	      004474b3    push edi"
-"	      004474b4    mov [ebp-8],ecx"
+"	      004474b4    mov this,ecx"
 );
 // LINE 81:
 	asm( 
-"	      004474b7    mov dword ptr [ebp-4],0"
+"	      004474b7    mov i,0"
 "	      004474be    jmp near ptr 004474C6h"
-"	      004474c3    inc dword ptr [ebp-4]"
-"	      004474c6    cmp dword ptr [ebp-4],100h"
+"	      004474c3    inc i"
+"	      004474c6    cmp i,100h"
 "	      004474cd    jge near ptr 004474F0h"
 );
 // LINE 82:
 	asm( 
-"	      004474d3    mov eax,[ebp-4]"
-"	      004474d6    mov ecx,[ebp+8]"
+"	      004474d3    mov eax,i"
+"	      004474d6    mov ecx,pColors"
 "	      004474d9    mov eax,[ecx+eax*4]"
-"	      004474dc    mov ecx,[ebp-8]"
+"	      004474dc    mov ecx,this"
 "	      004474df    mov ecx,[ecx+134h]"
-"	      004474e5    mov edx,[ebp-4]"
+"	      004474e5    mov edx,i"
 "	      004474e8    mov [ecx+edx*4],eax"
 );
 // LINE 83:
@@ -325,18 +325,18 @@ int32_t PaletteBuffer::SetPalette() {
 "	      00447507    push ebx"
 "	      00447508    push esi"
 "	      00447509    push edi"
-"	      0044750a    mov [ebp-18h],ecx"
+"	      0044750a    mov this,ecx"
 );
 // LINE 100:
 	asm( 
 "	      0044750d    push 400h"
 "	      00447512    call 0056A600h"
 "	      00447517    add esp,4"
-"	      0044751a    mov [ebp-4],eax"
+"	      0044751a    mov paletteEntries,eax"
 );
 // LINE 101:
 	asm( 
-"	      0044751d    cmp dword ptr [ebp-4],0"
+"	      0044751d    cmp paletteEntries,0"
 "	      00447521    jne near ptr 0044752Eh"
 );
 // LINE 102:
@@ -346,7 +346,7 @@ int32_t PaletteBuffer::SetPalette() {
 );
 // LINE 103:
 	asm( 
-"	      0044752e    mov eax,[ebp-4]"
+"	      0044752e    mov eax,paletteEntries"
 "	      00447531    push eax"
 "	      00447532    push 100h"
 "	      00447537    push 0"
@@ -356,43 +356,43 @@ int32_t PaletteBuffer::SetPalette() {
 "	      00447541    mov eax,ds:[597268h]"
 "	      00447546    mov eax,[eax]"
 "	      00447548    call dword ptr [eax+10h]"
-"	      0044754b    mov [ebp-0Ch],eax"
+"	      0044754b    mov hResult,eax"
 );
 // LINE 104:
 	asm( 
-"	      0044754e    mov dword ptr [ebp-8],0"
+"	      0044754e    mov i,0"
 "	      00447555    jmp near ptr 0044755Dh"
-"	      0044755a    inc dword ptr [ebp-8]"
-"	      0044755d    cmp dword ptr [ebp-8],100h"
+"	      0044755a    inc i"
+"	      0044755d    cmp i,100h"
 "	      00447564    jge near ptr 004475BBh"
 );
 // LINE 105:
 	asm( 
-"	      0044756a    mov eax,[ebp-8]"
-"	      0044756d    mov ecx,[ebp-4]"
+"	      0044756a    mov eax,i"
+"	      0044756d    mov ecx,paletteEntries"
 "	      00447570    mov al,[ecx+eax*4]"
-"	      00447573    mov ecx,[ebp-8]"
-"	      00447576    mov edx,[ebp-18h]"
+"	      00447573    mov ecx,i"
+"	      00447576    mov edx,this"
 "	      00447579    mov edx,[edx+134h]"
 "	      0044757f    mov [edx+ecx*4+2],al"
 );
 // LINE 106:
 	asm( 
-"	      00447583    mov eax,[ebp-8]"
-"	      00447586    mov ecx,[ebp-4]"
+"	      00447583    mov eax,i"
+"	      00447586    mov ecx,paletteEntries"
 "	      00447589    mov al,[ecx+eax*4+1]"
-"	      0044758d    mov ecx,[ebp-8]"
-"	      00447590    mov edx,[ebp-18h]"
+"	      0044758d    mov ecx,i"
+"	      00447590    mov edx,this"
 "	      00447593    mov edx,[edx+134h]"
 "	      00447599    mov [edx+ecx*4+1],al"
 );
 // LINE 107:
 	asm( 
-"	      0044759d    mov eax,[ebp-8]"
-"	      004475a0    mov ecx,[ebp-4]"
+"	      0044759d    mov eax,i"
+"	      004475a0    mov ecx,paletteEntries"
 "	      004475a3    mov al,[ecx+eax*4+2]"
-"	      004475a7    mov ecx,[ebp-8]"
-"	      004475aa    mov edx,[ebp-18h]"
+"	      004475a7    mov ecx,i"
+"	      004475aa    mov edx,this"
 "	      004475ad    mov edx,[edx+134h]"
 "	      004475b3    mov [edx+ecx*4],al"
 );
@@ -402,7 +402,7 @@ int32_t PaletteBuffer::SetPalette() {
 );
 // LINE 109:
 	asm( 
-"	      004475bb    mov eax,[ebp-4]"
+"	      004475bb    mov eax,paletteEntries"
 "	      004475be    mov [ebp-10h],eax"
 "	      004475c1    mov eax,[ebp-10h]"
 "	      004475c4    mov [ebp-14h],eax"
@@ -440,7 +440,7 @@ void PaletteBuffer::DrawPalette() {
 "	      004475eb    push ebx"
 "	      004475ec    push esi"
 "	      004475ed    push edi"
-"	      004475ee    mov [ebp-118h],ecx"
+"	      004475ee    mov this,ecx"
 );
 // LINE 127:
 	asm( 
@@ -448,120 +448,120 @@ void PaletteBuffer::DrawPalette() {
 );
 // LINE 131:
 	asm( 
-"	      004475f9    mov dword ptr [ebp-10h],0"
+"	      004475f9    mov rectFill.left,0"
 );
 // LINE 132:
 	asm( 
-"	      00447600    mov dword ptr [ebp-0Ch],0"
+"	      00447600    mov rectFill.top,0"
 );
 // LINE 133:
 	asm( 
-"	      00447607    mov eax,[ebp-118h]"
+"	      00447607    mov eax,this"
 "	      0044760d    mov eax,[eax+8]"
-"	      00447610    mov [ebp-8],eax"
+"	      00447610    mov rectFill.right,eax"
 );
 // LINE 134:
 	asm( 
-"	      00447613    mov eax,[ebp-118h]"
+"	      00447613    mov eax,this"
 "	      00447619    mov eax,[eax+0Ch]"
-"	      0044761c    mov [ebp-4],eax"
+"	      0044761c    mov rectFill.bottom,eax"
 );
 // LINE 135:
 	asm( 
-"	      0044761f    lea eax,[ebp-10h]"
+"	      0044761f    lea eax,rectFill.left"
 "	      00447622    push eax"
 "	      00447623    push 0FFh"
-"	      00447628    mov eax,[ebp-118h]"
+"	      00447628    mov eax,this"
 "	      0044762e    mov eax,[eax]"
-"	      00447630    mov ecx,[ebp-118h]"
+"	      00447630    mov ecx,this"
 "	      00447636    call dword ptr [eax+44h]"
 );
 // LINE 138:
 	asm( 
-"	      00447639    mov dword ptr [ebp-14h],0"
+"	      00447639    mov i,0"
 "	      00447640    jmp near ptr 00447648h"
-"	      00447645    inc dword ptr [ebp-14h]"
-"	      00447648    cmp dword ptr [ebp-14h],100h"
+"	      00447645    inc i"
+"	      00447648    cmp i,100h"
 "	      0044764f    jge near ptr 00447741h"
 );
 // LINE 139:
 	asm( 
 "	      00447655    mov ecx,2Ch"
-"	      0044765a    mov eax,[ebp-14h]"
+"	      0044765a    mov eax,i"
 "	      0044765d    cdq"
 "	      0044765e    idiv ecx"
 "	      00447660    shl eax,2"
 "	      00447663    lea eax,[eax+eax*4]"
 "	      00447666    lea eax,[eax+eax*4]"
-"	      00447669    mov [ebp-10h],eax"
+"	      00447669    mov rectFill.left,eax"
 );
 // LINE 140:
 	asm( 
 "	      0044766c    mov ecx,2Ch"
-"	      00447671    mov eax,[ebp-14h]"
+"	      00447671    mov eax,i"
 "	      00447674    cdq"
 "	      00447675    idiv ecx"
 "	      00447677    lea eax,[edx+edx*4]"
 "	      0044767a    add eax,eax"
-"	      0044767c    mov [ebp-0Ch],eax"
+"	      0044767c    mov rectFill.top,eax"
 );
 // LINE 141:
 	asm( 
-"	      0044767f    mov eax,[ebp-10h]"
+"	      0044767f    mov eax,rectFill.left"
 "	      00447682    add eax,0Ah"
-"	      00447685    mov [ebp-8],eax"
+"	      00447685    mov rectFill.right,eax"
 );
 // LINE 142:
 	asm( 
-"	      00447688    mov eax,[ebp-0Ch]"
+"	      00447688    mov eax,rectFill.top"
 "	      0044768b    add eax,0Ah"
-"	      0044768e    mov [ebp-4],eax"
+"	      0044768e    mov rectFill.bottom,eax"
 );
 // LINE 143:
 	asm( 
-"	      00447691    lea eax,[ebp-10h]"
+"	      00447691    lea eax,rectFill.left"
 "	      00447694    push eax"
-"	      00447695    mov eax,[ebp-14h]"
+"	      00447695    mov eax,i"
 "	      00447698    push eax"
-"	      00447699    mov eax,[ebp-118h]"
+"	      00447699    mov eax,this"
 "	      0044769f    mov eax,[eax]"
-"	      004476a1    mov ecx,[ebp-118h]"
+"	      004476a1    mov ecx,this"
 "	      004476a7    call dword ptr [eax+44h]"
 );
 // LINE 145:
 	asm( 
-"	      004476aa    mov eax,[ebp-10h]"
+"	      004476aa    mov eax,rectFill.left"
 "	      004476ad    add eax,5Ah"
-"	      004476b0    mov [ebp-8],eax"
+"	      004476b0    mov rectFill.right,eax"
 );
 // LINE 146:
 	asm( 
-"	      004476b3    add dword ptr [ebp-10h],0Bh"
+"	      004476b3    add rectFill.left,0Bh"
 );
 // LINE 148:
 	asm( 
-"	      004476b7    mov eax,[ebp-118h]"
+"	      004476b7    mov eax,this"
 "	      004476bd    mov eax,[eax+134h]"
-"	      004476c3    mov ecx,[ebp-14h]"
+"	      004476c3    mov ecx,i"
 "	      004476c6    xor edx,edx"
 "	      004476c8    mov dl,[eax+ecx*4]"
 "	      004476cb    push edx"
-"	      004476cc    mov eax,[ebp-118h]"
+"	      004476cc    mov eax,this"
 "	      004476d2    mov eax,[eax+134h]"
-"	      004476d8    mov ecx,[ebp-14h]"
+"	      004476d8    mov ecx,i"
 "	      004476db    xor edx,edx"
 "	      004476dd    mov dl,[eax+ecx*4+1]"
 "	      004476e1    push edx"
-"	      004476e2    mov eax,[ebp-118h]"
+"	      004476e2    mov eax,this"
 "	      004476e8    mov eax,[eax+134h]"
-"	      004476ee    mov ecx,[ebp-14h]"
+"	      004476ee    mov ecx,i"
 "	      004476f1    xor edx,edx"
 "	      004476f3    mov dl,[eax+ecx*4+2]"
 "	      004476f7    push edx"
-"	      004476f8    mov eax,[ebp-14h]"
+"	      004476f8    mov eax,i"
 "	      004476fb    push eax"
 "	      004476fc    push 598F14h"
-"	      00447701    lea eax,[ebp-114h]"
+"	      00447701    lea eax,szDescriptionString[0]"
 "	      00447707    push eax"
 "	      00447708    call 0056CD30h"
 "	      0044770d    add esp,18h"
@@ -569,20 +569,20 @@ void PaletteBuffer::DrawPalette() {
 // LINE 150:
 	asm( 
 "	      00447710    push 0"
-"	      00447712    lea eax,[ebp-4]"
+"	      00447712    lea eax,rectFill.bottom"
 "	      00447715    push eax"
-"	      00447716    lea eax,[ebp-8]"
+"	      00447716    lea eax,rectFill.right"
 "	      00447719    push eax"
-"	      0044771a    lea eax,[ebp-0Ch]"
+"	      0044771a    lea eax,rectFill.top"
 "	      0044771d    push eax"
-"	      0044771e    lea eax,[ebp-10h]"
+"	      0044771e    lea eax,rectFill.left"
 "	      00447721    push eax"
 "	      00447722    push 0"
-"	      00447724    lea eax,[ebp-114h]"
+"	      00447724    lea eax,szDescriptionString[0]"
 "	      0044772a    push eax"
-"	      0044772b    mov eax,[ebp-118h]"
+"	      0044772b    mov eax,this"
 "	      00447731    mov eax,[eax]"
-"	      00447733    mov ecx,[ebp-118h]"
+"	      00447733    mov ecx,this"
 "	      00447739    call dword ptr [eax+4Ch]"
 );
 // LINE 151:
@@ -610,25 +610,25 @@ unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft
 "	      00447751    push ebx"
 "	      00447752    push esi"
 "	      00447753    push edi"
-"	      00447754    mov [ebp-4],ecx"
+"	      00447754    mov this,ecx"
 );
 // LINE 162:
 	asm( 
-"	      00447757    mov eax,[ebp-4]"
+"	      00447757    mov eax,this"
 "	      0044775a    mov eax,[eax+0Ch]"
 "	      0044775d    push eax"
-"	      0044775e    mov eax,[ebp-4]"
+"	      0044775e    mov eax,this"
 "	      00447761    mov eax,[eax+8]"
 "	      00447764    push eax"
 "	      00447765    push 0"
 "	      00447767    push 0"
-"	      00447769    mov eax,[ebp+10h]"
+"	      00447769    mov eax,DestTop"
 "	      0044776c    push eax"
-"	      0044776d    mov eax,[ebp+0Ch]"
+"	      0044776d    mov eax,DestLeft"
 "	      00447770    push eax"
-"	      00447771    mov eax,[ebp+8]"
+"	      00447771    mov eax,pDestImage"
 "	      00447774    push eax"
-"	      00447775    mov ecx,[ebp-4]"
+"	      00447775    mov ecx,this"
 "	      00447778    call 0046F948h"
 "	      0044777d    jmp near ptr 00447782h"
 );

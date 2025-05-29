@@ -2,7 +2,7 @@
 // FUNCTION: COPTER_D 0x0055e830
 cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
 // LINE 38:
-	asm(
+	asm( 
 "	      0055e830    push ebp"
 "	      0055e831    mov ebp,esp"
 "	      0055e833    push 0FFFFFFFFh"
@@ -14,42 +14,42 @@ cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::
 "	      0055e84b    push ebx"
 "	      0055e84c    push esi"
 "	      0055e84d    push edi"
-"	      0055e84e    mov [ebp-10h],ecx"
-"	      0055e851    mov eax,[ebp-10h]"
+"	      0055e84e    mov this,ecx"
+"	      0055e851    mov eax,this"
 "	      0055e854    mov dword ptr [eax+4],0"
-"	      0055e85b    mov eax,[ebp-10h]"
+"	      0055e85b    mov eax,this"
 "	      0055e85e    mov word ptr [eax+8],0"
 "	      0055e864    jmp near ptr 0055E869h"
 "	      0055e869    mov dword ptr [ebp-4],0"
-"	      0055e870    mov eax,[ebp-10h]"
+"	      0055e870    mov eax,this"
 "	      0055e873    mov dword ptr [eax],593654h"
 );
 // LINE 39:
-	asm(
-"	      0055e879    mov eax,[ebp-10h]"
+	asm( 
+"	      0055e879    mov eax,this"
 "	      0055e87c    mov dword ptr [eax+0Ch],0"
 );
 // LINE 40:
-	asm(
-"	      0055e883    mov eax,[ebp-10h]"
+	asm( 
+"	      0055e883    mov eax,this"
 "	      0055e886    mov dword ptr [eax+10h],0"
 );
 // LINE 41:
-	asm(
+	asm( 
 "	      0055e88d    jmp near ptr 0055E892h"
 "	      0055e892    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055e899    mov eax,[ebp-10h]"
+"	      0055e899    mov eax,this"
 "	      0055e89c    jmp near ptr 0055E8B7h"
 	);
 _L44596:
-	asm(
-"	      0055e8a1    mov ecx,[ebp-10h]"
+	asm( 
+"	      0055e8a1    mov ecx,this"
 "	      0055e8a4    add ecx,4"
 "	      0055e8a7    call 0055E8D0h"
 "	      0055e8ac    ret"
 	);
 _L44595:
-	asm(
+	asm( 
 "	      0055e8ad    mov eax,596030h"
 "	      0055e8b2    jmp near ptr 0056F590h"
 "	      0055e8b7    mov ecx,[ebp-0Ch]"
@@ -66,7 +66,7 @@ _L44595:
 // FUNCTION: COPTER_D 0x0055e9b0
 cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>::~cBList<cCopterAnim>() {
 // LINE 44:
-	asm(
+	asm( 
 "	      0055e9b0    push ebp"
 "	      0055e9b1    mov ebp,esp"
 "	      0055e9b3    push 0FFFFFFFFh"
@@ -78,15 +78,15 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 "	      0055e9cb    push ebx"
 "	      0055e9cc    push esi"
 "	      0055e9cd    push edi"
-"	      0055e9ce    mov [ebp-1Ch],ecx"
-"	      0055e9d1    mov eax,[ebp-1Ch]"
+"	      0055e9ce    mov this,ecx"
+"	      0055e9d1    mov eax,this"
 "	      0055e9d4    mov dword ptr [eax],593654h"
 "	      0055e9da    mov dword ptr [ebp-4],0"
 );
 // LINE 45:
-	asm(
+	asm( 
 "	      0055e9e1    mov dword ptr [ebp-18h],0"
-"	      0055e9e8    mov eax,[ebp-1Ch]"
+"	      0055e9e8    mov eax,this"
 "	      0055e9eb    mov eax,[eax+4]"
 "	      0055e9ee    mov [ebp-14h],eax"
 "	      0055e9f1    jmp near ptr 0055E9FFh"
@@ -97,7 +97,7 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 "	      0055ea03    je near ptr 0055EA11h"
 "	      0055ea09    inc dword ptr [ebp-18h]"
 "	      0055ea0c    jmp near ptr 0055E9F6h"
-"	      0055ea11    mov eax,[ebp-1Ch]"
+"	      0055ea11    mov eax,this"
 "	      0055ea14    movsx eax,word ptr [eax+8]"
 "	      0055ea18    cmp eax,[ebp-18h]"
 "	      0055ea1b    je near ptr 0055EA3Ah"
@@ -108,7 +108,7 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 "	      0055ea32    call 00554F30h"
 "	      0055ea37    add esp,10h"
 "	      0055ea3a    jmp near ptr 0055EA3Fh"
-"	      0055ea3f    mov eax,[ebp-1Ch]"
+"	      0055ea3f    mov eax,this"
 "	      0055ea42    movsx eax,word ptr [eax+8]"
 "	      0055ea46    test eax,eax"
 "	      0055ea48    je near ptr 0055EA67h"
@@ -120,17 +120,17 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 "	      0055ea64    add esp,10h"
 );
 // LINE 46:
-	asm(
+	asm( 
 "	      0055ea67    jmp near ptr 0055EA6Ch"
 "	      0055ea6c    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0055ea73    call 0055EA7Dh"
 "	      0055ea78    jmp near ptr 0055EAAFh"
 	);
 _L44659:
-	asm(
-"	      0055ea7d    cmp dword ptr [ebp-1Ch],0"
+	asm( 
+"	      0055ea7d    cmp this,0"
 "	      0055ea81    je near ptr 0055EA95h"
-"	      0055ea87    mov eax,[ebp-1Ch]"
+"	      0055ea87    mov eax,this"
 "	      0055ea8a    add eax,4"
 "	      0055ea8d    mov [ebp-10h],eax"
 "	      0055ea90    jmp near ptr 0055EA9Ch"
@@ -140,7 +140,7 @@ _L44659:
 "	      0055eaa4    ret"
 	);
 _L44658:
-	asm(
+	asm( 
 "	      0055eaa5    mov eax,596058h"
 "	      0055eaaa    jmp near ptr 0056F590h"
 "	      0055eaaf    mov eax,[ebp-0Ch]"
@@ -157,19 +157,19 @@ _L44658:
 // FUNCTION: COPTER_D 0x0055eac0
 void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim* thing) {
 // LINE 118:
-	asm(
+	asm( 
 "	      0055eac0    push ebp"
 "	      0055eac1    mov ebp,esp"
 "	      0055eac3    sub esp,34h"
 "	      0055eac6    push ebx"
 "	      0055eac7    push esi"
 "	      0055eac8    push edi"
-"	      0055eac9    mov [ebp-34h],ecx"
+"	      0055eac9    mov this,ecx"
 );
 // LINE 119:
-	asm(
+	asm( 
 "	      0055eacc    jmp near ptr 0055EAD1h"
-"	      0055ead1    mov eax,[ebp+8]"
+"	      0055ead1    mov eax,thing"
 "	      0055ead4    mov eax,[eax+1Ch]"
 "	      0055ead7    mov [ebp-30h],eax"
 "	      0055eada    mov dword ptr [ebp-10h],8"
@@ -183,9 +183,9 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 "	      0055eb01    push 5BE1ECh"
 "	      0055eb06    call 00554F30h"
 "	      0055eb0b    add esp,10h"
-"	      0055eb0e    cmp dword ptr [ebp-34h],0"
+"	      0055eb0e    cmp this,0"
 "	      0055eb12    je near ptr 0055EB26h"
-"	      0055eb18    mov eax,[ebp-34h]"
+"	      0055eb18    mov eax,this"
 "	      0055eb1b    add eax,4"
 "	      0055eb1e    mov [ebp-1Ch],eax"
 "	      0055eb21    jmp near ptr 0055EB2Dh"
@@ -263,10 +263,10 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 "	      0055ec58    add esp,10h"
 );
 // LINE 120:
-	asm(
-"	      0055ec5b    cmp dword ptr [ebp+8],0"
+	asm( 
+"	      0055ec5b    cmp thing,0"
 "	      0055ec5f    je near ptr 0055ECB5h"
-"	      0055ec65    mov eax,[ebp-34h]"
+"	      0055ec65    mov eax,this"
 "	      0055ec68    mov eax,[eax+4]"
 "	      0055ec6b    mov [ebp-8],eax"
 "	      0055ec6e    jmp near ptr 0055EC7Ch"
@@ -276,7 +276,7 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 "	      0055ec7c    cmp dword ptr [ebp-8],0"
 "	      0055ec80    je near ptr 0055EC9Eh"
 "	      0055ec86    mov eax,[ebp-8]"
-"	      0055ec89    mov ecx,[ebp+8]"
+"	      0055ec89    mov ecx,thing"
 "	      0055ec8c    cmp [eax],ecx"
 "	      0055ec8e    jne near ptr 0055EC99h"
 "	      0055ec94    jmp near ptr 0055ECB5h"
@@ -290,22 +290,22 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 "	      0055ecbc    call 0056A600h"
 "	      0055ecc1    add esp,4"
 "	      0055ecc4    mov [ebp-4],eax"
-"	      0055ecc7    mov eax,[ebp+8]"
+"	      0055ecc7    mov eax,thing"
 "	      0055ecca    mov ecx,[ebp-4]"
 "	      0055eccd    mov [ecx],eax"
-"	      0055eccf    mov eax,[ebp-34h]"
+"	      0055eccf    mov eax,this"
 "	      0055ecd2    mov eax,[eax+4]"
 "	      0055ecd5    mov ecx,[ebp-4]"
 "	      0055ecd8    mov [ecx+4],eax"
 "	      0055ecdb    mov eax,[ebp-4]"
-"	      0055ecde    mov ecx,[ebp-34h]"
+"	      0055ecde    mov ecx,this"
 "	      0055ece1    mov [ecx+4],eax"
-"	      0055ece4    mov eax,[ebp-34h]"
+"	      0055ece4    mov eax,this"
 "	      0055ece7    inc word ptr [eax+8]"
 "	      0055eceb    jmp near ptr 0055ECF0h"
 );
 // LINE 121:
-	asm(
+	asm( 
 "	      0055ecf0    jmp near ptr 0055ECF5h"
 "	      0055ecf5    pop edi"
 "	      0055ecf6    pop esi"
@@ -324,7 +324,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	short numThings;
 
 // LINE 180:
-	asm(
+	asm( 
 "	      0055ed00    push ebp"
 "	      0055ed01    mov ebp,esp"
 "	      0055ed03    push 0FFFFFFFFh"
@@ -336,11 +336,11 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055ed1e    push ebx"
 "	      0055ed1f    push esi"
 "	      0055ed20    push edi"
-"	      0055ed21    mov [ebp-14Ch],ecx"
+"	      0055ed21    mov this,ecx"
 );
 // LINE 181:
-	asm(
-"	      0055ed27    mov eax,[ebp-14Ch]"
+	asm( 
+"	      0055ed27    mov eax,this"
 "	      0055ed2d    cmp dword ptr [eax+0Ch],0"
 "	      0055ed31    jne near ptr 0055ED53h"
 "	      0055ed37    push 8C085h"
@@ -351,17 +351,17 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055ed50    add esp,10h"
 );
 // LINE 182:
-	asm(
-"	      0055ed53    mov eax,[ebp-14Ch]"
+	asm( 
+"	      0055ed53    mov eax,this"
 "	      0055ed59    mov eax,[eax+0Ch]"
 "	      0055ed5c    push eax"
 "	      0055ed5d    call 005674E0h"
 "	      0055ed62    add esp,4"
-"	      0055ed65    mov [ebp-1Ch],ax"
+"	      0055ed65    mov fileOpened,ax"
 );
 // LINE 183:
-	asm(
-"	      0055ed69    mov eax,[ebp-14Ch]"
+	asm( 
+"	      0055ed69    mov eax,this"
 "	      0055ed6f    mov ecx,[eax+0Ch]"
 "	      0055ed72    call 0055C7DDh"
 "	      0055ed77    movzx eax,ax"
@@ -375,8 +375,8 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055ed9b    add esp,10h"
 );
 // LINE 184:
-	asm(
-"	      0055ed9e    mov eax,[ebp-14Ch]"
+	asm( 
+"	      0055ed9e    mov eax,this"
 "	      0055eda4    cmp dword ptr [eax+10h],0"
 "	      0055eda8    jne near ptr 0055EDCAh"
 "	      0055edae    push 8C085h"
@@ -385,12 +385,12 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055edbd    push 5BE1ECh"
 "	      0055edc2    call 00554F30h"
 "	      0055edc7    add esp,10h"
-"	      0055edca    mov eax,[ebp-14Ch]"
+"	      0055edca    mov eax,this"
 "	      0055edd0    mov eax,[eax+0Ch]"
 "	      0055edd3    mov [ebp-20h],eax"
 );
 // LINE 185:
-	asm(
+	asm( 
 "	      0055edd6    push 55D950h"
 "	      0055eddb    push 8"
 "	      0055eddd    push 41525050h"
@@ -402,41 +402,41 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055edf3    jmp near ptr 0055EDF8h"
 );
 // LINE 189:
-	asm(
-"	      0055edf8    mov eax,[ebp-14Ch]"
+	asm( 
+"	      0055edf8    mov eax,this"
 "	      0055edfe    mov eax,[eax+10h]"
 "	      0055ee01    push eax"
-"	      0055ee02    mov eax,[ebp-14Ch]"
+"	      0055ee02    mov eax,this"
 "	      0055ee08    mov ecx,[eax+0Ch]"
 "	      0055ee0b    call 0055319Ah"
-"	      0055ee10    mov [ebp-10h],ax"
+"	      0055ee10    mov numThings,ax"
 );
 // LINE 190:
-	asm(
-"	      0055ee14    mov word ptr [ebp-14h],1"
+	asm( 
+"	      0055ee14    mov count,1"
 "	      0055ee1a    jmp near ptr 0055EE23h"
-"	      0055ee1f    inc word ptr [ebp-14h]"
-"	      0055ee23    movsx eax,word ptr [ebp-14h]"
-"	      0055ee27    movsx ecx,word ptr [ebp-10h]"
+"	      0055ee1f    inc count"
+"	      0055ee23    movsx eax,count"
+"	      0055ee27    movsx ecx,numThings"
 "	      0055ee2b    cmp eax,ecx"
 "	      0055ee2d    jg near ptr 0055F197h"
 );
 // LINE 192:
-	asm(
+	asm( 
 "	      0055ee33    push 55E6F0h"
 "	      0055ee38    mov eax,[ebp-14h]"
 "	      0055ee3b    push eax"
-"	      0055ee3c    mov eax,[ebp-14Ch]"
+"	      0055ee3c    mov eax,this"
 "	      0055ee42    mov eax,[eax+10h]"
 "	      0055ee45    push eax"
-"	      0055ee46    mov eax,[ebp-14Ch]"
+"	      0055ee46    mov eax,this"
 "	      0055ee4c    mov ecx,[eax+0Ch]"
 "	      0055ee4f    call 00553452h"
-"	      0055ee54    mov [ebp-18h],eax"
+"	      0055ee54    mov h,eax"
 );
 // LINE 193:
-	asm(
-"	      0055ee57    cmp dword ptr [ebp-18h],0"
+	asm( 
+"	      0055ee57    cmp h,0"
 "	      0055ee5b    jne near ptr 0055EE7Dh"
 "	      0055ee61    push 8C085h"
 "	      0055ee66    push 5BE148h"
@@ -444,11 +444,11 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055ee70    push 5BE1ECh"
 "	      0055ee75    call 00554F30h"
 "	      0055ee7a    add esp,10h"
-"	      0055ee7d    mov eax,[ebp-18h]"
+"	      0055ee7d    mov eax,h"
 "	      0055ee80    mov [ebp-148h],eax"
 );
 // LINE 195:
-	asm(
+	asm( 
 "	      0055ee86    push 2Ch"
 "	      0055ee88    call 0056A600h"
 "	      0055ee8d    add esp,4"
@@ -471,7 +471,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 "	      0055eed4    jmp near ptr 0055EEE2h"
 	);
 _L45278:
-	asm(
+	asm( 
 "	      0055eed9    mov ecx,[ebp-30h]"
 "	      0055eedc    call 0055F2C0h"
 "	      0055eee1    ret"
@@ -664,7 +664,7 @@ _L45278:
 "	      0055f180    jmp near ptr 0055F192h"
 	);
 _L45274:
-	asm(
+	asm( 
 "	      0055f185    mov eax,[ebp-28h]"
 "	      0055f188    push eax"
 "	      0055f189    call 0056A740h"
@@ -672,29 +672,29 @@ _L45274:
 "	      0055f191    ret"
 );
 // LINE 196:
-	asm(
+	asm( 
 "	      0055f192    jmp near ptr 0055EE1Fh"
 );
 // LINE 197:
-	asm(
+	asm( 
 "	      0055f197    test dword ptr [ebp-1Ch],0FFFFh"
 "	      0055f19e    je near ptr 0055F1BBh"
 );
 // LINE 198:
-	asm(
-"	      0055f1a4    mov eax,[ebp-14Ch]"
-"	      0055f1aa    mov ecx,[ebp-14Ch]"
+	asm( 
+"	      0055f1a4    mov eax,this"
+"	      0055f1aa    mov ecx,this"
 "	      0055f1b0    mov ecx,[ecx+0Ch]"
 "	      0055f1b3    mov edx,[ecx]"
 "	      0055f1b5    mov ecx,[eax+0Ch]"
 "	      0055f1b8    call dword ptr [edx+0Ch]"
 );
 // LINE 199:
-	asm(
+	asm( 
 "	      0055f1bb    jmp near ptr 0055F1CAh"
 	);
 _L45273:
-	asm(
+	asm( 
 "	      0055f1c0    mov eax,596080h"
 "	      0055f1c5    jmp near ptr 0056F590h"
 "	      0055f1ca    mov eax,[ebp-0Ch]"
@@ -711,7 +711,7 @@ _L45273:
 // FUNCTION: COPTER_D 0x0055fdd0
 void cBList<cCopterBody>::~cBList<cCopterBody>() {
 // LINE 44:
-	asm(
+	asm( 
 "	      0055fdd0    push ebp"
 "	      0055fdd1    mov ebp,esp"
 "	      0055fdd3    push 0FFFFFFFFh"
@@ -723,15 +723,15 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 "	      0055fdeb    push ebx"
 "	      0055fdec    push esi"
 "	      0055fded    push edi"
-"	      0055fdee    mov [ebp-1Ch],ecx"
-"	      0055fdf1    mov eax,[ebp-1Ch]"
+"	      0055fdee    mov this,ecx"
+"	      0055fdf1    mov eax,this"
 "	      0055fdf4    mov dword ptr [eax],593650h"
 "	      0055fdfa    mov dword ptr [ebp-4],0"
 );
 // LINE 45:
-	asm(
+	asm( 
 "	      0055fe01    mov dword ptr [ebp-18h],0"
-"	      0055fe08    mov eax,[ebp-1Ch]"
+"	      0055fe08    mov eax,this"
 "	      0055fe0b    mov eax,[eax+4]"
 "	      0055fe0e    mov [ebp-14h],eax"
 "	      0055fe11    jmp near ptr 0055FE1Fh"
@@ -742,7 +742,7 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 "	      0055fe23    je near ptr 0055FE31h"
 "	      0055fe29    inc dword ptr [ebp-18h]"
 "	      0055fe2c    jmp near ptr 0055FE16h"
-"	      0055fe31    mov eax,[ebp-1Ch]"
+"	      0055fe31    mov eax,this"
 "	      0055fe34    movsx eax,word ptr [eax+8]"
 "	      0055fe38    cmp eax,[ebp-18h]"
 "	      0055fe3b    je near ptr 0055FE5Ah"
@@ -753,7 +753,7 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 "	      0055fe52    call 00554F30h"
 "	      0055fe57    add esp,10h"
 "	      0055fe5a    jmp near ptr 0055FE5Fh"
-"	      0055fe5f    mov eax,[ebp-1Ch]"
+"	      0055fe5f    mov eax,this"
 "	      0055fe62    movsx eax,word ptr [eax+8]"
 "	      0055fe66    test eax,eax"
 "	      0055fe68    je near ptr 0055FE87h"
@@ -765,17 +765,17 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 "	      0055fe84    add esp,10h"
 );
 // LINE 46:
-	asm(
+	asm( 
 "	      0055fe87    jmp near ptr 0055FE8Ch"
 "	      0055fe8c    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0055fe93    call 0055FE9Dh"
 "	      0055fe98    jmp near ptr 0055FECFh"
 	);
 _L45612:
-	asm(
-"	      0055fe9d    cmp dword ptr [ebp-1Ch],0"
+	asm( 
+"	      0055fe9d    cmp this,0"
 "	      0055fea1    je near ptr 0055FEB5h"
-"	      0055fea7    mov eax,[ebp-1Ch]"
+"	      0055fea7    mov eax,this"
 "	      0055feaa    add eax,4"
 "	      0055fead    mov [ebp-10h],eax"
 "	      0055feb0    jmp near ptr 0055FEBCh"
@@ -785,7 +785,7 @@ _L45612:
 "	      0055fec4    ret"
 	);
 _L45611:
-	asm(
+	asm( 
 "	      0055fec5    mov eax,596110h"
 "	      0055feca    jmp near ptr 0056F590h"
 "	      0055fecf    mov eax,[ebp-0Ch]"
@@ -802,19 +802,19 @@ _L45611:
 // FUNCTION: COPTER_D 0x0055fee0
 void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 // LINE 118:
-	asm(
+	asm( 
 "	      0055fee0    push ebp"
 "	      0055fee1    mov ebp,esp"
 "	      0055fee3    sub esp,34h"
 "	      0055fee6    push ebx"
 "	      0055fee7    push esi"
 "	      0055fee8    push edi"
-"	      0055fee9    mov [ebp-34h],ecx"
+"	      0055fee9    mov this,ecx"
 );
 // LINE 119:
-	asm(
+	asm( 
 "	      0055feec    jmp near ptr 0055FEF1h"
-"	      0055fef1    mov eax,[ebp+8]"
+"	      0055fef1    mov eax,thing"
 "	      0055fef4    mov eax,[eax+1Ch]"
 "	      0055fef7    mov [ebp-30h],eax"
 "	      0055fefa    mov dword ptr [ebp-10h],8"
@@ -828,9 +828,9 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 "	      0055ff21    push 5BE1ECh"
 "	      0055ff26    call 00554F30h"
 "	      0055ff2b    add esp,10h"
-"	      0055ff2e    cmp dword ptr [ebp-34h],0"
+"	      0055ff2e    cmp this,0"
 "	      0055ff32    je near ptr 0055FF46h"
-"	      0055ff38    mov eax,[ebp-34h]"
+"	      0055ff38    mov eax,this"
 "	      0055ff3b    add eax,4"
 "	      0055ff3e    mov [ebp-1Ch],eax"
 "	      0055ff41    jmp near ptr 0055FF4Dh"
@@ -908,10 +908,10 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 "	      00560078    add esp,10h"
 );
 // LINE 120:
-	asm(
-"	      0056007b    cmp dword ptr [ebp+8],0"
+	asm( 
+"	      0056007b    cmp thing,0"
 "	      0056007f    je near ptr 005600D5h"
-"	      00560085    mov eax,[ebp-34h]"
+"	      00560085    mov eax,this"
 "	      00560088    mov eax,[eax+4]"
 "	      0056008b    mov [ebp-8],eax"
 "	      0056008e    jmp near ptr 0056009Ch"
@@ -921,7 +921,7 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 "	      0056009c    cmp dword ptr [ebp-8],0"
 "	      005600a0    je near ptr 005600BEh"
 "	      005600a6    mov eax,[ebp-8]"
-"	      005600a9    mov ecx,[ebp+8]"
+"	      005600a9    mov ecx,thing"
 "	      005600ac    cmp [eax],ecx"
 "	      005600ae    jne near ptr 005600B9h"
 "	      005600b4    jmp near ptr 005600D5h"
@@ -935,22 +935,22 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 "	      005600dc    call 0056A600h"
 "	      005600e1    add esp,4"
 "	      005600e4    mov [ebp-4],eax"
-"	      005600e7    mov eax,[ebp+8]"
+"	      005600e7    mov eax,thing"
 "	      005600ea    mov ecx,[ebp-4]"
 "	      005600ed    mov [ecx],eax"
-"	      005600ef    mov eax,[ebp-34h]"
+"	      005600ef    mov eax,this"
 "	      005600f2    mov eax,[eax+4]"
 "	      005600f5    mov ecx,[ebp-4]"
 "	      005600f8    mov [ecx+4],eax"
 "	      005600fb    mov eax,[ebp-4]"
-"	      005600fe    mov ecx,[ebp-34h]"
+"	      005600fe    mov ecx,this"
 "	      00560101    mov [ecx+4],eax"
-"	      00560104    mov eax,[ebp-34h]"
+"	      00560104    mov eax,this"
 "	      00560107    inc word ptr [eax+8]"
 "	      0056010b    jmp near ptr 00560110h"
 );
 // LINE 121:
-	asm(
+	asm( 
 "	      00560110    jmp near ptr 00560115h"
 "	      00560115    pop edi"
 "	      00560116    pop esi"

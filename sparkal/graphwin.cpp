@@ -57,57 +57,57 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 "	      004a1752    push ebx"
 "	      004a1753    push esi"
 "	      004a1754    push edi"
-"	      004a1755    mov [ebp-4],ecx"
+"	      004a1755    mov this,ecx"
 );
 // LINE 36:
 	asm( 
-"	      004a1758    mov eax,[ebp-4]"
+"	      004a1758    mov eax,this"
 "	      004a175b    mov dword ptr [eax],0"
 );
 // LINE 37:
 	asm( 
-"	      004a1761    mov eax,[ebp-4]"
+"	      004a1761    mov eax,this"
 "	      004a1764    mov dword ptr [eax+4],0F8h"
 );
 // LINE 38:
 	asm( 
-"	      004a176b    mov eax,[ebp-4]"
+"	      004a176b    mov eax,this"
 "	      004a176e    mov dword ptr [eax+8],7"
 );
 // LINE 39:
 	asm( 
-"	      004a1775    mov eax,[ebp-4]"
+"	      004a1775    mov eax,this"
 "	      004a1778    mov dword ptr [eax+0Ch],0FFh"
 );
 // LINE 40:
 	asm( 
-"	      004a177f    mov eax,[ebp-4]"
+"	      004a177f    mov eax,this"
 "	      004a1782    mov dword ptr [eax+10h],1"
 );
 // LINE 41:
 	asm( 
-"	      004a1789    mov eax,[ebp-4]"
+"	      004a1789    mov eax,this"
 "	      004a178c    mov dword ptr [eax+14h],4"
 );
 // LINE 42:
 	asm( 
-"	      004a1793    mov eax,[ebp-4]"
+"	      004a1793    mov eax,this"
 "	      004a1796    mov dword ptr [eax+18h],2"
 );
 // LINE 43:
 	asm( 
-"	      004a179d    mov eax,[ebp-4]"
+"	      004a179d    mov eax,this"
 "	      004a17a0    mov dword ptr [eax+1Ch],6"
 );
 // LINE 44:
 	asm( 
-"	      004a17a7    mov eax,[ebp-4]"
+"	      004a17a7    mov eax,this"
 "	      004a17aa    mov dword ptr [eax+20h],0FFFFFFFFh"
 );
 // LINE 48:
 	asm( 
 "	      004a17b1    jmp near ptr 004A17B6h"
-"	      004a17b6    mov eax,[ebp-4]"
+"	      004a17b6    mov eax,this"
 "	      004a17b9    pop edi"
 "	      004a17ba    pop esi"
 "	      004a17bb    pop ebx"
@@ -126,7 +126,7 @@ int32_t GraphicWindowOwner::DoMessage(class GraphicWindow* gwSource, long lWindo
 "	      004a17c4    push ebx"
 "	      004a17c5    push esi"
 "	      004a17c6    push edi"
-"	      004a17c7    mov [ebp-4],ecx"
+"	      004a17c7    mov this,ecx"
 );
 // LINE 62:
 	asm( 
@@ -153,13 +153,13 @@ void GraphicWindowManager::GraphicWindowManager(class GraphicWindow* newBaseWind
 "	      004a17de    push ebx"
 "	      004a17df    push esi"
 "	      004a17e0    push edi"
-"	      004a17e1    mov [ebp-54h],ecx"
-"	      004a17e4    mov eax,[ebp-54h]"
+"	      004a17e1    mov this,ecx"
+"	      004a17e4    mov eax,this"
 "	      004a17e7    mov dword ptr [eax+4],0"
-"	      004a17ee    mov eax,[ebp+8]"
-"	      004a17f1    mov ecx,[ebp-54h]"
+"	      004a17ee    mov eax,newBaseWindow"
+"	      004a17f1    mov ecx,this"
 "	      004a17f4    mov [ecx+8],eax"
-"	      004a17f7    mov eax,[ebp-54h]"
+"	      004a17f7    mov eax,this"
 "	      004a17fa    mov dword ptr [eax+10h],0"
 "	      004a1801    inc dword ptr ds:[59A970h]"
 "	      004a1807    mov eax,ds:[59A97Ch]"
@@ -298,31 +298,31 @@ void GraphicWindowManager::GraphicWindowManager(class GraphicWindow* newBaseWind
 "	      004a1a0d    mov [ebp-50h],eax"
 "	      004a1a10    jmp near ptr 004A1A15h"
 "	      004a1a15    mov eax,[ebp-50h]"
-"	      004a1a18    mov ecx,[ebp-54h]"
+"	      004a1a18    mov ecx,this"
 "	      004a1a1b    mov [ecx+0Ch],eax"
-"	      004a1a1e    mov eax,[ebp-54h]"
+"	      004a1a1e    mov eax,this"
 "	      004a1a21    mov eax,[eax+0Ch]"
-"	      004a1a24    mov ecx,[ebp-54h]"
+"	      004a1a24    mov ecx,this"
 "	      004a1a27    mov ecx,[ecx+0Ch]"
 "	      004a1a2a    mov [ecx],eax"
-"	      004a1a2c    mov eax,[ebp-54h]"
+"	      004a1a2c    mov eax,this"
 "	      004a1a2f    mov eax,[eax+0Ch]"
-"	      004a1a32    mov ecx,[ebp-54h]"
+"	      004a1a32    mov ecx,this"
 "	      004a1a35    mov ecx,[ecx+0Ch]"
 "	      004a1a38    mov [ecx+4],eax"
 "	      004a1a3b    jmp near ptr 004A1A40h"
-"	      004a1a40    mov eax,[ebp-54h]"
+"	      004a1a40    mov eax,this"
 "	      004a1a43    mov dword ptr [eax],591648h"
 );
 // LINE 78:
 	asm( 
-"	      004a1a49    mov eax,[ebp-54h]"
+"	      004a1a49    mov eax,this"
 "	      004a1a4c    mov ds:[59A964h],eax"
 );
 // LINE 79:
 	asm( 
 "	      004a1a51    jmp near ptr 004A1A56h"
-"	      004a1a56    mov eax,[ebp-54h]"
+"	      004a1a56    mov eax,this"
 "	      004a1a59    pop edi"
 "	      004a1a5a    pop esi"
 "	      004a1a5b    pop ebx"
@@ -341,21 +341,21 @@ void GraphicWindowManager::~GraphicWindowManager() {
 "	      004a1a66    push ebx"
 "	      004a1a67    push esi"
 "	      004a1a68    push edi"
-"	      004a1a69    mov [ebp-3Ch],ecx"
-"	      004a1a6c    mov eax,[ebp-3Ch]"
+"	      004a1a69    mov this,ecx"
+"	      004a1a6c    mov eax,this"
 "	      004a1a6f    mov dword ptr [eax],591648h"
 );
 // LINE 87:
 	asm( 
 "	      004a1a75    jmp near ptr 004A1A7Ah"
-"	      004a1a7a    mov eax,[ebp-3Ch]"
+"	      004a1a7a    mov eax,this"
 "	      004a1a7d    mov eax,[eax+0Ch]"
 "	      004a1a80    mov [ebp-10h],eax"
 "	      004a1a83    mov eax,[ebp-10h]"
 "	      004a1a86    mov [ebp-4],eax"
 "	      004a1a89    jmp near ptr 004A1A8Eh"
 "	      004a1a8e    jmp near ptr 004A1A93h"
-"	      004a1a93    mov eax,[ebp-3Ch]"
+"	      004a1a93    mov eax,this"
 "	      004a1a96    mov eax,[eax+0Ch]"
 "	      004a1a99    mov eax,[eax]"
 "	      004a1a9b    mov [ebp-14h],eax"
@@ -409,12 +409,12 @@ void GraphicWindowManager::~GraphicWindowManager() {
 "	      004a1b4b    mov eax,[ebp-28h]"
 "	      004a1b4e    mov ds:[59A97Ch],eax"
 "	      004a1b53    jmp near ptr 004A1B58h"
-"	      004a1b58    mov eax,[ebp-3Ch]"
+"	      004a1b58    mov eax,this"
 "	      004a1b5b    dec dword ptr [eax+10h]"
 "	      004a1b5e    jmp near ptr 004A1B63h"
 "	      004a1b63    jmp near ptr 004A1ABAh"
 "	      004a1b68    jmp near ptr 004A1B6Dh"
-"	      004a1b6d    mov eax,[ebp-3Ch]"
+"	      004a1b6d    mov eax,this"
 "	      004a1b70    mov eax,[eax+0Ch]"
 "	      004a1b73    mov [ebp-0Ch],eax"
 "	      004a1b76    mov eax,ds:[59A97Ch]"
@@ -471,12 +471,12 @@ void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow* newBaseWindow) 
 "	      004a1c27    push ebx"
 "	      004a1c28    push esi"
 "	      004a1c29    push edi"
-"	      004a1c2a    mov [ebp-4],ecx"
+"	      004a1c2a    mov this,ecx"
 );
 // LINE 98:
 	asm( 
-"	      004a1c2d    mov eax,[ebp+8]"
-"	      004a1c30    mov ecx,[ebp-4]"
+"	      004a1c2d    mov eax,newBaseWindow"
+"	      004a1c30    mov ecx,this"
 "	      004a1c33    mov [ecx+8],eax"
 );
 // LINE 99:
@@ -500,28 +500,28 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) 
 "	      004a1c48    push ebx"
 "	      004a1c49    push esi"
 "	      004a1c4a    push edi"
-"	      004a1c4b    mov [ebp-6Ch],ecx"
+"	      004a1c4b    mov this,ecx"
 );
 // LINE 114:
 	asm( 
-"	      004a1c4e    mov eax,[ebp-6Ch]"
+"	      004a1c4e    mov eax,this"
 "	      004a1c51    cmp dword ptr [eax+4],0"
 "	      004a1c55    jle near ptr 004A1F27h"
 );
 // LINE 115:
 	asm( 
-"	      004a1c5b    mov eax,[ebp+8]"
+"	      004a1c5b    mov eax,windowToDelete"
 "	      004a1c5e    push eax"
-"	      004a1c5f    mov eax,[ebp-6Ch]"
+"	      004a1c5f    mov eax,this"
 "	      004a1c62    mov eax,[eax]"
-"	      004a1c64    mov ecx,[ebp-6Ch]"
+"	      004a1c64    mov ecx,this"
 "	      004a1c67    call dword ptr [eax+2Ch]"
 "	      004a1c6a    test eax,eax"
 "	      004a1c6c    jne near ptr 004A1F18h"
 );
 // LINE 121:
 	asm( 
-"	      004a1c72    mov eax,[ebp-6Ch]"
+"	      004a1c72    mov eax,this"
 "	      004a1c75    mov eax,[eax+0Ch]"
 "	      004a1c78    mov [ebp-0Ch],eax"
 "	      004a1c7b    mov eax,[ebp-0Ch]"
@@ -674,7 +674,7 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) 
 "	      004a1eb3    jmp near ptr 004A1EB8h"
 "	      004a1eb8    cmp dword ptr [ebp-14h],0"
 "	      004a1ebc    je near ptr 004A1ECFh"
-"	      004a1ec2    mov eax,[ebp+8]"
+"	      004a1ec2    mov eax,windowToDelete"
 "	      004a1ec5    mov ecx,[ebp-14h]"
 "	      004a1ec8    mov [ecx],eax"
 "	      004a1eca    jmp near ptr 004A1ECFh"
@@ -693,7 +693,7 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) 
 "	      004a1ef3    mov eax,[ebp-10h]"
 "	      004a1ef6    mov ecx,[ebp-68h]"
 "	      004a1ef9    mov [ecx+4],eax"
-"	      004a1efc    mov eax,[ebp-6Ch]"
+"	      004a1efc    mov eax,this"
 "	      004a1eff    add dword ptr [eax+10h],1"
 "	      004a1f03    mov eax,[ebp-10h]"
 "	      004a1f06    mov [ebp-8],eax"
@@ -712,14 +712,14 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) 
 );
 // LINE 126:
 	asm( 
-"	      004a1f27    mov eax,[ebp-6Ch]"
+"	      004a1f27    mov eax,this"
 "	      004a1f2a    mov dword ptr [eax+4],0"
 );
 // LINE 129:
 	asm( 
-"	      004a1f31    mov eax,[ebp+8]"
+"	      004a1f31    mov eax,windowToDelete"
 "	      004a1f34    push eax"
-"	      004a1f35    mov ecx,[ebp-6Ch]"
+"	      004a1f35    mov ecx,this"
 "	      004a1f38    call 004A1F4Eh"
 );
 // LINE 130:
@@ -749,15 +749,15 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 "	      004a1f54    push ebx"
 "	      004a1f55    push esi"
 "	      004a1f56    push edi"
-"	      004a1f57    mov [ebp-10h],ecx"
+"	      004a1f57    mov this,ecx"
 );
 // LINE 139:
 	asm( 
-"	      004a1f5a    mov eax,[ebp+8]"
+"	      004a1f5a    mov eax,windowToDelete"
 "	      004a1f5d    push eax"
-"	      004a1f5e    mov eax,[ebp-10h]"
+"	      004a1f5e    mov eax,this"
 "	      004a1f61    mov eax,[eax]"
-"	      004a1f63    mov ecx,[ebp-10h]"
+"	      004a1f63    mov ecx,this"
 "	      004a1f66    call dword ptr [eax+28h]"
 "	      004a1f69    test eax,eax"
 "	      004a1f6b    jne near ptr 004A1F78h"
@@ -769,33 +769,33 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 );
 // LINE 144:
 	asm( 
-"	      004a1f78    mov eax,[ebp+8]"
+"	      004a1f78    mov eax,windowToDelete"
 "	      004a1f7b    mov eax,[eax+3Ch]"
-"	      004a1f7e    mov [ebp-4],eax"
+"	      004a1f7e    mov windowParent,eax"
 );
 // LINE 145:
 	asm( 
-"	      004a1f81    cmp dword ptr [ebp-4],0"
+"	      004a1f81    cmp windowParent,0"
 "	      004a1f85    je near ptr 004A1FB6h"
 );
 // LINE 146:
 	asm( 
-"	      004a1f8b    mov eax,[ebp-4]"
+"	      004a1f8b    mov eax,windowParent"
 "	      004a1f8e    push eax"
-"	      004a1f8f    mov eax,[ebp-10h]"
+"	      004a1f8f    mov eax,this"
 "	      004a1f92    mov eax,[eax]"
-"	      004a1f94    mov ecx,[ebp-10h]"
+"	      004a1f94    mov ecx,this"
 "	      004a1f97    call dword ptr [eax+28h]"
 "	      004a1f9a    test eax,eax"
 "	      004a1f9c    je near ptr 004A1FB1h"
 );
 // LINE 147:
 	asm( 
-"	      004a1fa2    mov eax,[ebp+8]"
+"	      004a1fa2    mov eax,windowToDelete"
 "	      004a1fa5    push eax"
-"	      004a1fa6    mov eax,[ebp-4]"
+"	      004a1fa6    mov eax,windowParent"
 "	      004a1fa9    mov eax,[eax]"
-"	      004a1fab    mov ecx,[ebp-4]"
+"	      004a1fab    mov ecx,windowParent"
 "	      004a1fae    call dword ptr [eax+5Ch]"
 );
 // LINE 149:
@@ -804,7 +804,7 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 );
 // LINE 150:
 	asm( 
-"	      004a1fb6    mov eax,[ebp+8]"
+"	      004a1fb6    mov eax,windowToDelete"
 "	      004a1fb9    mov [ebp-0Ch],eax"
 "	      004a1fbc    mov eax,[ebp-0Ch]"
 "	      004a1fbf    mov [ebp-8],eax"
@@ -845,7 +845,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 "	      004a1ff8    push ebx"
 "	      004a1ff9    push esi"
 "	      004a1ffa    push edi"
-"	      004a1ffb    mov [ebp-50h],ecx"
+"	      004a1ffb    mov this,ecx"
 );
 // LINE 165:
 	asm( 
@@ -863,24 +863,24 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 );
 // LINE 169:
 	asm( 
-"	      004a2018    mov eax,[ebp-50h]"
+"	      004a2018    mov eax,this"
 "	      004a201b    mov eax,[eax+0Ch]"
 "	      004a201e    mov eax,[eax]"
 "	      004a2020    mov [ebp-2Ch],eax"
 "	      004a2023    mov eax,[ebp-2Ch]"
-"	      004a2026    mov [ebp-4],eax"
+"	      004a2026    mov tempGraphicWindowPtrListIterator.node,eax"
 "	      004a2029    jmp near ptr 004A202Eh"
 "	      004a202e    jmp near ptr 004A2033h"
 );
 // LINE 170:
 	asm( 
-"	      004a2033    mov eax,[ebp-50h]"
+"	      004a2033    mov eax,this"
 "	      004a2036    cmp dword ptr [eax+4],0"
 "	      004a203a    jg near ptr 004A21C1h"
 );
 // LINE 171:
 	asm( 
-"	      004a2040    mov eax,[ebp-50h]"
+"	      004a2040    mov eax,this"
 "	      004a2043    mov eax,[eax+0Ch]"
 "	      004a2046    mov [ebp-20h],eax"
 "	      004a2049    mov eax,[ebp-20h]"
@@ -888,7 +888,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 "	      004a204f    jmp near ptr 004A2054h"
 "	      004a2054    jmp near ptr 004A2059h"
 "	      004a2059    mov eax,[ebp-8]"
-"	      004a205c    cmp [ebp-4],eax"
+"	      004a205c    cmp tempGraphicWindowPtrListIterator.node,eax"
 "	      004a205f    jne near ptr 004A206Fh"
 "	      004a2065    jmp near ptr 004A2083h"
 "	      004a206a    jmp near ptr 004A206Fh"
@@ -904,19 +904,19 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 // LINE 172:
 	asm( 
 "	      004a2097    jmp near ptr 004A209Ch"
-"	      004a209c    mov eax,[ebp-4]"
+"	      004a209c    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a209f    mov eax,[eax+8]"
 "	      004a20a2    push eax"
-"	      004a20a3    mov ecx,[ebp-50h]"
+"	      004a20a3    mov ecx,this"
 "	      004a20a6    call 004A1F4Eh"
 );
 // LINE 173:
 	asm( 
-"	      004a20ab    mov eax,[ebp-4]"
+"	      004a20ab    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a20ae    mov [ebp-4Ch],eax"
-"	      004a20b1    mov eax,[ebp-4]"
+"	      004a20b1    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a20b4    mov eax,[eax]"
-"	      004a20b6    mov [ebp-4],eax"
+"	      004a20b6    mov tempGraphicWindowPtrListIterator.node,eax"
 "	      004a20b9    jmp near ptr 004A20BEh"
 "	      004a20be    mov eax,[ebp-4Ch]"
 "	      004a20c1    mov [ebp-0Ch],eax"
@@ -928,14 +928,14 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 );
 // LINE 175:
 	asm( 
-"	      004a20ce    mov eax,[ebp-50h]"
+"	      004a20ce    mov eax,this"
 "	      004a20d1    mov eax,[eax+0Ch]"
 "	      004a20d4    mov [ebp-18h],eax"
 "	      004a20d7    mov eax,[ebp-18h]"
 "	      004a20da    mov [ebp-10h],eax"
 "	      004a20dd    jmp near ptr 004A20E2h"
 "	      004a20e2    jmp near ptr 004A20E7h"
-"	      004a20e7    mov eax,[ebp-50h]"
+"	      004a20e7    mov eax,this"
 "	      004a20ea    mov eax,[eax+0Ch]"
 "	      004a20ed    mov eax,[eax]"
 "	      004a20ef    mov [ebp-1Ch],eax"
@@ -989,7 +989,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 "	      004a219f    mov eax,[ebp-40h]"
 "	      004a21a2    mov ds:[59A97Ch],eax"
 "	      004a21a7    jmp near ptr 004A21ACh"
-"	      004a21ac    mov eax,[ebp-50h]"
+"	      004a21ac    mov eax,this"
 "	      004a21af    dec dword ptr [eax+10h]"
 "	      004a21b2    jmp near ptr 004A21B7h"
 "	      004a21b7    jmp near ptr 004A210Eh"
@@ -1027,29 +1027,29 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 "	      004a21dc    push ebx"
 "	      004a21dd    push esi"
 "	      004a21de    push edi"
-"	      004a21df    mov [ebp-28h],ecx"
+"	      004a21df    mov this,ecx"
 );
 // LINE 192:
 	asm( 
-"	      004a21e2    mov eax,[ebp-28h]"
+"	      004a21e2    mov eax,this"
 "	      004a21e5    mov eax,[eax+0Ch]"
 "	      004a21e8    mov eax,[eax]"
 "	      004a21ea    mov [ebp-20h],eax"
 "	      004a21ed    mov eax,[ebp-20h]"
-"	      004a21f0    mov [ebp-4],eax"
+"	      004a21f0    mov tempGraphicWindowPtrListIterator.node,eax"
 "	      004a21f3    jmp near ptr 004A21F8h"
 "	      004a21f8    jmp near ptr 004A21FDh"
 );
 // LINE 195:
 	asm( 
-"	      004a21fd    mov eax,[ebp-28h]"
+"	      004a21fd    mov eax,this"
 "	      004a2200    mov eax,[eax+0Ch]"
 "	      004a2203    mov [ebp-14h],eax"
 "	      004a2206    mov eax,[ebp-14h]"
 "	      004a2209    mov [ebp-0Ch],eax"
 "	      004a220c    jmp near ptr 004A2211h"
 "	      004a2211    jmp near ptr 004A2216h"
-"	      004a2216    mov eax,[ebp-4]"
+"	      004a2216    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a2219    cmp [ebp-0Ch],eax"
 "	      004a221c    jne near ptr 004A222Ch"
 "	      004a2222    jmp near ptr 004A2240h"
@@ -1065,19 +1065,19 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 );
 // LINE 196:
 	asm( 
-"	      004a2254    mov eax,[ebp+8]"
-"	      004a2257    mov [ebp-8],eax"
+"	      004a2254    mov eax,windowToCheck"
+"	      004a2257    mov currentGraphicWindowToCheck,eax"
 );
 // LINE 197:
 	asm( 
-"	      004a225a    cmp dword ptr [ebp-8],0"
+"	      004a225a    cmp currentGraphicWindowToCheck,0"
 "	      004a225e    je near ptr 004A2290h"
 );
 // LINE 198:
 	asm( 
 "	      004a2264    jmp near ptr 004A2269h"
-"	      004a2269    mov eax,[ebp-4]"
-"	      004a226c    mov ecx,[ebp-8]"
+"	      004a2269    mov eax,tempGraphicWindowPtrListIterator.node"
+"	      004a226c    mov ecx,currentGraphicWindowToCheck"
 "	      004a226f    cmp [eax+8],ecx"
 "	      004a2272    jne near ptr 004A2282h"
 );
@@ -1088,9 +1088,9 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 );
 // LINE 201:
 	asm( 
-"	      004a2282    mov eax,[ebp-8]"
+"	      004a2282    mov eax,currentGraphicWindowToCheck"
 "	      004a2285    mov eax,[eax+3Ch]"
-"	      004a2288    mov [ebp-8],eax"
+"	      004a2288    mov currentGraphicWindowToCheck,eax"
 );
 // LINE 202:
 	asm( 
@@ -1098,11 +1098,11 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 );
 // LINE 203:
 	asm( 
-"	      004a2290    mov eax,[ebp-4]"
+"	      004a2290    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a2293    mov [ebp-24h],eax"
-"	      004a2296    mov eax,[ebp-4]"
+"	      004a2296    mov eax,tempGraphicWindowPtrListIterator.node"
 "	      004a2299    mov eax,[eax]"
-"	      004a229b    mov [ebp-4],eax"
+"	      004a229b    mov tempGraphicWindowPtrListIterator.node,eax"
 "	      004a229e    jmp near ptr 004A22A3h"
 "	      004a22a3    mov eax,[ebp-24h]"
 "	      004a22a6    mov [ebp-10h],eax"
@@ -1141,7 +1141,7 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 "	      004a22c7    push ebx"
 "	      004a22c8    push esi"
 "	      004a22c9    push edi"
-"	      004a22ca    mov [ebp-2Ch],ecx"
+"	      004a22ca    mov this,ecx"
 );
 // LINE 219:
 	asm( 
@@ -1149,17 +1149,17 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 "	      004a22d2    mov eax,[eax]"
 "	      004a22d4    mov [ebp-24h],eax"
 "	      004a22d7    mov eax,[ebp-24h]"
-"	      004a22da    mov [ebp-0Ch],eax"
+"	      004a22da    mov iterator.node,eax"
 "	      004a22dd    jmp near ptr 004A22E2h"
 "	      004a22e2    jmp near ptr 004A22E7h"
 );
 // LINE 220:
 	asm( 
-"	      004a22e7    mov dword ptr [ebp-8],0"
+"	      004a22e7    mov nReturnValue,0"
 );
 // LINE 222:
 	asm( 
-"	      004a22ee    mov eax,[ebp-2Ch]"
+"	      004a22ee    mov eax,this"
 "	      004a22f1    inc dword ptr [eax+4]"
 );
 // LINE 223:
@@ -1170,7 +1170,7 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 "	      004a22ff    mov [ebp-10h],eax"
 "	      004a2302    jmp near ptr 004A2307h"
 "	      004a2307    jmp near ptr 004A230Ch"
-"	      004a230c    mov eax,[ebp-0Ch]"
+"	      004a230c    mov eax,iterator.node"
 "	      004a230f    cmp [ebp-10h],eax"
 "	      004a2312    jne near ptr 004A2322h"
 "	      004a2318    jmp near ptr 004A2336h"
@@ -1187,13 +1187,13 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 // LINE 224:
 	asm( 
 "	      004a234a    jmp near ptr 004A234Fh"
-"	      004a234f    mov eax,[ebp-0Ch]"
+"	      004a234f    mov eax,iterator.node"
 "	      004a2352    mov eax,[eax+8]"
-"	      004a2355    mov [ebp-4],eax"
+"	      004a2355    mov windowCurrent,eax"
 );
 // LINE 225:
 	asm( 
-"	      004a2358    mov eax,[ebp-4]"
+"	      004a2358    mov eax,windowCurrent"
 "	      004a235b    cmp dword ptr [eax+54h],0"
 "	      004a235f    je near ptr 004A2383h"
 );
@@ -1201,13 +1201,13 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 	asm( 
 "	      004a2365    mov eax,[ebp+0Ch]"
 "	      004a2368    push eax"
-"	      004a2369    mov eax,[ebp+8]"
+"	      004a2369    mov eax,lKey"
 "	      004a236c    push eax"
-"	      004a236d    mov eax,[ebp-4]"
+"	      004a236d    mov eax,windowCurrent"
 "	      004a2370    mov eax,[eax]"
-"	      004a2372    mov ecx,[ebp-4]"
+"	      004a2372    mov ecx,windowCurrent"
 "	      004a2375    call dword ptr [eax+84h]"
-"	      004a237b    mov [ebp-8],eax"
+"	      004a237b    mov nReturnValue,eax"
 );
 // LINE 227:
 	asm( 
@@ -1215,11 +1215,11 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 229:
 	asm( 
-"	      004a2383    mov eax,[ebp-0Ch]"
+"	      004a2383    mov eax,iterator.node"
 "	      004a2386    mov [ebp-28h],eax"
-"	      004a2389    mov eax,[ebp-0Ch]"
+"	      004a2389    mov eax,iterator.node"
 "	      004a238c    mov eax,[eax]"
-"	      004a238e    mov [ebp-0Ch],eax"
+"	      004a238e    mov iterator.node,eax"
 "	      004a2391    jmp near ptr 004A2396h"
 "	      004a2396    mov eax,[ebp-28h]"
 "	      004a2399    mov [ebp-14h],eax"
@@ -1231,28 +1231,28 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 231:
 	asm( 
-"	      004a23a6    mov eax,[ebp-2Ch]"
+"	      004a23a6    mov eax,this"
 "	      004a23a9    dec dword ptr [eax+4]"
 );
 // LINE 232:
 	asm( 
-"	      004a23ac    mov eax,[ebp-2Ch]"
+"	      004a23ac    mov eax,this"
 "	      004a23af    cmp dword ptr [eax+4],0"
 "	      004a23b3    jg near ptr 004A23CBh"
 );
 // LINE 233:
 	asm( 
-"	      004a23b9    mov eax,[ebp-2Ch]"
+"	      004a23b9    mov eax,this"
 "	      004a23bc    mov dword ptr [eax+4],0"
 );
 // LINE 234:
 	asm( 
-"	      004a23c3    mov ecx,[ebp-2Ch]"
+"	      004a23c3    mov ecx,this"
 "	      004a23c6    call 004A1FF2h"
 );
 // LINE 237:
 	asm( 
-"	      004a23cb    mov eax,[ebp-8]"
+"	      004a23cb    mov eax,nReturnValue"
 "	      004a23ce    jmp near ptr 004A23D3h"
 );
 // LINE 238:
@@ -1279,7 +1279,7 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 "	      004a23e0    push ebx"
 "	      004a23e1    push esi"
 "	      004a23e2    push edi"
-"	      004a23e3    mov [ebp-2Ch],ecx"
+"	      004a23e3    mov this,ecx"
 );
 // LINE 251:
 	asm( 
@@ -1287,17 +1287,17 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 "	      004a23eb    mov eax,[eax]"
 "	      004a23ed    mov [ebp-24h],eax"
 "	      004a23f0    mov eax,[ebp-24h]"
-"	      004a23f3    mov [ebp-0Ch],eax"
+"	      004a23f3    mov iterator.node,eax"
 "	      004a23f6    jmp near ptr 004A23FBh"
 "	      004a23fb    jmp near ptr 004A2400h"
 );
 // LINE 252:
 	asm( 
-"	      004a2400    mov dword ptr [ebp-8],0"
+"	      004a2400    mov nReturnValue,0"
 );
 // LINE 254:
 	asm( 
-"	      004a2407    mov eax,[ebp-2Ch]"
+"	      004a2407    mov eax,this"
 "	      004a240a    inc dword ptr [eax+4]"
 );
 // LINE 255:
@@ -1309,7 +1309,7 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 "	      004a241b    jmp near ptr 004A2420h"
 "	      004a2420    jmp near ptr 004A2425h"
 "	      004a2425    mov eax,[ebp-10h]"
-"	      004a2428    cmp [ebp-0Ch],eax"
+"	      004a2428    cmp iterator.node,eax"
 "	      004a242b    jne near ptr 004A243Bh"
 "	      004a2431    jmp near ptr 004A244Fh"
 "	      004a2436    jmp near ptr 004A243Bh"
@@ -1325,13 +1325,13 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 // LINE 256:
 	asm( 
 "	      004a2463    jmp near ptr 004A2468h"
-"	      004a2468    mov eax,[ebp-0Ch]"
+"	      004a2468    mov eax,iterator.node"
 "	      004a246b    mov eax,[eax+8]"
-"	      004a246e    mov [ebp-4],eax"
+"	      004a246e    mov windowCurrent,eax"
 );
 // LINE 257:
 	asm( 
-"	      004a2471    mov eax,[ebp-4]"
+"	      004a2471    mov eax,windowCurrent"
 "	      004a2474    cmp dword ptr [eax+54h],0"
 "	      004a2478    je near ptr 004A249Ch"
 );
@@ -1339,13 +1339,13 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 	asm( 
 "	      004a247e    mov eax,[ebp+0Ch]"
 "	      004a2481    push eax"
-"	      004a2482    mov eax,[ebp+8]"
+"	      004a2482    mov eax,lKey"
 "	      004a2485    push eax"
-"	      004a2486    mov eax,[ebp-4]"
+"	      004a2486    mov eax,windowCurrent"
 "	      004a2489    mov eax,[eax]"
-"	      004a248b    mov ecx,[ebp-4]"
+"	      004a248b    mov ecx,windowCurrent"
 "	      004a248e    call dword ptr [eax+88h]"
-"	      004a2494    mov [ebp-8],eax"
+"	      004a2494    mov nReturnValue,eax"
 );
 // LINE 259:
 	asm( 
@@ -1353,11 +1353,11 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 );
 // LINE 261:
 	asm( 
-"	      004a249c    mov eax,[ebp-0Ch]"
+"	      004a249c    mov eax,iterator.node"
 "	      004a249f    mov [ebp-28h],eax"
-"	      004a24a2    mov eax,[ebp-0Ch]"
+"	      004a24a2    mov eax,iterator.node"
 "	      004a24a5    mov eax,[eax]"
-"	      004a24a7    mov [ebp-0Ch],eax"
+"	      004a24a7    mov iterator.node,eax"
 "	      004a24aa    jmp near ptr 004A24AFh"
 "	      004a24af    mov eax,[ebp-28h]"
 "	      004a24b2    mov [ebp-14h],eax"
@@ -1369,28 +1369,28 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 );
 // LINE 263:
 	asm( 
-"	      004a24bf    mov eax,[ebp-2Ch]"
+"	      004a24bf    mov eax,this"
 "	      004a24c2    dec dword ptr [eax+4]"
 );
 // LINE 264:
 	asm( 
-"	      004a24c5    mov eax,[ebp-2Ch]"
+"	      004a24c5    mov eax,this"
 "	      004a24c8    cmp dword ptr [eax+4],0"
 "	      004a24cc    jg near ptr 004A24E4h"
 );
 // LINE 265:
 	asm( 
-"	      004a24d2    mov eax,[ebp-2Ch]"
+"	      004a24d2    mov eax,this"
 "	      004a24d5    mov dword ptr [eax+4],0"
 );
 // LINE 266:
 	asm( 
-"	      004a24dc    mov ecx,[ebp-2Ch]"
+"	      004a24dc    mov ecx,this"
 "	      004a24df    call 004A1FF2h"
 );
 // LINE 269:
 	asm( 
-"	      004a24e4    mov eax,[ebp-8]"
+"	      004a24e4    mov eax,nReturnValue"
 "	      004a24e7    jmp near ptr 004A24ECh"
 );
 // LINE 270:
@@ -1417,7 +1417,7 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 "	      004a24f9    push ebx"
 "	      004a24fa    push esi"
 "	      004a24fb    push edi"
-"	      004a24fc    mov [ebp-2Ch],ecx"
+"	      004a24fc    mov this,ecx"
 );
 // LINE 278:
 	asm( 
@@ -1425,17 +1425,17 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 "	      004a2504    mov eax,[eax]"
 "	      004a2506    mov [ebp-24h],eax"
 "	      004a2509    mov eax,[ebp-24h]"
-"	      004a250c    mov [ebp-0Ch],eax"
+"	      004a250c    mov iterator.node,eax"
 "	      004a250f    jmp near ptr 004A2514h"
 "	      004a2514    jmp near ptr 004A2519h"
 );
 // LINE 279:
 	asm( 
-"	      004a2519    mov dword ptr [ebp-8],0"
+"	      004a2519    mov nReturnValue,0"
 );
 // LINE 281:
 	asm( 
-"	      004a2520    mov eax,[ebp-2Ch]"
+"	      004a2520    mov eax,this"
 "	      004a2523    inc dword ptr [eax+4]"
 );
 // LINE 282:
@@ -1446,7 +1446,7 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 "	      004a2531    mov [ebp-10h],eax"
 "	      004a2534    jmp near ptr 004A2539h"
 "	      004a2539    jmp near ptr 004A253Eh"
-"	      004a253e    mov eax,[ebp-0Ch]"
+"	      004a253e    mov eax,iterator.node"
 "	      004a2541    cmp [ebp-10h],eax"
 "	      004a2544    jne near ptr 004A2554h"
 "	      004a254a    jmp near ptr 004A2568h"
@@ -1463,25 +1463,25 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 // LINE 283:
 	asm( 
 "	      004a257c    jmp near ptr 004A2581h"
-"	      004a2581    mov eax,[ebp-0Ch]"
+"	      004a2581    mov eax,iterator.node"
 "	      004a2584    mov eax,[eax+8]"
-"	      004a2587    mov [ebp-4],eax"
+"	      004a2587    mov windowCurrent,eax"
 );
 // LINE 284:
 	asm( 
-"	      004a258a    mov eax,[ebp-4]"
+"	      004a258a    mov eax,windowCurrent"
 "	      004a258d    cmp dword ptr [eax+54h],0"
 "	      004a2591    je near ptr 004A25B1h"
 );
 // LINE 285:
 	asm( 
-"	      004a2597    mov eax,[ebp+8]"
+"	      004a2597    mov eax,lCharacter"
 "	      004a259a    push eax"
-"	      004a259b    mov eax,[ebp-4]"
+"	      004a259b    mov eax,windowCurrent"
 "	      004a259e    mov eax,[eax]"
-"	      004a25a0    mov ecx,[ebp-4]"
+"	      004a25a0    mov ecx,windowCurrent"
 "	      004a25a3    call dword ptr [eax+80h]"
-"	      004a25a9    mov [ebp-8],eax"
+"	      004a25a9    mov nReturnValue,eax"
 );
 // LINE 286:
 	asm( 
@@ -1489,11 +1489,11 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 );
 // LINE 288:
 	asm( 
-"	      004a25b1    mov eax,[ebp-0Ch]"
+"	      004a25b1    mov eax,iterator.node"
 "	      004a25b4    mov [ebp-28h],eax"
-"	      004a25b7    mov eax,[ebp-0Ch]"
+"	      004a25b7    mov eax,iterator.node"
 "	      004a25ba    mov eax,[eax]"
-"	      004a25bc    mov [ebp-0Ch],eax"
+"	      004a25bc    mov iterator.node,eax"
 "	      004a25bf    jmp near ptr 004A25C4h"
 "	      004a25c4    mov eax,[ebp-28h]"
 "	      004a25c7    mov [ebp-14h],eax"
@@ -1505,28 +1505,28 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 );
 // LINE 290:
 	asm( 
-"	      004a25d4    mov eax,[ebp-2Ch]"
+"	      004a25d4    mov eax,this"
 "	      004a25d7    dec dword ptr [eax+4]"
 );
 // LINE 291:
 	asm( 
-"	      004a25da    mov eax,[ebp-2Ch]"
+"	      004a25da    mov eax,this"
 "	      004a25dd    cmp dword ptr [eax+4],0"
 "	      004a25e1    jg near ptr 004A25F9h"
 );
 // LINE 292:
 	asm( 
-"	      004a25e7    mov eax,[ebp-2Ch]"
+"	      004a25e7    mov eax,this"
 "	      004a25ea    mov dword ptr [eax+4],0"
 );
 // LINE 293:
 	asm( 
-"	      004a25f1    mov ecx,[ebp-2Ch]"
+"	      004a25f1    mov ecx,this"
 "	      004a25f4    call 004A1FF2h"
 );
 // LINE 296:
 	asm( 
-"	      004a25f9    mov eax,[ebp-8]"
+"	      004a25f9    mov eax,nReturnValue"
 "	      004a25fc    jmp near ptr 004A2601h"
 );
 // LINE 297:
@@ -1549,7 +1549,7 @@ long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 "	      004a260e    push ebx"
 "	      004a260f    push esi"
 "	      004a2610    push edi"
-"	      004a2611    mov [ebp-4],ecx"
+"	      004a2611    mov this,ecx"
 );
 // LINE 308:
 	asm( 
@@ -1558,9 +1558,9 @@ long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 );
 // LINE 314:
 	asm( 
-"	      004a2621    lea eax,[ebp+0Ch]"
+"	      004a2621    lea eax,nCursorY"
 "	      004a2624    push eax"
-"	      004a2625    lea eax,[ebp+8]"
+"	      004a2625    lea eax,nCursorX"
 "	      004a2628    push eax"
 "	      004a2629    mov eax,ds:[59A960h]"
 "	      004a262e    mov eax,[eax]"
@@ -1569,11 +1569,11 @@ long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 );
 // LINE 315:
 	asm( 
-"	      004a263c    mov eax,[ebp+10h]"
+"	      004a263c    mov eax,nButton"
 "	      004a263f    push eax"
-"	      004a2640    mov eax,[ebp+0Ch]"
+"	      004a2640    mov eax,nCursorY"
 "	      004a2643    push eax"
-"	      004a2644    mov eax,[ebp+8]"
+"	      004a2644    mov eax,nCursorX"
 "	      004a2647    push eax"
 "	      004a2648    mov eax,ds:[59A960h]"
 "	      004a264d    mov eax,[eax]"
@@ -1583,19 +1583,19 @@ long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 );
 // LINE 320:
 	asm( 
-"	      004a2660    mov eax,[ebp+10h]"
+"	      004a2660    mov eax,nButton"
 "	      004a2663    push eax"
-"	      004a2664    mov eax,[ebp+0Ch]"
+"	      004a2664    mov eax,nCursorY"
 "	      004a2667    push eax"
-"	      004a2668    mov eax,[ebp+8]"
+"	      004a2668    mov eax,nCursorX"
 "	      004a266b    push eax"
 "	      004a266c    push 1"
-"	      004a266e    mov eax,[ebp-4]"
+"	      004a266e    mov eax,this"
 "	      004a2671    mov eax,[eax+8]"
 "	      004a2674    push eax"
-"	      004a2675    mov eax,[ebp-4]"
+"	      004a2675    mov eax,this"
 "	      004a2678    mov eax,[eax]"
-"	      004a267a    mov ecx,[ebp-4]"
+"	      004a267a    mov ecx,this"
 "	      004a267d    call dword ptr [eax+20h]"
 "	      004a2680    jmp near ptr 004A2685h"
 );
@@ -1619,7 +1619,7 @@ long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 "	      004a2692    push ebx"
 "	      004a2693    push esi"
 "	      004a2694    push edi"
-"	      004a2695    mov [ebp-4],ecx"
+"	      004a2695    mov this,ecx"
 );
 // LINE 330:
 	asm( 
@@ -1628,9 +1628,9 @@ long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 );
 // LINE 331:
 	asm( 
-"	      004a26a5    lea eax,[ebp+0Ch]"
+"	      004a26a5    lea eax,nCursorY"
 "	      004a26a8    push eax"
-"	      004a26a9    lea eax,[ebp+8]"
+"	      004a26a9    lea eax,nCursorX"
 "	      004a26ac    push eax"
 "	      004a26ad    mov eax,ds:[59A960h]"
 "	      004a26b2    mov eax,[eax]"
@@ -1639,11 +1639,11 @@ long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 );
 // LINE 332:
 	asm( 
-"	      004a26c0    mov eax,[ebp+10h]"
+"	      004a26c0    mov eax,nButton"
 "	      004a26c3    push eax"
-"	      004a26c4    mov eax,[ebp+0Ch]"
+"	      004a26c4    mov eax,nCursorY"
 "	      004a26c7    push eax"
-"	      004a26c8    mov eax,[ebp+8]"
+"	      004a26c8    mov eax,nCursorX"
 "	      004a26cb    push eax"
 "	      004a26cc    mov eax,ds:[59A960h]"
 "	      004a26d1    mov eax,[eax]"
@@ -1653,19 +1653,19 @@ long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 );
 // LINE 336:
 	asm( 
-"	      004a26e4    mov eax,[ebp+10h]"
+"	      004a26e4    mov eax,nButton"
 "	      004a26e7    push eax"
-"	      004a26e8    mov eax,[ebp+0Ch]"
+"	      004a26e8    mov eax,nCursorY"
 "	      004a26eb    push eax"
-"	      004a26ec    mov eax,[ebp+8]"
+"	      004a26ec    mov eax,nCursorX"
 "	      004a26ef    push eax"
 "	      004a26f0    push 2"
-"	      004a26f2    mov eax,[ebp-4]"
+"	      004a26f2    mov eax,this"
 "	      004a26f5    mov eax,[eax+8]"
 "	      004a26f8    push eax"
-"	      004a26f9    mov eax,[ebp-4]"
+"	      004a26f9    mov eax,this"
 "	      004a26fc    mov eax,[eax]"
-"	      004a26fe    mov ecx,[ebp-4]"
+"	      004a26fe    mov ecx,this"
 "	      004a2701    call dword ptr [eax+20h]"
 "	      004a2704    jmp near ptr 004A2709h"
 );
@@ -1689,7 +1689,7 @@ long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 "	      004a2716    push ebx"
 "	      004a2717    push esi"
 "	      004a2718    push edi"
-"	      004a2719    mov [ebp-4],ecx"
+"	      004a2719    mov this,ecx"
 );
 // LINE 344:
 	asm( 
@@ -1698,9 +1698,9 @@ long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 );
 // LINE 345:
 	asm( 
-"	      004a2729    lea eax,[ebp+0Ch]"
+"	      004a2729    lea eax,nCursorY"
 "	      004a272c    push eax"
-"	      004a272d    lea eax,[ebp+8]"
+"	      004a272d    lea eax,nCursorX"
 "	      004a2730    push eax"
 "	      004a2731    mov eax,ds:[59A960h]"
 "	      004a2736    mov eax,[eax]"
@@ -1709,9 +1709,9 @@ long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 );
 // LINE 346:
 	asm( 
-"	      004a2744    mov eax,[ebp+0Ch]"
+"	      004a2744    mov eax,nCursorY"
 "	      004a2747    push eax"
-"	      004a2748    mov eax,[ebp+8]"
+"	      004a2748    mov eax,nCursorX"
 "	      004a274b    push eax"
 "	      004a274c    mov eax,ds:[59A960h]"
 "	      004a2751    mov eax,[eax]"
@@ -1722,17 +1722,17 @@ long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 350:
 	asm( 
 "	      004a2764    push 0"
-"	      004a2766    mov eax,[ebp+0Ch]"
+"	      004a2766    mov eax,nCursorY"
 "	      004a2769    push eax"
-"	      004a276a    mov eax,[ebp+8]"
+"	      004a276a    mov eax,nCursorX"
 "	      004a276d    push eax"
 "	      004a276e    push 4"
-"	      004a2770    mov eax,[ebp-4]"
+"	      004a2770    mov eax,this"
 "	      004a2773    mov eax,[eax+8]"
 "	      004a2776    push eax"
-"	      004a2777    mov eax,[ebp-4]"
+"	      004a2777    mov eax,this"
 "	      004a277a    mov eax,[eax]"
-"	      004a277c    mov ecx,[ebp-4]"
+"	      004a277c    mov ecx,this"
 "	      004a277f    call dword ptr [eax+20h]"
 "	      004a2782    jmp near ptr 004A2787h"
 );
@@ -1756,12 +1756,12 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 "	      004a2794    push ebx"
 "	      004a2795    push esi"
 "	      004a2796    push edi"
-"	      004a2797    mov [ebp-30h],ecx"
+"	      004a2797    mov this,ecx"
 );
 // LINE 361:
 	asm( 
 "	      004a279a    jmp near ptr 004A279Fh"
-"	      004a279f    mov eax,[ebp+8]"
+"	      004a279f    mov eax,childWindow"
 "	      004a27a2    cmp dword ptr [eax+34h],0"
 "	      004a27a6    je near ptr 004A2924h"
 );
@@ -1769,21 +1769,21 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 // Block start:
 	class list<GraphicWindow *>::iterator iterator;
 	asm( 
-"	      004a27ac    mov eax,[ebp+8]"
+"	      004a27ac    mov eax,childWindow"
 "	      004a27af    mov eax,[eax+30h]"
 "	      004a27b2    mov [ebp-24h],eax"
 "	      004a27b5    mov eax,[ebp-24h]"
-"	      004a27b8    mov [ebp-4],eax"
+"	      004a27b8    mov iterator.node,eax"
 "	      004a27bb    jmp near ptr 004A27C0h"
 "	      004a27c0    jmp near ptr 004A27C5h"
 );
 // LINE 365:
 	asm( 
-"	      004a27c5    mov eax,[ebp-4]"
+"	      004a27c5    mov eax,iterator.node"
 "	      004a27c8    mov [ebp-28h],eax"
-"	      004a27cb    mov eax,[ebp-4]"
+"	      004a27cb    mov eax,iterator.node"
 "	      004a27ce    mov eax,[eax+4]"
-"	      004a27d1    mov [ebp-4],eax"
+"	      004a27d1    mov iterator.node,eax"
 "	      004a27d4    jmp near ptr 004A27D9h"
 "	      004a27d9    mov eax,[ebp-28h]"
 "	      004a27dc    mov [ebp-8],eax"
@@ -1792,33 +1792,33 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 // LINE 367:
 	asm( 
 "	      004a27e4    jmp near ptr 004A27E9h"
-"	      004a27e9    mov eax,[ebp-4]"
+"	      004a27e9    mov eax,iterator.node"
 "	      004a27ec    mov eax,[eax+8]"
 "	      004a27ef    cmp dword ptr [eax+54h],0"
 "	      004a27f3    je near ptr 004A28CBh"
 "	      004a27f9    jmp near ptr 004A27FEh"
 "	      004a27fe    jmp near ptr 004A2803h"
-"	      004a2803    mov eax,[ebp+10h]"
+"	      004a2803    mov eax,nCursorX"
 "	      004a2806    mov [ebp-10h],eax"
-"	      004a2809    mov eax,[ebp+14h]"
+"	      004a2809    mov eax,nCursorY"
 "	      004a280c    mov [ebp-0Ch],eax"
 "	      004a280f    jmp near ptr 004A2814h"
-"	      004a2814    mov eax,[ebp-4]"
+"	      004a2814    mov eax,iterator.node"
 "	      004a2817    mov eax,[eax+8]"
 "	      004a281a    mov ecx,[ebp-10h]"
 "	      004a281d    cmp [eax+10h],ecx"
 "	      004a2820    jg near ptr 004A2861h"
-"	      004a2826    mov eax,[ebp-4]"
+"	      004a2826    mov eax,iterator.node"
 "	      004a2829    mov eax,[eax+8]"
 "	      004a282c    mov ecx,[ebp-0Ch]"
 "	      004a282f    cmp [eax+14h],ecx"
 "	      004a2832    jg near ptr 004A2861h"
-"	      004a2838    mov eax,[ebp-4]"
+"	      004a2838    mov eax,iterator.node"
 "	      004a283b    mov eax,[eax+8]"
 "	      004a283e    mov ecx,[ebp-10h]"
 "	      004a2841    cmp [eax+18h],ecx"
 "	      004a2844    jle near ptr 004A2861h"
-"	      004a284a    mov eax,[ebp-4]"
+"	      004a284a    mov eax,iterator.node"
 "	      004a284d    mov eax,[eax+8]"
 "	      004a2850    mov ecx,[ebp-0Ch]"
 "	      004a2853    cmp [eax+1Ch],ecx"
@@ -1833,45 +1833,45 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 	asm( 
 "	      004a2875    jmp near ptr 004A287Ah"
 "	      004a287a    xor eax,eax"
-"	      004a287c    mov ecx,[ebp-4]"
+"	      004a287c    mov ecx,iterator.node"
 "	      004a287f    mov ecx,[ecx+8]"
 "	      004a2882    sub eax,[ecx+10h]"
 "	      004a2885    neg eax"
-"	      004a2887    sub [ebp+10h],eax"
+"	      004a2887    sub nCursorX,eax"
 );
 // LINE 370:
 	asm( 
 "	      004a288a    jmp near ptr 004A288Fh"
 "	      004a288f    xor eax,eax"
-"	      004a2891    mov ecx,[ebp-4]"
+"	      004a2891    mov ecx,iterator.node"
 "	      004a2894    mov ecx,[ecx+8]"
 "	      004a2897    sub eax,[ecx+14h]"
 "	      004a289a    neg eax"
-"	      004a289c    sub [ebp+14h],eax"
+"	      004a289c    sub nCursorY,eax"
 );
 // LINE 373:
 	asm( 
 "	      004a289f    jmp near ptr 004A28A4h"
-"	      004a28a4    mov eax,[ebp+18h]"
+"	      004a28a4    mov eax,nButton"
 "	      004a28a7    push eax"
-"	      004a28a8    mov eax,[ebp+14h]"
+"	      004a28a8    mov eax,nCursorY"
 "	      004a28ab    push eax"
-"	      004a28ac    mov eax,[ebp+10h]"
+"	      004a28ac    mov eax,nCursorX"
 "	      004a28af    push eax"
-"	      004a28b0    mov eax,[ebp+0Ch]"
+"	      004a28b0    mov eax,nMessage"
 "	      004a28b3    push eax"
-"	      004a28b4    mov eax,[ebp-4]"
+"	      004a28b4    mov eax,iterator.node"
 "	      004a28b7    mov eax,[eax+8]"
 "	      004a28ba    push eax"
-"	      004a28bb    mov eax,[ebp-30h]"
+"	      004a28bb    mov eax,this"
 "	      004a28be    mov eax,[eax]"
-"	      004a28c0    mov ecx,[ebp-30h]"
+"	      004a28c0    mov ecx,this"
 "	      004a28c3    call dword ptr [eax+20h]"
 "	      004a28c6    jmp near ptr 004A29C6h"
 );
 // LINE 375:
 	asm( 
-"	      004a28cb    mov eax,[ebp+8]"
+"	      004a28cb    mov eax,childWindow"
 "	      004a28ce    mov eax,[eax+30h]"
 "	      004a28d1    mov eax,[eax]"
 "	      004a28d3    mov [ebp-18h],eax"
@@ -1879,7 +1879,7 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 "	      004a28d9    mov [ebp-14h],eax"
 "	      004a28dc    jmp near ptr 004A28E1h"
 "	      004a28e1    jmp near ptr 004A28E6h"
-"	      004a28e6    mov eax,[ebp-4]"
+"	      004a28e6    mov eax,iterator.node"
 "	      004a28e9    cmp [ebp-14h],eax"
 "	      004a28ec    jne near ptr 004A28FCh"
 "	      004a28f2    jmp near ptr 004A2915h"
@@ -1896,9 +1896,9 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 // LINE 377:
 // Block end:
 	asm( 
-"	      004a2924    mov eax,[ebp+8]"
+"	      004a2924    mov eax,childWindow"
 "	      004a2927    mov eax,[eax]"
-"	      004a2929    mov ecx,[ebp+8]"
+"	      004a2929    mov ecx,childWindow"
 "	      004a292c    call dword ptr [eax+7Ch]"
 "	      004a292f    test eax,eax"
 "	      004a2931    jne near ptr 004A293Eh"
@@ -1910,58 +1910,58 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 );
 // LINE 380:
 	asm( 
-"	      004a293e    cmp dword ptr [ebp+0Ch],1"
+"	      004a293e    cmp nMessage,1"
 "	      004a2942    jne near ptr 004A296Ch"
 );
 // LINE 381:
 	asm( 
-"	      004a2948    mov eax,[ebp+18h]"
+"	      004a2948    mov eax,nButton"
 "	      004a294b    push eax"
-"	      004a294c    mov eax,[ebp+14h]"
+"	      004a294c    mov eax,nCursorY"
 "	      004a294f    push eax"
-"	      004a2950    mov eax,[ebp+10h]"
+"	      004a2950    mov eax,nCursorX"
 "	      004a2953    push eax"
-"	      004a2954    mov eax,[ebp+8]"
+"	      004a2954    mov eax,childWindow"
 "	      004a2957    mov eax,[eax]"
-"	      004a2959    mov ecx,[ebp+8]"
+"	      004a2959    mov ecx,childWindow"
 "	      004a295c    call dword ptr [eax+8Ch]"
 "	      004a2962    jmp near ptr 004A29C6h"
 );
 // LINE 382:
 	asm( 
 "	      004a2967    jmp near ptr 004A29BFh"
-"	      004a296c    cmp dword ptr [ebp+0Ch],2"
+"	      004a296c    cmp nMessage,2"
 "	      004a2970    jne near ptr 004A299Ah"
 );
 // LINE 383:
 	asm( 
-"	      004a2976    mov eax,[ebp+18h]"
+"	      004a2976    mov eax,nButton"
 "	      004a2979    push eax"
-"	      004a297a    mov eax,[ebp+14h]"
+"	      004a297a    mov eax,nCursorY"
 "	      004a297d    push eax"
-"	      004a297e    mov eax,[ebp+10h]"
+"	      004a297e    mov eax,nCursorX"
 "	      004a2981    push eax"
-"	      004a2982    mov eax,[ebp+8]"
+"	      004a2982    mov eax,childWindow"
 "	      004a2985    mov eax,[eax]"
-"	      004a2987    mov ecx,[ebp+8]"
+"	      004a2987    mov ecx,childWindow"
 "	      004a298a    call dword ptr [eax+90h]"
 "	      004a2990    jmp near ptr 004A29C6h"
 );
 // LINE 384:
 	asm( 
 "	      004a2995    jmp near ptr 004A29BFh"
-"	      004a299a    cmp dword ptr [ebp+0Ch],4"
+"	      004a299a    cmp nMessage,4"
 "	      004a299e    jne near ptr 004A29BFh"
 );
 // LINE 385:
 	asm( 
-"	      004a29a4    mov eax,[ebp+14h]"
+"	      004a29a4    mov eax,nCursorY"
 "	      004a29a7    push eax"
-"	      004a29a8    mov eax,[ebp+10h]"
+"	      004a29a8    mov eax,nCursorX"
 "	      004a29ab    push eax"
-"	      004a29ac    mov eax,[ebp+8]"
+"	      004a29ac    mov eax,childWindow"
 "	      004a29af    mov eax,[eax]"
-"	      004a29b1    mov ecx,[ebp+8]"
+"	      004a29b1    mov ecx,childWindow"
 "	      004a29b4    call dword ptr [eax+94h]"
 "	      004a29ba    jmp near ptr 004A29C6h"
 );
@@ -1992,42 +1992,42 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 "	      004a29d3    push ebx"
 "	      004a29d4    push esi"
 "	      004a29d5    push edi"
-"	      004a29d6    mov [ebp-8],ecx"
+"	      004a29d6    mov this,ecx"
 );
 // LINE 401:
 	asm( 
-"	      004a29d9    mov eax,[ebp-8]"
+"	      004a29d9    mov eax,this"
 "	      004a29dc    inc dword ptr [eax+4]"
 );
 // LINE 402:
 	asm( 
-"	      004a29df    mov eax,[ebp-8]"
-"	      004a29e2    mov ecx,[ebp-8]"
+"	      004a29df    mov eax,this"
+"	      004a29e2    mov ecx,this"
 "	      004a29e5    mov ecx,[ecx+8]"
 "	      004a29e8    mov edx,[ecx]"
 "	      004a29ea    mov ecx,[eax+8]"
 "	      004a29ed    call dword ptr [edx+18h]"
-"	      004a29f0    mov [ebp-4],eax"
+"	      004a29f0    mov nReturnValue,eax"
 );
 // LINE 403:
 	asm( 
-"	      004a29f3    mov eax,[ebp-8]"
+"	      004a29f3    mov eax,this"
 "	      004a29f6    dec dword ptr [eax+4]"
 );
 // LINE 404:
 	asm( 
-"	      004a29f9    mov eax,[ebp-8]"
+"	      004a29f9    mov eax,this"
 "	      004a29fc    cmp dword ptr [eax+4],0"
 "	      004a2a00    jne near ptr 004A2A0Eh"
 );
 // LINE 405:
 	asm( 
-"	      004a2a06    mov ecx,[ebp-8]"
+"	      004a2a06    mov ecx,this"
 "	      004a2a09    call 004A1FF2h"
 );
 // LINE 406:
 	asm( 
-"	      004a2a0e    mov eax,[ebp-4]"
+"	      004a2a0e    mov eax,nReturnValue"
 "	      004a2a11    jmp near ptr 004A2A16h"
 );
 // LINE 407:
@@ -2050,11 +2050,11 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2a21    push ebx"
 "	      004a2a22    push esi"
 "	      004a2a23    push edi"
-"	      004a2a24    mov [ebp-4],ecx"
+"	      004a2a24    mov this,ecx"
 );
 // LINE 415:
 	asm( 
-"	      004a2a27    mov eax,[ebp+8]"
+"	      004a2a27    mov eax,windowToTestForValidity"
 "	      004a2a2a    push eax"
 "	      004a2a2b    call 004A5F76h"
 "	      004a2a30    add esp,4"
@@ -2080,8 +2080,8 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2a45    push ebx"
 "	      004a2a46    push esi"
 "	      004a2a47    push edi"
-"	      004a2a48    mov [ebp-7Ch],ecx"
-"	      004a2a4b    mov eax,[ebp-7Ch]"
+"	      004a2a48    mov this,ecx"
+"	      004a2a4b    mov eax,this"
 "	      004a2a4e    mov dword ptr [eax],590F2Ch"
 "	      004a2a54    jmp near ptr 004A2A59h"
 "	      004a2a59    push 10h"
@@ -2102,35 +2102,35 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2a92    mov dword ptr [eax+0Ch],1"
 "	      004a2a99    jmp near ptr 004A2A9Eh"
 "	      004a2a9e    mov eax,[ebp-20h]"
-"	      004a2aa1    mov ecx,[ebp-7Ch]"
+"	      004a2aa1    mov ecx,this"
 "	      004a2aa4    mov [ecx+0Ch],eax"
 "	      004a2aa7    jmp near ptr 004A2AB6h"
-"	      004a2aac    mov eax,[ebp-7Ch]"
+"	      004a2aac    mov eax,this"
 "	      004a2aaf    mov dword ptr [eax+0Ch],0"
-"	      004a2ab6    mov eax,[ebp-7Ch]"
+"	      004a2ab6    mov eax,this"
 "	      004a2ab9    mov dword ptr [eax+8],0"
 "	      004a2ac0    jmp near ptr 004A2AC5h"
 "	      004a2ac5    jmp near ptr 004A2ACAh"
-"	      004a2aca    mov eax,[ebp-7Ch]"
+"	      004a2aca    mov eax,this"
 "	      004a2acd    mov dword ptr [eax+10h],0"
-"	      004a2ad4    mov eax,[ebp-7Ch]"
+"	      004a2ad4    mov eax,this"
 "	      004a2ad7    mov dword ptr [eax+14h],0"
-"	      004a2ade    mov eax,[ebp-7Ch]"
+"	      004a2ade    mov eax,this"
 "	      004a2ae1    mov dword ptr [eax+18h],0"
-"	      004a2ae8    mov eax,[ebp-7Ch]"
+"	      004a2ae8    mov eax,this"
 "	      004a2aeb    mov dword ptr [eax+1Ch],0"
 "	      004a2af2    jmp near ptr 004A2AF7h"
 "	      004a2af7    jmp near ptr 004A2AFCh"
-"	      004a2afc    mov eax,[ebp-7Ch]"
+"	      004a2afc    mov eax,this"
 "	      004a2aff    mov dword ptr [eax+20h],0"
-"	      004a2b06    mov eax,[ebp-7Ch]"
+"	      004a2b06    mov eax,this"
 "	      004a2b09    mov dword ptr [eax+24h],0"
-"	      004a2b10    mov eax,[ebp-7Ch]"
+"	      004a2b10    mov eax,this"
 "	      004a2b13    mov dword ptr [eax+28h],0"
-"	      004a2b1a    mov eax,[ebp-7Ch]"
+"	      004a2b1a    mov eax,this"
 "	      004a2b1d    mov dword ptr [eax+2Ch],0"
 "	      004a2b24    jmp near ptr 004A2B29h"
-"	      004a2b29    mov eax,[ebp-7Ch]"
+"	      004a2b29    mov eax,this"
 "	      004a2b2c    mov dword ptr [eax+34h],0"
 "	      004a2b33    inc dword ptr ds:[59A970h]"
 "	      004a2b39    mov eax,ds:[59A97Ch]"
@@ -2269,16 +2269,16 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2d3f    mov [ebp-78h],eax"
 "	      004a2d42    jmp near ptr 004A2D47h"
 "	      004a2d47    mov eax,[ebp-78h]"
-"	      004a2d4a    mov ecx,[ebp-7Ch]"
+"	      004a2d4a    mov ecx,this"
 "	      004a2d4d    mov [ecx+30h],eax"
-"	      004a2d50    mov eax,[ebp-7Ch]"
+"	      004a2d50    mov eax,this"
 "	      004a2d53    mov eax,[eax+30h]"
-"	      004a2d56    mov ecx,[ebp-7Ch]"
+"	      004a2d56    mov ecx,this"
 "	      004a2d59    mov ecx,[ecx+30h]"
 "	      004a2d5c    mov [ecx],eax"
-"	      004a2d5e    mov eax,[ebp-7Ch]"
+"	      004a2d5e    mov eax,this"
 "	      004a2d61    mov eax,[eax+30h]"
-"	      004a2d64    mov ecx,[ebp-7Ch]"
+"	      004a2d64    mov ecx,this"
 "	      004a2d67    mov ecx,[ecx+30h]"
 "	      004a2d6a    mov [ecx+4],eax"
 "	      004a2d6d    jmp near ptr 004A2D72h"
@@ -2300,12 +2300,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2dab    mov dword ptr [eax+0Ch],1"
 "	      004a2db2    jmp near ptr 004A2DB7h"
 "	      004a2db7    mov eax,[ebp-24h]"
-"	      004a2dba    mov ecx,[ebp-7Ch]"
+"	      004a2dba    mov ecx,this"
 "	      004a2dbd    mov [ecx+60h],eax"
 "	      004a2dc0    jmp near ptr 004A2DCFh"
-"	      004a2dc5    mov eax,[ebp-7Ch]"
+"	      004a2dc5    mov eax,this"
 "	      004a2dc8    mov dword ptr [eax+60h],0"
-"	      004a2dcf    mov eax,[ebp-7Ch]"
+"	      004a2dcf    mov eax,this"
 "	      004a2dd2    mov dword ptr [eax+5Ch],0"
 "	      004a2dd9    jmp near ptr 004A2DDEh"
 "	      004a2dde    push 10h"
@@ -2326,21 +2326,21 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2e17    mov dword ptr [eax+0Ch],1"
 "	      004a2e1e    jmp near ptr 004A2E23h"
 "	      004a2e23    mov eax,[ebp-28h]"
-"	      004a2e26    mov ecx,[ebp-7Ch]"
+"	      004a2e26    mov ecx,this"
 "	      004a2e29    mov [ecx+68h],eax"
 "	      004a2e2c    jmp near ptr 004A2E3Bh"
-"	      004a2e31    mov eax,[ebp-7Ch]"
+"	      004a2e31    mov eax,this"
 "	      004a2e34    mov dword ptr [eax+68h],0"
-"	      004a2e3b    mov eax,[ebp-7Ch]"
+"	      004a2e3b    mov eax,this"
 "	      004a2e3e    mov dword ptr [eax+64h],0"
 "	      004a2e45    jmp near ptr 004A2E4Ah"
 "	      004a2e4a    jmp near ptr 004A2E4Fh"
-"	      004a2e4f    mov eax,[ebp-7Ch]"
+"	      004a2e4f    mov eax,this"
 "	      004a2e52    mov dword ptr [eax],591680h"
 );
 // LINE 445:
 	asm( 
-"	      004a2e58    mov eax,[ebp-7Ch]"
+"	      004a2e58    mov eax,this"
 "	      004a2e5b    mov [ebp-4],eax"
 "	      004a2e5e    lea eax,[ebp-4]"
 "	      004a2e61    mov [ebp-8],eax"
@@ -2386,58 +2386,58 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 446:
 	asm( 
-"	      004a2eeb    mov eax,[ebp-7Ch]"
+"	      004a2eeb    mov eax,this"
 "	      004a2eee    mov dword ptr [eax+3Ch],0"
 );
 // LINE 447:
 	asm( 
-"	      004a2ef5    mov eax,[ebp-7Ch]"
+"	      004a2ef5    mov eax,this"
 "	      004a2ef8    mov dword ptr [eax+40h],0"
 );
 // LINE 448:
 	asm( 
-"	      004a2eff    mov eax,[ebp-7Ch]"
+"	      004a2eff    mov eax,this"
 "	      004a2f02    mov dword ptr [eax+44h],0"
 );
 // LINE 449:
 	asm( 
-"	      004a2f09    mov eax,[ebp-7Ch]"
+"	      004a2f09    mov eax,this"
 "	      004a2f0c    mov dword ptr [eax+48h],1"
 );
 // LINE 450:
 	asm( 
-"	      004a2f13    mov eax,[ebp-7Ch]"
+"	      004a2f13    mov eax,this"
 "	      004a2f16    mov dword ptr [eax+4Ch],0"
 );
 // LINE 451:
 	asm( 
-"	      004a2f1d    mov eax,[ebp-7Ch]"
+"	      004a2f1d    mov eax,this"
 "	      004a2f20    mov dword ptr [eax+4],0"
 );
 // LINE 452:
 	asm( 
-"	      004a2f27    mov eax,[ebp-7Ch]"
+"	      004a2f27    mov eax,this"
 "	      004a2f2a    mov dword ptr [eax+50h],1"
 );
 // LINE 453:
 	asm( 
-"	      004a2f31    mov eax,[ebp-7Ch]"
+"	      004a2f31    mov eax,this"
 "	      004a2f34    mov dword ptr [eax+54h],1"
 );
 // LINE 454:
 	asm( 
-"	      004a2f3b    mov eax,[ebp-7Ch]"
+"	      004a2f3b    mov eax,this"
 "	      004a2f3e    mov dword ptr [eax+6Ch],0"
 );
 // LINE 455:
 	asm( 
-"	      004a2f45    mov eax,[ebp-7Ch]"
+"	      004a2f45    mov eax,this"
 "	      004a2f48    mov dword ptr [eax+58h],0FFFFFFFFh"
 );
 // LINE 456:
 	asm( 
 "	      004a2f4f    jmp near ptr 004A2F54h"
-"	      004a2f54    mov eax,[ebp-7Ch]"
+"	      004a2f54    mov eax,this"
 "	      004a2f57    pop edi"
 "	      004a2f58    pop esi"
 "	      004a2f59    pop ebx"
@@ -2456,8 +2456,8 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2f65    push ebx"
 "	      004a2f66    push esi"
 "	      004a2f67    push edi"
-"	      004a2f68    mov [ebp-80h],ecx"
-"	      004a2f6b    mov eax,[ebp-80h]"
+"	      004a2f68    mov this,ecx"
+"	      004a2f6b    mov eax,this"
 "	      004a2f6e    mov dword ptr [eax],590F2Ch"
 "	      004a2f74    jmp near ptr 004A2F79h"
 "	      004a2f79    push 10h"
@@ -2478,19 +2478,19 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a2fb2    mov dword ptr [eax+0Ch],1"
 "	      004a2fb9    jmp near ptr 004A2FBEh"
 "	      004a2fbe    mov eax,[ebp-24h]"
-"	      004a2fc1    mov ecx,[ebp-80h]"
+"	      004a2fc1    mov ecx,this"
 "	      004a2fc4    mov [ecx+0Ch],eax"
 "	      004a2fc7    jmp near ptr 004A2FD6h"
-"	      004a2fcc    mov eax,[ebp-80h]"
+"	      004a2fcc    mov eax,this"
 "	      004a2fcf    mov dword ptr [eax+0Ch],0"
-"	      004a2fd6    mov eax,[ebp-80h]"
+"	      004a2fd6    mov eax,this"
 "	      004a2fd9    mov dword ptr [eax+8],0"
 "	      004a2fe0    jmp near ptr 004A2FE5h"
 "	      004a2fe5    jmp near ptr 004A2FEAh"
 "	      004a2fea    jmp near ptr 004A2FEFh"
 "	      004a2fef    jmp near ptr 004A2FF4h"
 "	      004a2ff4    jmp near ptr 004A2FF9h"
-"	      004a2ff9    mov eax,[ebp-80h]"
+"	      004a2ff9    mov eax,this"
 "	      004a2ffc    mov dword ptr [eax+34h],0"
 "	      004a3003    inc dword ptr ds:[59A970h]"
 "	      004a3009    mov eax,ds:[59A97Ch]"
@@ -2629,16 +2629,16 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a320f    mov [ebp-7Ch],eax"
 "	      004a3212    jmp near ptr 004A3217h"
 "	      004a3217    mov eax,[ebp-7Ch]"
-"	      004a321a    mov ecx,[ebp-80h]"
+"	      004a321a    mov ecx,this"
 "	      004a321d    mov [ecx+30h],eax"
-"	      004a3220    mov eax,[ebp-80h]"
+"	      004a3220    mov eax,this"
 "	      004a3223    mov eax,[eax+30h]"
-"	      004a3226    mov ecx,[ebp-80h]"
+"	      004a3226    mov ecx,this"
 "	      004a3229    mov ecx,[ecx+30h]"
 "	      004a322c    mov [ecx],eax"
-"	      004a322e    mov eax,[ebp-80h]"
+"	      004a322e    mov eax,this"
 "	      004a3231    mov eax,[eax+30h]"
-"	      004a3234    mov ecx,[ebp-80h]"
+"	      004a3234    mov ecx,this"
 "	      004a3237    mov ecx,[ecx+30h]"
 "	      004a323a    mov [ecx+4],eax"
 "	      004a323d    jmp near ptr 004A3242h"
@@ -2660,12 +2660,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a327b    mov dword ptr [eax+0Ch],1"
 "	      004a3282    jmp near ptr 004A3287h"
 "	      004a3287    mov eax,[ebp-28h]"
-"	      004a328a    mov ecx,[ebp-80h]"
+"	      004a328a    mov ecx,this"
 "	      004a328d    mov [ecx+60h],eax"
 "	      004a3290    jmp near ptr 004A329Fh"
-"	      004a3295    mov eax,[ebp-80h]"
+"	      004a3295    mov eax,this"
 "	      004a3298    mov dword ptr [eax+60h],0"
-"	      004a329f    mov eax,[ebp-80h]"
+"	      004a329f    mov eax,this"
 "	      004a32a2    mov dword ptr [eax+5Ch],0"
 "	      004a32a9    jmp near ptr 004A32AEh"
 "	      004a32ae    push 10h"
@@ -2686,21 +2686,21 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a32e7    mov dword ptr [eax+0Ch],1"
 "	      004a32ee    jmp near ptr 004A32F3h"
 "	      004a32f3    mov eax,[ebp-2Ch]"
-"	      004a32f6    mov ecx,[ebp-80h]"
+"	      004a32f6    mov ecx,this"
 "	      004a32f9    mov [ecx+68h],eax"
 "	      004a32fc    jmp near ptr 004A330Bh"
-"	      004a3301    mov eax,[ebp-80h]"
+"	      004a3301    mov eax,this"
 "	      004a3304    mov dword ptr [eax+68h],0"
-"	      004a330b    mov eax,[ebp-80h]"
+"	      004a330b    mov eax,this"
 "	      004a330e    mov dword ptr [eax+64h],0"
 "	      004a3315    jmp near ptr 004A331Ah"
 "	      004a331a    jmp near ptr 004A331Fh"
-"	      004a331f    mov eax,[ebp-80h]"
+"	      004a331f    mov eax,this"
 "	      004a3322    mov dword ptr [eax],591680h"
 );
 // LINE 465:
 	asm( 
-"	      004a3328    mov eax,[ebp-80h]"
+"	      004a3328    mov eax,this"
 "	      004a332b    mov [ebp-4],eax"
 "	      004a332e    lea eax,[ebp-4]"
 "	      004a3331    mov [ebp-8],eax"
@@ -2751,15 +2751,15 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 466:
 	asm( 
-"	      004a33d3    mov eax,[ebp+8]"
+"	      004a33d3    mov eax,copyGraphicWindow"
 "	      004a33d6    push eax"
-"	      004a33d7    mov ecx,[ebp-80h]"
+"	      004a33d7    mov ecx,this"
 "	      004a33da    call 004A44EFh"
 );
 // LINE 467:
 	asm( 
 "	      004a33df    jmp near ptr 004A33E4h"
-"	      004a33e4    mov eax,[ebp-80h]"
+"	      004a33e4    mov eax,this"
 "	      004a33e7    pop edi"
 "	      004a33e8    pop esi"
 "	      004a33e9    pop ebx"
@@ -2778,12 +2778,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a33f7    push ebx"
 "	      004a33f8    push esi"
 "	      004a33f9    push edi"
-"	      004a33fa    mov [ebp-80h],ecx"
-"	      004a33fd    mov eax,[ebp-80h]"
+"	      004a33fa    mov this,ecx"
+"	      004a33fd    mov eax,this"
 "	      004a3400    mov dword ptr [eax],590F2Ch"
 "	      004a3406    jmp near ptr 004A340Bh"
-"	      004a340b    mov eax,[ebp+0Ch]"
-"	      004a340e    mov ecx,[ebp-80h]"
+"	      004a340b    mov eax,lNewID"
+"	      004a340e    mov ecx,this"
 "	      004a3411    mov [ecx+4],eax"
 "	      004a3414    push 10h"
 "	      004a3416    call 0056A600h"
@@ -2803,16 +2803,16 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a344d    mov dword ptr [eax+0Ch],1"
 "	      004a3454    jmp near ptr 004A3459h"
 "	      004a3459    mov eax,[ebp-24h]"
-"	      004a345c    mov ecx,[ebp-80h]"
+"	      004a345c    mov ecx,this"
 "	      004a345f    mov [ecx+0Ch],eax"
 "	      004a3462    jmp near ptr 004A3471h"
-"	      004a3467    mov eax,[ebp-80h]"
+"	      004a3467    mov eax,this"
 "	      004a346a    mov dword ptr [eax+0Ch],0"
-"	      004a3471    mov eax,[ebp-80h]"
+"	      004a3471    mov eax,this"
 "	      004a3474    mov dword ptr [eax+8],0"
 "	      004a347b    jmp near ptr 004A3480h"
-"	      004a3480    mov eax,[ebp+8]"
-"	      004a3483    mov ecx,[ebp-80h]"
+"	      004a3480    mov eax,rectNewWindow"
+"	      004a3483    mov ecx,this"
 "	      004a3486    add ecx,10h"
 "	      004a3489    mov edx,[eax]"
 "	      004a348b    mov [ecx],edx"
@@ -2822,8 +2822,8 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3496    mov [ecx+8],edx"
 "	      004a3499    mov eax,[eax+0Ch]"
 "	      004a349c    mov [ecx+0Ch],eax"
-"	      004a349f    mov eax,[ebp+8]"
-"	      004a34a2    mov ecx,[ebp-80h]"
+"	      004a349f    mov eax,rectNewWindow"
+"	      004a34a2    mov ecx,this"
 "	      004a34a5    add ecx,20h"
 "	      004a34a8    mov edx,[eax]"
 "	      004a34aa    mov [ecx],edx"
@@ -2833,7 +2833,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a34b5    mov [ecx+8],edx"
 "	      004a34b8    mov eax,[eax+0Ch]"
 "	      004a34bb    mov [ecx+0Ch],eax"
-"	      004a34be    mov eax,[ebp-80h]"
+"	      004a34be    mov eax,this"
 "	      004a34c1    mov dword ptr [eax+34h],0"
 "	      004a34c8    inc dword ptr ds:[59A970h]"
 "	      004a34ce    mov eax,ds:[59A97Ch]"
@@ -2972,24 +2972,24 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a36d4    mov [ebp-7Ch],eax"
 "	      004a36d7    jmp near ptr 004A36DCh"
 "	      004a36dc    mov eax,[ebp-7Ch]"
-"	      004a36df    mov ecx,[ebp-80h]"
+"	      004a36df    mov ecx,this"
 "	      004a36e2    mov [ecx+30h],eax"
-"	      004a36e5    mov eax,[ebp-80h]"
+"	      004a36e5    mov eax,this"
 "	      004a36e8    mov eax,[eax+30h]"
-"	      004a36eb    mov ecx,[ebp-80h]"
+"	      004a36eb    mov ecx,this"
 "	      004a36ee    mov ecx,[ecx+30h]"
 "	      004a36f1    mov [ecx],eax"
-"	      004a36f3    mov eax,[ebp-80h]"
+"	      004a36f3    mov eax,this"
 "	      004a36f6    mov eax,[eax+30h]"
-"	      004a36f9    mov ecx,[ebp-80h]"
+"	      004a36f9    mov ecx,this"
 "	      004a36fc    mov ecx,[ecx+30h]"
 "	      004a36ff    mov [ecx+4],eax"
 "	      004a3702    jmp near ptr 004A3707h"
-"	      004a3707    mov eax,[ebp+14h]"
-"	      004a370a    mov ecx,[ebp-80h]"
+"	      004a3707    mov eax,myNewOwner"
+"	      004a370a    mov ecx,this"
 "	      004a370d    mov [ecx+38h],eax"
-"	      004a3710    mov eax,[ebp+10h]"
-"	      004a3713    mov ecx,[ebp-80h]"
+"	      004a3710    mov eax,windowNewParent"
+"	      004a3713    mov ecx,this"
 "	      004a3716    mov [ecx+3Ch],eax"
 "	      004a3719    push 10h"
 "	      004a371b    call 0056A600h"
@@ -3009,12 +3009,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3752    mov dword ptr [eax+0Ch],1"
 "	      004a3759    jmp near ptr 004A375Eh"
 "	      004a375e    mov eax,[ebp-28h]"
-"	      004a3761    mov ecx,[ebp-80h]"
+"	      004a3761    mov ecx,this"
 "	      004a3764    mov [ecx+60h],eax"
 "	      004a3767    jmp near ptr 004A3776h"
-"	      004a376c    mov eax,[ebp-80h]"
+"	      004a376c    mov eax,this"
 "	      004a376f    mov dword ptr [eax+60h],0"
-"	      004a3776    mov eax,[ebp-80h]"
+"	      004a3776    mov eax,this"
 "	      004a3779    mov dword ptr [eax+5Ch],0"
 "	      004a3780    jmp near ptr 004A3785h"
 "	      004a3785    push 10h"
@@ -3035,21 +3035,21 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a37be    mov dword ptr [eax+0Ch],1"
 "	      004a37c5    jmp near ptr 004A37CAh"
 "	      004a37ca    mov eax,[ebp-2Ch]"
-"	      004a37cd    mov ecx,[ebp-80h]"
+"	      004a37cd    mov ecx,this"
 "	      004a37d0    mov [ecx+68h],eax"
 "	      004a37d3    jmp near ptr 004A37E2h"
-"	      004a37d8    mov eax,[ebp-80h]"
+"	      004a37d8    mov eax,this"
 "	      004a37db    mov dword ptr [eax+68h],0"
-"	      004a37e2    mov eax,[ebp-80h]"
+"	      004a37e2    mov eax,this"
 "	      004a37e5    mov dword ptr [eax+64h],0"
 "	      004a37ec    jmp near ptr 004A37F1h"
 "	      004a37f1    jmp near ptr 004A37F6h"
-"	      004a37f6    mov eax,[ebp-80h]"
+"	      004a37f6    mov eax,this"
 "	      004a37f9    mov dword ptr [eax],591680h"
 );
 // LINE 481:
 	asm( 
-"	      004a37ff    mov eax,[ebp-80h]"
+"	      004a37ff    mov eax,this"
 "	      004a3802    mov [ebp-4],eax"
 "	      004a3805    lea eax,[ebp-4]"
 "	      004a3808    mov [ebp-8],eax"
@@ -3100,58 +3100,58 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 482:
 	asm( 
-"	      004a38aa    mov eax,[ebp-80h]"
+"	      004a38aa    mov eax,this"
 "	      004a38ad    mov dword ptr [eax+40h],0"
 );
 // LINE 483:
 	asm( 
-"	      004a38b4    mov eax,[ebp-80h]"
+"	      004a38b4    mov eax,this"
 "	      004a38b7    mov dword ptr [eax+44h],0"
 );
 // LINE 484:
 	asm( 
-"	      004a38be    mov eax,[ebp-80h]"
+"	      004a38be    mov eax,this"
 "	      004a38c1    mov dword ptr [eax+48h],1"
 );
 // LINE 485:
 	asm( 
-"	      004a38c8    mov eax,[ebp-80h]"
+"	      004a38c8    mov eax,this"
 "	      004a38cb    mov dword ptr [eax+4Ch],0"
 );
 // LINE 486:
 	asm( 
-"	      004a38d2    mov eax,[ebp-80h]"
+"	      004a38d2    mov eax,this"
 "	      004a38d5    mov dword ptr [eax+50h],1"
 );
 // LINE 487:
 	asm( 
-"	      004a38dc    mov eax,[ebp-80h]"
+"	      004a38dc    mov eax,this"
 "	      004a38df    mov dword ptr [eax+54h],1"
 );
 // LINE 488:
 	asm( 
-"	      004a38e6    mov eax,[ebp-80h]"
+"	      004a38e6    mov eax,this"
 "	      004a38e9    mov dword ptr [eax+6Ch],0"
 );
 // LINE 489:
 	asm( 
-"	      004a38f0    mov eax,[ebp-80h]"
+"	      004a38f0    mov eax,this"
 "	      004a38f3    mov dword ptr [eax+58h],0FFFFFFFFh"
 );
 // LINE 490:
 	asm( 
-"	      004a38fa    cmp dword ptr [ebp+18h],0"
+"	      004a38fa    cmp bAddToParentList,0"
 "	      004a38fe    je near ptr 004A3926h"
-"	      004a3904    mov eax,[ebp-80h]"
+"	      004a3904    mov eax,this"
 "	      004a3907    cmp dword ptr [eax+3Ch],0"
 "	      004a390b    je near ptr 004A3926h"
 );
 // LINE 491:
 	asm( 
-"	      004a3911    mov eax,[ebp-80h]"
+"	      004a3911    mov eax,this"
 "	      004a3914    push eax"
-"	      004a3915    mov eax,[ebp-80h]"
-"	      004a3918    mov ecx,[ebp-80h]"
+"	      004a3915    mov eax,this"
+"	      004a3918    mov ecx,this"
 "	      004a391b    mov ecx,[ecx+3Ch]"
 "	      004a391e    mov edx,[ecx]"
 "	      004a3920    mov ecx,[eax+3Ch]"
@@ -3159,13 +3159,13 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 492:
 	asm( 
-"	      004a3926    mov ecx,[ebp-80h]"
+"	      004a3926    mov ecx,this"
 "	      004a3929    call 004A6BCDh"
 );
 // LINE 493:
 	asm( 
 "	      004a392e    jmp near ptr 004A3933h"
-"	      004a3933    mov eax,[ebp-80h]"
+"	      004a3933    mov eax,this"
 "	      004a3936    pop edi"
 "	      004a3937    pop esi"
 "	      004a3938    pop ebx"
@@ -3184,12 +3184,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3946    push ebx"
 "	      004a3947    push esi"
 "	      004a3948    push edi"
-"	      004a3949    mov [ebp-90h],ecx"
-"	      004a394f    mov eax,[ebp-90h]"
+"	      004a3949    mov this,ecx"
+"	      004a394f    mov eax,this"
 "	      004a3955    mov dword ptr [eax],590F2Ch"
 "	      004a395b    jmp near ptr 004A3960h"
-"	      004a3960    mov eax,[ebp+10h]"
-"	      004a3963    mov ecx,[ebp-90h]"
+"	      004a3960    mov eax,lNewID"
+"	      004a3963    mov ecx,this"
 "	      004a3969    mov [ecx+4],eax"
 "	      004a396c    push 10h"
 "	      004a396e    call 0056A600h"
@@ -3209,16 +3209,16 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a39a5    mov dword ptr [eax+0Ch],1"
 "	      004a39ac    jmp near ptr 004A39B1h"
 "	      004a39b1    mov eax,[ebp-34h]"
-"	      004a39b4    mov ecx,[ebp-90h]"
+"	      004a39b4    mov ecx,this"
 "	      004a39ba    mov [ecx+0Ch],eax"
 "	      004a39bd    jmp near ptr 004A39CFh"
-"	      004a39c2    mov eax,[ebp-90h]"
+"	      004a39c2    mov eax,this"
 "	      004a39c8    mov dword ptr [eax+0Ch],0"
-"	      004a39cf    mov eax,[ebp-90h]"
+"	      004a39cf    mov eax,this"
 "	      004a39d5    mov dword ptr [eax+8],0"
 "	      004a39dc    jmp near ptr 004A39E1h"
-"	      004a39e1    mov eax,[ebp+0Ch]"
-"	      004a39e4    mov ecx,[ebp-90h]"
+"	      004a39e1    mov eax,rectNewWindow"
+"	      004a39e4    mov ecx,this"
 "	      004a39ea    add ecx,10h"
 "	      004a39ed    mov edx,[eax]"
 "	      004a39ef    mov [ecx],edx"
@@ -3228,8 +3228,8 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a39fa    mov [ecx+8],edx"
 "	      004a39fd    mov eax,[eax+0Ch]"
 "	      004a3a00    mov [ecx+0Ch],eax"
-"	      004a3a03    mov eax,[ebp+0Ch]"
-"	      004a3a06    mov ecx,[ebp-90h]"
+"	      004a3a03    mov eax,rectNewWindow"
+"	      004a3a06    mov ecx,this"
 "	      004a3a0c    add ecx,20h"
 "	      004a3a0f    mov edx,[eax]"
 "	      004a3a11    mov [ecx],edx"
@@ -3239,7 +3239,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3a1c    mov [ecx+8],edx"
 "	      004a3a1f    mov eax,[eax+0Ch]"
 "	      004a3a22    mov [ecx+0Ch],eax"
-"	      004a3a25    mov eax,[ebp-90h]"
+"	      004a3a25    mov eax,this"
 "	      004a3a2b    mov dword ptr [eax+34h],0"
 "	      004a3a32    inc dword ptr ds:[59A970h]"
 "	      004a3a38    mov eax,ds:[59A97Ch]"
@@ -3378,27 +3378,27 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3c50    mov [ebp-8Ch],eax"
 "	      004a3c56    jmp near ptr 004A3C5Bh"
 "	      004a3c5b    mov eax,[ebp-8Ch]"
-"	      004a3c61    mov ecx,[ebp-90h]"
+"	      004a3c61    mov ecx,this"
 "	      004a3c67    mov [ecx+30h],eax"
-"	      004a3c6a    mov eax,[ebp-90h]"
+"	      004a3c6a    mov eax,this"
 "	      004a3c70    mov eax,[eax+30h]"
-"	      004a3c73    mov ecx,[ebp-90h]"
+"	      004a3c73    mov ecx,this"
 "	      004a3c79    mov ecx,[ecx+30h]"
 "	      004a3c7c    mov [ecx],eax"
-"	      004a3c7e    mov eax,[ebp-90h]"
+"	      004a3c7e    mov eax,this"
 "	      004a3c84    mov eax,[eax+30h]"
-"	      004a3c87    mov ecx,[ebp-90h]"
+"	      004a3c87    mov ecx,this"
 "	      004a3c8d    mov ecx,[ecx+30h]"
 "	      004a3c90    mov [ecx+4],eax"
 "	      004a3c93    jmp near ptr 004A3C98h"
-"	      004a3c98    mov eax,[ebp+18h]"
-"	      004a3c9b    mov ecx,[ebp-90h]"
+"	      004a3c98    mov eax,myNewOwner"
+"	      004a3c9b    mov ecx,this"
 "	      004a3ca1    mov [ecx+38h],eax"
-"	      004a3ca4    mov eax,[ebp+14h]"
-"	      004a3ca7    mov ecx,[ebp-90h]"
+"	      004a3ca4    mov eax,windowNewParent"
+"	      004a3ca7    mov ecx,this"
 "	      004a3cad    mov [ecx+3Ch],eax"
-"	      004a3cb0    mov eax,[ebp+20h]"
-"	      004a3cb3    mov ecx,[ebp-90h]"
+"	      004a3cb0    mov eax,nNewTransparentIndex"
+"	      004a3cb3    mov ecx,this"
 "	      004a3cb9    mov [ecx+58h],eax"
 "	      004a3cbc    push 10h"
 "	      004a3cbe    call 0056A600h"
@@ -3418,12 +3418,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3cf5    mov dword ptr [eax+0Ch],1"
 "	      004a3cfc    jmp near ptr 004A3D01h"
 "	      004a3d01    mov eax,[ebp-38h]"
-"	      004a3d04    mov ecx,[ebp-90h]"
+"	      004a3d04    mov ecx,this"
 "	      004a3d0a    mov [ecx+60h],eax"
 "	      004a3d0d    jmp near ptr 004A3D1Fh"
-"	      004a3d12    mov eax,[ebp-90h]"
+"	      004a3d12    mov eax,this"
 "	      004a3d18    mov dword ptr [eax+60h],0"
-"	      004a3d1f    mov eax,[ebp-90h]"
+"	      004a3d1f    mov eax,this"
 "	      004a3d25    mov dword ptr [eax+5Ch],0"
 "	      004a3d2c    jmp near ptr 004A3D31h"
 "	      004a3d31    push 10h"
@@ -3444,21 +3444,21 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3d6a    mov dword ptr [eax+0Ch],1"
 "	      004a3d71    jmp near ptr 004A3D76h"
 "	      004a3d76    mov eax,[ebp-3Ch]"
-"	      004a3d79    mov ecx,[ebp-90h]"
+"	      004a3d79    mov ecx,this"
 "	      004a3d7f    mov [ecx+68h],eax"
 "	      004a3d82    jmp near ptr 004A3D94h"
-"	      004a3d87    mov eax,[ebp-90h]"
+"	      004a3d87    mov eax,this"
 "	      004a3d8d    mov dword ptr [eax+68h],0"
-"	      004a3d94    mov eax,[ebp-90h]"
+"	      004a3d94    mov eax,this"
 "	      004a3d9a    mov dword ptr [eax+64h],0"
 "	      004a3da1    jmp near ptr 004A3DA6h"
 "	      004a3da6    jmp near ptr 004A3DABh"
-"	      004a3dab    mov eax,[ebp-90h]"
+"	      004a3dab    mov eax,this"
 "	      004a3db1    mov dword ptr [eax],591680h"
 );
 // LINE 514:
 	asm( 
-"	      004a3db7    mov eax,[ebp-90h]"
+"	      004a3db7    mov eax,this"
 "	      004a3dbd    mov [ebp-4],eax"
 "	      004a3dc0    lea eax,[ebp-4]"
 "	      004a3dc3    mov [ebp-8],eax"
@@ -3505,7 +3505,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 // LINE 515:
 	asm( 
 "	      004a3e4d    jmp near ptr 004A3E52h"
-"	      004a3e52    mov eax,[ebp+8]"
+"	      004a3e52    mov eax,szImageFileName"
 "	      004a3e55    push eax"
 "	      004a3e56    call 0056ABE0h"
 "	      004a3e5b    add esp,4"
@@ -3526,14 +3526,14 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3e95    add esp,4"
 "	      004a3e98    jmp near ptr 004A3E9Dh"
 "	      004a3e9d    jmp near ptr 004A3EA2h"
-"	      004a3ea2    mov eax,[ebp-90h]"
+"	      004a3ea2    mov eax,this"
 "	      004a3ea8    mov eax,[eax+60h]"
 "	      004a3eab    cmp dword ptr [eax+0Ch],1"
 "	      004a3eaf    ja near ptr 004A3ED9h"
 "	      004a3eb5    cmp dword ptr [ebp-1Ch],0"
 "	      004a3eb9    je near ptr 004A3F2Eh"
 "	      004a3ebf    jmp near ptr 004A3EC4h"
-"	      004a3ec4    mov eax,[ebp-90h]"
+"	      004a3ec4    mov eax,this"
 "	      004a3eca    mov eax,[eax+60h]"
 "	      004a3ecd    mov ecx,[ebp-1Ch]"
 "	      004a3ed0    cmp [eax+8],ecx"
@@ -3546,30 +3546,30 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3eea    je near ptr 004A3F08h"
 "	      004a3ef0    mov eax,[ebp-1Ch]"
 "	      004a3ef3    push eax"
-"	      004a3ef4    mov eax,[ebp+8]"
+"	      004a3ef4    mov eax,szImageFileName"
 "	      004a3ef7    push eax"
 "	      004a3ef8    mov ecx,[ebp-10h]"
 "	      004a3efb    call 0041E090h"
 "	      004a3f00    mov [ebp-0Ch],eax"
 "	      004a3f03    jmp near ptr 004A3F0Fh"
 "	      004a3f08    mov dword ptr [ebp-0Ch],0"
-"	      004a3f0f    mov ecx,[ebp-90h]"
+"	      004a3f0f    mov ecx,this"
 "	      004a3f15    add ecx,5Ch"
 "	      004a3f18    call 00412080h"
 "	      004a3f1d    mov eax,[ebp-0Ch]"
-"	      004a3f20    mov ecx,[ebp-90h]"
+"	      004a3f20    mov ecx,this"
 "	      004a3f26    mov [ecx+60h],eax"
 "	      004a3f29    jmp near ptr 004A3F64h"
 "	      004a3f2e    cmp dword ptr [ebp-1Ch],0"
 "	      004a3f32    je near ptr 004A3F64h"
 "	      004a3f38    jmp near ptr 004A3F3Dh"
-"	      004a3f3d    mov eax,[ebp-90h]"
+"	      004a3f3d    mov eax,this"
 "	      004a3f43    mov eax,[eax+60h]"
 "	      004a3f46    mov eax,[eax]"
 "	      004a3f48    mov [ebp-14h],eax"
 "	      004a3f4b    mov eax,[ebp-1Ch]"
 "	      004a3f4e    push eax"
-"	      004a3f4f    mov eax,[ebp+8]"
+"	      004a3f4f    mov eax,szImageFileName"
 "	      004a3f52    push eax"
 "	      004a3f53    mov eax,[ebp-14h]"
 "	      004a3f56    push eax"
@@ -3577,7 +3577,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a3f5c    add esp,0Ch"
 "	      004a3f5f    jmp near ptr 004A3F64h"
 "	      004a3f64    mov eax,[ebp-1Ch]"
-"	      004a3f67    mov ecx,[ebp-90h]"
+"	      004a3f67    mov ecx,this"
 "	      004a3f6d    mov ecx,[ecx+60h]"
 "	      004a3f70    mov [ecx+4],eax"
 "	      004a3f73    jmp near ptr 004A3F78h"
@@ -3585,53 +3585,53 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 516:
 	asm( 
-"	      004a3f7d    mov eax,[ebp-90h]"
+"	      004a3f7d    mov eax,this"
 "	      004a3f83    mov dword ptr [eax+40h],0"
 );
 // LINE 517:
 	asm( 
-"	      004a3f8a    mov eax,[ebp-90h]"
+"	      004a3f8a    mov eax,this"
 "	      004a3f90    mov dword ptr [eax+44h],0"
 );
 // LINE 518:
 	asm( 
-"	      004a3f97    mov eax,[ebp-90h]"
+"	      004a3f97    mov eax,this"
 "	      004a3f9d    mov dword ptr [eax+4Ch],0"
 );
 // LINE 519:
 	asm( 
-"	      004a3fa4    mov eax,[ebp-90h]"
+"	      004a3fa4    mov eax,this"
 "	      004a3faa    mov dword ptr [eax+50h],1"
 );
 // LINE 520:
 	asm( 
-"	      004a3fb1    mov eax,[ebp-90h]"
+"	      004a3fb1    mov eax,this"
 "	      004a3fb7    mov dword ptr [eax+48h],1"
 );
 // LINE 521:
 	asm( 
-"	      004a3fbe    mov eax,[ebp-90h]"
+"	      004a3fbe    mov eax,this"
 "	      004a3fc4    mov dword ptr [eax+54h],1"
 );
 // LINE 522:
 	asm( 
-"	      004a3fcb    mov eax,[ebp-90h]"
+"	      004a3fcb    mov eax,this"
 "	      004a3fd1    mov dword ptr [eax+6Ch],0"
 );
 // LINE 523:
 	asm( 
-"	      004a3fd8    cmp dword ptr [ebp+1Ch],0"
+"	      004a3fd8    cmp bAddToParentList,0"
 "	      004a3fdc    je near ptr 004A4010h"
-"	      004a3fe2    mov eax,[ebp-90h]"
+"	      004a3fe2    mov eax,this"
 "	      004a3fe8    cmp dword ptr [eax+3Ch],0"
 "	      004a3fec    je near ptr 004A4010h"
 );
 // LINE 524:
 	asm( 
-"	      004a3ff2    mov eax,[ebp-90h]"
+"	      004a3ff2    mov eax,this"
 "	      004a3ff8    push eax"
-"	      004a3ff9    mov eax,[ebp-90h]"
-"	      004a3fff    mov ecx,[ebp-90h]"
+"	      004a3ff9    mov eax,this"
+"	      004a3fff    mov ecx,this"
 "	      004a4005    mov ecx,[ecx+3Ch]"
 "	      004a4008    mov edx,[ecx]"
 "	      004a400a    mov ecx,[eax+3Ch]"
@@ -3639,24 +3639,24 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 525:
 	asm( 
-"	      004a4010    mov ecx,[ebp-90h]"
+"	      004a4010    mov ecx,this"
 "	      004a4016    call 004A673Ch"
 );
 // LINE 526:
 	asm( 
 "	      004a401b    push 1"
-"	      004a401d    mov ecx,[ebp-90h]"
+"	      004a401d    mov ecx,this"
 "	      004a4023    call 004A4AA0h"
 );
 // LINE 527:
 	asm( 
-"	      004a4028    mov ecx,[ebp-90h]"
+"	      004a4028    mov ecx,this"
 "	      004a402e    call 004A6BCDh"
 );
 // LINE 528:
 	asm( 
 "	      004a4033    jmp near ptr 004A4038h"
-"	      004a4038    mov eax,[ebp-90h]"
+"	      004a4038    mov eax,this"
 "	      004a403e    pop edi"
 "	      004a403f    pop esi"
 "	      004a4040    pop ebx"
@@ -3675,13 +3675,13 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a404e    push ebx"
 "	      004a404f    push esi"
 "	      004a4050    push edi"
-"	      004a4051    mov [ebp-94h],ecx"
-"	      004a4057    mov eax,[ebp-94h]"
+"	      004a4051    mov this,ecx"
+"	      004a4057    mov eax,this"
 "	      004a405d    mov dword ptr [eax],591680h"
 );
 // LINE 538:
 	asm( 
-"	      004a4063    mov eax,[ebp-94h]"
+"	      004a4063    mov eax,this"
 "	      004a4069    mov [ebp-4],eax"
 "	      004a406c    lea eax,[ebp-4]"
 "	      004a406f    mov [ebp-8],eax"
@@ -3735,7 +3735,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 // LINE 539:
 	asm( 
 "	      004a413b    mov eax,ds:[59A960h]"
-"	      004a4140    cmp [ebp-94h],eax"
+"	      004a4140    cmp this,eax"
 "	      004a4146    jne near ptr 004A4151h"
 "	      004a414c    jmp near ptr 004A4156h"
 "	      004a4151    jmp near ptr 004A4177h"
@@ -3745,46 +3745,46 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 );
 // LINE 540:
 	asm( 
-"	      004a4165    mov eax,[ebp-94h]"
+"	      004a4165    mov eax,this"
 "	      004a416b    push eax"
-"	      004a416c    mov ecx,[ebp-94h]"
+"	      004a416c    mov ecx,this"
 "	      004a4172    call 004A6640h"
 );
 // LINE 541:
 	asm( 
-"	      004a4177    mov eax,[ebp-94h]"
+"	      004a4177    mov eax,this"
 "	      004a417d    push eax"
 "	      004a417e    call 004A773Bh"
 "	      004a4183    add esp,4"
 );
 // LINE 542:
 	asm( 
-"	      004a4186    mov eax,[ebp-94h]"
+"	      004a4186    mov eax,this"
 "	      004a418c    push eax"
 "	      004a418d    call 004A7340h"
 "	      004a4192    add esp,4"
 );
 // LINE 543:
 	asm( 
-"	      004a4195    mov ecx,[ebp-94h]"
+"	      004a4195    mov ecx,this"
 "	      004a419b    call 004A5B58h"
 );
 // LINE 544:
 	asm( 
-"	      004a41a0    mov ecx,[ebp-94h]"
+"	      004a41a0    mov ecx,this"
 "	      004a41a6    call 004A4CABh"
 );
 // LINE 554:
 	asm( 
 "	      004a41ab    jmp near ptr 004A41B0h"
-"	      004a41b0    mov eax,[ebp-94h]"
+"	      004a41b0    mov eax,this"
 "	      004a41b6    mov eax,[eax+68h]"
 "	      004a41b9    dec dword ptr [eax+0Ch]"
-"	      004a41bc    mov eax,[ebp-94h]"
+"	      004a41bc    mov eax,this"
 "	      004a41c2    mov eax,[eax+68h]"
 "	      004a41c5    cmp dword ptr [eax+0Ch],0"
 "	      004a41c9    jne near ptr 004A4245h"
-"	      004a41cf    mov eax,[ebp-94h]"
+"	      004a41cf    mov eax,this"
 "	      004a41d5    mov eax,[eax+68h]"
 "	      004a41d8    mov [ebp-1Ch],eax"
 "	      004a41db    mov eax,[ebp-1Ch]"
@@ -3816,10 +3816,10 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a423b    jmp near ptr 004A4240h"
 "	      004a4240    jmp near ptr 004A4245h"
 "	      004a4245    jmp near ptr 004A424Ah"
-"	      004a424a    mov eax,[ebp-94h]"
+"	      004a424a    mov eax,this"
 "	      004a4250    cmp dword ptr [eax+64h],0"
 "	      004a4254    je near ptr 004A4278h"
-"	      004a425a    mov eax,[ebp-94h]"
+"	      004a425a    mov eax,this"
 "	      004a4260    mov eax,[eax+64h]"
 "	      004a4263    mov [ebp-10h],eax"
 "	      004a4266    mov eax,[ebp-10h]"
@@ -3829,14 +3829,14 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a4270    call 0056A740h"
 "	      004a4275    add esp,4"
 "	      004a4278    jmp near ptr 004A427Dh"
-"	      004a427d    mov eax,[ebp-94h]"
+"	      004a427d    mov eax,this"
 "	      004a4283    mov eax,[eax+60h]"
 "	      004a4286    dec dword ptr [eax+0Ch]"
-"	      004a4289    mov eax,[ebp-94h]"
+"	      004a4289    mov eax,this"
 "	      004a428f    mov eax,[eax+60h]"
 "	      004a4292    cmp dword ptr [eax+0Ch],0"
 "	      004a4296    jne near ptr 004A4312h"
-"	      004a429c    mov eax,[ebp-94h]"
+"	      004a429c    mov eax,this"
 "	      004a42a2    mov eax,[eax+60h]"
 "	      004a42a5    mov [ebp-34h],eax"
 "	      004a42a8    mov eax,[ebp-34h]"
@@ -3868,10 +3868,10 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a4308    jmp near ptr 004A430Dh"
 "	      004a430d    jmp near ptr 004A4312h"
 "	      004a4312    jmp near ptr 004A4317h"
-"	      004a4317    mov eax,[ebp-94h]"
+"	      004a4317    mov eax,this"
 "	      004a431d    cmp dword ptr [eax+5Ch],0"
 "	      004a4321    je near ptr 004A4345h"
-"	      004a4327    mov eax,[ebp-94h]"
+"	      004a4327    mov eax,this"
 "	      004a432d    mov eax,[eax+5Ch]"
 "	      004a4330    mov [ebp-28h],eax"
 "	      004a4333    mov eax,[ebp-28h]"
@@ -3881,14 +3881,14 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a433d    call 0056A740h"
 "	      004a4342    add esp,4"
 "	      004a4345    jmp near ptr 004A434Ah"
-"	      004a434a    mov eax,[ebp-94h]"
+"	      004a434a    mov eax,this"
 "	      004a4350    mov eax,[eax+30h]"
 "	      004a4353    mov [ebp-5Ch],eax"
 "	      004a4356    mov eax,[ebp-5Ch]"
 "	      004a4359    mov [ebp-50h],eax"
 "	      004a435c    jmp near ptr 004A4361h"
 "	      004a4361    jmp near ptr 004A4366h"
-"	      004a4366    mov eax,[ebp-94h]"
+"	      004a4366    mov eax,this"
 "	      004a436c    mov eax,[eax+30h]"
 "	      004a436f    mov eax,[eax]"
 "	      004a4371    mov [ebp-60h],eax"
@@ -3920,12 +3920,12 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a43d7    call 004A7E20h"
 "	      004a43dc    mov eax,[eax]"
 "	      004a43de    push eax"
-"	      004a43df    mov ecx,[ebp-94h]"
+"	      004a43df    mov ecx,this"
 "	      004a43e5    add ecx,30h"
 "	      004a43e8    call 004A7E60h"
 "	      004a43ed    jmp near ptr 004A4390h"
 "	      004a43f2    jmp near ptr 004A43F7h"
-"	      004a43f7    mov eax,[ebp-94h]"
+"	      004a43f7    mov eax,this"
 "	      004a43fd    mov eax,[eax+30h]"
 "	      004a4400    mov [ebp-58h],eax"
 "	      004a4403    mov eax,ds:[59A97Ch]"
@@ -3936,18 +3936,18 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a4415    jmp near ptr 004A441Ah"
 "	      004a441a    dec dword ptr ds:[59A970h]"
 "	      004a4420    jne near ptr 004A4434h"
-"	      004a4426    mov ecx,[ebp-94h]"
+"	      004a4426    mov ecx,this"
 "	      004a442c    add ecx,30h"
 "	      004a442f    call 004A7FC0h"
 "	      004a4434    jmp near ptr 004A4439h"
-"	      004a4439    mov eax,[ebp-94h]"
+"	      004a4439    mov eax,this"
 "	      004a443f    mov eax,[eax+0Ch]"
 "	      004a4442    dec dword ptr [eax+0Ch]"
-"	      004a4445    mov eax,[ebp-94h]"
+"	      004a4445    mov eax,this"
 "	      004a444b    mov eax,[eax+0Ch]"
 "	      004a444e    cmp dword ptr [eax+0Ch],0"
 "	      004a4452    jne near ptr 004A4497h"
-"	      004a4458    mov eax,[ebp-94h]"
+"	      004a4458    mov eax,this"
 "	      004a445e    mov eax,[eax+0Ch]"
 "	      004a4461    mov [ebp-4Ch],eax"
 "	      004a4464    mov eax,[ebp-4Ch]"
@@ -3964,10 +3964,10 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 "	      004a448d    jmp near ptr 004A4492h"
 "	      004a4492    jmp near ptr 004A4497h"
 "	      004a4497    jmp near ptr 004A449Ch"
-"	      004a449c    mov eax,[ebp-94h]"
+"	      004a449c    mov eax,this"
 "	      004a44a2    cmp dword ptr [eax+8],0"
 "	      004a44a6    je near ptr 004A44CAh"
-"	      004a44ac    mov eax,[ebp-94h]"
+"	      004a44ac    mov eax,this"
 "	      004a44b2    mov eax,[eax+8]"
 "	      004a44b5    mov [ebp-40h],eax"
 "	      004a44b8    mov eax,[ebp-40h]"
@@ -3995,7 +3995,7 @@ int  GraphicWindow::Initialize() {
 "	      004a44da    push ebx"
 "	      004a44db    push esi"
 "	      004a44dc    push edi"
-"	      004a44dd    mov [ebp-4],ecx"
+"	      004a44dd    mov this,ecx"
 );
 // LINE 561:
 	asm( 
@@ -4022,24 +4022,24 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a44f5    push ebx"
 "	      004a44f6    push esi"
 "	      004a44f7    push edi"
-"	      004a44f8    mov [ebp-7Ch],ecx"
+"	      004a44f8    mov this,ecx"
 );
 // LINE 605:
 	asm( 
-"	      004a44fb    mov eax,[ebp+8]"
-"	      004a44fe    cmp [ebp-7Ch],eax"
+"	      004a44fb    mov eax,copyGraphicWindow"
+"	      004a44fe    cmp this,eax"
 "	      004a4501    jne near ptr 004A450Fh"
 );
 // LINE 606:
 	asm( 
-"	      004a4507    mov eax,[ebp-7Ch]"
+"	      004a4507    mov eax,this"
 "	      004a450a    jmp near ptr 004A4A99h"
 );
 // LINE 608:
 	asm( 
-"	      004a450f    mov eax,[ebp+8]"
+"	      004a450f    mov eax,copyGraphicWindow"
 "	      004a4512    add eax,10h"
-"	      004a4515    mov ecx,[ebp-7Ch]"
+"	      004a4515    mov ecx,this"
 "	      004a4518    add ecx,10h"
 "	      004a451b    mov edx,[eax]"
 "	      004a451d    mov [ecx],edx"
@@ -4052,9 +4052,9 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 );
 // LINE 609:
 	asm( 
-"	      004a4531    mov eax,[ebp+8]"
+"	      004a4531    mov eax,copyGraphicWindow"
 "	      004a4534    add eax,20h"
-"	      004a4537    mov ecx,[ebp-7Ch]"
+"	      004a4537    mov ecx,this"
 "	      004a453a    add ecx,20h"
 "	      004a453d    mov edx,[eax]"
 "	      004a453f    mov [ecx],edx"
@@ -4067,18 +4067,18 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 );
 // LINE 610:
 	asm( 
-"	      004a4553    mov eax,[ebp-7Ch]"
+"	      004a4553    mov eax,this"
 "	      004a4556    add eax,30h"
-"	      004a4559    mov ecx,[ebp+8]"
+"	      004a4559    mov ecx,copyGraphicWindow"
 "	      004a455c    add ecx,30h"
 "	      004a455f    cmp eax,ecx"
 "	      004a4561    je near ptr 004A4738h"
 "	      004a4567    lea eax,[ebp-2Ch]"
 "	      004a456a    push eax"
-"	      004a456b    mov ecx,[ebp-7Ch]"
+"	      004a456b    mov ecx,this"
 "	      004a456e    add ecx,30h"
 "	      004a4571    call 004A7EC0h"
-"	      004a4576    mov eax,[ebp-7Ch]"
+"	      004a4576    mov eax,this"
 "	      004a4579    mov eax,[eax+30h]"
 "	      004a457c    mov [ebp-74h],eax"
 "	      004a457f    mov eax,[ebp-74h]"
@@ -4087,10 +4087,10 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a458a    jmp near ptr 004A458Fh"
 "	      004a458f    lea eax,[ebp-28h]"
 "	      004a4592    push eax"
-"	      004a4593    mov ecx,[ebp+8]"
+"	      004a4593    mov ecx,copyGraphicWindow"
 "	      004a4596    add ecx,30h"
 "	      004a4599    call 004A7F00h"
-"	      004a459e    mov eax,[ebp+8]"
+"	      004a459e    mov eax,copyGraphicWindow"
 "	      004a45a1    mov eax,[eax+30h]"
 "	      004a45a4    mov [ebp-78h],eax"
 "	      004a45a7    mov eax,[ebp-78h]"
@@ -4181,7 +4181,7 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a46ff    call 004A7E20h"
 "	      004a4704    mov eax,[eax]"
 "	      004a4706    push eax"
-"	      004a4707    mov ecx,[ebp-7Ch]"
+"	      004a4707    mov ecx,this"
 "	      004a470a    add ecx,30h"
 "	      004a470d    call 004A7E60h"
 "	      004a4712    jmp near ptr 004A46B8h"
@@ -4193,107 +4193,107 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a4728    push eax"
 "	      004a4729    mov eax,[ebp-30h]"
 "	      004a472c    push eax"
-"	      004a472d    mov ecx,[ebp-7Ch]"
+"	      004a472d    mov ecx,this"
 "	      004a4730    add ecx,30h"
 "	      004a4733    call 004A8050h"
 "	      004a4738    jmp near ptr 004A473Dh"
 );
 // LINE 611:
 	asm( 
-"	      004a473d    mov eax,[ebp+8]"
+"	      004a473d    mov eax,copyGraphicWindow"
 "	      004a4740    mov eax,[eax+3Ch]"
-"	      004a4743    mov ecx,[ebp-7Ch]"
+"	      004a4743    mov ecx,this"
 "	      004a4746    mov [ecx+3Ch],eax"
 );
 // LINE 612:
 	asm( 
-"	      004a4749    mov eax,[ebp+8]"
+"	      004a4749    mov eax,copyGraphicWindow"
 "	      004a474c    mov eax,[eax+40h]"
-"	      004a474f    mov ecx,[ebp-7Ch]"
+"	      004a474f    mov ecx,this"
 "	      004a4752    mov [ecx+40h],eax"
 );
 // LINE 613:
 	asm( 
-"	      004a4755    mov eax,[ebp+8]"
+"	      004a4755    mov eax,copyGraphicWindow"
 "	      004a4758    mov eax,[eax+44h]"
-"	      004a475b    mov ecx,[ebp-7Ch]"
+"	      004a475b    mov ecx,this"
 "	      004a475e    mov [ecx+44h],eax"
 );
 // LINE 614:
 	asm( 
-"	      004a4761    mov eax,[ebp+8]"
+"	      004a4761    mov eax,copyGraphicWindow"
 "	      004a4764    mov eax,[eax+48h]"
-"	      004a4767    mov ecx,[ebp-7Ch]"
+"	      004a4767    mov ecx,this"
 "	      004a476a    mov [ecx+48h],eax"
 );
 // LINE 615:
 	asm( 
-"	      004a476d    mov eax,[ebp+8]"
+"	      004a476d    mov eax,copyGraphicWindow"
 "	      004a4770    mov eax,[eax+4Ch]"
-"	      004a4773    mov ecx,[ebp-7Ch]"
+"	      004a4773    mov ecx,this"
 "	      004a4776    mov [ecx+4Ch],eax"
 );
 // LINE 616:
 	asm( 
-"	      004a4779    mov eax,[ebp+8]"
+"	      004a4779    mov eax,copyGraphicWindow"
 "	      004a477c    mov eax,[eax+4]"
-"	      004a477f    mov ecx,[ebp-7Ch]"
+"	      004a477f    mov ecx,this"
 "	      004a4782    mov [ecx+4],eax"
 );
 // LINE 617:
 	asm( 
-"	      004a4785    mov eax,[ebp+8]"
+"	      004a4785    mov eax,copyGraphicWindow"
 "	      004a4788    mov eax,[eax+50h]"
-"	      004a478b    mov ecx,[ebp-7Ch]"
+"	      004a478b    mov ecx,this"
 "	      004a478e    mov [ecx+50h],eax"
 );
 // LINE 618:
 	asm( 
-"	      004a4791    mov eax,[ebp+8]"
+"	      004a4791    mov eax,copyGraphicWindow"
 "	      004a4794    mov eax,[eax+54h]"
-"	      004a4797    mov ecx,[ebp-7Ch]"
+"	      004a4797    mov ecx,this"
 "	      004a479a    mov [ecx+54h],eax"
 );
 // LINE 619:
 	asm( 
-"	      004a479d    mov eax,[ebp+8]"
+"	      004a479d    mov eax,copyGraphicWindow"
 "	      004a47a0    mov eax,[eax+6Ch]"
-"	      004a47a3    mov ecx,[ebp-7Ch]"
+"	      004a47a3    mov ecx,this"
 "	      004a47a6    mov [ecx+6Ch],eax"
 );
 // LINE 620:
 	asm( 
-"	      004a47a9    mov eax,[ebp+8]"
+"	      004a47a9    mov eax,copyGraphicWindow"
 "	      004a47ac    mov eax,[eax+70h]"
-"	      004a47af    mov ecx,[ebp-7Ch]"
+"	      004a47af    mov ecx,this"
 "	      004a47b2    mov [ecx+70h],eax"
 );
 // LINE 621:
 	asm( 
-"	      004a47b5    mov eax,[ebp+8]"
+"	      004a47b5    mov eax,copyGraphicWindow"
 "	      004a47b8    mov eax,[eax+58h]"
 "	      004a47bb    push eax"
-"	      004a47bc    mov eax,[ebp-7Ch]"
+"	      004a47bc    mov eax,this"
 "	      004a47bf    mov eax,[eax]"
-"	      004a47c1    mov ecx,[ebp-7Ch]"
+"	      004a47c1    mov ecx,this"
 "	      004a47c4    call dword ptr [eax+24h]"
 );
 // LINE 622:
 	asm( 
-"	      004a47c7    mov eax,[ebp-7Ch]"
+"	      004a47c7    mov eax,this"
 "	      004a47ca    add eax,64h"
-"	      004a47cd    mov ecx,[ebp+8]"
+"	      004a47cd    mov ecx,copyGraphicWindow"
 "	      004a47d0    add ecx,64h"
 "	      004a47d3    cmp eax,ecx"
 "	      004a47d5    je near ptr 004A48B0h"
-"	      004a47db    mov eax,[ebp-7Ch]"
+"	      004a47db    mov eax,this"
 "	      004a47de    mov eax,[eax+68h]"
 "	      004a47e1    dec dword ptr [eax+0Ch]"
-"	      004a47e4    mov eax,[ebp-7Ch]"
+"	      004a47e4    mov eax,this"
 "	      004a47e7    mov eax,[eax+68h]"
 "	      004a47ea    cmp dword ptr [eax+0Ch],0"
 "	      004a47ee    jne near ptr 004A4830h"
-"	      004a47f4    mov eax,[ebp-7Ch]"
+"	      004a47f4    mov eax,this"
 "	      004a47f7    mov eax,[eax+68h]"
 "	      004a47fa    mov [ebp-0Ch],eax"
 "	      004a47fd    mov eax,[ebp-0Ch]"
@@ -4311,15 +4311,15 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a482b    jmp near ptr 004A4830h"
 "	      004a4830    jmp near ptr 004A4835h"
 "	      004a4835    jmp near ptr 004A483Ah"
-"	      004a483a    mov eax,[ebp+8]"
+"	      004a483a    mov eax,copyGraphicWindow"
 "	      004a483d    mov eax,[eax+68h]"
 "	      004a4840    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      004a4844    je near ptr 004A4864h"
-"	      004a484a    mov eax,[ebp+8]"
+"	      004a484a    mov eax,copyGraphicWindow"
 "	      004a484d    mov eax,[eax+68h]"
-"	      004a4850    mov ecx,[ebp-7Ch]"
+"	      004a4850    mov ecx,this"
 "	      004a4853    mov [ecx+68h],eax"
-"	      004a4856    mov eax,[ebp-7Ch]"
+"	      004a4856    mov eax,this"
 "	      004a4859    mov eax,[eax+68h]"
 "	      004a485c    inc dword ptr [eax+0Ch]"
 "	      004a485f    jmp near ptr 004A48B0h"
@@ -4330,39 +4330,39 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a4871    cmp dword ptr [ebp-4],0"
 "	      004a4875    je near ptr 004A48A6h"
 "	      004a487b    jmp near ptr 004A4880h"
-"	      004a4880    mov eax,[ebp+8]"
+"	      004a4880    mov eax,copyGraphicWindow"
 "	      004a4883    mov eax,[eax+68h]"
 "	      004a4886    mov eax,[eax+4]"
 "	      004a4889    push eax"
 "	      004a488a    push 0"
-"	      004a488c    mov eax,[ebp+8]"
+"	      004a488c    mov eax,copyGraphicWindow"
 "	      004a488f    add eax,64h"
 "	      004a4892    push eax"
 "	      004a4893    mov ecx,[ebp-4]"
 "	      004a4896    call 0041E200h"
-"	      004a489b    mov ecx,[ebp-7Ch]"
+"	      004a489b    mov ecx,this"
 "	      004a489e    mov [ecx+68h],eax"
 "	      004a48a1    jmp near ptr 004A48B0h"
-"	      004a48a6    mov eax,[ebp-7Ch]"
+"	      004a48a6    mov eax,this"
 "	      004a48a9    mov dword ptr [eax+68h],0"
 "	      004a48b0    jmp near ptr 004A48B5h"
 );
 // LINE 623:
 	asm( 
-"	      004a48b5    mov eax,[ebp-7Ch]"
+"	      004a48b5    mov eax,this"
 "	      004a48b8    add eax,5Ch"
-"	      004a48bb    mov ecx,[ebp+8]"
+"	      004a48bb    mov ecx,copyGraphicWindow"
 "	      004a48be    add ecx,5Ch"
 "	      004a48c1    cmp eax,ecx"
 "	      004a48c3    je near ptr 004A499Eh"
-"	      004a48c9    mov eax,[ebp-7Ch]"
+"	      004a48c9    mov eax,this"
 "	      004a48cc    mov eax,[eax+60h]"
 "	      004a48cf    dec dword ptr [eax+0Ch]"
-"	      004a48d2    mov eax,[ebp-7Ch]"
+"	      004a48d2    mov eax,this"
 "	      004a48d5    mov eax,[eax+60h]"
 "	      004a48d8    cmp dword ptr [eax+0Ch],0"
 "	      004a48dc    jne near ptr 004A491Eh"
-"	      004a48e2    mov eax,[ebp-7Ch]"
+"	      004a48e2    mov eax,this"
 "	      004a48e5    mov eax,[eax+60h]"
 "	      004a48e8    mov [ebp-18h],eax"
 "	      004a48eb    mov eax,[ebp-18h]"
@@ -4380,15 +4380,15 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a4919    jmp near ptr 004A491Eh"
 "	      004a491e    jmp near ptr 004A4923h"
 "	      004a4923    jmp near ptr 004A4928h"
-"	      004a4928    mov eax,[ebp+8]"
+"	      004a4928    mov eax,copyGraphicWindow"
 "	      004a492b    mov eax,[eax+60h]"
 "	      004a492e    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      004a4932    je near ptr 004A4952h"
-"	      004a4938    mov eax,[ebp+8]"
+"	      004a4938    mov eax,copyGraphicWindow"
 "	      004a493b    mov eax,[eax+60h]"
-"	      004a493e    mov ecx,[ebp-7Ch]"
+"	      004a493e    mov ecx,this"
 "	      004a4941    mov [ecx+60h],eax"
-"	      004a4944    mov eax,[ebp-7Ch]"
+"	      004a4944    mov eax,this"
 "	      004a4947    mov eax,[eax+60h]"
 "	      004a494a    inc dword ptr [eax+0Ch]"
 "	      004a494d    jmp near ptr 004A499Eh"
@@ -4399,39 +4399,39 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a495f    cmp dword ptr [ebp-10h],0"
 "	      004a4963    je near ptr 004A4994h"
 "	      004a4969    jmp near ptr 004A496Eh"
-"	      004a496e    mov eax,[ebp+8]"
+"	      004a496e    mov eax,copyGraphicWindow"
 "	      004a4971    mov eax,[eax+60h]"
 "	      004a4974    mov eax,[eax+4]"
 "	      004a4977    push eax"
 "	      004a4978    push 0"
-"	      004a497a    mov eax,[ebp+8]"
+"	      004a497a    mov eax,copyGraphicWindow"
 "	      004a497d    add eax,5Ch"
 "	      004a4980    push eax"
 "	      004a4981    mov ecx,[ebp-10h]"
 "	      004a4984    call 0041E200h"
-"	      004a4989    mov ecx,[ebp-7Ch]"
+"	      004a4989    mov ecx,this"
 "	      004a498c    mov [ecx+60h],eax"
 "	      004a498f    jmp near ptr 004A499Eh"
-"	      004a4994    mov eax,[ebp-7Ch]"
+"	      004a4994    mov eax,this"
 "	      004a4997    mov dword ptr [eax+60h],0"
 "	      004a499e    jmp near ptr 004A49A3h"
 );
 // LINE 624:
 	asm( 
-"	      004a49a3    mov eax,[ebp-7Ch]"
+"	      004a49a3    mov eax,this"
 "	      004a49a6    add eax,8"
-"	      004a49a9    mov ecx,[ebp+8]"
+"	      004a49a9    mov ecx,copyGraphicWindow"
 "	      004a49ac    add ecx,8"
 "	      004a49af    cmp eax,ecx"
 "	      004a49b1    je near ptr 004A4A8Ch"
-"	      004a49b7    mov eax,[ebp-7Ch]"
+"	      004a49b7    mov eax,this"
 "	      004a49ba    mov eax,[eax+0Ch]"
 "	      004a49bd    dec dword ptr [eax+0Ch]"
-"	      004a49c0    mov eax,[ebp-7Ch]"
+"	      004a49c0    mov eax,this"
 "	      004a49c3    mov eax,[eax+0Ch]"
 "	      004a49c6    cmp dword ptr [eax+0Ch],0"
 "	      004a49ca    jne near ptr 004A4A0Ch"
-"	      004a49d0    mov eax,[ebp-7Ch]"
+"	      004a49d0    mov eax,this"
 "	      004a49d3    mov eax,[eax+0Ch]"
 "	      004a49d6    mov [ebp-24h],eax"
 "	      004a49d9    mov eax,[ebp-24h]"
@@ -4449,15 +4449,15 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a4a07    jmp near ptr 004A4A0Ch"
 "	      004a4a0c    jmp near ptr 004A4A11h"
 "	      004a4a11    jmp near ptr 004A4A16h"
-"	      004a4a16    mov eax,[ebp+8]"
+"	      004a4a16    mov eax,copyGraphicWindow"
 "	      004a4a19    mov eax,[eax+0Ch]"
 "	      004a4a1c    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      004a4a20    je near ptr 004A4A40h"
-"	      004a4a26    mov eax,[ebp+8]"
+"	      004a4a26    mov eax,copyGraphicWindow"
 "	      004a4a29    mov eax,[eax+0Ch]"
-"	      004a4a2c    mov ecx,[ebp-7Ch]"
+"	      004a4a2c    mov ecx,this"
 "	      004a4a2f    mov [ecx+0Ch],eax"
-"	      004a4a32    mov eax,[ebp-7Ch]"
+"	      004a4a32    mov eax,this"
 "	      004a4a35    mov eax,[eax+0Ch]"
 "	      004a4a38    inc dword ptr [eax+0Ch]"
 "	      004a4a3b    jmp near ptr 004A4A8Ch"
@@ -4468,26 +4468,26 @@ class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyG
 "	      004a4a4d    cmp dword ptr [ebp-1Ch],0"
 "	      004a4a51    je near ptr 004A4A82h"
 "	      004a4a57    jmp near ptr 004A4A5Ch"
-"	      004a4a5c    mov eax,[ebp+8]"
+"	      004a4a5c    mov eax,copyGraphicWindow"
 "	      004a4a5f    mov eax,[eax+0Ch]"
 "	      004a4a62    mov eax,[eax+4]"
 "	      004a4a65    push eax"
 "	      004a4a66    push 0"
-"	      004a4a68    mov eax,[ebp+8]"
+"	      004a4a68    mov eax,copyGraphicWindow"
 "	      004a4a6b    add eax,8"
 "	      004a4a6e    push eax"
 "	      004a4a6f    mov ecx,[ebp-1Ch]"
 "	      004a4a72    call 0041E200h"
-"	      004a4a77    mov ecx,[ebp-7Ch]"
+"	      004a4a77    mov ecx,this"
 "	      004a4a7a    mov [ecx+0Ch],eax"
 "	      004a4a7d    jmp near ptr 004A4A8Ch"
-"	      004a4a82    mov eax,[ebp-7Ch]"
+"	      004a4a82    mov eax,this"
 "	      004a4a85    mov dword ptr [eax+0Ch],0"
 "	      004a4a8c    jmp near ptr 004A4A91h"
 );
 // LINE 625:
 	asm( 
-"	      004a4a91    mov eax,[ebp-7Ch]"
+"	      004a4a91    mov eax,this"
 "	      004a4a94    jmp near ptr 004A4A99h"
 );
 // LINE 626:
@@ -4510,15 +4510,15 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4aa6    push ebx"
 "	      004a4aa7    push esi"
 "	      004a4aa8    push edi"
-"	      004a4aa9    mov [ebp-28h],ecx"
+"	      004a4aa9    mov this,ecx"
 );
 // LINE 642:
 	asm( 
-"	      004a4aac    mov eax,[ebp-28h]"
+"	      004a4aac    mov eax,this"
 "	      004a4aaf    cmp dword ptr [eax+40h],0"
 "	      004a4ab3    jne near ptr 004A4ACEh"
 "	      004a4ab9    jmp near ptr 004A4ABEh"
-"	      004a4abe    mov eax,[ebp-28h]"
+"	      004a4abe    mov eax,this"
 "	      004a4ac1    mov eax,[eax+60h]"
 "	      004a4ac4    cmp dword ptr [eax+4],0"
 "	      004a4ac8    jne near ptr 004A4AD8h"
@@ -4530,9 +4530,9 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 );
 // LINE 645:
 	asm( 
-"	      004a4ad8    mov eax,[ebp-28h]"
+"	      004a4ad8    mov eax,this"
 "	      004a4adb    mov eax,[eax]"
-"	      004a4add    mov ecx,[ebp-28h]"
+"	      004a4add    mov ecx,this"
 "	      004a4ae0    call dword ptr [eax+0B4h]"
 );
 // LINE 646:
@@ -4543,10 +4543,10 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4af3    mov [ebp-4],eax"
 "	      004a4af6    cmp dword ptr [ebp-4],0"
 "	      004a4afa    je near ptr 004A4C1Dh"
-"	      004a4b00    mov eax,[ebp-28h]"
+"	      004a4b00    mov eax,this"
 "	      004a4b03    cmp dword ptr [eax+64h],0"
 "	      004a4b07    je near ptr 004A4B28h"
-"	      004a4b0d    mov eax,[ebp-28h]"
+"	      004a4b0d    mov eax,this"
 "	      004a4b10    mov eax,[eax+64h]"
 "	      004a4b13    mov [ebp-8],eax"
 "	      004a4b16    mov eax,[ebp-8]"
@@ -4556,27 +4556,27 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4b20    call 0056A740h"
 "	      004a4b25    add esp,4"
 "	      004a4b28    jmp near ptr 004A4B2Dh"
-"	      004a4b2d    mov eax,[ebp-28h]"
+"	      004a4b2d    mov eax,this"
 "	      004a4b30    mov eax,[eax+68h]"
 "	      004a4b33    mov eax,[eax+4]"
 "	      004a4b36    inc eax"
 "	      004a4b37    push eax"
 "	      004a4b38    call 0056A600h"
 "	      004a4b3d    add esp,4"
-"	      004a4b40    mov ecx,[ebp-28h]"
+"	      004a4b40    mov ecx,this"
 "	      004a4b43    mov [ecx+64h],eax"
 "	      004a4b46    jmp near ptr 004A4B4Bh"
-"	      004a4b4b    mov eax,[ebp-28h]"
+"	      004a4b4b    mov eax,this"
 "	      004a4b4e    mov eax,[eax+68h]"
 "	      004a4b51    cmp dword ptr [eax+4],0"
 "	      004a4b55    je near ptr 004A4BC4h"
 "	      004a4b5b    jmp near ptr 004A4B60h"
 "	      004a4b60    jmp near ptr 004A4B65h"
-"	      004a4b65    mov eax,[ebp-28h]"
+"	      004a4b65    mov eax,this"
 "	      004a4b68    mov eax,[eax+68h]"
 "	      004a4b6b    cmp dword ptr [eax+4],0"
 "	      004a4b6f    je near ptr 004A4B8Ah"
-"	      004a4b75    mov eax,[ebp-28h]"
+"	      004a4b75    mov eax,this"
 "	      004a4b78    mov eax,[eax+68h]"
 "	      004a4b7b    mov eax,[eax]"
 "	      004a4b7d    mov [ebp-1Ch],eax"
@@ -4584,11 +4584,11 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4b85    jmp near ptr 004A4B96h"
 "	      004a4b8a    mov dword ptr [ebp-1Ch],0"
 "	      004a4b91    jmp near ptr 004A4B96h"
-"	      004a4b96    mov eax,[ebp-28h]"
+"	      004a4b96    mov eax,this"
 "	      004a4b99    mov eax,[eax+68h]"
 "	      004a4b9c    mov eax,[eax+4]"
 "	      004a4b9f    mov [ebp-20h],eax"
-"	      004a4ba2    mov eax,[ebp-28h]"
+"	      004a4ba2    mov eax,this"
 "	      004a4ba5    mov eax,[eax+64h]"
 "	      004a4ba8    mov [ebp-24h],eax"
 "	      004a4bab    mov eax,[ebp-20h]"
@@ -4606,10 +4606,10 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4bd2    lea eax,[ebp-0Ch]"
 "	      004a4bd5    mov [ebp-14h],eax"
 "	      004a4bd8    jmp near ptr 004A4BDDh"
-"	      004a4bdd    mov eax,[ebp-28h]"
+"	      004a4bdd    mov eax,this"
 "	      004a4be0    mov eax,[eax+68h]"
 "	      004a4be3    mov eax,[eax+4]"
-"	      004a4be6    mov ecx,[ebp-28h]"
+"	      004a4be6    mov ecx,this"
 "	      004a4be9    add eax,[ecx+64h]"
 "	      004a4bec    mov [ebp-18h],eax"
 "	      004a4bef    mov eax,[ebp-14h]"
@@ -4618,61 +4618,61 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 "	      004a4bf7    mov [ecx],al"
 "	      004a4bf9    jmp near ptr 004A4BFEh"
 "	      004a4bfe    jmp near ptr 004A4C03h"
-"	      004a4c03    mov eax,[ebp-28h]"
+"	      004a4c03    mov eax,this"
 "	      004a4c06    mov eax,[eax+64h]"
 "	      004a4c09    push eax"
 "	      004a4c0a    mov ecx,[ebp-4]"
 "	      004a4c0d    call 0046E6DFh"
-"	      004a4c12    mov ecx,[ebp-28h]"
+"	      004a4c12    mov ecx,this"
 "	      004a4c15    mov [ecx+40h],eax"
 "	      004a4c18    jmp near ptr 004A4C27h"
-"	      004a4c1d    mov eax,[ebp-28h]"
+"	      004a4c1d    mov eax,this"
 "	      004a4c20    mov dword ptr [eax+40h],0"
 );
 // LINE 647:
 	asm( 
-"	      004a4c27    cmp dword ptr [ebp+8],0"
+"	      004a4c27    cmp bResizeWindowToFitImage,0"
 "	      004a4c2b    je near ptr 004A4C99h"
-"	      004a4c31    mov eax,[ebp-28h]"
+"	      004a4c31    mov eax,this"
 "	      004a4c34    cmp dword ptr [eax+40h],0"
 "	      004a4c38    je near ptr 004A4C99h"
 );
 // LINE 648:
 	asm( 
 "	      004a4c3e    jmp near ptr 004A4C43h"
-"	      004a4c43    mov eax,[ebp-28h]"
+"	      004a4c43    mov eax,this"
 "	      004a4c46    mov eax,[eax+40h]"
 "	      004a4c49    mov eax,[eax+8]"
-"	      004a4c4c    mov ecx,[ebp-28h]"
+"	      004a4c4c    mov ecx,this"
 "	      004a4c4f    add eax,[ecx+10h]"
-"	      004a4c52    mov ecx,[ebp-28h]"
+"	      004a4c52    mov ecx,this"
 "	      004a4c55    mov [ecx+18h],eax"
 );
 // LINE 649:
 	asm( 
 "	      004a4c58    jmp near ptr 004A4C5Dh"
-"	      004a4c5d    mov eax,[ebp-28h]"
+"	      004a4c5d    mov eax,this"
 "	      004a4c60    mov eax,[eax+40h]"
 "	      004a4c63    mov eax,[eax+0Ch]"
-"	      004a4c66    mov ecx,[ebp-28h]"
+"	      004a4c66    mov ecx,this"
 "	      004a4c69    add eax,[ecx+14h]"
-"	      004a4c6c    mov ecx,[ebp-28h]"
+"	      004a4c6c    mov ecx,this"
 "	      004a4c6f    mov [ecx+1Ch],eax"
 );
 // LINE 650:
 	asm( 
-"	      004a4c72    mov eax,[ebp-28h]"
+"	      004a4c72    mov eax,this"
 "	      004a4c75    cmp dword ptr [eax+58h],0FFFFFFFFh"
 "	      004a4c79    je near ptr 004A4C99h"
 );
 // LINE 651:
 	asm( 
-"	      004a4c7f    mov eax,[ebp-28h]"
+"	      004a4c7f    mov eax,this"
 "	      004a4c82    mov eax,[eax+58h]"
 "	      004a4c85    push eax"
 "	      004a4c86    push 1"
-"	      004a4c88    mov eax,[ebp-28h]"
-"	      004a4c8b    mov ecx,[ebp-28h]"
+"	      004a4c88    mov eax,this"
+"	      004a4c8b    mov ecx,this"
 "	      004a4c8e    mov ecx,[ecx+40h]"
 "	      004a4c91    mov edx,[ecx]"
 "	      004a4c93    mov ecx,[eax+40h]"
@@ -4680,7 +4680,7 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 );
 // LINE 653:
 	asm( 
-"	      004a4c99    mov eax,[ebp-28h]"
+"	      004a4c99    mov eax,this"
 "	      004a4c9c    mov eax,[eax+40h]"
 "	      004a4c9f    jmp near ptr 004A4CA4h"
 );
@@ -4704,20 +4704,20 @@ void  GraphicWindow::DestroyImage() {
 "	      004a4cb1    push ebx"
 "	      004a4cb2    push esi"
 "	      004a4cb3    push edi"
-"	      004a4cb4    mov [ebp-0Ch],ecx"
+"	      004a4cb4    mov this,ecx"
 );
 // LINE 664:
 	asm( 
-"	      004a4cb7    mov eax,[ebp-0Ch]"
+"	      004a4cb7    mov eax,this"
 "	      004a4cba    cmp dword ptr [eax+40h],0"
 "	      004a4cbe    je near ptr 004A4D12h"
-"	      004a4cc4    mov eax,[ebp-0Ch]"
+"	      004a4cc4    mov eax,this"
 "	      004a4cc7    cmp dword ptr [eax+50h],0"
 "	      004a4ccb    je near ptr 004A4D12h"
 );
 // LINE 665:
 	asm( 
-"	      004a4cd1    mov eax,[ebp-0Ch]"
+"	      004a4cd1    mov eax,this"
 "	      004a4cd4    mov eax,[eax+40h]"
 "	      004a4cd7    mov [ebp-8],eax"
 "	      004a4cda    mov eax,[ebp-8]"
@@ -4735,7 +4735,7 @@ void  GraphicWindow::DestroyImage() {
 );
 // LINE 666:
 	asm( 
-"	      004a4d08    mov eax,[ebp-0Ch]"
+"	      004a4d08    mov eax,this"
 "	      004a4d0b    mov dword ptr [eax+40h],0"
 );
 // LINE 668:
@@ -4759,28 +4759,28 @@ void  GraphicWindow::SetTransparentColor(int32_t nPaletteIndex) {
 "	      004a4d22    push ebx"
 "	      004a4d23    push esi"
 "	      004a4d24    push edi"
-"	      004a4d25    mov [ebp-4],ecx"
+"	      004a4d25    mov this,ecx"
 );
 // LINE 677:
 	asm( 
-"	      004a4d28    mov eax,[ebp+8]"
-"	      004a4d2b    mov ecx,[ebp-4]"
+"	      004a4d28    mov eax,nPaletteIndex"
+"	      004a4d2b    mov ecx,this"
 "	      004a4d2e    mov [ecx+58h],eax"
 );
 // LINE 678:
 	asm( 
-"	      004a4d31    mov eax,[ebp-4]"
+"	      004a4d31    mov eax,this"
 "	      004a4d34    cmp dword ptr [eax+58h],0FFFFFFFFh"
 "	      004a4d38    je near ptr 004A4D5Dh"
 );
 // LINE 679:
 	asm( 
-"	      004a4d3e    mov eax,[ebp-4]"
+"	      004a4d3e    mov eax,this"
 "	      004a4d41    mov eax,[eax+58h]"
 "	      004a4d44    push eax"
 "	      004a4d45    push 1"
-"	      004a4d47    mov eax,[ebp-4]"
-"	      004a4d4a    mov ecx,[ebp-4]"
+"	      004a4d47    mov eax,this"
+"	      004a4d4a    mov ecx,this"
 "	      004a4d4d    mov ecx,[ecx+40h]"
 "	      004a4d50    mov edx,[ecx]"
 "	      004a4d52    mov ecx,[eax+40h]"
@@ -4794,8 +4794,8 @@ void  GraphicWindow::SetTransparentColor(int32_t nPaletteIndex) {
 	asm( 
 "	      004a4d5d    push 0"
 "	      004a4d5f    push 0"
-"	      004a4d61    mov eax,[ebp-4]"
-"	      004a4d64    mov ecx,[ebp-4]"
+"	      004a4d61    mov eax,this"
+"	      004a4d64    mov ecx,this"
 "	      004a4d67    mov ecx,[ecx+40h]"
 "	      004a4d6a    mov edx,[ecx]"
 "	      004a4d6c    mov ecx,[eax+40h]"
@@ -4822,46 +4822,46 @@ void  GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 "	      004a4d84    push ebx"
 "	      004a4d85    push esi"
 "	      004a4d86    push edi"
-"	      004a4d87    mov [ebp-0Ch],ecx"
+"	      004a4d87    mov this,ecx"
 );
 // LINE 691:
 	asm( 
-"	      004a4d8a    mov eax,[ebp+8]"
-"	      004a4d8d    mov ecx,[ebp-0Ch]"
+"	      004a4d8a    mov eax,nXPosition"
+"	      004a4d8d    mov ecx,this"
 "	      004a4d90    sub eax,[ecx+10h]"
 "	      004a4d93    mov [ebp-8],eax"
-"	      004a4d96    mov eax,[ebp+0Ch]"
-"	      004a4d99    mov ecx,[ebp-0Ch]"
+"	      004a4d96    mov eax,nYPosition"
+"	      004a4d99    mov ecx,this"
 "	      004a4d9c    sub eax,[ecx+14h]"
 "	      004a4d9f    mov [ebp-4],eax"
 "	      004a4da2    mov eax,[ebp-8]"
-"	      004a4da5    mov ecx,[ebp-0Ch]"
+"	      004a4da5    mov ecx,this"
 "	      004a4da8    add [ecx+10h],eax"
 "	      004a4dab    mov eax,[ebp-8]"
-"	      004a4dae    mov ecx,[ebp-0Ch]"
+"	      004a4dae    mov ecx,this"
 "	      004a4db1    add [ecx+18h],eax"
 "	      004a4db4    mov eax,[ebp-4]"
-"	      004a4db7    mov ecx,[ebp-0Ch]"
+"	      004a4db7    mov ecx,this"
 "	      004a4dba    add [ecx+14h],eax"
 "	      004a4dbd    mov eax,[ebp-4]"
-"	      004a4dc0    mov ecx,[ebp-0Ch]"
+"	      004a4dc0    mov ecx,this"
 "	      004a4dc3    add [ecx+1Ch],eax"
 "	      004a4dc6    jmp near ptr 004A4DCBh"
 );
 // LINE 692:
 	asm( 
-"	      004a4dcb    mov eax,[ebp-0Ch]"
+"	      004a4dcb    mov eax,this"
 "	      004a4dce    mov eax,[eax]"
-"	      004a4dd0    mov ecx,[ebp-0Ch]"
+"	      004a4dd0    mov ecx,this"
 "	      004a4dd3    call dword ptr [eax+20h]"
 );
 // LINE 693:
 	asm( 
 "	      004a4dd6    push 1"
 "	      004a4dd8    push 1"
-"	      004a4dda    mov eax,[ebp-0Ch]"
+"	      004a4dda    mov eax,this"
 "	      004a4ddd    mov eax,[eax]"
-"	      004a4ddf    mov ecx,[ebp-0Ch]"
+"	      004a4ddf    mov ecx,this"
 "	      004a4de2    call dword ptr [eax+30h]"
 );
 // LINE 694:
@@ -4885,48 +4885,48 @@ void  GraphicWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 "	      004a4df7    push ebx"
 "	      004a4df8    push esi"
 "	      004a4df9    push edi"
-"	      004a4dfa    mov [ebp-4],ecx"
+"	      004a4dfa    mov this,ecx"
 );
 // LINE 702:
 	asm( 
-"	      004a4dfd    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      004a4dfd    cmp nNewWidth,0FFFFFFFFh"
 "	      004a4e01    je near ptr 004A4E16h"
 );
 // LINE 703:
 	asm( 
-"	      004a4e07    mov eax,[ebp-4]"
+"	      004a4e07    mov eax,this"
 "	      004a4e0a    mov eax,[eax+10h]"
-"	      004a4e0d    add eax,[ebp+8]"
-"	      004a4e10    mov ecx,[ebp-4]"
+"	      004a4e0d    add eax,nNewWidth"
+"	      004a4e10    mov ecx,this"
 "	      004a4e13    mov [ecx+18h],eax"
 );
 // LINE 704:
 	asm( 
-"	      004a4e16    cmp dword ptr [ebp+0Ch],0FFFFFFFFh"
+"	      004a4e16    cmp nNewHeight,0FFFFFFFFh"
 "	      004a4e1a    je near ptr 004A4E2Fh"
 );
 // LINE 705:
 	asm( 
-"	      004a4e20    mov eax,[ebp-4]"
+"	      004a4e20    mov eax,this"
 "	      004a4e23    mov eax,[eax+14h]"
-"	      004a4e26    add eax,[ebp+0Ch]"
-"	      004a4e29    mov ecx,[ebp-4]"
+"	      004a4e26    add eax,nNewHeight"
+"	      004a4e29    mov ecx,this"
 "	      004a4e2c    mov [ecx+1Ch],eax"
 );
 // LINE 706:
 	asm( 
-"	      004a4e2f    mov eax,[ebp-4]"
+"	      004a4e2f    mov eax,this"
 "	      004a4e32    mov eax,[eax]"
-"	      004a4e34    mov ecx,[ebp-4]"
+"	      004a4e34    mov ecx,this"
 "	      004a4e37    call dword ptr [eax+20h]"
 );
 // LINE 707:
 	asm( 
 "	      004a4e3a    push 1"
 "	      004a4e3c    push 1"
-"	      004a4e3e    mov eax,[ebp-4]"
+"	      004a4e3e    mov eax,this"
 "	      004a4e41    mov eax,[eax]"
-"	      004a4e43    mov ecx,[ebp-4]"
+"	      004a4e43    mov ecx,this"
 "	      004a4e46    call dword ptr [eax+30h]"
 );
 // LINE 708:
@@ -4950,31 +4950,31 @@ void  GraphicWindow::CenterWindow(class GraphicWindow* windowToCenterOn) {
 "	      004a4e5b    push ebx"
 "	      004a4e5c    push esi"
 "	      004a4e5d    push edi"
-"	      004a4e5e    mov [ebp-4],ecx"
+"	      004a4e5e    mov this,ecx"
 );
 // LINE 716:
 	asm( 
 "	      004a4e61    jmp near ptr 004A4E66h"
 "	      004a4e66    jmp near ptr 004A4E6Bh"
-"	      004a4e6b    mov eax,[ebp+8]"
+"	      004a4e6b    mov eax,windowToCenterOn"
 "	      004a4e6e    mov eax,[eax+1Ch]"
-"	      004a4e71    mov ecx,[ebp+8]"
+"	      004a4e71    mov ecx,windowToCenterOn"
 "	      004a4e74    sub eax,[ecx+14h]"
 "	      004a4e77    cdq"
 "	      004a4e78    sub eax,edx"
 "	      004a4e7a    sar eax,1"
 "	      004a4e7d    push eax"
-"	      004a4e7e    mov eax,[ebp+8]"
+"	      004a4e7e    mov eax,windowToCenterOn"
 "	      004a4e81    mov eax,[eax+18h]"
-"	      004a4e84    mov ecx,[ebp+8]"
+"	      004a4e84    mov ecx,windowToCenterOn"
 "	      004a4e87    sub eax,[ecx+10h]"
 "	      004a4e8a    cdq"
 "	      004a4e8b    sub eax,edx"
 "	      004a4e8d    sar eax,1"
 "	      004a4e90    push eax"
-"	      004a4e91    mov eax,[ebp-4]"
+"	      004a4e91    mov eax,this"
 "	      004a4e94    mov eax,[eax]"
-"	      004a4e96    mov ecx,[ebp-4]"
+"	      004a4e96    mov ecx,this"
 "	      004a4e99    call dword ptr [eax+3Ch]"
 );
 // LINE 717:
@@ -5001,82 +5001,82 @@ void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
 "	      004a4eae    push ebx"
 "	      004a4eaf    push esi"
 "	      004a4eb0    push edi"
-"	      004a4eb1    mov [ebp-0Ch],ecx"
+"	      004a4eb1    mov this,ecx"
 );
 // LINE 733:
 	asm( 
-"	      004a4eb4    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      004a4eb4    cmp nXPosition,0FFFFFFFFh"
 "	      004a4eb8    je near ptr 004A4F02h"
 );
 // LINE 734:
 	asm( 
 "	      004a4ebe    jmp near ptr 004A4EC3h"
-"	      004a4ec3    mov ecx,[ebp+8]"
-"	      004a4ec6    mov eax,[ebp-0Ch]"
+"	      004a4ec3    mov ecx,nXPosition"
+"	      004a4ec6    mov eax,this"
 "	      004a4ec9    mov eax,[eax+18h]"
-"	      004a4ecc    mov edx,[ebp-0Ch]"
+"	      004a4ecc    mov edx,this"
 "	      004a4ecf    sub eax,[edx+10h]"
 "	      004a4ed2    cdq"
 "	      004a4ed3    sub eax,edx"
 "	      004a4ed5    sar eax,1"
 "	      004a4ed8    sub ecx,eax"
-"	      004a4eda    mov [ebp-8],ecx"
+"	      004a4eda    mov nNewXPosition,ecx"
 );
 // LINE 735:
 	asm( 
-"	      004a4edd    mov eax,[ebp-0Ch]"
-"	      004a4ee0    mov ecx,[ebp-8]"
+"	      004a4edd    mov eax,this"
+"	      004a4ee0    mov ecx,nNewXPosition"
 "	      004a4ee3    cmp [eax+10h],ecx"
 "	      004a4ee6    je near ptr 004A4F02h"
 );
 // LINE 736:
 	asm( 
-"	      004a4eec    mov eax,[ebp-0Ch]"
+"	      004a4eec    mov eax,this"
 "	      004a4eef    mov eax,[eax+14h]"
 "	      004a4ef2    push eax"
-"	      004a4ef3    mov eax,[ebp-8]"
+"	      004a4ef3    mov eax,nNewXPosition"
 "	      004a4ef6    push eax"
-"	      004a4ef7    mov eax,[ebp-0Ch]"
+"	      004a4ef7    mov eax,this"
 "	      004a4efa    mov eax,[eax]"
-"	      004a4efc    mov ecx,[ebp-0Ch]"
+"	      004a4efc    mov ecx,this"
 "	      004a4eff    call dword ptr [eax+34h]"
 );
 // LINE 738:
 	asm( 
-"	      004a4f02    cmp dword ptr [ebp+0Ch],0FFFFFFFFh"
+"	      004a4f02    cmp nYPosition,0FFFFFFFFh"
 "	      004a4f06    je near ptr 004A4F50h"
 );
 // LINE 739:
 	asm( 
 "	      004a4f0c    jmp near ptr 004A4F11h"
-"	      004a4f11    mov ecx,[ebp+0Ch]"
-"	      004a4f14    mov eax,[ebp-0Ch]"
+"	      004a4f11    mov ecx,nYPosition"
+"	      004a4f14    mov eax,this"
 "	      004a4f17    mov eax,[eax+1Ch]"
-"	      004a4f1a    mov edx,[ebp-0Ch]"
+"	      004a4f1a    mov edx,this"
 "	      004a4f1d    sub eax,[edx+14h]"
 "	      004a4f20    cdq"
 "	      004a4f21    sub eax,edx"
 "	      004a4f23    sar eax,1"
 "	      004a4f26    sub ecx,eax"
-"	      004a4f28    mov [ebp-4],ecx"
+"	      004a4f28    mov nNewYPosition,ecx"
 );
 // LINE 740:
 	asm( 
-"	      004a4f2b    mov eax,[ebp-0Ch]"
-"	      004a4f2e    mov ecx,[ebp-4]"
+"	      004a4f2b    mov eax,this"
+"	      004a4f2e    mov ecx,nNewYPosition"
 "	      004a4f31    cmp [eax+14h],ecx"
 "	      004a4f34    je near ptr 004A4F50h"
 );
 // LINE 741:
 	asm( 
-"	      004a4f3a    mov eax,[ebp-4]"
+"	      004a4f3a    mov eax,nNewYPosition"
 "	      004a4f3d    push eax"
-"	      004a4f3e    mov eax,[ebp-0Ch]"
+"	      004a4f3e    mov eax,this"
 "	      004a4f41    mov eax,[eax+10h]"
 "	      004a4f44    push eax"
-"	      004a4f45    mov eax,[ebp-0Ch]"
+"	      004a4f45    mov eax,this"
 "	      004a4f48    mov eax,[eax]"
-"	      004a4f4a    mov ecx,[ebp-0Ch]"
+"	      004a4f4a    mov ecx,this"
 "	      004a4f4d    call dword ptr [eax+34h]"
 );
 // LINE 743:
@@ -5102,13 +5102,13 @@ int  GraphicWindow::FitRectToWindow(class MRect& rectToFit) {
 "	      004a4f62    push ebx"
 "	      004a4f63    push esi"
 "	      004a4f64    push edi"
-"	      004a4f65    mov [ebp-1Ch],ecx"
+"	      004a4f65    mov this,ecx"
 );
 // LINE 756:
 	asm( 
-"	      004a4f68    mov eax,[ebp-1Ch]"
+"	      004a4f68    mov eax,this"
 "	      004a4f6b    add eax,10h"
-"	      004a4f6e    lea ecx,[ebp-10h]"
+"	      004a4f6e    lea ecx,rectTempCurrentWindow.left"
 "	      004a4f71    mov edx,[eax]"
 "	      004a4f73    mov [ecx],edx"
 "	      004a4f75    mov edx,[eax+4]"
@@ -5121,141 +5121,141 @@ int  GraphicWindow::FitRectToWindow(class MRect& rectToFit) {
 // LINE 759:
 	asm( 
 "	      004a4f87    xor eax,eax"
-"	      004a4f89    sub eax,[ebp-10h]"
+"	      004a4f89    sub eax,rectTempCurrentWindow.left"
 "	      004a4f8c    mov [ebp-18h],eax"
 "	      004a4f8f    xor eax,eax"
-"	      004a4f91    sub eax,[ebp-0Ch]"
+"	      004a4f91    sub eax,rectTempCurrentWindow.top"
 "	      004a4f94    mov [ebp-14h],eax"
 "	      004a4f97    mov eax,[ebp-18h]"
-"	      004a4f9a    add [ebp-10h],eax"
+"	      004a4f9a    add rectTempCurrentWindow.left,eax"
 "	      004a4f9d    mov eax,[ebp-18h]"
-"	      004a4fa0    add [ebp-8],eax"
+"	      004a4fa0    add rectTempCurrentWindow.right,eax"
 "	      004a4fa3    mov eax,[ebp-14h]"
-"	      004a4fa6    add [ebp-0Ch],eax"
+"	      004a4fa6    add rectTempCurrentWindow.top,eax"
 "	      004a4fa9    mov eax,[ebp-14h]"
-"	      004a4fac    add [ebp-4],eax"
+"	      004a4fac    add rectTempCurrentWindow.bottom,eax"
 "	      004a4faf    jmp near ptr 004A4FB4h"
 );
 // LINE 760:
 	asm( 
-"	      004a4fb4    mov eax,[ebp+8]"
-"	      004a4fb7    mov ecx,[ebp-10h]"
+"	      004a4fb4    mov eax,rectToFit"
+"	      004a4fb7    mov ecx,rectTempCurrentWindow.left"
 "	      004a4fba    cmp [eax],ecx"
 "	      004a4fbc    jge near ptr 004A4FE3h"
 );
 // LINE 761:
 	asm( 
-"	      004a4fc2    mov eax,[ebp-10h]"
-"	      004a4fc5    mov ecx,[ebp+8]"
+"	      004a4fc2    mov eax,rectTempCurrentWindow.left"
+"	      004a4fc5    mov ecx,rectToFit"
 "	      004a4fc8    sub eax,[ecx]"
 "	      004a4fca    add eax,5"
-"	      004a4fcd    mov ecx,[ebp+8]"
+"	      004a4fcd    mov ecx,rectToFit"
 "	      004a4fd0    add [ecx],eax"
 );
 // LINE 762:
 	asm( 
-"	      004a4fd2    mov eax,[ebp-10h]"
-"	      004a4fd5    mov ecx,[ebp+8]"
+"	      004a4fd2    mov eax,rectTempCurrentWindow.left"
+"	      004a4fd5    mov ecx,rectToFit"
 "	      004a4fd8    sub eax,[ecx]"
 "	      004a4fda    add eax,5"
-"	      004a4fdd    mov ecx,[ebp+8]"
+"	      004a4fdd    mov ecx,rectToFit"
 "	      004a4fe0    add [ecx+8],eax"
 );
 // LINE 764:
 	asm( 
-"	      004a4fe3    mov eax,[ebp+8]"
-"	      004a4fe6    mov ecx,[ebp-0Ch]"
+"	      004a4fe3    mov eax,rectToFit"
+"	      004a4fe6    mov ecx,rectTempCurrentWindow.top"
 "	      004a4fe9    cmp [eax+4],ecx"
 "	      004a4fec    jge near ptr 004A5016h"
 );
 // LINE 765:
 	asm( 
-"	      004a4ff2    mov eax,[ebp-0Ch]"
-"	      004a4ff5    mov ecx,[ebp+8]"
+"	      004a4ff2    mov eax,rectTempCurrentWindow.top"
+"	      004a4ff5    mov ecx,rectToFit"
 "	      004a4ff8    sub eax,[ecx+4]"
 "	      004a4ffb    add eax,5"
-"	      004a4ffe    mov ecx,[ebp+8]"
+"	      004a4ffe    mov ecx,rectToFit"
 "	      004a5001    add [ecx+4],eax"
 );
 // LINE 766:
 	asm( 
-"	      004a5004    mov eax,[ebp-0Ch]"
-"	      004a5007    mov ecx,[ebp+8]"
+"	      004a5004    mov eax,rectTempCurrentWindow.top"
+"	      004a5007    mov ecx,rectToFit"
 "	      004a500a    sub eax,[ecx+4]"
 "	      004a500d    add eax,5"
-"	      004a5010    mov ecx,[ebp+8]"
+"	      004a5010    mov ecx,rectToFit"
 "	      004a5013    add [ecx+0Ch],eax"
 );
 // LINE 768:
 	asm( 
-"	      004a5016    mov eax,[ebp+8]"
-"	      004a5019    mov ecx,[ebp-8]"
+"	      004a5016    mov eax,rectToFit"
+"	      004a5019    mov ecx,rectTempCurrentWindow.right"
 "	      004a501c    cmp [eax+8],ecx"
 "	      004a501f    jle near ptr 004A5048h"
 );
 // LINE 769:
 	asm( 
-"	      004a5025    mov eax,[ebp-8]"
-"	      004a5028    mov ecx,[ebp+8]"
+"	      004a5025    mov eax,rectTempCurrentWindow.right"
+"	      004a5028    mov ecx,rectToFit"
 "	      004a502b    sub eax,[ecx+8]"
 "	      004a502e    sub eax,5"
-"	      004a5031    mov ecx,[ebp+8]"
+"	      004a5031    mov ecx,rectToFit"
 "	      004a5034    add [ecx],eax"
 );
 // LINE 770:
 	asm( 
-"	      004a5036    mov eax,[ebp-8]"
-"	      004a5039    mov ecx,[ebp+8]"
+"	      004a5036    mov eax,rectTempCurrentWindow.right"
+"	      004a5039    mov ecx,rectToFit"
 "	      004a503c    sub eax,[ecx+8]"
 "	      004a503f    sub eax,5"
-"	      004a5042    mov ecx,[ebp+8]"
+"	      004a5042    mov ecx,rectToFit"
 "	      004a5045    add [ecx+8],eax"
 );
 // LINE 772:
 	asm( 
-"	      004a5048    mov eax,[ebp+8]"
-"	      004a504b    mov ecx,[ebp-4]"
+"	      004a5048    mov eax,rectToFit"
+"	      004a504b    mov ecx,rectTempCurrentWindow.bottom"
 "	      004a504e    cmp [eax+0Ch],ecx"
 "	      004a5051    jle near ptr 004A507Bh"
 );
 // LINE 773:
 	asm( 
-"	      004a5057    mov eax,[ebp-4]"
-"	      004a505a    mov ecx,[ebp+8]"
+"	      004a5057    mov eax,rectTempCurrentWindow.bottom"
+"	      004a505a    mov ecx,rectToFit"
 "	      004a505d    sub eax,[ecx+0Ch]"
 "	      004a5060    sub eax,5"
-"	      004a5063    mov ecx,[ebp+8]"
+"	      004a5063    mov ecx,rectToFit"
 "	      004a5066    add [ecx+4],eax"
 );
 // LINE 774:
 	asm( 
-"	      004a5069    mov eax,[ebp-4]"
-"	      004a506c    mov ecx,[ebp+8]"
+"	      004a5069    mov eax,rectTempCurrentWindow.bottom"
+"	      004a506c    mov ecx,rectToFit"
 "	      004a506f    sub eax,[ecx+0Ch]"
 "	      004a5072    sub eax,5"
-"	      004a5075    mov ecx,[ebp+8]"
+"	      004a5075    mov ecx,rectToFit"
 "	      004a5078    add [ecx+0Ch],eax"
 );
 // LINE 777:
 	asm( 
 "	      004a507b    jmp near ptr 004A5080h"
 "	      004a5080    jmp near ptr 004A5085h"
-"	      004a5085    mov eax,[ebp-8]"
-"	      004a5088    sub eax,[ebp-10h]"
-"	      004a508b    mov ecx,[ebp+8]"
+"	      004a5085    mov eax,rectTempCurrentWindow.right"
+"	      004a5088    sub eax,rectTempCurrentWindow.left"
+"	      004a508b    mov ecx,rectToFit"
 "	      004a508e    mov ecx,[ecx+8]"
-"	      004a5091    mov edx,[ebp+8]"
+"	      004a5091    mov edx,rectToFit"
 "	      004a5094    sub ecx,[edx]"
 "	      004a5096    add ecx,5"
 "	      004a5099    cmp eax,ecx"
 "	      004a509b    jl near ptr 004A50D2h"
 "	      004a50a1    jmp near ptr 004A50A6h"
 "	      004a50a6    jmp near ptr 004A50ABh"
-"	      004a50ab    mov eax,[ebp-4]"
-"	      004a50ae    sub eax,[ebp-0Ch]"
-"	      004a50b1    mov ecx,[ebp+8]"
+"	      004a50ab    mov eax,rectTempCurrentWindow.bottom"
+"	      004a50ae    sub eax,rectTempCurrentWindow.top"
+"	      004a50b1    mov ecx,rectToFit"
 "	      004a50b4    mov ecx,[ecx+0Ch]"
-"	      004a50b7    mov edx,[ebp+8]"
+"	      004a50b7    mov edx,rectToFit"
 "	      004a50ba    sub ecx,[edx+4]"
 "	      004a50bd    add ecx,5"
 "	      004a50c0    cmp eax,ecx"
@@ -5285,22 +5285,22 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 "	      004a50e6    push ebx"
 "	      004a50e7    push esi"
 "	      004a50e8    push edi"
-"	      004a50e9    mov [ebp-2Ch],ecx"
+"	      004a50e9    mov this,ecx"
 );
 // LINE 787:
 	asm( 
-"	      004a50ec    mov eax,[ebp+8]"
-"	      004a50ef    mov ecx,[ebp-2Ch]"
+"	      004a50ec    mov eax,bChanged"
+"	      004a50ef    mov ecx,this"
 "	      004a50f2    mov [ecx+48h],eax"
 );
 // LINE 788:
 	asm( 
-"	      004a50f5    cmp dword ptr [ebp+0Ch],0"
+"	      004a50f5    cmp bRecursive,0"
 "	      004a50f9    je near ptr 004A51C4h"
 );
 // LINE 789:
 	asm( 
-"	      004a50ff    mov eax,[ebp-2Ch]"
+"	      004a50ff    mov eax,this"
 "	      004a5102    cmp dword ptr [eax+48h],0"
 "	      004a5106    je near ptr 004A51C4h"
 );
@@ -5308,25 +5308,25 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 // Block start:
 	class list<GraphicWindow *>::iterator i;
 	asm( 
-"	      004a510c    mov eax,[ebp-2Ch]"
+"	      004a510c    mov eax,this"
 "	      004a510f    mov eax,[eax+30h]"
 "	      004a5112    mov eax,[eax]"
 "	      004a5114    mov [ebp-24h],eax"
 "	      004a5117    mov eax,[ebp-24h]"
-"	      004a511a    mov [ebp-4],eax"
+"	      004a511a    mov i.node,eax"
 "	      004a511d    jmp near ptr 004A5122h"
 "	      004a5122    jmp near ptr 004A5127h"
 );
 // LINE 791:
 	asm( 
-"	      004a5127    mov eax,[ebp-2Ch]"
+"	      004a5127    mov eax,this"
 "	      004a512a    mov eax,[eax+30h]"
 "	      004a512d    mov [ebp-18h],eax"
 "	      004a5130    mov eax,[ebp-18h]"
 "	      004a5133    mov [ebp-8],eax"
 "	      004a5136    jmp near ptr 004A513Bh"
 "	      004a513b    jmp near ptr 004A5140h"
-"	      004a5140    mov eax,[ebp-4]"
+"	      004a5140    mov eax,i.node"
 "	      004a5143    cmp [ebp-8],eax"
 "	      004a5146    jne near ptr 004A5156h"
 "	      004a514c    jmp near ptr 004A516Ah"
@@ -5343,7 +5343,7 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 // LINE 792:
 	asm( 
 "	      004a517e    jmp near ptr 004A5183h"
-"	      004a5183    mov eax,[ebp-4]"
+"	      004a5183    mov eax,i.node"
 "	      004a5186    mov eax,[eax+8]"
 "	      004a5189    mov [ebp-10h],eax"
 "	      004a518c    mov eax,[ebp-10h]"
@@ -5357,11 +5357,11 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 );
 // LINE 793:
 	asm( 
-"	      004a51a1    mov eax,[ebp-4]"
+"	      004a51a1    mov eax,i.node"
 "	      004a51a4    mov [ebp-28h],eax"
-"	      004a51a7    mov eax,[ebp-4]"
+"	      004a51a7    mov eax,i.node"
 "	      004a51aa    mov eax,[eax]"
-"	      004a51ac    mov [ebp-4],eax"
+"	      004a51ac    mov i.node,eax"
 "	      004a51af    jmp near ptr 004A51B4h"
 "	      004a51b4    mov eax,[ebp-28h]"
 "	      004a51b7    mov [ebp-0Ch],eax"
@@ -5393,22 +5393,22 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 "	      004a51d6    push ebx"
 "	      004a51d7    push esi"
 "	      004a51d8    push edi"
-"	      004a51d9    mov [ebp-28h],ecx"
+"	      004a51d9    mov this,ecx"
 );
 // LINE 809:
 	asm( 
-"	      004a51dc    mov eax,[ebp-28h]"
+"	      004a51dc    mov eax,this"
 "	      004a51df    add eax,8"
-"	      004a51e2    cmp eax,[ebp+8]"
+"	      004a51e2    cmp eax,sNewWindowTitle"
 "	      004a51e5    je near ptr 004A539Eh"
-"	      004a51eb    mov eax,[ebp-28h]"
+"	      004a51eb    mov eax,this"
 "	      004a51ee    mov eax,[eax+0Ch]"
 "	      004a51f1    dec dword ptr [eax+0Ch]"
-"	      004a51f4    mov eax,[ebp-28h]"
+"	      004a51f4    mov eax,this"
 "	      004a51f7    mov eax,[eax+0Ch]"
 "	      004a51fa    cmp dword ptr [eax+0Ch],0"
 "	      004a51fe    jne near ptr 004A5277h"
-"	      004a5204    mov eax,[ebp-28h]"
+"	      004a5204    mov eax,this"
 "	      004a5207    mov eax,[eax+0Ch]"
 "	      004a520a    mov [ebp-0Ch],eax"
 "	      004a520d    mov eax,[ebp-0Ch]"
@@ -5441,15 +5441,15 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 "	      004a5272    jmp near ptr 004A5277h"
 "	      004a5277    jmp near ptr 004A527Ch"
 "	      004a527c    jmp near ptr 004A5281h"
-"	      004a5281    mov eax,[ebp+8]"
+"	      004a5281    mov eax,sNewWindowTitle"
 "	      004a5284    mov eax,[eax+4]"
 "	      004a5287    cmp dword ptr [eax+0Ch],0FFFFFFFFh"
 "	      004a528b    je near ptr 004A52ABh"
-"	      004a5291    mov eax,[ebp+8]"
+"	      004a5291    mov eax,sNewWindowTitle"
 "	      004a5294    mov eax,[eax+4]"
-"	      004a5297    mov ecx,[ebp-28h]"
+"	      004a5297    mov ecx,this"
 "	      004a529a    mov [ecx+0Ch],eax"
-"	      004a529d    mov eax,[ebp-28h]"
+"	      004a529d    mov eax,this"
 "	      004a52a0    mov eax,[eax+0Ch]"
 "	      004a52a3    inc dword ptr [eax+0Ch]"
 "	      004a52a6    jmp near ptr 004A539Eh"
@@ -5460,7 +5460,7 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 "	      004a52b8    cmp dword ptr [ebp-4],0"
 "	      004a52bc    je near ptr 004A5394h"
 "	      004a52c2    jmp near ptr 004A52C7h"
-"	      004a52c7    mov eax,[ebp+8]"
+"	      004a52c7    mov eax,sNewWindowTitle"
 "	      004a52ca    mov eax,[eax+4]"
 "	      004a52cd    mov eax,[eax+4]"
 "	      004a52d0    mov [ebp-24h],eax"
@@ -5482,11 +5482,11 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 "	      004a5304    mov ecx,[ebp-4]"
 "	      004a5307    mov [ecx],eax"
 "	      004a5309    jmp near ptr 004A530Eh"
-"	      004a530e    mov eax,[ebp+8]"
+"	      004a530e    mov eax,sNewWindowTitle"
 "	      004a5311    mov eax,[eax+4]"
 "	      004a5314    cmp dword ptr [eax+4],0"
 "	      004a5318    je near ptr 004A5333h"
-"	      004a531e    mov eax,[ebp+8]"
+"	      004a531e    mov eax,sNewWindowTitle"
 "	      004a5321    mov eax,[eax+4]"
 "	      004a5324    mov eax,[eax]"
 "	      004a5326    mov [ebp-18h],eax"
@@ -5516,10 +5516,10 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 "	      004a537a    mov dword ptr [eax+0Ch],1"
 "	      004a5381    jmp near ptr 004A5386h"
 "	      004a5386    mov eax,[ebp-4]"
-"	      004a5389    mov ecx,[ebp-28h]"
+"	      004a5389    mov ecx,this"
 "	      004a538c    mov [ecx+0Ch],eax"
 "	      004a538f    jmp near ptr 004A539Eh"
-"	      004a5394    mov eax,[ebp-28h]"
+"	      004a5394    mov eax,this"
 "	      004a5397    mov dword ptr [eax+0Ch],0"
 "	      004a539e    jmp near ptr 004A53A3h"
 );
@@ -5527,9 +5527,9 @@ void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 	asm( 
 "	      004a53a3    push 1"
 "	      004a53a5    push 1"
-"	      004a53a7    mov eax,[ebp-28h]"
+"	      004a53a7    mov eax,this"
 "	      004a53aa    mov eax,[eax]"
-"	      004a53ac    mov ecx,[ebp-28h]"
+"	      004a53ac    mov ecx,this"
 "	      004a53af    call dword ptr [eax+30h]"
 );
 // LINE 811:
@@ -5553,11 +5553,11 @@ int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 "	      004a53c4    push ebx"
 "	      004a53c5    push esi"
 "	      004a53c6    push edi"
-"	      004a53c7    mov [ebp-6Ch],ecx"
+"	      004a53c7    mov this,ecx"
 );
 // LINE 818:
 	asm( 
-"	      004a53ca    mov eax,[ebp-6Ch]"
+"	      004a53ca    mov eax,this"
 "	      004a53cd    mov eax,[eax+30h]"
 "	      004a53d0    mov [ebp-0Ch],eax"
 "	      004a53d3    mov eax,[ebp-0Ch]"
@@ -5710,7 +5710,7 @@ int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 "	      004a560b    jmp near ptr 004A5610h"
 "	      004a5610    cmp dword ptr [ebp-14h],0"
 "	      004a5614    je near ptr 004A5627h"
-"	      004a561a    mov eax,[ebp+8]"
+"	      004a561a    mov eax,windowNewChild"
 "	      004a561d    mov ecx,[ebp-14h]"
 "	      004a5620    mov [ecx],eax"
 "	      004a5622    jmp near ptr 004A5627h"
@@ -5729,7 +5729,7 @@ int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 "	      004a564b    mov eax,[ebp-10h]"
 "	      004a564e    mov ecx,[ebp-68h]"
 "	      004a5651    mov [ecx+4],eax"
-"	      004a5654    mov eax,[ebp-6Ch]"
+"	      004a5654    mov eax,this"
 "	      004a5657    inc dword ptr [eax+34h]"
 "	      004a565a    mov eax,[ebp-10h]"
 "	      004a565d    mov [ebp-8],eax"
@@ -5739,18 +5739,18 @@ int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 );
 // LINE 819:
 	asm( 
-"	      004a566f    mov eax,[ebp+8]"
+"	      004a566f    mov eax,windowNewChild"
 "	      004a5672    mov eax,[eax]"
-"	      004a5674    mov ecx,[ebp+8]"
+"	      004a5674    mov ecx,windowNewChild"
 "	      004a5677    call dword ptr [eax+1Ch]"
 );
 // LINE 820:
 	asm( 
 "	      004a567a    push 1"
 "	      004a567c    push 1"
-"	      004a567e    mov eax,[ebp-6Ch]"
+"	      004a567e    mov eax,this"
 "	      004a5681    mov eax,[eax]"
-"	      004a5683    mov ecx,[ebp-6Ch]"
+"	      004a5683    mov ecx,this"
 "	      004a5686    call dword ptr [eax+30h]"
 );
 // LINE 821:
@@ -5781,33 +5781,33 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 "	      004a56a0    push ebx"
 "	      004a56a1    push esi"
 "	      004a56a2    push edi"
-"	      004a56a3    mov [ebp-3Ch],ecx"
+"	      004a56a3    mov this,ecx"
 );
 // LINE 831:
 	asm( 
-"	      004a56a6    mov eax,[ebp-3Ch]"
+"	      004a56a6    mov eax,this"
 "	      004a56a9    mov eax,[eax+30h]"
 "	      004a56ac    mov eax,[eax]"
 "	      004a56ae    mov [ebp-30h],eax"
 "	      004a56b1    mov eax,[ebp-30h]"
-"	      004a56b4    mov [ebp-4],eax"
+"	      004a56b4    mov i.node,eax"
 "	      004a56b7    jmp near ptr 004A56BCh"
 "	      004a56bc    jmp near ptr 004A56C1h"
 );
 // LINE 832:
 	asm( 
-"	      004a56c1    mov dword ptr [ebp-8],0"
+"	      004a56c1    mov nReturnValue,0"
 );
 // LINE 835:
 	asm( 
-"	      004a56c8    mov eax,[ebp-3Ch]"
+"	      004a56c8    mov eax,this"
 "	      004a56cb    mov eax,[eax+30h]"
 "	      004a56ce    mov [ebp-24h],eax"
 "	      004a56d1    mov eax,[ebp-24h]"
 "	      004a56d4    mov [ebp-0Ch],eax"
 "	      004a56d7    jmp near ptr 004A56DCh"
 "	      004a56dc    jmp near ptr 004A56E1h"
-"	      004a56e1    mov eax,[ebp-4]"
+"	      004a56e1    mov eax,i.node"
 "	      004a56e4    cmp [ebp-0Ch],eax"
 "	      004a56e7    jne near ptr 004A56F7h"
 "	      004a56ed    jmp near ptr 004A570Bh"
@@ -5824,18 +5824,18 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 // LINE 836:
 	asm( 
 "	      004a571f    jmp near ptr 004A5724h"
-"	      004a5724    mov eax,[ebp-4]"
-"	      004a5727    mov ecx,[ebp+8]"
+"	      004a5724    mov eax,i.node"
+"	      004a5727    mov ecx,windowChild"
 "	      004a572a    cmp [eax+8],ecx"
 "	      004a572d    jne near ptr 004A5805h"
 );
 // LINE 840:
 	asm( 
-"	      004a5733    mov eax,[ebp-4]"
+"	      004a5733    mov eax,i.node"
 "	      004a5736    mov [ebp-20h],eax"
-"	      004a5739    mov eax,[ebp-4]"
+"	      004a5739    mov eax,i.node"
 "	      004a573c    mov eax,[eax]"
-"	      004a573e    mov [ebp-4],eax"
+"	      004a573e    mov i.node,eax"
 "	      004a5741    jmp near ptr 004A5746h"
 "	      004a5746    mov eax,[ebp-20h]"
 "	      004a5749    mov [ebp-10h],eax"
@@ -5860,13 +5860,13 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 "	      004a5786    mov eax,[ebp-38h]"
 "	      004a5789    mov ds:[59A97Ch],eax"
 "	      004a578e    jmp near ptr 004A5793h"
-"	      004a5793    mov eax,[ebp-3Ch]"
+"	      004a5793    mov eax,this"
 "	      004a5796    dec dword ptr [eax+34h]"
 "	      004a5799    jmp near ptr 004A579Eh"
 );
 // LINE 841:
 	asm( 
-"	      004a579e    mov eax,[ebp+8]"
+"	      004a579e    mov eax,windowChild"
 "	      004a57a1    push eax"
 "	      004a57a2    mov eax,ds:[59A964h]"
 "	      004a57a7    mov eax,[eax]"
@@ -5877,7 +5877,7 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 );
 // LINE 842:
 	asm( 
-"	      004a57ba    mov eax,[ebp+8]"
+"	      004a57ba    mov eax,windowChild"
 "	      004a57bd    mov [ebp-18h],eax"
 "	      004a57c0    mov eax,[ebp-18h]"
 "	      004a57c3    mov [ebp-14h],eax"
@@ -5894,14 +5894,14 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 	asm( 
 "	      004a57e5    push 1"
 "	      004a57e7    push 1"
-"	      004a57e9    mov eax,[ebp-3Ch]"
+"	      004a57e9    mov eax,this"
 "	      004a57ec    mov eax,[eax]"
-"	      004a57ee    mov ecx,[ebp-3Ch]"
+"	      004a57ee    mov ecx,this"
 "	      004a57f1    call dword ptr [eax+30h]"
 );
 // LINE 844:
 	asm( 
-"	      004a57f4    mov dword ptr [ebp-8],1"
+"	      004a57f4    mov nReturnValue,1"
 );
 // LINE 845:
 	asm( 
@@ -5913,11 +5913,11 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 );
 // LINE 848:
 	asm( 
-"	      004a5805    mov eax,[ebp-4]"
+"	      004a5805    mov eax,i.node"
 "	      004a5808    mov [ebp-34h],eax"
-"	      004a580b    mov eax,[ebp-4]"
+"	      004a580b    mov eax,i.node"
 "	      004a580e    mov eax,[eax]"
-"	      004a5810    mov [ebp-4],eax"
+"	      004a5810    mov i.node,eax"
 "	      004a5813    jmp near ptr 004A5818h"
 "	      004a5818    mov eax,[ebp-34h]"
 "	      004a581b    mov [ebp-1Ch],eax"
@@ -5929,7 +5929,7 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 );
 // LINE 852:
 	asm( 
-"	      004a5828    mov eax,[ebp-8]"
+"	      004a5828    mov eax,nReturnValue"
 "	      004a582b    jmp near ptr 004A5830h"
 );
 // LINE 853:
@@ -5955,22 +5955,22 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 "	      004a583d    push ebx"
 "	      004a583e    push esi"
 "	      004a583f    push edi"
-"	      004a5840    mov [ebp-3Ch],ecx"
+"	      004a5840    mov this,ecx"
 );
 // LINE 862:
 	asm( 
-"	      004a5843    mov eax,[ebp-3Ch]"
+"	      004a5843    mov eax,this"
 "	      004a5846    mov eax,[eax+30h]"
 "	      004a5849    mov eax,[eax]"
 "	      004a584b    mov [ebp-30h],eax"
 "	      004a584e    mov eax,[ebp-30h]"
-"	      004a5851    mov [ebp-8],eax"
+"	      004a5851    mov i.node,eax"
 "	      004a5854    jmp near ptr 004A5859h"
 "	      004a5859    jmp near ptr 004A585Eh"
 );
 // LINE 863:
 	asm( 
-"	      004a585e    mov dword ptr [ebp-4],0"
+"	      004a585e    mov windowFound,0"
 );
 // LINE 865:
 	asm( 
@@ -5981,7 +5981,7 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 );
 // LINE 866:
 	asm( 
-"	      004a5875    mov eax,[ebp-3Ch]"
+"	      004a5875    mov eax,this"
 "	      004a5878    mov eax,[eax+30h]"
 "	      004a587b    mov [ebp-24h],eax"
 "	      004a587e    mov eax,[ebp-24h]"
@@ -5989,7 +5989,7 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 "	      004a5884    jmp near ptr 004A5889h"
 "	      004a5889    jmp near ptr 004A588Eh"
 "	      004a588e    mov eax,[ebp-0Ch]"
-"	      004a5891    cmp [ebp-8],eax"
+"	      004a5891    cmp i.node,eax"
 "	      004a5894    jne near ptr 004A58A4h"
 "	      004a589a    jmp near ptr 004A58B8h"
 "	      004a589f    jmp near ptr 004A58A4h"
@@ -6005,26 +6005,26 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 // LINE 867:
 	asm( 
 "	      004a58cc    jmp near ptr 004A58D1h"
-"	      004a58d1    mov eax,[ebp-8]"
+"	      004a58d1    mov eax,i.node"
 "	      004a58d4    mov eax,[eax+8]"
-"	      004a58d7    mov ecx,[ebp+8]"
+"	      004a58d7    mov ecx,lChildID"
 "	      004a58da    cmp [eax+4],ecx"
 "	      004a58dd    jne near ptr 004A59BCh"
 );
 // LINE 871:
 	asm( 
 "	      004a58e3    jmp near ptr 004A58E8h"
-"	      004a58e8    mov eax,[ebp-8]"
+"	      004a58e8    mov eax,i.node"
 "	      004a58eb    mov eax,[eax+8]"
-"	      004a58ee    mov [ebp-4],eax"
+"	      004a58ee    mov windowFound,eax"
 );
 // LINE 872:
 	asm( 
-"	      004a58f1    mov eax,[ebp-8]"
+"	      004a58f1    mov eax,i.node"
 "	      004a58f4    mov [ebp-20h],eax"
-"	      004a58f7    mov eax,[ebp-8]"
+"	      004a58f7    mov eax,i.node"
 "	      004a58fa    mov eax,[eax]"
-"	      004a58fc    mov [ebp-8],eax"
+"	      004a58fc    mov i.node,eax"
 "	      004a58ff    jmp near ptr 004A5904h"
 "	      004a5904    mov eax,[ebp-20h]"
 "	      004a5907    mov [ebp-10h],eax"
@@ -6049,13 +6049,13 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 "	      004a5944    mov eax,[ebp-38h]"
 "	      004a5947    mov ds:[59A97Ch],eax"
 "	      004a594c    jmp near ptr 004A5951h"
-"	      004a5951    mov eax,[ebp-3Ch]"
+"	      004a5951    mov eax,this"
 "	      004a5954    dec dword ptr [eax+34h]"
 "	      004a5957    jmp near ptr 004A595Ch"
 );
 // LINE 873:
 	asm( 
-"	      004a595c    mov eax,[ebp-4]"
+"	      004a595c    mov eax,windowFound"
 "	      004a595f    push eax"
 "	      004a5960    mov eax,ds:[59A964h]"
 "	      004a5965    mov eax,[eax]"
@@ -6066,7 +6066,7 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 );
 // LINE 874:
 	asm( 
-"	      004a5978    mov eax,[ebp-4]"
+"	      004a5978    mov eax,windowFound"
 "	      004a597b    mov [ebp-18h],eax"
 "	      004a597e    mov eax,[ebp-18h]"
 "	      004a5981    mov [ebp-14h],eax"
@@ -6083,9 +6083,9 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 	asm( 
 "	      004a59a3    push 1"
 "	      004a59a5    push 1"
-"	      004a59a7    mov eax,[ebp-3Ch]"
+"	      004a59a7    mov eax,this"
 "	      004a59aa    mov eax,[eax]"
-"	      004a59ac    mov ecx,[ebp-3Ch]"
+"	      004a59ac    mov ecx,this"
 "	      004a59af    call dword ptr [eax+30h]"
 );
 // LINE 876:
@@ -6098,11 +6098,11 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 );
 // LINE 879:
 	asm( 
-"	      004a59bc    mov eax,[ebp-8]"
+"	      004a59bc    mov eax,i.node"
 "	      004a59bf    mov [ebp-34h],eax"
-"	      004a59c2    mov eax,[ebp-8]"
+"	      004a59c2    mov eax,i.node"
 "	      004a59c5    mov eax,[eax]"
-"	      004a59c7    mov [ebp-8],eax"
+"	      004a59c7    mov i.node,eax"
 "	      004a59ca    jmp near ptr 004A59CFh"
 "	      004a59cf    mov eax,[ebp-34h]"
 "	      004a59d2    mov [ebp-1Ch],eax"
@@ -6128,7 +6128,7 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 );
 // LINE 883:
 	asm( 
-"	      004a5a02    mov eax,[ebp-4]"
+"	      004a5a02    mov eax,windowFound"
 "	      004a5a05    jmp near ptr 004A5A0Ah"
 );
 // LINE 884:
@@ -6154,33 +6154,33 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 "	      004a5a17    push ebx"
 "	      004a5a18    push esi"
 "	      004a5a19    push edi"
-"	      004a5a1a    mov [ebp-34h],ecx"
+"	      004a5a1a    mov this,ecx"
 );
 // LINE 893:
 	asm( 
-"	      004a5a1d    mov eax,[ebp-34h]"
+"	      004a5a1d    mov eax,this"
 "	      004a5a20    mov eax,[eax+30h]"
 "	      004a5a23    mov eax,[eax]"
 "	      004a5a25    mov [ebp-28h],eax"
 "	      004a5a28    mov eax,[ebp-28h]"
-"	      004a5a2b    mov [ebp-4],eax"
+"	      004a5a2b    mov i.node,eax"
 "	      004a5a2e    jmp near ptr 004A5A33h"
 "	      004a5a33    jmp near ptr 004A5A38h"
 );
 // LINE 894:
 	asm( 
-"	      004a5a38    mov dword ptr [ebp-8],0"
+"	      004a5a38    mov nReturnValue,0"
 );
 // LINE 896:
 	asm( 
-"	      004a5a3f    mov eax,[ebp-34h]"
+"	      004a5a3f    mov eax,this"
 "	      004a5a42    mov eax,[eax+30h]"
 "	      004a5a45    mov [ebp-1Ch],eax"
 "	      004a5a48    mov eax,[ebp-1Ch]"
 "	      004a5a4b    mov [ebp-0Ch],eax"
 "	      004a5a4e    jmp near ptr 004A5A53h"
 "	      004a5a53    jmp near ptr 004A5A58h"
-"	      004a5a58    mov eax,[ebp-4]"
+"	      004a5a58    mov eax,i.node"
 "	      004a5a5b    cmp [ebp-0Ch],eax"
 "	      004a5a5e    jne near ptr 004A5A6Eh"
 "	      004a5a64    jmp near ptr 004A5A82h"
@@ -6197,18 +6197,18 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 // LINE 897:
 	asm( 
 "	      004a5a96    jmp near ptr 004A5A9Bh"
-"	      004a5a9b    mov eax,[ebp-4]"
-"	      004a5a9e    mov ecx,[ebp+8]"
+"	      004a5a9b    mov eax,i.node"
+"	      004a5a9e    mov ecx,windowNewChild"
 "	      004a5aa1    cmp [eax+8],ecx"
 "	      004a5aa4    jne near ptr 004A5B26h"
 );
 // LINE 898:
 	asm( 
-"	      004a5aaa    mov eax,[ebp-4]"
+"	      004a5aaa    mov eax,i.node"
 "	      004a5aad    mov [ebp-18h],eax"
-"	      004a5ab0    mov eax,[ebp-4]"
+"	      004a5ab0    mov eax,i.node"
 "	      004a5ab3    mov eax,[eax]"
-"	      004a5ab5    mov [ebp-4],eax"
+"	      004a5ab5    mov i.node,eax"
 "	      004a5ab8    jmp near ptr 004A5ABDh"
 "	      004a5abd    mov eax,[ebp-18h]"
 "	      004a5ac0    mov [ebp-10h],eax"
@@ -6233,13 +6233,13 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 "	      004a5afd    mov eax,[ebp-30h]"
 "	      004a5b00    mov ds:[59A97Ch],eax"
 "	      004a5b05    jmp near ptr 004A5B0Ah"
-"	      004a5b0a    mov eax,[ebp-34h]"
+"	      004a5b0a    mov eax,this"
 "	      004a5b0d    dec dword ptr [eax+34h]"
 "	      004a5b10    jmp near ptr 004A5B15h"
 );
 // LINE 899:
 	asm( 
-"	      004a5b15    mov dword ptr [ebp-8],1"
+"	      004a5b15    mov nReturnValue,1"
 );
 // LINE 900:
 	asm( 
@@ -6251,11 +6251,11 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 );
 // LINE 903:
 	asm( 
-"	      004a5b26    mov eax,[ebp-4]"
+"	      004a5b26    mov eax,i.node"
 "	      004a5b29    mov [ebp-2Ch],eax"
-"	      004a5b2c    mov eax,[ebp-4]"
+"	      004a5b2c    mov eax,i.node"
 "	      004a5b2f    mov eax,[eax]"
-"	      004a5b31    mov [ebp-4],eax"
+"	      004a5b31    mov i.node,eax"
 "	      004a5b34    jmp near ptr 004A5B39h"
 "	      004a5b39    mov eax,[ebp-2Ch]"
 "	      004a5b3c    mov [ebp-14h],eax"
@@ -6267,7 +6267,7 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 );
 // LINE 905:
 	asm( 
-"	      004a5b49    mov eax,[ebp-8]"
+"	      004a5b49    mov eax,nReturnValue"
 "	      004a5b4c    jmp near ptr 004A5B51h"
 );
 // LINE 906:
@@ -6293,16 +6293,16 @@ void  GraphicWindow::DeleteAllChildren() {
 "	      004a5b5e    push ebx"
 "	      004a5b5f    push esi"
 "	      004a5b60    push edi"
-"	      004a5b61    mov [ebp-34h],ecx"
+"	      004a5b61    mov this,ecx"
 );
 // LINE 914:
 	asm( 
-"	      004a5b64    mov eax,[ebp-34h]"
+"	      004a5b64    mov eax,this"
 "	      004a5b67    mov eax,[eax+30h]"
 "	      004a5b6a    mov eax,[eax]"
 "	      004a5b6c    mov [ebp-2Ch],eax"
 "	      004a5b6f    mov eax,[ebp-2Ch]"
-"	      004a5b72    mov [ebp-8],eax"
+"	      004a5b72    mov i.node,eax"
 "	      004a5b75    jmp near ptr 004A5B7Ah"
 "	      004a5b7a    jmp near ptr 004A5B7Fh"
 );
@@ -6315,14 +6315,14 @@ void  GraphicWindow::DeleteAllChildren() {
 );
 // LINE 918:
 	asm( 
-"	      004a5b8f    mov eax,[ebp-34h]"
+"	      004a5b8f    mov eax,this"
 "	      004a5b92    mov eax,[eax+30h]"
 "	      004a5b95    mov [ebp-20h],eax"
 "	      004a5b98    mov eax,[ebp-20h]"
 "	      004a5b9b    mov [ebp-0Ch],eax"
 "	      004a5b9e    jmp near ptr 004A5BA3h"
 "	      004a5ba3    jmp near ptr 004A5BA8h"
-"	      004a5ba8    mov eax,[ebp-8]"
+"	      004a5ba8    mov eax,i.node"
 "	      004a5bab    cmp [ebp-0Ch],eax"
 "	      004a5bae    jne near ptr 004A5BBEh"
 "	      004a5bb4    jmp near ptr 004A5BD2h"
@@ -6339,17 +6339,17 @@ void  GraphicWindow::DeleteAllChildren() {
 // LINE 922:
 	asm( 
 "	      004a5be6    jmp near ptr 004A5BEBh"
-"	      004a5beb    mov eax,[ebp-8]"
+"	      004a5beb    mov eax,i.node"
 "	      004a5bee    mov eax,[eax+8]"
-"	      004a5bf1    mov [ebp-4],eax"
+"	      004a5bf1    mov windowToDelete,eax"
 );
 // LINE 923:
 	asm( 
-"	      004a5bf4    mov eax,[ebp-8]"
+"	      004a5bf4    mov eax,i.node"
 "	      004a5bf7    mov [ebp-1Ch],eax"
-"	      004a5bfa    mov eax,[ebp-8]"
+"	      004a5bfa    mov eax,i.node"
 "	      004a5bfd    mov eax,[eax]"
-"	      004a5bff    mov [ebp-8],eax"
+"	      004a5bff    mov i.node,eax"
 "	      004a5c02    jmp near ptr 004A5C07h"
 "	      004a5c07    mov eax,[ebp-1Ch]"
 "	      004a5c0a    mov [ebp-10h],eax"
@@ -6374,13 +6374,13 @@ void  GraphicWindow::DeleteAllChildren() {
 "	      004a5c47    mov eax,[ebp-30h]"
 "	      004a5c4a    mov ds:[59A97Ch],eax"
 "	      004a5c4f    jmp near ptr 004A5C54h"
-"	      004a5c54    mov eax,[ebp-34h]"
+"	      004a5c54    mov eax,this"
 "	      004a5c57    dec dword ptr [eax+34h]"
 "	      004a5c5a    jmp near ptr 004A5C5Fh"
 );
 // LINE 924:
 	asm( 
-"	      004a5c5f    mov eax,[ebp-4]"
+"	      004a5c5f    mov eax,windowToDelete"
 "	      004a5c62    push eax"
 "	      004a5c63    mov eax,ds:[59A964h]"
 "	      004a5c68    mov eax,[eax]"
@@ -6391,7 +6391,7 @@ void  GraphicWindow::DeleteAllChildren() {
 );
 // LINE 925:
 	asm( 
-"	      004a5c7b    mov eax,[ebp-4]"
+"	      004a5c7b    mov eax,windowToDelete"
 "	      004a5c7e    mov [ebp-18h],eax"
 "	      004a5c81    mov eax,[ebp-18h]"
 "	      004a5c84    mov [ebp-14h],eax"
@@ -6445,29 +6445,29 @@ void  GraphicWindow::RemoveAllChildren() {
 "	      004a5cde    push ebx"
 "	      004a5cdf    push esi"
 "	      004a5ce0    push edi"
-"	      004a5ce1    mov [ebp-28h],ecx"
+"	      004a5ce1    mov this,ecx"
 );
 // LINE 936:
 	asm( 
-"	      004a5ce4    mov eax,[ebp-28h]"
+"	      004a5ce4    mov eax,this"
 "	      004a5ce7    mov eax,[eax+30h]"
 "	      004a5cea    mov eax,[eax]"
 "	      004a5cec    mov [ebp-20h],eax"
 "	      004a5cef    mov eax,[ebp-20h]"
-"	      004a5cf2    mov [ebp-4],eax"
+"	      004a5cf2    mov i.node,eax"
 "	      004a5cf5    jmp near ptr 004A5CFAh"
 "	      004a5cfa    jmp near ptr 004A5CFFh"
 );
 // LINE 938:
 	asm( 
-"	      004a5cff    mov eax,[ebp-28h]"
+"	      004a5cff    mov eax,this"
 "	      004a5d02    mov eax,[eax+30h]"
 "	      004a5d05    mov [ebp-10h],eax"
 "	      004a5d08    mov eax,[ebp-10h]"
 "	      004a5d0b    mov [ebp-8],eax"
 "	      004a5d0e    jmp near ptr 004A5D13h"
 "	      004a5d13    jmp near ptr 004A5D18h"
-"	      004a5d18    mov eax,[ebp-4]"
+"	      004a5d18    mov eax,i.node"
 "	      004a5d1b    cmp [ebp-8],eax"
 "	      004a5d1e    jne near ptr 004A5D2Eh"
 "	      004a5d24    jmp near ptr 004A5D42h"
@@ -6483,11 +6483,11 @@ void  GraphicWindow::RemoveAllChildren() {
 );
 // LINE 939:
 	asm( 
-"	      004a5d56    mov eax,[ebp-4]"
+"	      004a5d56    mov eax,i.node"
 "	      004a5d59    mov [ebp-14h],eax"
-"	      004a5d5c    mov eax,[ebp-4]"
+"	      004a5d5c    mov eax,i.node"
 "	      004a5d5f    mov eax,[eax]"
-"	      004a5d61    mov [ebp-4],eax"
+"	      004a5d61    mov i.node,eax"
 "	      004a5d64    jmp near ptr 004A5D69h"
 "	      004a5d69    mov eax,[ebp-14h]"
 "	      004a5d6c    mov [ebp-0Ch],eax"
@@ -6512,7 +6512,7 @@ void  GraphicWindow::RemoveAllChildren() {
 "	      004a5da9    mov eax,[ebp-24h]"
 "	      004a5dac    mov ds:[59A97Ch],eax"
 "	      004a5db1    jmp near ptr 004A5DB6h"
-"	      004a5db6    mov eax,[ebp-28h]"
+"	      004a5db6    mov eax,this"
 "	      004a5db9    add dword ptr [eax+34h],0FFFFFFFFh"
 "	      004a5dbd    jmp near ptr 004A5DC2h"
 "	      004a5dc2    jmp near ptr 004A5CFFh"
@@ -6540,29 +6540,29 @@ class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
 "	      004a5dd7    push ebx"
 "	      004a5dd8    push esi"
 "	      004a5dd9    push edi"
-"	      004a5dda    mov [ebp-24h],ecx"
+"	      004a5dda    mov this,ecx"
 );
 // LINE 951:
 	asm( 
-"	      004a5ddd    mov eax,[ebp-24h]"
+"	      004a5ddd    mov eax,this"
 "	      004a5de0    mov eax,[eax+30h]"
 "	      004a5de3    mov eax,[eax]"
 "	      004a5de5    mov [ebp-1Ch],eax"
 "	      004a5de8    mov eax,[ebp-1Ch]"
-"	      004a5deb    mov [ebp-4],eax"
+"	      004a5deb    mov i.node,eax"
 "	      004a5dee    jmp near ptr 004A5DF3h"
 "	      004a5df3    jmp near ptr 004A5DF8h"
 );
 // LINE 953:
 	asm( 
-"	      004a5df8    mov eax,[ebp-24h]"
+"	      004a5df8    mov eax,this"
 "	      004a5dfb    mov eax,[eax+30h]"
 "	      004a5dfe    mov [ebp-10h],eax"
 "	      004a5e01    mov eax,[ebp-10h]"
 "	      004a5e04    mov [ebp-8],eax"
 "	      004a5e07    jmp near ptr 004A5E0Ch"
 "	      004a5e0c    jmp near ptr 004A5E11h"
-"	      004a5e11    mov eax,[ebp-4]"
+"	      004a5e11    mov eax,i.node"
 "	      004a5e14    cmp [ebp-8],eax"
 "	      004a5e17    jne near ptr 004A5E27h"
 "	      004a5e1d    jmp near ptr 004A5E3Bh"
@@ -6579,26 +6579,26 @@ class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
 // LINE 954:
 	asm( 
 "	      004a5e4f    jmp near ptr 004A5E54h"
-"	      004a5e54    mov eax,[ebp-4]"
+"	      004a5e54    mov eax,i.node"
 "	      004a5e57    mov eax,[eax+8]"
-"	      004a5e5a    mov ecx,[ebp+8]"
+"	      004a5e5a    mov ecx,lChildID"
 "	      004a5e5d    cmp [eax+4],ecx"
 "	      004a5e60    jne near ptr 004A5E76h"
 );
 // LINE 955:
 	asm( 
 "	      004a5e66    jmp near ptr 004A5E6Bh"
-"	      004a5e6b    mov eax,[ebp-4]"
+"	      004a5e6b    mov eax,i.node"
 "	      004a5e6e    mov eax,[eax+8]"
 "	      004a5e71    jmp near ptr 004A5EA0h"
 );
 // LINE 956:
 	asm( 
-"	      004a5e76    mov eax,[ebp-4]"
+"	      004a5e76    mov eax,i.node"
 "	      004a5e79    mov [ebp-20h],eax"
-"	      004a5e7c    mov eax,[ebp-4]"
+"	      004a5e7c    mov eax,i.node"
 "	      004a5e7f    mov eax,[eax]"
-"	      004a5e81    mov [ebp-4],eax"
+"	      004a5e81    mov i.node,eax"
 "	      004a5e84    jmp near ptr 004A5E89h"
 "	      004a5e89    mov eax,[ebp-20h]"
 "	      004a5e8c    mov [ebp-0Ch],eax"
@@ -6642,7 +6642,7 @@ class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 "	      004a5eb5    mov eax,[eax]"
 "	      004a5eb7    mov [ebp-1Ch],eax"
 "	      004a5eba    mov eax,[ebp-1Ch]"
-"	      004a5ebd    mov [ebp-4],eax"
+"	      004a5ebd    mov i.node,eax"
 "	      004a5ec0    jmp near ptr 004A5EC5h"
 "	      004a5ec5    jmp near ptr 004A5ECAh"
 );
@@ -6654,7 +6654,7 @@ class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 "	      004a5ed5    mov [ebp-8],eax"
 "	      004a5ed8    jmp near ptr 004A5EDDh"
 "	      004a5edd    jmp near ptr 004A5EE2h"
-"	      004a5ee2    mov eax,[ebp-4]"
+"	      004a5ee2    mov eax,i.node"
 "	      004a5ee5    cmp [ebp-8],eax"
 "	      004a5ee8    jne near ptr 004A5EF8h"
 "	      004a5eee    jmp near ptr 004A5F0Ch"
@@ -6671,26 +6671,26 @@ class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 // LINE 972:
 	asm( 
 "	      004a5f20    jmp near ptr 004A5F25h"
-"	      004a5f25    mov eax,[ebp-4]"
+"	      004a5f25    mov eax,i.node"
 "	      004a5f28    mov eax,[eax+8]"
-"	      004a5f2b    mov ecx,[ebp+8]"
+"	      004a5f2b    mov ecx,lID"
 "	      004a5f2e    cmp [eax+4],ecx"
 "	      004a5f31    jne near ptr 004A5F47h"
 );
 // LINE 973:
 	asm( 
 "	      004a5f37    jmp near ptr 004A5F3Ch"
-"	      004a5f3c    mov eax,[ebp-4]"
+"	      004a5f3c    mov eax,i.node"
 "	      004a5f3f    mov eax,[eax+8]"
 "	      004a5f42    jmp near ptr 004A5F71h"
 );
 // LINE 974:
 	asm( 
-"	      004a5f47    mov eax,[ebp-4]"
+"	      004a5f47    mov eax,i.node"
 "	      004a5f4a    mov [ebp-20h],eax"
-"	      004a5f4d    mov eax,[ebp-4]"
+"	      004a5f4d    mov eax,i.node"
 "	      004a5f50    mov eax,[eax]"
-"	      004a5f52    mov [ebp-4],eax"
+"	      004a5f52    mov i.node,eax"
 "	      004a5f55    jmp near ptr 004A5F5Ah"
 "	      004a5f5a    mov eax,[ebp-20h]"
 "	      004a5f5d    mov [ebp-0Ch],eax"
@@ -6734,7 +6734,7 @@ int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
 "	      004a5f84    mov eax,[eax]"
 "	      004a5f86    mov [ebp-1Ch],eax"
 "	      004a5f89    mov eax,[ebp-1Ch]"
-"	      004a5f8c    mov [ebp-4],eax"
+"	      004a5f8c    mov i.node,eax"
 "	      004a5f8f    jmp near ptr 004A5F94h"
 "	      004a5f94    jmp near ptr 004A5F99h"
 );
@@ -6747,7 +6747,7 @@ int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
 "	      004a5fa7    jmp near ptr 004A5FACh"
 "	      004a5fac    jmp near ptr 004A5FB1h"
 "	      004a5fb1    mov eax,[ebp-8]"
-"	      004a5fb4    cmp [ebp-4],eax"
+"	      004a5fb4    cmp i.node,eax"
 "	      004a5fb7    jne near ptr 004A5FC7h"
 "	      004a5fbd    jmp near ptr 004A5FDBh"
 "	      004a5fc2    jmp near ptr 004A5FC7h"
@@ -6763,8 +6763,8 @@ int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
 // LINE 987:
 	asm( 
 "	      004a5fef    jmp near ptr 004A5FF4h"
-"	      004a5ff4    mov eax,[ebp-4]"
-"	      004a5ff7    mov ecx,[ebp+8]"
+"	      004a5ff4    mov eax,i.node"
+"	      004a5ff7    mov ecx,windowToFind"
 "	      004a5ffa    cmp [eax+8],ecx"
 "	      004a5ffd    jne near ptr 004A600Dh"
 );
@@ -6775,11 +6775,11 @@ int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
 );
 // LINE 989:
 	asm( 
-"	      004a600d    mov eax,[ebp-4]"
+"	      004a600d    mov eax,i.node"
 "	      004a6010    mov [ebp-20h],eax"
-"	      004a6013    mov eax,[ebp-4]"
+"	      004a6013    mov eax,i.node"
 "	      004a6016    mov eax,[eax]"
-"	      004a6018    mov [ebp-4],eax"
+"	      004a6018    mov i.node,eax"
 "	      004a601b    jmp near ptr 004A6020h"
 "	      004a6020    mov eax,[ebp-20h]"
 "	      004a6023    mov [ebp-0Ch],eax"
@@ -6814,11 +6814,11 @@ int  GraphicWindow::DeleteSelf() {
 "	      004a6042    push ebx"
 "	      004a6043    push esi"
 "	      004a6044    push edi"
-"	      004a6045    mov [ebp-4],ecx"
+"	      004a6045    mov this,ecx"
 );
 // LINE 1000:
 	asm( 
-"	      004a6048    mov eax,[ebp-4]"
+"	      004a6048    mov eax,this"
 "	      004a604b    push eax"
 "	      004a604c    mov eax,ds:[59A964h]"
 "	      004a6051    mov eax,[eax]"
@@ -6850,20 +6850,20 @@ void  GraphicWindow::RemoveSelf() {
 "	      004a6071    push ebx"
 "	      004a6072    push esi"
 "	      004a6073    push edi"
-"	      004a6074    mov [ebp-4],ecx"
+"	      004a6074    mov this,ecx"
 );
 // LINE 1011:
 	asm( 
-"	      004a6077    mov eax,[ebp-4]"
+"	      004a6077    mov eax,this"
 "	      004a607a    cmp dword ptr [eax+3Ch],0"
 "	      004a607e    je near ptr 004A6099h"
 );
 // LINE 1012:
 	asm( 
-"	      004a6084    mov eax,[ebp-4]"
+"	      004a6084    mov eax,this"
 "	      004a6087    push eax"
-"	      004a6088    mov eax,[ebp-4]"
-"	      004a608b    mov ecx,[ebp-4]"
+"	      004a6088    mov eax,this"
+"	      004a608b    mov ecx,this"
 "	      004a608e    mov ecx,[ecx+3Ch]"
 "	      004a6091    mov edx,[ecx]"
 "	      004a6093    mov ecx,[eax+3Ch]"
@@ -6890,11 +6890,11 @@ int  GraphicWindow::ComposeSelf() {
 "	      004a60a9    push ebx"
 "	      004a60aa    push esi"
 "	      004a60ab    push edi"
-"	      004a60ac    mov [ebp-4],ecx"
+"	      004a60ac    mov this,ecx"
 );
 // LINE 1028:
 	asm( 
-"	      004a60af    mov eax,[ebp-4]"
+"	      004a60af    mov eax,this"
 "	      004a60b2    cmp dword ptr [eax+54h],0"
 "	      004a60b6    jne near ptr 004A60C3h"
 );
@@ -6905,9 +6905,9 @@ int  GraphicWindow::ComposeSelf() {
 );
 // LINE 1032:
 	asm( 
-"	      004a60c3    mov eax,[ebp-4]"
+"	      004a60c3    mov eax,this"
 "	      004a60c6    mov eax,[eax]"
-"	      004a60c8    mov ecx,[ebp-4]"
+"	      004a60c8    mov ecx,this"
 "	      004a60cb    call dword ptr [eax+0C0h]"
 "	      004a60d1    test eax,eax"
 "	      004a60d3    je near ptr 004A6104h"
@@ -6916,28 +6916,28 @@ int  GraphicWindow::ComposeSelf() {
 	asm( 
 "	      004a60d9    push 1"
 "	      004a60db    push 0"
-"	      004a60dd    mov eax,[ebp-4]"
+"	      004a60dd    mov eax,this"
 "	      004a60e0    mov eax,[eax]"
-"	      004a60e2    mov ecx,[ebp-4]"
+"	      004a60e2    mov ecx,this"
 "	      004a60e5    call dword ptr [eax+30h]"
 );
 // LINE 1034:
 	asm( 
-"	      004a60e8    mov eax,[ebp-4]"
+"	      004a60e8    mov eax,this"
 "	      004a60eb    mov eax,[eax]"
-"	      004a60ed    mov ecx,[ebp-4]"
+"	      004a60ed    mov ecx,this"
 "	      004a60f0    call dword ptr [eax+0BCh]"
 );
 // LINE 1035:
 	asm( 
-"	      004a60f6    mov eax,[ebp-4]"
+"	      004a60f6    mov eax,this"
 "	      004a60f9    mov eax,[eax]"
-"	      004a60fb    mov ecx,[ebp-4]"
+"	      004a60fb    mov ecx,this"
 "	      004a60fe    call dword ptr [eax+0B8h]"
 );
 // LINE 1037:
 	asm( 
-"	      004a6104    mov eax,[ebp-4]"
+"	      004a6104    mov eax,this"
 "	      004a6107    cmp dword ptr [eax+40h],0"
 "	      004a610b    je near ptr 004A6159h"
 );
@@ -6945,27 +6945,27 @@ int  GraphicWindow::ComposeSelf() {
 	asm( 
 "	      004a6111    jmp near ptr 004A6116h"
 "	      004a6116    jmp near ptr 004A611Bh"
-"	      004a611b    mov eax,[ebp-4]"
+"	      004a611b    mov eax,this"
 "	      004a611e    mov eax,[eax+40h]"
 "	      004a6121    mov eax,[eax+0Ch]"
 "	      004a6124    push eax"
-"	      004a6125    mov eax,[ebp-4]"
+"	      004a6125    mov eax,this"
 "	      004a6128    mov eax,[eax+40h]"
 "	      004a612b    mov eax,[eax+8]"
 "	      004a612e    push eax"
 "	      004a612f    push 0"
 "	      004a6131    push 0"
-"	      004a6133    mov eax,[ebp-4]"
+"	      004a6133    mov eax,this"
 "	      004a6136    mov eax,[eax+24h]"
 "	      004a6139    push eax"
-"	      004a613a    mov eax,[ebp-4]"
+"	      004a613a    mov eax,this"
 "	      004a613d    mov eax,[eax+20h]"
 "	      004a6140    push eax"
-"	      004a6141    mov eax,[ebp-4]"
+"	      004a6141    mov eax,this"
 "	      004a6144    mov eax,[eax+44h]"
 "	      004a6147    push eax"
-"	      004a6148    mov eax,[ebp-4]"
-"	      004a614b    mov ecx,[ebp-4]"
+"	      004a6148    mov eax,this"
+"	      004a614b    mov ecx,this"
 "	      004a614e    mov ecx,[ecx+40h]"
 "	      004a6151    mov edx,[ecx]"
 "	      004a6153    mov ecx,[eax+40h]"
@@ -6996,7 +6996,7 @@ int  GraphicWindow::DrawSelf() {
 "	      004a616e    push ebx"
 "	      004a616f    push esi"
 "	      004a6170    push edi"
-"	      004a6171    mov [ebp-4],ecx"
+"	      004a6171    mov this,ecx"
 );
 // LINE 1060:
 	asm( 
@@ -7026,11 +7026,11 @@ void  GraphicWindow::DrawChildren() {
 "	      004a6186    push ebx"
 "	      004a6187    push esi"
 "	      004a6188    push edi"
-"	      004a6189    mov [ebp-28h],ecx"
+"	      004a6189    mov this,ecx"
 );
 // LINE 1078:
 	asm( 
-"	      004a618c    mov eax,[ebp-28h]"
+"	      004a618c    mov eax,this"
 "	      004a618f    cmp dword ptr [eax+54h],0"
 "	      004a6193    jne near ptr 004A619Eh"
 );
@@ -7040,18 +7040,18 @@ void  GraphicWindow::DrawChildren() {
 );
 // LINE 1081:
 	asm( 
-"	      004a619e    mov eax,[ebp-28h]"
+"	      004a619e    mov eax,this"
 "	      004a61a1    mov eax,[eax+30h]"
 "	      004a61a4    mov eax,[eax]"
 "	      004a61a6    mov [ebp-20h],eax"
 "	      004a61a9    mov eax,[ebp-20h]"
-"	      004a61ac    mov [ebp-8],eax"
+"	      004a61ac    mov i.node,eax"
 "	      004a61af    jmp near ptr 004A61B4h"
 "	      004a61b4    jmp near ptr 004A61B9h"
 );
 // LINE 1082:
 	asm( 
-"	      004a61b9    mov eax,[ebp-28h]"
+"	      004a61b9    mov eax,this"
 "	      004a61bc    mov eax,[eax+30h]"
 "	      004a61bf    mov [ebp-14h],eax"
 "	      004a61c2    mov eax,[ebp-14h]"
@@ -7059,7 +7059,7 @@ void  GraphicWindow::DrawChildren() {
 "	      004a61c8    jmp near ptr 004A61CDh"
 "	      004a61cd    jmp near ptr 004A61D2h"
 "	      004a61d2    mov eax,[ebp-0Ch]"
-"	      004a61d5    cmp [ebp-8],eax"
+"	      004a61d5    cmp i.node,eax"
 "	      004a61d8    jne near ptr 004A61E8h"
 "	      004a61de    jmp near ptr 004A61FCh"
 "	      004a61e3    jmp near ptr 004A61E8h"
@@ -7075,17 +7075,17 @@ void  GraphicWindow::DrawChildren() {
 // LINE 1088:
 	asm( 
 "	      004a6210    jmp near ptr 004A6215h"
-"	      004a6215    mov eax,[ebp-8]"
+"	      004a6215    mov eax,i.node"
 "	      004a6218    mov eax,[eax+8]"
-"	      004a621b    mov [ebp-4],eax"
+"	      004a621b    mov gwCurrentChild,eax"
 );
 // LINE 1089:
 	asm( 
-"	      004a621e    mov eax,[ebp-8]"
+"	      004a621e    mov eax,i.node"
 "	      004a6221    mov [ebp-24h],eax"
-"	      004a6224    mov eax,[ebp-8]"
+"	      004a6224    mov eax,i.node"
 "	      004a6227    mov eax,[eax]"
-"	      004a6229    mov [ebp-8],eax"
+"	      004a6229    mov i.node,eax"
 "	      004a622c    jmp near ptr 004A6231h"
 "	      004a6231    mov eax,[ebp-24h]"
 "	      004a6234    mov [ebp-10h],eax"
@@ -7093,9 +7093,9 @@ void  GraphicWindow::DrawChildren() {
 );
 // LINE 1090:
 	asm( 
-"	      004a623c    mov eax,[ebp-4]"
+"	      004a623c    mov eax,gwCurrentChild"
 "	      004a623f    mov eax,[eax]"
-"	      004a6241    mov ecx,[ebp-4]"
+"	      004a6241    mov ecx,gwCurrentChild"
 "	      004a6244    call dword ptr [eax+18h]"
 );
 // LINE 1091:
@@ -7126,29 +7126,29 @@ void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator
 "	      004a625c    push ebx"
 "	      004a625d    push esi"
 "	      004a625e    push edi"
-"	      004a625f    mov [ebp-28h],ecx"
+"	      004a625f    mov this,ecx"
 );
 // LINE 1117:
 	asm( 
 "	      004a6262    jmp near ptr 004A6267h"
-"	      004a6267    mov eax,[ebp+8]"
+"	      004a6267    mov eax,windowChildListItem.node"
 "	      004a626a    mov eax,[eax+8]"
-"	      004a626d    mov [ebp-4],eax"
+"	      004a626d    mov windowCurrentChild,eax"
 );
 // LINE 1119:
 	asm( 
-"	      004a6270    add dword ptr [ebp-8],74h"
+"	      004a6270    add windowNextChild,74h"
 );
 // LINE 1120:
 	asm( 
-"	      004a6274    mov eax,[ebp-28h]"
+"	      004a6274    mov eax,this"
 "	      004a6277    mov eax,[eax+30h]"
 "	      004a627a    mov [ebp-14h],eax"
 "	      004a627d    mov eax,[ebp-14h]"
 "	      004a6280    mov [ebp-0Ch],eax"
 "	      004a6283    jmp near ptr 004A6288h"
 "	      004a6288    jmp near ptr 004A628Dh"
-"	      004a628d    mov eax,[ebp+8]"
+"	      004a628d    mov eax,windowChildListItem.node"
 "	      004a6290    cmp [ebp-0Ch],eax"
 "	      004a6293    jne near ptr 004A62A3h"
 "	      004a6299    jmp near ptr 004A62B7h"
@@ -7165,36 +7165,36 @@ void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator
 // LINE 1121:
 	asm( 
 "	      004a62cb    jmp near ptr 004A62D0h"
-"	      004a62d0    mov eax,[ebp+8]"
+"	      004a62d0    mov eax,windowChildListItem.node"
 "	      004a62d3    mov eax,[eax+8]"
-"	      004a62d6    mov [ebp-8],eax"
+"	      004a62d6    mov windowNextChild,eax"
 );
 // LINE 1122:
 	asm( 
-"	      004a62d9    mov eax,[ebp-8]"
+"	      004a62d9    mov eax,windowNextChild"
 "	      004a62dc    cmp dword ptr [eax+4Ch],0"
 "	      004a62e0    jne near ptr 004A636Ah"
 );
 // LINE 1123:
 	asm( 
 "	      004a62e6    jmp near ptr 004A62EBh"
-"	      004a62eb    mov eax,[ebp-8]"
-"	      004a62ee    mov ecx,[ebp-4]"
+"	      004a62eb    mov eax,windowNextChild"
+"	      004a62ee    mov ecx,windowCurrentChild"
 "	      004a62f1    mov ecx,[ecx+10h]"
 "	      004a62f4    cmp [eax+18h],ecx"
 "	      004a62f7    jl near ptr 004A6338h"
-"	      004a62fd    mov eax,[ebp-4]"
-"	      004a6300    mov ecx,[ebp-8]"
+"	      004a62fd    mov eax,windowCurrentChild"
+"	      004a6300    mov ecx,windowNextChild"
 "	      004a6303    mov ecx,[ecx+10h]"
 "	      004a6306    cmp [eax+18h],ecx"
 "	      004a6309    jl near ptr 004A6338h"
-"	      004a630f    mov eax,[ebp-4]"
-"	      004a6312    mov ecx,[ebp-8]"
+"	      004a630f    mov eax,windowCurrentChild"
+"	      004a6312    mov ecx,windowNextChild"
 "	      004a6315    mov ecx,[ecx+1Ch]"
 "	      004a6318    cmp [eax+14h],ecx"
 "	      004a631b    jg near ptr 004A6338h"
-"	      004a6321    mov eax,[ebp-8]"
-"	      004a6324    mov ecx,[ebp-4]"
+"	      004a6321    mov eax,windowNextChild"
+"	      004a6324    mov ecx,windowCurrentChild"
 "	      004a6327    mov ecx,[ecx+1Ch]"
 "	      004a632a    cmp [eax+14h],ecx"
 "	      004a632d    jl near ptr 004A6338h"
@@ -7208,27 +7208,27 @@ void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator
 	asm( 
 "	      004a634c    push 1"
 "	      004a634e    push 1"
-"	      004a6350    mov eax,[ebp-8]"
+"	      004a6350    mov eax,windowNextChild"
 "	      004a6353    mov eax,[eax]"
-"	      004a6355    mov ecx,[ebp-8]"
+"	      004a6355    mov ecx,windowNextChild"
 "	      004a6358    call dword ptr [eax+30h]"
 );
 // LINE 1125:
 	asm( 
-"	      004a635b    mov eax,[ebp+8]"
+"	      004a635b    mov eax,windowChildListItem.node"
 "	      004a635e    push eax"
-"	      004a635f    mov eax,[ebp-28h]"
+"	      004a635f    mov eax,this"
 "	      004a6362    mov eax,[eax]"
-"	      004a6364    mov ecx,[ebp-28h]"
+"	      004a6364    mov ecx,this"
 "	      004a6367    call dword ptr [eax+4Ch]"
 );
 // LINE 1128:
 	asm( 
-"	      004a636a    mov eax,[ebp+8]"
+"	      004a636a    mov eax,windowChildListItem.node"
 "	      004a636d    mov [ebp-20h],eax"
-"	      004a6370    mov eax,[ebp+8]"
+"	      004a6370    mov eax,windowChildListItem.node"
 "	      004a6373    mov eax,[eax]"
-"	      004a6375    mov [ebp+8],eax"
+"	      004a6375    mov windowChildListItem.node,eax"
 "	      004a6378    jmp near ptr 004A637Dh"
 "	      004a637d    mov eax,[ebp-20h]"
 "	      004a6380    mov [ebp-10h],eax"
@@ -7261,29 +7261,29 @@ void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 "	      004a639f    push ebx"
 "	      004a63a0    push esi"
 "	      004a63a1    push edi"
-"	      004a63a2    mov [ebp-2Ch],ecx"
+"	      004a63a2    mov this,ecx"
 );
 // LINE 1137:
 	asm( 
-"	      004a63a5    mov eax,[ebp-2Ch]"
+"	      004a63a5    mov eax,this"
 "	      004a63a8    mov eax,[eax+30h]"
 "	      004a63ab    mov eax,[eax]"
 "	      004a63ad    mov [ebp-24h],eax"
 "	      004a63b0    mov eax,[ebp-24h]"
-"	      004a63b3    mov [ebp-4],eax"
+"	      004a63b3    mov i.node,eax"
 "	      004a63b6    jmp near ptr 004A63BBh"
 "	      004a63bb    jmp near ptr 004A63C0h"
 );
 // LINE 1138:
 	asm( 
-"	      004a63c0    mov eax,[ebp-2Ch]"
+"	      004a63c0    mov eax,this"
 "	      004a63c3    mov eax,[eax+30h]"
 "	      004a63c6    mov [ebp-18h],eax"
 "	      004a63c9    mov eax,[ebp-18h]"
 "	      004a63cc    mov [ebp-8],eax"
 "	      004a63cf    jmp near ptr 004A63D4h"
 "	      004a63d4    jmp near ptr 004A63D9h"
-"	      004a63d9    mov eax,[ebp-4]"
+"	      004a63d9    mov eax,i.node"
 "	      004a63dc    cmp [ebp-8],eax"
 "	      004a63df    jne near ptr 004A63EFh"
 "	      004a63e5    jmp near ptr 004A6403h"
@@ -7300,13 +7300,13 @@ void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 // LINE 1139:
 	asm( 
 "	      004a6417    jmp near ptr 004A641Ch"
-"	      004a641c    mov eax,[ebp-4]"
+"	      004a641c    mov eax,i.node"
 "	      004a641f    mov eax,[eax+8]"
 "	      004a6422    mov [ebp-10h],eax"
 "	      004a6425    mov eax,[ebp-10h]"
 "	      004a6428    mov eax,[eax]"
 "	      004a642a    mov [ebp-14h],eax"
-"	      004a642d    mov eax,[ebp+8]"
+"	      004a642d    mov eax,bRecursive"
 "	      004a6430    push eax"
 "	      004a6431    push 1"
 "	      004a6433    mov eax,[ebp-14h]"
@@ -7315,11 +7315,11 @@ void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 );
 // LINE 1140:
 	asm( 
-"	      004a643c    mov eax,[ebp-4]"
+"	      004a643c    mov eax,i.node"
 "	      004a643f    mov [ebp-28h],eax"
-"	      004a6442    mov eax,[ebp-4]"
+"	      004a6442    mov eax,i.node"
 "	      004a6445    mov eax,[eax]"
-"	      004a6447    mov [ebp-4],eax"
+"	      004a6447    mov i.node,eax"
 "	      004a644a    jmp near ptr 004A644Fh"
 "	      004a644f    mov eax,[ebp-28h]"
 "	      004a6452    mov [ebp-0Ch],eax"
@@ -7352,12 +7352,12 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 "	      004a6471    push ebx"
 "	      004a6472    push esi"
 "	      004a6473    push edi"
-"	      004a6474    mov [ebp-2Ch],ecx"
+"	      004a6474    mov this,ecx"
 );
 // LINE 1163:
 	asm( 
 "	      004a6477    jmp near ptr 004A647Ch"
-"	      004a647c    mov eax,[ebp-2Ch]"
+"	      004a647c    mov eax,this"
 "	      004a647f    cmp dword ptr [eax+48h],0"
 "	      004a6483    je near ptr 004A6493h"
 );
@@ -7368,18 +7368,18 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 );
 // LINE 1168:
 	asm( 
-"	      004a6493    mov eax,[ebp-2Ch]"
+"	      004a6493    mov eax,this"
 "	      004a6496    mov eax,[eax+30h]"
 "	      004a6499    mov eax,[eax]"
 "	      004a649b    mov [ebp-24h],eax"
 "	      004a649e    mov eax,[ebp-24h]"
-"	      004a64a1    mov [ebp-4],eax"
+"	      004a64a1    mov i.node,eax"
 "	      004a64a4    jmp near ptr 004A64A9h"
 "	      004a64a9    jmp near ptr 004A64AEh"
 );
 // LINE 1169:
 	asm( 
-"	      004a64ae    mov eax,[ebp-2Ch]"
+"	      004a64ae    mov eax,this"
 "	      004a64b1    mov eax,[eax+30h]"
 "	      004a64b4    mov [ebp-18h],eax"
 "	      004a64b7    mov eax,[ebp-18h]"
@@ -7387,7 +7387,7 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 "	      004a64bd    jmp near ptr 004A64C2h"
 "	      004a64c2    jmp near ptr 004A64C7h"
 "	      004a64c7    mov eax,[ebp-8]"
-"	      004a64ca    cmp [ebp-4],eax"
+"	      004a64ca    cmp i.node,eax"
 "	      004a64cd    jne near ptr 004A64DDh"
 "	      004a64d3    jmp near ptr 004A64F1h"
 "	      004a64d8    jmp near ptr 004A64DDh"
@@ -7403,7 +7403,7 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 // LINE 1170:
 	asm( 
 "	      004a6505    jmp near ptr 004A650Ah"
-"	      004a650a    mov eax,[ebp-4]"
+"	      004a650a    mov eax,i.node"
 "	      004a650d    mov eax,[eax+8]"
 "	      004a6510    mov [ebp-10h],eax"
 "	      004a6513    mov eax,[ebp-10h]"
@@ -7422,11 +7422,11 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 );
 // LINE 1172:
 	asm( 
-"	      004a6539    mov eax,[ebp-4]"
+"	      004a6539    mov eax,i.node"
 "	      004a653c    mov [ebp-28h],eax"
-"	      004a653f    mov eax,[ebp-4]"
+"	      004a653f    mov eax,i.node"
 "	      004a6542    mov eax,[eax]"
-"	      004a6544    mov [ebp-4],eax"
+"	      004a6544    mov i.node,eax"
 "	      004a6547    jmp near ptr 004A654Ch"
 "	      004a654c    mov eax,[ebp-28h]"
 "	      004a654f    mov [ebp-0Ch],eax"
@@ -7461,7 +7461,7 @@ long  GraphicWindow::DoCharacter(long lCharacter) {
 "	      004a656e    push ebx"
 "	      004a656f    push esi"
 "	      004a6570    push edi"
-"	      004a6571    mov [ebp-4],ecx"
+"	      004a6571    mov this,ecx"
 );
 // LINE 1187:
 	asm( 
@@ -7488,7 +7488,7 @@ long  GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      004a6588    push ebx"
 "	      004a6589    push esi"
 "	      004a658a    push edi"
-"	      004a658b    mov [ebp-4],ecx"
+"	      004a658b    mov this,ecx"
 );
 // LINE 1200:
 	asm( 
@@ -7515,7 +7515,7 @@ long  GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
 "	      004a65a2    push ebx"
 "	      004a65a3    push esi"
 "	      004a65a4    push edi"
-"	      004a65a5    mov [ebp-4],ecx"
+"	      004a65a5    mov this,ecx"
 );
 // LINE 1214:
 	asm( 
@@ -7542,7 +7542,7 @@ long  GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 "	      004a65bc    push ebx"
 "	      004a65bd    push esi"
 "	      004a65be    push edi"
-"	      004a65bf    mov [ebp-4],ecx"
+"	      004a65bf    mov this,ecx"
 );
 // LINE 1231:
 	asm( 
@@ -7569,7 +7569,7 @@ long  GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBut
 "	      004a65d6    push ebx"
 "	      004a65d7    push esi"
 "	      004a65d8    push edi"
-"	      004a65d9    mov [ebp-4],ecx"
+"	      004a65d9    mov this,ecx"
 );
 // LINE 1244:
 	asm( 
@@ -7596,7 +7596,7 @@ long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 "	      004a65f3    push ebx"
 "	      004a65f4    push esi"
 "	      004a65f5    push edi"
-"	      004a65f6    mov [ebp-4],ecx"
+"	      004a65f6    mov this,ecx"
 );
 // LINE 1257:
 	asm( 
@@ -7623,7 +7623,7 @@ int  GraphicWindow::CaptureCursorStart(class GraphicWindow* windowCapture) {
 "	      004a660d    push ebx"
 "	      004a660e    push esi"
 "	      004a660f    push edi"
-"	      004a6610    mov [ebp-4],ecx"
+"	      004a6610    mov this,ecx"
 );
 // LINE 1270:
 	asm( 
@@ -7637,7 +7637,7 @@ int  GraphicWindow::CaptureCursorStart(class GraphicWindow* windowCapture) {
 );
 // LINE 1272:
 	asm( 
-"	      004a6627    mov eax,[ebp+8]"
+"	      004a6627    mov eax,windowCapture"
 "	      004a662a    mov ds:[59A960h],eax"
 );
 // LINE 1273:
@@ -7665,11 +7665,11 @@ int  GraphicWindow::CaptureCursorEnd(class GraphicWindow* windowCapture) {
 "	      004a6646    push ebx"
 "	      004a6647    push esi"
 "	      004a6648    push edi"
-"	      004a6649    mov [ebp-4],ecx"
+"	      004a6649    mov this,ecx"
 );
 // LINE 1282:
 	asm( 
-"	      004a664c    mov eax,[ebp+8]"
+"	      004a664c    mov eax,windowCapture"
 "	      004a664f    cmp ds:[59A960h],eax"
 "	      004a6655    je near ptr 004A6662h"
 );
@@ -7709,38 +7709,38 @@ void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPositio
 "	      004a6683    push ebx"
 "	      004a6684    push esi"
 "	      004a6685    push edi"
-"	      004a6686    mov [ebp-8],ecx"
+"	      004a6686    mov this,ecx"
 );
 // LINE 1299:
 	asm( 
-"	      004a6689    mov eax,[ebp-8]"
-"	      004a668c    mov [ebp-4],eax"
+"	      004a6689    mov eax,this"
+"	      004a668c    mov currentWindow,eax"
 );
 // LINE 1301:
 	asm( 
-"	      004a668f    mov eax,[ebp-4]"
+"	      004a668f    mov eax,currentWindow"
 "	      004a6692    cmp dword ptr [eax+3Ch],0"
 "	      004a6696    je near ptr 004A66C0h"
 );
 // LINE 1302:
 	asm( 
-"	      004a669c    mov eax,[ebp-4]"
+"	      004a669c    mov eax,currentWindow"
 "	      004a669f    mov eax,[eax+10h]"
-"	      004a66a2    mov ecx,[ebp+8]"
+"	      004a66a2    mov ecx,nXPosition"
 "	      004a66a5    add [ecx],eax"
 );
 // LINE 1303:
 	asm( 
-"	      004a66a7    mov eax,[ebp-4]"
+"	      004a66a7    mov eax,currentWindow"
 "	      004a66aa    mov eax,[eax+14h]"
-"	      004a66ad    mov ecx,[ebp+0Ch]"
+"	      004a66ad    mov ecx,nYPosition"
 "	      004a66b0    add [ecx],eax"
 );
 // LINE 1304:
 	asm( 
-"	      004a66b2    mov eax,[ebp-4]"
+"	      004a66b2    mov eax,currentWindow"
 "	      004a66b5    mov eax,[eax+3Ch]"
-"	      004a66b8    mov [ebp-4],eax"
+"	      004a66b8    mov currentWindow,eax"
 );
 // LINE 1305:
 	asm( 
@@ -7770,41 +7770,41 @@ void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPositio
 "	      004a66d2    push ebx"
 "	      004a66d3    push esi"
 "	      004a66d4    push edi"
-"	      004a66d5    mov [ebp-0Ch],ecx"
+"	      004a66d5    mov this,ecx"
 );
 // LINE 1320:
 	asm( 
-"	      004a66d8    mov dword ptr [ebp-4],0"
+"	      004a66d8    mov nXFactor,0"
 );
 // LINE 1321:
 	asm( 
-"	      004a66df    mov dword ptr [ebp-8],0"
+"	      004a66df    mov nYFactor,0"
 );
 // LINE 1324:
 	asm( 
-"	      004a66e6    lea eax,[ebp-8]"
+"	      004a66e6    lea eax,nYFactor"
 "	      004a66e9    push eax"
-"	      004a66ea    lea eax,[ebp-4]"
+"	      004a66ea    lea eax,nXFactor"
 "	      004a66ed    push eax"
-"	      004a66ee    mov eax,[ebp-0Ch]"
+"	      004a66ee    mov eax,this"
 "	      004a66f1    mov eax,[eax]"
-"	      004a66f3    mov ecx,[ebp-0Ch]"
+"	      004a66f3    mov ecx,this"
 "	      004a66f6    call dword ptr [eax+0A0h]"
 );
 // LINE 1325:
 	asm( 
 "	      004a66fc    xor eax,eax"
-"	      004a66fe    sub eax,[ebp-4]"
+"	      004a66fe    sub eax,nXFactor"
 "	      004a6701    neg eax"
-"	      004a6703    mov ecx,[ebp+8]"
+"	      004a6703    mov ecx,nXPosition"
 "	      004a6706    sub [ecx],eax"
 );
 // LINE 1326:
 	asm( 
 "	      004a6708    xor eax,eax"
-"	      004a670a    sub eax,[ebp-8]"
+"	      004a670a    sub eax,nYFactor"
 "	      004a670d    neg eax"
-"	      004a670f    mov ecx,[ebp+0Ch]"
+"	      004a670f    mov ecx,nYPosition"
 "	      004a6712    sub [ecx],eax"
 );
 // LINE 1327:
@@ -7828,11 +7828,11 @@ class CBackBuffer *  GraphicWindow::GetImage() {
 "	      004a6726    push ebx"
 "	      004a6727    push esi"
 "	      004a6728    push edi"
-"	      004a6729    mov [ebp-4],ecx"
+"	      004a6729    mov this,ecx"
 );
 // LINE 1341:
 	asm( 
-"	      004a672c    mov eax,[ebp-4]"
+"	      004a672c    mov eax,this"
 "	      004a672f    mov eax,[eax+40h]"
 "	      004a6732    jmp near ptr 004A6737h"
 );
@@ -7858,14 +7858,14 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6745    push ebx"
 "	      004a6746    push esi"
 "	      004a6747    push edi"
-"	      004a6748    mov [ebp-15Ch],ecx"
+"	      004a6748    mov this,ecx"
 );
 // LINE 1356:
 	asm( 
-"	      004a674e    mov eax,[ebp-15Ch]"
+"	      004a674e    mov eax,this"
 "	      004a6754    cmp dword ptr [eax+5Ch],0"
 "	      004a6758    je near ptr 004A6788h"
-"	      004a675e    mov eax,[ebp-15Ch]"
+"	      004a675e    mov eax,this"
 "	      004a6764    mov eax,[eax+5Ch]"
 "	      004a6767    mov [ebp-13Ch],eax"
 "	      004a676d    mov eax,[ebp-13Ch]"
@@ -7875,27 +7875,27 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6780    call 0056A740h"
 "	      004a6785    add esp,4"
 "	      004a6788    jmp near ptr 004A678Dh"
-"	      004a678d    mov eax,[ebp-15Ch]"
+"	      004a678d    mov eax,this"
 "	      004a6793    mov eax,[eax+60h]"
 "	      004a6796    mov eax,[eax+4]"
 "	      004a6799    inc eax"
 "	      004a679a    push eax"
 "	      004a679b    call 0056A600h"
 "	      004a67a0    add esp,4"
-"	      004a67a3    mov ecx,[ebp-15Ch]"
+"	      004a67a3    mov ecx,this"
 "	      004a67a9    mov [ecx+5Ch],eax"
 "	      004a67ac    jmp near ptr 004A67B1h"
-"	      004a67b1    mov eax,[ebp-15Ch]"
+"	      004a67b1    mov eax,this"
 "	      004a67b7    mov eax,[eax+60h]"
 "	      004a67ba    cmp dword ptr [eax+4],0"
 "	      004a67be    je near ptr 004A684Eh"
 "	      004a67c4    jmp near ptr 004A67C9h"
 "	      004a67c9    jmp near ptr 004A67CEh"
-"	      004a67ce    mov eax,[ebp-15Ch]"
+"	      004a67ce    mov eax,this"
 "	      004a67d4    mov eax,[eax+60h]"
 "	      004a67d7    cmp dword ptr [eax+4],0"
 "	      004a67db    je near ptr 004A67FCh"
-"	      004a67e1    mov eax,[ebp-15Ch]"
+"	      004a67e1    mov eax,this"
 "	      004a67e7    mov eax,[eax+60h]"
 "	      004a67ea    mov eax,[eax]"
 "	      004a67ec    mov [ebp-150h],eax"
@@ -7903,11 +7903,11 @@ void  GraphicWindow::GetImagePath() {
 "	      004a67f7    jmp near ptr 004A680Bh"
 "	      004a67fc    mov dword ptr [ebp-150h],0"
 "	      004a6806    jmp near ptr 004A680Bh"
-"	      004a680b    mov eax,[ebp-15Ch]"
+"	      004a680b    mov eax,this"
 "	      004a6811    mov eax,[eax+60h]"
 "	      004a6814    mov eax,[eax+4]"
 "	      004a6817    mov [ebp-154h],eax"
-"	      004a681d    mov eax,[ebp-15Ch]"
+"	      004a681d    mov eax,this"
 "	      004a6823    mov eax,[eax+5Ch]"
 "	      004a6826    mov [ebp-158h],eax"
 "	      004a682c    mov eax,[ebp-154h]"
@@ -7925,10 +7925,10 @@ void  GraphicWindow::GetImagePath() {
 "	      004a685f    lea eax,[ebp-140h]"
 "	      004a6865    mov [ebp-148h],eax"
 "	      004a686b    jmp near ptr 004A6870h"
-"	      004a6870    mov eax,[ebp-15Ch]"
+"	      004a6870    mov eax,this"
 "	      004a6876    mov eax,[eax+60h]"
 "	      004a6879    mov eax,[eax+4]"
-"	      004a687c    mov ecx,[ebp-15Ch]"
+"	      004a687c    mov ecx,this"
 "	      004a6882    add eax,[ecx+5Ch]"
 "	      004a6885    mov [ebp-14Ch],eax"
 "	      004a688b    mov eax,[ebp-148h]"
@@ -7937,9 +7937,9 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6899    mov [ecx],al"
 "	      004a689b    jmp near ptr 004A68A0h"
 "	      004a68a0    jmp near ptr 004A68A5h"
-"	      004a68a5    lea eax,[ebp-108h]"
+"	      004a68a5    lea eax,szFullImagePath[0]"
 "	      004a68ab    push eax"
-"	      004a68ac    mov eax,[ebp-15Ch]"
+"	      004a68ac    mov eax,this"
 "	      004a68b2    mov eax,[eax+5Ch]"
 "	      004a68b5    push eax"
 "	      004a68b6    push 0"
@@ -7950,7 +7950,7 @@ void  GraphicWindow::GetImagePath() {
 // LINE 1357:
 	asm( 
 "	      004a68c2    jmp near ptr 004A68C7h"
-"	      004a68c7    lea eax,[ebp-108h]"
+"	      004a68c7    lea eax,szFullImagePath[0]"
 "	      004a68cd    push eax"
 "	      004a68ce    call 0056ABE0h"
 "	      004a68d3    add esp,4"
@@ -7971,14 +7971,14 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6919    add esp,4"
 "	      004a691c    jmp near ptr 004A6921h"
 "	      004a6921    jmp near ptr 004A6926h"
-"	      004a6926    mov eax,[ebp-15Ch]"
+"	      004a6926    mov eax,this"
 "	      004a692c    mov eax,[eax+68h]"
 "	      004a692f    cmp dword ptr [eax+0Ch],1"
 "	      004a6933    ja near ptr 004A6963h"
 "	      004a6939    cmp dword ptr [ebp-138h],0"
 "	      004a6940    je near ptr 004A6B62h"
 "	      004a6946    jmp near ptr 004A694Bh"
-"	      004a694b    mov eax,[ebp-15Ch]"
+"	      004a694b    mov eax,this"
 "	      004a6951    mov eax,[eax+68h]"
 "	      004a6954    mov ecx,[ebp-138h]"
 "	      004a695a    cmp [eax+8],ecx"
@@ -8029,7 +8029,7 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6a27    mov [ebp-130h],eax"
 "	      004a6a2d    mov eax,[ebp-12Ch]"
 "	      004a6a33    push eax"
-"	      004a6a34    lea eax,[ebp-108h]"
+"	      004a6a34    lea eax,szFullImagePath[0]"
 "	      004a6a3a    push eax"
 "	      004a6a3b    mov eax,[ebp-130h]"
 "	      004a6a41    push eax"
@@ -8046,14 +8046,14 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6a78    mov [ebp-10Ch],eax"
 "	      004a6a7e    jmp near ptr 004A6A8Dh"
 "	      004a6a83    mov dword ptr [ebp-10Ch],0"
-"	      004a6a8d    mov eax,[ebp-15Ch]"
+"	      004a6a8d    mov eax,this"
 "	      004a6a93    mov eax,[eax+68h]"
 "	      004a6a96    dec dword ptr [eax+0Ch]"
-"	      004a6a99    mov eax,[ebp-15Ch]"
+"	      004a6a99    mov eax,this"
 "	      004a6a9f    mov eax,[eax+68h]"
 "	      004a6aa2    cmp dword ptr [eax+0Ch],0"
 "	      004a6aa6    jne near ptr 004A6B49h"
-"	      004a6aac    mov eax,[ebp-15Ch]"
+"	      004a6aac    mov eax,this"
 "	      004a6ab2    mov eax,[eax+68h]"
 "	      004a6ab5    mov [ebp-120h],eax"
 "	      004a6abb    mov eax,[ebp-120h]"
@@ -8086,19 +8086,19 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6b44    jmp near ptr 004A6B49h"
 "	      004a6b49    jmp near ptr 004A6B4Eh"
 "	      004a6b4e    mov eax,[ebp-10Ch]"
-"	      004a6b54    mov ecx,[ebp-15Ch]"
+"	      004a6b54    mov ecx,this"
 "	      004a6b5a    mov [ecx+68h],eax"
 "	      004a6b5d    jmp near ptr 004A6BA7h"
 "	      004a6b62    cmp dword ptr [ebp-138h],0"
 "	      004a6b69    je near ptr 004A6BA7h"
 "	      004a6b6f    jmp near ptr 004A6B74h"
-"	      004a6b74    mov eax,[ebp-15Ch]"
+"	      004a6b74    mov eax,this"
 "	      004a6b7a    mov eax,[eax+68h]"
 "	      004a6b7d    mov eax,[eax]"
 "	      004a6b7f    mov [ebp-114h],eax"
 "	      004a6b85    mov eax,[ebp-138h]"
 "	      004a6b8b    push eax"
-"	      004a6b8c    lea eax,[ebp-108h]"
+"	      004a6b8c    lea eax,szFullImagePath[0]"
 "	      004a6b92    push eax"
 "	      004a6b93    mov eax,[ebp-114h]"
 "	      004a6b99    push eax"
@@ -8106,7 +8106,7 @@ void  GraphicWindow::GetImagePath() {
 "	      004a6b9f    add esp,0Ch"
 "	      004a6ba2    jmp near ptr 004A6BA7h"
 "	      004a6ba7    mov eax,[ebp-138h]"
-"	      004a6bad    mov ecx,[ebp-15Ch]"
+"	      004a6bad    mov ecx,this"
 "	      004a6bb3    mov ecx,[ecx+68h]"
 "	      004a6bb6    mov [ecx+4],eax"
 "	      004a6bb9    jmp near ptr 004A6BBEh"
@@ -8137,13 +8137,13 @@ int  GraphicWindow::SetImageToDrawOnto() {
 "	      004a6bd3    push ebx"
 "	      004a6bd4    push esi"
 "	      004a6bd5    push edi"
-"	      004a6bd6    mov [ebp-38h],ecx"
+"	      004a6bd6    mov this,ecx"
 );
 // LINE 1367:
 	asm( 
-"	      004a6bd9    mov eax,[ebp-38h]"
+"	      004a6bd9    mov eax,this"
 "	      004a6bdc    add eax,10h"
-"	      004a6bdf    mov ecx,[ebp-38h]"
+"	      004a6bdf    mov ecx,this"
 "	      004a6be2    add ecx,20h"
 "	      004a6be5    mov edx,[eax]"
 "	      004a6be7    mov [ecx],edx"
@@ -8153,11 +8153,11 @@ int  GraphicWindow::SetImageToDrawOnto() {
 "	      004a6bf2    mov [ecx+8],edx"
 "	      004a6bf5    mov eax,[eax+0Ch]"
 "	      004a6bf8    mov [ecx+0Ch],eax"
-"	      004a6bfb    mov eax,[ebp-38h]"
+"	      004a6bfb    mov eax,this"
 "	      004a6bfe    add eax,20h"
 "	      004a6c01    mov [ebp-24h],eax"
 "	      004a6c04    mov eax,[ebp-24h]"
-"	      004a6c07    lea ecx,[ebp-18h]"
+"	      004a6c07    lea ecx,rectNewPosition.left"
 "	      004a6c0a    mov edx,[eax]"
 "	      004a6c0c    mov [ecx],edx"
 "	      004a6c0e    mov edx,[eax+4]"
@@ -8169,38 +8169,38 @@ int  GraphicWindow::SetImageToDrawOnto() {
 );
 // LINE 1368:
 	asm( 
-"	      004a6c20    mov eax,[ebp-38h]"
+"	      004a6c20    mov eax,this"
 "	      004a6c23    mov eax,[eax+3Ch]"
-"	      004a6c26    mov [ebp-8],eax"
+"	      004a6c26    mov gwCurrentParent,eax"
 );
 // LINE 1371:
 	asm( 
-"	      004a6c29    cmp dword ptr [ebp-8],0"
+"	      004a6c29    cmp gwCurrentParent,0"
 "	      004a6c2d    je near ptr 004A6CE4h"
 );
 // LINE 1372:
 	asm( 
-"	      004a6c33    mov eax,[ebp-8]"
+"	      004a6c33    mov eax,gwCurrentParent"
 "	      004a6c36    mov eax,[eax]"
-"	      004a6c38    mov ecx,[ebp-8]"
+"	      004a6c38    mov ecx,gwCurrentParent"
 "	      004a6c3b    call dword ptr [eax+0B0h]"
-"	      004a6c41    mov [ebp-4],eax"
+"	      004a6c41    mov imageCurrentParent,eax"
 );
 // LINE 1373:
 	asm( 
-"	      004a6c44    cmp dword ptr [ebp-4],0"
+"	      004a6c44    cmp imageCurrentParent,0"
 "	      004a6c48    je near ptr 004A6C80h"
 );
 // LINE 1374:
 	asm( 
-"	      004a6c4e    mov eax,[ebp-4]"
-"	      004a6c51    mov ecx,[ebp-38h]"
+"	      004a6c4e    mov eax,imageCurrentParent"
+"	      004a6c51    mov ecx,this"
 "	      004a6c54    mov [ecx+44h],eax"
 );
 // LINE 1375:
 	asm( 
-"	      004a6c57    lea eax,[ebp-18h]"
-"	      004a6c5a    mov ecx,[ebp-38h]"
+"	      004a6c57    lea eax,rectNewPosition.left"
+"	      004a6c5a    mov ecx,this"
 "	      004a6c5d    add ecx,20h"
 "	      004a6c60    mov edx,[eax]"
 "	      004a6c62    mov [ecx],edx"
@@ -8218,10 +8218,10 @@ int  GraphicWindow::SetImageToDrawOnto() {
 );
 // LINE 1381:
 	asm( 
-"	      004a6c80    mov eax,[ebp-8]"
+"	      004a6c80    mov eax,gwCurrentParent"
 "	      004a6c83    mov eax,[eax+14h]"
 "	      004a6c86    mov [ebp-28h],eax"
-"	      004a6c89    mov eax,[ebp-8]"
+"	      004a6c89    mov eax,gwCurrentParent"
 "	      004a6c8c    mov eax,[eax+10h]"
 "	      004a6c8f    mov [ebp-2Ch],eax"
 "	      004a6c92    jmp near ptr 004A6C97h"
@@ -8235,21 +8235,21 @@ int  GraphicWindow::SetImageToDrawOnto() {
 "	      004a6cae    mov [ebp-34h],eax"
 "	      004a6cb1    mov [ebp-30h],ecx"
 "	      004a6cb4    mov eax,[ebp-34h]"
-"	      004a6cb7    add [ebp-18h],eax"
+"	      004a6cb7    add rectNewPosition.left,eax"
 "	      004a6cba    mov eax,[ebp-34h]"
-"	      004a6cbd    add [ebp-10h],eax"
+"	      004a6cbd    add rectNewPosition.right,eax"
 "	      004a6cc0    mov eax,[ebp-30h]"
-"	      004a6cc3    add [ebp-14h],eax"
+"	      004a6cc3    add rectNewPosition.top,eax"
 "	      004a6cc6    mov eax,[ebp-30h]"
-"	      004a6cc9    add [ebp-0Ch],eax"
+"	      004a6cc9    add rectNewPosition.bottom,eax"
 "	      004a6ccc    jmp near ptr 004A6CD1h"
 "	      004a6cd1    jmp near ptr 004A6CD6h"
 );
 // LINE 1382:
 	asm( 
-"	      004a6cd6    mov eax,[ebp-8]"
+"	      004a6cd6    mov eax,gwCurrentParent"
 "	      004a6cd9    mov eax,[eax+3Ch]"
-"	      004a6cdc    mov [ebp-8],eax"
+"	      004a6cdc    mov gwCurrentParent,eax"
 );
 // LINE 1383:
 	asm( 
@@ -8282,36 +8282,36 @@ void  GraphicWindow::SetAllImagesToDrawOnto() {
 "	      004a6cf6    push ebx"
 "	      004a6cf7    push esi"
 "	      004a6cf8    push edi"
-"	      004a6cf9    mov [ebp-2Ch],ecx"
+"	      004a6cf9    mov this,ecx"
 );
 // LINE 1403:
 	asm( 
-"	      004a6cfc    mov eax,[ebp-2Ch]"
+"	      004a6cfc    mov eax,this"
 "	      004a6cff    mov eax,[eax]"
-"	      004a6d01    mov ecx,[ebp-2Ch]"
+"	      004a6d01    mov ecx,this"
 "	      004a6d04    call dword ptr [eax+1Ch]"
 );
 // LINE 1405:
 	asm( 
-"	      004a6d07    mov eax,[ebp-2Ch]"
+"	      004a6d07    mov eax,this"
 "	      004a6d0a    mov eax,[eax+30h]"
 "	      004a6d0d    mov eax,[eax]"
 "	      004a6d0f    mov [ebp-24h],eax"
 "	      004a6d12    mov eax,[ebp-24h]"
-"	      004a6d15    mov [ebp-4],eax"
+"	      004a6d15    mov i.node,eax"
 "	      004a6d18    jmp near ptr 004A6D1Dh"
 "	      004a6d1d    jmp near ptr 004A6D22h"
 );
 // LINE 1406:
 	asm( 
-"	      004a6d22    mov eax,[ebp-2Ch]"
+"	      004a6d22    mov eax,this"
 "	      004a6d25    mov eax,[eax+30h]"
 "	      004a6d28    mov [ebp-18h],eax"
 "	      004a6d2b    mov eax,[ebp-18h]"
 "	      004a6d2e    mov [ebp-8],eax"
 "	      004a6d31    jmp near ptr 004A6D36h"
 "	      004a6d36    jmp near ptr 004A6D3Bh"
-"	      004a6d3b    mov eax,[ebp-4]"
+"	      004a6d3b    mov eax,i.node"
 "	      004a6d3e    cmp [ebp-8],eax"
 "	      004a6d41    jne near ptr 004A6D51h"
 "	      004a6d47    jmp near ptr 004A6D65h"
@@ -8328,7 +8328,7 @@ void  GraphicWindow::SetAllImagesToDrawOnto() {
 // LINE 1407:
 	asm( 
 "	      004a6d79    jmp near ptr 004A6D7Eh"
-"	      004a6d7e    mov eax,[ebp-4]"
+"	      004a6d7e    mov eax,i.node"
 "	      004a6d81    mov eax,[eax+8]"
 "	      004a6d84    mov [ebp-10h],eax"
 "	      004a6d87    mov eax,[ebp-10h]"
@@ -8340,11 +8340,11 @@ void  GraphicWindow::SetAllImagesToDrawOnto() {
 );
 // LINE 1408:
 	asm( 
-"	      004a6d98    mov eax,[ebp-4]"
+"	      004a6d98    mov eax,i.node"
 "	      004a6d9b    mov [ebp-28h],eax"
-"	      004a6d9e    mov eax,[ebp-4]"
+"	      004a6d9e    mov eax,i.node"
 "	      004a6da1    mov eax,[eax]"
-"	      004a6da3    mov [ebp-4],eax"
+"	      004a6da3    mov i.node,eax"
 "	      004a6da6    jmp near ptr 004A6DABh"
 "	      004a6dab    mov eax,[ebp-28h]"
 "	      004a6dae    mov [ebp-0Ch],eax"
@@ -8377,37 +8377,37 @@ void  GraphicWindow::CreateAllImages() {
 "	      004a6dcb    push ebx"
 "	      004a6dcc    push esi"
 "	      004a6dcd    push edi"
-"	      004a6dce    mov [ebp-2Ch],ecx"
+"	      004a6dce    mov this,ecx"
 );
 // LINE 1422:
 	asm( 
 "	      004a6dd1    push 1"
-"	      004a6dd3    mov eax,[ebp-2Ch]"
+"	      004a6dd3    mov eax,this"
 "	      004a6dd6    mov eax,[eax]"
-"	      004a6dd8    mov ecx,[ebp-2Ch]"
+"	      004a6dd8    mov ecx,this"
 "	      004a6ddb    call dword ptr [eax+10h]"
 );
 // LINE 1423:
 	asm( 
-"	      004a6dde    mov eax,[ebp-2Ch]"
+"	      004a6dde    mov eax,this"
 "	      004a6de1    mov eax,[eax]"
-"	      004a6de3    mov ecx,[ebp-2Ch]"
+"	      004a6de3    mov ecx,this"
 "	      004a6de6    call dword ptr [eax+1Ch]"
 );
 // LINE 1425:
 	asm( 
-"	      004a6de9    mov eax,[ebp-2Ch]"
+"	      004a6de9    mov eax,this"
 "	      004a6dec    mov eax,[eax+30h]"
 "	      004a6def    mov eax,[eax]"
 "	      004a6df1    mov [ebp-24h],eax"
 "	      004a6df4    mov eax,[ebp-24h]"
-"	      004a6df7    mov [ebp-4],eax"
+"	      004a6df7    mov i.node,eax"
 "	      004a6dfa    jmp near ptr 004A6DFFh"
 "	      004a6dff    jmp near ptr 004A6E04h"
 );
 // LINE 1426:
 	asm( 
-"	      004a6e04    mov eax,[ebp-2Ch]"
+"	      004a6e04    mov eax,this"
 "	      004a6e07    mov eax,[eax+30h]"
 "	      004a6e0a    mov [ebp-18h],eax"
 "	      004a6e0d    mov eax,[ebp-18h]"
@@ -8415,7 +8415,7 @@ void  GraphicWindow::CreateAllImages() {
 "	      004a6e13    jmp near ptr 004A6E18h"
 "	      004a6e18    jmp near ptr 004A6E1Dh"
 "	      004a6e1d    mov eax,[ebp-8]"
-"	      004a6e20    cmp [ebp-4],eax"
+"	      004a6e20    cmp i.node,eax"
 "	      004a6e23    jne near ptr 004A6E33h"
 "	      004a6e29    jmp near ptr 004A6E47h"
 "	      004a6e2e    jmp near ptr 004A6E33h"
@@ -8431,7 +8431,7 @@ void  GraphicWindow::CreateAllImages() {
 // LINE 1427:
 	asm( 
 "	      004a6e5b    jmp near ptr 004A6E60h"
-"	      004a6e60    mov eax,[ebp-4]"
+"	      004a6e60    mov eax,i.node"
 "	      004a6e63    mov eax,[eax+8]"
 "	      004a6e66    mov [ebp-10h],eax"
 "	      004a6e69    mov eax,[ebp-10h]"
@@ -8443,11 +8443,11 @@ void  GraphicWindow::CreateAllImages() {
 );
 // LINE 1428:
 	asm( 
-"	      004a6e7a    mov eax,[ebp-4]"
+"	      004a6e7a    mov eax,i.node"
 "	      004a6e7d    mov [ebp-28h],eax"
-"	      004a6e80    mov eax,[ebp-4]"
+"	      004a6e80    mov eax,i.node"
 "	      004a6e83    mov eax,[eax]"
-"	      004a6e85    mov [ebp-4],eax"
+"	      004a6e85    mov i.node,eax"
 "	      004a6e88    jmp near ptr 004A6E8Dh"
 "	      004a6e8d    mov eax,[ebp-28h]"
 "	      004a6e90    mov [ebp-0Ch],eax"
@@ -8480,29 +8480,29 @@ void  GraphicWindow::DestroyAllImages() {
 "	      004a6ead    push ebx"
 "	      004a6eae    push esi"
 "	      004a6eaf    push edi"
-"	      004a6eb0    mov [ebp-2Ch],ecx"
+"	      004a6eb0    mov this,ecx"
 );
 // LINE 1442:
 	asm( 
-"	      004a6eb3    mov eax,[ebp-2Ch]"
+"	      004a6eb3    mov eax,this"
 "	      004a6eb6    mov eax,[eax]"
-"	      004a6eb8    mov ecx,[ebp-2Ch]"
+"	      004a6eb8    mov ecx,this"
 "	      004a6ebb    call dword ptr [eax+14h]"
 );
 // LINE 1444:
 	asm( 
-"	      004a6ebe    mov eax,[ebp-2Ch]"
+"	      004a6ebe    mov eax,this"
 "	      004a6ec1    mov eax,[eax+30h]"
 "	      004a6ec4    mov eax,[eax]"
 "	      004a6ec6    mov [ebp-24h],eax"
 "	      004a6ec9    mov eax,[ebp-24h]"
-"	      004a6ecc    mov [ebp-4],eax"
+"	      004a6ecc    mov i.node,eax"
 "	      004a6ecf    jmp near ptr 004A6ED4h"
 "	      004a6ed4    jmp near ptr 004A6ED9h"
 );
 // LINE 1445:
 	asm( 
-"	      004a6ed9    mov eax,[ebp-2Ch]"
+"	      004a6ed9    mov eax,this"
 "	      004a6edc    mov eax,[eax+30h]"
 "	      004a6edf    mov [ebp-18h],eax"
 "	      004a6ee2    mov eax,[ebp-18h]"
@@ -8510,7 +8510,7 @@ void  GraphicWindow::DestroyAllImages() {
 "	      004a6ee8    jmp near ptr 004A6EEDh"
 "	      004a6eed    jmp near ptr 004A6EF2h"
 "	      004a6ef2    mov eax,[ebp-8]"
-"	      004a6ef5    cmp [ebp-4],eax"
+"	      004a6ef5    cmp i.node,eax"
 "	      004a6ef8    jne near ptr 004A6F08h"
 "	      004a6efe    jmp near ptr 004A6F1Ch"
 "	      004a6f03    jmp near ptr 004A6F08h"
@@ -8526,7 +8526,7 @@ void  GraphicWindow::DestroyAllImages() {
 // LINE 1446:
 	asm( 
 "	      004a6f30    jmp near ptr 004A6F35h"
-"	      004a6f35    mov eax,[ebp-4]"
+"	      004a6f35    mov eax,i.node"
 "	      004a6f38    mov eax,[eax+8]"
 "	      004a6f3b    mov [ebp-10h],eax"
 "	      004a6f3e    mov eax,[ebp-10h]"
@@ -8538,11 +8538,11 @@ void  GraphicWindow::DestroyAllImages() {
 );
 // LINE 1447:
 	asm( 
-"	      004a6f4f    mov eax,[ebp-4]"
+"	      004a6f4f    mov eax,i.node"
 "	      004a6f52    mov [ebp-28h],eax"
-"	      004a6f55    mov eax,[ebp-4]"
+"	      004a6f55    mov eax,i.node"
 "	      004a6f58    mov eax,[eax]"
-"	      004a6f5a    mov [ebp-4],eax"
+"	      004a6f5a    mov i.node,eax"
 "	      004a6f5d    jmp near ptr 004A6F62h"
 "	      004a6f62    mov eax,[ebp-28h]"
 "	      004a6f65    mov [ebp-0Ch],eax"
@@ -8573,19 +8573,19 @@ void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 "	      004a6f82    push ebx"
 "	      004a6f83    push esi"
 "	      004a6f84    push edi"
-"	      004a6f85    mov [ebp-8],ecx"
+"	      004a6f85    mov this,ecx"
 );
 // LINE 1456:
 	asm( 
-"	      004a6f88    cmp dword ptr [ebp+8],0"
+"	      004a6f88    cmp colorBorder,0"
 "	      004a6f8c    je near ptr 004A6FABh"
 );
 // LINE 1457:
 	asm( 
-"	      004a6f92    mov eax,[ebp-8]"
+"	      004a6f92    mov eax,this"
 "	      004a6f95    mov eax,[eax+44h]"
 "	      004a6f98    mov [ebp-4],eax"
-"	      004a6f9b    mov eax,[ebp+8]"
+"	      004a6f9b    mov eax,colorBorder"
 "	      004a6f9e    mov eax,[eax]"
 "	      004a6fa0    mov ecx,[ebp-4]"
 "	      004a6fa3    mov [ecx+3Ch],eax"
@@ -8594,20 +8594,20 @@ void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 // LINE 1461:
 	asm( 
 "	      004a6fab    push 1"
-"	      004a6fad    mov eax,[ebp-8]"
+"	      004a6fad    mov eax,this"
 "	      004a6fb0    mov eax,[eax+24h]"
 "	      004a6fb3    push eax"
-"	      004a6fb4    mov eax,[ebp-8]"
+"	      004a6fb4    mov eax,this"
 "	      004a6fb7    mov eax,[eax+28h]"
 "	      004a6fba    push eax"
-"	      004a6fbb    mov eax,[ebp-8]"
+"	      004a6fbb    mov eax,this"
 "	      004a6fbe    mov eax,[eax+24h]"
 "	      004a6fc1    push eax"
-"	      004a6fc2    mov eax,[ebp-8]"
+"	      004a6fc2    mov eax,this"
 "	      004a6fc5    mov eax,[eax+20h]"
 "	      004a6fc8    push eax"
-"	      004a6fc9    mov eax,[ebp-8]"
-"	      004a6fcc    mov ecx,[ebp-8]"
+"	      004a6fc9    mov eax,this"
+"	      004a6fcc    mov ecx,this"
 "	      004a6fcf    mov ecx,[ecx+44h]"
 "	      004a6fd2    mov edx,[ecx]"
 "	      004a6fd4    mov ecx,[eax+44h]"
@@ -8616,20 +8616,20 @@ void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 // LINE 1463:
 	asm( 
 "	      004a6fda    push 1"
-"	      004a6fdc    mov eax,[ebp-8]"
+"	      004a6fdc    mov eax,this"
 "	      004a6fdf    mov eax,[eax+2Ch]"
 "	      004a6fe2    push eax"
-"	      004a6fe3    mov eax,[ebp-8]"
+"	      004a6fe3    mov eax,this"
 "	      004a6fe6    mov eax,[eax+20h]"
 "	      004a6fe9    push eax"
-"	      004a6fea    mov eax,[ebp-8]"
+"	      004a6fea    mov eax,this"
 "	      004a6fed    mov eax,[eax+24h]"
 "	      004a6ff0    push eax"
-"	      004a6ff1    mov eax,[ebp-8]"
+"	      004a6ff1    mov eax,this"
 "	      004a6ff4    mov eax,[eax+20h]"
 "	      004a6ff7    push eax"
-"	      004a6ff8    mov eax,[ebp-8]"
-"	      004a6ffb    mov ecx,[ebp-8]"
+"	      004a6ff8    mov eax,this"
+"	      004a6ffb    mov ecx,this"
 "	      004a6ffe    mov ecx,[ecx+44h]"
 "	      004a7001    mov edx,[ecx]"
 "	      004a7003    mov ecx,[eax+44h]"
@@ -8638,21 +8638,21 @@ void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 // LINE 1465:
 	asm( 
 "	      004a7009    push 1"
-"	      004a700b    mov eax,[ebp-8]"
+"	      004a700b    mov eax,this"
 "	      004a700e    mov eax,[eax+2Ch]"
 "	      004a7011    inc eax"
 "	      004a7012    push eax"
-"	      004a7013    mov eax,[ebp-8]"
+"	      004a7013    mov eax,this"
 "	      004a7016    mov eax,[eax+28h]"
 "	      004a7019    push eax"
-"	      004a701a    mov eax,[ebp-8]"
+"	      004a701a    mov eax,this"
 "	      004a701d    mov eax,[eax+24h]"
 "	      004a7020    push eax"
-"	      004a7021    mov eax,[ebp-8]"
+"	      004a7021    mov eax,this"
 "	      004a7024    mov eax,[eax+28h]"
 "	      004a7027    push eax"
-"	      004a7028    mov eax,[ebp-8]"
-"	      004a702b    mov ecx,[ebp-8]"
+"	      004a7028    mov eax,this"
+"	      004a702b    mov ecx,this"
 "	      004a702e    mov ecx,[ecx+44h]"
 "	      004a7031    mov edx,[ecx]"
 "	      004a7033    mov ecx,[eax+44h]"
@@ -8661,21 +8661,21 @@ void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 // LINE 1467:
 	asm( 
 "	      004a7039    push 1"
-"	      004a703b    mov eax,[ebp-8]"
+"	      004a703b    mov eax,this"
 "	      004a703e    mov eax,[eax+2Ch]"
 "	      004a7041    push eax"
-"	      004a7042    mov eax,[ebp-8]"
+"	      004a7042    mov eax,this"
 "	      004a7045    mov eax,[eax+28h]"
 "	      004a7048    inc eax"
 "	      004a7049    push eax"
-"	      004a704a    mov eax,[ebp-8]"
+"	      004a704a    mov eax,this"
 "	      004a704d    mov eax,[eax+2Ch]"
 "	      004a7050    push eax"
-"	      004a7051    mov eax,[ebp-8]"
+"	      004a7051    mov eax,this"
 "	      004a7054    mov eax,[eax+20h]"
 "	      004a7057    push eax"
-"	      004a7058    mov eax,[ebp-8]"
-"	      004a705b    mov ecx,[ebp-8]"
+"	      004a7058    mov eax,this"
+"	      004a705b    mov ecx,this"
 "	      004a705e    mov ecx,[ecx+44h]"
 "	      004a7061    mov edx,[ecx]"
 "	      004a7063    mov ecx,[eax+44h]"
@@ -8705,7 +8705,7 @@ int  GraphicWindow::MakeModal(class GraphicWindow* windowModal) {
 );
 // LINE 1485:
 	asm( 
-"	      004a707e    mov eax,[ebp+8]"
+"	      004a707e    mov eax,windowModal"
 "	      004a7081    push eax"
 "	      004a7082    call 004A7340h"
 "	      004a7087    add esp,4"
@@ -8865,7 +8865,7 @@ int  GraphicWindow::MakeModal(class GraphicWindow* windowModal) {
 "	      004a72cc    jmp near ptr 004A72D1h"
 "	      004a72d1    cmp dword ptr [ebp-14h],0"
 "	      004a72d5    je near ptr 004A72E8h"
-"	      004a72db    mov eax,[ebp+8]"
+"	      004a72db    mov eax,windowModal"
 "	      004a72de    mov ecx,[ebp-14h]"
 "	      004a72e1    mov [ecx],eax"
 "	      004a72e3    jmp near ptr 004A72E8h"
@@ -8925,7 +8925,7 @@ int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
 "	      004a734e    mov eax,[eax]"
 "	      004a7350    mov [ebp-24h],eax"
 "	      004a7353    mov eax,[ebp-24h]"
-"	      004a7356    mov [ebp-4],eax"
+"	      004a7356    mov i.node,eax"
 "	      004a7359    jmp near ptr 004A735Eh"
 "	      004a735e    jmp near ptr 004A7363h"
 );
@@ -8937,7 +8937,7 @@ int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
 "	      004a736e    mov [ebp-8],eax"
 "	      004a7371    jmp near ptr 004A7376h"
 "	      004a7376    jmp near ptr 004A737Bh"
-"	      004a737b    mov eax,[ebp-4]"
+"	      004a737b    mov eax,i.node"
 "	      004a737e    cmp [ebp-8],eax"
 "	      004a7381    jne near ptr 004A7391h"
 "	      004a7387    jmp near ptr 004A73A5h"
@@ -8954,18 +8954,18 @@ int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
 // LINE 1502:
 	asm( 
 "	      004a73b9    jmp near ptr 004A73BEh"
-"	      004a73be    mov eax,[ebp-4]"
-"	      004a73c1    mov ecx,[ebp+8]"
+"	      004a73be    mov eax,i.node"
+"	      004a73c1    mov ecx,windowModal"
 "	      004a73c4    cmp [eax+8],ecx"
 "	      004a73c7    jne near ptr 004A743Eh"
 );
 // LINE 1503:
 	asm( 
-"	      004a73cd    mov eax,[ebp-4]"
+"	      004a73cd    mov eax,i.node"
 "	      004a73d0    mov [ebp-14h],eax"
-"	      004a73d3    mov eax,[ebp-4]"
+"	      004a73d3    mov eax,i.node"
 "	      004a73d6    mov eax,[eax]"
-"	      004a73d8    mov [ebp-4],eax"
+"	      004a73d8    mov i.node,eax"
 "	      004a73db    jmp near ptr 004A73E0h"
 "	      004a73e0    mov eax,[ebp-14h]"
 "	      004a73e3    mov [ebp-0Ch],eax"
@@ -8999,11 +8999,11 @@ int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
 );
 // LINE 1505:
 	asm( 
-"	      004a743e    mov eax,[ebp-4]"
+"	      004a743e    mov eax,i.node"
 "	      004a7441    mov [ebp-28h],eax"
-"	      004a7444    mov eax,[ebp-4]"
+"	      004a7444    mov eax,i.node"
 "	      004a7447    mov eax,[eax]"
-"	      004a7449    mov [ebp-4],eax"
+"	      004a7449    mov i.node,eax"
 "	      004a744c    jmp near ptr 004A7451h"
 "	      004a7451    mov eax,[ebp-28h]"
 "	      004a7454    mov [ebp-10h],eax"
@@ -9041,7 +9041,7 @@ int  GraphicWindow::MakeFocus(class GraphicWindow* windowFocus) {
 );
 // LINE 1531:
 	asm( 
-"	      004a7479    mov eax,[ebp+8]"
+"	      004a7479    mov eax,windowFocus"
 "	      004a747c    push eax"
 "	      004a747d    call 004A773Bh"
 "	      004a7482    add esp,4"
@@ -9201,7 +9201,7 @@ int  GraphicWindow::MakeFocus(class GraphicWindow* windowFocus) {
 "	      004a76c7    jmp near ptr 004A76CCh"
 "	      004a76cc    cmp dword ptr [ebp-14h],0"
 "	      004a76d0    je near ptr 004A76E3h"
-"	      004a76d6    mov eax,[ebp+8]"
+"	      004a76d6    mov eax,windowFocus"
 "	      004a76d9    mov ecx,[ebp-14h]"
 "	      004a76dc    mov [ecx],eax"
 "	      004a76de    jmp near ptr 004A76E3h"
@@ -9261,7 +9261,7 @@ int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 "	      004a7749    mov eax,[eax]"
 "	      004a774b    mov [ebp-24h],eax"
 "	      004a774e    mov eax,[ebp-24h]"
-"	      004a7751    mov [ebp-4],eax"
+"	      004a7751    mov i.node,eax"
 "	      004a7754    jmp near ptr 004A7759h"
 "	      004a7759    jmp near ptr 004A775Eh"
 );
@@ -9274,7 +9274,7 @@ int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 "	      004a776c    jmp near ptr 004A7771h"
 "	      004a7771    jmp near ptr 004A7776h"
 "	      004a7776    mov eax,[ebp-8]"
-"	      004a7779    cmp [ebp-4],eax"
+"	      004a7779    cmp i.node,eax"
 "	      004a777c    jne near ptr 004A778Ch"
 "	      004a7782    jmp near ptr 004A77A0h"
 "	      004a7787    jmp near ptr 004A778Ch"
@@ -9290,18 +9290,18 @@ int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 // LINE 1547:
 	asm( 
 "	      004a77b4    jmp near ptr 004A77B9h"
-"	      004a77b9    mov eax,[ebp-4]"
-"	      004a77bc    mov ecx,[ebp+8]"
+"	      004a77b9    mov eax,i.node"
+"	      004a77bc    mov ecx,windowFocus"
 "	      004a77bf    cmp [eax+8],ecx"
 "	      004a77c2    jne near ptr 004A7839h"
 );
 // LINE 1548:
 	asm( 
-"	      004a77c8    mov eax,[ebp-4]"
+"	      004a77c8    mov eax,i.node"
 "	      004a77cb    mov [ebp-14h],eax"
-"	      004a77ce    mov eax,[ebp-4]"
+"	      004a77ce    mov eax,i.node"
 "	      004a77d1    mov eax,[eax]"
-"	      004a77d3    mov [ebp-4],eax"
+"	      004a77d3    mov i.node,eax"
 "	      004a77d6    jmp near ptr 004A77DBh"
 "	      004a77db    mov eax,[ebp-14h]"
 "	      004a77de    mov [ebp-0Ch],eax"
@@ -9335,11 +9335,11 @@ int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 );
 // LINE 1550:
 	asm( 
-"	      004a7839    mov eax,[ebp-4]"
+"	      004a7839    mov eax,i.node"
 "	      004a783c    mov [ebp-28h],eax"
-"	      004a783f    mov eax,[ebp-4]"
+"	      004a783f    mov eax,i.node"
 "	      004a7842    mov eax,[eax]"
-"	      004a7844    mov [ebp-4],eax"
+"	      004a7844    mov i.node,eax"
 "	      004a7847    jmp near ptr 004A784Ch"
 "	      004a784c    mov eax,[ebp-28h]"
 "	      004a784f    mov [ebp-10h],eax"
@@ -9378,17 +9378,17 @@ int  GraphicWindow::CanWeRespondToMessage() {
 "	      004a7871    push ebx"
 "	      004a7872    push esi"
 "	      004a7873    push edi"
-"	      004a7874    mov [ebp-18h],ecx"
+"	      004a7874    mov this,ecx"
 );
 // LINE 1572:
 	asm( 
 "	      004a7877    jmp near ptr 004A787Ch"
 "	      004a787c    mov eax,ds:[606994h]"
-"	      004a7881    mov [ebp-4],eax"
+"	      004a7881    mov nModalWindowCount,eax"
 );
 // LINE 1573:
 	asm( 
-"	      004a7884    cmp dword ptr [ebp-4],0"
+"	      004a7884    cmp nModalWindowCount,0"
 "	      004a7888    je near ptr 004A7900h"
 );
 // LINE 1574:
@@ -9404,31 +9404,31 @@ int  GraphicWindow::CanWeRespondToMessage() {
 "	      004a78ad    jmp near ptr 004A78B2h"
 "	      004a78b2    mov eax,[ebp-10h]"
 "	      004a78b5    mov eax,[eax+8]"
-"	      004a78b8    mov [ebp-0Ch],eax"
+"	      004a78b8    mov gwModal,eax"
 );
 // LINE 1575:
 	asm( 
-"	      004a78bb    mov eax,[ebp-18h]"
-"	      004a78be    mov [ebp-8],eax"
+"	      004a78bb    mov eax,this"
+"	      004a78be    mov gwCurrentTest,eax"
 );
 // LINE 1576:
 	asm( 
-"	      004a78c1    mov eax,[ebp-0Ch]"
-"	      004a78c4    cmp [ebp-8],eax"
+"	      004a78c1    mov eax,gwModal"
+"	      004a78c4    cmp gwCurrentTest,eax"
 "	      004a78c7    je near ptr 004A78E5h"
-"	      004a78cd    cmp dword ptr [ebp-8],0"
+"	      004a78cd    cmp gwCurrentTest,0"
 "	      004a78d1    je near ptr 004A78E5h"
 );
 // LINE 1577:
 	asm( 
-"	      004a78d7    mov eax,[ebp-8]"
+"	      004a78d7    mov eax,gwCurrentTest"
 "	      004a78da    mov eax,[eax+3Ch]"
-"	      004a78dd    mov [ebp-8],eax"
+"	      004a78dd    mov gwCurrentTest,eax"
 "	      004a78e0    jmp near ptr 004A78C1h"
 );
 // LINE 1578:
 	asm( 
-"	      004a78e5    cmp dword ptr [ebp-0Ch],0"
+"	      004a78e5    cmp gwModal,0"
 "	      004a78e9    jne near ptr 004A78F6h"
 );
 // LINE 1579:
@@ -9466,23 +9466,23 @@ void ScreenWindow::ScreenWindow() {
 "	      004a7915    push ebx"
 "	      004a7916    push esi"
 "	      004a7917    push edi"
-"	      004a7918    mov [ebp-4],ecx"
-"	      004a791b    mov ecx,[ebp-4]"
+"	      004a7918    mov this,ecx"
+"	      004a791b    mov ecx,this"
 "	      004a791e    call 004A2A3Fh"
-"	      004a7923    mov eax,[ebp-4]"
+"	      004a7923    mov eax,this"
 "	      004a7926    mov dword ptr [eax+74h],0"
-"	      004a792d    mov eax,[ebp-4]"
+"	      004a792d    mov eax,this"
 "	      004a7930    mov dword ptr [eax],591748h"
 );
 // LINE 1601:
 	asm( 
-"	      004a7936    mov eax,[ebp-4]"
+"	      004a7936    mov eax,this"
 "	      004a7939    mov dword ptr [eax+50h],0"
 );
 // LINE 1602:
 	asm( 
 "	      004a7940    jmp near ptr 004A7945h"
-"	      004a7945    mov eax,[ebp-4]"
+"	      004a7945    mov eax,this"
 "	      004a7948    pop edi"
 "	      004a7949    pop esi"
 "	      004a794a    pop ebx"
@@ -9501,25 +9501,25 @@ void ScreenWindow::ScreenWindow(const class ScreenWindow& copyScreenWindow) {
 "	      004a7953    push ebx"
 "	      004a7954    push esi"
 "	      004a7955    push edi"
-"	      004a7956    mov [ebp-4],ecx"
-"	      004a7959    mov eax,[ebp+8]"
+"	      004a7956    mov this,ecx"
+"	      004a7959    mov eax,copyScreenWindow"
 "	      004a795c    push eax"
-"	      004a795d    mov ecx,[ebp-4]"
+"	      004a795d    mov ecx,this"
 "	      004a7960    call 004A2F5Ch"
-"	      004a7965    mov eax,[ebp-4]"
+"	      004a7965    mov eax,this"
 "	      004a7968    mov dword ptr [eax],591748h"
 );
 // LINE 1612:
 	asm( 
-"	      004a796e    mov eax,[ebp+8]"
+"	      004a796e    mov eax,copyScreenWindow"
 "	      004a7971    mov eax,[eax+74h]"
-"	      004a7974    mov ecx,[ebp-4]"
+"	      004a7974    mov ecx,this"
 "	      004a7977    mov [ecx+74h],eax"
 );
 // LINE 1613:
 	asm( 
 "	      004a797a    jmp near ptr 004A797Fh"
-"	      004a797f    mov eax,[ebp-4]"
+"	      004a797f    mov eax,this"
 "	      004a7982    pop edi"
 "	      004a7983    pop esi"
 "	      004a7984    pop ebx"
@@ -9538,47 +9538,47 @@ void ScreenWindow::ScreenWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 "	      004a798f    push ebx"
 "	      004a7990    push esi"
 "	      004a7991    push edi"
-"	      004a7992    mov [ebp-4],ecx"
-"	      004a7995    mov eax,[ebp+18h]"
+"	      004a7992    mov this,ecx"
+"	      004a7995    mov eax,bAddToParentList"
 "	      004a7998    push eax"
-"	      004a7999    mov eax,[ebp+14h]"
+"	      004a7999    mov eax,myNewOwner"
 "	      004a799c    push eax"
 "	      004a799d    push 0"
-"	      004a799f    mov eax,[ebp+0Ch]"
+"	      004a799f    mov eax,nNewID"
 "	      004a79a2    push eax"
-"	      004a79a3    mov eax,[ebp+8]"
+"	      004a79a3    mov eax,rectNewWindow"
 "	      004a79a6    push eax"
-"	      004a79a7    mov ecx,[ebp-4]"
+"	      004a79a7    mov ecx,this"
 "	      004a79aa    call 004A33EEh"
-"	      004a79af    mov eax,[ebp-4]"
+"	      004a79af    mov eax,this"
 "	      004a79b2    mov dword ptr [eax],591748h"
 );
 // LINE 1625:
 	asm( 
-"	      004a79b8    mov eax,[ebp-4]"
+"	      004a79b8    mov eax,this"
 "	      004a79bb    mov dword ptr [eax+50h],0"
 );
 // LINE 1626:
 	asm( 
-"	      004a79c2    mov eax,[ebp+10h]"
-"	      004a79c5    mov ecx,[ebp-4]"
+"	      004a79c2    mov eax,bufferNewParent"
+"	      004a79c5    mov ecx,this"
 "	      004a79c8    mov [ecx+74h],eax"
 );
 // LINE 1627:
 	asm( 
-"	      004a79cb    mov eax,[ebp+10h]"
-"	      004a79ce    mov ecx,[ebp-4]"
+"	      004a79cb    mov eax,bufferNewParent"
+"	      004a79ce    mov ecx,this"
 "	      004a79d1    mov [ecx+40h],eax"
 );
 // LINE 1628:
 	asm( 
-"	      004a79d4    mov eax,[ebp-4]"
+"	      004a79d4    mov eax,this"
 "	      004a79d7    mov dword ptr [eax+44h],0"
 );
 // LINE 1629:
 	asm( 
 "	      004a79de    jmp near ptr 004A79E3h"
-"	      004a79e3    mov eax,[ebp-4]"
+"	      004a79e3    mov eax,this"
 "	      004a79e6    pop edi"
 "	      004a79e7    pop esi"
 "	      004a79e8    pop ebx"
@@ -9597,19 +9597,19 @@ void ScreenWindow::~ScreenWindow() {
 "	      004a79f3    push ebx"
 "	      004a79f4    push esi"
 "	      004a79f5    push edi"
-"	      004a79f6    mov [ebp-4],ecx"
-"	      004a79f9    mov eax,[ebp-4]"
+"	      004a79f6    mov this,ecx"
+"	      004a79f9    mov eax,this"
 "	      004a79fc    mov dword ptr [eax],591748h"
 );
 // LINE 1637:
 	asm( 
-"	      004a7a02    mov eax,[ebp-4]"
+"	      004a7a02    mov eax,this"
 "	      004a7a05    mov dword ptr [eax+40h],0"
 );
 // LINE 1638:
 	asm( 
 "	      004a7a0c    jmp near ptr 004A7A11h"
-"	      004a7a11    mov ecx,[ebp-4]"
+"	      004a7a11    mov ecx,this"
 "	      004a7a14    call 004A4045h"
 "	      004a7a19    pop edi"
 "	      004a7a1a    pop esi"
@@ -9629,25 +9629,25 @@ class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow& copyScreen
 "	      004a7a24    push ebx"
 "	      004a7a25    push esi"
 "	      004a7a26    push edi"
-"	      004a7a27    mov [ebp-4],ecx"
+"	      004a7a27    mov this,ecx"
 );
 // LINE 1646:
 	asm( 
-"	      004a7a2a    mov eax,[ebp+8]"
+"	      004a7a2a    mov eax,copyScreenWindow"
 "	      004a7a2d    push eax"
-"	      004a7a2e    mov ecx,[ebp-4]"
+"	      004a7a2e    mov ecx,this"
 "	      004a7a31    call 004A44EFh"
 );
 // LINE 1647:
 	asm( 
-"	      004a7a36    mov eax,[ebp+8]"
+"	      004a7a36    mov eax,copyScreenWindow"
 "	      004a7a39    mov eax,[eax+74h]"
-"	      004a7a3c    mov ecx,[ebp-4]"
+"	      004a7a3c    mov ecx,this"
 "	      004a7a3f    mov [ecx+74h],eax"
 );
 // LINE 1649:
 	asm( 
-"	      004a7a42    mov eax,[ebp-4]"
+"	      004a7a42    mov eax,this"
 "	      004a7a45    jmp near ptr 004A7A4Ah"
 );
 // LINE 1650:
@@ -9673,11 +9673,11 @@ int32_t ScreenWindow::ComposeSelf() {
 "	      004a7a57    push ebx"
 "	      004a7a58    push esi"
 "	      004a7a59    push edi"
-"	      004a7a5a    mov [ebp-28h],ecx"
+"	      004a7a5a    mov this,ecx"
 );
 // LINE 1665:
 	asm( 
-"	      004a7a5d    mov eax,[ebp-28h]"
+"	      004a7a5d    mov eax,this"
 "	      004a7a60    cmp dword ptr [eax+54h],0"
 "	      004a7a64    jne near ptr 004A7A71h"
 );
@@ -9688,18 +9688,18 @@ int32_t ScreenWindow::ComposeSelf() {
 );
 // LINE 1668:
 	asm( 
-"	      004a7a71    mov eax,[ebp-28h]"
+"	      004a7a71    mov eax,this"
 "	      004a7a74    mov eax,[eax+30h]"
 "	      004a7a77    mov eax,[eax]"
 "	      004a7a79    mov [ebp-20h],eax"
 "	      004a7a7c    mov eax,[ebp-20h]"
-"	      004a7a7f    mov [ebp-8],eax"
+"	      004a7a7f    mov i.node,eax"
 "	      004a7a82    jmp near ptr 004A7A87h"
 "	      004a7a87    jmp near ptr 004A7A8Ch"
 );
 // LINE 1669:
 	asm( 
-"	      004a7a8c    mov eax,[ebp-28h]"
+"	      004a7a8c    mov eax,this"
 "	      004a7a8f    mov eax,[eax+30h]"
 "	      004a7a92    mov [ebp-14h],eax"
 "	      004a7a95    mov eax,[ebp-14h]"
@@ -9707,7 +9707,7 @@ int32_t ScreenWindow::ComposeSelf() {
 "	      004a7a9b    jmp near ptr 004A7AA0h"
 "	      004a7aa0    jmp near ptr 004A7AA5h"
 "	      004a7aa5    mov eax,[ebp-0Ch]"
-"	      004a7aa8    cmp [ebp-8],eax"
+"	      004a7aa8    cmp i.node,eax"
 "	      004a7aab    jne near ptr 004A7ABBh"
 "	      004a7ab1    jmp near ptr 004A7ACFh"
 "	      004a7ab6    jmp near ptr 004A7ABBh"
@@ -9723,17 +9723,17 @@ int32_t ScreenWindow::ComposeSelf() {
 // LINE 1670:
 	asm( 
 "	      004a7ae3    jmp near ptr 004A7AE8h"
-"	      004a7ae8    mov eax,[ebp-8]"
+"	      004a7ae8    mov eax,i.node"
 "	      004a7aeb    mov eax,[eax+8]"
-"	      004a7aee    mov [ebp-4],eax"
+"	      004a7aee    mov gwCurrentChild,eax"
 );
 // LINE 1671:
 	asm( 
-"	      004a7af1    mov eax,[ebp-8]"
+"	      004a7af1    mov eax,i.node"
 "	      004a7af4    mov [ebp-24h],eax"
-"	      004a7af7    mov eax,[ebp-8]"
+"	      004a7af7    mov eax,i.node"
 "	      004a7afa    mov eax,[eax]"
-"	      004a7afc    mov [ebp-8],eax"
+"	      004a7afc    mov i.node,eax"
 "	      004a7aff    jmp near ptr 004A7B04h"
 "	      004a7b04    mov eax,[ebp-24h]"
 "	      004a7b07    mov [ebp-10h],eax"
@@ -9741,14 +9741,14 @@ int32_t ScreenWindow::ComposeSelf() {
 );
 // LINE 1672:
 	asm( 
-"	      004a7b0f    mov eax,[ebp-4]"
+"	      004a7b0f    mov eax,gwCurrentChild"
 "	      004a7b12    mov dword ptr [eax+48h],1"
 );
 // LINE 1673:
 	asm( 
-"	      004a7b19    mov eax,[ebp-4]"
+"	      004a7b19    mov eax,gwCurrentChild"
 "	      004a7b1c    mov eax,[eax]"
-"	      004a7b1e    mov ecx,[ebp-4]"
+"	      004a7b1e    mov ecx,gwCurrentChild"
 "	      004a7b21    call dword ptr [eax+18h]"
 );
 // LINE 1674:
@@ -9780,7 +9780,7 @@ int32_t ScreenWindow::DrawSelf() {
 "	      004a7b3e    push ebx"
 "	      004a7b3f    push esi"
 "	      004a7b40    push edi"
-"	      004a7b41    mov [ebp-4],ecx"
+"	      004a7b41    mov this,ecx"
 );
 // LINE 1695:
 	asm( 

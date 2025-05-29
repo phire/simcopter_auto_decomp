@@ -15,7 +15,7 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 "	      00495b46    push ebx"
 "	      00495b47    push esi"
 "	      00495b48    push edi"
-"	      00495b49    mov [ebp-4],ecx"
+"	      00495b49    mov this,ecx"
 );
 // LINE 68:
 	asm( 
@@ -24,12 +24,12 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 );
 // LINE 69:
 	asm( 
-"	      00495b59    mov eax,[ebp+8]"
+"	      00495b59    mov eax,nWidth"
 "	      00495b5c    mov dword ptr [eax],140h"
 );
 // LINE 70:
 	asm( 
-"	      00495b62    mov eax,[ebp+0Ch]"
+"	      00495b62    mov eax,nHeight"
 "	      00495b65    mov dword ptr [eax],0F0h"
 );
 // LINE 72:
@@ -40,12 +40,12 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 );
 // LINE 73:
 	asm( 
-"	      00495b7d    mov eax,[ebp+8]"
+"	      00495b7d    mov eax,nWidth"
 "	      00495b80    mov dword ptr [eax],280h"
 );
 // LINE 74:
 	asm( 
-"	      00495b86    mov eax,[ebp+0Ch]"
+"	      00495b86    mov eax,nHeight"
 "	      00495b89    mov dword ptr [eax],1E0h"
 );
 // LINE 76:
@@ -56,12 +56,12 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 );
 // LINE 77:
 	asm( 
-"	      00495ba1    mov eax,[ebp+8]"
+"	      00495ba1    mov eax,nWidth"
 "	      00495ba4    mov dword ptr [eax],320h"
 );
 // LINE 78:
 	asm( 
-"	      00495baa    mov eax,[ebp+0Ch]"
+"	      00495baa    mov eax,nHeight"
 "	      00495bad    mov dword ptr [eax],258h"
 );
 // LINE 80:
@@ -72,12 +72,12 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 );
 // LINE 81:
 	asm( 
-"	      00495bc5    mov eax,[ebp+8]"
+"	      00495bc5    mov eax,nWidth"
 "	      00495bc8    mov dword ptr [eax],400h"
 );
 // LINE 82:
 	asm( 
-"	      00495bce    mov eax,[ebp+0Ch]"
+"	      00495bce    mov eax,nHeight"
 "	      00495bd1    mov dword ptr [eax],300h"
 );
 // LINE 84:
@@ -103,7 +103,7 @@ int  CGameApp::S3PreRender() {
 "	      00495be9    push ebx"
 "	      00495bea    push esi"
 "	      00495beb    push edi"
-"	      00495bec    mov [ebp-14h],ecx"
+"	      00495bec    mov this,ecx"
 );
 // LINE 93:
 	asm( 
@@ -111,13 +111,13 @@ int  CGameApp::S3PreRender() {
 );
 // LINE 95:
 	asm( 
-"	      00495bf4    mov eax,[ebp-14h]"
+"	      00495bf4    mov eax,this"
 "	      00495bf7    cmp dword ptr [eax+42F8h],280h"
 "	      00495c01    jl near ptr 00495D54h"
 );
 // LINE 96:
 	asm( 
-"	      00495c07    mov eax,[ebp-14h]"
+"	      00495c07    mov eax,this"
 "	      00495c0a    cmp dword ptr [eax+4308h],0"
 "	      00495c11    jne near ptr 00495C50h"
 );
@@ -148,7 +148,7 @@ int  CGameApp::S3PreRender() {
 // LINE 104:
 	asm( 
 "	      00495c4b    jmp near ptr 00495D4Fh"
-"	      00495c50    mov eax,[ebp-14h]"
+"	      00495c50    mov eax,this"
 "	      00495c53    cmp dword ptr [eax+4308h],1"
 "	      00495c5a    jne near ptr 00495D1Bh"
 );
@@ -291,33 +291,33 @@ int  CGameApp::S3PreRender() {
 // LINE 144:
 	asm( 
 "	      00495d95    mov eax,ds:[598EC0h]"
-"	      00495d9a    mov [ebp-10h],eax"
+"	      00495d9a    mov rectFill.left,eax"
 );
 // LINE 145:
 	asm( 
 "	      00495d9d    mov eax,ds:[598EC4h]"
-"	      00495da2    mov [ebp-0Ch],eax"
+"	      00495da2    mov rectFill.top,eax"
 );
 // LINE 146:
 	asm( 
 "	      00495da5    mov eax,ds:[598EC8h]"
 "	      00495daa    add eax,ds:[598EC0h]"
-"	      00495db0    mov [ebp-8],eax"
+"	      00495db0    mov rectFill.right,eax"
 );
 // LINE 147:
 	asm( 
 "	      00495db3    mov eax,ds:[598EC4h]"
 "	      00495db8    add eax,ds:[598ECCh]"
-"	      00495dbe    mov [ebp-4],eax"
+"	      00495dbe    mov rectFill.bottom,eax"
 );
 // LINE 150:
 	asm( 
-"	      00495dc1    lea eax,[ebp-10h]"
+"	      00495dc1    lea eax,rectFill.left"
 "	      00495dc4    push eax"
 "	      00495dc5    mov eax,ds:[598EA0h]"
 "	      00495dca    push eax"
-"	      00495dcb    mov eax,[ebp-14h]"
-"	      00495dce    mov ecx,[ebp-14h]"
+"	      00495dcb    mov eax,this"
+"	      00495dce    mov ecx,this"
 "	      00495dd1    mov ecx,[ecx+0D8h]"
 "	      00495dd7    mov edx,[ecx]"
 "	      00495dd9    mov ecx,[eax+0D8h]"
@@ -325,7 +325,7 @@ int  CGameApp::S3PreRender() {
 );
 // LINE 153:
 	asm( 
-"	      00495de2    mov eax,[ebp-14h]"
+"	      00495de2    mov eax,this"
 "	      00495de5    cmp dword ptr [eax+4330h],0"
 "	      00495dec    je near ptr 00495E19h"
 );
@@ -333,11 +333,11 @@ int  CGameApp::S3PreRender() {
 	asm( 
 "	      00495df2    mov eax,ds:[598EC8h]"
 "	      00495df7    push eax"
-"	      00495df8    mov eax,[ebp-14h]"
+"	      00495df8    mov eax,this"
 "	      00495dfb    mov eax,[eax+0D8h]"
 "	      00495e01    push eax"
-"	      00495e02    mov eax,[ebp-14h]"
-"	      00495e05    mov ecx,[ebp-14h]"
+"	      00495e02    mov eax,this"
+"	      00495e05    mov ecx,this"
 "	      00495e08    mov ecx,[ecx+0DCh]"
 "	      00495e0e    mov edx,[ecx]"
 "	      00495e10    mov ecx,[eax+0DCh]"
@@ -345,8 +345,8 @@ int  CGameApp::S3PreRender() {
 );
 // LINE 158:
 	asm( 
-"	      00495e19    mov eax,[ebp-14h]"
-"	      00495e1c    mov ecx,[ebp-14h]"
+"	      00495e19    mov eax,this"
+"	      00495e1c    mov ecx,this"
 "	      00495e1f    mov ecx,[ecx+0D8h]"
 "	      00495e25    mov edx,[ecx]"
 "	      00495e27    mov ecx,[eax+0D8h]"
@@ -355,7 +355,7 @@ int  CGameApp::S3PreRender() {
 // LINE 159:
 	asm( 
 "	      00495e2f    jmp near ptr 00495E34h"
-"	      00495e34    mov eax,[ebp-14h]"
+"	      00495e34    mov eax,this"
 "	      00495e37    mov eax,[eax+0D8h]"
 "	      00495e3d    mov eax,[eax+10h]"
 "	      00495e40    mov ds:[598EACh],eax"
@@ -367,33 +367,33 @@ int  CGameApp::S3PreRender() {
 // LINE 162:
 	asm( 
 "	      00495e4a    mov eax,ds:[598EE0h]"
-"	      00495e4f    mov [ebp-10h],eax"
+"	      00495e4f    mov rectFill.left,eax"
 );
 // LINE 163:
 	asm( 
 "	      00495e52    mov eax,ds:[598EE4h]"
-"	      00495e57    mov [ebp-0Ch],eax"
+"	      00495e57    mov rectFill.top,eax"
 );
 // LINE 164:
 	asm( 
 "	      00495e5a    mov eax,ds:[598EE8h]"
 "	      00495e5f    add eax,ds:[598EE0h]"
-"	      00495e65    mov [ebp-8],eax"
+"	      00495e65    mov rectFill.right,eax"
 );
 // LINE 165:
 	asm( 
 "	      00495e68    mov eax,ds:[598EE4h]"
 "	      00495e6d    add eax,ds:[598EECh]"
-"	      00495e73    mov [ebp-4],eax"
+"	      00495e73    mov rectFill.bottom,eax"
 );
 // LINE 169:
 	asm( 
-"	      00495e76    lea eax,[ebp-10h]"
+"	      00495e76    lea eax,rectFill.left"
 "	      00495e79    push eax"
 "	      00495e7a    mov eax,ds:[598EA0h]"
 "	      00495e7f    push eax"
-"	      00495e80    mov eax,[ebp-14h]"
-"	      00495e83    mov ecx,[ebp-14h]"
+"	      00495e80    mov eax,this"
+"	      00495e83    mov ecx,this"
 "	      00495e86    mov ecx,[ecx+34h]"
 "	      00495e89    mov edx,[ecx]"
 "	      00495e8b    mov ecx,[eax+34h]"
@@ -401,7 +401,7 @@ int  CGameApp::S3PreRender() {
 );
 // LINE 172:
 	asm( 
-"	      00495e91    mov eax,[ebp-14h]"
+"	      00495e91    mov eax,this"
 "	      00495e94    cmp dword ptr [eax+4330h],0"
 "	      00495e9b    je near ptr 00495EC5h"
 );
@@ -409,11 +409,11 @@ int  CGameApp::S3PreRender() {
 	asm( 
 "	      00495ea1    mov eax,ds:[598EC8h]"
 "	      00495ea6    push eax"
-"	      00495ea7    mov eax,[ebp-14h]"
+"	      00495ea7    mov eax,this"
 "	      00495eaa    mov eax,[eax+34h]"
 "	      00495ead    push eax"
-"	      00495eae    mov eax,[ebp-14h]"
-"	      00495eb1    mov ecx,[ebp-14h]"
+"	      00495eae    mov eax,this"
+"	      00495eb1    mov ecx,this"
 "	      00495eb4    mov ecx,[ecx+0DCh]"
 "	      00495eba    mov edx,[ecx]"
 "	      00495ebc    mov ecx,[eax+0DCh]"
@@ -421,8 +421,8 @@ int  CGameApp::S3PreRender() {
 );
 // LINE 175:
 	asm( 
-"	      00495ec5    mov eax,[ebp-14h]"
-"	      00495ec8    mov ecx,[ebp-14h]"
+"	      00495ec5    mov eax,this"
+"	      00495ec8    mov ecx,this"
 "	      00495ecb    mov ecx,[ecx+34h]"
 "	      00495ece    mov edx,[ecx]"
 "	      00495ed0    mov ecx,[eax+34h]"
@@ -431,7 +431,7 @@ int  CGameApp::S3PreRender() {
 // LINE 176:
 	asm( 
 "	      00495ed5    jmp near ptr 00495EDAh"
-"	      00495eda    mov eax,[ebp-14h]"
+"	      00495eda    mov eax,this"
 "	      00495edd    mov eax,[eax+34h]"
 "	      00495ee0    mov eax,[eax+10h]"
 "	      00495ee3    mov ds:[598EACh],eax"
@@ -461,7 +461,7 @@ void  CGameApp::S3PostRender() {
 "	      00495efd    push ebx"
 "	      00495efe    push esi"
 "	      00495eff    push edi"
-"	      00495f00    mov [ebp-4],ecx"
+"	      00495f00    mov this,ecx"
 );
 // LINE 198:
 	asm( 
@@ -470,8 +470,8 @@ void  CGameApp::S3PostRender() {
 );
 // LINE 200:
 	asm( 
-"	      00495f10    mov eax,[ebp-4]"
-"	      00495f13    mov ecx,[ebp-4]"
+"	      00495f10    mov eax,this"
+"	      00495f13    mov ecx,this"
 "	      00495f16    mov ecx,[ecx+0D8h]"
 "	      00495f1c    mov edx,[ecx]"
 "	      00495f1e    mov ecx,[eax+0D8h]"
@@ -479,7 +479,7 @@ void  CGameApp::S3PostRender() {
 );
 // LINE 202:
 	asm( 
-"	      00495f27    mov eax,[ebp-4]"
+"	      00495f27    mov eax,this"
 "	      00495f2a    mov eax,[eax+0D8h]"
 "	      00495f30    push eax"
 "	      00495f31    call 0055181Ah"
@@ -499,11 +499,11 @@ void  CGameApp::S3PostRender() {
 "	      00495f54    push eax"
 "	      00495f55    push 0"
 "	      00495f57    push 0"
-"	      00495f59    mov eax,[ebp-4]"
+"	      00495f59    mov eax,this"
 "	      00495f5c    mov eax,[eax+34h]"
 "	      00495f5f    push eax"
-"	      00495f60    mov eax,[ebp-4]"
-"	      00495f63    mov ecx,[ebp-4]"
+"	      00495f60    mov eax,this"
+"	      00495f63    mov ecx,this"
 "	      00495f66    mov ecx,[ecx+0D8h]"
 "	      00495f6c    mov edx,[ecx]"
 "	      00495f6e    mov ecx,[eax+0D8h]"
@@ -511,10 +511,10 @@ void  CGameApp::S3PostRender() {
 );
 // LINE 207:
 	asm( 
-"	      00495f77    mov eax,[ebp-4]"
+"	      00495f77    mov eax,this"
 "	      00495f7a    mov eax,[eax+34h]"
 "	      00495f7d    push eax"
-"	      00495f7e    mov ecx,[ebp-4]"
+"	      00495f7e    mov ecx,this"
 "	      00495f81    call 00495FC4h"
 );
 // LINE 209:
@@ -523,16 +523,16 @@ void  CGameApp::S3PostRender() {
 );
 // LINE 210:
 	asm( 
-"	      00495f8b    mov eax,[ebp-4]"
+"	      00495f8b    mov eax,this"
 "	      00495f8e    mov eax,[eax+34h]"
 "	      00495f91    push eax"
-"	      00495f92    mov ecx,[ebp-4]"
+"	      00495f92    mov ecx,this"
 "	      00495f95    call 00495FC4h"
 );
 // LINE 211:
 	asm( 
-"	      00495f9a    mov eax,[ebp-4]"
-"	      00495f9d    mov ecx,[ebp-4]"
+"	      00495f9a    mov eax,this"
+"	      00495f9d    mov ecx,this"
 "	      00495fa0    mov ecx,[ecx+34h]"
 "	      00495fa3    mov edx,[ecx]"
 "	      00495fa5    mov ecx,[eax+34h]"
@@ -540,7 +540,7 @@ void  CGameApp::S3PostRender() {
 );
 // LINE 213:
 	asm( 
-"	      00495fab    mov eax,[ebp-4]"
+"	      00495fab    mov eax,this"
 "	      00495fae    mov eax,[eax+34h]"
 "	      00495fb1    push eax"
 "	      00495fb2    call 0055181Ah"
@@ -574,7 +574,7 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 "	      00495fca    push ebx"
 "	      00495fcb    push esi"
 "	      00495fcc    push edi"
-"	      00495fcd    mov [ebp-1Ch],ecx"
+"	      00495fcd    mov this,ecx"
 );
 // LINE 235:
 	asm( 
@@ -585,68 +585,68 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 );
 // LINE 237:
 	asm( 
-"	      00495fea    mov eax,[ebp+8]"
+"	      00495fea    mov eax,bufferToDrawTo"
 "	      00495fed    mov eax,[eax]"
-"	      00495fef    mov ecx,[ebp+8]"
+"	      00495fef    mov ecx,bufferToDrawTo"
 "	      00495ff2    call dword ptr [eax]"
 );
 // LINE 238:
 	asm( 
 "	      00495ff4    jmp near ptr 00495FF9h"
-"	      00495ff9    mov eax,[ebp+8]"
+"	      00495ff9    mov eax,bufferToDrawTo"
 "	      00495ffc    mov eax,[eax+10h]"
-"	      00495fff    mov [ebp-18h],eax"
+"	      00495fff    mov pBufferStart,eax"
 );
 // LINE 239:
 	asm( 
 "	      00496002    jmp near ptr 00496007h"
-"	      00496007    mov eax,[ebp+8]"
+"	      00496007    mov eax,bufferToDrawTo"
 "	      0049600a    mov eax,[eax+14h]"
-"	      0049600d    mov [ebp-8],eax"
+"	      0049600d    mov nSurfaceStride,eax"
 );
 // LINE 241:
 	asm( 
 "	      00496010    mov eax,ds:[598EE8h]"
 "	      00496015    sar eax,1"
-"	      00496018    mov [ebp-14h],eax"
+"	      00496018    mov nMidXPosition,eax"
 );
 // LINE 242:
 	asm( 
 "	      0049601b    mov eax,ds:[598EECh]"
 "	      00496020    sar eax,1"
-"	      00496023    mov [ebp-10h],eax"
+"	      00496023    mov nMidYPosition,eax"
 );
 // LINE 243:
 	asm( 
-"	      00496026    mov eax,[ebp-10h]"
+"	      00496026    mov eax,nMidYPosition"
 "	      00496029    sub eax,0Dh"
-"	      0049602c    imul eax,[ebp-8]"
-"	      00496030    add eax,[ebp-14h]"
-"	      00496033    add eax,[ebp-18h]"
-"	      00496036    mov [ebp-4],eax"
+"	      0049602c    imul eax,nSurfaceStride"
+"	      00496030    add eax,nMidXPosition"
+"	      00496033    add eax,pBufferStart"
+"	      00496036    mov pBufferCurrentPosition,eax"
 );
 // LINE 244:
 	asm( 
-"	      00496039    mov dword ptr [ebp-0Ch],0"
+"	      00496039    mov i,0"
 "	      00496040    jmp near ptr 00496048h"
-"	      00496045    inc dword ptr [ebp-0Ch]"
-"	      00496048    cmp dword ptr [ebp-0Ch],1Ch"
+"	      00496045    inc i"
+"	      00496048    cmp i,1Ch"
 "	      0049604c    jge near ptr 0049606Ah"
 );
 // LINE 245:
 	asm( 
-"	      00496052    mov eax,[ebp-4]"
+"	      00496052    mov eax,pBufferCurrentPosition"
 "	      00496055    mov byte ptr [eax],0"
 );
 // LINE 246:
 	asm( 
-"	      00496058    mov eax,[ebp-4]"
+"	      00496058    mov eax,pBufferCurrentPosition"
 "	      0049605b    mov byte ptr [eax+1],0"
 );
 // LINE 247:
 	asm( 
-"	      0049605f    mov eax,[ebp-8]"
-"	      00496062    add [ebp-4],eax"
+"	      0049605f    mov eax,nSurfaceStride"
+"	      00496062    add pBufferCurrentPosition,eax"
 );
 // LINE 248:
 	asm( 
@@ -654,35 +654,35 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 );
 // LINE 249:
 	asm( 
-"	      0049606a    mov eax,[ebp-10h]"
-"	      0049606d    imul eax,[ebp-8]"
-"	      00496071    add eax,[ebp-14h]"
-"	      00496074    add eax,[ebp-18h]"
+"	      0049606a    mov eax,nMidYPosition"
+"	      0049606d    imul eax,nSurfaceStride"
+"	      00496071    add eax,nMidXPosition"
+"	      00496074    add eax,pBufferStart"
 "	      00496077    sub eax,0Dh"
-"	      0049607a    mov [ebp-4],eax"
+"	      0049607a    mov pBufferCurrentPosition,eax"
 );
 // LINE 250:
 	asm( 
-"	      0049607d    mov dword ptr [ebp-0Ch],0"
+"	      0049607d    mov i,0"
 "	      00496084    jmp near ptr 0049608Ch"
-"	      00496089    inc dword ptr [ebp-0Ch]"
-"	      0049608c    cmp dword ptr [ebp-0Ch],1Ch"
+"	      00496089    inc i"
+"	      0049608c    cmp i,1Ch"
 "	      00496090    jge near ptr 004960AEh"
 );
 // LINE 251:
 	asm( 
-"	      00496096    mov eax,[ebp-4]"
+"	      00496096    mov eax,pBufferCurrentPosition"
 "	      00496099    mov byte ptr [eax],0"
 );
 // LINE 252:
 	asm( 
-"	      0049609c    mov eax,[ebp-8]"
-"	      0049609f    mov ecx,[ebp-4]"
+"	      0049609c    mov eax,nSurfaceStride"
+"	      0049609f    mov ecx,pBufferCurrentPosition"
 "	      004960a2    mov byte ptr [eax+ecx],0"
 );
 // LINE 253:
 	asm( 
-"	      004960a6    inc dword ptr [ebp-4]"
+"	      004960a6    inc pBufferCurrentPosition"
 );
 // LINE 254:
 	asm( 
@@ -690,9 +690,9 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 );
 // LINE 255:
 	asm( 
-"	      004960ae    mov eax,[ebp+8]"
+"	      004960ae    mov eax,bufferToDrawTo"
 "	      004960b1    mov eax,[eax]"
-"	      004960b3    mov ecx,[ebp+8]"
+"	      004960b3    mov ecx,bufferToDrawTo"
 "	      004960b6    call dword ptr [eax+4]"
 );
 // LINE 257:
@@ -721,23 +721,23 @@ void  CGameApp::S3ShowInfo() {
 "	      004960ce    push ebx"
 "	      004960cf    push esi"
 "	      004960d0    push edi"
-"	      004960d1    mov [ebp-11Ch],ecx"
+"	      004960d1    mov this,ecx"
 );
 // LINE 267:
 	asm( 
-"	      004960d7    mov dword ptr [ebp-4],0"
+"	      004960d7    mov nTextLeft,0"
 );
 // LINE 268:
 	asm( 
-"	      004960de    mov dword ptr [ebp-108h],0"
+"	      004960de    mov nTextTop,0"
 );
 // LINE 269:
 	asm( 
-"	      004960e8    mov dword ptr [ebp-10Ch],0Ch"
+"	      004960e8    mov nTextBottom,0Ch"
 );
 // LINE 271:
 	asm( 
-"	      004960f2    mov eax,[ebp-11Ch]"
+"	      004960f2    mov eax,this"
 "	      004960f8    cmp dword ptr [eax+54h],0"
 "	      004960fc    jne near ptr 00496107h"
 );
@@ -749,8 +749,8 @@ void  CGameApp::S3ShowInfo() {
 	asm( 
 "	      00496107    push 0"
 "	      00496109    push 0FFh"
-"	      0049610e    mov eax,[ebp-11Ch]"
-"	      00496114    mov ecx,[ebp-11Ch]"
+"	      0049610e    mov eax,this"
+"	      00496114    mov ecx,this"
 "	      0049611a    mov ecx,[ecx+54h]"
 "	      0049611d    mov edx,[ecx]"
 "	      0049611f    mov ecx,[eax+54h]"
@@ -758,7 +758,7 @@ void  CGameApp::S3ShowInfo() {
 );
 // LINE 283:
 	asm( 
-"	      00496125    mov eax,[ebp-11Ch]"
+"	      00496125    mov eax,this"
 "	      0049612b    mov eax,[eax+4338h]"
 "	      00496131    mov [ebp-118h],eax"
 "	      00496137    mov eax,[ebp-118h]"
@@ -777,12 +777,12 @@ void  CGameApp::S3ShowInfo() {
 );
 // LINE 284:
 	asm( 
-"	      0049617b    mov eax,[ebp-11Ch]"
+"	      0049617b    mov eax,this"
 "	      00496181    fld dword ptr [eax+4344h]"
 "	      00496187    sub esp,8"
 "	      0049618a    fstp qword ptr [esp]"
 "	      0049618d    push 59A140h"
-"	      00496192    lea eax,[ebp-104h]"
+"	      00496192    lea eax,szBuffer1[0]"
 "	      00496198    push eax"
 "	      00496199    call 0056CD30h"
 "	      0049619e    add esp,10h"
@@ -792,15 +792,15 @@ void  CGameApp::S3ShowInfo() {
 "	      004961a1    push 0"
 "	      004961a3    push 0"
 "	      004961a5    push 0"
-"	      004961a7    lea eax,[ebp-108h]"
+"	      004961a7    lea eax,nTextTop"
 "	      004961ad    push eax"
-"	      004961ae    lea eax,[ebp-4]"
+"	      004961ae    lea eax,nTextLeft"
 "	      004961b1    push eax"
 "	      004961b2    push 0"
-"	      004961b4    lea eax,[ebp-104h]"
+"	      004961b4    lea eax,szBuffer1[0]"
 "	      004961ba    push eax"
-"	      004961bb    mov eax,[ebp-11Ch]"
-"	      004961c1    mov ecx,[ebp-11Ch]"
+"	      004961bb    mov eax,this"
+"	      004961c1    mov ecx,this"
 "	      004961c7    mov ecx,[ecx+54h]"
 "	      004961ca    mov edx,[ecx]"
 "	      004961cc    mov ecx,[eax+54h]"
@@ -833,12 +833,12 @@ void  CGameApp::S3ShowInfo() {
 "	      0049620c    push eax"
 "	      0049620d    mov eax,ds:[666390h]"
 "	      00496212    push eax"
-"	      00496213    mov eax,[ebp-11Ch]"
+"	      00496213    mov eax,this"
 "	      00496219    fld dword ptr [eax+4344h]"
 "	      0049621f    sub esp,8"
 "	      00496222    fstp qword ptr [esp]"
 "	      00496225    push 59A14Ch"
-"	      0049622a    lea eax,[ebp-104h]"
+"	      0049622a    lea eax,szBuffer1[0]"
 "	      00496230    push eax"
 "	      00496231    call 0056CD30h"
 "	      00496236    add esp,34h"
@@ -848,15 +848,15 @@ void  CGameApp::S3ShowInfo() {
 "	      00496239    push 0"
 "	      0049623b    push 0"
 "	      0049623d    push 0"
-"	      0049623f    lea eax,[ebp-108h]"
+"	      0049623f    lea eax,nTextTop"
 "	      00496245    push eax"
-"	      00496246    lea eax,[ebp-4]"
+"	      00496246    lea eax,nTextLeft"
 "	      00496249    push eax"
 "	      0049624a    push 0"
-"	      0049624c    lea eax,[ebp-104h]"
+"	      0049624c    lea eax,szBuffer1[0]"
 "	      00496252    push eax"
-"	      00496253    mov eax,[ebp-11Ch]"
-"	      00496259    mov ecx,[ebp-11Ch]"
+"	      00496253    mov eax,this"
+"	      00496259    mov ecx,this"
 "	      0049625f    mov ecx,[ecx+54h]"
 "	      00496262    mov edx,[ecx]"
 "	      00496264    mov ecx,[eax+54h]"
@@ -880,33 +880,33 @@ void  CGameApp::S3ShowInfo() {
 "	      00496293    shr eax,0Ah"
 "	      00496296    push eax"
 "	      00496297    push 59A19Ch"
-"	      0049629c    lea eax,[ebp-104h]"
+"	      0049629c    lea eax,szBuffer1[0]"
 "	      004962a2    push eax"
 "	      004962a3    call 0056CD30h"
 "	      004962a8    add esp,1Ch"
 );
 // LINE 315:
 	asm( 
-"	      004962ab    add dword ptr [ebp-108h],0Ch"
+"	      004962ab    add nTextTop,0Ch"
 );
 // LINE 316:
 	asm( 
-"	      004962b2    add dword ptr [ebp-10Ch],0Ch"
+"	      004962b2    add nTextBottom,0Ch"
 );
 // LINE 317:
 	asm( 
 "	      004962b9    push 0"
 "	      004962bb    push 0"
 "	      004962bd    push 0"
-"	      004962bf    lea eax,[ebp-108h]"
+"	      004962bf    lea eax,nTextTop"
 "	      004962c5    push eax"
-"	      004962c6    lea eax,[ebp-4]"
+"	      004962c6    lea eax,nTextLeft"
 "	      004962c9    push eax"
 "	      004962ca    push 0"
-"	      004962cc    lea eax,[ebp-104h]"
+"	      004962cc    lea eax,szBuffer1[0]"
 "	      004962d2    push eax"
-"	      004962d3    mov eax,[ebp-11Ch]"
-"	      004962d9    mov ecx,[ebp-11Ch]"
+"	      004962d3    mov eax,this"
+"	      004962d9    mov ecx,this"
 "	      004962df    mov ecx,[ecx+54h]"
 "	      004962e2    mov edx,[ecx]"
 "	      004962e4    mov ecx,[eax+54h]"
@@ -915,44 +915,44 @@ void  CGameApp::S3ShowInfo() {
 // LINE 319:
 	asm( 
 "	      004962ea    call 004FC39Dh"
-"	      004962ef    mov [ebp-110h],eax"
+"	      004962ef    mov md,eax"
 );
 // LINE 320:
 	asm( 
-"	      004962f5    cmp dword ptr [ebp-110h],0"
+"	      004962f5    cmp md,0"
 "	      004962fc    je near ptr 00496357h"
 );
 // LINE 321:
 	asm( 
-"	      00496302    lea eax,[ebp-104h]"
+"	      00496302    lea eax,szBuffer1[0]"
 "	      00496308    push eax"
-"	      00496309    mov eax,[ebp-110h]"
+"	      00496309    mov eax,md"
 "	      0049630f    push eax"
 "	      00496310    call 004FCB3Ah"
 "	      00496315    add esp,8"
 );
 // LINE 322:
 	asm( 
-"	      00496318    add dword ptr [ebp-108h],0Ch"
+"	      00496318    add nTextTop,0Ch"
 );
 // LINE 323:
 	asm( 
-"	      0049631f    add dword ptr [ebp-10Ch],0Ch"
+"	      0049631f    add nTextBottom,0Ch"
 );
 // LINE 324:
 	asm( 
 "	      00496326    push 0"
 "	      00496328    push 0"
 "	      0049632a    push 0"
-"	      0049632c    lea eax,[ebp-108h]"
+"	      0049632c    lea eax,nTextTop"
 "	      00496332    push eax"
-"	      00496333    lea eax,[ebp-4]"
+"	      00496333    lea eax,nTextLeft"
 "	      00496336    push eax"
 "	      00496337    push 0"
-"	      00496339    lea eax,[ebp-104h]"
+"	      00496339    lea eax,szBuffer1[0]"
 "	      0049633f    push eax"
-"	      00496340    mov eax,[ebp-11Ch]"
-"	      00496346    mov ecx,[ebp-11Ch]"
+"	      00496340    mov eax,this"
+"	      00496346    mov ecx,this"
 "	      0049634c    mov ecx,[ecx+54h]"
 "	      0049634f    mov edx,[ecx]"
 "	      00496351    mov ecx,[eax+54h]"
@@ -962,9 +962,9 @@ void  CGameApp::S3ShowInfo() {
 // Block end:
 	asm( 
 "	      00496357    jmp near ptr 0049635Ch"
-"	      0049635c    mov eax,[ebp-10Ch]"
+"	      0049635c    mov eax,nTextBottom"
 "	      00496362    push eax"
-"	      00496363    mov eax,[ebp-11Ch]"
+"	      00496363    mov eax,this"
 "	      00496369    mov eax,[eax+54h]"
 "	      0049636c    mov eax,[eax+8]"
 "	      0049636f    push eax"
@@ -972,11 +972,11 @@ void  CGameApp::S3ShowInfo() {
 "	      00496372    push 0"
 "	      00496374    push 0"
 "	      00496376    push 0"
-"	      00496378    mov eax,[ebp-11Ch]"
+"	      00496378    mov eax,this"
 "	      0049637e    mov eax,[eax+34h]"
 "	      00496381    push eax"
-"	      00496382    mov eax,[ebp-11Ch]"
-"	      00496388    mov ecx,[ebp-11Ch]"
+"	      00496382    mov eax,this"
+"	      00496388    mov ecx,this"
 "	      0049638e    mov ecx,[ecx+54h]"
 "	      00496391    mov edx,[ecx]"
 "	      00496393    mov ecx,[eax+54h]"

@@ -30,22 +30,22 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 "	      00527503    push ebx"
 "	      00527504    push esi"
 "	      00527505    push edi"
-"	      00527506    mov [ebp-0Ch],ecx"
-"	      00527509    mov eax,[ebp-0Ch]"
+"	      00527506    mov this,ecx"
+"	      00527509    mov eax,this"
 "	      0052750c    mov dword ptr [eax],593200h"
 );
 // LINE 156:
 	asm( 
-"	      00527512    mov dword ptr [ebp-4],0"
+"	      00527512    mov currentFlag,0"
 "	      00527519    jmp near ptr 00527521h"
-"	      0052751e    inc dword ptr [ebp-4]"
-"	      00527521    cmp dword ptr [ebp-4],7"
+"	      0052751e    inc currentFlag"
+"	      00527521    cmp currentFlag,7"
 "	      00527525    jge near ptr 0052753Bh"
 );
 // LINE 158:
 	asm( 
-"	      0052752b    mov eax,[ebp-4]"
-"	      0052752e    mov ecx,[ebp-0Ch]"
+"	      0052752b    mov eax,currentFlag"
+"	      0052752e    mov ecx,this"
 "	      00527531    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 159:
@@ -54,63 +54,63 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 );
 // LINE 161:
 	asm( 
-"	      0052753b    mov eax,[ebp-0Ch]"
+"	      0052753b    mov eax,this"
 "	      0052753e    mov dword ptr [eax+87h],0"
 );
 // LINE 162:
 	asm( 
-"	      00527548    mov eax,[ebp-0Ch]"
+"	      00527548    mov eax,this"
 "	      0052754b    mov dword ptr [eax+4Fh],0"
 );
 // LINE 163:
 	asm( 
-"	      00527552    mov eax,[ebp-0Ch]"
+"	      00527552    mov eax,this"
 "	      00527555    mov dword ptr [eax+0Fh],0"
 );
 // LINE 164:
 	asm( 
-"	      0052755c    mov eax,[ebp-0Ch]"
+"	      0052755c    mov eax,this"
 "	      0052755f    mov dword ptr [eax+2Bh],0"
 );
 // LINE 165:
 	asm( 
-"	      00527566    mov eax,[ebp-0Ch]"
+"	      00527566    mov eax,this"
 "	      00527569    mov dword ptr [eax+2Fh],0"
 );
 // LINE 166:
 	asm( 
-"	      00527570    mov eax,[ebp+8]"
-"	      00527573    mov ecx,[ebp-0Ch]"
+"	      00527570    mov eax,mapx"
+"	      00527573    mov ecx,this"
 "	      00527576    mov [ecx+33h],eax"
 );
 // LINE 167:
 	asm( 
-"	      00527579    mov eax,[ebp+0Ch]"
-"	      0052757c    mov ecx,[ebp-0Ch]"
+"	      00527579    mov eax,mapy"
+"	      0052757c    mov ecx,this"
 "	      0052757f    mov [ecx+37h],eax"
 );
 // LINE 168:
 	asm( 
-"	      00527582    mov eax,[ebp+8]"
-"	      00527585    mov ecx,[ebp-0Ch]"
+"	      00527582    mov eax,mapx"
+"	      00527585    mov ecx,this"
 "	      00527588    mov [ecx+3Bh],eax"
 );
 // LINE 169:
 	asm( 
-"	      0052758b    mov eax,[ebp+0Ch]"
-"	      0052758e    mov ecx,[ebp-0Ch]"
+"	      0052758b    mov eax,mapy"
+"	      0052758e    mov ecx,this"
 "	      00527591    mov [ecx+3Fh],eax"
 );
 // LINE 170:
 	asm( 
-"	      00527594    mov eax,[ebp+8]"
-"	      00527597    mov ecx,[ebp-0Ch]"
+"	      00527594    mov eax,mapx"
+"	      00527597    mov ecx,this"
 "	      0052759a    mov [ecx+43h],eax"
 );
 // LINE 171:
 	asm( 
-"	      0052759d    mov eax,[ebp+0Ch]"
-"	      005275a0    mov ecx,[ebp-0Ch]"
+"	      0052759d    mov eax,mapy"
+"	      005275a0    mov ecx,this"
 "	      005275a3    mov [ecx+47h],eax"
 );
 // LINE 177:
@@ -120,21 +120,21 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 "	      005275b0    movsx eax,ax"
 "	      005275b3    cdq"
 "	      005275b4    idiv ecx"
-"	      005275b6    mov [ebp-8],edx"
+"	      005275b6    mov odds,edx"
 );
 // LINE 179:
 	asm( 
-"	      005275b9    cmp dword ptr [ebp-8],64h"
+"	      005275b9    cmp odds,64h"
 "	      005275bd    jge near ptr 005275EBh"
 );
 // LINE 182:
 	asm( 
-"	      005275c3    cmp dword ptr [ebp+10h],0"
+"	      005275c3    cmp instanceID,0"
 "	      005275c7    jne near ptr 005275DCh"
 );
 // LINE 183:
 	asm( 
-"	      005275cd    mov eax,[ebp-0Ch]"
+"	      005275cd    mov eax,this"
 "	      005275d0    mov dword ptr [eax+7Bh],163h"
 );
 // LINE 184:
@@ -143,7 +143,7 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 );
 // LINE 185:
 	asm( 
-"	      005275dc    mov eax,[ebp-0Ch]"
+"	      005275dc    mov eax,this"
 "	      005275df    mov dword ptr [eax+7Bh],12Fh"
 );
 // LINE 187:
@@ -162,20 +162,20 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 );
 // LINE 192:
 	asm( 
-"	      0052760c    mov eax,[ebp+8]"
-"	      0052760f    mov ecx,[ebp-0Ch]"
+"	      0052760c    mov eax,mapx"
+"	      0052760f    mov ecx,this"
 "	      00527612    mov [ecx+33h],eax"
 );
 // LINE 193:
 	asm( 
-"	      00527615    mov eax,[ebp+0Ch]"
-"	      00527618    mov ecx,[ebp-0Ch]"
+"	      00527615    mov eax,mapy"
+"	      00527618    mov ecx,this"
 "	      0052761b    mov [ecx+37h],eax"
 );
 // LINE 194:
 	asm( 
 "	      0052761e    jmp near ptr 00527623h"
-"	      00527623    mov eax,[ebp-0Ch]"
+"	      00527623    mov eax,this"
 "	      00527626    pop edi"
 "	      00527627    pop esi"
 "	      00527628    pop ebx"
@@ -194,14 +194,14 @@ void BoatClass::~BoatClass() {
 "	      00527633    push ebx"
 "	      00527634    push esi"
 "	      00527635    push edi"
-"	      00527636    mov [ebp-4],ecx"
-"	      00527639    mov eax,[ebp-4]"
+"	      00527636    mov this,ecx"
+"	      00527639    mov eax,this"
 "	      0052763c    mov dword ptr [eax],593200h"
 );
 // LINE 218:
 	asm( 
 "	      00527642    jmp near ptr 00527647h"
-"	      00527647    mov eax,[ebp-4]"
+"	      00527647    mov eax,this"
 "	      0052764a    movsx eax,byte ptr [eax+4]"
 "	      0052764e    test eax,eax"
 "	      00527650    je near ptr 00527679h"
@@ -209,22 +209,22 @@ void BoatClass::~BoatClass() {
 // LINE 220:
 	asm( 
 "	      00527656    jmp near ptr 0052765Bh"
-"	      0052765b    mov eax,[ebp-4]"
+"	      0052765b    mov eax,this"
 "	      0052765e    movsx eax,byte ptr [eax+5]"
 "	      00527662    test eax,eax"
 "	      00527664    je near ptr 00527679h"
 );
 // LINE 222:
 	asm( 
-"	      0052766a    mov eax,[ebp-4]"
+"	      0052766a    mov eax,this"
 "	      0052766d    add eax,33h"
 "	      00527670    push eax"
-"	      00527671    mov ecx,[ebp-4]"
+"	      00527671    mov ecx,this"
 "	      00527674    call 00528746h"
 );
 // LINE 234:
 	asm( 
-"	      00527679    mov eax,[ebp-4]"
+"	      00527679    mov eax,this"
 "	      0052767c    mov byte ptr [eax+4],0"
 );
 // LINE 235:
@@ -250,7 +250,7 @@ class BoatClass* BoatClass::GetBoatPointer(long index) {
 );
 // LINE 255:
 	asm( 
-"	      00527690    cmp dword ptr [ebp+8],3"
+"	      00527690    cmp index,3"
 "	      00527694    jl near ptr 005276A1h"
 );
 // LINE 256:
@@ -260,7 +260,7 @@ class BoatClass* BoatClass::GetBoatPointer(long index) {
 );
 // LINE 258:
 	asm( 
-"	      005276a1    mov eax,[ebp+8]"
+"	      005276a1    mov eax,index"
 "	      005276a4    mov eax,[eax*4+62B6D8h]"
 "	      005276ab    jmp near ptr 005276B0h"
 );
@@ -286,7 +286,7 @@ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 );
 // LINE 282:
 	asm( 
-"	      005276bb    mov eax,[ebp+8]"
+"	      005276bb    mov eax,instanceID"
 "	      005276be    push eax"
 "	      005276bf    push 0FFFFFFFFh"
 "	      005276c1    push 0FFFFFFFFh"
@@ -325,35 +325,35 @@ class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanc
 "	      005276eb    mov [ebp-8],eax"
 "	      005276ee    cmp dword ptr [ebp-8],0"
 "	      005276f2    je near ptr 00527714h"
-"	      005276f8    mov eax,[ebp+10h]"
+"	      005276f8    mov eax,instanceID"
 "	      005276fb    push eax"
-"	      005276fc    mov eax,[ebp+0Ch]"
+"	      005276fc    mov eax,mapy"
 "	      005276ff    push eax"
-"	      00527700    mov eax,[ebp+8]"
+"	      00527700    mov eax,mapx"
 "	      00527703    push eax"
 "	      00527704    mov ecx,[ebp-8]"
 "	      00527707    call 005274FDh"
-"	      0052770c    mov [ebp-4],eax"
+"	      0052770c    mov newboat,eax"
 "	      0052770f    jmp near ptr 0052771Bh"
-"	      00527714    mov dword ptr [ebp-4],0"
+"	      00527714    mov newboat,0"
 );
 // LINE 348:
 	asm( 
-"	      0052771b    cmp dword ptr [ebp-4],0"
+"	      0052771b    cmp newboat,0"
 "	      0052771f    je near ptr 0052776Dh"
 );
 // LINE 352:
 	asm( 
-"	      00527725    mov eax,[ebp+10h]"
+"	      00527725    mov eax,instanceID"
 "	      00527728    push eax"
-"	      00527729    mov ecx,[ebp-4]"
+"	      00527729    mov ecx,newboat"
 "	      0052772c    call 00527779h"
 "	      00527731    test eax,eax"
 "	      00527733    je near ptr 00527746h"
 );
 // LINE 354:
 	asm( 
-"	      00527739    mov eax,[ebp-4]"
+"	      00527739    mov eax,newboat"
 "	      0052773c    jmp near ptr 00527774h"
 );
 // LINE 356:
@@ -362,7 +362,7 @@ class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanc
 );
 // LINE 360:
 	asm( 
-"	      00527746    mov eax,[ebp-4]"
+"	      00527746    mov eax,newboat"
 "	      00527749    mov [ebp-10h],eax"
 "	      0052774c    mov eax,[ebp-10h]"
 "	      0052774f    mov [ebp-0Ch],eax"
@@ -400,19 +400,19 @@ int32_t BoatClass::Initialize(int32_t instanceID) {
 "	      0052777f    push ebx"
 "	      00527780    push esi"
 "	      00527781    push edi"
-"	      00527782    mov [ebp-4],ecx"
+"	      00527782    mov this,ecx"
 );
 // LINE 444:
 	asm( 
-"	      00527785    mov eax,[ebp+8]"
+"	      00527785    mov eax,instanceID"
 "	      00527788    push eax"
-"	      00527789    mov eax,[ebp-4]"
+"	      00527789    mov eax,this"
 "	      0052778c    mov eax,[eax+37h]"
 "	      0052778f    push eax"
-"	      00527790    mov eax,[ebp-4]"
+"	      00527790    mov eax,this"
 "	      00527793    mov eax,[eax+33h]"
 "	      00527796    push eax"
-"	      00527797    mov ecx,[ebp-4]"
+"	      00527797    mov ecx,this"
 "	      0052779a    call 0052A81Ch"
 "	      0052779f    jmp near ptr 005277A4h"
 );
@@ -441,15 +441,15 @@ void BoatClass::ResetAll() {
 );
 // LINE 489:
 	asm( 
-"	      005277b4    mov dword ptr [ebp-4],0"
+"	      005277b4    mov currentBoatIndex,0"
 "	      005277bb    jmp near ptr 005277C3h"
-"	      005277c0    inc dword ptr [ebp-4]"
-"	      005277c3    cmp dword ptr [ebp-4],3"
+"	      005277c0    inc currentBoatIndex"
+"	      005277c3    cmp currentBoatIndex,3"
 "	      005277c7    jge near ptr 005277E1h"
 );
 // LINE 491:
 	asm( 
-"	      005277cd    mov eax,[ebp-4]"
+"	      005277cd    mov eax,currentBoatIndex"
 "	      005277d0    mov ecx,[eax*4+62B6D8h]"
 "	      005277d7    call 00527954h"
 );
@@ -483,15 +483,15 @@ void BoatClass::ItterateAll() {
 );
 // LINE 537:
 	asm( 
-"	      005277f4    mov dword ptr [ebp-4],0"
+"	      005277f4    mov currentBoatIndex,0"
 "	      005277fb    jmp near ptr 00527803h"
-"	      00527800    inc dword ptr [ebp-4]"
-"	      00527803    cmp dword ptr [ebp-4],3"
+"	      00527800    inc currentBoatIndex"
+"	      00527803    cmp currentBoatIndex,3"
 "	      00527807    jge near ptr 00527821h"
 );
 // LINE 539:
 	asm( 
-"	      0052780d    mov eax,[ebp-4]"
+"	      0052780d    mov eax,currentBoatIndex"
 "	      00527810    mov ecx,[eax*4+62B6D8h]"
 "	      00527817    call 0052782Bh"
 );
@@ -520,12 +520,12 @@ void BoatClass::Itterate() {
 "	      00527831    push ebx"
 "	      00527832    push esi"
 "	      00527833    push edi"
-"	      00527834    mov [ebp-5Ch],ecx"
+"	      00527834    mov this,ecx"
 );
 // LINE 565:
 	asm( 
 "	      00527837    jmp near ptr 0052783Ch"
-"	      0052783c    mov eax,[ebp-5Ch]"
+"	      0052783c    mov eax,this"
 "	      0052783f    movsx eax,byte ptr [eax+4]"
 "	      00527843    test eax,eax"
 "	      00527845    je near ptr 00527915h"
@@ -533,36 +533,36 @@ void BoatClass::Itterate() {
 // LINE 568:
 	asm( 
 "	      0052784b    mov eax,ds:[5B4760h]"
-"	      00527850    mov ecx,[ebp-5Ch]"
+"	      00527850    mov ecx,this"
 "	      00527853    add [ecx+4Fh],eax"
 );
 // LINE 569:
 	asm( 
 "	      00527856    jmp near ptr 0052785Bh"
-"	      0052785b    mov eax,[ebp-5Ch]"
+"	      0052785b    mov eax,this"
 "	      0052785e    movsx eax,byte ptr [eax+5]"
 "	      00527862    test eax,eax"
 "	      00527864    jne near ptr 00527897h"
-"	      0052786a    mov eax,[ebp-5Ch]"
-"	      0052786d    mov ecx,[ebp-5Ch]"
+"	      0052786a    mov eax,this"
+"	      0052786d    mov ecx,this"
 "	      00527870    mov ecx,[ecx+4Fh]"
 "	      00527873    cmp [eax+4Bh],ecx"
 "	      00527876    jge near ptr 00527897h"
-"	      0052787c    mov eax,[ebp-5Ch]"
+"	      0052787c    mov eax,this"
 "	      0052787f    cmp dword ptr [eax+7Bh],163h"
 "	      00527886    je near ptr 00527897h"
 );
 // LINE 572:
 	asm( 
-"	      0052788c    mov eax,[ebp-5Ch]"
+"	      0052788c    mov eax,this"
 "	      0052788f    mov eax,[eax]"
-"	      00527891    mov ecx,[ebp-5Ch]"
+"	      00527891    mov ecx,this"
 "	      00527894    call dword ptr [eax+14h]"
 );
 // LINE 575:
 	asm( 
 "	      00527897    jmp near ptr 0052789Ch"
-"	      0052789c    mov eax,[ebp-5Ch]"
+"	      0052789c    mov eax,this"
 "	      0052789f    movsx eax,byte ptr [eax+5]"
 "	      005278a3    test eax,eax"
 "	      005278a5    je near ptr 00527910h"
@@ -571,24 +571,24 @@ void BoatClass::Itterate() {
 // Block start:
 	struct VRview position;
 	asm( 
-"	      005278ab    mov eax,[ebp-5Ch]"
+"	      005278ab    mov eax,this"
 "	      005278ae    mov eax,[eax]"
-"	      005278b0    mov ecx,[ebp-5Ch]"
+"	      005278b0    mov ecx,this"
 "	      005278b3    call dword ptr [eax+4]"
 );
 // LINE 585:
 	asm( 
 "	      005278b6    jmp near ptr 005278BBh"
-"	      005278bb    mov eax,[ebp-5Ch]"
+"	      005278bb    mov eax,this"
 "	      005278be    movsx eax,byte ptr [eax+5]"
 "	      005278c2    test eax,eax"
 "	      005278c4    je near ptr 00527910h"
 );
 // LINE 588:
 	asm( 
-"	      005278ca    mov eax,[ebp-5Ch]"
+"	      005278ca    mov eax,this"
 "	      005278cd    add eax,97h"
-"	      005278d2    lea ecx,[ebp-58h]"
+"	      005278d2    lea ecx,position.loc.x"
 "	      005278d5    mov edx,[eax]"
 "	      005278d7    mov [ecx],edx"
 "	      005278d9    mov edx,[eax+4]"
@@ -598,8 +598,8 @@ void BoatClass::Itterate() {
 );
 // LINE 592:
 	asm( 
-"	      005278e5    mov esi,[ebp-5Ch]"
-"	      005278e8    lea edi,[ebp-40h]"
+"	      005278e5    mov esi,this"
+"	      005278e8    lea edi,position.matrix[0][0]"
 "	      005278eb    add esi,0A3h"
 "	      005278f1    mov ecx,10h"
 "	      005278f6    rep movsd"
@@ -607,9 +607,9 @@ void BoatClass::Itterate() {
 // LINE 596:
 	asm( 
 "	      005278f8    push 3"
-"	      005278fa    lea eax,[ebp-58h]"
+"	      005278fa    lea eax,position.loc.x"
 "	      005278fd    push eax"
-"	      005278fe    mov eax,[ebp-5Ch]"
+"	      005278fe    mov eax,this"
 "	      00527901    mov eax,[eax+87h]"
 "	      00527907    push eax"
 "	      00527908    call 004D8781h"
@@ -623,7 +623,7 @@ void BoatClass::Itterate() {
 // LINE 605:
 	asm( 
 "	      00527915    jmp near ptr 0052791Ah"
-"	      0052791a    mov eax,[ebp-5Ch]"
+"	      0052791a    mov eax,this"
 "	      0052791d    movsx eax,byte ptr [eax+4]"
 "	      00527921    test eax,eax"
 "	      00527923    jne near ptr 00527945h"
@@ -656,81 +656,81 @@ void BoatClass::Reset() {
 "	      0052795a    push ebx"
 "	      0052795b    push esi"
 "	      0052795c    push edi"
-"	      0052795d    mov [ebp-4],ecx"
+"	      0052795d    mov this,ecx"
 );
 // LINE 629:
 	asm( 
-"	      00527960    mov ecx,[ebp-4]"
+"	      00527960    mov ecx,this"
 "	      00527963    call 00529EE6h"
 );
 // LINE 631:
 	asm( 
-"	      00527968    mov eax,[ebp-4]"
+"	      00527968    mov eax,this"
 "	      0052796b    mov byte ptr [eax+6],0"
 );
 // LINE 632:
 	asm( 
-"	      0052796f    mov eax,[ebp-4]"
+"	      0052796f    mov eax,this"
 "	      00527972    mov byte ptr [eax+7],0"
 );
 // LINE 633:
 	asm( 
-"	      00527976    mov eax,[ebp-4]"
+"	      00527976    mov eax,this"
 "	      00527979    mov byte ptr [eax+8],0"
 );
 // LINE 634:
 	asm( 
-"	      0052797d    mov eax,[ebp-4]"
+"	      0052797d    mov eax,this"
 "	      00527980    mov byte ptr [eax+9],0"
 );
 // LINE 635:
 	asm( 
-"	      00527984    mov eax,[ebp-4]"
+"	      00527984    mov eax,this"
 "	      00527987    mov byte ptr [eax+0Ah],0"
 );
 // LINE 636:
 	asm( 
-"	      0052798b    mov eax,[ebp-4]"
+"	      0052798b    mov eax,this"
 "	      0052798e    mov dword ptr [eax+4Fh],0"
 );
 // LINE 637:
 	asm( 
-"	      00527995    mov eax,[ebp-4]"
+"	      00527995    mov eax,this"
 "	      00527998    mov dword ptr [eax+0Fh],0"
 );
 // LINE 638:
 	asm( 
-"	      0052799f    mov eax,[ebp-4]"
+"	      0052799f    mov eax,this"
 "	      005279a2    mov dword ptr [eax+2Bh],0"
 );
 // LINE 639:
 	asm( 
-"	      005279a9    mov eax,[ebp-4]"
+"	      005279a9    mov eax,this"
 "	      005279ac    mov dword ptr [eax+33h],0FFFFFFFFh"
 );
 // LINE 640:
 	asm( 
-"	      005279b3    mov eax,[ebp-4]"
+"	      005279b3    mov eax,this"
 "	      005279b6    mov dword ptr [eax+37h],0FFFFFFFFh"
 );
 // LINE 641:
 	asm( 
-"	      005279bd    mov eax,[ebp-4]"
+"	      005279bd    mov eax,this"
 "	      005279c0    mov dword ptr [eax+3Bh],0FFFFFFFFh"
 );
 // LINE 642:
 	asm( 
-"	      005279c7    mov eax,[ebp-4]"
+"	      005279c7    mov eax,this"
 "	      005279ca    mov dword ptr [eax+3Fh],0FFFFFFFFh"
 );
 // LINE 643:
 	asm( 
-"	      005279d1    mov eax,[ebp-4]"
+"	      005279d1    mov eax,this"
 "	      005279d4    mov dword ptr [eax+43h],0FFFFFFFFh"
 );
 // LINE 644:
 	asm( 
-"	      005279db    mov eax,[ebp-4]"
+"	      005279db    mov eax,this"
 "	      005279de    mov dword ptr [eax+47h],0FFFFFFFFh"
 );
 // LINE 645:
@@ -754,21 +754,21 @@ void BoatClass::ItterateFSM() {
 "	      005279f5    push ebx"
 "	      005279f6    push esi"
 "	      005279f7    push edi"
-"	      005279f8    mov [ebp-18h],ecx"
+"	      005279f8    mov this,ecx"
 );
 // LINE 688:
 	asm( 
-"	      005279fb    mov ecx,[ebp-18h]"
+"	      005279fb    mov ecx,this"
 "	      005279fe    call 005280BBh"
 "	      00527a03    test eax,eax"
 "	      00527a05    je near ptr 00527A28h"
-"	      00527a0b    mov eax,[ebp-18h]"
+"	      00527a0b    mov eax,this"
 "	      00527a0e    cmp dword ptr [eax+7Bh],163h"
 "	      00527a15    je near ptr 00527A28h"
 );
 // LINE 690:
 	asm( 
-"	      00527a1b    mov ecx,[ebp-18h]"
+"	      00527a1b    mov ecx,this"
 "	      00527a1e    call 00529EE6h"
 );
 // LINE 691:
@@ -777,22 +777,22 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 698:
 	asm( 
-"	      00527a28    mov eax,[ebp-18h]"
+"	      00527a28    mov eax,this"
 "	      00527a2b    cmp dword ptr [eax+7Bh],163h"
 "	      00527a32    jne near ptr 00527B35h"
 );
 // LINE 700:
 	asm( 
 "	      00527a38    push 0"
-"	      00527a3a    mov eax,[ebp-18h]"
+"	      00527a3a    mov eax,this"
 "	      00527a3d    mov eax,[eax+9Fh]"
 "	      00527a43    push eax"
-"	      00527a44    mov eax,[ebp-18h]"
+"	      00527a44    mov eax,this"
 "	      00527a47    mov eax,[eax+97h]"
 "	      00527a4d    push eax"
 "	      00527a4e    call 00518A8Ch"
 "	      00527a53    add esp,0Ch"
-"	      00527a56    mov ecx,[ebp-18h]"
+"	      00527a56    mov ecx,this"
 "	      00527a59    mov [ecx+9Bh],eax"
 );
 // LINE 703:
@@ -800,12 +800,12 @@ void BoatClass::ItterateFSM() {
 "	      00527a5f    xor eax,eax"
 "	      00527a61    sub eax,ds:[5B4760h]"
 "	      00527a67    neg eax"
-"	      00527a69    mov ecx,[ebp-18h]"
+"	      00527a69    mov ecx,this"
 "	      00527a6c    sub [ecx+57h],eax"
 );
 // LINE 704:
 	asm( 
-"	      00527a6f    mov eax,[ebp-18h]"
+"	      00527a6f    mov eax,this"
 "	      00527a72    cmp dword ptr [eax+57h],0"
 "	      00527a76    jge near ptr 00527B30h"
 );
@@ -813,10 +813,10 @@ void BoatClass::ItterateFSM() {
 // Block start:
 	struct _CELL_INFO* cptr;
 	asm( 
-"	      00527a7c    mov eax,[ebp-18h]"
+"	      00527a7c    mov eax,this"
 "	      00527a7f    mov eax,[eax+37h]"
 "	      00527a82    and eax,0FFh"
-"	      00527a87    mov ecx,[ebp-18h]"
+"	      00527a87    mov ecx,this"
 "	      00527a8a    mov ecx,[ecx+33h]"
 "	      00527a8d    and ecx,0FFh"
 "	      00527a93    shl ecx,0Ah"
@@ -833,15 +833,15 @@ void BoatClass::ItterateFSM() {
 "	      00527ac6    jmp near ptr 00527ACBh"
 "	      00527acb    jmp near ptr 00527AD0h"
 "	      00527ad0    mov eax,[ebp-14h]"
-"	      00527ad3    mov [ebp-4],eax"
+"	      00527ad3    mov cptr,eax"
 );
 // LINE 709:
 	asm( 
 "	      00527ad6    push 9"
-"	      00527ad8    mov eax,[ebp-18h]"
+"	      00527ad8    mov eax,this"
 "	      00527adb    add eax,97h"
 "	      00527ae0    push eax"
-"	      00527ae1    mov eax,[ebp-4]"
+"	      00527ae1    mov eax,cptr"
 "	      00527ae4    push eax"
 "	      00527ae5    call 005240DCh"
 "	      00527aea    add esp,0Ch"
@@ -849,10 +849,10 @@ void BoatClass::ItterateFSM() {
 // LINE 710:
 	asm( 
 "	      00527aed    push 0"
-"	      00527aef    mov eax,[ebp-18h]"
+"	      00527aef    mov eax,this"
 "	      00527af2    add eax,97h"
 "	      00527af7    push eax"
-"	      00527af8    mov eax,[ebp-4]"
+"	      00527af8    mov eax,cptr"
 "	      00527afb    push eax"
 "	      00527afc    call 005240DCh"
 "	      00527b01    add esp,0Ch"
@@ -860,7 +860,7 @@ void BoatClass::ItterateFSM() {
 // LINE 711:
 	asm( 
 "	      00527b04    push 0"
-"	      00527b06    mov eax,[ebp-18h]"
+"	      00527b06    mov eax,this"
 "	      00527b09    add eax,97h"
 "	      00527b0e    push eax"
 "	      00527b0f    push 0Fh"
@@ -869,7 +869,7 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 714:
 	asm( 
-"	      00527b19    mov eax,[ebp-18h]"
+"	      00527b19    mov eax,this"
 "	      00527b1c    mov eax,[eax+53h]"
 "	      00527b1f    push eax"
 "	      00527b20    call 0054A35Ah"
@@ -877,7 +877,7 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 715:
 	asm( 
-"	      00527b28    mov ecx,[ebp-18h]"
+"	      00527b28    mov ecx,this"
 "	      00527b2b    call 00529EE6h"
 );
 // LINE 717:
@@ -887,16 +887,16 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 720:
 	asm( 
-"	      00527b35    mov eax,[ebp-18h]"
+"	      00527b35    mov eax,this"
 "	      00527b38    mov eax,[eax]"
-"	      00527b3a    mov ecx,[ebp-18h]"
+"	      00527b3a    mov ecx,this"
 "	      00527b3d    call dword ptr [eax+0Ch]"
 "	      00527b40    mov [ebp-1Ch],eax"
 "	      00527b43    jmp near ptr 00527C57h"
 );
 // LINE 726:
 	asm( 
-"	      00527b48    mov ecx,[ebp-18h]"
+"	      00527b48    mov ecx,this"
 "	      00527b4b    call 005284BAh"
 );
 // LINE 729:
@@ -904,12 +904,12 @@ void BoatClass::ItterateFSM() {
 "	      00527b50    xor eax,eax"
 "	      00527b52    sub eax,ds:[5B4760h]"
 "	      00527b58    neg eax"
-"	      00527b5a    mov ecx,[ebp-18h]"
+"	      00527b5a    mov ecx,this"
 "	      00527b5d    sub [ecx+0Bh],eax"
 );
 // LINE 730:
 	asm( 
-"	      00527b60    mov eax,[ebp-18h]"
+"	      00527b60    mov eax,this"
 "	      00527b63    cmp dword ptr [eax+0Bh],0"
 "	      00527b67    jge near ptr 00527BC6h"
 );
@@ -917,39 +917,39 @@ void BoatClass::ItterateFSM() {
 // Block start:
 	struct Point3d sprayvect;
 	asm( 
-"	      00527b6d    mov eax,[ebp-18h]"
+"	      00527b6d    mov eax,this"
 "	      00527b70    mov eax,[eax+13h]"
 "	      00527b73    neg eax"
-"	      00527b75    mov [ebp-10h],eax"
+"	      00527b75    mov sprayvect.x,eax"
 );
 // LINE 736:
 	asm( 
-"	      00527b78    mov eax,[ebp-18h]"
+"	      00527b78    mov eax,this"
 "	      00527b7b    mov eax,[eax+17h]"
 "	      00527b7e    neg eax"
-"	      00527b80    mov [ebp-0Ch],eax"
+"	      00527b80    mov sprayvect.y,eax"
 );
 // LINE 737:
 	asm( 
-"	      00527b83    mov eax,[ebp-18h]"
+"	      00527b83    mov eax,this"
 "	      00527b86    mov eax,[eax+1Bh]"
 "	      00527b89    neg eax"
-"	      00527b8b    mov [ebp-8],eax"
+"	      00527b8b    mov sprayvect.z,eax"
 );
 // LINE 748:
 	asm( 
 "	      00527b8e    push 0FFFFFFFFh"
 "	      00527b90    push 140000h"
-"	      00527b95    mov eax,[ebp-18h]"
+"	      00527b95    mov eax,this"
 "	      00527b98    add eax,7Fh"
 "	      00527b9b    push eax"
 "	      00527b9c    push 1"
-"	      00527b9e    lea eax,[ebp-10h]"
+"	      00527b9e    lea eax,sprayvect.x"
 "	      00527ba1    push eax"
-"	      00527ba2    mov eax,[ebp-18h]"
+"	      00527ba2    mov eax,this"
 "	      00527ba5    add eax,97h"
 "	      00527baa    push eax"
-"	      00527bab    mov eax,[ebp-18h]"
+"	      00527bab    mov eax,this"
 "	      00527bae    add eax,33h"
 "	      00527bb1    push eax"
 "	      00527bb2    push 7"
@@ -958,67 +958,67 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 750:
 	asm( 
-"	      00527bbc    mov eax,[ebp-18h]"
+"	      00527bbc    mov eax,this"
 "	      00527bbf    mov dword ptr [eax+0Bh],0E666h"
 );
 // LINE 795:
 // Block end:
 	asm( 
-"	      00527bc6    mov ecx,[ebp-18h]"
+"	      00527bc6    mov ecx,this"
 "	      00527bc9    call 00528628h"
 "	      00527bce    test eax,eax"
 "	      00527bd0    je near ptr 00527C2Dh"
 );
 // LINE 798:
 	asm( 
-"	      00527bd6    mov eax,[ebp-18h]"
+"	      00527bd6    mov eax,this"
 "	      00527bd9    add eax,33h"
 "	      00527bdc    push eax"
-"	      00527bdd    mov ecx,[ebp-18h]"
+"	      00527bdd    mov ecx,this"
 "	      00527be0    call 00528746h"
 );
 // LINE 799:
 	asm( 
-"	      00527be5    mov eax,[ebp-18h]"
+"	      00527be5    mov eax,this"
 "	      00527be8    add eax,43h"
 "	      00527beb    push eax"
-"	      00527bec    mov ecx,[ebp-18h]"
+"	      00527bec    mov ecx,this"
 "	      00527bef    call 0052885Ch"
 );
 // LINE 800:
 	asm( 
-"	      00527bf4    mov eax,[ebp-18h]"
+"	      00527bf4    mov eax,this"
 "	      00527bf7    add eax,43h"
 "	      00527bfa    mov ecx,[eax]"
 "	      00527bfc    mov eax,[eax+4]"
-"	      00527bff    mov edx,[ebp-18h]"
+"	      00527bff    mov edx,this"
 "	      00527c02    add edx,33h"
 "	      00527c05    mov [edx],ecx"
 "	      00527c07    mov [edx+4],eax"
 );
 // LINE 802:
 	asm( 
-"	      00527c0a    mov eax,[ebp-18h]"
+"	      00527c0a    mov eax,this"
 "	      00527c0d    add eax,33h"
 "	      00527c10    push eax"
-"	      00527c11    mov eax,[ebp-18h]"
+"	      00527c11    mov eax,this"
 "	      00527c14    mov eax,[eax]"
-"	      00527c16    mov ecx,[ebp-18h]"
+"	      00527c16    mov ecx,this"
 "	      00527c19    call dword ptr [eax+10h]"
 "	      00527c1c    push eax"
-"	      00527c1d    mov ecx,[ebp-18h]"
+"	      00527c1d    mov ecx,this"
 "	      00527c20    call 00529232h"
 );
 // LINE 808:
 	asm( 
-"	      00527c25    mov ecx,[ebp-18h]"
+"	      00527c25    mov ecx,this"
 "	      00527c28    call 00529543h"
 );
 // LINE 815:
 	asm( 
-"	      00527c2d    mov eax,[ebp-18h]"
+"	      00527c2d    mov eax,this"
 "	      00527c30    mov eax,[eax]"
-"	      00527c32    mov ecx,[ebp-18h]"
+"	      00527c32    mov ecx,this"
 "	      00527c35    call dword ptr [eax+8]"
 );
 // LINE 817:
@@ -1027,7 +1027,7 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 827:
 	asm( 
-"	      00527c3d    mov ecx,[ebp-18h]"
+"	      00527c3d    mov ecx,this"
 "	      00527c40    call 0052849Ah"
 );
 // LINE 829:
@@ -1036,7 +1036,7 @@ void BoatClass::ItterateFSM() {
 );
 // LINE 835:
 	asm( 
-"	      00527c4a    mov ecx,[ebp-18h]"
+"	      00527c4a    mov ecx,this"
 "	      00527c4d    call 0052849Ah"
 );
 // LINE 837:
@@ -1071,13 +1071,13 @@ void BoatClass::AdjustSpeed() {
 "	      00527c80    push ebx"
 "	      00527c81    push esi"
 "	      00527c82    push edi"
-"	      00527c83    mov [ebp-4],ecx"
+"	      00527c83    mov this,ecx"
 );
 // LINE 861:
 	asm( 
-"	      00527c86    mov eax,[ebp-4]"
+"	      00527c86    mov eax,this"
 "	      00527c89    mov eax,[eax+2Fh]"
-"	      00527c8c    mov ecx,[ebp-4]"
+"	      00527c8c    mov ecx,this"
 "	      00527c8f    mov [ecx+2Bh],eax"
 );
 // LINE 863:
@@ -1087,7 +1087,7 @@ void BoatClass::AdjustSpeed() {
 );
 // LINE 865:
 	asm( 
-"	      00527c9f    mov eax,[ebp-4]"
+"	      00527c9f    mov eax,this"
 "	      00527ca2    mov dword ptr [eax+2Bh],1"
 );
 // LINE 867:
@@ -1114,76 +1114,76 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 "	      00527cb9    push ebx"
 "	      00527cba    push esi"
 "	      00527cbb    push edi"
-"	      00527cbc    mov [ebp-18h],ecx"
+"	      00527cbc    mov this,ecx"
 );
 // LINE 893:
 	asm( 
-"	      00527cbf    mov eax,[ebp-18h]"
+"	      00527cbf    mov eax,this"
 "	      00527cc2    mov eax,[eax+8Fh]"
 "	      00527cc8    push eax"
-"	      00527cc9    mov eax,[ebp-18h]"
+"	      00527cc9    mov eax,this"
 "	      00527ccc    mov eax,[eax+13h]"
 "	      00527ccf    push eax"
 "	      00527cd0    call 004D19BDh"
 "	      00527cd5    add esp,8"
-"	      00527cd8    mov ecx,[ebp-18h]"
+"	      00527cd8    mov ecx,this"
 "	      00527cdb    mov ecx,[ecx+97h]"
 "	      00527ce1    add ecx,eax"
-"	      00527ce3    mov [ebp-0Ch],ecx"
+"	      00527ce3    mov boatHeading.x,ecx"
 );
 // LINE 894:
 	asm( 
-"	      00527ce6    mov eax,[ebp-18h]"
+"	      00527ce6    mov eax,this"
 "	      00527ce9    mov eax,[eax+8Fh]"
 "	      00527cef    push eax"
-"	      00527cf0    mov eax,[ebp-18h]"
+"	      00527cf0    mov eax,this"
 "	      00527cf3    mov eax,[eax+17h]"
 "	      00527cf6    push eax"
 "	      00527cf7    call 004D19BDh"
 "	      00527cfc    add esp,8"
-"	      00527cff    mov ecx,[ebp-18h]"
+"	      00527cff    mov ecx,this"
 "	      00527d02    mov ecx,[ecx+9Bh]"
 "	      00527d08    add ecx,eax"
-"	      00527d0a    mov [ebp-8],ecx"
+"	      00527d0a    mov boatHeading.y,ecx"
 );
 // LINE 895:
 	asm( 
-"	      00527d0d    mov eax,[ebp-18h]"
+"	      00527d0d    mov eax,this"
 "	      00527d10    mov eax,[eax+8Fh]"
 "	      00527d16    push eax"
-"	      00527d17    mov eax,[ebp-18h]"
+"	      00527d17    mov eax,this"
 "	      00527d1a    mov eax,[eax+1Bh]"
 "	      00527d1d    push eax"
 "	      00527d1e    call 004D19BDh"
 "	      00527d23    add esp,8"
-"	      00527d26    mov ecx,[ebp-18h]"
+"	      00527d26    mov ecx,this"
 "	      00527d29    mov ecx,[ecx+9Fh]"
 "	      00527d2f    add ecx,eax"
-"	      00527d31    mov [ebp-4],ecx"
+"	      00527d31    mov boatHeading.z,ecx"
 );
 // LINE 897:
 	asm( 
-"	      00527d34    mov eax,[ebp-18h]"
+"	      00527d34    mov eax,this"
 "	      00527d37    mov eax,[eax+97h]"
 "	      00527d3d    add eax,20000000h"
 "	      00527d42    sar eax,16h"
-"	      00527d45    mov [ebp-14h],eax"
+"	      00527d45    mov boatLocation.x,eax"
 );
 // LINE 898:
 	asm( 
 "	      00527d48    mov eax,20000000h"
-"	      00527d4d    mov ecx,[ebp-18h]"
+"	      00527d4d    mov ecx,this"
 "	      00527d50    sub eax,[ecx+9Fh]"
 "	      00527d56    sar eax,16h"
-"	      00527d59    mov [ebp-10h],eax"
+"	      00527d59    mov boatLocation.y,eax"
 );
 // LINE 900:
 	asm( 
-"	      00527d5c    lea eax,[ebp-0Ch]"
+"	      00527d5c    lea eax,boatHeading.x"
 "	      00527d5f    push eax"
-"	      00527d60    lea eax,[ebp-14h]"
+"	      00527d60    lea eax,boatLocation.x"
 "	      00527d63    push eax"
-"	      00527d64    mov ecx,[ebp-18h]"
+"	      00527d64    mov ecx,this"
 "	      00527d67    call 00527D76h"
 "	      00527d6c    jmp near ptr 00527D71h"
 );
@@ -1215,31 +1215,31 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 "	      00527d7c    push ebx"
 "	      00527d7d    push esi"
 "	      00527d7e    push edi"
-"	      00527d7f    mov [ebp-28h],ecx"
+"	      00527d7f    mov this,ecx"
 );
 // LINE 923:
 	asm( 
 "	      00527d82    mov eax,20000000h"
-"	      00527d87    mov ecx,[ebp+0Ch]"
+"	      00527d87    mov ecx,collisionPoint"
 "	      00527d8a    sub eax,[ecx+8]"
 "	      00527d8d    shr eax,16h"
 "	      00527d90    and eax,0FFh"
-"	      00527d95    mov ecx,[ebp+0Ch]"
+"	      00527d95    mov ecx,collisionPoint"
 "	      00527d98    mov ecx,[ecx]"
 "	      00527d9a    add ecx,20000000h"
 "	      00527da0    shr ecx,16h"
 "	      00527da3    and ecx,0FFh"
 "	      00527da9    shl ecx,8"
 "	      00527dac    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00527db5    mov [ebp-10h],ax"
+"	      00527db5    mov cellType,ax"
 "	      00527db9    jmp near ptr 00527DBEh"
 );
 // LINE 924:
 	asm( 
-"	      00527dbe    mov eax,[ebp-28h]"
+"	      00527dbe    mov eax,this"
 "	      00527dc1    mov eax,[eax+37h]"
 "	      00527dc4    and eax,0FFh"
-"	      00527dc9    mov ecx,[ebp-28h]"
+"	      00527dc9    mov ecx,this"
 "	      00527dcc    mov ecx,[ecx+33h]"
 "	      00527dcf    and ecx,0FFh"
 "	      00527dd5    shl ecx,0Ah"
@@ -1256,11 +1256,11 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 "	      00527e08    jmp near ptr 00527E0Dh"
 "	      00527e0d    jmp near ptr 00527E12h"
 "	      00527e12    mov eax,[ebp-20h]"
-"	      00527e15    mov [ebp-0Ch],eax"
+"	      00527e15    mov currentCell,eax"
 );
 // LINE 927:
 	asm( 
-"	      00527e18    cmp dword ptr [ebp-0Ch],0"
+"	      00527e18    cmp currentCell,0"
 "	      00527e1c    jne near ptr 00527E2Ch"
 );
 // LINE 929:
@@ -1270,27 +1270,27 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 934:
 	asm( 
-"	      00527e2c    mov eax,[ebp-0Ch]"
+"	      00527e2c    mov eax,currentCell"
 "	      00527e2f    mov eax,[eax+10h]"
-"	      00527e32    mov [ebp-8],eax"
+"	      00527e32    mov currentObject,eax"
 );
 // LINE 937:
 	asm( 
-"	      00527e35    cmp dword ptr [ebp-8],0"
+"	      00527e35    cmp currentObject,0"
 "	      00527e39    je near ptr 00527F20h"
 );
 // LINE 940:
 	asm( 
-"	      00527e3f    mov eax,[ebp-28h]"
+"	      00527e3f    mov eax,this"
 "	      00527e42    add eax,7Fh"
-"	      00527e45    cmp eax,[ebp-8]"
+"	      00527e45    cmp eax,currentObject"
 "	      00527e48    jne near ptr 00527E5Bh"
 );
 // LINE 942:
 	asm( 
-"	      00527e4e    mov eax,[ebp-8]"
+"	      00527e4e    mov eax,currentObject"
 "	      00527e51    mov eax,[eax]"
-"	      00527e53    mov [ebp-8],eax"
+"	      00527e53    mov currentObject,eax"
 );
 // LINE 943:
 	asm( 
@@ -1298,16 +1298,16 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 947:
 	asm( 
-"	      00527e5b    mov eax,[ebp-8]"
+"	      00527e5b    mov eax,currentObject"
 "	      00527e5e    movsx eax,word ptr [eax+0Ch]"
 "	      00527e62    test al,20h"
 "	      00527e64    je near ptr 00527E77h"
 );
 // LINE 949:
 	asm( 
-"	      00527e6a    mov eax,[ebp-8]"
+"	      00527e6a    mov eax,currentObject"
 "	      00527e6d    mov eax,[eax]"
-"	      00527e6f    mov [ebp-8],eax"
+"	      00527e6f    mov currentObject,eax"
 );
 // LINE 950:
 	asm( 
@@ -1315,63 +1315,63 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 955:
 	asm( 
-"	      00527e77    mov eax,[ebp+0Ch]"
+"	      00527e77    mov eax,collisionPoint"
 "	      00527e7a    mov eax,[eax]"
-"	      00527e7c    mov ecx,[ebp-8]"
+"	      00527e7c    mov ecx,currentObject"
 "	      00527e7f    sub eax,[ecx+18h]"
 "	      00527e82    cdq"
 "	      00527e83    xor eax,edx"
 "	      00527e85    sub eax,edx"
-"	      00527e87    mov [ebp-18h],eax"
+"	      00527e87    mov xdiff,eax"
 );
 // LINE 956:
 	asm( 
-"	      00527e8a    mov eax,[ebp+0Ch]"
+"	      00527e8a    mov eax,collisionPoint"
 "	      00527e8d    mov eax,[eax+4]"
-"	      00527e90    mov ecx,[ebp-8]"
+"	      00527e90    mov ecx,currentObject"
 "	      00527e93    sub eax,[ecx+1Ch]"
 "	      00527e96    cdq"
 "	      00527e97    xor eax,edx"
 "	      00527e99    sub eax,edx"
-"	      00527e9b    mov [ebp-4],eax"
+"	      00527e9b    mov ydiff,eax"
 );
 // LINE 957:
 	asm( 
-"	      00527e9e    mov eax,[ebp+0Ch]"
+"	      00527e9e    mov eax,collisionPoint"
 "	      00527ea1    mov eax,[eax+8]"
-"	      00527ea4    mov ecx,[ebp-8]"
+"	      00527ea4    mov ecx,currentObject"
 "	      00527ea7    sub eax,[ecx+20h]"
 "	      00527eaa    cdq"
 "	      00527eab    xor eax,edx"
 "	      00527ead    sub eax,edx"
-"	      00527eaf    mov [ebp-14h],eax"
+"	      00527eaf    mov zdiff,eax"
 );
 // LINE 959:
 	asm( 
-"	      00527eb2    mov eax,[ebp-8]"
+"	      00527eb2    mov eax,currentObject"
 "	      00527eb5    mov eax,[eax+10h]"
-"	      00527eb8    mov [ebp-1Ch],eax"
+"	      00527eb8    mov combinedradius,eax"
 );
 // LINE 960:
 	asm( 
-"	      00527ebb    add dword ptr [ebp-1Ch],50000h"
+"	      00527ebb    add combinedradius,50000h"
 );
 // LINE 963:
 	asm( 
-"	      00527ec2    mov eax,[ebp-1Ch]"
-"	      00527ec5    cmp [ebp-18h],eax"
+"	      00527ec2    mov eax,combinedradius"
+"	      00527ec5    cmp xdiff,eax"
 "	      00527ec8    jg near ptr 00527F13h"
-"	      00527ece    mov eax,[ebp-4]"
-"	      00527ed1    cmp [ebp-1Ch],eax"
+"	      00527ece    mov eax,ydiff"
+"	      00527ed1    cmp combinedradius,eax"
 "	      00527ed4    jl near ptr 00527F13h"
-"	      00527eda    mov eax,[ebp-14h]"
-"	      00527edd    cmp [ebp-1Ch],eax"
+"	      00527eda    mov eax,zdiff"
+"	      00527edd    cmp combinedradius,eax"
 "	      00527ee0    jl near ptr 00527F13h"
 );
 // LINE 967:
 	asm( 
 "	      00527ee6    jmp near ptr 00527EEBh"
-"	      00527eeb    mov eax,[ebp-8]"
+"	      00527eeb    mov eax,currentObject"
 "	      00527eee    movsx eax,word ptr [eax+0Ch]"
 "	      00527ef2    test al,8"
 "	      00527ef4    je near ptr 00527F09h"
@@ -1392,9 +1392,9 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 983:
 	asm( 
-"	      00527f13    mov eax,[ebp-8]"
+"	      00527f13    mov eax,currentObject"
 "	      00527f16    mov eax,[eax]"
-"	      00527f18    mov [ebp-8],eax"
+"	      00527f18    mov currentObject,eax"
 );
 // LINE 984:
 	asm( 
@@ -1402,13 +1402,13 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 987:
 	asm( 
-"	      00527f20    mov eax,[ebp-28h]"
-"	      00527f23    mov ecx,[ebp-28h]"
+"	      00527f20    mov eax,this"
+"	      00527f23    mov ecx,this"
 "	      00527f26    mov ecx,[ecx+33h]"
 "	      00527f29    cmp [eax+43h],ecx"
 "	      00527f2c    jne near ptr 00527F4Bh"
-"	      00527f32    mov eax,[ebp-28h]"
-"	      00527f35    mov ecx,[ebp-28h]"
+"	      00527f32    mov eax,this"
+"	      00527f35    mov ecx,this"
 "	      00527f38    mov ecx,[ecx+37h]"
 "	      00527f3b    cmp [eax+47h],ecx"
 "	      00527f3e    jne near ptr 00527F4Bh"
@@ -1420,10 +1420,10 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 993:
 	asm( 
-"	      00527f4b    mov eax,[ebp-28h]"
+"	      00527f4b    mov eax,this"
 "	      00527f4e    mov eax,[eax+47h]"
 "	      00527f51    and eax,0FFh"
-"	      00527f56    mov ecx,[ebp-28h]"
+"	      00527f56    mov ecx,this"
 "	      00527f59    mov ecx,[ecx+43h]"
 "	      00527f5c    and ecx,0FFh"
 "	      00527f62    shl ecx,0Ah"
@@ -1440,11 +1440,11 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 "	      00527f95    jmp near ptr 00527F9Ah"
 "	      00527f9a    jmp near ptr 00527F9Fh"
 "	      00527f9f    mov eax,[ebp-24h]"
-"	      00527fa2    mov [ebp-0Ch],eax"
+"	      00527fa2    mov currentCell,eax"
 );
 // LINE 995:
 	asm( 
-"	      00527fa5    cmp dword ptr [ebp-0Ch],0"
+"	      00527fa5    cmp currentCell,0"
 "	      00527fa9    jne near ptr 00527FB9h"
 );
 // LINE 997:
@@ -1454,27 +1454,27 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 1001:
 	asm( 
-"	      00527fb9    mov eax,[ebp-0Ch]"
+"	      00527fb9    mov eax,currentCell"
 "	      00527fbc    mov eax,[eax+10h]"
-"	      00527fbf    mov [ebp-8],eax"
+"	      00527fbf    mov currentObject,eax"
 );
 // LINE 1004:
 	asm( 
-"	      00527fc2    cmp dword ptr [ebp-8],0"
+"	      00527fc2    cmp currentObject,0"
 "	      00527fc6    je near ptr 005280ADh"
 );
 // LINE 1007:
 	asm( 
-"	      00527fcc    mov eax,[ebp-28h]"
+"	      00527fcc    mov eax,this"
 "	      00527fcf    add eax,7Fh"
-"	      00527fd2    cmp eax,[ebp-8]"
+"	      00527fd2    cmp eax,currentObject"
 "	      00527fd5    jne near ptr 00527FE8h"
 );
 // LINE 1009:
 	asm( 
-"	      00527fdb    mov eax,[ebp-8]"
+"	      00527fdb    mov eax,currentObject"
 "	      00527fde    mov eax,[eax]"
-"	      00527fe0    mov [ebp-8],eax"
+"	      00527fe0    mov currentObject,eax"
 );
 // LINE 1010:
 	asm( 
@@ -1482,16 +1482,16 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 1014:
 	asm( 
-"	      00527fe8    mov eax,[ebp-8]"
+"	      00527fe8    mov eax,currentObject"
 "	      00527feb    movsx eax,word ptr [eax+0Ch]"
 "	      00527fef    test al,20h"
 "	      00527ff1    je near ptr 00528004h"
 );
 // LINE 1016:
 	asm( 
-"	      00527ff7    mov eax,[ebp-8]"
+"	      00527ff7    mov eax,currentObject"
 "	      00527ffa    mov eax,[eax]"
-"	      00527ffc    mov [ebp-8],eax"
+"	      00527ffc    mov currentObject,eax"
 );
 // LINE 1017:
 	asm( 
@@ -1499,63 +1499,63 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 1021:
 	asm( 
-"	      00528004    mov eax,[ebp+0Ch]"
+"	      00528004    mov eax,collisionPoint"
 "	      00528007    mov eax,[eax]"
-"	      00528009    mov ecx,[ebp-8]"
+"	      00528009    mov ecx,currentObject"
 "	      0052800c    sub eax,[ecx+18h]"
 "	      0052800f    cdq"
 "	      00528010    xor eax,edx"
 "	      00528012    sub eax,edx"
-"	      00528014    mov [ebp-18h],eax"
+"	      00528014    mov xdiff,eax"
 );
 // LINE 1022:
 	asm( 
-"	      00528017    mov eax,[ebp+0Ch]"
+"	      00528017    mov eax,collisionPoint"
 "	      0052801a    mov eax,[eax+4]"
-"	      0052801d    mov ecx,[ebp-8]"
+"	      0052801d    mov ecx,currentObject"
 "	      00528020    sub eax,[ecx+1Ch]"
 "	      00528023    cdq"
 "	      00528024    xor eax,edx"
 "	      00528026    sub eax,edx"
-"	      00528028    mov [ebp-4],eax"
+"	      00528028    mov ydiff,eax"
 );
 // LINE 1023:
 	asm( 
-"	      0052802b    mov eax,[ebp+0Ch]"
+"	      0052802b    mov eax,collisionPoint"
 "	      0052802e    mov eax,[eax+8]"
-"	      00528031    mov ecx,[ebp-8]"
+"	      00528031    mov ecx,currentObject"
 "	      00528034    sub eax,[ecx+20h]"
 "	      00528037    cdq"
 "	      00528038    xor eax,edx"
 "	      0052803a    sub eax,edx"
-"	      0052803c    mov [ebp-14h],eax"
+"	      0052803c    mov zdiff,eax"
 );
 // LINE 1026:
 	asm( 
-"	      0052803f    mov eax,[ebp-8]"
+"	      0052803f    mov eax,currentObject"
 "	      00528042    mov eax,[eax+10h]"
-"	      00528045    mov [ebp-1Ch],eax"
+"	      00528045    mov combinedradius,eax"
 );
 // LINE 1027:
 	asm( 
-"	      00528048    add dword ptr [ebp-1Ch],50000h"
+"	      00528048    add combinedradius,50000h"
 );
 // LINE 1030:
 	asm( 
-"	      0052804f    mov eax,[ebp-1Ch]"
-"	      00528052    cmp [ebp-18h],eax"
+"	      0052804f    mov eax,combinedradius"
+"	      00528052    cmp xdiff,eax"
 "	      00528055    jg near ptr 005280A0h"
-"	      0052805b    mov eax,[ebp-4]"
-"	      0052805e    cmp [ebp-1Ch],eax"
+"	      0052805b    mov eax,ydiff"
+"	      0052805e    cmp combinedradius,eax"
 "	      00528061    jl near ptr 005280A0h"
-"	      00528067    mov eax,[ebp-14h]"
-"	      0052806a    cmp [ebp-1Ch],eax"
+"	      00528067    mov eax,zdiff"
+"	      0052806a    cmp combinedradius,eax"
 "	      0052806d    jl near ptr 005280A0h"
 );
 // LINE 1033:
 	asm( 
 "	      00528073    jmp near ptr 00528078h"
-"	      00528078    mov eax,[ebp-8]"
+"	      00528078    mov eax,currentObject"
 "	      0052807b    movsx eax,word ptr [eax+0Ch]"
 "	      0052807f    test al,8"
 "	      00528081    je near ptr 00528096h"
@@ -1576,9 +1576,9 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 // LINE 1049:
 	asm( 
-"	      005280a0    mov eax,[ebp-8]"
+"	      005280a0    mov eax,currentObject"
 "	      005280a3    mov eax,[eax]"
-"	      005280a5    mov [ebp-8],eax"
+"	      005280a5    mov currentObject,eax"
 );
 // LINE 1050:
 	asm( 
@@ -1612,30 +1612,30 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 "	      005280c1    push ebx"
 "	      005280c2    push esi"
 "	      005280c3    push edi"
-"	      005280c4    mov [ebp-0Ch],ecx"
+"	      005280c4    mov this,ecx"
 );
 // LINE 1078:
 	asm( 
 "	      005280c7    mov eax,ds:[6BF188h]"
-"	      005280cc    mov ecx,[ebp-0Ch]"
+"	      005280cc    mov ecx,this"
 "	      005280cf    sub eax,[ecx+33h]"
-"	      005280d2    mov [ebp-4],eax"
+"	      005280d2    mov deltaX,eax"
 );
 // LINE 1079:
 	asm( 
 "	      005280d5    mov eax,ds:[6BF18Ch]"
-"	      005280da    mov ecx,[ebp-0Ch]"
+"	      005280da    mov ecx,this"
 "	      005280dd    sub eax,[ecx+37h]"
-"	      005280e0    mov [ebp-8],eax"
+"	      005280e0    mov deltaY,eax"
 );
 // LINE 1084:
 	asm( 
-"	      005280e3    cmp dword ptr [ebp-4],80h"
+"	      005280e3    cmp deltaX,80h"
 "	      005280ea    jle near ptr 005280FCh"
 );
 // LINE 1086:
 	asm( 
-"	      005280f0    sub dword ptr [ebp-4],100h"
+"	      005280f0    sub deltaX,100h"
 );
 // LINE 1087:
 	asm( 
@@ -1643,12 +1643,12 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 );
 // LINE 1088:
 	asm( 
-"	      005280fc    cmp dword ptr [ebp-4],0FFFFFF80h"
+"	      005280fc    cmp deltaX,0FFFFFF80h"
 "	      00528100    jge near ptr 00528112h"
 );
 // LINE 1090:
 	asm( 
-"	      00528106    add dword ptr [ebp-4],100h"
+"	      00528106    add deltaX,100h"
 );
 // LINE 1091:
 	asm( 
@@ -1656,12 +1656,12 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 );
 // LINE 1093:
 	asm( 
-"	      00528112    cmp dword ptr [ebp-8],80h"
+"	      00528112    cmp deltaY,80h"
 "	      00528119    jle near ptr 0052812Bh"
 );
 // LINE 1095:
 	asm( 
-"	      0052811f    sub dword ptr [ebp-8],100h"
+"	      0052811f    sub deltaY,100h"
 );
 // LINE 1096:
 	asm( 
@@ -1669,12 +1669,12 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 );
 // LINE 1097:
 	asm( 
-"	      0052812b    cmp dword ptr [ebp-8],0FFFFFF80h"
+"	      0052812b    cmp deltaY,0FFFFFF80h"
 "	      0052812f    jge near ptr 00528141h"
 );
 // LINE 1099:
 	asm( 
-"	      00528135    add dword ptr [ebp-8],100h"
+"	      00528135    add deltaY,100h"
 );
 // LINE 1100:
 	asm( 
@@ -1682,37 +1682,37 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 );
 // LINE 1102:
 	asm( 
-"	      00528141    cmp dword ptr [ebp-4],0"
+"	      00528141    cmp deltaX,0"
 "	      00528145    jge near ptr 00528153h"
 );
 // LINE 1104:
 	asm( 
-"	      0052814b    mov eax,[ebp-4]"
+"	      0052814b    mov eax,deltaX"
 "	      0052814e    neg eax"
-"	      00528150    mov [ebp-4],eax"
+"	      00528150    mov deltaX,eax"
 );
 // LINE 1106:
 	asm( 
-"	      00528153    cmp dword ptr [ebp-8],0"
+"	      00528153    cmp deltaY,0"
 "	      00528157    jge near ptr 00528165h"
 );
 // LINE 1108:
 	asm( 
-"	      0052815d    mov eax,[ebp-8]"
+"	      0052815d    mov eax,deltaY"
 "	      00528160    neg eax"
-"	      00528162    mov [ebp-8],eax"
+"	      00528162    mov deltaY,eax"
 );
 // LINE 1112:
 	asm( 
 "	      00528165    mov eax,ds:[6663A0h]"
 "	      0052816a    sar eax,1"
 "	      0052816d    add eax,4"
-"	      00528170    cmp eax,[ebp-4]"
+"	      00528170    cmp eax,deltaX"
 "	      00528173    jl near ptr 0052818Dh"
 "	      00528179    mov eax,ds:[6663A0h]"
 "	      0052817e    sar eax,1"
 "	      00528181    add eax,4"
-"	      00528184    cmp eax,[ebp-8]"
+"	      00528184    cmp eax,deltaY"
 "	      00528187    jge near ptr 0052819Ch"
 );
 // LINE 1114:
@@ -1754,56 +1754,56 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 "	      005281ae    push ebx"
 "	      005281af    push esi"
 "	      005281b0    push edi"
-"	      005281b1    mov [ebp-2Ch],ecx"
+"	      005281b1    mov this,ecx"
 );
 // LINE 1141:
 	asm( 
-"	      005281b4    mov dword ptr [ebp-14h],0"
+"	      005281b4    mov validdirs[0],0"
 );
 // LINE 1142:
 	asm( 
-"	      005281bb    mov dword ptr [ebp-10h],0"
+"	      005281bb    mov validdirs[1],0"
 );
 // LINE 1143:
 	asm( 
-"	      005281c2    mov dword ptr [ebp-0Ch],0"
+"	      005281c2    mov validdirs[2],0"
 );
 // LINE 1144:
 	asm( 
-"	      005281c9    mov dword ptr [ebp-8],0"
+"	      005281c9    mov validdirs[3],0"
 );
 // LINE 1145:
 	asm( 
-"	      005281d0    mov dword ptr [ebp-4],0"
+"	      005281d0    mov i,0"
 );
 // LINE 1147:
 	asm( 
-"	      005281d7    mov eax,[ebp-2Ch]"
+"	      005281d7    mov eax,this"
 "	      005281da    add eax,33h"
 "	      005281dd    mov ecx,[eax]"
 "	      005281df    mov eax,[eax+4]"
-"	      005281e2    mov edx,[ebp-2Ch]"
+"	      005281e2    mov edx,this"
 "	      005281e5    add edx,43h"
 "	      005281e8    mov [edx],ecx"
 "	      005281ea    mov [edx+4],eax"
 );
 // LINE 1148:
 	asm( 
-"	      005281ed    mov eax,[ebp-2Ch]"
+"	      005281ed    mov eax,this"
 "	      005281f0    mov dword ptr [eax+0Fh],0"
 );
 // LINE 1150:
 	asm( 
-"	      005281f7    mov eax,[ebp-2Ch]"
+"	      005281f7    mov eax,this"
 "	      005281fa    mov eax,[eax+37h]"
 "	      005281fd    dec eax"
 "	      005281fe    and eax,0FFh"
-"	      00528203    mov ecx,[ebp-2Ch]"
+"	      00528203    mov ecx,this"
 "	      00528206    mov ecx,[ecx+33h]"
 "	      00528209    and ecx,0FFh"
 "	      0052820f    shl ecx,8"
 "	      00528212    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      0052821b    mov [ebp-18h],ax"
+"	      0052821b    mov tile,ax"
 "	      0052821f    jmp near ptr 00528224h"
 );
 // LINE 1151:
@@ -1824,22 +1824,22 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1153:
 	asm( 
-"	      0052825f    mov eax,[ebp-4]"
+"	      0052825f    mov eax,i"
 "	      00528262    mov dword ptr [ebp+eax*4-14h],1"
-"	      0052826a    inc dword ptr [ebp-4]"
+"	      0052826a    inc i"
 );
 // LINE 1156:
 	asm( 
-"	      0052826d    mov eax,[ebp-2Ch]"
+"	      0052826d    mov eax,this"
 "	      00528270    mov eax,[eax+37h]"
 "	      00528273    inc eax"
 "	      00528274    and eax,0FFh"
-"	      00528279    mov ecx,[ebp-2Ch]"
+"	      00528279    mov ecx,this"
 "	      0052827c    mov ecx,[ecx+33h]"
 "	      0052827f    and ecx,0FFh"
 "	      00528285    shl ecx,8"
 "	      00528288    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528291    mov [ebp-18h],ax"
+"	      00528291    mov tile,ax"
 "	      00528295    jmp near ptr 0052829Ah"
 );
 // LINE 1157:
@@ -1860,22 +1860,22 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1159:
 	asm( 
-"	      005282d5    mov eax,[ebp-4]"
+"	      005282d5    mov eax,i"
 "	      005282d8    mov dword ptr [ebp+eax*4-14h],2"
-"	      005282e0    inc dword ptr [ebp-4]"
+"	      005282e0    inc i"
 );
 // LINE 1162:
 	asm( 
-"	      005282e3    mov eax,[ebp-2Ch]"
+"	      005282e3    mov eax,this"
 "	      005282e6    mov eax,[eax+33h]"
 "	      005282e9    inc eax"
 "	      005282ea    and eax,0FFh"
 "	      005282ef    shl eax,8"
-"	      005282f2    mov ecx,[ebp-2Ch]"
+"	      005282f2    mov ecx,this"
 "	      005282f5    mov ecx,[ecx+37h]"
 "	      005282f8    and ecx,0FFh"
 "	      005282fe    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528307    mov [ebp-18h],ax"
+"	      00528307    mov tile,ax"
 "	      0052830b    jmp near ptr 00528310h"
 );
 // LINE 1163:
@@ -1896,22 +1896,22 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1165:
 	asm( 
-"	      0052834b    mov eax,[ebp-4]"
+"	      0052834b    mov eax,i"
 "	      0052834e    mov dword ptr [ebp+eax*4-14h],4"
-"	      00528356    inc dword ptr [ebp-4]"
+"	      00528356    inc i"
 );
 // LINE 1168:
 	asm( 
-"	      00528359    mov eax,[ebp-2Ch]"
+"	      00528359    mov eax,this"
 "	      0052835c    mov eax,[eax+33h]"
 "	      0052835f    dec eax"
 "	      00528360    and eax,0FFh"
 "	      00528365    shl eax,8"
-"	      00528368    mov ecx,[ebp-2Ch]"
+"	      00528368    mov ecx,this"
 "	      0052836b    mov ecx,[ecx+37h]"
 "	      0052836e    and ecx,0FFh"
 "	      00528374    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      0052837d    mov [ebp-18h],ax"
+"	      0052837d    mov tile,ax"
 "	      00528381    jmp near ptr 00528386h"
 );
 // LINE 1169:
@@ -1932,13 +1932,13 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1171:
 	asm( 
-"	      005283c1    mov eax,[ebp-4]"
+"	      005283c1    mov eax,i"
 "	      005283c4    mov dword ptr [ebp+eax*4-14h],8"
-"	      005283cc    inc dword ptr [ebp-4]"
+"	      005283cc    inc i"
 );
 // LINE 1175:
 	asm( 
-"	      005283cf    cmp dword ptr [ebp-4],0"
+"	      005283cf    cmp i,0"
 "	      005283d3    jne near ptr 005283DEh"
 );
 // LINE 1176:
@@ -1950,21 +1950,21 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 "	      005283de    call 0056EC50h"
 "	      005283e3    movsx eax,ax"
 "	      005283e6    cdq"
-"	      005283e7    idiv dword ptr [ebp-4]"
+"	      005283e7    idiv i"
 "	      005283ea    mov eax,[ebp+edx*4-14h]"
-"	      005283ee    mov ecx,[ebp-2Ch]"
+"	      005283ee    mov ecx,this"
 "	      005283f1    mov [ecx+0Fh],eax"
 );
 // LINE 1180:
 	asm( 
-"	      005283f4    mov eax,[ebp-2Ch]"
+"	      005283f4    mov eax,this"
 "	      005283f7    mov eax,[eax+0Fh]"
 "	      005283fa    mov [ebp-30h],eax"
 "	      005283fd    jmp near ptr 00528433h"
 );
 // LINE 1183:
 	asm( 
-"	      00528402    mov eax,[ebp-2Ch]"
+"	      00528402    mov eax,this"
 "	      00528405    dec dword ptr [eax+47h]"
 );
 // LINE 1184:
@@ -1973,7 +1973,7 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1186:
 	asm( 
-"	      0052840d    mov eax,[ebp-2Ch]"
+"	      0052840d    mov eax,this"
 "	      00528410    inc dword ptr [eax+47h]"
 );
 // LINE 1187:
@@ -1982,7 +1982,7 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1189:
 	asm( 
-"	      00528418    mov eax,[ebp-2Ch]"
+"	      00528418    mov eax,this"
 "	      0052841b    inc dword ptr [eax+43h]"
 );
 // LINE 1190:
@@ -1991,7 +1991,7 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 );
 // LINE 1192:
 	asm( 
-"	      00528423    mov eax,[ebp-2Ch]"
+"	      00528423    mov eax,this"
 "	      00528426    dec dword ptr [eax+43h]"
 );
 // LINE 1193:
@@ -2038,11 +2038,11 @@ void BoatClass::SlowDown() {
 "	      00528480    push ebx"
 "	      00528481    push esi"
 "	      00528482    push edi"
-"	      00528483    mov [ebp-4],ecx"
+"	      00528483    mov this,ecx"
 );
 // LINE 1215:
 	asm( 
-"	      00528486    mov eax,[ebp-4]"
+"	      00528486    mov eax,this"
 "	      00528489    sub dword ptr [eax+2Bh],20000h"
 );
 // LINE 1216:
@@ -2066,11 +2066,11 @@ void BoatClass::Stop() {
 "	      005284a0    push ebx"
 "	      005284a1    push esi"
 "	      005284a2    push edi"
-"	      005284a3    mov [ebp-4],ecx"
+"	      005284a3    mov this,ecx"
 );
 // LINE 1236:
 	asm( 
-"	      005284a6    mov eax,[ebp-4]"
+"	      005284a6    mov eax,this"
 "	      005284a9    mov dword ptr [eax+2Bh],0"
 );
 // LINE 1237:
@@ -2096,87 +2096,87 @@ void BoatClass::MoveForward() {
 "	      005284c0    push ebx"
 "	      005284c1    push esi"
 "	      005284c2    push edi"
-"	      005284c3    mov [ebp-0Ch],ecx"
+"	      005284c3    mov this,ecx"
 );
 // LINE 1259:
 	asm( 
 "	      005284c6    mov eax,ds:[5B4760h]"
 "	      005284cb    push eax"
-"	      005284cc    mov eax,[ebp-0Ch]"
+"	      005284cc    mov eax,this"
 "	      005284cf    mov eax,[eax+2Bh]"
 "	      005284d2    push eax"
 "	      005284d3    call 004D19BDh"
 "	      005284d8    add esp,8"
-"	      005284db    mov [ebp-4],eax"
+"	      005284db    mov distance,eax"
 );
 // LINE 1261:
 	asm( 
-"	      005284de    mov eax,[ebp-0Ch]"
-"	      005284e1    mov ecx,[ebp-4]"
+"	      005284de    mov eax,this"
+"	      005284e1    mov ecx,distance"
 "	      005284e4    cmp [eax+1Fh],ecx"
 "	      005284e7    jge near ptr 005284F6h"
 );
 // LINE 1262:
 	asm( 
-"	      005284ed    mov eax,[ebp-0Ch]"
+"	      005284ed    mov eax,this"
 "	      005284f0    mov eax,[eax+1Fh]"
-"	      005284f3    mov [ebp-4],eax"
+"	      005284f3    mov distance,eax"
 );
 // LINE 1263:
 	asm( 
 "	      005284f6    xor eax,eax"
-"	      005284f8    sub eax,[ebp-4]"
+"	      005284f8    sub eax,distance"
 "	      005284fb    neg eax"
-"	      005284fd    mov ecx,[ebp-0Ch]"
+"	      005284fd    mov ecx,this"
 "	      00528500    sub [ecx+1Fh],eax"
 );
 // LINE 1270:
 	asm( 
-"	      00528503    mov eax,[ebp-4]"
+"	      00528503    mov eax,distance"
 "	      00528506    push eax"
-"	      00528507    mov eax,[ebp-0Ch]"
+"	      00528507    mov eax,this"
 "	      0052850a    mov eax,[eax+13h]"
 "	      0052850d    push eax"
 "	      0052850e    call 004D19BDh"
 "	      00528513    add esp,8"
-"	      00528516    mov ecx,[ebp-0Ch]"
+"	      00528516    mov ecx,this"
 "	      00528519    add [ecx+97h],eax"
 );
 // LINE 1271:
 	asm( 
-"	      0052851f    mov eax,[ebp-4]"
+"	      0052851f    mov eax,distance"
 "	      00528522    push eax"
-"	      00528523    mov eax,[ebp-0Ch]"
+"	      00528523    mov eax,this"
 "	      00528526    mov eax,[eax+1Bh]"
 "	      00528529    push eax"
 "	      0052852a    call 004D19BDh"
 "	      0052852f    add esp,8"
-"	      00528532    mov ecx,[ebp-0Ch]"
+"	      00528532    mov ecx,this"
 "	      00528535    add [ecx+9Fh],eax"
 );
 // LINE 1272:
 	asm( 
 "	      0052853b    push 0"
-"	      0052853d    mov eax,[ebp-0Ch]"
+"	      0052853d    mov eax,this"
 "	      00528540    mov eax,[eax+9Fh]"
 "	      00528546    push eax"
-"	      00528547    mov eax,[ebp-0Ch]"
+"	      00528547    mov eax,this"
 "	      0052854a    mov eax,[eax+97h]"
 "	      00528550    push eax"
 "	      00528551    call 00518A8Ch"
 "	      00528556    add esp,0Ch"
-"	      00528559    mov ecx,[ebp-0Ch]"
+"	      00528559    mov ecx,this"
 "	      0052855c    mov [ecx+9Bh],eax"
 );
 // LINE 1275:
 	asm( 
 "	      00528562    jmp near ptr 00528567h"
 "	      00528567    mov eax,20000000h"
-"	      0052856c    mov ecx,[ebp-0Ch]"
+"	      0052856c    mov ecx,this"
 "	      0052856f    sub eax,[ecx+9Fh]"
 "	      00528575    shr eax,16h"
 "	      00528578    and eax,0FFh"
-"	      0052857d    mov ecx,[ebp-0Ch]"
+"	      0052857d    mov ecx,this"
 "	      00528580    mov ecx,[ecx+97h]"
 "	      00528586    add ecx,20000000h"
 "	      0052858c    shr ecx,16h"
@@ -2187,11 +2187,11 @@ void BoatClass::MoveForward() {
 "	      005285a1    cmp edx,5"
 "	      005285a4    jl near ptr 005285F7h"
 "	      005285aa    mov eax,20000000h"
-"	      005285af    mov ecx,[ebp-0Ch]"
+"	      005285af    mov ecx,this"
 "	      005285b2    sub eax,[ecx+9Fh]"
 "	      005285b8    shr eax,16h"
 "	      005285bb    and eax,0FFh"
-"	      005285c0    mov ecx,[ebp-0Ch]"
+"	      005285c0    mov ecx,this"
 "	      005285c3    mov ecx,[ecx+97h]"
 "	      005285c9    add ecx,20000000h"
 "	      005285cf    shr ecx,16h"
@@ -2210,7 +2210,7 @@ void BoatClass::MoveForward() {
 );
 // LINE 1277:
 	asm( 
-"	      0052860b    mov eax,[ebp-0Ch]"
+"	      0052860b    mov eax,this"
 "	      0052860e    mov byte ptr [eax+7],1"
 );
 // LINE 1279:
@@ -2219,7 +2219,7 @@ void BoatClass::MoveForward() {
 );
 // LINE 1281:
 	asm( 
-"	      00528617    mov eax,[ebp-0Ch]"
+"	      00528617    mov eax,this"
 "	      0052861a    mov byte ptr [eax+7],0"
 );
 // LINE 1285:
@@ -2243,11 +2243,11 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 "	      0052862e    push ebx"
 "	      0052862f    push esi"
 "	      00528630    push edi"
-"	      00528631    mov [ebp-4],ecx"
+"	      00528631    mov this,ecx"
 );
 // LINE 1306:
 	asm( 
-"	      00528634    mov eax,[ebp-4]"
+"	      00528634    mov eax,this"
 "	      00528637    cmp dword ptr [eax+1Fh],0"
 "	      0052863b    jg near ptr 00528650h"
 );
@@ -2285,35 +2285,35 @@ int32_t BoatClass::AmIInANewCell() {
 "	      00528662    push ebx"
 "	      00528663    push esi"
 "	      00528664    push edi"
-"	      00528665    mov [ebp-8],ecx"
+"	      00528665    mov this,ecx"
 );
 // LINE 1338:
 	asm( 
-"	      00528668    mov eax,[ebp-8]"
+"	      00528668    mov eax,this"
 "	      0052866b    mov eax,[eax+97h]"
 "	      00528671    add eax,20000000h"
 "	      00528676    sar eax,16h"
-"	      00528679    mov ecx,[ebp-8]"
+"	      00528679    mov ecx,this"
 "	      0052867c    mov [ecx+3Bh],eax"
 );
 // LINE 1339:
 	asm( 
 "	      0052867f    mov eax,20000000h"
-"	      00528684    mov ecx,[ebp-8]"
+"	      00528684    mov ecx,this"
 "	      00528687    sub eax,[ecx+9Fh]"
 "	      0052868d    sar eax,16h"
-"	      00528690    mov ecx,[ebp-8]"
+"	      00528690    mov ecx,this"
 "	      00528693    mov [ecx+3Fh],eax"
 );
 // LINE 1343:
 	asm( 
-"	      00528696    mov eax,[ebp-8]"
-"	      00528699    mov ecx,[ebp-8]"
+"	      00528696    mov eax,this"
+"	      00528699    mov ecx,this"
 "	      0052869c    mov ecx,[ecx+33h]"
 "	      0052869f    cmp [eax+3Bh],ecx"
 "	      005286a2    jne near ptr 005286BAh"
-"	      005286a8    mov eax,[ebp-8]"
-"	      005286ab    mov ecx,[ebp-8]"
+"	      005286a8    mov eax,this"
+"	      005286ab    mov ecx,this"
 "	      005286ae    mov ecx,[ecx+37h]"
 "	      005286b1    cmp [eax+3Fh],ecx"
 "	      005286b4    je near ptr 0052873Ah"
@@ -2321,10 +2321,10 @@ int32_t BoatClass::AmIInANewCell() {
 // LINE 1346:
 	asm( 
 "	      005286ba    jmp near ptr 005286BFh"
-"	      005286bf    mov eax,[ebp-8]"
+"	      005286bf    mov eax,this"
 "	      005286c2    mov eax,[eax+3Fh]"
 "	      005286c5    and eax,0FFh"
-"	      005286ca    mov ecx,[ebp-8]"
+"	      005286ca    mov ecx,this"
 "	      005286cd    mov ecx,[ecx+3Bh]"
 "	      005286d0    and ecx,0FFh"
 "	      005286d6    shl ecx,8"
@@ -2332,10 +2332,10 @@ int32_t BoatClass::AmIInANewCell() {
 "	      005286db    mov dl,[eax+ecx+66EB10h]"
 "	      005286e2    cmp edx,5"
 "	      005286e5    jl near ptr 0052871Ch"
-"	      005286eb    mov eax,[ebp-8]"
+"	      005286eb    mov eax,this"
 "	      005286ee    mov eax,[eax+3Fh]"
 "	      005286f1    and eax,0FFh"
-"	      005286f6    mov ecx,[ebp-8]"
+"	      005286f6    mov ecx,this"
 "	      005286f9    mov ecx,[ecx+3Bh]"
 "	      005286fc    and ecx,0FFh"
 "	      00528702    shl ecx,8"
@@ -2381,14 +2381,14 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052874c    push ebx"
 "	      0052874d    push esi"
 "	      0052874e    push edi"
-"	      0052874f    mov [ebp-10h],ecx"
+"	      0052874f    mov this,ecx"
 );
 // LINE 1373:
 	asm( 
-"	      00528752    mov eax,[ebp+8]"
+"	      00528752    mov eax,point"
 "	      00528755    mov eax,[eax+4]"
 "	      00528758    and eax,0FFh"
-"	      0052875d    mov ecx,[ebp+8]"
+"	      0052875d    mov ecx,point"
 "	      00528760    mov ecx,[ecx]"
 "	      00528762    and ecx,0FFh"
 "	      00528768    shl ecx,0Ah"
@@ -2405,11 +2405,11 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052879b    jmp near ptr 005287A0h"
 "	      005287a0    jmp near ptr 005287A5h"
 "	      005287a5    mov eax,[ebp-0Ch]"
-"	      005287a8    mov [ebp-4],eax"
+"	      005287a8    mov cellPointer,eax"
 );
 // LINE 1375:
 	asm( 
-"	      005287ab    cmp dword ptr [ebp-4],0"
+"	      005287ab    cmp cellPointer,0"
 "	      005287af    jne near ptr 005287D1h"
 "	      005287b5    push 55Fh"
 "	      005287ba    push 5B7458h"
@@ -2421,36 +2421,36 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1377:
 	asm( 
-"	      005287d6    cmp dword ptr [ebp-4],0"
+"	      005287d6    cmp cellPointer,0"
 "	      005287da    je near ptr 00528850h"
 );
 // LINE 1379:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
 	asm( 
-"	      005287e0    mov eax,[ebp-4]"
+"	      005287e0    mov eax,cellPointer"
 "	      005287e3    add eax,10h"
-"	      005287e6    mov [ebp-8],eax"
+"	      005287e6    mov dyptrptr,eax"
 );
 // LINE 1381:
 	asm( 
-"	      005287e9    mov eax,[ebp-8]"
+"	      005287e9    mov eax,dyptrptr"
 "	      005287ec    cmp dword ptr [eax],0"
 "	      005287ef    je near ptr 00528823h"
 );
 // LINE 1385:
 	asm( 
-"	      005287f5    mov eax,[ebp-10h]"
+"	      005287f5    mov eax,this"
 "	      005287f8    add eax,7Fh"
-"	      005287fb    mov ecx,[ebp-8]"
+"	      005287fb    mov ecx,dyptrptr"
 "	      005287fe    cmp eax,[ecx]"
 "	      00528800    jne near ptr 00528816h"
 );
 // LINE 1389:
 	asm( 
-"	      00528806    mov eax,[ebp-10h]"
+"	      00528806    mov eax,this"
 "	      00528809    mov eax,[eax+7Fh]"
-"	      0052880c    mov ecx,[ebp-8]"
+"	      0052880c    mov ecx,dyptrptr"
 "	      0052880f    mov [ecx],eax"
 );
 // LINE 1391:
@@ -2459,9 +2459,9 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1394:
 	asm( 
-"	      00528816    mov eax,[ebp-8]"
+"	      00528816    mov eax,dyptrptr"
 "	      00528819    mov eax,[eax]"
-"	      0052881b    mov [ebp-8],eax"
+"	      0052881b    mov dyptrptr,eax"
 );
 // LINE 1395:
 	asm( 
@@ -2469,7 +2469,7 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 );
 // LINE 1397:
 	asm( 
-"	      00528823    mov eax,[ebp-8]"
+"	      00528823    mov eax,dyptrptr"
 "	      00528826    cmp dword ptr [eax],0"
 "	      00528829    jne near ptr 0052884Bh"
 "	      0052882f    push 575h"
@@ -2504,14 +2504,14 @@ void BoatClass::LinkToCell(const struct Point2d& point) {
 "	      00528862    push ebx"
 "	      00528863    push esi"
 "	      00528864    push edi"
-"	      00528865    mov [ebp-0Ch],ecx"
+"	      00528865    mov this,ecx"
 );
 // LINE 1421:
 	asm( 
-"	      00528868    mov eax,[ebp+8]"
+"	      00528868    mov eax,point"
 "	      0052886b    mov eax,[eax+4]"
 "	      0052886e    and eax,0FFh"
-"	      00528873    mov ecx,[ebp+8]"
+"	      00528873    mov ecx,point"
 "	      00528876    mov ecx,[ecx]"
 "	      00528878    and ecx,0FFh"
 "	      0052887e    shl ecx,0Ah"
@@ -2528,12 +2528,12 @@ void BoatClass::LinkToCell(const struct Point2d& point) {
 "	      005288b1    jmp near ptr 005288B6h"
 "	      005288b6    jmp near ptr 005288BBh"
 "	      005288bb    mov eax,[ebp-8]"
-"	      005288be    mov [ebp-4],eax"
+"	      005288be    mov cellPointer,eax"
 );
 // LINE 1423:
 	asm( 
-"	      005288c1    mov eax,[ebp-4]"
-"	      005288c4    mov ecx,[ebp-0Ch]"
+"	      005288c1    mov eax,cellPointer"
+"	      005288c4    mov ecx,this"
 "	      005288c7    add ecx,7Fh"
 "	      005288ca    cmp [eax+10h],ecx"
 "	      005288cd    jne near ptr 005288EFh"
@@ -2547,16 +2547,16 @@ void BoatClass::LinkToCell(const struct Point2d& point) {
 );
 // LINE 1425:
 	asm( 
-"	      005288f4    mov eax,[ebp-4]"
+"	      005288f4    mov eax,cellPointer"
 "	      005288f7    mov eax,[eax+10h]"
-"	      005288fa    mov ecx,[ebp-0Ch]"
+"	      005288fa    mov ecx,this"
 "	      005288fd    mov [ecx+7Fh],eax"
 );
 // LINE 1426:
 	asm( 
-"	      00528900    mov eax,[ebp-0Ch]"
+"	      00528900    mov eax,this"
 "	      00528903    add eax,7Fh"
-"	      00528906    mov ecx,[ebp-4]"
+"	      00528906    mov ecx,cellPointer"
 "	      00528909    mov [ecx+10h],eax"
 );
 // LINE 1427:
@@ -2591,74 +2591,74 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      0052891e    push ebx"
 "	      0052891f    push esi"
 "	      00528920    push edi"
-"	      00528921    mov [ebp-3Ch],ecx"
+"	      00528921    mov this,ecx"
 );
 // LINE 1465:
 	asm( 
-"	      00528924    mov eax,[ebp+8]"
+"	      00528924    mov eax,point"
 "	      00528927    mov eax,[eax]"
-"	      00528929    mov ecx,[ebp-3Ch]"
+"	      00528929    mov ecx,this"
 "	      0052892c    mov [ecx+5Bh],eax"
 );
 // LINE 1466:
 	asm( 
-"	      0052892f    mov eax,[ebp+8]"
+"	      0052892f    mov eax,point"
 "	      00528932    mov eax,[eax+4]"
 "	      00528935    dec eax"
-"	      00528936    mov ecx,[ebp-3Ch]"
+"	      00528936    mov ecx,this"
 "	      00528939    mov [ecx+5Fh],eax"
 );
 // LINE 1467:
 	asm( 
-"	      0052893c    mov eax,[ebp+8]"
+"	      0052893c    mov eax,point"
 "	      0052893f    mov eax,[eax]"
-"	      00528941    mov ecx,[ebp-3Ch]"
+"	      00528941    mov ecx,this"
 "	      00528944    mov [ecx+63h],eax"
 );
 // LINE 1468:
 	asm( 
-"	      00528947    mov eax,[ebp+8]"
+"	      00528947    mov eax,point"
 "	      0052894a    mov eax,[eax+4]"
 "	      0052894d    inc eax"
-"	      0052894e    mov ecx,[ebp-3Ch]"
+"	      0052894e    mov ecx,this"
 "	      00528951    mov [ecx+67h],eax"
 );
 // LINE 1469:
 	asm( 
-"	      00528954    mov eax,[ebp+8]"
+"	      00528954    mov eax,point"
 "	      00528957    mov eax,[eax]"
 "	      00528959    inc eax"
-"	      0052895a    mov ecx,[ebp-3Ch]"
+"	      0052895a    mov ecx,this"
 "	      0052895d    mov [ecx+6Bh],eax"
 );
 // LINE 1470:
 	asm( 
-"	      00528960    mov eax,[ebp+8]"
+"	      00528960    mov eax,point"
 "	      00528963    mov eax,[eax+4]"
-"	      00528966    mov ecx,[ebp-3Ch]"
+"	      00528966    mov ecx,this"
 "	      00528969    mov [ecx+6Fh],eax"
 );
 // LINE 1471:
 	asm( 
-"	      0052896c    mov eax,[ebp+8]"
+"	      0052896c    mov eax,point"
 "	      0052896f    mov eax,[eax]"
 "	      00528971    dec eax"
-"	      00528972    mov ecx,[ebp-3Ch]"
+"	      00528972    mov ecx,this"
 "	      00528975    mov [ecx+73h],eax"
 );
 // LINE 1472:
 	asm( 
-"	      00528978    mov eax,[ebp+8]"
+"	      00528978    mov eax,point"
 "	      0052897b    mov eax,[eax+4]"
-"	      0052897e    mov ecx,[ebp-3Ch]"
+"	      0052897e    mov ecx,this"
 "	      00528981    mov [ecx+77h],eax"
 );
 // LINE 1474:
 	asm( 
-"	      00528984    mov eax,[ebp-3Ch]"
+"	      00528984    mov eax,this"
 "	      00528987    mov eax,[eax+5Fh]"
 "	      0052898a    and eax,0FFh"
-"	      0052898f    mov ecx,[ebp-3Ch]"
+"	      0052898f    mov ecx,this"
 "	      00528992    mov ecx,[ecx+5Bh]"
 "	      00528995    and ecx,0FFh"
 "	      0052899b    shl ecx,0Ah"
@@ -2675,14 +2675,14 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      005289ce    jmp near ptr 005289D3h"
 "	      005289d3    jmp near ptr 005289D8h"
 "	      005289d8    mov eax,[ebp-2Ch]"
-"	      005289db    mov [ebp-28h],eax"
+"	      005289db    mov ncptr,eax"
 );
 // LINE 1475:
 	asm( 
-"	      005289de    mov eax,[ebp-3Ch]"
+"	      005289de    mov eax,this"
 "	      005289e1    mov eax,[eax+6Fh]"
 "	      005289e4    and eax,0FFh"
-"	      005289e9    mov ecx,[ebp-3Ch]"
+"	      005289e9    mov ecx,this"
 "	      005289ec    mov ecx,[ecx+6Bh]"
 "	      005289ef    and ecx,0FFh"
 "	      005289f5    shl ecx,0Ah"
@@ -2699,14 +2699,14 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528a28    jmp near ptr 00528A2Dh"
 "	      00528a2d    jmp near ptr 00528A32h"
 "	      00528a32    mov eax,[ebp-30h]"
-"	      00528a35    mov [ebp-8],eax"
+"	      00528a35    mov ecptr,eax"
 );
 // LINE 1476:
 	asm( 
-"	      00528a38    mov eax,[ebp-3Ch]"
+"	      00528a38    mov eax,this"
 "	      00528a3b    mov eax,[eax+77h]"
 "	      00528a3e    and eax,0FFh"
-"	      00528a43    mov ecx,[ebp-3Ch]"
+"	      00528a43    mov ecx,this"
 "	      00528a46    mov ecx,[ecx+73h]"
 "	      00528a49    and ecx,0FFh"
 "	      00528a4f    shl ecx,0Ah"
@@ -2723,14 +2723,14 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528a82    jmp near ptr 00528A87h"
 "	      00528a87    jmp near ptr 00528A8Ch"
 "	      00528a8c    mov eax,[ebp-34h]"
-"	      00528a8f    mov [ebp-14h],eax"
+"	      00528a8f    mov wcptr,eax"
 );
 // LINE 1477:
 	asm( 
-"	      00528a92    mov eax,[ebp-3Ch]"
+"	      00528a92    mov eax,this"
 "	      00528a95    mov eax,[eax+67h]"
 "	      00528a98    and eax,0FFh"
-"	      00528a9d    mov ecx,[ebp-3Ch]"
+"	      00528a9d    mov ecx,this"
 "	      00528aa0    mov ecx,[ecx+63h]"
 "	      00528aa3    and ecx,0FFh"
 "	      00528aa9    shl ecx,0Ah"
@@ -2747,93 +2747,93 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528adc    jmp near ptr 00528AE1h"
 "	      00528ae1    jmp near ptr 00528AE6h"
 "	      00528ae6    mov eax,[ebp-38h]"
-"	      00528ae9    mov [ebp-10h],eax"
+"	      00528ae9    mov scptr,eax"
 );
 // LINE 1480:
 	asm( 
-"	      00528aec    mov eax,[ebp+8]"
+"	      00528aec    mov eax,point"
 "	      00528aef    mov eax,[eax+4]"
 "	      00528af2    and eax,0FFh"
-"	      00528af7    mov ecx,[ebp+8]"
+"	      00528af7    mov ecx,point"
 "	      00528afa    mov ecx,[ecx]"
 "	      00528afc    and ecx,0FFh"
 "	      00528b02    shl ecx,8"
 "	      00528b05    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528b0e    mov [ebp-1Ch],ax"
+"	      00528b0e    mov currentTile,ax"
 "	      00528b12    jmp near ptr 00528B17h"
 );
 // LINE 1482:
 	asm( 
-"	      00528b17    mov eax,[ebp-3Ch]"
+"	      00528b17    mov eax,this"
 "	      00528b1a    mov eax,[eax+5Fh]"
 "	      00528b1d    and eax,0FFh"
-"	      00528b22    mov ecx,[ebp-3Ch]"
+"	      00528b22    mov ecx,this"
 "	      00528b25    mov ecx,[ecx+5Bh]"
 "	      00528b28    and ecx,0FFh"
 "	      00528b2e    shl ecx,8"
 "	      00528b31    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528b3a    mov [ebp-4],ax"
+"	      00528b3a    mov northTile,ax"
 "	      00528b3e    jmp near ptr 00528B43h"
 );
 // LINE 1483:
 	asm( 
-"	      00528b43    mov eax,[ebp-3Ch]"
+"	      00528b43    mov eax,this"
 "	      00528b46    mov eax,[eax+67h]"
 "	      00528b49    and eax,0FFh"
-"	      00528b4e    mov ecx,[ebp-3Ch]"
+"	      00528b4e    mov ecx,this"
 "	      00528b51    mov ecx,[ecx+63h]"
 "	      00528b54    and ecx,0FFh"
 "	      00528b5a    shl ecx,8"
 "	      00528b5d    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528b66    mov [ebp-24h],ax"
+"	      00528b66    mov southTile,ax"
 "	      00528b6a    jmp near ptr 00528B6Fh"
 );
 // LINE 1484:
 	asm( 
-"	      00528b6f    mov eax,[ebp-3Ch]"
+"	      00528b6f    mov eax,this"
 "	      00528b72    mov eax,[eax+6Fh]"
 "	      00528b75    and eax,0FFh"
-"	      00528b7a    mov ecx,[ebp-3Ch]"
+"	      00528b7a    mov ecx,this"
 "	      00528b7d    mov ecx,[ecx+6Bh]"
 "	      00528b80    and ecx,0FFh"
 "	      00528b86    shl ecx,8"
 "	      00528b89    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528b92    mov [ebp-18h],ax"
+"	      00528b92    mov eastTile,ax"
 "	      00528b96    jmp near ptr 00528B9Bh"
 );
 // LINE 1485:
 	asm( 
-"	      00528b9b    mov eax,[ebp-3Ch]"
+"	      00528b9b    mov eax,this"
 "	      00528b9e    mov eax,[eax+77h]"
 "	      00528ba1    and eax,0FFh"
-"	      00528ba6    mov ecx,[ebp-3Ch]"
+"	      00528ba6    mov ecx,this"
 "	      00528ba9    mov ecx,[ecx+73h]"
 "	      00528bac    and ecx,0FFh"
 "	      00528bb2    shl ecx,8"
 "	      00528bb5    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00528bbe    mov [ebp-20h],ax"
+"	      00528bbe    mov westTile,ax"
 "	      00528bc2    jmp near ptr 00528BC7h"
 );
 // LINE 1491:
 	asm( 
-"	      00528bc7    mov dword ptr [ebp-0Ch],0"
+"	      00528bc7    mov intersection,0"
 );
 // LINE 1495:
 	asm( 
 "	      00528bce    jmp near ptr 00528BD3h"
-"	      00528bd3    mov eax,[ebp-3Ch]"
+"	      00528bd3    mov eax,this"
 "	      00528bd6    mov eax,[eax+0Fh]"
 "	      00528bd9    and eax,10h"
-"	      00528bdc    mov ecx,[ebp-3Ch]"
+"	      00528bdc    mov ecx,this"
 "	      00528bdf    mov ecx,[ecx+0Fh]"
 "	      00528be2    and ecx,1"
 "	      00528be5    or eax,ecx"
 "	      00528be7    je near ptr 00528C67h"
 "	      00528bed    jmp near ptr 00528BF2h"
-"	      00528bf2    mov eax,[ebp-3Ch]"
+"	      00528bf2    mov eax,this"
 "	      00528bf5    mov eax,[eax+0Fh]"
 "	      00528bf8    and eax,4"
-"	      00528bfb    mov ecx,[ebp-3Ch]"
+"	      00528bfb    mov ecx,this"
 "	      00528bfe    mov ecx,[ecx+0Fh]"
 "	      00528c01    and ecx,40h"
 "	      00528c04    or eax,ecx"
@@ -2841,7 +2841,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1498:
 	asm( 
-"	      00528c0c    mov eax,[ebp-28h]"
+"	      00528c0c    mov eax,ncptr"
 "	      00528c0f    cmp dword ptr [eax+0Ch],0"
 "	      00528c13    jne near ptr 00528C37h"
 "	      00528c19    push 1"
@@ -2849,18 +2849,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528c1e    push eax"
 "	      00528c1f    mov eax,[ebp-1Ch]"
 "	      00528c22    push eax"
-"	      00528c23    mov ecx,[ebp-3Ch]"
+"	      00528c23    mov ecx,this"
 "	      00528c26    call 005290E5h"
 "	      00528c2b    test eax,eax"
 "	      00528c2d    je near ptr 00528C37h"
 );
 // LINE 1500:
 	asm( 
-"	      00528c33    or dword ptr [ebp-0Ch],1"
+"	      00528c33    or intersection,1"
 );
 // LINE 1502:
 	asm( 
-"	      00528c37    mov eax,[ebp-8]"
+"	      00528c37    mov eax,ecptr"
 "	      00528c3a    cmp dword ptr [eax+0Ch],0"
 "	      00528c3e    jne near ptr 00528C62h"
 "	      00528c44    push 4"
@@ -2868,32 +2868,32 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528c49    push eax"
 "	      00528c4a    mov eax,[ebp-1Ch]"
 "	      00528c4d    push eax"
-"	      00528c4e    mov ecx,[ebp-3Ch]"
+"	      00528c4e    mov ecx,this"
 "	      00528c51    call 005290E5h"
 "	      00528c56    test eax,eax"
 "	      00528c58    je near ptr 00528C62h"
 );
 // LINE 1504:
 	asm( 
-"	      00528c5e    or dword ptr [ebp-0Ch],4"
+"	      00528c5e    or intersection,4"
 );
 // LINE 1507:
 	asm( 
 "	      00528c62    jmp near ptr 005290D6h"
 "	      00528c67    jmp near ptr 00528C6Ch"
-"	      00528c6c    mov eax,[ebp-3Ch]"
+"	      00528c6c    mov eax,this"
 "	      00528c6f    mov eax,[eax+0Fh]"
 "	      00528c72    and eax,10h"
-"	      00528c75    mov ecx,[ebp-3Ch]"
+"	      00528c75    mov ecx,this"
 "	      00528c78    mov ecx,[ecx+0Fh]"
 "	      00528c7b    and ecx,1"
 "	      00528c7e    or eax,ecx"
 "	      00528c80    je near ptr 00528D03h"
 "	      00528c86    jmp near ptr 00528C8Bh"
-"	      00528c8b    mov eax,[ebp-3Ch]"
+"	      00528c8b    mov eax,this"
 "	      00528c8e    mov eax,[eax+0Fh]"
 "	      00528c91    and eax,8"
-"	      00528c94    mov ecx,[ebp-3Ch]"
+"	      00528c94    mov ecx,this"
 "	      00528c97    mov ecx,[ecx+0Fh]"
 "	      00528c9a    and ecx,80h"
 "	      00528ca0    or eax,ecx"
@@ -2901,7 +2901,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1510:
 	asm( 
-"	      00528ca8    mov eax,[ebp-28h]"
+"	      00528ca8    mov eax,ncptr"
 "	      00528cab    cmp dword ptr [eax+0Ch],0"
 "	      00528caf    jne near ptr 00528CD3h"
 "	      00528cb5    push 1"
@@ -2909,18 +2909,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528cba    push eax"
 "	      00528cbb    mov eax,[ebp-1Ch]"
 "	      00528cbe    push eax"
-"	      00528cbf    mov ecx,[ebp-3Ch]"
+"	      00528cbf    mov ecx,this"
 "	      00528cc2    call 005290E5h"
 "	      00528cc7    test eax,eax"
 "	      00528cc9    je near ptr 00528CD3h"
 );
 // LINE 1512:
 	asm( 
-"	      00528ccf    or dword ptr [ebp-0Ch],1"
+"	      00528ccf    or intersection,1"
 );
 // LINE 1514:
 	asm( 
-"	      00528cd3    mov eax,[ebp-14h]"
+"	      00528cd3    mov eax,wcptr"
 "	      00528cd6    cmp dword ptr [eax+0Ch],0"
 "	      00528cda    jne near ptr 00528CFEh"
 "	      00528ce0    push 8"
@@ -2928,32 +2928,32 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528ce5    push eax"
 "	      00528ce6    mov eax,[ebp-1Ch]"
 "	      00528ce9    push eax"
-"	      00528cea    mov ecx,[ebp-3Ch]"
+"	      00528cea    mov ecx,this"
 "	      00528ced    call 005290E5h"
 "	      00528cf2    test eax,eax"
 "	      00528cf4    je near ptr 00528CFEh"
 );
 // LINE 1516:
 	asm( 
-"	      00528cfa    or dword ptr [ebp-0Ch],2"
+"	      00528cfa    or intersection,2"
 );
 // LINE 1519:
 	asm( 
 "	      00528cfe    jmp near ptr 005290D6h"
 "	      00528d03    jmp near ptr 00528D08h"
-"	      00528d08    mov eax,[ebp-3Ch]"
+"	      00528d08    mov eax,this"
 "	      00528d0b    mov eax,[eax+0Fh]"
 "	      00528d0e    and eax,2"
-"	      00528d11    mov ecx,[ebp-3Ch]"
+"	      00528d11    mov ecx,this"
 "	      00528d14    mov ecx,[ecx+0Fh]"
 "	      00528d17    and ecx,20h"
 "	      00528d1a    or eax,ecx"
 "	      00528d1c    je near ptr 00528D9Ch"
 "	      00528d22    jmp near ptr 00528D27h"
-"	      00528d27    mov eax,[ebp-3Ch]"
+"	      00528d27    mov eax,this"
 "	      00528d2a    mov eax,[eax+0Fh]"
 "	      00528d2d    and eax,4"
-"	      00528d30    mov ecx,[ebp-3Ch]"
+"	      00528d30    mov ecx,this"
 "	      00528d33    mov ecx,[ecx+0Fh]"
 "	      00528d36    and ecx,40h"
 "	      00528d39    or eax,ecx"
@@ -2961,7 +2961,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1522:
 	asm( 
-"	      00528d41    mov eax,[ebp-10h]"
+"	      00528d41    mov eax,scptr"
 "	      00528d44    cmp dword ptr [eax+0Ch],0"
 "	      00528d48    jne near ptr 00528D6Ch"
 "	      00528d4e    push 2"
@@ -2969,18 +2969,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528d53    push eax"
 "	      00528d54    mov eax,[ebp-1Ch]"
 "	      00528d57    push eax"
-"	      00528d58    mov ecx,[ebp-3Ch]"
+"	      00528d58    mov ecx,this"
 "	      00528d5b    call 005290E5h"
 "	      00528d60    test eax,eax"
 "	      00528d62    je near ptr 00528D6Ch"
 );
 // LINE 1524:
 	asm( 
-"	      00528d68    or dword ptr [ebp-0Ch],1"
+"	      00528d68    or intersection,1"
 );
 // LINE 1526:
 	asm( 
-"	      00528d6c    mov eax,[ebp-8]"
+"	      00528d6c    mov eax,ecptr"
 "	      00528d6f    cmp dword ptr [eax+0Ch],0"
 "	      00528d73    jne near ptr 00528D97h"
 "	      00528d79    push 4"
@@ -2988,32 +2988,32 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528d7e    push eax"
 "	      00528d7f    mov eax,[ebp-1Ch]"
 "	      00528d82    push eax"
-"	      00528d83    mov ecx,[ebp-3Ch]"
+"	      00528d83    mov ecx,this"
 "	      00528d86    call 005290E5h"
 "	      00528d8b    test eax,eax"
 "	      00528d8d    je near ptr 00528D97h"
 );
 // LINE 1528:
 	asm( 
-"	      00528d93    or dword ptr [ebp-0Ch],2"
+"	      00528d93    or intersection,2"
 );
 // LINE 1531:
 	asm( 
 "	      00528d97    jmp near ptr 005290D6h"
 "	      00528d9c    jmp near ptr 00528DA1h"
-"	      00528da1    mov eax,[ebp-3Ch]"
+"	      00528da1    mov eax,this"
 "	      00528da4    mov eax,[eax+0Fh]"
 "	      00528da7    and eax,2"
-"	      00528daa    mov ecx,[ebp-3Ch]"
+"	      00528daa    mov ecx,this"
 "	      00528dad    mov ecx,[ecx+0Fh]"
 "	      00528db0    and ecx,20h"
 "	      00528db3    or eax,ecx"
 "	      00528db5    je near ptr 00528E38h"
 "	      00528dbb    jmp near ptr 00528DC0h"
-"	      00528dc0    mov eax,[ebp-3Ch]"
+"	      00528dc0    mov eax,this"
 "	      00528dc3    mov eax,[eax+0Fh]"
 "	      00528dc6    and eax,8"
-"	      00528dc9    mov ecx,[ebp-3Ch]"
+"	      00528dc9    mov ecx,this"
 "	      00528dcc    mov ecx,[ecx+0Fh]"
 "	      00528dcf    and ecx,80h"
 "	      00528dd5    or eax,ecx"
@@ -3021,7 +3021,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1534:
 	asm( 
-"	      00528ddd    mov eax,[ebp-10h]"
+"	      00528ddd    mov eax,scptr"
 "	      00528de0    cmp dword ptr [eax+0Ch],0"
 "	      00528de4    jne near ptr 00528E08h"
 "	      00528dea    push 2"
@@ -3029,18 +3029,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528def    push eax"
 "	      00528df0    mov eax,[ebp-1Ch]"
 "	      00528df3    push eax"
-"	      00528df4    mov ecx,[ebp-3Ch]"
+"	      00528df4    mov ecx,this"
 "	      00528df7    call 005290E5h"
 "	      00528dfc    test eax,eax"
 "	      00528dfe    je near ptr 00528E08h"
 );
 // LINE 1536:
 	asm( 
-"	      00528e04    or dword ptr [ebp-0Ch],1"
+"	      00528e04    or intersection,1"
 );
 // LINE 1538:
 	asm( 
-"	      00528e08    mov eax,[ebp-14h]"
+"	      00528e08    mov eax,wcptr"
 "	      00528e0b    cmp dword ptr [eax+0Ch],0"
 "	      00528e0f    jne near ptr 00528E33h"
 "	      00528e15    push 8"
@@ -3048,23 +3048,23 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528e1a    push eax"
 "	      00528e1b    mov eax,[ebp-1Ch]"
 "	      00528e1e    push eax"
-"	      00528e1f    mov ecx,[ebp-3Ch]"
+"	      00528e1f    mov ecx,this"
 "	      00528e22    call 005290E5h"
 "	      00528e27    test eax,eax"
 "	      00528e29    je near ptr 00528E33h"
 );
 // LINE 1540:
 	asm( 
-"	      00528e2f    or dword ptr [ebp-0Ch],4"
+"	      00528e2f    or intersection,4"
 );
 // LINE 1543:
 	asm( 
 "	      00528e33    jmp near ptr 005290D6h"
 "	      00528e38    jmp near ptr 00528E3Dh"
-"	      00528e3d    mov eax,[ebp-3Ch]"
+"	      00528e3d    mov eax,this"
 "	      00528e40    mov eax,[eax+0Fh]"
 "	      00528e43    and eax,10h"
-"	      00528e46    mov ecx,[ebp-3Ch]"
+"	      00528e46    mov ecx,this"
 "	      00528e49    mov ecx,[ecx+0Fh]"
 "	      00528e4c    and ecx,1"
 "	      00528e4f    or eax,ecx"
@@ -3072,7 +3072,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1546:
 	asm( 
-"	      00528e57    mov eax,[ebp-28h]"
+"	      00528e57    mov eax,ncptr"
 "	      00528e5a    cmp dword ptr [eax+0Ch],0"
 "	      00528e5e    jne near ptr 00528E82h"
 "	      00528e64    push 1"
@@ -3080,18 +3080,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528e69    push eax"
 "	      00528e6a    mov eax,[ebp-1Ch]"
 "	      00528e6d    push eax"
-"	      00528e6e    mov ecx,[ebp-3Ch]"
+"	      00528e6e    mov ecx,this"
 "	      00528e71    call 005290E5h"
 "	      00528e76    test eax,eax"
 "	      00528e78    je near ptr 00528E82h"
 );
 // LINE 1548:
 	asm( 
-"	      00528e7e    or dword ptr [ebp-0Ch],1"
+"	      00528e7e    or intersection,1"
 );
 // LINE 1550:
 	asm( 
-"	      00528e82    mov eax,[ebp-14h]"
+"	      00528e82    mov eax,wcptr"
 "	      00528e85    cmp dword ptr [eax+0Ch],0"
 "	      00528e89    jne near ptr 00528EADh"
 "	      00528e8f    push 8"
@@ -3099,18 +3099,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528e94    push eax"
 "	      00528e95    mov eax,[ebp-1Ch]"
 "	      00528e98    push eax"
-"	      00528e99    mov ecx,[ebp-3Ch]"
+"	      00528e99    mov ecx,this"
 "	      00528e9c    call 005290E5h"
 "	      00528ea1    test eax,eax"
 "	      00528ea3    je near ptr 00528EADh"
 );
 // LINE 1552:
 	asm( 
-"	      00528ea9    or dword ptr [ebp-0Ch],2"
+"	      00528ea9    or intersection,2"
 );
 // LINE 1554:
 	asm( 
-"	      00528ead    mov eax,[ebp-8]"
+"	      00528ead    mov eax,ecptr"
 "	      00528eb0    cmp dword ptr [eax+0Ch],0"
 "	      00528eb4    jne near ptr 00528ED8h"
 "	      00528eba    push 4"
@@ -3118,23 +3118,23 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528ebf    push eax"
 "	      00528ec0    mov eax,[ebp-1Ch]"
 "	      00528ec3    push eax"
-"	      00528ec4    mov ecx,[ebp-3Ch]"
+"	      00528ec4    mov ecx,this"
 "	      00528ec7    call 005290E5h"
 "	      00528ecc    test eax,eax"
 "	      00528ece    je near ptr 00528ED8h"
 );
 // LINE 1556:
 	asm( 
-"	      00528ed4    or dword ptr [ebp-0Ch],4"
+"	      00528ed4    or intersection,4"
 );
 // LINE 1559:
 	asm( 
 "	      00528ed8    jmp near ptr 005290D6h"
 "	      00528edd    jmp near ptr 00528EE2h"
-"	      00528ee2    mov eax,[ebp-3Ch]"
+"	      00528ee2    mov eax,this"
 "	      00528ee5    mov eax,[eax+0Fh]"
 "	      00528ee8    and eax,2"
-"	      00528eeb    mov ecx,[ebp-3Ch]"
+"	      00528eeb    mov ecx,this"
 "	      00528eee    mov ecx,[ecx+0Fh]"
 "	      00528ef1    and ecx,20h"
 "	      00528ef4    or eax,ecx"
@@ -3142,7 +3142,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1562:
 	asm( 
-"	      00528efc    mov eax,[ebp-10h]"
+"	      00528efc    mov eax,scptr"
 "	      00528eff    cmp dword ptr [eax+0Ch],0"
 "	      00528f03    jne near ptr 00528F27h"
 "	      00528f09    push 2"
@@ -3150,18 +3150,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528f0e    push eax"
 "	      00528f0f    mov eax,[ebp-1Ch]"
 "	      00528f12    push eax"
-"	      00528f13    mov ecx,[ebp-3Ch]"
+"	      00528f13    mov ecx,this"
 "	      00528f16    call 005290E5h"
 "	      00528f1b    test eax,eax"
 "	      00528f1d    je near ptr 00528F27h"
 );
 // LINE 1564:
 	asm( 
-"	      00528f23    or dword ptr [ebp-0Ch],1"
+"	      00528f23    or intersection,1"
 );
 // LINE 1566:
 	asm( 
-"	      00528f27    mov eax,[ebp-8]"
+"	      00528f27    mov eax,ecptr"
 "	      00528f2a    cmp dword ptr [eax+0Ch],0"
 "	      00528f2e    jne near ptr 00528F52h"
 "	      00528f34    push 4"
@@ -3169,18 +3169,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528f39    push eax"
 "	      00528f3a    mov eax,[ebp-1Ch]"
 "	      00528f3d    push eax"
-"	      00528f3e    mov ecx,[ebp-3Ch]"
+"	      00528f3e    mov ecx,this"
 "	      00528f41    call 005290E5h"
 "	      00528f46    test eax,eax"
 "	      00528f48    je near ptr 00528F52h"
 );
 // LINE 1568:
 	asm( 
-"	      00528f4e    or dword ptr [ebp-0Ch],2"
+"	      00528f4e    or intersection,2"
 );
 // LINE 1570:
 	asm( 
-"	      00528f52    mov eax,[ebp-14h]"
+"	      00528f52    mov eax,wcptr"
 "	      00528f55    cmp dword ptr [eax+0Ch],0"
 "	      00528f59    jne near ptr 00528F7Dh"
 "	      00528f5f    push 8"
@@ -3188,23 +3188,23 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528f64    push eax"
 "	      00528f65    mov eax,[ebp-1Ch]"
 "	      00528f68    push eax"
-"	      00528f69    mov ecx,[ebp-3Ch]"
+"	      00528f69    mov ecx,this"
 "	      00528f6c    call 005290E5h"
 "	      00528f71    test eax,eax"
 "	      00528f73    je near ptr 00528F7Dh"
 );
 // LINE 1572:
 	asm( 
-"	      00528f79    or dword ptr [ebp-0Ch],4"
+"	      00528f79    or intersection,4"
 );
 // LINE 1575:
 	asm( 
 "	      00528f7d    jmp near ptr 005290D6h"
 "	      00528f82    jmp near ptr 00528F87h"
-"	      00528f87    mov eax,[ebp-3Ch]"
+"	      00528f87    mov eax,this"
 "	      00528f8a    mov eax,[eax+0Fh]"
 "	      00528f8d    and eax,4"
-"	      00528f90    mov ecx,[ebp-3Ch]"
+"	      00528f90    mov ecx,this"
 "	      00528f93    mov ecx,[ecx+0Fh]"
 "	      00528f96    and ecx,40h"
 "	      00528f99    or eax,ecx"
@@ -3212,7 +3212,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1578:
 	asm( 
-"	      00528fa1    mov eax,[ebp-8]"
+"	      00528fa1    mov eax,ecptr"
 "	      00528fa4    cmp dword ptr [eax+0Ch],0"
 "	      00528fa8    jne near ptr 00528FCCh"
 "	      00528fae    push 4"
@@ -3220,18 +3220,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528fb3    push eax"
 "	      00528fb4    mov eax,[ebp-1Ch]"
 "	      00528fb7    push eax"
-"	      00528fb8    mov ecx,[ebp-3Ch]"
+"	      00528fb8    mov ecx,this"
 "	      00528fbb    call 005290E5h"
 "	      00528fc0    test eax,eax"
 "	      00528fc2    je near ptr 00528FCCh"
 );
 // LINE 1580:
 	asm( 
-"	      00528fc8    or dword ptr [ebp-0Ch],1"
+"	      00528fc8    or intersection,1"
 );
 // LINE 1582:
 	asm( 
-"	      00528fcc    mov eax,[ebp-28h]"
+"	      00528fcc    mov eax,ncptr"
 "	      00528fcf    cmp dword ptr [eax+0Ch],0"
 "	      00528fd3    jne near ptr 00528FF7h"
 "	      00528fd9    push 1"
@@ -3239,18 +3239,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00528fde    push eax"
 "	      00528fdf    mov eax,[ebp-1Ch]"
 "	      00528fe2    push eax"
-"	      00528fe3    mov ecx,[ebp-3Ch]"
+"	      00528fe3    mov ecx,this"
 "	      00528fe6    call 005290E5h"
 "	      00528feb    test eax,eax"
 "	      00528fed    je near ptr 00528FF7h"
 );
 // LINE 1584:
 	asm( 
-"	      00528ff3    or dword ptr [ebp-0Ch],2"
+"	      00528ff3    or intersection,2"
 );
 // LINE 1586:
 	asm( 
-"	      00528ff7    mov eax,[ebp-10h]"
+"	      00528ff7    mov eax,scptr"
 "	      00528ffa    cmp dword ptr [eax+0Ch],0"
 "	      00528ffe    jne near ptr 00529022h"
 "	      00529004    push 2"
@@ -3258,23 +3258,23 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00529009    push eax"
 "	      0052900a    mov eax,[ebp-1Ch]"
 "	      0052900d    push eax"
-"	      0052900e    mov ecx,[ebp-3Ch]"
+"	      0052900e    mov ecx,this"
 "	      00529011    call 005290E5h"
 "	      00529016    test eax,eax"
 "	      00529018    je near ptr 00529022h"
 );
 // LINE 1588:
 	asm( 
-"	      0052901e    or dword ptr [ebp-0Ch],4"
+"	      0052901e    or intersection,4"
 );
 // LINE 1591:
 	asm( 
 "	      00529022    jmp near ptr 005290D6h"
 "	      00529027    jmp near ptr 0052902Ch"
-"	      0052902c    mov eax,[ebp-3Ch]"
+"	      0052902c    mov eax,this"
 "	      0052902f    mov eax,[eax+0Fh]"
 "	      00529032    and eax,8"
-"	      00529035    mov ecx,[ebp-3Ch]"
+"	      00529035    mov ecx,this"
 "	      00529038    mov ecx,[ecx+0Fh]"
 "	      0052903b    and ecx,80h"
 "	      00529041    or eax,ecx"
@@ -3282,7 +3282,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1594:
 	asm( 
-"	      00529049    mov eax,[ebp-14h]"
+"	      00529049    mov eax,wcptr"
 "	      0052904c    cmp dword ptr [eax+0Ch],0"
 "	      00529050    jne near ptr 00529074h"
 "	      00529056    push 8"
@@ -3290,18 +3290,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      0052905b    push eax"
 "	      0052905c    mov eax,[ebp-1Ch]"
 "	      0052905f    push eax"
-"	      00529060    mov ecx,[ebp-3Ch]"
+"	      00529060    mov ecx,this"
 "	      00529063    call 005290E5h"
 "	      00529068    test eax,eax"
 "	      0052906a    je near ptr 00529074h"
 );
 // LINE 1596:
 	asm( 
-"	      00529070    or dword ptr [ebp-0Ch],1"
+"	      00529070    or intersection,1"
 );
 // LINE 1598:
 	asm( 
-"	      00529074    mov eax,[ebp-10h]"
+"	      00529074    mov eax,scptr"
 "	      00529077    cmp dword ptr [eax+0Ch],0"
 "	      0052907b    jne near ptr 0052909Fh"
 "	      00529081    push 2"
@@ -3309,18 +3309,18 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      00529086    push eax"
 "	      00529087    mov eax,[ebp-1Ch]"
 "	      0052908a    push eax"
-"	      0052908b    mov ecx,[ebp-3Ch]"
+"	      0052908b    mov ecx,this"
 "	      0052908e    call 005290E5h"
 "	      00529093    test eax,eax"
 "	      00529095    je near ptr 0052909Fh"
 );
 // LINE 1600:
 	asm( 
-"	      0052909b    or dword ptr [ebp-0Ch],2"
+"	      0052909b    or intersection,2"
 );
 // LINE 1602:
 	asm( 
-"	      0052909f    mov eax,[ebp-28h]"
+"	      0052909f    mov eax,ncptr"
 "	      005290a2    cmp dword ptr [eax+0Ch],0"
 "	      005290a6    jne near ptr 005290CAh"
 "	      005290ac    push 1"
@@ -3328,14 +3328,14 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 "	      005290b1    push eax"
 "	      005290b2    mov eax,[ebp-1Ch]"
 "	      005290b5    push eax"
-"	      005290b6    mov ecx,[ebp-3Ch]"
+"	      005290b6    mov ecx,this"
 "	      005290b9    call 005290E5h"
 "	      005290be    test eax,eax"
 "	      005290c0    je near ptr 005290CAh"
 );
 // LINE 1604:
 	asm( 
-"	      005290c6    or dword ptr [ebp-0Ch],4"
+"	      005290c6    or intersection,4"
 );
 // LINE 1607:
 	asm( 
@@ -3348,7 +3348,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 // LINE 1622:
 	asm( 
-"	      005290d6    mov eax,[ebp-0Ch]"
+"	      005290d6    mov eax,intersection"
 "	      005290d9    jmp near ptr 005290DEh"
 );
 // LINE 1623:
@@ -3371,7 +3371,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 "	      005290eb    push ebx"
 "	      005290ec    push esi"
 "	      005290ed    push edi"
-"	      005290ee    mov [ebp-10h],ecx"
+"	      005290ee    mov this,ecx"
 );
 // LINE 1654:
 	asm( 
@@ -3401,7 +3401,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 "	      0052915e    jmp near ptr 0052916Fh"
 "	      00529163    mov dword ptr [ebp-4],0"
 "	      0052916a    jmp near ptr 0052916Fh"
-"	      0052916f    test byte ptr [ebp+10h],1"
+"	      0052916f    test reinterpret_cast<unit8_t>(direction),1"
 "	      00529173    je near ptr 00529199h"
 "	      00529179    test byte ptr [ebp-8],1"
 "	      0052917d    je near ptr 00529199h"
@@ -3409,7 +3409,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 "	      00529187    je near ptr 00529199h"
 "	      0052918d    mov dword ptr [ebp-0Ch],1"
 "	      00529194    jmp near ptr 00529223h"
-"	      00529199    test byte ptr [ebp+10h],2"
+"	      00529199    test reinterpret_cast<unit8_t>(direction),2"
 "	      0052919d    je near ptr 005291C3h"
 "	      005291a3    test byte ptr [ebp-8],2"
 "	      005291a7    je near ptr 005291C3h"
@@ -3417,7 +3417,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 "	      005291b1    je near ptr 005291C3h"
 "	      005291b7    mov dword ptr [ebp-0Ch],1"
 "	      005291be    jmp near ptr 00529223h"
-"	      005291c3    test byte ptr [ebp+10h],8"
+"	      005291c3    test reinterpret_cast<unit8_t>(direction),8"
 "	      005291c7    je near ptr 005291EDh"
 "	      005291cd    test byte ptr [ebp-8],8"
 "	      005291d1    je near ptr 005291EDh"
@@ -3425,7 +3425,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 "	      005291db    je near ptr 005291EDh"
 "	      005291e1    mov dword ptr [ebp-0Ch],1"
 "	      005291e8    jmp near ptr 00529223h"
-"	      005291ed    test byte ptr [ebp+10h],4"
+"	      005291ed    test reinterpret_cast<unit8_t>(direction),4"
 "	      005291f1    je near ptr 00529217h"
 "	      005291f7    test byte ptr [ebp-8],4"
 "	      005291fb    je near ptr 00529217h"
@@ -3458,17 +3458,17 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 "	      00529238    push ebx"
 "	      00529239    push esi"
 "	      0052923a    push edi"
-"	      0052923b    mov [ebp-4],ecx"
+"	      0052923b    mov this,ecx"
 );
 // LINE 1675:
 	asm( 
-"	      0052923e    mov eax,[ebp+8]"
+"	      0052923e    mov eax,intersectionType"
 "	      00529241    mov [ebp-8],eax"
 "	      00529244    jmp near ptr 005293B3h"
 );
 // LINE 1679:
 	asm( 
-"	      00529249    mov ecx,[ebp-4]"
+"	      00529249    mov ecx,this"
 "	      0052924c    call 00529EE6h"
 );
 // LINE 1681:
@@ -3477,7 +3477,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1691:
 	asm( 
-"	      00529256    mov ecx,[ebp-4]"
+"	      00529256    mov ecx,this"
 "	      00529259    call 0052965Fh"
 );
 // LINE 1693:
@@ -3486,7 +3486,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1697:
 	asm( 
-"	      00529263    mov ecx,[ebp-4]"
+"	      00529263    mov ecx,this"
 "	      00529266    call 00529788h"
 );
 // LINE 1699:
@@ -3495,7 +3495,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1703:
 	asm( 
-"	      00529270    mov ecx,[ebp-4]"
+"	      00529270    mov ecx,this"
 "	      00529273    call 005298B1h"
 );
 // LINE 1705:
@@ -3511,7 +3511,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1711:
 	asm( 
-"	      0052928d    mov ecx,[ebp-4]"
+"	      0052928d    mov ecx,this"
 "	      00529290    call 00529788h"
 );
 // LINE 1713:
@@ -3520,7 +3520,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1715:
 	asm( 
-"	      0052929a    mov ecx,[ebp-4]"
+"	      0052929a    mov ecx,this"
 "	      0052929d    call 0052965Fh"
 );
 // LINE 1718:
@@ -3536,7 +3536,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1724:
 	asm( 
-"	      005292b7    mov ecx,[ebp-4]"
+"	      005292b7    mov ecx,this"
 "	      005292ba    call 00529788h"
 );
 // LINE 1726:
@@ -3545,7 +3545,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1728:
 	asm( 
-"	      005292c4    mov ecx,[ebp-4]"
+"	      005292c4    mov ecx,this"
 "	      005292c7    call 005298B1h"
 );
 // LINE 1731:
@@ -3561,7 +3561,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1737:
 	asm( 
-"	      005292e1    mov ecx,[ebp-4]"
+"	      005292e1    mov ecx,this"
 "	      005292e4    call 005298B1h"
 );
 // LINE 1739:
@@ -3570,7 +3570,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1741:
 	asm( 
-"	      005292ee    mov ecx,[ebp-4]"
+"	      005292ee    mov ecx,this"
 "	      005292f1    call 0052965Fh"
 );
 // LINE 1744:
@@ -3589,19 +3589,19 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 );
 // LINE 1750:
 	asm( 
-"	      00529313    mov ecx,[ebp-4]"
+"	      00529313    mov ecx,this"
 "	      00529316    call 0052965Fh"
 "	      0052931b    jmp near ptr 00529388h"
 );
 // LINE 1751:
 	asm( 
-"	      00529320    mov ecx,[ebp-4]"
+"	      00529320    mov ecx,this"
 "	      00529323    call 00529788h"
 "	      00529328    jmp near ptr 00529388h"
 );
 // LINE 1752:
 	asm( 
-"	      0052932d    mov ecx,[ebp-4]"
+"	      0052932d    mov ecx,this"
 "	      00529330    call 005298B1h"
 "	      00529335    jmp near ptr 00529388h"
 );
@@ -3688,15 +3688,15 @@ enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 "	      005293f9    push ebx"
 "	      005293fa    push esi"
 "	      005293fb    push edi"
-"	      005293fc    mov [ebp-8],ecx"
+"	      005293fc    mov this,ecx"
 );
 // LINE 1788:
 	asm( 
 "	      005293ff    jmp near ptr 00529404h"
-"	      00529404    mov eax,[ebp-8]"
+"	      00529404    mov eax,this"
 "	      00529407    mov eax,[eax+37h]"
 "	      0052940a    and eax,0FFh"
-"	      0052940f    mov ecx,[ebp-8]"
+"	      0052940f    mov ecx,this"
 "	      00529412    mov ecx,[ecx+33h]"
 "	      00529415    and ecx,0FFh"
 "	      0052941b    shl ecx,8"
@@ -3704,10 +3704,10 @@ enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 "	      00529420    mov dl,[eax+ecx+66EB10h]"
 "	      00529427    cmp edx,5"
 "	      0052942a    jl near ptr 00529466h"
-"	      00529430    mov eax,[ebp-8]"
+"	      00529430    mov eax,this"
 "	      00529433    mov eax,[eax+37h]"
 "	      00529436    and eax,0FFh"
-"	      0052943b    mov ecx,[ebp-8]"
+"	      0052943b    mov ecx,this"
 "	      0052943e    mov ecx,[ecx+33h]"
 "	      00529441    and ecx,0FFh"
 "	      00529447    shl ecx,8"
@@ -3751,14 +3751,14 @@ void BoatClass::AdjustCurrentPosition() {
 "	      00529494    push ebx"
 "	      00529495    push esi"
 "	      00529496    push edi"
-"	      00529497    mov [ebp-28h],ecx"
+"	      00529497    mov this,ecx"
 );
 // LINE 1831:
 	asm( 
-"	      0052949a    mov eax,[ebp-28h]"
+"	      0052949a    mov eax,this"
 "	      0052949d    mov eax,[eax+37h]"
 "	      005294a0    push eax"
-"	      005294a1    mov eax,[ebp-28h]"
+"	      005294a1    mov eax,this"
 "	      005294a4    mov eax,[eax+33h]"
 "	      005294a7    push eax"
 "	      005294a8    call 00513D50h"
@@ -3768,14 +3768,14 @@ void BoatClass::AdjustCurrentPosition() {
 "	      005294b6    add eax,20h"
 "	      005294b9    shl eax,10h"
 "	      005294bc    mov [ebp-20h],eax"
-"	      005294bf    mov eax,[ebp-28h]"
+"	      005294bf    mov eax,this"
 "	      005294c2    mov eax,[eax+33h]"
 "	      005294c5    shl eax,6"
 "	      005294c8    sub eax,1FE0h"
 "	      005294cd    shl eax,10h"
 "	      005294d0    mov [ebp-24h],eax"
 "	      005294d3    mov eax,2000h"
-"	      005294d8    mov ecx,[ebp-28h]"
+"	      005294d8    mov ecx,this"
 "	      005294db    mov ecx,[ecx+37h]"
 "	      005294de    shl ecx,6"
 "	      005294e1    sub eax,ecx"
@@ -3800,7 +3800,7 @@ void BoatClass::AdjustCurrentPosition() {
 "	      00529517    mov eax,[eax+8]"
 "	      0052951a    mov [ecx+8],eax"
 "	      0052951d    lea eax,[ebp-0Ch]"
-"	      00529520    mov ecx,[ebp-28h]"
+"	      00529520    mov ecx,this"
 "	      00529523    add ecx,97h"
 "	      00529529    mov edx,[eax]"
 "	      0052952b    mov [ecx],edx"
@@ -3832,14 +3832,14 @@ void BoatClass::AdjustNextPosition() {
 "	      00529549    push ebx"
 "	      0052954a    push esi"
 "	      0052954b    push edi"
-"	      0052954c    mov [ebp-34h],ecx"
+"	      0052954c    mov this,ecx"
 );
 // LINE 1856:
 	asm( 
-"	      0052954f    mov eax,[ebp-34h]"
+"	      0052954f    mov eax,this"
 "	      00529552    mov eax,[eax+47h]"
 "	      00529555    push eax"
-"	      00529556    mov eax,[ebp-34h]"
+"	      00529556    mov eax,this"
 "	      00529559    mov eax,[eax+43h]"
 "	      0052955c    push eax"
 "	      0052955d    call 00513D50h"
@@ -3849,14 +3849,14 @@ void BoatClass::AdjustNextPosition() {
 "	      0052956b    add eax,20h"
 "	      0052956e    shl eax,10h"
 "	      00529571    mov [ebp-2Ch],eax"
-"	      00529574    mov eax,[ebp-34h]"
+"	      00529574    mov eax,this"
 "	      00529577    mov eax,[eax+43h]"
 "	      0052957a    shl eax,6"
 "	      0052957d    sub eax,1FE0h"
 "	      00529582    shl eax,10h"
 "	      00529585    mov [ebp-30h],eax"
 "	      00529588    mov eax,2000h"
-"	      0052958d    mov ecx,[ebp-34h]"
+"	      0052958d    mov ecx,this"
 "	      00529590    mov ecx,[ecx+47h]"
 "	      00529593    shl ecx,6"
 "	      00529596    sub eax,ecx"
@@ -3881,7 +3881,7 @@ void BoatClass::AdjustNextPosition() {
 "	      005295cc    mov eax,[eax+8]"
 "	      005295cf    mov [ecx+8],eax"
 "	      005295d2    lea eax,[ebp-18h]"
-"	      005295d5    lea ecx,[ebp-0Ch]"
+"	      005295d5    lea ecx,nextFineLocation.x"
 "	      005295d8    mov edx,[eax]"
 "	      005295da    mov [ecx],edx"
 "	      005295dc    mov edx,[eax+4]"
@@ -3891,48 +3891,48 @@ void BoatClass::AdjustNextPosition() {
 );
 // LINE 1861:
 	asm( 
-"	      005295e8    mov eax,[ebp-0Ch]"
-"	      005295eb    mov ecx,[ebp-34h]"
+"	      005295e8    mov eax,nextFineLocation.x"
+"	      005295eb    mov ecx,this"
 "	      005295ee    sub eax,[ecx+97h]"
-"	      005295f4    mov ecx,[ebp-34h]"
+"	      005295f4    mov ecx,this"
 "	      005295f7    mov [ecx+13h],eax"
 );
 // LINE 1862:
 	asm( 
-"	      005295fa    mov eax,[ebp-34h]"
+"	      005295fa    mov eax,this"
 "	      005295fd    mov dword ptr [eax+17h],0"
 );
 // LINE 1863:
 	asm( 
-"	      00529604    mov eax,[ebp-4]"
-"	      00529607    mov ecx,[ebp-34h]"
+"	      00529604    mov eax,nextFineLocation.z"
+"	      00529607    mov ecx,this"
 "	      0052960a    sub eax,[ecx+9Fh]"
-"	      00529610    mov ecx,[ebp-34h]"
+"	      00529610    mov ecx,this"
 "	      00529613    mov [ecx+1Bh],eax"
 );
 // LINE 1864:
 	asm( 
-"	      00529616    mov eax,[ebp-34h]"
+"	      00529616    mov eax,this"
 "	      00529619    add eax,13h"
 "	      0052961c    push eax"
 "	      0052961d    call 004CA1E3h"
 "	      00529622    add esp,4"
-"	      00529625    mov ecx,[ebp-34h]"
+"	      00529625    mov ecx,this"
 "	      00529628    mov [ecx+1Fh],eax"
 );
 // LINE 1869:
 	asm( 
-"	      0052962b    mov eax,[ebp-34h]"
+"	      0052962b    mov eax,this"
 "	      0052962e    movsx eax,word ptr [eax+8Bh]"
 "	      00529635    test al,1"
 "	      00529637    je near ptr 00529655h"
 );
 // LINE 1871:
 	asm( 
-"	      0052963d    mov eax,[ebp-34h]"
+"	      0052963d    mov eax,this"
 "	      00529640    add eax,13h"
 "	      00529643    push eax"
-"	      00529644    mov eax,[ebp-34h]"
+"	      00529644    mov eax,this"
 "	      00529647    add eax,0A3h"
 "	      0052964c    push eax"
 "	      0052964d    call 004CAEFBh"
@@ -3959,20 +3959,20 @@ void BoatClass::GoStraight() {
 "	      00529665    push ebx"
 "	      00529666    push esi"
 "	      00529667    push edi"
-"	      00529668    mov [ebp-4],ecx"
+"	      00529668    mov this,ecx"
 );
 // LINE 1895:
 	asm( 
-"	      0052966b    mov eax,[ebp-4]"
+"	      0052966b    mov eax,this"
 "	      0052966e    mov byte ptr [eax+6],0"
 );
 // LINE 1899:
 	asm( 
 "	      00529672    jmp near ptr 00529677h"
-"	      00529677    mov eax,[ebp-4]"
+"	      00529677    mov eax,this"
 "	      0052967a    mov eax,[eax+0Fh]"
 "	      0052967d    and eax,10h"
-"	      00529680    mov ecx,[ebp-4]"
+"	      00529680    mov ecx,this"
 "	      00529683    mov ecx,[ecx+0Fh]"
 "	      00529686    and ecx,1"
 "	      00529689    or eax,ecx"
@@ -3980,11 +3980,11 @@ void BoatClass::GoStraight() {
 );
 // LINE 1902:
 	asm( 
-"	      00529691    mov eax,[ebp-4]"
+"	      00529691    mov eax,this"
 "	      00529694    add eax,5Bh"
 "	      00529697    mov ecx,[eax]"
 "	      00529699    mov eax,[eax+4]"
-"	      0052969c    mov edx,[ebp-4]"
+"	      0052969c    mov edx,this"
 "	      0052969f    add edx,43h"
 "	      005296a2    mov [edx],ecx"
 "	      005296a4    mov [edx+4],eax"
@@ -3993,10 +3993,10 @@ void BoatClass::GoStraight() {
 	asm( 
 "	      005296a7    jmp near ptr 0052977Eh"
 "	      005296ac    jmp near ptr 005296B1h"
-"	      005296b1    mov eax,[ebp-4]"
+"	      005296b1    mov eax,this"
 "	      005296b4    mov eax,[eax+0Fh]"
 "	      005296b7    and eax,20h"
-"	      005296ba    mov ecx,[ebp-4]"
+"	      005296ba    mov ecx,this"
 "	      005296bd    mov ecx,[ecx+0Fh]"
 "	      005296c0    and ecx,2"
 "	      005296c3    or eax,ecx"
@@ -4004,11 +4004,11 @@ void BoatClass::GoStraight() {
 );
 // LINE 1907:
 	asm( 
-"	      005296cb    mov eax,[ebp-4]"
+"	      005296cb    mov eax,this"
 "	      005296ce    add eax,63h"
 "	      005296d1    mov ecx,[eax]"
 "	      005296d3    mov eax,[eax+4]"
-"	      005296d6    mov edx,[ebp-4]"
+"	      005296d6    mov edx,this"
 "	      005296d9    add edx,43h"
 "	      005296dc    mov [edx],ecx"
 "	      005296de    mov [edx+4],eax"
@@ -4017,10 +4017,10 @@ void BoatClass::GoStraight() {
 	asm( 
 "	      005296e1    jmp near ptr 0052977Eh"
 "	      005296e6    jmp near ptr 005296EBh"
-"	      005296eb    mov eax,[ebp-4]"
+"	      005296eb    mov eax,this"
 "	      005296ee    mov eax,[eax+0Fh]"
 "	      005296f1    and eax,40h"
-"	      005296f4    mov ecx,[ebp-4]"
+"	      005296f4    mov ecx,this"
 "	      005296f7    mov ecx,[ecx+0Fh]"
 "	      005296fa    and ecx,4"
 "	      005296fd    or eax,ecx"
@@ -4028,11 +4028,11 @@ void BoatClass::GoStraight() {
 );
 // LINE 1912:
 	asm( 
-"	      00529705    mov eax,[ebp-4]"
+"	      00529705    mov eax,this"
 "	      00529708    add eax,6Bh"
 "	      0052970b    mov ecx,[eax]"
 "	      0052970d    mov eax,[eax+4]"
-"	      00529710    mov edx,[ebp-4]"
+"	      00529710    mov edx,this"
 "	      00529713    add edx,43h"
 "	      00529716    mov [edx],ecx"
 "	      00529718    mov [edx+4],eax"
@@ -4041,10 +4041,10 @@ void BoatClass::GoStraight() {
 	asm( 
 "	      0052971b    jmp near ptr 0052977Eh"
 "	      00529720    jmp near ptr 00529725h"
-"	      00529725    mov eax,[ebp-4]"
+"	      00529725    mov eax,this"
 "	      00529728    mov eax,[eax+0Fh]"
 "	      0052972b    and eax,8"
-"	      0052972e    mov ecx,[ebp-4]"
+"	      0052972e    mov ecx,this"
 "	      00529731    mov ecx,[ecx+0Fh]"
 "	      00529734    and ecx,80h"
 "	      0052973a    or eax,ecx"
@@ -4052,11 +4052,11 @@ void BoatClass::GoStraight() {
 );
 // LINE 1917:
 	asm( 
-"	      00529742    mov eax,[ebp-4]"
+"	      00529742    mov eax,this"
 "	      00529745    add eax,73h"
 "	      00529748    mov ecx,[eax]"
 "	      0052974a    mov eax,[eax+4]"
-"	      0052974d    mov edx,[ebp-4]"
+"	      0052974d    mov edx,this"
 "	      00529750    add edx,43h"
 "	      00529753    mov [edx],ecx"
 "	      00529755    mov [edx+4],eax"
@@ -4096,20 +4096,20 @@ void BoatClass::TurnLeft() {
 "	      0052978e    push ebx"
 "	      0052978f    push esi"
 "	      00529790    push edi"
-"	      00529791    mov [ebp-4],ecx"
+"	      00529791    mov this,ecx"
 );
 // LINE 1945:
 	asm( 
-"	      00529794    mov eax,[ebp-4]"
+"	      00529794    mov eax,this"
 "	      00529797    mov byte ptr [eax+6],1"
 );
 // LINE 1949:
 	asm( 
 "	      0052979b    jmp near ptr 005297A0h"
-"	      005297a0    mov eax,[ebp-4]"
+"	      005297a0    mov eax,this"
 "	      005297a3    mov eax,[eax+0Fh]"
 "	      005297a6    and eax,10h"
-"	      005297a9    mov ecx,[ebp-4]"
+"	      005297a9    mov ecx,this"
 "	      005297ac    mov ecx,[ecx+0Fh]"
 "	      005297af    and ecx,1"
 "	      005297b2    or eax,ecx"
@@ -4117,11 +4117,11 @@ void BoatClass::TurnLeft() {
 );
 // LINE 1952:
 	asm( 
-"	      005297ba    mov eax,[ebp-4]"
+"	      005297ba    mov eax,this"
 "	      005297bd    add eax,73h"
 "	      005297c0    mov ecx,[eax]"
 "	      005297c2    mov eax,[eax+4]"
-"	      005297c5    mov edx,[ebp-4]"
+"	      005297c5    mov edx,this"
 "	      005297c8    add edx,43h"
 "	      005297cb    mov [edx],ecx"
 "	      005297cd    mov [edx+4],eax"
@@ -4130,10 +4130,10 @@ void BoatClass::TurnLeft() {
 	asm( 
 "	      005297d0    jmp near ptr 005298A7h"
 "	      005297d5    jmp near ptr 005297DAh"
-"	      005297da    mov eax,[ebp-4]"
+"	      005297da    mov eax,this"
 "	      005297dd    mov eax,[eax+0Fh]"
 "	      005297e0    and eax,2"
-"	      005297e3    mov ecx,[ebp-4]"
+"	      005297e3    mov ecx,this"
 "	      005297e6    mov ecx,[ecx+0Fh]"
 "	      005297e9    and ecx,20h"
 "	      005297ec    or eax,ecx"
@@ -4141,11 +4141,11 @@ void BoatClass::TurnLeft() {
 );
 // LINE 1957:
 	asm( 
-"	      005297f4    mov eax,[ebp-4]"
+"	      005297f4    mov eax,this"
 "	      005297f7    add eax,6Bh"
 "	      005297fa    mov ecx,[eax]"
 "	      005297fc    mov eax,[eax+4]"
-"	      005297ff    mov edx,[ebp-4]"
+"	      005297ff    mov edx,this"
 "	      00529802    add edx,43h"
 "	      00529805    mov [edx],ecx"
 "	      00529807    mov [edx+4],eax"
@@ -4154,10 +4154,10 @@ void BoatClass::TurnLeft() {
 	asm( 
 "	      0052980a    jmp near ptr 005298A7h"
 "	      0052980f    jmp near ptr 00529814h"
-"	      00529814    mov eax,[ebp-4]"
+"	      00529814    mov eax,this"
 "	      00529817    mov eax,[eax+0Fh]"
 "	      0052981a    and eax,4"
-"	      0052981d    mov ecx,[ebp-4]"
+"	      0052981d    mov ecx,this"
 "	      00529820    mov ecx,[ecx+0Fh]"
 "	      00529823    and ecx,40h"
 "	      00529826    or eax,ecx"
@@ -4165,11 +4165,11 @@ void BoatClass::TurnLeft() {
 );
 // LINE 1962:
 	asm( 
-"	      0052982e    mov eax,[ebp-4]"
+"	      0052982e    mov eax,this"
 "	      00529831    add eax,5Bh"
 "	      00529834    mov ecx,[eax]"
 "	      00529836    mov eax,[eax+4]"
-"	      00529839    mov edx,[ebp-4]"
+"	      00529839    mov edx,this"
 "	      0052983c    add edx,43h"
 "	      0052983f    mov [edx],ecx"
 "	      00529841    mov [edx+4],eax"
@@ -4178,10 +4178,10 @@ void BoatClass::TurnLeft() {
 	asm( 
 "	      00529844    jmp near ptr 005298A7h"
 "	      00529849    jmp near ptr 0052984Eh"
-"	      0052984e    mov eax,[ebp-4]"
+"	      0052984e    mov eax,this"
 "	      00529851    mov eax,[eax+0Fh]"
 "	      00529854    and eax,8"
-"	      00529857    mov ecx,[ebp-4]"
+"	      00529857    mov ecx,this"
 "	      0052985a    mov ecx,[ecx+0Fh]"
 "	      0052985d    and ecx,80h"
 "	      00529863    or eax,ecx"
@@ -4189,11 +4189,11 @@ void BoatClass::TurnLeft() {
 );
 // LINE 1967:
 	asm( 
-"	      0052986b    mov eax,[ebp-4]"
+"	      0052986b    mov eax,this"
 "	      0052986e    add eax,63h"
 "	      00529871    mov ecx,[eax]"
 "	      00529873    mov eax,[eax+4]"
-"	      00529876    mov edx,[ebp-4]"
+"	      00529876    mov edx,this"
 "	      00529879    add edx,43h"
 "	      0052987c    mov [edx],ecx"
 "	      0052987e    mov [edx+4],eax"
@@ -4233,20 +4233,20 @@ void BoatClass::TurnRight() {
 "	      005298b7    push ebx"
 "	      005298b8    push esi"
 "	      005298b9    push edi"
-"	      005298ba    mov [ebp-4],ecx"
+"	      005298ba    mov this,ecx"
 );
 // LINE 1996:
 	asm( 
-"	      005298bd    mov eax,[ebp-4]"
+"	      005298bd    mov eax,this"
 "	      005298c0    mov byte ptr [eax+6],1"
 );
 // LINE 2000:
 	asm( 
 "	      005298c4    jmp near ptr 005298C9h"
-"	      005298c9    mov eax,[ebp-4]"
+"	      005298c9    mov eax,this"
 "	      005298cc    mov eax,[eax+0Fh]"
 "	      005298cf    and eax,10h"
-"	      005298d2    mov ecx,[ebp-4]"
+"	      005298d2    mov ecx,this"
 "	      005298d5    mov ecx,[ecx+0Fh]"
 "	      005298d8    and ecx,1"
 "	      005298db    or eax,ecx"
@@ -4254,11 +4254,11 @@ void BoatClass::TurnRight() {
 );
 // LINE 2003:
 	asm( 
-"	      005298e3    mov eax,[ebp-4]"
+"	      005298e3    mov eax,this"
 "	      005298e6    add eax,6Bh"
 "	      005298e9    mov ecx,[eax]"
 "	      005298eb    mov eax,[eax+4]"
-"	      005298ee    mov edx,[ebp-4]"
+"	      005298ee    mov edx,this"
 "	      005298f1    add edx,43h"
 "	      005298f4    mov [edx],ecx"
 "	      005298f6    mov [edx+4],eax"
@@ -4267,10 +4267,10 @@ void BoatClass::TurnRight() {
 	asm( 
 "	      005298f9    jmp near ptr 005299D0h"
 "	      005298fe    jmp near ptr 00529903h"
-"	      00529903    mov eax,[ebp-4]"
+"	      00529903    mov eax,this"
 "	      00529906    mov eax,[eax+0Fh]"
 "	      00529909    and eax,2"
-"	      0052990c    mov ecx,[ebp-4]"
+"	      0052990c    mov ecx,this"
 "	      0052990f    mov ecx,[ecx+0Fh]"
 "	      00529912    and ecx,20h"
 "	      00529915    or eax,ecx"
@@ -4278,11 +4278,11 @@ void BoatClass::TurnRight() {
 );
 // LINE 2009:
 	asm( 
-"	      0052991d    mov eax,[ebp-4]"
+"	      0052991d    mov eax,this"
 "	      00529920    add eax,73h"
 "	      00529923    mov ecx,[eax]"
 "	      00529925    mov eax,[eax+4]"
-"	      00529928    mov edx,[ebp-4]"
+"	      00529928    mov edx,this"
 "	      0052992b    add edx,43h"
 "	      0052992e    mov [edx],ecx"
 "	      00529930    mov [edx+4],eax"
@@ -4291,10 +4291,10 @@ void BoatClass::TurnRight() {
 	asm( 
 "	      00529933    jmp near ptr 005299D0h"
 "	      00529938    jmp near ptr 0052993Dh"
-"	      0052993d    mov eax,[ebp-4]"
+"	      0052993d    mov eax,this"
 "	      00529940    mov eax,[eax+0Fh]"
 "	      00529943    and eax,4"
-"	      00529946    mov ecx,[ebp-4]"
+"	      00529946    mov ecx,this"
 "	      00529949    mov ecx,[ecx+0Fh]"
 "	      0052994c    and ecx,40h"
 "	      0052994f    or eax,ecx"
@@ -4302,11 +4302,11 @@ void BoatClass::TurnRight() {
 );
 // LINE 2015:
 	asm( 
-"	      00529957    mov eax,[ebp-4]"
+"	      00529957    mov eax,this"
 "	      0052995a    add eax,63h"
 "	      0052995d    mov ecx,[eax]"
 "	      0052995f    mov eax,[eax+4]"
-"	      00529962    mov edx,[ebp-4]"
+"	      00529962    mov edx,this"
 "	      00529965    add edx,43h"
 "	      00529968    mov [edx],ecx"
 "	      0052996a    mov [edx+4],eax"
@@ -4315,10 +4315,10 @@ void BoatClass::TurnRight() {
 	asm( 
 "	      0052996d    jmp near ptr 005299D0h"
 "	      00529972    jmp near ptr 00529977h"
-"	      00529977    mov eax,[ebp-4]"
+"	      00529977    mov eax,this"
 "	      0052997a    mov eax,[eax+0Fh]"
 "	      0052997d    and eax,8"
-"	      00529980    mov ecx,[ebp-4]"
+"	      00529980    mov ecx,this"
 "	      00529983    mov ecx,[ecx+0Fh]"
 "	      00529986    and ecx,80h"
 "	      0052998c    or eax,ecx"
@@ -4326,11 +4326,11 @@ void BoatClass::TurnRight() {
 );
 // LINE 2021:
 	asm( 
-"	      00529994    mov eax,[ebp-4]"
+"	      00529994    mov eax,this"
 "	      00529997    add eax,5Bh"
 "	      0052999a    mov ecx,[eax]"
 "	      0052999c    mov eax,[eax+4]"
-"	      0052999f    mov edx,[ebp-4]"
+"	      0052999f    mov edx,this"
 "	      005299a2    add edx,43h"
 "	      005299a5    mov [edx],ecx"
 "	      005299a7    mov [edx+4],eax"
@@ -4370,32 +4370,32 @@ void BoatClass::MakeUturn() {
 "	      005299e0    push ebx"
 "	      005299e1    push esi"
 "	      005299e2    push edi"
-"	      005299e3    mov [ebp-4],ecx"
+"	      005299e3    mov this,ecx"
 );
 // LINE 2051:
 	asm( 
 "	      005299e6    jmp near ptr 005299EBh"
 "	      005299eb    jmp near ptr 005299F0h"
-"	      005299f0    mov eax,[ebp-4]"
+"	      005299f0    mov eax,this"
 "	      005299f3    mov eax,[eax+37h]"
 "	      005299f6    and eax,0FFh"
-"	      005299fb    mov ecx,[ebp-4]"
+"	      005299fb    mov ecx,this"
 "	      005299fe    mov ecx,[ecx+33h]"
 "	      00529a01    and ecx,0FFh"
 "	      00529a07    shl ecx,8"
 "	      00529a0a    movzx ax,byte ptr [eax+ecx+66EB10h]"
 "	      00529a13    push eax"
-"	      00529a14    mov ecx,[ebp-4]"
+"	      00529a14    mov ecx,this"
 "	      00529a17    call 005281A8h"
 );
 // LINE 2052:
 	asm( 
-"	      00529a1c    mov ecx,[ebp-4]"
+"	      00529a1c    mov ecx,this"
 "	      00529a1f    call 0052948Eh"
 );
 // LINE 2053:
 	asm( 
-"	      00529a24    mov ecx,[ebp-4]"
+"	      00529a24    mov ecx,this"
 "	      00529a27    call 00529543h"
 );
 // LINE 2136:
@@ -4419,7 +4419,7 @@ int32_t BoatClass::FinishedUturn() {
 "	      00529a3c    push ebx"
 "	      00529a3d    push esi"
 "	      00529a3e    push edi"
-"	      00529a3f    mov [ebp-4],ecx"
+"	      00529a3f    mov this,ecx"
 );
 // LINE 2158:
 	asm( 
@@ -4461,33 +4461,33 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529a57    push ebx"
 "	      00529a58    push esi"
 "	      00529a59    push edi"
-"	      00529a5a    mov [ebp-58h],ecx"
+"	      00529a5a    mov this,ecx"
 );
 // LINE 2192:
 	asm( 
-"	      00529a5d    mov dword ptr [ebp-0Ch],0"
+"	      00529a5d    mov curr_dist,0"
 );
 // LINE 2193:
 	asm( 
-"	      00529a64    mov dword ptr [ebp-38h],0FFFFFFFFh"
+"	      00529a64    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 2195:
 	asm( 
-"	      00529a6b    mov dword ptr [ebp-40h],0"
+"	      00529a6b    mov stop_now,0"
 );
 // LINE 2196:
 	asm( 
-"	      00529a72    mov dword ptr [ebp-10h],7"
+"	      00529a72    mov spiral_dist,7"
 );
 // LINE 2198:
 	asm( 
-"	      00529a79    mov dword ptr [ebp-44h],0"
+"	      00529a79    mov foundcell,0"
 );
 // LINE 2202:
 	asm( 
 "	      00529a80    mov eax,6C1210h"
 "	      00529a85    add eax,14h"
-"	      00529a88    lea ecx,[ebp-1Ch]"
+"	      00529a88    lea ecx,vec.x"
 "	      00529a8b    mov edx,[eax]"
 "	      00529a8d    mov [ecx],edx"
 "	      00529a8f    mov edx,[eax+4]"
@@ -4497,7 +4497,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2203:
 	asm( 
-"	      00529a9b    mov eax,[ebp-58h]"
+"	      00529a9b    mov eax,this"
 "	      00529a9e    mov dword ptr [eax+4Fh],0"
 );
 // LINE 2206:
@@ -4515,35 +4515,35 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2210:
 	asm( 
-"	      00529ac1    mov eax,[ebp-14h]"
-"	      00529ac4    mov [ebp-18h],eax"
+"	      00529ac1    mov eax,vec.z"
+"	      00529ac4    mov vec.y,eax"
 );
 // LINE 2211:
 	asm( 
-"	      00529ac7    mov eax,[ebp-1Ch]"
+"	      00529ac7    mov eax,vec.x"
 "	      00529aca    neg eax"
-"	      00529acc    mov [ebp-14h],eax"
+"	      00529acc    mov vec.z,eax"
 );
 // LINE 2212:
 	asm( 
-"	      00529acf    mov eax,[ebp-18h]"
-"	      00529ad2    mov [ebp-1Ch],eax"
+"	      00529acf    mov eax,vec.y"
+"	      00529ad2    mov vec.x,eax"
 );
 // LINE 2214:
 	asm( 
-"	      00529ad5    mov eax,[ebp-1Ch]"
+"	      00529ad5    mov eax,vec.x"
 "	      00529ad8    mov ecx,ds:[6663A0h]"
 "	      00529ade    sar ecx,1"
 "	      00529ae1    imul eax,ecx"
-"	      00529ae4    mov [ebp-1Ch],eax"
+"	      00529ae4    mov vec.x,eax"
 );
 // LINE 2215:
 	asm( 
-"	      00529ae7    mov eax,[ebp-14h]"
+"	      00529ae7    mov eax,vec.z"
 "	      00529aea    mov ecx,ds:[6663A0h]"
 "	      00529af0    sar ecx,1"
 "	      00529af3    imul eax,ecx"
-"	      00529af6    mov [ebp-14h],eax"
+"	      00529af6    mov vec.z,eax"
 );
 // LINE 2216:
 	asm( 
@@ -4551,35 +4551,35 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2219:
 	asm( 
-"	      00529afe    mov eax,[ebp-14h]"
+"	      00529afe    mov eax,vec.z"
 "	      00529b01    neg eax"
-"	      00529b03    mov [ebp-18h],eax"
+"	      00529b03    mov vec.y,eax"
 );
 // LINE 2220:
 	asm( 
-"	      00529b06    mov eax,[ebp-1Ch]"
-"	      00529b09    mov [ebp-14h],eax"
+"	      00529b06    mov eax,vec.x"
+"	      00529b09    mov vec.z,eax"
 );
 // LINE 2221:
 	asm( 
-"	      00529b0c    mov eax,[ebp-18h]"
-"	      00529b0f    mov [ebp-1Ch],eax"
+"	      00529b0c    mov eax,vec.y"
+"	      00529b0f    mov vec.x,eax"
 );
 // LINE 2223:
 	asm( 
-"	      00529b12    mov eax,[ebp-1Ch]"
+"	      00529b12    mov eax,vec.x"
 "	      00529b15    mov ecx,ds:[6663A0h]"
 "	      00529b1b    sar ecx,1"
 "	      00529b1e    imul eax,ecx"
-"	      00529b21    mov [ebp-1Ch],eax"
+"	      00529b21    mov vec.x,eax"
 );
 // LINE 2224:
 	asm( 
-"	      00529b24    mov eax,[ebp-14h]"
+"	      00529b24    mov eax,vec.z"
 "	      00529b27    mov ecx,ds:[6663A0h]"
 "	      00529b2d    sar ecx,1"
 "	      00529b30    imul eax,ecx"
-"	      00529b33    mov [ebp-14h],eax"
+"	      00529b33    mov vec.z,eax"
 );
 // LINE 2225:
 	asm( 
@@ -4587,31 +4587,31 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2228:
 	asm( 
-"	      00529b3b    mov eax,[ebp-1Ch]"
+"	      00529b3b    mov eax,vec.x"
 "	      00529b3e    neg eax"
-"	      00529b40    mov [ebp-1Ch],eax"
+"	      00529b40    mov vec.x,eax"
 );
 // LINE 2229:
 	asm( 
-"	      00529b43    mov eax,[ebp-14h]"
+"	      00529b43    mov eax,vec.z"
 "	      00529b46    neg eax"
-"	      00529b48    mov [ebp-14h],eax"
+"	      00529b48    mov vec.z,eax"
 );
 // LINE 2231:
 	asm( 
-"	      00529b4b    mov eax,[ebp-1Ch]"
+"	      00529b4b    mov eax,vec.x"
 "	      00529b4e    mov ecx,ds:[6663A0h]"
 "	      00529b54    sar ecx,1"
 "	      00529b57    imul eax,ecx"
-"	      00529b5a    mov [ebp-1Ch],eax"
+"	      00529b5a    mov vec.x,eax"
 );
 // LINE 2232:
 	asm( 
-"	      00529b5d    mov eax,[ebp-14h]"
+"	      00529b5d    mov eax,vec.z"
 "	      00529b60    mov ecx,ds:[6663A0h]"
 "	      00529b66    sar ecx,1"
 "	      00529b69    imul eax,ecx"
-"	      00529b6c    mov [ebp-14h],eax"
+"	      00529b6c    mov vec.z,eax"
 );
 // LINE 2233:
 	asm( 
@@ -4622,16 +4622,16 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529b74    mov eax,ds:[6663A0h]"
 "	      00529b79    sar eax,1"
 "	      00529b7c    inc eax"
-"	      00529b7d    imul eax,[ebp-1Ch]"
-"	      00529b81    mov [ebp-1Ch],eax"
+"	      00529b7d    imul eax,vec.x"
+"	      00529b81    mov vec.x,eax"
 );
 // LINE 2238:
 	asm( 
 "	      00529b84    mov eax,ds:[6663A0h]"
 "	      00529b89    sar eax,1"
 "	      00529b8c    inc eax"
-"	      00529b8d    imul eax,[ebp-14h]"
-"	      00529b91    mov [ebp-14h],eax"
+"	      00529b8d    imul eax,vec.z"
+"	      00529b91    mov vec.z,eax"
 );
 // LINE 2239:
 	asm( 
@@ -4650,38 +4650,38 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2242:
 	asm( 
-"	      00529bc1    shl dword ptr [ebp-1Ch],6"
+"	      00529bc1    shl vec.x,6"
 );
 // LINE 2243:
 	asm( 
-"	      00529bc5    shl dword ptr [ebp-14h],6"
+"	      00529bc5    shl vec.z,6"
 );
 // LINE 2245:
 	asm( 
 "	      00529bc9    mov eax,ds:[6C126Ch]"
-"	      00529bce    add eax,[ebp-1Ch]"
+"	      00529bce    add eax,vec.x"
 "	      00529bd1    add eax,20000000h"
 "	      00529bd6    sar eax,16h"
-"	      00529bd9    mov [ebp-28h],eax"
+"	      00529bd9    mov x,eax"
 );
 // LINE 2246:
 	asm( 
 "	      00529bdc    mov eax,20000000h"
 "	      00529be1    mov ecx,ds:[6C1274h]"
-"	      00529be7    add ecx,[ebp-14h]"
+"	      00529be7    add ecx,vec.z"
 "	      00529bea    sub eax,ecx"
 "	      00529bec    sar eax,16h"
-"	      00529bef    mov [ebp-2Ch],eax"
+"	      00529bef    mov y,eax"
 );
 // LINE 2249:
 	asm( 
-"	      00529bf2    cmp dword ptr [ebp-28h],0"
+"	      00529bf2    cmp x,0"
 "	      00529bf6    jl near ptr 00529C1Ah"
-"	      00529bfc    cmp dword ptr [ebp-2Ch],0"
+"	      00529bfc    cmp y,0"
 "	      00529c00    jl near ptr 00529C1Ah"
-"	      00529c06    cmp dword ptr [ebp-28h],7Fh"
+"	      00529c06    cmp x,7Fh"
 "	      00529c0a    jg near ptr 00529C1Ah"
-"	      00529c10    cmp dword ptr [ebp-2Ch],7Fh"
+"	      00529c10    cmp y,7Fh"
 "	      00529c14    jle near ptr 00529C1Fh"
 );
 // LINE 2250:
@@ -4690,29 +4690,29 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2257:
 	asm( 
-"	      00529c1f    inc dword ptr [ebp-38h]"
+"	      00529c1f    inc curr_dir"
 );
 // LINE 2258:
 	asm( 
-"	      00529c22    mov eax,[ebp-38h]"
+"	      00529c22    mov eax,curr_dir"
 "	      00529c25    mov [ebp-60h],eax"
 "	      00529c28    jmp near ptr 00529C8Bh"
 );
 // LINE 2262:
 	asm( 
-"	      00529c2d    mov dword ptr [ebp-38h],0"
+"	      00529c2d    mov curr_dir,0"
 );
 // LINE 2263:
 	asm( 
-"	      00529c34    inc dword ptr [ebp-0Ch]"
+"	      00529c34    inc curr_dist"
 );
 // LINE 2264:
 	asm( 
-"	      00529c37    mov dword ptr [ebp-4],0"
+"	      00529c37    mov xdir,0"
 );
 // LINE 2265:
 	asm( 
-"	      00529c3e    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      00529c3e    mov ydir,0FFFFFFFFh"
 );
 // LINE 2266:
 	asm( 
@@ -4720,11 +4720,11 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2268:
 	asm( 
-"	      00529c4a    mov dword ptr [ebp-4],1"
+"	      00529c4a    mov xdir,1"
 );
 // LINE 2269:
 	asm( 
-"	      00529c51    mov dword ptr [ebp-8],0"
+"	      00529c51    mov ydir,0"
 );
 // LINE 2270:
 	asm( 
@@ -4732,15 +4732,15 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2272:
 	asm( 
-"	      00529c5d    inc dword ptr [ebp-0Ch]"
+"	      00529c5d    inc curr_dist"
 );
 // LINE 2273:
 	asm( 
-"	      00529c60    mov dword ptr [ebp-4],0"
+"	      00529c60    mov xdir,0"
 );
 // LINE 2274:
 	asm( 
-"	      00529c67    mov dword ptr [ebp-8],1"
+"	      00529c67    mov ydir,1"
 );
 // LINE 2275:
 	asm( 
@@ -4748,11 +4748,11 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2277:
 	asm( 
-"	      00529c73    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00529c73    mov xdir,0FFFFFFFFh"
 );
 // LINE 2278:
 	asm( 
-"	      00529c7a    mov dword ptr [ebp-8],0"
+"	      00529c7a    mov ydir,0"
 );
 // LINE 2279:
 	asm( 
@@ -4776,38 +4776,38 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2284:
 	asm( 
-"	      00529cb3    mov eax,[ebp-10h]"
-"	      00529cb6    cmp [ebp-0Ch],eax"
+"	      00529cb3    mov eax,spiral_dist"
+"	      00529cb6    cmp curr_dist,eax"
 "	      00529cb9    jne near ptr 00529CC9h"
 );
 // LINE 2286:
 	asm( 
-"	      00529cbf    dec dword ptr [ebp-0Ch]"
+"	      00529cbf    dec curr_dist"
 );
 // LINE 2287:
 	asm( 
-"	      00529cc2    mov dword ptr [ebp-40h],1"
+"	      00529cc2    mov stop_now,1"
 );
 // LINE 2291:
 	asm( 
-"	      00529cc9    mov dword ptr [ebp-30h],0"
+"	      00529cc9    mov i,0"
 "	      00529cd0    jmp near ptr 00529CD8h"
-"	      00529cd5    inc dword ptr [ebp-30h]"
-"	      00529cd8    mov eax,[ebp-30h]"
-"	      00529cdb    cmp [ebp-0Ch],eax"
+"	      00529cd5    inc i"
+"	      00529cd8    mov eax,i"
+"	      00529cdb    cmp curr_dist,eax"
 "	      00529cde    jle near ptr 00529E09h"
 );
 // LINE 2293:
 // Block start:
 	unsigned short tile;
 	asm( 
-"	      00529ce4    mov eax,[ebp-2Ch]"
+"	      00529ce4    mov eax,y"
 "	      00529ce7    and eax,0FFh"
-"	      00529cec    mov ecx,[ebp-28h]"
+"	      00529cec    mov ecx,x"
 "	      00529cef    and ecx,0FFh"
 "	      00529cf5    shl ecx,8"
 "	      00529cf8    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      00529d01    mov [ebp-48h],ax"
+"	      00529d01    mov tile,ax"
 "	      00529d05    jmp near ptr 00529D0Ah"
 );
 // LINE 2295:
@@ -4834,19 +4834,19 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2297:
 	asm( 
-"	      00529d63    mov eax,[ebp-28h]"
-"	      00529d66    mov [ebp-24h],eax"
+"	      00529d63    mov eax,x"
+"	      00529d66    mov beampoint.x,eax"
 );
 // LINE 2298:
 	asm( 
-"	      00529d69    mov eax,[ebp-2Ch]"
-"	      00529d6c    mov [ebp-20h],eax"
+"	      00529d69    mov eax,y"
+"	      00529d6c    mov beampoint.y,eax"
 );
 // LINE 2299:
 	asm( 
-"	      00529d6f    mov eax,[ebp-20h]"
+"	      00529d6f    mov eax,beampoint.y"
 "	      00529d72    and eax,0FFh"
-"	      00529d77    mov ecx,[ebp-24h]"
+"	      00529d77    mov ecx,beampoint.x"
 "	      00529d7a    and ecx,0FFh"
 "	      00529d80    shl ecx,0Ah"
 "	      00529d83    mov eax,[ecx+eax*4+67ED30h]"
@@ -4862,37 +4862,37 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529db3    jmp near ptr 00529DB8h"
 "	      00529db8    jmp near ptr 00529DBDh"
 "	      00529dbd    mov eax,[ebp-54h]"
-"	      00529dc0    mov [ebp-3Ch],eax"
+"	      00529dc0    mov cptr,eax"
 );
 // LINE 2300:
 	asm( 
-"	      00529dc3    mov eax,[ebp-3Ch]"
+"	      00529dc3    mov eax,cptr"
 "	      00529dc6    cmp dword ptr [eax+10h],0"
 "	      00529dca    jne near ptr 00529DE4h"
-"	      00529dd0    mov eax,[ebp-3Ch]"
+"	      00529dd0    mov eax,cptr"
 "	      00529dd3    cmp dword ptr [eax+0Ch],0"
 "	      00529dd7    jne near ptr 00529DE4h"
 );
 // LINE 2302:
 	asm( 
-"	      00529ddd    mov dword ptr [ebp-44h],1"
+"	      00529ddd    mov foundcell,1"
 );
 // LINE 2305:
 	asm( 
-"	      00529de4    cmp dword ptr [ebp-44h],0"
+"	      00529de4    cmp foundcell,0"
 "	      00529de8    je near ptr 00529DF8h"
 "	      00529dee    jmp near ptr 00529EDCh"
 "	      00529df3    jmp near ptr 00529E22h"
 );
 // LINE 2306:
 	asm( 
-"	      00529df8    mov eax,[ebp-4]"
-"	      00529dfb    add [ebp-28h],eax"
+"	      00529df8    mov eax,xdir"
+"	      00529dfb    add x,eax"
 );
 // LINE 2307:
 	asm( 
-"	      00529dfe    mov eax,[ebp-8]"
-"	      00529e01    add [ebp-2Ch],eax"
+"	      00529dfe    mov eax,ydir"
+"	      00529e01    add y,eax"
 );
 // LINE 2308:
 // Block end:
@@ -4901,7 +4901,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 // LINE 2310:
 	asm( 
-"	      00529e09    cmp dword ptr [ebp-40h],1"
+"	      00529e09    cmp stop_now,1"
 "	      00529e0d    jne near ptr 00529E18h"
 );
 // LINE 2312:
@@ -4919,16 +4919,16 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 // LINE 2323:
 foundCell:
 	asm( 
-"	      00529e22    mov dword ptr [ebp-34h],2"
+"	      00529e22    mov currentFlag,2"
 "	      00529e29    jmp near ptr 00529E31h"
-"	      00529e2e    inc dword ptr [ebp-34h]"
-"	      00529e31    cmp dword ptr [ebp-34h],7"
+"	      00529e2e    inc currentFlag"
+"	      00529e31    cmp currentFlag,7"
 "	      00529e35    jge near ptr 00529E4Bh"
 );
 // LINE 2325:
 	asm( 
-"	      00529e3b    mov eax,[ebp-34h]"
-"	      00529e3e    mov ecx,[ebp-58h]"
+"	      00529e3b    mov eax,currentFlag"
+"	      00529e3e    mov ecx,this"
 "	      00529e41    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 2326:
@@ -4937,62 +4937,62 @@ foundCell:
 );
 // LINE 2328:
 	asm( 
-"	      00529e4b    mov eax,[ebp-58h]"
+"	      00529e4b    mov eax,this"
 "	      00529e4e    mov dword ptr [eax+0Fh],0"
 );
 // LINE 2329:
 	asm( 
-"	      00529e55    mov eax,[ebp-58h]"
+"	      00529e55    mov eax,this"
 "	      00529e58    mov dword ptr [eax+2Bh],0"
 );
 // LINE 2330:
 	asm( 
-"	      00529e5f    mov eax,[ebp-58h]"
+"	      00529e5f    mov eax,this"
 "	      00529e62    mov byte ptr [eax+5],1"
 );
 // LINE 2335:
 	asm( 
-"	      00529e66    mov eax,[ebp-24h]"
-"	      00529e69    mov ecx,[ebp-58h]"
+"	      00529e66    mov eax,beampoint.x"
+"	      00529e69    mov ecx,this"
 "	      00529e6c    mov [ecx+33h],eax"
-"	      00529e6f    mov eax,[ebp-20h]"
-"	      00529e72    mov ecx,[ebp-58h]"
+"	      00529e6f    mov eax,beampoint.y"
+"	      00529e72    mov ecx,this"
 "	      00529e75    mov [ecx+37h],eax"
 "	      00529e78    jmp near ptr 00529E7Dh"
 );
 // LINE 2339:
 	asm( 
 "	      00529e7d    jmp near ptr 00529E82h"
-"	      00529e82    mov eax,[ebp-58h]"
+"	      00529e82    mov eax,this"
 "	      00529e85    add eax,33h"
 "	      00529e88    push eax"
-"	      00529e89    mov ecx,[ebp-58h]"
+"	      00529e89    mov ecx,this"
 "	      00529e8c    call 0052885Ch"
 );
 // LINE 2343:
 	asm( 
 "	      00529e91    jmp near ptr 00529E96h"
 "	      00529e96    jmp near ptr 00529E9Bh"
-"	      00529e9b    mov eax,[ebp-58h]"
+"	      00529e9b    mov eax,this"
 "	      00529e9e    mov eax,[eax+37h]"
 "	      00529ea1    and eax,0FFh"
-"	      00529ea6    mov ecx,[ebp-58h]"
+"	      00529ea6    mov ecx,this"
 "	      00529ea9    mov ecx,[ecx+33h]"
 "	      00529eac    and ecx,0FFh"
 "	      00529eb2    shl ecx,8"
 "	      00529eb5    movzx ax,byte ptr [eax+ecx+66EB10h]"
 "	      00529ebe    push eax"
-"	      00529ebf    mov ecx,[ebp-58h]"
+"	      00529ebf    mov ecx,this"
 "	      00529ec2    call 005281A8h"
 );
 // LINE 2344:
 	asm( 
-"	      00529ec7    mov ecx,[ebp-58h]"
+"	      00529ec7    mov ecx,this"
 "	      00529eca    call 0052948Eh"
 );
 // LINE 2345:
 	asm( 
-"	      00529ecf    mov ecx,[ebp-58h]"
+"	      00529ecf    mov ecx,this"
 "	      00529ed2    call 00529543h"
 );
 // LINE 2347:
@@ -5017,12 +5017,12 @@ void BoatClass::UnPlaceBoat() {
 "	      00529eec    push ebx"
 "	      00529eed    push esi"
 "	      00529eee    push edi"
-"	      00529eef    mov [ebp-4],ecx"
+"	      00529eef    mov this,ecx"
 );
 // LINE 2370:
 	asm( 
 "	      00529ef2    jmp near ptr 00529EF7h"
-"	      00529ef7    mov eax,[ebp-4]"
+"	      00529ef7    mov eax,this"
 "	      00529efa    movsx eax,byte ptr [eax+5]"
 "	      00529efe    test eax,eax"
 "	      00529f00    je near ptr 00529F21h"
@@ -5030,15 +5030,15 @@ void BoatClass::UnPlaceBoat() {
 // LINE 2372:
 	asm( 
 "	      00529f06    jmp near ptr 00529F0Bh"
-"	      00529f0b    mov eax,[ebp-4]"
+"	      00529f0b    mov eax,this"
 "	      00529f0e    add eax,33h"
 "	      00529f11    push eax"
-"	      00529f12    mov ecx,[ebp-4]"
+"	      00529f12    mov ecx,this"
 "	      00529f15    call 00528746h"
 );
 // LINE 2373:
 	asm( 
-"	      00529f1a    mov eax,[ebp-4]"
+"	      00529f1a    mov eax,this"
 "	      00529f1d    mov byte ptr [eax+5],0"
 );
 // LINE 2375:
@@ -5076,63 +5076,63 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      00529f34    push ebx"
 "	      00529f35    push esi"
 "	      00529f36    push edi"
-"	      00529f37    mov [ebp-98h],ecx"
+"	      00529f37    mov this,ecx"
 );
 // LINE 2397:
 	asm( 
-"	      00529f3d    mov dword ptr [ebp-0Ch],0"
+"	      00529f3d    mov curr_dist,0"
 );
 // LINE 2398:
 	asm( 
-"	      00529f44    mov dword ptr [ebp-2Ch],0FFFFFFFFh"
+"	      00529f44    mov curr_dir,0FFFFFFFFh"
 );
 // LINE 2400:
 	asm( 
-"	      00529f4b    mov dword ptr [ebp-34h],0"
+"	      00529f4b    mov stop_now,0"
 );
 // LINE 2401:
 	asm( 
-"	      00529f52    mov dword ptr [ebp-10h],1Fh"
+"	      00529f52    mov spiral_dist,1Fh"
 );
 // LINE 2403:
 	asm( 
-"	      00529f59    mov dword ptr [ebp-38h],0"
+"	      00529f59    mov foundcell,0"
 );
 // LINE 2407:
 	asm( 
-"	      00529f60    mov eax,[ebp+8]"
-"	      00529f63    mov [ebp-1Ch],eax"
+"	      00529f60    mov eax,mapx"
+"	      00529f63    mov x,eax"
 );
 // LINE 2408:
 	asm( 
-"	      00529f66    mov eax,[ebp+0Ch]"
-"	      00529f69    mov [ebp-20h],eax"
+"	      00529f66    mov eax,mapy"
+"	      00529f69    mov y,eax"
 );
 // LINE 2415:
 	asm( 
-"	      00529f6c    inc dword ptr [ebp-2Ch]"
+"	      00529f6c    inc curr_dir"
 );
 // LINE 2416:
 	asm( 
-"	      00529f6f    mov eax,[ebp-2Ch]"
+"	      00529f6f    mov eax,curr_dir"
 "	      00529f72    mov [ebp-9Ch],eax"
 "	      00529f78    jmp near ptr 00529FDBh"
 );
 // LINE 2420:
 	asm( 
-"	      00529f7d    mov dword ptr [ebp-2Ch],0"
+"	      00529f7d    mov curr_dir,0"
 );
 // LINE 2421:
 	asm( 
-"	      00529f84    inc dword ptr [ebp-0Ch]"
+"	      00529f84    inc curr_dist"
 );
 // LINE 2422:
 	asm( 
-"	      00529f87    mov dword ptr [ebp-4],0"
+"	      00529f87    mov xdir,0"
 );
 // LINE 2423:
 	asm( 
-"	      00529f8e    mov dword ptr [ebp-8],0FFFFFFFFh"
+"	      00529f8e    mov ydir,0FFFFFFFFh"
 );
 // LINE 2424:
 	asm( 
@@ -5140,11 +5140,11 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2426:
 	asm( 
-"	      00529f9a    mov dword ptr [ebp-4],1"
+"	      00529f9a    mov xdir,1"
 );
 // LINE 2427:
 	asm( 
-"	      00529fa1    mov dword ptr [ebp-8],0"
+"	      00529fa1    mov ydir,0"
 );
 // LINE 2428:
 	asm( 
@@ -5152,15 +5152,15 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2430:
 	asm( 
-"	      00529fad    inc dword ptr [ebp-0Ch]"
+"	      00529fad    inc curr_dist"
 );
 // LINE 2431:
 	asm( 
-"	      00529fb0    mov dword ptr [ebp-4],0"
+"	      00529fb0    mov xdir,0"
 );
 // LINE 2432:
 	asm( 
-"	      00529fb7    mov dword ptr [ebp-8],1"
+"	      00529fb7    mov ydir,1"
 );
 // LINE 2433:
 	asm( 
@@ -5168,11 +5168,11 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2435:
 	asm( 
-"	      00529fc3    mov dword ptr [ebp-4],0FFFFFFFFh"
+"	      00529fc3    mov xdir,0FFFFFFFFh"
 );
 // LINE 2436:
 	asm( 
-"	      00529fca    mov dword ptr [ebp-8],0"
+"	      00529fca    mov ydir,0"
 );
 // LINE 2437:
 	asm( 
@@ -5199,53 +5199,53 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2442:
 	asm( 
-"	      0052a009    mov eax,[ebp-0Ch]"
-"	      0052a00c    cmp [ebp-10h],eax"
+"	      0052a009    mov eax,curr_dist"
+"	      0052a00c    cmp spiral_dist,eax"
 "	      0052a00f    jne near ptr 0052A01Fh"
 );
 // LINE 2444:
 	asm( 
-"	      0052a015    dec dword ptr [ebp-0Ch]"
+"	      0052a015    dec curr_dist"
 );
 // LINE 2445:
 	asm( 
-"	      0052a018    mov dword ptr [ebp-34h],1"
+"	      0052a018    mov stop_now,1"
 );
 // LINE 2449:
 	asm( 
-"	      0052a01f    mov dword ptr [ebp-24h],0"
+"	      0052a01f    mov i,0"
 "	      0052a026    jmp near ptr 0052A02Eh"
-"	      0052a02b    inc dword ptr [ebp-24h]"
-"	      0052a02e    mov eax,[ebp-24h]"
-"	      0052a031    cmp [ebp-0Ch],eax"
+"	      0052a02b    inc i"
+"	      0052a02e    mov eax,i"
+"	      0052a031    cmp curr_dist,eax"
 "	      0052a034    jle near ptr 0052A6D9h"
 );
 // LINE 2451:
 // Block start:
 	unsigned short tile;
 	asm( 
-"	      0052a03a    mov eax,[ebp-20h]"
+"	      0052a03a    mov eax,y"
 "	      0052a03d    and eax,0FFh"
-"	      0052a042    mov ecx,[ebp-1Ch]"
+"	      0052a042    mov ecx,x"
 "	      0052a045    and ecx,0FFh"
 "	      0052a04b    shl ecx,8"
 "	      0052a04e    movzx ax,byte ptr [eax+ecx+66EB10h]"
-"	      0052a057    mov [ebp-3Ch],ax"
+"	      0052a057    mov tile,ax"
 "	      0052a05b    jmp near ptr 0052A060h"
 );
 // LINE 2455:
 	asm( 
-"	      0052a060    mov eax,[ebp-98h]"
+"	      0052a060    mov eax,this"
 "	      0052a066    cmp dword ptr [eax+7Bh],163h"
 "	      0052a06d    jne near ptr 0052A5D8h"
 );
 // LINE 2465:
 	asm( 
 "	      0052a073    jmp near ptr 0052A078h"
-"	      0052a078    mov eax,[ebp-20h]"
+"	      0052a078    mov eax,y"
 "	      0052a07b    dec eax"
 "	      0052a07c    and eax,0FFh"
-"	      0052a081    mov ecx,[ebp-1Ch]"
+"	      0052a081    mov ecx,x"
 "	      0052a084    dec ecx"
 "	      0052a085    and ecx,0FFh"
 "	      0052a08b    shl ecx,8"
@@ -5253,10 +5253,10 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a090    mov dl,[eax+ecx+66EB10h]"
 "	      0052a097    cmp edx,5"
 "	      0052a09a    jl near ptr 0052A0CDh"
-"	      0052a0a0    mov eax,[ebp-20h]"
+"	      0052a0a0    mov eax,y"
 "	      0052a0a3    dec eax"
 "	      0052a0a4    and eax,0FFh"
-"	      0052a0a9    mov ecx,[ebp-1Ch]"
+"	      0052a0a9    mov ecx,x"
 "	      0052a0ac    dec ecx"
 "	      0052a0ad    and ecx,0FFh"
 "	      0052a0b3    shl ecx,8"
@@ -5276,20 +5276,20 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a0f5    cmp dword ptr [ebp-44h],0"
 "	      0052a0f9    je near ptr 0052A5D3h"
 "	      0052a0ff    jmp near ptr 0052A104h"
-"	      0052a104    mov eax,[ebp-20h]"
+"	      0052a104    mov eax,y"
 "	      0052a107    dec eax"
 "	      0052a108    and eax,0FFh"
-"	      0052a10d    mov ecx,[ebp-1Ch]"
+"	      0052a10d    mov ecx,x"
 "	      0052a110    and ecx,0FFh"
 "	      0052a116    shl ecx,8"
 "	      0052a119    xor edx,edx"
 "	      0052a11b    mov dl,[eax+ecx+66EB10h]"
 "	      0052a122    cmp edx,5"
 "	      0052a125    jl near ptr 0052A157h"
-"	      0052a12b    mov eax,[ebp-20h]"
+"	      0052a12b    mov eax,y"
 "	      0052a12e    dec eax"
 "	      0052a12f    and eax,0FFh"
-"	      0052a134    mov ecx,[ebp-1Ch]"
+"	      0052a134    mov ecx,x"
 "	      0052a137    and ecx,0FFh"
 "	      0052a13d    shl ecx,8"
 "	      0052a140    xor edx,edx"
@@ -5308,22 +5308,22 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a17f    cmp dword ptr [ebp-4Ch],0"
 "	      0052a183    je near ptr 0052A5D3h"
 "	      0052a189    jmp near ptr 0052A18Eh"
-"	      0052a18e    mov eax,[ebp-1Ch]"
+"	      0052a18e    mov eax,x"
 "	      0052a191    inc eax"
 "	      0052a192    and eax,0FFh"
 "	      0052a197    shl eax,8"
-"	      0052a19a    mov ecx,[ebp-20h]"
+"	      0052a19a    mov ecx,y"
 "	      0052a19d    dec ecx"
 "	      0052a19e    and ecx,0FFh"
 "	      0052a1a4    xor edx,edx"
 "	      0052a1a6    mov dl,[eax+ecx+66EB10h]"
 "	      0052a1ad    cmp edx,5"
 "	      0052a1b0    jl near ptr 0052A1E3h"
-"	      0052a1b6    mov eax,[ebp-1Ch]"
+"	      0052a1b6    mov eax,x"
 "	      0052a1b9    inc eax"
 "	      0052a1ba    and eax,0FFh"
 "	      0052a1bf    shl eax,8"
-"	      0052a1c2    mov ecx,[ebp-20h]"
+"	      0052a1c2    mov ecx,y"
 "	      0052a1c5    dec ecx"
 "	      0052a1c6    and ecx,0FFh"
 "	      0052a1cc    xor edx,edx"
@@ -5342,9 +5342,9 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a20b    cmp dword ptr [ebp-54h],0"
 "	      0052a20f    je near ptr 0052A5D3h"
 "	      0052a215    jmp near ptr 0052A21Ah"
-"	      0052a21a    mov eax,[ebp-20h]"
+"	      0052a21a    mov eax,y"
 "	      0052a21d    and eax,0FFh"
-"	      0052a222    mov ecx,[ebp-1Ch]"
+"	      0052a222    mov ecx,x"
 "	      0052a225    dec ecx"
 "	      0052a226    and ecx,0FFh"
 "	      0052a22c    shl ecx,8"
@@ -5352,9 +5352,9 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a231    mov dl,[eax+ecx+66EB10h]"
 "	      0052a238    cmp edx,5"
 "	      0052a23b    jl near ptr 0052A26Dh"
-"	      0052a241    mov eax,[ebp-20h]"
+"	      0052a241    mov eax,y"
 "	      0052a244    and eax,0FFh"
-"	      0052a249    mov ecx,[ebp-1Ch]"
+"	      0052a249    mov ecx,x"
 "	      0052a24c    dec ecx"
 "	      0052a24d    and ecx,0FFh"
 "	      0052a253    shl ecx,8"
@@ -5374,18 +5374,18 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a295    cmp dword ptr [ebp-5Ch],0"
 "	      0052a299    je near ptr 0052A5D3h"
 "	      0052a29f    jmp near ptr 0052A2A4h"
-"	      0052a2a4    mov eax,[ebp-20h]"
+"	      0052a2a4    mov eax,y"
 "	      0052a2a7    and eax,0FFh"
-"	      0052a2ac    mov ecx,[ebp-1Ch]"
+"	      0052a2ac    mov ecx,x"
 "	      0052a2af    and ecx,0FFh"
 "	      0052a2b5    shl ecx,8"
 "	      0052a2b8    xor edx,edx"
 "	      0052a2ba    mov dl,[eax+ecx+66EB10h]"
 "	      0052a2c1    cmp edx,5"
 "	      0052a2c4    jl near ptr 0052A2F5h"
-"	      0052a2ca    mov eax,[ebp-20h]"
+"	      0052a2ca    mov eax,y"
 "	      0052a2cd    and eax,0FFh"
-"	      0052a2d2    mov ecx,[ebp-1Ch]"
+"	      0052a2d2    mov ecx,x"
 "	      0052a2d5    and ecx,0FFh"
 "	      0052a2db    shl ecx,8"
 "	      0052a2de    xor edx,edx"
@@ -5404,21 +5404,21 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a31d    cmp dword ptr [ebp-64h],0"
 "	      0052a321    je near ptr 0052A5D3h"
 "	      0052a327    jmp near ptr 0052A32Ch"
-"	      0052a32c    mov eax,[ebp-1Ch]"
+"	      0052a32c    mov eax,x"
 "	      0052a32f    inc eax"
 "	      0052a330    and eax,0FFh"
 "	      0052a335    shl eax,8"
-"	      0052a338    mov ecx,[ebp-20h]"
+"	      0052a338    mov ecx,y"
 "	      0052a33b    and ecx,0FFh"
 "	      0052a341    xor edx,edx"
 "	      0052a343    mov dl,[eax+ecx+66EB10h]"
 "	      0052a34a    cmp edx,5"
 "	      0052a34d    jl near ptr 0052A37Fh"
-"	      0052a353    mov eax,[ebp-1Ch]"
+"	      0052a353    mov eax,x"
 "	      0052a356    inc eax"
 "	      0052a357    and eax,0FFh"
 "	      0052a35c    shl eax,8"
-"	      0052a35f    mov ecx,[ebp-20h]"
+"	      0052a35f    mov ecx,y"
 "	      0052a362    and ecx,0FFh"
 "	      0052a368    xor edx,edx"
 "	      0052a36a    mov dl,[eax+ecx+66EB10h]"
@@ -5436,10 +5436,10 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a3a7    cmp dword ptr [ebp-6Ch],0"
 "	      0052a3ab    je near ptr 0052A5D3h"
 "	      0052a3b1    jmp near ptr 0052A3B6h"
-"	      0052a3b6    mov eax,[ebp-20h]"
+"	      0052a3b6    mov eax,y"
 "	      0052a3b9    inc eax"
 "	      0052a3ba    and eax,0FFh"
-"	      0052a3bf    mov ecx,[ebp-1Ch]"
+"	      0052a3bf    mov ecx,x"
 "	      0052a3c2    dec ecx"
 "	      0052a3c3    and ecx,0FFh"
 "	      0052a3c9    shl ecx,8"
@@ -5447,10 +5447,10 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a3ce    mov dl,[eax+ecx+66EB10h]"
 "	      0052a3d5    cmp edx,5"
 "	      0052a3d8    jl near ptr 0052A40Bh"
-"	      0052a3de    mov eax,[ebp-20h]"
+"	      0052a3de    mov eax,y"
 "	      0052a3e1    inc eax"
 "	      0052a3e2    and eax,0FFh"
-"	      0052a3e7    mov ecx,[ebp-1Ch]"
+"	      0052a3e7    mov ecx,x"
 "	      0052a3ea    dec ecx"
 "	      0052a3eb    and ecx,0FFh"
 "	      0052a3f1    shl ecx,8"
@@ -5470,20 +5470,20 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a433    cmp dword ptr [ebp-74h],0"
 "	      0052a437    je near ptr 0052A5D3h"
 "	      0052a43d    jmp near ptr 0052A442h"
-"	      0052a442    mov eax,[ebp-20h]"
+"	      0052a442    mov eax,y"
 "	      0052a445    inc eax"
 "	      0052a446    and eax,0FFh"
-"	      0052a44b    mov ecx,[ebp-1Ch]"
+"	      0052a44b    mov ecx,x"
 "	      0052a44e    and ecx,0FFh"
 "	      0052a454    shl ecx,8"
 "	      0052a457    xor edx,edx"
 "	      0052a459    mov dl,[eax+ecx+66EB10h]"
 "	      0052a460    cmp edx,5"
 "	      0052a463    jl near ptr 0052A495h"
-"	      0052a469    mov eax,[ebp-20h]"
+"	      0052a469    mov eax,y"
 "	      0052a46c    inc eax"
 "	      0052a46d    and eax,0FFh"
-"	      0052a472    mov ecx,[ebp-1Ch]"
+"	      0052a472    mov ecx,x"
 "	      0052a475    and ecx,0FFh"
 "	      0052a47b    shl ecx,8"
 "	      0052a47e    xor edx,edx"
@@ -5502,10 +5502,10 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a4bd    cmp dword ptr [ebp-7Ch],0"
 "	      0052a4c1    je near ptr 0052A5D3h"
 "	      0052a4c7    jmp near ptr 0052A4CCh"
-"	      0052a4cc    mov eax,[ebp-20h]"
+"	      0052a4cc    mov eax,y"
 "	      0052a4cf    inc eax"
 "	      0052a4d0    and eax,0FFh"
-"	      0052a4d5    mov ecx,[ebp-1Ch]"
+"	      0052a4d5    mov ecx,x"
 "	      0052a4d8    inc ecx"
 "	      0052a4d9    and ecx,0FFh"
 "	      0052a4df    shl ecx,8"
@@ -5513,10 +5513,10 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a4e4    mov dl,[eax+ecx+66EB10h]"
 "	      0052a4eb    cmp edx,5"
 "	      0052a4ee    jl near ptr 0052A521h"
-"	      0052a4f4    mov eax,[ebp-20h]"
+"	      0052a4f4    mov eax,y"
 "	      0052a4f7    inc eax"
 "	      0052a4f8    and eax,0FFh"
-"	      0052a4fd    mov ecx,[ebp-1Ch]"
+"	      0052a4fd    mov ecx,x"
 "	      0052a500    inc ecx"
 "	      0052a501    and ecx,0FFh"
 "	      0052a507    shl ecx,8"
@@ -5538,19 +5538,19 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2467:
 	asm( 
-"	      0052a556    mov eax,[ebp-1Ch]"
-"	      0052a559    mov [ebp-18h],eax"
+"	      0052a556    mov eax,x"
+"	      0052a559    mov beampoint.x,eax"
 );
 // LINE 2468:
 	asm( 
-"	      0052a55c    mov eax,[ebp-20h]"
-"	      0052a55f    mov [ebp-14h],eax"
+"	      0052a55c    mov eax,y"
+"	      0052a55f    mov beampoint.y,eax"
 );
 // LINE 2469:
 	asm( 
-"	      0052a562    mov eax,[ebp-14h]"
+"	      0052a562    mov eax,beampoint.y"
 "	      0052a565    and eax,0FFh"
-"	      0052a56a    mov ecx,[ebp-18h]"
+"	      0052a56a    mov ecx,beampoint.x"
 "	      0052a56d    and ecx,0FFh"
 "	      0052a573    shl ecx,0Ah"
 "	      0052a576    mov eax,[ecx+eax*4+67ED30h]"
@@ -5566,17 +5566,17 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a5ac    jmp near ptr 0052A5B1h"
 "	      0052a5b1    jmp near ptr 0052A5B6h"
 "	      0052a5b6    mov eax,[ebp-90h]"
-"	      0052a5bc    mov [ebp-30h],eax"
+"	      0052a5bc    mov cptr,eax"
 );
 // LINE 2470:
 	asm( 
-"	      0052a5bf    mov eax,[ebp-30h]"
+"	      0052a5bf    mov eax,cptr"
 "	      0052a5c2    cmp dword ptr [eax+10h],0"
 "	      0052a5c6    jne near ptr 0052A5D3h"
 );
 // LINE 2472:
 	asm( 
-"	      0052a5cc    mov dword ptr [ebp-38h],1"
+"	      0052a5cc    mov foundcell,1"
 );
 // LINE 2476:
 	asm( 
@@ -5603,19 +5603,19 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2478:
 	asm( 
-"	      0052a637    mov eax,[ebp-1Ch]"
-"	      0052a63a    mov [ebp-18h],eax"
+"	      0052a637    mov eax,x"
+"	      0052a63a    mov beampoint.x,eax"
 );
 // LINE 2479:
 	asm( 
-"	      0052a63d    mov eax,[ebp-20h]"
-"	      0052a640    mov [ebp-14h],eax"
+"	      0052a63d    mov eax,y"
+"	      0052a640    mov beampoint.y,eax"
 );
 // LINE 2480:
 	asm( 
-"	      0052a643    mov eax,[ebp-14h]"
+"	      0052a643    mov eax,beampoint.y"
 "	      0052a646    and eax,0FFh"
-"	      0052a64b    mov ecx,[ebp-18h]"
+"	      0052a64b    mov ecx,beampoint.x"
 "	      0052a64e    and ecx,0FFh"
 "	      0052a654    shl ecx,0Ah"
 "	      0052a657    mov eax,[ecx+eax*4+67ED30h]"
@@ -5631,34 +5631,34 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a68d    jmp near ptr 0052A692h"
 "	      0052a692    jmp near ptr 0052A697h"
 "	      0052a697    mov eax,[ebp-94h]"
-"	      0052a69d    mov [ebp-30h],eax"
+"	      0052a69d    mov cptr,eax"
 );
 // LINE 2481:
 	asm( 
-"	      0052a6a0    mov eax,[ebp-30h]"
+"	      0052a6a0    mov eax,cptr"
 "	      0052a6a3    cmp dword ptr [eax+10h],0"
 "	      0052a6a7    jne near ptr 0052A6B4h"
 );
 // LINE 2483:
 	asm( 
-"	      0052a6ad    mov dword ptr [ebp-38h],1"
+"	      0052a6ad    mov foundcell,1"
 );
 // LINE 2486:
 	asm( 
-"	      0052a6b4    cmp dword ptr [ebp-38h],0"
+"	      0052a6b4    cmp foundcell,0"
 "	      0052a6b8    je near ptr 0052A6C8h"
 "	      0052a6be    jmp near ptr 0052A810h"
 "	      0052a6c3    jmp near ptr 0052A6F4h"
 );
 // LINE 2487:
 	asm( 
-"	      0052a6c8    mov eax,[ebp-4]"
-"	      0052a6cb    add [ebp-1Ch],eax"
+"	      0052a6c8    mov eax,xdir"
+"	      0052a6cb    add x,eax"
 );
 // LINE 2488:
 	asm( 
-"	      0052a6ce    mov eax,[ebp-8]"
-"	      0052a6d1    add [ebp-20h],eax"
+"	      0052a6ce    mov eax,ydir"
+"	      0052a6d1    add y,eax"
 );
 // LINE 2489:
 // Block end:
@@ -5667,7 +5667,7 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 );
 // LINE 2491:
 	asm( 
-"	      0052a6d9    cmp dword ptr [ebp-34h],1"
+"	      0052a6d9    cmp stop_now,1"
 "	      0052a6dd    jne near ptr 0052A6E8h"
 );
 // LINE 2493:
@@ -5686,16 +5686,16 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 // LINE 2504:
 foundCell:
 	asm( 
-"	      0052a6f4    mov dword ptr [ebp-28h],2"
+"	      0052a6f4    mov currentFlag,2"
 "	      0052a6fb    jmp near ptr 0052A703h"
-"	      0052a700    inc dword ptr [ebp-28h]"
-"	      0052a703    cmp dword ptr [ebp-28h],7"
+"	      0052a700    inc currentFlag"
+"	      0052a703    cmp currentFlag,7"
 "	      0052a707    jge near ptr 0052A720h"
 );
 // LINE 2506:
 	asm( 
-"	      0052a70d    mov eax,[ebp-28h]"
-"	      0052a710    mov ecx,[ebp-98h]"
+"	      0052a70d    mov eax,currentFlag"
+"	      0052a710    mov ecx,this"
 "	      0052a716    mov byte ptr [eax+ecx+4],0"
 );
 // LINE 2507:
@@ -5704,18 +5704,18 @@ foundCell:
 );
 // LINE 2509:
 	asm( 
-"	      0052a720    mov eax,[ebp-98h]"
+"	      0052a720    mov eax,this"
 "	      0052a726    mov dword ptr [eax+0Fh],0"
 );
 // LINE 2510:
 	asm( 
-"	      0052a72d    mov eax,[ebp-98h]"
+"	      0052a72d    mov eax,this"
 "	      0052a733    mov dword ptr [eax+2Bh],0"
 );
 // LINE 2513:
 	asm( 
 "	      0052a73a    jmp near ptr 0052A73Fh"
-"	      0052a73f    mov eax,[ebp-98h]"
+"	      0052a73f    mov eax,this"
 "	      0052a745    movsx eax,byte ptr [eax+5]"
 "	      0052a749    test eax,eax"
 "	      0052a74b    je near ptr 0052A770h"
@@ -5723,10 +5723,10 @@ foundCell:
 // LINE 2515:
 	asm( 
 "	      0052a751    jmp near ptr 0052A756h"
-"	      0052a756    mov eax,[ebp-98h]"
+"	      0052a756    mov eax,this"
 "	      0052a75c    add eax,33h"
 "	      0052a75f    push eax"
-"	      0052a760    mov ecx,[ebp-98h]"
+"	      0052a760    mov ecx,this"
 "	      0052a766    call 00528746h"
 );
 // LINE 2517:
@@ -5735,52 +5735,52 @@ foundCell:
 );
 // LINE 2519:
 	asm( 
-"	      0052a770    mov eax,[ebp-98h]"
+"	      0052a770    mov eax,this"
 "	      0052a776    mov byte ptr [eax+5],1"
 );
 // LINE 2522:
 	asm( 
-"	      0052a77a    mov eax,[ebp-18h]"
-"	      0052a77d    mov ecx,[ebp-98h]"
+"	      0052a77a    mov eax,beampoint.x"
+"	      0052a77d    mov ecx,this"
 "	      0052a783    mov [ecx+33h],eax"
-"	      0052a786    mov eax,[ebp-14h]"
-"	      0052a789    mov ecx,[ebp-98h]"
+"	      0052a786    mov eax,beampoint.y"
+"	      0052a789    mov ecx,this"
 "	      0052a78f    mov [ecx+37h],eax"
 "	      0052a792    jmp near ptr 0052A797h"
 );
 // LINE 2526:
 	asm( 
 "	      0052a797    jmp near ptr 0052A79Ch"
-"	      0052a79c    mov eax,[ebp-98h]"
+"	      0052a79c    mov eax,this"
 "	      0052a7a2    add eax,33h"
 "	      0052a7a5    push eax"
-"	      0052a7a6    mov ecx,[ebp-98h]"
+"	      0052a7a6    mov ecx,this"
 "	      0052a7ac    call 0052885Ch"
 );
 // LINE 2530:
 	asm( 
 "	      0052a7b1    jmp near ptr 0052A7B6h"
 "	      0052a7b6    jmp near ptr 0052A7BBh"
-"	      0052a7bb    mov eax,[ebp-98h]"
+"	      0052a7bb    mov eax,this"
 "	      0052a7c1    mov eax,[eax+33h]"
 "	      0052a7c4    and eax,0FFh"
 "	      0052a7c9    shl eax,8"
-"	      0052a7cc    mov ecx,[ebp-98h]"
+"	      0052a7cc    mov ecx,this"
 "	      0052a7d2    mov ecx,[ecx+37h]"
 "	      0052a7d5    and ecx,0FFh"
 "	      0052a7db    movzx ax,byte ptr [eax+ecx+66EB10h]"
 "	      0052a7e4    push eax"
-"	      0052a7e5    mov ecx,[ebp-98h]"
+"	      0052a7e5    mov ecx,this"
 "	      0052a7eb    call 005281A8h"
 );
 // LINE 2531:
 	asm( 
-"	      0052a7f0    mov ecx,[ebp-98h]"
+"	      0052a7f0    mov ecx,this"
 "	      0052a7f6    call 0052948Eh"
 );
 // LINE 2532:
 	asm( 
-"	      0052a7fb    mov ecx,[ebp-98h]"
+"	      0052a7fb    mov ecx,this"
 "	      0052a801    call 00529543h"
 );
 // LINE 2534:
@@ -5812,25 +5812,25 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 "	      0052a822    push ebx"
 "	      0052a823    push esi"
 "	      0052a824    push edi"
-"	      0052a825    mov [ebp-30h],ecx"
+"	      0052a825    mov this,ecx"
 );
 // LINE 2816:
 	asm( 
-"	      0052a828    mov eax,[ebp-30h]"
+"	      0052a828    mov eax,this"
 "	      0052a82b    mov dword ptr [eax+87h],0"
 );
 // LINE 2837:
 	asm( 
-"	      0052a835    mov eax,[ebp-30h]"
+"	      0052a835    mov eax,this"
 "	      0052a838    mov eax,[eax+7Bh]"
 "	      0052a83b    push eax"
 "	      0052a83c    call 004D8821h"
 "	      0052a841    add esp,4"
-"	      0052a844    mov [ebp-28h],eax"
+"	      0052a844    mov object,eax"
 );
 // LINE 2839:
 	asm( 
-"	      0052a847    cmp dword ptr [ebp-28h],0"
+"	      0052a847    cmp object,0"
 "	      0052a84b    jne near ptr 0052A879h"
 );
 // LINE 2842:
@@ -5850,13 +5850,13 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2847:
 	asm( 
-"	      0052a879    cmp dword ptr [ebp+10h],0"
+"	      0052a879    cmp instanceID,0"
 "	      0052a87d    jne near ptr 0052A894h"
 );
 // LINE 2850:
 	asm( 
-"	      0052a883    mov eax,[ebp-28h]"
-"	      0052a886    mov ecx,[ebp-30h]"
+"	      0052a883    mov eax,object"
+"	      0052a886    mov ecx,this"
 "	      0052a889    mov [ecx+87h],eax"
 );
 // LINE 2852:
@@ -5867,7 +5867,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 // Block start:
 	char * objectMemory;
 	asm( 
-"	      0052a894    mov eax,[ebp-28h]"
+"	      0052a894    mov eax,object"
 "	      0052a897    push eax"
 "	      0052a898    call 004D8520h"
 "	      0052a89d    add esp,4"
@@ -5876,27 +5876,27 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 "	      0052a8a6    push eax"
 "	      0052a8a7    call 004CB4ACh"
 "	      0052a8ac    add esp,8"
-"	      0052a8af    mov [ebp-2Ch],eax"
+"	      0052a8af    mov objectMemory,eax"
 );
 // LINE 2859:
 	asm( 
-"	      0052a8b2    cmp dword ptr [ebp-2Ch],0"
+"	      0052a8b2    cmp objectMemory,0"
 "	      0052a8b6    je near ptr 0052A93Fh"
 );
 // LINE 2863:
 	asm( 
-"	      0052a8bc    mov eax,[ebp-2Ch]"
+"	      0052a8bc    mov eax,objectMemory"
 "	      0052a8bf    push eax"
-"	      0052a8c0    mov eax,[ebp-28h]"
+"	      0052a8c0    mov eax,object"
 "	      0052a8c3    push eax"
 "	      0052a8c4    call 004D8570h"
 "	      0052a8c9    add esp,8"
-"	      0052a8cc    mov ecx,[ebp-30h]"
+"	      0052a8cc    mov ecx,this"
 "	      0052a8cf    mov [ecx+87h],eax"
 );
 // LINE 2865:
 	asm( 
-"	      0052a8d5    mov eax,[ebp-30h]"
+"	      0052a8d5    mov eax,this"
 "	      0052a8d8    cmp dword ptr [eax+87h],0"
 "	      0052a8df    je near ptr 0052A902h"
 );
@@ -5904,7 +5904,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	asm( 
 "	      0052a8e5    mov eax,ds:[5B4780h]"
 "	      0052a8ea    push eax"
-"	      0052a8eb    mov eax,[ebp-30h]"
+"	      0052a8eb    mov eax,this"
 "	      0052a8ee    mov eax,[eax+87h]"
 "	      0052a8f4    push eax"
 "	      0052a8f5    call 004D84DBh"
@@ -5916,7 +5916,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2873:
 	asm( 
-"	      0052a902    mov eax,[ebp-30h]"
+"	      0052a902    mov eax,this"
 "	      0052a905    cmp dword ptr [eax+87h],0"
 "	      0052a90c    jne near ptr 0052A92Eh"
 "	      0052a912    push 0B39h"
@@ -5938,7 +5938,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2880:
 	asm( 
-"	      0052a93f    cmp dword ptr [ebp-2Ch],0"
+"	      0052a93f    cmp objectMemory,0"
 "	      0052a943    jne near ptr 0052A965h"
 "	      0052a949    push 0B40h"
 "	      0052a94e    push 5B7634h"
@@ -5956,18 +5956,18 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 // LINE 2886:
 // Block end:
 	asm( 
-"	      0052a971    mov eax,[ebp+10h]"
-"	      0052a974    mov ecx,[ebp-30h]"
+"	      0052a971    mov eax,instanceID"
+"	      0052a974    mov ecx,this"
 "	      0052a977    mov [ecx+8Dh],ax"
 );
 // LINE 2887:
 	asm( 
-"	      0052a97e    mov eax,[ebp-30h]"
+"	      0052a97e    mov eax,this"
 "	      0052a981    mov word ptr [eax+8Bh],201h"
 );
 // LINE 2889:
 	asm( 
-"	      0052a98a    mov eax,[ebp-30h]"
+"	      0052a98a    mov eax,this"
 "	      0052a98d    add eax,0A3h"
 "	      0052a992    push eax"
 "	      0052a993    call 004D1FF1h"
@@ -5975,77 +5975,77 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2890:
 	asm( 
-"	      0052a99b    lea eax,[ebp-24h]"
+"	      0052a99b    lea eax,objectInfo.Faces"
 "	      0052a99e    push eax"
-"	      0052a99f    mov eax,[ebp-28h]"
+"	      0052a99f    mov eax,object"
 "	      0052a9a2    push eax"
 "	      0052a9a3    call 004D8859h"
 "	      0052a9a8    add esp,8"
 );
 // LINE 2891:
 	asm( 
-"	      0052a9ab    mov eax,[ebp-18h]"
-"	      0052a9ae    mov ecx,[ebp-30h]"
+"	      0052a9ab    mov eax,objectInfo.Radius"
+"	      0052a9ae    mov ecx,this"
 "	      0052a9b1    mov [ecx+8Fh],eax"
 );
 // LINE 2892:
 	asm( 
-"	      0052a9b7    mov eax,[ebp-28h]"
+"	      0052a9b7    mov eax,object"
 "	      0052a9ba    push eax"
 "	      0052a9bb    call 004D3E9Dh"
 "	      0052a9c0    add esp,4"
-"	      0052a9c3    mov ecx,[ebp-30h]"
+"	      0052a9c3    mov ecx,this"
 "	      0052a9c6    mov [ecx+93h],eax"
 );
 // LINE 2895:
 	asm( 
-"	      0052a9cc    mov eax,[ebp-30h]"
+"	      0052a9cc    mov eax,this"
 "	      0052a9cf    mov byte ptr [eax+6],0"
 );
 // LINE 2896:
 	asm( 
-"	      0052a9d3    mov eax,[ebp-30h]"
+"	      0052a9d3    mov eax,this"
 "	      0052a9d6    mov dword ptr [eax+4Fh],0"
 );
 // LINE 2897:
 	asm( 
-"	      0052a9dd    mov eax,[ebp-30h]"
+"	      0052a9dd    mov eax,this"
 "	      0052a9e0    mov dword ptr [eax+4Bh],0"
 );
 // LINE 2898:
 	asm( 
-"	      0052a9e7    mov eax,[ebp+8]"
-"	      0052a9ea    mov ecx,[ebp-30h]"
+"	      0052a9e7    mov eax,mapx"
+"	      0052a9ea    mov ecx,this"
 "	      0052a9ed    mov [ecx+33h],eax"
 );
 // LINE 2899:
 	asm( 
-"	      0052a9f0    mov eax,[ebp+0Ch]"
-"	      0052a9f3    mov ecx,[ebp-30h]"
+"	      0052a9f0    mov eax,mapy"
+"	      0052a9f3    mov ecx,this"
 "	      0052a9f6    mov [ecx+37h],eax"
 );
 // LINE 2900:
 	asm( 
-"	      0052a9f9    mov eax,[ebp+8]"
-"	      0052a9fc    mov ecx,[ebp-30h]"
+"	      0052a9f9    mov eax,mapx"
+"	      0052a9fc    mov ecx,this"
 "	      0052a9ff    mov [ecx+3Bh],eax"
 );
 // LINE 2901:
 	asm( 
-"	      0052aa02    mov eax,[ebp+0Ch]"
-"	      0052aa05    mov ecx,[ebp-30h]"
+"	      0052aa02    mov eax,mapy"
+"	      0052aa05    mov ecx,this"
 "	      0052aa08    mov [ecx+3Fh],eax"
 );
 // LINE 2902:
 	asm( 
-"	      0052aa0b    mov eax,[ebp+8]"
-"	      0052aa0e    mov ecx,[ebp-30h]"
+"	      0052aa0b    mov eax,mapx"
+"	      0052aa0e    mov ecx,this"
 "	      0052aa11    mov [ecx+43h],eax"
 );
 // LINE 2903:
 	asm( 
-"	      0052aa14    mov eax,[ebp+0Ch]"
-"	      0052aa17    mov ecx,[ebp-30h]"
+"	      0052aa14    mov eax,mapy"
+"	      0052aa17    mov ecx,this"
 "	      0052aa1a    mov [ecx+47h],eax"
 );
 // LINE 2904:
@@ -6060,24 +6060,24 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 "	      0052aa2f    sub eax,edx"
 "	      0052aa31    shl eax,11h"
 "	      0052aa34    add eax,0A0000h"
-"	      0052aa39    mov ecx,[ebp-30h]"
+"	      0052aa39    mov ecx,this"
 "	      0052aa3c    mov [ecx+2Fh],eax"
 );
 // LINE 2905:
 	asm( 
-"	      0052aa3f    mov eax,[ebp-30h]"
+"	      0052aa3f    mov eax,this"
 "	      0052aa42    mov dword ptr [eax+0Bh],0E666h"
 );
 // LINE 2909:
 	asm( 
-"	      0052aa49    mov eax,[ebp-30h]"
+"	      0052aa49    mov eax,this"
 "	      0052aa4c    mov eax,[eax+7Bh]"
 "	      0052aa4f    mov [ebp-34h],eax"
 "	      0052aa52    jmp near ptr 0052AA6Bh"
 );
 // LINE 2912:
 	asm( 
-"	      0052aa57    mov eax,[ebp-30h]"
+"	      0052aa57    mov eax,this"
 "	      0052aa5a    mov dword ptr [eax+4Bh],0A0000h"
 );
 // LINE 2913:
@@ -6093,54 +6093,54 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2918:
 	asm( 
-"	      0052aa7d    cmp dword ptr [ebp+8],0FFFFFFFFh"
+"	      0052aa7d    cmp mapx,0FFFFFFFFh"
 "	      0052aa81    je near ptr 0052AAF8h"
-"	      0052aa87    cmp dword ptr [ebp+0Ch],0FFFFFFFFh"
+"	      0052aa87    cmp mapy,0FFFFFFFFh"
 "	      0052aa8b    je near ptr 0052AAF8h"
 );
 // LINE 2921:
 	asm( 
-"	      0052aa91    mov eax,[ebp-30h]"
+"	      0052aa91    mov eax,this"
 "	      0052aa94    add eax,33h"
 "	      0052aa97    push eax"
-"	      0052aa98    mov ecx,[ebp-30h]"
+"	      0052aa98    mov ecx,this"
 "	      0052aa9b    call 0052885Ch"
 );
 // LINE 2924:
 	asm( 
 "	      0052aaa0    jmp near ptr 0052AAA5h"
-"	      0052aaa5    mov eax,[ebp-30h]"
+"	      0052aaa5    mov eax,this"
 "	      0052aaa8    mov eax,[eax+33h]"
 "	      0052aaab    and eax,0FFh"
 "	      0052aab0    shl eax,8"
-"	      0052aab3    mov ecx,[ebp-30h]"
+"	      0052aab3    mov ecx,this"
 "	      0052aab6    mov ecx,[ecx+37h]"
 "	      0052aab9    and ecx,0FFh"
 "	      0052aabf    movzx ax,byte ptr [eax+ecx+66EB10h]"
 "	      0052aac8    push eax"
-"	      0052aac9    mov ecx,[ebp-30h]"
+"	      0052aac9    mov ecx,this"
 "	      0052aacc    call 005281A8h"
 );
 // LINE 2925:
 	asm( 
-"	      0052aad1    mov ecx,[ebp-30h]"
+"	      0052aad1    mov ecx,this"
 "	      0052aad4    call 0052948Eh"
 );
 // LINE 2926:
 	asm( 
-"	      0052aad9    mov ecx,[ebp-30h]"
+"	      0052aad9    mov ecx,this"
 "	      0052aadc    call 00529543h"
 );
 // LINE 2930:
 	asm( 
-"	      0052aae1    mov eax,[ebp-30h]"
+"	      0052aae1    mov eax,this"
 "	      0052aae4    mov eax,[eax]"
-"	      0052aae6    mov ecx,[ebp-30h]"
+"	      0052aae6    mov ecx,this"
 "	      0052aae9    call dword ptr [eax+8]"
 );
 // LINE 2934:
 	asm( 
-"	      0052aaec    mov eax,[ebp-30h]"
+"	      0052aaec    mov eax,this"
 "	      0052aaef    mov byte ptr [eax+5],1"
 );
 // LINE 2936:
@@ -6149,18 +6149,18 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 );
 // LINE 2939:
 	asm( 
-"	      0052aaf8    mov eax,[ebp-30h]"
+"	      0052aaf8    mov eax,this"
 "	      0052aafb    mov byte ptr [eax+5],0"
 );
 // LINE 2947:
 	asm( 
-"	      0052aaff    mov eax,[ebp-30h]"
-"	      0052ab02    mov ecx,[ebp+10h]"
+"	      0052aaff    mov eax,this"
+"	      0052ab02    mov ecx,instanceID"
 "	      0052ab05    mov [ecx*4+62B6D8h],eax"
 );
 // LINE 2950:
 	asm( 
-"	      0052ab0c    mov eax,[ebp-30h]"
+"	      0052ab0c    mov eax,this"
 "	      0052ab0f    mov byte ptr [eax+4],1"
 );
 // LINE 2952:
@@ -6190,7 +6190,7 @@ int32_t CreateBoatInstance(int32_t instanceID) {
 );
 // LINE 3001:
 	asm( 
-"	      0052ab2a    mov eax,[ebp+8]"
+"	      0052ab2a    mov eax,instanceID"
 "	      0052ab2d    push eax"
 "	      0052ab2e    call 005276B5h"
 "	      0052ab33    add esp,4"
@@ -6283,12 +6283,12 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 // LINE 3066:
 	asm( 
 "	      0052ab87    mov eax,ds:[62B6D8h]"
-"	      0052ab8c    mov [ebp-4],eax"
+"	      0052ab8c    mov capboat,eax"
 );
 // LINE 3068:
 	asm( 
 "	      0052ab8f    jmp near ptr 0052AB94h"
-"	      0052ab94    mov eax,[ebp-4]"
+"	      0052ab94    mov eax,capboat"
 "	      0052ab97    movsx eax,byte ptr [eax+5]"
 "	      0052ab9b    cmp eax,1"
 "	      0052ab9e    jne near ptr 0052ABABh"
@@ -6308,7 +6308,7 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 "	      0052abb8    and eax,7Fh"
 "	      0052abbb    xor eax,edx"
 "	      0052abbd    sub eax,edx"
-"	      0052abbf    mov [ebp-10h],eax"
+"	      0052abbf    mov x,eax"
 );
 // LINE 3072:
 	asm( 
@@ -6320,17 +6320,17 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 "	      0052abcf    and eax,7Fh"
 "	      0052abd2    xor eax,edx"
 "	      0052abd4    sub eax,edx"
-"	      0052abd6    mov [ebp-14h],eax"
+"	      0052abd6    mov y,eax"
 );
 // LINE 3074:
 	asm( 
-"	      0052abd9    mov eax,[ebp-14h]"
+"	      0052abd9    mov eax,y"
 "	      0052abdc    push eax"
-"	      0052abdd    mov eax,[ebp-10h]"
+"	      0052abdd    mov eax,x"
 "	      0052abe0    push eax"
-"	      0052abe1    mov eax,[ebp-4]"
+"	      0052abe1    mov eax,capboat"
 "	      0052abe4    mov eax,[eax]"
-"	      0052abe6    mov ecx,[ebp-4]"
+"	      0052abe6    mov ecx,capboat"
 "	      0052abe9    call dword ptr [eax+18h]"
 "	      0052abec    test eax,eax"
 "	      0052abee    jne near ptr 0052ABFBh"
@@ -6342,14 +6342,14 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 );
 // LINE 3077:
 	asm( 
-"	      0052abfb    mov eax,[ebp+8]"
-"	      0052abfe    mov ecx,[ebp-4]"
+"	      0052abfb    mov eax,mission_id"
+"	      0052abfe    mov ecx,capboat"
 "	      0052ac01    mov [ecx+53h],eax"
 );
 // LINE 3078:
 	asm( 
-"	      0052ac04    mov eax,[ebp+0Ch]"
-"	      0052ac07    mov ecx,[ebp-4]"
+"	      0052ac04    mov eax,timetolive"
+"	      0052ac07    mov ecx,capboat"
 "	      0052ac0a    mov [ecx+57h],eax"
 );
 // LINE 3081:
@@ -6360,33 +6360,33 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 "	      0052ac1a    cdq"
 "	      0052ac1b    idiv ecx"
 "	      0052ac1d    lea eax,[edx+3]"
-"	      0052ac20    mov [ebp-30h],eax"
+"	      0052ac20    mov numtostart,eax"
 );
 // LINE 3082:
 	asm( 
-"	      0052ac23    mov dword ptr [ebp-8],0"
+"	      0052ac23    mov totalpersons,0"
 );
 // LINE 3083:
 	asm( 
-"	      0052ac2a    mov dword ptr [ebp-0Ch],0"
+"	      0052ac2a    mov count,0"
 "	      0052ac31    jmp near ptr 0052AC39h"
-"	      0052ac36    inc dword ptr [ebp-0Ch]"
-"	      0052ac39    mov eax,[ebp-30h]"
-"	      0052ac3c    cmp [ebp-0Ch],eax"
+"	      0052ac36    inc count"
+"	      0052ac39    mov eax,numtostart"
+"	      0052ac3c    cmp count,eax"
 "	      0052ac3f    jge near ptr 0052AC84h"
 );
 // LINE 3090:
 	asm( 
 "	      0052ac45    push 0"
-"	      0052ac47    mov eax,[ebp-4]"
+"	      0052ac47    mov eax,capboat"
 "	      0052ac4a    add eax,7Fh"
 "	      0052ac4d    push eax"
-"	      0052ac4e    mov eax,[ebp+8]"
+"	      0052ac4e    mov eax,mission_id"
 "	      0052ac51    push eax"
-"	      0052ac52    mov eax,[ebp-4]"
+"	      0052ac52    mov eax,capboat"
 "	      0052ac55    movzx ax,byte ptr [eax+37h]"
 "	      0052ac5a    push eax"
-"	      0052ac5b    mov eax,[ebp-4]"
+"	      0052ac5b    mov eax,capboat"
 "	      0052ac5e    movzx ax,byte ptr [eax+33h]"
 "	      0052ac63    push eax"
 "	      0052ac64    push 1"
@@ -6399,7 +6399,7 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 );
 // LINE 3092:
 	asm( 
-"	      0052ac7c    inc dword ptr [ebp-8]"
+"	      0052ac7c    inc totalpersons"
 );
 // LINE 3094:
 	asm( 
@@ -6407,12 +6407,12 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 );
 // LINE 3097:
 	asm( 
-"	      0052ac84    cmp dword ptr [ebp-8],0"
+"	      0052ac84    cmp totalpersons,0"
 "	      0052ac88    jne near ptr 0052AC9Dh"
 );
 // LINE 3099:
 	asm( 
-"	      0052ac8e    mov ecx,[ebp-4]"
+"	      0052ac8e    mov ecx,capboat"
 "	      0052ac91    call 00529EE6h"
 );
 // LINE 3100:
@@ -6422,56 +6422,56 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 );
 // LINE 3104:
 	asm( 
-"	      0052ac9d    mov dword ptr [ebp-2Ch],0"
+"	      0052ac9d    mov mp.op,0"
 );
 // LINE 3105:
 	asm( 
-"	      0052aca4    mov eax,[ebp-4]"
+"	      0052aca4    mov eax,capboat"
 "	      0052aca7    mov eax,[eax+53h]"
-"	      0052acaa    mov [ebp-28h],eax"
+"	      0052acaa    mov mp.id,eax"
 );
 // LINE 3106:
 	asm( 
-"	      0052acad    mov eax,[ebp-4]"
+"	      0052acad    mov eax,capboat"
 "	      0052acb0    mov eax,[eax+33h]"
-"	      0052acb3    mov [ebp-24h],eax"
+"	      0052acb3    mov mp.maploc.x,eax"
 );
 // LINE 3107:
 	asm( 
-"	      0052acb6    mov eax,[ebp-4]"
+"	      0052acb6    mov eax,capboat"
 "	      0052acb9    mov eax,[eax+37h]"
-"	      0052acbc    mov [ebp-20h],eax"
+"	      0052acbc    mov mp.maploc.y,eax"
 );
 // LINE 3108:
 	asm( 
-"	      0052acbf    lea eax,[ebp-2Ch]"
+"	      0052acbf    lea eax,mp.op"
 "	      0052acc2    push eax"
 "	      0052acc3    call 004FBD4Ah"
 "	      0052acc8    add esp,4"
 );
 // LINE 3110:
 	asm( 
-"	      0052accb    mov dword ptr [ebp-2Ch],0Eh"
+"	      0052accb    mov mp.op,0Eh"
 );
 // LINE 3111:
 	asm( 
-"	      0052acd2    mov eax,[ebp-8]"
-"	      0052acd5    mov [ebp-1Ch],eax"
+"	      0052acd2    mov eax,totalpersons"
+"	      0052acd5    mov mp.i2num,eax"
 );
 // LINE 3112:
 	asm( 
-"	      0052acd8    mov dword ptr [ebp-18h],1"
+"	      0052acd8    mov mp.flags,1"
 );
 // LINE 3113:
 	asm( 
-"	      0052acdf    lea eax,[ebp-2Ch]"
+"	      0052acdf    lea eax,mp.op"
 "	      0052ace2    push eax"
 "	      0052ace3    call 004FBD4Ah"
 "	      0052ace8    add esp,4"
 );
 // LINE 3115:
 	asm( 
-"	      0052aceb    mov eax,[ebp-4]"
+"	      0052aceb    mov eax,capboat"
 "	      0052acee    add eax,7Fh"
 "	      0052acf1    jmp near ptr 0052ACF6h"
 );
@@ -6501,12 +6501,12 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 // LINE 3129:
 	asm( 
 "	      0052ad04    mov eax,ds:[62B6D8h]"
-"	      0052ad09    mov [ebp-4],eax"
+"	      0052ad09    mov capboat,eax"
 );
 // LINE 3131:
 	asm( 
 "	      0052ad0c    jmp near ptr 0052AD11h"
-"	      0052ad11    mov eax,[ebp-4]"
+"	      0052ad11    mov eax,capboat"
 "	      0052ad14    movsx eax,byte ptr [eax+5]"
 "	      0052ad18    test eax,eax"
 "	      0052ad1a    jne near ptr 0052AD27h"
@@ -6518,7 +6518,7 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 );
 // LINE 3134:
 	asm( 
-"	      0052ad27    mov eax,[ebp-4]"
+"	      0052ad27    mov eax,capboat"
 "	      0052ad2a    add eax,7Fh"
 "	      0052ad2d    jmp near ptr 0052AD32h"
 );
@@ -6544,9 +6544,9 @@ struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
 );
 // LINE 3148:
 	asm( 
-"	      0052ad3d    mov eax,[ebp+0Ch]"
+"	      0052ad3d    mov eax,timetolive"
 "	      0052ad40    push eax"
-"	      0052ad41    mov eax,[ebp+8]"
+"	      0052ad41    mov eax,mission_id"
 "	      0052ad44    push eax"
 "	      0052ad45    call 0052AB7Eh"
 "	      0052ad4a    add esp,8"
@@ -6599,7 +6599,7 @@ int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 3175:
 	asm( 
-"	      0052ad72    mov eax,[ebp+8]"
+"	      0052ad72    mov eax,miffReader"
 "	      0052ad75    push eax"
 "	      0052ad76    call 0052ADA4h"
 "	      0052ad7b    add esp,4"
@@ -6627,7 +6627,7 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 3188:
 	asm( 
-"	      0052ad8e    mov eax,[ebp+8]"
+"	      0052ad8e    mov eax,miffWriter"
 "	      0052ad91    push eax"
 "	      0052ad92    call 0052B00Ah"
 "	      0052ad97    add esp,4"
@@ -6663,15 +6663,15 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052adad    push 0E3h"
 "	      0052adb2    push 62B5F0h"
 "	      0052adb7    push 424F4154h"
-"	      0052adbc    mov eax,[ebp+8]"
+"	      0052adbc    mov eax,miffReader"
 "	      0052adbf    push eax"
 "	      0052adc0    call 004AB530h"
 "	      0052adc5    add esp,10h"
-"	      0052adc8    mov [ebp-8],eax"
+"	      0052adc8    mov ret,eax"
 );
 // LINE 3208:
 	asm( 
-"	      0052adcb    cmp dword ptr [ebp-8],0"
+"	      0052adcb    cmp ret,0"
 "	      0052adcf    jne near ptr 0052ADDCh"
 );
 // LINE 3209:
@@ -6681,35 +6681,35 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 3211:
 	asm( 
-"	      0052addc    mov dword ptr [ebp-0Ch],0"
+"	      0052addc    mov i,0"
 "	      0052ade3    jmp near ptr 0052ADEBh"
-"	      0052ade8    inc dword ptr [ebp-0Ch]"
-"	      0052adeb    cmp dword ptr [ebp-0Ch],3"
+"	      0052ade8    inc i"
+"	      0052adeb    cmp i,3"
 "	      0052adef    jge near ptr 0052AFFBh"
 );
 // LINE 3214:
 	asm( 
-"	      0052adf5    mov eax,[ebp-0Ch]"
+"	      0052adf5    mov eax,i"
 "	      0052adf8    mov eax,[eax*4+62B6D8h]"
-"	      0052adff    mov [ebp-4],eax"
+"	      0052adff    mov b,eax"
 );
 // LINE 3215:
 	asm( 
 "	      0052ae02    mov eax,ds:[62B5FBh]"
-"	      0052ae07    mov ecx,[ebp-4]"
+"	      0052ae07    mov ecx,b"
 "	      0052ae0a    mov [ecx+0Bh],eax"
 );
 // LINE 3216:
 	asm( 
 "	      0052ae0d    mov eax,ds:[62B5FFh]"
-"	      0052ae12    mov ecx,[ebp-4]"
+"	      0052ae12    mov ecx,b"
 "	      0052ae15    mov [ecx+0Fh],eax"
 );
 // LINE 3217:
 	asm( 
 "	      0052ae18    mov eax,62B5F0h"
 "	      0052ae1d    add eax,13h"
-"	      0052ae20    mov ecx,[ebp-4]"
+"	      0052ae20    mov ecx,b"
 "	      0052ae23    add ecx,13h"
 "	      0052ae26    mov edx,[eax]"
 "	      0052ae28    mov [ecx],edx"
@@ -6721,31 +6721,31 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 3218:
 	asm( 
 "	      0052ae36    mov eax,ds:[62B60Fh]"
-"	      0052ae3b    mov ecx,[ebp-4]"
+"	      0052ae3b    mov ecx,b"
 "	      0052ae3e    mov [ecx+1Fh],eax"
 );
 // LINE 3219:
 	asm( 
 "	      0052ae41    mov eax,ds:[62B613h]"
-"	      0052ae46    mov ecx,[ebp-4]"
+"	      0052ae46    mov ecx,b"
 "	      0052ae49    mov [ecx+23h],eax"
 );
 // LINE 3220:
 	asm( 
 "	      0052ae4c    mov eax,ds:[62B617h]"
-"	      0052ae51    mov ecx,[ebp-4]"
+"	      0052ae51    mov ecx,b"
 "	      0052ae54    mov [ecx+27h],eax"
 );
 // LINE 3221:
 	asm( 
 "	      0052ae57    mov eax,ds:[62B61Bh]"
-"	      0052ae5c    mov ecx,[ebp-4]"
+"	      0052ae5c    mov ecx,b"
 "	      0052ae5f    mov [ecx+2Bh],eax"
 );
 // LINE 3222:
 	asm( 
 "	      0052ae62    mov eax,ds:[62B61Fh]"
-"	      0052ae67    mov ecx,[ebp-4]"
+"	      0052ae67    mov ecx,b"
 "	      0052ae6a    mov [ecx+2Fh],eax"
 );
 // LINE 3223:
@@ -6754,7 +6754,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052ae72    add eax,33h"
 "	      0052ae75    mov ecx,[eax]"
 "	      0052ae77    mov eax,[eax+4]"
-"	      0052ae7a    mov edx,[ebp-4]"
+"	      0052ae7a    mov edx,b"
 "	      0052ae7d    add edx,33h"
 "	      0052ae80    mov [edx],ecx"
 "	      0052ae82    mov [edx+4],eax"
@@ -6765,7 +6765,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052ae8a    add eax,3Bh"
 "	      0052ae8d    mov ecx,[eax]"
 "	      0052ae8f    mov eax,[eax+4]"
-"	      0052ae92    mov edx,[ebp-4]"
+"	      0052ae92    mov edx,b"
 "	      0052ae95    add edx,3Bh"
 "	      0052ae98    mov [edx],ecx"
 "	      0052ae9a    mov [edx+4],eax"
@@ -6776,7 +6776,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052aea2    add eax,43h"
 "	      0052aea5    mov ecx,[eax]"
 "	      0052aea7    mov eax,[eax+4]"
-"	      0052aeaa    mov edx,[ebp-4]"
+"	      0052aeaa    mov edx,b"
 "	      0052aead    add edx,43h"
 "	      0052aeb0    mov [edx],ecx"
 "	      0052aeb2    mov [edx+4],eax"
@@ -6784,25 +6784,25 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 3226:
 	asm( 
 "	      0052aeb5    mov eax,ds:[62B63Bh]"
-"	      0052aeba    mov ecx,[ebp-4]"
+"	      0052aeba    mov ecx,b"
 "	      0052aebd    mov [ecx+4Bh],eax"
 );
 // LINE 3227:
 	asm( 
 "	      0052aec0    mov eax,ds:[62B63Fh]"
-"	      0052aec5    mov ecx,[ebp-4]"
+"	      0052aec5    mov ecx,b"
 "	      0052aec8    mov [ecx+4Fh],eax"
 );
 // LINE 3228:
 	asm( 
 "	      0052aecb    mov eax,ds:[62B643h]"
-"	      0052aed0    mov ecx,[ebp-4]"
+"	      0052aed0    mov ecx,b"
 "	      0052aed3    mov [ecx+53h],eax"
 );
 // LINE 3229:
 	asm( 
 "	      0052aed6    mov eax,ds:[62B647h]"
-"	      0052aedb    mov ecx,[ebp-4]"
+"	      0052aedb    mov ecx,b"
 "	      0052aede    mov [ecx+57h],eax"
 );
 // LINE 3230:
@@ -6811,7 +6811,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052aee6    add eax,5Bh"
 "	      0052aee9    mov ecx,[eax]"
 "	      0052aeeb    mov eax,[eax+4]"
-"	      0052aeee    mov edx,[ebp-4]"
+"	      0052aeee    mov edx,b"
 "	      0052aef1    add edx,5Bh"
 "	      0052aef4    mov [edx],ecx"
 "	      0052aef6    mov [edx+4],eax"
@@ -6822,7 +6822,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052aefe    add eax,6Bh"
 "	      0052af01    mov ecx,[eax]"
 "	      0052af03    mov eax,[eax+4]"
-"	      0052af06    mov edx,[ebp-4]"
+"	      0052af06    mov edx,b"
 "	      0052af09    add edx,6Bh"
 "	      0052af0c    mov [edx],ecx"
 "	      0052af0e    mov [edx+4],eax"
@@ -6833,7 +6833,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052af16    add eax,73h"
 "	      0052af19    mov ecx,[eax]"
 "	      0052af1b    mov eax,[eax+4]"
-"	      0052af1e    mov edx,[ebp-4]"
+"	      0052af1e    mov edx,b"
 "	      0052af21    add edx,73h"
 "	      0052af24    mov [edx],ecx"
 "	      0052af26    mov [edx+4],eax"
@@ -6844,7 +6844,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052af2e    add eax,63h"
 "	      0052af31    mov ecx,[eax]"
 "	      0052af33    mov eax,[eax+4]"
-"	      0052af36    mov edx,[ebp-4]"
+"	      0052af36    mov edx,b"
 "	      0052af39    add edx,63h"
 "	      0052af3c    mov [edx],ecx"
 "	      0052af3e    mov [edx+4],eax"
@@ -6853,7 +6853,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	asm( 
 "	      0052af41    mov eax,62B5F0h"
 "	      0052af46    add eax,97h"
-"	      0052af4b    mov ecx,[ebp-4]"
+"	      0052af4b    mov ecx,b"
 "	      0052af4e    add ecx,97h"
 "	      0052af54    mov edx,[eax]"
 "	      0052af56    mov [ecx],edx"
@@ -6864,7 +6864,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 );
 // LINE 3235:
 	asm( 
-"	      0052af64    mov edi,[ebp-4]"
+"	      0052af64    mov edi,b"
 "	      0052af67    add edi,0A3h"
 "	      0052af6d    lea esi,ds:[62B693h]"
 "	      0052af73    mov ecx,10h"
@@ -6874,7 +6874,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	asm( 
 "	      0052af7a    mov eax,62B5F0h"
 "	      0052af7f    add eax,4"
-"	      0052af82    mov ecx,[ebp-4]"
+"	      0052af82    mov ecx,b"
 "	      0052af85    add ecx,4"
 "	      0052af88    mov edx,[eax]"
 "	      0052af8a    mov [ecx],edx"
@@ -6886,17 +6886,17 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 3238:
 	asm( 
 "	      0052af9a    jmp near ptr 0052AF9Fh"
-"	      0052af9f    mov eax,[ebp-4]"
+"	      0052af9f    mov eax,b"
 "	      0052afa2    movsx eax,byte ptr [eax+5]"
 "	      0052afa6    test eax,eax"
 "	      0052afa8    je near ptr 0052AFBDh"
 );
 // LINE 3240:
 	asm( 
-"	      0052afae    mov eax,[ebp-4]"
+"	      0052afae    mov eax,b"
 "	      0052afb1    add eax,33h"
 "	      0052afb4    push eax"
-"	      0052afb5    mov ecx,[ebp-4]"
+"	      0052afb5    mov ecx,b"
 "	      0052afb8    call 0052885Ch"
 );
 // LINE 3247:
@@ -6904,17 +6904,17 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 "	      0052afbd    push 0E3h"
 "	      0052afc2    push 62B5F0h"
 "	      0052afc7    push 424F4154h"
-"	      0052afcc    mov eax,[ebp+8]"
+"	      0052afcc    mov eax,miffReader"
 "	      0052afcf    push eax"
 "	      0052afd0    call 004AB57Ch"
 "	      0052afd5    add esp,10h"
-"	      0052afd8    mov [ebp-8],eax"
+"	      0052afd8    mov ret,eax"
 );
 // LINE 3249:
 	asm( 
-"	      0052afdb    cmp dword ptr [ebp-8],0"
+"	      0052afdb    cmp ret,0"
 "	      0052afdf    jne near ptr 0052AFF6h"
-"	      0052afe5    cmp dword ptr [ebp-0Ch],2"
+"	      0052afe5    cmp i,2"
 "	      0052afe9    je near ptr 0052AFF6h"
 );
 // LINE 3250:
@@ -6957,28 +6957,28 @@ int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 );
 // LINE 3266:
 	asm( 
-"	      0052b013    mov dword ptr [ebp-8],0"
+"	      0052b013    mov i,0"
 "	      0052b01a    jmp near ptr 0052B022h"
-"	      0052b01f    inc dword ptr [ebp-8]"
-"	      0052b022    cmp dword ptr [ebp-8],3"
+"	      0052b01f    inc i"
+"	      0052b022    cmp i,3"
 "	      0052b026    jge near ptr 0052B066h"
 );
 // LINE 3271:
 	asm( 
 "	      0052b02c    push 0E3h"
-"	      0052b031    mov eax,[ebp-8]"
+"	      0052b031    mov eax,i"
 "	      0052b034    mov eax,[eax*4+62B6D8h]"
 "	      0052b03b    push eax"
 "	      0052b03c    push 424F4154h"
-"	      0052b041    mov eax,[ebp+8]"
+"	      0052b041    mov eax,miffWriter"
 "	      0052b044    push eax"
 "	      0052b045    call 004AB5BDh"
 "	      0052b04a    add esp,10h"
-"	      0052b04d    mov [ebp-4],eax"
+"	      0052b04d    mov ret,eax"
 );
 // LINE 3272:
 	asm( 
-"	      0052b050    cmp dword ptr [ebp-4],0"
+"	      0052b050    cmp ret,0"
 "	      0052b054    jne near ptr 0052B061h"
 );
 // LINE 3273:
