@@ -145,7 +145,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 );
 // LINE 98:
 	asm( 
-"	      0048ecc6    mov eax,[ebp-2Ch]"
+"	      0048ecc6    mov eax,reinterpret_cast<uint32_t>(pcmWaveFormat.wf.wFormatTag)"
 "	      0048ecc9    and eax,0FFFFh"
 "	      0048ecce    cmp eax,1"
 "	      0048ecd1    jne near ptr 0048ECE2h"

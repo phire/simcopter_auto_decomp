@@ -525,7 +525,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bda9f    mov byte ptr [ebp-6Ah],4Ah"
 "	      004bdaa3    jmp near ptr 004BDAA8h"
 "	      004bdaa8    mov eax,[ebp-6Ch]"
-"	      004bdaab    mov [ebp-30h],eax"
+"	      004bdaab    mov reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue),eax"
 );
 // LINE 207:
 	asm( 
@@ -534,7 +534,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 "	      004bdab6    mov byte ptr [ebp-6Eh],9Ah"
 "	      004bdaba    jmp near ptr 004BDABFh"
 "	      004bdabf    mov eax,[ebp-70h]"
-"	      004bdac2    mov [ebp-2Ch],eax"
+"	      004bdac2    mov reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue),eax"
 );
 // LINE 210:
 	asm( 

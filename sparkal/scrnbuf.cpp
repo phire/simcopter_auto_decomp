@@ -1693,7 +1693,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 );
 // LINE 549:
 	asm( 
-"	      0049f1b2    mov al,[ebp-18h]"
+"	      0049f1b2    mov al,reinterpret_cast<uint8_t>(i)"
 "	      0049f1b5    mov ecx,i"
 "	      0049f1b8    mov [ebp+ecx*4-418h],al"
 );

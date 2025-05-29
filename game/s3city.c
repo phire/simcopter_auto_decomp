@@ -8028,11 +8028,11 @@ short S3CityInitOmap() {
 "	      0050dd34    rcl dword ptr [eax],cl"
 "	      0050dd37    fstp st(5)"
 "	      0050dd39    push eax"
-"	      0050dd3a    add [ebp-25h],bl"
+"	      0050dd3a    add *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&j) + 3),bl"
 "	      0050dd3d    push eax"
 "	      0050dd3e    add [ecx-2Ah],al"
 "	      0050dd41    push eax"
-"	      0050dd42    add [ebp-2Ah],dh"
+"	      0050dd42    add *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&k) + 2),dh"
 "	      0050dd45    push eax"
 "	      0050dd46    add [edx],bh"
 "	      0050dd48    mov esi,0D80C0050h"
@@ -10836,7 +10836,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 2975:
 	asm( 
-"	      0050f759    movsx eax,word ptr [ebp-4Ch]"
+"	      0050f759    movsx eax,reinterpret_cast<uint16_t>(y_coord)"
 "	      0050f75d    mov ecx,curr_cell"
 "	      0050f760    mov [ecx+4],eax"
 );
@@ -10861,7 +10861,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 2981:
 	asm( 
-"	      0050f783    movsx eax,word ptr [ebp-4Ch]"
+"	      0050f783    movsx eax,reinterpret_cast<uint16_t>(y_coord)"
 "	      0050f787    mov ecx,curr_cell"
 "	      0050f78a    mov [ecx+4],eax"
 );
@@ -10998,7 +10998,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 3024:
 	asm( 
-"	      0050f891    movsx eax,word ptr [ebp-3Ch]"
+"	      0050f891    movsx eax,reinterpret_cast<uint16_t>(x_coord)"
 "	      0050f895    mov ecx,curr_cell"
 "	      0050f898    mov [ecx],eax"
 );
@@ -11023,7 +11023,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 3030:
 	asm( 
-"	      0050f8bb    movsx eax,word ptr [ebp-3Ch]"
+"	      0050f8bb    movsx eax,reinterpret_cast<uint16_t>(x_coord)"
 "	      0050f8bf    mov ecx,curr_cell"
 "	      0050f8c2    mov [ecx],eax"
 );
@@ -11461,7 +11461,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 3172:
 	asm( 
-"	      0050fcb1    mov eax,[ebp-24h]"
+"	      0050fcb1    mov eax,reinterpret_cast<uint32_t>(get_x_next)"
 "	      0050fcb4    and eax,0FFFFh"
 "	      0050fcb9    cmp eax,1"
 "	      0050fcbc    jne near ptr 0050FD67h"
@@ -11513,7 +11513,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 );
 // LINE 3180:
 	asm( 
-"	      0050fd67    mov eax,[ebp-8]"
+"	      0050fd67    mov eax,reinterpret_cast<uint32_t>(get_y_next)"
 "	      0050fd6a    and eax,0FFFFh"
 "	      0050fd6f    cmp eax,1"
 "	      0050fd72    jne near ptr 0050FE1Dh"
@@ -11811,13 +11811,13 @@ void city_fovscan_horizedge() {
 );
 // LINE 3276:
 	asm( 
-"	      0050fff6    movsx eax,word ptr [ebp-10h]"
+"	      0050fff6    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      0050fffa    mov ecx,fovcell"
 "	      0050fffd    mov [ecx],eax"
 );
 // LINE 3277:
 	asm( 
-"	      0050ffff    movsx eax,word ptr [ebp-14h]"
+"	      0050ffff    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510003    mov ecx,fovcell"
 "	      00510006    mov [ecx+4],eax"
 );
@@ -11852,13 +11852,13 @@ void city_fovscan_horizedge() {
 );
 // LINE 3285:
 	asm( 
-"	      00510040    movsx eax,word ptr [ebp-10h]"
+"	      00510040    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510044    mov ecx,fovcell"
 "	      00510047    mov [ecx],eax"
 );
 // LINE 3286:
 	asm( 
-"	      00510049    movsx eax,word ptr [ebp-14h]"
+"	      00510049    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      0051004d    mov ecx,fovcell"
 "	      00510050    mov [ecx+4],eax"
 );
@@ -11997,13 +11997,13 @@ void city_fovscan_horizedge() {
 );
 // LINE 3319:
 	asm( 
-"	      0051018c    movsx eax,word ptr [ebp-10h]"
+"	      0051018c    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510190    mov ecx,fovcell"
 "	      00510193    mov [ecx],eax"
 );
 // LINE 3320:
 	asm( 
-"	      00510195    movsx eax,word ptr [ebp-14h]"
+"	      00510195    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510199    mov ecx,fovcell"
 "	      0051019c    mov [ecx+4],eax"
 );
@@ -12038,13 +12038,13 @@ void city_fovscan_horizedge() {
 );
 // LINE 3328:
 	asm( 
-"	      005101d6    movsx eax,word ptr [ebp-10h]"
+"	      005101d6    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      005101da    mov ecx,fovcell"
 "	      005101dd    mov [ecx],eax"
 );
 // LINE 3329:
 	asm( 
-"	      005101df    movsx eax,word ptr [ebp-14h]"
+"	      005101df    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      005101e3    mov ecx,fovcell"
 "	      005101e6    mov [ecx+4],eax"
 );
@@ -12075,23 +12075,23 @@ void city_fovscan_horizedge() {
 // LINE 3336:
 	asm( 
 "	      0051021a    mov eax,lcell"
-"	      0051021d    movsx ecx,word ptr [ebp-4]"
+"	      0051021d    movsx ecx,reinterpret_cast<uint16_t>(x_pos)"
 "	      00510221    cmp [eax],ecx"
 "	      00510223    jg near ptr 00510277h"
 "	      00510229    mov eax,rcell"
-"	      0051022c    movsx ecx,word ptr [ebp-4]"
+"	      0051022c    movsx ecx,reinterpret_cast<uint16_t>(x_pos)"
 "	      00510230    cmp [eax],ecx"
 "	      00510232    jl near ptr 00510277h"
 );
 // LINE 3338:
 	asm( 
-"	      00510238    movsx eax,word ptr [ebp-4]"
+"	      00510238    movsx eax,reinterpret_cast<uint16_t>(x_pos)"
 "	      0051023c    mov ecx,fovcell"
 "	      0051023f    mov [ecx],eax"
 );
 // LINE 3339:
 	asm( 
-"	      00510241    movsx eax,word ptr [ebp-14h]"
+"	      00510241    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510245    mov ecx,fovcell"
 "	      00510248    mov [ecx+4],eax"
 );
@@ -12389,13 +12389,13 @@ void city_fovscan_vertedge() {
 );
 // LINE 3426:
 	asm( 
-"	      00510498    movsx eax,word ptr [ebp-14h]"
+"	      00510498    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      0051049c    mov ecx,fovcell"
 "	      0051049f    mov [ecx],eax"
 );
 // LINE 3427:
 	asm( 
-"	      005104a1    movsx eax,word ptr [ebp-1Ch]"
+"	      005104a1    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      005104a5    mov ecx,fovcell"
 "	      005104a8    mov [ecx+4],eax"
 );
@@ -12427,13 +12427,13 @@ void city_fovscan_vertedge() {
 );
 // LINE 3434:
 	asm( 
-"	      005104e2    movsx eax,word ptr [ebp-14h]"
+"	      005104e2    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      005104e6    mov ecx,fovcell"
 "	      005104e9    mov [ecx],eax"
 );
 // LINE 3435:
 	asm( 
-"	      005104eb    movsx eax,word ptr [ebp-1Ch]"
+"	      005104eb    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      005104ef    mov ecx,fovcell"
 "	      005104f2    mov [ecx+4],eax"
 );
@@ -12566,13 +12566,13 @@ void city_fovscan_vertedge() {
 );
 // LINE 3466:
 	asm( 
-"	      00510630    movsx eax,word ptr [ebp-14h]"
+"	      00510630    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510634    mov ecx,fovcell"
 "	      00510637    mov [ecx],eax"
 );
 // LINE 3467:
 	asm( 
-"	      00510639    movsx eax,word ptr [ebp-1Ch]"
+"	      00510639    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      0051063d    mov ecx,fovcell"
 "	      00510640    mov [ecx+4],eax"
 );
@@ -12604,13 +12604,13 @@ void city_fovscan_vertedge() {
 );
 // LINE 3474:
 	asm( 
-"	      0051067a    movsx eax,word ptr [ebp-14h]"
+"	      0051067a    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      0051067e    mov ecx,fovcell"
 "	      00510681    mov [ecx],eax"
 );
 // LINE 3475:
 	asm( 
-"	      00510683    movsx eax,word ptr [ebp-1Ch]"
+"	      00510683    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510687    mov ecx,fovcell"
 "	      0051068a    mov [ecx+4],eax"
 );
@@ -12648,13 +12648,13 @@ void city_fovscan_vertedge() {
 );
 // LINE 3483:
 	asm( 
-"	      005106dc    movsx eax,word ptr [ebp-20h]"
+"	      005106dc    movsx eax,reinterpret_cast<uint16_t>(y_pos)"
 "	      005106e0    mov ecx,fovcell"
 "	      005106e3    mov [ecx+4],eax"
 );
 // LINE 3484:
 	asm( 
-"	      005106e6    movsx eax,word ptr [ebp-14h]"
+"	      005106e6    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      005106ea    mov ecx,fovcell"
 "	      005106ed    mov [ecx],eax"
 );
@@ -12801,10 +12801,10 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 // LINE 3545:
 	asm( 
 "	      005107fb    mov eax,edge"
-"	      005107fe    movsx ecx,word ptr [ebp+8]"
+"	      005107fe    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510802    cmp [eax],ecx"
 "	      00510804    jle near ptr 00510813h"
-"	      0051080a    movsx eax,word ptr [ebp+8]"
+"	      0051080a    movsx eax,reinterpret_cast<uint16_t>(cellpos)"
 "	      0051080e    mov ecx,edge"
 "	      00510811    mov [ecx],eax"
 );
@@ -12876,13 +12876,13 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 );
 // LINE 3560:
 	asm( 
-"	      005108c3    movsx eax,word ptr [ebp-4]"
+"	      005108c3    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      005108c7    mov ecx,fovcell"
 "	      005108ca    mov [ecx],eax"
 );
 // LINE 3561:
 	asm( 
-"	      005108cc    movsx eax,word ptr [ebp-8]"
+"	      005108cc    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      005108d0    mov ecx,fovcell"
 "	      005108d3    mov [ecx+4],eax"
 );
@@ -12926,13 +12926,13 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 );
 // LINE 3570:
 	asm( 
-"	      00510936    movsx eax,word ptr [ebp-4]"
+"	      00510936    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      0051093a    mov ecx,fovcell"
 "	      0051093d    mov [ecx],eax"
 );
 // LINE 3571:
 	asm( 
-"	      0051093f    movsx eax,word ptr [ebp-8]"
+"	      0051093f    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510943    mov ecx,fovcell"
 "	      00510946    mov [ecx+4],eax"
 );
@@ -12964,10 +12964,10 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 // LINE 3581:
 	asm( 
 "	      0051097f    mov eax,edge"
-"	      00510982    movsx ecx,word ptr [ebp+8]"
+"	      00510982    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510986    cmp [eax],ecx"
 "	      00510988    jge near ptr 00510997h"
-"	      0051098e    movsx eax,word ptr [ebp+8]"
+"	      0051098e    movsx eax,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510992    mov ecx,edge"
 "	      00510995    mov [ecx],eax"
 );
@@ -13039,13 +13039,13 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 );
 // LINE 3595:
 	asm( 
-"	      00510a47    movsx eax,word ptr [ebp-4]"
+"	      00510a47    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510a4b    mov ecx,fovcell"
 "	      00510a4e    mov [ecx],eax"
 );
 // LINE 3596:
 	asm( 
-"	      00510a50    movsx eax,word ptr [ebp-8]"
+"	      00510a50    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510a54    mov ecx,fovcell"
 "	      00510a57    mov [ecx+4],eax"
 );
@@ -13089,13 +13089,13 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 );
 // LINE 3605:
 	asm( 
-"	      00510aba    movsx eax,word ptr [ebp-4]"
+"	      00510aba    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510abe    mov ecx,fovcell"
 "	      00510ac1    mov [ecx],eax"
 );
 // LINE 3606:
 	asm( 
-"	      00510ac3    movsx eax,word ptr [ebp-8]"
+"	      00510ac3    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510ac7    mov ecx,fovcell"
 "	      00510aca    mov [ecx+4],eax"
 );
@@ -13183,8 +13183,8 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 );
 // LINE 3627:
 	asm( 
-"	      00510b9a    movsx eax,word ptr [ebp+0Ch]"
-"	      00510b9e    movsx ecx,word ptr [ebp+8]"
+"	      00510b9a    movsx eax,reinterpret_cast<uint16_t>(x_dir)"
+"	      00510b9e    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510ba2    add eax,ecx"
 "	      00510ba4    mov ecx,edge"
 "	      00510ba7    mov [ecx],eax"
@@ -13201,7 +13201,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 "	      00510bc2    mov edx,cptr"
 "	      00510bc5    cmp [ecx+eax*4+67ED30h],edx"
 "	      00510bcc    jne near ptr 00510BE0h"
-"	      00510bd2    movsx eax,word ptr [ebp+0Ch]"
+"	      00510bd2    movsx eax,reinterpret_cast<uint16_t>(x_dir)"
 "	      00510bd6    mov ecx,edge"
 "	      00510bd9    add [ecx],eax"
 "	      00510bdb    jmp near ptr 00510BA9h"
@@ -13285,10 +13285,10 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 // LINE 3653:
 	asm( 
 "	      00510c4c    mov eax,edge"
-"	      00510c4f    movsx ecx,word ptr [ebp+8]"
+"	      00510c4f    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510c53    cmp [eax+4],ecx"
 "	      00510c56    jle near ptr 00510C66h"
-"	      00510c5c    movsx eax,word ptr [ebp+8]"
+"	      00510c5c    movsx eax,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510c60    mov ecx,edge"
 "	      00510c63    mov [ecx+4],eax"
 );
@@ -13360,13 +13360,13 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 );
 // LINE 3667:
 	asm( 
-"	      00510d17    movsx eax,word ptr [ebp-4]"
+"	      00510d17    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510d1b    mov ecx,fovcell"
 "	      00510d1e    mov [ecx],eax"
 );
 // LINE 3668:
 	asm( 
-"	      00510d20    movsx eax,word ptr [ebp-8]"
+"	      00510d20    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510d24    mov ecx,fovcell"
 "	      00510d27    mov [ecx+4],eax"
 );
@@ -13410,13 +13410,13 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 );
 // LINE 3677:
 	asm( 
-"	      00510d8a    movsx eax,word ptr [ebp-4]"
+"	      00510d8a    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510d8e    mov ecx,fovcell"
 "	      00510d91    mov [ecx],eax"
 );
 // LINE 3678:
 	asm( 
-"	      00510d93    movsx eax,word ptr [ebp-8]"
+"	      00510d93    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510d97    mov ecx,fovcell"
 "	      00510d9a    mov [ecx+4],eax"
 );
@@ -13448,10 +13448,10 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 // LINE 3688:
 	asm( 
 "	      00510dd3    mov eax,edge"
-"	      00510dd6    movsx ecx,word ptr [ebp+8]"
+"	      00510dd6    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510dda    cmp [eax+4],ecx"
 "	      00510ddd    jge near ptr 00510DEDh"
-"	      00510de3    movsx eax,word ptr [ebp+8]"
+"	      00510de3    movsx eax,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510de7    mov ecx,edge"
 "	      00510dea    mov [ecx+4],eax"
 );
@@ -13523,13 +13523,13 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 );
 // LINE 3702:
 	asm( 
-"	      00510e9e    movsx eax,word ptr [ebp-4]"
+"	      00510e9e    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510ea2    mov ecx,fovcell"
 "	      00510ea5    mov [ecx],eax"
 );
 // LINE 3703:
 	asm( 
-"	      00510ea7    movsx eax,word ptr [ebp-8]"
+"	      00510ea7    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510eab    mov ecx,fovcell"
 "	      00510eae    mov [ecx+4],eax"
 );
@@ -13573,13 +13573,13 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 );
 // LINE 3712:
 	asm( 
-"	      00510f11    movsx eax,word ptr [ebp-4]"
+"	      00510f11    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00510f15    mov ecx,fovcell"
 "	      00510f18    mov [ecx],eax"
 );
 // LINE 3713:
 	asm( 
-"	      00510f1a    movsx eax,word ptr [ebp-8]"
+"	      00510f1a    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00510f1e    mov ecx,fovcell"
 "	      00510f21    mov [ecx+4],eax"
 );
@@ -13667,8 +13667,8 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 );
 // LINE 3735:
 	asm( 
-"	      00510ff1    movsx eax,word ptr [ebp+10h]"
-"	      00510ff5    movsx ecx,word ptr [ebp+8]"
+"	      00510ff1    movsx eax,reinterpret_cast<uint16_t>(y_dir)"
+"	      00510ff5    movsx ecx,reinterpret_cast<uint16_t>(cellpos)"
 "	      00510ff9    add eax,ecx"
 "	      00510ffb    mov ecx,edge"
 "	      00510ffe    mov [ecx+4],eax"
@@ -13685,7 +13685,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 "	      0051101a    mov edx,cptr"
 "	      0051101d    cmp [ecx+eax*4+67ED30h],edx"
 "	      00511024    jne near ptr 00511039h"
-"	      0051102a    movsx eax,word ptr [ebp+10h]"
+"	      0051102a    movsx eax,reinterpret_cast<uint16_t>(y_dir)"
 "	      0051102e    mov ecx,edge"
 "	      00511031    add [ecx+4],eax"
 "	      00511034    jmp near ptr 00511001h"
@@ -16209,12 +16209,12 @@ void S3CityCheckGridPos() {
 );
 // LINE 4433:
 	asm( 
-"	      005124c2    movsx eax,word ptr [ebp-0Ch]"
+"	      005124c2    movsx eax,reinterpret_cast<uint16_t>(xdiff)"
 "	      005124c6    add ds:[67ED28h],eax"
 );
 // LINE 4434:
 	asm( 
-"	      005124cc    movsx eax,word ptr [ebp-4]"
+"	      005124cc    movsx eax,reinterpret_cast<uint16_t>(ydiff)"
 "	      005124d0    add ds:[67ED2Ch],eax"
 );
 // LINE 4435:
@@ -16289,13 +16289,13 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 );
 // LINE 4470:
 	asm( 
-"	      0051253a    movsx eax,word ptr [ebp+8]"
+"	      0051253a    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      0051253e    mov ecx,fovcell"
 "	      00512541    mov [ecx],eax"
 );
 // LINE 4471:
 	asm( 
-"	      00512543    movsx eax,word ptr [ebp+0Ch]"
+"	      00512543    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00512547    mov ecx,fovcell"
 "	      0051254a    mov [ecx+4],eax"
 );
@@ -16423,13 +16423,13 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 );
 // LINE 4516:
 	asm( 
-"	      00512622    movsx eax,word ptr [ebp+8]"
+"	      00512622    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00512626    mov ecx,fovcell"
 "	      00512629    mov [ecx],eax"
 );
 // LINE 4517:
 	asm( 
-"	      0051262b    movsx eax,word ptr [ebp+0Ch]"
+"	      0051262b    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      0051262f    mov ecx,fovcell"
 "	      00512632    mov [ecx+4],eax"
 );
@@ -17046,9 +17046,9 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 );
 // LINE 4951:
 	asm( 
-"	      00512abc    mov eax,[ebp-10h]"
+"	      00512abc    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      00512abf    and eax,0FFFFh"
-"	      00512ac4    mov ecx,[ebp-4]"
+"	      00512ac4    mov ecx,reinterpret_cast<uint32_t>(minalt)"
 "	      00512ac7    and ecx,0FFFFh"
 "	      00512acd    cmp eax,ecx"
 "	      00512acf    jge near ptr 00512ADDh"
@@ -18972,24 +18972,24 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5374:
 	asm( 
-"	      00513c00    movsx eax,word ptr [ebp+8]"
+"	      00513c00    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00513c04    inc eax"
 "	      00513c05    mov ds:[6C11F0h],eax"
 );
 // LINE 5375:
 	asm( 
-"	      00513c0a    movsx eax,word ptr [ebp+0Ch]"
+"	      00513c0a    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00513c0e    inc eax"
 "	      00513c0f    mov ds:[6C11F4h],eax"
 );
 // LINE 5378:
 	asm( 
-"	      00513c14    movsx eax,word ptr [ebp+8]"
+"	      00513c14    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00513c18    mov ds:[6C1190h],eax"
 );
 // LINE 5379:
 	asm( 
-"	      00513c1d    movsx eax,word ptr [ebp+0Ch]"
+"	      00513c1d    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00513c21    mov ds:[6C1194h],eax"
 );
 // LINE 5380:
@@ -19001,7 +19001,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5381:
 	asm( 
-"	      00513c32    movsx eax,word ptr [ebp+0Ch]"
+"	      00513c32    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00513c36    mov ds:[6C119Ch],eax"
 );
 // LINE 5382:
@@ -19013,7 +19013,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5383:
 	asm( 
-"	      00513c49    movsx eax,word ptr [ebp+0Ch]"
+"	      00513c49    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00513c4d    mov ds:[6C11A4h],eax"
 );
 // LINE 5384:
@@ -19025,7 +19025,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5385:
 	asm( 
-"	      00513c60    movsx eax,word ptr [ebp+0Ch]"
+"	      00513c60    movsx eax,reinterpret_cast<uint16_t>(y)"
 "	      00513c64    mov ds:[6C11ACh],eax"
 );
 // LINE 5388:
@@ -19100,7 +19100,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5400:
 	asm( 
-"	      00513cf1    movsx eax,word ptr [ebp+8]"
+"	      00513cf1    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00513cf5    mov ds:[6C11D8h],eax"
 );
 // LINE 5401:
@@ -19112,7 +19112,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5404:
 	asm( 
-"	      00513d08    movsx eax,word ptr [ebp+8]"
+"	      00513d08    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00513d0c    mov ds:[6C11E0h],eax"
 );
 // LINE 5405:
@@ -19124,7 +19124,7 @@ void S3CityCreateHeliBase(long x, long y) {
 );
 // LINE 5406:
 	asm( 
-"	      00513d1f    movsx eax,word ptr [ebp+8]"
+"	      00513d1f    movsx eax,reinterpret_cast<uint16_t>(x)"
 "	      00513d23    mov ds:[6C11E8h],eax"
 );
 // LINE 5407:

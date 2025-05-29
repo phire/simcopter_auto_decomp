@@ -308,7 +308,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 );
 // LINE 2066:
 	asm( 
-"	      00560f86    test dword ptr [ebp+8],0FFFFh"
+"	      00560f86    test reinterpret_cast<uint32_t>(activated),0FFFFh"
 "	      00560f8d    je near ptr 00560FC9h"
 );
 // LINE 2067:
@@ -651,8 +651,8 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2106:
 	asm( 
-"	      0056130b    mov eax,[ebp-38h]"
-"	      0056130e    mov [ebp-24h],eax"
+"	      0056130b    mov eax,reinterpret_cast<uint32_t>(transinfo.startPoint.v)"
+"	      0056130e    mov reinterpret_cast<uint32_t>(cpt.v),eax"
 );
 // LINE 2107:
 	asm( 
@@ -667,8 +667,8 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 );
 // LINE 2108:
 	asm( 
-"	      0056132d    mov eax,[ebp-34h]"
-"	      00561330    mov [ebp-20h],eax"
+"	      0056132d    mov eax,reinterpret_cast<uint32_t>(transinfo.endPoint.v)"
+"	      00561330    mov reinterpret_cast<uint32_t>(ept.v),eax"
 );
 // LINE 2109:
 	asm( 
@@ -764,7 +764,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      00561404    fmul scale"
 "	      00561407    call 0056EBE8h"
 "	      0056140c    push eax"
-"	      0056140d    mov eax,[ebp-10h]"
+"	      0056140d    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      00561410    push eax"
 "	      00561411    mov eax,ePt.z"
 "	      00561414    push eax"
@@ -798,7 +798,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	asm( 
 "	      00561442    call 0056EBE8h"
 "	      00561447    push eax"
-"	      00561448    mov eax,[ebp-10h]"
+"	      00561448    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      0056144b    push eax"
 "	      0056144c    fld drawwidth"
 "	      0056144f    fdiv dword ptr ds:[593718h]"
@@ -828,7 +828,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // LINE 2142:
 // Block end:
 	asm( 
-"	      00561486    mov eax,[ebp-10h]"
+"	      00561486    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      00561489    push eax"
 "	      0056148a    mov eax,sPt.y"
 "	      0056148d    push eax"
@@ -880,7 +880,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	asm( 
 "	      005614f9    mov eax,flag"
 "	      005614fc    push eax"
-"	      005614fd    mov eax,[ebp-10h]"
+"	      005614fd    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      00561500    push eax"
 "	      00561501    mov eax,part"
 "	      00561504    fld dword ptr [eax+1Ch]"
@@ -1047,7 +1047,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2184:
 	asm( 
-"	      0056165e    mov eax,[ebp+14h]"
+"	      0056165e    mov eax,reinterpret_cast<uint32_t>(framenum)"
 "	      00561661    push eax"
 "	      00561662    mov eax,privanim"
 "	      00561665    mov eax,[eax]"
@@ -1319,7 +1319,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561933    mov eax,parenttransinfo"
 "	      00561936    movzx ax,byte ptr [eax+0Dh]"
 "	      0056193b    mov parentendtransformed,ax"
-"	      0056193f    test dword ptr [ebp-30h],0FFFFh"
+"	      0056193f    test reinterpret_cast<uint32_t>(parentendtransformed),0FFFFh"
 "	      00561946    je near ptr 0056196Ch"
 );
 // LINE 2229:
@@ -1344,7 +1344,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 // LINE 2234:
 // Block end:
 	asm( 
-"	      0056196c    test dword ptr [ebp-30h],0FFFFh"
+"	      0056196c    test reinterpret_cast<uint32_t>(parentendtransformed),0FFFFh"
 "	      00561973    jne near ptr 005619C0h"
 );
 // LINE 2240:
@@ -1549,13 +1549,13 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 );
 // LINE 2280:
 	asm( 
-"	      00561b3c    mov eax,[ebp+28h]"
+"	      00561b3c    mov eax,reinterpret_cast<uint32_t>(colorIndexShift)"
 "	      00561b3f    push eax"
 "	      00561b40    mov eax,scale"
 "	      00561b43    push eax"
-"	      00561b44    mov eax,[ebp+1Ch]"
+"	      00561b44    mov eax,reinterpret_cast<uint32_t>(screeny)"
 "	      00561b47    push eax"
-"	      00561b48    mov eax,[ebp+18h]"
+"	      00561b48    mov eax,reinterpret_cast<uint32_t>(screenx)"
 "	      00561b4b    push eax"
 "	      00561b4c    mov eax,part"
 "	      00561b4f    push eax"

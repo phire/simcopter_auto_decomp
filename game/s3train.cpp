@@ -3538,7 +3538,7 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 );
 // LINE 1726:
 	asm( 
-"	      0052fab1    mov eax,[ebp+8]"
+"	      0052fab1    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      0052fab4    and eax,0FFFFh"
 "	      0052fab9    mov [ebp-10h],eax"
 "	      0052fabc    jmp near ptr 005302DEh"
@@ -4911,7 +4911,7 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 );
 // LINE 2184:
 	asm( 
-"	      0053050e    mov eax,[ebp+8]"
+"	      0053050e    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      00530511    and eax,0FFFFh"
 "	      00530516    mov [ebp-2Ch],eax"
 "	      00530519    jmp near ptr 00530D11h"
@@ -7106,11 +7106,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 );
 // LINE 2930:
 	asm( 
-"	      00531797    mov eax,[ebp-10h]"
+"	      00531797    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0053179a    and eax,0FFFFh"
 "	      0053179f    cmp eax,34h"
 "	      005317a2    jne near ptr 005317C8h"
-"	      005317a8    mov eax,[ebp-14h]"
+"	      005317a8    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      005317ab    and eax,0FFFFh"
 "	      005317b0    cmp eax,33h"
 "	      005317b3    jne near ptr 005317C8h"
@@ -7123,11 +7123,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2932:
 	asm( 
 "	      005317c3    jmp near ptr 005317F4h"
-"	      005317c8    mov eax,[ebp-10h]"
+"	      005317c8    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005317cb    and eax,0FFFFh"
 "	      005317d0    cmp eax,34h"
 "	      005317d3    jne near ptr 005317F4h"
-"	      005317d9    mov eax,[ebp-18h]"
+"	      005317d9    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      005317dc    and eax,0FFFFh"
 "	      005317e1    cmp eax,35h"
 "	      005317e4    jne near ptr 005317F4h"
@@ -7161,11 +7161,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 );
 // LINE 2937:
 	asm( 
-"	      00531837    mov eax,[ebp-10h]"
+"	      00531837    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0053183a    and eax,0FFFFh"
 "	      0053183f    cmp eax,33h"
 "	      00531842    jne near ptr 00531868h"
-"	      00531848    mov eax,[ebp-0Ch]"
+"	      00531848    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      0053184b    and eax,0FFFFh"
 "	      00531850    cmp eax,34h"
 "	      00531853    jne near ptr 00531868h"
@@ -7178,11 +7178,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2939:
 	asm( 
 "	      00531863    jmp near ptr 00531894h"
-"	      00531868    mov eax,[ebp-10h]"
+"	      00531868    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0053186b    and eax,0FFFFh"
 "	      00531870    cmp eax,33h"
 "	      00531873    jne near ptr 00531894h"
-"	      00531879    mov eax,[ebp-18h]"
+"	      00531879    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      0053187c    and eax,0FFFFh"
 "	      00531881    cmp eax,32h"
 "	      00531884    jne near ptr 00531894h"
@@ -7216,11 +7216,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 );
 // LINE 2944:
 	asm( 
-"	      005318d7    mov eax,[ebp-10h]"
+"	      005318d7    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005318da    and eax,0FFFFh"
 "	      005318df    cmp eax,35h"
 "	      005318e2    jne near ptr 00531908h"
-"	      005318e8    mov eax,[ebp-14h]"
+"	      005318e8    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      005318eb    and eax,0FFFFh"
 "	      005318f0    cmp eax,32h"
 "	      005318f3    jne near ptr 00531908h"
@@ -7233,11 +7233,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2946:
 	asm( 
 "	      00531903    jmp near ptr 00531934h"
-"	      00531908    mov eax,[ebp-10h]"
+"	      00531908    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0053190b    and eax,0FFFFh"
 "	      00531910    cmp eax,35h"
 "	      00531913    jne near ptr 00531934h"
-"	      00531919    mov eax,[ebp-4]"
+"	      00531919    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      0053191c    and eax,0FFFFh"
 "	      00531921    cmp eax,34h"
 "	      00531924    jne near ptr 00531934h"
@@ -7271,11 +7271,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 );
 // LINE 2951:
 	asm( 
-"	      00531977    mov eax,[ebp-10h]"
+"	      00531977    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0053197a    and eax,0FFFFh"
 "	      0053197f    cmp eax,32h"
 "	      00531982    jne near ptr 005319A8h"
-"	      00531988    mov eax,[ebp-0Ch]"
+"	      00531988    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      0053198b    and eax,0FFFFh"
 "	      00531990    cmp eax,35h"
 "	      00531993    jne near ptr 005319A8h"
@@ -7288,11 +7288,11 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2953:
 	asm( 
 "	      005319a3    jmp near ptr 005319D4h"
-"	      005319a8    mov eax,[ebp-10h]"
+"	      005319a8    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005319ab    and eax,0FFFFh"
 "	      005319b0    cmp eax,32h"
 "	      005319b3    jne near ptr 005319D4h"
-"	      005319b9    mov eax,[ebp-4]"
+"	      005319b9    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      005319bc    and eax,0FFFFh"
 "	      005319c1    cmp eax,33h"
 "	      005319c4    jne near ptr 005319D4h"
@@ -7326,9 +7326,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2962:
 	asm( 
 "	      00531a12    push 1"
-"	      00531a14    mov eax,[ebp-4]"
+"	      00531a14    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00531a17    push eax"
-"	      00531a18    mov eax,[ebp-10h]"
+"	      00531a18    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531a1b    push eax"
 "	      00531a1c    mov ecx,this"
 "	      00531a1f    call 00531DFFh"
@@ -7342,9 +7342,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2966:
 	asm( 
 "	      00531a30    push 2"
-"	      00531a32    mov eax,[ebp-0Ch]"
+"	      00531a32    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00531a35    push eax"
-"	      00531a36    mov eax,[ebp-10h]"
+"	      00531a36    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531a39    push eax"
 "	      00531a3a    mov ecx,this"
 "	      00531a3d    call 00531DFFh"
@@ -7380,9 +7380,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2974:
 	asm( 
 "	      00531a91    push 1"
-"	      00531a93    mov eax,[ebp-4]"
+"	      00531a93    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00531a96    push eax"
-"	      00531a97    mov eax,[ebp-10h]"
+"	      00531a97    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531a9a    push eax"
 "	      00531a9b    mov ecx,this"
 "	      00531a9e    call 00531DFFh"
@@ -7396,9 +7396,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2978:
 	asm( 
 "	      00531aaf    push 8"
-"	      00531ab1    mov eax,[ebp-14h]"
+"	      00531ab1    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00531ab4    push eax"
-"	      00531ab5    mov eax,[ebp-10h]"
+"	      00531ab5    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531ab8    push eax"
 "	      00531ab9    mov ecx,this"
 "	      00531abc    call 00531DFFh"
@@ -7434,9 +7434,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2986:
 	asm( 
 "	      00531b10    push 4"
-"	      00531b12    mov eax,[ebp-18h]"
+"	      00531b12    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00531b15    push eax"
-"	      00531b16    mov eax,[ebp-10h]"
+"	      00531b16    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531b19    push eax"
 "	      00531b1a    mov ecx,this"
 "	      00531b1d    call 00531DFFh"
@@ -7450,9 +7450,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2990:
 	asm( 
 "	      00531b2e    push 2"
-"	      00531b30    mov eax,[ebp-0Ch]"
+"	      00531b30    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00531b33    push eax"
-"	      00531b34    mov eax,[ebp-10h]"
+"	      00531b34    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531b37    push eax"
 "	      00531b38    mov ecx,this"
 "	      00531b3b    call 00531DFFh"
@@ -7488,9 +7488,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 2998:
 	asm( 
 "	      00531b8f    push 4"
-"	      00531b91    mov eax,[ebp-18h]"
+"	      00531b91    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00531b94    push eax"
-"	      00531b95    mov eax,[ebp-10h]"
+"	      00531b95    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531b98    push eax"
 "	      00531b99    mov ecx,this"
 "	      00531b9c    call 00531DFFh"
@@ -7504,9 +7504,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3002:
 	asm( 
 "	      00531bad    push 8"
-"	      00531baf    mov eax,[ebp-14h]"
+"	      00531baf    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00531bb2    push eax"
-"	      00531bb3    mov eax,[ebp-10h]"
+"	      00531bb3    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531bb6    push eax"
 "	      00531bb7    mov ecx,this"
 "	      00531bba    call 00531DFFh"
@@ -7533,9 +7533,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3010:
 	asm( 
 "	      00531bef    push 1"
-"	      00531bf1    mov eax,[ebp-4]"
+"	      00531bf1    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00531bf4    push eax"
-"	      00531bf5    mov eax,[ebp-10h]"
+"	      00531bf5    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531bf8    push eax"
 "	      00531bf9    mov ecx,this"
 "	      00531bfc    call 00531DFFh"
@@ -7549,9 +7549,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3014:
 	asm( 
 "	      00531c0d    push 8"
-"	      00531c0f    mov eax,[ebp-14h]"
+"	      00531c0f    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00531c12    push eax"
-"	      00531c13    mov eax,[ebp-10h]"
+"	      00531c13    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531c16    push eax"
 "	      00531c17    mov ecx,this"
 "	      00531c1a    call 00531DFFh"
@@ -7565,9 +7565,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3018:
 	asm( 
 "	      00531c2b    push 2"
-"	      00531c2d    mov eax,[ebp-0Ch]"
+"	      00531c2d    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00531c30    push eax"
-"	      00531c31    mov eax,[ebp-10h]"
+"	      00531c31    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531c34    push eax"
 "	      00531c35    mov ecx,this"
 "	      00531c38    call 00531DFFh"
@@ -7594,9 +7594,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3026:
 	asm( 
 "	      00531c6d    push 4"
-"	      00531c6f    mov eax,[ebp-18h]"
+"	      00531c6f    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00531c72    push eax"
-"	      00531c73    mov eax,[ebp-10h]"
+"	      00531c73    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531c76    push eax"
 "	      00531c77    mov ecx,this"
 "	      00531c7a    call 00531DFFh"
@@ -7610,9 +7610,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3030:
 	asm( 
 "	      00531c8b    push 2"
-"	      00531c8d    mov eax,[ebp-0Ch]"
+"	      00531c8d    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00531c90    push eax"
-"	      00531c91    mov eax,[ebp-10h]"
+"	      00531c91    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531c94    push eax"
 "	      00531c95    mov ecx,this"
 "	      00531c98    call 00531DFFh"
@@ -7626,9 +7626,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3034:
 	asm( 
 "	      00531ca9    push 8"
-"	      00531cab    mov eax,[ebp-14h]"
+"	      00531cab    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00531cae    push eax"
-"	      00531caf    mov eax,[ebp-10h]"
+"	      00531caf    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531cb2    push eax"
 "	      00531cb3    mov ecx,this"
 "	      00531cb6    call 00531DFFh"
@@ -7655,9 +7655,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3042:
 	asm( 
 "	      00531ceb    push 2"
-"	      00531ced    mov eax,[ebp-0Ch]"
+"	      00531ced    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00531cf0    push eax"
-"	      00531cf1    mov eax,[ebp-10h]"
+"	      00531cf1    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531cf4    push eax"
 "	      00531cf5    mov ecx,this"
 "	      00531cf8    call 00531DFFh"
@@ -7671,9 +7671,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3046:
 	asm( 
 "	      00531d09    push 1"
-"	      00531d0b    mov eax,[ebp-4]"
+"	      00531d0b    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00531d0e    push eax"
-"	      00531d0f    mov eax,[ebp-10h]"
+"	      00531d0f    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531d12    push eax"
 "	      00531d13    mov ecx,this"
 "	      00531d16    call 00531DFFh"
@@ -7687,9 +7687,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3050:
 	asm( 
 "	      00531d27    push 4"
-"	      00531d29    mov eax,[ebp-18h]"
+"	      00531d29    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00531d2c    push eax"
-"	      00531d2d    mov eax,[ebp-10h]"
+"	      00531d2d    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531d30    push eax"
 "	      00531d31    mov ecx,this"
 "	      00531d34    call 00531DFFh"
@@ -7716,9 +7716,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3058:
 	asm( 
 "	      00531d69    push 8"
-"	      00531d6b    mov eax,[ebp-14h]"
+"	      00531d6b    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00531d6e    push eax"
-"	      00531d6f    mov eax,[ebp-10h]"
+"	      00531d6f    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531d72    push eax"
 "	      00531d73    mov ecx,this"
 "	      00531d76    call 00531DFFh"
@@ -7732,9 +7732,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3062:
 	asm( 
 "	      00531d87    push 4"
-"	      00531d89    mov eax,[ebp-18h]"
+"	      00531d89    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00531d8c    push eax"
-"	      00531d8d    mov eax,[ebp-10h]"
+"	      00531d8d    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531d90    push eax"
 "	      00531d91    mov ecx,this"
 "	      00531d94    call 00531DFFh"
@@ -7748,9 +7748,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 // LINE 3066:
 	asm( 
 "	      00531da5    push 1"
-"	      00531da7    mov eax,[ebp-4]"
+"	      00531da7    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00531daa    push eax"
-"	      00531dab    mov eax,[ebp-10h]"
+"	      00531dab    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00531dae    push eax"
 "	      00531daf    mov ecx,this"
 "	      00531db2    call 00531DFFh"
@@ -7811,7 +7811,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 	asm( 
 "	      00531e0b    mov dword ptr [ebp-0Ch],5B7BB8h"
 "	      00531e12    mov eax,[ebp-0Ch]"
-"	      00531e15    mov ecx,[ebp+8]"
+"	      00531e15    mov ecx,reinterpret_cast<uint32_t>(fromTile)"
 "	      00531e18    and ecx,0FFFFh"
 "	      00531e1e    cmp [eax],ecx"
 "	      00531e20    jne near ptr 00531E34h"
@@ -7832,7 +7832,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 "	      00531e63    jmp near ptr 00531E12h"
 "	      00531e68    mov dword ptr [ebp-10h],5B7BB8h"
 "	      00531e6f    mov eax,[ebp-10h]"
-"	      00531e72    mov ecx,[ebp+0Ch]"
+"	      00531e72    mov ecx,reinterpret_cast<uint32_t>(toTile)"
 "	      00531e75    and ecx,0FFFFh"
 "	      00531e7b    cmp [eax],ecx"
 "	      00531e7d    jne near ptr 00531E91h"
@@ -7851,7 +7851,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 "	      00531eb7    jmp near ptr 00531EC5h"
 "	      00531ebc    add dword ptr [ebp-10h],8"
 "	      00531ec0    jmp near ptr 00531E6Fh"
-"	      00531ec5    test reinterpret_cast<unit8_t>(direction),1"
+"	      00531ec5    test reinterpret_cast<uint8_t>(direction),1"
 "	      00531ec9    je near ptr 00531EEFh"
 "	      00531ecf    test byte ptr [ebp-8],1"
 "	      00531ed3    je near ptr 00531EEFh"
@@ -7859,7 +7859,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 "	      00531edd    je near ptr 00531EEFh"
 "	      00531ee3    mov dword ptr [ebp-14h],1"
 "	      00531eea    jmp near ptr 00531F79h"
-"	      00531eef    test reinterpret_cast<unit8_t>(direction),4"
+"	      00531eef    test reinterpret_cast<uint8_t>(direction),4"
 "	      00531ef3    je near ptr 00531F19h"
 "	      00531ef9    test byte ptr [ebp-8],4"
 "	      00531efd    je near ptr 00531F19h"
@@ -7867,7 +7867,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 "	      00531f07    je near ptr 00531F19h"
 "	      00531f0d    mov dword ptr [ebp-14h],1"
 "	      00531f14    jmp near ptr 00531F79h"
-"	      00531f19    test reinterpret_cast<unit8_t>(direction),8"
+"	      00531f19    test reinterpret_cast<uint8_t>(direction),8"
 "	      00531f1d    je near ptr 00531F43h"
 "	      00531f23    test byte ptr [ebp-8],8"
 "	      00531f27    je near ptr 00531F43h"
@@ -7875,7 +7875,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 "	      00531f31    je near ptr 00531F43h"
 "	      00531f37    mov dword ptr [ebp-14h],1"
 "	      00531f3e    jmp near ptr 00531F79h"
-"	      00531f43    test reinterpret_cast<unit8_t>(direction),2"
+"	      00531f43    test reinterpret_cast<uint8_t>(direction),2"
 "	      00531f47    je near ptr 00531F6Dh"
 "	      00531f4d    test byte ptr [ebp-8],2"
 "	      00531f51    je near ptr 00531F6Dh"
@@ -9259,7 +9259,7 @@ void TrainClass::AdjustNextPosition() {
 );
 // LINE 3501:
 	asm( 
-"	      00532cd2    mov eax,[ebp-1Ch]"
+"	      00532cd2    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00532cd5    and eax,0FFFFh"
 "	      00532cda    mov [ebp-34h],eax"
 "	      00532cdd    jmp near ptr 00532D0Ah"
@@ -9323,7 +9323,7 @@ void TrainClass::AdjustNextPosition() {
 );
 // LINE 3521:
 	asm( 
-"	      00532d5d    mov eax,[ebp-1Ch]"
+"	      00532d5d    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00532d60    and eax,0FFFFh"
 "	      00532d65    mov [ebp-38h],eax"
 "	      00532d68    jmp near ptr 00532D95h"
@@ -9387,7 +9387,7 @@ void TrainClass::AdjustNextPosition() {
 );
 // LINE 3540:
 	asm( 
-"	      00532de8    mov eax,[ebp-1Ch]"
+"	      00532de8    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00532deb    and eax,0FFFFh"
 "	      00532df0    mov [ebp-3Ch],eax"
 "	      00532df3    jmp near ptr 00532E20h"
@@ -9451,7 +9451,7 @@ void TrainClass::AdjustNextPosition() {
 );
 // LINE 3560:
 	asm( 
-"	      00532e73    mov eax,[ebp-1Ch]"
+"	      00532e73    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00532e76    and eax,0FFFFh"
 "	      00532e7b    mov [ebp-40h],eax"
 "	      00532e7e    jmp near ptr 00532EABh"
@@ -9495,7 +9495,7 @@ void TrainClass::AdjustNextPosition() {
 	asm( 
 "	      00532ec9    mov dword ptr [ebp-2Ch],5B7BB8h"
 "	      00532ed0    mov eax,[ebp-2Ch]"
-"	      00532ed3    mov ecx,[ebp-18h]"
+"	      00532ed3    mov ecx,reinterpret_cast<uint32_t>(ntile)"
 "	      00532ed6    and ecx,0FFFFh"
 "	      00532edc    cmp [eax],ecx"
 "	      00532ede    jne near ptr 00532EF2h"
@@ -9522,7 +9522,7 @@ void TrainClass::AdjustNextPosition() {
 );
 // LINE 3583:
 	asm( 
-"	      00532f30    mov eax,[ebp-18h]"
+"	      00532f30    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00532f33    and eax,0FFFFh"
 "	      00532f38    mov [ebp-44h],eax"
 "	      00532f3b    jmp near ptr 00532FBAh"
@@ -10473,7 +10473,7 @@ void TrainClass::BeamToWithinCameraRange() {
 );
 // LINE 3913:
 	asm( 
-"	      005336ef    mov eax,[ebp-44h]"
+"	      005336ef    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      005336f2    and eax,0FFFFh"
 "	      005336f7    mov [ebp-60h],eax"
 "	      005336fa    jmp near ptr 00533713h"
@@ -11007,7 +11007,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 );
 // LINE 4077:
 	asm( 
-"	      00533bac    mov eax,[ebp-38h]"
+"	      00533bac    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00533baf    and eax,0FFFFh"
 "	      00533bb4    mov [ebp-50h],eax"
 "	      00533bb7    jmp near ptr 00533BD0h"

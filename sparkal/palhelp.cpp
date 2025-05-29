@@ -1355,7 +1355,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 "	      004972fb    mov eax,this"
 "	      004972fe    mov eax,[eax+4]"
 "	      00497301    push eax"
-"	      00497302    mov eax,[ebp+8]"
+"	      00497302    mov eax,reinterpret_cast<uint32_t>(colorStart.Blue)"
 "	      00497305    push eax"
 "	      00497306    call 0049731Ah"
 "	      0049730b    add esp,10h"

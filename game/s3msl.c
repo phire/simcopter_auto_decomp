@@ -1998,7 +1998,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 );
 // LINE 731:
 	asm( 
-"	      0051f82c    movsx eax,word ptr [ebp+24h]"
+"	      0051f82c    movsx eax,reinterpret_cast<uint16_t>(mission_id)"
 "	      0051f830    mov mp.id,eax"
 );
 // LINE 732:
@@ -2489,7 +2489,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 855:
 	asm( 
 "	      0051fc9b    mov eax,md"
-"	      0051fca1    mov cl,[ebp+18h]"
+"	      0051fca1    mov cl,reinterpret_cast<uint8_t>(scale)"
 "	      0051fca4    shl dword ptr [eax+0Ch],cl"
 );
 // LINE 857:
@@ -8326,8 +8326,8 @@ int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 "	      00523164    fnstsw ax"
 "	      00523166    test ah,1"
 "	      00523169    je near ptr 0052317Dh"
-"	      0052316f    mov dword ptr [ebp-58h],0"
-"	      00523176    mov dword ptr [ebp-54h],3FE00000h"
+"	      0052316f    mov reinterpret_cast<uint32_t>(newdist),0"
+"	      00523176    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&newdist) + 4),3FE00000h"
 );
 // LINE 2580:
 	asm( 

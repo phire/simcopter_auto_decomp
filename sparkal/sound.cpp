@@ -3986,7 +3986,7 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 );
 // LINE 1241:
 	asm( 
-"	      0043000e    test byte ptr [ebp-4],1"
+"	      0043000e    test reinterpret_cast<uint8_t>(dwStatus),1"
 "	      00430012    je near ptr 0043003Bh"
 );
 // LINE 1242:

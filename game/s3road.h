@@ -14,7 +14,7 @@ int32_t TimeOfTravelTable(unsigned short t) {
 );
 // LINE 779:
 	asm( 
-"	      00541369    mov eax,[ebp+8]"
+"	      00541369    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0054136c    and eax,0FFFFh"
 "	      00541371    mov [ebp-4],eax"
 "	      00541374    jmp near ptr 005413E9h"

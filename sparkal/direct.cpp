@@ -2463,7 +2463,7 @@ int  Directory::ReadDirectoryEntries() {
 );
 // LINE 241:
 	asm( 
-"	      00483a14    test byte ptr [ebp-140h],10h"
+"	      00483a14    test reinterpret_cast<uint8_t>(findData.dwFileAttributes),10h"
 "	      00483a1b    je near ptr 00483D4Dh"
 );
 // LINE 242:
@@ -2719,7 +2719,7 @@ int  Directory::ReadDirectoryEntries() {
 );
 // LINE 268:
 	asm( 
-"	      00483e05    test byte ptr [ebp-140h],10h"
+"	      00483e05    test reinterpret_cast<uint8_t>(findData.dwFileAttributes),10h"
 "	      00483e0c    je near ptr 0048413Eh"
 );
 // LINE 269:
@@ -3499,12 +3499,12 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 361:
 	asm( 
-"	      00484a18    test byte ptr [ebp-140h],10h"
+"	      00484a18    test reinterpret_cast<uint8_t>(findData.dwFileAttributes),10h"
 "	      00484a1f    je near ptr 00484D9Ch"
 );
 // LINE 362:
 	asm( 
-"	      00484a25    test byte ptr [ebp+0Ch],4"
+"	      00484a25    test reinterpret_cast<uint8_t>(lFilter),4"
 "	      00484a29    je near ptr 00484D97h"
 );
 // LINE 363:
@@ -3542,7 +3542,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 365:
 	asm( 
-"	      00484ac7    test byte ptr [ebp+0Ch],1"
+"	      00484ac7    test reinterpret_cast<uint8_t>(lFilter),1"
 "	      00484acb    je near ptr 00484B37h"
 );
 // LINE 366:
@@ -3607,7 +3607,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 370:
 	asm( 
-"	      00484bd4    test byte ptr [ebp+0Ch],2"
+"	      00484bd4    test reinterpret_cast<uint8_t>(lFilter),2"
 "	      00484bd8    je near ptr 00484CB8h"
 );
 // LINE 371:
@@ -3714,7 +3714,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 378:
 	asm( 
-"	      00484d9c    test byte ptr [ebp+0Ch],8"
+"	      00484d9c    test reinterpret_cast<uint8_t>(lFilter),8"
 "	      00484da0    je near ptr 00484E80h"
 );
 // LINE 379:
@@ -3790,12 +3790,12 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 388:
 	asm( 
-"	      00484eb9    test byte ptr [ebp-140h],10h"
+"	      00484eb9    test reinterpret_cast<uint8_t>(findData.dwFileAttributes),10h"
 "	      00484ec0    je near ptr 00485399h"
 );
 // LINE 389:
 	asm( 
-"	      00484ec6    test byte ptr [ebp+0Ch],4"
+"	      00484ec6    test reinterpret_cast<uint8_t>(lFilter),4"
 "	      00484eca    je near ptr 00485394h"
 );
 // LINE 390:
@@ -3854,7 +3854,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 392:
 	asm( 
-"	      00484fdc    test byte ptr [ebp+0Ch],1"
+"	      00484fdc    test reinterpret_cast<uint8_t>(lFilter),1"
 "	      00484fe0    je near ptr 004850C0h"
 );
 // LINE 393:
@@ -3961,7 +3961,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 397:
 	asm( 
-"	      004851d1    test byte ptr [ebp+0Ch],2"
+"	      004851d1    test reinterpret_cast<uint8_t>(lFilter),2"
 "	      004851d5    je near ptr 004852B5h"
 );
 // LINE 398:
@@ -4068,7 +4068,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 405:
 	asm( 
-"	      00485399    test byte ptr [ebp+0Ch],8"
+"	      00485399    test reinterpret_cast<uint8_t>(lFilter),8"
 "	      0048539d    je near ptr 0048547Dh"
 );
 // LINE 406:
@@ -4124,7 +4124,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 412:
 	asm( 
-"	      00485482    test byte ptr [ebp+0Ch],2"
+"	      00485482    test reinterpret_cast<uint8_t>(lFilter),2"
 "	      00485486    je near ptr 004855AEh"
 "	      0048548c    cmp bParentDirectoryEnumerated,0"
 "	      00485493    je near ptr 004855AEh"
@@ -4195,7 +4195,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 );
 // LINE 418:
 	asm( 
-"	      004855ae    test byte ptr [ebp+0Ch],1"
+"	      004855ae    test reinterpret_cast<uint8_t>(lFilter),1"
 "	      004855b2    je near ptr 004856DAh"
 "	      004855b8    cmp bCurrentDirectoryEnumerated,0"
 "	      004855bf    je near ptr 004856DAh"

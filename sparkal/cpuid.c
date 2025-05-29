@@ -69,7 +69,7 @@ unsigned short wincpuidsupport() {
 // LINE 83:
 support:
 	asm( 
-"	      0047b66c    mov ax,[ebp-4]"
+"	      0047b66c    mov ax,reinterpret_cast<uint16_t>(cpuid_support)"
 "	      0047b670    jmp near ptr 0047B675h"
 );
 // LINE 85:
@@ -124,7 +124,7 @@ unsigned short wincpuid() {
 );
 // LINE 119:
 	asm( 
-"	      0047b6b7    test dword ptr [ebp-4],0FFFFh"
+"	      0047b6b7    test reinterpret_cast<uint32_t>(cpuid),0FFFFh"
 "	      0047b6be    jne near ptr 0047B6C9h"
 "	      0047b6c4    jmp near ptr 0047B70Dh"
 );
@@ -135,7 +135,7 @@ unsigned short wincpuid() {
 );
 // LINE 122:
 	asm( 
-"	      0047b6d2    mov eax,[ebp-4]"
+"	      0047b6d2    mov eax,reinterpret_cast<uint32_t>(cpuid)"
 "	      0047b6d5    and eax,0FFFFh"
 "	      0047b6da    cmp eax,2"
 "	      0047b6dd    jne near ptr 0047B6E8h"
@@ -148,7 +148,7 @@ unsigned short wincpuid() {
 );
 // LINE 125:
 	asm( 
-"	      0047b6f1    mov eax,[ebp-4]"
+"	      0047b6f1    mov eax,reinterpret_cast<uint32_t>(cpuid)"
 "	      0047b6f4    and eax,0FFFFh"
 "	      0047b6f9    cmp eax,3"
 "	      0047b6fc    jne near ptr 0047B707h"
@@ -166,7 +166,7 @@ end:
 );
 // LINE 134:
 	asm( 
-"	      0047b71a    mov eax,[ebp-4]"
+"	      0047b71a    mov eax,reinterpret_cast<uint32_t>(cpuid)"
 "	      0047b71d    and eax,0FFFFh"
 "	      0047b722    or eax,8000h"
 "	      0047b727    mov cpuid,ax"
@@ -254,15 +254,15 @@ unsigned short wincpuidext() {
 );
 // LINE 178:
 	asm( 
-"	      0047b799    mov [ebp-10h],ebx"
+"	      0047b799    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
 );
 // LINE 179:
 	asm( 
-"	      0047b79c    mov [ebp-0Ch],edx"
+"	      0047b79c    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
 );
 // LINE 180:
 	asm( 
-"	      0047b79f    mov [ebp-8],ecx"
+"	      0047b79f    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
 );
 // LINE 183:
 	asm( 
@@ -331,7 +331,7 @@ end_cpuidext:
 );
 // LINE 209:
 	asm( 
-"	      0047b808    mov eax,[ebp-4]"
+"	      0047b808    mov eax,reinterpret_cast<uint32_t>(cpu_type)"
 "	      0047b80b    and eax,0FFFFh"
 "	      0047b810    shl eax,8"
 "	      0047b813    mov cpuidext,ax"
@@ -414,15 +414,15 @@ unsigned long wincpufeatures() {
 );
 // LINE 268:
 	asm( 
-"	      0047b880    mov [ebp-0Ch],ebx"
+"	      0047b880    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
 );
 // LINE 269:
 	asm( 
-"	      0047b883    mov [ebp-8],edx"
+"	      0047b883    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
 );
 // LINE 270:
 	asm( 
-"	      0047b886    mov [ebp-4],ecx"
+"	      0047b886    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
 );
 // LINE 273:
 	asm( 
@@ -524,7 +524,7 @@ struct TIME_STAMP winrdtsc() {
 );
 // LINE 329:
 	asm( 
-"	      0047b90b    test byte ptr [ebp-4],10h"
+"	      0047b90b    test reinterpret_cast<uint8_t>(features),10h"
 "	      0047b90f    je near ptr 0047B91Dh"
 );
 // LINE 331:
@@ -1044,15 +1044,15 @@ unsigned short check_IDProc() {
 );
 // LINE 576:
 	asm( 
-"	      0047badf    mov [ebp-14h],ebx"
+"	      0047badf    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
 );
 // LINE 577:
 	asm( 
-"	      0047bae2    mov [ebp-10h],edx"
+"	      0047bae2    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
 );
 // LINE 578:
 	asm( 
-"	      0047bae5    mov [ebp-0Ch],ecx"
+"	      0047bae5    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
 );
 // LINE 581:
 	asm( 

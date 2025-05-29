@@ -1035,7 +1035,7 @@ unsigned long CBackBuffer::Load() {
 // LINE 336:
 	asm( 
 "	      0046efb4    mov eax,1"
-"	      0046efb9    mov cl,[ebp-442h]"
+"	      0046efb9    mov cl,reinterpret_cast<uint8_t>(biHeader.biBitCount)"
 "	      0046efbf    shl eax,cl"
 "	      0046efc1    mov biHeader.biClrUsed,eax"
 );
@@ -1369,7 +1369,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 412:
 	asm( 
-"	      0046f286    test byte ptr [ebp+0Ch],1"
+"	      0046f286    test reinterpret_cast<uint8_t>(Style),1"
 "	      0046f28a    je near ptr 0046F299h"
 );
 // LINE 413:
@@ -1379,7 +1379,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 // LINE 414:
 	asm( 
 "	      0046f294    jmp near ptr 0046F2ACh"
-"	      0046f299    test byte ptr [ebp+0Ch],8"
+"	      0046f299    test reinterpret_cast<uint8_t>(Style),8"
 "	      0046f29d    je near ptr 0046F2ACh"
 );
 // LINE 415:
@@ -1392,7 +1392,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 418:
 	asm( 
-"	      0046f2ac    test byte ptr [ebp+0Ch],2"
+"	      0046f2ac    test reinterpret_cast<uint8_t>(Style),2"
 "	      0046f2b0    je near ptr 0046F2BAh"
 );
 // LINE 419:
@@ -1401,7 +1401,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 420:
 	asm( 
-"	      0046f2ba    test byte ptr [ebp+0Ch],4"
+"	      0046f2ba    test reinterpret_cast<uint8_t>(Style),4"
 "	      0046f2be    je near ptr 0046F2D5h"
 );
 // LINE 421:
@@ -1424,7 +1424,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 424:
 	asm( 
-"	      0046f2e1    test byte ptr [ebp+0Ch],10h"
+"	      0046f2e1    test reinterpret_cast<uint8_t>(Style),10h"
 "	      0046f2e5    je near ptr 0046F2F2h"
 );
 // LINE 425:
@@ -1505,7 +1505,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 );
 // LINE 436:
 	asm( 
-"	      0046f393    test byte ptr [ebp+0Ch],10h"
+"	      0046f393    test reinterpret_cast<uint8_t>(Style),10h"
 "	      0046f397    je near ptr 0046F3BDh"
 );
 // LINE 437:
@@ -1650,7 +1650,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 480:
 	asm( 
-"	      0046f47c    test byte ptr [ebp+10h],1"
+"	      0046f47c    test reinterpret_cast<uint8_t>(Style),1"
 "	      0046f480    je near ptr 0046F48Fh"
 );
 // LINE 481:
@@ -1660,7 +1660,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 // LINE 482:
 	asm( 
 "	      0046f48a    jmp near ptr 0046F4A2h"
-"	      0046f48f    test byte ptr [ebp+10h],8"
+"	      0046f48f    test reinterpret_cast<uint8_t>(Style),8"
 "	      0046f493    je near ptr 0046F4A2h"
 );
 // LINE 483:
@@ -1673,7 +1673,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 486:
 	asm( 
-"	      0046f4a2    test byte ptr [ebp+10h],2"
+"	      0046f4a2    test reinterpret_cast<uint8_t>(Style),2"
 "	      0046f4a6    je near ptr 0046F4B0h"
 );
 // LINE 487:
@@ -1682,7 +1682,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 488:
 	asm( 
-"	      0046f4b0    test byte ptr [ebp+10h],4"
+"	      0046f4b0    test reinterpret_cast<uint8_t>(Style),4"
 "	      0046f4b4    je near ptr 0046F4CBh"
 );
 // LINE 489:
@@ -1705,7 +1705,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 );
 // LINE 492:
 	asm( 
-"	      0046f4d7    test byte ptr [ebp+10h],10h"
+"	      0046f4d7    test reinterpret_cast<uint8_t>(Style),10h"
 "	      0046f4db    je near ptr 0046F4E8h"
 );
 // LINE 493:
@@ -4022,7 +4022,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 // LINE 1279:
 	asm( 
 "	      00470624    mov eax,1"
-"	      00470629    mov cl,[ebp-2Eh]"
+"	      00470629    mov cl,reinterpret_cast<uint8_t>(biHeader.biBitCount)"
 "	      0047062c    shl eax,cl"
 "	      0047062e    mov biHeader.biClrUsed,eax"
 );

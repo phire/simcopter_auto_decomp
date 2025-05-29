@@ -124,7 +124,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 );
 // LINE 52:
 	asm( 
-"	      00431d3e    mov eax,[ebp+8]"
+"	      00431d3e    mov eax,reinterpret_cast<uint32_t>(chKey)"
 "	      00431d41    push eax"
 "	      00431d42    mov ecx,this"
 "	      00431d45    call 00431D0Dh"
@@ -194,7 +194,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 );
 // LINE 72:
 	asm( 
-"	      00431dbb    mov eax,[ebp+8]"
+"	      00431dbb    mov eax,reinterpret_cast<uint32_t>(chKey)"
 "	      00431dbe    push eax"
 "	      00431dbf    mov ecx,this"
 "	      00431dc2    call 0043D4EBh"
@@ -240,7 +240,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 );
 // LINE 85:
 	asm( 
-"	      00431e01    mov eax,[ebp+8]"
+"	      00431e01    mov eax,reinterpret_cast<uint32_t>(chKey)"
 "	      00431e04    push eax"
 "	      00431e05    mov ecx,this"
 "	      00431e08    call 0043D67Fh"

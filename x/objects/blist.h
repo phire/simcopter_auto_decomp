@@ -424,7 +424,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 // LINE 192:
 	asm( 
 "	      0055ee33    push 55E6F0h"
-"	      0055ee38    mov eax,[ebp-14h]"
+"	      0055ee38    mov eax,reinterpret_cast<uint32_t>(count)"
 "	      0055ee3b    push eax"
 "	      0055ee3c    mov eax,this"
 "	      0055ee42    mov eax,[eax+10h]"
@@ -677,7 +677,7 @@ _L45274:
 );
 // LINE 197:
 	asm( 
-"	      0055f197    test dword ptr [ebp-1Ch],0FFFFh"
+"	      0055f197    test reinterpret_cast<uint32_t>(fileOpened),0FFFFh"
 "	      0055f19e    je near ptr 0055F1BBh"
 );
 // LINE 198:

@@ -7356,7 +7356,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 // LINE 814:
 	asm( 
 "	      0047b438    mov eax,1"
-"	      0047b43d    mov cl,[ebp-4]"
+"	      0047b43d    mov cl,reinterpret_cast<uint8_t>(lFixedCurrentEquipmentSelection)"
 "	      0047b440    shl eax,cl"
 "	      0047b442    mov ecx,currentUserPersonalInfo"
 "	      0047b445    or [ecx+48h],eax"
@@ -7402,7 +7402,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 // LINE 822:
 	asm( 
 "	      0047b491    mov eax,1"
-"	      0047b496    mov cl,[ebp-0Ch]"
+"	      0047b496    mov cl,reinterpret_cast<uint8_t>(lCurrentHelicopter)"
 "	      0047b499    shl eax,cl"
 "	      0047b49b    mov ecx,currentUserPersonalInfo"
 "	      0047b49e    or [ecx+44h],eax"
@@ -7504,7 +7504,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 // LINE 848:
 	asm( 
 "	      0047b537    mov eax,1"
-"	      0047b53c    mov cl,[ebp-4]"
+"	      0047b53c    mov cl,reinterpret_cast<uint8_t>(lFixedCurrentEquipmentSelection)"
 "	      0047b53f    shl eax,cl"
 "	      0047b541    not eax"
 "	      0047b543    mov ecx,currentUserPersonalInfo"
@@ -7551,7 +7551,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 // LINE 856:
 	asm( 
 "	      0047b592    mov eax,1"
-"	      0047b597    mov cl,[ebp-0Ch]"
+"	      0047b597    mov cl,reinterpret_cast<uint8_t>(lCurrentHelicopter)"
 "	      0047b59a    shl eax,cl"
 "	      0047b59c    not eax"
 "	      0047b59e    mov ecx,currentUserPersonalInfo"

@@ -1302,7 +1302,7 @@ int32_t VRAppCityInit(int32_t reload) {
 	asm( 
 "	      004eb818    mov eax,up"
 "	      004eb81b    mov edx,1"
-"	      004eb820    mov cl,[ebp-8]"
+"	      004eb820    mov cl,reinterpret_cast<uint8_t>(i)"
 "	      004eb823    shl edx,cl"
 "	      004eb825    test [eax+44h],edx"
 "	      004eb828    je near ptr 004EB863h"

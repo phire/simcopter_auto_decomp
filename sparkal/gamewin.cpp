@@ -828,19 +828,19 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 );
 // LINE 248:
 	asm( 
-"	      0046757f    mov al,[ebp-4]"
+"	      0046757f    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      00467582    mov ecx,Counter"
 "	      00467585    mov [ebp+ecx*4-416h],al"
 );
 // LINE 249:
 	asm( 
-"	      0046758c    mov al,[ebp-4]"
+"	      0046758c    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      0046758f    mov ecx,Counter"
 "	      00467592    mov [ebp+ecx*4-417h],al"
 );
 // LINE 250:
 	asm( 
-"	      00467599    mov al,[ebp-4]"
+"	      00467599    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      0046759c    mov ecx,Counter"
 "	      0046759f    mov [ebp+ecx*4-418h],al"
 );

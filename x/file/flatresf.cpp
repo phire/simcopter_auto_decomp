@@ -760,7 +760,7 @@ unsigned long FlatResFile::GetIndType(short index) {
 );
 // LINE 314:
 	asm( 
-"	      0055315f    mov eax,[ebp+8]"
+"	      0055315f    mov eax,reinterpret_cast<uint32_t>(index)"
 "	      00553162    push eax"
 "	      00553163    mov eax,this"
 "	      00553166    mov ecx,[eax+110h]"
@@ -868,7 +868,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void 
 );
 // LINE 339:
 	asm( 
-"	      0055325d    mov eax,[ebp+0Ch]"
+"	      0055325d    mov eax,reinterpret_cast<uint32_t>(id)"
 "	      00553260    push eax"
 "	      00553261    mov eax,type"
 "	      00553264    push eax"
@@ -1128,7 +1128,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)
 );
 // LINE 395:
 	asm( 
-"	      005534a4    mov eax,[ebp+0Ch]"
+"	      005534a4    mov eax,reinterpret_cast<uint32_t>(index)"
 "	      005534a7    push eax"
 "	      005534a8    mov eax,type"
 "	      005534ab    push eax"
@@ -1714,7 +1714,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 );
 // LINE 596:
 	asm( 
-"	      005539df    mov eax,[ebp+0Ch]"
+"	      005539df    mov eax,reinterpret_cast<uint32_t>(resID)"
 "	      005539e2    push eax"
 "	      005539e3    mov eax,this"
 "	      005539e6    push eax"
@@ -1733,7 +1733,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 "	      00553a00    cmp eax,1"
 "	      00553a03    jl near ptr 00553A50h"
 "	      00553a09    jmp near ptr 00553A0Eh"
-"	      00553a0e    movsx eax,word ptr [ebp-18h]"
+"	      00553a0e    movsx eax,reinterpret_cast<uint16_t>(tempStrs.fNumStrings)"
 "	      00553a12    movsx ecx,index"
 "	      00553a16    cmp eax,ecx"
 "	      00553a18    jl near ptr 00553A50h"
@@ -1742,7 +1742,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 // Block start:
 	unsigned char * foundStr;
 	asm( 
-"	      00553a1e    mov eax,[ebp+10h]"
+"	      00553a1e    mov eax,reinterpret_cast<uint32_t>(index)"
 "	      00553a21    push eax"
 "	      00553a22    lea ecx,tempStrs.fResFile"
 "	      00553a25    call 00565BFFh"
@@ -2180,7 +2180,7 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 "	      00553d4a    push eax"
 "	      00553d4b    mov eax,newMap"
 "	      00553d4e    push eax"
-"	      00553d4f    mov eax,[ebp-1Ch]"
+"	      00553d4f    mov eax,reinterpret_cast<uint32_t>(numTypes)"
 "	      00553d52    push eax"
 "	      00553d53    mov eax,fromFile"
 "	      00553d56    mov eax,[eax+108h]"
@@ -2489,7 +2489,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 );
 // LINE 837:
 	asm( 
-"	      00553fd5    test dword ptr [ebp+10h],0FFFFh"
+"	      00553fd5    test reinterpret_cast<uint32_t>(unpurge),0FFFFh"
 "	      00553fdc    jne near ptr 00553FE7h"
 "	      00553fe2    jmp near ptr 0055419Dh"
 );

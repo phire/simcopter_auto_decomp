@@ -248,7 +248,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 110:
 	asm( 
-"	      00480879    test byte ptr [ebp+10h],1"
+"	      00480879    test reinterpret_cast<uint8_t>(Style),1"
 "	      0048087d    je near ptr 0048088Fh"
 );
 // LINE 111:
@@ -258,7 +258,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 112:
 	asm( 
 "	      0048088a    jmp near ptr 004808ACh"
-"	      0048088f    test byte ptr [ebp+10h],4"
+"	      0048088f    test reinterpret_cast<uint8_t>(Style),4"
 "	      00480893    je near ptr 004808A5h"
 );
 // LINE 113:
@@ -275,7 +275,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 116:
 	asm( 
-"	      004808ac    test byte ptr [ebp+10h],2"
+"	      004808ac    test reinterpret_cast<uint8_t>(Style),2"
 "	      004808b0    je near ptr 004808BDh"
 );
 // LINE 117:
@@ -284,7 +284,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 118:
 	asm( 
-"	      004808bd    test byte ptr [ebp+10h],8"
+"	      004808bd    test reinterpret_cast<uint8_t>(Style),8"
 "	      004808c1    je near ptr 004808CEh"
 );
 // LINE 119:
@@ -293,7 +293,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 120:
 	asm( 
-"	      004808ce    test byte ptr [ebp+10h],10h"
+"	      004808ce    test reinterpret_cast<uint8_t>(Style),10h"
 "	      004808d2    je near ptr 004808DFh"
 );
 // LINE 121:
@@ -640,19 +640,19 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 );
 // LINE 206:
 	asm( 
-"	      00480b8f    mov al,[ebp-54h]"
+"	      00480b8f    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      00480b92    mov ecx,Counter"
 "	      00480b95    mov [ebp+ecx*4-466h],al"
 );
 // LINE 207:
 	asm( 
-"	      00480b9c    mov al,[ebp-54h]"
+"	      00480b9c    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      00480b9f    mov ecx,Counter"
 "	      00480ba2    mov [ebp+ecx*4-467h],al"
 );
 // LINE 208:
 	asm( 
-"	      00480ba9    mov al,[ebp-54h]"
+"	      00480ba9    mov al,reinterpret_cast<uint8_t>(Counter)"
 "	      00480bac    mov ecx,Counter"
 "	      00480baf    mov [ebp+ecx*4-468h],al"
 );
@@ -1279,7 +1279,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 389:
 	asm( 
-"	      0048101e    test byte ptr [ebp+0Ch],1"
+"	      0048101e    test reinterpret_cast<uint8_t>(Style),1"
 "	      00481022    je near ptr 00481041h"
 );
 // LINE 390:
@@ -1305,7 +1305,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 394:
 	asm( 
-"	      0048104a    test byte ptr [ebp+0Ch],2"
+"	      0048104a    test reinterpret_cast<uint8_t>(Style),2"
 "	      0048104e    je near ptr 0048106Dh"
 );
 // LINE 395:
@@ -1424,7 +1424,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 );
 // LINE 430:
 	asm( 
-"	      00481113    test byte ptr [ebp+0Ch],4"
+"	      00481113    test reinterpret_cast<uint8_t>(Style),4"
 "	      00481117    je near ptr 00481134h"
 );
 // LINE 431:
@@ -1858,7 +1858,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 );
 // LINE 546:
 	asm( 
-"	      004814c5    mov al,[ebp-10Ch]"
+"	      004814c5    mov al,reinterpret_cast<uint8_t>(i)"
 "	      004814cb    mov ecx,i"
 "	      004814d1    mov [ebp+ecx-100h],al"
 "	      004814d8    jmp near ptr 004814AFh"

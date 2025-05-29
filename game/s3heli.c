@@ -2183,7 +2183,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 944:
 	asm( 
-"	      004f056a    movsx eax,word ptr [ebp+0Ch]"
+"	      004f056a    movsx eax,reinterpret_cast<uint16_t>(mapx)"
 "	      004f056e    mov ecx,hd"
 "	      004f0571    mov [ecx+18h],eax"
 "	      004f0574    mov eax,hd"
@@ -2193,7 +2193,7 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 );
 // LINE 945:
 	asm( 
-"	      004f0580    movsx eax,word ptr [ebp+10h]"
+"	      004f0580    movsx eax,reinterpret_cast<uint16_t>(mapy)"
 "	      004f0584    mov ecx,hd"
 "	      004f0587    mov [ecx+1Ch],eax"
 "	      004f058a    mov eax,hd"
@@ -15789,7 +15789,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 "	      004f7833    mov [ecx+4],edx"
 "	      004f7836    mov ax,[eax+8]"
 "	      004f783a    mov [ecx+8],ax"
-"	      004f783e    mov word ptr [ebp-26h],0"
+"	      004f783e    mov reinterpret_cast<uint16_t>(szSoundFiles[0][10]),0"
 "	      004f7844    mov eax,5B4D74h"
 "	      004f7849    lea ecx,szSoundFiles[1][0]"
 "	      004f784c    mov edx,[eax]"
@@ -15809,7 +15809,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 "	      004f7877    mov [ecx+4],edx"
 "	      004f787a    mov ax,[eax+8]"
 "	      004f787e    mov [ecx+8],ax"
-"	      004f7882    mov word ptr [ebp-0Eh],0"
+"	      004f7882    mov reinterpret_cast<uint16_t>(szSoundFiles[2][10]),0"
 "	      004f7888    mov eax,5B4DA8h"
 "	      004f788d    lea ecx,szSoundFiles[3][0]"
 "	      004f7890    mov edx,[eax]"
@@ -17494,7 +17494,7 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	asm( 
 "	      004f84b2    mov eax,up"
 "	      004f84b5    mov edx,1"
-"	      004f84ba    mov cl,[ebp+8]"
+"	      004f84ba    mov cl,reinterpret_cast<uint8_t>(lHeliType)"
 "	      004f84bd    shl edx,cl"
 "	      004f84bf    test [eax+44h],edx"
 "	      004f84c2    je near ptr 004F84CDh"
@@ -17528,7 +17528,7 @@ void S3HeliMakeHelicopter(long lHeliType) {
 // LINE 5545:
 	asm( 
 "	      004f84fc    mov eax,1"
-"	      004f8501    mov cl,[ebp+8]"
+"	      004f8501    mov cl,reinterpret_cast<uint8_t>(lHeliType)"
 "	      004f8504    shl eax,cl"
 "	      004f8506    mov ecx,up"
 "	      004f8509    or [ecx+44h],eax"
@@ -17638,7 +17638,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 // LINE 5576:
 	asm( 
 "	      004f85c7    mov eax,1"
-"	      004f85cc    mov cl,[ebp+8]"
+"	      004f85cc    mov cl,reinterpret_cast<uint8_t>(lHeliType)"
 "	      004f85cf    shl eax,cl"
 "	      004f85d1    not eax"
 "	      004f85d3    mov ecx,up"

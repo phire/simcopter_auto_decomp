@@ -559,7 +559,7 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 350:
 	asm( 
 "	      004d6417    mov eax,i"
-"	      004d641a    mov cl,[ebp-4]"
+"	      004d641a    mov cl,reinterpret_cast<uint8_t>(rowshift)"
 "	      004d641d    sar eax,cl"
 "	      004d641f    mov row,eax"
 );

@@ -276,16 +276,16 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 );
 // LINE 172:
 	asm( 
-"	      00544573    movsx eax,word ptr [ebp+8]"
+"	      00544573    movsx eax,reinterpret_cast<uint16_t>(personID)"
 "	      00544577    cmp eax,7D00h"
 "	      0054457c    jne near ptr 0054458Fh"
 "	      00544582    mov eax,ds:[5B8680h]"
 "	      00544587    mov obj,eax"
 "	      0054458a    jmp near ptr 0054460Bh"
-"	      0054458f    movsx eax,word ptr [ebp+8]"
+"	      0054458f    movsx eax,reinterpret_cast<uint16_t>(personID)"
 "	      00544593    test eax,eax"
 "	      00544595    jl near ptr 005445A8h"
-"	      0054459b    movsx eax,word ptr [ebp+8]"
+"	      0054459b    movsx eax,reinterpret_cast<uint16_t>(personID)"
 "	      0054459f    cmp eax,64h"
 "	      005445a2    jl near ptr 005445C4h"
 "	      005445a8    push 8C085h"
@@ -294,7 +294,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      005445b7    push 5BBA14h"
 "	      005445bc    call 00554F30h"
 "	      005445c1    add esp,10h"
-"	      005445c4    movsx eax,word ptr [ebp+8]"
+"	      005445c4    movsx eax,reinterpret_cast<uint16_t>(personID)"
 "	      005445c8    cmp dword ptr [eax*4+636D40h],0"
 "	      005445d0    jne near ptr 005445F2h"
 "	      005445d6    push 8C085h"
@@ -303,7 +303,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 "	      005445e5    push 5BBA14h"
 "	      005445ea    call 00554F30h"
 "	      005445ef    add esp,10h"
-"	      005445f2    movsx eax,word ptr [ebp+8]"
+"	      005445f2    movsx eax,reinterpret_cast<uint16_t>(personID)"
 "	      005445f6    mov eax,[eax*4+636D40h]"
 "	      005445fd    mov obj,eax"
 "	      00544600    jmp near ptr 0054460Bh"
@@ -2118,7 +2118,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 379:
 	asm( 
-"	      005459bd    test dword ptr [ebp-8],0FFFFh"
+"	      005459bd    test reinterpret_cast<uint32_t>(ret),0FFFFh"
 "	      005459c4    je near ptr 00545CB3h"
 );
 // LINE 380:
@@ -2215,23 +2215,23 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 386:
 	asm( 
-"	      00545abf    movsx eax,word ptr [ebp-38h]"
+"	      00545abf    movsx eax,reinterpret_cast<uint16_t>(centcellx)"
 "	      00545ac3    cmp eax,7Fh"
 "	      00545ac6    jg near ptr 00545AF1h"
-"	      00545acc    movsx eax,word ptr [ebp-2Ch]"
+"	      00545acc    movsx eax,reinterpret_cast<uint16_t>(centcelly)"
 "	      00545ad0    cmp eax,7Fh"
 "	      00545ad3    jg near ptr 00545AF1h"
-"	      00545ad9    movsx eax,word ptr [ebp-38h]"
+"	      00545ad9    movsx eax,reinterpret_cast<uint16_t>(centcellx)"
 "	      00545add    test eax,eax"
 "	      00545adf    jl near ptr 00545AF1h"
-"	      00545ae5    movsx eax,word ptr [ebp-2Ch]"
+"	      00545ae5    movsx eax,reinterpret_cast<uint16_t>(centcelly)"
 "	      00545ae9    test eax,eax"
 "	      00545aeb    jge near ptr 00545AFCh"
 "	      00545af1    mov centerscurk,0FFFFh"
 "	      00545af7    jmp near ptr 00545B64h"
-"	      00545afc    movsx eax,word ptr [ebp-38h]"
+"	      00545afc    movsx eax,reinterpret_cast<uint16_t>(centcellx)"
 "	      00545b00    mov eax,[eax*4+639850h]"
-"	      00545b07    movsx ecx,word ptr [ebp-2Ch]"
+"	      00545b07    movsx ecx,reinterpret_cast<uint16_t>(centcelly)"
 "	      00545b0b    movzx ax,byte ptr [eax+ecx]"
 "	      00545b10    mov [ebp-16Ch],ax"
 "	      00545b17    movsx eax,word ptr [ebp-16Ch]"
@@ -2252,23 +2252,23 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 );
 // LINE 387:
 	asm( 
-"	      00545b64    movsx eax,word ptr [ebp-30h]"
+"	      00545b64    movsx eax,reinterpret_cast<uint16_t>(offcellx)"
 "	      00545b68    cmp eax,7Fh"
 "	      00545b6b    jg near ptr 00545B96h"
-"	      00545b71    movsx eax,word ptr [ebp-34h]"
+"	      00545b71    movsx eax,reinterpret_cast<uint16_t>(offcelly)"
 "	      00545b75    cmp eax,7Fh"
 "	      00545b78    jg near ptr 00545B96h"
-"	      00545b7e    movsx eax,word ptr [ebp-30h]"
+"	      00545b7e    movsx eax,reinterpret_cast<uint16_t>(offcellx)"
 "	      00545b82    test eax,eax"
 "	      00545b84    jl near ptr 00545B96h"
-"	      00545b8a    movsx eax,word ptr [ebp-34h]"
+"	      00545b8a    movsx eax,reinterpret_cast<uint16_t>(offcelly)"
 "	      00545b8e    test eax,eax"
 "	      00545b90    jge near ptr 00545BA1h"
 "	      00545b96    mov offscurk,0FFFFh"
 "	      00545b9c    jmp near ptr 00545C09h"
-"	      00545ba1    movsx eax,word ptr [ebp-30h]"
+"	      00545ba1    movsx eax,reinterpret_cast<uint16_t>(offcellx)"
 "	      00545ba5    mov eax,[eax*4+639850h]"
-"	      00545bac    movsx ecx,word ptr [ebp-34h]"
+"	      00545bac    movsx ecx,reinterpret_cast<uint16_t>(offcelly)"
 "	      00545bb0    movzx ax,byte ptr [eax+ecx]"
 "	      00545bb5    mov [ebp-170h],ax"
 "	      00545bbc    movsx eax,word ptr [ebp-170h]"
@@ -2446,10 +2446,10 @@ void S3PersonInit() {
 );
 // LINE 417:
 	asm( 
-"	      00545d3a    mov dword ptr [ebp-8],0"
-"	      00545d41    mov dword ptr [ebp-4],40240000h"
-"	      00545d48    mov dword ptr [ebp-10h],66666666h"
-"	      00545d4f    mov dword ptr [ebp-0Ch],402A6666h"
+"	      00545d3a    mov reinterpret_cast<uint32_t>(x),0"
+"	      00545d41    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&x) + 4),40240000h"
+"	      00545d48    mov reinterpret_cast<uint32_t>(y),66666666h"
+"	      00545d4f    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&y) + 4),402A6666h"
 );
 // LINE 419:
 	asm( 
@@ -3042,9 +3042,9 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 // LINE 491:
 	asm( 
 "	      00546355    xor eax,eax"
-"	      00546357    mov al,[ebp+0Ch]"
+"	      00546357    mov al,reinterpret_cast<uint8_t>(y)"
 "	      0054635a    xor ecx,ecx"
-"	      0054635c    mov cl,[ebp+8]"
+"	      0054635c    mov cl,reinterpret_cast<uint8_t>(x)"
 "	      0054635f    shl ecx,0Ah"
 "	      00546362    mov eax,[ecx+eax*4+67ED30h]"
 "	      00546369    mov [ebp-28h],eax"
@@ -4320,15 +4320,15 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546f18    push eax"
 "	      00546f19    mov eax,onTopOf"
 "	      00546f1c    push eax"
-"	      00546f1d    mov eax,[ebp+18h]"
+"	      00546f1d    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00546f20    push eax"
-"	      00546f21    mov eax,[ebp+14h]"
+"	      00546f21    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00546f24    push eax"
 "	      00546f25    mov eax,persontype"
 "	      00546f28    push eax"
-"	      00546f29    mov eax,[ebp+0Ch]"
+"	      00546f29    mov eax,reinterpret_cast<uint32_t>(treeID)"
 "	      00546f2c    push eax"
-"	      00546f2d    mov eax,[ebp+8]"
+"	      00546f2d    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      00546f30    push eax"
 "	      00546f31    mov ecx,this"
 "	      00546f34    call 00546F45h"
@@ -4365,9 +4365,9 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 "	      00546f55    mov eax,onTopOf"
 "	      00546f58    push eax"
 "	      00546f59    push 0FFFFFFFFh"
-"	      00546f5b    mov eax,[ebp+18h]"
+"	      00546f5b    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00546f5e    push eax"
-"	      00546f5f    mov eax,[ebp+14h]"
+"	      00546f5f    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00546f62    push eax"
 "	      00546f63    push 0"
 "	      00546f65    mov eax,persontype"
@@ -4378,7 +4378,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 );
 // LINE 720:
 	asm( 
-"	      00546f75    test dword ptr [ebp-4],0FFFFh"
+"	      00546f75    test reinterpret_cast<uint32_t>(ret),0FFFFh"
 "	      00546f7c    jne near ptr 00546F9Eh"
 "	      00546f82    push 8C085h"
 "	      00546f87    push 5B8CD8h"
@@ -4562,11 +4562,11 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      00547187    push eax"
 "	      00547188    mov eax,onTopOf"
 "	      0054718b    push eax"
-"	      0054718c    mov eax,[ebp+18h]"
+"	      0054718c    mov eax,reinterpret_cast<uint32_t>(missionid)"
 "	      0054718f    push eax"
-"	      00547190    mov eax,[ebp+14h]"
+"	      00547190    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547193    push eax"
-"	      00547194    mov eax,[ebp+10h]"
+"	      00547194    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547197    push eax"
 "	      00547198    mov eax,missiontype"
 "	      0054719b    push eax"
@@ -4708,9 +4708,9 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 "	      0054731a    push eax"
 "	      0054731b    movsx eax,missionid"
 "	      0054731f    push eax"
-"	      00547320    mov eax,[ebp+14h]"
+"	      00547320    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547323    push eax"
-"	      00547324    mov eax,[ebp+10h]"
+"	      00547324    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547327    push eax"
 "	      00547328    mov eax,missiontype"
 "	      0054732b    push eax"
@@ -4865,9 +4865,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	class cYObject* medic;
 	short dist;
 	asm( 
-"	      005474ee    mov eax,[ebp+0Ch]"
+"	      005474ee    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      005474f1    push eax"
-"	      005474f2    mov eax,[ebp+8]"
+"	      005474f2    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      005474f5    push eax"
 "	      005474f6    call 00546C85h"
 "	      005474fb    add esp,8"
@@ -4901,9 +4901,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	asm( 
 "	      0054753a    push 0"
 "	      0054753c    push 0FFFFFFFFh"
-"	      0054753e    mov eax,[ebp+0Ch]"
+"	      0054753e    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547541    push eax"
-"	      00547542    mov eax,[ebp+8]"
+"	      00547542    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547545    push eax"
 "	      00547546    push 5"
 "	      00547548    push 0Ch"
@@ -4917,9 +4917,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 // LINE 792:
 // Block end:
 	asm( 
-"	      00547557    mov eax,[ebp+0Ch]"
+"	      00547557    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054755a    push eax"
-"	      0054755b    mov eax,[ebp+8]"
+"	      0054755b    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054755e    push eax"
 "	      0054755f    call 00546C85h"
 "	      00547564    add esp,8"
@@ -4934,9 +4934,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	asm( 
 "	      00547574    push 0"
 "	      00547576    push 0FFFFFFFFh"
-"	      00547578    mov eax,[ebp+0Ch]"
+"	      00547578    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054757b    push eax"
-"	      0054757c    mov eax,[ebp+8]"
+"	      0054757c    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054757f    push eax"
 "	      00547580    push 7"
 "	      00547582    push 0Eh"
@@ -4949,9 +4949,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 );
 // LINE 798:
 	asm( 
-"	      00547591    mov eax,[ebp+0Ch]"
+"	      00547591    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547594    push eax"
-"	      00547595    mov eax,[ebp+8]"
+"	      00547595    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547598    push eax"
 "	      00547599    call 00546C85h"
 "	      0054759e    add esp,8"
@@ -4993,9 +4993,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	short fieldershift;
 	class cYObject* newperson;
 	asm( 
-"	      00547605    mov eax,[ebp+0Ch]"
+"	      00547605    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547608    push eax"
-"	      00547609    mov eax,[ebp+8]"
+"	      00547609    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054760c    push eax"
 "	      0054760d    call 00546C85h"
 "	      00547612    add esp,8"
@@ -5015,13 +5015,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547634    push 0FFBA0000h"
 "	      00547639    push 460000h"
 "	      0054763e    push 0"
-"	      00547640    mov eax,[ebp+0Ch]"
+"	      00547640    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547643    push eax"
-"	      00547644    mov eax,[ebp+8]"
+"	      00547644    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547647    push eax"
 "	      00547648    push 5"
 "	      0054764a    push 4B5h"
-"	      0054764f    mov eax,[ebp-4]"
+"	      0054764f    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      00547652    push eax"
 "	      00547653    mov ecx,newperson"
 "	      00547656    call 00546E70h"
@@ -5050,13 +5050,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054769a    push 0FFBA0000h"
 "	      0054769f    push 140000h"
 "	      005476a4    push 0"
-"	      005476a6    mov eax,[ebp+0Ch]"
+"	      005476a6    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      005476a9    push eax"
-"	      005476aa    mov eax,[ebp+8]"
+"	      005476aa    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      005476ad    push eax"
 "	      005476ae    push 5"
 "	      005476b0    push 4B6h"
-"	      005476b5    mov eax,[ebp-4]"
+"	      005476b5    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      005476b8    push eax"
 "	      005476b9    mov ecx,newperson"
 "	      005476bc    call 00546E70h"
@@ -5076,13 +5076,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005476ec    push 0FFEC0000h"
 "	      005476f1    push 140000h"
 "	      005476f6    push 0"
-"	      005476f8    mov eax,[ebp+0Ch]"
+"	      005476f8    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      005476fb    push eax"
-"	      005476fc    mov eax,[ebp+8]"
+"	      005476fc    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      005476ff    push eax"
 "	      00547700    push 5"
 "	      00547702    push 4B6h"
-"	      00547707    mov eax,[ebp-4]"
+"	      00547707    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      0054770a    push eax"
 "	      0054770b    mov ecx,newperson"
 "	      0054770e    call 00546E70h"
@@ -5102,13 +5102,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      0054773e    push 0FFEC0000h"
 "	      00547743    push 460000h"
 "	      00547748    push 0"
-"	      0054774a    mov eax,[ebp+0Ch]"
+"	      0054774a    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054774d    push eax"
-"	      0054774e    mov eax,[ebp+8]"
+"	      0054774e    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547751    push eax"
 "	      00547752    push 5"
 "	      00547754    push 4B6h"
-"	      00547759    mov eax,[ebp-4]"
+"	      00547759    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      0054775c    push eax"
 "	      0054775d    mov ecx,newperson"
 "	      00547760    call 00546E70h"
@@ -5128,13 +5128,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547790    push 0FFD30000h"
 "	      00547795    push 2D0000h"
 "	      0054779a    push 0"
-"	      0054779c    mov eax,[ebp+0Ch]"
+"	      0054779c    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054779f    push eax"
-"	      005477a0    mov eax,[ebp+8]"
+"	      005477a0    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      005477a3    push eax"
 "	      005477a4    push 5"
 "	      005477a6    push 4B6h"
-"	      005477ab    mov eax,[ebp-4]"
+"	      005477ab    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      005477ae    push eax"
 "	      005477af    mov ecx,newperson"
 "	      005477b2    call 00546E70h"
@@ -5154,13 +5154,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005477e2    push 0FFD80000h"
 "	      005477e7    push 0FFD80000h"
 "	      005477ec    push 0"
-"	      005477ee    mov eax,[ebp+0Ch]"
+"	      005477ee    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      005477f1    push eax"
-"	      005477f2    mov eax,[ebp+8]"
+"	      005477f2    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      005477f5    push eax"
 "	      005477f6    push 5"
 "	      005477f8    push 4B6h"
-"	      005477fd    mov eax,[ebp-4]"
+"	      005477fd    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      00547800    push eax"
 "	      00547801    mov ecx,newperson"
 "	      00547804    call 00546E70h"
@@ -5180,13 +5180,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547834    push 280000h"
 "	      00547839    push 280000h"
 "	      0054783e    push 0"
-"	      00547840    mov eax,[ebp+0Ch]"
+"	      00547840    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547843    push eax"
-"	      00547844    mov eax,[ebp+8]"
+"	      00547844    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547847    push eax"
 "	      00547848    push 5"
 "	      0054784a    push 4B6h"
-"	      0054784f    mov eax,[ebp-4]"
+"	      0054784f    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      00547852    push eax"
 "	      00547853    mov ecx,newperson"
 "	      00547856    call 00546E70h"
@@ -5206,13 +5206,13 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547886    push 280000h"
 "	      0054788b    push 0FFD80000h"
 "	      00547890    push 0"
-"	      00547892    mov eax,[ebp+0Ch]"
+"	      00547892    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00547895    push eax"
-"	      00547896    mov eax,[ebp+8]"
+"	      00547896    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00547899    push eax"
 "	      0054789a    push 5"
 "	      0054789c    push 4B6h"
-"	      005478a1    mov eax,[ebp-4]"
+"	      005478a1    mov eax,reinterpret_cast<uint32_t>(scurkID)"
 "	      005478a4    push eax"
 "	      005478a5    mov ecx,newperson"
 "	      005478a8    call 00546E70h"
@@ -5400,7 +5400,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 "	      00547a40    movsx ecx,count"
 "	      00547a44    add eax,ecx"
 "	      00547a46    push eax"
-"	      00547a47    mov eax,[ebp-6]"
+"	      00547a47    mov eax,reinterpret_cast<uint32_t>(r.left)"
 "	      00547a4a    push eax"
 "	      00547a4b    call 00547440h"
 "	      00547a50    add esp,8"
@@ -5411,14 +5411,14 @@ void cYObject::StartScurkPeopleNearAvatar() {
 "	      00547a57    movsx ecx,count"
 "	      00547a5b    sub eax,ecx"
 "	      00547a5d    push eax"
-"	      00547a5e    mov eax,[ebp-2]"
+"	      00547a5e    mov eax,reinterpret_cast<uint32_t>(r.right)"
 "	      00547a61    push eax"
 "	      00547a62    call 00547440h"
 "	      00547a67    add esp,8"
 );
 // LINE 863:
 	asm( 
-"	      00547a6a    mov eax,[ebp-8]"
+"	      00547a6a    mov eax,reinterpret_cast<uint32_t>(r.top)"
 "	      00547a6d    push eax"
 "	      00547a6e    movsx eax,r.right"
 "	      00547a72    movsx ecx,count"
@@ -5429,7 +5429,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 );
 // LINE 864:
 	asm( 
-"	      00547a81    mov eax,[ebp-4]"
+"	      00547a81    mov eax,reinterpret_cast<uint32_t>(r.bottom)"
 "	      00547a84    push eax"
 "	      00547a85    movsx eax,r.left"
 "	      00547a89    movsx ecx,count"
@@ -5786,7 +5786,7 @@ void MakeAllPeople() {
 );
 // LINE 916:
 	asm( 
-"	      00547dfa    mov eax,[ebp-108h]"
+"	      00547dfa    mov eax,reinterpret_cast<uint32_t>(st.wSecond)"
 "	      00547e00    and eax,0FFFFh"
 "	      00547e05    xor ecx,ecx"
 "	      00547e07    mov cx,st.wMilliseconds"
@@ -5922,16 +5922,16 @@ void cYObject::MakePlebes() {
 );
 // LINE 954:
 	asm( 
-"	      00547ef4    movsx eax,word ptr [ebp-14h]"
+"	      00547ef4    movsx eax,reinterpret_cast<uint16_t>(newnum)"
 "	      00547ef8    cmp eax,7D00h"
 "	      00547efd    jne near ptr 00547F10h"
 "	      00547f03    mov eax,ds:[5B8680h]"
 "	      00547f08    mov personobj,eax"
 "	      00547f0b    jmp near ptr 00547F8Ch"
-"	      00547f10    movsx eax,word ptr [ebp-14h]"
+"	      00547f10    movsx eax,reinterpret_cast<uint16_t>(newnum)"
 "	      00547f14    test eax,eax"
 "	      00547f16    jl near ptr 00547F29h"
-"	      00547f1c    movsx eax,word ptr [ebp-14h]"
+"	      00547f1c    movsx eax,reinterpret_cast<uint16_t>(newnum)"
 "	      00547f20    cmp eax,64h"
 "	      00547f23    jl near ptr 00547F45h"
 "	      00547f29    push 8C085h"
@@ -5940,7 +5940,7 @@ void cYObject::MakePlebes() {
 "	      00547f38    push 5BBA14h"
 "	      00547f3d    call 00554F30h"
 "	      00547f42    add esp,10h"
-"	      00547f45    movsx eax,word ptr [ebp-14h]"
+"	      00547f45    movsx eax,reinterpret_cast<uint16_t>(newnum)"
 "	      00547f49    cmp dword ptr [eax*4+636D40h],0"
 "	      00547f51    jne near ptr 00547F73h"
 "	      00547f57    push 8C085h"
@@ -5949,7 +5949,7 @@ void cYObject::MakePlebes() {
 "	      00547f66    push 5BBA14h"
 "	      00547f6b    call 00554F30h"
 "	      00547f70    add esp,10h"
-"	      00547f73    movsx eax,word ptr [ebp-14h]"
+"	      00547f73    movsx eax,reinterpret_cast<uint16_t>(newnum)"
 "	      00547f77    mov eax,[eax*4+636D40h]"
 "	      00547f7e    mov personobj,eax"
 "	      00547f81    jmp near ptr 00547F8Ch"
@@ -8456,7 +8456,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 // LINE 1400:
 	asm( 
-"	      00549ea6    mov eax,[ebp-38h]"
+"	      00549ea6    mov eax,reinterpret_cast<uint32_t>(stop_now)"
 "	      00549ea9    and eax,0FFFFh"
 "	      00549eae    cmp eax,1"
 "	      00549eb1    jne near ptr 00549EDEh"
@@ -8754,7 +8754,7 @@ unsigned short cYObject::OutOfCameraRange() {
 );
 // LINE 1449:
 	asm( 
-"	      0054a177    test dword ptr [ebp-8],0FFFFh"
+"	      0054a177    test reinterpret_cast<uint32_t>(behindView),0FFFFh"
 "	      0054a17e    je near ptr 0054A18Eh"
 );
 // LINE 1450:
@@ -8838,9 +8838,9 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 "	      0054a1fb    push eax"
 "	      0054a1fc    mov eax,missionid"
 "	      0054a1ff    push eax"
-"	      0054a200    mov eax,[ebp+14h]"
+"	      0054a200    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054a203    push eax"
-"	      0054a204    mov eax,[ebp+10h]"
+"	      0054a204    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054a207    push eax"
 "	      0054a208    mov eax,mission"
 "	      0054a20b    push eax"
@@ -9146,7 +9146,7 @@ void KillMissionPeople(long missionid) {
 );
 // LINE 1521:
 	asm( 
-"	      0054a53d    test dword ptr [ebp-24h],0FFFFh"
+"	      0054a53d    test reinterpret_cast<uint32_t>(die),0FFFFh"
 "	      0054a544    je near ptr 0054A595h"
 );
 // LINE 1523:
@@ -9369,9 +9369,9 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	short count;
 	enum cYObject::LocationType loctype;
 	asm( 
-"	      0054a73b    mov eax,[ebp+10h]"
+"	      0054a73b    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054a73e    push eax"
-"	      0054a73f    mov eax,[ebp+0Ch]"
+"	      0054a73f    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054a742    push eax"
 "	      0054a743    call 00555746h"
 "	      0054a748    add esp,8"
@@ -9613,9 +9613,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // Block start:
 	enum cYObject::LocationType loctype;
 	asm( 
-"	      0054aa1c    mov eax,[ebp+14h]"
+"	      0054aa1c    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054aa1f    push eax"
-"	      0054aa20    mov eax,[ebp+10h]"
+"	      0054aa20    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054aa23    push eax"
 "	      0054aa24    call 00555746h"
 "	      0054aa29    add esp,8"
@@ -9623,9 +9623,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1591:
 	asm( 
-"	      0054aa2f    mov eax,[ebp+14h]"
+"	      0054aa2f    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054aa32    push eax"
-"	      0054aa33    mov eax,[ebp+10h]"
+"	      0054aa33    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054aa36    push eax"
 "	      0054aa37    mov eax,mission"
 "	      0054aa3a    push eax"
@@ -9669,7 +9669,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1596:
 	asm( 
-"	      0054aaa5    test dword ptr [ebp-0Ch],0FFFFh"
+"	      0054aaa5    test reinterpret_cast<uint32_t>(foundplace),0FFFFh"
 "	      0054aaac    je near ptr 0054AB43h"
 );
 // LINE 1597:
@@ -9680,9 +9680,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aab5    push eax"
 "	      0054aab6    mov eax,offsetx"
 "	      0054aab9    push eax"
-"	      0054aaba    mov eax,[ebp+14h]"
+"	      0054aaba    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054aabd    push eax"
-"	      0054aabe    mov eax,[ebp+10h]"
+"	      0054aabe    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054aac1    push eax"
 "	      0054aac2    mov ecx,this"
 "	      0054aac8    call 0054FD4Dh"
@@ -9995,9 +9995,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // Block start:
 	enum cYObject::LocationType loctype;
 	asm( 
-"	      0054ae25    mov eax,[ebp+14h]"
+"	      0054ae25    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054ae28    push eax"
-"	      0054ae29    mov eax,[ebp+10h]"
+"	      0054ae29    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054ae2c    push eax"
 "	      0054ae2d    call 00555746h"
 "	      0054ae32    add esp,8"
@@ -10005,9 +10005,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1653:
 	asm( 
-"	      0054ae38    mov eax,[ebp+14h]"
+"	      0054ae38    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054ae3b    push eax"
-"	      0054ae3c    mov eax,[ebp+10h]"
+"	      0054ae3c    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054ae3f    push eax"
 "	      0054ae40    mov eax,mission"
 "	      0054ae43    push eax"
@@ -10091,9 +10091,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // Block start:
 	enum cYObject::LocationType loctype2;
 	asm( 
-"	      0054aefb    mov eax,[ebp-30h]"
+"	      0054aefb    mov eax,reinterpret_cast<uint32_t>(destcelly)"
 "	      0054aefe    push eax"
-"	      0054aeff    mov eax,[ebp-34h]"
+"	      0054aeff    mov eax,reinterpret_cast<uint32_t>(destcellx)"
 "	      0054af02    push eax"
 "	      0054af03    call 00555746h"
 "	      0054af08    add esp,8"
@@ -10122,9 +10122,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054af42    add ecx,eax"
 "	      0054af44    cmp ecx,10h"
 "	      0054af47    jle near ptr 0054AF7Ch"
-"	      0054af4d    mov eax,[ebp-30h]"
+"	      0054af4d    mov eax,reinterpret_cast<uint32_t>(destcelly)"
 "	      0054af50    push eax"
-"	      0054af51    mov eax,[ebp-34h]"
+"	      0054af51    mov eax,reinterpret_cast<uint32_t>(destcellx)"
 "	      0054af54    push eax"
 "	      0054af55    mov eax,mission"
 "	      0054af58    push eax"
@@ -10195,7 +10195,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1697:
 	asm( 
-"	      0054afcc    test dword ptr [ebp-50h],0FFFFh"
+"	      0054afcc    test reinterpret_cast<uint32_t>(founddest),0FFFFh"
 "	      0054afd3    jne near ptr 0054AFDEh"
 "	      0054afd9    jmp near ptr 0054B0CAh"
 );
@@ -10205,9 +10205,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054afe1    push eax"
 "	      0054afe2    mov eax,offsetx"
 "	      0054afe5    push eax"
-"	      0054afe6    mov eax,[ebp+14h]"
+"	      0054afe6    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054afe9    push eax"
-"	      0054afea    mov eax,[ebp+10h]"
+"	      0054afea    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054afed    push eax"
 "	      0054afee    mov ecx,this"
 "	      0054aff4    call 0054FD4Dh"
@@ -10416,9 +10416,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b1a6    push eax"
 "	      0054b1a7    mov eax,[ebp-5Ch]"
 "	      0054b1aa    push eax"
-"	      0054b1ab    mov eax,[ebp+14h]"
+"	      0054b1ab    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054b1ae    push eax"
-"	      0054b1af    mov eax,[ebp+10h]"
+"	      0054b1af    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054b1b2    push eax"
 "	      0054b1b3    mov ecx,this"
 "	      0054b1b9    call 0054FD4Dh"
@@ -10523,10 +10523,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b2b4    push 5BBA14h"
 "	      0054b2b9    call 00554F30h"
 "	      0054b2be    add esp,10h"
-"	      0054b2c1    mov al,[ebp+10h]"
+"	      0054b2c1    mov al,reinterpret_cast<uint8_t>(cellx)"
 "	      0054b2c4    mov ecx,this"
 "	      0054b2ca    mov [ecx+88h],al"
-"	      0054b2d0    mov al,[ebp+14h]"
+"	      0054b2d0    mov al,reinterpret_cast<uint8_t>(celly)"
 "	      0054b2d3    mov ecx,this"
 "	      0054b2d9    mov [ecx+89h],al"
 "	      0054b2df    jmp near ptr 0054B2E4h"
@@ -10553,7 +10553,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 );
 // LINE 1762:
 	asm( 
-"	      0054b313    test dword ptr [ebp-78h],0FFFFh"
+"	      0054b313    test reinterpret_cast<uint32_t>(setmaster),0FFFFh"
 "	      0054b31a    jne near ptr 0054B33Ch"
 "	      0054b320    push 8C085h"
 "	      0054b325    push 5BAC40h"
@@ -10714,9 +10714,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b4c6    push eax"
 "	      0054b4c7    mov eax,offsetx"
 "	      0054b4ca    push eax"
-"	      0054b4cb    mov eax,[ebp+14h]"
+"	      0054b4cb    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      0054b4ce    push eax"
-"	      0054b4cf    mov eax,[ebp+10h]"
+"	      0054b4cf    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      0054b4d2    push eax"
 "	      0054b4d3    mov ecx,this"
 "	      0054b4d9    call 0054FD4Dh"
@@ -11501,7 +11501,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 );
 // LINE 1860:
 	asm( 
-"	      0054bf08    mov eax,[ebp-8]"
+"	      0054bf08    mov eax,reinterpret_cast<uint32_t>(nextsoundchannel)"
 "	      0054bf0b    push eax"
 "	      0054bf0c    push 2"
 "	      0054bf0e    call 0054BF20h"
@@ -11650,7 +11650,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 );
 // LINE 1877:
 	asm( 
-"	      0054c07b    mov eax,[ebp-8]"
+"	      0054c07b    mov eax,reinterpret_cast<uint32_t>(soundchannel)"
 "	      0054c07e    push eax"
 "	      0054c07f    mov ecx,obj"
 "	      0054c082    call 0054C0E7h"
@@ -11918,7 +11918,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 1917:
 	asm( 
-"	      0054c32f    test dword ptr [ebp+0Ch],0FFFFh"
+"	      0054c32f    test reinterpret_cast<uint32_t>(playforsure),0FFFFh"
 "	      0054c336    jne near ptr 0054C345h"
 );
 // LINE 1918:
@@ -12246,7 +12246,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 );
 // LINE 2010:
 	asm( 
-"	      0054c612    test dword ptr [ebp-0Ch],0FFFFh"
+"	      0054c612    test reinterpret_cast<uint32_t>(loop),0FFFFh"
 "	      0054c619    je near ptr 0054C623h"
 );
 // LINE 2011:
@@ -12355,7 +12355,7 @@ void cYObject::SimulateAll() {
 );
 // LINE 2098:
 	asm( 
-"	      0054c6cc    test dword ptr [ebp-4],0FFFFh"
+"	      0054c6cc    test reinterpret_cast<uint32_t>(simulate),0FFFFh"
 "	      0054c6d3    jne near ptr 0054C826h"
 );
 // LINE 2099:
@@ -13171,7 +13171,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 );
 // LINE 2206:
 	asm( 
-"	      0054d091    test dword ptr [ebp-4],0FFFFh"
+"	      0054d091    test reinterpret_cast<uint32_t>(success),0FFFFh"
 "	      0054d098    je near ptr 0054D0D3h"
 );
 // LINE 2207:
@@ -14179,7 +14179,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 );
 // LINE 2298:
 	asm( 
-"	      0054dd70    test dword ptr [ebp-8],0FFFFh"
+"	      0054dd70    test reinterpret_cast<uint32_t>(yaw),0FFFFh"
 "	      0054dd77    jne near ptr 0054DD87h"
 "	      0054dd7d    cmp movecode,0"
 "	      0054dd81    jne near ptr 0054DE09h"
@@ -16404,9 +16404,9 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 );
 // LINE 2549:
 	asm( 
-"	      0054fc58    mov eax,[ebp-4]"
+"	      0054fc58    mov eax,reinterpret_cast<uint32_t>(loccelly)"
 "	      0054fc5b    push eax"
-"	      0054fc5c    mov eax,[ebp-8]"
+"	      0054fc5c    mov eax,reinterpret_cast<uint32_t>(loccellx)"
 "	      0054fc5f    push eax"
 "	      0054fc60    call 00555746h"
 "	      0054fc65    add esp,8"
@@ -16477,10 +16477,10 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 "	      0054fd17    push 5BBA14h"
 "	      0054fd1c    call 00554F30h"
 "	      0054fd21    add esp,10h"
-"	      0054fd24    mov al,[ebp-8]"
+"	      0054fd24    mov al,reinterpret_cast<uint8_t>(loccellx)"
 "	      0054fd27    mov ecx,this"
 "	      0054fd2a    mov [ecx+88h],al"
-"	      0054fd30    mov al,[ebp-4]"
+"	      0054fd30    mov al,reinterpret_cast<uint8_t>(loccelly)"
 "	      0054fd33    mov ecx,this"
 "	      0054fd36    mov [ecx+89h],al"
 "	      0054fd3c    jmp near ptr 0054FD41h"
@@ -16579,9 +16579,9 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 );
 // LINE 2563:
 	asm( 
-"	      0054fe1a    mov eax,[ebp+0Ch]"
+"	      0054fe1a    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      0054fe1d    push eax"
-"	      0054fe1e    mov eax,[ebp+8]"
+"	      0054fe1e    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      0054fe21    push eax"
 "	      0054fe22    mov eax,loc.z"
 "	      0054fe25    push eax"
@@ -17934,7 +17934,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550a82    mov dword ptr [ebp-4],0"
 "	      00550a89    cmp dword ptr [ebp-18h],0"
 "	      00550a8d    je near ptr 00550ABBh"
-"	      00550a93    mov eax,[ebp-10h]"
+"	      00550a93    mov eax,reinterpret_cast<uint32_t>(id)"
 "	      00550a96    push eax"
 "	      00550a97    mov eax,loc.z"
 "	      00550a9a    push eax"
@@ -17944,7 +17944,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550aa2    push eax"
 "	      00550aa3    mov eax,behavior"
 "	      00550aa6    push eax"
-"	      00550aa7    mov eax,[ebp+8]"
+"	      00550aa7    mov eax,reinterpret_cast<uint32_t>(type)"
 "	      00550aaa    push eax"
 "	      00550aab    mov ecx,[ebp-18h]"
 "	      00550aae    call 00550D4Dh"
@@ -18384,7 +18384,7 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 );
 // LINE 2911:
 	asm( 
-"	      00550ec8    mov eax,[ebp+1Ch]"
+"	      00550ec8    mov eax,reinterpret_cast<uint32_t>(id)"
 "	      00550ecb    push eax"
 "	      00550ecc    mov ecx,this"
 "	      00550ecf    call 00550B30h"
@@ -18897,7 +18897,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 );
 // LINE 2989:
 	asm( 
-"	      00551497    test dword ptr [ebp-20h],0FFFFh"
+"	      00551497    test reinterpret_cast<uint32_t>(highres),0FFFFh"
 "	      0055149e    je near ptr 005514C2h"
 );
 // LINE 2990:
@@ -19360,7 +19360,7 @@ void cYObject::~cYObject() {
 // LINE 3072:
 	asm( 
 "	      00551940    jmp near ptr 005518FEh"
-"	      00551945    test dword ptr [ebp-14h],0FFFFh"
+"	      00551945    test reinterpret_cast<uint32_t>(found),0FFFFh"
 "	      0055194c    jne near ptr 0055196Eh"
 "	      00551952    push 8C085h"
 "	      00551957    push 5BB918h"

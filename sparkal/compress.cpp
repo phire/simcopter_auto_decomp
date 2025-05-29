@@ -817,9 +817,9 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 213:
 	asm( 
-"	      004ab010    mov eax,[ebp-10h]"
+"	      004ab010    mov eax,reinterpret_cast<uint32_t>(TransparentColor)"
 "	      004ab013    push eax"
-"	      004ab014    mov eax,[ebp-8]"
+"	      004ab014    mov eax,reinterpret_cast<uint32_t>(Height)"
 "	      004ab017    push eax"
 "	      004ab018    mov eax,pCompressedBits"
 "	      004ab01b    push eax"
@@ -836,13 +836,13 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 );
 // LINE 217:
 	asm( 
-"	      004ab031    mov eax,[ebp-10h]"
+"	      004ab031    mov eax,reinterpret_cast<uint32_t>(TransparentColor)"
 "	      004ab034    push eax"
-"	      004ab035    mov eax,[ebp-8]"
+"	      004ab035    mov eax,reinterpret_cast<uint32_t>(Height)"
 "	      004ab038    push eax"
-"	      004ab039    mov eax,[ebp-0Ch]"
+"	      004ab039    mov eax,reinterpret_cast<uint32_t>(Width)"
 "	      004ab03c    push eax"
-"	      004ab03d    mov eax,[ebp-1Ch]"
+"	      004ab03d    mov eax,reinterpret_cast<uint32_t>(LeftClipAmount)"
 "	      004ab040    push eax"
 "	      004ab041    mov eax,pCompressedBits"
 "	      004ab044    push eax"

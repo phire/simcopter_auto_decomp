@@ -2291,7 +2291,7 @@ void InventoryWindow::DrawInventory() {
 	asm( 
 "	      004aa237    mov eax,currentUserPersonalInfo"
 "	      004aa23a    mov edx,1"
-"	      004aa23f    mov cl,[ebp-24h]"
+"	      004aa23f    mov cl,reinterpret_cast<uint8_t>(lCurrentHeliType)"
 "	      004aa242    shl edx,cl"
 "	      004aa244    test [eax+44h],edx"
 "	      004aa247    je near ptr 004AA4DFh"

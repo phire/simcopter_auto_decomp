@@ -310,7 +310,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 198:
 	asm( 
-"	      004c488f    test dword ptr [ebp-14h],0FFFFh"
+"	      004c488f    test reinterpret_cast<uint32_t>(done),0FFFFh"
 "	      004c4896    jne near ptr 004C498Fh"
 );
 // LINE 199:
@@ -451,7 +451,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 );
 // LINE 227:
 	asm( 
-"	      004c499b    test dword ptr [ebp-14h],0FFFFh"
+"	      004c499b    test reinterpret_cast<uint32_t>(done),0FFFFh"
 "	      004c49a2    je near ptr 004C49B6h"
 "	      004c49a8    mov eax,cityName"
 "	      004c49ab    movsx eax,byte ptr [eax]"
@@ -733,7 +733,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 321:
 	asm( 
-"	      004c4b6c    test dword ptr [ebp-108h],0FFFFh"
+"	      004c4b6c    test reinterpret_cast<uint32_t>(bDone),0FFFFh"
 "	      004c4b76    jne near ptr 004C52ACh"
 );
 // LINE 322:
@@ -1440,7 +1440,7 @@ short S2CityLoad(char * filePath) {
 );
 // LINE 434:
 	asm( 
-"	      004c52ac    test dword ptr [ebp-114h],0FFFFh"
+"	      004c52ac    test reinterpret_cast<uint32_t>(bFoundName),0FFFFh"
 "	      004c52b6    je near ptr 004C530Ah"
 );
 // LINE 435:
@@ -6639,7 +6639,7 @@ void swizzle_shorts(char * data, long count) {
 );
 // LINE 1564:
 	asm( 
-"	      004c82f7    mov eax,[ebp-8]"
+"	      004c82f7    mov eax,reinterpret_cast<uint32_t>(sval)"
 "	      004c82fa    push eax"
 "	      004c82fb    call 004C8317h"
 "	      004c8300    add esp,4"
@@ -7598,7 +7598,7 @@ short S2CityAlloc() {
 );
 // LINE 1861:
 	asm( 
-"	      004c8aec    mov al,[ebp-18h]"
+"	      004c8aec    mov al,reinterpret_cast<uint8_t>(z)"
 "	      004c8aef    movsx ecx,x"
 "	      004c8af3    mov ecx,[ecx*4+63A270h]"
 "	      004c8afa    movsx edx,y"
@@ -7606,7 +7606,7 @@ short S2CityAlloc() {
 );
 // LINE 1862:
 	asm( 
-"	      004c8b01    mov al,[ebp-18h]"
+"	      004c8b01    mov al,reinterpret_cast<uint8_t>(z)"
 "	      004c8b04    movsx ecx,x"
 "	      004c8b08    mov ecx,[ecx*4+639850h]"
 "	      004c8b0f    movsx edx,y"
@@ -7614,7 +7614,7 @@ short S2CityAlloc() {
 );
 // LINE 1863:
 	asm( 
-"	      004c8b16    mov al,[ebp-18h]"
+"	      004c8b16    mov al,reinterpret_cast<uint8_t>(z)"
 "	      004c8b19    movsx ecx,x"
 "	      004c8b1d    mov ecx,[ecx*4+639DE0h]"
 "	      004c8b24    movsx edx,y"
@@ -7622,7 +7622,7 @@ short S2CityAlloc() {
 );
 // LINE 1864:
 	asm( 
-"	      004c8b2b    mov al,[ebp-18h]"
+"	      004c8b2b    mov al,reinterpret_cast<uint8_t>(z)"
 "	      004c8b2e    movsx ecx,x"
 "	      004c8b32    mov ecx,[ecx*4+63A030h]"
 "	      004c8b39    movsx edx,y"
@@ -7630,7 +7630,7 @@ short S2CityAlloc() {
 );
 // LINE 1865:
 	asm( 
-"	      004c8b40    mov al,[ebp-18h]"
+"	      004c8b40    mov al,reinterpret_cast<uint8_t>(z)"
 "	      004c8b43    movsx ecx,x"
 "	      004c8b47    mov ecx,[ecx*4+639AD0h]"
 "	      004c8b4e    movsx edx,y"
@@ -8403,7 +8403,7 @@ void CStringToPString(char * string) {
 );
 // LINE 2002:
 	asm( 
-"	      004c92d8    mov al,[ebp-4]"
+"	      004c92d8    mov al,reinterpret_cast<uint8_t>(sizeCString)"
 "	      004c92db    mov ecx,string"
 "	      004c92de    mov [ecx],al"
 );

@@ -370,7 +370,7 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 );
 // LINE 218:
 	asm( 
-"	      005363b9    mov eax,[ebp+8]"
+"	      005363b9    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      005363bc    and eax,0FFFFh"
 "	      005363c1    cmp eax,0D3h"
 "	      005363c6    jne near ptr 005363D6h"
@@ -1000,8 +1000,8 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 );
 // LINE 426:
 	asm( 
-"	      005368ea    mov ax,[ebp+8]"
-"	      005368ee    mov [ebp-1Ch],ax"
+"	      005368ea    mov ax,reinterpret_cast<uint16_t>(fireloc.x)"
+"	      005368ee    mov reinterpret_cast<uint16_t>(dyfireloc.x),ax"
 );
 // LINE 429:
 	asm( 

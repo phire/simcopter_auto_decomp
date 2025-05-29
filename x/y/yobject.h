@@ -255,7 +255,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 );
 // LINE 1031:
 	asm( 
-"	      005522f8    test dword ptr [ebp-8],0FFFFh"
+"	      005522f8    test reinterpret_cast<uint32_t>(yes),0FFFFh"
 "	      005522ff    jne near ptr 00552321h"
 "	      00552305    push 8C085h"
 "	      0055230a    push 5BBDE4h"

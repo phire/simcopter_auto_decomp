@@ -199,7 +199,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 "	      0043d501    mov [ebp-8],eax"
 "	      0043d504    cmp dword ptr [ebp-8],0"
 "	      0043d508    je near ptr 0043D522h"
-"	      0043d50e    mov eax,[ebp+8]"
+"	      0043d50e    mov eax,reinterpret_cast<uint32_t>(chNewValue)"
 "	      0043d511    push eax"
 "	      0043d512    mov ecx,[ebp-8]"
 "	      0043d515    call 0043D40Fh"
@@ -440,7 +440,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 );
 // LINE 103:
 	asm( 
-"	      0043d68b    mov eax,[ebp+8]"
+"	      0043d68b    mov eax,reinterpret_cast<uint32_t>(chValue)"
 "	      0043d68e    push eax"
 "	      0043d68f    mov ecx,this"
 "	      0043d692    call 0043D7CEh"

@@ -269,9 +269,9 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 275:
 	asm( 
-"	      005416ed    mov eax,[ebp-8]"
+"	      005416ed    mov eax,reinterpret_cast<uint32_t>(destIndex.x)"
 "	      005416f0    push eax"
-"	      005416f1    mov eax,[ebp-4]"
+"	      005416f1    mov eax,reinterpret_cast<uint32_t>(startIndex.x)"
 "	      005416f4    push eax"
 "	      005416f5    mov ecx,this"
 "	      005416f8    call 005427F5h"
@@ -427,7 +427,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 314:
 	asm( 
-"	      00541835    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541835    mov al,reinterpret_cast<uint8_t>(destGoal1.edgeIndex)"
 "	      00541838    mov ecx,this"
 "	      0054183b    xor edx,edx"
 "	      0054183d    mov dl,[ecx+293h]"
@@ -441,7 +441,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 319:
 	asm( 
-"	      00541852    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541852    mov al,reinterpret_cast<uint8_t>(destGoal1.edgeIndex)"
 "	      00541855    mov ecx,this"
 "	      00541858    xor edx,edx"
 "	      0054185a    mov dl,[ecx+293h]"
@@ -514,7 +514,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 );
 // LINE 343:
 	asm( 
-"	      00541911    mov ax,[ebp+0B8h]"
+"	      00541911    mov ax,reinterpret_cast<uint16_t>(destLoc.x)"
 "	      00541918    mov ecx,this"
 "	      0054191b    mov [ecx+11Ch],ax"
 );
@@ -666,22 +666,22 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 383:
 	asm( 
-"	      00541a52    mov eax,[ebp-0Ch]"
+"	      00541a52    mov eax,reinterpret_cast<uint32_t>(destIndex.x)"
 "	      00541a55    push eax"
-"	      00541a56    mov eax,[ebp-8]"
+"	      00541a56    mov eax,reinterpret_cast<uint32_t>(stationIndex.x)"
 "	      00541a59    push eax"
 "	      00541a5a    mov ecx,this"
 "	      00541a5d    call 005427F5h"
 );
 // LINE 388:
 	asm( 
-"	      00541a62    mov ax,[ebp+0C0h]"
+"	      00541a62    mov ax,reinterpret_cast<uint16_t>(destLoc.x)"
 "	      00541a69    mov ecx,this"
 "	      00541a6c    mov [ecx+11Ch],ax"
 );
 // LINE 389:
 	asm( 
-"	      00541a73    mov ax,[ebp+64h]"
+"	      00541a73    mov ax,reinterpret_cast<uint16_t>(stationLoc.x)"
 "	      00541a77    mov ecx,this"
 "	      00541a7a    mov [ecx+11Ah],ax"
 );
@@ -898,7 +898,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 438:
 	asm( 
-"	      00541c7f    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541c7f    mov al,reinterpret_cast<uint8_t>(destGoal1.edgeIndex)"
 "	      00541c82    mov ecx,this"
 "	      00541c85    xor edx,edx"
 "	      00541c87    mov dl,[ecx+293h]"
@@ -912,7 +912,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 );
 // LINE 443:
 	asm( 
-"	      00541c9c    mov al,reinterpret_cast<unit8_t>(destGoal1.edgeIndex)"
+"	      00541c9c    mov al,reinterpret_cast<uint8_t>(destGoal1.edgeIndex)"
 "	      00541c9f    mov ecx,this"
 "	      00541ca2    xor edx,edx"
 "	      00541ca4    mov dl,[ecx+293h]"
@@ -1353,9 +1353,9 @@ void EmergencyVehicleClass::GoBackToStation() {
 );
 // LINE 549:
 	asm( 
-"	      005420ec    mov eax,[ebp-34h]"
+"	      005420ec    mov eax,reinterpret_cast<uint32_t>(destVertex.x)"
 "	      005420ef    push eax"
-"	      005420f0    mov eax,[ebp-30h]"
+"	      005420f0    mov eax,reinterpret_cast<uint32_t>(startVertex.x)"
 "	      005420f3    push eax"
 "	      005420f4    mov ecx,5C37F8h"
 "	      005420f9    call 00543704h"
@@ -2256,8 +2256,8 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 );
 // LINE 1411:
 	asm( 
-"	      0054280b    mov ax,[ebp+0Ch]"
-"	      0054280f    mov [ebp-0Ch],ax"
+"	      0054280b    mov ax,reinterpret_cast<uint16_t>(destVertex.x)"
+"	      0054280f    mov reinterpret_cast<uint16_t>(index.x),ax"
 );
 // LINE 1412:
 	asm( 
@@ -2329,8 +2329,8 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 );
 // LINE 1432:
 	asm( 
-"	      005428b9    mov ax,[ebp+0Ch]"
-"	      005428bd    mov [ebp-0Ch],ax"
+"	      005428b9    mov ax,reinterpret_cast<uint16_t>(destVertex.x)"
+"	      005428bd    mov reinterpret_cast<uint16_t>(index.x),ax"
 );
 // LINE 1433:
 	asm( 

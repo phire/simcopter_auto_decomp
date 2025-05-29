@@ -418,7 +418,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 540:
 	asm( 
-"	      004cf39c    mov al,[ebp-0Ch]"
+"	      004cf39c    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004cf39f    mov ecx,r"
 "	      004cf3a2    add ecx,len"
 "	      004cf3a5    mov edx,forest"
@@ -591,7 +591,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 564:
 	asm( 
-"	      004cf529    mov al,[ebp-0Ch]"
+"	      004cf529    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004cf52c    mov ecx,s"
 "	      004cf52f    mov edx,forest"
 "	      004cf532    mov [ecx+edx],al"
@@ -600,7 +600,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	asm( 
 "	      004cf535    cmp s,3Bh"
 "	      004cf539    jge near ptr 004CF54Fh"
-"	      004cf53f    mov al,[ebp-0Ch]"
+"	      004cf53f    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004cf542    mov ecx,s"
 "	      004cf545    mov edx,forest"
 "	      004cf548    mov [ecx+edx+1000h],al"
@@ -2460,7 +2460,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 608:
 	asm( 
-"	      004d04b3    mov al,[ebp-8]"
+"	      004d04b3    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004d04b6    mov tempByte,al"
 );
 // LINE 609:
@@ -2484,7 +2484,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 612:
 	asm( 
-"	      004d04e1    mov al,[ebp-8]"
+"	      004d04e1    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004d04e4    mov ecx,r"
 "	      004d04e7    mov edx,forest"
 "	      004d04ea    mov [ecx+edx],al"
@@ -2543,7 +2543,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 620:
 	asm( 
-"	      004d055a    mov al,[ebp-8]"
+"	      004d055a    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004d055d    mov tempByte,al"
 );
 // LINE 621:
@@ -2567,7 +2567,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 );
 // LINE 624:
 	asm( 
-"	      004d0588    mov al,[ebp-8]"
+"	      004d0588    mov al,reinterpret_cast<uint8_t>(c)"
 "	      004d058b    mov ecx,r"
 "	      004d058e    mov edx,forest"
 "	      004d0591    mov [ecx+edx],al"

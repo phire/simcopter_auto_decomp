@@ -235,7 +235,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 // LINE 104:
 	asm( 
 "	      0041f67e    mov eax,1"
-"	      0041f683    mov cl,[ebp-18h]"
+"	      0041f683    mov cl,reinterpret_cast<uint8_t>(ddsd.ddpfPixelFormat.dwZBufferBitDepth)"
 "	      0041f686    shl eax,cl"
 "	      0041f688    dec eax"
 "	      0041f689    and dw,eax"
@@ -353,7 +353,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 "	      0041f74d    jne near ptr 0041F79Fh"
 "	      0041f753    cmp pal.dwData,61746164h"
 "	      0041f75d    jne near ptr 0041F79Fh"
-"	      0041f763    mov eax,[ebp-414h]"
+"	      0041f763    mov eax,reinterpret_cast<uint32_t>(pal.palVersion)"
 "	      0041f769    and eax,0FFFFh"
 "	      0041f76e    cmp eax,300h"
 "	      0041f773    jne near ptr 0041F79Fh"

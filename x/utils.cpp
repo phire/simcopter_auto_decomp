@@ -241,7 +241,7 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 );
 // LINE 94:
 	asm( 
-"	      00565e59    test dword ptr [ebp-4],0FFFFh"
+"	      00565e59    test reinterpret_cast<uint32_t>(neg),0FFFFh"
 "	      00565e60    je near ptr 00565E72h"
 "	      00565e66    mov eax,num"
 "	      00565e69    mov eax,[eax]"
@@ -371,7 +371,7 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 129:
 	asm( 
-"	      00565f26    test dword ptr [ebp-8],0FFFFh"
+"	      00565f26    test reinterpret_cast<uint32_t>(neg),0FFFFh"
 "	      00565f2d    je near ptr 00565F5Ah"
 );
 // LINE 131:
@@ -402,7 +402,7 @@ void Num2Str(long num, unsigned char * str) {
 );
 // LINE 138:
 	asm( 
-"	      00565f5a    mov al,[ebp-0Ch]"
+"	      00565f5a    mov al,reinterpret_cast<uint8_t>(power)"
 "	      00565f5d    mov ecx,str"
 "	      00565f60    mov [ecx],al"
 );
@@ -697,7 +697,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 );
 // LINE 195:
 	asm( 
-"	      0056613d    mov al,[ebp-8]"
+"	      0056613d    mov al,reinterpret_cast<uint8_t>(power)"
 "	      00566140    mov ecx,str"
 "	      00566143    mov [ecx],al"
 );
@@ -814,7 +814,7 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 );
 // LINE 219:
 	asm( 
-"	      005661e1    mov al,[ebp+8]"
+"	      005661e1    mov al,reinterpret_cast<uint8_t>(namelet)"
 "	      005661e4    mov ecx,name"
 "	      005661e7    mov [ecx+4],al"
 );
@@ -1128,7 +1128,7 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 );
 // LINE 450:
 	asm( 
-"	      005663e3    mov eax,[ebp-4]"
+"	      005663e3    mov eax,reinterpret_cast<uint32_t>(copyBytes)"
 "	      005663e6    and eax,0FFFFh"
 "	      005663eb    push eax"
 "	      005663ec    mov eax,str2"
@@ -1148,7 +1148,7 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 "	      00566405    mov eax,str2"
 "	      00566408    xor ecx,ecx"
 "	      0056640a    mov cl,[eax]"
-"	      0056640c    mov eax,[ebp-4]"
+"	      0056640c    mov eax,reinterpret_cast<uint32_t>(copyBytes)"
 "	      0056640f    and eax,0FFFFh"
 "	      00566414    add ecx,eax"
 "	      00566416    mov eax,str2"
@@ -1197,7 +1197,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 );
 // LINE 459:
 	asm( 
-"	      00566458    mov eax,[ebp+10h]"
+"	      00566458    mov eax,reinterpret_cast<uint32_t>(destSize)"
 "	      0056645b    push eax"
 "	      0056645c    mov eax,dest"
 "	      0056645f    push eax"
@@ -1241,7 +1241,7 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 );
 // LINE 468:
 	asm( 
-"	      00566498    mov eax,[ebp+10h]"
+"	      00566498    mov eax,reinterpret_cast<uint32_t>(destSize)"
 "	      0056649b    push eax"
 "	      0056649c    mov eax,str"
 "	      0056649f    push eax"
@@ -1295,7 +1295,7 @@ void HexToString(unsigned long num, unsigned char * str) {
 "	      005664d9    test eax,eax"
 "	      005664db    jl near ptr 0056650Ah"
 "	      005664e1    mov ebx,1"
-"	      005664e6    mov cl,[ebp-8]"
+"	      005664e6    mov cl,reinterpret_cast<uint8_t>(position)"
 "	      005664e9    shl ebx,cl"
 "	      005664eb    mov eax,num"
 "	      005664ee    sub edx,edx"
@@ -1343,7 +1343,7 @@ void HexToString(unsigned long num, unsigned char * str) {
 // LINE 517:
 	asm( 
 "	      0056654a    mov ebx,1"
-"	      0056654f    mov cl,[ebp-8]"
+"	      0056654f    mov cl,reinterpret_cast<uint8_t>(position)"
 "	      00566552    shl ebx,cl"
 "	      00566554    mov eax,num"
 "	      00566557    sub edx,edx"
@@ -1353,7 +1353,7 @@ void HexToString(unsigned long num, unsigned char * str) {
 // LINE 518:
 	asm( 
 "	      0056655e    mov eax,0Fh"
-"	      00566563    mov cl,[ebp-8]"
+"	      00566563    mov cl,reinterpret_cast<uint8_t>(position)"
 "	      00566566    shl eax,cl"
 "	      00566568    not eax"
 "	      0056656a    and num,eax"
@@ -1751,7 +1751,7 @@ struct Point center(struct Rect* pRect) {
 );
 // LINE 1258:
 	asm( 
-"	      0056683a    mov eax,[ebp-4]"
+"	      0056683a    mov eax,reinterpret_cast<uint32_t>(tmp.v)"
 "	      0056683d    jmp near ptr 00566842h"
 );
 // LINE 1259:

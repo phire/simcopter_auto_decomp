@@ -660,14 +660,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 406:
 	asm( 
-"	      004fed0d    mov eax,[ebp-18h]"
+"	      004fed0d    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fed10    and eax,0FFFFh"
 "	      004fed15    shr eax,6"
 "	      004fed18    mov alt,ax"
 );
 // LINE 407:
 	asm( 
-"	      004fed1c    mov eax,[ebp-18h]"
+"	      004fed1c    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fed1f    and eax,0FFFFh"
 "	      004fed24    sub eax,80h"
 "	      004fed29    mov ecx,ptr"
@@ -716,14 +716,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 416:
 	asm( 
-"	      004feda4    mov eax,[ebp-18h]"
+"	      004feda4    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004feda7    and eax,0FFFFh"
 "	      004fedac    shr eax,6"
 "	      004fedaf    mov alt,ax"
 );
 // LINE 417:
 	asm( 
-"	      004fedb3    mov eax,[ebp-18h]"
+"	      004fedb3    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fedb6    and eax,0FFFFh"
 "	      004fedbb    add eax,50h"
 "	      004fedbe    mov ecx,ptr"
@@ -750,14 +750,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 422:
 	asm( 
-"	      004fedf8    mov eax,[ebp-18h]"
+"	      004fedf8    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fedfb    and eax,0FFFFh"
 "	      004fee00    shr eax,6"
 "	      004fee03    mov alt,ax"
 );
 // LINE 423:
 	asm( 
-"	      004fee07    mov eax,[ebp-18h]"
+"	      004fee07    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fee0a    and eax,0FFFFh"
 "	      004fee0f    sub eax,80h"
 "	      004fee14    mov ecx,ptr"
@@ -1110,14 +1110,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 523:
 	asm( 
-"	      004ff10c    mov eax,[ebp-18h]"
+"	      004ff10c    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff10f    and eax,0FFFFh"
 "	      004ff114    shr eax,6"
 "	      004ff117    mov alt,ax"
 );
 // LINE 524:
 	asm( 
-"	      004ff11b    mov eax,[ebp-18h]"
+"	      004ff11b    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff11e    and eax,0FFFFh"
 "	      004ff123    sub eax,80h"
 "	      004ff128    mov ecx,ptr"
@@ -1126,7 +1126,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 525:
 	asm( 
-"	      004ff130    mov eax,[ebp-18h]"
+"	      004ff130    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff133    and eax,0FFFFh"
 "	      004ff138    sub eax,80h"
 "	      004ff13d    mov ecx,ptr"
@@ -1181,14 +1181,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 535:
 	asm( 
-"	      004ff1c1    mov eax,[ebp-18h]"
+"	      004ff1c1    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff1c4    and eax,0FFFFh"
 "	      004ff1c9    shr eax,6"
 "	      004ff1cc    mov alt,ax"
 );
 // LINE 536:
 	asm( 
-"	      004ff1d0    mov eax,[ebp-18h]"
+"	      004ff1d0    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff1d3    and eax,0FFFFh"
 "	      004ff1d8    add eax,50h"
 "	      004ff1db    mov ecx,ptr"
@@ -1197,7 +1197,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 537:
 	asm( 
-"	      004ff1e3    mov eax,[ebp-18h]"
+"	      004ff1e3    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff1e6    and eax,0FFFFh"
 "	      004ff1eb    add eax,50h"
 "	      004ff1ee    mov ecx,ptr"
@@ -1224,14 +1224,14 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 542:
 	asm( 
-"	      004ff228    mov eax,[ebp-18h]"
+"	      004ff228    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff22b    and eax,0FFFFh"
 "	      004ff230    shr eax,6"
 "	      004ff233    mov alt,ax"
 );
 // LINE 543:
 	asm( 
-"	      004ff237    mov eax,[ebp-18h]"
+"	      004ff237    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff23a    and eax,0FFFFh"
 "	      004ff23f    sub eax,80h"
 "	      004ff244    mov ecx,ptr"
@@ -1240,7 +1240,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 544:
 	asm( 
-"	      004ff24c    mov eax,[ebp-18h]"
+"	      004ff24c    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff24f    and eax,0FFFFh"
 "	      004ff254    sub eax,80h"
 "	      004ff259    mov ecx,ptr"
@@ -1744,7 +1744,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 671:
 	asm( 
-"	      004ff64a    mov eax,[ebp-18h]"
+"	      004ff64a    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff64d    and eax,0FFFFh"
 "	      004ff652    shr eax,6"
 "	      004ff655    mov alt,ax"
@@ -1757,7 +1757,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 673:
 	asm( 
-"	      004ff662    mov eax,[ebp-18h]"
+"	      004ff662    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff665    and eax,0FFFFh"
 "	      004ff66a    sub eax,80h"
 "	      004ff66f    mov ecx,ptr"
@@ -1766,7 +1766,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 674:
 	asm( 
-"	      004ff677    mov eax,[ebp-18h]"
+"	      004ff677    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff67a    and eax,0FFFFh"
 "	      004ff67f    sub eax,80h"
 "	      004ff684    mov ecx,ptr"
@@ -1775,7 +1775,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 675:
 	asm( 
-"	      004ff68c    mov eax,[ebp-18h]"
+"	      004ff68c    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff68f    and eax,0FFFFh"
 "	      004ff694    sub eax,80h"
 "	      004ff699    mov ecx,ptr"
@@ -1842,7 +1842,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 687:
 	asm( 
-"	      004ff72f    mov eax,[ebp-18h]"
+"	      004ff72f    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff732    and eax,0FFFFh"
 "	      004ff737    shr eax,6"
 "	      004ff73a    mov alt,ax"
@@ -1855,7 +1855,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 689:
 	asm( 
-"	      004ff747    mov eax,[ebp-18h]"
+"	      004ff747    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff74a    and eax,0FFFFh"
 "	      004ff74f    add eax,50h"
 "	      004ff752    mov ecx,ptr"
@@ -1864,7 +1864,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 690:
 	asm( 
-"	      004ff75a    mov eax,[ebp-18h]"
+"	      004ff75a    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff75d    and eax,0FFFFh"
 "	      004ff762    add eax,50h"
 "	      004ff765    mov ecx,ptr"
@@ -1873,7 +1873,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 691:
 	asm( 
-"	      004ff76d    mov eax,[ebp-18h]"
+"	      004ff76d    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff770    and eax,0FFFFh"
 "	      004ff775    add eax,50h"
 "	      004ff778    mov ecx,ptr"
@@ -1900,7 +1900,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 696:
 	asm( 
-"	      004ff7b2    mov eax,[ebp-18h]"
+"	      004ff7b2    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff7b5    and eax,0FFFFh"
 "	      004ff7ba    shr eax,6"
 "	      004ff7bd    mov alt,ax"
@@ -1913,7 +1913,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 698:
 	asm( 
-"	      004ff7ca    mov eax,[ebp-18h]"
+"	      004ff7ca    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff7cd    and eax,0FFFFh"
 "	      004ff7d2    sub eax,80h"
 "	      004ff7d7    mov ecx,ptr"
@@ -1922,7 +1922,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 699:
 	asm( 
-"	      004ff7df    mov eax,[ebp-18h]"
+"	      004ff7df    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff7e2    and eax,0FFFFh"
 "	      004ff7e7    sub eax,80h"
 "	      004ff7ec    mov ecx,ptr"
@@ -1931,7 +1931,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 700:
 	asm( 
-"	      004ff7f4    mov eax,[ebp-18h]"
+"	      004ff7f4    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ff7f7    and eax,0FFFFh"
 "	      004ff7fc    sub eax,80h"
 "	      004ff801    mov ecx,ptr"
@@ -2693,7 +2693,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 869:
 	asm( 
-"	      004ffd9f    mov eax,[ebp-18h]"
+"	      004ffd9f    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffda2    and eax,0FFFFh"
 "	      004ffda7    shr eax,6"
 "	      004ffdaa    mov alt,ax"
@@ -2706,7 +2706,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 871:
 	asm( 
-"	      004ffdb7    mov eax,[ebp-18h]"
+"	      004ffdb7    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffdba    and eax,0FFFFh"
 "	      004ffdbf    sub eax,80h"
 "	      004ffdc4    mov ecx,ptr"
@@ -2715,7 +2715,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 872:
 	asm( 
-"	      004ffdcc    mov eax,[ebp-18h]"
+"	      004ffdcc    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffdcf    and eax,0FFFFh"
 "	      004ffdd4    sub eax,80h"
 "	      004ffdd9    mov ecx,ptr"
@@ -2724,7 +2724,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 873:
 	asm( 
-"	      004ffde1    mov eax,[ebp-18h]"
+"	      004ffde1    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffde4    and eax,0FFFFh"
 "	      004ffde9    sub eax,80h"
 "	      004ffdee    mov ecx,ptr"
@@ -2733,7 +2733,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 874:
 	asm( 
-"	      004ffdf6    mov eax,[ebp-18h]"
+"	      004ffdf6    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffdf9    and eax,0FFFFh"
 "	      004ffdfe    sub eax,80h"
 "	      004ffe03    mov ecx,ptr"
@@ -2742,7 +2742,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 875:
 	asm( 
-"	      004ffe0b    mov eax,[ebp-18h]"
+"	      004ffe0b    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffe0e    and eax,0FFFFh"
 "	      004ffe13    sub eax,80h"
 "	      004ffe18    mov ecx,ptr"
@@ -2751,7 +2751,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 876:
 	asm( 
-"	      004ffe20    mov eax,[ebp-18h]"
+"	      004ffe20    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffe23    and eax,0FFFFh"
 "	      004ffe28    sub eax,80h"
 "	      004ffe2d    mov ecx,ptr"
@@ -2760,7 +2760,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 877:
 	asm( 
-"	      004ffe35    mov eax,[ebp-18h]"
+"	      004ffe35    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffe38    and eax,0FFFFh"
 "	      004ffe3d    sub eax,80h"
 "	      004ffe42    mov ecx,ptr"
@@ -2851,7 +2851,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 893:
 	asm( 
-"	      004ffefc    mov eax,[ebp-18h]"
+"	      004ffefc    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffeff    and eax,0FFFFh"
 "	      004fff04    shr eax,6"
 "	      004fff07    mov alt,ax"
@@ -2864,7 +2864,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 895:
 	asm( 
-"	      004fff14    mov eax,[ebp-18h]"
+"	      004fff14    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff17    and eax,0FFFFh"
 "	      004fff1c    add eax,50h"
 "	      004fff1f    mov ecx,ptr"
@@ -2873,7 +2873,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 896:
 	asm( 
-"	      004fff27    mov eax,[ebp-18h]"
+"	      004fff27    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff2a    and eax,0FFFFh"
 "	      004fff2f    add eax,50h"
 "	      004fff32    mov ecx,ptr"
@@ -2882,7 +2882,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 897:
 	asm( 
-"	      004fff3a    mov eax,[ebp-18h]"
+"	      004fff3a    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff3d    and eax,0FFFFh"
 "	      004fff42    add eax,50h"
 "	      004fff45    mov ecx,ptr"
@@ -2891,7 +2891,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 898:
 	asm( 
-"	      004fff4d    mov eax,[ebp-18h]"
+"	      004fff4d    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff50    and eax,0FFFFh"
 "	      004fff55    add eax,50h"
 "	      004fff58    mov ecx,ptr"
@@ -2900,7 +2900,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 899:
 	asm( 
-"	      004fff60    mov eax,[ebp-18h]"
+"	      004fff60    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff63    and eax,0FFFFh"
 "	      004fff68    add eax,50h"
 "	      004fff6b    mov ecx,ptr"
@@ -2909,7 +2909,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 900:
 	asm( 
-"	      004fff73    mov eax,[ebp-18h]"
+"	      004fff73    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff76    and eax,0FFFFh"
 "	      004fff7b    add eax,50h"
 "	      004fff7e    mov ecx,ptr"
@@ -2918,7 +2918,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 901:
 	asm( 
-"	      004fff86    mov eax,[ebp-18h]"
+"	      004fff86    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fff89    and eax,0FFFFh"
 "	      004fff8e    add eax,50h"
 "	      004fff91    mov ecx,ptr"
@@ -2945,7 +2945,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 906:
 	asm( 
-"	      004fffcb    mov eax,[ebp-18h]"
+"	      004fffcb    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fffce    and eax,0FFFFh"
 "	      004fffd3    shr eax,6"
 "	      004fffd6    mov alt,ax"
@@ -2958,7 +2958,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 908:
 	asm( 
-"	      004fffe3    mov eax,[ebp-18h]"
+"	      004fffe3    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004fffe6    and eax,0FFFFh"
 "	      004fffeb    sub eax,80h"
 "	      004ffff0    mov ecx,ptr"
@@ -2967,7 +2967,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 909:
 	asm( 
-"	      004ffff8    mov eax,[ebp-18h]"
+"	      004ffff8    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      004ffffb    and eax,0FFFFh"
 "	      00500000    sub eax,80h"
 "	      00500005    mov ecx,ptr"
@@ -2976,7 +2976,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 910:
 	asm( 
-"	      0050000d    mov eax,[ebp-18h]"
+"	      0050000d    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      00500010    and eax,0FFFFh"
 "	      00500015    sub eax,80h"
 "	      0050001a    mov ecx,ptr"
@@ -2985,7 +2985,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 911:
 	asm( 
-"	      00500022    mov eax,[ebp-18h]"
+"	      00500022    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      00500025    and eax,0FFFFh"
 "	      0050002a    sub eax,80h"
 "	      0050002f    mov ecx,ptr"
@@ -2994,7 +2994,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 912:
 	asm( 
-"	      00500037    mov eax,[ebp-18h]"
+"	      00500037    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      0050003a    and eax,0FFFFh"
 "	      0050003f    sub eax,80h"
 "	      00500044    mov ecx,ptr"
@@ -3003,7 +3003,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 913:
 	asm( 
-"	      0050004c    mov eax,[ebp-18h]"
+"	      0050004c    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      0050004f    and eax,0FFFFh"
 "	      00500054    sub eax,80h"
 "	      00500059    mov ecx,ptr"
@@ -3012,7 +3012,7 @@ void S3MapRender(long posx, long posy) {
 );
 // LINE 914:
 	asm( 
-"	      00500061    mov eax,[ebp-18h]"
+"	      00500061    mov eax,reinterpret_cast<uint32_t>(alt)"
 "	      00500064    and eax,0FFFFh"
 "	      00500069    sub eax,80h"
 "	      0050006e    mov ecx,ptr"

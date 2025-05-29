@@ -156,7 +156,7 @@ short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, st
 	asm( 
 "	      00539d6d    mov eax,result"
 "	      00539d70    push eax"
-"	      00539d71    mov eax,[ebp+0Ch]"
+"	      00539d71    mov eax,reinterpret_cast<uint32_t>(gc.x)"
 "	      00539d74    push eax"
 "	      00539d75    mov ecx,station"
 "	      00539d78    call 0053AA5Fh"
@@ -232,7 +232,7 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	asm( 
 "	      00539dc6    mov eax,loc"
 "	      00539dc9    mov ax,[eax]"
-"	      00539dcc    mov [ebp-8],ax"
+"	      00539dcc    mov reinterpret_cast<uint16_t>(center.x),ax"
 );
 // LINE 85:
 	asm( 
@@ -1737,7 +1737,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 );
 // LINE 385:
 	asm( 
-"	      0053aa6b    mov eax,[ebp+8]"
+"	      0053aa6b    mov eax,reinterpret_cast<uint32_t>(gc.x)"
 "	      0053aa6e    push eax"
 "	      0053aa6f    mov ecx,this"
 "	      0053aa72    call 0053A1FBh"
@@ -1770,7 +1770,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 );
 // LINE 392:
 	asm( 
-"	      0053aaa9    mov ax,[ebp-8]"
+"	      0053aaa9    mov ax,reinterpret_cast<uint16_t>(removedStruct.cost)"
 "	      0053aaad    jmp near ptr 0053AAC6h"
 );
 // LINE 394:
@@ -1837,7 +1837,7 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 );
 // LINE 410:
 	asm( 
-"	      0053ab0b    mov ax,[ebp-8]"
+"	      0053ab0b    mov ax,reinterpret_cast<uint16_t>(removedStruct.cost)"
 "	      0053ab0f    jmp near ptr 0053AB28h"
 );
 // LINE 412:
@@ -1984,12 +1984,12 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 450:
 	asm( 
-"	      0053ac5d    mov al,[ebp+8]"
+"	      0053ac5d    mov al,reinterpret_cast<uint8_t>(mapx)"
 "	      0053ac60    mov destLoc.x,al"
 );
 // LINE 451:
 	asm( 
-"	      0053ac66    mov al,[ebp+0Ch]"
+"	      0053ac66    mov al,reinterpret_cast<uint8_t>(mapy)"
 "	      0053ac69    mov destLoc.y,al"
 );
 // LINE 454:
@@ -2352,7 +2352,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b22f    push eax"
 "	      0053b230    mov eax,vehicleList"
 "	      0053b233    push eax"
-"	      0053b234    mov eax,[ebp-0A4h]"
+"	      0053b234    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b23a    push eax"
 "	      0053b23b    mov ecx,this"
 "	      0053b241    call 0053A358h"
@@ -2376,7 +2376,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b26e    push eax"
 "	      0053b26f    lea eax,startGoal1.pRGV"
 "	      0053b275    push eax"
-"	      0053b276    mov eax,[ebp-0A4h]"
+"	      0053b276    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b27c    push eax"
 "	      0053b27d    mov eax,vehicleHeapStruct.pVehicle"
 "	      0053b283    mov ax,[eax+7Ch]"
@@ -2402,9 +2402,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b2b4    push eax"
 "	      0053b2b5    lea eax,destGoal1.pRGV"
 "	      0053b2bb    push eax"
-"	      0053b2bc    mov eax,[ebp-0A4h]"
+"	      0053b2bc    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b2c2    push eax"
-"	      0053b2c3    mov eax,[ebp-0A4h]"
+"	      0053b2c3    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b2c9    push eax"
 "	      0053b2ca    lea eax,[ebp-184h]"
 "	      0053b2d0    push eax"
@@ -2453,9 +2453,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 507:
 	asm( 
-"	      0053b33f    mov eax,[ebp-0B4h]"
+"	      0053b33f    mov eax,reinterpret_cast<uint32_t>(destVert.x)"
 "	      0053b345    push eax"
-"	      0053b346    mov eax,[ebp-4]"
+"	      0053b346    mov eax,reinterpret_cast<uint32_t>(startVertex.x)"
 "	      0053b349    push eax"
 "	      0053b34a    mov ecx,5C37F8h"
 "	      0053b34f    call 00543704h"
@@ -2486,7 +2486,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b37d    mov ecx,0Ah"
 "	      0053b382    rep movsd"
 "	      0053b384    movsw"
-"	      0053b386    mov eax,[ebp-0A4h]"
+"	      0053b386    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b38c    push eax"
 "	      0053b38d    sub esp,2Ch"
 "	      0053b390    lea esi,destGoal2.pRGV"
@@ -2529,7 +2529,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 528:
 	asm( 
-"	      0053b3f4    mov eax,[ebp-0A4h]"
+"	      0053b3f4    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b3fa    push eax"
 "	      0053b3fb    mov ecx,this"
 "	      0053b401    call 0053A1FBh"
@@ -2555,7 +2555,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b42b    push eax"
 "	      0053b42c    lea eax,destGoal1.pRGV"
 "	      0053b432    push eax"
-"	      0053b433    mov eax,[ebp-0A4h]"
+"	      0053b433    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b439    push eax"
 "	      0053b43a    mov eax,stationHeapStruct.stationID"
 "	      0053b43d    shl eax,5"
@@ -2587,9 +2587,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b47d    push eax"
 "	      0053b47e    lea eax,destGoal1.pRGV"
 "	      0053b484    push eax"
-"	      0053b485    mov eax,[ebp-0A4h]"
+"	      0053b485    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b48b    push eax"
-"	      0053b48c    mov eax,[ebp-0A4h]"
+"	      0053b48c    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b492    push eax"
 "	      0053b493    lea eax,[ebp-1DCh]"
 "	      0053b499    push eax"
@@ -2648,9 +2648,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 );
 // LINE 552:
 	asm( 
-"	      0053b522    mov eax,[ebp-0B4h]"
+"	      0053b522    mov eax,reinterpret_cast<uint32_t>(destVert.x)"
 "	      0053b528    push eax"
-"	      0053b529    mov eax,[ebp-4]"
+"	      0053b529    mov eax,reinterpret_cast<uint32_t>(startVertex.x)"
 "	      0053b52c    push eax"
 "	      0053b52d    mov ecx,5C37F8h"
 "	      0053b532    call 00543704h"
@@ -2703,7 +2703,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b598    mov ecx,[ecx]"
 "	      0053b59a    mov eax,[eax+ecx+54h]"
 "	      0053b59e    push eax"
-"	      0053b59f    mov eax,[ebp-0A4h]"
+"	      0053b59f    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053b5a5    push eax"
 "	      0053b5a6    sub esp,2Ch"
 "	      0053b5a9    lea esi,destGoal2.pRGV"
@@ -3257,9 +3257,9 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bc23    push eax"
 "	      0053bc24    mov eax,pStation"
 "	      0053bc27    push eax"
-"	      0053bc28    mov eax,[ebp-4]"
+"	      0053bc28    mov eax,reinterpret_cast<uint32_t>(workingLoc.x)"
 "	      0053bc2b    push eax"
-"	      0053bc2c    mov eax,[ebp-4]"
+"	      0053bc2c    mov eax,reinterpret_cast<uint32_t>(workingLoc.x)"
 "	      0053bc2f    push eax"
 "	      0053bc30    lea eax,[ebp-4Ch]"
 "	      0053bc33    push eax"

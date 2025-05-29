@@ -424,9 +424,9 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 );
 // LINE 134:
 	asm( 
-"	      005605d0    mov eax,[ebp+0Ch]"
+"	      005605d0    mov eax,reinterpret_cast<uint32_t>(nodeNum)"
 "	      005605d3    push eax"
-"	      005605d4    mov eax,[ebp+8]"
+"	      005605d4    mov eax,reinterpret_cast<uint32_t>(treeID)"
 "	      005605d7    push eax"
 "	      005605d8    mov eax,this"
 "	      005605db    mov eax,[eax]"
@@ -518,7 +518,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	asm( 
 "	      0056065e    mov eax,name"
 "	      00560661    push eax"
-"	      00560662    mov eax,[ebp+8]"
+"	      00560662    mov eax,reinterpret_cast<uint32_t>(treeID)"
 "	      00560665    push eax"
 "	      00560666    mov eax,this"
 "	      0056066c    mov ecx,this"
@@ -558,7 +558,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 "	      005606ae    mov eax,this"
 "	      005606b4    mov eax,[eax+18h]"
 "	      005606b7    push eax"
-"	      005606b8    mov eax,[ebp+8]"
+"	      005606b8    mov eax,reinterpret_cast<uint32_t>(treeID)"
 "	      005606bb    push eax"
 "	      005606bc    push 42484156h"
 "	      005606c1    mov ecx,pFile"
@@ -985,11 +985,11 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 "	      00560987    jmp dword ptr [eax*4+56098Eh]"
 "	      0056098e    cmp [ecx],ecx"
 "	      00560990    push esi"
-"	      00560991    add [ebp+9],al"
+"	      00560991    add *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&cl) + 1),al"
 "	      00560994    push esi"
 "	      00560995    add [ecx+9],dl"
 "	      00560998    push esi"
-"	      00560999    add [ebp+9],bl"
+"	      00560999    add *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&cl) + 1),bl"
 "	      0056099c    push esi"
 "	      0056099d    (bad)"
 );

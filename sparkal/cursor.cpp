@@ -106,7 +106,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      00474870    call dword ptr ds:[6C3898h]"
 "	      00474876    movsx eax,ax"
 "	      00474879    mov nKeyState,eax"
-"	      0047487c    test byte ptr [ebp-1],80h"
+"	      0047487c    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
 "	      00474880    jne near ptr 0047488Dh"
 );
 // LINE 55:
@@ -121,7 +121,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 );
 // LINE 60:
 	asm( 
-"	      00474897    test byte ptr [ebp+0Ch],1"
+"	      00474897    test reinterpret_cast<uint8_t>(nModifiers),1"
 "	      0047489b    je near ptr 004748C0h"
 );
 // LINE 61:
@@ -130,7 +130,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748a3    call dword ptr ds:[6C3898h]"
 "	      004748a9    movsx eax,ax"
 "	      004748ac    mov nKeyState,eax"
-"	      004748af    test byte ptr [ebp-1],80h"
+"	      004748af    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
 "	      004748b3    jne near ptr 004748C0h"
 );
 // LINE 62:
@@ -140,7 +140,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 );
 // LINE 64:
 	asm( 
-"	      004748c0    test byte ptr [ebp+0Ch],2"
+"	      004748c0    test reinterpret_cast<uint8_t>(nModifiers),2"
 "	      004748c4    je near ptr 004748E9h"
 );
 // LINE 65:
@@ -149,7 +149,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748cc    call dword ptr ds:[6C3898h]"
 "	      004748d2    movsx eax,ax"
 "	      004748d5    mov nKeyState,eax"
-"	      004748d8    test byte ptr [ebp-1],80h"
+"	      004748d8    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
 "	      004748dc    jne near ptr 004748E9h"
 );
 // LINE 66:
@@ -159,7 +159,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 );
 // LINE 68:
 	asm( 
-"	      004748e9    test byte ptr [ebp+0Ch],4"
+"	      004748e9    test reinterpret_cast<uint8_t>(nModifiers),4"
 "	      004748ed    je near ptr 00474912h"
 );
 // LINE 69:
@@ -168,7 +168,7 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 "	      004748f5    call dword ptr ds:[6C3898h]"
 "	      004748fb    movsx eax,ax"
 "	      004748fe    mov nKeyState,eax"
-"	      00474901    test byte ptr [ebp-1],80h"
+"	      00474901    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
 "	      00474905    jne near ptr 00474912h"
 );
 // LINE 70:

@@ -3223,7 +3223,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 );
 // LINE 907:
 	asm( 
-"	      00526062    test byte ptr [ebp+18h],1"
+"	      00526062    test reinterpret_cast<uint8_t>(flags),1"
 "	      00526066    je near ptr 005260D0h"
 );
 // LINE 909:

@@ -25,7 +25,7 @@ void StringSet::StringSet(class ResFile* file, short resID) {
 );
 // LINE 15:
 	asm( 
-"	      00565a54    mov eax,[ebp+0Ch]"
+"	      00565a54    mov eax,reinterpret_cast<uint32_t>(resID)"
 "	      00565a57    push eax"
 "	      00565a58    mov ecx,this"
 "	      00565a5b    call 00565ACCh"
@@ -62,7 +62,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 );
 // LINE 23:
 	asm( 
-"	      00565a83    mov eax,[ebp+0Ch]"
+"	      00565a83    mov eax,reinterpret_cast<uint32_t>(resID)"
 "	      00565a86    push eax"
 "	      00565a87    mov ecx,this"
 "	      00565a8a    call 00565ACCh"
@@ -127,7 +127,7 @@ void StringSet::LoadStrings(short resID) {
 // LINE 34:
 	asm( 
 "	      00565b06    push 565BA0h"
-"	      00565b0b    mov eax,[ebp+8]"
+"	      00565b0b    mov eax,reinterpret_cast<uint32_t>(resID)"
 "	      00565b0e    push eax"
 "	      00565b0f    push 53545223h"
 "	      00565b14    mov eax,this"

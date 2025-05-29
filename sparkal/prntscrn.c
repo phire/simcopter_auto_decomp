@@ -338,32 +338,32 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 141:
 	asm( 
-"	      0046bae4    mov eax,[ebp-4]"
+"	      0046bae4    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bae7    and eax,0FFFFh"
-"	      0046baec    mov ecx,[ebp-8]"
+"	      0046baec    mov ecx,reinterpret_cast<uint32_t>(i)"
 "	      0046baef    and ecx,0FFFFh"
 "	      0046baf5    add eax,ecx"
 "	      0046baf7    mov ecx,p"
 "	      0046bafa    movsx eax,byte ptr [eax+ecx+1]"
-"	      0046baff    mov ecx,[ebp-4]"
+"	      0046baff    mov ecx,reinterpret_cast<uint32_t>(t)"
 "	      0046bb02    and ecx,0FFFFh"
-"	      0046bb08    mov edx,[ebp-8]"
+"	      0046bb08    mov edx,reinterpret_cast<uint32_t>(i)"
 "	      0046bb0b    and edx,0FFFFh"
 "	      0046bb11    add ecx,edx"
 "	      0046bb13    mov edx,p"
 "	      0046bb16    movsx ecx,byte ptr [ecx+edx]"
 "	      0046bb1a    cmp eax,ecx"
 "	      0046bb1c    jne near ptr 0046BB60h"
-"	      0046bb22    mov eax,[ebp-4]"
+"	      0046bb22    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bb25    and eax,0FFFFh"
-"	      0046bb2a    mov ecx,[ebp-8]"
+"	      0046bb2a    mov ecx,reinterpret_cast<uint32_t>(i)"
 "	      0046bb2d    and ecx,0FFFFh"
 "	      0046bb33    add eax,ecx"
-"	      0046bb35    mov ecx,[ebp+10h]"
+"	      0046bb35    mov ecx,reinterpret_cast<uint32_t>(n)"
 "	      0046bb38    and ecx,0FFFFh"
 "	      0046bb3e    cmp eax,ecx"
 "	      0046bb40    jge near ptr 0046BB60h"
-"	      0046bb46    mov eax,[ebp-8]"
+"	      0046bb46    mov eax,reinterpret_cast<uint32_t>(i)"
 "	      0046bb49    and eax,0FFFFh"
 "	      0046bb4e    cmp eax,3Fh"
 "	      0046bb51    jge near ptr 0046BB60h"
@@ -372,14 +372,14 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 142:
 	asm( 
-"	      0046bb60    test dword ptr [ebp-8],0FFFFh"
+"	      0046bb60    test reinterpret_cast<uint32_t>(i),0FFFFh"
 "	      0046bb67    jle near ptr 0046BBF4h"
 );
 // LINE 143:
 	asm( 
 "	      0046bb6d    mov eax,fp"
 "	      0046bb70    push eax"
-"	      0046bb71    mov eax,[ebp-8]"
+"	      0046bb71    mov eax,reinterpret_cast<uint32_t>(i)"
 "	      0046bb74    and eax,0FFFFh"
 "	      0046bb79    or eax,0C0h"
 "	      0046bb7e    push eax"
@@ -394,7 +394,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	asm( 
 "	      0046bb9a    mov eax,fp"
 "	      0046bb9d    push eax"
-"	      0046bb9e    mov eax,[ebp-4]"
+"	      0046bb9e    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bba1    and eax,0FFFFh"
 "	      0046bba6    mov ecx,p"
 "	      0046bba9    movsx eax,byte ptr [eax+ecx]"
@@ -408,16 +408,16 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 145:
 	asm( 
-"	      0046bbc9    mov eax,[ebp-4]"
+"	      0046bbc9    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bbcc    and eax,0FFFFh"
-"	      0046bbd1    mov ecx,[ebp-8]"
+"	      0046bbd1    mov ecx,reinterpret_cast<uint32_t>(i)"
 "	      0046bbd4    and ecx,0FFFFh"
 "	      0046bbda    add eax,ecx"
 "	      0046bbdc    mov t,ax"
 );
 // LINE 146:
 	asm( 
-"	      0046bbe0    mov eax,[ebp-0Ch]"
+"	      0046bbe0    mov eax,reinterpret_cast<uint32_t>(j)"
 "	      0046bbe3    and eax,0FFFFh"
 "	      0046bbe8    add eax,2"
 "	      0046bbeb    mov j,ax"
@@ -428,7 +428,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 149:
 	asm( 
-"	      0046bbf4    mov eax,[ebp-4]"
+"	      0046bbf4    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bbf7    and eax,0FFFFh"
 "	      0046bbfc    mov ecx,p"
 "	      0046bbff    movsx eax,byte ptr [eax+ecx]"
@@ -477,16 +477,16 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 );
 // LINE 156:
 	asm( 
-"	      0046bc74    mov eax,[ebp-4]"
+"	      0046bc74    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0046bc77    and eax,0FFFFh"
-"	      0046bc7c    mov ecx,[ebp+10h]"
+"	      0046bc7c    mov ecx,reinterpret_cast<uint32_t>(n)"
 "	      0046bc7f    and ecx,0FFFFh"
 "	      0046bc85    cmp eax,ecx"
 "	      0046bc87    jl near ptr 0046BADEh"
 );
 // LINE 157:
 	asm( 
-"	      0046bc8d    mov eax,[ebp+10h]"
+"	      0046bc8d    mov eax,reinterpret_cast<uint32_t>(n)"
 "	      0046bc90    and eax,0FFFFh"
 "	      0046bc95    jmp near ptr 0046BC9Ah"
 );

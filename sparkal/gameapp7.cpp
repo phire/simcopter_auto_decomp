@@ -1002,7 +1002,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ee41    mov byte ptr [ebp-1Eh],4Dh"
 "	      0043ee45    jmp near ptr 0043EE4Ah"
 "	      0043ee4a    mov eax,[ebp-20h]"
-"	      0043ee4d    mov [ebp-8],eax"
+"	      0043ee4d    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 200:
 	asm( 
@@ -1011,7 +1011,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ee58    mov byte ptr [ebp-22h],0DAh"
 "	      0043ee5c    jmp near ptr 0043EE61h"
 "	      0043ee61    mov eax,[ebp-24h]"
-"	      0043ee64    mov [ebp-18h],eax"
+"	      0043ee64    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 201:
 	asm( 
@@ -1020,7 +1020,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ee6f    mov byte ptr [ebp-26h],0FFh"
 "	      0043ee73    jmp near ptr 0043EE78h"
 "	      0043ee78    mov eax,[ebp-28h]"
-"	      0043ee7b    mov [ebp-10h],eax"
+"	      0043ee7b    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 202:
 	asm( 
@@ -1059,7 +1059,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043eed4    mov byte ptr [ebp-2Ah],39h"
 "	      0043eed8    jmp near ptr 0043EEDDh"
 "	      0043eedd    mov eax,[ebp-2Ch]"
-"	      0043eee0    mov [ebp-8],eax"
+"	      0043eee0    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 209:
 	asm( 
@@ -1068,7 +1068,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043eeeb    mov byte ptr [ebp-2Eh],0C0h"
 "	      0043eeef    jmp near ptr 0043EEF4h"
 "	      0043eef4    mov eax,[ebp-30h]"
-"	      0043eef7    mov [ebp-18h],eax"
+"	      0043eef7    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 210:
 	asm( 
@@ -1077,7 +1077,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ef02    mov byte ptr [ebp-32h],0EAh"
 "	      0043ef06    jmp near ptr 0043EF0Bh"
 "	      0043ef0b    mov eax,[ebp-34h]"
-"	      0043ef0e    mov [ebp-10h],eax"
+"	      0043ef0e    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 212:
 	asm( 
@@ -1105,7 +1105,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ef36    mov byte ptr [ebp-36h],41h"
 "	      0043ef3a    jmp near ptr 0043EF3Fh"
 "	      0043ef3f    mov eax,[ebp-38h]"
-"	      0043ef42    mov [ebp-8],eax"
+"	      0043ef42    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 217:
 	asm( 
@@ -1114,7 +1114,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ef4d    mov byte ptr [ebp-3Ah],0AAh"
 "	      0043ef51    jmp near ptr 0043EF56h"
 "	      0043ef56    mov eax,[ebp-3Ch]"
-"	      0043ef59    mov [ebp-18h],eax"
+"	      0043ef59    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 218:
 	asm( 
@@ -1123,7 +1123,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ef64    mov byte ptr [ebp-3Eh],0EAh"
 "	      0043ef68    jmp near ptr 0043EF6Dh"
 "	      0043ef6d    mov eax,[ebp-40h]"
-"	      0043ef70    mov [ebp-10h],eax"
+"	      0043ef70    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 220:
 	asm( 
@@ -1151,7 +1151,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043ef98    mov byte ptr [ebp-42h],4Ah"
 "	      0043ef9c    jmp near ptr 0043EFA1h"
 "	      0043efa1    mov eax,[ebp-44h]"
-"	      0043efa4    mov [ebp-8],eax"
+"	      0043efa4    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 226:
 	asm( 
@@ -1160,7 +1160,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043efaf    mov byte ptr [ebp-46h],0ACh"
 "	      0043efb3    jmp near ptr 0043EFB8h"
 "	      0043efb8    mov eax,[ebp-48h]"
-"	      0043efbb    mov [ebp-18h],eax"
+"	      0043efbb    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 227:
 	asm( 
@@ -1169,7 +1169,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043efc6    mov byte ptr [ebp-4Ah],0FFh"
 "	      0043efca    jmp near ptr 0043EFCFh"
 "	      0043efcf    mov eax,[ebp-4Ch]"
-"	      0043efd2    mov [ebp-10h],eax"
+"	      0043efd2    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 228:
 	asm( 
@@ -1197,7 +1197,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043effa    mov byte ptr [ebp-4Eh],4Ah"
 "	      0043effe    jmp near ptr 0043F003h"
 "	      0043f003    mov eax,[ebp-50h]"
-"	      0043f006    mov [ebp-8],eax"
+"	      0043f006    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 234:
 	asm( 
@@ -1206,7 +1206,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f011    mov byte ptr [ebp-52h],0B5h"
 "	      0043f015    jmp near ptr 0043F01Ah"
 "	      0043f01a    mov eax,[ebp-54h]"
-"	      0043f01d    mov [ebp-18h],eax"
+"	      0043f01d    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 235:
 	asm( 
@@ -1215,7 +1215,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f028    mov byte ptr [ebp-56h],0EAh"
 "	      0043f02c    jmp near ptr 0043F031h"
 "	      0043f031    mov eax,[ebp-58h]"
-"	      0043f034    mov [ebp-10h],eax"
+"	      0043f034    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 236:
 	asm( 
@@ -1243,7 +1243,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f05c    mov byte ptr [ebp-5Ah],4Ah"
 "	      0043f060    jmp near ptr 0043F065h"
 "	      0043f065    mov eax,[ebp-5Ch]"
-"	      0043f068    mov [ebp-8],eax"
+"	      0043f068    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 242:
 	asm( 
@@ -1252,7 +1252,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f073    mov byte ptr [ebp-5Eh],0B5h"
 "	      0043f077    jmp near ptr 0043F07Ch"
 "	      0043f07c    mov eax,[ebp-60h]"
-"	      0043f07f    mov [ebp-18h],eax"
+"	      0043f07f    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 243:
 	asm( 
@@ -1261,7 +1261,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f08a    mov byte ptr [ebp-62h],0EAh"
 "	      0043f08e    jmp near ptr 0043F093h"
 "	      0043f093    mov eax,[ebp-64h]"
-"	      0043f096    mov [ebp-10h],eax"
+"	      0043f096    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 244:
 	asm( 
@@ -1289,7 +1289,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f0be    mov byte ptr [ebp-66h],1Fh"
 "	      0043f0c2    jmp near ptr 0043F0C7h"
 "	      0043f0c7    mov eax,[ebp-68h]"
-"	      0043f0ca    mov [ebp-8],eax"
+"	      0043f0ca    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 250:
 	asm( 
@@ -1298,7 +1298,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f0d5    mov byte ptr [ebp-6Ah],0DAh"
 "	      0043f0d9    jmp near ptr 0043F0DEh"
 "	      0043f0de    mov eax,[ebp-6Ch]"
-"	      0043f0e1    mov [ebp-18h],eax"
+"	      0043f0e1    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 251:
 	asm( 
@@ -1307,7 +1307,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f0ec    mov byte ptr [ebp-6Eh],0FFh"
 "	      0043f0f0    jmp near ptr 0043F0F5h"
 "	      0043f0f5    mov eax,[ebp-70h]"
-"	      0043f0f8    mov [ebp-10h],eax"
+"	      0043f0f8    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 254:
 	asm( 
@@ -1331,7 +1331,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f11b    mov byte ptr [ebp-72h],1Fh"
 "	      0043f11f    jmp near ptr 0043F124h"
 "	      0043f124    mov eax,[ebp-74h]"
-"	      0043f127    mov [ebp-8],eax"
+"	      0043f127    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 258:
 	asm( 
@@ -1340,7 +1340,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f132    mov byte ptr [ebp-76h],0DAh"
 "	      0043f136    jmp near ptr 0043F13Bh"
 "	      0043f13b    mov eax,[ebp-78h]"
-"	      0043f13e    mov [ebp-18h],eax"
+"	      0043f13e    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 259:
 	asm( 
@@ -1349,7 +1349,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 "	      0043f149    mov byte ptr [ebp-7Ah],0FFh"
 "	      0043f14d    jmp near ptr 0043F152h"
 "	      0043f152    mov eax,[ebp-7Ch]"
-"	      0043f155    mov [ebp-10h],eax"
+"	      0043f155    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 260:
 	asm( 
@@ -1955,7 +1955,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 "	      0043f932    mov byte ptr [ebp-12h],1Fh"
 "	      0043f936    jmp near ptr 0043F93Bh"
 "	      0043f93b    mov eax,[ebp-14h]"
-"	      0043f93e    mov [ebp-4],eax"
+"	      0043f93e    mov reinterpret_cast<uint32_t>(colorMessageFont.Blue),eax"
 );
 // LINE 314:
 	asm( 
@@ -1964,7 +1964,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 "	      0043f949    mov byte ptr [ebp-16h],0DAh"
 "	      0043f94d    jmp near ptr 0043F952h"
 "	      0043f952    mov eax,[ebp-18h]"
-"	      0043f955    mov [ebp-10h],eax"
+"	      0043f955    mov reinterpret_cast<uint32_t>(colorButtonFont.Blue),eax"
 );
 // LINE 315:
 	asm( 
@@ -1973,7 +1973,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 "	      0043f960    mov byte ptr [ebp-1Ah],0FFh"
 "	      0043f964    jmp near ptr 0043F969h"
 "	      0043f969    mov eax,[ebp-1Ch]"
-"	      0043f96c    mov [ebp-8],eax"
+"	      0043f96c    mov reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue),eax"
 );
 // LINE 322:
 	asm( 
@@ -3582,7 +3582,7 @@ void  CGameApp::CreateDebugBuffer() {
 );
 // LINE 533:
 	asm( 
-"	      00440e65    mov eax,[ebp-44h]"
+"	      00440e65    mov eax,reinterpret_cast<uint32_t>(colorDebugText.Blue)"
 "	      00440e68    mov ecx,[ebp-54h]"
 "	      00440e6b    mov [ecx+38h],eax"
 "	      00440e6e    jmp near ptr 00440E73h"
@@ -3967,7 +3967,7 @@ void  CGameApp::CreatePlayMenu() {
 "	      0044120f    mov byte ptr [ebp-6Ah],4Ah"
 "	      00441213    jmp near ptr 00441218h"
 "	      00441218    mov eax,[ebp-6Ch]"
-"	      0044121b    mov [ebp-30h],eax"
+"	      0044121b    mov reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue),eax"
 );
 // LINE 611:
 	asm( 
@@ -3976,7 +3976,7 @@ void  CGameApp::CreatePlayMenu() {
 "	      00441226    mov byte ptr [ebp-6Eh],9Ah"
 "	      0044122a    jmp near ptr 0044122Fh"
 "	      0044122f    mov eax,[ebp-70h]"
-"	      00441232    mov [ebp-2Ch],eax"
+"	      00441232    mov reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue),eax"
 );
 // LINE 614:
 	asm( 

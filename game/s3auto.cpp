@@ -234,12 +234,12 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 );
 // LINE 147:
 	asm( 
-"	      0050177e    mov al,[ebp+0Ch]"
+"	      0050177e    mov al,reinterpret_cast<uint8_t>(cellx)"
 "	      00501781    mov there.x,al"
 );
 // LINE 148:
 	asm( 
-"	      00501784    mov al,[ebp+10h]"
+"	      00501784    mov al,reinterpret_cast<uint8_t>(celly)"
 "	      00501787    mov there.y,al"
 );
 // LINE 150:
@@ -272,13 +272,13 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      005017d6    mov eax,i"
 "	      005017d9    mov eax,[eax*4+62B9B8h]"
 "	      005017e0    mov ax,[eax+7Ch]"
-"	      005017e4    mov [ebp-0Ch],ax"
+"	      005017e4    mov reinterpret_cast<uint16_t>(here.x),ax"
 );
 // LINE 159:
 	asm( 
-"	      005017e8    mov eax,[ebp-18h]"
+"	      005017e8    mov eax,reinterpret_cast<uint32_t>(there.x)"
 "	      005017eb    push eax"
-"	      005017ec    mov eax,[ebp-0Ch]"
+"	      005017ec    mov eax,reinterpret_cast<uint32_t>(here.x)"
 "	      005017ef    push eax"
 "	      005017f0    call 005016C9h"
 "	      005017f5    add esp,8"
@@ -349,13 +349,13 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      00501884    mov eax,i"
 "	      00501887    mov eax,[eax*4+62B9E8h]"
 "	      0050188e    mov ax,[eax+7Ch]"
-"	      00501892    mov [ebp-0Ch],ax"
+"	      00501892    mov reinterpret_cast<uint16_t>(here.x),ax"
 );
 // LINE 180:
 	asm( 
-"	      00501896    mov eax,[ebp-18h]"
+"	      00501896    mov eax,reinterpret_cast<uint32_t>(there.x)"
 "	      00501899    push eax"
-"	      0050189a    mov eax,[ebp-0Ch]"
+"	      0050189a    mov eax,reinterpret_cast<uint32_t>(here.x)"
 "	      0050189d    push eax"
 "	      0050189e    call 005016C9h"
 "	      005018a3    add esp,8"
@@ -426,13 +426,13 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      00501932    mov eax,i"
 "	      00501935    mov eax,[eax*4+62B9D0h]"
 "	      0050193c    mov ax,[eax+7Ch]"
-"	      00501940    mov [ebp-0Ch],ax"
+"	      00501940    mov reinterpret_cast<uint16_t>(here.x),ax"
 );
 // LINE 201:
 	asm( 
-"	      00501944    mov eax,[ebp-18h]"
+"	      00501944    mov eax,reinterpret_cast<uint32_t>(there.x)"
 "	      00501947    push eax"
-"	      00501948    mov eax,[ebp-0Ch]"
+"	      00501948    mov eax,reinterpret_cast<uint32_t>(here.x)"
 "	      0050194b    push eax"
 "	      0050194c    call 005016C9h"
 "	      00501951    add esp,8"
@@ -503,13 +503,13 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 "	      005019e0    mov eax,i"
 "	      005019e3    mov eax,[eax*4+62B9A0h]"
 "	      005019ea    mov ax,[eax+7Ch]"
-"	      005019ee    mov [ebp-0Ch],ax"
+"	      005019ee    mov reinterpret_cast<uint16_t>(here.x),ax"
 );
 // LINE 222:
 	asm( 
-"	      005019f2    mov eax,[ebp-18h]"
+"	      005019f2    mov eax,reinterpret_cast<uint32_t>(there.x)"
 "	      005019f5    push eax"
-"	      005019f6    mov eax,[ebp-0Ch]"
+"	      005019f6    mov eax,reinterpret_cast<uint32_t>(here.x)"
 "	      005019f9    push eax"
 "	      005019fa    call 005016C9h"
 "	      005019ff    add esp,8"
@@ -605,7 +605,7 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 );
 // LINE 246:
 	asm( 
-"	      00501a8f    mov eax,[ebp+0Ch]"
+"	      00501a8f    mov eax,reinterpret_cast<uint32_t>(messID)"
 "	      00501a92    push eax"
 "	      00501a93    movsx eax,vehicleID"
 "	      00501a97    mov ecx,[eax*4+608F80h]"
@@ -3153,13 +3153,13 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	asm( 
 "	      005030bc    mov eax,cell"
 "	      005030bf    mov ax,[eax]"
-"	      005030c2    mov [ebp-70h],ax"
+"	      005030c2    mov reinterpret_cast<uint16_t>(scanLoc.x),ax"
 );
 // LINE 1285:
 	asm( 
 "	      005030c6    mov eax,this"
 "	      005030cc    mov ax,[eax+7Ch]"
-"	      005030d0    mov [ebp-74h],ax"
+"	      005030d0    mov reinterpret_cast<uint16_t>(prevGridLoc.x),ax"
 );
 // LINE 1289:
 	asm( 
@@ -3218,7 +3218,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1300:
 	asm( 
-"	      00503171    mov eax,[ebp-7Ch]"
+"	      00503171    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00503174    and eax,0FFFFh"
 "	      00503179    mov [ebp-10Ch],eax"
 "	      0050317f    jmp near ptr 00503198h"
@@ -3245,7 +3245,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 );
 // LINE 1304:
 	asm( 
-"	      00503203    mov eax,[ebp-7Ch]"
+"	      00503203    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00503206    and eax,0FFFFh"
 "	      0050320b    mov [ebp-110h],eax"
 "	      00503211    jmp near ptr 0050322Ah"
@@ -3395,9 +3395,9 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      0050344b    push eax"
 "	      0050344c    lea eax,goal1.pRGV"
 "	      0050344f    push eax"
-"	      00503450    mov eax,[ebp-70h]"
+"	      00503450    mov eax,reinterpret_cast<uint32_t>(scanLoc.x)"
 "	      00503453    push eax"
-"	      00503454    mov eax,[ebp-70h]"
+"	      00503454    mov eax,reinterpret_cast<uint32_t>(scanLoc.x)"
 "	      00503457    push eax"
 "	      00503458    lea eax,[ebp-0B4h]"
 "	      0050345e    push eax"
@@ -3854,11 +3854,11 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      005039da    mov [ebp-104h],ax"
 "	      005039e1    jmp near ptr 005039E6h"
 "	      005039e6    mov eax,1"
-"	      005039eb    mov cl,[ebp-84h]"
+"	      005039eb    mov cl,reinterpret_cast<uint8_t>(dirIndex)"
 "	      005039f1    shl eax,cl"
 "	      005039f3    push eax"
 "	      005039f4    mov eax,1"
-"	      005039f9    mov cl,[ebp-84h]"
+"	      005039f9    mov cl,reinterpret_cast<uint8_t>(dirIndex)"
 "	      005039ff    shl eax,cl"
 "	      00503a01    push eax"
 "	      00503a02    mov eax,[ebp-100h]"
@@ -3947,7 +3947,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	asm( 
 "	      00503aed    mov eax,this"
 "	      00503af3    mov edx,1"
-"	      00503af8    mov cl,[ebp-84h]"
+"	      00503af8    mov cl,reinterpret_cast<uint8_t>(dirIndex)"
 "	      00503afe    shl edx,cl"
 "	      00503b00    test [eax+8Ah],edx"
 "	      00503b06    je near ptr 00503B11h"
@@ -4697,7 +4697,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	asm( 
 "	      00504193    mov eax,this"
 "	      00504196    mov ax,[eax+7Ch]"
-"	      0050419a    mov [ebp-18h],ax"
+"	      0050419a    mov reinterpret_cast<uint16_t>(scanLoc.x),ax"
 );
 // LINE 1815:
 	asm( 
@@ -10200,9 +10200,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3632:
 	asm( 
 "	      00507094    push 1"
-"	      00507096    mov eax,[ebp-28h]"
+"	      00507096    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00507099    push eax"
-"	      0050709a    mov eax,[ebp+8]"
+"	      0050709a    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      0050709d    push eax"
 "	      0050709e    mov ecx,this"
 "	      005070a1    call 00507488h"
@@ -10276,9 +10276,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3651:
 	asm( 
 "	      00507189    push 4"
-"	      0050718b    mov eax,[ebp-28h]"
+"	      0050718b    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      0050718e    push eax"
-"	      0050718f    mov eax,[ebp+8]"
+"	      0050718f    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      00507192    push eax"
 "	      00507193    mov ecx,this"
 "	      00507196    call 00507488h"
@@ -10352,9 +10352,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3661:
 	asm( 
 "	      0050727c    push 2"
-"	      0050727e    mov eax,[ebp-28h]"
+"	      0050727e    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00507281    push eax"
-"	      00507282    mov eax,[ebp+8]"
+"	      00507282    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      00507285    push eax"
 "	      00507286    mov ecx,this"
 "	      00507289    call 00507488h"
@@ -10428,9 +10428,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3670:
 	asm( 
 "	      0050736f    push 8"
-"	      00507371    mov eax,[ebp-28h]"
+"	      00507371    mov eax,reinterpret_cast<uint32_t>(tile)"
 "	      00507374    push eax"
-"	      00507375    mov eax,[ebp+8]"
+"	      00507375    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      00507378    push eax"
 "	      00507379    mov ecx,this"
 "	      0050737c    call 00507488h"
@@ -10576,7 +10576,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3731:
 	asm( 
-"	      00507494    mov eax,[ebp+8]"
+"	      00507494    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      00507497    and eax,0FFFFh"
 "	      0050749c    mov [ebp-20h],eax"
 "	      0050749f    jmp near ptr 005074C4h"
@@ -10612,7 +10612,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3743:
 	asm( 
-"	      005074dd    mov eax,[ebp+0Ch]"
+"	      005074dd    mov eax,reinterpret_cast<uint32_t>(toTile)"
 "	      005074e0    and eax,0FFFFh"
 "	      005074e5    mov [ebp-24h],eax"
 "	      005074e8    jmp near ptr 0050750Dh"
@@ -10648,7 +10648,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3755:
 	asm( 
-"	      00507526    mov eax,[ebp+8]"
+"	      00507526    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      00507529    and eax,0FFFFh"
 "	      0050752e    mov [ebp-28h],eax"
 "	      00507531    jmp near ptr 0050754Ah"
@@ -10672,7 +10672,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      00507591    jmp near ptr 00507774h"
 "	      00507596    cmp dword ptr [ebp-0Ch],0"
 "	      0050759a    je near ptr 00507774h"
-"	      005075a0    mov eax,[ebp+0Ch]"
+"	      005075a0    mov eax,reinterpret_cast<uint32_t>(toTile)"
 "	      005075a3    and eax,0FFFFh"
 "	      005075a8    mov [ebp-2Ch],eax"
 "	      005075ab    jmp near ptr 005075C4h"
@@ -10704,7 +10704,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 	asm( 
 "	      0050761a    mov dword ptr [ebp-14h],5B57E8h"
 "	      00507621    mov eax,[ebp-14h]"
-"	      00507624    mov ecx,[ebp+8]"
+"	      00507624    mov ecx,reinterpret_cast<uint32_t>(fromTile)"
 "	      00507627    and ecx,0FFFFh"
 "	      0050762d    cmp [eax],ecx"
 "	      0050762f    jne near ptr 00507643h"
@@ -10728,7 +10728,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 	asm( 
 "	      00507677    mov dword ptr [ebp-18h],5B57E8h"
 "	      0050767e    mov eax,[ebp-18h]"
-"	      00507681    mov ecx,[ebp+0Ch]"
+"	      00507681    mov ecx,reinterpret_cast<uint32_t>(toTile)"
 "	      00507684    and ecx,0FFFFh"
 "	      0050768a    cmp [eax],ecx"
 "	      0050768c    jne near ptr 005076A0h"
@@ -10750,11 +10750,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3765:
 	asm( 
-"	      005076d4    test reinterpret_cast<unit8_t>(direction),1"
+"	      005076d4    test reinterpret_cast<uint8_t>(direction),1"
 "	      005076d8    je near ptr 005076FCh"
-"	      005076de    test reinterpret_cast<unit8_t>(fromConnections),1"
+"	      005076de    test reinterpret_cast<uint8_t>(fromConnections),1"
 "	      005076e2    je near ptr 005076FCh"
-"	      005076e8    test reinterpret_cast<unit8_t>(toConnections),4"
+"	      005076e8    test reinterpret_cast<uint8_t>(toConnections),4"
 "	      005076ec    je near ptr 005076FCh"
 );
 // LINE 3767:
@@ -10764,11 +10764,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3771:
 	asm( 
-"	      005076fc    test reinterpret_cast<unit8_t>(direction),4"
+"	      005076fc    test reinterpret_cast<uint8_t>(direction),4"
 "	      00507700    je near ptr 00507724h"
-"	      00507706    test reinterpret_cast<unit8_t>(fromConnections),4"
+"	      00507706    test reinterpret_cast<uint8_t>(fromConnections),4"
 "	      0050770a    je near ptr 00507724h"
-"	      00507710    test reinterpret_cast<unit8_t>(toConnections),1"
+"	      00507710    test reinterpret_cast<uint8_t>(toConnections),1"
 "	      00507714    je near ptr 00507724h"
 );
 // LINE 3773:
@@ -10778,11 +10778,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3777:
 	asm( 
-"	      00507724    test reinterpret_cast<unit8_t>(direction),8"
+"	      00507724    test reinterpret_cast<uint8_t>(direction),8"
 "	      00507728    je near ptr 0050774Ch"
-"	      0050772e    test reinterpret_cast<unit8_t>(fromConnections),8"
+"	      0050772e    test reinterpret_cast<uint8_t>(fromConnections),8"
 "	      00507732    je near ptr 0050774Ch"
-"	      00507738    test reinterpret_cast<unit8_t>(toConnections),2"
+"	      00507738    test reinterpret_cast<uint8_t>(toConnections),2"
 "	      0050773c    je near ptr 0050774Ch"
 );
 // LINE 3779:
@@ -10792,11 +10792,11 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 );
 // LINE 3783:
 	asm( 
-"	      0050774c    test reinterpret_cast<unit8_t>(direction),2"
+"	      0050774c    test reinterpret_cast<uint8_t>(direction),2"
 "	      00507750    je near ptr 00507774h"
-"	      00507756    test reinterpret_cast<unit8_t>(fromConnections),2"
+"	      00507756    test reinterpret_cast<uint8_t>(fromConnections),2"
 "	      0050775a    je near ptr 00507774h"
-"	      00507760    test reinterpret_cast<unit8_t>(toConnections),8"
+"	      00507760    test reinterpret_cast<uint8_t>(toConnections),8"
 "	      00507764    je near ptr 00507774h"
 );
 // LINE 3785:
@@ -11133,7 +11133,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3877:
 	asm( 
-"	      00507af6    mov eax,[ebp-1Ch]"
+"	      00507af6    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00507af9    and eax,0FFFFh"
 "	      00507afe    mov [ebp-50h],eax"
 "	      00507b01    jmp near ptr 00507B1Ah"
@@ -11282,7 +11282,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3899:
 	asm( 
-"	      00507cdf    mov eax,[ebp-1Ch]"
+"	      00507cdf    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00507ce2    and eax,0FFFFh"
 "	      00507ce7    mov [ebp-54h],eax"
 "	      00507cea    jmp near ptr 00507D03h"
@@ -11347,7 +11347,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3915:
 	asm( 
-"	      00507d9c    mov eax,[ebp-1Ch]"
+"	      00507d9c    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00507d9f    and eax,0FFFFh"
 "	      00507da4    mov [ebp-58h],eax"
 "	      00507da7    jmp near ptr 00507DC0h"
@@ -11412,7 +11412,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3929:
 	asm( 
-"	      00507e59    mov eax,[ebp-1Ch]"
+"	      00507e59    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00507e5c    and eax,0FFFFh"
 "	      00507e61    mov [ebp-5Ch],eax"
 "	      00507e64    jmp near ptr 00507E7Dh"
@@ -11477,7 +11477,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3944:
 	asm( 
-"	      00507f16    mov eax,[ebp-1Ch]"
+"	      00507f16    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00507f19    and eax,0FFFFh"
 "	      00507f1e    mov [ebp-60h],eax"
 "	      00507f21    jmp near ptr 00507F3Ah"
@@ -11531,7 +11531,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	asm( 
 "	      00507faf    mov dword ptr [ebp-48h],5B57E8h"
 "	      00507fb6    mov eax,[ebp-48h]"
-"	      00507fb9    mov ecx,[ebp-1Ch]"
+"	      00507fb9    mov ecx,reinterpret_cast<uint32_t>(ntile)"
 "	      00507fbc    and ecx,0FFFFh"
 "	      00507fc2    cmp [eax],ecx"
 "	      00507fc4    jne near ptr 00507FD8h"
@@ -11558,7 +11558,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 // LINE 3968:
 	asm( 
-"	      00508016    mov eax,[ebp-1Ch]"
+"	      00508016    mov eax,reinterpret_cast<uint32_t>(ntile)"
 "	      00508019    and eax,0FFFFh"
 "	      0050801e    mov [ebp-64h],eax"
 "	      00508021    jmp near ptr 005080ACh"
@@ -11850,7 +11850,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4059:
 	asm( 
-"	      005082a7    mov eax,[ebp-10h]"
+"	      005082a7    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005082aa    and eax,0FFFFh"
 "	      005082af    mov [ebp-24h],eax"
 "	      005082b2    jmp near ptr 005082CBh"
@@ -11972,7 +11972,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4077:
 	asm( 
-"	      00508417    mov eax,[ebp-10h]"
+"	      00508417    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0050841a    and eax,0FFFFh"
 "	      0050841f    mov [ebp-28h],eax"
 "	      00508422    jmp near ptr 005084AFh"
@@ -12274,7 +12274,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4112:
 	asm( 
-"	      005087c3    mov eax,[ebp-14h]"
+"	      005087c3    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      005087c6    and eax,0FFFFh"
 "	      005087cb    mov [ebp-2Ch],eax"
 "	      005087ce    jmp near ptr 005088B4h"
@@ -12360,9 +12360,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4130:
 	asm( 
 "	      005088e4    push 1"
-"	      005088e6    mov eax,[ebp-4]"
+"	      005088e6    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      005088e9    push eax"
-"	      005088ea    mov eax,[ebp-10h]"
+"	      005088ea    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005088ed    push eax"
 "	      005088ee    mov ecx,this"
 "	      005088f1    call 00507488h"
@@ -12376,9 +12376,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4134:
 	asm( 
 "	      00508902    push 8"
-"	      00508904    mov eax,[ebp-14h]"
+"	      00508904    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00508907    push eax"
-"	      00508908    mov eax,[ebp-10h]"
+"	      00508908    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0050890b    push eax"
 "	      0050890c    mov ecx,this"
 "	      0050890f    call 00507488h"
@@ -12392,9 +12392,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4138:
 	asm( 
 "	      00508920    push 2"
-"	      00508922    mov eax,[ebp-0Ch]"
+"	      00508922    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00508925    push eax"
-"	      00508926    mov eax,[ebp-10h]"
+"	      00508926    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508929    push eax"
 "	      0050892a    mov ecx,this"
 "	      0050892d    call 00507488h"
@@ -12415,9 +12415,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4146:
 	asm( 
 "	      00508953    push 4"
-"	      00508955    mov eax,[ebp-18h]"
+"	      00508955    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00508958    push eax"
-"	      00508959    mov eax,[ebp-10h]"
+"	      00508959    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0050895c    push eax"
 "	      0050895d    mov ecx,this"
 "	      00508960    call 00507488h"
@@ -12431,9 +12431,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4150:
 	asm( 
 "	      00508971    push 2"
-"	      00508973    mov eax,[ebp-0Ch]"
+"	      00508973    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      00508976    push eax"
-"	      00508977    mov eax,[ebp-10h]"
+"	      00508977    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      0050897a    push eax"
 "	      0050897b    mov ecx,this"
 "	      0050897e    call 00507488h"
@@ -12447,9 +12447,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4154:
 	asm( 
 "	      0050898f    push 8"
-"	      00508991    mov eax,[ebp-14h]"
+"	      00508991    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00508994    push eax"
-"	      00508995    mov eax,[ebp-10h]"
+"	      00508995    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508998    push eax"
 "	      00508999    mov ecx,this"
 "	      0050899c    call 00507488h"
@@ -12470,9 +12470,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4162:
 	asm( 
 "	      005089c2    push 2"
-"	      005089c4    mov eax,[ebp-0Ch]"
+"	      005089c4    mov eax,reinterpret_cast<uint32_t>(eastTile)"
 "	      005089c7    push eax"
-"	      005089c8    mov eax,[ebp-10h]"
+"	      005089c8    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005089cb    push eax"
 "	      005089cc    mov ecx,this"
 "	      005089cf    call 00507488h"
@@ -12486,9 +12486,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4166:
 	asm( 
 "	      005089e0    push 1"
-"	      005089e2    mov eax,[ebp-4]"
+"	      005089e2    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      005089e5    push eax"
-"	      005089e6    mov eax,[ebp-10h]"
+"	      005089e6    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      005089e9    push eax"
 "	      005089ea    mov ecx,this"
 "	      005089ed    call 00507488h"
@@ -12502,9 +12502,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4170:
 	asm( 
 "	      005089fe    push 4"
-"	      00508a00    mov eax,[ebp-18h]"
+"	      00508a00    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00508a03    push eax"
-"	      00508a04    mov eax,[ebp-10h]"
+"	      00508a04    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508a07    push eax"
 "	      00508a08    mov ecx,this"
 "	      00508a0b    call 00507488h"
@@ -12525,9 +12525,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4178:
 	asm( 
 "	      00508a31    push 8"
-"	      00508a33    mov eax,[ebp-14h]"
+"	      00508a33    mov eax,reinterpret_cast<uint32_t>(westTile)"
 "	      00508a36    push eax"
-"	      00508a37    mov eax,[ebp-10h]"
+"	      00508a37    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508a3a    push eax"
 "	      00508a3b    mov ecx,this"
 "	      00508a3e    call 00507488h"
@@ -12541,9 +12541,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4182:
 	asm( 
 "	      00508a4f    push 4"
-"	      00508a51    mov eax,[ebp-18h]"
+"	      00508a51    mov eax,reinterpret_cast<uint32_t>(southTile)"
 "	      00508a54    push eax"
-"	      00508a55    mov eax,[ebp-10h]"
+"	      00508a55    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508a58    push eax"
 "	      00508a59    mov ecx,this"
 "	      00508a5c    call 00507488h"
@@ -12557,9 +12557,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 // LINE 4186:
 	asm( 
 "	      00508a6d    push 1"
-"	      00508a6f    mov eax,[ebp-4]"
+"	      00508a6f    mov eax,reinterpret_cast<uint32_t>(northTile)"
 "	      00508a72    push eax"
-"	      00508a73    mov eax,[ebp-10h]"
+"	      00508a73    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508a76    push eax"
 "	      00508a77    mov ecx,this"
 "	      00508a7a    call 00507488h"
@@ -12581,14 +12581,14 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 // LINE 4200:
 	asm( 
-"	      00508a97    mov eax,[ebp-10h]"
+"	      00508a97    mov eax,reinterpret_cast<uint32_t>(currentTile)"
 "	      00508a9a    and eax,0FFFFh"
 "	      00508a9f    cmp eax,69h"
 "	      00508aa2    jne near ptr 00508AC5h"
 );
 // LINE 4202:
 	asm( 
-"	      00508aa8    test byte ptr [ebp-8],1"
+"	      00508aa8    test reinterpret_cast<uint8_t>(intersection),1"
 "	      00508aac    je near ptr 00508ABEh"
 );
 // LINE 4203:

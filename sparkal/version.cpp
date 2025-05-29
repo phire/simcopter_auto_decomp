@@ -618,10 +618,10 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 // LINE 238:
 	asm( 
 "	      0043dfa2    xor eax,eax"
-"	      0043dfa4    mov al,[ebp-3]"
+"	      0043dfa4    mov al,*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1)"
 "	      0043dfa7    push eax"
 "	      0043dfa8    xor eax,eax"
-"	      0043dfaa    mov al,[ebp-4]"
+"	      0043dfaa    mov al,reinterpret_cast<uint8_t>(dwVersion)"
 "	      0043dfad    push eax"
 "	      0043dfae    push 59865Ch"
 "	      0043dfb3    mov eax,szSystemVersion"
@@ -636,10 +636,10 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 // LINE 244:
 	asm( 
 "	      0043dfc5    xor eax,eax"
-"	      0043dfc7    mov al,[ebp-3]"
+"	      0043dfc7    mov al,*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1)"
 "	      0043dfca    push eax"
 "	      0043dfcb    xor eax,eax"
-"	      0043dfcd    mov al,[ebp-4]"
+"	      0043dfcd    mov al,reinterpret_cast<uint8_t>(dwVersion)"
 "	      0043dfd0    push eax"
 "	      0043dfd1    push 598670h"
 "	      0043dfd6    mov eax,szSystemVersion"
@@ -743,7 +743,7 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 310:
 	asm( 
 "	      0043e054    xor eax,eax"
-"	      0043e056    mov al,[ebp-4]"
+"	      0043e056    mov al,reinterpret_cast<uint8_t>(dwVersion)"
 "	      0043e059    jmp near ptr 0043E081h"
 );
 // LINE 311:
@@ -755,7 +755,7 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 312:
 	asm( 
 "	      0043e06d    xor eax,eax"
-"	      0043e06f    mov al,[ebp-3]"
+"	      0043e06f    mov al,*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1)"
 "	      0043e072    jmp near ptr 0043E081h"
 );
 // LINE 313:

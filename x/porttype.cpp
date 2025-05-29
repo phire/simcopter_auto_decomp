@@ -189,7 +189,7 @@ short StringWidth(unsigned char * str) {
 );
 // LINE 40:
 	asm( 
-"	      00566b05    mov ax,[ebp-8]"
+"	      00566b05    mov ax,reinterpret_cast<uint16_t>(textSize.cx)"
 "	      00566b09    jmp near ptr 00566B0Eh"
 );
 // LINE 41:
@@ -292,7 +292,7 @@ void CtoPstr(char * cstr) {
 );
 // LINE 56:
 	asm( 
-"	      00566b96    mov al,[ebp-4]"
+"	      00566b96    mov al,reinterpret_cast<uint8_t>(len)"
 "	      00566b99    mov ecx,cstr"
 "	      00566b9c    mov [ecx],al"
 );

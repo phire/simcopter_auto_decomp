@@ -99,7 +99,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 );
 // LINE 55:
 	asm( 
-"	      004a0454    mov eax,[ebp+0Ch]"
+"	      004a0454    mov eax,reinterpret_cast<uint32_t>(access)"
 "	      004a0457    and eax,0FFFFh"
 "	      004a045c    push eax"
 "	      004a045d    mov eax,this"
@@ -123,22 +123,22 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 );
 // LINE 60:
 	asm( 
-"	      004a047d    test byte ptr [ebp+0Ch],0F0h"
+"	      004a047d    test reinterpret_cast<uint8_t>(access),0F0h"
 "	      004a0481    jne near ptr 004A0496h"
 );
 // LINE 61:
 	asm( 
-"	      004a0487    mov eax,[ebp+0Ch]"
+"	      004a0487    mov eax,reinterpret_cast<uint32_t>(access)"
 "	      004a048a    and eax,0FFFFh"
 "	      004a048f    or eax,40h"
 "	      004a0492    mov access,ax"
 );
 // LINE 64:
 	asm( 
-"	      004a0496    mov eax,[ebp+0Ch]"
+"	      004a0496    mov eax,reinterpret_cast<uint32_t>(access)"
 "	      004a0499    and eax,0F0h"
 "	      004a049e    push eax"
-"	      004a049f    mov eax,[ebp+0Ch]"
+"	      004a049f    mov eax,reinterpret_cast<uint32_t>(access)"
 "	      004a04a2    and eax,0FE0Fh"
 "	      004a04a7    push eax"
 "	      004a04a8    mov eax,this"

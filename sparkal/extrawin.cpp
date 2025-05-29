@@ -1740,7 +1740,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 208:
 	asm( 
-"	      00451791    test byte ptr [ebp+8],1"
+"	      00451791    test reinterpret_cast<uint8_t>(lType),1"
 "	      00451795    je near ptr 004517A5h"
 );
 // LINE 209:
@@ -1750,7 +1750,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 210:
 	asm( 
-"	      004517a5    test byte ptr [ebp+0Ah],1"
+"	      004517a5    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2),1"
 "	      004517a9    je near ptr 004517B9h"
 );
 // LINE 211:
@@ -1760,7 +1760,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 212:
 	asm( 
-"	      004517b9    test byte ptr [ebp+8],2"
+"	      004517b9    test reinterpret_cast<uint8_t>(lType),2"
 "	      004517bd    je near ptr 004517CDh"
 );
 // LINE 213:
@@ -1770,7 +1770,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 214:
 	asm( 
-"	      004517cd    test byte ptr [ebp+0Ah],2"
+"	      004517cd    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2),2"
 "	      004517d1    je near ptr 004517E1h"
 );
 // LINE 215:
@@ -1780,7 +1780,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 216:
 	asm( 
-"	      004517e1    test byte ptr [ebp+8],4"
+"	      004517e1    test reinterpret_cast<uint8_t>(lType),4"
 "	      004517e5    je near ptr 004517F5h"
 );
 // LINE 217:
@@ -1790,7 +1790,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 );
 // LINE 218:
 	asm( 
-"	      004517f5    test byte ptr [ebp+0Ah],4"
+"	      004517f5    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2),4"
 "	      004517f9    je near ptr 00451809h"
 );
 // LINE 219:
@@ -16079,7 +16079,7 @@ long BoneheadTextEditWindow::DoCharacter(long lCharacter) {
 );
 // LINE 2107:
 	asm( 
-"	      0045ccd5    mov al,[ebp+8]"
+"	      0045ccd5    mov al,reinterpret_cast<uint8_t>(lCharacter)"
 "	      0045ccd8    mov ecx,chCharacter"
 "	      0045ccdb    mov [ecx],al"
 );

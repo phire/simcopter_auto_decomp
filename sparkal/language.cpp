@@ -3574,7 +3574,7 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 );
 // LINE 556:
 	asm( 
-"	      0042d09c    mov eax,[ebp-8]"
+"	      0042d09c    mov eax,reinterpret_cast<uint32_t>(currentLanguageID)"
 "	      0042d09f    and eax,0FFFFh"
 "	      0042d0a4    mov [ebp-0Ch],eax"
 "	      0042d0a7    jmp near ptr 0042D219h"

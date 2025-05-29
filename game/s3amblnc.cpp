@@ -365,7 +365,7 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 );
 // LINE 258:
 	asm( 
-"	      00535b4c    mov eax,[ebp+8]"
+"	      00535b4c    mov eax,reinterpret_cast<uint32_t>(tileType)"
 "	      00535b4f    and eax,0FFFFh"
 "	      00535b54    cmp eax,0D1h"
 "	      00535b59    jne near ptr 00535B69h"

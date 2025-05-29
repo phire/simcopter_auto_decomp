@@ -12490,7 +12490,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 "	      0051da3e    les edx,[ecx]"
 "	      0051da41    push ds"
 "	      0051da42    (bad)"
-"	      0051da44    add [ebp-36h],ah"
+"	      0051da44    add *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&x) + 2),ah"
 "	      0051da47    push ecx"
 "	      0051da48    add [ebp-2CFFAE32h],dh"
 "	      0051da4e    rcl dword ptr [ecx],cl"

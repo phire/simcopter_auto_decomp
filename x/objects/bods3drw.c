@@ -521,7 +521,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 249:
 	asm( 
-"	      005643c4    test byte ptr [ebp+14h],1"
+"	      005643c4    test reinterpret_cast<uint8_t>(diameter),1"
 "	      005643c8    je near ptr 005643FCh"
 );
 // LINE 250:
@@ -564,8 +564,8 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 256:
 	asm( 
-"	      0056443d    mov dword ptr [ebp-0ACh],0"
-"	      00564447    mov dword ptr [ebp-0A8h],3FF00000h"
+"	      0056443d    mov reinterpret_cast<uint32_t>(bandSize),0"
+"	      00564447    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&bandSize) + 4),3FF00000h"
 );
 // LINE 258:
 	asm( 
@@ -662,7 +662,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	asm( 
 "	      0056456b    push 3FF00000h"
 "	      00564570    push 0"
-"	      00564572    mov eax,[ebp-8]"
+"	      00564572    mov eax,reinterpret_cast<uint32_t>(shftCt)"
 "	      00564575    push eax"
 "	      00564576    mov eax,j"
 "	      0056457c    mov ecx,eax"
@@ -807,7 +807,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 318:
 	asm( 
-"	      005646e5    mov eax,[ebp+18h]"
+"	      005646e5    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      005646e8    push eax"
 "	      005646e9    mov eax,lineY"
 "	      005646ef    push eax"
@@ -828,7 +828,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 321:
 	asm( 
-"	      0056471a    mov eax,[ebp+18h]"
+"	      0056471a    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      0056471d    push eax"
 "	      0056471e    mov eax,lineY"
 "	      00564724    push eax"
@@ -845,12 +845,12 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 );
 // LINE 324:
 	asm( 
-"	      0056473d    test byte ptr [ebp+14h],1"
+"	      0056473d    test reinterpret_cast<uint8_t>(diameter),1"
 "	      00564741    je near ptr 0056476Bh"
 );
 // LINE 325:
 	asm( 
-"	      00564747    mov eax,[ebp+18h]"
+"	      00564747    mov eax,reinterpret_cast<uint32_t>(color)"
 "	      0056474a    push eax"
 "	      0056474b    mov eax,centerPt.y"
 "	      0056474e    push eax"
@@ -1627,8 +1627,8 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 "	      00564cdf    fnstsw ax"
 "	      00564ce1    test ah,1"
 "	      00564ce4    je near ptr 00564CF8h"
-"	      00564cea    mov dword ptr [ebp-8],0"
-"	      00564cf1    mov dword ptr [ebp-4],0C0080000h"
+"	      00564cea    mov reinterpret_cast<uint32_t>(mydir),0"
+"	      00564cf1    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4),0C0080000h"
 );
 // LINE 616:
 	asm( 
@@ -1637,8 +1637,8 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 "	      00564d01    fnstsw ax"
 "	      00564d03    test ah,41h"
 "	      00564d06    jne near ptr 00564D1Ah"
-"	      00564d0c    mov dword ptr [ebp-8],0"
-"	      00564d13    mov dword ptr [ebp-4],40100000h"
+"	      00564d0c    mov reinterpret_cast<uint32_t>(mydir),0"
+"	      00564d13    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4),40100000h"
 );
 // LINE 626:
 	asm( 
@@ -1727,9 +1727,9 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 656:
 	asm( 
 "	      00564da0    mov eax,ds:[5BEF44h]"
-"	      00564da5    mov [ebp-28h],eax"
+"	      00564da5    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4),eax"
 "	      00564da8    mov eax,ds:[5BEF40h]"
-"	      00564dad    mov [ebp-2Ch],eax"
+"	      00564dad    mov reinterpret_cast<uint32_t>(colorLimit),eax"
 );
 // LINE 659:
 	asm( 
@@ -2349,9 +2349,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 836:
 	asm( 
 "	      00565235    mov eax,ds:[5BEF44h]"
-"	      0056523a    mov [ebp-24h],eax"
+"	      0056523a    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4),eax"
 "	      0056523d    mov eax,ds:[5BEF40h]"
-"	      00565242    mov [ebp-28h],eax"
+"	      00565242    mov reinterpret_cast<uint32_t>(colorLimit),eax"
 );
 // LINE 848:
 	asm( 
@@ -2879,15 +2879,15 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 );
 // LINE 989:
 	asm( 
-"	      0056564a    mov dword ptr [ebp-18h],0"
-"	      00565651    mov dword ptr [ebp-14h],0"
+"	      0056564a    mov reinterpret_cast<uint32_t>(curPatOffset),0"
+"	      00565651    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&curPatOffset) + 4),0"
 );
 // LINE 991:
 	asm( 
-"	      00565658    mov eax,[ebp+20h]"
-"	      0056565b    mov [ebp-38h],eax"
-"	      0056565e    mov eax,[ebp+1Ch]"
-"	      00565661    mov [ebp-3Ch],eax"
+"	      00565658    mov eax,*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&xStride) + 4)"
+"	      0056565b    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&stride1) + 4),eax"
+"	      0056565e    mov eax,reinterpret_cast<uint32_t>(xStride)"
+"	      00565661    mov reinterpret_cast<uint32_t>(stride1),eax"
 );
 // LINE 992:
 	asm( 

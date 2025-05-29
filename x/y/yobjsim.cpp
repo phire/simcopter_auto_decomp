@@ -348,7 +348,7 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      00555333    push 5BBA14h"
 "	      00555338    call 00554F30h"
 "	      0055533d    add esp,10h"
-"	      00555340    mov eax,[ebp-8]"
+"	      00555340    mov eax,reinterpret_cast<uint32_t>(tree)"
 "	      00555343    push eax"
 "	      00555344    push 0"
 "	      00555346    push 0"
@@ -1092,7 +1092,7 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 "	      0055590e    push eax"
 "	      0055590f    mov eax,moveinfo"
 "	      00555912    push eax"
-"	      00555913    mov eax,[ebp+0Ch]"
+"	      00555913    mov eax,reinterpret_cast<uint32_t>(moveOnlyNeutrally)"
 "	      00555916    push eax"
 "	      00555917    mov ecx,this"
 "	      0055591a    call 00555A60h"
@@ -1308,7 +1308,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 404:
 	asm( 
-"	      00555a9a    test dword ptr [ebp+1Ch],0FFFFh"
+"	      00555a9a    test reinterpret_cast<uint32_t>(mastermove),0FFFFh"
 "	      00555aa1    je near ptr 00555AADh"
 );
 // LINE 405:
@@ -1326,7 +1326,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 409:
 	asm( 
-"	      00555abb    test dword ptr [ebp+1Ch],0FFFFh"
+"	      00555abb    test reinterpret_cast<uint32_t>(mastermove),0FFFFh"
 "	      00555ac2    jne near ptr 00555EC5h"
 );
 // LINE 410:
@@ -1819,7 +1819,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 512:
 	asm( 
-"	      00555f2e    test dword ptr [ebp+1Ch],0FFFFh"
+"	      00555f2e    test reinterpret_cast<uint32_t>(mastermove),0FFFFh"
 "	      00555f35    jne near ptr 005563C4h"
 "	      00555f3b    mov eax,this"
 "	      00555f41    cmp dword ptr [eax+130h],0"
@@ -1851,14 +1851,14 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555f7e    xor ecx,ecx"
 "	      00555f80    mov cl,[eax+88h]"
 "	      00555f86    xor eax,eax"
-"	      00555f88    mov al,[ebp-74h]"
+"	      00555f88    mov al,reinterpret_cast<uint8_t>(thiscellx)"
 "	      00555f8b    cmp ecx,eax"
 "	      00555f8d    jne near ptr 00555FAEh"
 "	      00555f93    mov eax,this"
 "	      00555f99    xor ecx,ecx"
 "	      00555f9b    mov cl,[eax+89h]"
 "	      00555fa1    xor eax,eax"
-"	      00555fa3    mov al,[ebp-70h]"
+"	      00555fa3    mov al,reinterpret_cast<uint8_t>(thiscelly)"
 "	      00555fa6    cmp ecx,eax"
 "	      00555fa8    je near ptr 00555FCAh"
 "	      00555fae    push 8C085h"
@@ -1990,7 +1990,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 // LINE 550:
 	asm( 
 "	      005560f8    jmp near ptr 00556371h"
-"	      005560fd    test dword ptr [ebp+8],0FFFFh"
+"	      005560fd    test reinterpret_cast<uint32_t>(moveOnlyNeutrally),0FFFFh"
 "	      00556104    je near ptr 00556319h"
 );
 // LINE 551:
@@ -2068,7 +2068,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 553:
 	asm( 
-"	      0055627b    test dword ptr [ebp-80h],0FFFFh"
+"	      0055627b    test reinterpret_cast<uint32_t>(newneutralandsparse),0FFFFh"
 "	      00556282    jne near ptr 00556314h"
 );
 // LINE 554:
@@ -2100,7 +2100,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 556:
 	asm( 
-"	      00556301    test dword ptr [ebp-78h],0FFFFh"
+"	      00556301    test reinterpret_cast<uint32_t>(thisneutralforme),0FFFFh"
 "	      00556308    jne near ptr 00556314h"
 );
 // LINE 557:
@@ -2139,7 +2139,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 );
 // LINE 569:
 	asm( 
-"	      00556371    test dword ptr [ebp-7Ch],0FFFFh"
+"	      00556371    test reinterpret_cast<uint32_t>(failnonneutral),0FFFFh"
 "	      00556378    je near ptr 00556388h"
 );
 // LINE 570:
@@ -2395,9 +2395,9 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 );
 // LINE 636:
 	asm( 
-"	      00556601    mov eax,[ebp+0Ch]"
+"	      00556601    mov eax,reinterpret_cast<uint32_t>(celly)"
 "	      00556604    push eax"
-"	      00556605    mov eax,[ebp+8]"
+"	      00556605    mov eax,reinterpret_cast<uint32_t>(cellx)"
 "	      00556608    push eax"
 "	      00556609    call 00555819h"
 "	      0055660e    add esp,8"
@@ -2715,13 +2715,13 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 );
 // LINE 689:
 	asm( 
-"	      0055688b    mov dword ptr [ebp-0Ch],0"
-"	      00556892    mov dword ptr [ebp-8],0"
+"	      0055688b    mov reinterpret_cast<uint32_t>(overallxloc),0"
+"	      00556892    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallxloc) + 4),0"
 );
 // LINE 690:
 	asm( 
-"	      00556899    mov dword ptr [ebp-28h],0"
-"	      005568a0    mov dword ptr [ebp-24h],0"
+"	      00556899    mov reinterpret_cast<uint32_t>(overallzloc),0"
+"	      005568a0    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallzloc) + 4),0"
 );
 // LINE 692:
 	asm( 
@@ -3511,7 +3511,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 788:
 	asm( 
-"	      00557077    test dword ptr [ebp+10h],0FFFFh"
+"	      00557077    test reinterpret_cast<uint32_t>(onlyvisible),0FFFFh"
 "	      0055707e    je near ptr 0055709Bh"
 "	      00557084    mov eax,obj"
 "	      00557087    movsx eax,word ptr [eax+0E2h]"
@@ -3560,9 +3560,9 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 );
 // LINE 791:
 	asm( 
-"	      0055710f    mov eax,[ebp-14h]"
+"	      0055710f    mov eax,reinterpret_cast<uint32_t>(dist)"
 "	      00557112    and eax,0FFFFh"
-"	      00557117    mov ecx,[ebp-0Ch]"
+"	      00557117    mov ecx,reinterpret_cast<uint32_t>(closestdist)"
 "	      0055711a    and ecx,0FFFFh"
 "	      00557120    cmp eax,ecx"
 "	      00557122    jge near ptr 0055713Ch"
@@ -4507,9 +4507,9 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 	asm( 
 "	      005578f1    lea eax,moveinfo.locType"
 "	      005578f4    push eax"
-"	      005578f5    mov eax,[ebp-1Ch]"
+"	      005578f5    mov eax,reinterpret_cast<uint32_t>(onlyNeutral)"
 "	      005578f8    push eax"
-"	      005578f9    mov eax,[ebp-2Ch]"
+"	      005578f9    mov eax,reinterpret_cast<uint32_t>(movespeed)"
 "	      005578fc    push eax"
 "	      005578fd    mov ecx,this"
 "	      00557900    call 00555885h"
@@ -4535,7 +4535,7 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 "	      00557928    push eax"
 "	      00557929    mov eax,movecode"
 "	      0055792c    push eax"
-"	      0055792d    mov eax,[ebp-2Ch]"
+"	      0055792d    mov eax,reinterpret_cast<uint32_t>(movespeed)"
 "	      00557930    push eax"
 "	      00557931    mov ecx,this"
 "	      00557934    call 0054E579h"
@@ -4738,9 +4738,9 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 // LINE 980:
 	asm( 
 "	      00557b53    push 0"
-"	      00557b55    mov eax,[ebp-12h]"
+"	      00557b55    mov eax,reinterpret_cast<uint32_t>(rand.rangeData)"
 "	      00557b58    push eax"
-"	      00557b59    mov eax,[ebp-10h]"
+"	      00557b59    mov eax,reinterpret_cast<uint32_t>(rand.rangeOwner)"
 "	      00557b5c    push eax"
 "	      00557b5d    mov eax,this"
 "	      00557b60    mov eax,[eax]"
@@ -4786,7 +4786,7 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 "	      00557bed    add eax,8"
 "	      00557bf0    mov [ebp-18h],eax"
 "	      00557bf3    jmp near ptr 00557BF8h"
-"	      00557bf8    mov eax,[ebp-0Ch]"
+"	      00557bf8    mov eax,reinterpret_cast<uint32_t>(range)"
 "	      00557bfb    push eax"
 "	      00557bfc    call 0055D717h"
 "	      00557c01    add esp,4"
@@ -4854,7 +4854,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 	asm( 
 "	      00557c65    mov eax,nparam"
 "	      00557c68    mov eax,[eax]"
-"	      00557c6a    mov [ebp-20h],eax"
+"	      00557c6a    mov reinterpret_cast<uint32_t>(walkgrab.decTemp),eax"
 );
 // LINE 995:
 	asm( 
@@ -4979,7 +4979,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557dbb    lea eax,moveinfo.locType"
 "	      00557dbe    push eax"
 "	      00557dbf    push 0"
-"	      00557dc1    mov eax,[ebp-8]"
+"	      00557dc1    mov eax,reinterpret_cast<uint32_t>(speed)"
 "	      00557dc4    push eax"
 "	      00557dc5    mov ecx,this"
 "	      00557dc8    call 00555885h"
@@ -5117,7 +5117,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557f20    push eax"
 "	      00557f21    mov eax,movecode"
 "	      00557f24    push eax"
-"	      00557f25    mov eax,[ebp-8]"
+"	      00557f25    mov eax,reinterpret_cast<uint32_t>(speed)"
 "	      00557f28    push eax"
 "	      00557f29    mov ecx,this"
 "	      00557f2c    call 0054E579h"
@@ -5568,9 +5568,9 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 // LINE 1113:
 	asm( 
 "	      0055829d    push 0"
-"	      0055829f    mov eax,[ebp-16h]"
+"	      0055829f    mov eax,reinterpret_cast<uint32_t>(param.distData)"
 "	      005582a2    push eax"
-"	      005582a3    mov eax,[ebp-14h]"
+"	      005582a3    mov eax,reinterpret_cast<uint32_t>(param.distOwner)"
 "	      005582a6    push eax"
 "	      005582a7    mov eax,this"
 "	      005582aa    mov eax,[eax]"
@@ -6638,7 +6638,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 	asm( 
 "	      00558b1f    mov eax,nparam"
 "	      00558b22    mov eax,[eax]"
-"	      00558b24    mov [ebp-14h],eax"
+"	      00558b24    mov reinterpret_cast<uint32_t>(param.brightnessTemp),eax"
 );
 // LINE 1315:
 	asm( 
@@ -6875,8 +6875,8 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558d69    mov eax,nparam"
 "	      00558d6c    mov ecx,[eax]"
 "	      00558d6e    mov eax,[eax+4]"
-"	      00558d71    mov [ebp-14h],ecx"
-"	      00558d74    mov [ebp-10h],eax"
+"	      00558d71    mov reinterpret_cast<uint32_t>(param.distTemp),ecx"
+"	      00558d74    mov reinterpret_cast<uint32_t>(param.riotValTemp),eax"
 );
 // LINE 1341:
 	asm( 
@@ -6924,7 +6924,7 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 "	      00558e0b    push eax"
 "	      00558e0c    lea eax,actualriotval"
 "	      00558e0f    push eax"
-"	      00558e10    mov eax,[ebp-1Ch]"
+"	      00558e10    mov eax,reinterpret_cast<uint32_t>(todist)"
 "	      00558e13    push eax"
 "	      00558e14    mov ecx,this"
 "	      00558e17    call 00556848h"
@@ -7205,7 +7205,7 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 "	      00559124    push 5BBA14h"
 "	      00559129    call 00554F30h"
 "	      0055912e    add esp,10h"
-"	      00559131    mov eax,[ebp-8]"
+"	      00559131    mov eax,reinterpret_cast<uint32_t>(id)"
 "	      00559134    push eax"
 "	      00559135    push 0"
 "	      00559137    push 0"
@@ -8394,7 +8394,7 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559ec9    lea eax,moveinfo.locType"
 "	      00559ecc    push eax"
 "	      00559ecd    push 0"
-"	      00559ecf    mov eax,[ebp-18h]"
+"	      00559ecf    mov eax,reinterpret_cast<uint32_t>(speed)"
 "	      00559ed2    push eax"
 "	      00559ed3    mov ecx,this"
 "	      00559ed6    call 00555885h"
@@ -8423,7 +8423,7 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559efe    push eax"
 "	      00559eff    mov eax,movecode"
 "	      00559f02    push eax"
-"	      00559f03    mov eax,[ebp-18h]"
+"	      00559f03    mov eax,reinterpret_cast<uint32_t>(speed)"
 "	      00559f06    push eax"
 "	      00559f07    mov ecx,this"
 "	      00559f0a    call 0054E579h"
@@ -8529,7 +8529,7 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 	asm( 
 "	      00559f90    mov eax,nparam"
 "	      00559f93    mov eax,[eax]"
-"	      00559f95    mov [ebp-14h],eax"
+"	      00559f95    mov reinterpret_cast<uint32_t>(param.xdistloc),eax"
 );
 // LINE 1547:
 	asm( 
@@ -8852,7 +8852,7 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 "	      0055a298    push 5BBA14h"
 "	      0055a29d    call 00554F30h"
 "	      0055a2a2    add esp,10h"
-"	      0055a2a5    mov eax,[ebp-0Ch]"
+"	      0055a2a5    mov eax,reinterpret_cast<uint32_t>(treenum)"
 "	      0055a2a8    push eax"
 "	      0055a2a9    push 0"
 "	      0055a2ab    push 0"
@@ -10735,7 +10735,7 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 );
 // LINE 1808:
 	asm( 
-"	      0055b5f1    mov eax,[ebp-0Ch]"
+"	      0055b5f1    mov eax,reinterpret_cast<uint32_t>(playforsure)"
 "	      0055b5f4    push eax"
 "	      0055b5f5    mov eax,nparam"
 "	      0055b5f8    movsx eax,word ptr [eax]"

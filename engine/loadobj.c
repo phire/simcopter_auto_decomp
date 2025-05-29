@@ -542,7 +542,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 448:
 	asm( 
-"	      004d2528    test byte ptr [ebp-1C0h],1"
+"	      004d2528    test reinterpret_cast<uint8_t>(fileobjhdr.Attrib),1"
 "	      004d252f    je near ptr 004D2571h"
 );
 // LINE 450:
@@ -1013,7 +1013,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 651:
 	asm( 
-"	      004d29a4    test byte ptr [ebp-1C0h],1"
+"	      004d29a4    test reinterpret_cast<uint8_t>(fileobjhdr.Attrib),1"
 "	      004d29ab    je near ptr 004D29C3h"
 );
 // LINE 652:
@@ -1029,7 +1029,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 );
 // LINE 658:
 	asm( 
-"	      004d29c8    test byte ptr [ebp-1C0h],1"
+"	      004d29c8    test reinterpret_cast<uint8_t>(fileobjhdr.Attrib),1"
 "	      004d29cf    je near ptr 004D2A38h"
 );
 // LINE 659:
@@ -4030,7 +4030,7 @@ struct _BSPtree* ReadTree() {
 );
 // LINE 1810:
 	asm( 
-"	      004d4001    mov eax,[ebp-8]"
+"	      004d4001    mov eax,reinterpret_cast<uint32_t>(FaceIndex)"
 "	      004d4004    and eax,0FFFFh"
 "	      004d4009    cmp eax,0FFFFh"
 "	      004d400e    je near ptr 004D40D5h"
@@ -4046,11 +4046,11 @@ struct _BSPtree* ReadTree() {
 );
 // LINE 1813:
 	asm( 
-"	      004d4025    mov eax,[ebp-8]"
+"	      004d4025    mov eax,reinterpret_cast<uint32_t>(FaceIndex)"
 "	      004d4028    and eax,0FFFFh"
 "	      004d402d    mov ecx,ds:[6666C0h]"
 "	      004d4033    mov eax,[ecx+eax*4]"
-"	      004d4036    mov ecx,[ebp-4]"
+"	      004d4036    mov ecx,reinterpret_cast<uint32_t>(ThisIndex)"
 "	      004d4039    and ecx,0FFFFh"
 "	      004d403f    mov edx,ecx"
 "	      004d4041    shl ecx,3"
@@ -4061,7 +4061,7 @@ struct _BSPtree* ReadTree() {
 // LINE 1815:
 	asm( 
 "	      004d404f    push 10h"
-"	      004d4051    mov eax,[ebp-4]"
+"	      004d4051    mov eax,reinterpret_cast<uint32_t>(ThisIndex)"
 "	      004d4054    and eax,0FFFFh"
 "	      004d4059    mov ecx,eax"
 "	      004d405b    shl eax,3"
@@ -4076,7 +4076,7 @@ struct _BSPtree* ReadTree() {
 // LINE 1827:
 	asm( 
 "	      004d4075    call 004D3FEAh"
-"	      004d407a    mov ecx,[ebp-4]"
+"	      004d407a    mov ecx,reinterpret_cast<uint32_t>(ThisIndex)"
 "	      004d407d    and ecx,0FFFFh"
 "	      004d4083    mov edx,ecx"
 "	      004d4085    shl ecx,3"
@@ -4087,7 +4087,7 @@ struct _BSPtree* ReadTree() {
 // LINE 1828:
 	asm( 
 "	      004d4094    call 004D3FEAh"
-"	      004d4099    mov ecx,[ebp-4]"
+"	      004d4099    mov ecx,reinterpret_cast<uint32_t>(ThisIndex)"
 "	      004d409c    and ecx,0FFFFh"
 "	      004d40a2    mov edx,ecx"
 "	      004d40a4    shl ecx,3"
@@ -4097,7 +4097,7 @@ struct _BSPtree* ReadTree() {
 );
 // LINE 1829:
 	asm( 
-"	      004d40b3    mov eax,[ebp-4]"
+"	      004d40b3    mov eax,reinterpret_cast<uint32_t>(ThisIndex)"
 "	      004d40b6    and eax,0FFFFh"
 "	      004d40bb    mov ecx,eax"
 "	      004d40bd    shl eax,3"

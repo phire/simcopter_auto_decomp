@@ -375,7 +375,7 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 "	      0048b6ad    xor edx,edx"
 "	      0048b6af    mov dl,[ecx+eax*2]"
 "	      0048b6b2    mov eax,1"
-"	      0048b6b7    mov cl,[ebp+8]"
+"	      0048b6b7    mov cl,reinterpret_cast<uint8_t>(lDevice)"
 "	      0048b6ba    shl eax,cl"
 "	      0048b6bc    not eax"
 "	      0048b6be    and edx,eax"
@@ -533,7 +533,7 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 151:
 	asm( 
-"	      0048b80c    test byte ptr [ebp-4],1"
+"	      0048b80c    test reinterpret_cast<uint8_t>(lCurrentIgnoreModifiers),1"
 "	      0048b810    je near ptr 0048B828h"
 );
 // LINE 152:
@@ -546,7 +546,7 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 153:
 	asm( 
-"	      0048b828    test byte ptr [ebp-4],2"
+"	      0048b828    test reinterpret_cast<uint8_t>(lCurrentIgnoreModifiers),2"
 "	      0048b82c    je near ptr 0048B844h"
 );
 // LINE 154:
@@ -574,7 +574,7 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 // LINE 157:
 	asm( 
-"	      0048b863    test byte ptr [ebp-4],4"
+"	      0048b863    test reinterpret_cast<uint8_t>(lCurrentIgnoreModifiers),4"
 "	      0048b867    je near ptr 0048B87Fh"
 );
 // LINE 158:

@@ -313,7 +313,7 @@ void RoadGraph::Init() {
 );
 // LINE 132:
 	asm( 
-"	      0053c0a5    mov al,[ebp-4]"
+"	      0053c0a5    mov al,reinterpret_cast<uint8_t>(x)"
 "	      0053c0a8    mov ecx,x"
 "	      0053c0ab    mov edx,this"
 "	      0053c0ae    mov ecx,[edx+ecx*4]"
@@ -327,7 +327,7 @@ void RoadGraph::Init() {
 );
 // LINE 133:
 	asm( 
-"	      0053c0c4    mov al,[ebp-8]"
+"	      0053c0c4    mov al,reinterpret_cast<uint8_t>(y)"
 "	      0053c0c7    mov ecx,x"
 "	      0053c0ca    mov edx,this"
 "	      0053c0cd    mov ecx,[edx+ecx*4]"
@@ -1358,13 +1358,13 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 );
 // LINE 409:
 	asm( 
-"	      0053c953    mov al,[ebp+0Ch]"
+"	      0053c953    mov al,reinterpret_cast<uint8_t>(x)"
 "	      0053c956    mov ecx,pGoal"
 "	      0053c959    mov [ecx+0Ch],al"
 );
 // LINE 410:
 	asm( 
-"	      0053c95c    mov al,[ebp+10h]"
+"	      0053c95c    mov al,reinterpret_cast<uint8_t>(y)"
 "	      0053c95f    mov ecx,pGoal"
 "	      0053c962    mov [ecx+0Dh],al"
 );
@@ -1600,7 +1600,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 453:
 // Block end:
 	asm( 
-"	      0053cb39    mov eax,[ebp-30h]"
+"	      0053cb39    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053cb3c    and eax,0FFFFh"
 "	      0053cb41    cmp eax,69h"
 "	      0053cb44    jne near ptr 0053CB5Dh"
@@ -1677,7 +1677,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cc02    push 1"
 "	      0053cc04    mov eax,[ebp-40h]"
 "	      0053cc07    push eax"
-"	      0053cc08    mov eax,[ebp-30h]"
+"	      0053cc08    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053cc0b    push eax"
 "	      0053cc0c    call 0053964Ah"
 "	      0053cc11    add esp,10h"
@@ -1687,15 +1687,15 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 473:
 	asm( 
 "	      0053cc1c    push 1"
-"	      0053cc1e    mov eax,[ebp+10h]"
+"	      0053cc1e    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cc21    push eax"
-"	      0053cc22    mov eax,[ebp+0Ch]"
+"	      0053cc22    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cc25    push eax"
 "	      0053cc26    xor eax,eax"
 "	      0053cc28    mov al,startLoc.y"
 "	      0053cc2b    dec eax"
 "	      0053cc2c    push eax"
-"	      0053cc2d    mov eax,[ebp+0Ch]"
+"	      0053cc2d    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cc30    push eax"
 "	      0053cc31    mov eax,goal1"
 "	      0053cc34    push eax"
@@ -1768,7 +1768,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ccfa    push 2"
 "	      0053ccfc    mov eax,[ebp-44h]"
 "	      0053ccff    push eax"
-"	      0053cd00    mov eax,[ebp-30h]"
+"	      0053cd00    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053cd03    push eax"
 "	      0053cd04    call 0053964Ah"
 "	      0053cd09    add esp,10h"
@@ -1784,11 +1784,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 484:
 	asm( 
 "	      0053cd20    push 2"
-"	      0053cd22    mov eax,[ebp+10h]"
+"	      0053cd22    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cd25    push eax"
-"	      0053cd26    mov eax,[ebp+0Ch]"
+"	      0053cd26    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cd29    push eax"
-"	      0053cd2a    mov eax,[ebp+0Dh]"
+"	      0053cd2a    mov eax,reinterpret_cast<uint32_t>(startLoc.y)"
 "	      0053cd2d    push eax"
 "	      0053cd2e    xor eax,eax"
 "	      0053cd30    mov al,startLoc.x"
@@ -1816,11 +1816,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 489:
 	asm( 
 "	      0053cd5f    push 2"
-"	      0053cd61    mov eax,[ebp+10h]"
+"	      0053cd61    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cd64    push eax"
-"	      0053cd65    mov eax,[ebp+0Ch]"
+"	      0053cd65    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cd68    push eax"
-"	      0053cd69    mov eax,[ebp+0Dh]"
+"	      0053cd69    mov eax,reinterpret_cast<uint32_t>(startLoc.y)"
 "	      0053cd6c    push eax"
 "	      0053cd6d    xor eax,eax"
 "	      0053cd6f    mov al,startLoc.x"
@@ -1897,7 +1897,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ce3f    push 4"
 "	      0053ce41    mov eax,[ebp-48h]"
 "	      0053ce44    push eax"
-"	      0053ce45    mov eax,[ebp-30h]"
+"	      0053ce45    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053ce48    push eax"
 "	      0053ce49    call 0053964Ah"
 "	      0053ce4e    add esp,10h"
@@ -1913,15 +1913,15 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 501:
 	asm( 
 "	      0053ce65    push 4"
-"	      0053ce67    mov eax,[ebp+10h]"
+"	      0053ce67    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053ce6a    push eax"
-"	      0053ce6b    mov eax,[ebp+0Ch]"
+"	      0053ce6b    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053ce6e    push eax"
 "	      0053ce6f    xor eax,eax"
 "	      0053ce71    mov al,startLoc.y"
 "	      0053ce74    add eax,stepSize"
 "	      0053ce77    push eax"
-"	      0053ce78    mov eax,[ebp+0Ch]"
+"	      0053ce78    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053ce7b    push eax"
 "	      0053ce7c    mov eax,goal2"
 "	      0053ce7f    push eax"
@@ -1945,15 +1945,15 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 506:
 	asm( 
 "	      0053cea4    push 4"
-"	      0053cea6    mov eax,[ebp+10h]"
+"	      0053cea6    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cea9    push eax"
-"	      0053ceaa    mov eax,[ebp+0Ch]"
+"	      0053ceaa    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cead    push eax"
 "	      0053ceae    xor eax,eax"
 "	      0053ceb0    mov al,startLoc.y"
 "	      0053ceb3    add eax,stepSize"
 "	      0053ceb6    push eax"
-"	      0053ceb7    mov eax,[ebp+0Ch]"
+"	      0053ceb7    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053ceba    push eax"
 "	      0053cebb    mov eax,goal1"
 "	      0053cebe    push eax"
@@ -2022,7 +2022,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cf73    push 8"
 "	      0053cf75    mov eax,[ebp-4Ch]"
 "	      0053cf78    push eax"
-"	      0053cf79    mov eax,[ebp-30h]"
+"	      0053cf79    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053cf7c    push eax"
 "	      0053cf7d    call 0053964Ah"
 "	      0053cf82    add esp,10h"
@@ -2038,11 +2038,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 518:
 	asm( 
 "	      0053cf99    push 8"
-"	      0053cf9b    mov eax,[ebp+10h]"
+"	      0053cf9b    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cf9e    push eax"
-"	      0053cf9f    mov eax,[ebp+0Ch]"
+"	      0053cf9f    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cfa2    push eax"
-"	      0053cfa3    mov eax,[ebp+0Dh]"
+"	      0053cfa3    mov eax,reinterpret_cast<uint32_t>(startLoc.y)"
 "	      0053cfa6    push eax"
 "	      0053cfa7    xor eax,eax"
 "	      0053cfa9    mov al,startLoc.x"
@@ -2070,11 +2070,11 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 // LINE 523:
 	asm( 
 "	      0053cfd6    push 8"
-"	      0053cfd8    mov eax,[ebp+10h]"
+"	      0053cfd8    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      0053cfdb    push eax"
-"	      0053cfdc    mov eax,[ebp+0Ch]"
+"	      0053cfdc    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053cfdf    push eax"
-"	      0053cfe0    mov eax,[ebp+0Dh]"
+"	      0053cfe0    mov eax,reinterpret_cast<uint32_t>(startLoc.y)"
 "	      0053cfe3    push eax"
 "	      0053cfe4    xor eax,eax"
 "	      0053cfe6    mov al,startLoc.x"
@@ -2134,7 +2134,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	asm( 
 "	      0053d038    mov eax,pGoal"
 "	      0053d03b    mov ax,[eax+0Ch]"
-"	      0053d03f    mov [ebp-4],ax"
+"	      0053d03f    mov reinterpret_cast<uint16_t>(here.x),ax"
 );
 // LINE 557:
 	asm( 
@@ -2446,9 +2446,9 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 );
 // LINE 655:
 	asm( 
-"	      0053d29e    mov eax,[ebp-0Fh]"
+"	      0053d29e    mov eax,reinterpret_cast<uint32_t>(here.y)"
 "	      0053d2a1    push eax"
-"	      0053d2a2    mov eax,[ebp-10h]"
+"	      0053d2a2    mov eax,reinterpret_cast<uint32_t>(here.x)"
 "	      0053d2a5    push eax"
 "	      0053d2a6    lea eax,returnDir"
 "	      0053d2a9    push eax"
@@ -2584,7 +2584,7 @@ KlugeFirstStepIsAnIntersection:
 );
 // LINE 688:
 	asm( 
-"	      0053d3b2    mov eax,[ebp+14h]"
+"	      0053d3b2    mov eax,reinterpret_cast<uint32_t>(startLoc.x)"
 "	      0053d3b5    push eax"
 "	      0053d3b6    mov eax,goal"
 "	      0053d3b9    push eax"
@@ -2725,7 +2725,7 @@ void RoadGraph::FindDeadEnds() {
 );
 // LINE 722:
 	asm( 
-"	      0053d4e7    mov eax,[ebp-1Ch]"
+"	      0053d4e7    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053d4ea    and eax,0FFFFh"
 "	      0053d4ef    cmp eax,69h"
 "	      0053d4f2    jne near ptr 0053D50Bh"
@@ -2788,7 +2788,7 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d59c    push 1"
 "	      0053d59e    mov eax,[ebp-20h]"
 "	      0053d5a1    push eax"
-"	      0053d5a2    mov eax,[ebp-1Ch]"
+"	      0053d5a2    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053d5a5    push eax"
 "	      0053d5a6    call 0053964Ah"
 "	      0053d5ab    add esp,10h"
@@ -2866,7 +2866,7 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d68d    push 2"
 "	      0053d68f    mov eax,[ebp-24h]"
 "	      0053d692    push eax"
-"	      0053d693    mov eax,[ebp-1Ch]"
+"	      0053d693    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053d696    push eax"
 "	      0053d697    call 0053964Ah"
 "	      0053d69c    add esp,10h"
@@ -2944,7 +2944,7 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d77e    push 4"
 "	      0053d780    mov eax,[ebp-28h]"
 "	      0053d783    push eax"
-"	      0053d784    mov eax,[ebp-1Ch]"
+"	      0053d784    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053d787    push eax"
 "	      0053d788    call 0053964Ah"
 "	      0053d78d    add esp,10h"
@@ -3019,7 +3019,7 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d860    push 8"
 "	      0053d862    mov eax,[ebp-2Ch]"
 "	      0053d865    push eax"
-"	      0053d866    mov eax,[ebp-1Ch]"
+"	      0053d866    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053d869    push eax"
 "	      0053d86a    call 0053964Ah"
 "	      0053d86f    add esp,10h"
@@ -3123,9 +3123,9 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 );
 // LINE 776:
 	asm( 
-"	      0053d911    mov eax,[ebp+10h]"
+"	      0053d911    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      0053d914    push eax"
-"	      0053d915    mov eax,[ebp+0Ch]"
+"	      0053d915    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      0053d918    push eax"
 "	      0053d919    lea eax,returnDir"
 "	      0053d91c    push eax"
@@ -3282,7 +3282,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 815:
 	asm( 
-"	      0053da4f    mov eax,[ebp-4]"
+"	      0053da4f    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053da52    and eax,0FFFFh"
 "	      0053da57    mov [ebp-34h],eax"
 "	      0053da5a    jmp near ptr 0053DA7Ch"
@@ -3313,7 +3313,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 817:
 	asm( 
-"	      0053dad1    mov eax,[ebp-4]"
+"	      0053dad1    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053dad4    and eax,0FFFFh"
 "	      0053dad9    cmp eax,69h"
 "	      0053dadc    jne near ptr 0053DAF5h"
@@ -3379,7 +3379,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053db86    push 1"
 "	      0053db88    mov eax,[ebp-18h]"
 "	      0053db8b    push eax"
-"	      0053db8c    mov eax,[ebp-4]"
+"	      0053db8c    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053db8f    push eax"
 "	      0053db90    call 0053964Ah"
 "	      0053db95    add esp,10h"
@@ -3394,7 +3394,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 838:
 	asm( 
-"	      0053dba9    mov eax,[ebp-4]"
+"	      0053dba9    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053dbac    and eax,0FFFFh"
 "	      0053dbb1    mov [ebp-38h],eax"
 "	      0053dbb4    jmp near ptr 0053DC42h"
@@ -3580,7 +3580,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053de6e    push 2"
 "	      0053de70    mov eax,[ebp-1Ch]"
 "	      0053de73    push eax"
-"	      0053de74    mov eax,[ebp-4]"
+"	      0053de74    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053de77    push eax"
 "	      0053de78    call 0053964Ah"
 "	      0053de7d    add esp,10h"
@@ -3595,7 +3595,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 849:
 	asm( 
-"	      0053de91    mov eax,[ebp-4]"
+"	      0053de91    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053de94    and eax,0FFFFh"
 "	      0053de99    mov [ebp-3Ch],eax"
 "	      0053de9c    jmp near ptr 0053DF2Ah"
@@ -3781,7 +3781,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e156    push 4"
 "	      0053e158    mov eax,[ebp-20h]"
 "	      0053e15b    push eax"
-"	      0053e15c    mov eax,[ebp-4]"
+"	      0053e15c    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053e15f    push eax"
 "	      0053e160    call 0053964Ah"
 "	      0053e165    add esp,10h"
@@ -3796,7 +3796,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 860:
 	asm( 
-"	      0053e179    mov eax,[ebp-4]"
+"	      0053e179    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053e17c    push eax"
 "	      0053e17d    call 00541360h"
 "	      0053e182    add esp,4"
@@ -3887,7 +3887,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 "	      0053e268    push 8"
 "	      0053e26a    mov eax,[ebp-24h]"
 "	      0053e26d    push eax"
-"	      0053e26e    mov eax,[ebp-4]"
+"	      0053e26e    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053e271    push eax"
 "	      0053e272    call 0053964Ah"
 "	      0053e277    add esp,10h"
@@ -3902,7 +3902,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 871:
 	asm( 
-"	      0053e28b    mov eax,[ebp-4]"
+"	      0053e28b    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053e28e    push eax"
 "	      0053e28f    call 00541360h"
 "	      0053e294    add esp,4"
@@ -4043,9 +4043,9 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 900:
 	asm( 
-"	      0053e37b    mov eax,[ebp+18h]"
+"	      0053e37b    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      0053e37e    push eax"
-"	      0053e37f    mov eax,[ebp+14h]"
+"	      0053e37f    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      0053e382    push eax"
 "	      0053e383    lea eax,returnDir"
 "	      0053e386    push eax"
@@ -4442,9 +4442,9 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 );
 // LINE 972:
 	asm( 
-"	      0053e7bd    mov eax,[ebp+18h]"
+"	      0053e7bd    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      0053e7c0    push eax"
-"	      0053e7c1    mov eax,[ebp+14h]"
+"	      0053e7c1    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      0053e7c4    push eax"
 "	      0053e7c5    lea eax,returnDir"
 "	      0053e7c8    push eax"
@@ -4657,7 +4657,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 );
 // LINE 1029:
 	asm( 
-"	      0053e974    mov eax,[ebp-4]"
+"	      0053e974    mov eax,reinterpret_cast<uint32_t>(LocalTile)"
 "	      0053e977    and eax,0FFFFh"
 "	      0053e97c    mov [ebp-28h],eax"
 "	      0053e97f    jmp near ptr 0053E998h"
@@ -4809,7 +4809,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 "	      0053eb3f    push eax"
 "	      0053eb40    mov eax,[ebp-14h]"
 "	      0053eb43    push eax"
-"	      0053eb44    mov eax,[ebp-4]"
+"	      0053eb44    mov eax,reinterpret_cast<uint32_t>(LocalTile)"
 "	      0053eb47    push eax"
 "	      0053eb48    call 0053964Ah"
 "	      0053eb4d    add esp,10h"
@@ -4909,7 +4909,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 "	      0053ec4e    push eax"
 "	      0053ec4f    mov eax,[ebp-18h]"
 "	      0053ec52    push eax"
-"	      0053ec53    mov eax,[ebp-4]"
+"	      0053ec53    mov eax,reinterpret_cast<uint32_t>(LocalTile)"
 "	      0053ec56    push eax"
 "	      0053ec57    call 0053964Ah"
 "	      0053ec5c    add esp,10h"
@@ -5005,7 +5005,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 "	      0053ed51    push eax"
 "	      0053ed52    mov eax,[ebp-1Ch]"
 "	      0053ed55    push eax"
-"	      0053ed56    mov eax,[ebp-4]"
+"	      0053ed56    mov eax,reinterpret_cast<uint32_t>(LocalTile)"
 "	      0053ed59    push eax"
 "	      0053ed5a    call 0053964Ah"
 "	      0053ed5f    add esp,10h"
@@ -5105,7 +5105,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 "	      0053ee63    push eax"
 "	      0053ee64    mov eax,[ebp-20h]"
 "	      0053ee67    push eax"
-"	      0053ee68    mov eax,[ebp-4]"
+"	      0053ee68    mov eax,reinterpret_cast<uint32_t>(LocalTile)"
 "	      0053ee6b    push eax"
 "	      0053ee6c    call 0053964Ah"
 "	      0053ee71    add esp,10h"
@@ -5190,7 +5190,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1099:
 	asm( 
-"	      0053eee2    mov eax,[ebp+10h]"
+"	      0053eee2    mov eax,reinterpret_cast<uint32_t>(RampTile)"
 "	      0053eee5    and eax,0FFFFh"
 "	      0053eeea    mov [ebp-2Ch],eax"
 "	      0053eeed    jmp near ptr 0054041Ah"
@@ -5635,7 +5635,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1129:
 	asm( 
-"	      0053f4c3    mov al,[ebp+8]"
+"	      0053f4c3    mov al,reinterpret_cast<uint8_t>(x)"
 "	      0053f4c6    mov ecx,x"
 "	      0053f4c9    mov edx,this"
 "	      0053f4cc    mov ecx,[edx+ecx*4-4]"
@@ -5824,7 +5824,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1140:
 	asm( 
-"	      0053f766    mov al,[ebp+8]"
+"	      0053f766    mov al,reinterpret_cast<uint8_t>(x)"
 "	      0053f769    mov ecx,x"
 "	      0053f76c    mov edx,this"
 "	      0053f76f    mov ecx,[edx+ecx*4-8]"
@@ -6395,7 +6395,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1173:
 	asm( 
-"	      0053ff3f    mov al,[ebp+8]"
+"	      0053ff3f    mov al,reinterpret_cast<uint8_t>(x)"
 "	      0053ff42    mov ecx,x"
 "	      0053ff45    mov edx,this"
 "	      0053ff48    mov ecx,[edx+ecx*4+4]"
@@ -6578,7 +6578,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 );
 // LINE 1184:
 	asm( 
-"	      005401de    mov al,[ebp+8]"
+"	      005401de    mov al,reinterpret_cast<uint8_t>(x)"
 "	      005401e1    mov ecx,x"
 "	      005401e4    mov edx,this"
 "	      005401e7    mov ecx,[edx+ecx*4+4]"
@@ -6798,7 +6798,7 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 );
 // LINE 1202:
 	asm( 
-"	      0054050a    mov eax,[ebp-4]"
+"	      0054050a    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0054050d    and eax,0FFFFh"
 "	      00540512    cmp eax,69h"
 "	      00540515    jne near ptr 0054052Eh"
@@ -7245,9 +7245,9 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1300:
 	asm( 
-"	      0054098d    mov eax,[ebp+10h]"
+"	      0054098d    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      00540990    push eax"
-"	      00540991    mov eax,[ebp+0Ch]"
+"	      00540991    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      00540994    push eax"
 "	      00540995    lea eax,returnDir"
 "	      00540998    push eax"
@@ -7536,9 +7536,9 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 );
 // LINE 1339:
 	asm( 
-"	      00540cf5    mov eax,[ebp+10h]"
+"	      00540cf5    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      00540cf8    push eax"
-"	      00540cf9    mov eax,[ebp+0Ch]"
+"	      00540cf9    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      00540cfc    push eax"
 "	      00540cfd    lea eax,returnDir"
 "	      00540d00    push eax"
@@ -8151,7 +8151,7 @@ int32_t RoadGraph::SetElevation(unsigned short t) {
 );
 // LINE 1447:
 	asm( 
-"	      005412dd    mov eax,[ebp+8]"
+"	      005412dd    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      005412e0    and eax,0FFFFh"
 "	      005412e5    mov [ebp-0Ch],eax"
 "	      005412e8    jmp near ptr 00541303h"

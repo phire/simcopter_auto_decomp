@@ -1319,9 +1319,9 @@ short S3TerrainInitMap() {
 );
 // LINE 420:
 	asm( 
-"	      00514b99    test byte ptr [ebp-1Ch],1"
+"	      00514b99    test reinterpret_cast<uint8_t>(x),1"
 "	      00514b9d    jne near ptr 00514C04h"
-"	      00514ba3    test byte ptr [ebp-20h],1"
+"	      00514ba3    test reinterpret_cast<uint8_t>(y),1"
 "	      00514ba7    jne near ptr 00514C04h"
 );
 // LINE 421:
@@ -4738,9 +4738,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1028:
 	asm( 
-"	      00517315    mov eax,[ebp+10h]"
+"	      00517315    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517318    push eax"
-"	      00517319    mov eax,[ebp-0Ch]"
+"	      00517319    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      0051731c    push eax"
 "	      0051731d    call 00517DC6h"
 "	      00517322    add esp,8"
@@ -4815,9 +4815,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1033:
 	asm( 
-"	      00517410    mov eax,[ebp+10h]"
+"	      00517410    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517413    push eax"
-"	      00517414    mov eax,[ebp-0Ch]"
+"	      00517414    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517417    push eax"
 "	      00517418    call 00517DC6h"
 "	      0051741d    add esp,8"
@@ -4888,9 +4888,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1038:
 	asm( 
-"	      005174ff    mov eax,[ebp+10h]"
+"	      005174ff    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517502    push eax"
-"	      00517503    mov eax,[ebp-0Ch]"
+"	      00517503    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517506    push eax"
 "	      00517507    call 00517DC6h"
 "	      0051750c    add esp,8"
@@ -4965,9 +4965,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1043:
 	asm( 
-"	      005175fa    mov eax,[ebp+10h]"
+"	      005175fa    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      005175fd    push eax"
-"	      005175fe    mov eax,[ebp-0Ch]"
+"	      005175fe    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517601    push eax"
 "	      00517602    call 00517DC6h"
 "	      00517607    add esp,8"
@@ -5045,9 +5045,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1054:
 	asm( 
-"	      005176f6    mov eax,[ebp+10h]"
+"	      005176f6    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      005176f9    push eax"
-"	      005176fa    mov eax,[ebp-0Ch]"
+"	      005176fa    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      005176fd    push eax"
 "	      005176fe    call 00517DC6h"
 "	      00517703    add esp,8"
@@ -5124,9 +5124,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1059:
 	asm( 
-"	      005177f3    mov eax,[ebp+10h]"
+"	      005177f3    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      005177f6    push eax"
-"	      005177f7    mov eax,[ebp-0Ch]"
+"	      005177f7    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      005177fa    push eax"
 "	      005177fb    call 00517DC6h"
 "	      00517800    add esp,8"
@@ -5199,9 +5199,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1064:
 	asm( 
-"	      005178e4    mov eax,[ebp+10h]"
+"	      005178e4    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      005178e7    push eax"
-"	      005178e8    mov eax,[ebp-0Ch]"
+"	      005178e8    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      005178eb    push eax"
 "	      005178ec    call 00517DC6h"
 "	      005178f1    add esp,8"
@@ -5278,9 +5278,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1069:
 	asm( 
-"	      005179e1    mov eax,[ebp+10h]"
+"	      005179e1    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      005179e4    push eax"
-"	      005179e5    mov eax,[ebp-0Ch]"
+"	      005179e5    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      005179e8    push eax"
 "	      005179e9    call 00517DC6h"
 "	      005179ee    add esp,8"
@@ -5385,9 +5385,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1080:
 	asm( 
-"	      00517b4a    mov eax,[ebp+10h]"
+"	      00517b4a    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517b4d    push eax"
-"	      00517b4e    mov eax,[ebp-0Ch]"
+"	      00517b4e    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517b51    push eax"
 "	      00517b52    call 00517DC6h"
 "	      00517b57    add esp,8"
@@ -5435,9 +5435,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1085:
 	asm( 
-"	      00517bdf    mov eax,[ebp+10h]"
+"	      00517bdf    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517be2    push eax"
-"	      00517be3    mov eax,[ebp-0Ch]"
+"	      00517be3    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517be6    push eax"
 "	      00517be7    call 00517DC6h"
 "	      00517bec    add esp,8"
@@ -5480,9 +5480,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1087:
 	asm( 
-"	      00517c69    mov eax,[ebp+10h]"
+"	      00517c69    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517c6c    push eax"
-"	      00517c6d    mov eax,[ebp-0Ch]"
+"	      00517c6d    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517c70    push eax"
 "	      00517c71    call 00517DC6h"
 "	      00517c76    add esp,8"
@@ -5526,9 +5526,9 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1089:
 	asm( 
-"	      00517cf4    mov eax,[ebp+10h]"
+"	      00517cf4    mov eax,reinterpret_cast<uint32_t>(msize)"
 "	      00517cf7    push eax"
-"	      00517cf8    mov eax,[ebp-0Ch]"
+"	      00517cf8    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517cfb    push eax"
 "	      00517cfc    call 00517DC6h"
 "	      00517d01    add esp,8"
@@ -5551,18 +5551,18 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1095:
 	asm( 
-"	      00517d3d    mov eax,[ebp-8]"
+"	      00517d3d    mov eax,reinterpret_cast<uint32_t>(midp)"
 "	      00517d40    push eax"
-"	      00517d41    mov eax,[ebp+0Ch]"
+"	      00517d41    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      00517d44    push eax"
-"	      00517d45    mov eax,[ebp+8]"
+"	      00517d45    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      00517d48    push eax"
 "	      00517d49    call 0051723Ch"
 "	      00517d4e    add esp,0Ch"
 );
 // LINE 1096:
 	asm( 
-"	      00517d51    mov eax,[ebp-8]"
+"	      00517d51    mov eax,reinterpret_cast<uint32_t>(midp)"
 "	      00517d54    push eax"
 "	      00517d55    movsx eax,midp"
 "	      00517d59    movsx ecx,is_odd"
@@ -5570,16 +5570,16 @@ void do_map_square(short x, short y, short msize) {
 "	      00517d5f    movsx ecx,y"
 "	      00517d63    add eax,ecx"
 "	      00517d65    push eax"
-"	      00517d66    mov eax,[ebp+8]"
+"	      00517d66    mov eax,reinterpret_cast<uint32_t>(x)"
 "	      00517d69    push eax"
 "	      00517d6a    call 0051723Ch"
 "	      00517d6f    add esp,0Ch"
 );
 // LINE 1097:
 	asm( 
-"	      00517d72    mov eax,[ebp-8]"
+"	      00517d72    mov eax,reinterpret_cast<uint32_t>(midp)"
 "	      00517d75    push eax"
-"	      00517d76    mov eax,[ebp+0Ch]"
+"	      00517d76    mov eax,reinterpret_cast<uint32_t>(y)"
 "	      00517d79    push eax"
 "	      00517d7a    movsx eax,midp"
 "	      00517d7e    movsx ecx,is_odd"
@@ -5592,7 +5592,7 @@ void do_map_square(short x, short y, short msize) {
 );
 // LINE 1098:
 	asm( 
-"	      00517d93    mov eax,[ebp-8]"
+"	      00517d93    mov eax,reinterpret_cast<uint32_t>(midp)"
 "	      00517d96    push eax"
 "	      00517d97    movsx eax,midp"
 "	      00517d9b    movsx ecx,is_odd"
@@ -5644,7 +5644,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 "	      00517ddb    and eax,max_noise"
 "	      00517dde    mov [ebp-10h],eax"
 "	      00517de1    fild dword ptr [ebp-10h]"
-"	      00517de4    mov eax,[ebp+0Ch]"
+"	      00517de4    mov eax,reinterpret_cast<uint32_t>(edge_len)"
 "	      00517de7    and eax,0FFFFh"
 "	      00517dec    mov [ebp-18h],eax"
 "	      00517def    mov dword ptr [ebp-14h],0"
@@ -5668,7 +5668,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 );
 // LINE 1117:
 	asm( 
-"	      00517e28    mov eax,[ebp+8]"
+"	      00517e28    mov eax,reinterpret_cast<uint32_t>(hght)"
 "	      00517e2b    and eax,0FFFFh"
 "	      00517e30    add eax,delta"
 "	      00517e33    mov new_height,eax"
@@ -5684,7 +5684,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 );
 // LINE 1120:
 	asm( 
-"	      00517e4f    mov ax,[ebp-4]"
+"	      00517e4f    mov ax,reinterpret_cast<uint16_t>(new_height)"
 "	      00517e53    jmp near ptr 00517E58h"
 );
 // LINE 1121:

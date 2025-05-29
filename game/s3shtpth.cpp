@@ -425,7 +425,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 );
 // LINE 121:
 	asm( 
-"	      00543984    mov al,[ebp-30h]"
+"	      00543984    mov al,reinterpret_cast<uint8_t>(i)"
 "	      00543987    mov scratch.edgeIndexPrev,al"
 );
 // LINE 122:
@@ -683,9 +683,9 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 185:
 	asm( 
-"	      00543b2e    mov eax,[ebp-2Ch]"
+"	      00543b2e    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      00543b31    push eax"
-"	      00543b32    mov eax,[ebp-24h]"
+"	      00543b32    mov eax,reinterpret_cast<uint32_t>(currLoc.x)"
 "	      00543b35    push eax"
 "	      00543b36    mov ecx,this"
 "	      00543b39    call 00543690h"
@@ -864,9 +864,9 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 235:
 	asm( 
-"	      00543c93    mov eax,[ebp-2Ch]"
+"	      00543c93    mov eax,reinterpret_cast<uint32_t>(destLoc.x)"
 "	      00543c96    push eax"
-"	      00543c97    mov eax,[ebp-24h]"
+"	      00543c97    mov eax,reinterpret_cast<uint32_t>(currLoc.x)"
 "	      00543c9a    push eax"
 "	      00543c9b    mov ecx,this"
 "	      00543c9e    call 00543690h"
@@ -874,7 +874,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 );
 // LINE 236:
 	asm( 
-"	      00543ca6    mov al,[ebp-38h]"
+"	      00543ca6    mov al,reinterpret_cast<uint8_t>(i)"
 "	      00543ca9    mov scratch.edgeIndexPrev,al"
 );
 // LINE 237:

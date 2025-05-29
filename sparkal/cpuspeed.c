@@ -106,7 +106,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 );
 // LINE 135:
 	asm( 
-"	      00447bd0    test byte ptr [ebp-17h],80h"
+"	      00447bd0    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&processor) + 1),80h"
 "	      00447bd4    je near ptr 00447BFEh"
 );
 // LINE 136:
@@ -131,7 +131,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 );
 // LINE 140:
 	asm( 
-"	      00447c08    mov eax,[ebp-18h]"
+"	      00447c08    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      00447c0b    and eax,0FFFFh"
 "	      00447c10    mov eax,[eax*4+598F28h]"
 "	      00447c17    lea eax,[eax+eax*4]"
@@ -205,7 +205,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 );
 // LINE 166:
 	asm( 
-"	      00447cba    test byte ptr [ebp-14h],10h"
+"	      00447cba    test reinterpret_cast<uint8_t>(features),10h"
 "	      00447cbe    je near ptr 00447E72h"
 "	      00447cc4    cmp manual,0"
 "	      00447cc8    jne near ptr 00447E72h"
@@ -439,7 +439,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 298:
 	asm( 
 "	      00447e6d    jmp near ptr 00447F80h"
-"	      00447e72    mov eax,[ebp-18h]"
+"	      00447e72    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      00447e75    and eax,0FFFFh"
 "	      00447e7a    cmp eax,3"
 "	      00447e7d    jl near ptr 00447F6Bh"
@@ -618,7 +618,7 @@ loop1:
 	asm( 
 "	      00447f92    mov eax,freq"
 "	      00447f95    push eax"
-"	      00447f96    mov eax,[ebp-18h]"
+"	      00447f96    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      00447f99    push eax"
 "	      00447f9a    call 00447FCEh"
 "	      00447f9f    add esp,8"
@@ -726,7 +726,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 );
 // LINE 440:
 	asm( 
-"	      004480b0    mov eax,[ebp+8]"
+"	      004480b0    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      004480b3    and eax,0FFFFh"
 "	      004480b8    cmp eax,3"
 "	      004480bb    jne near ptr 0044811Bh"
@@ -780,7 +780,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 // LINE 458:
 	asm( 
 "	      00448116    jmp near ptr 00448264h"
-"	      0044811b    mov eax,[ebp+8]"
+"	      0044811b    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      0044811e    and eax,0FFFFh"
 "	      00448123    cmp eax,4"
 "	      00448126    jne near ptr 00448186h"
@@ -834,7 +834,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 // LINE 476:
 	asm( 
 "	      00448181    jmp near ptr 00448264h"
-"	      00448186    mov eax,[ebp+8]"
+"	      00448186    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      00448189    and eax,0FFFFh"
 "	      0044818e    cmp eax,5"
 "	      00448191    jne near ptr 004481F1h"
@@ -888,7 +888,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 // LINE 494:
 	asm( 
 "	      004481ec    jmp near ptr 00448264h"
-"	      004481f1    mov eax,[ebp+8]"
+"	      004481f1    mov eax,reinterpret_cast<uint32_t>(processor)"
 "	      004481f4    and eax,0FFFFh"
 "	      004481f9    cmp eax,6"
 "	      004481fc    jne near ptr 0044825Ch"

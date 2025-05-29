@@ -205,7 +205,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 );
 // LINE 66:
 	asm( 
-"	      004271c2    mov al,[ebp-8]"
+"	      004271c2    mov al,reinterpret_cast<uint8_t>(Version)"
 "	      004271c5    mov WinMajor,al"
 );
 // LINE 67:
@@ -226,7 +226,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 );
 // LINE 70:
 	asm( 
-"	      004271ea    test byte ptr [ebp-5],80h"
+"	      004271ea    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Version) + 3),80h"
 "	      004271ee    je near ptr 00427203h"
 );
 // LINE 71:

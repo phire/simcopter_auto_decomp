@@ -1199,7 +1199,7 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 226:
 	asm( 
-"	      004a2365    mov eax,[ebp+0Ch]"
+"	      004a2365    mov eax,reinterpret_cast<uint32_t>(chModifiers)"
 "	      004a2368    push eax"
 "	      004a2369    mov eax,lKey"
 "	      004a236c    push eax"
@@ -1337,7 +1337,7 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 );
 // LINE 258:
 	asm( 
-"	      004a247e    mov eax,[ebp+0Ch]"
+"	      004a247e    mov eax,reinterpret_cast<uint32_t>(chModifiers)"
 "	      004a2481    push eax"
 "	      004a2482    mov eax,lKey"
 "	      004a2485    push eax"

@@ -54,9 +54,9 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 "	      005349f9    push eax"
 "	      005349fa    mov eax,x"
 "	      005349fd    push eax"
-"	      005349fe    mov eax,[ebp+0Ch]"
+"	      005349fe    mov eax,reinterpret_cast<uint32_t>(mType)"
 "	      00534a01    push eax"
-"	      00534a02    mov eax,[ebp+8]"
+"	      00534a02    mov eax,reinterpret_cast<uint32_t>(mID)"
 "	      00534a05    push eax"
 "	      00534a06    call 00534B21h"
 "	      00534a0b    add esp,10h"
@@ -233,12 +233,12 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 );
 // LINE 159:
 	asm( 
-"	      00534b2a    mov al,[ebp+10h]"
+"	      00534b2a    mov al,reinterpret_cast<uint8_t>(x)"
 "	      00534b2d    mov startLoc.x,al"
 );
 // LINE 160:
 	asm( 
-"	      00534b30    mov al,[ebp+14h]"
+"	      00534b30    mov al,reinterpret_cast<uint8_t>(y)"
 "	      00534b33    mov startLoc.y,al"
 );
 // LINE 165:
@@ -960,7 +960,7 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 );
 // LINE 398:
 	asm( 
-"	      0053519b    mov eax,[ebp+8]"
+"	      0053519b    mov eax,reinterpret_cast<uint32_t>(carModel)"
 "	      0053519e    push eax"
 "	      0053519f    mov ecx,this"
 "	      005351a2    call 005048CDh"
@@ -1053,7 +1053,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	asm( 
 "	      0053521e    mov eax,this"
 "	      00535221    mov ax,[eax+7Ch]"
-"	      00535225    mov [ebp-14h],ax"
+"	      00535225    mov reinterpret_cast<uint16_t>(scanLoc.x),ax"
 );
 // LINE 447:
 // Block start:
@@ -1076,7 +1076,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 // LINE 451:
 	asm( 
-"	      00535254    mov eax,[ebp-18h]"
+"	      00535254    mov eax,reinterpret_cast<uint32_t>(tt)"
 "	      00535257    and eax,0FFFFh"
 "	      0053525c    mov [ebp-3Ch],eax"
 "	      0053525f    jmp near ptr 00535282h"
@@ -1248,7 +1248,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 // LINE 487:
 	asm( 
-"	      0053535a    mov eax,[ebp-18h]"
+"	      0053535a    mov eax,reinterpret_cast<uint32_t>(tt)"
 "	      0053535d    and eax,0FFFFh"
 "	      00535362    mov [ebp-40h],eax"
 "	      00535365    jmp near ptr 00535388h"
@@ -1368,7 +1368,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 // LINE 516:
 	asm( 
-"	      0053545c    mov eax,[ebp-18h]"
+"	      0053545c    mov eax,reinterpret_cast<uint32_t>(tt)"
 "	      0053545f    and eax,0FFFFh"
 "	      00535464    mov [ebp-44h],eax"
 "	      00535467    jmp near ptr 0053548Ah"
@@ -1445,7 +1445,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 // LINE 537:
 	asm( 
-"	      005354f7    mov eax,[ebp-18h]"
+"	      005354f7    mov eax,reinterpret_cast<uint32_t>(tt)"
 "	      005354fa    and eax,0FFFFh"
 "	      005354ff    mov [ebp-48h],eax"
 "	      00535502    jmp near ptr 00535525h"
@@ -1571,7 +1571,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 // LINE 578:
 	asm( 
-"	      005355f4    mov eax,[ebp-18h]"
+"	      005355f4    mov eax,reinterpret_cast<uint32_t>(tt)"
 "	      005355f7    and eax,0FFFFh"
 "	      005355fc    mov [ebp-4Ch],eax"
 "	      005355ff    jmp near ptr 00535622h"

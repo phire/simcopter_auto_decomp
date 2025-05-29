@@ -57,7 +57,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 );
 // LINE 16:
 	asm( 
-"	      0055cb86    mov eax,[ebp+0Ch]"
+"	      0055cb86    mov eax,reinterpret_cast<uint32_t>(startTreeID)"
 "	      0055cb89    push eax"
 "	      0055cb8a    mov eax,startBehavior"
 "	      0055cb8d    push eax"
@@ -641,7 +641,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 138:
 	asm( 
-"	      0055d027    mov eax,[ebp-18h]"
+"	      0055d027    mov eax,reinterpret_cast<uint32_t>(treeID)"
 "	      0055d02a    push eax"
 "	      0055d02b    mov eax,stackPass"
 "	      0055d02e    push eax"
@@ -795,7 +795,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 177:
 	asm( 
-"	      0055d177    test dword ptr [ebp-0Ch],0FFFFh"
+"	      0055d177    test reinterpret_cast<uint32_t>(done),0FFFFh"
 "	      0055d17e    je near ptr 0055CF5Ah"
 );
 // LINE 179:
@@ -850,7 +850,7 @@ char TreeSim::NodeComplete(unsigned short success) {
 );
 // LINE 204:
 	asm( 
-"	      0055d1d5    test dword ptr [ebp-8],0FFFFh"
+"	      0055d1d5    test reinterpret_cast<uint32_t>(done),0FFFFh"
 "	      0055d1dc    jne near ptr 0055D2E2h"
 );
 // LINE 205:
@@ -898,7 +898,7 @@ char TreeSim::NodeComplete(unsigned short success) {
 );
 // LINE 211:
 	asm( 
-"	      0055d248    test dword ptr [ebp+8],0FFFFh"
+"	      0055d248    test reinterpret_cast<uint32_t>(success),0FFFFh"
 "	      0055d24f    je near ptr 0055D263h"
 "	      0055d255    mov eax,node"
 "	      0055d258    mov al,[eax+2]"
@@ -1122,7 +1122,7 @@ void ExtSim::Error(short errNum) {
 );
 // LINE 263:
 	asm( 
-"	      0055d3e1    mov eax,[ebp+8]"
+"	      0055d3e1    mov eax,reinterpret_cast<uint32_t>(errNum)"
 "	      0055d3e4    push eax"
 "	      0055d3e5    mov eax,this"
 "	      0055d3e8    mov ecx,this"
@@ -1206,7 +1206,7 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 );
 // LINE 280:
 	asm( 
-"	      0055d467    mov eax,[ebp+0Ch]"
+"	      0055d467    mov eax,reinterpret_cast<uint32_t>(bOnceOnly)"
 "	      0055d46a    push eax"
 "	      0055d46b    mov eax,ticks"
 "	      0055d46e    push eax"

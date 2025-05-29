@@ -105,7 +105,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 );
 // LINE 162:
 	asm( 
-"	      00554771    test byte ptr [ebp+0Ch],40h"
+"	      00554771    test reinterpret_cast<uint8_t>(state),40h"
 "	      00554775    je near ptr 00554782h"
 "	      0055477b    or wstate,0F00h"
 );
@@ -122,7 +122,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	asm( 
 "	      00554793    cmp mem,0"
 "	      00554797    je near ptr 005547B3h"
-"	      0055479d    test byte ptr [ebp+0Ch],80h"
+"	      0055479d    test reinterpret_cast<uint8_t>(state),80h"
 "	      005547a1    je near ptr 005547B3h"
 "	      005547a7    mov eax,mem"
 "	      005547aa    push eax"
@@ -681,7 +681,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 );
 // LINE 361:
 	asm( 
-"	      00554b3a    test byte ptr [ebp-3],0Fh"
+"	      00554b3a    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&flags) + 1),0Fh"
 "	      00554b3e    je near ptr 00554B60h"
 "	      00554b44    push 8C085h"
 "	      00554b49    push 5BC384h"
@@ -1080,7 +1080,7 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 );
 // LINE 456:
 	asm( 
-"	      00554dc7    test byte ptr [ebp-4],80h"
+"	      00554dc7    test reinterpret_cast<uint8_t>(state),80h"
 "	      00554dcb    je near ptr 00554DDAh"
 "	      00554dd1    mov ax,1"
 "	      00554dd5    jmp near ptr 00554DDDh"
@@ -1129,13 +1129,13 @@ long Memory::HGetState(void * __ptr32 h) {
 );
 // LINE 470:
 	asm( 
-"	      00554e0c    cmp byte ptr [ebp-4],0"
+"	      00554e0c    cmp reinterpret_cast<uint8_t>(wstate),0"
 "	      00554e10    je near ptr 00554E1Dh"
 "	      00554e16    or state,80h"
 );
 // LINE 471:
 	asm( 
-"	      00554e1d    test byte ptr [ebp-3],0Fh"
+"	      00554e1d    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&wstate) + 1),0Fh"
 "	      00554e21    je near ptr 00554E2Bh"
 "	      00554e27    or state,40h"
 );
@@ -1178,7 +1178,7 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 );
 // LINE 486:
 	asm( 
-"	      00554e68    test byte ptr [ebp+0Ch],80h"
+"	      00554e68    test reinterpret_cast<uint8_t>(newState),80h"
 "	      00554e6c    je near ptr 00554E83h"
 "	      00554e72    mov eax,h"
 "	      00554e75    push eax"

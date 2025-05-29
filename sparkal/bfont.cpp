@@ -3574,7 +3574,7 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRe
 );
 // LINE 486:
 	asm( 
-"	      0046ab35    test byte ptr [ebp+18h],1"
+"	      0046ab35    test reinterpret_cast<uint8_t>(nFormat),1"
 "	      0046ab39    je near ptr 0046ABA6h"
 );
 // LINE 487:
@@ -3626,7 +3626,7 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRe
 // LINE 493:
 	asm( 
 "	      0046aba1    jmp near ptr 0046AC3Ah"
-"	      0046aba6    test byte ptr [ebp+18h],8"
+"	      0046aba6    test reinterpret_cast<uint8_t>(nFormat),8"
 "	      0046abaa    je near ptr 0046ABFBh"
 );
 // LINE 494:
@@ -3729,7 +3729,7 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, cla
 );
 // LINE 523:
 	asm( 
-"	      0046ac52    test byte ptr [ebp+18h],1"
+"	      0046ac52    test reinterpret_cast<uint8_t>(nFormat),1"
 "	      0046ac56    je near ptr 0046ACC3h"
 );
 // LINE 524:
@@ -3781,7 +3781,7 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, cla
 // LINE 530:
 	asm( 
 "	      0046acbe    jmp near ptr 0046AD57h"
-"	      0046acc3    test byte ptr [ebp+18h],8"
+"	      0046acc3    test reinterpret_cast<uint8_t>(nFormat),8"
 "	      0046acc7    je near ptr 0046AD18h"
 );
 // LINE 531:

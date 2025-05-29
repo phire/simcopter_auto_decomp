@@ -84,7 +84,7 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 );
 // LINE 133:
 	asm( 
-"	      0055d9c2    mov eax,[ebp-4]"
+"	      0055d9c2    mov eax,reinterpret_cast<uint32_t>(txzy.x)"
 "	      0055d9c5    jmp near ptr 0055D9CAh"
 );
 // LINE 134:
@@ -112,7 +112,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 );
 // LINE 139:
 	asm( 
-"	      0055d9d8    mov eax,[ebp+0Ch]"
+"	      0055d9d8    mov eax,reinterpret_cast<uint32_t>(txzy.x)"
 "	      0055d9db    push eax"
 "	      0055d9dc    call 0055DA2Eh"
 "	      0055d9e1    add esp,4"
@@ -120,7 +120,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 );
 // LINE 140:
 	asm( 
-"	      0055d9e7    mov eax,[ebp+0Eh]"
+"	      0055d9e7    mov eax,reinterpret_cast<uint32_t>(txzy.z)"
 "	      0055d9ea    push eax"
 "	      0055d9eb    call 0055DA2Eh"
 "	      0055d9f0    add esp,4"
@@ -128,7 +128,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 );
 // LINE 141:
 	asm( 
-"	      0055d9f6    mov eax,[ebp+0Dh]"
+"	      0055d9f6    mov eax,reinterpret_cast<uint32_t>(txzy.y)"
 "	      0055d9f9    push eax"
 "	      0055d9fa    call 0055DA2Eh"
 "	      0055d9ff    add esp,4"

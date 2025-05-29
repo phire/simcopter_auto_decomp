@@ -240,7 +240,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 );
 // LINE 71:
 	asm( 
-"	      005676f4    test dword ptr [ebp-10Ch],0FFFFh"
+"	      005676f4    test reinterpret_cast<uint32_t>(fileOpened),0FFFFh"
 "	      005676fe    je near ptr 0056771Bh"
 );
 // LINE 72:
@@ -643,7 +643,7 @@ void _cArray::~_cArray() {
 );
 // LINE 176:
 	asm( 
-"	      00567acd    test dword ptr [ebp-4],0FFFFh"
+"	      00567acd    test reinterpret_cast<uint32_t>(bFound),0FFFFh"
 "	      00567ad4    je near ptr 00567AF6h"
 "	      00567ada    push 8C085h"
 "	      00567adf    push 5BF99Ch"
@@ -2123,7 +2123,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 );
 // LINE 474:
 	asm( 
-"	      0056876f    mov eax,[ebp+10h]"
+"	      0056876f    mov eax,reinterpret_cast<uint32_t>(zeropad)"
 "	      00568772    push eax"
 "	      00568773    mov ecx,this"
 "	      00568776    call 00567E6Bh"
@@ -3009,10 +3009,10 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 "	      00568ee1    mov ecx,ds:[5BF74Ch]"
 "	      00568ee7    mov eax,[ecx+eax*4]"
 "	      00568eea    mov eax,[eax+4Ch]"
-"	      00568eed    mov cl,[ebp-8]"
+"	      00568eed    mov cl,reinterpret_cast<uint8_t>(shiftnum)"
 "	      00568ef0    shr eax,cl"
 "	      00568ef2    mov edx,tinyname"
-"	      00568ef5    mov cl,[ebp-8]"
+"	      00568ef5    mov cl,reinterpret_cast<uint8_t>(shiftnum)"
 "	      00568ef8    shr edx,cl"
 "	      00568efa    cmp eax,edx"
 "	      00568efc    jne near ptr 00568F14h"
@@ -3389,7 +3389,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	class _cArray* tmp;
 	asm( 
 "	      00569173    push 0"
-"	      00569175    mov eax,[ebp-1Ch]"
+"	      00569175    mov eax,reinterpret_cast<uint32_t>(count)"
 "	      00569178    push eax"
 "	      00569179    mov eax,rType"
 "	      0056917c    push eax"
@@ -3520,7 +3520,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 );
 // LINE 756:
 	asm( 
-"	      005692db    test dword ptr [ebp-20h],0FFFFh"
+"	      005692db    test reinterpret_cast<uint32_t>(fileOpened),0FFFFh"
 "	      005692e2    je near ptr 005692F3h"
 );
 // LINE 757:

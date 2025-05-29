@@ -15623,7 +15623,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>& sKeys, lon
 );
 // LINE 2072:
 	asm( 
-"	      0040d546    test byte ptr [ebp+10h],2"
+"	      0040d546    test reinterpret_cast<uint8_t>(lModifiers),2"
 "	      0040d54a    je near ptr 0040D5C6h"
 );
 // LINE 2073:
@@ -15672,7 +15672,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>& sKeys, lon
 );
 // LINE 2079:
 	asm( 
-"	      0040d5c6    test byte ptr [ebp+10h],4"
+"	      0040d5c6    test reinterpret_cast<uint8_t>(lModifiers),4"
 "	      0040d5ca    je near ptr 0040D647h"
 );
 // LINE 2080:
@@ -15729,7 +15729,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>& sKeys, lon
 );
 // LINE 2088:
 	asm( 
-"	      0040d647    test byte ptr [ebp+10h],1"
+"	      0040d647    test reinterpret_cast<uint8_t>(lModifiers),1"
 "	      0040d64b    je near ptr 0040D6C8h"
 );
 // LINE 2089:

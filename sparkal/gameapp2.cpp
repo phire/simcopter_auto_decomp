@@ -4601,7 +4601,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 976:
 	asm( 
-"	      0046449f    mov eax,[ebp+0Ch]"
+"	      0046449f    mov eax,reinterpret_cast<uint32_t>(chModifiers)"
 "	      004644a2    push eax"
 "	      004644a3    mov eax,lKey"
 "	      004644a6    push eax"
@@ -5003,7 +5003,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 );
 // LINE 1050:
 	asm( 
-"	      0046488b    mov eax,[ebp+0Ch]"
+"	      0046488b    mov eax,reinterpret_cast<uint32_t>(chModifiers)"
 "	      0046488e    push eax"
 "	      0046488f    mov eax,lKey"
 "	      00464892    push eax"

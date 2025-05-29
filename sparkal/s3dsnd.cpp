@@ -5113,7 +5113,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 521:
 	asm( 
-"	      00446da4    test byte ptr [ebp+10h],1"
+"	      00446da4    test reinterpret_cast<uint8_t>(nFlags),1"
 "	      00446da8    je near ptr 00446DBAh"
 );
 // LINE 522:
@@ -5130,7 +5130,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 );
 // LINE 525:
 	asm( 
-"	      00446dc1    test byte ptr [ebp+10h],2"
+"	      00446dc1    test reinterpret_cast<uint8_t>(nFlags),2"
 "	      00446dc5    je near ptr 00446DD7h"
 );
 // LINE 526:

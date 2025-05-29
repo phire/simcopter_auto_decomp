@@ -27,8 +27,8 @@ void S3RoadDataInit() {
 );
 // LINE 53:
 	asm( 
-"	      0053847c    mov dword ptr [ebp-30h],9999999Ah"
-"	      00538483    mov dword ptr [ebp-2Ch],40199999h"
+"	      0053847c    mov reinterpret_cast<uint32_t>(straightLegSize),9999999Ah"
+"	      00538483    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4),40199999h"
 );
 // LINE 54:
 	asm( 
@@ -415,8 +415,8 @@ void S3RoadDataInit() {
 );
 // LINE 152:
 	asm( 
-"	      00538886    mov dword ptr [ebp-18h],769A7903h"
-"	      0053888d    mov dword ptr [ebp-14h],3FC41B2Fh"
+"	      00538886    mov reinterpret_cast<uint32_t>(turnAngle),769A7903h"
+"	      0053888d    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4),3FC41B2Fh"
 );
 // LINE 153:
 	asm( 
@@ -586,8 +586,8 @@ void S3RoadDataInit() {
 );
 // LINE 177:
 	asm( 
-"	      00538a93    mov dword ptr [ebp-18h],769A7903h"
-"	      00538a9a    mov dword ptr [ebp-14h],3FC41B2Fh"
+"	      00538a93    mov reinterpret_cast<uint32_t>(turnAngle),769A7903h"
+"	      00538a9a    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4),3FC41B2Fh"
 );
 // LINE 178:
 	asm( 
@@ -751,13 +751,13 @@ void S3RoadDataInit() {
 );
 // LINE 201:
 	asm( 
-"	      00538c9d    mov dword ptr [ebp-28h],0"
-"	      00538ca4    mov dword ptr [ebp-24h],40200000h"
+"	      00538c9d    mov reinterpret_cast<uint32_t>(turnRadius),0"
+"	      00538ca4    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnRadius) + 4),40200000h"
 );
 // LINE 202:
 	asm( 
-"	      00538cab    mov dword ptr [ebp-18h],54411744h"
-"	      00538cb2    mov dword ptr [ebp-14h],3FD921FBh"
+"	      00538cab    mov reinterpret_cast<uint32_t>(turnAngle),54411744h"
+"	      00538cb2    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4),3FD921FBh"
 );
 // LINE 204:
 	asm( 
@@ -1311,7 +1311,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 423:
 	asm( 
-"	      005392da    mov eax,[ebp-4]"
+"	      005392da    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      005392dd    and eax,0FFFFh"
 "	      005392e2    cmp eax,69h"
 "	      005392e5    jne near ptr 00539316h"
@@ -1337,11 +1337,11 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 430:
 	asm( 
 "	      00539311    jmp near ptr 0053963Eh"
-"	      00539316    mov eax,[ebp-4]"
+"	      00539316    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      00539319    and eax,0FFFFh"
 "	      0053931e    cmp eax,27h"
 "	      00539321    jl near ptr 00539347h"
-"	      00539327    mov eax,[ebp-4]"
+"	      00539327    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0053932a    and eax,0FFFFh"
 "	      0053932f    cmp eax,2Bh"
 "	      00539332    jg near ptr 00539347h"
@@ -1354,7 +1354,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 436:
 	asm( 
 "	      00539342    jmp near ptr 0053963Eh"
-"	      00539347    mov eax,[ebp-4]"
+"	      00539347    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      0053934a    and eax,0FFFFh"
 "	      0053934f    cmp eax,49h"
 "	      00539352    jne near ptr 005394C7h"
@@ -1402,11 +1402,11 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 441:
 	asm( 
-"	      005393e1    mov eax,[ebp-8]"
+"	      005393e1    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      005393e4    and eax,0FFFFh"
 "	      005393e9    cmp eax,805Fh"
 "	      005393ee    je near ptr 00539407h"
-"	      005393f4    mov eax,[ebp-8]"
+"	      005393f4    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      005393f7    and eax,0FFFFh"
 "	      005393fc    cmp eax,8060h"
 "	      00539401    jne near ptr 00539411h"
@@ -1455,11 +1455,11 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 448:
 	asm( 
-"	      00539492    mov eax,[ebp-8]"
+"	      00539492    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      00539495    and eax,0FFFFh"
 "	      0053949a    cmp eax,805Dh"
 "	      0053949f    je near ptr 005394B8h"
-"	      005394a5    mov eax,[ebp-8]"
+"	      005394a5    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      005394a8    and eax,0FFFFh"
 "	      005394ad    cmp eax,805Eh"
 "	      005394b2    jne near ptr 005394C2h"
@@ -1472,7 +1472,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 452:
 	asm( 
 "	      005394c2    jmp near ptr 0053963Eh"
-"	      005394c7    mov eax,[ebp-4]"
+"	      005394c7    mov eax,reinterpret_cast<uint32_t>(t)"
 "	      005394ca    and eax,0FFFFh"
 "	      005394cf    cmp eax,4Ah"
 "	      005394d2    jne near ptr 0053963Eh"
@@ -1520,11 +1520,11 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 457:
 	asm( 
-"	      00539563    mov eax,[ebp-8]"
+"	      00539563    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      00539566    and eax,0FFFFh"
 "	      0053956b    cmp eax,60h"
 "	      0053956e    je near ptr 00539585h"
-"	      00539574    mov eax,[ebp-8]"
+"	      00539574    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      00539577    and eax,0FFFFh"
 "	      0053957c    cmp eax,5Fh"
 "	      0053957f    jne near ptr 0053958Fh"
@@ -1573,11 +1573,11 @@ int32_t IsThisAnIntersection(long x, long y) {
 );
 // LINE 464:
 	asm( 
-"	      00539612    mov eax,[ebp-8]"
+"	      00539612    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      00539615    and eax,0FFFFh"
 "	      0053961a    cmp eax,5Eh"
 "	      0053961d    je near ptr 00539634h"
-"	      00539623    mov eax,[ebp-8]"
+"	      00539623    mov eax,reinterpret_cast<uint32_t>(t2)"
 "	      00539626    and eax,0FFFFh"
 "	      0053962b    cmp eax,5Dh"
 "	      0053962e    jne near ptr 0053963Eh"
@@ -1708,7 +1708,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 503:
 	asm( 
-"	      005397bc    mov eax,[ebp+8]"
+"	      005397bc    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      005397bf    and eax,0FFFFh"
 "	      005397c4    mov [ebp-2Ch],eax"
 "	      005397c7    jmp near ptr 00539829h"
@@ -1795,7 +1795,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 516:
 	asm( 
-"	      00539890    mov eax,[ebp+0Ch]"
+"	      00539890    mov eax,reinterpret_cast<uint32_t>(toTile)"
 "	      00539893    and eax,0FFFFh"
 "	      00539898    mov [ebp-30h],eax"
 "	      0053989b    jmp near ptr 0053991Eh"
@@ -1894,19 +1894,19 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 536:
 	asm( 
-"	      0053998c    mov eax,[ebp+8]"
+"	      0053998c    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      0053998f    and eax,0FFFFh"
 "	      00539994    cmp eax,4Bh"
 "	      00539997    je near ptr 005399D0h"
-"	      0053999d    mov eax,[ebp+8]"
+"	      0053999d    mov eax,reinterpret_cast<uint32_t>(fromTile)"
 "	      005399a0    and eax,0FFFFh"
 "	      005399a5    cmp eax,4Ch"
 "	      005399a8    je near ptr 005399D0h"
-"	      005399ae    mov eax,[ebp+0Ch]"
+"	      005399ae    mov eax,reinterpret_cast<uint32_t>(toTile)"
 "	      005399b1    and eax,0FFFFh"
 "	      005399b6    cmp eax,4Bh"
 "	      005399b9    je near ptr 005399D0h"
-"	      005399bf    mov eax,[ebp+0Ch]"
+"	      005399bf    mov eax,reinterpret_cast<uint32_t>(toTile)"
 "	      005399c2    and eax,0FFFFh"
 "	      005399c7    cmp eax,4Ch"
 "	      005399ca    jne near ptr 00539A8Dh"
@@ -1919,7 +1919,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 540:
 	asm( 
-"	      005399db    test reinterpret_cast<unit8_t>(TestDir),1"
+"	      005399db    test reinterpret_cast<uint8_t>(TestDir),1"
 "	      005399df    je near ptr 005399EFh"
 "	      005399e5    mov eax,1"
 "	      005399ea    jmp near ptr 00539BEEh"
@@ -1927,7 +1927,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 541:
 	asm( 
-"	      005399f4    test reinterpret_cast<unit8_t>(TestDir),2"
+"	      005399f4    test reinterpret_cast<uint8_t>(TestDir),2"
 "	      005399f8    je near ptr 00539A08h"
 "	      005399fe    mov eax,1"
 "	      00539a03    jmp near ptr 00539BEEh"
@@ -1935,7 +1935,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 542:
 	asm( 
-"	      00539a0d    test reinterpret_cast<unit8_t>(TestDir),4"
+"	      00539a0d    test reinterpret_cast<uint8_t>(TestDir),4"
 "	      00539a11    je near ptr 00539A21h"
 "	      00539a17    mov eax,1"
 "	      00539a1c    jmp near ptr 00539BEEh"
@@ -1943,7 +1943,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 543:
 	asm( 
-"	      00539a26    test reinterpret_cast<unit8_t>(TestDir),8"
+"	      00539a26    test reinterpret_cast<uint8_t>(TestDir),8"
 "	      00539a2a    je near ptr 00539A3Ah"
 "	      00539a30    mov eax,1"
 "	      00539a35    jmp near ptr 00539BEEh"
@@ -1982,7 +1982,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	asm( 
 "	      00539a8d    mov dword ptr [ebp-1Ch],5B57E8h"
 "	      00539a94    mov eax,[ebp-1Ch]"
-"	      00539a97    mov ecx,[ebp+8]"
+"	      00539a97    mov ecx,reinterpret_cast<uint32_t>(fromTile)"
 "	      00539a9a    and ecx,0FFFFh"
 "	      00539aa0    cmp [eax],ecx"
 "	      00539aa2    jne near ptr 00539AB6h"
@@ -2006,7 +2006,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	asm( 
 "	      00539aea    mov dword ptr [ebp-20h],5B57E8h"
 "	      00539af1    mov eax,[ebp-20h]"
-"	      00539af4    mov ecx,[ebp+0Ch]"
+"	      00539af4    mov ecx,reinterpret_cast<uint32_t>(toTile)"
 "	      00539af7    and ecx,0FFFFh"
 "	      00539afd    cmp [eax],ecx"
 "	      00539aff    jne near ptr 00539B13h"
@@ -2028,11 +2028,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 556:
 	asm( 
-"	      00539b47    test reinterpret_cast<unit8_t>(TestDir),1"
+"	      00539b47    test reinterpret_cast<uint8_t>(TestDir),1"
 "	      00539b4b    je near ptr 00539B6Fh"
-"	      00539b51    test reinterpret_cast<unit8_t>(fromConnections),1"
+"	      00539b51    test reinterpret_cast<uint8_t>(fromConnections),1"
 "	      00539b55    je near ptr 00539B6Fh"
-"	      00539b5b    test reinterpret_cast<unit8_t>(toConnections),4"
+"	      00539b5b    test reinterpret_cast<uint8_t>(toConnections),4"
 "	      00539b5f    je near ptr 00539B6Fh"
 );
 // LINE 557:
@@ -2042,11 +2042,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 558:
 	asm( 
-"	      00539b6f    test reinterpret_cast<unit8_t>(TestDir),4"
+"	      00539b6f    test reinterpret_cast<uint8_t>(TestDir),4"
 "	      00539b73    je near ptr 00539B97h"
-"	      00539b79    test reinterpret_cast<unit8_t>(fromConnections),4"
+"	      00539b79    test reinterpret_cast<uint8_t>(fromConnections),4"
 "	      00539b7d    je near ptr 00539B97h"
-"	      00539b83    test reinterpret_cast<unit8_t>(toConnections),1"
+"	      00539b83    test reinterpret_cast<uint8_t>(toConnections),1"
 "	      00539b87    je near ptr 00539B97h"
 );
 // LINE 559:
@@ -2056,11 +2056,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 560:
 	asm( 
-"	      00539b97    test reinterpret_cast<unit8_t>(TestDir),8"
+"	      00539b97    test reinterpret_cast<uint8_t>(TestDir),8"
 "	      00539b9b    je near ptr 00539BBFh"
-"	      00539ba1    test reinterpret_cast<unit8_t>(fromConnections),8"
+"	      00539ba1    test reinterpret_cast<uint8_t>(fromConnections),8"
 "	      00539ba5    je near ptr 00539BBFh"
-"	      00539bab    test reinterpret_cast<unit8_t>(toConnections),2"
+"	      00539bab    test reinterpret_cast<uint8_t>(toConnections),2"
 "	      00539baf    je near ptr 00539BBFh"
 );
 // LINE 561:
@@ -2070,11 +2070,11 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 );
 // LINE 562:
 	asm( 
-"	      00539bbf    test reinterpret_cast<unit8_t>(TestDir),2"
+"	      00539bbf    test reinterpret_cast<uint8_t>(TestDir),2"
 "	      00539bc3    je near ptr 00539BE7h"
-"	      00539bc9    test reinterpret_cast<unit8_t>(fromConnections),2"
+"	      00539bc9    test reinterpret_cast<uint8_t>(fromConnections),2"
 "	      00539bcd    je near ptr 00539BE7h"
-"	      00539bd3    test reinterpret_cast<unit8_t>(toConnections),8"
+"	      00539bd3    test reinterpret_cast<uint8_t>(toConnections),8"
 "	      00539bd7    je near ptr 00539BE7h"
 );
 // LINE 563:

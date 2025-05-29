@@ -17918,7 +17918,7 @@ long PopupMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 );
 // LINE 3092:
 	asm( 
-"	      004b7d76    mov eax,[ebp+0Ch]"
+"	      004b7d76    mov eax,reinterpret_cast<uint32_t>(chModifiers)"
 "	      004b7d79    push eax"
 "	      004b7d7a    mov eax,lKey"
 "	      004b7d7d    push eax"

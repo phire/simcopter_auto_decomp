@@ -229,7 +229,7 @@ unsigned short RRand(unsigned short lim) {
 	asm( 
 "	      0055d682    mov eax,myRandom0"
 "	      0055d685    and eax,0FFFFh"
-"	      0055d68a    mov ecx,[ebp+8]"
+"	      0055d68a    mov ecx,reinterpret_cast<uint32_t>(lim)"
 "	      0055d68d    and ecx,0FFFFh"
 "	      0055d693    cdq"
 "	      0055d694    idiv ecx"
@@ -266,12 +266,12 @@ unsigned short GetNextRandomNumber() {
 );
 // LINE 109:
 	asm( 
-"	      0055d6b5    test byte ptr [ebp-3],80h"
+"	      0055d6b5    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&temp) + 1),80h"
 "	      0055d6b9    je near ptr 0055D6D7h"
 );
 // LINE 110:
 	asm( 
-"	      0055d6bf    mov eax,[ebp-4]"
+"	      0055d6bf    mov eax,reinterpret_cast<uint32_t>(temp)"
 "	      0055d6c2    and eax,0FFFFh"
 "	      0055d6c7    add eax,eax"
 "	      0055d6c9    xor eax,1BF5h"
@@ -284,7 +284,7 @@ unsigned short GetNextRandomNumber() {
 );
 // LINE 113:
 	asm( 
-"	      0055d6dc    mov eax,[ebp-4]"
+"	      0055d6dc    mov eax,reinterpret_cast<uint32_t>(temp)"
 "	      0055d6df    and eax,0FFFFh"
 "	      0055d6e4    xor ds:[6376A8h],eax"
 );
@@ -327,9 +327,9 @@ unsigned short SRand(unsigned short lim) {
 "	      0055d71f    push edi"
 "	      0055d720    call 0055D6A3h"
 "	      0055d725    mov next,ax"
-"	      0055d729    mov eax,[ebp-4]"
+"	      0055d729    mov eax,reinterpret_cast<uint32_t>(next)"
 "	      0055d72c    and eax,0FFFFh"
-"	      0055d731    mov ecx,[ebp+8]"
+"	      0055d731    mov ecx,reinterpret_cast<uint32_t>(lim)"
 "	      0055d734    and ecx,0FFFFh"
 "	      0055d73a    cdq"
 "	      0055d73b    idiv ecx"
@@ -527,7 +527,7 @@ unsigned short SGIRand(unsigned short limit) {
 );
 // LINE 135:
 	asm( 
-"	      0055d82d    mov eax,[ebp+8]"
+"	      0055d82d    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d830    push eax"
 "	      0055d831    call 0055D717h"
 "	      0055d836    add esp,4"
@@ -535,7 +535,7 @@ unsigned short SGIRand(unsigned short limit) {
 );
 // LINE 136:
 	asm( 
-"	      0055d83d    mov eax,[ebp+8]"
+"	      0055d83d    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d840    push eax"
 "	      0055d841    call 0055D717h"
 "	      0055d846    add esp,4"
@@ -543,9 +543,9 @@ unsigned short SGIRand(unsigned short limit) {
 );
 // LINE 137:
 	asm( 
-"	      0055d84d    mov eax,[ebp-8]"
+"	      0055d84d    mov eax,reinterpret_cast<uint32_t>(z)"
 "	      0055d850    and eax,0FFFFh"
-"	      0055d855    mov ecx,[ebp-4]"
+"	      0055d855    mov ecx,reinterpret_cast<uint32_t>(x)"
 "	      0055d858    and ecx,0FFFFh"
 "	      0055d85e    cmp eax,ecx"
 "	      0055d860    jle near ptr 0055D874h"
@@ -590,7 +590,7 @@ unsigned short SGRand(unsigned short limit) {
 );
 // LINE 150:
 	asm( 
-"	      0055d88b    mov eax,[ebp+8]"
+"	      0055d88b    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d88e    push eax"
 "	      0055d88f    call 0055D717h"
 "	      0055d894    add esp,4"
@@ -598,7 +598,7 @@ unsigned short SGRand(unsigned short limit) {
 );
 // LINE 151:
 	asm( 
-"	      0055d89b    mov eax,[ebp+8]"
+"	      0055d89b    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d89e    push eax"
 "	      0055d89f    call 0055D717h"
 "	      0055d8a4    add esp,4"
@@ -606,9 +606,9 @@ unsigned short SGRand(unsigned short limit) {
 );
 // LINE 152:
 	asm( 
-"	      0055d8ab    mov eax,[ebp-8]"
+"	      0055d8ab    mov eax,reinterpret_cast<uint32_t>(z)"
 "	      0055d8ae    and eax,0FFFFh"
-"	      0055d8b3    mov ecx,[ebp-4]"
+"	      0055d8b3    mov ecx,reinterpret_cast<uint32_t>(x)"
 "	      0055d8b6    and ecx,0FFFFh"
 "	      0055d8bc    cmp eax,ecx"
 "	      0055d8be    jge near ptr 0055D8D2h"
@@ -653,7 +653,7 @@ short SGSRand(unsigned short limit) {
 );
 // LINE 165:
 	asm( 
-"	      0055d8e9    mov eax,[ebp+8]"
+"	      0055d8e9    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d8ec    push eax"
 "	      0055d8ed    call 0055D717h"
 "	      0055d8f2    add esp,4"
@@ -661,7 +661,7 @@ short SGSRand(unsigned short limit) {
 );
 // LINE 166:
 	asm( 
-"	      0055d8f9    mov eax,[ebp+8]"
+"	      0055d8f9    mov eax,reinterpret_cast<uint32_t>(limit)"
 "	      0055d8fc    push eax"
 "	      0055d8fd    call 0055D717h"
 "	      0055d902    add esp,4"

@@ -662,7 +662,7 @@ int32_t MDate::LeapYear(uint32_t year) {
 );
 // LINE 263:
 	asm( 
-"	      004bc8a5    test byte ptr [ebp+8],3"
+"	      004bc8a5    test reinterpret_cast<uint8_t>(year),3"
 "	      004bc8a9    jne near ptr 004BC8C3h"
 "	      004bc8af    mov ecx,64h"
 "	      004bc8b4    mov eax,year"
@@ -1953,7 +1953,7 @@ void SkipDelim(class istream& strm) {
 );
 // LINE 535:
 	asm( 
-"	      004bd266    mov eax,[ebp-4]"
+"	      004bd266    mov eax,reinterpret_cast<uint32_t>(c)"
 "	      004bd269    push eax"
 "	      004bd26a    mov ecx,strm"
 "	      004bd26d    call 00571B20h"
@@ -2071,7 +2071,7 @@ char * ParseMonth(class istream& s) {
 );
 // LINE 558:
 	asm( 
-"	      004bd379    mov eax,[ebp-8]"
+"	      004bd379    mov eax,reinterpret_cast<uint32_t>(c)"
 "	      004bd37c    push eax"
 "	      004bd37d    mov ecx,s"
 "	      004bd380    call 00571B20h"

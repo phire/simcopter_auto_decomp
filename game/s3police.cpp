@@ -469,7 +469,7 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      00537187    mov eax,this"
 "	      0053718a    mov ax,[eax+7Ch]"
-"	      0053718e    mov [ebp-4],ax"
+"	      0053718e    mov reinterpret_cast<uint16_t>(badGuyLoc.x),ax"
 );
 // LINE 277:
 	asm( 
@@ -629,7 +629,7 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      005372e6    mov eax,this"
 "	      005372e9    mov ax,[eax+7Ch]"
-"	      005372ed    mov [ebp-4],ax"
+"	      005372ed    mov reinterpret_cast<uint16_t>(badGuyLoc.x),ax"
 );
 // LINE 321:
 	asm( 
@@ -762,7 +762,7 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      00537431    mov eax,this"
 "	      00537434    mov ax,[eax+11Ch]"
-"	      0053743b    mov [ebp-34h],ax"
+"	      0053743b    mov reinterpret_cast<uint16_t>(oldemergencyloc.x),ax"
 );
 // LINE 358:
 	asm( 
@@ -772,7 +772,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 360:
 	asm( 
-"	      0053744f    mov ax,[ebp-4]"
+"	      0053744f    mov ax,reinterpret_cast<uint16_t>(badGuyLoc.x)"
 "	      00537453    mov ecx,this"
 "	      00537456    mov [ecx+11Ch],ax"
 );
@@ -839,7 +839,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 // LINE 380:
 	asm( 
-"	      005374d8    mov eax,[ebp-34h]"
+"	      005374d8    mov eax,reinterpret_cast<uint32_t>(oldemergencyloc.x)"
 "	      005374db    push eax"
 "	      005374dc    mov ecx,this"
 "	      005374df    call 00542461h"
@@ -1024,7 +1024,7 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      005376ad    mov eax,this"
 "	      005376b0    mov ax,[eax+7Ch]"
-"	      005376b4    mov [ebp-4],ax"
+"	      005376b4    mov reinterpret_cast<uint16_t>(badGuyLoc.x),ax"
 );
 // LINE 418:
 	asm( 
@@ -1295,7 +1295,7 @@ void PoliceCarClass::ItterateFSM() {
 	asm( 
 "	      0053790c    mov eax,this"
 "	      0053790f    mov ax,[eax+7Ch]"
-"	      00537913    mov [ebp-4],ax"
+"	      00537913    mov reinterpret_cast<uint16_t>(badGuyLoc.x),ax"
 );
 // LINE 510:
 	asm( 
@@ -1459,7 +1459,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	asm( 
 "	      00537a58    mov eax,this"
 "	      00537a5b    mov ax,[eax+7Ch]"
-"	      00537a5f    mov [ebp-4],ax"
+"	      00537a5f    mov reinterpret_cast<uint16_t>(startLoc.x),ax"
 );
 // LINE 555:
 	asm( 
@@ -1742,18 +1742,18 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 );
 // LINE 608:
 	asm( 
-"	      00537d79    mov eax,[ebp-0Ch]"
+"	      00537d79    mov eax,reinterpret_cast<uint32_t>(destVertex.x)"
 "	      00537d7c    push eax"
-"	      00537d7d    mov eax,[ebp-8]"
+"	      00537d7d    mov eax,reinterpret_cast<uint32_t>(startVertex.x)"
 "	      00537d80    push eax"
 "	      00537d81    mov ecx,5C37F8h"
 "	      00537d86    call 005439BBh"
 );
 // LINE 609:
 	asm( 
-"	      00537d8b    mov eax,[ebp-0Ch]"
+"	      00537d8b    mov eax,reinterpret_cast<uint32_t>(destVertex.x)"
 "	      00537d8e    push eax"
-"	      00537d8f    mov eax,[ebp-8]"
+"	      00537d8f    mov eax,reinterpret_cast<uint32_t>(startVertex.x)"
 "	      00537d92    push eax"
 "	      00537d93    mov ecx,this"
 "	      00537d96    call 005427F5h"
@@ -1913,7 +1913,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 );
 // LINE 655:
 	asm( 
-"	      00537f1d    mov ax,[ebp-14h]"
+"	      00537f1d    mov ax,reinterpret_cast<uint16_t>(loc.x)"
 "	      00537f21    mov ecx,this"
 "	      00537f24    mov [ecx+11Ch],ax"
 );
@@ -2468,7 +2468,7 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	asm( 
 "	      005383fc    mov eax,this"
 "	      005383ff    mov ax,[eax+7Ch]"
-"	      00538403    mov [ebp-4],ax"
+"	      00538403    mov reinterpret_cast<uint16_t>(badGuyLoc.x),ax"
 );
 // LINE 806:
 	asm( 

@@ -837,7 +837,7 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 // LINE 258:
 	asm( 
 "	      00523fb1    mov eax,4"
-"	      00523fb6    mov cl,[ebp+18h]"
+"	      00523fb6    mov cl,reinterpret_cast<uint8_t>(scale)"
 "	      00523fb9    shl eax,cl"
 "	      00523fbb    mov dim,eax"
 );

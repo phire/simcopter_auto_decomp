@@ -288,7 +288,7 @@ void cBBase::Destroy() {
 );
 // LINE 64:
 	asm( 
-"	      0055f3ca    test dword ptr [ebp-8],0FFFFh"
+"	      0055f3ca    test reinterpret_cast<uint32_t>(fileOpened),0FFFFh"
 "	      0055f3d1    je near ptr 0055F3F9h"
 );
 // LINE 65:

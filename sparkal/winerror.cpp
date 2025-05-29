@@ -30,7 +30,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 );
 // LINE 24:
 	asm( 
-"	      0044ff74    test byte ptr [ebp+0Bh],80h"
+"	      0044ff74    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Error) + 3),80h"
 "	      0044ff78    je near ptr 00450046h"
 );
 // LINE 27:

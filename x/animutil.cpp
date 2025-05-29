@@ -226,7 +226,7 @@ unsigned short PutInPerspective(struct XZY* xzy, short cH) {
 );
 // LINE 69:
 	asm( 
-"	      005627a5    mov eax,[ebp+0Ch]"
+"	      005627a5    mov eax,reinterpret_cast<uint32_t>(cH)"
 "	      005627a8    push eax"
 "	      005627a9    lea eax,dxzy.x"
 "	      005627ac    push eax"
@@ -718,7 +718,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 );
 // LINE 140:
 	asm( 
-"	      00562b15    test dword ptr [ebp+38h],0FFFFh"
+"	      00562b15    test reinterpret_cast<uint32_t>(perspective),0FFFFh"
 "	      00562b1c    je near ptr 00562B30h"
 );
 // LINE 141:
@@ -1225,25 +1225,25 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 "	      00562e61    lea eax,phi"
 "	      00562e64    push eax"
 "	      00562e65    push 0Ah"
-"	      00562e67    mov eax,[ebp+18h]"
+"	      00562e67    mov eax,reinterpret_cast<uint32_t>(lngincs)"
 "	      00562e6a    push eax"
-"	      00562e6b    mov eax,[ebp+14h]"
+"	      00562e6b    mov eax,reinterpret_cast<uint32_t>(latincs)"
 "	      00562e6e    push eax"
 "	      00562e6f    push 0"
-"	      00562e71    mov eax,[ebp+10h]"
+"	      00562e71    mov eax,reinterpret_cast<uint32_t>(lngint)"
 "	      00562e74    push eax"
-"	      00562e75    mov eax,[ebp+0Ch]"
+"	      00562e75    mov eax,reinterpret_cast<uint32_t>(latint)"
 "	      00562e78    push eax"
 "	      00562e79    call 005639D2h"
 "	      00562e7e    add esp,24h"
 );
 // LINE 227:
 	asm( 
-"	      00562e81    mov eax,[ebp+24h]"
+"	      00562e81    mov eax,reinterpret_cast<uint32_t>(length)"
 "	      00562e84    push eax"
 "	      00562e85    mov eax,ctr"
 "	      00562e88    push eax"
-"	      00562e89    mov eax,[ebp+1Ch]"
+"	      00562e89    mov eax,reinterpret_cast<uint32_t>(polarAngles)"
 "	      00562e8c    push eax"
 "	      00562e8d    mov eax,psi"
 "	      00562e90    push eax"
@@ -1333,7 +1333,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 );
 // LINE 243:
 	asm( 
-"	      00562f32    test dword ptr [ebp+14h],0FFFFh"
+"	      00562f32    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
 "	      00562f39    je near ptr 00562F64h"
 );
 // LINE 244:
@@ -1378,7 +1378,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	asm( 
 "	      00562f84    mov eax,ctr"
 "	      00562f87    mov eax,[eax]"
-"	      00562f89    mov [ebp-8],eax"
+"	      00562f89    mov reinterpret_cast<uint32_t>(centerPt.v),eax"
 );
 // LINE 248:
 	asm( 
@@ -1410,8 +1410,8 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 "	      00562fbb    mov eax,rect"
 "	      00562fbe    mov ecx,[eax]"
 "	      00562fc0    mov eax,[eax+4]"
-"	      00562fc3    mov [ebp-20h],ecx"
-"	      00562fc6    mov [ebp-1Ch],eax"
+"	      00562fc3    mov reinterpret_cast<uint32_t>(myRect.top),ecx"
+"	      00562fc6    mov reinterpret_cast<uint32_t>(myRect.bottom),eax"
 );
 // LINE 253:
 	asm( 
@@ -1461,7 +1461,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 "	      00563026    add esp,4"
 "	      00563029    mov [ebp-24h],eax"
 "	      0056302c    mov eax,[ebp-24h]"
-"	      0056302f    mov [ebp-8],eax"
+"	      0056302f    mov reinterpret_cast<uint32_t>(centerPt.v),eax"
 );
 // LINE 258:
 	asm( 
@@ -1476,7 +1476,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 );
 // LINE 259:
 	asm( 
-"	      0056304f    test dword ptr [ebp+14h],0FFFFh"
+"	      0056304f    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
 "	      00563056    je near ptr 00563081h"
 );
 // LINE 260:
@@ -1532,7 +1532,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 "	      005630b5    push eax"
 "	      005630b6    mov eax,xdist"
 "	      005630b9    push eax"
-"	      005630ba    mov eax,[ebp-8]"
+"	      005630ba    mov eax,reinterpret_cast<uint32_t>(centerPt.v)"
 "	      005630bd    push eax"
 "	      005630be    call 005631D0h"
 "	      005630c3    add esp,18h"
@@ -1575,7 +1575,7 @@ void DrawDirectionDisk(struct Point centerPt, struct DXZY unitvector, float rad)
 "	      005630f7    fmul rad"
 "	      005630fa    sub esp,4"
 "	      005630fd    fstp dword ptr [esp]"
-"	      00563100    mov eax,[ebp+8]"
+"	      00563100    mov eax,reinterpret_cast<uint32_t>(centerPt.v)"
 "	      00563103    push eax"
 "	      00563104    call 005631D0h"
 "	      00563109    add esp,18h"
@@ -1672,7 +1672,7 @@ void DrawDirectionDisk(struct DXZY start, struct DXZY end) {
 "	      005631b1    fsub start.x"
 "	      005631b4    sub esp,4"
 "	      005631b7    fstp dword ptr [esp]"
-"	      005631ba    mov eax,[ebp-8]"
+"	      005631ba    mov eax,reinterpret_cast<uint32_t>(startpt.v)"
 "	      005631bd    push eax"
 "	      005631be    call 005631D0h"
 "	      005631c3    add esp,18h"
@@ -2094,7 +2094,7 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 );
 // LINE 575:
 	asm( 
-"	      005634ac    test dword ptr [ebp+20h],0FFFFh"
+"	      005634ac    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
 "	      005634b3    je near ptr 005634D2h"
 );
 // LINE 576:
@@ -2411,11 +2411,11 @@ void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqi
 "	      00563707    mov eax,polar"
 "	      0056370a    add eax,12h"
 "	      0056370d    push eax"
-"	      0056370e    mov eax,[ebp+14h]"
+"	      0056370e    mov eax,reinterpret_cast<uint32_t>(trqincs)"
 "	      00563711    push eax"
-"	      00563712    mov eax,[ebp+10h]"
+"	      00563712    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
 "	      00563715    push eax"
-"	      00563716    mov eax,[ebp+0Ch]"
+"	      00563716    mov eax,reinterpret_cast<uint32_t>(latincs)"
 "	      00563719    push eax"
 "	      0056371a    mov eax,polar"
 "	      0056371d    mov eax,[eax+8]"
@@ -2482,11 +2482,11 @@ void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqi
 "	      0056378c    push eax"
 "	      0056378d    mov eax,polar"
 "	      00563790    push eax"
-"	      00563791    mov eax,[ebp+14h]"
+"	      00563791    mov eax,reinterpret_cast<uint32_t>(trqincs)"
 "	      00563794    push eax"
-"	      00563795    mov eax,[ebp+10h]"
+"	      00563795    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
 "	      00563798    push eax"
-"	      00563799    mov eax,[ebp+0Ch]"
+"	      00563799    mov eax,reinterpret_cast<uint32_t>(latincs)"
 "	      0056379c    push eax"
 "	      0056379d    mov eax,polar"
 "	      005637a0    mov ax,[eax+14h]"
@@ -2543,11 +2543,11 @@ void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs
 );
 // LINE 641:
 	asm( 
-"	      005637fe    mov eax,[ebp+14h]"
+"	      005637fe    mov eax,reinterpret_cast<uint32_t>(trqIncs)"
 "	      00563801    push eax"
-"	      00563802    mov eax,[ebp+10h]"
+"	      00563802    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
 "	      00563805    push eax"
-"	      00563806    mov eax,[ebp+0Ch]"
+"	      00563806    mov eax,reinterpret_cast<uint32_t>(latIncs)"
 "	      00563809    push eax"
 "	      0056380a    mov eax,polar"
 "	      0056380d    push eax"
@@ -2569,11 +2569,11 @@ void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs
 );
 // LINE 643:
 	asm( 
-"	      00563837    mov eax,[ebp+14h]"
+"	      00563837    mov eax,reinterpret_cast<uint32_t>(trqIncs)"
 "	      0056383a    push eax"
-"	      0056383b    mov eax,[ebp+10h]"
+"	      0056383b    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
 "	      0056383e    push eax"
-"	      0056383f    mov eax,[ebp+0Ch]"
+"	      0056383f    mov eax,reinterpret_cast<uint32_t>(latIncs)"
 "	      00563842    push eax"
 "	      00563843    mov eax,polar"
 "	      00563846    push eax"
@@ -3062,7 +3062,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 );
 // LINE 709:
 	asm( 
-"	      00563bb3    test dword ptr [ebp+28h],0FFFFh"
+"	      00563bb3    test reinterpret_cast<uint32_t>(perspective),0FFFFh"
 "	      00563bba    je near ptr 00563BCEh"
 );
 // LINE 710:
@@ -3161,8 +3161,8 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 );
 // LINE 746:
 	asm( 
-"	      00563c61    mov dword ptr [ebp-8],0"
-"	      00563c68    mov dword ptr [ebp-4],0"
+"	      00563c61    mov reinterpret_cast<uint32_t>(projrad),0"
+"	      00563c68    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&projrad) + 4),0"
 );
 // LINE 747:
 	asm( 
