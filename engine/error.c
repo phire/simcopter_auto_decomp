@@ -8,25 +8,19 @@
 // FUNCTION: COPTER_D 0x004d8450
 int32_t VRGetError() {
 // LINE 28:
-	asm( 
-"	      004d8450    push ebp"
-"	      004d8451    mov ebp,esp"
-"	      004d8453    push ebx"
-"	      004d8454    push esi"
-"	      004d8455    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 30:
-	asm( 
-"	      004d8456    mov eax,ds:[662810h]"
-"	      004d845b    jmp near ptr 004D8460h"
-);
+	__asm        mov    eax, ds:[0x662810];
+	__asm        jmp    near ptr 0x004D8460;
 // LINE 32:
-	asm( 
-"	      004d8460    pop edi"
-"	      004d8461    pop esi"
-"	      004d8462    pop ebx"
-"	      004d8463    leave"
-"	      004d8464    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

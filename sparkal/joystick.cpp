@@ -16,69 +16,49 @@ void JoystickManager::JoystickManager() {
 	int32_t i;
 
 // LINE 24:
-	asm( 
-"	      0049a4af    push ebp"
-"	      0049a4b0    mov ebp,esp"
-"	      0049a4b2    sub esp,8"
-"	      0049a4b5    push ebx"
-"	      0049a4b6    push esi"
-"	      0049a4b7    push edi"
-"	      0049a4b8    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 29:
-	asm( 
-"	      0049a4bb    mov eax,this"
-"	      0049a4be    mov dword ptr [eax+54h],0FFFFFF9Ch"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x54], 0xFFFFFF9C;
 // LINE 30:
-	asm( 
-"	      0049a4c5    mov eax,this"
-"	      0049a4c8    mov dword ptr [eax+58h],64h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x58], 0x64;
 // LINE 31:
-	asm( 
-"	      0049a4cf    mov eax,this"
-"	      0049a4d2    mov dword ptr [eax+5Ch],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x5C], 0;
 // LINE 32:
-	asm( 
-"	      0049a4d9    mov eax,this"
-"	      0049a4dc    mov dword ptr [eax+60h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x60], 0;
 // LINE 33:
-	asm( 
-"	      0049a4e3    mov i,0"
-"	      0049a4ea    jmp near ptr 0049A4F2h"
-"	      0049a4ef    inc i"
-"	      0049a4f2    cmp i,10h"
-"	      0049a4f6    jge near ptr 0049A51Ah"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0049A4F2;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x0049A51A;
 // LINE 34:
-	asm( 
-"	      0049a4fc    mov eax,i"
-"	      0049a4ff    mov ecx,this"
-"	      0049a502    mov byte ptr [eax+ecx+4],0"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 35:
-	asm( 
-"	      0049a507    mov eax,i"
-"	      0049a50a    mov ecx,this"
-"	      0049a50d    mov dword ptr [ecx+eax*4+14h],0"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 36:
-	asm( 
-"	      0049a515    jmp near ptr 0049A4EFh"
-);
+	__asm        jmp    near ptr 0x0049A4EF;
 // LINE 38:
-	asm( 
-"	      0049a51a    jmp near ptr 0049A51Fh"
-"	      0049a51f    mov eax,this"
-"	      0049a522    pop edi"
-"	      0049a523    pop esi"
-"	      0049a524    pop ebx"
-"	      0049a525    leave"
-"	      0049a526    ret"
-);
+	__asm        jmp    near ptr 0x0049A51F;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049a527
@@ -89,141 +69,101 @@ int32_t JoystickManager::Initialize() {
 	uint32_t mmResult;
 
 // LINE 50:
-	asm( 
-"	      0049a527    push ebp"
-"	      0049a528    mov ebp,esp"
-"	      0049a52a    sub esp,20h"
-"	      0049a52d    push ebx"
-"	      0049a52e    push esi"
-"	      0049a52f    push edi"
-"	      0049a530    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x20;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 51:
-	asm( 
-"	      0049a533    mov eax,this"
-"	      0049a536    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 60:
-	asm( 
-"	      0049a53c    mov eax,this"
-"	      0049a53f    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 61:
-	asm( 
-"	      0049a545    mov i,0"
-"	      0049a54c    jmp near ptr 0049A554h"
-"	      0049a551    inc i"
-"	      0049a554    cmp i,10h"
-"	      0049a558    jge near ptr 0049A57Ch"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0049A554;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x0049A57C;
 // LINE 62:
-	asm( 
-"	      0049a55e    mov eax,i"
-"	      0049a561    mov ecx,this"
-"	      0049a564    mov byte ptr [eax+ecx+4],0"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 63:
-	asm( 
-"	      0049a569    mov eax,i"
-"	      0049a56c    mov ecx,this"
-"	      0049a56f    mov dword ptr [ecx+eax*4+14h],0"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 64:
-	asm( 
-"	      0049a577    jmp near ptr 0049A551h"
-);
+	__asm        jmp    near ptr 0x0049A551;
 // LINE 66:
-	asm( 
-"	      0049a57c    call dword ptr ds:[6C38DCh]"
-"	      0049a582    mov nMaxJoysticks,eax"
-);
+	__asm        call   dword ptr ds:[0x6C38DC];
+	__asm        mov    nMaxJoysticks, eax;
 // LINE 67:
-	asm( 
-"	      0049a585    cmp nMaxJoysticks,10h"
-"	      0049a589    jle near ptr 0049A596h"
-);
+	__asm        cmp    nMaxJoysticks, 0x10;
+	__asm        jle    near ptr 0x0049A596;
 // LINE 68:
-	asm( 
-"	      0049a58f    mov nMaxJoysticks,10h"
-);
+	__asm        mov    nMaxJoysticks, 0x10;
 // LINE 70:
-	asm( 
-"	      0049a596    mov i,0"
-"	      0049a59d    jmp near ptr 0049A5A5h"
-"	      0049a5a2    inc i"
-"	      0049a5a5    mov eax,i"
-"	      0049a5a8    cmp nMaxJoysticks,eax"
-"	      0049a5ab    jle near ptr 0049A61Ah"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0049A5A5;
+	__asm        inc    i;
+	__asm        mov    eax, i;
+	__asm        cmp    nMaxJoysticks, eax;
+	__asm        jle    near ptr 0x0049A61A;
 // LINE 71:
-	asm( 
-"	      0049a5b1    lea eax,joyInfo.wXpos"
-"	      0049a5b4    push eax"
-"	      0049a5b5    mov eax,i"
-"	      0049a5b8    push eax"
-"	      0049a5b9    call dword ptr ds:[6C38E0h]"
-"	      0049a5bf    mov mmResult,eax"
-);
+	__asm        lea    eax, joyInfo.wXpos;
+	__asm        push   eax;
+	__asm        mov    eax, i;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38E0];
+	__asm        mov    mmResult, eax;
 // LINE 72:
-	asm( 
-"	      0049a5c2    cmp mmResult,0"
-"	      0049a5c6    jne near ptr 0049A615h"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        jne    near ptr 0x0049A615;
 // LINE 73:
-	asm( 
-"	      0049a5cc    mov eax,i"
-"	      0049a5cf    mov ecx,this"
-"	      0049a5d2    mov ecx,[ecx]"
-"	      0049a5d4    mov edx,this"
-"	      0049a5d7    mov [edx+ecx*4+14h],eax"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx];
+	__asm        mov    edx, this;
+	__asm        mov    [edx+ecx*4+0x14], eax;
 // LINE 74:
-	asm( 
-"	      0049a5db    mov eax,this"
-"	      0049a5de    mov eax,[eax]"
-"	      0049a5e0    mov ecx,this"
-"	      0049a5e3    mov byte ptr [eax+ecx+4],1"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+4], 1;
 // LINE 75:
-	asm( 
-"	      0049a5e8    push 194h"
-"	      0049a5ed    mov eax,this"
-"	      0049a5f0    mov eax,[eax]"
-"	      0049a5f2    mov ecx,eax"
-"	      0049a5f4    lea eax,[eax+eax*4]"
-"	      0049a5f7    lea eax,[eax+eax*8]"
-"	      0049a5fa    lea eax,[eax+eax*8]"
-"	      0049a5fd    sub eax,ecx"
-"	      0049a5ff    add eax,this"
-"	      0049a602    add eax,64h"
-"	      0049a605    push eax"
-"	      0049a606    mov eax,i"
-"	      0049a609    push eax"
-"	      0049a60a    call dword ptr ds:[6C38E4h]"
-);
+	__asm        push   0x194;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        sub    eax, ecx;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x64;
+	__asm        push   eax;
+	__asm        mov    eax, i;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38E4];
 // LINE 76:
-	asm( 
-"	      0049a610    mov eax,this"
-"	      0049a613    inc dword ptr [eax]"
-);
+	__asm        mov    eax, this;
+	__asm        inc    dword ptr [eax];
 // LINE 78:
-	asm( 
-"	      0049a615    jmp near ptr 0049A5A2h"
-);
+	__asm        jmp    near ptr 0x0049A5A2;
 // LINE 82:
-	asm( 
-"	      0049a61a    mov eax,this"
-"	      0049a61d    mov eax,[eax]"
-"	      0049a61f    jmp near ptr 0049A624h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        jmp    near ptr 0x0049A624;
 // LINE 83:
-	asm( 
-"	      0049a624    pop edi"
-"	      0049a625    pop esi"
-"	      0049a626    pop ebx"
-"	      0049a627    leave"
-"	      0049a628    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049a629
@@ -231,129 +171,99 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	int32_t i;
 
 // LINE 90:
-	asm( 
-"	      0049a629    push ebp"
-"	      0049a62a    mov ebp,esp"
-"	      0049a62c    sub esp,8"
-"	      0049a62f    push ebx"
-"	      0049a630    push esi"
-"	      0049a631    push edi"
-"	      0049a632    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 93:
-	asm( 
-"	      0049a635    mov i,0"
-"	      0049a63c    jmp near ptr 0049A644h"
-"	      0049a641    inc i"
-"	      0049a644    cmp i,10h"
-"	      0049a648    jge near ptr 0049A688h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0049A644;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x0049A688;
 // LINE 95:
-	asm( 
-"	      0049a64e    mov eax,szJoystickName"
-"	      0049a651    push eax"
-"	      0049a652    mov eax,i"
-"	      0049a655    mov ecx,eax"
-"	      0049a657    lea eax,[eax+eax*4]"
-"	      0049a65a    lea eax,[eax+eax*8]"
-"	      0049a65d    lea eax,[eax+eax*8]"
-"	      0049a660    sub eax,ecx"
-"	      0049a662    add eax,this"
-"	      0049a665    add eax,68h"
-"	      0049a668    push eax"
-"	      0049a669    call 0056CE20h"
-"	      0049a66e    add esp,8"
-"	      0049a671    test eax,eax"
-"	      0049a673    jne near ptr 0049A683h"
-);
+	__asm        mov    eax, szJoystickName;
+	__asm        push   eax;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        sub    eax, ecx;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x68;
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0049A683;
 // LINE 96:
-	asm( 
-"	      0049a679    mov eax,1"
-"	      0049a67e    jmp near ptr 0049A68Fh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049A68F;
 // LINE 98:
-	asm( 
-"	      0049a683    jmp near ptr 0049A641h"
-);
+	__asm        jmp    near ptr 0x0049A641;
 // LINE 99:
-	asm( 
-"	      0049a688    xor eax,eax"
-"	      0049a68a    jmp near ptr 0049A68Fh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A68F;
 // LINE 100:
-	asm( 
-"	      0049a68f    pop edi"
-"	      0049a690    pop esi"
-"	      0049a691    pop ebx"
-"	      0049a692    leave"
-"	      0049a693    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049a696
 int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickName) {
 // LINE 106:
-	asm( 
-"	      0049a696    push ebp"
-"	      0049a697    mov ebp,esp"
-"	      0049a699    sub esp,4"
-"	      0049a69c    push ebx"
-"	      0049a69d    push esi"
-"	      0049a69e    push edi"
-"	      0049a69f    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 107:
-	asm( 
-"	      0049a6a2    cmp nJoystick,10h"
-"	      0049a6a6    jb near ptr 0049A6B3h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jb     near ptr 0x0049A6B3;
 // LINE 108:
-	asm( 
-"	      0049a6ac    xor eax,eax"
-"	      0049a6ae    jmp near ptr 0049A6FAh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A6FA;
 // LINE 109:
-	asm( 
-"	      0049a6b3    mov eax,nJoystick"
-"	      0049a6b6    mov ecx,this"
-"	      0049a6b9    movsx eax,byte ptr [eax+ecx+4]"
-"	      0049a6be    test eax,eax"
-"	      0049a6c0    jne near ptr 0049A6CDh"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        movsx  eax, byte ptr [eax+ecx+4];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0049A6CD;
 // LINE 110:
-	asm( 
-"	      0049a6c6    xor eax,eax"
-"	      0049a6c8    jmp near ptr 0049A6FAh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A6FA;
 // LINE 112:
-	asm( 
-"	      0049a6cd    mov eax,nJoystick"
-"	      0049a6d0    mov ecx,eax"
-"	      0049a6d2    lea eax,[eax+eax*4]"
-"	      0049a6d5    lea eax,[eax+eax*8]"
-"	      0049a6d8    lea eax,[eax+eax*8]"
-"	      0049a6db    sub eax,ecx"
-"	      0049a6dd    add eax,this"
-"	      0049a6e0    add eax,68h"
-"	      0049a6e3    push eax"
-"	      0049a6e4    mov eax,szJoystickName"
-"	      0049a6e7    push eax"
-"	      0049a6e8    call 0056CEB0h"
-"	      0049a6ed    add esp,8"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        sub    eax, ecx;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x68;
+	__asm        push   eax;
+	__asm        mov    eax, szJoystickName;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 113:
-	asm( 
-"	      0049a6f0    mov eax,1"
-"	      0049a6f5    jmp near ptr 0049A6FAh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049A6FA;
 // LINE 115:
-	asm( 
-"	      0049a6fa    pop edi"
-"	      0049a6fb    pop esi"
-"	      0049a6fc    pop ebx"
-"	      0049a6fd    leave"
-"	      0049a6fe    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049a701
@@ -361,112 +271,88 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 	int32_t i;
 
 // LINE 124:
-	asm( 
-"	      0049a701    push ebp"
-"	      0049a702    mov ebp,esp"
-"	      0049a704    sub esp,8"
-"	      0049a707    push ebx"
-"	      0049a708    push esi"
-"	      0049a709    push edi"
-"	      0049a70a    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 127:
-	asm( 
-"	      0049a70d    mov i,0"
-"	      0049a714    jmp near ptr 0049A71Ch"
-"	      0049a719    inc i"
-"	      0049a71c    cmp i,10h"
-"	      0049a720    jge near ptr 0049A768h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0049A71C;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x0049A768;
 // LINE 129:
-	asm( 
-"	      0049a726    mov eax,szJoystickName"
-"	      0049a729    push eax"
-"	      0049a72a    mov eax,i"
-"	      0049a72d    mov ecx,eax"
-"	      0049a72f    lea eax,[eax+eax*4]"
-"	      0049a732    lea eax,[eax+eax*8]"
-"	      0049a735    lea eax,[eax+eax*8]"
-"	      0049a738    sub eax,ecx"
-"	      0049a73a    add eax,this"
-"	      0049a73d    add eax,68h"
-"	      0049a740    push eax"
-"	      0049a741    call 0056CE20h"
-"	      0049a746    add esp,8"
-"	      0049a749    test eax,eax"
-"	      0049a74b    jne near ptr 0049A763h"
-);
+	__asm        mov    eax, szJoystickName;
+	__asm        push   eax;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        sub    eax, ecx;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x68;
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0049A763;
 // LINE 130:
-	asm( 
-"	      0049a751    mov eax,i"
-"	      0049a754    mov ecx,nJoystick"
-"	      0049a757    mov [ecx],eax"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, nJoystick;
+	__asm        mov    [ecx], eax;
 // LINE 131:
-	asm( 
-"	      0049a759    mov eax,1"
-"	      0049a75e    jmp near ptr 0049A772h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049A772;
 // LINE 134:
-	asm( 
-"	      0049a763    jmp near ptr 0049A719h"
-);
+	__asm        jmp    near ptr 0x0049A719;
 // LINE 135:
-	asm( 
-"	      0049a768    mov eax,0FFFFFFFFh"
-"	      0049a76d    jmp near ptr 0049A772h"
-);
+	__asm        mov    eax, 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x0049A772;
 // LINE 136:
-	asm( 
-"	      0049a772    pop edi"
-"	      0049a773    pop esi"
-"	      0049a774    pop ebx"
-"	      0049a775    leave"
-"	      0049a776    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049a779
 int32_t JoystickManager::Normalize(int32_t nPosition) {
 // LINE 151:
-	asm( 
-"	      0049a779    push ebp"
-"	      0049a77a    mov ebp,esp"
-"	      0049a77c    sub esp,4"
-"	      0049a77f    push ebx"
-"	      0049a780    push esi"
-"	      0049a781    push edi"
-"	      0049a782    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 160:
-	asm( 
-"	      0049a785    push 0FFFFh"
-"	      0049a78a    mov eax,nPosition"
-"	      0049a78d    push eax"
-"	      0049a78e    mov eax,this"
-"	      0049a791    mov eax,[eax+58h]"
-"	      0049a794    mov ecx,this"
-"	      0049a797    sub eax,[ecx+54h]"
-"	      0049a79a    push eax"
-"	      0049a79b    call dword ptr ds:[6C372Ch]"
-"	      0049a7a1    mov ecx,this"
-"	      0049a7a4    mov ecx,[ecx+54h]"
-"	      0049a7a7    add ecx,eax"
-"	      0049a7a9    mov nPosition,ecx"
-);
+	__asm        push   0xFFFF;
+	__asm        mov    eax, nPosition;
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    ecx, this;
+	__asm        sub    eax, [ecx+0x54];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C372C];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x54];
+	__asm        add    ecx, eax;
+	__asm        mov    nPosition, ecx;
 // LINE 167:
-	asm( 
-"	      0049a7ac    mov eax,nPosition"
-"	      0049a7af    jmp near ptr 0049A7B4h"
-);
+	__asm        mov    eax, nPosition;
+	__asm        jmp    near ptr 0x0049A7B4;
 // LINE 168:
-	asm( 
-"	      0049a7b4    pop edi"
-"	      0049a7b5    pop esi"
-"	      0049a7b6    pop ebx"
-"	      0049a7b7    leave"
-"	      0049a7b8    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049a7bb
@@ -475,75 +361,57 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	int32_t nValue;
 
 // LINE 186:
-	asm( 
-"	      0049a7bb    push ebp"
-"	      0049a7bc    mov ebp,esp"
-"	      0049a7be    sub esp,0Ch"
-"	      0049a7c1    push ebx"
-"	      0049a7c2    push esi"
-"	      0049a7c3    push edi"
-"	      0049a7c4    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 191:
-	asm( 
-"	      0049a7c7    mov eax,bUseCache"
-"	      0049a7ca    push eax"
-"	      0049a7cb    mov eax,nAxis"
-"	      0049a7ce    push eax"
-"	      0049a7cf    mov eax,nJoystick"
-"	      0049a7d2    push eax"
-"	      0049a7d3    mov ecx,this"
-"	      0049a7d6    call 0049A836h"
-"	      0049a7db    mov nValue,eax"
-);
+	__asm        mov    eax, bUseCache;
+	__asm        push   eax;
+	__asm        mov    eax, nAxis;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0049A836;
+	__asm        mov    nValue, eax;
 // LINE 192:
-	asm( 
-"	      0049a7de    mov eax,this"
-"	      0049a7e1    mov eax,[eax+58h]"
-"	      0049a7e4    mov ecx,this"
-"	      0049a7e7    sub eax,[ecx+54h]"
-"	      0049a7ea    sar eax,2"
-"	      0049a7ed    mov nOneQuarterOfTheRange,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    ecx, this;
+	__asm        sub    eax, [ecx+0x54];
+	__asm        sar    eax, 2;
+	__asm        mov    nOneQuarterOfTheRange, eax;
 // LINE 193:
-	asm( 
-"	      0049a7f0    mov eax,this"
-"	      0049a7f3    mov eax,[eax+5Ch]"
-"	      0049a7f6    sub eax,nOneQuarterOfTheRange"
-"	      0049a7f9    cmp eax,nValue"
-"	      0049a7fc    jle near ptr 0049A80Ch"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x5C];
+	__asm        sub    eax, nOneQuarterOfTheRange;
+	__asm        cmp    eax, nValue;
+	__asm        jle    near ptr 0x0049A80C;
 // LINE 194:
-	asm( 
-"	      0049a802    mov eax,0FFFFFFFFh"
-"	      0049a807    jmp near ptr 0049A82Fh"
-);
+	__asm        mov    eax, 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x0049A82F;
 // LINE 195:
-	asm( 
-"	      0049a80c    mov eax,this"
-"	      0049a80f    mov eax,[eax+5Ch]"
-"	      0049a812    add eax,nOneQuarterOfTheRange"
-"	      0049a815    cmp eax,nValue"
-"	      0049a818    jge near ptr 0049A828h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x5C];
+	__asm        add    eax, nOneQuarterOfTheRange;
+	__asm        cmp    eax, nValue;
+	__asm        jge    near ptr 0x0049A828;
 // LINE 196:
-	asm( 
-"	      0049a81e    mov eax,1"
-"	      0049a823    jmp near ptr 0049A82Fh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049A82F;
 // LINE 199:
-	asm( 
-"	      0049a828    xor eax,eax"
-"	      0049a82a    jmp near ptr 0049A82Fh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A82F;
 // LINE 200:
-	asm( 
-"	      0049a82f    pop edi"
-"	      0049a830    pop esi"
-"	      0049a831    pop ebx"
-"	      0049a832    leave"
-"	      0049a833    ret 0Ch"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049a836
@@ -556,242 +424,164 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	unsigned long * dwResultToUse;
 
 // LINE 217:
-	asm( 
-"	      0049a836    push ebp"
-"	      0049a837    mov ebp,esp"
-"	      0049a839    sub esp,50h"
-"	      0049a83c    push ebx"
-"	      0049a83d    push esi"
-"	      0049a83e    push edi"
-"	      0049a83f    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x50;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 227:
-	asm( 
-"	      0049a842    cmp nJoystick,10h"
-"	      0049a846    jle near ptr 0049A853h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jle    near ptr 0x0049A853;
 // LINE 228:
-	asm( 
-"	      0049a84c    xor eax,eax"
-"	      0049a84e    jmp near ptr 0049A9D6h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 230:
-	asm( 
-"	      0049a853    cmp bUseCache,0"
-"	      0049a857    je near ptr 0049A87Bh"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        je     near ptr 0x0049A87B;
 // LINE 231:
-	asm( 
-"	      0049a85d    mov eax,nJoystick"
-"	      0049a860    mov ecx,eax"
-"	      0049a862    lea eax,[eax+eax*2]"
-"	      0049a865    lea eax,[ecx+eax*4]"
-"	      0049a868    shl eax,2"
-"	      0049a86b    add eax,this"
-"	      0049a86e    add eax,19A4h"
-"	      0049a873    mov joyInfoExToUse,eax"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        shl    eax, 2;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x19A4;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 232:
-	asm( 
-"	      0049a876    jmp near ptr 0049A881h"
-);
+	__asm        jmp    near ptr 0x0049A881;
 // LINE 233:
-	asm( 
-"	      0049a87b    lea eax,joyInfoEx.dwSize"
-"	      0049a87e    mov joyInfoExToUse,eax"
-);
+	__asm        lea    eax, joyInfoEx.dwSize;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 235:
-	asm( 
-"	      0049a881    mov eax,nAxis"
-"	      0049a884    mov [ebp-50h],eax"
-"	      0049a887    jmp near ptr 0049A916h"
-);
+	__asm        mov    eax, nAxis;
+	__asm        mov    [ebp-0x50], eax;
+	__asm        jmp    near ptr 0x0049A916;
 // LINE 237:
-	asm( 
-"	      0049a88c    mov dwFlagToUse,1"
-);
+	__asm        mov    dwFlagToUse, 1;
 // LINE 238:
-	asm( 
-"	      0049a893    mov eax,joyInfoExToUse"
-"	      0049a896    add eax,8"
-"	      0049a899    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 8;
+	__asm        mov    dwResultToUse, eax;
 // LINE 239:
-	asm( 
-"	      0049a89c    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 241:
-	asm( 
-"	      0049a8a1    mov dwFlagToUse,2"
-);
+	__asm        mov    dwFlagToUse, 2;
 // LINE 242:
-	asm( 
-"	      0049a8a8    mov eax,joyInfoExToUse"
-"	      0049a8ab    add eax,0Ch"
-"	      0049a8ae    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 0xC;
+	__asm        mov    dwResultToUse, eax;
 // LINE 243:
-	asm( 
-"	      0049a8b1    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 245:
-	asm( 
-"	      0049a8b6    mov dwFlagToUse,4"
-);
+	__asm        mov    dwFlagToUse, 4;
 // LINE 246:
-	asm( 
-"	      0049a8bd    mov eax,joyInfoExToUse"
-"	      0049a8c0    add eax,10h"
-"	      0049a8c3    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 0x10;
+	__asm        mov    dwResultToUse, eax;
 // LINE 247:
-	asm( 
-"	      0049a8c6    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 249:
-	asm( 
-"	      0049a8cb    mov dwFlagToUse,8"
-);
+	__asm        mov    dwFlagToUse, 8;
 // LINE 250:
-	asm( 
-"	      0049a8d2    mov eax,joyInfoExToUse"
-"	      0049a8d5    add eax,14h"
-"	      0049a8d8    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 0x14;
+	__asm        mov    dwResultToUse, eax;
 // LINE 251:
-	asm( 
-"	      0049a8db    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 253:
-	asm( 
-"	      0049a8e0    mov dwFlagToUse,10h"
-);
+	__asm        mov    dwFlagToUse, 0x10;
 // LINE 254:
-	asm( 
-"	      0049a8e7    mov eax,joyInfoExToUse"
-"	      0049a8ea    add eax,18h"
-"	      0049a8ed    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 0x18;
+	__asm        mov    dwResultToUse, eax;
 // LINE 255:
-	asm( 
-"	      0049a8f0    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 257:
-	asm( 
-"	      0049a8f5    mov dwFlagToUse,20h"
-);
+	__asm        mov    dwFlagToUse, 0x20;
 // LINE 258:
-	asm( 
-"	      0049a8fc    mov eax,joyInfoExToUse"
-"	      0049a8ff    add eax,1Ch"
-"	      0049a902    mov dwResultToUse,eax"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        add    eax, 0x1C;
+	__asm        mov    dwResultToUse, eax;
 // LINE 259:
-	asm( 
-"	      0049a905    jmp near ptr 0049A942h"
-);
+	__asm        jmp    near ptr 0x0049A942;
 // LINE 261:
-	asm( 
-"	      0049a90a    xor eax,eax"
-"	      0049a90c    jmp near ptr 0049A9D6h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 262:
-	asm( 
-"	      0049a911    jmp near ptr 0049A942h"
-"	      0049a916    cmp dword ptr [ebp-50h],5"
-"	      0049a91a    ja near ptr 0049A90Ah"
-"	      0049a920    mov eax,[ebp-50h]"
-"	      0049a923    jmp dword ptr [eax*4+49A92Ah]"
-"	      0049a92a    mov [eax-575EFFB7h],gs"
-"	      0049a930    dec ecx"
-"	      0049a931    add [esi-34FFB658h],dh"
-"	      0049a937    test al,49h"
-"	      0049a939    add al,ah"
-"	      0049a93b    test al,49h"
-"	      0049a93d    add ch,dh"
-"	      0049a93f    test al,49h"
-"	      0049a941    (bad)"
-);
+	__asm        jmp    near ptr 0x0049A942;
+	__asm        cmp    dword ptr [ebp-0x50], 5;
+	__asm        ja     near ptr 0x0049A90A;
+	__asm        mov    eax, [ebp-0x50];
+	__asm        jmp    dword ptr [eax*4+0x49A92A];
+	__asm        mov    [eax-0x575EFFB7], gs;
+	__asm        dec    ecx;
+	__asm        add    [esi-0x34FFB658], dh;
+	__asm        test   al, 0x49;
+	__asm        add    al, ah;
+	__asm        test   al, 0x49;
+	__asm        add    ch, dh;
+	__asm        test   al, 0x49;
+	__asm        (bad);
 // LINE 263:
-	asm( 
-"	      0049a942    cmp bUseCache,0"
-"	      0049a946    jne near ptr 0049A98Ch"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        jne    near ptr 0x0049A98C;
 // LINE 264:
-	asm( 
-"	      0049a94c    mov eax,joyInfoExToUse"
-"	      0049a94f    mov dword ptr [eax],34h"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    dword ptr [eax], 0x34;
 // LINE 265:
-	asm( 
-"	      0049a955    mov eax,dwFlagToUse"
-"	      0049a958    mov ecx,joyInfoExToUse"
-"	      0049a95b    mov [ecx+4],eax"
-);
+	__asm        mov    eax, dwFlagToUse;
+	__asm        mov    ecx, joyInfoExToUse;
+	__asm        mov    [ecx+4], eax;
 // LINE 266:
-	asm( 
-"	      0049a95e    jmp near ptr 0049A963h"
-"	      0049a963    mov eax,joyInfoExToUse"
-"	      0049a966    push eax"
-"	      0049a967    mov eax,nJoystick"
-"	      0049a96a    mov ecx,this"
-"	      0049a96d    mov eax,[ecx+eax*4+14h]"
-"	      0049a971    push eax"
-"	      0049a972    call dword ptr ds:[6C38D8h]"
-"	      0049a978    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049A963;
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D8];
+	__asm        mov    mmResult, eax;
 // LINE 267:
-	asm( 
-"	      0049a97b    cmp mmResult,0"
-"	      0049a97f    je near ptr 0049A98Ch"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        je     near ptr 0x0049A98C;
 // LINE 268:
-	asm( 
-"	      0049a985    xor eax,eax"
-"	      0049a987    jmp near ptr 0049A9D6h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 270:
-	asm( 
-"	      0049a98c    mov eax,dwResultToUse"
-"	      0049a98f    mov eax,[eax]"
-"	      0049a991    push eax"
-"	      0049a992    mov ecx,this"
-"	      0049a995    call 0049A779h"
-"	      0049a99a    mov nReturnValue,eax"
-);
+	__asm        mov    eax, dwResultToUse;
+	__asm        mov    eax, [eax];
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0049A779;
+	__asm        mov    nReturnValue, eax;
 // LINE 272:
-	asm( 
-"	      0049a99d    mov eax,this"
-"	      0049a9a0    mov eax,[eax+5Ch]"
-"	      0049a9a3    mov ecx,this"
-"	      0049a9a6    add eax,[ecx+60h]"
-"	      0049a9a9    cmp eax,nReturnValue"
-"	      0049a9ac    jle near ptr 0049A9CEh"
-"	      0049a9b2    mov eax,this"
-"	      0049a9b5    mov eax,[eax+5Ch]"
-"	      0049a9b8    mov ecx,this"
-"	      0049a9bb    sub eax,[ecx+60h]"
-"	      0049a9be    cmp eax,nReturnValue"
-"	      0049a9c1    jge near ptr 0049A9CEh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x5C];
+	__asm        mov    ecx, this;
+	__asm        add    eax, [ecx+0x60];
+	__asm        cmp    eax, nReturnValue;
+	__asm        jle    near ptr 0x0049A9CE;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x5C];
+	__asm        mov    ecx, this;
+	__asm        sub    eax, [ecx+0x60];
+	__asm        cmp    eax, nReturnValue;
+	__asm        jge    near ptr 0x0049A9CE;
 // LINE 273:
-	asm( 
-"	      0049a9c7    xor eax,eax"
-"	      0049a9c9    jmp near ptr 0049A9D6h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 274:
-	asm( 
-"	      0049a9ce    mov eax,nReturnValue"
-"	      0049a9d1    jmp near ptr 0049A9D6h"
-);
+	__asm        mov    eax, nReturnValue;
+	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 279:
-	asm( 
-"	      0049a9d6    pop edi"
-"	      0049a9d7    pop esi"
-"	      0049a9d8    pop ebx"
-"	      0049a9d9    leave"
-"	      0049a9da    ret 0Ch"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049a9dd
@@ -801,105 +591,75 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 	uint32_t mmResult;
 
 // LINE 297:
-	asm( 
-"	      0049a9dd    push ebp"
-"	      0049a9de    mov ebp,esp"
-"	      0049a9e0    sub esp,40h"
-"	      0049a9e3    push ebx"
-"	      0049a9e4    push esi"
-"	      0049a9e5    push edi"
-"	      0049a9e6    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x40;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 304:
-	asm( 
-"	      0049a9e9    cmp nJoystick,10h"
-"	      0049a9ed    jg near ptr 0049A9FDh"
-"	      0049a9f3    cmp nButton,20h"
-"	      0049a9f7    jle near ptr 0049AA04h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jg     near ptr 0x0049A9FD;
+	__asm        cmp    nButton, 0x20;
+	__asm        jle    near ptr 0x0049AA04;
 // LINE 305:
-	asm( 
-"	      0049a9fd    xor eax,eax"
-"	      0049a9ff    jmp near ptr 0049AA92h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AA92;
 // LINE 306:
-	asm( 
-"	      0049aa04    cmp bUseCache,0"
-"	      0049aa08    je near ptr 0049AA2Ch"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        je     near ptr 0x0049AA2C;
 // LINE 307:
-	asm( 
-"	      0049aa0e    mov eax,nJoystick"
-"	      0049aa11    mov ecx,eax"
-"	      0049aa13    lea eax,[eax+eax*2]"
-"	      0049aa16    lea eax,[ecx+eax*4]"
-"	      0049aa19    shl eax,2"
-"	      0049aa1c    add eax,this"
-"	      0049aa1f    add eax,19A4h"
-"	      0049aa24    mov joyInfoExToUse,eax"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        shl    eax, 2;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x19A4;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 308:
-	asm( 
-"	      0049aa27    jmp near ptr 0049AA32h"
-);
+	__asm        jmp    near ptr 0x0049AA32;
 // LINE 309:
-	asm( 
-"	      0049aa2c    lea eax,joyInfoEx.dwSize"
-"	      0049aa2f    mov joyInfoExToUse,eax"
-);
+	__asm        lea    eax, joyInfoEx.dwSize;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 311:
-	asm( 
-"	      0049aa32    cmp bUseCache,0"
-"	      0049aa36    jne near ptr 0049AA7Dh"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        jne    near ptr 0x0049AA7D;
 // LINE 312:
-	asm( 
-"	      0049aa3c    mov eax,joyInfoExToUse"
-"	      0049aa3f    mov dword ptr [eax],34h"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    dword ptr [eax], 0x34;
 // LINE 313:
-	asm( 
-"	      0049aa45    mov eax,joyInfoExToUse"
-"	      0049aa48    mov dword ptr [eax+4],80h"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    dword ptr [eax+4], 0x80;
 // LINE 314:
-	asm( 
-"	      0049aa4f    jmp near ptr 0049AA54h"
-"	      0049aa54    mov eax,joyInfoExToUse"
-"	      0049aa57    push eax"
-"	      0049aa58    mov eax,nJoystick"
-"	      0049aa5b    mov ecx,this"
-"	      0049aa5e    mov eax,[ecx+eax*4+14h]"
-"	      0049aa62    push eax"
-"	      0049aa63    call dword ptr ds:[6C38D8h]"
-"	      0049aa69    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049AA54;
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D8];
+	__asm        mov    mmResult, eax;
 // LINE 315:
-	asm( 
-"	      0049aa6c    cmp mmResult,0"
-"	      0049aa70    je near ptr 0049AA7Dh"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        je     near ptr 0x0049AA7D;
 // LINE 316:
-	asm( 
-"	      0049aa76    xor eax,eax"
-"	      0049aa78    jmp near ptr 0049AA92h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AA92;
 // LINE 318:
-	asm( 
-"	      0049aa7d    mov eax,nButton"
-"	      0049aa80    mov eax,[eax*4+591228h]"
-"	      0049aa87    mov ecx,joyInfoExToUse"
-"	      0049aa8a    and eax,[ecx+20h]"
-"	      0049aa8d    jmp near ptr 0049AA92h"
-);
+	__asm        mov    eax, nButton;
+	__asm        mov    eax, [eax*4+0x591228];
+	__asm        mov    ecx, joyInfoExToUse;
+	__asm        and    eax, [ecx+0x20];
+	__asm        jmp    near ptr 0x0049AA92;
 // LINE 323:
-	asm( 
-"	      0049aa92    pop edi"
-"	      0049aa93    pop esi"
-"	      0049aa94    pop ebx"
-"	      0049aa95    leave"
-"	      0049aa96    ret 0Ch"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049aa99
@@ -907,84 +667,64 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 	uint32_t mmResult;
 
 // LINE 336:
-	asm( 
-"	      0049aa99    push ebp"
-"	      0049aa9a    mov ebp,esp"
-"	      0049aa9c    sub esp,8"
-"	      0049aa9f    push ebx"
-"	      0049aaa0    push esi"
-"	      0049aaa1    push edi"
-"	      0049aaa2    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 341:
-	asm( 
-"	      0049aaa5    cmp nJoystick,10h"
-"	      0049aaa9    jle near ptr 0049AAB6h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jle    near ptr 0x0049AAB6;
 // LINE 342:
-	asm( 
-"	      0049aaaf    xor eax,eax"
-"	      0049aab1    jmp near ptr 0049AB33h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AB33;
 // LINE 343:
-	asm( 
-"	      0049aab6    mov eax,nJoystick"
-"	      0049aab9    mov ecx,eax"
-"	      0049aabb    lea eax,[eax+eax*2]"
-"	      0049aabe    lea eax,[ecx+eax*4]"
-"	      0049aac1    mov ecx,this"
-"	      0049aac4    mov dword ptr [ecx+eax*4+19A4h],34h"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x19A4], 0x34;
 // LINE 344:
-	asm( 
-"	      0049aacf    mov eax,nJoystick"
-"	      0049aad2    mov ecx,eax"
-"	      0049aad4    lea eax,[eax+eax*2]"
-"	      0049aad7    lea eax,[ecx+eax*4]"
-"	      0049aada    mov ecx,this"
-"	      0049aadd    mov dword ptr [ecx+eax*4+19A8h],0FFh"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x19A8], 0xFF;
 // LINE 345:
-	asm( 
-"	      0049aae8    jmp near ptr 0049AAEDh"
-"	      0049aaed    mov eax,nJoystick"
-"	      0049aaf0    mov ecx,eax"
-"	      0049aaf2    lea eax,[eax+eax*2]"
-"	      0049aaf5    lea eax,[ecx+eax*4]"
-"	      0049aaf8    shl eax,2"
-"	      0049aafb    add eax,this"
-"	      0049aafe    add eax,19A4h"
-"	      0049ab03    push eax"
-"	      0049ab04    mov eax,nJoystick"
-"	      0049ab07    mov ecx,this"
-"	      0049ab0a    mov eax,[ecx+eax*4+14h]"
-"	      0049ab0e    push eax"
-"	      0049ab0f    call dword ptr ds:[6C38D8h]"
-"	      0049ab15    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049AAED;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        shl    eax, 2;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x19A4;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D8];
+	__asm        mov    mmResult, eax;
 // LINE 346:
-	asm( 
-"	      0049ab18    cmp mmResult,0"
-"	      0049ab1c    jne near ptr 0049AB2Ch"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        jne    near ptr 0x0049AB2C;
 // LINE 347:
-	asm( 
-"	      0049ab22    mov eax,1"
-"	      0049ab27    jmp near ptr 0049AB33h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049AB33;
 // LINE 349:
-	asm( 
-"	      0049ab2c    xor eax,eax"
-"	      0049ab2e    jmp near ptr 0049AB33h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AB33;
 // LINE 351:
-	asm( 
-"	      0049ab33    pop edi"
-"	      0049ab34    pop esi"
-"	      0049ab35    pop ebx"
-"	      0049ab36    leave"
-"	      0049ab37    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ab3a
@@ -994,101 +734,71 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	uint32_t mmResult;
 
 // LINE 375:
-	asm( 
-"	      0049ab3a    push ebp"
-"	      0049ab3b    mov ebp,esp"
-"	      0049ab3d    sub esp,40h"
-"	      0049ab40    push ebx"
-"	      0049ab41    push esi"
-"	      0049ab42    push edi"
-"	      0049ab43    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x40;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 382:
-	asm( 
-"	      0049ab46    cmp nJoystick,10h"
-"	      0049ab4a    jle near ptr 0049AB57h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jle    near ptr 0x0049AB57;
 // LINE 383:
-	asm( 
-"	      0049ab50    xor eax,eax"
-"	      0049ab52    jmp near ptr 0049ABDBh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049ABDB;
 // LINE 384:
-	asm( 
-"	      0049ab57    cmp bUseCache,0"
-"	      0049ab5b    je near ptr 0049AB7Fh"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        je     near ptr 0x0049AB7F;
 // LINE 385:
-	asm( 
-"	      0049ab61    mov eax,nJoystick"
-"	      0049ab64    mov ecx,eax"
-"	      0049ab66    lea eax,[eax+eax*2]"
-"	      0049ab69    lea eax,[ecx+eax*4]"
-"	      0049ab6c    shl eax,2"
-"	      0049ab6f    add eax,this"
-"	      0049ab72    add eax,19A4h"
-"	      0049ab77    mov joyInfoExToUse,eax"
-);
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, [ecx+eax*4];
+	__asm        shl    eax, 2;
+	__asm        add    eax, this;
+	__asm        add    eax, 0x19A4;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 386:
-	asm( 
-"	      0049ab7a    jmp near ptr 0049AB85h"
-);
+	__asm        jmp    near ptr 0x0049AB85;
 // LINE 387:
-	asm( 
-"	      0049ab7f    lea eax,joyInfoEx.dwSize"
-"	      0049ab82    mov joyInfoExToUse,eax"
-);
+	__asm        lea    eax, joyInfoEx.dwSize;
+	__asm        mov    joyInfoExToUse, eax;
 // LINE 389:
-	asm( 
-"	      0049ab85    cmp bUseCache,0"
-"	      0049ab89    jne near ptr 0049ABD0h"
-);
+	__asm        cmp    bUseCache, 0;
+	__asm        jne    near ptr 0x0049ABD0;
 // LINE 390:
-	asm( 
-"	      0049ab8f    mov eax,joyInfoExToUse"
-"	      0049ab92    mov dword ptr [eax],34h"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    dword ptr [eax], 0x34;
 // LINE 391:
-	asm( 
-"	      0049ab98    mov eax,joyInfoExToUse"
-"	      0049ab9b    mov dword ptr [eax+4],40h"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    dword ptr [eax+4], 0x40;
 // LINE 392:
-	asm( 
-"	      0049aba2    jmp near ptr 0049ABA7h"
-"	      0049aba7    mov eax,joyInfoExToUse"
-"	      0049abaa    push eax"
-"	      0049abab    mov eax,nJoystick"
-"	      0049abae    mov ecx,this"
-"	      0049abb1    mov eax,[ecx+eax*4+14h]"
-"	      0049abb5    push eax"
-"	      0049abb6    call dword ptr ds:[6C38D8h]"
-"	      0049abbc    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049ABA7;
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D8];
+	__asm        mov    mmResult, eax;
 // LINE 393:
-	asm( 
-"	      0049abbf    cmp mmResult,0"
-"	      0049abc3    je near ptr 0049ABD0h"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        je     near ptr 0x0049ABD0;
 // LINE 394:
-	asm( 
-"	      0049abc9    xor eax,eax"
-"	      0049abcb    jmp near ptr 0049ABDBh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049ABDB;
 // LINE 396:
-	asm( 
-"	      0049abd0    mov eax,joyInfoExToUse"
-"	      0049abd3    mov eax,[eax+28h]"
-"	      0049abd6    jmp near ptr 0049ABDBh"
-);
+	__asm        mov    eax, joyInfoExToUse;
+	__asm        mov    eax, [eax+0x28];
+	__asm        jmp    near ptr 0x0049ABDB;
 // LINE 401:
-	asm( 
-"	      0049abdb    pop edi"
-"	      0049abdc    pop esi"
-"	      0049abdd    pop ebx"
-"	      0049abde    leave"
-"	      0049abdf    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049abe2
@@ -1096,45 +806,33 @@ int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 	uint32_t nReturnValue;
 
 // LINE 415:
-	asm( 
-"	      0049abe2    push ebp"
-"	      0049abe3    mov ebp,esp"
-"	      0049abe5    sub esp,8"
-"	      0049abe8    push ebx"
-"	      0049abe9    push esi"
-"	      0049abea    push edi"
-"	      0049abeb    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 419:
-	asm( 
-"	      0049abee    push 1"
-"	      0049abf0    push 59A28Ch"
-"	      0049abf5    call dword ptr ds:[6C35DCh]"
-"	      0049abfb    mov nReturnValue,eax"
-);
+	__asm        push   1;
+	__asm        push   0x59A28C;
+	__asm        call   dword ptr ds:[0x6C35DC];
+	__asm        mov    nReturnValue, eax;
 // LINE 420:
-	asm( 
-"	      0049abfe    cmp nReturnValue,1Fh"
-"	      0049ac02    jbe near ptr 0049AC12h"
-);
+	__asm        cmp    nReturnValue, 0x1F;
+	__asm        jbe    near ptr 0x0049AC12;
 // LINE 421:
-	asm( 
-"	      0049ac08    mov eax,1"
-"	      0049ac0d    jmp near ptr 0049AC19h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049AC19;
 // LINE 422:
-	asm( 
-"	      0049ac12    xor eax,eax"
-"	      0049ac14    jmp near ptr 0049AC19h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AC19;
 // LINE 427:
-	asm( 
-"	      0049ac19    pop edi"
-"	      0049ac1a    pop esi"
-"	      0049ac1b    pop ebx"
-"	      0049ac1c    leave"
-"	      0049ac1d    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ac20
@@ -1142,60 +840,44 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 	uint32_t mmResult;
 
 // LINE 448:
-	asm( 
-"	      0049ac20    push ebp"
-"	      0049ac21    mov ebp,esp"
-"	      0049ac23    sub esp,8"
-"	      0049ac26    push ebx"
-"	      0049ac27    push esi"
-"	      0049ac28    push edi"
-"	      0049ac29    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 453:
-	asm( 
-"	      0049ac2c    cmp nJoystick,10h"
-"	      0049ac30    jle near ptr 0049AC3Dh"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jle    near ptr 0x0049AC3D;
 // LINE 454:
-	asm( 
-"	      0049ac36    xor eax,eax"
-"	      0049ac38    jmp near ptr 0049AC75h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AC75;
 // LINE 455:
-	asm( 
-"	      0049ac3d    jmp near ptr 0049AC42h"
-"	      0049ac42    mov eax,lThreshold"
-"	      0049ac45    push eax"
-"	      0049ac46    mov eax,nJoystick"
-"	      0049ac49    mov ecx,this"
-"	      0049ac4c    mov eax,[ecx+eax*4+14h]"
-"	      0049ac50    push eax"
-"	      0049ac51    call dword ptr ds:[6C38D4h]"
-"	      0049ac57    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049AC42;
+	__asm        mov    eax, lThreshold;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D4];
+	__asm        mov    mmResult, eax;
 // LINE 456:
-	asm( 
-"	      0049ac5a    cmp mmResult,0"
-"	      0049ac5e    jne near ptr 0049AC6Eh"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        jne    near ptr 0x0049AC6E;
 // LINE 457:
-	asm( 
-"	      0049ac64    mov eax,1"
-"	      0049ac69    jmp near ptr 0049AC75h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049AC75;
 // LINE 458:
-	asm( 
-"	      0049ac6e    xor eax,eax"
-"	      0049ac70    jmp near ptr 0049AC75h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AC75;
 // LINE 463:
-	asm( 
-"	      0049ac75    pop edi"
-"	      0049ac76    pop esi"
-"	      0049ac77    pop ebx"
-"	      0049ac78    leave"
-"	      0049ac79    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ac7c
@@ -1203,110 +885,84 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 	uint32_t mmResult;
 
 // LINE 472:
-	asm( 
-"	      0049ac7c    push ebp"
-"	      0049ac7d    mov ebp,esp"
-"	      0049ac7f    sub esp,8"
-"	      0049ac82    push ebx"
-"	      0049ac83    push esi"
-"	      0049ac84    push edi"
-"	      0049ac85    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 477:
-	asm( 
-"	      0049ac88    cmp nJoystick,10h"
-"	      0049ac8c    jle near ptr 0049AC99h"
-);
+	__asm        cmp    nJoystick, 0x10;
+	__asm        jle    near ptr 0x0049AC99;
 // LINE 478:
-	asm( 
-"	      0049ac92    xor eax,eax"
-"	      0049ac94    jmp near ptr 0049ACD1h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049ACD1;
 // LINE 479:
-	asm( 
-"	      0049ac99    jmp near ptr 0049AC9Eh"
-"	      0049ac9e    mov eax,lThreshold"
-"	      0049aca1    push eax"
-"	      0049aca2    mov eax,nJoystick"
-"	      0049aca5    mov ecx,this"
-"	      0049aca8    mov eax,[ecx+eax*4+14h]"
-"	      0049acac    push eax"
-"	      0049acad    call dword ptr ds:[6C38D0h]"
-"	      0049acb3    mov mmResult,eax"
-);
+	__asm        jmp    near ptr 0x0049AC9E;
+	__asm        mov    eax, lThreshold;
+	__asm        push   eax;
+	__asm        mov    eax, nJoystick;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38D0];
+	__asm        mov    mmResult, eax;
 // LINE 480:
-	asm( 
-"	      0049acb6    cmp mmResult,0"
-"	      0049acba    jne near ptr 0049ACCAh"
-);
+	__asm        cmp    mmResult, 0;
+	__asm        jne    near ptr 0x0049ACCA;
 // LINE 481:
-	asm( 
-"	      0049acc0    mov eax,1"
-"	      0049acc5    jmp near ptr 0049ACD1h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0049ACD1;
 // LINE 482:
-	asm( 
-"	      0049acca    xor eax,eax"
-"	      0049accc    jmp near ptr 0049ACD1h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049ACD1;
 // LINE 487:
-	asm( 
-"	      0049acd1    pop edi"
-"	      0049acd2    pop esi"
-"	      0049acd3    pop ebx"
-"	      0049acd4    leave"
-"	      0049acd5    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049acd8
 void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 // LINE 497:
-	asm( 
-"	      0049acd8    push ebp"
-"	      0049acd9    mov ebp,esp"
-"	      0049acdb    sub esp,4"
-"	      0049acde    push ebx"
-"	      0049acdf    push esi"
-"	      0049ace0    push edi"
-"	      0049ace1    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 499:
-	asm( 
-"	      0049ace4    mov eax,lNewMin"
-"	      0049ace7    mov ecx,this"
-"	      0049acea    mov [ecx+54h],eax"
-);
+	__asm        mov    eax, lNewMin;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x54], eax;
 // LINE 500:
-	asm( 
-"	      0049aced    mov eax,lNewMax"
-"	      0049acf0    mov ecx,this"
-"	      0049acf3    mov [ecx+58h],eax"
-);
+	__asm        mov    eax, lNewMax;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x58], eax;
 // LINE 501:
-	asm( 
-"	      0049acf6    mov eax,this"
-"	      0049acf9    mov eax,[eax+58h]"
-"	      0049acfc    mov ecx,this"
-"	      0049acff    sub eax,[ecx+54h]"
-"	      0049ad02    cdq"
-"	      0049ad03    sub eax,edx"
-"	      0049ad05    sar eax,1"
-"	      0049ad08    mov ecx,this"
-"	      0049ad0b    mov ecx,[ecx+54h]"
-"	      0049ad0e    add ecx,eax"
-"	      0049ad10    mov eax,this"
-"	      0049ad13    mov [eax+5Ch],ecx"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    ecx, this;
+	__asm        sub    eax, [ecx+0x54];
+	__asm        cdq;
+	__asm        sub    eax, edx;
+	__asm        sar    eax, 1;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x54];
+	__asm        add    ecx, eax;
+	__asm        mov    eax, this;
+	__asm        mov    [eax+0x5C], ecx;
 // LINE 503:
-	asm( 
-"	      0049ad16    jmp near ptr 0049AD1Bh"
-"	      0049ad1b    pop edi"
-"	      0049ad1c    pop esi"
-"	      0049ad1d    pop ebx"
-"	      0049ad1e    leave"
-"	      0049ad1f    ret 8"
-);
+	__asm        jmp    near ptr 0x0049AD1B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 

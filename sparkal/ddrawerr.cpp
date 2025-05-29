@@ -10,832 +10,612 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	char[256] szFullErrorDescription;
 
 // LINE 10:
-	asm( 
-"	      0042d420    push ebp"
-"	      0042d421    mov ebp,esp"
-"	      0042d423    sub esp,104h"
-"	      0042d429    push ebx"
-"	      0042d42a    push esi"
-"	      0042d42b    push edi"
-"	      0042d42c    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x104;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 13:
-	asm( 
-"	      0042d432    mov eax,szErrorDescription"
-"	      0042d435    push eax"
-"	      0042d436    lea eax,szFullErrorDescription[0]"
-"	      0042d43c    push eax"
-"	      0042d43d    mov ecx,this"
-"	      0042d443    call 0042D468h"
-);
+	__asm        mov    eax, szErrorDescription;
+	__asm        push   eax;
+	__asm        lea    eax, szFullErrorDescription[0];
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0042D468;
 // LINE 18:
-	asm( 
-"	      0042d448    lea eax,szFullErrorDescription[0]"
-"	      0042d44e    push eax"
-"	      0042d44f    push 5976A8h"
-"	      0042d454    call 00424B14h"
-"	      0042d459    add esp,8"
-);
+	__asm        lea    eax, szFullErrorDescription[0];
+	__asm        push   eax;
+	__asm        push   0x5976A8;
+	__asm        call   0x00424B14;
+	__asm        add    esp, 8;
 // LINE 22:
-	asm( 
-"	      0042d45c    jmp near ptr 0042D461h"
-"	      0042d461    pop edi"
-"	      0042d462    pop esi"
-"	      0042d463    pop ebx"
-"	      0042d464    leave"
-"	      0042d465    ret 4"
-);
+	__asm        jmp    near ptr 0x0042D461;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042d468
 void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
 // LINE 27:
-	asm( 
-"	      0042d468    push ebp"
-"	      0042d469    mov ebp,esp"
-"	      0042d46b    sub esp,8"
-"	      0042d46e    push ebx"
-"	      0042d46f    push esi"
-"	      0042d470    push edi"
-"	      0042d471    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 29:
-	asm( 
-"	      0042d474    mov eax,this"
-"	      0042d477    mov eax,[eax]"
-"	      0042d479    mov [ebp-8],eax"
-"	      0042d47c    jmp near ptr 0042D8D2h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x0042D8D2;
 // LINE 31:
-	asm( 
-"	      0042d481    push 5976ACh"
-"	      0042d486    mov eax,szFullErrorDescription"
-"	      0042d489    push eax"
-"	      0042d48a    call 0056CEB0h"
-"	      0042d48f    add esp,8"
-);
+	__asm        push   0x5976AC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 32:
-	asm( 
-"	      0042d492    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 34:
-	asm( 
-"	      0042d497    push 5976D0h"
-"	      0042d49c    mov eax,szFullErrorDescription"
-"	      0042d49f    push eax"
-"	      0042d4a0    call 0056CEB0h"
-"	      0042d4a5    add esp,8"
-);
+	__asm        push   0x5976D0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 35:
-	asm( 
-"	      0042d4a8    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 37:
-	asm( 
-"	      0042d4ad    push 5976F4h"
-"	      0042d4b2    mov eax,szFullErrorDescription"
-"	      0042d4b5    push eax"
-"	      0042d4b6    call 0056CEB0h"
-"	      0042d4bb    add esp,8"
-);
+	__asm        push   0x5976F4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 38:
-	asm( 
-"	      0042d4be    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 40:
-	asm( 
-"	      0042d4c3    push 59770Ch"
-"	      0042d4c8    mov eax,szFullErrorDescription"
-"	      0042d4cb    push eax"
-"	      0042d4cc    call 0056CEB0h"
-"	      0042d4d1    add esp,8"
-);
+	__asm        push   0x59770C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 41:
-	asm( 
-"	      0042d4d4    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 43:
-	asm( 
-"	      0042d4d9    push 597728h"
-"	      0042d4de    mov eax,szFullErrorDescription"
-"	      0042d4e1    push eax"
-"	      0042d4e2    call 0056CEB0h"
-"	      0042d4e7    add esp,8"
-);
+	__asm        push   0x597728;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 44:
-	asm( 
-"	      0042d4ea    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 46:
-	asm( 
-"	      0042d4ef    push 597744h"
-"	      0042d4f4    mov eax,szFullErrorDescription"
-"	      0042d4f7    push eax"
-"	      0042d4f8    call 0056CEB0h"
-"	      0042d4fd    add esp,8"
-);
+	__asm        push   0x597744;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 47:
-	asm( 
-"	      0042d500    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 49:
-	asm( 
-"	      0042d505    push 597764h"
-"	      0042d50a    mov eax,szFullErrorDescription"
-"	      0042d50d    push eax"
-"	      0042d50e    call 0056CEB0h"
-"	      0042d513    add esp,8"
-);
+	__asm        push   0x597764;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 50:
-	asm( 
-"	      0042d516    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 52:
-	asm( 
-"	      0042d51b    push 597780h"
-"	      0042d520    mov eax,szFullErrorDescription"
-"	      0042d523    push eax"
-"	      0042d524    call 0056CEB0h"
-"	      0042d529    add esp,8"
-);
+	__asm        push   0x597780;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 53:
-	asm( 
-"	      0042d52c    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 55:
-	asm( 
-"	      0042d531    push 5977A0h"
-"	      0042d536    mov eax,szFullErrorDescription"
-"	      0042d539    push eax"
-"	      0042d53a    call 0056CEB0h"
-"	      0042d53f    add esp,8"
-);
+	__asm        push   0x5977A0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 56:
-	asm( 
-"	      0042d542    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 58:
-	asm( 
-"	      0042d547    push 5977C4h"
-"	      0042d54c    mov eax,szFullErrorDescription"
-"	      0042d54f    push eax"
-"	      0042d550    call 0056CEB0h"
-"	      0042d555    add esp,8"
-);
+	__asm        push   0x5977C4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 59:
-	asm( 
-"	      0042d558    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 61:
-	asm( 
-"	      0042d55d    push 5977E0h"
-"	      0042d562    mov eax,szFullErrorDescription"
-"	      0042d565    push eax"
-"	      0042d566    call 0056CEB0h"
-"	      0042d56b    add esp,8"
-);
+	__asm        push   0x5977E0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 62:
-	asm( 
-"	      0042d56e    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 64:
-	asm( 
-"	      0042d573    push 5977F8h"
-"	      0042d578    mov eax,szFullErrorDescription"
-"	      0042d57b    push eax"
-"	      0042d57c    call 0056CEB0h"
-"	      0042d581    add esp,8"
-);
+	__asm        push   0x5977F8;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 65:
-	asm( 
-"	      0042d584    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 67:
-	asm( 
-"	      0042d589    push 597814h"
-"	      0042d58e    mov eax,szFullErrorDescription"
-"	      0042d591    push eax"
-"	      0042d592    call 0056CEB0h"
-"	      0042d597    add esp,8"
-);
+	__asm        push   0x597814;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 68:
-	asm( 
-"	      0042d59a    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 70:
-	asm( 
-"	      0042d59f    push 597830h"
-"	      0042d5a4    mov eax,szFullErrorDescription"
-"	      0042d5a7    push eax"
-"	      0042d5a8    call 0056CEB0h"
-"	      0042d5ad    add esp,8"
-);
+	__asm        push   0x597830;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 71:
-	asm( 
-"	      0042d5b0    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 73:
-	asm( 
-"	      0042d5b5    push 597850h"
-"	      0042d5ba    mov eax,szFullErrorDescription"
-"	      0042d5bd    push eax"
-"	      0042d5be    call 0056CEB0h"
-"	      0042d5c3    add esp,8"
-);
+	__asm        push   0x597850;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 74:
-	asm( 
-"	      0042d5c6    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 76:
-	asm( 
-"	      0042d5cb    push 597870h"
-"	      0042d5d0    mov eax,szFullErrorDescription"
-"	      0042d5d3    push eax"
-"	      0042d5d4    call 0056CEB0h"
-"	      0042d5d9    add esp,8"
-);
+	__asm        push   0x597870;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 77:
-	asm( 
-"	      0042d5dc    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 79:
-	asm( 
-"	      0042d5e1    push 59788Ch"
-"	      0042d5e6    mov eax,szFullErrorDescription"
-"	      0042d5e9    push eax"
-"	      0042d5ea    call 0056CEB0h"
-"	      0042d5ef    add esp,8"
-);
+	__asm        push   0x59788C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 80:
-	asm( 
-"	      0042d5f2    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 82:
-	asm( 
-"	      0042d5f7    push 5978A4h"
-"	      0042d5fc    mov eax,szFullErrorDescription"
-"	      0042d5ff    push eax"
-"	      0042d600    call 0056CEB0h"
-"	      0042d605    add esp,8"
-);
+	__asm        push   0x5978A4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 83:
-	asm( 
-"	      0042d608    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 85:
-	asm( 
-"	      0042d60d    push 5978C0h"
-"	      0042d612    mov eax,szFullErrorDescription"
-"	      0042d615    push eax"
-"	      0042d616    call 0056CEB0h"
-"	      0042d61b    add esp,8"
-);
+	__asm        push   0x5978C0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 86:
-	asm( 
-"	      0042d61e    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 88:
-	asm( 
-"	      0042d623    push 5978DCh"
-"	      0042d628    mov eax,szFullErrorDescription"
-"	      0042d62b    push eax"
-"	      0042d62c    call 0056CEB0h"
-"	      0042d631    add esp,8"
-);
+	__asm        push   0x5978DC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 89:
-	asm( 
-"	      0042d634    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 91:
-	asm( 
-"	      0042d639    push 5978F8h"
-"	      0042d63e    mov eax,szFullErrorDescription"
-"	      0042d641    push eax"
-"	      0042d642    call 0056CEB0h"
-"	      0042d647    add esp,8"
-);
+	__asm        push   0x5978F8;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 92:
-	asm( 
-"	      0042d64a    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 94:
-	asm( 
-"	      0042d64f    push 597918h"
-"	      0042d654    mov eax,szFullErrorDescription"
-"	      0042d657    push eax"
-"	      0042d658    call 0056CEB0h"
-"	      0042d65d    add esp,8"
-);
+	__asm        push   0x597918;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 95:
-	asm( 
-"	      0042d660    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 97:
-	asm( 
-"	      0042d665    push 597934h"
-"	      0042d66a    mov eax,szFullErrorDescription"
-"	      0042d66d    push eax"
-"	      0042d66e    call 0056CEB0h"
-"	      0042d673    add esp,8"
-);
+	__asm        push   0x597934;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 98:
-	asm( 
-"	      0042d676    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 100:
-	asm( 
-"	      0042d67b    push 597954h"
-"	      0042d680    mov eax,szFullErrorDescription"
-"	      0042d683    push eax"
-"	      0042d684    call 0056CEB0h"
-"	      0042d689    add esp,8"
-);
+	__asm        push   0x597954;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 101:
-	asm( 
-"	      0042d68c    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 103:
-	asm( 
-"	      0042d691    push 597978h"
-"	      0042d696    mov eax,szFullErrorDescription"
-"	      0042d699    push eax"
-"	      0042d69a    call 0056CEB0h"
-"	      0042d69f    add esp,8"
-);
+	__asm        push   0x597978;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 104:
-	asm( 
-"	      0042d6a2    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 106:
-	asm( 
-"	      0042d6a7    push 597998h"
-"	      0042d6ac    mov eax,szFullErrorDescription"
-"	      0042d6af    push eax"
-"	      0042d6b0    call 0056CEB0h"
-"	      0042d6b5    add esp,8"
-);
+	__asm        push   0x597998;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 107:
-	asm( 
-"	      0042d6b8    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 109:
-	asm( 
-"	      0042d6bd    push 5979B4h"
-"	      0042d6c2    mov eax,szFullErrorDescription"
-"	      0042d6c5    push eax"
-"	      0042d6c6    call 0056CEB0h"
-"	      0042d6cb    add esp,8"
-);
+	__asm        push   0x5979B4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 110:
-	asm( 
-"	      0042d6ce    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 112:
-	asm( 
-"	      0042d6d3    push 5979D0h"
-"	      0042d6d8    mov eax,szFullErrorDescription"
-"	      0042d6db    push eax"
-"	      0042d6dc    call 0056CEB0h"
-"	      0042d6e1    add esp,8"
-);
+	__asm        push   0x5979D0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 113:
-	asm( 
-"	      0042d6e4    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 115:
-	asm( 
-"	      0042d6e9    push 5979ECh"
-"	      0042d6ee    mov eax,szFullErrorDescription"
-"	      0042d6f1    push eax"
-"	      0042d6f2    call 0056CEB0h"
-"	      0042d6f7    add esp,8"
-);
+	__asm        push   0x5979EC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 116:
-	asm( 
-"	      0042d6fa    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 118:
-	asm( 
-"	      0042d6ff    push 597A08h"
-"	      0042d704    mov eax,szFullErrorDescription"
-"	      0042d707    push eax"
-"	      0042d708    call 0056CEB0h"
-"	      0042d70d    add esp,8"
-);
+	__asm        push   0x597A08;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 119:
-	asm( 
-"	      0042d710    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 121:
-	asm( 
-"	      0042d715    push 597A24h"
-"	      0042d71a    mov eax,szFullErrorDescription"
-"	      0042d71d    push eax"
-"	      0042d71e    call 0056CEB0h"
-"	      0042d723    add esp,8"
-);
+	__asm        push   0x597A24;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 122:
-	asm( 
-"	      0042d726    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 124:
-	asm( 
-"	      0042d72b    push 597A48h"
-"	      0042d730    mov eax,szFullErrorDescription"
-"	      0042d733    push eax"
-"	      0042d734    call 0056CEB0h"
-"	      0042d739    add esp,8"
-);
+	__asm        push   0x597A48;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 125:
-	asm( 
-"	      0042d73c    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 127:
-	asm( 
-"	      0042d741    push 597A68h"
-"	      0042d746    mov eax,szFullErrorDescription"
-"	      0042d749    push eax"
-"	      0042d74a    call 0056CEB0h"
-"	      0042d74f    add esp,8"
-);
+	__asm        push   0x597A68;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 128:
-	asm( 
-"	      0042d752    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 130:
-	asm( 
-"	      0042d757    push 597A84h"
-"	      0042d75c    mov eax,szFullErrorDescription"
-"	      0042d75f    push eax"
-"	      0042d760    call 0056CEB0h"
-"	      0042d765    add esp,8"
-);
+	__asm        push   0x597A84;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 131:
-	asm( 
-"	      0042d768    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 133:
-	asm( 
-"	      0042d76d    push 597AACh"
-"	      0042d772    mov eax,szFullErrorDescription"
-"	      0042d775    push eax"
-"	      0042d776    call 0056CEB0h"
-"	      0042d77b    add esp,8"
-);
+	__asm        push   0x597AAC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 134:
-	asm( 
-"	      0042d77e    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 136:
-	asm( 
-"	      0042d783    push 597AD4h"
-"	      0042d788    mov eax,szFullErrorDescription"
-"	      0042d78b    push eax"
-"	      0042d78c    call 0056CEB0h"
-"	      0042d791    add esp,8"
-);
+	__asm        push   0x597AD4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 137:
-	asm( 
-"	      0042d794    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 139:
-	asm( 
-"	      0042d799    push 597AF0h"
-"	      0042d79e    mov eax,szFullErrorDescription"
-"	      0042d7a1    push eax"
-"	      0042d7a2    call 0056CEB0h"
-"	      0042d7a7    add esp,8"
-);
+	__asm        push   0x597AF0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 140:
-	asm( 
-"	      0042d7aa    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 142:
-	asm( 
-"	      0042d7af    push 597B14h"
-"	      0042d7b4    mov eax,szFullErrorDescription"
-"	      0042d7b7    push eax"
-"	      0042d7b8    call 0056CEB0h"
-"	      0042d7bd    add esp,8"
-);
+	__asm        push   0x597B14;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 143:
-	asm( 
-"	      0042d7c0    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 145:
-	asm( 
-"	      0042d7c5    push 597B30h"
-"	      0042d7ca    mov eax,szFullErrorDescription"
-"	      0042d7cd    push eax"
-"	      0042d7ce    call 0056CEB0h"
-"	      0042d7d3    add esp,8"
-);
+	__asm        push   0x597B30;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 146:
-	asm( 
-"	      0042d7d6    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 148:
-	asm( 
-"	      0042d7db    push 597B54h"
-"	      0042d7e0    mov eax,szFullErrorDescription"
-"	      0042d7e3    push eax"
-"	      0042d7e4    call 0056CEB0h"
-"	      0042d7e9    add esp,8"
-);
+	__asm        push   0x597B54;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 149:
-	asm( 
-"	      0042d7ec    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 151:
-	asm( 
-"	      0042d7f1    push 597B74h"
-"	      0042d7f6    mov eax,szFullErrorDescription"
-"	      0042d7f9    push eax"
-"	      0042d7fa    call 0056CEB0h"
-"	      0042d7ff    add esp,8"
-);
+	__asm        push   0x597B74;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 152:
-	asm( 
-"	      0042d802    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 154:
-	asm( 
-"	      0042d807    push 597B90h"
-"	      0042d80c    mov eax,szFullErrorDescription"
-"	      0042d80f    push eax"
-"	      0042d810    call 0056CEB0h"
-"	      0042d815    add esp,8"
-);
+	__asm        push   0x597B90;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 155:
-	asm( 
-"	      0042d818    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 157:
-	asm( 
-"	      0042d81d    push 597BACh"
-"	      0042d822    mov eax,szFullErrorDescription"
-"	      0042d825    push eax"
-"	      0042d826    call 0056CEB0h"
-"	      0042d82b    add esp,8"
-);
+	__asm        push   0x597BAC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 158:
-	asm( 
-"	      0042d82e    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 160:
-	asm( 
-"	      0042d833    push 597BC8h"
-"	      0042d838    mov eax,szFullErrorDescription"
-"	      0042d83b    push eax"
-"	      0042d83c    call 0056CEB0h"
-"	      0042d841    add esp,8"
-);
+	__asm        push   0x597BC8;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 161:
-	asm( 
-"	      0042d844    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 163:
-	asm( 
-"	      0042d849    push 597BECh"
-"	      0042d84e    mov eax,szFullErrorDescription"
-"	      0042d851    push eax"
-"	      0042d852    call 0056CEB0h"
-"	      0042d857    add esp,8"
-);
+	__asm        push   0x597BEC;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 164:
-	asm( 
-"	      0042d85a    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 166:
-	asm( 
-"	      0042d85f    push 597C0Ch"
-"	      0042d864    mov eax,szFullErrorDescription"
-"	      0042d867    push eax"
-"	      0042d868    call 0056CEB0h"
-"	      0042d86d    add esp,8"
-);
+	__asm        push   0x597C0C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 167:
-	asm( 
-"	      0042d870    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 169:
-	asm( 
-"	      0042d875    push 597C34h"
-"	      0042d87a    mov eax,szFullErrorDescription"
-"	      0042d87d    push eax"
-"	      0042d87e    call 0056CEB0h"
-"	      0042d883    add esp,8"
-);
+	__asm        push   0x597C34;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 170:
-	asm( 
-"	      0042d886    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 172:
-	asm( 
-"	      0042d88b    push 597C54h"
-"	      0042d890    mov eax,szFullErrorDescription"
-"	      0042d893    push eax"
-"	      0042d894    call 0056CEB0h"
-"	      0042d899    add esp,8"
-);
+	__asm        push   0x597C54;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 173:
-	asm( 
-"	      0042d89c    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 175:
-	asm( 
-"	      0042d8a1    push 597C6Ch"
-"	      0042d8a6    mov eax,szFullErrorDescription"
-"	      0042d8a9    push eax"
-"	      0042d8aa    call 0056CEB0h"
-"	      0042d8af    add esp,8"
-);
+	__asm        push   0x597C6C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 176:
-	asm( 
-"	      0042d8b2    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 178:
-	asm( 
-"	      0042d8b7    push 597C7Ch"
-"	      0042d8bc    mov eax,szFullErrorDescription"
-"	      0042d8bf    push eax"
-"	      0042d8c0    call 0056CEB0h"
-"	      0042d8c5    add esp,8"
-);
+	__asm        push   0x597C7C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 179:
-	asm( 
-"	      0042d8c8    jmp near ptr 0042DC43h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
 // LINE 180:
-	asm( 
-"	      0042d8cd    jmp near ptr 0042DC43h"
-"	      0042d8d2    cmp dword ptr [ebp-8],80004005h"
-"	      0042d8d9    jg near ptr 0042D8F7h"
-"	      0042d8df    je near ptr 0042D4ADh"
-"	      0042d8e5    cmp dword ptr [ebp-8],80004001h"
-"	      0042d8ec    je near ptr 0042D81Dh"
-"	      0042d8f2    jmp near ptr 0042D8B7h"
-"	      0042d8f7    cmp dword ptr [ebp-8],80070057h"
-"	      0042d8fe    jg near ptr 0042D91Ch"
-"	      0042d904    je near ptr 0042D51Bh"
-"	      0042d90a    cmp dword ptr [ebp-8],8007000Eh"
-"	      0042d911    je near ptr 0042D6FFh"
-"	      0042d917    jmp near ptr 0042D8B7h"
-"	      0042d91c    cmp dword ptr [ebp-8],88760028h"
-"	      0042d923    jg near ptr 0042D941h"
-"	      0042d929    je near ptr 0042D497h"
-"	      0042d92f    cmp dword ptr [ebp-8],8876000Ah"
-"	      0042d936    je near ptr 0042D481h"
-"	      0042d93c    jmp near ptr 0042D8B7h"
-"	      0042d941    cmp dword ptr [ebp-8],88760064h"
-"	      0042d948    jg near ptr 0042D966h"
-"	      0042d94e    je near ptr 0042D4D9h"
-"	      0042d954    cmp dword ptr [ebp-8],8876005Ah"
-"	      0042d95b    je near ptr 0042D4C3h"
-"	      0042d961    jmp near ptr 0042D8B7h"
-"	      0042d966    cmp dword ptr [ebp-8],88760078h"
-"	      0042d96d    jg near ptr 0042D98Bh"
-"	      0042d973    je near ptr 0042D505h"
-"	      0042d979    cmp dword ptr [ebp-8],8876006Eh"
-"	      0042d980    je near ptr 0042D4EFh"
-"	      0042d986    jmp near ptr 0042D8B7h"
-"	      0042d98b    cmp dword ptr [ebp-8],88760096h"
-"	      0042d992    jg near ptr 0042D9B0h"
-"	      0042d998    je near ptr 0042D547h"
-"	      0042d99e    cmp dword ptr [ebp-8],88760091h"
-"	      0042d9a5    je near ptr 0042D531h"
-"	      0042d9ab    jmp near ptr 0042D8B7h"
-"	      0042d9b0    cmp dword ptr [ebp-8],887600B4h"
-"	      0042d9b7    jg near ptr 0042D9D5h"
-"	      0042d9bd    je near ptr 0042D573h"
-"	      0042d9c3    cmp dword ptr [ebp-8],887600AAh"
-"	      0042d9ca    je near ptr 0042D55Dh"
-"	      0042d9d0    jmp near ptr 0042D8B7h"
-"	      0042d9d5    cmp dword ptr [ebp-8],887600D2h"
-"	      0042d9dc    jg near ptr 0042D9FAh"
-"	      0042d9e2    je near ptr 0042D59Fh"
-"	      0042d9e8    cmp dword ptr [ebp-8],887600CDh"
-"	      0042d9ef    je near ptr 0042D589h"
-"	      0042d9f5    jmp near ptr 0042D8B7h"
-"	      0042d9fa    cmp dword ptr [ebp-8],887600E6h"
-"	      0042da01    jg near ptr 0042DA1Fh"
-"	      0042da07    je near ptr 0042D5CBh"
-"	      0042da0d    cmp dword ptr [ebp-8],887600E1h"
-"	      0042da14    je near ptr 0042D5B5h"
-"	      0042da1a    jmp near ptr 0042D8B7h"
-"	      0042da1f    cmp dword ptr [ebp-8],887600FAh"
-"	      0042da26    jg near ptr 0042DA44h"
-"	      0042da2c    je near ptr 0042D5F7h"
-"	      0042da32    cmp dword ptr [ebp-8],887600F0h"
-"	      0042da39    je near ptr 0042D5E1h"
-"	      0042da3f    jmp near ptr 0042D8B7h"
-"	      0042da44    cmp dword ptr [ebp-8],88760104h"
-"	      0042da4b    jg near ptr 0042DA69h"
-"	      0042da51    je near ptr 0042D623h"
-"	      0042da57    cmp dword ptr [ebp-8],887600FFh"
-"	      0042da5e    je near ptr 0042D60Dh"
-"	      0042da64    jmp near ptr 0042D8B7h"
-"	      0042da69    cmp dword ptr [ebp-8],88760136h"
-"	      0042da70    jg near ptr 0042DA8Eh"
-"	      0042da76    je near ptr 0042D64Fh"
-"	      0042da7c    cmp dword ptr [ebp-8],88760118h"
-"	      0042da83    je near ptr 0042D639h"
-"	      0042da89    jmp near ptr 0042D8B7h"
-"	      0042da8e    cmp dword ptr [ebp-8],8876014Ah"
-"	      0042da95    jg near ptr 0042DACDh"
-"	      0042da9b    je near ptr 0042D6A7h"
-"	      0042daa1    cmp dword ptr [ebp-8],8876013Ch"
-"	      0042daa8    je near ptr 0042D665h"
-"	      0042daae    cmp dword ptr [ebp-8],8876013Dh"
-"	      0042dab5    je near ptr 0042D67Bh"
-"	      0042dabb    cmp dword ptr [ebp-8],88760140h"
-"	      0042dac2    je near ptr 0042D691h"
-"	      0042dac8    jmp near ptr 0042D8B7h"
-"	      0042dacd    cmp dword ptr [ebp-8],88760154h"
-"	      0042dad4    jg near ptr 0042DAF2h"
-"	      0042dada    je near ptr 0042D6D3h"
-"	      0042dae0    cmp dword ptr [ebp-8],8876014Fh"
-"	      0042dae7    je near ptr 0042D6BDh"
-"	      0042daed    jmp near ptr 0042D8B7h"
-"	      0042daf2    cmp dword ptr [ebp-8],8876017Ch"
-"	      0042daf9    jg near ptr 0042DB17h"
-"	      0042daff    je near ptr 0042D715h"
-"	      0042db05    cmp dword ptr [ebp-8],88760168h"
-"	      0042db0c    je near ptr 0042D6E9h"
-"	      0042db12    jmp near ptr 0042D8B7h"
-"	      0042db17    cmp dword ptr [ebp-8],88760183h"
-"	      0042db1e    jg near ptr 0042DB3Ch"
-"	      0042db24    je near ptr 0042D741h"
-"	      0042db2a    cmp dword ptr [ebp-8],8876017Eh"
-"	      0042db31    je near ptr 0042D72Bh"
-"	      0042db37    jmp near ptr 0042D8B7h"
-"	      0042db3c    cmp dword ptr [ebp-8],887601A4h"
-"	      0042db43    jg near ptr 0042DB61h"
-"	      0042db49    je near ptr 0042D76Dh"
-"	      0042db4f    cmp dword ptr [ebp-8],8876019Ah"
-"	      0042db56    je near ptr 0042D757h"
-"	      0042db5c    jmp near ptr 0042D8B7h"
-"	      0042db61    cmp dword ptr [ebp-8],887601B8h"
-"	      0042db68    jg near ptr 0042DB86h"
-"	      0042db6e    je near ptr 0042D799h"
-"	      0042db74    cmp dword ptr [ebp-8],887601AEh"
-"	      0042db7b    je near ptr 0042D783h"
-"	      0042db81    jmp near ptr 0042D8B7h"
-"	      0042db86    cmp dword ptr [ebp-8],887601CCh"
-"	      0042db8d    jg near ptr 0042DBABh"
-"	      0042db93    je near ptr 0042D7C5h"
-"	      0042db99    cmp dword ptr [ebp-8],887601C2h"
-"	      0042dba0    je near ptr 0042D7AFh"
-"	      0042dba6    jmp near ptr 0042D8B7h"
-"	      0042dbab    cmp dword ptr [ebp-8],887601E0h"
-"	      0042dbb2    jg near ptr 0042DBD0h"
-"	      0042dbb8    je near ptr 0042D7F1h"
-"	      0042dbbe    cmp dword ptr [ebp-8],887601D6h"
-"	      0042dbc5    je near ptr 0042D7DBh"
-"	      0042dbcb    jmp near ptr 0042D8B7h"
-"	      0042dbd0    cmp dword ptr [ebp-8],887601FEh"
-"	      0042dbd7    jg near ptr 0042DBF5h"
-"	      0042dbdd    je near ptr 0042D833h"
-"	      0042dbe3    cmp dword ptr [ebp-8],887601EAh"
-"	      0042dbea    je near ptr 0042D807h"
-"	      0042dbf0    jmp near ptr 0042D8B7h"
-"	      0042dbf5    cmp dword ptr [ebp-8],88760219h"
-"	      0042dbfc    jg near ptr 0042DC1Ah"
-"	      0042dc02    je near ptr 0042D85Fh"
-"	      0042dc08    cmp dword ptr [ebp-8],88760208h"
-"	      0042dc0f    je near ptr 0042D849h"
-"	      0042dc15    jmp near ptr 0042D8B7h"
-"	      0042dc1a    cmp dword ptr [ebp-8],8876021Ch"
-"	      0042dc21    je near ptr 0042D875h"
-"	      0042dc27    cmp dword ptr [ebp-8],88760230h"
-"	      0042dc2e    je near ptr 0042D88Bh"
-"	      0042dc34    cmp dword ptr [ebp-8],0"
-"	      0042dc38    je near ptr 0042D8A1h"
-"	      0042dc3e    jmp near ptr 0042D8B7h"
-);
+	__asm        jmp    near ptr 0x0042DC43;
+	__asm        cmp    dword ptr [ebp-8], 0x80004005;
+	__asm        jg     near ptr 0x0042D8F7;
+	__asm        je     near ptr 0x0042D4AD;
+	__asm        cmp    dword ptr [ebp-8], 0x80004001;
+	__asm        je     near ptr 0x0042D81D;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x80070057;
+	__asm        jg     near ptr 0x0042D91C;
+	__asm        je     near ptr 0x0042D51B;
+	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
+	__asm        je     near ptr 0x0042D6FF;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760028;
+	__asm        jg     near ptr 0x0042D941;
+	__asm        je     near ptr 0x0042D497;
+	__asm        cmp    dword ptr [ebp-8], 0x8876000A;
+	__asm        je     near ptr 0x0042D481;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760064;
+	__asm        jg     near ptr 0x0042D966;
+	__asm        je     near ptr 0x0042D4D9;
+	__asm        cmp    dword ptr [ebp-8], 0x8876005A;
+	__asm        je     near ptr 0x0042D4C3;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760078;
+	__asm        jg     near ptr 0x0042D98B;
+	__asm        je     near ptr 0x0042D505;
+	__asm        cmp    dword ptr [ebp-8], 0x8876006E;
+	__asm        je     near ptr 0x0042D4EF;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760096;
+	__asm        jg     near ptr 0x0042D9B0;
+	__asm        je     near ptr 0x0042D547;
+	__asm        cmp    dword ptr [ebp-8], 0x88760091;
+	__asm        je     near ptr 0x0042D531;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887600B4;
+	__asm        jg     near ptr 0x0042D9D5;
+	__asm        je     near ptr 0x0042D573;
+	__asm        cmp    dword ptr [ebp-8], 0x887600AA;
+	__asm        je     near ptr 0x0042D55D;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887600D2;
+	__asm        jg     near ptr 0x0042D9FA;
+	__asm        je     near ptr 0x0042D59F;
+	__asm        cmp    dword ptr [ebp-8], 0x887600CD;
+	__asm        je     near ptr 0x0042D589;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887600E6;
+	__asm        jg     near ptr 0x0042DA1F;
+	__asm        je     near ptr 0x0042D5CB;
+	__asm        cmp    dword ptr [ebp-8], 0x887600E1;
+	__asm        je     near ptr 0x0042D5B5;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887600FA;
+	__asm        jg     near ptr 0x0042DA44;
+	__asm        je     near ptr 0x0042D5F7;
+	__asm        cmp    dword ptr [ebp-8], 0x887600F0;
+	__asm        je     near ptr 0x0042D5E1;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760104;
+	__asm        jg     near ptr 0x0042DA69;
+	__asm        je     near ptr 0x0042D623;
+	__asm        cmp    dword ptr [ebp-8], 0x887600FF;
+	__asm        je     near ptr 0x0042D60D;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760136;
+	__asm        jg     near ptr 0x0042DA8E;
+	__asm        je     near ptr 0x0042D64F;
+	__asm        cmp    dword ptr [ebp-8], 0x88760118;
+	__asm        je     near ptr 0x0042D639;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x8876014A;
+	__asm        jg     near ptr 0x0042DACD;
+	__asm        je     near ptr 0x0042D6A7;
+	__asm        cmp    dword ptr [ebp-8], 0x8876013C;
+	__asm        je     near ptr 0x0042D665;
+	__asm        cmp    dword ptr [ebp-8], 0x8876013D;
+	__asm        je     near ptr 0x0042D67B;
+	__asm        cmp    dword ptr [ebp-8], 0x88760140;
+	__asm        je     near ptr 0x0042D691;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760154;
+	__asm        jg     near ptr 0x0042DAF2;
+	__asm        je     near ptr 0x0042D6D3;
+	__asm        cmp    dword ptr [ebp-8], 0x8876014F;
+	__asm        je     near ptr 0x0042D6BD;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x8876017C;
+	__asm        jg     near ptr 0x0042DB17;
+	__asm        je     near ptr 0x0042D715;
+	__asm        cmp    dword ptr [ebp-8], 0x88760168;
+	__asm        je     near ptr 0x0042D6E9;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760183;
+	__asm        jg     near ptr 0x0042DB3C;
+	__asm        je     near ptr 0x0042D741;
+	__asm        cmp    dword ptr [ebp-8], 0x8876017E;
+	__asm        je     near ptr 0x0042D72B;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887601A4;
+	__asm        jg     near ptr 0x0042DB61;
+	__asm        je     near ptr 0x0042D76D;
+	__asm        cmp    dword ptr [ebp-8], 0x8876019A;
+	__asm        je     near ptr 0x0042D757;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887601B8;
+	__asm        jg     near ptr 0x0042DB86;
+	__asm        je     near ptr 0x0042D799;
+	__asm        cmp    dword ptr [ebp-8], 0x887601AE;
+	__asm        je     near ptr 0x0042D783;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887601CC;
+	__asm        jg     near ptr 0x0042DBAB;
+	__asm        je     near ptr 0x0042D7C5;
+	__asm        cmp    dword ptr [ebp-8], 0x887601C2;
+	__asm        je     near ptr 0x0042D7AF;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887601E0;
+	__asm        jg     near ptr 0x0042DBD0;
+	__asm        je     near ptr 0x0042D7F1;
+	__asm        cmp    dword ptr [ebp-8], 0x887601D6;
+	__asm        je     near ptr 0x0042D7DB;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x887601FE;
+	__asm        jg     near ptr 0x0042DBF5;
+	__asm        je     near ptr 0x0042D833;
+	__asm        cmp    dword ptr [ebp-8], 0x887601EA;
+	__asm        je     near ptr 0x0042D807;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x88760219;
+	__asm        jg     near ptr 0x0042DC1A;
+	__asm        je     near ptr 0x0042D85F;
+	__asm        cmp    dword ptr [ebp-8], 0x88760208;
+	__asm        je     near ptr 0x0042D849;
+	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        cmp    dword ptr [ebp-8], 0x8876021C;
+	__asm        je     near ptr 0x0042D875;
+	__asm        cmp    dword ptr [ebp-8], 0x88760230;
+	__asm        je     near ptr 0x0042D88B;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x0042D8A1;
+	__asm        jmp    near ptr 0x0042D8B7;
 // LINE 181:
-	asm( 
-"	      0042dc43    cmp szErrorDescription,0"
-"	      0042dc47    je near ptr 0042DC5Dh"
-);
+	__asm        cmp    szErrorDescription, 0;
+	__asm        je     near ptr 0x0042DC5D;
 // LINE 182:
-	asm( 
-"	      0042dc4d    mov eax,szErrorDescription"
-"	      0042dc50    push eax"
-"	      0042dc51    mov eax,szFullErrorDescription"
-"	      0042dc54    push eax"
-"	      0042dc55    call 0056CEC0h"
-"	      0042dc5a    add esp,8"
-);
+	__asm        mov    eax, szErrorDescription;
+	__asm        push   eax;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEC0;
+	__asm        add    esp, 8;
 // LINE 183:
-	asm( 
-"	      0042dc5d    jmp near ptr 0042DC62h"
-"	      0042dc62    pop edi"
-"	      0042dc63    pop esi"
-"	      0042dc64    pop ebx"
-"	      0042dc65    leave"
-"	      0042dc66    ret 8"
-);
+	__asm        jmp    near ptr 0x0042DC62;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042dc69
@@ -843,324 +623,240 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	char[256] szFullErrorDescription;
 
 // LINE 190:
-	asm( 
-"	      0042dc69    push ebp"
-"	      0042dc6a    mov ebp,esp"
-"	      0042dc6c    sub esp,104h"
-"	      0042dc72    push ebx"
-"	      0042dc73    push esi"
-"	      0042dc74    push edi"
-"	      0042dc75    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x104;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 193:
-	asm( 
-"	      0042dc7b    mov eax,szErrorDescription"
-"	      0042dc7e    push eax"
-"	      0042dc7f    lea eax,szFullErrorDescription[0]"
-"	      0042dc85    push eax"
-"	      0042dc86    mov ecx,this"
-"	      0042dc8c    call 0042DCB1h"
-);
+	__asm        mov    eax, szErrorDescription;
+	__asm        push   eax;
+	__asm        lea    eax, szFullErrorDescription[0];
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0042DCB1;
 // LINE 198:
-	asm( 
-"	      0042dc91    lea eax,szFullErrorDescription[0]"
-"	      0042dc97    push eax"
-"	      0042dc98    push 597C90h"
-"	      0042dc9d    call 00424B14h"
-"	      0042dca2    add esp,8"
-);
+	__asm        lea    eax, szFullErrorDescription[0];
+	__asm        push   eax;
+	__asm        push   0x597C90;
+	__asm        call   0x00424B14;
+	__asm        add    esp, 8;
 // LINE 202:
-	asm( 
-"	      0042dca5    jmp near ptr 0042DCAAh"
-"	      0042dcaa    pop edi"
-"	      0042dcab    pop esi"
-"	      0042dcac    pop ebx"
-"	      0042dcad    leave"
-"	      0042dcae    ret 4"
-);
+	__asm        jmp    near ptr 0x0042DCAA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042dcb1
 void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
 // LINE 208:
-	asm( 
-"	      0042dcb1    push ebp"
-"	      0042dcb2    mov ebp,esp"
-"	      0042dcb4    sub esp,8"
-"	      0042dcb7    push ebx"
-"	      0042dcb8    push esi"
-"	      0042dcb9    push edi"
-"	      0042dcba    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 210:
-	asm( 
-"	      0042dcbd    mov eax,this"
-"	      0042dcc0    mov eax,[eax]"
-"	      0042dcc2    mov [ebp-8],eax"
-"	      0042dcc5    jmp near ptr 0042DE2Fh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x0042DE2F;
 // LINE 212:
-	asm( 
-"	      0042dcca    push 597C94h"
-"	      0042dccf    mov eax,szFullErrorDescription"
-"	      0042dcd2    push eax"
-"	      0042dcd3    call 0056CEB0h"
-"	      0042dcd8    add esp,8"
-);
+	__asm        push   0x597C94;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 213:
-	asm( 
-"	      0042dcdb    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 215:
-	asm( 
-"	      0042dce0    push 597CB0h"
-"	      0042dce5    mov eax,szFullErrorDescription"
-"	      0042dce8    push eax"
-"	      0042dce9    call 0056CEB0h"
-"	      0042dcee    add esp,8"
-);
+	__asm        push   0x597CB0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 216:
-	asm( 
-"	      0042dcf1    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 218:
-	asm( 
-"	      0042dcf6    push 597CD0h"
-"	      0042dcfb    mov eax,szFullErrorDescription"
-"	      0042dcfe    push eax"
-"	      0042dcff    call 0056CEB0h"
-"	      0042dd04    add esp,8"
-);
+	__asm        push   0x597CD0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 219:
-	asm( 
-"	      0042dd07    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 221:
-	asm( 
-"	      0042dd0c    push 597CF0h"
-"	      0042dd11    mov eax,szFullErrorDescription"
-"	      0042dd14    push eax"
-"	      0042dd15    call 0056CEB0h"
-"	      0042dd1a    add esp,8"
-);
+	__asm        push   0x597CF0;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 222:
-	asm( 
-"	      0042dd1d    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 224:
-	asm( 
-"	      0042dd22    push 597D0Ch"
-"	      0042dd27    mov eax,szFullErrorDescription"
-"	      0042dd2a    push eax"
-"	      0042dd2b    call 0056CEB0h"
-"	      0042dd30    add esp,8"
-);
+	__asm        push   0x597D0C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 225:
-	asm( 
-"	      0042dd33    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 227:
-	asm( 
-"	      0042dd38    push 597D24h"
-"	      0042dd3d    mov eax,szFullErrorDescription"
-"	      0042dd40    push eax"
-"	      0042dd41    call 0056CEB0h"
-"	      0042dd46    add esp,8"
-);
+	__asm        push   0x597D24;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 228:
-	asm( 
-"	      0042dd49    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 230:
-	asm( 
-"	      0042dd4e    push 597D44h"
-"	      0042dd53    mov eax,szFullErrorDescription"
-"	      0042dd56    push eax"
-"	      0042dd57    call 0056CEB0h"
-"	      0042dd5c    add esp,8"
-);
+	__asm        push   0x597D44;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 231:
-	asm( 
-"	      0042dd5f    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 233:
-	asm( 
-"	      0042dd64    push 597D60h"
-"	      0042dd69    mov eax,szFullErrorDescription"
-"	      0042dd6c    push eax"
-"	      0042dd6d    call 0056CEB0h"
-"	      0042dd72    add esp,8"
-);
+	__asm        push   0x597D60;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 234:
-	asm( 
-"	      0042dd75    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 236:
-	asm( 
-"	      0042dd7a    push 597D7Ch"
-"	      0042dd7f    mov eax,szFullErrorDescription"
-"	      0042dd82    push eax"
-"	      0042dd83    call 0056CEB0h"
-"	      0042dd88    add esp,8"
-);
+	__asm        push   0x597D7C;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 237:
-	asm( 
-"	      0042dd8b    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 239:
-	asm( 
-"	      0042dd90    push 597D98h"
-"	      0042dd95    mov eax,szFullErrorDescription"
-"	      0042dd98    push eax"
-"	      0042dd99    call 0056CEB0h"
-"	      0042dd9e    add esp,8"
-);
+	__asm        push   0x597D98;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 240:
-	asm( 
-"	      0042dda1    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 242:
-	asm( 
-"	      0042dda6    push 597DB4h"
-"	      0042ddab    mov eax,szFullErrorDescription"
-"	      0042ddae    push eax"
-"	      0042ddaf    call 0056CEB0h"
-"	      0042ddb4    add esp,8"
-);
+	__asm        push   0x597DB4;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 243:
-	asm( 
-"	      0042ddb7    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 245:
-	asm( 
-"	      0042ddbc    push 597DD8h"
-"	      0042ddc1    mov eax,szFullErrorDescription"
-"	      0042ddc4    push eax"
-"	      0042ddc5    call 0056CEB0h"
-"	      0042ddca    add esp,8"
-);
+	__asm        push   0x597DD8;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 246:
-	asm( 
-"	      0042ddcd    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 248:
-	asm( 
-"	      0042ddd2    push 597DF8h"
-"	      0042ddd7    mov eax,szFullErrorDescription"
-"	      0042ddda    push eax"
-"	      0042dddb    call 0056CEB0h"
-"	      0042dde0    add esp,8"
-);
+	__asm        push   0x597DF8;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 249:
-	asm( 
-"	      0042dde3    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 251:
-	asm( 
-"	      0042dde8    push 597E14h"
-"	      0042dded    mov eax,szFullErrorDescription"
-"	      0042ddf0    push eax"
-"	      0042ddf1    call 0056CEB0h"
-"	      0042ddf6    add esp,8"
-);
+	__asm        push   0x597E14;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 252:
-	asm( 
-"	      0042ddf9    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 254:
-	asm( 
-"	      0042ddfe    push 597E34h"
-"	      0042de03    mov eax,szFullErrorDescription"
-"	      0042de06    push eax"
-"	      0042de07    call 0056CEB0h"
-"	      0042de0c    add esp,8"
-);
+	__asm        push   0x597E34;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 255:
-	asm( 
-"	      0042de0f    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 257:
-	asm( 
-"	      0042de14    push 597E44h"
-"	      0042de19    mov eax,szFullErrorDescription"
-"	      0042de1c    push eax"
-"	      0042de1d    call 0056CEB0h"
-"	      0042de22    add esp,8"
-);
+	__asm        push   0x597E44;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 258:
-	asm( 
-"	      0042de25    jmp near ptr 0042DF36h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
 // LINE 259:
-	asm( 
-"	      0042de2a    jmp near ptr 0042DF36h"
-"	      0042de2f    cmp dword ptr [ebp-8],80004005h"
-"	      0042de36    jg near ptr 0042DE54h"
-"	      0042de3c    je near ptr 0042DD22h"
-"	      0042de42    cmp dword ptr [ebp-8],80004001h"
-"	      0042de49    je near ptr 0042DD7Ah"
-"	      0042de4f    jmp near ptr 0042DE14h"
-"	      0042de54    cmp dword ptr [ebp-8],8007000Eh"
-"	      0042de5b    jg near ptr 0042DE79h"
-"	      0042de61    je near ptr 0042DD4Eh"
-"	      0042de67    cmp dword ptr [ebp-8],80040110h"
-"	      0042de6e    je near ptr 0042DDBCh"
-"	      0042de74    jmp near ptr 0042DE14h"
-"	      0042de79    cmp dword ptr [ebp-8],8878000Ah"
-"	      0042de80    jg near ptr 0042DE9Eh"
-"	      0042de86    je near ptr 0042DCCAh"
-"	      0042de8c    cmp dword ptr [ebp-8],80070057h"
-"	      0042de93    je near ptr 0042DCF6h"
-"	      0042de99    jmp near ptr 0042DE14h"
-"	      0042de9e    cmp dword ptr [ebp-8],88780032h"
-"	      0042dea5    jg near ptr 0042DEC3h"
-"	      0042deab    je near ptr 0042DD0Ch"
-"	      0042deb1    cmp dword ptr [ebp-8],8878001Eh"
-"	      0042deb8    je near ptr 0042DCE0h"
-"	      0042debe    jmp near ptr 0042DE14h"
-"	      0042dec3    cmp dword ptr [ebp-8],88780064h"
-"	      0042deca    jg near ptr 0042DEE8h"
-"	      0042ded0    je near ptr 0042DD64h"
-"	      0042ded6    cmp dword ptr [ebp-8],88780046h"
-"	      0042dedd    je near ptr 0042DD38h"
-"	      0042dee3    jmp near ptr 0042DE14h"
-"	      0042dee8    cmp dword ptr [ebp-8],88780082h"
-"	      0042deef    jg near ptr 0042DF0Dh"
-"	      0042def5    je near ptr 0042DDA6h"
-"	      0042defb    cmp dword ptr [ebp-8],88780078h"
-"	      0042df02    je near ptr 0042DD90h"
-"	      0042df08    jmp near ptr 0042DE14h"
-"	      0042df0d    cmp dword ptr [ebp-8],88780096h"
-"	      0042df14    je near ptr 0042DDD2h"
-"	      0042df1a    cmp dword ptr [ebp-8],887800A0h"
-"	      0042df21    je near ptr 0042DDE8h"
-"	      0042df27    cmp dword ptr [ebp-8],0"
-"	      0042df2b    je near ptr 0042DDFEh"
-"	      0042df31    jmp near ptr 0042DE14h"
-);
+	__asm        jmp    near ptr 0x0042DF36;
+	__asm        cmp    dword ptr [ebp-8], 0x80004005;
+	__asm        jg     near ptr 0x0042DE54;
+	__asm        je     near ptr 0x0042DD22;
+	__asm        cmp    dword ptr [ebp-8], 0x80004001;
+	__asm        je     near ptr 0x0042DD7A;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
+	__asm        jg     near ptr 0x0042DE79;
+	__asm        je     near ptr 0x0042DD4E;
+	__asm        cmp    dword ptr [ebp-8], 0x80040110;
+	__asm        je     near ptr 0x0042DDBC;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x8878000A;
+	__asm        jg     near ptr 0x0042DE9E;
+	__asm        je     near ptr 0x0042DCCA;
+	__asm        cmp    dword ptr [ebp-8], 0x80070057;
+	__asm        je     near ptr 0x0042DCF6;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x88780032;
+	__asm        jg     near ptr 0x0042DEC3;
+	__asm        je     near ptr 0x0042DD0C;
+	__asm        cmp    dword ptr [ebp-8], 0x8878001E;
+	__asm        je     near ptr 0x0042DCE0;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x88780064;
+	__asm        jg     near ptr 0x0042DEE8;
+	__asm        je     near ptr 0x0042DD64;
+	__asm        cmp    dword ptr [ebp-8], 0x88780046;
+	__asm        je     near ptr 0x0042DD38;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x88780082;
+	__asm        jg     near ptr 0x0042DF0D;
+	__asm        je     near ptr 0x0042DDA6;
+	__asm        cmp    dword ptr [ebp-8], 0x88780078;
+	__asm        je     near ptr 0x0042DD90;
+	__asm        jmp    near ptr 0x0042DE14;
+	__asm        cmp    dword ptr [ebp-8], 0x88780096;
+	__asm        je     near ptr 0x0042DDD2;
+	__asm        cmp    dword ptr [ebp-8], 0x887800A0;
+	__asm        je     near ptr 0x0042DDE8;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x0042DDFE;
+	__asm        jmp    near ptr 0x0042DE14;
 // LINE 260:
-	asm( 
-"	      0042df36    cmp szErrorDescription,0"
-"	      0042df3a    je near ptr 0042DF50h"
-);
+	__asm        cmp    szErrorDescription, 0;
+	__asm        je     near ptr 0x0042DF50;
 // LINE 261:
-	asm( 
-"	      0042df40    mov eax,szErrorDescription"
-"	      0042df43    push eax"
-"	      0042df44    mov eax,szFullErrorDescription"
-"	      0042df47    push eax"
-"	      0042df48    call 0056CEC0h"
-"	      0042df4d    add esp,8"
-);
+	__asm        mov    eax, szErrorDescription;
+	__asm        push   eax;
+	__asm        mov    eax, szFullErrorDescription;
+	__asm        push   eax;
+	__asm        call   0x0056CEC0;
+	__asm        add    esp, 8;
 // LINE 262:
-	asm( 
-"	      0042df50    jmp near ptr 0042DF55h"
-"	      0042df55    pop edi"
-"	      0042df56    pop esi"
-"	      0042df57    pop ebx"
-"	      0042df58    leave"
-"	      0042df59    ret 8"
-);
+	__asm        jmp    near ptr 0x0042DF55;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 

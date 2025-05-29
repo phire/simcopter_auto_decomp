@@ -10,99 +10,75 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	int32_t nCt;
 
 // LINE 40:
-	asm( 
-"	      004c9ad0    push ebp"
-"	      004c9ad1    mov ebp,esp"
-"	      004c9ad3    sub esp,4"
-"	      004c9ad6    push ebx"
-"	      004c9ad7    push esi"
-"	      004c9ad8    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 43:
-	asm( 
-"	      004c9ad9    cmp dword ptr ds:[59B3A8h],0C8h"
-"	      004c9ae3    jle near ptr 004C9AF3h"
-);
+	__asm        cmp    dword ptr ds:[0x59B3A8], 0xC8;
+	__asm        jle    near ptr 0x004C9AF3;
 // LINE 44:
-	asm( 
-"	      004c9ae9    mov eax,0FFFFFF9Bh"
-"	      004c9aee    jmp near ptr 004C9B96h"
-);
+	__asm        mov    eax, 0xFFFFFF9B;
+	__asm        jmp    near ptr 0x004C9B96;
 // LINE 46:
-	asm( 
-"	      004c9af3    cmp nNumValues,32h"
-"	      004c9af7    jle near ptr 004C9B07h"
-);
+	__asm        cmp    nNumValues, 0x32;
+	__asm        jle    near ptr 0x004C9B07;
 // LINE 47:
-	asm( 
-"	      004c9afd    mov eax,0FFFFFF99h"
-"	      004c9b02    jmp near ptr 004C9B96h"
-);
+	__asm        mov    eax, 0xFFFFFF99;
+	__asm        jmp    near ptr 0x004C9B96;
 // LINE 49:
-	asm( 
-"	      004c9b07    mov nCt,0"
-"	      004c9b0e    jmp near ptr 004C9B16h"
-"	      004c9b13    inc nCt"
-"	      004c9b16    mov eax,nCt"
-"	      004c9b19    cmp nNumValues,eax"
-"	      004c9b1c    jle near ptr 004C9B49h"
-);
+	__asm        mov    nCt, 0;
+	__asm        jmp    near ptr 0x004C9B16;
+	__asm        inc    nCt;
+	__asm        mov    eax, nCt;
+	__asm        cmp    nNumValues, eax;
+	__asm        jle    near ptr 0x004C9B49;
 // LINE 50:
-	asm( 
-"	      004c9b22    mov eax,nCt"
-"	      004c9b25    mov ecx,pValues"
-"	      004c9b28    mov eax,[ecx+eax*4]"
-"	      004c9b2b    mov ecx,nCt"
-"	      004c9b2e    mov edx,ds:[59B3A8h]"
-"	      004c9b34    mov ebx,edx"
-"	      004c9b36    shl edx,8"
-"	      004c9b39    sub edx,ebx"
-"	      004c9b3b    sub edx,ebx"
-"	      004c9b3d    mov [edx+ecx*4+63A860h],eax"
-"	      004c9b44    jmp near ptr 004C9B13h"
-);
+	__asm        mov    eax, nCt;
+	__asm        mov    ecx, pValues;
+	__asm        mov    eax, [ecx+eax*4];
+	__asm        mov    ecx, nCt;
+	__asm        mov    edx, ds:[0x59B3A8];
+	__asm        mov    ebx, edx;
+	__asm        shl    edx, 8;
+	__asm        sub    edx, ebx;
+	__asm        sub    edx, ebx;
+	__asm        mov    [edx+ecx*4+0x63A860], eax;
+	__asm        jmp    near ptr 0x004C9B13;
 // LINE 52:
-	asm( 
-"	      004c9b49    mov eax,pszSection"
-"	      004c9b4c    push eax"
-"	      004c9b4d    mov eax,ds:[59B3A8h]"
-"	      004c9b52    mov ecx,eax"
-"	      004c9b54    shl eax,8"
-"	      004c9b57    sub eax,ecx"
-"	      004c9b59    sub eax,ecx"
-"	      004c9b5b    add eax,63A860h"
-"	      004c9b60    add eax,0CCh"
-"	      004c9b65    push eax"
-"	      004c9b66    call 0056CEB0h"
-"	      004c9b6b    add esp,8"
-);
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        mov    eax, ds:[0x59B3A8];
+	__asm        mov    ecx, eax;
+	__asm        shl    eax, 8;
+	__asm        sub    eax, ecx;
+	__asm        sub    eax, ecx;
+	__asm        add    eax, 0x63A860;
+	__asm        add    eax, 0xCC;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 53:
-	asm( 
-"	      004c9b6e    mov eax,nNumValues"
-"	      004c9b71    mov ecx,ds:[59B3A8h]"
-"	      004c9b77    mov edx,ecx"
-"	      004c9b79    shl ecx,8"
-"	      004c9b7c    sub ecx,edx"
-"	      004c9b7e    sub ecx,edx"
-"	      004c9b80    mov [ecx+63A928h],eax"
-);
+	__asm        mov    eax, nNumValues;
+	__asm        mov    ecx, ds:[0x59B3A8];
+	__asm        mov    edx, ecx;
+	__asm        shl    ecx, 8;
+	__asm        sub    ecx, edx;
+	__asm        sub    ecx, edx;
+	__asm        mov    [ecx+0x63A928], eax;
 // LINE 54:
-	asm( 
-"	      004c9b86    inc dword ptr ds:[59B3A8h]"
-);
+	__asm        inc    dword ptr ds:[0x59B3A8];
 // LINE 56:
-	asm( 
-"	      004c9b8c    mov eax,ds:[59B3A8h]"
-"	      004c9b91    jmp near ptr 004C9B96h"
-);
+	__asm        mov    eax, ds:[0x59B3A8];
+	__asm        jmp    near ptr 0x004C9B96;
 // LINE 57:
-	asm( 
-"	      004c9b96    pop edi"
-"	      004c9b97    pop esi"
-"	      004c9b98    pop ebx"
-"	      004c9b99    leave"
-"	      004c9b9a    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9b9b
@@ -113,215 +89,165 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	char[260] szFullPath;
 
 // LINE 70:
-	asm( 
-"	      004c9b9b    push ebp"
-"	      004c9b9c    mov ebp,esp"
-"	      004c9b9e    sub esp,268h"
-"	      004c9ba4    push ebx"
-"	      004c9ba5    push esi"
-"	      004c9ba6    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x268;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 77:
-	asm( 
-"	      004c9ba7    mov dword ptr ds:[59B3ACh],0"
-);
+	__asm        mov    dword ptr ds:[0x59B3AC], 0;
 // LINE 78:
-	asm( 
-"	      004c9bb1    lea eax,szFullPath[0]"
-"	      004c9bb7    push eax"
-"	      004c9bb8    mov eax,pszTWKFile"
-"	      004c9bbb    push eax"
-"	      004c9bbc    push 0"
-"	      004c9bbe    push 0Bh"
-"	      004c9bc0    call 0049172Bh"
-"	      004c9bc5    add esp,10h"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszTWKFile;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   0xB;
+	__asm        call   0x0049172B;
+	__asm        add    esp, 0x10;
 // LINE 80:
-	asm( 
-"	      004c9bc8    lea eax,szFullPath[0]"
-"	      004c9bce    push eax"
-"	      004c9bcf    push 12Ch"
-"	      004c9bd4    lea eax,szTemp[0]"
-"	      004c9bda    push eax"
-"	      004c9bdb    push 59B3B0h"
-"	      004c9be0    push 59B3B4h"
-"	      004c9be5    push 59B3C0h"
-"	      004c9bea    call dword ptr ds:[6C3618h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0x12C;
+	__asm        lea    eax, szTemp[0];
+	__asm        push   eax;
+	__asm        push   0x59B3B0;
+	__asm        push   0x59B3B4;
+	__asm        push   0x59B3C0;
+	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 81:
-	asm( 
-"	      004c9bf0    cmp bIsOnMessageRead,0"
-"	      004c9bf4    je near ptr 004C9D13h"
-"	      004c9bfa    push 59B3D8h"
-"	      004c9bff    lea eax,szTemp[0]"
-"	      004c9c05    push eax"
-"	      004c9c06    call 0056CE20h"
-"	      004c9c0b    add esp,8"
-"	      004c9c0e    test eax,eax"
-"	      004c9c10    je near ptr 004C9D13h"
-);
+	__asm        cmp    bIsOnMessageRead, 0;
+	__asm        je     near ptr 0x004C9D13;
+	__asm        push   0x59B3D8;
+	__asm        lea    eax, szTemp[0];
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x004C9D13;
 // LINE 83:
-	asm( 
-"	      004c9c16    lea eax,szFullPath[0]"
-"	      004c9c1c    push eax"
-"	      004c9c1d    push 32h"
-"	      004c9c1f    lea eax,szSection[0]"
-"	      004c9c25    push eax"
-"	      004c9c26    push 59B3DCh"
-"	      004c9c2b    push 59B3F0h"
-"	      004c9c30    push 59B3FCh"
-"	      004c9c35    call dword ptr ds:[6C3618h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0x32;
+	__asm        lea    eax, szSection[0];
+	__asm        push   eax;
+	__asm        push   0x59B3DC;
+	__asm        push   0x59B3F0;
+	__asm        push   0x59B3FC;
+	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 85:
-	asm( 
-"	      004c9c3b    push 59B414h"
-"	      004c9c40    lea eax,szSection[0]"
-"	      004c9c46    push eax"
-"	      004c9c47    call 0056CE20h"
-"	      004c9c4c    add esp,8"
-"	      004c9c4f    test eax,eax"
-"	      004c9c51    jne near ptr 004C9C61h"
-);
+	__asm        push   0x59B414;
+	__asm        lea    eax, szSection[0];
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004C9C61;
 // LINE 86:
-	asm( 
-"	      004c9c57    mov eax,0FFFFFF9Ah"
-"	      004c9c5c    jmp near ptr 004C9D29h"
-);
+	__asm        mov    eax, 0xFFFFFF9A;
+	__asm        jmp    near ptr 0x004C9D29;
 // LINE 88:
-	asm( 
-"	      004c9c61    mov nCt,0"
-"	      004c9c6b    jmp near ptr 004C9C76h"
-"	      004c9c70    inc nCt"
-"	      004c9c76    mov eax,nCt"
-"	      004c9c7c    cmp ds:[59B3A8h],eax"
-"	      004c9c82    jle near ptr 004C9CC3h"
-);
+	__asm        mov    nCt, 0;
+	__asm        jmp    near ptr 0x004C9C76;
+	__asm        inc    nCt;
+	__asm        mov    eax, nCt;
+	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        jle    near ptr 0x004C9CC3;
 // LINE 89:
-	asm( 
-"	      004c9c88    lea eax,szSection[0]"
-"	      004c9c8e    push eax"
-"	      004c9c8f    mov eax,nCt"
-"	      004c9c95    mov ecx,eax"
-"	      004c9c97    shl eax,8"
-"	      004c9c9a    sub eax,ecx"
-"	      004c9c9c    sub eax,ecx"
-"	      004c9c9e    add eax,63A860h"
-"	      004c9ca3    add eax,0CCh"
-"	      004c9ca8    push eax"
-"	      004c9ca9    call 0056CE20h"
-"	      004c9cae    add esp,8"
-"	      004c9cb1    test eax,eax"
-"	      004c9cb3    jne near ptr 004C9CBEh"
-);
+	__asm        lea    eax, szSection[0];
+	__asm        push   eax;
+	__asm        mov    eax, nCt;
+	__asm        mov    ecx, eax;
+	__asm        shl    eax, 8;
+	__asm        sub    eax, ecx;
+	__asm        sub    eax, ecx;
+	__asm        add    eax, 0x63A860;
+	__asm        add    eax, 0xCC;
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004C9CBE;
 // LINE 90:
-	asm( 
-"	      004c9cb9    jmp near ptr 004C9CC3h"
-);
+	__asm        jmp    near ptr 0x004C9CC3;
 // LINE 92:
-	asm( 
-"	      004c9cbe    jmp near ptr 004C9C70h"
-"	      004c9cc3    mov eax,nCt"
-"	      004c9cc9    cmp ds:[59B3A8h],eax"
-"	      004c9ccf    je near ptr 004C9D0Eh"
-);
+	__asm        jmp    near ptr 0x004C9C70;
+	__asm        mov    eax, nCt;
+	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        je     near ptr 0x004C9D0E;
 // LINE 93:
-	asm( 
-"	      004c9cd5    mov eax,nCt"
-"	      004c9cdb    push eax"
-"	      004c9cdc    lea eax,szSection[0]"
-"	      004c9ce2    push eax"
-"	      004c9ce3    lea eax,szTemp[0]"
-"	      004c9ce9    push eax"
-"	      004c9cea    call 004C9E4Fh"
-"	      004c9cef    add esp,0Ch"
-);
+	__asm        mov    eax, nCt;
+	__asm        push   eax;
+	__asm        lea    eax, szSection[0];
+	__asm        push   eax;
+	__asm        lea    eax, szTemp[0];
+	__asm        push   eax;
+	__asm        call   0x004C9E4F;
+	__asm        add    esp, 0xC;
 // LINE 95:
-	asm( 
-"	      004c9cf2    lea eax,szFullPath[0]"
-"	      004c9cf8    push eax"
-"	      004c9cf9    push 59B428h"
-"	      004c9cfe    push 59B42Ch"
-"	      004c9d03    push 59B438h"
-"	      004c9d08    call dword ptr ds:[6C3794h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0x59B428;
+	__asm        push   0x59B42C;
+	__asm        push   0x59B438;
+	__asm        call   dword ptr ds:[0x6C3794];
 // LINE 98:
-	asm( 
-"	      004c9d0e    jmp near ptr 004C9D1Fh"
-);
+	__asm        jmp    near ptr 0x004C9D1F;
 // LINE 99:
-	asm( 
-"	      004c9d13    mov eax,pszTWKFile"
-"	      004c9d16    push eax"
-"	      004c9d17    call 004C9D68h"
-"	      004c9d1c    add esp,4"
-);
+	__asm        mov    eax, pszTWKFile;
+	__asm        push   eax;
+	__asm        call   0x004C9D68;
+	__asm        add    esp, 4;
 // LINE 104:
-	asm( 
-"	      004c9d1f    mov eax,ds:[59B3ACh]"
-"	      004c9d24    jmp near ptr 004C9D29h"
-);
+	__asm        mov    eax, ds:[0x59B3AC];
+	__asm        jmp    near ptr 0x004C9D29;
 // LINE 105:
-	asm( 
-"	      004c9d29    pop edi"
-"	      004c9d2a    pop esi"
-"	      004c9d2b    pop ebx"
-"	      004c9d2c    leave"
-"	      004c9d2d    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d2e
 void TWKGameInit() {
 // LINE 115:
-	asm( 
-"	      004c9d2e    push ebp"
-"	      004c9d2f    mov ebp,esp"
-"	      004c9d31    push ebx"
-"	      004c9d32    push esi"
-"	      004c9d33    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 117:
-	asm( 
-"	      004c9d34    push 59B450h"
-"	      004c9d39    call dword ptr ds:[6C37E4h]"
-"	      004c9d3f    mov ds:[646ED0h],eax"
-);
+	__asm        push   0x59B450;
+	__asm        call   dword ptr ds:[0x6C37E4];
+	__asm        mov    ds:[0x646ED0], eax;
 // LINE 119:
-	asm( 
-"	      004c9d44    mov dword ptr ds:[59B3A8h],0"
-);
+	__asm        mov    dword ptr ds:[0x59B3A8], 0;
 // LINE 120:
-	asm( 
-"	      004c9d4e    mov dword ptr ds:[59B3ACh],0"
-);
+	__asm        mov    dword ptr ds:[0x59B3AC], 0;
 // LINE 121:
-	asm( 
-"	      004c9d58    pop edi"
-"	      004c9d59    pop esi"
-"	      004c9d5a    pop ebx"
-"	      004c9d5b    leave"
-"	      004c9d5c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d5d
 void TWKUpdate() {
 // LINE 135:
-	asm( 
-"	      004c9d5d    push ebp"
-"	      004c9d5e    mov ebp,esp"
-"	      004c9d60    push ebx"
-"	      004c9d61    push esi"
-"	      004c9d62    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 142:
-	asm( 
-"	      004c9d63    pop edi"
-"	      004c9d64    pop esi"
-"	      004c9d65    pop ebx"
-"	      004c9d66    leave"
-"	      004c9d67    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d68
@@ -333,105 +259,81 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	char * pszFile;
 
 // LINE 154:
-	asm( 
-"	      004c9d68    push ebp"
-"	      004c9d69    mov ebp,esp"
-"	      004c9d6b    sub esp,23Ch"
-"	      004c9d71    push ebx"
-"	      004c9d72    push esi"
-"	      004c9d73    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x23C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 170:
-	asm( 
-"	      004c9d74    lea eax,szFullPath[0]"
-"	      004c9d7a    push eax"
-"	      004c9d7b    mov eax,pszTWKFile"
-"	      004c9d7e    push eax"
-"	      004c9d7f    push 0"
-"	      004c9d81    push 0Bh"
-"	      004c9d83    call 0049172Bh"
-"	      004c9d88    add esp,10h"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszTWKFile;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   0xB;
+	__asm        call   0x0049172B;
+	__asm        add    esp, 0x10;
 // LINE 171:
-	asm( 
-"	      004c9d8b    mov nCt,0"
-"	      004c9d95    jmp near ptr 004C9DA0h"
-"	      004c9d9a    inc nCt"
-"	      004c9da0    mov eax,nCt"
-"	      004c9da6    cmp ds:[59B3A8h],eax"
-"	      004c9dac    jle near ptr 004C9E4Ah"
-);
+	__asm        mov    nCt, 0;
+	__asm        jmp    near ptr 0x004C9DA0;
+	__asm        inc    nCt;
+	__asm        mov    eax, nCt;
+	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        jle    near ptr 0x004C9E4A;
 // LINE 172:
-	asm( 
-"	      004c9db2    mov eax,nCt"
-"	      004c9db8    mov ecx,eax"
-"	      004c9dba    shl eax,8"
-"	      004c9dbd    sub eax,ecx"
-"	      004c9dbf    sub eax,ecx"
-"	      004c9dc1    add eax,63A860h"
-"	      004c9dc6    add eax,0CCh"
-"	      004c9dcb    mov pszSection,eax"
-);
+	__asm        mov    eax, nCt;
+	__asm        mov    ecx, eax;
+	__asm        shl    eax, 8;
+	__asm        sub    eax, ecx;
+	__asm        sub    eax, ecx;
+	__asm        add    eax, 0x63A860;
+	__asm        add    eax, 0xCC;
+	__asm        mov    pszSection, eax;
 // LINE 175:
-	asm( 
-"	      004c9dd1    lea eax,szFullPath[0]"
-"	      004c9dd7    push eax"
-"	      004c9dd8    push 12Ch"
-"	      004c9ddd    lea eax,szTemp[0]"
-"	      004c9de3    push eax"
-"	      004c9de4    push 59B460h"
-"	      004c9de9    push 59B46Ch"
-"	      004c9dee    mov eax,pszSection"
-"	      004c9df4    push eax"
-"	      004c9df5    call dword ptr ds:[6C3618h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0x12C;
+	__asm        lea    eax, szTemp[0];
+	__asm        push   eax;
+	__asm        push   0x59B460;
+	__asm        push   0x59B46C;
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 176:
-	asm( 
-"	      004c9dfb    push 59B478h"
-"	      004c9e00    lea eax,szTemp[0]"
-"	      004c9e06    push eax"
-"	      004c9e07    call 0056CE20h"
-"	      004c9e0c    add esp,8"
-"	      004c9e0f    test eax,eax"
-"	      004c9e11    je near ptr 004C9E25h"
-);
+	__asm        push   0x59B478;
+	__asm        lea    eax, szTemp[0];
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x004C9E25;
 // LINE 177:
-	asm( 
-"	      004c9e17    lea eax,szTemp[0]"
-"	      004c9e1d    mov pszFile,eax"
-);
+	__asm        lea    eax, szTemp[0];
+	__asm        mov    pszFile, eax;
 // LINE 178:
-	asm( 
-"	      004c9e20    jmp near ptr 004C9E2Bh"
-);
+	__asm        jmp    near ptr 0x004C9E2B;
 // LINE 179:
-	asm( 
-"	      004c9e25    mov eax,pszTWKFile"
-"	      004c9e28    mov pszFile,eax"
-);
+	__asm        mov    eax, pszTWKFile;
+	__asm        mov    pszFile, eax;
 // LINE 184:
-	asm( 
-"	      004c9e2b    mov eax,nCt"
-"	      004c9e31    push eax"
-"	      004c9e32    mov eax,pszSection"
-"	      004c9e38    push eax"
-"	      004c9e39    mov eax,pszFile"
-"	      004c9e3c    push eax"
-"	      004c9e3d    call 004C9E4Fh"
-"	      004c9e42    add esp,0Ch"
-);
+	__asm        mov    eax, nCt;
+	__asm        push   eax;
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        mov    eax, pszFile;
+	__asm        push   eax;
+	__asm        call   0x004C9E4F;
+	__asm        add    esp, 0xC;
 // LINE 185:
-	asm( 
-"	      004c9e45    jmp near ptr 004C9D9Ah"
-);
+	__asm        jmp    near ptr 0x004C9D9A;
 // LINE 191:
-	asm( 
-"	      004c9e4a    pop edi"
-"	      004c9e4b    pop esi"
-"	      004c9e4c    pop ebx"
-"	      004c9e4d    leave"
-"	      004c9e4e    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9e4f
@@ -444,238 +346,188 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	char[15] szValue;
 
 // LINE 203:
-	asm( 
-"	      004c9e4f    push ebp"
-"	      004c9e50    mov ebp,esp"
-"	      004c9e52    sub esp,164h"
-"	      004c9e58    push ebx"
-"	      004c9e59    push esi"
-"	      004c9e5a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x164;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 211:
-	asm( 
-"	      004c9e5b    push 59B484h"
-"	      004c9e60    push 59B48Ch"
-"	      004c9e65    lea eax,szKey[0]"
-"	      004c9e6b    push eax"
-"	      004c9e6c    call 0056CD30h"
-"	      004c9e71    add esp,0Ch"
-);
+	__asm        push   0x59B484;
+	__asm        push   0x59B48C;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        call   0x0056CD30;
+	__asm        add    esp, 0xC;
 // LINE 212:
-	asm( 
-"	      004c9e74    lea eax,szFullPath[0]"
-"	      004c9e7a    push eax"
-"	      004c9e7b    mov eax,pszFile"
-"	      004c9e7e    push eax"
-"	      004c9e7f    push 0"
-"	      004c9e81    push 0Bh"
-"	      004c9e83    call 0049172Bh"
-"	      004c9e88    add esp,10h"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszFile;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   0xB;
+	__asm        call   0x0049172B;
+	__asm        add    esp, 0x10;
 // LINE 213:
-	asm( 
-"	      004c9e8b    lea eax,szFullPath[0]"
-"	      004c9e91    push eax"
-"	      004c9e92    push 0FFFFFF9Ah"
-"	      004c9e94    lea eax,szKey[0]"
-"	      004c9e9a    push eax"
-"	      004c9e9b    mov eax,pszSection"
-"	      004c9e9e    push eax"
-"	      004c9e9f    call dword ptr ds:[6C361Ch]"
-"	      004c9ea5    mov nNumCtrl,eax"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0xFFFFFF9A;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C361C];
+	__asm        mov    nNumCtrl, eax;
 // LINE 214:
-	asm( 
-"	      004c9eab    cmp nNumCtrl,0FFFFFF9Ah"
-"	      004c9eb2    je near ptr 004CA03Eh"
-);
+	__asm        cmp    nNumCtrl, 0xFFFFFF9A;
+	__asm        je     near ptr 0x004CA03E;
 // LINE 216:
-	asm( 
-"	      004c9eb8    mov nCt2,0"
-"	      004c9ec2    jmp near ptr 004C9ECDh"
-"	      004c9ec7    inc nCt2"
-"	      004c9ecd    mov eax,nCt2"
-"	      004c9ed3    cmp nNumCtrl,eax"
-"	      004c9ed9    jle near ptr 004CA039h"
-);
+	__asm        mov    nCt2, 0;
+	__asm        jmp    near ptr 0x004C9ECD;
+	__asm        inc    nCt2;
+	__asm        mov    eax, nCt2;
+	__asm        cmp    nNumCtrl, eax;
+	__asm        jle    near ptr 0x004CA039;
 // LINE 217:
-	asm( 
-"	      004c9edf    push 59B490h"
-"	      004c9ee4    mov eax,nCt2"
-"	      004c9eea    push eax"
-"	      004c9eeb    push 59B498h"
-"	      004c9ef0    push 59B4A0h"
-"	      004c9ef5    lea eax,szKey[0]"
-"	      004c9efb    push eax"
-"	      004c9efc    call 0056CD30h"
-"	      004c9f01    add esp,14h"
-);
+	__asm        push   0x59B490;
+	__asm        mov    eax, nCt2;
+	__asm        push   eax;
+	__asm        push   0x59B498;
+	__asm        push   0x59B4A0;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        call   0x0056CD30;
+	__asm        add    esp, 0x14;
 // LINE 219:
-	asm( 
-"	      004c9f04    lea eax,szFullPath[0]"
-"	      004c9f0a    push eax"
-"	      004c9f0b    push 0Fh"
-"	      004c9f0d    lea eax,szValue[0]"
-"	      004c9f10    push eax"
-"	      004c9f11    push 59B4A8h"
-"	      004c9f16    lea eax,szKey[0]"
-"	      004c9f1c    push eax"
-"	      004c9f1d    mov eax,pszSection"
-"	      004c9f20    push eax"
-"	      004c9f21    call dword ptr ds:[6C3618h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0xF;
+	__asm        lea    eax, szValue[0];
+	__asm        push   eax;
+	__asm        push   0x59B4A8;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 220:
-	asm( 
-"	      004c9f27    push 59B4BCh"
-"	      004c9f2c    mov eax,nCt2"
-"	      004c9f32    push eax"
-"	      004c9f33    push 59B4C8h"
-"	      004c9f38    push 59B4D0h"
-"	      004c9f3d    lea eax,szKey[0]"
-"	      004c9f43    push eax"
-"	      004c9f44    call 0056CD30h"
-"	      004c9f49    add esp,14h"
-);
+	__asm        push   0x59B4BC;
+	__asm        mov    eax, nCt2;
+	__asm        push   eax;
+	__asm        push   0x59B4C8;
+	__asm        push   0x59B4D0;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        call   0x0056CD30;
+	__asm        add    esp, 0x14;
 // LINE 222:
-	asm( 
-"	      004c9f4c    lea eax,szFullPath[0]"
-"	      004c9f52    push eax"
-"	      004c9f53    push 14h"
-"	      004c9f55    lea eax,szDataType[0]"
-"	      004c9f5b    push eax"
-"	      004c9f5c    push 59B4D8h"
-"	      004c9f61    lea eax,szKey[0]"
-"	      004c9f67    push eax"
-"	      004c9f68    mov eax,pszSection"
-"	      004c9f6b    push eax"
-"	      004c9f6c    call dword ptr ds:[6C3618h]"
-);
+	__asm        lea    eax, szFullPath[0];
+	__asm        push   eax;
+	__asm        push   0x14;
+	__asm        lea    eax, szDataType[0];
+	__asm        push   eax;
+	__asm        push   0x59B4D8;
+	__asm        lea    eax, szKey[0];
+	__asm        push   eax;
+	__asm        mov    eax, pszSection;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 225:
-	asm( 
-"	      004c9f72    push 59B4E8h"
-"	      004c9f77    lea eax,szDataType[0]"
-"	      004c9f7d    push eax"
-"	      004c9f7e    call 0056CE20h"
-"	      004c9f83    add esp,8"
-"	      004c9f86    test eax,eax"
-"	      004c9f88    jne near ptr 004C9FC5h"
-);
+	__asm        push   0x59B4E8;
+	__asm        lea    eax, szDataType[0];
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004C9FC5;
 // LINE 226:
-	asm( 
-"	      004c9f8e    lea eax,szValue[0]"
-"	      004c9f91    push eax"
-"	      004c9f92    call 00572B80h"
-"	      004c9f97    add esp,4"
-"	      004c9f9a    fmul qword ptr ds:[5923E0h]"
-"	      004c9fa0    call 0056EBE8h"
-"	      004c9fa5    mov ecx,nCt2"
-"	      004c9fab    mov edx,nTweakQueueSlotIdx"
-"	      004c9fae    mov ebx,edx"
-"	      004c9fb0    shl edx,8"
-"	      004c9fb3    sub edx,ebx"
-"	      004c9fb5    sub edx,ebx"
-"	      004c9fb7    mov ecx,[edx+ecx*4+63A860h]"
-"	      004c9fbe    mov [ecx],eax"
-);
+	__asm        lea    eax, szValue[0];
+	__asm        push   eax;
+	__asm        call   0x00572B80;
+	__asm        add    esp, 4;
+	__asm        fmul   qword ptr ds:[0x5923E0];
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, nCt2;
+	__asm        mov    edx, nTweakQueueSlotIdx;
+	__asm        mov    ebx, edx;
+	__asm        shl    edx, 8;
+	__asm        sub    edx, ebx;
+	__asm        sub    edx, ebx;
+	__asm        mov    ecx, [edx+ecx*4+0x63A860];
+	__asm        mov    [ecx], eax;
 // LINE 227:
-	asm( 
-"	      004c9fc0    jmp near ptr 004CA034h"
-);
+	__asm        jmp    near ptr 0x004CA034;
 // LINE 228:
-	asm( 
-"	      004c9fc5    push 59B4F0h"
-"	      004c9fca    lea eax,szDataType[0]"
-"	      004c9fd0    push eax"
-"	      004c9fd1    call 0056CE20h"
-"	      004c9fd6    add esp,8"
-"	      004c9fd9    test eax,eax"
-"	      004c9fdb    jne near ptr 004CA00Dh"
-);
+	__asm        push   0x59B4F0;
+	__asm        lea    eax, szDataType[0];
+	__asm        push   eax;
+	__asm        call   0x0056CE20;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004CA00D;
 // LINE 229:
-	asm( 
-"	      004c9fe1    lea eax,szValue[0]"
-"	      004c9fe4    push eax"
-"	      004c9fe5    call 00572B80h"
-"	      004c9fea    add esp,4"
-"	      004c9fed    mov eax,nCt2"
-"	      004c9ff3    mov ecx,nTweakQueueSlotIdx"
-"	      004c9ff6    mov edx,ecx"
-"	      004c9ff8    shl ecx,8"
-"	      004c9ffb    sub ecx,edx"
-"	      004c9ffd    sub ecx,edx"
-"	      004c9fff    mov eax,[ecx+eax*4+63A860h]"
-"	      004ca006    fstp qword ptr [eax]"
-);
+	__asm        lea    eax, szValue[0];
+	__asm        push   eax;
+	__asm        call   0x00572B80;
+	__asm        add    esp, 4;
+	__asm        mov    eax, nCt2;
+	__asm        mov    ecx, nTweakQueueSlotIdx;
+	__asm        mov    edx, ecx;
+	__asm        shl    ecx, 8;
+	__asm        sub    ecx, edx;
+	__asm        sub    ecx, edx;
+	__asm        mov    eax, [ecx+eax*4+0x63A860];
+	__asm        fstp   qword ptr [eax];
 // LINE 230:
-	asm( 
-"	      004ca008    jmp near ptr 004CA034h"
-);
+	__asm        jmp    near ptr 0x004CA034;
 // LINE 231:
-	asm( 
-"	      004ca00d    lea eax,szValue[0]"
-"	      004ca010    push eax"
-"	      004ca011    call 0056F2E0h"
-"	      004ca016    add esp,4"
-"	      004ca019    mov ecx,nCt2"
-"	      004ca01f    mov edx,nTweakQueueSlotIdx"
-"	      004ca022    mov ebx,edx"
-"	      004ca024    shl edx,8"
-"	      004ca027    sub edx,ebx"
-"	      004ca029    sub edx,ebx"
-"	      004ca02b    mov ecx,[edx+ecx*4+63A860h]"
-"	      004ca032    mov [ecx],eax"
-);
+	__asm        lea    eax, szValue[0];
+	__asm        push   eax;
+	__asm        call   0x0056F2E0;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, nCt2;
+	__asm        mov    edx, nTweakQueueSlotIdx;
+	__asm        mov    ebx, edx;
+	__asm        shl    edx, 8;
+	__asm        sub    edx, ebx;
+	__asm        sub    edx, ebx;
+	__asm        mov    ecx, [edx+ecx*4+0x63A860];
+	__asm        mov    [ecx], eax;
 // LINE 232:
-	asm( 
-"	      004ca034    jmp near ptr 004C9EC7h"
-);
+	__asm        jmp    near ptr 0x004C9EC7;
 // LINE 234:
-	asm( 
-"	      004ca039    jmp near ptr 004CA054h"
-);
+	__asm        jmp    near ptr 0x004CA054;
 // LINE 245:
-	asm( 
-"	      004ca03e    mov eax,nTweakQueueSlotIdx"
-"	      004ca041    mov ecx,ds:[59B3ACh]"
-"	      004ca047    mov [ecx*4+646EE0h],eax"
-);
+	__asm        mov    eax, nTweakQueueSlotIdx;
+	__asm        mov    ecx, ds:[0x59B3AC];
+	__asm        mov    [ecx*4+0x646EE0], eax;
 // LINE 246:
-	asm( 
-"	      004ca04e    inc dword ptr ds:[59B3ACh]"
-);
+	__asm        inc    dword ptr ds:[0x59B3AC];
 // LINE 249:
-	asm( 
-"	      004ca054    pop edi"
-"	      004ca055    pop esi"
-"	      004ca056    pop ebx"
-"	      004ca057    leave"
-"	      004ca058    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca059
 int32_t TWKDOSRead(char * pszTWKFile) {
 // LINE 262:
-	asm( 
-"	      004ca059    push ebp"
-"	      004ca05a    mov ebp,esp"
-"	      004ca05c    push ebx"
-"	      004ca05d    push esi"
-"	      004ca05e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 265:
-	asm( 
-"	      004ca05f    mov eax,ds:[59B3ACh]"
-"	      004ca064    jmp near ptr 004CA069h"
-);
+	__asm        mov    eax, ds:[0x59B3AC];
+	__asm        jmp    near ptr 0x004CA069;
 // LINE 352:
-	asm( 
-"	      004ca069    pop edi"
-"	      004ca06a    pop esi"
-"	      004ca06b    pop ebx"
-"	      004ca06c    leave"
-"	      004ca06d    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca06e
@@ -683,59 +535,41 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 	int32_t nCt;
 
 // LINE 361:
-	asm( 
-"	      004ca06e    push ebp"
-"	      004ca06f    mov ebp,esp"
-"	      004ca071    sub esp,4"
-"	      004ca074    push ebx"
-"	      004ca075    push esi"
-"	      004ca076    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 362:
-	asm( 
-"	      004ca077    mov nCt,0"
-);
+	__asm        mov    nCt, 0;
 // LINE 363:
-	asm( 
-"	      004ca07e    mov eax,pSource"
-"	      004ca081    movsx eax,byte ptr [eax]"
-"	      004ca084    cmp eax,0Dh"
-"	      004ca087    je near ptr 004CA0A6h"
-);
+	__asm        mov    eax, pSource;
+	__asm        movsx  eax, byte ptr [eax];
+	__asm        cmp    eax, 0xD;
+	__asm        je     near ptr 0x004CA0A6;
 // LINE 364:
-	asm( 
-"	      004ca08d    mov eax,pSource"
-"	      004ca090    mov al,[eax]"
-"	      004ca092    mov ecx,nCt"
-"	      004ca095    mov edx,pDest"
-"	      004ca098    mov [ecx+edx],al"
-);
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, nCt;
+	__asm        mov    edx, pDest;
+	__asm        mov    [ecx+edx], al;
 // LINE 365:
-	asm( 
-"	      004ca09b    inc pSource"
-);
+	__asm        inc    pSource;
 // LINE 366:
-	asm( 
-"	      004ca09e    inc nCt"
-);
+	__asm        inc    nCt;
 // LINE 367:
-	asm( 
-"	      004ca0a1    jmp near ptr 004CA07Eh"
-);
+	__asm        jmp    near ptr 0x004CA07E;
 // LINE 368:
-	asm( 
-"	      004ca0a6    mov eax,nCt"
-"	      004ca0a9    mov ecx,pDest"
-"	      004ca0ac    mov byte ptr [eax+ecx],0"
-);
+	__asm        mov    eax, nCt;
+	__asm        mov    ecx, pDest;
+	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 369:
-	asm( 
-"	      004ca0b0    pop edi"
-"	      004ca0b1    pop esi"
-"	      004ca0b2    pop ebx"
-"	      004ca0b3    leave"
-"	      004ca0b4    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

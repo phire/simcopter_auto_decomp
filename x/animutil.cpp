@@ -8,188 +8,160 @@
 // FUNCTION: COPTER_D 0x00562610
 void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* childaxis) {
 // LINE 46:
-	asm( 
-"	      00562610    push ebp"
-"	      00562611    mov ebp,esp"
-"	      00562613    push ebx"
-"	      00562614    push esi"
-"	      00562615    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 47:
-	asm( 
-"	      00562616    mov eax,childaxis"
-"	      00562619    push eax"
-"	      0056261a    mov eax,paraxis.info"
-"	      0056261d    push eax"
-"	      0056261e    mov eax,paraxis.y"
-"	      00562621    push eax"
-"	      00562622    mov eax,paraxis.z"
-"	      00562625    push eax"
-"	      00562626    mov eax,paraxis.x"
-"	      00562629    push eax"
-"	      0056262a    fld XZ2Par"
-"	      0056262d    sub esp,8"
-"	      00562630    fstp qword ptr [esp]"
-"	      00562633    call 0056F32Ah"
-"	      00562638    add esp,8"
-"	      0056263b    sub esp,4"
-"	      0056263e    fstp dword ptr [esp]"
-"	      00562641    fld XZ2Par"
-"	      00562644    sub esp,8"
-"	      00562647    fstp qword ptr [esp]"
-"	      0056264a    call 0056F320h"
-"	      0056264f    add esp,8"
-"	      00562652    sub esp,4"
-"	      00562655    fstp dword ptr [esp]"
-"	      00562658    fld XY2Par"
-"	      0056265b    sub esp,8"
-"	      0056265e    fstp qword ptr [esp]"
-"	      00562661    call 0056F32Ah"
-"	      00562666    add esp,8"
-"	      00562669    sub esp,4"
-"	      0056266c    fstp dword ptr [esp]"
-"	      0056266f    fld XY2Par"
-"	      00562672    sub esp,8"
-"	      00562675    fstp qword ptr [esp]"
-"	      00562678    call 0056F320h"
-"	      0056267d    add esp,8"
-"	      00562680    sub esp,4"
-"	      00562683    fstp dword ptr [esp]"
-"	      00562686    call 005628EBh"
-"	      0056268b    add esp,24h"
-"	      0056268e    jmp near ptr 00562693h"
-);
+	__asm        mov    eax, childaxis;
+	__asm        push   eax;
+	__asm        mov    eax, paraxis.info;
+	__asm        push   eax;
+	__asm        mov    eax, paraxis.y;
+	__asm        push   eax;
+	__asm        mov    eax, paraxis.z;
+	__asm        push   eax;
+	__asm        mov    eax, paraxis.x;
+	__asm        push   eax;
+	__asm        fld    XZ2Par;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    XZ2Par;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    XY2Par;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    XY2Par;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        call   0x005628EB;
+	__asm        add    esp, 0x24;
+	__asm        jmp    near ptr 0x00562693;
 // LINE 48:
-	asm( 
-"	      00562693    jmp near ptr 00562698h"
-"	      00562698    pop edi"
-"	      00562699    pop esi"
-"	      0056269a    pop ebx"
-"	      0056269b    leave"
-"	      0056269c    ret"
-);
+	__asm        jmp    near ptr 0x00562698;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056269d
 void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin, struct DXZY* maj, struct DXZY* min, float majrad, float minrad) {
 // LINE 51:
-	asm( 
-"	      0056269d    push ebp"
-"	      0056269e    mov ebp,esp"
-"	      005626a0    push ebx"
-"	      005626a1    push esi"
-"	      005626a2    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 52:
-	asm( 
-"	      005626a3    mov eax,maj"
-"	      005626a6    push eax"
-"	      005626a7    mov eax,parmaj.info"
-"	      005626aa    push eax"
-"	      005626ab    mov eax,parmaj.y"
-"	      005626ae    push eax"
-"	      005626af    mov eax,parmaj.z"
-"	      005626b2    push eax"
-"	      005626b3    mov eax,parmaj.x"
-"	      005626b6    push eax"
-"	      005626b7    mov eax,XZ2Par"
-"	      005626ba    push eax"
-"	      005626bb    mov eax,XY2Par"
-"	      005626be    push eax"
-"	      005626bf    call 00562610h"
-"	      005626c4    add esp,1Ch"
-);
+	__asm        mov    eax, maj;
+	__asm        push   eax;
+	__asm        mov    eax, parmaj.info;
+	__asm        push   eax;
+	__asm        mov    eax, parmaj.y;
+	__asm        push   eax;
+	__asm        mov    eax, parmaj.z;
+	__asm        push   eax;
+	__asm        mov    eax, parmaj.x;
+	__asm        push   eax;
+	__asm        mov    eax, XZ2Par;
+	__asm        push   eax;
+	__asm        mov    eax, XY2Par;
+	__asm        push   eax;
+	__asm        call   0x00562610;
+	__asm        add    esp, 0x1C;
 // LINE 53:
-	asm( 
-"	      005626c7    mov eax,min"
-"	      005626ca    push eax"
-"	      005626cb    mov eax,parmin.info"
-"	      005626ce    push eax"
-"	      005626cf    mov eax,parmin.y"
-"	      005626d2    push eax"
-"	      005626d3    mov eax,parmin.z"
-"	      005626d6    push eax"
-"	      005626d7    mov eax,parmin.x"
-"	      005626da    push eax"
-"	      005626db    mov eax,XZ2Par"
-"	      005626de    push eax"
-"	      005626df    mov eax,XY2Par"
-"	      005626e2    push eax"
-"	      005626e3    call 00562610h"
-"	      005626e8    add esp,1Ch"
-);
+	__asm        mov    eax, min;
+	__asm        push   eax;
+	__asm        mov    eax, parmin.info;
+	__asm        push   eax;
+	__asm        mov    eax, parmin.y;
+	__asm        push   eax;
+	__asm        mov    eax, parmin.z;
+	__asm        push   eax;
+	__asm        mov    eax, parmin.x;
+	__asm        push   eax;
+	__asm        mov    eax, XZ2Par;
+	__asm        push   eax;
+	__asm        mov    eax, XY2Par;
+	__asm        push   eax;
+	__asm        call   0x00562610;
+	__asm        add    esp, 0x1C;
 // LINE 54:
-	asm( 
-"	      005626eb    jmp near ptr 005626F0h"
-"	      005626f0    pop edi"
-"	      005626f1    pop esi"
-"	      005626f2    pop ebx"
-"	      005626f3    leave"
-"	      005626f4    ret"
-);
+	__asm        jmp    near ptr 0x005626F0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005626f5
 unsigned short PutInPerspective(struct DXZY* xzy, short cH) {
 // LINE 57:
-	asm( 
-"	      005626f5    push ebp"
-"	      005626f6    mov ebp,esp"
-"	      005626f8    push ebx"
-"	      005626f9    push esi"
-"	      005626fa    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 59:
-	asm( 
-"	      005626fb    mov eax,xzy"
-"	      005626fe    fld dword ptr [eax+8]"
-"	      00562701    fcomp qword ptr ds:[593740h]"
-"	      00562707    fnstsw ax"
-"	      00562709    test ah,1"
-"	      0056270c    je near ptr 0056271Ah"
-);
+	__asm        mov    eax, xzy;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fcomp  qword ptr ds:[0x593740];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        je     near ptr 0x0056271A;
 // LINE 60:
-	asm( 
-"	      00562712    xor ax,ax"
-"	      00562715    jmp near ptr 00562761h"
-);
+	__asm        xor    ax, ax;
+	__asm        jmp    near ptr 0x00562761;
 // LINE 61:
-	asm( 
-"	      0056271a    mov eax,xzy"
-"	      0056271d    fld dword ptr [eax]"
-"	      0056271f    fmul qword ptr ds:[593748h]"
-"	      00562725    mov eax,xzy"
-"	      00562728    fld dword ptr [eax+8]"
-"	      0056272b    fadd qword ptr ds:[593748h]"
-"	      00562731    fdivp"
-"	      00562733    mov eax,xzy"
-"	      00562736    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, xzy;
+	__asm        fld    dword ptr [eax];
+	__asm        fmul   qword ptr ds:[0x593748];
+	__asm        mov    eax, xzy;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fadd   qword ptr ds:[0x593748];
+	__asm        fdivp;
+	__asm        mov    eax, xzy;
+	__asm        fstp   dword ptr [eax];
 // LINE 62:
-	asm( 
-"	      00562738    mov eax,xzy"
-"	      0056273b    fld dword ptr [eax+4]"
-"	      0056273e    fmul qword ptr ds:[593748h]"
-"	      00562744    mov eax,xzy"
-"	      00562747    fld dword ptr [eax+8]"
-"	      0056274a    fadd qword ptr ds:[593748h]"
-"	      00562750    fdivp"
-"	      00562752    mov eax,xzy"
-"	      00562755    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, xzy;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fmul   qword ptr ds:[0x593748];
+	__asm        mov    eax, xzy;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fadd   qword ptr ds:[0x593748];
+	__asm        fdivp;
+	__asm        mov    eax, xzy;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 63:
-	asm( 
-"	      00562758    mov ax,1"
-"	      0056275c    jmp near ptr 00562761h"
-);
+	__asm        mov    ax, 1;
+	__asm        jmp    near ptr 0x00562761;
 // LINE 64:
-	asm( 
-"	      00562761    pop edi"
-"	      00562762    pop esi"
-"	      00562763    pop ebx"
-"	      00562764    leave"
-"	      00562765    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562766
@@ -197,78 +169,64 @@ unsigned short PutInPerspective(struct XZY* xzy, short cH) {
 	struct DXZY dxzy;
 
 // LINE 67:
-	asm( 
-"	      00562766    push ebp"
-"	      00562767    mov ebp,esp"
-"	      00562769    sub esp,1Ch"
-"	      0056276c    push ebx"
-"	      0056276d    push esi"
-"	      0056276e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x1C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 68:
-	asm( 
-"	      0056276f    mov eax,xzy"
-"	      00562772    movsx eax,word ptr [eax]"
-"	      00562775    mov [ebp-14h],eax"
-"	      00562778    fild dword ptr [ebp-14h]"
-"	      0056277b    fstp dxzy.x"
-"	      0056277e    mov eax,xzy"
-"	      00562781    movsx eax,word ptr [eax+2]"
-"	      00562785    mov [ebp-18h],eax"
-"	      00562788    fild dword ptr [ebp-18h]"
-"	      0056278b    fstp dxzy.z"
-"	      0056278e    mov eax,xzy"
-"	      00562791    movsx eax,word ptr [eax+4]"
-"	      00562795    mov [ebp-1Ch],eax"
-"	      00562798    fild dword ptr [ebp-1Ch]"
-"	      0056279b    fstp dxzy.y"
-"	      0056279e    mov dxzy.info,0"
-);
+	__asm        mov    eax, xzy;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        fild   dword ptr [ebp-0x14];
+	__asm        fstp   dxzy.x;
+	__asm        mov    eax, xzy;
+	__asm        movsx  eax, word ptr [eax+2];
+	__asm        mov    [ebp-0x18], eax;
+	__asm        fild   dword ptr [ebp-0x18];
+	__asm        fstp   dxzy.z;
+	__asm        mov    eax, xzy;
+	__asm        movsx  eax, word ptr [eax+4];
+	__asm        mov    [ebp-0x1C], eax;
+	__asm        fild   dword ptr [ebp-0x1C];
+	__asm        fstp   dxzy.y;
+	__asm        mov    dxzy.info, 0;
 // LINE 69:
-	asm( 
-"	      005627a5    mov eax,reinterpret_cast<uint32_t>(cH)"
-"	      005627a8    push eax"
-"	      005627a9    lea eax,dxzy.x"
-"	      005627ac    push eax"
-"	      005627ad    call 005626F5h"
-"	      005627b2    add esp,8"
-"	      005627b5    movzx eax,ax"
-"	      005627b8    test eax,eax"
-"	      005627ba    jne near ptr 005627C8h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(cH);
+	__asm        push   eax;
+	__asm        lea    eax, dxzy.x;
+	__asm        push   eax;
+	__asm        call   0x005626F5;
+	__asm        add    esp, 8;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x005627C8;
 // LINE 70:
-	asm( 
-"	      005627c0    xor ax,ax"
-"	      005627c3    jmp near ptr 005627FDh"
-);
+	__asm        xor    ax, ax;
+	__asm        jmp    near ptr 0x005627FD;
 // LINE 71:
-	asm( 
-"	      005627c8    fld dxzy.x"
-"	      005627cb    call 0056EBE8h"
-"	      005627d0    mov ecx,xzy"
-"	      005627d3    mov [ecx],ax"
-"	      005627d6    fld dxzy.z"
-"	      005627d9    call 0056EBE8h"
-"	      005627de    mov ecx,xzy"
-"	      005627e1    mov [ecx+2],ax"
-"	      005627e5    fld dxzy.y"
-"	      005627e8    call 0056EBE8h"
-"	      005627ed    mov ecx,xzy"
-"	      005627f0    mov [ecx+4],ax"
-);
+	__asm        fld    dxzy.x;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, xzy;
+	__asm        mov    [ecx], ax;
+	__asm        fld    dxzy.z;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, xzy;
+	__asm        mov    [ecx+2], ax;
+	__asm        fld    dxzy.y;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, xzy;
+	__asm        mov    [ecx+4], ax;
 // LINE 72:
-	asm( 
-"	      005627f4    mov ax,1"
-"	      005627f8    jmp near ptr 005627FDh"
-);
+	__asm        mov    ax, 1;
+	__asm        jmp    near ptr 0x005627FD;
 // LINE 73:
-	asm( 
-"	      005627fd    pop edi"
-"	      005627fe    pop esi"
-"	      005627ff    pop ebx"
-"	      00562800    leave"
-"	      00562801    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562802
@@ -280,293 +238,239 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	struct DXZY transformed;
 
 // LINE 76:
-	asm( 
-"	      00562802    push ebp"
-"	      00562803    mov ebp,esp"
-"	      00562805    sub esp,2Ch"
-"	      00562808    push ebx"
-"	      00562809    push esi"
-"	      0056280a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x2C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 77:
-	asm( 
-"	      0056280b    push 8C085h"
-"	      00562810    push 5BECD8h"
-"	      00562815    push 4Dh"
-"	      00562817    push 5BECF4h"
-"	      0056281c    call 00554F30h"
-"	      00562821    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BECD8;
+	__asm        push   0x4D;
+	__asm        push   0x5BECF4;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 79:
-	asm( 
-"	      00562824    mov x,0"
-"	      0056282b    mov z,0"
-"	      00562832    mov eax,radius"
-"	      00562835    mov y,eax"
-);
+	__asm        mov    x, 0;
+	__asm        mov    z, 0;
+	__asm        mov    eax, radius;
+	__asm        mov    y, eax;
 // LINE 80:
-	asm( 
-"	      00562838    mov eax,x"
-"	      0056283b    mov dpt.x,eax"
-"	      0056283e    mov eax,z"
-"	      00562841    mov dpt.z,eax"
-"	      00562844    mov eax,y"
-"	      00562847    mov dpt.y,eax"
-"	      0056284a    mov dpt.info,0"
-);
+	__asm        mov    eax, x;
+	__asm        mov    dpt.x, eax;
+	__asm        mov    eax, z;
+	__asm        mov    dpt.z, eax;
+	__asm        mov    eax, y;
+	__asm        mov    dpt.y, eax;
+	__asm        mov    dpt.info, 0;
 // LINE 81:
-	asm( 
-"	      00562851    lea eax,transformed.x"
-"	      00562854    push eax"
-"	      00562855    mov eax,dpt.info"
-"	      00562858    push eax"
-"	      00562859    mov eax,dpt.y"
-"	      0056285c    push eax"
-"	      0056285d    mov eax,dpt.z"
-"	      00562860    push eax"
-"	      00562861    mov eax,dpt.x"
-"	      00562864    push eax"
-"	      00562865    fld psi"
-"	      00562868    sub esp,8"
-"	      0056286b    fstp qword ptr [esp]"
-"	      0056286e    call 0056F32Ah"
-"	      00562873    add esp,8"
-"	      00562876    sub esp,4"
-"	      00562879    fstp dword ptr [esp]"
-"	      0056287c    fld psi"
-"	      0056287f    sub esp,8"
-"	      00562882    fstp qword ptr [esp]"
-"	      00562885    call 0056F320h"
-"	      0056288a    add esp,8"
-"	      0056288d    sub esp,4"
-"	      00562890    fstp dword ptr [esp]"
-"	      00562893    fld phi"
-"	      00562896    sub esp,8"
-"	      00562899    fstp qword ptr [esp]"
-"	      0056289c    call 0056F32Ah"
-"	      005628a1    add esp,8"
-"	      005628a4    sub esp,4"
-"	      005628a7    fstp dword ptr [esp]"
-"	      005628aa    fld phi"
-"	      005628ad    sub esp,8"
-"	      005628b0    fstp qword ptr [esp]"
-"	      005628b3    call 0056F320h"
-"	      005628b8    add esp,8"
-"	      005628bb    sub esp,4"
-"	      005628be    fstp dword ptr [esp]"
-"	      005628c1    call 005628EBh"
-"	      005628c6    add esp,24h"
-);
+	__asm        lea    eax, transformed.x;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.info;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.y;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.z;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.x;
+	__asm        push   eax;
+	__asm        fld    psi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    psi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    phi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    phi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        call   0x005628EB;
+	__asm        add    esp, 0x24;
 // LINE 82:
-	asm( 
-"	      005628c9    mov eax,xres"
-"	      005628cc    mov ecx,transformed.x"
-"	      005628cf    mov [eax],ecx"
-);
+	__asm        mov    eax, xres;
+	__asm        mov    ecx, transformed.x;
+	__asm        mov    [eax], ecx;
 // LINE 83:
-	asm( 
-"	      005628d1    mov eax,zres"
-"	      005628d4    mov ecx,transformed.z"
-"	      005628d7    mov [eax],ecx"
-);
+	__asm        mov    eax, zres;
+	__asm        mov    ecx, transformed.z;
+	__asm        mov    [eax], ecx;
 // LINE 84:
-	asm( 
-"	      005628d9    mov eax,yres"
-"	      005628dc    mov ecx,transformed.y"
-"	      005628df    mov [eax],ecx"
-);
+	__asm        mov    eax, yres;
+	__asm        mov    ecx, transformed.y;
+	__asm        mov    [eax], ecx;
 // LINE 85:
-	asm( 
-"	      005628e1    jmp near ptr 005628E6h"
-"	      005628e6    pop edi"
-"	      005628e7    pop esi"
-"	      005628e8    pop ebx"
-"	      005628e9    leave"
-"	      005628ea    ret"
-);
+	__asm        jmp    near ptr 0x005628E6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005628eb
 void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, float cosYangle, struct DXZY dpt, struct DXZY* transformed) {
 // LINE 93:
-	asm( 
-"	      005628eb    push ebp"
-"	      005628ec    mov ebp,esp"
-"	      005628ee    push ebx"
-"	      005628ef    push esi"
-"	      005628f0    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 94:
-	asm( 
-"	      005628f1    fld dpt.x"
-"	      005628f4    fmul cosYangle"
-"	      005628f7    fld dpt.y"
-"	      005628fa    fmul sinYangle"
-"	      005628fd    fsubp"
-"	      005628ff    mov eax,transformed"
-"	      00562902    fstp dword ptr [eax]"
-);
+	__asm        fld    dpt.x;
+	__asm        fmul   cosYangle;
+	__asm        fld    dpt.y;
+	__asm        fmul   sinYangle;
+	__asm        fsubp;
+	__asm        mov    eax, transformed;
+	__asm        fstp   dword ptr [eax];
 // LINE 95:
-	asm( 
-"	      00562904    fld dpt.x"
-"	      00562907    fmul sinYangle"
-"	      0056290a    fld dpt.y"
-"	      0056290d    fmul cosYangle"
-"	      00562910    faddp"
-"	      00562912    mov eax,transformed"
-"	      00562915    fstp dword ptr [eax+8]"
-);
+	__asm        fld    dpt.x;
+	__asm        fmul   sinYangle;
+	__asm        fld    dpt.y;
+	__asm        fmul   cosYangle;
+	__asm        faddp;
+	__asm        mov    eax, transformed;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 97:
-	asm( 
-"	      00562918    fld dpt.z"
-"	      0056291b    fmul cosXangle"
-"	      0056291e    mov eax,transformed"
-"	      00562921    fld dword ptr [eax+8]"
-"	      00562924    fmul sinXangle"
-"	      00562927    faddp"
-"	      00562929    mov eax,transformed"
-"	      0056292c    fstp dword ptr [eax+4]"
-);
+	__asm        fld    dpt.z;
+	__asm        fmul   cosXangle;
+	__asm        mov    eax, transformed;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fmul   sinXangle;
+	__asm        faddp;
+	__asm        mov    eax, transformed;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 98:
-	asm( 
-"	      0056292f    mov eax,transformed"
-"	      00562932    fld dword ptr [eax+8]"
-"	      00562935    fmul cosXangle"
-"	      00562938    fld dpt.z"
-"	      0056293b    fmul sinXangle"
-"	      0056293e    fsubp"
-"	      00562940    mov eax,transformed"
-"	      00562943    fstp dword ptr [eax+8]"
-);
+	__asm        mov    eax, transformed;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fmul   cosXangle;
+	__asm        fld    dpt.z;
+	__asm        fmul   sinXangle;
+	__asm        fsubp;
+	__asm        mov    eax, transformed;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 99:
-	asm( 
-"	      00562946    jmp near ptr 0056294Bh"
-"	      0056294b    pop edi"
-"	      0056294c    pop esi"
-"	      0056294d    pop ebx"
-"	      0056294e    leave"
-"	      0056294f    ret"
-);
+	__asm        jmp    near ptr 0x0056294B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562950
 void TransformToAxes(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis, struct DXZY prist, struct DXZY* real) {
 // LINE 102:
-	asm( 
-"	      00562950    push ebp"
-"	      00562951    mov ebp,esp"
-"	      00562953    push ebx"
-"	      00562954    push esi"
-"	      00562955    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 103:
-	asm( 
-"	      00562956    mov eax,real"
-"	      00562959    mov dword ptr [eax],0"
-"	      0056295f    mov eax,real"
-"	      00562962    mov dword ptr [eax+4],0"
-"	      00562969    mov eax,real"
-"	      0056296c    mov dword ptr [eax+8],0"
-);
+	__asm        mov    eax, real;
+	__asm        mov    dword ptr [eax], 0;
+	__asm        mov    eax, real;
+	__asm        mov    dword ptr [eax+4], 0;
+	__asm        mov    eax, real;
+	__asm        mov    dword ptr [eax+8], 0;
 // LINE 104:
-	asm( 
-"	      00562973    mov eax,xAxis"
-"	      00562976    fld dword ptr [eax]"
-"	      00562978    fmul prist.x"
-"	      0056297b    mov eax,real"
-"	      0056297e    fadd dword ptr [eax]"
-"	      00562980    mov eax,real"
-"	      00562983    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, xAxis;
+	__asm        fld    dword ptr [eax];
+	__asm        fmul   prist.x;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax];
 // LINE 105:
-	asm( 
-"	      00562985    mov eax,xAxis"
-"	      00562988    fld dword ptr [eax+4]"
-"	      0056298b    fmul prist.x"
-"	      0056298e    mov eax,real"
-"	      00562991    fadd dword ptr [eax+4]"
-"	      00562994    mov eax,real"
-"	      00562997    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, xAxis;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fmul   prist.x;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 106:
-	asm( 
-"	      0056299a    mov eax,xAxis"
-"	      0056299d    fld dword ptr [eax+8]"
-"	      005629a0    fmul prist.x"
-"	      005629a3    mov eax,real"
-"	      005629a6    fadd dword ptr [eax+8]"
-"	      005629a9    mov eax,real"
-"	      005629ac    fstp dword ptr [eax+8]"
-);
+	__asm        mov    eax, xAxis;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fmul   prist.x;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+8];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 108:
-	asm( 
-"	      005629af    mov eax,zAxis"
-"	      005629b2    fld dword ptr [eax]"
-"	      005629b4    fmul prist.z"
-"	      005629b7    mov eax,real"
-"	      005629ba    fadd dword ptr [eax]"
-"	      005629bc    mov eax,real"
-"	      005629bf    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, zAxis;
+	__asm        fld    dword ptr [eax];
+	__asm        fmul   prist.z;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax];
 // LINE 109:
-	asm( 
-"	      005629c1    mov eax,zAxis"
-"	      005629c4    fld dword ptr [eax+4]"
-"	      005629c7    fmul prist.z"
-"	      005629ca    mov eax,real"
-"	      005629cd    fadd dword ptr [eax+4]"
-"	      005629d0    mov eax,real"
-"	      005629d3    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, zAxis;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fmul   prist.z;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 110:
-	asm( 
-"	      005629d6    mov eax,zAxis"
-"	      005629d9    fld dword ptr [eax+8]"
-"	      005629dc    fmul prist.z"
-"	      005629df    mov eax,real"
-"	      005629e2    fadd dword ptr [eax+8]"
-"	      005629e5    mov eax,real"
-"	      005629e8    fstp dword ptr [eax+8]"
-);
+	__asm        mov    eax, zAxis;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fmul   prist.z;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+8];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 112:
-	asm( 
-"	      005629eb    mov eax,yAxis"
-"	      005629ee    fld dword ptr [eax]"
-"	      005629f0    fmul prist.y"
-"	      005629f3    mov eax,real"
-"	      005629f6    fadd dword ptr [eax]"
-"	      005629f8    mov eax,real"
-"	      005629fb    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, yAxis;
+	__asm        fld    dword ptr [eax];
+	__asm        fmul   prist.y;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax];
 // LINE 113:
-	asm( 
-"	      005629fd    mov eax,yAxis"
-"	      00562a00    fld dword ptr [eax+4]"
-"	      00562a03    fmul prist.y"
-"	      00562a06    mov eax,real"
-"	      00562a09    fadd dword ptr [eax+4]"
-"	      00562a0c    mov eax,real"
-"	      00562a0f    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, yAxis;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fmul   prist.y;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 114:
-	asm( 
-"	      00562a12    mov eax,yAxis"
-"	      00562a15    fld dword ptr [eax+8]"
-"	      00562a18    fmul prist.y"
-"	      00562a1b    mov eax,real"
-"	      00562a1e    fadd dword ptr [eax+8]"
-"	      00562a21    mov eax,real"
-"	      00562a24    fstp dword ptr [eax+8]"
-);
+	__asm        mov    eax, yAxis;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fmul   prist.y;
+	__asm        mov    eax, real;
+	__asm        fadd   dword ptr [eax+8];
+	__asm        mov    eax, real;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 115:
-	asm( 
-"	      00562a27    jmp near ptr 00562A2Ch"
-"	      00562a2c    pop edi"
-"	      00562a2d    pop esi"
-"	      00562a2e    pop ebx"
-"	      00562a2f    leave"
-"	      00562a30    ret"
-);
+	__asm        jmp    near ptr 0x00562A2C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562a31
@@ -574,92 +478,74 @@ void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* 
 	struct DXZY tf;
 
 // LINE 118:
-	asm( 
-"	      00562a31    push ebp"
-"	      00562a32    mov ebp,esp"
-"	      00562a34    sub esp,10h"
-"	      00562a37    push ebx"
-"	      00562a38    push esi"
-"	      00562a39    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 121:
-	asm( 
-"	      00562a3a    lea eax,tf.x"
-"	      00562a3d    push eax"
-"	      00562a3e    mov eax,dxzy"
-"	      00562a41    mov ecx,[eax+0Ch]"
-"	      00562a44    push ecx"
-"	      00562a45    mov ecx,[eax+8]"
-"	      00562a48    push ecx"
-"	      00562a49    mov ecx,[eax+4]"
-"	      00562a4c    push ecx"
-"	      00562a4d    mov eax,[eax]"
-"	      00562a4f    push eax"
-"	      00562a50    mov eax,yAxis"
-"	      00562a53    push eax"
-"	      00562a54    mov eax,zAxis"
-"	      00562a57    push eax"
-"	      00562a58    mov eax,xAxis"
-"	      00562a5b    push eax"
-"	      00562a5c    call 00562950h"
-"	      00562a61    add esp,20h"
-);
+	__asm        lea    eax, tf.x;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy;
+	__asm        mov    ecx, [eax+0xC];
+	__asm        push   ecx;
+	__asm        mov    ecx, [eax+8];
+	__asm        push   ecx;
+	__asm        mov    ecx, [eax+4];
+	__asm        push   ecx;
+	__asm        mov    eax, [eax];
+	__asm        push   eax;
+	__asm        mov    eax, yAxis;
+	__asm        push   eax;
+	__asm        mov    eax, zAxis;
+	__asm        push   eax;
+	__asm        mov    eax, xAxis;
+	__asm        push   eax;
+	__asm        call   0x00562950;
+	__asm        add    esp, 0x20;
 // LINE 122:
-	asm( 
-"	      00562a64    cmp centeroffset,0"
-"	      00562a68    je near ptr 00562A91h"
-);
+	__asm        cmp    centeroffset, 0;
+	__asm        je     near ptr 0x00562A91;
 // LINE 123:
-	asm( 
-"	      00562a6e    mov eax,centeroffset"
-"	      00562a71    fld dword ptr [eax]"
-"	      00562a73    fadd tf.x"
-"	      00562a76    fstp tf.x"
-);
+	__asm        mov    eax, centeroffset;
+	__asm        fld    dword ptr [eax];
+	__asm        fadd   tf.x;
+	__asm        fstp   tf.x;
 // LINE 124:
-	asm( 
-"	      00562a79    mov eax,centeroffset"
-"	      00562a7c    fld dword ptr [eax+4]"
-"	      00562a7f    fadd tf.z"
-"	      00562a82    fstp tf.z"
-);
+	__asm        mov    eax, centeroffset;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fadd   tf.z;
+	__asm        fstp   tf.z;
 // LINE 125:
-	asm( 
-"	      00562a85    mov eax,centeroffset"
-"	      00562a88    fld dword ptr [eax+8]"
-"	      00562a8b    fadd tf.y"
-"	      00562a8e    fstp tf.y"
-);
+	__asm        mov    eax, centeroffset;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fadd   tf.y;
+	__asm        fstp   tf.y;
 // LINE 127:
-	asm( 
-"	      00562a91    push 0"
-"	      00562a93    lea eax,tf.x"
-"	      00562a96    push eax"
-"	      00562a97    call 005626F5h"
-"	      00562a9c    add esp,8"
-);
+	__asm        push   0;
+	__asm        lea    eax, tf.x;
+	__asm        push   eax;
+	__asm        call   0x005626F5;
+	__asm        add    esp, 8;
 // LINE 128:
-	asm( 
-"	      00562a9f    lea eax,tf.x"
-"	      00562aa2    mov ecx,dxzy"
-"	      00562aa5    mov edx,[eax]"
-"	      00562aa7    mov [ecx],edx"
-"	      00562aa9    mov edx,[eax+4]"
-"	      00562aac    mov [ecx+4],edx"
-"	      00562aaf    mov edx,[eax+8]"
-"	      00562ab2    mov [ecx+8],edx"
-"	      00562ab5    mov eax,[eax+0Ch]"
-"	      00562ab8    mov [ecx+0Ch],eax"
-);
+	__asm        lea    eax, tf.x;
+	__asm        mov    ecx, dxzy;
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    edx, [eax+8];
+	__asm        mov    [ecx+8], edx;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    [ecx+0xC], eax;
 // LINE 129:
-	asm( 
-"	      00562abb    jmp near ptr 00562AC0h"
-"	      00562ac0    pop edi"
-"	      00562ac1    pop esi"
-"	      00562ac2    pop ebx"
-"	      00562ac3    leave"
-"	      00562ac4    ret"
-);
+	__asm        jmp    near ptr 0x00562AC0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562ac5
@@ -667,344 +553,268 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	struct DXZY transformed;
 
 // LINE 132:
-	asm( 
-"	      00562ac5    push ebp"
-"	      00562ac6    mov ebp,esp"
-"	      00562ac8    sub esp,10h"
-"	      00562acb    push ebx"
-"	      00562acc    push esi"
-"	      00562acd    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 134:
-	asm( 
-"	      00562ace    lea eax,transformed.x"
-"	      00562ad1    push eax"
-"	      00562ad2    mov eax,dpt.info"
-"	      00562ad5    push eax"
-"	      00562ad6    mov eax,dpt.y"
-"	      00562ad9    push eax"
-"	      00562ada    mov eax,dpt.z"
-"	      00562add    push eax"
-"	      00562ade    mov eax,dpt.x"
-"	      00562ae1    push eax"
-"	      00562ae2    mov eax,cosYangle"
-"	      00562ae5    push eax"
-"	      00562ae6    mov eax,sinYangle"
-"	      00562ae9    push eax"
-"	      00562aea    mov eax,cosXangle"
-"	      00562aed    push eax"
-"	      00562aee    mov eax,sinXangle"
-"	      00562af1    push eax"
-"	      00562af2    call 005628EBh"
-"	      00562af7    add esp,24h"
-);
+	__asm        lea    eax, transformed.x;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.info;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.y;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.z;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.x;
+	__asm        push   eax;
+	__asm        mov    eax, cosYangle;
+	__asm        push   eax;
+	__asm        mov    eax, sinYangle;
+	__asm        push   eax;
+	__asm        mov    eax, cosXangle;
+	__asm        push   eax;
+	__asm        mov    eax, sinXangle;
+	__asm        push   eax;
+	__asm        call   0x005628EB;
+	__asm        add    esp, 0x24;
 // LINE 136:
-	asm( 
-"	      00562afa    fld transformed.x"
-"	      00562afd    fmul scale"
-"	      00562b00    fstp transformed.x"
-);
+	__asm        fld    transformed.x;
+	__asm        fmul   scale;
+	__asm        fstp   transformed.x;
 // LINE 137:
-	asm( 
-"	      00562b03    fld transformed.y"
-"	      00562b06    fmul scale"
-"	      00562b09    fstp transformed.y"
-);
+	__asm        fld    transformed.y;
+	__asm        fmul   scale;
+	__asm        fstp   transformed.y;
 // LINE 138:
-	asm( 
-"	      00562b0c    fld transformed.z"
-"	      00562b0f    fmul scale"
-"	      00562b12    fstp transformed.z"
-);
+	__asm        fld    transformed.z;
+	__asm        fmul   scale;
+	__asm        fstp   transformed.z;
 // LINE 140:
-	asm( 
-"	      00562b15    test reinterpret_cast<uint32_t>(perspective),0FFFFh"
-"	      00562b1c    je near ptr 00562B30h"
-);
+	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
+	__asm        je     near ptr 0x00562B30;
 // LINE 141:
-	asm( 
-"	      00562b22    push 0"
-"	      00562b24    lea eax,transformed.x"
-"	      00562b27    push eax"
-"	      00562b28    call 005626F5h"
-"	      00562b2d    add esp,8"
-);
+	__asm        push   0;
+	__asm        lea    eax, transformed.x;
+	__asm        push   eax;
+	__asm        call   0x005626F5;
+	__asm        add    esp, 8;
 // LINE 143:
-	asm( 
-"	      00562b30    cmp ptH,0"
-"	      00562b34    je near ptr 00562B48h"
-"	      00562b3a    fld transformed.x"
-"	      00562b3d    call 0056EBE8h"
-"	      00562b42    mov ecx,ptH"
-"	      00562b45    mov [ecx],ax"
-);
+	__asm        cmp    ptH, 0;
+	__asm        je     near ptr 0x00562B48;
+	__asm        fld    transformed.x;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptH;
+	__asm        mov    [ecx], ax;
 // LINE 144:
-	asm( 
-"	      00562b48    cmp ptV,0"
-"	      00562b4c    je near ptr 00562B60h"
-"	      00562b52    fld transformed.z"
-"	      00562b55    call 0056EBE8h"
-"	      00562b5a    mov ecx,ptV"
-"	      00562b5d    mov [ecx],ax"
-);
+	__asm        cmp    ptV, 0;
+	__asm        je     near ptr 0x00562B60;
+	__asm        fld    transformed.z;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptV;
+	__asm        mov    [ecx], ax;
 // LINE 145:
-	asm( 
-"	      00562b60    cmp ptDepth,0"
-"	      00562b64    je near ptr 00562B78h"
-"	      00562b6a    fld transformed.y"
-"	      00562b6d    call 0056EBE8h"
-"	      00562b72    mov ecx,ptDepth"
-"	      00562b75    mov [ecx],ax"
-);
+	__asm        cmp    ptDepth, 0;
+	__asm        je     near ptr 0x00562B78;
+	__asm        fld    transformed.y;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptDepth;
+	__asm        mov    [ecx], ax;
 // LINE 146:
-	asm( 
-"	      00562b78    jmp near ptr 00562B7Dh"
-"	      00562b7d    pop edi"
-"	      00562b7e    pop esi"
-"	      00562b7f    pop ebx"
-"	      00562b80    leave"
-"	      00562b81    ret"
-);
+	__asm        jmp    near ptr 0x00562B7D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562b82
 void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
 // LINE 151:
-	asm( 
-"	      00562b82    push ebp"
-"	      00562b83    mov ebp,esp"
-"	      00562b85    push ebx"
-"	      00562b86    push esi"
-"	      00562b87    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 152:
-	asm( 
-"	      00562b88    push 8C085h"
-"	      00562b8d    push 5BED14h"
-"	      00562b92    push 98h"
-"	      00562b97    push 5BED3Ch"
-"	      00562b9c    call 00554F30h"
-"	      00562ba1    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BED14;
+	__asm        push   0x98;
+	__asm        push   0x5BED3C;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 153:
-	asm( 
-"	      00562ba4    mov eax,partPolar"
-"	      00562ba7    fld dword ptr [eax]"
-"	      00562ba9    mov eax,inc"
-"	      00562bac    fadd dword ptr [eax]"
-"	      00562bae    mov eax,partPolar"
-"	      00562bb1    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax];
+	__asm        mov    eax, inc;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax];
 // LINE 154:
-	asm( 
-"	      00562bb3    mov eax,partPolar"
-"	      00562bb6    fld dword ptr [eax+4]"
-"	      00562bb9    mov eax,inc"
-"	      00562bbc    fadd dword ptr [eax+4]"
-"	      00562bbf    mov eax,partPolar"
-"	      00562bc2    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        mov    eax, inc;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 155:
-	asm( 
-"	      00562bc5    mov eax,partPolar"
-"	      00562bc8    push eax"
-"	      00562bc9    call 00562C41h"
-"	      00562bce    add esp,4"
-);
+	__asm        mov    eax, partPolar;
+	__asm        push   eax;
+	__asm        call   0x00562C41;
+	__asm        add    esp, 4;
 // LINE 156:
-	asm( 
-"	      00562bd1    jmp near ptr 00562BD6h"
-"	      00562bd6    pop edi"
-"	      00562bd7    pop esi"
-"	      00562bd8    pop ebx"
-"	      00562bd9    leave"
-"	      00562bda    ret"
-);
+	__asm        jmp    near ptr 0x00562BD6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562bdb
 void Keep0to2pi(float * radians) {
 // LINE 159:
-	asm( 
-"	      00562bdb    push ebp"
-"	      00562bdc    mov ebp,esp"
-"	      00562bde    push ebx"
-"	      00562bdf    push esi"
-"	      00562be0    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 160:
-	asm( 
-"	      00562be1    mov eax,radians"
-"	      00562be4    fld dword ptr [eax]"
-"	      00562be6    fcomp qword ptr ds:[593758h]"
-"	      00562bec    fnstsw ax"
-"	      00562bee    test ah,1"
-"	      00562bf1    jne near ptr 00562C0Ch"
-);
+	__asm        mov    eax, radians;
+	__asm        fld    dword ptr [eax];
+	__asm        fcomp  qword ptr ds:[0x593758];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        jne    near ptr 0x00562C0C;
 // LINE 161:
-	asm( 
-"	      00562bf7    mov eax,radians"
-"	      00562bfa    fld dword ptr [eax]"
-"	      00562bfc    fsub dword ptr ds:[593760h]"
-"	      00562c02    mov eax,radians"
-"	      00562c05    fstp dword ptr [eax]"
-"	      00562c07    jmp near ptr 00562BE1h"
-);
+	__asm        mov    eax, radians;
+	__asm        fld    dword ptr [eax];
+	__asm        fsub   dword ptr ds:[0x593760];
+	__asm        mov    eax, radians;
+	__asm        fstp   dword ptr [eax];
+	__asm        jmp    near ptr 0x00562BE1;
 // LINE 162:
-	asm( 
-"	      00562c0c    mov eax,radians"
-"	      00562c0f    fld dword ptr [eax]"
-"	      00562c11    fcomp dword ptr ds:[593750h]"
-"	      00562c17    fnstsw ax"
-"	      00562c19    test ah,1"
-"	      00562c1c    je near ptr 00562C37h"
-);
+	__asm        mov    eax, radians;
+	__asm        fld    dword ptr [eax];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        je     near ptr 0x00562C37;
 // LINE 163:
-	asm( 
-"	      00562c22    mov eax,radians"
-"	      00562c25    fld dword ptr [eax]"
-"	      00562c27    fadd dword ptr ds:[593760h]"
-"	      00562c2d    mov eax,radians"
-"	      00562c30    fstp dword ptr [eax]"
-"	      00562c32    jmp near ptr 00562C0Ch"
-);
+	__asm        mov    eax, radians;
+	__asm        fld    dword ptr [eax];
+	__asm        fadd   dword ptr ds:[0x593760];
+	__asm        mov    eax, radians;
+	__asm        fstp   dword ptr [eax];
+	__asm        jmp    near ptr 0x00562C0C;
 // LINE 164:
-	asm( 
-"	      00562c37    jmp near ptr 00562C3Ch"
-"	      00562c3c    pop edi"
-"	      00562c3d    pop esi"
-"	      00562c3e    pop ebx"
-"	      00562c3f    leave"
-"	      00562c40    ret"
-);
+	__asm        jmp    near ptr 0x00562C3C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c41
 void Keep0to2pi(struct Polar* polar) {
 // LINE 167:
-	asm( 
-"	      00562c41    push ebp"
-"	      00562c42    mov ebp,esp"
-"	      00562c44    push ebx"
-"	      00562c45    push esi"
-"	      00562c46    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 168:
-	asm( 
-"	      00562c47    mov eax,polar"
-"	      00562c4a    push eax"
-"	      00562c4b    call 00562BDBh"
-"	      00562c50    add esp,4"
-);
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 169:
-	asm( 
-"	      00562c53    mov eax,polar"
-"	      00562c56    add eax,4"
-"	      00562c59    push eax"
-"	      00562c5a    call 00562BDBh"
-"	      00562c5f    add esp,4"
-);
+	__asm        mov    eax, polar;
+	__asm        add    eax, 4;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 170:
-	asm( 
-"	      00562c62    mov eax,polar"
-"	      00562c65    add eax,8"
-"	      00562c68    push eax"
-"	      00562c69    call 00562BDBh"
-"	      00562c6e    add esp,4"
-);
+	__asm        mov    eax, polar;
+	__asm        add    eax, 8;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 171:
-	asm( 
-"	      00562c71    jmp near ptr 00562C76h"
-"	      00562c76    pop edi"
-"	      00562c77    pop esi"
-"	      00562c78    pop ebx"
-"	      00562c79    leave"
-"	      00562c7a    ret"
-);
+	__asm        jmp    near ptr 0x00562C76;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c7b
 float Keep0to2pi(float radians) {
 // LINE 174:
-	asm( 
-"	      00562c7b    push ebp"
-"	      00562c7c    mov ebp,esp"
-"	      00562c7e    push ebx"
-"	      00562c7f    push esi"
-"	      00562c80    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 175:
-	asm( 
-"	      00562c81    lea eax,radians"
-"	      00562c84    push eax"
-"	      00562c85    call 00562BDBh"
-"	      00562c8a    add esp,4"
-);
+	__asm        lea    eax, radians;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 176:
-	asm( 
-"	      00562c8d    fld radians"
-"	      00562c90    jmp near ptr 00562C95h"
-);
+	__asm        fld    radians;
+	__asm        jmp    near ptr 0x00562C95;
 // LINE 177:
-	asm( 
-"	      00562c95    pop edi"
-"	      00562c96    pop esi"
-"	      00562c97    pop ebx"
-"	      00562c98    leave"
-"	      00562c99    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
 void IncrementFloat(struct Polar inc, struct Polar* partPolar) {
 // LINE 180:
-	asm( 
-"	      00562c9a    push ebp"
-"	      00562c9b    mov ebp,esp"
-"	      00562c9d    push ebx"
-"	      00562c9e    push esi"
-"	      00562c9f    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 181:
-	asm( 
-"	      00562ca0    mov eax,partPolar"
-"	      00562ca3    fld dword ptr [eax]"
-"	      00562ca5    fadd inc.phi"
-"	      00562ca8    mov eax,partPolar"
-"	      00562cab    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax];
+	__asm        fadd   inc.phi;
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax];
 // LINE 182:
-	asm( 
-"	      00562cad    mov eax,partPolar"
-"	      00562cb0    fld dword ptr [eax+4]"
-"	      00562cb3    fadd inc.psi"
-"	      00562cb6    mov eax,partPolar"
-"	      00562cb9    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fadd   inc.psi;
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 183:
-	asm( 
-"	      00562cbc    mov eax,partPolar"
-"	      00562cbf    fld dword ptr [eax+8]"
-"	      00562cc2    fadd inc.tau"
-"	      00562cc5    mov eax,partPolar"
-"	      00562cc8    fstp dword ptr [eax+8]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fadd   inc.tau;
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 184:
-	asm( 
-"	      00562ccb    mov eax,partPolar"
-"	      00562cce    push eax"
-"	      00562ccf    call 00562C41h"
-"	      00562cd4    add esp,4"
-);
+	__asm        mov    eax, partPolar;
+	__asm        push   eax;
+	__asm        call   0x00562C41;
+	__asm        add    esp, 4;
 // LINE 185:
-	asm( 
-"	      00562cd7    jmp near ptr 00562CDCh"
-"	      00562cdc    pop edi"
-"	      00562cdd    pop esi"
-"	      00562cde    pop ebx"
-"	      00562cdf    leave"
-"	      00562ce0    ret"
-);
+	__asm        jmp    near ptr 0x00562CDC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562ce1
@@ -1012,141 +822,111 @@ float my_acos(float x, float rad) {
 	float res;
 
 // LINE 188:
-	asm( 
-"	      00562ce1    push ebp"
-"	      00562ce2    mov ebp,esp"
-"	      00562ce4    sub esp,0Ch"
-"	      00562ce7    push ebx"
-"	      00562ce8    push esi"
-"	      00562ce9    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 190:
-	asm( 
-"	      00562cea    fld rad"
-"	      00562ced    fcomp dword ptr ds:[593750h]"
-"	      00562cf3    fnstsw ax"
-"	      00562cf5    test ah,1"
-"	      00562cf8    jne near ptr 00562D09h"
-"	      00562cfe    mov eax,rad"
-"	      00562d01    mov [ebp-8],eax"
-"	      00562d04    jmp near ptr 00562D11h"
-"	      00562d09    fld rad"
-"	      00562d0c    fchs"
-"	      00562d0e    fstp dword ptr [ebp-8]"
-"	      00562d11    fld dword ptr [ebp-8]"
-"	      00562d14    fcomp qword ptr ds:[593768h]"
-"	      00562d1a    fnstsw ax"
-"	      00562d1c    test ah,1"
-"	      00562d1f    je near ptr 00562D88h"
-);
+	__asm        fld    rad;
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        jne    near ptr 0x00562D09;
+	__asm        mov    eax, rad;
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x00562D11;
+	__asm        fld    rad;
+	__asm        fchs;
+	__asm        fstp   dword ptr [ebp-8];
+	__asm        fld    dword ptr [ebp-8];
+	__asm        fcomp  qword ptr ds:[0x593768];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        je     near ptr 0x00562D88;
 // LINE 192:
-	asm( 
-"	      00562d25    fld x"
-"	      00562d28    fcomp dword ptr ds:[593750h]"
-"	      00562d2e    fnstsw ax"
-"	      00562d30    test ah,1"
-"	      00562d33    jne near ptr 00562D44h"
-"	      00562d39    mov eax,x"
-"	      00562d3c    mov [ebp-0Ch],eax"
-"	      00562d3f    jmp near ptr 00562D4Ch"
-"	      00562d44    fld x"
-"	      00562d47    fchs"
-"	      00562d49    fstp dword ptr [ebp-0Ch]"
-"	      00562d4c    fld dword ptr [ebp-0Ch]"
-"	      00562d4f    fcomp qword ptr ds:[593770h]"
-"	      00562d55    fnstsw ax"
-"	      00562d57    test ah,1"
-"	      00562d5a    jne near ptr 00562D7Ch"
-);
+	__asm        fld    x;
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        jne    near ptr 0x00562D44;
+	__asm        mov    eax, x;
+	__asm        mov    [ebp-0xC], eax;
+	__asm        jmp    near ptr 0x00562D4C;
+	__asm        fld    x;
+	__asm        fchs;
+	__asm        fstp   dword ptr [ebp-0xC];
+	__asm        fld    dword ptr [ebp-0xC];
+	__asm        fcomp  qword ptr ds:[0x593770];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        jne    near ptr 0x00562D7C;
 // LINE 193:
-	asm( 
-"	      00562d60    push 8C085h"
-"	      00562d65    push 5BED5Ch"
-"	      00562d6a    push 0C1h"
-"	      00562d6f    push 5BED78h"
-"	      00562d74    call 00554F30h"
-"	      00562d79    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BED5C;
+	__asm        push   0xC1;
+	__asm        push   0x5BED78;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 195:
-	asm( 
-"	      00562d7c    mov res,0"
-);
+	__asm        mov    res, 0;
 // LINE 197:
-	asm( 
-"	      00562d83    jmp near ptr 00562DE5h"
-"	      00562d88    fld x"
-"	      00562d8b    fdiv rad"
-"	      00562d8e    fcomp qword ptr ds:[593778h]"
-"	      00562d94    fnstsw ax"
-"	      00562d96    test ah,41h"
-"	      00562d99    jne near ptr 00562DABh"
-);
+	__asm        jmp    near ptr 0x00562DE5;
+	__asm        fld    x;
+	__asm        fdiv   rad;
+	__asm        fcomp  qword ptr ds:[0x593778];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x41;
+	__asm        jne    near ptr 0x00562DAB;
 // LINE 198:
-	asm( 
-"	      00562d9f    mov res,0"
-);
+	__asm        mov    res, 0;
 // LINE 199:
-	asm( 
-"	      00562da6    jmp near ptr 00562DE5h"
-"	      00562dab    fld x"
-"	      00562dae    fdiv rad"
-"	      00562db1    fcomp qword ptr ds:[593780h]"
-"	      00562db7    fnstsw ax"
-"	      00562db9    test ah,1"
-"	      00562dbc    je near ptr 00562DCEh"
-);
+	__asm        jmp    near ptr 0x00562DE5;
+	__asm        fld    x;
+	__asm        fdiv   rad;
+	__asm        fcomp  qword ptr ds:[0x593780];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        je     near ptr 0x00562DCE;
 // LINE 200:
-	asm( 
-"	      00562dc2    mov res,40490FDBh"
-);
+	__asm        mov    res, 0x40490FDB;
 // LINE 201:
-	asm( 
-"	      00562dc9    jmp near ptr 00562DE5h"
-);
+	__asm        jmp    near ptr 0x00562DE5;
 // LINE 202:
-	asm( 
-"	      00562dce    fld x"
-"	      00562dd1    fdiv rad"
-"	      00562dd4    sub esp,8"
-"	      00562dd7    fstp qword ptr [esp]"
-"	      00562dda    call 005757CAh"
-"	      00562ddf    add esp,8"
-"	      00562de2    fstp res"
-);
+	__asm        fld    x;
+	__asm        fdiv   rad;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x005757CA;
+	__asm        add    esp, 8;
+	__asm        fstp   res;
 // LINE 203:
-	asm( 
-"	      00562de5    fld res"
-"	      00562de8    jmp near ptr 00562DEDh"
-);
+	__asm        fld    res;
+	__asm        jmp    near ptr 0x00562DED;
 // LINE 204:
-	asm( 
-"	      00562ded    pop edi"
-"	      00562dee    pop esi"
-"	      00562def    pop ebx"
-"	      00562df0    leave"
-"	      00562df1    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562df2
 void NormalizeTo1(struct DXZY* vec) {
 // LINE 207:
-	asm( 
-"	      00562df2    push ebp"
-"	      00562df3    mov ebp,esp"
-"	      00562df5    push ebx"
-"	      00562df6    push esi"
-"	      00562df7    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 209:
-	asm( 
-"	      00562df8    jmp near ptr 00562DFDh"
-"	      00562dfd    pop edi"
-"	      00562dfe    pop esi"
-"	      00562dff    pop ebx"
-"	      00562e00    leave"
-"	      00562e01    ret"
-);
+	__asm        jmp    near ptr 0x00562DFD;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562e02
@@ -1154,51 +934,41 @@ double GetLength(float x, float z, float y) {
 	double rad;
 
 // LINE 212:
-	asm( 
-"	      00562e02    push ebp"
-"	      00562e03    mov ebp,esp"
-"	      00562e05    sub esp,8"
-"	      00562e08    push ebx"
-"	      00562e09    push esi"
-"	      00562e0a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 214:
-	asm( 
-"	      00562e0b    fld x"
-"	      00562e0e    fmul x"
-"	      00562e11    fld z"
-"	      00562e14    fmul z"
-"	      00562e17    faddp"
-"	      00562e19    sub esp,8"
-"	      00562e1c    fstp qword ptr [esp]"
-"	      00562e1f    call 0056EC10h"
-"	      00562e24    add esp,8"
-"	      00562e27    fst rad"
-);
+	__asm        fld    x;
+	__asm        fmul   x;
+	__asm        fld    z;
+	__asm        fmul   z;
+	__asm        faddp;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056EC10;
+	__asm        add    esp, 8;
+	__asm        fst    rad;
 // LINE 215:
-	asm( 
-"	      00562e2a    fmul rad"
-"	      00562e2d    fld y"
-"	      00562e30    fmul y"
-"	      00562e33    faddp"
-"	      00562e35    sub esp,8"
-"	      00562e38    fstp qword ptr [esp]"
-"	      00562e3b    call 0056EC10h"
-"	      00562e40    add esp,8"
-"	      00562e43    fst rad"
-);
+	__asm        fmul   rad;
+	__asm        fld    y;
+	__asm        fmul   y;
+	__asm        faddp;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056EC10;
+	__asm        add    esp, 8;
+	__asm        fst    rad;
 // LINE 216:
-	asm( 
-"	      00562e46    jmp near ptr 00562E4Bh"
-);
+	__asm        jmp    near ptr 0x00562E4B;
 // LINE 217:
-	asm( 
-"	      00562e4b    pop edi"
-"	      00562e4c    pop esi"
-"	      00562e4d    pop ebx"
-"	      00562e4e    leave"
-"	      00562e4f    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562e50
@@ -1208,61 +978,53 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 	float psi;
 
 // LINE 224:
-	asm( 
-"	      00562e50    push ebp"
-"	      00562e51    mov ebp,esp"
-"	      00562e53    sub esp,0Ch"
-"	      00562e56    push ebx"
-"	      00562e57    push esi"
-"	      00562e58    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 226:
-	asm( 
-"	      00562e59    lea eax,junk"
-"	      00562e5c    push eax"
-"	      00562e5d    lea eax,psi"
-"	      00562e60    push eax"
-"	      00562e61    lea eax,phi"
-"	      00562e64    push eax"
-"	      00562e65    push 0Ah"
-"	      00562e67    mov eax,reinterpret_cast<uint32_t>(lngincs)"
-"	      00562e6a    push eax"
-"	      00562e6b    mov eax,reinterpret_cast<uint32_t>(latincs)"
-"	      00562e6e    push eax"
-"	      00562e6f    push 0"
-"	      00562e71    mov eax,reinterpret_cast<uint32_t>(lngint)"
-"	      00562e74    push eax"
-"	      00562e75    mov eax,reinterpret_cast<uint32_t>(latint)"
-"	      00562e78    push eax"
-"	      00562e79    call 005639D2h"
-"	      00562e7e    add esp,24h"
-);
+	__asm        lea    eax, junk;
+	__asm        push   eax;
+	__asm        lea    eax, psi;
+	__asm        push   eax;
+	__asm        lea    eax, phi;
+	__asm        push   eax;
+	__asm        push   0xA;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngincs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latincs);
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngint);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latint);
+	__asm        push   eax;
+	__asm        call   0x005639D2;
+	__asm        add    esp, 0x24;
 // LINE 227:
-	asm( 
-"	      00562e81    mov eax,reinterpret_cast<uint32_t>(length)"
-"	      00562e84    push eax"
-"	      00562e85    mov eax,ctr"
-"	      00562e88    push eax"
-"	      00562e89    mov eax,reinterpret_cast<uint32_t>(polarAngles)"
-"	      00562e8c    push eax"
-"	      00562e8d    mov eax,psi"
-"	      00562e90    push eax"
-"	      00562e91    mov eax,phi"
-"	      00562e94    push eax"
-"	      00562e95    mov eax,rect"
-"	      00562e98    push eax"
-"	      00562e99    call 00562EABh"
-"	      00562e9e    add esp,18h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(length);
+	__asm        push   eax;
+	__asm        mov    eax, ctr;
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(polarAngles);
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, rect;
+	__asm        push   eax;
+	__asm        call   0x00562EAB;
+	__asm        add    esp, 0x18;
 // LINE 228:
-	asm( 
-"	      00562ea1    jmp near ptr 00562EA6h"
-"	      00562ea6    pop edi"
-"	      00562ea7    pop esi"
-"	      00562ea8    pop ebx"
-"	      00562ea9    leave"
-"	      00562eaa    ret"
-);
+	__asm        jmp    near ptr 0x00562EA6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562eab
@@ -1274,321 +1036,259 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	float ydist;
 
 // LINE 231:
-	asm( 
-"	      00562eab    push ebp"
-"	      00562eac    mov ebp,esp"
-"	      00562eae    sub esp,30h"
-"	      00562eb1    push ebx"
-"	      00562eb2    push esi"
-"	      00562eb3    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x30;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 236:
-	asm( 
-"	      00562eb4    lea eax,phi"
-"	      00562eb7    push eax"
-"	      00562eb8    call 00562BDBh"
-"	      00562ebd    add esp,4"
-);
+	__asm        lea    eax, phi;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 237:
-	asm( 
-"	      00562ec0    lea eax,psi"
-"	      00562ec3    push eax"
-"	      00562ec4    call 00562BDBh"
-"	      00562ec9    add esp,4"
-);
+	__asm        lea    eax, psi;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 239:
-	asm( 
-"	      00562ecc    cmp ctr,0"
-"	      00562ed0    je near ptr 00562FBBh"
-);
+	__asm        cmp    ctr, 0;
+	__asm        je     near ptr 0x00562FBB;
 // LINE 240:
-	asm( 
-"	      00562ed6    movsx eax,length"
-"	      00562eda    cmp eax,0FFFFFFFFh"
-"	      00562edd    jne near ptr 00562EFFh"
-"	      00562ee3    push 8C085h"
-"	      00562ee8    push 5BED98h"
-"	      00562eed    push 0F0h"
-"	      00562ef2    push 5BEDBCh"
-"	      00562ef7    call 00554F30h"
-"	      00562efc    add esp,10h"
-);
+	__asm        movsx  eax, length;
+	__asm        cmp    eax, 0xFFFFFFFF;
+	__asm        jne    near ptr 0x00562EFF;
+	__asm        push   0x8C085;
+	__asm        push   0x5BED98;
+	__asm        push   0xF0;
+	__asm        push   0x5BEDBC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 241:
-	asm( 
-"	      00562eff    cmp rect,0"
-"	      00562f03    je near ptr 00562F25h"
-"	      00562f09    push 8C085h"
-"	      00562f0e    push 5BEDDCh"
-"	      00562f13    push 0F1h"
-"	      00562f18    push 5BEDFCh"
-"	      00562f1d    call 00554F30h"
-"	      00562f22    add esp,10h"
-);
+	__asm        cmp    rect, 0;
+	__asm        je     near ptr 0x00562F25;
+	__asm        push   0x8C085;
+	__asm        push   0x5BEDDC;
+	__asm        push   0xF1;
+	__asm        push   0x5BEDFC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 242:
-	asm( 
-"	      00562f25    movsx eax,length"
-"	      00562f29    mov [ebp-28h],eax"
-"	      00562f2c    fild dword ptr [ebp-28h]"
-"	      00562f2f    fstp rad"
-);
+	__asm        movsx  eax, length;
+	__asm        mov    [ebp-0x28], eax;
+	__asm        fild   dword ptr [ebp-0x28];
+	__asm        fstp   rad;
 // LINE 243:
-	asm( 
-"	      00562f32    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
-"	      00562f39    je near ptr 00562F64h"
-);
+	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
+	__asm        je     near ptr 0x00562F64;
 // LINE 244:
-	asm( 
-"	      00562f3f    lea eax,ydist"
-"	      00562f42    push eax"
-"	      00562f43    lea eax,zdist"
-"	      00562f46    push eax"
-"	      00562f47    lea eax,xdist"
-"	      00562f4a    push eax"
-"	      00562f4b    mov eax,psi"
-"	      00562f4e    push eax"
-"	      00562f4f    mov eax,phi"
-"	      00562f52    push eax"
-"	      00562f53    mov eax,rad"
-"	      00562f56    push eax"
-"	      00562f57    call 00563A42h"
-"	      00562f5c    add esp,18h"
-);
+	__asm        lea    eax, ydist;
+	__asm        push   eax;
+	__asm        lea    eax, zdist;
+	__asm        push   eax;
+	__asm        lea    eax, xdist;
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 245:
-	asm( 
-"	      00562f5f    jmp near ptr 00562F84h"
-);
+	__asm        jmp    near ptr 0x00562F84;
 // LINE 246:
-	asm( 
-"	      00562f64    lea eax,ydist"
-"	      00562f67    push eax"
-"	      00562f68    lea eax,zdist"
-"	      00562f6b    push eax"
-"	      00562f6c    lea eax,xdist"
-"	      00562f6f    push eax"
-"	      00562f70    mov eax,psi"
-"	      00562f73    push eax"
-"	      00562f74    mov eax,phi"
-"	      00562f77    push eax"
-"	      00562f78    mov eax,rad"
-"	      00562f7b    push eax"
-"	      00562f7c    call 00562802h"
-"	      00562f81    add esp,18h"
-);
+	__asm        lea    eax, ydist;
+	__asm        push   eax;
+	__asm        lea    eax, zdist;
+	__asm        push   eax;
+	__asm        lea    eax, xdist;
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        call   0x00562802;
+	__asm        add    esp, 0x18;
 // LINE 247:
-	asm( 
-"	      00562f84    mov eax,ctr"
-"	      00562f87    mov eax,[eax]"
-"	      00562f89    mov reinterpret_cast<uint32_t>(centerPt.v),eax"
-);
+	__asm        mov    eax, ctr;
+	__asm        mov    eax, [eax];
+	__asm        mov    reinterpret_cast<uint32_t>(centerPt.v), eax;
 // LINE 248:
-	asm( 
-"	      00562f8c    movsx ebx,centerPt.h"
-"	      00562f90    fld xdist"
-"	      00562f93    call 0056EBE8h"
-"	      00562f98    movsx eax,ax"
-"	      00562f9b    add ebx,eax"
-"	      00562f9d    mov centerPt.h,bx"
-);
+	__asm        movsx  ebx, centerPt.h;
+	__asm        fld    xdist;
+	__asm        call   0x0056EBE8;
+	__asm        movsx  eax, ax;
+	__asm        add    ebx, eax;
+	__asm        mov    centerPt.h, bx;
 // LINE 249:
-	asm( 
-"	      00562fa1    fld zdist"
-"	      00562fa4    call 0056EBE8h"
-"	      00562fa9    movsx eax,ax"
-"	      00562fac    movsx ecx,centerPt.v"
-"	      00562fb0    add eax,ecx"
-"	      00562fb2    mov centerPt.v,ax"
-);
+	__asm        fld    zdist;
+	__asm        call   0x0056EBE8;
+	__asm        movsx  eax, ax;
+	__asm        movsx  ecx, centerPt.v;
+	__asm        add    eax, ecx;
+	__asm        mov    centerPt.v, ax;
 // LINE 251:
-	asm( 
-"	      00562fb6    jmp near ptr 005630A1h"
-);
+	__asm        jmp    near ptr 0x005630A1;
 // LINE 252:
 // Block start:
 	struct Rect myRect;
 	short origwidth;
-	asm( 
-"	      00562fbb    mov eax,rect"
-"	      00562fbe    mov ecx,[eax]"
-"	      00562fc0    mov eax,[eax+4]"
-"	      00562fc3    mov reinterpret_cast<uint32_t>(myRect.top),ecx"
-"	      00562fc6    mov reinterpret_cast<uint32_t>(myRect.bottom),eax"
-);
+	__asm        mov    eax, rect;
+	__asm        mov    ecx, [eax];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    reinterpret_cast<uint32_t>(myRect.top), ecx;
+	__asm        mov    reinterpret_cast<uint32_t>(myRect.bottom), eax;
 // LINE 253:
-	asm( 
-"	      00562fc9    movsx eax,myRect.right"
-"	      00562fcd    movsx ecx,myRect.left"
-"	      00562fd1    sub eax,ecx"
-"	      00562fd3    mov origwidth,ax"
-);
+	__asm        movsx  eax, myRect.right;
+	__asm        movsx  ecx, myRect.left;
+	__asm        sub    eax, ecx;
+	__asm        mov    origwidth, ax;
 // LINE 254:
-	asm( 
-"	      00562fd7    lea eax,myRect.top"
-"	      00562fda    push eax"
-"	      00562fdb    call 00566E67h"
-"	      00562fe0    add esp,4"
-);
+	__asm        lea    eax, myRect.top;
+	__asm        push   eax;
+	__asm        call   0x00566E67;
+	__asm        add    esp, 4;
 // LINE 255:
-	asm( 
-"	      00562fe3    mov ecx,6"
-"	      00562fe8    movsx eax,origwidth"
-"	      00562fec    cdq"
-"	      00562fed    idiv ecx"
-"	      00562fef    push eax"
-"	      00562ff0    mov ecx,6"
-"	      00562ff5    movsx eax,origwidth"
-"	      00562ff9    cdq"
-"	      00562ffa    idiv ecx"
-"	      00562ffc    push eax"
-"	      00562ffd    lea eax,myRect.top"
-"	      00563000    push eax"
-"	      00563001    call 005670A9h"
-"	      00563006    add esp,0Ch"
-);
+	__asm        mov    ecx, 6;
+	__asm        movsx  eax, origwidth;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        push   eax;
+	__asm        mov    ecx, 6;
+	__asm        movsx  eax, origwidth;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        push   eax;
+	__asm        lea    eax, myRect.top;
+	__asm        push   eax;
+	__asm        call   0x005670A9;
+	__asm        add    esp, 0xC;
 // LINE 256:
-	asm( 
-"	      00563009    movsx eax,myRect.right"
-"	      0056300d    movsx ecx,myRect.top"
-"	      00563011    add eax,ecx"
-"	      00563013    movsx ecx,myRect.left"
-"	      00563017    sub eax,ecx"
-"	      00563019    mov myRect.bottom,ax"
-);
+	__asm        movsx  eax, myRect.right;
+	__asm        movsx  ecx, myRect.top;
+	__asm        add    eax, ecx;
+	__asm        movsx  ecx, myRect.left;
+	__asm        sub    eax, ecx;
+	__asm        mov    myRect.bottom, ax;
 // LINE 257:
-	asm( 
-"	      0056301d    lea eax,myRect.top"
-"	      00563020    push eax"
-"	      00563021    call 005667FEh"
-"	      00563026    add esp,4"
-"	      00563029    mov [ebp-24h],eax"
-"	      0056302c    mov eax,[ebp-24h]"
-"	      0056302f    mov reinterpret_cast<uint32_t>(centerPt.v),eax"
-);
+	__asm        lea    eax, myRect.top;
+	__asm        push   eax;
+	__asm        call   0x005667FE;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0x24], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    reinterpret_cast<uint32_t>(centerPt.v), eax;
 // LINE 258:
-	asm( 
-"	      00563032    movsx eax,myRect.right"
-"	      00563036    mov [ebp-2Ch],eax"
-"	      00563039    fild dword ptr [ebp-2Ch]"
-"	      0056303c    movsx eax,myRect.left"
-"	      00563040    mov [ebp-30h],eax"
-"	      00563043    fisub dword ptr [ebp-30h]"
-"	      00563046    fdiv dword ptr ds:[59378Ch]"
-"	      0056304c    fstp rad"
-);
+	__asm        movsx  eax, myRect.right;
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        fild   dword ptr [ebp-0x2C];
+	__asm        movsx  eax, myRect.left;
+	__asm        mov    [ebp-0x30], eax;
+	__asm        fisub  dword ptr [ebp-0x30];
+	__asm        fdiv   dword ptr ds:[0x59378C];
+	__asm        fstp   rad;
 // LINE 259:
-	asm( 
-"	      0056304f    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
-"	      00563056    je near ptr 00563081h"
-);
+	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
+	__asm        je     near ptr 0x00563081;
 // LINE 260:
-	asm( 
-"	      0056305c    lea eax,ydist"
-"	      0056305f    push eax"
-"	      00563060    lea eax,zdist"
-"	      00563063    push eax"
-"	      00563064    lea eax,xdist"
-"	      00563067    push eax"
-"	      00563068    mov eax,psi"
-"	      0056306b    push eax"
-"	      0056306c    mov eax,phi"
-"	      0056306f    push eax"
-"	      00563070    mov eax,rad"
-"	      00563073    push eax"
-"	      00563074    call 00563A42h"
-"	      00563079    add esp,18h"
-);
+	__asm        lea    eax, ydist;
+	__asm        push   eax;
+	__asm        lea    eax, zdist;
+	__asm        push   eax;
+	__asm        lea    eax, xdist;
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 261:
-	asm( 
-"	      0056307c    jmp near ptr 005630A1h"
-);
+	__asm        jmp    near ptr 0x005630A1;
 // LINE 262:
-	asm( 
-"	      00563081    lea eax,ydist"
-"	      00563084    push eax"
-"	      00563085    lea eax,zdist"
-"	      00563088    push eax"
-"	      00563089    lea eax,xdist"
-"	      0056308c    push eax"
-"	      0056308d    mov eax,psi"
-"	      00563090    push eax"
-"	      00563091    mov eax,phi"
-"	      00563094    push eax"
-"	      00563095    mov eax,rad"
-"	      00563098    push eax"
-"	      00563099    call 00562802h"
-"	      0056309e    add esp,18h"
-);
+	__asm        lea    eax, ydist;
+	__asm        push   eax;
+	__asm        lea    eax, zdist;
+	__asm        push   eax;
+	__asm        lea    eax, xdist;
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        call   0x00562802;
+	__asm        add    esp, 0x18;
 // LINE 264:
 // Block end:
-	asm( 
-"	      005630a1    cmp ctr,1"
-"	      005630a5    sbb eax,eax"
-"	      005630a7    neg eax"
-"	      005630a9    push eax"
-"	      005630aa    mov eax,rad"
-"	      005630ad    push eax"
-"	      005630ae    mov eax,ydist"
-"	      005630b1    push eax"
-"	      005630b2    mov eax,zdist"
-"	      005630b5    push eax"
-"	      005630b6    mov eax,xdist"
-"	      005630b9    push eax"
-"	      005630ba    mov eax,reinterpret_cast<uint32_t>(centerPt.v)"
-"	      005630bd    push eax"
-"	      005630be    call 005631D0h"
-"	      005630c3    add esp,18h"
-);
+	__asm        cmp    ctr, 1;
+	__asm        sbb    eax, eax;
+	__asm        neg    eax;
+	__asm        push   eax;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        mov    eax, ydist;
+	__asm        push   eax;
+	__asm        mov    eax, zdist;
+	__asm        push   eax;
+	__asm        mov    eax, xdist;
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(centerPt.v);
+	__asm        push   eax;
+	__asm        call   0x005631D0;
+	__asm        add    esp, 0x18;
 // LINE 265:
-	asm( 
-"	      005630c6    jmp near ptr 005630CBh"
-"	      005630cb    pop edi"
-"	      005630cc    pop esi"
-"	      005630cd    pop ebx"
-"	      005630ce    leave"
-"	      005630cf    ret"
-);
+	__asm        jmp    near ptr 0x005630CB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005630d0
 void DrawDirectionDisk(struct Point centerPt, struct DXZY unitvector, float rad) {
 // LINE 268:
-	asm( 
-"	      005630d0    push ebp"
-"	      005630d1    mov ebp,esp"
-"	      005630d3    push ebx"
-"	      005630d4    push esi"
-"	      005630d5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 269:
-	asm( 
-"	      005630d6    push 0"
-"	      005630d8    mov eax,rad"
-"	      005630db    push eax"
-"	      005630dc    fld unitvector.y"
-"	      005630df    fmul rad"
-"	      005630e2    sub esp,4"
-"	      005630e5    fstp dword ptr [esp]"
-"	      005630e8    fld unitvector.z"
-"	      005630eb    fmul rad"
-"	      005630ee    sub esp,4"
-"	      005630f1    fstp dword ptr [esp]"
-"	      005630f4    fld unitvector.x"
-"	      005630f7    fmul rad"
-"	      005630fa    sub esp,4"
-"	      005630fd    fstp dword ptr [esp]"
-"	      00563100    mov eax,reinterpret_cast<uint32_t>(centerPt.v)"
-"	      00563103    push eax"
-"	      00563104    call 005631D0h"
-"	      00563109    add esp,18h"
-);
+	__asm        push   0;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        fld    unitvector.y;
+	__asm        fmul   rad;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    unitvector.z;
+	__asm        fmul   rad;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    unitvector.x;
+	__asm        fmul   rad;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        mov    eax, reinterpret_cast<uint32_t>(centerPt.v);
+	__asm        push   eax;
+	__asm        call   0x005631D0;
+	__asm        add    esp, 0x18;
 // LINE 270:
-	asm( 
-"	      0056310c    jmp near ptr 00563111h"
-"	      00563111    pop edi"
-"	      00563112    pop esi"
-"	      00563113    pop ebx"
-"	      00563114    leave"
-"	      00563115    ret"
-);
+	__asm        jmp    near ptr 0x00563111;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563116
@@ -1600,159 +1300,131 @@ void DrawDirectionDisk(struct DXZY start, struct DXZY end) {
 	float ydist;
 
 // LINE 273:
-	asm( 
-"	      00563116    push ebp"
-"	      00563117    mov ebp,esp"
-"	      00563119    sub esp,14h"
-"	      0056311c    push ebx"
-"	      0056311d    push esi"
-"	      0056311e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x14;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 274:
-	asm( 
-"	      0056311f    fld start.z"
-"	      00563122    call 0056EBE8h"
-"	      00563127    mov startpt.v,ax"
-"	      0056312b    fld start.x"
-"	      0056312e    call 0056EBE8h"
-"	      00563133    mov startpt.h,ax"
-);
+	__asm        fld    start.z;
+	__asm        call   0x0056EBE8;
+	__asm        mov    startpt.v, ax;
+	__asm        fld    start.x;
+	__asm        call   0x0056EBE8;
+	__asm        mov    startpt.h, ax;
 // LINE 275:
-	asm( 
-"	      00563137    fld end.x"
-"	      0056313a    fsub start.x"
-"	      0056313d    fstp xdist"
-"	      00563140    fld end.z"
-"	      00563143    fsub start.z"
-"	      00563146    fstp zdist"
-"	      00563149    fld end.y"
-"	      0056314c    fsub start.y"
-"	      0056314f    fstp ydist"
-);
+	__asm        fld    end.x;
+	__asm        fsub   start.x;
+	__asm        fstp   xdist;
+	__asm        fld    end.z;
+	__asm        fsub   start.z;
+	__asm        fstp   zdist;
+	__asm        fld    end.y;
+	__asm        fsub   start.y;
+	__asm        fstp   ydist;
 // LINE 276:
-	asm( 
-"	      00563152    fld zdist"
-"	      00563155    fmul zdist"
-"	      00563158    fld xdist"
-"	      0056315b    fmul xdist"
-"	      0056315e    faddp"
-"	      00563160    sub esp,8"
-"	      00563163    fstp qword ptr [esp]"
-"	      00563166    call 0056EC10h"
-"	      0056316b    add esp,8"
-"	      0056316e    fstp rad"
-);
+	__asm        fld    zdist;
+	__asm        fmul   zdist;
+	__asm        fld    xdist;
+	__asm        fmul   xdist;
+	__asm        faddp;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056EC10;
+	__asm        add    esp, 8;
+	__asm        fstp   rad;
 // LINE 277:
-	asm( 
-"	      00563171    fld ydist"
-"	      00563174    fmul ydist"
-"	      00563177    fld rad"
-"	      0056317a    fmul rad"
-"	      0056317d    faddp"
-"	      0056317f    sub esp,8"
-"	      00563182    fstp qword ptr [esp]"
-"	      00563185    call 0056EC10h"
-"	      0056318a    add esp,8"
-"	      0056318d    fstp rad"
-);
+	__asm        fld    ydist;
+	__asm        fmul   ydist;
+	__asm        fld    rad;
+	__asm        fmul   rad;
+	__asm        faddp;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056EC10;
+	__asm        add    esp, 8;
+	__asm        fstp   rad;
 // LINE 278:
-	asm( 
-"	      00563190    push 0"
-"	      00563192    mov eax,rad"
-"	      00563195    push eax"
-"	      00563196    fld end.y"
-"	      00563199    fsub start.y"
-"	      0056319c    sub esp,4"
-"	      0056319f    fstp dword ptr [esp]"
-"	      005631a2    fld end.z"
-"	      005631a5    fsub start.z"
-"	      005631a8    sub esp,4"
-"	      005631ab    fstp dword ptr [esp]"
-"	      005631ae    fld end.x"
-"	      005631b1    fsub start.x"
-"	      005631b4    sub esp,4"
-"	      005631b7    fstp dword ptr [esp]"
-"	      005631ba    mov eax,reinterpret_cast<uint32_t>(startpt.v)"
-"	      005631bd    push eax"
-"	      005631be    call 005631D0h"
-"	      005631c3    add esp,18h"
-);
+	__asm        push   0;
+	__asm        mov    eax, rad;
+	__asm        push   eax;
+	__asm        fld    end.y;
+	__asm        fsub   start.y;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    end.z;
+	__asm        fsub   start.z;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        fld    end.x;
+	__asm        fsub   start.x;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        mov    eax, reinterpret_cast<uint32_t>(startpt.v);
+	__asm        push   eax;
+	__asm        call   0x005631D0;
+	__asm        add    esp, 0x18;
 // LINE 279:
-	asm( 
-"	      005631c6    jmp near ptr 005631CBh"
-"	      005631cb    pop edi"
-"	      005631cc    pop esi"
-"	      005631cd    pop ebx"
-"	      005631ce    leave"
-"	      005631cf    ret"
-);
+	__asm        jmp    near ptr 0x005631CB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk(struct Point centerPt, float hdist, float vdist, float depth, float rad, unsigned short bigol) {
 // LINE 282:
-	asm( 
-"	      005631d0    push ebp"
-"	      005631d1    mov ebp,esp"
-"	      005631d3    push ebx"
-"	      005631d4    push esi"
-"	      005631d5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 355:
-	asm( 
-"	      005631d6    jmp near ptr 005631DBh"
-"	      005631db    pop edi"
-"	      005631dc    pop esi"
-"	      005631dd    pop ebx"
-"	      005631de    leave"
-"	      005631df    ret"
-);
+	__asm        jmp    near ptr 0x005631DB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631e0
 void Score(struct Point centerPt, struct Point leftOff, struct Point rightOff) {
 // LINE 357:
-	asm( 
-"	      005631e0    push ebp"
-"	      005631e1    mov ebp,esp"
-"	      005631e3    push ebx"
-"	      005631e4    push esi"
-"	      005631e5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 370:
-	asm( 
-"	      005631e6    jmp near ptr 005631EBh"
-"	      005631eb    pop edi"
-"	      005631ec    pop esi"
-"	      005631ed    pop ebx"
-"	      005631ee    leave"
-"	      005631ef    ret"
-);
+	__asm        jmp    near ptr 0x005631EB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631f0
 unsigned short DrawGrid(float phiOff, float psiOff, short cntrh, short cntrv, unsigned short persp, float scale, short thickness, unsigned long edgecolor, unsigned long hatchcolor, enum UseDrawGrid how, short pth, short ptv, short ptdepth) {
 // LINE 374:
-	asm( 
-"	      005631f0    push ebp"
-"	      005631f1    mov ebp,esp"
-"	      005631f3    push ebx"
-"	      005631f4    push esi"
-"	      005631f5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 498:
-	asm( 
-"	      005631f6    mov ax,1"
-"	      005631fa    jmp near ptr 005631FFh"
-);
+	__asm        mov    ax, 1;
+	__asm        jmp    near ptr 0x005631FF;
 // LINE 499:
-	asm( 
-"	      005631ff    pop edi"
-"	      00563200    pop esi"
-"	      00563201    pop ebx"
-"	      00563202    leave"
-"	      00563203    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563204
@@ -1764,117 +1436,89 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	float psiComp;
 
 // LINE 508:
-	asm( 
-"	      00563204    push ebp"
-"	      00563205    mov ebp,esp"
-"	      00563207    sub esp,0A8h"
-"	      0056320d    push ebx"
-"	      0056320e    push esi"
-"	      0056320f    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xA8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 509:
-	asm( 
-"	      00563210    lea edi,incFromParent.phi"
-"	      00563213    mov esi,passedInc"
-"	      00563216    mov ecx,6"
-"	      0056321b    rep movsd"
-);
+	__asm        lea    edi, incFromParent.phi;
+	__asm        mov    esi, passedInc;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 510:
-	asm( 
-"	      0056321d    mov eax,passedInc"
-"	      00563220    mov amountToInc,eax"
-);
+	__asm        mov    eax, passedInc;
+	__asm        mov    amountToInc, eax;
 // LINE 511:
-	asm( 
-"	      00563223    cmp parentPolar,0"
-"	      00563227    je near ptr 005632BDh"
-);
+	__asm        cmp    parentPolar, 0;
+	__asm        je     near ptr 0x005632BD;
 // LINE 513:
 // Block start:
 	struct Polar resPolar;
 	struct Polar startPolar;
-	asm( 
-"	      0056322d    lea edi,startPolar.phi"
-"	      00563230    mov esi,partPolar"
-"	      00563233    mov ecx,6"
-"	      00563238    rep movsd"
-"	      0056323a    lea edi,resPolar.phi"
-"	      0056323d    mov esi,partPolar"
-"	      00563240    mov ecx,6"
-"	      00563245    rep movsd"
-);
+	__asm        lea    edi, startPolar.phi;
+	__asm        mov    esi, partPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
+	__asm        lea    edi, resPolar.phi;
+	__asm        mov    esi, partPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 515:
-	asm( 
-"	      00563247    lea eax,resPolar.phi"
-"	      0056324a    push eax"
-"	      0056324b    mov eax,parentPolar"
-"	      0056324e    push eax"
-"	      0056324f    mov eax,passedInc"
-"	      00563252    push eax"
-"	      00563253    call 005634FCh"
-"	      00563258    add esp,0Ch"
-);
+	__asm        lea    eax, resPolar.phi;
+	__asm        push   eax;
+	__asm        mov    eax, parentPolar;
+	__asm        push   eax;
+	__asm        mov    eax, passedInc;
+	__asm        push   eax;
+	__asm        call   0x005634FC;
+	__asm        add    esp, 0xC;
 // LINE 516:
-	asm( 
-"	      0056325b    fld resPolar.phi"
-"	      0056325e    fsub startPolar.phi"
-"	      00563261    mov eax,amountToInc"
-"	      00563264    fstp dword ptr [eax]"
-);
+	__asm        fld    resPolar.phi;
+	__asm        fsub   startPolar.phi;
+	__asm        mov    eax, amountToInc;
+	__asm        fstp   dword ptr [eax];
 // LINE 517:
-	asm( 
-"	      00563266    fld resPolar.psi"
-"	      00563269    fsub startPolar.psi"
-"	      0056326c    mov eax,amountToInc"
-"	      0056326f    fstp dword ptr [eax+4]"
-);
+	__asm        fld    resPolar.psi;
+	__asm        fsub   startPolar.psi;
+	__asm        mov    eax, amountToInc;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 520:
-	asm( 
-"	      00563272    lea esi,resPolar.phi"
-"	      00563275    lea edi,startPolar.phi"
-"	      00563278    mov ecx,6"
-"	      0056327d    rep movsd"
-);
+	__asm        lea    esi, resPolar.phi;
+	__asm        lea    edi, startPolar.phi;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 521:
-	asm( 
-"	      0056327f    lea eax,resPolar.phi"
-"	      00563282    push eax"
-"	      00563283    mov eax,parentPolar"
-"	      00563286    push eax"
-"	      00563287    mov eax,passedInc"
-"	      0056328a    mov eax,[eax+8]"
-"	      0056328d    push eax"
-"	      0056328e    call 00563D33h"
-"	      00563293    add esp,0Ch"
-);
+	__asm        lea    eax, resPolar.phi;
+	__asm        push   eax;
+	__asm        mov    eax, parentPolar;
+	__asm        push   eax;
+	__asm        mov    eax, passedInc;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        call   0x00563D33;
+	__asm        add    esp, 0xC;
 // LINE 522:
-	asm( 
-"	      00563296    fld resPolar.phi"
-"	      00563299    fsub startPolar.phi"
-"	      0056329c    mov eax,amountToInc"
-"	      0056329f    fadd dword ptr [eax]"
-"	      005632a1    mov eax,amountToInc"
-"	      005632a4    fstp dword ptr [eax]"
-);
+	__asm        fld    resPolar.phi;
+	__asm        fsub   startPolar.phi;
+	__asm        mov    eax, amountToInc;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, amountToInc;
+	__asm        fstp   dword ptr [eax];
 // LINE 523:
-	asm( 
-"	      005632a6    fld resPolar.psi"
-"	      005632a9    fsub startPolar.psi"
-"	      005632ac    mov eax,amountToInc"
-"	      005632af    fadd dword ptr [eax+4]"
-"	      005632b2    mov eax,amountToInc"
-"	      005632b5    fstp dword ptr [eax+4]"
-);
+	__asm        fld    resPolar.psi;
+	__asm        fsub   startPolar.psi;
+	__asm        mov    eax, amountToInc;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, amountToInc;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 525:
 // Block end:
-	asm( 
-"	      005632b8    jmp near ptr 005632BDh"
-);
+	__asm        jmp    near ptr 0x005632BD;
 // LINE 534:
-	asm( 
-"	      005632bd    cmp parentPolar,0"
-"	      005632c1    je near ptr 005633E3h"
-);
+	__asm        cmp    parentPolar, 0;
+	__asm        je     near ptr 0x005633E3;
 // LINE 538:
 // Block start:
 	float angleToPhiMovement;
@@ -1882,153 +1526,119 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	float alpha;
 	float angleToPsiMovement;
 	struct Polar tmpinc;
-	asm( 
-"	      005632c7    lea edi,partPol.phi"
-"	      005632cd    mov esi,partPolar"
-"	      005632d0    mov ecx,6"
-"	      005632d5    rep movsd"
-);
+	__asm        lea    edi, partPol.phi;
+	__asm        mov    esi, partPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 540:
-	asm( 
-"	      005632d7    mov tmpinc.trq,0"
-"	      005632dd    mov ax,tmpinc.trq"
-"	      005632e1    mov tmpinc.lat,ax"
-"	      005632e5    mov ax,tmpinc.lat"
-"	      005632e9    mov tmpinc.lng,ax"
-"	      005632ed    movsx eax,tmpinc.lng"
-"	      005632f1    mov [ebp-98h],eax"
-"	      005632f7    fild dword ptr [ebp-98h]"
-"	      005632fd    fstp tmpinc.tau"
-"	      00563300    mov eax,tmpinc.tau"
-"	      00563303    mov tmpinc.psi,eax"
-"	      00563306    mov eax,tmpinc.psi"
-"	      00563309    mov tmpinc.phi,eax"
-);
+	__asm        mov    tmpinc.trq, 0;
+	__asm        mov    ax, tmpinc.trq;
+	__asm        mov    tmpinc.lat, ax;
+	__asm        mov    ax, tmpinc.lat;
+	__asm        mov    tmpinc.lng, ax;
+	__asm        movsx  eax, tmpinc.lng;
+	__asm        mov    [ebp-0x98], eax;
+	__asm        fild   dword ptr [ebp-0x98];
+	__asm        fstp   tmpinc.tau;
+	__asm        mov    eax, tmpinc.tau;
+	__asm        mov    tmpinc.psi, eax;
+	__asm        mov    eax, tmpinc.psi;
+	__asm        mov    tmpinc.phi, eax;
 // LINE 541:
-	asm( 
-"	      0056330c    mov eax,parentPolar"
-"	      0056330f    fld dword ptr [eax+4]"
-"	      00563312    fchs"
-"	      00563314    fstp tmpinc.psi"
-);
+	__asm        mov    eax, parentPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fchs;
+	__asm        fstp   tmpinc.psi;
 // LINE 542:
-	asm( 
-"	      00563317    mov eax,parentPolar"
-"	      0056331a    fld dword ptr [eax]"
-"	      0056331c    fchs"
-"	      0056331e    fstp tmpinc.phi"
-);
+	__asm        mov    eax, parentPolar;
+	__asm        fld    dword ptr [eax];
+	__asm        fchs;
+	__asm        fstp   tmpinc.phi;
 // LINE 543:
-	asm( 
-"	      00563321    lea eax,partPol.phi"
-"	      00563327    push eax"
-"	      00563328    mov eax,parentPolar"
-"	      0056332b    push eax"
-"	      0056332c    lea eax,tmpinc.phi"
-"	      0056332f    push eax"
-"	      00563330    call 005634FCh"
-"	      00563335    add esp,0Ch"
-);
+	__asm        lea    eax, partPol.phi;
+	__asm        push   eax;
+	__asm        mov    eax, parentPolar;
+	__asm        push   eax;
+	__asm        lea    eax, tmpinc.phi;
+	__asm        push   eax;
+	__asm        call   0x005634FC;
+	__asm        add    esp, 0xC;
 // LINE 544:
-	asm( 
-"	      00563338    mov eax,partPol.psi"
-"	      0056333e    mov angleToPhiMovement,eax"
-);
+	__asm        mov    eax, partPol.psi;
+	__asm        mov    angleToPhiMovement, eax;
 // LINE 545:
-	asm( 
-"	      00563344    fld angleToPhiMovement"
-"	      0056334a    fsub dword ptr ds:[593790h]"
-"	      00563350    fstp angleToPsiMovement"
-);
+	__asm        fld    angleToPhiMovement;
+	__asm        fsub   dword ptr ds:[0x593790];
+	__asm        fstp   angleToPsiMovement;
 // LINE 548:
-	asm( 
-"	      00563353    mov eax,partPol.phi"
-"	      00563359    mov alpha,eax"
-);
+	__asm        mov    eax, partPol.phi;
+	__asm        mov    alpha, eax;
 // LINE 550:
-	asm( 
-"	      0056335c    fld angleToPhiMovement"
-"	      00563362    sub esp,8"
-"	      00563365    fstp qword ptr [esp]"
-"	      00563368    call 0056F320h"
-"	      0056336d    add esp,8"
-"	      00563370    fstp qword ptr [ebp-0A0h]"
-"	      00563376    fld alpha"
-"	      00563379    sub esp,8"
-"	      0056337c    fstp qword ptr [esp]"
-"	      0056337f    call 0056F320h"
-"	      00563384    add esp,8"
-"	      00563387    fmul qword ptr [ebp-0A0h]"
-"	      0056338d    fmul incFromParent.phi"
-"	      00563390    fstp phiComp"
-);
+	__asm        fld    angleToPhiMovement;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fstp   qword ptr [ebp-0xA0];
+	__asm        fld    alpha;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fmul   qword ptr [ebp-0xA0];
+	__asm        fmul   incFromParent.phi;
+	__asm        fstp   phiComp;
 // LINE 551:
-	asm( 
-"	      00563393    fld alpha"
-"	      00563396    sub esp,8"
-"	      00563399    fstp qword ptr [esp]"
-"	      0056339c    call 0056F320h"
-"	      005633a1    add esp,8"
-"	      005633a4    fstp qword ptr [ebp-0A8h]"
-"	      005633aa    fld angleToPsiMovement"
-"	      005633ad    sub esp,8"
-"	      005633b0    fstp qword ptr [esp]"
-"	      005633b3    call 0056F320h"
-"	      005633b8    add esp,8"
-"	      005633bb    fmul qword ptr [ebp-0A8h]"
-"	      005633c1    fmul incFromParent.psi"
-"	      005633c4    fstp psiComp"
-);
+	__asm        fld    alpha;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fstp   qword ptr [ebp-0xA8];
+	__asm        fld    angleToPsiMovement;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fmul   qword ptr [ebp-0xA8];
+	__asm        fmul   incFromParent.psi;
+	__asm        fstp   psiComp;
 // LINE 552:
-	asm( 
-"	      005633c7    fld alpha"
-"	      005633ca    sub esp,8"
-"	      005633cd    fstp qword ptr [esp]"
-"	      005633d0    call 0056F32Ah"
-"	      005633d5    add esp,8"
-"	      005633d8    fmul incFromParent.tau"
-"	      005633db    fstp tauComp"
-);
+	__asm        fld    alpha;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        fmul   incFromParent.tau;
+	__asm        fstp   tauComp;
 // LINE 554:
 // Block end:
-	asm( 
-"	      005633de    jmp near ptr 00563407h"
-);
+	__asm        jmp    near ptr 0x00563407;
 // LINE 556:
-	asm( 
-"	      005633e3    mov phiComp,0"
-);
+	__asm        mov    phiComp, 0;
 // LINE 557:
-	asm( 
-"	      005633ea    mov eax,partPolar"
-"	      005633ed    fld dword ptr [eax]"
-"	      005633ef    sub esp,8"
-"	      005633f2    fstp qword ptr [esp]"
-"	      005633f5    call 0056F32Ah"
-"	      005633fa    add esp,8"
-"	      005633fd    fstp psiComp"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax];
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        fstp   psiComp;
 // LINE 558:
-	asm( 
-"	      00563400    mov tauComp,0"
-);
+	__asm        mov    tauComp, 0;
 // LINE 564:
-	asm( 
-"	      00563407    fld tauComp"
-"	      0056340a    fadd psiComp"
-"	      0056340d    fadd phiComp"
-"	      00563410    mov eax,amountToInc"
-"	      00563413    fstp dword ptr [eax+8]"
-);
+	__asm        fld    tauComp;
+	__asm        fadd   psiComp;
+	__asm        fadd   phiComp;
+	__asm        mov    eax, amountToInc;
+	__asm        fstp   dword ptr [eax+8];
 // LINE 565:
-	asm( 
-"	      00563416    jmp near ptr 0056341Bh"
-"	      0056341b    pop edi"
-"	      0056341c    pop esi"
-"	      0056341d    pop ebx"
-"	      0056341e    leave"
-"	      0056341f    ret"
-);
+	__asm        jmp    near ptr 0x0056341B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563420
@@ -2038,195 +1648,159 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	struct Polar inc;
 
 // LINE 568:
-	asm( 
-"	      00563420    push ebp"
-"	      00563421    mov ebp,esp"
-"	      00563423    sub esp,48h"
-"	      00563426    push ebx"
-"	      00563427    push esi"
-"	      00563428    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x48;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 570:
-	asm( 
-"	      00563429    mov eax,phi"
-"	      0056342c    mov eax,[eax]"
-"	      0056342e    mov polar.phi,eax"
-"	      00563431    mov eax,psi"
-"	      00563434    mov eax,[eax]"
-"	      00563436    mov polar.psi,eax"
-"	      00563439    mov polar.tau,0"
-);
+	__asm        mov    eax, phi;
+	__asm        mov    eax, [eax];
+	__asm        mov    polar.phi, eax;
+	__asm        mov    eax, psi;
+	__asm        mov    eax, [eax];
+	__asm        mov    polar.psi, eax;
+	__asm        mov    polar.tau, 0;
 // LINE 571:
-	asm( 
-"	      00563440    mov eax,incPhi"
-"	      00563443    mov inc.phi,eax"
-"	      00563446    mov eax,incPsi"
-"	      00563449    mov inc.psi,eax"
-"	      0056344c    mov inc.tau,0"
-);
+	__asm        mov    eax, incPhi;
+	__asm        mov    inc.phi, eax;
+	__asm        mov    eax, incPsi;
+	__asm        mov    inc.psi, eax;
+	__asm        mov    inc.tau, 0;
 // LINE 572:
-	asm( 
-"	      00563453    mov eax,pivotPhi"
-"	      00563456    mov pivot.phi,eax"
-"	      00563459    mov eax,pivotPsi"
-"	      0056345c    mov pivot.psi,eax"
-"	      0056345f    mov pivot.tau,0"
-);
+	__asm        mov    eax, pivotPhi;
+	__asm        mov    pivot.phi, eax;
+	__asm        mov    eax, pivotPsi;
+	__asm        mov    pivot.psi, eax;
+	__asm        mov    pivot.tau, 0;
 // LINE 573:
-	asm( 
-"	      00563466    mov polar.trq,0"
-"	      0056346c    mov ax,polar.trq"
-"	      00563470    mov polar.lng,ax"
-"	      00563474    mov ax,polar.lng"
-"	      00563478    mov polar.lat,ax"
-"	      0056347c    mov ax,polar.lat"
-"	      00563480    mov pivot.trq,ax"
-"	      00563484    mov ax,pivot.trq"
-"	      00563488    mov pivot.lng,ax"
-"	      0056348c    mov ax,pivot.lng"
-"	      00563490    mov pivot.lat,ax"
-"	      00563494    mov ax,pivot.lat"
-"	      00563498    mov inc.trq,ax"
-"	      0056349c    mov ax,inc.trq"
-"	      005634a0    mov inc.lng,ax"
-"	      005634a4    mov ax,inc.lng"
-"	      005634a8    mov inc.lat,ax"
-);
+	__asm        mov    polar.trq, 0;
+	__asm        mov    ax, polar.trq;
+	__asm        mov    polar.lng, ax;
+	__asm        mov    ax, polar.lng;
+	__asm        mov    polar.lat, ax;
+	__asm        mov    ax, polar.lat;
+	__asm        mov    pivot.trq, ax;
+	__asm        mov    ax, pivot.trq;
+	__asm        mov    pivot.lng, ax;
+	__asm        mov    ax, pivot.lng;
+	__asm        mov    pivot.lat, ax;
+	__asm        mov    ax, pivot.lat;
+	__asm        mov    inc.trq, ax;
+	__asm        mov    ax, inc.trq;
+	__asm        mov    inc.lng, ax;
+	__asm        mov    ax, inc.lng;
+	__asm        mov    inc.lat, ax;
 // LINE 575:
-	asm( 
-"	      005634ac    test reinterpret_cast<uint32_t>(polarAngles),0FFFFh"
-"	      005634b3    je near ptr 005634D2h"
-);
+	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
+	__asm        je     near ptr 0x005634D2;
 // LINE 576:
-	asm( 
-"	      005634b9    lea eax,polar.phi"
-"	      005634bc    push eax"
-"	      005634bd    lea eax,pivot.phi"
-"	      005634c0    push eax"
-"	      005634c1    lea eax,inc.phi"
-"	      005634c4    push eax"
-"	      005634c5    call 005634FCh"
-"	      005634ca    add esp,0Ch"
-);
+	__asm        lea    eax, polar.phi;
+	__asm        push   eax;
+	__asm        lea    eax, pivot.phi;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x005634FC;
+	__asm        add    esp, 0xC;
 // LINE 577:
-	asm( 
-"	      005634cd    jmp near ptr 005634E2h"
-);
+	__asm        jmp    near ptr 0x005634E2;
 // LINE 578:
-	asm( 
-"	      005634d2    lea eax,polar.phi"
-"	      005634d5    push eax"
-"	      005634d6    lea eax,inc.phi"
-"	      005634d9    push eax"
-"	      005634da    call 00562B82h"
-"	      005634df    add esp,8"
-);
+	__asm        lea    eax, polar.phi;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x00562B82;
+	__asm        add    esp, 8;
 // LINE 579:
-	asm( 
-"	      005634e2    mov eax,phi"
-"	      005634e5    mov ecx,polar.phi"
-"	      005634e8    mov [eax],ecx"
-"	      005634ea    mov eax,psi"
-"	      005634ed    mov ecx,polar.psi"
-"	      005634f0    mov [eax],ecx"
-);
+	__asm        mov    eax, phi;
+	__asm        mov    ecx, polar.phi;
+	__asm        mov    [eax], ecx;
+	__asm        mov    eax, psi;
+	__asm        mov    ecx, polar.psi;
+	__asm        mov    [eax], ecx;
 // LINE 580:
-	asm( 
-"	      005634f2    jmp near ptr 005634F7h"
-"	      005634f7    pop edi"
-"	      005634f8    pop esi"
-"	      005634f9    pop ebx"
-"	      005634fa    leave"
-"	      005634fb    ret"
-);
+	__asm        jmp    near ptr 0x005634F7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005634fc
 void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar* partPolar) {
 // LINE 583:
-	asm( 
-"	      005634fc    push ebp"
-"	      005634fd    mov ebp,esp"
-"	      005634ff    sub esp,6Ch"
-"	      00563502    push ebx"
-"	      00563503    push esi"
-"	      00563504    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x6C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 584:
-	asm( 
-"	      00563505    mov eax,inc"
-"	      00563508    movsx eax,word ptr [eax+12h]"
-"	      0056350c    test eax,eax"
-"	      0056350e    je near ptr 00563546h"
-"	      00563514    mov eax,inc"
-"	      00563517    fld dword ptr [eax]"
-"	      00563519    fcomp dword ptr ds:[593750h]"
-"	      0056351f    fnstsw ax"
-"	      00563521    test ah,40h"
-"	      00563524    je near ptr 00563546h"
-"	      0056352a    push 8C085h"
-"	      0056352f    push 5BEE1Ch"
-"	      00563534    push 248h"
-"	      00563539    push 5BEE44h"
-"	      0056353e    call 00554F30h"
-"	      00563543    add esp,10h"
-);
+	__asm        mov    eax, inc;
+	__asm        movsx  eax, word ptr [eax+0x12];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00563546;
+	__asm        mov    eax, inc;
+	__asm        fld    dword ptr [eax];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x00563546;
+	__asm        push   0x8C085;
+	__asm        push   0x5BEE1C;
+	__asm        push   0x248;
+	__asm        push   0x5BEE44;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 585:
-	asm( 
-"	      00563546    mov eax,inc"
-"	      00563549    movsx eax,word ptr [eax+10h]"
-"	      0056354d    test eax,eax"
-"	      0056354f    je near ptr 00563588h"
-"	      00563555    mov eax,inc"
-"	      00563558    fld dword ptr [eax+4]"
-"	      0056355b    fcomp dword ptr ds:[593750h]"
-"	      00563561    fnstsw ax"
-"	      00563563    test ah,40h"
-"	      00563566    je near ptr 00563588h"
-"	      0056356c    push 8C085h"
-"	      00563571    push 5BEE64h"
-"	      00563576    push 249h"
-"	      0056357b    push 5BEE8Ch"
-"	      00563580    call 00554F30h"
-"	      00563585    add esp,10h"
-);
+	__asm        mov    eax, inc;
+	__asm        movsx  eax, word ptr [eax+0x10];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00563588;
+	__asm        mov    eax, inc;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x00563588;
+	__asm        push   0x8C085;
+	__asm        push   0x5BEE64;
+	__asm        push   0x249;
+	__asm        push   0x5BEE8C;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 586:
-	asm( 
-"	      00563588    mov eax,inc"
-"	      0056358b    movsx eax,word ptr [eax+14h]"
-"	      0056358f    test eax,eax"
-"	      00563591    je near ptr 005635CAh"
-"	      00563597    mov eax,inc"
-"	      0056359a    fld dword ptr [eax+8]"
-"	      0056359d    fcomp dword ptr ds:[593750h]"
-"	      005635a3    fnstsw ax"
-"	      005635a5    test ah,40h"
-"	      005635a8    je near ptr 005635CAh"
-"	      005635ae    push 8C085h"
-"	      005635b3    push 5BEEACh"
-"	      005635b8    push 24Ah"
-"	      005635bd    push 5BEED4h"
-"	      005635c2    call 00554F30h"
-"	      005635c7    add esp,10h"
-);
+	__asm        mov    eax, inc;
+	__asm        movsx  eax, word ptr [eax+0x14];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x005635CA;
+	__asm        mov    eax, inc;
+	__asm        fld    dword ptr [eax+8];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x005635CA;
+	__asm        push   0x8C085;
+	__asm        push   0x5BEEAC;
+	__asm        push   0x24A;
+	__asm        push   0x5BEED4;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 588:
-	asm( 
-"	      005635ca    cmp parentPolar,0"
-"	      005635ce    jne near ptr 005635E8h"
-);
+	__asm        cmp    parentPolar, 0;
+	__asm        jne    near ptr 0x005635E8;
 // LINE 589:
-	asm( 
-"	      005635d4    mov eax,partPolar"
-"	      005635d7    fld dword ptr [eax]"
-"	      005635d9    mov eax,inc"
-"	      005635dc    fadd dword ptr [eax]"
-"	      005635de    mov eax,partPolar"
-"	      005635e1    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax];
+	__asm        mov    eax, inc;
+	__asm        fadd   dword ptr [eax];
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax];
 // LINE 590:
-	asm( 
-"	      005635e3    jmp near ptr 005636ADh"
-);
+	__asm        jmp    near ptr 0x005636AD;
 // LINE 593:
 // Block start:
 	float y2;
@@ -2241,354 +1815,294 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	float psiToZero;
 	float tmprad;
 	float z2;
-	asm( 
-"	      005635e8    lea edi,tmpPolar.phi"
-"	      005635eb    mov esi,partPolar"
-"	      005635ee    mov ecx,6"
-"	      005635f3    rep movsd"
-);
+	__asm        lea    edi, tmpPolar.phi;
+	__asm        mov    esi, partPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 595:
-	asm( 
-"	      005635f5    mov eax,parentPolar"
-"	      005635f8    mov eax,[eax+4]"
-"	      005635fb    mov psiToZero,eax"
-);
+	__asm        mov    eax, parentPolar;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    psiToZero, eax;
 // LINE 596:
-	asm( 
-"	      005635fe    fld tmpPolar.psi"
-"	      00563601    fsub psiToZero"
-"	      00563604    fstp tmpPolar.psi"
-);
+	__asm        fld    tmpPolar.psi;
+	__asm        fsub   psiToZero;
+	__asm        fstp   tmpPolar.psi;
 // LINE 600:
-	asm( 
-"	      00563607    lea eax,y"
-"	      0056360a    push eax"
-"	      0056360b    lea eax,z"
-"	      0056360e    push eax"
-"	      0056360f    lea eax,x"
-"	      00563612    push eax"
-"	      00563613    mov eax,tmpPolar.psi"
-"	      00563616    push eax"
-"	      00563617    mov eax,tmpPolar.phi"
-"	      0056361a    push eax"
-"	      0056361b    push 41200000h"
-"	      00563620    call 00563A42h"
-"	      00563625    add esp,18h"
-);
+	__asm        lea    eax, y;
+	__asm        push   eax;
+	__asm        lea    eax, z;
+	__asm        push   eax;
+	__asm        lea    eax, x;
+	__asm        push   eax;
+	__asm        mov    eax, tmpPolar.psi;
+	__asm        push   eax;
+	__asm        mov    eax, tmpPolar.phi;
+	__asm        push   eax;
+	__asm        push   0x41200000;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 603:
-	asm( 
-"	      00563628    lea eax,tmprad"
-"	      0056362b    push eax"
-"	      0056362c    lea eax,tmpPolar2.psi"
-"	      0056362f    push eax"
-"	      00563630    lea eax,tmpPolar2.phi"
-"	      00563633    push eax"
-"	      00563634    mov eax,z"
-"	      00563637    push eax"
-"	      00563638    mov eax,y"
-"	      0056363b    push eax"
-"	      0056363c    mov eax,x"
-"	      0056363f    push eax"
-"	      00563640    call 00563C20h"
-"	      00563645    add esp,18h"
-);
+	__asm        lea    eax, tmprad;
+	__asm        push   eax;
+	__asm        lea    eax, tmpPolar2.psi;
+	__asm        push   eax;
+	__asm        lea    eax, tmpPolar2.phi;
+	__asm        push   eax;
+	__asm        mov    eax, z;
+	__asm        push   eax;
+	__asm        mov    eax, y;
+	__asm        push   eax;
+	__asm        mov    eax, x;
+	__asm        push   eax;
+	__asm        call   0x00563C20;
+	__asm        add    esp, 0x18;
 // LINE 605:
-	asm( 
-"	      00563648    fld tmpPolar2.psi"
-"	      0056364b    mov eax,inc"
-"	      0056364e    fsub dword ptr [eax]"
-"	      00563650    fstp tmpPolar2.psi"
-);
+	__asm        fld    tmpPolar2.psi;
+	__asm        mov    eax, inc;
+	__asm        fsub   dword ptr [eax];
+	__asm        fstp   tmpPolar2.psi;
 // LINE 607:
-	asm( 
-"	      00563653    lea eax,y2"
-"	      00563656    push eax"
-"	      00563657    lea eax,z2"
-"	      0056365a    push eax"
-"	      0056365b    lea eax,x2"
-"	      0056365e    push eax"
-"	      0056365f    mov eax,tmpPolar2.psi"
-"	      00563662    push eax"
-"	      00563663    mov eax,tmpPolar2.phi"
-"	      00563666    push eax"
-"	      00563667    mov eax,tmprad"
-"	      0056366a    push eax"
-"	      0056366b    call 00563A42h"
-"	      00563670    add esp,18h"
-);
+	__asm        lea    eax, y2;
+	__asm        push   eax;
+	__asm        lea    eax, z2;
+	__asm        push   eax;
+	__asm        lea    eax, x2;
+	__asm        push   eax;
+	__asm        mov    eax, tmpPolar2.psi;
+	__asm        push   eax;
+	__asm        mov    eax, tmpPolar2.phi;
+	__asm        push   eax;
+	__asm        mov    eax, tmprad;
+	__asm        push   eax;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 610:
-	asm( 
-"	      00563673    lea eax,tmprad2"
-"	      00563676    push eax"
-"	      00563677    lea eax,resPolar.psi"
-"	      0056367a    push eax"
-"	      0056367b    lea eax,resPolar.phi"
-"	      0056367e    push eax"
-"	      0056367f    mov eax,z2"
-"	      00563682    push eax"
-"	      00563683    mov eax,y2"
-"	      00563686    push eax"
-"	      00563687    mov eax,x2"
-"	      0056368a    push eax"
-"	      0056368b    call 00563C20h"
-"	      00563690    add esp,18h"
-);
+	__asm        lea    eax, tmprad2;
+	__asm        push   eax;
+	__asm        lea    eax, resPolar.psi;
+	__asm        push   eax;
+	__asm        lea    eax, resPolar.phi;
+	__asm        push   eax;
+	__asm        mov    eax, z2;
+	__asm        push   eax;
+	__asm        mov    eax, y2;
+	__asm        push   eax;
+	__asm        mov    eax, x2;
+	__asm        push   eax;
+	__asm        call   0x00563C20;
+	__asm        add    esp, 0x18;
 // LINE 612:
-	asm( 
-"	      00563693    fld resPolar.psi"
-"	      00563696    fadd psiToZero"
-"	      00563699    fstp resPolar.psi"
-);
+	__asm        fld    resPolar.psi;
+	__asm        fadd   psiToZero;
+	__asm        fstp   resPolar.psi;
 // LINE 613:
-	asm( 
-"	      0056369c    mov eax,partPolar"
-"	      0056369f    mov ecx,resPolar.phi"
-"	      005636a2    mov [eax],ecx"
-);
+	__asm        mov    eax, partPolar;
+	__asm        mov    ecx, resPolar.phi;
+	__asm        mov    [eax], ecx;
 // LINE 614:
-	asm( 
-"	      005636a4    mov eax,partPolar"
-"	      005636a7    mov ecx,resPolar.psi"
-"	      005636aa    mov [eax+4],ecx"
-);
+	__asm        mov    eax, partPolar;
+	__asm        mov    ecx, resPolar.psi;
+	__asm        mov    [eax+4], ecx;
 // LINE 616:
 // Block end:
-	asm( 
-"	      005636ad    mov eax,partPolar"
-"	      005636b0    fld dword ptr [eax+4]"
-"	      005636b3    mov eax,inc"
-"	      005636b6    fadd dword ptr [eax+4]"
-"	      005636b9    mov eax,partPolar"
-"	      005636bc    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, partPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        mov    eax, inc;
+	__asm        fadd   dword ptr [eax+4];
+	__asm        mov    eax, partPolar;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 618:
-	asm( 
-"	      005636bf    mov eax,partPolar"
-"	      005636c2    push eax"
-"	      005636c3    call 00562C41h"
-"	      005636c8    add esp,4"
-);
+	__asm        mov    eax, partPolar;
+	__asm        push   eax;
+	__asm        call   0x00562C41;
+	__asm        add    esp, 4;
 // LINE 619:
-	asm( 
-"	      005636cb    jmp near ptr 005636D0h"
-"	      005636d0    pop edi"
-"	      005636d1    pop esi"
-"	      005636d2    pop ebx"
-"	      005636d3    leave"
-"	      005636d4    ret"
-);
+	__asm        jmp    near ptr 0x005636D0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005636d5
 void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
 // LINE 623:
-	asm( 
-"	      005636d5    push ebp"
-"	      005636d6    mov ebp,esp"
-"	      005636d8    push ebx"
-"	      005636d9    push esi"
-"	      005636da    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 624:
-	asm( 
-"	      005636db    mov eax,polar"
-"	      005636de    movsx eax,word ptr [eax+12h]"
-"	      005636e2    test eax,eax"
-"	      005636e4    jne near ptr 00563736h"
-"	      005636ea    mov eax,polar"
-"	      005636ed    movsx eax,word ptr [eax+10h]"
-"	      005636f1    test eax,eax"
-"	      005636f3    jne near ptr 00563736h"
-);
+	__asm        mov    eax, polar;
+	__asm        movsx  eax, word ptr [eax+0x12];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x00563736;
+	__asm        mov    eax, polar;
+	__asm        movsx  eax, word ptr [eax+0x10];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x00563736;
 // LINE 625:
-	asm( 
-"	      005636f9    mov eax,polar"
-"	      005636fc    add eax,14h"
-"	      005636ff    push eax"
-"	      00563700    mov eax,polar"
-"	      00563703    add eax,10h"
-"	      00563706    push eax"
-"	      00563707    mov eax,polar"
-"	      0056370a    add eax,12h"
-"	      0056370d    push eax"
-"	      0056370e    mov eax,reinterpret_cast<uint32_t>(trqincs)"
-"	      00563711    push eax"
-"	      00563712    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
-"	      00563715    push eax"
-"	      00563716    mov eax,reinterpret_cast<uint32_t>(latincs)"
-"	      00563719    push eax"
-"	      0056371a    mov eax,polar"
-"	      0056371d    mov eax,[eax+8]"
-"	      00563720    push eax"
-"	      00563721    mov eax,polar"
-"	      00563724    mov eax,[eax+4]"
-"	      00563727    push eax"
-"	      00563728    mov eax,polar"
-"	      0056372b    mov eax,[eax]"
-"	      0056372d    push eax"
-"	      0056372e    call 00563859h"
-"	      00563733    add esp,24h"
-);
+	__asm        mov    eax, polar;
+	__asm        add    eax, 0x14;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        add    eax, 0x10;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        add    eax, 0x12;
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(trqincs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latincs);
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    eax, [eax];
+	__asm        push   eax;
+	__asm        call   0x00563859;
+	__asm        add    esp, 0x24;
 // LINE 627:
-	asm( 
-"	      00563736    mov eax,polar"
-"	      00563739    push eax"
-"	      0056373a    call 00562C41h"
-"	      0056373f    add esp,4"
-);
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        call   0x00562C41;
+	__asm        add    esp, 4;
 // LINE 628:
-	asm( 
-"	      00563742    jmp near ptr 00563747h"
-"	      00563747    pop edi"
-"	      00563748    pop esi"
-"	      00563749    pop ebx"
-"	      0056374a    leave"
-"	      0056374b    ret"
-);
+	__asm        jmp    near ptr 0x00563747;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056374c
 void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
 // LINE 631:
-	asm( 
-"	      0056374c    push ebp"
-"	      0056374d    mov ebp,esp"
-"	      0056374f    push ebx"
-"	      00563750    push esi"
-"	      00563751    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 632:
-	asm( 
-"	      00563752    mov eax,polar"
-"	      00563755    fld dword ptr [eax]"
-"	      00563757    fcomp dword ptr ds:[593750h]"
-"	      0056375d    fnstsw ax"
-"	      0056375f    test ah,40h"
-"	      00563762    je near ptr 005637BDh"
-"	      00563768    mov eax,polar"
-"	      0056376b    fld dword ptr [eax+4]"
-"	      0056376e    fcomp dword ptr ds:[593750h]"
-"	      00563774    fnstsw ax"
-"	      00563776    test ah,40h"
-"	      00563779    je near ptr 005637BDh"
-);
+	__asm        mov    eax, polar;
+	__asm        fld    dword ptr [eax];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x005637BD;
+	__asm        mov    eax, polar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x005637BD;
 // LINE 633:
-	asm( 
-"	      0056377f    mov eax,polar"
-"	      00563782    add eax,8"
-"	      00563785    push eax"
-"	      00563786    mov eax,polar"
-"	      00563789    add eax,4"
-"	      0056378c    push eax"
-"	      0056378d    mov eax,polar"
-"	      00563790    push eax"
-"	      00563791    mov eax,reinterpret_cast<uint32_t>(trqincs)"
-"	      00563794    push eax"
-"	      00563795    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
-"	      00563798    push eax"
-"	      00563799    mov eax,reinterpret_cast<uint32_t>(latincs)"
-"	      0056379c    push eax"
-"	      0056379d    mov eax,polar"
-"	      005637a0    mov ax,[eax+14h]"
-"	      005637a4    push eax"
-"	      005637a5    mov eax,polar"
-"	      005637a8    mov ax,[eax+10h]"
-"	      005637ac    push eax"
-"	      005637ad    mov eax,polar"
-"	      005637b0    mov ax,[eax+12h]"
-"	      005637b4    push eax"
-"	      005637b5    call 005639D2h"
-"	      005637ba    add esp,24h"
-);
+	__asm        mov    eax, polar;
+	__asm        add    eax, 8;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        add    eax, 4;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(trqincs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latincs);
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x14];
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x10];
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x12];
+	__asm        push   eax;
+	__asm        call   0x005639D2;
+	__asm        add    esp, 0x24;
 // LINE 635:
-	asm( 
-"	      005637bd    mov eax,polar"
-"	      005637c0    push eax"
-"	      005637c1    call 00562C41h"
-"	      005637c6    add esp,4"
-);
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        call   0x00562C41;
+	__asm        add    esp, 4;
 // LINE 636:
-	asm( 
-"	      005637c9    jmp near ptr 005637CEh"
-"	      005637ce    pop edi"
-"	      005637cf    pop esi"
-"	      005637d0    pop ebx"
-"	      005637d1    leave"
-"	      005637d2    ret"
-);
+	__asm        jmp    near ptr 0x005637CE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005637d3
 void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs) {
 // LINE 639:
-	asm( 
-"	      005637d3    push ebp"
-"	      005637d4    mov ebp,esp"
-"	      005637d6    push ebx"
-"	      005637d7    push esi"
-"	      005637d8    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 640:
-	asm( 
-"	      005637d9    mov eax,polar"
-"	      005637dc    mov word ptr [eax+14h],0"
-"	      005637e2    mov eax,polar"
-"	      005637e5    mov ax,[eax+14h]"
-"	      005637e9    mov ecx,polar"
-"	      005637ec    mov [ecx+10h],ax"
-"	      005637f0    mov eax,polar"
-"	      005637f3    mov ax,[eax+10h]"
-"	      005637f7    mov ecx,polar"
-"	      005637fa    mov [ecx+12h],ax"
-);
+	__asm        mov    eax, polar;
+	__asm        mov    word ptr [eax+0x14], 0;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x14];
+	__asm        mov    ecx, polar;
+	__asm        mov    [ecx+0x10], ax;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x10];
+	__asm        mov    ecx, polar;
+	__asm        mov    [ecx+0x12], ax;
 // LINE 641:
-	asm( 
-"	      005637fe    mov eax,reinterpret_cast<uint32_t>(trqIncs)"
-"	      00563801    push eax"
-"	      00563802    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
-"	      00563805    push eax"
-"	      00563806    mov eax,reinterpret_cast<uint32_t>(latIncs)"
-"	      00563809    push eax"
-"	      0056380a    mov eax,polar"
-"	      0056380d    push eax"
-"	      0056380e    call 005636D5h"
-"	      00563813    add esp,10h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(trqIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latIncs);
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        call   0x005636D5;
+	__asm        add    esp, 0x10;
 // LINE 642:
-	asm( 
-"	      00563816    mov eax,polar"
-"	      00563819    mov dword ptr [eax+8],0"
-"	      00563820    mov eax,polar"
-"	      00563823    mov ecx,polar"
-"	      00563826    mov eax,[eax+8]"
-"	      00563829    mov [ecx+4],eax"
-"	      0056382c    mov eax,polar"
-"	      0056382f    mov ecx,polar"
-"	      00563832    mov eax,[eax+4]"
-"	      00563835    mov [ecx],eax"
-);
+	__asm        mov    eax, polar;
+	__asm        mov    dword ptr [eax+8], 0;
+	__asm        mov    eax, polar;
+	__asm        mov    ecx, polar;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, polar;
+	__asm        mov    ecx, polar;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ecx], eax;
 // LINE 643:
-	asm( 
-"	      00563837    mov eax,reinterpret_cast<uint32_t>(trqIncs)"
-"	      0056383a    push eax"
-"	      0056383b    mov eax,reinterpret_cast<uint32_t>(lngIncs)"
-"	      0056383e    push eax"
-"	      0056383f    mov eax,reinterpret_cast<uint32_t>(latIncs)"
-"	      00563842    push eax"
-"	      00563843    mov eax,polar"
-"	      00563846    push eax"
-"	      00563847    call 0056374Ch"
-"	      0056384c    add esp,10h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(trqIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(lngIncs);
+	__asm        push   eax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(latIncs);
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        call   0x0056374C;
+	__asm        add    esp, 0x10;
 // LINE 644:
-	asm( 
-"	      0056384f    jmp near ptr 00563854h"
-"	      00563854    pop edi"
-"	      00563855    pop esi"
-"	      00563856    pop ebx"
-"	      00563857    leave"
-"	      00563858    ret"
-);
+	__asm        jmp    near ptr 0x00563854;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563859
@@ -2601,240 +2115,192 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	float dlat;
 
 // LINE 649:
-	asm( 
-"	      00563859    push ebp"
-"	      0056385a    mov ebp,esp"
-"	      0056385c    sub esp,28h"
-"	      0056385f    push ebx"
-"	      00563860    push esi"
-"	      00563861    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x28;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 650:
-	asm( 
-"	      00563862    movsx eax,latincs"
-"	      00563866    mov [ebp-20h],eax"
-"	      00563869    fild dword ptr [ebp-20h]"
-"	      0056386c    fdiv dword ptr ds:[593760h]"
-"	      00563872    fstp latsPerRadian"
-);
+	__asm        movsx  eax, latincs;
+	__asm        mov    [ebp-0x20], eax;
+	__asm        fild   dword ptr [ebp-0x20];
+	__asm        fdiv   dword ptr ds:[0x593760];
+	__asm        fstp   latsPerRadian;
 // LINE 651:
-	asm( 
-"	      00563875    movsx eax,lngincs"
-"	      00563879    mov [ebp-24h],eax"
-"	      0056387c    fild dword ptr [ebp-24h]"
-"	      0056387f    fdiv dword ptr ds:[593760h]"
-"	      00563885    fstp lngsPerRadian"
-);
+	__asm        movsx  eax, lngincs;
+	__asm        mov    [ebp-0x24], eax;
+	__asm        fild   dword ptr [ebp-0x24];
+	__asm        fdiv   dword ptr ds:[0x593760];
+	__asm        fstp   lngsPerRadian;
 // LINE 652:
-	asm( 
-"	      00563888    movsx eax,trqincs"
-"	      0056388c    mov [ebp-28h],eax"
-"	      0056388f    fild dword ptr [ebp-28h]"
-"	      00563892    fdiv dword ptr ds:[593760h]"
-"	      00563898    fstp trqsPerRadian"
-);
+	__asm        movsx  eax, trqincs;
+	__asm        mov    [ebp-0x28], eax;
+	__asm        fild   dword ptr [ebp-0x28];
+	__asm        fdiv   dword ptr ds:[0x593760];
+	__asm        fstp   trqsPerRadian;
 // LINE 655:
-	asm( 
-"	      0056389b    lea eax,phi"
-"	      0056389e    push eax"
-"	      0056389f    call 00562BDBh"
-"	      005638a4    add esp,4"
-);
+	__asm        lea    eax, phi;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 656:
-	asm( 
-"	      005638a7    lea eax,psi"
-"	      005638aa    push eax"
-"	      005638ab    call 00562BDBh"
-"	      005638b0    add esp,4"
-);
+	__asm        lea    eax, psi;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 657:
-	asm( 
-"	      005638b3    lea eax,tau"
-"	      005638b6    push eax"
-"	      005638b7    call 00562BDBh"
-"	      005638bc    add esp,4"
-);
+	__asm        lea    eax, tau;
+	__asm        push   eax;
+	__asm        call   0x00562BDB;
+	__asm        add    esp, 4;
 // LINE 658:
-	asm( 
-"	      005638bf    fld phi"
-"	      005638c2    fmul latsPerRadian"
-"	      005638c5    fstp dlat"
-);
+	__asm        fld    phi;
+	__asm        fmul   latsPerRadian;
+	__asm        fstp   dlat;
 // LINE 659:
-	asm( 
-"	      005638c8    fld psi"
-"	      005638cb    fmul lngsPerRadian"
-"	      005638ce    fstp dlng"
-);
+	__asm        fld    psi;
+	__asm        fmul   lngsPerRadian;
+	__asm        fstp   dlng;
 // LINE 660:
-	asm( 
-"	      005638d1    fld tau"
-"	      005638d4    fmul trqsPerRadian"
-"	      005638d7    fstp dtrq"
-);
+	__asm        fld    tau;
+	__asm        fmul   trqsPerRadian;
+	__asm        fstp   dtrq;
 // LINE 662:
-	asm( 
-"	      005638da    mov eax,dlat"
-"	      005638dd    push eax"
-"	      005638de    call 005662C1h"
-"	      005638e3    add esp,4"
-"	      005638e6    mov ecx,lat"
-"	      005638e9    mov [ecx],ax"
-);
+	__asm        mov    eax, dlat;
+	__asm        push   eax;
+	__asm        call   0x005662C1;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, lat;
+	__asm        mov    [ecx], ax;
 // LINE 663:
-	asm( 
-"	      005638ec    mov eax,dlng"
-"	      005638ef    push eax"
-"	      005638f0    call 005662C1h"
-"	      005638f5    add esp,4"
-"	      005638f8    mov ecx,lng"
-"	      005638fb    mov [ecx],ax"
-);
+	__asm        mov    eax, dlng;
+	__asm        push   eax;
+	__asm        call   0x005662C1;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, lng;
+	__asm        mov    [ecx], ax;
 // LINE 664:
-	asm( 
-"	      005638fe    mov eax,dtrq"
-"	      00563901    push eax"
-"	      00563902    call 005662C1h"
-"	      00563907    add esp,4"
-"	      0056390a    mov ecx,trq"
-"	      0056390d    mov [ecx],ax"
-);
+	__asm        mov    eax, dtrq;
+	__asm        push   eax;
+	__asm        call   0x005662C1;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, trq;
+	__asm        mov    [ecx], ax;
 // LINE 665:
-	asm( 
-"	      00563910    mov eax,lat"
-"	      00563913    movsx eax,word ptr [eax]"
-"	      00563916    movsx ecx,latincs"
-"	      0056391a    cmp eax,ecx"
-"	      0056391c    jg near ptr 00563970h"
-"	      00563922    mov eax,lng"
-"	      00563925    movsx eax,word ptr [eax]"
-"	      00563928    movsx ecx,lngincs"
-"	      0056392c    cmp eax,ecx"
-"	      0056392e    jg near ptr 00563970h"
-"	      00563934    mov eax,trq"
-"	      00563937    movsx eax,word ptr [eax]"
-"	      0056393a    movsx ecx,trqincs"
-"	      0056393e    cmp eax,ecx"
-"	      00563940    jg near ptr 00563970h"
-"	      00563946    mov eax,lat"
-"	      00563949    movsx eax,word ptr [eax]"
-"	      0056394c    test eax,eax"
-"	      0056394e    jl near ptr 00563970h"
-"	      00563954    mov eax,lng"
-"	      00563957    movsx eax,word ptr [eax]"
-"	      0056395a    test eax,eax"
-"	      0056395c    jl near ptr 00563970h"
-"	      00563962    mov eax,trq"
-"	      00563965    movsx eax,word ptr [eax]"
-"	      00563968    test eax,eax"
-"	      0056396a    jge near ptr 0056397Ah"
-);
+	__asm        mov    eax, lat;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, latincs;
+	__asm        cmp    eax, ecx;
+	__asm        jg     near ptr 0x00563970;
+	__asm        mov    eax, lng;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, lngincs;
+	__asm        cmp    eax, ecx;
+	__asm        jg     near ptr 0x00563970;
+	__asm        mov    eax, trq;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, trqincs;
+	__asm        cmp    eax, ecx;
+	__asm        jg     near ptr 0x00563970;
+	__asm        mov    eax, lat;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        test   eax, eax;
+	__asm        jl     near ptr 0x00563970;
+	__asm        mov    eax, lng;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        test   eax, eax;
+	__asm        jl     near ptr 0x00563970;
+	__asm        mov    eax, trq;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        test   eax, eax;
+	__asm        jge    near ptr 0x0056397A;
 // LINE 666:
 // Block start:
 	short trouble;
-	asm( 
-"	      00563970    mov eax,trq"
-"	      00563973    mov ax,[eax]"
-"	      00563976    mov trouble,ax"
-);
+	__asm        mov    eax, trq;
+	__asm        mov    ax, [eax];
+	__asm        mov    trouble, ax;
 // LINE 667:
 // Block end:
-	asm( 
-"	      0056397a    mov eax,lat"
-"	      0056397d    movsx eax,word ptr [eax]"
-"	      00563980    movsx ecx,latincs"
-"	      00563984    cmp eax,ecx"
-"	      00563986    jne near ptr 00563994h"
-"	      0056398c    mov eax,lat"
-"	      0056398f    mov word ptr [eax],0"
-);
+	__asm        mov    eax, lat;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, latincs;
+	__asm        cmp    eax, ecx;
+	__asm        jne    near ptr 0x00563994;
+	__asm        mov    eax, lat;
+	__asm        mov    word ptr [eax], 0;
 // LINE 668:
-	asm( 
-"	      00563994    mov eax,lng"
-"	      00563997    movsx eax,word ptr [eax]"
-"	      0056399a    movsx ecx,lngincs"
-"	      0056399e    cmp eax,ecx"
-"	      005639a0    jne near ptr 005639AEh"
-"	      005639a6    mov eax,lng"
-"	      005639a9    mov word ptr [eax],0"
-);
+	__asm        mov    eax, lng;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, lngincs;
+	__asm        cmp    eax, ecx;
+	__asm        jne    near ptr 0x005639AE;
+	__asm        mov    eax, lng;
+	__asm        mov    word ptr [eax], 0;
 // LINE 669:
-	asm( 
-"	      005639ae    mov eax,trq"
-"	      005639b1    movsx eax,word ptr [eax]"
-"	      005639b4    movsx ecx,trqincs"
-"	      005639b8    cmp eax,ecx"
-"	      005639ba    jne near ptr 005639C8h"
-"	      005639c0    mov eax,trq"
-"	      005639c3    mov word ptr [eax],0"
-);
+	__asm        mov    eax, trq;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, trqincs;
+	__asm        cmp    eax, ecx;
+	__asm        jne    near ptr 0x005639C8;
+	__asm        mov    eax, trq;
+	__asm        mov    word ptr [eax], 0;
 // LINE 670:
-	asm( 
-"	      005639c8    jmp near ptr 005639CDh"
-"	      005639cd    pop edi"
-"	      005639ce    pop esi"
-"	      005639cf    pop ebx"
-"	      005639d0    leave"
-"	      005639d1    ret"
-);
+	__asm        jmp    near ptr 0x005639CD;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005639d2
 void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngincs, short trqincs, float * phi, float * psi, float * tau) {
 // LINE 673:
-	asm( 
-"	      005639d2    push ebp"
-"	      005639d3    mov ebp,esp"
-"	      005639d5    sub esp,18h"
-"	      005639d8    push ebx"
-"	      005639d9    push esi"
-"	      005639da    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x18;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 674:
-	asm( 
-"	      005639db    movsx eax,lat"
-"	      005639df    mov [ebp-4],eax"
-"	      005639e2    fild dword ptr [ebp-4]"
-"	      005639e5    fmul qword ptr ds:[593758h]"
-"	      005639eb    movsx eax,latincs"
-"	      005639ef    mov [ebp-8],eax"
-"	      005639f2    fidiv dword ptr [ebp-8]"
-"	      005639f5    mov eax,phi"
-"	      005639f8    fstp dword ptr [eax]"
-);
+	__asm        movsx  eax, lat;
+	__asm        mov    [ebp-4], eax;
+	__asm        fild   dword ptr [ebp-4];
+	__asm        fmul   qword ptr ds:[0x593758];
+	__asm        movsx  eax, latincs;
+	__asm        mov    [ebp-8], eax;
+	__asm        fidiv  dword ptr [ebp-8];
+	__asm        mov    eax, phi;
+	__asm        fstp   dword ptr [eax];
 // LINE 675:
-	asm( 
-"	      005639fa    movsx eax,lng"
-"	      005639fe    mov [ebp-0Ch],eax"
-"	      00563a01    fild dword ptr [ebp-0Ch]"
-"	      00563a04    fmul qword ptr ds:[593758h]"
-"	      00563a0a    movsx eax,lngincs"
-"	      00563a0e    mov [ebp-10h],eax"
-"	      00563a11    fidiv dword ptr [ebp-10h]"
-"	      00563a14    mov eax,psi"
-"	      00563a17    fstp dword ptr [eax]"
-);
+	__asm        movsx  eax, lng;
+	__asm        mov    [ebp-0xC], eax;
+	__asm        fild   dword ptr [ebp-0xC];
+	__asm        fmul   qword ptr ds:[0x593758];
+	__asm        movsx  eax, lngincs;
+	__asm        mov    [ebp-0x10], eax;
+	__asm        fidiv  dword ptr [ebp-0x10];
+	__asm        mov    eax, psi;
+	__asm        fstp   dword ptr [eax];
 // LINE 676:
-	asm( 
-"	      00563a19    movsx eax,trq"
-"	      00563a1d    mov [ebp-14h],eax"
-"	      00563a20    fild dword ptr [ebp-14h]"
-"	      00563a23    fmul qword ptr ds:[593758h]"
-"	      00563a29    movsx eax,trqincs"
-"	      00563a2d    mov [ebp-18h],eax"
-"	      00563a30    fidiv dword ptr [ebp-18h]"
-"	      00563a33    mov eax,tau"
-"	      00563a36    fstp dword ptr [eax]"
-);
+	__asm        movsx  eax, trq;
+	__asm        mov    [ebp-0x14], eax;
+	__asm        fild   dword ptr [ebp-0x14];
+	__asm        fmul   qword ptr ds:[0x593758];
+	__asm        movsx  eax, trqincs;
+	__asm        mov    [ebp-0x18], eax;
+	__asm        fidiv  dword ptr [ebp-0x18];
+	__asm        mov    eax, tau;
+	__asm        fstp   dword ptr [eax];
 // LINE 677:
-	asm( 
-"	      00563a38    jmp near ptr 00563A3Dh"
-"	      00563a3d    pop edi"
-"	      00563a3e    pop esi"
-"	      00563a3f    pop ebx"
-"	      00563a40    leave"
-"	      00563a41    ret"
-);
+	__asm        jmp    near ptr 0x00563A3D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563a42
@@ -2845,134 +2311,110 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	float debugpsi;
 
 // LINE 685:
-	asm( 
-"	      00563a42    push ebp"
-"	      00563a43    mov ebp,esp"
-"	      00563a45    sub esp,20h"
-"	      00563a48    push ebx"
-"	      00563a49    push esi"
-"	      00563a4a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x20;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 686:
-	asm( 
-"	      00563a4b    mov eax,phi"
-"	      00563a4e    mov debugphi,eax"
-);
+	__asm        mov    eax, phi;
+	__asm        mov    debugphi, eax;
 // LINE 687:
-	asm( 
-"	      00563a51    mov eax,psi"
-"	      00563a54    mov debugpsi,eax"
-);
+	__asm        mov    eax, psi;
+	__asm        mov    debugpsi, eax;
 // LINE 688:
-	asm( 
-"	      00563a57    mov eax,radius"
-"	      00563a5a    mov debugrad,eax"
-);
+	__asm        mov    eax, radius;
+	__asm        mov    debugrad, eax;
 // LINE 689:
-	asm( 
-"	      00563a5d    fld debugrad"
-"	      00563a60    fadd debugpsi"
-"	      00563a63    fadd debugphi"
-"	      00563a66    fstp debugwhatever"
-);
+	__asm        fld    debugrad;
+	__asm        fadd   debugpsi;
+	__asm        fadd   debugphi;
+	__asm        fstp   debugwhatever;
 // LINE 690:
-	asm( 
-"	      00563a69    fld phi"
-"	      00563a6c    sub esp,8"
-"	      00563a6f    fstp qword ptr [esp]"
-"	      00563a72    call 0056F320h"
-"	      00563a77    add esp,8"
-"	      00563a7a    fstp qword ptr [ebp-18h]"
-"	      00563a7d    fld psi"
-"	      00563a80    sub esp,8"
-"	      00563a83    fstp qword ptr [esp]"
-"	      00563a86    call 0056F32Ah"
-"	      00563a8b    add esp,8"
-"	      00563a8e    fmul qword ptr [ebp-18h]"
-"	      00563a91    fmul radius"
-"	      00563a94    mov eax,x"
-"	      00563a97    fstp dword ptr [eax]"
-);
+	__asm        fld    phi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fstp   qword ptr [ebp-0x18];
+	__asm        fld    psi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        fmul   qword ptr [ebp-0x18];
+	__asm        fmul   radius;
+	__asm        mov    eax, x;
+	__asm        fstp   dword ptr [eax];
 // LINE 691:
-	asm( 
-"	      00563a99    fld phi"
-"	      00563a9c    sub esp,8"
-"	      00563a9f    fstp qword ptr [esp]"
-"	      00563aa2    call 0056F32Ah"
-"	      00563aa7    add esp,8"
-"	      00563aaa    fmul radius"
-"	      00563aad    mov eax,z"
-"	      00563ab0    fstp dword ptr [eax]"
-);
+	__asm        fld    phi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F32A;
+	__asm        add    esp, 8;
+	__asm        fmul   radius;
+	__asm        mov    eax, z;
+	__asm        fstp   dword ptr [eax];
 // LINE 692:
-	asm( 
-"	      00563ab2    fld phi"
-"	      00563ab5    sub esp,8"
-"	      00563ab8    fstp qword ptr [esp]"
-"	      00563abb    call 0056F320h"
-"	      00563ac0    add esp,8"
-"	      00563ac3    fstp qword ptr [ebp-20h]"
-"	      00563ac6    fld psi"
-"	      00563ac9    sub esp,8"
-"	      00563acc    fstp qword ptr [esp]"
-"	      00563acf    call 0056F320h"
-"	      00563ad4    add esp,8"
-"	      00563ad7    fmul qword ptr [ebp-20h]"
-"	      00563ada    fmul radius"
-"	      00563add    mov eax,y"
-"	      00563ae0    fstp dword ptr [eax]"
-);
+	__asm        fld    phi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fstp   qword ptr [ebp-0x20];
+	__asm        fld    psi;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056F320;
+	__asm        add    esp, 8;
+	__asm        fmul   qword ptr [ebp-0x20];
+	__asm        fmul   radius;
+	__asm        mov    eax, y;
+	__asm        fstp   dword ptr [eax];
 // LINE 693:
-	asm( 
-"	      00563ae2    jmp near ptr 00563AE7h"
-"	      00563ae7    pop edi"
-"	      00563ae8    pop esi"
-"	      00563ae9    pop ebx"
-"	      00563aea    leave"
-"	      00563aeb    ret"
-);
+	__asm        jmp    near ptr 0x00563AE7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563aec
 void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
 // LINE 696:
-	asm( 
-"	      00563aec    push ebp"
-"	      00563aed    mov ebp,esp"
-"	      00563aef    push ebx"
-"	      00563af0    push esi"
-"	      00563af1    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 697:
-	asm( 
-"	      00563af2    mov eax,dxzy"
-"	      00563af5    add eax,8"
-"	      00563af8    push eax"
-"	      00563af9    mov eax,dxzy"
-"	      00563afc    add eax,4"
-"	      00563aff    push eax"
-"	      00563b00    mov eax,dxzy"
-"	      00563b03    push eax"
-"	      00563b04    mov eax,polar"
-"	      00563b07    mov eax,[eax+4]"
-"	      00563b0a    push eax"
-"	      00563b0b    mov eax,polar"
-"	      00563b0e    mov eax,[eax]"
-"	      00563b10    push eax"
-"	      00563b11    mov eax,radius"
-"	      00563b14    push eax"
-"	      00563b15    call 00563A42h"
-"	      00563b1a    add esp,18h"
-);
+	__asm        mov    eax, dxzy;
+	__asm        add    eax, 8;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy;
+	__asm        add    eax, 4;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        mov    eax, [eax];
+	__asm        push   eax;
+	__asm        mov    eax, radius;
+	__asm        push   eax;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 698:
-	asm( 
-"	      00563b1d    jmp near ptr 00563B22h"
-"	      00563b22    pop edi"
-"	      00563b23    pop esi"
-"	      00563b24    pop ebx"
-"	      00563b25    leave"
-"	      00563b26    ret"
-);
+	__asm        jmp    near ptr 0x00563B22;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563b27
@@ -2983,141 +2425,111 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	float psi;
 
 // LINE 702:
-	asm( 
-"	      00563b27    push ebp"
-"	      00563b28    mov ebp,esp"
-"	      00563b2a    sub esp,1Ch"
-"	      00563b2d    push ebx"
-"	      00563b2e    push esi"
-"	      00563b2f    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x1C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 703:
-	asm( 
-"	      00563b30    mov eax,donttouch"
-"	      00563b33    lea ecx,dpt.x"
-"	      00563b36    mov edx,[eax]"
-"	      00563b38    mov [ecx],edx"
-"	      00563b3a    mov edx,[eax+4]"
-"	      00563b3d    mov [ecx+4],edx"
-"	      00563b40    mov edx,[eax+8]"
-"	      00563b43    mov [ecx+8],edx"
-"	      00563b46    mov eax,[eax+0Ch]"
-"	      00563b49    mov [ecx+0Ch],eax"
-);
+	__asm        mov    eax, donttouch;
+	__asm        lea    ecx, dpt.x;
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    edx, [eax+8];
+	__asm        mov    [ecx+8], edx;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    [ecx+0xC], eax;
 // LINE 705:
-	asm( 
-"	      00563b4c    lea eax,radius"
-"	      00563b4f    push eax"
-"	      00563b50    lea eax,psi"
-"	      00563b53    push eax"
-"	      00563b54    lea eax,phi"
-"	      00563b57    push eax"
-"	      00563b58    mov eax,dpt.y"
-"	      00563b5b    push eax"
-"	      00563b5c    mov eax,dpt.z"
-"	      00563b5f    push eax"
-"	      00563b60    mov eax,dpt.x"
-"	      00563b63    push eax"
-"	      00563b64    call 00563C20h"
-"	      00563b69    add esp,18h"
-);
+	__asm        lea    eax, radius;
+	__asm        push   eax;
+	__asm        lea    eax, psi;
+	__asm        push   eax;
+	__asm        lea    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.y;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.z;
+	__asm        push   eax;
+	__asm        mov    eax, dpt.x;
+	__asm        push   eax;
+	__asm        call   0x00563C20;
+	__asm        add    esp, 0x18;
 // LINE 706:
-	asm( 
-"	      00563b6c    push 1"
-"	      00563b6e    lea eax,psi"
-"	      00563b71    push eax"
-"	      00563b72    lea eax,phi"
-"	      00563b75    push eax"
-"	      00563b76    push 0"
-"	      00563b78    push 0"
-"	      00563b7a    mov eax,psiOff"
-"	      00563b7d    push eax"
-"	      00563b7e    mov eax,phiOff"
-"	      00563b81    push eax"
-"	      00563b82    call 00563420h"
-"	      00563b87    add esp,1Ch"
-);
+	__asm        push   1;
+	__asm        lea    eax, psi;
+	__asm        push   eax;
+	__asm        lea    eax, phi;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   0;
+	__asm        mov    eax, psiOff;
+	__asm        push   eax;
+	__asm        mov    eax, phiOff;
+	__asm        push   eax;
+	__asm        call   0x00563420;
+	__asm        add    esp, 0x1C;
 // LINE 707:
-	asm( 
-"	      00563b8a    fld scale"
-"	      00563b8d    fmul radius"
-"	      00563b90    fstp radius"
-);
+	__asm        fld    scale;
+	__asm        fmul   radius;
+	__asm        fstp   radius;
 // LINE 708:
-	asm( 
-"	      00563b93    lea eax,dpt.y"
-"	      00563b96    push eax"
-"	      00563b97    lea eax,dpt.z"
-"	      00563b9a    push eax"
-"	      00563b9b    lea eax,dpt.x"
-"	      00563b9e    push eax"
-"	      00563b9f    mov eax,psi"
-"	      00563ba2    push eax"
-"	      00563ba3    mov eax,phi"
-"	      00563ba6    push eax"
-"	      00563ba7    mov eax,radius"
-"	      00563baa    push eax"
-"	      00563bab    call 00563A42h"
-"	      00563bb0    add esp,18h"
-);
+	__asm        lea    eax, dpt.y;
+	__asm        push   eax;
+	__asm        lea    eax, dpt.z;
+	__asm        push   eax;
+	__asm        lea    eax, dpt.x;
+	__asm        push   eax;
+	__asm        mov    eax, psi;
+	__asm        push   eax;
+	__asm        mov    eax, phi;
+	__asm        push   eax;
+	__asm        mov    eax, radius;
+	__asm        push   eax;
+	__asm        call   0x00563A42;
+	__asm        add    esp, 0x18;
 // LINE 709:
-	asm( 
-"	      00563bb3    test reinterpret_cast<uint32_t>(perspective),0FFFFh"
-"	      00563bba    je near ptr 00563BCEh"
-);
+	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
+	__asm        je     near ptr 0x00563BCE;
 // LINE 710:
-	asm( 
-"	      00563bc0    push 0"
-"	      00563bc2    lea eax,dpt.x"
-"	      00563bc5    push eax"
-"	      00563bc6    call 005626F5h"
-"	      00563bcb    add esp,8"
-);
+	__asm        push   0;
+	__asm        lea    eax, dpt.x;
+	__asm        push   eax;
+	__asm        call   0x005626F5;
+	__asm        add    esp, 8;
 // LINE 711:
-	asm( 
-"	      00563bce    cmp ptH,0"
-"	      00563bd2    je near ptr 00563BE6h"
-);
+	__asm        cmp    ptH, 0;
+	__asm        je     near ptr 0x00563BE6;
 // LINE 712:
-	asm( 
-"	      00563bd8    fld dpt.x"
-"	      00563bdb    call 0056EBE8h"
-"	      00563be0    mov ecx,ptH"
-"	      00563be3    mov [ecx],ax"
-);
+	__asm        fld    dpt.x;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptH;
+	__asm        mov    [ecx], ax;
 // LINE 713:
-	asm( 
-"	      00563be6    cmp ptV,0"
-"	      00563bea    je near ptr 00563BFEh"
-);
+	__asm        cmp    ptV, 0;
+	__asm        je     near ptr 0x00563BFE;
 // LINE 714:
-	asm( 
-"	      00563bf0    fld dpt.z"
-"	      00563bf3    call 0056EBE8h"
-"	      00563bf8    mov ecx,ptV"
-"	      00563bfb    mov [ecx],ax"
-);
+	__asm        fld    dpt.z;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptV;
+	__asm        mov    [ecx], ax;
 // LINE 715:
-	asm( 
-"	      00563bfe    cmp ptDepth,0"
-"	      00563c02    je near ptr 00563C16h"
-);
+	__asm        cmp    ptDepth, 0;
+	__asm        je     near ptr 0x00563C16;
 // LINE 716:
-	asm( 
-"	      00563c08    fld dpt.y"
-"	      00563c0b    call 0056EBE8h"
-"	      00563c10    mov ecx,ptDepth"
-"	      00563c13    mov [ecx],ax"
-);
+	__asm        fld    dpt.y;
+	__asm        call   0x0056EBE8;
+	__asm        mov    ecx, ptDepth;
+	__asm        mov    [ecx], ax;
 // LINE 717:
-	asm( 
-"	      00563c16    jmp near ptr 00563C1Bh"
-"	      00563c1b    pop edi"
-"	      00563c1c    pop esi"
-"	      00563c1d    pop ebx"
-"	      00563c1e    leave"
-"	      00563c1f    ret"
-);
+	__asm        jmp    near ptr 0x00563C1B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563c20
@@ -3126,160 +2538,128 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	double projrad;
 
 // LINE 740:
-	asm( 
-"	      00563c20    push ebp"
-"	      00563c21    mov ebp,esp"
-"	      00563c23    sub esp,10h"
-"	      00563c26    push ebx"
-"	      00563c27    push esi"
-"	      00563c28    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 741:
-	asm( 
-"	      00563c29    mov eax,y"
-"	      00563c2c    push eax"
-"	      00563c2d    mov eax,z"
-"	      00563c30    push eax"
-"	      00563c31    mov eax,x"
-"	      00563c34    push eax"
-"	      00563c35    call 00562E02h"
-"	      00563c3a    add esp,0Ch"
-"	      00563c3d    fstp rad"
-);
+	__asm        mov    eax, y;
+	__asm        push   eax;
+	__asm        mov    eax, z;
+	__asm        push   eax;
+	__asm        mov    eax, x;
+	__asm        push   eax;
+	__asm        call   0x00562E02;
+	__asm        add    esp, 0xC;
+	__asm        fstp   rad;
 // LINE 745:
-	asm( 
-"	      00563c40    jmp near ptr 00563C45h"
-"	      00563c45    jmp near ptr 00563C4Ah"
-"	      00563c4a    fld rad"
-"	      00563c4d    fabs"
-"	      00563c4f    fld z"
-"	      00563c52    fabs"
-"	      00563c54    fcompp"
-"	      00563c56    fnstsw ax"
-"	      00563c58    test ah,40h"
-"	      00563c5b    je near ptr 00563C74h"
-);
+	__asm        jmp    near ptr 0x00563C45;
+	__asm        jmp    near ptr 0x00563C4A;
+	__asm        fld    rad;
+	__asm        fabs;
+	__asm        fld    z;
+	__asm        fabs;
+	__asm        fcompp;
+	__asm        fnstsw ax;
+	__asm        test   ah, 0x40;
+	__asm        je     near ptr 0x00563C74;
 // LINE 746:
-	asm( 
-"	      00563c61    mov reinterpret_cast<uint32_t>(projrad),0"
-"	      00563c68    mov *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&projrad) + 4),0"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(projrad), 0;
+	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&projrad) + 4), 0;
 // LINE 747:
-	asm( 
-"	      00563c6f    jmp near ptr 00563C93h"
-);
+	__asm        jmp    near ptr 0x00563C93;
 // LINE 748:
-	asm( 
-"	      00563c74    fld rad"
-"	      00563c77    fmul rad"
-"	      00563c7a    fld z"
-"	      00563c7d    fmul z"
-"	      00563c80    fsubp"
-"	      00563c82    sub esp,8"
-"	      00563c85    fstp qword ptr [esp]"
-"	      00563c88    call 0056EC10h"
-"	      00563c8d    add esp,8"
-"	      00563c90    fstp projrad"
-);
+	__asm        fld    rad;
+	__asm        fmul   rad;
+	__asm        fld    z;
+	__asm        fmul   z;
+	__asm        fsubp;
+	__asm        sub    esp, 8;
+	__asm        fstp   qword ptr [esp];
+	__asm        call   0x0056EC10;
+	__asm        add    esp, 8;
+	__asm        fstp   projrad;
 // LINE 751:
-	asm( 
-"	      00563c93    fld rad"
-"	      00563c96    mov eax,radius"
-"	      00563c99    fstp dword ptr [eax]"
-);
+	__asm        fld    rad;
+	__asm        mov    eax, radius;
+	__asm        fstp   dword ptr [eax];
 // LINE 752:
-	asm( 
-"	      00563c9b    fld projrad"
-"	      00563c9e    sub esp,4"
-"	      00563ca1    fstp dword ptr [esp]"
-"	      00563ca4    mov eax,x"
-"	      00563ca7    push eax"
-"	      00563ca8    call 00562CE1h"
-"	      00563cad    add esp,8"
-"	      00563cb0    mov eax,psi"
-"	      00563cb3    fstp dword ptr [eax]"
-);
+	__asm        fld    projrad;
+	__asm        sub    esp, 4;
+	__asm        fstp   dword ptr [esp];
+	__asm        mov    eax, x;
+	__asm        push   eax;
+	__asm        call   0x00562CE1;
+	__asm        add    esp, 8;
+	__asm        mov    eax, psi;
+	__asm        fstp   dword ptr [eax];
 // LINE 753:
-	asm( 
-"	      00563cb5    fld y"
-"	      00563cb8    fcomp dword ptr ds:[593750h]"
-"	      00563cbe    fnstsw ax"
-"	      00563cc0    test ah,1"
-"	      00563cc3    je near ptr 00563CD5h"
-);
+	__asm        fld    y;
+	__asm        fcomp  dword ptr ds:[0x593750];
+	__asm        fnstsw ax;
+	__asm        test   ah, 1;
+	__asm        je     near ptr 0x00563CD5;
 // LINE 754:
-	asm( 
-"	      00563cc9    mov eax,psi"
-"	      00563ccc    fld dword ptr [eax]"
-"	      00563cce    fchs"
-"	      00563cd0    mov eax,psi"
-"	      00563cd3    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, psi;
+	__asm        fld    dword ptr [eax];
+	__asm        fchs;
+	__asm        mov    eax, psi;
+	__asm        fstp   dword ptr [eax];
 // LINE 755:
-	asm( 
-"	      00563cd5    mov eax,radius"
-"	      00563cd8    mov eax,[eax]"
-"	      00563cda    push eax"
-"	      00563cdb    mov eax,z"
-"	      00563cde    push eax"
-"	      00563cdf    call 00562CE1h"
-"	      00563ce4    add esp,8"
-"	      00563ce7    mov eax,phi"
-"	      00563cea    fstp dword ptr [eax]"
-);
+	__asm        mov    eax, radius;
+	__asm        mov    eax, [eax];
+	__asm        push   eax;
+	__asm        mov    eax, z;
+	__asm        push   eax;
+	__asm        call   0x00562CE1;
+	__asm        add    esp, 8;
+	__asm        mov    eax, phi;
+	__asm        fstp   dword ptr [eax];
 // LINE 760:
-	asm( 
-"	      00563cec    jmp near ptr 00563CF1h"
-"	      00563cf1    pop edi"
-"	      00563cf2    pop esi"
-"	      00563cf3    pop ebx"
-"	      00563cf4    leave"
-"	      00563cf5    ret"
-);
+	__asm        jmp    near ptr 0x00563CF1;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
 void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
 // LINE 763:
-	asm( 
-"	      00563cf6    push ebp"
-"	      00563cf7    mov ebp,esp"
-"	      00563cf9    push ebx"
-"	      00563cfa    push esi"
-"	      00563cfb    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 764:
-	asm( 
-"	      00563cfc    mov eax,radius"
-"	      00563cff    push eax"
-"	      00563d00    mov eax,polar"
-"	      00563d03    add eax,4"
-"	      00563d06    push eax"
-"	      00563d07    mov eax,polar"
-"	      00563d0a    push eax"
-"	      00563d0b    mov eax,dxzy.y"
-"	      00563d0e    push eax"
-"	      00563d0f    mov eax,dxzy.z"
-"	      00563d12    push eax"
-"	      00563d13    mov eax,dxzy.x"
-"	      00563d16    push eax"
-"	      00563d17    call 00563C20h"
-"	      00563d1c    add esp,18h"
-);
+	__asm        mov    eax, radius;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        add    eax, 4;
+	__asm        push   eax;
+	__asm        mov    eax, polar;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy.y;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy.z;
+	__asm        push   eax;
+	__asm        mov    eax, dxzy.x;
+	__asm        push   eax;
+	__asm        call   0x00563C20;
+	__asm        add    esp, 0x18;
 // LINE 765:
-	asm( 
-"	      00563d1f    mov eax,polar"
-"	      00563d22    mov dword ptr [eax+8],0"
-);
+	__asm        mov    eax, polar;
+	__asm        mov    dword ptr [eax+8], 0;
 // LINE 766:
-	asm( 
-"	      00563d29    jmp near ptr 00563D2Eh"
-"	      00563d2e    pop edi"
-"	      00563d2f    pop esi"
-"	      00563d30    pop ebx"
-"	      00563d31    leave"
-"	      00563d32    ret"
-);
+	__asm        jmp    near ptr 0x00563D2E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563d33
@@ -3289,96 +2669,74 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 	struct Polar inc;
 
 // LINE 939:
-	asm( 
-"	      00563d33    push ebp"
-"	      00563d34    mov ebp,esp"
-"	      00563d36    sub esp,34h"
-"	      00563d39    push ebx"
-"	      00563d3a    push esi"
-"	      00563d3b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x34;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 940:
-	asm( 
-"	      00563d3c    lea edi,parPolar.phi"
-"	      00563d3f    mov esi,parentPolar"
-"	      00563d42    mov ecx,6"
-"	      00563d47    rep movsd"
-);
+	__asm        lea    edi, parPolar.phi;
+	__asm        mov    esi, parentPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 942:
-	asm( 
-"	      00563d49    mov eax,parPolar.phi"
-"	      00563d4c    mov parPhiToZero,eax"
-);
+	__asm        mov    eax, parPolar.phi;
+	__asm        mov    parPhiToZero, eax;
 // LINE 943:
-	asm( 
-"	      00563d4f    mov inc.trq,0"
-"	      00563d55    mov ax,inc.trq"
-"	      00563d59    mov inc.lng,ax"
-"	      00563d5d    mov ax,inc.lng"
-"	      00563d61    mov inc.lat,ax"
-"	      00563d65    mov inc.tau,0"
-"	      00563d6c    mov eax,inc.tau"
-"	      00563d6f    mov inc.psi,eax"
-"	      00563d72    fld parPhiToZero"
-"	      00563d75    fchs"
-"	      00563d77    fstp inc.phi"
-);
+	__asm        mov    inc.trq, 0;
+	__asm        mov    ax, inc.trq;
+	__asm        mov    inc.lng, ax;
+	__asm        mov    ax, inc.lng;
+	__asm        mov    inc.lat, ax;
+	__asm        mov    inc.tau, 0;
+	__asm        mov    eax, inc.tau;
+	__asm        mov    inc.psi, eax;
+	__asm        fld    parPhiToZero;
+	__asm        fchs;
+	__asm        fstp   inc.phi;
 // LINE 944:
-	asm( 
-"	      00563d7a    mov eax,childPolar"
-"	      00563d7d    push eax"
-"	      00563d7e    lea eax,parPolar.phi"
-"	      00563d81    push eax"
-"	      00563d82    lea eax,inc.phi"
-"	      00563d85    push eax"
-"	      00563d86    call 005634FCh"
-"	      00563d8b    add esp,0Ch"
-);
+	__asm        mov    eax, childPolar;
+	__asm        push   eax;
+	__asm        lea    eax, parPolar.phi;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x005634FC;
+	__asm        add    esp, 0xC;
 // LINE 945:
-	asm( 
-"	      00563d8e    fld parPolar.phi"
-"	      00563d91    fsub parPhiToZero"
-"	      00563d94    fstp parPolar.phi"
-);
+	__asm        fld    parPolar.phi;
+	__asm        fsub   parPhiToZero;
+	__asm        fstp   parPolar.phi;
 // LINE 947:
-	asm( 
-"	      00563d97    mov eax,childPolar"
-"	      00563d9a    fld dword ptr [eax+4]"
-"	      00563d9d    fadd dinc"
-"	      00563da0    mov eax,childPolar"
-"	      00563da3    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, childPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fadd   dinc;
+	__asm        mov    eax, childPolar;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 948:
-	asm( 
-"	      00563da6    mov eax,parPhiToZero"
-"	      00563da9    mov inc.phi,eax"
-);
+	__asm        mov    eax, parPhiToZero;
+	__asm        mov    inc.phi, eax;
 // LINE 950:
-	asm( 
-"	      00563dac    mov eax,childPolar"
-"	      00563daf    push eax"
-"	      00563db0    lea eax,parPolar.phi"
-"	      00563db3    push eax"
-"	      00563db4    lea eax,inc.phi"
-"	      00563db7    push eax"
-"	      00563db8    call 005634FCh"
-"	      00563dbd    add esp,0Ch"
-);
+	__asm        mov    eax, childPolar;
+	__asm        push   eax;
+	__asm        lea    eax, parPolar.phi;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x005634FC;
+	__asm        add    esp, 0xC;
 // LINE 951:
-	asm( 
-"	      00563dc0    fld parPolar.phi"
-"	      00563dc3    fadd parPhiToZero"
-"	      00563dc6    fstp parPolar.phi"
-);
+	__asm        fld    parPolar.phi;
+	__asm        fadd   parPhiToZero;
+	__asm        fstp   parPolar.phi;
 // LINE 952:
-	asm( 
-"	      00563dc9    jmp near ptr 00563DCEh"
-"	      00563dce    pop edi"
-"	      00563dcf    pop esi"
-"	      00563dd0    pop ebx"
-"	      00563dd1    leave"
-"	      00563dd2    ret"
-);
+	__asm        jmp    near ptr 0x00563DCE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
@@ -3389,119 +2747,93 @@ void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* chil
 	struct Polar inc;
 
 // LINE 955:
-	asm( 
-"	      00563dd3    push ebp"
-"	      00563dd4    mov ebp,esp"
-"	      00563dd6    sub esp,38h"
-"	      00563dd9    push ebx"
-"	      00563dda    push esi"
-"	      00563ddb    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x38;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 956:
-	asm( 
-"	      00563ddc    lea edi,parPolar.phi"
-"	      00563ddf    mov esi,parentPolar"
-"	      00563de2    mov ecx,6"
-"	      00563de7    rep movsd"
-);
+	__asm        lea    edi, parPolar.phi;
+	__asm        mov    esi, parentPolar;
+	__asm        mov    ecx, 6;
+	__asm        rep movsd;
 // LINE 957:
-	asm( 
-"	      00563de9    mov eax,parPolar.phi"
-"	      00563dec    mov parX20,eax"
-"	      00563def    mov eax,parPolar.psi"
-"	      00563df2    mov parY20,eax"
-);
+	__asm        mov    eax, parPolar.phi;
+	__asm        mov    parX20, eax;
+	__asm        mov    eax, parPolar.psi;
+	__asm        mov    parY20, eax;
 // LINE 958:
-	asm( 
-"	      00563df5    mov inc.trq,0"
-"	      00563dfb    mov ax,inc.trq"
-"	      00563dff    mov inc.lng,ax"
-"	      00563e03    mov ax,inc.lng"
-"	      00563e07    mov inc.lat,ax"
-"	      00563e0b    mov inc.tau,0"
-"	      00563e12    fld parY20"
-"	      00563e15    fchs"
-"	      00563e17    fstp inc.psi"
-"	      00563e1a    fld parX20"
-"	      00563e1d    fchs"
-"	      00563e1f    fstp inc.phi"
-);
+	__asm        mov    inc.trq, 0;
+	__asm        mov    ax, inc.trq;
+	__asm        mov    inc.lng, ax;
+	__asm        mov    ax, inc.lng;
+	__asm        mov    inc.lat, ax;
+	__asm        mov    inc.tau, 0;
+	__asm        fld    parY20;
+	__asm        fchs;
+	__asm        fstp   inc.psi;
+	__asm        fld    parX20;
+	__asm        fchs;
+	__asm        fstp   inc.phi;
 // LINE 959:
-	asm( 
-"	      00563e22    mov eax,childPolar"
-"	      00563e25    push eax"
-"	      00563e26    lea eax,inc.phi"
-"	      00563e29    push eax"
-"	      00563e2a    call 00562B82h"
-"	      00563e2f    add esp,8"
-);
+	__asm        mov    eax, childPolar;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x00562B82;
+	__asm        add    esp, 8;
 // LINE 960:
-	asm( 
-"	      00563e32    mov eax,childPolar"
-"	      00563e35    fld dword ptr [eax+4]"
-"	      00563e38    fadd dinc"
-"	      00563e3b    mov eax,childPolar"
-"	      00563e3e    fstp dword ptr [eax+4]"
-);
+	__asm        mov    eax, childPolar;
+	__asm        fld    dword ptr [eax+4];
+	__asm        fadd   dinc;
+	__asm        mov    eax, childPolar;
+	__asm        fstp   dword ptr [eax+4];
 // LINE 961:
-	asm( 
-"	      00563e41    mov eax,parY20"
-"	      00563e44    mov inc.psi,eax"
-"	      00563e47    mov eax,parX20"
-"	      00563e4a    mov inc.phi,eax"
-);
+	__asm        mov    eax, parY20;
+	__asm        mov    inc.psi, eax;
+	__asm        mov    eax, parX20;
+	__asm        mov    inc.phi, eax;
 // LINE 962:
-	asm( 
-"	      00563e4d    mov eax,childPolar"
-"	      00563e50    push eax"
-"	      00563e51    lea eax,inc.phi"
-"	      00563e54    push eax"
-"	      00563e55    call 00562B82h"
-"	      00563e5a    add esp,8"
-);
+	__asm        mov    eax, childPolar;
+	__asm        push   eax;
+	__asm        lea    eax, inc.phi;
+	__asm        push   eax;
+	__asm        call   0x00562B82;
+	__asm        add    esp, 8;
 // LINE 963:
-	asm( 
-"	      00563e5d    jmp near ptr 00563E62h"
-"	      00563e62    pop edi"
-"	      00563e63    pop esi"
-"	      00563e64    pop ebx"
-"	      00563e65    leave"
-"	      00563e66    ret"
-);
+	__asm        jmp    near ptr 0x00563E62;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563e67
 unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 // LINE 1815:
-	asm( 
-"	      00563e67    push ebp"
-"	      00563e68    mov ebp,esp"
-"	      00563e6a    push ebx"
-"	      00563e6b    push esi"
-"	      00563e6c    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 1816:
-	asm( 
-"	      00563e6d    push 8C085h"
-"	      00563e72    push 5BEEF4h"
-"	      00563e77    push 718h"
-"	      00563e7c    push 5BEF04h"
-"	      00563e81    call 00554F30h"
-"	      00563e86    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEEF4;
+	__asm        push   0x718;
+	__asm        push   0x5BEF04;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 1819:
-	asm( 
-"	      00563e89    xor ax,ax"
-"	      00563e8c    jmp near ptr 00563E91h"
-);
+	__asm        xor    ax, ax;
+	__asm        jmp    near ptr 0x00563E91;
 // LINE 1820:
-	asm( 
-"	      00563e91    pop edi"
-"	      00563e92    pop esi"
-"	      00563e93    pop ebx"
-"	      00563e94    leave"
-"	      00563e95    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

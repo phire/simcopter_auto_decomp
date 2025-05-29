@@ -56,770 +56,600 @@
 // FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {
 // LINE 29:
-	asm( 
-"	      00471800    push ebp"
-"	      00471801    mov ebp,esp"
-"	      00471803    sub esp,4"
-"	      00471806    push ebx"
-"	      00471807    push esi"
-"	      00471808    push edi"
-"	      00471809    mov this,ecx"
-"	      0047180c    mov ecx,this"
-"	      0047180f    call 004ADE3Dh"
-"	      00471814    mov eax,this"
-"	      00471817    mov dword ptr [eax],590870h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    ecx, this;
+	__asm        call   0x004ADE3D;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 30:
-	asm( 
-"	      0047181d    cmp dword ptr ds:[5997B8h],0"
-"	      00471824    jne near ptr 00471834h"
-);
+	__asm        cmp    dword ptr ds:[0x5997B8], 0;
+	__asm        jne    near ptr 0x00471834;
 // LINE 31:
-	asm( 
-"	      0047182a    mov ecx,6042C8h"
-"	      0047182f    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042F5FC;
 // LINE 32:
-	asm( 
-"	      00471834    inc dword ptr ds:[5997B8h]"
-);
+	__asm        inc    dword ptr ds:[0x5997B8];
 // LINE 33:
-	asm( 
-"	      0047183a    jmp near ptr 0047183Fh"
-"	      0047183f    mov eax,this"
-"	      00471842    pop edi"
-"	      00471843    pop esi"
-"	      00471844    pop ebx"
-"	      00471845    leave"
-"	      00471846    ret"
-);
+	__asm        jmp    near ptr 0x0047183F;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471847
 void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 44:
-	asm( 
-"	      00471847    push ebp"
-"	      00471848    mov ebp,esp"
-"	      0047184a    sub esp,4"
-"	      0047184d    push ebx"
-"	      0047184e    push esi"
-"	      0047184f    push edi"
-"	      00471850    mov this,ecx"
-"	      00471853    mov eax,bAddToParentList"
-"	      00471856    push eax"
-"	      00471857    mov eax,myNewOwner"
-"	      0047185a    push eax"
-"	      0047185b    mov eax,szImageFileName"
-"	      0047185e    push eax"
-"	      0047185f    mov eax,windowNewParent"
-"	      00471862    push eax"
-"	      00471863    mov eax,nNewID"
-"	      00471866    push eax"
-"	      00471867    mov eax,rectNewWindow"
-"	      0047186a    push eax"
-"	      0047186b    mov ecx,this"
-"	      0047186e    call 004AE05Dh"
-"	      00471873    mov eax,this"
-"	      00471876    mov dword ptr [eax],590870h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, bAddToParentList;
+	__asm        push   eax;
+	__asm        mov    eax, myNewOwner;
+	__asm        push   eax;
+	__asm        mov    eax, szImageFileName;
+	__asm        push   eax;
+	__asm        mov    eax, windowNewParent;
+	__asm        push   eax;
+	__asm        mov    eax, nNewID;
+	__asm        push   eax;
+	__asm        mov    eax, rectNewWindow;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AE05D;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 45:
-	asm( 
-"	      0047187c    cmp dword ptr ds:[5997B8h],0"
-"	      00471883    jne near ptr 00471893h"
-);
+	__asm        cmp    dword ptr ds:[0x5997B8], 0;
+	__asm        jne    near ptr 0x00471893;
 // LINE 46:
-	asm( 
-"	      00471889    mov ecx,6042C8h"
-"	      0047188e    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042F5FC;
 // LINE 47:
-	asm( 
-"	      00471893    inc dword ptr ds:[5997B8h]"
-);
+	__asm        inc    dword ptr ds:[0x5997B8];
 // LINE 48:
-	asm( 
-"	      00471899    jmp near ptr 0047189Eh"
-"	      0047189e    mov eax,this"
-"	      004718a1    pop edi"
-"	      004718a2    pop esi"
-"	      004718a3    pop ebx"
-"	      004718a4    leave"
-"	      004718a5    ret 18h"
-);
+	__asm        jmp    near ptr 0x0047189E;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004718a8
 void SoundButtonWindow::~SoundButtonWindow() {
 // LINE 55:
-	asm( 
-"	      004718a8    push ebp"
-"	      004718a9    mov ebp,esp"
-"	      004718ab    sub esp,4"
-"	      004718ae    push ebx"
-"	      004718af    push esi"
-"	      004718b0    push edi"
-"	      004718b1    mov this,ecx"
-"	      004718b4    mov eax,this"
-"	      004718b7    mov dword ptr [eax],590870h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 56:
-	asm( 
-"	      004718bd    dec dword ptr ds:[5997B8h]"
-);
+	__asm        dec    dword ptr ds:[0x5997B8];
 // LINE 57:
-	asm( 
-"	      004718c3    jne near ptr 004718D3h"
-);
+	__asm        jne    near ptr 0x004718D3;
 // LINE 58:
-	asm( 
-"	      004718c9    mov ecx,6042C8h"
-"	      004718ce    call 0042F549h"
-);
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042F549;
 // LINE 59:
-	asm( 
-"	      004718d3    jmp near ptr 004718D8h"
-"	      004718d8    jmp near ptr 004718DDh"
-"	      004718dd    mov ecx,this"
-"	      004718e0    call 004A4045h"
-"	      004718e5    pop edi"
-"	      004718e6    pop esi"
-"	      004718e7    pop ebx"
-"	      004718e8    leave"
-"	      004718e9    ret"
-);
+	__asm        jmp    near ptr 0x004718D8;
+	__asm        jmp    near ptr 0x004718DD;
+	__asm        mov    ecx, this;
+	__asm        call   0x004A4045;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004718ea
 void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 65:
-	asm( 
-"	      004718ea    push ebp"
-"	      004718eb    mov ebp,esp"
-"	      004718ed    sub esp,4"
-"	      004718f0    push ebx"
-"	      004718f1    push esi"
-"	      004718f2    push edi"
-"	      004718f3    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 66:
-	asm( 
-"	      004718f6    mov eax,this"
-"	      004718f9    mov ecx,nNewButtonState"
-"	      004718fc    cmp [eax+74h],ecx"
-"	      004718ff    je near ptr 0047192Dh"
-"	      00471905    cmp nNewButtonState,2"
-"	      00471909    jne near ptr 0047192Dh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, nNewButtonState;
+	__asm        cmp    [eax+0x74], ecx;
+	__asm        je     near ptr 0x0047192D;
+	__asm        cmp    nNewButtonState, 2;
+	__asm        jne    near ptr 0x0047192D;
 // LINE 67:
-	asm( 
-"	      0047190f    mov eax,ds:[5C37F0h]"
-"	      00471914    push eax"
-"	      00471915    mov ecx,6042C8h"
-"	      0047191a    call 0042FE2Eh"
-);
+	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042FE2E;
 // LINE 68:
-	asm( 
-"	      0047191f    push 1"
-"	      00471921    push 0"
-"	      00471923    mov ecx,6042C8h"
-"	      00471928    call 0043005Ah"
-);
+	__asm        push   1;
+	__asm        push   0;
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0043005A;
 // LINE 70:
-	asm( 
-"	      0047192d    mov eax,nNewButtonState"
-"	      00471930    push eax"
-"	      00471931    mov ecx,this"
-"	      00471934    call 004AEACEh"
-);
+	__asm        mov    eax, nNewButtonState;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AEACE;
 // LINE 71:
-	asm( 
-"	      00471939    jmp near ptr 0047193Eh"
-"	      0047193e    pop edi"
-"	      0047193f    pop esi"
-"	      00471940    pop ebx"
-"	      00471941    leave"
-"	      00471942    ret 4"
-);
+	__asm        jmp    near ptr 0x0047193E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471945
 void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 82:
-	asm( 
-"	      00471945    push ebp"
-"	      00471946    mov ebp,esp"
-"	      00471948    sub esp,4"
-"	      0047194b    push ebx"
-"	      0047194c    push esi"
-"	      0047194d    push edi"
-"	      0047194e    mov this,ecx"
-"	      00471951    mov eax,bAddToParentList"
-"	      00471954    push eax"
-"	      00471955    mov eax,myNewOwner"
-"	      00471958    push eax"
-"	      00471959    mov eax,szImageFileName"
-"	      0047195c    push eax"
-"	      0047195d    mov eax,windowNewParent"
-"	      00471960    push eax"
-"	      00471961    mov eax,nNewID"
-"	      00471964    push eax"
-"	      00471965    mov eax,rectNewWindow"
-"	      00471968    push eax"
-"	      00471969    mov eax,myNewRadioButtonGroup"
-"	      0047196c    push eax"
-"	      0047196d    mov ecx,this"
-"	      00471970    call 004AF7F7h"
-"	      00471975    mov eax,this"
-"	      00471978    mov dword ptr [eax],590950h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, bAddToParentList;
+	__asm        push   eax;
+	__asm        mov    eax, myNewOwner;
+	__asm        push   eax;
+	__asm        mov    eax, szImageFileName;
+	__asm        push   eax;
+	__asm        mov    eax, windowNewParent;
+	__asm        push   eax;
+	__asm        mov    eax, nNewID;
+	__asm        push   eax;
+	__asm        mov    eax, rectNewWindow;
+	__asm        push   eax;
+	__asm        mov    eax, myNewRadioButtonGroup;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AF7F7;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 83:
-	asm( 
-"	      0047197e    cmp dword ptr ds:[5997BCh],0"
-"	      00471985    jne near ptr 00471995h"
-);
+	__asm        cmp    dword ptr ds:[0x5997BC], 0;
+	__asm        jne    near ptr 0x00471995;
 // LINE 84:
-	asm( 
-"	      0047198b    mov ecx,6043C8h"
-"	      00471990    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0042F5FC;
 // LINE 85:
-	asm( 
-"	      00471995    inc dword ptr ds:[5997BCh]"
-);
+	__asm        inc    dword ptr ds:[0x5997BC];
 // LINE 86:
-	asm( 
-"	      0047199b    jmp near ptr 004719A0h"
-"	      004719a0    mov eax,this"
-"	      004719a3    pop edi"
-"	      004719a4    pop esi"
-"	      004719a5    pop ebx"
-"	      004719a6    leave"
-"	      004719a7    ret 1Ch"
-);
+	__asm        jmp    near ptr 0x004719A0;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x004719aa
 void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 91:
-	asm( 
-"	      004719aa    push ebp"
-"	      004719ab    mov ebp,esp"
-"	      004719ad    sub esp,4"
-"	      004719b0    push ebx"
-"	      004719b1    push esi"
-"	      004719b2    push edi"
-"	      004719b3    mov this,ecx"
-"	      004719b6    mov eax,this"
-"	      004719b9    mov dword ptr [eax],590950h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 92:
-	asm( 
-"	      004719bf    dec dword ptr ds:[5997BCh]"
-);
+	__asm        dec    dword ptr ds:[0x5997BC];
 // LINE 93:
-	asm( 
-"	      004719c5    jne near ptr 004719D5h"
-);
+	__asm        jne    near ptr 0x004719D5;
 // LINE 94:
-	asm( 
-"	      004719cb    mov ecx,6043C8h"
-"	      004719d0    call 0042F549h"
-);
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0042F549;
 // LINE 95:
-	asm( 
-"	      004719d5    jmp near ptr 004719DAh"
-"	      004719da    mov ecx,this"
-"	      004719dd    call 004AFCFEh"
-"	      004719e2    pop edi"
-"	      004719e3    pop esi"
-"	      004719e4    pop ebx"
-"	      004719e5    leave"
-"	      004719e6    ret"
-);
+	__asm        jmp    near ptr 0x004719DA;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AFCFE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004719e7
 void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 101:
-	asm( 
-"	      004719e7    push ebp"
-"	      004719e8    mov ebp,esp"
-"	      004719ea    sub esp,4"
-"	      004719ed    push ebx"
-"	      004719ee    push esi"
-"	      004719ef    push edi"
-"	      004719f0    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 102:
-	asm( 
-"	      004719f3    mov eax,this"
-"	      004719f6    mov ecx,nNewButtonState"
-"	      004719f9    cmp [eax+74h],ecx"
-"	      004719fc    je near ptr 00471A2Dh"
-"	      00471a02    mov eax,this"
-"	      00471a05    cmp dword ptr [eax+74h],0"
-"	      00471a09    je near ptr 00471A2Dh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, nNewButtonState;
+	__asm        cmp    [eax+0x74], ecx;
+	__asm        je     near ptr 0x00471A2D;
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x74], 0;
+	__asm        je     near ptr 0x00471A2D;
 // LINE 103:
-	asm( 
-"	      00471a0f    mov eax,ds:[5C37F0h]"
-"	      00471a14    push eax"
-"	      00471a15    mov ecx,6043C8h"
-"	      00471a1a    call 0042FE2Eh"
-);
+	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0042FE2E;
 // LINE 104:
-	asm( 
-"	      00471a1f    push 1"
-"	      00471a21    push 0"
-"	      00471a23    mov ecx,6043C8h"
-"	      00471a28    call 0043005Ah"
-);
+	__asm        push   1;
+	__asm        push   0;
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0043005A;
 // LINE 106:
-	asm( 
-"	      00471a2d    mov eax,nNewButtonState"
-"	      00471a30    push eax"
-"	      00471a31    mov ecx,this"
-"	      00471a34    call 004AFEE3h"
-);
+	__asm        mov    eax, nNewButtonState;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AFEE3;
 // LINE 107:
-	asm( 
-"	      00471a39    jmp near ptr 00471A3Eh"
-"	      00471a3e    pop edi"
-"	      00471a3f    pop esi"
-"	      00471a40    pop ebx"
-"	      00471a41    leave"
-"	      00471a42    ret 4"
-);
+	__asm        jmp    near ptr 0x00471A3E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471a45
 void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 // LINE 112:
-	asm( 
-"	      00471a45    push ebp"
-"	      00471a46    mov ebp,esp"
-"	      00471a48    sub esp,4"
-"	      00471a4b    push ebx"
-"	      00471a4c    push esi"
-"	      00471a4d    push edi"
-"	      00471a4e    mov this,ecx"
-"	      00471a51    mov ecx,this"
-"	      00471a54    call 004AEE29h"
-"	      00471a59    mov eax,this"
-"	      00471a5c    mov dword ptr [eax],590A38h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AEE29;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 113:
-	asm( 
-"	      00471a62    cmp dword ptr ds:[5997C0h],0"
-"	      00471a69    jne near ptr 00471A79h"
-);
+	__asm        cmp    dword ptr ds:[0x5997C0], 0;
+	__asm        jne    near ptr 0x00471A79;
 // LINE 114:
-	asm( 
-"	      00471a6f    mov ecx,604348h"
-"	      00471a74    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042F5FC;
 // LINE 115:
-	asm( 
-"	      00471a79    inc dword ptr ds:[5997C0h]"
-);
+	__asm        inc    dword ptr ds:[0x5997C0];
 // LINE 116:
-	asm( 
-"	      00471a7f    jmp near ptr 00471A84h"
-"	      00471a84    mov eax,this"
-"	      00471a87    pop edi"
-"	      00471a88    pop esi"
-"	      00471a89    pop ebx"
-"	      00471a8a    leave"
-"	      00471a8b    ret"
-);
+	__asm        jmp    near ptr 0x00471A84;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471a8c
 void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 126:
-	asm( 
-"	      00471a8c    push ebp"
-"	      00471a8d    mov ebp,esp"
-"	      00471a8f    sub esp,4"
-"	      00471a92    push ebx"
-"	      00471a93    push esi"
-"	      00471a94    push edi"
-"	      00471a95    mov this,ecx"
-"	      00471a98    mov eax,bAddToParentList"
-"	      00471a9b    push eax"
-"	      00471a9c    mov eax,myNewOwner"
-"	      00471a9f    push eax"
-"	      00471aa0    mov eax,szImageFileName"
-"	      00471aa3    push eax"
-"	      00471aa4    mov eax,windowNewParent"
-"	      00471aa7    push eax"
-"	      00471aa8    mov eax,nNewID"
-"	      00471aab    push eax"
-"	      00471aac    mov eax,rectNewWindow"
-"	      00471aaf    push eax"
-"	      00471ab0    mov ecx,this"
-"	      00471ab3    call 004AF0ABh"
-"	      00471ab8    mov eax,this"
-"	      00471abb    mov dword ptr [eax],590A38h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, bAddToParentList;
+	__asm        push   eax;
+	__asm        mov    eax, myNewOwner;
+	__asm        push   eax;
+	__asm        mov    eax, szImageFileName;
+	__asm        push   eax;
+	__asm        mov    eax, windowNewParent;
+	__asm        push   eax;
+	__asm        mov    eax, nNewID;
+	__asm        push   eax;
+	__asm        mov    eax, rectNewWindow;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AF0AB;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 127:
-	asm( 
-"	      00471ac1    cmp dword ptr ds:[5997C0h],0"
-"	      00471ac8    jne near ptr 00471AD8h"
-);
+	__asm        cmp    dword ptr ds:[0x5997C0], 0;
+	__asm        jne    near ptr 0x00471AD8;
 // LINE 128:
-	asm( 
-"	      00471ace    mov ecx,604348h"
-"	      00471ad3    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042F5FC;
 // LINE 129:
-	asm( 
-"	      00471ad8    inc dword ptr ds:[5997C0h]"
-);
+	__asm        inc    dword ptr ds:[0x5997C0];
 // LINE 130:
-	asm( 
-"	      00471ade    jmp near ptr 00471AE3h"
-"	      00471ae3    mov eax,this"
-"	      00471ae6    pop edi"
-"	      00471ae7    pop esi"
-"	      00471ae8    pop ebx"
-"	      00471ae9    leave"
-"	      00471aea    ret 18h"
-);
+	__asm        jmp    near ptr 0x00471AE3;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00471aed
 void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 // LINE 135:
-	asm( 
-"	      00471aed    push ebp"
-"	      00471aee    mov ebp,esp"
-"	      00471af0    sub esp,4"
-"	      00471af3    push ebx"
-"	      00471af4    push esi"
-"	      00471af5    push edi"
-"	      00471af6    mov this,ecx"
-"	      00471af9    mov eax,this"
-"	      00471afc    mov dword ptr [eax],590A38h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 136:
-	asm( 
-"	      00471b02    dec dword ptr ds:[5997C0h]"
-);
+	__asm        dec    dword ptr ds:[0x5997C0];
 // LINE 137:
-	asm( 
-"	      00471b08    jne near ptr 00471B18h"
-);
+	__asm        jne    near ptr 0x00471B18;
 // LINE 138:
-	asm( 
-"	      00471b0e    mov ecx,604348h"
-"	      00471b13    call 0042F549h"
-);
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042F549;
 // LINE 139:
-	asm( 
-"	      00471b18    jmp near ptr 00471B1Dh"
-"	      00471b1d    jmp near ptr 00471B22h"
-"	      00471b22    jmp near ptr 00471B27h"
-"	      00471b27    mov ecx,this"
-"	      00471b2a    call 004A4045h"
-"	      00471b2f    pop edi"
-"	      00471b30    pop esi"
-"	      00471b31    pop ebx"
-"	      00471b32    leave"
-"	      00471b33    ret"
-);
+	__asm        jmp    near ptr 0x00471B1D;
+	__asm        jmp    near ptr 0x00471B22;
+	__asm        jmp    near ptr 0x00471B27;
+	__asm        mov    ecx, this;
+	__asm        call   0x004A4045;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471b34
 void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 // LINE 145:
-	asm( 
-"	      00471b34    push ebp"
-"	      00471b35    mov ebp,esp"
-"	      00471b37    sub esp,4"
-"	      00471b3a    push ebx"
-"	      00471b3b    push esi"
-"	      00471b3c    push edi"
-"	      00471b3d    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 146:
-	asm( 
-"	      00471b40    mov eax,this"
-"	      00471b43    mov ecx,nNewButtonState"
-"	      00471b46    cmp [eax+74h],ecx"
-"	      00471b49    je near ptr 00471B6Dh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, nNewButtonState;
+	__asm        cmp    [eax+0x74], ecx;
+	__asm        je     near ptr 0x00471B6D;
 // LINE 147:
-	asm( 
-"	      00471b4f    mov eax,ds:[5C37F0h]"
-"	      00471b54    push eax"
-"	      00471b55    mov ecx,604348h"
-"	      00471b5a    call 0042FE2Eh"
-);
+	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042FE2E;
 // LINE 148:
-	asm( 
-"	      00471b5f    push 1"
-"	      00471b61    push 0"
-"	      00471b63    mov ecx,604348h"
-"	      00471b68    call 0043005Ah"
-);
+	__asm        push   1;
+	__asm        push   0;
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0043005A;
 // LINE 150:
-	asm( 
-"	      00471b6d    mov eax,nNewButtonState"
-"	      00471b70    push eax"
-"	      00471b71    mov ecx,this"
-"	      00471b74    call 004AF6ABh"
-);
+	__asm        mov    eax, nNewButtonState;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004AF6AB;
 // LINE 151:
-	asm( 
-"	      00471b79    jmp near ptr 00471B7Eh"
-"	      00471b7e    pop edi"
-"	      00471b7f    pop esi"
-"	      00471b80    pop ebx"
-"	      00471b81    leave"
-"	      00471b82    ret 4"
-);
+	__asm        jmp    near ptr 0x00471B7E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471b85
 void SoundScrollBarWindow::SoundScrollBarWindow() {
 // LINE 156:
-	asm( 
-"	      00471b85    push ebp"
-"	      00471b86    mov ebp,esp"
-"	      00471b88    sub esp,4"
-"	      00471b8b    push ebx"
-"	      00471b8c    push esi"
-"	      00471b8d    push edi"
-"	      00471b8e    mov this,ecx"
-"	      00471b91    mov ecx,this"
-"	      00471b94    call 004B28F8h"
-"	      00471b99    mov eax,this"
-"	      00471b9c    mov dword ptr [eax],590B18h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    ecx, this;
+	__asm        call   0x004B28F8;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 157:
-	asm( 
-"	      00471ba2    cmp dword ptr ds:[5997C4h],0"
-"	      00471ba9    jne near ptr 00471BB9h"
-);
+	__asm        cmp    dword ptr ds:[0x5997C4], 0;
+	__asm        jne    near ptr 0x00471BB9;
 // LINE 158:
-	asm( 
-"	      00471baf    mov ecx,604248h"
-"	      00471bb4    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042F5FC;
 // LINE 159:
-	asm( 
-"	      00471bb9    inc dword ptr ds:[5997C4h]"
-);
+	__asm        inc    dword ptr ds:[0x5997C4];
 // LINE 160:
-	asm( 
-"	      00471bbf    jmp near ptr 00471BC4h"
-"	      00471bc4    mov eax,this"
-"	      00471bc7    pop edi"
-"	      00471bc8    pop esi"
-"	      00471bc9    pop ebx"
-"	      00471bca    leave"
-"	      00471bcb    ret"
-);
+	__asm        jmp    near ptr 0x00471BC4;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471bcc
 void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 // LINE 170:
-	asm( 
-"	      00471bcc    push ebp"
-"	      00471bcd    mov ebp,esp"
-"	      00471bcf    sub esp,4"
-"	      00471bd2    push ebx"
-"	      00471bd3    push esi"
-"	      00471bd4    push edi"
-"	      00471bd5    mov this,ecx"
-"	      00471bd8    mov eax,szImageFileName"
-"	      00471bdb    push eax"
-"	      00471bdc    mov eax,bAddToParentList"
-"	      00471bdf    push eax"
-"	      00471be0    mov eax,myNewOwner"
-"	      00471be3    push eax"
-"	      00471be4    mov eax,windowNewParent"
-"	      00471be7    push eax"
-"	      00471be8    mov eax,newSliderWindowDirection"
-"	      00471beb    push eax"
-"	      00471bec    mov eax,nNewID"
-"	      00471bef    push eax"
-"	      00471bf0    mov eax,rectNewWindow"
-"	      00471bf3    push eax"
-"	      00471bf4    mov ecx,this"
-"	      00471bf7    call 004B2C25h"
-"	      00471bfc    mov eax,this"
-"	      00471bff    mov dword ptr [eax],590B18h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, szImageFileName;
+	__asm        push   eax;
+	__asm        mov    eax, bAddToParentList;
+	__asm        push   eax;
+	__asm        mov    eax, myNewOwner;
+	__asm        push   eax;
+	__asm        mov    eax, windowNewParent;
+	__asm        push   eax;
+	__asm        mov    eax, newSliderWindowDirection;
+	__asm        push   eax;
+	__asm        mov    eax, nNewID;
+	__asm        push   eax;
+	__asm        mov    eax, rectNewWindow;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x004B2C25;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 171:
-	asm( 
-"	      00471c05    cmp dword ptr ds:[5997C4h],0"
-"	      00471c0c    jne near ptr 00471C1Ch"
-);
+	__asm        cmp    dword ptr ds:[0x5997C4], 0;
+	__asm        jne    near ptr 0x00471C1C;
 // LINE 172:
-	asm( 
-"	      00471c12    mov ecx,604248h"
-"	      00471c17    call 0042F5FCh"
-);
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042F5FC;
 // LINE 173:
-	asm( 
-"	      00471c1c    inc dword ptr ds:[5997C4h]"
-);
+	__asm        inc    dword ptr ds:[0x5997C4];
 // LINE 174:
-	asm( 
-"	      00471c22    jmp near ptr 00471C27h"
-"	      00471c27    mov eax,this"
-"	      00471c2a    pop edi"
-"	      00471c2b    pop esi"
-"	      00471c2c    pop ebx"
-"	      00471c2d    leave"
-"	      00471c2e    ret 1Ch"
-);
+	__asm        jmp    near ptr 0x00471C27;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x00471c31
 void SoundScrollBarWindow::~SoundScrollBarWindow() {
 // LINE 179:
-	asm( 
-"	      00471c31    push ebp"
-"	      00471c32    mov ebp,esp"
-"	      00471c34    sub esp,4"
-"	      00471c37    push ebx"
-"	      00471c38    push esi"
-"	      00471c39    push edi"
-"	      00471c3a    mov this,ecx"
-"	      00471c3d    mov eax,this"
-"	      00471c40    mov dword ptr [eax],590B18h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 180:
-	asm( 
-"	      00471c46    dec dword ptr ds:[5997C4h]"
-);
+	__asm        dec    dword ptr ds:[0x5997C4];
 // LINE 181:
-	asm( 
-"	      00471c4c    jne near ptr 00471C5Ch"
-);
+	__asm        jne    near ptr 0x00471C5C;
 // LINE 182:
-	asm( 
-"	      00471c52    mov ecx,604248h"
-"	      00471c57    call 0042F549h"
-);
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042F549;
 // LINE 183:
-	asm( 
-"	      00471c5c    jmp near ptr 00471C61h"
-"	      00471c61    jmp near ptr 00471C66h"
-"	      00471c66    jmp near ptr 00471C6Bh"
-"	      00471c6b    mov ecx,this"
-"	      00471c6e    call 004B19E0h"
-"	      00471c73    pop edi"
-"	      00471c74    pop esi"
-"	      00471c75    pop ebx"
-"	      00471c76    leave"
-"	      00471c77    ret"
-);
+	__asm        jmp    near ptr 0x00471C61;
+	__asm        jmp    near ptr 0x00471C66;
+	__asm        jmp    near ptr 0x00471C6B;
+	__asm        mov    ecx, this;
+	__asm        call   0x004B19E0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471c78
 void SoundScrollBarWindow::MoveLinePrevious() {
 // LINE 190:
-	asm( 
-"	      00471c78    push ebp"
-"	      00471c79    mov ebp,esp"
-"	      00471c7b    sub esp,4"
-"	      00471c7e    push ebx"
-"	      00471c7f    push esi"
-"	      00471c80    push edi"
-"	      00471c81    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 191:
-	asm( 
-"	      00471c84    mov eax,this"
-"	      00471c87    mov ecx,this"
-"	      00471c8a    mov ecx,[ecx+78h]"
-"	      00471c8d    cmp [eax+80h],ecx"
-"	      00471c93    jle near ptr 00471CB7h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x78];
+	__asm        cmp    [eax+0x80], ecx;
+	__asm        jle    near ptr 0x00471CB7;
 // LINE 192:
-	asm( 
-"	      00471c99    mov eax,ds:[5C37F0h]"
-"	      00471c9e    push eax"
-"	      00471c9f    mov ecx,604248h"
-"	      00471ca4    call 0042FE2Eh"
-);
+	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042FE2E;
 // LINE 193:
-	asm( 
-"	      00471ca9    push 1"
-"	      00471cab    push 0"
-"	      00471cad    mov ecx,604248h"
-"	      00471cb2    call 0043005Ah"
-);
+	__asm        push   1;
+	__asm        push   0;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0043005A;
 // LINE 195:
-	asm( 
-"	      00471cb7    mov ecx,this"
-"	      00471cba    call 004B39D0h"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x004B39D0;
 // LINE 196:
-	asm( 
-"	      00471cbf    jmp near ptr 00471CC4h"
-"	      00471cc4    pop edi"
-"	      00471cc5    pop esi"
-"	      00471cc6    pop ebx"
-"	      00471cc7    leave"
-"	      00471cc8    ret"
-);
+	__asm        jmp    near ptr 0x00471CC4;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471cc9
 void SoundScrollBarWindow::MoveLineNext() {
 // LINE 204:
-	asm( 
-"	      00471cc9    push ebp"
-"	      00471cca    mov ebp,esp"
-"	      00471ccc    sub esp,4"
-"	      00471ccf    push ebx"
-"	      00471cd0    push esi"
-"	      00471cd1    push edi"
-"	      00471cd2    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 205:
-	asm( 
-"	      00471cd5    mov eax,this"
-"	      00471cd8    mov ecx,this"
-"	      00471cdb    mov ecx,[ecx+80h]"
-"	      00471ce1    cmp [eax+7Ch],ecx"
-"	      00471ce4    jle near ptr 00471D08h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x80];
+	__asm        cmp    [eax+0x7C], ecx;
+	__asm        jle    near ptr 0x00471D08;
 // LINE 206:
-	asm( 
-"	      00471cea    mov eax,ds:[5C37F0h]"
-"	      00471cef    push eax"
-"	      00471cf0    mov ecx,604248h"
-"	      00471cf5    call 0042FE2Eh"
-);
+	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042FE2E;
 // LINE 207:
-	asm( 
-"	      00471cfa    push 1"
-"	      00471cfc    push 0"
-"	      00471cfe    mov ecx,604248h"
-"	      00471d03    call 0043005Ah"
-);
+	__asm        push   1;
+	__asm        push   0;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0043005A;
 // LINE 209:
-	asm( 
-"	      00471d08    mov ecx,this"
-"	      00471d0b    call 004B3A46h"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x004B3A46;
 // LINE 210:
-	asm( 
-"	      00471d10    jmp near ptr 00471D15h"
-"	      00471d15    pop edi"
-"	      00471d16    pop esi"
-"	      00471d17    pop ebx"
-"	      00471d18    leave"
-"	      00471d19    ret"
-);
+	__asm        jmp    near ptr 0x00471D15;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

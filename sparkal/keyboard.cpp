@@ -20,92 +20,74 @@
 // FUNCTION: COPTER_D 0x00431cc0
 int32_t IsModifierSet(unsigned char chModifiers) {
 // LINE 16:
-	asm( 
-"	      00431cc0    push ebp"
-"	      00431cc1    mov ebp,esp"
-"	      00431cc3    push ebx"
-"	      00431cc4    push esi"
-"	      00431cc5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 17:
-	asm( 
-"	      00431cc6    mov ecx,5C34F0h"
-"	      00431ccb    call 00431EB1h"
-"	      00431cd0    movsx eax,al"
-"	      00431cd3    xor ecx,ecx"
-"	      00431cd5    mov cl,chModifiers"
-"	      00431cd8    and eax,ecx"
-"	      00431cda    jmp near ptr 00431CDFh"
-);
+	__asm        mov    ecx, 0x5C34F0;
+	__asm        call   0x00431EB1;
+	__asm        movsx  eax, al;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, chModifiers;
+	__asm        and    eax, ecx;
+	__asm        jmp    near ptr 0x00431CDF;
 // LINE 18:
-	asm( 
-"	      00431cdf    pop edi"
-"	      00431ce0    pop esi"
-"	      00431ce1    pop ebx"
-"	      00431ce2    leave"
-"	      00431ce3    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
 // LINE 31:
-	asm( 
-"	      00431ce4    push ebp"
-"	      00431ce5    mov ebp,esp"
-"	      00431ce7    sub esp,4"
-"	      00431cea    push ebx"
-"	      00431ceb    push esi"
-"	      00431cec    push edi"
-"	      00431ced    mov this,ecx"
-"	      00431cf0    mov ecx,this"
-"	      00431cf3    call 0043D432h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D432;
 // LINE 32:
-	asm( 
-"	      00431cf8    mov ecx,this"
-"	      00431cfb    call 00431E19h"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x00431E19;
 // LINE 33:
-	asm( 
-"	      00431d00    jmp near ptr 00431D05h"
-"	      00431d05    mov eax,this"
-"	      00431d08    pop edi"
-"	      00431d09    pop esi"
-"	      00431d0a    pop ebx"
-"	      00431d0b    leave"
-"	      00431d0c    ret"
-);
+	__asm        jmp    near ptr 0x00431D05;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431d0d
 int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 // LINE 40:
-	asm( 
-"	      00431d0d    push ebp"
-"	      00431d0e    mov ebp,esp"
-"	      00431d10    sub esp,4"
-"	      00431d13    push ebx"
-"	      00431d14    push esi"
-"	      00431d15    push edi"
-"	      00431d16    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 41:
-	asm( 
-"	      00431d19    xor eax,eax"
-"	      00431d1b    mov al,chKey"
-"	      00431d1e    mov ecx,this"
-"	      00431d21    movsx eax,byte ptr [eax+ecx+10h]"
-"	      00431d26    jmp near ptr 00431D2Bh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    ecx, this;
+	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
+	__asm        jmp    near ptr 0x00431D2B;
 // LINE 42:
-	asm( 
-"	      00431d2b    pop edi"
-"	      00431d2c    pop esi"
-"	      00431d2d    pop ebx"
-"	      00431d2e    leave"
-"	      00431d2f    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431d32
@@ -113,147 +95,115 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	char chCurrentModifiers;
 
 // LINE 49:
-	asm( 
-"	      00431d32    push ebp"
-"	      00431d33    mov ebp,esp"
-"	      00431d35    sub esp,8"
-"	      00431d38    push ebx"
-"	      00431d39    push esi"
-"	      00431d3a    push edi"
-"	      00431d3b    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 52:
-	asm( 
-"	      00431d3e    mov eax,reinterpret_cast<uint32_t>(chKey)"
-"	      00431d41    push eax"
-"	      00431d42    mov ecx,this"
-"	      00431d45    call 00431D0Dh"
-"	      00431d4a    test eax,eax"
-"	      00431d4c    jne near ptr 00431D59h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x00431D0D;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x00431D59;
 // LINE 53:
-	asm( 
-"	      00431d52    xor eax,eax"
-"	      00431d54    jmp near ptr 00431D86h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00431D86;
 // LINE 57:
-	asm( 
-"	      00431d59    mov ecx,this"
-"	      00431d5c    call 00431EB1h"
-"	      00431d61    mov chCurrentModifiers,al"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x00431EB1;
+	__asm        mov    chCurrentModifiers, al;
 // LINE 58:
-	asm( 
-"	      00431d64    movsx eax,chCurrentModifiers"
-"	      00431d68    xor ecx,ecx"
-"	      00431d6a    mov cl,chModifiers"
-"	      00431d6d    cmp eax,ecx"
-"	      00431d6f    jne near ptr 00431D7Fh"
-"	      00431d75    mov eax,1"
-"	      00431d7a    jmp near ptr 00431D81h"
-"	      00431d7f    xor eax,eax"
-"	      00431d81    jmp near ptr 00431D86h"
-);
+	__asm        movsx  eax, chCurrentModifiers;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, chModifiers;
+	__asm        cmp    eax, ecx;
+	__asm        jne    near ptr 0x00431D7F;
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x00431D81;
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00431D86;
 // LINE 59:
-	asm( 
-"	      00431d86    pop edi"
-"	      00431d87    pop esi"
-"	      00431d88    pop ebx"
-"	      00431d89    leave"
-"	      00431d8a    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00431d8d
 void Keyboard::ProcessKeyDown(unsigned char chKey) {
 // LINE 66:
-	asm( 
-"	      00431d8d    push ebp"
-"	      00431d8e    mov ebp,esp"
-"	      00431d90    sub esp,4"
-"	      00431d93    push ebx"
-"	      00431d94    push esi"
-"	      00431d95    push edi"
-"	      00431d96    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 70:
-	asm( 
-"	      00431d99    xor eax,eax"
-"	      00431d9b    mov al,chKey"
-"	      00431d9e    mov ecx,this"
-"	      00431da1    movsx eax,byte ptr [eax+ecx+10h]"
-"	      00431da6    test eax,eax"
-"	      00431da8    jne near ptr 00431DC7h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    ecx, this;
+	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x00431DC7;
 // LINE 71:
-	asm( 
-"	      00431dae    xor eax,eax"
-"	      00431db0    mov al,chKey"
-"	      00431db3    mov ecx,this"
-"	      00431db6    mov byte ptr [eax+ecx+10h],1"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+0x10], 1;
 // LINE 72:
-	asm( 
-"	      00431dbb    mov eax,reinterpret_cast<uint32_t>(chKey)"
-"	      00431dbe    push eax"
-"	      00431dbf    mov ecx,this"
-"	      00431dc2    call 0043D4EBh"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D4EB;
 // LINE 74:
-	asm( 
-"	      00431dc7    jmp near ptr 00431DCCh"
-"	      00431dcc    pop edi"
-"	      00431dcd    pop esi"
-"	      00431dce    pop ebx"
-"	      00431dcf    leave"
-"	      00431dd0    ret 4"
-);
+	__asm        jmp    near ptr 0x00431DCC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431dd3
 void Keyboard::ProcessKeyUp(unsigned char chKey) {
 // LINE 82:
-	asm( 
-"	      00431dd3    push ebp"
-"	      00431dd4    mov ebp,esp"
-"	      00431dd6    sub esp,4"
-"	      00431dd9    push ebx"
-"	      00431dda    push esi"
-"	      00431ddb    push edi"
-"	      00431ddc    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 83:
-	asm( 
-"	      00431ddf    xor eax,eax"
-"	      00431de1    mov al,chKey"
-"	      00431de4    mov ecx,this"
-"	      00431de7    movsx eax,byte ptr [eax+ecx+10h]"
-"	      00431dec    test eax,eax"
-"	      00431dee    je near ptr 00431E0Dh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    ecx, this;
+	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00431E0D;
 // LINE 84:
-	asm( 
-"	      00431df4    xor eax,eax"
-"	      00431df6    mov al,chKey"
-"	      00431df9    mov ecx,this"
-"	      00431dfc    mov byte ptr [eax+ecx+10h],0"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+0x10], 0;
 // LINE 85:
-	asm( 
-"	      00431e01    mov eax,reinterpret_cast<uint32_t>(chKey)"
-"	      00431e04    push eax"
-"	      00431e05    mov ecx,this"
-"	      00431e08    call 0043D67Fh"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D67F;
 // LINE 87:
-	asm( 
-"	      00431e0d    jmp near ptr 00431E12h"
-"	      00431e12    pop edi"
-"	      00431e13    pop esi"
-"	      00431e14    pop ebx"
-"	      00431e15    leave"
-"	      00431e16    ret 4"
-);
+	__asm        jmp    near ptr 0x00431E12;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431e19
@@ -261,91 +211,71 @@ void Keyboard::ClearSettings() {
 	int32_t i;
 
 // LINE 95:
-	asm( 
-"	      00431e19    push ebp"
-"	      00431e1a    mov ebp,esp"
-"	      00431e1c    sub esp,8"
-"	      00431e1f    push ebx"
-"	      00431e20    push esi"
-"	      00431e21    push edi"
-"	      00431e22    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 98:
-	asm( 
-"	      00431e25    mov i,0"
-"	      00431e2c    jmp near ptr 00431E34h"
-"	      00431e31    inc i"
-"	      00431e34    cmp i,100h"
-"	      00431e3b    jge near ptr 00431E51h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x00431E34;
+	__asm        inc    i;
+	__asm        cmp    i, 0x100;
+	__asm        jge    near ptr 0x00431E51;
 // LINE 99:
-	asm( 
-"	      00431e41    mov eax,i"
-"	      00431e44    mov ecx,this"
-"	      00431e47    mov byte ptr [eax+ecx+10h],0"
-"	      00431e4c    jmp near ptr 00431E31h"
-);
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [eax+ecx+0x10], 0;
+	__asm        jmp    near ptr 0x00431E31;
 // LINE 100:
-	asm( 
-"	      00431e51    mov ecx,this"
-"	      00431e54    call 0043D703h"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D703;
 // LINE 101:
-	asm( 
-"	      00431e59    jmp near ptr 00431E5Eh"
-"	      00431e5e    pop edi"
-"	      00431e5f    pop esi"
-"	      00431e60    pop ebx"
-"	      00431e61    leave"
-"	      00431e62    ret"
-);
+	__asm        jmp    near ptr 0x00431E5E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431e63
 int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 // LINE 109:
-	asm( 
-"	      00431e63    push ebp"
-"	      00431e64    mov ebp,esp"
-"	      00431e66    sub esp,4"
-"	      00431e69    push ebx"
-"	      00431e6a    push esi"
-"	      00431e6b    push edi"
-"	      00431e6c    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 111:
-	asm( 
-"	      00431e6f    xor eax,eax"
-"	      00431e71    mov al,chKey"
-"	      00431e74    cmp eax,10h"
-"	      00431e77    je near ptr 00431E99h"
-"	      00431e7d    xor eax,eax"
-"	      00431e7f    mov al,chKey"
-"	      00431e82    cmp eax,11h"
-"	      00431e85    je near ptr 00431E99h"
-"	      00431e8b    xor eax,eax"
-"	      00431e8d    mov al,chKey"
-"	      00431e90    cmp eax,12h"
-"	      00431e93    jne near ptr 00431EA3h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x10;
+	__asm        je     near ptr 0x00431E99;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x11;
+	__asm        je     near ptr 0x00431E99;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x12;
+	__asm        jne    near ptr 0x00431EA3;
 // LINE 112:
-	asm( 
-"	      00431e99    mov eax,1"
-"	      00431e9e    jmp near ptr 00431EAAh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x00431EAA;
 // LINE 115:
-	asm( 
-"	      00431ea3    xor eax,eax"
-"	      00431ea5    jmp near ptr 00431EAAh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00431EAA;
 // LINE 116:
-	asm( 
-"	      00431eaa    pop edi"
-"	      00431eab    pop esi"
-"	      00431eac    pop ebx"
-"	      00431ead    leave"
-"	      00431eae    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431eb1
@@ -353,74 +283,54 @@ char Keyboard::GetCurrentModifierState() {
 	char chReturnValue;
 
 // LINE 124:
-	asm( 
-"	      00431eb1    push ebp"
-"	      00431eb2    mov ebp,esp"
-"	      00431eb4    sub esp,8"
-"	      00431eb7    push ebx"
-"	      00431eb8    push esi"
-"	      00431eb9    push edi"
-"	      00431eba    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 125:
-	asm( 
-"	      00431ebd    mov chReturnValue,0"
-);
+	__asm        mov    chReturnValue, 0;
 // LINE 128:
-	asm( 
-"	      00431ec1    push 10h"
-"	      00431ec3    mov ecx,this"
-"	      00431ec6    call 00431D0Dh"
-"	      00431ecb    test eax,eax"
-"	      00431ecd    je near ptr 00431EDCh"
-);
+	__asm        push   0x10;
+	__asm        mov    ecx, this;
+	__asm        call   0x00431D0D;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00431EDC;
 // LINE 129:
-	asm( 
-"	      00431ed3    movsx eax,chReturnValue"
-"	      00431ed7    or al,1"
-"	      00431ed9    mov chReturnValue,al"
-);
+	__asm        movsx  eax, chReturnValue;
+	__asm        or     al, 1;
+	__asm        mov    chReturnValue, al;
 // LINE 130:
-	asm( 
-"	      00431edc    push 11h"
-"	      00431ede    mov ecx,this"
-"	      00431ee1    call 00431D0Dh"
-"	      00431ee6    test eax,eax"
-"	      00431ee8    je near ptr 00431EF7h"
-);
+	__asm        push   0x11;
+	__asm        mov    ecx, this;
+	__asm        call   0x00431D0D;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00431EF7;
 // LINE 131:
-	asm( 
-"	      00431eee    movsx eax,chReturnValue"
-"	      00431ef2    or al,2"
-"	      00431ef4    mov chReturnValue,al"
-);
+	__asm        movsx  eax, chReturnValue;
+	__asm        or     al, 2;
+	__asm        mov    chReturnValue, al;
 // LINE 132:
-	asm( 
-"	      00431ef7    push 12h"
-"	      00431ef9    mov ecx,this"
-"	      00431efc    call 00431D0Dh"
-"	      00431f01    test eax,eax"
-"	      00431f03    je near ptr 00431F12h"
-);
+	__asm        push   0x12;
+	__asm        mov    ecx, this;
+	__asm        call   0x00431D0D;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00431F12;
 // LINE 133:
-	asm( 
-"	      00431f09    movsx eax,chReturnValue"
-"	      00431f0d    or al,4"
-"	      00431f0f    mov chReturnValue,al"
-);
+	__asm        movsx  eax, chReturnValue;
+	__asm        or     al, 4;
+	__asm        mov    chReturnValue, al;
 // LINE 136:
-	asm( 
-"	      00431f12    mov al,chReturnValue"
-"	      00431f15    jmp near ptr 00431F1Ah"
-);
+	__asm        mov    al, chReturnValue;
+	__asm        jmp    near ptr 0x00431F1A;
 // LINE 137:
-	asm( 
-"	      00431f1a    pop edi"
-"	      00431f1b    pop esi"
-"	      00431f1c    pop ebx"
-"	      00431f1d    leave"
-"	      00431f1e    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431f1f
@@ -430,370 +340,274 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	static const char[10] chNumberArray = { /* <data@0x00598350> */ };
 
 // LINE 165:
-	asm( 
-"	      00431f1f    push ebp"
-"	      00431f20    mov ebp,esp"
-"	      00431f22    sub esp,28h"
-"	      00431f25    push ebx"
-"	      00431f26    push esi"
-"	      00431f27    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x28;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 171:
-	asm( 
-"	      00431f28    xor eax,eax"
-"	      00431f2a    mov al,chKey"
-"	      00431f2d    cmp eax,41h"
-"	      00431f30    jl near ptr 00431FCCh"
-"	      00431f36    xor eax,eax"
-"	      00431f38    mov al,chKey"
-"	      00431f3b    cmp eax,5Ah"
-"	      00431f3e    jg near ptr 00431FCCh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x41;
+	__asm        jl     near ptr 0x00431FCC;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x5A;
+	__asm        jg     near ptr 0x00431FCC;
 // LINE 172:
-	asm( 
-"	      00431f44    xor eax,eax"
-"	      00431f46    mov al,chModifiers"
-"	      00431f49    and eax,1"
-"	      00431f4c    mov [ebp-8],eax"
-"	      00431f4f    push 14h"
-"	      00431f51    call 00432226h"
-"	      00431f56    add esp,4"
-"	      00431f59    mov [ebp-0Ch],eax"
-"	      00431f5c    cmp dword ptr [ebp-8],0"
-"	      00431f60    je near ptr 00431F7Ch"
-"	      00431f66    cmp dword ptr [ebp-0Ch],0"
-"	      00431f6a    jne near ptr 00431F7Ch"
-"	      00431f70    mov dword ptr [ebp-10h],1"
-"	      00431f77    jmp near ptr 00431FA8h"
-"	      00431f7c    cmp dword ptr [ebp-8],0"
-"	      00431f80    jne near ptr 00431F9Ch"
-"	      00431f86    cmp dword ptr [ebp-0Ch],0"
-"	      00431f8a    je near ptr 00431F9Ch"
-"	      00431f90    mov dword ptr [ebp-10h],1"
-"	      00431f97    jmp near ptr 00431FA8h"
-"	      00431f9c    mov dword ptr [ebp-10h],0"
-"	      00431fa3    jmp near ptr 00431FA8h"
-"	      00431fa8    cmp dword ptr [ebp-10h],0"
-"	      00431fac    je near ptr 00431FBFh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chModifiers;
+	__asm        and    eax, 1;
+	__asm        mov    [ebp-8], eax;
+	__asm        push   0x14;
+	__asm        call   0x00432226;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0xC], eax;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x00431F7C;
+	__asm        cmp    dword ptr [ebp-0xC], 0;
+	__asm        jne    near ptr 0x00431F7C;
+	__asm        mov    dword ptr [ebp-0x10], 1;
+	__asm        jmp    near ptr 0x00431FA8;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        jne    near ptr 0x00431F9C;
+	__asm        cmp    dword ptr [ebp-0xC], 0;
+	__asm        je     near ptr 0x00431F9C;
+	__asm        mov    dword ptr [ebp-0x10], 1;
+	__asm        jmp    near ptr 0x00431FA8;
+	__asm        mov    dword ptr [ebp-0x10], 0;
+	__asm        jmp    near ptr 0x00431FA8;
+	__asm        cmp    dword ptr [ebp-0x10], 0;
+	__asm        je     near ptr 0x00431FBF;
 // LINE 173:
-	asm( 
-"	      00431fb2    mov al,chKey"
-"	      00431fb5    jmp near ptr 00432221h"
-);
+	__asm        mov    al, chKey;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 174:
-	asm( 
-"	      00431fba    jmp near ptr 00431FCCh"
-);
+	__asm        jmp    near ptr 0x00431FCC;
 // LINE 175:
-	asm( 
-"	      00431fbf    xor eax,eax"
-"	      00431fc1    mov al,chKey"
-"	      00431fc4    add eax,20h"
-"	      00431fc7    jmp near ptr 00432221h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        add    eax, 0x20;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 180:
-	asm( 
-"	      00431fcc    xor eax,eax"
-"	      00431fce    mov al,chKey"
-"	      00431fd1    cmp eax,30h"
-"	      00431fd4    jl near ptr 00432073h"
-"	      00431fda    xor eax,eax"
-"	      00431fdc    mov al,chKey"
-"	      00431fdf    cmp eax,39h"
-"	      00431fe2    jg near ptr 00432073h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x30;
+	__asm        jl     near ptr 0x00432073;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x39;
+	__asm        jg     near ptr 0x00432073;
 // LINE 181:
-	asm( 
-"	      00431fe8    xor eax,eax"
-"	      00431fea    mov al,chModifiers"
-"	      00431fed    and eax,1"
-"	      00431ff0    mov [ebp-14h],eax"
-"	      00431ff3    push 14h"
-"	      00431ff5    call 00432226h"
-"	      00431ffa    add esp,4"
-"	      00431ffd    mov [ebp-18h],eax"
-"	      00432000    cmp dword ptr [ebp-14h],0"
-"	      00432004    je near ptr 00432020h"
-"	      0043200a    cmp dword ptr [ebp-18h],0"
-"	      0043200e    jne near ptr 00432020h"
-"	      00432014    mov dword ptr [ebp-1Ch],1"
-"	      0043201b    jmp near ptr 0043204Ch"
-"	      00432020    cmp dword ptr [ebp-14h],0"
-"	      00432024    jne near ptr 00432040h"
-"	      0043202a    cmp dword ptr [ebp-18h],0"
-"	      0043202e    je near ptr 00432040h"
-"	      00432034    mov dword ptr [ebp-1Ch],1"
-"	      0043203b    jmp near ptr 0043204Ch"
-"	      00432040    mov dword ptr [ebp-1Ch],0"
-"	      00432047    jmp near ptr 0043204Ch"
-"	      0043204c    cmp dword ptr [ebp-1Ch],0"
-"	      00432050    je near ptr 0043206Bh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chModifiers;
+	__asm        and    eax, 1;
+	__asm        mov    [ebp-0x14], eax;
+	__asm        push   0x14;
+	__asm        call   0x00432226;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0x18], eax;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x00432020;
+	__asm        cmp    dword ptr [ebp-0x18], 0;
+	__asm        jne    near ptr 0x00432020;
+	__asm        mov    dword ptr [ebp-0x1C], 1;
+	__asm        jmp    near ptr 0x0043204C;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        jne    near ptr 0x00432040;
+	__asm        cmp    dword ptr [ebp-0x18], 0;
+	__asm        je     near ptr 0x00432040;
+	__asm        mov    dword ptr [ebp-0x1C], 1;
+	__asm        jmp    near ptr 0x0043204C;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
+	__asm        jmp    near ptr 0x0043204C;
+	__asm        cmp    dword ptr [ebp-0x1C], 0;
+	__asm        je     near ptr 0x0043206B;
 // LINE 182:
-	asm( 
-"	      00432056    xor eax,eax"
-"	      00432058    mov al,chKey"
-"	      0043205b    mov al,[eax+598320h]"
-"	      00432061    jmp near ptr 00432221h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        mov    al, [eax+0x598320];
+	__asm        jmp    near ptr 0x00432221;
 // LINE 183:
-	asm( 
-"	      00432066    jmp near ptr 00432073h"
-);
+	__asm        jmp    near ptr 0x00432073;
 // LINE 184:
-	asm( 
-"	      0043206b    mov al,chKey"
-"	      0043206e    jmp near ptr 00432221h"
-);
+	__asm        mov    al, chKey;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 189:
-	asm( 
-"	      00432073    mov chIndex,0FFh"
-);
+	__asm        mov    chIndex, 0xFF;
 // LINE 190:
-	asm( 
-"	      00432077    xor eax,eax"
-"	      00432079    mov al,chKey"
-"	      0043207c    cmp eax,60h"
-"	      0043207f    jne near ptr 0043208Eh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x60;
+	__asm        jne    near ptr 0x0043208E;
 // LINE 191:
-	asm( 
-"	      00432085    mov chIndex,0"
-);
+	__asm        mov    chIndex, 0;
 // LINE 192:
-	asm( 
-"	      00432089    jmp near ptr 0043216Fh"
-"	      0043208e    xor eax,eax"
-"	      00432090    mov al,chKey"
-"	      00432093    cmp eax,2Dh"
-"	      00432096    jne near ptr 004320A5h"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x2D;
+	__asm        jne    near ptr 0x004320A5;
 // LINE 193:
-	asm( 
-"	      0043209c    mov chIndex,1"
-);
+	__asm        mov    chIndex, 1;
 // LINE 194:
-	asm( 
-"	      004320a0    jmp near ptr 0043216Fh"
-"	      004320a5    xor eax,eax"
-"	      004320a7    mov al,chKey"
-"	      004320aa    cmp eax,3Dh"
-"	      004320ad    jne near ptr 004320BCh"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x3D;
+	__asm        jne    near ptr 0x004320BC;
 // LINE 195:
-	asm( 
-"	      004320b3    mov chIndex,2"
-);
+	__asm        mov    chIndex, 2;
 // LINE 196:
-	asm( 
-"	      004320b7    jmp near ptr 0043216Fh"
-"	      004320bc    xor eax,eax"
-"	      004320be    mov al,chKey"
-"	      004320c1    cmp eax,5Bh"
-"	      004320c4    jne near ptr 004320D3h"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x5B;
+	__asm        jne    near ptr 0x004320D3;
 // LINE 197:
-	asm( 
-"	      004320ca    mov chIndex,3"
-);
+	__asm        mov    chIndex, 3;
 // LINE 198:
-	asm( 
-"	      004320ce    jmp near ptr 0043216Fh"
-"	      004320d3    xor eax,eax"
-"	      004320d5    mov al,chKey"
-"	      004320d8    cmp eax,5Dh"
-"	      004320db    jne near ptr 004320EAh"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x5D;
+	__asm        jne    near ptr 0x004320EA;
 // LINE 199:
-	asm( 
-"	      004320e1    mov chIndex,4"
-);
+	__asm        mov    chIndex, 4;
 // LINE 200:
-	asm( 
-"	      004320e5    jmp near ptr 0043216Fh"
-"	      004320ea    xor eax,eax"
-"	      004320ec    mov al,chKey"
-"	      004320ef    cmp eax,5Ch"
-"	      004320f2    jne near ptr 00432101h"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x5C;
+	__asm        jne    near ptr 0x00432101;
 // LINE 201:
-	asm( 
-"	      004320f8    mov chIndex,5"
-);
+	__asm        mov    chIndex, 5;
 // LINE 202:
-	asm( 
-"	      004320fc    jmp near ptr 0043216Fh"
-"	      00432101    xor eax,eax"
-"	      00432103    mov al,chKey"
-"	      00432106    cmp eax,3Bh"
-"	      00432109    jne near ptr 00432118h"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x3B;
+	__asm        jne    near ptr 0x00432118;
 // LINE 203:
-	asm( 
-"	      0043210f    mov chIndex,6"
-);
+	__asm        mov    chIndex, 6;
 // LINE 204:
-	asm( 
-"	      00432113    jmp near ptr 0043216Fh"
-"	      00432118    xor eax,eax"
-"	      0043211a    mov al,chKey"
-"	      0043211d    cmp eax,27h"
-"	      00432120    jne near ptr 0043212Fh"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x27;
+	__asm        jne    near ptr 0x0043212F;
 // LINE 205:
-	asm( 
-"	      00432126    mov chIndex,7"
-);
+	__asm        mov    chIndex, 7;
 // LINE 206:
-	asm( 
-"	      0043212a    jmp near ptr 0043216Fh"
-"	      0043212f    xor eax,eax"
-"	      00432131    mov al,chKey"
-"	      00432134    cmp eax,2Ch"
-"	      00432137    jne near ptr 00432146h"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x2C;
+	__asm        jne    near ptr 0x00432146;
 // LINE 207:
-	asm( 
-"	      0043213d    mov chIndex,8"
-);
+	__asm        mov    chIndex, 8;
 // LINE 208:
-	asm( 
-"	      00432141    jmp near ptr 0043216Fh"
-"	      00432146    xor eax,eax"
-"	      00432148    mov al,chKey"
-"	      0043214b    cmp eax,2Eh"
-"	      0043214e    jne near ptr 0043215Dh"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x2E;
+	__asm        jne    near ptr 0x0043215D;
 // LINE 209:
-	asm( 
-"	      00432154    mov chIndex,9"
-);
+	__asm        mov    chIndex, 9;
 // LINE 210:
-	asm( 
-"	      00432158    jmp near ptr 0043216Fh"
-"	      0043215d    xor eax,eax"
-"	      0043215f    mov al,chKey"
-"	      00432162    cmp eax,2Fh"
-"	      00432165    jne near ptr 0043216Fh"
-);
+	__asm        jmp    near ptr 0x0043216F;
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x2F;
+	__asm        jne    near ptr 0x0043216F;
 // LINE 211:
-	asm( 
-"	      0043216b    mov chIndex,0Ah"
-);
+	__asm        mov    chIndex, 0xA;
 // LINE 213:
-	asm( 
-"	      0043216f    movsx eax,chIndex"
-"	      00432173    test eax,eax"
-"	      00432175    jl near ptr 00432205h"
-);
+	__asm        movsx  eax, chIndex;
+	__asm        test   eax, eax;
+	__asm        jl     near ptr 0x00432205;
 // LINE 214:
-	asm( 
-"	      0043217b    xor eax,eax"
-"	      0043217d    mov al,chModifiers"
-"	      00432180    and eax,1"
-"	      00432183    mov [ebp-20h],eax"
-"	      00432186    push 14h"
-"	      00432188    call 00432226h"
-"	      0043218d    add esp,4"
-"	      00432190    mov [ebp-24h],eax"
-"	      00432193    cmp dword ptr [ebp-20h],0"
-"	      00432197    je near ptr 004321B3h"
-"	      0043219d    cmp dword ptr [ebp-24h],0"
-"	      004321a1    jne near ptr 004321B3h"
-"	      004321a7    mov dword ptr [ebp-28h],1"
-"	      004321ae    jmp near ptr 004321DFh"
-"	      004321b3    cmp dword ptr [ebp-20h],0"
-"	      004321b7    jne near ptr 004321D3h"
-"	      004321bd    cmp dword ptr [ebp-24h],0"
-"	      004321c1    je near ptr 004321D3h"
-"	      004321c7    mov dword ptr [ebp-28h],1"
-"	      004321ce    jmp near ptr 004321DFh"
-"	      004321d3    mov dword ptr [ebp-28h],0"
-"	      004321da    jmp near ptr 004321DFh"
-"	      004321df    cmp dword ptr [ebp-28h],0"
-"	      004321e3    je near ptr 004321FDh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chModifiers;
+	__asm        and    eax, 1;
+	__asm        mov    [ebp-0x20], eax;
+	__asm        push   0x14;
+	__asm        call   0x00432226;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0x24], eax;
+	__asm        cmp    dword ptr [ebp-0x20], 0;
+	__asm        je     near ptr 0x004321B3;
+	__asm        cmp    dword ptr [ebp-0x24], 0;
+	__asm        jne    near ptr 0x004321B3;
+	__asm        mov    dword ptr [ebp-0x28], 1;
+	__asm        jmp    near ptr 0x004321DF;
+	__asm        cmp    dword ptr [ebp-0x20], 0;
+	__asm        jne    near ptr 0x004321D3;
+	__asm        cmp    dword ptr [ebp-0x24], 0;
+	__asm        je     near ptr 0x004321D3;
+	__asm        mov    dword ptr [ebp-0x28], 1;
+	__asm        jmp    near ptr 0x004321DF;
+	__asm        mov    dword ptr [ebp-0x28], 0;
+	__asm        jmp    near ptr 0x004321DF;
+	__asm        cmp    dword ptr [ebp-0x28], 0;
+	__asm        je     near ptr 0x004321FD;
 // LINE 215:
-	asm( 
-"	      004321e9    movsx eax,chIndex"
-"	      004321ed    mov al,[eax+598360h]"
-"	      004321f3    jmp near ptr 00432221h"
-);
+	__asm        movsx  eax, chIndex;
+	__asm        mov    al, [eax+0x598360];
+	__asm        jmp    near ptr 0x00432221;
 // LINE 216:
-	asm( 
-"	      004321f8    jmp near ptr 00432205h"
-);
+	__asm        jmp    near ptr 0x00432205;
 // LINE 217:
-	asm( 
-"	      004321fd    mov al,chKey"
-"	      00432200    jmp near ptr 00432221h"
-);
+	__asm        mov    al, chKey;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 220:
-	asm( 
-"	      00432205    xor eax,eax"
-"	      00432207    mov al,chKey"
-"	      0043220a    cmp eax,20h"
-"	      0043220d    jne near ptr 0043221Ah"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chKey;
+	__asm        cmp    eax, 0x20;
+	__asm        jne    near ptr 0x0043221A;
 // LINE 221:
-	asm( 
-"	      00432213    mov al,20h"
-"	      00432215    jmp near ptr 00432221h"
-);
+	__asm        mov    al, 0x20;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 225:
-	asm( 
-"	      0043221a    xor al,al"
-"	      0043221c    jmp near ptr 00432221h"
-);
+	__asm        xor    al, al;
+	__asm        jmp    near ptr 0x00432221;
 // LINE 226:
-	asm( 
-"	      00432221    pop edi"
-"	      00432222    pop esi"
-"	      00432223    pop ebx"
-"	      00432224    leave"
-"	      00432225    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432226
 int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 // LINE 241:
-	asm( 
-"	      00432226    push ebp"
-"	      00432227    mov ebp,esp"
-"	      00432229    push ebx"
-"	      0043222a    push esi"
-"	      0043222b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 243:
-	asm( 
-"	      0043222c    xor eax,eax"
-"	      0043222e    mov al,chToggleKey"
-"	      00432231    push eax"
-"	      00432232    call dword ptr ds:[6C386Ch]"
-"	      00432238    movsx eax,ax"
-"	      0043223b    test al,1"
-"	      0043223d    je near ptr 0043224Dh"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, chToggleKey;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C386C];
+	__asm        movsx  eax, ax;
+	__asm        test   al, 1;
+	__asm        je     near ptr 0x0043224D;
 // LINE 244:
-	asm( 
-"	      00432243    mov eax,1"
-"	      00432248    jmp near ptr 00432254h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x00432254;
 // LINE 245:
-	asm( 
-"	      0043224d    xor eax,eax"
-"	      0043224f    jmp near ptr 00432254h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00432254;
 // LINE 249:
-	asm( 
-"	      00432254    pop edi"
-"	      00432255    pop esi"
-"	      00432256    pop ebx"
-"	      00432257    leave"
-"	      00432258    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

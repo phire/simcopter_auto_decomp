@@ -2,23 +2,21 @@
 // FUNCTION: COPTER_D 0x0048e8a0
 void CGameCommander::SetNewGameApp(class CGameApp* newGameApp) {
 // LINE 197:
-	asm( 
-"	      0048e8a0    push ebp"
-"	      0048e8a1    mov ebp,esp"
-"	      0048e8a3    sub esp,4"
-"	      0048e8a6    push ebx"
-"	      0048e8a7    push esi"
-"	      0048e8a8    push edi"
-"	      0048e8a9    mov this,ecx"
-"	      0048e8ac    mov eax,newGameApp"
-"	      0048e8af    mov ecx,this"
-"	      0048e8b2    mov [ecx+8],eax"
-"	      0048e8b5    jmp near ptr 0048E8BAh"
-"	      0048e8ba    pop edi"
-"	      0048e8bb    pop esi"
-"	      0048e8bc    pop ebx"
-"	      0048e8bd    leave"
-"	      0048e8be    ret 4"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, newGameApp;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
+	__asm        jmp    near ptr 0x0048E8BA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 

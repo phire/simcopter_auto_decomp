@@ -10,81 +10,57 @@ struct VRResource* LoadPalette() {
 	struct CMAP_Resource* res;
 
 // LINE 53:
-	asm( 
-"	      004d20d0    push ebp"
-"	      004d20d1    mov ebp,esp"
-"	      004d20d3    sub esp,4"
-"	      004d20d6    push ebx"
-"	      004d20d7    push esi"
-"	      004d20d8    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 56:
-	asm( 
-"	      004d20d9    push 310h"
-"	      004d20de    mov eax,ds:[59C22Ch]"
-"	      004d20e3    push eax"
-"	      004d20e4    call 004CB4ACh"
-"	      004d20e9    add esp,8"
-"	      004d20ec    mov res,eax"
-);
+	__asm        push   0x310;
+	__asm        mov    eax, ds:[0x59C22C];
+	__asm        push   eax;
+	__asm        call   0x004CB4AC;
+	__asm        add    esp, 8;
+	__asm        mov    res, eax;
 // LINE 57:
-	asm( 
-"	      004d20ef    cmp res,0"
-"	      004d20f3    jne near ptr 004D210Ah"
-);
+	__asm        cmp    res, 0;
+	__asm        jne    near ptr 0x004D210A;
 // LINE 58:
-	asm( 
-"	      004d20f9    mov dword ptr ds:[662810h],4"
-);
+	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 59:
-	asm( 
-"	      004d2103    xor eax,eax"
-"	      004d2105    jmp near ptr 004D2152h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004D2152;
 // LINE 62:
-	asm( 
-"	      004d210a    push 300h"
-"	      004d210f    mov eax,res"
-"	      004d2112    add eax,10h"
-"	      004d2115    push eax"
-"	      004d2116    call 004D5F1Eh"
-"	      004d211b    add esp,8"
-"	      004d211e    test eax,eax"
-"	      004d2120    jne near ptr 004D212Dh"
-);
+	__asm        push   0x300;
+	__asm        mov    eax, res;
+	__asm        add    eax, 0x10;
+	__asm        push   eax;
+	__asm        call   0x004D5F1E;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004D212D;
 // LINE 63:
-	asm( 
-"	      004d2126    xor eax,eax"
-"	      004d2128    jmp near ptr 004D2152h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004D2152;
 // LINE 94:
-	asm( 
-"	      004d212d    mov eax,res"
-"	      004d2130    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, res;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 95:
-	asm( 
-"	      004d2136    mov eax,res"
-"	      004d2139    mov dword ptr [eax+8],4"
-);
+	__asm        mov    eax, res;
+	__asm        mov    dword ptr [eax+8], 4;
 // LINE 96:
-	asm( 
-"	      004d2140    mov eax,res"
-"	      004d2143    mov dword ptr [eax+0Ch],0"
-);
+	__asm        mov    eax, res;
+	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 97:
-	asm( 
-"	      004d214a    mov eax,res"
-"	      004d214d    jmp near ptr 004D2152h"
-);
+	__asm        mov    eax, res;
+	__asm        jmp    near ptr 0x004D2152;
 // LINE 99:
-	asm( 
-"	      004d2152    pop edi"
-"	      004d2153    pop esi"
-"	      004d2154    pop ebx"
-"	      004d2155    leave"
-"	      004d2156    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2157
@@ -92,32 +68,24 @@ char * VRGetPalFromResource(struct VRResource* res) {
 	struct CMAP_Resource* cmp;
 
 // LINE 110:
-	asm( 
-"	      004d2157    push ebp"
-"	      004d2158    mov ebp,esp"
-"	      004d215a    sub esp,4"
-"	      004d215d    push ebx"
-"	      004d215e    push esi"
-"	      004d215f    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 113:
-	asm( 
-"	      004d2160    mov eax,res"
-"	      004d2163    mov cmp,eax"
-);
+	__asm        mov    eax, res;
+	__asm        mov    cmp, eax;
 // LINE 114:
-	asm( 
-"	      004d2166    mov eax,cmp"
-"	      004d2169    add eax,10h"
-"	      004d216c    jmp near ptr 004D2171h"
-);
+	__asm        mov    eax, cmp;
+	__asm        add    eax, 0x10;
+	__asm        jmp    near ptr 0x004D2171;
 // LINE 116:
-	asm( 
-"	      004d2171    pop edi"
-"	      004d2172    pop esi"
-"	      004d2173    pop ebx"
-"	      004d2174    leave"
-"	      004d2175    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

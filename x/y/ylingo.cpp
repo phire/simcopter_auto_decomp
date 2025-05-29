@@ -8,142 +8,108 @@
 // FUNCTION: COPTER_D 0x005609d0
 void YObjLang::YObjLang(unsigned char * fileName) {
 // LINE 42:
-	asm( 
-"	      005609d0    push ebp"
-"	      005609d1    mov ebp,esp"
-"	      005609d3    sub esp,4"
-"	      005609d6    push ebx"
-"	      005609d7    push esi"
-"	      005609d8    push edi"
-"	      005609d9    mov this,ecx"
-"	      005609dc    mov eax,this"
-"	      005609df    mov dword ptr [eax],593700h"
-"	      005609e5    jmp near ptr 005609EAh"
-"	      005609ea    mov eax,this"
-"	      005609ed    mov dword ptr [eax],5936E8h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593700;
+	__asm        jmp    near ptr 0x005609EA;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 48:
-	asm( 
-"	      005609f3    jmp near ptr 005609F8h"
-"	      005609f8    mov eax,this"
-"	      005609fb    pop edi"
-"	      005609fc    pop esi"
-"	      005609fd    pop ebx"
-"	      005609fe    leave"
-"	      005609ff    ret 4"
-);
+	__asm        jmp    near ptr 0x005609F8;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560a02
 void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param) {
 // LINE 52:
-	asm( 
-"	      00560a02    push ebp"
-"	      00560a03    mov ebp,esp"
-"	      00560a05    sub esp,8"
-"	      00560a08    push ebx"
-"	      00560a09    push esi"
-"	      00560a0a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 53:
-	asm( 
-"	      00560a0b    movsx eax,id"
-"	      00560a0f    mov [ebp-8],eax"
-"	      00560a12    jmp near ptr 00560A91h"
-);
+	__asm        movsx  eax, id;
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x00560A91;
 // LINE 56:
-	asm( 
-"	      00560a17    mov eax,param"
-"	      00560a1a    push eax"
-"	      00560a1b    call 00566906h"
-"	      00560a20    add esp,4"
-);
+	__asm        mov    eax, param;
+	__asm        push   eax;
+	__asm        call   0x00566906;
+	__asm        add    esp, 4;
 // LINE 57:
-	asm( 
-"	      00560a23    jmp near ptr 00560AB4h"
-);
+	__asm        jmp    near ptr 0x00560AB4;
 // LINE 59:
 // Block start:
 	struct YObjLang::AttrParam* par;
-	asm( 
-"	      00560a28    mov eax,param"
-"	      00560a2b    mov par,eax"
-);
+	__asm        mov    eax, param;
+	__asm        mov    par, eax;
 // LINE 60:
-	asm( 
-"	      00560a2e    mov eax,par"
-"	      00560a31    push eax"
-"	      00560a32    call 0056695Bh"
-"	      00560a37    add esp,4"
-);
+	__asm        mov    eax, par;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 61:
-	asm( 
-"	      00560a3a    mov eax,par"
-"	      00560a3d    add eax,2"
-"	      00560a40    push eax"
-"	      00560a41    call 0056695Bh"
-"	      00560a46    add esp,4"
-);
+	__asm        mov    eax, par;
+	__asm        add    eax, 2;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 62:
-	asm( 
-"	      00560a49    jmp near ptr 00560AB4h"
-);
+	__asm        jmp    near ptr 0x00560AB4;
 // LINE 65:
 // Block end:
-	asm( 
-"	      00560a4e    mov eax,param"
-"	      00560a51    push eax"
-"	      00560a52    call 0056695Bh"
-"	      00560a57    add esp,4"
-);
+	__asm        mov    eax, param;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 66:
-	asm( 
-"	      00560a5a    mov eax,param"
-"	      00560a5d    add eax,2"
-"	      00560a60    push eax"
-"	      00560a61    call 0056695Bh"
-"	      00560a66    add esp,4"
-);
+	__asm        mov    eax, param;
+	__asm        add    eax, 2;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 67:
-	asm( 
-"	      00560a69    mov eax,param"
-"	      00560a6c    add eax,4"
-"	      00560a6f    push eax"
-"	      00560a70    call 0056695Bh"
-"	      00560a75    add esp,4"
-);
+	__asm        mov    eax, param;
+	__asm        add    eax, 4;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 68:
-	asm( 
-"	      00560a78    mov eax,param"
-"	      00560a7b    add eax,6"
-"	      00560a7e    push eax"
-"	      00560a7f    call 0056695Bh"
-"	      00560a84    add esp,4"
-);
+	__asm        mov    eax, param;
+	__asm        add    eax, 6;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 69:
-	asm( 
-"	      00560a87    jmp near ptr 00560AB4h"
-);
+	__asm        jmp    near ptr 0x00560AB4;
 // LINE 71:
-	asm( 
-"	      00560a8c    jmp near ptr 00560AB4h"
-"	      00560a91    cmp dword ptr [ebp-8],1"
-"	      00560a95    je near ptr 00560A17h"
-"	      00560a9b    cmp dword ptr [ebp-8],2"
-"	      00560a9f    je near ptr 00560A28h"
-"	      00560aa5    cmp dword ptr [ebp-8],6"
-"	      00560aa9    je near ptr 00560A17h"
-"	      00560aaf    jmp near ptr 00560A4Eh"
-);
+	__asm        jmp    near ptr 0x00560AB4;
+	__asm        cmp    dword ptr [ebp-8], 1;
+	__asm        je     near ptr 0x00560A17;
+	__asm        cmp    dword ptr [ebp-8], 2;
+	__asm        je     near ptr 0x00560A28;
+	__asm        cmp    dword ptr [ebp-8], 6;
+	__asm        je     near ptr 0x00560A17;
+	__asm        jmp    near ptr 0x00560A4E;
 // LINE 72:
-	asm( 
-"	      00560ab4    jmp near ptr 00560AB9h"
-"	      00560ab9    pop edi"
-"	      00560aba    pop esi"
-"	      00560abb    pop ebx"
-"	      00560abc    leave"
-"	      00560abd    ret"
-);
+	__asm        jmp    near ptr 0x00560AB9;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560abe
@@ -151,192 +117,156 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	struct Behavior::Tree* tree;
 
 // LINE 75:
-	asm( 
-"	      00560abe    push ebp"
-"	      00560abf    mov ebp,esp"
-"	      00560ac1    sub esp,4"
-"	      00560ac4    push ebx"
-"	      00560ac5    push esi"
-"	      00560ac6    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 76:
-	asm( 
-"	      00560ac7    mov eax,treevoid"
-"	      00560aca    mov tree,eax"
-);
+	__asm        mov    eax, treevoid;
+	__asm        mov    tree, eax;
 // LINE 77:
-	asm( 
-"	      00560acd    push 560A02h"
-"	      00560ad2    mov eax,size"
-"	      00560ad5    push eax"
-"	      00560ad6    mov eax,tree"
-"	      00560ad9    push eax"
-"	      00560ada    call 00560385h"
-"	      00560adf    add esp,0Ch"
-);
+	__asm        push   0x560A02;
+	__asm        mov    eax, size;
+	__asm        push   eax;
+	__asm        mov    eax, tree;
+	__asm        push   eax;
+	__asm        call   0x00560385;
+	__asm        add    esp, 0xC;
 // LINE 79:
-	asm( 
-"	      00560ae2    jmp near ptr 00560AE7h"
-"	      00560ae7    pop edi"
-"	      00560ae8    pop esi"
-"	      00560ae9    pop ebx"
-"	      00560aea    leave"
-"	      00560aeb    ret"
-);
+	__asm        jmp    near ptr 0x00560AE7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560aec
 void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 // LINE 82:
-	asm( 
-"	      00560aec    push ebp"
-"	      00560aed    mov ebp,esp"
-"	      00560aef    sub esp,4"
-"	      00560af2    push ebx"
-"	      00560af3    push esi"
-"	      00560af4    push edi"
-"	      00560af5    mov this,ecx"
-"	      00560af8    mov eax,this"
-"	      00560afb    mov dword ptr [eax],593700h"
-"	      00560b01    jmp near ptr 00560B06h"
-"	      00560b06    mov eax,this"
-"	      00560b09    mov dword ptr [eax],5936E8h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593700;
+	__asm        jmp    near ptr 0x00560B06;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 88:
-	asm( 
-"	      00560b0f    jmp near ptr 00560B14h"
-"	      00560b14    mov eax,this"
-"	      00560b17    pop edi"
-"	      00560b18    pop esi"
-"	      00560b19    pop ebx"
-"	      00560b1a    leave"
-"	      00560b1b    ret 4"
-);
+	__asm        jmp    near ptr 0x00560B14;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560b1e
 void YObjLang::~YObjLang() {
 // LINE 91:
-	asm( 
-"	      00560b1e    push ebp"
-"	      00560b1f    mov ebp,esp"
-"	      00560b21    sub esp,4"
-"	      00560b24    push ebx"
-"	      00560b25    push esi"
-"	      00560b26    push edi"
-"	      00560b27    mov this,ecx"
-"	      00560b2a    mov eax,this"
-"	      00560b2d    mov dword ptr [eax],5936E8h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 95:
-	asm( 
-"	      00560b33    jmp near ptr 00560B38h"
-"	      00560b38    pop edi"
-"	      00560b39    pop esi"
-"	      00560b3a    pop ebx"
-"	      00560b3b    leave"
-"	      00560b3c    ret"
-);
+	__asm        jmp    near ptr 0x00560B38;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560b3d
 short YObjLang::CountPrimitives() {
 // LINE 98:
-	asm( 
-"	      00560b3d    push ebp"
-"	      00560b3e    mov ebp,esp"
-"	      00560b40    sub esp,4"
-"	      00560b43    push ebx"
-"	      00560b44    push esi"
-"	      00560b45    push edi"
-"	      00560b46    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 103:
-	asm( 
-"	      00560b49    mov ax,40h"
-"	      00560b4d    jmp near ptr 00560B52h"
-);
+	__asm        mov    ax, 0x40;
+	__asm        jmp    near ptr 0x00560B52;
 // LINE 105:
-	asm( 
-"	      00560b52    pop edi"
-"	      00560b53    pop esi"
-"	      00560b54    pop ebx"
-"	      00560b55    leave"
-"	      00560b56    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560b57
 void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 // LINE 108:
-	asm( 
-"	      00560b57    push ebp"
-"	      00560b58    mov ebp,esp"
-"	      00560b5a    sub esp,4"
-"	      00560b5d    push ebx"
-"	      00560b5e    push esi"
-"	      00560b5f    push edi"
-"	      00560b60    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 112:
-	asm( 
-"	      00560b63    jmp near ptr 00560B68h"
-"	      00560b68    pop edi"
-"	      00560b69    pop esi"
-"	      00560b6a    pop ebx"
-"	      00560b6b    leave"
-"	      00560b6c    ret 8"
-);
+	__asm        jmp    near ptr 0x00560B68;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
 unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
 // LINE 115:
-	asm( 
-"	      00560b6f    push ebp"
-"	      00560b70    mov ebp,esp"
-"	      00560b72    sub esp,4"
-"	      00560b75    push ebx"
-"	      00560b76    push esi"
-"	      00560b77    push edi"
-"	      00560b78    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 129:
-	asm( 
-"	      00560b7b    xor ax,ax"
-"	      00560b7e    jmp near ptr 00560B83h"
-);
+	__asm        xor    ax, ax;
+	__asm        jmp    near ptr 0x00560B83;
 // LINE 130:
-	asm( 
-"	      00560b83    pop edi"
-"	      00560b84    pop esi"
-"	      00560b85    pop ebx"
-"	      00560b86    leave"
-"	      00560b87    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560b8a
 void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, unsigned char * str) {
 // LINE 467:
-	asm( 
-"	      00560b8a    push ebp"
-"	      00560b8b    mov ebp,esp"
-"	      00560b8d    sub esp,4"
-"	      00560b90    push ebx"
-"	      00560b91    push esi"
-"	      00560b92    push edi"
-"	      00560b93    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 478:
-	asm( 
-"	      00560b96    jmp near ptr 00560B9Bh"
-"	      00560b9b    pop edi"
-"	      00560b9c    pop esi"
-"	      00560b9d    pop ebx"
-"	      00560b9e    leave"
-"	      00560b9f    ret 0Ch"
-);
+	__asm        jmp    near ptr 0x00560B9B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    0xC;
 }
 
 

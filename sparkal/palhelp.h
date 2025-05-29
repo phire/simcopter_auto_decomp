@@ -2,32 +2,26 @@
 // FUNCTION: COPTER_D 0x00497b50
 void SparkalPalette::GetRGBValue(int32_t nIndex, struct SparkalColor& colorValue) {
 // LINE 107:
-	asm( 
-"	      00497b50    push ebp"
-"	      00497b51    mov ebp,esp"
-"	      00497b53    sub esp,4"
-"	      00497b56    push ebx"
-"	      00497b57    push esi"
-"	      00497b58    push edi"
-"	      00497b59    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 108:
-	asm( 
-"	      00497b5c    mov eax,this"
-"	      00497b5f    mov eax,[eax+4]"
-"	      00497b62    mov ecx,nIndex"
-"	      00497b65    mov eax,[eax+ecx*4]"
-"	      00497b68    mov ecx,colorValue"
-"	      00497b6b    mov [ecx],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, nIndex;
+	__asm        mov    eax, [eax+ecx*4];
+	__asm        mov    ecx, colorValue;
+	__asm        mov    [ecx], eax;
 // LINE 109:
-	asm( 
-"	      00497b6d    jmp near ptr 00497B72h"
-"	      00497b72    pop edi"
-"	      00497b73    pop esi"
-"	      00497b74    pop ebx"
-"	      00497b75    leave"
-"	      00497b76    ret 8"
-);
+	__asm        jmp    near ptr 0x00497B72;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 

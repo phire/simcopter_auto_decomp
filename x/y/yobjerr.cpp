@@ -10,124 +10,96 @@ void cYObject::Error(short errNum) {
 	 // Switch table at 0x005625e6
 
 // LINE 13:
-	asm( 
-"	      00562500    push ebp"
-"	      00562501    mov ebp,esp"
-"	      00562503    sub esp,8"
-"	      00562506    push ebx"
-"	      00562507    push esi"
-"	      00562508    push edi"
-"	      00562509    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 14:
-	asm( 
-"	      0056250c    movsx eax,errNum"
-"	      00562510    mov [ebp-8],eax"
-"	      00562513    jmp near ptr 005625B3h"
-);
+	__asm        movsx  eax, errNum;
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x005625B3;
 // LINE 16:
-	asm( 
-"	      00562518    push 8C085h"
-"	      0056251d    push 5BEBACh"
-"	      00562522    push 10h"
-"	      00562524    push 5BEBC4h"
-"	      00562529    call 00554F30h"
-"	      0056252e    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEBAC;
+	__asm        push   0x10;
+	__asm        push   0x5BEBC4;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 17:
-	asm( 
-"	      00562531    jmp near ptr 005625FFh"
-);
+	__asm        jmp    near ptr 0x005625FF;
 // LINE 20:
-	asm( 
-"	      00562536    push 8C085h"
-"	      0056253b    push 5BEBE8h"
-"	      00562540    push 14h"
-"	      00562542    push 5BEBFCh"
-"	      00562547    call 00554F30h"
-"	      0056254c    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEBE8;
+	__asm        push   0x14;
+	__asm        push   0x5BEBFC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 21:
-	asm( 
-"	      0056254f    jmp near ptr 005625FFh"
-);
+	__asm        jmp    near ptr 0x005625FF;
 // LINE 24:
-	asm( 
-"	      00562554    push 8C085h"
-"	      00562559    push 5BEC20h"
-"	      0056255e    push 18h"
-"	      00562560    push 5BEC34h"
-"	      00562565    call 00554F30h"
-"	      0056256a    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEC20;
+	__asm        push   0x18;
+	__asm        push   0x5BEC34;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 25:
-	asm( 
-"	      0056256d    jmp near ptr 005625FFh"
-);
+	__asm        jmp    near ptr 0x005625FF;
 // LINE 28:
-	asm( 
-"	      00562572    push 8C085h"
-"	      00562577    push 5BEC58h"
-"	      0056257c    push 1Ch"
-"	      0056257e    push 5BEC74h"
-"	      00562583    call 00554F30h"
-"	      00562588    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEC58;
+	__asm        push   0x1C;
+	__asm        push   0x5BEC74;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 29:
-	asm( 
-"	      0056258b    jmp near ptr 005625FFh"
-);
+	__asm        jmp    near ptr 0x005625FF;
 // LINE 32:
-	asm( 
-"	      00562590    push 8C085h"
-"	      00562595    push 5BEC98h"
-"	      0056259a    push 20h"
-"	      0056259c    push 5BECB4h"
-"	      005625a1    call 00554F30h"
-"	      005625a6    add esp,10h"
-);
+	__asm        push   0x8C085;
+	__asm        push   0x5BEC98;
+	__asm        push   0x20;
+	__asm        push   0x5BECB4;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 33:
-	asm( 
-"	      005625a9    jmp near ptr 005625FFh"
-);
+	__asm        jmp    near ptr 0x005625FF;
 // LINE 34:
-	asm( 
-"	      005625ae    jmp near ptr 005625FFh"
-"	      005625b3    dec dword ptr [ebp-8]"
-"	      005625b6    cmp dword ptr [ebp-8],18h"
-"	      005625ba    ja near ptr 00562590h"
-"	      005625c0    mov eax,[ebp-8]"
-"	      005625c3    xor ecx,ecx"
-"	      005625c5    mov cl,[eax+5625E6h]"
-"	      005625cb    jmp dword ptr [ecx*4+5625D2h]"
-"	      005625d2    sbb ds:[25360056h],ah"
-"	      005625d8    push esi"
-"	      005625d9    add [ebp+56h],dl"
-"	      005625dd    add [edx+25h],dh"
-"	      005625e0    push esi"
-"	      005625e1    add [eax+5625h],dl"
-"	      005625e7    add al,1"
-"	      005625e9    add al,[esp+eax]"
-"	      005625ec    add al,4"
-"	      005625ee    add al,4"
-"	      005625f0    add al,4"
-"	      005625f2    add al,4"
-"	      005625f4    add al,4"
-"	      005625f6    add al,4"
-"	      005625f8    add al,4"
-"	      005625fa    add al,4"
-"	      005625fc    add al,4"
-"	      005625fe    (bad)"
-);
+	__asm        jmp    near ptr 0x005625FF;
+	__asm        dec    dword ptr [ebp-8];
+	__asm        cmp    dword ptr [ebp-8], 0x18;
+	__asm        ja     near ptr 0x00562590;
+	__asm        mov    eax, [ebp-8];
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [eax+0x5625E6];
+	__asm        jmp    dword ptr [ecx*4+0x5625D2];
+	__asm        sbb    ds:[0x25360056], ah;
+	__asm        push   esi;
+	__asm        add    [ebp+0x56], dl;
+	__asm        add    [edx+0x25], dh;
+	__asm        push   esi;
+	__asm        add    [eax+0x5625], dl;
+	__asm        add    al, 1;
+	__asm        add    al, [esp+eax];
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        add    al, 4;
+	__asm        (bad);
 // LINE 69:
-	asm( 
-"	      005625ff    jmp near ptr 00562604h"
-"	      00562604    pop edi"
-"	      00562605    pop esi"
-"	      00562606    pop ebx"
-"	      00562607    leave"
-"	      00562608    ret 4"
-);
+	__asm        jmp    near ptr 0x00562604;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 

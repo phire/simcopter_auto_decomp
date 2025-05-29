@@ -11,146 +11,110 @@ float GetMillisecondTime() {
 	union _LARGE_INTEGER Counter;
 
 // LINE 27:
-	asm( 
-"	      0043d850    push ebp"
-"	      0043d851    mov ebp,esp"
-"	      0043d853    sub esp,20h"
-"	      0043d856    push ebx"
-"	      0043d857    push esi"
-"	      0043d858    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x20;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 34:
-	asm( 
-"	      0043d859    lea eax,Counter<_LARGE_INTEGER+0x00:None>"
-"	      0043d85c    push eax"
-"	      0043d85d    call dword ptr ds:[6C365Ch]"
-"	      0043d863    test eax,eax"
-"	      0043d865    je near ptr 0043D8A3h"
-);
+	__asm        lea    eax, Counter<_LARGE_INTEGER+0x00:None>;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0043D8A3;
 // LINE 36:
-	asm( 
-"	      0043d86b    mov eax,Counter<_LARGE_INTEGER+0x04:4>"
-"	      0043d86e    mov [ebp-10h],eax"
-"	      0043d871    fild dword ptr [ebp-10h]"
-"	      0043d874    fmul dword ptr ds:[58F5B0h]"
-"	      0043d87a    mov eax,Counter<_LARGE_INTEGER+0x00:4>"
-"	      0043d87d    mov [ebp-18h],eax"
-"	      0043d880    mov dword ptr [ebp-14h],0"
-"	      0043d887    fild qword ptr [ebp-18h]"
-"	      0043d88a    faddp"
-"	      0043d88c    fst Time"
-);
+	__asm        mov    eax, Counter<_LARGE_INTEGER+0x04:4>;
+	__asm        mov    [ebp-0x10], eax;
+	__asm        fild   dword ptr [ebp-0x10];
+	__asm        fmul   dword ptr ds:[0x58F5B0];
+	__asm        mov    eax, Counter<_LARGE_INTEGER+0x00:4>;
+	__asm        mov    [ebp-0x18], eax;
+	__asm        mov    dword ptr [ebp-0x14], 0;
+	__asm        fild   qword ptr [ebp-0x18];
+	__asm        faddp;
+	__asm        fst    Time;
 // LINE 37:
-	asm( 
-"	      0043d88f    fmul dword ptr ds:[58F5B4h]"
-"	      0043d895    fdiv dword ptr ds:[5C28CCh]"
-"	      0043d89b    fstp Time"
-);
+	__asm        fmul   dword ptr ds:[0x58F5B4];
+	__asm        fdiv   dword ptr ds:[0x5C28CC];
+	__asm        fstp   Time;
 // LINE 39:
-	asm( 
-"	      0043d89e    jmp near ptr 0043D8B9h"
-);
+	__asm        jmp    near ptr 0x0043D8B9;
 // LINE 40:
-	asm( 
-"	      0043d8a3    call dword ptr ds:[6C3908h]"
-"	      0043d8a9    mov [ebp-20h],eax"
-"	      0043d8ac    mov dword ptr [ebp-1Ch],0"
-"	      0043d8b3    fild qword ptr [ebp-20h]"
-"	      0043d8b6    fstp Time"
-);
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    [ebp-0x20], eax;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
+	__asm        fild   qword ptr [ebp-0x20];
+	__asm        fstp   Time;
 // LINE 46:
-	asm( 
-"	      0043d8b9    fld Time"
-"	      0043d8bc    jmp near ptr 0043D8C1h"
-);
+	__asm        fld    Time;
+	__asm        jmp    near ptr 0x0043D8C1;
 // LINE 47:
-	asm( 
-"	      0043d8c1    pop edi"
-"	      0043d8c2    pop esi"
-"	      0043d8c3    pop ebx"
-"	      0043d8c4    leave"
-"	      0043d8c5    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d8c6
 long GetMillisecondTimeLong() {
 // LINE 54:
-	asm( 
-"	      0043d8c6    push ebp"
-"	      0043d8c7    mov ebp,esp"
-"	      0043d8c9    push ebx"
-"	      0043d8ca    push esi"
-"	      0043d8cb    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 56:
-	asm( 
-"	      0043d8cc    call dword ptr ds:[6C3908h]"
-"	      0043d8d2    jmp near ptr 0043D8D7h"
-);
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        jmp    near ptr 0x0043D8D7;
 // LINE 61:
-	asm( 
-"	      0043d8d7    pop edi"
-"	      0043d8d8    pop esi"
-"	      0043d8d9    pop ebx"
-"	      0043d8da    leave"
-"	      0043d8db    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d8dc
 long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long lMinDestination, long lMaxDestination) {
 // LINE 73:
-	asm( 
-"	      0043d8dc    push ebp"
-"	      0043d8dd    mov ebp,esp"
-"	      0043d8df    push ebx"
-"	      0043d8e0    push esi"
-"	      0043d8e1    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 74:
-	asm( 
-"	      0043d8e2    xor eax,eax"
-"	      0043d8e4    sub eax,lMinSource"
-"	      0043d8e7    neg eax"
-"	      0043d8e9    sub lPositionSource,eax"
-);
+	__asm        xor    eax, eax;
+	__asm        sub    eax, lMinSource;
+	__asm        neg    eax;
+	__asm        sub    lPositionSource, eax;
 // LINE 75:
-	asm( 
-"	      0043d8ec    mov eax,lMaxDestination"
-"	      0043d8ef    sub eax,lMinDestination"
-"	      0043d8f2    imul eax,lPositionSource"
-"	      0043d8f6    mov lPositionSource,eax"
-);
+	__asm        mov    eax, lMaxDestination;
+	__asm        sub    eax, lMinDestination;
+	__asm        imul   eax, lPositionSource;
+	__asm        mov    lPositionSource, eax;
 // LINE 76:
-	asm( 
-"	      0043d8f9    mov ecx,lMaxSource"
-"	      0043d8fc    sub ecx,lMinSource"
-"	      0043d8ff    mov eax,lPositionSource"
-"	      0043d902    cdq"
-"	      0043d903    idiv ecx"
-"	      0043d905    mov lPositionSource,eax"
-);
+	__asm        mov    ecx, lMaxSource;
+	__asm        sub    ecx, lMinSource;
+	__asm        mov    eax, lPositionSource;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        mov    lPositionSource, eax;
 // LINE 77:
-	asm( 
-"	      0043d908    xor eax,eax"
-"	      0043d90a    sub eax,lMinDestination"
-"	      0043d90d    neg eax"
-"	      0043d90f    sub lPositionSource,eax"
-);
+	__asm        xor    eax, eax;
+	__asm        sub    eax, lMinDestination;
+	__asm        neg    eax;
+	__asm        sub    lPositionSource, eax;
 // LINE 78:
-	asm( 
-"	      0043d912    mov eax,lPositionSource"
-"	      0043d915    jmp near ptr 0043D91Ah"
-);
+	__asm        mov    eax, lPositionSource;
+	__asm        jmp    near ptr 0x0043D91A;
 // LINE 79:
-	asm( 
-"	      0043d91a    pop edi"
-"	      0043d91b    pop esi"
-"	      0043d91c    pop ebx"
-"	      0043d91d    leave"
-"	      0043d91e    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d91f
@@ -158,135 +122,123 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	class MTimer tempTimer;
 
 // LINE 99:
-	asm( 
-"	      0043d91f    push ebp"
-"	      0043d920    mov ebp,esp"
-"	      0043d922    sub esp,44h"
-"	      0043d925    push ebx"
-"	      0043d926    push esi"
-"	      0043d927    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x44;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 102:
-	asm( 
-"	      0043d928    mov tempTimer.nTimerResolution,1"
-"	      0043d92f    mov tempTimer.lStartTime,0"
-"	      0043d936    mov tempTimer.lTotalElapsedTime,0"
-"	      0043d93d    mov tempTimer.lFrequency,0"
-"	      0043d944    cmp tempTimer.nTimerResolution,0"
-"	      0043d948    jne near ptr 0043D969h"
-"	      0043d94e    lea eax,[ebp-28h]"
-"	      0043d951    push eax"
-"	      0043d952    call dword ptr ds:[6C3668h]"
-"	      0043d958    mov eax,[ebp-28h]"
-"	      0043d95b    mov [ebp-20h],eax"
-"	      0043d95e    mov eax,[ebp-20h]"
-"	      0043d961    mov tempTimer.lFrequency,eax"
-"	      0043d964    jmp near ptr 0043D969h"
-"	      0043d969    jmp near ptr 0043D96Eh"
-);
+	__asm        mov    tempTimer.nTimerResolution, 1;
+	__asm        mov    tempTimer.lStartTime, 0;
+	__asm        mov    tempTimer.lTotalElapsedTime, 0;
+	__asm        mov    tempTimer.lFrequency, 0;
+	__asm        cmp    tempTimer.nTimerResolution, 0;
+	__asm        jne    near ptr 0x0043D969;
+	__asm        lea    eax, [ebp-0x28];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3668];
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x20], eax;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    tempTimer.lFrequency, eax;
+	__asm        jmp    near ptr 0x0043D969;
+	__asm        jmp    near ptr 0x0043D96E;
 // LINE 104:
-	asm( 
-"	      0043d96e    jmp near ptr 0043D973h"
-"	      0043d973    cmp tempTimer.lStartTime,0"
-"	      0043d977    je near ptr 0043D982h"
-"	      0043d97d    jmp near ptr 0043D9E5h"
-"	      0043d982    cmp tempTimer.nTimerResolution,1"
-"	      0043d986    jne near ptr 0043D99Fh"
-"	      0043d98c    call dword ptr ds:[6C3908h]"
-"	      0043d992    mov tempTimer.lStartTime,eax"
-"	      0043d995    jmp near ptr 0043D9E0h"
-"	      0043d99a    jmp near ptr 0043D9E0h"
-"	      0043d99f    cmp tempTimer.nTimerResolution,0"
-"	      0043d9a3    jne near ptr 0043D9C9h"
-"	      0043d9a9    lea eax,[ebp-1Ch]"
-"	      0043d9ac    push eax"
-"	      0043d9ad    call dword ptr ds:[6C365Ch]"
-"	      0043d9b3    mov eax,[ebp-1Ch]"
-"	      0043d9b6    mov [ebp-14h],eax"
-"	      0043d9b9    mov eax,[ebp-14h]"
-"	      0043d9bc    mov tempTimer.lStartTime,eax"
-"	      0043d9bf    jmp near ptr 0043D9E0h"
-"	      0043d9c4    jmp near ptr 0043D9E0h"
-"	      0043d9c9    call dword ptr ds:[6C3908h]"
-"	      0043d9cf    mov ecx,3E8h"
-"	      0043d9d4    sub edx,edx"
-"	      0043d9d6    div ecx"
-"	      0043d9d8    mov tempTimer.lStartTime,eax"
-"	      0043d9db    jmp near ptr 0043D9E0h"
-"	      0043d9e0    jmp near ptr 0043D9E5h"
-);
+	__asm        jmp    near ptr 0x0043D973;
+	__asm        cmp    tempTimer.lStartTime, 0;
+	__asm        je     near ptr 0x0043D982;
+	__asm        jmp    near ptr 0x0043D9E5;
+	__asm        cmp    tempTimer.nTimerResolution, 1;
+	__asm        jne    near ptr 0x0043D99F;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    tempTimer.lStartTime, eax;
+	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        cmp    tempTimer.nTimerResolution, 0;
+	__asm        jne    near ptr 0x0043D9C9;
+	__asm        lea    eax, [ebp-0x1C];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    tempTimer.lStartTime, eax;
+	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ecx, 0x3E8;
+	__asm        sub    edx, edx;
+	__asm        div    ecx;
+	__asm        mov    tempTimer.lStartTime, eax;
+	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    near ptr 0x0043D9E5;
 // LINE 105:
-	asm( 
-"	      0043d9e5    mov eax,tempTimer.lTotalElapsedTime"
-"	      0043d9e8    mov [ebp-30h],eax"
-"	      0043d9eb    jmp near ptr 0043D9F0h"
-"	      0043d9f0    cmp tempTimer.lStartTime,0"
-"	      0043d9f4    je near ptr 0043DA67h"
-"	      0043d9fa    cmp tempTimer.nTimerResolution,1"
-"	      0043d9fe    jne near ptr 0043DA17h"
-"	      0043da04    call dword ptr ds:[6C3908h]"
-"	      0043da0a    mov [ebp-40h],eax"
-"	      0043da0d    jmp near ptr 0043DA58h"
-"	      0043da12    jmp near ptr 0043DA58h"
-"	      0043da17    cmp tempTimer.nTimerResolution,0"
-"	      0043da1b    jne near ptr 0043DA41h"
-"	      0043da21    lea eax,[ebp-3Ch]"
-"	      0043da24    push eax"
-"	      0043da25    call dword ptr ds:[6C365Ch]"
-"	      0043da2b    mov eax,[ebp-3Ch]"
-"	      0043da2e    mov [ebp-34h],eax"
-"	      0043da31    mov eax,[ebp-34h]"
-"	      0043da34    mov [ebp-40h],eax"
-"	      0043da37    jmp near ptr 0043DA58h"
-"	      0043da3c    jmp near ptr 0043DA58h"
-"	      0043da41    call dword ptr ds:[6C3908h]"
-"	      0043da47    mov ecx,3E8h"
-"	      0043da4c    sub edx,edx"
-"	      0043da4e    div ecx"
-"	      0043da50    mov [ebp-40h],eax"
-"	      0043da53    jmp near ptr 0043DA58h"
-"	      0043da58    mov eax,[ebp-40h]"
-"	      0043da5b    sub eax,tempTimer.lStartTime"
-"	      0043da5e    mov [ebp-2Ch],eax"
-"	      0043da61    mov eax,[ebp-2Ch]"
-"	      0043da64    add [ebp-30h],eax"
-"	      0043da67    cmp tempTimer.nTimerResolution,0"
-"	      0043da6b    jne near ptr 0043DAA2h"
-"	      0043da71    cmp tempTimer.lFrequency,0"
-"	      0043da75    je near ptr 0043DAA2h"
-"	      0043da7b    mov eax,tempTimer.lFrequency"
-"	      0043da7e    push eax"
-"	      0043da7f    push 0F4240h"
-"	      0043da84    mov eax,[ebp-30h]"
-"	      0043da87    push eax"
-"	      0043da88    call dword ptr ds:[6C372Ch]"
-"	      0043da8e    mov [ebp-30h],eax"
-"	      0043da91    mov eax,lMilliseconds"
-"	      0043da94    cmp [ebp-30h],eax"
-"	      0043da97    jae near ptr 0043DAC4h"
-"	      0043da9d    jmp near ptr 0043DABFh"
-"	      0043daa2    mov eax,lMilliseconds"
-"	      0043daa5    cmp [ebp-30h],eax"
-"	      0043daa8    jae near ptr 0043DAC4h"
-"	      0043daae    jmp near ptr 0043DABFh"
-"	      0043dab3    mov eax,lMilliseconds"
-"	      0043dab6    cmp [ebp-44h],eax"
-"	      0043dab9    jae near ptr 0043DAC4h"
-);
+	__asm        mov    eax, tempTimer.lTotalElapsedTime;
+	__asm        mov    [ebp-0x30], eax;
+	__asm        jmp    near ptr 0x0043D9F0;
+	__asm        cmp    tempTimer.lStartTime, 0;
+	__asm        je     near ptr 0x0043DA67;
+	__asm        cmp    tempTimer.nTimerResolution, 1;
+	__asm        jne    near ptr 0x0043DA17;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    [ebp-0x40], eax;
+	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    near ptr 0x0043DA58;
+	__asm        cmp    tempTimer.nTimerResolution, 0;
+	__asm        jne    near ptr 0x0043DA41;
+	__asm        lea    eax, [ebp-0x3C];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    [ebp-0x34], eax;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    [ebp-0x40], eax;
+	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    near ptr 0x0043DA58;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ecx, 0x3E8;
+	__asm        sub    edx, edx;
+	__asm        div    ecx;
+	__asm        mov    [ebp-0x40], eax;
+	__asm        jmp    near ptr 0x0043DA58;
+	__asm        mov    eax, [ebp-0x40];
+	__asm        sub    eax, tempTimer.lStartTime;
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        add    [ebp-0x30], eax;
+	__asm        cmp    tempTimer.nTimerResolution, 0;
+	__asm        jne    near ptr 0x0043DAA2;
+	__asm        cmp    tempTimer.lFrequency, 0;
+	__asm        je     near ptr 0x0043DAA2;
+	__asm        mov    eax, tempTimer.lFrequency;
+	__asm        push   eax;
+	__asm        push   0xF4240;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C372C];
+	__asm        mov    [ebp-0x30], eax;
+	__asm        mov    eax, lMilliseconds;
+	__asm        cmp    [ebp-0x30], eax;
+	__asm        jae    near ptr 0x0043DAC4;
+	__asm        jmp    near ptr 0x0043DABF;
+	__asm        mov    eax, lMilliseconds;
+	__asm        cmp    [ebp-0x30], eax;
+	__asm        jae    near ptr 0x0043DAC4;
+	__asm        jmp    near ptr 0x0043DABF;
+	__asm        mov    eax, lMilliseconds;
+	__asm        cmp    [ebp-0x44], eax;
+	__asm        jae    near ptr 0x0043DAC4;
 // LINE 106:
-	asm( 
-"	      0043dabf    jmp near ptr 0043D9E5h"
-);
+	__asm        jmp    near ptr 0x0043D9E5;
 // LINE 107:
-	asm( 
-"	      0043dac4    jmp near ptr 0043DAC9h"
-"	      0043dac9    jmp near ptr 0043DACEh"
-"	      0043dace    pop edi"
-"	      0043dacf    pop esi"
-"	      0043dad0    pop ebx"
-"	      0043dad1    leave"
-"	      0043dad2    ret"
-);
+	__asm        jmp    near ptr 0x0043DAC9;
+	__asm        jmp    near ptr 0x0043DACE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

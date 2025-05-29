@@ -2,317 +2,287 @@
 // FUNCTION: COPTER_D 0x0055e830
 cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
 // LINE 38:
-	asm( 
-"	      0055e830    push ebp"
-"	      0055e831    mov ebp,esp"
-"	      0055e833    push 0FFFFFFFFh"
-"	      0055e835    push 55E8ADh"
-"	      0055e83a    mov eax,fs:[0]"
-"	      0055e840    push eax"
-"	      0055e841    mov fs:[0],esp"
-"	      0055e848    sub esp,4"
-"	      0055e84b    push ebx"
-"	      0055e84c    push esi"
-"	      0055e84d    push edi"
-"	      0055e84e    mov this,ecx"
-"	      0055e851    mov eax,this"
-"	      0055e854    mov dword ptr [eax+4],0"
-"	      0055e85b    mov eax,this"
-"	      0055e85e    mov word ptr [eax+8],0"
-"	      0055e864    jmp near ptr 0055E869h"
-"	      0055e869    mov dword ptr [ebp-4],0"
-"	      0055e870    mov eax,this"
-"	      0055e873    mov dword ptr [eax],593654h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x55E8AD;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+4], 0;
+	__asm        mov    eax, this;
+	__asm        mov    word ptr [eax+8], 0;
+	__asm        jmp    near ptr 0x0055E869;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593654;
 // LINE 39:
-	asm( 
-"	      0055e879    mov eax,this"
-"	      0055e87c    mov dword ptr [eax+0Ch],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 40:
-	asm( 
-"	      0055e883    mov eax,this"
-"	      0055e886    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 41:
-	asm( 
-"	      0055e88d    jmp near ptr 0055E892h"
-"	      0055e892    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055e899    mov eax,this"
-"	      0055e89c    jmp near ptr 0055E8B7h"
-	);
+	__asm        jmp    near ptr 0x0055E892;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        mov    eax, this;
+	__asm        jmp    near ptr 0x0055E8B7;
 _L44596:
-	asm( 
-"	      0055e8a1    mov ecx,this"
-"	      0055e8a4    add ecx,4"
-"	      0055e8a7    call 0055E8D0h"
-"	      0055e8ac    ret"
-	);
+	__asm        mov    ecx, this;
+	__asm        add    ecx, 4;
+	__asm        call   0x0055E8D0;
+	__asm        ret;
 _L44595:
-	asm( 
-"	      0055e8ad    mov eax,596030h"
-"	      0055e8b2    jmp near ptr 0056F590h"
-"	      0055e8b7    mov ecx,[ebp-0Ch]"
-"	      0055e8ba    mov fs:[0],ecx"
-"	      0055e8c1    pop edi"
-"	      0055e8c2    pop esi"
-"	      0055e8c3    pop ebx"
-"	      0055e8c4    leave"
-"	      0055e8c5    ret"
-);
+	__asm        mov    eax, 0x596030;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    ecx, [ebp-0xC];
+	__asm        mov    fs:[0], ecx;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e9b0
 cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>::~cBList<cCopterAnim>() {
 // LINE 44:
-	asm( 
-"	      0055e9b0    push ebp"
-"	      0055e9b1    mov ebp,esp"
-"	      0055e9b3    push 0FFFFFFFFh"
-"	      0055e9b5    push 55EAA5h"
-"	      0055e9ba    mov eax,fs:[0]"
-"	      0055e9c0    push eax"
-"	      0055e9c1    mov fs:[0],esp"
-"	      0055e9c8    sub esp,10h"
-"	      0055e9cb    push ebx"
-"	      0055e9cc    push esi"
-"	      0055e9cd    push edi"
-"	      0055e9ce    mov this,ecx"
-"	      0055e9d1    mov eax,this"
-"	      0055e9d4    mov dword ptr [eax],593654h"
-"	      0055e9da    mov dword ptr [ebp-4],0"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x55EAA5;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593654;
+	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 45:
-	asm( 
-"	      0055e9e1    mov dword ptr [ebp-18h],0"
-"	      0055e9e8    mov eax,this"
-"	      0055e9eb    mov eax,[eax+4]"
-"	      0055e9ee    mov [ebp-14h],eax"
-"	      0055e9f1    jmp near ptr 0055E9FFh"
-"	      0055e9f6    mov eax,[ebp-14h]"
-"	      0055e9f9    mov eax,[eax+4]"
-"	      0055e9fc    mov [ebp-14h],eax"
-"	      0055e9ff    cmp dword ptr [ebp-14h],0"
-"	      0055ea03    je near ptr 0055EA11h"
-"	      0055ea09    inc dword ptr [ebp-18h]"
-"	      0055ea0c    jmp near ptr 0055E9F6h"
-"	      0055ea11    mov eax,this"
-"	      0055ea14    movsx eax,word ptr [eax+8]"
-"	      0055ea18    cmp eax,[ebp-18h]"
-"	      0055ea1b    je near ptr 0055EA3Ah"
-"	      0055ea21    push 8C085h"
-"	      0055ea26    push 59A24Ch"
-"	      0055ea2b    push 3Dh"
-"	      0055ea2d    push 59A254h"
-"	      0055ea32    call 00554F30h"
-"	      0055ea37    add esp,10h"
-"	      0055ea3a    jmp near ptr 0055EA3Fh"
-"	      0055ea3f    mov eax,this"
-"	      0055ea42    movsx eax,word ptr [eax+8]"
-"	      0055ea46    test eax,eax"
-"	      0055ea48    je near ptr 0055EA67h"
-"	      0055ea4e    push 8C085h"
-"	      0055ea53    push 5BE27Ch"
-"	      0055ea58    push 2Dh"
-"	      0055ea5a    push 5BE1ECh"
-"	      0055ea5f    call 00554F30h"
-"	      0055ea64    add esp,10h"
-);
+	__asm        mov    dword ptr [ebp-0x18], 0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055E9FF;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055EA11;
+	__asm        inc    dword ptr [ebp-0x18];
+	__asm        jmp    near ptr 0x0055E9F6;
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        cmp    eax, [ebp-0x18];
+	__asm        je     near ptr 0x0055EA3A;
+	__asm        push   0x8C085;
+	__asm        push   0x59A24C;
+	__asm        push   0x3D;
+	__asm        push   0x59A254;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        jmp    near ptr 0x0055EA3F;
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0055EA67;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE27C;
+	__asm        push   0x2D;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 46:
-	asm( 
-"	      0055ea67    jmp near ptr 0055EA6Ch"
-"	      0055ea6c    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055ea73    call 0055EA7Dh"
-"	      0055ea78    jmp near ptr 0055EAAFh"
-	);
+	__asm        jmp    near ptr 0x0055EA6C;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        call   0x0055EA7D;
+	__asm        jmp    near ptr 0x0055EAAF;
 _L44659:
-	asm( 
-"	      0055ea7d    cmp this,0"
-"	      0055ea81    je near ptr 0055EA95h"
-"	      0055ea87    mov eax,this"
-"	      0055ea8a    add eax,4"
-"	      0055ea8d    mov [ebp-10h],eax"
-"	      0055ea90    jmp near ptr 0055EA9Ch"
-"	      0055ea95    mov dword ptr [ebp-10h],0"
-"	      0055ea9c    mov ecx,[ebp-10h]"
-"	      0055ea9f    call 0055E8D0h"
-"	      0055eaa4    ret"
-	);
+	__asm        cmp    this, 0;
+	__asm        je     near ptr 0x0055EA95;
+	__asm        mov    eax, this;
+	__asm        add    eax, 4;
+	__asm        mov    [ebp-0x10], eax;
+	__asm        jmp    near ptr 0x0055EA9C;
+	__asm        mov    dword ptr [ebp-0x10], 0;
+	__asm        mov    ecx, [ebp-0x10];
+	__asm        call   0x0055E8D0;
+	__asm        ret;
 _L44658:
-	asm( 
-"	      0055eaa5    mov eax,596058h"
-"	      0055eaaa    jmp near ptr 0056F590h"
-"	      0055eaaf    mov eax,[ebp-0Ch]"
-"	      0055eab2    mov fs:[0],eax"
-"	      0055eab8    pop edi"
-"	      0055eab9    pop esi"
-"	      0055eaba    pop ebx"
-"	      0055eabb    leave"
-"	      0055eabc    ret"
-);
+	__asm        mov    eax, 0x596058;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055eac0
 void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim* thing) {
 // LINE 118:
-	asm( 
-"	      0055eac0    push ebp"
-"	      0055eac1    mov ebp,esp"
-"	      0055eac3    sub esp,34h"
-"	      0055eac6    push ebx"
-"	      0055eac7    push esi"
-"	      0055eac8    push edi"
-"	      0055eac9    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x34;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 119:
-	asm( 
-"	      0055eacc    jmp near ptr 0055EAD1h"
-"	      0055ead1    mov eax,thing"
-"	      0055ead4    mov eax,[eax+1Ch]"
-"	      0055ead7    mov [ebp-30h],eax"
-"	      0055eada    mov dword ptr [ebp-10h],8"
-"	      0055eae1    cmp dword ptr [ebp-10h],0"
-"	      0055eae5    jl near ptr 0055EAF5h"
-"	      0055eaeb    cmp dword ptr [ebp-10h],20h"
-"	      0055eaef    jb near ptr 0055EB0Eh"
-"	      0055eaf5    push 8C085h"
-"	      0055eafa    push 5BBD7Ch"
-"	      0055eaff    push 6Dh"
-"	      0055eb01    push 5BE1ECh"
-"	      0055eb06    call 00554F30h"
-"	      0055eb0b    add esp,10h"
-"	      0055eb0e    cmp this,0"
-"	      0055eb12    je near ptr 0055EB26h"
-"	      0055eb18    mov eax,this"
-"	      0055eb1b    add eax,4"
-"	      0055eb1e    mov [ebp-1Ch],eax"
-"	      0055eb21    jmp near ptr 0055EB2Dh"
-"	      0055eb26    mov dword ptr [ebp-1Ch],0"
-"	      0055eb2d    mov eax,[ebp-1Ch]"
-"	      0055eb30    mov [ebp-18h],eax"
-"	      0055eb33    cmp dword ptr [ebp-18h],0"
-"	      0055eb37    je near ptr 0055EB4Ah"
-"	      0055eb3d    mov eax,[ebp-18h]"
-"	      0055eb40    mov eax,[eax]"
-"	      0055eb42    mov [ebp-14h],eax"
-"	      0055eb45    jmp near ptr 0055EB51h"
-"	      0055eb4a    mov dword ptr [ebp-14h],0"
-"	      0055eb51    jmp near ptr 0055EB56h"
-"	      0055eb56    jmp near ptr 0055EB5Bh"
-"	      0055eb5b    jmp near ptr 0055EB78h"
-"	      0055eb60    cmp dword ptr [ebp-14h],0"
-"	      0055eb64    je near ptr 0055EB73h"
-"	      0055eb6a    mov eax,[ebp-14h]"
-"	      0055eb6d    mov eax,[eax+4]"
-"	      0055eb70    mov [ebp-14h],eax"
-"	      0055eb73    jmp near ptr 0055EB78h"
-"	      0055eb78    cmp dword ptr [ebp-14h],0"
-"	      0055eb7c    je near ptr 0055EB98h"
-"	      0055eb82    mov eax,[ebp-14h]"
-"	      0055eb85    cmp dword ptr [eax],0"
-"	      0055eb88    je near ptr 0055EC2Ch"
-"	      0055eb8e    jmp near ptr 0055EBACh"
-"	      0055eb93    jmp near ptr 0055EBA2h"
-"	      0055eb98    jmp near ptr 0055EC2Ch"
-"	      0055eb9d    jmp near ptr 0055EBACh"
-"	      0055eba2    cmp dword ptr [ebp-24h],0"
-"	      0055eba6    je near ptr 0055EC2Ch"
-"	      0055ebac    cmp dword ptr [ebp-14h],0"
-"	      0055ebb0    je near ptr 0055EBC8h"
-"	      0055ebb6    mov eax,[ebp-14h]"
-"	      0055ebb9    mov eax,[eax]"
-"	      0055ebbb    mov [ebp-20h],eax"
-"	      0055ebbe    jmp near ptr 0055EBD4h"
-"	      0055ebc3    jmp near ptr 0055EBD4h"
-"	      0055ebc8    mov dword ptr [ebp-20h],0"
-"	      0055ebcf    jmp near ptr 0055EBD4h"
-"	      0055ebd4    jmp near ptr 0055EBD9h"
-"	      0055ebd9    mov eax,[ebp-20h]"
-"	      0055ebdc    mov eax,[eax+1Ch]"
-"	      0055ebdf    mov cl,[ebp-10h]"
-"	      0055ebe2    shr eax,cl"
-"	      0055ebe4    mov edx,[ebp-30h]"
-"	      0055ebe7    mov cl,[ebp-10h]"
-"	      0055ebea    shr edx,cl"
-"	      0055ebec    cmp eax,edx"
-"	      0055ebee    jne near ptr 0055EC27h"
-"	      0055ebf4    cmp dword ptr [ebp-14h],0"
-"	      0055ebf8    je near ptr 0055EC10h"
-"	      0055ebfe    mov eax,[ebp-14h]"
-"	      0055ec01    mov eax,[eax]"
-"	      0055ec03    mov [ebp-2Ch],eax"
-"	      0055ec06    jmp near ptr 0055EC22h"
-"	      0055ec0b    jmp near ptr 0055EC1Ch"
-"	      0055ec10    mov dword ptr [ebp-2Ch],0"
-"	      0055ec17    jmp near ptr 0055EC22h"
-"	      0055ec1c    mov eax,[ebp-28h]"
-"	      0055ec1f    mov [ebp-2Ch],eax"
-"	      0055ec22    jmp near ptr 0055EC38h"
-"	      0055ec27    jmp near ptr 0055EB60h"
-"	      0055ec2c    mov dword ptr [ebp-2Ch],0"
-"	      0055ec33    jmp near ptr 0055EC38h"
-"	      0055ec38    cmp dword ptr [ebp-2Ch],0"
-"	      0055ec3c    je near ptr 0055EC5Bh"
-"	      0055ec42    push 8C085h"
-"	      0055ec47    push 5BE2A0h"
-"	      0055ec4c    push 77h"
-"	      0055ec4e    push 5BE1ECh"
-"	      0055ec53    call 00554F30h"
-"	      0055ec58    add esp,10h"
-);
+	__asm        jmp    near ptr 0x0055EAD1;
+	__asm        mov    eax, thing;
+	__asm        mov    eax, [eax+0x1C];
+	__asm        mov    [ebp-0x30], eax;
+	__asm        mov    dword ptr [ebp-0x10], 8;
+	__asm        cmp    dword ptr [ebp-0x10], 0;
+	__asm        jl     near ptr 0x0055EAF5;
+	__asm        cmp    dword ptr [ebp-0x10], 0x20;
+	__asm        jb     near ptr 0x0055EB0E;
+	__asm        push   0x8C085;
+	__asm        push   0x5BBD7C;
+	__asm        push   0x6D;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        cmp    this, 0;
+	__asm        je     near ptr 0x0055EB26;
+	__asm        mov    eax, this;
+	__asm        add    eax, 4;
+	__asm        mov    [ebp-0x1C], eax;
+	__asm        jmp    near ptr 0x0055EB2D;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x18], eax;
+	__asm        cmp    dword ptr [ebp-0x18], 0;
+	__asm        je     near ptr 0x0055EB4A;
+	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055EB51;
+	__asm        mov    dword ptr [ebp-0x14], 0;
+	__asm        jmp    near ptr 0x0055EB56;
+	__asm        jmp    near ptr 0x0055EB5B;
+	__asm        jmp    near ptr 0x0055EB78;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055EB73;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055EB78;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055EB98;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        cmp    dword ptr [eax], 0;
+	__asm        je     near ptr 0x0055EC2C;
+	__asm        jmp    near ptr 0x0055EBAC;
+	__asm        jmp    near ptr 0x0055EBA2;
+	__asm        jmp    near ptr 0x0055EC2C;
+	__asm        jmp    near ptr 0x0055EBAC;
+	__asm        cmp    dword ptr [ebp-0x24], 0;
+	__asm        je     near ptr 0x0055EC2C;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055EBC8;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x20], eax;
+	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        mov    dword ptr [ebp-0x20], 0;
+	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        jmp    near ptr 0x0055EBD9;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, [eax+0x1C];
+	__asm        mov    cl, [ebp-0x10];
+	__asm        shr    eax, cl;
+	__asm        mov    edx, [ebp-0x30];
+	__asm        mov    cl, [ebp-0x10];
+	__asm        shr    edx, cl;
+	__asm        cmp    eax, edx;
+	__asm        jne    near ptr 0x0055EC27;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055EC10;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        jmp    near ptr 0x0055EC22;
+	__asm        jmp    near ptr 0x0055EC1C;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
+	__asm        jmp    near ptr 0x0055EC22;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        jmp    near ptr 0x0055EC38;
+	__asm        jmp    near ptr 0x0055EB60;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
+	__asm        jmp    near ptr 0x0055EC38;
+	__asm        cmp    dword ptr [ebp-0x2C], 0;
+	__asm        je     near ptr 0x0055EC5B;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE2A0;
+	__asm        push   0x77;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 120:
-	asm( 
-"	      0055ec5b    cmp thing,0"
-"	      0055ec5f    je near ptr 0055ECB5h"
-"	      0055ec65    mov eax,this"
-"	      0055ec68    mov eax,[eax+4]"
-"	      0055ec6b    mov [ebp-8],eax"
-"	      0055ec6e    jmp near ptr 0055EC7Ch"
-"	      0055ec73    mov eax,[ebp-8]"
-"	      0055ec76    mov eax,[eax+4]"
-"	      0055ec79    mov [ebp-8],eax"
-"	      0055ec7c    cmp dword ptr [ebp-8],0"
-"	      0055ec80    je near ptr 0055EC9Eh"
-"	      0055ec86    mov eax,[ebp-8]"
-"	      0055ec89    mov ecx,thing"
-"	      0055ec8c    cmp [eax],ecx"
-"	      0055ec8e    jne near ptr 0055EC99h"
-"	      0055ec94    jmp near ptr 0055ECB5h"
-"	      0055ec99    jmp near ptr 0055EC73h"
-"	      0055ec9e    jmp near ptr 0055ECBAh"
-"	      0055eca3    jmp near ptr 0055ECB5h"
-"	      0055eca8    test dword ptr [ebp-0Ch],0FFFFh"
-"	      0055ecaf    je near ptr 0055ECBAh"
-"	      0055ecb5    jmp near ptr 0055ECF0h"
-"	      0055ecba    push 8"
-"	      0055ecbc    call 0056A600h"
-"	      0055ecc1    add esp,4"
-"	      0055ecc4    mov [ebp-4],eax"
-"	      0055ecc7    mov eax,thing"
-"	      0055ecca    mov ecx,[ebp-4]"
-"	      0055eccd    mov [ecx],eax"
-"	      0055eccf    mov eax,this"
-"	      0055ecd2    mov eax,[eax+4]"
-"	      0055ecd5    mov ecx,[ebp-4]"
-"	      0055ecd8    mov [ecx+4],eax"
-"	      0055ecdb    mov eax,[ebp-4]"
-"	      0055ecde    mov ecx,this"
-"	      0055ece1    mov [ecx+4],eax"
-"	      0055ece4    mov eax,this"
-"	      0055ece7    inc word ptr [eax+8]"
-"	      0055eceb    jmp near ptr 0055ECF0h"
-);
+	__asm        cmp    thing, 0;
+	__asm        je     near ptr 0x0055ECB5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x0055EC7C;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-8], eax;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x0055EC9E;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ecx, thing;
+	__asm        cmp    [eax], ecx;
+	__asm        jne    near ptr 0x0055EC99;
+	__asm        jmp    near ptr 0x0055ECB5;
+	__asm        jmp    near ptr 0x0055EC73;
+	__asm        jmp    near ptr 0x0055ECBA;
+	__asm        jmp    near ptr 0x0055ECB5;
+	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
+	__asm        je     near ptr 0x0055ECBA;
+	__asm        jmp    near ptr 0x0055ECF0;
+	__asm        push   8;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, thing;
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx], eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, this;
+	__asm        inc    word ptr [eax+8];
+	__asm        jmp    near ptr 0x0055ECF0;
 // LINE 121:
-	asm( 
-"	      0055ecf0    jmp near ptr 0055ECF5h"
-"	      0055ecf5    pop edi"
-"	      0055ecf6    pop esi"
-"	      0055ecf7    pop ebx"
-"	      0055ecf8    leave"
-"	      0055ecf9    ret 4"
-);
+	__asm        jmp    near ptr 0x0055ECF5;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // Function in module: Bodydefs.obj
@@ -324,639 +294,585 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	short numThings;
 
 // LINE 180:
-	asm( 
-"	      0055ed00    push ebp"
-"	      0055ed01    mov ebp,esp"
-"	      0055ed03    push 0FFFFFFFFh"
-"	      0055ed05    push 55F1C0h"
-"	      0055ed0a    mov eax,fs:[0]"
-"	      0055ed10    push eax"
-"	      0055ed11    mov fs:[0],esp"
-"	      0055ed18    sub esp,140h"
-"	      0055ed1e    push ebx"
-"	      0055ed1f    push esi"
-"	      0055ed20    push edi"
-"	      0055ed21    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x55F1C0;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 0x140;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 181:
-	asm( 
-"	      0055ed27    mov eax,this"
-"	      0055ed2d    cmp dword ptr [eax+0Ch],0"
-"	      0055ed31    jne near ptr 0055ED53h"
-"	      0055ed37    push 8C085h"
-"	      0055ed3c    push 5BE188h"
-"	      0055ed41    push 0B5h"
-"	      0055ed46    push 5BE1ECh"
-"	      0055ed4b    call 00554F30h"
-"	      0055ed50    add esp,10h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        jne    near ptr 0x0055ED53;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE188;
+	__asm        push   0xB5;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 182:
-	asm( 
-"	      0055ed53    mov eax,this"
-"	      0055ed59    mov eax,[eax+0Ch]"
-"	      0055ed5c    push eax"
-"	      0055ed5d    call 005674E0h"
-"	      0055ed62    add esp,4"
-"	      0055ed65    mov fileOpened,ax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        push   eax;
+	__asm        call   0x005674E0;
+	__asm        add    esp, 4;
+	__asm        mov    fileOpened, ax;
 // LINE 183:
-	asm( 
-"	      0055ed69    mov eax,this"
-"	      0055ed6f    mov ecx,[eax+0Ch]"
-"	      0055ed72    call 0055C7DDh"
-"	      0055ed77    movzx eax,ax"
-"	      0055ed7a    test eax,eax"
-"	      0055ed7c    jne near ptr 0055ED9Eh"
-"	      0055ed82    push 8C085h"
-"	      0055ed87    push 5BE1A8h"
-"	      0055ed8c    push 0B7h"
-"	      0055ed91    push 5BE1ECh"
-"	      0055ed96    call 00554F30h"
-"	      0055ed9b    add esp,10h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x0055C7DD;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0055ED9E;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE1A8;
+	__asm        push   0xB7;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 184:
-	asm( 
-"	      0055ed9e    mov eax,this"
-"	      0055eda4    cmp dword ptr [eax+10h],0"
-"	      0055eda8    jne near ptr 0055EDCAh"
-"	      0055edae    push 8C085h"
-"	      0055edb3    push 5BE168h"
-"	      0055edb8    push 0B8h"
-"	      0055edbd    push 5BE1ECh"
-"	      0055edc2    call 00554F30h"
-"	      0055edc7    add esp,10h"
-"	      0055edca    mov eax,this"
-"	      0055edd0    mov eax,[eax+0Ch]"
-"	      0055edd3    mov [ebp-20h],eax"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x10], 0;
+	__asm        jne    near ptr 0x0055EDCA;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE168;
+	__asm        push   0xB8;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 185:
-	asm( 
-"	      0055edd6    push 55D950h"
-"	      0055eddb    push 8"
-"	      0055eddd    push 41525050h"
-"	      0055ede2    mov eax,[ebp-20h]"
-"	      0055ede5    push eax"
-"	      0055ede6    call 00569095h"
-"	      0055edeb    add esp,10h"
-"	      0055edee    jmp near ptr 0055EDF3h"
-"	      0055edf3    jmp near ptr 0055EDF8h"
-);
+	__asm        push   0x55D950;
+	__asm        push   8;
+	__asm        push   0x41525050;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        push   eax;
+	__asm        call   0x00569095;
+	__asm        add    esp, 0x10;
+	__asm        jmp    near ptr 0x0055EDF3;
+	__asm        jmp    near ptr 0x0055EDF8;
 // LINE 189:
-	asm( 
-"	      0055edf8    mov eax,this"
-"	      0055edfe    mov eax,[eax+10h]"
-"	      0055ee01    push eax"
-"	      0055ee02    mov eax,this"
-"	      0055ee08    mov ecx,[eax+0Ch]"
-"	      0055ee0b    call 0055319Ah"
-"	      0055ee10    mov numThings,ax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x10];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x0055319A;
+	__asm        mov    numThings, ax;
 // LINE 190:
-	asm( 
-"	      0055ee14    mov count,1"
-"	      0055ee1a    jmp near ptr 0055EE23h"
-"	      0055ee1f    inc count"
-"	      0055ee23    movsx eax,count"
-"	      0055ee27    movsx ecx,numThings"
-"	      0055ee2b    cmp eax,ecx"
-"	      0055ee2d    jg near ptr 0055F197h"
-);
+	__asm        mov    count, 1;
+	__asm        jmp    near ptr 0x0055EE23;
+	__asm        inc    count;
+	__asm        movsx  eax, count;
+	__asm        movsx  ecx, numThings;
+	__asm        cmp    eax, ecx;
+	__asm        jg     near ptr 0x0055F197;
 // LINE 192:
-	asm( 
-"	      0055ee33    push 55E6F0h"
-"	      0055ee38    mov eax,reinterpret_cast<uint32_t>(count)"
-"	      0055ee3b    push eax"
-"	      0055ee3c    mov eax,this"
-"	      0055ee42    mov eax,[eax+10h]"
-"	      0055ee45    push eax"
-"	      0055ee46    mov eax,this"
-"	      0055ee4c    mov ecx,[eax+0Ch]"
-"	      0055ee4f    call 00553452h"
-"	      0055ee54    mov h,eax"
-);
+	__asm        push   0x55E6F0;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(count);
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x10];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x00553452;
+	__asm        mov    h, eax;
 // LINE 193:
-	asm( 
-"	      0055ee57    cmp h,0"
-"	      0055ee5b    jne near ptr 0055EE7Dh"
-"	      0055ee61    push 8C085h"
-"	      0055ee66    push 5BE148h"
-"	      0055ee6b    push 0C1h"
-"	      0055ee70    push 5BE1ECh"
-"	      0055ee75    call 00554F30h"
-"	      0055ee7a    add esp,10h"
-"	      0055ee7d    mov eax,h"
-"	      0055ee80    mov [ebp-148h],eax"
-);
+	__asm        cmp    h, 0;
+	__asm        jne    near ptr 0x0055EE7D;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE148;
+	__asm        push   0xC1;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, h;
+	__asm        mov    [ebp-0x148], eax;
 // LINE 195:
-	asm( 
-"	      0055ee86    push 2Ch"
-"	      0055ee88    call 0056A600h"
-"	      0055ee8d    add esp,4"
-"	      0055ee90    mov [ebp-28h],eax"
-"	      0055ee93    mov dword ptr [ebp-4],0"
-"	      0055ee9a    cmp dword ptr [ebp-28h],0"
-"	      0055ee9e    je near ptr 0055EEE7h"
-"	      0055eea4    mov eax,[ebp-28h]"
-"	      0055eea7    mov [ebp-30h],eax"
-"	      0055eeaa    mov eax,[ebp-30h]"
-"	      0055eead    mov dword ptr [eax],593688h"
-"	      0055eeb3    jmp near ptr 0055EEB8h"
-"	      0055eeb8    mov byte ptr [ebp-4],1"
-"	      0055eebc    mov eax,[ebp-30h]"
-"	      0055eebf    mov dword ptr [eax],593658h"
-"	      0055eec5    jmp near ptr 0055EECAh"
-"	      0055eeca    mov byte ptr [ebp-4],0"
-"	      0055eece    mov eax,[ebp-30h]"
-"	      0055eed1    mov [ebp-2Ch],eax"
-"	      0055eed4    jmp near ptr 0055EEE2h"
-	);
+	__asm        push   0x2C;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0x28], eax;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        cmp    dword ptr [ebp-0x28], 0;
+	__asm        je     near ptr 0x0055EEE7;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x30], eax;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    dword ptr [eax], 0x593688;
+	__asm        jmp    near ptr 0x0055EEB8;
+	__asm        mov    byte ptr [ebp-4], 1;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    dword ptr [eax], 0x593658;
+	__asm        jmp    near ptr 0x0055EECA;
+	__asm        mov    byte ptr [ebp-4], 0;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        jmp    near ptr 0x0055EEE2;
 _L45278:
-	asm( 
-"	      0055eed9    mov ecx,[ebp-30h]"
-"	      0055eedc    call 0055F2C0h"
-"	      0055eee1    ret"
-"	      0055eee2    jmp near ptr 0055EEEEh"
-"	      0055eee7    mov dword ptr [ebp-2Ch],0"
-"	      0055eeee    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055eef5    mov eax,[ebp-2Ch]"
-"	      0055eef8    mov [ebp-24h],eax"
-"	      0055eefb    mov eax,[ebp-24h]"
-"	      0055eefe    mov eax,[eax]"
-"	      0055ef00    mov ecx,[ebp-24h]"
-"	      0055ef03    call dword ptr [eax+4]"
-"	      0055ef06    test eax,eax"
-"	      0055ef08    jne near ptr 0055EF2Ah"
-"	      0055ef0e    push 8C085h"
-"	      0055ef13    push 5BE320h"
-"	      0055ef18    push 0AAh"
-"	      0055ef1d    push 5BE258h"
-"	      0055ef22    call 00554F30h"
-"	      0055ef27    add esp,10h"
-"	      0055ef2a    mov eax,[ebp-24h]"
-"	      0055ef2d    mov eax,[eax]"
-"	      0055ef2f    mov ecx,[ebp-24h]"
-"	      0055ef32    call dword ptr [eax+4]"
-"	      0055ef35    cmp dword ptr [eax+0Ch],0"
-"	      0055ef39    jne near ptr 0055EF5Bh"
-"	      0055ef3f    push 8C085h"
-"	      0055ef44    push 5BE310h"
-"	      0055ef49    push 0ABh"
-"	      0055ef4e    push 5BE258h"
-"	      0055ef53    call 00554F30h"
-"	      0055ef58    add esp,10h"
-"	      0055ef5b    mov eax,[ebp-24h]"
-"	      0055ef5e    mov eax,[eax]"
-"	      0055ef60    mov ecx,[ebp-24h]"
-"	      0055ef63    call dword ptr [eax+4]"
-"	      0055ef66    mov eax,[eax+0Ch]"
-"	      0055ef69    push eax"
-"	      0055ef6a    call 005674E0h"
-"	      0055ef6f    add esp,4"
-"	      0055ef72    mov [ebp-134h],ax"
-"	      0055ef79    mov eax,[ebp-148h]"
-"	      0055ef7f    mov ecx,[ebp-24h]"
-"	      0055ef82    mov [ecx+4],eax"
-"	      0055ef85    mov eax,[ebp-24h]"
-"	      0055ef88    mov eax,[eax+4]"
-"	      0055ef8b    push eax"
-"	      0055ef8c    call 00554D05h"
-"	      0055ef91    add esp,4"
-"	      0055ef94    mov ecx,[ebp-24h]"
-"	      0055ef97    mov [ecx+8],eax"
-"	      0055ef9a    mov eax,[ebp-24h]"
-"	      0055ef9d    mov eax,[eax]"
-"	      0055ef9f    mov ecx,[ebp-24h]"
-"	      0055efa2    call dword ptr [eax+4]"
-"	      0055efa5    cmp dword ptr [eax+10h],0"
-"	      0055efa9    je near ptr 0055EFDFh"
-"	      0055efaf    mov eax,[ebp-24h]"
-"	      0055efb2    mov eax,[eax]"
-"	      0055efb4    mov ecx,[ebp-24h]"
-"	      0055efb7    call dword ptr [eax+4]"
-"	      0055efba    mov ebx,[eax+10h]"
-"	      0055efbd    mov eax,[ebp-24h]"
-"	      0055efc0    mov eax,[eax+4]"
-"	      0055efc3    push eax"
-"	      0055efc4    mov eax,[ebp-24h]"
-"	      0055efc7    mov eax,[eax]"
-"	      0055efc9    mov ecx,[ebp-24h]"
-"	      0055efcc    call dword ptr [eax+4]"
-"	      0055efcf    mov ecx,[eax+0Ch]"
-"	      0055efd2    call 005536AEh"
-"	      0055efd7    cmp ebx,eax"
-"	      0055efd9    je near ptr 0055EFFBh"
-"	      0055efdf    push 8C085h"
-"	      0055efe4    push 5BE2FCh"
-"	      0055efe9    push 0B1h"
-"	      0055efee    push 5BE258h"
-"	      0055eff3    call 00554F30h"
-"	      0055eff8    add esp,10h"
-"	      0055effb    mov eax,[ebp-24h]"
-"	      0055effe    add eax,20h"
-"	      0055f001    push eax"
-"	      0055f002    mov eax,[ebp-24h]"
-"	      0055f005    mov eax,[eax+4]"
-"	      0055f008    push eax"
-"	      0055f009    mov eax,[ebp-24h]"
-"	      0055f00c    mov eax,[eax]"
-"	      0055f00e    mov ecx,[ebp-24h]"
-"	      0055f011    call dword ptr [eax+4]"
-"	      0055f014    mov ecx,[eax+0Ch]"
-"	      0055f017    call 0055360Dh"
-"	      0055f01c    mov eax,[ebp-24h]"
-"	      0055f01f    mov word ptr [eax+22h],0"
-"	      0055f025    lea eax,[ebp-130h]"
-"	      0055f02b    push eax"
-"	      0055f02c    mov eax,[ebp-24h]"
-"	      0055f02f    mov eax,[eax+4]"
-"	      0055f032    push eax"
-"	      0055f033    mov eax,[ebp-24h]"
-"	      0055f036    mov eax,[eax]"
-"	      0055f038    mov ecx,[ebp-24h]"
-"	      0055f03b    call dword ptr [eax+4]"
-"	      0055f03e    mov ecx,[eax+0Ch]"
-"	      0055f041    call 00553564h"
-"	      0055f046    xor eax,eax"
-"	      0055f048    mov al,[ebp-130h]"
-"	      0055f04e    cmp eax,10h"
-"	      0055f051    jbe near ptr 0055F05Eh"
-"	      0055f057    mov byte ptr [ebp-130h],10h"
-"	      0055f05e    push 10h"
-"	      0055f060    mov eax,[ebp-24h]"
-"	      0055f063    add eax,0Ch"
-"	      0055f066    push eax"
-"	      0055f067    lea eax,[ebp-130h]"
-"	      0055f06d    push eax"
-"	      0055f06e    call 00554B76h"
-"	      0055f073    add esp,0Ch"
-"	      0055f076    mov eax,[ebp-24h]"
-"	      0055f079    add eax,0Ch"
-"	      0055f07c    push eax"
-"	      0055f07d    call 005661F4h"
-"	      0055f082    add esp,4"
-"	      0055f085    mov ecx,[ebp-24h]"
-"	      0055f088    mov [ecx+1Ch],eax"
-"	      0055f08b    mov eax,[ebp-24h]"
-"	      0055f08e    cmp dword ptr [eax+1Ch],0"
-"	      0055f092    je near ptr 0055F0A8h"
-"	      0055f098    mov eax,[ebp-24h]"
-"	      0055f09b    xor ecx,ecx"
-"	      0055f09d    mov cl,[eax+0Ch]"
-"	      0055f0a0    test ecx,ecx"
-"	      0055f0a2    jne near ptr 0055F0C4h"
-"	      0055f0a8    push 8C085h"
-"	      0055f0ad    push 5BE2D4h"
-"	      0055f0b2    push 0BCh"
-"	      0055f0b7    push 5BE258h"
-"	      0055f0bc    call 00554F30h"
-"	      0055f0c1    add esp,10h"
-"	      0055f0c4    mov eax,[ebp-24h]"
-"	      0055f0c7    mov eax,[eax+4]"
-"	      0055f0ca    push eax"
-"	      0055f0cb    mov eax,[ebp-24h]"
-"	      0055f0ce    mov eax,[eax]"
-"	      0055f0d0    mov ecx,[ebp-24h]"
-"	      0055f0d3    call dword ptr [eax+4]"
-"	      0055f0d6    mov ecx,[eax+0Ch]"
-"	      0055f0d9    call 0055383Ah"
-"	      0055f0de    test dword ptr [ebp-134h],0FFFFh"
-"	      0055f0e8    je near ptr 0055F11Fh"
-"	      0055f0ee    mov eax,[ebp-24h]"
-"	      0055f0f1    mov eax,[eax]"
-"	      0055f0f3    mov ecx,[ebp-24h]"
-"	      0055f0f6    call dword ptr [eax+4]"
-"	      0055f0f9    mov eax,[eax+0Ch]"
-"	      0055f0fc    mov [ebp-138h],eax"
-"	      0055f102    mov eax,[ebp-138h]"
-"	      0055f108    mov eax,[eax]"
-"	      0055f10a    mov [ebp-13Ch],eax"
-"	      0055f110    mov eax,[ebp-13Ch]"
-"	      0055f116    mov ecx,[ebp-138h]"
-"	      0055f11c    call dword ptr [eax+0Ch]"
-"	      0055f11f    mov eax,[ebp-24h]"
-"	      0055f122    mov eax,[eax+4]"
-"	      0055f125    push eax"
-"	      0055f126    call 00554B04h"
-"	      0055f12b    add esp,4"
-"	      0055f12e    mov ecx,[ebp-24h]"
-"	      0055f131    mov [ecx+24h],eax"
-"	      0055f134    mov eax,[ebp-24h]"
-"	      0055f137    mov word ptr [eax+22h],0"
-"	      0055f13d    push 1"
-"	      0055f13f    mov eax,[ebp-24h]"
-"	      0055f142    mov eax,[eax]"
-"	      0055f144    mov ecx,[ebp-24h]"
-"	      0055f147    call dword ptr [eax+0Ch]"
-"	      0055f14a    mov eax,[ebp-24h]"
-"	      0055f14d    mov eax,[eax]"
-"	      0055f14f    mov ecx,[ebp-24h]"
-"	      0055f152    call dword ptr [eax+4]"
-"	      0055f155    mov [ebp-140h],eax"
-"	      0055f15b    mov eax,[ebp-140h]"
-"	      0055f161    mov eax,[eax]"
-"	      0055f163    mov [ebp-144h],eax"
-"	      0055f169    mov eax,[ebp-24h]"
-"	      0055f16c    push eax"
-"	      0055f16d    mov eax,[ebp-144h]"
-"	      0055f173    mov ecx,[ebp-140h]"
-"	      0055f179    call dword ptr [eax]"
-"	      0055f17b    jmp near ptr 0055F180h"
-"	      0055f180    jmp near ptr 0055F192h"
-	);
+	__asm        mov    ecx, [ebp-0x30];
+	__asm        call   0x0055F2C0;
+	__asm        ret;
+	__asm        jmp    near ptr 0x0055EEEE;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    [ebp-0x24], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0055EF2A;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE320;
+	__asm        push   0xAA;
+	__asm        push   0x5BE258;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        jne    near ptr 0x0055EF5B;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE310;
+	__asm        push   0xAB;
+	__asm        push   0x5BE258;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    eax, [eax+0xC];
+	__asm        push   eax;
+	__asm        call   0x005674E0;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-0x134], ax;
+	__asm        mov    eax, [ebp-0x148];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        call   0x00554D05;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        mov    [ecx+8], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        cmp    dword ptr [eax+0x10], 0;
+	__asm        je     near ptr 0x0055EFDF;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    ebx, [eax+0x10];
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x005536AE;
+	__asm        cmp    ebx, eax;
+	__asm        je     near ptr 0x0055EFFB;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE2FC;
+	__asm        push   0xB1;
+	__asm        push   0x5BE258;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        add    eax, 0x20;
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x0055360D;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    word ptr [eax+0x22], 0;
+	__asm        lea    eax, [ebp-0x130];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x00553564;
+	__asm        xor    eax, eax;
+	__asm        mov    al, [ebp-0x130];
+	__asm        cmp    eax, 0x10;
+	__asm        jbe    near ptr 0x0055F05E;
+	__asm        mov    byte ptr [ebp-0x130], 0x10;
+	__asm        push   0x10;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        add    eax, 0xC;
+	__asm        push   eax;
+	__asm        lea    eax, [ebp-0x130];
+	__asm        push   eax;
+	__asm        call   0x00554B76;
+	__asm        add    esp, 0xC;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        add    eax, 0xC;
+	__asm        push   eax;
+	__asm        call   0x005661F4;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        mov    [ecx+0x1C], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        cmp    dword ptr [eax+0x1C], 0;
+	__asm        je     near ptr 0x0055F0A8;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [eax+0xC];
+	__asm        test   ecx, ecx;
+	__asm        jne    near ptr 0x0055F0C4;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE2D4;
+	__asm        push   0xBC;
+	__asm        push   0x5BE258;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   0x0055383A;
+	__asm        test   dword ptr [ebp-0x134], 0xFFFF;
+	__asm        je     near ptr 0x0055F11F;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    [ebp-0x138], eax;
+	__asm        mov    eax, [ebp-0x138];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x13C], eax;
+	__asm        mov    eax, [ebp-0x13C];
+	__asm        mov    ecx, [ebp-0x138];
+	__asm        call   dword ptr [eax+0xC];
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        call   0x00554B04;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        mov    [ecx+0x24], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    word ptr [eax+0x22], 0;
+	__asm        push   1;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+0xC];
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, [ebp-0x24];
+	__asm        call   dword ptr [eax+4];
+	__asm        mov    [ebp-0x140], eax;
+	__asm        mov    eax, [ebp-0x140];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x144], eax;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        push   eax;
+	__asm        mov    eax, [ebp-0x144];
+	__asm        mov    ecx, [ebp-0x140];
+	__asm        call   dword ptr [eax];
+	__asm        jmp    near ptr 0x0055F180;
+	__asm        jmp    near ptr 0x0055F192;
 _L45274:
-	asm( 
-"	      0055f185    mov eax,[ebp-28h]"
-"	      0055f188    push eax"
-"	      0055f189    call 0056A740h"
-"	      0055f18e    add esp,4"
-"	      0055f191    ret"
-);
+	__asm        mov    eax, [ebp-0x28];
+	__asm        push   eax;
+	__asm        call   0x0056A740;
+	__asm        add    esp, 4;
+	__asm        ret;
 // LINE 196:
-	asm( 
-"	      0055f192    jmp near ptr 0055EE1Fh"
-);
+	__asm        jmp    near ptr 0x0055EE1F;
 // LINE 197:
-	asm( 
-"	      0055f197    test reinterpret_cast<uint32_t>(fileOpened),0FFFFh"
-"	      0055f19e    je near ptr 0055F1BBh"
-);
+	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
+	__asm        je     near ptr 0x0055F1BB;
 // LINE 198:
-	asm( 
-"	      0055f1a4    mov eax,this"
-"	      0055f1aa    mov ecx,this"
-"	      0055f1b0    mov ecx,[ecx+0Ch]"
-"	      0055f1b3    mov edx,[ecx]"
-"	      0055f1b5    mov ecx,[eax+0Ch]"
-"	      0055f1b8    call dword ptr [edx+0Ch]"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0xC];
+	__asm        mov    edx, [ecx];
+	__asm        mov    ecx, [eax+0xC];
+	__asm        call   dword ptr [edx+0xC];
 // LINE 199:
-	asm( 
-"	      0055f1bb    jmp near ptr 0055F1CAh"
-	);
+	__asm        jmp    near ptr 0x0055F1CA;
 _L45273:
-	asm( 
-"	      0055f1c0    mov eax,596080h"
-"	      0055f1c5    jmp near ptr 0056F590h"
-"	      0055f1ca    mov eax,[ebp-0Ch]"
-"	      0055f1cd    mov fs:[0],eax"
-"	      0055f1d3    pop edi"
-"	      0055f1d4    pop esi"
-"	      0055f1d5    pop ebx"
-"	      0055f1d6    leave"
-"	      0055f1d7    ret"
-);
+	__asm        mov    eax, 0x596080;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fdd0
 void cBList<cCopterBody>::~cBList<cCopterBody>() {
 // LINE 44:
-	asm( 
-"	      0055fdd0    push ebp"
-"	      0055fdd1    mov ebp,esp"
-"	      0055fdd3    push 0FFFFFFFFh"
-"	      0055fdd5    push 55FEC5h"
-"	      0055fdda    mov eax,fs:[0]"
-"	      0055fde0    push eax"
-"	      0055fde1    mov fs:[0],esp"
-"	      0055fde8    sub esp,10h"
-"	      0055fdeb    push ebx"
-"	      0055fdec    push esi"
-"	      0055fded    push edi"
-"	      0055fdee    mov this,ecx"
-"	      0055fdf1    mov eax,this"
-"	      0055fdf4    mov dword ptr [eax],593650h"
-"	      0055fdfa    mov dword ptr [ebp-4],0"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x55FEC5;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593650;
+	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 45:
-	asm( 
-"	      0055fe01    mov dword ptr [ebp-18h],0"
-"	      0055fe08    mov eax,this"
-"	      0055fe0b    mov eax,[eax+4]"
-"	      0055fe0e    mov [ebp-14h],eax"
-"	      0055fe11    jmp near ptr 0055FE1Fh"
-"	      0055fe16    mov eax,[ebp-14h]"
-"	      0055fe19    mov eax,[eax+4]"
-"	      0055fe1c    mov [ebp-14h],eax"
-"	      0055fe1f    cmp dword ptr [ebp-14h],0"
-"	      0055fe23    je near ptr 0055FE31h"
-"	      0055fe29    inc dword ptr [ebp-18h]"
-"	      0055fe2c    jmp near ptr 0055FE16h"
-"	      0055fe31    mov eax,this"
-"	      0055fe34    movsx eax,word ptr [eax+8]"
-"	      0055fe38    cmp eax,[ebp-18h]"
-"	      0055fe3b    je near ptr 0055FE5Ah"
-"	      0055fe41    push 8C085h"
-"	      0055fe46    push 59A24Ch"
-"	      0055fe4b    push 3Dh"
-"	      0055fe4d    push 59A254h"
-"	      0055fe52    call 00554F30h"
-"	      0055fe57    add esp,10h"
-"	      0055fe5a    jmp near ptr 0055FE5Fh"
-"	      0055fe5f    mov eax,this"
-"	      0055fe62    movsx eax,word ptr [eax+8]"
-"	      0055fe66    test eax,eax"
-"	      0055fe68    je near ptr 0055FE87h"
-"	      0055fe6e    push 8C085h"
-"	      0055fe73    push 5BE27Ch"
-"	      0055fe78    push 2Dh"
-"	      0055fe7a    push 5BE1ECh"
-"	      0055fe7f    call 00554F30h"
-"	      0055fe84    add esp,10h"
-);
+	__asm        mov    dword ptr [ebp-0x18], 0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055FE1F;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055FE31;
+	__asm        inc    dword ptr [ebp-0x18];
+	__asm        jmp    near ptr 0x0055FE16;
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        cmp    eax, [ebp-0x18];
+	__asm        je     near ptr 0x0055FE5A;
+	__asm        push   0x8C085;
+	__asm        push   0x59A24C;
+	__asm        push   0x3D;
+	__asm        push   0x59A254;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        jmp    near ptr 0x0055FE5F;
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0055FE87;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE27C;
+	__asm        push   0x2D;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 46:
-	asm( 
-"	      0055fe87    jmp near ptr 0055FE8Ch"
-"	      0055fe8c    mov dword ptr [ebp-4],0FFFFFFFFh"
-"	      0055fe93    call 0055FE9Dh"
-"	      0055fe98    jmp near ptr 0055FECFh"
-	);
+	__asm        jmp    near ptr 0x0055FE8C;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        call   0x0055FE9D;
+	__asm        jmp    near ptr 0x0055FECF;
 _L45612:
-	asm( 
-"	      0055fe9d    cmp this,0"
-"	      0055fea1    je near ptr 0055FEB5h"
-"	      0055fea7    mov eax,this"
-"	      0055feaa    add eax,4"
-"	      0055fead    mov [ebp-10h],eax"
-"	      0055feb0    jmp near ptr 0055FEBCh"
-"	      0055feb5    mov dword ptr [ebp-10h],0"
-"	      0055febc    mov ecx,[ebp-10h]"
-"	      0055febf    call 0055FCB0h"
-"	      0055fec4    ret"
-	);
+	__asm        cmp    this, 0;
+	__asm        je     near ptr 0x0055FEB5;
+	__asm        mov    eax, this;
+	__asm        add    eax, 4;
+	__asm        mov    [ebp-0x10], eax;
+	__asm        jmp    near ptr 0x0055FEBC;
+	__asm        mov    dword ptr [ebp-0x10], 0;
+	__asm        mov    ecx, [ebp-0x10];
+	__asm        call   0x0055FCB0;
+	__asm        ret;
 _L45611:
-	asm( 
-"	      0055fec5    mov eax,596110h"
-"	      0055feca    jmp near ptr 0056F590h"
-"	      0055fecf    mov eax,[ebp-0Ch]"
-"	      0055fed2    mov fs:[0],eax"
-"	      0055fed8    pop edi"
-"	      0055fed9    pop esi"
-"	      0055feda    pop ebx"
-"	      0055fedb    leave"
-"	      0055fedc    ret"
-);
+	__asm        mov    eax, 0x596110;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fee0
 void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 // LINE 118:
-	asm( 
-"	      0055fee0    push ebp"
-"	      0055fee1    mov ebp,esp"
-"	      0055fee3    sub esp,34h"
-"	      0055fee6    push ebx"
-"	      0055fee7    push esi"
-"	      0055fee8    push edi"
-"	      0055fee9    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x34;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 119:
-	asm( 
-"	      0055feec    jmp near ptr 0055FEF1h"
-"	      0055fef1    mov eax,thing"
-"	      0055fef4    mov eax,[eax+1Ch]"
-"	      0055fef7    mov [ebp-30h],eax"
-"	      0055fefa    mov dword ptr [ebp-10h],8"
-"	      0055ff01    cmp dword ptr [ebp-10h],0"
-"	      0055ff05    jl near ptr 0055FF15h"
-"	      0055ff0b    cmp dword ptr [ebp-10h],20h"
-"	      0055ff0f    jb near ptr 0055FF2Eh"
-"	      0055ff15    push 8C085h"
-"	      0055ff1a    push 5BBD7Ch"
-"	      0055ff1f    push 6Dh"
-"	      0055ff21    push 5BE1ECh"
-"	      0055ff26    call 00554F30h"
-"	      0055ff2b    add esp,10h"
-"	      0055ff2e    cmp this,0"
-"	      0055ff32    je near ptr 0055FF46h"
-"	      0055ff38    mov eax,this"
-"	      0055ff3b    add eax,4"
-"	      0055ff3e    mov [ebp-1Ch],eax"
-"	      0055ff41    jmp near ptr 0055FF4Dh"
-"	      0055ff46    mov dword ptr [ebp-1Ch],0"
-"	      0055ff4d    mov eax,[ebp-1Ch]"
-"	      0055ff50    mov [ebp-18h],eax"
-"	      0055ff53    cmp dword ptr [ebp-18h],0"
-"	      0055ff57    je near ptr 0055FF6Ah"
-"	      0055ff5d    mov eax,[ebp-18h]"
-"	      0055ff60    mov eax,[eax]"
-"	      0055ff62    mov [ebp-14h],eax"
-"	      0055ff65    jmp near ptr 0055FF71h"
-"	      0055ff6a    mov dword ptr [ebp-14h],0"
-"	      0055ff71    jmp near ptr 0055FF76h"
-"	      0055ff76    jmp near ptr 0055FF7Bh"
-"	      0055ff7b    jmp near ptr 0055FF98h"
-"	      0055ff80    cmp dword ptr [ebp-14h],0"
-"	      0055ff84    je near ptr 0055FF93h"
-"	      0055ff8a    mov eax,[ebp-14h]"
-"	      0055ff8d    mov eax,[eax+4]"
-"	      0055ff90    mov [ebp-14h],eax"
-"	      0055ff93    jmp near ptr 0055FF98h"
-"	      0055ff98    cmp dword ptr [ebp-14h],0"
-"	      0055ff9c    je near ptr 0055FFB8h"
-"	      0055ffa2    mov eax,[ebp-14h]"
-"	      0055ffa5    cmp dword ptr [eax],0"
-"	      0055ffa8    je near ptr 0056004Ch"
-"	      0055ffae    jmp near ptr 0055FFCCh"
-"	      0055ffb3    jmp near ptr 0055FFC2h"
-"	      0055ffb8    jmp near ptr 0056004Ch"
-"	      0055ffbd    jmp near ptr 0055FFCCh"
-"	      0055ffc2    cmp dword ptr [ebp-24h],0"
-"	      0055ffc6    je near ptr 0056004Ch"
-"	      0055ffcc    cmp dword ptr [ebp-14h],0"
-"	      0055ffd0    je near ptr 0055FFE8h"
-"	      0055ffd6    mov eax,[ebp-14h]"
-"	      0055ffd9    mov eax,[eax]"
-"	      0055ffdb    mov [ebp-20h],eax"
-"	      0055ffde    jmp near ptr 0055FFF4h"
-"	      0055ffe3    jmp near ptr 0055FFF4h"
-"	      0055ffe8    mov dword ptr [ebp-20h],0"
-"	      0055ffef    jmp near ptr 0055FFF4h"
-"	      0055fff4    jmp near ptr 0055FFF9h"
-"	      0055fff9    mov eax,[ebp-20h]"
-"	      0055fffc    mov eax,[eax+1Ch]"
-"	      0055ffff    mov cl,[ebp-10h]"
-"	      00560002    shr eax,cl"
-"	      00560004    mov edx,[ebp-30h]"
-"	      00560007    mov cl,[ebp-10h]"
-"	      0056000a    shr edx,cl"
-"	      0056000c    cmp eax,edx"
-"	      0056000e    jne near ptr 00560047h"
-"	      00560014    cmp dword ptr [ebp-14h],0"
-"	      00560018    je near ptr 00560030h"
-"	      0056001e    mov eax,[ebp-14h]"
-"	      00560021    mov eax,[eax]"
-"	      00560023    mov [ebp-2Ch],eax"
-"	      00560026    jmp near ptr 00560042h"
-"	      0056002b    jmp near ptr 0056003Ch"
-"	      00560030    mov dword ptr [ebp-2Ch],0"
-"	      00560037    jmp near ptr 00560042h"
-"	      0056003c    mov eax,[ebp-28h]"
-"	      0056003f    mov [ebp-2Ch],eax"
-"	      00560042    jmp near ptr 00560058h"
-"	      00560047    jmp near ptr 0055FF80h"
-"	      0056004c    mov dword ptr [ebp-2Ch],0"
-"	      00560053    jmp near ptr 00560058h"
-"	      00560058    cmp dword ptr [ebp-2Ch],0"
-"	      0056005c    je near ptr 0056007Bh"
-"	      00560062    push 8C085h"
-"	      00560067    push 5BE2A0h"
-"	      0056006c    push 77h"
-"	      0056006e    push 5BE1ECh"
-"	      00560073    call 00554F30h"
-"	      00560078    add esp,10h"
-);
+	__asm        jmp    near ptr 0x0055FEF1;
+	__asm        mov    eax, thing;
+	__asm        mov    eax, [eax+0x1C];
+	__asm        mov    [ebp-0x30], eax;
+	__asm        mov    dword ptr [ebp-0x10], 8;
+	__asm        cmp    dword ptr [ebp-0x10], 0;
+	__asm        jl     near ptr 0x0055FF15;
+	__asm        cmp    dword ptr [ebp-0x10], 0x20;
+	__asm        jb     near ptr 0x0055FF2E;
+	__asm        push   0x8C085;
+	__asm        push   0x5BBD7C;
+	__asm        push   0x6D;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
+	__asm        cmp    this, 0;
+	__asm        je     near ptr 0x0055FF46;
+	__asm        mov    eax, this;
+	__asm        add    eax, 4;
+	__asm        mov    [ebp-0x1C], eax;
+	__asm        jmp    near ptr 0x0055FF4D;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x18], eax;
+	__asm        cmp    dword ptr [ebp-0x18], 0;
+	__asm        je     near ptr 0x0055FF6A;
+	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055FF71;
+	__asm        mov    dword ptr [ebp-0x14], 0;
+	__asm        jmp    near ptr 0x0055FF76;
+	__asm        jmp    near ptr 0x0055FF7B;
+	__asm        jmp    near ptr 0x0055FF98;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055FF93;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-0x14], eax;
+	__asm        jmp    near ptr 0x0055FF98;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055FFB8;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        cmp    dword ptr [eax], 0;
+	__asm        je     near ptr 0x0056004C;
+	__asm        jmp    near ptr 0x0055FFCC;
+	__asm        jmp    near ptr 0x0055FFC2;
+	__asm        jmp    near ptr 0x0056004C;
+	__asm        jmp    near ptr 0x0055FFCC;
+	__asm        cmp    dword ptr [ebp-0x24], 0;
+	__asm        je     near ptr 0x0056004C;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x0055FFE8;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x20], eax;
+	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        mov    dword ptr [ebp-0x20], 0;
+	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        jmp    near ptr 0x0055FFF9;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, [eax+0x1C];
+	__asm        mov    cl, [ebp-0x10];
+	__asm        shr    eax, cl;
+	__asm        mov    edx, [ebp-0x30];
+	__asm        mov    cl, [ebp-0x10];
+	__asm        shr    edx, cl;
+	__asm        cmp    eax, edx;
+	__asm        jne    near ptr 0x00560047;
+	__asm        cmp    dword ptr [ebp-0x14], 0;
+	__asm        je     near ptr 0x00560030;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        jmp    near ptr 0x00560042;
+	__asm        jmp    near ptr 0x0056003C;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
+	__asm        jmp    near ptr 0x00560042;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x2C], eax;
+	__asm        jmp    near ptr 0x00560058;
+	__asm        jmp    near ptr 0x0055FF80;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
+	__asm        jmp    near ptr 0x00560058;
+	__asm        cmp    dword ptr [ebp-0x2C], 0;
+	__asm        je     near ptr 0x0056007B;
+	__asm        push   0x8C085;
+	__asm        push   0x5BE2A0;
+	__asm        push   0x77;
+	__asm        push   0x5BE1EC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 120:
-	asm( 
-"	      0056007b    cmp thing,0"
-"	      0056007f    je near ptr 005600D5h"
-"	      00560085    mov eax,this"
-"	      00560088    mov eax,[eax+4]"
-"	      0056008b    mov [ebp-8],eax"
-"	      0056008e    jmp near ptr 0056009Ch"
-"	      00560093    mov eax,[ebp-8]"
-"	      00560096    mov eax,[eax+4]"
-"	      00560099    mov [ebp-8],eax"
-"	      0056009c    cmp dword ptr [ebp-8],0"
-"	      005600a0    je near ptr 005600BEh"
-"	      005600a6    mov eax,[ebp-8]"
-"	      005600a9    mov ecx,thing"
-"	      005600ac    cmp [eax],ecx"
-"	      005600ae    jne near ptr 005600B9h"
-"	      005600b4    jmp near ptr 005600D5h"
-"	      005600b9    jmp near ptr 00560093h"
-"	      005600be    jmp near ptr 005600DAh"
-"	      005600c3    jmp near ptr 005600D5h"
-"	      005600c8    test dword ptr [ebp-0Ch],0FFFFh"
-"	      005600cf    je near ptr 005600DAh"
-"	      005600d5    jmp near ptr 00560110h"
-"	      005600da    push 8"
-"	      005600dc    call 0056A600h"
-"	      005600e1    add esp,4"
-"	      005600e4    mov [ebp-4],eax"
-"	      005600e7    mov eax,thing"
-"	      005600ea    mov ecx,[ebp-4]"
-"	      005600ed    mov [ecx],eax"
-"	      005600ef    mov eax,this"
-"	      005600f2    mov eax,[eax+4]"
-"	      005600f5    mov ecx,[ebp-4]"
-"	      005600f8    mov [ecx+4],eax"
-"	      005600fb    mov eax,[ebp-4]"
-"	      005600fe    mov ecx,this"
-"	      00560101    mov [ecx+4],eax"
-"	      00560104    mov eax,this"
-"	      00560107    inc word ptr [eax+8]"
-"	      0056010b    jmp near ptr 00560110h"
-);
+	__asm        cmp    thing, 0;
+	__asm        je     near ptr 0x005600D5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-8], eax;
+	__asm        jmp    near ptr 0x0056009C;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    [ebp-8], eax;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x005600BE;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ecx, thing;
+	__asm        cmp    [eax], ecx;
+	__asm        jne    near ptr 0x005600B9;
+	__asm        jmp    near ptr 0x005600D5;
+	__asm        jmp    near ptr 0x00560093;
+	__asm        jmp    near ptr 0x005600DA;
+	__asm        jmp    near ptr 0x005600D5;
+	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
+	__asm        je     near ptr 0x005600DA;
+	__asm        jmp    near ptr 0x00560110;
+	__asm        push   8;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, thing;
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx], eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, this;
+	__asm        inc    word ptr [eax+8];
+	__asm        jmp    near ptr 0x00560110;
 // LINE 121:
-	asm( 
-"	      00560110    jmp near ptr 00560115h"
-"	      00560115    pop edi"
-"	      00560116    pop esi"
-"	      00560117    pop ebx"
-"	      00560118    leave"
-"	      00560119    ret 4"
-);
+	__asm        jmp    near ptr 0x00560115;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 

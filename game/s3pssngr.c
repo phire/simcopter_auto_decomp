@@ -8,77 +8,59 @@
 // FUNCTION: COPTER_D 0x004f9bc0
 int32_t HeliPassengerHasChanged(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 29:
-	asm( 
-"	      004f9bc0    push ebp"
-"	      004f9bc1    mov ebp,esp"
-"	      004f9bc3    push ebx"
-"	      004f9bc4    push esi"
-"	      004f9bc5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 30:
-	asm( 
-"	      004f9bc6    mov eax,heliPassengerData"
-"	      004f9bc9    mov eax,[eax]"
-"	      004f9bcb    jmp near ptr 004F9BD0h"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    eax, [eax];
+	__asm        jmp    near ptr 0x004F9BD0;
 // LINE 31:
-	asm( 
-"	      004f9bd0    pop edi"
-"	      004f9bd1    pop esi"
-"	      004f9bd2    pop ebx"
-"	      004f9bd3    leave"
-"	      004f9bd4    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9bd5
 void HeliPassengerSetChanged(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 37:
-	asm( 
-"	      004f9bd5    push ebp"
-"	      004f9bd6    mov ebp,esp"
-"	      004f9bd8    push ebx"
-"	      004f9bd9    push esi"
-"	      004f9bda    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 38:
-	asm( 
-"	      004f9bdb    mov eax,heliPassengerData"
-"	      004f9bde    mov dword ptr [eax],1"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax], 1;
 // LINE 39:
-	asm( 
-"	      004f9be4    pop edi"
-"	      004f9be5    pop esi"
-"	      004f9be6    pop ebx"
-"	      004f9be7    leave"
-"	      004f9be8    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9be9
 void HeliPassengerClearChanged(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 45:
-	asm( 
-"	      004f9be9    push ebp"
-"	      004f9bea    mov ebp,esp"
-"	      004f9bec    push ebx"
-"	      004f9bed    push esi"
-"	      004f9bee    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 46:
-	asm( 
-"	      004f9bef    mov eax,heliPassengerData"
-"	      004f9bf2    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 47:
-	asm( 
-"	      004f9bf8    pop edi"
-"	      004f9bf9    pop esi"
-"	      004f9bfa    pop ebx"
-"	      004f9bfb    leave"
-"	      004f9bfc    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9bfd
@@ -88,155 +70,119 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 	int32_t i;
 
 // LINE 54:
-	asm( 
-"	      004f9bfd    push ebp"
-"	      004f9bfe    mov ebp,esp"
-"	      004f9c00    sub esp,0Ch"
-"	      004f9c03    push ebx"
-"	      004f9c04    push esi"
-"	      004f9c05    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 59:
-	asm( 
-"	      004f9c06    mov eax,heliPassengerData"
-"	      004f9c09    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 60:
-	asm( 
-"	      004f9c0f    mov eax,heliPassengerData"
-"	      004f9c12    mov dword ptr [eax+8],0"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax+8], 0;
 // LINE 61:
-	asm( 
-"	      004f9c19    mov eax,heliPassengerData"
-"	      004f9c1c    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 62:
-	asm( 
-"	      004f9c23    mov eax,heliPassengerData"
-"	      004f9c26    mov dword ptr [eax+18h],0"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 63:
-	asm( 
-"	      004f9c2d    mov eax,nHeliType"
-"	      004f9c30    mov ecx,eax"
-"	      004f9c32    lea eax,[eax+eax*4]"
-"	      004f9c35    lea eax,[ecx+eax*2]"
-"	      004f9c38    mov eax,[eax*8+5B497Ch]"
-"	      004f9c3f    mov lSeatsTotal,eax"
-"	      004f9c42    mov eax,lSeatsTotal"
-"	      004f9c45    mov ecx,heliPassengerData"
-"	      004f9c48    mov [ecx+4],eax"
-);
+	__asm        mov    eax, nHeliType;
+	__asm        mov    ecx, eax;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, [ecx+eax*2];
+	__asm        mov    eax, [eax*8+0x5B497C];
+	__asm        mov    lSeatsTotal, eax;
+	__asm        mov    eax, lSeatsTotal;
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    [ecx+4], eax;
 // LINE 64:
-	asm( 
-"	      004f9c4b    mov lRowWidth,5"
-"	      004f9c52    mov eax,lRowWidth"
-"	      004f9c55    mov ecx,heliPassengerData"
-"	      004f9c58    mov [ecx+14h],eax"
-);
+	__asm        mov    lRowWidth, 5;
+	__asm        mov    eax, lRowWidth;
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    [ecx+0x14], eax;
 // LINE 73:
-	asm( 
-"	      004f9c5b    mov eax,lSeatsTotal"
-"	      004f9c5e    cdq"
-"	      004f9c5f    idiv lRowWidth"
-"	      004f9c62    mov ecx,eax"
-"	      004f9c64    mov eax,lRowWidth"
-"	      004f9c67    cdq"
-"	      004f9c68    sub eax,edx"
-"	      004f9c6a    sar eax,1"
-"	      004f9c6d    imul ecx,eax"
-"	      004f9c70    mov eax,lSeatsTotal"
-"	      004f9c73    cdq"
-"	      004f9c74    idiv lRowWidth"
-"	      004f9c77    mov eax,edx"
-"	      004f9c79    cdq"
-"	      004f9c7a    sub eax,edx"
-"	      004f9c7c    sar eax,1"
-"	      004f9c7f    add ecx,eax"
-"	      004f9c81    mov eax,heliPassengerData"
-"	      004f9c84    mov [eax+0Ch],ecx"
-);
+	__asm        mov    eax, lSeatsTotal;
+	__asm        cdq;
+	__asm        idiv   lRowWidth;
+	__asm        mov    ecx, eax;
+	__asm        mov    eax, lRowWidth;
+	__asm        cdq;
+	__asm        sub    eax, edx;
+	__asm        sar    eax, 1;
+	__asm        imul   ecx, eax;
+	__asm        mov    eax, lSeatsTotal;
+	__asm        cdq;
+	__asm        idiv   lRowWidth;
+	__asm        mov    eax, edx;
+	__asm        cdq;
+	__asm        sub    eax, edx;
+	__asm        sar    eax, 1;
+	__asm        add    ecx, eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    [eax+0xC], ecx;
 // LINE 76:
-	asm( 
-"	      004f9c87    mov i,0"
-"	      004f9c8e    jmp near ptr 004F9C96h"
-"	      004f9c93    inc i"
-"	      004f9c96    cmp i,10h"
-"	      004f9c9a    jge near ptr 004F9CF5h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x004F9C96;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x004F9CF5;
 // LINE 77:
-	asm( 
-"	      004f9ca0    mov eax,i"
-"	      004f9ca3    shl eax,2"
-"	      004f9ca6    lea eax,[eax+eax*4]"
-"	      004f9ca9    mov ecx,heliPassengerData"
-"	      004f9cac    mov dword ptr [eax+ecx+1Ch],0FFFFFFFFh"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 // LINE 78:
-	asm( 
-"	      004f9cb4    mov eax,i"
-"	      004f9cb7    shl eax,2"
-"	      004f9cba    lea eax,[eax+eax*4]"
-"	      004f9cbd    mov ecx,heliPassengerData"
-"	      004f9cc0    mov dword ptr [eax+ecx+20h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x20], 0;
 // LINE 79:
-	asm( 
-"	      004f9cc8    mov eax,i"
-"	      004f9ccb    shl eax,2"
-"	      004f9cce    lea eax,[eax+eax*4]"
-"	      004f9cd1    mov ecx,heliPassengerData"
-"	      004f9cd4    mov dword ptr [eax+ecx+24h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x24], 0;
 // LINE 80:
-	asm( 
-"	      004f9cdc    mov eax,i"
-"	      004f9cdf    shl eax,2"
-"	      004f9ce2    lea eax,[eax+eax*4]"
-"	      004f9ce5    mov ecx,heliPassengerData"
-"	      004f9ce8    mov dword ptr [eax+ecx+28h],0FFFFFFFFh"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x28], 0xFFFFFFFF;
 // LINE 81:
-	asm( 
-"	      004f9cf0    jmp near ptr 004F9C93h"
-);
+	__asm        jmp    near ptr 0x004F9C93;
 // LINE 82:
-	asm( 
-"	      004f9cf5    pop edi"
-"	      004f9cf6    pop esi"
-"	      004f9cf7    pop ebx"
-"	      004f9cf8    leave"
-"	      004f9cf9    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9cfa
 int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
 // LINE 94:
-	asm( 
-"	      004f9cfa    push ebp"
-"	      004f9cfb    mov ebp,esp"
-"	      004f9cfd    push ebx"
-"	      004f9cfe    push esi"
-"	      004f9cff    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 95:
-	asm( 
-"	      004f9d00    mov eax,heliPassengerData"
-"	      004f9d03    mov eax,[eax+4]"
-"	      004f9d06    mov ecx,heliPassengerData"
-"	      004f9d09    sub eax,[ecx+8]"
-"	      004f9d0c    jmp near ptr 004F9D11h"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        sub    eax, [ecx+8];
+	__asm        jmp    near ptr 0x004F9D11;
 // LINE 96:
-	asm( 
-"	      004f9d11    pop edi"
-"	      004f9d12    pop esi"
-"	      004f9d13    pop ebx"
-"	      004f9d14    leave"
-"	      004f9d15    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
@@ -244,133 +190,99 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 	int32_t i;
 
 // LINE 108:
-	asm( 
-"	      004f9d16    push ebp"
-"	      004f9d17    mov ebp,esp"
-"	      004f9d19    sub esp,4"
-"	      004f9d1c    push ebx"
-"	      004f9d1d    push esi"
-"	      004f9d1e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 111:
-	asm( 
-"	      004f9d1f    mov eax,passenger"
-"	      004f9d22    push eax"
-"	      004f9d23    mov eax,heliPassengerData"
-"	      004f9d26    push eax"
-"	      004f9d27    call 004F9CFAh"
-"	      004f9d2c    add esp,8"
-"	      004f9d2f    test eax,eax"
-"	      004f9d31    jne near ptr 004F9D3Eh"
-);
+	__asm        mov    eax, passenger;
+	__asm        push   eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9CFA;
+	__asm        add    esp, 8;
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x004F9D3E;
 // LINE 112:
-	asm( 
-"	      004f9d37    xor eax,eax"
-"	      004f9d39    jmp near ptr 004F9DFFh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004F9DFF;
 // LINE 114:
-	asm( 
-"	      004f9d3e    mov i,0"
-"	      004f9d45    jmp near ptr 004F9D4Dh"
-"	      004f9d4a    inc i"
-"	      004f9d4d    cmp i,10h"
-"	      004f9d51    jge near ptr 004F9DF8h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x004F9D4D;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x004F9DF8;
 // LINE 116:
-	asm( 
-"	      004f9d57    mov eax,i"
-"	      004f9d5a    shl eax,2"
-"	      004f9d5d    lea eax,[eax+eax*4]"
-"	      004f9d60    mov ecx,heliPassengerData"
-"	      004f9d63    cmp dword ptr [eax+ecx+1Ch],0FFFFFFFFh"
-"	      004f9d68    jne near ptr 004F9DF3h"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+	__asm        jne    near ptr 0x004F9DF3;
 // LINE 117:
-	asm( 
-"	      004f9d6e    mov eax,passenger"
-"	      004f9d71    mov eax,[eax]"
-"	      004f9d73    mov ecx,i"
-"	      004f9d76    shl ecx,2"
-"	      004f9d79    lea ecx,[ecx+ecx*4]"
-"	      004f9d7c    mov edx,heliPassengerData"
-"	      004f9d7f    mov [ecx+edx+1Ch],eax"
-);
+	__asm        mov    eax, passenger;
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x1C], eax;
 // LINE 118:
-	asm( 
-"	      004f9d83    mov eax,passenger"
-"	      004f9d86    mov eax,[eax+4]"
-"	      004f9d89    mov ecx,i"
-"	      004f9d8c    shl ecx,2"
-"	      004f9d8f    lea ecx,[ecx+ecx*4]"
-"	      004f9d92    mov edx,heliPassengerData"
-"	      004f9d95    mov [ecx+edx+20h],eax"
-);
+	__asm        mov    eax, passenger;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x20], eax;
 // LINE 119:
-	asm( 
-"	      004f9d99    mov eax,passenger"
-"	      004f9d9c    mov eax,[eax+8]"
-"	      004f9d9f    mov ecx,i"
-"	      004f9da2    shl ecx,2"
-"	      004f9da5    lea ecx,[ecx+ecx*4]"
-"	      004f9da8    mov edx,heliPassengerData"
-"	      004f9dab    mov [ecx+edx+24h],eax"
-);
+	__asm        mov    eax, passenger;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x24], eax;
 // LINE 120:
-	asm( 
-"	      004f9daf    mov eax,passenger"
-"	      004f9db2    mov eax,[eax+0Ch]"
-"	      004f9db5    mov ecx,i"
-"	      004f9db8    shl ecx,2"
-"	      004f9dbb    lea ecx,[ecx+ecx*4]"
-"	      004f9dbe    mov edx,heliPassengerData"
-"	      004f9dc1    mov [ecx+edx+28h],eax"
-);
+	__asm        mov    eax, passenger;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x28], eax;
 // LINE 121:
-	asm( 
-"	      004f9dc5    mov eax,heliPassengerData"
-"	      004f9dc8    inc dword ptr [eax+8]"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        inc    dword ptr [eax+8];
 // LINE 122:
-	asm( 
-"	      004f9dcb    mov eax,heliPassengerData"
-"	      004f9dce    inc dword ptr [eax+18h]"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        inc    dword ptr [eax+0x18];
 // LINE 125:
-	asm( 
-"	      004f9dd1    mov eax,heliPassengerData"
-"	      004f9dd4    push eax"
-"	      004f9dd5    call 004F9F8Ah"
-"	      004f9dda    add esp,4"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9F8A;
+	__asm        add    esp, 4;
 // LINE 126:
-	asm( 
-"	      004f9ddd    mov eax,heliPassengerData"
-"	      004f9de0    push eax"
-"	      004f9de1    call 004F9BD5h"
-"	      004f9de6    add esp,4"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9BD5;
+	__asm        add    esp, 4;
 // LINE 130:
-	asm( 
-"	      004f9de9    mov eax,1"
-"	      004f9dee    jmp near ptr 004F9DFFh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x004F9DFF;
 // LINE 132:
-	asm( 
-"	      004f9df3    jmp near ptr 004F9D4Ah"
-);
+	__asm        jmp    near ptr 0x004F9D4A;
 // LINE 135:
-	asm( 
-"	      004f9df8    xor eax,eax"
-"	      004f9dfa    jmp near ptr 004F9DFFh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004F9DFF;
 // LINE 136:
-	asm( 
-"	      004f9dff    pop edi"
-"	      004f9e00    pop esi"
-"	      004f9e01    pop ebx"
-"	      004f9e02    leave"
-"	      004f9e03    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9e04
@@ -378,54 +290,40 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 	int32_t i;
 
 // LINE 144:
-	asm( 
-"	      004f9e04    push ebp"
-"	      004f9e05    mov ebp,esp"
-"	      004f9e07    sub esp,4"
-"	      004f9e0a    push ebx"
-"	      004f9e0b    push esi"
-"	      004f9e0c    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 147:
-	asm( 
-"	      004f9e0d    mov i,0"
-"	      004f9e14    jmp near ptr 004F9E1Ch"
-"	      004f9e19    inc i"
-"	      004f9e1c    cmp i,10h"
-"	      004f9e20    jge near ptr 004F9E4Ch"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x004F9E1C;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x004F9E4C;
 // LINE 148:
-	asm( 
-"	      004f9e26    mov eax,i"
-"	      004f9e29    shl eax,2"
-"	      004f9e2c    lea eax,[eax+eax*4]"
-"	      004f9e2f    mov ecx,heliPassengerData"
-"	      004f9e32    mov edx,id"
-"	      004f9e35    cmp [eax+ecx+28h],edx"
-"	      004f9e39    jne near ptr 004F9E47h"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    edx, id;
+	__asm        cmp    [eax+ecx+0x28], edx;
+	__asm        jne    near ptr 0x004F9E47;
 // LINE 149:
-	asm( 
-"	      004f9e3f    mov eax,i"
-"	      004f9e42    jmp near ptr 004F9E56h"
-);
+	__asm        mov    eax, i;
+	__asm        jmp    near ptr 0x004F9E56;
 // LINE 151:
-	asm( 
-"	      004f9e47    jmp near ptr 004F9E19h"
-);
+	__asm        jmp    near ptr 0x004F9E19;
 // LINE 152:
-	asm( 
-"	      004f9e4c    mov eax,0FFFFFFFFh"
-"	      004f9e51    jmp near ptr 004F9E56h"
-);
+	__asm        mov    eax, 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x004F9E56;
 // LINE 153:
-	asm( 
-"	      004f9e56    pop edi"
-"	      004f9e57    pop esi"
-"	      004f9e58    pop ebx"
-"	      004f9e59    leave"
-"	      004f9e5a    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9e5b
@@ -433,56 +331,42 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 	int32_t i;
 
 // LINE 159:
-	asm( 
-"	      004f9e5b    push ebp"
-"	      004f9e5c    mov ebp,esp"
-"	      004f9e5e    sub esp,4"
-"	      004f9e61    push ebx"
-"	      004f9e62    push esi"
-"	      004f9e63    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 160:
-	asm( 
-"	      004f9e64    mov eax,id"
-"	      004f9e67    push eax"
-"	      004f9e68    mov eax,heliPassengerData"
-"	      004f9e6b    push eax"
-"	      004f9e6c    call 004F9E04h"
-"	      004f9e71    add esp,8"
-"	      004f9e74    mov i,eax"
-);
+	__asm        mov    eax, id;
+	__asm        push   eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9E04;
+	__asm        add    esp, 8;
+	__asm        mov    i, eax;
 // LINE 162:
-	asm( 
-"	      004f9e77    cmp i,0FFFFFFFFh"
-"	      004f9e7b    je near ptr 004F9E9Eh"
-);
+	__asm        cmp    i, 0xFFFFFFFF;
+	__asm        je     near ptr 0x004F9E9E;
 // LINE 163:
-	asm( 
-"	      004f9e81    mov eax,expression"
-"	      004f9e84    mov ecx,i"
-"	      004f9e87    shl ecx,2"
-"	      004f9e8a    lea ecx,[ecx+ecx*4]"
-"	      004f9e8d    mov edx,heliPassengerData"
-"	      004f9e90    mov [ecx+edx+20h],eax"
-);
+	__asm        mov    eax, expression;
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x20], eax;
 // LINE 164:
-	asm( 
-"	      004f9e94    mov eax,1"
-"	      004f9e99    jmp near ptr 004F9EA5h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x004F9EA5;
 // LINE 166:
-	asm( 
-"	      004f9e9e    xor eax,eax"
-"	      004f9ea0    jmp near ptr 004F9EA5h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004F9EA5;
 // LINE 167:
-	asm( 
-"	      004f9ea5    pop edi"
-"	      004f9ea6    pop esi"
-"	      004f9ea7    pop ebx"
-"	      004f9ea8    leave"
-"	      004f9ea9    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9eaa
@@ -490,139 +374,103 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 	int32_t i;
 
 // LINE 173:
-	asm( 
-"	      004f9eaa    push ebp"
-"	      004f9eab    mov ebp,esp"
-"	      004f9ead    sub esp,4"
-"	      004f9eb0    push ebx"
-"	      004f9eb1    push esi"
-"	      004f9eb2    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 174:
-	asm( 
-"	      004f9eb3    mov eax,id"
-"	      004f9eb6    push eax"
-"	      004f9eb7    mov eax,heliPassengerData"
-"	      004f9eba    push eax"
-"	      004f9ebb    call 004F9E04h"
-"	      004f9ec0    add esp,8"
-"	      004f9ec3    mov i,eax"
-);
+	__asm        mov    eax, id;
+	__asm        push   eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9E04;
+	__asm        add    esp, 8;
+	__asm        mov    i, eax;
 // LINE 176:
-	asm( 
-"	      004f9ec6    cmp i,0FFFFFFFFh"
-"	      004f9eca    je near ptr 004F9F62h"
-);
+	__asm        cmp    i, 0xFFFFFFFF;
+	__asm        je     near ptr 0x004F9F62;
 // LINE 177:
-	asm( 
-"	      004f9ed0    mov eax,heliPassengerData"
-"	      004f9ed3    dec dword ptr [eax+8]"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        dec    dword ptr [eax+8];
 // LINE 178:
-	asm( 
-"	      004f9ed6    mov eax,i"
-"	      004f9ed9    shl eax,2"
-"	      004f9edc    lea eax,[eax+eax*4]"
-"	      004f9edf    mov ecx,heliPassengerData"
-"	      004f9ee2    mov dword ptr [eax+ecx+1Ch],0FFFFFFFFh"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 // LINE 179:
-	asm( 
-"	      004f9eea    mov eax,i"
-"	      004f9eed    shl eax,2"
-"	      004f9ef0    lea eax,[eax+eax*4]"
-"	      004f9ef3    mov ecx,heliPassengerData"
-"	      004f9ef6    mov dword ptr [eax+ecx+20h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x20], 0;
 // LINE 180:
-	asm( 
-"	      004f9efe    mov eax,i"
-"	      004f9f01    shl eax,2"
-"	      004f9f04    lea eax,[eax+eax*4]"
-"	      004f9f07    mov ecx,heliPassengerData"
-"	      004f9f0a    mov dword ptr [eax+ecx+24h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x24], 0;
 // LINE 181:
-	asm( 
-"	      004f9f12    mov eax,i"
-"	      004f9f15    shl eax,2"
-"	      004f9f18    lea eax,[eax+eax*4]"
-"	      004f9f1b    mov ecx,heliPassengerData"
-"	      004f9f1e    mov dword ptr [eax+ecx+28h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x28], 0;
 // LINE 182:
-	asm( 
-"	      004f9f26    mov eax,i"
-"	      004f9f29    shl eax,2"
-"	      004f9f2c    lea eax,[eax+eax*4]"
-"	      004f9f2f    mov ecx,heliPassengerData"
-"	      004f9f32    mov dword ptr [eax+ecx+2Ch],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        mov    dword ptr [eax+ecx+0x2C], 0;
 // LINE 183:
-	asm( 
-"	      004f9f3a    mov eax,heliPassengerData"
-"	      004f9f3d    dec dword ptr [eax+18h]"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        dec    dword ptr [eax+0x18];
 // LINE 186:
-	asm( 
-"	      004f9f40    mov eax,heliPassengerData"
-"	      004f9f43    push eax"
-"	      004f9f44    call 004F9F8Ah"
-"	      004f9f49    add esp,4"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9F8A;
+	__asm        add    esp, 4;
 // LINE 187:
-	asm( 
-"	      004f9f4c    mov eax,heliPassengerData"
-"	      004f9f4f    push eax"
-"	      004f9f50    call 004F9BD5h"
-"	      004f9f55    add esp,4"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        push   eax;
+	__asm        call   0x004F9BD5;
+	__asm        add    esp, 4;
 // LINE 188:
-	asm( 
-"	      004f9f58    mov eax,1"
-"	      004f9f5d    jmp near ptr 004F9F69h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x004F9F69;
 // LINE 192:
-	asm( 
-"	      004f9f62    xor eax,eax"
-"	      004f9f64    jmp near ptr 004F9F69h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x004F9F69;
 // LINE 193:
-	asm( 
-"	      004f9f69    pop edi"
-"	      004f9f6a    pop esi"
-"	      004f9f6b    pop ebx"
-"	      004f9f6c    leave"
-"	      004f9f6d    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9f6e
 long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 203:
-	asm( 
-"	      004f9f6e    push ebp"
-"	      004f9f6f    mov ebp,esp"
-"	      004f9f71    push ebx"
-"	      004f9f72    push esi"
-"	      004f9f73    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 204:
-	asm( 
-"	      004f9f74    mov eax,heliPassengerData"
-"	      004f9f77    mov eax,[eax+4]"
-"	      004f9f7a    mov ecx,heliPassengerData"
-"	      004f9f7d    sub eax,[ecx+8]"
-"	      004f9f80    jmp near ptr 004F9F85h"
-);
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        sub    eax, [ecx+8];
+	__asm        jmp    near ptr 0x004F9F85;
 // LINE 205:
-	asm( 
-"	      004f9f85    pop edi"
-"	      004f9f86    pop esi"
-"	      004f9f87    pop ebx"
-"	      004f9f88    leave"
-"	      004f9f89    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a
@@ -632,86 +480,66 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 	int32_t[16] bSeats;
 
 // LINE 215:
-	asm( 
-"	      004f9f8a    push ebp"
-"	      004f9f8b    mov ebp,esp"
-"	      004f9f8d    sub esp,48h"
-"	      004f9f90    push ebx"
-"	      004f9f91    push esi"
-"	      004f9f92    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x48;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 220:
-	asm( 
-"	      004f9f93    mov i,0"
-"	      004f9f9a    jmp near ptr 004F9FA2h"
-"	      004f9f9f    inc i"
-"	      004f9fa2    cmp i,10h"
-"	      004f9fa6    jge near ptr 004F9FBCh"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x004F9FA2;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x004F9FBC;
 // LINE 221:
-	asm( 
-"	      004f9fac    mov eax,i"
-"	      004f9faf    mov dword ptr [ebp+eax*4-40h],0"
-"	      004f9fb7    jmp near ptr 004F9F9Fh"
-);
+	__asm        mov    eax, i;
+	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
+	__asm        jmp    near ptr 0x004F9F9F;
 // LINE 223:
-	asm( 
-"	      004f9fbc    mov i,0"
-"	      004f9fc3    jmp near ptr 004F9FCBh"
-"	      004f9fc8    inc i"
-"	      004f9fcb    cmp i,10h"
-"	      004f9fcf    jge near ptr 004FA02Eh"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x004F9FCB;
+	__asm        inc    i;
+	__asm        cmp    i, 0x10;
+	__asm        jge    near ptr 0x004FA02E;
 // LINE 224:
-	asm( 
-"	      004f9fd5    mov eax,i"
-"	      004f9fd8    shl eax,2"
-"	      004f9fdb    lea eax,[eax+eax*4]"
-"	      004f9fde    mov ecx,heliPassengerData"
-"	      004f9fe1    cmp dword ptr [eax+ecx+1Ch],0FFFFFFFFh"
-"	      004f9fe6    je near ptr 004FA029h"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        mov    ecx, heliPassengerData;
+	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+	__asm        je     near ptr 0x004FA029;
 // LINE 225:
-	asm( 
-"	      004f9fec    lea eax,bSeats[0]"
-"	      004f9fef    push eax"
-"	      004f9ff0    mov eax,heliPassengerData"
-"	      004f9ff3    mov eax,[eax+14h]"
-"	      004f9ff6    push eax"
-"	      004f9ff7    mov eax,heliPassengerData"
-"	      004f9ffa    mov eax,[eax+4]"
-"	      004f9ffd    push eax"
-"	      004f9ffe    push 1"
-"	      004fa000    call 004FA033h"
-"	      004fa005    add esp,10h"
-"	      004fa008    mov nSeat,eax"
-);
+	__asm        lea    eax, bSeats[0];
+	__asm        push   eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    eax, [eax+0x14];
+	__asm        push   eax;
+	__asm        mov    eax, heliPassengerData;
+	__asm        mov    eax, [eax+4];
+	__asm        push   eax;
+	__asm        push   1;
+	__asm        call   0x004FA033;
+	__asm        add    esp, 0x10;
+	__asm        mov    nSeat, eax;
 // LINE 226:
-	asm( 
-"	      004fa00b    mov eax,nSeat"
-"	      004fa00e    mov dword ptr [ebp+eax*4-40h],1"
-);
+	__asm        mov    eax, nSeat;
+	__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
 // LINE 227:
-	asm( 
-"	      004fa016    mov eax,nSeat"
-"	      004fa019    mov ecx,i"
-"	      004fa01c    shl ecx,2"
-"	      004fa01f    lea ecx,[ecx+ecx*4]"
-"	      004fa022    mov edx,heliPassengerData"
-"	      004fa025    mov [ecx+edx+2Ch],eax"
-);
+	__asm        mov    eax, nSeat;
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 2;
+	__asm        lea    ecx, [ecx+ecx*4];
+	__asm        mov    edx, heliPassengerData;
+	__asm        mov    [ecx+edx+0x2C], eax;
 // LINE 229:
-	asm( 
-"	      004fa029    jmp near ptr 004F9FC8h"
-);
+	__asm        jmp    near ptr 0x004F9FC8;
 // LINE 230:
-	asm( 
-"	      004fa02e    pop edi"
-"	      004fa02f    pop esi"
-"	      004fa030    pop ebx"
-"	      004fa031    leave"
-"	      004fa032    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fa033
@@ -719,51 +547,37 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 	int32_t j;
 
 // LINE 242:
-	asm( 
-"	      004fa033    push ebp"
-"	      004fa034    mov ebp,esp"
-"	      004fa036    sub esp,4"
-"	      004fa039    push ebx"
-"	      004fa03a    push esi"
-"	      004fa03b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 245:
-	asm( 
-"	      004fa03c    mov j,0"
-"	      004fa043    jmp near ptr 004FA04Bh"
-"	      004fa048    inc j"
-"	      004fa04b    mov eax,nSeatsTotal"
-"	      004fa04e    cmp j,eax"
-"	      004fa051    jge near ptr 004FA074h"
-);
+	__asm        mov    j, 0;
+	__asm        jmp    near ptr 0x004FA04B;
+	__asm        inc    j;
+	__asm        mov    eax, nSeatsTotal;
+	__asm        cmp    j, eax;
+	__asm        jge    near ptr 0x004FA074;
 // LINE 246:
-	asm( 
-"	      004fa057    mov eax,j"
-"	      004fa05a    mov ecx,bSeats"
-"	      004fa05d    cmp dword ptr [ecx+eax*4],0"
-"	      004fa061    jne near ptr 004FA06Fh"
-);
+	__asm        mov    eax, j;
+	__asm        mov    ecx, bSeats;
+	__asm        cmp    dword ptr [ecx+eax*4], 0;
+	__asm        jne    near ptr 0x004FA06F;
 // LINE 247:
-	asm( 
-"	      004fa067    mov eax,j"
-"	      004fa06a    jmp near ptr 004FA07Eh"
-);
+	__asm        mov    eax, j;
+	__asm        jmp    near ptr 0x004FA07E;
 // LINE 248:
-	asm( 
-"	      004fa06f    jmp near ptr 004FA048h"
-);
+	__asm        jmp    near ptr 0x004FA048;
 // LINE 249:
-	asm( 
-"	      004fa074    mov eax,0FFFFFFFFh"
-"	      004fa079    jmp near ptr 004FA07Eh"
-);
+	__asm        mov    eax, 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x004FA07E;
 // LINE 250:
-	asm( 
-"	      004fa07e    pop edi"
-"	      004fa07f    pop esi"
-"	      004fa080    pop ebx"
-"	      004fa081    leave"
-"	      004fa082    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

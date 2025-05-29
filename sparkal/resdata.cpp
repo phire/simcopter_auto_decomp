@@ -8,550 +8,420 @@
 // FUNCTION: COPTER_D 0x004477b0
 void ResourceRCData::ResourceRCData() {
 // LINE 26:
-	asm( 
-"	      004477b0    push ebp"
-"	      004477b1    mov ebp,esp"
-"	      004477b3    sub esp,4"
-"	      004477b6    push ebx"
-"	      004477b7    push esi"
-"	      004477b8    push edi"
-"	      004477b9    mov this,ecx"
-"	      004477bc    mov eax,this"
-"	      004477bf    mov dword ptr [eax+4],0"
-"	      004477c6    mov eax,this"
-"	      004477c9    mov dword ptr [eax+8],0"
-"	      004477d0    mov eax,this"
-"	      004477d3    mov dword ptr [eax+0Ch],0"
-"	      004477da    mov eax,this"
-"	      004477dd    mov dword ptr [eax+10h],0"
-"	      004477e4    mov eax,this"
-"	      004477e7    mov dword ptr [eax+14h],0"
-"	      004477ee    mov eax,this"
-"	      004477f1    mov dword ptr [eax+18h],0"
-"	      004477f8    mov eax,this"
-"	      004477fb    mov dword ptr [eax],58F648h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+4], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+8], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x14], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x18], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 27:
-	asm( 
-"	      00447801    jmp near ptr 00447806h"
-"	      00447806    mov eax,this"
-"	      00447809    pop edi"
-"	      0044780a    pop esi"
-"	      0044780b    pop ebx"
-"	      0044780c    leave"
-"	      0044780d    ret"
-);
+	__asm        jmp    near ptr 0x00447806;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044780e
 void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 // LINE 38:
-	asm( 
-"	      0044780e    push ebp"
-"	      0044780f    mov ebp,esp"
-"	      00447811    sub esp,4"
-"	      00447814    push ebx"
-"	      00447815    push esi"
-"	      00447816    push edi"
-"	      00447817    mov this,ecx"
-"	      0044781a    mov eax,nTheResource"
-"	      0044781d    mov ecx,this"
-"	      00447820    mov [ecx+4],eax"
-"	      00447823    mov eax,this"
-"	      00447826    mov dword ptr [eax+8],0"
-"	      0044782d    mov eax,this"
-"	      00447830    mov dword ptr [eax+0Ch],0"
-"	      00447837    mov eax,this"
-"	      0044783a    mov dword ptr [eax],58F648h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, nTheResource;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+8], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 40:
-	asm( 
-"	      00447840    mov eax,ds:[5C28C8h]"
-"	      00447845    mov ecx,this"
-"	      00447848    mov [ecx+14h],eax"
-);
+	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x14], eax;
 // LINE 41:
-	asm( 
-"	      0044784b    mov eax,this"
-"	      0044784e    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 42:
-	asm( 
-"	      00447855    mov eax,this"
-"	      00447858    mov dword ptr [eax+18h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 45:
-	asm( 
-"	      0044785f    cmp bLoadNow,0"
-"	      00447863    je near ptr 00447871h"
-);
+	__asm        cmp    bLoadNow, 0;
+	__asm        je     near ptr 0x00447871;
 // LINE 46:
-	asm( 
-"	      00447869    mov ecx,this"
-"	      0044786c    call 00447AB2h"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x00447AB2;
 // LINE 47:
-	asm( 
-"	      00447871    jmp near ptr 00447876h"
-"	      00447876    mov eax,this"
-"	      00447879    pop edi"
-"	      0044787a    pop esi"
-"	      0044787b    pop ebx"
-"	      0044787c    leave"
-"	      0044787d    ret 8"
-);
+	__asm        jmp    near ptr 0x00447876;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00447880
 void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // LINE 54:
-	asm( 
-"	      00447880    push ebp"
-"	      00447881    mov ebp,esp"
-"	      00447883    sub esp,8"
-"	      00447886    push ebx"
-"	      00447887    push esi"
-"	      00447888    push edi"
-"	      00447889    mov this,ecx"
-"	      0044788c    mov eax,this"
-"	      0044788f    mov dword ptr [eax],58F648h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 55:
-	asm( 
-"	      00447895    mov eax,this"
-"	      00447898    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 56:
-	asm( 
-"	      0044789f    mov eax,this"
-"	      004478a2    mov dword ptr [eax+14h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 57:
-	asm( 
-"	      004478a9    mov eax,this"
-"	      004478ac    mov dword ptr [eax+18h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 58:
-	asm( 
-"	      004478b3    mov eax,resData"
-"	      004478b6    mov eax,[eax+4]"
-"	      004478b9    mov ecx,this"
-"	      004478bc    mov [ecx+4],eax"
-);
+	__asm        mov    eax, resData;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 59:
-	asm( 
-"	      004478bf    mov eax,resData"
-"	      004478c2    cmp dword ptr [eax+8],0"
-"	      004478c6    je near ptr 0044790Dh"
-);
+	__asm        mov    eax, resData;
+	__asm        cmp    dword ptr [eax+8], 0;
+	__asm        je     near ptr 0x0044790D;
 // LINE 60:
 // Block start:
 	uint32_t nAllocationSize;
-	asm( 
-"	      004478cc    mov ecx,resData"
-"	      004478cf    call 00447A74h"
-"	      004478d4    mov nAllocationSize,eax"
-);
+	__asm        mov    ecx, resData;
+	__asm        call   0x00447A74;
+	__asm        mov    nAllocationSize, eax;
 // LINE 61:
-	asm( 
-"	      004478d7    mov eax,nAllocationSize"
-"	      004478da    push eax"
-"	      004478db    call 0056A600h"
-"	      004478e0    add esp,4"
-"	      004478e3    mov ecx,this"
-"	      004478e6    mov [ecx+8],eax"
-);
+	__asm        mov    eax, nAllocationSize;
+	__asm        push   eax;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 62:
-	asm( 
-"	      004478e9    mov eax,nAllocationSize"
-"	      004478ec    push eax"
-"	      004478ed    mov eax,resData"
-"	      004478f0    mov eax,[eax+8]"
-"	      004478f3    push eax"
-"	      004478f4    mov eax,this"
-"	      004478f7    mov eax,[eax+8]"
-"	      004478fa    push eax"
-"	      004478fb    call 0056A800h"
-"	      00447900    add esp,0Ch"
-);
+	__asm        mov    eax, nAllocationSize;
+	__asm        push   eax;
+	__asm        mov    eax, resData;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        call   0x0056A800;
+	__asm        add    esp, 0xC;
 // LINE 63:
-	asm( 
-"	      00447903    mov eax,this"
-"	      00447906    mov dword ptr [eax+0Ch],1"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 65:
 // Block end:
-	asm( 
-"	      0044790d    jmp near ptr 00447912h"
-"	      00447912    mov eax,this"
-"	      00447915    pop edi"
-"	      00447916    pop esi"
-"	      00447917    pop ebx"
-"	      00447918    leave"
-"	      00447919    ret 4"
-);
+	__asm        jmp    near ptr 0x00447912;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044791c
 void ResourceRCData::~ResourceRCData() {
 // LINE 72:
-	asm( 
-"	      0044791c    push ebp"
-"	      0044791d    mov ebp,esp"
-"	      0044791f    sub esp,4"
-"	      00447922    push ebx"
-"	      00447923    push esi"
-"	      00447924    push edi"
-"	      00447925    mov this,ecx"
-"	      00447928    mov eax,this"
-"	      0044792b    mov dword ptr [eax],58F648h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 73:
-	asm( 
-"	      00447931    mov ecx,this"
-"	      00447934    call 004479EAh"
-);
+	__asm        mov    ecx, this;
+	__asm        call   0x004479EA;
 // LINE 74:
-	asm( 
-"	      00447939    jmp near ptr 0044793Eh"
-"	      0044793e    pop edi"
-"	      0044793f    pop esi"
-"	      00447940    pop ebx"
-"	      00447941    leave"
-"	      00447942    ret"
-);
+	__asm        jmp    near ptr 0x0044793E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447943
 class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 // LINE 81:
-	asm( 
-"	      00447943    push ebp"
-"	      00447944    mov ebp,esp"
-"	      00447946    sub esp,8"
-"	      00447949    push ebx"
-"	      0044794a    push esi"
-"	      0044794b    push edi"
-"	      0044794c    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 82:
-	asm( 
-"	      0044794f    mov eax,resData"
-"	      00447952    cmp this,eax"
-"	      00447955    jne near ptr 00447963h"
-);
+	__asm        mov    eax, resData;
+	__asm        cmp    this, eax;
+	__asm        jne    near ptr 0x00447963;
 // LINE 83:
-	asm( 
-"	      0044795b    mov eax,this"
-"	      0044795e    jmp near ptr 004479E3h"
-);
+	__asm        mov    eax, this;
+	__asm        jmp    near ptr 0x004479E3;
 // LINE 85:
-	asm( 
-"	      00447963    mov eax,this"
-"	      00447966    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 86:
-	asm( 
-"	      0044796d    mov eax,this"
-"	      00447970    mov dword ptr [eax+14h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 87:
-	asm( 
-"	      00447977    mov eax,this"
-"	      0044797a    mov dword ptr [eax+18h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 88:
-	asm( 
-"	      00447981    mov eax,resData"
-"	      00447984    mov eax,[eax+4]"
-"	      00447987    mov ecx,this"
-"	      0044798a    mov [ecx+4],eax"
-);
+	__asm        mov    eax, resData;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 89:
-	asm( 
-"	      0044798d    mov eax,resData"
-"	      00447990    cmp dword ptr [eax+8],0"
-"	      00447994    je near ptr 004479DBh"
-);
+	__asm        mov    eax, resData;
+	__asm        cmp    dword ptr [eax+8], 0;
+	__asm        je     near ptr 0x004479DB;
 // LINE 90:
 // Block start:
 	uint32_t nAllocationSize;
-	asm( 
-"	      0044799a    mov ecx,resData"
-"	      0044799d    call 00447A74h"
-"	      004479a2    mov nAllocationSize,eax"
-);
+	__asm        mov    ecx, resData;
+	__asm        call   0x00447A74;
+	__asm        mov    nAllocationSize, eax;
 // LINE 91:
-	asm( 
-"	      004479a5    mov eax,nAllocationSize"
-"	      004479a8    push eax"
-"	      004479a9    call 0056A600h"
-"	      004479ae    add esp,4"
-"	      004479b1    mov ecx,this"
-"	      004479b4    mov [ecx+8],eax"
-);
+	__asm        mov    eax, nAllocationSize;
+	__asm        push   eax;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 92:
-	asm( 
-"	      004479b7    mov eax,nAllocationSize"
-"	      004479ba    push eax"
-"	      004479bb    mov eax,resData"
-"	      004479be    mov eax,[eax+8]"
-"	      004479c1    push eax"
-"	      004479c2    mov eax,this"
-"	      004479c5    mov eax,[eax+8]"
-"	      004479c8    push eax"
-"	      004479c9    call 0056A800h"
-"	      004479ce    add esp,0Ch"
-);
+	__asm        mov    eax, nAllocationSize;
+	__asm        push   eax;
+	__asm        mov    eax, resData;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        push   eax;
+	__asm        call   0x0056A800;
+	__asm        add    esp, 0xC;
 // LINE 93:
-	asm( 
-"	      004479d1    mov eax,this"
-"	      004479d4    mov dword ptr [eax+0Ch],1"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 96:
 // Block end:
-	asm( 
-"	      004479db    mov eax,this"
-"	      004479de    jmp near ptr 004479E3h"
-);
+	__asm        mov    eax, this;
+	__asm        jmp    near ptr 0x004479E3;
 // LINE 97:
-	asm( 
-"	      004479e3    pop edi"
-"	      004479e4    pop esi"
-"	      004479e5    pop ebx"
-"	      004479e6    leave"
-"	      004479e7    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004479ea
 void ResourceRCData::Reset() {
 // LINE 104:
-	asm( 
-"	      004479ea    push ebp"
-"	      004479eb    mov ebp,esp"
-"	      004479ed    sub esp,0Ch"
-"	      004479f0    push ebx"
-"	      004479f1    push esi"
-"	      004479f2    push edi"
-"	      004479f3    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 106:
-	asm( 
-"	      004479f6    mov eax,this"
-"	      004479f9    cmp dword ptr [eax+18h],0"
-"	      004479fd    je near ptr 00447A10h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x18], 0;
+	__asm        je     near ptr 0x00447A10;
 // LINE 107:
-	asm( 
-"	      00447a03    mov eax,this"
-"	      00447a06    mov eax,[eax+18h]"
-"	      00447a09    push eax"
-"	      00447a0a    call dword ptr ds:[6C3634h]"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3634];
 // LINE 108:
-	asm( 
-"	      00447a10    mov eax,this"
-"	      00447a13    mov dword ptr [eax+10h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 109:
-	asm( 
-"	      00447a1a    mov eax,this"
-"	      00447a1d    mov dword ptr [eax+14h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 110:
-	asm( 
-"	      00447a24    mov eax,this"
-"	      00447a27    mov dword ptr [eax+18h],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 112:
-	asm( 
-"	      00447a2e    mov eax,this"
-"	      00447a31    mov dword ptr [eax+4],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+4], 0;
 // LINE 113:
-	asm( 
-"	      00447a38    mov eax,this"
-"	      00447a3b    cmp dword ptr [eax+0Ch],0"
-"	      00447a3f    je near ptr 00447A60h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        je     near ptr 0x00447A60;
 // LINE 114:
-	asm( 
-"	      00447a45    mov eax,this"
-"	      00447a48    mov eax,[eax+8]"
-"	      00447a4b    mov [ebp-4],eax"
-"	      00447a4e    mov eax,[ebp-4]"
-"	      00447a51    mov [ebp-8],eax"
-"	      00447a54    mov eax,[ebp-8]"
-"	      00447a57    push eax"
-"	      00447a58    call 0056A740h"
-"	      00447a5d    add esp,4"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    [ebp-8], eax;
+	__asm        mov    eax, [ebp-8];
+	__asm        push   eax;
+	__asm        call   0x0056A740;
+	__asm        add    esp, 4;
 // LINE 115:
-	asm( 
-"	      00447a60    mov eax,this"
-"	      00447a63    mov dword ptr [eax+8],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+8], 0;
 // LINE 116:
-	asm( 
-"	      00447a6a    jmp near ptr 00447A6Fh"
-"	      00447a6f    pop edi"
-"	      00447a70    pop esi"
-"	      00447a71    pop ebx"
-"	      00447a72    leave"
-"	      00447a73    ret"
-);
+	__asm        jmp    near ptr 0x00447A6F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447a74
 unsigned long ResourceRCData::DataSize() {
 // LINE 130:
-	asm( 
-"	      00447a74    push ebp"
-"	      00447a75    mov ebp,esp"
-"	      00447a77    sub esp,4"
-"	      00447a7a    push ebx"
-"	      00447a7b    push esi"
-"	      00447a7c    push edi"
-"	      00447a7d    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 132:
-	asm( 
-"	      00447a80    mov eax,this"
-"	      00447a83    cmp dword ptr [eax+10h],0"
-"	      00447a87    je near ptr 00447AA6h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x10], 0;
+	__asm        je     near ptr 0x00447AA6;
 // LINE 133:
-	asm( 
-"	      00447a8d    mov eax,this"
-"	      00447a90    mov eax,[eax+10h]"
-"	      00447a93    push eax"
-"	      00447a94    mov eax,this"
-"	      00447a97    mov eax,[eax+14h]"
-"	      00447a9a    push eax"
-"	      00447a9b    call dword ptr ds:[6C3630h]"
-"	      00447aa1    jmp near ptr 00447AADh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x10];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3630];
+	__asm        jmp    near ptr 0x00447AAD;
 // LINE 135:
-	asm( 
-"	      00447aa6    xor eax,eax"
-"	      00447aa8    jmp near ptr 00447AADh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00447AAD;
 // LINE 136:
-	asm( 
-"	      00447aad    pop edi"
-"	      00447aae    pop esi"
-"	      00447aaf    pop ebx"
-"	      00447ab0    leave"
-"	      00447ab1    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447ab2
 int32_t ResourceRCData::ReadResource() {
 // LINE 143:
-	asm( 
-"	      00447ab2    push ebp"
-"	      00447ab3    mov ebp,esp"
-"	      00447ab5    sub esp,4"
-"	      00447ab8    push ebx"
-"	      00447ab9    push esi"
-"	      00447aba    push edi"
-"	      00447abb    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 145:
-	asm( 
-"	      00447abe    push 0Ah"
-"	      00447ac0    mov eax,this"
-"	      00447ac3    xor ecx,ecx"
-"	      00447ac5    mov cx,[eax+4]"
-"	      00447ac9    push ecx"
-"	      00447aca    mov eax,this"
-"	      00447acd    mov eax,[eax+14h]"
-"	      00447ad0    push eax"
-"	      00447ad1    call dword ptr ds:[6C3624h]"
-"	      00447ad7    mov ecx,this"
-"	      00447ada    mov [ecx+10h],eax"
-);
+	__asm        push   0xA;
+	__asm        mov    eax, this;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cx, [eax+4];
+	__asm        push   ecx;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3624];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], eax;
 // LINE 146:
-	asm( 
-"	      00447add    mov eax,this"
-"	      00447ae0    cmp dword ptr [eax+10h],0"
-"	      00447ae4    je near ptr 00447B2Eh"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x10], 0;
+	__asm        je     near ptr 0x00447B2E;
 // LINE 147:
-	asm( 
-"	      00447aea    mov eax,this"
-"	      00447aed    mov eax,[eax+10h]"
-"	      00447af0    push eax"
-"	      00447af1    mov eax,this"
-"	      00447af4    mov eax,[eax+14h]"
-"	      00447af7    push eax"
-"	      00447af8    call dword ptr ds:[6C3628h]"
-"	      00447afe    mov ecx,this"
-"	      00447b01    mov [ecx+18h],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x10];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3628];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x18], eax;
 // LINE 148:
-	asm( 
-"	      00447b04    mov eax,this"
-"	      00447b07    cmp dword ptr [eax+18h],0"
-"	      00447b0b    je near ptr 00447B2Eh"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x18], 0;
+	__asm        je     near ptr 0x00447B2E;
 // LINE 149:
-	asm( 
-"	      00447b11    mov eax,this"
-"	      00447b14    mov eax,[eax+18h]"
-"	      00447b17    push eax"
-"	      00447b18    call dword ptr ds:[6C3620h]"
-"	      00447b1e    mov ecx,this"
-"	      00447b21    mov [ecx+8],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3620];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 150:
-	asm( 
-"	      00447b24    mov eax,1"
-"	      00447b29    jmp near ptr 00447B35h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x00447B35;
 // LINE 154:
-	asm( 
-"	      00447b2e    xor eax,eax"
-"	      00447b30    jmp near ptr 00447B35h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00447B35;
 // LINE 155:
-	asm( 
-"	      00447b35    pop edi"
-"	      00447b36    pop esi"
-"	      00447b37    pop ebx"
-"	      00447b38    leave"
-"	      00447b39    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447b3a
 char * ResourceRCData::DataReference() {
 // LINE 161:
-	asm( 
-"	      00447b3a    push ebp"
-"	      00447b3b    mov ebp,esp"
-"	      00447b3d    sub esp,4"
-"	      00447b40    push ebx"
-"	      00447b41    push esi"
-"	      00447b42    push edi"
-"	      00447b43    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 162:
-	asm( 
-"	      00447b46    mov eax,this"
-"	      00447b49    mov eax,[eax+8]"
-"	      00447b4c    jmp near ptr 00447B51h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        jmp    near ptr 0x00447B51;
 // LINE 163:
-	asm( 
-"	      00447b51    pop edi"
-"	      00447b52    pop esi"
-"	      00447b53    pop ebx"
-"	      00447b54    leave"
-"	      00447b55    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

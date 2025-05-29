@@ -8,113 +8,85 @@
 // FUNCTION: COPTER_D 0x00431b60
 int32_t IsEventSet(int32_t nEvent) {
 // LINE 22:
-	asm( 
-"	      00431b60    push ebp"
-"	      00431b61    mov ebp,esp"
-"	      00431b63    push ebx"
-"	      00431b64    push esi"
-"	      00431b65    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 23:
-	asm( 
-"	      00431b66    jmp near ptr 00431B6Bh"
-"	      00431b6b    mov eax,nEvent"
-"	      00431b6e    mov ecx,ds:[599BBCh]"
-"	      00431b74    xor edx,edx"
-"	      00431b76    mov dl,[ecx+eax*2+110h]"
-"	      00431b7d    mov eax,edx"
-"	      00431b7f    jmp near ptr 00431B84h"
-);
+	__asm        jmp    near ptr 0x00431B6B;
+	__asm        mov    eax, nEvent;
+	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ecx+eax*2+0x110];
+	__asm        mov    eax, edx;
+	__asm        jmp    near ptr 0x00431B84;
 // LINE 24:
-	asm( 
-"	      00431b84    pop edi"
-"	      00431b85    pop esi"
-"	      00431b86    pop ebx"
-"	      00431b87    leave"
-"	      00431b88    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431b89
 int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 // LINE 32:
-	asm( 
-"	      00431b89    push ebp"
-"	      00431b8a    mov ebp,esp"
-"	      00431b8c    push ebx"
-"	      00431b8d    push esi"
-"	      00431b8e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 33:
-	asm( 
-"	      00431b8f    mov eax,nEventStart"
-"	      00431b92    cmp nEventEnd,eax"
-"	      00431b95    jl near ptr 00431BCAh"
-);
+	__asm        mov    eax, nEventStart;
+	__asm        cmp    nEventEnd, eax;
+	__asm        jl     near ptr 0x00431BCA;
 // LINE 34:
-	asm( 
-"	      00431b9b    jmp near ptr 00431BA0h"
-"	      00431ba0    mov eax,nEventStart"
-"	      00431ba3    mov ecx,ds:[599BBCh]"
-"	      00431ba9    xor edx,edx"
-"	      00431bab    mov dl,[ecx+eax*2+110h]"
-"	      00431bb2    test edx,edx"
-"	      00431bb4    je near ptr 00431BC2h"
-);
+	__asm        jmp    near ptr 0x00431BA0;
+	__asm        mov    eax, nEventStart;
+	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ecx+eax*2+0x110];
+	__asm        test   edx, edx;
+	__asm        je     near ptr 0x00431BC2;
 // LINE 35:
-	asm( 
-"	      00431bba    mov eax,nEventStart"
-"	      00431bbd    jmp near ptr 00431BD1h"
-);
+	__asm        mov    eax, nEventStart;
+	__asm        jmp    near ptr 0x00431BD1;
 // LINE 36:
-	asm( 
-"	      00431bc2    inc nEventStart"
-);
+	__asm        inc    nEventStart;
 // LINE 37:
-	asm( 
-"	      00431bc5    jmp near ptr 00431B8Fh"
-);
+	__asm        jmp    near ptr 0x00431B8F;
 // LINE 38:
-	asm( 
-"	      00431bca    xor eax,eax"
-"	      00431bcc    jmp near ptr 00431BD1h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x00431BD1;
 // LINE 39:
-	asm( 
-"	      00431bd1    pop edi"
-"	      00431bd2    pop esi"
-"	      00431bd3    pop ebx"
-"	      00431bd4    leave"
-"	      00431bd5    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431bd6
 long GetJoystickValue(int32_t nCommand) {
 // LINE 46:
-	asm( 
-"	      00431bd6    push ebp"
-"	      00431bd7    mov ebp,esp"
-"	      00431bd9    push ebx"
-"	      00431bda    push esi"
-"	      00431bdb    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 47:
-	asm( 
-"	      00431bdc    jmp near ptr 00431BE1h"
-"	      00431be1    mov eax,nCommand"
-"	      00431be4    mov ecx,ds:[599BBCh]"
-"	      00431bea    mov eax,[ecx+eax*4+0A28h]"
-"	      00431bf1    jmp near ptr 00431BF6h"
-);
+	__asm        jmp    near ptr 0x00431BE1;
+	__asm        mov    eax, nCommand;
+	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    eax, [ecx+eax*4+0xA28];
+	__asm        jmp    near ptr 0x00431BF6;
 // LINE 48:
-	asm( 
-"	      00431bf6    pop edi"
-"	      00431bf7    pop esi"
-"	      00431bf8    pop ebx"
-"	      00431bf9    leave"
-"	      00431bfa    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431bfb
@@ -122,44 +94,34 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	long lReturnValue;
 
 // LINE 55:
-	asm( 
-"	      00431bfb    push ebp"
-"	      00431bfc    mov ebp,esp"
-"	      00431bfe    sub esp,4"
-"	      00431c01    push ebx"
-"	      00431c02    push esi"
-"	      00431c03    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 58:
-	asm( 
-"	      00431c04    mov eax,nCommand1"
-"	      00431c07    mov ecx,ds:[599BBCh]"
-"	      00431c0d    mov eax,[ecx+eax*4+0A28h]"
-"	      00431c14    mov lReturnValue,eax"
-"	      00431c17    jmp near ptr 00431C1Ch"
-"	      00431c1c    cmp lReturnValue,0"
-"	      00431c20    je near ptr 00431C2Eh"
-);
+	__asm        mov    eax, nCommand1;
+	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    eax, [ecx+eax*4+0xA28];
+	__asm        mov    lReturnValue, eax;
+	__asm        jmp    near ptr 0x00431C1C;
+	__asm        cmp    lReturnValue, 0;
+	__asm        je     near ptr 0x00431C2E;
 // LINE 59:
-	asm( 
-"	      00431c26    mov eax,lReturnValue"
-"	      00431c29    jmp near ptr 00431C48h"
-);
+	__asm        mov    eax, lReturnValue;
+	__asm        jmp    near ptr 0x00431C48;
 // LINE 60:
-	asm( 
-"	      00431c2e    jmp near ptr 00431C33h"
-"	      00431c33    mov eax,nCommand2"
-"	      00431c36    mov ecx,ds:[599BBCh]"
-"	      00431c3c    mov eax,[ecx+eax*4+0A28h]"
-"	      00431c43    jmp near ptr 00431C48h"
-);
+	__asm        jmp    near ptr 0x00431C33;
+	__asm        mov    eax, nCommand2;
+	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    eax, [ecx+eax*4+0xA28];
+	__asm        jmp    near ptr 0x00431C48;
 // LINE 61:
-	asm( 
-"	      00431c48    pop edi"
-"	      00431c49    pop esi"
-"	      00431c4a    pop ebx"
-"	      00431c4b    leave"
-"	      00431c4c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

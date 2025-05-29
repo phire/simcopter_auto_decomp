@@ -8,102 +8,82 @@
 // FUNCTION: COPTER_D 0x0043d3f0
 void CharData::CharData() {
 // LINE 9:
-	asm( 
-"	      0043d3f0    push ebp"
-"	      0043d3f1    mov ebp,esp"
-"	      0043d3f3    sub esp,4"
-"	      0043d3f6    push ebx"
-"	      0043d3f7    push esi"
-"	      0043d3f8    push edi"
-"	      0043d3f9    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 10:
-	asm( 
-"	      0043d3fc    mov eax,this"
-"	      0043d3ff    mov byte ptr [eax],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    byte ptr [eax], 0;
 // LINE 11:
-	asm( 
-"	      0043d402    jmp near ptr 0043D407h"
-"	      0043d407    mov eax,this"
-"	      0043d40a    pop edi"
-"	      0043d40b    pop esi"
-"	      0043d40c    pop ebx"
-"	      0043d40d    leave"
-"	      0043d40e    ret"
-);
+	__asm        jmp    near ptr 0x0043D407;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d40f
 void CharData::CharData(unsigned char chNewValue) {
 // LINE 14:
-	asm( 
-"	      0043d40f    push ebp"
-"	      0043d410    mov ebp,esp"
-"	      0043d412    sub esp,4"
-"	      0043d415    push ebx"
-"	      0043d416    push esi"
-"	      0043d417    push edi"
-"	      0043d418    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 15:
-	asm( 
-"	      0043d41b    mov al,chNewValue"
-"	      0043d41e    mov ecx,this"
-"	      0043d421    mov [ecx],al"
-);
+	__asm        mov    al, chNewValue;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx], al;
 // LINE 16:
-	asm( 
-"	      0043d423    jmp near ptr 0043D428h"
-"	      0043d428    mov eax,this"
-"	      0043d42b    pop edi"
-"	      0043d42c    pop esi"
-"	      0043d42d    pop ebx"
-"	      0043d42e    leave"
-"	      0043d42f    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D428;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d432
 void CharList::CharList() {
 // LINE 24:
-	asm( 
-"	      0043d432    push ebp"
-"	      0043d433    mov ebp,esp"
-"	      0043d435    sub esp,4"
-"	      0043d438    push ebx"
-"	      0043d439    push esi"
-"	      0043d43a    push edi"
-"	      0043d43b    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 25:
-	asm( 
-"	      0043d43e    mov eax,this"
-"	      0043d441    mov dword ptr [eax],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0;
 // LINE 28:
-	asm( 
-"	      0043d447    mov eax,this"
-"	      0043d44a    mov dword ptr [eax+0Ch],0"
-"	      0043d451    mov eax,this"
-"	      0043d454    mov eax,[eax+0Ch]"
-"	      0043d457    mov ecx,this"
-"	      0043d45a    mov [ecx+8],eax"
-"	      0043d45d    mov eax,this"
-"	      0043d460    mov eax,[eax+8]"
-"	      0043d463    mov ecx,this"
-"	      0043d466    mov [ecx+4],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+0xC], 0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 29:
-	asm( 
-"	      0043d469    jmp near ptr 0043D46Eh"
-"	      0043d46e    mov eax,this"
-"	      0043d471    pop edi"
-"	      0043d472    pop esi"
-"	      0043d473    pop ebx"
-"	      0043d474    leave"
-"	      0043d475    ret"
-);
+	__asm        jmp    near ptr 0x0043D46E;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d476
@@ -111,70 +91,54 @@ void CharList::~CharList() {
 	class CharData* nextCharData;
 
 // LINE 32:
-	asm( 
-"	      0043d476    push ebp"
-"	      0043d477    mov ebp,esp"
-"	      0043d479    sub esp,10h"
-"	      0043d47c    push ebx"
-"	      0043d47d    push esi"
-"	      0043d47e    push edi"
-"	      0043d47f    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 35:
-	asm( 
-"	      0043d482    mov eax,this"
-"	      0043d485    cmp dword ptr [eax],0"
-"	      0043d488    je near ptr 0043D4E1h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax], 0;
+	__asm        je     near ptr 0x0043D4E1;
 // LINE 36:
-	asm( 
-"	      0043d48e    mov eax,this"
-"	      0043d491    mov eax,[eax+4]"
-"	      0043d494    mov ecx,this"
-"	      0043d497    mov [ecx+0Ch],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
 // LINE 38:
-	asm( 
-"	      0043d49a    jmp near ptr 0043D4A8h"
-"	      0043d49f    mov eax,nextCharData"
-"	      0043d4a2    mov ecx,this"
-"	      0043d4a5    mov [ecx+0Ch],eax"
-"	      0043d4a8    mov eax,this"
-"	      0043d4ab    cmp dword ptr [eax+0Ch],0"
-"	      0043d4af    je near ptr 0043D4E1h"
-);
+	__asm        jmp    near ptr 0x0043D4A8;
+	__asm        mov    eax, nextCharData;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        je     near ptr 0x0043D4E1;
 // LINE 40:
-	asm( 
-"	      0043d4b5    mov eax,this"
-"	      0043d4b8    mov eax,[eax+0Ch]"
-"	      0043d4bb    mov eax,[eax+5]"
-"	      0043d4be    mov nextCharData,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    eax, [eax+5];
+	__asm        mov    nextCharData, eax;
 // LINE 41:
-	asm( 
-"	      0043d4c1    mov eax,this"
-"	      0043d4c4    mov eax,[eax+0Ch]"
-"	      0043d4c7    mov [ebp-8],eax"
-"	      0043d4ca    mov eax,[ebp-8]"
-"	      0043d4cd    mov [ebp-0Ch],eax"
-"	      0043d4d0    mov eax,[ebp-0Ch]"
-"	      0043d4d3    push eax"
-"	      0043d4d4    call 0056A740h"
-"	      0043d4d9    add esp,4"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    [ebp-8], eax;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    [ebp-0xC], eax;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        push   eax;
+	__asm        call   0x0056A740;
+	__asm        add    esp, 4;
 // LINE 42:
-	asm( 
-"	      0043d4dc    jmp near ptr 0043D49Fh"
-);
+	__asm        jmp    near ptr 0x0043D49F;
 // LINE 44:
-	asm( 
-"	      0043d4e1    jmp near ptr 0043D4E6h"
-"	      0043d4e6    pop edi"
-"	      0043d4e7    pop esi"
-"	      0043d4e8    pop ebx"
-"	      0043d4e9    leave"
-"	      0043d4ea    ret"
-);
+	__asm        jmp    near ptr 0x0043D4E6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d4eb
@@ -182,246 +146,180 @@ void CharList::AddItem(unsigned char chNewValue) {
 	class CharData* tempCharData;
 
 // LINE 49:
-	asm( 
-"	      0043d4eb    push ebp"
-"	      0043d4ec    mov ebp,esp"
-"	      0043d4ee    sub esp,0Ch"
-"	      0043d4f1    push ebx"
-"	      0043d4f2    push esi"
-"	      0043d4f3    push edi"
-"	      0043d4f4    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 52:
-	asm( 
-"	      0043d4f7    push 9"
-"	      0043d4f9    call 0056A600h"
-"	      0043d4fe    add esp,4"
-"	      0043d501    mov [ebp-8],eax"
-"	      0043d504    cmp dword ptr [ebp-8],0"
-"	      0043d508    je near ptr 0043D522h"
-"	      0043d50e    mov eax,reinterpret_cast<uint32_t>(chNewValue)"
-"	      0043d511    push eax"
-"	      0043d512    mov ecx,[ebp-8]"
-"	      0043d515    call 0043D40Fh"
-"	      0043d51a    mov tempCharData,eax"
-"	      0043d51d    jmp near ptr 0043D529h"
-"	      0043d522    mov tempCharData,0"
-);
+	__asm        push   9;
+	__asm        call   0x0056A600;
+	__asm        add    esp, 4;
+	__asm        mov    [ebp-8], eax;
+	__asm        cmp    dword ptr [ebp-8], 0;
+	__asm        je     near ptr 0x0043D522;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(chNewValue);
+	__asm        push   eax;
+	__asm        mov    ecx, [ebp-8];
+	__asm        call   0x0043D40F;
+	__asm        mov    tempCharData, eax;
+	__asm        jmp    near ptr 0x0043D529;
+	__asm        mov    tempCharData, 0;
 // LINE 53:
-	asm( 
-"	      0043d529    mov eax,tempCharData"
-"	      0043d52c    push eax"
-"	      0043d52d    mov ecx,this"
-"	      0043d530    call 0043D541h"
-);
+	__asm        mov    eax, tempCharData;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D541;
 // LINE 54:
-	asm( 
-"	      0043d535    jmp near ptr 0043D53Ah"
-"	      0043d53a    pop edi"
-"	      0043d53b    pop esi"
-"	      0043d53c    pop ebx"
-"	      0043d53d    leave"
-"	      0043d53e    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D53A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d541
 void CharList::AddItem(class CharData* charDataToAdd) {
 // LINE 59:
-	asm( 
-"	      0043d541    push ebp"
-"	      0043d542    mov ebp,esp"
-"	      0043d544    sub esp,4"
-"	      0043d547    push ebx"
-"	      0043d548    push esi"
-"	      0043d549    push edi"
-"	      0043d54a    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 60:
-	asm( 
-"	      0043d54d    mov eax,this"
-"	      0043d550    inc dword ptr [eax]"
-);
+	__asm        mov    eax, this;
+	__asm        inc    dword ptr [eax];
 // LINE 61:
-	asm( 
-"	      0043d552    mov eax,this"
-"	      0043d555    cmp dword ptr [eax],1"
-"	      0043d558    jne near ptr 0043D592h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax], 1;
+	__asm        jne    near ptr 0x0043D592;
 // LINE 62:
-	asm( 
-"	      0043d55e    mov eax,charDataToAdd"
-"	      0043d561    mov ecx,this"
-"	      0043d564    mov [ecx+4],eax"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 63:
-	asm( 
-"	      0043d567    mov eax,charDataToAdd"
-"	      0043d56a    mov ecx,this"
-"	      0043d56d    mov [ecx+8],eax"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 64:
-	asm( 
-"	      0043d570    mov eax,charDataToAdd"
-"	      0043d573    mov ecx,this"
-"	      0043d576    mov [ecx+0Ch],eax"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
 // LINE 65:
-	asm( 
-"	      0043d579    mov eax,charDataToAdd"
-"	      0043d57c    mov dword ptr [eax+5],0"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    dword ptr [eax+5], 0;
 // LINE 66:
-	asm( 
-"	      0043d583    mov eax,charDataToAdd"
-"	      0043d586    mov dword ptr [eax+1],0"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    dword ptr [eax+1], 0;
 // LINE 68:
-	asm( 
-"	      0043d58d    jmp near ptr 0043D5BDh"
-);
+	__asm        jmp    near ptr 0x0043D5BD;
 // LINE 69:
-	asm( 
-"	      0043d592    mov eax,charDataToAdd"
-"	      0043d595    mov ecx,this"
-"	      0043d598    mov ecx,[ecx+8]"
-"	      0043d59b    mov [ecx+5],eax"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+8];
+	__asm        mov    [ecx+5], eax;
 // LINE 70:
-	asm( 
-"	      0043d59e    mov eax,charDataToAdd"
-"	      0043d5a1    mov dword ptr [eax+5],0"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    dword ptr [eax+5], 0;
 // LINE 71:
-	asm( 
-"	      0043d5a8    mov eax,this"
-"	      0043d5ab    mov eax,[eax+8]"
-"	      0043d5ae    mov ecx,charDataToAdd"
-"	      0043d5b1    mov [ecx+1],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, charDataToAdd;
+	__asm        mov    [ecx+1], eax;
 // LINE 72:
-	asm( 
-"	      0043d5b4    mov eax,charDataToAdd"
-"	      0043d5b7    mov ecx,this"
-"	      0043d5ba    mov [ecx+8],eax"
-);
+	__asm        mov    eax, charDataToAdd;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 74:
-	asm( 
-"	      0043d5bd    jmp near ptr 0043D5C2h"
-"	      0043d5c2    pop edi"
-"	      0043d5c3    pop esi"
-"	      0043d5c4    pop ebx"
-"	      0043d5c5    leave"
-"	      0043d5c6    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D5C2;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d5c9
 void CharList::DeleteItem(class CharData* charDataToDelete) {
 // LINE 79:
-	asm( 
-"	      0043d5c9    push ebp"
-"	      0043d5ca    mov ebp,esp"
-"	      0043d5cc    sub esp,0Ch"
-"	      0043d5cf    push ebx"
-"	      0043d5d0    push esi"
-"	      0043d5d1    push edi"
-"	      0043d5d2    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 80:
-	asm( 
-"	      0043d5d5    mov eax,this"
-"	      0043d5d8    cmp dword ptr [eax],1"
-"	      0043d5db    jne near ptr 0043D5FCh"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax], 1;
+	__asm        jne    near ptr 0x0043D5FC;
 // LINE 81:
-	asm( 
-"	      0043d5e1    mov eax,this"
-"	      0043d5e4    mov dword ptr [eax+8],0"
-"	      0043d5eb    mov eax,this"
-"	      0043d5ee    mov eax,[eax+8]"
-"	      0043d5f1    mov ecx,this"
-"	      0043d5f4    mov [ecx+4],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+8], 0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 82:
-	asm( 
-"	      0043d5f7    jmp near ptr 0043D656h"
-);
+	__asm        jmp    near ptr 0x0043D656;
 // LINE 83:
-	asm( 
-"	      0043d5fc    mov eax,charDataToDelete"
-"	      0043d5ff    cmp dword ptr [eax+1],0"
-"	      0043d603    je near ptr 0043D61Dh"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        cmp    dword ptr [eax+1], 0;
+	__asm        je     near ptr 0x0043D61D;
 // LINE 85:
-	asm( 
-"	      0043d609    mov eax,charDataToDelete"
-"	      0043d60c    mov eax,[eax+5]"
-"	      0043d60f    mov ecx,charDataToDelete"
-"	      0043d612    mov ecx,[ecx+1]"
-"	      0043d615    mov [ecx+5],eax"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        mov    eax, [eax+5];
+	__asm        mov    ecx, charDataToDelete;
+	__asm        mov    ecx, [ecx+1];
+	__asm        mov    [ecx+5], eax;
 // LINE 86:
-	asm( 
-"	      0043d618    jmp near ptr 0043D629h"
-);
+	__asm        jmp    near ptr 0x0043D629;
 // LINE 87:
-	asm( 
-"	      0043d61d    mov eax,charDataToDelete"
-"	      0043d620    mov eax,[eax+5]"
-"	      0043d623    mov ecx,this"
-"	      0043d626    mov [ecx+4],eax"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        mov    eax, [eax+5];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 88:
-	asm( 
-"	      0043d629    mov eax,charDataToDelete"
-"	      0043d62c    cmp dword ptr [eax+5],0"
-"	      0043d630    je near ptr 0043D64Ah"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        cmp    dword ptr [eax+5], 0;
+	__asm        je     near ptr 0x0043D64A;
 // LINE 90:
-	asm( 
-"	      0043d636    mov eax,charDataToDelete"
-"	      0043d639    mov eax,[eax+1]"
-"	      0043d63c    mov ecx,charDataToDelete"
-"	      0043d63f    mov ecx,[ecx+5]"
-"	      0043d642    mov [ecx+1],eax"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        mov    eax, [eax+1];
+	__asm        mov    ecx, charDataToDelete;
+	__asm        mov    ecx, [ecx+5];
+	__asm        mov    [ecx+1], eax;
 // LINE 91:
-	asm( 
-"	      0043d645    jmp near ptr 0043D656h"
-);
+	__asm        jmp    near ptr 0x0043D656;
 // LINE 92:
-	asm( 
-"	      0043d64a    mov eax,charDataToDelete"
-"	      0043d64d    mov eax,[eax+1]"
-"	      0043d650    mov ecx,this"
-"	      0043d653    mov [ecx+8],eax"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        mov    eax, [eax+1];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
 // LINE 94:
-	asm( 
-"	      0043d656    mov eax,this"
-"	      0043d659    dec dword ptr [eax]"
-);
+	__asm        mov    eax, this;
+	__asm        dec    dword ptr [eax];
 // LINE 95:
-	asm( 
-"	      0043d65b    mov eax,charDataToDelete"
-"	      0043d65e    mov [ebp-4],eax"
-"	      0043d661    mov eax,[ebp-4]"
-"	      0043d664    mov [ebp-8],eax"
-"	      0043d667    mov eax,[ebp-8]"
-"	      0043d66a    push eax"
-"	      0043d66b    call 0056A740h"
-"	      0043d670    add esp,4"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    [ebp-8], eax;
+	__asm        mov    eax, [ebp-8];
+	__asm        push   eax;
+	__asm        call   0x0056A740;
+	__asm        add    esp, 4;
 // LINE 96:
-	asm( 
-"	      0043d673    jmp near ptr 0043D678h"
-"	      0043d678    pop edi"
-"	      0043d679    pop esi"
-"	      0043d67a    pop ebx"
-"	      0043d67b    leave"
-"	      0043d67c    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D678;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d67f
@@ -429,48 +327,36 @@ void CharList::DeleteItem(unsigned char chValue) {
 	class CharData* charDataToDelete;
 
 // LINE 100:
-	asm( 
-"	      0043d67f    push ebp"
-"	      0043d680    mov ebp,esp"
-"	      0043d682    sub esp,8"
-"	      0043d685    push ebx"
-"	      0043d686    push esi"
-"	      0043d687    push edi"
-"	      0043d688    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 103:
-	asm( 
-"	      0043d68b    mov eax,reinterpret_cast<uint32_t>(chValue)"
-"	      0043d68e    push eax"
-"	      0043d68f    mov ecx,this"
-"	      0043d692    call 0043D7CEh"
-"	      0043d697    mov charDataToDelete,eax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(chValue);
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D7CE;
+	__asm        mov    charDataToDelete, eax;
 // LINE 104:
-	asm( 
-"	      0043d69a    cmp charDataToDelete,0"
-"	      0043d69e    jne near ptr 0043D6A9h"
-);
+	__asm        cmp    charDataToDelete, 0;
+	__asm        jne    near ptr 0x0043D6A9;
 // LINE 105:
-	asm( 
-"	      0043d6a4    jmp near ptr 0043D6BAh"
-);
+	__asm        jmp    near ptr 0x0043D6BA;
 // LINE 106:
-	asm( 
-"	      0043d6a9    mov eax,charDataToDelete"
-"	      0043d6ac    push eax"
-"	      0043d6ad    mov ecx,this"
-"	      0043d6b0    call 0043D5C9h"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D5C9;
 // LINE 107:
-	asm( 
-"	      0043d6b5    jmp near ptr 0043D6BAh"
-"	      0043d6ba    pop edi"
-"	      0043d6bb    pop esi"
-"	      0043d6bc    pop ebx"
-"	      0043d6bd    leave"
-"	      0043d6be    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D6BA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d6c1
@@ -478,48 +364,36 @@ void CharList::DeleteItem(int32_t nIndex) {
 	class CharData* charDataToDelete;
 
 // LINE 110:
-	asm( 
-"	      0043d6c1    push ebp"
-"	      0043d6c2    mov ebp,esp"
-"	      0043d6c4    sub esp,8"
-"	      0043d6c7    push ebx"
-"	      0043d6c8    push esi"
-"	      0043d6c9    push edi"
-"	      0043d6ca    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 113:
-	asm( 
-"	      0043d6cd    mov eax,nIndex"
-"	      0043d6d0    push eax"
-"	      0043d6d1    mov ecx,this"
-"	      0043d6d4    call 0043D74Dh"
-"	      0043d6d9    mov charDataToDelete,eax"
-);
+	__asm        mov    eax, nIndex;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D74D;
+	__asm        mov    charDataToDelete, eax;
 // LINE 114:
-	asm( 
-"	      0043d6dc    cmp charDataToDelete,0"
-"	      0043d6e0    jne near ptr 0043D6EBh"
-);
+	__asm        cmp    charDataToDelete, 0;
+	__asm        jne    near ptr 0x0043D6EB;
 // LINE 115:
-	asm( 
-"	      0043d6e6    jmp near ptr 0043D6FCh"
-);
+	__asm        jmp    near ptr 0x0043D6FC;
 // LINE 116:
-	asm( 
-"	      0043d6eb    mov eax,charDataToDelete"
-"	      0043d6ee    push eax"
-"	      0043d6ef    mov ecx,this"
-"	      0043d6f2    call 0043D5C9h"
-);
+	__asm        mov    eax, charDataToDelete;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D5C9;
 // LINE 117:
-	asm( 
-"	      0043d6f7    jmp near ptr 0043D6FCh"
-"	      0043d6fc    pop edi"
-"	      0043d6fd    pop esi"
-"	      0043d6fe    pop ebx"
-"	      0043d6ff    leave"
-"	      0043d700    ret 4"
-);
+	__asm        jmp    near ptr 0x0043D6FC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d703
@@ -528,47 +402,37 @@ void CharList::DeleteAllItems() {
 	int32_t iEnd;
 
 // LINE 120:
-	asm( 
-"	      0043d703    push ebp"
-"	      0043d704    mov ebp,esp"
-"	      0043d706    sub esp,0Ch"
-"	      0043d709    push ebx"
-"	      0043d70a    push esi"
-"	      0043d70b    push edi"
-"	      0043d70c    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 121:
-	asm( 
-"	      0043d70f    mov eax,this"
-"	      0043d712    mov eax,[eax]"
-"	      0043d714    mov iEnd,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    iEnd, eax;
 // LINE 123:
-	asm( 
-"	      0043d717    mov i,0"
-"	      0043d71e    jmp near ptr 0043D726h"
-"	      0043d723    inc i"
-"	      0043d726    mov eax,i"
-"	      0043d729    cmp iEnd,eax"
-"	      0043d72c    jle near ptr 0043D743h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0043D726;
+	__asm        inc    i;
+	__asm        mov    eax, i;
+	__asm        cmp    iEnd, eax;
+	__asm        jle    near ptr 0x0043D743;
 // LINE 124:
-	asm( 
-"	      0043d732    mov eax,i"
-"	      0043d735    push eax"
-"	      0043d736    mov ecx,this"
-"	      0043d739    call 0043D6C1h"
-"	      0043d73e    jmp near ptr 0043D723h"
-);
+	__asm        mov    eax, i;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043D6C1;
+	__asm        jmp    near ptr 0x0043D723;
 // LINE 125:
-	asm( 
-"	      0043d743    jmp near ptr 0043D748h"
-"	      0043d748    pop edi"
-"	      0043d749    pop esi"
-"	      0043d74a    pop ebx"
-"	      0043d74b    leave"
-"	      0043d74c    ret"
-);
+	__asm        jmp    near ptr 0x0043D748;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d74d
@@ -577,74 +441,56 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	class CharData* nextCharData;
 
 // LINE 128:
-	asm( 
-"	      0043d74d    push ebp"
-"	      0043d74e    mov ebp,esp"
-"	      0043d750    sub esp,0Ch"
-"	      0043d753    push ebx"
-"	      0043d754    push esi"
-"	      0043d755    push edi"
-"	      0043d756    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 133:
-	asm( 
-"	      0043d759    mov eax,this"
-"	      0043d75c    mov ecx,nIndex"
-"	      0043d75f    cmp [eax],ecx"
-"	      0043d761    jg near ptr 0043D76Eh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, nIndex;
+	__asm        cmp    [eax], ecx;
+	__asm        jg     near ptr 0x0043D76E;
 // LINE 134:
-	asm( 
-"	      0043d767    xor eax,eax"
-"	      0043d769    jmp near ptr 0043D7C7h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0043D7C7;
 // LINE 136:
-	asm( 
-"	      0043d76e    mov nPresentIndex,0"
-"	      0043d775    mov eax,this"
-"	      0043d778    mov eax,[eax+4]"
-"	      0043d77b    mov ecx,this"
-"	      0043d77e    mov [ecx+0Ch],eax"
-);
+	__asm        mov    nPresentIndex, 0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
 // LINE 138:
-	asm( 
-"	      0043d781    jmp near ptr 0043D792h"
-"	      0043d786    inc nPresentIndex"
-"	      0043d789    mov eax,nextCharData"
-"	      0043d78c    mov ecx,this"
-"	      0043d78f    mov [ecx+0Ch],eax"
-"	      0043d792    mov eax,nIndex"
-"	      0043d795    cmp nPresentIndex,eax"
-"	      0043d798    jge near ptr 0043D7BCh"
-"	      0043d79e    mov eax,this"
-"	      0043d7a1    cmp dword ptr [eax+0Ch],0"
-"	      0043d7a5    je near ptr 0043D7BCh"
-);
+	__asm        jmp    near ptr 0x0043D792;
+	__asm        inc    nPresentIndex;
+	__asm        mov    eax, nextCharData;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
+	__asm        mov    eax, nIndex;
+	__asm        cmp    nPresentIndex, eax;
+	__asm        jge    near ptr 0x0043D7BC;
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        je     near ptr 0x0043D7BC;
 // LINE 141:
-	asm( 
-"	      0043d7ab    mov eax,this"
-"	      0043d7ae    mov eax,[eax+0Ch]"
-"	      0043d7b1    mov eax,[eax+5]"
-"	      0043d7b4    mov nextCharData,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    eax, [eax+5];
+	__asm        mov    nextCharData, eax;
 // LINE 142:
-	asm( 
-"	      0043d7b7    jmp near ptr 0043D786h"
-);
+	__asm        jmp    near ptr 0x0043D786;
 // LINE 144:
-	asm( 
-"	      0043d7bc    mov eax,this"
-"	      0043d7bf    mov eax,[eax+0Ch]"
-"	      0043d7c2    jmp near ptr 0043D7C7h"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        jmp    near ptr 0x0043D7C7;
 // LINE 145:
-	asm( 
-"	      0043d7c7    pop edi"
-"	      0043d7c8    pop esi"
-"	      0043d7c9    pop ebx"
-"	      0043d7ca    leave"
-"	      0043d7cb    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d7ce
@@ -652,72 +498,54 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	class CharData* nextCharData;
 
 // LINE 149:
-	asm( 
-"	      0043d7ce    push ebp"
-"	      0043d7cf    mov ebp,esp"
-"	      0043d7d1    sub esp,8"
-"	      0043d7d4    push ebx"
-"	      0043d7d5    push esi"
-"	      0043d7d6    push edi"
-"	      0043d7d7    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 152:
-	asm( 
-"	      0043d7da    mov eax,this"
-"	      0043d7dd    mov eax,[eax+4]"
-"	      0043d7e0    mov ecx,this"
-"	      0043d7e3    mov [ecx+0Ch],eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
 // LINE 154:
-	asm( 
-"	      0043d7e6    jmp near ptr 0043D7F4h"
-"	      0043d7eb    mov eax,nextCharData"
-"	      0043d7ee    mov ecx,this"
-"	      0043d7f1    mov [ecx+0Ch],eax"
-"	      0043d7f4    mov eax,this"
-"	      0043d7f7    cmp dword ptr [eax+0Ch],0"
-"	      0043d7fb    je near ptr 0043D834h"
-);
+	__asm        jmp    near ptr 0x0043D7F4;
+	__asm        mov    eax, nextCharData;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], eax;
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0xC], 0;
+	__asm        je     near ptr 0x0043D834;
 // LINE 156:
-	asm( 
-"	      0043d801    mov eax,this"
-"	      0043d804    mov eax,[eax+0Ch]"
-"	      0043d807    mov eax,[eax+5]"
-"	      0043d80a    mov nextCharData,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    eax, [eax+5];
+	__asm        mov    nextCharData, eax;
 // LINE 157:
-	asm( 
-"	      0043d80d    mov eax,this"
-"	      0043d810    mov eax,[eax+0Ch]"
-"	      0043d813    xor ecx,ecx"
-"	      0043d815    mov cl,[eax]"
-"	      0043d817    xor eax,eax"
-"	      0043d819    mov al,chValue"
-"	      0043d81c    cmp ecx,eax"
-"	      0043d81e    jne near ptr 0043D82Fh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [eax];
+	__asm        xor    eax, eax;
+	__asm        mov    al, chValue;
+	__asm        cmp    ecx, eax;
+	__asm        jne    near ptr 0x0043D82F;
 // LINE 158:
-	asm( 
-"	      0043d824    mov eax,this"
-"	      0043d827    mov eax,[eax+0Ch]"
-"	      0043d82a    jmp near ptr 0043D83Bh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        jmp    near ptr 0x0043D83B;
 // LINE 159:
-	asm( 
-"	      0043d82f    jmp near ptr 0043D7EBh"
-);
+	__asm        jmp    near ptr 0x0043D7EB;
 // LINE 160:
-	asm( 
-"	      0043d834    xor eax,eax"
-"	      0043d836    jmp near ptr 0043D83Bh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0043D83B;
 // LINE 161:
-	asm( 
-"	      0043d83b    pop edi"
-"	      0043d83c    pop esi"
-"	      0043d83d    pop ebx"
-"	      0043d83e    leave"
-"	      0043d83f    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 

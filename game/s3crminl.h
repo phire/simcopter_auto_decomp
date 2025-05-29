@@ -2,20 +2,18 @@
 // FUNCTION: COPTER_D 0x00535840
 void CriminalEvaderCarClass::BeamToWithinCameraRange() {
 // LINE 117:
-	asm( 
-"	      00535840    push ebp"
-"	      00535841    mov ebp,esp"
-"	      00535843    sub esp,4"
-"	      00535846    push ebx"
-"	      00535847    push esi"
-"	      00535848    push edi"
-"	      00535849    mov this,ecx"
-"	      0053584c    jmp near ptr 00535851h"
-"	      00535851    pop edi"
-"	      00535852    pop esi"
-"	      00535853    pop ebx"
-"	      00535854    leave"
-"	      00535855    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        jmp    near ptr 0x00535851;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

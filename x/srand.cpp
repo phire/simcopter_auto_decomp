@@ -8,60 +8,54 @@
 // FUNCTION: COPTER_D 0x0055d500
 void SetRRandSeed(unsigned long n) {
 // LINE 33:
-	asm( 
-"	      0055d500    push ebp"
-"	      0055d501    mov ebp,esp"
-"	      0055d503    push ebx"
-"	      0055d504    push esi"
-"	      0055d505    push edi"
-"	      0055d506    mov eax,n"
-"	      0055d509    mov ds:[5BDFDCh],eax"
-"	      0055d50e    jmp near ptr 0055D513h"
-"	      0055d513    pop edi"
-"	      0055d514    pop esi"
-"	      0055d515    pop ebx"
-"	      0055d516    leave"
-"	      0055d517    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    eax, n;
+	__asm        mov    ds:[0x5BDFDC], eax;
+	__asm        jmp    near ptr 0x0055D513;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d518
 unsigned long GetSRandSeed() {
 // LINE 45:
-	asm( 
-"	      0055d518    push ebp"
-"	      0055d519    mov ebp,esp"
-"	      0055d51b    push ebx"
-"	      0055d51c    push esi"
-"	      0055d51d    push edi"
-"	      0055d51e    mov eax,ds:[6376A8h]"
-"	      0055d523    jmp near ptr 0055D528h"
-"	      0055d528    pop edi"
-"	      0055d529    pop esi"
-"	      0055d52a    pop ebx"
-"	      0055d52b    leave"
-"	      0055d52c    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    eax, ds:[0x6376A8];
+	__asm        jmp    near ptr 0x0055D528;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d52d
 void SetSRandSeed(unsigned long theSeed) {
 // LINE 48:
-	asm( 
-"	      0055d52d    push ebp"
-"	      0055d52e    mov ebp,esp"
-"	      0055d530    push ebx"
-"	      0055d531    push esi"
-"	      0055d532    push edi"
-"	      0055d533    mov eax,theSeed"
-"	      0055d536    mov ds:[6376A8h],eax"
-"	      0055d53b    jmp near ptr 0055D540h"
-"	      0055d540    pop edi"
-"	      0055d541    pop esi"
-"	      0055d542    pop ebx"
-"	      0055d543    leave"
-"	      0055d544    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    eax, theSeed;
+	__asm        mov    ds:[0x6376A8], eax;
+	__asm        jmp    near ptr 0x0055D540;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d545
@@ -74,176 +68,130 @@ unsigned short RRand(unsigned short lim) {
 	unsigned long myRandom0;
 
 // LINE 55:
-	asm( 
-"	      0055d545    push ebp"
-"	      0055d546    mov ebp,esp"
-"	      0055d548    sub esp,18h"
-"	      0055d54b    push ebx"
-"	      0055d54c    push esi"
-"	      0055d54d    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x18;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 59:
-	asm( 
-"	      0055d54e    mov myRandom0,41C64E6Dh"
-);
+	__asm        mov    myRandom0, 0x41C64E6D;
 // LINE 60:
-	asm( 
-"	      0055d555    mov eax,ds:[5BDFDCh]"
-"	      0055d55a    mov myRandom1,eax"
-);
+	__asm        mov    eax, ds:[0x5BDFDC];
+	__asm        mov    myRandom1, eax;
 // LINE 61:
-	asm( 
-"	      0055d55d    mov eax,myRandom0"
-"	      0055d560    mov myRandom2,eax"
-);
+	__asm        mov    eax, myRandom0;
+	__asm        mov    myRandom2, eax;
 // LINE 62:
-	asm( 
-"	      0055d563    mov eax,myRandom1"
-"	      0055d566    mov myRandom3,eax"
-);
+	__asm        mov    eax, myRandom1;
+	__asm        mov    myRandom3, eax;
 // LINE 66:
-	asm( 
-"	      0055d569    mov eax,myRandom2"
-"	      0055d56c    and eax,0FFFFh"
-"	      0055d571    shl eax,10h"
-"	      0055d574    movzx eax,ax"
-"	      0055d577    mov ecx,myRandom2"
-"	      0055d57a    and ecx,0FFFFh"
-"	      0055d580    shr ecx,10h"
-"	      0055d583    movzx ecx,cx"
-"	      0055d586    or eax,ecx"
-"	      0055d588    mov myRandom2,eax"
-);
+	__asm        mov    eax, myRandom2;
+	__asm        and    eax, 0xFFFF;
+	__asm        shl    eax, 0x10;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom2;
+	__asm        and    ecx, 0xFFFF;
+	__asm        shr    ecx, 0x10;
+	__asm        movzx  ecx, cx;
+	__asm        or     eax, ecx;
+	__asm        mov    myRandom2, eax;
 // LINE 68:
-	asm( 
-"	      0055d58b    mov eax,myRandom3"
-"	      0055d58e    and eax,0FFFFh"
-"	      0055d593    movzx eax,ax"
-"	      0055d596    mov ecx,myRandom2"
-"	      0055d599    and ecx,0FFFFh"
-"	      0055d59f    movzx ecx,cx"
-"	      0055d5a2    imul eax,ecx"
-"	      0055d5a5    mov myRandom2,eax"
-);
+	__asm        mov    eax, myRandom3;
+	__asm        and    eax, 0xFFFF;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom2;
+	__asm        and    ecx, 0xFFFF;
+	__asm        movzx  ecx, cx;
+	__asm        imul   eax, ecx;
+	__asm        mov    myRandom2, eax;
 // LINE 70:
-	asm( 
-"	      0055d5a8    mov eax,myRandom0"
-"	      0055d5ab    mov myRandom4,eax"
-);
+	__asm        mov    eax, myRandom0;
+	__asm        mov    myRandom4, eax;
 // LINE 71:
-	asm( 
-"	      0055d5ae    mov eax,myRandom1"
-"	      0055d5b1    mov myRandom5,eax"
-);
+	__asm        mov    eax, myRandom1;
+	__asm        mov    myRandom5, eax;
 // LINE 73:
-	asm( 
-"	      0055d5b4    mov eax,myRandom5"
-"	      0055d5b7    and eax,0FFFFh"
-"	      0055d5bc    shl eax,10h"
-"	      0055d5bf    movzx eax,ax"
-"	      0055d5c2    mov ecx,myRandom5"
-"	      0055d5c5    and ecx,0FFFFh"
-"	      0055d5cb    shr ecx,10h"
-"	      0055d5ce    movzx ecx,cx"
-"	      0055d5d1    or eax,ecx"
-"	      0055d5d3    mov myRandom5,eax"
-);
+	__asm        mov    eax, myRandom5;
+	__asm        and    eax, 0xFFFF;
+	__asm        shl    eax, 0x10;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom5;
+	__asm        and    ecx, 0xFFFF;
+	__asm        shr    ecx, 0x10;
+	__asm        movzx  ecx, cx;
+	__asm        or     eax, ecx;
+	__asm        mov    myRandom5, eax;
 // LINE 75:
-	asm( 
-"	      0055d5d6    mov eax,myRandom5"
-"	      0055d5d9    and eax,0FFFFh"
-"	      0055d5de    movzx eax,ax"
-"	      0055d5e1    mov ecx,myRandom4"
-"	      0055d5e4    and ecx,0FFFFh"
-"	      0055d5ea    movzx ecx,cx"
-"	      0055d5ed    imul eax,ecx"
-"	      0055d5f0    mov myRandom4,eax"
-);
+	__asm        mov    eax, myRandom5;
+	__asm        and    eax, 0xFFFF;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom4;
+	__asm        and    ecx, 0xFFFF;
+	__asm        movzx  ecx, cx;
+	__asm        imul   eax, ecx;
+	__asm        mov    myRandom4, eax;
 // LINE 77:
-	asm( 
-"	      0055d5f3    mov eax,myRandom4"
-"	      0055d5f6    and eax,0FFFFh"
-"	      0055d5fb    mov ecx,myRandom2"
-"	      0055d5fe    and ecx,0FFFFh"
-"	      0055d604    add eax,ecx"
-"	      0055d606    and eax,0FFFFh"
-"	      0055d60b    mov myRandom2,eax"
-);
+	__asm        mov    eax, myRandom4;
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    ecx, myRandom2;
+	__asm        and    ecx, 0xFFFF;
+	__asm        add    eax, ecx;
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    myRandom2, eax;
 // LINE 79:
-	asm( 
-"	      0055d60e    mov eax,myRandom2"
-"	      0055d611    and eax,0FFFFh"
-"	      0055d616    shl eax,10h"
-"	      0055d619    movzx eax,ax"
-"	      0055d61c    mov ecx,myRandom2"
-"	      0055d61f    and ecx,0FFFFh"
-"	      0055d625    shr ecx,10h"
-"	      0055d628    movzx ecx,cx"
-"	      0055d62b    or eax,ecx"
-"	      0055d62d    mov myRandom2,eax"
-);
+	__asm        mov    eax, myRandom2;
+	__asm        and    eax, 0xFFFF;
+	__asm        shl    eax, 0x10;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom2;
+	__asm        and    ecx, 0xFFFF;
+	__asm        shr    ecx, 0x10;
+	__asm        movzx  ecx, cx;
+	__asm        or     eax, ecx;
+	__asm        mov    myRandom2, eax;
 // LINE 81:
-	asm( 
-"	      0055d630    and myRandom2,0FFFF0000h"
-);
+	__asm        and    myRandom2, 0xFFFF0000;
 // LINE 83:
-	asm( 
-"	      0055d637    mov eax,myRandom1"
-"	      0055d63a    and eax,0FFFFh"
-"	      0055d63f    movzx eax,ax"
-"	      0055d642    mov ecx,myRandom0"
-"	      0055d645    and ecx,0FFFFh"
-"	      0055d64b    movzx ecx,cx"
-"	      0055d64e    imul eax,ecx"
-"	      0055d651    mov myRandom0,eax"
-);
+	__asm        mov    eax, myRandom1;
+	__asm        and    eax, 0xFFFF;
+	__asm        movzx  eax, ax;
+	__asm        mov    ecx, myRandom0;
+	__asm        and    ecx, 0xFFFF;
+	__asm        movzx  ecx, cx;
+	__asm        imul   eax, ecx;
+	__asm        mov    myRandom0, eax;
 // LINE 85:
-	asm( 
-"	      0055d654    mov eax,myRandom2"
-"	      0055d657    add myRandom0,eax"
-);
+	__asm        mov    eax, myRandom2;
+	__asm        add    myRandom0, eax;
 // LINE 87:
-	asm( 
-"	      0055d65a    add myRandom0,3039h"
-);
+	__asm        add    myRandom0, 0x3039;
 // LINE 89:
-	asm( 
-"	      0055d661    mov eax,myRandom0"
-"	      0055d664    mov ds:[5BDFDCh],eax"
-);
+	__asm        mov    eax, myRandom0;
+	__asm        mov    ds:[0x5BDFDC], eax;
 // LINE 91:
-	asm( 
-"	      0055d669    mov myRandom0,0"
-);
+	__asm        mov    myRandom0, 0;
 // LINE 92:
-	asm( 
-"	      0055d670    mov eax,ds:[5BDFDCh]"
-"	      0055d675    shr eax,10h"
-"	      0055d678    mov myRandom0,eax"
-);
+	__asm        mov    eax, ds:[0x5BDFDC];
+	__asm        shr    eax, 0x10;
+	__asm        mov    myRandom0, eax;
 // LINE 94:
-	asm( 
-"	      0055d67b    and myRandom0,7FFFh"
-);
+	__asm        and    myRandom0, 0x7FFF;
 // LINE 96:
-	asm( 
-"	      0055d682    mov eax,myRandom0"
-"	      0055d685    and eax,0FFFFh"
-"	      0055d68a    mov ecx,reinterpret_cast<uint32_t>(lim)"
-"	      0055d68d    and ecx,0FFFFh"
-"	      0055d693    cdq"
-"	      0055d694    idiv ecx"
-"	      0055d696    mov ax,dx"
-"	      0055d699    jmp near ptr 0055D69Eh"
-);
+	__asm        mov    eax, myRandom0;
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(lim);
+	__asm        and    ecx, 0xFFFF;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        mov    ax, dx;
+	__asm        jmp    near ptr 0x0055D69E;
 // LINE 97:
-	asm( 
-"	      0055d69e    pop edi"
-"	      0055d69f    pop esi"
-"	      0055d6a0    pop ebx"
-"	      0055d6a1    leave"
-"	      0055d6a2    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d6a3
@@ -251,66 +199,48 @@ unsigned short GetNextRandomNumber() {
 	unsigned short temp;
 
 // LINE 104:
-	asm( 
-"	      0055d6a3    push ebp"
-"	      0055d6a4    mov ebp,esp"
-"	      0055d6a6    sub esp,4"
-"	      0055d6a9    push ebx"
-"	      0055d6aa    push esi"
-"	      0055d6ab    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 107:
-	asm( 
-"	      0055d6ac    mov eax,ds:[6376A8h]"
-"	      0055d6b1    mov temp,ax"
-);
+	__asm        mov    eax, ds:[0x6376A8];
+	__asm        mov    temp, ax;
 // LINE 109:
-	asm( 
-"	      0055d6b5    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&temp) + 1),80h"
-"	      0055d6b9    je near ptr 0055D6D7h"
-);
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&temp) + 1), 0x80;
+	__asm        je     near ptr 0x0055D6D7;
 // LINE 110:
-	asm( 
-"	      0055d6bf    mov eax,reinterpret_cast<uint32_t>(temp)"
-"	      0055d6c2    and eax,0FFFFh"
-"	      0055d6c7    add eax,eax"
-"	      0055d6c9    xor eax,1BF5h"
-"	      0055d6ce    mov temp,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(temp);
+	__asm        and    eax, 0xFFFF;
+	__asm        add    eax, eax;
+	__asm        xor    eax, 0x1BF5;
+	__asm        mov    temp, ax;
 // LINE 111:
-	asm( 
-"	      0055d6d2    jmp near ptr 0055D6DCh"
-"	      0055d6d7    shl temp,1"
-);
+	__asm        jmp    near ptr 0x0055D6DC;
+	__asm        shl    temp, 1;
 // LINE 113:
-	asm( 
-"	      0055d6dc    mov eax,reinterpret_cast<uint32_t>(temp)"
-"	      0055d6df    and eax,0FFFFh"
-"	      0055d6e4    xor ds:[6376A8h],eax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(temp);
+	__asm        and    eax, 0xFFFF;
+	__asm        xor    ds:[0x6376A8], eax;
 // LINE 114:
-	asm( 
-"	      0055d6ea    jne near ptr 0055D709h"
-"	      0055d6f0    push 8C085h"
-"	      0055d6f5    push 5BDFE0h"
-"	      0055d6fa    push 72h"
-"	      0055d6fc    push 5BDFECh"
-"	      0055d701    call 00554F30h"
-"	      0055d706    add esp,10h"
-);
+	__asm        jne    near ptr 0x0055D709;
+	__asm        push   0x8C085;
+	__asm        push   0x5BDFE0;
+	__asm        push   0x72;
+	__asm        push   0x5BDFEC;
+	__asm        call   0x00554F30;
+	__asm        add    esp, 0x10;
 // LINE 115:
-	asm( 
-"	      0055d709    mov ax,temp"
-"	      0055d70d    jmp near ptr 0055D712h"
-);
+	__asm        mov    ax, temp;
+	__asm        jmp    near ptr 0x0055D712;
 // LINE 116:
-	asm( 
-"	      0055d712    pop edi"
-"	      0055d713    pop esi"
-"	      0055d714    pop ebx"
-"	      0055d715    leave"
-"	      0055d716    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d717
@@ -318,197 +248,179 @@ unsigned short SRand(unsigned short lim) {
 	unsigned short next;
 
 // LINE 118:
-	asm( 
-"	      0055d717    push ebp"
-"	      0055d718    mov ebp,esp"
-"	      0055d71a    sub esp,4"
-"	      0055d71d    push ebx"
-"	      0055d71e    push esi"
-"	      0055d71f    push edi"
-"	      0055d720    call 0055D6A3h"
-"	      0055d725    mov next,ax"
-"	      0055d729    mov eax,reinterpret_cast<uint32_t>(next)"
-"	      0055d72c    and eax,0FFFFh"
-"	      0055d731    mov ecx,reinterpret_cast<uint32_t>(lim)"
-"	      0055d734    and ecx,0FFFFh"
-"	      0055d73a    cdq"
-"	      0055d73b    idiv ecx"
-"	      0055d73d    mov ax,dx"
-"	      0055d740    jmp near ptr 0055D745h"
-"	      0055d745    pop edi"
-"	      0055d746    pop esi"
-"	      0055d747    pop ebx"
-"	      0055d748    leave"
-"	      0055d749    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        mov    next, ax;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(next);
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(lim);
+	__asm        and    ecx, 0xFFFF;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        mov    ax, dx;
+	__asm        jmp    near ptr 0x0055D745;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d74a
 unsigned short SRand2() {
 // LINE 119:
-	asm( 
-"	      0055d74a    push ebp"
-"	      0055d74b    mov ebp,esp"
-"	      0055d74d    push ebx"
-"	      0055d74e    push esi"
-"	      0055d74f    push edi"
-"	      0055d750    call 0055D6A3h"
-"	      0055d755    movzx eax,ax"
-"	      0055d758    and eax,1"
-"	      0055d75b    jmp near ptr 0055D760h"
-"	      0055d760    pop edi"
-"	      0055d761    pop esi"
-"	      0055d762    pop ebx"
-"	      0055d763    leave"
-"	      0055d764    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 1;
+	__asm        jmp    near ptr 0x0055D760;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d765
 unsigned short SRand4() {
 // LINE 120:
-	asm( 
-"	      0055d765    push ebp"
-"	      0055d766    mov ebp,esp"
-"	      0055d768    push ebx"
-"	      0055d769    push esi"
-"	      0055d76a    push edi"
-"	      0055d76b    call 0055D6A3h"
-"	      0055d770    movzx eax,ax"
-"	      0055d773    and eax,3"
-"	      0055d776    jmp near ptr 0055D77Bh"
-"	      0055d77b    pop edi"
-"	      0055d77c    pop esi"
-"	      0055d77d    pop ebx"
-"	      0055d77e    leave"
-"	      0055d77f    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 3;
+	__asm        jmp    near ptr 0x0055D77B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d780
 unsigned short SRand8() {
 // LINE 121:
-	asm( 
-"	      0055d780    push ebp"
-"	      0055d781    mov ebp,esp"
-"	      0055d783    push ebx"
-"	      0055d784    push esi"
-"	      0055d785    push edi"
-"	      0055d786    call 0055D6A3h"
-"	      0055d78b    movzx eax,ax"
-"	      0055d78e    and eax,7"
-"	      0055d791    jmp near ptr 0055D796h"
-"	      0055d796    pop edi"
-"	      0055d797    pop esi"
-"	      0055d798    pop ebx"
-"	      0055d799    leave"
-"	      0055d79a    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 7;
+	__asm        jmp    near ptr 0x0055D796;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d79b
 unsigned short SRand16() {
 // LINE 122:
-	asm( 
-"	      0055d79b    push ebp"
-"	      0055d79c    mov ebp,esp"
-"	      0055d79e    push ebx"
-"	      0055d79f    push esi"
-"	      0055d7a0    push edi"
-"	      0055d7a1    call 0055D6A3h"
-"	      0055d7a6    movzx eax,ax"
-"	      0055d7a9    and eax,0Fh"
-"	      0055d7ac    jmp near ptr 0055D7B1h"
-"	      0055d7b1    pop edi"
-"	      0055d7b2    pop esi"
-"	      0055d7b3    pop ebx"
-"	      0055d7b4    leave"
-"	      0055d7b5    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 0xF;
+	__asm        jmp    near ptr 0x0055D7B1;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7b6
 unsigned short SRand32() {
 // LINE 123:
-	asm( 
-"	      0055d7b6    push ebp"
-"	      0055d7b7    mov ebp,esp"
-"	      0055d7b9    push ebx"
-"	      0055d7ba    push esi"
-"	      0055d7bb    push edi"
-"	      0055d7bc    call 0055D6A3h"
-"	      0055d7c1    movzx eax,ax"
-"	      0055d7c4    and eax,1Fh"
-"	      0055d7c7    jmp near ptr 0055D7CCh"
-"	      0055d7cc    pop edi"
-"	      0055d7cd    pop esi"
-"	      0055d7ce    pop ebx"
-"	      0055d7cf    leave"
-"	      0055d7d0    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 0x1F;
+	__asm        jmp    near ptr 0x0055D7CC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7d1
 unsigned short SRand64() {
 // LINE 124:
-	asm( 
-"	      0055d7d1    push ebp"
-"	      0055d7d2    mov ebp,esp"
-"	      0055d7d4    push ebx"
-"	      0055d7d5    push esi"
-"	      0055d7d6    push edi"
-"	      0055d7d7    call 0055D6A3h"
-"	      0055d7dc    movzx eax,ax"
-"	      0055d7df    and eax,3Fh"
-"	      0055d7e2    jmp near ptr 0055D7E7h"
-"	      0055d7e7    pop edi"
-"	      0055d7e8    pop esi"
-"	      0055d7e9    pop ebx"
-"	      0055d7ea    leave"
-"	      0055d7eb    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 0x3F;
+	__asm        jmp    near ptr 0x0055D7E7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7ec
 unsigned short SRand128() {
 // LINE 125:
-	asm( 
-"	      0055d7ec    push ebp"
-"	      0055d7ed    mov ebp,esp"
-"	      0055d7ef    push ebx"
-"	      0055d7f0    push esi"
-"	      0055d7f1    push edi"
-"	      0055d7f2    call 0055D6A3h"
-"	      0055d7f7    movzx eax,ax"
-"	      0055d7fa    and eax,7Fh"
-"	      0055d7fd    jmp near ptr 0055D802h"
-"	      0055d802    pop edi"
-"	      0055d803    pop esi"
-"	      0055d804    pop ebx"
-"	      0055d805    leave"
-"	      0055d806    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 0x7F;
+	__asm        jmp    near ptr 0x0055D802;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d807
 unsigned short SRand256() {
 // LINE 126:
-	asm( 
-"	      0055d807    push ebp"
-"	      0055d808    mov ebp,esp"
-"	      0055d80a    push ebx"
-"	      0055d80b    push esi"
-"	      0055d80c    push edi"
-"	      0055d80d    call 0055D6A3h"
-"	      0055d812    movzx eax,ax"
-"	      0055d815    and eax,0FFh"
-"	      0055d81a    jmp near ptr 0055D81Fh"
-"	      0055d81f    pop edi"
-"	      0055d820    pop esi"
-"	      0055d821    pop ebx"
-"	      0055d822    leave"
-"	      0055d823    ret"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0055D6A3;
+	__asm        movzx  eax, ax;
+	__asm        and    eax, 0xFF;
+	__asm        jmp    near ptr 0x0055D81F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d824
@@ -517,61 +429,45 @@ unsigned short SGIRand(unsigned short limit) {
 	unsigned short x;
 
 // LINE 132:
-	asm( 
-"	      0055d824    push ebp"
-"	      0055d825    mov ebp,esp"
-"	      0055d827    sub esp,8"
-"	      0055d82a    push ebx"
-"	      0055d82b    push esi"
-"	      0055d82c    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 135:
-	asm( 
-"	      0055d82d    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d830    push eax"
-"	      0055d831    call 0055D717h"
-"	      0055d836    add esp,4"
-"	      0055d839    mov z,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    z, ax;
 // LINE 136:
-	asm( 
-"	      0055d83d    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d840    push eax"
-"	      0055d841    call 0055D717h"
-"	      0055d846    add esp,4"
-"	      0055d849    mov x,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    x, ax;
 // LINE 137:
-	asm( 
-"	      0055d84d    mov eax,reinterpret_cast<uint32_t>(z)"
-"	      0055d850    and eax,0FFFFh"
-"	      0055d855    mov ecx,reinterpret_cast<uint32_t>(x)"
-"	      0055d858    and ecx,0FFFFh"
-"	      0055d85e    cmp eax,ecx"
-"	      0055d860    jle near ptr 0055D874h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(x);
+	__asm        and    ecx, 0xFFFF;
+	__asm        cmp    eax, ecx;
+	__asm        jle    near ptr 0x0055D874;
 // LINE 138:
-	asm( 
-"	      0055d866    mov ax,z"
-"	      0055d86a    jmp near ptr 0055D87Dh"
-);
+	__asm        mov    ax, z;
+	__asm        jmp    near ptr 0x0055D87D;
 // LINE 139:
-	asm( 
-"	      0055d86f    jmp near ptr 0055D87Dh"
-);
+	__asm        jmp    near ptr 0x0055D87D;
 // LINE 140:
-	asm( 
-"	      0055d874    mov ax,x"
-"	      0055d878    jmp near ptr 0055D87Dh"
-);
+	__asm        mov    ax, x;
+	__asm        jmp    near ptr 0x0055D87D;
 // LINE 141:
-	asm( 
-"	      0055d87d    pop edi"
-"	      0055d87e    pop esi"
-"	      0055d87f    pop ebx"
-"	      0055d880    leave"
-"	      0055d881    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d882
@@ -580,61 +476,45 @@ unsigned short SGRand(unsigned short limit) {
 	unsigned short x;
 
 // LINE 147:
-	asm( 
-"	      0055d882    push ebp"
-"	      0055d883    mov ebp,esp"
-"	      0055d885    sub esp,8"
-"	      0055d888    push ebx"
-"	      0055d889    push esi"
-"	      0055d88a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 150:
-	asm( 
-"	      0055d88b    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d88e    push eax"
-"	      0055d88f    call 0055D717h"
-"	      0055d894    add esp,4"
-"	      0055d897    mov z,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    z, ax;
 // LINE 151:
-	asm( 
-"	      0055d89b    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d89e    push eax"
-"	      0055d89f    call 0055D717h"
-"	      0055d8a4    add esp,4"
-"	      0055d8a7    mov x,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    x, ax;
 // LINE 152:
-	asm( 
-"	      0055d8ab    mov eax,reinterpret_cast<uint32_t>(z)"
-"	      0055d8ae    and eax,0FFFFh"
-"	      0055d8b3    mov ecx,reinterpret_cast<uint32_t>(x)"
-"	      0055d8b6    and ecx,0FFFFh"
-"	      0055d8bc    cmp eax,ecx"
-"	      0055d8be    jge near ptr 0055D8D2h"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
+	__asm        and    eax, 0xFFFF;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(x);
+	__asm        and    ecx, 0xFFFF;
+	__asm        cmp    eax, ecx;
+	__asm        jge    near ptr 0x0055D8D2;
 // LINE 153:
-	asm( 
-"	      0055d8c4    mov ax,z"
-"	      0055d8c8    jmp near ptr 0055D8DBh"
-);
+	__asm        mov    ax, z;
+	__asm        jmp    near ptr 0x0055D8DB;
 // LINE 154:
-	asm( 
-"	      0055d8cd    jmp near ptr 0055D8DBh"
-);
+	__asm        jmp    near ptr 0x0055D8DB;
 // LINE 155:
-	asm( 
-"	      0055d8d2    mov ax,x"
-"	      0055d8d6    jmp near ptr 0055D8DBh"
-);
+	__asm        mov    ax, x;
+	__asm        jmp    near ptr 0x0055D8DB;
 // LINE 156:
-	asm( 
-"	      0055d8db    pop edi"
-"	      0055d8dc    pop esi"
-"	      0055d8dd    pop ebx"
-"	      0055d8de    leave"
-"	      0055d8df    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d8e0
@@ -643,68 +523,50 @@ short SGSRand(unsigned short limit) {
 	short x;
 
 // LINE 162:
-	asm( 
-"	      0055d8e0    push ebp"
-"	      0055d8e1    mov ebp,esp"
-"	      0055d8e3    sub esp,8"
-"	      0055d8e6    push ebx"
-"	      0055d8e7    push esi"
-"	      0055d8e8    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 165:
-	asm( 
-"	      0055d8e9    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d8ec    push eax"
-"	      0055d8ed    call 0055D717h"
-"	      0055d8f2    add esp,4"
-"	      0055d8f5    mov z,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    z, ax;
 // LINE 166:
-	asm( 
-"	      0055d8f9    mov eax,reinterpret_cast<uint32_t>(limit)"
-"	      0055d8fc    push eax"
-"	      0055d8fd    call 0055D717h"
-"	      0055d902    add esp,4"
-"	      0055d905    mov x,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
+	__asm        push   eax;
+	__asm        call   0x0055D717;
+	__asm        add    esp, 4;
+	__asm        mov    x, ax;
 // LINE 167:
-	asm( 
-"	      0055d909    movsx eax,z"
-"	      0055d90d    movsx ecx,x"
-"	      0055d911    cmp eax,ecx"
-"	      0055d913    jge near ptr 0055D921h"
-);
+	__asm        movsx  eax, z;
+	__asm        movsx  ecx, x;
+	__asm        cmp    eax, ecx;
+	__asm        jge    near ptr 0x0055D921;
 // LINE 168:
-	asm( 
-"	      0055d919    mov ax,z"
-"	      0055d91d    mov x,ax"
-);
+	__asm        mov    ax, z;
+	__asm        mov    x, ax;
 // LINE 169:
-	asm( 
-"	      0055d921    call 0055D74Ah"
-"	      0055d926    movzx eax,ax"
-"	      0055d929    test eax,eax"
-"	      0055d92b    je near ptr 0055D93Bh"
-);
+	__asm        call   0x0055D74A;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0055D93B;
 // LINE 170:
-	asm( 
-"	      0055d931    movsx eax,x"
-"	      0055d935    neg eax"
-"	      0055d937    mov x,ax"
-);
+	__asm        movsx  eax, x;
+	__asm        neg    eax;
+	__asm        mov    x, ax;
 // LINE 171:
-	asm( 
-"	      0055d93b    mov ax,x"
-"	      0055d93f    jmp near ptr 0055D944h"
-);
+	__asm        mov    ax, x;
+	__asm        jmp    near ptr 0x0055D944;
 // LINE 172:
-	asm( 
-"	      0055d944    pop edi"
-"	      0055d945    pop esi"
-"	      0055d946    pop ebx"
-"	      0055d947    leave"
-"	      0055d948    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

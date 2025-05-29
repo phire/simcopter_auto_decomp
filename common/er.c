@@ -10,51 +10,37 @@ void ERexit(char * p) {
 	int32_t answer;
 
 // LINE 47:
-	asm( 
-"	      0058e320    push ebp"
-"	      0058e321    mov ebp,esp"
-"	      0058e323    sub esp,4"
-"	      0058e326    push ebx"
-"	      0058e327    push esi"
-"	      0058e328    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 56:
-	asm( 
-"	      0058e329    push 2"
-"	      0058e32b    push 5C2714h"
-"	      0058e330    push 5C2724h"
-"	      0058e335    call dword ptr ds:[6C37DCh]"
-"	      0058e33b    push eax"
-"	      0058e33c    call dword ptr ds:[6C3870h]"
-"	      0058e342    mov answer,eax"
-);
+	__asm        push   2;
+	__asm        push   0x5C2714;
+	__asm        push   0x5C2724;
+	__asm        call   dword ptr ds:[0x6C37DC];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3870];
+	__asm        mov    answer, eax;
 // LINE 57:
-	asm( 
-"	      0058e345    cmp answer,3"
-"	      0058e349    jne near ptr 0058E359h"
-);
+	__asm        cmp    answer, 3;
+	__asm        jne    near ptr 0x0058E359;
 // LINE 58:
-	asm( 
-"	      0058e34f    call 0056F350h"
-);
+	__asm        call   0x0056F350;
 // LINE 59:
-	asm( 
-"	      0058e354    jmp near ptr 0058E369h"
-"	      0058e359    cmp answer,4"
-"	      0058e35d    jne near ptr 0058E369h"
-);
+	__asm        jmp    near ptr 0x0058E369;
+	__asm        cmp    answer, 4;
+	__asm        jne    near ptr 0x0058E369;
 // LINE 60:
-	asm( 
-"	      0058e363    call dword ptr ds:[6C369Ch]"
-);
+	__asm        call   dword ptr ds:[0x6C369C];
 // LINE 65:
-	asm( 
-"	      0058e369    pop edi"
-"	      0058e36a    pop esi"
-"	      0058e36b    pop ebx"
-"	      0058e36c    leave"
-"	      0058e36d    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

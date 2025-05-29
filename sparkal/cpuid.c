@@ -10,76 +10,46 @@ unsigned short wincpuidsupport() {
 	int32_t cpuid_support;
 
 // LINE 63:
-	asm( 
-"	      0047b640    push ebp"
-"	      0047b641    mov ebp,esp"
-"	      0047b643    sub esp,4"
-"	      0047b646    push ebx"
-"	      0047b647    push esi"
-"	      0047b648    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 64:
-	asm( 
-"	      0047b649    mov cpuid_support,1"
-);
+	__asm        mov    cpuid_support, 1;
 // LINE 67:
-	asm( 
-"	      0047b650    pushfd"
-);
+	__asm        pushfd;
 // LINE 68:
-	asm( 
-"	      0047b651    pop eax"
-);
+	__asm        pop    eax;
 // LINE 69:
-	asm( 
-"	      0047b652    mov ecx,eax"
-);
+	__asm        mov    ecx, eax;
 // LINE 70:
-	asm( 
-"	      0047b654    xor eax,200000h"
-);
+	__asm        xor    eax, 0x200000;
 // LINE 71:
-	asm( 
-"	      0047b659    push eax"
-);
+	__asm        push   eax;
 // LINE 73:
-	asm( 
-"	      0047b65a    popfd"
-);
+	__asm        popfd;
 // LINE 74:
-	asm( 
-"	      0047b65b    pushfd"
-);
+	__asm        pushfd;
 // LINE 75:
-	asm( 
-"	      0047b65c    pop eax"
-);
+	__asm        pop    eax;
 // LINE 76:
-	asm( 
-"	      0047b65d    xor eax,ecx"
-);
+	__asm        xor    eax, ecx;
 // LINE 77:
-	asm( 
-"	      0047b65f    jne near ptr 0047B66Ch"
-);
+	__asm        jne    near ptr 0x0047B66C;
 // LINE 79:
-	asm( 
-"	      0047b665    mov cpuid_support,0"
-);
+	__asm        mov    cpuid_support, 0;
 // LINE 83:
 support:
-	asm( 
-"	      0047b66c    mov ax,reinterpret_cast<uint16_t>(cpuid_support)"
-"	      0047b670    jmp near ptr 0047B675h"
-);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(cpuid_support);
+	__asm        jmp    near ptr 0x0047B675;
 // LINE 85:
-	asm( 
-"	      0047b675    pop edi"
-"	      0047b676    pop esi"
-"	      0047b677    pop ebx"
-"	      0047b678    leave"
-"	      0047b679    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b67a
@@ -87,103 +57,71 @@ unsigned short wincpuid() {
 	unsigned short cpuid;
 
 // LINE 106:
-	asm( 
-"	      0047b67a    push ebp"
-"	      0047b67b    mov ebp,esp"
-"	      0047b67d    sub esp,4"
-"	      0047b680    push ebx"
-"	      0047b681    push esi"
-"	      0047b682    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 110:
-	asm( 
-"	      0047b683    call 0047B640h"
-"	      0047b688    movzx eax,ax"
-"	      0047b68b    test eax,eax"
-"	      0047b68d    je near ptr 0047B6A1h"
-);
+	__asm        call   0x0047B640;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0047B6A1;
 // LINE 112:
-	asm( 
-"	      0047b693    call 0047BA8Dh"
-"	      0047b698    mov cpuid,ax"
-);
+	__asm        call   0x0047BA8D;
+	__asm        mov    cpuid, ax;
 // LINE 114:
-	asm( 
-"	      0047b69c    jmp near ptr 0047B70Dh"
-);
+	__asm        jmp    near ptr 0x0047B70D;
 // LINE 116:
-	asm( 
-"	      0047b6a1    call 0047B94Ah"
-"	      0047b6a6    movzx eax,ax"
-"	      0047b6a9    mov ds:[638ED4h],eax"
-);
+	__asm        call   0x0047B94A;
+	__asm        movzx  eax, ax;
+	__asm        mov    ds:[0x638ED4], eax;
 // LINE 118:
-	asm( 
-"	      0047b6ae    call 0047B999h"
-"	      0047b6b3    mov cpuid,ax"
-);
+	__asm        call   0x0047B999;
+	__asm        mov    cpuid, ax;
 // LINE 119:
-	asm( 
-"	      0047b6b7    test reinterpret_cast<uint32_t>(cpuid),0FFFFh"
-"	      0047b6be    jne near ptr 0047B6C9h"
-"	      0047b6c4    jmp near ptr 0047B70Dh"
-);
+	__asm        test   reinterpret_cast<uint32_t>(cpuid), 0xFFFF;
+	__asm        jne    near ptr 0x0047B6C9;
+	__asm        jmp    near ptr 0x0047B70D;
 // LINE 121:
-	asm( 
-"	      0047b6c9    call 0047B9EBh"
-"	      0047b6ce    mov cpuid,ax"
-);
+	__asm        call   0x0047B9EB;
+	__asm        mov    cpuid, ax;
 // LINE 122:
-	asm( 
-"	      0047b6d2    mov eax,reinterpret_cast<uint32_t>(cpuid)"
-"	      0047b6d5    and eax,0FFFFh"
-"	      0047b6da    cmp eax,2"
-"	      0047b6dd    jne near ptr 0047B6E8h"
-"	      0047b6e3    jmp near ptr 0047B70Dh"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
+	__asm        and    eax, 0xFFFF;
+	__asm        cmp    eax, 2;
+	__asm        jne    near ptr 0x0047B6E8;
+	__asm        jmp    near ptr 0x0047B70D;
 // LINE 124:
-	asm( 
-"	      0047b6e8    call 0047BA3Ah"
-"	      0047b6ed    mov cpuid,ax"
-);
+	__asm        call   0x0047BA3A;
+	__asm        mov    cpuid, ax;
 // LINE 125:
-	asm( 
-"	      0047b6f1    mov eax,reinterpret_cast<uint32_t>(cpuid)"
-"	      0047b6f4    and eax,0FFFFh"
-"	      0047b6f9    cmp eax,3"
-"	      0047b6fc    jne near ptr 0047B707h"
-"	      0047b702    jmp near ptr 0047B70Dh"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
+	__asm        and    eax, 0xFFFF;
+	__asm        cmp    eax, 3;
+	__asm        jne    near ptr 0x0047B707;
+	__asm        jmp    near ptr 0x0047B70D;
 // LINE 127:
-	asm( 
-"	      0047b707    mov cpuid,4"
-);
+	__asm        mov    cpuid, 4;
 // LINE 133:
 end:
-	asm( 
-"	      0047b70d    cmp dword ptr ds:[638ED4h],0"
-"	      0047b714    je near ptr 0047B72Bh"
-);
+	__asm        cmp    dword ptr ds:[0x638ED4], 0;
+	__asm        je     near ptr 0x0047B72B;
 // LINE 134:
-	asm( 
-"	      0047b71a    mov eax,reinterpret_cast<uint32_t>(cpuid)"
-"	      0047b71d    and eax,0FFFFh"
-"	      0047b722    or eax,8000h"
-"	      0047b727    mov cpuid,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
+	__asm        and    eax, 0xFFFF;
+	__asm        or     eax, 0x8000;
+	__asm        mov    cpuid, ax;
 // LINE 137:
-	asm( 
-"	      0047b72b    mov ax,cpuid"
-"	      0047b72f    jmp near ptr 0047B734h"
-);
+	__asm        mov    ax, cpuid;
+	__asm        jmp    near ptr 0x0047B734;
 // LINE 139:
-	asm( 
-"	      0047b734    pop edi"
-"	      0047b735    pop esi"
-"	      0047b736    pop ebx"
-"	      0047b737    leave"
-"	      0047b738    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b739
@@ -195,160 +133,104 @@ unsigned short wincpuidext() {
 	unsigned short cpu_type;
 
 // LINE 162:
-	asm( 
-"	      0047b739    push ebp"
-"	      0047b73a    mov ebp,esp"
-"	      0047b73c    sub esp,24h"
-"	      0047b73f    push ebx"
-"	      0047b740    push esi"
-"	      0047b741    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x24;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 164:
-	asm( 
-"	      0047b742    mov i,0"
-);
+	__asm        mov    i, 0;
 // LINE 165:
-	asm( 
-"	      0047b749    mov cpu_type,0"
-);
+	__asm        mov    cpu_type, 0;
 // LINE 166:
-	asm( 
-"	      0047b74f    mov cpuidext,0"
-);
+	__asm        mov    cpuidext, 0;
 // LINE 167:
-	asm( 
-"	      0047b755    mov eax,5999D0h"
-"	      0047b75a    lea ecx,vendor_id[0]"
-"	      0047b75d    mov edx,[eax]"
-"	      0047b75f    mov [ecx],edx"
-"	      0047b761    mov edx,[eax+4]"
-"	      0047b764    mov [ecx+4],edx"
-"	      0047b767    mov eax,[eax+8]"
-"	      0047b76a    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x5999D0;
+	__asm        lea    ecx, vendor_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 168:
-	asm( 
-"	      0047b76d    mov eax,5999E0h"
-"	      0047b772    lea ecx,intel_id[0]"
-"	      0047b775    mov edx,[eax]"
-"	      0047b777    mov [ecx],edx"
-"	      0047b779    mov edx,[eax+4]"
-"	      0047b77c    mov [ecx+4],edx"
-"	      0047b77f    mov eax,[eax+8]"
-"	      0047b782    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x5999E0;
+	__asm        lea    ecx, intel_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 170:
-	asm( 
-"	      0047b785    call 0047B640h"
-"	      0047b78a    movzx eax,ax"
-"	      0047b78d    test eax,eax"
-"	      0047b78f    je near ptr 0047B7FFh"
-);
+	__asm        call   0x0047B640;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0047B7FF;
 // LINE 174:
-	asm( 
-"	      0047b795    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 176:
-	asm( 
-"	      0047b797    cpuid"
-);
+	__asm        cpuid;
 // LINE 178:
-	asm( 
-"	      0047b799    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[0]), ebx;
 // LINE 179:
-	asm( 
-"	      0047b79c    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[4]), edx;
 // LINE 180:
-	asm( 
-"	      0047b79f    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 183:
-	asm( 
-"	      0047b7a2    mov i,0"
-"	      0047b7a9    jmp near ptr 0047B7B1h"
-"	      0047b7ae    inc i"
-"	      0047b7b1    cmp i,0Ch"
-"	      0047b7b5    jge near ptr 0047B7E4h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0047B7B1;
+	__asm        inc    i;
+	__asm        cmp    i, 0xC;
+	__asm        jge    near ptr 0x0047B7E4;
 // LINE 185:
-	asm( 
-"	      0047b7bb    mov eax,i"
-"	      0047b7be    xor ecx,ecx"
-"	      0047b7c0    mov cl,[ebp+eax-24h]"
-"	      0047b7c4    mov eax,i"
-"	      0047b7c7    xor edx,edx"
-"	      0047b7c9    mov dl,[ebp+eax-10h]"
-"	      0047b7cd    cmp ecx,edx"
-"	      0047b7cf    je near ptr 0047B7DFh"
-);
+	__asm        mov    eax, i;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [ebp+eax-0x24];
+	__asm        mov    eax, i;
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ebp+eax-0x10];
+	__asm        cmp    ecx, edx;
+	__asm        je     near ptr 0x0047B7DF;
 // LINE 186:
-	asm( 
-"	      0047b7d5    mov dword ptr ds:[638ED4h],1"
-);
+	__asm        mov    dword ptr ds:[0x638ED4], 1;
 // LINE 187:
-	asm( 
-"	      0047b7df    jmp near ptr 0047B7AEh"
-);
+	__asm        jmp    near ptr 0x0047B7AE;
 // LINE 191:
-	asm( 
-"	      0047b7e4    cmp eax,1"
-);
+	__asm        cmp    eax, 1;
 // LINE 194:
-	asm( 
-"	      0047b7e7    jl near ptr 0047B7F6h"
-);
+	__asm        jl     near ptr 0x0047B7F6;
 // LINE 195:
-	asm( 
-"	      0047b7ed    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 196:
-	asm( 
-"	      0047b7ef    inc eax"
-);
+	__asm        inc    eax;
 // LINE 197:
-	asm( 
-"	      0047b7f0    cpuid"
-);
+	__asm        cpuid;
 // LINE 200:
-	asm( 
-"	      0047b7f2    mov cpuidext,ax"
-);
+	__asm        mov    cpuidext, ax;
 // LINE 203:
 end_cpuidext:
-	asm( 
-"	      0047b7f6    mov ax,cpuidext"
-);
+	__asm        mov    ax, cpuidext;
 // LINE 206:
-	asm( 
-"	      0047b7fa    jmp near ptr 0047B817h"
-);
+	__asm        jmp    near ptr 0x0047B817;
 // LINE 208:
-	asm( 
-"	      0047b7ff    call 0047B67Ah"
-"	      0047b804    mov cpu_type,ax"
-);
+	__asm        call   0x0047B67A;
+	__asm        mov    cpu_type, ax;
 // LINE 209:
-	asm( 
-"	      0047b808    mov eax,reinterpret_cast<uint32_t>(cpu_type)"
-"	      0047b80b    and eax,0FFFFh"
-"	      0047b810    shl eax,8"
-"	      0047b813    mov cpuidext,ax"
-);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(cpu_type);
+	__asm        and    eax, 0xFFFF;
+	__asm        shl    eax, 8;
+	__asm        mov    cpuidext, ax;
 // LINE 213:
-	asm( 
-"	      0047b817    mov ax,cpuidext"
-"	      0047b81b    jmp near ptr 0047B820h"
-);
+	__asm        mov    ax, cpuidext;
+	__asm        jmp    near ptr 0x0047B820;
 // LINE 215:
-	asm( 
-"	      0047b820    pop edi"
-"	      0047b821    pop esi"
-"	      0047b822    pop ebx"
-"	      0047b823    leave"
-"	      0047b824    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b825
@@ -359,140 +241,92 @@ unsigned long wincpufeatures() {
 	unsigned char[12] vendor_id;
 
 // LINE 253:
-	asm( 
-"	      0047b825    push ebp"
-"	      0047b826    mov ebp,esp"
-"	      0047b828    sub esp,20h"
-"	      0047b82b    push ebx"
-"	      0047b82c    push esi"
-"	      0047b82d    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x20;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 255:
-	asm( 
-"	      0047b82e    mov i,0"
-);
+	__asm        mov    i, 0;
 // LINE 256:
-	asm( 
-"	      0047b835    mov cpuff,0"
-);
+	__asm        mov    cpuff, 0;
 // LINE 257:
-	asm( 
-"	      0047b83c    mov eax,5999F0h"
-"	      0047b841    lea ecx,vendor_id[0]"
-"	      0047b844    mov edx,[eax]"
-"	      0047b846    mov [ecx],edx"
-"	      0047b848    mov edx,[eax+4]"
-"	      0047b84b    mov [ecx+4],edx"
-"	      0047b84e    mov eax,[eax+8]"
-"	      0047b851    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x5999F0;
+	__asm        lea    ecx, vendor_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 258:
-	asm( 
-"	      0047b854    mov eax,599A00h"
-"	      0047b859    lea ecx,intel_id[0]"
-"	      0047b85c    mov edx,[eax]"
-"	      0047b85e    mov [ecx],edx"
-"	      0047b860    mov edx,[eax+4]"
-"	      0047b863    mov [ecx+4],edx"
-"	      0047b866    mov eax,[eax+8]"
-"	      0047b869    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x599A00;
+	__asm        lea    ecx, intel_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 260:
-	asm( 
-"	      0047b86c    call 0047B640h"
-"	      0047b871    movzx eax,ax"
-"	      0047b874    test eax,eax"
-"	      0047b876    je near ptr 0047B8DFh"
-);
+	__asm        call   0x0047B640;
+	__asm        movzx  eax, ax;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x0047B8DF;
 // LINE 264:
-	asm( 
-"	      0047b87c    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 266:
-	asm( 
-"	      0047b87e    cpuid"
-);
+	__asm        cpuid;
 // LINE 268:
-	asm( 
-"	      0047b880    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[0]), ebx;
 // LINE 269:
-	asm( 
-"	      0047b883    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[4]), edx;
 // LINE 270:
-	asm( 
-"	      0047b886    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 273:
-	asm( 
-"	      0047b889    mov i,0"
-"	      0047b890    jmp near ptr 0047B898h"
-"	      0047b895    inc i"
-"	      0047b898    cmp i,0Ch"
-"	      0047b89c    jge near ptr 0047B8CBh"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0047B898;
+	__asm        inc    i;
+	__asm        cmp    i, 0xC;
+	__asm        jge    near ptr 0x0047B8CB;
 // LINE 275:
-	asm( 
-"	      0047b8a2    mov eax,i"
-"	      0047b8a5    xor ecx,ecx"
-"	      0047b8a7    mov cl,[ebp+eax-20h]"
-"	      0047b8ab    mov eax,i"
-"	      0047b8ae    xor edx,edx"
-"	      0047b8b0    mov dl,[ebp+eax-0Ch]"
-"	      0047b8b4    cmp ecx,edx"
-"	      0047b8b6    je near ptr 0047B8C6h"
-);
+	__asm        mov    eax, i;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [ebp+eax-0x20];
+	__asm        mov    eax, i;
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ebp+eax-0xC];
+	__asm        cmp    ecx, edx;
+	__asm        je     near ptr 0x0047B8C6;
 // LINE 276:
-	asm( 
-"	      0047b8bc    mov dword ptr ds:[638ED4h],1"
-);
+	__asm        mov    dword ptr ds:[0x638ED4], 1;
 // LINE 277:
-	asm( 
-"	      0047b8c6    jmp near ptr 0047B895h"
-);
+	__asm        jmp    near ptr 0x0047B895;
 // LINE 281:
-	asm( 
-"	      0047b8cb    cmp eax,1"
-);
+	__asm        cmp    eax, 1;
 // LINE 284:
-	asm( 
-"	      0047b8ce    jl near ptr 0047B8DCh"
-);
+	__asm        jl     near ptr 0x0047B8DC;
 // LINE 285:
-	asm( 
-"	      0047b8d4    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 286:
-	asm( 
-"	      0047b8d6    inc eax"
-);
+	__asm        inc    eax;
 // LINE 287:
-	asm( 
-"	      0047b8d7    cpuid"
-);
+	__asm        cpuid;
 // LINE 290:
-	asm( 
-"	      0047b8d9    mov cpuff,edx"
-);
+	__asm        mov    cpuff, edx;
 // LINE 293:
 end_cpuff:
-	asm( 
-"	      0047b8dc    mov eax,cpuff"
-);
+	__asm        mov    eax, cpuff;
 // LINE 297:
-	asm( 
-"	      0047b8df    mov eax,cpuff"
-"	      0047b8e2    jmp near ptr 0047B8E7h"
-);
+	__asm        mov    eax, cpuff;
+	__asm        jmp    near ptr 0x0047B8E7;
 // LINE 299:
-	asm( 
-"	      0047b8e7    pop edi"
-"	      0047b8e8    pop esi"
-"	      0047b8e9    pop ebx"
-"	      0047b8ea    leave"
-"	      0047b8eb    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b8ec
@@ -501,58 +335,38 @@ struct TIME_STAMP winrdtsc() {
 	unsigned long features;
 
 // LINE 320:
-	asm( 
-"	      0047b8ec    push ebp"
-"	      0047b8ed    mov ebp,esp"
-"	      0047b8ef    sub esp,0Ch"
-"	      0047b8f2    push ebx"
-"	      0047b8f3    push esi"
-"	      0047b8f4    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 324:
-	asm( 
-"	      0047b8f5    call 0047B825h"
-"	      0047b8fa    mov features,eax"
-);
+	__asm        call   0x0047B825;
+	__asm        mov    features, eax;
 // LINE 326:
-	asm( 
-"	      0047b8fd    mov timestamp.Low,0"
-);
+	__asm        mov    timestamp.Low, 0;
 // LINE 327:
-	asm( 
-"	      0047b904    mov timestamp.High,0"
-);
+	__asm        mov    timestamp.High, 0;
 // LINE 329:
-	asm( 
-"	      0047b90b    test reinterpret_cast<uint8_t>(features),10h"
-"	      0047b90f    je near ptr 0047B91Dh"
-);
+	__asm        test   reinterpret_cast<uint8_t>(features), 0x10;
+	__asm        je     near ptr 0x0047B91D;
 // LINE 331:
-	asm( 
-"	      0047b915    rdtsc"
-);
+	__asm        rdtsc;
 // LINE 335:
-	asm( 
-"	      0047b917    mov timestamp.Low,eax"
-);
+	__asm        mov    timestamp.Low, eax;
 // LINE 336:
-	asm( 
-"	      0047b91a    mov timestamp.High,edx"
-);
+	__asm        mov    timestamp.High, edx;
 // LINE 341:
-	asm( 
-"	      0047b91d    mov eax,timestamp.High"
-"	      0047b920    mov edx,timestamp.Low"
-"	      0047b923    jmp near ptr 0047B928h"
-);
+	__asm        mov    eax, timestamp.High;
+	__asm        mov    edx, timestamp.Low;
+	__asm        jmp    near ptr 0x0047B928;
 // LINE 343:
-	asm( 
-"	      0047b928    pop edi"
-"	      0047b929    pop esi"
-"	      0047b92a    pop ebx"
-"	      0047b92b    leave"
-"	      0047b92c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b92d
@@ -560,31 +374,23 @@ unsigned short getdllversion() {
 	unsigned short Version;
 
 // LINE 359:
-	asm( 
-"	      0047b92d    push ebp"
-"	      0047b92e    mov ebp,esp"
-"	      0047b930    sub esp,4"
-"	      0047b933    push ebx"
-"	      0047b934    push esi"
-"	      0047b935    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 360:
-	asm( 
-"	      0047b936    mov Version,100h"
-);
+	__asm        mov    Version, 0x100;
 // LINE 362:
-	asm( 
-"	      0047b93c    mov ax,Version"
-"	      0047b940    jmp near ptr 0047B945h"
-);
+	__asm        mov    ax, Version;
+	__asm        jmp    near ptr 0x0047B945;
 // LINE 364:
-	asm( 
-"	      0047b945    pop edi"
-"	      0047b946    pop esi"
-"	      0047b947    pop ebx"
-"	      0047b948    leave"
-"	      0047b949    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b94a
@@ -592,91 +398,55 @@ unsigned short check_clone() {
 	short cpu_type;
 
 // LINE 381:
-	asm( 
-"	      0047b94a    push ebp"
-"	      0047b94b    mov ebp,esp"
-"	      0047b94d    sub esp,4"
-"	      0047b950    push ebx"
-"	      0047b951    push esi"
-"	      0047b952    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 382:
-	asm( 
-"	      0047b953    mov cpu_type,0"
-);
+	__asm        mov    cpu_type, 0;
 // LINE 386:
-	asm( 
-"	      0047b959    mov ax,5555h"
-);
+	__asm        mov    ax, 0x5555;
 // LINE 387:
-	asm( 
-"	      0047b95d    xor dx,dx"
-);
+	__asm        xor    dx, dx;
 // LINE 388:
-	asm( 
-"	      0047b960    mov cx,2"
-);
+	__asm        mov    cx, 2;
 // LINE 389:
-	asm( 
-"	      0047b964    div cx"
-);
+	__asm        div    cx;
 // LINE 390:
-	asm( 
-"	      0047b967    clc"
-);
+	__asm        clc;
 // LINE 391:
-	asm( 
-"	      0047b968    jne near ptr 0047B973h"
-);
+	__asm        jne    near ptr 0x0047B973;
 // LINE 392:
-	asm( 
-"	      0047b96e    jmp near ptr 0047B974h"
-);
+	__asm        jmp    near ptr 0x0047B974;
 // LINE 393:
 no_clone:
-	asm( 
-"	      0047b973    stc"
-);
+	__asm        stc;
 // LINE 394:
 clone:
-	asm( 
-"	      0047b974    pushf"
-);
+	__asm        pushf;
 // LINE 395:
-	asm( 
-"	      0047b976    pop ax"
-);
+	__asm        pop    ax;
 // LINE 396:
-	asm( 
-"	      0047b978    and al,1"
-);
+	__asm        and    al, 1;
 // LINE 397:
-	asm( 
-"	      0047b97a    xor al,1"
-);
+	__asm        xor    al, 1;
 // LINE 400:
-	asm( 
-"	      0047b97c    mov cpu_type,ax"
-);
+	__asm        mov    cpu_type, ax;
 // LINE 403:
-	asm( 
-"	      0047b980    movsx eax,cpu_type"
-"	      0047b984    and eax,1"
-"	      0047b987    mov cpu_type,ax"
-);
+	__asm        movsx  eax, cpu_type;
+	__asm        and    eax, 1;
+	__asm        mov    cpu_type, ax;
 // LINE 405:
-	asm( 
-"	      0047b98b    mov ax,cpu_type"
-"	      0047b98f    jmp near ptr 0047B994h"
-);
+	__asm        mov    ax, cpu_type;
+	__asm        jmp    near ptr 0x0047B994;
 // LINE 407:
-	asm( 
-"	      0047b994    pop edi"
-"	      0047b995    pop esi"
-"	      0047b996    pop ebx"
-"	      0047b997    leave"
-"	      0047b998    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b999
@@ -684,96 +454,56 @@ unsigned short check_8086() {
 	unsigned short cpu_type;
 
 // LINE 422:
-	asm( 
-"	      0047b999    push ebp"
-"	      0047b99a    mov ebp,esp"
-"	      0047b99c    sub esp,4"
-"	      0047b99f    push ebx"
-"	      0047b9a0    push esi"
-"	      0047b9a1    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 424:
-	asm( 
-"	      0047b9a2    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 427:
-	asm( 
-"	      0047b9a8    pushf"
-);
+	__asm        pushf;
 // LINE 428:
-	asm( 
-"	      0047b9aa    pop ax"
-);
+	__asm        pop    ax;
 // LINE 429:
-	asm( 
-"	      0047b9ac    mov cx,ax"
-);
+	__asm        mov    cx, ax;
 // LINE 430:
-	asm( 
-"	      0047b9af    and ax,0FFFh"
-);
+	__asm        and    ax, 0xFFF;
 // LINE 431:
-	asm( 
-"	      0047b9b3    push ax"
-);
+	__asm        push   ax;
 // LINE 432:
-	asm( 
-"	      0047b9b5    popf"
-);
+	__asm        popf;
 // LINE 433:
-	asm( 
-"	      0047b9b7    pushf"
-);
+	__asm        pushf;
 // LINE 434:
-	asm( 
-"	      0047b9b9    pop ax"
-);
+	__asm        pop    ax;
 // LINE 435:
-	asm( 
-"	      0047b9bb    and ax,0F000h"
-);
+	__asm        and    ax, 0xF000;
 // LINE 436:
-	asm( 
-"	      0047b9bf    cmp ax,0F000h"
-);
+	__asm        cmp    ax, 0xF000;
 // LINE 437:
-	asm( 
-"	      0047b9c3    mov cpu_type,0"
-);
+	__asm        mov    cpu_type, 0;
 // LINE 438:
-	asm( 
-"	      0047b9c9    je near ptr 0047B9D5h"
-);
+	__asm        je     near ptr 0x0047B9D5;
 // LINE 440:
-	asm( 
-"	      0047b9cf    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 442:
 end_8086:
-	asm( 
-"	      0047b9d5    push cx"
-);
+	__asm        push   cx;
 // LINE 443:
-	asm( 
-"	      0047b9d7    popf"
-);
+	__asm        popf;
 // LINE 444:
-	asm( 
-"	      0047b9d9    mov ax,cpu_type"
-);
+	__asm        mov    ax, cpu_type;
 // LINE 448:
-	asm( 
-"	      0047b9dd    mov ax,cpu_type"
-"	      0047b9e1    jmp near ptr 0047B9E6h"
-);
+	__asm        mov    ax, cpu_type;
+	__asm        jmp    near ptr 0x0047B9E6;
 // LINE 450:
-	asm( 
-"	      0047b9e6    pop edi"
-"	      0047b9e7    pop esi"
-"	      0047b9e8    pop ebx"
-"	      0047b9e9    leave"
-"	      0047b9ea    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b9eb
@@ -781,92 +511,54 @@ unsigned short check_80286() {
 	unsigned short cpu_type;
 
 // LINE 465:
-	asm( 
-"	      0047b9eb    push ebp"
-"	      0047b9ec    mov ebp,esp"
-"	      0047b9ee    sub esp,4"
-"	      0047b9f1    push ebx"
-"	      0047b9f2    push esi"
-"	      0047b9f3    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 467:
-	asm( 
-"	      0047b9f4    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 470:
-	asm( 
-"	      0047b9fa    pushf"
-);
+	__asm        pushf;
 // LINE 471:
-	asm( 
-"	      0047b9fc    pop cx"
-);
+	__asm        pop    cx;
 // LINE 472:
-	asm( 
-"	      0047b9fe    mov bx,cx"
-);
+	__asm        mov    bx, cx;
 // LINE 473:
-	asm( 
-"	      0047ba01    or cx,0F000h"
-);
+	__asm        or     cx, 0xF000;
 // LINE 474:
-	asm( 
-"	      0047ba06    push cx"
-);
+	__asm        push   cx;
 // LINE 475:
-	asm( 
-"	      0047ba08    popf"
-);
+	__asm        popf;
 // LINE 476:
-	asm( 
-"	      0047ba0a    pushf"
-);
+	__asm        pushf;
 // LINE 477:
-	asm( 
-"	      0047ba0c    pop ax"
-);
+	__asm        pop    ax;
 // LINE 478:
-	asm( 
-"	      0047ba0e    and ax,0F000h"
-);
+	__asm        and    ax, 0xF000;
 // LINE 480:
-	asm( 
-"	      0047ba12    mov cpu_type,2"
-);
+	__asm        mov    cpu_type, 2;
 // LINE 483:
-	asm( 
-"	      0047ba18    je near ptr 0047BA24h"
-);
+	__asm        je     near ptr 0x0047BA24;
 // LINE 486:
-	asm( 
-"	      0047ba1e    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 488:
 end_80286:
-	asm( 
-"	      0047ba24    push bx"
-);
+	__asm        push   bx;
 // LINE 489:
-	asm( 
-"	      0047ba26    popf"
-);
+	__asm        popf;
 // LINE 490:
-	asm( 
-"	      0047ba28    mov ax,cpu_type"
-);
+	__asm        mov    ax, cpu_type;
 // LINE 494:
-	asm( 
-"	      0047ba2c    mov ax,cpu_type"
-"	      0047ba30    jmp near ptr 0047BA35h"
-);
+	__asm        mov    ax, cpu_type;
+	__asm        jmp    near ptr 0x0047BA35;
 // LINE 496:
-	asm( 
-"	      0047ba35    pop edi"
-"	      0047ba36    pop esi"
-"	      0047ba37    pop ebx"
-"	      0047ba38    leave"
-"	      0047ba39    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047ba3a
@@ -874,108 +566,62 @@ unsigned short check_80386() {
 	unsigned short cpu_type;
 
 // LINE 511:
-	asm( 
-"	      0047ba3a    push ebp"
-"	      0047ba3b    mov ebp,esp"
-"	      0047ba3d    sub esp,4"
-"	      0047ba40    push ebx"
-"	      0047ba41    push esi"
-"	      0047ba42    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 513:
-	asm( 
-"	      0047ba43    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 516:
-	asm( 
-"	      0047ba49    mov bx,sp"
-);
+	__asm        mov    bx, sp;
 // LINE 517:
-	asm( 
-"	      0047ba4c    and sp,0FFFCh"
-);
+	__asm        and    sp, 0xFFFC;
 // LINE 518:
-	asm( 
-"	      0047ba50    pushfd"
-);
+	__asm        pushfd;
 // LINE 519:
-	asm( 
-"	      0047ba51    pop eax"
-);
+	__asm        pop    eax;
 // LINE 520:
-	asm( 
-"	      0047ba52    mov ecx,eax"
-);
+	__asm        mov    ecx, eax;
 // LINE 521:
-	asm( 
-"	      0047ba54    xor eax,40000h"
-);
+	__asm        xor    eax, 0x40000;
 // LINE 523:
-	asm( 
-"	      0047ba59    push eax"
-);
+	__asm        push   eax;
 // LINE 526:
-	asm( 
-"	      0047ba5a    popfd"
-);
+	__asm        popfd;
 // LINE 527:
-	asm( 
-"	      0047ba5b    pushfd"
-);
+	__asm        pushfd;
 // LINE 528:
-	asm( 
-"	      0047ba5c    pop eax"
-);
+	__asm        pop    eax;
 // LINE 530:
-	asm( 
-"	      0047ba5d    xor eax,ecx"
-);
+	__asm        xor    eax, ecx;
 // LINE 533:
-	asm( 
-"	      0047ba5f    mov cpu_type,3"
-);
+	__asm        mov    cpu_type, 3;
 // LINE 534:
-	asm( 
-"	      0047ba65    je near ptr 0047BA71h"
-);
+	__asm        je     near ptr 0x0047BA71;
 // LINE 535:
-	asm( 
-"	      0047ba6b    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 537:
 end_80386:
-	asm( 
-"	      0047ba71    push ecx"
-);
+	__asm        push   ecx;
 // LINE 538:
-	asm( 
-"	      0047ba72    popfd"
-);
+	__asm        popfd;
 // LINE 539:
-	asm( 
-"	      0047ba73    mov sp,bx"
-);
+	__asm        mov    sp, bx;
 // LINE 540:
-	asm( 
-"	      0047ba76    mov ax,cpu_type"
-);
+	__asm        mov    ax, cpu_type;
 // LINE 541:
-	asm( 
-"	      0047ba7a    and eax,0FFFFh"
-);
+	__asm        and    eax, 0xFFFF;
 // LINE 544:
-	asm( 
-"	      0047ba7f    mov ax,cpu_type"
-"	      0047ba83    jmp near ptr 0047BA88h"
-);
+	__asm        mov    ax, cpu_type;
+	__asm        jmp    near ptr 0x0047BA88;
 // LINE 546:
-	asm( 
-"	      0047ba88    pop edi"
-"	      0047ba89    pop esi"
-"	      0047ba8a    pop ebx"
-"	      0047ba8b    leave"
-"	      0047ba8c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047ba8d
@@ -988,173 +634,107 @@ unsigned short check_IDProc() {
 	unsigned char model;
 
 // LINE 561:
-	asm( 
-"	      0047ba8d    push ebp"
-"	      0047ba8e    mov ebp,esp"
-"	      0047ba90    sub esp,28h"
-"	      0047ba93    push ebx"
-"	      0047ba94    push esi"
-"	      0047ba95    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x28;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 563:
-	asm( 
-"	      0047ba96    mov i,0"
-);
+	__asm        mov    i, 0;
 // LINE 564:
-	asm( 
-"	      0047ba9d    mov cpu_type,0FFFFh"
-);
+	__asm        mov    cpu_type, 0xFFFF;
 // LINE 565:
-	asm( 
-"	      0047baa3    mov stepping,0"
-);
+	__asm        mov    stepping, 0;
 // LINE 566:
-	asm( 
-"	      0047baa7    mov model,0"
-);
+	__asm        mov    model, 0;
 // LINE 567:
-	asm( 
-"	      0047baab    mov eax,599A10h"
-"	      0047bab0    lea ecx,vendor_id[0]"
-"	      0047bab3    mov edx,[eax]"
-"	      0047bab5    mov [ecx],edx"
-"	      0047bab7    mov edx,[eax+4]"
-"	      0047baba    mov [ecx+4],edx"
-"	      0047babd    mov eax,[eax+8]"
-"	      0047bac0    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x599A10;
+	__asm        lea    ecx, vendor_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 568:
-	asm( 
-"	      0047bac3    mov eax,599A20h"
-"	      0047bac8    lea ecx,intel_id[0]"
-"	      0047bacb    mov edx,[eax]"
-"	      0047bacd    mov [ecx],edx"
-"	      0047bacf    mov edx,[eax+4]"
-"	      0047bad2    mov [ecx+4],edx"
-"	      0047bad5    mov eax,[eax+8]"
-"	      0047bad8    mov [ecx+8],eax"
-);
+	__asm        mov    eax, 0x599A20;
+	__asm        lea    ecx, intel_id[0];
+	__asm        mov    edx, [eax];
+	__asm        mov    [ecx], edx;
+	__asm        mov    edx, [eax+4];
+	__asm        mov    [ecx+4], edx;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ecx+8], eax;
 // LINE 572:
-	asm( 
-"	      0047badb    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 574:
-	asm( 
-"	      0047badd    cpuid"
-);
+	__asm        cpuid;
 // LINE 576:
-	asm( 
-"	      0047badf    mov reinterpret_cast<uint32_t>(vendor_id[0]),ebx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[0]), ebx;
 // LINE 577:
-	asm( 
-"	      0047bae2    mov reinterpret_cast<uint32_t>(vendor_id[4]),edx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[4]), edx;
 // LINE 578:
-	asm( 
-"	      0047bae5    mov reinterpret_cast<uint32_t>(vendor_id[8]),ecx"
-);
+	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 581:
-	asm( 
-"	      0047bae8    mov i,0"
-"	      0047baef    jmp near ptr 0047BAF7h"
-"	      0047baf4    inc i"
-"	      0047baf7    cmp i,0Ch"
-"	      0047bafb    jge near ptr 0047BB2Ah"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0047BAF7;
+	__asm        inc    i;
+	__asm        cmp    i, 0xC;
+	__asm        jge    near ptr 0x0047BB2A;
 // LINE 583:
-	asm( 
-"	      0047bb01    mov eax,i"
-"	      0047bb04    xor ecx,ecx"
-"	      0047bb06    mov cl,[ebp+eax-28h]"
-"	      0047bb0a    mov eax,i"
-"	      0047bb0d    xor edx,edx"
-"	      0047bb0f    mov dl,[ebp+eax-14h]"
-"	      0047bb13    cmp ecx,edx"
-"	      0047bb15    je near ptr 0047BB25h"
-);
+	__asm        mov    eax, i;
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, [ebp+eax-0x28];
+	__asm        mov    eax, i;
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ebp+eax-0x14];
+	__asm        cmp    ecx, edx;
+	__asm        je     near ptr 0x0047BB25;
 // LINE 584:
-	asm( 
-"	      0047bb1b    mov dword ptr ds:[638ED4h],1"
-);
+	__asm        mov    dword ptr ds:[0x638ED4], 1;
 // LINE 585:
-	asm( 
-"	      0047bb25    jmp near ptr 0047BAF4h"
-);
+	__asm        jmp    near ptr 0x0047BAF4;
 // LINE 589:
-	asm( 
-"	      0047bb2a    cmp eax,1"
-);
+	__asm        cmp    eax, 1;
 // LINE 592:
-	asm( 
-"	      0047bb2d    jl near ptr 0047BB56h"
-);
+	__asm        jl     near ptr 0x0047BB56;
 // LINE 593:
-	asm( 
-"	      0047bb33    xor eax,eax"
-);
+	__asm        xor    eax, eax;
 // LINE 594:
-	asm( 
-"	      0047bb35    inc eax"
-);
+	__asm        inc    eax;
 // LINE 595:
-	asm( 
-"	      0047bb36    cpuid"
-);
+	__asm        cpuid;
 // LINE 598:
-	asm( 
-"	      0047bb38    mov stepping,al"
-);
+	__asm        mov    stepping, al;
 // LINE 599:
-	asm( 
-"	      0047bb3b    and stepping,0Fh"
-);
+	__asm        and    stepping, 0xF;
 // LINE 601:
-	asm( 
-"	      0047bb3f    and al,0F0h"
-);
+	__asm        and    al, 0xF0;
 // LINE 602:
-	asm( 
-"	      0047bb41    shr al,4"
-);
+	__asm        shr    al, 4;
 // LINE 603:
-	asm( 
-"	      0047bb44    mov model,al"
-);
+	__asm        mov    model, al;
 // LINE 605:
-	asm( 
-"	      0047bb47    and eax,0F00h"
-);
+	__asm        and    eax, 0xF00;
 // LINE 606:
-	asm( 
-"	      0047bb4c    shr eax,8"
-);
+	__asm        shr    eax, 8;
 // LINE 607:
-	asm( 
-"	      0047bb4f    and eax,0Fh"
-);
+	__asm        and    eax, 0xF;
 // LINE 608:
-	asm( 
-"	      0047bb52    mov cpu_type,ax"
-);
+	__asm        mov    cpu_type, ax;
 // LINE 611:
 end_IDProc:
-	asm( 
-"	      0047bb56    mov ax,cpu_type"
-);
+	__asm        mov    ax, cpu_type;
 // LINE 614:
-	asm( 
-"	      0047bb5a    mov ax,cpu_type"
-"	      0047bb5e    jmp near ptr 0047BB63h"
-);
+	__asm        mov    ax, cpu_type;
+	__asm        jmp    near ptr 0x0047BB63;
 // LINE 616:
-	asm( 
-"	      0047bb63    pop edi"
-"	      0047bb64    pop esi"
-"	      0047bb65    pop ebx"
-"	      0047bb66    leave"
-"	      0047bb67    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

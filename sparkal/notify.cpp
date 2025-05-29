@@ -8,167 +8,137 @@
 // FUNCTION: COPTER_D 0x0043e160
 void NotificationItem::NotificationItem() {
 // LINE 9:
-	asm( 
-"	      0043e160    push ebp"
-"	      0043e161    mov ebp,esp"
-"	      0043e163    sub esp,4"
-"	      0043e166    push ebx"
-"	      0043e167    push esi"
-"	      0043e168    push edi"
-"	      0043e169    mov this,ecx"
-"	      0043e16c    mov eax,this"
-"	      0043e16f    mov dword ptr [eax],0"
-"	      0043e175    mov eax,this"
-"	      0043e178    mov dword ptr [eax+4],0"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+4], 0;
 // LINE 10:
-	asm( 
-"	      0043e17f    jmp near ptr 0043E184h"
-"	      0043e184    mov eax,this"
-"	      0043e187    pop edi"
-"	      0043e188    pop esi"
-"	      0043e189    pop ebx"
-"	      0043e18a    leave"
-"	      0043e18b    ret"
-);
+	__asm        jmp    near ptr 0x0043E184;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043e18c
 void NotificationItem::NotificationItem(const class NotificationItem& newNotificationSink) {
 // LINE 12:
-	asm( 
-"	      0043e18c    push ebp"
-"	      0043e18d    mov ebp,esp"
-"	      0043e18f    sub esp,4"
-"	      0043e192    push ebx"
-"	      0043e193    push esi"
-"	      0043e194    push edi"
-"	      0043e195    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 13:
-	asm( 
-"	      0043e198    mov eax,newNotificationSink"
-"	      0043e19b    push eax"
-"	      0043e19c    mov ecx,this"
-"	      0043e19f    call 0043E1DFh"
-);
+	__asm        mov    eax, newNotificationSink;
+	__asm        push   eax;
+	__asm        mov    ecx, this;
+	__asm        call   0x0043E1DF;
 // LINE 14:
-	asm( 
-"	      0043e1a4    jmp near ptr 0043E1A9h"
-"	      0043e1a9    mov eax,this"
-"	      0043e1ac    pop edi"
-"	      0043e1ad    pop esi"
-"	      0043e1ae    pop ebx"
-"	      0043e1af    leave"
-"	      0043e1b0    ret 4"
-);
+	__asm        jmp    near ptr 0x0043E1A9;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043e1b3
 void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink* newNotificationSink) {
 // LINE 19:
-	asm( 
-"	      0043e1b3    push ebp"
-"	      0043e1b4    mov ebp,esp"
-"	      0043e1b6    sub esp,4"
-"	      0043e1b9    push ebx"
-"	      0043e1ba    push esi"
-"	      0043e1bb    push edi"
-"	      0043e1bc    mov this,ecx"
-"	      0043e1bf    mov eax,lNewPreferenceType"
-"	      0043e1c2    mov ecx,this"
-"	      0043e1c5    mov [ecx],eax"
-"	      0043e1c7    mov eax,newNotificationSink"
-"	      0043e1ca    mov ecx,this"
-"	      0043e1cd    mov [ecx+4],eax"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, lNewPreferenceType;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx], eax;
+	__asm        mov    eax, newNotificationSink;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 20:
-	asm( 
-"	      0043e1d0    jmp near ptr 0043E1D5h"
-"	      0043e1d5    mov eax,this"
-"	      0043e1d8    pop edi"
-"	      0043e1d9    pop esi"
-"	      0043e1da    pop ebx"
-"	      0043e1db    leave"
-"	      0043e1dc    ret 8"
-);
+	__asm        jmp    near ptr 0x0043E1D5;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0043e1df
 class NotificationItem& NotificationItem::operator=(const class NotificationItem& P2) {
 // LINE 22:
-	asm( 
-"	      0043e1df    push ebp"
-"	      0043e1e0    mov ebp,esp"
-"	      0043e1e2    sub esp,4"
-"	      0043e1e5    push ebx"
-"	      0043e1e6    push esi"
-"	      0043e1e7    push edi"
-"	      0043e1e8    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 23:
-	asm( 
-"	      0043e1eb    mov eax,P2"
-"	      0043e1ee    mov eax,[eax]"
-"	      0043e1f0    mov ecx,this"
-"	      0043e1f3    mov [ecx],eax"
-);
+	__asm        mov    eax, P2;
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx], eax;
 // LINE 24:
-	asm( 
-"	      0043e1f5    mov eax,P2"
-"	      0043e1f8    mov eax,[eax+4]"
-"	      0043e1fb    mov ecx,this"
-"	      0043e1fe    mov [ecx+4],eax"
-);
+	__asm        mov    eax, P2;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 25:
-	asm( 
-"	      0043e201    mov eax,this"
-"	      0043e204    jmp near ptr 0043E209h"
-);
+	__asm        mov    eax, this;
+	__asm        jmp    near ptr 0x0043E209;
 // LINE 26:
-	asm( 
-"	      0043e209    pop edi"
-"	      0043e20a    pop esi"
-"	      0043e20b    pop ebx"
-"	      0043e20c    leave"
-"	      0043e20d    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043e210
 int32_t operator==(const class NotificationItem& P1, const class NotificationItem& P2) {
 // LINE 29:
-	asm( 
-"	      0043e210    push ebp"
-"	      0043e211    mov ebp,esp"
-"	      0043e213    push ebx"
-"	      0043e214    push esi"
-"	      0043e215    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 31:
-	asm( 
-"	      0043e216    mov eax,P1"
-"	      0043e219    mov ecx,P2"
-"	      0043e21c    mov ecx,[ecx]"
-"	      0043e21e    cmp [eax],ecx"
-"	      0043e220    jne near ptr 0043E242h"
-"	      0043e226    mov eax,P1"
-"	      0043e229    mov ecx,P2"
-"	      0043e22c    mov ecx,[ecx+4]"
-"	      0043e22f    cmp [eax+4],ecx"
-"	      0043e232    jne near ptr 0043E242h"
-"	      0043e238    mov eax,1"
-"	      0043e23d    jmp near ptr 0043E244h"
-"	      0043e242    xor eax,eax"
-"	      0043e244    jmp near ptr 0043E249h"
-);
+	__asm        mov    eax, P1;
+	__asm        mov    ecx, P2;
+	__asm        mov    ecx, [ecx];
+	__asm        cmp    [eax], ecx;
+	__asm        jne    near ptr 0x0043E242;
+	__asm        mov    eax, P1;
+	__asm        mov    ecx, P2;
+	__asm        mov    ecx, [ecx+4];
+	__asm        cmp    [eax+4], ecx;
+	__asm        jne    near ptr 0x0043E242;
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0043E244;
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0043E249;
 // LINE 32:
-	asm( 
-"	      0043e249    pop edi"
-"	      0043e24a    pop esi"
-"	      0043e24b    pop ebx"
-"	      0043e24c    leave"
-"	      0043e24d    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

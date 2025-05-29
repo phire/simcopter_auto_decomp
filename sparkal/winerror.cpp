@@ -8,125 +8,97 @@
 // FUNCTION: COPTER_D 0x0044ff40
 void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 21:
-	asm( 
-"	      0044ff40    push ebp"
-"	      0044ff41    mov ebp,esp"
-"	      0044ff43    sub esp,200h"
-"	      0044ff49    push ebx"
-"	      0044ff4a    push esi"
-"	      0044ff4b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x200;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 22:
-	asm( 
-"	      0044ff4c    cmp Error,0"
-"	      0044ff50    jne near ptr 0044FF6Fh"
-"	      0044ff56    push 16h"
-"	      0044ff58    push 5990E4h"
-"	      0044ff5d    push 59910Ch"
-"	      0044ff62    call 0056DA30h"
-"	      0044ff67    add esp,0Ch"
-"	      0044ff6a    jmp near ptr 0044FF74h"
-"	      0044ff6f    jmp near ptr 0044FF74h"
-);
+	__asm        cmp    Error, 0;
+	__asm        jne    near ptr 0x0044FF6F;
+	__asm        push   0x16;
+	__asm        push   0x5990E4;
+	__asm        push   0x59910C;
+	__asm        call   0x0056DA30;
+	__asm        add    esp, 0xC;
+	__asm        jmp    near ptr 0x0044FF74;
+	__asm        jmp    near ptr 0x0044FF74;
 // LINE 24:
-	asm( 
-"	      0044ff74    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Error) + 3),80h"
-"	      0044ff78    je near ptr 00450046h"
-);
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Error) + 3), 0x80;
+	__asm        je     near ptr 0x00450046;
 // LINE 27:
 // Block start:
 	char[255] ErrorTitle;
 	char[255] ErrorText;
-	asm( 
-"	      0044ff7e    and Error,7FFFFFFFh"
-);
+	__asm        and    Error, 0x7FFFFFFF;
 // LINE 32:
-	asm( 
-"	      0044ff85    push 0FFh"
-"	      0044ff8a    lea eax,ErrorText[0]"
-"	      0044ff90    push eax"
-"	      0044ff91    mov eax,Error"
-"	      0044ff94    push eax"
-"	      0044ff95    mov eax,ds:[5C28C8h]"
-"	      0044ff9a    push eax"
-"	      0044ff9b    call dword ptr ds:[6C38B4h]"
-"	      0044ffa1    test eax,eax"
-"	      0044ffa3    jne near ptr 0044FFC2h"
-);
+	__asm        push   0xFF;
+	__asm        lea    eax, ErrorText[0];
+	__asm        push   eax;
+	__asm        mov    eax, Error;
+	__asm        push   eax;
+	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38B4];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x0044FFC2;
 // LINE 33:
-	asm( 
-"	      0044ffa9    mov eax,Error"
-"	      0044ffac    push eax"
-"	      0044ffad    push 599120h"
-"	      0044ffb2    lea eax,ErrorText[0]"
-"	      0044ffb8    push eax"
-"	      0044ffb9    call dword ptr ds:[6C3858h]"
-"	      0044ffbf    add esp,0Ch"
-);
+	__asm        mov    eax, Error;
+	__asm        push   eax;
+	__asm        push   0x599120;
+	__asm        lea    eax, ErrorText[0];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3858];
+	__asm        add    esp, 0xC;
 // LINE 35:
-	asm( 
-"	      0044ffc2    push 0FFh"
-"	      0044ffc7    lea eax,ErrorTitle[0]"
-"	      0044ffcd    push eax"
-"	      0044ffce    push 29Ah"
-"	      0044ffd3    mov eax,ds:[5C28C8h]"
-"	      0044ffd8    push eax"
-"	      0044ffd9    call dword ptr ds:[6C38B4h]"
-"	      0044ffdf    test eax,eax"
-"	      0044ffe1    jne near ptr 00450005h"
-);
+	__asm        push   0xFF;
+	__asm        lea    eax, ErrorTitle[0];
+	__asm        push   eax;
+	__asm        push   0x29A;
+	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C38B4];
+	__asm        test   eax, eax;
+	__asm        jne    near ptr 0x00450005;
 // LINE 36:
-	asm( 
-"	      0044ffe7    push 2030h"
-"	      0044ffec    push 599130h"
-"	      0044fff1    lea eax,ErrorText[0]"
-"	      0044fff7    push eax"
-"	      0044fff8    push 0"
-"	      0044fffa    call dword ptr ds:[6C3870h]"
-);
+	__asm        push   0x2030;
+	__asm        push   0x599130;
+	__asm        lea    eax, ErrorText[0];
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 37:
-	asm( 
-"	      00450000    jmp near ptr 00450020h"
-);
+	__asm        jmp    near ptr 0x00450020;
 // LINE 38:
-	asm( 
-"	      00450005    push 2030h"
-"	      0045000a    lea eax,ErrorTitle[0]"
-"	      00450010    push eax"
-"	      00450011    lea eax,ErrorText[0]"
-"	      00450017    push eax"
-"	      00450018    push 0"
-"	      0045001a    call dword ptr ds:[6C3870h]"
-);
+	__asm        push   0x2030;
+	__asm        lea    eax, ErrorTitle[0];
+	__asm        push   eax;
+	__asm        lea    eax, ErrorText[0];
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 40:
-	asm( 
-"	      00450020    lea eax,ErrorText[0]"
-"	      00450026    push eax"
-"	      00450027    push 599138h"
-"	      0045002c    call 00424B14h"
-"	      00450031    add esp,8"
-);
+	__asm        lea    eax, ErrorText[0];
+	__asm        push   eax;
+	__asm        push   0x599138;
+	__asm        call   0x00424B14;
+	__asm        add    esp, 8;
 // LINE 42:
-	asm( 
-"	      00450034    xor eax,eax"
-"	      00450036    mov al,Terminate"
-"	      00450039    test eax,eax"
-"	      0045003b    je near ptr 00450046h"
-);
+	__asm        xor    eax, eax;
+	__asm        mov    al, Terminate;
+	__asm        test   eax, eax;
+	__asm        je     near ptr 0x00450046;
 // LINE 43:
-	asm( 
-"	      00450041    call 0056F350h"
-);
+	__asm        call   0x0056F350;
 // LINE 45:
 // Block end:
-	asm( 
-"	      00450046    jmp near ptr 0045004Bh"
-"	      0045004b    pop edi"
-"	      0045004c    pop esi"
-"	      0045004d    pop ebx"
-"	      0045004e    leave"
-"	      0045004f    ret"
-);
+	__asm        jmp    near ptr 0x0045004B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

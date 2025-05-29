@@ -12,87 +12,69 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	int32_t answer;
 
 // LINE 36:
-	asm( 
-"	      00554f30    push ebp"
-"	      00554f31    mov ebp,esp"
-"	      00554f33    sub esp,204h"
-"	      00554f39    push ebx"
-"	      00554f3a    push esi"
-"	      00554f3b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x204;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 46:
-	asm( 
-"	      00554f3c    push 0AFh"
-"	      00554f41    mov eax,failureDescription"
-"	      00554f44    push eax"
-"	      00554f45    lea eax,descBuff[0]"
-"	      00554f4b    push eax"
-"	      00554f4c    call 0056AD40h"
-"	      00554f51    add esp,0Ch"
-);
+	__asm        push   0xAF;
+	__asm        mov    eax, failureDescription;
+	__asm        push   eax;
+	__asm        lea    eax, descBuff[0];
+	__asm        push   eax;
+	__asm        call   0x0056AD40;
+	__asm        add    esp, 0xC;
 // LINE 47:
-	asm( 
-"	      00554f54    mov descBuff[175],0"
-);
+	__asm        mov    descBuff[175], 0;
 // LINE 50:
-	asm( 
-"	      00554f5b    lea eax,descBuff[0]"
-"	      00554f61    push eax"
-"	      00554f62    mov eax,lineNum"
-"	      00554f65    push eax"
-"	      00554f66    mov eax,fileName"
-"	      00554f69    push eax"
-"	      00554f6a    push 5BC5FCh"
-"	      00554f6f    lea eax,message[0]"
-"	      00554f75    push eax"
-"	      00554f76    call 0056CD30h"
-"	      00554f7b    add esp,14h"
-);
+	__asm        lea    eax, descBuff[0];
+	__asm        push   eax;
+	__asm        mov    eax, lineNum;
+	__asm        push   eax;
+	__asm        mov    eax, fileName;
+	__asm        push   eax;
+	__asm        push   0x5BC5FC;
+	__asm        lea    eax, message[0];
+	__asm        push   eax;
+	__asm        call   0x0056CD30;
+	__asm        add    esp, 0x14;
 // LINE 51:
-	asm( 
-"	      00554f7e    cmp tackonNumber,8C085h"
-"	      00554f85    je near ptr 00554FAAh"
-);
+	__asm        cmp    tackonNumber, 0x8C085;
+	__asm        je     near ptr 0x00554FAA;
 // LINE 52:
-	asm( 
-"	      00554f8b    mov eax,tackonNumber"
-"	      00554f8e    push eax"
-"	      00554f8f    lea eax,message[0]"
-"	      00554f95    push eax"
-"	      00554f96    push 5BC620h"
-"	      00554f9b    lea eax,message[0]"
-"	      00554fa1    push eax"
-"	      00554fa2    call 0056CD30h"
-"	      00554fa7    add esp,10h"
-);
+	__asm        mov    eax, tackonNumber;
+	__asm        push   eax;
+	__asm        lea    eax, message[0];
+	__asm        push   eax;
+	__asm        push   0x5BC620;
+	__asm        lea    eax, message[0];
+	__asm        push   eax;
+	__asm        call   0x0056CD30;
+	__asm        add    esp, 0x10;
 // LINE 67:
-	asm( 
-"	      00554faa    push 2"
-"	      00554fac    push 5BC62Ch"
-"	      00554fb1    lea eax,message[0]"
-"	      00554fb7    push eax"
-"	      00554fb8    call dword ptr ds:[6C37DCh]"
-"	      00554fbe    push eax"
-"	      00554fbf    call dword ptr ds:[6C3870h]"
-"	      00554fc5    mov answer,eax"
-);
+	__asm        push   2;
+	__asm        push   0x5BC62C;
+	__asm        lea    eax, message[0];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C37DC];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3870];
+	__asm        mov    answer, eax;
 // LINE 68:
-	asm( 
-"	      00554fc8    cmp answer,0"
-"	      00554fcc    je near ptr 00554FDCh"
-"	      00554fd2    cmp answer,3"
-"	      00554fd6    jne near ptr 00554FE1h"
-"	      00554fdc    call 0056F350h"
-);
+	__asm        cmp    answer, 0;
+	__asm        je     near ptr 0x00554FDC;
+	__asm        cmp    answer, 3;
+	__asm        jne    near ptr 0x00554FE1;
+	__asm        call   0x0056F350;
 // LINE 70:
-	asm( 
-"	      00554fe1    jmp near ptr 00554FE6h"
-"	      00554fe6    pop edi"
-"	      00554fe7    pop esi"
-"	      00554fe8    pop ebx"
-"	      00554fe9    leave"
-"	      00554fea    ret"
-);
+	__asm        jmp    near ptr 0x00554FE6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

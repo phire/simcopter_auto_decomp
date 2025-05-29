@@ -2,37 +2,29 @@
 // FUNCTION: COPTER_D 0x004256d0
 void execute(char * data) {
 // LINE 44:
-	asm( 
-"	      004256d0    push ebp"
-"	      004256d1    mov ebp,esp"
-"	      004256d3    sub esp,4"
-"	      004256d6    push ebx"
-"	      004256d7    push esi"
-"	      004256d8    push edi"
-"	      004256d9    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 45:
-	asm( 
-"	      004256dc    mov eax,this"
-"	      004256df    cmp dword ptr [eax+14h],0"
-"	      004256e3    je near ptr 004256F8h"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+0x14], 0;
+	__asm        je     near ptr 0x004256F8;
 // LINE 46:
-	asm( 
-"	      004256e9    mov eax,data"
-"	      004256ec    push eax"
-"	      004256ed    mov eax,this"
-"	      004256f0    mov ecx,[eax+14h]"
-"	      004256f3    call 00422280h"
-);
+	__asm        mov    eax, data;
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    ecx, [eax+0x14];
+	__asm        call   0x00422280;
 // LINE 47:
-	asm( 
-"	      004256f8    jmp near ptr 004256FDh"
-"	      004256fd    pop edi"
-"	      004256fe    pop esi"
-"	      004256ff    pop ebx"
-"	      00425700    leave"
-"	      00425701    ret 4"
-);
+	__asm        jmp    near ptr 0x004256FD;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 

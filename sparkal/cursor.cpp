@@ -8,48 +8,40 @@
 // FUNCTION: COPTER_D 0x004747f0
 void Cursor::Cursor() {
 // LINE 19:
-	asm( 
-"	      004747f0    push ebp"
-"	      004747f1    mov ebp,esp"
-"	      004747f3    sub esp,4"
-"	      004747f6    push ebx"
-"	      004747f7    push esi"
-"	      004747f8    push edi"
-"	      004747f9    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 20:
-	asm( 
-"	      004747fc    jmp near ptr 00474801h"
-"	      00474801    mov eax,this"
-"	      00474804    pop edi"
-"	      00474805    pop esi"
-"	      00474806    pop ebx"
-"	      00474807    leave"
-"	      00474808    ret"
-);
+	__asm        jmp    near ptr 0x00474801;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00474809
 void Cursor::~Cursor() {
 // LINE 22:
-	asm( 
-"	      00474809    push ebp"
-"	      0047480a    mov ebp,esp"
-"	      0047480c    sub esp,4"
-"	      0047480f    push ebx"
-"	      00474810    push esi"
-"	      00474811    push edi"
-"	      00474812    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 23:
-	asm( 
-"	      00474815    jmp near ptr 0047481Ah"
-"	      0047481a    pop edi"
-"	      0047481b    pop esi"
-"	      0047481c    pop ebx"
-"	      0047481d    leave"
-"	      0047481e    ret"
-);
+	__asm        jmp    near ptr 0x0047481A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047481f
@@ -58,137 +50,93 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	int32_t nKeyState;
 
 // LINE 35:
-	asm( 
-"	      0047481f    push ebp"
-"	      00474820    mov ebp,esp"
-"	      00474822    sub esp,8"
-"	      00474825    push ebx"
-"	      00474826    push esi"
-"	      00474827    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 40:
-	asm( 
-"	      00474828    mov nAndValue,80000000h"
-);
+	__asm        mov    nAndValue, 0x80000000;
 // LINE 47:
-	asm( 
-"	      0047482f    cmp nCursor,1"
-"	      00474833    jne near ptr 00474845h"
-);
+	__asm        cmp    nCursor, 1;
+	__asm        jne    near ptr 0x00474845;
 // LINE 48:
-	asm( 
-"	      00474839    mov nCursor,1"
-);
+	__asm        mov    nCursor, 1;
 // LINE 49:
-	asm( 
-"	      00474840    jmp near ptr 0047486Ch"
-"	      00474845    cmp nCursor,2"
-"	      00474849    jne near ptr 0047485Bh"
-);
+	__asm        jmp    near ptr 0x0047486C;
+	__asm        cmp    nCursor, 2;
+	__asm        jne    near ptr 0x0047485B;
 // LINE 50:
-	asm( 
-"	      0047484f    mov nCursor,2"
-);
+	__asm        mov    nCursor, 2;
 // LINE 51:
-	asm( 
-"	      00474856    jmp near ptr 0047486Ch"
-"	      0047485b    cmp nCursor,4"
-"	      0047485f    jne near ptr 0047486Ch"
-);
+	__asm        jmp    near ptr 0x0047486C;
+	__asm        cmp    nCursor, 4;
+	__asm        jne    near ptr 0x0047486C;
 // LINE 52:
-	asm( 
-"	      00474865    mov nCursor,4"
-);
+	__asm        mov    nCursor, 4;
 // LINE 54:
-	asm( 
-"	      0047486c    mov eax,nCursor"
-"	      0047486f    push eax"
-"	      00474870    call dword ptr ds:[6C3898h]"
-"	      00474876    movsx eax,ax"
-"	      00474879    mov nKeyState,eax"
-"	      0047487c    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
-"	      00474880    jne near ptr 0047488Dh"
-);
+	__asm        mov    eax, nCursor;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3898];
+	__asm        movsx  eax, ax;
+	__asm        mov    nKeyState, eax;
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
+	__asm        jne    near ptr 0x0047488D;
 // LINE 55:
-	asm( 
-"	      00474886    xor eax,eax"
-"	      00474888    jmp near ptr 0047491Ch"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0047491C;
 // LINE 59:
-	asm( 
-"	      0047488d    cmp nModifiers,0"
-"	      00474891    je near ptr 00474912h"
-);
+	__asm        cmp    nModifiers, 0;
+	__asm        je     near ptr 0x00474912;
 // LINE 60:
-	asm( 
-"	      00474897    test reinterpret_cast<uint8_t>(nModifiers),1"
-"	      0047489b    je near ptr 004748C0h"
-);
+	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 1;
+	__asm        je     near ptr 0x004748C0;
 // LINE 61:
-	asm( 
-"	      004748a1    push 10h"
-"	      004748a3    call dword ptr ds:[6C3898h]"
-"	      004748a9    movsx eax,ax"
-"	      004748ac    mov nKeyState,eax"
-"	      004748af    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
-"	      004748b3    jne near ptr 004748C0h"
-);
+	__asm        push   0x10;
+	__asm        call   dword ptr ds:[0x6C3898];
+	__asm        movsx  eax, ax;
+	__asm        mov    nKeyState, eax;
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
+	__asm        jne    near ptr 0x004748C0;
 // LINE 62:
-	asm( 
-"	      004748b9    xor eax,eax"
-"	      004748bb    jmp near ptr 0047491Ch"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0047491C;
 // LINE 64:
-	asm( 
-"	      004748c0    test reinterpret_cast<uint8_t>(nModifiers),2"
-"	      004748c4    je near ptr 004748E9h"
-);
+	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 2;
+	__asm        je     near ptr 0x004748E9;
 // LINE 65:
-	asm( 
-"	      004748ca    push 11h"
-"	      004748cc    call dword ptr ds:[6C3898h]"
-"	      004748d2    movsx eax,ax"
-"	      004748d5    mov nKeyState,eax"
-"	      004748d8    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
-"	      004748dc    jne near ptr 004748E9h"
-);
+	__asm        push   0x11;
+	__asm        call   dword ptr ds:[0x6C3898];
+	__asm        movsx  eax, ax;
+	__asm        mov    nKeyState, eax;
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
+	__asm        jne    near ptr 0x004748E9;
 // LINE 66:
-	asm( 
-"	      004748e2    xor eax,eax"
-"	      004748e4    jmp near ptr 0047491Ch"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0047491C;
 // LINE 68:
-	asm( 
-"	      004748e9    test reinterpret_cast<uint8_t>(nModifiers),4"
-"	      004748ed    je near ptr 00474912h"
-);
+	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 4;
+	__asm        je     near ptr 0x00474912;
 // LINE 69:
-	asm( 
-"	      004748f3    push 12h"
-"	      004748f5    call dword ptr ds:[6C3898h]"
-"	      004748fb    movsx eax,ax"
-"	      004748fe    mov nKeyState,eax"
-"	      00474901    test *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3),80h"
-"	      00474905    jne near ptr 00474912h"
-);
+	__asm        push   0x12;
+	__asm        call   dword ptr ds:[0x6C3898];
+	__asm        movsx  eax, ax;
+	__asm        mov    nKeyState, eax;
+	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
+	__asm        jne    near ptr 0x00474912;
 // LINE 70:
-	asm( 
-"	      0047490b    xor eax,eax"
-"	      0047490d    jmp near ptr 0047491Ch"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0047491C;
 // LINE 75:
-	asm( 
-"	      00474912    mov eax,1"
-"	      00474917    jmp near ptr 0047491Ch"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0047491C;
 // LINE 77:
-	asm( 
-"	      0047491c    pop edi"
-"	      0047491d    pop esi"
-"	      0047491e    pop ebx"
-"	      0047491f    leave"
-"	      00474920    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00474921
@@ -197,45 +145,33 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 	int32_t nReturnValue;
 
 // LINE 89:
-	asm( 
-"	      00474921    push ebp"
-"	      00474922    mov ebp,esp"
-"	      00474924    sub esp,0Ch"
-"	      00474927    push ebx"
-"	      00474928    push esi"
-"	      00474929    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 95:
-	asm( 
-"	      0047492a    lea eax,ptCursor.x"
-"	      0047492d    push eax"
-"	      0047492e    call dword ptr ds:[6C3894h]"
-"	      00474934    mov nReturnValue,eax"
-);
+	__asm        lea    eax, ptCursor.x;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3894];
+	__asm        mov    nReturnValue, eax;
 // LINE 100:
-	asm( 
-"	      00474937    mov eax,ptCursor.x"
-"	      0047493a    mov ecx,nXPosition"
-"	      0047493d    mov [ecx],eax"
-);
+	__asm        mov    eax, ptCursor.x;
+	__asm        mov    ecx, nXPosition;
+	__asm        mov    [ecx], eax;
 // LINE 101:
-	asm( 
-"	      0047493f    mov eax,ptCursor.y"
-"	      00474942    mov ecx,nYPosition"
-"	      00474945    mov [ecx],eax"
-);
+	__asm        mov    eax, ptCursor.y;
+	__asm        mov    ecx, nYPosition;
+	__asm        mov    [ecx], eax;
 // LINE 102:
-	asm( 
-"	      00474947    mov eax,nReturnValue"
-"	      0047494a    jmp near ptr 0047494Fh"
-);
+	__asm        mov    eax, nReturnValue;
+	__asm        jmp    near ptr 0x0047494F;
 // LINE 104:
-	asm( 
-"	      0047494f    pop edi"
-"	      00474950    pop esi"
-"	      00474951    pop ebx"
-"	      00474952    leave"
-"	      00474953    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

@@ -8,38 +8,30 @@
 // FUNCTION: COPTER_D 0x0048b110
 int32_t GetAllDisplayModes() {
 // LINE 31:
-	asm( 
-"	      0048b110    push ebp"
-"	      0048b111    mov ebp,esp"
-"	      0048b113    push ebx"
-"	      0048b114    push esi"
-"	      0048b115    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 33:
-	asm( 
-"	      0048b116    push 48B234h"
-"	      0048b11b    push 0"
-"	      0048b11d    push 0"
-"	      0048b11f    push 0"
-"	      0048b121    mov eax,ds:[597264h]"
-"	      0048b126    push eax"
-"	      0048b127    mov eax,ds:[597264h]"
-"	      0048b12c    mov eax,[eax]"
-"	      0048b12e    call dword ptr [eax+20h]"
-);
+	__asm        push   0x48B234;
+	__asm        push   0;
+	__asm        push   0;
+	__asm        push   0;
+	__asm        mov    eax, ds:[0x597264];
+	__asm        push   eax;
+	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, [eax];
+	__asm        call   dword ptr [eax+0x20];
 // LINE 34:
-	asm( 
-"	      0048b131    mov eax,1"
-"	      0048b136    jmp near ptr 0048B13Bh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0048B13B;
 // LINE 40:
-	asm( 
-"	      0048b13b    pop edi"
-"	      0048b13c    pop esi"
-"	      0048b13d    pop ebx"
-"	      0048b13e    leave"
-"	      0048b13f    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b140
@@ -47,63 +39,49 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	int32_t i;
 
 // LINE 56:
-	asm( 
-"	      0048b140    push ebp"
-"	      0048b141    mov ebp,esp"
-"	      0048b143    sub esp,4"
-"	      0048b146    push ebx"
-"	      0048b147    push esi"
-"	      0048b148    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 62:
-	asm( 
-"	      0048b149    mov i,0"
-"	      0048b150    jmp near ptr 0048B158h"
-"	      0048b155    inc i"
-"	      0048b158    mov eax,i"
-"	      0048b15b    cmp ds:[599D80h],eax"
-"	      0048b161    jle near ptr 0048B1B8h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0048B158;
+	__asm        inc    i;
+	__asm        mov    eax, i;
+	__asm        cmp    ds:[0x599D80], eax;
+	__asm        jle    near ptr 0x0048B1B8;
 // LINE 65:
-	asm( 
-"	      0048b167    mov eax,i"
-"	      0048b16a    lea eax,[eax+eax*2]"
-"	      0048b16d    mov ecx,lWidth"
-"	      0048b170    cmp [eax*4+604818h],ecx"
-"	      0048b177    jne near ptr 0048B1B3h"
-"	      0048b17d    mov eax,i"
-"	      0048b180    lea eax,[eax+eax*2]"
-"	      0048b183    mov ecx,lHeight"
-"	      0048b186    cmp [eax*4+60481Ch],ecx"
-"	      0048b18d    jne near ptr 0048B1B3h"
-"	      0048b193    mov eax,i"
-"	      0048b196    lea eax,[eax+eax*2]"
-"	      0048b199    mov ecx,lBPP"
-"	      0048b19c    cmp [eax*4+604820h],ecx"
-"	      0048b1a3    jne near ptr 0048B1B3h"
-);
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        mov    ecx, lWidth;
+	__asm        cmp    [eax*4+0x604818], ecx;
+	__asm        jne    near ptr 0x0048B1B3;
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        mov    ecx, lHeight;
+	__asm        cmp    [eax*4+0x60481C], ecx;
+	__asm        jne    near ptr 0x0048B1B3;
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        mov    ecx, lBPP;
+	__asm        cmp    [eax*4+0x604820], ecx;
+	__asm        jne    near ptr 0x0048B1B3;
 // LINE 66:
-	asm( 
-"	      0048b1a9    mov eax,1"
-"	      0048b1ae    jmp near ptr 0048B1BFh"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0048B1BF;
 // LINE 67:
-	asm( 
-"	      0048b1b3    jmp near ptr 0048B155h"
-);
+	__asm        jmp    near ptr 0x0048B155;
 // LINE 68:
-	asm( 
-"	      0048b1b8    xor eax,eax"
-"	      0048b1ba    jmp near ptr 0048B1BFh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0048B1BF;
 // LINE 69:
-	asm( 
-"	      0048b1bf    pop edi"
-"	      0048b1c0    pop esi"
-"	      0048b1c1    pop ebx"
-"	      0048b1c2    leave"
-"	      0048b1c3    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
@@ -113,136 +91,100 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 	int32_t nBitsPerPixel;
 
 // LINE 78:
-	asm( 
-"	      0048b1c4    push ebp"
-"	      0048b1c5    mov ebp,esp"
-"	      0048b1c7    sub esp,0Ch"
-"	      0048b1ca    push ebx"
-"	      0048b1cb    push esi"
-"	      0048b1cc    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 84:
-	asm( 
-"	      0048b1cd    push 0"
-"	      0048b1cf    call dword ptr ds:[6C3850h]"
-"	      0048b1d5    mov hdcScreen,eax"
-);
+	__asm        push   0;
+	__asm        call   dword ptr ds:[0x6C3850];
+	__asm        mov    hdcScreen, eax;
 // LINE 85:
-	asm( 
-"	      0048b1d8    push 0Eh"
-"	      0048b1da    mov eax,hdcScreen"
-"	      0048b1dd    push eax"
-"	      0048b1de    call dword ptr ds:[6C3590h]"
-"	      0048b1e4    mov nPlanes,eax"
-);
+	__asm        push   0xE;
+	__asm        mov    eax, hdcScreen;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3590];
+	__asm        mov    nPlanes, eax;
 // LINE 86:
-	asm( 
-"	      0048b1e7    push 0Ch"
-"	      0048b1e9    mov eax,hdcScreen"
-"	      0048b1ec    push eax"
-"	      0048b1ed    call dword ptr ds:[6C3590h]"
-"	      0048b1f3    mov nBitsPerPixel,eax"
-);
+	__asm        push   0xC;
+	__asm        mov    eax, hdcScreen;
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3590];
+	__asm        mov    nBitsPerPixel, eax;
 // LINE 87:
-	asm( 
-"	      0048b1f6    mov eax,hdcScreen"
-"	      0048b1f9    push eax"
-"	      0048b1fa    push 0"
-"	      0048b1fc    call dword ptr ds:[6C384Ch]"
-);
+	__asm        mov    eax, hdcScreen;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 89:
-	asm( 
-"	      0048b202    push 0"
-"	      0048b204    call dword ptr ds:[6C3810h]"
-"	      0048b20a    mov ecx,modeCurrent"
-"	      0048b20d    mov [ecx],eax"
-);
+	__asm        push   0;
+	__asm        call   dword ptr ds:[0x6C3810];
+	__asm        mov    ecx, modeCurrent;
+	__asm        mov    [ecx], eax;
 // LINE 90:
-	asm( 
-"	      0048b20f    push 1"
-"	      0048b211    call dword ptr ds:[6C3810h]"
-"	      0048b217    mov ecx,modeCurrent"
-"	      0048b21a    mov [ecx+4],eax"
-);
+	__asm        push   1;
+	__asm        call   dword ptr ds:[0x6C3810];
+	__asm        mov    ecx, modeCurrent;
+	__asm        mov    [ecx+4], eax;
 // LINE 91:
-	asm( 
-"	      0048b21d    mov eax,nPlanes"
-"	      0048b220    imul eax,nBitsPerPixel"
-"	      0048b224    mov ecx,modeCurrent"
-"	      0048b227    mov [ecx+8],eax"
-);
+	__asm        mov    eax, nPlanes;
+	__asm        imul   eax, nBitsPerPixel;
+	__asm        mov    ecx, modeCurrent;
+	__asm        mov    [ecx+8], eax;
 // LINE 93:
-	asm( 
-"	      0048b22a    jmp near ptr 0048B22Fh"
-"	      0048b22f    pop edi"
-"	      0048b230    pop esi"
-"	      0048b231    pop ebx"
-"	      0048b232    leave"
-"	      0048b233    ret"
-);
+	__asm        jmp    near ptr 0x0048B22F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b234
 long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
 // LINE 103:
-	asm( 
-"	      0048b234    push ebp"
-"	      0048b235    mov ebp,esp"
-"	      0048b237    push ebx"
-"	      0048b238    push esi"
-"	      0048b239    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 104:
-	asm( 
-"	      0048b23a    cmp dword ptr ds:[599D80h],40h"
-"	      0048b241    jl near ptr 0048B24Eh"
-);
+	__asm        cmp    dword ptr ds:[0x599D80], 0x40;
+	__asm        jl     near ptr 0x0048B24E;
 // LINE 105:
-	asm( 
-"	      0048b247    xor eax,eax"
-"	      0048b249    jmp near ptr 0048B2A0h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0048B2A0;
 // LINE 106:
-	asm( 
-"	      0048b24e    mov eax,pddsd"
-"	      0048b251    mov eax,[eax+0Ch]"
-"	      0048b254    mov ecx,ds:[599D80h]"
-"	      0048b25a    lea ecx,[ecx+ecx*2]"
-"	      0048b25d    mov [ecx*4+604818h],eax"
-);
+	__asm        mov    eax, pddsd;
+	__asm        mov    eax, [eax+0xC];
+	__asm        mov    ecx, ds:[0x599D80];
+	__asm        lea    ecx, [ecx+ecx*2];
+	__asm        mov    [ecx*4+0x604818], eax;
 // LINE 107:
-	asm( 
-"	      0048b264    mov eax,pddsd"
-"	      0048b267    mov eax,[eax+8]"
-"	      0048b26a    mov ecx,ds:[599D80h]"
-"	      0048b270    lea ecx,[ecx+ecx*2]"
-"	      0048b273    mov [ecx*4+60481Ch],eax"
-);
+	__asm        mov    eax, pddsd;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, ds:[0x599D80];
+	__asm        lea    ecx, [ecx+ecx*2];
+	__asm        mov    [ecx*4+0x60481C], eax;
 // LINE 108:
-	asm( 
-"	      0048b27a    mov eax,pddsd"
-"	      0048b27d    mov eax,[eax+54h]"
-"	      0048b280    mov ecx,ds:[599D80h]"
-"	      0048b286    lea ecx,[ecx+ecx*2]"
-"	      0048b289    mov [ecx*4+604820h],eax"
-);
+	__asm        mov    eax, pddsd;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    ecx, ds:[0x599D80];
+	__asm        lea    ecx, [ecx+ecx*2];
+	__asm        mov    [ecx*4+0x604820], eax;
 // LINE 109:
-	asm( 
-"	      0048b290    inc dword ptr ds:[599D80h]"
-);
+	__asm        inc    dword ptr ds:[0x599D80];
 // LINE 111:
-	asm( 
-"	      0048b296    mov eax,1"
-"	      0048b29b    jmp near ptr 0048B2A0h"
-);
+	__asm        mov    eax, 1;
+	__asm        jmp    near ptr 0x0048B2A0;
 // LINE 112:
-	asm( 
-"	      0048b2a0    pop edi"
-"	      0048b2a1    pop esi"
-"	      0048b2a2    pop ebx"
-"	      0048b2a3    leave"
-"	      0048b2a4    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 

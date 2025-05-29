@@ -10,61 +10,43 @@ long S2TileSize(long tile) {
 	long size;
 
 // LINE 42:
-	asm( 
-"	      0058e370    push ebp"
-"	      0058e371    mov ebp,esp"
-"	      0058e373    sub esp,4"
-"	      0058e376    push ebx"
-"	      0058e377    push esi"
-"	      0058e378    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 46:
-	asm( 
-"	      0058e379    cmp tile,61h"
-"	      0058e37d    jl near ptr 0058E38Dh"
-"	      0058e383    cmp tile,6Ch"
-"	      0058e387    jl near ptr 0058E3A1h"
-"	      0058e38d    cmp tile,49h"
-"	      0058e391    jl near ptr 0058E3ADh"
-"	      0058e397    cmp tile,51h"
-"	      0058e39b    jge near ptr 0058E3ADh"
-);
+	__asm        cmp    tile, 0x61;
+	__asm        jl     near ptr 0x0058E38D;
+	__asm        cmp    tile, 0x6C;
+	__asm        jl     near ptr 0x0058E3A1;
+	__asm        cmp    tile, 0x49;
+	__asm        jl     near ptr 0x0058E3AD;
+	__asm        cmp    tile, 0x51;
+	__asm        jge    near ptr 0x0058E3AD;
 // LINE 47:
-	asm( 
-"	      0058e3a1    mov size,2"
-);
+	__asm        mov    size, 2;
 // LINE 49:
-	asm( 
-"	      0058e3a8    jmp near ptr 0058E3D1h"
-"	      0058e3ad    cmp tile,70h"
-"	      0058e3b1    jge near ptr 0058E3C3h"
-);
+	__asm        jmp    near ptr 0x0058E3D1;
+	__asm        cmp    tile, 0x70;
+	__asm        jge    near ptr 0x0058E3C3;
 // LINE 50:
-	asm( 
-"	      0058e3b7    mov size,1"
-);
+	__asm        mov    size, 1;
 // LINE 52:
-	asm( 
-"	      0058e3be    jmp near ptr 0058E3D1h"
-);
+	__asm        jmp    near ptr 0x0058E3D1;
 // LINE 53:
-	asm( 
-"	      0058e3c3    mov eax,tile"
-"	      0058e3c6    movsx eax,word ptr [eax*2+59BF68h]"
-"	      0058e3ce    mov size,eax"
-);
+	__asm        mov    eax, tile;
+	__asm        movsx  eax, word ptr [eax*2+0x59BF68];
+	__asm        mov    size, eax;
 // LINE 55:
-	asm( 
-"	      0058e3d1    mov eax,size"
-"	      0058e3d4    jmp near ptr 0058E3D9h"
-);
+	__asm        mov    eax, size;
+	__asm        jmp    near ptr 0x0058E3D9;
 // LINE 56:
-	asm( 
-"	      0058e3d9    pop edi"
-"	      0058e3da    pop esi"
-"	      0058e3db    pop ebx"
-"	      0058e3dc    leave"
-"	      0058e3dd    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

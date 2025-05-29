@@ -8,57 +8,47 @@
 // FUNCTION: COPTER_D 0x0049ad30
 void ICommander::ICommander() {
 // LINE 14:
-	asm( 
-"	      0049ad30    push ebp"
-"	      0049ad31    mov ebp,esp"
-"	      0049ad33    sub esp,4"
-"	      0049ad36    push ebx"
-"	      0049ad37    push esi"
-"	      0049ad38    push edi"
-"	      0049ad39    mov this,ecx"
-"	      0049ad3c    mov eax,this"
-"	      0049ad3f    mov dword ptr [eax],5912A8h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5912A8;
 // LINE 15:
-	asm( 
-"	      0049ad45    mov eax,this"
-"	      0049ad48    mov dword ptr [eax+4],0"
-);
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax+4], 0;
 // LINE 16:
-	asm( 
-"	      0049ad4f    jmp near ptr 0049AD54h"
-"	      0049ad54    mov eax,this"
-"	      0049ad57    pop edi"
-"	      0049ad58    pop esi"
-"	      0049ad59    pop ebx"
-"	      0049ad5a    leave"
-"	      0049ad5b    ret"
-);
+	__asm        jmp    near ptr 0x0049AD54;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ad5c
 void ICommander::~ICommander() {
 // LINE 19:
-	asm( 
-"	      0049ad5c    push ebp"
-"	      0049ad5d    mov ebp,esp"
-"	      0049ad5f    sub esp,4"
-"	      0049ad62    push ebx"
-"	      0049ad63    push esi"
-"	      0049ad64    push edi"
-"	      0049ad65    mov this,ecx"
-"	      0049ad68    mov eax,this"
-"	      0049ad6b    mov dword ptr [eax],5912A8h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5912A8;
 // LINE 25:
-	asm( 
-"	      0049ad71    jmp near ptr 0049AD76h"
-"	      0049ad76    pop edi"
-"	      0049ad77    pop esi"
-"	      0049ad78    pop ebx"
-"	      0049ad79    leave"
-"	      0049ad7a    ret"
-);
+	__asm        jmp    near ptr 0x0049AD76;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ad7b
@@ -66,318 +56,250 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 	class CSparkalWindow* ReturnWindow;
 
 // LINE 28:
-	asm( 
-"	      0049ad7b    push ebp"
-"	      0049ad7c    mov ebp,esp"
-"	      0049ad7e    sub esp,8"
-"	      0049ad81    push ebx"
-"	      0049ad82    push esi"
-"	      0049ad83    push edi"
-"	      0049ad84    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 29:
-	asm( 
-"	      0049ad87    mov eax,this"
-"	      0049ad8a    mov eax,[eax+4]"
-"	      0049ad8d    mov ReturnWindow,eax"
-);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ReturnWindow, eax;
 // LINE 31:
-	asm( 
-"	      0049ad90    mov eax,this"
-"	      0049ad93    mov ecx,pWindow"
-"	      0049ad96    cmp [eax+4],ecx"
-"	      0049ad99    jne near ptr 0049ADABh"
-);
+	__asm        mov    eax, this;
+	__asm        mov    ecx, pWindow;
+	__asm        cmp    [eax+4], ecx;
+	__asm        jne    near ptr 0x0049ADAB;
 // LINE 32:
-	asm( 
-"	      0049ad9f    mov ReturnWindow,0"
-);
+	__asm        mov    ReturnWindow, 0;
 // LINE 33:
-	asm( 
-"	      0049ada6    jmp near ptr 0049ADB4h"
-);
+	__asm        jmp    near ptr 0x0049ADB4;
 // LINE 34:
-	asm( 
-"	      0049adab    mov eax,pWindow"
-"	      0049adae    mov ecx,this"
-"	      0049adb1    mov [ecx+4],eax"
-);
+	__asm        mov    eax, pWindow;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 36:
-	asm( 
-"	      0049adb4    mov eax,ReturnWindow"
-"	      0049adb7    jmp near ptr 0049ADBCh"
-);
+	__asm        mov    eax, ReturnWindow;
+	__asm        jmp    near ptr 0x0049ADBC;
 // LINE 37:
-	asm( 
-"	      0049adbc    pop edi"
-"	      0049adbd    pop esi"
-"	      0049adbe    pop ebx"
-"	      0049adbf    leave"
-"	      0049adc0    ret 4"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049adc3
 void CDefaultCommander::CDefaultCommander() {
 // LINE 44:
-	asm( 
-"	      0049adc3    push ebp"
-"	      0049adc4    mov ebp,esp"
-"	      0049adc6    sub esp,4"
-"	      0049adc9    push ebx"
-"	      0049adca    push esi"
-"	      0049adcb    push edi"
-"	      0049adcc    mov this,ecx"
-"	      0049adcf    mov ecx,this"
-"	      0049add2    call 0049AD30h"
-"	      0049add7    mov eax,this"
-"	      0049adda    mov dword ptr [eax],5912D0h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    ecx, this;
+	__asm        call   0x0049AD30;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
-	asm( 
-"	      0049ade0    jmp near ptr 0049ADE5h"
-"	      0049ade5    mov eax,this"
-"	      0049ade8    pop edi"
-"	      0049ade9    pop esi"
-"	      0049adea    pop ebx"
-"	      0049adeb    leave"
-"	      0049adec    ret"
-);
+	__asm        jmp    near ptr 0x0049ADE5;
+	__asm        mov    eax, this;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049aded
 void CDefaultCommander::~CDefaultCommander() {
 // LINE 48:
-	asm( 
-"	      0049aded    push ebp"
-"	      0049adee    mov ebp,esp"
-"	      0049adf0    sub esp,4"
-"	      0049adf3    push ebx"
-"	      0049adf4    push esi"
-"	      0049adf5    push edi"
-"	      0049adf6    mov this,ecx"
-"	      0049adf9    mov eax,this"
-"	      0049adfc    mov dword ptr [eax],5912D0h"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 49:
-	asm( 
-"	      0049ae02    jmp near ptr 0049AE07h"
-"	      0049ae07    mov ecx,this"
-"	      0049ae0a    call 0049AD5Ch"
-"	      0049ae0f    pop edi"
-"	      0049ae10    pop esi"
-"	      0049ae11    pop ebx"
-"	      0049ae12    leave"
-"	      0049ae13    ret"
-);
+	__asm        jmp    near ptr 0x0049AE07;
+	__asm        mov    ecx, this;
+	__asm        call   0x0049AD5C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ae14
 unsigned long CDefaultCommander::Idle() {
 // LINE 55:
-	asm( 
-"	      0049ae14    push ebp"
-"	      0049ae15    mov ebp,esp"
-"	      0049ae17    sub esp,4"
-"	      0049ae1a    push ebx"
-"	      0049ae1b    push esi"
-"	      0049ae1c    push edi"
-"	      0049ae1d    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 56:
-	asm( 
-"	      0049ae20    xor eax,eax"
-"	      0049ae22    jmp near ptr 0049AE27h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AE27;
 // LINE 57:
-	asm( 
-"	      0049ae27    pop edi"
-"	      0049ae28    pop esi"
-"	      0049ae29    pop ebx"
-"	      0049ae2a    leave"
-"	      0049ae2b    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ae2c
 unsigned long CDefaultCommander::OnCharacter(char Character, int32_t RepeatCount) {
 // LINE 60:
-	asm( 
-"	      0049ae2c    push ebp"
-"	      0049ae2d    mov ebp,esp"
-"	      0049ae2f    sub esp,4"
-"	      0049ae32    push ebx"
-"	      0049ae33    push esi"
-"	      0049ae34    push edi"
-"	      0049ae35    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 61:
-	asm( 
-"	      0049ae38    xor eax,eax"
-"	      0049ae3a    jmp near ptr 0049AE3Fh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AE3F;
 // LINE 62:
-	asm( 
-"	      0049ae3f    pop edi"
-"	      0049ae40    pop esi"
-"	      0049ae41    pop ebx"
-"	      0049ae42    leave"
-"	      0049ae43    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ae46
 unsigned long CDefaultCommander::OnMouseDown(int32_t x, int32_t y) {
 // LINE 65:
-	asm( 
-"	      0049ae46    push ebp"
-"	      0049ae47    mov ebp,esp"
-"	      0049ae49    sub esp,4"
-"	      0049ae4c    push ebx"
-"	      0049ae4d    push esi"
-"	      0049ae4e    push edi"
-"	      0049ae4f    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 66:
-	asm( 
-"	      0049ae52    xor eax,eax"
-"	      0049ae54    jmp near ptr 0049AE59h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AE59;
 // LINE 67:
-	asm( 
-"	      0049ae59    pop edi"
-"	      0049ae5a    pop esi"
-"	      0049ae5b    pop ebx"
-"	      0049ae5c    leave"
-"	      0049ae5d    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ae60
 unsigned long CDefaultCommander::OnMouseUp(int32_t x, int32_t y) {
 // LINE 70:
-	asm( 
-"	      0049ae60    push ebp"
-"	      0049ae61    mov ebp,esp"
-"	      0049ae63    sub esp,4"
-"	      0049ae66    push ebx"
-"	      0049ae67    push esi"
-"	      0049ae68    push edi"
-"	      0049ae69    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 71:
-	asm( 
-"	      0049ae6c    xor eax,eax"
-"	      0049ae6e    jmp near ptr 0049AE73h"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AE73;
 // LINE 72:
-	asm( 
-"	      0049ae73    pop edi"
-"	      0049ae74    pop esi"
-"	      0049ae75    pop ebx"
-"	      0049ae76    leave"
-"	      0049ae77    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ae7a
 unsigned long CDefaultCommander::OnMouseMove(int32_t x, int32_t y) {
 // LINE 75:
-	asm( 
-"	      0049ae7a    push ebp"
-"	      0049ae7b    mov ebp,esp"
-"	      0049ae7d    sub esp,4"
-"	      0049ae80    push ebx"
-"	      0049ae81    push esi"
-"	      0049ae82    push edi"
-"	      0049ae83    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 76:
-	asm( 
-"	      0049ae86    xor eax,eax"
-"	      0049ae88    jmp near ptr 0049AE8Dh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AE8D;
 // LINE 77:
-	asm( 
-"	      0049ae8d    pop edi"
-"	      0049ae8e    pop esi"
-"	      0049ae8f    pop ebx"
-"	      0049ae90    leave"
-"	      0049ae91    ret 8"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ae94
 unsigned long CDefaultCommander::OnWindowActivate() {
 // LINE 80:
-	asm( 
-"	      0049ae94    push ebp"
-"	      0049ae95    mov ebp,esp"
-"	      0049ae97    sub esp,4"
-"	      0049ae9a    push ebx"
-"	      0049ae9b    push esi"
-"	      0049ae9c    push edi"
-"	      0049ae9d    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 81:
-	asm( 
-"	      0049aea0    mov eax,this"
-"	      0049aea3    cmp dword ptr [eax+4],0"
-"	      0049aea7    jne near ptr 0049AEC6h"
-"	      0049aead    push 51h"
-"	      0049aeaf    push 59A29Ch"
-"	      0049aeb4    push 59A2C4h"
-"	      0049aeb9    call 0056DA30h"
-"	      0049aebe    add esp,0Ch"
-"	      0049aec1    jmp near ptr 0049AECBh"
-"	      0049aec6    jmp near ptr 0049AECBh"
-);
+	__asm        mov    eax, this;
+	__asm        cmp    dword ptr [eax+4], 0;
+	__asm        jne    near ptr 0x0049AEC6;
+	__asm        push   0x51;
+	__asm        push   0x59A29C;
+	__asm        push   0x59A2C4;
+	__asm        call   0x0056DA30;
+	__asm        add    esp, 0xC;
+	__asm        jmp    near ptr 0x0049AECB;
+	__asm        jmp    near ptr 0x0049AECB;
 // LINE 82:
-	asm( 
-"	      0049aecb    push 0"
-"	      0049aecd    mov eax,this"
-"	      0049aed0    mov ecx,this"
-"	      0049aed3    mov ecx,[ecx+4]"
-"	      0049aed6    mov edx,[ecx]"
-"	      0049aed8    mov ecx,[eax+4]"
-"	      0049aedb    call dword ptr [edx+0Ch]"
-"	      0049aede    jmp near ptr 0049AEE3h"
-);
+	__asm        push   0;
+	__asm        mov    eax, this;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+4];
+	__asm        mov    edx, [ecx];
+	__asm        mov    ecx, [eax+4];
+	__asm        call   dword ptr [edx+0xC];
+	__asm        jmp    near ptr 0x0049AEE3;
 // LINE 83:
-	asm( 
-"	      0049aee3    pop edi"
-"	      0049aee4    pop esi"
-"	      0049aee5    pop ebx"
-"	      0049aee6    leave"
-"	      0049aee7    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049aee8
 unsigned long CDefaultCommander::OnWindowDeactivate() {
 // LINE 86:
-	asm( 
-"	      0049aee8    push ebp"
-"	      0049aee9    mov ebp,esp"
-"	      0049aeeb    sub esp,4"
-"	      0049aeee    push ebx"
-"	      0049aeef    push esi"
-"	      0049aef0    push edi"
-"	      0049aef1    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 87:
-	asm( 
-"	      0049aef4    xor eax,eax"
-"	      0049aef6    jmp near ptr 0049AEFBh"
-);
+	__asm        xor    eax, eax;
+	__asm        jmp    near ptr 0x0049AEFB;
 // LINE 88:
-	asm( 
-"	      0049aefb    pop edi"
-"	      0049aefc    pop esi"
-"	      0049aefd    pop ebx"
-"	      0049aefe    leave"
-"	      0049aeff    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

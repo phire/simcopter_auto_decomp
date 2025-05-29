@@ -8,59 +8,41 @@
 // FUNCTION: COPTER_D 0x0058e3e0
 void VREngineInit() {
 // LINE 42:
-	asm( 
-"	      0058e3e0    push ebp"
-"	      0058e3e1    mov ebp,esp"
-"	      0058e3e3    push ebx"
-"	      0058e3e4    push esi"
-"	      0058e3e5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 48:
-	asm( 
-"	      0058e3e6    push 5C2770h"
-"	      0058e3eb    call 004D6A69h"
-"	      0058e3f0    add esp,4"
-);
+	__asm        push   0x5C2770;
+	__asm        call   0x004D6A69;
+	__asm        add    esp, 4;
 // LINE 49:
-	asm( 
-"	      0058e3f3    push 0D555h"
-"	      0058e3f8    call 004D6610h"
-"	      0058e3fd    add esp,4"
-);
+	__asm        push   0xD555;
+	__asm        call   0x004D6610;
+	__asm        add    esp, 4;
 // LINE 50:
-	asm( 
-"	      0058e400    call 004D52C0h"
-);
+	__asm        call   0x004D52C0;
 // LINE 51:
-	asm( 
-"	      0058e405    push 1"
-"	      0058e407    call 004D681Eh"
-"	      0058e40c    add esp,4"
-);
+	__asm        push   1;
+	__asm        call   0x004D681E;
+	__asm        add    esp, 4;
 // LINE 52:
-	asm( 
-"	      0058e40f    push 0"
-"	      0058e411    call 004D682Bh"
-"	      0058e416    add esp,4"
-);
+	__asm        push   0;
+	__asm        call   0x004D682B;
+	__asm        add    esp, 4;
 // LINE 53:
-	asm( 
-"	      0058e419    push 0"
-"	      0058e41b    call 004D7B70h"
-"	      0058e420    add esp,4"
-);
+	__asm        push   0;
+	__asm        call   0x004D7B70;
+	__asm        add    esp, 4;
 // LINE 54:
-	asm( 
-"	      0058e423    call 004D69C9h"
-);
+	__asm        call   0x004D69C9;
 // LINE 56:
-	asm( 
-"	      0058e428    pop edi"
-"	      0058e429    pop esi"
-"	      0058e42a    pop ebx"
-"	      0058e42b    leave"
-"	      0058e42c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

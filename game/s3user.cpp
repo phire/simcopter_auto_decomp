@@ -20,285 +20,219 @@
 // FUNCTION: COPTER_D 0x00428f4a
 struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 // LINE 83:
-	asm( 
-"	      00428f4a    push ebp"
-"	      00428f4b    mov ebp,esp"
-"	      00428f4d    push ebx"
-"	      00428f4e    push esi"
-"	      00428f4f    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 84:
-	asm( 
-"	      00428f50    cmp dword ptr ds:[5C2AA0h],1"
-"	      00428f57    jne near ptr 00428F68h"
-);
+	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        jne    near ptr 0x00428F68;
 // LINE 85:
-	asm( 
-"	      00428f5d    lea eax,ds:[5C2A48h]"
-"	      00428f63    jmp near ptr 00428F73h"
-);
+	__asm        lea    eax, ds:[0x5C2A48];
+	__asm        jmp    near ptr 0x00428F73;
 // LINE 86:
-	asm( 
-"	      00428f68    lea eax,ds:[5C2ABCh]"
-"	      00428f6e    jmp near ptr 00428F73h"
-);
+	__asm        lea    eax, ds:[0x5C2ABC];
+	__asm        jmp    near ptr 0x00428F73;
 // LINE 87:
-	asm( 
-"	      00428f73    pop edi"
-"	      00428f74    pop esi"
-"	      00428f75    pop ebx"
-"	      00428f76    leave"
-"	      00428f77    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428f78
 void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
 // LINE 92:
-	asm( 
-"	      00428f78    push ebp"
-"	      00428f79    mov ebp,esp"
-"	      00428f7b    push ebx"
-"	      00428f7c    push esi"
-"	      00428f7d    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 93:
-	asm( 
-"	      00428f7e    cmp dword ptr ds:[5C2AA0h],1"
-"	      00428f85    jne near ptr 00428F9Bh"
-);
+	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        jne    near ptr 0x00428F9B;
 // LINE 94:
-	asm( 
-"	      00428f8b    lea edi,ds:[5C2A48h]"
-"	      00428f91    mov esi,newUserPersonalInfo"
-"	      00428f94    mov ecx,16h"
-"	      00428f99    rep movsd"
-);
+	__asm        lea    edi, ds:[0x5C2A48];
+	__asm        mov    esi, newUserPersonalInfo;
+	__asm        mov    ecx, 0x16;
+	__asm        rep movsd;
 // LINE 95:
-	asm( 
-"	      00428f9b    lea edi,ds:[5C2ABCh]"
-"	      00428fa1    mov esi,newUserPersonalInfo"
-"	      00428fa4    mov ecx,16h"
-"	      00428fa9    rep movsd"
-);
+	__asm        lea    edi, ds:[0x5C2ABC];
+	__asm        mov    esi, newUserPersonalInfo;
+	__asm        mov    ecx, 0x16;
+	__asm        rep movsd;
 // LINE 96:
-	asm( 
-"	      00428fab    jmp near ptr 00428FB0h"
-"	      00428fb0    pop edi"
-"	      00428fb1    pop esi"
-"	      00428fb2    pop ebx"
-"	      00428fb3    leave"
-"	      00428fb4    ret"
-);
+	__asm        jmp    near ptr 0x00428FB0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428fb5
 long GetUserMoney() {
 // LINE 101:
-	asm( 
-"	      00428fb5    push ebp"
-"	      00428fb6    mov ebp,esp"
-"	      00428fb8    push ebx"
-"	      00428fb9    push esi"
-"	      00428fba    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 102:
-	asm( 
-"	      00428fbb    call 00428F4Ah"
-"	      00428fc0    mov eax,[eax+40h]"
-"	      00428fc3    jmp near ptr 00428FC8h"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    eax, [eax+0x40];
+	__asm        jmp    near ptr 0x00428FC8;
 // LINE 103:
-	asm( 
-"	      00428fc8    pop edi"
-"	      00428fc9    pop esi"
-"	      00428fca    pop ebx"
-"	      00428fcb    leave"
-"	      00428fcc    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428fcd
 void SetUserMoney(long lNewMoney) {
 // LINE 108:
-	asm( 
-"	      00428fcd    push ebp"
-"	      00428fce    mov ebp,esp"
-"	      00428fd0    sub esp,4"
-"	      00428fd3    push ebx"
-"	      00428fd4    push esi"
-"	      00428fd5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 109:
-	asm( 
-"	      00428fd6    call 00428F4Ah"
-"	      00428fdb    mov [ebp-4],eax"
-"	      00428fde    mov eax,lNewMoney"
-"	      00428fe1    mov ecx,[ebp-4]"
-"	      00428fe4    mov [ecx+40h],eax"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, lNewMoney;
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx+0x40], eax;
 // LINE 110:
-	asm( 
-"	      00428fe7    jmp near ptr 00428FECh"
-"	      00428fec    pop edi"
-"	      00428fed    pop esi"
-"	      00428fee    pop ebx"
-"	      00428fef    leave"
-"	      00428ff0    ret"
-);
+	__asm        jmp    near ptr 0x00428FEC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428ff1
 void ChangeUserMoney(long lNewMoneyDelta) {
 // LINE 115:
-	asm( 
-"	      00428ff1    push ebp"
-"	      00428ff2    mov ebp,esp"
-"	      00428ff4    sub esp,4"
-"	      00428ff7    push ebx"
-"	      00428ff8    push esi"
-"	      00428ff9    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 116:
-	asm( 
-"	      00428ffa    call 00428F4Ah"
-"	      00428fff    mov [ebp-4],eax"
-"	      00429002    mov eax,lNewMoneyDelta"
-"	      00429005    mov ecx,[ebp-4]"
-"	      00429008    add [ecx+40h],eax"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, lNewMoneyDelta;
+	__asm        mov    ecx, [ebp-4];
+	__asm        add    [ecx+0x40], eax;
 // LINE 117:
-	asm( 
-"	      0042900b    jmp near ptr 00429010h"
-"	      00429010    pop edi"
-"	      00429011    pop esi"
-"	      00429012    pop ebx"
-"	      00429013    leave"
-"	      00429014    ret"
-);
+	__asm        jmp    near ptr 0x00429010;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429015
 long GetUserPoints() {
 // LINE 124:
-	asm( 
-"	      00429015    push ebp"
-"	      00429016    mov ebp,esp"
-"	      00429018    push ebx"
-"	      00429019    push esi"
-"	      0042901a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 125:
-	asm( 
-"	      0042901b    call 00428F4Ah"
-"	      00429020    mov eax,[eax+50h]"
-"	      00429023    jmp near ptr 00429028h"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    eax, [eax+0x50];
+	__asm        jmp    near ptr 0x00429028;
 // LINE 126:
-	asm( 
-"	      00429028    pop edi"
-"	      00429029    pop esi"
-"	      0042902a    pop ebx"
-"	      0042902b    leave"
-"	      0042902c    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042902d
 void SetUserPoints(long lNewPoints) {
 // LINE 131:
-	asm( 
-"	      0042902d    push ebp"
-"	      0042902e    mov ebp,esp"
-"	      00429030    sub esp,4"
-"	      00429033    push ebx"
-"	      00429034    push esi"
-"	      00429035    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 132:
-	asm( 
-"	      00429036    call 00428F4Ah"
-"	      0042903b    mov [ebp-4],eax"
-"	      0042903e    mov eax,lNewPoints"
-"	      00429041    mov ecx,[ebp-4]"
-"	      00429044    mov [ecx+50h],eax"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, lNewPoints;
+	__asm        mov    ecx, [ebp-4];
+	__asm        mov    [ecx+0x50], eax;
 // LINE 133:
-	asm( 
-"	      00429047    jmp near ptr 0042904Ch"
-"	      0042904c    pop edi"
-"	      0042904d    pop esi"
-"	      0042904e    pop ebx"
-"	      0042904f    leave"
-"	      00429050    ret"
-);
+	__asm        jmp    near ptr 0x0042904C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429051
 void ChangeUserPoints(long lNewPointsDelta) {
 // LINE 138:
-	asm( 
-"	      00429051    push ebp"
-"	      00429052    mov ebp,esp"
-"	      00429054    sub esp,4"
-"	      00429057    push ebx"
-"	      00429058    push esi"
-"	      00429059    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 139:
-	asm( 
-"	      0042905a    call 00428F4Ah"
-"	      0042905f    mov [ebp-4],eax"
-"	      00429062    mov eax,lNewPointsDelta"
-"	      00429065    mov ecx,[ebp-4]"
-"	      00429068    add [ecx+50h],eax"
-);
+	__asm        call   0x00428F4A;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, lNewPointsDelta;
+	__asm        mov    ecx, [ebp-4];
+	__asm        add    [ecx+0x50], eax;
 // LINE 140:
-	asm( 
-"	      0042906b    jmp near ptr 00429070h"
-"	      00429070    pop edi"
-"	      00429071    pop esi"
-"	      00429072    pop ebx"
-"	      00429073    leave"
-"	      00429074    ret"
-);
+	__asm        jmp    near ptr 0x00429070;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429075
 struct tagCitySettings* GetCurrentCitySettings() {
 // LINE 146:
-	asm( 
-"	      00429075    push ebp"
-"	      00429076    mov ebp,esp"
-"	      00429078    push ebx"
-"	      00429079    push esi"
-"	      0042907a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 147:
-	asm( 
-"	      0042907b    cmp dword ptr ds:[5C2AA0h],1"
-"	      00429082    jne near ptr 00429092h"
-);
+	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        jne    near ptr 0x00429092;
 // LINE 148:
-	asm( 
-"	      00429088    mov eax,5C2A20h"
-"	      0042908d    jmp near ptr 004290A6h"
-);
+	__asm        mov    eax, 0x5C2A20;
+	__asm        jmp    near ptr 0x004290A6;
 // LINE 149:
-	asm( 
-"	      00429092    mov eax,ds:[5C2AB4h]"
-"	      00429097    shl eax,3"
-"	      0042909a    lea eax,[eax+eax*8+5C2B1Ch]"
-"	      004290a1    jmp near ptr 004290A6h"
-);
+	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        shl    eax, 3;
+	__asm        lea    eax, [eax+eax*8+0x5C2B1C];
+	__asm        jmp    near ptr 0x004290A6;
 // LINE 150:
-	asm( 
-"	      004290a6    pop edi"
-"	      004290a7    pop esi"
-"	      004290a8    pop ebx"
-"	      004290a9    leave"
-"	      004290aa    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290ab
@@ -306,361 +240,245 @@ void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 	struct tagCitySettings* tempCitySettings;
 
 // LINE 156:
-	asm( 
-"	      004290ab    push ebp"
-"	      004290ac    mov ebp,esp"
-"	      004290ae    sub esp,4"
-"	      004290b1    push ebx"
-"	      004290b2    push esi"
-"	      004290b3    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 157:
-	asm( 
-"	      004290b4    call 00429075h"
-"	      004290b9    mov tempCitySettings,eax"
-);
+	__asm        call   0x00429075;
+	__asm        mov    tempCitySettings, eax;
 // LINE 158:
-	asm( 
-"	      004290bc    mov edi,tempCitySettings"
-"	      004290bf    mov esi,newCitySettings"
-"	      004290c2    mov ecx,9"
-"	      004290c7    rep movsd"
-);
+	__asm        mov    edi, tempCitySettings;
+	__asm        mov    esi, newCitySettings;
+	__asm        mov    ecx, 9;
+	__asm        rep movsd;
 // LINE 159:
-	asm( 
-"	      004290c9    jmp near ptr 004290CEh"
-"	      004290ce    pop edi"
-"	      004290cf    pop esi"
-"	      004290d0    pop ebx"
-"	      004290d1    leave"
-"	      004290d2    ret"
-);
+	__asm        jmp    near ptr 0x004290CE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290d3
 char * GetCurrentCityPath() {
 // LINE 166:
-	asm( 
-"	      004290d3    push ebp"
-"	      004290d4    mov ebp,esp"
-"	      004290d6    push ebx"
-"	      004290d7    push esi"
-"	      004290d8    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 167:
-	asm( 
-"	      004290d9    mov eax,5C2918h"
-"	      004290de    jmp near ptr 004290E3h"
-);
+	__asm        mov    eax, 0x5C2918;
+	__asm        jmp    near ptr 0x004290E3;
 // LINE 168:
-	asm( 
-"	      004290e3    pop edi"
-"	      004290e4    pop esi"
-"	      004290e5    pop ebx"
-"	      004290e6    leave"
-"	      004290e7    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290e8
 void SetCurrentCityPath(char * szNewCurrentCityPath) {
 // LINE 177:
-	asm( 
-"	      004290e8    push ebp"
-"	      004290e9    mov ebp,esp"
-"	      004290eb    push ebx"
-"	      004290ec    push esi"
-"	      004290ed    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 178:
-	asm( 
-"	      004290ee    mov eax,szNewCurrentCityPath"
-"	      004290f1    push eax"
-"	      004290f2    push 5C2918h"
-"	      004290f7    call 0056CEB0h"
-"	      004290fc    add esp,8"
-);
+	__asm        mov    eax, szNewCurrentCityPath;
+	__asm        push   eax;
+	__asm        push   0x5C2918;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 179:
-	asm( 
-"	      004290ff    jmp near ptr 00429104h"
-"	      00429104    pop edi"
-"	      00429105    pop esi"
-"	      00429106    pop ebx"
-"	      00429107    leave"
-"	      00429108    ret"
-);
+	__asm        jmp    near ptr 0x00429104;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429109
 void SetUserHasSavedCurrentCity() {
 // LINE 185:
-	asm( 
-"	      00429109    push ebp"
-"	      0042910a    mov ebp,esp"
-"	      0042910c    push ebx"
-"	      0042910d    push esi"
-"	      0042910e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 186:
-	asm( 
-"	      0042910f    cmp dword ptr ds:[5C2AA0h],1"
-"	      00429116    jne near ptr 0042912Bh"
-);
+	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        jne    near ptr 0x0042912B;
 // LINE 187:
-	asm( 
-"	      0042911c    mov dword ptr ds:[5C2A44h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2A44], 1;
 // LINE 188:
-	asm( 
-"	      00429126    jmp near ptr 00429135h"
-);
+	__asm        jmp    near ptr 0x00429135;
 // LINE 189:
-	asm( 
-"	      0042912b    mov dword ptr ds:[5C2AB8h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB8], 1;
 // LINE 190:
-	asm( 
-"	      00429135    jmp near ptr 0042913Ah"
-"	      0042913a    pop edi"
-"	      0042913b    pop esi"
-"	      0042913c    pop ebx"
-"	      0042913d    leave"
-"	      0042913e    ret"
-);
+	__asm        jmp    near ptr 0x0042913A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042913f
 int32_t GetUserHasSavedCurrentCity() {
 // LINE 196:
-	asm( 
-"	      0042913f    push ebp"
-"	      00429140    mov ebp,esp"
-"	      00429142    push ebx"
-"	      00429143    push esi"
-"	      00429144    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 197:
-	asm( 
-"	      00429145    cmp dword ptr ds:[5C2AA0h],1"
-"	      0042914c    jne near ptr 00429161h"
-);
+	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        jne    near ptr 0x00429161;
 // LINE 198:
-	asm( 
-"	      00429152    mov eax,ds:[5C2A44h]"
-"	      00429157    jmp near ptr 0042916Bh"
-);
+	__asm        mov    eax, ds:[0x5C2A44];
+	__asm        jmp    near ptr 0x0042916B;
 // LINE 199:
-	asm( 
-"	      0042915c    jmp near ptr 0042916Bh"
-);
+	__asm        jmp    near ptr 0x0042916B;
 // LINE 200:
-	asm( 
-"	      00429161    mov eax,ds:[5C2AB8h]"
-"	      00429166    jmp near ptr 0042916Bh"
-);
+	__asm        mov    eax, ds:[0x5C2AB8];
+	__asm        jmp    near ptr 0x0042916B;
 // LINE 201:
-	asm( 
-"	      0042916b    pop edi"
-"	      0042916c    pop esi"
-"	      0042916d    pop ebx"
-"	      0042916e    leave"
-"	      0042916f    ret"
-);
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429170
 void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * szCityFileName) {
 // LINE 214:
-	asm( 
-"	      00429170    push ebp"
-"	      00429171    mov ebp,esp"
-"	      00429173    push ebx"
-"	      00429174    push esi"
-"	      00429175    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 215:
-	asm( 
-"	      00429176    mov eax,szCityFileNameBase"
-"	      00429179    push eax"
-"	      0042917a    mov eax,szCityFileName"
-"	      0042917d    push eax"
-"	      0042917e    call 0056CEB0h"
-"	      00429183    add esp,8"
-);
+	__asm        mov    eax, szCityFileNameBase;
+	__asm        push   eax;
+	__asm        mov    eax, szCityFileName;
+	__asm        push   eax;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 217:
-	asm( 
-"	      00429186    cmp nCityFileType,1"
-"	      0042918a    jne near ptr 004291A7h"
-);
+	__asm        cmp    nCityFileType, 1;
+	__asm        jne    near ptr 0x004291A7;
 // LINE 218:
-	asm( 
-"	      00429190    mov eax,ds:[597540h]"
-"	      00429195    push eax"
-"	      00429196    mov eax,szCityFileName"
-"	      00429199    push eax"
-"	      0042919a    call 0056CEC0h"
-"	      0042919f    add esp,8"
-);
+	__asm        mov    eax, ds:[0x597540];
+	__asm        push   eax;
+	__asm        mov    eax, szCityFileName;
+	__asm        push   eax;
+	__asm        call   0x0056CEC0;
+	__asm        add    esp, 8;
 // LINE 219:
-	asm( 
-"	      004291a2    jmp near ptr 004291E4h"
-"	      004291a7    cmp nCityFileType,2"
-"	      004291ab    jne near ptr 004291C8h"
-);
+	__asm        jmp    near ptr 0x004291E4;
+	__asm        cmp    nCityFileType, 2;
+	__asm        jne    near ptr 0x004291C8;
 // LINE 220:
-	asm( 
-"	      004291b1    mov eax,ds:[597544h]"
-"	      004291b6    push eax"
-"	      004291b7    mov eax,szCityFileName"
-"	      004291ba    push eax"
-"	      004291bb    call 0056CEC0h"
-"	      004291c0    add esp,8"
-);
+	__asm        mov    eax, ds:[0x597544];
+	__asm        push   eax;
+	__asm        mov    eax, szCityFileName;
+	__asm        push   eax;
+	__asm        call   0x0056CEC0;
+	__asm        add    esp, 8;
 // LINE 221:
-	asm( 
-"	      004291c3    jmp near ptr 004291E4h"
-"	      004291c8    cmp nCityFileType,3"
-"	      004291cc    jne near ptr 004291E4h"
-);
+	__asm        jmp    near ptr 0x004291E4;
+	__asm        cmp    nCityFileType, 3;
+	__asm        jne    near ptr 0x004291E4;
 // LINE 222:
-	asm( 
-"	      004291d2    mov eax,ds:[597548h]"
-"	      004291d7    push eax"
-"	      004291d8    mov eax,szCityFileName"
-"	      004291db    push eax"
-"	      004291dc    call 0056CEC0h"
-"	      004291e1    add esp,8"
-);
+	__asm        mov    eax, ds:[0x597548];
+	__asm        push   eax;
+	__asm        mov    eax, szCityFileName;
+	__asm        push   eax;
+	__asm        call   0x0056CEC0;
+	__asm        add    esp, 8;
 // LINE 223:
-	asm( 
-"	      004291e4    jmp near ptr 004291E9h"
-"	      004291e9    pop edi"
-"	      004291ea    pop esi"
-"	      004291eb    pop ebx"
-"	      004291ec    leave"
-"	      004291ed    ret"
-);
+	__asm        jmp    near ptr 0x004291E9;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004291ee
 void InitializeAllUserInfo() {
 // LINE 230:
-	asm( 
-"	      004291ee    push ebp"
-"	      004291ef    mov ebp,esp"
-"	      004291f1    push ebx"
-"	      004291f2    push esi"
-"	      004291f3    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 231:
-	asm( 
-"	      004291f4    mov byte ptr ds:[5C2918h],0"
-);
+	__asm        mov    byte ptr ds:[0x5C2918], 0;
 // LINE 232:
-	asm( 
-"	      004291fb    mov byte ptr ds:[5C33E8h],0"
-);
+	__asm        mov    byte ptr ds:[0x5C33E8], 0;
 // LINE 234:
-	asm( 
-"	      00429202    mov dword ptr ds:[5C2AA8h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AA8], 0;
 // LINE 235:
-	asm( 
-"	      0042920c    mov dword ptr ds:[5C2AACh],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2AAC], 1;
 // LINE 236:
-	asm( 
-"	      00429216    mov dword ptr ds:[5C2AB0h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB0], 2;
 // LINE 237:
-	asm( 
-"	      00429220    mov dword ptr ds:[5C2AB4h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB4], 0;
 // LINE 238:
-	asm( 
-"	      0042922a    mov dword ptr ds:[5C2AB8h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB8], 0;
 // LINE 239:
-	asm( 
-"	      00429234    mov byte ptr ds:[5C2ABCh],0"
-);
+	__asm        mov    byte ptr ds:[0x5C2ABC], 0;
 // LINE 240:
-	asm( 
-"	      0042923b    mov dword ptr ds:[5C2AFCh],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AFC], 0;
 // LINE 241:
-	asm( 
-"	      00429245    mov dword ptr ds:[5C2B00h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B00], 0;
 // LINE 242:
-	asm( 
-"	      0042924f    mov dword ptr ds:[5C2B04h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B04], 0;
 // LINE 243:
-	asm( 
-"	      00429259    mov dword ptr ds:[5C2B08h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B08], 0;
 // LINE 244:
-	asm( 
-"	      00429263    mov dword ptr ds:[5C2B0Ch],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B0C], 0;
 // LINE 245:
-	asm( 
-"	      0042926d    mov dword ptr ds:[5C2B10h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B10], 0;
 // LINE 247:
-	asm( 
-"	      00429277    mov dword ptr ds:[5C2A20h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A20], 0;
 // LINE 248:
-	asm( 
-"	      00429281    mov dword ptr ds:[5C2A40h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A40], 0;
 // LINE 249:
-	asm( 
-"	      0042928b    mov dword ptr ds:[5C2A44h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A44], 0;
 // LINE 250:
-	asm( 
-"	      00429295    mov byte ptr ds:[5C2A48h],0"
-);
+	__asm        mov    byte ptr ds:[0x5C2A48], 0;
 // LINE 251:
-	asm( 
-"	      0042929c    mov dword ptr ds:[5C2A88h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A88], 0;
 // LINE 252:
-	asm( 
-"	      004292a6    mov dword ptr ds:[5C2A8Ch],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A8C], 0;
 // LINE 253:
-	asm( 
-"	      004292b0    mov dword ptr ds:[5C2A90h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A90], 0;
 // LINE 254:
-	asm( 
-"	      004292ba    mov dword ptr ds:[5C2A94h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A94], 0;
 // LINE 255:
-	asm( 
-"	      004292c4    mov dword ptr ds:[5C2A98h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A98], 0;
 // LINE 256:
-	asm( 
-"	      004292ce    mov dword ptr ds:[5C2A9Ch],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A9C], 0;
 // LINE 258:
-	asm( 
-"	      004292d8    mov dword ptr ds:[5C2AA0h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AA0], 0;
 // LINE 259:
-	asm( 
-"	      004292e2    jmp near ptr 004292E7h"
-"	      004292e7    pop edi"
-"	      004292e8    pop esi"
-"	      004292e9    pop ebx"
-"	      004292ea    leave"
-"	      004292eb    ret"
-);
+	__asm        jmp    near ptr 0x004292E7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004292ec
@@ -671,112 +489,80 @@ void CareerCityTweakInit() {
 	struct tagCareerCityInfo* currentCareerCityInfo;
 
 // LINE 267:
-	asm( 
-"	      004292ec    push ebp"
-"	      004292ed    mov ebp,esp"
-"	      004292ef    sub esp,30h"
-"	      004292f2    push ebx"
-"	      004292f3    push esi"
-"	      004292f4    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x30;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 268:
-	asm( 
-"	      004292f5    mov nPvals,9"
-);
+	__asm        mov    nPvals, 9;
 // LINE 273:
-	asm( 
-"	      004292fc    mov i,0"
-"	      00429303    jmp near ptr 0042930Bh"
-"	      00429308    inc i"
-"	      0042930b    cmp i,1Fh"
-"	      0042930f    jge near ptr 00429391h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0042930B;
+	__asm        inc    i;
+	__asm        cmp    i, 0x1F;
+	__asm        jge    near ptr 0x00429391;
 // LINE 274:
-	asm( 
-"	      00429315    mov eax,i"
-"	      00429318    shl eax,3"
-"	      0042931b    lea eax,[eax+eax*8]"
-"	      0042931e    add eax,5C2B18h"
-"	      00429323    mov currentCareerCityInfo,eax"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        lea    eax, [eax+eax*8];
+	__asm        add    eax, 0x5C2B18;
+	__asm        mov    currentCareerCityInfo, eax;
 // LINE 275:
-	asm( 
-"	      00429326    mov eax,currentCareerCityInfo"
-"	      00429329    add eax,4"
-"	      0042932c    mov pvals[0],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 4;
+	__asm        mov    pvals[0], eax;
 // LINE 276:
-	asm( 
-"	      0042932f    mov eax,currentCareerCityInfo"
-"	      00429332    add eax,8"
-"	      00429335    mov pvals[1],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 8;
+	__asm        mov    pvals[1], eax;
 // LINE 277:
-	asm( 
-"	      00429338    mov eax,currentCareerCityInfo"
-"	      0042933b    add eax,0Ch"
-"	      0042933e    mov pvals[2],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0xC;
+	__asm        mov    pvals[2], eax;
 // LINE 278:
-	asm( 
-"	      00429341    mov eax,currentCareerCityInfo"
-"	      00429344    add eax,10h"
-"	      00429347    mov pvals[3],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x10;
+	__asm        mov    pvals[3], eax;
 // LINE 279:
-	asm( 
-"	      0042934a    mov eax,currentCareerCityInfo"
-"	      0042934d    add eax,14h"
-"	      00429350    mov pvals[4],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x14;
+	__asm        mov    pvals[4], eax;
 // LINE 280:
-	asm( 
-"	      00429353    mov eax,currentCareerCityInfo"
-"	      00429356    add eax,18h"
-"	      00429359    mov pvals[5],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x18;
+	__asm        mov    pvals[5], eax;
 // LINE 281:
-	asm( 
-"	      0042935c    mov eax,currentCareerCityInfo"
-"	      0042935f    add eax,1Ch"
-"	      00429362    mov pvals[6],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x1C;
+	__asm        mov    pvals[6], eax;
 // LINE 282:
-	asm( 
-"	      00429365    mov eax,currentCareerCityInfo"
-"	      00429368    add eax,20h"
-"	      0042936b    mov pvals[7],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x20;
+	__asm        mov    pvals[7], eax;
 // LINE 283:
-	asm( 
-"	      0042936e    mov eax,currentCareerCityInfo"
-"	      00429371    add eax,24h"
-"	      00429374    mov pvals[8],eax"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        add    eax, 0x24;
+	__asm        mov    pvals[8], eax;
 // LINE 284:
-	asm( 
-"	      00429377    mov eax,currentCareerCityInfo"
-"	      0042937a    mov eax,[eax+44h]"
-"	      0042937d    push eax"
-"	      0042937e    push 9"
-"	      00429380    lea eax,pvals[0]"
-"	      00429383    push eax"
-"	      00429384    call 004C9AD0h"
-"	      00429389    add esp,0Ch"
-);
+	__asm        mov    eax, currentCareerCityInfo;
+	__asm        mov    eax, [eax+0x44];
+	__asm        push   eax;
+	__asm        push   9;
+	__asm        lea    eax, pvals[0];
+	__asm        push   eax;
+	__asm        call   0x004C9AD0;
+	__asm        add    esp, 0xC;
 // LINE 285:
-	asm( 
-"	      0042938c    jmp near ptr 00429308h"
-);
+	__asm        jmp    near ptr 0x00429308;
 // LINE 286:
-	asm( 
-"	      00429391    jmp near ptr 00429396h"
-"	      00429396    pop edi"
-"	      00429397    pop esi"
-"	      00429398    pop ebx"
-"	      00429399    leave"
-"	      0042939a    ret"
-);
+	__asm        jmp    near ptr 0x00429396;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042939b
@@ -784,172 +570,122 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	char[256] szFullCityFileName;
 
 // LINE 300:
-	asm( 
-"	      0042939b    push ebp"
-"	      0042939c    mov ebp,esp"
-"	      0042939e    sub esp,10Ch"
-"	      004293a4    push ebx"
-"	      004293a5    push esi"
-"	      004293a6    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10C;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 303:
-	asm( 
-"	      004293a7    cmp lNewCareerCityIndex,1Fh"
-"	      004293ab    jge near ptr 004293BBh"
-"	      004293b1    cmp lNewCareerCityIndex,0"
-"	      004293b5    jge near ptr 004293C2h"
-);
+	__asm        cmp    lNewCareerCityIndex, 0x1F;
+	__asm        jge    near ptr 0x004293BB;
+	__asm        cmp    lNewCareerCityIndex, 0;
+	__asm        jge    near ptr 0x004293C2;
 // LINE 304:
-	asm( 
-"	      004293bb    mov lNewCareerCityIndex,0"
-);
+	__asm        mov    lNewCareerCityIndex, 0;
 // LINE 307:
-	asm( 
-"	      004293c2    lea eax,szFullCityFileName[0]"
-"	      004293c8    push eax"
-"	      004293c9    mov eax,lNewCareerCityIndex"
-"	      004293cc    shl eax,3"
-"	      004293cf    mov eax,[eax+eax*8+5C2B5Ch]"
-"	      004293d6    push eax"
-"	      004293d7    push 1"
-"	      004293d9    call 00429170h"
-"	      004293de    add esp,0Ch"
-);
+	__asm        lea    eax, szFullCityFileName[0];
+	__asm        push   eax;
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
+	__asm        push   eax;
+	__asm        push   1;
+	__asm        call   0x00429170;
+	__asm        add    esp, 0xC;
 // LINE 308:
-	asm( 
-"	      004293e1    push 5C2918h"
-"	      004293e6    lea eax,szFullCityFileName[0]"
-"	      004293ec    push eax"
-"	      004293ed    push 0"
-"	      004293ef    push 5"
-"	      004293f1    call 0049172Bh"
-"	      004293f6    add esp,10h"
-);
+	__asm        push   0x5C2918;
+	__asm        lea    eax, szFullCityFileName[0];
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   5;
+	__asm        call   0x0049172B;
+	__asm        add    esp, 0x10;
 // LINE 310:
-	asm( 
-"	      004293f9    mov dword ptr ds:[5C2AA8h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AA8], 0;
 // LINE 311:
-	asm( 
-"	      00429403    mov dword ptr ds:[5C2AACh],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2AAC], 1;
 // LINE 312:
-	asm( 
-"	      0042940d    mov dword ptr ds:[5C2AB0h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB0], 2;
 // LINE 313:
-	asm( 
-"	      00429417    mov eax,lNewCareerCityIndex"
-"	      0042941a    mov ds:[5C2AB4h],eax"
-);
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        mov    ds:[0x5C2AB4], eax;
 // LINE 314:
-	asm( 
-"	      0042941f    mov dword ptr ds:[5C2AB8h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2AB8], 0;
 // LINE 315:
-	asm( 
-"	      00429429    mov byte ptr ds:[5C2ABCh],0"
-);
+	__asm        mov    byte ptr ds:[0x5C2ABC], 0;
 // LINE 316:
-	asm( 
-"	      00429430    mov dword ptr ds:[5C2AFCh],0FA0h"
-);
+	__asm        mov    dword ptr ds:[0x5C2AFC], 0xFA0;
 // LINE 317:
-	asm( 
-"	      0042943a    mov dword ptr ds:[5C2B00h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2B00], 0x10;
 // LINE 318:
-	asm( 
-"	      00429444    mov dword ptr ds:[5C2B04h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B04], 0;
 // LINE 319:
-	asm( 
-"	      0042944e    mov dword ptr ds:[5C2B08h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B08], 0;
 // LINE 320:
-	asm( 
-"	      00429458    mov dword ptr ds:[5C2B0Ch],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B0C], 0;
 // LINE 321:
-	asm( 
-"	      00429462    mov dword ptr ds:[5C2B10h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B10], 0;
 // LINE 322:
-	asm( 
-"	      0042946c    mov dword ptr ds:[5C2AA0h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2AA0], 2;
 // LINE 323:
-	asm( 
-"	      00429476    mov eax,lNewCareerCityIndex"
-"	      00429479    shl eax,3"
-"	      0042947c    mov eax,[eax+eax*8+5C2B3Ch]"
-"	      00429483    push eax"
-"	      00429484    call 004EF14Bh"
-"	      00429489    add esp,4"
-);
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
+	__asm        push   eax;
+	__asm        call   0x004EF14B;
+	__asm        add    esp, 4;
 // LINE 324:
-	asm( 
-"	      0042948c    mov dword ptr ds:[5C33D0h],0"
-"	      00429496    mov dword ptr ds:[5C33DCh],0"
-"	      004294a0    mov dword ptr ds:[5C33D8h],0"
-"	      004294aa    jmp near ptr 004294AFh"
-"	      004294af    jmp near ptr 004294B4h"
-"	      004294b4    cmp dword ptr ds:[5C33D8h],0"
-"	      004294bb    je near ptr 004294C6h"
-"	      004294c1    jmp near ptr 00429541h"
-"	      004294c6    cmp dword ptr ds:[5C33D4h],1"
-"	      004294cd    jne near ptr 004294E8h"
-"	      004294d3    call dword ptr ds:[6C3908h]"
-"	      004294d9    mov ds:[5C33D8h],eax"
-"	      004294de    jmp near ptr 0042953Ch"
-"	      004294e3    jmp near ptr 0042953Ch"
-"	      004294e8    cmp dword ptr ds:[5C33D4h],0"
-"	      004294ef    jne near ptr 00429523h"
-"	      004294f5    lea eax,[ebp-10Ch]"
-"	      004294fb    push eax"
-"	      004294fc    call dword ptr ds:[6C365Ch]"
-"	      00429502    mov eax,[ebp-10Ch]"
-"	      00429508    mov [ebp-104h],eax"
-"	      0042950e    mov eax,[ebp-104h]"
-"	      00429514    mov ds:[5C33D8h],eax"
-"	      00429519    jmp near ptr 0042953Ch"
-"	      0042951e    jmp near ptr 0042953Ch"
-"	      00429523    call dword ptr ds:[6C3908h]"
-"	      00429529    mov ecx,3E8h"
-"	      0042952e    sub edx,edx"
-"	      00429530    div ecx"
-"	      00429532    mov ds:[5C33D8h],eax"
-"	      00429537    jmp near ptr 0042953Ch"
-"	      0042953c    jmp near ptr 00429541h"
-"	      00429541    jmp near ptr 00429546h"
-"	      00429546    jmp near ptr 0042954Bh"
-"	      0042954b    jmp near ptr 00429550h"
-);
+	__asm        mov    dword ptr ds:[0x5C33D0], 0;
+	__asm        mov    dword ptr ds:[0x5C33DC], 0;
+	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        jmp    near ptr 0x004294AF;
+	__asm        jmp    near ptr 0x004294B4;
+	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        je     near ptr 0x004294C6;
+	__asm        jmp    near ptr 0x00429541;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        jne    near ptr 0x004294E8;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    near ptr 0x0042953C;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        jne    near ptr 0x00429523;
+	__asm        lea    eax, [ebp-0x10C];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        mov    eax, [ebp-0x10C];
+	__asm        mov    [ebp-0x104], eax;
+	__asm        mov    eax, [ebp-0x104];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    near ptr 0x0042953C;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ecx, 0x3E8;
+	__asm        sub    edx, edx;
+	__asm        div    ecx;
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    near ptr 0x00429541;
+	__asm        jmp    near ptr 0x00429546;
+	__asm        jmp    near ptr 0x0042954B;
+	__asm        jmp    near ptr 0x00429550;
 // LINE 327:
-	asm( 
-"	      00429550    mov dword ptr ds:[5C2AFCh],0FA0h"
-);
+	__asm        mov    dword ptr ds:[0x5C2AFC], 0xFA0;
 // LINE 328:
-	asm( 
-"	      0042955a    mov dword ptr ds:[5C2A8Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
 // LINE 329:
-	asm( 
-"	      00429564    mov dword ptr ds:[5C2B04h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B04], 0xFFFFFFFF;
 // LINE 330:
-	asm( 
-"	      0042956e    mov dword ptr ds:[5C2B10h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2B10], 0xA;
 // LINE 332:
-	asm( 
-"	      00429578    jmp near ptr 0042957Dh"
-"	      0042957d    pop edi"
-"	      0042957e    pop esi"
-"	      0042957f    pop ebx"
-"	      00429580    leave"
-"	      00429581    ret"
-);
+	__asm        jmp    near ptr 0x0042957D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429582
@@ -957,174 +693,126 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	char * chPrefData;
 
 // LINE 345:
-	asm( 
-"	      00429582    push ebp"
-"	      00429583    mov ebp,esp"
-"	      00429585    sub esp,10h"
-"	      00429588    push ebx"
-"	      00429589    push esi"
-"	      0042958a    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 348:
-	asm( 
-"	      0042958b    mov eax,szUserCityPath"
-"	      0042958e    push eax"
-"	      0042958f    push 5C2918h"
-"	      00429594    call 0056CEB0h"
-"	      00429599    add esp,8"
-);
+	__asm        mov    eax, szUserCityPath;
+	__asm        push   eax;
+	__asm        push   0x5C2918;
+	__asm        call   0x0056CEB0;
+	__asm        add    esp, 8;
 // LINE 349:
-	asm( 
-"	      0042959c    mov edi,5C2A20h"
-"	      004295a1    lea esi,ds:[5C2B1Ch]"
-"	      004295a7    mov ecx,9"
-"	      004295ac    rep movsd"
-);
+	__asm        mov    edi, 0x5C2A20;
+	__asm        lea    esi, ds:[0x5C2B1C];
+	__asm        mov    ecx, 9;
+	__asm        rep movsd;
 // LINE 350:
-	asm( 
-"	      004295ae    mov dword ptr ds:[5C2A44h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A44], 0;
 // LINE 351:
-	asm( 
-"	      004295b8    mov byte ptr ds:[5C2A48h],0"
-);
+	__asm        mov    byte ptr ds:[0x5C2A48], 0;
 // LINE 352:
-	asm( 
-"	      004295bf    mov dword ptr ds:[5C2A88h],0FA0h"
-);
+	__asm        mov    dword ptr ds:[0x5C2A88], 0xFA0;
 // LINE 353:
-	asm( 
-"	      004295c9    mov dword ptr ds:[5C2A8Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
 // LINE 354:
-	asm( 
-"	      004295d3    mov dword ptr ds:[5C2A90h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A90], 0;
 // LINE 355:
-	asm( 
-"	      004295dd    mov dword ptr ds:[5C2A94h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A94], 0;
 // LINE 356:
-	asm( 
-"	      004295e7    mov dword ptr ds:[5C2A98h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A98], 0;
 // LINE 357:
-	asm( 
-"	      004295f1    mov dword ptr ds:[5C2A9Ch],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2A9C], 0;
 // LINE 358:
-	asm( 
-"	      004295fb    mov dword ptr ds:[5C2AA0h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2AA0], 1;
 // LINE 361:
-	asm( 
-"	      00429605    cmp dword ptr ds:[599BC4h],0"
-"	      0042960c    je near ptr 00429661h"
-);
+	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        je     near ptr 0x00429661;
 // LINE 362:
-	asm( 
-"	      00429612    push 5EEEEEEh"
-"	      00429617    mov eax,ds:[599BC4h]"
-"	      0042961c    mov eax,[eax]"
-"	      0042961e    mov ecx,ds:[599BC4h]"
-"	      00429624    call dword ptr [eax+1Ch]"
-"	      00429627    mov chPrefData,eax"
-);
+	__asm        push   0x5EEEEEE;
+	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        call   dword ptr [eax+0x1C];
+	__asm        mov    chPrefData, eax;
 // LINE 363:
-	asm( 
-"	      0042962a    cmp chPrefData,0"
-"	      0042962e    je near ptr 00429661h"
-);
+	__asm        cmp    chPrefData, 0;
+	__asm        je     near ptr 0x00429661;
 // LINE 364:
-	asm( 
-"	      00429634    push 5EEEEEEh"
-"	      00429639    mov eax,ds:[599BC4h]"
-"	      0042963e    mov eax,[eax]"
-"	      00429640    mov ecx,ds:[599BC4h]"
-"	      00429646    call dword ptr [eax+24h]"
-"	      00429649    cmp eax,24h"
-"	      0042964c    jne near ptr 00429661h"
-);
+	__asm        push   0x5EEEEEE;
+	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, [eax];
+	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        call   dword ptr [eax+0x24];
+	__asm        cmp    eax, 0x24;
+	__asm        jne    near ptr 0x00429661;
 // LINE 365:
-	asm( 
-"	      00429652    mov edi,5C2A20h"
-"	      00429657    mov esi,chPrefData"
-"	      0042965a    mov ecx,9"
-"	      0042965f    rep movsd"
-);
+	__asm        mov    edi, 0x5C2A20;
+	__asm        mov    esi, chPrefData;
+	__asm        mov    ecx, 9;
+	__asm        rep movsd;
 // LINE 368:
-	asm( 
-"	      00429661    call 004611BFh"
-"	      00429666    cmp eax,1"
-"	      00429669    sbb eax,eax"
-"	      0042966b    neg eax"
-"	      0042966d    push eax"
-"	      0042966e    call 004EF14Bh"
-"	      00429673    add esp,4"
-);
+	__asm        call   0x004611BF;
+	__asm        cmp    eax, 1;
+	__asm        sbb    eax, eax;
+	__asm        neg    eax;
+	__asm        push   eax;
+	__asm        call   0x004EF14B;
+	__asm        add    esp, 4;
 // LINE 369:
-	asm( 
-"	      00429676    mov dword ptr ds:[5C33D0h],0"
-"	      00429680    mov dword ptr ds:[5C33DCh],0"
-"	      0042968a    mov dword ptr ds:[5C33D8h],0"
-"	      00429694    jmp near ptr 00429699h"
-"	      00429699    jmp near ptr 0042969Eh"
-"	      0042969e    cmp dword ptr ds:[5C33D8h],0"
-"	      004296a5    je near ptr 004296B0h"
-"	      004296ab    jmp near ptr 0042971Fh"
-"	      004296b0    cmp dword ptr ds:[5C33D4h],1"
-"	      004296b7    jne near ptr 004296D2h"
-"	      004296bd    call dword ptr ds:[6C3908h]"
-"	      004296c3    mov ds:[5C33D8h],eax"
-"	      004296c8    jmp near ptr 0042971Ah"
-"	      004296cd    jmp near ptr 0042971Ah"
-"	      004296d2    cmp dword ptr ds:[5C33D4h],0"
-"	      004296d9    jne near ptr 00429701h"
-"	      004296df    lea eax,[ebp-10h]"
-"	      004296e2    push eax"
-"	      004296e3    call dword ptr ds:[6C365Ch]"
-"	      004296e9    mov eax,[ebp-10h]"
-"	      004296ec    mov [ebp-8],eax"
-"	      004296ef    mov eax,[ebp-8]"
-"	      004296f2    mov ds:[5C33D8h],eax"
-"	      004296f7    jmp near ptr 0042971Ah"
-"	      004296fc    jmp near ptr 0042971Ah"
-"	      00429701    call dword ptr ds:[6C3908h]"
-"	      00429707    mov ecx,3E8h"
-"	      0042970c    sub edx,edx"
-"	      0042970e    div ecx"
-"	      00429710    mov ds:[5C33D8h],eax"
-"	      00429715    jmp near ptr 0042971Ah"
-"	      0042971a    jmp near ptr 0042971Fh"
-"	      0042971f    jmp near ptr 00429724h"
-"	      00429724    jmp near ptr 00429729h"
-"	      00429729    jmp near ptr 0042972Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C33D0], 0;
+	__asm        mov    dword ptr ds:[0x5C33DC], 0;
+	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        jmp    near ptr 0x00429699;
+	__asm        jmp    near ptr 0x0042969E;
+	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        je     near ptr 0x004296B0;
+	__asm        jmp    near ptr 0x0042971F;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        jne    near ptr 0x004296D2;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    near ptr 0x0042971A;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        jne    near ptr 0x00429701;
+	__asm        lea    eax, [ebp-0x10];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    [ebp-8], eax;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    near ptr 0x0042971A;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ecx, 0x3E8;
+	__asm        sub    edx, edx;
+	__asm        div    ecx;
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    near ptr 0x0042971F;
+	__asm        jmp    near ptr 0x00429724;
+	__asm        jmp    near ptr 0x00429729;
+	__asm        jmp    near ptr 0x0042972E;
 // LINE 372:
-	asm( 
-"	      0042972e    mov dword ptr ds:[5C2A88h],0FA0h"
-);
+	__asm        mov    dword ptr ds:[0x5C2A88], 0xFA0;
 // LINE 373:
-	asm( 
-"	      00429738    mov dword ptr ds:[5C2A8Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
 // LINE 374:
-	asm( 
-"	      00429742    mov dword ptr ds:[5C2A90h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2A90], 0xFFFFFFFF;
 // LINE 375:
-	asm( 
-"	      0042974c    mov dword ptr ds:[5C2A9Ch],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2A9C], 0xA;
 // LINE 377:
-	asm( 
-"	      00429756    jmp near ptr 0042975Bh"
-"	      0042975b    pop edi"
-"	      0042975c    pop esi"
-"	      0042975d    pop ebx"
-"	      0042975e    leave"
-"	      0042975f    ret"
-);
+	__asm        jmp    near ptr 0x0042975B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429760
@@ -1133,129 +821,105 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	long lOriginalIndex;
 
 // LINE 391:
-	asm( 
-"	      00429760    push ebp"
-"	      00429761    mov ebp,esp"
-"	      00429763    sub esp,110h"
-"	      00429769    push ebx"
-"	      0042976a    push esi"
-"	      0042976b    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x110;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 395:
-	asm( 
-"	      0042976c    mov eax,ds:[5C2AB4h]"
-"	      00429771    mov lOriginalIndex,eax"
-);
+	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        mov    lOriginalIndex, eax;
 // LINE 398:
-	asm( 
-"	      00429774    lea eax,szFullCityFileName[0]"
-"	      0042977a    push eax"
-"	      0042977b    mov eax,lNewCareerCityIndex"
-"	      0042977e    shl eax,3"
-"	      00429781    mov eax,[eax+eax*8+5C2B5Ch]"
-"	      00429788    push eax"
-"	      00429789    push 1"
-"	      0042978b    call 00429170h"
-"	      00429790    add esp,0Ch"
-);
+	__asm        lea    eax, szFullCityFileName[0];
+	__asm        push   eax;
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
+	__asm        push   eax;
+	__asm        push   1;
+	__asm        call   0x00429170;
+	__asm        add    esp, 0xC;
 // LINE 399:
-	asm( 
-"	      00429793    push 5C2918h"
-"	      00429798    lea eax,szFullCityFileName[0]"
-"	      0042979e    push eax"
-"	      0042979f    push 0"
-"	      004297a1    push 5"
-"	      004297a3    call 0049172Bh"
-"	      004297a8    add esp,10h"
-);
+	__asm        push   0x5C2918;
+	__asm        lea    eax, szFullCityFileName[0];
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        push   5;
+	__asm        call   0x0049172B;
+	__asm        add    esp, 0x10;
 // LINE 401:
-	asm( 
-"	      004297ab    mov eax,lOriginalIndex"
-"	      004297ae    shl eax,3"
-"	      004297b1    mov eax,[eax+eax*8+5C2B40h]"
-"	      004297b8    mov ds:[5C2AA8h],eax"
-);
+	__asm        mov    eax, lOriginalIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B40];
+	__asm        mov    ds:[0x5C2AA8], eax;
 // LINE 402:
-	asm( 
-"	      004297bd    mov eax,lOriginalIndex"
-"	      004297c0    shl eax,3"
-"	      004297c3    mov eax,[eax+eax*8+5C2B44h]"
-"	      004297ca    mov ds:[5C2AACh],eax"
-);
+	__asm        mov    eax, lOriginalIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B44];
+	__asm        mov    ds:[0x5C2AAC], eax;
 // LINE 403:
-	asm( 
-"	      004297cf    mov eax,lOriginalIndex"
-"	      004297d2    shl eax,3"
-"	      004297d5    mov eax,[eax+eax*8+5C2B48h]"
-"	      004297dc    mov ds:[5C2AB0h],eax"
-);
+	__asm        mov    eax, lOriginalIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B48];
+	__asm        mov    ds:[0x5C2AB0], eax;
 // LINE 404:
-	asm( 
-"	      004297e1    mov eax,lNewCareerCityIndex"
-"	      004297e4    mov ds:[5C2AB4h],eax"
-);
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        mov    ds:[0x5C2AB4], eax;
 // LINE 405:
-	asm( 
-"	      004297e9    mov eax,lNewCareerCityIndex"
-"	      004297ec    shl eax,3"
-"	      004297ef    mov eax,[eax+eax*8+5C2B3Ch]"
-"	      004297f6    push eax"
-"	      004297f7    call 004EF14Bh"
-"	      004297fc    add esp,4"
-);
+	__asm        mov    eax, lNewCareerCityIndex;
+	__asm        shl    eax, 3;
+	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
+	__asm        push   eax;
+	__asm        call   0x004EF14B;
+	__asm        add    esp, 4;
 // LINE 406:
-	asm( 
-"	      004297ff    mov dword ptr ds:[5C33D0h],0"
-"	      00429809    mov dword ptr ds:[5C33DCh],0"
-"	      00429813    mov dword ptr ds:[5C33D8h],0"
-"	      0042981d    jmp near ptr 00429822h"
-"	      00429822    jmp near ptr 00429827h"
-"	      00429827    cmp dword ptr ds:[5C33D8h],0"
-"	      0042982e    je near ptr 00429839h"
-"	      00429834    jmp near ptr 004298B4h"
-"	      00429839    cmp dword ptr ds:[5C33D4h],1"
-"	      00429840    jne near ptr 0042985Bh"
-"	      00429846    call dword ptr ds:[6C3908h]"
-"	      0042984c    mov ds:[5C33D8h],eax"
-"	      00429851    jmp near ptr 004298AFh"
-"	      00429856    jmp near ptr 004298AFh"
-"	      0042985b    cmp dword ptr ds:[5C33D4h],0"
-"	      00429862    jne near ptr 00429896h"
-"	      00429868    lea eax,[ebp-110h]"
-"	      0042986e    push eax"
-"	      0042986f    call dword ptr ds:[6C365Ch]"
-"	      00429875    mov eax,[ebp-110h]"
-"	      0042987b    mov [ebp-108h],eax"
-"	      00429881    mov eax,[ebp-108h]"
-"	      00429887    mov ds:[5C33D8h],eax"
-"	      0042988c    jmp near ptr 004298AFh"
-"	      00429891    jmp near ptr 004298AFh"
-"	      00429896    call dword ptr ds:[6C3908h]"
-"	      0042989c    mov ecx,3E8h"
-"	      004298a1    sub edx,edx"
-"	      004298a3    div ecx"
-"	      004298a5    mov ds:[5C33D8h],eax"
-"	      004298aa    jmp near ptr 004298AFh"
-"	      004298af    jmp near ptr 004298B4h"
-"	      004298b4    jmp near ptr 004298B9h"
-"	      004298b9    jmp near ptr 004298BEh"
-"	      004298be    jmp near ptr 004298C3h"
-);
+	__asm        mov    dword ptr ds:[0x5C33D0], 0;
+	__asm        mov    dword ptr ds:[0x5C33DC], 0;
+	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        jmp    near ptr 0x00429822;
+	__asm        jmp    near ptr 0x00429827;
+	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        je     near ptr 0x00429839;
+	__asm        jmp    near ptr 0x004298B4;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        jne    near ptr 0x0042985B;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    near ptr 0x004298AF;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        jne    near ptr 0x00429896;
+	__asm        lea    eax, [ebp-0x110];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C365C];
+	__asm        mov    eax, [ebp-0x110];
+	__asm        mov    [ebp-0x108], eax;
+	__asm        mov    eax, [ebp-0x108];
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    near ptr 0x004298AF;
+	__asm        call   dword ptr ds:[0x6C3908];
+	__asm        mov    ecx, 0x3E8;
+	__asm        sub    edx, edx;
+	__asm        div    ecx;
+	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    near ptr 0x004298B4;
+	__asm        jmp    near ptr 0x004298B9;
+	__asm        jmp    near ptr 0x004298BE;
+	__asm        jmp    near ptr 0x004298C3;
 // LINE 407:
-	asm( 
-"	      004298c3    push 0"
-"	      004298c5    call 0042902Dh"
-"	      004298ca    add esp,4"
-);
+	__asm        push   0;
+	__asm        call   0x0042902D;
+	__asm        add    esp, 4;
 // LINE 408:
-	asm( 
-"	      004298cd    jmp near ptr 004298D2h"
-"	      004298d2    pop edi"
-"	      004298d3    pop esi"
-"	      004298d4    pop ebx"
-"	      004298d5    leave"
-"	      004298d6    ret"
-);
+	__asm        jmp    near ptr 0x004298D2;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004298d7
@@ -1263,1278 +927,676 @@ void InitializeAllCareerCitiesInfo() {
 	int32_t i;
 
 // LINE 418:
-	asm( 
-"	      004298d7    push ebp"
-"	      004298d8    mov ebp,esp"
-"	      004298da    sub esp,4"
-"	      004298dd    push ebx"
-"	      004298de    push esi"
-"	      004298df    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 421:
-	asm( 
-"	      004298e0    mov dword ptr ds:[5C2B4Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B4C], 0xFFFFFFFF;
 // LINE 422:
-	asm( 
-"	      004298ea    mov dword ptr ds:[5C2B50h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B50], 0xFFFFFFFF;
 // LINE 423:
-	asm( 
-"	      004298f4    mov dword ptr ds:[5C2B54h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B54], 0xFFFFFFFF;
 // LINE 424:
-	asm( 
-"	      004298fe    mov dword ptr ds:[5C2B40h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2B40], 3;
 // LINE 425:
-	asm( 
-"	      00429908    mov dword ptr ds:[5C2B44h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2B44], 4;
 // LINE 426:
-	asm( 
-"	      00429912    mov dword ptr ds:[5C2B48h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2B48], 1;
 // LINE 427:
-	asm( 
-"	      0042991c    mov dword ptr ds:[5C2B58h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B58], 0;
 // LINE 428:
-	asm( 
-"	      00429926    mov dword ptr ds:[5C2B18h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B18], 0;
 // LINE 429:
-	asm( 
-"	      00429930    mov eax,ds:[5974C0h]"
-"	      00429935    mov ds:[5C2B5Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974C0];
+	__asm        mov    ds:[0x5C2B5C], eax;
 // LINE 431:
-	asm( 
-"	      0042993a    mov dword ptr ds:[5C2B94h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B94], 0xFFFFFFFF;
 // LINE 432:
-	asm( 
-"	      00429944    mov dword ptr ds:[5C2B98h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B98], 0xFFFFFFFF;
 // LINE 433:
-	asm( 
-"	      0042994e    mov dword ptr ds:[5C2B9Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2B9C], 0xFFFFFFFF;
 // LINE 434:
-	asm( 
-"	      00429958    mov dword ptr ds:[5C2B88h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2B88], 3;
 // LINE 435:
-	asm( 
-"	      00429962    mov dword ptr ds:[5C2B8Ch],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2B8C], 4;
 // LINE 436:
-	asm( 
-"	      0042996c    mov dword ptr ds:[5C2B90h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2B90], 5;
 // LINE 437:
-	asm( 
-"	      00429976    mov dword ptr ds:[5C2BA0h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2BA0], 1;
 // LINE 438:
-	asm( 
-"	      00429980    mov dword ptr ds:[5C2B60h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2B60], 0;
 // LINE 439:
-	asm( 
-"	      0042998a    mov eax,ds:[5974C4h]"
-"	      0042998f    mov ds:[5C2BA4h],eax"
-);
+	__asm        mov    eax, ds:[0x5974C4];
+	__asm        mov    ds:[0x5C2BA4], eax;
 // LINE 441:
-	asm( 
-"	      00429994    mov dword ptr ds:[5C2BDCh],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2BDC], 0xFFFFFFFF;
 // LINE 442:
-	asm( 
-"	      0042999e    mov dword ptr ds:[5C2BE0h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2BE0], 0xFFFFFFFF;
 // LINE 443:
-	asm( 
-"	      004299a8    mov dword ptr ds:[5C2BE4h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C2BE4], 0xFFFFFFFF;
 // LINE 444:
-	asm( 
-"	      004299b2    mov dword ptr ds:[5C2BD0h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2BD0], 1;
 // LINE 445:
-	asm( 
-"	      004299bc    mov dword ptr ds:[5C2BD4h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2BD4], 4;
 // LINE 446:
-	asm( 
-"	      004299c6    mov dword ptr ds:[5C2BD8h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2BD8], 5;
 // LINE 447:
-	asm( 
-"	      004299d0    mov dword ptr ds:[5C2BE8h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2BE8], 2;
 // LINE 448:
-	asm( 
-"	      004299da    mov dword ptr ds:[5C2BA8h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2BA8], 0;
 // LINE 449:
-	asm( 
-"	      004299e4    mov eax,ds:[5974C8h]"
-"	      004299e9    mov ds:[5C2BECh],eax"
-);
+	__asm        mov    eax, ds:[0x5974C8];
+	__asm        mov    ds:[0x5C2BEC], eax;
 // LINE 451:
-	asm( 
-"	      004299ee    mov dword ptr ds:[5C2C24h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2C24], 1;
 // LINE 452:
-	asm( 
-"	      004299f8    mov dword ptr ds:[5C2C28h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2C28], 2;
 // LINE 453:
-	asm( 
-"	      00429a02    mov dword ptr ds:[5C2C2Ch],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2C2C], 4;
 // LINE 454:
-	asm( 
-"	      00429a0c    mov dword ptr ds:[5C2C18h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2C18], 4;
 // LINE 455:
-	asm( 
-"	      00429a16    mov dword ptr ds:[5C2C1Ch],6"
-);
+	__asm        mov    dword ptr ds:[0x5C2C1C], 6;
 // LINE 456:
-	asm( 
-"	      00429a20    mov dword ptr ds:[5C2C20h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2C20], 7;
 // LINE 457:
-	asm( 
-"	      00429a2a    mov dword ptr ds:[5C2C30h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2C30], 3;
 // LINE 458:
-	asm( 
-"	      00429a34    mov dword ptr ds:[5C2BF0h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2BF0], 1;
 // LINE 459:
-	asm( 
-"	      00429a3e    mov eax,ds:[5974CCh]"
-"	      00429a43    mov ds:[5C2C34h],eax"
-);
+	__asm        mov    eax, ds:[0x5974CC];
+	__asm        mov    ds:[0x5C2C34], eax;
 // LINE 461:
-	asm( 
-"	      00429a48    mov dword ptr ds:[5C2C6Ch],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2C6C], 1;
 // LINE 462:
-	asm( 
-"	      00429a52    mov dword ptr ds:[5C2C70h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2C70], 3;
 // LINE 463:
-	asm( 
-"	      00429a5c    mov dword ptr ds:[5C2C74h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2C74], 5;
 // LINE 464:
-	asm( 
-"	      00429a66    mov dword ptr ds:[5C2C60h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C2C60], 6;
 // LINE 465:
-	asm( 
-"	      00429a70    mov dword ptr ds:[5C2C64h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2C64], 7;
 // LINE 466:
-	asm( 
-"	      00429a7a    mov dword ptr ds:[5C2C68h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C2C68], 8;
 // LINE 467:
-	asm( 
-"	      00429a84    mov dword ptr ds:[5C2C78h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2C78], 4;
 // LINE 468:
-	asm( 
-"	      00429a8e    mov dword ptr ds:[5C2C38h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2C38], 1;
 // LINE 469:
-	asm( 
-"	      00429a98    mov eax,ds:[5974D0h]"
-"	      00429a9d    mov ds:[5C2C7Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974D0];
+	__asm        mov    ds:[0x5C2C7C], eax;
 // LINE 471:
-	asm( 
-"	      00429aa2    mov dword ptr ds:[5C2CB4h],0"
-);
+	__asm        mov    dword ptr ds:[0x5C2CB4], 0;
 // LINE 472:
-	asm( 
-"	      00429aac    mov dword ptr ds:[5C2CB8h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2CB8], 1;
 // LINE 473:
-	asm( 
-"	      00429ab6    mov dword ptr ds:[5C2CBCh],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2CBC], 4;
 // LINE 474:
-	asm( 
-"	      00429ac0    mov dword ptr ds:[5C2CA8h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2CA8], 4;
 // LINE 475:
-	asm( 
-"	      00429aca    mov dword ptr ds:[5C2CACh],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2CAC], 7;
 // LINE 476:
-	asm( 
-"	      00429ad4    mov dword ptr ds:[5C2CB0h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C2CB0], 8;
 // LINE 477:
-	asm( 
-"	      00429ade    mov dword ptr ds:[5C2CC0h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2CC0], 5;
 // LINE 478:
-	asm( 
-"	      00429ae8    mov dword ptr ds:[5C2C80h],1"
-);
+	__asm        mov    dword ptr ds:[0x5C2C80], 1;
 // LINE 479:
-	asm( 
-"	      00429af2    mov eax,ds:[5974D4h]"
-"	      00429af7    mov ds:[5C2CC4h],eax"
-);
+	__asm        mov    eax, ds:[0x5974D4];
+	__asm        mov    ds:[0x5C2CC4], eax;
 // LINE 481:
-	asm( 
-"	      00429afc    mov dword ptr ds:[5C2CFCh],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2CFC], 3;
 // LINE 482:
-	asm( 
-"	      00429b06    mov dword ptr ds:[5C2D00h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2D00], 4;
 // LINE 483:
-	asm( 
-"	      00429b10    mov dword ptr ds:[5C2D04h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2D04], 7;
 // LINE 484:
-	asm( 
-"	      00429b1a    mov dword ptr ds:[5C2CF0h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2CF0], 7;
 // LINE 485:
-	asm( 
-"	      00429b24    mov dword ptr ds:[5C2CF4h],9"
-);
+	__asm        mov    dword ptr ds:[0x5C2CF4], 9;
 // LINE 486:
-	asm( 
-"	      00429b2e    mov dword ptr ds:[5C2CF8h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2CF8], 0xA;
 // LINE 487:
-	asm( 
-"	      00429b38    mov dword ptr ds:[5C2D08h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C2D08], 6;
 // LINE 488:
-	asm( 
-"	      00429b42    mov dword ptr ds:[5C2CC8h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2CC8], 2;
 // LINE 489:
-	asm( 
-"	      00429b4c    mov eax,ds:[5974D8h]"
-"	      00429b51    mov ds:[5C2D0Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974D8];
+	__asm        mov    ds:[0x5C2D0C], eax;
 // LINE 491:
-	asm( 
-"	      00429b56    mov dword ptr ds:[5C2D44h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2D44], 4;
 // LINE 492:
-	asm( 
-"	      00429b60    mov dword ptr ds:[5C2D48h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C2D48], 6;
 // LINE 493:
-	asm( 
-"	      00429b6a    mov dword ptr ds:[5C2D4Ch],8"
-);
+	__asm        mov    dword ptr ds:[0x5C2D4C], 8;
 // LINE 494:
-	asm( 
-"	      00429b74    mov dword ptr ds:[5C2D38h],9"
-);
+	__asm        mov    dword ptr ds:[0x5C2D38], 9;
 // LINE 495:
-	asm( 
-"	      00429b7e    mov dword ptr ds:[5C2D3Ch],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2D3C], 0xA;
 // LINE 496:
-	asm( 
-"	      00429b88    mov dword ptr ds:[5C2D40h],0Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C2D40], 0xB;
 // LINE 497:
-	asm( 
-"	      00429b92    mov dword ptr ds:[5C2D50h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2D50], 7;
 // LINE 498:
-	asm( 
-"	      00429b9c    mov dword ptr ds:[5C2D10h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2D10], 2;
 // LINE 499:
-	asm( 
-"	      00429ba6    mov eax,ds:[5974DCh]"
-"	      00429bab    mov ds:[5C2D54h],eax"
-);
+	__asm        mov    eax, ds:[0x5974DC];
+	__asm        mov    ds:[0x5C2D54], eax;
 // LINE 501:
-	asm( 
-"	      00429bb0    mov dword ptr ds:[5C2D8Ch],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2D8C], 3;
 // LINE 502:
-	asm( 
-"	      00429bba    mov dword ptr ds:[5C2D90h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2D90], 4;
 // LINE 503:
-	asm( 
-"	      00429bc4    mov dword ptr ds:[5C2D94h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2D94], 7;
 // LINE 504:
-	asm( 
-"	      00429bce    mov dword ptr ds:[5C2D80h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2D80], 7;
 // LINE 505:
-	asm( 
-"	      00429bd8    mov dword ptr ds:[5C2D84h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2D84], 0xA;
 // LINE 506:
-	asm( 
-"	      00429be2    mov dword ptr ds:[5C2D88h],0Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C2D88], 0xB;
 // LINE 507:
-	asm( 
-"	      00429bec    mov dword ptr ds:[5C2D98h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C2D98], 8;
 // LINE 508:
-	asm( 
-"	      00429bf6    mov dword ptr ds:[5C2D58h],2"
-);
+	__asm        mov    dword ptr ds:[0x5C2D58], 2;
 // LINE 509:
-	asm( 
-"	      00429c00    mov eax,ds:[5974E0h]"
-"	      00429c05    mov ds:[5C2D9Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974E0];
+	__asm        mov    ds:[0x5C2D9C], eax;
 // LINE 511:
-	asm( 
-"	      00429c0a    mov dword ptr ds:[5C2DD4h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2DD4], 7;
 // LINE 512:
-	asm( 
-"	      00429c14    mov dword ptr ds:[5C2DD8h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C2DD8], 8;
 // LINE 513:
-	asm( 
-"	      00429c1e    mov dword ptr ds:[5C2DDCh],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2DDC], 0xA;
 // LINE 514:
-	asm( 
-"	      00429c28    mov dword ptr ds:[5C2DC8h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2DC8], 0xA;
 // LINE 515:
-	asm( 
-"	      00429c32    mov dword ptr ds:[5C2DCCh],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C2DCC], 0xC;
 // LINE 516:
-	asm( 
-"	      00429c3c    mov dword ptr ds:[5C2DD0h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2DD0], 0xD;
 // LINE 517:
-	asm( 
-"	      00429c46    mov dword ptr ds:[5C2DE0h],9"
-);
+	__asm        mov    dword ptr ds:[0x5C2DE0], 9;
 // LINE 518:
-	asm( 
-"	      00429c50    mov dword ptr ds:[5C2DA0h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2DA0], 3;
 // LINE 519:
-	asm( 
-"	      00429c5a    mov eax,ds:[5974E4h]"
-"	      00429c5f    mov ds:[5C2DE4h],eax"
-);
+	__asm        mov    eax, ds:[0x5974E4];
+	__asm        mov    ds:[0x5C2DE4], eax;
 // LINE 521:
-	asm( 
-"	      00429c64    mov dword ptr ds:[5C2E1Ch],9"
-);
+	__asm        mov    dword ptr ds:[0x5C2E1C], 9;
 // LINE 522:
-	asm( 
-"	      00429c6e    mov dword ptr ds:[5C2E20h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2E20], 7;
 // LINE 523:
-	asm( 
-"	      00429c78    mov dword ptr ds:[5C2E24h],0Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E24], 0xB;
 // LINE 524:
-	asm( 
-"	      00429c82    mov dword ptr ds:[5C2E10h],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C2E10], 0xC;
 // LINE 525:
-	asm( 
-"	      00429c8c    mov dword ptr ds:[5C2E14h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E14], 0xD;
 // LINE 526:
-	asm( 
-"	      00429c96    mov dword ptr ds:[5C2E18h],0Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E18], 0xE;
 // LINE 527:
-	asm( 
-"	      00429ca0    mov dword ptr ds:[5C2E28h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2E28], 0xA;
 // LINE 528:
-	asm( 
-"	      00429caa    mov dword ptr ds:[5C2DE8h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2DE8], 3;
 // LINE 529:
-	asm( 
-"	      00429cb4    mov eax,ds:[5974E8h]"
-"	      00429cb9    mov ds:[5C2E2Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974E8];
+	__asm        mov    ds:[0x5C2E2C], eax;
 // LINE 531:
-	asm( 
-"	      00429cbe    mov dword ptr ds:[5C2E64h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C2E64], 6;
 // LINE 532:
-	asm( 
-"	      00429cc8    mov dword ptr ds:[5C2E68h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C2E68], 7;
 // LINE 533:
-	asm( 
-"	      00429cd2    mov dword ptr ds:[5C2E6Ch],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2E6C], 0xA;
 // LINE 534:
-	asm( 
-"	      00429cdc    mov dword ptr ds:[5C2E58h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2E58], 0xA;
 // LINE 535:
-	asm( 
-"	      00429ce6    mov dword ptr ds:[5C2E5Ch],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E5C], 0xD;
 // LINE 536:
-	asm( 
-"	      00429cf0    mov dword ptr ds:[5C2E60h],0Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E60], 0xE;
 // LINE 537:
-	asm( 
-"	      00429cfa    mov dword ptr ds:[5C2E70h],0Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C2E70], 0xB;
 // LINE 538:
-	asm( 
-"	      00429d04    mov dword ptr ds:[5C2E30h],3"
-);
+	__asm        mov    dword ptr ds:[0x5C2E30], 3;
 // LINE 539:
-	asm( 
-"	      00429d0e    mov eax,ds:[5974ECh]"
-"	      00429d13    mov ds:[5C2E74h],eax"
-);
+	__asm        mov    eax, ds:[0x5974EC];
+	__asm        mov    ds:[0x5C2E74], eax;
 // LINE 541:
-	asm( 
-"	      00429d18    mov dword ptr ds:[5C2EACh],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2EAC], 0xA;
 // LINE 542:
-	asm( 
-"	      00429d22    mov dword ptr ds:[5C2EB0h],0Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EB0], 0xB;
 // LINE 543:
-	asm( 
-"	      00429d2c    mov dword ptr ds:[5C2EB4h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EB4], 0xD;
 // LINE 544:
-	asm( 
-"	      00429d36    mov dword ptr ds:[5C2EA0h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EA0], 0xD;
 // LINE 545:
-	asm( 
-"	      00429d40    mov dword ptr ds:[5C2EA4h],0Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EA4], 0xF;
 // LINE 546:
-	asm( 
-"	      00429d4a    mov dword ptr ds:[5C2EA8h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2EA8], 0x10;
 // LINE 547:
-	asm( 
-"	      00429d54    mov dword ptr ds:[5C2EB8h],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C2EB8], 0xC;
 // LINE 548:
-	asm( 
-"	      00429d5e    mov dword ptr ds:[5C2E78h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2E78], 4;
 // LINE 549:
-	asm( 
-"	      00429d68    mov eax,ds:[5974F0h]"
-"	      00429d6d    mov ds:[5C2EBCh],eax"
-);
+	__asm        mov    eax, ds:[0x5974F0];
+	__asm        mov    ds:[0x5C2EBC], eax;
 // LINE 551:
-	asm( 
-"	      00429d72    mov dword ptr ds:[5C2EF4h],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C2EF4], 0xC;
 // LINE 552:
-	asm( 
-"	      00429d7c    mov dword ptr ds:[5C2EF8h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2EF8], 0xA;
 // LINE 553:
-	asm( 
-"	      00429d86    mov dword ptr ds:[5C2EFCh],0Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EFC], 0xE;
 // LINE 554:
-	asm( 
-"	      00429d90    mov dword ptr ds:[5C2EE8h],0Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C2EE8], 0xF;
 // LINE 555:
-	asm( 
-"	      00429d9a    mov dword ptr ds:[5C2EECh],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2EEC], 0x10;
 // LINE 556:
-	asm( 
-"	      00429da4    mov dword ptr ds:[5C2EF0h],11h"
-);
+	__asm        mov    dword ptr ds:[0x5C2EF0], 0x11;
 // LINE 557:
-	asm( 
-"	      00429dae    mov dword ptr ds:[5C2F00h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F00], 0xD;
 // LINE 558:
-	asm( 
-"	      00429db8    mov dword ptr ds:[5C2EC0h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2EC0], 4;
 // LINE 559:
-	asm( 
-"	      00429dc2    mov eax,ds:[5974F4h]"
-"	      00429dc7    mov ds:[5C2F04h],eax"
-);
+	__asm        mov    eax, ds:[0x5974F4];
+	__asm        mov    ds:[0x5C2F04], eax;
 // LINE 561:
-	asm( 
-"	      00429dcc    mov dword ptr ds:[5C2F3Ch],9"
-);
+	__asm        mov    dword ptr ds:[0x5C2F3C], 9;
 // LINE 562:
-	asm( 
-"	      00429dd6    mov dword ptr ds:[5C2F40h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C2F40], 0xA;
 // LINE 563:
-	asm( 
-"	      00429de0    mov dword ptr ds:[5C2F44h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F44], 0xD;
 // LINE 564:
-	asm( 
-"	      00429dea    mov dword ptr ds:[5C2F30h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F30], 0xD;
 // LINE 565:
-	asm( 
-"	      00429df4    mov dword ptr ds:[5C2F34h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F34], 0x10;
 // LINE 566:
-	asm( 
-"	      00429dfe    mov dword ptr ds:[5C2F38h],11h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F38], 0x11;
 // LINE 567:
-	asm( 
-"	      00429e08    mov dword ptr ds:[5C2F48h],0Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F48], 0xE;
 // LINE 568:
-	asm( 
-"	      00429e12    mov dword ptr ds:[5C2F08h],4"
-);
+	__asm        mov    dword ptr ds:[0x5C2F08], 4;
 // LINE 569:
-	asm( 
-"	      00429e1c    mov eax,ds:[5974F8h]"
-"	      00429e21    mov ds:[5C2F4Ch],eax"
-);
+	__asm        mov    eax, ds:[0x5974F8];
+	__asm        mov    ds:[0x5C2F4C], eax;
 // LINE 571:
-	asm( 
-"	      00429e26    mov dword ptr ds:[5C2F84h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F84], 0xD;
 // LINE 572:
-	asm( 
-"	      00429e30    mov dword ptr ds:[5C2F88h],0Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F88], 0xE;
 // LINE 573:
-	asm( 
-"	      00429e3a    mov dword ptr ds:[5C2F8Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F8C], 0x10;
 // LINE 574:
-	asm( 
-"	      00429e44    mov dword ptr ds:[5C2F78h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F78], 0x10;
 // LINE 575:
-	asm( 
-"	      00429e4e    mov dword ptr ds:[5C2F7Ch],12h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F7C], 0x12;
 // LINE 576:
-	asm( 
-"	      00429e58    mov dword ptr ds:[5C2F80h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C2F80], 0x13;
 // LINE 577:
-	asm( 
-"	      00429e62    mov dword ptr ds:[5C2F90h],0Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C2F90], 0xF;
 // LINE 578:
-	asm( 
-"	      00429e6c    mov dword ptr ds:[5C2F50h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2F50], 5;
 // LINE 579:
-	asm( 
-"	      00429e76    mov eax,ds:[5974FCh]"
-"	      00429e7b    mov ds:[5C2F94h],eax"
-);
+	__asm        mov    eax, ds:[0x5974FC];
+	__asm        mov    ds:[0x5C2F94], eax;
 // LINE 581:
-	asm( 
-"	      00429e80    mov dword ptr ds:[5C2FCCh],0Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C2FCC], 0xF;
 // LINE 582:
-	asm( 
-"	      00429e8a    mov dword ptr ds:[5C2FD0h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C2FD0], 0xD;
 // LINE 583:
-	asm( 
-"	      00429e94    mov dword ptr ds:[5C2FD4h],11h"
-);
+	__asm        mov    dword ptr ds:[0x5C2FD4], 0x11;
 // LINE 584:
-	asm( 
-"	      00429e9e    mov dword ptr ds:[5C2FC0h],12h"
-);
+	__asm        mov    dword ptr ds:[0x5C2FC0], 0x12;
 // LINE 585:
-	asm( 
-"	      00429ea8    mov dword ptr ds:[5C2FC4h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C2FC4], 0x13;
 // LINE 586:
-	asm( 
-"	      00429eb2    mov dword ptr ds:[5C2FC8h],14h"
-);
+	__asm        mov    dword ptr ds:[0x5C2FC8], 0x14;
 // LINE 587:
-	asm( 
-"	      00429ebc    mov dword ptr ds:[5C2FD8h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C2FD8], 0x10;
 // LINE 588:
-	asm( 
-"	      00429ec6    mov dword ptr ds:[5C2F98h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2F98], 5;
 // LINE 589:
-	asm( 
-"	      00429ed0    mov eax,ds:[597500h]"
-"	      00429ed5    mov ds:[5C2FDCh],eax"
-);
+	__asm        mov    eax, ds:[0x597500];
+	__asm        mov    ds:[0x5C2FDC], eax;
 // LINE 591:
-	asm( 
-"	      00429eda    mov dword ptr ds:[5C3014h],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C3014], 0xC;
 // LINE 592:
-	asm( 
-"	      00429ee4    mov dword ptr ds:[5C3018h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C3018], 0xD;
 // LINE 593:
-	asm( 
-"	      00429eee    mov dword ptr ds:[5C301Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C301C], 0x10;
 // LINE 594:
-	asm( 
-"	      00429ef8    mov dword ptr ds:[5C3008h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C3008], 0x10;
 // LINE 595:
-	asm( 
-"	      00429f02    mov dword ptr ds:[5C300Ch],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C300C], 0x13;
 // LINE 596:
-	asm( 
-"	      00429f0c    mov dword ptr ds:[5C3010h],14h"
-);
+	__asm        mov    dword ptr ds:[0x5C3010], 0x14;
 // LINE 597:
-	asm( 
-"	      00429f16    mov dword ptr ds:[5C3020h],11h"
-);
+	__asm        mov    dword ptr ds:[0x5C3020], 0x11;
 // LINE 598:
-	asm( 
-"	      00429f20    mov dword ptr ds:[5C2FE0h],5"
-);
+	__asm        mov    dword ptr ds:[0x5C2FE0], 5;
 // LINE 599:
-	asm( 
-"	      00429f2a    mov eax,ds:[597504h]"
-"	      00429f2f    mov ds:[5C3024h],eax"
-);
+	__asm        mov    eax, ds:[0x597504];
+	__asm        mov    ds:[0x5C3024], eax;
 // LINE 601:
-	asm( 
-"	      00429f34    mov dword ptr ds:[5C305Ch],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C305C], 0x10;
 // LINE 602:
-	asm( 
-"	      00429f3e    mov dword ptr ds:[5C3060h],11h"
-);
+	__asm        mov    dword ptr ds:[0x5C3060], 0x11;
 // LINE 603:
-	asm( 
-"	      00429f48    mov dword ptr ds:[5C3064h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C3064], 0x13;
 // LINE 604:
-	asm( 
-"	      00429f52    mov dword ptr ds:[5C3050h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C3050], 0x13;
 // LINE 605:
-	asm( 
-"	      00429f5c    mov dword ptr ds:[5C3054h],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C3054], 0x15;
 // LINE 606:
-	asm( 
-"	      00429f66    mov dword ptr ds:[5C3058h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3058], 0xFFFFFFFF;
 // LINE 607:
-	asm( 
-"	      00429f70    mov dword ptr ds:[5C3068h],12h"
-);
+	__asm        mov    dword ptr ds:[0x5C3068], 0x12;
 // LINE 608:
-	asm( 
-"	      00429f7a    mov dword ptr ds:[5C3028h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C3028], 6;
 // LINE 609:
-	asm( 
-"	      00429f84    mov eax,ds:[597508h]"
-"	      00429f89    mov ds:[5C306Ch],eax"
-);
+	__asm        mov    eax, ds:[0x597508];
+	__asm        mov    ds:[0x5C306C], eax;
 // LINE 611:
-	asm( 
-"	      00429f8e    mov dword ptr ds:[5C30A4h],12h"
-);
+	__asm        mov    dword ptr ds:[0x5C30A4], 0x12;
 // LINE 612:
-	asm( 
-"	      00429f98    mov dword ptr ds:[5C30A8h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C30A8], 0x10;
 // LINE 613:
-	asm( 
-"	      00429fa2    mov dword ptr ds:[5C30ACh],14h"
-);
+	__asm        mov    dword ptr ds:[0x5C30AC], 0x14;
 // LINE 614:
-	asm( 
-"	      00429fac    mov dword ptr ds:[5C3098h],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C3098], 0x15;
 // LINE 615:
-	asm( 
-"	      00429fb6    mov dword ptr ds:[5C309Ch],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C309C], 0x16;
 // LINE 616:
-	asm( 
-"	      00429fc0    mov dword ptr ds:[5C30A0h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C30A0], 0xFFFFFFFF;
 // LINE 617:
-	asm( 
-"	      00429fca    mov dword ptr ds:[5C30B0h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C30B0], 0x13;
 // LINE 618:
-	asm( 
-"	      00429fd4    mov dword ptr ds:[5C3070h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C3070], 6;
 // LINE 619:
-	asm( 
-"	      00429fde    mov eax,ds:[59750Ch]"
-"	      00429fe3    mov ds:[5C30B4h],eax"
-);
+	__asm        mov    eax, ds:[0x59750C];
+	__asm        mov    ds:[0x5C30B4], eax;
 // LINE 621:
-	asm( 
-"	      00429fe8    mov dword ptr ds:[5C30ECh],0Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C30EC], 0xF;
 // LINE 622:
-	asm( 
-"	      00429ff2    mov dword ptr ds:[5C30F0h],10h"
-);
+	__asm        mov    dword ptr ds:[0x5C30F0], 0x10;
 // LINE 623:
-	asm( 
-"	      00429ffc    mov dword ptr ds:[5C30F4h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C30F4], 0x13;
 // LINE 624:
-	asm( 
-"	      0042a006    mov dword ptr ds:[5C30E0h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C30E0], 0x13;
 // LINE 625:
-	asm( 
-"	      0042a010    mov dword ptr ds:[5C30E4h],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C30E4], 0x16;
 // LINE 626:
-	asm( 
-"	      0042a01a    mov dword ptr ds:[5C30E8h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C30E8], 0xFFFFFFFF;
 // LINE 627:
-	asm( 
-"	      0042a024    mov dword ptr ds:[5C30F8h],14h"
-);
+	__asm        mov    dword ptr ds:[0x5C30F8], 0x14;
 // LINE 628:
-	asm( 
-"	      0042a02e    mov dword ptr ds:[5C30B8h],6"
-);
+	__asm        mov    dword ptr ds:[0x5C30B8], 6;
 // LINE 629:
-	asm( 
-"	      0042a038    mov eax,ds:[597510h]"
-"	      0042a03d    mov ds:[5C30FCh],eax"
-);
+	__asm        mov    eax, ds:[0x597510];
+	__asm        mov    ds:[0x5C30FC], eax;
 // LINE 631:
-	asm( 
-"	      0042a042    mov dword ptr ds:[5C3134h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C3134], 0x13;
 // LINE 632:
-	asm( 
-"	      0042a04c    mov dword ptr ds:[5C3138h],14h"
-);
+	__asm        mov    dword ptr ds:[0x5C3138], 0x14;
 // LINE 633:
-	asm( 
-"	      0042a056    mov dword ptr ds:[5C313Ch],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C313C], 0x16;
 // LINE 634:
-	asm( 
-"	      0042a060    mov dword ptr ds:[5C3128h],17h"
-);
+	__asm        mov    dword ptr ds:[0x5C3128], 0x17;
 // LINE 635:
-	asm( 
-"	      0042a06a    mov dword ptr ds:[5C312Ch],18h"
-);
+	__asm        mov    dword ptr ds:[0x5C312C], 0x18;
 // LINE 636:
-	asm( 
-"	      0042a074    mov dword ptr ds:[5C3130h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3130], 0xFFFFFFFF;
 // LINE 637:
-	asm( 
-"	      0042a07e    mov dword ptr ds:[5C3140h],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C3140], 0x15;
 // LINE 638:
-	asm( 
-"	      0042a088    mov dword ptr ds:[5C3100h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C3100], 7;
 // LINE 639:
-	asm( 
-"	      0042a092    mov eax,ds:[597514h]"
-"	      0042a097    mov ds:[5C3144h],eax"
-);
+	__asm        mov    eax, ds:[0x597514];
+	__asm        mov    ds:[0x5C3144], eax;
 // LINE 641:
-	asm( 
-"	      0042a09c    mov dword ptr ds:[5C317Ch],12h"
-);
+	__asm        mov    dword ptr ds:[0x5C317C], 0x12;
 // LINE 642:
-	asm( 
-"	      0042a0a6    mov dword ptr ds:[5C3180h],13h"
-);
+	__asm        mov    dword ptr ds:[0x5C3180], 0x13;
 // LINE 643:
-	asm( 
-"	      0042a0b0    mov dword ptr ds:[5C3184h],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C3184], 0x15;
 // LINE 644:
-	asm( 
-"	      0042a0ba    mov dword ptr ds:[5C3170h],17h"
-);
+	__asm        mov    dword ptr ds:[0x5C3170], 0x17;
 // LINE 645:
-	asm( 
-"	      0042a0c4    mov dword ptr ds:[5C3174h],18h"
-);
+	__asm        mov    dword ptr ds:[0x5C3174], 0x18;
 // LINE 646:
-	asm( 
-"	      0042a0ce    mov dword ptr ds:[5C3178h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3178], 0xFFFFFFFF;
 // LINE 647:
-	asm( 
-"	      0042a0d8    mov dword ptr ds:[5C3188h],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C3188], 0x16;
 // LINE 648:
-	asm( 
-"	      0042a0e2    mov dword ptr ds:[5C3148h],7"
-);
+	__asm        mov    dword ptr ds:[0x5C3148], 7;
 // LINE 649:
-	asm( 
-"	      0042a0ec    mov eax,ds:[597518h]"
-"	      0042a0f1    mov ds:[5C318Ch],eax"
-);
+	__asm        mov    eax, ds:[0x597518];
+	__asm        mov    ds:[0x5C318C], eax;
 // LINE 651:
-	asm( 
-"	      0042a0f6    mov dword ptr ds:[5C31C4h],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C31C4], 0x15;
 // LINE 652:
-	asm( 
-"	      0042a100    mov dword ptr ds:[5C31C8h],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C31C8], 0x16;
 // LINE 653:
-	asm( 
-"	      0042a10a    mov dword ptr ds:[5C31CCh],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C31CC], 0xFFFFFFFF;
 // LINE 654:
-	asm( 
-"	      0042a114    mov dword ptr ds:[5C31B8h],19h"
-);
+	__asm        mov    dword ptr ds:[0x5C31B8], 0x19;
 // LINE 655:
-	asm( 
-"	      0042a11e    mov dword ptr ds:[5C31BCh],1Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C31BC], 0x1A;
 // LINE 656:
-	asm( 
-"	      0042a128    mov dword ptr ds:[5C31C0h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C31C0], 0xFFFFFFFF;
 // LINE 657:
-	asm( 
-"	      0042a132    mov dword ptr ds:[5C31D0h],17h"
-);
+	__asm        mov    dword ptr ds:[0x5C31D0], 0x17;
 // LINE 658:
-	asm( 
-"	      0042a13c    mov dword ptr ds:[5C3190h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C3190], 8;
 // LINE 659:
-	asm( 
-"	      0042a146    mov eax,ds:[59751Ch]"
-"	      0042a14b    mov ds:[5C31D4h],eax"
-);
+	__asm        mov    eax, ds:[0x59751C];
+	__asm        mov    ds:[0x5C31D4], eax;
 // LINE 661:
-	asm( 
-"	      0042a150    mov dword ptr ds:[5C320Ch],15h"
-);
+	__asm        mov    dword ptr ds:[0x5C320C], 0x15;
 // LINE 662:
-	asm( 
-"	      0042a15a    mov dword ptr ds:[5C3210h],16h"
-);
+	__asm        mov    dword ptr ds:[0x5C3210], 0x16;
 // LINE 663:
-	asm( 
-"	      0042a164    mov dword ptr ds:[5C3214h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3214], 0xFFFFFFFF;
 // LINE 664:
-	asm( 
-"	      0042a16e    mov dword ptr ds:[5C3200h],19h"
-);
+	__asm        mov    dword ptr ds:[0x5C3200], 0x19;
 // LINE 665:
-	asm( 
-"	      0042a178    mov dword ptr ds:[5C3204h],1Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C3204], 0x1A;
 // LINE 666:
-	asm( 
-"	      0042a182    mov dword ptr ds:[5C3208h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3208], 0xFFFFFFFF;
 // LINE 667:
-	asm( 
-"	      0042a18c    mov dword ptr ds:[5C3218h],18h"
-);
+	__asm        mov    dword ptr ds:[0x5C3218], 0x18;
 // LINE 668:
-	asm( 
-"	      0042a196    mov dword ptr ds:[5C31D8h],8"
-);
+	__asm        mov    dword ptr ds:[0x5C31D8], 8;
 // LINE 669:
-	asm( 
-"	      0042a1a0    mov eax,ds:[597520h]"
-"	      0042a1a5    mov ds:[5C321Ch],eax"
-);
+	__asm        mov    eax, ds:[0x597520];
+	__asm        mov    ds:[0x5C321C], eax;
 // LINE 671:
-	asm( 
-"	      0042a1aa    mov dword ptr ds:[5C3254h],17h"
-);
+	__asm        mov    dword ptr ds:[0x5C3254], 0x17;
 // LINE 672:
-	asm( 
-"	      0042a1b4    mov dword ptr ds:[5C3258h],18h"
-);
+	__asm        mov    dword ptr ds:[0x5C3258], 0x18;
 // LINE 673:
-	asm( 
-"	      0042a1be    mov dword ptr ds:[5C325Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C325C], 0xFFFFFFFF;
 // LINE 674:
-	asm( 
-"	      0042a1c8    mov dword ptr ds:[5C3248h],1Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C3248], 0x1B;
 // LINE 675:
-	asm( 
-"	      0042a1d2    mov dword ptr ds:[5C324Ch],1Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C324C], 0x1C;
 // LINE 676:
-	asm( 
-"	      0042a1dc    mov dword ptr ds:[5C3250h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3250], 0xFFFFFFFF;
 // LINE 677:
-	asm( 
-"	      0042a1e6    mov dword ptr ds:[5C3260h],19h"
-);
+	__asm        mov    dword ptr ds:[0x5C3260], 0x19;
 // LINE 678:
-	asm( 
-"	      0042a1f0    mov dword ptr ds:[5C3220h],9"
-);
+	__asm        mov    dword ptr ds:[0x5C3220], 9;
 // LINE 679:
-	asm( 
-"	      0042a1fa    mov eax,ds:[597524h]"
-"	      0042a1ff    mov ds:[5C3264h],eax"
-);
+	__asm        mov    eax, ds:[0x597524];
+	__asm        mov    ds:[0x5C3264], eax;
 // LINE 681:
-	asm( 
-"	      0042a204    mov dword ptr ds:[5C329Ch],17h"
-);
+	__asm        mov    dword ptr ds:[0x5C329C], 0x17;
 // LINE 682:
-	asm( 
-"	      0042a20e    mov dword ptr ds:[5C32A0h],18h"
-);
+	__asm        mov    dword ptr ds:[0x5C32A0], 0x18;
 // LINE 683:
-	asm( 
-"	      0042a218    mov dword ptr ds:[5C32A4h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C32A4], 0xFFFFFFFF;
 // LINE 684:
-	asm( 
-"	      0042a222    mov dword ptr ds:[5C3290h],1Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C3290], 0x1B;
 // LINE 685:
-	asm( 
-"	      0042a22c    mov dword ptr ds:[5C3294h],1Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C3294], 0x1C;
 // LINE 686:
-	asm( 
-"	      0042a236    mov dword ptr ds:[5C3298h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3298], 0xFFFFFFFF;
 // LINE 687:
-	asm( 
-"	      0042a240    mov dword ptr ds:[5C32A8h],1Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C32A8], 0x1A;
 // LINE 688:
-	asm( 
-"	      0042a24a    mov dword ptr ds:[5C3268h],9"
-);
+	__asm        mov    dword ptr ds:[0x5C3268], 9;
 // LINE 689:
-	asm( 
-"	      0042a254    mov eax,ds:[597528h]"
-"	      0042a259    mov ds:[5C32ACh],eax"
-);
+	__asm        mov    eax, ds:[0x597528];
+	__asm        mov    ds:[0x5C32AC], eax;
 // LINE 691:
-	asm( 
-"	      0042a25e    mov dword ptr ds:[5C32E4h],19h"
-);
+	__asm        mov    dword ptr ds:[0x5C32E4], 0x19;
 // LINE 692:
-	asm( 
-"	      0042a268    mov dword ptr ds:[5C32E8h],1Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C32E8], 0x1A;
 // LINE 693:
-	asm( 
-"	      0042a272    mov dword ptr ds:[5C32ECh],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C32EC], 0xFFFFFFFF;
 // LINE 694:
-	asm( 
-"	      0042a27c    mov dword ptr ds:[5C32D8h],1Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C32D8], 0x1D;
 // LINE 695:
-	asm( 
-"	      0042a286    mov dword ptr ds:[5C32DCh],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C32DC], 0xFFFFFFFF;
 // LINE 696:
-	asm( 
-"	      0042a290    mov dword ptr ds:[5C32E0h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C32E0], 0xFFFFFFFF;
 // LINE 697:
-	asm( 
-"	      0042a29a    mov dword ptr ds:[5C32F0h],1Bh"
-);
+	__asm        mov    dword ptr ds:[0x5C32F0], 0x1B;
 // LINE 698:
-	asm( 
-"	      0042a2a4    mov dword ptr ds:[5C32B0h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C32B0], 0xA;
 // LINE 699:
-	asm( 
-"	      0042a2ae    mov eax,ds:[59752Ch]"
-"	      0042a2b3    mov ds:[5C32F4h],eax"
-);
+	__asm        mov    eax, ds:[0x59752C];
+	__asm        mov    ds:[0x5C32F4], eax;
 // LINE 701:
-	asm( 
-"	      0042a2b8    mov dword ptr ds:[5C332Ch],19h"
-);
+	__asm        mov    dword ptr ds:[0x5C332C], 0x19;
 // LINE 702:
-	asm( 
-"	      0042a2c2    mov dword ptr ds:[5C3330h],1Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C3330], 0x1A;
 // LINE 703:
-	asm( 
-"	      0042a2cc    mov dword ptr ds:[5C3334h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3334], 0xFFFFFFFF;
 // LINE 704:
-	asm( 
-"	      0042a2d6    mov dword ptr ds:[5C3320h],1Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C3320], 0x1D;
 // LINE 705:
-	asm( 
-"	      0042a2e0    mov dword ptr ds:[5C3324h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3324], 0xFFFFFFFF;
 // LINE 706:
-	asm( 
-"	      0042a2ea    mov dword ptr ds:[5C3328h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3328], 0xFFFFFFFF;
 // LINE 707:
-	asm( 
-"	      0042a2f4    mov dword ptr ds:[5C3338h],1Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C3338], 0x1C;
 // LINE 708:
-	asm( 
-"	      0042a2fe    mov dword ptr ds:[5C32F8h],0Ah"
-);
+	__asm        mov    dword ptr ds:[0x5C32F8], 0xA;
 // LINE 709:
-	asm( 
-"	      0042a308    mov eax,ds:[597530h]"
-"	      0042a30d    mov ds:[5C333Ch],eax"
-);
+	__asm        mov    eax, ds:[0x597530];
+	__asm        mov    ds:[0x5C333C], eax;
 // LINE 711:
-	asm( 
-"	      0042a312    mov dword ptr ds:[5C3374h],1Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C3374], 0x1C;
 // LINE 712:
-	asm( 
-"	      0042a31c    mov dword ptr ds:[5C3378h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3378], 0xFFFFFFFF;
 // LINE 713:
-	asm( 
-"	      0042a326    mov dword ptr ds:[5C337Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C337C], 0xFFFFFFFF;
 // LINE 714:
-	asm( 
-"	      0042a330    mov dword ptr ds:[5C3368h],1Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C3368], 0x1E;
 // LINE 715:
-	asm( 
-"	      0042a33a    mov dword ptr ds:[5C336Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C336C], 0xFFFFFFFF;
 // LINE 716:
-	asm( 
-"	      0042a344    mov dword ptr ds:[5C3370h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3370], 0xFFFFFFFF;
 // LINE 717:
-	asm( 
-"	      0042a34e    mov dword ptr ds:[5C3380h],1Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C3380], 0x1D;
 // LINE 718:
-	asm( 
-"	      0042a358    mov dword ptr ds:[5C3340h],1Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C3340], 0x1D;
 // LINE 719:
-	asm( 
-"	      0042a362    mov eax,ds:[597534h]"
-"	      0042a367    mov ds:[5C3384h],eax"
-);
+	__asm        mov    eax, ds:[0x597534];
+	__asm        mov    ds:[0x5C3384], eax;
 // LINE 721:
-	asm( 
-"	      0042a36c    mov dword ptr ds:[5C33BCh],1Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C33BC], 0x1D;
 // LINE 722:
-	asm( 
-"	      0042a376    mov dword ptr ds:[5C33C0h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33C0], 0xFFFFFFFF;
 // LINE 723:
-	asm( 
-"	      0042a380    mov dword ptr ds:[5C33C4h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33C4], 0xFFFFFFFF;
 // LINE 724:
-	asm( 
-"	      0042a38a    mov dword ptr ds:[5C33B0h],1Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C33B0], 0x1F;
 // LINE 725:
-	asm( 
-"	      0042a394    mov dword ptr ds:[5C33B4h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33B4], 0xFFFFFFFF;
 // LINE 726:
-	asm( 
-"	      0042a39e    mov dword ptr ds:[5C33B8h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33B8], 0xFFFFFFFF;
 // LINE 727:
-	asm( 
-"	      0042a3a8    mov dword ptr ds:[5C33C8h],1Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C33C8], 0x1E;
 // LINE 728:
-	asm( 
-"	      0042a3b2    mov dword ptr ds:[5C3388h],0Ch"
-);
+	__asm        mov    dword ptr ds:[0x5C3388], 0xC;
 // LINE 729:
-	asm( 
-"	      0042a3bc    mov eax,ds:[597538h]"
-"	      0042a3c1    mov ds:[5C33CCh],eax"
-);
+	__asm        mov    eax, ds:[0x597538];
+	__asm        mov    ds:[0x5C33CC], eax;
 // LINE 731:
-	asm( 
-"	      0042a3c6    mov dword ptr ds:[5C3404h],1Eh"
-);
+	__asm        mov    dword ptr ds:[0x5C3404], 0x1E;
 // LINE 732:
-	asm( 
-"	      0042a3d0    mov dword ptr ds:[5C3408h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3408], 0xFFFFFFFF;
 // LINE 733:
-	asm( 
-"	      0042a3da    mov dword ptr ds:[5C340Ch],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C340C], 0xFFFFFFFF;
 // LINE 734:
-	asm( 
-"	      0042a3e4    mov dword ptr ds:[5C33F8h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33F8], 0xFFFFFFFF;
 // LINE 735:
-	asm( 
-"	      0042a3ee    mov dword ptr ds:[5C33FCh],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C33FC], 0xFFFFFFFF;
 // LINE 736:
-	asm( 
-"	      0042a3f8    mov dword ptr ds:[5C3400h],0FFFFFFFFh"
-);
+	__asm        mov    dword ptr ds:[0x5C3400], 0xFFFFFFFF;
 // LINE 737:
-	asm( 
-"	      0042a402    mov dword ptr ds:[5C3410h],1Fh"
-);
+	__asm        mov    dword ptr ds:[0x5C3410], 0x1F;
 // LINE 738:
-	asm( 
-"	      0042a40c    mov dword ptr ds:[5C33D0h],0Dh"
-);
+	__asm        mov    dword ptr ds:[0x5C33D0], 0xD;
 // LINE 739:
-	asm( 
-"	      0042a416    mov eax,ds:[59753Ch]"
-"	      0042a41b    mov ds:[5C3414h],eax"
-);
+	__asm        mov    eax, ds:[0x59753C];
+	__asm        mov    ds:[0x5C3414], eax;
 // LINE 744:
-	asm( 
-"	      0042a420    mov i,0"
-"	      0042a427    jmp near ptr 0042A42Fh"
-"	      0042a42c    inc i"
-"	      0042a42f    cmp i,1Fh"
-"	      0042a433    jge near ptr 0042A4E1h"
-);
+	__asm        mov    i, 0;
+	__asm        jmp    near ptr 0x0042A42F;
+	__asm        inc    i;
+	__asm        cmp    i, 0x1F;
+	__asm        jge    near ptr 0x0042A4E1;
 // LINE 745:
-	asm( 
-"	      0042a439    mov eax,i"
-"	      0042a43c    shl eax,2"
-"	      0042a43f    mov ecx,1Fh"
-"	      0042a444    cdq"
-"	      0042a445    idiv ecx"
-"	      0042a447    mov ecx,i"
-"	      0042a44a    shl ecx,3"
-"	      0042a44d    mov [ecx+ecx*8+5C2B1Ch],eax"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 2;
+	__asm        mov    ecx, 0x1F;
+	__asm        cdq;
+	__asm        idiv   ecx;
+	__asm        mov    ecx, i;
+	__asm        shl    ecx, 3;
+	__asm        mov    [ecx+ecx*8+0x5C2B1C], eax;
 // LINE 746:
-	asm( 
-"	      0042a454    mov eax,i"
-"	      0042a457    shl eax,3"
-"	      0042a45a    mov dword ptr [eax+eax*8+5C2B20h],1Ah"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B20], 0x1A;
 // LINE 747:
-	asm( 
-"	      0042a465    mov eax,i"
-"	      0042a468    shl eax,3"
-"	      0042a46b    mov dword ptr [eax+eax*8+5C2B24h],14h"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B24], 0x14;
 // LINE 748:
-	asm( 
-"	      0042a476    mov eax,i"
-"	      0042a479    shl eax,3"
-"	      0042a47c    mov dword ptr [eax+eax*8+5C2B28h],8"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B28], 8;
 // LINE 749:
-	asm( 
-"	      0042a487    mov eax,i"
-"	      0042a48a    shl eax,3"
-"	      0042a48d    mov dword ptr [eax+eax*8+5C2B2Ch],0Ch"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B2C], 0xC;
 // LINE 750:
-	asm( 
-"	      0042a498    mov eax,i"
-"	      0042a49b    shl eax,3"
-"	      0042a49e    mov dword ptr [eax+eax*8+5C2B30h],14h"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B30], 0x14;
 // LINE 751:
-	asm( 
-"	      0042a4a9    mov eax,i"
-"	      0042a4ac    shl eax,3"
-"	      0042a4af    mov dword ptr [eax+eax*8+5C2B34h],0Eh"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B34], 0xE;
 // LINE 752:
-	asm( 
-"	      0042a4ba    mov eax,i"
-"	      0042a4bd    shl eax,3"
-"	      0042a4c0    mov dword ptr [eax+eax*8+5C2B38h],0"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B38], 0;
 // LINE 753:
-	asm( 
-"	      0042a4cb    mov eax,i"
-"	      0042a4ce    shl eax,3"
-"	      0042a4d1    mov dword ptr [eax+eax*8+5C2B3Ch],1"
-);
+	__asm        mov    eax, i;
+	__asm        shl    eax, 3;
+	__asm        mov    dword ptr [eax+eax*8+0x5C2B3C], 1;
 // LINE 754:
-	asm( 
-"	      0042a4dc    jmp near ptr 0042A42Ch"
-);
+	__asm        jmp    near ptr 0x0042A42C;
 // LINE 755:
-	asm( 
-"	      0042a4e1    jmp near ptr 0042A4E6h"
-"	      0042a4e6    pop edi"
-"	      0042a4e7    pop esi"
-"	      0042a4e8    pop ebx"
-"	      0042a4e9    leave"
-"	      0042a4ea    ret"
-);
+	__asm        jmp    near ptr 0x0042A4E6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

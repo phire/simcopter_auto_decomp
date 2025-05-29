@@ -8,155 +8,123 @@
 // FUNCTION: COPTER_D 0x00471e40
 void  CGameApp::EnableSoundTrack() {
 // LINE 23:
-	asm( 
-"	      00471e40    push ebp"
-"	      00471e41    mov ebp,esp"
-"	      00471e43    sub esp,4"
-"	      00471e46    push ebx"
-"	      00471e47    push esi"
-"	      00471e48    push edi"
-"	      00471e49    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 27:
-	asm( 
-"	      00471e4c    push 1"
-"	      00471e4e    mov ecx,604480h"
-"	      00471e53    call 00437EE7h"
-);
+	__asm        push   1;
+	__asm        mov    ecx, 0x604480;
+	__asm        call   0x00437EE7;
 // LINE 28:
-	asm( 
-"	      00471e58    jmp near ptr 00471E5Dh"
-"	      00471e5d    pop edi"
-"	      00471e5e    pop esi"
-"	      00471e5f    pop ebx"
-"	      00471e60    leave"
-"	      00471e61    ret"
-);
+	__asm        jmp    near ptr 0x00471E5D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471e62
 void  CGameApp::DisableSoundTrack() {
 // LINE 34:
-	asm( 
-"	      00471e62    push ebp"
-"	      00471e63    mov ebp,esp"
-"	      00471e65    sub esp,4"
-"	      00471e68    push ebx"
-"	      00471e69    push esi"
-"	      00471e6a    push edi"
-"	      00471e6b    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 39:
-	asm( 
-"	      00471e6e    push 0"
-"	      00471e70    mov ecx,604480h"
-"	      00471e75    call 00437EE7h"
-);
+	__asm        push   0;
+	__asm        mov    ecx, 0x604480;
+	__asm        call   0x00437EE7;
 // LINE 40:
-	asm( 
-"	      00471e7a    jmp near ptr 00471E7Fh"
-"	      00471e7f    pop edi"
-"	      00471e80    pop esi"
-"	      00471e81    pop ebx"
-"	      00471e82    leave"
-"	      00471e83    ret"
-);
+	__asm        jmp    near ptr 0x00471E7F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471e84
 void  CGameApp::ToggleMusicSoundTrack() {
 // LINE 47:
-	asm( 
-"	      00471e84    push ebp"
-"	      00471e85    mov ebp,esp"
-"	      00471e87    sub esp,4"
-"	      00471e8a    push ebx"
-"	      00471e8b    push esi"
-"	      00471e8c    push edi"
-"	      00471e8d    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 48:
-	asm( 
-"	      00471e90    jmp near ptr 00471E95h"
-"	      00471e95    cmp dword ptr ds:[60449Ch],0"
-"	      00471e9c    je near ptr 00471EE9h"
-);
+	__asm        jmp    near ptr 0x00471E95;
+	__asm        cmp    dword ptr ds:[0x60449C], 0;
+	__asm        je     near ptr 0x00471EE9;
 // LINE 49:
-	asm( 
-"	      00471ea2    mov dword ptr ds:[604498h],0"
-"	      00471eac    cmp dword ptr ds:[604498h],0"
-"	      00471eb3    je near ptr 00471EBEh"
-"	      00471eb9    jmp near ptr 00471EDFh"
-"	      00471ebe    jmp near ptr 00471EC3h"
-"	      00471ec3    cmp dword ptr ds:[60449Ch],0"
-"	      00471eca    je near ptr 00471EDFh"
-"	      00471ed0    push 0"
-"	      00471ed2    mov ecx,604480h"
-"	      00471ed7    mov eax,ds:[604480h]"
-"	      00471edc    call dword ptr [eax+1Ch]"
-"	      00471edf    jmp near ptr 00471EE4h"
-);
+	__asm        mov    dword ptr ds:[0x604498], 0;
+	__asm        cmp    dword ptr ds:[0x604498], 0;
+	__asm        je     near ptr 0x00471EBE;
+	__asm        jmp    near ptr 0x00471EDF;
+	__asm        jmp    near ptr 0x00471EC3;
+	__asm        cmp    dword ptr ds:[0x60449C], 0;
+	__asm        je     near ptr 0x00471EDF;
+	__asm        push   0;
+	__asm        mov    ecx, 0x604480;
+	__asm        mov    eax, ds:[0x604480];
+	__asm        call   dword ptr [eax+0x1C];
+	__asm        jmp    near ptr 0x00471EE4;
 // LINE 50:
-	asm( 
-"	      00471ee4    jmp near ptr 00471F37h"
-);
+	__asm        jmp    near ptr 0x00471F37;
 // LINE 51:
-	asm( 
-"	      00471ee9    mov dword ptr ds:[604498h],1"
-"	      00471ef3    cmp dword ptr ds:[604498h],0"
-"	      00471efa    je near ptr 00471F05h"
-"	      00471f00    jmp near ptr 00471F26h"
-"	      00471f05    jmp near ptr 00471F0Ah"
-"	      00471f0a    cmp dword ptr ds:[60449Ch],0"
-"	      00471f11    je near ptr 00471F26h"
-"	      00471f17    push 0"
-"	      00471f19    mov ecx,604480h"
-"	      00471f1e    mov eax,ds:[604480h]"
-"	      00471f23    call dword ptr [eax+1Ch]"
-"	      00471f26    jmp near ptr 00471F2Bh"
-);
+	__asm        mov    dword ptr ds:[0x604498], 1;
+	__asm        cmp    dword ptr ds:[0x604498], 0;
+	__asm        je     near ptr 0x00471F05;
+	__asm        jmp    near ptr 0x00471F26;
+	__asm        jmp    near ptr 0x00471F0A;
+	__asm        cmp    dword ptr ds:[0x60449C], 0;
+	__asm        je     near ptr 0x00471F26;
+	__asm        push   0;
+	__asm        mov    ecx, 0x604480;
+	__asm        mov    eax, ds:[0x604480];
+	__asm        call   dword ptr [eax+0x1C];
+	__asm        jmp    near ptr 0x00471F2B;
 // LINE 52:
-	asm( 
-"	      00471f2b    push 1"
-"	      00471f2d    mov ecx,604480h"
-"	      00471f32    call 00437EE7h"
-);
+	__asm        push   1;
+	__asm        mov    ecx, 0x604480;
+	__asm        call   0x00437EE7;
 // LINE 54:
-	asm( 
-"	      00471f37    jmp near ptr 00471F3Ch"
-"	      00471f3c    pop edi"
-"	      00471f3d    pop esi"
-"	      00471f3e    pop ebx"
-"	      00471f3f    leave"
-"	      00471f40    ret"
-);
+	__asm        jmp    near ptr 0x00471F3C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471f41
 void  CGameApp::PlayNextSoundTrackIfNeeded() {
 // LINE 61:
-	asm( 
-"	      00471f41    push ebp"
-"	      00471f42    mov ebp,esp"
-"	      00471f44    sub esp,4"
-"	      00471f47    push ebx"
-"	      00471f48    push esi"
-"	      00471f49    push edi"
-"	      00471f4a    mov this,ecx"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
 // LINE 62:
-	asm( 
-"	      00471f4d    mov ecx,604480h"
-"	      00471f52    call 00438457h"
-);
+	__asm        mov    ecx, 0x604480;
+	__asm        call   0x00438457;
 // LINE 63:
-	asm( 
-"	      00471f57    jmp near ptr 00471F5Ch"
-"	      00471f5c    pop edi"
-"	      00471f5d    pop esi"
-"	      00471f5e    pop ebx"
-"	      00471f5f    leave"
-"	      00471f60    ret"
-);
+	__asm        jmp    near ptr 0x00471F5C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 

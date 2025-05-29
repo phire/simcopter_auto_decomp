@@ -11,61 +11,45 @@ void Swizzle16(void * __ptr32 val) {
 	char[8] loWord;
 
 // LINE 10:
-	asm( 
-"	      00566850    push ebp"
-"	      00566851    mov ebp,esp"
-"	      00566853    sub esp,10h"
-"	      00566856    push ebx"
-"	      00566857    push esi"
-"	      00566858    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x10;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 12:
-	asm( 
-"	      00566859    mov eax,val"
-"	      0056685c    mov al,[eax]"
-"	      0056685e    mov loWord[0],al"
-);
+	__asm        mov    eax, val;
+	__asm        mov    al, [eax];
+	__asm        mov    loWord[0], al;
 // LINE 13:
-	asm( 
-"	      00566861    mov eax,val"
-"	      00566864    mov al,[eax+8]"
-"	      00566867    mov hiWord[0],al"
-);
+	__asm        mov    eax, val;
+	__asm        mov    al, [eax+8];
+	__asm        mov    hiWord[0], al;
 // LINE 14:
-	asm( 
-"	      0056686a    lea eax,loWord[0]"
-"	      0056686d    push eax"
-"	      0056686e    call 0056689Dh"
-"	      00566873    add esp,4"
-);
+	__asm        lea    eax, loWord[0];
+	__asm        push   eax;
+	__asm        call   0x0056689D;
+	__asm        add    esp, 4;
 // LINE 15:
-	asm( 
-"	      00566876    lea eax,hiWord[0]"
-"	      00566879    push eax"
-"	      0056687a    call 0056689Dh"
-"	      0056687f    add esp,4"
-);
+	__asm        lea    eax, hiWord[0];
+	__asm        push   eax;
+	__asm        call   0x0056689D;
+	__asm        add    esp, 4;
 // LINE 16:
-	asm( 
-"	      00566882    mov al,hiWord[0]"
-"	      00566885    mov ecx,val"
-"	      00566888    mov [ecx],al"
-);
+	__asm        mov    al, hiWord[0];
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx], al;
 // LINE 17:
-	asm( 
-"	      0056688a    mov al,loWord[0]"
-"	      0056688d    mov ecx,val"
-"	      00566890    mov [ecx+8],al"
-);
+	__asm        mov    al, loWord[0];
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx+8], al;
 // LINE 19:
-	asm( 
-"	      00566893    jmp near ptr 00566898h"
-"	      00566898    pop edi"
-"	      00566899    pop esi"
-"	      0056689a    pop ebx"
-"	      0056689b    leave"
-"	      0056689c    ret"
-);
+	__asm        jmp    near ptr 0x00566898;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056689d
@@ -74,89 +58,67 @@ void Swizzle8(void * __ptr32 val) {
 	long loWord;
 
 // LINE 22:
-	asm( 
-"	      0056689d    push ebp"
-"	      0056689e    mov ebp,esp"
-"	      005668a0    sub esp,8"
-"	      005668a3    push ebx"
-"	      005668a4    push esi"
-"	      005668a5    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 24:
-	asm( 
-"	      005668a6    mov eax,val"
-"	      005668a9    mov eax,[eax]"
-"	      005668ab    mov loWord,eax"
-);
+	__asm        mov    eax, val;
+	__asm        mov    eax, [eax];
+	__asm        mov    loWord, eax;
 // LINE 25:
-	asm( 
-"	      005668ae    mov eax,val"
-"	      005668b1    mov eax,[eax+4]"
-"	      005668b4    mov hiWord,eax"
-);
+	__asm        mov    eax, val;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    hiWord, eax;
 // LINE 26:
-	asm( 
-"	      005668b7    lea eax,loWord"
-"	      005668ba    push eax"
-"	      005668bb    call 00566906h"
-"	      005668c0    add esp,4"
-);
+	__asm        lea    eax, loWord;
+	__asm        push   eax;
+	__asm        call   0x00566906;
+	__asm        add    esp, 4;
 // LINE 27:
-	asm( 
-"	      005668c3    lea eax,hiWord"
-"	      005668c6    push eax"
-"	      005668c7    call 00566906h"
-"	      005668cc    add esp,4"
-);
+	__asm        lea    eax, hiWord;
+	__asm        push   eax;
+	__asm        call   0x00566906;
+	__asm        add    esp, 4;
 // LINE 28:
-	asm( 
-"	      005668cf    mov eax,hiWord"
-"	      005668d2    mov ecx,val"
-"	      005668d5    mov [ecx],eax"
-);
+	__asm        mov    eax, hiWord;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx], eax;
 // LINE 29:
-	asm( 
-"	      005668d7    mov eax,loWord"
-"	      005668da    mov ecx,val"
-"	      005668dd    mov [ecx+4],eax"
-);
+	__asm        mov    eax, loWord;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx+4], eax;
 // LINE 31:
-	asm( 
-"	      005668e0    jmp near ptr 005668E5h"
-"	      005668e5    pop edi"
-"	      005668e6    pop esi"
-"	      005668e7    pop ebx"
-"	      005668e8    leave"
-"	      005668e9    ret"
-);
+	__asm        jmp    near ptr 0x005668E5;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005668ea
 void SwizzleFloat(void * __ptr32 val) {
 // LINE 34:
-	asm( 
-"	      005668ea    push ebp"
-"	      005668eb    mov ebp,esp"
-"	      005668ed    push ebx"
-"	      005668ee    push esi"
-"	      005668ef    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 35:
-	asm( 
-"	      005668f0    mov eax,val"
-"	      005668f3    push eax"
-"	      005668f4    call 00566906h"
-"	      005668f9    add esp,4"
-);
+	__asm        mov    eax, val;
+	__asm        push   eax;
+	__asm        call   0x00566906;
+	__asm        add    esp, 4;
 // LINE 36:
-	asm( 
-"	      005668fc    jmp near ptr 00566901h"
-"	      00566901    pop edi"
-"	      00566902    pop esi"
-"	      00566903    pop ebx"
-"	      00566904    leave"
-"	      00566905    ret"
-);
+	__asm        jmp    near ptr 0x00566901;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566906
@@ -165,61 +127,45 @@ void Swizzle4(void * __ptr32 val) {
 	short loWord;
 
 // LINE 39:
-	asm( 
-"	      00566906    push ebp"
-"	      00566907    mov ebp,esp"
-"	      00566909    sub esp,8"
-"	      0056690c    push ebx"
-"	      0056690d    push esi"
-"	      0056690e    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 41:
-	asm( 
-"	      0056690f    mov eax,val"
-"	      00566912    mov ax,[eax]"
-"	      00566915    mov loWord,ax"
-);
+	__asm        mov    eax, val;
+	__asm        mov    ax, [eax];
+	__asm        mov    loWord, ax;
 // LINE 42:
-	asm( 
-"	      00566919    mov eax,val"
-"	      0056691c    mov ax,[eax+2]"
-"	      00566920    mov hiWord,ax"
-);
+	__asm        mov    eax, val;
+	__asm        mov    ax, [eax+2];
+	__asm        mov    hiWord, ax;
 // LINE 43:
-	asm( 
-"	      00566924    lea eax,loWord"
-"	      00566927    push eax"
-"	      00566928    call 0056695Bh"
-"	      0056692d    add esp,4"
-);
+	__asm        lea    eax, loWord;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 44:
-	asm( 
-"	      00566930    lea eax,hiWord"
-"	      00566933    push eax"
-"	      00566934    call 0056695Bh"
-"	      00566939    add esp,4"
-);
+	__asm        lea    eax, hiWord;
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 45:
-	asm( 
-"	      0056693c    mov ax,hiWord"
-"	      00566940    mov ecx,val"
-"	      00566943    mov [ecx],ax"
-);
+	__asm        mov    ax, hiWord;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx], ax;
 // LINE 46:
-	asm( 
-"	      00566946    mov ax,loWord"
-"	      0056694a    mov ecx,val"
-"	      0056694d    mov [ecx+2],ax"
-);
+	__asm        mov    ax, loWord;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx+2], ax;
 // LINE 48:
-	asm( 
-"	      00566951    jmp near ptr 00566956h"
-"	      00566956    pop edi"
-"	      00566957    pop esi"
-"	      00566958    pop ebx"
-"	      00566959    leave"
-"	      0056695a    ret"
-);
+	__asm        jmp    near ptr 0x00566956;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056695b
@@ -228,47 +174,35 @@ void Swizzle2(void * __ptr32 val) {
 	char loByte;
 
 // LINE 51:
-	asm( 
-"	      0056695b    push ebp"
-"	      0056695c    mov ebp,esp"
-"	      0056695e    sub esp,8"
-"	      00566961    push ebx"
-"	      00566962    push esi"
-"	      00566963    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 53:
-	asm( 
-"	      00566964    mov eax,val"
-"	      00566967    mov al,[eax]"
-"	      00566969    mov loByte,al"
-);
+	__asm        mov    eax, val;
+	__asm        mov    al, [eax];
+	__asm        mov    loByte, al;
 // LINE 54:
-	asm( 
-"	      0056696c    mov eax,val"
-"	      0056696f    mov al,[eax+1]"
-"	      00566972    mov hiByte,al"
-);
+	__asm        mov    eax, val;
+	__asm        mov    al, [eax+1];
+	__asm        mov    hiByte, al;
 // LINE 55:
-	asm( 
-"	      00566975    mov al,hiByte"
-"	      00566978    mov ecx,val"
-"	      0056697b    mov [ecx],al"
-);
+	__asm        mov    al, hiByte;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx], al;
 // LINE 56:
-	asm( 
-"	      0056697d    mov al,loByte"
-"	      00566980    mov ecx,val"
-"	      00566983    mov [ecx+1],al"
-);
+	__asm        mov    al, loByte;
+	__asm        mov    ecx, val;
+	__asm        mov    [ecx+1], al;
 // LINE 58:
-	asm( 
-"	      00566986    jmp near ptr 0056698Bh"
-"	      0056698b    pop edi"
-"	      0056698c    pop esi"
-"	      0056698d    pop ebx"
-"	      0056698e    leave"
-"	      0056698f    ret"
-);
+	__asm        jmp    near ptr 0x0056698B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566990
@@ -276,67 +210,53 @@ void SwizzleRect(struct Rect* rect) {
 	short * pShort;
 
 // LINE 62:
-	asm( 
-"	      00566990    push ebp"
-"	      00566991    mov ebp,esp"
-"	      00566993    sub esp,14h"
-"	      00566996    push ebx"
-"	      00566997    push esi"
-"	      00566998    push edi"
-);
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0x14;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
 // LINE 64:
-	asm( 
-"	      00566999    mov eax,rect"
-"	      0056699c    mov pShort,eax"
-);
+	__asm        mov    eax, rect;
+	__asm        mov    pShort, eax;
 // LINE 65:
-	asm( 
-"	      0056699f    mov eax,pShort"
-"	      005669a2    mov [ebp-8],eax"
-"	      005669a5    add pShort,2"
-"	      005669a9    mov eax,[ebp-8]"
-"	      005669ac    push eax"
-"	      005669ad    call 0056695Bh"
-"	      005669b2    add esp,4"
-);
+	__asm        mov    eax, pShort;
+	__asm        mov    [ebp-8], eax;
+	__asm        add    pShort, 2;
+	__asm        mov    eax, [ebp-8];
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 66:
-	asm( 
-"	      005669b5    mov eax,pShort"
-"	      005669b8    mov [ebp-0Ch],eax"
-"	      005669bb    add pShort,2"
-"	      005669bf    mov eax,[ebp-0Ch]"
-"	      005669c2    push eax"
-"	      005669c3    call 0056695Bh"
-"	      005669c8    add esp,4"
-);
+	__asm        mov    eax, pShort;
+	__asm        mov    [ebp-0xC], eax;
+	__asm        add    pShort, 2;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 67:
-	asm( 
-"	      005669cb    mov eax,pShort"
-"	      005669ce    mov [ebp-10h],eax"
-"	      005669d1    add pShort,2"
-"	      005669d5    mov eax,[ebp-10h]"
-"	      005669d8    push eax"
-"	      005669d9    call 0056695Bh"
-"	      005669de    add esp,4"
-);
+	__asm        mov    eax, pShort;
+	__asm        mov    [ebp-0x10], eax;
+	__asm        add    pShort, 2;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 68:
-	asm( 
-"	      005669e1    mov eax,pShort"
-"	      005669e4    mov [ebp-14h],eax"
-"	      005669e7    add pShort,2"
-"	      005669eb    mov eax,[ebp-14h]"
-"	      005669ee    push eax"
-"	      005669ef    call 0056695Bh"
-"	      005669f4    add esp,4"
-);
+	__asm        mov    eax, pShort;
+	__asm        mov    [ebp-0x14], eax;
+	__asm        add    pShort, 2;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        push   eax;
+	__asm        call   0x0056695B;
+	__asm        add    esp, 4;
 // LINE 70:
-	asm( 
-"	      005669f7    jmp near ptr 005669FCh"
-"	      005669fc    pop edi"
-"	      005669fd    pop esi"
-"	      005669fe    pop ebx"
-"	      005669ff    leave"
-"	      00566a00    ret"
-);
+	__asm        jmp    near ptr 0x005669FC;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
