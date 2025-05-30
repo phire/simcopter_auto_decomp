@@ -41,7 +41,7 @@ public:
 	long bLooping;
 	long bStreaming;
 	long lVolume;
-	void (*)(long) soundCompletionFunction;
+	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();

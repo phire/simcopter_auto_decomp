@@ -42,7 +42,7 @@ class _MMIOINFO{
 public:
 	unsigned long dwFlags;
 	unsigned long fccIOProc;
-	long (*)(char *, uint32_t, long, long) pIOProc;
+	long (*pIOProc)(char *, uint32_t, long, long);
 	uint32_t wErrorRet;
 	void * __ptr32 htask;
 	long cchBuffer;

@@ -207,7 +207,7 @@ protected:
 	void DrawRatchetAndLights();
 	void GetCoordinatesForLights(class MPoint*, class MRect*);
 	void GetCoordinatesForRatchets(class MPoint*, class MRect*);
-	Ptr to: class GraphicWindow[2] mySiblingWindows;
+	class GraphicWindow*[2] mySiblingWindows;
 	class CBackBuffer* myRatchetImage;
 	class CBackBuffer* myLightImage;
 };

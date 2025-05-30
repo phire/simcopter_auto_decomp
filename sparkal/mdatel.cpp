@@ -61,52 +61,8 @@ public:
 	class ostream& operator<<(char *);
 	class ostream& operator<<(unsigned char *);
 	class ostream& operator<<(char *);
-	class ostream& operator<<(LfPointer @ 0x75e80:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ref 1
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x40d6
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfClass @ 0x756d4:
-	[90m   LP.[m[90m   LC.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LC.[32m[err.  *][m [95mName[m = ios
-	[90m   LP.[m[90m   LC.[95msymbols[m = []
-	[90m   LP.[m[90m   LC.[95mTI[m = 0x4067
-	[90m   LP.[m[90m   LC.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  4.  2][m [95mproperties[m = fwdref
-	[90m   LP.[m[90m   LC.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
-	 (*)(class ios&));
-	class ostream& operator<<(LfPointer @ 0x26c0:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ref 1
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x10e3
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfClass @ 0x25dc:
-	[90m   LP.[m[90m   LC.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LC.[32m[err.  *][m [95mName[m = ostream
-	[90m   LP.[m[90m   LC.[95msymbols[m = []
-	[90m   LP.[m[90m   LC.[95mTI[m = 0x10d6
-	[90m   LP.[m[90m   LC.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  4.  2][m [95mproperties[m = fwdref
-	[90m   LP.[m[90m   LC.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
-	 (*)(class ostream&));
+	class ostream& operator<<(class ios& (*)(class ios&));
+	class ostream& operator<<(class ostream& (*)(class ostream&));
 	class ostream& put(char);
 	class ostream& put(unsigned char);
 	class ostream& put(char);
@@ -189,52 +145,8 @@ public:
 	class istream& operator>>(char *);
 	class istream& operator>>(unsigned char *);
 	class istream& operator>>(char *);
-	class istream& operator>>(LfPointer @ 0x75e80:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ref 1
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x40d6
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfClass @ 0x756d4:
-	[90m   LP.[m[90m   LC.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LC.[32m[err.  *][m [95mName[m = ios
-	[90m   LP.[m[90m   LC.[95msymbols[m = []
-	[90m   LP.[m[90m   LC.[95mTI[m = 0x4067
-	[90m   LP.[m[90m   LC.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  4.  2][m [95mproperties[m = fwdref
-	[90m   LP.[m[90m   LC.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
-	 (*)(class ios&));
-	class istream& operator>>(LfPointer @ 0x264c4:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ref 1
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x1fc4
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfClass @ 0x264ac:
-	[90m   LP.[m[90m   LC.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LC.[32m[err.  *][m [95mName[m = istream
-	[90m   LP.[m[90m   LC.[95msymbols[m = []
-	[90m   LP.[m[90m   LC.[95mTI[m = 0x1fc3
-	[90m   LP.[m[90m   LC.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  4.  2][m [95mproperties[m = fwdref
-	[90m   LP.[m[90m   LC.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
-	 (*)(class istream&));
+	class istream& operator>>(class ios& (*)(class ios&));
+	class istream& operator>>(class istream& (*)(class istream&));
 	class istream& get(char *, int32_t, int32_t);
 	class istream& get(class streambuf&, char);
 	class istream& get(char&);

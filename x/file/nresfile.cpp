@@ -15,7 +15,7 @@ public:
 
 // Type: unsigned long;
 
-// Type: void (void * __ptr32, long, );
+// Type: void (void * __ptr32, long);
 
 // Type: class StdResLoader (forward reference);
 class StdResLoader : public ResLoader<unsigned char,StdResInfo>
@@ -45,7 +45,7 @@ public:
 
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00499ef0
-class StdResLoader* NResFile::GetLoader(unsigned long type, void (*)(void * __ptr32, long) swizzler) {
+class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(void * __ptr32, long)) {
 	class StdResLoader* loader;
 
 // LINE 11:

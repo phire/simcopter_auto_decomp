@@ -214,7 +214,7 @@ public:
 	};
 private:
 	static unsigned short sInited;
-	static Ptr to: class cYObject[100] sObjects;
+	static class cYObject*[100] sObjects;
 	static enum cYObject::LocationType[10][18] sNeutralPersonLocs;
 	static enum cYObject::LocationType[10][14] sNeutralMissionLocs;
 	static class cYObject* sList;
@@ -497,159 +497,9 @@ public:
 	class cYObject* GetNext();
 	void DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	using PrimProc = LfEnum @ 0x5ed18:
-	[90m   LE.[32m[  0.  2][m [95mcount[m = 5
-	[90m   LE.[95msymbols[m = [Container(Type=13805, Name=u'TreeSim::ReturnCode', index=11352, visablity=<Visablity.Global: 1>, refcount=4)]
-	[90m   LE.[95mTI[m = 0x35ed
-	[90m   LE.[32m[  2.  2][m [95mutype[m = int32_t
-	[90m   LE.[32m[  4.  2][m [95mfieldList[m =
-	[90m   LE.[mLfFieldList @ 0x5ecb4:
-	[90m   LE.[m[90m  LFL.[32m[  0.  *][m [95mData[m =
-	[90m   LE.[m[90m  LFL.[m[LfEnumerate @ 0x5ecb6:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kTrueComplete
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 1
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ecca:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kFalseComplete
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 0
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ece2:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kEngaged
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 2
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ecf2:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kError
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = -1
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ed02:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kStackLoaded
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 3
-	[90m   LE.[m[90m  LFL.[m]
-	[90m   LE.[m[90m  LFL.[95mTI[m = 0x35ec
-	[90m   LE.[32m[  6.  2][m [95mproperties[m = isnested
-	[90m   LE.[32m[  8.  *][m [95mName[m = TreeSim::ReturnCode
-	 (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
+	using PrimProc = enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 public:
-	static Ptr to: LfEnum @ 0x5ed18:
-	[90m   LE.[32m[  0.  2][m [95mcount[m = 5
-	[90m   LE.[95msymbols[m = [Container(Type=13805, Name=u'TreeSim::ReturnCode', index=11352, visablity=<Visablity.Global: 1>, refcount=4)]
-	[90m   LE.[95mTI[m = 0x35ed
-	[90m   LE.[32m[  2.  2][m [95mutype[m = int32_t
-	[90m   LE.[32m[  4.  2][m [95mfieldList[m =
-	[90m   LE.[mLfFieldList @ 0x5ecb4:
-	[90m   LE.[m[90m  LFL.[32m[  0.  *][m [95mData[m =
-	[90m   LE.[m[90m  LFL.[m[LfEnumerate @ 0x5ecb6:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kTrueComplete
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 1
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ecca:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kFalseComplete
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 0
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ece2:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kEngaged
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 2
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ecf2:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kError
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = -1
-	[90m   LE.[m[90m  LFL.[m, LfEnumerate @ 0x5ed02:
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  0.  2][m [95mattr[m = public
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[err.  *][m [95mName[m = kStackLoaded
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95msymbols[m = []
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[95mTI[m = 0x35ec
-	[90m   LE.[m[90m  LFL.[m[90m   LE.[32m[  2.  *][m [95mvalue[m = 3
-	[90m   LE.[m[90m  LFL.[m]
-	[90m   LE.[m[90m  LFL.[95mTI[m = 0x35ec
-	[90m   LE.[32m[  6.  2][m [95mproperties[m = isnested
-	[90m   LE.[32m[  8.  *][m [95mName[m = TreeSim::ReturnCode
-	 (LfPointer @ 0x60f88:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ptr 0
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = [Container(Offset=136836, Segment=3, Type=14030, Name=u'cYObject::sList', index=12502, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=64, contrib=Container(Section=3, Unknown1=3263, Offset=136772, Size=13105, Characteristics=3224371264, ModuleIndex=200, Pad2=142, symbols=[Container(Offset=136848, Segment=3, Type=0, Name=u'?sSimTicks@cYObject@@2JA', index=11762, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=76, contrib=<recursion detected>), Container(Offset=136832, Segment=3, Type=0, Name=u'?gAvatar@@3PAVcAvatar@@A', index=11764, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=60, contrib=<recursion detected>), Container(Offset=136816, Segment=3, Type=0, Name=u'?sNumMissionAwake@cYObject@@2FA', index=11842, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=44, contrib=<recursion detected>), Container(Offset=136820, Segment=3, Type=0, Name=u'?sNumAmbientAwake@cYObject@@2FA', index=11843, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=48, contrib=<recursion detected>), Container(Offset=136816, Segment=3, Type=17, Name=u'cYObject::sNumMissionAwake', index=11977, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=44, contrib=<recursion detected>), Container(Offset=136820, Segment=3, Type=17, Name=u'cYObject::sNumAmbientAwake', index=11978, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=48, contrib=<recursion detected>), Container(Offset=136832, Segment=3, Type=13879, Name=u'gAvatar', index=11985, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=60, contrib=<recursion detected>), Container(Offset=136848, Segment=3, Type=18, Name=u'cYObject::sSimTicks', index=11987, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=76, contrib=<recursion detected>), Container(Offset=136868, Segment=3, Type=0, Name=u'?sScurkRectRad@cYObject@@2FA', index=12214, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=96, contrib=<recursion detected>), Container(Offset=136864, Segment=3, Type=0, Name=u'?gBodyDebugInfoIndex@@3FA', index=12215, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=92, contrib=<recursion detected>), Container(Offset=136860, Segment=3, Type=0, Name=u'?gCumTime@@3HA', index=12216, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=88, contrib=<recursion detected>), Container(Offset=136856, Segment=3, Type=0, Name=u'?gNextTime@@3HA', index=12217, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=84, contrib=<recursion detected>), Container(Offset=136852, Segment=3, Type=0, Name=u'?gPersonBeamSlice@@3HA', index=12218, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=80, contrib=<recursion detected>), Container(Offset=136844, Segment=3, Type=0, Name=u'?sDebugNumBeamed@cYObject@@2FA', index=12219, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=72, contrib=<recursion detected>), Container(Offset=136840, Segment=3, Type=0, Name=u'?sBeamed@cYObject@@2FA', index=12220, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=68, contrib=<recursion detected>), Container(Offset=136836, Segment=3, Type=0, Name=u'?sList@cYObject@@0PAV1@A', index=12221, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=64, contrib=<recursion detected>), Container(Offset=136828, Segment=3, Type=0, Name=u'?sAmbientAbsoluteMax@cYObject@@2FA', index=12222, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=56, contrib=<recursion detected>), Container(Offset=136824, Segment=3, Type=0, Name=u'?sAmbientTopOff@cYObject@@2FA', index=12223, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=52, contrib=<recursion detected>), Container(Offset=136812, Segment=3, Type=0, Name=u'?sAllAmbientStarted@cYObject@@2GA', index=12224, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=40, contrib=<recursion detected>), Container(Offset=136808, Segment=3, Type=0, Name=u'?sInited@cYObject@@0GA', index=12225, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=36, contrib=<recursion detected>), Container(Offset=136804, Segment=3, Type=0, Name=u'?CopterDir@@3HA', index=12226, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=32, contrib=<recursion detected>), Container(Offset=136800, Segment=3, Type=0, Name=u'?gNearLimit@@3HA', index=12227, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=28, contrib=<recursion detected>), Container(Offset=136796, Segment=3, Type=0, Name=u'?gNearBoundary@@3HA', index=12228, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=24, contrib=<recursion detected>), Container(Offset=136792, Segment=3, Type=0, Name=u'?gMidBoundary@@3HA', index=12229, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=20, contrib=<recursion detected>), Container(Offset=136788, Segment=3, Type=0, Name=u'?gFarBoundary@@3HA', index=12230, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=16, contrib=<recursion detected>), Container(Offset=136784, Segment=3, Type=0, Name=u'?gFarLimit@@3HA', index=12231, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=12, contrib=<recursion detected>), Container(Offset=136780, Segment=3, Type=0, Name=u'?gPersonBeamingSlicesSlice@@3FA', index=12232, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=8, contrib=<recursion detected>), Container(Offset=136776, Segment=3, Type=0, Name=u'?gPersonBeamingForwardWeight@@3FA', index=12233, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=4, contrib=<recursion detected>), Container(Offset=136772, Segment=3, Type=0, Name=u'_gPersonBeamingSlices', index=12234, visablity=<Visablity.Public: 2>, refcount=1, contribOffset=0, contrib=<recursion detected>), Container(Offset=136864, Segment=3, Type=17, Name=u'gBodyDebugInfoIndex', index=12486, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=92, contrib=<recursion detected>), Container(Offset=136772, Segment=3, Type=17, Name=u'gPersonBeamingSlices', index=12487, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=0, contrib=<recursion detected>), Container(Offset=136880, Segment=3, Type=17, Name=u'gPersonSoundBeamSlice', index=12488, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=108, contrib=<recursion detected>), Container(Offset=136872, Segment=3, Type=17, Name=u'sAvLastCellX', index=12492, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=100, contrib=<recursion detected>), Container(Offset=136876, Segment=3, Type=17, Name=u'sAvLastCellY', index=12493, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=104, contrib=<recursion detected>), Container(Offset=136884, Segment=3, Type=17, Name=u'sCheckTotedCount', index=12494, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=112, contrib=<recursion detected>), Container(Offset=136840, Segment=3, Type=17, Name=u'cYObject::sBeamed', index=12498, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=68, contrib=<recursion detected>), Container(Offset=136844, Segment=3, Type=17, Name=u'cYObject::sDebugNumBeamed', index=12499, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=72, contrib=<recursion detected>), Container(Offset=136808, Segment=3, Type=33, Name=u'cYObject::sInited', index=12500, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=36, contrib=<recursion detected>), <recursion detected>, Container(Offset=136812, Segment=3, Type=33, Name=u'cYObject::sAllAmbientStarted', index=12510, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=40, contrib=<recursion detected>), Container(Offset=136824, Segment=3, Type=17, Name=u'cYObject::sAmbientTopOff', index=12511, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=52, contrib=<recursion detected>), Container(Offset=136828, Segment=3, Type=17, Name=u'cYObject::sAmbientAbsoluteMax', index=12512, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=56, contrib=<recursion detected>), Container(Offset=136776, Segment=3, Type=17, Name=u'gPersonBeamingForwardWeight', index=12513, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=4, contrib=<recursion detected>), Container(Offset=136868, Segment=3, Type=17, Name=u'cYObject::sScurkRectRad', index=12514, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=96, contrib=<recursion detected>), Container(Offset=136780, Segment=3, Type=17, Name=u'gPersonBeamingSlicesSlice', index=12515, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=8, contrib=<recursion detected>), Container(Offset=136784, Segment=3, Type=116, Name=u'gFarLimit', index=12516, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=12, contrib=<recursion detected>), Container(Offset=136788, Segment=3, Type=116, Name=u'gFarBoundary', index=12517, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=16, contrib=<recursion detected>), Container(Offset=136792, Segment=3, Type=116, Name=u'gMidBoundary', index=12518, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=20, contrib=<recursion detected>), Container(Offset=136796, Segment=3, Type=116, Name=u'gNearBoundary', index=12519, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=24, contrib=<recursion detected>), Container(Offset=136800, Segment=3, Type=116, Name=u'gNearLimit', index=12520, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=28, contrib=<recursion detected>), Container(Offset=136804, Segment=3, Type=116, Name=u'CopterDir', index=12523, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=32, contrib=<recursion detected>), Container(Offset=136852, Segment=3, Type=116, Name=u'gPersonBeamSlice', index=12525, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=80, contrib=<recursion detected>), Container(Offset=136856, Segment=3, Type=116, Name=u'gNextTime', index=12526, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=84, contrib=<recursion detected>), Container(Offset=136860, Segment=3, Type=116, Name=u'gCumTime', index=12527, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=88, contrib=<recursion detected>)], things={76: Container(Offset=136848, Segment=3, Type=18, Name=u'cYObject::sSimTicks', index=11987, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=76, contrib=<recursion detected>), 60: Container(Offset=136832, Segment=3, Type=13879, Name=u'gAvatar', index=11985, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=60, contrib=<recursion detected>), 44: Container(Offset=136816, Segment=3, Type=17, Name=u'cYObject::sNumMissionAwake', index=11977, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=44, contrib=<recursion detected>), 48: Container(Offset=136820, Segment=3, Type=17, Name=u'cYObject::sNumAmbientAwake', index=11978, visablity=<Visablity.Global: 1>, refcount=2, contribOffset=48, contrib=<recursion detected>), 96: Container(Offset=136868, Segment=3, Type=17, Name=u'cYObject::sScurkRectRad', index=12514, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=96, contrib=<recursion detected>), 92: Container(Offset=136864, Segment=3, Type=17, Name=u'gBodyDebugInfoIndex', index=12486, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=92, contrib=<recursion detected>), 88: Container(Offset=136860, Segment=3, Type=116, Name=u'gCumTime', index=12527, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=88, contrib=<recursion detected>), 84: Container(Offset=136856, Segment=3, Type=116, Name=u'gNextTime', index=12526, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=84, contrib=<recursion detected>), 80: Container(Offset=136852, Segment=3, Type=116, Name=u'gPersonBeamSlice', index=12525, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=80, contrib=<recursion detected>), 72: Container(Offset=136844, Segment=3, Type=17, Name=u'cYObject::sDebugNumBeamed', index=12499, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=72, contrib=<recursion detected>), 68: Container(Offset=136840, Segment=3, Type=17, Name=u'cYObject::sBeamed', index=12498, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=68, contrib=<recursion detected>), 64: <recursion detected>, 56: Container(Offset=136828, Segment=3, Type=17, Name=u'cYObject::sAmbientAbsoluteMax', index=12512, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=56, contrib=<recursion detected>), 52: Container(Offset=136824, Segment=3, Type=17, Name=u'cYObject::sAmbientTopOff', index=12511, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=52, contrib=<recursion detected>), 40: Container(Offset=136812, Segment=3, Type=33, Name=u'cYObject::sAllAmbientStarted', index=12510, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=40, contrib=<recursion detected>), 36: Container(Offset=136808, Segment=3, Type=33, Name=u'cYObject::sInited', index=12500, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=36, contrib=<recursion detected>), 32: Container(Offset=136804, Segment=3, Type=116, Name=u'CopterDir', index=12523, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=32, contrib=<recursion detected>), 28: Container(Offset=136800, Segment=3, Type=116, Name=u'gNearLimit', index=12520, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=28, contrib=<recursion detected>), 24: Container(Offset=136796, Segment=3, Type=116, Name=u'gNearBoundary', index=12519, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=24, contrib=<recursion detected>), 20: Container(Offset=136792, Segment=3, Type=116, Name=u'gMidBoundary', index=12518, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=20, contrib=<recursion detected>), 16: Container(Offset=136788, Segment=3, Type=116, Name=u'gFarBoundary', index=12517, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=16, contrib=<recursion detected>), 12: Container(Offset=136784, Segment=3, Type=116, Name=u'gFarLimit', index=12516, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=12, contrib=<recursion detected>), 8: Container(Offset=136780, Segment=3, Type=17, Name=u'gPersonBeamingSlicesSlice', index=12515, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=8, contrib=<recursion detected>), 4: Container(Offset=136776, Segment=3, Type=17, Name=u'gPersonBeamingForwardWeight', index=12513, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=4, contrib=<recursion detected>), 0: Container(Offset=136772, Segment=3, Type=17, Name=u'gPersonBeamingSlices', index=12487, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=0, contrib=<recursion detected>), 108: Container(Offset=136880, Segment=3, Type=17, Name=u'gPersonSoundBeamSlice', index=12488, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=108, contrib=<recursion detected>), 100: Container(Offset=136872, Segment=3, Type=17, Name=u'sAvLastCellX', index=12492, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=100, contrib=<recursion detected>), 104: Container(Offset=136876, Segment=3, Type=17, Name=u'sAvLastCellY', index=12493, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=104, contrib=<recursion detected>), 112: Container(Offset=136884, Segment=3, Type=17, Name=u'sCheckTotedCount', index=12494, visablity=<Visablity.Global: 1>, refcount=1, contribOffset=112, contrib=<recursion detected>)}, module=Module('Yobject.obj', 'C:\\Copter\\Source\\X\\Y\\Yobject.cpp', ...)))]
-	[90m   LP.[95mTI[m = 0x36ce
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfClass @ 0x5b5c0:
-	[90m   LP.[m[90m   LC.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LC.[32m[err.  *][m [95mName[m = cYObject
-	[90m   LP.[m[90m   LC.[95msymbols[m = []
-	[90m   LP.[m[90m   LC.[95mTI[m = 0x3509
-	[90m   LP.[m[90m   LC.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  4.  2][m [95mproperties[m = ctor fwdref
-	[90m   LP.[m[90m   LC.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
-	, LfPointer @ 0x5ed5c:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ptr 0
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x35ef
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfStruct @ 0x5ed38:
-	[90m   LP.[m[90m   LS.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LS.[32m[err.  *][m [95mName[m = TreeSim::StackElem
-	[90m   LP.[m[90m   LS.[95msymbols[m = []
-	[90m   LP.[m[90m   LS.[95mTI[m = 0x35ee
-	[90m   LP.[m[90m   LS.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  4.  2][m [95mproperties[m = isnested fwdref
-	[90m   LP.[m[90m   LS.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  a.  *][m [95mSize[m = 0
-	, LfPointer @ 0x5bd88:
-	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-	[90m   LP.[mContainer: 
-	[90m   LP.[m    ptrmode = (enum) Ptr 0
-	[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-	[90m   LP.[m    isunaligned = False
-	[90m   LP.[m    isconst = False
-	[90m   LP.[m    isvolatile = False
-	[90m   LP.[m    isflat32 = False
-	[90m   LP.[95msymbols[m = []
-	[90m   LP.[95mTI[m = 0x352f
-	[90m   LP.[32m[  2.  2][m [95mType[m =
-	[90m   LP.[mLfStruct @ 0x5bd68:
-	[90m   LP.[m[90m   LS.[32m[  0.  2][m [95mcount[m = 0
-	[90m   LP.[m[90m   LS.[32m[err.  *][m [95mName[m = Behavior::Node
-	[90m   LP.[m[90m   LS.[95msymbols[m = []
-	[90m   LP.[m[90m   LS.[95mTI[m = 0x352e
-	[90m   LP.[m[90m   LS.[32m[  2.  2][m [95mfieldList[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  4.  2][m [95mproperties[m = isnested fwdref
-	[90m   LP.[m[90m   LS.[32m[  6.  2][m [95mderivedList[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  8.  2][m [95mvshape[m = <NoType>
-	[90m   LP.[m[90m   LS.[32m[  a.  *][m [95mSize[m = 0
-	, )[64] PrimProcs;
+	static enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*)[64] PrimProcs;
 	// calltype: NearC
 	static enum TreeSim::ReturnCode sIdle(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 	enum TreeSim::ReturnCode iIdle(struct TreeSim::StackElem*, struct Behavior::Node*);

@@ -7,7 +7,7 @@
 // Type: class RoadGraph (forward reference);
 class RoadGraph{
 public:
-	Ptr to: struct RGVertex[128] RGArray;
+	struct RGVertex*[128] RGArray;
 	unsigned char[128] RGLength;
 	void RoadGraph();
 	void Init();

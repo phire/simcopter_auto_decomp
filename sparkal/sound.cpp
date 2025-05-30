@@ -38,7 +38,7 @@ protected:
 // Type: class SoundManager (forward reference);
 class SoundManager{
 public:
-	Ptr to: class Sound[128] sound;
+	class Sound*[128] sound;
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -77,7 +77,7 @@ public:
 	long bLooping;
 	long bStreaming;
 	long lVolume;
-	void (*)(long) soundCompletionFunction;
+	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
@@ -118,7 +118,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	Ptr to: struct IDirectSoundBuffer[8] lpSound;
+	struct IDirectSoundBuffer*[8] lpSound;
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -399,7 +399,7 @@ public:
 	char[128] szPathName;
 };
 
-// Type: void (long, );
+// Type: void (long);
 
 
 
@@ -5887,7 +5887,7 @@ END_OF_FUNCTION:
 }
 
 // FUNCTION: COPTER_D 0x00431821
-int32_t DigitalSound::SetCompletionNotification(void (*)(long) newSoundCompletionFunction, long lNewSoundCompletionData) {
+int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunction)(long), long lNewSoundCompletionData) {
 // LINE 2043:
 	__asm        push   ebp;
 	__asm        mov    ebp, esp;

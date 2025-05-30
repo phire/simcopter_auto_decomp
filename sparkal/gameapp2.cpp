@@ -58,7 +58,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	Ptr to: struct IDirectSoundBuffer[8] lpSound;
+	struct IDirectSoundBuffer*[8] lpSound;
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:

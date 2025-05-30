@@ -59,7 +59,7 @@ public:
 class tagWNDCLASSA{
 public:
 	uint32_t style;
-	long (*)(void * __ptr32, uint32_t, uint32_t, long) lpfnWndProc;
+	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
 	int32_t cbClsExtra;
 	int32_t cbWndExtra;
 	void * __ptr32 hInstance;

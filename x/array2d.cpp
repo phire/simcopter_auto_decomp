@@ -117,7 +117,7 @@ public:
 
 // Type: long;
 
-// Type: void (void * __ptr32, long, );
+// Type: void (void * __ptr32, long);
 
 // Type: char *;
 
@@ -298,7 +298,7 @@ unsigned short OpenFile(class ResFile* pFile) {
 }
 
 // FUNCTION: COPTER_D 0x00567552
-void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long entrySize, void (*)(void * __ptr32, long) Swizzler) {
+void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long entrySize, void (*Swizzler)(void * __ptr32, long)) {
 	unsigned short fileOpened;
 	char * data;
 	struct _cArray::Header* header;
@@ -2846,7 +2846,7 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 }
 
 // FUNCTION: COPTER_D 0x00569095
-void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short entrySize, void (*)(void * __ptr32, long) Swizzler) {
+void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short entrySize, void (*Swizzler)(void * __ptr32, long)) {
 	short numArrays;
 	short diskEntrySize;
 	short foundcount;

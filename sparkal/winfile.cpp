@@ -243,7 +243,7 @@ public:
 	unsigned short nFileExtension;
 	char * lpstrDefExt;
 	long lCustData;
-	uint32_t (*)(void * __ptr32, uint32_t, uint32_t, long) lpfnHook;
+	uint32_t (*lpfnHook)(void * __ptr32, uint32_t, uint32_t, long);
 	char * lpTemplateName;
 };
 

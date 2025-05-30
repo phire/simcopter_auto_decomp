@@ -10,7 +10,7 @@ protected:
 	class StdResLoader* fGlobalTrees;
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
-	void (*)(void * __ptr32, long) fSwizzler;
+	void (*fSwizzler)(void * __ptr32, long);
 		enum __unnamed {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
@@ -114,29 +114,7 @@ public:
 
 // Type: long;
 
-// Type: void (short, LfPointer @ 0x5be08:
-[90m   LP.[32m[  0.  2][m [95mAttributes[m =
-[90m   LP.[mContainer: 
-[90m   LP.[m    ptrmode = (enum) Ptr 0
-[90m   LP.[m    ptrtype = (enum) PtrNear32 10
-[90m   LP.[m    isunaligned = False
-[90m   LP.[m    isconst = False
-[90m   LP.[m    isvolatile = False
-[90m   LP.[m    isflat32 = False
-[90m   LP.[95msymbols[m = []
-[90m   LP.[95mTI[m = 0x3536
-[90m   LP.[32m[  2.  2][m [95mType[m =
-[90m   LP.[mLfStruct @ 0x5bde0:
-[90m   LP.[m[90m   LS.[32m[  0.  2][m [95mcount[m = 0
-[90m   LP.[m[90m   LS.[32m[err.  *][m [95mName[m = Behavior::NodeParameter
-[90m   LP.[m[90m   LS.[95msymbols[m = []
-[90m   LP.[m[90m   LS.[95mTI[m = 0x3535
-[90m   LP.[m[90m   LS.[32m[  2.  2][m [95mfieldList[m = <NoType>
-[90m   LP.[m[90m   LS.[32m[  4.  2][m [95mproperties[m = isnested fwdref
-[90m   LP.[m[90m   LS.[32m[  6.  2][m [95mderivedList[m = <NoType>
-[90m   LP.[m[90m   LS.[32m[  8.  2][m [95mvshape[m = <NoType>
-[90m   LP.[m[90m   LS.[32m[  a.  *][m [95mSize[m = 0
-, );
+// Type: void (short, struct Behavior::NodeParameter*);
 
 // Type: short;
 
@@ -294,7 +272,7 @@ class ResFile* Behavior::GetGlobFile() {
 }
 
 // FUNCTION: COPTER_D 0x00560385
-void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(short, struct Behavior::NodeParameter*) paramswizzler) {
+void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*paramswizzler)(short, struct Behavior::NodeParameter*)) {
 	short count;
 
 // LINE 48:

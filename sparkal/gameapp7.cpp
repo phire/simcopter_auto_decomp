@@ -335,7 +335,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	Ptr to: struct IDirectSoundBuffer[8] lpSound;
+	struct IDirectSoundBuffer*[8] lpSound;
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -609,7 +609,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
 	virtual long DoKeyDown(long, char);
 protected:
-	Ptr to: class SliderWindow[8] mySliderWindows;
+	class SliderWindow*[8] mySliderWindows;
 };
 
 // Type: class ControlDisplayWindow (forward reference);
@@ -645,8 +645,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	Ptr to: class SliderWindow[3] mySliderWindows;
-	Ptr to: class TextWindow[5] myTextWindows;
+	class SliderWindow*[3] mySliderWindows;
+	class TextWindow*[5] myTextWindows;
 };
 
 // Type: long[3];

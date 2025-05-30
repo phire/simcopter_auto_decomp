@@ -12,7 +12,7 @@
 class CriminalEvaderCarClass : public AutomobileClass
 {
 public:
-	static Ptr to: class CriminalEvaderCarClass[0] criminalCars;
+	static class CriminalEvaderCarClass*[0] criminalCars;
 		enum MissionState {
 			CRUISING = 0,
 			SEARCHING = 1,

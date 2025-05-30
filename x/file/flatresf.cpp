@@ -69,7 +69,7 @@ public:
 
 // Type: unsigned long;
 
-// Type: void (void * __ptr32, long, );
+// Type: void (void * __ptr32, long);
 
 // Type: struct ResMap::Entry (forward reference);
 
@@ -756,7 +756,7 @@ short FlatResFile::Count(unsigned long type) {
 }
 
 // FUNCTION: COPTER_D 0x0055320b
-void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void * __ptr32, long) Swizzler) {
+void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
 // LINE 336:
@@ -856,7 +856,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void 
 }
 
 // FUNCTION: COPTER_D 0x0055331d
-void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*)(void * __ptr32, long) Swizzler) {
+void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
 // LINE 363:
@@ -966,7 +966,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 }
 
 // FUNCTION: COPTER_D 0x00553452
-void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)(void * __ptr32, long) Swizzler) {
+void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
 // LINE 392:

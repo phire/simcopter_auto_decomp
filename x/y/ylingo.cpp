@@ -274,7 +274,7 @@ public:
 		short m4;
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
-	// union YObjLang::Param Param// (forward reference)
+	// union YObjLang::Param Param
 		enum TreeNum {
 			kNoTree = -1,
 			kSpotlightTree = 900,
@@ -373,7 +373,7 @@ protected:
 	class StdResLoader* fGlobalTrees;
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
-	void (*)(void * __ptr32, long) fSwizzler;
+	void (*fSwizzler)(void * __ptr32, long);
 		enum __unnamed {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,

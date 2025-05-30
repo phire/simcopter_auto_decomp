@@ -74,7 +74,7 @@ protected:
 	class StdResLoader* fGlobalTrees;
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
-	void (*)(void * __ptr32, long) fSwizzler;
+	void (*fSwizzler)(void * __ptr32, long);
 		enum __unnamed {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,

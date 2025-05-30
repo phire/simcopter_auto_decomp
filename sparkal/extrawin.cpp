@@ -692,7 +692,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
 	virtual long DoKeyDown(long, char);
 protected:
-	Ptr to: class SliderWindow[8] mySliderWindows;
+	class SliderWindow*[8] mySliderWindows;
 };
 
 // Type: struct tagCitySettings (forward reference);
@@ -880,8 +880,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	Ptr to: class SliderWindow[3] mySliderWindows;
-	Ptr to: class TextWindow[5] myTextWindows;
+	class SliderWindow*[3] mySliderWindows;
+	class TextWindow*[5] myTextWindows;
 };
 
 // Type: long *;
