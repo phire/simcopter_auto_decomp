@@ -37,29 +37,6 @@ protected:
 class CDefaultCommander : public ICommander
 {
 public:
-	void ICommander();
-	// vtable: 0
-	intro void ~ICommander();
-	// vtable: 4
-	intro unsigned long Idle();
-	// vtable: 8
-	intro unsigned long OnCharacter(char, int32_t);
-	// vtable: 12
-	intro unsigned long OnMouseDown(int32_t, int32_t);
-	// vtable: 16
-	intro unsigned long OnMouseUp(int32_t, int32_t);
-	// vtable: 20
-	intro unsigned long OnMouseMove(int32_t, int32_t);
-	// vtable: 24
-	intro unsigned long OnWindowActivate();
-	// vtable: 28
-	intro unsigned long OnWindowDeactivate();
-	// vtable: 32
-	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow* mpWindow;
-public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander();
 	virtual unsigned long Idle();

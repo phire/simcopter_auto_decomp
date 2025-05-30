@@ -306,32 +306,8 @@ protected:
 };
 
 // Type: class MessageBoxWindowEdit (forward reference);
-class MessageBoxWindowEdit : public GraphicWindow, public MessageBoxWindow
+class MessageBoxWindowEdit : public MessageBoxWindow
 {
-public:
-	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	virtual int32_t Initialize();
-	virtual long DoKeyDown(long, char);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 196
-	intro void SetTextColor(const struct SparkalColor&);
-	// vtable: 200
-	intro void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*);
-protected:
-	// vtable: 204
-	intro int32_t ConvertTypeToStringID(long);
-	// vtable: 208
-	intro void DrawTextOntoBox();
-	long lMessageID;
-	class basic_string<char> sMessage;
-	class basic_string<char> sButtonImageFileName;
-	class basic_string<char> sAnimationImageFileName;
-	long lType;
-	int32_t bSelfDeleting;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorButtonFont;
-	struct SparkalColor colorButtonFontHighlighted;
 public:
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
@@ -353,44 +329,6 @@ protected:
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
 {
-public:
-	enum Sound::SoundSourceType nSoundSourceType;
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*)(long) soundCompletionFunction;
-	long lSoundCompletionData;
-	void Sound();
-	// vtable: 0
-	intro void ~Sound();
-	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
-	// calltype: NearC
-	static unsigned long GetTotalMemoryUsage();
-	static unsigned long lTotalMemoryUsage;
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;

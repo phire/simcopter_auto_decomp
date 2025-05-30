@@ -183,34 +183,6 @@ public:
 class ExtSim : public TreeSim
 {
 private:
-	struct TreeSim::StackElem* fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
-protected:
-	// vtable: 0
-	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 4
-	intro void Error(short);
-	void GetCurrentNode(short *, short *);
-	void Reset(class Behavior*, short);
-	char NodeComplete(unsigned short);
-	unsigned short Gosub(class Behavior*, short *, short);
-public:
-	void TreeSim(short, short *);
-	void TreeSim(short, short, class Behavior*, short *);
-	// vtable: 8
-	intro void ~TreeSim();
-	// vtable: 12
-	intro unsigned short Simulate(long, unsigned short);
-	struct TreeSim::StackElem* GetHighLevelAction();
-	struct TreeSim::StackElem* GetCurElem();
-	struct TreeSim::StackElem* GetNthElem(short);
-	short GetStackSize();
-	short GetMaxStackSize();
-private:
 	class TreeSim* fExt;
 public:
 	void ExtSim(class TreeSim*, short);

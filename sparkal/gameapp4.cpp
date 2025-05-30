@@ -10,12 +10,6 @@
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -356,7 +350,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        jmp    near ptr 0x004BBB54;
 	__asm        jmp    near ptr 0x004BBB59;
 // LINE 99:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00498EE8;
 // LINE 102:
 	__asm        mov    lCurrentInitializationFlag, 1;
@@ -437,7 +431,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   0x00492E50;
 // LINE 111:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00499074;
 // LINE 112:
 	__asm        mov    tempHourglassVideoBuffer.bLoopVideo, 1;
@@ -446,7 +440,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   0xFE000;
 	__asm        lea    eax, szVideoPath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00499149;
 // LINE 114:
 	__asm        jmp    near ptr 0x004BBCF8;
@@ -527,7 +521,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x140>;
 	__asm        call   0x00499396;
 // LINE 130:
 	__asm        mov    eax, ds:[0x5B4790];
@@ -735,7 +729,7 @@ int  CGameApp::BackgroundVRAppInit() {
 // LINE 141:
 	__asm        jmp    near ptr 0x004BBDDC;
 // LINE 142:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00497F91;
 // LINE 144:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
@@ -789,7 +783,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BC2AF;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00498FE5;
 	__asm        mov    eax, [ebp-0x4BC];
 	__asm        jmp    near ptr 0x004BC3D6;
@@ -842,7 +836,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BC3C0;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<vftable>;
+	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   0x00498FE5;
 	__asm        mov    eax, [ebp-0x4C0];
 	__asm        jmp    near ptr 0x004BC3D6;

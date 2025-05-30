@@ -216,12 +216,6 @@ public:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -430,10 +424,6 @@ public:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
@@ -2832,7 +2822,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004773AE;
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer.<vftable>;
+	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 196:
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
@@ -2901,7 +2891,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004774F6;
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 199:
 	__asm        jmp    near ptr 0x0047750D;
@@ -2921,7 +2911,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer.<vftable>;
+	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 202:
 	__asm        jmp    near ptr 0x00477558;
@@ -2941,7 +2931,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 205:
 	__asm        push   0;
@@ -3894,9 +3884,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        call   0x0047AED6;
 // LINE 268:
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
-	__asm        lea    ecx, tempHelicopterBuffer.<vftable>;
+	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
 // LINE 269:
 // Block end:
@@ -4143,7 +4133,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 283:
 	__asm        jmp    near ptr 0x00478AC8;
@@ -4163,7 +4153,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 285:
 	__asm        mov    rectEquipmentDescriptionTitles[0].left, 0xA2;
@@ -4807,7 +4797,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        call   0x0047AED6;
 // LINE 362:
-	__asm        lea    ecx, tempTabBuffer.<vftable>;
+	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
 // LINE 365:
 // Block end:
@@ -4832,13 +4822,13 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 367:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage.<vftable>;
+	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 368:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempStainImage.<vftable>;
+	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046FFE6;
 // LINE 369:
 	__asm        mov    i, 0;
@@ -4873,12 +4863,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage.<vftable>;
+	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 374:
 	__asm        jmp    near ptr 0x004797EF;
 // LINE 375:
-	__asm        lea    ecx, tempStainImage.<vftable>;
+	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
 // LINE 376:
 // Block end:
@@ -4903,13 +4893,13 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 378:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage.<vftable>;
+	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 379:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempPaperClipImage.<vftable>;
+	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046FFE6;
 // LINE 380:
 	__asm        mov    i, 0;
@@ -4944,12 +4934,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage.<vftable>;
+	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 385:
 	__asm        jmp    near ptr 0x004798FD;
 // LINE 386:
-	__asm        lea    ecx, tempPaperClipImage.<vftable>;
+	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
 // LINE 387:
 // Block end:

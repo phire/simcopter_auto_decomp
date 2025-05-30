@@ -188,16 +188,6 @@ public:
 class DigitalSoundQueueItem : public SoundQueueItem
 {
 public:
-	void SoundQueueItem(class Sound*, char *, long, int32_t);
-	void SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t);
-	void SoundQueueItem(class Sound*, long, long, int32_t);
-	void SoundQueueItem(class Sound*, long, int32_t);
-	void SoundQueueItem();
-	class Sound* mySound;
-	long lSoundResourceID;
-	class basic_string<char> sSoundFile;
-	long lTimeToWaitBeforePlaying;
-	int32_t bDeleteSoundWhenFinished;
 	void DigitalSoundQueueItem(long, long);
 	void DigitalSoundQueueItem(char *, long);
 	void DigitalSoundQueueItem(const class basic_string<char>&, long);

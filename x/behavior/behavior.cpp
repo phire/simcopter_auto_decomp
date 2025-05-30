@@ -91,82 +91,8 @@ public:
 // Type: class Language (forward reference);
 
 // Type: class NResFile (forward reference);
-class NResFile : public FlatFile, public FlatResFile, public ResFile
+class NResFile : public ResFile
 {
-protected:
-	class FlatFile* fNext;
-	unsigned char[256] fName;
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
-public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
-protected:
-	class ResMap* fMap;
-	long fError;
-	short _alignPad;
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile();
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
-	long OpenFromName();
-	virtual long Close();
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long OpenFromOtherFile(class ResFile*);
 private:
 	class PtrList<StdResLoader> fLoaders;
 public:
@@ -178,81 +104,9 @@ public:
 // Type: void;
 
 // Type: class ResFile (forward reference);
-class ResFile : public FlatFile, public FlatResFile
+class ResFile : public FlatResFile
 {
-protected:
-	class FlatFile* fNext;
-	unsigned char[256] fName;
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
 public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
-protected:
-	class ResMap* fMap;
-	long fError;
-	short _alignPad;
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile();
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
-	long OpenFromName();
-	virtual long Close();
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
 	long OpenFromOtherFile(class ResFile*);
 };
 

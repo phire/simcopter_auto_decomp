@@ -40,37 +40,6 @@ public:
 class MIFF : public PFile
 {
 public:
-	void PFile(char *);
-	void PFile(const class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	// vtable: 0
-	intro void ~PFile();
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	char[260] szFilePath;
-	int32_t Handle;
-private:
-	int32_t ShouldClose;
-public:
 	void MIFF(char *);
 	void MIFF();
 	virtual void ~MIFF();
@@ -141,37 +110,6 @@ public:
 // Type: class MIFF (forward reference);
 class MIFF : public PFile
 {
-public:
-	void PFile(char *);
-	void PFile(const class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	// vtable: 0
-	intro void ~PFile();
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	char[260] szFilePath;
-	int32_t Handle;
-private:
-	int32_t ShouldClose;
 public:
 	void MIFF(char *);
 	void MIFF();
@@ -1026,24 +964,24 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 // LINE 67:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB6F5;
 // LINE 70:
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB878;
 // LINE 71:
-	__asm        lea    eax, tempMIFF.<vftable>;
+	__asm        lea    eax, tempMIFF.<MIFF+0x00>;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   0x004EC1DD;
 	__asm        mov    nReturnValue, eax;
 // LINE 72:
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 73:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC15E;
@@ -1071,24 +1009,24 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 // LINE 82:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB6F5;
 // LINE 85:
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABA2C;
 // LINE 86:
-	__asm        lea    eax, tempMIFF.<vftable>;
+	__asm        lea    eax, tempMIFF.<MIFF+0x00>;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   0x004EC284;
 	__asm        mov    nReturnValue, eax;
 // LINE 87:
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 88:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
-	__asm        lea    ecx, tempMIFF.<vftable>;
+	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC1D6;

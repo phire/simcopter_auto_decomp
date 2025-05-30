@@ -51,12 +51,6 @@ protected:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -331,10 +325,6 @@ public:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);

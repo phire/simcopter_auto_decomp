@@ -46,44 +46,6 @@ public:
 class FlatResFile : public FlatFile
 {
 protected:
-	class FlatFile* fNext;
-	unsigned char[256] fName;
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
-public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
-protected:
 	class ResMap* fMap;
 	long fError;
 	short _alignPad;
@@ -260,46 +222,6 @@ public:
 class cCopterAnim : public cBBase
 {
 public:
-	// vtable: 0
-	intro unsigned long GetBodyType();
-	unsigned long GetName();
-	unsigned long GetResType();
-	// vtable: 4
-	intro class cBList<cBBase>* GetList();
-	unsigned long operator unsigned long();
-	// vtable: 8
-	intro unsigned short CanDestroy();
-	// calltype: NearC
-	static class cBBase* MakeNew(void * __ptr32);
-	// calltype: NearC
-	static void LoadAllRelatedArrays(class ResFile*);
-	// vtable: 12
-	intro void InstallArrayPointers(unsigned short);
-	void FinishMake(unsigned short);
-	void Delete();
-	// vtable: 16
-	intro void ~cBBase();
-	// vtable: 20
-	intro void Destroy();
-	// vtable: 24
-	intro void Dirty();
-	// vtable: 28
-	intro unsigned short IsDirty();
-	// vtable: 32
-	intro void WriteToDisk();
-	void cBBase();
-	void Init(void * __ptr32);
-	void Init(unsigned char *);
-	void Init(unsigned long);
-	void * __ptr32 fDataHandle;
-	unsigned long fDataHandleSize;
-	unsigned char[16] fName;
-	unsigned long fTinyName;
-	short fResID;
-	unsigned short fDataChanged;
-	struct cBBase::BBaseHeader* fHeader;
-	// calltype: NearC
-	static void SwizzleBBaseHeader(void * __ptr32, long);
 	void cCopterAnim();
 	virtual void ~cCopterAnim();
 	virtual void Destroy();
@@ -385,19 +307,7 @@ public:
 // Type: class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
 {
-private:
-	struct PtrList<cCopterBody>::PtrNode* fFirst;
-	short fCount;
 public:
-	void PtrList<cCopterBody>();
-	void ~PtrList<cCopterBody>();
-	unsigned short Contains(class cCopterBody*);
-	void RemoveAll();
-	void Remove(class cCopterBody*);
-	long Count();
-	void Add(class cCopterBody*);
-	class cCopterBody* GetByIndex(long);
-	class cCopterBody* GetByOrder(long);
 	long GetIndex(unsigned long);
 	long GetIndex(class cCopterBody*);
 	void cBList<cCopterBody>();

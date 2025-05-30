@@ -55,41 +55,9 @@ public:
 };
 
 // Type: class CGameCommander (forward reference);
-class CGameCommander : public ICommander, public CDefaultCommander
+class CGameCommander : public CDefaultCommander
 {
 public:
-	void ICommander();
-	// vtable: 0
-	intro void ~ICommander();
-	// vtable: 4
-	intro unsigned long Idle();
-	// vtable: 8
-	intro unsigned long OnCharacter(char, int32_t);
-	// vtable: 12
-	intro unsigned long OnMouseDown(int32_t, int32_t);
-	// vtable: 16
-	intro unsigned long OnMouseUp(int32_t, int32_t);
-	// vtable: 20
-	intro unsigned long OnMouseMove(int32_t, int32_t);
-	// vtable: 24
-	intro unsigned long OnWindowActivate();
-	// vtable: 28
-	intro unsigned long OnWindowDeactivate();
-	// vtable: 32
-	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow* mpWindow;
-public:
-	void CDefaultCommander();
-	virtual void ~CDefaultCommander();
-	virtual unsigned long Idle();
-	virtual unsigned long OnCharacter(char, int32_t);
-	virtual unsigned long OnMouseDown(int32_t, int32_t);
-	virtual unsigned long OnMouseUp(int32_t, int32_t);
-	virtual unsigned long OnMouseMove(int32_t, int32_t);
-	virtual unsigned long OnWindowActivate();
-	virtual unsigned long OnWindowDeactivate();
 	void CGameCommander();
 	virtual void ~CGameCommander();
 	virtual unsigned long Idle();
@@ -262,37 +230,6 @@ public:
 // Type: class MIFF;
 class MIFF : public PFile
 {
-public:
-	void PFile(char *);
-	void PFile(const class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	// vtable: 0
-	intro void ~PFile();
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	char[260] szFilePath;
-	int32_t Handle;
-private:
-	int32_t ShouldClose;
 public:
 	void MIFF(char *);
 	void MIFF();
@@ -1988,34 +1925,34 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 557:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB6F5;
 // LINE 558:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB878;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0048C6CC;
 // LINE 561:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB95;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0048C6A1;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABCBA;
 	__asm        cmp    eax, 0x53435554;
 	__asm        jne    near ptr 0x0048C6A1;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABD6E;
 	__asm        cmp    eax, 0x53435554;
 	__asm        jne    near ptr 0x0048C6A1;
 // LINE 563:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC0B4;
 // LINE 565:
 	__asm        push   0x18;
 	__asm        lea    eax, tempShortcut.lDeviceID;
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC544;
 // LINE 566:
 	__asm        lea    eax, tempShortcut.lDeviceID;
@@ -2204,22 +2141,22 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	__asm        jmp    near ptr 0x0048C689;
 	__asm        jmp    near ptr 0x0048C68E;
 // LINE 573:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC14F;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0048C2E5;
 // LINE 575:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 576:
 	__asm        mov    dword ptr [ebp-0x268], 1;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x268];
 	__asm        jmp    near ptr 0x0048C6EC;
 // LINE 578:
 	__asm        mov    dword ptr [ebp-0x26C], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x26C];
 	__asm        jmp    near ptr 0x0048C6EC;
@@ -2268,13 +2205,13 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 592:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB6F5;
 // LINE 593:
 	__asm        push   1;
 	__asm        push   0x53435554;
 	__asm        push   0x53435554;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB937;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0048C898;
@@ -2322,7 +2259,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	__asm        lea    eax, tempShortcut.lDeviceID;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC811;
 // LINE 598:
 	__asm        mov    eax, tempShortcutListIterator.node;
@@ -2337,21 +2274,21 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 599:
 	__asm        jmp    near ptr 0x0048C791;
 // LINE 600:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC8FB;
 // LINE 601:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 602:
 	__asm        mov    dword ptr [ebp-0x278], 1;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x278];
 	__asm        jmp    near ptr 0x0048C8B8;
 // LINE 604:
 // Block end:
 	__asm        mov    dword ptr [ebp-0x27C], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        jmp    near ptr 0x0048C8B8;

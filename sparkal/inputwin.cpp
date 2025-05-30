@@ -54,12 +54,6 @@ protected:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -387,12 +381,6 @@ public:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -694,10 +682,6 @@ public:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
@@ -1113,10 +1097,6 @@ private:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
@@ -12137,7 +12117,7 @@ void UserInputWindow::ClearDeviceArea() {
 // LINE 1722:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage.<vftable>;
+	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046E6DF;
 // LINE 1724:
 	__asm        jmp    near ptr 0x0040A4B9;
@@ -12155,10 +12135,10 @@ void UserInputWindow::ClearDeviceArea() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage.<vftable>;
+	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046F948;
 // LINE 1725:
-	__asm        lea    ecx, tempImage.<vftable>;
+	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
 	__asm        call   0x0046EC7A;
 	__asm        jmp    near ptr 0x0040A503;
 	__asm        pop    edi;

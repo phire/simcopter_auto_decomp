@@ -112,44 +112,6 @@ public:
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
 {
-public:
-	enum Sound::SoundSourceType nSoundSourceType;
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*)(long) soundCompletionFunction;
-	long lSoundCompletionData;
-	void Sound();
-	// vtable: 0
-	intro void ~Sound();
-	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
-	// calltype: NearC
-	static unsigned long GetTotalMemoryUsage();
-	static unsigned long lTotalMemoryUsage;
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -364,15 +326,6 @@ public:
 class IDirectSoundBuffer : public IUnknown
 {
 public:
-	// vtable: 0
-	// calltype: NearStd
-	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
-	// vtable: 4
-	// calltype: NearStd
-	intro unsigned long AddRef();
-	// vtable: 8
-	// calltype: NearStd
-	intro unsigned long Release();
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
 	// calltype: NearStd

@@ -10,15 +10,6 @@
 class IDirectDrawSurface : public IUnknown
 {
 public:
-	// vtable: 0
-	// calltype: NearStd
-	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
-	// vtable: 4
-	// calltype: NearStd
-	intro unsigned long AddRef();
-	// vtable: 8
-	// calltype: NearStd
-	intro unsigned long Release();
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
 	// calltype: NearStd
@@ -172,15 +163,6 @@ public:
 class IDirectDrawPalette : public IUnknown
 {
 public:
-	// vtable: 0
-	// calltype: NearStd
-	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
-	// vtable: 4
-	// calltype: NearStd
-	intro unsigned long AddRef();
-	// vtable: 8
-	// calltype: NearStd
-	intro unsigned long Release();
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
 	// calltype: NearStd

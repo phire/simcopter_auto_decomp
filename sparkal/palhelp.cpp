@@ -96,19 +96,6 @@ public:
 class CopterSparkalPalette : public SparkalPalette
 {
 public:
-	struct SparkalColor* pColors;
-	long lColors;
-	int32_t bOwnColors;
-	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
-	void SparkalPalette();
-	// vtable: 0
-	intro void ~SparkalPalette();
-	void GetRGBValue(int32_t, struct SparkalColor&);
-	void GetNearestIndex(struct SparkalColor&, int32_t&);
-	void FadeToWhite(long);
-	void FadeToBlack(long);
-	void FadeToRGB(struct SparkalColor&, long);
-	void ImplementNewPalette(struct SparkalColor*);
 	void CopterSparkalPalette(struct SparkalColor*, int32_t);
 	void CopterSparkalPalette();
 	int32_t GetNextDarkerColorIndex(int32_t);

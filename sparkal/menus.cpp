@@ -59,12 +59,6 @@ public:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -172,10 +166,6 @@ protected:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
@@ -204,41 +194,8 @@ public:
 // Type: unsigned long;
 
 // Type: class CopterMainMenu (forward reference);
-class CopterMainMenu : public GraphicWindow, public UserMenuWindow
+class CopterMainMenu : public UserMenuWindow
 {
-public:
-	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
-protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
-	struct UserMenuWindowDescription myUserMenuWindowDescription;
-	class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	class DigitalSound soundSelectionChange;
 public:
 	void CopterMainMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~CopterMainMenu();
@@ -368,12 +325,6 @@ public:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -439,41 +390,8 @@ public:
 };
 
 // Type: class CopterPlayMenu (forward reference);
-class CopterPlayMenu : public GraphicWindow, public UserMenuWindow
+class CopterPlayMenu : public UserMenuWindow
 {
-public:
-	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
-protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
-	struct UserMenuWindowDescription myUserMenuWindowDescription;
-	class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	class DigitalSound soundSelectionChange;
 public:
 	void CopterPlayMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~CopterPlayMenu();
@@ -492,10 +410,6 @@ protected:
 class MPoint : public SparkalPoint
 {
 public:
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);

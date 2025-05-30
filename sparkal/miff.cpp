@@ -14,37 +14,6 @@
 class MIFF : public PFile
 {
 public:
-	void PFile(char *);
-	void PFile(const class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	// vtable: 0
-	intro void ~PFile();
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	char[260] szFilePath;
-	int32_t Handle;
-private:
-	int32_t ShouldClose;
-public:
 	void MIFF(char *);
 	void MIFF();
 	virtual void ~MIFF();

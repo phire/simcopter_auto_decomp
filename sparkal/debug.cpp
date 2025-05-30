@@ -106,10 +106,6 @@ public:
 class class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 public:
-	class basic_string<char> command_string;
-	class basic_string<char> usage_string;
-	// vtable: 0
-	intro void execute(char *);
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
 	virtual void execute(char *);
@@ -366,10 +362,6 @@ public:
 class class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 public:
-	class basic_string<char> command_string;
-	class basic_string<char> usage_string;
-	// vtable: 0
-	intro void execute(char *);
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
 	virtual void execute(char *);

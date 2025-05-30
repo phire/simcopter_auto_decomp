@@ -32,13 +32,6 @@ public:
 class GameModeMainMenuData : public GameModeCoreData
 {
 public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 	void GameModeMainMenuData();
 	void CreatePalette();
 	void UsePalette();
@@ -111,14 +104,6 @@ protected:
 // Type: class GameModePickCareerCityData (forward reference);
 class GameModePickCareerCityData : public GameModeCoreData
 {
-public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 		enum PickCareerCitySubMode {
 			nPickCareerCitySubModeSelect = 0,
 			nPickCareerCitySubModeVideo = 1,
@@ -185,14 +170,6 @@ protected:
 // Type: class GameModePlayData (forward reference);
 class GameModePlayData : public GameModeCoreData
 {
-public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 		enum ExceptionState {
 			nExceptionStateNone = 0,
 			nExceptionStateVRAppInit = 1,
@@ -262,12 +239,6 @@ public:
 class MRect : public SparkalRect
 {
 public:
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -369,13 +340,6 @@ public:
 class GameModeHangarData : public GameModeCoreData
 {
 public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 	void GameModeHangarData();
 	int32_t CreateAllSurfaces();
 	void DestroyAllSurfaces();
@@ -393,13 +357,6 @@ public:
 class GameModeCatalogData : public GameModeCoreData
 {
 public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 	void GameModeCatalogData();
 	void SetCommandsToDefaults();
 	int32_t CreateAllSurfaces();
@@ -417,13 +374,6 @@ public:
 class GameModeMissionLogData : public GameModeCoreData
 {
 public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 	void GameModeMissionLogData();
 	void SetCommandsToDefaults();
 	int32_t CreateAllSurfaces();
@@ -441,13 +391,6 @@ public:
 class GameModeInventoryData : public GameModeCoreData
 {
 public:
-	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
-	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
 	void GameModeInventoryData();
 	void SetCommandsToDefaults();
 	int32_t CreateAllSurfaces();

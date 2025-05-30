@@ -11,48 +11,8 @@
 // Type: unsigned short;
 
 // Type: class cYObject (forward reference);
-class cYObject : public TreeSim, public Language, public YObjLang
+class cYObject : public TreeSim, public YObjLang
 {
-private:
-	struct TreeSim::StackElem* fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
-protected:
-	// vtable: 0
-	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 4
-	intro void Error(short);
-	void GetCurrentNode(short *, short *);
-	void Reset(class Behavior*, short);
-	char NodeComplete(unsigned short);
-	unsigned short Gosub(class Behavior*, short *, short);
-public:
-	void TreeSim(short, short *);
-	void TreeSim(short, short, class Behavior*, short *);
-	// vtable: 8
-	intro void ~TreeSim();
-	// vtable: 12
-	intro unsigned short Simulate(long, unsigned short);
-	struct TreeSim::StackElem* GetHighLevelAction();
-	struct TreeSim::StackElem* GetCurElem();
-	struct TreeSim::StackElem* GetNthElem(short);
-	short GetStackSize();
-	short GetMaxStackSize();
-	void YObjLang(class YObjLang&);
-	void YObjLang(unsigned char *);
-	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
-	virtual void GetPrimName(short, unsigned char *);
-	virtual unsigned short IsSingleExit(struct Behavior::Node*);
-	// calltype: NearC
-	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
-	// calltype: NearC
-	static void SwizzleTree(void * __ptr32, long);
-	virtual void (*)(void * __ptr32, long) GetSwizzler();
-	virtual short CountPrimitives();
 	using DataType = short;
 		enum __unnamed {
 			kNumData = 48,
@@ -901,306 +861,9 @@ public:
 // Type: struct VRBlit (forward reference);
 
 // Type: class cAvatar (forward reference);
-class cAvatar : public TreeSim, public Language, public YObjLang, public cYObject
+class cAvatar : public cYObject
 {
-private:
-	struct TreeSim::StackElem* fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
-protected:
-	// vtable: 0
-	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 4
-	intro void Error(short);
-	void GetCurrentNode(short *, short *);
-	void Reset(class Behavior*, short);
-	char NodeComplete(unsigned short);
-	unsigned short Gosub(class Behavior*, short *, short);
 public:
-	void TreeSim(short, short *);
-	void TreeSim(short, short, class Behavior*, short *);
-	// vtable: 8
-	intro void ~TreeSim();
-	// vtable: 12
-	intro unsigned short Simulate(long, unsigned short);
-	struct TreeSim::StackElem* GetHighLevelAction();
-	struct TreeSim::StackElem* GetCurElem();
-	struct TreeSim::StackElem* GetNthElem(short);
-	short GetStackSize();
-	short GetMaxStackSize();
-	void YObjLang(class YObjLang&);
-	void YObjLang(unsigned char *);
-	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
-	virtual void GetPrimName(short, unsigned char *);
-	virtual unsigned short IsSingleExit(struct Behavior::Node*);
-	// calltype: NearC
-	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
-	// calltype: NearC
-	static void SwizzleTree(void * __ptr32, long);
-	virtual void (*)(void * __ptr32, long) GetSwizzler();
-	virtual short CountPrimitives();
-	static short[1] sStackSize;
-	void SetToLoc(struct _DYOBJ_INST*);
-	unsigned short Gosub(short);
-	short GetTree();
-	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
-	void Die();
-	short * GetLocalVar(short);
-	// calltype: NearC
-	static void StartScurkPeople(short, short);
-	// calltype: NearC
-	static void StartScurkPeopleNearAvatar();
-	// calltype: NearC
-	static void BeamRemainingAmbients();
-	unsigned short GetNearbyFire(short, short *, short *);
-	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*);
-	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct Point3d, struct _DYOBJ_INST*);
-	void ResetToAmbient();
-	long JoinRiot();
-	// calltype: NearC
-	static short StartPerson(enum PersonType, enum MissionType);
-	unsigned short AddToHeli();
-	void RemoveFromHeli();
-	void SetPersonData(enum PersonType, enum MissionType, long);
-	static short[9] sInitBhav;
-	static short[20] sHitRxnTree;
-	// calltype: NearC
-	static void SetRxnTree(short, short);
-	static long sSimTicks;
-	long fLastInterrupt;
-	static enum cYObject::LocationType[256] sLocType;
-	static struct cYObject::LocationInfo[14] sLocInfo;
-	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
-	short GetDirectionTo(struct _DYOBJ_INST*);
-	short GetDirectionTo(short, short);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*);
-	static short sBeamed;
-	static short sDebugNumBeamed;
-	// calltype: NearC
-	static unsigned short LikelyToBeamSuccessfully();
-	// calltype: NearC
-	static short GetScurkID(short, short);
-	// calltype: NearC
-	static unsigned short IsSuitableForMission(enum MissionType, short, short);
-	// calltype: NearC
-	static unsigned short IsNeutralForPerson(enum PersonType, enum cYObject::LocationType);
-	unsigned short IsNeutralAndSparse(struct _CELL_INFO*, enum cYObject::LocationType);
-	struct Point3d GetPos(struct _CELL_INFO*, int32_t, int32_t);
-	unsigned short AdjoinsRoad(struct Point3d);
-	unsigned short RoadTile(int32_t, int32_t);
-	unsigned short GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *);
-	void UpdateMission(enum cYObject::MissionUpdates, long);
-	void ResetTree();
-	void ResetTree(short);
-private:
-	static unsigned short sInited;
-	static Ptr to: class cYObject[100] sObjects;
-	static enum cYObject::LocationType[10][16] sNeutralPersonLocs;
-	static enum cYObject::LocationType[10][9] sNeutralMissionLocs;
-	static class cYObject* sList;
-	static class NResFile sFile;
-	static class ResFile sErrorFile;
-public:
-	static class YObjLang* sLanguage;
-	static class Behavior* sBehavior;
-	static struct Point3d[8] sMoveTable;
-	static struct Point3d[8] sUnitVectorTable;
-	// calltype: NearC
-	static void InitObjects(char *);
-	// calltype: NearC
-	static void DestroyObjects();
-	// calltype: NearC
-	static short MakeNewObject(short, struct Point3d, class Behavior*);
-	// calltype: NearC
-	static void KillObject(short);
-	// calltype: NearC
-	static void MakePlebes();
-	void InitForEngine(short);
-	void TellLocToEngine();
-	class cYObject* GetClosest(enum MissionType, unsigned short, short *);
-	// calltype: NearC
-	static class cYObject* GetObjectA(short);
-	// calltype: NearC
-	static class cYObject* GetObjectA(struct _DYOBJ_INST*);
-	class cYObject* GetPersonWithMaster(struct _DYOBJ_INST*);
-	// calltype: NearC
-	static class cYObject* GetSleepingPerson();
-	// calltype: NearC
-	static void DrawOnePerson(struct VRBlit*);
-	void SetCell(unsigned char, unsigned char);
-	void UnsetCell(unsigned char, unsigned char);
-	void Link();
-	void Link(unsigned char, unsigned char);
-	long fMissionID;
-	void Unlink();
-	unsigned short CellIsSet();
-	unsigned short fbLinked;
-	unsigned short Linked();
-	unsigned short fInited;
-	// calltype: NearC
-	static unsigned short ConvertObjDef(void * __ptr32);
-	// calltype: NearC
-	static short GetAvailRouteMask();
-	// calltype: NearC
-	static void ClearRouteMask(short);
-	// calltype: NearC
-	static void MaskTile(short, short, short);
-	// calltype: NearC
-	static void IntegrityCheck(unsigned char *);
-	static short sNumMissionAwake;
-	static short sNumAmbientAwake;
-	static unsigned short sAllAmbientStarted;
-	static short sAmbientTopOff;
-	static short sAmbientAbsoluteMax;
-	static short sScurkRectRad;
-	struct _DYOBJ_INST fDyn;
-	unsigned char fCellX;
-	unsigned char fCellY;
-	unsigned long fBodyName;
-	class cCopterBody* fBody;
-	unsigned long fAnimName;
-	class cCopterAnim* fAnim;
-	short fFace;
-	void SetFace(short);
-	struct Point3d fLastMasterLoc;
-	unsigned short SetMaster(struct _DYOBJ_INST*);
-	struct _DYOBJ_INST* GetMaster();
-	void FollowMaster();
-	enum cYObject::LocationType fCurLocType;
-	// calltype: NearC
-	static unsigned short GetOutOfHeli(long);
-	// calltype: NearC
-	static struct Point2d GetRiotCenter(short, short);
-	// calltype: NearC
-	static struct Point2d GetRiotCenter(long);
-	void SimAnim();
-	void Simulate();
-	// calltype: NearC
-	static void SimulateAll();
-	// calltype: NearC
-	static void TryStartAllAmbient();
-	unsigned long GetBody();
-	void SetBody(unsigned long);
-	void IncAndCheckAnimFrame();
-	void CheckAnimFrame();
-	// calltype: NearC
-	static class cYObject* GetOnePersonForScurkID(short, short);
-	// calltype: NearC
-	static struct _DYOBJ_INST* GetFirstDynObj(struct _CELL_INFO*, long);
-	// calltype: NearC
-	static short CountDynObjs(struct _CELL_INFO*, long);
-	void SetMissionType(enum MissionType);
-	void SetMissionID(long);
-	void SetPersonType(enum PersonType);
-	void ChangeMission(enum MissionType, long);
-	void IncrementMissionStats(enum MissionType, short);
-	void ClickHeels();
-	void VisitOz();
-	unsigned long GetAnim();
-	void SetAnim(unsigned long);
-	unsigned short fSimulate;
-	class Behavior* fBehavior;
-	class cYObject* fNext;
-	short fID;
-	short _pad;
-	short[8] fTemp;
-	short[24] fData;
-	unsigned char *[4] fPointers;
-	short fIterations;
-	short _pad2;
-	short fDirInc;
-	struct cYObject::ObjDefHeader fDefinition;
-protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 16
-	intro void HandleOverflow();
-	// vtable: 20
-	intro short InterpValue(short, short, short **);
-	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
-public:
-	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
-	enum cYObject::LocationType GetLocType();
-	// calltype: NearC
-	static enum cYObject::LocationType GetLocType(short, short);
-	// calltype: NearC
-	static unsigned short IsWater(short, short);
-	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
-	unsigned short CanJumpOffHere();
-	// calltype: NearC
-	static char GetRoadDir(struct Point3d);
-	// calltype: NearC
-	static struct _DYOBJ_INST* GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*);
-	// calltype: NearC
-	static struct _STOBJ_INST* GetStaticObj(struct Point3d, int32_t);
-	// calltype: NearC
-	static unsigned short InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t);
-	unsigned short MasterSlowerThan(short);
-	short GetHeightOverGround();
-	unsigned short GetFakeDistTo(struct _DYOBJ_INST*);
-	unsigned short CloseTo(struct _DYOBJ_INST*);
-	// calltype: NearC
-	static class cYObject* GetFirst();
-	// calltype: NearC
-	static class cYObject* GetFirst(short, short);
-	// calltype: NearC
-	static class cYObject* GetFirstInvisible(short);
-	void SetMotherShip(struct _DYOBJ_INST*);
-	struct _DYOBJ_INST* GetMotherShip();
-	class cYObject* PutTotedMedVicOnMotherShip();
-	class cYObject* DropToted();
-	class cYObject* GetToted();
-	unsigned short GetOffMasterObject();
-	// calltype: NearC
-	static unsigned short IsHigherThan(struct Point3d, short);
-	// calltype: NearC
-	static unsigned short IsFlattenedTerrain(struct _CELL_INFO*);
-	// calltype: NearC
-	static void RandomEdgeOffset(short, int32_t *, int32_t *);
-	// calltype: NearC
-	static void RandomOffset(short, int32_t *, int32_t *);
-	// vtable: 24
-	intro void Reset();
-	virtual void ~cYObject();
-protected:
-	virtual void Error(short);
-	void cYObject(short, class Behavior*, struct Point3d, short);
-public:
-	struct cYObject::ObjDefHeader* GetDef();
-	void GetTypeName(char *);
-	// calltype: NearC
-	static class ResFile* GetGlobalFile();
-	// calltype: NearC
-	static class YObjLang* GetLanguage();
-	// calltype: NearC
-	static class ResFile* GetErrorFile();
-	short GetID();
-	struct Point3d GetLocation();
-	class Behavior* GetBehavior();
-	void Draw(struct VRBlit*);
-	float fScale;
-	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
-	void SetCellAndLoc(struct Point3d, unsigned char, unsigned char);
-	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
-	void Start(int32_t, int32_t, int32_t, int32_t);
-	unsigned short BeamIntoCameraRange();
-	unsigned short OutOfCameraRange();
-	unsigned short CanPlace(struct Point3d);
-	void AdjustRadiusForRiotVal();
-	unsigned short HasRiotValChanged();
-	void IncrementRiotVal(short);
-	void GetSurroundingRiotInfo(short, short *, short *, short *);
-	void Turn(short);
-	class cYObject* GetNext();
-	void SetDynAnim(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	void SetDynAnimFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 	void cAvatar(struct Point3d);
 	// calltype: NearC
 	static class cAvatar* MakeAvatar();
@@ -1264,44 +927,6 @@ public:
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
 {
-public:
-	enum Sound::SoundSourceType nSoundSourceType;
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*)(long) soundCompletionFunction;
-	long lSoundCompletionData;
-	void Sound();
-	// vtable: 0
-	intro void ~Sound();
-	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
-	// calltype: NearC
-	static unsigned long GetTotalMemoryUsage();
-	static unsigned long lTotalMemoryUsage;
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -1515,47 +1140,9 @@ public:
 };
 
 // Type: class CBackBuffer (forward reference);
-class CBackBuffer : public IFlatImage, public IBackBuffer
+class CBackBuffer : public IBackBuffer
 {
 public:
-	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
-	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
-	long GetHeight();
-	long GetWidth();
-	void * __ptr32 GetBitsPointer();
-	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
-	void DrawPixel(unsigned char, long, long);
-	unsigned char GetPixel(long, long);
-	static unsigned long lTotalMemoryUsage;
-	static unsigned long lTotalLockCount;
-protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
-public:
-	// vtable: 28
-	intro unsigned long Swap(class CSparkalWindow*, long, long);
-	// vtable: 32
-	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
-	// vtable: 36
-	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
@@ -1627,44 +1214,6 @@ protected:
 // Type: class FlatResFile (forward reference);
 class FlatResFile : public FlatFile
 {
-protected:
-	class FlatFile* fNext;
-	unsigned char[256] fName;
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
-public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
 protected:
 	class ResMap* fMap;
 	long fError;
@@ -1738,81 +1287,9 @@ public:
 };
 
 // Type: class ResFile (forward reference);
-class ResFile : public FlatFile, public FlatResFile
+class ResFile : public FlatResFile
 {
-protected:
-	class FlatFile* fNext;
-	unsigned char[256] fName;
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
 public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
-protected:
-	class ResMap* fMap;
-	long fError;
-	short _alignPad;
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile();
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
-	long OpenFromName();
-	virtual long Close();
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
 	long OpenFromOtherFile(class ResFile*);
 };
 
@@ -15650,7 +15127,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        jmp    short 0x0054FB0D;
 	__asm        add    [ebp+ebp*8-0x5B2FFAC], cl;
 	__asm        push   esp;
-	__asm        add    [ebp-6], cl;
+	__asm        add    this-><cYObject+0x02>, cl;
 	__asm        push   esp;
 	__asm        add    [edx], bl;
 	__asm        out    dx, eax;
@@ -15659,7 +15136,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        push   esp;
 	__asm        add    [eax], ch;
 	__asm        out    0x54, eax;
-	__asm        add    [ebp-6], cl;
+	__asm        add    this-><cYObject+0x02>, cl;
 	__asm        push   esp;
 	__asm        add    [edi+0x310054F8], bh;
 	__asm        (bad);

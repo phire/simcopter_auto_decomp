@@ -53,37 +53,6 @@ public:
 class MIFF : public PFile
 {
 public:
-	void PFile(char *);
-	void PFile(const class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	// vtable: 0
-	intro void ~PFile();
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	char[260] szFilePath;
-	int32_t Handle;
-private:
-	int32_t ShouldClose;
-public:
 	void MIFF(char *);
 	void MIFF();
 	virtual void ~MIFF();
@@ -1728,39 +1697,39 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 422:
 	__asm        mov    eax, szGamePath;
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB6F5;
 // LINE 425:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB878;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00428AC8;
 // LINE 426:
 	__asm        mov    dword ptr [ebp-0x150], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 428:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB95;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00428AF1;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABCBA;
 	__asm        cmp    eax, 0x43505452;
 	__asm        je     near ptr 0x00428B1C;
 // LINE 429:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 430:
 	__asm        mov    dword ptr [ebp-0x154], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x154];
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 433:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABD6E;
 	__asm        mov    lFileType, eax;
 // LINE 435:
@@ -1769,26 +1738,26 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        je     near ptr 0x00428B6F;
 // LINE 437:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 438:
 	__asm        mov    dword ptr [ebp-0x158], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x158];
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 443:
 	__asm        push   0x4346494C;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AC332;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00428BB2;
 // LINE 444:
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004ABB47;
 // LINE 445:
 	__asm        mov    dword ptr [ebp-0x15C], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        jmp    near ptr 0x00428C31;
@@ -1797,7 +1766,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        jne    near ptr 0x00428BE4;
 // LINE 451:
 	__asm        mov    dword ptr [ebp-0x160], 3;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x160];
 	__asm        jmp    near ptr 0x00428C31;
@@ -1807,13 +1776,13 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        jne    near ptr 0x00428C11;
 // LINE 453:
 	__asm        mov    dword ptr [ebp-0x164], 4;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x164];
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 454:
 	__asm        mov    dword ptr [ebp-0x168], 0;
-	__asm        lea    ecx, myMIFF.<vftable>;
+	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   0x004AB7CF;
 	__asm        mov    eax, [ebp-0x168];
 	__asm        jmp    near ptr 0x00428C31;
