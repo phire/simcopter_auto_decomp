@@ -37,8 +37,8 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        je     near ptr 0x00450046;
 // LINE 27:
 // Block start:
-	char[255] ErrorTitle;
-	char[255] ErrorText;
+	char ErrorTitle[255];
+	char ErrorText[255];
 	__asm        and    Error, 0x7FFFFFFF;
 // LINE 32:
 	__asm        push   0xFF;

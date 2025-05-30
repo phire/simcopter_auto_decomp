@@ -1175,7 +1175,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 	long lStringLength;
 	struct tagLogString* tempLogStringDestination;
 	struct tagLogString* tempLogStringSource;
-	char[276] chStringBuffer;
+	char chStringBuffer[276];
 	__asm        jmp    near ptr 0x004EC359;
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
@@ -1393,7 +1393,7 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 // FUNCTION: COPTER_D 0x004ec65b
 int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 	struct tagLogBase tempLogBase;
-	char[56] chBuffer;
+	char chBuffer[56];
 
 // LINE 176:
 	__asm        push   ebp;
@@ -1417,7 +1417,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 // LINE 188:
 // Block start:
 	struct tagLogString* tempLogString;
-	char[276] chStringBuffer;
+	char chStringBuffer[276];
 	__asm        push   0x114;
 	__asm        lea    eax, chStringBuffer[0];
 	__asm        push   eax;
@@ -2994,10 +2994,10 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // FUNCTION: COPTER_D 0x004edb4e
 void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_string<char>& sCurrentText, int32_t bPrintTime) {
 	class MTimeLocalized tempTime;
-	char[256] szBuffer1;
-	char[64] szTime;
+	char szBuffer1[256];
+	char szTime[64];
 	int32_t nFullStringID;
-	char[256] szBuffer;
+	char szBuffer[256];
 
 // LINE 365:
 	__asm        push   ebp;

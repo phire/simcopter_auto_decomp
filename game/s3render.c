@@ -31,7 +31,7 @@ int32_t VRAppInit() {
 	long maxval;
 	int32_t instanceID;
 	int32_t totalVehicles;
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 163:
 	__asm        push   ebp;

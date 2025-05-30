@@ -179,7 +179,7 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char[260] szFilePath;
+	char szFilePath[260];
 	int32_t Handle;
 private:
 	int32_t ShouldClose;
@@ -1286,7 +1286,7 @@ void CBackBuffer::~CBackBuffer() {
 // FUNCTION: COPTER_D 0x0046edca
 unsigned long CBackBuffer::Load() {
 	struct tagBITMAPINFOHEADER biHeader;
-	struct tagRGBQUAD[256] biColors;
+	struct tagRGBQUAD biColors[256];
 	int32_t i;
 	unsigned char * biData;
 	struct tagBITMAPFILEHEADER bfHeader;
@@ -3264,7 +3264,7 @@ unsigned long CBackBuffer::Unlock() {
 // FUNCTION: COPTER_D 0x00470221
 void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColor* pColor) {
 	int32_t i;
-	struct tagPALETTEENTRY[256] palColors;
+	struct tagPALETTEENTRY palColors[256];
 
 // LINE 1127:
 	__asm        push   ebp;

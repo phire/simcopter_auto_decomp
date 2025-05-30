@@ -35,7 +35,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: int32_t[4][4];
@@ -1924,11 +1924,11 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	int32_t maxload;
 	struct _CELL_INFO* cptr;
 	struct _CELL_INFO* lcptr;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 	int32_t alt;
 	int32_t currload;
 	struct Point3d vec;
-	int32_t[4][4] tmpmatrix;
+	int32_t tmpmatrix[4][4];
 	int32_t normz;
 	struct Point2d* freepad;
 
@@ -4679,7 +4679,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	int32_t max_pitch;
 	int32_t tempfix2;
 	struct _HELI_TYPE_DATA* htd;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 	int32_t tempfix;
 
 // LINE 1929:
@@ -6117,7 +6117,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	struct VRview pos;
 	int32_t tempfix2;
-	int32_t[4][4] tmpmat;
+	int32_t tmpmat[4][4];
 	struct _HELI_TYPE_DATA* htd;
 	struct VRFaceInfo finfo;
 	int32_t count;
@@ -7276,7 +7276,7 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	struct Point3d loc;
 	struct Point3d vec;
 	struct Point3d dvec;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 2754:
 	__asm        push   ebp;
@@ -10354,7 +10354,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	struct _CELL_INFO* cptr;
 	struct Point3d loc;
 	struct Point3d vec;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 	int32_t speed;
 	long scale;
 
@@ -10762,7 +10762,7 @@ void S3HeliReset() {
 
 // FUNCTION: COPTER_D 0x004f6d87
 void S3HeliTweakInit() {
-	int32_t *[14] pvals;
+	int32_t * pvals[14];
 	struct _HELI_TYPE_DATA* htd;
 
 // LINE 4556:
@@ -11947,7 +11947,7 @@ void S3HeliCommand(int32_t nCommand) {
 
 // FUNCTION: COPTER_D 0x004f781b
 void S3PlayMegaphoneMessage(int32_t nMessageType) {
-	char[12][4] szSoundFiles;
+	char szSoundFiles[4][12];
 
 // LINE 4936:
 	__asm        push   ebp;
@@ -12039,7 +12039,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	struct Point3d loc;
 	int32_t i;
 	struct Point3d vec;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 	int32_t speed;
 	struct Point2d* freepad;
 
@@ -13086,7 +13086,7 @@ long S3HeliGetCurrentValue(long lHeliType) {
 // FUNCTION: COPTER_D 0x004f83a8
 long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	long lTeargasCanisterCount;
-	long[5] lValues;
+	long lValues[5];
 
 // LINE 5466:
 	__asm        push   ebp;

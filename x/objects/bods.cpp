@@ -1414,7 +1414,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 // FUNCTION: COPTER_D 0x00561b74
 void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	short numRealAnims;
-	unsigned char[16] tmp;
+	unsigned char tmp[16];
 
 // LINE 2285:
 	__asm        push   ebp;

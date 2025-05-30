@@ -606,7 +606,7 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 void  CGameApp::S3ShowInfo() {
 	long nTextBottom;
 	long nTextTop;
-	char[256] szBuffer1;
+	char szBuffer1[256];
 	long nTextLeft;
 
 // LINE 265:

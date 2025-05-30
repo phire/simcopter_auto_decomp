@@ -48,7 +48,7 @@ public:
 protected:
 	struct SmackBufTag* smkbuf;
 	struct SmackTag* smk;
-	char[260] szSmackFilePath;
+	char szSmackFilePath[260];
 };
 
 // Type: void;

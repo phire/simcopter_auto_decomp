@@ -692,7 +692,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
 	virtual long DoKeyDown(long, char);
 protected:
-	class SliderWindow*[8] mySliderWindows;
+	class SliderWindow* mySliderWindows[8];
 };
 
 // Type: struct tagCitySettings (forward reference);
@@ -880,8 +880,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	class SliderWindow*[3] mySliderWindows;
-	class TextWindow*[5] myTextWindows;
+	class SliderWindow* mySliderWindows[3];
+	class TextWindow* myTextWindows[5];
 };
 
 // Type: long *;
@@ -1639,14 +1639,14 @@ void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned lo
 
 // FUNCTION: COPTER_D 0x00450b5d
 int32_t MessageBoxWindow::Initialize() {
-	int32_t[2] nButtonID;
+	int32_t nButtonID[2];
 	class ButtonWindow* tempButtonWindow;
 	unsigned long i;
 	int32_t nButtonCount;
-	class MRect[2] rectButtons;
+	class MRect rectButtons[2];
 	class basic_string<char> sText;
 	int32_t nFullStringID;
-	int32_t[2] nButtonStringID;
+	int32_t nButtonStringID[2];
 
 // LINE 82:
 	__asm        push   ebp;
@@ -2525,7 +2525,7 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 void MessageBoxWindow::DrawTextOntoBox() {
 	class MRect rectText;
 	class MFont* fontText;
-	char[64] szTypeface;
+	char szTypeface[64];
 	int32_t nFullStringID;
 
 // LINE 232:
@@ -14536,7 +14536,7 @@ int32_t BoneheadTextEditWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x0045c476
 int32_t BoneheadTextEditWindow::CreateImage() {
-	char[260] szFullPath;
+	char szFullPath[260];
 
 // LINE 2029:
 	__asm        push   ebp;
@@ -18813,7 +18813,7 @@ int32_t CheckupWindow::ShouldWeDisplayCheckupWindow() {
 
 // FUNCTION: COPTER_D 0x00460033
 int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
-	long[3] lSliderValues;
+	long lSliderValues[3];
 
 // LINE 2620:
 	__asm        push   ebp;
@@ -18849,10 +18849,10 @@ int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
 
 // FUNCTION: COPTER_D 0x00460077
 void CheckupWindow::SetTextControlsBasedOnCurrentSliderValues() {
-	char[32] szCurrentText;
+	char szCurrentText[32];
 	long lCurrentValue;
 	class MRect rectWindowTemp;
-	long[3] lSliderValues;
+	long lSliderValues[3];
 
 // LINE 2632:
 	__asm        push   ebp;

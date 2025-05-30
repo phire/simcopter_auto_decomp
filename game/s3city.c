@@ -9,7 +9,7 @@ public:
 	unsigned long nTime;
 	unsigned long nMissionID;
 	unsigned long nEnterOrExit;
-	char[32] szCity;
+	char szCity[32];
 };
 
 // Type: int32_t;
@@ -43,7 +43,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
@@ -65,7 +65,7 @@ public:
 short S3CityInit() {
 	struct tagLogCityEnterExit tempLogCityEnterExit;
 	int32_t i;
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 206:
 	__asm        push   ebp;
@@ -12181,8 +12181,8 @@ int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 void S3CityDrawOverHeadGrid() {
 	long y;
 	long x;
-	int32_t[4][4] mat2;
-	int32_t[4][4] mat1;
+	int32_t mat2[4][4];
+	int32_t mat1[4][4];
 
 // LINE 4888:
 	__asm        push   ebp;

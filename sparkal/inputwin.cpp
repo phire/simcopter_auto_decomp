@@ -475,8 +475,8 @@ public:
 	// vtable: 196
 	intro void SetCurrentJoystick(int32_t);
 	int32_t nCurrentJoystick;
-	long[14] lJoystickControlStates;
-	char[14] lJoystickControlColors;
+	long lJoystickControlStates[14];
+	char lJoystickControlColors[14];
 protected:
 	// vtable: 200
 	intro int32_t GetHandleImageToUse();
@@ -494,10 +494,10 @@ protected:
 	intro int32_t DoesPositionHitKey(long, long, long&);
 	// vtable: 228
 	intro void GetSourceHandleBaseRects(class MRect*);
-	class MRect[8] rectButtons;
-	class MRect[4] rectSliders;
+	class MRect rectButtons[8];
+	class MRect rectSliders[4];
 	class MRect rectHandle;
-	class MRect[4] rectHandleBaseGraphics;
+	class MRect rectHandleBaseGraphics[4];
 	class CBackBuffer* myButtonImage;
 	class CBackBuffer* mySliderImage;
 	class CBackBuffer* myHandleImage;
@@ -4479,7 +4479,7 @@ void KeyboardWindow::DrawKeyColorsOnKeyboard() {
 void KeyboardWindow::DrawCharactersOnKeyboard() {
 	long lCurrentHotSpotID;
 	class list<HotSpot>::iterator tempHotSpotListIterator;
-	char[64] szTypeface;
+	char szTypeface[64];
 	class MRect rectCurrentKey;
 	class MRect rectCurrentImage;
 	class basic_string<char> sKey;
@@ -6388,7 +6388,7 @@ void JoystickWindow::DestroyImage() {
 int32_t JoystickWindow::ComposeSelf() {
 	int32_t j;
 	int32_t i;
-	long[14] lNewJoystickControlStates;
+	long lNewJoystickControlStates[14];
 
 // LINE 724:
 	__asm        push   ebp;
@@ -6734,7 +6734,7 @@ void JoystickWindow::DrawSlider(int32_t nSlider) {
 void JoystickWindow::DrawHandle() {
 	int32_t i;
 	int32_t x2;
-	class MRect[4] rectHandleBaseSources;
+	class MRect rectHandleBaseSources[4];
 	int32_t x1;
 	int32_t nImageWidth;
 	int32_t nHandleImageToUse;
@@ -11262,7 +11262,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 	long lCurrentCommand;
 	int32_t i;
 	long lCurrentDevice;
-	long[16] lReservedKeys;
+	long lReservedKeys[16];
 	struct Shortcut tempShortcut;
 	struct KeyColors tempKeyColors;
 
@@ -12046,7 +12046,7 @@ int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long lDevice, long lCom
 void UserInputWindow::ClearDeviceArea() {
 	class MPoint ptDeviceArea;
 	class CBackBuffer tempImage;
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 1716:
 	__asm        push   ebp;
@@ -12110,7 +12110,7 @@ void UserInputWindow::SetupAllInputDevices() {
 	int32_t i;
 	unsigned long nFullStringID;
 	int32_t nJoystickCount;
-	char[64] szJoystickName;
+	char szJoystickName[64];
 
 // LINE 1732:
 	__asm        push   ebp;

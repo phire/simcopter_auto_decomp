@@ -9,7 +9,7 @@ class FlatFile{
 		};
 protected:
 	class FlatFile* fNext;
-	unsigned char[256] fName;
+	unsigned char fName[256];
 	long fFileID;
 	struct _iobuf* fFile;
 	long UniqueID();
@@ -192,7 +192,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055c36a
 long FlatFile::Open(char * name) {
-	unsigned char[256] pstrbuff;
+	unsigned char pstrbuff[256];
 
 // LINE 52:
 	__asm        push   ebp;
@@ -265,7 +265,7 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        jne    near ptr 0x0055C509;
 // LINE 73:
 // Block start:
-	char[256] cstrbuff;
+	char cstrbuff[256];
 	long test;
 	__asm        mov    test, 1;
 	__asm        jmp    near ptr 0x0055C428;
@@ -374,7 +374,7 @@ long FlatFile::Open(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055c586
 void FlatFile::OpenFromOtherFile(class FlatFile* other) {
-	unsigned char[256] otherName;
+	unsigned char otherName[256];
 
 // LINE 110:
 	__asm        push   ebp;

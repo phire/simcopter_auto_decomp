@@ -63,7 +63,7 @@ class BoatClass{
 		};
 private:
 	static struct Point2d lastScannedLocation;
-	char[7] flags;
+	char flags[7];
 	int32_t sprayTimer;
 	enum DirectionTypes direction;
 	struct Point3d directionVector;
@@ -196,7 +196,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct _CELL_INFO (forward reference);
@@ -1565,7 +1565,7 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 void BoatClass::SetBoatDirection(unsigned short tileType) {
 	 // Switch table at 0x00528466
 	unsigned short tile;
-	enum DirectionTypes[4] validdirs;
+	enum DirectionTypes validdirs[4];
 	int32_t i;
 
 // LINE 1139:

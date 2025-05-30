@@ -3028,7 +3028,7 @@ int32_t ButtonWindow::GetImageCount() {
 int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	int32_t nReturnValue;
 	class MFont* fontText;
-	char[64] szTypeface;
+	char szTypeface[64];
 	int32_t nWindowWidth;
 	int32_t nWindowHeight;
 	class MRect rectCurrent;

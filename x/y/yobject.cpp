@@ -56,7 +56,7 @@ class cYObject : public TreeSim, public YObjLang
 			kNumObjectTypes = 1,
 		};
 public:
-	static short[1] sStackSize;
+	static short sStackSize[1];
 	void SetToLoc(struct _DYOBJ_INST*);
 	unsigned short Gosub(short);
 	short GetTree();
@@ -121,8 +121,8 @@ public:
 	unsigned short AddToHeli();
 	void RemoveFromHeli();
 	void SetPersonData(enum PersonType, enum MissionType, long);
-	static short[14] sInitBhav;
-	static short[20] sHitRxnTree;
+	static short sInitBhav[14];
+	static short sHitRxnTree[20];
 	// calltype: NearC
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
@@ -146,7 +146,7 @@ public:
 			kNumLocTypes = 14,
 		};
 public:
-	static enum cYObject::LocationType[256] sLocType;
+	static enum cYObject::LocationType sLocType[256];
 		enum SearchType {
 			kSearchEdgeGround = 0,
 			kSearchAnywhereGround = 1,
@@ -159,7 +159,7 @@ public:
 		short maxNormalLoiterers;
 	};
 public:
-	static struct cYObject::LocationInfo[14] sLocInfo;
+	static struct cYObject::LocationInfo sLocInfo[14];
 	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
 	short GetDirectionTo(struct _DYOBJ_INST*);
 	short GetDirectionTo(short, short);
@@ -210,17 +210,17 @@ public:
 	};
 private:
 	static unsigned short sInited;
-	static class cYObject*[100] sObjects;
-	static enum cYObject::LocationType[10][18] sNeutralPersonLocs;
-	static enum cYObject::LocationType[10][14] sNeutralMissionLocs;
+	static class cYObject* sObjects[100];
+	static enum cYObject::LocationType sNeutralPersonLocs[18][10];
+	static enum cYObject::LocationType sNeutralMissionLocs[14][10];
 	static class cYObject* sList;
 	static class NResFile sFile;
 	static class ResFile sErrorFile;
 public:
 	static class YObjLang* sLanguage;
 	static class Behavior* sBehavior;
-	static struct Point3d[8] sMoveTable;
-	static struct Point3d[8] sUnitVectorTable;
+	static struct Point3d sMoveTable[8];
+	static struct Point3d sUnitVectorTable[8];
 	// calltype: NearC
 	static void InitObjects(char *);
 	// calltype: NearC
@@ -320,9 +320,9 @@ public:
 	class cYObject* fNext;
 	short fID;
 	short _pad;
-	short[8] fTemp;
-	short[48] fData;
-	unsigned char *[4] fPointers;
+	short fTemp[8];
+	short fData[48];
+	unsigned char * fPointers[4];
 	short fIterations;
 	short _pad2;
 	short fDirInc;
@@ -411,7 +411,7 @@ public:
 	unsigned short PlaySoundA(enum cYObject::SoundNum, unsigned short);
 	// calltype: NearC
 	static void PhaseAndBeamSoundChannels();
-	static short[15] sSoundChannels;
+	static short sSoundChannels[15];
 	// calltype: NearC
 	static short ExtraSoundChannelForSure();
 	// calltype: NearC
@@ -495,7 +495,7 @@ public:
 	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 	using PrimProc = enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 public:
-	static enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*)[64] PrimProcs;
+	static enum TreeSim::ReturnCode (*PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 	// calltype: NearC
 	static enum TreeSim::ReturnCode sIdle(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 	enum TreeSim::ReturnCode iIdle(struct TreeSim::StackElem*, struct Behavior::Node*);
@@ -783,7 +783,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -927,7 +927,7 @@ protected:
 	class Behavior::Tree{
 	public:
 		short numNodes;
-		struct Behavior::Node[1] nodes;
+		struct Behavior::Node nodes[1];
 	};
 public:
 	void Behavior(class Language*, class NResFile*, class NResFile*);
@@ -986,7 +986,7 @@ class BodyDebugInfo{
 public:
 	long screenx;
 	long screeny;
-	char[20] text;
+	char text[20];
 };
 
 // Type: class CBackBuffer (forward reference);
@@ -1551,7 +1551,7 @@ public:
 	short objectID;
 	short _pad;
 	unsigned char * objectPtr;
-	short[4] locals;
+	short locals[4];
 	class Behavior* pBehavior;
 	void GetTreeName(unsigned char *);
 };
@@ -3524,7 +3524,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        je     near ptr 0x00545C65;
 // LINE 391:
 // Block start:
-	char[80] str;
+	char str[80];
 	__asm        mov    eax, offcelly;
 	__asm        push   eax;
 	__asm        mov    eax, offcellx;
@@ -6415,7 +6415,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 // FUNCTION: COPTER_D 0x00547de1
 void MakeAllPeople() {
 	struct _SYSTEMTIME st;
-	char[260] peoplepath;
+	char peoplepath[260];
 
 // LINE 913:
 	__asm        push   ebp;
@@ -17004,7 +17004,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	double nearvar;
 	double camPhi;
 	struct Point3d screenPt;
-	char[20] text;
+	char text[20];
 	double midvar;
 	float psiOff;
 	double camPsi;
@@ -17489,7 +17489,7 @@ _L56641:
 
 // FUNCTION: COPTER_D 0x005519d6
 void S3PersonTweakInit() {
-	int32_t *[10] pvals;
+	int32_t * pvals[10];
 
 // LINE 3080:
 	__asm        push   ebp;
@@ -17547,7 +17547,7 @@ void UpdateFigureVals() {
 
 // FUNCTION: COPTER_D 0x00551a3d
 void cAvatar::RotateMatrixAndYawForEngine() {
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 
 // LINE 3099:
 	__asm        push   ebp;

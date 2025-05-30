@@ -66,7 +66,7 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char[260] szFilePath;
+	char szFilePath[260];
 	int32_t Handle;
 private:
 	int32_t ShouldClose;
@@ -90,7 +90,7 @@ public:
 	unsigned short nErrCode;
 	unsigned short Reserved1;
 	unsigned short Reserved2;
-	char[128] szPathName;
+	char szPathName[128];
 };
 
 // Type: unsigned char;
@@ -159,7 +159,7 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char[260] szFilePath;
+	char szFilePath[260];
 	int32_t Handle;
 private:
 	int32_t ShouldClose;

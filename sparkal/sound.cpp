@@ -38,7 +38,7 @@ protected:
 // Type: class SoundManager (forward reference);
 class SoundManager{
 public:
-	class Sound*[128] sound;
+	class Sound* sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -118,7 +118,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -396,7 +396,7 @@ public:
 	unsigned short nErrCode;
 	unsigned short Reserved1;
 	unsigned short Reserved2;
-	char[128] szPathName;
+	char szPathName[128];
 };
 
 // Type: void (long);

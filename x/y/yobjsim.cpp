@@ -60,7 +60,7 @@ class cYObject : public TreeSim, public YObjLang
 			kNumObjectTypes = 1,
 		};
 public:
-	static short[1] sStackSize;
+	static short sStackSize[1];
 	void SetToLoc(struct _DYOBJ_INST*);
 	unsigned short Gosub(short);
 	short GetTree();
@@ -125,8 +125,8 @@ public:
 	unsigned short AddToHeli();
 	void RemoveFromHeli();
 	void SetPersonData(enum PersonType, enum MissionType, long);
-	static short[14] sInitBhav;
-	static short[20] sHitRxnTree;
+	static short sInitBhav[14];
+	static short sHitRxnTree[20];
 	// calltype: NearC
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
@@ -150,7 +150,7 @@ public:
 			kNumLocTypes = 14,
 		};
 public:
-	static enum cYObject::LocationType[256] sLocType;
+	static enum cYObject::LocationType sLocType[256];
 		enum SearchType {
 			kSearchEdgeGround = 0,
 			kSearchAnywhereGround = 1,
@@ -163,7 +163,7 @@ public:
 		short maxNormalLoiterers;
 	};
 public:
-	static struct cYObject::LocationInfo[14] sLocInfo;
+	static struct cYObject::LocationInfo sLocInfo[14];
 	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
 	short GetDirectionTo(struct _DYOBJ_INST*);
 	short GetDirectionTo(short, short);
@@ -214,17 +214,17 @@ public:
 	};
 private:
 	static unsigned short sInited;
-	static class cYObject*[100] sObjects;
-	static enum cYObject::LocationType[10][18] sNeutralPersonLocs;
-	static enum cYObject::LocationType[10][14] sNeutralMissionLocs;
+	static class cYObject* sObjects[100];
+	static enum cYObject::LocationType sNeutralPersonLocs[18][10];
+	static enum cYObject::LocationType sNeutralMissionLocs[14][10];
 	static class cYObject* sList;
 	static class NResFile sFile;
 	static class ResFile sErrorFile;
 public:
 	static class YObjLang* sLanguage;
 	static class Behavior* sBehavior;
-	static struct Point3d[8] sMoveTable;
-	static struct Point3d[8] sUnitVectorTable;
+	static struct Point3d sMoveTable[8];
+	static struct Point3d sUnitVectorTable[8];
 	// calltype: NearC
 	static void InitObjects(char *);
 	// calltype: NearC
@@ -324,9 +324,9 @@ public:
 	class cYObject* fNext;
 	short fID;
 	short _pad;
-	short[8] fTemp;
-	short[48] fData;
-	unsigned char *[4] fPointers;
+	short fTemp[8];
+	short fData[48];
+	unsigned char * fPointers[4];
 	short fIterations;
 	short _pad2;
 	short fDirInc;
@@ -415,7 +415,7 @@ public:
 	unsigned short PlaySoundA(enum cYObject::SoundNum, unsigned short);
 	// calltype: NearC
 	static void PhaseAndBeamSoundChannels();
-	static short[15] sSoundChannels;
+	static short sSoundChannels[15];
 	// calltype: NearC
 	static short ExtraSoundChannelForSure();
 	// calltype: NearC
@@ -499,7 +499,7 @@ public:
 	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 	using PrimProc = enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 public:
-	static enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*)[64] PrimProcs;
+	static enum TreeSim::ReturnCode (*PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 	// calltype: NearC
 	static enum TreeSim::ReturnCode sIdle(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 	enum TreeSim::ReturnCode iIdle(struct TreeSim::StackElem*, struct Behavior::Node*);
@@ -714,7 +714,7 @@ public:
 	short objectID;
 	short _pad;
 	unsigned char * objectPtr;
-	short[4] locals;
+	short locals[4];
 	class Behavior* pBehavior;
 	void GetTreeName(unsigned char *);
 };
@@ -850,7 +850,7 @@ public:
 	unsigned long nTime;
 	unsigned long nMissionID;
 	char * szLogString;
-	char[4] szData;
+	char szData[4];
 };
 
 // Type: struct YObjLang::SetDirectionParam;
@@ -963,7 +963,7 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 // FUNCTION: COPTER_D 0x005550ac
 void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
 	float fps;
-	char[100] text;
+	char text[100];
 	short tree;
 	class cYObject* person;
 
@@ -7036,7 +7036,7 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 	struct Point2d celloc;
 	struct Point3d loc;
 	long what;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 	int32_t speed;
 	enum TreeSim::ReturnCode result;
 	long scale;

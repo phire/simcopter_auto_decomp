@@ -269,7 +269,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct Point3d;
@@ -7501,7 +7501,7 @@ void AutomobileClass::RunFireState() {
 	struct Point2d currpos;
 	struct _MISSION_PARMS mp;
 	struct Point3d vec;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 3291:
 	__asm        push   ebp;
@@ -8152,7 +8152,7 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	 // Switch table at 0x00507464
 	unsigned short tile;
-	enum DirectionTypes[8] validdirs;
+	enum DirectionTypes validdirs[8];
 	int32_t i;
 
 // LINE 3614:

@@ -120,14 +120,14 @@ public:
 	void Init(unsigned long);
 	void * __ptr32 fDataHandle;
 	unsigned long fDataHandleSize;
-	unsigned char[16] fName;
+	unsigned char fName[16];
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
 	class cBBase::BBaseHeader{
 	public:
 		unsigned long bodyType;
-		long[15] _win8pad;
+		long _win8pad[15];
 	};
 public:
 	struct cBBase::BBaseHeader* fHeader;
@@ -560,8 +560,8 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 
 // FUNCTION: COPTER_D 0x0055db01
 void InitBodiesAndAnimations() {
-	char[260] animpath;
-	unsigned char[256] privname;
+	char animpath[260];
+	unsigned char privname[256];
 
 // LINE 175:
 	__asm        push   ebp;

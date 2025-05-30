@@ -447,7 +447,7 @@ long stol(char * tag) {
 // FUNCTION: COPTER_D 0x004c4a2b
 long ValidateSCXSaveGameFile(char * szFilePath) {
 	struct _iobuf* fp;
-	char[5] buf;
+	char buf[5];
 
 // LINE 272:
 	__asm        push   ebp;
@@ -519,7 +519,7 @@ short S2CityLoad(char * filePath) {
 	long length;
 	long dp;
 	unsigned short bDone;
-	char[256] tempCityName;
+	char tempCityName[256];
 	long size;
 
 // LINE 298:
@@ -1381,11 +1381,11 @@ void graph_kludge() {
 
 // FUNCTION: COPTER_D 0x004c555f
 void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
-	char[256] szSplitPathFilename;
+	char szSplitPathFilename[256];
 	uint32_t stringLength;
-	char[256] szSplitPathDirectory;
-	char[3] szSplitPathDrive;
-	char[256] szSplitPathExtension;
+	char szSplitPathDirectory[256];
+	char szSplitPathDrive[3];
+	char szSplitPathExtension[256];
 
 // LINE 542:
 	__asm        push   ebp;
@@ -2862,7 +2862,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 
 // FUNCTION: COPTER_D 0x004c680e
 short S2CitySave(char * filePath) {
-	char[33] tempCityNameString;
+	char tempCityNameString[33];
 	struct _iobuf* filNum;
 
 // LINE 976:
@@ -6440,7 +6440,7 @@ void check_backslash_terminate(char * path) {
 
 // FUNCTION: COPTER_D 0x004c9381
 short check_root(char * pathname) {
-	char[260] pathonly;
+	char pathonly[260];
 	short len;
 	short count;
 	char * t;
@@ -6844,7 +6844,7 @@ void strip_extension(char * ref) {
 // FUNCTION: COPTER_D 0x004c96fc
 void check_extension(char * pathname, char * ext) {
 	short len;
-	char[64] nameonly;
+	char nameonly[64];
 	char * s;
 
 // LINE 2266:
@@ -7022,7 +7022,7 @@ short check_file_exist(char * filename) {
 // FUNCTION: COPTER_D 0x004c987e
 void remove_illegals(char * ref) {
 	short len;
-	char[260] temp;
+	char temp[260];
 	char * s;
 	char * r;
 
@@ -7167,7 +7167,7 @@ void remove_illegals(char * ref) {
 // FUNCTION: COPTER_D 0x004c9a2e
 void compress_spaces(char * ref) {
 	short len;
-	char[260] temp;
+	char temp[260];
 	char * s;
 	char * r;
 

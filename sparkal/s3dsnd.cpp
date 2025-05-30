@@ -77,7 +77,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -325,7 +325,7 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 // FUNCTION: COPTER_D 0x00442002
 int32_t S3LoadSounds() {
 	int32_t count;
-	char[260] szFullSoundPath;
+	char szFullSoundPath[260];
 
 // LINE 146:
 	__asm        push   ebp;
@@ -4542,7 +4542,7 @@ int32_t S3LoadSounds() {
 // FUNCTION: COPTER_D 0x00446a6b
 void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	class DigitalSound* theSound;
-	char[260] szFullSoundPath;
+	char szFullSoundPath[260];
 
 // LINE 466:
 	__asm        push   ebp;

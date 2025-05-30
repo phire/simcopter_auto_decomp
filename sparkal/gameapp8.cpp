@@ -41,7 +41,7 @@ public:
 // Type: struct tagCurrentCareerCityInfo;
 class tagCurrentCareerCityInfo{
 public:
-	long[3] lCurrentCities;
+	long lCurrentCities[3];
 	long lCurrentCityIndex;
 	long bUserHasSavedGame;
 	struct tagUserPersonalInfo userPersonalInfo;
@@ -384,20 +384,20 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 
 // FUNCTION: COPTER_D 0x00427691
 unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
-	char[260] szCityFile;
+	char szCityFile[260];
 	struct tagUserCityInfo tempUserCityInfo;
 	unsigned long lActualCityFileChecksum;
-	char[260] szCityPath;
+	char szCityPath[260];
 	int32_t bPathInfoFound;
-	char[256] szSplitPathFilename;
+	char szSplitPathFilename[256];
 	struct tagCitySettings savedCitySettings;
-	char[256] szSplitPathDirectory;
+	char szSplitPathDirectory[256];
 	int32_t bSaveGameInfoFound;
 	struct tagCurrentCareerCityInfo tempCurrentCareerCityInfo;
 	unsigned long lSavedCityFileChecksum;
 	long lFileType;
-	char[3] szSplitPathDrive;
-	char[256] szSplitPathExtension;
+	char szSplitPathDrive[3];
+	char szSplitPathExtension[256];
 	long lPresentRecordType;
 
 // LINE 109:
@@ -742,13 +742,13 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // FUNCTION: COPTER_D 0x00427bf4
 unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
 	unsigned long lActualCityFileChecksum;
-	char[256] szCityFile;
-	char[256] szSplitPathFilename;
+	char szCityFile[256];
+	char szSplitPathFilename[256];
 	struct tagCitySettings tempCitySettings;
-	char[256] szSplitPathDirectory;
+	char szSplitPathDirectory[256];
 	long lFileType;
-	char[3] szSplitPathDrive;
-	char[256] szSplitPathExtension;
+	char szSplitPathDrive[3];
+	char szSplitPathExtension[256];
 
 // LINE 222:
 	__asm        push   ebp;
@@ -1007,17 +1007,17 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 unsigned long  CGameApp::DoSaveGameAs() {
 	unsigned long nResult;
 	int32_t nFullFilterID;
-	char[256] szSplitPathFilename;
-	char[260] szGameFileSavePath;
-	char[260] szCityFileSavePath;
-	char[256] szSplitPathDirectory;
-	char[256] szNewDirectory;
+	char szSplitPathFilename[256];
+	char szGameFileSavePath[260];
+	char szCityFileSavePath[260];
+	char szSplitPathDirectory[256];
+	char szNewDirectory[256];
 	char * chPrefData;
-	char[256] szSplitPathFullDirectory;
+	char szSplitPathFullDirectory[256];
 	int32_t nFullTitleID;
-	char[3] szSplitPathDrive;
+	char szSplitPathDrive[3];
 	int32_t nFullStringID;
-	char[256] szSplitPathExtension;
+	char szSplitPathExtension[256];
 
 // LINE 305:
 	__asm        push   ebp;

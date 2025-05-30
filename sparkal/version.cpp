@@ -66,7 +66,7 @@ void Version::Version() {
 	void * __ptr32 hModule;
 	unsigned long dwVersionInfoSize;
 	uint32_t nValueSize;
-	char[260] szFileName;
+	char szFileName[260];
 
 // LINE 23:
 	__asm        push   ebp;
@@ -195,7 +195,7 @@ void Version::~Version() {
 
 // FUNCTION: COPTER_D 0x0043dc57
 int32_t Version::GetApplicationName(char *& szName) {
-	char[255] subBlockName;
+	char subBlockName[255];
 	int32_t nReturnValue;
 	uint32_t vSize;
 
@@ -256,7 +256,7 @@ int32_t Version::GetApplicationName(char *& szName) {
 
 // FUNCTION: COPTER_D 0x0043dce9
 int32_t Version::GetApplicationVersion(char *& szVersion) {
-	char[255] subBlockName;
+	char subBlockName[255];
 	int32_t nReturnValue;
 	uint32_t vSize;
 
@@ -317,7 +317,7 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 
 // FUNCTION: COPTER_D 0x0043dd7b
 int32_t Version::GetApplicationCopyright(char *& szCopyright) {
-	char[255] subBlockName;
+	char subBlockName[255];
 	int32_t nReturnValue;
 	uint32_t vSize;
 
@@ -378,7 +378,7 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 
 // FUNCTION: COPTER_D 0x0043de0d
 int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
-	char[255] subBlockName;
+	char subBlockName[255];
 	int32_t nReturnValue;
 	uint32_t vSize;
 

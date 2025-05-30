@@ -55,7 +55,7 @@ protected:
 	static struct Point2d lastScannedLocation;
 	static int32_t sPlaneModelSet;
 	static class PlaneClass lsPlane;
-	char[4] flags;
+	char flags[4];
 	struct Point3d directionVector;
 	int32_t remainingDist;
 	int32_t speed;
@@ -163,7 +163,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct Point3d;
@@ -1915,7 +1915,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	struct Point2d celloc;
 	struct Point3d center;
 	struct Point3d vec;
-	int32_t[4][4] refmat;
+	int32_t refmat[4][4];
 	struct _STOBJ_INST* stobj;
 	struct Point3d cloc;
 	struct Point3d sloc;
@@ -2952,7 +2952,7 @@ void PlaneClass::AdjustCurrentPosition() {
 void PlaneClass::AdjustNextPosition() {
 	struct _CELL_INFO* cellPointer;
 	struct Point3d nextFineLocation;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 1943:
 	__asm        push   ebp;
@@ -3073,7 +3073,7 @@ void PlaneClass::AdjustNextAltitude() {
 	int32_t alt;
 	int32_t altdiff;
 	struct Point3d loc;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 1986:
 	__asm        push   ebp;

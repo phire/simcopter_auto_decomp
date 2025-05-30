@@ -162,7 +162,7 @@ public:
 	struct tagRECT rcPaint;
 	int32_t fRestore;
 	int32_t fIncUpdate;
-	unsigned char[32] rgbReserved;
+	unsigned char rgbReserved[32];
 };
 
 // Type: void * __ptr32;
@@ -3044,7 +3044,7 @@ void CDebugWindow::RecalcScrollRange() {
 void CDebugWindow::OnEditChange() {
 	long len;
 	long count;
-	char[256] buf;
+	char buf[256];
 
 // LINE 294:
 	__asm        push   ebp;
@@ -3092,7 +3092,7 @@ void CDebugWindow::OnEditChange() {
 	struct debug_command** it;
 	class vector<basic_string<char>> command_vector;
 	int32_t num;
-	char[256] comBuf;
+	char comBuf[256];
 	class basic_string<char> str;
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
@@ -3620,7 +3620,7 @@ void DestroyDebugWindow() {
 // FUNCTION: COPTER_D 0x00424b14
 void DebugOutput(char * text, ...) {
 	char * Marker;
-	char[256] buf;
+	char buf[256];
 
 // LINE 401:
 	__asm        push   ebp;

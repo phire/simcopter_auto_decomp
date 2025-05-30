@@ -367,7 +367,7 @@ private:
 	static long x_maxbit;
 	static int32_t x_curindex;
 	static int32_t sunk_with_stdio;
-	static long[8] x_statebuf;
+	static long x_statebuf[8];
 	static int32_t fLockcInit;
 	static struct _CRT_CRITICAL_SECTION x_lockc;
 	int32_t LockFlg;
@@ -1389,7 +1389,7 @@ char *  MTime::PrintString(char * szTime) {
 class ostream& operator<<(class ostream& s, const class MTime& t) {
 	uint32_t hh;
 	class ostrstream out;
-	char[80] buf;
+	char buf[80];
 
 // LINE 407:
 	__asm        push   ebp;

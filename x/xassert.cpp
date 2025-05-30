@@ -17,8 +17,8 @@
 // Contribution: 1:00153f30-00153fea Module: 197, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00554f30
 void doAssert(char * fileName, const long lineNum, char * failureDescription, long tackonNumber) {
-	char[256] descBuff;
-	char[256] message;
+	char descBuff[256];
+	char message[256];
 	int32_t answer;
 
 // LINE 36:

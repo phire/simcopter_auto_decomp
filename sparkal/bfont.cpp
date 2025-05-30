@@ -1201,11 +1201,11 @@ void BitmappedFont::DeInitialize() {
 // FUNCTION: COPTER_D 0x004689b8
 int32_t BitmappedFont::LoadFontInfo() {
 	class MRect rectTemp;
-	char[4096] chRectangleBuffer;
+	char chRectangleBuffer[4096];
 	int32_t i;
 	int32_t iEnd;
 	char * chCurrentRectangle;
-	char[256] szBitmapFile;
+	char szBitmapFile[256];
 
 // LINE 82:
 	__asm        push   ebp;
@@ -2440,7 +2440,7 @@ void BitmappedFont::CalculateCharacterRects() {
 
 // FUNCTION: COPTER_D 0x00469d3d
 int32_t BitmappedFont::CreateImage() {
-	char[260] szBitmapFilePath;
+	char szBitmapFilePath[260];
 	unsigned char chTransparentIndex;
 
 // LINE 190:
@@ -4304,10 +4304,10 @@ int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char 
 
 // FUNCTION: COPTER_D 0x0046b049
 int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitmapFile, char * chBitmapPath) {
-	char[256] szFileExtension;
-	char[3] szDrive;
-	char[256] szDirectory;
-	char[256] szFileName;
+	char szFileExtension[256];
+	char szDrive[3];
+	char szDirectory[256];
+	char szFileName[256];
 
 // LINE 677:
 	__asm        push   ebp;

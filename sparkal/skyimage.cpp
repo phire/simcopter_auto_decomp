@@ -287,7 +287,7 @@ int32_t SkyImage::LoadImageA() {
 	char * pDestinationImage;
 	struct VRResource* vrResource;
 	int32_t i;
-	char[260] szFullSkyImagePath;
+	char szFullSkyImagePath[260];
 	char * pSourceImage;
 	struct VRBmpHdr* bmpHeader;
 

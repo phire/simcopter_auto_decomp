@@ -1427,7 +1427,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 
 // FUNCTION: COPTER_D 0x0046ca4c
 int32_t MissionLogWindow::CreateImage(int32_t __formal) {
-	char[260] szBackgroundBufferPath;
+	char szBackgroundBufferPath[260];
 
 // LINE 126:
 	__asm        push   ebp;

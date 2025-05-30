@@ -2,7 +2,7 @@
 // FUNCTION: COPTER_D 0x0040f710
 int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsigned long lResourceID) {
 	int32_t nChars;
-	char[4096] szString;
+	char szString[4096];
 
 // LINE 120:
 	__asm        push   ebp;

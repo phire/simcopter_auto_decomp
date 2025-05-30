@@ -46,7 +46,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
@@ -120,7 +120,7 @@ void S3ExplosionInit() {
 	struct _SMOKE_DATA* sd;
 	struct Point3d vec;
 	long size;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 86:
 	__asm        push   ebp;

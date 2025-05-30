@@ -918,7 +918,7 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 
 // FUNCTION: COPTER_D 0x00566425
 void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
-	unsigned char[256] buff;
+	unsigned char buff[256];
 
 // LINE 454:
 	__asm        push   ebp;
@@ -960,7 +960,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 
 // FUNCTION: COPTER_D 0x00566479
 void ConcatNum(long number, unsigned char * str, short destSize) {
-	unsigned char[256] numStr;
+	unsigned char numStr[256];
 
 // LINE 464:
 	__asm        push   ebp;

@@ -51,7 +51,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	struct tLZSSBinaryForest* forest;
 	short retVal;
 	struct tCompressState* state;
-	unsigned char[5] header;
+	unsigned char header[5];
 	struct tACompModel* model;
 
 // LINE 646:

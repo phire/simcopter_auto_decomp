@@ -335,7 +335,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -609,7 +609,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
 	virtual long DoKeyDown(long, char);
 protected:
-	class SliderWindow*[8] mySliderWindows;
+	class SliderWindow* mySliderWindows[8];
 };
 
 // Type: class ControlDisplayWindow (forward reference);
@@ -645,8 +645,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	class SliderWindow*[3] mySliderWindows;
-	class TextWindow*[5] myTextWindows;
+	class SliderWindow* mySliderWindows[3];
+	class TextWindow* myTextWindows[5];
 };
 
 // Type: long[3];
@@ -713,8 +713,8 @@ void  CGameApp::ShowVersion() {
 	long lPhysicalMemory;
 	long lCPUSpeed;
 	char * szVersionInformation;
-	char[64] szUnformattedVersionInformation;
-	char[512] szFormattedVersionInformation;
+	char szUnformattedVersionInformation[64];
+	char szFormattedVersionInformation[512];
 	class Version tempVersion;
 	long lSystemType;
 	int32_t nFullStringID;
@@ -3074,7 +3074,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 	__asm        je     near ptr 0x0044059C;
 // LINE 431:
 // Block start:
-	char[3] szCareerLevel;
+	char szCareerLevel[3];
 	int32_t nCharsToCopy;
 	int32_t nNewCareerLevel;
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
@@ -3243,7 +3243,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 	int32_t nNewBucks;
 	int32_t nCharsToCopy;
 	const long lMaxBucks;
-	char[3] szBucks;
+	char szBucks[3];
 	__asm        mov    lMaxBucks, 0xC350;
 // LINE 455:
 	__asm        push   0x598950;
@@ -3322,7 +3322,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 // LINE 484:
 // Block start:
 	class DigitalSound* tempCheatCodeSound;
-	char[260] szFullPath;
+	char szFullPath[260];
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, szCheatSoundFileName;
@@ -3496,7 +3496,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 // FUNCTION: COPTER_D 0x00440b3f
 int  CGameApp::CheckCommandLineForCheatCodes() {
 	int32_t i;
-	char[128] szCommandValue;
+	char szCommandValue[128];
 
 // LINE 504:
 	__asm        push   ebp;
@@ -3653,7 +3653,7 @@ int  CGameApp::CheckCommandLineForCheatCodes() {
 // FUNCTION: COPTER_D 0x00440dcf
 void  CGameApp::CreateDebugBuffer() {
 	struct SparkalColor colorDebugText;
-	char[64] szTypeFaceName;
+	char szTypeFaceName[64];
 
 // LINE 523:
 	__asm        push   ebp;
@@ -5041,7 +5041,7 @@ void  CGameApp::CreateCheckupWindow() {
 
 // FUNCTION: COPTER_D 0x00441d86
 void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32_t bUseData) {
-	long[3] lSettings;
+	long lSettings[3];
 
 // LINE 870:
 	__asm        push   ebp;

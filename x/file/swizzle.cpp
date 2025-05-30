@@ -23,8 +23,8 @@
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566850
 void Swizzle16(void * __ptr32 val) {
-	char[8] hiWord;
-	char[8] loWord;
+	char hiWord[8];
+	char loWord[8];
 
 // LINE 10:
 	__asm        push   ebp;

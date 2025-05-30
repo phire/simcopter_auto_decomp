@@ -154,7 +154,7 @@ public:
 	unsigned long dwDataSize;
 	unsigned short palVersion;
 	unsigned short palNumEntries;
-	struct tagPALETTEENTRY[256] ape;
+	struct tagPALETTEENTRY ape[256];
 };
 
 // Type: int32_t;

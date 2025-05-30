@@ -54,7 +54,7 @@ protected:
 	void * __ptr32 mPalette;
 	void * __ptr32 mhCurrentCursor;
 	void * __ptr32 mhCustomCursor;
-	void * __ptr32[16] mCursors;
+	void * __ptr32 mCursors[16];
 };
 
 // Type: int32_t;
@@ -105,7 +105,7 @@ class CSparkalWindow::__ctor::__unnamed{
 public:
 	unsigned short Version;
 	unsigned short NumberOfEntries;
-	struct tagPALETTEENTRY[256] aEntries;
+	struct tagPALETTEENTRY aEntries[256];
 };
 
 // Type: void * __ptr32;
@@ -135,7 +135,7 @@ public:
 class CheckIdentityPalette::__unnamed{
 public:
 	struct tagBITMAPINFOHEADER Header;
-	struct tagRGBQUAD[256] Colors;
+	struct tagRGBQUAD Colors[256];
 };
 
 // Type: struct tagPAINTSTRUCT;
@@ -146,7 +146,7 @@ public:
 	struct tagRECT rcPaint;
 	int32_t fRestore;
 	int32_t fIncUpdate;
-	unsigned char[32] rgbReserved;
+	unsigned char rgbReserved[32];
 };
 
 
@@ -1312,7 +1312,7 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 // FUNCTION: COPTER_D 0x00481265
 void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* pColor) {
 	int32_t i;
-	struct tagPALETTEENTRY[256] palColors;
+	struct tagPALETTEENTRY palColors[256];
 
 // LINE 482:
 	__asm        push   ebp;
@@ -1384,7 +1384,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	int32_t i;
 	int32_t IsID;
 	void * __ptr32 MemDC;
-	unsigned char[256] Bits;
+	unsigned char Bits[256];
 
 // LINE 505:
 	__asm        push   ebp;

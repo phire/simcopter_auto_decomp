@@ -194,7 +194,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	int32_t lineY;
 	int32_t xOffset;
 	int32_t startX;
-	unsigned char[51] shade;
+	unsigned char shade[51];
 	long radius;
 	long ditherLimit;
 	long j;
@@ -202,7 +202,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	int32_t radiusSquared;
 	unsigned char hiColor;
 	double bandSize;
-	unsigned char[51][3] pat;
+	unsigned char pat[3][51];
 	unsigned char shftCt;
 	int32_t endX;
 
@@ -1394,7 +1394,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	double colorLimit;
 	char * writeBuffer;
 	long endWidth;
-	char[26] col;
+	char col[26];
 
 // LINE 637:
 	__asm        push   ebp;
@@ -1834,7 +1834,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	char * writeBufferTmp;
 	double colorLimit;
 	char * writeBuffer;
-	char[26] col;
+	char col[26];
 
 // LINE 824:
 	__asm        push   ebp;

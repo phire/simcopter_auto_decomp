@@ -30,8 +30,8 @@ protected:
 	class CBackBuffer* mySecondImage;
 	class CBackBuffer* myCheckmarkImage;
 	class DigitalSound mySound;
-	class basic_string<char>[9] sHelicopterNames;
-	class basic_string<char>[5] sEquipmentNames;
+	class basic_string<char> sHelicopterNames[9];
+	class basic_string<char> sEquipmentNames[5];
 	class basic_string<char> sCheckmarkFileName;
 	class basic_string<char> sTitle;
 	class basic_string<char> sAddress1;
@@ -2102,7 +2102,7 @@ int32_t InventoryWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x004a9e08
 void InventoryWindow::DrawTitleText() {
-	class MRect[3] rectText;
+	class MRect rectText[3];
 	int32_t i;
 	class MPoint ptText;
 
@@ -2858,7 +2858,7 @@ void InventoryWindow::LoadHotSpots() {
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
-	static const const long[6] lColumnStart = { /* <data@0x00591810> */ };
+	static const const long lColumnStart[6] = { /* <data@0x00591810> */ };
 
 // LINE 330:
 	__asm        push   ebp;
@@ -2890,7 +2890,7 @@ long InventoryWindow::GetColumnStartPixel(long lColumn) {
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
-	static const const long[11] lRowStart = { /* <data@0x00591828> */ };
+	static const const long lRowStart[11] = { /* <data@0x00591828> */ };
 
 // LINE 344:
 	__asm        push   ebp;
@@ -2922,8 +2922,8 @@ long InventoryWindow::GetRowStartPixel(long lRow) {
 
 // FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoint& ptEquipment) {
-	static const const long[5] lXPositions = { /* <data@0x00591858> */ };
-	static const const long[5] lYPositions = { /* <data@0x00591870> */ };
+	static const const long lXPositions[5] = { /* <data@0x00591858> */ };
+	static const const long lYPositions[5] = { /* <data@0x00591870> */ };
 
 // LINE 359:
 	__asm        push   ebp;

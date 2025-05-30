@@ -414,7 +414,7 @@ protected:
 	class Behavior::Tree{
 	public:
 		short numNodes;
-		struct Behavior::Node[1] nodes;
+		struct Behavior::Node nodes[1];
 	};
 public:
 	void Behavior(class Language*, class NResFile*, class NResFile*);

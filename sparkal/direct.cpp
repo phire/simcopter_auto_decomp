@@ -277,8 +277,8 @@ public:
 	unsigned long nFileSizeLow;
 	unsigned long dwReserved0;
 	unsigned long dwReserved1;
-	char[260] cFileName;
-	char[14] cAlternateFileName;
+	char cFileName[260];
+	char cAlternateFileName[14];
 };
 
 // Type: class list<basic_string<char>> (forward reference);

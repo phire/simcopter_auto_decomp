@@ -65,7 +65,7 @@ class TrainClass{
 private:
 	static struct Point2d lastScannedLocation;
 	static class TrainClass lsTrain;
-	char[9] flags;
+	char flags[9];
 	int32_t stalledTimer;
 	enum DirectionTypes direction;
 	struct Point3d directionVector;
@@ -221,7 +221,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct Point3d;
@@ -1474,7 +1474,7 @@ void TrainClass::TrainCrashMovement() {
 	struct _MISSION_PARMS mp;
 	struct Point3d loc;
 	struct Point3d vec;
-	int32_t[4][4] refmat;
+	int32_t refmat[4][4];
 	int32_t distance;
 	int32_t speed;
 

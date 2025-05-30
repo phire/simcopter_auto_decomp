@@ -7325,7 +7325,7 @@ class CBackBuffer *  GraphicWindow::GetImage() {
 
 // FUNCTION: COPTER_D 0x004a673c
 void  GraphicWindow::GetImagePath() {
-	char[261] szFullImagePath;
+	char szFullImagePath[261];
 
 // LINE 1353:
 	__asm        push   ebp;

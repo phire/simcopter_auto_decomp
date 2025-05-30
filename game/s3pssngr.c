@@ -491,7 +491,7 @@ long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData)
 void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 	int32_t i;
 	int32_t nSeat;
-	int32_t[16] bSeats;
+	int32_t bSeats[16];
 
 // LINE 215:
 	__asm        push   ebp;

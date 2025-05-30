@@ -20,7 +20,7 @@
 // FUNCTION: COPTER_D 0x0046b870
 void S3PrintScreen() {
 	char * chPalette;
-	char[260] fname;
+	char fname[260];
 
 // LINE 52:
 	__asm        push   ebp;

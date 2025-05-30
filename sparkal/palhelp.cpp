@@ -110,7 +110,7 @@ class ClearWindowsSystemPalette::__unnamed{
 public:
 	unsigned short Version;
 	unsigned short NumberOfEntries;
-	struct tagPALETTEENTRY[256] aEntries;
+	struct tagPALETTEENTRY aEntries[256];
 };
 
 // Type: uint32_t;
@@ -343,7 +343,7 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 void SparkalPalette::FadeToWhite(long lFadeTime) {
 	const unsigned long lDelayTime;
 	class MTimer timerFade;
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t j;
 	int32_t i;
 	int32_t nOriginalPriority;
@@ -632,7 +632,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 void SparkalPalette::FadeToBlack(long lFadeTime) {
 	const unsigned long lDelayTime;
 	class MTimer timerFade;
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t j;
 	int32_t i;
 	int32_t nOriginalPriority;
@@ -912,7 +912,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTime) {
 	const unsigned long lDelayTime;
 	class MTimer timerFade;
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t nDifference;
 	int32_t j;
 	int32_t i;
@@ -1689,7 +1689,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 
 // FUNCTION: COPTER_D 0x00497844
 void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSet) {
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
 
 // LINE 462:
@@ -1756,7 +1756,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 // FUNCTION: COPTER_D 0x004978e9
 void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 	long hResult;
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
 
 // LINE 493:

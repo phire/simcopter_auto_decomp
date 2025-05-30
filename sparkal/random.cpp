@@ -13,7 +13,7 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long[55] table;
+	unsigned long table[55];
 	uint32_t index1;
 	uint32_t index2;
 };

@@ -498,11 +498,11 @@ loop1:
 
 // FUNCTION: COPTER_D 0x00447fce
 unsigned long NormFreq(unsigned short processor, unsigned long freq) {
-	unsigned short[12] iPentiumSpeeds;
+	unsigned short iPentiumSpeeds[12];
 	unsigned short * speeds;
-	unsigned short[7] i486Speeds;
-	unsigned short[6] i386Speeds;
-	unsigned short[10] iPentiumProSpeeds;
+	unsigned short i486Speeds[7];
+	unsigned short i386Speeds[6];
+	unsigned short iPentiumProSpeeds[10];
 	int32_t ptr;
 
 // LINE 428:

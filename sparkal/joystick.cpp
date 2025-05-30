@@ -31,14 +31,14 @@ public:
 	int32_t GetVirtualJoystickIndex(int32_t);
 protected:
 	int32_t nJoystickCount;
-	char[16] bJoystickPresent;
-	int32_t[16] nJoystickIndexAssociation;
+	char bJoystickPresent[16];
+	int32_t nJoystickIndexAssociation[16];
 	long lNormalizedMinimum;
 	long lNormalizedMaximum;
 	long lNormalizedCenter;
 	long lJoystickThreshold;
-	struct tagJOYCAPSA[16] joystickCaps;
-	struct joyinfoex_tag[16] joystickInfoCache;
+	struct tagJOYCAPSA joystickCaps[16];
+	struct joyinfoex_tag joystickInfoCache[16];
 };
 
 // Type: int32_t;

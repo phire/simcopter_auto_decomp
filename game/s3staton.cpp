@@ -83,7 +83,7 @@ protected:
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
 	class AutomobileClass* dispatchTarget;
-	unsigned char[256] dispatchPath;
+	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
 	enum EmergencyLevel emergencyState;
@@ -289,7 +289,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:

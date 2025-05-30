@@ -207,7 +207,7 @@ protected:
 	void DrawRatchetAndLights();
 	void GetCoordinatesForLights(class MPoint*, class MRect*);
 	void GetCoordinatesForRatchets(class MPoint*, class MRect*);
-	class GraphicWindow*[2] mySiblingWindows;
+	class GraphicWindow* mySiblingWindows[2];
 	class CBackBuffer* myRatchetImage;
 	class CBackBuffer* myLightImage;
 };
@@ -1096,7 +1096,7 @@ int32_t UserMenuWindow::Initialize() {
 	class MRect rectTextWindow;
 	class TextWindow* tempTextWindow;
 	int32_t i;
-	char[260] szFullSoundPath;
+	char szFullSoundPath[260];
 
 // LINE 81:
 	__asm        push   ebp;
@@ -3219,11 +3219,11 @@ int32_t CopterMainMenu::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0049d4f4
 void CopterMainMenu::DrawRatchetAndLights() {
-	class MPoint[5] ptLightsDestination;
-	class MRect[5] rectLightsSource;
+	class MPoint ptLightsDestination[5];
+	class MRect rectLightsSource[5];
 	int32_t i;
-	class MRect[5] rectRatchetsSource;
-	class MPoint[5] ptRatchetsDestination;
+	class MRect rectRatchetsSource[5];
+	class MPoint ptRatchetsDestination[5];
 
 // LINE 472:
 	__asm        push   ebp;

@@ -257,27 +257,27 @@ protected:
 	int32_t nCurrentDamage;
 	long lCurrentFuelPercentage;
 	long lCurrentFuelLight;
-	class DialHand[3] dials;
-	class MRect[3] rectDials;
+	class DialHand dials[3];
+	class MRect rectDials[3];
 	class MRect rectMoneyFont;
 	long lCurrentMoney;
 	long lCurrentPoints;
 	int32_t bCurrentPointsOverLimit;
 	class MPoint ptLastSpotlightPosition;
 	class MRect rectSpotlightControl;
-	class MRect[4] rectSpotlightControlSet;
+	class MRect rectSpotlightControlSet[4];
 	long lSpotlightControlCurrent;
 };
 
 // Type: struct CommandSystem (forward reference);
 class CommandSystem{
 public:
-	struct Command[100] keyboardCommands;
+	struct Command keyboardCommands[100];
 	class CharList keyboardCommandList;
 	class list<Shortcut> commandShortcuts;
-	unsigned char[2048] chCommandKeyboardArray;
-	unsigned char[14][4] chCommandJoystickArray;
-	long[100] joystickCommands;
+	unsigned char chCommandKeyboardArray[2048];
+	unsigned char chCommandJoystickArray[4][14];
+	long joystickCommands[100];
 	void CommandSystem();
 	void Initialize();
 	void ClearAllCommands();
@@ -474,7 +474,7 @@ public:
 	int32_t nCurrentAutoID;
 	long lCurrentMissionID;
 	class MFont fontText;
-	class MRect[6] rectButtons;
+	class MRect rectButtons[6];
 	class MRect rectMissionText;
 };
 
@@ -550,7 +550,7 @@ protected:
 	void DoCurrentControlEnd();
 	void DrawBucketWaterGuage();
 	void DrawTeargasUsage();
-	class MRect[4] rectControls;
+	class MRect rectControls[4];
 	long lCurrentSelectedControl;
 	struct CommandSystem* myCommandSystem;
 	class CBackBuffer* myBucketWaterGuageImage;
@@ -3098,7 +3098,7 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0044a2bc
 int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char[260] szFullPath;
+	char szFullPath[260];
 
 // LINE 542:
 	__asm        push   ebp;
@@ -3409,7 +3409,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 void DialWindow::DrawCurrentDamage() {
 	int32_t nSourceImageX;
 	int32_t i;
-	static const int32_t[2][6] nDamageArray = { /* <data@0x00598f80> */ };
+	static const int32_t nDamageArray[6][2] = { /* <data@0x00598f80> */ };
 	int32_t nDamageInRangeOf0to15;
 
 // LINE 610:
@@ -3736,7 +3736,7 @@ int32_t DialWindow::ComposeSelf() {
 	long lStringLength;
 	static const long lFrameCounter = { /* <data@0x00598fb0> */ };
 	class MPoint ptSpotLightBackPositionCoordinates;
-	char[16] szMoneyString;
+	char szMoneyString[16];
 
 // LINE 697:
 	__asm        push   ebp;
@@ -5862,7 +5862,7 @@ void PassengerWindow::DrawPassengers() {
 	struct tagHeliPassengerData* tempHeliPassengerData;
 	int32_t nCurrentSeat;
 	class MRect rectSource;
-	int32_t[16] bSeats;
+	int32_t bSeats[16];
 
 // LINE 1063:
 	__asm        push   ebp;
@@ -6943,7 +6943,7 @@ void MapWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044d5e9
 int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char[260] szFullPath;
+	char szFullPath[260];
 
 // LINE 1357:
 	__asm        push   ebp;
@@ -8299,7 +8299,7 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044e77b
 int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 1717:
 	__asm        push   ebp;

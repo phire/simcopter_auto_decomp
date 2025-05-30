@@ -346,8 +346,8 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	uint32_t mm;
 	int32_t nLanguageToUse;
 	class ostrstream out;
-	char[80] buf;
-	char[80] buf1;
+	char buf[80];
+	char buf1[80];
 
 // LINE 49:
 	__asm        push   ebp;
@@ -1013,7 +1013,7 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 
 // FUNCTION: COPTER_D 0x004201c9
 uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToUse) {
-	char[4096] szCurrentDay;
+	char szCurrentDay[4096];
 	int32_t i;
 
 // LINE 242:
@@ -1064,7 +1064,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 
 // FUNCTION: COPTER_D 0x00420237
 uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLanguageToUse) {
-	char[4096] szCurrentMonth;
+	char szCurrentMonth[4096];
 	int32_t i;
 
 // LINE 263:
@@ -1245,7 +1245,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	 // Switch table at 0x0042058b
 	int32_t nLanguageToUse;
-	char[80] buf;
+	char buf[80];
 
 // LINE 325:
 	__asm        push   ebp;

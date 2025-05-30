@@ -44,7 +44,7 @@ void S3CameraMove(struct Point3d* P) {
 	int32_t Velocity;
 	struct Point3d CameraVector;
 	struct Point3d viewerPos;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 
 // LINE 100:
 	__asm        push   ebp;
@@ -1330,7 +1330,7 @@ void S3CameraRotate() {
 
 // FUNCTION: COPTER_D 0x004f98dc
 void S3CameraTweakInit() {
-	int32_t *[10] pvals;
+	int32_t * pvals[10];
 
 // LINE 711:
 	__asm        push   ebp;

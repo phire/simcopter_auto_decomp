@@ -3092,7 +3092,7 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 
 // FUNCTION: COPTER_D 0x0052654a
 void S3FireTweakInit() {
-	int32_t *[10] pvals;
+	int32_t * pvals[10];
 
 // LINE 1175:
 	__asm        push   ebp;
@@ -3202,7 +3202,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	long x;
 	struct Point3d vec;
 	struct _STOBJ_INST* stobj;
-	int32_t[4][4] mat;
+	int32_t mat[4][4];
 	int32_t speed;
 
 // LINE 1231:

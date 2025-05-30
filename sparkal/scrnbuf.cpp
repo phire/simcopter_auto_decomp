@@ -1360,7 +1360,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 	__asm        je     near ptr 0x0049F3CF;
 // LINE 538:
 // Block start:
-	struct tagPALETTEENTRY[256] palEntries;
+	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;

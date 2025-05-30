@@ -148,17 +148,17 @@ public:
 		int32_t bLeft;
 		int32_t bTop;
 		int32_t bSelected;
-		class MRect[4] rectFrame;
+		class MRect rectFrame[4];
 	};
 protected:
 	void DrawCitySelection();
 	void GetCoordinatesForCitySelections(class MPoint[4]*, class MRect[4]*);
 	long lCurrentCitySelection;
-	class MRect[3] rectCities;
-	long[3] lCities;
+	class MRect rectCities[3];
+	long lCities[3];
 	int32_t nCityCount;
 	int32_t bAllowCancel;
-	class SmackerBackBuffer[3] mySmackerBackBuffers;
+	class SmackerBackBuffer mySmackerBackBuffers[3];
 	void * __ptr32 myPlatformWindow;
 	class TextWindow* cityNameTextWindow;
 	class TextWindow* cityLevelTextWindow;
@@ -638,7 +638,7 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 
 // FUNCTION: COPTER_D 0x004bd81a
 void GameModeMainMenuData::CreatePalette() {
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 169:
 	__asm        push   ebp;
@@ -1058,7 +1058,7 @@ void GameModePickCareerCityData::Initialize() {
 
 // FUNCTION: COPTER_D 0x004bdd5b
 void GameModePickCareerCityData::CreatePalette() {
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 273:
 	__asm        push   ebp;
@@ -1441,7 +1441,7 @@ void GameModePlayData::Initialize() {
 void GameModePlayData::CreatePalette() {
 	int32_t i;
 	char * pPalettePosition;
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 399:
 	__asm        push   ebp;

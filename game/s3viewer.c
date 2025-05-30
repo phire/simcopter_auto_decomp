@@ -24,7 +24,7 @@ public:
 // FUNCTION: COPTER_D 0x004ee720
 void S3ViewerInit() {
 	struct Point3d IdealCameraLoc;
-	int32_t[4][4] rotmat;
+	int32_t rotmat[4][4];
 
 // LINE 97:
 	__asm        push   ebp;
@@ -826,7 +826,7 @@ int32_t S3ViewerPosDelta() {
 
 // FUNCTION: COPTER_D 0x004eef7f
 void S3ViewerSetView() {
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 	struct Point3d p;
 
 // LINE 423:

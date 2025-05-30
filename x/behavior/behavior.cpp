@@ -51,7 +51,7 @@ protected:
 	class Behavior::Tree{
 	public:
 		short numNodes;
-		struct Behavior::Node[1] nodes;
+		struct Behavior::Node nodes[1];
 	};
 public:
 	void Behavior(class Language*, class NResFile*, class NResFile*);
@@ -612,7 +612,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        add    esp, 0x10;
 // LINE 168:
 // Block start:
-	unsigned char[256] resName;
+	unsigned char resName[256];
 	__asm        lea    eax, resName[0];
 	__asm        push   eax;
 	__asm        mov    eax, tree;

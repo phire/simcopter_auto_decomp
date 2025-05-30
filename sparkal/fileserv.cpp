@@ -33,7 +33,7 @@ public:
 	enum FileServices::AppBaseType myAppBaseType;
 	class basic_string<char> sLocalDirectoryBase;
 	class basic_string<char> sRemoteDirectoryBase;
-	class basic_string<char>[12] sDirs;
+	class basic_string<char> sDirs[12];
 };
 
 // Type: class basic_string<char>;
@@ -209,7 +209,7 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char[260] szFilePath;
+	char szFilePath[260];
 	int32_t Handle;
 private:
 	int32_t ShouldClose;
@@ -4220,7 +4220,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, class basic_string<char>& sFile, class basic_string<char>& sPath) {
 	char * szFile;
 	int32_t nReturnValue;
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 391:
 	__asm        push   ebp;

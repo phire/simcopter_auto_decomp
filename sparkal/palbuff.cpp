@@ -93,7 +93,7 @@ protected:
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00447240
 void PaletteBuffer::PaletteBuffer() {
-	char[64] szTypeFaceName;
+	char szTypeFaceName[64];
 
 // LINE 34:
 	__asm        push   ebp;
@@ -180,7 +180,7 @@ void PaletteBuffer::PaletteBuffer() {
 
 // FUNCTION: COPTER_D 0x00447340
 void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
-	char[64] szTypeFaceName;
+	char szTypeFaceName[64];
 
 // LINE 52:
 	__asm        push   ebp;
@@ -438,7 +438,7 @@ int32_t PaletteBuffer::SetPalette() {
 
 // FUNCTION: COPTER_D 0x004475e2
 void PaletteBuffer::DrawPalette() {
-	char[256] szDescriptionString;
+	char szDescriptionString[256];
 	int32_t i;
 	struct SparkalRect rectFill;
 

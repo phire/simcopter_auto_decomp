@@ -1465,7 +1465,7 @@ unsigned long  CGameApp::PrepareGame() {
 	long hResult;
 	class basic_string<char> sErrorText;
 	class basic_string<char> sErrorTitle;
-	char[260] szButtonWindowSoundFilePath;
+	char szButtonWindowSoundFilePath[260];
 	int32_t nFullStringID;
 	class basic_string<char> sApplicationTitle;
 
@@ -2497,7 +2497,7 @@ unsigned long  CGameApp::Initialize() {
 	__asm        jne    near ptr 0x00489846;
 // LINE 411:
 // Block start:
-	char[128] szCommandValue;
+	char szCommandValue[128];
 	__asm        lea    eax, szCommandValue[0];
 	__asm        push   eax;
 	__asm        push   0x78;
@@ -2763,7 +2763,7 @@ unsigned long  CGameApp::Initialize() {
 void  CGameApp::ParseCommandLine() {
 	long lValue;
 	int32_t nLanguage;
-	char[128] szCommandValue;
+	char szCommandValue[128];
 
 // LINE 506:
 	__asm        push   ebp;
@@ -3179,8 +3179,8 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // FUNCTION: COPTER_D 0x0048a186
 void  CGameApp::DisplayDebugSystemInformation() {
 	char * szVersionInformation;
-	char[32] szUnformattedVersionInformation;
-	char[256] szFormattedVersionInformation;
+	char szUnformattedVersionInformation[32];
+	char szFormattedVersionInformation[256];
 	class Version tempVersion;
 	struct _MEMORYSTATUS tempMemoryStatus;
 
@@ -3770,7 +3770,7 @@ void  CGameApp::InitializeJoysticks() {
 // FUNCTION: COPTER_D 0x0048a980
 int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 	long lJoystickCountAtCurrentPlay;
-	char[64] chCurrentJoystickName;
+	char chCurrentJoystickName[64];
 	int32_t i;
 	long lJoystickCountAtLastPlay;
 	int32_t iEnd;

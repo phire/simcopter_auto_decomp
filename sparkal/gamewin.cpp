@@ -88,7 +88,7 @@ class GameWindow::MakePalette::__unnamed{
 public:
 	unsigned short Version;
 	unsigned short NumberOfEntries;
-	struct tagPALETTEENTRY[256] aEntries;
+	struct tagPALETTEENTRY aEntries[256];
 };
 
 // Type: void * __ptr32;
@@ -219,7 +219,7 @@ protected:
 	void * __ptr32 mPalette;
 	void * __ptr32 mhCurrentCursor;
 	void * __ptr32 mhCustomCursor;
-	void * __ptr32[16] mCursors;
+	void * __ptr32 mCursors[16];
 };
 
 

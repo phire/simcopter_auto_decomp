@@ -101,10 +101,10 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 
 // FUNCTION: COPTER_D 0x004c9b9b
 int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
-	char[50] szSection;
+	char szSection[50];
 	int32_t nCt;
-	char[300] szTemp;
-	char[260] szFullPath;
+	char szTemp[300];
+	char szFullPath[260];
 
 // LINE 70:
 	__asm        push   ebp;
@@ -272,8 +272,8 @@ void TWKUpdate() {
 void TWKReadAllFiles(char * pszTWKFile) {
 	char * pszSection;
 	int32_t nCt;
-	char[300] szTemp;
-	char[260] szFullPath;
+	char szTemp[300];
+	char szFullPath[260];
 	char * pszFile;
 
 // LINE 154:
@@ -356,12 +356,12 @@ void TWKReadAllFiles(char * pszTWKFile) {
 
 // FUNCTION: COPTER_D 0x004c9e4f
 void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotIdx) {
-	char[50] szKey;
-	char[20] szDataType;
+	char szKey[50];
+	char szDataType[20];
 	int32_t nNumCtrl;
 	int32_t nCt2;
-	char[260] szFullPath;
-	char[15] szValue;
+	char szFullPath[260];
+	char szValue[15];
 
 // LINE 203:
 	__asm        push   ebp;

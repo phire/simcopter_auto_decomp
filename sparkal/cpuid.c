@@ -147,10 +147,10 @@ end:
 
 // FUNCTION: COPTER_D 0x0047b739
 unsigned short wincpuidext() {
-	unsigned char[12] intel_id;
+	unsigned char intel_id[12];
 	int32_t i;
 	unsigned short cpuidext;
-	unsigned char[12] vendor_id;
+	unsigned char vendor_id[12];
 	unsigned short cpu_type;
 
 // LINE 162:
@@ -256,10 +256,10 @@ end_cpuidext:
 
 // FUNCTION: COPTER_D 0x0047b825
 unsigned long wincpufeatures() {
-	unsigned char[12] intel_id;
+	unsigned char intel_id[12];
 	int32_t i;
 	unsigned long cpuff;
-	unsigned char[12] vendor_id;
+	unsigned char vendor_id[12];
 
 // LINE 253:
 	__asm        push   ebp;
@@ -647,10 +647,10 @@ end_80386:
 
 // FUNCTION: COPTER_D 0x0047ba8d
 unsigned short check_IDProc() {
-	unsigned char[12] intel_id;
+	unsigned char intel_id[12];
 	unsigned char stepping;
 	int32_t i;
-	unsigned char[12] vendor_id;
+	unsigned char vendor_id[12];
 	unsigned short cpu_type;
 	unsigned char model;
 

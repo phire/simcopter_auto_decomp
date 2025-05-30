@@ -1827,7 +1827,7 @@ void SkipDelim(class istream& strm) {
 // FUNCTION: COPTER_D 0x004bd27c
 char * ParseMonth(class istream& s) {
 	char c;
-	static const char[12] month = { /* <data@0x006069a8> */ };
+	static const char month[12] = { /* <data@0x006069a8> */ };
 	char * p;
 
 // LINE 547:
@@ -1928,7 +1928,7 @@ char * ParseMonth(class istream& s) {
 // FUNCTION: COPTER_D 0x004bd39a
 class ostream& operator<<(class ostream& s, const class MDate& d) {
 	class ostrstream out;
-	char[80] buf;
+	char buf[80];
 
 // LINE 617:
 	__asm        push   ebp;

@@ -162,8 +162,8 @@ public:
 // Type: struct tSCXSaveFileHdr;
 class tSCXSaveFileHdr{
 public:
-	char[4] type;
-	char[32] product;
+	char type[4];
+	char product[32];
 	long version;
 	long time;
 };
@@ -1135,12 +1135,12 @@ void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
 
 // FUNCTION: COPTER_D 0x004cc003
 int32_t ReadSCXFile(char * filePath) {
-	long[11] scxInd;
-	long[256] scxTileCount;
+	long scxInd[11];
+	long scxTileCount[256];
 	class cLZAPFileBitStream fileStream;
 	struct ReadSCXFile::__unnamed SCXMicroRecord;
 	long tempLong;
-	long[50] longBonds;
+	long longBonds[50];
 	long loop;
 	class cGZXParamBitstream<t_alloc,t_free> memstrm;
 	struct tSCXSaveFileHdr header;

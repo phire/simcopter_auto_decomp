@@ -58,7 +58,7 @@ protected:
 	static struct IDirectSound* lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer*[8] lpSound;
+	struct IDirectSoundBuffer* lpSound[8];
 	struct _STREAMBUFINFO* lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
@@ -312,7 +312,7 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char[260] szFilePath;
+	char szFilePath[260];
 	int32_t Handle;
 private:
 	int32_t ShouldClose;
@@ -526,7 +526,7 @@ int32_t IsActualTimeDaytime() {
 // FUNCTION: COPTER_D 0x00461208
 void  CGameApp::GetPreferences() {
 	char * chPrefData;
-	char[260] szPath;
+	char szPath[260];
 
 // LINE 111:
 	__asm        push   ebp;
@@ -778,7 +778,7 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 void  CGameApp::SavePreferences() {
 	long lCurrentJoystickCount;
 	int32_t i;
-	char[64] szJoystickName;
+	char szJoystickName[64];
 
 // LINE 187:
 	__asm        push   ebp;
@@ -1117,7 +1117,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        jmp    near ptr 0x00461DD9;
 // LINE 277:
 // Block start:
-	char[260] szPath;
+	char szPath[260];
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x599284];
@@ -5123,8 +5123,8 @@ int  CGameApp::GraduateUserFromAllCareerLevels() {
 // FUNCTION: COPTER_D 0x00465081
 void  CGameApp::NotifyUserOfGraduation() {
 	class DigitalSound* tempNotificationSound;
-	char[128] szString;
-	char[260] szFullPath;
+	char szString[128];
+	char szFullPath[260];
 	int32_t nFullStringID;
 
 // LINE 1216:
@@ -6219,13 +6219,13 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 
 // FUNCTION: COPTER_D 0x00465edb
 int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	char[256] szSplitPathFilename;
-	char[256] szSplitPathDirectory;
+	char szSplitPathFilename[256];
+	char szSplitPathDirectory[256];
 	int32_t nCurrentGameMode;
 	char * chPrefData;
-	char[256] szSplitPathFullDirectory;
-	char[3] szSplitPathDrive;
-	char[256] szSplitPathExtension;
+	char szSplitPathFullDirectory[256];
+	char szSplitPathDrive[3];
+	char szSplitPathExtension[256];
 
 // LINE 1461:
 	__asm        push   ebp;
@@ -6257,7 +6257,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        jne    near ptr 0x00465FBD;
 // LINE 1475:
 // Block start:
-	char[260] szFilePath;
+	char szFilePath[260];
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
 	__asm        push   0x5992F0;
@@ -6342,7 +6342,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	int32_t nFullFilterID;
 	long lFileType;
 	int32_t nFullTitleID;
-	char[260] szFileLoadPath;
+	char szFileLoadPath[260];
 	__asm        mov    al, ds:[0x599300];
 	__asm        mov    szFileLoadPath[0], al;
 	__asm        lea    edi, szFileLoadPath[1];
@@ -6786,8 +6786,8 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x004665ad
 int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
-	char[256] szFullCityVideoFileName;
-	char[260] szFullCityVideoFilePath;
+	char szFullCityVideoFileName[256];
+	char szFullCityVideoFilePath[260];
 	float fScaleFactor;
 
 // LINE 1658:
@@ -7045,7 +7045,7 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 
 // FUNCTION: COPTER_D 0x00466968
 int  CGameApp::StartVideoForMainMenu() {
-	char[260] szMainMenuVideoPath;
+	char szMainMenuVideoPath[260];
 
 // LINE 1714:
 	__asm        push   ebp;

@@ -56,7 +56,7 @@ public:
 void S3ObjInit() {
 	 // Switch table at 0x00519437
 	 // Switch table at 0x005191e8
-	char[80] msg;
+	char msg[80];
 	int32_t obj;
 	long j;
 	long i;

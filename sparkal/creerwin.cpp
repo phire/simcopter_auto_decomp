@@ -30,17 +30,17 @@ public:
 		int32_t bLeft;
 		int32_t bTop;
 		int32_t bSelected;
-		class MRect[4] rectFrame;
+		class MRect rectFrame[4];
 	};
 protected:
 	void DrawCitySelection();
 	void GetCoordinatesForCitySelections(class MPoint[4]*, class MRect[4]*);
 	long lCurrentCitySelection;
-	class MRect[3] rectCities;
-	long[3] lCities;
+	class MRect rectCities[3];
+	long lCities[3];
 	int32_t nCityCount;
 	int32_t bAllowCancel;
-	class SmackerBackBuffer[3] mySmackerBackBuffers;
+	class SmackerBackBuffer mySmackerBackBuffers[3];
 	void * __ptr32 myPlatformWindow;
 	class TextWindow* cityNameTextWindow;
 	class TextWindow* cityLevelTextWindow;
@@ -304,7 +304,7 @@ public:
 	int32_t bLeft;
 	int32_t bTop;
 	int32_t bSelected;
-	class MRect[4] rectFrame;
+	class MRect rectFrame[4];
 };
 
 // Type: class CareerWindow::CitySelectionFrame (forward reference);
@@ -318,7 +318,7 @@ public:
 	int32_t bLeft;
 	int32_t bTop;
 	int32_t bSelected;
-	class MRect[4] rectFrame;
+	class MRect rectFrame[4];
 };
 
 // Type: class MPoint (forward reference);
@@ -560,9 +560,9 @@ void CareerWindow::~CareerWindow() {
 
 // FUNCTION: COPTER_D 0x0047e19e
 int32_t CareerWindow::Initialize() {
-	char[256] szFullCityVideoFileName;
+	char szFullCityVideoFileName[256];
 	long lCityLevelString;
-	char[260] szFullCityVideoFilePath;
+	char szFullCityVideoFilePath[260];
 	long lCityNameString;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
@@ -2071,10 +2071,10 @@ int32_t CareerWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0047f8ab
 void CareerWindow::DrawCitySelection() {
-	class MPoint[4][3] ptDestinations;
+	class MPoint ptDestinations[3][4];
 	int32_t j;
 	int32_t i;
-	class MRect[4][3] rectSources;
+	class MRect rectSources[3][4];
 
 // LINE 256:
 	__asm        push   ebp;

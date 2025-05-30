@@ -3281,7 +3281,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 
 // FUNCTION: COPTER_D 0x0042ceda
 int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
-	char[260] szFontPath;
+	char szFontPath[260];
 	int32_t nReturnValue;
 
 // LINE 448:
@@ -3356,7 +3356,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 
 // FUNCTION: COPTER_D 0x0042cf8e
 int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
-	char[260] szFontPath;
+	char szFontPath[260];
 	int32_t nReturnValue;
 
 // LINE 488:

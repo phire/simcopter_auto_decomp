@@ -21,15 +21,15 @@
 // Type: struct GameObjectHdrType;
 class GameObjectHdrType{
 public:
-	char[4] Id;
+	char Id[4];
 	long Size;
 	short NVerts;
 	short NFaces;
 	unsigned long Attrib;
 	long Radius;
 	long YRadius;
-	char[24] ObjName;
-	char[64] TextureFile;
+	char ObjName[24];
+	char TextureFile[64];
 	long ObjAnimCnt;
 	long ObjAnimPtr;
 	int32_t ID;
@@ -42,7 +42,7 @@ public:
 // Type: struct FileBSPTreeHdrType;
 class FileBSPTreeHdrType{
 public:
-	char[4] Id;
+	char Id[4];
 	long Size;
 	short NNodes;
 };
@@ -52,7 +52,7 @@ public:
 // Type: struct FileFaceHdrType;
 class FileFaceHdrType{
 public:
-	char[4] Id;
+	char Id[4];
 	long Size;
 	short NVerts;
 	unsigned long Attrib;
@@ -402,7 +402,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	int32_t hibyte;
 	int32_t x;
 	int32_t * FaceVertPtr;
-	short[128] w;
+	short w[128];
 	struct FileBSPTreeHdrType treehdr;
 	int32_t lobyte;
 	struct _FaceHdr* faceptr;
@@ -952,7 +952,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // FUNCTION: COPTER_D 0x004d2ac6
 int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, int32_t dim) {
 	struct Point3d tloc;
-	int32_t[4][4] tmat;
+	int32_t tmat[4][4];
 	int32_t flags;
 
 // LINE 730:

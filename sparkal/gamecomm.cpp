@@ -5,12 +5,12 @@
 // Type: struct CommandSystem (forward reference);
 class CommandSystem{
 public:
-	struct Command[100] keyboardCommands;
+	struct Command keyboardCommands[100];
 	class CharList keyboardCommandList;
 	class list<Shortcut> commandShortcuts;
-	unsigned char[2048] chCommandKeyboardArray;
-	unsigned char[14][4] chCommandJoystickArray;
-	long[100] joystickCommands;
+	unsigned char chCommandKeyboardArray[2048];
+	unsigned char chCommandJoystickArray[4][14];
+	long joystickCommands[100];
 	void CommandSystem();
 	void Initialize();
 	void ClearAllCommands();
@@ -1895,7 +1895,7 @@ void CGameCommander::ProcessSystemCloseRequest() {
 int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	class MIFF myMIFF;
 	struct Shortcut tempShortcut;
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 552:
 	__asm        push   ebp;
@@ -2173,7 +2173,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	int32_t nReturnValue;
 	class MIFF myMIFF;
 	struct Shortcut tempShortcut;
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 586:
 	__asm        push   ebp;
@@ -4222,7 +4222,7 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 
 // FUNCTION: COPTER_D 0x0048e4b5
 void DeleteShortcutPrefsFile() {
-	char[260] szFilePath;
+	char szFilePath[260];
 
 // LINE 968:
 	__asm        push   ebp;

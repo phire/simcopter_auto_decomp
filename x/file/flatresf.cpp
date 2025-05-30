@@ -123,7 +123,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	long mapLocLess;
 	long mapLoc;
 	long mapSize;
-	unsigned char[28] miscBytes;
+	unsigned char miscBytes[28];
 	long miscSize;
 	long res1Off;
 	__asm        mov    miscSize, 0x1C;

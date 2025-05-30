@@ -15,7 +15,7 @@ class TreeSim{
 		short objectID;
 		short _pad;
 		unsigned char * objectPtr;
-		short[4] locals;
+		short locals[4];
 		class Behavior* pBehavior;
 		void GetTreeName(unsigned char *);
 	};
@@ -115,7 +115,7 @@ protected:
 	class Behavior::Tree{
 	public:
 		short numNodes;
-		struct Behavior::Node[1] nodes;
+		struct Behavior::Node nodes[1];
 	};
 public:
 	void Behavior(class Language*, class NResFile*, class NResFile*);
@@ -164,7 +164,7 @@ public:
 	short objectID;
 	short _pad;
 	unsigned char * objectPtr;
-	short[4] locals;
+	short locals[4];
 	class Behavior* pBehavior;
 	void GetTreeName(unsigned char *);
 };

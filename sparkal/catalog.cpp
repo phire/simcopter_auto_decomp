@@ -35,10 +35,10 @@ protected:
 	long GetEquipmentFromSelectionIndex(long);
 	class MRect rectTabs;
 	class MPoint ptHelicopterMainGraphic;
-	long[3] lStainImageTabs;
-	class MPoint[3] ptStainImage;
-	long[3] lPaperClipImageTabs;
-	class MPoint[3] ptPaperClipImage;
+	long lStainImageTabs[3];
+	class MPoint ptStainImage[3];
+	long lPaperClipImageTabs[3];
+	class MPoint ptPaperClipImage[3];
 	class DigitalSound mySound;
 	long lCurrentTab;
 	long lCurrentEquipmentSelection;
@@ -94,7 +94,7 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long[55] table;
+	unsigned long table[55];
 	uint32_t index1;
 	uint32_t index2;
 };
@@ -2412,14 +2412,14 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	struct tagUserPersonalInfo* currentUserPersonalInfo;
 	class basic_string<char> sTempMainGraphicFileName;
 	int32_t i;
-	class MRect[5] rectEquipmentDescriptions;
+	class MRect rectEquipmentDescriptions[5];
 	class MRect rectFundsText;
 	class basic_string<char> sTempTabFilePath;
 	class basic_string<char> sTempTabFileName;
 	int32_t nFullStringID;
-	class basic_string<char>[5] sEquipmentDescriptions;
-	class MRect[5] rectEquipmentDescriptionTitles;
-	char[260] szFilePath;
+	class basic_string<char> sEquipmentDescriptions[5];
+	class MRect rectEquipmentDescriptionTitles[5];
+	char szFilePath[260];
 
 // LINE 167:
 	__asm        push   ebp;
@@ -5158,7 +5158,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	static const int32_t nColorDirection = { /* <data@0x00599838> */ };
 	const int32_t nColorArraySize;
 	static const int32_t nColorArrayCurrentIndex = { /* <data@0x00599834> */ };
-	unsigned long[6] lIndexArray;
+	unsigned long lIndexArray[6];
 
 // LINE 394:
 	__asm        push   ebp;
@@ -5631,8 +5631,8 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047a3be
 void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainGraphicFileName, class basic_string<char>& sTabFileName) {
-	char *[9] szTabFileNames;
-	char *[9] szHelicopterFileNames;
+	char * szTabFileNames[9];
+	char * szHelicopterFileNames[9];
 
 // LINE 504:
 	__asm        push   ebp;
@@ -6190,7 +6190,7 @@ int32_t CatalogWindow::ComposeSelf() {
 // FUNCTION: COPTER_D 0x0047ab89
 int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYPosition, long& lEquipment) {
 	int32_t i;
-	const class MRect[5] rectEquipment;
+	const class MRect rectEquipment[5];
 
 // LINE 557:
 	__asm        push   ebp;
@@ -6666,7 +6666,7 @@ void CatalogWindow::SetButtonStates() {
 
 // FUNCTION: COPTER_D 0x0047b0d8
 int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	long[2] lMyMessage;
+	long lMyMessage[2];
 
 // LINE 700:
 	__asm        push   ebp;
@@ -6799,7 +6799,7 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x0047b233
 long CatalogWindow::GetHelicopterFromTab(long lTab) {
-	const long[8] lHelicopterTabs;
+	const long lHelicopterTabs[8];
 
 // LINE 734:
 	__asm        push   ebp;
@@ -6833,7 +6833,7 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047b28a
 long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
-	const long[5] lEquipmentChoices;
+	const long lEquipmentChoices[5];
 
 // LINE 745:
 	__asm        push   ebp;

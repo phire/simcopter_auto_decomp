@@ -90,7 +90,7 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long[55] table;
+	unsigned long table[55];
 	uint32_t index1;
 	uint32_t index2;
 };
@@ -314,7 +314,7 @@ unsigned long  CGameApp::FinishGame() {
 // FUNCTION: COPTER_D 0x004bbb17
 int  CGameApp::BackgroundVRAppInit() {
 	class MRect rectText;
-	char[260] szVideoPath;
+	char szVideoPath[260];
 	struct VRAppInitThreadStruct tempVRAppInitThreadStruct;
 	class Random tempRandom;
 	int32_t nXPosition;

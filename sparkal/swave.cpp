@@ -52,7 +52,7 @@ public:
 	char * pchEndWrite;
 	long lBufOffset;
 	long lDiskOffset;
-	unsigned long[3] adwInfo;
+	unsigned long adwInfo[3];
 	unsigned long dwReserved1;
 	unsigned long dwReserved2;
 	void * __ptr32 hmmio;

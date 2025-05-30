@@ -62,10 +62,10 @@ protected:
 	short _pad;
 	class ResFile* fFile;
 	unsigned long fType;
-	unsigned char[16] fFileName;
-	unsigned char[16] fName;
+	unsigned char fFileName[16];
+	unsigned char fName[16];
 	unsigned long fTinyName;
-	static struct _cArray::FileAndType[64] fsLoaded;
+	static struct _cArray::FileAndType fsLoaded[64];
 public:
 	void _cArray(long, long, long, unsigned long, class ResFile*, unsigned long);
 	void _cArray(long, long, long, unsigned char *, class ResFile*, unsigned long);
@@ -186,10 +186,10 @@ protected:
 	short _pad;
 	class ResFile* fFile;
 	unsigned long fType;
-	unsigned char[16] fFileName;
-	unsigned char[16] fName;
+	unsigned char fFileName[16];
+	unsigned char fName[16];
 	unsigned long fTinyName;
-	static struct _cArray::FileAndType[64] fsLoaded;
+	static struct _cArray::FileAndType fsLoaded[64];
 public:
 	void _cArray(long, long, long, unsigned long, class ResFile*, unsigned long);
 	void _cArray(long, long, long, unsigned char *, class ResFile*, unsigned long);
@@ -302,7 +302,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	unsigned short fileOpened;
 	char * data;
 	struct _cArray::Header* header;
-	unsigned char[256] tmpname;
+	unsigned char tmpname[256];
 
 // LINE 29:
 	__asm        push   ebp;

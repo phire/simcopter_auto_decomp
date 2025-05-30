@@ -1153,7 +1153,7 @@ void PreferenceManager::EnumeratePrefs() {
 // FUNCTION: COPTER_D 0x0047c4ad
 long PreferenceManager::SaveAllPrefs() {
 	class list<PreferenceItem>::iterator i;
-	char[41] szStringRudelyEmbeddedDirectly;
+	char szStringRudelyEmbeddedDirectly[41];
 
 // LINE 222:
 	__asm        push   ebp;

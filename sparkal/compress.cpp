@@ -132,7 +132,7 @@ protected:
 void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	int32_t InputMode;
 	class ifstream InputFile;
-	char[13] FileName;
+	char FileName[13];
 	class ostrstream NameOut;
 
 // LINE 47:

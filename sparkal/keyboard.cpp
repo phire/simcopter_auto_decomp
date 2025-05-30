@@ -28,7 +28,7 @@ protected:
 	static int32_t ShouldCharBeShifted(unsigned char);
 public:
 	class CharList myCharDownList;
-	char[256] chKeyStates;
+	char chKeyStates[256];
 	void ~Keyboard();
 };
 
@@ -371,9 +371,9 @@ char Keyboard::GetCurrentModifierState() {
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
-	static const char[11] chExtraArray = { /* <data@0x00598360> */ };
+	static const char chExtraArray[11] = { /* <data@0x00598360> */ };
 	char chIndex;
-	static const char[10] chNumberArray = { /* <data@0x00598350> */ };
+	static const char chNumberArray[10] = { /* <data@0x00598350> */ };
 
 // LINE 165:
 	__asm        push   ebp;

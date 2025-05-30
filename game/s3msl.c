@@ -37,7 +37,7 @@ class VRview{
 public:
 	struct Point3d loc;
 	struct Point3d scale;
-	int32_t[4][4] matrix;
+	int32_t matrix[4][4];
 };
 
 // Type: struct _CELL_INFO (forward reference);
@@ -4789,7 +4789,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	struct Point2d celloc;
 	struct Point3d center;
 	struct Point3d vec;
-	int32_t[4][4] refmat;
+	int32_t refmat[4][4];
 	struct _STOBJ_INST* stobj;
 	struct _DYOBJ_INST* dyobj;
 	struct Point3d cloc;
