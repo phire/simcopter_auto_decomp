@@ -17,7 +17,9 @@ public:
 };
 
 // Type: void;
+
 // Type: int32_t;
+
 // Type: class PreferenceManager (forward reference);
 class PreferenceManager{
 protected:
@@ -61,7 +63,9 @@ public:
 };
 
 // Type: long;
+
 // Type: char *;
+
 // Type: class list<PreferenceItem>::iterator;
 class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceItem,int>
 {
@@ -81,6 +85,7 @@ public:
 };
 
 // Type: char[41];
+
 // Type: class PreferenceItem;
 class PreferenceItem{
 public:
@@ -198,6 +203,7 @@ public:
 };
 
 // Type: uint32_t;
+
 // Type: class list<PreferenceItem> (forward reference);
 class list<PreferenceItem>{
 	using void_pointer = void * __ptr32;
@@ -323,6 +329,7 @@ public:
 };
 
 // Type: struct list<PreferenceItem>::list_node_buffer (forward reference);
+
 
 
 // Contribution: 1:0007ab70-0007caa5 Module: 32, 16 byte alignment, code, execute, read, 

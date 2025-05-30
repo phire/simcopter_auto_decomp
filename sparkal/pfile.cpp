@@ -73,10 +73,15 @@ private:
 };
 
 // Type: char *;
+
 // Type: unsigned short;
+
 // Type: int32_t;
+
 // Type: uint32_t;
+
 // Type: long;
+
 // Type: struct _OFSTRUCT;
 class _OFSTRUCT{
 public:
@@ -89,6 +94,7 @@ public:
 };
 
 // Type: unsigned char;
+
 // Type: class PFile;
 class PFile{
 		enum __unnamed {
@@ -160,7 +166,9 @@ private:
 };
 
 // Type: unsigned char *;
+
 // Type: unsigned long;
+
 
 
 // Contribution: 1:0009f3a0-0009f9f6 Module: 10, 16 byte alignment, code, execute, read, 

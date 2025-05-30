@@ -14,9 +14,13 @@ public:
 };
 
 // Type: void;
+
 // Type: unsigned long;
+
 // Type: int32_t;
+
 // Type: unsigned long *;
+
 // Type: struct tagPOINT;
 class tagPOINT{
 public:

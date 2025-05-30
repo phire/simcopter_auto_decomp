@@ -5,6 +5,7 @@
 // Type: long;
 
 
+
 // Contribution: 1:0018d370-0018d3dd Module: 86, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0058e370
 long S2TileSize(long tile) {

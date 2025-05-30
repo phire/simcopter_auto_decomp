@@ -70,6 +70,7 @@ public:
 };
 
 // Type: void;
+
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -176,8 +177,11 @@ public:
 };
 
 // Type: long;
+
 // Type: char *;
+
 // Type: int32_t;
+
 // Type: class MRect;
 class MRect : public SparkalRect
 {
@@ -253,12 +257,132 @@ public:
 };
 
 // Type: char[4096];
+
 // Type: char[256];
+
 // Type: unsigned char;
+
 // Type: char[260];
+
 // Type: unsigned long;
+
 // Type: class CBackBuffer (forward reference);
-public CBackBuffer
+class CBackBuffer : public IFlatImage, public IBackBuffer
+{
+public:
+	void IFlatImage();
+	// vtable: 0
+	intro unsigned long Lock();
+	// vtable: 4
+	intro unsigned long Unlock();
+	unsigned long GetLockCount();
+	// vtable: 8
+	intro void SetTransparentColor(int32_t, long);
+	long GetHeight();
+	long GetWidth();
+	void * __ptr32 GetBitsPointer();
+	long GetStride();
+	// vtable: 12
+	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long CBackBuffer(class IFlatImage*, long, long);
+	// vtable: 16
+	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 20
+	intro unsigned long CBackBuffer(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	// vtable: 24
+	intro unsigned long FillRect(long, struct SparkalRect*);
+	void DrawPixel(unsigned char, long, long);
+	unsigned char GetPixel(long, long);
+	static unsigned long lTotalMemoryUsage;
+	static unsigned long lTotalLockCount;
+protected:
+	unsigned long mLockCount;
+	long mWidth;
+	long mHeight;
+	void * __ptr32 mpBits;
+	long mStride;
+public:
+	// vtable: 28
+	intro unsigned long Swap(class CSparkalWindow*, long, long);
+	// vtable: 32
+	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
+	// vtable: 36
+	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
+	void CBackBuffer(long, long, const struct SparkalColor*);
+	void CBackBuffer(char *);
+	void CBackBuffer();
+	// vtable: 40
+	intro void InitializeMemberVariables();
+	void ~CBackBuffer();
+	unsigned long Load();
+	virtual unsigned long Lock();
+	virtual unsigned long Unlock();
+	// calltype: NearC
+	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
+	virtual unsigned long Swap(class CSparkalWindow*, long, long);
+	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
+	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
+	// vtable: 44
+	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	virtual unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 48
+	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
+	// vtable: 52
+	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
+	// vtable: 56
+	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	// vtable: 60
+	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
+	void UpdatePalette(long, long, const struct SparkalColor*);
+	virtual void SetTransparentColor(int32_t, long);
+	unsigned long GetTransparentColor(long&);
+	unsigned long SetFont(class MFont*);
+	void SetFontColor(struct SparkalColor&);
+	void SetFontIndex(int32_t);
+	void SetColor(struct SparkalColor&);
+	void SetColorIndex(int32_t);
+	// vtable: 64
+	intro unsigned long DrawLine(long, long, long, long, long);
+	// vtable: 68
+	intro unsigned long FillRect(long, const struct SparkalRect*);
+	// vtable: 72
+	intro unsigned long CBackBuffer(char *, long, unsigned long, const class MRect&, class MFont*);
+	// vtable: 76
+	intro unsigned long CBackBuffer(char *, unsigned long, long *, long *, long *, long *, class MFont*);
+	// vtable: 80
+	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
+	// vtable: 84
+	intro unsigned long DrawLineClipped(long, long, long, long, long);
+	// vtable: 88
+	intro unsigned long DrawRectangleOutline(const struct SparkalRect&, long);
+	// vtable: 92
+	intro unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long);
+	long IsLost();
+	long Restore();
+	char * szFilePath;
+	struct tagRECT rectDirectDrawBuffer;
+protected:
+	int32_t bSurfacePrimary;
+	int32_t bSurfaceTransparent;
+	class MFont* mFont;
+	struct SparkalColor colorFontCurrent;
+	struct SparkalColor colorCurrent;
+	int32_t nColorIndexFontCurrent;
+	int32_t nColorIndexCurrent;
+	int32_t nColorIndexTransparent;
+	struct IDirectDrawSurface* mpFrontSurface;
+	struct IDirectDrawSurface* mpBackSurface;
+	struct IDirectDrawPalette* mpPalette;
+	struct _DDSURFACEDESC mDDdesc;
+	struct _DDBLTFX mDDBltFx;
+	void * __ptr32 hPen;
+	int32_t nPenThickness;
+	struct SparkalColor colorPenCurrent;
+	// vtable: 96
+	intro struct IDirectDrawSurface* GetDDSurface();
+};
+
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
 {
@@ -334,8 +458,11 @@ public:
 };
 
 // Type: char;
+
 // Type: long *;
+
 // Type: char[3];
+
 // Type: class vector<MRect> (forward reference);
 class vector<MRect>{
 	using vector_allocator = class allocator<MRect>;
@@ -392,6 +519,7 @@ public:
 };
 
 // Type: uint32_t;
+
 // Type: class vector<unsigned char> (forward reference);
 class vector<unsigned char>{
 	using vector_allocator = class allocator<unsigned char>;
@@ -448,6 +576,7 @@ public:
 };
 
 // Type: unsigned char *;
+
 
 
 // Contribution: 1:000670a0-0006a0c9 Module: 42, 16 byte alignment, code, execute, read, 

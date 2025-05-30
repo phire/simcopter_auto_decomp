@@ -14,7 +14,9 @@ public:
 };
 
 // Type: void;
+
 // Type: long;
+
 // Type: class NotificationSink (forward reference);
 class NotificationSink{
 public:
@@ -23,6 +25,7 @@ public:
 };
 
 // Type: int32_t;
+
 
 
 // Contribution: 1:0003d160-0003d24d Module: 54, 16 byte alignment, code, execute, read, 

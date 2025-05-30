@@ -89,6 +89,7 @@ public:
 };
 
 // Type: class Language (forward reference);
+
 // Type: class NResFile (forward reference);
 class NResFile : public FlatFile, public FlatResFile, public ResFile
 {
@@ -175,6 +176,7 @@ public:
 };
 
 // Type: void;
+
 // Type: class ResFile (forward reference);
 class ResFile : public FlatFile, public FlatResFile
 {
@@ -255,7 +257,9 @@ public:
 };
 
 // Type: struct Behavior::Tree (forward reference);
+
 // Type: long;
+
 // Type: void (short, LfPointer @ 0x5be08:
 [90m   LP.[32m[  0.  2][m [95mAttributes[m =
 [90m   LP.[mContainer: 
@@ -279,9 +283,13 @@ public:
 [90m   LP.[m[90m   LS.[32m[  8.  2][m [95mvshape[m = <NoType>
 [90m   LP.[m[90m   LS.[32m[  a.  *][m [95mSize[m = 0
 , );
+
 // Type: short;
+
 // Type: struct Behavior::Node (forward reference);
+
 // Type: unsigned char *;
+
 // Type: struct Behavior::Node;
 class Behavior::Node{
 public:
@@ -293,8 +301,11 @@ public:
 };
 
 // Type: void * __ptr32;
+
 // Type: unsigned char[256];
+
 // Type: char *;
+
 
 
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 

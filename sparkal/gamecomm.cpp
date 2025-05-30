@@ -29,9 +29,13 @@ public:
 };
 
 // Type: void;
+
 // Type: int32_t;
+
 // Type: long;
+
 // Type: unsigned char;
+
 // Type: class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
@@ -120,6 +124,7 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: class CharData (forward reference);
 class CharData{
 public:
@@ -368,11 +373,17 @@ public:
 };
 
 // Type: char[260];
+
 // Type: struct Shortcut (forward reference);
+
 // Type: long *;
+
 // Type: class CGameApp (forward reference);
+
 // Type: uint32_t;
+
 // Type: struct list<Shortcut>::list_node (forward reference);
+
 // Type: class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {

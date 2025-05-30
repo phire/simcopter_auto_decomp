@@ -33,8 +33,16 @@ private:
 };
 
 // Type: char *;
+
 // Type: struct debug_command (forward reference);
-public debug_command
+class debug_command{
+public:
+	class basic_string<char> command_string;
+	class basic_string<char> usage_string;
+	// vtable: 0
+	intro void execute(char *);
+};
+
 // Type: class vector<basic_string<char>>;
 class vector<basic_string<char>>{
 	using vector_allocator = class allocator<basic_string<char>>;
@@ -91,7 +99,9 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: void;
+
 // Type: struct class_debugger<CDebugWindow,CDebugWindowhelp_text>;
 class class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
@@ -106,6 +116,7 @@ public:
 };
 
 // Type: struct _iobuf (forward reference);
+
 // Type: class deque<basic_string<char>>::iterator;
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 {
@@ -135,7 +146,9 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: unsigned short;
+
 // Type: struct tagRECT;
 class tagRECT{
 public:
@@ -157,6 +170,7 @@ public:
 };
 
 // Type: void * __ptr32;
+
 // Type: struct tagTEXTMETRICA;
 class tagTEXTMETRICA{
 public:
@@ -288,8 +302,11 @@ public:
 };
 
 // Type: long;
+
 // Type: char[256];
+
 // Type: uint32_t;
+
 // Type: class vector<basic_string<char>> (forward reference);
 class vector<basic_string<char>>{
 	using vector_allocator = class allocator<basic_string<char>>;

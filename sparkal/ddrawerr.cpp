@@ -12,8 +12,11 @@ public:
 };
 
 // Type: char *;
+
 // Type: char[256];
+
 // Type: void;
+
 // Type: class DirectSoundError (forward reference);
 class DirectSoundError{
 public:

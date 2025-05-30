@@ -23,12 +23,26 @@ protected:
 };
 
 // Type: void;
+
 // Type: long;
+
 // Type: long[2];
+
 // Type: int32_t;
+
 // Type: struct HotSpotResourceRecord (forward reference);
+
 // Type: struct SparkalRect (forward reference);
-public SparkalRect
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
 {
@@ -228,7 +242,9 @@ public:
 };
 
 // Type: char *;
+
 // Type: struct HotSpotResourceFileHeader (forward reference);
+
 // Type: class ResourceRCData;
 class ResourceRCData{
 public:

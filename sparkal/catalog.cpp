@@ -77,7 +77,9 @@ protected:
 };
 
 // Type: int32_t;
+
 // Type: class GraphicWindow (forward reference);
+
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
 public:
@@ -98,6 +100,7 @@ protected:
 };
 
 // Type: void;
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -204,8 +207,11 @@ public:
 };
 
 // Type: long;
+
 // Type: struct tagUserPersonalInfo (forward reference);
+
 // Type: class MRect[5];
+
 // Type: class MRect;
 class MRect : public SparkalRect
 {
@@ -281,9 +287,13 @@ public:
 };
 
 // Type: class basic_string<char>[5];
+
 // Type: char[260];
+
 // Type: class CBackBuffer (forward reference);
+
 // Type: unsigned long[6];
+
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -390,6 +400,7 @@ public:
 };
 
 // Type: char *[9];
+
 // Type: struct SparkalColor (forward reference);
 class SparkalColor{
 public:
@@ -402,12 +413,19 @@ public:
 };
 
 // Type: const class MRect[5];
+
 // Type: char;
+
 // Type: unsigned long;
+
 // Type: void * __ptr32;
+
 // Type: long[2];
+
 // Type: const long[8];
+
 // Type: const long[5];
+
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
 {
@@ -440,6 +458,7 @@ public:
 };
 
 // Type: uint32_t;
+
 
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 

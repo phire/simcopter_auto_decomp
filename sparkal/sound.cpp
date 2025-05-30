@@ -26,10 +26,15 @@ protected:
 };
 
 // Type: void;
+
 // Type: void * __ptr32;
+
 // Type: long;
+
 // Type: int32_t;
+
 // Type: long *;
+
 // Type: class SoundManager (forward reference);
 class SoundManager{
 public:
@@ -51,7 +56,59 @@ public:
 };
 
 // Type: class Sound (forward reference);
-public Sound
+class Sound{
+		enum SoundSourceType {
+			nSoundSourceTypeResource = 0,
+			nSoundSourceTypeFile = 1,
+		};
+public:
+	enum Sound::SoundSourceType nSoundSourceType;
+		enum SoundDuplicateType {
+			nSoundDuplicateDefault = 0,
+			nSoundDuplicateInterrupt = 1,
+			nSoundDuplicateContinue = 2,
+			nSoundDuplicateOverlap = 3,
+		};
+public:
+	enum Sound::SoundDuplicateType nSoundDuplicateType;
+	long lID;
+	long lResID;
+	class basic_string<char> sSoundFile;
+	long bLooping;
+	long bStreaming;
+	long lVolume;
+	void (*)(long) soundCompletionFunction;
+	long lSoundCompletionData;
+	int32_t bUnloadBeforeNextPlay;
+	void Sound();
+	// vtable: 0
+	intro void ~Sound();
+	class Sound& operator=(const class Sound&);
+	// vtable: 4
+	intro void SetSoundFile(const class basic_string<char>&);
+	// vtable: 8
+	intro long Play(long, int32_t);
+	// vtable: 12
+	intro long Stop();
+	// vtable: 16
+	intro long IsPlaying();
+	// vtable: 20
+	intro int32_t SetCompletionNotification(void (*)(long), long);
+	// vtable: 24
+	intro void StopCompletionNotification();
+	// vtable: 28
+	intro long EstimateRemainingPlayTime();
+	// vtable: 32
+	intro int32_t GetVolume(long *);
+	// vtable: 36
+	intro int32_t SetVolume(long);
+	// vtable: 40
+	intro int32_t GetSoundType();
+	// calltype: NearC
+	static unsigned long GetTotalMemoryUsage();
+	static unsigned long lTotalMemoryUsage;
+};
+
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
 {
@@ -276,8 +333,11 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: uint32_t;
+
 // Type: unsigned char *;
+
 // Type: struct _MMCKINFO;
 class _MMCKINFO{
 public:
@@ -299,6 +359,7 @@ public:
 };
 
 // Type: struct _DSBUFFERDESC (forward reference);
+
 // Type: struct IDirectSoundBuffer (forward reference);
 class IDirectSoundBuffer : public IUnknown
 {
@@ -386,6 +447,7 @@ public:
 };
 
 // Type: void (long, );
+
 
 
 // Contribution: 1:0002cf60-00030abe Module: 64, 16 byte alignment, code, execute, read, 

@@ -29,15 +29,25 @@ protected:
 };
 
 // Type: unsigned long;
+
 // Type: void * __ptr32;
+
 // Type: uint32_t;
+
 // Type: char[260];
+
 // Type: void;
+
 // Type: char *;
+
 // Type: char[255];
+
 // Type: int32_t;
+
 // Type: struct tagVS_FIXEDFILEINFO (forward reference);
+
 // Type: long;
+
 // Type: struct FREQ_INFO;
 class FREQ_INFO{
 public:

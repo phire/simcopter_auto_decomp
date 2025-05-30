@@ -13,18 +13,31 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: char[260];
+
 // Type: short;
+
 // Type: void;
+
 // Type: long;
+
 // Type: struct VRBmpHdr (forward reference);
+
 // Type: struct _STOBJ_INST (forward reference);
+
 // Type: struct _CELL_INFO (forward reference);
+
 // Type: struct Point3d (forward reference);
+
 // Type: struct Point2d (forward reference);
+
 // Type: double;
+
 // Type: unsigned short;
+
 // Type: long *;
+
 // Type: struct VRview;
 class VRview{
 public:
@@ -34,6 +47,7 @@ public:
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
+
 // Type: struct Point3d;
 class Point3d{
 public:
@@ -43,6 +57,7 @@ public:
 };
 
 // Type: int32_t[4][4];
+
 
 
 // Contribution: 1:00109000-00112d42 Module: 170, 16 byte alignment, code, execute, read, 

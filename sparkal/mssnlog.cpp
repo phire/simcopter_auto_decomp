@@ -28,7 +28,9 @@ protected:
 };
 
 // Type: int32_t;
+
 // Type: class GraphicWindow (forward reference);
+
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
 public:
@@ -37,8 +39,47 @@ public:
 };
 
 // Type: void;
+
 // Type: class ButtonWindow (forward reference);
-public ButtonWindow
+class ButtonWindow : public GraphicWindow
+{
+		enum ButtonState {
+			nButtonStateDisabled = 0,
+			nButtonStateOff = 1,
+			nButtonStateOn = 2,
+		};
+public:
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
+	virtual int32_t Initialize();
+	// vtable: 196
+	intro int32_t GetImageCount();
+	// vtable: 200
+	intro void SetState(int32_t);
+	// vtable: 204
+	intro int32_t GetState();
+	// vtable: 208
+	intro void Enable();
+	// vtable: 212
+	intro void Disable();
+	virtual int32_t ComposeSelf();
+	virtual int32_t CreateImage(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t CanWeRespondToMessage();
+protected:
+	int32_t nButtonState;
+	int32_t bEnabled;
+	int32_t nButtonTextHeight;
+	class MSize sizeTextOffset;
+	int32_t bBusySettingState;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+};
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -167,8 +208,11 @@ public:
 };
 
 // Type: char[260];
+
 // Type: long;
+
 // Type: void * __ptr32;
+
 // Type: class list<tagLogBase *>::iterator;
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 {
@@ -188,6 +232,7 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: class MessageDisplayManager (forward reference);
 class MessageDisplayManager{
 public:
@@ -215,7 +260,9 @@ protected:
 };
 
 // Type: uint32_t;
+
 // Type: class CBackBuffer (forward reference);
+
 // Type: class MRect;
 class MRect : public SparkalRect
 {
@@ -291,6 +338,7 @@ public:
 };
 
 // Type: char *;
+
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;

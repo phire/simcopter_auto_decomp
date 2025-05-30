@@ -5,6 +5,7 @@
 // Type: void;
 
 
+
 // Contribution: 1:0018d3e0-0018d42c Module: 95, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0058e3e0
 void VREngineInit() {

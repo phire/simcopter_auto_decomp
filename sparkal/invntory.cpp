@@ -42,7 +42,9 @@ protected:
 };
 
 // Type: int32_t;
+
 // Type: class GraphicWindow (forward reference);
+
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
 public:
@@ -51,6 +53,7 @@ public:
 };
 
 // Type: void;
+
 // Type: struct SparkalColor (forward reference);
 class SparkalColor{
 public:
@@ -63,6 +66,7 @@ public:
 };
 
 // Type: class MRect[3];
+
 // Type: class MPoint;
 class MPoint : public SparkalPoint
 {
@@ -95,7 +99,9 @@ public:
 };
 
 // Type: long;
+
 // Type: struct tagUserPersonalInfo (forward reference);
+
 // Type: class MRect;
 class MRect : public SparkalRect
 {
@@ -171,7 +177,9 @@ public:
 };
 
 // Type: char;
+
 // Type: unsigned long;
+
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
 {
@@ -265,7 +273,9 @@ public:
 };
 
 // Type: const long[6];
+
 // Type: const long[11];
+
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
 {
@@ -298,7 +308,9 @@ public:
 };
 
 // Type: const long[5];
+
 // Type: uint32_t;
+
 
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 

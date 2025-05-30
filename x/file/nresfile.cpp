@@ -88,7 +88,9 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: void (void * __ptr32, long, );
+
 // Type: class StdResLoader (forward reference);
 class StdResLoader : public ResLoader<unsigned char,StdResInfo>
 {
@@ -123,7 +125,9 @@ public:
 };
 
 // Type: void;
+
 // Type: uint32_t;
+
 
 
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 

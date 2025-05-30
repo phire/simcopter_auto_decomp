@@ -82,19 +82,131 @@ public:
 };
 
 // Type: unsigned short;
+
 // Type: class _cArray (forward reference);
-public _cArray
+class _cArray{
+	using ArrayName = unsigned char[16];
+	using TinyName = unsigned long;
+	using FileNameStr = unsigned char[16];
+		enum __unnamed {
+			kHeaderSize = 8,
+			kMaxArrays = 1024,
+			kMaxLoadable = 64,
+			kFileNameLength = 15,
+			kArrayNameLength = 15,
+		};
+	class _cArray::FileAndType{
+	public:
+		class ResFile* file;
+		unsigned long type;
+	};
+	class _cArray::Header{
+	public:
+		short entrySize;
+		short xSize;
+		short ySize;
+		short _pad;
+	};
+public:
+	static class _cArray** sArrayTable;
+	// calltype: NearC
+	static void MakeTable();
+	// calltype: NearC
+	static void DeleteTable();
+private:
+	void CheckIntoTable();
+	unsigned short SetSize(long, long);
+	void SetXPointers();
+	void FillHeader();
+	void SetSizeAndHeaders(long, long);
+	unsigned char * _GetPointer(long, long);
+protected:
+	void * __ptr32* fData;
+public:
+	void * __ptr32 fDataHandle;
+	unsigned char * fDataPtr;
+	long fySize;
+	long fxSize;
+	long fEntrySize;
+protected:
+	unsigned long fDataHandleSize;
+	short fResID;
+	short _pad;
+	class ResFile* fFile;
+	unsigned long fType;
+	unsigned char[16] fFileName;
+	unsigned char[16] fName;
+	unsigned long fTinyName;
+	static struct _cArray::FileAndType[64] fsLoaded;
+public:
+	void _cArray(long, long, long, unsigned long, class ResFile*, unsigned long);
+	void _cArray(long, long, long, unsigned char *, class ResFile*, unsigned long);
+protected:
+	void _cArray(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long));
+private:
+	void BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long);
+	void FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long));
+public:
+	unsigned long _cArray();
+	void _cArray(unsigned char *);
+	// calltype: NearC
+	static class _cArray* GetArray(unsigned long, short);
+	// calltype: NearC
+	static class _cArray* GetArrayByType(unsigned long, short);
+	// calltype: NearC
+	static short GetArrayIndexInType(class _cArray*);
+	// calltype: NearC
+	static short GetNumArraysByType(unsigned long);
+	// calltype: NearC
+	static short GetLoadedIndex(class ResFile*, unsigned long);
+	// calltype: NearC
+	static void LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void * __ptr32, long));
+	static unsigned short sAllLoaded;
+	// calltype: NearC
+	static void DeleteAllArrays();
+	void ClearBytes(char);
+	short InsertRow(short);
+	short InsertColumn(short);
+	short DeleteRow(short);
+	short DeleteColumn(short);
+	unsigned short Resize(long, long, char);
+	// vtable: 0
+	intro void WriteToDisk();
+	void _cArray(class _cArray*);
+	void _cArray(unsigned long);
+	void _cArray(unsigned char *);
+	void CopyToByFTN(class ResFile*, unsigned long, unsigned char *);
+	void _cArray(class _cArray*);
+	void _cArray(unsigned long);
+	void _cArray(unsigned char *);
+	void ~_cArray();
+	void DeleteResource();
+	// calltype: NearC
+	static unsigned short IsNameTaken(unsigned long, short);
+};
+
 // Type: void * __ptr32;
+
 // Type: long;
+
 // Type: void (void * __ptr32, long, );
+
 // Type: char *;
+
 // Type: struct _cArray::Header (forward reference);
+
 // Type: unsigned char[256];
+
 // Type: void;
+
 // Type: unsigned char *;
+
 // Type: unsigned long;
+
 // Type: char;
+
 // Type: short;
+
 // Type: class _cArray;
 class _cArray{
 	using ArrayName = unsigned char[16];

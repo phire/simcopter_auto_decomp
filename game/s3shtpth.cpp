@@ -25,6 +25,7 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: struct _RGIndex;
 class _RGIndex{
 public:
@@ -44,9 +45,13 @@ public:
 };
 
 // Type: struct RGVertex (forward reference);
+
 // Type: struct Edge (forward reference);
+
 // Type: struct _FringeHeapNode (forward reference);
+
 // Type: void;
+
 
 
 // Contribution: 1:00142690-00142f6c Module: 151, 16 byte alignment, code, execute, read, 

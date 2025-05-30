@@ -11,7 +11,9 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: unsigned short;
+
 // Type: class cYObject (forward reference);
 class cYObject : public TreeSim, public Language, public YObjLang
 {
@@ -862,12 +864,19 @@ public:
 };
 
 // Type: long;
+
 // Type: struct _DYOBJ_INST (forward reference);
+
 // Type: float;
+
 // Type: char[100];
+
 // Type: short;
+
 // Type: void;
+
 // Type: struct _CELL_INFO (forward reference);
+
 // Type: struct Point2d;
 class Point2d{
 public:
@@ -876,11 +885,17 @@ public:
 };
 
 // Type: struct _STOBJ_INST (forward reference);
+
 // Type: enum cYObject::LocationType;
+
 // Type: char;
+
 // Type: struct cYObject::MoveInfo (forward reference);
+
 // Type: enum cYObject::MoveErrorCode;
+
 // Type: unsigned char;
+
 // Type: struct TreeSim::StackElem (forward reference);
 class TreeSim::StackElem{
 public:
@@ -895,10 +910,15 @@ public:
 };
 
 // Type: struct Point2d (forward reference);
+
 // Type: short *;
+
 // Type: double;
+
 // Type: enum MissionSupertype;
+
 // Type: enum MissionType;
+
 // Type: struct _MISSION_PARMS;
 class _MISSION_PARMS{
 public:
@@ -910,7 +930,9 @@ public:
 };
 
 // Type: struct Behavior::Node (forward reference);
+
 // Type: enum TreeSim::ReturnCode;
+
 // Type: struct YObjLang::IdleParam;
 class YObjLang::IdleParam{
 public:
@@ -918,6 +940,7 @@ public:
 };
 
 // Type: union YObjLang::Param (forward reference);
+
 // Type: struct YObjLang::SetAnimParam;
 class YObjLang::SetAnimParam{
 public:
@@ -967,6 +990,7 @@ public:
 };
 
 // Type: struct _HELI_DATA (forward reference);
+
 // Type: struct YObjLang::CompareMyLocWithParam;
 class YObjLang::CompareMyLocWithParam{
 public:
@@ -1026,6 +1050,7 @@ public:
 };
 
 // Type: int32_t[4][4];
+
 // Type: struct YObjLang::GetOutOfRoadParam;
 class YObjLang::GetOutOfRoadParam{
 public:
@@ -1040,7 +1065,9 @@ public:
 };
 
 // Type: enum cYObject::MissionUpdates;
+
 // Type: struct YObjLang::AttrParam (forward reference);
+
 
 
 // Contribution: 1:00153ff0-0015b264 Module: 196, 16 byte alignment, code, execute, read, 

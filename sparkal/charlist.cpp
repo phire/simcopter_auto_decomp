@@ -13,7 +13,9 @@ public:
 };
 
 // Type: void;
+
 // Type: unsigned char;
+
 // Type: class CharList (forward reference);
 class CharList{
 public:
@@ -35,6 +37,7 @@ protected:
 };
 
 // Type: int32_t;
+
 
 
 // Contribution: 1:0003c3f0-0003c841 Module: 57, 16 byte alignment, code, execute, read, 

@@ -81,13 +81,21 @@ public:
 };
 
 // Type: void * __ptr32;
+
 // Type: short *;
+
 // Type: long *;
+
 // Type: unsigned char *;
+
 // Type: long;
+
 // Type: unsigned char[28];
+
 // Type: void;
+
 // Type: char *;
+
 // Type: class ResFile (forward reference);
 class ResFile : public FlatFile, public FlatResFile
 {
@@ -168,10 +176,15 @@ public:
 };
 
 // Type: short;
+
 // Type: unsigned long;
+
 // Type: void (void * __ptr32, long, );
+
 // Type: struct ResMap::Entry (forward reference);
+
 // Type: unsigned char;
+
 // Type: class StringSet;
 class StringSet{
 private:
@@ -191,8 +204,11 @@ public:
 };
 
 // Type: class ResMap (forward reference);
+
 // Type: struct ResMap::TypeHead (forward reference);
+
 // Type: unsigned short;
+
 
 
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 

@@ -108,9 +108,13 @@ public:
 };
 
 // Type: char;
+
 // Type: int32_t;
+
 // Type: char *;
+
 // Type: void;
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -217,6 +221,7 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: struct tagOFNA;
 class tagOFNA{
 public:

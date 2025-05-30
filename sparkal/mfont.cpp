@@ -32,10 +32,15 @@ protected:
 };
 
 // Type: void;
+
 // Type: char *;
+
 // Type: unsigned long;
+
 // Type: int32_t;
+
 // Type: long;
+
 // Type: struct tagSIZE;
 class tagSIZE{
 public:
@@ -53,6 +58,7 @@ public:
 };
 
 // Type: void * __ptr32;
+
 
 
 // Contribution: 1:0009e780-0009f398 Module: 11, 16 byte alignment, code, execute, read, 

@@ -5,6 +5,7 @@
 // Type: class CGameApp (forward reference);
 
 
+
 // Contribution: 1:00070e40-00070f60 Module: 37, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471e40
 void  CGameApp::EnableSoundTrack() {

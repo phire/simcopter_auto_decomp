@@ -17,8 +17,11 @@ private:
 };
 
 // Type: int32_t;
+
 // Type: void;
+
 // Type: struct _GridCoordinates (forward reference);
+
 // Type: struct _GridCoordinates;
 class _GridCoordinates{
 public:

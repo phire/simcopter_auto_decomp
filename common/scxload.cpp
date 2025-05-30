@@ -39,16 +39,42 @@ private:
 };
 
 // Type: void;
+
 // Type: char *;
+
 // Type: int32_t;
+
 // Type: unsigned char *;
+
 // Type: unsigned long;
+
 // Type: long;
+
 // Type: class cGZXBitstream (forward reference);
-public cGZXBitstream
+class cGZXBitstream{
+public:
+	// vtable: 0
+	intro unsigned long Read(unsigned char *, unsigned long);
+	// vtable: 4
+	intro unsigned long Write(unsigned char *, unsigned long);
+	// vtable: 8
+	intro void Rewind();
+	// vtable: 12
+	intro void RewindToMark();
+	// vtable: 16
+	intro void Mark();
+	// vtable: 20
+	intro long Size();
+	// vtable: 24
+	intro void FreeAll();
+};
+
 // Type: struct SCXNeighborData (forward reference);
+
 // Type: long[11];
+
 // Type: long[256];
+
 // Type: class cLZAPFileBitStream;
 class cLZAPFileBitStream : public cGZXBitstream
 {
@@ -97,6 +123,7 @@ public:
 };
 
 // Type: long[50];
+
 // Type: class cGZXParamBitstream<t_alloc,t_free>;
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream
 {
@@ -318,6 +345,7 @@ public:
 };
 
 // Type: uint32_t;
+
 // Type: struct tGZXBitstreamNode (forward reference);
 class tGZXBitstreamNode{
 public:

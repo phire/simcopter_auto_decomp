@@ -48,18 +48,31 @@ public:
 };
 
 // Type: void;
+
 // Type: unsigned char *;
+
 // Type: char *;
+
 // Type: unsigned char[256];
+
 // Type: long;
+
 // Type: char[256];
+
 // Type: void * __ptr32;
+
 // Type: long *;
+
 // Type: unsigned short;
+
 // Type: short *;
+
 // Type: char *;
+
 // Type: short;
+
 // Type: uint32_t;
+
 
 
 // Contribution: 1:0015b270-0015bac4 Module: 195, 16 byte alignment, code, execute, read, 

@@ -129,7 +129,9 @@ public:
 };
 
 // Type: char[64];
+
 // Type: void;
+
 // Type: struct SparkalColor (forward reference);
 class SparkalColor{
 public:
@@ -142,9 +144,13 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: long;
+
 // Type: struct tagPALETTEENTRY (forward reference);
+
 // Type: char[256];
+
 // Type: struct SparkalRect;
 class SparkalRect{
 public:
@@ -157,8 +163,43 @@ public:
 };
 
 // Type: class IFlatImage (forward reference);
-public IFlatImage
+class IFlatImage{
+public:
+	void IFlatImage();
+	// vtable: 0
+	intro unsigned long Lock();
+	// vtable: 4
+	intro unsigned long Unlock();
+	unsigned long GetLockCount();
+	// vtable: 8
+	intro void SetTransparentColor(int32_t, long);
+	long GetHeight();
+	long GetWidth();
+	void * __ptr32 GetBitsPointer();
+	long GetStride();
+	// vtable: 12
+	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long IFlatImage(class IFlatImage*, long, long);
+	// vtable: 16
+	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 20
+	intro unsigned long IFlatImage(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	// vtable: 24
+	intro unsigned long FillRect(long, struct SparkalRect*);
+	void DrawPixel(unsigned char, long, long);
+	unsigned char GetPixel(long, long);
+	static unsigned long lTotalMemoryUsage;
+	static unsigned long lTotalLockCount;
+protected:
+	unsigned long mLockCount;
+	long mWidth;
+	long mHeight;
+	void * __ptr32 mpBits;
+	long mStride;
+};
+
 // Type: unsigned long;
+
 
 
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 

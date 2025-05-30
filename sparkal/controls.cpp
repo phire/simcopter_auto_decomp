@@ -21,6 +21,7 @@ protected:
 };
 
 // Type: void;
+
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
 {
@@ -96,7 +97,9 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: class GraphicWindow (forward reference);
+
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
 public:
@@ -116,7 +119,40 @@ public:
 };
 
 // Type: class TextWindow (forward reference);
-public TextWindow
+class TextWindow : public GraphicWindow
+{
+public:
+	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void TextWindow();
+	virtual int32_t DrawSelf();
+	// vtable: 196
+	intro void TextWindow(const class basic_string<char>&);
+	// vtable: 200
+	intro void TextWindow(int32_t);
+	// vtable: 204
+	intro void SetFontCharacteristics(long, long, long);
+	// vtable: 208
+	intro void SetTextDrawStyle(unsigned long);
+	// vtable: 212
+	intro void SetTextColor(const struct SparkalColor&);
+	// vtable: 216
+	intro void SetBackgroundDrawing(int32_t);
+	// vtable: 220
+	intro void LoadStrings();
+	// vtable: 224
+	intro void FitWindowToText();
+	// vtable: 228
+	intro int32_t ResizeWindowForExactLineHeights();
+protected:
+	int32_t bDrawOpaqueBackground;
+	struct SparkalColor colorFont;
+	int32_t nBackgroundPaletteIndex;
+	int32_t nWindowTitleTextID;
+	class MFont fontText;
+	unsigned long nTextDrawStyle;
+};
+
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -297,10 +333,51 @@ public:
 };
 
 // Type: long;
+
 // Type: unsigned long;
+
 // Type: class ButtonWindow (forward reference);
-public ButtonWindow
+class ButtonWindow : public GraphicWindow
+{
+		enum ButtonState {
+			nButtonStateDisabled = 0,
+			nButtonStateOff = 1,
+			nButtonStateOn = 2,
+		};
+public:
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
+	virtual int32_t Initialize();
+	// vtable: 196
+	intro int32_t GetImageCount();
+	// vtable: 200
+	intro void SetState(int32_t);
+	// vtable: 204
+	intro int32_t GetState();
+	// vtable: 208
+	intro void Enable();
+	// vtable: 212
+	intro void Disable();
+	virtual int32_t ComposeSelf();
+	virtual int32_t CreateImage(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t CanWeRespondToMessage();
+protected:
+	int32_t nButtonState;
+	int32_t bEnabled;
+	int32_t nButtonTextHeight;
+	class MSize sizeTextOffset;
+	int32_t bBusySettingState;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+};
+
 // Type: char *;
+
 // Type: class MFont (forward reference);
 class MFont{
 public:
@@ -331,11 +408,105 @@ protected:
 };
 
 // Type: char[64];
+
 // Type: class CheckBoxWindow (forward reference);
-public CheckBoxWindow
+class CheckBoxWindow : public GraphicWindow, public ButtonWindow
+{
+public:
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t Initialize();
+	// vtable: 196
+	intro int32_t GetImageCount();
+	// vtable: 200
+	intro void SetState(int32_t);
+	// vtable: 204
+	intro int32_t GetState();
+	// vtable: 208
+	intro void Enable();
+	// vtable: 212
+	intro void Disable();
+	virtual int32_t ComposeSelf();
+	virtual int32_t CreateImage(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t CanWeRespondToMessage();
+protected:
+	int32_t nButtonState;
+	int32_t bEnabled;
+	int32_t nButtonTextHeight;
+	class MSize sizeTextOffset;
+	int32_t bBusySettingState;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+public:
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf();
+	virtual int32_t GetImageCount();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+};
+
 // Type: class RadioButtonWindow (forward reference);
-public RadioButtonWindow
+class RadioButtonWindow : public GraphicWindow, public ButtonWindow
+{
+public:
+	void RadioButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void RadioButtonWindow();
+	virtual int32_t Initialize();
+	// vtable: 196
+	intro int32_t GetImageCount();
+	// vtable: 200
+	intro void SetState(int32_t);
+	// vtable: 204
+	intro int32_t GetState();
+	// vtable: 208
+	intro void Enable();
+	// vtable: 212
+	intro void Disable();
+	virtual int32_t ComposeSelf();
+	virtual int32_t CreateImage(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t CanWeRespondToMessage();
+protected:
+	int32_t nButtonState;
+	int32_t bEnabled;
+	int32_t nButtonTextHeight;
+	class MSize sizeTextOffset;
+	int32_t bBusySettingState;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+public:
+	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void RadioButtonWindow();
+	virtual void ~RadioButtonWindow();
+	virtual int32_t Initialize();
+	virtual int32_t GetImageCount();
+	virtual int32_t ComposeSelf();
+	// vtable: 220
+	intro void AddToGroup(class ButtonGroup*);
+	// vtable: 224
+	intro int32_t RemoveFromGroup();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	class ButtonGroup* myRadioButtonGroup;
+};
+
 // Type: class ButtonGroup (forward reference);
+
 // Type: class list<RadioButtonWindow *>::iterator;
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>
 {
@@ -355,8 +526,57 @@ public:
 };
 
 // Type: class SliderWindow (forward reference);
-public SliderWindow
+class SliderWindow : public GraphicWindow
+{
+		enum SliderWindowDirection {
+			nSliderWindowDirectionHorizontal = 0,
+			nSliderWindowDirectionVertical = 1,
+		};
+public:
+	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
+	void SliderWindow();
+	virtual void ~SliderWindow();
+	virtual int32_t Initialize();
+	void SetMinimumValue(long);
+	void SetMaximumValue(long);
+	virtual void MoveWindow(int32_t, int32_t);
+	virtual void SetWidthAndHeight(int32_t, int32_t);
+	long GetValue();
+	void SetValue(long);
+	virtual int32_t CreateImage(int32_t);
+	virtual void DestroyImage();
+	virtual int32_t ComposeSelf();
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	// vtable: 196
+	intro int32_t ConvertCursorPositionToValue(long&, long, long);
+	// vtable: 200
+	intro void CalculateThumbPosition();
+	// vtable: 204
+	intro void CalculateAllMetrics();
+	// vtable: 208
+	intro long GetThumbWidth();
+	// vtable: 212
+	intro long GetThumbHeight();
+public:
+	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	long lSliderMinimumValue;
+	long lSliderMaximumValue;
+	long lSliderCurrentValue;
+	long lMinimumThumbPosition;
+	long lCurrentThumbPosition;
+	long lMaximumThumbPosition;
+	long lThumbLimitIndentation;
+	class MRect rectThumbImage;
+	class CBackBuffer* myBackgroundImage;
+	class basic_string<char> sBackgroundFile;
+	int32_t bBusySettingValue;
+};
+
 // Type: enum SliderWindow::SliderWindowDirection;
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -463,11 +683,208 @@ public:
 };
 
 // Type: class ScrollBarWindow (forward reference);
-public ScrollBarWindow
+class ScrollBarWindow : public GraphicWindow, public SliderWindow
+{
+public:
+	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
+	void ScrollBarWindow();
+	virtual void ~SliderWindow();
+	virtual int32_t Initialize();
+	void SetMinimumValue(long);
+	void SetMaximumValue(long);
+	virtual void MoveWindow(int32_t, int32_t);
+	virtual void SetWidthAndHeight(int32_t, int32_t);
+	long GetValue();
+	void SetValue(long);
+	virtual int32_t CreateImage(int32_t);
+	virtual void DestroyImage();
+	virtual int32_t ComposeSelf();
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	// vtable: 196
+	intro int32_t ConvertCursorPositionToValue(long&, long, long);
+	// vtable: 200
+	intro void CalculateThumbPosition();
+	// vtable: 204
+	intro void CalculateAllMetrics();
+	// vtable: 208
+	intro long GetThumbWidth();
+	// vtable: 212
+	intro long GetThumbHeight();
+public:
+	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	long lSliderMinimumValue;
+	long lSliderMaximumValue;
+	long lSliderCurrentValue;
+	long lMinimumThumbPosition;
+	long lCurrentThumbPosition;
+	long lMaximumThumbPosition;
+	long lThumbLimitIndentation;
+	class MRect rectThumbImage;
+	class CBackBuffer* myBackgroundImage;
+	class basic_string<char> sBackgroundFile;
+	int32_t bBusySettingValue;
+		enum ScrollHitTestResult {
+			nScrollHitTestResultNone = 0,
+			nScrollHitTestResultLinePrevious = 1,
+			nScrollHitTestResultLineNext = 2,
+			nScrollHitTestResultPagePrevious = 3,
+			nScrollHitTestResultPageNext = 4,
+			nScrollHitTestResultThumb = 5,
+		};
+public:
+	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
+	void ScrollBarWindow();
+	virtual int32_t Initialize();
+	virtual int32_t ComposeSelf();
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetLineAndPageCount(long, long);
+	// vtable: 220
+	intro void MoveLinePrevious();
+	// vtable: 224
+	intro void MoveLineNext();
+	// vtable: 228
+	intro void MovePagePrevious();
+	// vtable: 232
+	intro void MovePageNext();
+protected:
+	// vtable: 236
+	intro int32_t DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult&, long, long);
+	virtual void CalculateAllMetrics();
+	virtual long GetThumbWidth();
+	virtual long GetThumbHeight();
+	// vtable: 240
+	intro long GetPrevNextButtonWidth();
+	// vtable: 244
+	intro long GetPrevNextButtonHeight();
+	// vtable: 248
+	intro long GetCurrentLine();
+	// vtable: 252
+	intro long GetValueOfGivenLine(long);
+	// vtable: 256
+	intro long GetCurrentPage();
+	// vtable: 260
+	intro long GetValueOfGivenPage(long);
+	long lLineCount;
+	long lPageCount;
+	class MTimer myTimer;
+	enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
+	int32_t bCursorIsOnInitialHitTestResult;
+};
+
 // Type: enum ScrollBarWindow::ScrollHitTestResult;
+
 // Type: class ListBoxWindow (forward reference);
-public ListBoxWindow
+class ListBoxWindow : public GraphicWindow
+{
+public:
+	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void ListBoxWindow();
+	virtual int32_t Initialize();
+	virtual int32_t DrawSelf();
+	// vtable: 196
+	intro int32_t ListBoxWindow(long);
+	// vtable: 200
+	intro int32_t ListBoxWindow(class basic_string<char>&);
+	// vtable: 204
+	intro void RemoveAllStrings();
+	// vtable: 208
+	intro int32_t ListBoxWindow(long, long);
+	// vtable: 212
+	intro int32_t ListBoxWindow(class basic_string<char>&, long);
+	// vtable: 216
+	intro int32_t ResizeWindowForExactLineHeights();
+	// vtable: 220
+	intro int32_t SetSelection(long);
+	// vtable: 224
+	intro long GetSelection();
+	// vtable: 228
+	intro void SetShouldSort();
+	// vtable: 232
+	intro void Sort();
+	// vtable: 236
+	intro int32_t MoveLineUp();
+	// vtable: 240
+	intro int32_t MoveLineDown();
+	// vtable: 244
+	intro int32_t ScrollToStart();
+	// vtable: 248
+	intro int32_t ScrollToEnd();
+	// vtable: 252
+	intro int32_t ScrollPageUp();
+	// vtable: 256
+	intro int32_t ScrollPageDown();
+	// vtable: 260
+	intro int32_t IsIndexInView(long);
+	// vtable: 264
+	intro void PutIndexInView(long);
+	// vtable: 268
+	intro int32_t ScrollToFirstLetter(char);
+	// vtable: 272
+	intro void SetIndexOfTopLine(long);
+	// vtable: 276
+	intro long GetLineCount();
+	// vtable: 280
+	intro long GetIndexOfTopLine();
+	virtual long DoCharacter(long);
+	virtual long DoKeyDown(long, char);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	// vtable: 284
+	intro void SetBackgroundDrawing(int32_t);
+	// vtable: 288
+	intro void SetBackgroundPaletteIndex(int32_t, int32_t);
+	// vtable: 292
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	// vtable: 296
+	intro void SetFontCharacteristics(long, long, long);
+	// vtable: 300
+	intro int32_t AddScrollBar(int32_t, int32_t, char *);
+	// vtable: 304
+	intro void RemoveScrollBar(int32_t, int32_t);
+protected:
+	// vtable: 308
+	intro void CalculateAllMetrics();
+	// vtable: 312
+	intro int32_t GetStringAddressFromIndex(long, class basic_string<char>*&);
+	// vtable: 316
+	intro int32_t GetStringFromIndex(long, class basic_string<char>&);
+	// vtable: 320
+	intro int32_t GetIndexFromString(long&, class basic_string<char>&);
+	// vtable: 324
+	intro int32_t RemoveStringAtIndex(long);
+	// vtable: 328
+	intro int32_t InsertStringAtIndex(long, class basic_string<char>&);
+	// vtable: 332
+	intro int32_t ModifyString(long, class basic_string<char>&);
+	// vtable: 336
+	intro void SetScrollBarValue();
+	// vtable: 340
+	intro void SetScrollBarSizes();
+	class list<basic_string<char>> myStringList;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+	int32_t nBackgroundIndex;
+	int32_t nBackgroundIndexHighlighted;
+	class MFont fontText;
+	unsigned long nTextDrawStyle;
+	long lCurrentSelection;
+	long lVisibleLines;
+	long lFirstVisibleLine;
+	long lLineHeight;
+	int32_t bAlwaysSort;
+	class ScrollBarWindow* myVerticalScrollBarWindow;
+	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	int32_t bBusySettingSelection;
+};
+
 // Type: void * __ptr32;
+
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
@@ -487,9 +904,125 @@ public:
 };
 
 // Type: char;
+
 // Type: class PopupMenuWindow (forward reference);
-public PopupMenuWindow
+class PopupMenuWindow : public GraphicWindow, public ListBoxWindow
+{
+public:
+	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void PopupMenuWindow();
+	virtual int32_t Initialize();
+	virtual int32_t DrawSelf();
+	// vtable: 196
+	intro int32_t PopupMenuWindow(long);
+	// vtable: 200
+	intro int32_t PopupMenuWindow(class basic_string<char>&);
+	// vtable: 204
+	intro void RemoveAllStrings();
+	// vtable: 208
+	intro int32_t PopupMenuWindow(long, long);
+	// vtable: 212
+	intro int32_t PopupMenuWindow(class basic_string<char>&, long);
+	// vtable: 216
+	intro int32_t ResizeWindowForExactLineHeights();
+	// vtable: 220
+	intro int32_t SetSelection(long);
+	// vtable: 224
+	intro long GetSelection();
+	// vtable: 228
+	intro void SetShouldSort();
+	// vtable: 232
+	intro void Sort();
+	// vtable: 236
+	intro int32_t MoveLineUp();
+	// vtable: 240
+	intro int32_t MoveLineDown();
+	// vtable: 244
+	intro int32_t ScrollToStart();
+	// vtable: 248
+	intro int32_t ScrollToEnd();
+	// vtable: 252
+	intro int32_t ScrollPageUp();
+	// vtable: 256
+	intro int32_t ScrollPageDown();
+	// vtable: 260
+	intro int32_t IsIndexInView(long);
+	// vtable: 264
+	intro void PutIndexInView(long);
+	// vtable: 268
+	intro int32_t ScrollToFirstLetter(char);
+	// vtable: 272
+	intro void SetIndexOfTopLine(long);
+	// vtable: 276
+	intro long GetLineCount();
+	// vtable: 280
+	intro long GetIndexOfTopLine();
+	virtual long DoCharacter(long);
+	virtual long DoKeyDown(long, char);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	// vtable: 284
+	intro void SetBackgroundDrawing(int32_t);
+	// vtable: 288
+	intro void SetBackgroundPaletteIndex(int32_t, int32_t);
+	// vtable: 292
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	// vtable: 296
+	intro void SetFontCharacteristics(long, long, long);
+	// vtable: 300
+	intro int32_t AddScrollBar(int32_t, int32_t, char *);
+	// vtable: 304
+	intro void RemoveScrollBar(int32_t, int32_t);
+protected:
+	// vtable: 308
+	intro void CalculateAllMetrics();
+	// vtable: 312
+	intro int32_t GetStringAddressFromIndex(long, class basic_string<char>*&);
+	// vtable: 316
+	intro int32_t GetStringFromIndex(long, class basic_string<char>&);
+	// vtable: 320
+	intro int32_t GetIndexFromString(long&, class basic_string<char>&);
+	// vtable: 324
+	intro int32_t RemoveStringAtIndex(long);
+	// vtable: 328
+	intro int32_t InsertStringAtIndex(long, class basic_string<char>&);
+	// vtable: 332
+	intro int32_t ModifyString(long, class basic_string<char>&);
+	// vtable: 336
+	intro void SetScrollBarValue();
+	// vtable: 340
+	intro void SetScrollBarSizes();
+	class list<basic_string<char>> myStringList;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+	int32_t nBackgroundIndex;
+	int32_t nBackgroundIndexHighlighted;
+	class MFont fontText;
+	unsigned long nTextDrawStyle;
+	long lCurrentSelection;
+	long lVisibleLines;
+	long lFirstVisibleLine;
+	long lLineHeight;
+	int32_t bAlwaysSort;
+	class ScrollBarWindow* myVerticalScrollBarWindow;
+	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	int32_t bBusySettingSelection;
+public:
+	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	virtual int32_t Initialize();
+	virtual long DoKeyDown(long, char);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	// vtable: 344
+	intro void ResizeWindowToFitMenuItems();
+	virtual int32_t RemoveStringAtIndex(long);
+	virtual int32_t InsertStringAtIndex(long, class basic_string<char>&);
+};
+
 // Type: uint32_t;
+
 // Type: class list<basic_string<char>> (forward reference);
 class list<basic_string<char>>{
 	using void_pointer = void * __ptr32;
@@ -615,6 +1148,7 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
+
 
 
 // Contribution: 1:000aba90-000b7247 Module: 5, 16 byte alignment, code, execute, read, 

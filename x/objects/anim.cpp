@@ -73,8 +73,11 @@ public:
 };
 
 // Type: unsigned short;
+
 // Type: unsigned char[16];
+
 // Type: void;
+
 
 
 // Contribution: 1:00166200-001664d4 Module: 181, 16 byte alignment, code, execute, read, 

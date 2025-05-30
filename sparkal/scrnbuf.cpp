@@ -165,8 +165,11 @@ public:
 };
 
 // Type: void;
+
 // Type: class CSparkalWindow (forward reference);
+
 // Type: long;
+
 // Type: struct SparkalColor (forward reference);
 class SparkalColor{
 public:
@@ -179,7 +182,9 @@ public:
 };
 
 // Type: int32_t;
+
 // Type: enum tagModeType;
+
 // Type: struct _DDSCAPS;
 class _DDSCAPS{
 public:
@@ -220,10 +225,22 @@ public:
 };
 
 // Type: unsigned long;
+
 // Type: struct tagPALETTEENTRY[256];
+
 // Type: void * __ptr32;
+
 // Type: struct SparkalRect (forward reference);
-public SparkalRect
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 // Type: struct tagRECT;
 class tagRECT{
 public:
@@ -234,6 +251,7 @@ public:
 };
 
 // Type: uint32_t;
+
 
 
 // Contribution: 1:0009d450-0009e705 Module: 12, 16 byte alignment, code, execute, read, 

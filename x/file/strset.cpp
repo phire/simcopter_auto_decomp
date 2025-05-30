@@ -100,10 +100,15 @@ public:
 };
 
 // Type: short;
+
 // Type: void;
+
 // Type: void * __ptr32;
+
 // Type: long;
+
 // Type: unsigned char *;
+
 
 
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 

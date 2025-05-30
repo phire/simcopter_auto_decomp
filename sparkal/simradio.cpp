@@ -64,9 +64,13 @@ protected:
 };
 
 // Type: void;
+
 // Type: int32_t;
+
 // Type: unsigned long;
+
 // Type: enum RadioStationCycleType;
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -173,6 +177,7 @@ public:
 };
 
 // Type: class Directory (forward reference);
+
 // Type: class list<basic_string<char>> (forward reference);
 class list<basic_string<char>>{
 	using void_pointer = void * __ptr32;
@@ -476,6 +481,7 @@ public:
 };
 
 // Type: enum RadioStationType;
+
 // Type: class DirectoryEntry (forward reference);
 class DirectoryEntry{
 public:
@@ -497,7 +503,9 @@ public:
 };
 
 // Type: class Radio (forward reference);
+
 // Type: struct RadioPreferences (forward reference);
+
 // Type: struct RadioPreferences;
 class RadioPreferences{
 public:
@@ -511,8 +519,11 @@ public:
 };
 
 // Type: char *;
+
 // Type: enum RadioOption;
+
 // Type: long;
+
 // Type: class list<basic_string<char>>;
 class list<basic_string<char>>{
 	using void_pointer = void * __ptr32;
@@ -699,6 +710,7 @@ protected:
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
+
 // Type: class MTimer (forward reference);
 class MTimer{
 		enum TimerResolution {
@@ -727,6 +739,7 @@ protected:
 };
 
 // Type: enum MTimer::TimerResolution;
+
 // Type: class vector<int> (forward reference);
 class vector<int>{
 	using vector_allocator = class allocator<int>;
@@ -783,6 +796,7 @@ public:
 };
 
 // Type: uint32_t;
+
 // Type: class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
@@ -857,7 +871,9 @@ public:
 };
 
 // Type: int32_t *;
+
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
+
 // Type: class list<basic_string<char>>::const_iterator;
 class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 {

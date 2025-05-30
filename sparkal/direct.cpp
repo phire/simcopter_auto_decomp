@@ -23,7 +23,9 @@ public:
 };
 
 // Type: void;
+
 // Type: class Directory (forward reference);
+
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -130,10 +132,15 @@ public:
 };
 
 // Type: long;
+
 // Type: uint32_t;
+
 // Type: int32_t;
+
 // Type: unsigned long;
+
 // Type: void * __ptr32;
+
 // Type: class basic_string<char>;
 class basic_string<char>{
 	using reference_class = class basic_string_ref<char>;
@@ -417,6 +424,7 @@ public:
 };
 
 // Type: char;
+
 // Type: class list<DirectoryEntry>::iterator (forward reference);
 class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 {
@@ -560,6 +568,7 @@ public:
 };
 
 // Type: struct list<DirectoryEntry>::list_node (forward reference);
+
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
@@ -579,6 +588,7 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
+
 // Type: class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
