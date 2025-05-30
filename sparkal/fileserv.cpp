@@ -466,6 +466,10 @@ public:
 
 // Type: char[260];
 
+// Type: struct bidirectional_iterator<basic_string<char>,int>;
+class bidirectional_iterator<basic_string<char>,int>{
+};
+
 
 
 // Contribution: 1:00090180-000943f1 Module: 21, 16 byte alignment, code, execute, read, 

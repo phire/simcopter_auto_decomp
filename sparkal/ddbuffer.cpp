@@ -625,6 +625,68 @@ public:
 	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
 };
 
+// Type: struct IUnknown;
+class IUnknown{
+public:
+	// vtable: 0
+	// calltype: NearStd
+	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
+	// vtable: 4
+	// calltype: NearStd
+	intro unsigned long AddRef();
+	// vtable: 8
+	// calltype: NearStd
+	intro unsigned long Release();
+};
+
+// Type: class IBackBuffer;
+class IBackBuffer : public IFlatImage
+{
+public:
+	// vtable: 28
+	intro unsigned long Swap(class CSparkalWindow*, long, long);
+	// vtable: 32
+	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
+	// vtable: 36
+	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
+};
+
+// Type: class IFlatImage;
+class IFlatImage{
+public:
+	void IFlatImage();
+	// vtable: 0
+	intro unsigned long Lock();
+	// vtable: 4
+	intro unsigned long Unlock();
+	unsigned long GetLockCount();
+	// vtable: 8
+	intro void SetTransparentColor(int32_t, long);
+	long GetHeight();
+	long GetWidth();
+	void * __ptr32 GetBitsPointer();
+	long GetStride();
+	// vtable: 12
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
+	// vtable: 16
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 20
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	// vtable: 24
+	intro unsigned long FillRect(long, struct SparkalRect*);
+	void DrawPixel(unsigned char, long, long);
+	unsigned char GetPixel(long, long);
+	static unsigned long lTotalMemoryUsage;
+	static unsigned long lTotalLockCount;
+protected:
+	unsigned long mLockCount;
+	long mWidth;
+	long mHeight;
+	void * __ptr32 mpBits;
+	long mStride;
+};
+
 
 
 // Contribution: 1:0006d690-0007056d Module: 39, 16 byte alignment, code, execute, read, 

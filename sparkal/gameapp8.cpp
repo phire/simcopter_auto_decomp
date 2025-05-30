@@ -246,6 +246,74 @@ public:
 
 // Type: void;
 
+// Type: class PFile;
+class PFile{
+		enum __unnamed {
+			FileNull = -1,
+		};
+		enum SeekTypes {
+			N_SEEK_FROM_FILE_START = 0,
+			N_SEEK_FROM_FILE_CURRENT = 1,
+			N_SEEK_FROM_FILE_END = 2,
+		};
+		enum AccessTypes {
+			ReadOnly = 0,
+			ReadWrite = 2,
+			WriteOnly = 1,
+			Create = 768,
+			CreateExcl = 1280,
+			Append = 8,
+			Binary = 32768,
+			Compat = 0,
+			DenyNone = 64,
+			DenyRead = 48,
+			DenyWrite = 32,
+			DenyRdWr = 16,
+			NoInherit = 128,
+		};
+		enum PermissionTypes {
+			PermRead = 256,
+			PermWrite = 128,
+			PermRdWr = 384,
+		};
+		enum seek_dir {
+			beg = 0,
+			cur = 1,
+			end = 2,
+		};
+public:
+	void PFile(char *);
+	void PFile(const class PFile&);
+	void PFile(int32_t);
+	void PFile();
+	// vtable: 0
+	intro void ~PFile();
+	int32_t Open(char *, unsigned short, unsigned short, int32_t);
+	int32_t Close();
+	int32_t GetHandle();
+	long Position();
+	void Length(long);
+	long Length();
+	long Seek(long, int32_t);
+	long SeekToBegin();
+	long SeekToEnd();
+	int32_t IsOpen();
+	int32_t Read(void * __ptr32, int32_t);
+	int32_t Write(void * __ptr32, int32_t);
+	void Flush();
+	// calltype: NearC
+	static void Remove(char *);
+	// calltype: NearC
+	static void Rename(char *, char *);
+	long SetPath(char *);
+	long FileCreate(char *, int32_t);
+	long FileExists(char *);
+	char szFilePath[260];
+	int32_t Handle;
+private:
+	int32_t ShouldClose;
+};
+
 
 
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 

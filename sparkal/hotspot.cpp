@@ -289,6 +289,26 @@ public:
 	class MPoint operator-(struct SparkalSize);
 };
 
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: struct SparkalPoint;
+class SparkalPoint{
+public:
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
+};
+
 
 
 // Contribution: 1:000b8040-000ba946 Module: 4, 16 byte alignment, code, execute, read, 

@@ -293,6 +293,56 @@ public:
 
 // Type: struct list<PreferenceItem>::list_node_buffer (forward reference);
 
+// Type: class PreferenceManager;
+class PreferenceManager{
+protected:
+	int32_t bSaveFileAtAllChanges;
+	class list<PreferenceItem> myPreferences;
+	class MIFF* miffPrefsFile;
+	long lFileCreator;
+	long lFileType;
+	long lFileVersion;
+	int32_t bPrefsDirty;
+	int32_t bPrefsLocked;
+public:
+	void PreferenceManager(long, long, long, int32_t);
+	int32_t IPreferenceManager(char *);
+	// vtable: 0
+	intro void ~PreferenceManager();
+	// vtable: 4
+	intro long SaveAllPrefs();
+	// vtable: 8
+	intro long LoadAllPrefs();
+	// vtable: 12
+	intro long ClearPrefsMemory();
+	// vtable: 16
+	intro void EnumeratePrefs();
+	// vtable: 20
+	intro class PreferenceItem* GetPrefPointer(long);
+	// vtable: 24
+	intro class PreferenceItem* GetPrefCopy(long);
+	// vtable: 28
+	intro char * GetPrefDataPointer(long);
+	// vtable: 32
+	intro char * GetPrefDataCopy(long);
+	// vtable: 36
+	intro long GetPrefDataLength(long);
+	// vtable: 40
+	intro long SetPref(class PreferenceItem*);
+	// vtable: 44
+	intro long SetPref(long, char *, long);
+	// vtable: 48
+	intro long RemovePref(long);
+};
+
+// Type: struct bidirectional_iterator<PreferenceItem,int>;
+class bidirectional_iterator<PreferenceItem,int>{
+};
+
+// Type: struct bidirectional_iterator<NotificationItem,int>;
+class bidirectional_iterator<NotificationItem,int>{
+};
+
 
 
 // Contribution: 1:0007ab70-0007caa5 Module: 32, 16 byte alignment, code, execute, read, 

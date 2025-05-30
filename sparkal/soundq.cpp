@@ -286,6 +286,25 @@ protected:
 	unsigned long lFrequency;
 };
 
+// Type: struct bidirectional_iterator<SoundQueueItem *,int>;
+class bidirectional_iterator<SoundQueueItem *,int>{
+};
+
+// Type: struct SoundQueueItem;
+class SoundQueueItem{
+public:
+	void SoundQueueItem(class Sound*, char *, long, int32_t);
+	void SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t);
+	void SoundQueueItem(class Sound*, long, long, int32_t);
+	void SoundQueueItem(class Sound*, long, int32_t);
+	void SoundQueueItem();
+	class Sound* mySound;
+	long lSoundResourceID;
+	class basic_string<char> sSoundFile;
+	long lTimeToWaitBeforePlaying;
+	int32_t bDeleteSoundWhenFinished;
+};
+
 
 
 // Contribution: 1:0001f5f0-00021277 Module: 71, 16 byte alignment, code, execute, read, 

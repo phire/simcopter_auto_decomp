@@ -449,6 +449,26 @@ public:
 
 // Type: uint32_t;
 
+// Type: struct SparkalPoint;
+class SparkalPoint{
+public:
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
+};
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 

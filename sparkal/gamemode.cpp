@@ -406,6 +406,35 @@ public:
 
 // Type: uint32_t;
 
+// Type: struct bidirectional_iterator<Shortcut,int>;
+class bidirectional_iterator<Shortcut,int>{
+};
+
+// Type: class GameModeCoreData;
+class GameModeCoreData{
+public:
+	void GameModeCoreData();
+	// vtable: 0
+	intro void ~GameModeCoreData();
+	long lPauseCount;
+	struct SparkalColor* pColorTable;
+	class CGameApp* pGameApp;
+	class ScreenWindow* pScreenWindow;
+};
+
+// Type: class GraphicWindow (forward reference);
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 
 
 // Contribution: 1:000bc670-000c27dd Module: 1, 16 byte alignment, code, execute, read, 

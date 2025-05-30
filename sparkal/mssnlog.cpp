@@ -438,6 +438,21 @@ public:
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
+// Type: struct bidirectional_iterator<tagLogBase *,int>;
+class bidirectional_iterator<tagLogBase *,int>{
+};
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 

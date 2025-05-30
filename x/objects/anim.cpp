@@ -38,6 +38,57 @@ public:
 
 // Type: void;
 
+// Type: class cBBase;
+class cBBase{
+public:
+	// vtable: 0
+	intro unsigned long GetBodyType();
+	unsigned long GetName();
+	unsigned long GetResType();
+	// vtable: 4
+	intro class cBList<cBBase>* GetList();
+	unsigned long operator unsigned long();
+	// vtable: 8
+	intro unsigned short CanDestroy();
+	// calltype: NearC
+	static class cBBase* MakeNew(void * __ptr32);
+	// calltype: NearC
+	static void LoadAllRelatedArrays(class ResFile*);
+	// vtable: 12
+	intro void InstallArrayPointers(unsigned short);
+	void FinishMake(unsigned short);
+	void Delete();
+	// vtable: 16
+	intro void ~cBBase();
+	// vtable: 20
+	intro void Destroy();
+	// vtable: 24
+	intro void Dirty();
+	// vtable: 28
+	intro unsigned short IsDirty();
+	// vtable: 32
+	intro void WriteToDisk();
+	void cBBase();
+	void Init(void * __ptr32);
+	void Init(unsigned char *);
+	void Init(unsigned long);
+	void * __ptr32 fDataHandle;
+	unsigned long fDataHandleSize;
+	unsigned char fName[16];
+	unsigned long fTinyName;
+	short fResID;
+	unsigned short fDataChanged;
+	class cBBase::BBaseHeader{
+	public:
+		unsigned long bodyType;
+		long _win8pad[15];
+	};
+public:
+	struct cBBase::BBaseHeader* fHeader;
+	// calltype: NearC
+	static void SwizzleBBaseHeader(void * __ptr32, long);
+};
+
 
 
 // Contribution: 1:00166200-001664d4 Module: 181, 16 byte alignment, code, execute, read, 

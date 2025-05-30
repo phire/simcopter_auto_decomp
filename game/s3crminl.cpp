@@ -108,6 +108,217 @@ private:
 
 // Type: uint32_t;
 
+// Type: class AutomobileClass;
+class AutomobileClass{
+		enum __unnamed {
+			CAR_TYPES = 7,
+			PERCENTAGE_OF_AUTO1 = 10,
+			PERCENTAGE_OF_AUTO2 = 20,
+			PERCENTAGE_OF_AUTO3 = 20,
+			PERCENTAGE_OF_AUTO4 = 10,
+			PERCENTAGE_OF_AUTO5 = 10,
+			PERCENTAGE_OF_AUTO6 = 20,
+			PERCENTAGE_OF_AUTO7 = 20,
+			TOTAL_PERCENTAGE = 110,
+		};
+		enum __unnamed {
+			NO_X_POSITION = -1,
+			STARTING_X = 3,
+			ENDING_X = 125,
+			NO_Y_POSITION = -1,
+			STARTING_Y = 3,
+			ENDING_Y = 125,
+		};
+		enum IntersectionTypes {
+			DEAD_END = 0,
+			STRAIGHT_AHEAD = 1,
+			LEFT_ONLY = 2,
+			RIGHT_ONLY = 4,
+			LEFT_OR_STRAIGHT = 3,
+			LEFT_OR_RIGHT = 6,
+			RIGHT_OR_STRAIGHT = 5,
+			LEFT_STRAIGHT_OR_RIGHT = 7,
+			DEAD_END_HIWAY = 16,
+		};
+		enum StoppedReasons {
+			NO_REASON = 0,
+			TRAFFIC = 1,
+			STOPPED_TRAFFIC = 2,
+			PERSON_IN_WAY = 3,
+			AUTO_IN_WAY = 4,
+			DEBRIS_IN_WAY = 5,
+			UNIDENTIFIED_IN_WAY = 6,
+			HELI_IN_WAY = 7,
+			END_OF_ROAD = 8,
+			END_OF_HIWAY = 9,
+			INTERSECTION_FULL = 10,
+			BEEN_PULLED_OVER = 11,
+		};
+		enum RoadTileOffsets {
+			RD_CENTOFF = 851968,
+			RD_EDGEOFF = 131072,
+		};
+		enum HiwayOffsets {
+			HW_CENTOFF_LANE1 = 851968,
+			HW_EDGEOFF_LANE1 = 131072,
+			HW_CENTOFF_LANE2 = 851968,
+			HW_EDGEOFF_LANE2 = 131072,
+			HW_HEIGHT = 2031616,
+		};
+		enum PersonState {
+			PS_IN_VEHICLE = 0,
+			PS_OUT_OF_VEHICLE = 1,
+			PS_BACK_IN_VEHICLE = 2,
+			PS_GOT_AWAY = 3,
+			PS_MISSION_OVER = 4,
+		};
+		enum __unnamed {
+			CAR_RADIUS = 327680,
+			COLLISION_SPACE = 655360,
+			ROAD_SPEED = 2621440,
+			ROAD_SLOWDOWN_FACTOR = 131072,
+			HIWAY_SPEED = 6225920,
+			HIWAY_SLOWDOWN_FACTOR = 327680,
+			SPEED_VARIANCE = 262144,
+			HIWAY_VARIANCE = 655360,
+			MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
+			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
+			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
+		};
+		enum Flags {
+			AUTO_INITIALIZED = 1,
+			AUTO_PLACED = 2,
+			AUTO_TURNING = 4,
+			AUTO_MAKING_UTURN = 8,
+			AUTO_PULL_OVER = 16,
+			AUTO_PULLING_OVER = 32,
+			AUTO_PULLED_OVER = 64,
+			AUTO_AT_DEAD_END = 128,
+			AUTO_IN_INTERSECTION = 256,
+			AUTO_ON_FIRE = 512,
+			AUTO_JAMMED = 1024,
+			AUTO_PULLING_OUT = 2048,
+			AUTO_RIGHT_OF_WAY = 4096,
+			AUTO_ON_HIWAY = 8192,
+		};
+public:
+	int32_t flags;
+	struct _DYOBJ_INST autoDynomitor;
+	struct Goal goal;
+private:
+	static struct Point2d lastScannedLocation;
+	int32_t DeltaFromCenter;
+	int32_t stalledTimer;
+	struct Point3d directionVector;
+	int32_t remainingTime;
+	int32_t desiredSpeed;
+	int32_t desiredHiwaySpeed;
+	int32_t beamDelay;
+	int32_t beamTimer;
+	int32_t m_cellBaseY;
+	int32_t timePulledOver;
+	enum DirectionTypes hiwaydir;
+	struct _GridCoordinates currentLocation;
+	struct _GridCoordinates nextLocation;
+	struct _GridCoordinates northCell;
+	struct _GridCoordinates southCell;
+	struct _GridCoordinates eastCell;
+	struct _GridCoordinates westCell;
+protected:
+	long carModel;
+	int32_t speed;
+	enum DirIndex2 prevDir;
+	enum TurnIndex turnIndex;
+	int32_t currDist;
+	int32_t legOfTurn;
+	struct Point3d* pDirVector;
+	int32_t timeToLive;
+	int32_t fireTime;
+	long fireSeq;
+	long missionId;
+	struct _CELL_INFO* cptr;
+	enum AutomobileClass::PersonState personState;
+	int32_t spotlightHitCounter;
+	int32_t IsCarPersistant();
+	int32_t CanCarBeamToHiwayTile(unsigned short);
+public:
+	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass();
+	// vtable: 0
+	intro void ~AutomobileClass();
+	// calltype: NearC
+	static class AutomobileClass* CreateInstance(int32_t);
+	// calltype: NearC
+	static class AutomobileClass* GetAutoPointer(long);
+	// calltype: NearC
+	static void DestroyInstance(class AutomobileClass*);
+	// calltype: NearC
+	static void ItterateAll();
+	// calltype: NearC
+	static void ResetAll();
+	// calltype: NearC
+	static int32_t MissionStartFire(long, struct Point2d*);
+	// calltype: NearC
+	static int32_t MissionStartJam(long, struct Point2d*);
+	// calltype: NearC
+	static void MissionCancel(long);
+	// calltype: NearC
+	static void SetAllHeadlights(int32_t);
+	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
+	int32_t AmIABadGuy();
+	int32_t Initialize(int32_t);
+	void WaterDouse(struct _DYOBJ_INST*);
+	void IveBeenMegaphoned(long);
+	void StartFire(long);
+	void StartJam(long);
+	void PullOver();
+	void PullOut();
+	int32_t CanIPullOut();
+protected:
+	void Itterate();
+	// vtable: 4
+	intro void AdjustSpeed();
+	void Reset();
+	// vtable: 8
+	intro enum TurnIndex PickTurnDir(struct Goal*);
+	void UnPlaceCar();
+	void PullOverCiviliansInWay();
+	// vtable: 12
+	intro void ItterateFSM();
+	int32_t InitializeInstance(int32_t);
+	void LinkToCell(const struct _GridCoordinates&);
+	int32_t AreCarsHeadOn(struct Point3d*);
+	enum AutomobileClass::StoppedReasons CollisionCheck(int32_t, struct _DYOBJ_INST**);
+	int32_t IsCarOutOfCameraRange();
+	void TurnOffHeadlight();
+	void TurnOnHeadlight();
+	void SetHiwayDirection(unsigned short);
+	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
+	void AdjustCurrentHiwayPosition();
+	void AdjustNextHiwayPosition();
+	enum AutomobileClass::IntersectionTypes PickHiwayDir(struct _GridCoordinates&);
+	void MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes);
+	void GoStraight();
+	void TurnLeft();
+	void TurnRight();
+	void MoveForwardOnHiway();
+	void DoDiagonalRoadFixup();
+	// vtable: 16
+	intro void BeamToWithinCameraRange();
+	// vtable: 20
+	intro int32_t BeamToLocation(const struct _GridCoordinates&);
+	void MoveAuto(int32_t);
+private:
+	void UnlinkFromCell(const struct _GridCoordinates&);
+	void TransitionBetweenGoals();
+	void RunFireState();
+	void RunJamState();
+	void IveBeenSpotlighted(struct _DYOBJ_INST*);
+	int32_t IsThisAnEmergencyVehicle();
+public:
+	class AutomobileClass operator=(const class AutomobileClass&);
+};
+
 
 
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 

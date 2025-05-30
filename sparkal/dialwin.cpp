@@ -599,6 +599,130 @@ public:
 	int32_t nColorDial;
 };
 
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: struct SparkalPoint;
+class SparkalPoint{
+public:
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
+};
+
+// Type: class ListBoxWindow;
+class ListBoxWindow : public GraphicWindow
+{
+public:
+	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void ListBoxWindow();
+	virtual int32_t Initialize();
+	virtual int32_t DrawSelf();
+	// vtable: 196
+	intro int32_t RemoveString(long);
+	// vtable: 200
+	intro int32_t RemoveString(class basic_string<char>&);
+	// vtable: 204
+	intro void RemoveAllStrings();
+	// vtable: 208
+	intro int32_t InsertString(long, long);
+	// vtable: 212
+	intro int32_t InsertString(class basic_string<char>&, long);
+	// vtable: 216
+	intro int32_t ResizeWindowForExactLineHeights();
+	// vtable: 220
+	intro int32_t SetSelection(long);
+	// vtable: 224
+	intro long GetSelection();
+	// vtable: 228
+	intro void SetShouldSort();
+	// vtable: 232
+	intro void Sort();
+	// vtable: 236
+	intro int32_t MoveLineUp();
+	// vtable: 240
+	intro int32_t MoveLineDown();
+	// vtable: 244
+	intro int32_t ScrollToStart();
+	// vtable: 248
+	intro int32_t ScrollToEnd();
+	// vtable: 252
+	intro int32_t ScrollPageUp();
+	// vtable: 256
+	intro int32_t ScrollPageDown();
+	// vtable: 260
+	intro int32_t IsIndexInView(long);
+	// vtable: 264
+	intro void PutIndexInView(long);
+	// vtable: 268
+	intro int32_t ScrollToFirstLetter(char);
+	// vtable: 272
+	intro void SetIndexOfTopLine(long);
+	// vtable: 276
+	intro long GetLineCount();
+	// vtable: 280
+	intro long GetIndexOfTopLine();
+	virtual long DoCharacter(long);
+	virtual long DoKeyDown(long, char);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	// vtable: 284
+	intro void SetBackgroundDrawing(int32_t);
+	// vtable: 288
+	intro void SetBackgroundPaletteIndex(int32_t, int32_t);
+	// vtable: 292
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	// vtable: 296
+	intro void SetFontCharacteristics(long, long, long);
+	// vtable: 300
+	intro int32_t AddScrollBar(int32_t, int32_t, char *);
+	// vtable: 304
+	intro void RemoveScrollBar(int32_t, int32_t);
+protected:
+	// vtable: 308
+	intro void CalculateAllMetrics();
+	// vtable: 312
+	intro int32_t GetStringAddressFromIndex(long, class basic_string<char>*&);
+	// vtable: 316
+	intro int32_t GetStringFromIndex(long, class basic_string<char>&);
+	// vtable: 320
+	intro int32_t GetIndexFromString(long&, class basic_string<char>&);
+	// vtable: 324
+	intro int32_t RemoveStringAtIndex(long);
+	// vtable: 328
+	intro int32_t InsertStringAtIndex(long, class basic_string<char>&);
+	// vtable: 332
+	intro int32_t ModifyString(long, class basic_string<char>&);
+	// vtable: 336
+	intro void SetScrollBarValue();
+	// vtable: 340
+	intro void SetScrollBarSizes();
+	class list<basic_string<char>> myStringList;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+	int32_t nBackgroundIndex;
+	int32_t nBackgroundIndexHighlighted;
+	class MFont fontText;
+	unsigned long nTextDrawStyle;
+	long lCurrentSelection;
+	long lVisibleLines;
+	long lFirstVisibleLine;
+	long lLineHeight;
+	int32_t bAlwaysSort;
+	class ScrollBarWindow* myVerticalScrollBarWindow;
+	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	int32_t bBusySettingSelection;
+};
+
 
 
 // Contribution: 1:00047270-0004ec1a Module: 47, 16 byte alignment, code, execute, read, 

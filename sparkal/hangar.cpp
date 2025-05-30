@@ -518,6 +518,30 @@ public:
 
 // Type: uint32_t;
 
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: struct SparkalPoint;
+class SparkalPoint{
+public:
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
+};
+
+// Type: struct bidirectional_iterator<HotSpot,int>;
+class bidirectional_iterator<HotSpot,int>{
+};
+
 
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 

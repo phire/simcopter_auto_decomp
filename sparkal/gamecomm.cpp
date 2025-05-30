@@ -339,6 +339,120 @@ public:
 	class list<Shortcut>::iterator& operator--();
 };
 
+// Type: struct bidirectional_iterator<Shortcut,int>;
+class bidirectional_iterator<Shortcut,int>{
+};
+
+// Type: class PFile;
+class PFile{
+		enum __unnamed {
+			FileNull = -1,
+		};
+		enum SeekTypes {
+			N_SEEK_FROM_FILE_START = 0,
+			N_SEEK_FROM_FILE_CURRENT = 1,
+			N_SEEK_FROM_FILE_END = 2,
+		};
+		enum AccessTypes {
+			ReadOnly = 0,
+			ReadWrite = 2,
+			WriteOnly = 1,
+			Create = 768,
+			CreateExcl = 1280,
+			Append = 8,
+			Binary = 32768,
+			Compat = 0,
+			DenyNone = 64,
+			DenyRead = 48,
+			DenyWrite = 32,
+			DenyRdWr = 16,
+			NoInherit = 128,
+		};
+		enum PermissionTypes {
+			PermRead = 256,
+			PermWrite = 128,
+			PermRdWr = 384,
+		};
+		enum seek_dir {
+			beg = 0,
+			cur = 1,
+			end = 2,
+		};
+public:
+	void PFile(char *);
+	void PFile(const class PFile&);
+	void PFile(int32_t);
+	void PFile();
+	// vtable: 0
+	intro void ~PFile();
+	int32_t Open(char *, unsigned short, unsigned short, int32_t);
+	int32_t Close();
+	int32_t GetHandle();
+	long Position();
+	void Length(long);
+	long Length();
+	long Seek(long, int32_t);
+	long SeekToBegin();
+	long SeekToEnd();
+	int32_t IsOpen();
+	int32_t Read(void * __ptr32, int32_t);
+	int32_t Write(void * __ptr32, int32_t);
+	void Flush();
+	// calltype: NearC
+	static void Remove(char *);
+	// calltype: NearC
+	static void Rename(char *, char *);
+	long SetPath(char *);
+	long FileCreate(char *, int32_t);
+	long FileExists(char *);
+	char szFilePath[260];
+	int32_t Handle;
+private:
+	int32_t ShouldClose;
+};
+
+// Type: class CDefaultCommander;
+class CDefaultCommander : public ICommander
+{
+public:
+	void CDefaultCommander();
+	virtual void ~CDefaultCommander();
+	virtual unsigned long Idle();
+	virtual unsigned long OnCharacter(char, int32_t);
+	virtual unsigned long OnMouseDown(int32_t, int32_t);
+	virtual unsigned long OnMouseUp(int32_t, int32_t);
+	virtual unsigned long OnMouseMove(int32_t, int32_t);
+	virtual unsigned long OnWindowActivate();
+	virtual unsigned long OnWindowDeactivate();
+};
+
+// Type: class ICommander;
+class ICommander{
+public:
+	void ICommander();
+	// vtable: 0
+	intro void ~ICommander();
+	// vtable: 4
+	intro unsigned long Idle();
+	// vtable: 8
+	intro unsigned long OnCharacter(char, int32_t);
+	// vtable: 12
+	intro unsigned long OnMouseDown(int32_t, int32_t);
+	// vtable: 16
+	intro unsigned long OnMouseUp(int32_t, int32_t);
+	// vtable: 20
+	intro unsigned long OnMouseMove(int32_t, int32_t);
+	// vtable: 24
+	intro unsigned long OnWindowActivate();
+	// vtable: 28
+	intro unsigned long OnWindowDeactivate();
+	// vtable: 32
+	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
+	class CSparkalWindow* GetWindow();
+protected:
+	class CSparkalWindow* mpWindow;
+};
+
 
 
 // Contribution: 1:0008a2b0-0008d894 Module: 26, 16 byte alignment, code, execute, read, 

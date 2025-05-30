@@ -331,6 +331,135 @@ public:
 	void LoadAll();
 };
 
+// Type: class cBBase;
+class cBBase{
+public:
+	// vtable: 0
+	intro unsigned long GetBodyType();
+	unsigned long GetName();
+	unsigned long GetResType();
+	// vtable: 4
+	intro class cBList<cBBase>* GetList();
+	unsigned long operator unsigned long();
+	// vtable: 8
+	intro unsigned short CanDestroy();
+	// calltype: NearC
+	static class cBBase* MakeNew(void * __ptr32);
+	// calltype: NearC
+	static void LoadAllRelatedArrays(class ResFile*);
+	// vtable: 12
+	intro void InstallArrayPointers(unsigned short);
+	void FinishMake(unsigned short);
+	void Delete();
+	// vtable: 16
+	intro void ~cBBase();
+	// vtable: 20
+	intro void Destroy();
+	// vtable: 24
+	intro void Dirty();
+	// vtable: 28
+	intro unsigned short IsDirty();
+	// vtable: 32
+	intro void WriteToDisk();
+	void cBBase();
+	void Init(void * __ptr32);
+	void Init(unsigned char *);
+	void Init(unsigned long);
+	void * __ptr32 fDataHandle;
+	unsigned long fDataHandleSize;
+	unsigned char fName[16];
+	unsigned long fTinyName;
+	short fResID;
+	unsigned short fDataChanged;
+	class cBBase::BBaseHeader{
+	public:
+		unsigned long bodyType;
+		long _win8pad[15];
+	};
+public:
+	struct cBBase::BBaseHeader* fHeader;
+	// calltype: NearC
+	static void SwizzleBBaseHeader(void * __ptr32, long);
+};
+
+// Type: class PtrList<cCopterBody>;
+class PtrList<cCopterBody>{
+	class PtrList<cCopterBody>::Iter{
+	private:
+		class PtrList<cCopterBody>* fObject;
+		struct PtrList<cCopterBody>::PtrNode* fCur;
+	public:
+		void Iter(class PtrList<cCopterBody>*);
+		class cCopterBody* Current();
+		void Next();
+		void Reset();
+		class cCopterBody* First();
+	};
+	class PtrList<cCopterBody>::PtrNode{
+	public:
+		class cCopterBody* data;
+		struct PtrList<cCopterBody>::PtrNode* next;
+	};
+private:
+	struct PtrList<cCopterBody>::PtrNode* fFirst;
+	short fCount;
+public:
+	void PtrList<cCopterBody>();
+	void ~PtrList<cCopterBody>();
+	unsigned short Contains(class cCopterBody*);
+	void RemoveAll();
+	void Remove(class cCopterBody*);
+	long Count();
+	void Add(class cCopterBody*);
+	class cCopterBody* GetByIndex(long);
+	class cCopterBody* GetByOrder(long);
+};
+
+// Type: class FlatFile;
+class FlatFile{
+		enum __unnamed {
+			kMaxNameLen = 255,
+		};
+protected:
+	class FlatFile* fNext;
+	unsigned char fName[256];
+	long fFileID;
+	struct _iobuf* fFile;
+	long UniqueID();
+private:
+	static class FlatFile* sList;
+	static long sLastFileID;
+	void Link();
+	void Unlink();
+	unsigned short Exclusive();
+public:
+	void FlatFile();
+	// vtable: 0
+	intro void ~FlatFile();
+	// calltype: NearC
+	static class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(class FlatFile*);
+	// vtable: 4
+	intro long Open(unsigned char *);
+	// vtable: 8
+	intro long Open(char *);
+	// vtable: 12
+	intro long Close();
+	void OpenFromOtherFile(class FlatFile*);
+	long GetFileName(unsigned char *);
+	unsigned short ValidFile();
+	long ReadBlock(void * __ptr32, long *);
+	long Read4(long *);
+	long Read2(short *);
+	long Read1(char *);
+	long SetPos(long);
+	long Advance(long);
+	// calltype: NearC
+	static short CheckForLeaks();
+	long GetFileID();
+	struct _iobuf* GetFile();
+};
+
 
 
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 

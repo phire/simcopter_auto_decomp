@@ -607,6 +607,14 @@ public:
 	class list<basic_string<char>>::iterator& operator--();
 };
 
+// Type: struct bidirectional_iterator<DirectoryEntry,int>;
+class bidirectional_iterator<DirectoryEntry,int>{
+};
+
+// Type: struct bidirectional_iterator<basic_string<char>,int>;
+class bidirectional_iterator<basic_string<char>,int>{
+};
+
 
 
 // Contribution: 1:00080b20-00085dca Module: 29, 16 byte alignment, code, execute, read, 

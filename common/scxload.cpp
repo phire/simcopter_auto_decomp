@@ -296,6 +296,25 @@ public:
 	void tGZXBitstreamNode(unsigned char *, unsigned long);
 };
 
+// Type: class cGZXBitstream;
+class cGZXBitstream{
+public:
+	// vtable: 0
+	intro unsigned long Read(unsigned char *, unsigned long);
+	// vtable: 4
+	intro unsigned long Write(unsigned char *, unsigned long);
+	// vtable: 8
+	intro void Rewind();
+	// vtable: 12
+	intro void RewindToMark();
+	// vtable: 16
+	intro void Mark();
+	// vtable: 20
+	intro long Size();
+	// vtable: 24
+	intro void FreeAll();
+};
+
 
 
 // Contribution: 1:000ca880-000cc535 Module: 89, 16 byte alignment, code, execute, read, 

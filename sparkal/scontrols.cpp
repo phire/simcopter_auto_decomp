@@ -191,6 +191,197 @@ protected:
 
 // Type: uint32_t;
 
+// Type: class ButtonWindow;
+class ButtonWindow : public GraphicWindow
+{
+		enum ButtonState {
+			nButtonStateDisabled = 0,
+			nButtonStateOff = 1,
+			nButtonStateOn = 2,
+		};
+public:
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
+	virtual int32_t Initialize();
+	// vtable: 196
+	intro int32_t GetImageCount();
+	// vtable: 200
+	intro void SetState(int32_t);
+	// vtable: 204
+	intro int32_t GetState();
+	// vtable: 208
+	intro void Enable();
+	// vtable: 212
+	intro void Disable();
+	virtual int32_t ComposeSelf();
+	virtual int32_t CreateImage(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t CanWeRespondToMessage();
+protected:
+	int32_t nButtonState;
+	int32_t bEnabled;
+	int32_t nButtonTextHeight;
+	class MSize sizeTextOffset;
+	int32_t bBusySettingState;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+};
+
+// Type: class ScrollBarWindow;
+class ScrollBarWindow : public SliderWindow
+{
+		enum ScrollHitTestResult {
+			nScrollHitTestResultNone = 0,
+			nScrollHitTestResultLinePrevious = 1,
+			nScrollHitTestResultLineNext = 2,
+			nScrollHitTestResultPagePrevious = 3,
+			nScrollHitTestResultPageNext = 4,
+			nScrollHitTestResultThumb = 5,
+		};
+public:
+	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
+	void ScrollBarWindow();
+	virtual int32_t Initialize();
+	virtual int32_t ComposeSelf();
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+	// vtable: 216
+	intro void SetLineAndPageCount(long, long);
+	// vtable: 220
+	intro void MoveLinePrevious();
+	// vtable: 224
+	intro void MoveLineNext();
+	// vtable: 228
+	intro void MovePagePrevious();
+	// vtable: 232
+	intro void MovePageNext();
+protected:
+	// vtable: 236
+	intro int32_t DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult&, long, long);
+	virtual void CalculateAllMetrics();
+	virtual long GetThumbWidth();
+	virtual long GetThumbHeight();
+	// vtable: 240
+	intro long GetPrevNextButtonWidth();
+	// vtable: 244
+	intro long GetPrevNextButtonHeight();
+	// vtable: 248
+	intro long GetCurrentLine();
+	// vtable: 252
+	intro long GetValueOfGivenLine(long);
+	// vtable: 256
+	intro long GetCurrentPage();
+	// vtable: 260
+	intro long GetValueOfGivenPage(long);
+	long lLineCount;
+	long lPageCount;
+	class MTimer myTimer;
+	enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
+	int32_t bCursorIsOnInitialHitTestResult;
+};
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: class CheckBoxWindow;
+class CheckBoxWindow : public ButtonWindow
+{
+public:
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf();
+	virtual int32_t GetImageCount();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+};
+
+// Type: class RadioButtonWindow;
+class RadioButtonWindow : public ButtonWindow
+{
+public:
+	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void RadioButtonWindow();
+	virtual void ~RadioButtonWindow();
+	virtual int32_t Initialize();
+	virtual int32_t GetImageCount();
+	virtual int32_t ComposeSelf();
+	// vtable: 220
+	intro void AddToGroup(class ButtonGroup*);
+	// vtable: 224
+	intro int32_t RemoveFromGroup();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	class ButtonGroup* myRadioButtonGroup;
+};
+
+// Type: class SliderWindow;
+class SliderWindow : public GraphicWindow
+{
+		enum SliderWindowDirection {
+			nSliderWindowDirectionHorizontal = 0,
+			nSliderWindowDirectionVertical = 1,
+		};
+public:
+	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
+	void SliderWindow();
+	virtual void ~SliderWindow();
+	virtual int32_t Initialize();
+	void SetMinimumValue(long);
+	void SetMaximumValue(long);
+	virtual void MoveWindow(int32_t, int32_t);
+	virtual void SetWidthAndHeight(int32_t, int32_t);
+	long GetValue();
+	void SetValue(long);
+	virtual int32_t CreateImage(int32_t);
+	virtual void DestroyImage();
+	virtual int32_t ComposeSelf();
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+protected:
+	// vtable: 196
+	intro int32_t ConvertCursorPositionToValue(long&, long, long);
+	// vtable: 200
+	intro void CalculateThumbPosition();
+	// vtable: 204
+	intro void CalculateAllMetrics();
+	// vtable: 208
+	intro long GetThumbWidth();
+	// vtable: 212
+	intro long GetThumbHeight();
+public:
+	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	long lSliderMinimumValue;
+	long lSliderMaximumValue;
+	long lSliderCurrentValue;
+	long lMinimumThumbPosition;
+	long lCurrentThumbPosition;
+	long lMaximumThumbPosition;
+	long lThumbLimitIndentation;
+	class MRect rectThumbImage;
+	class CBackBuffer* myBackgroundImage;
+	class basic_string<char> sBackgroundFile;
+	int32_t bBusySettingValue;
+};
+
 
 
 // Contribution: 1:000705e0-00070d19 Module: 38, 16 byte alignment, code, execute, read, 

@@ -94,6 +94,21 @@ public:
 	class list<CopterGameMode>::iterator& operator--();
 };
 
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: struct bidirectional_iterator<CopterGameMode,int>;
+class bidirectional_iterator<CopterGameMode,int>{
+};
+
 
 
 // Contribution: 1:000314e0-00032110 Module: 60, 16 byte alignment, code, execute, read, 

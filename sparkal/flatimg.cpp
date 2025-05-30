@@ -89,6 +89,42 @@ protected:
 
 // Type: uint32_t;
 
+// Type: class IFlatImage;
+class IFlatImage{
+public:
+	void IFlatImage();
+	// vtable: 0
+	intro unsigned long Lock();
+	// vtable: 4
+	intro unsigned long Unlock();
+	unsigned long GetLockCount();
+	// vtable: 8
+	intro void SetTransparentColor(int32_t, long);
+	long GetHeight();
+	long GetWidth();
+	void * __ptr32 GetBitsPointer();
+	long GetStride();
+	// vtable: 12
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
+	// vtable: 16
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 20
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	// vtable: 24
+	intro unsigned long FillRect(long, struct SparkalRect*);
+	void DrawPixel(unsigned char, long, long);
+	unsigned char GetPixel(long, long);
+	static unsigned long lTotalMemoryUsage;
+	static unsigned long lTotalLockCount;
+protected:
+	unsigned long mLockCount;
+	long mWidth;
+	long mHeight;
+	void * __ptr32 mpBits;
+	long mStride;
+};
+
 
 
 // Contribution: 1:0008e120-0008ee82 Module: 24, 16 byte alignment, code, execute, read, 

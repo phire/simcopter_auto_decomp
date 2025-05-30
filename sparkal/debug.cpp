@@ -671,6 +671,19 @@ public:
 	void erase(struct debug_command**);
 };
 
+// Type: struct random_access_iterator<basic_string<char>,int>;
+class random_access_iterator<basic_string<char>,int>{
+};
+
+// Type: struct debug_command;
+class debug_command{
+public:
+	class basic_string<char> command_string;
+	class basic_string<char> usage_string;
+	// vtable: 0
+	intro void execute(char *);
+};
+
 
 
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 

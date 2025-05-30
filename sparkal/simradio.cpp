@@ -893,6 +893,10 @@ public:
 	class list<basic_string<char>>::const_iterator& operator--();
 };
 
+// Type: struct bidirectional_iterator<basic_string<char>,int>;
+class bidirectional_iterator<basic_string<char>,int>{
+};
+
 
 
 // Contribution: 1:00032120-000389b8 Module: 59, 16 byte alignment, code, execute, read, 

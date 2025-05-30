@@ -1560,6 +1560,1014 @@ public:
 
 // Type: enum TreeSim::ReturnCode;
 
+// Type: class TreeSim;
+class TreeSim{
+		enum __unnamed {
+			kNumLocals = 4,
+			kMaxIterations = 128,
+		};
+	class TreeSim::StackElem{
+	public:
+		short treeID;
+		short nodeNum;
+		short objectID;
+		short _pad;
+		unsigned char * objectPtr;
+		short locals[4];
+		class Behavior* pBehavior;
+		void GetTreeName(unsigned char *);
+	};
+private:
+	struct TreeSim::StackElem* fStack;
+	short fStackSize;
+	short fMaxStackSize;
+	short fIterations;
+	short _pad;
+	short * fAutoStackArea;
+		enum ReturnCode {
+			kTrueComplete = 1,
+			kFalseComplete = 0,
+			kEngaged = 2,
+			kError = -1,
+			kStackLoaded = 3,
+		};
+		enum __unnamed {
+			kStackErrorBase = 1000,
+			kStackOverflow = 1000,
+			kUndefinedTransition = 1001,
+			kTooManyIterations = 1002,
+			kStackUnderflow = 1003,
+			kStackErrorMax = 1004,
+		};
+protected:
+	// vtable: 0
+	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
+	// vtable: 4
+	intro void Error(short);
+	void GetCurrentNode(short *, short *);
+	void Reset(class Behavior*, short);
+	char NodeComplete(unsigned short);
+	unsigned short Gosub(class Behavior*, short *, short);
+public:
+	void TreeSim(short, short *);
+	void TreeSim(short, short, class Behavior*, short *);
+	// vtable: 8
+	intro void ~TreeSim();
+	// vtable: 12
+	intro unsigned short Simulate(long, unsigned short);
+	struct TreeSim::StackElem* GetHighLevelAction();
+	struct TreeSim::StackElem* GetCurElem();
+	struct TreeSim::StackElem* GetNthElem(short);
+	short GetStackSize();
+	short GetMaxStackSize();
+};
+
+// Type: class YObjLang;
+class YObjLang : public Language
+{
+public:
+	void YObjLang(class YObjLang&);
+	void YObjLang(unsigned char *);
+	void ~YObjLang();
+	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
+	virtual void GetPrimName(short, unsigned char *);
+	virtual unsigned short IsSingleExit(struct Behavior::Node*);
+	// calltype: NearC
+	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
+	// calltype: NearC
+	static void SwizzleTree(void * __ptr32, long);
+	virtual void (*)(void * __ptr32, long) GetSwizzler();
+		enum __unnamed {
+			kIdle = 0,
+			kSetAnim = 1,
+			kAttr = 2,
+			kWhatsAhead = 3,
+			kWalk = 4,
+			_kRunPad = 5,
+			kSetBody = 6,
+			kRandom = 7,
+			kGetDirDistToFirst = 8,
+			kGetDirDistToPerson = 9,
+			kRoadDir = 10,
+			kSearchForDyn = 11,
+			kWalkToAndGrabOntoStackObject = 12,
+			kUpdateMyMission = 13,
+			kCheckForTrue = 14,
+			kCompareMyLocWith = 15,
+			kSelfDecommission = 16,
+			kGetOffMasterObject = 17,
+			kTurnTowardsStackObject = 18,
+			kIsThisLocType = 19,
+			kIsThisLocTypeNeutral = 20,
+			kCanJumpOffHere = 21,
+			kCheckForSpotlightInMyCell = 22,
+			kIncrementRiotVal = 23,
+			kGetSurroundingRiotVal = 24,
+			kIsThisScurkID = 25,
+			kGosubToInitbhav = 26,
+			kAdjustRadiusForRiotVal = 27,
+			kJoinRiot = 28,
+			kSetDirection = 29,
+			kThrowProjectile = 30,
+			kTurnFromStackObject = 31,
+			kTurnFromLastHitter = 32,
+			kTurnTowardsLastHitter = 33,
+			kGetOutOfRoadEtc = 34,
+			kGenerateMedevacAndSetSelfAsVictim = 35,
+			kTurnToNearbyFire = 36,
+			kDie = 37,
+			kWalkToStackObject = 38,
+			kPutObjIntoTreeNum = 39,
+			kVisitOz = 40,
+			kNotUsed = 41,
+			kMakeMyMedevacVictimVisible = 42,
+			kMakeMyMedevacVictimInvisible = 43,
+			kMakeMeMasterOfStackObject = 44,
+			kMakeMyStackObjectVisitOz = 45,
+			kPutTotedMedVicOnMotherShip = 46,
+			kTakeAnyMedVicOffMotherShip = 47,
+			kGetOnStackObject = 48,
+			kUpdateStackVictimToted = 49,
+			kGetNumSpacesOnMotherShip = 50,
+			kDropToted = 51,
+			kUpdateStackVictimPickedUp = 52,
+			kCloseToHeli = 53,
+			kSetMyExpression = 54,
+			kGetHeliSpeedPlusDamage = 55,
+			kIsThisCellSafe = 56,
+			kPlaySound = 57,
+			kGetOnHeliIfHarnessRaised = 58,
+			kAmIOnMotherShip = 59,
+			kThrowFieryProjectile = 60,
+			kNumPrimitives = 61,
+		};
+public:
+	virtual short CountPrimitives();
+		enum __unnamed {
+			kMyself = 0,
+			kTreeParam = 1,
+			kTargetObj = 2,
+			kMyData = 3,
+			kTreeParamData = 4,
+			kTargetObjData = 5,
+			kSimGlobals = 6,
+			kImmediate = 7,
+			kTempVars = 8,
+			kStackVars = 9,
+			kStackObject = 10,
+			kTempTempVars = 11,
+			kTreeTableValue = 12,
+			kNumOwners = 13,
+		};
+	class YObjLang::OwnerDataParam{
+	public:
+		short owner1;
+		short data1;
+		short owner2;
+		short data2;
+	};
+	class YObjLang::TurnToFireParam{
+	public:
+		short xdistloc;
+		short ydistloc;
+	};
+	class YObjLang::GetOutOfRoadParam{
+	public:
+		short decTemp;
+	};
+	class YObjLang::SetDirectionParam{
+	public:
+		short dirTemp;
+	};
+	class YObjLang::CheckForSpotParam{
+	public:
+		short brightnessTemp;
+		short dirToHeliTemp;
+	};
+	class YObjLang::GetSurroundingRiotValParam{
+	public:
+		short distTemp;
+		short dirToConcTemp;
+		short riotValTemp;
+		short numPeopleCountedTemp;
+	};
+	class YObjLang::IncrementRiotValParam{
+	public:
+		short riotValLiteral;
+	};
+	class YObjLang::IsThisScurkIDParam{
+	public:
+		short scurkIDLiteral;
+	};
+	class YObjLang::IsThisLocTypeParam{
+	public:
+		short locTypeLiteral;
+	};
+	class YObjLang::UpdateMyMissionParam{
+	public:
+		short updateLiteral;
+	};
+	class YObjLang::CheckForTrueParam{
+	public:
+		short whatLiteral;
+	};
+	class YObjLang::CompareMyLocWithParam{
+	public:
+		short withWhatLiteral;
+		short distData;
+		short distOwner;
+	};
+	class YObjLang::WalkAndGrabParam{
+	public:
+		short decTemp;
+		short dynAnimBoolean;
+	};
+	class YObjLang::SearchForDynParam{
+	public:
+		short searchdynobjtypetemp;
+		short onlyonmasterboolean;
+		short numcellstospiral;
+	};
+	class YObjLang::IdleParam{
+	public:
+		short decTemp;
+	};
+	class YObjLang::SetAnimParam{
+	public:
+		unsigned long animname;
+	};
+	class YObjLang::SetBodyParam{
+	public:
+		unsigned long bodyname;
+	};
+	class YObjLang::WalkRunParam{
+	public:
+		char decTemp;
+		char onlyNeutralBoolean;
+		char moveFailTemp;
+		char newLocTemp;
+		char roadDirTemp;
+		char dynAnimBoolean;
+		char speedTemp;
+	};
+	class YObjLang::RandomParam{
+	public:
+		short destTemp;
+		short rangeData;
+		short rangeOwner;
+	};
+	class YObjLang::RoadDirParam{
+	public:
+		short dirTemp;
+		short distAheadData;
+		short distAheadOwner;
+	};
+	class YObjLang::DirDistFirstParam{
+	public:
+		short dirToTemp;
+		short distToTemp;
+		short whatData;
+		short whatOwner;
+	};
+	class YObjLang::DirDistPersonParam{
+	public:
+		short dirToTemp;
+		short distToTemp;
+		short whoData;
+		short whoOwner;
+	};
+	class YObjLang::AttrParam{
+	public:
+		short lhsData;
+		short rhsData;
+		LfBitfield @ 0x5d5b4:
+		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+		[90m   LB.[95msymbols[m = []
+		[90m   LB.[95mTI[m = 0x3565
+		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+		 isSigned;
+		LfBitfield @ 0x5d5bc:
+		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+		[90m   LB.[95msymbols[m = []
+		[90m   LB.[95mTI[m = 0x3566
+		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
+		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+		 opType;
+		LfBitfield @ 0x5d5b4:
+		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+		[90m   LB.[95msymbols[m = []
+		[90m   LB.[95mTI[m = 0x3565
+		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+		 lhsOwner;
+		LfBitfield @ 0x5d5bc:
+		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+		[90m   LB.[95msymbols[m = []
+		[90m   LB.[95mTI[m = 0x3566
+		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
+		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+		 rhsOwner;
+	};
+		enum __unnamed {
+			kGreaterThan = 0,
+			kLessThan = 1,
+			kEquals = 2,
+			kIncrement = 3,
+			kDecrement = 4,
+			kSetValue = 5,
+			kTimesEq = 6,
+			kDivideEq = 7,
+			kIsFlagSet = 8,
+			kSetFlag = 9,
+			kClearFlag = 10,
+			kNumOps = 11,
+		};
+	class YObjLang::MiscParam{
+	public:
+		short m1;
+		short m2;
+		short m3;
+		short m4;
+	};
+	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
+	// union YObjLang::Param Param
+		enum TreeNum {
+			kNoTree = -1,
+			kSpotlightTree = 900,
+			kMegaphoneTree = 901,
+			kOuchTree = 902,
+			kDieTree = 903,
+			kRunTree = 904,
+			kRunOrSwoonTree = 905,
+			kSwoonTree = 906,
+		};
+		enum __unnamed {
+			kWeightStringsID = 140,
+			kPrimitiveStringsID = 139,
+			kDataLabelsID = 129,
+			kDataBase = 1,
+			kGlobalBase = 33,
+			kOwnerStringsID = 132,
+			kNewOwnerBase = 1,
+			kMacroDescriptionStrings = 133,
+			kPrimMacroBase = 1,
+			kMotiveStringsID = 134,
+			kMiscStringsID = 135,
+			kDontCare = 1,
+			kSaveChanges = 2,
+			kMaxEntryLabel = 3,
+			kBehStringsID = 128,
+			kPrimBase = 1,
+			kOwnerBase = 33,
+			kGosubStr = 65,
+			kOpenParen = 66,
+			kForType = 67,
+			kRadius = 68,
+			kFromZeroTo = 69,
+			kInto = 70,
+			kDistance = 71,
+			kStack = 72,
+			kUseTempVars = 73,
+			kCloseParen = 74,
+			kTreetemp = 75,
+			kObjtemp = 76,
+			kThisObj = 77,
+			kAlertType = 78,
+			kCheckTreeID = 79,
+			kActionTreeID = 80,
+			kForAction = 81,
+			kEqualStr = 82,
+			kTree = 83,
+			kRate = 84,
+			kTo = 85,
+			kForNeed = 86,
+			kSel = 87,
+			kPairAction = 88,
+			kToCheck = 89,
+			kSet = 90,
+			kToNeed = 91,
+			kUpdateNeed = 92,
+			kToIndex = 93,
+			kCheck = 94,
+			kAct = 95,
+			kUntil = 96,
+			kNot = 97,
+			kClear = 98,
+			kFor = 99,
+			kByAmount = 100,
+			kOpBase = 117,
+			kTypeBase = 143,
+			kBaseTreeBase = 164,
+		};
+};
+
+// Type: class Language (forward reference);
+
+// Type: class FlatResFile;
+class FlatResFile : public FlatFile
+{
+protected:
+	class ResMap* fMap;
+	long fError;
+	short _alignPad;
+public:
+	void FlatResFile();
+	virtual void ~FlatResFile();
+	void LoadResMap(void * __ptr32*, short *, long *);
+	unsigned short FileEquals(class FlatResFile*);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
+	long OpenFromName();
+	virtual long Close();
+	short CountTypes();
+	unsigned long GetIndType(short);
+	short Count(unsigned long);
+	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
+	void GetName(void * __ptr32, unsigned char *);
+	void GetID(void * __ptr32, short *);
+	unsigned long GetResType(void * __ptr32);
+	void Release(void * __ptr32);
+	void Detach(void * __ptr32);
+	void Load(void * __ptr32);
+	long GetError();
+	void Add(void * __ptr32, unsigned long, short, unsigned char *);
+	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
+	void FindUniqueName(unsigned long, unsigned char *);
+	short FindUniqueID(unsigned long);
+	void Write(void * __ptr32);
+	void Remove(void * __ptr32);
+	void GetString(unsigned char *, short, short);
+	// calltype: NearC
+	static short CheckForLeaks();
+};
+
+// Type: class cYObject;
+class cYObject : public TreeSim, public YObjLang
+{
+	using DataType = short;
+		enum __unnamed {
+			kNumData = 24,
+			kNumTemp = 8,
+			kNumPointers = 4,
+		};
+	class cYObject::ObjDefHeader{
+	public:
+		long version;
+		short stackSize;
+		short baseGraphic;
+		short numGraphics;
+		short initBhav;
+		short toolbarPict;
+		short treeTableID;
+		short personalityID;
+		short type;
+		short red;
+		short green;
+		short blue;
+		short _padding2;
+	};
+		enum MoveErrorCode {
+			kMoveError = -1,
+			kMoveSuccess = 0,
+			kMoveFailTooHigh = 1,
+			kMoveFailTooLow = 2,
+			kMoveFailNonNeutralTerritory = 3,
+			kMoveFailDynObjGeneric = 4,
+			kMoveFailDynObjPerson = 5,
+			kMoveFailOutOfDynObjRect = 6,
+			kMoveFailNoSpeed = 7,
+			kMoveFailFinishedMoving = 8,
+			kMoveFailStaticObj = 9,
+			kMoveFailStackObject = 10,
+			kMoveFailUnwalkableLoctype = 11,
+			kMoveFailOutOfRoad = 12,
+		};
+		enum ObjectType {
+			kPerson = 0,
+			kNumObjectTypes = 1,
+		};
+public:
+	static short sStackSize[1];
+	void SetToLoc(struct _DYOBJ_INST*);
+	unsigned short Gosub(short);
+	short GetTree();
+	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
+	void Die();
+		enum MissionUpdates {
+			kPickedUp = 0,
+			kOuttaHere = 1,
+			kReportNewPickupLocation = 2,
+			kJoinedRiot = 3,
+			kDrivenFromRiot = 4,
+			kLeftRiotOfOwnVolition = 5,
+			kReportNewLocation = 6,
+			kMedVicToted = 7,
+			kMedVicPickedUp = 8,
+		};
+		enum Checks {
+			kHeliLanded = 0,
+			kHeliLow = 1,
+			kMasterObjectLow = 2,
+			kMasterObjectMovingSlowly = 3,
+			kMotherShipLow = 4,
+		};
+		enum CompareMyLocWith {
+			kMissionDestLoc = 0,
+			kStackPointer = 1,
+			kHeli = 2,
+			kBucket = 3,
+			kLastHitter = 4,
+			kClosestMedevacVictim = 5,
+			kClosestCriminal = 6,
+			kMotherShipLoc = 7,
+			kClosestCop = 8,
+			kAvatarClose = 9,
+		};
+public:
+	short * GetLocalVar(short);
+	// calltype: NearC
+	static void StartScurkPeople(short, short);
+	// calltype: NearC
+	static void StartScurkPeopleNearAvatar();
+	// calltype: NearC
+	static void BeamRemainingAmbients();
+	unsigned short GetNearbyFire(short, short *, short *);
+	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct Point3d, struct _DYOBJ_INST*);
+	void ResetToAmbient();
+	long JoinRiot();
+	// calltype: NearC
+	static short StartPerson(enum PersonType, enum MissionType);
+	unsigned short AddToHeli();
+	void RemoveFromHeli();
+	void SetPersonData(enum PersonType, enum MissionType, long);
+	static short sInitBhav[9];
+	static short sHitRxnTree[20];
+	// calltype: NearC
+	static void SetRxnTree(short, short);
+	static long sSimTicks;
+	long fLastInterrupt;
+		enum LocationType {
+			kOutOfCity = -1,
+			kLocNoInfo = 0,
+			kLocUnknown = 1,
+			kNothing = 2,
+			kForest = 3,
+			kRubble = 4,
+			kSmallPark = 5,
+			kWireStuff = 6,
+			kCarRoad = 7,
+			kCarBridge = 8,
+			kTrainTrack = 9,
+			kDomestic = 10,
+			kCommercial = 11,
+			kWhiteCollarBusiness = 12,
+			kBlueCollarBusiness = 13,
+			kNumLocTypes = 14,
+		};
+public:
+	static enum cYObject::LocationType sLocType[256];
+		enum SearchType {
+			kSearchEdgeGround = 0,
+			kSearchAnywhereGround = 1,
+			kSearchRoof = 2,
+		};
+	class cYObject::LocationInfo{
+	public:
+		enum cYObject::SearchType searchType;
+		short maxNormalLoiterers;
+	};
+public:
+	static struct cYObject::LocationInfo sLocInfo[14];
+	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
+	short GetDirectionTo(struct _DYOBJ_INST*);
+	short GetDirectionTo(short, short);
+	unsigned short SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*);
+	static short sBeamed;
+	static short sDebugNumBeamed;
+	// calltype: NearC
+	static unsigned short LikelyToBeamSuccessfully();
+	// calltype: NearC
+	static short GetScurkID(short, short);
+	// calltype: NearC
+	static unsigned short IsSuitableForMission(enum MissionType, short, short);
+	// calltype: NearC
+	static unsigned short IsNeutralForPerson(enum PersonType, enum cYObject::LocationType);
+	unsigned short IsNeutralAndSparse(struct _CELL_INFO*, enum cYObject::LocationType);
+	struct Point3d GetPos(struct _CELL_INFO*, int32_t, int32_t);
+	unsigned short AdjoinsRoad(struct Point3d);
+	unsigned short RoadTile(int32_t, int32_t);
+	unsigned short GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *);
+	void UpdateMission(enum cYObject::MissionUpdates, long);
+	void ResetTree();
+	void ResetTree(short);
+	class cYObject::MoveInfo{
+	public:
+		enum cYObject::LocationType* locType;
+		char * roadDir;
+		struct _DYOBJ_INST* dyBlock;
+		struct _STOBJ_INST* stBlock;
+	};
+	class cYObject::_ControlInput{
+	public:
+		struct Point3d vector;
+		int32_t fwdSpeed;
+		int32_t rotateRate;
+		int32_t yaw;
+	};
+	class cYObject::_ControlInput{
+	public:
+		struct Point3d vector;
+		int32_t fwdSpeed;
+		int32_t rotateRate;
+		int32_t yaw;
+	};
+private:
+	static unsigned short sInited;
+	static class cYObject* sObjects[100];
+	static enum cYObject::LocationType sNeutralPersonLocs[16][10];
+	static enum cYObject::LocationType sNeutralMissionLocs[9][10];
+	static class cYObject* sList;
+	static class NResFile sFile;
+	static class ResFile sErrorFile;
+public:
+	static class YObjLang* sLanguage;
+	static class Behavior* sBehavior;
+	static struct Point3d sMoveTable[8];
+	static struct Point3d sUnitVectorTable[8];
+	// calltype: NearC
+	static void InitObjects(char *);
+	// calltype: NearC
+	static void DestroyObjects();
+	// calltype: NearC
+	static short MakeNewObject(short, struct Point3d, class Behavior*);
+	// calltype: NearC
+	static void KillObject(short);
+	// calltype: NearC
+	static void MakePlebes();
+	void InitForEngine(short);
+	void TellLocToEngine();
+	class cYObject* GetClosest(enum MissionType, unsigned short, short *);
+	// calltype: NearC
+	static class cYObject* GetObjectA(short);
+	// calltype: NearC
+	static class cYObject* GetObjectA(struct _DYOBJ_INST*);
+	class cYObject* GetPersonWithMaster(struct _DYOBJ_INST*);
+	// calltype: NearC
+	static class cYObject* GetSleepingPerson();
+	// calltype: NearC
+	static void DrawOnePerson(struct VRBlit*);
+	void SetCell(unsigned char, unsigned char);
+	void UnsetCell(unsigned char, unsigned char);
+	void Link();
+	void Link(unsigned char, unsigned char);
+	long fMissionID;
+	void Unlink();
+	unsigned short CellIsSet();
+	unsigned short fbLinked;
+	unsigned short Linked();
+	unsigned short fInited;
+	// calltype: NearC
+	static unsigned short ConvertObjDef(void * __ptr32);
+	// calltype: NearC
+	static short GetAvailRouteMask();
+	// calltype: NearC
+	static void ClearRouteMask(short);
+	// calltype: NearC
+	static void MaskTile(short, short, short);
+	// calltype: NearC
+	static void IntegrityCheck(unsigned char *);
+	static short sNumMissionAwake;
+	static short sNumAmbientAwake;
+	static unsigned short sAllAmbientStarted;
+	static short sAmbientTopOff;
+	static short sAmbientAbsoluteMax;
+	static short sScurkRectRad;
+	struct _DYOBJ_INST fDyn;
+	unsigned char fCellX;
+	unsigned char fCellY;
+	unsigned long fBodyName;
+	class cCopterBody* fBody;
+	unsigned long fAnimName;
+	class cCopterAnim* fAnim;
+	short fFace;
+	void SetFace(short);
+	struct Point3d fLastMasterLoc;
+	unsigned short SetMaster(struct _DYOBJ_INST*);
+	struct _DYOBJ_INST* GetMaster();
+	void FollowMaster();
+	enum cYObject::LocationType fCurLocType;
+	// calltype: NearC
+	static unsigned short GetOutOfHeli(long);
+	// calltype: NearC
+	static struct Point2d GetRiotCenter(short, short);
+	// calltype: NearC
+	static struct Point2d GetRiotCenter(long);
+	void SimAnim();
+	void Simulate();
+	// calltype: NearC
+	static void SimulateAll();
+	// calltype: NearC
+	static void TryStartAllAmbient();
+	unsigned long GetBody();
+	void SetBody(unsigned long);
+	void IncAndCheckAnimFrame();
+	void CheckAnimFrame();
+	// calltype: NearC
+	static class cYObject* GetOnePersonForScurkID(short, short);
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetFirstDynObj(struct _CELL_INFO*, long);
+	// calltype: NearC
+	static short CountDynObjs(struct _CELL_INFO*, long);
+	void SetMissionType(enum MissionType);
+	void SetMissionID(long);
+	void SetPersonType(enum PersonType);
+	void ChangeMission(enum MissionType, long);
+	void IncrementMissionStats(enum MissionType, short);
+	void ClickHeels();
+	void VisitOz();
+	unsigned long GetAnim();
+	void SetAnim(unsigned long);
+	unsigned short fSimulate;
+	class Behavior* fBehavior;
+	class cYObject* fNext;
+	short fID;
+	short _pad;
+	short fTemp[8];
+	short fData[24];
+	unsigned char * fPointers[4];
+	short fIterations;
+	short _pad2;
+	short fDirInc;
+	struct cYObject::ObjDefHeader fDefinition;
+		enum __unnamed {
+			kMasterObject = 0,
+			kLastHitterObject = 1,
+			kMotherShip = 2,
+		};
+		enum __unnamed {
+			kDirection = 0,
+			kAwake = 1,
+			kHeightCanJump = 2,
+			kPersonType = 3,
+			kMissionType = 4,
+			kNotMissionID = 5,
+			kAnimFrame = 6,
+			kObjectID = 7,
+			kRiotVal = 8,
+			kVisible = 9,
+			kLastRiotVal = 10,
+			kNearMedFar = 11,
+			kLastHitterMsg = 12,
+			kMegaphoneMessage = 13,
+			kInRxnTree = 14,
+			kDead = 15,
+			kColorIndexShift = 16,
+			kDynAnim = 17,
+			kSpeed = 18,
+			kOnlyOnRoad = 19,
+			kMoveOnlyNeutrally = 20,
+			kMoveNoMatterWhat = 21,
+			kSpecificToScurkID = 22,
+		};
+protected:
+	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
+	// vtable: 16
+	intro void HandleOverflow();
+	// vtable: 20
+	intro short InterpValue(short, short, short **);
+	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
+public:
+	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
+	enum cYObject::LocationType GetLocType();
+	// calltype: NearC
+	static enum cYObject::LocationType GetLocType(short, short);
+	// calltype: NearC
+	static unsigned short IsWater(short, short);
+	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
+	unsigned short CanJumpOffHere();
+	// calltype: NearC
+	static char GetRoadDir(struct Point3d);
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*);
+	// calltype: NearC
+	static struct _STOBJ_INST* GetStaticObj(struct Point3d, int32_t);
+	// calltype: NearC
+	static unsigned short InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t);
+	unsigned short MasterSlowerThan(short);
+	short GetHeightOverGround();
+	unsigned short GetFakeDistTo(struct _DYOBJ_INST*);
+	unsigned short CloseTo(struct _DYOBJ_INST*);
+	// calltype: NearC
+	static class cYObject* GetFirst();
+	// calltype: NearC
+	static class cYObject* GetFirst(short, short);
+	// calltype: NearC
+	static class cYObject* GetFirstInvisible(short);
+	void SetMotherShip(struct _DYOBJ_INST*);
+	struct _DYOBJ_INST* GetMotherShip();
+	class cYObject* PutTotedMedVicOnMotherShip();
+	class cYObject* DropToted();
+	class cYObject* GetToted();
+	unsigned short GetOffMasterObject();
+	// calltype: NearC
+	static unsigned short IsHigherThan(struct Point3d, short);
+	// calltype: NearC
+	static unsigned short IsFlattenedTerrain(struct _CELL_INFO*);
+	// calltype: NearC
+	static void RandomEdgeOffset(short, int32_t *, int32_t *);
+	// calltype: NearC
+	static void RandomOffset(short, int32_t *, int32_t *);
+	// vtable: 24
+	intro void Reset();
+	virtual void ~cYObject();
+protected:
+	virtual void Error(short);
+	void cYObject(short, class Behavior*, struct Point3d, short);
+public:
+	struct cYObject::ObjDefHeader* GetDef();
+	void GetTypeName(char *);
+	// calltype: NearC
+	static class ResFile* GetGlobalFile();
+	// calltype: NearC
+	static class YObjLang* GetLanguage();
+	// calltype: NearC
+	static class ResFile* GetErrorFile();
+	short GetID();
+	struct Point3d GetLocation();
+	class Behavior* GetBehavior();
+	void Draw(struct VRBlit*);
+	float fScale;
+	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
+	void SetCellAndLoc(struct Point3d, unsigned char, unsigned char);
+	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
+	void Start(int32_t, int32_t, int32_t, int32_t);
+	unsigned short BeamIntoCameraRange();
+	unsigned short OutOfCameraRange();
+	unsigned short CanPlace(struct Point3d);
+	void AdjustRadiusForRiotVal();
+	unsigned short HasRiotValChanged();
+	void IncrementRiotVal(short);
+	void GetSurroundingRiotInfo(short, short *, short *, short *);
+	void Turn(short);
+	class cYObject* GetNext();
+	void SetDynAnim(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
+	void SetDynAnimFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
+};
+
+// Type: class FlatFile;
+class FlatFile{
+		enum __unnamed {
+			kMaxNameLen = 255,
+		};
+protected:
+	class FlatFile* fNext;
+	unsigned char fName[256];
+	long fFileID;
+	struct _iobuf* fFile;
+	long UniqueID();
+private:
+	static class FlatFile* sList;
+	static long sLastFileID;
+	void Link();
+	void Unlink();
+	unsigned short Exclusive();
+public:
+	void FlatFile();
+	// vtable: 0
+	intro void ~FlatFile();
+	// calltype: NearC
+	static class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(class FlatFile*);
+	// vtable: 4
+	intro long Open(unsigned char *);
+	// vtable: 8
+	intro long Open(char *);
+	// vtable: 12
+	intro long Close();
+	void OpenFromOtherFile(class FlatFile*);
+	long GetFileName(unsigned char *);
+	unsigned short ValidFile();
+	long ReadBlock(void * __ptr32, long *);
+	long Read4(long *);
+	long Read2(short *);
+	long Read1(char *);
+	long SetPos(long);
+	long Advance(long);
+	// calltype: NearC
+	static short CheckForLeaks();
+	long GetFileID();
+	struct _iobuf* GetFile();
+};
+
+// Type: class Sound;
+class Sound{
+		enum SoundSourceType {
+			nSoundSourceTypeResource = 0,
+			nSoundSourceTypeFile = 1,
+		};
+public:
+	enum Sound::SoundSourceType nSoundSourceType;
+		enum SoundDuplicateType {
+			nSoundDuplicateDefault = 0,
+			nSoundDuplicateInterrupt = 1,
+			nSoundDuplicateContinue = 2,
+			nSoundDuplicateOverlap = 3,
+		};
+public:
+	enum Sound::SoundDuplicateType nSoundDuplicateType;
+	long lID;
+	long lResID;
+	class basic_string<char> sSoundFile;
+	long bLooping;
+	long bStreaming;
+	long lVolume;
+	void (*soundCompletionFunction)(long);
+	long lSoundCompletionData;
+	void Sound();
+	// vtable: 0
+	intro void ~Sound();
+	class Sound& operator=(const class Sound&);
+	// vtable: 4
+	intro void SetSoundFile(const class basic_string<char>&);
+	// vtable: 8
+	intro long Play(long, int32_t);
+	// vtable: 12
+	intro long Stop();
+	// vtable: 16
+	intro long IsPlaying();
+	// vtable: 20
+	intro int32_t SetCompletionNotification(void (*)(long), long);
+	// vtable: 24
+	intro void StopCompletionNotification();
+	// vtable: 28
+	intro long EstimateRemainingPlayTime();
+	// vtable: 32
+	intro int32_t GetVolume(long *);
+	// vtable: 36
+	intro int32_t SetVolume(long);
+	// vtable: 40
+	intro int32_t GetSoundType();
+	// calltype: NearC
+	static unsigned long GetTotalMemoryUsage();
+	static unsigned long lTotalMemoryUsage;
+};
+
+// Type: class IBackBuffer;
+class IBackBuffer : public IFlatImage
+{
+public:
+	// vtable: 28
+	intro unsigned long Swap(class CSparkalWindow*, long, long);
+	// vtable: 32
+	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
+	// vtable: 36
+	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
+};
+
+// Type: class IFlatImage;
+class IFlatImage{
+public:
+	void IFlatImage();
+	// vtable: 0
+	intro unsigned long Lock();
+	// vtable: 4
+	intro unsigned long Unlock();
+	unsigned long GetLockCount();
+	// vtable: 8
+	intro void SetTransparentColor(int32_t, long);
+	long GetHeight();
+	long GetWidth();
+	void * __ptr32 GetBitsPointer();
+	long GetStride();
+	// vtable: 12
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
+	// vtable: 16
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
+	// vtable: 20
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	// vtable: 24
+	intro unsigned long FillRect(long, struct SparkalRect*);
+	void DrawPixel(unsigned char, long, long);
+	unsigned char GetPixel(long, long);
+	static unsigned long lTotalMemoryUsage;
+	static unsigned long lTotalLockCount;
+protected:
+	unsigned long mLockCount;
+	long mWidth;
+	long mHeight;
+	void * __ptr32 mpBits;
+	long mStride;
+};
+
 
 
 // Contribution: 1:00142f70-00150d97 Module: 200, 16 byte alignment, code, execute, read, 

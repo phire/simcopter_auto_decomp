@@ -528,6 +528,14 @@ public:
 	class list<CopterGameMode>::iterator& operator--();
 };
 
+// Type: struct bidirectional_iterator<Shortcut,int>;
+class bidirectional_iterator<Shortcut,int>{
+};
+
+// Type: struct bidirectional_iterator<CopterGameMode,int>;
+class bidirectional_iterator<CopterGameMode,int>{
+};
+
 
 
 // Contribution: 1:00086830-00089a9c Module: 28, 16 byte alignment, code, execute, read, 

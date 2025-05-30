@@ -183,6 +183,20 @@ public:
 	intro long SetEntries(unsigned long, unsigned long, unsigned long, struct tagPALETTEENTRY*);
 };
 
+// Type: struct IUnknown;
+class IUnknown{
+public:
+	// vtable: 0
+	// calltype: NearStd
+	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
+	// vtable: 4
+	// calltype: NearStd
+	intro unsigned long AddRef();
+	// vtable: 8
+	// calltype: NearStd
+	intro unsigned long Release();
+};
+
 
 
 // Contribution: 1:0001e500-0001e869 Module: 74, 16 byte alignment, code, execute, read, 

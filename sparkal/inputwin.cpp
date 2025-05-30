@@ -1754,6 +1754,179 @@ public:
 
 // Type: struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int> (forward reference);
 
+// Type: struct bidirectional_iterator<Shortcut,int>;
+class bidirectional_iterator<Shortcut,int>{
+};
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: struct SparkalPoint;
+class SparkalPoint{
+public:
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
+};
+
+// Type: struct bidirectional_iterator<long,int>;
+class bidirectional_iterator<long,int>{
+};
+
+// Type: struct bidirectional_iterator<HotSpot,int>;
+class bidirectional_iterator<HotSpot,int>{
+};
+
+// Type: struct bidirectional_iterator<StringIDAssociation,int>;
+class bidirectional_iterator<StringIDAssociation,int>{
+};
+
+// Type: class ios;
+class ios{
+		enum io_state {
+			goodbit = 0,
+			eofbit = 1,
+			failbit = 2,
+			badbit = 4,
+		};
+		enum open_mode {
+			in = 1,
+			out = 2,
+			ate = 4,
+			app = 8,
+			trunc = 16,
+			nocreate = 32,
+			noreplace = 64,
+			binary = 128,
+		};
+		enum seek_dir {
+			beg = 0,
+			cur = 1,
+			end = 2,
+		};
+		enum __unnamed {
+			skipws = 1,
+			left = 2,
+			right = 4,
+			internal = 8,
+			dec = 16,
+			oct = 32,
+			hex = 64,
+			showbase = 128,
+			showpoint = 256,
+			uppercase = 512,
+			showpos = 1024,
+			scientific = 2048,
+			fixed = 4096,
+			unitbuf = 8192,
+			stdio = 16384,
+		};
+public:
+	static const long basefield;
+	static const long adjustfield;
+	static const long floatfield;
+protected:
+	void ios(const class ios&);
+	void ios();
+public:
+	void ios(class streambuf*);
+	// vtable: 0
+	intro void ~ios();
+	long flags(long);
+	long flags();
+	long setf(long);
+	long setf(long, long);
+	long unsetf(long);
+	int32_t width(int32_t);
+	int32_t width();
+	class ostream* tie();
+	class ostream* tie(class ostream*);
+	char fill(char);
+	char fill();
+	int32_t precision();
+	int32_t precision(int32_t);
+	int32_t rdstate();
+	void clear(int32_t);
+	void * __ptr32 operator void *();
+	int32_t operator!();
+	int32_t good();
+	int32_t eof();
+	int32_t fail();
+	int32_t bad();
+	class streambuf* rdbuf();
+	long& iword(int32_t);
+	void * __ptr32& pword(int32_t);
+	// calltype: NearC
+	static long bitalloc();
+	// calltype: NearC
+	static int32_t xalloc();
+	// calltype: NearC
+	static void sync_with_stdio();
+	// calltype: NearC
+	void setlock();
+	// calltype: NearC
+	void clrlock();
+	// calltype: NearC
+	void lock();
+	// calltype: NearC
+	void unlock();
+	// calltype: NearC
+	void lockbuf();
+	// calltype: NearC
+	void unlockbuf();
+protected:
+	class ios& operator=(const class ios&);
+	void init(class streambuf*);
+		enum __unnamed {
+			skipping = 0,
+			tied = 1,
+		};
+protected:
+	class streambuf* bp;
+	int32_t state;
+	int32_t ispecial;
+	int32_t ospecial;
+	int32_t isfx_special;
+	int32_t osfx_special;
+	int32_t x_delbuf;
+	class ostream* x_tie;
+	long x_flags;
+	int32_t x_precision;
+	char x_fill;
+	int32_t x_width;
+	static void (*stdioflush)();
+	// calltype: NearC
+	static void lockc();
+	// calltype: NearC
+	static void unlockc();
+	struct _CRT_CRITICAL_SECTION* lockptr();
+public:
+	void delbuf(int32_t);
+	int32_t delbuf();
+private:
+	static long x_maxbit;
+	static int32_t x_curindex;
+	static int32_t sunk_with_stdio;
+	static long x_statebuf[8];
+	static int32_t fLockcInit;
+	static struct _CRT_CRITICAL_SECTION x_lockc;
+	int32_t LockFlg;
+	struct _CRT_CRITICAL_SECTION x_lock;
+};
+
+// Type: struct bidirectional_iterator<KeyColors,int>;
+class bidirectional_iterator<KeyColors,int>{
+};
+
 
 
 // Contribution: 1:00000000-000001ac Module: 75, 16 byte alignment, code, (comdat), execute, read, 

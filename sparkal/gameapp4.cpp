@@ -212,6 +212,17 @@ public:
 
 // Type: void;
 
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 
 
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 

@@ -374,6 +374,190 @@ private:
 	struct _CRT_CRITICAL_SECTION x_lock;
 };
 
+// Type: class ios;
+class ios{
+		enum io_state {
+			goodbit = 0,
+			eofbit = 1,
+			failbit = 2,
+			badbit = 4,
+		};
+		enum open_mode {
+			in = 1,
+			out = 2,
+			ate = 4,
+			app = 8,
+			trunc = 16,
+			nocreate = 32,
+			noreplace = 64,
+			binary = 128,
+		};
+		enum seek_dir {
+			beg = 0,
+			cur = 1,
+			end = 2,
+		};
+		enum __unnamed {
+			skipws = 1,
+			left = 2,
+			right = 4,
+			internal = 8,
+			dec = 16,
+			oct = 32,
+			hex = 64,
+			showbase = 128,
+			showpoint = 256,
+			uppercase = 512,
+			showpos = 1024,
+			scientific = 2048,
+			fixed = 4096,
+			unitbuf = 8192,
+			stdio = 16384,
+		};
+public:
+	static const long basefield;
+	static const long adjustfield;
+	static const long floatfield;
+protected:
+	void ios(const class ios&);
+	void ios();
+public:
+	void ios(class streambuf*);
+	// vtable: 0
+	intro void ~ios();
+	long flags(long);
+	long flags();
+	long setf(long);
+	long setf(long, long);
+	long unsetf(long);
+	int32_t width(int32_t);
+	int32_t width();
+	class ostream* tie();
+	class ostream* tie(class ostream*);
+	char fill(char);
+	char fill();
+	int32_t precision();
+	int32_t precision(int32_t);
+	int32_t rdstate();
+	void clear(int32_t);
+	void * __ptr32 operator void *();
+	int32_t operator!();
+	int32_t good();
+	int32_t eof();
+	int32_t fail();
+	int32_t bad();
+	class streambuf* rdbuf();
+	long& iword(int32_t);
+	void * __ptr32& pword(int32_t);
+	// calltype: NearC
+	static long bitalloc();
+	// calltype: NearC
+	static int32_t xalloc();
+	// calltype: NearC
+	static void sync_with_stdio();
+	// calltype: NearC
+	void setlock();
+	// calltype: NearC
+	void clrlock();
+	// calltype: NearC
+	void lock();
+	// calltype: NearC
+	void unlock();
+	// calltype: NearC
+	void lockbuf();
+	// calltype: NearC
+	void unlockbuf();
+protected:
+	class ios& operator=(const class ios&);
+	void init(class streambuf*);
+		enum __unnamed {
+			skipping = 0,
+			tied = 1,
+		};
+protected:
+	class streambuf* bp;
+	int32_t state;
+	int32_t ispecial;
+	int32_t ospecial;
+	int32_t isfx_special;
+	int32_t osfx_special;
+	int32_t x_delbuf;
+	class ostream* x_tie;
+	long x_flags;
+	int32_t x_precision;
+	char x_fill;
+	int32_t x_width;
+	static void (*stdioflush)();
+	// calltype: NearC
+	static void lockc();
+	// calltype: NearC
+	static void unlockc();
+	struct _CRT_CRITICAL_SECTION* lockptr();
+public:
+	void delbuf(int32_t);
+	int32_t delbuf();
+private:
+	static long x_maxbit;
+	static int32_t x_curindex;
+	static int32_t sunk_with_stdio;
+	static long x_statebuf[8];
+	static int32_t fLockcInit;
+	static struct _CRT_CRITICAL_SECTION x_lockc;
+	int32_t LockFlg;
+	struct _CRT_CRITICAL_SECTION x_lock;
+};
+
+// Type: class ostream;
+class ostream : public virtual ios
+{
+public:
+	int32_t[0]* ios;
+	void ostream(class ios&);
+	void ostream(const class ostream&);
+	void ostream();
+	void ostream(class streambuf*);
+	virtual void ~ostream();
+	class ostream& flush();
+	int32_t opfx();
+	void osfx();
+	class ostream& operator<<(class streambuf*);
+	class ostream& operator<<(void * __ptr32);
+	class ostream& operator<<(double);
+	class ostream& operator<<(double);
+	class ostream& operator<<(float);
+	class ostream& operator<<(unsigned long);
+	class ostream& operator<<(long);
+	class ostream& operator<<(uint32_t);
+	class ostream& operator<<(int32_t);
+	class ostream& operator<<(unsigned short);
+	class ostream& operator<<(short);
+	class ostream& operator<<(char);
+	class ostream& operator<<(unsigned char);
+	class ostream& operator<<(char);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(unsigned char *);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(class ios& (*)(class ios&));
+	class ostream& operator<<(class ostream& (*)(class ostream&));
+	class ostream& put(char);
+	class ostream& put(unsigned char);
+	class ostream& put(char);
+	class ostream& write(char *, int32_t);
+	class ostream& write(unsigned char *, int32_t);
+	class ostream& write(char *, int32_t);
+	class ostream& seekp(long, enum ios::seek_dir);
+	class ostream& seekp(long);
+	long tellp();
+protected:
+	class ostream& operator=(const class ostream&);
+	class ostream& operator=(class streambuf*);
+	int32_t do_opfx(int32_t);
+	void do_osfx();
+private:
+	class ostream& writepad(char *, char *);
+	int32_t x_floatused;
+};
+
 
 
 // Contribution: 1:0003b710-0003c389 Module: 58, 16 byte alignment, code, execute, read, 

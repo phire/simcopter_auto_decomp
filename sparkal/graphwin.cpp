@@ -557,6 +557,21 @@ public:
 	class list<GraphicWindow *>::const_iterator& operator--();
 };
 
+// Type: struct bidirectional_iterator<GraphicWindow *,int>;
+class bidirectional_iterator<GraphicWindow *,int>{
+};
+
+// Type: struct SparkalRect;
+class SparkalRect{
+public:
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 
 
 // Contribution: 1:0009fa00-000a6b52 Module: 9, 16 byte alignment, code, execute, read, 

@@ -193,6 +193,68 @@ public:
 
 // Type: uint32_t;
 
+// Type: class TreeSim;
+class TreeSim{
+		enum __unnamed {
+			kNumLocals = 4,
+			kMaxIterations = 128,
+		};
+	class TreeSim::StackElem{
+	public:
+		short treeID;
+		short nodeNum;
+		short objectID;
+		short _pad;
+		unsigned char * objectPtr;
+		short locals[4];
+		class Behavior* pBehavior;
+		void GetTreeName(unsigned char *);
+	};
+private:
+	struct TreeSim::StackElem* fStack;
+	short fStackSize;
+	short fMaxStackSize;
+	short fIterations;
+	short _pad;
+	short * fAutoStackArea;
+		enum ReturnCode {
+			kTrueComplete = 1,
+			kFalseComplete = 0,
+			kEngaged = 2,
+			kError = -1,
+			kStackLoaded = 3,
+		};
+		enum __unnamed {
+			kStackErrorBase = 1000,
+			kStackOverflow = 1000,
+			kUndefinedTransition = 1001,
+			kTooManyIterations = 1002,
+			kStackUnderflow = 1003,
+			kStackErrorMax = 1004,
+		};
+protected:
+	// vtable: 0
+	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
+	// vtable: 4
+	intro void Error(short);
+	void GetCurrentNode(short *, short *);
+	void Reset(class Behavior*, short);
+	char NodeComplete(unsigned short);
+	unsigned short Gosub(class Behavior*, short *, short);
+public:
+	void TreeSim(short, short *);
+	void TreeSim(short, short, class Behavior*, short *);
+	// vtable: 8
+	intro void ~TreeSim();
+	// vtable: 12
+	intro unsigned short Simulate(long, unsigned short);
+	struct TreeSim::StackElem* GetHighLevelAction();
+	struct TreeSim::StackElem* GetCurElem();
+	struct TreeSim::StackElem* GetNthElem(short);
+	short GetStackSize();
+	short GetMaxStackSize();
+};
+
 
 
 // Contribution: 1:0015bb10-0015c4b2 Module: 194, 16 byte alignment, code, execute, read, 
