@@ -221,17 +221,78 @@ public:
 
 
 // Contribution: 1:00040e30-000461ac Module: 52, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e30
-// $E55
+void $E55() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00441E45;
+	__asm        jmp    near ptr 0x00441E40;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e45
-// $E54
+void $E54() {
+// LINE 33:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    dword ptr ds:[0x5C37F0], 0x2710;
+	__asm        jmp    near ptr 0x00441E5A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e5f
-// $E58
+void $E58() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00441E74;
+	__asm        jmp    near ptr 0x00441E6F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e74
-// $E57
+void $E57() {
+// LINE 34:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C8;
+	__asm        jmp    near ptr 0x00441E89;
+	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C0;
+	__asm        jmp    near ptr 0x00441E98;
+	__asm        jmp    near ptr 0x00441E9D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00441ea2
 int32_t SoundChangeNotificationSink::Initialize() {

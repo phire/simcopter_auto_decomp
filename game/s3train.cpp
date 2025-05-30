@@ -290,17 +290,87 @@ public:
 
 
 // Contribution: 1:0012cda0-00133970 Module: 162, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052dda0
-// $E7
+void $E7() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0052DDBA;
+	__asm        call   0x0052DDD9;
+	__asm        jmp    near ptr 0x0052DDB5;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddba
-// $E3
+void $E3() {
+// LINE 150:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    dword ptr ds:[0x62B7B8], 0x593238;
+	__asm        jmp    near ptr 0x0052DDCF;
+	__asm        jmp    near ptr 0x0052DDD4;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddd9
-// $E6
+void $E6() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x52DDF6;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x0052DDF1;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddf6
-// $E4
+void $E4() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x62B998];
+	__asm        test   al, 1;
+	__asm        jne    near ptr 0x0052DE23;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x62B998];
+	__asm        or     al, 1;
+	__asm        mov    ds:[0x62B998], al;
+	__asm        mov    ecx, 0x62B7B8;
+	__asm        call   0x0052E0A8;
+	__asm        jmp    near ptr 0x0052DE28;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0052de2d
 void TrainClass::TrainClass(long mapx, long mapy) {

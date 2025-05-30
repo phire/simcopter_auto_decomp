@@ -648,17 +648,79 @@ class bidirectional_iterator<tagLogBase *,int>{
 
 
 // Contribution: 1:000eabc0-000ed27d Module: 178, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbc0
-// $E57
+void $E57() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x004EBBDA;
+	__asm        call   0x004EBBF4;
+	__asm        jmp    near ptr 0x004EBBD5;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbda
-// $E54
+void $E54() {
+// LINE 20:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x606E78;
+	__asm        call   0x004EBC4F;
+	__asm        jmp    near ptr 0x004EBBEF;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbf4
-// $E56
+void $E56() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x4EBC11;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x004EBC0C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebc11
-// $E55
+void $E55() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x606E78;
+	__asm        call   0x004EBEED;
+	__asm        jmp    near ptr 0x004EBC26;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x004ebc2b
 void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {

@@ -1143,17 +1143,81 @@ protected:
 
 
 // Contribution: 1:0004f050-0005f979 Module: 45, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00450050
-// $E66
+void $E66() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00450065;
+	__asm        jmp    near ptr 0x00450060;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00450065
-// $E65
+void $E65() {
+// LINE 29:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x603AB0], 0xA;
+	__asm        mov    byte ptr ds:[0x603AB1], 0x85;
+	__asm        mov    byte ptr ds:[0x603AB2], 0xDA;
+	__asm        jmp    near ptr 0x00450085;
+	__asm        jmp    near ptr 0x0045008A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0045008f
-// $E69
+void $E69() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x004500A4;
+	__asm        jmp    near ptr 0x0045009F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004500a4
-// $E68
+void $E68() {
+// LINE 30:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x603AB8], 0x6F;
+	__asm        mov    byte ptr ds:[0x603AB9], 0xDA;
+	__asm        mov    byte ptr ds:[0x603ABA], 0xFF;
+	__asm        jmp    near ptr 0x004500C4;
+	__asm        jmp    near ptr 0x004500C9;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x004500ce
 void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
@@ -17109,17 +17173,81 @@ int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow* gwSource, long lWi
 	__asm        ret    0x10;
 }
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0045e126
-// $E72
+void $E72() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0045E13B;
+	__asm        jmp    near ptr 0x0045E136;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0045e13b
-// $E71
+void $E71() {
+// LINE 2405:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x603ABC], 0x40;
+	__asm        mov    byte ptr ds:[0x603ABD], 0;
+	__asm        mov    byte ptr ds:[0x603ABE], 0;
+	__asm        jmp    near ptr 0x0045E15B;
+	__asm        jmp    near ptr 0x0045E160;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0045e165
-// $E75
+void $E75() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0045E17A;
+	__asm        jmp    near ptr 0x0045E175;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0045e17a
-// $E74
+void $E74() {
+// LINE 2406:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x603AB4], 0xEF;
+	__asm        mov    byte ptr ds:[0x603AB5], 0xC5;
+	__asm        mov    byte ptr ds:[0x603AB6], 0xC5;
+	__asm        jmp    near ptr 0x0045E19A;
+	__asm        jmp    near ptr 0x0045E19F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0045e1a4
 void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {

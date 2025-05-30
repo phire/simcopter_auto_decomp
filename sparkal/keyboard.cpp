@@ -41,17 +41,80 @@ public:
 
 
 // Contribution: 1:00030c50-00031258 Module: 62, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c50
-// $E4
+void $E4() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00431C6A;
+	__asm        call   0x00431C84;
+	__asm        jmp    near ptr 0x00431C65;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c6a
-// $E1
+void $E1() {
+// LINE 10:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x5C34F0;
+	__asm        call   0x00431CE4;
+	__asm        jmp    near ptr 0x00431C7F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c84
-// $E3
+void $E3() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x431CA1;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x00431C9C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431ca1
-// $E2
+void $E2() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        jmp    near ptr 0x00431CAC;
+	__asm        mov    ecx, 0x5C34F0;
+	__asm        call   0x0043D476;
+	__asm        jmp    near ptr 0x00431CBB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00431cc0
 int32_t IsModifierSet(unsigned char chModifiers) {

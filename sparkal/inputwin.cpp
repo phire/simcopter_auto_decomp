@@ -1960,17 +1960,81 @@ class bidirectional_iterator<KeyColors,int>{
 
 
 // Contribution: 1:00000280-0000c7d4 Module: 75, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00401280
-// $E97
+void $E97() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00401295;
+	__asm        jmp    near ptr 0x00401290;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00401295
-// $E96
+void $E96() {
+// LINE 34:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x5C2790], 0xA;
+	__asm        mov    byte ptr ds:[0x5C2791], 0x85;
+	__asm        mov    byte ptr ds:[0x5C2792], 0xDA;
+	__asm        jmp    near ptr 0x004012B5;
+	__asm        jmp    near ptr 0x004012BA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004012bf
-// $E100
+void $E100() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x004012D4;
+	__asm        jmp    near ptr 0x004012CF;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004012d4
-// $E99
+void $E99() {
+// LINE 35:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x5C2794], 0x6F;
+	__asm        mov    byte ptr ds:[0x5C2795], 0xDA;
+	__asm        mov    byte ptr ds:[0x5C2796], 0xFF;
+	__asm        jmp    near ptr 0x004012F4;
+	__asm        jmp    near ptr 0x004012F9;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x004012fe
 void KeyboardWindow::KeyboardWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {

@@ -385,53 +385,333 @@ public:
 
 
 // Contribution: 1:000705e0-00070d19 Module: 38, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715e0
-// $E65
+void $E65() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x004715FA;
+	__asm        call   0x00471614;
+	__asm        jmp    near ptr 0x004715F5;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715fa
-// $E61
+void $E61() {
+// LINE 12:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042EF87;
+	__asm        jmp    near ptr 0x0047160F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471614
-// $E64
+void $E64() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x471631;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x0047162C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471631
-// $E62
+void $E62() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        test   al, 1;
+	__asm        jne    near ptr 0x0047165E;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        or     al, 1;
+	__asm        mov    ds:[0x604444], al;
+	__asm        mov    ecx, 0x6042C8;
+	__asm        call   0x0042F2E9;
+	__asm        jmp    near ptr 0x00471663;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471668
-// $E70
+void $E70() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00471682;
+	__asm        call   0x0047169C;
+	__asm        jmp    near ptr 0x0047167D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471682
-// $E67
+void $E67() {
+// LINE 15:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0042EF87;
+	__asm        jmp    near ptr 0x00471697;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047169c
-// $E69
+void $E69() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x4716B9;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x004716B4;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716b9
-// $E68
+void $E68() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        test   al, 2;
+	__asm        jne    near ptr 0x004716E6;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        or     al, 2;
+	__asm        mov    ds:[0x604444], al;
+	__asm        mov    ecx, 0x6043C8;
+	__asm        call   0x0042F2E9;
+	__asm        jmp    near ptr 0x004716EB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716f0
-// $E75
+void $E75() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0047170A;
+	__asm        call   0x00471724;
+	__asm        jmp    near ptr 0x00471705;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047170a
-// $E72
+void $E72() {
+// LINE 18:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042EF87;
+	__asm        jmp    near ptr 0x0047171F;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471724
-// $E74
+void $E74() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x471741;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x0047173C;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471741
-// $E73
+void $E73() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        test   al, 4;
+	__asm        jne    near ptr 0x0047176E;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        or     al, 4;
+	__asm        mov    ds:[0x604444], al;
+	__asm        mov    ecx, 0x604348;
+	__asm        call   0x0042F2E9;
+	__asm        jmp    near ptr 0x00471773;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471778
-// $E80
+void $E80() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00471792;
+	__asm        call   0x004717AC;
+	__asm        jmp    near ptr 0x0047178D;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471792
-// $E77
+void $E77() {
+// LINE 21:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042EF87;
+	__asm        jmp    near ptr 0x004717A7;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717ac
-// $E79
+void $E79() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x4717C9;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x004717C4;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717c9
-// $E78
+void $E78() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        test   al, 8;
+	__asm        jne    near ptr 0x004717F6;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x604444];
+	__asm        or     al, 8;
+	__asm        mov    ds:[0x604444], al;
+	__asm        mov    ecx, 0x604248;
+	__asm        call   0x0042F2E9;
+	__asm        jmp    near ptr 0x004717FB;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {

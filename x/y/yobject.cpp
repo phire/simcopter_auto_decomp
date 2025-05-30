@@ -2571,29 +2571,268 @@ protected:
 
 
 // Contribution: 1:00142f70-00150d97 Module: 200, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f70
-// $E75
+void $E75() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00543F8A;
+	__asm        call   0x005440A0;
+	__asm        jmp    near ptr 0x00543F85;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f8a
-// $E71
+void $E71() {
+// LINE 115:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x544088;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 8;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x636BB8;
+	__asm        call   0x0055C270;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        mov    dword ptr ds:[0x636BB8], 0x593508;
+	__asm        mov    dword ptr ds:[0x636CCC], 0;
+	__asm        mov    dword ptr ds:[0x636CC8], 0;
+	__asm        jmp    near ptr 0x00543FDC;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        mov    dword ptr [ebp-0x10], 0x636BB8;
+	__asm        jmp    near ptr 0x00543FFA;
+_L55004:
+	__asm        mov    ecx, 0x636BB8;
+	__asm        call   0x0055C2BB;
+	__asm        ret;
+	__asm        mov    dword ptr [ebp-4], 1;
+	__asm        mov    dword ptr ds:[0x636BB8], 0x593518;
+	__asm        jmp    near ptr 0x00544010;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        mov    dword ptr [ebp-0x14], 0x636BB8;
+	__asm        jmp    near ptr 0x0054402E;
+_L55002:
+	__asm        mov    ecx, 0x636BB8;
+	__asm        call   0x0055301B;
+	__asm        ret;
+	__asm        mov    dword ptr [ebp-4], 2;
+	__asm        mov    dword ptr ds:[0x636CD4], 0;
+	__asm        mov    word ptr ds:[0x636CD8], 0;
+	__asm        jmp    near ptr 0x0054404D;
+	__asm        mov    byte ptr [ebp-4], 3;
+	__asm        mov    dword ptr ds:[0x636BB8], 0x591218;
+	__asm        jmp    near ptr 0x00544060;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x00544083;
+_L54999:
+	__asm        lea    ecx, ds:[0x636CD4];
+	__asm        call   0x00551DE0;
+	__asm        ret;
+_L54998:
+	__asm        mov    ecx, 0x636BB8;
+	__asm        call   0x00551F40;
+	__asm        ret;
+	__asm        jmp    near ptr 0x00544092;
+_L54996:
+	__asm        mov    eax, 0x595D38;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440a0
-// $E74
+void $E74() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x5440BD;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x005440B8;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440bd
-// $E72
+void $E72() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x6375A0];
+	__asm        test   al, 1;
+	__asm        jne    near ptr 0x005440EA;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x6375A0];
+	__asm        or     al, 1;
+	__asm        mov    ds:[0x6375A0], al;
+	__asm        mov    ecx, 0x636BB8;
+	__asm        call   0x0049A1F5;
+	__asm        jmp    near ptr 0x005440EF;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440f4
-// $E81
+void $E81() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0054410E;
+	__asm        call   0x005441C8;
+	__asm        jmp    near ptr 0x00544109;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054410e
-// $E77
+void $E77() {
+// LINE 116:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x5441B0;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x635590;
+	__asm        call   0x0055C270;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        mov    dword ptr ds:[0x635590], 0x593508;
+	__asm        mov    dword ptr ds:[0x6356A4], 0;
+	__asm        mov    dword ptr ds:[0x6356A0], 0;
+	__asm        jmp    near ptr 0x00544160;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        mov    dword ptr [ebp-0x10], 0x635590;
+	__asm        jmp    near ptr 0x0054417E;
+_L55025:
+	__asm        mov    ecx, 0x635590;
+	__asm        call   0x0055C2BB;
+	__asm        ret;
+	__asm        mov    dword ptr [ebp-4], 1;
+	__asm        mov    dword ptr ds:[0x635590], 0x593518;
+	__asm        jmp    near ptr 0x00544194;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        jmp    near ptr 0x005441AB;
+_L55023:
+	__asm        mov    ecx, 0x635590;
+	__asm        call   0x0055301B;
+	__asm        ret;
+	__asm        jmp    near ptr 0x005441BA;
+_L55021:
+	__asm        mov    eax, 0x595D78;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441c8
-// $E80
+void $E80() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x5441E5;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x005441E0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441e5
-// $E78
+void $E78() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x54424A;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x6375A4];
+	__asm        test   al, 1;
+	__asm        jne    near ptr 0x00544245;
+	__asm        xor    eax, eax;
+	__asm        mov    al, ds:[0x6375A4];
+	__asm        or     al, 1;
+	__asm        mov    ds:[0x6375A4], al;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        jmp    near ptr 0x00544229;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        call   0x0054423A;
+	__asm        jmp    near ptr 0x00544245;
+_L55035:
+	__asm        mov    ecx, 0x635590;
+	__asm        call   0x0055301B;
+	__asm        ret;
+	__asm        jmp    near ptr 0x00544254;
+_L55033:
+	__asm        mov    eax, 0x595DA8;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00544262
 void RemoveAvatarFromBuilding() {
@@ -2617,17 +2856,92 @@ void RemoveAvatarFromBuilding() {
 	__asm        ret;
 }
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00544289
-// $E86
+void $E86() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x005442A3;
+	__asm        call   0x0054430D;
+	__asm        jmp    near ptr 0x0054429E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005442a3
-// $E83
+void $E83() {
+// LINE 146:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    dword ptr ds:[0x635258], 1;
+	__asm        mov    dword ptr ds:[0x63525C], 0;
+	__asm        mov    dword ptr ds:[0x635260], 0;
+	__asm        mov    dword ptr ds:[0x635264], 0;
+	__asm        cmp    dword ptr ds:[0x635258], 0;
+	__asm        jne    near ptr 0x005442FE;
+	__asm        lea    eax, [ebp-0xC];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3668];
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    ds:[0x635264], eax;
+	__asm        jmp    near ptr 0x005442FE;
+	__asm        jmp    near ptr 0x00544303;
+	__asm        jmp    near ptr 0x00544308;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054430d
-// $E85
+void $E85() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x54432A;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x00544325;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054432a
-// $E84
+void $E84() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        jmp    near ptr 0x00544335;
+	__asm        jmp    near ptr 0x0054433A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0054433f
 void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t * failedtobeam, int32_t * numbeamed, int32_t * beamslices, int32_t * forwardweight) {
@@ -18922,6 +19236,37 @@ void FrameInit() {
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
  ResFile::~ResFile() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   0xFFFFFFFF;
+	__asm        push   0x551F87;
+	__asm        mov    eax, fs:[0];
+	__asm        push   eax;
+	__asm        mov    fs:[0], esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    this, ecx;
+	__asm        mov    dword ptr [ebp-4], 0;
+	__asm        jmp    near ptr 0x00551F6D;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	__asm        call   0x00551F7E;
+	__asm        jmp    near ptr 0x00551F91;
+_L55562:
+	__asm        mov    ecx, this;
+	__asm        call   0x0055301B;
+	__asm        ret;
+_L55561:
+	__asm        mov    eax, 0x595EE0;
+	__asm        jmp    near ptr 0x0056F590;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    fs:[0], eax;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
 }
 
 

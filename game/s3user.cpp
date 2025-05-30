@@ -23,17 +23,95 @@
 
 
 // Contribution: 1:00027e80-000294ea Module: 67, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e80
-// $E48
+void $E48() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00428E9A;
+	__asm        call   0x00428F13;
+	__asm        jmp    near ptr 0x00428E95;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e9a
-// $E45
+void $E45() {
+// LINE 30:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 0xC;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    dword ptr ds:[0x5C33D4], 1;
+	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    dword ptr ds:[0x5C33DC], 0;
+	__asm        mov    dword ptr ds:[0x5C33E0], 0;
+	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        jne    near ptr 0x00428EF5;
+	__asm        lea    eax, [ebp-0xC];
+	__asm        push   eax;
+	__asm        call   dword ptr ds:[0x6C3668];
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        mov    ds:[0x5C33E0], eax;
+	__asm        jmp    near ptr 0x00428EF5;
+	__asm        jmp    near ptr 0x00428EFA;
+	__asm        mov    dword ptr ds:[0x5C33D0], 0;
+	__asm        jmp    near ptr 0x00428F09;
+	__asm        jmp    near ptr 0x00428F0E;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f13
-// $E47
+void $E47() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0x428F30;
+	__asm        call   0x0056D090;
+	__asm        add    esp, 4;
+	__asm        jmp    near ptr 0x00428F2B;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f30
-// $E46
+void $E46() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        jmp    near ptr 0x00428F3B;
+	__asm        jmp    near ptr 0x00428F40;
+	__asm        jmp    near ptr 0x00428F45;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00428f4a
 struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {

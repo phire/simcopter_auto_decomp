@@ -89,11 +89,41 @@ public:
 
 
 // Contribution: 1:00099480-00099d21 Module: 15, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a480
-// $E2
+void $E2() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0049A495;
+	__asm        jmp    near ptr 0x0049A490;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a495
-// $E1
+void $E1() {
+// LINE 16:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x604C78;
+	__asm        call   0x0049A4AF;
+	__asm        jmp    near ptr 0x0049A4AA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0049a4af
 void JoystickManager::JoystickManager() {

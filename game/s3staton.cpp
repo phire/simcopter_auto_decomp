@@ -3105,8 +3105,23 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        ret    0x18;
 }
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0053b99b
-// $E36
+void $E36() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    ecx, 0x6351D0;
+	__asm        call   0x0042F2E9;
+	__asm        jmp    near ptr 0x0053B9B0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0053b9b5
 void Station::Station(unsigned char stationScurkID) {

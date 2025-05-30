@@ -373,17 +373,81 @@ public:
 
 
 // Contribution: 1:0007ce80-0007f60b Module: 31, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047de80
-// $E64
+void $E64() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0047DE95;
+	__asm        jmp    near ptr 0x0047DE90;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047de95
-// $E63
+void $E63() {
+// LINE 48:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x604448], 0xA;
+	__asm        mov    byte ptr ds:[0x604449], 0x85;
+	__asm        mov    byte ptr ds:[0x60444A], 0xDA;
+	__asm        jmp    near ptr 0x0047DEB5;
+	__asm        jmp    near ptr 0x0047DEBA;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047debf
-// $E67
+void $E67() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0047DED4;
+	__asm        jmp    near ptr 0x0047DECF;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047ded4
-// $E66
+void $E66() {
+// LINE 49:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        mov    byte ptr ds:[0x60444C], 0x6F;
+	__asm        mov    byte ptr ds:[0x60444D], 0xDA;
+	__asm        mov    byte ptr ds:[0x60444E], 0xFF;
+	__asm        jmp    near ptr 0x0047DEF4;
+	__asm        jmp    near ptr 0x0047DEF9;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0047defe
 void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, void * __ptr32 myNewPlatformWindow, long * lNewCities, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewAllowCancel) {

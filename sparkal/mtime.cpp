@@ -561,11 +561,41 @@ private:
 
 
 // Contribution: 1:0003b710-0003c389 Module: 58, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c710
-// $E14
+void $E14() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0043C725;
+	__asm        jmp    near ptr 0x0043C720;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c725
-// $E13
+void $E13() {
+// LINE 43:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0057D0B0;
+	__asm        jmp    near ptr 0x0043C735;
+	__asm        jmp    near ptr 0x0043C73A;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0043c73f
 void MDate::MDate(const class MTime& t) {
@@ -609,17 +639,81 @@ void MDate::MDate(const class MTime& t) {
 	__asm        ret    4;
 }
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7b3
-// $E17
+void $E17() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0043C7C8;
+	__asm        jmp    near ptr 0x0043C7C3;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7c8
-// $E16
+void $E16() {
+// LINE 67:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0;
+	__asm        push   0;
+	__asm        mov    ecx, 0x5C3608;
+	__asm        call   0x004BC4D1;
+	__asm        jmp    near ptr 0x0043C7E1;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7e6
-// $E20
+void $E20() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0043C7FB;
+	__asm        jmp    near ptr 0x0043C7F6;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7fb
-// $E19
+void $E19() {
+// LINE 68:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        push   0;
+	__asm        push   0xC22D;
+	__asm        mov    ecx, 0x5C3618;
+	__asm        call   0x004BC4D1;
+	__asm        jmp    near ptr 0x0043C817;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x0043c81c
 int  MTime::AssertMDate(const class MDate& date) {

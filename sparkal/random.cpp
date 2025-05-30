@@ -25,11 +25,47 @@ protected:
 
 
 // Contribution: 1:0008ff90-00090171 Module: 22, 16 byte alignment, code, execute, read, 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490f90
-// $E2
+void $E2() {
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x00490FA5;
+	__asm        jmp    near ptr 0x00490FA0;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
+// STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490fa5
-// $E1
+void $E1() {
+// LINE 20:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
+	__asm        sub    esp, 4;
+	__asm        push   ebx;
+	__asm        push   esi;
+	__asm        push   edi;
+	__asm        call   0x0056F980;
+	__asm        mov    [ebp-4], eax;
+	__asm        mov    eax, [ebp-4];
+	__asm        push   eax;
+	__asm        mov    ecx, 0x604B18;
+	__asm        call   0x00490FF1;
+	__asm        jmp    near ptr 0x00490FC9;
+	__asm        jmp    near ptr 0x00490FCE;
+	__asm        pop    edi;
+	__asm        pop    esi;
+	__asm        pop    ebx;
+	__asm        leave;
+	__asm        ret;
+}
 
 // FUNCTION: COPTER_D 0x00490fd3
 unsigned long __long_random(unsigned long limit) {
